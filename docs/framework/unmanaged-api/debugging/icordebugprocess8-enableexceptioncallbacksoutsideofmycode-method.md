@@ -6,12 +6,12 @@ dev_langs:
 ms.assetid: b3af44ec-7d41-425b-aed9-0c4379e5cbe9
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b834c2625bfd72db5c03cd9a89fa79af53975943
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2fc7f34059660c273055c3ee24fb6722fda1ef3f
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54669325"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57466554"
 ---
 # <a name="icordebugprocess8enableexceptioncallbacksoutsideofmycode-method"></a>Metoda ICorDebugProcess8::EnableExceptionCallbacksOutsideOfMyCode
 [Podporované v [!INCLUDE[net_v46](../../../../includes/net-v46-md.md)] a novější verze]  
@@ -26,7 +26,7 @@ HRESULT EnableExceptionCallbacksOutsideOfMyCode(
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `enableExceptionsOutsideOfJMC`  
  [in]  
   

@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: dc4e51ec60c7526f36bbe4909bec91a527e0862c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: da799b0d4f4e5e4b281445baa35d95f992ba0b63
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33419907"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57474953"
 ---
 # <a name="icordebugsteppersetunmappedstopmask-method"></a>ICorDebugStepper::SetUnmappedStopMask – metoda
-Nastaví hodnotu, která určuje typ nenamapovaný kódu, ve kterém se zastaví provádění.  
+Nastaví hodnotu, která určuje typ nenamapované kódu, ve kterém se zastaví provádění.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,19 +35,19 @@ HRESULT SetUnmappedStopMask (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `mask`  
- [v] Hodnota CorDebugUnmappedStop – výčet, který určuje typ nenamapovaný kódu, ve kterém bude zastavení ladicího programu provádění.  
+ [in] Hodnota cordebugunmappedstop – výčet, který určuje typ nenamapované kódu, ve kterém se ladicí program zastaví provádění.  
   
- Výchozí hodnota je STOP_OTHER_UNMAPPED. Hodnota STOP_UNMANAGED je platný pouze s spolupráce ladění.  
+ Výchozí hodnota je STOP_OTHER_UNMAPPED. Hodnota STOP_UNMANAGED je platný pouze s definiční ladění.  
   
 ## <a name="remarks"></a>Poznámky  
- Když ladicí program vyhledá kompilace za běhu (JIT), který nemá žádné odpovídající mapování na Microsoft (MSIL intermediate language), zastaví provádění Pokud byl nastaven příznak zadání typu nenamapovaný kódu; Krokování s transparentně pokračuje v, jinak hodnota.  
+ Pokud ladicí program nalezne kompilace just-in-time (JIT), který nemá žádné odpovídající mapování pro jazyk Microsoft intermediate language (MSIL), se zastaví spuštění, pokud byl nastaven příznak určení typu nenamapované kódu; v opačném případě krokování transparentně bude pokračovat.  
   
- Pokud ladicí program nepoužívá krokovač zadat metodu, pak jej nebude krok nutně přes nenamapovaný kódu.  
+ Pokud ladicí program nepoužívá krokovač zadejte metodu, pak jej nebude krok nutně přes nenamapované kódu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 77d9ec0cf1cbca63382e7f29de85c2f9566dc2bb
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: cba4eb2b76d7057a5ed66a35342a79615cb8539f
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33416163"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57487718"
 ---
 # <a name="icordebugeval2callparameterizedfunction-method"></a>ICorDebugEval2::CallParameterizedFunction – metoda
-Nastavuje volání do zadané ICorDebugFunction, což může být vnořena ve třídu, jejíž konstruktor přijímá <xref:System.Type> parametry, nebo může sám sebe trvat <xref:System.Type> parametry.  
+Nastaví volání zadané ICorDebugFunction, které mohou být vnořené uvnitř třídy, jejíž konstruktor přijímá <xref:System.Type> parametry nebo může samotné trvat <xref:System.Type> parametry.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,31 +39,31 @@ HRESULT CallParameterizedFunction (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `pFunction`  
- [v] Ukazatel na `ICorDebugFunction` objekt, který reprezentuje funkce, která má být volána.  
+ [in] Ukazatel `ICorDebugFunction` objekt, který reprezentuje funkce, která se má volat.  
   
  `nTypeArgs`  
- [v] Počet argumentů, které funkce přijímá.  
+ [in] Počet argumentů, které provede funkci.  
   
  `ppTypeArgs`  
- [v] Pole ukazatele, každý z nich odkazuje na objekt ICorDebugType, který představuje argument funkce.  
+ [in] Pole ukazatelů, každý z nich odkazuje na objekt ICorDebugType, který představuje argument funkce.  
   
  `nArgs`  
- [v] Počet hodnot, je předaná funkci.  
+ [in] Ve funkci byl předán počet hodnot.  
   
  `ppArgs`  
- [v] Pole ukazatele, každý z nich odkazuje na objekt ICorDebugValue, který reprezentuje hodnotu předáno v argumentu funkce.  
+ [in] Pole ukazatelů, každý z nich odkazuje na objekt ICorDebugValue, který představuje hodnotu předaného argumentu funkce.  
   
 ## <a name="remarks"></a>Poznámky  
- `CallParameterizedFunction` je třeba [icordebugeval::CallFunction –](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-callfunction-method.md) s tím rozdílem, že funkce může být uvnitř tříd pomocí parametrů typu, může sám sebe trvat parametry typu nebo obojí. Argumenty typu by měly mít nejprve pro třídu a potom pro funkci.  
+ `CallParameterizedFunction` je třeba [icordebugeval::CallFunction –](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-callfunction-method.md) s tím rozdílem, že funkce mohou být uvnitř třídy s parametry typu, samotné trvat parametry typu, nebo obojí. Argumenty typu by se měly provádět první třídy a funkce.  
   
- Pokud je v doméně jinou aplikaci, dojde k přechodu. Všechny argumenty typu a hodnoty musí však být v cílové doméně aplikace.  
+ Pokud je funkce v různých aplikační domény, bude docházet k přechodu. Nicméně všechny argumenty typu a hodnoty musí být v cílové doméně aplikace.  
   
- Vyhodnocení funkce lze provést jenom v situacích, omezené. Pokud `CallParameterizedFunction` nebo `ICorDebugEval::CallFunction` selže, vrácený HRESULT označí nejobecnější možný důvod selhání.  
+ Vyhodnocení funkce lze provést pouze v omezených scénářích. Pokud `CallParameterizedFunction` nebo `ICorDebugEval::CallFunction` selže, vrácená hodnota HRESULT označí nejobecnější důvod selhání.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

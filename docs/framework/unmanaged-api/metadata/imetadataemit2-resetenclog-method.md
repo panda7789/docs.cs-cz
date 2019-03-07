@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: d18a3b7e309eb71cf37e77818a3181e33bf5ab7c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 24ecc46d1ca3ef24abd6f9bc0308fc460256c6ad
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54493442"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57475616"
 ---
 # <a name="imetadataemit2resetenclog-method"></a>IMetaDataEmit2::ResetENCLog – metoda
 Obnoví protokolu edit-and-continue a spustí novou relaci.  
@@ -33,7 +33,7 @@ Obnoví protokolu edit-and-continue a spustí novou relaci.
 HRESULT ResetENCLog ();  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `ResetENCLog` nemá žádné parametry.  
   
 ## <a name="requirements"></a>Požadavky  

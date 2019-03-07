@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: aad5a285fc2280dc062b0f4cbb69977a7e605e9c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6feef7b1e1f09107cd2a57555df07bebec86effa
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33412766"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57466979"
 ---
 # <a name="icordebugeval2newparameterizedobjectnoconstructor-method"></a>ICorDebugEval2::NewParameterizedObjectNoConstructor – metoda
-Vytvoří nový objekt parametrizované typ zadané třídy bez pokus o volání metody konstruktoru.  
+Vytvoří nový objekt typ s parametry ze zadané třídy bez pokusu o volání metody konstruktoru.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,21 +37,21 @@ HRESULT NewParameterizedObjectNoConstructor (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `pClass`  
- [v] Ukazatel na ICorDebugClass objekt, který představuje třídu objekt, který má být vytvořena instance.  
+ [in] Ukazatel na objekt ICorDebugClass, který představuje třídu objektu, který má být vytvořena.  
   
  `nTypeArgs`  
- [v] Počet argumentů předaných.  
+ [in] Byl předán počet argumentů typu.  
   
  `ppTypeArgs`  
- [v] Pole ukazatele, každý z nich odkazuje na objekt ICorDebugType, který reprezentuje typ argumentu pro objekt, který je vytvořena instance.  
+ [in] Pole ukazatelů, každý z nich odkazuje na objekt ICorDebugType, který představuje argument typu pro objekt, který je vytvořena instance.  
   
 ## <a name="remarks"></a>Poznámky  
- `NewParameterizedObjectNoConstructor` Metoda se nezdaří, pokud nesprávný počet argumentů nebo jsou předány nesprávné typy argumenty typu.  
+ `NewParameterizedObjectNoConstructor` Metoda selže, pokud nesprávný počet argumentů typu nebo jsou předány nesprávné typy argumentů typu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

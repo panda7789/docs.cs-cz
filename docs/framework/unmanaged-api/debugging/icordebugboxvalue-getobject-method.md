@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: cfc8800915009912716ec2ed9044a633a8ad0582
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c20eec52b0e4616af1b864bb58b6cbff44a720eb
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33401742"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57490369"
 ---
 # <a name="icordebugboxvaluegetobject-method"></a>ICorDebugBoxValue::GetObject – metoda
 Získá zabalené hodnoty.  
@@ -35,12 +35,12 @@ HRESULT GetObject (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `ppObject`  
- [out] Ukazatel na adresu ICorDebugObjectValue objekt, který reprezentuje zabalené hodnoty.  
+ [out] Ukazatel na adresu objektu ICorDebugObjectValue představující zabalený hodnotu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

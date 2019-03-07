@@ -10,12 +10,12 @@ api_type:
 - COM
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: addaf6333914c9f0ea36d67e3eb96577fef79e1e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 0cb54a714b9da72e8620b39690b4dcc9a3c21c2e
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54497915"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57496856"
 ---
 # <a name="icorprofilercallback8dynamicmethodjitcompilationfinished-method"></a>ICorProfilerCallback8::DynamicMethodJITCompilationFinished Method
 [Podporované v rozhraní .NET Framework 4.7 a novějších verzích]  
@@ -32,7 +32,7 @@ HRESULT DynamicMethodJITCompilationFinished(
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
 [in] `functionId`  
 Identifikátor funkce v paměti, pro které JIT kompilace spuštění.   
 

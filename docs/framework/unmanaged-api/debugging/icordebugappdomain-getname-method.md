@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 84f895e749fc8f2520dbce3caf9e6c11fda78a7a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7939f7b1c0c725bb4e8c642bc38121dd755da5e2
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33405766"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57471049"
 ---
 # <a name="icordebugappdomaingetname-method"></a>ICorDebugAppDomain::GetName – metoda
 Získá název domény aplikace.  
@@ -38,21 +38,21 @@ HRESULT GetName (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `cchName`  
- [v] Velikost `szName` pole. Tuto hodnotu nastavte na nulu, tato metoda uvést do režimu dotazu.  
+ [in] Velikost `szName` pole. Tuto hodnotu nastavte na hodnotu nula, tato metoda uvést do režimu dotazu.  
   
  `pcchName`  
- [out] Ukazatel na velikost název nebo počet znaků, které jsou ve skutečnosti, vrátí se v `szName`. V režimu dotazu, tato hodnota umožňuje volající vědět, jak velké vyrovnávací paměti k přidělení pro název.  
+ [out] Ukazatel na velikost název nebo počet znaků ve skutečnosti vrátí v `szName`. V režimu dotazu, tato hodnota umožňuje volajícímu vědět, jak velkou vyrovnávací paměti k přidělení pro název.  
   
  `szName`  
- [out] Pole, které ukládá název domény aplikace.  
+ [out] Pole uchovávající název domény aplikace.  
   
 ## <a name="remarks"></a>Poznámky  
- Ladicí program volá `GetName` metoda jednou se získat velikost vyrovnávací paměti potřebné pro název. Ladicí program přiděluje vyrovnávací paměť a pak zavolá metodu podruhé k vyplnění vyrovnávací paměti. První volání se získat velikost názvu, se označuje jako *režim dotazu*.  
+ Ladicí program volá `GetName` jednou metodu k získání velikost vyrovnávací paměti, třeba název. Ladicí program přiděluje vyrovnávací paměti a potom volá metodu podruhé tak, aby vyplnil vyrovnávací paměti. První volání, získat její velikost názvu, se označuje jako *režim dotazů*.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

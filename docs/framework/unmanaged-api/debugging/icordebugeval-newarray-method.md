@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 38b00d903fdd7301415a8df7642e12366178fd10
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d1abe307e3b9fa607912f98e456a11176eb17c56
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33413937"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57471507"
 ---
 # <a name="icordebugevalnewarray-method"></a>ICorDebugEval::NewArray – metoda
-Přiděluje nový pole typu zadaného elementu a dimenze.  
+Přidělí nové pole typu zadaného elementu a dimenze.  
   
  Tato metoda je zastaralé v rozhraní .NET Framework verze 2.0. Použití [icordebugeval2::newparameterizedarray –](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-newparameterizedarray-method.md) místo.  
   
@@ -41,27 +41,27 @@ HRESULT NewArray (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `elementType`  
- [v] Hodnota CorElementType – výčet, který určuje typ elementu pole.  
+ [in] Hodnota corelementtype – výčet, který určuje typ prvku pole.  
   
  `pElementClass`  
- [v] Ukazatel na ICorDebugClass objekt, který určuje třída elementu. Tato hodnota může mít hodnotu null, pokud je typ elementu primitivního typu.  
+ [in] Ukazatel na ICorDebugClass objekt, který určuje třídu elementu. Tato hodnota může mít hodnotu null, pokud typ prvku je primitivního typu.  
   
  `rank`  
- [v] Počet rozměrů pole. V rozhraní .NET Framework 2.0 tato hodnota musí být 1.  
+ [in] Počet rozměrů pole. V rozhraní .NET Framework 2.0 tato hodnota musí být 1.  
   
  `dims`  
- [v] Velikost v bajtech, každá dimenze pole.  
+ [in] Velikost v bajtech každého rozměru pole.  
   
  `lowBounds`  
- [v] Volitelný parametr. Dolní mez Každá dimenze pole. Pokud tato hodnota je vynechán, předpokládá se, že dolní mez 0 je pro každou dimenzi.  
+ [in] Volitelné. Dolní mez každé dimenze matice. Pokud je tato hodnota vynechána, předpokládá se pro jednotlivé rozměry dolní mez nula.  
   
 ## <a name="remarks"></a>Poznámky  
- Toto pole je vytvořen vždy v doméně aplikace, ve kterém je aktuálně spuštěných vlákno.  
+ Pole je vytvořen vždy v aplikační doméně, ve které vlákno právě probíhá.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

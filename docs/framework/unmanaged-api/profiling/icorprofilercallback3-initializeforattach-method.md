@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 4ebdd76655124922008667898e38f873ad93598e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a8590a40ca74296bab618d6c0ba95f1683cf33cd
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54555593"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57466255"
 ---
 # <a name="icorprofilercallback3initializeforattach-method"></a>ICorProfilerCallback3::InitializeForAttach – metoda
 Volána modulem common language runtime (CLR), která poskytující nástroji pro profilování příležitost k inicializaci svého stavu po operaci připojení.  
@@ -36,7 +36,7 @@ HRESULT InitializeForAttach(
             [in] UINT cbClientData);  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `pCorProfilerInfoUnk`  
  [in] Pro ukazatel rozhraní `ICorProfilerInfo*` rozhraní.  
   

@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 58b7c0b9-f6ad-4b49-b92d-0e421cfd0ec6
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: be103b8f9d6f94d5b7a265ec2ef01c551622c9e1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5866947160be6ceac36e0642a48b41e3df754fc8
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54714292"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57492787"
 ---
 # <a name="icordebugsymbolprovidergetmethodparametersymbols-method"></a>ICorDebugSymbolProvider::GetMethodParameterSymbols – metoda
 Získá symboly parametr metody uvedené relativní virtuální adresu (RVA) této metody.  
@@ -25,7 +25,7 @@ HRESULT GetMethodParameterSymbols(
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `nativeRVA`  
  [in] Nativní relativní virtuální adresu metody.  
   

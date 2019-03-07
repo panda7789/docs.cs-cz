@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5a406e945a67352bc7f126b40bd56f4a11dd693b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ab0e28bd21b66f370a1a1e82359fe474574fd7bb
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33419540"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57481572"
 ---
 # <a name="icordebugmodule2applychanges-method"></a>ICorDebugModule2::ApplyChanges – metoda
-Změny v metadatech a změny v kódu Microsoft (MSIL intermediate language) se vztahuje na běžící proces.  
+Změny v metadatech a změny v kódu Microsoft intermediate language (MSIL) se vztahuje na běžící proces.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,34 +38,34 @@ HRESULT ApplyChanges (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `cbMetadata`  
- [v] Velikost v bajtech, rozdílů metadat.  
+ [in] Velikost v bajtech, rozdílové metadat.  
   
  `pbMetadata`  
- [v] Vyrovnávací paměti, který obsahuje delta metadata. Vrátí adresu vyrovnávací paměti [imetadataemit2::savedeltatomemory –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-savedeltatomemory-method.md) metoda.  
+ [in] Vyrovnávací paměť, která obsahuje delta metadata. Adresa vyrovnávací paměti je vrácen z [imetadataemit2::savedeltatomemory –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-savedeltatomemory-method.md) metody.  
   
- Vzhledem k začátku MSIL kódu by měla být relativní virtuální adresy (RVAs) v metadatech.  
+ Relativních virtuálních adres (RVA) v metadatech by měla být relativní vzhledem k začátku kód jazyka MSIL.  
   
  `cbIL`  
- [v] Velikost v bajtech, rozdílové MSIL kódu.  
+ [in] Velikost v bajtech, rozdílových kód jazyka MSIL.  
   
  `pbIL`  
- [v] Vyrovnávací paměť, která obsahuje aktualizované MSIL kód.  
+ [in] Vyrovnávací paměť, která obsahuje aktualizovaný kód jazyka MSIL.  
   
 ## <a name="remarks"></a>Poznámky  
- `pbMetadata` Parametr je ve formátu metadat speciální delta (jako výstupní podle [imetadataemit2::savedeltatomemory –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-savedeltatomemory-method.md)). `pbMetadata` přebírá předchozí metadat jako základ a popisuje jednotlivé změny, které chcete použít pro tento základní.  
+ `pbMetadata` Parametr má formát metadat speciální delta (jako výstupní podle [imetadataemit2::savedeltatomemory –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-savedeltatomemory-method.md)). `pbMetadata` má předchozí metadat jako základ a popisuje jednotlivé změny se můžou použít k této základní třídě.  
   
- Naopak `pbIL[`] parametr obsahuje nové MSIL pro metodu aktualizované a měl by úplně nahradit předchozí MSIL pro danou metodu  
+ Oproti tomu, `pbIL[`] parametr obsahuje nový jazyk MSIL pro metodu aktualizované a slouží k úplnému nahrazení předchozí MSIL pro metody  
   
- Když rozdíl MSIL a metadat byla vytvořena v paměti ladicím programu, ladicí program volá `ApplyChanges` a odešlete změny do modulu common language runtime (CLR). Modul runtime aktualizací jeho tabulky metadat, umístí nové MSIL do procesu a nastaví nové MSIL kompilací za běhu (JIT). Při použití změny by měly volat ladicího programu [imetadataemit2::resetenclog –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-resetenclog-method.md) připravit pro další úpravy relace. Ladicí program může pak pokračovat v procesu.  
+ Při rozdílové jazyk MSIL a metadata byly vytvořeny v paměti ladicího programu, ladicí program volá `ApplyChanges` k odeslání změn do common language runtime (CLR). Modul runtime aktualizuje její tabulky metadat, umístí nový jazyk MSIL do procesu a nastaví just-in-time (JIT) kompilaci nového MSIL. Když změny se použily, ladicí program by měly volat [imetadataemit2::resetenclog –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-resetenclog-method.md) připravit pro další relaci. Ladicí program může potom pokračujte v procesu.  
   
- Vždy, když ladicí program volá `ApplyChanges` na modul, který obsahuje metadata rozdílů, by také zavolat [imetadataemit::applyeditandcontinue –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-applyeditandcontinue-method.md) s metadaty rozdílů na všech jeho kopie metadata tohoto modulu s výjimkou kopie použít pro vydávání změny. Pokud se kopie metadat nějakým způsobem stane se na synchronizaci s metadaty skutečné ladicího programu můžete kdykoli throw rychle tuto kopii nebo požádejte o novou kopii.  
+ Vždy, když ladicí program volá `ApplyChanges` na modul, který má delta metadata, měla by také zavolat [imetadataemit::applyeditandcontinue –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-applyeditandcontinue-method.md) s na stejná metadata delta ve všech jeho kopie metadat tohoto modulu s výjimkou kopie použít ke generování změny. Pokud kopie metadat nějakým způsobem stane mimo synchronizace skutečné metadata, ladicí program můžete kdykoli se zbavovat tuto kopii nebo získat nové kopie.  
   
- Pokud `ApplyChanges` metoda selže, ladění relace je v neplatném stavu a musí být restartován.  
+ Pokud `ApplyChanges` metoda selže, ladění relace je v neplatném stavu a je nutné restartovat.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

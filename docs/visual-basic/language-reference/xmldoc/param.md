@@ -5,12 +5,12 @@ helpviewer_keywords:
 - param XML tag
 - <param> XML tag
 ms.assetid: 4e32e86f-f6f3-4301-b7fc-2f321fb54368
-ms.openlocfilehash: c556b68ea99650f96ec16c220d1e2367f3e5cfde
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: f80d9f3024107ace2102fb9ec9e8657d3219aafa
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56966486"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57502238"
 ---
 # <a name="param-visual-basic"></a>\<Param > (Visual Basic)
 Definuje parametr název a popis.  
@@ -21,7 +21,7 @@ Definuje parametr název a popis.
 <param name="name">description</param>  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `name`  
  Název parametru metody. Název uzavřete do dvojitých uvozovek ("").  
   

@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 52962ea7d2cf3dd1822b1a36cc6cfcb56bc427f4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8eef616d51febd1b919e0a1936406551f441b98c
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33417190"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57468972"
 ---
 # <a name="icordebugthreadgetid-method"></a>ICorDebugThread::GetID – metoda
-Získá aktuální identifikátor active součástí této ICorDebugThread.  
+Získá identifikátor aktuálního operačního systému active část této ICorDebugThread.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,15 +35,15 @@ HRESULT GetID (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `pdwThreadId`  
- [out] Identifikátor vlákno.  
+ [out] Identifikátor vlákna.  
   
 ## <a name="remarks"></a>Poznámky  
- Identifikátor operačního systému by mohl změnit během spuštění procesu a může být jinou hodnotu pro různé části vlákno.  
+ Identifikátor operační systém by mohl změnit během spuštění procesu a může mít jinou hodnotu pro různé části vlákna.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

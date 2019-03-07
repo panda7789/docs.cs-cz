@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 3db215aa-e180-4f70-8d23-6d5a0ffbc8e5
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5365b05db58d807cc010b763ca338ce76c8d7632
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c44260d3b5baa18bc24f85cdbea94016b43291e2
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54578767"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57489780"
 ---
 # <a name="icordebugsymbolprovidergetassemblyimagebytes-method"></a>ICorDebugSymbolProvider::GetAssemblyImageBytes – metoda
 Přečte data ze sloučeného sestavení sloučeného sestavení podle relativní virtuální adresu (RVA).  
@@ -24,7 +24,7 @@ HRESULT GetAssemblyImageBytes(
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `rva`  
  [in] Relativní virtuální adresu (RVA) ve sloučené sestavení.  
   
