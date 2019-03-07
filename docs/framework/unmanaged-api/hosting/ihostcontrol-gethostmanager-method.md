@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 821968fbde6d3f5434b83adf8c9661fe39d96293
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 459691354ec12f61c7ab321fe832d8fc802a36d9
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54742026"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57494295"
 ---
-# <a name="ihostcontrolgethostmanager-method"></a><span data-ttu-id="21464-102">IHostControl::GetHostManager – metoda</span><span class="sxs-lookup"><span data-stu-id="21464-102">IHostControl::GetHostManager Method</span></span>
-<span data-ttu-id="21464-103">Získá ukazatel rozhraní k implementaci rozhraní hostitele se zadanou `IID`.</span><span class="sxs-lookup"><span data-stu-id="21464-103">Gets an interface pointer to the host's implementation of the interface with the specified `IID`.</span></span>  
+# <a name="ihostcontrolgethostmanager-method"></a><span data-ttu-id="9220a-102">IHostControl::GetHostManager – metoda</span><span class="sxs-lookup"><span data-stu-id="9220a-102">IHostControl::GetHostManager Method</span></span>
+<span data-ttu-id="9220a-103">Získá ukazatel rozhraní k implementaci rozhraní hostitele se zadanou `IID`.</span><span class="sxs-lookup"><span data-stu-id="9220a-103">Gets an interface pointer to the host's implementation of the interface with the specified `IID`.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="21464-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="21464-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="9220a-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="9220a-104">Syntax</span></span>  
   
 ```  
 HRESULT GetHostManager (  
@@ -36,59 +36,59 @@ HRESULT GetHostManager (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="21464-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="21464-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="9220a-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="9220a-105">Parameters</span></span>  
  `riid`  
- <span data-ttu-id="21464-106">[in] `IID` Rozhraní, které modul CLR (CLR) je pro dotazování.</span><span class="sxs-lookup"><span data-stu-id="21464-106">[in] The `IID` of the interface that the common language runtime (CLR) is querying for.</span></span>  
+ <span data-ttu-id="9220a-106">[in] `IID` Rozhraní, které modul CLR (CLR) je pro dotazování.</span><span class="sxs-lookup"><span data-stu-id="9220a-106">[in] The `IID` of the interface that the common language runtime (CLR) is querying for.</span></span>  
   
  `ppObject`  
- <span data-ttu-id="21464-107">[out] Ukazatel na rozhraní implementované hostitele, nebo hodnota null, pokud hostitel nepodporuje toto rozhraní.</span><span class="sxs-lookup"><span data-stu-id="21464-107">[out] A pointer to the host-implemented interface, or null if the host does not support this interface.</span></span>  
+ <span data-ttu-id="9220a-107">[out] Ukazatel na rozhraní implementované hostitele, nebo hodnota null, pokud hostitel nepodporuje toto rozhraní.</span><span class="sxs-lookup"><span data-stu-id="9220a-107">[out] A pointer to the host-implemented interface, or null if the host does not support this interface.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="21464-108">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="21464-108">Return Value</span></span>  
+## <a name="return-value"></a><span data-ttu-id="9220a-108">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="9220a-108">Return Value</span></span>  
   
-|<span data-ttu-id="21464-109">HRESULT</span><span class="sxs-lookup"><span data-stu-id="21464-109">HRESULT</span></span>|<span data-ttu-id="21464-110">Popis</span><span class="sxs-lookup"><span data-stu-id="21464-110">Description</span></span>|  
+|<span data-ttu-id="9220a-109">HRESULT</span><span class="sxs-lookup"><span data-stu-id="9220a-109">HRESULT</span></span>|<span data-ttu-id="9220a-110">Popis</span><span class="sxs-lookup"><span data-stu-id="9220a-110">Description</span></span>|  
 |-------------|-----------------|  
-|<span data-ttu-id="21464-111">S_OK</span><span class="sxs-lookup"><span data-stu-id="21464-111">S_OK</span></span>|<span data-ttu-id="21464-112">`GetHostManager` bylo úspěšně vráceno.</span><span class="sxs-lookup"><span data-stu-id="21464-112">`GetHostManager` returned successfully.</span></span>|  
-|<span data-ttu-id="21464-113">HOST_E_CLRNOTAVAILABLE</span><span class="sxs-lookup"><span data-stu-id="21464-113">HOST_E_CLRNOTAVAILABLE</span></span>|<span data-ttu-id="21464-114">Modul CLR se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.</span><span class="sxs-lookup"><span data-stu-id="21464-114">The CLR has not been loaded into a process, or the CLR is in a state in which it cannot run managed code or process the call successfully.</span></span>|  
-|<span data-ttu-id="21464-115">HOST_E_TIMEOUT</span><span class="sxs-lookup"><span data-stu-id="21464-115">HOST_E_TIMEOUT</span></span>|<span data-ttu-id="21464-116">Vypršel časový limit volání.</span><span class="sxs-lookup"><span data-stu-id="21464-116">The call timed out.</span></span>|  
-|<span data-ttu-id="21464-117">HOST_E_NOT_OWNER</span><span class="sxs-lookup"><span data-stu-id="21464-117">HOST_E_NOT_OWNER</span></span>|<span data-ttu-id="21464-118">Volající není vlastníkem zámku.</span><span class="sxs-lookup"><span data-stu-id="21464-118">The caller does not own the lock.</span></span>|  
-|<span data-ttu-id="21464-119">HOST_E_ABANDONED</span><span class="sxs-lookup"><span data-stu-id="21464-119">HOST_E_ABANDONED</span></span>|<span data-ttu-id="21464-120">Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.</span><span class="sxs-lookup"><span data-stu-id="21464-120">An event was canceled while a blocked thread or fiber was waiting on it.</span></span>|  
-|<span data-ttu-id="21464-121">E_FAIL</span><span class="sxs-lookup"><span data-stu-id="21464-121">E_FAIL</span></span>|<span data-ttu-id="21464-122">Došlo k neznámé katastrofických selhání.</span><span class="sxs-lookup"><span data-stu-id="21464-122">An unknown catastrophic failure occurred.</span></span> <span data-ttu-id="21464-123">Po návratu metody E_FAIL, modul CLR už nejsou použitelné v rámci procesu.</span><span class="sxs-lookup"><span data-stu-id="21464-123">When a method returns E_FAIL, the CLR is no longer usable within the process.</span></span> <span data-ttu-id="21464-124">Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.</span><span class="sxs-lookup"><span data-stu-id="21464-124">Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.</span></span>|  
-|<span data-ttu-id="21464-125">E_INVALIDARG</span><span class="sxs-lookup"><span data-stu-id="21464-125">E_INVALIDARG</span></span>|<span data-ttu-id="21464-126">Požadovaná `IID` není platný.</span><span class="sxs-lookup"><span data-stu-id="21464-126">The requested `IID` is not valid.</span></span>|  
-|<span data-ttu-id="21464-127">E_NOINTERFACE</span><span class="sxs-lookup"><span data-stu-id="21464-127">E_NOINTERFACE</span></span>|<span data-ttu-id="21464-128">Požadované rozhraní není podporováno.</span><span class="sxs-lookup"><span data-stu-id="21464-128">The requested interface is not supported.</span></span>|  
+|<span data-ttu-id="9220a-111">S_OK</span><span class="sxs-lookup"><span data-stu-id="9220a-111">S_OK</span></span>|<span data-ttu-id="9220a-112">`GetHostManager` bylo úspěšně vráceno.</span><span class="sxs-lookup"><span data-stu-id="9220a-112">`GetHostManager` returned successfully.</span></span>|  
+|<span data-ttu-id="9220a-113">HOST_E_CLRNOTAVAILABLE</span><span class="sxs-lookup"><span data-stu-id="9220a-113">HOST_E_CLRNOTAVAILABLE</span></span>|<span data-ttu-id="9220a-114">Modul CLR se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.</span><span class="sxs-lookup"><span data-stu-id="9220a-114">The CLR has not been loaded into a process, or the CLR is in a state in which it cannot run managed code or process the call successfully.</span></span>|  
+|<span data-ttu-id="9220a-115">HOST_E_TIMEOUT</span><span class="sxs-lookup"><span data-stu-id="9220a-115">HOST_E_TIMEOUT</span></span>|<span data-ttu-id="9220a-116">Vypršel časový limit volání.</span><span class="sxs-lookup"><span data-stu-id="9220a-116">The call timed out.</span></span>|  
+|<span data-ttu-id="9220a-117">HOST_E_NOT_OWNER</span><span class="sxs-lookup"><span data-stu-id="9220a-117">HOST_E_NOT_OWNER</span></span>|<span data-ttu-id="9220a-118">Volající není vlastníkem zámku.</span><span class="sxs-lookup"><span data-stu-id="9220a-118">The caller does not own the lock.</span></span>|  
+|<span data-ttu-id="9220a-119">HOST_E_ABANDONED</span><span class="sxs-lookup"><span data-stu-id="9220a-119">HOST_E_ABANDONED</span></span>|<span data-ttu-id="9220a-120">Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.</span><span class="sxs-lookup"><span data-stu-id="9220a-120">An event was canceled while a blocked thread or fiber was waiting on it.</span></span>|  
+|<span data-ttu-id="9220a-121">E_FAIL</span><span class="sxs-lookup"><span data-stu-id="9220a-121">E_FAIL</span></span>|<span data-ttu-id="9220a-122">Došlo k neznámé katastrofických selhání.</span><span class="sxs-lookup"><span data-stu-id="9220a-122">An unknown catastrophic failure occurred.</span></span> <span data-ttu-id="9220a-123">Po návratu metody E_FAIL, modul CLR už nejsou použitelné v rámci procesu.</span><span class="sxs-lookup"><span data-stu-id="9220a-123">When a method returns E_FAIL, the CLR is no longer usable within the process.</span></span> <span data-ttu-id="9220a-124">Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.</span><span class="sxs-lookup"><span data-stu-id="9220a-124">Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.</span></span>|  
+|<span data-ttu-id="9220a-125">E_INVALIDARG</span><span class="sxs-lookup"><span data-stu-id="9220a-125">E_INVALIDARG</span></span>|<span data-ttu-id="9220a-126">Požadovaná `IID` není platný.</span><span class="sxs-lookup"><span data-stu-id="9220a-126">The requested `IID` is not valid.</span></span>|  
+|<span data-ttu-id="9220a-127">E_NOINTERFACE</span><span class="sxs-lookup"><span data-stu-id="9220a-127">E_NOINTERFACE</span></span>|<span data-ttu-id="9220a-128">Požadované rozhraní není podporováno.</span><span class="sxs-lookup"><span data-stu-id="9220a-128">The requested interface is not supported.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="21464-129">Poznámky</span><span class="sxs-lookup"><span data-stu-id="21464-129">Remarks</span></span>  
- <span data-ttu-id="21464-130">Modul CLR provádí dotazování hostitele k určení, jestli podporuje jednu nebo více z následujících rozhraní:</span><span class="sxs-lookup"><span data-stu-id="21464-130">The CLR queries the host to determine whether it supports one or more of the following interfaces:</span></span>  
+## <a name="remarks"></a><span data-ttu-id="9220a-129">Poznámky</span><span class="sxs-lookup"><span data-stu-id="9220a-129">Remarks</span></span>  
+ <span data-ttu-id="9220a-130">Modul CLR provádí dotazování hostitele k určení, jestli podporuje jednu nebo více z následujících rozhraní:</span><span class="sxs-lookup"><span data-stu-id="9220a-130">The CLR queries the host to determine whether it supports one or more of the following interfaces:</span></span>  
   
--   [<span data-ttu-id="21464-131">IHostMemoryManager</span><span class="sxs-lookup"><span data-stu-id="21464-131">IHostMemoryManager</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-interface.md)  
+-   [<span data-ttu-id="9220a-131">IHostMemoryManager</span><span class="sxs-lookup"><span data-stu-id="9220a-131">IHostMemoryManager</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-interface.md)  
   
--   [<span data-ttu-id="21464-132">IHostTaskManager</span><span class="sxs-lookup"><span data-stu-id="21464-132">IHostTaskManager</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-interface.md)  
+-   [<span data-ttu-id="9220a-132">IHostTaskManager</span><span class="sxs-lookup"><span data-stu-id="9220a-132">IHostTaskManager</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-interface.md)  
   
--   [<span data-ttu-id="21464-133">IHostThreadPoolManager</span><span class="sxs-lookup"><span data-stu-id="21464-133">IHostThreadPoolManager</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-interface.md)  
+-   [<span data-ttu-id="9220a-133">IHostThreadPoolManager</span><span class="sxs-lookup"><span data-stu-id="9220a-133">IHostThreadPoolManager</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-interface.md)  
   
--   [<span data-ttu-id="21464-134">IHostIoCompletionManager</span><span class="sxs-lookup"><span data-stu-id="21464-134">IHostIoCompletionManager</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-interface.md)  
+-   [<span data-ttu-id="9220a-134">IHostIoCompletionManager</span><span class="sxs-lookup"><span data-stu-id="9220a-134">IHostIoCompletionManager</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-interface.md)  
   
--   [<span data-ttu-id="21464-135">IHostSyncManager</span><span class="sxs-lookup"><span data-stu-id="21464-135">IHostSyncManager</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostsyncmanager-interface.md)  
+-   [<span data-ttu-id="9220a-135">IHostSyncManager</span><span class="sxs-lookup"><span data-stu-id="9220a-135">IHostSyncManager</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostsyncmanager-interface.md)  
   
--   [<span data-ttu-id="21464-136">IHostAssemblyManager</span><span class="sxs-lookup"><span data-stu-id="21464-136">IHostAssemblyManager</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostassemblymanager-interface.md)  
+-   [<span data-ttu-id="9220a-136">IHostAssemblyManager</span><span class="sxs-lookup"><span data-stu-id="9220a-136">IHostAssemblyManager</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostassemblymanager-interface.md)  
   
--   [<span data-ttu-id="21464-137">IHostGCManager</span><span class="sxs-lookup"><span data-stu-id="21464-137">IHostGCManager</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostgcmanager-interface.md)  
+-   [<span data-ttu-id="9220a-137">IHostGCManager</span><span class="sxs-lookup"><span data-stu-id="9220a-137">IHostGCManager</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostgcmanager-interface.md)  
   
--   [<span data-ttu-id="21464-138">IHostPolicyManager</span><span class="sxs-lookup"><span data-stu-id="21464-138">IHostPolicyManager</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostpolicymanager-interface.md)  
+-   [<span data-ttu-id="9220a-138">IHostPolicyManager</span><span class="sxs-lookup"><span data-stu-id="9220a-138">IHostPolicyManager</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostpolicymanager-interface.md)  
   
--   [<span data-ttu-id="21464-139">IHostSecurityManager</span><span class="sxs-lookup"><span data-stu-id="21464-139">IHostSecurityManager</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritymanager-interface.md)  
+-   [<span data-ttu-id="9220a-139">IHostSecurityManager</span><span class="sxs-lookup"><span data-stu-id="9220a-139">IHostSecurityManager</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritymanager-interface.md)  
   
- <span data-ttu-id="21464-140">Pokud hostitel podporuje rozhraní zadané, nastaví `ppObject` k její implementaci rozhraní.</span><span class="sxs-lookup"><span data-stu-id="21464-140">If the host supports the specified interface, it sets `ppObject` to its implementation of that interface.</span></span> <span data-ttu-id="21464-141">Jinak, nastaví `ppObject` na hodnotu null.</span><span class="sxs-lookup"><span data-stu-id="21464-141">Otherwise, it sets `ppObject` to null.</span></span>  
+ <span data-ttu-id="9220a-140">Pokud hostitel podporuje rozhraní zadané, nastaví `ppObject` k její implementaci rozhraní.</span><span class="sxs-lookup"><span data-stu-id="9220a-140">If the host supports the specified interface, it sets `ppObject` to its implementation of that interface.</span></span> <span data-ttu-id="9220a-141">Jinak, nastaví `ppObject` na hodnotu null.</span><span class="sxs-lookup"><span data-stu-id="9220a-141">Otherwise, it sets `ppObject` to null.</span></span>  
   
- <span data-ttu-id="21464-142">Modul CLR nevolá `Release` na správci hostitele, i v případě, že ji vypnout.</span><span class="sxs-lookup"><span data-stu-id="21464-142">The CLR does not call `Release` on host managers, even when you shut it down.</span></span>  
+ <span data-ttu-id="9220a-142">Modul CLR nevolá `Release` na správci hostitele, i v případě, že ji vypnout.</span><span class="sxs-lookup"><span data-stu-id="9220a-142">The CLR does not call `Release` on host managers, even when you shut it down.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="21464-143">Požadavky</span><span class="sxs-lookup"><span data-stu-id="21464-143">Requirements</span></span>  
- <span data-ttu-id="21464-144">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="21464-144">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="9220a-143">Požadavky</span><span class="sxs-lookup"><span data-stu-id="9220a-143">Requirements</span></span>  
+ <span data-ttu-id="9220a-144">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="9220a-144">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="21464-145">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="21464-145">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="9220a-145">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="9220a-145">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="21464-146">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="21464-146">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="9220a-146">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="9220a-146">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="21464-147">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="21464-147">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="9220a-147">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="9220a-147">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="21464-148">Viz také:</span><span class="sxs-lookup"><span data-stu-id="21464-148">See also</span></span>
-- [<span data-ttu-id="21464-149">IHostControl – rozhraní</span><span class="sxs-lookup"><span data-stu-id="21464-149">IHostControl Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostcontrol-interface.md)
+## <a name="see-also"></a><span data-ttu-id="9220a-148">Viz také:</span><span class="sxs-lookup"><span data-stu-id="9220a-148">See also</span></span>
+- [<span data-ttu-id="9220a-149">IHostControl – rozhraní</span><span class="sxs-lookup"><span data-stu-id="9220a-149">IHostControl Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostcontrol-interface.md)

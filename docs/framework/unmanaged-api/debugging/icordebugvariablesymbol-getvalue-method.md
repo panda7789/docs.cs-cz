@@ -4,17 +4,17 @@ ms.date: 03/30/2017
 ms.assetid: 90abece1-392e-4ade-94a1-30c75b0f7074
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 14412c11010b94fdc462c5aa29e9bc769b2633cc
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 3c626d21f391899a15e5ea35c47d00f1f539fea4
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54496751"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57488861"
 ---
-# <a name="icordebugvariablesymbolgetvalue-method"></a><span data-ttu-id="180dd-102">ICorDebugVariableSymbol::GetValue – metoda</span><span class="sxs-lookup"><span data-stu-id="180dd-102">ICorDebugVariableSymbol::GetValue Method</span></span>
-<span data-ttu-id="180dd-103">Získá hodnotu proměnné jako bajtové pole.</span><span class="sxs-lookup"><span data-stu-id="180dd-103">Gets the value of a variable as a byte array.</span></span>  
+# <a name="icordebugvariablesymbolgetvalue-method"></a><span data-ttu-id="7c061-102">ICorDebugVariableSymbol::GetValue – metoda</span><span class="sxs-lookup"><span data-stu-id="7c061-102">ICorDebugVariableSymbol::GetValue Method</span></span>
+<span data-ttu-id="7c061-103">Získá hodnotu proměnné jako bajtové pole.</span><span class="sxs-lookup"><span data-stu-id="7c061-103">Gets the value of a variable as a byte array.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="180dd-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="180dd-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="7c061-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="7c061-104">Syntax</span></span>  
   
 ```  
 HRESULT GetValue(  
@@ -27,39 +27,39 @@ HRESULT GetValue(
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="180dd-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="180dd-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="7c061-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="7c061-105">Parameters</span></span>  
  `offset`  
- <span data-ttu-id="180dd-106">[in] Počáteční posun v proměnné, ze kterého se má načíst hodnotu.</span><span class="sxs-lookup"><span data-stu-id="180dd-106">[in] The starting offset in the variable from which to read the value.</span></span> <span data-ttu-id="180dd-107">Tento parametr se používá při čtení pole člena v objektu.</span><span class="sxs-lookup"><span data-stu-id="180dd-107">This parameter is used when reading member fields in an object.</span></span>  
+ <span data-ttu-id="7c061-106">[in] Počáteční posun v proměnné, ze kterého se má načíst hodnotu.</span><span class="sxs-lookup"><span data-stu-id="7c061-106">[in] The starting offset in the variable from which to read the value.</span></span> <span data-ttu-id="7c061-107">Tento parametr se používá při čtení pole člena v objektu.</span><span class="sxs-lookup"><span data-stu-id="7c061-107">This parameter is used when reading member fields in an object.</span></span>  
   
  `cbContext`  
- <span data-ttu-id="180dd-108">[in] Velikost v bajtech `context` argument.</span><span class="sxs-lookup"><span data-stu-id="180dd-108">[in] The size in bytes of the `context` argument.</span></span>  
+ <span data-ttu-id="7c061-108">[in] Velikost v bajtech `context` argument.</span><span class="sxs-lookup"><span data-stu-id="7c061-108">[in] The size in bytes of the `context` argument.</span></span>  
   
  `context`  
- <span data-ttu-id="180dd-109">[in] Kontext vlákna použít ke čtení hodnoty.</span><span class="sxs-lookup"><span data-stu-id="180dd-109">[in] The thread context used to read the value.</span></span>  
+ <span data-ttu-id="7c061-109">[in] Kontext vlákna použít ke čtení hodnoty.</span><span class="sxs-lookup"><span data-stu-id="7c061-109">[in] The thread context used to read the value.</span></span>  
   
  `cbValue`  
- <span data-ttu-id="180dd-110">[in] Velikost v bajtech `pValue` vyrovnávací paměti.</span><span class="sxs-lookup"><span data-stu-id="180dd-110">[in] The size in bytes of the `pValue` buffer.</span></span>  
+ <span data-ttu-id="7c061-110">[in] Velikost v bajtech `pValue` vyrovnávací paměti.</span><span class="sxs-lookup"><span data-stu-id="7c061-110">[in] The size in bytes of the `pValue` buffer.</span></span>  
   
  `pcbValue`  
- <span data-ttu-id="180dd-111">[out] Počet bajtů zapsaný ve skutečnosti na `pValue` vyrovnávací paměti.</span><span class="sxs-lookup"><span data-stu-id="180dd-111">[out] The number of bytes actually written to the `pValue` buffer.</span></span>  
+ <span data-ttu-id="7c061-111">[out] Počet bajtů zapsaný ve skutečnosti na `pValue` vyrovnávací paměti.</span><span class="sxs-lookup"><span data-stu-id="7c061-111">[out] The number of bytes actually written to the `pValue` buffer.</span></span>  
   
  `pValue`  
- <span data-ttu-id="180dd-112">[out] Bajtové pole obsahující hodnotu proměnné.</span><span class="sxs-lookup"><span data-stu-id="180dd-112">[out] A byte array that contains the value of the variable.</span></span>  
+ <span data-ttu-id="7c061-112">[out] Bajtové pole obsahující hodnotu proměnné.</span><span class="sxs-lookup"><span data-stu-id="7c061-112">[out] A byte array that contains the value of the variable.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="180dd-113">Poznámky</span><span class="sxs-lookup"><span data-stu-id="180dd-113">Remarks</span></span>  
+## <a name="remarks"></a><span data-ttu-id="7c061-113">Poznámky</span><span class="sxs-lookup"><span data-stu-id="7c061-113">Remarks</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="180dd-114">Tato metoda je pouze k dispozici s .NET Native.</span><span class="sxs-lookup"><span data-stu-id="180dd-114">This method is available with .NET Native only.</span></span>  
+>  <span data-ttu-id="7c061-114">Tato metoda je pouze k dispozici s .NET Native.</span><span class="sxs-lookup"><span data-stu-id="7c061-114">This method is available with .NET Native only.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="180dd-115">Požadavky</span><span class="sxs-lookup"><span data-stu-id="180dd-115">Requirements</span></span>  
- <span data-ttu-id="180dd-116">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="180dd-116">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="7c061-115">Požadavky</span><span class="sxs-lookup"><span data-stu-id="7c061-115">Requirements</span></span>  
+ <span data-ttu-id="7c061-116">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="7c061-116">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="180dd-117">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="180dd-117">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="7c061-117">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="7c061-117">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="180dd-118">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="180dd-118">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="7c061-118">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="7c061-118">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="180dd-119">**Verze rozhraní .NET framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]</span><span class="sxs-lookup"><span data-stu-id="180dd-119">**.NET Framework Versions:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]</span></span>  
+ <span data-ttu-id="7c061-119">**Verze rozhraní .NET framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]</span><span class="sxs-lookup"><span data-stu-id="7c061-119">**.NET Framework Versions:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="180dd-120">Viz také:</span><span class="sxs-lookup"><span data-stu-id="180dd-120">See also</span></span>
-- [<span data-ttu-id="180dd-121">ICorDebugVariableSymbol – rozhraní</span><span class="sxs-lookup"><span data-stu-id="180dd-121">ICorDebugVariableSymbol Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablesymbol-interface.md)
-- [<span data-ttu-id="180dd-122">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="180dd-122">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+## <a name="see-also"></a><span data-ttu-id="7c061-120">Viz také:</span><span class="sxs-lookup"><span data-stu-id="7c061-120">See also</span></span>
+- [<span data-ttu-id="7c061-121">ICorDebugVariableSymbol – rozhraní</span><span class="sxs-lookup"><span data-stu-id="7c061-121">ICorDebugVariableSymbol Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablesymbol-interface.md)
+- [<span data-ttu-id="7c061-122">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="7c061-122">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

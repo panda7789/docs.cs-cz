@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ff79f6e439f2bafd598d9d416cc6f7404f4c231d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 8c640e565374adfdc2a409036910f1a7e0f6f8ba
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54547329"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57472262"
 ---
-# <a name="icorprofilerinfosetilfunctionbody-method"></a><span data-ttu-id="6b0b9-102">ICorProfilerInfo::SetILFunctionBody – metoda</span><span class="sxs-lookup"><span data-stu-id="6b0b9-102">ICorProfilerInfo::SetILFunctionBody Method</span></span>
-<span data-ttu-id="6b0b9-103">Nahrazuje tělo zadanou funkci v zadaném modulu.</span><span class="sxs-lookup"><span data-stu-id="6b0b9-103">Replaces the body of the specified function in the specified module.</span></span>  
+# <a name="icorprofilerinfosetilfunctionbody-method"></a><span data-ttu-id="670b3-102">ICorProfilerInfo::SetILFunctionBody – metoda</span><span class="sxs-lookup"><span data-stu-id="670b3-102">ICorProfilerInfo::SetILFunctionBody Method</span></span>
+<span data-ttu-id="670b3-103">Nahrazuje tělo zadanou funkci v zadaném modulu.</span><span class="sxs-lookup"><span data-stu-id="670b3-103">Replaces the body of the specified function in the specified module.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="6b0b9-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="6b0b9-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="670b3-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="670b3-104">Syntax</span></span>  
   
 ```  
 HRESULT SetILFunctionBody(  
@@ -36,31 +36,31 @@ HRESULT SetILFunctionBody(
     [in] LPCBYTE     pbNewILMethodHeader);  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="6b0b9-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="6b0b9-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="670b3-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="670b3-105">Parameters</span></span>  
  `moduleId`  
- <span data-ttu-id="6b0b9-106">[in] ID modulu, ve kterém se funkce nachází.</span><span class="sxs-lookup"><span data-stu-id="6b0b9-106">[in] The ID of the module in which the function resides.</span></span>  
+ <span data-ttu-id="670b3-106">[in] ID modulu, ve kterém se funkce nachází.</span><span class="sxs-lookup"><span data-stu-id="670b3-106">[in] The ID of the module in which the function resides.</span></span>  
   
  `methodid`  
- <span data-ttu-id="6b0b9-107">[in] Token pro které se mají nahradit tělo funkce.</span><span class="sxs-lookup"><span data-stu-id="6b0b9-107">[in] The token of the function for which to replace the body.</span></span>  
+ <span data-ttu-id="670b3-107">[in] Token pro které se mají nahradit tělo funkce.</span><span class="sxs-lookup"><span data-stu-id="670b3-107">[in] The token of the function for which to replace the body.</span></span>  
   
  `pbNewILMethodHeader`  
- <span data-ttu-id="6b0b9-108">[in] Nové záhlaví pro funkci.</span><span class="sxs-lookup"><span data-stu-id="6b0b9-108">[in] The new header for the function.</span></span>  
+ <span data-ttu-id="670b3-108">[in] Nové záhlaví pro funkci.</span><span class="sxs-lookup"><span data-stu-id="670b3-108">[in] The new header for the function.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="6b0b9-109">Poznámky</span><span class="sxs-lookup"><span data-stu-id="6b0b9-109">Remarks</span></span>  
- <span data-ttu-id="6b0b9-110">`SetILFunctionBody` Metoda nahrazuje relativní virtuální adresu funkce v metadatech tak, aby odkazuje na nové tělo funkce a upraví interních datových struktur podle potřeby.</span><span class="sxs-lookup"><span data-stu-id="6b0b9-110">The `SetILFunctionBody` method replaces the relative virtual address of the function in the metadata so that it points to the new function body, and adjusts any internal data structures as required.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="670b3-109">Poznámky</span><span class="sxs-lookup"><span data-stu-id="670b3-109">Remarks</span></span>  
+ <span data-ttu-id="670b3-110">`SetILFunctionBody` Metoda nahrazuje relativní virtuální adresu funkce v metadatech tak, aby odkazuje na nové tělo funkce a upraví interních datových struktur podle potřeby.</span><span class="sxs-lookup"><span data-stu-id="670b3-110">The `SetILFunctionBody` method replaces the relative virtual address of the function in the metadata so that it points to the new function body, and adjusts any internal data structures as required.</span></span>  
   
- <span data-ttu-id="6b0b9-111">`SetILFunctionBody` Metodu lze volat pouze funkce, které nikdy byl zkompilován kompilátorem just-in-time (JIT).</span><span class="sxs-lookup"><span data-stu-id="6b0b9-111">The `SetILFunctionBody` method can be called on only those functions that have never been compiled by a just-in-time (JIT) compiler.</span></span>  
+ <span data-ttu-id="670b3-111">`SetILFunctionBody` Metodu lze volat pouze funkce, které nikdy byl zkompilován kompilátorem just-in-time (JIT).</span><span class="sxs-lookup"><span data-stu-id="670b3-111">The `SetILFunctionBody` method can be called on only those functions that have never been compiled by a just-in-time (JIT) compiler.</span></span>  
   
- <span data-ttu-id="6b0b9-112">Použití [icorprofilerinfo::getilfunctionbodyallocator –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getilfunctionbodyallocator-method.md) metoda k přidělení místa pro nové metody k zajištění, že vyrovnávací paměť je kompatibilní.</span><span class="sxs-lookup"><span data-stu-id="6b0b9-112">Use the [ICorProfilerInfo::GetILFunctionBodyAllocator](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getilfunctionbodyallocator-method.md) method to allocate space for the new method to ensure that the buffer is compatible.</span></span>  
+ <span data-ttu-id="670b3-112">Použití [icorprofilerinfo::getilfunctionbodyallocator –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getilfunctionbodyallocator-method.md) metoda k přidělení místa pro nové metody k zajištění, že vyrovnávací paměť je kompatibilní.</span><span class="sxs-lookup"><span data-stu-id="670b3-112">Use the [ICorProfilerInfo::GetILFunctionBodyAllocator](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getilfunctionbodyallocator-method.md) method to allocate space for the new method to ensure that the buffer is compatible.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="6b0b9-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="6b0b9-113">Requirements</span></span>  
- <span data-ttu-id="6b0b9-114">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="6b0b9-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="670b3-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="670b3-113">Requirements</span></span>  
+ <span data-ttu-id="670b3-114">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="670b3-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="6b0b9-115">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="6b0b9-115">**Header:** CorProf.idl, CorProf.h</span></span>  
+ <span data-ttu-id="670b3-115">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="670b3-115">**Header:** CorProf.idl, CorProf.h</span></span>  
   
- <span data-ttu-id="6b0b9-116">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="6b0b9-116">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="670b3-116">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="670b3-116">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="6b0b9-117">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="6b0b9-117">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="670b3-117">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="670b3-117">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="6b0b9-118">Viz také:</span><span class="sxs-lookup"><span data-stu-id="6b0b9-118">See also</span></span>
-- [<span data-ttu-id="6b0b9-119">ICorProfilerInfo – rozhraní</span><span class="sxs-lookup"><span data-stu-id="6b0b9-119">ICorProfilerInfo Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+## <a name="see-also"></a><span data-ttu-id="670b3-118">Viz také:</span><span class="sxs-lookup"><span data-stu-id="670b3-118">See also</span></span>
+- [<span data-ttu-id="670b3-119">ICorProfilerInfo – rozhraní</span><span class="sxs-lookup"><span data-stu-id="670b3-119">ICorProfilerInfo Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)

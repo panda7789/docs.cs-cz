@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 61aece9dd506d6e4af8718e45cc772d120a7d579
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5df5bed730211676acc4770c91cc6551bde0179b
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33401658"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464721"
 ---
-# <a name="icordebugbreakpointisactive-method"></a><span data-ttu-id="c4fe5-102">ICorDebugBreakpoint::IsActive – metoda</span><span class="sxs-lookup"><span data-stu-id="c4fe5-102">ICorDebugBreakpoint::IsActive Method</span></span>
-<span data-ttu-id="c4fe5-103">Získá hodnotu, která určuje, jestli to `ICorDebugBreakpoint` je aktivní.</span><span class="sxs-lookup"><span data-stu-id="c4fe5-103">Gets a value that indicates whether this `ICorDebugBreakpoint` is active.</span></span>  
+# <a name="icordebugbreakpointisactive-method"></a><span data-ttu-id="5aa6e-102">ICorDebugBreakpoint::IsActive – metoda</span><span class="sxs-lookup"><span data-stu-id="5aa6e-102">ICorDebugBreakpoint::IsActive Method</span></span>
+<span data-ttu-id="5aa6e-103">Získá hodnotu, která určuje, jestli to `ICorDebugBreakpoint` je aktivní.</span><span class="sxs-lookup"><span data-stu-id="5aa6e-103">Gets a value that indicates whether this `ICorDebugBreakpoint` is active.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="c4fe5-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c4fe5-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="5aa6e-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="5aa6e-104">Syntax</span></span>  
   
 ```  
 HRESULT IsActive (  
@@ -35,15 +35,15 @@ HRESULT IsActive (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="c4fe5-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="c4fe5-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="5aa6e-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="5aa6e-105">Parameters</span></span>  
  `pbActive`  
- <span data-ttu-id="c4fe5-106">[out] `true` Pokud tato zarážek je aktivní, jinak hodnota `false`.</span><span class="sxs-lookup"><span data-stu-id="c4fe5-106">[out] `true` if this breakpoint is active; otherwise, `false`.</span></span>  
+ <span data-ttu-id="5aa6e-106">[out] `true` Pokud tato zarážka je aktivní, jinak `false`.</span><span class="sxs-lookup"><span data-stu-id="5aa6e-106">[out] `true` if this breakpoint is active; otherwise, `false`.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="c4fe5-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="c4fe5-107">Requirements</span></span>  
- <span data-ttu-id="c4fe5-108">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="c4fe5-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="5aa6e-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="5aa6e-107">Requirements</span></span>  
+ <span data-ttu-id="5aa6e-108">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="5aa6e-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="c4fe5-109">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="c4fe5-109">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="5aa6e-109">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="5aa6e-109">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="c4fe5-110">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="c4fe5-110">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="5aa6e-110">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="5aa6e-110">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="c4fe5-111">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="c4fe5-111">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>
+ <span data-ttu-id="5aa6e-111">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="5aa6e-111">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>

@@ -17,48 +17,48 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e0089502519a5a5530b7ed2a5896f7c445ccb128
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 3fbd07638050b3861cd3cbfd45171ade5c19acb3
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54722635"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57480647"
 ---
-# <a name="icordebugthread3createstackwalk-method"></a><span data-ttu-id="6c31e-102">ICorDebugThread3::CreateStackWalk – metoda</span><span class="sxs-lookup"><span data-stu-id="6c31e-102">ICorDebugThread3::CreateStackWalk Method</span></span>
-<span data-ttu-id="6c31e-103">Vytvoří [ICorDebugStackWalk](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-interface.md) objektu pro vlákno, jehož zásobníku, které chcete vrátit zpět.</span><span class="sxs-lookup"><span data-stu-id="6c31e-103">Creates an [ICorDebugStackWalk](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-interface.md) object for the thread whose stack you want to unwind.</span></span>  
+# <a name="icordebugthread3createstackwalk-method"></a><span data-ttu-id="c7af6-102">ICorDebugThread3::CreateStackWalk – metoda</span><span class="sxs-lookup"><span data-stu-id="c7af6-102">ICorDebugThread3::CreateStackWalk Method</span></span>
+<span data-ttu-id="c7af6-103">Vytvoří [ICorDebugStackWalk](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-interface.md) objektu pro vlákno, jehož zásobníku, které chcete vrátit zpět.</span><span class="sxs-lookup"><span data-stu-id="c7af6-103">Creates an [ICorDebugStackWalk](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-interface.md) object for the thread whose stack you want to unwind.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="6c31e-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="6c31e-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="c7af6-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c7af6-104">Syntax</span></span>  
   
 ```  
 HRESULT CreateStackWalk([out] ICorDebugStackWalk **ppStackWalk);  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="6c31e-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="6c31e-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="c7af6-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="c7af6-105">Parameters</span></span>  
  `ppStackWalk`  
- <span data-ttu-id="6c31e-106">[out] Ukazatel na adresu [ICorDebugStackWalk](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-interface.md) objektu pro vlákno, jehož zásobníku, které chcete vrátit zpět.</span><span class="sxs-lookup"><span data-stu-id="6c31e-106">[out] A pointer to address of the [ICorDebugStackWalk](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-interface.md) object for the thread whose stack you want to unwind.</span></span>  
+ <span data-ttu-id="c7af6-106">[out] Ukazatel na adresu [ICorDebugStackWalk](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-interface.md) objektu pro vlákno, jehož zásobníku, které chcete vrátit zpět.</span><span class="sxs-lookup"><span data-stu-id="c7af6-106">[out] A pointer to address of the [ICorDebugStackWalk](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-interface.md) object for the thread whose stack you want to unwind.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="6c31e-107">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="6c31e-107">Return Value</span></span>  
- <span data-ttu-id="6c31e-108">Tato metoda vrátí následující konkrétní HRESULT, stejně jako hodnota HRESULT chyby, které označují selhání metoda.</span><span class="sxs-lookup"><span data-stu-id="6c31e-108">This method returns the following specific HRESULTs as well as HRESULT errors that indicate method failure.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="c7af6-107">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="c7af6-107">Return Value</span></span>  
+ <span data-ttu-id="c7af6-108">Tato metoda vrátí následující konkrétní HRESULT, stejně jako hodnota HRESULT chyby, které označují selhání metoda.</span><span class="sxs-lookup"><span data-stu-id="c7af6-108">This method returns the following specific HRESULTs as well as HRESULT errors that indicate method failure.</span></span>  
   
-|<span data-ttu-id="6c31e-109">HRESULT</span><span class="sxs-lookup"><span data-stu-id="6c31e-109">HRESULT</span></span>|<span data-ttu-id="6c31e-110">Popis</span><span class="sxs-lookup"><span data-stu-id="6c31e-110">Description</span></span>|  
+|<span data-ttu-id="c7af6-109">HRESULT</span><span class="sxs-lookup"><span data-stu-id="c7af6-109">HRESULT</span></span>|<span data-ttu-id="c7af6-110">Popis</span><span class="sxs-lookup"><span data-stu-id="c7af6-110">Description</span></span>|  
 |-------------|-----------------|  
-|<span data-ttu-id="6c31e-111">S_OK</span><span class="sxs-lookup"><span data-stu-id="6c31e-111">S_OK</span></span>|<span data-ttu-id="6c31e-112">`ICorDebugStackWalk` Objekt byl úspěšně vytvořen.</span><span class="sxs-lookup"><span data-stu-id="6c31e-112">The `ICorDebugStackWalk` object was successfully created.</span></span>|  
-|<span data-ttu-id="6c31e-113">E_FAIL</span><span class="sxs-lookup"><span data-stu-id="6c31e-113">E_FAIL</span></span>|<span data-ttu-id="6c31e-114">`ICorDebugStackWalk` Objekt nebyl vytvořen.</span><span class="sxs-lookup"><span data-stu-id="6c31e-114">The `ICorDebugStackWalk` object was not created.</span></span>|  
+|<span data-ttu-id="c7af6-111">S_OK</span><span class="sxs-lookup"><span data-stu-id="c7af6-111">S_OK</span></span>|<span data-ttu-id="c7af6-112">`ICorDebugStackWalk` Objekt byl úspěšně vytvořen.</span><span class="sxs-lookup"><span data-stu-id="c7af6-112">The `ICorDebugStackWalk` object was successfully created.</span></span>|  
+|<span data-ttu-id="c7af6-113">E_FAIL</span><span class="sxs-lookup"><span data-stu-id="c7af6-113">E_FAIL</span></span>|<span data-ttu-id="c7af6-114">`ICorDebugStackWalk` Objekt nebyl vytvořen.</span><span class="sxs-lookup"><span data-stu-id="c7af6-114">The `ICorDebugStackWalk` object was not created.</span></span>|  
   
-## <a name="exceptions"></a><span data-ttu-id="6c31e-115">Výjimky</span><span class="sxs-lookup"><span data-stu-id="6c31e-115">Exceptions</span></span>  
+## <a name="exceptions"></a><span data-ttu-id="c7af6-115">Výjimky</span><span class="sxs-lookup"><span data-stu-id="c7af6-115">Exceptions</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="6c31e-116">Poznámky</span><span class="sxs-lookup"><span data-stu-id="6c31e-116">Remarks</span></span>  
- <span data-ttu-id="6c31e-117">Pokud `CreateStackWalk` metoda bude úspěšná, vrácený `ICorDebugStackWalk` objektu kontextu je nastavena na aktuální kontext vlákna.</span><span class="sxs-lookup"><span data-stu-id="6c31e-117">If the `CreateStackWalk` method succeeds, the returned `ICorDebugStackWalk` object's context is set to the thread's current context.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="c7af6-116">Poznámky</span><span class="sxs-lookup"><span data-stu-id="c7af6-116">Remarks</span></span>  
+ <span data-ttu-id="c7af6-117">Pokud `CreateStackWalk` metoda bude úspěšná, vrácený `ICorDebugStackWalk` objektu kontextu je nastavena na aktuální kontext vlákna.</span><span class="sxs-lookup"><span data-stu-id="c7af6-117">If the `CreateStackWalk` method succeeds, the returned `ICorDebugStackWalk` object's context is set to the thread's current context.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="6c31e-118">Požadavky</span><span class="sxs-lookup"><span data-stu-id="6c31e-118">Requirements</span></span>  
- <span data-ttu-id="6c31e-119">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="6c31e-119">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="c7af6-118">Požadavky</span><span class="sxs-lookup"><span data-stu-id="c7af6-118">Requirements</span></span>  
+ <span data-ttu-id="c7af6-119">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="c7af6-119">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="6c31e-120">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="6c31e-120">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="c7af6-120">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="c7af6-120">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="6c31e-121">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="6c31e-121">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="c7af6-121">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="c7af6-121">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="6c31e-122">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="6c31e-122">**.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span></span>  
+ <span data-ttu-id="c7af6-122">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="c7af6-122">**.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="6c31e-123">Viz také:</span><span class="sxs-lookup"><span data-stu-id="6c31e-123">See also</span></span>
-- [<span data-ttu-id="6c31e-124">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="6c31e-124">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [<span data-ttu-id="6c31e-125">Ladění</span><span class="sxs-lookup"><span data-stu-id="6c31e-125">Debugging</span></span>](../../../../docs/framework/unmanaged-api/debugging/index.md)
+## <a name="see-also"></a><span data-ttu-id="c7af6-123">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c7af6-123">See also</span></span>
+- [<span data-ttu-id="c7af6-124">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="c7af6-124">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [<span data-ttu-id="c7af6-125">Ladění</span><span class="sxs-lookup"><span data-stu-id="c7af6-125">Debugging</span></span>](../../../../docs/framework/unmanaged-api/debugging/index.md)

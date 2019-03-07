@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 982af81f8f3886ae26b56114cc36374279c07593
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 03d701d0801c55b6e91600f0767a6d737e4915c3
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54656346"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57479945"
 ---
-# <a name="icordebugvalue2getexacttype-method"></a><span data-ttu-id="e5aac-102">ICorDebugValue2::GetExactType – metoda</span><span class="sxs-lookup"><span data-stu-id="e5aac-102">ICorDebugValue2::GetExactType Method</span></span>
-<span data-ttu-id="e5aac-103">Získá ukazatel rozhraní na objekt, který představuje "ICorDebugType" <xref:System.Type> z této hodnoty.</span><span class="sxs-lookup"><span data-stu-id="e5aac-103">Gets an interface pointer to an "ICorDebugType" object that represents the <xref:System.Type> of this value.</span></span>  
+# <a name="icordebugvalue2getexacttype-method"></a><span data-ttu-id="4805f-102">ICorDebugValue2::GetExactType – metoda</span><span class="sxs-lookup"><span data-stu-id="4805f-102">ICorDebugValue2::GetExactType Method</span></span>
+<span data-ttu-id="4805f-103">Získá ukazatel rozhraní na objekt, který představuje "ICorDebugType" <xref:System.Type> z této hodnoty.</span><span class="sxs-lookup"><span data-stu-id="4805f-103">Gets an interface pointer to an "ICorDebugType" object that represents the <xref:System.Type> of this value.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="e5aac-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="e5aac-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="4805f-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="4805f-104">Syntax</span></span>  
   
 ```  
 HRESULT GetExactType (  
@@ -35,21 +35,21 @@ HRESULT GetExactType (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="e5aac-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="e5aac-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="4805f-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="4805f-105">Parameters</span></span>  
  `ppType`  
- <span data-ttu-id="e5aac-106">[out] Ukazatel na adresu `ICorDebugType` objekt, který reprezentuje <xref:System.Type> hodnoty reprezentovaný tímto objektem "icordebugvalue2 –".</span><span class="sxs-lookup"><span data-stu-id="e5aac-106">[out] A pointer to the address of an `ICorDebugType` object that represents the <xref:System.Type> of the value represented by this "ICorDebugValue2" object.</span></span>  
+ <span data-ttu-id="4805f-106">[out] Ukazatel na adresu `ICorDebugType` objekt, který reprezentuje <xref:System.Type> hodnoty reprezentovaný tímto objektem "icordebugvalue2 –".</span><span class="sxs-lookup"><span data-stu-id="4805f-106">[out] A pointer to the address of an `ICorDebugType` object that represents the <xref:System.Type> of the value represented by this "ICorDebugValue2" object.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="e5aac-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="e5aac-107">Remarks</span></span>  
- <span data-ttu-id="e5aac-108">Obecné typy podporující `GetExactType` metoda nahrazuje i [icordebugobjectvalue::getclass –](../../../../docs/framework/unmanaged-api/debugging/icordebugobjectvalue-getclass-method.md) a [icordebugvalue::gettype –](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue-gettype-method.md) metody, každý z které vrácené informace o typu hodnoty .</span><span class="sxs-lookup"><span data-stu-id="e5aac-108">The generics-aware `GetExactType` method supersedes both the [ICorDebugObjectValue::GetClass](../../../../docs/framework/unmanaged-api/debugging/icordebugobjectvalue-getclass-method.md) and the [ICorDebugValue::GetType](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue-gettype-method.md) methods, each of which return information about the type of a value.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="4805f-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="4805f-107">Remarks</span></span>  
+ <span data-ttu-id="4805f-108">Obecné typy podporující `GetExactType` metoda nahrazuje i [icordebugobjectvalue::getclass –](../../../../docs/framework/unmanaged-api/debugging/icordebugobjectvalue-getclass-method.md) a [icordebugvalue::gettype –](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue-gettype-method.md) metody, každý z které vrácené informace o typu hodnoty .</span><span class="sxs-lookup"><span data-stu-id="4805f-108">The generics-aware `GetExactType` method supersedes both the [ICorDebugObjectValue::GetClass](../../../../docs/framework/unmanaged-api/debugging/icordebugobjectvalue-getclass-method.md) and the [ICorDebugValue::GetType](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue-gettype-method.md) methods, each of which return information about the type of a value.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="e5aac-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="e5aac-109">Requirements</span></span>  
- <span data-ttu-id="e5aac-110">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="e5aac-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="4805f-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="4805f-109">Requirements</span></span>  
+ <span data-ttu-id="4805f-110">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="4805f-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="e5aac-111">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="e5aac-111">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="4805f-111">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="4805f-111">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="e5aac-112">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="e5aac-112">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="4805f-112">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="4805f-112">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="e5aac-113">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="e5aac-113">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="4805f-113">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="4805f-113">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="e5aac-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e5aac-114">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="4805f-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="4805f-114">See also</span></span>
 

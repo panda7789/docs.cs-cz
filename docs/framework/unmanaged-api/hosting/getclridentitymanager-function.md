@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f40100be3ab05c0c8e8a55d48494569424e88371
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ea711cc03716f4cd0a06a96208da942a69f36d66
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54637261"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57471677"
 ---
-# <a name="getclridentitymanager-function"></a><span data-ttu-id="49e77-102">GetCLRIdentityManager – funkce</span><span class="sxs-lookup"><span data-stu-id="49e77-102">GetCLRIdentityManager Function</span></span>
-<span data-ttu-id="49e77-103">Získá ukazatel na rozhraní umožňující common language runtime (CLR) ke správě identit.</span><span class="sxs-lookup"><span data-stu-id="49e77-103">Gets a pointer to an interface that allows the common language runtime (CLR) to manage identities.</span></span>  
+# <a name="getclridentitymanager-function"></a><span data-ttu-id="30aee-102">GetCLRIdentityManager – funkce</span><span class="sxs-lookup"><span data-stu-id="30aee-102">GetCLRIdentityManager Function</span></span>
+<span data-ttu-id="30aee-103">Získá ukazatel na rozhraní umožňující common language runtime (CLR) ke správě identit.</span><span class="sxs-lookup"><span data-stu-id="30aee-103">Gets a pointer to an interface that allows the common language runtime (CLR) to manage identities.</span></span>  
   
- <span data-ttu-id="49e77-104">Tato funkce se již nepoužívá v [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].</span><span class="sxs-lookup"><span data-stu-id="49e77-104">This function has been deprecated in the [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].</span></span>  
+ <span data-ttu-id="30aee-104">Tato funkce se již nepoužívá v [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].</span><span class="sxs-lookup"><span data-stu-id="30aee-104">This function has been deprecated in the [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="49e77-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="49e77-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="30aee-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="30aee-105">Syntax</span></span>  
   
 ```  
 STDAPI GetCLRIdentityManager(  
@@ -37,24 +37,24 @@ STDAPI GetCLRIdentityManager(
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="49e77-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="49e77-106">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="30aee-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="30aee-106">Parameters</span></span>  
  `riid`  
- <span data-ttu-id="49e77-107">[in] A `REFIID` (identifikátor rozhraní), která určuje, které rozhraní pro získání.</span><span class="sxs-lookup"><span data-stu-id="49e77-107">[in] A `REFIID` (an interface identifier) that specifies which interface to get.</span></span> <span data-ttu-id="49e77-108">Tato hodnota musí být IID_ICLRAssemblyIdentityManager nebo IID_ICLRHostBindingPolicyManager.</span><span class="sxs-lookup"><span data-stu-id="49e77-108">This value must be either IID_ICLRAssemblyIdentityManager or IID_ICLRHostBindingPolicyManager.</span></span>  
+ <span data-ttu-id="30aee-107">[in] A `REFIID` (identifikátor rozhraní), která určuje, které rozhraní pro získání.</span><span class="sxs-lookup"><span data-stu-id="30aee-107">[in] A `REFIID` (an interface identifier) that specifies which interface to get.</span></span> <span data-ttu-id="30aee-108">Tato hodnota musí být IID_ICLRAssemblyIdentityManager nebo IID_ICLRHostBindingPolicyManager.</span><span class="sxs-lookup"><span data-stu-id="30aee-108">This value must be either IID_ICLRAssemblyIdentityManager or IID_ICLRHostBindingPolicyManager.</span></span>  
   
  `ppManager`  
- <span data-ttu-id="49e77-109">[out] Ukazatel na adresu buď [iclrassemblyidentitymanager –](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyidentitymanager-interface.md) nebo [iclrhostbindingpolicymanager –](../../../../docs/framework/unmanaged-api/hosting/iclrhostbindingpolicymanager-interface.md) objektu.</span><span class="sxs-lookup"><span data-stu-id="49e77-109">[out] A pointer to the address of either an [ICLRAssemblyIdentityManager](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyidentitymanager-interface.md) or an [ICLRHostBindingPolicyManager](../../../../docs/framework/unmanaged-api/hosting/iclrhostbindingpolicymanager-interface.md) object.</span></span>  
+ <span data-ttu-id="30aee-109">[out] Ukazatel na adresu buď [iclrassemblyidentitymanager –](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyidentitymanager-interface.md) nebo [iclrhostbindingpolicymanager –](../../../../docs/framework/unmanaged-api/hosting/iclrhostbindingpolicymanager-interface.md) objektu.</span><span class="sxs-lookup"><span data-stu-id="30aee-109">[out] A pointer to the address of either an [ICLRAssemblyIdentityManager](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyidentitymanager-interface.md) or an [ICLRHostBindingPolicyManager](../../../../docs/framework/unmanaged-api/hosting/iclrhostbindingpolicymanager-interface.md) object.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="49e77-110">Poznámky</span><span class="sxs-lookup"><span data-stu-id="49e77-110">Remarks</span></span>  
- <span data-ttu-id="49e77-111">Volání [getrealprocaddress –](../../../../docs/framework/unmanaged-api/hosting/getrealprocaddress-function.md) funkce získat ukazatel `GetCLRIdentityManager` funkce.</span><span class="sxs-lookup"><span data-stu-id="49e77-111">Call the [GetRealProcAddress](../../../../docs/framework/unmanaged-api/hosting/getrealprocaddress-function.md) function to get a pointer to the `GetCLRIdentityManager` function.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="30aee-110">Poznámky</span><span class="sxs-lookup"><span data-stu-id="30aee-110">Remarks</span></span>  
+ <span data-ttu-id="30aee-111">Volání [getrealprocaddress –](../../../../docs/framework/unmanaged-api/hosting/getrealprocaddress-function.md) funkce získat ukazatel `GetCLRIdentityManager` funkce.</span><span class="sxs-lookup"><span data-stu-id="30aee-111">Call the [GetRealProcAddress](../../../../docs/framework/unmanaged-api/hosting/getrealprocaddress-function.md) function to get a pointer to the `GetCLRIdentityManager` function.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="49e77-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="49e77-112">Requirements</span></span>  
- <span data-ttu-id="49e77-113">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="49e77-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="30aee-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="30aee-112">Requirements</span></span>  
+ <span data-ttu-id="30aee-113">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="30aee-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="49e77-114">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="49e77-114">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="30aee-114">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="30aee-114">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="49e77-115">**Knihovna:** MSCorWks.dll</span><span class="sxs-lookup"><span data-stu-id="49e77-115">**Library:** MSCorWks.dll</span></span>  
+ <span data-ttu-id="30aee-115">**Knihovna:** MSCorWks.dll</span><span class="sxs-lookup"><span data-stu-id="30aee-115">**Library:** MSCorWks.dll</span></span>  
   
- <span data-ttu-id="49e77-116">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="49e77-116">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="30aee-116">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="30aee-116">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="49e77-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="49e77-117">See also</span></span>
-- [<span data-ttu-id="49e77-118">Zastaralé funkce pro hostování CLR</span><span class="sxs-lookup"><span data-stu-id="49e77-118">Deprecated CLR Hosting Functions</span></span>](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+## <a name="see-also"></a><span data-ttu-id="30aee-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="30aee-117">See also</span></span>
+- [<span data-ttu-id="30aee-118">Zastaralé funkce pro hostování CLR</span><span class="sxs-lookup"><span data-stu-id="30aee-118">Deprecated CLR Hosting Functions</span></span>](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)

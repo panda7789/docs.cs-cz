@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 52136426be9e8f220d8eb5fc93659f588f007498
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 67447e90198ded258645ad7d9173eed37bb60915
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54625098"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57479412"
 ---
-# <a name="imetadataimportgetclasslayout-method"></a><span data-ttu-id="a035d-102">IMetaDataImport::GetClassLayout – metoda</span><span class="sxs-lookup"><span data-stu-id="a035d-102">IMetaDataImport::GetClassLayout Method</span></span>
-<span data-ttu-id="a035d-103">Získá informace o rozložení třídy odkazuje zadaný TypeDef token.</span><span class="sxs-lookup"><span data-stu-id="a035d-103">Gets layout information for the class referenced by the specified TypeDef token.</span></span>  
+# <a name="imetadataimportgetclasslayout-method"></a><span data-ttu-id="225ba-102">IMetaDataImport::GetClassLayout – metoda</span><span class="sxs-lookup"><span data-stu-id="225ba-102">IMetaDataImport::GetClassLayout Method</span></span>
+<span data-ttu-id="225ba-103">Získá informace o rozložení třídy odkazuje zadaný TypeDef token.</span><span class="sxs-lookup"><span data-stu-id="225ba-103">Gets layout information for the class referenced by the specified TypeDef token.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="a035d-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="a035d-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="225ba-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="225ba-104">Syntax</span></span>  
   
 ```  
 HRESULT GetClassLayout  (   
@@ -40,34 +40,34 @@ HRESULT GetClassLayout  (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="a035d-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="a035d-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="225ba-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="225ba-105">Parameters</span></span>  
  `td`  
- <span data-ttu-id="a035d-106">[in] Token TypeDef pro třídu s rozložením se vraťte.</span><span class="sxs-lookup"><span data-stu-id="a035d-106">[in] The TypeDef token for the class with the layout to return.</span></span>  
+ <span data-ttu-id="225ba-106">[in] Token TypeDef pro třídu s rozložením se vraťte.</span><span class="sxs-lookup"><span data-stu-id="225ba-106">[in] The TypeDef token for the class with the layout to return.</span></span>  
   
  `pdwPackSize`  
- <span data-ttu-id="a035d-107">[out] Jedna z hodnot 1, 2, 4, 8 nebo 16, představující velikosti balíčku třídy.</span><span class="sxs-lookup"><span data-stu-id="a035d-107">[out] One of the values 1, 2, 4, 8, or 16, representing the pack size of the class.</span></span>  
+ <span data-ttu-id="225ba-107">[out] Jedna z hodnot 1, 2, 4, 8 nebo 16, představující velikosti balíčku třídy.</span><span class="sxs-lookup"><span data-stu-id="225ba-107">[out] One of the values 1, 2, 4, 8, or 16, representing the pack size of the class.</span></span>  
   
  `rFieldOffset`  
- <span data-ttu-id="a035d-108">[out] Pole [cor_field_offset –](../../../../docs/framework/unmanaged-api/metadata/cor-field-offset-structure.md) hodnoty.</span><span class="sxs-lookup"><span data-stu-id="a035d-108">[out] An array of [COR_FIELD_OFFSET](../../../../docs/framework/unmanaged-api/metadata/cor-field-offset-structure.md) values.</span></span>  
+ <span data-ttu-id="225ba-108">[out] Pole [cor_field_offset –](../../../../docs/framework/unmanaged-api/metadata/cor-field-offset-structure.md) hodnoty.</span><span class="sxs-lookup"><span data-stu-id="225ba-108">[out] An array of [COR_FIELD_OFFSET](../../../../docs/framework/unmanaged-api/metadata/cor-field-offset-structure.md) values.</span></span>  
   
  `cMax`  
- <span data-ttu-id="a035d-109">[in] Maximální velikost `rFieldOffset` pole.</span><span class="sxs-lookup"><span data-stu-id="a035d-109">[in] The maximum size of the `rFieldOffset` array.</span></span>  
+ <span data-ttu-id="225ba-109">[in] Maximální velikost `rFieldOffset` pole.</span><span class="sxs-lookup"><span data-stu-id="225ba-109">[in] The maximum size of the `rFieldOffset` array.</span></span>  
   
  `pcFieldOffset`  
- <span data-ttu-id="a035d-110">[out] Počet prvků vrácených v `rFieldOffset`.</span><span class="sxs-lookup"><span data-stu-id="a035d-110">[out] The number of elements returned in `rFieldOffset`.</span></span>  
+ <span data-ttu-id="225ba-110">[out] Počet prvků vrácených v `rFieldOffset`.</span><span class="sxs-lookup"><span data-stu-id="225ba-110">[out] The number of elements returned in `rFieldOffset`.</span></span>  
   
  `pulClassSize`  
- <span data-ttu-id="a035d-111">[out] Velikost v bajtech třída představovaná typem `td`.</span><span class="sxs-lookup"><span data-stu-id="a035d-111">[out] The size in bytes of the class represented by `td`.</span></span>  
+ <span data-ttu-id="225ba-111">[out] Velikost v bajtech třída představovaná typem `td`.</span><span class="sxs-lookup"><span data-stu-id="225ba-111">[out] The size in bytes of the class represented by `td`.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="a035d-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="a035d-112">Requirements</span></span>  
- <span data-ttu-id="a035d-113">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="a035d-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="225ba-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="225ba-112">Requirements</span></span>  
+ <span data-ttu-id="225ba-113">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="225ba-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="a035d-114">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="a035d-114">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="225ba-114">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="225ba-114">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="a035d-115">**Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="a035d-115">**Library:** Included as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="225ba-115">**Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="225ba-115">**Library:** Included as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="a035d-116">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="a035d-116">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="225ba-116">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="225ba-116">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="a035d-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="a035d-117">See also</span></span>
-- [<span data-ttu-id="a035d-118">IMetaDataImport – rozhraní</span><span class="sxs-lookup"><span data-stu-id="a035d-118">IMetaDataImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [<span data-ttu-id="a035d-119">IMetaDataImport2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="a035d-119">IMetaDataImport2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+## <a name="see-also"></a><span data-ttu-id="225ba-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="225ba-117">See also</span></span>
+- [<span data-ttu-id="225ba-118">IMetaDataImport – rozhraní</span><span class="sxs-lookup"><span data-stu-id="225ba-118">IMetaDataImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [<span data-ttu-id="225ba-119">IMetaDataImport2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="225ba-119">IMetaDataImport2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 6199a0d0444f07c57e88d0369f192684755d301c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: b00eda9ddad65d6618f097a6ca48b5c7c0eba334
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54705268"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57481111"
 ---
-# <a name="isymunmanagedreadergetsymbolstorefilename-method"></a><span data-ttu-id="c3dbc-102">ISymUnmanagedReader::GetSymbolStoreFileName – metoda</span><span class="sxs-lookup"><span data-stu-id="c3dbc-102">ISymUnmanagedReader::GetSymbolStoreFileName Method</span></span>
-<span data-ttu-id="c3dbc-103">Poskytuje název souboru na disku úložiště symbolů.</span><span class="sxs-lookup"><span data-stu-id="c3dbc-103">Provides the on-disk file name of the symbol store.</span></span>  
+# <a name="isymunmanagedreadergetsymbolstorefilename-method"></a><span data-ttu-id="13357-102">ISymUnmanagedReader::GetSymbolStoreFileName – metoda</span><span class="sxs-lookup"><span data-stu-id="13357-102">ISymUnmanagedReader::GetSymbolStoreFileName Method</span></span>
+<span data-ttu-id="13357-103">Poskytuje název souboru na disku úložiště symbolů.</span><span class="sxs-lookup"><span data-stu-id="13357-103">Provides the on-disk file name of the symbol store.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="c3dbc-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c3dbc-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="13357-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="13357-104">Syntax</span></span>  
   
 ```  
 HRESULT GetSymbolStoreFileName (  
@@ -37,21 +37,21 @@ HRESULT GetSymbolStoreFileName (
         length_is (*pcchName)] WCHAR szName[]);  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="c3dbc-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="c3dbc-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="13357-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="13357-105">Parameters</span></span>  
  `cchName`  
- <span data-ttu-id="c3dbc-106">[in] Velikost `szName` vyrovnávací paměti.</span><span class="sxs-lookup"><span data-stu-id="c3dbc-106">[in] The size of the `szName` buffer.</span></span>  
+ <span data-ttu-id="13357-106">[in] Velikost `szName` vyrovnávací paměti.</span><span class="sxs-lookup"><span data-stu-id="13357-106">[in] The size of the `szName` buffer.</span></span>  
   
  `pcchName`  
- <span data-ttu-id="c3dbc-107">[out] Ukazatel na proměnnou, která přijímá délka názvu vrátil v `szName`, včetně ukončení hodnotu null.</span><span class="sxs-lookup"><span data-stu-id="c3dbc-107">[out] A pointer to the variable that receives the length of the name returned in `szName`, including the null termination.</span></span>  
+ <span data-ttu-id="13357-107">[out] Ukazatel na proměnnou, která přijímá délka názvu vrátil v `szName`, včetně ukončení hodnotu null.</span><span class="sxs-lookup"><span data-stu-id="13357-107">[out] A pointer to the variable that receives the length of the name returned in `szName`, including the null termination.</span></span>  
   
  `szName`  
- <span data-ttu-id="c3dbc-108">[out] Ukazatel na proměnnou, která přijímá název souboru v úložišti symbolů.</span><span class="sxs-lookup"><span data-stu-id="c3dbc-108">[out] A pointer to the variable that receives the file name of the symbol store.</span></span>  
+ <span data-ttu-id="13357-108">[out] Ukazatel na proměnnou, která přijímá název souboru v úložišti symbolů.</span><span class="sxs-lookup"><span data-stu-id="13357-108">[out] A pointer to the variable that receives the file name of the symbol store.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="c3dbc-109">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="c3dbc-109">Return Value</span></span>  
- <span data-ttu-id="c3dbc-110">Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.</span><span class="sxs-lookup"><span data-stu-id="c3dbc-110">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="13357-109">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="13357-109">Return Value</span></span>  
+ <span data-ttu-id="13357-110">Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.</span><span class="sxs-lookup"><span data-stu-id="13357-110">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="c3dbc-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="c3dbc-111">Requirements</span></span>  
- <span data-ttu-id="c3dbc-112">**Záhlaví:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="c3dbc-112">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="13357-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="13357-111">Requirements</span></span>  
+ <span data-ttu-id="13357-112">**Záhlaví:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="13357-112">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="c3dbc-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c3dbc-113">See also</span></span>
-- [<span data-ttu-id="c3dbc-114">ISymUnmanagedReader – rozhraní</span><span class="sxs-lookup"><span data-stu-id="c3dbc-114">ISymUnmanagedReader Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md)
+## <a name="see-also"></a><span data-ttu-id="13357-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="13357-113">See also</span></span>
+- [<span data-ttu-id="13357-114">ISymUnmanagedReader – rozhraní</span><span class="sxs-lookup"><span data-stu-id="13357-114">ISymUnmanagedReader Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md)

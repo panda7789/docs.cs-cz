@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 10741ef9d329986d869665ef3aae14196946bb22
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ecf5160a7ceb7a4d2f1d64d83f573f8450966dc0
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54724418"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57476669"
 ---
-# <a name="icordebugenumerateprocesses-method"></a><span data-ttu-id="c7eba-102">ICorDebug::EnumerateProcesses – metoda</span><span class="sxs-lookup"><span data-stu-id="c7eba-102">ICorDebug::EnumerateProcesses Method</span></span>
-<span data-ttu-id="c7eba-103">Získá enumerátor pro procesy, které jsou právě laděny.</span><span class="sxs-lookup"><span data-stu-id="c7eba-103">Gets an enumerator for the processes that are being debugged.</span></span>  
+# <a name="icordebugenumerateprocesses-method"></a><span data-ttu-id="56ce4-102">ICorDebug::EnumerateProcesses – metoda</span><span class="sxs-lookup"><span data-stu-id="56ce4-102">ICorDebug::EnumerateProcesses Method</span></span>
+<span data-ttu-id="56ce4-103">Získá enumerátor pro procesy, které jsou právě laděny.</span><span class="sxs-lookup"><span data-stu-id="56ce4-103">Gets an enumerator for the processes that are being debugged.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="c7eba-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c7eba-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="56ce4-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="56ce4-104">Syntax</span></span>  
   
 ```  
 HRESULT EnumerateProcesses (  
@@ -35,18 +35,18 @@ HRESULT EnumerateProcesses (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="c7eba-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="c7eba-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="56ce4-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="56ce4-105">Parameters</span></span>  
  `ppProcess`  
- <span data-ttu-id="c7eba-106">Ukazatel na adresu icordebugprocessenum – objekt, který je enumerátor pro procesy, které jsou právě laděny.</span><span class="sxs-lookup"><span data-stu-id="c7eba-106">A pointer to the address of an ICorDebugProcessEnum object that is the enumerator for the processes being debugged.</span></span>  
+ <span data-ttu-id="56ce4-106">Ukazatel na adresu icordebugprocessenum – objekt, který je enumerátor pro procesy, které jsou právě laděny.</span><span class="sxs-lookup"><span data-stu-id="56ce4-106">A pointer to the address of an ICorDebugProcessEnum object that is the enumerator for the processes being debugged.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="c7eba-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="c7eba-107">Requirements</span></span>  
- <span data-ttu-id="c7eba-108">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="c7eba-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="56ce4-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="56ce4-107">Requirements</span></span>  
+ <span data-ttu-id="56ce4-108">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="56ce4-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="c7eba-109">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="c7eba-109">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="56ce4-109">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="56ce4-109">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="c7eba-110">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="c7eba-110">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="56ce4-110">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="56ce4-110">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="c7eba-111">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="c7eba-111">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="56ce4-111">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="56ce4-111">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="c7eba-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c7eba-112">See also</span></span>
-- [<span data-ttu-id="c7eba-113">ICorDebug – rozhraní</span><span class="sxs-lookup"><span data-stu-id="c7eba-113">ICorDebug Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)
+## <a name="see-also"></a><span data-ttu-id="56ce4-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="56ce4-112">See also</span></span>
+- [<span data-ttu-id="56ce4-113">ICorDebug – rozhraní</span><span class="sxs-lookup"><span data-stu-id="56ce4-113">ICorDebug Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)
