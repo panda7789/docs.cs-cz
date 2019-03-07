@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: cfd7ee890a7f2c3ea8cd3de9fbe830575c0ca10c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b00afc900a27aea94389ee81065ea22ae359440d
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33402771"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57498338"
 ---
 # <a name="icordebugappdomainenumeratebreakpoints-method"></a>ICorDebugAppDomain::EnumerateBreakpoints – metoda
-Získá enumerátor pro všechny aktivní zarážky v doméně aplikace.  
+Získá enumerátor pro všechny zarážky aktivní v doméně aplikace.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,15 +35,15 @@ HRESULT EnumerateBreakpoints (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `ppBreakpoints`  
- [out] Ukazatel na adresu ICorDebugBreakpointEnum objekt, který je enumerátor pro všechny aktivní zarážky v doméně aplikace.  
+ [out] Ukazatel na adresu icordebugbreakpointenum – objekt, který je výčet všech aktivních zarážek v doméně aplikace.  
   
 ## <a name="remarks"></a>Poznámky  
- Enumerátor zahrnuje všechny typy zarážky, včetně funkce zarážky a data zarážky.  
+ Enumerátor zahrnují všechny typy zarážky, včetně zarážky funkcí a datové zarážky.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 9a91684ea3712c8fe20d1902f86e3880bf0ad340
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: b3d5d3808f51f921bd3e0c94942a1fb07a35d876
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54660278"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57487808"
 ---
 # <a name="icorprofilerinfo3getfunctiontailcall3info-method"></a>ICorProfilerInfo3::GetFunctionTailcall3Info – metoda
 Poskytuje funkce, která se hlásí do profileru pomocí rámce zásobníku [functiontailcall3withinfo –](../../../../docs/framework/unmanaged-api/profiling/functiontailcall3withinfo-function.md) funkce. Tuto metodu lze volat pouze během `FunctionTailcall3WithInfo` zpětného volání.  
@@ -36,7 +36,7 @@ HRESULT GetFunctionTailcall3Info(
             [out] COR_PRF_FRAME_INFO *pFrameInfo);  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `functionId`  
  [in] `FunctionID` Funkce, která vrací.  
   

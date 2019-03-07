@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: abc5f9350342af0439cb83f1df14979cfabcdb3e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 295b150f6881a47b3816a93ac7a20382bc5c20c0
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54601538"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57500574"
 ---
 # <a name="getwin32resblob-method"></a>GetWin32ResBlob – metoda
 Načte objekt blob prostředků Win32. Tuto metodu volejte po nastavení možností sestavení.  
@@ -39,7 +39,7 @@ HRESULT GetWin32ResBlob(
 ) PURE;  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `AssemblyID`  
  ID sestavení.  
   

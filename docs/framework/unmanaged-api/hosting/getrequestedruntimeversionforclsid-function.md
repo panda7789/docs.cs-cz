@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2e00bc95dd9b54d5451da65cefbfff13395e467f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 63e6ec271634a52abe7c640bbbabdaedebd2a31d
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54511955"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57471898"
 ---
 # <a name="getrequestedruntimeversionforclsid-function"></a>GetRequestedRuntimeVersionForCLSID – funkce
 Získá odpovídající common language runtime (CLR) informace o verzi pro třídu se zadaným `CLSID`.  
@@ -40,7 +40,7 @@ HRESULT GetRequestedRuntimeVersionForCLSID (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `rclsid`  
  [in]  `CLSID` Komponenty.  
   

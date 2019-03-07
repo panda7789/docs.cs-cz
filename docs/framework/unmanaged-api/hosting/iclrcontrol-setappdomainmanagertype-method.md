@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d79d3651bb949899681eac2e7d2ac49d9233ccc7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: bb1632b5d9379eb35d4188a218f3184acf8d0ed3
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54531771"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57497103"
 ---
 # <a name="iclrcontrolsetappdomainmanagertype-method"></a>ICLRControl::SetAppDomainManagerType – metoda
 Nastaví typ odvozený z <xref:System.AppDomainManager> jako typ pro správce domény aplikace.  
@@ -36,7 +36,7 @@ HRESULT SetAppDomainManagerType (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `pwzAppDomainManagerAssembly`  
  [in] Název sestavení, ve kterém požadovaný typ odvozený od <xref:System.AppDomainManager> je implementováno.  
   

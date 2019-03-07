@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ce53137021fe9ccaf170bed28918b8f5fe87715b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 31d4c0488adb38360d096c5827d078b0fbecc635
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54504988"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57498975"
 ---
 # <a name="icordebugmodulebreakpointgetmodule-method"></a>ICorDebugModuleBreakpoint::GetModule – metoda
 Získá ukazatel rozhraní "ICorDebugModule", který odkazuje na modul, ve kterém je tato zarážka nastavena.  
@@ -35,7 +35,7 @@ HRESULT GetModule (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `ppModule`  
  [out] Ukazatel na adresu `ICorDebugModule` rozhraní, které odkazuje na modul, ve kterém je nastavena zarážka.  
   

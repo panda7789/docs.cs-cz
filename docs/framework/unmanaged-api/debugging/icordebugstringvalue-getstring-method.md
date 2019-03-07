@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 63d3df561a3b48a4b26426235455ef1a074512f7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1bf62d8855b3f9de5629b9cfc6e0bcd0878a0d17
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33417958"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57489914"
 ---
 # <a name="icordebugstringvaluegetstring-method"></a>ICorDebugStringValue::GetString – metoda
-Získá řetězec, který odkazuje tento ICorDebugStringValue.  
+Získá řetězec, který odkazuje tento icordebugstringvalue –.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,18 +38,18 @@ HRESULT GetString (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `cchString`  
- [v] Velikost `szString` pole.  
+ [in] Velikost `szString` pole.  
   
  `pcchString`  
- [out] Ukazatel na počet znaků, vrátí se v `szString` pole.  
+ [out] Ukazatel na počet znaků, které jsou vráceny v `szString` pole.  
   
  `szString`  
- [out] Pole, které ukládá načtené řetězec.  
+ [out] Pole, která ukládá načtený řetězec.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

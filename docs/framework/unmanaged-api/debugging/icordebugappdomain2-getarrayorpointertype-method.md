@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: cb3f0ca6d930b22f30fe9bbc5b5a04bf1e034f34
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 58a39771bd89fc9c4947f80a3c87b4d340b5461c
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33405822"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57484235"
 ---
 # <a name="icordebugappdomain2getarrayorpointertype-method"></a>ICorDebugAppDomain2::GetArrayOrPointerType – metoda
-Získá zadaný typ, nebo ukazatel nebo odkaz na zadaný typ pole.  
+Získá pole objektů zadaného typu nebo ukazatel nebo odkaz na zadaný typ.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,32 +38,32 @@ HRESULT GetArrayOrPointerType (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `elementType`  
- [v] Hodnota CorElementType – výčet, který určuje základní typ nativní (pole, ukazatel nebo odkaz) má být vytvořen.  
+ [in] Hodnota corelementtype – výčet, který určuje základní nativní typ (pole, ukazatel nebo odkaz) který se má vytvořit.  
   
  `nRank`  
- [v] Pořadí (to znamená, počet dimenzí) pole. Tato hodnota musí být 0, pokud `elementType` Určuje typ ukazatele nebo odkaz.  
+ [in] Pořadí (to znamená, počet rozměrů) v poli. Tato hodnota musí být 0, pokud `elementType` Určuje typ ukazatele nebo odkazu.  
   
  `pTypeArg`  
- [v] Ukazatel na ICorDebugType objekt, který představuje typ pole, ukazatel nebo odkaz, který se má vytvořit.  
+ [in] Ukazatel na objekt ICorDebugType, který představuje typ pole, ukazatel nebo odkaz, který se má vytvořit.  
   
  `ppType`  
- [out] Ukazatel na adresu `ICorDebugType` typ objektu, který reprezentuje sestavené pole, ukazatel typu nebo odkaz.  
+ [out] Ukazatel na adresu `ICorDebugType` typ objektu, který představuje konstruovaná pole, typ ukazatele nebo odkazu.  
   
 ## <a name="remarks"></a>Poznámky  
- Hodnota *elementType* musí mít jednu z následujících akcí:  
+ Hodnota *elementType* musí být jedna z následujících akcí:  
   
--   ELEMENT_TYPE_PTR  
+-   TYP ELEMENT_TYPE_PTR  
   
--   TYPU ELEMENT_TYPE_BYREF  
+-   ELEMENT_TYPE_BYREF  
   
 -   ELEMENT_TYPE_ARRAY nebo ELEMENT_TYPE_SZARRAY  
   
- Pokud hodnota *elementType* ELEMENT_TYPE_PTR nebo typu ELEMENT_TYPE_BYREF, *nRank* musí být nula.  
+ Pokud hodnota *elementType* ELEMENT_TYPE_PTR nebo ELEMENT_TYPE_BYREF, *nRank* musí být nula.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

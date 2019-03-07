@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6f64d554ee0bcd93d30dd617177c4e1e33e57aa3
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 80aa64a8867a84100996ae88c5e65233d6b15782
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54648861"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57481058"
 ---
 # <a name="iapartmentcallbackdocallback-method"></a>IApartmentCallback::DoCallback – metoda
 Provede zadanou funkci v rámci typu apartment.  
@@ -36,7 +36,7 @@ HRESULT _stdcall DoCallback(
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `pFunc`  
  [in] Ukazatel na funkci, která má být spuštěn v rámci typu apartment.  
   

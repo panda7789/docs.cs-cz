@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 5ad52580fef538a6878efb0febe41dec7c9de1de
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f44b7e073840d4d425cfc91c3156293cee07b4ab
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54520630"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57501471"
 ---
 # <a name="imetadataemitdeleteclasslayout-method"></a>IMetaDataEmit::DeleteClassLayout – metoda
 Zničí podpis metadat rozložení třídy pro typ zastoupený zadaného tokenu.  
@@ -35,7 +35,7 @@ HRESULT DeleteClassLayout (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `td`  
  [in] `mdTypeDef` Tokenu metadat, který představuje typ, pro který se odstraní rozložení třídy.  
   

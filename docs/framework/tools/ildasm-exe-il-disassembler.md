@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: db27f6b2-f1ec-499e-be3a-7eecf95ca42b
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 95a060f047094d7f1336a3e1e26b34c7d47b5a42
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 3e96f86e516e7b741aa9fbf67efd1683d0845101
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54495511"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57488510"
 ---
 # <a name="ildasmexe-il-disassembler"></a>Ildasm.exe (IL Disassembler)
 
@@ -32,7 +32,7 @@ V příkazovém řádku zadejte následující:
 ildasm [options] [PEfilename] [options]
 ```
 
-#### <a name="parameters"></a>Parametry
+## <a name="parameters"></a>Parametry
 
 Tyto možnosti jsou k dispozici pro *.exe*, *.dll*, *.obj*, *lib*, a *.winmd* soubory.
 

@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5484f8bd5515d3a4a3cd08110cc5d48c4356a9f0
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 55bebdd87c43f674973b2e47783fa6f2a604b620
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54590143"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57501549"
 ---
 # <a name="iclrdatatargetreadvirtual-method"></a>ICLRDataTarget::ReadVirtual – metoda
 Načte data z adresy zadaná virtuální paměti do zadané vyrovnávací paměti.  
@@ -39,7 +39,7 @@ HRESULT ReadVirtual (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `address`  
  [in] CLRDATA_ADDRESS, která ukládá adresu virtuální paměti.  
   

@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 7c31f9bda2f1dfdb5d1f78055f53304352c5a660
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e57ab385ce4d393b29ff5af867bf7a019bf2b824
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54515336"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57478931"
 ---
 # <a name="isymunmanagedconstantgetname-method"></a>ISymUnmanagedConstant::GetName – metoda
 Získá název konstanty.  
@@ -37,7 +37,7 @@ HRESULT GetName(
         length_is(*pcchName)] WCHAR szName[]);  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `cchName`  
  [in] Délka vyrovnávací paměti, která `szName` parametr odkazuje na.  
   

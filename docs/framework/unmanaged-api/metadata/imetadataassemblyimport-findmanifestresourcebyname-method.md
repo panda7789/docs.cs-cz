@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b05c9a75bf870dd3b2316d2df7c50932b26894f3
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 8d736a93e7ba6451f1d4755a86749565b9ea071b
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54702740"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57491513"
 ---
 # <a name="imetadataassemblyimportfindmanifestresourcebyname-method"></a>IMetaDataAssemblyImport::FindManifestResourceByName – metoda
 Získá ukazatel na prostředek manifestu se zadaným názvem.  
@@ -36,7 +36,7 @@ HRESULT FindManifestResourceByName (
 );   
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `szName`  
  [in] Název prostředku.  
   

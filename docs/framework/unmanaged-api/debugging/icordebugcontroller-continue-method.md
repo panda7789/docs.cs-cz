@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 115a998f8be233c38efac1a301b4b24b7d861662
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 4f448a0383d3ad121cbddb59e13acef46a336261
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54540179"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57485730"
 ---
 # <a name="icordebugcontrollercontinue-method"></a>ICorDebugController::Continue – metoda
 Pokračuje v provádění spravovaná vlákna po volání [Metoda Stop](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-stop-method.md).  
@@ -35,7 +35,7 @@ HRESULT Continue (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `fIsOutOfBand`  
  [in] Nastavte na `true` Pokud budete pokračovat z události out-of-band; v opačném případě nastavte na `false`.  
   

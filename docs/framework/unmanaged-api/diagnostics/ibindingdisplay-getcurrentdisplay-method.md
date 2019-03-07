@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 992626fb3fa085c85d61b9bdd25c985436e96aea
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 0f9cc44db9c93a8b018d0586bc1faeda7cfbc9bc
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54550562"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57498429"
 ---
 # <a name="ibindingdisplaygetcurrentdisplay-method"></a>IBindingDisplay::GetCurrentDisplay – metoda
 Vrátí informace o zobrazení aktuální vazby.  
@@ -35,7 +35,7 @@ HRESULT GetCurrentDisplay (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `display`  
  [out, retval] Ukazatel na safearray obsahující informace o vazbě zobrazení.  
   

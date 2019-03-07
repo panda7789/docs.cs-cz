@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 832746b911e74790de246b00a364aaec4bda8f67
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5f29111fd68d9a47cd90687cc6aa2743968e727d
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54739972"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57484599"
 ---
 # <a name="isymencunmanagedmethodgetsourceextentindocument-method"></a>ISymENCUnmanagedMethod::GetSourceExtentInDocument – metoda
 Získá spuštění nejmenší číslo řádku a největší na konci řádku pro metodu v určitého dokumentu.  
@@ -36,7 +36,7 @@ HRESULT GetSourceExtentInDocument(
     [out] ULONG32* pendLine);  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `document`  
  [in] Ukazatel na dokument.  
   

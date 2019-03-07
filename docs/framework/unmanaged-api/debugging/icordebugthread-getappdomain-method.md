@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 51878f0334afe52608b60ca540e49c86fded148e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 12a37ee8367006975b0f8ee4fa638ae3d72f9486
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33418042"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57487743"
 ---
 # <a name="icordebugthreadgetappdomain-method"></a>ICorDebugThread::GetAppDomain – metoda
-Získá ukazatele rozhraní pro doménu aplikace, ve kterém je tento ICorDebugThread aktuálně spuštěné.  
+Získá ukazatel rozhraní aplikační doménu, ve kterém tento ICorDebugThread právě probíhá.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,12 +35,12 @@ HRESULT GetAppDomain (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `ppAppDomain`  
- [out] Ukazatel na ICorDebugAppDomain objekt, který představuje doménu aplikace, ve kterém je aktuálně spuštěných tento přístup z více vláken.  
+ [out] Ukazatel na objekt ICorDebugAppDomain, který představuje doménu aplikace, ve kterém je aktuálně spuštěno toto vlákno.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

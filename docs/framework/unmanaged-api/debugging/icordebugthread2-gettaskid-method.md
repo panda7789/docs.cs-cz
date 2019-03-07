@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f5690856b526bf0f7bc4527d04ae8044cda1f6e5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 417f99c2b9fa7e77f8696c27cb3929c92956c08c
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33417863"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57494646"
 ---
 # <a name="icordebugthread2gettaskid-method"></a>ICorDebugThread2::GetTaskID – metoda
-Získá identifikátor úloha spuštěná na tento přístup z více vláken.  
+Získá identifikátor úloha spuštěná na toto vlákno.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,15 +35,15 @@ HRESULT GetTaskID (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `pTaskId`  
- [out] Ukazatel na identifikátor úloha spuštěná na vlákno představuje tento objekt icordebugthread2 –.  
+ [out] Ukazatel na identifikátor úloha spuštěná na vlákno reprezentovaný tímto objektem icordebugthread2 –.  
   
 ## <a name="remarks"></a>Poznámky  
- Úloha může být spuštěn ve vlákně pouze, pokud vlákno je přidružené k připojení. `GetTaskID` Vrátí hodnotu hodnotu `pTaskId` Pokud vlákno není přidružené k připojení.  
+ Úkol může být spuštěn ve vlákně pouze, pokud vlákno je spojen s připojením. `GetTaskID` Vrátí nulu `pTaskId` Pokud vlákno není přidružen k připojení.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

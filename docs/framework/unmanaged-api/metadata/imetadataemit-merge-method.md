@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 7ebc86ad9c1f84156e7e228c1ddf3fe7b86b7e60
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 47b59c7393d9d4e9cbdeaa1a2efd9965f969f985
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54576262"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57497792"
 ---
 # <a name="imetadataemitmerge-method"></a>IMetaDataEmit::Merge – metoda
 Přidá do seznamu oborů, která se má sloučit zadané importované oboru.  
@@ -37,7 +37,7 @@ HRESULT Merge (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `pImport`  
  [in] Ukazatel [imetadataimport –](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md) objekt, který identifikuje importované oboru ke sloučení.  
   

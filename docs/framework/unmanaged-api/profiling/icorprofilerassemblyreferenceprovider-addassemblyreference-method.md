@@ -14,12 +14,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 762ebbe141473277dc064b36c6229f82d348f976
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ae7d896ee8e06921d685fad9ae2fcc0ac215d64a
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54582082"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57485054"
 ---
 # <a name="icorprofilerassemblyreferenceprovideraddassemblyreference-method"></a>ICorProfilerAssemblyReferenceProvider::AddAssemblyReference – metoda
 [Podporované v rozhraní .NET Framework 4.5.2 a novějších verzích]  
@@ -34,7 +34,7 @@ HRESULT AddAssemblyReference(
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  pAssemblyRefInfo  
  Ukazatel [COR_PRF_ASSEMBLY_REFERENCE_INFO](../../../../docs/framework/unmanaged-api/profiling/cor-prf-assembly-reference-info-structure.md) struktura, která poskytuje informace o odkaz na sestavení, byste měli zvážit při procházení uzavření odkaz sestavení CLR.  
   

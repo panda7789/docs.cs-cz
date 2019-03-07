@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: c37aaceb-c948-46bd-a943-08be4cbb76f4
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 93dc268e65578a80fe8562f4c4d4fd71fa6db981
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5c778f281224daeec953f2e959444bd1413de433
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54711837"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57488417"
 ---
 # <a name="icordebugdebugeventgeteventkind-method"></a>ICorDebugDebugEvent::GetEventKind – metoda
 Jaký druh událostí označuje to `ICorDebugDebugEvent` objekt představuje.  
@@ -22,7 +22,7 @@ HRESULT GetEventKind(
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  pDebugEventKind  
  Ukazatel [CorDebugDebugEventKind](../../../../docs/framework/unmanaged-api/debugging/cordebugdebugeventkind-enumeration.md) člen výčtu, která určuje typ události.  
   

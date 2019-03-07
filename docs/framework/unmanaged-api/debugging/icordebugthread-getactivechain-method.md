@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9030319ca12aafcf452e3ecd816fc269f0abfc0e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b05f5a3f29c7b72ed83c1456175f68ef9b986e3e
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33417512"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57483313"
 ---
 # <a name="icordebugthreadgetactivechain-method"></a>ICorDebugThread::GetActiveChain – metoda
-Získá ukazatele rozhraní k řetězu active zásobníku (nejnovější) na tomto objektu ICorDebugThread.  
+Získá ukazatel rozhraní na tomto objektu icordebugthread – aktivní (nejnovější) řetěz zásobníku.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,15 +35,15 @@ HRESULT GetActiveChain (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `ppChain`  
- [out] Ukazatel na adresu ICorDebugChain objekt, který reprezentuje řetězu zásobníku.  
+ [out] Ukazatel na adresa icordebugchain – objekt, který představuje řetěz zásobníku.  
   
 ## <a name="remarks"></a>Poznámky  
- `ppChain` Parametr má hodnotu null, pokud je aktuálně aktivní žádné řetězec zásobníku.  
+ `ppChain` Parametr má hodnotu null, pokud žádné řetěz zásobníku není aktuálně aktivní.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

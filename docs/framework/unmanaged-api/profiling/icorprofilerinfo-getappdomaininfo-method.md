@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: dbf52a352000150766cd9a8277278491ad7d5152
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5fe1fa99cb7376aae6dffb2a0973955f417b0b8f
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54616729"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57494338"
 ---
 # <a name="icorprofilerinfogetappdomaininfo-method"></a>ICorProfilerInfo::GetAppDomainInfo – metoda
 Přijímá identifikátor domény aplikace. Vrátí název domény aplikace a ID procesu, který jej obsahuje.  
@@ -39,7 +39,7 @@ HRESULT GetAppDomainInfo(
     [out] ProcessID   *pProcessId);  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `appDomainId`  
  [in] ID domény aplikace.  
   

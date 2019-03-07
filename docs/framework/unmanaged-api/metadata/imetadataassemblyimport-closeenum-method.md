@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 156b2274aa442d9efb129d51ccf5939a09ac7408
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 647ddb742c080b7205a6f27ba36d58c010e3d510
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54710128"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57490018"
 ---
 # <a name="imetadataassemblyimportcloseenum-method"></a>IMetaDataAssemblyImport::CloseEnum – metoda
 Verze odkazu na instanci zadaný výčet.  
@@ -35,7 +35,7 @@ void CloseEnum (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `hEnum`  
  [in] Instance výčtu bude uzavřen.  
   

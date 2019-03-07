@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c3b7c116410ce3309d970929580f4ec7f65bd657
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5775c249236fdbe488ce11be0c664d2073ccfb67
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54558279"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57477072"
 ---
 # <a name="imetadataemitdeletepinvokemap-method"></a>IMetaDataEmit::DeletePinvokeMap – metoda
 Zničí metadat PInvoke mapování pro objekt odkazovaný zadaným parametrem zadaného tokenu.  
@@ -35,7 +35,7 @@ HRESULT DeletePinvokeMap (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `tk`  
  [in] `mdFieldDef` Nebo `mdMethodDef` token, který představuje objekt, pro kterou chcete odstranit mapování metadat PInvoke.  
   

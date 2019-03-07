@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 5c2695fb6fcd0f4bba3576f2331c80961e9a444d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 0838ac08ff69e33a0badef7c0f52cb6189be2b7f
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54649177"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57469037"
 ---
 # <a name="isymunmanagedvariablegetaddressfield3-method"></a>ISymUnmanagedVariable::GetAddressField3 – metoda
 Získá pole třetí adresa pro tuto proměnnou. Její význam závisí na druhu adresu.  
@@ -34,7 +34,7 @@ HRESULT GetAddressField3(
     [out, retval] ULONG32* pRetVal);  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `pRetVal`  
  [out] Ukazatel `ULONG32` , který přijímá pole třetí adresa.  
   

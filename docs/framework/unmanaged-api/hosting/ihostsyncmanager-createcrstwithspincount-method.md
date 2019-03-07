@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 451a5b163499b265396ae2e8f623b448e07ea807
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1c4dd73efbad5ffac47c8585facd1717d77147fa
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54590913"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57501578"
 ---
 # <a name="ihostsyncmanagercreatecrstwithspincount-method"></a>IHostSyncManager::CreateCrstWithSpinCount – metoda
 Vytvoří objekt kritický oddíl s počtem typu číselník pro synchronizaci.  
@@ -36,7 +36,7 @@ HRESULT CreateCrstWithSpinCount (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `dwSpinCount`  
  [in] Určuje počet typu číselník pro objekt kritický oddíl.  
   

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - <returns> C# XML tag
 - returns C# XML tag
 ms.assetid: bb2d9958-62fc-47c7-9511-6311171f119f
-ms.openlocfilehash: 775d83dc96d2b5c1aae70bf47c641611e0dcbc55
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: e0beb366f7dc568c6efdc50c9abedb419c01e61b
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56969406"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57477633"
 ---
 # <a name="returns-c-programming-guide"></a>\<Vrátí > (C# Programming Guide)
 ## <a name="syntax"></a>Syntaxe  
@@ -23,7 +23,7 @@ ms.locfileid: "56969406"
 <returns>description</returns>  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `description`  
  Popis návratovou hodnotu.  
   

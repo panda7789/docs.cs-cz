@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 95d9696e29bc1b460c94d7f4d8afd3de82653333
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 68df19120f2e0b45e73f9d5e137afc8a5e7ac513
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33419627"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57489888"
 ---
 # <a name="icordebugthreadgetdebugstate-method"></a>ICorDebugThread::GetDebugState – metoda
-Získá aktuální stav tohoto objektu ICorDebugThread ladění.  
+Získá aktuální stav ladění tohoto objektu ICorDebugThread.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,15 +35,15 @@ HRESULT GetDebugState (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `pState`  
- [out] Ukazatel na bitovou kombinaci CorDebugThreadState – výčet hodnot, které popisují aktuální stav ladění tohoto podprocesu.  
+ [out] Ukazatel na bitová kombinace hodnot cordebugthreadstate – výčet popisující aktuální stav ladění tohoto vlákna.  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud tento proces je nyní zastavena, `pState` představuje stav ladění, které by existovat pro tento přístup z více vláken, pokud proces dál, nikoli skutečné aktuální stav tohoto podprocesu.  
+ Pokud je aktuálně zastavený proces, `pState` představuje stav ladění, která by existovala pro toto vlákno, pokud proces pokračuje, nikoli skutečné aktuální stav tohoto vlákna.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

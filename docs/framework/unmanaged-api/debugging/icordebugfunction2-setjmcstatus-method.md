@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 15b102be5a792f982edeb320199576bdddbd859a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 49ced1b4be888c7550c3927d1b319ab2f0bef086
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33412357"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57501003"
 ---
 # <a name="icordebugfunction2setjmcstatus-method"></a>ICorDebugFunction2::SetJMCStatus – metoda
-Označí funkce reprezentována tento ICorDebugFunction2 pro pouze můj kód krokování s.  
+Označí funkci reprezentována tento icordebugfunction2 – pro volbu pouze vlastní kód krokování.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,22 +35,22 @@ HRESULT SetJMCStatus (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `bIsJustMyCode`  
- [v] Nastavte na `true` označit funkce jako uživatelský kód; jinak hodnota nastavena na `false`.  
+ [in] Nastavte na `true` označit funkce jako uživatelského kódu; v opačném případě nastavte na `false`.  
   
 ## <a name="return-values"></a>Návratové hodnoty  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
 |`S_OK`|Funkci byl úspěšně označen.|  
-|`CORDBG_E_FUNCTION_NOT_DEBUGGABLE`|Funkci nelze označit jako uživatelského kódu, protože nelze ladit.|  
+|`CORDBG_E_FUNCTION_NOT_DEBUGGABLE`|Funkci nelze označit jako uživatelský kód, protože není možné ladit.|  
   
 ## <a name="remarks"></a>Poznámky  
- Pouze můj kód krokovač přeskočí bez uživatelského kódu. Uživatelský kód musí být podmnožinou debuggable kódu.  
+ Funkce pouze můj kód krokovač přeskočí neuživatelský kód. Kód uživatele musí být podmnožinou laditelný kód.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

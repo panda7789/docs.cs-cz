@@ -5,12 +5,12 @@ helpviewer_keywords:
 - globalization [WPF], about globalization
 - localization [WPF], about localization
 ms.assetid: 56e5a5c8-6c96-4d19-b8e1-a5be1dc564af
-ms.openlocfilehash: e31bea225a699f19e57e5a94f84c1a9f1727a3b6
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 55a60a74c246e0eefb854bed3d22cfb97eff15b1
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57364412"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57492664"
 ---
 # <a name="wpf-globalization-and-localization-overview"></a>Přehled globalizace a lokalizace WPF
 
@@ -74,7 +74,7 @@ Když lokalizujete [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharpt
   
 -   Je možné lokalizovat po sestavení.  
   
--   Můžete aktualizovat na novější verzi formuláře BAML XAMLwith lokalizace ze starší verze formuláře BAML z XAML tak, že je možné lokalizovat ve stejnou dobu, které vyvíjíte.  
+-   Můžete aktualizovat na novější verzi formuláře BAML z XAML s lokalizace ze starší verze formuláře BAML z XAML tak, že je možné lokalizovat ve stejnou dobu, které vyvíjíte.  
   
 -   Můžete ověřit původní zdrojové elementy a sémantika v době kompilace vzhledem k tomu, že je formulář BAML z XAML kompilovaný formy [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)].  
   

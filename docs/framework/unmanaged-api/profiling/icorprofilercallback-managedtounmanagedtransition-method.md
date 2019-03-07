@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 0a3d784aa9d6d71418e2a48f56c7de08d3fe3d80
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 84ba3996d91d0e8a6bbf9cb1071a37909f2ee16d
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54694483"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57484911"
 ---
 # <a name="icorprofilercallbackmanagedtounmanagedtransition-method"></a>ICorProfilerCallback::ManagedToUnmanagedTransition – metoda
 Oznámí profileru, že došlo k přechodu ze spravovaného kódu do nespravovaného kódu.  
@@ -35,7 +35,7 @@ HRESULT ManagedToUnmanagedTransition(
     [in] COR_PRF_TRANSITION_REASON reason);  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `functionId`  
  [in] ID funkce, která je volána.  
   

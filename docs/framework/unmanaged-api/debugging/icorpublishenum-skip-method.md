@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4e7d4e449624f295c4011a4ccdad46226e742a8a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2f56792bbdf11c099205efd0cb35e3bf02d67632
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54681154"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57466606"
 ---
 # <a name="icorpublishenumskip-method"></a>ICorPublishEnum::Skip – metoda
 Přesune kurzor vpřed o zadaný počet položek ve výčtu.  
@@ -35,7 +35,7 @@ HRESULT Skip (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `celt`  
  [in] Počet položek, podle kterého se má přesunout kurzor vpřed.  
   

@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6da4c282c7f969a406a657d1e30dd6120a32b4e3
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2e9d640fb1c9dae5bb195baa504e560ba8e45821
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33420905"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57497090"
 ---
 # <a name="icordebugprocesswritememory-method"></a>ICorDebugProcess::WriteMemory – metoda
-Zapisuje data do oblast paměti v tomto procesu.  
+Zapíše data do oblasti paměti v tomto procesu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,26 +37,26 @@ HRESULT WriteMemory(
     [out] SIZE_T *written);  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `address`  
- [v] A `CORDB_ADDRESS` hodnotu, která je základní adresa oblasti paměti pro data, která je zapsán. Předtím, než dojde k přenosu dat, systém ověřuje, že oblasti paměti zadané velikosti, začínající na základní adrese, je dostupná pro zápis. Pokud není dostupný, metoda se nezdaří.  
+ [in] A `CORDB_ADDRESS` zapsat hodnotu, která je základní adresa paměti oblasti, ke kterým datům. Předtím, než dojde k přenosu dat, systém ověří, zda oblasti paměti o zadané velikosti, začínající na základní adrese přístupné pro zápis. Pokud není dostupný, metoda se nezdaří.  
   
  `size`  
- [v] Počet bajtů, které mají být zapsána do oblasti paměti.  
+ [in] Počet bajtů, které mají být zapsána do oblasti paměti.  
   
  `buffer`  
- [v] Vyrovnávací paměť, která obsahuje data, která má být proveden zápis.  
+ [in] Vyrovnávací paměť, která obsahuje data, která má být proveden zápis.  
   
  `written`  
- [out] Ukazatel na proměnnou, která přijímá počet bajtů zapsaných na oblast paměti v tomto procesu. Pokud `written` má hodnotu NULL, je tento parametr ignorován.  
+ [out] Ukazovat na proměnnou, která přijímá počet bajtů zapsaný na oblast paměti v tomto procesu. Pokud `written` má hodnotu NULL, tento parametr je ignorován.  
   
 ## <a name="remarks"></a>Poznámky  
- Data se automaticky zapisuje za jakékoli zarážky. V rozhraní .NET Framework verze 2.0 nativní ladicí programy nepoužívejte tuto metodu vložení zarážky do datového proudu instrukcí. Použití [icordebugprocess2::setunmanagedbreakpoint –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess2-setunmanagedbreakpoint-method.md) místo.  
+ Data je zapsána automaticky za všechny zarážky. V rozhraní .NET Framework verze 2.0 nativní ladicí programy nepoužívejte tuto metodu vkládat zarážky na datový proud instrukcí. Použití [icordebugprocess2::setunmanagedbreakpoint –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess2-setunmanagedbreakpoint-method.md) místo.  
   
- `WriteMemory` Metoda má být použita pouze mimo spravovaný kód. Tato metoda může poškodit modul runtime, pokud používá nesprávně.  
+ `WriteMemory` Metoda by měla sloužit pouze mimo spravovaný kód. Tato metoda můžou poškodit modul runtime, pokud používá nesprávně.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

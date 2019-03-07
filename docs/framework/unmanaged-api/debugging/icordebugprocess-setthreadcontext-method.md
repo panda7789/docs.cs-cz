@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c9ed79eb799971dfcbc9fd787cd0290795f79d96
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e281022cd7bc9b2095fdbd3964061b811ef60e0d
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33417963"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57496960"
 ---
 # <a name="icordebugprocesssetthreadcontext-method"></a>ICorDebugProcess::SetThreadContext – metoda
 Nastaví kontext pro dané vlákno v tomto procesu.  
@@ -37,27 +37,27 @@ HRESULT SetThreadContext(
     BYTE context[]);  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `threadID`  
- [v] ID vlákna, pro kterou chcete nastavit kontext.  
+ [in] ID vlákna, pro kterou chcete nastavit kontext.  
   
  `contextSize`  
- [v] Velikost `context` pole.  
+ [in] Velikost `context` pole.  
   
  `context`  
- [v] Pole bajtů, které popisují obsah podprocesu.  
+ [in] Pole bajtů, které popisují kontext vlákna.  
   
- Kontext určuje architekturu procesoru, na kterém je prováděna vlákno.  
+ Kontext určuje architekturu procesoru, na kterém vlákno prováděno.  
   
 ## <a name="remarks"></a>Poznámky  
- Ladicí program by měly volat tuto metodu, nikoli Win32 `SetThreadContext` fungovat, protože vlákno ve skutečnosti může být ve stavu "napadenému", ve kterém jeho kontext dočasně změnit. Tato metoda by měla používá, pokud se vlákna v nativním kódu. Použití [ICorDebugRegisterSet](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset-interface.md) pro vlákna ve spravovaném kódu. Nikdy by měl budete muset upravit kontextu vlákno během ladění událost out-of-band (OOB).  
+ Ladicí program by měly volat tuto metodu, spíše než Win32 `SetThreadContext` fungovat, protože vlákno může být ve skutečnosti ve stavu "napadenému", ve kterém jeho kontext dočasně změnit. Tato metoda by měla sloužit pouze v případě vlákna v nativním kódu. Použití [icordebugregisterset –](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset-interface.md) pro vlákna ve spravovaném kódu. Nikdy by mělo stačit změnit kontext vlákna během ladění událost out-of-band (OOB).  
   
- Data předaná musí být kontextu strukturu pro aktuální platformě.  
+ Data předaná musí být struktura kontext pro aktuální platformu.  
   
- Tato metoda může poškodit modul runtime, pokud používá nesprávně.  
+ Tato metoda můžou poškodit modul runtime, pokud používá nesprávně.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

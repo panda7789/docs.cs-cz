@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d172af14aba418d6e97fe77724bf91b0eaf1c56a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b05c35c810630897e4a7bd28e1cbe8cedefefb1f
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33403111"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57489349"
 ---
 # <a name="icordebugappdomaingetprocess-method"></a>ICorDebugAppDomain::GetProcess – metoda
 Získá proces obsahující domény aplikace.  
@@ -35,12 +35,12 @@ HRESULT GetProcess (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `ppProcess`  
- [out] Ukazatel na adresu ICorDebugProcess objekt, který představuje proces.  
+ [out] Ukazatel na adresu ICorDebugProcess objekt reprezentující proces.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

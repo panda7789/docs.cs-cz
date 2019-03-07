@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 51fd8e9728955e8f426a38b8bf6cdc78dfa9bbde
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ecc0b46618cd00ba4442e30c23a7b7e950382fee
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33412344"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57475590"
 ---
 # <a name="icordebughandlevaluegethandletype-method"></a>ICorDebugHandleValue::GetHandleType – metoda
-Získá hodnotu, která určuje druh odkazuje tento objekt icordebughandlevalue – obslužná rutina.  
+Získá hodnotu, která určuje typ, který odkazuje tento objekt icordebughandlevalue – popisovač.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,12 +35,12 @@ HRESULT GetHandleType (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `pType`  
- [out] Ukazatel na hodnotu CorDebugHandleType – výčet, který určuje typ tento popisovač.  
+ [out] Ukazatel na hodnotu cordebughandletype – výčet, který určuje typ tohoto popisovače.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

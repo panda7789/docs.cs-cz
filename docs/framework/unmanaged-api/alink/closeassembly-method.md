@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: aa415926f4a818f697812f1a3c5531cb0ab7081b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c89fd080e61db78ed21c03c2aa63c97337c09585
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54510166"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57497545"
 ---
 # <a name="closeassembly-method"></a>CloseAssembly – metoda
 Dokončí operace sestavení. Tuto metodu volejte před zahájením nové sestavení nebo nevázaného modulu.  
@@ -35,7 +35,7 @@ HRESULT CloseAssembly(
 ) PURE;  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `AssemblyID`  
  ID sestavení.  
   

@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 0f551e2f8a89cf2988ce43bf72a1e87e0ddaf713
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 996f9af1bccb446ad4fcc6faec60b88e511262de
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54543208"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57474277"
 ---
 # <a name="isymunmanagedvariablegetstartoffset-method"></a>ISymUnmanagedVariable::GetStartOffset – metoda
 Získá počáteční odsazení této proměnné v rámci svého nadřazeného objektu. Pokud je to místní proměnné v rámci oboru, počáteční odsazení bude spadat do posuny definované pro tento obor.  
@@ -34,7 +34,7 @@ HRESULT GetStartOffset(
     [out, retval] ULONG32* pRetVal);  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `pRetVal`  
  [out] Ukazatel `ULONG32` , která obdrží počáteční odsazení.  
   

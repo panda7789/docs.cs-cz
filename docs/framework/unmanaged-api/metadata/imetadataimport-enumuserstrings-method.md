@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 79e65d86eda2f01e1d6f2af46c5ee8e15ff03ccb
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2a82456c8bc53e7828e447de3bab79388aa102cd
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54730240"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57493736"
 ---
 # <a name="imetadataimportenumuserstrings-method"></a>IMetaDataImport::EnumUserStrings – metoda
 Vytvoří výčet řetězec tokeny představující pevně zakódované řetězce v aktuálním oboru metadat.  
@@ -38,7 +38,7 @@ HRESULT EnumUserStrings (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `phEnum`  
  [out v] Ukazatel na enumerátor. První volání této metody musí mít hodnotu NULL.  
   

@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 6b45b5e1a7589329b788160df3ac4493efa48197
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 16ccc56579a1ebe45ada61a9565cc8ade335333d
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54663515"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57469675"
 ---
 # <a name="idebugautoattachautoattach-method"></a>IDebugAutoAttach::AutoAttach – metoda
 Provede automaticky serveru vyvolá ladicí program připojit.  
@@ -40,7 +40,7 @@ HRESULT AutoAttach
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `guidPort`  
  [in] Vždy nastaven na hodnotu `GUID_NULL`.  
   

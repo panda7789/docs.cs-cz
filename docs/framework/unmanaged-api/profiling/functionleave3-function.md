@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ee72974d42842f63347c76586c4f1316f2a8f3a9
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 56d9f449c11989091def5e6d34670f5b00f5c0bc
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54683359"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57484378"
 ---
 # <a name="functionleave3-function"></a>FunctionLeave3 – funkce
 Oznámí profileru, že se řízení vrací z funkce.  
@@ -32,7 +32,7 @@ Oznámí profileru, že se řízení vrací z funkce.
 void __stdcall FunctionLeave3(FunctionOrRemappedID functionOrRemappedID);  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `functionOrRemappedID`  
  [in] Identifikátor funkce, ve kterém ovládací prvek se vrátí.  
   

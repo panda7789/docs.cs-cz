@@ -8,12 +8,12 @@ api_name:
 api_location:
 - PresentationHost_v0400.dll
 ms.assetid: d037c062-a911-4949-b251-ccd3e48b1d17
-ms.openlocfilehash: 155b83b8b904350bd6faf73ea21d1db4f83085b7
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 4fc083313c99b1b93db380bfbf6ddeacbc784dcb
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57376127"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57487405"
 ---
 # <a name="loadfromhistory-function-wpf-unmanaged-api-reference"></a>Funkce LoadFromHistory (WPF nespravovaná referenční dokumentace rozhraní API)
 Toto rozhraní API podporuje infrastrukturu Windows Presentation Foundation (WPF) a není určena pro použití přímo v kódu.  
@@ -29,7 +29,7 @@ HRESULT LoadFromHistory_export(
 )  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  pHistoryStream  
  Ukazatel na datový proud informace o historii.  
   

@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: a88acf59043613bb216ffe84dfb1593bd6ebea00
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 9c380d363830eb6b4c47110d50cdb4d08e4568d8
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54651887"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57499807"
 ---
 # <a name="imetadatatablesgetcolumn-method"></a>IMetaDataTables::GetColumn – metoda
 Získá ukazatel na hodnotě obsažené v buňce zadaný sloupců a řádků v dané tabulce.  
@@ -38,7 +38,7 @@ HRESULT GetColumn (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `ixTbl`  
  [in] Index v tabulce.  
   

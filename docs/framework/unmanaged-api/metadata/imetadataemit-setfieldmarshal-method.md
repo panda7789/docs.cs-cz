@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b65f3476da69249f449090e1f2d67c58ed5a427a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 9842108e9a26d7cca621c06b8ae1713e17c97ebe
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54737293"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57476357"
 ---
 # <a name="imetadataemitsetfieldmarshal-method"></a>IMetaDataEmit::SetFieldMarshal – metoda
 Nastaví PInvoke zařazovací informace pro parametr pole, metoda návratový nebo metoda odkazuje zadaný token.  
@@ -37,7 +37,7 @@ HRESULT SetFieldMarshal (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `tk`  
  [in] Token pro cíl datová položka. Je to `mdFieldDef` nebo `mdParamDef` token.  
   

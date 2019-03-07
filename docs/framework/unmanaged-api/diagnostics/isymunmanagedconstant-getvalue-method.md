@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 1043a7efe70798fbbc52ce6d1d0e16510e7c0503
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 09a7cd3afd87653ba2b4270b32077c9946f1ce04
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54499142"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57478918"
 ---
 # <a name="isymunmanagedconstantgetvalue-method"></a>ISymUnmanagedConstant::GetValue – metoda
 Získá hodnotu konstanty.  
@@ -35,7 +35,7 @@ HRESULT GetValue(
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `pValue`  
  [out] Ukazatel na proměnnou, která přijímá hodnotu.  
   

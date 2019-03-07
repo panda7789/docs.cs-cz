@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 1b5e021116b29045837a5afae14aa560690cc944
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 6feee7c5137501dbaf1c8cf8d097dfbf06071906
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54595367"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57499105"
 ---
 # <a name="icorprofilerinfo3requestprofilerdetach-method"></a>ICorProfilerInfo3::RequestProfilerDetach – metoda
 Dá pokyn modulu runtime-li odpojit profiler.  
@@ -34,7 +34,7 @@ HRESULT RequestProfilerDetach(
    [in] DWORD    dwExpectedCompletionMilliseconds);  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `dwExpectedCompletionMilliseconds`  
  [in] Doba v milisekundách, modul CLR (CLR) by měl čekat, než zkontroluje, jestli je bezpečný pro uvolnění profileru.  
   

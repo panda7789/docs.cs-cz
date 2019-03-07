@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c318b6f395e8bd7ccddf5fcbfc4acfcb11087fdf
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d395c7eed27893e407b1944523a2f879b56c795d
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54722553"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57489303"
 ---
 # <a name="iclrmemorynotificationcallbackonmemorynotification-method"></a>ICLRMemoryNotificationCallback::OnMemoryNotification – metoda
 Zatížení paměti v počítači upozorní common language runtime (CLR).  
@@ -35,7 +35,7 @@ HRESULT OnMemoryNotification (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `eMemoryAvailable`  
  [in] Jeden z [ememoryavailable –](../../../../docs/framework/unmanaged-api/hosting/ememoryavailable-enumeration.md) hodnoty, která přetížení paměti v počítači je právě se registruje.  
   

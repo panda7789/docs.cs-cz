@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d408f317b546fb7e8314e904e6f5ad9e6296ae6d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7568f8ca3b92ef465ab595348f68895f389d61e4
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33403263"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57489706"
 ---
 # <a name="icordebugchainenumerateframes-method"></a>ICorDebugChain::EnumerateFrames – metoda
-Získá enumerátor, který obsahuje všechny rámce zásobníku spravovaných v řetězu, počínaje nejnovější rámečku.  
+Získá enumerátor, který obsahuje všechny rámce zásobníku spravovaného v řetězci, od posledního rámce.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,17 +35,17 @@ HRESULT EnumerateFrames (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `ppFrames`  
- [out] Ukazatel na adresu ICorDebugFrameEnum objekt, který je enumerátor pro rámce zásobníku.  
+ [out] Ukazatel na adresu icordebugframeenum – objekt, který je čítač pro rámce zásobníku.  
   
 ## <a name="remarks"></a>Poznámky  
- Řetězu představuje zásobníku volání fyzické pro vlákno.  
+ Řetězec představuje fyzické volání zásobníku pro vlákno.  
   
- `EnumerateFrames` Metoda by měla být volána pouze pro spravované řetězy. Rozhraní API pro ladění neposkytuje metody pro získání snímky obsažené v nespravované řetězy. Ladicí program musí získat tyto informace používat jiným způsobem.  
+ `EnumerateFrames` Metodu lze volat pouze pro spravované řetězce. Rozhraní API pro ladění neposkytuje metody pro získání snímky obsažené v nespravované řetězců. Ladicí program musí používat další prostředky pro získání těchto informací.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
