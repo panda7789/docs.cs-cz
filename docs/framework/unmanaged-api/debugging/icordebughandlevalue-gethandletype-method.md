@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 51fd8e9728955e8f426a38b8bf6cdc78dfa9bbde
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ecc0b46618cd00ba4442e30c23a7b7e950382fee
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33412344"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57475590"
 ---
-# <a name="icordebughandlevaluegethandletype-method"></a><span data-ttu-id="3abe4-102">ICorDebugHandleValue::GetHandleType – metoda</span><span class="sxs-lookup"><span data-stu-id="3abe4-102">ICorDebugHandleValue::GetHandleType Method</span></span>
-<span data-ttu-id="3abe4-103">Získá hodnotu, která určuje druh odkazuje tento objekt icordebughandlevalue – obslužná rutina.</span><span class="sxs-lookup"><span data-stu-id="3abe4-103">Gets a value that indicates the kind of handle referenced by this ICorDebugHandleValue object.</span></span>  
+# <a name="icordebughandlevaluegethandletype-method"></a><span data-ttu-id="dbd56-102">ICorDebugHandleValue::GetHandleType – metoda</span><span class="sxs-lookup"><span data-stu-id="dbd56-102">ICorDebugHandleValue::GetHandleType Method</span></span>
+<span data-ttu-id="dbd56-103">Získá hodnotu, která určuje typ, který odkazuje tento objekt icordebughandlevalue – popisovač.</span><span class="sxs-lookup"><span data-stu-id="dbd56-103">Gets a value that indicates the kind of handle referenced by this ICorDebugHandleValue object.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="3abe4-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="3abe4-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="dbd56-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="dbd56-104">Syntax</span></span>  
   
 ```  
 HRESULT GetHandleType (  
@@ -35,15 +35,15 @@ HRESULT GetHandleType (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="3abe4-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="3abe4-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="dbd56-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="dbd56-105">Parameters</span></span>  
  `pType`  
- <span data-ttu-id="3abe4-106">[out] Ukazatel na hodnotu CorDebugHandleType – výčet, který určuje typ tento popisovač.</span><span class="sxs-lookup"><span data-stu-id="3abe4-106">[out] A pointer to a value of the CorDebugHandleType enumeration that indicates the type of this handle.</span></span>  
+ <span data-ttu-id="dbd56-106">[out] Ukazatel na hodnotu cordebughandletype – výčet, který určuje typ tohoto popisovače.</span><span class="sxs-lookup"><span data-stu-id="dbd56-106">[out] A pointer to a value of the CorDebugHandleType enumeration that indicates the type of this handle.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="3abe4-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="3abe4-107">Requirements</span></span>  
- <span data-ttu-id="3abe4-108">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="3abe4-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="dbd56-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="dbd56-107">Requirements</span></span>  
+ <span data-ttu-id="dbd56-108">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="dbd56-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="3abe4-109">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="3abe4-109">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="dbd56-109">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="dbd56-109">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="3abe4-110">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="3abe4-110">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="dbd56-110">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="dbd56-110">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="3abe4-111">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="3abe4-111">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>
+ <span data-ttu-id="dbd56-111">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="dbd56-111">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>

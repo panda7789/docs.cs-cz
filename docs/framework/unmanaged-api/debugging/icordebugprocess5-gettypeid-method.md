@@ -19,17 +19,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4cf72d0f41ee916db0e65cc6799217d19893628b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f58e4213959ca1cd6e65bc809a9ad964bebc31ae
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54597096"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57494789"
 ---
-# <a name="icordebugprocess5gettypeid-method"></a><span data-ttu-id="93051-102">ICorDebugProcess5::GetTypeID – metoda</span><span class="sxs-lookup"><span data-stu-id="93051-102">ICorDebugProcess5::GetTypeID Method</span></span>
-<span data-ttu-id="93051-103">Převede adresu objektu [cor_typeid –](../../../../docs/framework/unmanaged-api/debugging/cor-typeid-structure.md) identifikátor.</span><span class="sxs-lookup"><span data-stu-id="93051-103">Converts an object address to a [COR_TYPEID](../../../../docs/framework/unmanaged-api/debugging/cor-typeid-structure.md) identifier.</span></span>  
+# <a name="icordebugprocess5gettypeid-method"></a><span data-ttu-id="b5612-102">ICorDebugProcess5::GetTypeID – metoda</span><span class="sxs-lookup"><span data-stu-id="b5612-102">ICorDebugProcess5::GetTypeID Method</span></span>
+<span data-ttu-id="b5612-103">Převede adresu objektu [cor_typeid –](../../../../docs/framework/unmanaged-api/debugging/cor-typeid-structure.md) identifikátor.</span><span class="sxs-lookup"><span data-stu-id="b5612-103">Converts an object address to a [COR_TYPEID](../../../../docs/framework/unmanaged-api/debugging/cor-typeid-structure.md) identifier.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="93051-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="93051-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="b5612-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b5612-104">Syntax</span></span>  
   
 ```cpp
 HRESULT GetTypeID(  
@@ -38,24 +38,24 @@ HRESULT GetTypeID(
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="93051-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="93051-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="b5612-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="b5612-105">Parameters</span></span>  
  `obj`  
- <span data-ttu-id="93051-106">[in] Adresa objektu.</span><span class="sxs-lookup"><span data-stu-id="93051-106">[in] The object address.</span></span>  
+ <span data-ttu-id="b5612-106">[in] Adresa objektu.</span><span class="sxs-lookup"><span data-stu-id="b5612-106">[in] The object address.</span></span>  
   
  `pId`  
- <span data-ttu-id="93051-107">Ukazatel [cor_typeid –](../../../../docs/framework/unmanaged-api/debugging/cor-typeid-structure.md) hodnotu, která určuje objekt.</span><span class="sxs-lookup"><span data-stu-id="93051-107">A pointer to the [COR_TYPEID](../../../../docs/framework/unmanaged-api/debugging/cor-typeid-structure.md) value that identifies the object.</span></span>  
+ <span data-ttu-id="b5612-107">Ukazatel [cor_typeid –](../../../../docs/framework/unmanaged-api/debugging/cor-typeid-structure.md) hodnotu, která určuje objekt.</span><span class="sxs-lookup"><span data-stu-id="b5612-107">A pointer to the [COR_TYPEID](../../../../docs/framework/unmanaged-api/debugging/cor-typeid-structure.md) value that identifies the object.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="93051-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="93051-108">Remarks</span></span>  
+## <a name="remarks"></a><span data-ttu-id="b5612-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="b5612-108">Remarks</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="93051-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="93051-109">Requirements</span></span>  
- <span data-ttu-id="93051-110">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="93051-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="b5612-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="b5612-109">Requirements</span></span>  
+ <span data-ttu-id="b5612-110">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="b5612-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="93051-111">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="93051-111">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="b5612-111">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="b5612-111">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="93051-112">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="93051-112">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="b5612-112">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="b5612-112">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="93051-113">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="93051-113">**.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span></span>  
+ <span data-ttu-id="b5612-113">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="b5612-113">**.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="93051-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="93051-114">See also</span></span>
-- [<span data-ttu-id="93051-115">ICorDebugProcess5 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="93051-115">ICorDebugProcess5 Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-interface.md)
-- [<span data-ttu-id="93051-116">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="93051-116">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+## <a name="see-also"></a><span data-ttu-id="b5612-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="b5612-114">See also</span></span>
+- [<span data-ttu-id="b5612-115">ICorDebugProcess5 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="b5612-115">ICorDebugProcess5 Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-interface.md)
+- [<span data-ttu-id="b5612-116">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="b5612-116">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

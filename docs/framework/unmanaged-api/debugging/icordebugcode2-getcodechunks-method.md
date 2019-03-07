@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: cf8bc747f643819eb82448b4ad6b7fab696c9c91
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 84ab475ecb538dcf5bd24c750dfe9c993ea5a0ee
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54572497"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57470897"
 ---
-# <a name="icordebugcode2getcodechunks-method"></a><span data-ttu-id="95aa4-102">ICorDebugCode2::GetCodeChunks – metoda</span><span class="sxs-lookup"><span data-stu-id="95aa4-102">ICorDebugCode2::GetCodeChunks Method</span></span>
-<span data-ttu-id="95aa4-103">Získá bloky kódu, ze kterých je tento objekt kódu sestaven.</span><span class="sxs-lookup"><span data-stu-id="95aa4-103">Gets the chunks of code that this code object is composed of.</span></span>  
+# <a name="icordebugcode2getcodechunks-method"></a><span data-ttu-id="2e828-102">ICorDebugCode2::GetCodeChunks – metoda</span><span class="sxs-lookup"><span data-stu-id="2e828-102">ICorDebugCode2::GetCodeChunks Method</span></span>
+<span data-ttu-id="2e828-103">Získá bloky kódu, ze kterých je tento objekt kódu sestaven.</span><span class="sxs-lookup"><span data-stu-id="2e828-103">Gets the chunks of code that this code object is composed of.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="95aa4-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="95aa4-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="2e828-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="2e828-104">Syntax</span></span>  
   
 ```  
 HRESULT GetCodeChunks (  
@@ -38,27 +38,27 @@ HRESULT GetCodeChunks (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="95aa4-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="95aa4-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="2e828-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="2e828-105">Parameters</span></span>  
  `cbufSize`  
- <span data-ttu-id="95aa4-106">[in] Velikost `chunks` pole.</span><span class="sxs-lookup"><span data-stu-id="95aa4-106">[in] Size of the `chunks` array.</span></span>  
+ <span data-ttu-id="2e828-106">[in] Velikost `chunks` pole.</span><span class="sxs-lookup"><span data-stu-id="2e828-106">[in] Size of the `chunks` array.</span></span>  
   
  `pcnumChunks`  
- <span data-ttu-id="95aa4-107">[out] Počet bloků, které jsou vráceny v `chunks` pole.</span><span class="sxs-lookup"><span data-stu-id="95aa4-107">[out] The number of chunks returned in the `chunks` array.</span></span>  
+ <span data-ttu-id="2e828-107">[out] Počet bloků, které jsou vráceny v `chunks` pole.</span><span class="sxs-lookup"><span data-stu-id="2e828-107">[out] The number of chunks returned in the `chunks` array.</span></span>  
   
  `chunks`  
- <span data-ttu-id="95aa4-108">[out] Pole struktur "codechunkinfo –", z nichž každý představuje jediný neodkazovaný blok kódu.</span><span class="sxs-lookup"><span data-stu-id="95aa4-108">[out] An array of "CodeChunkInfo" structures, each of which represents a single chunk of code.</span></span> <span data-ttu-id="95aa4-109">Pokud hodnota `cbufSize` je 0, tento parametr může mít hodnotu null.</span><span class="sxs-lookup"><span data-stu-id="95aa4-109">If the value of `cbufSize` is 0, this parameter can be null.</span></span>  
+ <span data-ttu-id="2e828-108">[out] Pole struktur "codechunkinfo –", z nichž každý představuje jediný neodkazovaný blok kódu.</span><span class="sxs-lookup"><span data-stu-id="2e828-108">[out] An array of "CodeChunkInfo" structures, each of which represents a single chunk of code.</span></span> <span data-ttu-id="2e828-109">Pokud hodnota `cbufSize` je 0, tento parametr může mít hodnotu null.</span><span class="sxs-lookup"><span data-stu-id="2e828-109">If the value of `cbufSize` is 0, this parameter can be null.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="95aa4-110">Poznámky</span><span class="sxs-lookup"><span data-stu-id="95aa4-110">Remarks</span></span>  
- <span data-ttu-id="95aa4-111">Bloky kódu nikdy se překrývají a jejich brzo bude následovat pořadí, ve kterém jsou by mít byla zřetězených podle [icordebugcode::getcode –](../../../../docs/framework/unmanaged-api/debugging/icordebugcode-getcode-method.md).</span><span class="sxs-lookup"><span data-stu-id="95aa4-111">The code chunks will never overlap, and they will follow the order in which they would have been concatenated by [ICorDebugCode::GetCode](../../../../docs/framework/unmanaged-api/debugging/icordebugcode-getcode-method.md).</span></span> <span data-ttu-id="95aa4-112">Objekt Microsoft intermediate language (MSIL) kódu v rozhraní .NET Framework verze 2.0 bude tvořit jeden blok.</span><span class="sxs-lookup"><span data-stu-id="95aa4-112">A Microsoft intermediate language (MSIL) code object in the .NET Framework version 2.0 will comprise a single code chunk.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="2e828-110">Poznámky</span><span class="sxs-lookup"><span data-stu-id="2e828-110">Remarks</span></span>  
+ <span data-ttu-id="2e828-111">Bloky kódu nikdy se překrývají a jejich brzo bude následovat pořadí, ve kterém jsou by mít byla zřetězených podle [icordebugcode::getcode –](../../../../docs/framework/unmanaged-api/debugging/icordebugcode-getcode-method.md).</span><span class="sxs-lookup"><span data-stu-id="2e828-111">The code chunks will never overlap, and they will follow the order in which they would have been concatenated by [ICorDebugCode::GetCode](../../../../docs/framework/unmanaged-api/debugging/icordebugcode-getcode-method.md).</span></span> <span data-ttu-id="2e828-112">Objekt Microsoft intermediate language (MSIL) kódu v rozhraní .NET Framework verze 2.0 bude tvořit jeden blok.</span><span class="sxs-lookup"><span data-stu-id="2e828-112">A Microsoft intermediate language (MSIL) code object in the .NET Framework version 2.0 will comprise a single code chunk.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="95aa4-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="95aa4-113">Requirements</span></span>  
- <span data-ttu-id="95aa4-114">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="95aa4-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="2e828-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="2e828-113">Requirements</span></span>  
+ <span data-ttu-id="2e828-114">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="2e828-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="95aa4-115">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="95aa4-115">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="2e828-115">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="2e828-115">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="95aa4-116">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="95aa4-116">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="2e828-116">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="2e828-116">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="95aa4-117">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="95aa4-117">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="2e828-117">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="2e828-117">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="95aa4-118">Viz také:</span><span class="sxs-lookup"><span data-stu-id="95aa4-118">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="2e828-118">Viz také:</span><span class="sxs-lookup"><span data-stu-id="2e828-118">See also</span></span>
 

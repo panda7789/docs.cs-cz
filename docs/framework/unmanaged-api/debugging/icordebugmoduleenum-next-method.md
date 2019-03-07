@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f71901acf8227d018bf288b6cd0265f053e6a3a4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 027c7b0b9ee7902c81b620549b335cd123d8b277
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54510829"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57491370"
 ---
-# <a name="icordebugmoduleenumnext-method"></a><span data-ttu-id="b5c92-102">ICorDebugModuleEnum::Next – metoda</span><span class="sxs-lookup"><span data-stu-id="b5c92-102">ICorDebugModuleEnum::Next Method</span></span>
-<span data-ttu-id="b5c92-103">Získá počet instancí "ICorDebugModule" určené `celt` z výčtu od aktuální pozice.</span><span class="sxs-lookup"><span data-stu-id="b5c92-103">Gets the number of "ICorDebugModule" instances specified by `celt` from the enumeration, starting at the current position.</span></span>  
+# <a name="icordebugmoduleenumnext-method"></a><span data-ttu-id="98cb0-102">ICorDebugModuleEnum::Next – metoda</span><span class="sxs-lookup"><span data-stu-id="98cb0-102">ICorDebugModuleEnum::Next Method</span></span>
+<span data-ttu-id="98cb0-103">Získá počet instancí "ICorDebugModule" určené `celt` z výčtu od aktuální pozice.</span><span class="sxs-lookup"><span data-stu-id="98cb0-103">Gets the number of "ICorDebugModule" instances specified by `celt` from the enumeration, starting at the current position.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="b5c92-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b5c92-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="98cb0-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="98cb0-104">Syntax</span></span>  
   
 ```  
 HRESULT Next (  
@@ -38,24 +38,24 @@ HRESULT Next (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="b5c92-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="b5c92-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="98cb0-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="98cb0-105">Parameters</span></span>  
  `celt`  
- <span data-ttu-id="b5c92-106">[in] Počet `ICorDebugModule` instancí, který se má načíst.</span><span class="sxs-lookup"><span data-stu-id="b5c92-106">[in] The number of `ICorDebugModule` instances to be retrieved.</span></span>  
+ <span data-ttu-id="98cb0-106">[in] Počet `ICorDebugModule` instancí, který se má načíst.</span><span class="sxs-lookup"><span data-stu-id="98cb0-106">[in] The number of `ICorDebugModule` instances to be retrieved.</span></span>  
   
  `modules`  
- <span data-ttu-id="b5c92-107">[out] Pole ukazatelů, každý z nich odkazuje na `ICorDebugModule` objektu.</span><span class="sxs-lookup"><span data-stu-id="b5c92-107">[out] An array of pointers, each of which points to an `ICorDebugModule` object.</span></span>  
+ <span data-ttu-id="98cb0-107">[out] Pole ukazatelů, každý z nich odkazuje na `ICorDebugModule` objektu.</span><span class="sxs-lookup"><span data-stu-id="98cb0-107">[out] An array of pointers, each of which points to an `ICorDebugModule` object.</span></span>  
   
  `pceltFetched`  
- <span data-ttu-id="b5c92-108">[out] Ukazatel na počet `ICorDebugModule` skutečně vrácených instancí.</span><span class="sxs-lookup"><span data-stu-id="b5c92-108">[out] Pointer to the number of `ICorDebugModule` instances actually returned.</span></span> <span data-ttu-id="b5c92-109">Tato hodnota může mít hodnotu null Pokud `celt` je jedna.</span><span class="sxs-lookup"><span data-stu-id="b5c92-109">This value may be null if `celt` is one.</span></span>  
+ <span data-ttu-id="98cb0-108">[out] Ukazatel na počet `ICorDebugModule` skutečně vrácených instancí.</span><span class="sxs-lookup"><span data-stu-id="98cb0-108">[out] Pointer to the number of `ICorDebugModule` instances actually returned.</span></span> <span data-ttu-id="98cb0-109">Tato hodnota může mít hodnotu null Pokud `celt` je jedna.</span><span class="sxs-lookup"><span data-stu-id="98cb0-109">This value may be null if `celt` is one.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="b5c92-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="b5c92-110">Requirements</span></span>  
- <span data-ttu-id="b5c92-111">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="b5c92-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="98cb0-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="98cb0-110">Requirements</span></span>  
+ <span data-ttu-id="98cb0-111">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="98cb0-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="b5c92-112">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="b5c92-112">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="98cb0-112">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="98cb0-112">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="b5c92-113">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="b5c92-113">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="98cb0-113">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="98cb0-113">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="b5c92-114">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="b5c92-114">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="98cb0-114">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="98cb0-114">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="b5c92-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="b5c92-115">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="98cb0-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="98cb0-115">See also</span></span>
 

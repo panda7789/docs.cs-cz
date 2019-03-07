@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 83aebad108a743d25b8ea93c99060d10bf5c3980
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ae64fcccb49123f34cca2622a972a89bf700904f
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33413205"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57476682"
 ---
-# <a name="icordebuggenericvaluesetvalue-method"></a><span data-ttu-id="081ba-102">ICorDebugGenericValue::SetValue – metoda</span><span class="sxs-lookup"><span data-stu-id="081ba-102">ICorDebugGenericValue::SetValue Method</span></span>
-<span data-ttu-id="081ba-103">Zkopíruje novou hodnotu ze zadaného vyrovnávací paměti.</span><span class="sxs-lookup"><span data-stu-id="081ba-103">Copies a new value from the specified buffer.</span></span>  
+# <a name="icordebuggenericvaluesetvalue-method"></a><span data-ttu-id="95be1-102">ICorDebugGenericValue::SetValue – metoda</span><span class="sxs-lookup"><span data-stu-id="95be1-102">ICorDebugGenericValue::SetValue Method</span></span>
+<span data-ttu-id="95be1-103">Zkopíruje nové hodnoty ze zadané vyrovnávací paměti.</span><span class="sxs-lookup"><span data-stu-id="95be1-103">Copies a new value from the specified buffer.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="081ba-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="081ba-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="95be1-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="95be1-104">Syntax</span></span>  
   
 ```  
 HRESULT SetValue (  
@@ -35,18 +35,18 @@ HRESULT SetValue (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="081ba-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="081ba-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="95be1-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="95be1-105">Parameters</span></span>  
  `pFrom`  
- <span data-ttu-id="081ba-106">[v] Ukazatel do vyrovnávací paměti odkud zkopírujte hodnotu.</span><span class="sxs-lookup"><span data-stu-id="081ba-106">[in] A pointer to the buffer from which to copy the value.</span></span>  
+ <span data-ttu-id="95be1-106">[in] Ukazatel do vyrovnávací paměti ze kterého chcete kopírovat hodnotu.</span><span class="sxs-lookup"><span data-stu-id="95be1-106">[in] A pointer to the buffer from which to copy the value.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="081ba-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="081ba-107">Remarks</span></span>  
- <span data-ttu-id="081ba-108">U typů odkazu hodnota je odkaz, není obsah.</span><span class="sxs-lookup"><span data-stu-id="081ba-108">For reference types, the value is the reference, not the content.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="95be1-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="95be1-107">Remarks</span></span>  
+ <span data-ttu-id="95be1-108">Pro typy odkazů hodnota je odkaz, nikoli obsah.</span><span class="sxs-lookup"><span data-stu-id="95be1-108">For reference types, the value is the reference, not the content.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="081ba-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="081ba-109">Requirements</span></span>  
- <span data-ttu-id="081ba-110">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="081ba-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="95be1-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="95be1-109">Requirements</span></span>  
+ <span data-ttu-id="95be1-110">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="95be1-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="081ba-111">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="081ba-111">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="95be1-111">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="95be1-111">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="081ba-112">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="081ba-112">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="95be1-112">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="95be1-112">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="081ba-113">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="081ba-113">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>
+ <span data-ttu-id="95be1-113">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="95be1-113">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>
