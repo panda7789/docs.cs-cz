@@ -1,24 +1,29 @@
 ---
 title: Trénování regresní model k predikci hodnotu pomocí ML.NET
 description: Dozvíte se, jak pro trénování regresní model k predikci hodnotu pomocí ML.NET strojového učení
-ms.date: 02/06/2019
+ms.date: 03/05/2019
 ms.custom: mvc,how-to
-ms.openlocfilehash: faee51550250f08443d4d9349fa2f1c92bf411dc
-ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
+ms.openlocfilehash: e7ea07471e155804a7ad36481aa469beda7028ae
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56092901"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57673142"
 ---
-# <a name="train-a-regression-model-to-predict-a-value-using-mlnet"></a><span data-ttu-id="f15f6-103">Trénování regresní model k predikci hodnotu pomocí ML.NET</span><span class="sxs-lookup"><span data-stu-id="f15f6-103">Train a regression model to predict a value using ML.NET</span></span>
+# <a name="train-a-regression-model-to-predict-a-value-using-mlnet"></a><span data-ttu-id="cbe90-103">Trénování regresní model k predikci hodnotu pomocí ML.NET</span><span class="sxs-lookup"><span data-stu-id="cbe90-103">Train a regression model to predict a value using ML.NET</span></span>
 
-<span data-ttu-id="f15f6-104">Existují obecně tři kroky k tréninku modelu v ML.NET:</span><span class="sxs-lookup"><span data-stu-id="f15f6-104">Generally, there are three steps for model training in ML.NET:</span></span>
+> [!NOTE]
+> <span data-ttu-id="cbe90-104">Toto téma odkazuje na ML.NET, která je aktuálně ve verzi Preview, a materiálu se můžou stát terčem změnit.</span><span class="sxs-lookup"><span data-stu-id="cbe90-104">This topic refers to ML.NET, which is currently in Preview, and material may be subject to change.</span></span> <span data-ttu-id="cbe90-105">Další informace najdete v článku [Úvod ML.NET](https://www.microsoft.com/net/learn/apps/machine-learning-and-ai/ml-dotnet).</span><span class="sxs-lookup"><span data-stu-id="cbe90-105">For more information, visit [the ML.NET introduction](https://www.microsoft.com/net/learn/apps/machine-learning-and-ai/ml-dotnet).</span></span>
 
-1. <span data-ttu-id="f15f6-105">Získat trénovacích dat ve formě `IDataView`</span><span class="sxs-lookup"><span data-stu-id="f15f6-105">Get the training data in a form of an `IDataView`</span></span>
-2. <span data-ttu-id="f15f6-106">Sestavení kanálu learning jako posloupnost základních operátorů (odhady).</span><span class="sxs-lookup"><span data-stu-id="f15f6-106">Build the 'learning pipeline' as a sequence of elementary 'operators' (estimators).</span></span>
-3. <span data-ttu-id="f15f6-107">Volání `Fit` ke kanálu zobrazíte trénovaného modelu.</span><span class="sxs-lookup"><span data-stu-id="f15f6-107">Call `Fit` on the pipeline to obtain the trained model.</span></span>
+<span data-ttu-id="cbe90-106">Aktuálně používáte této ukázky s postupy a související **ML.NET verze 0.10**.</span><span class="sxs-lookup"><span data-stu-id="cbe90-106">This how-to and related sample are currently using **ML.NET version 0.10**.</span></span> <span data-ttu-id="cbe90-107">Další informace najdete v tématu poznámky k verzi v [úložiště GitHub dotnet/machinelearning](https://github.com/dotnet/machinelearning/tree/master/docs/release-notes).</span><span class="sxs-lookup"><span data-stu-id="cbe90-107">For more information, see the release notes at the [dotnet/machinelearning GitHub repo](https://github.com/dotnet/machinelearning/tree/master/docs/release-notes).</span></span>
 
-<span data-ttu-id="f15f6-108">V tomto [ukázkový soubor](https://github.com/dotnet/machinelearning/tree/master/test/data/generated_regression_dataset.csv), předpokládanou popisek (`target`) je poslední sloupec (12.) a všechny ostatní jsou funkce:</span><span class="sxs-lookup"><span data-stu-id="f15f6-108">In this [Example file](https://github.com/dotnet/machinelearning/tree/master/test/data/generated_regression_dataset.csv),the predicted label (`target`) is the last column (12th) and all the rest are features:</span></span>
+<span data-ttu-id="cbe90-108">Existují obecně tři kroky k tréninku modelu v ML.NET:</span><span class="sxs-lookup"><span data-stu-id="cbe90-108">Generally, there are three steps for model training in ML.NET:</span></span>
+
+1. <span data-ttu-id="cbe90-109">Získat trénovacích dat ve formě `IDataView`</span><span class="sxs-lookup"><span data-stu-id="cbe90-109">Get the training data in a form of an `IDataView`</span></span>
+2. <span data-ttu-id="cbe90-110">Sestavení kanálu learning jako posloupnost základních operátorů (odhady).</span><span class="sxs-lookup"><span data-stu-id="cbe90-110">Build the 'learning pipeline' as a sequence of elementary 'operators' (estimators).</span></span>
+3. <span data-ttu-id="cbe90-111">Volání `Fit` ke kanálu zobrazíte trénovaného modelu.</span><span class="sxs-lookup"><span data-stu-id="cbe90-111">Call `Fit` on the pipeline to obtain the trained model.</span></span>
+
+<span data-ttu-id="cbe90-112">V tomto [ukázkový soubor](https://github.com/dotnet/machinelearning/tree/master/test/data/generated_regression_dataset.csv), předpokládanou popisek (`target`) je poslední sloupec (12.) a všechny ostatní jsou funkce:</span><span class="sxs-lookup"><span data-stu-id="cbe90-112">In this [Example file](https://github.com/dotnet/machinelearning/tree/master/test/data/generated_regression_dataset.csv),the predicted label (`target`) is the last column (12th) and all the rest are features:</span></span>
 
 ```console
 feature_0;feature_1;feature_2;feature_3;feature_4;feature_5;feature_6;feature_7;feature_8;feature_9;feature_10;target

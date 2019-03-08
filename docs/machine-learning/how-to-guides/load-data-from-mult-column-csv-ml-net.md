@@ -1,22 +1,27 @@
 ---
 title: Načtení dat pomocí mnoho sloupců ze souboru CSV pro machine learning zpracování – ML.NET
 description: Zjistěte, jak načíst data data s mnoha sloupci ze souboru CSV pro použití v modelu strojového učení, vytváření, trénování a vyhodnocování s ML.NET
-ms.date: 02/06/2019
+ms.date: 03/05/2019
 ms.custom: mvc,how-to
-ms.openlocfilehash: b295653d1bd3a955c2e6da929dc8f2d4d0a4c14d
-ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
+ms.openlocfilehash: e33fdf1d71b02545e3ea284cc317f5d244c3fc13
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56091965"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57675950"
 ---
-# <a name="load-data-with-many-columns-from-a-csv-file-for-machine-learning-processing---mlnet"></a><span data-ttu-id="2c2c9-103">Načtení dat pomocí mnoho sloupců ze souboru CSV pro machine learning zpracování – ML.NET</span><span class="sxs-lookup"><span data-stu-id="2c2c9-103">Load data with many columns from a CSV file for machine learning processing - ML.NET</span></span>
+# <a name="load-data-with-many-columns-from-a-csv-file-for-machine-learning-processing---mlnet"></a><span data-ttu-id="f2fc9-103">Načtení dat pomocí mnoho sloupců ze souboru CSV pro machine learning zpracování – ML.NET</span><span class="sxs-lookup"><span data-stu-id="f2fc9-103">Load data with many columns from a CSV file for machine learning processing - ML.NET</span></span>
 
-<span data-ttu-id="2c2c9-104">`TextLoader` slouží k načtení dat z textových souborů.</span><span class="sxs-lookup"><span data-stu-id="2c2c9-104">`TextLoader` is used to load data from text files.</span></span> <span data-ttu-id="2c2c9-105">Je třeba zadat sloupců dat, jejich typy a jejich umístění v textovém souboru.</span><span class="sxs-lookup"><span data-stu-id="2c2c9-105">You need to specify the data columns, their types, and their location in the text file.</span></span>
+> [!NOTE]
+> <span data-ttu-id="f2fc9-104">Toto téma odkazuje na ML.NET, která je aktuálně ve verzi Preview, a materiálu se můžou stát terčem změnit.</span><span class="sxs-lookup"><span data-stu-id="f2fc9-104">This topic refers to ML.NET, which is currently in Preview, and material may be subject to change.</span></span> <span data-ttu-id="f2fc9-105">Další informace najdete v článku [Úvod ML.NET](https://www.microsoft.com/net/learn/apps/machine-learning-and-ai/ml-dotnet).</span><span class="sxs-lookup"><span data-stu-id="f2fc9-105">For more information, visit [the ML.NET introduction](https://www.microsoft.com/net/learn/apps/machine-learning-and-ai/ml-dotnet).</span></span>
 
-<span data-ttu-id="2c2c9-106">Pokud vstupní soubor obsahuje mnoho sloupců stejného typu a vždy použít současně, přečtěte si je jako *vektoru sloupec*.</span><span class="sxs-lookup"><span data-stu-id="2c2c9-106">When the input file contains many columns of the same type and always used together, read them as a *vector column*.</span></span> <span data-ttu-id="2c2c9-107">Tato strategie výsledků ve schématu vyčištění dat a zabraňuje náklady zbytečně výkon, jak je znázorněno v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="2c2c9-107">This strategy results in a clean data schema and avoids unnecessary performance costs, as shown in the following example:</span></span>
+<span data-ttu-id="f2fc9-106">Aktuálně používáte této ukázky s postupy a související **ML.NET verze 0.10**.</span><span class="sxs-lookup"><span data-stu-id="f2fc9-106">This how-to and related sample are currently using **ML.NET version 0.10**.</span></span> <span data-ttu-id="f2fc9-107">Další informace najdete v tématu poznámky k verzi v [úložiště GitHub dotnet/machinelearning](https://github.com/dotnet/machinelearning/tree/master/docs/release-notes).</span><span class="sxs-lookup"><span data-stu-id="f2fc9-107">For more information, see the release notes at the [dotnet/machinelearning GitHub repo](https://github.com/dotnet/machinelearning/tree/master/docs/release-notes).</span></span>
 
-<span data-ttu-id="2c2c9-108">[Příklad souboru](https://github.com/dotnet/machinelearning/tree/master/test/data/generated_regression_dataset.csv):</span><span class="sxs-lookup"><span data-stu-id="2c2c9-108">[Example file](https://github.com/dotnet/machinelearning/tree/master/test/data/generated_regression_dataset.csv):</span></span>
+<span data-ttu-id="f2fc9-108">`TextLoader` slouží k načtení dat z textových souborů.</span><span class="sxs-lookup"><span data-stu-id="f2fc9-108">`TextLoader` is used to load data from text files.</span></span> <span data-ttu-id="f2fc9-109">Je třeba zadat sloupců dat, jejich typy a jejich umístění v textovém souboru.</span><span class="sxs-lookup"><span data-stu-id="f2fc9-109">You need to specify the data columns, their types, and their location in the text file.</span></span>
+
+<span data-ttu-id="f2fc9-110">Pokud vstupní soubor obsahuje mnoho sloupců stejného typu a vždy použít současně, přečtěte si je jako *vektoru sloupec*.</span><span class="sxs-lookup"><span data-stu-id="f2fc9-110">When the input file contains many columns of the same type and always used together, read them as a *vector column*.</span></span> <span data-ttu-id="f2fc9-111">Tato strategie výsledků ve schématu vyčištění dat a zabraňuje náklady zbytečně výkon, jak je znázorněno v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="f2fc9-111">This strategy results in a clean data schema and avoids unnecessary performance costs, as shown in the following example:</span></span>
+
+<span data-ttu-id="f2fc9-112">[Příklad souboru](https://github.com/dotnet/machinelearning/tree/master/test/data/generated_regression_dataset.csv):</span><span class="sxs-lookup"><span data-stu-id="f2fc9-112">[Example file](https://github.com/dotnet/machinelearning/tree/master/test/data/generated_regression_dataset.csv):</span></span>
 
 ```console
 -2.75;0.77;-0.61;0.14;1.39;0.38;-0.53;-0.50;-2.13;-0.39;0.46;140.66
@@ -25,7 +30,7 @@ ms.locfileid: "56091965"
 0.28;1.05;-0.24;0.30;-0.99;0.19;0.32;-0.95;-1.19;-0.63;0.75;443.51
 ```
 
-<span data-ttu-id="2c2c9-109">Čtení tohoto souboru pomocí `TextLoader`:</span><span class="sxs-lookup"><span data-stu-id="2c2c9-109">Reading this file using `TextLoader`:</span></span>
+<span data-ttu-id="f2fc9-113">Čtení tohoto souboru pomocí `TextLoader`:</span><span class="sxs-lookup"><span data-stu-id="f2fc9-113">Reading this file using `TextLoader`:</span></span>
 
 ```csharp
 // Create a new context for ML.NET operations. It can be used for exception tracking and logging, 

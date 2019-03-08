@@ -1,21 +1,26 @@
 ---
 title: Načtení dat z více souborů pro machine learning zpracování – ML.NET
 description: Zjistěte, jak načíst data z více souborů pro použití v modelu strojového učení, vytváření, trénování a vyhodnocování s ML.NET
-ms.date: 02/06/2019
+ms.date: 03/05/2019
 ms.custom: mvc,how-to
-ms.openlocfilehash: f5108aaed80769f2bc7ed2f974f9a729abe8455e
-ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
+ms.openlocfilehash: fbf5e4b5ab9a1a686edb933bdec818fc532bbf42
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56092043"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57679018"
 ---
-# <a name="load-data-from-multiple-files-for-machine-learning-processing---mlnet"></a><span data-ttu-id="c38b5-103">Načtení dat z více souborů pro machine learning zpracování – ML.NET</span><span class="sxs-lookup"><span data-stu-id="c38b5-103">Load data from multiple files for machine learning processing - ML.NET</span></span>
+# <a name="load-data-from-multiple-files-for-machine-learning-processing---mlnet"></a><span data-ttu-id="200e7-103">Načtení dat z více souborů pro machine learning zpracování – ML.NET</span><span class="sxs-lookup"><span data-stu-id="200e7-103">Load data from multiple files for machine learning processing - ML.NET</span></span>
 
-<span data-ttu-id="c38b5-104">Použití `TextLoader`a určit pole souborů, které mají `Read` metody.</span><span class="sxs-lookup"><span data-stu-id="c38b5-104">Use the `TextLoader`, and specify an array of files to the `Read` method.</span></span> <span data-ttu-id="c38b5-105">Soubory musí mít stejné schéma (stejný počet a typ sloupců):</span><span class="sxs-lookup"><span data-stu-id="c38b5-105">The files must have the same schema (same number and type of columns):</span></span>
+> [!NOTE]
+> <span data-ttu-id="200e7-104">Toto téma odkazuje na ML.NET, která je aktuálně ve verzi Preview, a materiálu se můžou stát terčem změnit.</span><span class="sxs-lookup"><span data-stu-id="200e7-104">This topic refers to ML.NET, which is currently in Preview, and material may be subject to change.</span></span> <span data-ttu-id="200e7-105">Další informace najdete v článku [Úvod ML.NET](https://www.microsoft.com/net/learn/apps/machine-learning-and-ai/ml-dotnet).</span><span class="sxs-lookup"><span data-stu-id="200e7-105">For more information, visit [the ML.NET introduction](https://www.microsoft.com/net/learn/apps/machine-learning-and-ai/ml-dotnet).</span></span>
 
-* [<span data-ttu-id="c38b5-106">Příklad file1</span><span class="sxs-lookup"><span data-stu-id="c38b5-106">Example file1</span></span>](https://github.com/dotnet/machinelearning/blob/e3a34ae6ae1b25ac96faa0317308703ce943ff95/test/data/adult.train)
-* [<span data-ttu-id="c38b5-107">Příklad file2</span><span class="sxs-lookup"><span data-stu-id="c38b5-107">Example file2</span></span>](https://github.com/dotnet/machinelearning/blob/e3a34ae6ae1b25ac96faa0317308703ce943ff95/test/data/adult.test)
+<span data-ttu-id="200e7-106">Aktuálně používáte této ukázky s postupy a související **ML.NET verze 0.10**.</span><span class="sxs-lookup"><span data-stu-id="200e7-106">This how-to and related sample are currently using **ML.NET version 0.10**.</span></span> <span data-ttu-id="200e7-107">Další informace najdete v tématu poznámky k verzi v [úložiště GitHub dotnet/machinelearning](https://github.com/dotnet/machinelearning/tree/master/docs/release-notes).</span><span class="sxs-lookup"><span data-stu-id="200e7-107">For more information, see the release notes at the [dotnet/machinelearning GitHub repo](https://github.com/dotnet/machinelearning/tree/master/docs/release-notes).</span></span>
+
+<span data-ttu-id="200e7-108">Použití `TextLoader`a určit pole souborů, které mají `Read` metody.</span><span class="sxs-lookup"><span data-stu-id="200e7-108">Use the `TextLoader`, and specify an array of files to the `Read` method.</span></span> <span data-ttu-id="200e7-109">Soubory musí mít stejné schéma (stejný počet a typ sloupců):</span><span class="sxs-lookup"><span data-stu-id="200e7-109">The files must have the same schema (same number and type of columns):</span></span>
+
+* [<span data-ttu-id="200e7-110">Příklad file1</span><span class="sxs-lookup"><span data-stu-id="200e7-110">Example file1</span></span>](https://github.com/dotnet/machinelearning/blob/e3a34ae6ae1b25ac96faa0317308703ce943ff95/test/data/adult.train)
+* [<span data-ttu-id="200e7-111">Příklad file2</span><span class="sxs-lookup"><span data-stu-id="200e7-111">Example file2</span></span>](https://github.com/dotnet/machinelearning/blob/e3a34ae6ae1b25ac96faa0317308703ce943ff95/test/data/adult.test)
 
 ```csharp
 // Create a new context for ML.NET operations. It can be used for exception tracking and logging, 

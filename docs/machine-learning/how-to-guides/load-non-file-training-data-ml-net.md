@@ -1,32 +1,37 @@
 ---
 title: Trénování modelu strojového učení s daty, která není v textovém souboru - ML.NET
 description: Objevte, jak používat ML.NET načíst nesouborové trénovacích dat pro strojové učení, model školení v rámci kanálu předpovědi.
-ms.date: 02/06/2019
+ms.date: 03/05/2019
 ms.custom: mvc,how-to
-ms.openlocfilehash: 4ffbc69629aa9dc6cea5d33c704bc9c57a4a612c
-ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
+ms.openlocfilehash: 27b327a63cb55b7fce0f4ff7facd3ee7c4a1c85c
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56092017"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57678611"
 ---
-# <a name="train-a-machine-learning-model-with-data-thats-not-in-a-text-file---mlnet"></a><span data-ttu-id="c15a8-103">Trénování modelu strojového učení s daty, která není v textovém souboru - ML.NET</span><span class="sxs-lookup"><span data-stu-id="c15a8-103">Train a machine learning model with data that's not in a text file - ML.NET</span></span>
+# <a name="train-a-machine-learning-model-with-data-thats-not-in-a-text-file---mlnet"></a><span data-ttu-id="b0ac3-103">Trénování modelu strojového učení s daty, která není v textovém souboru - ML.NET</span><span class="sxs-lookup"><span data-stu-id="b0ac3-103">Train a machine learning model with data that's not in a text file - ML.NET</span></span>
 
-<span data-ttu-id="c15a8-104">V případě použití běžně předvedenou ML.NET je použití `TextLoader` číst trénovací data ze souboru.</span><span class="sxs-lookup"><span data-stu-id="c15a8-104">The commonly demonstrated use case for ML.NET is use the `TextLoader` to read the training data from a file.</span></span>
-<span data-ttu-id="c15a8-105">Ale v scénáře v reálném čase školení data mohou být jinde, jako například:</span><span class="sxs-lookup"><span data-stu-id="c15a8-105">However, in real-time training scenarios the data can be elsewhere, such as:</span></span>
+> [!NOTE]
+> <span data-ttu-id="b0ac3-104">Toto téma odkazuje na ML.NET, která je aktuálně ve verzi Preview, a materiálu se můžou stát terčem změnit.</span><span class="sxs-lookup"><span data-stu-id="b0ac3-104">This topic refers to ML.NET, which is currently in Preview, and material may be subject to change.</span></span> <span data-ttu-id="b0ac3-105">Další informace najdete v článku [Úvod ML.NET](https://www.microsoft.com/net/learn/apps/machine-learning-and-ai/ml-dotnet).</span><span class="sxs-lookup"><span data-stu-id="b0ac3-105">For more information, visit [the ML.NET introduction](https://www.microsoft.com/net/learn/apps/machine-learning-and-ai/ml-dotnet).</span></span>
 
-* <span data-ttu-id="c15a8-106">v tabulkách SQL</span><span class="sxs-lookup"><span data-stu-id="c15a8-106">in SQL tables</span></span>
-* <span data-ttu-id="c15a8-107">extrahovaná ze souborů protokolů</span><span class="sxs-lookup"><span data-stu-id="c15a8-107">extracted from log files</span></span>
-* <span data-ttu-id="c15a8-108">vygenerované v reálném čase</span><span class="sxs-lookup"><span data-stu-id="c15a8-108">generated on the fly</span></span>
+<span data-ttu-id="b0ac3-106">Aktuálně používáte této ukázky s postupy a související **ML.NET verze 0.10**.</span><span class="sxs-lookup"><span data-stu-id="b0ac3-106">This how-to and related sample are currently using **ML.NET version 0.10**.</span></span> <span data-ttu-id="b0ac3-107">Další informace najdete v tématu poznámky k verzi v [úložiště GitHub dotnet/machinelearning](https://github.com/dotnet/machinelearning/tree/master/docs/release-notes).</span><span class="sxs-lookup"><span data-stu-id="b0ac3-107">For more information, see the release notes at the [dotnet/machinelearning GitHub repo](https://github.com/dotnet/machinelearning/tree/master/docs/release-notes).</span></span>
 
-<span data-ttu-id="c15a8-109">Použití [pochopení schématu](https://github.com/dotnet/machinelearning/tree/master/docs/code/SchemaComprehension.md) zpřístupnit stávající C# `IEnumerable` do ML.NET jako `DataView`.</span><span class="sxs-lookup"><span data-stu-id="c15a8-109">Use [schema comprehension](https://github.com/dotnet/machinelearning/tree/master/docs/code/SchemaComprehension.md) to bring an existing C# `IEnumerable` into ML.NET as a `DataView`.</span></span>
+<span data-ttu-id="b0ac3-108">V případě použití běžně předvedenou ML.NET je použití `TextLoader` číst trénovací data ze souboru.</span><span class="sxs-lookup"><span data-stu-id="b0ac3-108">The commonly demonstrated use case for ML.NET is use the `TextLoader` to read the training data from a file.</span></span>
+<span data-ttu-id="b0ac3-109">Ale v scénáře v reálném čase školení data mohou být jinde, jako například:</span><span class="sxs-lookup"><span data-stu-id="b0ac3-109">However, in real-time training scenarios the data can be elsewhere, such as:</span></span>
 
-<span data-ttu-id="c15a8-110">V tomto příkladu budete vytvářet odběratele změn prediktivního modelu a extrahování následující funkce z produkčního prostředí systému:</span><span class="sxs-lookup"><span data-stu-id="c15a8-110">For this example, you'll build the customer churn prediction model, and extract the following features from your production system:</span></span>
+* <span data-ttu-id="b0ac3-110">v tabulkách SQL</span><span class="sxs-lookup"><span data-stu-id="b0ac3-110">in SQL tables</span></span>
+* <span data-ttu-id="b0ac3-111">extrahovaná ze souborů protokolů</span><span class="sxs-lookup"><span data-stu-id="b0ac3-111">extracted from log files</span></span>
+* <span data-ttu-id="b0ac3-112">vygenerované v reálném čase</span><span class="sxs-lookup"><span data-stu-id="b0ac3-112">generated on the fly</span></span>
 
-* <span data-ttu-id="c15a8-111">ID zákazníka (Ignorovat modelem)</span><span class="sxs-lookup"><span data-stu-id="c15a8-111">Customer ID (ignored by the model)</span></span>
-* <span data-ttu-id="c15a8-112">Určuje, zda má zákazník Měněná (cíl "štítek")</span><span class="sxs-lookup"><span data-stu-id="c15a8-112">Whether the customer has churned (the target 'label')</span></span>
-* <span data-ttu-id="c15a8-113">Demografické kategorie (jeden řetězec, například "mladé dospělá osoba" atd.)</span><span class="sxs-lookup"><span data-stu-id="c15a8-113">The 'demographic category' (one string, like 'young adult' etc.)</span></span>
-* <span data-ttu-id="c15a8-114">Počet návštěv z posledních 5 dní.</span><span class="sxs-lookup"><span data-stu-id="c15a8-114">The number of visits from the last 5 days.</span></span>
+<span data-ttu-id="b0ac3-113">Použití [pochopení schématu](https://github.com/dotnet/machinelearning/tree/master/docs/code/SchemaComprehension.md) zpřístupnit stávající C# `IEnumerable` do ML.NET jako `DataView`.</span><span class="sxs-lookup"><span data-stu-id="b0ac3-113">Use [schema comprehension](https://github.com/dotnet/machinelearning/tree/master/docs/code/SchemaComprehension.md) to bring an existing C# `IEnumerable` into ML.NET as a `DataView`.</span></span>
+
+<span data-ttu-id="b0ac3-114">V tomto příkladu budete vytvářet odběratele změn prediktivního modelu a extrahování následující funkce z produkčního prostředí systému:</span><span class="sxs-lookup"><span data-stu-id="b0ac3-114">For this example, you'll build the customer churn prediction model, and extract the following features from your production system:</span></span>
+
+* <span data-ttu-id="b0ac3-115">ID zákazníka (Ignorovat modelem)</span><span class="sxs-lookup"><span data-stu-id="b0ac3-115">Customer ID (ignored by the model)</span></span>
+* <span data-ttu-id="b0ac3-116">Určuje, zda má zákazník Měněná (cíl "štítek")</span><span class="sxs-lookup"><span data-stu-id="b0ac3-116">Whether the customer has churned (the target 'label')</span></span>
+* <span data-ttu-id="b0ac3-117">Demografické kategorie (jeden řetězec, například "mladé dospělá osoba" atd.)</span><span class="sxs-lookup"><span data-stu-id="b0ac3-117">The 'demographic category' (one string, like 'young adult' etc.)</span></span>
+* <span data-ttu-id="b0ac3-118">Počet návštěv z posledních 5 dní.</span><span class="sxs-lookup"><span data-stu-id="b0ac3-118">The number of visits from the last 5 days.</span></span>
 
 ```csharp
 private class CustomerChurnInfo
@@ -40,7 +45,7 @@ private class CustomerChurnInfo
 }
 ```
 
-<span data-ttu-id="c15a8-115">Načtení těchto dat do `DataView` a trénování modelu, pomocí následujícího kódu:</span><span class="sxs-lookup"><span data-stu-id="c15a8-115">Load this data into the `DataView` and train the model, using the following code:</span></span>
+<span data-ttu-id="b0ac3-119">Načtení těchto dat do `DataView` a trénování modelu, pomocí následujícího kódu:</span><span class="sxs-lookup"><span data-stu-id="b0ac3-119">Load this data into the `DataView` and train the model, using the following code:</span></span>
 
 ```csharp
 // Create a new context for ML.NET operations. It can be used for exception tracking and logging,

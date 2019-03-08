@@ -1,22 +1,27 @@
 ---
 title: Trénování modelu strojového učení pomocí křížového ověřování - ML.NET
 description: Dozvíte se, jak pro trénování model křížového ověření pomocí ML.NET mít vyšší úroveň přesnost předpovědi modelu strojového učení
-ms.date: 02/06/2019
+ms.date: 03/05/2019
 ms.custom: mvc,how-to
-ms.openlocfilehash: 8d74b69340895bcfe3cdc3d3a6121d7331a0a5e2
-ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
+ms.openlocfilehash: 7191d8bdbb9375dff6ccc7acb0aacab3cbef56a2
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56092277"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57676535"
 ---
-# <a name="train-a-machine-learning-model-using-cross-validation---mlnet"></a><span data-ttu-id="b9f45-103">Trénování modelu strojového učení pomocí křížového ověřování - ML.NET</span><span class="sxs-lookup"><span data-stu-id="b9f45-103">Train a machine learning model using cross-validation - ML.NET</span></span>
+# <a name="train-a-machine-learning-model-using-cross-validation---mlnet"></a><span data-ttu-id="752dd-103">Trénování modelu strojového učení pomocí křížového ověřování - ML.NET</span><span class="sxs-lookup"><span data-stu-id="752dd-103">Train a machine learning model using cross-validation - ML.NET</span></span>
 
-<span data-ttu-id="b9f45-104">[Křížové ověření](https://en.wikipedia.org/wiki/Cross-validation_(statistics)) je užitečná technika pro ML aplikace.</span><span class="sxs-lookup"><span data-stu-id="b9f45-104">[Cross-validation](https://en.wikipedia.org/wiki/Cross-validation_(statistics)) is a useful technique for ML applications.</span></span> <span data-ttu-id="b9f45-105">Pomáhá odhadnout odchylku kvalita modelu od prvního spuštění do druhého a vyhnete se tak nutnosti extrahovat samostatný test, nastavte pro hodnocení.</span><span class="sxs-lookup"><span data-stu-id="b9f45-105">It helps estimate the variance of the model quality from one run to another and also eliminates the need to extract a separate test set for evaluation.</span></span>
+> [!NOTE]
+> <span data-ttu-id="752dd-104">Toto téma odkazuje na ML.NET, která je aktuálně ve verzi Preview, a materiálu se můžou stát terčem změnit.</span><span class="sxs-lookup"><span data-stu-id="752dd-104">This topic refers to ML.NET, which is currently in Preview, and material may be subject to change.</span></span> <span data-ttu-id="752dd-105">Další informace najdete v článku [Úvod ML.NET](https://www.microsoft.com/net/learn/apps/machine-learning-and-ai/ml-dotnet).</span><span class="sxs-lookup"><span data-stu-id="752dd-105">For more information, visit [the ML.NET introduction](https://www.microsoft.com/net/learn/apps/machine-learning-and-ai/ml-dotnet).</span></span>
 
-<span data-ttu-id="b9f45-106">ML.NET automaticky (tak dlouho, dokud všechny předzpracování se nachází v jedné learning kanálu) správně platí snadné pak používají koncepci 'rozdělení sloupce' abyste měli jistotu, že není získat související příklady oddělené.</span><span class="sxs-lookup"><span data-stu-id="b9f45-106">ML.NET automatically applies featurization correctly (as long as all of the preprocessing resides in one learning pipeline) then use the 'stratification column' concept to make sure that related examples don't get separated.</span></span>
+<span data-ttu-id="752dd-106">Aktuálně používáte této ukázky s postupy a související **ML.NET verze 0.10**.</span><span class="sxs-lookup"><span data-stu-id="752dd-106">This how-to and related sample are currently using **ML.NET version 0.10**.</span></span> <span data-ttu-id="752dd-107">Další informace najdete v tématu poznámky k verzi v [úložiště GitHub dotnet/machinelearning](https://github.com/dotnet/machinelearning/tree/master/docs/release-notes).</span><span class="sxs-lookup"><span data-stu-id="752dd-107">For more information, see the release notes at the [dotnet/machinelearning GitHub repo](https://github.com/dotnet/machinelearning/tree/master/docs/release-notes).</span></span>
 
-<span data-ttu-id="b9f45-107">Tady je příklad školení pro datovou sadu Iris pomocí náhodného 90/10 trénování a testování rozdělení a 5-fold křížového ověřování:</span><span class="sxs-lookup"><span data-stu-id="b9f45-107">Here's a training example on an Iris dataset using randomized 90/10 train-test split, and a 5-fold cross-validation:</span></span>
+<span data-ttu-id="752dd-108">[Křížové ověření](https://en.wikipedia.org/wiki/Cross-validation_(statistics)) je užitečná technika pro ML aplikace.</span><span class="sxs-lookup"><span data-stu-id="752dd-108">[Cross-validation](https://en.wikipedia.org/wiki/Cross-validation_(statistics)) is a useful technique for ML applications.</span></span> <span data-ttu-id="752dd-109">Pomáhá odhadnout odchylku kvalita modelu od prvního spuštění do druhého a vyhnete se tak nutnosti extrahovat samostatný test, nastavte pro hodnocení.</span><span class="sxs-lookup"><span data-stu-id="752dd-109">It helps estimate the variance of the model quality from one run to another and also eliminates the need to extract a separate test set for evaluation.</span></span>
+
+<span data-ttu-id="752dd-110">ML.NET automaticky (tak dlouho, dokud všechny předzpracování se nachází v jedné learning kanálu) správně platí snadné pak používají koncepci 'rozdělení sloupce' abyste měli jistotu, že není získat související příklady oddělené.</span><span class="sxs-lookup"><span data-stu-id="752dd-110">ML.NET automatically applies featurization correctly (as long as all of the preprocessing resides in one learning pipeline) then use the 'stratification column' concept to make sure that related examples don't get separated.</span></span>
+
+<span data-ttu-id="752dd-111">Tady je příklad školení pro datovou sadu Iris pomocí náhodného 90/10 trénování a testování rozdělení a 5-fold křížového ověřování:</span><span class="sxs-lookup"><span data-stu-id="752dd-111">Here's a training example on an Iris dataset using randomized 90/10 train-test split, and a 5-fold cross-validation:</span></span>
 
 ```csharp
 // Create a new context for ML.NET operations. It can be used for exception tracking and logging, 
