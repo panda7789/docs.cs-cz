@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 6f4f3804-2ed7-41b4-a97a-6e32b93f6e05
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 16ba8000544d0b7d35a818d41a75f38e6fd0293d
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 17874b8b9733ea18d4877e2c79810fcd6247db0b
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44178560"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57680228"
 ---
 # <a name="how-to-listen-for-multiple-cancellation-requests"></a>Postupy: Naslouchání více požadavkům zrušení
 Tento příklad ukazuje, jak tak, aby naslouchala na dvou tokeny zrušení současně tak, aby operace můžete zrušit, pokud buď token požadavku.  
@@ -32,7 +32,7 @@ Tento příklad ukazuje, jak tak, aby naslouchala na dvou tokeny zrušení souč
   
  Pokud vyvolá propojené token <xref:System.OperationCanceledException>, token, který je předán výjimka je propojené token, není buď tokenů předchůdce. Pokud chcete zjistit, které tokenů byla zrušena, zkontrolujte stav předchůdce tokenů přímo.  
   
- V tomto příkladu <xref:System.AggregateException> by nikdy být vyvolána, ale to je zachycena zde protože ve skutečných scénářích všechny výjimky kromě <xref:System.OperationCanceledException> , které jsou vyvolány z delegátu úlohy jsou zabaleny v <xref:System.OperationCanceledException>.  
+ V tomto příkladu <xref:System.AggregateException> by nikdy být vyvolána, ale to je zachycena zde protože ve skutečných scénářích všechny výjimky kromě <xref:System.OperationCanceledException> , které jsou vyvolány z delegátu úlohy jsou zabaleny v <xref:System.AggregateException>.  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -16,14 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e3c529e77cad16f0bde12e34491829b58add17aa
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: c509f475d5bf0105ece9791ee3e51d21c298a31f
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57500374"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57679304"
 ---
-# <a name="cordllmain-function"></a>_CorDllMain – funkce
+# <a name="cordllmain-function"></a>\_CorDllMain Function
+
 Inicializuje modul CLR (CLR), vyhledá spravovaný vstupní bod v záhlaví modulu CLR sestavení DLL a zahájí vykonávání.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -41,7 +42,7 @@ BOOL STDMETHODCALLTYPE _CorDllMain (
  [in] Popisovač instance načteného modulu.  
   
  `dwReason`  
- [in] Označuje, proč je volána funkce vstupního bodu knihovny DLL. Tento parametr může být jeden z následujících hodnot: DLL_PROCESS_ATTACH, DLL_THREAD_ATTACH, DLL_THREAD_ATTACH nebo DLL_PROCESS_DETACH. Popisy těchto hodnot, najdete v článku `DllMain` dokumentaci Platform SDK.  
+ [in] Označuje, proč je volána funkce vstupního bodu knihovny DLL. Tento parametr může být jeden z následujících hodnot: Knihovna DLL\_PROCESS_ATTACH, knihovny DLL\_vlákna\_připojit, knihovny DLL\_vlákna\_ATTACH nebo knihovny DLL\_procesu\_ODPOJIT. Popisy těchto hodnot, najdete v článku `DllMain` dokumentaci Platform SDK.  
   
  `lpReserved`  
  [in] Nevyužité.  
@@ -50,15 +51,16 @@ BOOL STDMETHODCALLTYPE _CorDllMain (
  Tato metoda vrátí `true` k dosažení úspěchu a `false` Pokud dojde k chybě.  
   
 ## <a name="remarks"></a>Poznámky  
- Tato funkce je volána zavaděčem operačního systému pro sestavení knihovny DLL. Pro spustitelný soubor sestavení zavaděče volá [Funkce _CorExeMain](../../../../docs/framework/unmanaged-api/hosting/corexemain-function.md) namísto toho funkci.  
+ Tato funkce je volána zavaděčem operačního systému pro sestavení knihovny DLL. Pro spustitelný soubor sestavení zavaděče volá [ \_CorExeMain](../../../../docs/framework/unmanaged-api/hosting/corexemain-function.md) namísto toho funkci.  
   
  Zavaděč operačního systému volá tuto metodu, bez ohledu na vstupní bod uvedený v souboru knihovny DLL.  
   
 `_CorDllMain` Funkce je volána přímo zavaděčem operačního systému.
   
- Další informace naleznete v části poznámky v [_CorValidateImage](../../../../docs/framework/unmanaged-api/hosting/corvalidateimage-function.md) tématu.  
+ Další informace naleznete v části poznámky v [ \_CorValidateImage](../../../../docs/framework/unmanaged-api/hosting/corvalidateimage-function.md) tématu.  
   
 ## <a name="requirements"></a>Požadavky  
+
  **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
@@ -68,4 +70,5 @@ BOOL STDMETHODCALLTYPE _CorDllMain (
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Globální statické funkce pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-global-static-functions.md)

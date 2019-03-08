@@ -3,12 +3,12 @@ title: Větve a smyčky – Úvod do C# kurz
 description: V tomto kurzu o větvích a smyčkách napíšete C# kódu syntaxi jazyka, který podporuje podmíněné větvení a smyček opakovaně spouštět příkazy.
 ms.date: 10/31/2017
 ms.custom: mvc
-ms.openlocfilehash: bfb260ccfd0cf2b922c1bc3eaa98aa2c26b464d8
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: c9e2ede3ee8632304a86efdf25bb2a8db5354a13
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53153771"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57677783"
 ---
 # <a name="learn-conditional-logic-with-branch-and-loop-statements"></a>Další podmíněnou logiku s příkazy větve a smyčky
 
@@ -20,7 +20,7 @@ V tomto kurzu se očekává, že budete mít počítač, který používáte pro
 
 Vytvořte adresář **kurz větve**. Zkontrolujte, zda aktuální adresář a spusťte `dotnet new console -n BranchesAndLoops -o .`. Tento příkaz vytvoří novou konzolovou aplikaci .NET Core v aktuálním adresáři.
 
-Otevřít **Program.cs** ve svém oblíbeném editoru a nahraďte řádek `Console.Writeline("Hello World!");` následujícím kódem:
+Otevřít **Program.cs** ve svém oblíbeném editoru a nahraďte řádek `Console.WriteLine("Hello World!");` následujícím kódem:
 
 ```csharp
 int a = 5;
@@ -31,7 +31,7 @@ if (a + b > 10)
 
 Vyzkoušejte tento kód tak, že zadáte `dotnet run` v okně konzoly. Zobrazí se zpráva "odpověď je větší než 10." vytiskne na konzolu.
 
-Upravte deklaraci `b` tak, aby součet je menší než 10: 
+Upravte deklaraci `b` tak, aby součet je menší než 10:
 
 ```csharp
 int b = 3;
@@ -63,7 +63,8 @@ Následující příkaz `else` – klíčové slovo provede pouze, pokud je test
 
 > [!IMPORTANT]
 > Důvodem odsazení pod `if` a `else` příkazy je snadnější čtení pro uživatele.
-> Jazyk C# nepovažuje odsazení a mezery za významné. Následující příkaz `if` nebo `else` – klíčové slovo se spustí na základě podmínky. Všechny ukázky v tomto kurzu dodržují běžnou praxi odsazování řádků podle toku řízení příkazů.
+> Jazyk C# nepovažuje odsazení a mezery za významné.
+> Následující příkaz `if` nebo `else` – klíčové slovo se spustí na základě podmínky. Všechny ukázky v tomto kurzu dodržují běžnou praxi odsazování řádků podle toku řízení příkazů.
 
 Protože odsazení není významné, je třeba použít `{` a `}` označte, když má více než jeden výraz jako součást podmíněně prováděného bloku. Programátoři v C# obvykle používají tyto složené závorky ve všech `if` a `else` klauzule. Následující příklad je stejný jako ten, který jste právě vytvořili. Upravte kód tak, aby odpovídala následující kód výše:
 
@@ -158,7 +159,7 @@ namespace BranchesAndLoops
             {
                 Console.WriteLine("The answer is not greater than 10");
                 Console.WriteLine("And the first number is not greater than the second");
-            }            
+            }
         }
 
         static void Main(string[] args)
@@ -218,7 +219,7 @@ To `do` smyčky a dřívější `while` smyčky generovat stejný výstup.
 for(int index = 0; index < 10; index++)
 {
     Console.WriteLine($"Hello World! The index is {index}");
-} 
+}
 ```
 
 Funguje jako `while` smyčky a `do` smyčky, které jste už použili. `for` Příkaz má tři části, které řídí, jak to funguje.
@@ -252,7 +253,7 @@ Můžete pokračovat [interpolace](interpolated-strings-local.md) kurz ve svém 
 
 Další informace o těchto konceptech v těchto tématech:
 
-[Pokud a else – příkaz](../../language-reference/keywords/if-else.md)  
-[while – příkaz](../../language-reference/keywords/while.md)  
-[do – příkaz](../../language-reference/keywords/do.md)  
-[For – příkaz](../../language-reference/keywords/for.md)  
+- [Pokud a else – příkaz](../../language-reference/keywords/if-else.md)
+- [while – příkaz](../../language-reference/keywords/while.md)
+- [do – příkaz](../../language-reference/keywords/do.md)
+- [For – příkaz](../../language-reference/keywords/for.md)
