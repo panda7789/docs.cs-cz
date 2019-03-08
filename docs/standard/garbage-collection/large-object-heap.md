@@ -8,12 +8,12 @@ helpviewer_keywords:
 - GC [.NET ], large object heap
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: df8559dc5a09b65eb388808363bb0352bc8ed398
-ms.sourcegitcommit: d9a0071d0fd490ae006c816f78a563b9946e269a
+ms.openlocfilehash: ff25d2cef52a8c690f895222d69591bc53b3765e
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "55066425"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57677165"
 ---
 # <a name="the-large-object-heap-on-windows-systems"></a>Haldy velkých objektů v systémech Windows
 
@@ -47,12 +47,12 @@ Při uvolňování paměti se aktivuje, GC trasování prostřednictvím živé 
 
 Obrázek 1 ukazuje scénář, kde tvoří GC 1. generace za GC 0. generace první kde `Obj1` a `Obj3` generace 2 po první 1. generace uvolňování paměti forms jsou neaktivní a kde `Obj2` a `Obj5` jsou neaktivní. Všimněte si, že to a na následujících obrázcích jsou jen jako ukázka; obsahují velmi málo objekty kterého pochopíte, co se stane, že na haldě. Ve skutečnosti jsou celou řadu dalších objektů obvykle součástí serverem globálního katalogu.
 
-![Obrázek 1: Uvolňování paměti generace 0 a 1. generace GC](media/loh/loh-figure-1.jpg)  
+![Obrázek 1: Uvolňování paměti generace 0 a 1. generace GC](media/loh/loh-figure-1.jpg)\
 Obrázek 1: Generace 0 a 1. generace GC.
 
 Obrázek 2 ukazuje, že po 2. generace GC které si všimli, že `Obj1` a `Obj2` jsou neaktivní, GC forms souvislých volného místa, nedostatek paměti, která používá pravděpodobně obsazena `Obj1` a `Obj2`, která byla použita k vyřízení požadavku na přidělení pro `Obj4`. Mezera za poslední objekt `Obj3`na konci segmentu slouží také ke splnění požadavků na přidělení.
 
-![Obrázek 2: Po uvolnění GC gen 2](media/loh/loh-figure-2.jpg)  
+![Obrázek 2: Po uvolnění GC gen 2](media/loh/loh-figure-2.jpg)\
 Obrázek 2: Po uvolnění GC 2. generace
 
 Pokud není k dispozici dostatek volného místa pro plnění požadavků na přidělení velké objekty, uvolňování paměti se nejprve pokusí získat další segmenty z operačního systému. Pokud selže, spustí 2. generace uvolňování paměti v naději, uvolněte nějaké místo.
@@ -61,7 +61,7 @@ Během 1. generace nebo 2. generace uvolňování paměti, uvolňování paměti
 
 Vzhledem k tomu, LOH se shromažďují, pouze během GC 2. generace, můžete segmentu LOH uvolněna pouze během těchto uvolňování paměti. Obrázek 3 ukazuje scénář, ve kterém systému uvolňování paměti uvolní jeden segment (segment 2) zpět do operačního systému a rozváže více místa na zbývající segmenty. Pokud je třeba použít zrušeny místa na konci segmentu pro splnění požadavků na přidělení velkého objektu, potvrzení paměti znovu. (Vysvětlení rozvázání/potvrzení, naleznete v dokumentaci k [VirtualAlloc](/windows/desktop/api/memoryapi/nf-memoryapi-virtualalloc).
 
-![Obrázek 3: LOH po uvolňování paměti generace 2](media/loh/loh-figure-3.jpg)  
+![Obrázek 3: LOH po uvolňování paměti generace 2](media/loh/loh-figure-3.jpg)\
 Obrázek 3: LOH po 2. generace GC
 
 ## <a name="when-is-a-large-object-collected"></a>Když se shromažďují velké objekty
@@ -156,7 +156,7 @@ Tyto čítače výkonu jsou obvykle dobrý první krok při zkoumání problém�
 
 Běžný způsob, jak zobrazit čítače výkonu je pomocí sledování výkonu (perfmon.exe). Pomocí "Přidat čítače" přidat čítač zajímavé pro procesy, které vás zajímají. Data čítačů výkonu můžete uložit do souboru protokolu, jak je vidět na obrázku 4.
 
-![Obrázek 4: Přidání čítačů výkonu.](media/loh/perfcounter.png)  
+![Obrázek 4: Přidání čítačů výkonu.](media/loh/perfcounter.png)\
 Obrázek 4: LOH po 2. generace GC
 
 Čítače výkonu může být dotazována také prostřednictvím kódu programu. Řada lidí je shromažďovat tímto způsobem jako součást svých rutinní proces testování. Při jejich zjištění čítače nahraďte hodnotami, které jsou neobvyklého, používají jiným způsobem získat podrobnější údaje, které pomáhají při šetření.
@@ -184,8 +184,7 @@ perfview /GCCollectOnly /AcceptEULA /nogui collect
 
 Výsledkem je přibližně takto:
 
-![Obrázek 5: Zkoumání událostí ETW pomocí nástroje PerfView](media/loh/perfview.png)  
-Obrázek 5: Události trasování událostí pro Windows zobrazí, pomocí nástroje PerfView
+![Obrázek 5: Zkoumání událostí ETW pomocí nástroje PerfView](media/loh/perfview.png) obrázek 5: Události trasování událostí pro Windows zobrazí, pomocí nástroje PerfView
 
 Jak vidíte, jsou všechny GC 2. generace GC a všechny jsou aktivované pomocí AllocLarge, což znamená, že přidělování ve velkém objektu aktivuje toto uvolňování paměti. Víme, že jsou tyto přidělení dočasné vzhledem k tomu, **míra přežití LOH %** říká sloupce 1 %.
 
@@ -197,7 +196,7 @@ perfview /GCOnly /AcceptEULA /nogui collect
 
 shromažďuje události AllocationTick, která se aktivuje přibližně každých 100 kB za přidělení. Jinými slovy událost se aktivuje pokaždé, když je přiděleno ve velkém objektu. Pak můžete se podívat na jedno zobrazení alokační haldy uvolňování paměti, které zobrazují zásobníky volání, která přidělena velké objekty:
 
-![Obrázek 6: Zobrazení alokační haldy uvolňování paměti](media/loh/perfview2.png)  
+![Obrázek 6: Zobrazení alokační haldy uvolňování paměti](media/loh/perfview2.png)\
 Obrázek 6: Zobrazení alokační haldy uvolňování paměti
 
 Jak je vidět, to je velmi jednoduchý test, který právě přiděluje rozsáhlé objekty z jeho `Main` metoda.
@@ -244,7 +243,7 @@ Velikost haldy LOH je (16,754,224 + 16,699,288 + 16,284,504) = 49,738,016 bajtů
 
 V některých případech ladicí program ukazuje, že celková velikost LOH menší než o velikosti 85 000 bajtů. K tomu dochází, protože samotný modul runtime používá LOH přidělit některé objekty, které jsou menší než ve velkém objektu.
 
-Vzhledem k tomu, že není setřepána LOH, někdy LOH je thoought zdroj fragmentace. Fragmentace znamená, že:
+Vzhledem k tomu, LOH není setřepána, někdy LOH představit zdroj fragmentace. Fragmentace znamená, že:
 
 - Fragmentace spravované haldě, které jsou označeny množství volného místa mezi spravované objekty. V prodejní objednávky `!dumpheap –type Free` příkaz zobrazí množství volného místa mezi spravované objekty.
 
@@ -310,7 +309,7 @@ bp kernel32!virtualalloc "j (dwo(@esp+8)>800000) 'kb';'g'"
 
 Tento příkaz do ladicího programu a zásobník volání pouze tehdy, pokud se zobrazí [VirtualAlloc](/windows/desktop/api/memoryapi/nf-memoryapi-virtualalloc) se nazývá velikost alokační větší než 8 MB (0x800000).
 
-Funkci přidali CLR 2.0 *VM Hoarding* , může být užitečné pro scenarious kde segmenty (včetně velkých i malých objektů haldy) jsou často získaných a vydání. K určení Hoarding virtuálního počítače, zadejte po spuštění příznak, který volá `STARTUP_HOARD_GC_VM` prostřednictvím hostujícího rozhraní API. Místo vydání prázdné segmenty zpět do operačního systému, CLR rozváže paměti v těchto segmentech a umístí na seznam pohotovostním režimu. (Všimněte si, že modul CLR nebude provést pro segmenty, které jsou moc velká.) Modul CLR později použije tyto segmenty splňovat nové požadavky segmentu. Příště, že vaše aplikace potřebuje nový segment CLR používá jednu z tohoto seznamu pohotovostní Pokud nemůže najít takový, který je dostatečně velký.
+Funkci přidali CLR 2.0 *Hoarding virtuálního počítače* , může být užitečné pro scénáře, kde segmenty (včetně velkých i malých objektů haldy) jsou často získaných a vydání. K určení Hoarding virtuálního počítače, zadejte po spuštění příznak, který volá `STARTUP_HOARD_GC_VM` prostřednictvím hostujícího rozhraní API. Místo vydání prázdné segmenty zpět do operačního systému, CLR rozváže paměti v těchto segmentech a umístí na seznam pohotovostním režimu. (Všimněte si, že modul CLR nebude provést pro segmenty, které jsou moc velká.) Modul CLR později použije tyto segmenty splňovat nové požadavky segmentu. Příště, že vaše aplikace potřebuje nový segment CLR používá jednu z tohoto seznamu pohotovostní Pokud nemůže najít takový, který je dostatečně velký.
 
 Hoarding virtuálního počítače je také užitečné pro aplikace, které chcete opřete se o segmenty, které už získali, jako je například některé serverové aplikace, které jsou dominantní aplikace běžící na systému, aby se zabránilo nedostatek paměti výjimky.
 

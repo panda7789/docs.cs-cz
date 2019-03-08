@@ -24,12 +24,12 @@ helpviewer_keywords:
 - programmatic navigation [WPF]
 - hyperlinks [WPF]
 ms.assetid: 86ad2143-606a-4e34-bf7e-51a2594248b8
-ms.openlocfilehash: 75d891052abffe3362c13aa09fe880404564639a
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 7636a7d9a100d0df95f7d5462672819624ba52a4
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57377181"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57679967"
 ---
 # <a name="navigation-overview"></a>Přehled navigace
 Windows Presentation Foundation (WPF) podporuje stylu prohlížeče navigace, který je možné do dvou typů aplikací: samostatné aplikace a [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)]. K balíčku obsahu pro navigaci [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] poskytuje <xref:System.Windows.Controls.Page> třídy. Můžete přejít z jednoho <xref:System.Windows.Controls.Page> do jiného deklarativně pomocí <xref:System.Windows.Documents.Hyperlink>, nebo prostřednictvím kódu programu, s použitím <xref:System.Windows.Navigation.NavigationService>. [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] používá deník pamatovat stránky, které přešli z a chcete přejít zpátky k sobě.  
@@ -136,7 +136,7 @@ Windows Presentation Foundation (WPF) podporuje stylu prohlížeče navigace, kt
   
  V tomto příkladu `StartupUri` atribut je nastaven s relativní pack [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] , který identifikuje HomePage.xaml. Když [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] je spuštěn, HomePage.xaml automaticky přejde a zobrazit. Tento postup je znázorněn v následujícím obrázku, který ukazuje [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] , který byl spuštěn z webového serveru.  
   
- ![Stránka XBAP](./media/navigationoverviewfigure9.png "NavigationOverviewFigure9")  
+ ![Stránka XBAP](./media/navigation-overview/xbap-launched-from-a-web-server.png "zobrazí XBAP, který spustí z webového serveru.")  
   
 > [!NOTE]
 >  Další informace týkající se vývoje a nasazování [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)], naleznete v tématu [přehled aplikací prohlížeče WPF XAML](wpf-xaml-browser-applications-overview.md) a [nasazení aplikace WPF](deploying-a-wpf-application-wpf.md).  
@@ -151,7 +151,7 @@ Windows Presentation Foundation (WPF) podporuje stylu prohlížeče navigace, kt
   
  Výsledek je znázorněno na následujícím obrázku.  
   
- ![Název okna, výška a šířka](./media/navigationoverviewfigure2.png "NavigationOverviewFigure2")  
+ ![Název okna, výška a šířka](./media/navigation-overview/window-title-width-height.png "zobrazí záhlaví okna, výšku a šířku, můžete nakonfigurovat.")  
   
 <a name="NavigatingBetweenXAMLPages"></a>   
 ### <a name="hyperlink-navigation"></a>Navigace na hypertextový odkaz  
@@ -169,11 +169,11 @@ Windows Presentation Foundation (WPF) podporuje stylu prohlížeče navigace, kt
   
  Následující obrázek ukazuje [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] s <xref:System.Windows.Controls.Page> , který má <xref:System.Windows.Documents.Hyperlink>.  
   
- ![Stránka s hypertextovým odkazem](./media/navigationoverviewfigure3.png "NavigationOverviewFigure3")  
+ ![Stránka s hypertextovým odkazem](./media/navigation-overview/xbap-with-a-page-with-a-hyperlink.png "zobrazí XBAP, který se stránkou s hypertextovým odkazem.")  
   
  Dle očekávání, kliknutím <xref:System.Windows.Documents.Hyperlink> způsobí, že [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] přejít na <xref:System.Windows.Controls.Page> , který je identifikován `NavigateUri` atribut. Kromě toho [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] přidá záznam pro předchozí <xref:System.Windows.Controls.Page> do seznamu poslední stránky v [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)]. To je ukázáno na následujícím obrázku.  
   
- ![Tlačítka Zpět a vpřed](./media/navigationoverviewfigure4.png "NavigationOverviewFigure4")  
+ ![Tlačítka Zpět a vpřed](./media/navigation-overview/back-and-forward-navigation.png "Navigovat pomocí tlačítka vpřed a zpět.")  
   
  A také podpora navigace z jednoho <xref:System.Windows.Controls.Page> do druhého, <xref:System.Windows.Documents.Hyperlink> také podporuje fragment navigace.  
   
@@ -309,7 +309,7 @@ Windows Presentation Foundation (WPF) podporuje stylu prohlížeče navigace, kt
   
  Navigační události jsou vyvolány v pořadí, ve kterém je znázorněn v následujícím obrázku.  
   
- ![Vývojový diagram navigace stránky](./media/navigationoverviewfigure11.png "NavigationOverviewFigure11")  
+ ![Vývojový diagram navigace stránky](./media/navigation-overview/order-of-navigation-events.png "stránky navigační události vývojový diagram")  
   
  Obecně platí <xref:System.Windows.Controls.Page> není obavy o těchto událostech. Je pravděpodobnější, že aplikaci jde s nimi a z tohoto důvodu tyto události jsou také generovány <xref:System.Windows.Application> třídy:  
   
@@ -345,7 +345,7 @@ Windows Presentation Foundation (WPF) podporuje stylu prohlížeče navigace, kt
 #### <a name="navigating-the-journal-from-internet-explorer"></a>Navigace deníku z aplikace Internet Explorer  
  Koncepčně tento deník funguje stejně způsobu, jakým **zpět** a **vpřed** tlačítka v [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] provést. Tyto aspekty znázorňuje následující obrázek.  
   
- ![Tlačítka Zpět a vpřed](./media/navigationoverviewfigure4.png "NavigationOverviewFigure4")  
+ ![Tlačítka Zpět a vpřed](./media/navigation-overview/back-and-forward-navigation.png "Navigovat pomocí tlačítka vpřed a zpět.")  
   
  Pro [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] hostované [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)], [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] integruje tento deník do navigační [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] z [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)]. To umožňuje uživatelům procházení stránek v [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] pomocí **zpět**, **vpřed**, a **poslední stránky** tlačítka v [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)]. Deník není integrovaný do [!INCLUDE[TLA2#tla_ie6](../../../../includes/tla2sharptla-ie6-md.md)] stejným způsobem, jako je pro [!INCLUDE[TLA2#tla_ie7](../../../../includes/tla2sharptla-ie7-md.md)] nebo Internet Explorer 8. Místo toho [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] vykreslí navigace nahraďte [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)].  
   
@@ -402,7 +402,7 @@ Windows Presentation Foundation (WPF) podporuje stylu prohlížeče navigace, kt
   
  Z tohoto důvodu je výchozí chování deníku Uložit <xref:System.Windows.Controls.Page> v každé položky deníku spíše než odkaz na metadata <xref:System.Windows.Controls.Page> objektu. Když je položka deníku přejde, jeho <xref:System.Windows.Controls.Page> metadat se používá k vytvoření nové instance zadaného <xref:System.Windows.Controls.Page>. V důsledku toho každá <xref:System.Windows.Controls.Page> , který se přejde poté, je doba života, který je znázorněn v následujícím obrázku.  
   
- ![Doba života stránky](./media/navigationoverviewfigure10.PNG "NavigationOverviewFigure10")  
+ ![Doba života stránky](./media/navigation-overview/navigated-page-lifetime.png "Zobrazí dobu života, když přejde na stránku.")  
   
  I když se pomocí záznamu do deníku výchozí chování můžete uložit na spotřebu paměti, se může snížit výkon při vykreslování na stránku; reinstantiating <xref:System.Windows.Controls.Page> může být náročné na čas, zejména v případě, že má spoustu různého obsahu. Pokud potřebujete zachovat <xref:System.Windows.Controls.Page> instance v deníku, lze nakreslit na dvě techniky to udělat. Nejprve můžete programově přejít na <xref:System.Windows.Controls.Page> objektu voláním <xref:System.Windows.Navigation.NavigationService.Navigate%2A?displayProperty=nameWithType> metody.  
   
@@ -412,7 +412,7 @@ Windows Presentation Foundation (WPF) podporuje stylu prohlížeče navigace, kt
   
  Životnost <xref:System.Windows.Controls.Page> , který je zachováno se trochu liší od, který není. První <xref:System.Windows.Controls.Page> , který je uložen zachování připojení se přejde poté, je vytvořena instance stejně jako <xref:System.Windows.Controls.Page> , který není zachováno. Ale protože instance <xref:System.Windows.Controls.Page> se uchovávají v deníku, kdy je nikdy vytvořen znovu pro tak dlouho, dokud zůstává v deníku. V důsledku toho pokud <xref:System.Windows.Controls.Page> inicializace logiku, která musí být volána pokaždé, když má <xref:System.Windows.Controls.Page> se přejde poté, byste měli přesunout ji z konstruktoru do obslužné rutiny pro <xref:System.Windows.FrameworkElement.Loaded> událostí. Jak je znázorněno na následujícím obrázku <xref:System.Windows.FrameworkElement.Loaded> a <xref:System.Windows.FrameworkElement.Unloaded> události jsou vyvolány stále pokaždé, když <xref:System.Windows.Controls.Page> je přejde do a z, v uvedeném pořadí.  
   
- ![Když jsou vyvolány události Loaded a Unloaded](./media/navigationoverviewfigure17.png "NavigationOverviewFigure17")  
+ ![Když jsou vyvolány události Loaded a Unloaded](./media/navigation-overview/loaded-and-unloaded-events.png "Loaded a uvolněné události jsou vyvolány, když je stránka přejde do a z.")  
   
  Když <xref:System.Windows.Controls.Page> není zachováno, neměli byste některého z následujících:  
   
@@ -474,7 +474,7 @@ Windows Presentation Foundation (WPF) podporuje stylu prohlížeče navigace, kt
   
  Pokud <xref:System.Windows.Controls.Page> používá tyto ovládací prvky dat zadaných do nich je zapamatovaných napříč <xref:System.Windows.Controls.Page> navigaci, jak je uvedeno ve **Oblíbené barva** <xref:System.Windows.Controls.ListBox> na následujícím obrázku.  
   
- ![Stránka s ovládacími prvky, které nezapomeňte stavu](./media/navigationoverviewfigure13.png "NavigationOverviewFigure13")  
+ ![Stránka s ovládacími prvky, které nezapomeňte stavu](./media/navigation-overview/data-remembered-across-page-navigations.png "zadaná Data se uloží, v navigaci na stránce.")  
   
  Když <xref:System.Windows.Controls.Page> obsahuje ovládací prvky než ty, které v předchozím seznamu, nebo když stav je uložený ve vlastních objektů, je potřeba napsat kód, který způsobí deníku pamatovat stavem, ať už <xref:System.Windows.Controls.Page> navigaci.  
   
@@ -549,7 +549,7 @@ Windows Presentation Foundation (WPF) podporuje stylu prohlížeče navigace, kt
   
  Následující obrázek ukazuje <xref:System.Windows.Navigation.NavigationWindow> jako hlavní okno samostatné aplikace.  
   
- ![Hlavní okno](./media/navigationoverviewfigure18.png "NavigationOverviewFigure18")  
+ ![Hlavní okno](./media/navigation-overview/navigation-window-as-main-window.png "navigačním okně jako hlavní okno")  
   
  Z na obrázku vidíte, že <xref:System.Windows.Navigation.NavigationWindow> má název, i když v není nastavená <xref:System.Windows.Navigation.NavigationWindow> implementační kód z předchozího příkladu. Místo toho název se nastavuje pomocí <xref:System.Windows.Controls.Page.WindowTitle%2A> vlastnost, která je znázorněna v následujícím kódu.  
   
@@ -569,11 +569,11 @@ Windows Presentation Foundation (WPF) podporuje stylu prohlížeče navigace, kt
   
  Následující obrázek ukazuje výsledek.  
   
- ![Dialogové okno](./media/navigationoverviewfigure19.png "NavigationOverviewFigure19")  
+ ![Dialogové okno](./media/navigation-overview/navigation-window-as-dialog-box.png "navigačním okně jako dialogové okno")  
   
  Jak je vidět, <xref:System.Windows.Navigation.NavigationWindow> zobrazí [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)]-style **zpět** a **vpřed** tlačítka, díky kterým můžou uživatelé přejít do deníku. Tato tlačítka poskytují stejné prostředí pro uživatele, jak je znázorněno na následujícím obrázku.  
   
- ![Tlačítka v okně Navigace zpět a vpřed](./media/navigationoverviewfigure20.png "NavigationOverviewFigure20")  
+ ![Tlačítka v okně Navigace zpět a vpřed](./media/navigation-overview/back-and-forward-buttons-in-navigation-window.png "tlačítka v navigačním okně zpět a vpřed")  
   
  Pokud vaše stránky zadejte svoje vlastní uživatelské rozhraní a podpora navigačního deníku, můžete skrýt **zpět** a **vpřed** tlačítka zobrazený <xref:System.Windows.Navigation.NavigationWindow> tak, že nastavíte hodnotu <xref:System.Windows.Navigation.NavigationWindow.ShowsNavigationUI%2A> vlastnost `false`.  
   
@@ -591,13 +591,13 @@ Windows Presentation Foundation (WPF) podporuje stylu prohlížeče navigace, kt
   
  Tento kód nastaví `Source` atribut `Frame` element s pack [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] pro <xref:System.Windows.Controls.Page> , který <xref:System.Windows.Controls.Frame> by měly nejprve přejděte do. Následující obrázek ukazuje [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] s <xref:System.Windows.Controls.Page> , který má <xref:System.Windows.Controls.Frame> , který přešel mezi několik stránek.  
   
- ![Snímek, který přešel mezi více stránek](./media/navigationoverviewfigure5.png "NavigationOverviewFigure5")  
+ ![Snímek, který přešel mezi více stránek](./media/navigation-overview/frame-navigation-between-multiple-pages.png "ukazuje rámce navigace mezi více stránek.")  
   
  Pouze nemusíte používat <xref:System.Windows.Controls.Frame> uvnitř obsahu <xref:System.Windows.Controls.Page>. Je běžné hostovat <xref:System.Windows.Controls.Frame> uvnitř obsahu <xref:System.Windows.Window>.  
   
  Ve výchozím nastavení <xref:System.Windows.Controls.Frame> pouze používá vlastní deník neexistují jiném deníku. Pokud <xref:System.Windows.Controls.Frame> je součástí obsahu, který je umístěn uvnitř buď <xref:System.Windows.Navigation.NavigationWindow> nebo [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)], <xref:System.Windows.Controls.Frame> používá, který patří do deníku <xref:System.Windows.Navigation.NavigationWindow> nebo [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)]. V některých případech však <xref:System.Windows.Controls.Frame> může být nutné odpovědný za vlastní deník. Provedete to jedním z důvodů je umožnit deníku navigace v rámci stránky, které jsou hostovány <xref:System.Windows.Controls.Frame>. To je znázorněno v následujícím obrázku.  
   
- ![Diagram rámce a stránky](./media/navigationoverviewfigure7.png "NavigationOverviewFigure7")  
+ ![Diagram rámce a stránky](./media/navigation-overview/journal-navigation-within-pages-hosted-by-a-frame.png "ukazuje deníku navigace v rámci stránky hostitelem objektu frame.")  
   
  V takovém případě můžete nakonfigurovat <xref:System.Windows.Controls.Frame> používat vlastní deník nastavením <xref:System.Windows.Controls.Frame.JournalOwnership%2A> vlastnost <xref:System.Windows.Controls.Frame> k <xref:System.Windows.Navigation.JournalOwnership.OwnsJournal>. To je ukázáno v následujícím kódu.  
   
@@ -607,7 +607,7 @@ Windows Presentation Foundation (WPF) podporuje stylu prohlížeče navigace, kt
   
  Následující obrázek ukazuje účinek podrobné ukázky navigace v rámci <xref:System.Windows.Controls.Frame> , která používá vlastní deník.  
   
- ![Snímek, který používá vlastní deník](./media/navigationoverviewfigure8.png "NavigationOverviewFigure8")  
+ ![Snímek, který používá vlastní deník](./media/navigation-overview/frame-uses-its-own-journal.png "to demonstruje účinek podrobné ukázky navigace v rámci, která používá vlastní deník.")  
   
  Všimněte si, že deníku položky jsou seřazeny podle navigaci [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] v <xref:System.Windows.Controls.Frame>, spíše než [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)].  
   
@@ -624,19 +624,19 @@ Windows Presentation Foundation (WPF) podporuje stylu prohlížeče navigace, kt
 ## <a name="navigation-hosts"></a>Hostitel pro navigaci  
  <xref:System.Windows.Controls.Frame> a <xref:System.Windows.Navigation.NavigationWindow> jsou třídy, které jsou označovány jako hostitel pro navigaci. A *navigace hostitele* je třída, která můžete přejít na a zobrazit obsah. K tomu každou navigační hostitel používá vlastní <xref:System.Windows.Navigation.NavigationService> a deníku. Základní konstrukce hostitele navigace se zobrazí na následujícím obrázku.  
   
- ![Navigátor diagramy](./media/navigationoverviewfigure15.png "NavigationOverviewFigure15")  
+ ![Navigátor diagramy](./media/navigation-overview/navigation-host-construction.png "základní konstrukce hostitele navigace")  
   
  V podstatě to umožňuje <xref:System.Windows.Navigation.NavigationWindow> a <xref:System.Windows.Controls.Frame> poskytnout stejné, která podporují navigace [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] poskytuje, když jsou hostované v prohlížeči.  
   
  Kromě použití <xref:System.Windows.Navigation.NavigationService> a deníku, hostitel pro navigaci implementovat stejné členy, které <xref:System.Windows.Navigation.NavigationService> implementuje. To je znázorněno v následujícím obrázku.  
   
- ![Deník v rámci a okna NavigationWindow](./media/naivgationoverviewfigure24.png "NaivgationOverviewFigure24")  
+ ![Deník v rámci a okna NavigationWindow](./media/navigation-overview/navigation-window-and-frame.png "navigačním okně a snímků")  
   
  Umožňuje programu podpora navigačního přímo před nimi. To může být vhodné, pokud je potřeba zadat vlastní navigační [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] pro <xref:System.Windows.Controls.Frame> , která je hostována v <xref:System.Windows.Window>. Kromě toho oba typy implementovat další, související navigačního členů, včetně `BackStack` (<xref:System.Windows.Navigation.NavigationWindow.BackStack%2A?displayProperty=nameWithType>, <xref:System.Windows.Controls.Frame.BackStack%2A?displayProperty=nameWithType>) a `ForwardStack` (<xref:System.Windows.Navigation.NavigationWindow.ForwardStack%2A?displayProperty=nameWithType>, <xref:System.Windows.Controls.Frame.ForwardStack%2A?displayProperty=nameWithType>), které umožňují vytvořit výčet položky deníku v pozadí Stack a jejich předávání zásobníku, v uvedeném pořadí.  
   
  Jak už bylo zmíněno dříve, může existovat více než jeden deníku v rámci aplikace. Následující obrázek poskytuje příklad, když k tomu může dojít.  
   
- ![Více deníků v rámci jedné aplikace](./media/naivgationoverviewfigure25.png "NaivgationOverviewFigure25")  
+ ![Více deníků v rámci jedné aplikace](./media/navigation-overview/multiple-journals-in-one-application.png "Toto je příklad více než jeden deníku v aplikaci.")  
   
 <a name="Navigating_to_Content_Other_than_Pages"></a>   
 ## <a name="navigating-to-content-other-than-xaml-pages"></a>Přechod na obsah než stránky XAML  
@@ -660,7 +660,7 @@ Windows Presentation Foundation (WPF) podporuje stylu prohlížeče navigace, kt
   
  Když dvakrát kliknete soubor v prohlížeči se otevře a přejde na a zobrazí obsah. To je ukázáno na následujícím obrázku.  
   
- ![Zobrazení obsahu souboru Person.XAML](./media/navigationoverviewfigure21.png "NavigationOverviewFigure21")  
+ ![Zobrazení obsahu souboru Person.XAML](./media/navigation-overview/contents-of-person-xaml-file.png "zobrazí obsah souboru Person.XAML.")  
   
  Můžete zobrazit dojde ke ztrátě [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] souboru z následujících možností:  
   
@@ -711,7 +711,7 @@ Windows Presentation Foundation (WPF) podporuje stylu prohlížeče navigace, kt
   
  Následující obrázek ukazuje výsledek.  
   
- ![Na stránce, který odkazuje na třídu](./media/navigationoverviewfigure22.png "NavigationOverviewFigure22")  
+ ![Na stránce, který odkazuje na třídu](./media/navigation-overview/page-navigates-to-an-object.png "Toto je příklad stránky, který odkazuje na objekt.")  
   
  Na tomto obrázku uvidíte, že užitečné nezobrazí se. Ve skutečnosti zobrazená hodnota je vrácená hodnota `ToString` metodu **osoba** objektu; ve výchozím nastavení, toto je jediná hodnota, která [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] můžete použít k reprezentaci objektu. Může přepsat `ToString` metoda vrátí smysluplnější informace, i když bude stále být pouze hodnotu řetězce. Jednou z metod můžete použít, který využívá funkce prezentace [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] je použití šablony data. Můžete implementovat datové šablony, která [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] můžete přiřadit k objektu určitého typu. Následující kód ukazuje datové šablony pro `Person` objektu.  
   
@@ -719,7 +719,7 @@ Windows Presentation Foundation (WPF) podporuje stylu prohlížeče navigace, kt
   
  Tady je přidružené šablony `Person` typu pomocí `x:Type` – rozšíření značek v `DataType` atribut. Potom vytvoří vazbu šablony `TextBlock` elementy (naleznete v tématu <xref:System.Windows.Controls.TextBlock>) k vlastnostem `Person` třídy. Následující obrázek znázorňuje aktualizovaný vzhled `Person` objektu.  
   
- ![Navigace na třídu, která má datové šablony](./media/navigationoverviewfigure23.png "NavigationOverviewFigure23")  
+ ![Navigace na třídu, která má datové šablony](./media/navigation-overview/navigating-to-a-class.png "přejdete na třídu, která má datové šablony.")  
   
  Výhoda této techniky je konzistence můžete získat díky možnosti opakovaně používat šablony pro zobrazení objektů konzistentně kdekoli ve vaší aplikaci.  
   

@@ -1,16 +1,21 @@
 ---
 title: Načtení dat pomocí mnoho sloupců ze souboru CSV pro machine learning zpracování – ML.NET
 description: Zjistěte, jak načíst data data s mnoha sloupci ze souboru CSV pro použití v modelu strojového učení, vytváření, trénování a vyhodnocování s ML.NET
-ms.date: 02/06/2019
+ms.date: 03/05/2019
 ms.custom: mvc,how-to
-ms.openlocfilehash: b295653d1bd3a955c2e6da929dc8f2d4d0a4c14d
-ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
+ms.openlocfilehash: e33fdf1d71b02545e3ea284cc317f5d244c3fc13
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56091965"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57675950"
 ---
 # <a name="load-data-with-many-columns-from-a-csv-file-for-machine-learning-processing---mlnet"></a>Načtení dat pomocí mnoho sloupců ze souboru CSV pro machine learning zpracování – ML.NET
+
+> [!NOTE]
+> Toto téma odkazuje na ML.NET, která je aktuálně ve verzi Preview, a materiálu se můžou stát terčem změnit. Další informace najdete v článku [Úvod ML.NET](https://www.microsoft.com/net/learn/apps/machine-learning-and-ai/ml-dotnet).
+
+Aktuálně používáte této ukázky s postupy a související **ML.NET verze 0.10**. Další informace najdete v tématu poznámky k verzi v [úložiště GitHub dotnet/machinelearning](https://github.com/dotnet/machinelearning/tree/master/docs/release-notes).
 
 `TextLoader` slouží k načtení dat z textových souborů. Je třeba zadat sloupců dat, jejich typy a jejich umístění v textovém souboru.
 

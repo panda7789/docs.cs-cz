@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/08/2018
-ms.openlocfilehash: fa0e81f6eb54ad01b3f2f84a37499302ff9abd06
-ms.sourcegitcommit: d9a0071d0fd490ae006c816f78a563b9946e269a
+ms.openlocfilehash: b3dbce5185415374b2c0f6de134e03b44fe48420
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "55066261"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57676366"
 ---
 # <a name="design-a-microservice-domain-model"></a>Návrh doménového modelu mikroslužby
 
@@ -78,7 +78,7 @@ Osoba s jméno a příjmení je obvykle entity vzhledem k tomu, že uživatel m�
 
 Hodnota objekty jsou náročná na správu v relačních databází a ORMs, jako je EF, zatímco v dokumentu orientovaného databázích, které jsou snadněji implementovat a používat.
 
-EF Core 2.0 obsahuje [vlastní entity](https://blogs.msdn.microsoft.com/dotnet/2017/08/14/announcing-entity-framework-core-2-0/#owned-entities-and-table-splitting) funkce, která usnadňuje zpracování hodnotu objektů, jak uvidíme podrobně později.
+EF Core 2.0 obsahuje [vlastní entity](https://devblogs.microsoft.com/dotnet/announcing-entity-framework-core-2-0/#owned-entities-and-table-splitting) funkce, která usnadňuje zpracování hodnotu objektů, jak uvidíme podrobně později.
 
 #### <a name="additional-resources"></a>Další zdroje
 

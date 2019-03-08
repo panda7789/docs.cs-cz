@@ -7,14 +7,12 @@ helpviewer_keywords:
 - UI Automation, Microsoft Active Accessibility
 - Active Accessibility, UI Automation compared to
 ms.assetid: 87bee662-0a3e-4232-a421-20e7a5968321
-author: Xansky
-ms.author: mhopkins
-ms.openlocfilehash: f8dfe0520e0db676a208dcd46a45db8fefe98703
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 67382c0383726d2c2caabde1e80bfb37a1a9c27c
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54603739"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57679265"
 ---
 # <a name="ui-automation-and-microsoft-active-accessibility"></a>Automatizace uživatelského rozhraní a technologie Microsoft Active Accessibility
 > [!NOTE]
@@ -100,7 +98,7 @@ ms.locfileid: "54603739"
 |ROLE_SYSTEM_SPINBUTTON|Číselník|  
 |ROLE_SYSTEM_SPLITBUTTON|Tlačítko rozdělení|  
 |ROLE_SYSTEM_STATUSBAR|Stavový řádek|  
-|ROLE_SYSTEM_PAGETABLIST|Tabulátor|  
+|ROLE_SYSTEM_PAGETABLIST|Karta|  
 |ROLE_SYSTEM_PAGETAB|Položka tabulátoru|  
 |ROLE_SYSTEM_TABLE|Tabulka|  
 |ROLE_SYSTEM_STATICTEXT|Text|  
@@ -141,9 +139,9 @@ ms.locfileid: "54603739"
   
 |[!INCLUDE[TLA2#tla_aa](../../../includes/tla2sharptla-aa-md.md)] Stav|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Vlastnost|Změna stavu aktivace?|  
 |-----------------------------------------------------------------------|------------------------------------------------------------------------------------|----------------------------|  
-|STATE_SYSTEM_CHECKED|Pro zaškrtávací políčko <xref:System.Windows.Automation.TogglePattern.ToggleStateProperty><br /><br /> Pro přepínací tlačítko <xref:System.Windows.Automation.SelectionItemPattern.IsSelectedProperty>|A|  
-|STATE_SYSTEM_COLLAPSED|<xref:System.Windows.Automation.ExpandCollapsePattern.ExpandCollapsePatternInformation.ExpandCollapseState%2A> = <xref:System.Windows.Automation.ExpandCollapseState.Collapsed>|A|  
-|STATE_SYSTEM_EXPANDED|<xref:System.Windows.Automation.ExpandCollapsePattern.ExpandCollapsePatternInformation.ExpandCollapseState%2A> = <xref:System.Windows.Automation.ExpandCollapseState.Expanded> Nebo <xref:System.Windows.Automation.ExpandCollapseState.PartiallyExpanded>|A|  
+|STATE_SYSTEM_CHECKED|Pro zaškrtávací políčko <xref:System.Windows.Automation.TogglePattern.ToggleStateProperty><br /><br /> Pro přepínací tlačítko <xref:System.Windows.Automation.SelectionItemPattern.IsSelectedProperty>|Ano|  
+|STATE_SYSTEM_COLLAPSED|<xref:System.Windows.Automation.ExpandCollapsePattern.ExpandCollapsePatternInformation.ExpandCollapseState%2A> = <xref:System.Windows.Automation.ExpandCollapseState.Collapsed>|Ano|  
+|STATE_SYSTEM_EXPANDED|<xref:System.Windows.Automation.ExpandCollapsePattern.ExpandCollapsePatternInformation.ExpandCollapseState%2A> = <xref:System.Windows.Automation.ExpandCollapseState.Expanded> Nebo <xref:System.Windows.Automation.ExpandCollapseState.PartiallyExpanded>|Ano|  
 |STATE_SYSTEM_FOCUSABLE|<xref:System.Windows.Automation.AutomationElement.IsKeyboardFocusableProperty>|N|  
 |STATE_SYSTEM_FOCUSED|<xref:System.Windows.Automation.AutomationElement.HasKeyboardFocusProperty>|N|  
 |STATE_SYSTEM_HASPOPUP|<xref:System.Windows.Automation.ExpandCollapsePattern> pro položky nabídky|N|  
@@ -158,7 +156,7 @@ ms.locfileid: "54603739"
 |STATE_SYSTEM_SELECTABLE|<xref:System.Windows.Automation.SelectionItemPattern> je podporováno|N|  
 |STATE_SYSTEM_SELECTED|<xref:System.Windows.Automation.SelectionItemPattern.IsSelectedProperty>|N|  
 |STATE_SYSTEM_SIZEABLE|<xref:System.Windows.Automation.TransformPattern.TransformPatternInformation.CanResize%2A>|N|  
-|STATE_SYSTEM_UNAVAILABLE|<xref:System.Windows.Automation.AutomationElement.IsEnabledProperty>|A|  
+|STATE_SYSTEM_UNAVAILABLE|<xref:System.Windows.Automation.AutomationElement.IsEnabledProperty>|Ano|  
   
  Následující stavy buď nebyly prováděny většinu [!INCLUDE[TLA2#tla_aa](../../../includes/tla2sharptla-aa-md.md)] řídit servery nebo nemají žádný ekvivalent v [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)].  
   

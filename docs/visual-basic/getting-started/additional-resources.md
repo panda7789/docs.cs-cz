@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Help, Visual Basic Web sites
 - Visual Basic, videos
 ms.assetid: 9bfb42e9-327f-439b-935e-8884f6aca80c
-ms.openlocfilehash: 25d18b4e362481dfde8fb440911bac67f27eab40
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: b54c48fb7869fb3d308e238366f8e8b91368320a
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54636232"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57675599"
 ---
 # <a name="additional-resources"></a>Další zdroje
 
@@ -26,7 +26,7 @@ Na následujících webech pokyny a vám může pomoci najít odpovědi na běž
 |Termín|Definice|
 |----------|----------------|
 |[Návrh jazyka Visual Basic .NET](https://github.com/dotnet/vblang)|Oficiální úložišti na Githubu pro návrh jazyka Visual Basic .NET.|
-|[Blog týmu Microsoft Visual Basic](https://blogs.msdn.microsoft.com/vbteam/)|Poskytuje přístup k na blogu týmu Visual Basic.|
+|[Blog týmu Microsoft Visual Basic](https://devblogs.microsoft.com/vbteam/)|Poskytuje přístup k na blogu týmu Visual Basic.|
 
 ### <a name="code-samples"></a>Ukázky kódů
 

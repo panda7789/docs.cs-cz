@@ -3,12 +3,12 @@ title: 'Kurz: Zápis první opravu analyzátoru a kódu'
 description: Tento kurz obsahuje podrobné pokyny k sestavení analyzátor a oprava kódu pomocí sady SDK kompilátoru .NET (Roslyn API).
 ms.date: 08/01/2018
 ms.custom: mvc
-ms.openlocfilehash: 727e1deb859cf0f719f47b71129407b683978681
-ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
+ms.openlocfilehash: 665dac9d36933c35be19cc826b8b4dc614c38ed2
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57201895"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57677166"
 ---
 # <a name="tutorial-write-your-first-analyzer-and-code-fix"></a>Kurz: Zápis první opravu analyzátoru a kódu
 
@@ -199,7 +199,7 @@ Všechny opravy kódu jsou odvozeny z <xref:Microsoft.CodeAnalysis.CodeFixes.Cod
 
 [!code-csharp[Find local declaration node](~/samples/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst/MakeConstCodeFixProvider.cs#FindDeclarationNode  "Find the local declaration node that raised the diagnostic")]
 
-V dalším kroku změňte poslední řádek k registraci opravu kódu. Jste kód opravili správně vytvoří nový dokument, který je výsledkem přidání `const` modifikátor na existující deklaraci:  
+V dalším kroku změňte poslední řádek k registraci opravu kódu. Jste kód opravili správně vytvoří nový dokument, který je výsledkem přidání `const` modifikátor na existující deklaraci:
 
 [!code-csharp[Register the new code fix](~/samples/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst/MakeConstCodeFixProvider.cs#RegisterCodeFix  "Register the new code fix")]
 
@@ -275,7 +275,7 @@ public void WhenTestCodeIsValidNoDiagnosticIsTriggered(string testCode)
 }
 ```
 
-Nový řádek dat pro tento test můžete vytvořit tak, že definujete jakékoli fragment kódu, který by nemělo způsobit vaší diagnostiky pro aktivaci upozornění. Toto přetížení `VerifyCSharpDiagnostic` úspěšný, pokud neexistují žádné diagnostiky pro fragment kódu zdroje.  
+Nový řádek dat pro tento test můžete vytvořit tak, že definujete jakékoli fragment kódu, který by nemělo způsobit vaší diagnostiky pro aktivaci upozornění. Toto přetížení `VerifyCSharpDiagnostic` úspěšný, pokud neexistují žádné diagnostiky pro fragment kódu zdroje.
 
 V dalším kroku nahraďte `TestMethod2` tento test, který zajišťuje diagnostiky se vyvolá, a oprava kódu u zdroje fragment kódu:
 
@@ -426,7 +426,7 @@ Už jste téměř hotovi. Existuje několik další podmínky pro vaše analyzá
 
 [!code-csharp[Mismatched types don't raise diagnostics](~/samples/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst.Test/MakeConstUnitTests.cs#DeclarationIsInvalid "When the variable type and the constant type don't match, there's no diagnostic")]
 
-Kromě toho nejsou správně zpracovány typy odkazů. Pouze konstantní hodnota povolená pro typ odkazu je `null`, s výjimkou v tomto případě <xref:System.String?displayPropert=nameWIthType>, což umožňuje řetězcové literály. Jinými slovy `const string s = "abc"` je právní, ale `const object s = "abc"` není. Tento fragment kódu ověří tuto podmínku:
+Kromě toho nejsou správně zpracovány typy odkazů. Pouze konstantní hodnota povolená pro typ odkazu je `null`, s výjimkou v tomto případě <xref:System.String?displayProperty=nameWIthType>, což umožňuje řetězcové literály. Jinými slovy `const string s = "abc"` je právní, ale `const object s = "abc"` není. Tento fragment kódu ověří tuto podmínku:
 
 [!code-csharp[Reference types don't raise diagnostics](~/samples/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst.Test/MakeConstUnitTests.cs#DeclarationIsntString "When the variable type is a reference type other than string, there's no diagnostic")]
 
@@ -444,7 +444,7 @@ Tyto změny aktualizují data řádku deklarace pro oba testy. Následující k�
 
 Naštěstí všechny výše uvedené chyby se dají řešit pomocí stejné techniky, které právě jste se dozvěděli.
 
-Chcete-li oprava první chyby, nejdřív otevřete **DiagnosticAnalyzer.cs** a vyhledejte smyčky foreach, kde každý z místní deklarace inicializátory jsou zkontrolovány Ujistěte se, že jsou přiřazení konstantní hodnoty. Okamžitě _před_ první smyčka foreach, volání `context.SemanicModel.GetTypeInfo()` načíst podrobnosti o deklarovaný typ lokální deklarace:
+Chcete-li oprava první chyby, nejdřív otevřete **DiagnosticAnalyzer.cs** a vyhledejte smyčky foreach, kde každý z místní deklarace inicializátory jsou zkontrolovány Ujistěte se, že jsou přiřazení konstantní hodnoty. Okamžitě _před_ první smyčka foreach, volání `context.SemanticModel.GetTypeInfo()` načíst podrobnosti o deklarovaný typ lokální deklarace:
 
 ```csharp
 var variableTypeName = localDeclaration.Declaration.Type;

@@ -1,15 +1,8 @@
 ---
 title: .NET core migrace z project.json
-description: Zjistěte, jak migrovat starší aplikace project .NET Core pomocí project.json
-author: blackdwarf
+description: 'Zjistěte, jak migrovat starší aplikace project .NET Core pomocí project.json'
 ms.date: 07/19/2017
 ms.custom: seodec18
-ms.openlocfilehash: 40a0aaf9d687a580b83e11811effad458f708a85
-ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
-ms.translationtype: MT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53170688"
 ---
 # <a name="migrating-net-core-projects-from-projectjson"></a>Migrace projektů .NET Core ze souboru project.json
 
@@ -89,7 +82,7 @@ Formát csproj .NET Core byly změny a vyvíjejí s každou novou verzí předb�
 
 Po provedení těchto kroků by měl být váš projekt plně kompatibilní s formátem souboru csproj RTM .NET Core.
 
-Příklady před a po dokončení migrace ze starého formátu csproj do nové, najdete v článku [aktualizace sady Visual Studio 2017 RC – vylepšení nástrojů .NET Core](https://blogs.msdn.microsoft.com/dotnet/2016/12/12/updating-visual-studio-2017-rc-net-core-tooling-improvements/) článek na blogu .NET.
+Příklady před a po dokončení migrace ze starého formátu csproj do nové, najdete v článku [aktualizace sady Visual Studio 2017 RC – vylepšení nástrojů .NET Core](https://devblogs.microsoft.com/dotnet/updating-visual-studio-2017-rc-net-core-tooling-improvements/) článek na blogu .NET.
 
 ## <a name="see-also"></a>Viz také:
 

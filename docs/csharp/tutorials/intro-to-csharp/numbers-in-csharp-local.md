@@ -3,12 +3,12 @@ title: Čísla v C# – Úvod do C# kurz
 description: Přečtěte si C# prozkoumáním číselné typy, vlastnosti a metody.
 ms.date: 10/31/2017
 ms.custom: mvc
-ms.openlocfilehash: 009c737297c331b1aa4dcad058ac6bfdf05ac037
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 1b09a65b42395bfa1caf9e564120d3df1f3f1ed5
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56978615"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57673857"
 ---
 # <a name="manipulate-integral-and-floating-point-numbers-in-c"></a>Zpracování čísel s plovoucí desetinnou čárkou a integrální bod v jazyce C\#
 
@@ -20,7 +20,7 @@ V tomto kurzu se očekává, že budete mít počítač, který používáte pro
 
 Vytvořte adresář **čísla quickstart**. Zkontrolujte, zda aktuální adresář a spusťte `dotnet new console -n NumbersInCSharp -o .`.
 
-Otevřít **Program.cs** ve svém oblíbeném editoru a nahraďte řádek `Console.Writeline("Hello World!");` následujícím kódem:
+Otevřít **Program.cs** ve svém oblíbeném editoru a nahraďte řádek `Console.WriteLine("Hello World!");` následujícím kódem:
 
 ```csharp
 int a = 18;
@@ -29,7 +29,7 @@ int c = a + b;
 Console.WriteLine(c);
 ```
 
-Tento kód spustit zadáním `dotnet run` v příkazovém okně. 
+Tento kód spustit zadáním `dotnet run` v příkazovém okně.
 
 Právě jste viděli jednu ze základních matematických operací s celými čísly. `int` Zadejte představuje **celé číslo**, kladné nebo záporné celé číslo. Můžete použít `+` symbol pro přidání. Dalším běžným matematickým operacím pro celá čísla zahrnují:
 
@@ -48,13 +48,13 @@ c = a / b;
 Console.WriteLine(c);
 ```
 
-Tento kód spustit zadáním `dotnet run` v příkazovém okně. 
-    
+Tento kód spustit zadáním `dotnet run` v příkazovém okně.
+
 Můžete taky experimentovat a provést několik matematických operací na jednom řádku, pokud byste o ni. Zkuste `c = a + b - 12 * 17;` třeba. Kombinování proměnné a konstanty čísla je povolen.
 
 > [!TIP]
 > Když se budete učit, C# (nebo libovolným programovacím jazykem), budete se při psaní kódu dělat chyby. **Kompilátoru** se tyto chyby odhalí a dejte nám o nich na vás. Pokud výstup obsahuje chybové zprávy, prohlédněte si blíže ukázkový kód a kód v okně zobrazit, co je potřeba opravit.
-> Toto cvičení vám pomůže seznámit se se strukturou kódu jazyka C#.     
+> Toto cvičení vám pomůže seznámit se se strukturou kódu jazyka C#.
 
 Dokončili jste první krok. Předtím, než se pustíte do další části, přejdeme aktuální kód do samostatné metodě. Který usnadňuje začít pracovat s nový příklad. Přejmenovat váš `Main` metodu `WorkingWithIntegers` a napsat nový `Main` metodu, která volá `WorkingWithIntegers`. Jakmile budete hotovi, váš kód by měl vypadat takto:
 
@@ -164,7 +164,7 @@ namespace NumbersInCSharp
         }
 
         static void OrderPrecedence()
-        {   
+        {
             int a = 5;
             int b = 4;
             int c = 2;
@@ -196,6 +196,7 @@ namespace NumbersInCSharp
 ```
 
 ## <a name="explore-integer-precision-and-limits"></a>Prozkoumat celé číslo přesnosti a omezení
+
 Z poslední ukázky vám ukázal, že dělení celého čísla zkrátí výsledek.
 Můžete získat **zbývající** pomocí **modulo** operátoru `%` znak. Následující kód ve vašich `Main` metody:
 
@@ -210,7 +211,7 @@ Console.WriteLine($"remainder: {e}");
 ```
 
 Typ integer jazyka C# se liší od matematické celých čísel v jednom ohledu: `int` typ má minimální a maximální mezí. Přidejte tento kód, aby vaše `Main` metoda tyto limity zjistíte:
-    
+
 ```csharp
 int max = int.MaxValue;
 int min = int.MinValue;
@@ -223,13 +224,14 @@ Pokud výsledkem určitého výpočtu hodnota, která tyto limity překračuje, 
 int what = max + 3;
 Console.WriteLine($"An example of overflow: {what}");
 ```
-    
-Všimněte si, že odpověď těsně blíží minimální (zápornému) celému číslu. Je stejný jako `min + 2`. Operace sčítání **došlo k přetečení** povolené hodnoty celých čísel.
+
+Všimněte si, že odpověď těsně blíží minimální (zápornému) celému číslu. Je stejný jako `min + 2`.
+Operace sčítání **došlo k přetečení** povolené hodnoty celých čísel.
 Odpověď je velmi velké záporné číslo, protože přetečení "cyklickému přechodu" od nejvyšší možné celočíselné hodnoty k nejnižší.
 
 Existují další číselné typy s různými limity a přesností, můžete použít, pokud `int` typu nevyhovuje vašim potřebám. Podíváme se na ně podívat.
 
-Ještě jednou přejdeme kód, který jste napsali v této části do samostatné metodě. Pojmenujte ji `TestLimits`. 
+Ještě jednou přejdeme kód, který jste napsali v této části do samostatné metodě. Pojmenujte ji `TestLimits`.
 
 ## <a name="work-with-the-double-type"></a>Práce s typem double
 
@@ -262,7 +264,7 @@ double min = double.MinValue;
 Console.WriteLine($"The range of double is {min} to {max}");
 ```
 
-Tyto hodnoty jsou vytiskne zapsaný exponenciální notací. Číslo vlevo od `E` se říká mantisa. Exponent, je číslo vpravo jako mocninu 10. 
+Tyto hodnoty jsou vytiskne zapsaný exponenciální notací. Číslo vlevo od `E` se říká mantisa. Exponent, je číslo vpravo jako mocninu 10.
 
 Stejně jako desetinná čísla v matematice můžou mít typu Double v C# chyby zaokrouhlení. Vyzkoušejte tento kód:
 
@@ -303,23 +305,23 @@ Console.WriteLine(c / d);
 
 `M` Přípona u čísel je způsob, jak naznačit, že má konstanta používat `decimal` typu.
 
-Všimněte si, že výsledek s typem decimal má napravo od desetinné čárky víc číslic. 
+Všimněte si, že výsledek s typem decimal má napravo od desetinné čárky víc číslic.
 
 ***Výzvy***
 
-Teď, když jste se seznámili s různými typy čísel, psát kód, který vypočítá obsah kruhu s poloměrem 2,50 centimetru. Mějte na paměti, že obsah kruhu je jako poloměr na druhou krát číslo PÍ. Jeden pomocný parametr: .NET obsahuje pro číslo PÍ konstantu <xref:System.Math.PI?displayProperty=nameWithType> , můžete použít pro tuto hodnotu. 
+Teď, když jste se seznámili s různými typy čísel, psát kód, který vypočítá obsah kruhu s poloměrem 2,50 centimetru. Mějte na paměti, že obsah kruhu je jako poloměr na druhou krát číslo PÍ. Jeden pomocný parametr: .NET obsahuje pro číslo PÍ konstantu <xref:System.Math.PI?displayProperty=nameWithType> , můžete použít pro tuto hodnotu.
 
 By vám vyjít výsledek mezi 19 a 20.
 Můžete zkontrolovat odpověď podle [prohlížení dokončení ukázkového kódu na Githubu](https://github.com/dotnet/samples/tree/master/csharp/numbers-quickstart/Program.cs#L104-L106)
 
-Pokud chcete, vyzkoušejte i další vzorce. 
+Pokud chcete, vyzkoušejte i další vzorce.
 
 Dokončili jste "čísla v C#" rychlý start. Můžete pokračovat [větve a smyčky](branches-and-loops-local.md) rychlý start ve svém vlastním vývojovém prostředí.
 
 Další informace o číslech v jazyce C# v následujících tématech:
 
-[Tabulka celočíselných typů](../../language-reference/keywords/integral-types-table.md)   
-[Tabulka typů s plovoucí desetinnou čárkou](../../language-reference/keywords/floating-point-types-table.md)   
-[Tabulka předdefinovaných typů](../../language-reference/keywords/built-in-types-table.md)   
-[Tabulka implicitních číselných převodů](../../language-reference/keywords/implicit-numeric-conversions-table.md)   
-[Tabulka explicitních číselných převodů](../../language-reference/keywords/explicit-numeric-conversions-table.md)
+- [Tabulka celočíselných typů](../../language-reference/keywords/integral-types-table.md)
+- [Tabulka typů s plovoucí desetinnou čárkou](../../language-reference/keywords/floating-point-types-table.md)
+- [Tabulka předdefinovaných typů](../../language-reference/keywords/built-in-types-table.md)
+- [Tabulka implicitních číselných převodů](../../language-reference/keywords/implicit-numeric-conversions-table.md)
+- [Tabulka explicitních číselných převodů](../../language-reference/keywords/explicit-numeric-conversions-table.md)

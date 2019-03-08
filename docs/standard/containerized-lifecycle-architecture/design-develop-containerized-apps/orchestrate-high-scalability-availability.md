@@ -4,16 +4,16 @@ description: Skutečné produkční aplikace muset nasazují a spravují s orche
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 02/15/2019
-ms.openlocfilehash: e1ff3282c1fdf952177a1faa957398c33045a01c
-ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
+ms.openlocfilehash: b8c947ffc34b62204b6a370f1133111a3e2d3198
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56836159"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57679043"
 ---
 # <a name="orchestrating-microservices-and-multi-container-applications-for-high-scalability-and-availability"></a>Orchestrace mikroslužeb a vícekontejnerových aplikací pro vysokou škálovatelnost a dostupnost
 
-Využitím orchestrátorů, pro aplikace připravené pro produkční prostředí je nezbytné, pokud je vaše aplikace založené na mikroslužbách nebo rozdělit mezi několik kontejnerů. Zavedeném dříve, v rámci přístupu založených na mikroslužbách vlastní jednotlivých mikroslužeb jeho modelu a datům tak, aby ho autonomní od vývoje a nasazení pohledu. Ale i v případě, že máte více tradiční aplikace, který se skládá z několika služeb (např. SOA), budou mít také více kontejnerů nebo služby vytvářející jednu obchodní aplikaci, která je nutné nasadit jako distribuovaný systém. Tyto druhy systémy jsou komplexní horizontální navýšení kapacity a Správa; Proto pokud chcete mít vícekontejnerová aplikace připravené pro produkční prostředí a škálovatelné se naprosto je nutné orchestrátor.
+Využitím orchestrátorů, pro aplikace připravené pro produkční prostředí je nezbytné, pokud je vaše aplikace založené na mikroslužbách nebo rozdělit mezi několik kontejnerů. Zavedeném dříve, v rámci přístupu založených na mikroslužbách vlastní jednotlivých mikroslužeb jeho modelu a datům tak, aby ho autonomní od vývoje a nasazení pohledu. Ale i v případě, že máte více tradiční aplikace, který se skládá z několika služeb (např. SOA), budete mít také více kontejnerů nebo služby vytvářející jednu obchodní aplikaci, která je nutné nasadit jako distribuovaný systém. Tyto druhy systémy jsou komplexní horizontální navýšení kapacity a Správa; Proto pokud chcete mít vícekontejnerová aplikace připravené pro produkční prostředí a škálovatelné se naprosto je nutné orchestrátor.
 
 Obrázek 4 až 6 ukazuje nasazení do clusteru aplikace skládá z několika mikroslužeb (kontejnery).
 
@@ -27,7 +27,7 @@ Rozhraní příkazového řádku Docker (CLI) splňuje potřeby správy jednoho 
 
 Se dostat nad rámec správu jednotlivých kontejnerů nebo jednoduché složené aplikace a přesun směrem k větší podnikové aplikace s využitím mikroslužeb, musíte povolit orchestraci a clustering platformy.
 
-Z pro architekturu a vývoj pohledu Pokud je sestavení velké, enterprise, založených na mikroslužbách, aplikace, je důležité pochopit následující platformy a produkty, které podporují pokročilé scénáře:
+Z pro architekturu a vývoj pohledu Pokud jste sestavení velké, enterprise, založených na mikroslužbách, aplikace, je důležité pochopit následující platformy a produkty, které podporují pokročilé scénáře:
 
 - **Clustery a orchestrátorů.** Když budete potřebovat pro horizontální navýšení kapacity aplikace v mnoha hostitelích Dockeru, jako s velkých aplikací založených na mikroslužbách, je důležité mít možnost spravovat všechny tyto hostitele jako jeden cluster podle abstrahovat složitost základní platformy. Je to, co nabízejí clustery kontejnerů a orchestrátorů. Příklady orchestrátorů: Azure Service Fabric a Kubernetes. Kubernetes je k dispozici v Azure pomocí služby Azure Kubernetes Service.
 
@@ -74,7 +74,7 @@ Ve vývojovém prostředí, která [Dockeru v červenci 2018 jsme oznámili](htt
 
 Pokud chcete začít používat AKS, nasaďte cluster AKS z webu Azure portal nebo pomocí rozhraní příkazového řádku. Další informace o nasazení clusteru Azure Container Service najdete v tématu [Nasaďte cluster Azure Kubernetes Service (AKS)](https://docs.microsoft.com/azure/aks/kubernetes-walkthrough-portal).
 
-Neexistují žádné poplatky za software ve výchozím nastavení nainstalované jako součást AKS. Všechny výchozí možnosti jsou implementovány pomocí open source softwaru. AKS je k dispozici pro několik virtuálních počítačů v Azure. Se vám účtovat jenom výpočetní instance, kterou zvolíte, jakož i jiné infrastruktury spotřebované základní prostředky, jako je například úložiště a sítě. Neúčtují žádné dodatečné poplatky pro AKS, samotného.
+Neexistují žádné poplatky za software ve výchozím nastavení nainstalované jako součást AKS. Všechny výchozí možnosti jsou implementovány pomocí open source softwaru. AKS je k dispozici pro několik virtuálních počítačů v Azure. Platíte jenom za výpočetní instance, kterou zvolíte, jakož i jiné infrastruktury spotřebované základní prostředky, jako je například úložiště a sítě. Neúčtují žádné dodatečné poplatky pro AKS, samotného.
 
 Pro implementaci Další informace o nasazování do Kubernetes na základě `kubectl` a původní `.yaml` soubory, najdete v příspěvku [aplikaci eShopOnContainers nastavení ve službě AKS (služby Azure Kubernetes Service)](https://github.com/dotnet-architecture/eShopOnContainers/wiki/10.-Setting-the-solution-up-in-AKS-(Azure-Kubernetes-Service)).
 
@@ -149,7 +149,7 @@ Aktuální informace o podpoře kontejnery v Azure Service Fabric najdete v tém
 
 Service Fabric je typickým příkladem platformy, ve kterém můžete definovat jinou logickou architekturu (obchodní mikroslužby nebo ohraničených kontextech) než fyzická implementace. Například, pokud se rozhodnete implementovat [stavové služby Reliable Services](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-introduction) v [Azure Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-overview), které jsou popsané v další části "[Stateless a stavových mikroslužeb](#stateless-versus-stateful-microservices), "máte koncept obchodní mikroslužeb s více službami fyzické.
 
-Jak ukazuje obrázek 4 – 10 a přemýšlení z hlediska obchodní logiky/mikroslužeb, při implementaci služby Reliable Stateful Service Fabric je obvykle potřeba implementovat dvě úrovně služeb. První je back-end spolehlivé stavové služby, která zpracovává více oddílů (každý oddíl se stavovou službou). Druhým je front-endová služba a služba brány starosti agregace směrování a data napříč několika oddíly nebo instance stavové služby. Tuto službu brány také zpracovává komunikace na straně klienta s opakování smyčky přístup k back-end služby. Služba brány je volána Pokud implementujete vlastní služba nebo případně můžete také použít Service Fabric out-of-the-box [reverzní proxy server](https://docs.microsoft.com/azure/service-fabric/service-fabric-reverseproxy).
+Jak ukazuje obrázek 4 – 10 a přemýšlení z hlediska obchodní logiky/mikroslužeb, při implementaci služby Reliable Stateful Service Fabric je obvykle potřeba implementovat dvě úrovně služeb. První je back-end spolehlivé stavové služby, která zpracovává více oddílů (každý oddíl se stavovou službou). Druhým je front-endová služba a služba brány starosti agregace směrování a data napříč několika oddíly nebo instance stavové služby. Tuto službu brány také zpracovává komunikace na straně klienta s opakování smyčky přístup k back-end služby. Pokud implementujete vlastní službu, nebo také můžete použít také out-of-the-box Service Fabric se používá označení služba brány [reverzní proxy server](https://docs.microsoft.com/azure/service-fabric/service-fabric-reverseproxy).
 
 ![Service Fabric je předpis pro podporu několika stavovém modelu reliable services v kontejnerech.](./media/service-fabric-stateful-business-microservice.png)
 
@@ -187,7 +187,7 @@ Ale vlastních služeb může být také stavové v Service Fabric, což znamen�
 
 **Obrázek 4 – 14**. Bezstavových a stavových mikroslužeb
 
-Bezstavové přístup dokonale platný a je jednodušší než stavových mikroslužeb, protože tento přístup je podobná tradičním a dobře známé vzory implementace. Ale bezstavové mikroslužby kladou latence mezi zdroji procesy a data. Zahrnují také několik pohyblivých částí, pokud se pokoušíte zlepšení výkonu pomocí dalších mezipaměť a fronty. Výsledkem je, že můžete skončit s komplexní architektury, které mají moc úrovní.
+Bezstavové přístup dokonale platný a je jednodušší než stavových mikroslužeb, protože tento přístup je podobná tradičním a dobře známé vzory implementace. Ale bezstavové mikroslužby kladou latence mezi zdroji procesy a data. Zahrnují také několik pohyblivých částí, když se snažíte zlepšení výkonu pomocí dalších mezipaměť a fronty. Výsledkem je, že můžete skončit s komplexní architektury, které mají moc úrovní.
 
 Naproti tomu [stavových mikroslužeb](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-introduction#when-to-use-reliable-services-apis) může aplikace excel v pokročilých scénářích, protože neexistuje žádný latence mezi domény logiku a data. Silná zpracování dat, hraní her zpět ukončí, databáze jako služba, a další scénáře s nízkou latencí všechny výhody stavové služby, které umožňují rychlejší přístup k místním stavu.
 

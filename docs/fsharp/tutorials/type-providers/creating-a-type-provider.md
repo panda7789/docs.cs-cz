@@ -2,12 +2,12 @@
 title: 'Kurz: Vytvoření zprostředkovatele typů'
 description: Zjistěte, jak vytvořit vlastní F# poskytovatelů v F# 3.0 prozkoumáním několik jednoduchý typ zprostředkovatelů pro ilustraci základních konceptů.
 ms.date: 02/02/2019
-ms.openlocfilehash: ec26f25ad39ca432d6ef11238268e1704bd9638b
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 14e3035d03438aaaa2f6e64210f99e1f149db274
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57371555"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57678420"
 ---
 # <a name="tutorial-create-a-type-provider"></a>Kurz: Vytvoření zprostředkovatele typů
 
@@ -469,7 +469,7 @@ Je třeba počítat s následujícím:
 
 - Každou pojmenovanou skupinu výsledkem zadaná vlastnost a přístupem k vlastnosti výsledkem použití indexer na shodu `Groups` kolekce.
 
-Následující kód je základní logiku pro implementaci těchto zprostředkovatele a v tomto příkladu vynechá přidání všem členům poskytnutého typu. Informace o každý přidaný člen najdete v příslušné části dále v tomto tématu. Celý kód lze stáhnout ukázku z [ F# 3.0 balík vzorových](https://fsharp3sample.codeplex.com) na webu Codeplex.
+Následující kód je základní logiku pro implementaci těchto zprostředkovatele a v tomto příkladu vynechá přidání všem členům poskytnutého typu. Informace o každý přidaný člen najdete v příslušné části dále v tomto tématu. Celý kód lze stáhnout ukázku z [ F# 3.0 balík vzorových](https://archive.codeplex.com/?p=fsharp3sample) na webu CodePlex.
 
 ```fsharp
 namespace Samples.FSharp.RegexTypeProvider

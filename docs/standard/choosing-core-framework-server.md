@@ -4,12 +4,12 @@ description: Průvodce, na kterou implementaci rozhraní .NET, měli byste zvá�
 author: cartermp
 ms.author: mairaw
 ms.date: 06/19/2018
-ms.openlocfilehash: 398a504e60ce47da6923eebb261ff68e8ca3c5ee
-ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
+ms.openlocfilehash: 03d008230d263853e322bb582706e2dbd3a11eec
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55828511"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57678797"
 ---
 # <a name="choosing-between-net-core-and-net-framework-for-server-apps"></a>Volba mezi .NET Core a .NET Framework pro serverové aplikace
 
@@ -52,7 +52,7 @@ Další informace o architektuře mikroslužeb najdete v tématu [Mikroslužby .
 
 Kontejnery jsou obvykle používá ve spojení s architekturou mikroslužeb. Kontejnery lze také kontejnerizace webových aplikací a služeb, které následují všech možných architektonických řešení. Rozhraní .NET framework lze použít v kontejnerech Windows, ale modularitu a zjednodušené povaze .NET Core umožňuje lepší volbou pro kontejnery. Při vytváření a nasazení kontejneru, je mnohem menší s .NET Core s rozhraním .NET Framework než velikosti jeho image. Protože je multiplatformní, můžete nasadit server aplikace pro kontejnery linuxového Dockeru, třeba.
 
-Kontejnery dockeru je možné hostovat ve vaší vlastní infrastruktuře Linux nebo Windows nebo v cloudové službě, jako [Azure Container Service](https://azure.microsoft.com/services/container-service/). Služba Azure Container Service můžete spravovat, organizovat a škálování kontejnerových aplikací v cloudu.
+Kontejnery dockeru je možné hostovat ve vaší vlastní infrastruktuře Linux nebo Windows nebo v cloudové službě, jako [Azure Kubernetes Service](https://azure.microsoft.com/services/kubernetes-service/). Azure Kubernetes Service můžete spravovat, Orchestrace a škálování kontejnerových aplikací v cloudu.
 
 ### <a name="a-need-for-high-performance-and-scalable-systems"></a>Třeba pro vysoce výkonné a škálovatelné systémy
 
@@ -77,7 +77,7 @@ Ve většině případů není nutné migrovat existující aplikace až po .NET
 Knihovny rychle využívají .NET Standard. .NET standard umožňuje sdílení kódu mezi všechny implementace .NET, včetně .NET Core. S rozhraním .NET Standard 2.0 to je ještě jednodušší:
 
 - Mnohem větší začal být plochy rozhraní API. 
-- Zavedená režim kompatibility rozhraní .NET Framework. Tento režim kompatibility umožňuje projekty .NET Standard a .NET Core k odkazování knihoven .NET Framework. Další informace o režimu kompatibility najdete v tématu [Ohlašujeme .NET Standard 2.0](https://blogs.msdn.microsoft.com/dotnet/2017/08/14/announcing-net-standard-2-0/).
+- Zavedená režim kompatibility rozhraní .NET Framework. Tento režim kompatibility umožňuje projekty .NET Standard a .NET Core k odkazování knihoven .NET Framework. Další informace o režimu kompatibility najdete v tématu [Ohlašujeme .NET Standard 2.0](https://devblogs.microsoft.com/dotnet/announcing-net-standard-2-0/).
 
 Proto pouze v případech, kdy knihoven nebo balíčků NuGet používat technologie, které nejsou k dispozici v rozhraní .NET Standard a .NET Core budete muset použít rozhraní .NET Framework.
 

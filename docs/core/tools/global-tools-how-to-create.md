@@ -4,12 +4,12 @@ description: Popisuje, jak vytvořit globální nástroj. Nástroj globální je
 author: Thraka
 ms.author: adegeo
 ms.date: 08/22/2018
-ms.openlocfilehash: 045b8f7707b8ee36ea9674bba3974197a57c482d
-ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
+ms.openlocfilehash: a54cb0a8c32da6a89ab1c3b7757df10fd9adf5cf
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55826418"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57677861"
 ---
 # <a name="create-a-net-core-global-tool-using-the-net-core-cli"></a>Vytvoření globální nástroje .NET Core pomocí rozhraní příkazového řádku .NET Core
 
@@ -50,7 +50,7 @@ static void Main(string[] args)
                                 .GetCustomAttribute<AssemblyInformationalVersionAttribute>()
                                 .InformationalVersion
                                 .ToString();
-                                
+
         Console.WriteLine($"botsay v{versionString}");
         Console.WriteLine("-------------");
         Console.WriteLine("\nUsage:");
@@ -129,13 +129,13 @@ Všechny argumenty po `--` oddělovače jsou předány do vaší aplikace.
 
 Před aktualizací Service pack a distribuce aplikace jako globální nástroj, budete muset upravit soubor projektu. Otevřít `botsay.csproj` a přidejte tři nové uzly XML k `<Project><PropertyGroup>` uzlu:
 
-- `<PackAsTool>`  
+- `<PackAsTool>`\
 [POVINNÉ] Označuje, že aplikace se zabalí pro instalaci jako globální nástroj.
 
-- `<ToolCommandName>`  
+- `<ToolCommandName>`\
 [VOLITELNÉ] Alternativní název pro nástroj, jinak název příkazu pro nástroj bude mít název souboru projektu. Může mít několik nástrojů v balíčku, při výběru že jedinečný a popisný název pomáhá odlišil od jiných nástrojů ve stejném balíku.
 
-- `<PackageOutputPath>`  
+- `<PackageOutputPath>`\
 [VOLITELNÉ] Kde se budou vytvářet balíček NuGet. Balíček NuGet je globální nástroje .NET Core CLI používá k instalaci nástroj.
 
 ```xml
@@ -164,7 +164,7 @@ dotnet pack
 
 `botsay.1.0.0.nupkg` Vytvoří soubor ve složce identifikován `<PackageOutputPath>` hodnotu XML z `botsay.csproj` soubor, který v tomto příkladu je `./nupkg` složky. To usnadňuje instalaci a testování. Pokud chcete uvolnit nástroj veřejně, nahrajte ho do [ https://www.nuget.org ](https://www.nuget.org). Až nástroj je k dispozici na webu NuGet, vývojáři můžete provést instalaci celou uživatele pomocí nástroje `--global` možnost [instalace nástrojů dotnet](dotnet-tool-install.md) příkazu.
 
-Teď, když máte balíček, nainstalujte nástroj z tohoto balíčku: 
+Teď, když máte balíček, nainstalujte nástroj z tohoto balíčku:
 
 ```console
 dotnet tool install --global --add-source ./nupkg botsay
@@ -186,7 +186,7 @@ Nyní byste měli být schopni zadejte `botsay` a získat odpověď z nástroje.
 
 ## <a name="remove-the-tool"></a>Odeberte nástroj
 
-Jakmile budete mít experimentování s nástroji, můžete ho odebrat pomocí následujících commnand:
+Jakmile budete mít experimentování s nástroji, můžete ho odebrat pomocí následujícího příkazu:
 
 ```console
 dotnet tool uninstall -g botsay

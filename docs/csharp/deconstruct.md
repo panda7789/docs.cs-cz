@@ -5,12 +5,12 @@ author: rpetrusha
 ms.author: ronpet
 ms.date: 07/18/2016
 ms.assetid: 0b0c4b0f-4a47-4f66-9b8e-f5c63b195960
-ms.openlocfilehash: 90c693790398509a810d93d8504e1eb748637bb5
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 6c24c1ec04bdd7ce7ee2061c2551652e26a28cf9
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54710248"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57679330"
 ---
 # <a name="deconstructing-tuples-and-other-types"></a>Dekonstrukce řazených kolekcí členů a ostatními typy
 
@@ -100,7 +100,7 @@ Následující příklad deconstructs `Person` objektu do čtyř řetězců (jm�
 
 Pokud jste neměli vytvářet třídy, struktury nebo rozhraní, můžete stále dekonstruovat objekty daného typu implementací jeden nebo více `Deconstruct` [rozšiřující metody](programming-guide/classes-and-structs/extension-methods.md) vracet hodnoty, které vás zajímá.
 
-Následující příklad definuje dvě `Deconstruct` rozšiřující metody pro <xref:System.Reflection.PropertyInfo?displayProperty=nameWithType> třídy. Vrátí první sadu hodnot, které charakteristiku vlastnosti, včetně jeho typ, ať už jde o statické nebo instance, zda je jen pro čtení a určuje, zda se indexují. Druhý určuje vlastnosti usnadnění. Protože usnadnění get a přístupové objekty set se může lišit, logické hodnoty označuje, zda vlastnost má samostatné get i set přístupové objekty a pokud ano, ať už mají stejné usnadnění. Pokud existuje jenom jeden přistupující objekt nebo get i přístupový objekt set mají stejnou přístupností `access` proměnné označuje usnadnění vlastnost jako celek. V opačném případě usnadnění operace get a set přístupové objekty jsou označeny accessaccessibility je indikován `getAccess` a `setAccess` proměnné.
+Následující příklad definuje dvě `Deconstruct` rozšiřující metody pro <xref:System.Reflection.PropertyInfo?displayProperty=nameWithType> třídy. Vrátí první sadu hodnot, které charakteristiku vlastnosti, včetně jeho typ, ať už jde o statické nebo instance, zda je jen pro čtení a určuje, zda se indexují. Druhý určuje vlastnosti usnadnění. Protože usnadnění get a přístupové objekty set se může lišit, logické hodnoty označuje, zda vlastnost má samostatné get i set přístupové objekty a pokud ano, ať už mají stejné usnadnění. Pokud existuje jenom jeden přistupující objekt nebo get i přístupový objekt set mají stejnou přístupností `access` proměnné označuje usnadnění vlastnost jako celek. V opačném případě usnadnění operace get a jsou označeny přístupové objekty set `getAccess` a `setAccess` proměnné.
 
 [!code-csharp[Extension-deconstruct](../../samples/snippets/csharp/programming-guide/deconstructing-tuples/deconstruct-extension1.cs)]
 

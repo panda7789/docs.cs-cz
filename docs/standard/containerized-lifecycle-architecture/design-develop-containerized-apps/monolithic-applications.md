@@ -4,16 +4,16 @@ description: Základní koncepce pro kontejnerizování monolitických aplikací
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 02/15/2019
-ms.openlocfilehash: eff764472b4a9fc5b699545fc9629cc12d0186ca
-ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
+ms.openlocfilehash: 76e1db8886fe75b79cea2e28ef05e62ca519ae58
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56747259"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57676834"
 ---
 # <a name="monolithic-applications"></a>Monolitické aplikace
 
-V tomto scénáři jsou sestavení jednoho a monolitické webové aplikaci nebo službě a jeho nasazení jako kontejner. V rámci aplikace nemusí být struktura monolitické; To může se skládat z několika knihoven, komponenty nebo dokonce vrstvy (aplikační vrstva, vrstva domény, vrstva přístupu k datům atd.). Externě je jedním kontejnerem, jako je jeden proces, jednu webovou aplikaci nebo jedinou službou.
+V tomto scénáři provedete sestavování jednoho a monolitické webové aplikaci nebo službě a jeho nasazení jako kontejner. V rámci aplikace nemusí být struktura monolitické; To může se skládat z několika knihoven, komponenty nebo dokonce vrstvy (aplikační vrstva, vrstva domény, vrstva přístupu k datům atd.). Externě je jedním kontejnerem, jako je jeden proces, jednu webovou aplikaci nebo jedinou službou.
 
 Správa tohoto modelu, nasadíte jedním kontejnerem pro reprezentaci aplikace. Pro její škálování, stačí přidáte několik více kopií s nástroji pro vyrovnávání zatížení v popředí. Jednoduchost pochází z Správa jedno nasazení z jednoho kontejneru nebo virtuální počítač (VM).
 
@@ -71,7 +71,7 @@ Buď vzhledem k tomu, že chcete získat rychlé ověření kontejneru nasadit d
 
 Pomocí služby Azure App Service je intuitivní a můžete a rychlý, protože poskytuje skvělé Git integrace kódu, sestavení v sadě Microsoft Visual Studio a nasaďte ji přímo do Azure. Ale tradičně (žádné Dockeru), v případě potřeby další možnosti, rozhraní nebo závislosti, které nejsou podporovány v App Services, jste museli čekat, dokud nebude tým Azure aktualizace těchto závislostí ve službě App Service nebo přepnout do jiných služeb, třeba Service Fabric, Cloud Services nebo dokonce prostý virtuálních počítačů, pro které mají další kontrolu a můžete nainstalovat na požadovanou součást nebo architekturu pro vaši aplikaci.
 
-Nyní, jak ukazuje obrázek 4-4 při používání sady Visual Studio 2017, podpora kontejnerů ve službě Azure App Service poskytuje možnost zahrnout cokoliv, co chcete v prostředí aplikace. Přidá závislost do vaší aplikace, protože běží v kontejneru, získáte možnost do své image soubor Dockerfile nebo Docker, včetně těchto závislostí.
+Nyní, jak ukazuje obrázek 4-4 při používání sady Visual Studio 2017, podpora kontejnerů ve službě Azure App Service poskytuje možnost zahrnout cokoliv, co chcete v prostředí aplikace. Přidat závislost do vaší aplikace, protože ji používáte v kontejneru, získáte možnost do své image soubor Dockerfile nebo Docker, včetně těchto závislostí.
 
 ![Zobrazit průvodce Visual Studio k publikování do služby Azure app service, zvýraznění selektor pro registr kontejneru.](./media/image4.png)
 

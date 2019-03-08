@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/08/2018
-ms.openlocfilehash: 01e326b049ab8bb8d9c7f8c78acfc272d1d57ae9
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 637e51c45217c9ff214395235348b09119200fe7
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54146131"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57676340"
 ---
 # <a name="implement-the-infrastructure-persistence-layer-with-entity-framework-core"></a>Implementace vrstvy trvalosti infrastruktury pomocí Entity Framework Core
 
@@ -31,7 +31,7 @@ Entity Framework (EF) Core je odlehčený, rozšiřitelné, a multiplatformní v
 - **Začínáme s ASP.NET Core a Entity Framework Core pomocí sady Visual Studio** \
   [*https://docs.microsoft.com/aspnet/core/data/ef-mvc/*](https://docs.microsoft.com/aspnet/core/data/ef-mvc/)
 
-- **Třídy DbContext** \
+- **DbContext Class** \
   [*https://docs.microsoft.com/ef/core/api/microsoft.entityframeworkcore.dbcontext*](https://docs.microsoft.com/ef/core/api/microsoft.entityframeworkcore.dbcontext)
 
 - **Porovnání EF Core a EF6.x** \
@@ -56,7 +56,7 @@ public class Order : Entity
     private DateTime _orderDate;
     // Other fields ...
 
-    private readonly List<OrderItem> _orderItems; 
+    private readonly List<OrderItem> _orderItems;
     public IReadOnlyCollection<OrderItem> OrderItems => _orderItems;
 
     protected Order() { }
@@ -72,7 +72,7 @@ public class Order : Entity
     {
         // Validation logic...
 
-        var orderItem = new OrderItem(productId, productName, 
+        var orderItem = new OrderItem(productId, productName,
                                       unitPrice, discount,
                                       pictureUrl, units);
         _orderItems.Add(orderItem);
@@ -80,7 +80,7 @@ public class Order : Entity
 }
 ```
 
-Všimněte si, že `OrderItems` vlastnosti lze přistupovat pouze jako jen pro čtení pomocí `IReadOnlyCollection<OrderItem>`. Tento typ je jen pro čtení, takže je chráněný proti externí pravidelné aktualizace. 
+Všimněte si, že `OrderItems` vlastnosti lze přistupovat pouze jako jen pro čtení pomocí `IReadOnlyCollection<OrderItem>`. Tento typ je jen pro čtení, takže je chráněný proti externí pravidelné aktualizace.
 
 EF Core nabízí způsob, jak mapovat model domény do fyzické databáze bez "kontaminujících" doménový model. Je čistě .NET objektů POCO kódu, protože akce mapování je implementována v vrstvy trvalosti. V této akci mapování budete muset nakonfigurovat mapování polí pro databází. V následujícím příkladu `OnModelCreating` metodu z `OrderingContext` a `OrderEntityTypeConfiguration` třídy volání `SetPropertyAccessMode` říká EF Core pro přístup k `OrderItems` vlastnosti prostřednictvím jeho pole.
 
@@ -101,7 +101,7 @@ class OrderEntityTypeConfiguration : IEntityTypeConfiguration<Order>
         orderConfiguration.ToTable("orders", OrderingContext.DEFAULT_SCHEMA);
         // Other configuration
 
-        var navigation = 
+        var navigation =
               orderConfiguration.Metadata.FindNavigation(nameof(Order.OrderItems));
 
         //EF access the OrderItem collection property through its backing field
@@ -140,7 +140,7 @@ namespace Microsoft.eShopOnContainers.Services.Ordering.Infrastructure.Repositor
 
         public Buyer Add(Buyer buyer)
         {
-            return _context.Buyers.Add(buyer).Entity; 
+            return _context.Buyers.Add(buyer).Entity;
         }
 
         public async Task<Buyer> FindAsync(string BuyerIdentityGuid)
@@ -353,11 +353,11 @@ Zavedeném dříve v části návrhu, vzor specifikace dotazu je vzor Domain-Dri
 
 Vzor dotazu specifikace definuje dotaz v objektu. Například pokud chcete zapouzdřit stránkovaného dotaz, který vyhledá některé produkty můžete vytvořit PagedProduct specifikace, která přebírá nezbytné vstupní parametry (pageNumber pageSize, filter, atd.). V rámci jakékoli metody úložiště (obvykle List() přetížení) by poté přijmout IQuerySpecification a spustit očekávané dotaz založený na specifikaci.
 
-Příklad obecného rozhraní specifikace je následující kód z [eShopOnweb](https://github.com/dotnet-architecture/eShopOnWeb).
+Příklad obecného rozhraní specifikace je následující kód z [eShopOnWeb](https://github.com/dotnet-architecture/eShopOnWeb).
 
 ```csharp
 // GENERIC SPECIFICATION INTERFACE
-// https://github.com/dotnet-architecture/eShopOnWeb 
+// https://github.com/dotnet-architecture/eShopOnWeb
 
 public interface ISpecification<T>
 {
@@ -372,7 +372,7 @@ Implementace obecný specifikace základní třídy je následující.
 ```csharp
 // GENERIC SPECIFICATION IMPLEMENTATION (BASE CLASS)
 // https://github.com/dotnet-architecture/eShopOnWeb
- 
+
 public abstract class BaseSpecification<T> : ISpecification<T>
 {
     public BaseSpecification(Expression<Func<T, bool>> criteria)
@@ -381,16 +381,16 @@ public abstract class BaseSpecification<T> : ISpecification<T>
     }
     public Expression<Func<T, bool>> Criteria { get; }
 
-    public List<Expression<Func<T, object>>> Includes { get; } = 
+    public List<Expression<Func<T, object>>> Includes { get; } =
                                            new List<Expression<Func<T, object>>>();
 
     public List<string> IncludeStrings { get; } = new List<string>();
- 
+
     protected virtual void AddInclude(Expression<Func<T, object>> includeExpression)
     {
         Includes.Add(includeExpression);
     }
-    
+
     // string-based includes allow for including children of children
     // e.g. Basket.Items.Product
     protected virtual void AddInclude(string includeString)
@@ -432,18 +432,19 @@ public IEnumerable<T> List(ISpecification<T> spec)
     var queryableResultWithIncludes = spec.Includes
         .Aggregate(_dbContext.Set<T>().AsQueryable(),
             (current, include) => current.Include(include));
- 
+
     // modify the IQueryable to include any string-based include statements
     var secondaryResult = spec.IncludeStrings
         .Aggregate(queryableResultWithIncludes,
             (current, include) => current.Include(include));
- 
+
     // return the result of the query using the specification's criteria expression
     return secondaryResult
                     .Where(spec.Criteria)
                     .AsEnumerable();
 }
 ```
+
 Kromě zapouzdření logiku filtrování, specifikace určit tvar dat, který se má vrátit, včetně vlastnosti, které chcete vyplnit.
 
 Ale nedoporučujeme vrátit IQueryable z úložiště, je naprosto bez problémů se dají použít v rámci tohoto úložiště k vytvoření sady výsledků. Zobrazí se tento přístup používá se v seznamu výše uvedené, metody, která používá přechodných výrazů IQueryable k vytvoření dotazu na seznam zahrnuje před provedením dotazu s kritérii pro specifikaci na posledním řádku.
@@ -468,6 +469,6 @@ Ale nedoporučujeme vrátit IQueryable z úložiště, je naprosto bez problém�
 - **Vzor specifikace** \
   [*https://deviq.com/specification-pattern/*](https://deviq.com/specification-pattern/)
 
->[!div class="step-by-step"]
->[Předchozí](infrastructure-persistence-layer-design.md)
->[další](nosql-database-persistence-infrastructure.md)
+> [!div class="step-by-step"]
+> [Předchozí](infrastructure-persistence-layer-design.md)
+> [další](nosql-database-persistence-infrastructure.md)

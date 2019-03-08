@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/08/2018
-ms.openlocfilehash: 2a8e0ad97f2ad6b4645fb493b5148667a2830ec8
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 28f5a5148b39b60d69fecc8bf1273445ebad4953
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53145264"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57675014"
 ---
 # <a name="implement-value-objects"></a>Implementace objektů hodnot
 
@@ -92,8 +92,8 @@ public abstract class ValueObject
         return GetAtomicValues()
          .Select(x => x != null ? x.GetHashCode() : 0)
          .Aggregate((x, y) => x ^ y);
-    }        
-    // Other utilility methods
+    }
+    // Other utility methods
 }
 ```
 
@@ -133,9 +133,9 @@ public class Address : ValueObject
 
 Uvidíte jak implementovaný objekt hodnotu adresy má žádná identita a proto žádné pole ID, ani na třídu adresu ani na třídu ValueObject.
 
-Žádné ID pole třídy používané Entity Framework s nebylo možné až do EF Core 2.0, což značně pomáhá implementovat lepší hodnotu objekty se žádné ID. To je přesně vysvětlení další části. 
+Žádné ID pole třídy používané Entity Framework s nebylo možné, dokud EF Core 2.0, což značně pomáhá implementovat lepší hodnotu objekty s žádné ID. To je přesně vysvětlení další části.
 
-Může být uvedl, že hodnota objekty, budou neměnné, byste si měli přečíst pouze (například get jen vlastnosti) a že je ve skutečnosti hodnotu true. Však hodnoty objekty jsou obvykle serializaci a deserializaci absolvovat fronty zpráv a je jen pro čtení, zastaví deserializátor v přiřazení hodnoty tak, že jsme právě nechat jako soukromé nastavení, které je jen pro čtení dostatečně bude praktické.
+Může být uvedl, že hodnota objekty, budou nezměnitelný, by měla být jen pro čtení (například get jen vlastnosti), a to je ve skutečnosti hodnotu true. Však hodnoty objekty jsou obvykle serializaci a deserializaci absolvovat fronty zpráv a je jen pro čtení zastaví deserializátor v přiřazení hodnoty, takže jsme právě nechat jako privátní sada, která je jen pro čtení dostatečně bude praktické.
 
 ## <a name="how-to-persist-value-objects-in-the-database-with-ef-core-20"></a>Zachování hodnotu objektů v databázi s EF Core 2.0
 
@@ -150,9 +150,9 @@ Skrytá ID vyžadované EF Core infrastruktury byl v počáteční verzi aplikac
 ```csharp
 // Old approach with EF Core 1.1
 // Fluent API within the OrderingContext:DbContext in the Infrastructure project
-void ConfigureAddress(EntityTypeBuilder<Address> addressConfiguration) 
+void ConfigureAddress(EntityTypeBuilder<Address> addressConfiguration)
 {
-    addressConfiguration.ToTable("address", DEFAULT_SCHEMA); 
+    addressConfiguration.ToTable("address", DEFAULT_SCHEMA);
 
     addressConfiguration.Property<int>("Id")  // Id is a shadow property
         .IsRequired();
@@ -192,7 +192,7 @@ V aplikaci eShopOnContainers v OrderingContext.cs, v rámci metody OnModelCreati
 
 ```csharp
 // Part of the OrderingContext.cs class at the Ordering.Infrastructure project
-// 
+//
 protected override void OnModelCreating(ModelBuilder modelBuilder)
 {
     modelBuilder.ApplyConfiguration(new ClientRequestEntityTypeConfiguration());
@@ -206,8 +206,8 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
 V následujícím kódu je definována infrastruktury trvalosti pro entitu pořadí:
 
 ```csharp
-// Part of the OrderEntityTypeConfiguration.cs class 
-// 
+// Part of the OrderEntityTypeConfiguration.cs class
+//
 public void Configure(EntityTypeBuilder<Order> orderConfiguration)
 {
     orderConfiguration.ToTable("orders", OrderingContext.DEFAULT_SCHEMA);
@@ -220,7 +220,7 @@ public void Configure(EntityTypeBuilder<Order> orderConfiguration)
     orderConfiguration.OwnsOne(o => o.Address);
 
     orderConfiguration.Property<DateTime>("OrderDate").IsRequired();
-    
+
     //...Additional validations, constraints and code...
     //...
 }
@@ -330,6 +330,6 @@ public class Address
 - **Třída adresy** Ukázka hodnotová třída objektu v aplikaci eShopOnContainers. \
   [*https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.Domain/AggregatesModel/OrderAggregate/Address.cs*](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.Domain/AggregatesModel/OrderAggregate/Address.cs)
 
->[!div class="step-by-step"]
->[Předchozí](seedwork-domain-model-base-classes-interfaces.md)
->[další](enumeration-classes-over-enum-types.md)
+> [!div class="step-by-step"]
+> [Předchozí](seedwork-domain-model-base-classes-interfaces.md)
+> [další](enumeration-classes-over-enum-types.md)

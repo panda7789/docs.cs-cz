@@ -5,14 +5,12 @@ helpviewer_keywords:
 - automation tree
 - UI Automation, tree
 ms.assetid: 03b98058-bdb3-47a0-8ff7-45e6cdf67166
-author: Xansky
-ms.author: mhopkins
-ms.openlocfilehash: 651358dd85c5bc5d41bd7a7c1277c185b769b423
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 19e416271e0c6e717a46821569983a250ef0ae0b
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54546475"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57675573"
 ---
 # <a name="ui-automation-tree-overview"></a>Přehled stromu automatizace uživatelského rozhraní
 > [!NOTE]

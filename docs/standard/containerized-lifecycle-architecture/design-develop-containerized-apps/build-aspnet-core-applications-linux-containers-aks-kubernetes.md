@@ -4,12 +4,12 @@ description: Životní cyklus aplikace kontejnerizovaných Dockeru s platformou 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 02/25/2019
-ms.openlocfilehash: cb84f4ebb0681792a820f8ed7bc32c5d1d8c08b5
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: c6d778d345466b1b852d06bc01ce40ccfdebf964
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56967162"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57676652"
 ---
 # <a name="build-aspnet-core-21-applications-deployed-as-linux-containers-into-an-akskubernetes-orchestrator"></a>Sestavení aplikace ASP.NET Core 2.1 nasazené jako kontejnery Linux do AKS/Kubernetes produktu orchestrator
 
@@ -39,7 +39,7 @@ Chcete-li vytvořit ukázkový projekt v sadě Visual Studio, vyberte **souboru*
 
 Visual Studio obsahuje šablony pro webové projekty. V našem příkladu vyberte **API** k vytvoření aplikace ASP.NET Web API.
 
-Ověřte, zda jste vybrali jako rozhraní ASP.NET Core 2.1. .NET core 2.1 je zahrnuta v poslední verzi sady Visual Studio 2017 a je automaticky nainstalovat a nakonfigurovat za vás při instalaci sady Visual Studio 2017.
+Ověřte, že jste vybrali ASP.NET Core 2.1 jako rozhraní. .NET core 2.1 je zahrnuta v poslední verzi sady Visual Studio 2017 a je automaticky nainstalovat a nakonfigurovat za vás při instalaci sady Visual Studio 2017.
 
 ![Visual Studio dialogové okno pro výběr typu webové aplikace ASP.NET Core s vybranou možností rozhraní API.](media/create-web-api-application.png)
 

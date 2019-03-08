@@ -4,16 +4,16 @@ description: Přečtěte si pracovní postup "vnitřní smyčky" pro vývoj apli
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 02/15/2019
-ms.openlocfilehash: 1134ff439235609db840c85a1e67bc9fe4ccec84
-ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
+ms.openlocfilehash: 1ed0feeec682f5a79bc38db6a101b751ea4dbc3a
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56835678"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57676665"
 ---
 # <a name="inner-loop-development-workflow-for-docker-apps"></a>Pracovní postup vývoje vnitřní smyčky pro aplikace Dockeru
 
-Před aktivací pracovního postupu vnější smyčky pokrývající celý DevOps cyklu, to všechno začíná každý vývojář počítače, psaní kódu aplikace pomocí jejich preferované jazyky a platformy a jejím místním otestováním (obrázek 4 – 21). Ale v každém případě budete mít o důležitý fakt v běžných bez ohledu na to, jaký jazyk, rozhraní nebo platformy zvolíte. V tomto konkrétním pracovním postupu jsou vždy vývoj a testování kontejnery Dockeru, ale místně.
+Před aktivací pracovního postupu vnější smyčky pokrývající celý DevOps cyklu, to všechno začíná každý vývojář počítače, psaní kódu aplikace pomocí jejich preferované jazyky a platformy a jejím místním otestováním (obrázek 4 – 21). Ale v každém případě budete mít o důležitý fakt v běžných bez ohledu na to, jaký jazyk, rozhraní nebo platformy zvolíte. V tomto konkrétním pracovním postupu vždy vývoji a testování kontejnery Dockeru, ale místně.
 
 ![Krok 1 – kód/spuštění/ladění](./media/image18.png)
 
@@ -43,7 +43,7 @@ Obrázek 4 – 22 uvedeny základní kroky, které je obvykle potřeba provádě
 
 ### <a name="step-1-start-coding-in-visual-studio-code-and-create-your-initial-appservice-baseline"></a>Krok 1: Pusťte se do programování ve Visual Studio Code a vytvořit směrný plán počáteční aplikace nebo služby
 
-Způsob, jak vyvíjet aplikace je podobný způsobu práce bez Dockeru. Rozdíl je, že při vývoji, máte nasazení a testování vaší aplikace nebo služby v rámci kontejnery Dockeru, které jsou umístěny v místním prostředí (např. virtuální počítač s Linuxem nebo Windows).
+Způsob, jak vyvíjet aplikace je podobný způsobu práce bez Dockeru. Rozdíl je, že při vývoji, jste nasazení a testování vaší aplikace nebo služby v rámci kontejnery Dockeru, které jsou umístěny v místním prostředí (např. virtuální počítač s Linuxem nebo Windows).
 
 **Nastavení místního prostředí**
 
@@ -93,11 +93,11 @@ Chcete-li nainstalovat rozšíření Docker, stiskněte klávesy Ctrl + Shift + 
 
 Budete potřebovat `DockerFile` na vlastní image má být sestaven a na kontejneru pro nasazení. Pokud vaše aplikace se skládá z jedné vlastní službě, budete potřebovat jeden `DockerFile`. Ale pokud se vaše aplikace skládá z více služeb (stejně jako v architektuře mikroslužeb), budete potřebovat `Dockerfile` každou službu.
 
-`DockerFile` Je obvykle umístěn v kořenové složce aplikace nebo služby a obsahuje požadované příkazy tak, které Docker ví, jak nastavit a spustit aplikaci nebo službu. Můžete vytvořit vaše `DockerFile` a přidejte ho do svého projektu spolu s kódu (node.js, .NET Core, atd.), nebo pokud jsou pro vás nové prostředí, podívejte se na následující vrcholu.
+`DockerFile` Je obvykle umístěn v kořenové složce aplikace nebo služby a obsahuje požadované příkazy tak, které Docker ví, jak nastavit a spustit aplikaci nebo službu. Můžete vytvořit vaše `DockerFile` a přidejte ho do svého projektu spolu s kódu (node.js, .NET Core, atd.), nebo pokud jste nové prostředí, podívejte se na následující vrcholu.
 
 > [!TIP]
 >
-> Můžete použít rozšíření Docker a provede vás při použití `Dockerfile` a `docker-compose.yml` soubory související s kontejnery Dockeru. Nakonec pravděpodobně napíšete tyto typy souborů bez tento nástroj, ale použití rozšíření Docker je dobrým výchozím bodem, který urychlí vaše křivka.
+> Můžete použít rozšíření Docker a provede vás při použití `Dockerfile` a `docker-compose.yml` soubory související s kontejnery Dockeru. Nakonec pravděpodobně napíšete tyto typy souborů bez tento nástroj, ale je dobrým výchozím bodem, který urychlí vaše křivka se použití rozšíření Docker.
 
 Obrázek 4 – 24 můžete zobrazit, jak docker-compose se přidá soubor s použitím rozšíření Dockeru pro VS Code.
 
@@ -149,7 +149,7 @@ Souhrnné informace [microsoft/aspnetcore](https://hub.docker.com/r/microsoft/as
 
 ***Vytvoření zcela nové základní image***
 
-Můžete vytvořit vlastní základní image Dockeru od začátku, jak je popsáno v tomto [článku](https://docs.docker.com/engine/userguide/eng-image/baseimages/) od Dockeru. Tento scénář není pravděpodobně pro vás nejvýhodnější Pokud právě začínáte s Dockerem, ale pokud chcete nastavit konkrétní bity základní image, můžete to provést.
+Můžete vytvořit vlastní základní image Dockeru od začátku, jak je popsáno v tomto [článku](https://docs.docker.com/engine/userguide/eng-image/baseimages/) od Dockeru. Tento scénář není pravděpodobně pro vás nejvýhodnější Pokud začínáte s Dockerem, ale pokud chcete nastavit konkrétní bity základní image, můžete to provést.
 
 ### <a name="step-3-create-your-custom-docker-images-embedding-your-service-in-it"></a>Krok 3: Vytvoření vlastní Image Dockeru vložení služby
 

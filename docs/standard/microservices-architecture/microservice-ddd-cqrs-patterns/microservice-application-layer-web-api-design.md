@@ -1,15 +1,15 @@
 ---
 title: Návrh aplikační vrstvy mikroslužby a webové rozhraní API
-description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Stručný zmínka SOLID priciples pro návrh aplikační vrstvu.
+description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Stručný zmínka SOLID principů návrhu aplikační vrstvu.
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/08/2018
-ms.openlocfilehash: f31c712143a448e12350db1ed242da7561a7a286
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: fa292cb97db612506eb7a6f83bb24f37425d690a
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53147487"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57678654"
 ---
 # <a name="design-the-microservice-application-layer-and-web-api"></a>Návrh aplikační vrstvy mikroslužby a webové rozhraní API
 
@@ -46,6 +46,6 @@ By to obnášelo jiného průvodce k podrobně zahrnovat PLNÝ. Proto tato pří
 - **Steve Smith. Je nový spojovací** \
   [*https://ardalis.com/new-is-glue*](https://ardalis.com/new-is-glue)
 
->[!div class="step-by-step"]
->[Předchozí](nosql-database-persistence-infrastructure.md)
->[další](microservice-application-layer-implementation-web-api.md)
+> [!div class="step-by-step"]
+> [Předchozí](nosql-database-persistence-infrastructure.md)
+> [další](microservice-application-layer-implementation-web-api.md)

@@ -4,12 +4,12 @@ description: Modernizace stávajících aplikací .NET pomocí cloudu Azure a Wi
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 04/28/2018
-ms.openlocfilehash: b84eb50c0d425447e3f78f1473608c27254523a7
-ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
+ms.openlocfilehash: 10f7761b7c0d2ddd8cb9247b1a02aa49cdc4e5d4
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56746413"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57679278"
 ---
 # <a name="what-about-cloud-native-applications"></a>A co aplikací nativních pro Cloud?
 
@@ -21,13 +21,13 @@ Obrázek 4-3 umístí nativních cloudových aplikací úrovně vyspělosti mode
 
 > **Obrázek 4-3.** Umístění aplikací nativních pro Cloud
 
-Nativní pro Cloud modernizaci vyspělosti obvykle vyžaduje nové investic do vývoje. Přechod na Cloud nativní úroveň obvykle doprovází obchodní potřebu modernizovat aplikace co nejvíc výrazně zlepšit horizontálně velké aplikace tak, že vytvoříte autonomní subsystémy (mikroslužeb), které je možné nasadit a škálování nezávisle na sobě z jiných oblastí aplikace při současném snižování nákladů v dlouhé flexibilitu vývoje období a zvýšení částí těchto autonomní aplikace, které poskytují soutěžit významné výhody. 
+Nativní pro Cloud modernizaci vyspělosti obvykle vyžaduje nové investic do vývoje. Přechod na Cloud nativní úroveň obvykle doprovází obchodní potřebu modernizovat aplikace co nejvíc výrazně zlepšit horizontálně velké aplikace tak, že vytvoříte autonomní subsystémy (mikroslužeb), které je možné nasadit a škálování nezávisle na sobě z jiných oblastí aplikace při současném snižování nákladů v dlouhé flexibilitu vývoje období a zvýšení částí těchto autonomní aplikace, které poskytují soutěžit významné výhody.
 
 Hlavní pilíře aplikací nativních pro Cloud, jsou založeny na přístupů architekturu mikroslužeb, které můžete vyvíjet s flexibilitou a škálujte na limity, které by bylo obtížné dosáhnout v monolitické architektury, místní nebo cloudové nasazení prostředí.
 
-Vidět na obrázku 4-4 hlavní vlastnosti modelu nativní pro Cloud.  
+Vidět na obrázku 4-4 hlavní vlastnosti modelu nativní pro Cloud.
 
-> ![Nativní pro cloud vlastnosti jsou Mikroslužeb, kontejnerů, odolné cloudové a orchestrátorů serverles](./media/image4.png)
+> ![Jsou to Mikroslužby, cloud odolné, orchestrátorů kontejnerů, charakteristiky nativní pro cloud a bez serveru](./media/image4.png)
 >
 > **Obrázek 4-4.** Vlastnosti nativní pro cloud
 
@@ -47,7 +47,7 @@ Ukázková definice a další informace o vlastnostech aplikací nativních pro 
 
 Nejdůležitějším faktorem vzít v úvahu, pokud migrujete celé aplikace nativní pro cloud modelu je, že musí úprava architektury na architekturu založených na mikroslužbách. Z důvodu velkého refaktoringu proces, který je zahrnutý to jasně vyžadovala významnou investici ve vývoji. Tato možnost je obvykle vybrána pro důležité podnikové aplikace, které vyžadují nové úrovni, škálovatelnost a pružnost dlouhodobé. Ale můžete začít s přesunem směrem k nativní pro cloud tak, že přidáte mikroslužeb pro několika nové scénáře a nakonec Refaktorovat aplikace plně jako mikroslužeb. Toto je přírůstkové přístup, který je nejlepší volbou pro několik scénářů.
 
-## <a name="what-about-microservices"></a>Jak je to mikroslužby? 
+## <a name="what-about-microservices"></a>Jak je to mikroslužby?
 
 Principy mikroslužeb a jak fungují je důležité, pokud zvažujete aplikací nativních pro cloud pro vaši organizaci.
 
@@ -67,6 +67,6 @@ Jako poslední poznámku, dokonce i jeho nebezpečí vrácení opakované o tent
 
 V každém případě zbývající část tohoto návod zaměřuje většinu všech na "žádný mikroslužbových aplikací" vzhledem k tomu, že tento návod je především cílení modernizaci stávajících aplikací, které mají obvykle monolitické nebo N-úrovňové architektury.
 
->[!div class="step-by-step"]
->[Předchozí](microsoft-technologies-in-cloud-optimized-applications.md)
->[další](deploy-existing-net-apps-as-windows-containers.md)
+> [!div class="step-by-step"]
+> [Předchozí](microsoft-technologies-in-cloud-optimized-applications.md)
+> [další](deploy-existing-net-apps-as-windows-containers.md)

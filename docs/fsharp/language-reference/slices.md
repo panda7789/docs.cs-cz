@@ -2,12 +2,12 @@
 title: Kolekce obsahuje nějaké řezy (F#)
 description: Další informace o tom, jak používat kolekce obsahuje nějaké řezy existujících F# datových typů a tom, jak definovat vlastní kolekce obsahuje nějaké řezy pro jiné datové typy.
 ms.date: 01/22/2019
-ms.openlocfilehash: 60b57d4eea40bb26dc43d8255dd933b63ac6303c
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 1d8bb029ad18c8853ab58888959967ed279fb368
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56970103"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57675274"
 ---
 # <a name="slices"></a>Kolekce obsahuje nějaké řezy
 
@@ -86,7 +86,7 @@ printfn "%A" subA'
 
 // Slice a 2x2 matrix out of the full 3x3 matrix
 let twoByTwo = A.[0..1,0..1]
-printfn "%A" twobyTwo
+printfn "%A" twoByTwo
 ```
 
 F# Základní knihovna nedefinuje `GetSlice`pro 3D pole. Pokud budete chtít rozdělit ty nebo jiných polí více dimenzí, je nutné definovat `GetSlice` člen sami.

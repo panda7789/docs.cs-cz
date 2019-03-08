@@ -4,12 +4,12 @@ description: Tady najít odkaz na podrobné příručce k architektuře mikroslu
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 02/15/2019
-ms.openlocfilehash: 5238ef8d9025f1518d513bfa7ff83eb51c2b88df
-ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
+ms.openlocfilehash: 858147883b3b4a5a5f487856028fdbfa84f6cca9
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56748619"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57675183"
 ---
 # <a name="design-docker-applications"></a>Návrh aplikací Dockeru
 
@@ -17,7 +17,7 @@ Kapitoly 1 jsme zavedli základní koncepty týkající se kontejnerů a Dockeru
 
 **Další informace o** Další informace o podnikové aplikace a architekturu mikroslužeb do hloubky, přečtěte si příručku [NET Mikroslužeb: Architektura pro Kontejnerizovaných aplikací .NET](https://docs.microsoft.com/dotnet/standard/microservices-architecture) , který si můžete stáhnout také z <https://aka.ms/MicroservicesEbook>.
 
-Ale předtím, než se dostaneme k životního cyklu aplikace a DevOps, je důležité vědět, jak chcete navrhnout a sestavit aplikaci a jaké jsou vaše volby při návrhu.
+Ale předtím, než se dostaneme k životního cyklu aplikace a DevOps, je důležité vědět, jak budete k návrhu a sestavování vaší aplikace a jaké jsou vaše volby při návrhu.
 
 >[!div class="step-by-step"]
 >[Předchozí](index.md)

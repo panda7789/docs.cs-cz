@@ -7,12 +7,12 @@ ms.date: 01/18/2019
 dev_langs:
 - csharp
 - cpp
-ms.openlocfilehash: c4d2d84a59aebedda2d1e6380caeef170051c0a3
-ms.sourcegitcommit: b56d59ad42140d277f2acbd003b74d655fdbc9f1
+ms.openlocfilehash: 5bce891a0061bb1810559febf1ab904a5fb6fc94
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2019
-ms.locfileid: "54416233"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57675781"
 ---
 # <a name="customizing-structure-marshalling"></a>Přizpůsobení zařazování pro struktury
 
@@ -65,7 +65,7 @@ struct WinBool
 };
 ```
 
-Použití `UmanagedType.U1` nebo `UnmanagedType.I1` níže uvedených hodnot, poznáte, modul runtime k zařazování `b` pole 1bajtových nativní `bool` typu.
+Použití `UnmanagedType.U1` nebo `UnmanagedType.I1` níže uvedených hodnot, poznáte, modul runtime k zařazování `b` pole 1bajtových nativní `bool` typu.
 
 ```csharp
 public struct CBool
@@ -342,7 +342,7 @@ struct Currency
 Na Windows, které by mohl zařazovat `object`– zadané pole do nativního kódu. By mohl zařazovat těchto polí do jednoho ze tří typů:
 - [`VARIANT`](/windows/desktop/api/oaidl/ns-oaidl-tagvariant)
 - [`IUnknown*`](/windows/desktop/api/unknwn/nn-unknwn-iunknown)
-- [`IDispatch*`](/windows/desktop/api/oaidl/nn-oaidl-idispatch). 
+- [`IDispatch*`](/windows/desktop/api/oaidl/nn-oaidl-idispatch)
 
 Ve výchozím nastavení `object`-typovaná pole bude zařazeno do `IUnknown*` , která zabalí objekt.
 

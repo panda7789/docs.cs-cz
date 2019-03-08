@@ -6,14 +6,12 @@ helpviewer_keywords:
 - UI Automation, Tab control type
 - control types, Tab
 ms.assetid: f8be2732-836d-4e4d-85e2-73aa39479bf4
-author: Xansky
-ms.author: mhopkins
-ms.openlocfilehash: d6630131143dbdaf79ceb2c838a23d2875dbd87b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 8fbbda5cb8f57d69e4abbd5b84977c7f16fd0cb6
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54558056"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57678370"
 ---
 # <a name="ui-automation-support-for-the-tab-control-type"></a>Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku karta
 > [!NOTE]
@@ -31,13 +29,13 @@ ms.locfileid: "54558056"
   
 |Ovládací prvek zobrazení|Zobrazení obsahu|  
 |------------------|------------------|  
-|Tabulátor<br /><br /> <ul><li>TabItem (1 nebo více)</li><li>Posuvník (0 nebo 1)<br /><br /> <ul><li>Tlačítko (0 nebo 2)</li></ul></li></ul>|Tabulátor<br /><br /> -TabItem (1 nebo více)|  
+|Karta<br /><br /> <ul><li>TabItem (1 nebo více)</li><li>Posuvník (0 nebo 1)<br /><br /> <ul><li>Tlačítko (0 nebo 2)</li></ul></li></ul>|Karta<br /><br /> -TabItem (1 nebo více)|  
   
  Ovládací prvky karet mít podřízený prvek [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] prvky založené na ovládací prvek typu Karta položky. Když budou seskupeny položky kartu (například jako v aplikacích Microsoft Office 2007) typ ovládacího prvku karta také hostují skupiny typů ovládacích prvků pro kartu seskupených položek, jak ukazuje následující strukturu stromu.  
   
 |Ovládací prvek zobrazení|Zobrazení obsahu|  
 |------------------|------------------|  
-|Tabulátor<br /><br /> <ul><li>TabItem (1 nebo více)</li><li>Skupiny (0 nebo více)<br /><br /> <ul><li>TabItem (0 nebo více)</li></ul></li><li>Posuvník (0 nebo více)<br /><br /> <ul><li>Tlačítko (0 nebo 2)</li></ul></li></ul>|Tabulátor<br /><br /> <ul><li>TabItem (1 nebo více)</li><li>Skupiny (0 nebo více)<br /><br /> <ul><li>TabItem (0 nebo více)</li></ul></li></ul>|  
+|Karta<br /><br /> <ul><li>TabItem (1 nebo více)</li><li>Skupiny (0 nebo více)<br /><br /> <ul><li>TabItem (0 nebo více)</li></ul></li><li>Posuvník (0 nebo více)<br /><br /> <ul><li>Tlačítko (0 nebo 2)</li></ul></li></ul>|Karta<br /><br /> <ul><li>TabItem (1 nebo více)</li><li>Skupiny (0 nebo více)<br /><br /> <ul><li>TabItem (0 nebo více)</li></ul></li></ul>|  
   
 <a name="Required_UI_Automation_Properties"></a>   
 ## <a name="required-ui-automation-properties"></a>Vlastnosti automatizace uživatelského rozhraní vyžaduje  
@@ -51,7 +49,7 @@ ms.locfileid: "54558056"
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty>|V části poznámky.|Ovládací prvek karty zřídka vyžaduje vlastnost Name.|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.ClickablePointProperty>|Ne|Ovládací prvek karty nemá bod umožňující kliknutí.|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.LabeledByProperty>|V části poznámky.|Ovládací prvky karet mají obvykle statický text popisku, který je zveřejněný prostřednictvím této vlastnosti.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.ControlTypeProperty>|Tabulátor|Tato hodnota je stejný pro všechny architektury uživatelského rozhraní.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.ControlTypeProperty>|Karta|Tato hodnota je stejný pro všechny architektury uživatelského rozhraní.|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.LocalizedControlTypeProperty>|"kartu"|Lokalizovaný řetězec odpovídající typ ovládacího prvku karta.|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.IsKeyboardFocusableProperty>|Pravda|Typ ovládacího prvku karta musí být schopen získat fokus klávesnice. Obvykle [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] klienta volá SetFocus na ovládací prvek karty a jeden z jeho položek předá fokus klávesnice pro ovládací prvek karty. Je možné, některé kontejnery kartu přepínat bez nastavení fokusu na jeden z jejích položek.|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.IsContentElementProperty>|Pravda|Ovládací prvek karty je vždy součástí obsahu zobrazení [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu.|  

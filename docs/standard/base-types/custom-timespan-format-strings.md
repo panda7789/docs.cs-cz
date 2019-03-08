@@ -6,7 +6,7 @@ dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
-- format spexifiers, custom time interval
+- format specifiers, custom time interval
 - format strings
 - formatting [.NET Framework], time interval
 - custom time interval format strings
@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: a63ebf55-7269-416b-b4f5-286f6c03bf0e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0681ff9c59e77650654495ecd6e6d9f9ded82517
-ms.sourcegitcommit: 2b986afe4ce9e13bbeec929c9737757eb61de60e
+ms.openlocfilehash: 6bfab03a6dc7ae62a7564815f7b054370cde64f8
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56665092"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57677107"
 ---
 # <a name="custom-timespan-format-strings"></a>Vlastní řetězce formátu TimeSpan
 
@@ -71,7 +71,7 @@ Vlastní <xref:System.TimeSpan> formátovací řetězce jsou také používány 
 |&#92;|Řídicí znak.<br /><br /> Další informace: [Jiné znaky](#Other).|`new TimeSpan(14, 32, 17):`<br /><br /> `hh\:mm\:ss` --> "14:32:17"|
 |Jakýkoli jiný znak|Další znak bez řídícího znaku je interpretován jako specifikátor vlastního formátu.<br /><br /> Další informace: [Jiné znaky](#Other).|`new TimeSpan(14, 32, 17):`<br /><br /> `hh\:mm\:ss` --> "14:32:17"|
 
-<a name="dSpecifier"></a> 
+<a name="dSpecifier"></a>
 
 ## <a name="the-d-custom-format-specifier"></a>Specifikátor vlastního formátu "d".
 
@@ -89,9 +89,10 @@ Následující příklad ukazuje použití specifikátoru vlastního formátu "d
 
 [Zpět k tabulce](#table)
 
-<a name="ddSpecifier"></a> 
+<a name="ddSpecifier"></a>
 
 ## <a name="the-dd-dddddddd-custom-format-specifiers"></a>"dd"-"dddddddd" specifikátorů vlastního formátu
+
 "Dd", "ddd", "dddd", "ddddd", "dddddd", "ddddddd" a specifikátoru vlastního formátu "dddddddd" výstupní hodnota <xref:System.TimeSpan.Days%2A?displayProperty=nameWithType> vlastnost, která představuje počet celých dní v časovém intervalu.
 
 Výstupní řetězec obsahuje minimální počet číslic určený počet znaků "d" ve specifikátoru formátu a je doplněno počátečními nulami, podle potřeby. Pokud číslice za počet dnů delší než počet znaků "d" ve specifikátoru formátu, je plný počet dnů výstup ve výsledném řetězci.
@@ -103,9 +104,10 @@ Následující příklad používá tyto specifikátory formátu k zobrazení ř
 
 [Zpět k tabulce](#table)
 
-<a name="hSpecifier"></a> 
+<a name="hSpecifier"></a>
 
 ## <a name="the-h-custom-format-specifier"></a>Specifikátor vlastního formátu "h"
+
 Specifikátor vlastního formátu "h" vypíše hodnoty <xref:System.TimeSpan.Hours%2A?displayProperty=nameWithType> vlastnost, která představuje počet celé hodiny v časovém intervalu, který se počítá jako součást své komponentě den. Vrací řetězec jednocifernou hodnotu, pokud hodnota <xref:System.TimeSpan.Hours%2A?displayProperty=nameWithType> vlastnost je 0 až 9, a vrátí hodnotu řetězce dvěma číslicemi, pokud hodnota <xref:System.TimeSpan.Hours%2A?displayProperty=nameWithType> vlastností v rozsahu od 10 do 23.
 
 Pokud je specifikátor vlastního formátu "h" použitý samostatně, zadejte "%h", aby se chybně interpretován jako řetězec standardního formátu. V následujícím příkladu je uvedena ukázka.
@@ -125,9 +127,10 @@ Následující příklad ukazuje použití specifikátoru vlastního formátu "h
 
 [Zpět k tabulce](#table)
 
-<a name="hhSpecifier"></a> 
+<a name="hhSpecifier"></a>
 
 ## <a name="the-hh-custom-format-specifier"></a>Specifikátor vlastního formátu "hh"
+
 Specifikátor vlastního formátu "hh" vypíše hodnoty <xref:System.TimeSpan.Hours%2A?displayProperty=nameWithType> vlastnost, která představuje počet celé hodiny v časovém intervalu, který se počítá jako součást své komponentě den. Výstupní řetězec obsahuje hodnoty od 0 do 9, počáteční nuly.
 
 Při operaci parsování, obvykle vstupní řetězec, který obsahuje pouze jedno číslo interpretována jako počet dnů. Specifikátor vlastního formátu "hh" místo toho můžete použít k interpretaci číselných řetězců jako počet hodin. V následujícím příkladu je uvedena ukázka.
@@ -142,9 +145,10 @@ Následující příklad ukazuje použití specifikátoru vlastního formátu "h
 
 [Zpět k tabulce](#table)
 
-<a name="mSpecifier"></a> 
+<a name="mSpecifier"></a>
 
 ## <a name="the-m-custom-format-specifier"></a>Specifikátor vlastního formátu "m"
+
 Specifikátor vlastního formátu "m" vypíše hodnoty <xref:System.TimeSpan.Minutes%2A?displayProperty=nameWithType> vlastnost, která představuje počet celých minut v časovém intervalu, který se počítá jako součást své komponentě den. Vrací řetězec jednocifernou hodnotu, pokud hodnota <xref:System.TimeSpan.Minutes%2A?displayProperty=nameWithType> vlastnost je 0 až 9, a vrátí hodnotu řetězce dvěma číslicemi, pokud hodnota <xref:System.TimeSpan.Minutes%2A?displayProperty=nameWithType> vlastností v rozsahu od 10 do 59.
 
 Pokud je specifikátor vlastního formátu "m" použitý samostatně, zadejte tak, aby se chybně interpretován jako řetězec standardního formátu "%m". V následujícím příkladu je uvedena ukázka.
@@ -164,9 +168,10 @@ Následující příklad ukazuje použití specifikátoru vlastního formátu "m
 
 [Zpět k tabulce](#table)
 
-<a name="mmSpecifier"></a> 
+<a name="mmSpecifier"></a>
 
 ## <a name="the-mm-custom-format-specifier"></a>Specifikátor vlastního formátu "mm"
+
 Specifikátor vlastního formátu "mm" vypíše hodnoty <xref:System.TimeSpan.Minutes%2A?displayProperty=nameWithType> vlastnost, která představuje počet celých minut v časovém intervalu, který není zahrnut jako součást hodiny nebo i dny. Výstupní řetězec obsahuje hodnoty od 0 do 9, počáteční nuly.
 
 Při operaci parsování, obvykle vstupní řetězec, který obsahuje pouze jedno číslo interpretována jako počet dnů. Specifikátor vlastního formátu "mm" můžete místo toho použít k interpretaci číselných řetězců jako počet minut. V následujícím příkladu je uvedena ukázka.
@@ -181,9 +186,10 @@ Následující příklad ukazuje použití specifikátoru vlastního formátu "m
 
 [Zpět k tabulce](#table)
 
-<a name="sSpecifier"></a> 
+<a name="sSpecifier"></a>
 
 ## <a name="the-s-custom-format-specifier"></a>Specifikátor vlastního formátu "s"
+
 Specifikátor vlastního formátu "s" vypíše hodnoty <xref:System.TimeSpan.Seconds%2A?displayProperty=nameWithType> vlastnost, která představuje počet celé sekundy v časovém intervalu, který není součástí jeho komponenty minut, hodin nebo dnů. Vrací řetězec jednocifernou hodnotu, pokud hodnota <xref:System.TimeSpan.Seconds%2A?displayProperty=nameWithType> vlastnost je 0 až 9, a vrátí hodnotu řetězce dvěma číslicemi, pokud hodnota <xref:System.TimeSpan.Seconds%2A?displayProperty=nameWithType> vlastností v rozsahu od 10 do 59.
 
 Pokud je specifikátor vlastního formátu "s" použitý samostatně, zadejte "%s" tak, aby se chybně interpretován jako řetězec standardního formátu. V následujícím příkladu je uvedena ukázka.
@@ -203,9 +209,10 @@ Následující příklad ukazuje použití specifikátoru vlastního formátu "s
 
 [Zpět k tabulce](#table)
 
-<a name="ssSpecifier"></a> 
+<a name="ssSpecifier"></a>
 
 ## <a name="the-ss-custom-format-specifier"></a>Specifikátor vlastního formátu "ss"
+
 Specifikátor vlastního formátu "ss" vypíše hodnoty <xref:System.TimeSpan.Seconds%2A?displayProperty=nameWithType> vlastnost, která představuje počet celé sekundy v časovém intervalu, který není součástí jeho komponenty minut, hodin nebo dnů. Výstupní řetězec obsahuje hodnoty od 0 do 9, počáteční nuly.
 
 Při operaci parsování, obvykle vstupní řetězec, který obsahuje pouze jedno číslo interpretována jako počet dnů. Specifikátor vlastního formátu "ss" můžete místo toho použít Interpretace číselných řetězců jako počet sekund. V následujícím příkladu je uvedena ukázka.
@@ -220,9 +227,10 @@ Následující příklad ukazuje použití specifikátoru vlastního formátu "s
 
 [Zpět k tabulce](#table)
 
-<a name="fSpecifier"></a> 
+<a name="fSpecifier"></a>
 
 ## <a name="thef-custom-format-specifier"></a>Specifikátor vlastního formátu "f"
+
 Specifikátor vlastního formátu "f" výstupy desetiny sekundy v časovém intervalu. V rámci operace formátování se zkrátí všechny zbývající zlomkové číslice. Při operaci parsování, která volá <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> nebo <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> metody vstupní řetězec musí obsahovat přesně jeden zlomková číslice.
 
 Pokud je specifikátor vlastního formátu "f" použitý samostatně, zadejte tak, aby se chybně interpretován jako řetězec standardního formátu "%f".
@@ -234,9 +242,10 @@ Následující příklad používá specifikátor vlastního formátu "f" k zobr
 
 [Zpět k tabulce](#table)
 
-<a name="ffSpecifier"></a> 
+<a name="ffSpecifier"></a>
 
 ## <a name="the-ff-custom-format-specifier"></a>Specifikátor vlastního formátu "ff"
+
 Specifikátor vlastního formátu "ff" výstupy setiny sekundy v časovém intervalu. V rámci operace formátování se zkrátí všechny zbývající zlomkové číslice. Při operaci parsování, která volá <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> nebo <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> metody vstupní řetězec musí obsahovat přesně dvě desetinné číslice.
 
 Následující příklad používá specifikátor vlastního formátu "ff" k zobrazení setiny sekundy v <xref:System.TimeSpan> hodnotu. "ff" používá nejprve jako jediný specifikátor formátu a následně se spojí dohromady se specifikátorem "s" v řetězci vlastního formátu.
@@ -246,9 +255,10 @@ Následující příklad používá specifikátor vlastního formátu "ff" k zob
 
 [Zpět k tabulce](#table)
 
-<a name="f3Specifier"></a> 
+<a name="f3Specifier"></a>
 
 ## <a name="the-fff-custom-format-specifier"></a>Specifikátor vlastního formátu "fff"
+
 Specifikátor vlastního formátu "fff" (se třemi znaky "f") výstupů milisekundy v časovém intervalu. V rámci operace formátování se zkrátí všechny zbývající zlomkové číslice. Při operaci parsování, která volá <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> nebo <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> metody vstupní řetězec musí obsahovat přesně tři číslice desetinné části.
 
 Následující příklad používá specifikátor vlastního formátu "fff" k zobrazení milisekund v <xref:System.TimeSpan> hodnotu. "fff" používá nejprve jako jediný specifikátor formátu a následně se spojí dohromady se specifikátorem "s" v řetězci vlastního formátu.
@@ -258,9 +268,10 @@ Následující příklad používá specifikátor vlastního formátu "fff" k zo
 
 [Zpět k tabulce](#table)
 
-<a name="f4Specifier"></a> 
+<a name="f4Specifier"></a>
 
 ## <a name="the-ffff-custom-format-specifier"></a>Specifikátor vlastního formátu "ffff"
+
 Specifikátor vlastního formátu "ffff" (s 4 znaky "f") výstupů desetitisíciny sekundy v časovém intervalu. V rámci operace formátování se zkrátí všechny zbývající zlomkové číslice. Při operaci parsování, která volá <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> nebo <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> metody vstupní řetězec musí obsahovat přesně čtyři číslice desetinné části.
 
 Následující příklad používá specifikátor vlastního formátu "ffff" k zobrazení desetitisíciny sekundy v <xref:System.TimeSpan> hodnotu. "ffff" používá nejprve jako jediný specifikátor formátu a následně se spojí dohromady se specifikátorem "s" v řetězci vlastního formátu.
@@ -270,9 +281,10 @@ Následující příklad používá specifikátor vlastního formátu "ffff" k z
 
 [Zpět k tabulce](#table)
 
-<a name="f5Specifier"></a> 
+<a name="f5Specifier"></a>
 
 ## <a name="the-fffff-custom-format-specifier"></a>Specifikátor vlastního formátu "fffff"
+
 Specifikátor vlastního formátu "fffff" (má pět znaků "f") výstupů stotisíciny sekundy v časovém intervalu. V rámci operace formátování se zkrátí všechny zbývající zlomkové číslice. Při operaci parsování, která volá <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> nebo <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> metody vstupní řetězec musí obsahovat přesně pěti zlomkové číslice.
 
 Následující příklad používá specifikátor vlastního formátu "fffff" k zobrazení stotisíciny sekundy v <xref:System.TimeSpan> hodnotu. "fffff" používá nejprve jako jediný specifikátor formátu a následně se spojí dohromady se specifikátorem "s" v řetězci vlastního formátu.
@@ -282,9 +294,10 @@ Následující příklad používá specifikátor vlastního formátu "fffff" k 
 
 [Zpět k tabulce](#table)
 
-<a name="f6Specifier"></a> 
+<a name="f6Specifier"></a>
 
 ## <a name="the-ffffff-custom-format-specifier"></a>Specifikátor vlastního formátu "ffffff"
+
 Specifikátor vlastního formátu "ffffff" (s šest znaků "f") výstupů miliontiny sekundy v časovém intervalu. V rámci operace formátování se zkrátí všechny zbývající zlomkové číslice. Při operaci parsování, která volá <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> nebo <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> metody vstupní řetězec musí obsahovat přesně šesti zlomkové číslice.
 
 Následující příklad používá specifikátor vlastního formátu "ffffff" k zobrazení miliontiny sekundy v <xref:System.TimeSpan> hodnotu. Je použita jako první jako jediný specifikátor formátu a následně se spojí dohromady se specifikátorem "s" v řetězci vlastního formátu.
@@ -294,9 +307,10 @@ Následující příklad používá specifikátor vlastního formátu "ffffff" k
 
 [Zpět k tabulce](#table)
 
-<a name="f7Specifier"></a> 
+<a name="f7Specifier"></a>
 
 ## <a name="the-fffffff-custom-format-specifier"></a>Specifikátor vlastního formátu "fffffff"
+
 Specifikátor vlastního formátu "fffffff" (s 7 znaků "f") výstupů Desetimiliontiny sekundy (nebo desetinné číslo značky) v časovém intervalu. Při operaci parsování, která volá <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> nebo <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> metody vstupní řetězec musí obsahovat přesně sedm zlomkové číslice.
 
 Následující příklad používá specifikátor vlastního formátu "fffffff" k zobrazení desetinné počet taktů v <xref:System.TimeSpan> hodnotu. Je použita jako první jako jediný specifikátor formátu a následně se spojí dohromady se specifikátorem "s" v řetězci vlastního formátu.
@@ -306,9 +320,10 @@ Následující příklad používá specifikátor vlastního formátu "fffffff" 
 
 [Zpět k tabulce](#table)
 
-<a name="F_Specifier"></a> 
+<a name="F_Specifier"></a>
 
 ## <a name="the-f-custom-format-specifier"></a>Specifikátor vlastního formátu "F"
+
 Specifikátor vlastního formátu "F" výstupy desetiny sekundy v časovém intervalu. V rámci operace formátování se zkrátí všechny zbývající zlomkové číslice. Pokud hodnota časový interval desetiny sekundy je nula, není zahrnut ve výsledném řetězci. Při operaci parsování, která volá <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> nebo <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> metoda, přítomnost desetiny druhou číslici je volitelná.
 
 Pokud je specifikátor vlastního formátu "F" použitý samostatně, zadejte tak, aby se chybně interpretován jako řetězec standardního formátu "%F".
@@ -320,9 +335,10 @@ Následující příklad používá specifikátor vlastního formátu "F" k zobr
 
 [Zpět k tabulce](#table)
 
-<a name="FF_Specifier"></a> 
+<a name="FF_Specifier"></a>
 
 ## <a name="the-ff-custom-format-specifier"></a>Specifikátor vlastního formátu "FF"
+
 Specifikátor vlastního formátu "FF" výstupy setiny sekundy v časovém intervalu. V rámci operace formátování se zkrátí všechny zbývající zlomkové číslice. Pokud jsou všechny koncové nuly desetinné části, nejsou zahrnuty ve výsledném řetězci. Při operaci parsování, která volá <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> nebo <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> metoda, přítomnost desetin a setiny druhou číslici je volitelná.
 
 Následující příklad používá specifikátor vlastního formátu "FF" k zobrazení setiny sekundy v <xref:System.TimeSpan> hodnotu. Také používá tento specifikátor vlastního formátu v rámci operace analýzy.
@@ -332,9 +348,10 @@ Následující příklad používá specifikátor vlastního formátu "FF" k zob
 
 [Zpět k tabulce](#table)
 
-<a name="F3_Specifier"></a> 
+<a name="F3_Specifier"></a>
 
 ## <a name="the-fff-custom-format-specifier"></a>Specifikátor vlastního formátu "FFF"
+
 Specifikátor vlastního formátu "FFF" (se třemi znaky "F") výstupů milisekundy v časovém intervalu. V rámci operace formátování se zkrátí všechny zbývající zlomkové číslice. Pokud jsou všechny koncové nuly desetinné části, nejsou zahrnuty ve výsledném řetězci. Při operaci parsování, která volá <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> nebo <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> metoda, přítomnost desetin, setinách a tisícin druhou číslici je volitelná.
 
 Následující příklad používá specifikátor vlastního formátu "FFF" k zobrazení tisícin sekundy v <xref:System.TimeSpan> hodnotu. Také používá tento specifikátor vlastního formátu v rámci operace analýzy.
@@ -344,9 +361,10 @@ Následující příklad používá specifikátor vlastního formátu "FFF" k zo
 
 [Zpět k tabulce](#table)
 
-<a name="F4_Specifier"></a> 
+<a name="F4_Specifier"></a>
 
 ## <a name="the-ffff-custom-format-specifier"></a>Specifikátor vlastního formátu "FFFF"
+
 Specifikátor vlastního formátu "FFFF" (s 4 znaky "F") výstupů desetitisíciny sekundy v časovém intervalu. V rámci operace formátování se zkrátí všechny zbývající zlomkové číslice. Pokud jsou všechny koncové nuly desetinné části, nejsou zahrnuty ve výsledném řetězci. Při operaci parsování, která volá <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> nebo <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> metoda, přítomnost desetin, setinách, tisícin a desetitisíciny druhou číslici je volitelná.
 
 Následující příklad používá specifikátor vlastního formátu "FFFF" k zobrazení desetitisíciny sekundy v <xref:System.TimeSpan> hodnotu. Specifikátor vlastního formátu "FFFF" také používá v rámci operace analýzy.
@@ -356,9 +374,10 @@ Následující příklad používá specifikátor vlastního formátu "FFFF" k z
 
 [Zpět k tabulce](#table)
 
-<a name="F5_Specifier"></a> 
+<a name="F5_Specifier"></a>
 
 ## <a name="the-fffff-custom-format-specifier"></a>Specifikátor vlastního formátu "FFFFF"
+
 Specifikátor vlastního formátu "FFFFF" (má pět znaků "F") výstupů stotisíciny sekundy v časovém intervalu. V rámci operace formátování se zkrátí všechny zbývající zlomkové číslice. Pokud jsou všechny koncové nuly desetinné části, nejsou zahrnuty ve výsledném řetězci. Při operaci parsování, která volá <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> nebo <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> metoda, přítomnost desetin, setinách, tisícin, desetitisíciny a stotisíciny druhou číslici je volitelná.
 
 Následující příklad používá specifikátor vlastního formátu "FFFFF" k zobrazení stotisíciny sekundy v <xref:System.TimeSpan> hodnotu. Specifikátor vlastního formátu "FFFFF" také používá v rámci operace analýzy.
@@ -368,9 +387,10 @@ Následující příklad používá specifikátor vlastního formátu "FFFFF" k 
 
 [Zpět k tabulce](#table)
 
-<a name="F6_Specifier"></a> 
+<a name="F6_Specifier"></a>
 
 ## <a name="the-ffffff-custom-format-specifier"></a>Specifikátor vlastního formátu "FFFFFF"
+
 Specifikátor vlastního formátu "FFFFFF" (s šest znaků "F") výstupů miliontiny sekundy v časovém intervalu. V rámci operace formátování se zkrátí všechny zbývající zlomkové číslice. Pokud jsou všechny koncové nuly desetinné části, nejsou zahrnuty ve výsledném řetězci. Při operaci parsování, která volá <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> nebo <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> metoda, přítomnost desetin, setinách, tisícin, desetitisíciny, stotisíciny a miliontiny druhou číslici je volitelná.
 
 Následující příklad používá specifikátor vlastního formátu "FFFFFF" k zobrazení miliontiny sekundy v <xref:System.TimeSpan> hodnotu. Také používá tento specifikátor vlastního formátu v rámci operace analýzy.
@@ -380,9 +400,10 @@ Následující příklad používá specifikátor vlastního formátu "FFFFFF" k
 
 [Zpět k tabulce](#table)
 
-<a name="F7_Specifier"></a> 
+<a name="F7_Specifier"></a>
 
 ## <a name="the-fffffff-custom-format-specifier"></a>Specifikátor vlastního formátu "FFFFFFF"
+
 Specifikátor vlastního formátu "FFFFFFF" (s 7 znaků "F") výstupů Desetimiliontiny sekundy (nebo desetinné číslo značky) v časovém intervalu. Pokud jsou všechny koncové nuly desetinné části, nejsou zahrnuty ve výsledném řetězci. Při operaci parsování, která volá <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> nebo <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> metoda, přítomnost sedm zlomkových číslic ve vstupním řetězci je volitelná.
 
 Následující příklad používá specifikátor vlastního formátu "FFFFFFF" k zobrazení zlomkové části sekundy v <xref:System.TimeSpan> hodnotu. Také používá tento specifikátor vlastního formátu v rámci operace analýzy.
@@ -392,7 +413,7 @@ Následující příklad používá specifikátor vlastního formátu "FFFFFFF" 
 
 [Zpět k tabulce](#table)
 
-<a name="Other"></a> 
+<a name="Other"></a>
 
 ## <a name="other-characters"></a>Jiné znaky
 

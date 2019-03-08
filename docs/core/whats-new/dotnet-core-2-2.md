@@ -7,12 +7,12 @@ dev_langs:
 author: rpetrusha
 ms.author: ronpet
 ms.date: 12/04/2018
-ms.openlocfilehash: 058e7ee1dc834ff23a9a4aa191f7eaeb1016375c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 49a65dd44159e9800f7cf50a1edaa3d9e9b82e47
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54679774"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57677263"
 ---
 # <a name="whats-new-in-net-core-22"></a>Co je nového v .NET Core 2.2
 
@@ -28,9 +28,9 @@ Tento nový režim nasazení má odlišné výhod sestavení spustitelného soub
 
 **Zpracování událostí v modulu runtime služeb**
 
-Často můžete chtít sledovat vaše aplikace při používání služby modulu runtime, jako je například uvolňování paměti, JIT a fondu vláken, abyste pochopili, jak by mohly mít dopad vaší aplikace. V systémech Windows obvykle stačí monitorování událostí trasování událostí pro Windows aktuálního procesu. I když toto zůstává fungovat dobře, není vždy možné použít trasování událostí pro Windows, pokud používáte v prostředí s nízkou úrovní oprávnění, nebo v Linuxu nebo macOS.  
+Často můžete chtít sledovat vaše aplikace při používání služby modulu runtime, jako je například uvolňování paměti, JIT a fondu vláken, abyste pochopili, jak by mohly mít dopad vaší aplikace. V systémech Windows obvykle stačí monitorování událostí trasování událostí pro Windows aktuálního procesu. I když toto zůstává fungovat dobře, není vždy možné použít trasování událostí pro Windows, pokud používáte v prostředí s nízkou úrovní oprávnění, nebo v Linuxu nebo macOS. 
 
-Spouští se s nástroji .NET Core 2.2, události CoreCLR se teď dají zpracovat pomocí <xref:System.Diagnostics.Tracing.EventListener?displayProperty=nameWithtype> třídy. Tyto události popisují chování takové služby modulu runtime jako uvolňování paměti, JIT, fondu vláken a zprostředkovatele komunikace s objekty. Toto jsou stejné události, které části zprostředkovatelů trasování událostí pro Windows CoreCLR.  To umožňuje aplikacím používat tyto události nebo použít mechanismus přenosu k odesílání telemetrických dat služby agregace. Uvidíte jak přihlášení k odběru událostí v následujícím příkladu kódu:
+Spouští se s nástroji .NET Core 2.2, události CoreCLR se teď dají zpracovat pomocí <xref:System.Diagnostics.Tracing.EventListener?displayProperty=nameWithType> třídy. Tyto události popisují chování takové služby modulu runtime jako uvolňování paměti, JIT, fondu vláken a zprostředkovatele komunikace s objekty. Toto jsou stejné události, které jsou vystaveny jako součást poskytovatele trasování událostí pro Windows CoreCLR.  To umožňuje aplikacím používat tyto události nebo použít mechanismus přenosu k odesílání telemetrických dat služby agregace. Uvidíte jak přihlášení k odběru událostí v následujícím příkladu kódu:
 
 ```csharp
 internal sealed class SimpleEventListener : EventListener
@@ -82,7 +82,7 @@ V rozhraní .NET Core 2.1, kompilátor JIT implementovat novou technologii kompi
 
 - A **druhé vrstvy**, který generuje optimalizovaný kód pro tyto metody, které jsou spouštěny často. Druhá vrstva kompilace provádí paralelní pro lepší výkon.
 
-Informace o vylepšení výkonu, které můžou být výsledkem kompilace vrstvený, naleznete v tématu [Ohlašujeme .NET Core 2.2 ve verzi Preview 2](https://blogs.msdn.microsoft.com/dotnet/2018/09/12/announcing-net-core-2-2-preview-2/). 
+Informace o vylepšení výkonu, které můžou být výsledkem kompilace vrstvený, naleznete v tématu [Ohlašujeme .NET Core 2.2 ve verzi Preview 2](https://devblogs.microsoft.com/dotnet/announcing-net-core-2-2-preview-2/).
 
 V rozhraní .NET Core 2.2 ve verzi Preview 2 vrstvené kompilace byla povolena ve výchozím nastavení. Ale jsme jste se rozhodli, že budeme připravení stále není ve výchozím nastavení povolena vrstvené kompilace. Takže v .NET Core 2.2 vrstvené kompilace nadále funkce opt-in. Informace o vyjádření výslovného souhlasu s vrstvené kompilace, naleznete v tématu [vylepšení kompilátoru Jit](dotnet-core-2-1.md#jit-compiler-improvements) v [co je nového v .NET Core 2.1](dotnet-core-2-1.md).
 

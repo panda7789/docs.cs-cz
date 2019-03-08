@@ -1,15 +1,15 @@
 ---
 title: Asynchronní komunikace založená na zprávách
-description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Asynchronní komunikace založená na zprávách je základní koncept v architektuře mikroslužeb, protože je nejlepší způsob, jak zobrazovat mikroslužby nezávisle od sebe při také beeing synchronizována, nakonec.
+description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Asynchronní komunikace založená na zprávách je základní koncept v architektuře mikroslužeb, protože je nejlepší způsob, jak zobrazovat nezávislé mikroslužeb od sebe při také zabránit v synchronizaci nakonec.
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/20/2018
-ms.openlocfilehash: 10e2a05e8fa33ecbf2aec2432c0cf51204fc35c1
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: c5010b521dc80a61718de1c797ae451bb1f5ad93
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56969359"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57674663"
 ---
 # <a name="asynchronous-message-based-communication"></a>Asynchronní komunikace založená na zprávách
 
@@ -106,6 +106,6 @@ Další témata, které je třeba zvážit při použití asynchronní komunikac
 - **Jimmy Bogard. Refaktoring směrem k odolnosti: Vyhodnocení párování** \
   [*https://jimmybogard.com/refactoring-towards-resilience-evaluating-coupling/*](https://jimmybogard.com/refactoring-towards-resilience-evaluating-coupling/)
 
->[!div class="step-by-step"]
->[Předchozí](communication-in-microservice-architecture.md)
->[další](maintain-microservice-apis.md)
+> [!div class="step-by-step"]
+> [Předchozí](communication-in-microservice-architecture.md)
+> [další](maintain-microservice-apis.md)

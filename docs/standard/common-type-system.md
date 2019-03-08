@@ -1,40 +1,38 @@
 ---
-title: Obecný systém typů & Common Language Specification
-description: Zjistěte, jak běžné typ systému (CTS) a specifikace CLS (Common Language) umožňují pro .NET pro podporu více jazyků.
-author: blackdwarf
-ms.author: mairaw
+title: Obecný systém typů a Common Language Specification
+description: Zjistěte, jak běžné systém typů (CTS) a specifikace CLS (Common Language) umožňují .NET zajistit podporu více jazyků.
 ms.date: 06/20/2016
 ms.technology: dotnet-standard
 ms.assetid: 3b1f5725-ac94-4f17-8e5f-244442438a4d
-ms.openlocfilehash: 992f70cc7c2e55a0a2cfd08e08a3a9f16aad8c8a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a6704b09a51a509cb7fbd786f9040454f78cc862
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33569545"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57675365"
 ---
-# <a name="common-type-system--common-language-specification"></a>Obecný systém typů & Common Language Specification
+# <a name="common-type-system--common-language-specification"></a>Obecný systém typů a Common Language Specification
 
-Znovu dva termíny, které jsou volně používat na světě .NET ve skutečnosti jsou velmi důležité, abyste pochopili, jak implementace rozhraní .NET umožňuje vývoj vícejazyčné a pochopit, jak funguje.
+Znovu dvě podmínky, které jsou volně používat na světě .NET ve skutečnosti jsou důležité, abyste pochopili, jak implementace .NET umožňuje vývoj pro více jazyků a pochopit, jak to funguje.
 
 ## <a name="common-type-system"></a>Obecný systém typů
 
-Chcete-li začít od začátku, mějte na paměti, že je implementace rozhraní .NET _bez ohledu na jazyk_. Právě to však neznamená, že může být z programátorem zapsat v libovolném jazyce, který může být sestaven svůj kód do IL. Taky to znamená, že uživatel musí být moci pracovat s kód napsaný v jiných jazycích, které jsou možné na implementaci rozhraní .NET.
+Chcete-li začít od začátku, mějte na paměti, že je implementace .NET _jazykově nezávislé_. Právě to neznamená, že programátor napsat svůj kód v jakémkoliv jazyce, který může být sestaven IL. Také znamená, že potřebuje, aby mohli pracovat s kódem napsaným v jiných jazycích, které je možné používat v implementaci rozhraní .NET.
 
-Pokud to chcete provést transparentně, musí být běžný způsob popisují všechny podporované typy. Toto je co běžné typ systému (CTS) má na starosti dělat. Došlo k několika způsoby:
+Pokud to chcete udělat transparentně, musí být běžný způsob, jak popisují všechny podporované typy. To je, co běžné systém typů (CTS) má na starosti udělat. Byl proveden udělat několik věcí:
 
-*   Vytvořte rozhraní pro provádění mezi jazyky.
-*   Zadejte model objektově orientované na podporu implementace různé jazyky na implementaci rozhraní .NET.
-*   Definujte sadu pravidel, která řídí všechny jazyky při rozhodování o práci s typy.
-*   Zadejte knihovnu, která obsahuje základní primitivní typy, které se používají při vývoji aplikace (jako je třeba `Boolean`, `Byte`, `Char` atd.)
+*   Vytvoření rozhraní pro provádění různých jazycích.
+*   Poskytuje objektově orientovaný model pro podporu implementace různých jazyků v implementaci rozhraní .NET.
+*   Definujte sadu pravidel, které musí dodržovat všechny jazyky, při rozhodování o práci s typy.
+*   Zadejte knihovnu, která obsahuje základní primitivní typy, které se používají při vývoji aplikace (jako jsou například `Boolean`, `Byte`, `Char` atd.)
 
-Definuje dva hlavní typy typy, které by mělo podporovat CTS: typy odkazu a hodnotu. Jejich názvy přejděte na jejich definice.
+Specifikace CTS definuje dva hlavní druhy typů, které by měla podporovat: typy odkazu a hodnotu. Jejich názvy, přejděte na jejich definice.
 
-Odkazové typy objektů jsou reprezentované pomocí odkaz na skutečnou hodnotu objektu; odkaz na tady je podobná ukazatel v jazyce C/C++. Jednoduše odkazuje umístění paměti, kde jsou hodnoty objektu. Tato akce nemá velký dopad na tom, jak se používají tyto typy. Pokud přiřadit typu odkazu na proměnnou a pak předejte tuto proměnnou na metodu, například všechny změny do objektu se projeví na hlavním objektem; není žádný kopírování.
+Odkazové typy objekty jsou reprezentovány s odkazem na skutečnou hodnotu objektu; odkaz zde je podobný ukazatele v jazyce C/C++. Jednoduše odkazuje na umístění paměti, kde jsou hodnoty objektů. To má velký dopad na používání těchto typů. Pokud přiřadit proměnné typu odkazu a pak předejte ji do metody, například všechny změny do objektu se projeví na hlavní objekt. neexistuje žádné kopírování.
 
-Typy hodnot jsou opak, kde jsou objekty reprezentované pomocí jejich hodnot. Chcete-li přiřadit typ hodnoty proměnné, jsou v podstatě kopírování hodnotu objektu.
+Typy hodnot jsou opak, kde jsou reprezentovány objekty podle jejich hodnoty. Pokud přiřadíte typ hodnoty proměnnou, kterou kopírujete v podstatě hodnotu objektu.
 
-CTS definuje několik kategorií typů, které mají své specifické sémantiku a využití:
+Specifikace CTS definuje několik kategorií typů, které mají své specifické sémantiku a využití:
 
 *   Třídy
 *   Struktury
@@ -42,17 +40,17 @@ CTS definuje několik kategorií typů, které mají své specifické sémantiku
 *   Rozhraní
 *   Delegáty
 
-CTS definuje také všechny ostatní vlastnosti z typů, jako je například modifikátory přístupu, co jsou členy platný typ, jak dědičnosti a přetížení funguje a tak dále. Bohužel přejdete přímým do jakéhokoli z nich je nad rámec úvodní článek jako je tato, ale můžete obrátit [více prostředků](#more-resources) na konci odkazy na další podrobné obsah, který obsahuje tato témata.
+Specifikace CTS definuje také všechny ostatní vlastnosti typů, jako je například modifikátory přístupu, jak co jsou členy platný typ, dědičnosti a přetížení funguje a tak dále. Bohužel budete věnovat podrobněji některé z nich je nad rámec úvodní článek takovou situaci, ale můžete konzultovat [více prostředků](#more-resources) na konci odkazy na zájem o podrobný obsah, který obsahuje tato témata.
 
 ## <a name="common-language-specification"></a>CLS (Common Language Specification)
 
-Pokud chcete povolit scénáře plnou interoperabilitu, musí všechny objekty, které jsou vytvořené v kódu spoléhat na některé funkcím v jazycích, které spotřebovávají je (jsou jejich _volající_). Vzhledem k tomu, že existuje mnoho různých jazyků, rozhraní .NET byla zadána těchto commonalities v takzvaný **Common Language Specification** (CLS). Specifikace CLS definuje sadu funkcí, které jsou vyžadovány mnoho běžných aplikací. Nabízí taky řazení recept na jakýkoli jazyk, který se implementuje nad .NET na vše potřebné pro podporu.
+Aby se povolily scénáře plnou interoperabilitu, musíte všechny objekty, které jsou vytvořeny v kódu spoléhat na několik společných prvků v jazycích, které jsou jejich používáním (jsou jejich _volající_). Vzhledem k tomu, že existuje mnoho různých jazyků, rozhraní .NET má zadané tyto commonalities v s názvem **Common Language Specification** (CLS). Kompatibilní se Specifikací definuje sadu funkcí, které jsou potřeba řada běžných aplikací. Poskytuje také druh předpisu pro libovolný jazyk, který se implementuje nad .NET na to, co potřebuje pro podporu.
 
-Specifikací CLS je podmnožinou CTS. To znamená, že všechna pravidla v CTS platí také pro specifikaci CLS pouze v případě jsou více striktní pravidla se specifikací CLS. Pokud součást je sestaven pomocí pouze pravidla ve specifikaci CLS, tedy zpřístupňuje pouze funkce specifikací CLS v jeho rozhraní API, je označováno jako **kompatibilní se specifikací CLS**. Například `<framework-librares>` jsou kompatibilní se specifikací CLS právě proto potřebují k práci ve všech jazycích, které jsou podporovány v rozhraní .NET.
+Specifikace CLS je podmnožinou CTS. To znamená, že všechna pravidla v CTS platí také pro specifikace CLS, pokud nejsou přísnější pravidla specifikace CLS. Pokud součást se využívá jenom pravidla ve specifikaci CLS, to znamená, poskytuje pouze funkce kompatibilní se Specifikací v jeho rozhraní API, je označen jako **kompatibilní se Specifikací CLS**. Například `<framework-librares>` jsou kompatibilní se Specifikací CLS, přesně, protože potřebují pracovat ve všech jazycích, které jsou podporovány v rozhraní .NET.
 
-Lze najít dokumenty v [více prostředků](#more-resources) části níže získat přehled o všech funkcí ve specifikaci CLS.
+Můžete konzultovat dokumenty v [více prostředků](#more-resources) dole můžete získat přehled o všech funkcí ve specifikaci CLS.
 
-## <a name="more-resources"></a>Další prostředky
+## <a name="more-resources"></a>Další materiály
 
 *   [Obecný systém typů](./base-types/common-type-system.md)
 *   [Common Language Specification](language-independence-and-language-independent-components.md)

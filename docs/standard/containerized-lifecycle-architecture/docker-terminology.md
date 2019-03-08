@@ -4,12 +4,12 @@ description: Přečtěte si některé základní terminologii, která byla použ
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 02/15/2019
-ms.openlocfilehash: a7f0106eed81c28634a079ce61f48d7d56f6ffd2
-ms.sourcegitcommit: 07c4368273b446555cb2c85397ea266b39d5fe50
+ms.openlocfilehash: 07371bee6881b1fa7edf64b9bb50d387dcbf9dde
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56584197"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57677167"
 ---
 # <a name="docker-terminology"></a>Terminologie dockeru
 
@@ -45,7 +45,7 @@ Tato část uvádí termíny a definice, měli byste se seznámit s před získ�
 
 **Docker Enterprise Edition (EE)**: Verzi celého podniku nástroje Dockeru pro vývoj pro Linux a Windows.
 
-**Compose**: Nástroj pro příkazový řádek a YAML soubor formátu s metadaty pro definování a spouštění vícekontejnerových aplikací. Můžete definovat jednu aplikaci založené na více bitových kopií s nejméně jeden soubor .yml, které mohou přepsat hodnoty v závislosti na prostředí. Po vytvoření definice můžete nasadit celý vícekontejnerové aplikace pomocí jediného příkazu (docker-compose up), která vytvoří kontejner na image na hostitele Dockeru.
+**Compose**: Nástroj pro příkazový řádek a YAML soubor formátu s metadaty pro definování a spouštění vícekontejnerových aplikací. Můžete definovat jednu aplikaci založené na více bitových kopií s nejméně jeden soubor .yml, které mohou přepsat hodnoty v závislosti na prostředí. Po vytvoření definice, můžete nasadit celý vícekontejnerové aplikace pomocí jediného příkazu (docker-compose up), která vytvoří kontejner na image na hostitele Dockeru.
 
 **Cluster**: Soubor hostitelů Docker vystavena jako by šlo jednoho virtuálního hostitele Docker, tak, aby aplikaci je možné škálovat na více instancí služeb rozděleny mezi více hostitelích v clusteru. Clustery docker lze vytvořit pomocí Kubernetes, Azure Service Fabric, Docker Swarm a Mesosphere DC/OS.
 

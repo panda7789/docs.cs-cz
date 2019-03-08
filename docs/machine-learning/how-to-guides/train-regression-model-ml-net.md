@@ -1,16 +1,21 @@
 ---
 title: Trénování regresní model k predikci hodnotu pomocí ML.NET
 description: Dozvíte se, jak pro trénování regresní model k predikci hodnotu pomocí ML.NET strojového učení
-ms.date: 02/06/2019
+ms.date: 03/05/2019
 ms.custom: mvc,how-to
-ms.openlocfilehash: faee51550250f08443d4d9349fa2f1c92bf411dc
-ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
+ms.openlocfilehash: e7ea07471e155804a7ad36481aa469beda7028ae
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56092901"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57673142"
 ---
 # <a name="train-a-regression-model-to-predict-a-value-using-mlnet"></a>Trénování regresní model k predikci hodnotu pomocí ML.NET
+
+> [!NOTE]
+> Toto téma odkazuje na ML.NET, která je aktuálně ve verzi Preview, a materiálu se můžou stát terčem změnit. Další informace najdete v článku [Úvod ML.NET](https://www.microsoft.com/net/learn/apps/machine-learning-and-ai/ml-dotnet).
+
+Aktuálně používáte této ukázky s postupy a související **ML.NET verze 0.10**. Další informace najdete v tématu poznámky k verzi v [úložiště GitHub dotnet/machinelearning](https://github.com/dotnet/machinelearning/tree/master/docs/release-notes).
 
 Existují obecně tři kroky k tréninku modelu v ML.NET:
 

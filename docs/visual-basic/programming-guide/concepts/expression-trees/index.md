@@ -2,12 +2,6 @@
 title: Stromy výrazů (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 8bbbb02d-7ffc-476b-8c25-118d82bf5d46
-ms.openlocfilehash: 08a22cc0528385f5e8008b80b62f2e81d89adae4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54735581"
 ---
 # <a name="expression-trees-visual-basic"></a>Stromy výrazů (Visual Basic)
 Stromy výrazů představují kódu ve stromu jako datová struktura, kde každý uzel pracuje, výrazem, například, volání metody nebo binární operace, jako `x < y`.  
@@ -85,7 +79,7 @@ Console.WriteLine(factorial)
 ' Prints 120.  
 ```
 
-Další informace najdete v tématu [generování dynamických metod s stromů výrazů v sadě Visual Studio 2010](https://blogs.msdn.microsoft.com/csharpfaq/2009/09/14/generating-dynamic-methods-with-expression-trees-in-visual-studio-2010), což platí i pro novější verze sady Visual Studio.
+Další informace najdete v tématu [generování dynamických metod s stromů výrazů v sadě Visual Studio 2010](https://devblogs.microsoft.com/csharpfaq/generating-dynamic-methods-with-expression-trees-in-visual-studio-2010/), což platí i pro novější verze sady Visual Studio.
   
 ## <a name="parsing-expression-trees"></a>Analýza kódu stromů výrazů  
  Následující příklad kódu ukazuje, jak strom výrazu, který představuje výraz lambda `Function(num) num < 5` lze rozložit na jejích částí.  

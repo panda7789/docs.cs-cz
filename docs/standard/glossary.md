@@ -1,16 +1,14 @@
 ---
 title: .NET – Glosář
 description: Přečtěte si významu vybraných termínů používaných v dokumentaci k rozhraní .NET.
-author: tdykstra
-ms.author: tdykstra
 ms.date: 01/22/2019
 ms.technology: dotnet-standard
-ms.openlocfilehash: b9654bf7f6cbc1019d00db986ba883cbab0abbb5
-ms.sourcegitcommit: 5dcfeb59179e81071f54840d4902cbe00b184294
+ms.openlocfilehash: 2d19ec0b79abdcce9797767d1280d055a9c77a87
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54857970"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57674507"
 ---
 # <a name="net-glossary"></a>.NET – Glosář
 

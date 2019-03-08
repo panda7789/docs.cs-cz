@@ -8,14 +8,12 @@ helpviewer_keywords:
 - client-side UI Automation provider, implementation within applications
 - UI Automation, implementing client-side provider within application
 ms.assetid: f325f0d8-1715-41ea-85ca-45b82ffea8bc
-author: Xansky
-ms.author: mhopkins
-ms.openlocfilehash: 0ee989e376241bc2ec4f96577430c727ff2c3e81
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 102a2fe1cb2598078af7246d5f88df928064693f
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54609171"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57676639"
 ---
 # <a name="implement-ui-automation-providers-in-a-client-application"></a>Implementace zprostředkovatelů automatizace uživatelského rozhraní v klientských aplikacích
 > [!NOTE]

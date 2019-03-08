@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: ea8a403e-ae03-4faa-9d9b-02179ec72992
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c265b583b74ac9d7df128e3343bbc368e3cf9c4e
-ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
+ms.openlocfilehash: d0efe9234bd61a45fa87e68cdbed1be69957d218
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56220808"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57675157"
 ---
 # <a name="deploying-an-interop-application"></a>Nasazení aplikace spolupráce
 Spolupráce aplikace obvykle obsahují sestavení klienta .NET, jeden nebo více sestavení vzájemné spolupráce představující odlišné COM knihoven typů a jedna nebo více komponent COM registrovány. Visual Studio a [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)] poskytují nástroje pro import a převod knihovny typů do sestavení vzájemné spolupráce, jak je popsáno v [importování knihovny typů jako sestavení](importing-a-type-library-as-an-assembly.md). Nasazení aplikace spolupráce dvěma způsoby:  
@@ -38,8 +38,7 @@ Spolupráce aplikace obvykle obsahují sestavení klienta .NET, jeden nebo více
 ### <a name="private-assemblies"></a>Soukromá sestavení  
  Chcete-li nainstalovat sestavení, které chcete použít soukromě, musí být nainstalovaná spustitelný soubor aplikace a sestavení vzájemné spolupráce, který obsahuje importované typy modelu COM ve stejné struktuře adresářů. Následující obrázek znázorňuje bez znaménka definiční sestavení použije soukromě Client1.exe a Client2.exe, které jsou umístěny v adresářích samostatné aplikace. Definiční sestavení, která se nazývá LOANLib.dll v tomto příkladu, je nainstalována dvakrát.  
   
- ![Adresářovou strukturu a registru Windows](media/comdeployprivate.gif "comdeployprivate")  
-Adresář položky struktury a registru pro privátní nasazení  
+ ![Adresářovou strukturu a registru Windows](./media/deploying-an-interop-application/com-private-deployment.gif "adresář položky struktury a registru pro privátní nasazení")  
   
  Všechny komponenty modelu COM, které jsou přidružené k aplikaci musí být nainstalován v registru Windows. Pokud Client1.exe a Client2.exe na obrázku jsou nainstalované na různých počítačích, budete muset zaregistrovat komponenty modelu COM na obou počítačích.  
   

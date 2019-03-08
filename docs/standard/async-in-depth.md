@@ -6,12 +6,12 @@ ms.author: wiwagn
 ms.date: 06/20/2016
 ms.technology: dotnet-standard
 ms.assetid: 1e38f9d9-8f84-46ee-a15f-199aec4f2e34
-ms.openlocfilehash: 24b2792d1e48eb213c047cb589c52016e11c631d
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 45dc8b72bd61fc9aa04c977a2dc67c37384697fc
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57361318"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57677523"
 ---
 # <a name="async-in-depth"></a>Asynchronní do hloubky
 
@@ -142,7 +142,7 @@ Jednou `await` nalezen, provádění `CalculateResult()` se vrátil volajícímu
 
 ### <a name="why-does-async-help-here"></a>Proč asynchronní pomůže tady?
 
-`async` a `await` jsou doporučené správu práce vázané na procesor při potřebujete rychlost odezvy. Existuje více vzory pro použití modifikátoru async pomocí práce vázané na procesor. Je důležité si uvědomit, že je s malými náklady na použití modifikátoru async a se nedoporučuje úzkou smyčky for.  To je na vás k určení, jak při psaní kódu kolem této nové funkci.
+`async` a `await` jsou osvědčené postupy pro správu práce vázané na procesor, když potřebujete rychlost odezvy. Existuje více vzory pro použití modifikátoru async pomocí práce vázané na procesor. Je důležité si uvědomit, že je s malými náklady na použití modifikátoru async a se nedoporučuje úzkou smyčky for.  To je na vás k určení, jak při psaní kódu kolem této nové funkci.
 
 ## <a name="see-also"></a>Viz také:
 

@@ -3,12 +3,12 @@ title: Seznámení s Dockerem
 description: Tento článek obsahuje přehled a úvod do Docker v kontextu aplikace .NET Core.
 ms.date: 11/06/2017
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 54bad8fcb34e46700fedf508bbc84ad846b05d76
-ms.sourcegitcommit: 3d0c29b878f00caec288dfecb3a5c959de5aa629
+ms.openlocfilehash: b2640a1cea4d77158b7d9ed6ec63cf36d9e1f9cd
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53656164"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57676275"
 ---
 # <a name="introduction-to-net-and-docker"></a>Úvod k .NET a Dockeru
 
@@ -93,15 +93,15 @@ Ukázky použití .NET Core 2.0. Použití Docker [vícefázových sestavení](h
 
 Toto úložiště obsahuje ukázky, které demonstrují různé konfigurace Dockeru rozhraní .NET Framework. Tyto Image můžete použít jako základ pro vlastní Image Dockeru.
 
-**Rozhraní .NET framework 4.7**
+**.NET Framework 4.7**
 
 [Dotnet-ukázkové rozhraní framework: 4.7](https://github.com/Microsoft/dotnet-framework-docker-samples/tree/master/dotnetapp-4.7) ukazuje základní "hello world" použití [rozhraní .NET Framework 4.7](../../framework/whats-new/index.md#v47). To se dozvíte, jak můžete sestavení a nasazení aplikace na přijímající [image dockeru pro .NET Framework 4.7](https://github.com/Microsoft/dotnet-framework-docker-samples/blob/master/dotnetapp-4.7/Dockerfile).
 
-**Rozhraní .NET framework 4.6.2**
+**.NET Framework 4.6.2**
 
 [Dotnet-ukázkové rozhraní framework: 4.6.2](https://github.com/Microsoft/dotnet-framework-docker-samples/tree/master/dotnetapp-4.6.2) ukazuje základní "hello world" použití [rozhraní .NET Framework 4.6.2](../../framework/whats-new/index.md#v462). To se dozvíte, jak můžete sestavení a nasazení aplikace na přijímající [image dockeru rozhraní .NET Framework 4.6.2](https://github.com/Microsoft/dotnet-framework-docker-samples/blob/master/dotnetapp-4.6.2/Dockerfile).
 
-**Rozhraní .NET framework 3.5**
+**.NET Framework 3.5**
 
  [Dotnet-framework: 3.5 ukázka](https://github.com/Microsoft/dotnet-framework-docker-samples/tree/master/dotnetapp-3.5) ukazuje základní "hello world" použití [rozhraní .NET Framework 3.5](https://github.com/Microsoft/dotnet-framework-docker-samples/blob/master/dotnetapp-3.5/dotnetapp-3.5/Dockerfile). To se dozvíte, jak můžete sestavit a nasadit projekt spoléhat na rozhraní .NET Framework 3.5 v Dockeru.
 
@@ -113,7 +113,7 @@ Toto úložiště obsahuje ukázky, které demonstrují různé konfigurace Dock
 
 * [Imagí pro ASP.NET Core na Githubu](https://github.com/aspnet/aspnet-docker)
 
-#### <a name="aspnet-framework"></a>Rozhraní ASP.NET
+#### <a name="aspnet-framework"></a>ASP.NET Framework
 
 * [ASP.NET Framework Image v Dockerhubu](https://hub.docker.com/r/microsoft/aspnet/)
 
@@ -178,7 +178,7 @@ Toto úložiště obsahuje ukázky, které demonstrují různé konfigurace Dock
 
 Teď, když jste se dozvěděli o platforma Docker a různé imagí Dockeru, dalším krokem je prozkoumat pestrého ekosystému Dockeru. Jak nástroje Microsoftu doplňují vývojových zobrazí následující odkazy.
 
-* [Společně pomocí .NET a Dockeru](https://blogs.msdn.microsoft.com/dotnet/2017/05/25/using-net-and-docker-together/)
+* [Společně pomocí .NET a Dockeru](https://devblogs.microsoft.com/dotnet/using-net-and-docker-together/)
 * [Návrh a vývoj aplikací .NET více kontejnerů a založených na Mikroslužbách](../../standard/microservices-architecture/multi-container-microservice-net-applications/index.md)
 * [Rozšíření sady Visual Studio Code Dockeru](https://code.visualstudio.com/docs/languages/dockerfile)
 * [Zjistěte, jak používat Azure Service Fabric](/azure/service-fabric/index)

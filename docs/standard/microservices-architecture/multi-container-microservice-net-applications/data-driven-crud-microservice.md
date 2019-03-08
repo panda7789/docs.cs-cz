@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 01/07/2019
-ms.openlocfilehash: 5d338834724c3c5733f2a8a3de1b236e270d28d2
-ms.sourcegitcommit: dcc8feeff4718664087747529638ec9b47e65234
+ms.openlocfilehash: 84ff3390912f808e6b5733049d9f0b3889576776
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55480085"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57677432"
 ---
 # <a name="creating-a-simple-data-driven-crud-microservice"></a>Vytvoření jednoduché mikroslužby CRUD řízené daty
 
@@ -33,7 +33,7 @@ Při vývoji tento druh službu, potřebujete jenom [ASP.NET Core](https://docs.
 
 Všimněte si, že databázový server, jako je SQL Server v kontejneru Dockeru se skvěle hodí pro vývojová prostředí, protože všechny závislosti může mít až systémem, aniž by museli o zřízení databáze v cloudu nebo místně. To je velmi praktické, když s integrací testy. Však pro produkční prostředí, databázový server v kontejneru nedoporučuje se používat, protože se obvykle nezobrazí vysokou dostupnost s možnostmi tento přístup. Pro produkční prostředí v Azure se doporučuje použít službu Azure SQL DB nebo jiné databázové technologie, která dokáže poskytovat vysokou dostupnost a vysokou škálovatelnost. Například pro NoSQL přístup, můžete zvolit služby cosmos DB.
 
-Nakonec pomocí úpravy souboru Docker a docker-compose.yml soubory metadat, můžete nakonfigurovat jak se vytvoří snímek tohoto kontejneru, jaké základní image budou používat plus návrh nastavení, jako je interní a externí názvy a porty TCP. 
+Nakonec pomocí úpravy souboru Docker a docker-compose.yml soubory metadat, můžete nakonfigurovat jak se vytvoří snímek tohoto kontejneru, jaké základní image budou používat plus návrh nastavení, jako je interní a externí názvy a porty TCP.
 
 ## <a name="implementing-a-simple-crud-microservice-with-aspnet-core"></a>Implementace jednoduché mikroslužby CRUD s ASP.NET Core
 
@@ -100,9 +100,9 @@ public class CatalogContext : DbContext
 }
 ```
 
-Můžete mít další `DbContext` implementace. Například v ukázkové Catalog.API mikroslužeb, je druhý `DbContext` s názvem `CatalogContextSeed` kde automaticky naplní vzorová data při prvním pokusu o přístup k databázi. Tato metoda je užitečná pro ukázková data a pro automatizované testování, podporuje i scénáře. 
+Můžete mít další `DbContext` implementace. Například v ukázkové Catalog.API mikroslužeb, je druhý `DbContext` s názvem `CatalogContextSeed` kde automaticky naplní vzorová data při prvním pokusu o přístup k databázi. Tato metoda je užitečná pro ukázková data a pro automatizované testování, podporuje i scénáře.
 
-V rámci `DbContext`, je použít `OnModelCreating` metodu za účelem přizpůsobení entity mapování objektů a databáze a další [bodů rozšiřitelnosti EF](https://blogs.msdn.microsoft.com/dotnet/2016/09/29/implementing-seeding-custom-conventions-and-interceptors-in-ef-core-1-0/).
+V rámci `DbContext`, je použít `OnModelCreating` metodu za účelem přizpůsobení entity mapování objektů a databáze a další [bodů rozšiřitelnosti EF](https://devblogs.microsoft.com/dotnet/implementing-seeding-custom-conventions-and-interceptors-in-ef-core-1-0/).
 
 ##### <a name="querying-data-from-web-api-controllers"></a>Dotazování na data z kontrolerů rozhraní Web API
 
@@ -116,7 +116,7 @@ public class CatalogController : ControllerBase
     private readonly CatalogSettings _settings;
     private readonly ICatalogIntegrationEventService _catalogIntegrationEventService;
 
-    public CatalogController(CatalogContext context, 
+    public CatalogController(CatalogContext context,
                              IOptionsSnapshot<CatalogSettings> settings,
                              ICatalogIntegrationEventService catalogIntegrationEventService)
     {
@@ -131,7 +131,7 @@ public class CatalogController : ControllerBase
     [HttpGet]
     [Route("[action]")]
     [ProducesResponseType(typeof(PaginatedItemsViewModel<CatalogItem>), (int)HttpStatusCode.OK)]
-    public async Task<IActionResult> Items([FromQuery]int pageSize = 10, 
+    public async Task<IActionResult> Items([FromQuery]int pageSize = 10,
                                            [FromQuery]int pageIndex = 0)
 
     {
@@ -150,7 +150,7 @@ public class CatalogController : ControllerBase
             pageIndex, pageSize, totalItems, itemsOnPage);
 
         return Ok(model);
-    } 
+    }
     //...
 }
 ```
@@ -253,19 +253,19 @@ catalog.api:
     - "5101:80"
 ```
 
-Soubory docker-compose.yml na úrovni řešení nejsou pouze flexibilnější, než konfigurační soubory na úrovni projektu nebo mikroslužeb, ale také vyšší úroveň zabezpečení Pokud přepíšete deklarované na docker-compose soubory s hodnotami z nastavení proměnné prostředí z nasazení úloh Azure DevOps služby Docker, jako jsou nástroje pro nasazení. 
+Soubory docker-compose.yml na úrovni řešení nejsou pouze flexibilnější, než konfigurační soubory na úrovni projektu nebo mikroslužeb, ale také vyšší úroveň zabezpečení Pokud přepíšete deklarované na docker-compose soubory s hodnotami z nastavení proměnné prostředí z nasazení úloh Azure DevOps služby Docker, jako jsou nástroje pro nasazení.
 
 Nakonec můžete získat tuto hodnotu v kódu s použitím konfigurace\["ConnectionString"\], jak je znázorněno v metodě ConfigureServices v předchozím příkladu kódu.
 
 Pro produkční prostředí, můžete však prozkoumat další způsoby, jak na tom, jak ukládat tajné kódy jako jsou připojovací řetězce. Pomocí vynikající způsob, jak spravovat tajné kódy aplikace [Azure Key Vault](https://azure.microsoft.com/services/key-vault/).
 
-Služba Azure Key Vault umožňuje ukládat a ochraně kryptografických klíčů a tajných kódů používaných cloudovými aplikacemi a službami. Tajný kód se něco chcete zachovat striktní kontrolu nad, jako jsou klíče rozhraní API, připojovací řetězce, hesla, atd. a přísné zahrnuje využití protokolování, nastavení vypršení platnosti, Správa přístupu, <span class="underline">mimo jiné</span>.
+Služba Azure Key Vault umožňuje ukládat a ochraně kryptografických klíčů a tajných kódů používaných cloudovými aplikacemi a službami. Tajný kód se něco chcete zachovat striktní kontrolu nad, jako jsou klíče rozhraní API, připojovací řetězce, hesla, atd. a přísné zahrnuje využití protokolování, nastavení vypršení platnosti, Správa přístupu, *mimo jiné*.
 
 Služba Azure Key Vault umožňuje velmi podrobné řízení úrovně použití tajných kódů aplikace bez nutnosti libovolný uživatel je znají. Tajné klíče můžete otočit i pro zvýšení zabezpečení bez narušení běžného vývoj nebo operace.
 
 Aplikace mají k registraci ve službě Active Directory organizace tak, aby používaly služby Key Vault.
 
-Můžete zkontrolovat <span class="underline">dokumentace ke službě Key Vault koncepty</span> další podrobnosti.
+Můžete zkontrolovat *dokumentace ke službě Key Vault koncepty* další podrobnosti.
 
 ### <a name="implementing-versioning-in-aspnet-web-apis"></a>Implementace správy verzí v rozhraní ASP.NET Web API
 
@@ -305,7 +305,7 @@ Tento mechanismus správy verzí je jednoduché a závisí na směrování poža
 - **Roy Fielding. Správa verzí, Hypermédia a REST** \
   [*https://www.infoq.com/articles/roy-fielding-on-versioning*](https://www.infoq.com/articles/roy-fielding-on-versioning)
 
-## <a name="generating-swagger-description-metadata-from-your-aspnet-core-web-api"></a>Generování metadat Swagger popis z webové rozhraní API ASP.NET Core 
+## <a name="generating-swagger-description-metadata-from-your-aspnet-core-web-api"></a>Generování metadat Swagger popis z webové rozhraní API ASP.NET Core
 
 [Swagger](https://swagger.io/) je běžně používaný open source architektura zajištěná rozsáhlého ekosystému nástrojů, která vám pomůže návrhu, sestavení, dokument a využívání rozhraní RESTful API. To se stává standard pro doménu metadat popis rozhraní API. By měl obsahovat popis metadata Swagger s jakýmkoli mikroslužeb, mikroslužby s daty nebo pokročilejší mikroslužeb řízeného doménou (jak je popsáno v následující části).
 
@@ -333,9 +333,9 @@ Hlavní důvody ke generování metadat Swagger pro rozhraní API jsou uvedeny n
 
 Metadata swagger společnosti je, co Microsoft Flow, PowerApps a Azure Logic Apps můžete pochopit, jak používat rozhraní API a připojit se k nim.
 
-Existuje několik možností, jak automatizovat generování metadat Swagger pro aplikace ASP.NET Core REST API ve formě stránek nápovědy, funkční rozhraní API, na základě <span class="underline">uživatelského rozhraní swagger</span>.
+Existuje několik možností, jak automatizovat generování metadat Swagger pro aplikace ASP.NET Core REST API ve formě stránek nápovědy, funkční rozhraní API, na základě *uživatelského rozhraní swagger*.
 
-Pravděpodobně je nejlepší know [Swashbuckle](https://github.com/domaindrivendev/Swashbuckle.AspNetCore) který se aktuálně používá v [eShopOnCntainers](https://github.com/dotnet-architecture/eShopOnContainers) a probereme některé podrobně v tomto průvodci, ale je také možnost použít [službou NSwag](https://github.com/RSuter/NSwag), Typescript a C, které lze generovat\# klienty rozhraní API, stejně jako C\# řadiče, od specifikace Swagger nebo OpenAPI a dokonce i tím, že kontroluje .dll, který obsahuje kontrolery, pomocí [NSwagStudio](https://github.com/RSuter/NSwag/wiki/NSwagStudio).
+Pravděpodobně je nejlepší know [Swashbuckle](https://github.com/domaindrivendev/Swashbuckle.AspNetCore) který se aktuálně používá v [aplikaci eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers) a probereme některé podrobně v tomto průvodci, ale je také možnost použít [službou NSwag](https://github.com/RSuter/NSwag), Typescript a C, které lze generovat\# klienty rozhraní API, stejně jako C\# řadiče, od specifikace Swagger nebo OpenAPI a dokonce i tím, že kontroluje .dll, který obsahuje kontrolery, pomocí [NSwagStudio](https://github.com/RSuter/NSwag/wiki/NSwagStudio).
 
 ### <a name="how-to-automate-api-swagger-metadata-generation-with-the-swashbuckle-nuget-package"></a>Jak automatizovat generování metadat Swagger rozhraní API pomocí balíčku Swashbuckle NuGet
 
@@ -402,17 +402,17 @@ Až to uděláte, můžete spustit aplikaci a přejděte následující koncové
 
 ```url
   http://<your-root-url>/swagger/v1/swagger.json
-  
+
   http://<your-root-url>/swagger/
 ```
 
-Dříve jste viděli vygenerované uživatelské rozhraní vytvořené Swashbuckle pro adresu URL jako třeba http://\<your kořenové url \> /swagger. Obrázek 6 – 9 také uvidíte jak otestovat všechny metody rozhraní API.
+Dříve jste viděli vygenerované uživatelské rozhraní vytvořené Swashbuckle pro adresu URL jako `http://<your-root-url>/swagger`. Obrázek 6 – 9 také uvidíte jak otestovat všechny metody rozhraní API.
 
 ![Podrobnosti uživatelské rozhraní Swagger API ukazuje ukázkové odpovědi a lze použít k provedení skutečnému rozhraní API, což je skvělé pro zjišťování pro vývojáře.](./media/image10.png)
 
 **Obrázek 6. až 9**. Uživatelské rozhraní nástroje Swashbuckle testování/položky katalogu rozhraní API – metoda
 
-Obrázek 6-10 ukazuje metadat JSON pro Swagger generují z mikroslužeb aplikaci eShopOnContainers (což je tyto nástroje používají pod) při žádosti o \<your kořenové url\>/swagger/v1/swagger.json pomocí [Postman](https://www.getpostman.com/).
+Obrázek 6-10 ukazuje metadat JSON pro Swagger generují z mikroslužeb aplikaci eShopOnContainers (což je tyto nástroje používají pod) při žádosti o `http://<your-root-url>/swagger/v1/swagger.json` pomocí [Postman](https://www.getpostman.com/).
 
 ![Ukázka Postman uživatelské rozhraní zobrazení metadat JSON pro Swagger](./media/image11.png)
 
@@ -431,6 +431,6 @@ Je to jednoduché. A protože není automaticky vygenerován, Swagger metadata s
 - **Začínáme se službou NSwag a ASP.NET Core** \
   [*https://docs.microsoft.com/aspnet/core/tutorials/getting-started-with-nswag?tabs=visual-studio*](https://docs.microsoft.com/aspnet/core/tutorials/getting-started-with-nswag?tabs=visual-studio)
 
->[!div class="step-by-step"]
->[Předchozí](microservice-application-design.md)
->[další](multi-container-applications-docker-compose.md)
+> [!div class="step-by-step"]
+> [Předchozí](microservice-application-design.md)
+> [další](multi-container-applications-docker-compose.md)

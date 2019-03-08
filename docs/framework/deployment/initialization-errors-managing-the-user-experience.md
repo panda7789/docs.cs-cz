@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 680a7382-957f-4f6e-b178-4e866004a07e
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 02fa197b12e6a5bfb37cd0f275bc615dc179291b
-ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
+ms.openlocfilehash: 8e5a3cb79187d6434585560e9c128e03fe8003b7
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54222516"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57679369"
 ---
 # <a name="net-framework-initialization-errors-managing-the-user-experience"></a>Rozhraní .NET framework – chyby inicializace: Správa zkušeností uživatele
 
@@ -41,7 +41,7 @@ Aktivace modulu CLR rozhraní API návratové kódy HRESULT nahlásit výsledek 
 
 Pokud systém aktivace CLR nelze načíst správná verze modulu runtime, který vyžaduje aplikaci, zobrazí chybovou zprávu pro uživatele, abychom je informovali, že jejich počítač není správně nakonfigurován ke spuštění aplikace a poskytuje jim příležitosti k nápravě. V této situaci se obvykle zobrazí následující chybová zpráva. Uživatel může zvolit **Ano** přejdete na webu společnosti Microsoft, kde si můžete stáhnout správnou verzi rozhraní .NET Framework pro aplikaci.
 
-![Chyba inicializace rozhraní .NET framework dialogovému oknu](../../../docs/framework/deployment/media/initerrordialog.png "InitErrorDialog") typické chybové zprávy pro chyby inicializace
+![Chyba inicializace rozhraní .NET framework dialogovému oknu](./media/initialization-errors-managing-the-user-experience/initialization-error-dialog.png "typické chybové zprávy pro chyby inicializace")
 
 ## <a name="resolving-the-initialization-error"></a>Řešení chyby inicializace
 
@@ -82,7 +82,7 @@ Modul CLR zahrnuje sadu hostitelů pro různé scénáře a všichni tito hostit
 
 Systém aktivace CLR poskytuje stejné chování a uživatelského rozhraní na [!INCLUDE[win8](../../../includes/win8-md.md)] stejně jako v jiných verzích operačního systému Windows, kromě případů, kdy se setká s problémy při načítání modul CLR 2.0. [!INCLUDE[win8](../../../includes/win8-md.md)] zahrnuje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], který používá CLR 4.5. Ale [!INCLUDE[win8](../../../includes/win8-md.md)] neobsahuje rozhraní .NET Framework 2.0, 3.0 nebo 3.5, který použít modul CLR 2.0. V důsledku toho se aplikace, které závisí na modul CLR 2.0 nespouštějte na [!INCLUDE[win8](../../../includes/win8-md.md)] ve výchozím nastavení. Místo toho zobrazí se následující dialogové okno Povolit uživatele k instalaci rozhraní .NET Framework 3.5. Uživatelé můžou také povolit rozhraní .NET Framework 3.5 v Ovládacích panelech. Obě možnosti jsou popsány v následujícím článku [nainstalovat rozhraní .NET Framework 3.5 v systému Windows 10, Windows 8.1 a Windows 8](../../../docs/framework/install/dotnet-35-windows-10.md).
 
-![Dialogové okno pro instalaci verze 3.5 v systému Windows 8](../../../docs/framework/deployment/media/installdialog.png "installdialog") výzva k instalaci rozhraní .NET Framework 3.5 na vyžádání
+![Dialogové okno pro instalaci verze 3.5 v systému Windows 8](./media/initialization-errors-managing-the-user-experience/install-framework-on-demand-dialog.png "výzva k instalaci rozhraní .NET Framework 3.5 na vyžádání")
 
 > [!NOTE]
 > [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] Nahrazuje rozhraní .NET Framework 4 (CLR 4) na počítači uživatele. Proto rozhraní .NET Framework 4 aplikace běží bez problémů, bez zobrazení v tomto dialogovém okně [!INCLUDE[win8](../../../includes/win8-md.md)].

@@ -5,12 +5,12 @@ author: oliag
 ms.author: mairaw
 ms.date: 05/31/2018
 ms.technology: dotnet-standard
-ms.openlocfilehash: d27e5299ad9b1a3dcd89d5a947d91f06a54549e2
-ms.sourcegitcommit: 01ea420eaa4bf76d5fc47673294c8881379b3369
+ms.openlocfilehash: 84dd0717725f3538f9c9b2e3b5573f1385e549ac
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55759129"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57680266"
 ---
 # <a name="net-api-analyzer"></a>Analyzátor rozhraní API .NET
 
@@ -44,7 +44,7 @@ Když zastaralé rozhraní API, například <xref:System.Net.WebClient>, se pou�
 
 **Seznam chyb** okno obsahuje upozornění s jedinečným ID rozhraní API nepoužívané, jak je znázorněno v následujícím příkladu (`DE004`): 
 
-!["Snímek obrazovky okna Seznam chyb, které se zobrazují upozornění na ID a description"](media/api-analyzer/warnings.jpg)
+!["Snímek obrazovky okna Seznam chyb, které se zobrazují upozornění na ID a description"](media/api-analyzer/warnings-id-and-descriptions.jpg "okna Seznam chyb, který obsahuje upozornění.")
 
 Po kliknutí na ID, přejděte na webové stránce s podrobnými informacemi o Proč se přestala nabízet rozhraní API a návrhy týkající se alternativní rozhraní API, která lze použít.
 
@@ -112,5 +112,5 @@ Uživatel rozhodne, jak by měly být považovány Diagnostika: jako upozorněn�
 
 ## <a name="see-also"></a>Viz také:
 
-- [Úvod do rozhraní API analyzátor](https://blogs.msdn.microsoft.com/dotnet/2017/10/31/introducing-api-analyzer/) blogový příspěvek.
+- [Úvod do rozhraní API analyzátor](https://devblogs.microsoft.com/dotnet/introducing-api-analyzer/) blogový příspěvek.
 - [Analyzátor rozhraní API](https://youtu.be/eeBEahYXGd0) ukázkové video na YouTube.

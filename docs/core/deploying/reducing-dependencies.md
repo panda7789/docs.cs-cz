@@ -4,16 +4,16 @@ description: Omezte závislosti balíčků, při vytváření knihovny project.j
 author: cartermp
 ms.date: 06/20/2016
 ms.custom: seodec18
-ms.openlocfilehash: 932344ff40dd32793727fbce7bc0d6cd02592f8b
-ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
+ms.openlocfilehash: 9d4f9d7f6e7a736b7d07062f3cd31d6f45176cb1
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53168271"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57674962"
 ---
 # <a name="reducing-package-dependencies-with-projectjson"></a>Omezení závislosti balíčku s project.json
 
-Tento článek popisuje, co potřebujete vědět o snižování závislosti balíčků při vytváření `project.json` knihovny. Na konci tohoto článku se dozvíte, jak sestavit knihovnu tak, aby používal jenom závislosti, které potřebuje. 
+Tento článek popisuje, co potřebujete vědět o snižování závislosti balíčků při vytváření `project.json` knihovny. Na konci tohoto článku se dozvíte, jak sestavit knihovnu tak, aby používal jenom závislosti, které potřebuje.
 
 ## <a name="why-its-important"></a>Proč je důležité
 
@@ -27,18 +27,17 @@ V současné době neexistuje žádné oficiální `dotnet` příkazu, který o�
 
 1. Referenční dokumentace `NETStandard.Library` verze `1.6.0` v `dependencies` část vaší `project.json`.
 2. Obnovení balíčků s `dotnet restore` ([viz Poznámka](#dotnet-restore-note)) z příkazového řádku.
-3. Zkontrolujte `project.lock.json` souborů a vyhledejte `NETSTandard.Library` oddílu.  Je na začátku souboru.
+3. Zkontrolujte `project.lock.json` souborů a vyhledejte `NETStandard.Library` oddílu.  Je na začátku souboru.
 4. Zkopírujte všechny balíčky uvedené v části `dependencies`.
 5. Odeberte `.NETStandard.Library` odkazovat a nahraďte ji metodou zkopírovaný balíčky.
 6. Odeberte odkazy na balíčky, které nepotřebujete.
-
 
 Můžete zjistit, které balíčky, není nutné pomocí jedné z následujících způsobů:
 
 1. Došlo k chybě a zkušební verze.  To zahrnuje odebrání balíčku, obnovení, zobrazuje, pokud se stále zkompiluje knihovnu a opakováním tohoto procesu.
 2. Pomocí nástroje, jako například [ILSpy](https://github.com/icsharpcode/ILSpy#ilspy-------) nebo [.NET Reflector](https://www.red-gate.com/products/dotnet-development/reflector) a prohlédněte si odkazy, které chcete zjistit, co váš kód skutečně.  Následně můžete odebrat balíčky, které neodpovídají na typy, které používáte.
 
-## <a name="example"></a>Příklad 
+## <a name="example"></a>Příklad
 
 Představte si, že jste napsali knihovnu, která poskytuje další funkce do obecných typů kolekce.  Tyto knihovny by bylo potřeba závisí na balíčky, jako `System.Collections`, ale vůbec záviset na balíčky, jako `System.Net.Http`.  V důsledku toho by bylo dobré mají být odebrány závislosti balíčků dolů pouze co tuto knihovnu požadovanou!
 
@@ -56,7 +55,7 @@ Oříznout této knihovny, začínat `project.json` a přidejte odkaz na `NETSta
 }
 ```
 
-V dalším kroku obnovit balíčky s `dotnet restore` ([viz Poznámka](#dotnet-restore-note)), zkontrolujte `project.lock.json` souboru a vyhledání všech balíčků byl obnoven pro `NETSTandard.Library`.
+V dalším kroku obnovit balíčky s `dotnet restore` ([viz Poznámka](#dotnet-restore-note)), zkontrolujte `project.lock.json` souboru a vyhledání všech balíčků byl obnoven pro `NETStandard.Library`.
 
 Zde je co příslušné části v `project.lock.json` souboru vypadá podobně jako při cílení na `netstandard1.0`:
 

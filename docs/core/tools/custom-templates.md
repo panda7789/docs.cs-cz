@@ -3,12 +3,12 @@ title: Vlastních šablon pro dotnet nové
 description: Další informace o vlastních šablon pro jakýkoli druh projektu .NET nebo soubory.
 author: guardrex
 ms.date: 08/11/2017
-ms.openlocfilehash: 23dac9f4efd64ff93b00e41b1f4195e964871a3e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e37fb692640c25d7a91904b0802f97ebfab75851
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54503923"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57679057"
 ---
 # <a name="custom-templates-for-dotnet-new"></a>Vlastních šablon pro dotnet nové
 
@@ -16,7 +16,7 @@ ms.locfileid: "54503923"
 
 Vlastní šablony můžete nainstalovat z balíčku NuGet na jakékoli NuGet kanálu pomocí odkazu na NuGet *nupkg* souboru přímo, nebo zadáním systémový adresář souboru, který obsahuje šablonu. Modul šablon nabízí funkce, které umožňují nahraďte hodnotami, zahrnout a vyloučit soubory a oblasti souborů a provádění vlastního zpracování operací při použití šablony.
 
-Modul šablon je typu open source a úložiště online kódu je na [dotnet/šablonování](https://github.com/dotnet/templating/) na Githubu. Přejděte [dotnet/dotnet – šablony – ukázky](https://github.com/dotnet/dotnet-template-samples) úložiště pro ukázky šablon. Další šablony, včetně šablon od třetích stran, se nacházejí v [dostupných šablon pro dotnet nové](https://github.com/dotnet/templating/wiki/Available-templates-for-dotnet-new) na Githubu. Další informace o vytváření a používání vlastních šablon najdete v tématu [tom, jak vytvořit nové vlastní šablony pro dotnet](https://blogs.msdn.microsoft.com/dotnet/2017/04/02/how-to-create-your-own-templates-for-dotnet-new/) a [úložiště GitHub dotnet/šablonování Wiki](https://github.com/dotnet/templating/wiki).
+Modul šablon je typu open source a úložiště online kódu je na [dotnet/šablonování](https://github.com/dotnet/templating/) na Githubu. Přejděte [dotnet/dotnet – šablony – ukázky](https://github.com/dotnet/dotnet-template-samples) úložiště pro ukázky šablon. Další šablony, včetně šablon od třetích stran, se nacházejí v [dostupných šablon pro dotnet nové](https://github.com/dotnet/templating/wiki/Available-templates-for-dotnet-new) na Githubu. Další informace o vytváření a používání vlastních šablon najdete v tématu [tom, jak vytvořit nové vlastní šablony pro dotnet](https://devblogs.microsoft.com/dotnet/how-to-create-your-own-templates-for-dotnet-new/) a [úložiště GitHub dotnet/šablonování Wiki](https://github.com/dotnet/templating/wiki).
 
 Postupujte podle průvodce a vytvoření šablony najdete v tématu [vytvořit nové vlastní šablony pro dotnet](~/docs/core/tutorials/create-custom-template.md) kurzu.
 
@@ -155,5 +155,5 @@ dotnet new <TEMPLATE>
 - [Vytvoření vlastní šablony pro dotnet new (kurz)](../tutorials/create-custom-template.md)
 - [úložiště GitHub DotNet/šablonování Wiki](https://github.com/dotnet/templating/wiki)
 - [úložiště GitHub DotNet/dotnet – šablony – ukázky](https://github.com/dotnet/dotnet-template-samples)
-- [Jak vytvořit nové vlastní šablony pro dotnet](https://blogs.msdn.microsoft.com/dotnet/2017/04/02/how-to-create-your-own-templates-for-dotnet-new/)
+- [Jak vytvořit nové vlastní šablony pro dotnet](https://devblogs.microsoft.com/dotnet/how-to-create-your-own-templates-for-dotnet-new/)
 - [*Template.JSON* schématu na Store schématu JSON](http://json.schemastore.org/template)

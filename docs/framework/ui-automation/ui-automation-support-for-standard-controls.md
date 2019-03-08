@@ -5,14 +5,12 @@ helpviewer_keywords:
 - controls, UI Automation support for
 - UI Automation, support for standard controls
 ms.assetid: 3770ea8a-2655-4add-9c59-fe0610ad5084
-author: Xansky
-ms.author: mhopkins
-ms.openlocfilehash: 9c5e4133a3bc1f019ada00299df929c2e3915880
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5dbd547378faf885f5d0349ff77d124b0b860591
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54726582"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57677627"
 ---
 # <a name="ui-automation-support-for-standard-controls"></a>Podpora automatizace uživatelského rozhraní pro standardní ovládací prvky
 > [!NOTE]
@@ -65,7 +63,7 @@ ms.locfileid: "54726582"
 |msctls_trackbar32|Posuvník|  
 |msctls_updown32|Číselník|  
 |msctls_statusbar32|StatusBar|  
-|SysTabControl32|Tabulátor|  
+|SysTabControl32|Karta|  
 |SysTabControl32|TabItem|  
 |ToolbarWindow32|ToolBar|  
 |ToolbarWindow32|Položku nabídky|  

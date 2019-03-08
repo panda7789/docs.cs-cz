@@ -2,12 +2,12 @@
 title: Prohlížeč trasování služeb (SvcTraceViewer.exe)
 ms.date: 03/30/2017
 ms.assetid: 9027efd3-df8d-47ed-8bcd-f53d55ed803c
-ms.openlocfilehash: be6879810bde30a81ee9fb23e5cf031c4ff1976e
-ms.sourcegitcommit: acd8ed14fe94e9d4e3a7fb685fe83d05e941073c
+ms.openlocfilehash: 723b1c6858f0c56d4834dc937b9f4883e22156e6
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56442890"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57680383"
 ---
 # <a name="service-trace-viewer-tool-svctraceviewerexe"></a>Prohlížeč trasování služeb (SvcTraceViewer.exe)
 Nástroj Prohlížeč trasování služeb Windows Communication Foundation (WCF) pomáhá analyzovat diagnostické trasování, které se vygenerovaly WCF. Prohlížeče trasování služeb poskytuje způsob, jak snadno sloučení, zobrazení a filtrování trasovací zprávy v protokolu, takže můžete diagnostikovat, opravit a ověřit problémy se službou WCF.  
@@ -50,7 +50,13 @@ Nástroj Prohlížeč trasování služeb Windows Communication Foundation (WCF)
 |ActivityTracing|Tok událostí mezi zpracování aktivit a komponent.<br /><br /> Tato úroveň umožňuje vývojářům a správcům ke korelaci aplikací ve stejné doméně aplikace.<br /><br /> – Trasování pro aktivitu hranice: start/stop.<br />-Trasování pro přenosy.|  
   
  Můžete použít `add` Chcete-li určit název a typ naslouchací proces trasování, kterou chcete použít. V konfiguraci příklad je naslouchací proces s názvem `sdt` a standardní naslouchací proces trasování rozhraní .NET Framework (`System.Diagnostics.XmlWriterTraceListener`) se přidá jako typ. Použití `initializeData` nastavit název souboru protokolu pro tuto naslouchací proces. Kromě toho můžete nahradit úplná cesta k souboru jednoduchý název.  
-  
+
+Počínaje verzí .NET Framework 4.8, se zobrazí ovládací prvky pole se seznamem v některých vysokokontrastních motivech správnou barvou. Tato změna můžete zakázat tak, že odeberete toto nastavení z *svcTraceViewer.exe.config* souboru:
+
+```xml
+<AppContextSwitchOverrides value="Switch.UseLegacyAccessibilityFeatures=false;Switch.UseLegacyAccessibilityFeatures.2=false" />
+```
+
 ## <a name="using-the-service-trace-viewer-tool"></a>Pomocí nástroje prohlížeče trasování služeb  
   
 ### <a name="opening-and-viewing-wcf-trace-files"></a>Otevřít a zobrazit soubory trasování WCF  

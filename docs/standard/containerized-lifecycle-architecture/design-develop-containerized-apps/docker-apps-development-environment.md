@@ -4,12 +4,12 @@ description: Seznámení s nejdůležitějších možností nástroj pro vývoj,
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 02/15/2019
-ms.openlocfilehash: 09d15d4221d948b654912a8890df66052e68f6eb
-ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
+ms.openlocfilehash: 38a9f8209200635c752f60af90e22ef916796525
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56836172"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57677237"
 ---
 # <a name="development-environment-for-docker-apps"></a>Vývojové prostředí pro aplikace Dockeru
 
@@ -37,7 +37,7 @@ Můžete použít [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/
 
 ## <a name="language-and-framework-choices"></a>Volby jazyka a framework
 
-Můžete vyvíjet aplikace Dockeru pomocí nástrojů společnosti Microsoft s většinou moderních jazyků. Toto je počáteční seznam, ale nejste omezeni na něj:
+Můžete vyvíjet aplikace Dockeru pomocí nástrojů společnosti Microsoft s většinou moderních jazyků. Toto je počáteční seznam, ale nejste omezeni pouze na něj:
 
 - .NET Core a ASP.NET Core
 - Node.js

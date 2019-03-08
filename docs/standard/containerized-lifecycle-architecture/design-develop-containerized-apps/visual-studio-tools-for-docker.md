@@ -5,12 +5,12 @@ author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 02/15/2019
 ms.custom: vs-dotnet
-ms.openlocfilehash: e4422f325566724e3ea65d47d97c42e57e3fe621
-ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
+ms.openlocfilehash: 78ea3e553e4e449b307bc3585ed66fa48d2c0d8e
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56835600"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57680357"
 ---
 # <a name="use-docker-tools-in-visual-studio-2017-on-windows"></a>Použití nástrojů Dockeru v sadě Visual Studio 2017 na Windows
 
@@ -75,7 +75,7 @@ V následující tabulce může pomoct při rozhodování, jak nastavit tyto mo�
 
 | Název | Výchozí nastavení | Platí pro | Popis |
 | -----|:---------------:|:----------:| ----------- |
-| Automaticky získat požadované Image Dockeru při načtení projektu | On | Docker Compose | Pro zvýšení výkonu při načítání projektů sady Visual Studio spustí operaci Docker pull na pozadí tak, že až budete připravení ke spuštění kódu, se image nestáhne již nebo probíhá stahování. Pokud jste právě načítá projekty a procházení kódu, můžete to vypnout aby se zabránilo stahování imagí kontejnerů, které nepotřebujete. |
+| Automaticky získat požadované Image Dockeru při načtení projektu | On | Docker Compose | Pro zvýšení výkonu při načítání projektů sady Visual Studio spustí operaci Docker pull na pozadí tak, že až budete připraveni ke spuštění kódu, se image nestáhne již nebo probíhá stahování. Pokud jste právě načítá projekty a procházení kódu, můžete to vypnout aby se zabránilo stahování imagí kontejnerů, které nepotřebujete. |
 | Automaticky spustit kontejnery na pozadí | On | Docker Compose | Znovu pro zajištění zvýšeného výkonu sady Visual Studio vytvoří kontejner s připojí svazek připravené pro když sestavíte a spustíte svůj kontejner. Pokud chcete řídit, kdy se vytvoří kontejner, vypněte toto. |
 | Automaticky ukončit kontejnery na řešení zavřít | On | Docker Compose | Pokud byste o ni kontejnerů pro vaše řešení, aby kontinuálně běžely po zavření řešení nebo zavření sady Visual Studio, vypnutí této funkce. |
 | Nezobrazovat výzvu důvěřující certifikátu SSL pro localhost | Off | Projekty ASP.NET Core 2.1 | Pokud localhost certifikát SSL není důvěryhodný, Visual Studio zobrazí výzvu pokaždé, když spuštění projektu, pokud je toto políčko zaškrtnuté. |
@@ -85,9 +85,9 @@ V následující tabulce může pomoct při rozhodování, jak nastavit tyto mo�
 
 > [! Informace o] Další podrobnosti o implementaci služby a použití sady Visual Studio Tools for Docker v následujících článcích:
 >
->Ladění aplikací v místním kontejneru Dockeru: [https://docs.microsoft.com/azure/vs-azure-tools-docker-edit-and-refresh/](https://docs.microsoft.com/azure/vs-azure-tools-docker-edit-and-refresh)
+>Ladění aplikací v místním kontejneru Dockeru: <https://docs.microsoft.com/azure/vs-azure-tools-docker-edit-and-refresh>
 >
->Nasazení kontejneru ASP.NET do služby container registry pomocí sady Visual Studio: [https://docs.microsoft.com/azure/vs-azure-tools-docker-hosting-web-apps-in-docker/](https://docs.microsoft.com/azure/vs-azure-tools-docker-hosting-web-apps-in-docker)
+>Nasazení kontejneru ASP.NET do služby container registry pomocí sady Visual Studio: <https://docs.microsoft.com/azure/vs-azure-tools-docker-hosting-web-apps-in-docker>
 
 >[!div class="step-by-step"]
 >[Předchozí](docker-apps-inner-loop-workflow.md)

@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 80a0e8d37e834ea0a7623517e2e1228a79d9ea10
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: aa8589b3f27ba97d32e77dbfecb190edc69dbc18
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54655709"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57677328"
 ---
 # <a name="epolicyaction-enumeration"></a>EPolicyAction – výčet
 Popisuje akce zásad hostitele můžete nastavit pro operace popsal [eclroperation –](../../../../docs/framework/unmanaged-api/hosting/eclroperation-enumeration.md) a selhání popsal [eclrfailure –](../../../../docs/framework/unmanaged-api/hosting/eclrfailure-enumeration.md).  
@@ -50,7 +50,7 @@ typedef enum {
 |`eAbortThread`|Určuje, že modul CLR (CLR) by měl přerušit vlákno bez výpadku. Bezproblémové přerušení zahrnuje pokusy o spuštění všech `finally` blokuje všechny `catch` bloky týkající se přeruší vlákna a finalizační metody.|  
 |`eDisableRuntime`|Určuje, že modul CLR by měla zadat zakázaném stavu. Žádné další spravovaného kódu mohou být provedeny v procesu ovlivněná a jsou blokovaná vlákna vstupují do platformy CLR.|  
 |`eExitProcess`|Určuje, že modul CLR pokusit o řádné ukončení procesu, včetně spuštění finalizační metody a vyčištění a operace protokolování.|  
-|`eFastExitProcess`|Určuje, že modul CLR by měla opustí proces okamžitě, bez spuštění finalizační metody nebo vyčištění a operace protokolování. Nowever, odešle se oznámení v ladicím programu.|  
+|`eFastExitProcess`|Určuje, že modul CLR by měla opustí proces okamžitě, bez spuštění finalizační metody nebo vyčištění a operace protokolování. Nicméně je oznámení odeslané ladicímu programu.|  
 |`eNoAction`|Určuje, že by měla být provedena žádná akce.|  
 |`eRudeAbortThread`|Určuje, že modul CLR by měl provádět přerušení článku neslušní vlákna. Pouze ty `catch` a `finally` bloky označené <xref:System.EnterpriseServices.MustRunInClientContextAttribute> provádějí.|  
 |`eRudeExitProcess`|Určuje, že modul CLR má ukončit proces bez spuštění finalizační metody nebo protokolování operations.|  

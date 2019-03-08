@@ -7,12 +7,12 @@ dev_langs:
 author: thraka
 ms.author: adegeo
 ms.date: 12/31/2018
-ms.openlocfilehash: 47a5ae3e81b0320a094ecc79e6b08035de66e785
-ms.sourcegitcommit: acd8ed14fe94e9d4e3a7fb685fe83d05e941073c
+ms.openlocfilehash: 89264098ed17b398c83bc2dcddd98d9d8fc958f7
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56443072"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57679733"
 ---
 # <a name="whats-new-in-net-core-30-preview-2"></a>Co je nového v .NET Core 3.0 (ve verzi Preview 2)
 
@@ -24,16 +24,16 @@ Přidává podporu pro .NET core 3.0 C# 8.0.
 
 Další informace o co bylo vydáno se sadou jednotlivé verze najdete v následující oznámení:
 
-- [.NET core 3.0 ve verzi Preview 1 oznámení](https://blogs.msdn.microsoft.com/dotnet/2018/12/04/announcing-net-core-3-preview-1-and-open-sourcing-windows-desktop-frameworks/)
-- [.NET core 3.0 ve verzi Preview 2 oznámení](https://blogs.msdn.microsoft.com/dotnet/2019/01/29/announcing-net-core-3-preview-2/)
+- [.NET core 3.0 ve verzi Preview 1 oznámení](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-preview-1-and-open-sourcing-windows-desktop-frameworks/)
+- [.NET core 3.0 ve verzi Preview 2 oznámení](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-preview-2/)
 
 ## <a name="c-8"></a>C# 8
 
 .NET core 3.0 podporuje C# 8 a od .NET Core 3.0 ve verzi Preview 2 podporuje tyto nové funkce. Další informace o C# 8.0 funkce, najdete v těchto příspěvcích na blogu:
 
-- [Lepší využití vzorů v C# 8.0](https://blogs.msdn.microsoft.com/dotnet/2019/01/24/do-more-with-patterns-in-c-8-0/)
-- [Využijte C# 8.0 pro typu číselník](https://blogs.msdn.microsoft.com/dotnet/2018/12/05/take-c-8-0-for-a-spin/)
-- [Vytváření C# 8.0](https://blogs.msdn.microsoft.com/dotnet/2018/11/12/building-c-8-0/)
+- [Lepší využití vzorů v C# 8.0](https://devblogs.microsoft.com/dotnet/do-more-with-patterns-in-c-8-0/)
+- [Využijte C# 8.0 pro typu číselník](https://devblogs.microsoft.com/dotnet/take-c-8-0-for-a-spin/)
+- [Vytváření C# 8.0](https://devblogs.microsoft.com/dotnet/building-c-8-0/)
 
 
 ### <a name="ranges-and-indices"></a>Rozsahy a indexy
@@ -108,7 +108,7 @@ Vzorky umožňují napsat deklarativního kódu, který zachycuje máte v úmysl
 
 Nadále bude případů kde *příkazy switch* bude vhodnější než *přepnout výrazy* a vzorky lze použít s obou stylů syntaxe.
 
-Další informace najdete v tématu [udělat více s vzory v C# 8.0](https://blogs.msdn.microsoft.com/dotnet/2019/01/24/do-more-with-patterns-in-c-8-0/).
+Další informace najdete v tématu [udělat více s vzory v C# 8.0](https://devblogs.microsoft.com/dotnet/do-more-with-patterns-in-c-8-0/).
 
 ## <a name="ieee-floating-point-improvements"></a>Vylepšení plovoucí desetinné čárky IEEE
 
@@ -271,7 +271,7 @@ dotnet new winforms
 
 Visual Studio. 2019 ve verzi Preview 2 přidá **nový projekt** šablon pro .NET Core 3.0 Windows Forms a WPF. Návrháři se stále ještě není podporována. A můžete otevřít, spuštění a ladění těchto projektů v aplikaci Visual Studio 2019.
 
-Visual Studio 2017 15.9 přidává možnost [povolit náhledy .NET Core](https://blogs.msdn.microsoft.com/dotnet/2018/11/13/net-core-tooling-update-for-visual-studio-2017-version-15-9/), ale budete muset zapnout tuto funkci a není podporováno.
+Visual Studio 2017 15.9 přidává možnost [povolit náhledy .NET Core](https://devblogs.microsoft.com/dotnet/net-core-tooling-update-for-visual-studio-2017-version-15-9/), ale budete muset zapnout tuto funkci a není podporováno.
 
 Nové projekty jsou stejné jako existující projekty .NET Core, s několika doplňky. Tady je porovnání základní projekt konzoly .NET Core a základního projektu Windows Forms a WPF.
 
@@ -730,9 +730,9 @@ Tato vylepšení jsou také nové v rozhraní .NET Core 3 Preview 1:
 
 ## <a name="tiered-compilation"></a>Vrstvené kompilace
 
-[Vrstvené kompilace](https://blogs.msdn.microsoft.com/dotnet/2018/08/02/tiered-compilation-preview-in-net-core-2-1/) je ve výchozím s .NET Core 3.0. To je funkce, která umožňuje modulu runtime více Adaptivně pomocí kompilátor za běhu (JIT), můžete dosáhnout lepšího výkonu, jak při spuštění a maximalizuje propustnost.
+[Vrstvené kompilace](https://devblogs.microsoft.com/dotnet/tiered-compilation-preview-in-net-core-2-1/) je ve výchozím s .NET Core 3.0. To je funkce, která umožňuje modulu runtime více Adaptivně pomocí kompilátor za běhu (JIT), můžete dosáhnout lepšího výkonu, jak při spuštění a maximalizuje propustnost.
 
-Tato funkce byla přidána jako funkce opt-in v [.NET Core 2.1](https://blogs.msdn.microsoft.com/dotnet/2018/05/30/announcing-net-core-2-1/) a potom byla povolená ve výchozím nastavení v [.NET Core 2.2 ve verzi Preview 2](https://blogs.msdn.microsoft.com/dotnet/2018/09/12/announcing-net-core-2-2-preview-2/). Následně ji byl vrácen zpět do optimalizované pomocí verze rozhraní .NET Core 2.2.
+Tato funkce byla přidána jako funkce opt-in v [.NET Core 2.1](https://devblogs.microsoft.com/dotnet/announcing-net-core-2-1/) a potom byla povolená ve výchozím nastavení v [.NET Core 2.2 ve verzi Preview 2](https://devblogs.microsoft.com/dotnet/announcing-net-core-2-2-preview-2/). Následně ji byl vrácen zpět do optimalizované pomocí verze rozhraní .NET Core 2.2.
 
 ## <a name="arm64-linux-support"></a>Podpora Linuxu ARM64
 

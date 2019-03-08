@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 115f7a2f-d422-4605-ab36-13a8dd28142a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b7dbba5161c1eeecef41e93c908752410acbd956
-ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
+ms.openlocfilehash: 21eea2ccdff88a11e9708fef317011dc547cafda
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56221248"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57677211"
 ---
 # <a name="interop-marshaling"></a>Zařazování spolupráce
 <a name="top"></a> Zařazování spolupráce řídí, jak se data předaná v metoda argumentů a vrácené hodnoty mezi spravovaným a nespravovaným paměti během volání. Zařazování spolupráce je za běhu aktivity prováděné common language runtime zařazovací služby.  
@@ -44,8 +44,7 @@ ms.locfileid: "56221248"
   
  Vyvolání obě platformy a modelu COM interop použití zařazování spolupráce přesně argumenty metody přesouvat mezi volajícím a volaný a zpět, pokud vyžaduje. Jak ukazuje následující obrázek, platformu vyvolání toky volání metody ze spravovaného do nespravovaného kódu a nikdy jiným způsobem, kromě případů, kdy [funkce zpětného volání](callback-functions.md) se využívá řada. I v případě vyvolání platformy můžete tok volání pouze ze spravovaného do nespravovaného kódu, může tok dat v obou směrech jako vstupní nebo výstupní parametry. Volání metody vzájemné spolupráce COM můžete tok v obou směrech.  
   
- ![Vyvolání platformy](./media/interopmarshaling.png "interopmarshaling")  
-Vyvolání platformy a tok volání interop modelu COM  
+ ![Vyvolání platformy](./media/interop-marshaling/interop-marshaling-invoke-and-com.png "vyvolání platformy a tok volání interop modelu COM")  
   
  Na nejnižší úrovni obou mechanismy používají stejný zprostředkovatel komunikace s objekty zařazování služby; ale některé typy dat podporovaných výhradně ve spolupráci s COM nebo vyvolání platformy. Podrobnosti najdete v tématu [výchozí chování zařazování](default-marshaling-behavior.md).  
   
@@ -67,8 +66,7 @@ Vyvolání platformy a tok volání interop modelu COM
   
  Protože klient a server jsou ve stejném objektu apartment, zprostředkovatel komunikace s objekty zařazování service automaticky zpracovává všechna data zařazování. Následující obrázek znázorňuje spolupráce zařazovací služby provoz mezi spravovanými a nespravovanými haldy v rámci stejného objektu apartment modelu COM-style.  
   
- ![Zařazování spolupráce](./media/interopheap.gif "interopheap")  
-Proces zařazování stejného objektu apartment  
+ ![Zařazování spolupráce mezi spravovaných a nespravovaných haldy](./media/interop-marshaling/interop-heaps-managed-and-unmanaged.gif "stejné apartment zařazování procesu")  
   
  Pokud budete chtít exportovat spravovaného serveru, mějte na paměti, určuje klient modelu COM typu apartment serveru. Spravovaný server volá klient modelu COM ve MTA inicializovat, musíte zajistit bezpečný přístup z více vláken.  
   
@@ -84,8 +82,7 @@ Proces zařazování stejného objektu apartment
   
  Když klienta spravovaného a nespravovaného serveru jsou ve stejném objektu apartment, zprostředkovatele komunikace s objekty zařazování služby zpracovává všechny zařazování dat. Ale když klienta a serveru jsou inicializovány v jiné objekty apartment, zařazování COM je také nutný. Následující obrázek znázorňuje prvky volání mezi objektu apartment.  
   
- ![Zařazování COM](./media/singleprocessmultapt.gif "singleprocessmultapt")  
-Volání mezi apartment mezi klient .NET a objekt modelu COM  
+ ![Zařazování COM](./media/interop-marshaling/single-process-across-multi-apartment.gif "napříč apartment volání mezi klient .NET a objekt modelu COM")  
   
  Pro různé apartment zařazování, máte následující:  
   
@@ -110,14 +107,12 @@ Volání mezi apartment mezi klient .NET a objekt modelu COM
   
  Následující obrázek znázorňuje, jak spolupráce zařazování a zařazování COM poskytují komunikační kanály přes hranice procesu a hostitele.  
   
- ![Zařazování COM](./media/interophost.gif "interophost")  
-Zařazování mezi procesy  
+ ![Zařazování COM](./media/interop-marshaling/interop-and-com-marshaling.gif "zařazování mezi procesy")  
   
 ### <a name="preserving-identity"></a>Zachování Identity  
  Modul common language runtime uchovává identity spravovaných a nespravovaných odkazy. Následující obrázek znázorňuje tok nespravované přímé odkazy (horní řádek) a s přímým přístupem spravované odkazy (dolní řádek) přes hranice procesu a hostitele.  
   
- ![Obálka volatelná aplikacemi COM a obálka volatelná za běhu](./media/interopdirectref.gif "interopdirectref")  
-Odkaz na předávání přes hranice procesu a hostitele  
+ ![Obálka volatelná aplikacemi COM a obálka volatelná za běhu](./media/interop-marshaling/interop-direct-ref-across-process.gif "odkaz předávání přes hranice procesu a hostitele")  
   
  Na tomto obrázku:  
   
@@ -133,7 +128,7 @@ Odkaz na předávání přes hranice procesu a hostitele
 ### <a name="managed-remoting"></a>Spravované vzdálené komunikace  
  Modul runtime poskytuje také spravované vzdálené komunikace, které můžete použít k vytvoření komunikačního kanálu mezi spravovanými objekty přes hranice procesu a hostitele. Spravované vzdálené komunikace zvládne brány firewall mezi komunikujícími komponenty, jako ukazuje následující obrázek.  
   
- ![Protokol SOAP nebo TcpChannel](./media/interopremotesoap.gif "interopremotesoap")  
+ ![Protokol SOAP nebo TcpChannel](./media/interop-marshaling/interop-remote-soap-or-tcp.gif "vzdálené volání přes brány firewall pomocí protokolu SOAP nebo TcpChannel třídy")  
 Vzdálená volání přes brány firewall pomocí protokolu SOAP nebo TcpChannel třídy  
   
  Některá volání nespravovaného můžete channeled prostřednictvím protokolu SOAP, jako je například volání mezi obsluhované komponenty a modelu COM.  

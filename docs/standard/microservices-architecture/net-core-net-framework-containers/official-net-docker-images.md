@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 01/07/2019
-ms.openlocfilehash: be1830ccf2fe4566aa7d50a4664be2d8d2c4e2e8
-ms.sourcegitcommit: dcc8feeff4718664087747529638ec9b47e65234
+ms.openlocfilehash: c4fce49b079473ddcc2b840527b8aeb951fec780
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55479604"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57674650"
 ---
 # <a name="official-net-docker-images"></a>Oficiální Image .NET Dockeru
 
@@ -23,15 +23,15 @@ Většina úložišť image poskytují rozsáhlé označování pomoct při výb
 
 Při vytváření imagí Dockeru pro vývojáře, zaměřuje Microsoft na následující hlavní scénáře:
 
--   Imagí používaných k *vývoj* a sestavení aplikace .NET Core.
+- Imagí používaných k *vývoj* a sestavení aplikace .NET Core.
 
--   Imagí používaných k *spustit* aplikace .NET Core.
+- Imagí používaných k *spustit* aplikace .NET Core.
 
 Proč více bitových kopií? Při vývoji, vytváření a spouštění kontejnerizovaných aplikací, obvykle mají různé priority. Zadáním různých imagí pro tyto jednotlivé úlohy Microsoft pomáhá optimalizovat samostatné procesy vývoje, sestavování a nasazování aplikací.
 
 ### <a name="during-development-and-build"></a>Během vývoje a sestavení
 
-Během vývoje co je důležité je můžete jak rychle iterovat změny a možnost ladit změny. Velikost bitové kopie není důležité jako možnost provádět změny kódu a rychle se změny projevily. Některé nástroje a "agent sestavení kontejnery", použít obraz vývoj pro .NET Core (*microsoft / dotnet:2.2-sdk*) během proces vývoje a sestavení. Při vytváření uvnitř kontejneru Dockeru, důležité aspekty jsou prvky, které jsou potřeba, aby bylo možné zkompilovat vaši aplikaci. To zahrnuje kompilátoru a další závislosti rozhraní .NET.
+Během vývoje co je důležité je můžete jak rychle iterovat změny a možnost ladit změny. Velikost bitové kopie není důležité jako možnost provádět změny kódu a rychle se změny projevily. Některé nástroje a "agent sestavení kontejnery", použít obraz vývoj pro .NET Core (*microsoft / dotnet:2.2-sdk*) během procesu vývoje a sestavení. Při vytváření uvnitř kontejneru Dockeru, důležité aspekty jsou prvky, které jsou potřeba, aby bylo možné zkompilovat vaši aplikaci. To zahrnuje kompilátoru a další závislosti rozhraní .NET.
 
 Proč je důležité tento typ bitové kopie sestavení? Tento obrázek nezvolíte nasazení do produkčního prostředí. Místo toho je obrázek, který používáte k sestavení obsahu, který umístíte do produkce image. Tato image se použije ve vašem prostředí kontinuální integrace (CI) nebo prostředí pro sestavení při použití Dockeru vícefázových sestavení.
 
@@ -50,6 +50,6 @@ Při prozkoumávání úložiště .NET image v Docker Hubu najdete několik ver
 | Microsoft/dotnet:**2.2-aspnetcore-modulu runtime** | ASP.NET Core s pouze modul runtime a optimalizace ASP.NET Core v Linuxu a Windows (více arch) |
 | microsoft/dotnet:**2.2-sdk**                | .NET core, s zahrnutých sad SDK, na Linuxu a Windows (více arch)                                  |
 
->[!div class="step-by-step"]
->[Předchozí](net-container-os-targets.md)
->[další](../architect-microservice-container-applications/index.md)
+> [!div class="step-by-step"]
+> [Předchozí](net-container-os-targets.md)
+> [další](../architect-microservice-container-applications/index.md)

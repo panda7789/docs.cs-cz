@@ -4,12 +4,12 @@ description: Získat trochu hlouběji v pochopíte Dockeru, jednoduché přirovn
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 02/15/2019
-ms.openlocfilehash: eb2d7819fc981bdb451aab2a55fbf6335ed19eda
-ms.sourcegitcommit: 07c4368273b446555cb2c85397ea266b39d5fe50
+ms.openlocfilehash: fbb91466a86c7082e89d0ac4a3673ad83ab39b88
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56584223"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57680123"
 ---
 # <a name="what-is-docker"></a>Co je Docker?
 

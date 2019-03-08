@@ -1,21 +1,20 @@
 ---
 title: Architektura nástroje příkazového řádku .NET core
 description: Další informace o .NET Core, nástroje vrstvy a co se změnilo v nejnovější verze.
-author: blackdwarf
 ms.date: 03/06/2017
-ms.openlocfilehash: 85987129421e8ee22f7cf7fe1d44e0768d95a214
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.openlocfilehash: e9226a314932eb73c6474c0fd17c77c87683e6db
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46696327"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57675690"
 ---
 # <a name="high-level-overview-of-changes-in-the-net-core-tools"></a>Podrobný přehled změn v nástrojích pro .NET Core
 
-Tento dokument popisuje změny spojené s přesunem z *project.json* nástroji MSBuild a *csproj* projektu systému s informacemi o změnách u rozvrstvení nástrojů .NET Core a provádění příkazů rozhraní příkazového řádku. Tyto změny došlo k .NET Core SDK 1.0 a Visual Studio 2017 verze 7. března 2017 (viz [oznámení](https://blogs.msdn.microsoft.com/dotnet/2017/03/07/announcing-net-core-tools-1-0/)), ale byly původně implementované ve verzi rozhraní .NET Core SDK ve verzi Preview 3.
+Tento dokument popisuje změny spojené s přesunem z *project.json* nástroji MSBuild a *csproj* projektu systému s informacemi o změnách u rozvrstvení nástrojů .NET Core a provádění příkazů rozhraní příkazového řádku. Tyto změny došlo k .NET Core SDK 1.0 a Visual Studio 2017 verze 7. března 2017 (viz [oznámení](https://devblogs.microsoft.com/dotnet/announcing-net-core-tools-1-0/)), ale byly původně implementované ve verzi rozhraní .NET Core SDK ve verzi Preview 3.
 
 ## <a name="moving-away-from-projectjson"></a>Přesun směrem od project.json
-Největší změnou v nástroje pro .NET Core je určitě [přesunout mimo project.json na csproj](https://blogs.msdn.microsoft.com/dotnet/2016/05/23/changes-to-project-json/) jako systém projektu. Nejnovější verze nástroje příkazového řádku nepodporují *project.json* soubory. To znamená, že nelze použít k vytvoření, spuštění nebo publikovat project.json na základě aplikací a knihoven. Pokud chcete používat tuto verzi nástrojů, je potřeba migrovat existující projekty nebo spuštění nové značky. 
+Největší změnou v nástroje pro .NET Core je určitě [přesunout mimo project.json na csproj](https://devblogs.microsoft.com/dotnet/changes-to-project-json/) jako systém projektu. Nejnovější verze nástroje příkazového řádku nepodporují *project.json* soubory. To znamená, že nelze použít k vytvoření, spuštění nebo publikovat project.json na základě aplikací a knihoven. Pokud chcete používat tuto verzi nástrojů, je potřeba migrovat existující projekty nebo spuštění nové značky. 
 
 Jako součást tento přesun, modul vlastní sestavení, který byl vyvinut vytvářet projekty project.json byl nahrazen sestavení až po zralé a plně podporuje modul volá [MSBuild](https://github.com/Microsoft/msbuild). Nástroj MSBuild je dobře známé modul v komunitě .NET, protože jejím klíčových technologií od první verze platformy. Samozřejmě protože je nutné k vytváření aplikací .NET Core, nástroj MSBuild byla přenést až po .NET Core a lze použít na libovolné platformě, na kterém běží .NET Core na. Jeden z hlavních příslibů .NET Core je, že zásobníku vývoj pro různé platformy a jste zkontrolovali jsme, že tento přesun nedojde k poškození tento příslib.
 

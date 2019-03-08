@@ -4,6 +4,7 @@ description: 'Zjistěte, jak provádět specifické úkoly, které vám pomůže
 ms.custom: seodec18
 ms.date: 03/01/2019
 ---
+
 # <a name="net-machine-learning-how-to-guides---mlnet"></a>.NET strojového učení návody - ML.NET
 
 V části Průvodce ML.NET jak najdete rychlé odpovědi na běžné dotazy. V některých případech může být uvedena články ve více oddílů, aby se daly snadno najít.
@@ -44,7 +45,7 @@ V části Průvodce ML.NET jak najdete rychlé odpovědi na běžné dotazy. V n
 
 * [U textových dat s ML.NET použijte vytváření funkcí pro cvičení modelu.](train-model-textual-ml-net.md)
 
-## <a name="run"></a>Spustit 
+## <a name="run"></a>Spustit
 
 * [Zkontrolujte hodnoty dočasných dat během zpracování kanálu ML.NET.](inspect-intermediate-data-ml-net.md)
 
@@ -52,7 +53,6 @@ V části Průvodce ML.NET jak najdete rychlé odpovědi na běžné dotazy. V n
 
 * [Používejte PredictionFunction předpověď jeden po druhém.](single-predict-model-ml-net.md)
 
-## <a name="probabalistic-infernet"></a>Probabalistic (Infer.NET)
+## <a name="probabilistic-infernet"></a>Probabilistic (Infer.NET)
 
 * [Vytvoření hry shoda seznamu aplikaci pomocí Infer.NET a pravděpodobnostní programování.](matchup-app-infer-net.md)
-

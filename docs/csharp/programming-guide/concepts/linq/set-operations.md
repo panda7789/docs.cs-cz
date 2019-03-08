@@ -2,12 +2,12 @@
 title: Množinové operace (C#)
 ms.date: 07/20/2015
 ms.assetid: 7c589367-ef8f-4161-9050-642c47e6bf63
-ms.openlocfilehash: 8a9cf898faeccdf513daf1ae384e811cd559e72a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 169f7608409fcc0205a1f8edc69ee7a0b7785a51
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54692178"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57675508"
 ---
 # <a name="set-operations-c"></a>Množinové operace (C#)
 Množinové operace LINQ naleznete operace dotazů, které vytvářejí sadu výsledků dotazu, který je založen na přítomnosti nebo nepřítomnosti ekvivalentních prvků ve stejném nebo různém kolekcí (nebo sady).  
@@ -33,7 +33,7 @@ Množinové operace LINQ naleznete operace dotazů, které vytvářejí sadu vý
 ### <a name="except"></a>S výjimkou  
  Následující obrázek znázorňuje chování <xref:System.Linq.Enumerable.Except%2A?displayProperty=nameWithType>. Vrácená sekvence obsahuje pouze elementy z první vstupní sekvence, které nejsou v druhé vstupní sekvence.  
   
- ![Obrázek znázorňující akce s výjimkou&#40;&#41;. ](../../../../csharp/programming-guide/concepts/linq/media/except.png "s výjimkou")  
+ ![Obrázek znázorňující akce s výjimkou&#40;&#41;. ](./media/set-operations/except-behavior-graphic.png "Ukazuje chování s výjimkou.")  
   
 ### <a name="intersect"></a>Intersect  
  Následující obrázek znázorňuje chování <xref:System.Linq.Enumerable.Intersect%2A?displayProperty=nameWithType>. Vrácená sekvence obsahuje prvky, které jsou společné pro vstupní sekvence.  

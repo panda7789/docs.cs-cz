@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/02/2018
-ms.openlocfilehash: cf1757531fc9eceee17f1faec66668945b9c2758
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: b451d896186ffb650e495c10786106c37ab16131
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56967968"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57676015"
 ---
 # <a name="implementing-event-based-communication-between-microservices-integration-events"></a>Implementace komunikace mezi mikroslužbami (události integrace) na základě událostí
 
@@ -66,7 +66,7 @@ Existují jenom pár typy knihoven, které by měly sdílet napříč mikrosluž
 
 Sběrnice událostí umožňuje publikování/přihlášení odběru – vizuální styl komunikace mezi mikroslužbami, aniž by komponent je potřeba explicitně vědět, jak je znázorněno v obrázek 6 – 19.
 
-![Základní pub/sub vzoru, Mikroslužby A publikuje do sběrnice událostí, který distribuuje na mikroslužby susbcribing B a C, aniž by museli znát susbcribers vydavatele.](./media/image20.png)
+![Základní pub/sub vzoru, Mikroslužby A publikuje do sběrnice událostí, který distribuuje předplacení mikroslužeb B a C, aniž by museli znát odběratelů vydavatele.](./media/image20.png)
 
 **Obrázek 6-19**. Publikování/odběr základy s sběrnice událostí
 
@@ -76,25 +76,25 @@ Service bus události týkající se vzor pozorovatel a publikovat – vzorec od
 
 V [vzor pozorovatel](https://en.wikipedia.org/wiki/Observer_pattern), váš primární objekt (označuje se jako pozorovat) upozorní další zúčastněné objekty (označuje se jako pozorovatelů) s příslušnými informacemi (události).
 
-### <a name="publishsubscribe-pubsub-pattern"></a>Vzor publikování/přihlášení k odběru (publikování a odběr) 
+### <a name="publishsubscribe-pubsub-pattern"></a>Vzor publikování/přihlášení k odběru (publikování a odběr)
 
 Účelem [vzor publikování/přihlášení k odběru](https://docs.microsoft.com/previous-versions/msp-n-p/ff649664(v=pandp.10)) je stejný jako vzor pozorovatel: Chcete upozornit jiné služby, probíhají určité události. Existuje ale podstatným rozdílem mezi pozorovatel a Pub/Sub vzory. Ve vzoru pozorovatel vysílání je provádět přímo pozorovat k pozorovatelé, tak jejich "know" mezi sebou. Ale při použití modelu Pub/Sub, je třetí součást, která volá zprostředkovatele nebo zprávy Service broker nebo událostí Service bus, která se označuje vydavatele a odběratele. Proto při použití modelu Pub/Sub vydavatele a odběratele se přesně odděleném díky uvedené události Service bus nebo zprávy zprostředkovatele.
 
-### <a name="the-middleman-or-event-bus"></a>Prostředník nebo událostí Service bus 
+### <a name="the-middleman-or-event-bus"></a>Prostředník nebo událostí Service bus
 
 Jak dosáhnete anonymity mezi vydavatele a odběratele Snadný způsob, je nechat prostředník postará o veškerá komunikace. Sběrnice událostí je jeden takový prostředník.
 
 Sběrnice událostí se obvykle skládá ze dvou částí:
 
--   Abstraktní nebo rozhraní.
+- Abstraktní nebo rozhraní.
 
--   Jeden nebo více implementací.
+- Jeden nebo více implementací.
 
 Obrázek 6-19 uvidíte, jak z aplikace hlediska, sběrnice událostí není nic jiného než Pub/Sub kanálu. Způsob implementace této asynchronní komunikace se může lišit. Může mít několik implementací tak, aby můžete přepínat mezi nimi, v závislosti na požadavcích prostředí (například produkčního prostředí a vývojová prostředí).
 
 Obrázek 6 – 20 uvidíte abstrakce sběrnice událostí s více implementací na základě infrastruktury zasílání zpráv technologie, jako je RabbitMQ, Azure Service Bus nebo jiného zprostředkovatele událostí/zpráv.
 
-![Je dobré si co sběrnice událostí definován pomocí rozhraní, takže je možné implementovat pomocí několika tecnologies, jako je RabbitMQ Azure Service bus nebo jiných.](./media/image21.png)
+![Je dobré si co sběrnice událostí definován pomocí rozhraní, takže je možné implementovat pomocí několika technologie, jako jsou RabbitMQ Azure Service bus nebo jiných.](./media/image21.png)
 
 **Obrázek 6 – 20.** Více implementací sběrnice událostí
 
@@ -129,6 +129,6 @@ public interface IEventBus
 
 `Subscribe` Metod (může mít několik implementací v závislosti na argumenty) jsou používány mikroslužeb, která chcete přijímat události. Tato metoda má dva argumenty. První možností je integrace událostí přihlášení k odběru (`IntegrationEvent`). Druhý argument je integrace událostí obslužnou rutinu (nebo metoda zpětného volání), s názvem `IIntegrationEventHandler<T>`, který se spustí při získá mikroslužeb příjemce této zprávy integrace událostí.
 
->[!div class="step-by-step"]
->[Předchozí](database-server-container.md)
->[další](rabbitmq-event-bus-development-test-environment.md)
+> [!div class="step-by-step"]
+> [Předchozí](database-server-container.md)
+> [další](rabbitmq-event-bus-development-test-environment.md)

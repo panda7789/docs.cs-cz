@@ -4,22 +4,22 @@ description: Vysvětlení, že Docker, kontejnery a architekturu Mikroslužeb ne
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 11/23/2018
-ms.openlocfilehash: be7799fe0ac3c22d0ffda5bc4b7e5e42f956a15e
-ms.sourcegitcommit: acd8ed14fe94e9d4e3a7fb685fe83d05e941073c
+ms.openlocfilehash: ac4ca2d4a24e2d26fd639eafd62968188dbeb483
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56442422"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57674429"
 ---
 # <a name="road-to-modern-applications-based-on-containers"></a>Silniční moderních aplikací založených na kontejnerech
 
-Tato kniha čtete pravděpodobně protože plánujete vývoj nové aplikace a/nebo se hodnocení dopadu pomocí Docker, kontejnery a nové přístupy, jako jsou Mikroslužby ve vaší společnosti.
+Tato kniha čtete nejspíš vzhledem k tomu, že máte v plánu vývoj nové aplikace nebo posuzovaných dopad pomocí Docker, kontejnery a nové přístupy, jako jsou Mikroslužby ve vaší společnosti.
 
 Přijetí nové modely vývoj musí být přijata opatrně před zahájením projektu, chcete-li posoudit dopad na vašich vývojářských týmů, rozpočet nebo infrastrukturu.
 
 Microsoft pracuje v bohaté pokyny, ukázkové aplikace a sadu elektronické knihy, které vám pomohou provést informované rozhodnutí a příručka pro váš tým prostřednictvím úspěšný vývoj, nasazení a provoz vaší nové aplikace.
 
-Tato kniha patří do sady Microsoft příručky, které pokrývají mnoho požadavky a problémy, které se během procesu vývoje nové, moderní aplikace založené na kontejnerech.
+Tato kniha patří do sady Microsoft příručky, které pokrývají mnoho požadavky a problémy, se kterými budete setkat během procesu vývoje nové, moderní aplikace založené na kontejnerech.
 
 Můžete najít další Microsoft e knihy související s kontejnery Dockeru v níže uvedeném seznamu:
 

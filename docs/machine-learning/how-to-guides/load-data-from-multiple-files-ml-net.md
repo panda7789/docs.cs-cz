@@ -1,16 +1,21 @@
 ---
 title: Načtení dat z více souborů pro machine learning zpracování – ML.NET
 description: Zjistěte, jak načíst data z více souborů pro použití v modelu strojového učení, vytváření, trénování a vyhodnocování s ML.NET
-ms.date: 02/06/2019
+ms.date: 03/05/2019
 ms.custom: mvc,how-to
-ms.openlocfilehash: f5108aaed80769f2bc7ed2f974f9a729abe8455e
-ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
+ms.openlocfilehash: fbf5e4b5ab9a1a686edb933bdec818fc532bbf42
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56092043"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57679018"
 ---
 # <a name="load-data-from-multiple-files-for-machine-learning-processing---mlnet"></a>Načtení dat z více souborů pro machine learning zpracování – ML.NET
+
+> [!NOTE]
+> Toto téma odkazuje na ML.NET, která je aktuálně ve verzi Preview, a materiálu se můžou stát terčem změnit. Další informace najdete v článku [Úvod ML.NET](https://www.microsoft.com/net/learn/apps/machine-learning-and-ai/ml-dotnet).
+
+Aktuálně používáte této ukázky s postupy a související **ML.NET verze 0.10**. Další informace najdete v tématu poznámky k verzi v [úložiště GitHub dotnet/machinelearning](https://github.com/dotnet/machinelearning/tree/master/docs/release-notes).
 
 Použití `TextLoader`a určit pole souborů, které mají `Read` metody. Soubory musí mít stejné schéma (stejný počet a typ sloupců):
 

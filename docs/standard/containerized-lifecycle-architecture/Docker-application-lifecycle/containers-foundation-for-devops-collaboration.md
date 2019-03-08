@@ -4,12 +4,12 @@ description: Seznamte se s rolí klíče kontejnerů ke zjednodušení DevOps.
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 02/15/2019
-ms.openlocfilehash: 752a678be7735f7ae962005e1d373993d1496753
-ms.sourcegitcommit: 07c4368273b446555cb2c85397ea266b39d5fe50
+ms.openlocfilehash: 4b40837bf2b74d801b9794c88e79eb03bcd72e95
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56583729"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57679096"
 ---
 # <a name="containers-as-the-foundation-for-devops-collaboration"></a>Kontejnery jako základ pro spolupráci DevOps
 
@@ -33,7 +33,7 @@ Jsou dva týmy spolupracovat prostřednictvím základní platformy (kontejnery 
 
 Existuje mnoho důvodů, které zvýší počet kontejnerizovaných aplikací v nadcházejících letech a jeden z těchto důvodů je vytváření aplikací založených na mikroslužbách.
 
-Během posledních 15 let využívání webové služby byl base nepřeberným množstvím aplikací a pravděpodobně, po několika letech jsme se najít stejné situaci s založených na mikroslužbách aplikace spuštěné v kontejnerech Dockeru.
+Během posledních 15 let využívání webové služby byl base nepřeberným množstvím aplikací a pravděpodobně, po několika letech jsme najdete o stejnou situaci k založených na mikroslužbách aplikacím běžícím v kontejnerech Dockeru.
 
 Je také vhodné uvést, že kontejnery Dockeru můžete také použít pro monolitické aplikace a zachovat si většina výhody Dockeru. Kontejnery nejsou cílem pouze mikroslužeb.
 
@@ -53,7 +53,7 @@ Tyto výzvy vytvořit nové požadavky, když pomocí nástrojů DevOps, takže 
 
 - Jak můžete pomocí Open Source nástrojů a platforem pro kontejnery v Microsoft Azure?
 
-Pokud tyto otázky vám pomůže odpovědět, budete lépe připraveni přesunout vaše aplikace (existující nebo nové aplikace) pro kontejnery Dockeru. 
+Pokud tyto otázky vám pomůže odpovědět, budete se lépe připraveni přesunout vaše aplikace (existující nebo nové aplikace) pro kontejnery Dockeru. 
 
 ## <a name="introduction-to-a-generic-end-to-end-docker-application-life-cycle-workflow"></a>Úvod do obecných začátku do konce Docker aplikace životního cyklu pracovního postupu
 
@@ -63,11 +63,11 @@ Obrázek 2-2 představuje podrobnější pracovního postupu pro Docker životn�
 
 **Obrázek 2-2.** Pracovní postup vysoké úrovně pro životní cyklus kontejnerizované aplikace Dockeru
 
-Všechno začíná pro vývojáře, který zahajuje psaní kódu v pracovním postupu vnitřní smyčky. Fázi vnitřní smyčky je tady vývojářům definovat vše, co se stane před doručením (push) kód do úložiště kódu (například systém správy zdrojového kódu jako je Git). Po nebude potvrzena změna, aktivuje úložiště kontinuální integrace (CI) a zbytkem pracovního postupu.
+Všechno začíná pro vývojáře, který zahajuje psaní kódu v pracovním postupu vnitřní smyčky. Fázi vnitřní smyčky je tady vývojářům definovat vše, co se stane před doručením (push) kód do úložiště kódu (například systém správy zdrojového kódu jako je Git). Po jeho má potvrzené, aktivační události úložiště kontinuální integrace (CI) a zbytkem pracovního postupu.
 
 Vnitřní smyčky v podstatě se skládá z obvyklé kroky, například "kód" "spustit," "test" a "ladění" a navíc další kroky potřebné bezprostředně před místní spuštění aplikace. Toto je postup pro vývojáře spouštět a testovat aplikace jako kontejner Dockeru. Vnitřní smyčky pracovní postup bude vysvětlené v následujících částech.
 
-Přijetí kroku zpět podívat se na pracovním postupu end end, pracovních postupů DevOps je větší než technologie nebo sadu nástrojů: je to způsob myšlení, který vyžaduje kulturní vývoj. Je lidi, procesy a vhodné nástroje, aby životního cyklu aplikací rychlejší a předvídatelnější. Podnikům, které obvykle přijmout kontejnerizovaných pracovního postupu změnit strukturu svých organizací k reprezentaci lidi a procesy, které odpovídají kontejnerizovaných pracovního postupu.
+Přijetí kroku zpět podívat se na pracovním postupu end end, pracovních postupů DevOps je větší než technologie nebo sadu nástrojů: je to způsob myšlení, který vyžaduje kulturní vývoj. Jeho lidi, procesy a příslušnými nástroji aby životního cyklu aplikací rychlejší a předvídatelnější. Podnikům, které obvykle přijmout kontejnerizovaných pracovního postupu změnit strukturu svých organizací k reprezentaci lidi a procesy, které odpovídají kontejnerizovaných pracovního postupu.
 
 Cvičení DevOps může pomoci týmům rychlejší reakce společně na konkurenční zpožďuje nahrazením náchylné ruční procesy pomocí automatizace, což vede k zlepšení sledovatelnosti a opakovatelné pracovní postupy. Organizace také můžete efektivněji spravovat prostředí a realizovat úsporách nákladů díky službě kombinace místních a cloudových prostředků a také úzce integrovaných nástrojů.
 

@@ -3,12 +3,12 @@ title: Informace o .NET Core
 description: Další informace o .NET Core.
 author: richlander
 ms.date: 08/01/2018
-ms.openlocfilehash: c9247a33d59571c10dc59e91968c2b1c60006a50
-ms.sourcegitcommit: deb9225a55485a5a6e6c7914deb30ccfceb69d3f
+ms.openlocfilehash: 6c76d5e80cba6947eb5a91fb31fc3e511970d165
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/05/2019
-ms.locfileid: "54058552"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57675963"
 ---
 # <a name="about-net-core"></a>Informace o .NET Core
 
@@ -34,7 +34,7 @@ C#, Visual Basic a F# jazyky je možné psát aplikace a knihovny pro .NET Core.
 - Kolekce, jako například <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> a <xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType>.
 - Nástroj pro typy, jako například <xref:System.Net.Http.HttpClient?displayProperty=nameWithType>, a <xref:System.IO.FileStream?displayProperty=nameWithType>.
 - Datové typy, jako například <xref:System.Data.DataSet?displayProperty=nameWithType>, a [DbSet](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore/).
-- Vysoký výkon typy, jako například <xref:System.Numerics.Vector?displayProperty=nameWithType> a [kanály](https://blogs.msdn.microsoft.com/dotnet/2018/07/09/system-io-pipelines-high-performance-io-in-net/).
+- Vysoký výkon typy, jako například <xref:System.Numerics.Vector?displayProperty=nameWithType> a [kanály](https://devblogs.microsoft.com/dotnet/system-io-pipelines-high-performance-io-in-net/).
 
 .NET core zajišťuje kompatibilitu se rozhraní .NET Framework a rozhraní API Mono implementací [.NET Standard](../standard/net-standard.md) specifikace.
 
@@ -95,7 +95,7 @@ Je pravděpodobně nejjednodušším pochopit velikosti a tvaru .NET Core srovn�
 
 Hlavní rozdíly mezi .NET Core a .NET Framework:
 
-- **Modely aplikace** – .NET Core nepodporuje všechny rozhraní .NET Framework aplikace – modely. Konkrétně se nepodporuje webové formuláře ASP.NET a ASP.NET MVC, ale podporuje ASP.NET Core MVC. Jsme představili, který [bude podporovat .NET Core 3, WPF a Windows Forms](https://blogs.msdn.microsoft.com/dotnet/2018/05/07/net-core-3-and-support-for-windows-desktop-applications/).
+- **Modely aplikace** – .NET Core nepodporuje všechny rozhraní .NET Framework aplikace – modely. Konkrétně se nepodporuje webové formuláře ASP.NET a ASP.NET MVC, ale podporuje ASP.NET Core MVC. Jsme představili, který [bude podporovat .NET Core 3, WPF a Windows Forms](https://devblogs.microsoft.com/dotnet/net-core-3-and-support-for-windows-desktop-applications/).
 - **Rozhraní API** – .NET Core obsahuje velká podmnožina knihovna tříd rozhraní .NET Framework základ, s jinou řešení (se liší názvy sestavení; členy zveřejněné na typy se liší v klíčových případů). Tyto rozdíly vyžadovat změny do zdroje port až po .NET Core v některých případech (viz [microsoft/dotnet-apiport](https://github.com/microsoft/dotnet-apiport)). Implementuje .NET core [.NET Standard](../standard/net-standard.md) specifikace rozhraní API.
 - **Subsystémy** – .NET Core v rozhraní .NET Framework, s cílem programovací model a jednodušší implementace implementuje podmnožinu subsystémů. Například není podporována zabezpečení přístupu kódu (CAS), i když se podporuje reflexe.
 - **Platformy** – rozhraní .NET Framework podporuje Windows a Windows Server a .NET Core podporuje také macOS a Linux.

@@ -4,12 +4,12 @@ description: Přečtěte si postup, "Vnější smyčka" pracovní postup DevOps
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 02/15/2019
-ms.openlocfilehash: 7043f34557651c3e8e79baf263bd0bcefd5a847a
-ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
+ms.openlocfilehash: 495e717787c346e451c2f79ef4200b478577aa9d
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56836406"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57676197"
 ---
 # <a name="steps-in-the-outer-loop-devops-workflow-for-a-docker-application"></a>Kroky v postupu DevOps vnější smyčky pro aplikaci v Dockeru
 
@@ -104,7 +104,7 @@ Většina aplikací Dockeru se obvykle skládají z víc kontejnerů než jednoh
 
 Proto po vytvoření aplikace kontejnerů v kanálu CI, budete potřebovat k nasazení, integrovat a otestujte aplikaci jako celek se všemi jeho kontejnery v rámci hostitele služby integrace Dockeru nebo dokonce do testovací cluster, ke kterému jsou kontejnery distribuovat.
 
-Pokud při použití jednoho hostitele, můžete použít příkazy Dockeru, jako je docker-compose pro sestavování a nasazování kontejnerů související k testování a validaci prostředí Docker v jednom virtuálním počítači. Ale při práci s clusterem orchestrator jako DC/OS, Kubernetes a Docker Swarm, budete muset nasadit prostřednictvím orchestrator, v závislosti na vybrané cluster a Plánovač a jiný mechanismus kontejnery.
+Pokud při použití jednoho hostitele, můžete použít příkazy Dockeru, jako je docker-compose pro sestavování a nasazování kontejnerů související k testování a validaci prostředí Docker v jednom virtuálním počítači. Ale pokud pracujete s clusterem orchestrator jako DC/OS, Kubernetes a Docker Swarm, budete muset nasadit prostřednictvím orchestrator, v závislosti na vybrané cluster a Plánovač a jiný mechanismus kontejnery.
 
 Následuje několik typů testů, které lze spustit pro kontejnery Dockeru:
 
@@ -144,7 +144,7 @@ Používání úloh Dockeru, můžete odeslat sadu imagí služby určené `dock
 
 Neměnnost imagí Dockeru zajišťuje opakovatelné nasazování s co vyvíjel, testovat pomocí položek konfigurace a spusťte v produkčním prostředí. Až budete mít Image Dockeru aplikace publikované v registru Dockeru (privátní nebo veřejné), můžete je nasadit do několika prostředí, které bude pravděpodobně (výroba, kontrola kvality, Fázování importu, atd.) z kanálu průběžného Doručování s využitím služby Azure DevOps úlohy kanálu nebo Azure DevOps služby Release Management.
 
-Ale v tuto chvíli to závisí na druhu aplikaci v Dockeru, kterou nasazujete. Nasazení jednoduché aplikace (ze sestavení a nasazení hlediska) stejně jako monolitické aplikace zahrnující několik kontejnerů nebo služeb a nasazené na několika serverech nebo virtuálních počítačů se liší od složitější aplikaci, jako je nasazení aplikace orientované na mikroslužby s mnoha funkcemi. Tyto dva scénáře jsou vysvětlené v následujících částech.
+Ale v tuto chvíli to závisí na druhu aplikaci v Dockeru nasazujete. Nasazení jednoduché aplikace (ze sestavení a nasazení hlediska) stejně jako monolitické aplikace zahrnující několik kontejnerů nebo služeb a nasazené na několika serverech nebo virtuálních počítačů se liší od složitější aplikaci, jako je nasazení aplikace orientované na mikroslužby s mnoha funkcemi. Tyto dva scénáře jsou vysvětlené v následujících částech.
 
 ### <a name="deploying-composed-docker-applications-to-multiple-docker-environments"></a>Nasazení skládá aplikací Dockeru do různých prostředí Dockeru
 
@@ -202,7 +202,7 @@ Obrázek 5 – 11 předvádí, jak můžete upravit úkol nasadit Docker a zadat
 
 ## <a name="step-5-run-and-manage"></a>Krok 5: Spuštění a Správa
 
-Vzhledem k tomu, že spouštění a správu aplikací na podnikové produkční úroveň je hlavní předmět v a sám sebe a z důvodu typ operace a lidé pracují na této úrovni (IT oddělení) a také velký rozsah této oblasti, můžeme mít věnovala celý vedle kapitola s vysvětlením ho.
+Vzhledem k tomu, že spouštění a správu aplikací na podnikové produkční úroveň je hlavní předmět v a sám sebe a z důvodu typ operace a lidé pracují na této úrovni (IT oddělení) a také velký rozsah této oblasti, se věnovala celý následující kapitoly s vysvětlením ho.
 
 ## <a name="step-6-monitor-and-diagnose"></a>Krok 6: Monitorování a Diagnostika
 

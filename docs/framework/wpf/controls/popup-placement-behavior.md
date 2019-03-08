@@ -7,12 +7,12 @@ helpviewer_keywords:
 - placing popups [WPF]
 - positioning popups [WPF]
 ms.assetid: fbf642e9-f670-4efd-a7af-a67468a1c8e1
-ms.openlocfilehash: 0f02fcef5c905e81808d76b71b45e0d010084268
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 449ec3ff30bb4650c32d3f6b9743b5d1a31ad0de
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57360550"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57679512"
 ---
 # <a name="popup-placement-behavior"></a>Chování při umístění překryvného objektu
 A <xref:System.Windows.Controls.Primitives.Popup> ovládací prvek zobrazí obsah v samostatném okně, které čísel s plovoucí čárkou selhání aplikace. Můžete zadat umístění <xref:System.Windows.Controls.Primitives.Popup> vzhledem k ovládacího prvku, myši nebo na obrazovce s použitím <xref:System.Windows.Controls.Primitives.Popup.PlacementTarget%2A>, <xref:System.Windows.Controls.Primitives.Popup.Placement%2A>, <xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A>, <xref:System.Windows.Controls.Primitives.Popup.HorizontalOffset%2A>, a <xref:System.Windows.Controls.Primitives.Popup.VerticalOffset%2A> vlastnosti.  Tyto vlastnosti spolupracují a poskytují flexibilitu v určeném umístění <xref:System.Windows.Controls.Primitives.Popup>.  
@@ -30,8 +30,7 @@ A <xref:System.Windows.Controls.Primitives.Popup> ovládací prvek zobrazí obsa
   
  Následující obrázek znázorňuje obrázek a <xref:System.Windows.Controls.Primitives.Popup> ovládacích prvků  
   
- ![Obrázek s čtyři překryvných ovládacích prvků](./media/popupplacementintro.png "PopupPlacementIntro")  
-Obrázek s čtyři automaticky otevíraná okna  
+ ![Obrázek s čtyři překryvných ovládacích prvků](./media/popup-placement-behavior/popup-placement-intro.png "Image pomocí čtyř automaticky otevíraná okna")    
   
  Tento jednoduchý příklad ukazuje, jak nastavit <xref:System.Windows.Controls.Primitives.Popup.PlacementTarget%2A> a <xref:System.Windows.Controls.Primitives.Popup.Placement%2A> vlastnosti, ale pomocí <xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A>, <xref:System.Windows.Controls.Primitives.Popup.HorizontalOffset%2A>, a <xref:System.Windows.Controls.Primitives.Popup.VerticalOffset%2A> vlastnosti, máte ještě větší kontrolu nad where <xref:System.Windows.Controls.Primitives.Popup> je umístěn.  
   
@@ -58,8 +57,8 @@ Obrázek s čtyři automaticky otevíraná okna
   
  Následující obrázek ukazuje, že <xref:System.Windows.Controls.Primitives.Popup> relativně k umisťovanému <xref:System.Windows.Controls.Canvas>.  
   
- ![Ovládací prvek popup PlacementTarget](./media/popupplacementnoplacementtarget.PNG "PopupPlacementNoPlacementTarget")  
-Automaticky otevírané okno PlacementTarget  
+ ![Ovládací prvek popup PlacementTarget](./media/popup-placement-behavior/popup-placement-no-placement-target.png "automaticky otevírané okno PlacementTarget.")  
+  
   
  Následující příklad vytvoří <xref:System.Windows.Controls.Primitives.Popup> , který je podřízený <xref:System.Windows.Controls.Canvas>, tentokrát ale <xref:System.Windows.Controls.Primitives.Popup.PlacementTarget%2A> je nastavena na `ellipse1`, takže se automaticky otevírané okno se zobrazí pod <xref:System.Windows.Shapes.Ellipse>.  
   
@@ -67,8 +66,7 @@ Automaticky otevírané okno PlacementTarget
   
  Následující obrázek ukazuje, že <xref:System.Windows.Controls.Primitives.Popup> relativně k umisťovanému <xref:System.Windows.Shapes.Ellipse>.  
   
- ![Automaticky otevírané okno umístěn vzhledem k Elipsa](./media/popupplacementwithplacementtarget.PNG "PopupPlacementWithPlacementTarget")  
-Automaticky otevírané okno s PlacementTarget  
+ ![Automaticky otevírané okno umístěn vzhledem k Elipsa](./media/popup-placement-behavior/popup-placement-with-placement-target.png "automaticky otevírané okno s PlacementTarget")    
   
 > [!NOTE]
 >  Pro <xref:System.Windows.Controls.ToolTip>, výchozí hodnota <xref:System.Windows.Controls.Primitives.Popup.Placement%2A> je <xref:System.Windows.Controls.Primitives.PlacementMode.Mouse>.  Pro <xref:System.Windows.Controls.ContextMenu>, výchozí hodnota <xref:System.Windows.Controls.Primitives.Popup.Placement%2A> je <xref:System.Windows.Controls.Primitives.PlacementMode.MousePoint>. Tyto hodnoty jsou vysvětlené později v "Jak vlastnosti spolupracují."  
@@ -82,8 +80,8 @@ Automaticky otevírané okno s PlacementTarget
   
  Následující obrázek ukazuje výsledek v předchozím příkladu.  
   
- ![Automaticky otevírané okno a nemusíte PlacementRectangle](./media/popupplacementplacementrectangle.PNG "PopupPlacementPlacementRectangle")  
-Automaticky otevírané okno a nemusíte PlacementRectangle  
+ ![Automaticky otevírané okno a nemusíte PlacementRectangle](./media/popup-placement-behavior/popup-placement-placement-rectangle.png "automaticky otevírané okno a nemusíte PlacementRectangle.")  
+  
   
 ### <a name="target-origin-and-popup-alignment-point"></a>Cílové umístění a bod zarovnání automaticky otevíraného okna  
  *Cílit na počátku* a *bod zarovnání automaticky otevíraného okna* jsou referenční body v cílové oblasti a automaticky otevírané okno, v uvedeném pořadí, které se používají pro umístění. Můžete použít <xref:System.Windows.Controls.Primitives.Popup.HorizontalOffset%2A> a <xref:System.Windows.Controls.Primitives.Popup.VerticalOffset%2A> vlastnosti pozici automaticky otevíraného okna v cílové oblasti.  <xref:System.Windows.Controls.Primitives.Popup.HorizontalOffset%2A> a <xref:System.Windows.Controls.Primitives.Popup.VerticalOffset%2A> jsou relativní vzhledem k cílové umístění a bod zarovnání automaticky otevíraného okna. Hodnota <xref:System.Windows.Controls.Primitives.Popup.Placement%2A> vlastnost určuje, kde se nachází cílový bod zarovnání původu a automaticky otevírané okno.  
@@ -94,8 +92,7 @@ Automaticky otevírané okno a nemusíte PlacementRectangle
   
  Následující obrázek ukazuje výsledek v předchozím příkladu.  
   
- ![Umístění automaticky otevíraného okna s cílový bod zarovnání původu](./media/popupplacementtargetoriginalignmentpoint.PNG "PopupPlacementTargetOriginAlignmentPoint")  
-Automaticky otevírané okno s HorizontalOffset a VerticalOffset  
+ ![Umístění automaticky otevíraného okna s cílový bod zarovnání původu](./media/popup-placement-behavior/popup-placement-target-origin-alignment-point.png "automaticky otevírané okno s HorizontalOffset a VerticalOffset.")    
   
 <a name="How"></a>   
 ## <a name="how-the-properties-work-together"></a>Jak vlastnosti spolupracují  
@@ -120,32 +117,23 @@ Automaticky otevírané okno s HorizontalOffset a VerticalOffset
   
  Následující ilustrace <xref:System.Windows.Controls.Primitives.Popup>, cílovou oblast, cíl původu a zarovnání automaticky otevíraného okna bodů pro každou <xref:System.Windows.Controls.Primitives.PlacementMode> hodnotu. Každý obrázek je žlutý, cílové oblasti a <xref:System.Windows.Controls.Primitives.Popup> modrá.  
   
- ![Automaticky otevírané okno s absolutní nebo AbsolutePoint](./media/popupplacementabsolute.png "PopupPlacementAbsolute")  
-Umístění je absolutní nebo AbsolutePoint  
+ ![Automaticky otevírané okno s absolutní nebo AbsolutePoint](./media/popup-placement-behavior/popup-placement-absolute.png "umístění je absolutní nebo AbsolutePoint.")    
   
- ![Automaticky otevírané okno s dolní umístění](./media/popupplacementbottom.png "PopupPlacementBottom")  
-Umístění je dolní  
+ ![Automaticky otevírané okno s dolní umístění](./media/popup-placement-behavior/popup-placement-bottom.png "umístění je dole.")   
   
- ![Automaticky otevírané okno s Center umístění](./media/popupplacementcenter.png "PopupPlacementCenter")  
-Umístění je System Center  
+ ![Automaticky otevírané okno s Center umístění](./media/popup-placement-behavior/popup-placement-center.png "umístění je System Center.")    
   
- ![Automaticky otevírané okno s vlevo umístění](./media/popupplacementleft.png "PopupPlacementLeft")  
-Umístění je vlevo  
+ ![Automaticky otevírané okno s vlevo umístění](./media/popup-placement-behavior/popup-placement-left.png "umístění je vlevo.")   
   
- ![Automaticky otevírané okno s umístění myši](./media/popupplacementmouse.png "PopupPlacementMouse")  
-Umístění je myši  
+ ![Automaticky otevírané okno s umístění myši](./media/popup-placement-behavior/popup-placement-mouse.png "umístění je myši.")  
   
- ![Automaticky otevírané okno s MousePoint umístění](./media/popupplacementmousepoint.png "PopupPlacementMousePoint")  
-Umístění je MousePoint  
+ ![Automaticky otevírané okno s MousePoint umístění](./media/popup-placement-behavior/popup-placement-mousepoint.png "MousePoint je umístění.")  
   
- ![Automaticky otevírané okno s relativní nebo RelativePoint](./media/popupplacementrelative.png "PopupPlacementRelative")  
-Umístění je relativní nebo RelativePoint  
+ ![Automaticky otevírané okno s relativní nebo RelativePoint](./media/popup-placement-behavior/popup-placement-relative.png "umístění je relativní nebo RelativePoint.")    
   
- ![Automaticky otevírané okno s správné umístění](./media/popupplacementright.png "PopupPlacementRight")  
-Umístění je vpravo  
+ ![Automaticky otevírané okno s správné umístění](./media/popup-placement-behavior/popup-placement-right.png "umístění je vpravo.")    
   
- ![Automaticky otevírané okno s nejvyšší umístění](./media/popupplacementtop.png "PopupPlacementTop")  
-Umístění je na nejvyšší úrovni  
+ ![Automaticky otevírané okno s nejvyšší umístění](./media/popup-placement-behavior/popup-placement-top.png "umístění je na nejvyšší úrovni.")    
   
 <a name="When"></a>   
 ## <a name="when-the-popup-encounters-the-edge-of-the-screen"></a>Pokud automaticky otevírané okno nalezne okrajem obrazovky  
@@ -178,21 +166,19 @@ Umístění je na nejvyšší úrovni
 ### <a name="aligning-to-the-screen-edge"></a>Zarovnání na okraji obrazovky  
  A <xref:System.Windows.Controls.Primitives.Popup> dokáže sladit k okraji obrazovky pomocí samotného přemístění tak celý <xref:System.Windows.Controls.Primitives.Popup> je viditelný na obrazovce.  V tomto případě vzdálenost mezi cílový bod zarovnání původu a automaticky otevírané okno se mohou lišit od hodnoty <xref:System.Windows.Controls.Primitives.Popup.HorizontalOffset%2A> a <xref:System.Windows.Controls.Primitives.Popup.VerticalOffset%2A>. Když <xref:System.Windows.Controls.Primitives.Popup.Placement%2A> je <xref:System.Windows.Controls.Primitives.PlacementMode.Absolute>, <xref:System.Windows.Controls.Primitives.PlacementMode.Center>, nebo <xref:System.Windows.Controls.Primitives.PlacementMode.Relative>, <xref:System.Windows.Controls.Primitives.Popup> zarovná samotné každý okraji obrazovky.  Například předpokládejme, že <xref:System.Windows.Controls.Primitives.Popup> má <xref:System.Windows.Controls.Primitives.Popup.Placement%2A> nastavena na <xref:System.Windows.Controls.Primitives.PlacementMode.Relative> a <xref:System.Windows.Controls.Primitives.Popup.VerticalOffset%2A> nastavena na hodnotu 100.  Pokud jsou dolní okraje obrazovky skryje všechny nebo část <xref:System.Windows.Controls.Primitives.Popup>, <xref:System.Windows.Controls.Primitives.Popup> přemístí samotné podél dolního okraje obrazovky a svislou vzdálenost mezi cílové umístění a automaticky otevírané okno bod zarovnání je menší než 100. Následující obrázek ukazuje to.  
   
- ![Automaticky otevírané okno, které Zarovná okraje obrazovky](./media/popupplacementrelativescreenedge.png "PopupPlacementRelativeScreenEdge")  
-Automaticky otevírané okno nastavuje zarovnání na hranu obrazovky  
+ ![Automaticky otevírané okno, které Zarovná okraje obrazovky](./media/popup-placement-behavior/popup-placement-relative-screen-edge.png "automaticky otevírané okno nastavuje zarovnání na hranu obrazovky.")    
   
 ### <a name="changing-the-popup-alignment-point"></a>Změna bodu zarovnání automaticky otevíraného okna  
  Pokud <xref:System.Windows.Controls.Primitives.Popup.Placement%2A> je <xref:System.Windows.Controls.Primitives.PlacementMode.AbsolutePoint>, <xref:System.Windows.Controls.Primitives.PlacementMode.RelativePoint>, nebo <xref:System.Windows.Controls.Primitives.PlacementMode.MousePoint>, při pravého nebo dolního okraje pravé obrazovky, zaznamená se automaticky otevírané okno se změní bod zarovnání automaticky otevíraného okna.  
   
  Následující obrázek ukazuje, že když dolnímu okraji obrazovky skryje všechny nebo část <xref:System.Windows.Controls.Primitives.Popup>, bod zarovnání automaticky otevíraného okna je dolní části levého horního rohu <xref:System.Windows.Controls.Primitives.Popup>.  
   
- ![Nový bod zarovnání z důvodu dolnímu okraji obrazovky](./media/popupplacementrelativepointscreenedge.png "PopupPlacementRelativePointScreenEdge")  
-Automaticky otevírané okno, zaznamená dolního okraje obrazovky a změní bod zarovnání automaticky otevíraného okna  
+ ![Nový bod zarovnání z důvodu dolnímu okraji obrazovky](./media/popup-placement-behavior/popup-placement-relative-point-screen-edge.png "automaticky otevírané okno, zaznamená dolního okraje obrazovky a změní bod zarovnání automaticky otevíraného okna.")  
+ 
   
  Následující obrázek ukazuje, že <xref:System.Windows.Controls.Primitives.Popup> je skrytý okraje pravé obrazovky bod zarovnání automaticky otevíraného okna je pravém horním rohu <xref:System.Windows.Controls.Primitives.Popup>.  
   
- ![Nový bod zarovnání automaticky otevíraného okna z důvodu okraji obrazovky](./media/popupplacementrelativepointrightscreenedge.png "PopupPlacementRelativePointRightScreenEdge")  
-Automaticky otevírané okno, zaznamená pravého okraje obrazovky a změní bod zarovnání automaticky otevíraného okna  
+ ![Nový bod zarovnání automaticky otevíraného okna z důvodu okraji obrazovky](./media/popup-placement-behavior/popup-placement-relative-point-right-screen-edge.png "automaticky otevírané okno, zaznamená pravého okraje obrazovky a změní bod zarovnání automaticky otevíraného okna.")    
   
  Pokud <xref:System.Windows.Controls.Primitives.Popup> zaznamená dolní a okraje pravé obrazovky pravého dolního rohu je bod zarovnání automaticky otevíraného okna <xref:System.Windows.Controls.Primitives.Popup>.  
   
@@ -201,28 +187,24 @@ Automaticky otevírané okno, zaznamená pravého okraje obrazovky a změní bod
   
  Následující obrázek ukazuje, že <xref:System.Windows.Controls.Primitives.Popup.Placement%2A> je <xref:System.Windows.Controls.Primitives.PlacementMode.Bottom> a <xref:System.Windows.Controls.Primitives.Popup> dolnímu okraji obrazovky, zaznamená cíl původ levého horního rohu cílovou oblast a bod zarovnání automaticky otevíraného okna je dolní části levého horního rohu <xref:System.Windows.Controls.Primitives.Popup>.  
   
- ![Nový bod zarovnání z důvodu dolnímu okraji obrazovky](./media/popupplacementbottomscreenedge.png "PopupPlacementBottomScreenEdge")  
-Umístění je dolní a automaticky otevírané okno, zaznamená dolním okrajem obrazovky  
+ ![Nový bod zarovnání z důvodu dolnímu okraji obrazovky](./media/popup-placement-behavior/popup-placement-bottom-screen-edge.png "umístění je dolní a dolním okrajem obrazovky, zaznamená automaticky otevíraného okna.")    
   
  Následující obrázek ukazuje, že <xref:System.Windows.Controls.Primitives.Popup.Placement%2A> je <xref:System.Windows.Controls.Primitives.PlacementMode.Left> a <xref:System.Windows.Controls.Primitives.Popup> narazí levému okraji obrazovky, cíl původ pravém horním rohu cílovou oblast a levého horního rohu jebodzarovnáníautomatickyotevíranéhookna<xref:System.Windows.Controls.Primitives.Popup>.  
   
- ![Nový bod zarovnání z důvodu levému okraji obrazovky](./media/popupplacementleftscreenedge.png "PopupPlacementLeftScreenEdge")  
-Umístění je vlevo a automaticky otevírané okno, zaznamená levým okrajem obrazovky  
+ ![Nový bod zarovnání z důvodu levému okraji obrazovky](./media/popup-placement-behavior/popup-placement-left-screen-edge.png "umístění je vlevo a levým okrajem obrazovky, zaznamená automaticky otevíraného okna.")  
   
  Následující obrázek ukazuje, že <xref:System.Windows.Controls.Primitives.Popup.Placement%2A> je <xref:System.Windows.Controls.Primitives.PlacementMode.Right> a <xref:System.Windows.Controls.Primitives.Popup> narazí pravému okraji obrazovky, je cíl zdrojem levého horního rohu cílovou oblast a bod zarovnání automaticky otevíraného okna je pravém horním rohu <xref:System.Windows.Controls.Primitives.Popup>.  
   
- ![Nový bod zarovnání z důvodu pravému okraji obrazovky](./media/popupplacementrightscreenedge.png "PopupPlacementRightScreenEdge")  
-Umístění je vpravo a automaticky otevírané okno, zaznamená pravým okrajem obrazovky  
+ ![Nový bod zarovnání z důvodu pravému okraji obrazovky](./media/popup-placement-behavior/popup-placement-right-screen-edge.png "umístění je vpravo a automaticky otevírané okno, zaznamená pravého okraje obrazovky.")  
+  
   
  Následující obrázek ukazuje, že <xref:System.Windows.Controls.Primitives.Popup.Placement%2A> je <xref:System.Windows.Controls.Primitives.PlacementMode.Top> a <xref:System.Windows.Controls.Primitives.Popup> narazí hornímu okraji obrazovky, je cíl zdrojem levého dolního rohu cílovou oblast a bod zarovnání automaticky otevíraného okna je levého horního rohu <xref:System.Windows.Controls.Primitives.Popup>.  
   
- ![Nový bod zarovnání z důvodu hornímu okraji obrazovky](./media/popupplacementtopscreenedge.png "PopupPlacementTopScreenEdge")  
-Umístění je na nejvyšší úrovni a automaticky otevírané okno, zaznamená horním okrajem obrazovky  
+ ![Nový bod zarovnání z důvodu hornímu okraji obrazovky](./media/popup-placement-behavior/popup-placement-top-screen-edge.png "umístění je na nejvyšší úrovni a horním okrajem obrazovky, zaznamená automaticky otevíraného okna.")  
   
  Následující obrázek ukazuje, že <xref:System.Windows.Controls.Primitives.Popup.Placement%2A> je <xref:System.Windows.Controls.Primitives.PlacementMode.Mouse> a <xref:System.Windows.Controls.Primitives.Popup> dolnímu okraji obrazovky, zaznamená cíl původ levého horního rohu cílovou oblast (hranice ukazatel myši) a zarovnání automaticky otevíraného okna bod je dolní části levého horního rohu <xref:System.Windows.Controls.Primitives.Popup>.  
   
- ![nový bod zarovnání z důvodu myši u okraje obrazovky](./media/popupplacementmousescreenedge.png "PopupPlacementMouseScreenEdge")  
-Umístění je myš a automaticky otevírané okno, zaznamená dolním okrajem obrazovky  
+ ![nový bod zarovnání z důvodu myši u okraje obrazovky](./media/popup-placement-behavior/popup-placement-mouse-screen-edge.png "umístění je myš a dolním okrajem obrazovky, zaznamená automaticky otevíraného okna.")    
   
 ### <a name="customizing-popup-placement"></a>Přizpůsobení umístění automaticky otevíraného okna  
  Cílový bod zarovnání původu a automaticky otevíraného okna můžete přizpůsobit tak, že nastavíte <xref:System.Windows.Controls.Primitives.Popup.Placement%2A> vlastnost <xref:System.Windows.Controls.Primitives.PlacementMode.Custom>. Potom definujte <xref:System.Windows.Controls.Primitives.CustomPopupPlacementCallback> delegáta, který vrátí sadu bodů možná umístění a primární osy (v upřednostňovaném pořadí) pro <xref:System.Windows.Controls.Primitives.Popup>. Bod, který zobrazuje největší část <xref:System.Windows.Controls.Primitives.Popup> zaškrtnuto.  Pozice <xref:System.Windows.Controls.Primitives.Popup> se automaticky upraví, pokud <xref:System.Windows.Controls.Primitives.Popup> je skryt okraji obrazovky. Příklad najdete v tématu [určení vlastního překryvného umístění](how-to-specify-a-custom-popup-position.md).  

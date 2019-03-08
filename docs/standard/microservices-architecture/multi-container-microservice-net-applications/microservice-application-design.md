@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/02/2018
-ms.openlocfilehash: 124bd402af7b721366af67b362747dfd71907f34
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 777262ddeecf1e171344b34e586032e56f398463
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56981878"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57674390"
 ---
 # <a name="designing-a-microservice-oriented-application"></a>Návrh aplikace orientované na mikroslužby
 
@@ -63,11 +63,11 @@ Každá mikroslužba má svou vlastní databázi, což umožňuje být zcela odd
 
 ### <a name="eshoponcontainers-a-reference-application-for-net-core-and-microservices-deployed-using-containers"></a>eShopOnContainers: Referenční aplikace pro .NET Core a mikroslužby se nasazují pomocí kontejnerů
 
-Abyste se mohli zaměřit na architektury a technologie místo přemýšlení o hypothetic obchodní domény, který možná nevíte, jsme vybrali dobře známé obchodní domény – konkrétně, zjednodušené aplikaci elektronického obchodování (kde e), která předkládá katalog produkty, trvá objednávek zákazníků, ověřuje inventáře a provede další podnikové funkce. Tento zdrojový kód aplikace založené na kontejnerech je k dispozici v [aplikaci eShopOnContainers](https://aka.ms/MicroservicesArchitecture) úložiště GitHub.
+Abyste se mohli zaměřit na architektury a technologie místo přemýšlení o hypotetický obchodní domény, který možná nevíte, jsme vybrali dobře známé obchodní domény – konkrétně, zjednodušené aplikaci elektronického obchodování (kde e), která předkládá katalog produktů, trvá objednávek zákazníků, ověřuje inventáře a provede další podnikové funkce. Tento zdrojový kód aplikace založené na kontejnerech je k dispozici v [aplikaci eShopOnContainers](https://aka.ms/MicroservicesArchitecture) úložiště GitHub.
 
 Aplikace se skládá z více subsystémů, včetně několika úložiště uživatelského rozhraní front-endů (webová aplikace a nativní mobilní aplikace), spolu s back-end mikroslužeb a kontejnerů pro všechny požadované operace na straně serveru s několika brány rozhraní API jako konsolidované vstupní body do interního mikroslužeb. Obrázek 6-1 ukazuje architekturu referenční aplikace.
 
-![Mobilní zařízení a SPA klienti komunikují do jedné brány koncových bodů rozhraní API, které pak sdělí mikroslužeb. Tradditional webovými klienty sdělit MVC mikroslužeb, který komunikuje s mikroslužeb](./media/image1.png)
+![Mobilní zařízení a SPA klienti komunikují do jedné brány koncových bodů rozhraní API, které pak sdělí mikroslužeb. Tradičními webovými klienty sdělit MVC mikroslužeb, která komunikuje s mikroslužeb](./media/image1.png)
 
 **Obrázek 6-1**. Aplikaci eShopOnContainers referenční architektuře aplikace pro vývojové prostředí
 
@@ -91,7 +91,7 @@ Proto jednotky nasazení pro mikroslužby (a dokonce i pro databáze v této apl
 
 ### <a name="additional-resources"></a>Další zdroje
 
-- **aplikaci eShopOnContainers úložiště GitHub. Zdrojový kód pro odkaz na aplikaci**  
+- **aplikaci eShopOnContainers úložiště GitHub. Zdrojový kód pro odkaz na aplikaci**\
     [https://aka.ms/eShopOnContainers/](https://aka.ms/eShopOnContainers/)
 
 ## <a name="benefits-of-a-microservice-based-solution"></a>Výhody řešení založených na mikroslužbách
@@ -142,7 +142,7 @@ Jak je uvedeno v části architektura při navrhování a vytváření komplexn�
 
 Externí architektura je architekturu mikroslužeb sestává z více služeb, následující zásady je popsáno v části architektura tohoto průvodce. Ale v závislosti na povaze jednotlivých mikroslužeb a nezávisle na architekturu mikroslužeb vysoké úrovně zvolíte, je běžné a v některých případech žádoucí mít různé interní architektury, každý různé vzorce, podle pro různé mikroslužby. Mikroslužby dá dokonce využít různé technologie a programovacích jazyků. Obrázek 6-2 znázorňuje tuto různorodost.
 
-![Rozdíl mezi externí architektury: mikroslužeb vzory, brány rozhraní API, odolné komunikace, publikování a odběr, atd. a interní architekturu: data driven/CRUD DDD pattrens, vkládání závislostí, více knihoven, atd.](./media/image2.png)
+![Rozdíl mezi externí architektury: mikroslužeb vzory, brány rozhraní API, odolné komunikace, publikování a odběr, atd. a interní architekturu: data driven/CRUD vzorů DDD, vkládání závislostí, více knihoven, atd.](./media/image2.png)
 
 **Obrázek 6 – 2**. Externí a interní architektury a návrhu
 
@@ -150,7 +150,7 @@ Například v našich *aplikaci eShopOnContainers* jsou jednoduché mikroslužby
 
 Dalším důvodem pro různé technologie jednotlivých mikroslužbách může být povaze jednotlivých mikroslužeb. Například může být vhodnější použít funkcionální programovací jazyk jako F\#, nebo pokud se zaměřujete na AI a strojového učení domén namísto více objektově orientované programovací jazyky jako C i jazyka, jako je R\#.
 
-Dolní řádek je, že každá mikroslužba může mít jinou interní architekturu podle vzorů návrhů. Ne všechny mikroslužby by měla být implementována pomocí pokročilé vzorů DDD, protože, který by být over-pass-the inženýrství je. Podobně komplexní mikroslužby s neustále se měnící obchodní logiku, neměli byste je implementovat jako komponentu CRUD, nebo můžete skončit s kódem nízké kvality. 
+Dolní řádek je, že každá mikroslužba může mít jinou interní architekturu podle vzorů návrhů. Ne všechny mikroslužby by měla být implementována pomocí pokročilé vzorů DDD, protože, který by být over-pass-the inženýrství je. Podobně komplexní mikroslužby s neustále se měnící obchodní logiku, neměli byste je implementovat jako komponentu CRUD, nebo můžete skončit s kódem nízké kvality.
 
 ## <a name="the-new-world-multiple-architectural-patterns-and-polyglot-microservices"></a>Novém světě: více vzorech architektury a mikroslužby polyglot
 
@@ -172,7 +172,7 @@ Můžete také vytvářet mikroslužby s mnoha technologie a jazyky, jako je roz
 
 Důležité je, že žádná konkrétní architektura vzor nebo styl ani žádné konkrétní technologie, je nejvhodnější pro všechny situace. Obrázek 6 – 3 znázorňuje některé přístupy a technologie (i když není v libovolném pořadí), které se daly použít v různých mikroslužeb.
 
-![Více z možných architektonických a polyglotické mikroslužeb prostředky lze kombinovat a odpovídají jazyky a tecnologies podle potřeb jednotlivých mikroslužeb a ještě je hovoří spolu.](./media/image3.png)
+![Více z možných architektonických a polyglotické mikroslužeb prostředky lze kombinovat a odpovídají jazyků a technologií podle potřeb jednotlivých mikroslužeb a ještě je hovoří spolu.](./media/image3.png)
 
 **Obrázek 6 – 3**. Více schématu architektury a world polyglot mikroslužeb
 

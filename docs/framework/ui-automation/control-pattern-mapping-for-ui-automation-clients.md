@@ -5,14 +5,12 @@ helpviewer_keywords:
 - control patterns, for UI Automation clients
 - UI Automation, clients, control patterns for
 ms.assetid: 8b81645b-8be3-4e26-9c98-4fb0fceca06b
-author: Xansky
-ms.author: mhopkins
-ms.openlocfilehash: 7552db2b0d1f9063733ddac29612057e0475570e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: b98735b111d634584ec019a75d942f39e38cc8c5
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54597194"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57679577"
 ---
 # <a name="control-pattern-mapping-for-ui-automation-clients"></a>Mapování vzorů ovládacích prvků pro klienty automatizace uživatelského rozhraní
 > [!NOTE]
@@ -63,7 +61,7 @@ ms.locfileid: "54597194"
 |Číselník|Žádná|Rozsah, výběr, hodnota|Žádná|  
 |Tlačítko rozdělení|Vyvolání, Rozbalit/sbalit|Žádná|Žádná|  
 |Stavový řádek|Žádná|Mřížka|Žádná|  
-|Tabulátor|Výběr|Posuv|Žádná|  
+|Karta|Výběr|Posuv|Žádná|  
 |Položka tabulátoru|Položka výběru|Žádná|Vyvolat|  
 |Tabulka|Mřížka položky mřížky, tabulky, položka tabulky|Žádná|Žádná|  
 |Text|Žádná|Text položky, položka tabulky mřížky|Hodnota|  
