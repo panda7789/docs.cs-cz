@@ -1,5 +1,5 @@
 ---
-title: 'Průvodce: Práce s ovládacím prvkem MaskedTextBox'
+title: 'Návod: Práce s ovládacím prvkem MaskedTextBox'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,45 +11,45 @@ helpviewer_keywords:
 - user input [Windows Forms], controlling
 - text [Windows Forms], controls for input
 ms.assetid: df60565e-5447-4110-92a6-be1f6ff5faa3
-ms.openlocfilehash: a81a715578e3cbbe576f1513770ff86f08807fdf
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 9633f2f871d08b70d6286f510a9ba5cac78ae529
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54615082"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57703075"
 ---
-# <a name="walkthrough-working-with-the-maskedtextbox-control"></a><span data-ttu-id="aa628-102">Průvodce: Práce s ovládacím prvkem MaskedTextBox</span><span class="sxs-lookup"><span data-stu-id="aa628-102">Walkthrough: Working with the MaskedTextBox Control</span></span>
-<span data-ttu-id="aa628-103">Úlohy v tomto návodu zahrnují:</span><span class="sxs-lookup"><span data-stu-id="aa628-103">Tasks illustrated in this walkthrough include:</span></span>  
+# <a name="walkthrough-working-with-the-maskedtextbox-control"></a><span data-ttu-id="ff277-102">Návod: Práce s ovládacím prvkem MaskedTextBox</span><span class="sxs-lookup"><span data-stu-id="ff277-102">Walkthrough: Working with the MaskedTextBox Control</span></span>
+<span data-ttu-id="ff277-103">Úlohy v tomto návodu zahrnují:</span><span class="sxs-lookup"><span data-stu-id="ff277-103">Tasks illustrated in this walkthrough include:</span></span>  
   
--   <span data-ttu-id="aa628-104">Inicializuje <xref:System.Windows.Forms.MaskedTextBox> ovládacího prvku</span><span class="sxs-lookup"><span data-stu-id="aa628-104">Initializing the <xref:System.Windows.Forms.MaskedTextBox> control</span></span>  
+-   <span data-ttu-id="ff277-104">Inicializuje <xref:System.Windows.Forms.MaskedTextBox> ovládacího prvku</span><span class="sxs-lookup"><span data-stu-id="ff277-104">Initializing the <xref:System.Windows.Forms.MaskedTextBox> control</span></span>  
   
--   <span data-ttu-id="aa628-105">Použití <xref:System.Windows.Forms.MaskedTextBox.MaskInputRejected> obslužnou rutinu události pro uživatele o upozornění, když znak neodpovídá masce</span><span class="sxs-lookup"><span data-stu-id="aa628-105">Using the <xref:System.Windows.Forms.MaskedTextBox.MaskInputRejected> event handler to alert the user when a character does not conform to the mask</span></span>  
+-   <span data-ttu-id="ff277-105">Použití <xref:System.Windows.Forms.MaskedTextBox.MaskInputRejected> obslužnou rutinu události pro uživatele o upozornění, když znak neodpovídá masce</span><span class="sxs-lookup"><span data-stu-id="ff277-105">Using the <xref:System.Windows.Forms.MaskedTextBox.MaskInputRejected> event handler to alert the user when a character does not conform to the mask</span></span>  
   
--   <span data-ttu-id="aa628-106">Přiřazení typu k <xref:System.Windows.Forms.MaskedTextBox.ValidatingType%2A> vlastnost a použití <xref:System.Windows.Forms.MaskedTextBox.TypeValidationCompleted> obslužnou rutinu události pro uživatele o upozornění, když se pokoušíte potvrzení hodnota není platná pro typ</span><span class="sxs-lookup"><span data-stu-id="aa628-106">Assigning a type to the <xref:System.Windows.Forms.MaskedTextBox.ValidatingType%2A> property and using the <xref:System.Windows.Forms.MaskedTextBox.TypeValidationCompleted> event handler to alert the user when the value they're attempting to commit is not valid for the type</span></span>  
+-   <span data-ttu-id="ff277-106">Přiřazení typu k <xref:System.Windows.Forms.MaskedTextBox.ValidatingType%2A> vlastnost a použití <xref:System.Windows.Forms.MaskedTextBox.TypeValidationCompleted> obslužnou rutinu události pro uživatele o upozornění, když se pokoušíte potvrzení hodnota není platná pro typ</span><span class="sxs-lookup"><span data-stu-id="ff277-106">Assigning a type to the <xref:System.Windows.Forms.MaskedTextBox.ValidatingType%2A> property and using the <xref:System.Windows.Forms.MaskedTextBox.TypeValidationCompleted> event handler to alert the user when the value they're attempting to commit is not valid for the type</span></span>  
   
-## <a name="creating-the-project-and-adding-a-control"></a><span data-ttu-id="aa628-107">Vytvoření projektu a přidání ovládacího prvku</span><span class="sxs-lookup"><span data-stu-id="aa628-107">Creating the Project and Adding a Control</span></span>  
+## <a name="creating-the-project-and-adding-a-control"></a><span data-ttu-id="ff277-107">Vytvoření projektu a přidání ovládacího prvku</span><span class="sxs-lookup"><span data-stu-id="ff277-107">Creating the Project and Adding a Control</span></span>  
   
-#### <a name="to-add-a-maskedtextbox-control-to-your-form"></a><span data-ttu-id="aa628-108">Chcete-li přidat MaskedTextBox – ovládací prvek do formuláře</span><span class="sxs-lookup"><span data-stu-id="aa628-108">To add a MaskedTextBox control to your form</span></span>  
+#### <a name="to-add-a-maskedtextbox-control-to-your-form"></a><span data-ttu-id="ff277-108">Chcete-li přidat MaskedTextBox – ovládací prvek do formuláře</span><span class="sxs-lookup"><span data-stu-id="ff277-108">To add a MaskedTextBox control to your form</span></span>  
   
-1.  <span data-ttu-id="aa628-109">Otevřete formulář, na kterém chcete umístit <xref:System.Windows.Forms.MaskedTextBox> ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="aa628-109">Open the form on which you want to place the <xref:System.Windows.Forms.MaskedTextBox> control.</span></span>  
+1.  <span data-ttu-id="ff277-109">Otevřete formulář, na kterém chcete umístit <xref:System.Windows.Forms.MaskedTextBox> ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="ff277-109">Open the form on which you want to place the <xref:System.Windows.Forms.MaskedTextBox> control.</span></span>  
   
-2.  <span data-ttu-id="aa628-110">Přetáhněte <xref:System.Windows.Forms.MaskedTextBox> ovládacího prvku **nástrojů** do formuláře.</span><span class="sxs-lookup"><span data-stu-id="aa628-110">Drag a <xref:System.Windows.Forms.MaskedTextBox> control from the **Toolbox** to your form.</span></span>  
+2.  <span data-ttu-id="ff277-110">Přetáhněte <xref:System.Windows.Forms.MaskedTextBox> ovládacího prvku **nástrojů** do formuláře.</span><span class="sxs-lookup"><span data-stu-id="ff277-110">Drag a <xref:System.Windows.Forms.MaskedTextBox> control from the **Toolbox** to your form.</span></span>  
   
-3.  <span data-ttu-id="aa628-111">Klikněte pravým tlačítkem na ovládací prvek a vyberte **vlastnosti**.</span><span class="sxs-lookup"><span data-stu-id="aa628-111">Right-click the control and choose **Properties**.</span></span> <span data-ttu-id="aa628-112">V **vlastnosti** okna, vyberte **maska** vlastnosti a klikněte na tlačítko **...**  tlačítko (tři tečky) vedle názvu vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="aa628-112">In the **Properties** window, select the **Mask** property and click the **...** (ellipsis) button next to the property name.</span></span>  
+3.  <span data-ttu-id="ff277-111">Klikněte pravým tlačítkem na ovládací prvek a vyberte **vlastnosti**.</span><span class="sxs-lookup"><span data-stu-id="ff277-111">Right-click the control and choose **Properties**.</span></span> <span data-ttu-id="ff277-112">V **vlastnosti** okna, vyberte **maska** vlastnosti a klikněte na tlačítko **...**  tlačítko (tři tečky) vedle názvu vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="ff277-112">In the **Properties** window, select the **Mask** property and click the **...** (ellipsis) button next to the property name.</span></span>  
   
-4.  <span data-ttu-id="aa628-113">V **vstupní maska** dialogové okno, vyberte **krátkého formátu data** masku a klikněte na tlačítko **OK**.</span><span class="sxs-lookup"><span data-stu-id="aa628-113">In the **Input Mask** dialog box, select the **Short Date** mask and click **OK**.</span></span>  
+4.  <span data-ttu-id="ff277-113">V **vstupní maska** dialogové okno, vyberte **krátkého formátu data** masku a klikněte na tlačítko **OK**.</span><span class="sxs-lookup"><span data-stu-id="ff277-113">In the **Input Mask** dialog box, select the **Short Date** mask and click **OK**.</span></span>  
   
-5.  <span data-ttu-id="aa628-114">V **vlastnosti** okno sady <xref:System.Windows.Forms.MaskedTextBox.BeepOnError%2A> vlastnost `true`.</span><span class="sxs-lookup"><span data-stu-id="aa628-114">In the **Properties** window set the <xref:System.Windows.Forms.MaskedTextBox.BeepOnError%2A> property to `true`.</span></span> <span data-ttu-id="aa628-115">Tato vlastnost způsobí, že pípnutí krátké zvukové pokaždé, když se uživatel pokusí o vstupní znak, který je v rozporu s definicí masky.</span><span class="sxs-lookup"><span data-stu-id="aa628-115">This property causes a short beep to sound every time the user attempts to input a character that violates the mask definition.</span></span>  
+5.  <span data-ttu-id="ff277-114">V **vlastnosti** okno sady <xref:System.Windows.Forms.MaskedTextBox.BeepOnError%2A> vlastnost `true`.</span><span class="sxs-lookup"><span data-stu-id="ff277-114">In the **Properties** window set the <xref:System.Windows.Forms.MaskedTextBox.BeepOnError%2A> property to `true`.</span></span> <span data-ttu-id="ff277-115">Tato vlastnost způsobí, že pípnutí krátké zvukové pokaždé, když se uživatel pokusí o vstupní znak, který je v rozporu s definicí masky.</span><span class="sxs-lookup"><span data-stu-id="ff277-115">This property causes a short beep to sound every time the user attempts to input a character that violates the mask definition.</span></span>  
   
- <span data-ttu-id="aa628-116">Přehled znaky, které podporuje vlastnost maska, naleznete v části poznámky <xref:System.Windows.Forms.MaskedTextBox.Mask%2A> vlastnost.</span><span class="sxs-lookup"><span data-stu-id="aa628-116">For a summary of the characters that the Mask property supports, see the Remarks section of the <xref:System.Windows.Forms.MaskedTextBox.Mask%2A> property.</span></span>  
+ <span data-ttu-id="ff277-116">Přehled znaky, které podporuje vlastnost maska, naleznete v části poznámky <xref:System.Windows.Forms.MaskedTextBox.Mask%2A> vlastnost.</span><span class="sxs-lookup"><span data-stu-id="ff277-116">For a summary of the characters that the Mask property supports, see the Remarks section of the <xref:System.Windows.Forms.MaskedTextBox.Mask%2A> property.</span></span>  
   
-## <a name="alert-the-user-to-input-errors"></a><span data-ttu-id="aa628-117">Upozornit uživatele k zadání chyby</span><span class="sxs-lookup"><span data-stu-id="aa628-117">Alert the User to Input Errors</span></span>  
+## <a name="alert-the-user-to-input-errors"></a><span data-ttu-id="ff277-117">Upozornit uživatele k zadání chyby</span><span class="sxs-lookup"><span data-stu-id="ff277-117">Alert the User to Input Errors</span></span>  
   
-#### <a name="add-a-balloon-tip-for-rejected-mask-input"></a><span data-ttu-id="aa628-118">Přidat zobrazení tipu v bublině pro vstup odmítnuté masky</span><span class="sxs-lookup"><span data-stu-id="aa628-118">Add a balloon tip for rejected mask input</span></span>  
+#### <a name="add-a-balloon-tip-for-rejected-mask-input"></a><span data-ttu-id="ff277-118">Přidat zobrazení tipu v bublině pro vstup odmítnuté masky</span><span class="sxs-lookup"><span data-stu-id="ff277-118">Add a balloon tip for rejected mask input</span></span>  
   
-1.  <span data-ttu-id="aa628-119">Vraťte se na **nástrojů** a přidejte <xref:System.Windows.Forms.ToolTip> do formuláře.</span><span class="sxs-lookup"><span data-stu-id="aa628-119">Return to the **Toolbox** and add a <xref:System.Windows.Forms.ToolTip> to your form.</span></span>  
+1.  <span data-ttu-id="ff277-119">Vraťte se na **nástrojů** a přidejte <xref:System.Windows.Forms.ToolTip> do formuláře.</span><span class="sxs-lookup"><span data-stu-id="ff277-119">Return to the **Toolbox** and add a <xref:System.Windows.Forms.ToolTip> to your form.</span></span>  
   
-2.  <span data-ttu-id="aa628-120">Vytvořte obslužnou rutinu události pro <xref:System.Windows.Forms.MaskedTextBox.MaskInputRejected> událost, která vyvolá <xref:System.Windows.Forms.ToolTip> , když dojde k chybě vstupu.</span><span class="sxs-lookup"><span data-stu-id="aa628-120">Create an event handler for the <xref:System.Windows.Forms.MaskedTextBox.MaskInputRejected> event that raises the <xref:System.Windows.Forms.ToolTip> when an input error occurs.</span></span> <span data-ttu-id="aa628-121">Zobrazení tipu v bublině zůstává viditelná pro pět sekund, nebo dokud na něj uživatel klikne.</span><span class="sxs-lookup"><span data-stu-id="aa628-121">The balloon tip remains visible for five seconds, or until the user clicks it.</span></span>  
+2.  <span data-ttu-id="ff277-120">Vytvořte obslužnou rutinu události pro <xref:System.Windows.Forms.MaskedTextBox.MaskInputRejected> událost, která vyvolá <xref:System.Windows.Forms.ToolTip> , když dojde k chybě vstupu.</span><span class="sxs-lookup"><span data-stu-id="ff277-120">Create an event handler for the <xref:System.Windows.Forms.MaskedTextBox.MaskInputRejected> event that raises the <xref:System.Windows.Forms.ToolTip> when an input error occurs.</span></span> <span data-ttu-id="ff277-121">Zobrazení tipu v bublině zůstává viditelná pro pět sekund, nebo dokud na něj uživatel klikne.</span><span class="sxs-lookup"><span data-stu-id="ff277-121">The balloon tip remains visible for five seconds, or until the user clicks it.</span></span>  
   
     ```csharp  
     public void Form1_Load(Object sender, EventArgs e)   
@@ -78,11 +78,11 @@ ms.locfileid: "54615082"
     End Sub  
     ```  
   
-## <a name="alert-the-user-to-a-type-that-is-not-valid"></a><span data-ttu-id="aa628-122">Upozornit uživatele na typ, který není platný</span><span class="sxs-lookup"><span data-stu-id="aa628-122">Alert the User to a Type that Is Not Valid</span></span>  
+## <a name="alert-the-user-to-a-type-that-is-not-valid"></a><span data-ttu-id="ff277-122">Upozornit uživatele na typ, který není platný</span><span class="sxs-lookup"><span data-stu-id="ff277-122">Alert the User to a Type that Is Not Valid</span></span>  
   
-#### <a name="add-a-balloon-tip-for-invalid-data-types"></a><span data-ttu-id="aa628-123">Přidat zobrazení tipu v bublině pro neplatné datové typy</span><span class="sxs-lookup"><span data-stu-id="aa628-123">Add a balloon tip for invalid data types</span></span>  
+#### <a name="add-a-balloon-tip-for-invalid-data-types"></a><span data-ttu-id="ff277-123">Přidat zobrazení tipu v bublině pro neplatné datové typy</span><span class="sxs-lookup"><span data-stu-id="ff277-123">Add a balloon tip for invalid data types</span></span>  
   
-1.  <span data-ttu-id="aa628-124">Do formuláře <xref:System.Windows.Forms.Form.Load> obslužná rutina události, přiřadit <xref:System.Type> objekt představující <xref:System.DateTime> typ, který <xref:System.Windows.Forms.MaskedTextBox> ovládacího prvku <xref:System.Windows.Forms.MaskedTextBox.ValidatingType%2A> vlastnost:</span><span class="sxs-lookup"><span data-stu-id="aa628-124">In your form's <xref:System.Windows.Forms.Form.Load> event handler, assign a <xref:System.Type> object representing the <xref:System.DateTime> type to the <xref:System.Windows.Forms.MaskedTextBox> control's <xref:System.Windows.Forms.MaskedTextBox.ValidatingType%2A> property:</span></span>  
+1.  <span data-ttu-id="ff277-124">Do formuláře <xref:System.Windows.Forms.Form.Load> obslužná rutina události, přiřadit <xref:System.Type> objekt představující <xref:System.DateTime> typ, který <xref:System.Windows.Forms.MaskedTextBox> ovládacího prvku <xref:System.Windows.Forms.MaskedTextBox.ValidatingType%2A> vlastnost:</span><span class="sxs-lookup"><span data-stu-id="ff277-124">In your form's <xref:System.Windows.Forms.Form.Load> event handler, assign a <xref:System.Type> object representing the <xref:System.DateTime> type to the <xref:System.Windows.Forms.MaskedTextBox> control's <xref:System.Windows.Forms.MaskedTextBox.ValidatingType%2A> property:</span></span>  
   
     ```csharp  
     private void Form1_Load(Object sender, EventArgs e)  
@@ -100,7 +100,7 @@ ms.locfileid: "54615082"
     End Sub  
     ```  
   
-2.  <span data-ttu-id="aa628-125">Přidat obslužnou rutinu události pro <xref:System.Windows.Forms.MaskedTextBox.TypeValidationCompleted> události:</span><span class="sxs-lookup"><span data-stu-id="aa628-125">Add an event handler for the <xref:System.Windows.Forms.MaskedTextBox.TypeValidationCompleted> event:</span></span>  
+2.  <span data-ttu-id="ff277-125">Přidat obslužnou rutinu události pro <xref:System.Windows.Forms.MaskedTextBox.TypeValidationCompleted> události:</span><span class="sxs-lookup"><span data-stu-id="ff277-125">Add an event handler for the <xref:System.Windows.Forms.MaskedTextBox.TypeValidationCompleted> event:</span></span>  
   
     ```csharp  
     public void maskedTextBox1_TypeValidationCompleted(object sender, TypeValidationEventArgs e)  
@@ -124,6 +124,6 @@ ms.locfileid: "54615082"
     End Sub  
     ```  
   
-## <a name="see-also"></a><span data-ttu-id="aa628-126">Viz také:</span><span class="sxs-lookup"><span data-stu-id="aa628-126">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="ff277-126">Viz také:</span><span class="sxs-lookup"><span data-stu-id="ff277-126">See also</span></span>
 - <xref:System.Windows.Forms.MaskedTextBox>
-- [<span data-ttu-id="aa628-127">Ovládací prvek MaskedTextBox</span><span class="sxs-lookup"><span data-stu-id="aa628-127">MaskedTextBox Control</span></span>](../../../../docs/framework/winforms/controls/maskedtextbox-control-windows-forms.md)
+- [<span data-ttu-id="ff277-127">Ovládací prvek MaskedTextBox</span><span class="sxs-lookup"><span data-stu-id="ff277-127">MaskedTextBox Control</span></span>](maskedtextbox-control-windows-forms.md)

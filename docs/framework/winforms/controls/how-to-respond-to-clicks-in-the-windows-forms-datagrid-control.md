@@ -12,22 +12,22 @@ helpviewer_keywords:
 - examples [Windows Forms], DataGrid control
 - DataGrid control [Windows Forms], click events
 ms.assetid: a0aa204b-8351-4d82-9933-ee21a5c9e409
-ms.openlocfilehash: be9c5c213f9bb52bf620b3d7edec95279220abdf
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 7310557bad7e845c4b193debdefba68db2e1d116
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54722904"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57708197"
 ---
-# <a name="how-to-respond-to-clicks-in-the-windows-forms-datagrid-control"></a><span data-ttu-id="934f2-102">Postupy: Reakce na kliknutí v ovládacím prvku Windows Forms DataGrid</span><span class="sxs-lookup"><span data-stu-id="934f2-102">How to: Respond to Clicks in the Windows Forms DataGrid Control</span></span>
+# <a name="how-to-respond-to-clicks-in-the-windows-forms-datagrid-control"></a><span data-ttu-id="60439-102">Postupy: Reakce na kliknutí v ovládacím prvku Windows Forms DataGrid</span><span class="sxs-lookup"><span data-stu-id="60439-102">How to: Respond to Clicks in the Windows Forms DataGrid Control</span></span>
 > [!NOTE]
->  <span data-ttu-id="934f2-103"><xref:System.Windows.Forms.DataGridView> Ovládací prvek nahradí a přidá funkce, které <xref:System.Windows.Forms.DataGrid> řízení; však <xref:System.Windows.Forms.DataGrid> ovládací prvek se zachovává kvůli zpětné kompatibilitě a budoucí použití, pokud se rozhodnete.</span><span class="sxs-lookup"><span data-stu-id="934f2-103">The <xref:System.Windows.Forms.DataGridView> control replaces and adds functionality to the <xref:System.Windows.Forms.DataGrid> control; however, the <xref:System.Windows.Forms.DataGrid> control is retained for both backward compatibility and future use, if you choose.</span></span> <span data-ttu-id="934f2-104">Další informace najdete v tématu [rozdíly mezi Windows Forms DataGridView a DataGrid – ovládací prvky](../../../../docs/framework/winforms/controls/differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).</span><span class="sxs-lookup"><span data-stu-id="934f2-104">For more information, see [Differences Between the Windows Forms DataGridView and DataGrid Controls](../../../../docs/framework/winforms/controls/differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).</span></span>  
+>  <span data-ttu-id="60439-103"><xref:System.Windows.Forms.DataGridView> Ovládací prvek nahradí a přidá funkce, které <xref:System.Windows.Forms.DataGrid> řízení; však <xref:System.Windows.Forms.DataGrid> ovládací prvek se zachovává kvůli zpětné kompatibilitě a budoucí použití, pokud se rozhodnete.</span><span class="sxs-lookup"><span data-stu-id="60439-103">The <xref:System.Windows.Forms.DataGridView> control replaces and adds functionality to the <xref:System.Windows.Forms.DataGrid> control; however, the <xref:System.Windows.Forms.DataGrid> control is retained for both backward compatibility and future use, if you choose.</span></span> <span data-ttu-id="60439-104">Další informace najdete v tématu [rozdíly mezi Windows Forms DataGridView a DataGrid – ovládací prvky](differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).</span><span class="sxs-lookup"><span data-stu-id="60439-104">For more information, see [Differences Between the Windows Forms DataGridView and DataGrid Controls](differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).</span></span>  
   
- <span data-ttu-id="934f2-105">Po Windows Forms <xref:System.Windows.Forms.DataGrid> je připojený k databázi, můžete sledovat, které uživatel klikl na buňky.</span><span class="sxs-lookup"><span data-stu-id="934f2-105">After the Windows Forms <xref:System.Windows.Forms.DataGrid> is connected to a database, you can monitor which cell the user clicked.</span></span>  
+ <span data-ttu-id="60439-105">Po Windows Forms <xref:System.Windows.Forms.DataGrid> je připojený k databázi, můžete sledovat, které uživatel klikl na buňky.</span><span class="sxs-lookup"><span data-stu-id="60439-105">After the Windows Forms <xref:System.Windows.Forms.DataGrid> is connected to a database, you can monitor which cell the user clicked.</span></span>  
   
-### <a name="to-detect-when-the-user-of-the-datagrid-selects-a-different-cell"></a><span data-ttu-id="934f2-106">Chcete-li zjistit, kdy uživatel v prvku DataGrid vybere jinou buňku</span><span class="sxs-lookup"><span data-stu-id="934f2-106">To detect when the user of the DataGrid selects a different cell</span></span>  
+### <a name="to-detect-when-the-user-of-the-datagrid-selects-a-different-cell"></a><span data-ttu-id="60439-106">Chcete-li zjistit, kdy uživatel v prvku DataGrid vybere jinou buňku</span><span class="sxs-lookup"><span data-stu-id="60439-106">To detect when the user of the DataGrid selects a different cell</span></span>  
   
--   <span data-ttu-id="934f2-107">V <xref:System.Windows.Forms.DataGrid.CurrentCellChanged> obslužná rutina události, napište kód, který odpovídajícím způsobem reagovat.</span><span class="sxs-lookup"><span data-stu-id="934f2-107">In the <xref:System.Windows.Forms.DataGrid.CurrentCellChanged> event handler, write code to respond appropriately.</span></span>  
+-   <span data-ttu-id="60439-107">V <xref:System.Windows.Forms.DataGrid.CurrentCellChanged> obslužná rutina události, napište kód, který odpovídajícím způsobem reagovat.</span><span class="sxs-lookup"><span data-stu-id="60439-107">In the <xref:System.Windows.Forms.DataGrid.CurrentCellChanged> event handler, write code to respond appropriately.</span></span>  
   
     ```vb  
     Private Sub myDataGrid_CurrentCellChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles myDataGrid.CurrentCellChanged  
@@ -47,18 +47,18 @@ ms.locfileid: "54722904"
     }  
     ```  
   
-     <span data-ttu-id="934f2-108">(Visual C#) Umístěte následující kód do konstruktoru formuláře k registraci obslužné rutiny události.</span><span class="sxs-lookup"><span data-stu-id="934f2-108">(Visual C#) Place the following code in the form's constructor to register the event handler.</span></span>  
+     <span data-ttu-id="60439-108">(Visual C#) Umístěte následující kód do konstruktoru formuláře k registraci obslužné rutiny události.</span><span class="sxs-lookup"><span data-stu-id="60439-108">(Visual C#) Place the following code in the form's constructor to register the event handler.</span></span>  
   
     ```csharp  
     this.myDataGrid.CurrentCellChanged += new  
        System.EventHandler(this.myDataGrid_CurrentCellChanged);  
     ```  
   
-### <a name="to-determine-which-part-of-the-datagrid-the-user-clicked"></a><span data-ttu-id="934f2-109">Chcete-li zjistit, které části objektu DataGrid uživatel klikl na</span><span class="sxs-lookup"><span data-stu-id="934f2-109">To determine which part of the DataGrid the user clicked</span></span>  
+### <a name="to-determine-which-part-of-the-datagrid-the-user-clicked"></a><span data-ttu-id="60439-109">Chcete-li zjistit, které části objektu DataGrid uživatel klikl na</span><span class="sxs-lookup"><span data-stu-id="60439-109">To determine which part of the DataGrid the user clicked</span></span>  
   
--   <span data-ttu-id="934f2-110">Volání <xref:System.Windows.Forms.DataGrid.HitTest%2A> metoda v obslužné rutině události, například jako pro <xref:System.Windows.Forms.Control.MouseDown> nebo <xref:System.Windows.Forms.Control.Click> událostí.</span><span class="sxs-lookup"><span data-stu-id="934f2-110">Call the <xref:System.Windows.Forms.DataGrid.HitTest%2A> method in an appropriate event handler, such as for the <xref:System.Windows.Forms.Control.MouseDown> or <xref:System.Windows.Forms.Control.Click> event.</span></span>  
+-   <span data-ttu-id="60439-110">Volání <xref:System.Windows.Forms.DataGrid.HitTest%2A> metoda v obslužné rutině události, například jako pro <xref:System.Windows.Forms.Control.MouseDown> nebo <xref:System.Windows.Forms.Control.Click> událostí.</span><span class="sxs-lookup"><span data-stu-id="60439-110">Call the <xref:System.Windows.Forms.DataGrid.HitTest%2A> method in an appropriate event handler, such as for the <xref:System.Windows.Forms.Control.MouseDown> or <xref:System.Windows.Forms.Control.Click> event.</span></span>  
   
-     <span data-ttu-id="934f2-111"><xref:System.Windows.Forms.DataGrid.HitTest%2A> Metoda vrátí hodnotu <xref:System.Windows.Forms.DataGrid.HitTestInfo> objekt, který obsahuje řádek a sloupec na kliknutí na oblast.</span><span class="sxs-lookup"><span data-stu-id="934f2-111">The <xref:System.Windows.Forms.DataGrid.HitTest%2A> method returns a <xref:System.Windows.Forms.DataGrid.HitTestInfo> object that contains the row and column of a clicked area.</span></span>  
+     <span data-ttu-id="60439-111"><xref:System.Windows.Forms.DataGrid.HitTest%2A> Metoda vrátí hodnotu <xref:System.Windows.Forms.DataGrid.HitTestInfo> objekt, který obsahuje řádek a sloupec na kliknutí na oblast.</span><span class="sxs-lookup"><span data-stu-id="60439-111">The <xref:System.Windows.Forms.DataGrid.HitTest%2A> method returns a <xref:System.Windows.Forms.DataGrid.HitTestInfo> object that contains the row and column of a clicked area.</span></span>  
   
     ```vb  
     Private Sub myDataGrid_MouseDown(ByVal sender As Object, _  
@@ -132,7 +132,7 @@ ms.locfileid: "54722904"
     }  
     ```  
   
-     <span data-ttu-id="934f2-112">(Visual C#) Umístěte následující kód do konstruktoru formuláře k registraci obslužné rutiny události.</span><span class="sxs-lookup"><span data-stu-id="934f2-112">(Visual C#) Place the following code in the form's constructor to register the event handler.</span></span>  
+     <span data-ttu-id="60439-112">(Visual C#) Umístěte následující kód do konstruktoru formuláře k registraci obslužné rutiny události.</span><span class="sxs-lookup"><span data-stu-id="60439-112">(Visual C#) Place the following code in the form's constructor to register the event handler.</span></span>  
   
     ```csharp  
     this.myDataGrid.MouseDown += new  
@@ -140,6 +140,6 @@ ms.locfileid: "54722904"
        (this.myDataGrid_MouseDown);  
     ```  
   
-## <a name="see-also"></a><span data-ttu-id="934f2-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="934f2-113">See also</span></span>
-- [<span data-ttu-id="934f2-114">Ovládací prvek DataGrid</span><span class="sxs-lookup"><span data-stu-id="934f2-114">DataGrid Control</span></span>](../../../../docs/framework/winforms/controls/datagrid-control-windows-forms.md)
-- [<span data-ttu-id="934f2-115">Postupy: Změna zobrazených dat za běhu v ovládacím prvku Windows Forms DataGrid</span><span class="sxs-lookup"><span data-stu-id="934f2-115">How to: Change Displayed Data at Run Time in the Windows Forms DataGrid Control</span></span>](../../../../docs/framework/winforms/controls/change-displayed-data-at-run-time-wf-datagrid-control.md)
+## <a name="see-also"></a><span data-ttu-id="60439-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="60439-113">See also</span></span>
+- [<span data-ttu-id="60439-114">Ovládací prvek DataGrid</span><span class="sxs-lookup"><span data-stu-id="60439-114">DataGrid Control</span></span>](datagrid-control-windows-forms.md)
+- [<span data-ttu-id="60439-115">Postupy: Změna zobrazených dat za běhu v ovládacím prvku Windows Forms DataGrid</span><span class="sxs-lookup"><span data-stu-id="60439-115">How to: Change Displayed Data at Run Time in the Windows Forms DataGrid Control</span></span>](change-displayed-data-at-run-time-wf-datagrid-control.md)

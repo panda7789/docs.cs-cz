@@ -16,42 +16,42 @@ helpviewer_keywords:
 - custom drawing
 - owner drawing
 ms.assetid: 94e7d7bd-a752-441c-b5b3-7acf98881163
-ms.openlocfilehash: 6df1f2bf3190fb1453930c0553266cc27234f46d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d9a58dbaeae3f0cd165d72b8fd281b903ad9cca2
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54701427"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57705747"
 ---
-# <a name="how-to-custom-draw-a-toolstrip-control"></a><span data-ttu-id="1deb3-102">Postupy: Vlastní vykreslení ovládacího prvku ToolStrip</span><span class="sxs-lookup"><span data-stu-id="1deb3-102">How to: Custom Draw a ToolStrip Control</span></span>
-<span data-ttu-id="1deb3-103"><xref:System.Windows.Forms.ToolStrip> Ovládací prvky mají následující související vykreslování třídy (Malování):</span><span class="sxs-lookup"><span data-stu-id="1deb3-103">The <xref:System.Windows.Forms.ToolStrip> controls have the following associated rendering (painting) classes:</span></span>  
+# <a name="how-to-custom-draw-a-toolstrip-control"></a><span data-ttu-id="4ddc0-102">Postupy: Vlastní vykreslení ovládacího prvku ToolStrip</span><span class="sxs-lookup"><span data-stu-id="4ddc0-102">How to: Custom Draw a ToolStrip Control</span></span>
+<span data-ttu-id="4ddc0-103"><xref:System.Windows.Forms.ToolStrip> Ovládací prvky mají následující související vykreslování třídy (Malování):</span><span class="sxs-lookup"><span data-stu-id="4ddc0-103">The <xref:System.Windows.Forms.ToolStrip> controls have the following associated rendering (painting) classes:</span></span>  
   
--   <span data-ttu-id="1deb3-104"><xref:System.Windows.Forms.ToolStripSystemRenderer> poskytuje vzhled a styl operačního systému.</span><span class="sxs-lookup"><span data-stu-id="1deb3-104"><xref:System.Windows.Forms.ToolStripSystemRenderer> provides the appearance and style of your operating system.</span></span>  
+-   <span data-ttu-id="4ddc0-104"><xref:System.Windows.Forms.ToolStripSystemRenderer> poskytuje vzhled a styl operačního systému.</span><span class="sxs-lookup"><span data-stu-id="4ddc0-104"><xref:System.Windows.Forms.ToolStripSystemRenderer> provides the appearance and style of your operating system.</span></span>  
   
--   <span data-ttu-id="1deb3-105"><xref:System.Windows.Forms.ToolStripProfessionalRenderer> poskytuje vzhled a stylu společnosti Microsoft Office.</span><span class="sxs-lookup"><span data-stu-id="1deb3-105"><xref:System.Windows.Forms.ToolStripProfessionalRenderer> provides the appearance and style of Microsoft Office.</span></span>  
+-   <span data-ttu-id="4ddc0-105"><xref:System.Windows.Forms.ToolStripProfessionalRenderer> poskytuje vzhled a stylu společnosti Microsoft Office.</span><span class="sxs-lookup"><span data-stu-id="4ddc0-105"><xref:System.Windows.Forms.ToolStripProfessionalRenderer> provides the appearance and style of Microsoft Office.</span></span>  
   
--   <span data-ttu-id="1deb3-106"><xref:System.Windows.Forms.ToolStripRenderer> je abstraktní základní třída pro jiné třídy dva vykreslování.</span><span class="sxs-lookup"><span data-stu-id="1deb3-106"><xref:System.Windows.Forms.ToolStripRenderer> is the abstract base class for the other two rendering classes.</span></span>  
+-   <span data-ttu-id="4ddc0-106"><xref:System.Windows.Forms.ToolStripRenderer> je abstraktní základní třída pro jiné třídy dva vykreslování.</span><span class="sxs-lookup"><span data-stu-id="4ddc0-106"><xref:System.Windows.Forms.ToolStripRenderer> is the abstract base class for the other two rendering classes.</span></span>  
   
- <span data-ttu-id="1deb3-107">Pro vlastní vykreslování (označované také jako vlastník draw) <xref:System.Windows.Forms.ToolStrip>, můžete přepsat jedné ze tříd nástroj pro vykreslování a změnit aspekt logiku pro vykreslení.</span><span class="sxs-lookup"><span data-stu-id="1deb3-107">To custom draw (also known as owner draw) a <xref:System.Windows.Forms.ToolStrip>, you can override one of the renderer classes and change an aspect of the rendering logic.</span></span>  
+ <span data-ttu-id="4ddc0-107">Pro vlastní vykreslování (označované také jako vlastník draw) <xref:System.Windows.Forms.ToolStrip>, můžete přepsat jedné ze tříd nástroj pro vykreslování a změnit aspekt logiku pro vykreslení.</span><span class="sxs-lookup"><span data-stu-id="4ddc0-107">To custom draw (also known as owner draw) a <xref:System.Windows.Forms.ToolStrip>, you can override one of the renderer classes and change an aspect of the rendering logic.</span></span>  
   
- <span data-ttu-id="1deb3-108">Následující postupy popisují různé aspekty vlastního vykreslení.</span><span class="sxs-lookup"><span data-stu-id="1deb3-108">The following procedures describe various aspects of custom drawing.</span></span>  
+ <span data-ttu-id="4ddc0-108">Následující postupy popisují různé aspekty vlastního vykreslení.</span><span class="sxs-lookup"><span data-stu-id="4ddc0-108">The following procedures describe various aspects of custom drawing.</span></span>  
   
-### <a name="to-switch-between-the-provided-renderers"></a><span data-ttu-id="1deb3-109">Přepínat mezi zadaná renderery</span><span class="sxs-lookup"><span data-stu-id="1deb3-109">To switch between the provided renderers</span></span>  
+### <a name="to-switch-between-the-provided-renderers"></a><span data-ttu-id="4ddc0-109">Přepínat mezi zadaná renderery</span><span class="sxs-lookup"><span data-stu-id="4ddc0-109">To switch between the provided renderers</span></span>  
   
--   <span data-ttu-id="1deb3-110">Nastavte <xref:System.Windows.Forms.ToolStrip.RenderMode%2A> vlastnost <xref:System.Windows.Forms.ToolStripRenderMode> hodnotu, kterou chcete.</span><span class="sxs-lookup"><span data-stu-id="1deb3-110">Set the <xref:System.Windows.Forms.ToolStrip.RenderMode%2A> property to the <xref:System.Windows.Forms.ToolStripRenderMode> value you want.</span></span>  
+-   <span data-ttu-id="4ddc0-110">Nastavte <xref:System.Windows.Forms.ToolStrip.RenderMode%2A> vlastnost <xref:System.Windows.Forms.ToolStripRenderMode> hodnotu, kterou chcete.</span><span class="sxs-lookup"><span data-stu-id="4ddc0-110">Set the <xref:System.Windows.Forms.ToolStrip.RenderMode%2A> property to the <xref:System.Windows.Forms.ToolStripRenderMode> value you want.</span></span>  
   
-     <span data-ttu-id="1deb3-111">S <xref:System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode>, statické <xref:System.Windows.Forms.ToolStrip.RenderMode%2A> určuje zobrazovací jednotky pro vaši aplikaci.</span><span class="sxs-lookup"><span data-stu-id="1deb3-111">With <xref:System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode>, the static <xref:System.Windows.Forms.ToolStrip.RenderMode%2A> determines the renderer for your application.</span></span> <span data-ttu-id="1deb3-112">Ostatní hodnoty <xref:System.Windows.Forms.ToolStripRenderMode> jsou <xref:System.Windows.Forms.ToolStripRenderMode.Custom>, <xref:System.Windows.Forms.ToolStripRenderMode.Professional>, a <xref:System.Windows.Forms.ToolStripRenderMode.System>.</span><span class="sxs-lookup"><span data-stu-id="1deb3-112">The other values of <xref:System.Windows.Forms.ToolStripRenderMode> are <xref:System.Windows.Forms.ToolStripRenderMode.Custom>, <xref:System.Windows.Forms.ToolStripRenderMode.Professional>, and <xref:System.Windows.Forms.ToolStripRenderMode.System>.</span></span>  
+     <span data-ttu-id="4ddc0-111">S <xref:System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode>, statické <xref:System.Windows.Forms.ToolStrip.RenderMode%2A> určuje zobrazovací jednotky pro vaši aplikaci.</span><span class="sxs-lookup"><span data-stu-id="4ddc0-111">With <xref:System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode>, the static <xref:System.Windows.Forms.ToolStrip.RenderMode%2A> determines the renderer for your application.</span></span> <span data-ttu-id="4ddc0-112">Ostatní hodnoty <xref:System.Windows.Forms.ToolStripRenderMode> jsou <xref:System.Windows.Forms.ToolStripRenderMode.Custom>, <xref:System.Windows.Forms.ToolStripRenderMode.Professional>, a <xref:System.Windows.Forms.ToolStripRenderMode.System>.</span><span class="sxs-lookup"><span data-stu-id="4ddc0-112">The other values of <xref:System.Windows.Forms.ToolStripRenderMode> are <xref:System.Windows.Forms.ToolStripRenderMode.Custom>, <xref:System.Windows.Forms.ToolStripRenderMode.Professional>, and <xref:System.Windows.Forms.ToolStripRenderMode.System>.</span></span>  
   
-### <a name="to-change-the-microsoft-officestyle-borders-to-straight"></a><span data-ttu-id="1deb3-113">Chcete-li změnit Microsoft Office – styl ohraničení přímo</span><span class="sxs-lookup"><span data-stu-id="1deb3-113">To change the Microsoft Office–style borders to straight</span></span>  
+### <a name="to-change-the-microsoft-officestyle-borders-to-straight"></a><span data-ttu-id="4ddc0-113">Chcete-li změnit Microsoft Office – styl ohraničení přímo</span><span class="sxs-lookup"><span data-stu-id="4ddc0-113">To change the Microsoft Office–style borders to straight</span></span>  
   
--   <span data-ttu-id="1deb3-114">Přepsat <xref:System.Windows.Forms.ToolStripProfessionalRenderer.OnRenderToolStripBorder%2A?displayProperty=nameWithType>, ale Nevolejte základní třídu.</span><span class="sxs-lookup"><span data-stu-id="1deb3-114">Override <xref:System.Windows.Forms.ToolStripProfessionalRenderer.OnRenderToolStripBorder%2A?displayProperty=nameWithType>, but do not call the base class.</span></span>  
+-   <span data-ttu-id="4ddc0-114">Přepsat <xref:System.Windows.Forms.ToolStripProfessionalRenderer.OnRenderToolStripBorder%2A?displayProperty=nameWithType>, ale Nevolejte základní třídu.</span><span class="sxs-lookup"><span data-stu-id="4ddc0-114">Override <xref:System.Windows.Forms.ToolStripProfessionalRenderer.OnRenderToolStripBorder%2A?displayProperty=nameWithType>, but do not call the base class.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="1deb3-115">Je dostupná verze této metody pro <xref:System.Windows.Forms.ToolStripRenderer>, <xref:System.Windows.Forms.ToolStripSystemRenderer>, a <xref:System.Windows.Forms.ToolStripProfessionalRenderer>.</span><span class="sxs-lookup"><span data-stu-id="1deb3-115">There is a version of this method for <xref:System.Windows.Forms.ToolStripRenderer>, <xref:System.Windows.Forms.ToolStripSystemRenderer>, and <xref:System.Windows.Forms.ToolStripProfessionalRenderer>.</span></span>  
+>  <span data-ttu-id="4ddc0-115">Je dostupná verze této metody pro <xref:System.Windows.Forms.ToolStripRenderer>, <xref:System.Windows.Forms.ToolStripSystemRenderer>, a <xref:System.Windows.Forms.ToolStripProfessionalRenderer>.</span><span class="sxs-lookup"><span data-stu-id="4ddc0-115">There is a version of this method for <xref:System.Windows.Forms.ToolStripRenderer>, <xref:System.Windows.Forms.ToolStripSystemRenderer>, and <xref:System.Windows.Forms.ToolStripProfessionalRenderer>.</span></span>  
   
-### <a name="to-change-the-professionalcolortable"></a><span data-ttu-id="1deb3-116">Chcete-li změnit professionalcolortable –</span><span class="sxs-lookup"><span data-stu-id="1deb3-116">To change the ProfessionalColorTable</span></span>  
+### <a name="to-change-the-professionalcolortable"></a><span data-ttu-id="4ddc0-116">Chcete-li změnit professionalcolortable –</span><span class="sxs-lookup"><span data-stu-id="4ddc0-116">To change the ProfessionalColorTable</span></span>  
   
--   <span data-ttu-id="1deb3-117">Přepsat <xref:System.Windows.Forms.ProfessionalColorTable> a změnit barvy chcete.</span><span class="sxs-lookup"><span data-stu-id="1deb3-117">Override <xref:System.Windows.Forms.ProfessionalColorTable> and change the colors you want.</span></span>  
+-   <span data-ttu-id="4ddc0-117">Přepsat <xref:System.Windows.Forms.ProfessionalColorTable> a změnit barvy chcete.</span><span class="sxs-lookup"><span data-stu-id="4ddc0-117">Override <xref:System.Windows.Forms.ProfessionalColorTable> and change the colors you want.</span></span>  
   
     ```vb  
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As _  
@@ -105,21 +105,21 @@ ms.locfileid: "54701427"
     End Class  
     ```  
   
-### <a name="to-change-the-rendering-for-all-toolstrip-controls-in-your-application"></a><span data-ttu-id="1deb3-118">Chcete-li změnit vykreslení u všech ovládacích prvcích ToolStrip ve vaší aplikaci</span><span class="sxs-lookup"><span data-stu-id="1deb3-118">To change the rendering for all ToolStrip controls in your application</span></span>  
+### <a name="to-change-the-rendering-for-all-toolstrip-controls-in-your-application"></a><span data-ttu-id="4ddc0-118">Chcete-li změnit vykreslení u všech ovládacích prvcích ToolStrip ve vaší aplikaci</span><span class="sxs-lookup"><span data-stu-id="4ddc0-118">To change the rendering for all ToolStrip controls in your application</span></span>  
   
-1.  <span data-ttu-id="1deb3-119">Použití <xref:System.Windows.Forms.ToolStripManager.RenderMode%2A?displayProperty=nameWithType> vlastnost na volbu jednoho ze zadané zobrazovací jednotku.</span><span class="sxs-lookup"><span data-stu-id="1deb3-119">Use the <xref:System.Windows.Forms.ToolStripManager.RenderMode%2A?displayProperty=nameWithType> property to choose one of the provided renderers.</span></span>  
+1.  <span data-ttu-id="4ddc0-119">Použití <xref:System.Windows.Forms.ToolStripManager.RenderMode%2A?displayProperty=nameWithType> vlastnost na volbu jednoho ze zadané zobrazovací jednotku.</span><span class="sxs-lookup"><span data-stu-id="4ddc0-119">Use the <xref:System.Windows.Forms.ToolStripManager.RenderMode%2A?displayProperty=nameWithType> property to choose one of the provided renderers.</span></span>  
   
-2.  <span data-ttu-id="1deb3-120">Použití <xref:System.Windows.Forms.ToolStripManager.Renderer%2A?displayProperty=nameWithType> přiřadit vlastní zobrazovací jednotky.</span><span class="sxs-lookup"><span data-stu-id="1deb3-120">Use <xref:System.Windows.Forms.ToolStripManager.Renderer%2A?displayProperty=nameWithType> to assign a custom renderer.</span></span>  
+2.  <span data-ttu-id="4ddc0-120">Použití <xref:System.Windows.Forms.ToolStripManager.Renderer%2A?displayProperty=nameWithType> přiřadit vlastní zobrazovací jednotky.</span><span class="sxs-lookup"><span data-stu-id="4ddc0-120">Use <xref:System.Windows.Forms.ToolStripManager.Renderer%2A?displayProperty=nameWithType> to assign a custom renderer.</span></span>  
   
-3.  <span data-ttu-id="1deb3-121">Ujistěte se, že <xref:System.Windows.Forms.ToolStrip.RenderMode%2A?displayProperty=nameWithType> je nastavena na výchozí hodnotu <xref:System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode>.</span><span class="sxs-lookup"><span data-stu-id="1deb3-121">Ensure that <xref:System.Windows.Forms.ToolStrip.RenderMode%2A?displayProperty=nameWithType> is set to the default value of <xref:System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode>.</span></span>  
+3.  <span data-ttu-id="4ddc0-121">Ujistěte se, že <xref:System.Windows.Forms.ToolStrip.RenderMode%2A?displayProperty=nameWithType> je nastavena na výchozí hodnotu <xref:System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode>.</span><span class="sxs-lookup"><span data-stu-id="4ddc0-121">Ensure that <xref:System.Windows.Forms.ToolStrip.RenderMode%2A?displayProperty=nameWithType> is set to the default value of <xref:System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode>.</span></span>  
   
-### <a name="to-turn-off-the-microsoft-office-colors-for-the-entire-application"></a><span data-ttu-id="1deb3-122">Chcete-li vypnout barvy Microsoft Office pro celou aplikaci</span><span class="sxs-lookup"><span data-stu-id="1deb3-122">To turn off the Microsoft Office colors for the entire application</span></span>  
+### <a name="to-turn-off-the-microsoft-office-colors-for-the-entire-application"></a><span data-ttu-id="4ddc0-122">Chcete-li vypnout barvy Microsoft Office pro celou aplikaci</span><span class="sxs-lookup"><span data-stu-id="4ddc0-122">To turn off the Microsoft Office colors for the entire application</span></span>  
   
--   <span data-ttu-id="1deb3-123">Nastavte <xref:System.Windows.Forms.ToolStripManager.VisualStylesEnabled%2A?displayProperty=nameWithType> k `false`.</span><span class="sxs-lookup"><span data-stu-id="1deb3-123">Set <xref:System.Windows.Forms.ToolStripManager.VisualStylesEnabled%2A?displayProperty=nameWithType> to `false`.</span></span>  
+-   <span data-ttu-id="4ddc0-123">Nastavte <xref:System.Windows.Forms.ToolStripManager.VisualStylesEnabled%2A?displayProperty=nameWithType> k `false`.</span><span class="sxs-lookup"><span data-stu-id="4ddc0-123">Set <xref:System.Windows.Forms.ToolStripManager.VisualStylesEnabled%2A?displayProperty=nameWithType> to `false`.</span></span>  
   
-### <a name="to-turn-off-the-microsoft-office-colors-for-one-toolstrip-control"></a><span data-ttu-id="1deb3-124">Chcete-li vypnout barvy Microsoft Office pro jeden ovládací prvek ToolStrip</span><span class="sxs-lookup"><span data-stu-id="1deb3-124">To turn off the Microsoft Office colors for one ToolStrip control</span></span>  
+### <a name="to-turn-off-the-microsoft-office-colors-for-one-toolstrip-control"></a><span data-ttu-id="4ddc0-124">Chcete-li vypnout barvy Microsoft Office pro jeden ovládací prvek ToolStrip</span><span class="sxs-lookup"><span data-stu-id="4ddc0-124">To turn off the Microsoft Office colors for one ToolStrip control</span></span>  
   
--   <span data-ttu-id="1deb3-125">Použijte kód podobně jako v následujícím příkladu kódu.</span><span class="sxs-lookup"><span data-stu-id="1deb3-125">Use code similar to the following code example.</span></span>  
+-   <span data-ttu-id="4ddc0-125">Použijte kód podobně jako v následujícím příkladu kódu.</span><span class="sxs-lookup"><span data-stu-id="4ddc0-125">Use code similar to the following code example.</span></span>  
   
     ```vb  
     Dim colorTable As ProfessionalColorTable()  
@@ -133,10 +133,10 @@ ms.locfileid: "54701427"
     toolStrip.Renderer = new ToolStripProfessionalRenderer(colorTable);  
     ```  
   
-## <a name="see-also"></a><span data-ttu-id="1deb3-126">Viz také:</span><span class="sxs-lookup"><span data-stu-id="1deb3-126">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="4ddc0-126">Viz také:</span><span class="sxs-lookup"><span data-stu-id="4ddc0-126">See also</span></span>
 - <xref:System.Windows.Forms.ToolStripSystemRenderer>
 - <xref:System.Windows.Forms.ToolStripProfessionalRenderer>
 - <xref:System.Windows.Forms.ToolStripRenderer>
-- [<span data-ttu-id="1deb3-127">Ovládací prvky s vestavěnou podporou vykreslování vlastníkem</span><span class="sxs-lookup"><span data-stu-id="1deb3-127">Controls with Built-In Owner-Drawing Support</span></span>](../../../../docs/framework/winforms/controls/controls-with-built-in-owner-drawing-support.md)
-- [<span data-ttu-id="1deb3-128">Postupy: Vytvoření a nastavení vlastního Rendereru pro ovládací prvek ToolStrip ve Windows Forms</span><span class="sxs-lookup"><span data-stu-id="1deb3-128">How to: Create and Set a Custom Renderer for the ToolStrip Control in Windows Forms</span></span>](../../../../docs/framework/winforms/controls/create-and-set-a-custom-renderer-for-the-toolstrip-control-in-wf.md)
-- [<span data-ttu-id="1deb3-129">Přehled ovládacího prvku ToolStrip</span><span class="sxs-lookup"><span data-stu-id="1deb3-129">ToolStrip Control Overview</span></span>](../../../../docs/framework/winforms/controls/toolstrip-control-overview-windows-forms.md)
+- [<span data-ttu-id="4ddc0-127">Ovládací prvky s vestavěnou podporou vykreslování vlastníkem</span><span class="sxs-lookup"><span data-stu-id="4ddc0-127">Controls with Built-In Owner-Drawing Support</span></span>](controls-with-built-in-owner-drawing-support.md)
+- [<span data-ttu-id="4ddc0-128">Postupy: Vytvoření a nastavení vlastního Rendereru pro ovládací prvek ToolStrip ve Windows Forms</span><span class="sxs-lookup"><span data-stu-id="4ddc0-128">How to: Create and Set a Custom Renderer for the ToolStrip Control in Windows Forms</span></span>](create-and-set-a-custom-renderer-for-the-toolstrip-control-in-wf.md)
+- [<span data-ttu-id="4ddc0-129">Přehled ovládacího prvku ToolStrip</span><span class="sxs-lookup"><span data-stu-id="4ddc0-129">ToolStrip Control Overview</span></span>](toolstrip-control-overview-windows-forms.md)
