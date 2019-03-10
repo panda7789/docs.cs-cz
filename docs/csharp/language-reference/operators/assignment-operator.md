@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - = operator [C#]
 ms.assetid: d802a6d5-32f0-42b8-b180-12f5a081bfc1
-ms.openlocfilehash: 2c999e76a9238e6401e89af0faa81967b13a3995
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 40dc844f2a4b6411ea82aa2f029b36d7dd8f6e5a
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53244385"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57716309"
 ---
 # <a name="-operator-c-reference"></a>= – operátor (Referenční dokumentace jazyka C#)
 
@@ -42,7 +42,7 @@ Počínaje C# 7.3, můžete pomocí operátoru přiřazení odkazu `= ref` při�
 
 V případě operátoru přiřazení odkazu typ levého operandu a pravý operand musí být stejné.
 
-Další informace najdete v tématu [Poznámka návrh funkce](https://github.com/dotnet/csharplang/blob/master/proposals/csharp-7.3/ref-local-reassignment.md).
+Další informace najdete v tématu [Poznámka návrh funkce](../../../../_csharplang/proposals/csharp-7.3/ref-local-reassignment.md).
 
 ## <a name="operator-overloadability"></a>Overloadability – operátor
 
@@ -57,4 +57,4 @@ Další informace najdete v tématu [jednoduché přiřazení](~/_csharplang/spe
 - [Referenční dokumentace jazyka C#](../index.md)
 - [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
 - [Operátory jazyka C#](index.md)
-- [REF – klíčové slovo](../keywords/ref.md)
+- [ref keyword](../keywords/ref.md)

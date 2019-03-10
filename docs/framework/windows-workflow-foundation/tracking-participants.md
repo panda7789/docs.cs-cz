@@ -2,12 +2,12 @@
 title: Sledování účastníci
 ms.date: 03/30/2017
 ms.assetid: f13e360c-eeb7-4a49-98a0-8f6a52d64f68
-ms.openlocfilehash: 3165e08a02954facb7e016606e2f94662c6edfe9
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 934c49aaa48ecb319d55fa997aaac4eec93b54c3
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54613524"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57711964"
 ---
 # <a name="tracking-participants"></a>Sledování účastníci
 Sledování účastníci jsou body rozšiřitelnosti, které umožňují vývojář pracovního postupu pro přístup k <xref:System.Activities.Tracking.InteropTrackingRecord.TrackingRecord%2A> objektů a jejich zpracování. [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] zahrnuje účastník standardní sledování, který zapíše záznamy sledování jako události trasování událostí pro Windows (ETW). Je-li který nesplňuje vaše požadavky, můžete také napsat vlastní sledování účastník.  
@@ -60,10 +60,10 @@ Sledování účastníci jsou body rozšiřitelnosti, které umožňují vývoj�
   
  Následující obrázek znázorňuje tok dat prostřednictvím účastník sledování ETW sledování. Jakmile se data sledování dosáhne relace trasování událostí pro Windows, můžete získat přístup v několika způsoby. Jedním z nejužitečnějších způsobů pro přístup k těmto událostem je prostřednictvím prohlížeče událostí, běžné nástroje Windows používá k zobrazení protokolů a trasování z aplikací a služeb.  
   
- ![Tok pro sledování a trasování událostí pro Windows Sledování poskytovatele](../../../docs/framework/windows-workflow-foundation/media/trackingdatathroughetwparticipant.gif "TrackingDatathroughETWParticipant")  
+ ![Tok pro sledování a trasování událostí pro Windows Sledování poskytovatele](./media/trackingdatathroughetwparticipant.gif "TrackingDatathroughETWParticipant")  
   
 ## <a name="tracking-participant-event-data"></a>Data sledování účastníků události  
- Sledování účastník serializuje data sledovaných událostí do relace trasování událostí pro Windows ve formátu jednu událost za každou sledování záznamů.  Událost je identifikována pomocí ID v rozsahu od 100 do 199. Definice událostí sledování záznamů, protože ho vygeneroval sledování účastník, najdete v článku [sledování události – referenční informace](../../../docs/framework/windows-workflow-foundation/tracking-events-reference.md) tématu.  
+ Sledování účastník serializuje data sledovaných událostí do relace trasování událostí pro Windows ve formátu jednu událost za každou sledování záznamů.  Událost je identifikována pomocí ID v rozsahu od 100 do 199. Definice událostí sledování záznamů, protože ho vygeneroval sledování účastník, najdete v článku [sledování události – referenční informace](tracking-events-reference.md) tématu.  
   
  Velikost události trasování událostí pro Windows je omezena velikost vyrovnávací paměti trasování událostí pro Windows, nebo maximální velikost datové části události trasování událostí pro Windows, podle toho, která hodnota je menší. Pokud velikost události překračuje jednu z těchto omezení trasování událostí pro Windows, událostí je zkrácena a její obsah odebrat libovolné způsobem. Selektivně se neodeberou proměnné, argumenty, poznámky a vlastní data. V případě zkrácení všechny z nich se zkrátí bez ohledu na hodnotu, která způsobila velikost události k překročení limitu trasování událostí pro Windows.  Odebrání dat je nahrazena `<item>..<item>`.  
   

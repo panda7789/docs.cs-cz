@@ -2,12 +2,12 @@
 title: Deklarativní omezení
 ms.date: 03/30/2017
 ms.assetid: 67001ed1-7f4d-4ada-ae57-a31176901a53
-ms.openlocfilehash: 5599513405c77aa213b329b085075660baed5c47
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: e3ced8f6f88d698273ace5c8b74fe90b94fa9720
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48842369"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57708143"
 ---
 # <a name="declarative-constraints"></a>Deklarativní omezení
 Deklarativní omezení poskytují výkonný způsob ověření aktivita a její vztahy s ostatními aktivitami. Omezení jsou konfigurovány pro aktivitu během procesu vytváření, ale je také možné zadat další omezení, tak hostitele pracovního postupu. Toto téma obsahuje přehled používání deklarativní omezení pro ověřování aktivity.  
@@ -176,4 +176,4 @@ else
 }  
 ```  
   
- Pokud <xref:System.Activities.Validation.ValidationSettings.OnlyUseAdditionalConstraints%2A> vlastnost <xref:System.Activities.Validation.ValidationSettings> je `true`, pak pouze zadaný další omezení se vyhodnocují při vyvolání ověření zavoláním <xref:System.Activities.Validation.ActivityValidationServices.Validate%2A>. To může být užitečné pro kontrolu pracovních postupů pro ověřování podle konfigurace. Všimněte si však, že když uživatel vyvolá pracovní postup, logiku ověřování, které jsou nakonfigurované v pracovním postupu je vyhodnocen a musíte předat pro pracovní postup, chcete-li úspěšně začít. Další informace o vyvolání ověřování najdete v tématu [vyvolání ověřování aktivit](../../../docs/framework/windows-workflow-foundation/invoking-activity-validation.md).
+ Pokud <xref:System.Activities.Validation.ValidationSettings.OnlyUseAdditionalConstraints%2A> vlastnost <xref:System.Activities.Validation.ValidationSettings> je `true`, pak pouze zadaný další omezení se vyhodnocují při vyvolání ověření zavoláním <xref:System.Activities.Validation.ActivityValidationServices.Validate%2A>. To může být užitečné pro kontrolu pracovních postupů pro ověřování podle konfigurace. Všimněte si však, že když uživatel vyvolá pracovní postup, logiku ověřování, které jsou nakonfigurované v pracovním postupu je vyhodnocen a musíte předat pro pracovní postup, chcete-li úspěšně začít. Další informace o vyvolání ověřování najdete v tématu [vyvolání ověřování aktivit](invoking-activity-validation.md).
