@@ -8,17 +8,17 @@ helpviewer_keywords:
 - paths [Windows Forms], flattening
 - drawing [Windows Forms], flattening curves
 ms.assetid: e654b8de-25f4-4735-9208-42e4514a589c
-ms.openlocfilehash: aa47a655417cdf82d79fb222dc6ff6f6d8c3a947
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d4847124c7af2e0b35d6874f53b85be4891b22df
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54601815"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57711041"
 ---
 # <a name="how-to-flatten-a-curved-path-into-a-line"></a>Postupy: Narovnání zakřivené cesty na čáru
 A <xref:System.Drawing.Drawing2D.GraphicsPath> ukládá posloupnost řádky a Bézierovy křivky. Několik typů křivky (symbol tří teček, elipsy, základní křivky vyhlazení) můžete přidat do cesty, ale každý křivka je převést na Bézierovy křivky před jejich uložením v cestě. Sloučení cesta se skládá z převodu jednotlivých Bézierovy křivky v cestě na řadu rovné čáry. Následující obrázek zobrazuje cestu, před a po sloučení.  
   
- ![Přímých čar a křivek](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art32a.gif "AboutGdip02_Art32A")  
+ ![Přímých čar a křivek](./media/aboutgdip02-art32a.gif "AboutGdip02_Art32A")  
   
 ### <a name="to-flatten-a-path"></a>Chcete-li narovnání cesty  
   
@@ -26,5 +26,5 @@ A <xref:System.Drawing.Drawing2D.GraphicsPath> ukládá posloupnost řádky a B�
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Drawing.Drawing2D.GraphicsPath?displayProperty=nameWithType>
-- [Čáry, křivky a obrazce](../../../../docs/framework/winforms/advanced/lines-curves-and-shapes.md)
-- [Sestavování a kreslení cest](../../../../docs/framework/winforms/advanced/constructing-and-drawing-paths.md)
+- [Čáry, křivky a obrazce](lines-curves-and-shapes.md)
+- [Sestavování a kreslení cest](constructing-and-drawing-paths.md)

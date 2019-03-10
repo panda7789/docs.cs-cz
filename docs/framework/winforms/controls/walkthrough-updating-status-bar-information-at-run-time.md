@@ -1,5 +1,5 @@
 ---
-title: 'Průvodce: Aktualizace informací stavového řádku za běhu'
+title: 'Návod: Aktualizace informací stavového řádku za běhu'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,14 +11,14 @@ helpviewer_keywords:
 - StatusBar control [Windows Forms], refreshing panels
 - panels [Windows Forms], refreshing status bar
 ms.assetid: cc2abb06-c082-49f7-a5a3-2fd1bbcb58d1
-ms.openlocfilehash: 88aacd77742baea5ebf04ddca311100bd44edb3e
-ms.sourcegitcommit: 2b986afe4ce9e13bbeec929c9737757eb61de60e
+ms.openlocfilehash: 3ad76899f86013e3395b5b7859538c4c59c9b1ee
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56665144"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57716462"
 ---
-# <a name="walkthrough-updating-status-bar-information-at-run-time"></a>Průvodce: Aktualizace informací stavového řádku za běhu
+# <a name="walkthrough-updating-status-bar-information-at-run-time"></a>Návod: Aktualizace informací stavového řádku za běhu
 > [!IMPORTANT]
 >  <xref:System.Windows.Forms.StatusStrip> a <xref:System.Windows.Forms.ToolStripStatusLabel> ovládací prvky nahradit a přidání funkce, které <xref:System.Windows.Forms.StatusBar> a <xref:System.Windows.Forms.StatusBarPanel> řídí; však <xref:System.Windows.Forms.StatusBar> a <xref:System.Windows.Forms.StatusBarPanel> ovládací prvky se zachovají pro zpětnou kompatibilitu a budoucí použití, pokud jste Zvolte.  
   
@@ -30,9 +30,9 @@ ms.locfileid: "56665144"
   
 1.  Vytvoření nového formuláře Windows.  
   
-2.  Přidat <xref:System.Windows.Forms.StatusBar> ovládací prvek do formuláře. Podrobnosti najdete v tématu [jak: Přidání ovládacích prvků Windows Forms](../../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md).  
+2.  Přidat <xref:System.Windows.Forms.StatusBar> ovládací prvek do formuláře. Podrobnosti najdete v tématu [jak: Přidání ovládacích prvků Windows Forms](how-to-add-controls-to-windows-forms.md).  
   
-3.  Přidat stav panelu panelu s vaší <xref:System.Windows.Forms.StatusBar> ovládacího prvku. Podrobnosti najdete v tématu [jak: Přidání panelů do ovládacího prvku StatusBar](../../../../docs/framework/winforms/controls/how-to-add-panels-to-a-statusbar-control.md).  
+3.  Přidat stav panelu panelu s vaší <xref:System.Windows.Forms.StatusBar> ovládacího prvku. Podrobnosti najdete v tématu [jak: Přidání panelů do ovládacího prvku StatusBar](how-to-add-panels-to-a-statusbar-control.md).  
   
 4.  Pro <xref:System.Windows.Forms.StatusBar> jste přidali do svého formuláře ovládací prvek nastavit <xref:System.Windows.Forms.StatusBar.ShowPanels%2A> vlastnost `true`.  
   
@@ -87,6 +87,6 @@ ms.locfileid: "56665144"
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Forms.StatusBar>
 - <xref:System.Windows.Forms.ToolStripStatusLabel>
-- [Postupy: Přidání panelů do ovládacího prvku StatusBar](../../../../docs/framework/winforms/controls/how-to-add-panels-to-a-statusbar-control.md)
-- [Postupy: Určení panelu v ovládacím prvku Windows Forms StatusBar označeného kliknutím](../../../../docs/framework/winforms/controls/determine-which-panel-wf-statusbar-control-was-clicked.md)
-- [Přehled ovládacího prvku StatusBar](../../../../docs/framework/winforms/controls/statusbar-control-overview-windows-forms.md)
+- [Postupy: Přidání panelů do ovládacího prvku StatusBar](how-to-add-panels-to-a-statusbar-control.md)
+- [Postupy: Určení panelu v ovládacím prvku Windows Forms StatusBar označeného kliknutím](determine-which-panel-wf-statusbar-control-was-clicked.md)
+- [Přehled ovládacího prvku StatusBar](statusbar-control-overview-windows-forms.md)

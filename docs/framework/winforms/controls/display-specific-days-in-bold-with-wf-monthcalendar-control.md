@@ -11,12 +11,12 @@ helpviewer_keywords:
 - GetDayBold event
 - MonthCalendar control [Windows Forms], dates displayed in bold
 ms.assetid: 8b20db5b-8118-4825-90e8-2c45c186ac7d
-ms.openlocfilehash: f310d5e30acffdd358bc5108f39102387289562e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c27037a166d147df51731c5d59fd42f73294c7ad
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54547784"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57718971"
 ---
 # <a name="how-to-display-specific-days-in-bold-with-the-windows-forms-monthcalendar-control"></a>Postupy: Zobrazení konkrétních dnů Bold s Windows Forms MonthCalendar – ovládací prvek
 Windows Forms <xref:System.Windows.Forms.MonthCalendar> ovládací prvek mohl zobrazit dnů tučně, jako jednotný data nebo na základě s opakováním. Můžete tak učinit k přitažení pozornosti ke speciální kalendářních dat, jako je například svátků a o víkendech.  
@@ -128,7 +128,7 @@ Windows Forms <xref:System.Windows.Forms.MonthCalendar> ovládací prvek mohl zo
     ```  
   
 ## <a name="see-also"></a>Viz také:
-- [Ovládací prvek MonthCalendar](../../../../docs/framework/winforms/controls/monthcalendar-control-windows-forms.md)
-- [Postupy: Vyberte rozsah dat v ovládacím prvku Windows Forms MonthCalendar](../../../../docs/framework/winforms/controls/how-to-select-a-range-of-dates-in-the-windows-forms-monthcalendar-control.md)
-- [Postupy: Změna vzhledu Windows Forms MonthCalendar ovládacího prvku](../../../../docs/framework/winforms/controls/how-to-change-monthcalendar-control-appearance.md)
-- [Postupy: Zobrazení více než jednoho měsíce v ovládacím prvku Windows Forms MonthCalendar](../../../../docs/framework/winforms/controls/display-more-than-one-month-wf-monthcalendar-control.md)
+- [Ovládací prvek MonthCalendar](monthcalendar-control-windows-forms.md)
+- [Postupy: Vyberte rozsah dat v ovládacím prvku Windows Forms MonthCalendar](how-to-select-a-range-of-dates-in-the-windows-forms-monthcalendar-control.md)
+- [Postupy: Změna vzhledu Windows Forms MonthCalendar ovládacího prvku](how-to-change-monthcalendar-control-appearance.md)
+- [Postupy: Zobrazení více než jednoho měsíce v ovládacím prvku Windows Forms MonthCalendar](display-more-than-one-month-wf-monthcalendar-control.md)

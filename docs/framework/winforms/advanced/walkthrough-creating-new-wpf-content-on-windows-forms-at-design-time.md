@@ -1,5 +1,5 @@
 ---
-title: 'Průvodce: Vytvoření nového obsahu WPF ve Windows Forms v době návrhu'
+title: 'Návod: Vytvoření nového obsahu WPF ve Windows Forms v době návrhu'
 ms.date: 08/18/2018
 helpviewer_keywords:
 - interoperability [Windows Forms], WPF and Windows Forms
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - ElementHost control
 - WPF user control [Windows Forms], hosting in Windows Forms
 ms.assetid: 2e92d8e8-f0e4-4df7-9f07-2acf35cd798c
-ms.openlocfilehash: cc5e1acd26763e2dd4324497f5d9ecde216ea975
-ms.sourcegitcommit: acd8ed14fe94e9d4e3a7fb685fe83d05e941073c
+ms.openlocfilehash: ed48db399ba47f0e6be96f7bca33d3892b19e433
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56441460"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57707908"
 ---
-# <a name="walkthrough-creating-new-wpf-content-on-windows-forms-at-design-time"></a>Průvodce: Vytvoření nového obsahu WPF ve Windows Forms v době návrhu
+# <a name="walkthrough-creating-new-wpf-content-on-windows-forms-at-design-time"></a>Návod: Vytvoření nového obsahu WPF ve Windows Forms v době návrhu
 
 Toto téma ukazuje, jak vytvořit ovládací prvek Windows Presentation Foundation (WPF) pro použití ve svých aplikacích pomocí formulářů Windows.
 
@@ -102,16 +102,16 @@ Nový ovládací prvek WPF je připravená k použití ve formuláři. Windows F
 
 Windows Forms a WPF jsou různé technologie, ale jsou určené ke úzce spolupracovat. K poskytování bohatších vzhled a chování ve svých aplikacích, zkuste následující:
 
-- Hostování ovládacího prvku Windows Forms na stránce WPF. Další informace najdete v tématu [názorný postup: Ovládací prvek hostování Windows Forms v subsystému WPF](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-windows-forms-control-in-wpf.md).
+- Hostování ovládacího prvku Windows Forms na stránce WPF. Další informace najdete v tématu [názorný postup: Ovládací prvek hostování Windows Forms v subsystému WPF](../../wpf/advanced/walkthrough-hosting-a-windows-forms-control-in-wpf.md).
 
-- Použití vizuálních stylů Windows Forms k vašemu obsahu WPF. Další informace najdete v tématu [jak: Povolení vizuálních stylů v hybridní aplikaci](../../../../docs/framework/wpf/advanced/how-to-enable-visual-styles-in-a-hybrid-application.md).
+- Použití vizuálních stylů Windows Forms k vašemu obsahu WPF. Další informace najdete v tématu [jak: Povolení vizuálních stylů v hybridní aplikaci](../../wpf/advanced/how-to-enable-visual-styles-in-a-hybrid-application.md).
 
-- Změna stylu obsahu WPF. Další informace najdete v tématu [názorný postup: Určení stylu obsahu WPF](../../../../docs/framework/winforms/advanced/walkthrough-styling-wpf-content.md).
+- Změna stylu obsahu WPF. Další informace najdete v tématu [názorný postup: Určení stylu obsahu WPF](walkthrough-styling-wpf-content.md).
 
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Forms.Integration.ElementHost>
 - <xref:System.Windows.Forms.Integration.WindowsFormsHost>
-- [Migrace a interoperabilita](../../../../docs/framework/wpf/advanced/migration-and-interoperability.md)
-- [Používání ovládacích prvků WPF](../../../../docs/framework/winforms/advanced/using-wpf-controls.md)
+- [Migrace a interoperabilita](../../wpf/advanced/migration-and-interoperability.md)
+- [Používání ovládacích prvků WPF](using-wpf-controls.md)
 - [Návrh kódu XAML v sadě Visual Studio](/visualstudio/designers/designing-xaml-in-visual-studio)

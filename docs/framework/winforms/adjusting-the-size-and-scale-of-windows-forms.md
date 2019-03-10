@@ -6,25 +6,25 @@ helpviewer_keywords:
 - Windows Forms, adjusting size
 - Windows Forms, changing scale
 ms.assetid: a014d2b3-3273-4521-95e1-00171033bf58
-ms.openlocfilehash: 811153b8b2c8545371f794e7aafd05333f7b50f3
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f4e793c3e007e74a33c691cddefa321df6ca6879
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33516410"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57717303"
 ---
 # <a name="adjusting-the-size-and-scale-of-windows-forms"></a>Úprava velikosti a měřítka Windows Forms
 Toto téma obsahuje odkazy na informace o změně velikosti Windows Forms.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Postupy: Změna velikosti Windows Forms](~/docs/framework/winforms/how-to-resize-windows-forms.md)  
- Poskytuje pokyny pro určení velikosti Windows Forms.  
+ Obsahuje pokyny pro určení velikosti Windows Forms.  
   
  [Automatická změna měřítka ve Windows Forms](~/docs/framework/winforms/automatic-scaling-in-windows-forms.md)  
- Popisuje, jak automatické škálování umožňuje a formulář a jeho ovládací prvky, který se má zobrazit správně mezi počítači.  
+ Tento článek popisuje, jak automatické škálování umožňuje formulář a jejích ovládacích prvků, který se má zobrazit odpovídajícím způsobem mezi počítači.  
   
- [Podpora vysoké DPI ve Windows Forms](../../../docs/framework/winforms/high-dpi-support-in-windows-forms.md)    
- Popisuje podporu Windows Forms pro vysokou DPI a dynamické škálování. 
+ [Podpora vysokého nastavení DPI ve Windows Forms](high-dpi-support-in-windows-forms.md)    
+ Tento článek popisuje Windows Forms podpora vysokého nastavení DPI a dynamické škálování. 
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Drawing.Size>  
@@ -38,4 +38,4 @@ Toto téma obsahuje odkazy na informace o změně velikosti Windows Forms.
   
 ## <a name="related-sections"></a>Související oddíly  
  [Změna vzhledu Windows Forms](~/docs/framework/winforms/changing-the-appearance-of-windows-forms.md)  
- Obsahuje odkazy na témata s popisem jiné způsoby Změna vzhledu Windows Forms.
+ Obsahuje odkazy na témata popisující další způsoby, jak změnit vzhledu Windows Forms.

@@ -15,18 +15,18 @@ helpviewer_keywords:
 - DataSet class [Windows Forms], binding and Windows Forms
 - data [Windows Forms], data providers
 ms.assetid: 3d2c43f6-462b-4d35-9c86-13e9afe012e1
-ms.openlocfilehash: 40a07ddffa68d0dac3cb9b4956510fa7dc124a7c
-ms.sourcegitcommit: 2b986afe4ce9e13bbeec929c9737757eb61de60e
+ms.openlocfilehash: 145e14f4a6e11209e46e8761f8a0551c1400a605
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56664741"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57711297"
 ---
 # <a name="data-sources-supported-by-windows-forms"></a>Zdroje dat podporované rozhraním Windows Forms
 Tradičně datové vazby používá v rámci aplikací využít data uložená v databázích. Pomocí Windows Forms – datová vazba, můžou k datům z databází, stejně jako data v jiných strukturách, jako jsou pole a kolekce, tak dlouho, dokud jsou splněné určité minimální požadavky.  
   
 ## <a name="structures-to-bind-to"></a>Struktury tak, aby vazba na  
- Ve Windows Forms, můžete vázat na širokou škálu struktury, od jednoduchého objekty (jednoduchá vazba) pro komplexní seznamů, jako jsou tabulky dat ADO.NET (komplexní vazby). Pro jednoduché vazby Windows Forms podporuje vazbu na veřejné vlastnosti u jednoduchého objektu. Vazba na základě seznamu Windows Forms obvykle vyžaduje, aby podporoval objektu <xref:System.Collections.IList> rozhraní nebo <xref:System.ComponentModel.IListSource> rozhraní. Navíc pokud vytváříte vazbu s prostřednictvím <xref:System.Windows.Forms.BindingSource> součásti, můžete vázat na objekt, který podporuje <xref:System.Collections.IEnumerable> rozhraní. Další informace o rozhraní související s datovou vazbu, naleznete v tématu [rozhraní související s datovou vazbu](../../../docs/framework/winforms/interfaces-related-to-data-binding.md).  
+ Ve Windows Forms, můžete vázat na širokou škálu struktury, od jednoduchého objekty (jednoduchá vazba) pro komplexní seznamů, jako jsou tabulky dat ADO.NET (komplexní vazby). Pro jednoduché vazby Windows Forms podporuje vazbu na veřejné vlastnosti u jednoduchého objektu. Vazba na základě seznamu Windows Forms obvykle vyžaduje, aby podporoval objektu <xref:System.Collections.IList> rozhraní nebo <xref:System.ComponentModel.IListSource> rozhraní. Navíc pokud vytváříte vazbu s prostřednictvím <xref:System.Windows.Forms.BindingSource> součásti, můžete vázat na objekt, který podporuje <xref:System.Collections.IEnumerable> rozhraní. Další informace o rozhraní související s datovou vazbu, naleznete v tématu [rozhraní související s datovou vazbu](interfaces-related-to-data-binding.md).  
   
  Následující seznam obsahuje struktury že lze svázat ve Windows Forms.  
   
@@ -58,6 +58,6 @@ Tradičně datové vazby používá v rámci aplikací využít data uložená v
 -   <xref:System.Data.DataViewManager>. A <xref:System.Data.DataViewManager> je přizpůsobené zobrazení celého <xref:System.Data.DataSet>, obdobná <xref:System.Data.DataView>, ale s vztahy zahrnuté. S <xref:System.Data.DataViewManager.DataViewSettings%2A> kolekci, můžete nastavit výchozí filtry a možnosti řazení pro všechna zobrazení, která <xref:System.Data.DataViewManager> má pro danou tabulku.  
   
 ## <a name="see-also"></a>Viz také:
-- [Oznámení změn v datové vazbě Windows Forms](../../../docs/framework/winforms/change-notification-in-windows-forms-data-binding.md)
-- [Datové vazby a Windows Forms](../../../docs/framework/winforms/data-binding-and-windows-forms.md)
-- [Windows Forms – datová vazba](../../../docs/framework/winforms/windows-forms-data-binding.md)
+- [Oznámení změn v datové vazbě Windows Forms](change-notification-in-windows-forms-data-binding.md)
+- [Datové vazby a Windows Forms](data-binding-and-windows-forms.md)
+- [Windows Forms – datová vazba](windows-forms-data-binding.md)

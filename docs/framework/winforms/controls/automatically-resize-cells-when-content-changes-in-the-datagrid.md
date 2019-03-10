@@ -10,26 +10,26 @@ helpviewer_keywords:
 - cells [Windows Forms], resizing automatically
 - DataGridView control [Windows Forms], resizing cells
 ms.assetid: 1d68934d-a04c-4b12-9e66-c856c6828131
-ms.openlocfilehash: a860be7cc7caa30e19fb513ff668233de2bf4b01
-ms.sourcegitcommit: acd8ed14fe94e9d4e3a7fb685fe83d05e941073c
+ms.openlocfilehash: 15a3538dddfb1c36aa276bdf2fbe53cb8597992b
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56441174"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57710651"
 ---
 # <a name="how-to-automatically-resize-cells-when-content-changes-in-the-windows-forms-datagridview-control"></a>Postupy: Automatická změna velikosti buněk při změně obsahu v ovládacím prvku Windows Forms DataGridView
 Můžete nakonfigurovat <xref:System.Windows.Forms.DataGridView> řízení ke změně velikosti jeho řádky, sloupce a záhlaví automaticky pokaždé, když obsah změny, tak, aby buňky jsou vždy dostatečně velký pro zobrazení jejich hodnoty bez oříznutí.  
   
  Máte řadu možností pro omezení buněk, které se používají k určení nové velikosti. Můžete například nakonfigurovat ovládací prvek automaticky změní velikost šířku sloupce pouze na základě hodnot v řádcích, které jsou aktuálně zobrazeny. Díky tomu se můžete vyhnout neefektivnost při práci s velkým počtem řádků, i když se v takovém případě můžete chtít použít nastavení velikosti metody, jako <xref:System.Windows.Forms.DataGridView.AutoResizeColumns%2A> upravit velikost v době podle vašeho výběru.  
   
- Další informace o automatickou změnu velikosti najdete v tématu [možnosti nastavení velikosti v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/sizing-options-in-the-windows-forms-datagridview-control.md).  
+ Další informace o automatickou změnu velikosti najdete v tématu [možnosti nastavení velikosti v ovládacím prvku Windows Forms DataGridView](sizing-options-in-the-windows-forms-datagridview-control.md).  
   
  Následující příklad kódu ukazuje možnosti dostupné pro automatickou změnu velikosti.  
   
 ## <a name="example"></a>Příklad  
- [!code-cpp[System.Windows.Forms.DataGridView.AutoSizing#0](../../../../samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.AutoSizing/CPP/autosizing.cpp#0)]
- [!code-csharp[System.Windows.Forms.DataGridView.AutoSizing#0](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.AutoSizing/CS/autosizing.cs#0)]
- [!code-vb[System.Windows.Forms.DataGridView.AutoSizing#0](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.AutoSizing/VB/autosizing.vb#0)]  
+ [!code-cpp[System.Windows.Forms.DataGridView.AutoSizing#0](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.AutoSizing/CPP/autosizing.cpp#0)]
+ [!code-csharp[System.Windows.Forms.DataGridView.AutoSizing#0](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.AutoSizing/CS/autosizing.cs#0)]
+ [!code-vb[System.Windows.Forms.DataGridView.AutoSizing#0](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.AutoSizing/VB/autosizing.vb#0)]  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
@@ -51,6 +51,6 @@ Můžete nakonfigurovat <xref:System.Windows.Forms.DataGridView> řízení ke zm
 - <xref:System.Windows.Forms.DataGridViewAutoSizeColumnsMode>
 - <xref:System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode>
 - <xref:System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode>
-- [Změna velikosti sloupců a řádků v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/resizing-columns-and-rows-in-the-windows-forms-datagridview-control.md)
-- [Možnosti změny velikosti v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/sizing-options-in-the-windows-forms-datagridview-control.md)
-- [Postupy: Programová změna velikosti buněk k zobrazení celého obsahu v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/programmatically-resize-cells-to-fit-content-in-the-datagrid.md)
+- [Změna velikosti sloupců a řádků v ovládacím prvku Windows Forms DataGridView](resizing-columns-and-rows-in-the-windows-forms-datagridview-control.md)
+- [Možnosti změny velikosti v ovládacím prvku Windows Forms DataGridView](sizing-options-in-the-windows-forms-datagridview-control.md)
+- [Postupy: Programová změna velikosti buněk k zobrazení celého obsahu v ovládacím prvku Windows Forms DataGridView](programmatically-resize-cells-to-fit-content-in-the-datagrid.md)

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - column headers [Windows Forms], hiding
 - DataGridView control [Windows Forms], column headers
 ms.assetid: e4ad5f68-50d2-4b9e-93ee-9d622423a8ab
-ms.openlocfilehash: 80377aa598938031f9708c4b7657594985ec0746
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: b9b78020a567d05ea000be97bb116b4f8353d56c
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54717061"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57709455"
 ---
 # <a name="how-to-hide-column-headers-in-the-windows-forms-datagridview-control"></a>Postupy: Skrytí záhlaví sloupců v ovládacím prvku Windows Forms DataGridView
 Někdy budete chtít zobrazit <xref:System.Windows.Forms.DataGridView> bez záhlaví sloupců. V <xref:System.Windows.Forms.DataGridView> ovládací prvek, <xref:System.Windows.Forms.DataGridView.ColumnHeadersVisible%2A> vlastnost hodnota určuje, zda jsou zobrazena záhlaví sloupců.  
@@ -23,8 +23,8 @@ Někdy budete chtít zobrazit <xref:System.Windows.Forms.DataGridView> bez záhl
   
 -   Nastavte <xref:System.Windows.Forms.DataGridView.ColumnHeadersVisible%2A?displayProperty=nameWithType> vlastnost `false`.  
   
-     [!code-csharp[System.Windows.Forms.DataGridViewMisc#062](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/CS/datagridviewmisc.cs#062)]
-     [!code-vb[System.Windows.Forms.DataGridViewMisc#062](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/VB/datagridviewmisc.vb#062)]  
+     [!code-csharp[System.Windows.Forms.DataGridViewMisc#062](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/CS/datagridviewmisc.cs#062)]
+     [!code-vb[System.Windows.Forms.DataGridViewMisc#062](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/VB/datagridviewmisc.vb#062)]  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
@@ -36,4 +36,4 @@ Někdy budete chtít zobrazit <xref:System.Windows.Forms.DataGridView> bez záhl
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.DataGridView.ColumnHeadersVisible%2A?displayProperty=nameWithType>
-- [Základní funkce sloupce, řádku a buňky v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/basic-column-row-and-cell-features-wf-datagridview-control.md)
+- [Základní funkce sloupce, řádku a buňky v ovládacím prvku Windows Forms DataGridView](basic-column-row-and-cell-features-wf-datagridview-control.md)

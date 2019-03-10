@@ -8,12 +8,12 @@ helpviewer_keywords:
 - thumbnail images [Windows Forms], creating
 - images [Windows Forms], creating thumbnails
 ms.assetid: e956242a-1e5b-4217-a3cf-5f3fb45d00ba
-ms.openlocfilehash: fd5e0b5341a712f25f9d41670f9b3ede5414dda4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 3ed1fb6a9a7fc8e7ded6ae0e124ca7dcbf0f3c98
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54497039"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57716956"
 ---
 # <a name="how-to-create-thumbnail-images"></a>Postupy: Vytváření miniatur obrázků
 Obrázek miniatury je malá verze Image. Obrázek miniatury můžete vytvořit pomocí volání <xref:System.Drawing.Image.GetThumbnailImage%2A> metodu <xref:System.Drawing.Image> objektu.  
@@ -23,13 +23,13 @@ Obrázek miniatury je malá verze Image. Obrázek miniatury můžete vytvořit p
   
  Následující obrázek znázorňuje obrázek miniatury.  
   
- ![Obrázek miniatury](../../../../docs/framework/winforms/advanced/media/thumbnail1.png "Thumbnail1")  
+ ![Obrázek miniatury](./media/thumbnail1.png "Thumbnail1")  
   
 > [!NOTE]
 >  V tomto příkladu je metoda zpětného volání deklarovány, ale nikdy použít. Tento atribut podporuje všechny verze rozhraní GDI +.  
   
- [!code-csharp[System.Drawing.WorkingWithImages#71](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.WorkingWithImages/CS/Class1.cs#71)]
- [!code-vb[System.Drawing.WorkingWithImages#71](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.WorkingWithImages/VB/Class1.vb#71)]  
+ [!code-csharp[System.Drawing.WorkingWithImages#71](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.WorkingWithImages/CS/Class1.cs#71)]
+ [!code-vb[System.Drawing.WorkingWithImages#71](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.WorkingWithImages/VB/Class1.vb#71)]  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  V předchozím příkladu je určený k použití pomocí Windows Forms a vyžaduje <xref:System.Windows.Forms.PaintEventArgs> `e`, což je parametr <xref:System.Windows.Forms.Control.Paint> obslužné rutiny události. Chcete-li spustit příklad, postupujte podle těchto kroků:  
@@ -51,5 +51,5 @@ Obrázek miniatury je malá verze Image. Obrázek miniatury můžete vytvořit p
      Ve formuláři se zobrazí obrázek miniatury 100 x 100.  
   
 ## <a name="see-also"></a>Viz také:
-- [Obrázky, rastrové obrázky a metasoubory](../../../../docs/framework/winforms/advanced/images-bitmaps-and-metafiles.md)
-- [Práce s obrázky, rastrovými obrázky, ikonami a metasoubory](../../../../docs/framework/winforms/advanced/working-with-images-bitmaps-icons-and-metafiles.md)
+- [Obrázky, rastrové obrázky a metasoubory](images-bitmaps-and-metafiles.md)
+- [Práce s obrázky, rastrovými obrázky, ikonami a metasoubory](working-with-images-bitmaps-icons-and-metafiles.md)
