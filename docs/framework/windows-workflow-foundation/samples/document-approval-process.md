@@ -2,12 +2,12 @@
 title: Proces schválení dokumentu
 ms.date: 03/30/2017
 ms.assetid: 9b240937-76a7-45cd-8823-7f82c34d03bd
-ms.openlocfilehash: 34b63acaacde274210343a1135f3ed39a2df885e
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: d1e37dcbc21239822937c57d9779a52357aac518
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48582707"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57717706"
 ---
 # <a name="document-approval-process"></a>Proces schválení dokumentu
 Tento příklad ukazuje použití mnoha funkcí Windows Workflow Foundation (WF) a Windows Communication Foundation (WCF) společně. Společně implementují scénář proces schválení dokumentu. Klientská aplikace může odesílat dokumenty pro schválení a schválit dokumenty. Aplikace Správce schválení existuje pro usnadnění komunikace mezi klienty a vynucení pravidel procesu schvalování. Proces schválení je pracovní postup, který můžete spustit několik typů schválení. Aktivity slouží k získání jedné schválení, schválení kvora (procento sada schvalovatelů) a komplexní schválení proces, který se skládá z jedné schválení v pořadí a kvora.
@@ -24,7 +24,7 @@ Tento příklad ukazuje použití mnoha funkcí Windows Workflow Foundation (WF)
 ## <a name="sample-details"></a>Ukázka podrobnosti  
  Následující obrázek ukazuje pracovní postup procesu schvalování dokumentů.  
   
- ![Pracovní postup procesu schvalování dokumentů](../../../../docs/framework/windows-workflow-foundation/samples/media/approvalprocess.jpg "ApprovalProcess")  
+ ![Pracovní postup procesu schvalování dokumentů](./media/approvalprocess.jpg "ApprovalProcess")  
   
  Z pohledu klienta schválení zpracování funkce takto:  
   

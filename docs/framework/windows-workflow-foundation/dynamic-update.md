@@ -2,12 +2,12 @@
 title: Dynamická aktualizace
 ms.date: 03/30/2017
 ms.assetid: 8b6ef19b-9691-4b4b-824c-3c651a9db96e
-ms.openlocfilehash: 9dc733e0fa9cc6fead51eb8105b7b1e37de8cd91
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: a1d5337bf69cb87d790ce4074cde4c18c989a4d8
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57496739"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57724469"
 ---
 # <a name="dynamic-update"></a>Dynamická aktualizace
 
@@ -17,13 +17,13 @@ Dynamická aktualizace poskytuje mechanismus pro pracovní postup vývojářům 
 
 Použití dynamických aktualizací trvalé instance práce, <xref:System.Activities.DynamicUpdate.DynamicUpdateMap> je vytvořen, který obsahuje pokyny pro modul runtime, které popisují, jak změnit trvalými instancemi pracovního postupu tak, aby odrážely požadované změny. Po vytvoření mapa aktualizace se použije k instancím požadované trvalá pracovního postupu. Po použití dynamické aktualizace, může být obnoveno instance pracovního postupu, pomocí nové definice aktualizovaný pracovní postup. Existují čtyři kroky potřebné k vytvoření a použijte mapu aktualizace.
 
-1. [Příprava pro dynamickou aktualizaci definice pracovního postupu](../../../docs/framework/windows-workflow-foundation/dynamic-update.md#Prepare)
+1. [Příprava pro dynamickou aktualizaci definice pracovního postupu](dynamic-update.md#Prepare)
 
-2. [Aktualizace definice pracovního postupu tak, aby odrážely požadované změny](../../../docs/framework/windows-workflow-foundation/dynamic-update.md#Update)
+2. [Aktualizace definice pracovního postupu tak, aby odrážely požadované změny](dynamic-update.md#Update)
 
-3. [Vytvoření mapy aktualizace](../../../docs/framework/windows-workflow-foundation/dynamic-update.md#Create)
+3. [Vytvoření mapy aktualizace](dynamic-update.md#Create)
 
-4. [Použijte mapu aktualizace instance požadované trvalá pracovního postupu](../../../docs/framework/windows-workflow-foundation/dynamic-update.md#Apply)
+4. [Použijte mapu aktualizace instance požadované trvalá pracovního postupu](dynamic-update.md#Apply)
 
 > [!NOTE]
 > Všimněte si, že kroky 1 až 3, které zahrnují vytváření mapa aktualizace, se dají provést nezávisle na instalaci aktualizace nezměnilo. Běžný scénář, že pracovní postup pro vývojáře se vytvořit mapa aktualizace do režimu offline a pak správce použije aktualizace později.
@@ -37,7 +37,7 @@ Prvním krokem v procesu dynamické aktualizace je k přípravě definice pracov
 Příprava pracovní postup Xaml pro dynamické aktualizace, které mohou být načteny do <xref:System.Activities.ActivityBuilder>a pak <xref:System.Activities.ActivityBuilder> je předána do <xref:System.Activities.DynamicUpdate.DynamicUpdateServices.PrepareForUpdate%2A?displayProperty=nameWithType>.
 
 > [!NOTE]
-> Další informace o práci s serializovat pracovních postupů a <xref:System.Activities.ActivityBuilder>, naleznete v tématu [serializace pracovních postupů a aktivit do a z XAML](../../../docs/framework/windows-workflow-foundation/serializing-workflows-and-activities-to-and-from-xaml.md).
+> Další informace o práci s serializovat pracovních postupů a <xref:System.Activities.ActivityBuilder>, naleznete v tématu [serializace pracovních postupů a aktivit do a z XAML](serializing-workflows-and-activities-to-and-from-xaml.md).
 
 V následujícím příkladu `MortgageWorkflow` definice (, který se skládá z <xref:System.Activities.Statements.Sequence> s několika podřízených aktivit) je načteno do <xref:System.Activities.ActivityBuilder>a pak připraví se dynamická aktualizace. Po vrácení metody, <xref:System.Activities.ActivityBuilder> obsahuje původní definici pracovního postupu, stejně jako kopii.
 
@@ -171,7 +171,7 @@ foreach (Guid id in ids)
 Po použití dynamické aktualizace, může být obnoveno instance pracovního postupu. Všimněte si, že nový aktualizované definice a <xref:System.Activities.WorkflowIdentity> musí být použita.
 
 > [!NOTE]
-> Další informace o práci s <xref:System.Activities.WorkflowApplication> a <xref:System.Activities.WorkflowIdentity>, naleznete v tématu [použití WorkflowIdentity a správy verzí](../../../docs/framework/windows-workflow-foundation/using-workflowidentity-and-versioning.md).
+> Další informace o práci s <xref:System.Activities.WorkflowApplication> a <xref:System.Activities.WorkflowIdentity>, naleznete v tématu [použití WorkflowIdentity a správy verzí](using-workflowidentity-and-versioning.md).
 
 V následujícím příkladu `MortgageWorkflow_v1.1.xaml` pracovní postup z předchozího příkladu byl zkompilován a je načten a obnovit pomocí definice aktualizovaný pracovní postup.
 

@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: ca7bf77f-3e5d-4b23-b17a-d0b60f46411d
-ms.openlocfilehash: 4f4bcd06067775c6f43063ebe5682730deba1d4f
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: 84a9220e39c0d79dc53bee576735d1062c1c037c
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57498884"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57710274"
 ---
 # <a name="how-to-enable-sql-persistence-for-workflows-and-workflow-services"></a>Postupy: Povolení trvalosti SQL pro pracovní postupy a služby pracovních postupů
 
@@ -31,7 +31,7 @@ Před použitím funkce SQL Store Instance pracovního postupu, vytvořte datab�
 >
 > System.Data.SqlClient.SqlException: Nelze nalézt uloženou proceduru 'System.Activities.DurableInstancing.CreateLockOwner.
 
-Následující části popisují postup povolení trvalosti pro pracovní postupy a služby pracovních postupů pomocí Store Instance pracovního postupu SQL. Další informace o vlastnostech Store Instance pracovního postupu SQL najdete v tématu [vlastnosti z SQL pracovního postupu Instance Store](../../../docs/framework/windows-workflow-foundation/properties-of-sql-workflow-instance-store.md).
+Následující části popisují postup povolení trvalosti pro pracovní postupy a služby pracovních postupů pomocí Store Instance pracovního postupu SQL. Další informace o vlastnostech Store Instance pracovního postupu SQL najdete v tématu [vlastnosti z SQL pracovního postupu Instance Store](properties-of-sql-workflow-instance-store.md).
 
 ## <a name="enabling-persistence-for-self-hosted-workflows-that-use-workflowapplication"></a>Povolení trvalosti pro pracovní postupy místním používajících WorkflowApplication
 
@@ -72,7 +72,7 @@ Můžete zapnout stálost v místním prostředí pracovních postupů, které p
    ```
 
 > [!NOTE]
-> Zobrazit [jak: Vytvoření a spuštění dlouhém pracovním postupu spuštění](../../../docs/framework/windows-workflow-foundation/how-to-create-and-run-a-long-running-workflow.md) kroku [kurz Začínáme](../../../docs/framework/windows-workflow-foundation/getting-started-tutorial.md) pokyny krok za krokem.
+> Zobrazit [jak: Vytvoření a spuštění dlouhém pracovním postupu spuštění](how-to-create-and-run-a-long-running-workflow.md) kroku [kurz Začínáme](getting-started-tutorial.md) pokyny krok za krokem.
 
 ## <a name="enabling-persistence-for-self-hosted-workflow-services-that-use-the-workflowservicehost"></a>Povolení trvalosti pro pracovní postup služby místním, použít hostitele služby pracovního postupu
 
@@ -129,7 +129,7 @@ workflowServiceHost.DurableInstancingOptions.InstanceStore = sqlInstanceStoreObj
 
 Povolení trvalosti pro pracovní postup v místním prostředí nebo Windows Process Activation Service WAS hostované služby pomocí konfiguračního souboru. Služba WAS hostované pracovního postupu používá hostitele služby pracovního postupu jako v místním prostředí pracovního postupu služby.
 
-`SqlWorkflowInstanceStoreBehavior`, Chování služby, který vám umožní snadno změnit [Store Instance pracovního postupu SQL](../../../docs/framework/windows-workflow-foundation/sql-workflow-instance-store.md) vlastnosti prostřednictvím konfigurace XML. Pro služby WAS hostované pracovního postupu použijte soubor Web.config. Následující příklad konfigurace ukazuje postup při konfiguraci Store Instance pracovního postupu SQL s použitím `sqlWorkflowInstanceStore` prvek chování v konfiguračním souboru.
+`SqlWorkflowInstanceStoreBehavior`, Chování služby, který vám umožní snadno změnit [Store Instance pracovního postupu SQL](sql-workflow-instance-store.md) vlastnosti prostřednictvím konfigurace XML. Pro služby WAS hostované pracovního postupu použijte soubor Web.config. Následující příklad konfigurace ukazuje postup při konfiguraci Store Instance pracovního postupu SQL s použitím `sqlWorkflowInstanceStore` prvek chování v konfiguračním souboru.
 
 ```xml
 <serviceBehaviors>

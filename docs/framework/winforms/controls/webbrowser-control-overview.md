@@ -7,12 +7,12 @@ helpviewer_keywords:
 - WebBrowser control [Windows Forms], about
 - Web pages [Windows Forms], displaying in applications
 ms.assetid: 6e3e1cc2-9c48-4136-9659-e99e4e60b7e9
-ms.openlocfilehash: 919098fd5eb6578b91a7b44cf99ba3aef9076081
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: cc998fd88f3487aa20f6cef73aacb6c07f92c7ad
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54610978"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57710092"
 ---
 # <a name="webbrowser-control-overview"></a>WebBrowser – přehled ovládacího prvku
 <xref:System.Windows.Forms.WebBrowser> Řízení poskytuje spravované obálky ovládacího prvku WebBrowser ActiveX. Spravovaná obálka umožňuje zobrazení webové stránky v klientských aplikací Windows Forms. Můžete použít <xref:System.Windows.Forms.WebBrowser> ovládacího prvku na duplicitní funkce procházení webové Internet Explorer v aplikaci nebo je můžete zakázat výchozí funkce Internet Exploreru a pomocí ovládacího prvku jako jednoduchý prohlížeče dokumentu HTML. Můžete také použít ovládací prvek do formuláře přidat prvky DHTML podle uživatelského rozhraní a skrýt skutečnost, že jsou hostované v <xref:System.Windows.Forms.WebBrowser> ovládacího prvku. Tento přístup umožňuje bez problémů kombinovat webové ovládací prvky pomocí ovládacích prvků Windows Forms v jedné aplikaci.  
@@ -52,9 +52,9 @@ ms.locfileid: "54610978"
 - <xref:System.Windows.Forms.WebBrowserProgressChangedEventArgs>
 - <xref:System.Windows.Forms.WebBrowserReadyState>
 - <xref:System.Windows.Forms.WebBrowserRefreshOption>
-- [Postupy: Přejděte na adresu URL pomocí ovládacího prvku WebBrowser](../../../../docs/framework/winforms/controls/how-to-navigate-to-a-url-with-the-webbrowser-control.md)
-- [Postupy: Tisk pomocí ovládacího prvku WebBrowser](../../../../docs/framework/winforms/controls/how-to-print-with-a-webbrowser-control.md)
-- [Postupy: Přidání schopností webového prohlížeče do formulářové aplikaci Windows](../../../../docs/framework/winforms/controls/how-to-add-web-browser-capabilities-to-a-windows-forms-application.md)
-- [Postupy: Vytvoření prohlížeče dokumentu HTML ve formulářové aplikaci Windows](../../../../docs/framework/winforms/controls/how-to-create-an-html-document-viewer-in-a-windows-forms-application.md)
-- [Postupy: Implementace obousměrné komunikace mezi kódem DHTML a kódem klientské aplikace](../../../../docs/framework/winforms/controls/implement-two-way-com-between-dhtml-and-client.md)
-- [WebBrowser – zabezpečení](../../../../docs/framework/winforms/controls/webbrowser-security.md)
+- [Postupy: Přejděte na adresu URL pomocí ovládacího prvku WebBrowser](how-to-navigate-to-a-url-with-the-webbrowser-control.md)
+- [Postupy: Tisk pomocí ovládacího prvku WebBrowser](how-to-print-with-a-webbrowser-control.md)
+- [Postupy: Přidání schopností webového prohlížeče do formulářové aplikaci Windows](how-to-add-web-browser-capabilities-to-a-windows-forms-application.md)
+- [Postupy: Vytvoření prohlížeče dokumentu HTML ve formulářové aplikaci Windows](how-to-create-an-html-document-viewer-in-a-windows-forms-application.md)
+- [Postupy: Implementace obousměrné komunikace mezi kódem DHTML a kódem klientské aplikace](implement-two-way-com-between-dhtml-and-client.md)
+- [WebBrowser – zabezpečení](webbrowser-security.md)

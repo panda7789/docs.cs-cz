@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Windows Forms, bi-directional support
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ecd167b46a3d600852b5b12a7f18d0013502523d
-ms.sourcegitcommit: acd8ed14fe94e9d4e3a7fb685fe83d05e941073c
+ms.openlocfilehash: f494d3176d72563a82b50fd5e077917e46045b91
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56442968"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57712277"
 ---
 # <a name="bi-directional-support-for-windows-forms-applications"></a>Obousměrná podpora pro formulářové aplikace Windows
 Visual Studio můžete vytvářet aplikace pro systém Windows, které podporují obousměrné (vpravo zprava doleva) jazyků, jako je arabština nebo hebrejština. To zahrnuje standardní formuláře, dialogová okna, formuláře MDI a ovládací prvky, které můžete pracovat s tyto formy – to znamená, že všechny objekty v <xref:System.Windows.Forms.Control> oboru názvů.  
@@ -79,7 +79,7 @@ Visual Studio můžete vytvářet aplikace pro systém Windows, které podporuj�
 |<xref:System.Windows.Forms.VScrollBar>|Zobrazí na levé straně místo pravé straně posuvný ovládacích prvků|Žádný vliv|Ne|  
   
 ## <a name="encoding"></a>Kódování  
- Windows Forms podporu kódování Unicode, takže může obsahovat libovolný znak, nastavte při vytváření aplikace obousměrné. Ale ne všechny ovládací prvky Windows Forms podporuje kódování Unicode na všech platformách. Další informace najdete v tématu [kódování a globalizace Windows Forms](../../../../docs/framework/winforms/advanced/encoding-and-windows-forms-globalization.md).  
+ Windows Forms podporu kódování Unicode, takže může obsahovat libovolný znak, nastavte při vytváření aplikace obousměrné. Ale ne všechny ovládací prvky Windows Forms podporuje kódování Unicode na všech platformách. Další informace najdete v tématu [kódování a globalizace Windows Forms](encoding-and-windows-forms-globalization.md).  
   
 ## <a name="gdi"></a>GDI+  
  Můžete použít [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] pro kreslení textu pomocí pořadí čtení zprava doleva. <xref:System.Drawing.Graphics.DrawString%2A> Podporuje metodu, která slouží k vykreslení textu, `StringFormat` parametr, který lze nastavit na <xref:System.Drawing.StringFormatFlags.DirectionRightToLeft> člena <xref:System.Drawing.StringFormatFlags> výčet, aby bylo možné reverse bod počátek pro text.  

@@ -2,12 +2,12 @@
 title: Sledování profily
 ms.date: 03/30/2017
 ms.assetid: 22682566-1cd9-4672-9791-fb3523638e18
-ms.openlocfilehash: f7acb46e16894dd287512541ad4c2be1adafb42a
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: 2fa4d65a6f0056824b2fc9dd67b93608777fc75d
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57482298"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57721369"
 ---
 # <a name="tracking-profiles"></a>Sledování profily
 
@@ -345,7 +345,7 @@ Sledování elementy dotazu se používají k vytvoření profilu sledování po
 > [!WARNING]
 > WF pomocí hostitele služby pracovního postupu se profilu sledování obvykle vytvoří pomocí konfiguračního souboru. Je také možné vytvořit profil sledování s kódem pomocí profilu sledování a sledování rozhraní API pro dotazy.
 
-Profil nakonfigurovaný jako soubor XML konfigurace platí pro sledování účastníka pomocí chování rozšíření. Ten se přidává k hostiteli WorkflowServiceHost, jak je popsáno v další části [konfigurace sledování pracovního postupu](../../../docs/framework/windows-workflow-foundation/configuring-tracking-for-a-workflow.md).
+Profil nakonfigurovaný jako soubor XML konfigurace platí pro sledování účastníka pomocí chování rozšíření. Ten se přidává k hostiteli WorkflowServiceHost, jak je popsáno v další části [konfigurace sledování pracovního postupu](configuring-tracking-for-a-workflow.md).
 
 Úroveň podrobností na sledování záznamy, protože ho vygeneroval hostitele se určuje podle nastavení konfigurace v rámci profilu sledování. Účastník sledování přihlásí k sledování záznamů tak, že přidáte dotazy sledovacího profilu. Přihlásit k odběru všech sledování záznamů, musí určovat všechny dotazy sledování pomocí profilu sledování "\*" název pole v jednotlivých dotazů.
 
@@ -388,6 +388,6 @@ Tady jsou některé běžné příklady sledování profilů.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Sledování SQL](../../../docs/framework/windows-workflow-foundation/samples/sql-tracking.md)
+- [Sledování SQL](./samples/sql-tracking.md)
 - [Windows Server App Fabric monitorování](https://go.microsoft.com/fwlink/?LinkId=201273)
 - [Monitorování aplikací pomocí App Fabric](https://go.microsoft.com/fwlink/?LinkId=201275)

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - await keyword [C#]
 - await [C#]
 ms.assetid: 50725c24-ac76-4ca7-bca1-dd57642ffedb
-ms.openlocfilehash: 86da57c0f8ecca7e5dada3ae6756739197c3f206
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1afd763d41ac3ffd42409ff8d1b8823979ab0c08
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54618971"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57713043"
 ---
 # <a name="await-c-reference"></a>await – – operátor (Referenční dokumentace jazyka C#)
 `await` Operátor je použít pro úkol v asynchronní metodě vložte bodu pozastavení provádění metody až do dokončení očekávané úlohy. Úloha představuje probíhající práci.  
@@ -21,17 +21,16 @@ ms.locfileid: "54618971"
 `await` jde použít jenom v asynchronní metodě změnil [asynchronní](../../../csharp/language-reference/keywords/async.md) – klíčové slovo. Tato metoda, definována pomocí `async` modifikátor a obvykle obsahuje jeden nebo více `await` výrazy, se označuje jako *asynchronní metoda*.  
   
 > [!NOTE]
->  `async` a `await` klíčová slova byly zavedeny v jazyce C# 5. Úvod do asynchronního programování naleznete v tématu [asynchronní programování pomocí modifikátoru async a operátoru await](../../../csharp/programming-guide/concepts/async/index.md).  
+> `async` a `await` klíčová slova byly zavedeny v jazyce C# 5. Úvod do asynchronního programování naleznete v tématu [asynchronní programování pomocí modifikátoru async a operátoru await](../../../csharp/programming-guide/concepts/async/index.md).  
   
-Úkol, na který `await` je použit operátor obvykle je vrácen voláním metody, která implementuje [Task-Based Asynchronous Pattern](../../../standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md). Patří sem metody, které vracejí <xref:System.Threading.Tasks.Task>, <xref:System.Threading.Tasks.Task%601>, a `System.Threading.Tasks.ValueType<TResult>` objekty.  
+Úkol, na který `await` je použit operátor obvykle je vrácen voláním metody, která implementuje [Task-Based Asynchronous Pattern](../../../standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md). Patří sem metody, které vracejí <xref:System.Threading.Tasks.Task>, <xref:System.Threading.Tasks.Task%601>, <xref:System.Threading.Tasks.ValueTask>, a <xref:System.Threading.Tasks.ValueTask%601> objekty.  
 
-  
- V následujícím příkladu <xref:System.Net.Http.HttpClient.GetByteArrayAsync%2A?displayProperty=nameWithType> metoda vrátí hodnotu `Task<byte[]>`. Úkol je příslib z k vytvoření pole bajtů po dokončení úkolu. `await` Operátor pozastaví provádění, dokud práce <xref:System.Net.Http.HttpClient.GetByteArrayAsync%2A> dokončení metody. Do té doby se ovládací prvek vrátí volajícímu metody `GetPageSizeAsync`. Po dokončení provádění úlohy `await` výraz vyhodnocen jako bajtové pole.  
+V následujícím příkladu <xref:System.Net.Http.HttpClient.GetByteArrayAsync%2A?displayProperty=nameWithType> metoda vrátí hodnotu `Task<byte[]>`. Úkol je příslib z k vytvoření pole bajtů po dokončení úkolu. `await` Operátor pozastaví provádění, dokud práce <xref:System.Net.Http.HttpClient.GetByteArrayAsync%2A> dokončení metody. Do té doby se ovládací prvek vrátí volajícímu metody `GetPageSizeAsync`. Po dokončení provádění úlohy `await` výraz vyhodnocen jako bajtové pole.  
 
 [!code-csharp[await-example](../../../../samples/snippets/csharp/language-reference/keywords/await/await1.cs)]  
 
 > [!IMPORTANT]
->  Kompletní příklad naleznete v tématu [názorný postup: Přístup k webu pomocí modifikátoru Async a operátoru Await](../../../csharp/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md). Můžete stáhnout ukázku z [ukázky kódu vývojáře](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f) na webu společnosti Microsoft. V příkladu je v projektu AsyncWalkthrough_HttpClient.  
+> Kompletní příklad naleznete v tématu [názorný postup: Přístup k webu pomocí modifikátoru Async a operátoru Await](../../../csharp/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md). Můžete stáhnout ukázku z [ukázky kódu vývojáře](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f) na webu společnosti Microsoft. V příkladu je v projektu AsyncWalkthrough_HttpClient.  
   
 Jak je znázorněno v předchozím příkladu, pokud `await` se použije na výsledek volání metody, která vrací `Task<TResult>`, potom je typ `await` výraz je `TResult`. Pokud `await` se použije na výsledek volání metody, která vrací `Task`, potom je typ `await` výraz je `void`. Následující příklad ukazuje rozdíl.  
   

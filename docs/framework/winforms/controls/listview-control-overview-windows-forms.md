@@ -8,12 +8,12 @@ helpviewer_keywords:
 - ListView control [Windows Forms], about ListView control
 - list views
 ms.assetid: c9ef56c1-3bb1-4101-9f4e-e95e720f2756
-ms.openlocfilehash: 8ceed741e72dae46f7f791b7564b7f5c38f82bc2
-ms.sourcegitcommit: 2b986afe4ce9e13bbeec929c9737757eb61de60e
+ms.openlocfilehash: d62c0081c128693861a9fd21360f09f65d485a79
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56664624"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57709774"
 ---
 # <a name="listview-control-overview-windows-forms"></a>ListView – přehled ovládacího prvku (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.ListView> ovládací prvek zobrazuje seznam položek s ikonami. Zobrazení seznamu můžete použít k vytvoření uživatelského rozhraní, jako je pravém podokně Průzkumníka Windows. Ovládací prvek má čtyři režimy zobrazení: Zobrazení LargeIcon, SmallIcon, seznamu a podrobností.  
@@ -21,9 +21,9 @@ Windows Forms <xref:System.Windows.Forms.ListView> ovládací prvek zobrazuje se
 ## <a name="what-you-can-do-with-the-listview-control"></a>Co můžete dělat pomocí ovládacího prvku ListView  
   
 > [!NOTE]
->  Další zobrazení režimu, dlaždice, je dostupná pouze na Windows XP a operační systém Windows Server 2003. Další informace najdete v tématu [jak: Povolení zobrazení Tile v Windows Forms ovládací prvek ListView](../../../../docs/framework/winforms/controls/how-to-enable-tile-view-in-a-windows-forms-listview-control.md).  
+>  Další zobrazení režimu, dlaždice, je dostupná pouze na Windows XP a operační systém Windows Server 2003. Další informace najdete v tématu [jak: Povolení zobrazení Tile v Windows Forms ovládací prvek ListView](how-to-enable-tile-view-in-a-windows-forms-listview-control.md).  
   
- Režim zobrazení LargeIcon zobrazuje velké ikony vedle textu položky. položky se zobrazí ve více sloupcích, pokud ovládací prvek je příliš velká. Režimem SmallIcon. je stejná s tím rozdílem, že zobrazuje malé ikony. Režim seznamu malé ikony se zobrazí, ale je vždy v jednom sloupci. Podrobnosti o režimu zobrazí položky ve více sloupcích. Podrobnosti najdete v tématu [jak: Přidání sloupce, které chcete Windows Forms ovládací prvek ListView](../../../../docs/framework/winforms/controls/how-to-add-columns-to-the-windows-forms-listview-control.md). Režim zobrazení je určeno <xref:System.Windows.Forms.ListView.View%2A> vlastnost. Všechny režimy zobrazení můžete zobrazit obrázky ze seznamů obrázků. Podrobnosti najdete v tématu [jak: Zobrazení ikon pro Windows Forms ovládací prvek ListView](../../../../docs/framework/winforms/controls/how-to-display-icons-for-the-windows-forms-listview-control.md).  
+ Režim zobrazení LargeIcon zobrazuje velké ikony vedle textu položky. položky se zobrazí ve více sloupcích, pokud ovládací prvek je příliš velká. Režimem SmallIcon. je stejná s tím rozdílem, že zobrazuje malé ikony. Režim seznamu malé ikony se zobrazí, ale je vždy v jednom sloupci. Podrobnosti o režimu zobrazí položky ve více sloupcích. Podrobnosti najdete v tématu [jak: Přidání sloupce, které chcete Windows Forms ovládací prvek ListView](how-to-add-columns-to-the-windows-forms-listview-control.md). Režim zobrazení je určeno <xref:System.Windows.Forms.ListView.View%2A> vlastnost. Všechny režimy zobrazení můžete zobrazit obrázky ze seznamů obrázků. Podrobnosti najdete v tématu [jak: Zobrazení ikon pro Windows Forms ovládací prvek ListView](how-to-display-icons-for-the-windows-forms-listview-control.md).  
   
  V následující tabulce jsou uvedeny některé <xref:System.Windows.Forms.ListView> členy a jsou platné v zobrazení.  
   
@@ -49,14 +49,14 @@ Windows Forms <xref:System.Windows.Forms.ListView> ovládací prvek zobrazuje se
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Forms.ListView>
-- [Ovládací prvek ListView](../../../../docs/framework/winforms/controls/listview-control-windows-forms.md)
-- [Postupy: Přidání a odebrání položek pomocí ovládacího prvku Windows Forms ListView](../../../../docs/framework/winforms/controls/how-to-add-and-remove-items-with-the-windows-forms-listview-control.md)
-- [Postupy: Přidání sloupců do ovládacího prvku Windows Forms ListView](../../../../docs/framework/winforms/controls/how-to-add-columns-to-the-windows-forms-listview-control.md)
-- [Postupy: Zobrazení ikon pro ovládací prvek Windows Forms ListView](../../../../docs/framework/winforms/controls/how-to-display-icons-for-the-windows-forms-listview-control.md)
-- [Postupy: Zobrazení podřízených položek ve sloupcích pomocí ovládacího prvku Windows Forms ListView](../../../../docs/framework/winforms/controls/how-to-display-subitems-in-columns-with-the-windows-forms-listview-control.md)
-- [Postupy: Vyberte položku v ovládacím prvku Windows Forms ListView](../../../../docs/framework/winforms/controls/how-to-select-an-item-in-the-windows-forms-listview-control.md)
-- [Postupy: Seskupení položek v ovládacím prvku Windows Forms ListView](../../../../docs/framework/winforms/controls/how-to-group-items-in-a-windows-forms-listview-control.md)
-- [Postupy: Zobrazení značky vložení v ovládacím prvku Windows Forms ListView](../../../../docs/framework/winforms/controls/how-to-display-an-insertion-mark-in-a-windows-forms-listview-control.md)
-- [Postupy: Přidání schopností vyhledávání do ovládacího prvku ListView](../../../../docs/framework/winforms/controls/how-to-add-search-capabilities-to-a-listview-control.md)
-- [Postupy: Přidání vlastních informací do prvku TreeView nebo ListView – ovládací prvek (Windows Forms)](../../../../docs/framework/winforms/controls/add-custom-information-to-a-treeview-or-listview-control-wf.md)
-- [Postupy: Vytvoření více podokny uživatelského rozhraní pomocí Windows Forms](../../../../docs/framework/winforms/controls/how-to-create-a-multipane-user-interface-with-windows-forms.md)
+- [Ovládací prvek ListView](listview-control-windows-forms.md)
+- [Postupy: Přidání a odebrání položek pomocí ovládacího prvku Windows Forms ListView](how-to-add-and-remove-items-with-the-windows-forms-listview-control.md)
+- [Postupy: Přidání sloupců do ovládacího prvku Windows Forms ListView](how-to-add-columns-to-the-windows-forms-listview-control.md)
+- [Postupy: Zobrazení ikon pro ovládací prvek Windows Forms ListView](how-to-display-icons-for-the-windows-forms-listview-control.md)
+- [Postupy: Zobrazení podřízených položek ve sloupcích pomocí ovládacího prvku Windows Forms ListView](how-to-display-subitems-in-columns-with-the-windows-forms-listview-control.md)
+- [Postupy: Vyberte položku v ovládacím prvku Windows Forms ListView](how-to-select-an-item-in-the-windows-forms-listview-control.md)
+- [Postupy: Seskupení položek v ovládacím prvku Windows Forms ListView](how-to-group-items-in-a-windows-forms-listview-control.md)
+- [Postupy: Zobrazení značky vložení v ovládacím prvku Windows Forms ListView](how-to-display-an-insertion-mark-in-a-windows-forms-listview-control.md)
+- [Postupy: Přidání schopností vyhledávání do ovládacího prvku ListView](how-to-add-search-capabilities-to-a-listview-control.md)
+- [Postupy: Přidání vlastních informací do prvku TreeView nebo ListView – ovládací prvek (Windows Forms)](add-custom-information-to-a-treeview-or-listview-control-wf.md)
+- [Postupy: Vytvoření více podokny uživatelského rozhraní pomocí Windows Forms](how-to-create-a-multipane-user-interface-with-windows-forms.md)
