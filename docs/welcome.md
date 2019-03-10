@@ -5,12 +5,12 @@ author: mairaw
 ms.author: mairaw
 ms.date: 12/03/2018
 ms.custom: updateeachrelease
-ms.openlocfilehash: d5ee6d9cbb8beb819d023c92af1123ebc37b53c8
-ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
+ms.openlocfilehash: 648dd8017f5c1f043a450ef207912cca51f2d3a7
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56834918"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57720266"
 ---
 # <a name="welcome-to-net"></a>Vítejte v .NET
 
@@ -22,10 +22,10 @@ Vytvoření mnoha typech aplikací pomocí .NET, jako je cloud, IoT a hry pomoc�
 
 Novinky o .NET najdete v těchto blozích:
 
-- [Blog k .NET](https://blogs.msdn.microsoft.com/dotnet/)
-- [Blog technologie ASP.NET](https://blogs.msdn.microsoft.com/webdev/)
-- [Blog Visual Studio](https://blogs.msdn.microsoft.com/visualstudio/)
-- [Tým jazyka Visual Basic](https://blogs.msdn.microsoft.com/vbteam/)
+- [Blog k .NET](https://devblogs.microsoft.com/dotnet/)
+- [Blog technologie ASP.NET](https://devblogs.microsoft.com/aspnet/)
+- [Blog Visual Studio](https://devblogs.microsoft.com/visualstudio/)
+- [Tým jazyka Visual Basic](https://devblogs.microsoft.com/vbteam/)
 
 Postupujte také nejnovější události .NET:
 

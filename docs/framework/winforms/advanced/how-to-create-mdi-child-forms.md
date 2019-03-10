@@ -9,15 +9,15 @@ helpviewer_keywords:
 - MDI [Windows Forms], creating forms
 - child forms
 ms.assetid: 164b69bb-2eca-4339-ada3-0679eb2c6dda
-ms.openlocfilehash: 6ff5873fc2e0a321ad682805457be87c609972fe
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 02e19470aaac76e7bcab5a324138bb50dedb212f
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54708462"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57720196"
 ---
 # <a name="how-to-create-mdi-child-forms"></a>Postupy: Vytváření podřízených formulářů MDI
-Podřízené formuláře MDI jsou důležitou součástí [aplikace rozhraní více dokumentů (MDI)](../../../../docs/framework/winforms/advanced/multiple-document-interface-mdi-applications.md), jako jsou centra interakci s uživatelem.  
+Podřízené formuláře MDI jsou důležitou součástí [aplikace rozhraní více dokumentů (MDI)](multiple-document-interface-mdi-applications.md), jako jsou centra interakci s uživatelem.  
   
  V následujícím postupu vytvoříte podřízený formulář MDI, která se zobrazí <xref:System.Windows.Forms.RichTextBox> nejvíce zpracování textu žádosti podobně jako ovládací prvek. Nahrazování <xref:System.Windows.Forms> ovládací prvek s jinými ovládacími prvky, jako <xref:System.Windows.Forms.DataGridView> ovládací prvek nebo kombinaci ovládací prvky vám umožní vytvořit podřízený formulář MDI systému windows (a při rozšíření i pro aplikace MDI) s různými možnostmi.  
   
@@ -107,8 +107,8 @@ Podřízené formuláře MDI jsou důležitou součástí [aplikace rozhraní v�
     >  Pokud má podřízený formulář MDI <xref:System.Windows.Forms.MainMenu> součásti (s většinou, nabídky strukturu položek nabídky) a je otevřen v rámci, který má nadřazený formulář MDI <xref:System.Windows.Forms.MainMenu> součásti (s většinou, nabídky strukturu položek nabídek), v nabídce položky budou automaticky sloučit Pokud jste nastavili <xref:System.Windows.Forms.MenuItem.MergeType%2A> vlastnosti (a volitelně také <xref:System.Windows.Forms.MenuItem.MergeOrder%2A> vlastnost). Nastavte <xref:System.Windows.Forms.MenuItem.MergeType%2A> vlastnost objektu i <xref:System.Windows.Forms.MainMenu> komponenty a všechny položky nabídky podřízené formuláře <xref:System.Windows.Forms.MenuMerge.MergeItems>. Kromě toho nastavení <xref:System.Windows.Forms.MenuItem.MergeOrder%2A> vlastnost tak, aby z obou nabídek položky nabídky zobrazí do požadovaného pořadí. Kromě toho vzít v úvahu, že při zavření nadřazený formulář MDI každý podřízený formulář MDI formuláře vyvolá <xref:System.Windows.Forms.Form.Closing> události před <xref:System.Windows.Forms.Form.Closing> se vyvolá událost pro nadřazený objekt MDI. Zrušení podřízený formulář MDI <xref:System.Windows.Forms.Form.Closing> události nezabrání nadřazený objekt MDI <xref:System.Windows.Forms.Form.Closing> událost vyvolána; však <xref:System.ComponentModel.CancelEventArgs> argument pro nadřazený objekt MDI <xref:System.Windows.Forms.Form.Closing> události se nastaví na `true`. Můžete vynutit nadřazený objekt MDI a všechny podřízené formuláře MDI zavřete tak, že nastavíte <xref:System.ComponentModel.CancelEventArgs> argument `false`.  
   
 ## <a name="see-also"></a>Viz také:
-- [Aplikace MDI (Multiple-Document Interface)](../../../../docs/framework/winforms/advanced/multiple-document-interface-mdi-applications.md)
-- [Postupy: Vytváření nadřazených formulářů MDI](../../../../docs/framework/winforms/advanced/how-to-create-mdi-parent-forms.md)
-- [Postupy: Určení podřízeného prvku aktivního MDI](../../../../docs/framework/winforms/advanced/how-to-determine-the-active-mdi-child.md)
-- [Postupy: Odesílání dat do aktivního podřízeného MDI](../../../../docs/framework/winforms/advanced/how-to-send-data-to-the-active-mdi-child.md)
-- [Postupy: Uspořádání podřízených formulářů MDI](../../../../docs/framework/winforms/advanced/how-to-arrange-mdi-child-forms.md)
+- [Aplikace MDI (Multiple-Document Interface)](multiple-document-interface-mdi-applications.md)
+- [Postupy: Vytváření nadřazených formulářů MDI](how-to-create-mdi-parent-forms.md)
+- [Postupy: Určení podřízeného prvku aktivního MDI](how-to-determine-the-active-mdi-child.md)
+- [Postupy: Odesílání dat do aktivního podřízeného MDI](how-to-send-data-to-the-active-mdi-child.md)
+- [Postupy: Uspořádání podřízených formulářů MDI](how-to-arrange-mdi-child-forms.md)

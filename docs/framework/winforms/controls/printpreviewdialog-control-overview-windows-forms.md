@@ -8,15 +8,15 @@ helpviewer_keywords:
 ms.assetid: efd4ee8d-6edd-47ec-88e4-4a4759bd2384
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e28a6c82a8dd40885c04c56f2adfb3d38e674066
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: aad8673051b22db1df6d525094394dd2a43285ca
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54667554"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57711275"
 ---
 # <a name="printpreviewdialog-control-overview-windows-forms"></a>Printpreviewdialog – Přehled ovládacího prvku (Windows Forms)
-Windows Forms <xref:System.Windows.Forms.PrintPreviewDialog> ovládací prvek je předem nakonfigurované dialogovému oknu slouží k zobrazení jak [PrintDocument](../../../../docs/framework/winforms/controls/printdocument-component-windows-forms.md) se zobrazí po vytištění. Použijte v rámci vaší aplikace založené na Windows jako jednoduchým řešením namísto dialogové okno Vlastní konfigurace. Ovládací prvek obsahuje tlačítka pro tisk, Přiblížit, zobrazení jedné nebo více stránek a zavření dialogového okna.  
+Windows Forms <xref:System.Windows.Forms.PrintPreviewDialog> ovládací prvek je předem nakonfigurované dialogovému oknu slouží k zobrazení jak [PrintDocument](printdocument-component-windows-forms.md) se zobrazí po vytištění. Použijte v rámci vaší aplikace založené na Windows jako jednoduchým řešením namísto dialogové okno Vlastní konfigurace. Ovládací prvek obsahuje tlačítka pro tisk, Přiblížit, zobrazení jedné nebo více stránek a zavření dialogového okna.  
   
 ## <a name="key-properties-and-methods"></a>Klíčové vlastnosti a metody  
  Klíčová vlastnost ovládacího prvku je <xref:System.Windows.Forms.PrintPreviewDialog.Document%2A>, který nastaví dokumentu, který má být zobrazen. Dokument musí být <xref:System.Drawing.Printing.PrintDocument> objektu. Aby bylo možné zobrazit dialogové okno, je nutné volat jeho <xref:System.Windows.Forms.Form.ShowDialog%2A> metoda. Vyhlazení může zvýšit zobrazí hladší text, ale také může být pomalejší; zobrazení Chcete-li použít, nastavte <xref:System.Windows.Forms.PrintPreviewDialog.UseAntiAlias%2A> vlastnost `true`.  
@@ -53,6 +53,6 @@ Pokud používáte <xref:System.Drawing.Printing.PrintDocument.QueryPageSettings
 
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Forms.PrintPreviewDialog>
-- [Přehled ovládacího prvku PrintPreviewControl](../../../../docs/framework/winforms/controls/printpreviewcontrol-control-overview-windows-forms.md)
-- [Ovládací prvek PrintPreviewDialog](../../../../docs/framework/winforms/controls/printpreviewdialog-control-windows-forms.md)
-- [Ovládací prvky a součásti dialogového okna](../../../../docs/framework/winforms/controls/dialog-box-controls-and-components-windows-forms.md)
+- [Přehled ovládacího prvku PrintPreviewControl](printpreviewcontrol-control-overview-windows-forms.md)
+- [Ovládací prvek PrintPreviewDialog](printpreviewdialog-control-windows-forms.md)
+- [Ovládací prvky a součásti dialogového okna](dialog-box-controls-and-components-windows-forms.md)

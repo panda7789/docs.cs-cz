@@ -8,12 +8,12 @@ helpviewer_keywords:
 - vector graphics
 - typography
 ms.assetid: 068c0ef3-f6ee-4d58-a7b6-eb2531ead408
-ms.openlocfilehash: 2c2ddc76faaf0c15cc56345c607678985b9c4656
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f7aa4de8a0d646c441d0921fb2561ef5a9480f4e
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54576379"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57711217"
 ---
 # <a name="three-categories-of-graphics-services"></a>Tři kategorie grafických služeb
 Nabídky grafiky ve Windows Forms spadají do následujících tří hlavních kategorií:  
@@ -40,6 +40,6 @@ Nabídky grafiky ve Windows Forms spadají do následujících tří hlavních k
  Kromě toho nabízí možnost kreslení textu pomocí Windows Forms [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)] možnosti v její <xref:System.Windows.Forms.TextRenderer> třídy.  
   
 ## <a name="see-also"></a>Viz také:
-- [Přehled grafiky](../../../../docs/framework/winforms/advanced/graphics-overview-windows-forms.md)
-- [Informace o spravovaném kódu GDI+](../../../../docs/framework/winforms/advanced/about-gdi-managed-code.md)
-- [Použití spravovaných grafických tříd](../../../../docs/framework/winforms/advanced/using-managed-graphics-classes.md)
+- [Přehled grafiky](graphics-overview-windows-forms.md)
+- [Informace o spravovaném kódu GDI+](about-gdi-managed-code.md)
+- [Použití spravovaných grafických tříd](using-managed-graphics-classes.md)

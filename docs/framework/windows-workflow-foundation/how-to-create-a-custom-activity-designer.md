@@ -2,12 +2,12 @@
 title: 'Postupy: Vytvoření vlastního návrháře aktivit'
 ms.date: 03/30/2017
 ms.assetid: 2f3aade6-facc-44ef-9657-a407ef8b9b31
-ms.openlocfilehash: 755aea092d5906d7313234d7ddd1c99d87a7e54d
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: e455d00ebd128c37eacb19df0e7f864505df04e0
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57466879"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57716826"
 ---
 # <a name="how-to-create-a-custom-activity-designer"></a>Postupy: Vytvoření vlastního návrháře aktivit
 
@@ -21,9 +21,9 @@ Další klíčovou součástí scénáře, který potřebuje zvýraznění v imp
 
 Toto téma popisuje dva postupy.
 
-1. První postup popisuje, jak vytvořit vlastního návrháře aktivit s <xref:System.Activities.Presentation.WorkflowItemPresenter> , která poskytuje oblast přetažení, která přijímá další aktivity. Tento postup je založen na [vlastní návrháři - skládání položky pracovního postupu](../../../docs/framework/windows-workflow-foundation/samples/custom-composite-designers-workflow-item-presenter.md) vzorku.
+1. První postup popisuje, jak vytvořit vlastního návrháře aktivit s <xref:System.Activities.Presentation.WorkflowItemPresenter> , která poskytuje oblast přetažení, která přijímá další aktivity. Tento postup je založen na [vlastní návrháři - skládání položky pracovního postupu](./samples/custom-composite-designers-workflow-item-presenter.md) vzorku.
 
-2. Druhý postup popisuje, jak vytvořit vlastního návrháře aktivit s <xref:System.Activities.Presentation.WorkflowItemsPresenter> , která poskytuje funkce pro potřebný pro úpravu z kolekce jeho prvky. Tento postup je založen na [vlastní návrháři - skládání položky pracovního postupu](../../../docs/framework/windows-workflow-foundation/samples/custom-composite-designers-workflow-items-presenter.md) vzorku.
+2. Druhý postup popisuje, jak vytvořit vlastního návrháře aktivit s <xref:System.Activities.Presentation.WorkflowItemsPresenter> , která poskytuje funkce pro potřebný pro úpravu z kolekce jeho prvky. Tento postup je založen na [vlastní návrháři - skládání položky pracovního postupu](./samples/custom-composite-designers-workflow-items-presenter.md) vzorku.
 
 ## <a name="to-create-a-custom-activity-designer-with-a-drop-zone-using-workflowitempresenter"></a>Vytvoření vlastního návrháře aktivit pomocí přetažení zóny pomocí WorkflowItemPresenter
 
@@ -350,4 +350,4 @@ Toto téma popisuje dva postupy.
 - <xref:System.Activities.Presentation.WorkflowItemsPresenter>
 - <xref:System.Activities.Presentation.WorkflowViewElement>
 - <xref:System.Activities.Presentation.Model.ModelItem>
-- [Přizpůsobení prostředí pro návrh pracovního postupu](../../../docs/framework/windows-workflow-foundation/customizing-the-workflow-design-experience.md)
+- [Přizpůsobení prostředí pro návrh pracovního postupu](customizing-the-workflow-design-experience.md)

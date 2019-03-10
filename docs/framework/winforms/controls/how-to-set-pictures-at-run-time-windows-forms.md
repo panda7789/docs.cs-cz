@@ -13,12 +13,12 @@ helpviewer_keywords:
 - images [Windows Forms], adding with PictureBox control [Windows Forms]
 - PictureBox control [Windows Forms], adding pictures
 ms.assetid: 18ca41d0-68a5-4660-985e-a6c1fbc01d76
-ms.openlocfilehash: c7a65bcc65710324a4457c17dd728b4771550c06
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5afb4fe3ebef705cd0671312aacb6f9ad8219621
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54694071"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57711216"
 ---
 # <a name="how-to-set-pictures-at-run-time-windows-forms"></a>Postupy: Nastavení obrázků za běhu (Windows Forms)
 Můžete programově nastavení obrázku zobrazovaného rozhraním Windows Forms <xref:System.Windows.Forms.PictureBox> ovládacího prvku.  
@@ -93,14 +93,14 @@ Můžete programově nastavení obrázku zobrazovaného rozhraním Windows Forms
     ```  
   
     > [!NOTE]
-    >  Další informace o důvod, proč byste měli použít <xref:System.Drawing.Image.Dispose%2A> najdete v článku metoda tímto způsobem [Cleaning Up Unmanaged Resources](../../../../docs/standard/garbage-collection/unmanaged.md).  
+    >  Další informace o důvod, proč byste měli použít <xref:System.Drawing.Image.Dispose%2A> najdete v článku metoda tímto způsobem [Cleaning Up Unmanaged Resources](../../../standard/garbage-collection/unmanaged.md).  
   
      Tento kód se vymažou bitovou kopii, i v případě, že grafický objekt byl načten do ovládacího prvku v době návrhu.  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Forms.PictureBox>
 - <xref:System.Drawing.Image.FromFile%2A?displayProperty=nameWithType>
-- [Přehled ovládacího prvku PictureBox](../../../../docs/framework/winforms/controls/picturebox-control-overview-windows-forms.md)
-- [Postupy: Načtení obrázku pomocí návrháře](../../../../docs/framework/winforms/controls/how-to-load-a-picture-using-the-designer-windows-forms.md)
-- [Postupy: Změna velikosti či umístění obrázku za běhu](../../../../docs/framework/winforms/controls/how-to-modify-the-size-or-placement-of-a-picture-at-run-time-windows-forms.md)
-- [Ovládací prvek PictureBox](../../../../docs/framework/winforms/controls/picturebox-control-windows-forms.md)
+- [Přehled ovládacího prvku PictureBox](picturebox-control-overview-windows-forms.md)
+- [Postupy: Načtení obrázku pomocí návrháře](how-to-load-a-picture-using-the-designer-windows-forms.md)
+- [Postupy: Změna velikosti či umístění obrázku za běhu](how-to-modify-the-size-or-placement-of-a-picture-at-run-time-windows-forms.md)
+- [Ovládací prvek PictureBox](picturebox-control-windows-forms.md)

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - application settings [Windows Forms], Windows Forms
 - application settings [Windows Forms], creating
 ms.assetid: 1e7aa347-af75-41e5-89ca-f53cab704f72
-ms.openlocfilehash: 52687347707139ba583ef4dfdeebbb41d568e95c
-ms.sourcegitcommit: acd8ed14fe94e9d4e3a7fb685fe83d05e941073c
+ms.openlocfilehash: d540715c0b4c69b2981cc65f55b0fa950c5a4eaf
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56441356"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57721239"
 ---
 # <a name="how-to-create-application-settings"></a>Postupy: Vytvořit nastavení aplikace
 Pomocí spravovaného kódu, můžete vytvořit nové nastavení aplikace a svázat ho s vlastnostmi na formulář nebo ovládací prvky do formuláře, takže tato nastavení jsou načtena a za běhu automaticky uloženy.  
@@ -26,20 +26,20 @@ Pomocí spravovaného kódu, můžete vytvořit nové nastavení aplikace a svá
   
 1.  Přidejte novou třídu do projektu a přejmenujte jej. V tomto postupu budeme volat tuto třídu `MyUserSettings`. Změnit definici třídy, takže je odvozena z třídy <xref:System.Configuration.ApplicationSettingsBase>.  
   
-2.  Definovat vlastnost na této obálkové třídy pro každé nastavení aplikace, budete potřebovat a použít tuto vlastnost buď <xref:System.Configuration.ApplicationScopedSettingAttribute> nebo <xref:System.Configuration.UserScopedSettingAttribute>, v závislosti na rozsahu nastavení. Další informace o nastavení oboru, naleznete v tématu [přehled nastavení aplikace](../../../../docs/framework/winforms/advanced/application-settings-overview.md). Nyní váš kód by měl vypadat takto:  
+2.  Definovat vlastnost na této obálkové třídy pro každé nastavení aplikace, budete potřebovat a použít tuto vlastnost buď <xref:System.Configuration.ApplicationScopedSettingAttribute> nebo <xref:System.Configuration.UserScopedSettingAttribute>, v závislosti na rozsahu nastavení. Další informace o nastavení oboru, naleznete v tématu [přehled nastavení aplikace](application-settings-overview.md). Nyní váš kód by měl vypadat takto:  
   
-     [!code-csharp[ApplicationSettings.Create#1](../../../../samples/snippets/csharp/VS_Snippets_Winforms/ApplicationSettings.Create/CS/MyAppSettings.cs#1)]
-     [!code-vb[ApplicationSettings.Create#1](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ApplicationSettings.Create/VB/MyAppSettings.vb#1)]  
+     [!code-csharp[ApplicationSettings.Create#1](~/samples/snippets/csharp/VS_Snippets_Winforms/ApplicationSettings.Create/CS/MyAppSettings.cs#1)]
+     [!code-vb[ApplicationSettings.Create#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ApplicationSettings.Create/VB/MyAppSettings.vb#1)]  
   
 3.  Vytvoření instance této obálkové třídy ve vaší aplikaci. Běžně je soukromý člen hlavního formuláře. Teď, když jste definovali vaší třídy, je potřeba ho vytvořit vazbu na vlastnost; v takovém případě <xref:System.Windows.Forms.Form.BackColor%2A> vlastnost formuláře. Můžete to udělat v formuláře `Load` obslužné rutiny události.  
   
-     [!code-csharp[ApplicationSettings.Create#2](../../../../samples/snippets/csharp/VS_Snippets_Winforms/ApplicationSettings.Create/CS/Form1.cs#2)]
-     [!code-vb[ApplicationSettings.Create#2](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ApplicationSettings.Create/VB/Form1.vb#2)]  
+     [!code-csharp[ApplicationSettings.Create#2](~/samples/snippets/csharp/VS_Snippets_Winforms/ApplicationSettings.Create/CS/Form1.cs#2)]
+     [!code-vb[ApplicationSettings.Create#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ApplicationSettings.Create/VB/Form1.vb#2)]  
   
 4.  Pokud zadáte způsob, jak změnit nastavení v době běhu, je potřeba uložit aktuální nastavení uživatele na disk, když se zavře formulář, jinak tyto změny budou ztraceny.  
   
-     [!code-csharp[ApplicationSettings.Create#3](../../../../samples/snippets/csharp/VS_Snippets_Winforms/ApplicationSettings.Create/CS/Form1.cs#3)]
-     [!code-vb[ApplicationSettings.Create#3](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ApplicationSettings.Create/VB/Form1.vb#3)]  
+     [!code-csharp[ApplicationSettings.Create#3](~/samples/snippets/csharp/VS_Snippets_Winforms/ApplicationSettings.Create/CS/Form1.cs#3)]
+     [!code-vb[ApplicationSettings.Create#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ApplicationSettings.Create/VB/Form1.vb#3)]  
   
      Jste teď úspěšně vytvořili nové nastavení aplikace a vázán na zadanou vlastnost.  
   
@@ -49,5 +49,5 @@ Pomocí spravovaného kódu, můžete vytvořit nové nastavení aplikace a svá
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Configuration.SpecialSettingAttribute>
 - <xref:System.Configuration.LocalFileSettingsProvider>
-- [Přehled nastavení aplikace](../../../../docs/framework/winforms/advanced/application-settings-overview.md)
-- [Postupy: Ověření nastavení aplikace](../../../../docs/framework/winforms/advanced/how-to-validate-application-settings.md)
+- [Přehled nastavení aplikace](application-settings-overview.md)
+- [Postupy: Ověření nastavení aplikace](how-to-validate-application-settings.md)

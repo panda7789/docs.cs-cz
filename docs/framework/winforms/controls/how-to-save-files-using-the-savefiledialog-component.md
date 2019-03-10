@@ -11,12 +11,12 @@ helpviewer_keywords:
 - files [Windows Forms], saving
 - OpenFile method [Windows Forms], saving files with SaveFileDialog component
 ms.assetid: 02e8f409-b83f-4707-babb-e71f6b223d90
-ms.openlocfilehash: 2b84d36bd15d61fb21444e01302da86563cced9c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2a6f21f79f56c1fcad4c94ec89cbf7dc43b19638
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54615959"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57719426"
 ---
 # <a name="how-to-save-files-using-the-savefiledialog-component"></a>Postupy: Ukládání souborů pomocí komponenty SaveFileDialog
 <xref:System.Windows.Forms.SaveFileDialog> Komponenta umožňuje uživatelům procházet systému souborů a vyberte soubory, které se má uložit. Dialogové okno vrací cestu a název souboru, který uživatel vybral v dialogovém okně. Ale musíte napsat kód, který ve skutečnosti soubory zapisují na disk.  
@@ -32,7 +32,7 @@ ms.locfileid: "54615959"
      V následujícím příkladu je <xref:System.Windows.Forms.Button> ovládací prvek s přiřazenou image. Když kliknete na tlačítko <xref:System.Windows.Forms.SaveFileDialog> s filtrem, který umožňuje soubory typu .gif, .jpeg a .bmp je vytvořena instance komponenty. Pokud v dialogovém okně Uložit soubor byl vybrán soubor tohoto typu, je uložen obrázek na tlačítko.  
   
     > [!IMPORTANT]
-    >  Pro získání nebo nastavení <xref:System.Windows.Forms.FileDialog.FileName%2A> vlastnost, vaše sestavení vyžaduje úroveň oprávnění udělenou <xref:System.Security.Permissions.FileIOPermission?displayProperty=nameWithType> třídy. Pokud používáte v kontextu částečným vztahem důvěryhodnosti, proces může vyvolat výjimku, protože nedostatečná oprávnění. Další informace najdete v tématu [Základy zabezpečení přístupu kódu](../../../../docs/framework/misc/code-access-security-basics.md).  
+    >  Pro získání nebo nastavení <xref:System.Windows.Forms.FileDialog.FileName%2A> vlastnost, vaše sestavení vyžaduje úroveň oprávnění udělenou <xref:System.Security.Permissions.FileIOPermission?displayProperty=nameWithType> třídy. Pokud používáte v kontextu částečným vztahem důvěryhodnosti, proces může vyvolat výjimku, protože nedostatečná oprávnění. Další informace najdete v tématu [Základy zabezpečení přístupu kódu](../../misc/code-access-security-basics.md).  
   
      Příklad předpokládá, že váš formulář má <xref:System.Windows.Forms.Button> ovládacím prvkem jeho <xref:System.Windows.Forms.ButtonBase.Image%2A> nastavenou na soubor typu .gif, .jpeg nebo BMP.  
   
@@ -179,4 +179,4 @@ ms.locfileid: "54615959"
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Forms.SaveFileDialog>
-- [Komponenta SaveFileDialog](../../../../docs/framework/winforms/controls/savefiledialog-component-windows-forms.md)
+- [Komponenta SaveFileDialog](savefiledialog-component-windows-forms.md)

@@ -20,24 +20,24 @@ helpviewer_keywords:
 - parent table navigation in DataGrid
 - child tables [Windows Forms], dataGrid control
 ms.assetid: 85604bce-bc03-49d9-9030-dda8896c44b1
-ms.openlocfilehash: 05cc71ffb5d55c926dca50876a2329feeed8aedf
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: cdf2f9aebaac09ed3e03148fdf1bc899f1e1fc45
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54648466"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57721993"
 ---
 # <a name="datagrid-control-overview-windows-forms"></a>DataGrid – přehled ovládacího prvku (Windows Forms)
 > [!NOTE]
->  <xref:System.Windows.Forms.DataGridView> Ovládací prvek nahradí a přidá funkce, které <xref:System.Windows.Forms.DataGrid> řízení; však <xref:System.Windows.Forms.DataGrid> ovládací prvek se zachovává kvůli zpětné kompatibilitě a budoucí použití, pokud se rozhodnete. Další informace najdete v tématu [rozdíly mezi Windows Forms DataGridView a DataGrid – ovládací prvky](../../../../docs/framework/winforms/controls/differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).  
+>  <xref:System.Windows.Forms.DataGridView> Ovládací prvek nahradí a přidá funkce, které <xref:System.Windows.Forms.DataGrid> řízení; však <xref:System.Windows.Forms.DataGrid> ovládací prvek se zachovává kvůli zpětné kompatibilitě a budoucí použití, pokud se rozhodnete. Další informace najdete v tématu [rozdíly mezi Windows Forms DataGridView a DataGrid – ovládací prvky](differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).  
   
- Windows Forms <xref:System.Windows.Forms.DataGrid> ovládací prvek zobrazuje data ve skupině řádků a sloupců. Nejjednodušší případ je při mřížky je svázán se zdrojem dat u jedné tabulky, který obsahuje žádné relace. V takovém případě se data zobrazí v jednoduché řádků a sloupců, stejně jako v tabulce. Další informace o vazbě dat na další ovládací prvky najdete v tématu [a datové vazby Windows Forms](../../../../docs/framework/winforms/data-binding-and-windows-forms.md).  
+ Windows Forms <xref:System.Windows.Forms.DataGrid> ovládací prvek zobrazuje data ve skupině řádků a sloupců. Nejjednodušší případ je při mřížky je svázán se zdrojem dat u jedné tabulky, který obsahuje žádné relace. V takovém případě se data zobrazí v jednoduché řádků a sloupců, stejně jako v tabulce. Další informace o vazbě dat na další ovládací prvky najdete v tématu [a datové vazby Windows Forms](../data-binding-and-windows-forms.md).  
   
  Pokud <xref:System.Windows.Forms.DataGrid> je vázán na data s několika související tabulky, a pokud je povolena navigace v mřížce, mřížky se zobrazí jde v jednotlivých řádcích. Pomocí rozšíření může uživatel přesunout z nadřazené tabulky podřízené tabulky. Kliknutím na uzel zobrazí v podřízené tabulce, a kliknutím na tlačítko zpět původní nadřazené tabulky. Tímto způsobem v mřížce zobrazené hierarchických vztahů mezi tabulkami.  
   
  Následující snímek obrazovky ukazuje, že ovládacího prvku DataGrid vázán na data s více tabulkami.  
   
- ![Prvek DataGrid vázán na data s více tabulkami](../../../../docs/framework/winforms/controls/media/vbcontrol1.gif "vbControl1")  
+ ![Prvek DataGrid vázán na data s více tabulkami](./media/vbcontrol1.gif "vbControl1")  
 DataGrid vázán na data s více tabulkami  
   
  <xref:System.Windows.Forms.DataGrid> Může poskytnout uživatelského rozhraní pro datovou sadu, navigaci mezi souvisejícími tabulkami a bohaté formátování a možností pro úpravy.  
@@ -47,14 +47,14 @@ DataGrid vázán na data s více tabulkami
 > [!NOTE]
 >  Pokud jste se seznámili s ovládacího prvku DataGrid v jazyce Visual Basic 6.0, najdete několik významných rozdílů v modelu Windows Forms <xref:System.Windows.Forms.DataGrid> ovládacího prvku.  
   
- Mřížka je vázána k <xref:System.Data.DataSet>, sloupců a řádků jsou automaticky vytvořeny ve formátu a vyplněné. Další informace najdete v tématu [datové vazby a Windows Forms](../../../../docs/framework/winforms/data-binding-and-windows-forms.md). Následující generování <xref:System.Windows.Forms.DataGrid> ovládacího prvku, můžete přidat, odstranit, změnit uspořádání a formátování sloupců a řádků v závislosti na požadavcích.  
+ Mřížka je vázána k <xref:System.Data.DataSet>, sloupců a řádků jsou automaticky vytvořeny ve formátu a vyplněné. Další informace najdete v tématu [datové vazby a Windows Forms](../data-binding-and-windows-forms.md). Následující generování <xref:System.Windows.Forms.DataGrid> ovládacího prvku, můžete přidat, odstranit, změnit uspořádání a formátování sloupců a řádků v závislosti na požadavcích.  
   
 ## <a name="binding-data-to-the-control"></a>Vazba dat k ovládacímu prvku  
  Pro <xref:System.Windows.Forms.DataGrid> řídit práci, by měl být vázán na zdroj dat pomocí <xref:System.Windows.Forms.DataGrid.DataSource%2A> a <xref:System.Windows.Forms.DataGrid.DataMember%2A> vlastnosti v době návrhu nebo <xref:System.Windows.Forms.DataGrid.SetDataBinding%2A> metoda v době běhu. Ukazuje tuto vazbu <xref:System.Windows.Forms.DataGrid> instance zdroje dat objektu, například <xref:System.Data.DataSet> nebo <xref:System.Data.DataTable>). <xref:System.Windows.Forms.DataGrid> Ovládací prvek zobrazuje výsledky akcí, které se provádějí s daty. Většinu akcí týkající se dat se neprovádí přes <xref:System.Windows.Forms.DataGrid> , ale místo toho prostřednictvím datového zdroje.  
   
  Pokud prostřednictvím každý použitý mechanizmus, se aktualizuje data v datové sadě vázané <xref:System.Windows.Forms.DataGrid> ovládací prvek se změny projeví. Pokud máte datové mřížky a jeho styly a styly sloupců `ReadOnly` vlastnost nastavena na hodnotu `false`, data v datové sadě je možné aktualizovat prostřednictvím <xref:System.Windows.Forms.DataGrid> ovládacího prvku.  
   
- Je možné zobrazit pouze jednu tabulku v <xref:System.Windows.Forms.DataGrid> najednou. Pokud je definována hierarchických vztahů mezi tabulkami, uživatel může přecházet mezi tabulkami, vyberte tabulku, který se má zobrazit <xref:System.Windows.Forms.DataGrid> ovládacího prvku. Informace o vazbách <xref:System.Windows.Forms.DataGrid> ovládací prvek [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] zdroje dat v době návrhu nebo běhu, naleznete v [jak: Vytvoření vazby ovládacího prvku Windows Forms DataGrid ke zdroji dat](../../../../docs/framework/winforms/controls/how-to-bind-the-windows-forms-datagrid-control-to-a-data-source.md).  
+ Je možné zobrazit pouze jednu tabulku v <xref:System.Windows.Forms.DataGrid> najednou. Pokud je definována hierarchických vztahů mezi tabulkami, uživatel může přecházet mezi tabulkami, vyberte tabulku, který se má zobrazit <xref:System.Windows.Forms.DataGrid> ovládacího prvku. Informace o vazbách <xref:System.Windows.Forms.DataGrid> ovládací prvek [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] zdroje dat v době návrhu nebo běhu, naleznete v [jak: Vytvoření vazby ovládacího prvku Windows Forms DataGrid ke zdroji dat](how-to-bind-the-windows-forms-datagrid-control-to-a-data-source.md).  
   
  Platné datové zdroje pro <xref:System.Windows.Forms.DataGrid> patří:  
   
@@ -78,7 +78,7 @@ DataGrid vázán na data s více tabulkami
   
 -   Všechny komponenty, která implementuje <xref:System.ComponentModel.IBindingList> rozhraní.  
   
- Další informace o zdrojích dat najdete v části [zdroje dat podporované rozhraním Windows Forms](../../../../docs/framework/winforms/data-sources-supported-by-windows-forms.md).  
+ Další informace o zdrojích dat najdete v části [zdroje dat podporované rozhraním Windows Forms](../data-sources-supported-by-windows-forms.md).  
   
 ## <a name="grid-display"></a>Zobrazení mřížky  
  Běžně <xref:System.Windows.Forms.DataGrid> je ovládací prvek pro zobrazení dat z datové sady jedné tabulky. Nicméně ovládací prvek lze také k zobrazení více tabulkami včetně tabulek. Zobrazení mřížky se automaticky upraví podle zdroje dat. Následující tabulka uvádí, co se zobrazí pro různé konfigurace.  
@@ -94,17 +94,17 @@ DataGrid vázán na data s více tabulkami
   
  Když <xref:System.Windows.Forms.DataGrid> ovládací prvek je zobrazení tabulky a <xref:System.Windows.Forms.DataGrid.AllowSorting%2A> je nastavena na `true`, přeuspořádat dat kliknutím na záhlaví sloupců. Uživatele můžete také přidat řádky a upravovat buňky.  
   
- Relace mezi sadou tabulek se zobrazí uživatelům s použitím nadřazené a podřízené struktury navigace. Nadřazené tabulky jsou nejvyšší úroveň dat a podřízené tabulky jsou tabulkami dat, které jsou odvozeny od seznamu jednotlivých do nadřazených tabulek. Rozšíření se zobrazí v každé nadřazené řádek, který obsahuje podřízené tabulky. Kliknutím na rozšíření generuje seznam jako webové odkazy na podřízené tabulky. Když uživatel vybere odkaz, zobrazí se v podřízené tabulce. Kliknutím na ikonu Zobrazení/skrytí nadřazené řádky (![zobrazit&#47;skryje nadřazené řádky ikonu](../../../../docs/framework/winforms/controls/media/vbicon.gif "vbIcon")) se skrýt informace o nadřazené tabulky nebo způsobit, že ji znovu zobrazit, pokud uživatel má dříve je skrytý. Uživatel můžete kliknout na tlačítko Zpět chcete vrátit do předchozího prohlíženého tabulky.  
+ Relace mezi sadou tabulek se zobrazí uživatelům s použitím nadřazené a podřízené struktury navigace. Nadřazené tabulky jsou nejvyšší úroveň dat a podřízené tabulky jsou tabulkami dat, které jsou odvozeny od seznamu jednotlivých do nadřazených tabulek. Rozšíření se zobrazí v každé nadřazené řádek, který obsahuje podřízené tabulky. Kliknutím na rozšíření generuje seznam jako webové odkazy na podřízené tabulky. Když uživatel vybere odkaz, zobrazí se v podřízené tabulce. Kliknutím na ikonu Zobrazení/skrytí nadřazené řádky (![zobrazit&#47;skryje nadřazené řádky ikonu](./media/vbicon.gif "vbIcon")) se skrýt informace o nadřazené tabulky nebo způsobit, že ji znovu zobrazit, pokud uživatel má dříve je skrytý. Uživatel můžete kliknout na tlačítko Zpět chcete vrátit do předchozího prohlíženého tabulky.  
   
 ## <a name="columns-and-rows"></a>Sloupců a řádků  
  <xref:System.Windows.Forms.DataGrid> Se skládá z kolekce <xref:System.Windows.Forms.DataGridTableStyle> objekty, které jsou součástí <xref:System.Windows.Forms.DataGrid> ovládacího prvku <xref:System.Windows.Forms.DataGrid.TableStyles%2A> vlastnost. Styl tabulky mohou obsahovat kolekce <xref:System.Windows.Forms.DataGridColumnStyle> objekty, které jsou součástí <xref:System.Windows.Forms.DataGridTableStyle.GridColumnStyles%2A> vlastnost <xref:System.Windows.Forms.DataGridTableStyle>... Můžete upravit <xref:System.Windows.Forms.DataGrid.TableStyles%2A> a <xref:System.Windows.Forms.DataGridTableStyle.GridColumnStyles%2A> vlastnosti pomocí editory kolekce přistupovat prostřednictvím **vlastnosti** okna.  
   
  Žádné <xref:System.Windows.Forms.DataGridTableStyle> přidružené <xref:System.Windows.Forms.DataGrid> ovládací prvek je přístupný prostřednictvím <xref:System.Windows.Forms.GridTableStylesCollection>. <xref:System.Windows.Forms.GridTableStylesCollection> Lze upravit v návrháři se <xref:System.Windows.Forms.DataGridTableStyle> editor kolekce, nebo prostřednictvím kódu programu přes <xref:System.Windows.Forms.DataGrid> ovládacího prvku <xref:System.Windows.Forms.DataGrid.TableStyles%2A> vlastnost.  
   
- ![Objektů obsažených v ovládacím prvku DataGrid](../../../../docs/framework/winforms/controls/media/vbcolumns1.gif "vbColumns1")  
+ ![Objektů obsažených v ovládacím prvku DataGrid](./media/vbcolumns1.gif "vbColumns1")  
 Následující obrázek znázorňuje objektů obsažených v ovládacím prvku DataGrid.  
   
- Styly a styly sloupců jsou synchronizovány s <xref:System.Data.DataTable> objekty a <xref:System.Data.DataColumn> objekty tak, že nastavíte jejich `MappingName` vlastnosti na příslušné <xref:System.Data.DataTable.TableName%2A> a <xref:System.Data.DataColumn.ColumnName%2A> vlastnosti. Při <xref:System.Windows.Forms.DataGridTableStyle> , který nemá žádný sloupec styly se přidá do <xref:System.Windows.Forms.DataGrid> ovládací prvek vázán na platný zdroj dat a <xref:System.Windows.Forms.DataGridTableStyle.MappingName%2A> daného stylu tabulky je nastavena na platnou <xref:System.Data.DataTable.TableName%2A> vlastnost, kolekce <xref:System.Windows.Forms.DataGridColumnStyle> pro, který se vytvoří objekty Styl tabulky. Pro každou <xref:System.Data.DataColumn> součástí <xref:System.Data.DataTable.Columns%2A> kolekce <xref:System.Data.DataTable>, odpovídající <xref:System.Windows.Forms.DataGridColumnStyle> se přidá do <xref:System.Windows.Forms.GridColumnStylesCollection>. <xref:System.Windows.Forms.GridColumnStylesCollection> je přístupný prostřednictvím <xref:System.Windows.Forms.DataGridTableStyle.GridColumnStyles%2A> vlastnost <xref:System.Windows.Forms.DataGridTableStyle>. Sloupce lze přidat nebo odstranit pomocí mřížky <xref:System.Windows.Forms.GridColumnStylesCollection.Add%2A> nebo <xref:System.Windows.Forms.GridColumnStylesCollection.Remove%2A> metodu <xref:System.Windows.Forms.GridColumnStylesCollection>. Další informace najdete v tématu [jak: Přidání tabulek a sloupců do Windows Forms DataGrid – ovládací prvek](../../../../docs/framework/winforms/controls/how-to-add-tables-and-columns-to-the-windows-forms-datagrid-control.md) a [jak: Odstranění či skrytí sloupců v Windows Forms DataGrid](../../../../docs/framework/winforms/controls/how-to-delete-or-hide-columns-in-the-windows-forms-datagrid-control.md).  
+ Styly a styly sloupců jsou synchronizovány s <xref:System.Data.DataTable> objekty a <xref:System.Data.DataColumn> objekty tak, že nastavíte jejich `MappingName` vlastnosti na příslušné <xref:System.Data.DataTable.TableName%2A> a <xref:System.Data.DataColumn.ColumnName%2A> vlastnosti. Při <xref:System.Windows.Forms.DataGridTableStyle> , který nemá žádný sloupec styly se přidá do <xref:System.Windows.Forms.DataGrid> ovládací prvek vázán na platný zdroj dat a <xref:System.Windows.Forms.DataGridTableStyle.MappingName%2A> daného stylu tabulky je nastavena na platnou <xref:System.Data.DataTable.TableName%2A> vlastnost, kolekce <xref:System.Windows.Forms.DataGridColumnStyle> pro, který se vytvoří objekty Styl tabulky. Pro každou <xref:System.Data.DataColumn> součástí <xref:System.Data.DataTable.Columns%2A> kolekce <xref:System.Data.DataTable>, odpovídající <xref:System.Windows.Forms.DataGridColumnStyle> se přidá do <xref:System.Windows.Forms.GridColumnStylesCollection>. <xref:System.Windows.Forms.GridColumnStylesCollection> je přístupný prostřednictvím <xref:System.Windows.Forms.DataGridTableStyle.GridColumnStyles%2A> vlastnost <xref:System.Windows.Forms.DataGridTableStyle>. Sloupce lze přidat nebo odstranit pomocí mřížky <xref:System.Windows.Forms.GridColumnStylesCollection.Add%2A> nebo <xref:System.Windows.Forms.GridColumnStylesCollection.Remove%2A> metodu <xref:System.Windows.Forms.GridColumnStylesCollection>. Další informace najdete v tématu [jak: Přidání tabulek a sloupců do Windows Forms DataGrid – ovládací prvek](how-to-add-tables-and-columns-to-the-windows-forms-datagrid-control.md) a [jak: Odstranění či skrytí sloupců v Windows Forms DataGrid](how-to-delete-or-hide-columns-in-the-windows-forms-datagrid-control.md).  
   
  Kolekce typů sloupce rozšiřuje <xref:System.Windows.Forms.DataGridColumnStyle> třída s atributem bohaté možnosti formátování a možností pro úpravy. Dědí všechny typy sloupců <xref:System.Windows.Forms.DataGridColumnStyle> základní třídy. Třída, která je vytvořena závisí na <xref:System.Data.DataColumn.DataType%2A> vlastnost <xref:System.Data.DataColumn> ze kterého <xref:System.Web.UI.WebControls.DataGridColumn> je založena. Například <xref:System.Data.DataColumn> , který má jeho <xref:System.Data.DataColumn.DataType%2A> vlastnost nastavena na hodnotu <xref:System.Boolean> přidruží <xref:System.Windows.Forms.DataGridBoolColumn>. Následující tabulka popisuje každý z těchto typů sloupců.  
   
@@ -134,14 +134,14 @@ Následující obrázek znázorňuje objektů obsažených v ovládacím prvku D
 >  V některých případech budete chtít upravit jen jeden sloupec mezi mnoho sloupců. například datová sada obsahuje 50 sloupců a chcete jenom 49 z nich. V takovém případě je snazší pro import všech 50 sloupců a programově odebrat jedno místo programové přidání všech 49 jednotlivé sloupce chcete.  
   
 ## <a name="formatting"></a>Formátování  
- Formátování, který lze použít <xref:System.Windows.Forms.DataGrid> ovládací prvek obsahuje styly ohraničení, styly mřížky, písem, Vlastnosti titulku, zarovnání dat a každou druhou barvy pozadí mezi řádky. Další informace najdete v tématu [jak: Formátování ovládacího prvku Windows Forms DataGrid](../../../../docs/framework/winforms/controls/how-to-format-the-windows-forms-datagrid-control.md).  
+ Formátování, který lze použít <xref:System.Windows.Forms.DataGrid> ovládací prvek obsahuje styly ohraničení, styly mřížky, písem, Vlastnosti titulku, zarovnání dat a každou druhou barvy pozadí mezi řádky. Další informace najdete v tématu [jak: Formátování ovládacího prvku Windows Forms DataGrid](how-to-format-the-windows-forms-datagrid-control.md).  
   
 ## <a name="events"></a>Události  
  Kromě běžné řízení událostí <xref:System.Windows.Forms.Control.MouseDown>, <xref:System.Windows.Forms.Control.Enter>, a <xref:System.Windows.Forms.DataGrid.Scroll>, <xref:System.Windows.Forms.DataGrid> ovládací prvek podporuje události související s úpravou a navigace v rámci mřížky. <xref:System.Windows.Forms.DataGrid.CurrentCell%2A> Výběru buňky, která určuje vlastnost. <xref:System.Windows.Forms.DataGrid.CurrentCellChanged> Událost se vyvolá, když uživatel přejde na novou buňku. Když uživatel přejde do nové tabulky prostřednictvím nadřazené a podřízené vztahy <xref:System.Windows.Forms.DataGrid.Navigate> událost se vyvolá. <xref:System.Windows.Forms.DataGrid.BackButtonClick> Událost se vyvolá, když uživatel klikne na tlačítko Zpět, když uživatel prohlíží podřízené tabulky a <xref:System.Windows.Forms.DataGrid.ShowParentDetailsButtonClick> událost je aktivována při kliknutí na ikonu Zobrazení/skrytí nadřazené řádky.  
   
 ## <a name="see-also"></a>Viz také:
-- [Ovládací prvek DataGrid](../../../../docs/framework/winforms/controls/datagrid-control-windows-forms.md)
-- [Postupy: Vytvoření vazby ovládacího prvku Windows Forms DataGrid ke zdroji dat](../../../../docs/framework/winforms/controls/how-to-bind-the-windows-forms-datagrid-control-to-a-data-source.md)
-- [Postupy: Přidávání tabulek a sloupců do ovládacího prvku Windows Forms DataGrid](../../../../docs/framework/winforms/controls/how-to-add-tables-and-columns-to-the-windows-forms-datagrid-control.md)
-- [Postupy: Odstranit nebo skrytí sloupců v ovládacím prvku Windows Forms DataGrid](../../../../docs/framework/winforms/controls/how-to-delete-or-hide-columns-in-the-windows-forms-datagrid-control.md)
-- [Postupy: Formátování ovládacího prvku Windows Forms DataGrid](../../../../docs/framework/winforms/controls/how-to-format-the-windows-forms-datagrid-control.md)
+- [Ovládací prvek DataGrid](datagrid-control-windows-forms.md)
+- [Postupy: Vytvoření vazby ovládacího prvku Windows Forms DataGrid ke zdroji dat](how-to-bind-the-windows-forms-datagrid-control-to-a-data-source.md)
+- [Postupy: Přidávání tabulek a sloupců do ovládacího prvku Windows Forms DataGrid](how-to-add-tables-and-columns-to-the-windows-forms-datagrid-control.md)
+- [Postupy: Odstranit nebo skrytí sloupců v ovládacím prvku Windows Forms DataGrid](how-to-delete-or-hide-columns-in-the-windows-forms-datagrid-control.md)
+- [Postupy: Formátování ovládacího prvku Windows Forms DataGrid](how-to-format-the-windows-forms-datagrid-control.md)
