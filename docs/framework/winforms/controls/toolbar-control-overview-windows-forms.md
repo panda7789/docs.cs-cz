@@ -7,12 +7,12 @@ helpviewer_keywords:
 - toolbars [Windows Forms], about toolbars
 - ToolBar control [Windows Forms], about ToolBar controls
 ms.assetid: d426b203-0216-4dbe-b834-1641e50a9c29
-ms.openlocfilehash: 42c3d9c681da9ca87125a274fa12af623269bd70
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 249c5854b83a62878ecef0350e08ba4b00523aff
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54745245"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57708844"
 ---
 # <a name="toolbar-control-overview-windows-forms"></a>ToolBar – přehled ovládacího prvku (Windows Forms)
 > [!NOTE]
@@ -28,11 +28,11 @@ ms.locfileid: "54745245"
   
  Když <xref:System.Windows.Forms.ToolBar.Appearance%2A> je nastavena na <xref:System.Windows.Forms.ToolBarAppearance>, tlačítka panelu nástrojů zobrazí trojrozměrného a nevyskytla se. Můžete nastavit <xref:System.Windows.Forms.ToolBar.Appearance%2A> vlastnost panelu nástrojů <xref:System.Windows.Forms.ToolBarAppearance> poskytnout jeho tlačítka panelu nástrojů a plochý vzhled. Při umístění ukazatele myši nad plochý tlačítkem, vzhled na tlačítko se změní na trojrozměrné. Tlačítka panelu nástrojů je možné rozdělit do logických skupin pomocí oddělovače. Oddělovač je pomocí tlačítka panelu nástrojů <xref:System.Windows.Forms.ToolBarButton.Style%2A> nastavenou na <xref:System.Windows.Forms.ToolBarButtonStyle>. Zobrazí se jako prázdné znaky na panelu nástrojů. Plochý vzhled po panelu nástrojů tlačítko oddělovače zobrazí jako řádky, nikoli mezery mezi tlačítka.  
   
- <xref:System.Windows.Forms.ToolBar> Ovládací prvek umožňuje vytvářet panely nástrojů tak, že přidáte <xref:System.Windows.Forms.Button> objektů do <xref:System.Windows.Forms.ToolBar.Buttons%2A> kolekce. Editor kolekce slouží k přidání tlačítek <xref:System.Windows.Forms.ToolBar> ovládacího prvku; každý <xref:System.Windows.Forms.Button> objekt musí mít text nebo obrázek přiřazen, i když můžete přiřadit oba. Zadaná image podle přidružené [ImageList](../../../../docs/framework/winforms/controls/imagelist-component-windows-forms.md) komponenty. V době běhu, můžete přidat nebo odebrat tlačítka z <xref:System.Windows.Forms.ToolBar.ToolBarButtonCollection> pomocí <xref:System.Windows.Forms.ToolBar.ToolBarButtonCollection.Add%2A> a <xref:System.Windows.Forms.ToolBar.ToolBarButtonCollection.Remove%2A> metody. Programování tlačítek <xref:System.Windows.Forms.ToolBar>, přidejte kód, který <xref:System.Windows.Forms.ToolBar.ButtonClick> události <xref:System.Windows.Forms.ToolBar>, pomocí <xref:System.Windows.Forms.ToolBarButtonClickEventArgs.Button%2A> vlastnost <xref:System.Windows.Forms.ToolBarButtonClickEventArgs> třídu k určení, které tlačítko došlo ke kliknutí na.  
+ <xref:System.Windows.Forms.ToolBar> Ovládací prvek umožňuje vytvářet panely nástrojů tak, že přidáte <xref:System.Windows.Forms.Button> objektů do <xref:System.Windows.Forms.ToolBar.Buttons%2A> kolekce. Editor kolekce slouží k přidání tlačítek <xref:System.Windows.Forms.ToolBar> ovládacího prvku; každý <xref:System.Windows.Forms.Button> objekt musí mít text nebo obrázek přiřazen, i když můžete přiřadit oba. Zadaná image podle přidružené [ImageList](imagelist-component-windows-forms.md) komponenty. V době běhu, můžete přidat nebo odebrat tlačítka z <xref:System.Windows.Forms.ToolBar.ToolBarButtonCollection> pomocí <xref:System.Windows.Forms.ToolBar.ToolBarButtonCollection.Add%2A> a <xref:System.Windows.Forms.ToolBar.ToolBarButtonCollection.Remove%2A> metody. Programování tlačítek <xref:System.Windows.Forms.ToolBar>, přidejte kód, který <xref:System.Windows.Forms.ToolBar.ButtonClick> události <xref:System.Windows.Forms.ToolBar>, pomocí <xref:System.Windows.Forms.ToolBarButtonClickEventArgs.Button%2A> vlastnost <xref:System.Windows.Forms.ToolBarButtonClickEventArgs> třídu k určení, které tlačítko došlo ke kliknutí na.  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Forms.ToolBar>
-- [Ovládací prvek ToolBar](../../../../docs/framework/winforms/controls/toolbar-control-windows-forms.md)
-- [Postupy: Přidání tlačítek do ovládacího prvku ToolBar](../../../../docs/framework/winforms/controls/how-to-add-buttons-to-a-toolbar-control.md)
-- [Postupy: Definování ikony pro tlačítko ToolBar](../../../../docs/framework/winforms/controls/how-to-define-an-icon-for-a-toolbar-button.md)
-- [Postupy: Aktivační události nabídky pro tlačítka panelu nástrojů](../../../../docs/framework/winforms/controls/how-to-trigger-menu-events-for-toolbar-buttons.md)
+- [Ovládací prvek ToolBar](toolbar-control-windows-forms.md)
+- [Postupy: Přidání tlačítek do ovládacího prvku ToolBar](how-to-add-buttons-to-a-toolbar-control.md)
+- [Postupy: Definování ikony pro tlačítko ToolBar](how-to-define-an-icon-for-a-toolbar-button.md)
+- [Postupy: Aktivační události nabídky pro tlačítka panelu nástrojů](how-to-trigger-menu-events-for-toolbar-buttons.md)

@@ -6,23 +6,23 @@ helpviewer_keywords:
 - graphics containers
 - examples [Windows Forms], graphics containers
 ms.assetid: 74632f91-cefa-4f51-ab7c-f9ac91942caf
-ms.openlocfilehash: 8755a95434d3fed06a55cfca0f71d86e5521cb39
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: cfad7254057a31ea8268784cd4b6849850f3e2aa
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33525018"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57704462"
 ---
 # <a name="using-graphics-containers"></a>Použití grafických kontejnerů
-A <xref:System.Drawing.Graphics> objekt poskytuje metody, jako například <xref:System.Drawing.Graphics.DrawLine%2A>, <xref:System.Drawing.Graphics.DrawImage%2A>, a <xref:System.Drawing.Graphics.DrawString%2A> pro zobrazení vektoru obrázky, rastrové obrázky a text. A <xref:System.Drawing.Graphics> objekt má také několik vlastností, které ovlivňují kvality a orientaci položky, které se mají vykreslovat. Například vlastnost režim vyhlazování Určuje, zda se použije vyhlazení u čar a křivek a vlastnost Světové transformace vliv pozice a oběh položek, které se mají vykreslovat.  
+A <xref:System.Drawing.Graphics> objekt, který poskytuje metody, jako <xref:System.Drawing.Graphics.DrawLine%2A>, <xref:System.Drawing.Graphics.DrawImage%2A>, a <xref:System.Drawing.Graphics.DrawString%2A> pro zobrazení vektorové obrázky, rastrové obrázky a text. A <xref:System.Drawing.Graphics> objekt má také několik vlastností, které ovlivňují kvality a orientaci ovládacího prvku položek, které jsou zpracovány. Například vlastnost vyhlazování režimu určuje, zda použití vyhlazení u čar a křivek a vlastnost transformace světa ovlivňuje umístění a otočení položek, které jsou zpracovány.  
   
- A <xref:System.Drawing.Graphics> objekt je přidružený ke konkrétní zobrazení zařízení. Při použití <xref:System.Drawing.Graphics> objektu k vykreslení v okně <xref:System.Drawing.Graphics> objektu je taky přiřazený dané konkrétní okno.  
+ A <xref:System.Drawing.Graphics> objekt je přidružený konkrétní zobrazovací zařízení. Při použití <xref:System.Drawing.Graphics> objekt nakreslete v okně <xref:System.Drawing.Graphics> objektu je taky přiřazený k této konkrétní okno.  
   
- A <xref:System.Drawing.Graphics> objekt si lze představit jako kontejner vzhledem k tomu, že obsahuje sadu vlastností, které ovlivňují kreslení a je propojen informace o zařízení. Můžete vytvořit kontejner sekundární v rámci existující <xref:System.Drawing.Graphics> objekt voláním <xref:System.Drawing.Graphics.BeginContainer%2A> metoda této <xref:System.Drawing.Graphics> objektu.  
+ A <xref:System.Drawing.Graphics> objektu můžete představit jako kontejner protože obsahuje sadu vlastností, které ovlivňují kreslení a je propojen informace specifické pro zařízení. Můžete vytvořit kontejner sekundární v existující <xref:System.Drawing.Graphics> objektu voláním <xref:System.Drawing.Graphics.BeginContainer%2A> metodu, která <xref:System.Drawing.Graphics> objektu.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Správa stavu grafického objektu](../../../../docs/framework/winforms/advanced/managing-the-state-of-a-graphics-object.md)  
- Popisuje, jak spravovat nastavení kvality, výstřižek oblasti a transformace z <xref:System.Drawing.Graphics> objektu.  
+ [Správa stavu grafického objektu](managing-the-state-of-a-graphics-object.md)  
+ Popisuje, jak spravovat nastavení kvality, výstřižek oblasti a transformace <xref:System.Drawing.Graphics> objektu.  
   
- [Použití vnořených grafických kontejnerů](../../../../docs/framework/winforms/advanced/using-nested-graphics-containers.md)  
- Ukazuje, jak použít k řízení stavu kontejnery <xref:System.Drawing.Graphics> objektu.
+ [Použití vnořených grafických kontejnerů](using-nested-graphics-containers.md)  
+ Ukazuje, jak používat kontejnery k řízení stavu <xref:System.Drawing.Graphics> objektu.

@@ -2,24 +2,24 @@
 title: Externalizovaná aktivita Policy v rozhraní .NET Framework 4.5
 ms.date: 03/30/2017
 ms.assetid: 92fd6f92-23a1-4adf-b96a-2754ea93ad3e
-ms.openlocfilehash: 1c2f66caeb9932422681ba7176346a5e5e084c11
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.openlocfilehash: 2ec358dbe2ba2b60df707d1ce580bb88e4c4ba1b
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48850230"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57706365"
 ---
 # <a name="externalized-policy-activity-in-net-framework-45"></a>Externalizovaná aktivita Policy v rozhraní .NET Framework 4.5
 
-Tato ukázka předvádí, jak aktivity ExternalizedPolicy4 umožňuje provádění existujících [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)] Windows Workflow Foundation (WF 3.5) <xref:System.Workflow.Activities.Rules.RuleSet> objekty v [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] Windows Workflow Foundation (WF 4.5) přímo s použitím stroje pravidel která je dodávána s prostředím v WF 3.5. Pomocí této aktivity můžete otevřít a spustit všechny existující 3.5 WF <xref:System.Workflow.Activities.Rules.RuleSet>. Další informace o stroj pravidel 3.5 WF zahrnutý jako součást modelu Windows Workflow Foundation, přečtěte si prosím [Úvod do modul Windows Workflow Foundation pravidla](https://go.microsoft.com/fwlink/?LinkId=166079). Další informace o migraci pravidla pro [!INCLUDE[wf1](../../../../includes/wf1-md.md)] v [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)], přečtěte si pokyny k migraci na [pokyny k migraci](../../../../docs/framework/windows-workflow-foundation/migration-guidance.md).
+Tato ukázka předvádí, jak aktivity ExternalizedPolicy4 umožňuje provádění existujících [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)] Windows Workflow Foundation (WF 3.5) <xref:System.Workflow.Activities.Rules.RuleSet> objekty v [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] Windows Workflow Foundation (WF 4.5) přímo s použitím stroje pravidel která je dodávána s prostředím v WF 3.5. Pomocí této aktivity můžete otevřít a spustit všechny existující 3.5 WF <xref:System.Workflow.Activities.Rules.RuleSet>. Další informace o stroj pravidel 3.5 WF zahrnutý jako součást modelu Windows Workflow Foundation, přečtěte si prosím [Úvod do modul Windows Workflow Foundation pravidla](https://go.microsoft.com/fwlink/?LinkId=166079). Další informace o migraci pravidla pro [!INCLUDE[wf1](../../../../includes/wf1-md.md)] v [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)], přečtěte si pokyny k migraci na [pokyny k migraci](../migration-guidance.md).
 
 ## <a name="projects-in-this-sample"></a>Projekty v této ukázce
 
 |Název projektu|Popis|Hlavní soubory|
 |-|-|-|
-|ExternalizedPolicy4|Obsahuje aktivitu ExternalizedPolicy4 a návrhář WF 4.5.|**ExternalizedPolicy4.cs**: definici aktivity.<br /><br /> **ExternalizedPolicy4Designer.xaml**: vlastního návrháře aktivity ExternalizedPolicy4. Použije pravidla editor (<xref:System.Workflow.Activities.Rules.Design.RuleSetDialog>) z stroj pravidel 3.5 WF.|
-|ImperativeCodeClientSample|Ukázková klientská aplikace, která konfiguruje a používá pracovního postupu pomocí ExternalizedPolicy4 aplikace pomocí imperativního kódu C# (žádný návrhář použít).|**ApplyDiscount.rules**: soubor s [!INCLUDE[wf1](../../../../includes/wf1-md.md)] pravidlo definice.<br /><br /> **Order.cs**: typ, který představuje zákazníka objednávky. Pravidla se aplikují na objekty tohoto typu.<br /><br /> **Soubor program.cs**: nakonfiguruje a spustí pracovní postup, který obsahuje aktivitu Policy4 použití pravidel definovaných v ApplyDiscount.rules do instance pořadí objektů.<br /><br /> App.config: Konfigurační soubor s cestou souboru pravidel.|
-|DesignerClientSample|Ukázková klientská aplikace, který konfiguruje a spustí pomocí ExternalPolicy4 aplikace v pracovním postupu [!INCLUDE[wf1](../../../../includes/wf1-md.md)] návrháře.|**Sequence1.XAML**: sekvenční pracovní postup, který používá aktivitu Policy4 k provedení vyhodnocení pravidla.<br /><br /> **Soubor program.cs**: běží instance pracovního postupu definované v Sequence1.xaml.|
+|ExternalizedPolicy4|Obsahuje aktivitu ExternalizedPolicy4 a návrhář WF 4.5.|**ExternalizedPolicy4.cs**: definici aktivity.<br /><br /> **ExternalizedPolicy4Designer.xaml**: Vlastní návrháři ExternalizedPolicy4 aktivity. Použije pravidla editor (<xref:System.Workflow.Activities.Rules.Design.RuleSetDialog>) z stroj pravidel 3.5 WF.|
+|ImperativeCodeClientSample|Ukázková klientská aplikace, která konfiguruje a používá pracovního postupu pomocí ExternalizedPolicy4 aplikace pomocí imperativního kódu C# (žádný návrhář použít).|**ApplyDiscount.rules**: Soubor s [!INCLUDE[wf1](../../../../includes/wf1-md.md)] pravidlo definice.<br /><br /> **Order.cs**: Typ, který představuje zákazníka objednávky. Pravidla se aplikují na objekty tohoto typu.<br /><br /> **Program.cs**: Konfiguruje a spustí pracovní postup, který obsahuje aktivitu Policy4 použití pravidel definovaných v ApplyDiscount.rules do instance pořadí objektů.<br /><br /> App.config: Konfigurační soubor s cestou souboru pravidel.|
+|DesignerClientSample|Ukázková klientská aplikace, který konfiguruje a spustí pomocí ExternalPolicy4 aplikace v pracovním postupu [!INCLUDE[wf1](../../../../includes/wf1-md.md)] návrháře.|**Sequence1.XAML**: Sekvenční pracovní postup, který používá aktivitu Policy4 k provedení vyhodnocení pravidla.<br /><br /> **Program.cs**: Spuštění instance pracovního postupu definované v Sequence1.xaml.|
 
 ## <a name="the-externalizedpolicy4-activity"></a>Aktivita ExternalizedPolicy4
 

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - SplitContainer control [Windows Forms], Explorer-style interface
 - forms [Windows Forms], Windows Explorer type
 ms.assetid: 9a3d5f4f-5dda-4350-9ad5-57ce5976dc47
-ms.openlocfilehash: 0b61961aff04a089ce12f4b96637e3f05023e929
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 444d85265822b5dd4b3a5fd5f4329ec6cc1427f5
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54511095"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57705009"
 ---
 # <a name="how-to-create-a-windows-explorerstyle-interface-on-a-windows-form"></a>Postupy: Vytváření rozhraní ve stylu Průzkumníka Windows ve formuláři Windows
 Windows Explorer je běžné volbou uživatelského rozhraní pro aplikace z důvodu jeho známý připravený.  
@@ -51,7 +51,7 @@ Windows Explorer je běžné volbou uživatelského rozhraní pro aplikace z dů
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Forms.SplitContainer>
-- [Postupy: Vytvoření více podokny uživatelského rozhraní pomocí Windows Forms](../../../../docs/framework/winforms/controls/how-to-create-a-multipane-user-interface-with-windows-forms.md)
-- [Postupy: Definování změny velikosti a polohování v rozděleném okně chování](../../../../docs/framework/winforms/controls/how-to-define-resize-and-positioning-behavior-in-a-split-window.md)
-- [Postupy: Vodorovné rozdělení okna](../../../../docs/framework/winforms/controls/how-to-split-a-window-horizontally.md)
-- [Ovládací prvek SplitContainer](../../../../docs/framework/winforms/controls/splitcontainer-control-windows-forms.md)
+- [Postupy: Vytvoření více podokny uživatelského rozhraní pomocí Windows Forms](how-to-create-a-multipane-user-interface-with-windows-forms.md)
+- [Postupy: Definování změny velikosti a polohování v rozděleném okně chování](how-to-define-resize-and-positioning-behavior-in-a-split-window.md)
+- [Postupy: Vodorovné rozdělení okna](how-to-split-a-window-horizontally.md)
+- [Ovládací prvek SplitContainer](splitcontainer-control-windows-forms.md)

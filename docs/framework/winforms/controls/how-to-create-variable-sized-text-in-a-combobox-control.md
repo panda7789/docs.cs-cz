@@ -10,12 +10,12 @@ helpviewer_keywords:
 - ComboBox control [Windows Forms], examples [C#]
 - ComboBox control [Windows Forms], drawing custom text
 ms.assetid: ce39b9ea-e626-49fe-bd5a-f567f6d157df
-ms.openlocfilehash: 2a9f6e8a1c96c2a9bf9e56c1c6acefc4181a18dc
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: b55a6b66416aa79427035abdfbc19d1b0e21d94e
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54526987"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57707787"
 ---
 # <a name="how-to-create-variable-sized-text-in-a-combobox-control"></a>Postupy: Vytvoření textu proměnlivé velikosti v ovládacím prvku ComboBox
 Tento příklad ukazuje vlastní kreslení textu v <xref:System.Windows.Forms.ComboBox> ovládacího prvku. Pokud položka splňuje určitá kritéria, je vykreslen v větší písma a zapnout červené.  
@@ -71,6 +71,6 @@ End Sub
 - <xref:System.Windows.Forms.ComboBox.DrawItem>
 - <xref:System.Windows.Forms.DrawItemEventArgs>
 - <xref:System.Windows.Forms.ComboBox.MeasureItem>
-- [Ovládací prvky s vestavěnou podporou vykreslování vlastníkem](../../../../docs/framework/winforms/controls/controls-with-built-in-owner-drawing-support.md)
-- [Ovládací prvek ListBox](../../../../docs/framework/winforms/controls/listbox-control-windows-forms.md)
-- [Ovládací prvek ComboBox](../../../../docs/framework/winforms/controls/combobox-control-windows-forms.md)
+- [Ovládací prvky s vestavěnou podporou vykreslování vlastníkem](controls-with-built-in-owner-drawing-support.md)
+- [Ovládací prvek ListBox](listbox-control-windows-forms.md)
+- [Ovládací prvek ComboBox](combobox-control-windows-forms.md)

@@ -1,5 +1,5 @@
 ---
-title: 'Průvodce: Uspořádání ovládacích prvků ve Windows Forms pomocí zarovnávacích čar'
+title: 'Návod: Uspořádání ovládacích prvků ve Windows Forms pomocí zarovnávacích čar'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - controls [Windows Forms], arranging with snaplines
@@ -7,14 +7,14 @@ helpviewer_keywords:
 - SnapLine class [Windows Forms], walkthroughs
 - Windows Forms controls, arranging
 ms.assetid: d5c9edc7-cf30-4a97-8ebe-201d569340f8
-ms.openlocfilehash: 136a655064fc0c955cadd2f15e5900579e90187a
-ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
+ms.openlocfilehash: f898a15fd2157c625767d53d8b53c5469fb9a957
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56748031"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57703592"
 ---
-# <a name="walkthrough-arranging-controls-on-windows-forms-using-snaplines"></a>Průvodce: Uspořádání ovládacích prvků ve Windows Forms pomocí zarovnávacích čar
+# <a name="walkthrough-arranging-controls-on-windows-forms-using-snaplines"></a>Návod: Uspořádání ovládacích prvků ve Windows Forms pomocí zarovnávacích čar
 Přesné umístění ovládacích prvků na formuláři je důležitá pro mnoho aplikací. Návrhář formulářů Windows poskytuje celou řadu nástrojů rozložení, jak toho dosáhnout. Jednou z vašich nejdůležitějších je <xref:System.Windows.Forms.Design.Behavior.SnapLine> funkce.  
   
  Zarovnávacích čar zobrazí přesně, kde zarovnejte ovládací prvky s jinými ovládacími prvky. Také ukazují doporučená vzdálenosti pro okraje mezi ovládacími prvky, jak je uvedeno v pokynech uživatelské rozhraní Windows. Podrobnosti najdete v tématu [vývoj a návrh uživatelského rozhraní](https://go.microsoft.com/FWLink/?LinkId=83878).  
@@ -92,7 +92,7 @@ Přesné umístění ovládacích prvků na formuláři je důležitá pro mnoho
 > [!NOTE]
 >  Pokud formulář <xref:System.Windows.Forms.Control.Padding%2A> je nastavena na 0,0,0,0, Návrhář formulářů Windows poskytuje formuláře stínovaný <xref:System.Windows.Forms.Control.Padding%2A> hodnotu 9,9,9,9. Chcete-li přepsat toto chování, přiřadíte jinou hodnotu než 0,0,0,0.  
   
-1.  Změňte hodnotu <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Margin%2A> vlastnost tak, že rozbalíte <xref:System.Windows.Forms.Control.Margin%2A> položku v **vlastnosti** okno a nastavení <xref:System.Windows.Forms.Padding.All%2A> vlastnost na hodnotu 0. Podrobnosti najdete v tématu [názorný postup: Vytváření rozložení Windows Forms ovládací prvky s odsazením, okraji a s vlastností AutoSize](../../../../docs/framework/winforms/controls/windows-forms-controls-padding-autosize.md).  
+1.  Změňte hodnotu <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Margin%2A> vlastnost tak, že rozbalíte <xref:System.Windows.Forms.Control.Margin%2A> položku v **vlastnosti** okno a nastavení <xref:System.Windows.Forms.Padding.All%2A> vlastnost na hodnotu 0. Podrobnosti najdete v tématu [názorný postup: Vytváření rozložení Windows Forms ovládací prvky s odsazením, okraji a s vlastností AutoSize](windows-forms-controls-padding-autosize.md).  
   
 2.  Přesunout <xref:System.Windows.Forms.Button> ovládací prvek blízko pravého ohraničení tvaru, dokud se nezobrazí snapline –. Tato vzdálenost je nyní dán hodnotou formuláře <xref:System.Windows.Forms.Control.Padding%2A> vlastnost.  
   
@@ -154,7 +154,7 @@ Přesné umístění ovládacích prvků na formuláři je důležitá pro mnoho
   
 1.  Přetáhněte <xref:System.Windows.Forms.Button> ovládacího prvku **nástrojů** do formuláře.  
   
-2.  Změnit velikost <xref:System.Windows.Forms.Button> uchopíte jeho jeden úchyty pro změnu velikosti a přetažením rohu pod kontrolou. Podrobnosti najdete v tématu [jak: Změna velikosti ovládacích prvků ve Windows Forms](../../../../docs/framework/winforms/controls/how-to-resize-controls-on-windows-forms.md).  
+2.  Změnit velikost <xref:System.Windows.Forms.Button> uchopíte jeho jeden úchyty pro změnu velikosti a přetažením rohu pod kontrolou. Podrobnosti najdete v tématu [jak: Změna velikosti ovládacích prvků ve Windows Forms](how-to-resize-controls-on-windows-forms.md).  
   
 3.  Přetáhněte úchyt pro změnu velikosti dobu, než <xref:System.Windows.Forms.Button> ohraničení ovládacího prvku zarovnán s dalším ovládacím prvkem. Všimněte si, že se zobrazí snapline –. Všimněte si také, že přitahuje pozici snapline – úchyt pro změnu velikosti.  
   
@@ -165,7 +165,7 @@ Přesné umístění ovládacích prvků na formuláři je důležitá pro mnoho
   
 #### <a name="to-align-a-label-to-a-controls-text"></a>Chcete-li zarovnat popisek pro text ovládacího prvku  
   
-1.  Přetáhněte <xref:System.Windows.Forms.TextBox> ovládacího prvku **nástrojů** do formuláře. Když přetáhnete <xref:System.Windows.Forms.TextBox> ovládací prvek na formuláři klikněte smart piktogram a vyberte **nastavit text textBox1** možnost. Podrobnosti najdete v tématu [názorný postup: Provádění obecných úloh pomocí inteligentních značek v Windows Forms ovládací prvky](../../../../docs/framework/winforms/controls/performing-common-tasks-using-smart-tags-on-wf-controls.md).  
+1.  Přetáhněte <xref:System.Windows.Forms.TextBox> ovládacího prvku **nástrojů** do formuláře. Když přetáhnete <xref:System.Windows.Forms.TextBox> ovládací prvek na formuláři klikněte smart piktogram a vyberte **nastavit text textBox1** možnost. Podrobnosti najdete v tématu [názorný postup: Provádění obecných úloh pomocí inteligentních značek v Windows Forms ovládací prvky](performing-common-tasks-using-smart-tags-on-wf-controls.md).  
   
 2.  Přetáhněte <xref:System.Windows.Forms.Label> ovládacího prvku **nástrojů** do formuláře.  
   
@@ -241,7 +241,7 @@ Přesné umístění ovládacích prvků na formuláři je důležitá pro mnoho
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Forms.Design.Behavior.SnapLine>
-- [Návod: Uspořádání ovládacích prvků na formuláři Windows s použitím ovládacího prvku FlowLayoutPanel](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-a-flowlayoutpanel.md)
-- [Návod: Uspořádání ovládacích prvků na formuláři Windows s použitím ovládacího prvku TableLayoutPanel](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md)
-- [Návod: Vytváření rozložení Windows Forms ovládací prvky s odsazením, okraji a s vlastností AutoSize](../../../../docs/framework/winforms/controls/windows-forms-controls-padding-autosize.md)
-- [Uspořádávání ovládacích prvků ve Windows Forms](../../../../docs/framework/winforms/controls/arranging-controls-on-windows-forms.md)
+- [Návod: Uspořádání ovládacích prvků na formuláři Windows s použitím ovládacího prvku FlowLayoutPanel](walkthrough-arranging-controls-on-windows-forms-using-a-flowlayoutpanel.md)
+- [Návod: Uspořádání ovládacích prvků na formuláři Windows s použitím ovládacího prvku TableLayoutPanel](walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md)
+- [Návod: Vytváření rozložení Windows Forms ovládací prvky s odsazením, okraji a s vlastností AutoSize](windows-forms-controls-padding-autosize.md)
+- [Uspořádávání ovládacích prvků ve Windows Forms](arranging-controls-on-windows-forms.md)

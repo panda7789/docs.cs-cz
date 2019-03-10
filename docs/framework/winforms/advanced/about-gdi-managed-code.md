@@ -6,29 +6,29 @@ helpviewer_keywords:
 - GDI+
 - graphics [Windows Forms], GDI+
 ms.assetid: a98a76ab-e455-49c9-891c-0491ac932f2c
-ms.openlocfilehash: 913654b98eb8bf72fe43b744886a28e0f675a5c4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b1676189582596ad69981b330ffb081539e949da
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33518810"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57705022"
 ---
 # <a name="about-gdi-managed-code"></a>Informace o spravovaném kódu GDI+
-[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] je část operačního systému Windows, které poskytuje dvourozměrná vektorové grafiky, vytvoření bitové kopie a typografie. [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] zlepšuje na [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)] (grafické rozhraní zařízení zahrnutá v dřívějších verzích systému Windows) přidáním nové funkce a optimalizace stávajících funkcí.  
+[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] je část, která poskytuje dvojrozměrná vektorová grafika, obrázky a typografie operačního systému Windows. [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] zlepšuje na [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)] (grafiky zařízení rozhraní zahrnuté v dřívějších verzích Windows) tak, že přidáte nové funkce a optimalizace existujících funkcí.  
   
- [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] Spravované třídy rozhraní (sada obálky) je součástí [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], prostředí pro vytváření, nasazení a spuštění webové služby XML a dalších aplikacích.  
+ [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] Spravovaná třída rozhraní (sadu obálky) je součástí [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], prostředí pro vytváření, nasazování a spouštění webových služeb XML a další aplikace.  
   
- Tato část obsahuje informace o [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] rozhraní API pro programátory v jazyce pomocí spravovaného kódu.  
+ Tato část obsahuje informace o [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] rozhraní API pro programátory pomocí spravovaného kódu.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Čáry, křivky a obrazce](../../../../docs/framework/winforms/advanced/lines-curves-and-shapes.md)  
- Popisuje vektorová grafika.  
+ [Čáry, křivky a obrazce](lines-curves-and-shapes.md)  
+ Tento článek popisuje vektorovou grafiku.  
   
- [Obrázky, rastrové obrázky a metasoubory](../../../../docs/framework/winforms/advanced/images-bitmaps-and-metafiles.md)  
- Popisuje typ bitové kopie k dispozici a jak pracovat s nimi.  
+ [Obrázky, rastrové obrázky a metasoubory](images-bitmaps-and-metafiles.md)  
+ Tento článek popisuje typ bitové kopie, které jsou k dispozici a jak pracovat s nimi.  
   
- [Systém souřadnic a transformace](../../../../docs/framework/winforms/advanced/coordinate-systems-and-transformations.md)  
- Popisuje, jak k transformaci grafiky s [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)].  
+ [Systém souřadnic a transformace](coordinate-systems-and-transformations.md)  
+ Popisuje, jak transformovat grafika [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)].  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Drawing.Graphics?displayProperty=nameWithType>  
@@ -59,5 +59,5 @@ ms.locfileid: "33518810"
  Tato třída popisuje a obsahuje odkazy na všechny její členy.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Použití spravovaných grafických tříd](../../../../docs/framework/winforms/advanced/using-managed-graphics-classes.md).  
+ [Použití spravovaných grafických tříd](using-managed-graphics-classes.md).  
  Obsahuje odkazy na témata, která ukazují, jak používat `Graphics` programovací rozhraní.

@@ -6,12 +6,12 @@ ms.date: 04/12/2018
 ms.technology: dotnet-standard
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 56f75e282e1b28f09eacd19f2da6293fd4e3ab7b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 45e67fe1436863da4050342bb224d67894111cc4
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54628198"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57712484"
 ---
 # <a name="whats-new-in-the-net-standard"></a>Co je nového v .NET Standard
 
@@ -94,4 +94,4 @@ dotnet new classlib -lang vb
 ## <a name="see-also"></a>Viz také:
 
 - [.NET Standard](../net-standard.md)
-- [Představujeme .NET Standard](https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard/)
+- [Představujeme .NET Standard](https://devblogs.microsoft.com/dotnet/introducing-net-standard/)

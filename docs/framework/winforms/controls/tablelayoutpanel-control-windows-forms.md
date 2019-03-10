@@ -9,33 +9,33 @@ helpviewer_keywords:
 - layout [Windows Forms], TableLayoutPanel control
 - automatic sizing
 ms.assetid: f55175c6-424e-4782-a86e-3f79c1550235
-ms.openlocfilehash: 9813a1b969d0232ec842b91385d0ad893b71c0d6
-ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
+ms.openlocfilehash: 6d0a693feeb241b5772f2e1049e7876ed1c0da20
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56747324"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57703137"
 ---
 # <a name="tablelayoutpanel-control-windows-forms"></a>TableLayoutPanel – ovládací prvek (Windows Forms)
 <xref:System.Windows.Forms.TableLayoutPanel> Ovládací prvek uspořádá její obsah do mřížky. Protože je prováděna rozložení i v době návrhu a běhu, můžete změnit dynamicky se změnami prostředí aplikace. To umožňuje ovládací prvky v panelu proporcionálně velikost, tak můžou reagovat na změny, jako je například změna velikosti nadřazeného ovládacího prvku nebo text délka mění kvůli lokalizace.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Přehled ovládacího prvku TableLayoutPanel](../../../../docs/framework/winforms/controls/tablelayoutpanel-control-overview.md)  
+ [Přehled ovládacího prvku TableLayoutPanel](tablelayoutpanel-control-overview.md)  
  Představuje obecné koncepty <xref:System.Windows.Forms.TableLayoutPanel> ovládací prvek, který vám umožní vytvořit rozložení řádků a sloupců.  
   
- [Doporučené postupy pro ovládací prvek TableLayoutPanel](../../../../docs/framework/winforms/controls/best-practices-for-the-tablelayoutpanel-control.md)  
+ [Doporučené postupy pro ovládací prvek TableLayoutPanel](best-practices-for-the-tablelayoutpanel-control.md)  
  Popisuje doporučení, která vám pomohou maximálně využívat funkce rozložení <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku.  
   
- [Chování AutoSize v ovládacím prvku TableLayoutPanel](../../../../docs/framework/winforms/controls/autosize-behavior-in-the-tablelayoutpanel-control.md)  
+ [Chování AutoSize v ovládacím prvku TableLayoutPanel](autosize-behavior-in-the-tablelayoutpanel-control.md)  
  Popisuje způsoby <xref:System.Windows.Forms.TableLayoutPanel> ovládací prvek podporuje automatické velikosti chování.  
   
- [Postupy: Ukotvení a podřízených ovládacích prvků v ovládacím prvku TableLayoutPanel](../../../../docs/framework/winforms/controls/how-to-anchor-and-dock-child-controls-in-a-tablelayoutpanel-control.md)  
+ [Postupy: Ukotvení a podřízených ovládacích prvků v ovládacím prvku TableLayoutPanel](how-to-anchor-and-dock-child-controls-in-a-tablelayoutpanel-control.md)  
  Ukazuje, jak a ukotvení podřízených ovládacích prvků v <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku.  
   
- [Postupy: Návrh rozložení Windows Forms, jež odpovídá lokalizaci](../../../../docs/framework/winforms/controls/how-to-design-a-windows-forms-layout-that-responds-well-to-localization.md)  
+ [Postupy: Návrh rozložení Windows Forms, jež odpovídá lokalizaci](how-to-design-a-windows-forms-layout-that-responds-well-to-localization.md)  
  Ukazuje použití <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku na formulář, jež odpovídá lokalizaci vytvářet.  
   
- [Postupy: Vytvoření formuláře Windows s možností změny velikosti pro zadávání dat](../../../../docs/framework/winforms/controls/how-to-create-a-resizable-windows-form-for-data-entry.md)  
+ [Postupy: Vytvoření formuláře Windows s možností změny velikosti pro zadávání dat](how-to-create-a-resizable-windows-form-for-data-entry.md)  
  Ukazuje použití <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku na formulář, který odpovídá Změna velikosti vytvářet.  
   
 1.  [Postupy: Zarovnání a roztažení ovládacího prvku v ovládacím prvku TableLayoutPanel](how-to-align-and-stretch-a-control-in-a-tablelayoutpanel-control.md)  
@@ -57,7 +57,7 @@ ms.locfileid: "56747324"
  Poskytuje referenční dokumentaci pro <xref:System.Windows.Forms.FlowLayoutPanel> ovládacího prvku.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Lokalizace](../../../../docs/standard/globalization-localization/localization.md)  
+ [Lokalizace](../../../standard/globalization-localization/localization.md)  
  Poskytuje přehled o tématech vztahujících se k lokalizaci.  
   
  Viz také [lokalizace aplikace](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/z68135h5(v=vs.120)).

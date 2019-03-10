@@ -6,21 +6,21 @@ helpviewer_keywords:
 - Help [Windows Forms], displaying on Windows Forms
 - HelpProvider component [Windows Forms]
 ms.assetid: a09a6e0b-79d8-457f-bb36-86fad2beeada
-ms.openlocfilehash: f838f94698375eca27027c4769fcc5f54f96528c
-ms.sourcegitcommit: acd8ed14fe94e9d4e3a7fb685fe83d05e941073c
+ms.openlocfilehash: b5da5895b39412052f83cb0a89c3852d28f264bb
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56443182"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57707129"
 ---
 # <a name="helpprovider-component-windows-forms"></a>HelpProvider – komponenta (Windows Forms)
 Windows Forms `HelpProvider` součást slouží k přidružení souboru nápovědy HTML Help 1.x (soubor CHM vytvořenými pomocí HTML Help Workshop, nebo soubor HTM) s vaší aplikací se systémem Windows.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Přehled komponenty HelpProvider](../../../../docs/framework/winforms/controls/helpprovider-component-overview-windows-forms.md)  
+ [Přehled komponenty HelpProvider](helpprovider-component-overview-windows-forms.md)  
  Představuje obecné koncepty `HelpProvider` komponenta, která umožňuje přidružit soubor HTML nápovědy aplikace založené na Windows.  
   
- Zobrazit [systémy nápovědy ve formulářových aplikacích Windows](../../../../docs/framework/winforms/advanced/help-systems-in-windows-forms-applications.md).  
+ Zobrazit [systémy nápovědy ve formulářových aplikacích Windows](../advanced/help-systems-in-windows-forms-applications.md).  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Forms.HelpProvider>  
@@ -30,7 +30,7 @@ Windows Forms `HelpProvider` součást slouží k přidružení souboru nápově
  Tato třída popisuje a obsahuje odkazy na všechny její členy.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Ovládací prvky používané ve Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
+ [Ovládací prvky používané ve Windows Forms](controls-to-use-on-windows-forms.md)  
  Obsahuje úplný seznam všech ovládacích prvcích Windows Forms, s odkazy na informace o jejich použití.  
   
  Viz také [systémy nápovědy ve formulářových aplikacích Windows](../advanced/help-systems-in-windows-forms-applications.md).

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - ProgressBar control [Windows Forms], about ProgressBar control
 - progress controls [Windows Forms], about progress controls
 ms.assetid: a05d9cba-3a6a-4f8f-94b8-8ec12799fb80
-ms.openlocfilehash: 65533bc8f9125666e39c53635f5798573f66ef14
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: db0a43534080d630323d8c1c95759fd2dcc04a85
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54523178"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57707937"
 ---
 # <a name="progressbar-control-overview-windows-forms"></a>ProgressBar – přehled ovládacího prvku (Windows Forms)
 > [!IMPORTANT]
@@ -37,4 +37,4 @@ ms.locfileid: "54523178"
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Forms.ProgressBar>
-- [Ovládací prvek ProgressBar](../../../../docs/framework/winforms/controls/progressbar-control-windows-forms.md)
+- [Ovládací prvek ProgressBar](progressbar-control-windows-forms.md)

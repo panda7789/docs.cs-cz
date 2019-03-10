@@ -10,12 +10,12 @@ helpviewer_keywords:
 - DateTimePicker control [Windows Forms], setting and returning dates
 - examples [Windows Forms], DateTimePicker control
 ms.assetid: a8a48d68-e4b5-426e-9764-51230fc9acd2
-ms.openlocfilehash: 678fc5883096d82937c4a1677d2f7f345e955ae1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 73c40a48a75955d1ba44decae6b50ca641a63f7b
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54562203"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57703211"
 ---
 # <a name="how-to-set-and-return-dates-with-the-windows-forms-datetimepicker-control"></a>Postupy: Nastavení a vrácení kalendářních dat pomocí ovládacího prvku Windows Forms DateTimePicker
 Aktuálně vybrané datum a čas ve Windows Forms <xref:System.Windows.Forms.DateTimePicker> ovládací prvek závisí <xref:System.Windows.Forms.DateTimePicker.Value%2A> vlastnost. Můžete nastavit <xref:System.Windows.Forms.DateTimePicker.Value%2A> vlastnost předtím, než se zobrazí ovládací prvek (například v době návrhu nebo v formuláře <xref:System.Windows.Forms.Form.Load> událostí) k určení, která data se původně výběr v ovládacím prvku. Ve výchozím nastavení, ovládací prvek na <xref:System.Windows.Forms.DateTimePicker.Value%2A> je nastavena na aktuální datum. Pokud změníte ovládacího prvku <xref:System.Windows.Forms.DateTimePicker.Value%2A> v kódu, se automaticky aktualizuje ovládací prvek na formuláři tak, aby odrážela nové nastavení.  
@@ -24,7 +24,7 @@ Aktuálně vybrané datum a čas ve Windows Forms <xref:System.Windows.Forms.Dat
   
 -   Pro hodnoty data <xref:System.DateTime.Month%2A>, <xref:System.DateTime.Day%2A>, a <xref:System.DateTime.Year%2A> vlastnosti vrací celočíselných hodnot pro tyto časové jednotky vybraným datem. <xref:System.DateTime.DayOfWeek%2A> Vlastnost vrací hodnotu, která vybraný den v týdnu (možné hodnoty jsou uvedeny v <xref:System.DayOfWeek> výčet).  
   
--   Pro časové hodnoty <xref:System.DateTime.Hour%2A>, <xref:System.DateTime.Minute%2A>, <xref:System.DateTime.Second%2A>, a <xref:System.DateTime.Millisecond%2A> vlastnosti vrací celočíselných hodnot pro tyto časové jednotky. Pokud chcete nakonfigurovat ovládací prvek pro zobrazení doby, najdete v článku [jak: Zobrazení času pomocí ovládacího prvku DateTimePicker](../../../../docs/framework/winforms/controls/how-to-display-time-with-the-datetimepicker-control.md).  
+-   Pro časové hodnoty <xref:System.DateTime.Hour%2A>, <xref:System.DateTime.Minute%2A>, <xref:System.DateTime.Second%2A>, a <xref:System.DateTime.Millisecond%2A> vlastnosti vrací celočíselných hodnot pro tyto časové jednotky. Pokud chcete nakonfigurovat ovládací prvek pro zobrazení doby, najdete v článku [jak: Zobrazení času pomocí ovládacího prvku DateTimePicker](how-to-display-time-with-the-datetimepicker-control.md).  
   
 ### <a name="to-set-the-date-and-time-value-of-the-control"></a>Chcete-li nastavit hodnoty data a času ovládacího prvku  
   
@@ -73,5 +73,5 @@ Aktuálně vybrané datum a čas ve Windows Forms <xref:System.Windows.Forms.Dat
     ```  
   
 ## <a name="see-also"></a>Viz také:
-- [Ovládací prvek DateTimePicker](../../../../docs/framework/winforms/controls/datetimepicker-control-windows-forms.md)
-- [Postupy: Zobrazení data ve vlastním formátu pomocí ovládacího prvku Windows Forms DateTimePicker](../../../../docs/framework/winforms/controls/display-a-date-in-a-custom-format-with-wf-datetimepicker-control.md)
+- [Ovládací prvek DateTimePicker](datetimepicker-control-windows-forms.md)
+- [Postupy: Zobrazení data ve vlastním formátu pomocí ovládacího prvku Windows Forms DateTimePicker](display-a-date-in-a-custom-format-with-wf-datetimepicker-control.md)

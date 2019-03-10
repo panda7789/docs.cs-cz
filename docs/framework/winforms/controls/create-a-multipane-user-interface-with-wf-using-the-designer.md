@@ -6,17 +6,17 @@ helpviewer_keywords:
 - SplitContainer control [Windows Forms], using the designer
 - multipane user interface
 ms.assetid: c3f9294d-a26c-4198-9242-f237f55f7573
-ms.openlocfilehash: 923f913d8dd44aeef5d0b661e9408c6c50acd98b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1ad446fde4ccfc9ad9c48e619321deed044f1014
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54664223"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57713771"
 ---
 # <a name="how-to-create-a-multipane-user-interface-with-windows-forms-using-the-designer"></a>Postupy: Vytvoření více podokny uživatelského rozhraní pomocí Windows Forms pomocí návrháře
 V následujícím postupu vytvoříte, který je podobný tomu použitému v aplikaci Microsoft Outlook s více podokny uživatelské rozhraní **složky** seznamu, **zprávy** podokně a **veverziPreview** podokně. Toto uspořádání se dosahuje hlavně prostřednictvím Ukotvování ovládacích prvků ve formuláři.  
   
- Můžete ukotvit ovládacího prvku, zjistíte, které okrajem nadřazeného kontejneru ovládacího prvku je připojen k. Proto pokud nastavíte <xref:System.Windows.Forms.SplitContainer.Dock%2A> vlastnost <xref:System.Windows.Forms.DockStyle.Right>, pravým okrajem ovládacího prvku se ukotven k pravým okrajem jeho nadřazeného ovládacího prvku. Kromě toho ukotvených okrajem ovládacího prvku svou velikost tak, aby odpovídaly u ovládacího prvku kontejneru. Další informace o tom, jak <xref:System.Windows.Forms.SplitContainer.Dock%2A> vlastnost funguje, najdete v článku [jak: Ukotvování ovládacích prvků ve Windows Forms](../../../../docs/framework/winforms/controls/how-to-dock-controls-on-windows-forms.md).  
+ Můžete ukotvit ovládacího prvku, zjistíte, které okrajem nadřazeného kontejneru ovládacího prvku je připojen k. Proto pokud nastavíte <xref:System.Windows.Forms.SplitContainer.Dock%2A> vlastnost <xref:System.Windows.Forms.DockStyle.Right>, pravým okrajem ovládacího prvku se ukotven k pravým okrajem jeho nadřazeného ovládacího prvku. Kromě toho ukotvených okrajem ovládacího prvku svou velikost tak, aby odpovídaly u ovládacího prvku kontejneru. Další informace o tom, jak <xref:System.Windows.Forms.SplitContainer.Dock%2A> vlastnost funguje, najdete v článku [jak: Ukotvování ovládacích prvků ve Windows Forms](how-to-dock-controls-on-windows-forms.md).  
   
  Tento postup se zaměřuje na uspořádání <xref:System.Windows.Forms.SplitContainer> a další ovládací prvky ve formuláři, nikoli na přidání funkce do aplikace, které napodobují aplikace Microsoft Outlook.  
   
@@ -44,8 +44,8 @@ V následujícím postupu vytvoříte, který je podobný tomu použitému v apl
     > [!NOTE]
     >  Když umístíte ukazatel myši přes buď příčky v rámci <xref:System.Windows.Forms.SplitContainer> ovládací prvky, můžete změnit velikost vnitřní dimenze.  
   
-     Při vývoji aplikace se v tuto chvíli máte vytvořený propracovaná uživatelská rozhraní. Dalším krokem je pokračováním programování aplikací, například připojením <xref:System.Windows.Forms.TreeView> ovládacího prvku a <xref:System.Windows.Forms.ListView> ovládacích prvků pro nějaký druh zdroje dat. Další informace o připojování ovládacích prvků k datům najdete v tématu [datové vazby a Windows Forms](../../../../docs/framework/winforms/data-binding-and-windows-forms.md).  
+     Při vývoji aplikace se v tuto chvíli máte vytvořený propracovaná uživatelská rozhraní. Dalším krokem je pokračováním programování aplikací, například připojením <xref:System.Windows.Forms.TreeView> ovládacího prvku a <xref:System.Windows.Forms.ListView> ovládacích prvků pro nějaký druh zdroje dat. Další informace o připojování ovládacích prvků k datům najdete v tématu [datové vazby a Windows Forms](../data-binding-and-windows-forms.md).  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Forms.SplitContainer>
-- [Ovládací prvek SplitContainer](../../../../docs/framework/winforms/controls/splitcontainer-control-windows-forms.md)
+- [Ovládací prvek SplitContainer](splitcontainer-control-windows-forms.md)

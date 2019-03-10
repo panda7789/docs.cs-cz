@@ -11,12 +11,12 @@ helpviewer_keywords:
 - tabs [Windows Forms], controlling appearance
 - buttons [Windows Forms], displaying tabs as
 ms.assetid: 7c6cc443-ed62-4d26-b94d-b8913b44f773
-ms.openlocfilehash: 1ed062b3991d7738269d30a6ff13cda3c80927c2
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 642115eeb61649eb369058947e5347d4389182a0
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54630317"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57702409"
 ---
 # <a name="how-to-change-the-appearance-of-the-windows-forms-tabcontrol"></a>Postupy: Změna vzhledu ovládacího prvku Windows Forms TabControl
 Můžete změnit vzhled karty ve Windows Forms pomocí vlastnosti <xref:System.Windows.Forms.TabControl> a <xref:System.Windows.Forms.TabPage> objekty, které tvoří jednotlivé karty na ovládacím prvku. Nastavením těchto vlastností můžete zobrazit obrázky na karty, zobrazení karet svisle namísto vodorovně, zobrazit více řádků karet a povolit nebo zakázat karty prostřednictvím kódu programu.  
@@ -27,7 +27,7 @@ Můžete změnit vzhled karty ve Windows Forms pomocí vlastnosti <xref:System.W
   
 2.  Přidání obrázků do seznamu obrázků.  
   
-     Další informace o seznamech image, najdete v části [komponenty ImageList](../../../../docs/framework/winforms/controls/imagelist-component-windows-forms.md) a [jak: Přidání a odebrání obrázků se Windows Forms ImageList – komponenta](../../../../docs/framework/winforms/controls/how-to-add-or-remove-images-with-the-windows-forms-imagelist-component.md).  
+     Další informace o seznamech image, najdete v části [komponenty ImageList](imagelist-component-windows-forms.md) a [jak: Přidání a odebrání obrázků se Windows Forms ImageList – komponenta](how-to-add-or-remove-images-with-the-windows-forms-imagelist-component.md).  
   
 3.  Nastavte <xref:System.Windows.Forms.TabControl.ImageList%2A> vlastnost <xref:System.Windows.Forms.TabControl> k <xref:System.Windows.Forms.ImageList> ovládacího prvku.  
   
@@ -66,8 +66,8 @@ Můžete změnit vzhled karty ve Windows Forms pomocí vlastnosti <xref:System.W
 -   Nastavte <xref:System.Windows.Forms.TabControl.Appearance%2A> vlastnost <xref:System.Windows.Forms.TabControl> k <xref:System.Windows.Forms.TabAppearance.Buttons> nebo <xref:System.Windows.Forms.TabAppearance.FlatButtons>.  
   
 ## <a name="see-also"></a>Viz také:
-- [Ovládací prvek TabControl](../../../../docs/framework/winforms/controls/tabcontrol-control-windows-forms.md)
-- [Přehled ovládacího prvku TabControl](../../../../docs/framework/winforms/controls/tabcontrol-control-overview-windows-forms.md)
-- [Postupy: Přidání ovládacího prvku do stránky karty](../../../../docs/framework/winforms/controls/how-to-add-a-control-to-a-tab-page.md)
-- [Postupy: Zákaz stránek karet](../../../../docs/framework/winforms/controls/how-to-disable-tab-pages.md)
-- [Postupy: Přidání a odebrání karet pomocí ovládacího prvku Windows Forms TabControl](../../../../docs/framework/winforms/controls/how-to-add-and-remove-tabs-with-the-windows-forms-tabcontrol.md)
+- [Ovládací prvek TabControl](tabcontrol-control-windows-forms.md)
+- [Přehled ovládacího prvku TabControl](tabcontrol-control-overview-windows-forms.md)
+- [Postupy: Přidání ovládacího prvku do stránky karty](how-to-add-a-control-to-a-tab-page.md)
+- [Postupy: Zákaz stránek karet](how-to-disable-tab-pages.md)
+- [Postupy: Přidání a odebrání karet pomocí ovládacího prvku Windows Forms TabControl](how-to-add-and-remove-tabs-with-the-windows-forms-tabcontrol.md)

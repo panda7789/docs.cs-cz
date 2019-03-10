@@ -9,33 +9,33 @@ helpviewer_keywords:
 - spin button control
 - NumericUpDown control [Windows Forms]
 ms.assetid: 32b0c20d-4f37-4aea-873d-faded741d2db
-ms.openlocfilehash: 24e2464eaa94f104d167add1f5fe696b7622ee09
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 47aff0ae4d75ef83fd72bc0dc381963a7b496ec6
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33535854"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57704294"
 ---
 # <a name="numericupdown-control-windows-forms"></a>NumericUpDown – ovládací prvek (Windows Forms)
-Windows Forms `NumericUpDown` řízení vypadá kombinací textového pole a dvojice šipek, které uživatel můžete kliknutím na Upravit hodnotu. Ovládací prvek zobrazí a nastaví jednu číselnou hodnotu ze seznamu voleb. Uživatel může zvýšit a snížit počet kliknutím tlačítka nahoru a dolů, stisknutím klávesy se šipkami nahoru a dolů nebo zadáním čísla. Kliknutím na tlačítko šipka nahoru přesune hodnotu směrem k jeho maximální; Kliknutím na tlačítko šipka dolů přesune na minimum. Je například kde tento druh řízení může být užitečné pro ovládání hlasitosti na hudební přehrávač. Číselné ovládací prvky typu číselník – se používají v některých aplikacích ovládací panely systému Windows.  
+Windows Forms `NumericUpDown` ovládací prvek vypadá jako kombinace textové pole a dvojice šipek, které může uživatel kliknout na Upravit hodnotu. Ovládací prvek zobrazí a nastaví jednu číselnou hodnotu ze seznamu nabízených možností. Uživatel může zvýšit a snížit počet klepáním na tlačítka, stisknutím klávesy se šipkami nahoru a dolů nebo zadáním čísla. Kliknutím na klávesu šipka nahoru přesune hodnotu směrem k jeho maximální; Kliknutím na klávesu šipka dolů přesune na minimum. Je například tento druh ovládacího prvku při kterých může být užitečné pro ovládání hlasitosti na hudební přehrávač. Číselné ovládací prvky typu obousměrný číselník se používají v některých aplikacích ovládacího panelu Windows.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Přehled ovládacího prvku NumericUpDown](../../../../docs/framework/winforms/controls/numericupdown-control-overview-windows-forms.md)  
- Představuje obecné koncepty `NumericUpDown` řízení, které umožňuje uživatelům procházet a vyberte ze seznamu číselné hodnoty.  
+ [Přehled ovládacího prvku NumericUpDown](numericupdown-control-overview-windows-forms.md)  
+ Představuje obecné koncepty `NumericUpDown` ovládací prvek, který uživatelům umožňuje procházet a vyberte ze seznamu číselné hodnoty.  
   
- [Postupy: Nastavení a vracení číselných hodnot pomocí ovládacího prvku Windows Forms NumericUpDown](../../../../docs/framework/winforms/controls/set-and-return-numeric-values-with-wf-numericupdown-control.md)  
- Popisuje postup testování pro hodnotu ovládacího prvku.  
+ [Postupy: Nastavení a vracení číselných hodnot pomocí ovládacího prvku Windows Forms NumericUpDown](set-and-return-numeric-values-with-wf-numericupdown-control.md)  
+ Popisuje, jak testovat hodnotu ovládacího prvku.  
   
- [Postupy: Nastavení formátu pro ovládací prvek Windows Forms NumericUpDown](../../../../docs/framework/winforms/controls/how-to-set-the-format-for-the-windows-forms-numericupdown-control.md)  
- Popisuje, jak nakonfigurovat způsob zobrazení hodnot v ovládacím prvku.  
+ [Postupy: Nastavení formátu pro ovládací prvek Windows Forms NumericUpDown](how-to-set-the-format-for-the-windows-forms-numericupdown-control.md)  
+ Popisuje, jak nakonfigurovat způsob zobrazení hodnoty v ovládacím prvku.  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Forms.NumericUpDown>  
- Referenční informace týkající se <xref:System.Windows.Forms.NumericUpDown> třídy a její členy.  
+ Referenční informace týkající <xref:System.Windows.Forms.NumericUpDown> třídu a její členy.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Ovládací prvky používané ve Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
- Poskytuje úplný seznam Windows Forms – ovládací prvky, odkazy na informace o jejich používání.  
+ [Ovládací prvky používané ve Windows Forms](controls-to-use-on-windows-forms.md)  
+ Obsahuje úplný seznam všech ovládacích prvcích Windows Forms, s odkazy na informace o jejich použití.  
   
- [Ovládací prvek DomainUpDown](../../../../docs/framework/winforms/controls/domainupdown-control-windows-forms.md)  
- Zavádí ovládacího prvku podobná <xref:System.Windows.Forms.NumericUpDown>kromě toho, že <xref:System.Windows.Forms.DomainUpDown> ovládací prvek zobrazí řetězce místo číselné hodnoty.
+ [Ovládací prvek DomainUpDown](domainupdown-control-windows-forms.md)  
+ Představuje ovládací prvek, který je podobný <xref:System.Windows.Forms.NumericUpDown>, s tím rozdílem, že <xref:System.Windows.Forms.DomainUpDown> ovládací prvek zobrazí řetězce namísto číselných hodnot.

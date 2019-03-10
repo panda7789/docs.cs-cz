@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - DataGridView control [Windows Forms], virtual mode
 ms.assetid: feae5d43-2848-4b1a-8ea7-77085dc415b5
-ms.openlocfilehash: f2ab0cc789b026a139e1421b72e9215bf52c6147
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 92b45f026470f312fe788ed30e4ff8d172735a98
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54672016"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57709481"
 ---
 # <a name="virtual-mode-in-the-windows-forms-datagridview-control"></a>Virtuální režim v ovládacím prvku Windows Forms DataGridView
 Virtuální režim, můžete spravovat interakce mezi <xref:System.Windows.Forms.DataGridView> ovládacího prvku a vlastní datové mezipaměti. Implementace virtuálního režimu, nastavte <xref:System.Windows.Forms.DataGridView.VirtualMode%2A> vlastnost `true` a zpracovat jeden nebo více událostí, které jsou popsané v tomto tématu. Obvykle budete zpracovávat alespoň `CellValueNeeded` událost, která umožňuje vyhledat ovládací prvek hodnoty v datové mezipaměti.  
@@ -27,14 +27,14 @@ Virtuální režim, můžete spravovat interakce mezi <xref:System.Windows.Forms
 ## <a name="replacing-bound-mode"></a>Nahrazení vázané režimu  
  Pokud vázané režim nesplňuje vašim požadavkům na výkon, můžete spravovat všechna data na vlastní mezipaměti prostřednictvím obslužné rutiny událostí virtuálním režimu. Například můžete použít virtuální režim implementovat just-in-time data načítání mechanismus, který načte pouze tolik dat z databáze síti je nezbytné k zajištění optimálního výkonu. Tento scénář je zvlášť užitečné při práci s velkými objemy dat přes pomalé připojení k síti nebo s klientskými počítači, které mají omezenou velikost paměti RAM nebo prostor úložiště.  
   
- Další informace o používání virtuálního režimu v případě just-in-time najdete v tématu [implementace virtuálního režimu s načítáním dat k za běhu v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/implementing-virtual-mode-jit-data-loading-in-the-datagrid.md).  
+ Další informace o používání virtuálního režimu v případě just-in-time najdete v tématu [implementace virtuálního režimu s načítáním dat k za běhu v ovládacím prvku Windows Forms DataGridView](implementing-virtual-mode-jit-data-loading-in-the-datagrid.md).  
   
 ## <a name="virtual-mode-events"></a>Virtuální režim události  
  Pokud vaše data jsou jen pro čtení, `CellValueNeeded` události může být pouze události, je potřeba zpracovat. Další události virtuálního režimu umožňují povolit konkrétní funkce, jako jsou uživatelské úpravy, přidávání řádků a odstranění a transakce na úrovni řádků.  
   
  Některé standardní <xref:System.Windows.Forms.DataGridView> události (například události, ke které dochází, když uživatelé přidat nebo odstranit řádky nebo když buňky hodnoty jsou upravovat, analyzovat, ověřit nebo ve formátu) jsou užitečné ve virtuálním režimu, také. Můžete také zpracovávat události, které vám umožňují udržovat hodnoty obvykle nejsou uložené ve zdroji vazby dat, například text popisu buňky, buňky a text řádku chyby, buňky a dat místní nabídku řádku a data výšku řádku.  
   
- Další informace o implementace virtuálního režimu pro správu dat pro čtení a zápisu s rozsahem potvrzení změn na úrovni řádků, naleznete v tématu [názorný postup: Implementace virtuálního režimu v Windows Forms DataGridView – ovládací prvek](../../../../docs/framework/winforms/controls/implementing-virtual-mode-wf-datagridview-control.md).  
+ Další informace o implementace virtuálního režimu pro správu dat pro čtení a zápisu s rozsahem potvrzení změn na úrovni řádků, naleznete v tématu [názorný postup: Implementace virtuálního režimu v Windows Forms DataGridView – ovládací prvek](implementing-virtual-mode-wf-datagridview-control.md).  
   
  Příklad, který implementuje virtuálního režimu s rozsahem potvrzení na úrovni buněk, najdete v článku <xref:System.Windows.Forms.DataGridView.VirtualMode%2A> vlastnost referenční téma.  
   
@@ -60,12 +60,12 @@ Virtuální režim, můžete spravovat interakce mezi <xref:System.Windows.Forms
 |<xref:System.Windows.Forms.DataGridView.RowHeightInfoNeeded><br /><br /> <xref:System.Windows.Forms.DataGridView.RowHeightInfoPushed>|Používá k načtení nebo uložení informace výšku řádků v datové mezipaměti ovládacího prvku. Volání <xref:System.Windows.Forms.DataGridView.UpdateRowHeightInfo%2A> metoda při změně výška informace uložené v mezipaměti řádek mimo <xref:System.Windows.Forms.DataGridView.RowHeightInfoPushed> obslužná rutina události, chcete-li zajistit, aby používal aktuální hodnotu v zobrazení ovládacího prvku.|  
   
 ## <a name="best-practices-in-virtual-mode"></a>Osvědčené postupy ve virtuálním režimu  
- Pokud chcete-li efektivně pracovat s velkými objemy dat jsou implementace virtuálního režimu, bude také chcete zajistit, že pracujete efektivně <xref:System.Windows.Forms.DataGridView> samotného ovládacího prvku. Další informace o efektivní využití stylů buňky, automatické velikosti, výběr a řádků pro sdílení obsahu najdete v tématu [osvědčené postupy pro změnu velikosti ovládacího prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/best-practices-for-scaling-the-windows-forms-datagridview-control.md).  
+ Pokud chcete-li efektivně pracovat s velkými objemy dat jsou implementace virtuálního režimu, bude také chcete zajistit, že pracujete efektivně <xref:System.Windows.Forms.DataGridView> samotného ovládacího prvku. Další informace o efektivní využití stylů buňky, automatické velikosti, výběr a řádků pro sdílení obsahu najdete v tématu [osvědčené postupy pro změnu velikosti ovládacího prvku Windows Forms DataGridView](best-practices-for-scaling-the-windows-forms-datagridview-control.md).  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.DataGridView.VirtualMode%2A>
-- [Ladění výkonu v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/performance-tuning-in-the-windows-forms-datagridview-control.md)
-- [Doporučené postupy pro změnu velikosti ovládacího prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/best-practices-for-scaling-the-windows-forms-datagridview-control.md)
-- [Návod: Implementace virtuálního režimu v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/implementing-virtual-mode-wf-datagridview-control.md)
-- [Implementace virtuálního režimu s načítáním dat za běhu v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/implementing-virtual-mode-jit-data-loading-in-the-datagrid.md)
+- [Ladění výkonu v ovládacím prvku Windows Forms DataGridView](performance-tuning-in-the-windows-forms-datagridview-control.md)
+- [Doporučené postupy pro změnu velikosti ovládacího prvku Windows Forms DataGridView](best-practices-for-scaling-the-windows-forms-datagridview-control.md)
+- [Návod: Implementace virtuálního režimu v ovládacím prvku Windows Forms DataGridView](implementing-virtual-mode-wf-datagridview-control.md)
+- [Implementace virtuálního režimu s načítáním dat za běhu v ovládacím prvku Windows Forms DataGridView](implementing-virtual-mode-jit-data-loading-in-the-datagrid.md)

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - Custom Places [Windows Forms], Known Folder GUIDs
 - Windows Vista Known Folder GUIDs [Windows Forms], Custom Places
 ms.assetid: d8d8b544-8b4d-4da5-ba3a-b05e93244778
-ms.openlocfilehash: 97d516e1c3ae99d639dea676f3f6798b6e7a849f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 0ffd0b78e37b663b197620694d9459cd4e0129d9
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54679393"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57703449"
 ---
 # <a name="known-folder-guids-for-file-dialog-custom-places"></a>Známé identifikátory GUID pro vlastní místa dialogového okna souboru
 Můžete použít <xref:System.Guid> k určení [!INCLUDE[wiprlhext](../../../../includes/wiprlhext-md.md)] známé složky při přidání složek do <xref:System.Windows.Forms.FileDialog.CustomPlaces%2A> kolekce. Známé identifikátory GUID složky nejsou velká a malá písmena a jsou definovány v souboru KnownFolders.h [!INCLUDE[winSDK](../../../../includes/winsdk-md.md)].  
@@ -288,4 +288,4 @@ Můžete použít <xref:System.Guid> k určení [!INCLUDE[wiprlhext](../../../..
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Forms.FileDialogCustomPlace>
-- [Postupy: Přidání vlastního prostoru do dialogového okna souboru](../../../../docs/framework/winforms/controls/how-to-add-a-custom-place-to-a-file-dialog-box.md)
+- [Postupy: Přidání vlastního prostoru do dialogového okna souboru](how-to-add-a-custom-place-to-a-file-dialog-box.md)

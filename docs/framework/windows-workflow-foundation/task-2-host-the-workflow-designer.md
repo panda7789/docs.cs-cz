@@ -2,12 +2,12 @@
 title: 'Úloha 2: Hostování návrháře postupu provádění'
 ms.date: 03/30/2017
 ms.assetid: 0a29b138-270d-4846-b78e-2b875e34e501
-ms.openlocfilehash: e8895e4b2c90f189c88ec3a803615e736dada455
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e02134408b38e5c9aee9c59d86b1dfce032653d1
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54572770"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57708636"
 ---
 # <a name="task-2-host-the-workflow-designer"></a>Úloha 2: Hostování návrháře postupu provádění
 Toto téma popisuje postup, pro který je hostitelem instance [!INCLUDE[wfd1](../../../includes/wfd1-md.md)] v aplikaci Windows Presentation Foundation (WPF).  
@@ -16,7 +16,7 @@ Toto téma popisuje postup, pro který je hostitelem instance [!INCLUDE[wfd1](..
   
 ### <a name="to-host-the-workflow-designer"></a>K hostování návrháře postupu provádění  
   
-1.  Otevřít HostingApplication projektu, kterou jste vytvořili v [úkol 1: Vytvoření nové aplikace Windows Presentation Foundation](../../../docs/framework/windows-workflow-foundation/task-1-create-a-new-wpf-app.md).  
+1.  Otevřít HostingApplication projektu, kterou jste vytvořili v [úkol 1: Vytvoření nové aplikace Windows Presentation Foundation](task-1-create-a-new-wpf-app.md).  
   
 2.  Úprava velikosti okna, které usnadňují použití [!INCLUDE[wfd2](../../../includes/wfd2-md.md)]. Chcete-li to provést, vyberte **hlavního okna MainWindow** v návrháři, zobrazíte stisknutím klávesy F4 **vlastnosti** okna a v **rozložení** části existuje, nastavte **šířku** k hodnotě čítače 600 a **výška** na hodnotu 350.  
   
@@ -97,7 +97,7 @@ Toto téma popisuje postup, pro který je hostitelem instance [!INCLUDE[wfd1](..
         }  
         ```  
   
-         Další informace o registraci návrháři aktivit najdete v tématu [jak: Vytvoření vlastního návrháře aktivit](../../../docs/framework/windows-workflow-foundation/how-to-create-a-custom-activity-designer.md).  
+         Další informace o registraci návrháři aktivit najdete v tématu [jak: Vytvoření vlastního návrháře aktivit](how-to-create-a-custom-activity-designer.md).  
   
     5.  V `MainWindow` konstruktor třídy, přidejte volání metody deklarované dříve zaregistrovat metadata pro podporu návrháře a vytvořit <xref:System.Activities.Presentation.WorkflowDesigner>.  
   
@@ -119,9 +119,9 @@ Toto téma popisuje postup, pro který je hostitelem instance [!INCLUDE[wfd1](..
   
 9. Stisknutím klávesy F5 sestavte a spusťte řešení.  
   
-10. Zobrazit [úloha 3: Vytvořit panel nástrojů a podokna PropertyGrid](../../../docs/framework/windows-workflow-foundation/task-3-create-the-toolbox-and-propertygrid-panes.md) Další informace o přidání **nástrojů** a **PropertyGrid** podporují do návrháře postupu provádění se změněným hostováním.  
+10. Zobrazit [úloha 3: Vytvořit panel nástrojů a podokna PropertyGrid](task-3-create-the-toolbox-and-propertygrid-panes.md) Další informace o přidání **nástrojů** a **PropertyGrid** podporují do návrháře postupu provádění se změněným hostováním.  
   
 ## <a name="see-also"></a>Viz také:
-- [Změna hostování Návrháře postupu provádění](../../../docs/framework/windows-workflow-foundation/rehosting-the-workflow-designer.md)
-- [Úloha 1: Vytvoření nové aplikace Windows Presentation Foundation](../../../docs/framework/windows-workflow-foundation/task-1-create-a-new-wpf-app.md)
-- [Úloha 3: Vytvořit panel nástrojů a PropertyGrid podokna](../../../docs/framework/windows-workflow-foundation/task-3-create-the-toolbox-and-propertygrid-panes.md)
+- [Změna hostování Návrháře postupu provádění](rehosting-the-workflow-designer.md)
+- [Úloha 1: Vytvoření nové aplikace Windows Presentation Foundation](task-1-create-a-new-wpf-app.md)
+- [Úloha 3: Vytvořit panel nástrojů a PropertyGrid podokna](task-3-create-the-toolbox-and-propertygrid-panes.md)

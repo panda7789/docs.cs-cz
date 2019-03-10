@@ -8,12 +8,12 @@ helpviewer_keywords:
 - custom controls [Windows Forms], property methods
 - ShouldPersist method
 ms.assetid: 7b6c5e00-3771-46b4-9142-5a80d5864a5e
-ms.openlocfilehash: 23b4ddb3399c12f5bf3c387991676e7ea93b8a29
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2cb23220be2b4a3564c4869016c05065afe7c27c
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54497430"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57704442"
 ---
 # <a name="defining-default-values-with-the-shouldserialize-and-reset-methods"></a>Definování výchozích hodnot pomocí metod ShouldSerialize a Reset
 `ShouldSerialize` a `Reset` jsou volitelné metody, které můžete zadat vlastnosti, pokud vlastnost není máte jednoduchý výchozí hodnotu. Pokud má vlastnost jednoduchý výchozí hodnotu, byste měli použít <xref:System.ComponentModel.DefaultValueAttribute> a místo toho zadat výchozí hodnotu pro atribut konstruktoru třídy. Některé z těchto mechanismů povoluje následující funkce v Návrháři:  
@@ -144,6 +144,6 @@ public class MyControl : Control {
  V takovém případě i v případě, že hodnota soukromé proměnné přistupuje `MyFont` vlastnost je `null`, vlastnost prohlížeče nezobrazí `null`; místo toho se zobrazí <xref:System.Windows.Forms.Control.Font%2A> vlastnosti nadřazeného objektu, pokud není `null`, nebo výchozí hodnotu <xref:System.Windows.Forms.Control.Font%2A> hodnota definovaná v <xref:System.Windows.Forms.Control>. Proto výchozí hodnota pro `MyFont` nelze jednoduše nastavit a <xref:System.ComponentModel.DefaultValueAttribute> nelze použít pro tuto vlastnost. Místo toho `ShouldSerialize` a `Reset` metod je nutné implementovat pro `MyFont` vlastnost.  
   
 ## <a name="see-also"></a>Viz také:
-- [Vlastnosti v ovládacích prvcích Windows Forms](../../../../docs/framework/winforms/controls/properties-in-windows-forms-controls.md)
-- [Definování vlastnosti](../../../../docs/framework/winforms/controls/defining-a-property-in-windows-forms-controls.md)
-- [Události změny vlastnosti](../../../../docs/framework/winforms/controls/property-changed-events.md)
+- [Vlastnosti v ovládacích prvcích Windows Forms](properties-in-windows-forms-controls.md)
+- [Definování vlastnosti](defining-a-property-in-windows-forms-controls.md)
+- [Události změny vlastnosti](property-changed-events.md)

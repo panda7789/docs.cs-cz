@@ -8,57 +8,57 @@ helpviewer_keywords:
 - printing [Windows Forms], Windows Forms, support
 - printing [Windows Forms], print support
 ms.assetid: a4a2960c-eb70-48e2-b641-cfb222704e46
-ms.openlocfilehash: 4ea04d0b6bb8ffa7182d5166ebd66b809adeed34
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8e008f2cb4b2f32cdba676e68d9fd790530e2b06
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33528551"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57708129"
 ---
 # <a name="windows-forms-print-support"></a>Podpora tisku ve Windows Forms
-Tisk ve Windows Forms se primárně skládá z pomocí [PrintDocument – komponenta](../../../../docs/framework/winforms/controls/printdocument-component-windows-forms.md) komponenty, aby uživatelům tisknout a [printpreviewdialog – ovládací prvek](../../../../docs/framework/winforms/controls/printpreviewdialog-control-windows-forms.md) řízení, [PrintDialog Součást](../../../../docs/framework/winforms/controls/printdialog-component-windows-forms.md) a [PageSetupDialog – komponenta](../../../../docs/framework/winforms/controls/pagesetupdialog-component-windows-forms.md) součásti, které poskytují obeznámeni grafické rozhraní uživatelům zvykli na operačním systému Windows.  
+Tisk ve Windows Forms se primárně skládá z použití [PrintDocument – komponenta](../controls/printdocument-component-windows-forms.md) komponenty, aby uživatelům tisknout a [printpreviewdialog – ovládací prvek](../controls/printpreviewdialog-control-windows-forms.md) ovládacího prvku, [PrintDialog Komponenta](../controls/printdialog-component-windows-forms.md) a [PageSetupDialog – komponenta](../controls/pagesetupdialog-component-windows-forms.md) součásti známému grafické rozhraní poskytovat Uživatelé zvyklí operačního systému Windows.  
   
- Obvykle vytvoříte novou instanci třídy <xref:System.Drawing.Printing.PrintDocument> součást, nastavte vlastnosti, které popisují, co tisknout, pomocí <xref:System.Drawing.Printing.PrinterSettings> a <xref:System.Drawing.Printing.PageSettings> třídy a volání <xref:System.Drawing.Printing.PrintDocument.Print%2A> metoda ve skutečnosti tisk dokumentu.  
+ Obvykle vytvoříte novou instanci třídy <xref:System.Drawing.Printing.PrintDocument> komponenty, nastavte vlastnosti, které popisují, jak vytisknout pomocí <xref:System.Drawing.Printing.PrinterSettings> a <xref:System.Drawing.Printing.PageSettings> třídy a volání <xref:System.Drawing.Printing.PrintDocument.Print%2A> metoda ve skutečnosti vytisknout dokument.  
   
- Během tisku z aplikace systému Windows <xref:System.Drawing.Printing.PrintDocument> součást zobrazí přerušení tiskové dialogové které uživatele upozorní na to, že dochází k tisku a umožnit tiskové úlohy ke zrušení.  
+ V průběhu tisk z aplikace založené na Windows <xref:System.Drawing.Printing.PrintDocument> komponenty zobrazí přerušení tisku dialogové okno s které uživatele upozorní na to, že dochází k tisku a umožňují tiskové úlohy budou zrušeny.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Postupy: Vytváření standardních tiskových úloh modelu Windows Forms](../../../../docs/framework/winforms/advanced/how-to-create-standard-windows-forms-print-jobs.md)  
- Vysvětluje, jak používat <xref:System.Drawing.Printing.PrintDocument> součást tisknout z formuláře Windows.  
+ [Postupy: Vytvoření tiskových úloh standardní Windows Forms](how-to-create-standard-windows-forms-print-jobs.md)  
+ Vysvětluje způsob používání <xref:System.Drawing.Printing.PrintDocument> komponenty tisknout z formuláře Windows.  
   
- [Postupy: Zachycení uživatelského vstupu z komponenty PrintDialog při běhu](../../../../docs/framework/winforms/advanced/how-to-capture-user-input-from-a-printdialog-at-run-time.md)  
- Vysvětluje, jak upravit vybranou možností tisku programově pomocí <xref:System.Windows.Forms.PrintDialog> součásti.  
+ [Postupy: Zachycení uživatelského vstupu z komponenty PrintDialog při běhu](how-to-capture-user-input-from-a-printdialog-at-run-time.md)  
+ Vysvětluje, jak upravit vybrané možnosti tisku prostřednictvím kódu programu pomocí <xref:System.Windows.Forms.PrintDialog> komponenty.  
   
- [Postupy: Volba tiskáren připojených k počítači uživatele v modelu Windows Forms](../../../../docs/framework/winforms/advanced/how-to-choose-the-printers-attached-to-user-computer-in-windows-forms.md)  
- Popisuje změnu tiskárny pro tisk pomocí <xref:System.Windows.Forms.PrintDialog> součásti v době běhu.  
+ [Postupy: Volba tiskáren připojených k počítači uživatele v modelu Windows Forms](how-to-choose-the-printers-attached-to-user-computer-in-windows-forms.md)  
+ Popisuje změny tiskárny pro tisk na použití <xref:System.Windows.Forms.PrintDialog> komponentu v době běhu.  
   
- [Postupy: Tisk grafiky v modelu Windows Forms](../../../../docs/framework/winforms/advanced/how-to-print-graphics-in-windows-forms.md)  
- Popisuje odesílání grafiky na tiskárnu.  
+ [Postupy: Tisk grafiky ve Windows Forms](how-to-print-graphics-in-windows-forms.md)  
+ Popisuje odesílání grafiky k tiskárně.  
   
- [Postupy: Tisk vícestránkového textového souboru v modelu Windows Forms](../../../../docs/framework/winforms/advanced/how-to-print-a-multi-page-text-file-in-windows-forms.md)  
- Popisuje odesílání textu na tiskárnu.  
+ [Postupy: Tisk vícestránkového textového souboru ve Windows Forms](how-to-print-a-multi-page-text-file-in-windows-forms.md)  
+ Popisuje odesílání text, který tiskárnu.  
   
- [Postupy: Dokončení tiskových úloh modelu Windows Forms](../../../../docs/framework/winforms/advanced/how-to-complete-windows-forms-print-jobs.md)  
- Vysvětluje, jak upozornit uživatele na dokončení tiskových úloh.  
+ [Postupy: Kompletní Windows Forms tiskové úlohy](how-to-complete-windows-forms-print-jobs.md)  
+ Vysvětluje, jak upozornit uživatele na dokončení tiskové úlohy.  
   
- [Postupy: Tisk formuláře Windows](../../../../docs/framework/winforms/advanced/how-to-print-a-windows-form.md)  
- Ukazuje, jak chcete vytisknout kopii aktuálního formuláře.  
+ [Postupy: Tisk formuláře Windows](how-to-print-a-windows-form.md)  
+ Ukazuje, jak vytisknout kopii aktuálního formuláře.  
   
- [Postupy: Tisk v modelu Windows Forms pomocí náhledu tisku](../../../../docs/framework/winforms/advanced/how-to-print-in-windows-forms-using-print-preview.md)  
+ [Postupy: Tisk ve Windows Forms pomocí náhledu tisku](how-to-print-in-windows-forms-using-print-preview.md)  
  Ukazuje, jak používat <xref:System.Windows.Forms.PrintPreviewDialog> pro tisk dokumentu.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Komponenta PrintDocument](../../../../docs/framework/winforms/controls/printdocument-component-windows-forms.md)  
- Popisuje použití <xref:System.Drawing.Printing.PrintDocument> součásti.  
+ [Komponenta PrintDocument](../controls/printdocument-component-windows-forms.md)  
+ Vysvětluje použití <xref:System.Drawing.Printing.PrintDocument> komponenty.  
   
- [Komponenta PrintDialog](../../../../docs/framework/winforms/controls/printdialog-component-windows-forms.md)  
- Popisuje použití <xref:System.Windows.Forms.PrintDialog> součásti.  
+ [Komponenta PrintDialog](../controls/printdialog-component-windows-forms.md)  
+ Vysvětluje použití <xref:System.Windows.Forms.PrintDialog> komponenty.  
   
- [Ovládací prvek PrintPreviewDialog](../../../../docs/framework/winforms/controls/printpreviewdialog-control-windows-forms.md)  
- Popisuje použití <xref:System.Windows.Forms.PrintPreviewDialog> ovládacího prvku.  
+ [Ovládací prvek PrintPreviewDialog](../controls/printpreviewdialog-control-windows-forms.md)  
+ Vysvětluje použití <xref:System.Windows.Forms.PrintPreviewDialog> ovládacího prvku.  
   
- [Komponenta PageSetupDialog](../../../../docs/framework/winforms/controls/pagesetupdialog-component-windows-forms.md)  
- Popisuje použití <xref:System.Windows.Forms.PageSetupDialog> součásti.  
+ [Komponenta PageSetupDialog](../controls/pagesetupdialog-component-windows-forms.md)  
+ Vysvětluje použití <xref:System.Windows.Forms.PageSetupDialog> komponenty.  
   
  <xref:System.Drawing.Printing>  
  Popisuje třídy v <xref:System.Drawing.Printing> oboru názvů.

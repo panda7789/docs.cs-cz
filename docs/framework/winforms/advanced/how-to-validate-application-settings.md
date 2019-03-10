@@ -9,12 +9,12 @@ helpviewer_keywords:
 - application settings [Windows Forms], Windows Forms
 - application settings [Windows Forms], validating
 ms.assetid: 9f145ada-4267-436a-aa4c-c4dcffd0afb7
-ms.openlocfilehash: 6ebdf1ee74e3ed41b02fdeb545ffc57aaa2d6d7d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 96323e0edd643e20338bd10a9eb1744c3b0aef2f
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54496280"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57705828"
 ---
 # <a name="how-to-validate-application-settings"></a>Postupy: Ověření nastavení aplikace
 Toto téma ukazuje, jak ověřit nastavení aplikace předtím, než jsou trvalé.  
@@ -40,9 +40,9 @@ Toto téma ukazuje, jak ověřit nastavení aplikace předtím, než jsou trval�
   
 -   Pro události vyvolané před jejich přidružených akcí, jako například <xref:System.Configuration.ApplicationSettingsBase.SettingChanging> a <xref:System.Configuration.ApplicationSettingsBase.SettingsSaving>, používá <xref:System.ComponentModel.CancelEventArgs> argument pro operaci zrušit.  
   
- Další informace o zpracování událostí naleznete v tématu [Přehled obslužných rutin událostí](../../../../docs/framework/winforms/event-handlers-overview-windows-forms.md).  
+ Další informace o zpracování událostí naleznete v tématu [Přehled obslužných rutin událostí](../event-handlers-overview-windows-forms.md).  
   
- Následující postupy ukazují, jak otestovat platné datum narození buď pomocí <xref:System.Configuration.ApplicationSettingsBase.SettingChanging> nebo <xref:System.Configuration.ApplicationSettingsBase.SettingsSaving> událostí. Postupy byly určeny za předpokladu, že jste již vytvořili nastavení aplikace; v tomto příkladu budeme provádět kontrolu na nastavení s názvem hranic `DateOfBirth`. Další informace o vytváření nastavení najdete v tématu [jak: Vytvořit nastavení aplikace](../../../../docs/framework/winforms/advanced/how-to-create-application-settings.md).  
+ Následující postupy ukazují, jak otestovat platné datum narození buď pomocí <xref:System.Configuration.ApplicationSettingsBase.SettingChanging> nebo <xref:System.Configuration.ApplicationSettingsBase.SettingsSaving> událostí. Postupy byly určeny za předpokladu, že jste již vytvořili nastavení aplikace; v tomto příkladu budeme provádět kontrolu na nastavení s názvem hranic `DateOfBirth`. Další informace o vytváření nastavení najdete v tématu [jak: Vytvořit nastavení aplikace](how-to-create-application-settings.md).  
   
 ### <a name="to-obtain-the-application-settings-object"></a>K získání objektu nastavení aplikace  
   
@@ -161,5 +161,5 @@ Toto téma ukazuje, jak ověřit nastavení aplikace předtím, než jsou trval�
     ```  
   
 ## <a name="see-also"></a>Viz také:
-- [Vytváření obslužných rutin událostí ve Windows Forms](../../../../docs/framework/winforms/creating-event-handlers-in-windows-forms.md)
-- [Postupy: Vytvořit nastavení aplikace](../../../../docs/framework/winforms/advanced/how-to-create-application-settings.md)
+- [Vytváření obslužných rutin událostí ve Windows Forms](../creating-event-handlers-in-windows-forms.md)
+- [Postupy: Vytvořit nastavení aplikace](how-to-create-application-settings.md)

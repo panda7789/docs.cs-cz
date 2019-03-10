@@ -2,16 +2,16 @@
 title: 'Postupy: Vytvoření Store Instance vlastní'
 ms.date: 03/30/2017
 ms.assetid: 593c4e9d-8a49-4e12-8257-cee5e6b4c075
-ms.openlocfilehash: de3602b928a861500e7984fe88bbb2176d58b840
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: cacee7d95a543525ba031de0cc0636d05fc72fc8
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57503187"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57707765"
 ---
 # <a name="how-to-create-a-custom-instance-store"></a>Postupy: Vytvoření Store Instance vlastní
 
-[!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] obsahuje <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore>, úložiště instance, který používá systém SQL Server k uchování dat pracovního postupu. Pokud vaše aplikace je potřeba zachovat data pracovního postupu do jiného média, například jinou databázi nebo systému souborů, můžete implementovat vlastní instance úložiště. Vytvoření vlastní instance úložiště tím, že rozšíří abstraktní <xref:System.Runtime.DurableInstancing.InstanceStore> třídy a implementace metody, které jsou vyžadovány pro implementaci. Úplnou implementaci vlastní instance úložiště, najdete v článku [podnikové procesu nákupu](../../../docs/framework/windows-workflow-foundation/samples/corporate-purchase-process.md) vzorku.
+[!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] obsahuje <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore>, úložiště instance, který používá systém SQL Server k uchování dat pracovního postupu. Pokud vaše aplikace je potřeba zachovat data pracovního postupu do jiného média, například jinou databázi nebo systému souborů, můžete implementovat vlastní instance úložiště. Vytvoření vlastní instance úložiště tím, že rozšíří abstraktní <xref:System.Runtime.DurableInstancing.InstanceStore> třídy a implementace metody, které jsou vyžadovány pro implementaci. Úplnou implementaci vlastní instance úložiště, najdete v článku [podnikové procesu nákupu](./samples/corporate-purchase-process.md) vzorku.
 
 ## <a name="implementing-the-begintrycommand-method"></a>Implementace metody BeginTryCommand
 
@@ -226,11 +226,11 @@ ms.locfileid: "57503187"
 
 ## <a name="using-a-custom-instance-store"></a>Použití vlastní instance store
 
-K implementaci ukládání vlastní instance, přiřadit instanci v úložišti instancí na <xref:System.Activities.WorkflowApplication.InstanceStore%2A>a implementovat <xref:System.Activities.WorkflowApplication.PersistableIdle%2A> metoda. Zobrazit [jak: Vytvoření a spuštění dlouhém pracovním postupu spuštění](../../../docs/framework/windows-workflow-foundation/how-to-create-and-run-a-long-running-workflow.md) kurz pro konkrétní.
+K implementaci ukládání vlastní instance, přiřadit instanci v úložišti instancí na <xref:System.Activities.WorkflowApplication.InstanceStore%2A>a implementovat <xref:System.Activities.WorkflowApplication.PersistableIdle%2A> metoda. Zobrazit [jak: Vytvoření a spuštění dlouhém pracovním postupu spuštění](how-to-create-and-run-a-long-running-workflow.md) kurz pro konkrétní.
 
 ## <a name="a-sample-instance-store"></a>Úložiště instancí vzorku
 
-Následující ukázka kódu je úplná instance implementace úložiště, na základě [podnikové procesu nákupu](../../../docs/framework/windows-workflow-foundation/samples/corporate-purchase-process.md) vzorku. Toto úložiště instance se uchovávají data pracovního postupu do souboru s použitím XML.
+Následující ukázka kódu je úplná instance implementace úložiště, na základě [podnikové procesu nákupu](./samples/corporate-purchase-process.md) vzorku. Toto úložiště instance se uchovávají data pracovního postupu do souboru s použitím XML.
 
 ```csharp
 using System;

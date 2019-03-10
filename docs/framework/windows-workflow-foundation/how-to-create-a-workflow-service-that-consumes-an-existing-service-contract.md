@@ -1,37 +1,37 @@
 ---
-title: 'Postupy: vytvoření služby pracovního postupu, který využívá existující smlouvy služby'
+title: 'Postupy: Vytvoření služby pracovního postupu, která využívá existující kontrakt služby'
 ms.date: 03/30/2017
 ms.assetid: 11d11b59-acc4-48bf-8e4b-e97b516aa0a9
-ms.openlocfilehash: 146b3bba3a880c780644eecd277827823793b5e8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 57babf216821665613da053f972ff25488418b7d
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33515302"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57705061"
 ---
-# <a name="how-to-create-a-workflow-service-that-consumes-an-existing-service-contract"></a>Postupy: vytvoření služby pracovního postupu, který využívá existující smlouvy služby
-[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] Funkce lepší integrace mezi webové služby a pracovní postupy ve formě vývoj kontrakt první pracovního postupu. Nástroj pro vývoj kontrakt první pracovního postupu můžete navrhnout první kontrakt v kódu. Nástroj potom automaticky generuje šablonu aktivit v sadě nástrojů pro operace v kontraktu.  
+# <a name="how-to-create-a-workflow-service-that-consumes-an-existing-service-contract"></a>Postupy: Vytvoření služby pracovního postupu, která využívá existující kontrakt služby
+[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] Funkce lepší integrace mezi službami webové a pracovní postupy ve formuláři stavící do pracovního postupu vývoje. Pracovní postup kontraktem vývojový nástroj umožňuje navrhovat smlouvy v kódu. Nástroj potom automaticky vygeneruje šablonu aktivit v sadě nástrojů pro operace v kontraktu.  
   
 > [!NOTE]
->  Toto téma obsahuje podrobné pokyny k vytvoření pracovního postupu první kontrakt služby. Další informace o vývoj pracovního postupu první kontraktu služby najdete v tématu [kontrakt první pracovní postup služby vývoj](../../../docs/framework/windows-workflow-foundation/contract-first-workflow-service-development.md).  
+>  Toto téma obsahuje podrobné pokyny k vytváření služby stavící do pracovního postupu. Další informace o vývoj služby stavící do pracovního postupu najdete v tématu [nasazení služby pracovního postupu prvního kontraktu](contract-first-workflow-service-development.md).  
   
 ### <a name="creating-the-workflow-project"></a>Vytvoření projektu pracovního postupu  
   
-1.  V sadě Visual Studio, vyberte **soubor**, **nový projekt**. Vyberte **WCF** pod uzlem **C#** uzel v **šablony** stromu a vyberte **aplikace služby pracovního postupu WCF** šablony.  
+1.  V sadě Visual Studio, vyberte **souboru**, **nový projekt**. Vyberte **WCF** pod uzlem **C#** uzlu **šablony** stromu a vyberte **aplikace služeb pracovního postupu WCF** Šablona.  
   
 2.  Název nového projektu `ContractFirst` a klikněte na tlačítko **Ok**.  
   
 ### <a name="creating-the-service-contract"></a>Vytvoření kontraktu služby  
   
-1.  Klikněte pravým tlačítkem na projekt v **Průzkumníku řešení** a vyberte **přidat**, **novou položku...** . Vyberte **kód** uzlu na levé straně a **třída** šablony na pravé straně. Pojmenujte novou třídu `IBookService` a klikněte na tlačítko **Ok**.  
+1.  Klikněte pravým tlačítkem na projekt v **Průzkumníka řešení** a vyberte **přidat**, **novou položku...** . Vyberte **kód** uzlu na levé straně a **třídy** šablon na pravé straně. Pojmenujte novou třídu `IBookService` a klikněte na tlačítko **Ok**.  
   
-2.  V horní části okna kód, který se zobrazí, přidejte příkaz Using k `System.Servicemodel`.  
+2.  V horní části okna kódu, který se zobrazí, přidejte příkaz Using do `System.Servicemodel`.  
   
     ```  
     using System.ServiceModel;  
     ```  
   
-3.  Definice třídy ukázka změňte na následující definici rozhraní.  
+3.  Ukázková definice třídy změňte na následující definici rozhraní.  
   
     ```  
     [ServiceContract]  
@@ -45,20 +45,20 @@ ms.locfileid: "33515302"
         }  
     ```  
   
-4.  Sestavení projektu stisknutím **Ctrl + Shift + B**.  
+4.  Sestavte projekt stisknutím kombinace kláves **Ctrl + Shift + B**.  
   
-### <a name="importing-the-service-contract"></a>Import kontrakt služby  
+### <a name="importing-the-service-contract"></a>Importuje se kontrakt služby  
   
-1.  Klikněte pravým tlačítkem na projekt v **Průzkumníku řešení** a vyberte **kontrakt služby Import**. V části  **\<aktuální projekt >** otevřete všech podřízených uzlů a vyberte **IBookService**. Click **OK**.  
+1.  Klikněte pravým tlačítkem na projekt v **Průzkumníka řešení** a vyberte **importovat kontrakt služby**. V části  **\<aktuální projekt >**, otevřete všechny dílčí uzlů a vyberte **IBookService**. Klikněte na **OK**.  
   
-2.  Otevře se dialogové okno, které výstrahy upozorňující, že se operace dokončila úspěšně a že generované aktivity se zobrazí v panelu nástrojů po sestavení projektu. Click **OK**.  
+2.  Otevře se dialogové okno, upozorní vás, operace byla úspěšně dokončena a že generované aktivity se zobrazí na panelu nástrojů po sestavení projektu. Klikněte na **OK**.  
   
-3.  Sestavení projektu stisknutím **Ctrl + Shift + B**tak, aby importované aktivity se zobrazí v panelu nástrojů.  
+3.  Sestavte projekt stisknutím kombinace kláves **Ctrl + Shift + B**tak, aby importovaná aktivity se zobrazí na panelu nástrojů.  
   
-4.  V **Průzkumníku**, otevřete Service1.xamlx. Pracovní postup služby se zobrazí v návrháři.  
+4.  V **Průzkumníka řešení**, otevřete Service1.xamlx. Služba pracovního postupu se zobrazí v návrháři.  
   
-5.  Vyberte **pořadí** aktivity. V okně vlastností klikněte **...** tlačítko v **ImplementedContract** vlastnost. V **Editor kolekce typ** okno, které se zobrazí, klikněte na tlačítko **typ** rozevíracího seznamu a vyberte **Procházet pro typy...** položka. V **Procházet a vyberte .net zadejte** dialogové okno, v části  **\<aktuální projekt >** otevřete všech podřízených uzlů a vyberte **IBookService**. Click **OK**. V **Editor kolekce typ** dialogové okno, klikněte na tlačítko **OK**.  
+5.  Vyberte **pořadí** aktivity. V okně Vlastnosti klikněte na tlačítko **...** tlačítko **ImplementedContract** vlastnost. V **Editor typu kolekce** okno, které se zobrazí, klikněte **typ** rozevíracím seznamu a vyberte **vyhledat typy...** položka. V **Procházet a vyberte .net typ** dialogového okna, v části  **\<aktuální projekt >**, otevřete všechny dílčí uzlů a vyberte **IBookService**. Klikněte na **OK**. V **Editor typu kolekce** dialogového okna, klikněte na tlačítko **OK**.  
   
 6.  Vyberte a odstraňte **ReceiveRequest** a **SendResponse** aktivity.  
   
-7.  Ze sady nástrojů, přetáhněte **Buy_ReceiveAndSendReply** a **Checkout_Receive** aktivity na **sekvenční služby** aktivity.
+7.  Z panelu nástrojů přetáhněte **Buy_ReceiveAndSendReply** a **Checkout_Receive** aktivity do **sekvenční služba** aktivity.

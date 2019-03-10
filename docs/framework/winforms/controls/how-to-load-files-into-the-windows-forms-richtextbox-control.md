@@ -15,19 +15,19 @@ helpviewer_keywords:
 - RichTextBox control [Windows Forms], opening files
 - RTF files [Windows Forms], displaying in RichTextBox control
 ms.assetid: c03451be-f285-4428-a71a-c41e002cc919
-ms.openlocfilehash: 99f869cd5fd3ffc35a58d3d4e7f12161cab3a7ad
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: b550362571c5a4ea1fa8e6f9700ebee4ff04ddbd
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54666043"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57703007"
 ---
 # <a name="how-to-load-files-into-the-windows-forms-richtextbox-control"></a>Postupy: Načtení souborů do ovládacího prvku Windows Forms RichTextBox
 Windows Forms <xref:System.Windows.Forms.RichTextBox> ovládací prvek mohl zobrazit prostého textu, prostého textu ve formátu Unicode nebo soubor ve formátu RTF. Text Format (RTF). Chcete-li tak učinit, zavolejte <xref:System.Windows.Forms.RichTextBox.LoadFile%2A> metody. Můžete také použít <xref:System.Windows.Forms.RichTextBox.LoadFile%2A> metodu pro načtení dat z datového proudu. Další informace naleznete v tématu <xref:System.Windows.Forms.RichTextBox.LoadFile%28System.IO.Stream%2CSystem.Windows.Forms.RichTextBoxStreamType%29>.  
   
 ### <a name="to-load-a-file-into-the-richtextbox-control"></a>Načíst soubor do ovládacího prvku RichTextBox  
   
-1.  Určit cestu k souboru otvíraly <xref:System.Windows.Forms.OpenFileDialog> komponenty. Přehled najdete v tématu [OpenFileDialog – přehled komponenty](../../../../docs/framework/winforms/controls/openfiledialog-component-overview-windows-forms.md).  
+1.  Určit cestu k souboru otvíraly <xref:System.Windows.Forms.OpenFileDialog> komponenty. Přehled najdete v tématu [OpenFileDialog – přehled komponenty](openfiledialog-component-overview-windows-forms.md).  
   
 2.  Volání <xref:System.Windows.Forms.RichTextBox.LoadFile%2A> metodu <xref:System.Windows.Forms.RichTextBox> ovládacího prvku, určení souboru načíst a volitelně typu souboru. V následujícím příkladu je soubor načíst převzata z <xref:System.Windows.Forms.OpenFileDialog> komponenty <xref:System.Windows.Forms.FileDialog.FileName%2A> vlastnost. Pokud jste volali metodu s názvem souboru jako její jediný argument, typ souboru bude považován za RTF. Chcete-li zadat jiný typ souboru, volejte metodu s hodnotou <xref:System.Windows.Forms.RichTextBoxStreamType> výčet jako druhý argument.  
   
@@ -78,10 +78,10 @@ Windows Forms <xref:System.Windows.Forms.RichTextBox> ovládací prvek mohl zobr
     ```  
   
     > [!IMPORTANT]
-    >  Ke spuštění tohoto procesu, vaše sestavení může vyžadovat úroveň oprávnění poskytnuté <xref:System.Security.Permissions.FileIOPermission?displayProperty=nameWithType> třídy. Pokud používáte v kontextu částečným vztahem důvěryhodnosti, procesu může vyvolat výjimku z důvodu dostatečná oprávnění. Další informace najdete v tématu [Základy zabezpečení přístupu kódu](../../../../docs/framework/misc/code-access-security-basics.md).  
+    >  Ke spuštění tohoto procesu, vaše sestavení může vyžadovat úroveň oprávnění poskytnuté <xref:System.Security.Permissions.FileIOPermission?displayProperty=nameWithType> třídy. Pokud používáte v kontextu částečným vztahem důvěryhodnosti, procesu může vyvolat výjimku z důvodu dostatečná oprávnění. Další informace najdete v tématu [Základy zabezpečení přístupu kódu](../../misc/code-access-security-basics.md).  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Forms.RichTextBox.LoadFile%2A?displayProperty=nameWithType>
 - <xref:System.Windows.Forms.RichTextBox>
-- [Ovládací prvek RichTextBox](../../../../docs/framework/winforms/controls/richtextbox-control-windows-forms.md)
-- [Ovládací prvky používané ve Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)
+- [Ovládací prvek RichTextBox](richtextbox-control-windows-forms.md)
+- [Ovládací prvky používané ve Windows Forms](controls-to-use-on-windows-forms.md)

@@ -13,18 +13,18 @@ helpviewer_keywords:
 - PanelClick event [Windows Forms], determining panel clicked
 - Panel control [Windows Forms], determining click
 ms.assetid: d14c6092-04b2-4a07-8ddf-0dd11277ff5f
-ms.openlocfilehash: 2907b6344cd4fcc7c7d84c110dbc638cdc86f23c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: adc54ace6ea7511f1f92945b9e0c8f44b5d8f4fe
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54708321"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57712718"
 ---
 # <a name="how-to-determine-which-panel-in-the-windows-forms-statusbar-control-was-clicked"></a>Postupy: Určení panelu v ovládacím prvku Windows Forms StatusBar označeného kliknutím
 > [!IMPORTANT]
 >  <xref:System.Windows.Forms.StatusStrip> a <xref:System.Windows.Forms.ToolStripStatusLabel> ovládací prvky nahradit a přidání funkce, které <xref:System.Windows.Forms.StatusBar> a <xref:System.Windows.Forms.StatusBarPanel> řídí; však <xref:System.Windows.Forms.StatusBar> a <xref:System.Windows.Forms.StatusBarPanel> ovládací prvky se zachovají pro zpětnou kompatibilitu a budoucí použití, pokud jste Zvolte.  
   
- Do programu [ovládacího prvku StatusBar](../../../../docs/framework/winforms/controls/statusbar-control-windows-forms.md) ovládacího prvku na reakce na kliknutí na uživatele, použijte příkazy case v rámci <xref:System.Windows.Forms.StatusBar.PanelClick> událostí. Událost obsahuje argument (panel argument), který obsahuje odkaz na kliknutí na <xref:System.Windows.Forms.StatusBarPanel>. Pomocí tohoto odkazu, můžete určit index panelu kliknutí a odpovídajícím způsobem programu.  
+ Do programu [ovládacího prvku StatusBar](statusbar-control-windows-forms.md) ovládacího prvku na reakce na kliknutí na uživatele, použijte příkazy case v rámci <xref:System.Windows.Forms.StatusBar.PanelClick> událostí. Událost obsahuje argument (panel argument), který obsahuje odkaz na kliknutí na <xref:System.Windows.Forms.StatusBarPanel>. Pomocí tohoto odkazu, můžete určit index panelu kliknutí a odpovídajícím způsobem programu.  
   
 > [!NOTE]
 >  Ujistěte se, <xref:System.Windows.Forms.StatusBar> ovládacího prvku <xref:System.Windows.Forms.StatusBar.ShowPanels%2A> je nastavena na `true`.  
@@ -96,6 +96,6 @@ ms.locfileid: "54708321"
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Forms.StatusBar>
 - <xref:System.Windows.Forms.ToolStripStatusLabel>
-- [Postupy: Nastavení velikosti panelů stavového řádku](../../../../docs/framework/winforms/controls/how-to-set-the-size-of-status-bar-panels.md)
-- [Návod: Aktualizace informací stavového řádku za běhu](../../../../docs/framework/winforms/controls/walkthrough-updating-status-bar-information-at-run-time.md)
-- [Přehled ovládacího prvku StatusBar](../../../../docs/framework/winforms/controls/statusbar-control-overview-windows-forms.md)
+- [Postupy: Nastavení velikosti panelů stavového řádku](how-to-set-the-size-of-status-bar-panels.md)
+- [Návod: Aktualizace informací stavového řádku za běhu](walkthrough-updating-status-bar-information-at-run-time.md)
+- [Přehled ovládacího prvku StatusBar](statusbar-control-overview-windows-forms.md)

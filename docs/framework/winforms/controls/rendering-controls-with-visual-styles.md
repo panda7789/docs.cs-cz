@@ -10,12 +10,12 @@ helpviewer_keywords:
 - user controls [Windows Forms], painting
 - visual styles [Windows Forms], rendering Windows Forms controls
 ms.assetid: a5b178ba-610e-46c4-a6c0-509c0886a744
-ms.openlocfilehash: 9ee357e343c5e060393359f0666886bef6b87b50
-ms.sourcegitcommit: 2b986afe4ce9e13bbeec929c9737757eb61de60e
+ms.openlocfilehash: caef9590e57503171ab295f6e99b62d860bc0a81
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56664351"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57708051"
 ---
 # <a name="rendering-controls-with-visual-styles"></a>Vykreslování ovládacích prvků s vizuálními styly
 [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Poskytuje podporu pro vykreslení ovládacích prvků a jiných uživatelů Windows pomocí vizuálních stylů v operačních systémech, které je podporují prvky rozhraní (UI). Toto téma popisuje několik úrovní podpory v [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] pro vykreslování a další prvky uživatelského rozhraní s aktuálním vizuálním stylem operačního systému.  
@@ -49,7 +49,7 @@ ms.locfileid: "56664351"
   
 -   <xref:System.Windows.Forms.TrackBarRenderer>  
   
- Další informace o použití těchto tříd k vykreslení ovládacího prvku, naleznete v tématu [jak: Použití třídy vykreslující ovládací prvek](../../../../docs/framework/winforms/controls/how-to-use-a-control-rendering-class.md).  
+ Další informace o použití těchto tříd k vykreslení ovládacího prvku, naleznete v tématu [jak: Použití třídy vykreslující ovládací prvek](how-to-use-a-control-rendering-class.md).  
   
 ## <a name="visual-style-element-and-rendering-classes"></a>Elementu vizuálního stylu a vykreslování třídy  
  <xref:System.Windows.Forms.VisualStyles?displayProperty=nameWithType> Obor názvů obsahuje třídy, které slouží k vykreslení a získat informace o jakýchkoli ovládacího prvku nebo prvku uživatelského rozhraní, který podporuje vizuální styly. Podporované ovládací prvky zahrnují běžné ovládací prvky, které mají třídy vykreslování <xref:System.Windows.Forms?displayProperty=nameWithType> obor názvů (viz předchozí oddíl), a také další ovládací prvky, jako je například ovládací prvky karet a ovládacích prvcích matrice. Další podporované prvky uživatelského rozhraní zahrnout části **Start** nabídky, na hlavním panelu a neklientské oblasti okna.  
@@ -58,7 +58,7 @@ ms.locfileid: "56664351"
   
  <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer> poskytuje metody, které nakreslíte a získat informace o jednotlivých <xref:System.Windows.Forms.VisualStyles.VisualStyleElement> definována aktuálním vizuálním stylem operačního systému. Informace o elementu, které je možné načíst zahrnuje jeho výchozí velikost, typ pozadí a barvy definice. <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer> zabalí funkci vizuálních stylů (UxTheme) rozhraní API z prostředí Windows část sady Windows SDK platformy. Další informace najdete v tématu [povolení vizuálních stylů](/windows/desktop/controls/cookbook-overview).  
   
- Další informace o používání <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer> a <xref:System.Windows.Forms.VisualStyles.VisualStyleElement>, naleznete v tématu [jak: Vykreslení elementu vizuálního stylu](../../../../docs/framework/winforms/controls/how-to-render-a-visual-style-element.md).  
+ Další informace o používání <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer> a <xref:System.Windows.Forms.VisualStyles.VisualStyleElement>, naleznete v tématu [jak: Vykreslení elementu vizuálního stylu](how-to-render-a-visual-style-element.md).  
   
 ## <a name="enabling-visual-styles"></a>Povolení vizuálních stylů  
  K povolení vizuálních stylů pro aplikace napsané pro [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] verze 1.0, programátoři musí obsahovat manifest aplikace, která určuje, že knihovna ComCtl32.dll ve verzi 6 nebo novější se použije k vykreslení ovládacích prvků. Aplikace vytvořené pomocí [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] verze 1.1 nebo novější můžete použít <xref:System.Windows.Forms.Application.EnableVisualStyles%2A?displayProperty=nameWithType> metodu <xref:System.Windows.Forms.Application> třídy.  
@@ -79,4 +79,4 @@ ms.locfileid: "56664351"
 >  Pokud chcete použít <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer> k vykreslení ovládacího prvku nebo prvku uživatelského rozhraní, když uživatel povolí nebo přepne vizuální styly, ujistěte se, abyste to udělali při zpracování <xref:Microsoft.Win32.SystemEvents.UserPreferenceChanged> události místo <xref:Microsoft.Win32.SystemEvents.UserPreferenceChanging> událostí. Bude vyvolána výjimka, pokud použijete <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer> třídy při zpracování <xref:Microsoft.Win32.SystemEvents.UserPreferenceChanging>.  
   
 ## <a name="see-also"></a>Viz také:
-- [Malování a vykreslování vlastního ovládacího prvku](../../../../docs/framework/winforms/controls/custom-control-painting-and-rendering.md)
+- [Malování a vykreslování vlastního ovládacího prvku](custom-control-painting-and-rendering.md)

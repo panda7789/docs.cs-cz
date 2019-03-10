@@ -10,12 +10,12 @@ helpviewer_keywords:
 - user names [Windows Forms], retrieving
 - system information [Windows Forms]
 ms.assetid: 30cf43a3-8cb2-4ff3-862b-6c34576616a8
-ms.openlocfilehash: 285a35012c4417e4ee39bf8c72e85bd6102d3e23
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d8efb783fcb5bcbe9c4ee99bc784e27a1aebb0cf
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54594444"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57707661"
 ---
 # <a name="system-information-and-windows-forms"></a>Systémové informace a Windows Forms
 Někdy je potřeba shromáždit informace o počítači, který vaše aplikace běží na, abyste mohli dělat rozhodnutí v kódu. Například můžete mít funkci, která platí pouze při připojení k doméně konkrétního síťového; v takovém případě potřebujete způsob, jak určit doménu a zakázat funkce, pokud doména není k dispozici.  
@@ -44,4 +44,4 @@ MessageBox.Show("Good morning " + User + ". You are connected to " _
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Forms.SystemInformation>
-- [Správa výkonu v modelu Windows Forms](../../../../docs/framework/winforms/advanced/power-management-in-windows-forms.md)
+- [Správa výkonu v modelu Windows Forms](power-management-in-windows-forms.md)

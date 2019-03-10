@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Windows Forms, hosting ActiveX controls
 - ActiveX controls [Windows Forms], adding
 ms.assetid: 2509302d-a74e-484f-9890-2acdbfa67a68
-ms.openlocfilehash: d1b015fbd35c07611816195c4498a74fb232383f
-ms.sourcegitcommit: acd8ed14fe94e9d4e3a7fb685fe83d05e941073c
+ms.openlocfilehash: 354c524924794cd240a230e325a4f0eee58cdc50
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56441980"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57705204"
 ---
 # <a name="considerations-when-hosting-an-activex-control-on-a-windows-form"></a>Aspekty hostování ovládacího prvku ActiveX ve formuláři Windows
 Přestože Windows Forms jsou optimalizované pro hostitelské ovládací prvky Windows Forms, je možné použít ovládací prvky ActiveX. Při plánování aplikaci používá ovládací prvky ActiveX, mít na paměti následující aspekty:  
@@ -29,8 +29,8 @@ Přestože Windows Forms jsou optimalizované pro hostitelské ovládací prvky 
     >  Pokud název členu ovládacího prvku ActiveX odpovídá názvu definovanému v [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], pak bude k názvu člena přidat předponu Importér ovládacích prvků ActiveX **Ctl** když vytvoří <xref:System.Windows.Forms.AxHost> odvozené třídy. Například, pokud ovládací prvek ActiveX má člen nazvaný **rozložení**, bude přejmenován **CtlLayout** ve třídě AxHost odvozené protože **rozložení** událost je definována v rámci [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)].  
   
 ## <a name="see-also"></a>Viz také:
-- [Postupy: Přidávání ovládacích prvků ActiveX do formulářů Windows](../../../../docs/framework/winforms/controls/how-to-add-activex-controls-to-windows-forms.md)
-- [Zabezpečení přístupu kódu](../../../../docs/framework/misc/code-access-security.md)
+- [Postupy: Přidávání ovládacích prvků ActiveX do formulářů Windows](how-to-add-activex-controls-to-windows-forms.md)
+- [Zabezpečení přístupu kódu](../../misc/code-access-security.md)
 - [Ovládacích prvků a programovatelných objektů porovnáno v různých jazycích a knihovnách](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/0061wezk(v=vs.100))
-- [Vkládání ovládacích prvků do Windows Forms](../../../../docs/framework/winforms/controls/putting-controls-on-windows-forms.md)
-- [Windows Forms – ovládací prvky](../../../../docs/framework/winforms/controls/index.md)
+- [Vkládání ovládacích prvků do Windows Forms](putting-controls-on-windows-forms.md)
+- [Windows Forms – ovládací prvky](index.md)

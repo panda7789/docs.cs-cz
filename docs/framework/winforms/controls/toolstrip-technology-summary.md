@@ -7,12 +7,12 @@ helpviewer_keywords:
 - toolbars [Windows Forms], technology summary
 - menus [Windows Forms], technology summary
 ms.assetid: e8d61973-7af9-429f-9df5-05a899c15a7b
-ms.openlocfilehash: 94b061b6c403c22fc7eed4ca3632f3165693e868
-ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
+ms.openlocfilehash: c32b14e1394004b68247d4d7bf2d0fcc8870b730
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56747136"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57703270"
 ---
 # <a name="toolstrip-technology-summary"></a>Souhrn technologie ToolStrip
 Toto téma shrnuje informace o `ToolStrip` ovládacího prvku a tříd, které podporují jeho použití.  
@@ -87,7 +87,7 @@ Toto téma shrnuje informace o `ToolStrip` ovládacího prvku a tříd, které p
 ## <a name="hosting-controls"></a>Hostování ovládacích prvků  
  <xref:System.Windows.Forms.ToolStripControlHost> Třída poskytuje integrované obálky pro <xref:System.Windows.Forms.ToolStripComboBox>, <xref:System.Windows.Forms.ToolStripTextBox>, a <xref:System.Windows.Forms.ToolStripProgressBar> ovládací prvky. Můžete také uložit žádné další existující nebo ovládacího prvku COM v <xref:System.Windows.Forms.ToolStripControlHost>.  
   
- Příklad hostování ovládacího prvku, naleznete v tématu [jak: Zabalení ovládacího prvku Windows Forms pomocí ToolStripControlHost](../../../../docs/framework/winforms/controls/how-to-wrap-a-windows-forms-control-with-toolstripcontrolhost.md).  
+ Příklad hostování ovládacího prvku, naleznete v tématu [jak: Zabalení ovládacího prvku Windows Forms pomocí ToolStripControlHost](how-to-wrap-a-windows-forms-control-with-toolstripcontrolhost.md).  
   
 ## <a name="rendering"></a>Vykreslování  
  <xref:System.Windows.Forms.ToolStrip> třídy implementovat vykreslování schéma, které se značně liší od jiných ovládacích prvků Windows Forms. Toto schéma snadno použít styly a motivů.  
@@ -96,7 +96,7 @@ Toto téma shrnuje informace o `ToolStrip` ovládacího prvku a tříd, které p
   
  Můžete provést stejný styl u více <xref:System.Windows.Forms.ToolStrip> objekty ve stejné aplikaci tak, že nastavíte <xref:System.Windows.Forms.ToolStrip.RenderMode%2A> k <xref:System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode> a nastavení <xref:System.Windows.Forms.ToolStripManager.RenderMode%2A> nebo <xref:System.Windows.Forms.ToolStripManager.Renderer%2A> vlastnost <xref:System.Windows.Forms.ToolStripManagerRenderMode> , který chcete nebo <xref:System.Windows.Forms.ToolStripRenderer> hodnotu, v uvedeném pořadí.  
   
- Příklady vykreslování, najdete v článku [jak: Vytvoření a nastavení vlastního Rendereru pro ovládací prvek ToolStrip ve Windows Forms](../../../../docs/framework/winforms/controls/create-and-set-a-custom-renderer-for-the-toolstrip-control-in-wf.md).  
+ Příklady vykreslování, najdete v článku [jak: Vytvoření a nastavení vlastního Rendereru pro ovládací prvek ToolStrip ve Windows Forms](create-and-set-a-custom-renderer-for-the-toolstrip-control-in-wf.md).  
   
 ## <a name="styles-and-themes"></a>Styly a motivů  
  <xref:System.Windows.Forms.ToolStrip> a přidružených tříd poskytují snadný způsob, jak podporují vizuální styly a vlastní vzhled, které nevyžadují žádné přepisování <xref:System.Windows.Forms.ToolStripItem.OnPaint%2A> metod pro každou položku. Použití <xref:System.Windows.Forms.ToolStripItem.DisplayStyle%2A> a <xref:System.Windows.Forms.ToolStrip.RenderMode%2A> a <xref:System.Windows.Forms.ToolStrip.Renderer%2A> vlastnosti.  
@@ -112,12 +112,12 @@ Toto téma shrnuje informace o `ToolStrip` ovládacího prvku a tříd, které p
   
  Výhodou rafting přes ukotvení je, že <xref:System.Windows.Forms.ToolStrip>, <xref:System.Windows.Forms.MenuStrip>, a <xref:System.Windows.Forms.StatusStrip> ovládací prvky můžete sdílet místa na vodorovné nebo svislé s jinými ovládacími prvky.  
   
- Většina <xref:System.Windows.Forms.ToolStrip> ovládací prvky lze ukotvit do formuláře jako ostatní ovládací prvky namísto použití rafting. Můžete také určit, že <xref:System.Windows.Forms.ToolStrip> ovládací prvek volně umístit na formuláři tak, že odeberete z jeho <xref:System.Windows.Forms.ToolStripContainer> a nastavení jeho `Dock` vlastnost `None`, nebo můžete zadat absolutní pozici nastavením funkcím <xref:System.Windows.Forms.Control.Location%2A> Vlastnost. Zobrazit [jak: Přesunutí ToolStrip mimo prvek ToolStripContainer formuláře](../../../../docs/framework/winforms/controls/how-to-move-a-toolstrip-out-of-a-toolstripcontainer-onto-a-form.md).  
+ Většina <xref:System.Windows.Forms.ToolStrip> ovládací prvky lze ukotvit do formuláře jako ostatní ovládací prvky namísto použití rafting. Můžete také určit, že <xref:System.Windows.Forms.ToolStrip> ovládací prvek volně umístit na formuláři tak, že odeberete z jeho <xref:System.Windows.Forms.ToolStripContainer> a nastavení jeho `Dock` vlastnost `None`, nebo můžete zadat absolutní pozici nastavením funkcím <xref:System.Windows.Forms.Control.Location%2A> Vlastnost. Zobrazit [jak: Přesunutí ToolStrip mimo prvek ToolStripContainer formuláře](how-to-move-a-toolstrip-out-of-a-toolstripcontainer-onto-a-form.md).  
   
  Použití jednoho nebo více <xref:System.Windows.Forms.ToolStripPanel> ovládací prvky pro větší flexibilitu, hlavně pro aplikace rozhraní více dokumentů (MDI), nebo pokud není nutné <xref:System.Windows.Forms.ToolStripContainer>. A <xref:System.Windows.Forms.ToolStripPanel> ukotvitelné místo pro vyhledání a rafting <xref:System.Windows.Forms.ToolStrip> ovládacích prvků, ale ne tradiční ovládací prvky. Ve výchozím nastavení <xref:System.Windows.Forms.ToolStripPanel> se nezobrazí v návrháři **nástrojů**, ale můžete ji existuje kliknutím pravým tlačítkem myši **nástrojů**a potom klikněte na tlačítko **zvolit položky**. Můžete také programově přistupovat <xref:System.Windows.Forms.ToolStripPanel> jako jakékoli jiné třídy.  
   
  <xref:System.Windows.Forms.ToolStrip>, <xref:System.Windows.Forms.MenuStrip>, A <xref:System.Windows.Forms.StatusStrip> nechat položky přetečení. To se podobá způsobu, jakým tyto položky se chovají na panely nástrojů Microsoft Office.  
   
 ## <a name="see-also"></a>Viz také:
-- [Přehled ovládacího prvku ToolStrip](../../../../docs/framework/winforms/controls/toolstrip-control-overview-windows-forms.md)
-- [Architektura ovládacího prvku ToolStrip](../../../../docs/framework/winforms/controls/toolstrip-control-architecture.md)
+- [Přehled ovládacího prvku ToolStrip](toolstrip-control-overview-windows-forms.md)
+- [Architektura ovládacího prvku ToolStrip](toolstrip-control-architecture.md)

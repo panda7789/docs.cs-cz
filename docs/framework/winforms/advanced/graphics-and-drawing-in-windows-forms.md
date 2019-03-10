@@ -7,28 +7,28 @@ helpviewer_keywords:
 - GDI+, using in managed code
 - drawing [Windows Forms]
 ms.assetid: 362532c5-1a06-4257-bdc8-723461009ede
-ms.openlocfilehash: e6d3c395a2d5b8ae885114a53b230d7265102bc8
-ms.sourcegitcommit: acd8ed14fe94e9d4e3a7fb685fe83d05e941073c
+ms.openlocfilehash: 08f87436ade62bb54295b012a1c24dc177ea9667
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56441161"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57705418"
 ---
 # <a name="graphics-and-drawing-in-windows-forms"></a>Grafika a kreslení v rozhraní Windows Forms
 Modul common language runtime používá pokročilé provádění Windows Graphics Device Interface ([!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)]) volá [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]. S [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] můžete vytvořit grafiky, kreslení textu a manipulaci s grafické obrázky jako objekty. [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] je určená k výkonu a snadnost použití. Můžete použít [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] k vykreslení grafické obrázky ve Windows Forms a ovládacích prvků. I když [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] přímo na webové formuláře, můžete zobrazit grafické obrázky prostřednictvím ovládacího prvku obrázek Webový Server.  
   
  V této části najdete témata, která představují základní informace o [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] programování. I když nemají být komplexní referenční informace, tato část obsahuje informace o <xref:System.Drawing.Graphics>, <xref:System.Drawing.Pen>, <xref:System.Drawing.Brush>, a <xref:System.Drawing.Color> objekty a vysvětluje, jak provádět úkoly, jako je kreslení tvarů, textu, kreslení nebo zobrazení obrázků. Další informace najdete v tématu [referenční dokumentace rozhraní GDI +](/windows/desktop/gdiplus/-gdiplus-class-gdi-reference).  
   
- Pokud byste chtěli přidejte se k nám a rovnou začít, najdete v článku [Začínáme s programováním grafiky](../../../../docs/framework/winforms/advanced/getting-started-with-graphics-programming.md). Obsahuje témata o tom, jak použít kód kreslení čar, tvary, text a informace o Windows forms.  
+ Pokud byste chtěli přidejte se k nám a rovnou začít, najdete v článku [Začínáme s programováním grafiky](getting-started-with-graphics-programming.md). Obsahuje témata o tom, jak použít kód kreslení čar, tvary, text a informace o Windows forms.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Přehled grafiky](../../../../docs/framework/winforms/advanced/graphics-overview-windows-forms.md)  
+ [Přehled grafiky](graphics-overview-windows-forms.md)  
  Poskytuje úvod ke spravovaným třídám související grafiky.  
   
- [Informace o spravovaném kódu GDI+](../../../../docs/framework/winforms/advanced/about-gdi-managed-code.md)  
+ [Informace o spravovaném kódu GDI+](about-gdi-managed-code.md)  
  Poskytuje informace o managed [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] třídy.  
   
- [Použití spravovaných grafických tříd](../../../../docs/framework/winforms/advanced/using-managed-graphics-classes.md)  
+ [Použití spravovaných grafických tříd](using-managed-graphics-classes.md)  
  Ukazuje, jak k provádění různých úloh s použitím [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] spravovaných tříd.  
   
 ## <a name="reference"></a>Odkaz  
@@ -48,5 +48,5 @@ Modul common language runtime používá pokročilé provádění Windows Graphi
  Poskytuje funkce tisku.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Malování a vykreslování vlastního ovládacího prvku](../../../../docs/framework/winforms/controls/custom-control-painting-and-rendering.md)  
+ [Malování a vykreslování vlastního ovládacího prvku](../controls/custom-control-painting-and-rendering.md)  
  Podrobně popisuje, jak poskytnout kód pro vykreslování ovládacích prvků.

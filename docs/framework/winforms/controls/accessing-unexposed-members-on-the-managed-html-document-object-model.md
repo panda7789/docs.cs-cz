@@ -8,12 +8,12 @@ helpviewer_keywords:
 - unexposed members
 - managed HTML DOM [Windows Forms], accessing unexposed members
 ms.assetid: 762295bd-2355-4aa7-b43c-5bff997a33e6
-ms.openlocfilehash: 1de8afcd7167406f10c4d541e95a0fa68be16611
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 844e03891cce41566300409ad1bec67c875718a7
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54658949"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57704502"
 ---
 # <a name="accessing-unexposed-members-on-the-managed-html-document-object-model"></a>Přístup k nevystaveným členům v modelu spravovaného objektu dokumentu HTML
 Spravované HTML Document Object Model (DOM) obsahuje třídu s názvem <xref:System.Windows.Forms.HtmlElement> , která zveřejňuje vlastnosti, metody a události, které mají společnou všechny prvky jazyka HTML. V některých případech však můžete potřebovat pro přístup ke členům, které použití spravovaného rozhraní nevystavuje přímo. Toto téma popisuje dva způsoby, jak přístup k nevystaveným členům, včetně [!INCLUDE[jsprjscript](../../../../includes/jsprjscript-md.md)] a VBScript funkce definované uvnitř na webové stránce.  
@@ -49,8 +49,8 @@ Spravované HTML Document Object Model (DOM) obsahuje třídu s názvem <xref:Sy
   
  Po načtení tuto stránku do <xref:System.Windows.Forms.WebBrowser> ovládacího prvku, lze použít <xref:System.Windows.Forms.HtmlDocument.GetElementById%2A> metodu pro načtení `FORM` za běhu pomocí `form1` jako argument.  
   
- [!code-csharp[System.Windows.Forms.HtmlElement#10](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.HtmlElement/CS/Form1.cs#10)]
- [!code-vb[System.Windows.Forms.HtmlElement#10](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.HtmlElement/VB/Form1.vb#10)]  
+ [!code-csharp[System.Windows.Forms.HtmlElement#10](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.HtmlElement/CS/Form1.cs#10)]
+ [!code-vb[System.Windows.Forms.HtmlElement#10](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.HtmlElement/VB/Form1.vb#10)]  
   
 ## <a name="accessing-unmanaged-interfaces"></a>Přístup k nespravovaná rozhraní  
  Můžete také přístup k nevystaveným členům v spravovaný model HTML DOM pomocí nespravovaná rozhraní modelu COM (Component Object) vystavené každou třídu modelu DOM. To se doporučuje, pokud je nutné provést několik volání proti nevystaveným členům, nebo pokud nevystaveným členům jiné nespravovaná rozhraní, které nejsou zabalené službou spravované HTML DOM  
@@ -72,4 +72,4 @@ Spravované HTML Document Object Model (DOM) obsahuje třídu s názvem <xref:Sy
  Je možné volat jakékoli funkce skriptu definujete ve stránce HTML pomocí <xref:System.Windows.Forms.HtmlDocument.InvokeScript%2A> metody. Pokud metoda skript vrátí HTML element, můžete použít přetypování pro převod tento návratový výsledek <xref:System.Windows.Forms.HtmlElement>. Podrobnosti a příklady kódu naleznete v tématu <xref:System.Windows.Forms.HtmlDocument.InvokeScript%2A>.  
   
 ## <a name="see-also"></a>Viz také:
-- [Použití spravovaného modelu DOM (Document Object Model) HTML](../../../../docs/framework/winforms/controls/using-the-managed-html-document-object-model.md)
+- [Použití spravovaného modelu DOM (Document Object Model) HTML](using-the-managed-html-document-object-model.md)

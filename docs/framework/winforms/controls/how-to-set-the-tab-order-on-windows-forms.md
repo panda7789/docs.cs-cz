@@ -10,12 +10,12 @@ helpviewer_keywords:
 - controls [Windows Forms], setting tab order
 - Windows Forms, setting tab order
 ms.assetid: 71fa8e76-0472-414b-ad3c-0f90166e0ad7
-ms.openlocfilehash: 118785e14dddcd5ff19aa8c143f9e8df05d8980b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 3f566dfb5dbc118c5a6be7f874b5b4857756075a
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54675197"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57705874"
 ---
 # <a name="how-to-set-the-tab-order-on-windows-forms"></a>Postupy: Nastavení pořadí karet ve Windows Forms
 Pořadí je v tom pořadí, ve kterém uživatel přesune fokus z jednoho ovládacího prvku na jiný stisknutím klávesy TAB. Každý formulář má svůj vlastní pořadí. Výchozí pořadí je stejné jako pořadí, ve které jste vytvořili ovládací prvky. Pořadí karet číslování začíná nulou.  
@@ -32,7 +32,7 @@ Pořadí je v tom pořadí, ve kterém uživatel přesune fokus z jednoho ovlád
 2.  Klepněte na ovládací prvky nasazují postupně, aby pořadí prvků, které chcete vytvořit.  
   
     > [!NOTE]
-    >  Místo ovládacího prvku v rámci pořadí karet lze nastavit na libovolnou hodnotu větší než nebo rovna 0. Pokud dojde k duplicity, je vyhodnocen pořadí vykreslování dvou ovládacích prvků a ovládací prvek v horní části na kartách první. (Pořadí vykreslování je vizuální rozvržení ovládací prvky ve formuláři podél osy z formuláře [hloubka]. Pořadí vykreslování určuje, jaké ovládací prvky jsou před další ovládací prvky.) Další informace o pořadí vykreslování, naleznete v tématu [vrstvení objektů ve formulářích Windows](../../../../docs/framework/winforms/controls/how-to-layer-objects-on-windows-forms.md).  
+    >  Místo ovládacího prvku v rámci pořadí karet lze nastavit na libovolnou hodnotu větší než nebo rovna 0. Pokud dojde k duplicity, je vyhodnocen pořadí vykreslování dvou ovládacích prvků a ovládací prvek v horní části na kartách první. (Pořadí vykreslování je vizuální rozvržení ovládací prvky ve formuláři podél osy z formuláře [hloubka]. Pořadí vykreslování určuje, jaké ovládací prvky jsou před další ovládací prvky.) Další informace o pořadí vykreslování, naleznete v tématu [vrstvení objektů ve formulářích Windows](how-to-layer-objects-on-windows-forms.md).  
   
 3.  Jakmile budete hotovi, klikněte na tlačítko **pořadí** na **zobrazení** nabídku ukončit režim pořadí karty.  
   
@@ -52,10 +52,10 @@ Pořadí je v tom pořadí, ve kterém uživatel přesune fokus z jednoho ovlád
      A ovládací prvek, jehož <xref:System.Windows.Forms.Control.TabStop%2A> je nastavená vlastnost `false` stále udržuje jeho pozice v pořadí, i v případě, že ovládací prvek bude přeskočena při přepínání mezi ovládací prvky pomocí klávesy TAB.  
   
     > [!NOTE]
-    >  Skupina přepínacích tlačítek je do jedné karty zastavit v době běhu. Vybraného tlačítka (tj. tlačítko s jeho <xref:System.Windows.Forms.RadioButton.Checked%2A> vlastnost nastavena na hodnotu `true`) má jeho <xref:System.Windows.Forms.Control.TabStop%2A> automaticky nastavena na `true`, i když má další tlačítka jejich <xref:System.Windows.Forms.Control.TabStop%2A> nastavenou na `false`. Další informace o seskupování <xref:System.Windows.Forms.RadioButton> ovládacích prvků, naleznete v tématu [seskupení Windows Forms ovládací prvky RadioButton do funkce v podobě sady](../../../../docs/framework/winforms/controls/how-to-group-windows-forms-radiobutton-controls-to-function-as-a-set.md).  
+    >  Skupina přepínacích tlačítek je do jedné karty zastavit v době běhu. Vybraného tlačítka (tj. tlačítko s jeho <xref:System.Windows.Forms.RadioButton.Checked%2A> vlastnost nastavena na hodnotu `true`) má jeho <xref:System.Windows.Forms.Control.TabStop%2A> automaticky nastavena na `true`, i když má další tlačítka jejich <xref:System.Windows.Forms.Control.TabStop%2A> nastavenou na `false`. Další informace o seskupování <xref:System.Windows.Forms.RadioButton> ovládacích prvků, naleznete v tématu [seskupení Windows Forms ovládací prvky RadioButton do funkce v podobě sady](how-to-group-windows-forms-radiobutton-controls-to-function-as-a-set.md).  
   
 ## <a name="see-also"></a>Viz také:
-- [Windows Forms – ovládací prvky](../../../../docs/framework/winforms/controls/index.md)
-- [Uspořádávání ovládacích prvků ve Windows Forms](../../../../docs/framework/winforms/controls/arranging-controls-on-windows-forms.md)
-- [Ovládací prvky používané ve Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)
-- [Ovládací prvky Windows Forms podle funkce](../../../../docs/framework/winforms/controls/windows-forms-controls-by-function.md)
+- [Windows Forms – ovládací prvky](index.md)
+- [Uspořádávání ovládacích prvků ve Windows Forms](arranging-controls-on-windows-forms.md)
+- [Ovládací prvky používané ve Windows Forms](controls-to-use-on-windows-forms.md)
+- [Ovládací prvky Windows Forms podle funkce](windows-forms-controls-by-function.md)

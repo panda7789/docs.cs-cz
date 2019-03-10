@@ -1,18 +1,18 @@
 ---
-title: 'Postupy: vytvoření aktivity'
+title: 'Postupy: Vytvoření aktivity'
 ms.date: 09/14/2018
 dev_langs:
 - csharp
 - vb
 ms.assetid: c09b1e99-21b5-4d96-9c04-ec31db3f4436
-ms.openlocfilehash: 8aa6900b26bbe9f77fe0802a7929febe5af61269
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.openlocfilehash: 271f26888e8b140b64464f5c9c4eabb7170afe05
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48872954"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57709013"
 ---
-# <a name="how-to-create-an-activity"></a>Postupy: vytvoření aktivity
+# <a name="how-to-create-an-activity"></a>Postupy: Vytvoření aktivity
 
 Aktivity jsou základní jednotka chování v [!INCLUDE[wf1](../../../includes/wf1-md.md)]. Je možné implementovat logiku spouštění aktivity ve spravovaném kódu nebo se dá implementovat pomocí další aktivity. Toto téma ukazuje, jak vytvořit dvě aktivity. První aktivita je jednoduchá aktivita, která používá kód implementovat logiku jeho spuštění. Implementace druhou aktivitu se definuje pomocí další aktivity. Tyto aktivity se používají v následujících krocích v tomto kurzu.
 
@@ -42,8 +42,8 @@ Aktivity jsou základní jednotka chování v [!INCLUDE[wf1](../../../includes/w
 
 4.  Nahraďte existující `ReadInt` definice s následující definicí.
 
-     [!code-csharp[CFX_WF_GettingStarted#1](../../../samples/snippets/csharp/VS_Snippets_CFX/cfx_wf_gettingstarted/cs/readint.cs#1)]
-     [!code-vb[CFX_WF_GettingStarted#1](../../../samples/snippets/visualbasic/VS_Snippets_CFX/cfx_wf_gettingstarted/vb/readint.vb#1)]
+     [!code-csharp[CFX_WF_GettingStarted#1](~/samples/snippets/csharp/VS_Snippets_CFX/cfx_wf_gettingstarted/cs/readint.cs#1)]
+     [!code-vb[CFX_WF_GettingStarted#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/cfx_wf_gettingstarted/vb/readint.vb#1)]
 
     > [!NOTE]
     > `ReadInt` Aktivity je odvozena z <xref:System.Activities.NativeActivity%601> místo <xref:System.Activities.CodeActivity>, což je výchozí hodnota pro kód šablony aktivit. <xref:System.Activities.CodeActivity%601> lze použít, pokud aktivita poskytuje jeden výsledek, který je zveřejněný prostřednictvím <xref:System.Activities.Activity%601.Result%2A> argument, ale <xref:System.Activities.CodeActivity%601> nepodporuje používání záložek, takže <xref:System.Activities.NativeActivity%601> se používá.
@@ -100,13 +100,13 @@ Aktivity jsou základní jednotka chování v [!INCLUDE[wf1](../../../includes/w
 
 ## <a name="next-steps"></a>Další kroky
 
-Pokyny k vytvoření pracovního postupu pomocí těchto aktivit naleznete v části Další krok v tomto kurzu [postupy: vytvoření pracovního postupu](../../../docs/framework/windows-workflow-foundation/how-to-create-a-workflow.md).
+Pokyny k vytvoření pracovního postupu pomocí těchto aktivit naleznete v části Další krok v tomto kurzu [jak: Vytvoření pracovního postupu](how-to-create-a-workflow.md).
 
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Activities.CodeActivity>
 - <xref:System.Activities.NativeActivity%601>
-- [Návrh a implementace vlastních aktivit](../../../docs/framework/windows-workflow-foundation/designing-and-implementing-custom-activities.md)
-- [Kurz Začínáme](../../../docs/framework/windows-workflow-foundation/getting-started-tutorial.md)
-- [Postupy: Vytvoření pracovního postupu](../../../docs/framework/windows-workflow-foundation/how-to-create-a-workflow.md)
-- [Použití ExpressionTextBox v návrháři vlastní aktivity](../../../docs/framework/windows-workflow-foundation/samples/using-the-expressiontextbox-in-a-custom-activity-designer.md)
+- [Návrh a implementace vlastních aktivit](designing-and-implementing-custom-activities.md)
+- [Kurz Začínáme](getting-started-tutorial.md)
+- [Postupy: Vytvoření pracovního postupu](how-to-create-a-workflow.md)
+- [Použití ExpressionTextBox v návrháři vlastní aktivity](./samples/using-the-expressiontextbox-in-a-custom-activity-designer.md)

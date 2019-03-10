@@ -9,12 +9,12 @@ helpviewer_keywords:
 - tab pages [Windows Forms], hiding in forms
 - TabControl control [Windows Forms], disabling pages
 ms.assetid: adcc6618-8a34-4ee1-bbe3-47e732de6a59
-ms.openlocfilehash: 1071b2ded2761d64e57484a9aea9bddb254a9a7a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a2a0f4084529b1dd2618c1cd6171ee45b8f569d3
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54554410"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57704996"
 ---
 # <a name="how-to-disable-tab-pages"></a>Postupy: Zákaz stránek karet
 V některých případech budete chtít omezit přístup k datům, která je k dispozici v rámci vaší aplikace Windows Forms. Jedním z příkladů může být, pokud máte data zobrazí na stránkách kartu ovládacího prvku karta; Správce může mít informace na stránce kartu, kterou chcete omezit z hosta nebo uživatelé na nižší úrovni.  
@@ -102,7 +102,7 @@ V některých případech budete chtít omezit přístup k datům, která je k d
     ```  
   
 ## <a name="see-also"></a>Viz také:
-- [Přehled ovládacího prvku TabControl](../../../../docs/framework/winforms/controls/tabcontrol-control-overview-windows-forms.md)
-- [Postupy: Přidání ovládacího prvku do stránky karty](../../../../docs/framework/winforms/controls/how-to-add-a-control-to-a-tab-page.md)
-- [Postupy: Přidání a odebrání karet pomocí ovládacího prvku Windows Forms TabControl](../../../../docs/framework/winforms/controls/how-to-add-and-remove-tabs-with-the-windows-forms-tabcontrol.md)
-- [Postupy: Změna vzhledu ovládacího prvku Windows Forms TabControl](../../../../docs/framework/winforms/controls/how-to-change-the-appearance-of-the-windows-forms-tabcontrol.md)
+- [Přehled ovládacího prvku TabControl](tabcontrol-control-overview-windows-forms.md)
+- [Postupy: Přidání ovládacího prvku do stránky karty](how-to-add-a-control-to-a-tab-page.md)
+- [Postupy: Přidání a odebrání karet pomocí ovládacího prvku Windows Forms TabControl](how-to-add-and-remove-tabs-with-the-windows-forms-tabcontrol.md)
+- [Postupy: Změna vzhledu ovládacího prvku Windows Forms TabControl](how-to-change-the-appearance-of-the-windows-forms-tabcontrol.md)

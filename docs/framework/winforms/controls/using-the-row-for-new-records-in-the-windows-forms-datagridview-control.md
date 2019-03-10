@@ -6,12 +6,12 @@ helpviewer_keywords:
 - rows [Windows Forms], new records
 - DataGridView control [Windows Forms], data entry
 ms.assetid: 6110f1ea-9794-442c-a98a-f104a1feeaf4
-ms.openlocfilehash: 86e61afd0882fea9015cdfe3b40e6d3cd329391b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 041738ba375022be7c80526f25e5761314dffbf1
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54734954"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57703917"
 ---
 # <a name="using-the-row-for-new-records-in-the-windows-forms-datagridview-control"></a>Použití řádku pro nové záznamy v ovládacím prvku Windows Forms DataGridView
 Při použití <xref:System.Windows.Forms.DataGridView> pro úpravy dat v aplikaci, bude často chcete dát uživatelům možnost přidávat nové řádky dat do úložiště. <xref:System.Windows.Forms.DataGridView> Ovládací prvek podporuje tuto funkci poskytnutím řádek pro nové záznamy, které je vždy zobrazen jako poslední řádek. Je označené atributem symbol hvězdičky (*) v záhlaví řádku. Následující části popisují některé z akcí, byste měli zvážit, když program s řádkem pro nové záznamy povoleno.  
@@ -24,7 +24,7 @@ Při použití <xref:System.Windows.Forms.DataGridView> pro úpravy dat v aplika
 ## <a name="populating-the-row-for-new-records-with-default-data"></a>Naplnění řádku pro nové záznamy s výchozími daty  
  Když uživatel vybere řádek pro nové záznamy jako aktuální řádek <xref:System.Windows.Forms.DataGridView> vyvolá ovládací prvek <xref:System.Windows.Forms.DataGridView.DefaultValuesNeeded> událostí.  
   
- Tato událost poskytuje přístup k novému <xref:System.Windows.Forms.DataGridViewRow> a umožňuje naplnit nový řádek s výchozími daty. Další informace najdete v tématu [jak: Určení výchozích hodnot pro nové řádky v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/specify-default-values-for-new-rows-in-the-datagrid.md)  
+ Tato událost poskytuje přístup k novému <xref:System.Windows.Forms.DataGridViewRow> a umožňuje naplnit nový řádek s výchozími daty. Další informace najdete v tématu [jak: Určení výchozích hodnot pro nové řádky v ovládacím prvku Windows Forms DataGridView](specify-default-values-for-new-rows-in-the-datagrid.md)  
   
 ## <a name="the-rows-collection"></a>Kolekce řádků  
  Je součástí řádku pro nové záznamy <xref:System.Windows.Forms.DataGridView> ovládacího prvku <xref:System.Windows.Forms.DataGridView.Rows%2A> kolekce ale chová odlišně ve dvou směrech:  
@@ -34,7 +34,7 @@ Při použití <xref:System.Windows.Forms.DataGridView> pro úpravy dat v aplika
 -   Je možné přidat žádný řádek po řádku pro nové záznamy. <xref:System.InvalidOperationException> Dojde při pokusu o to. V důsledku toho řádku pro nové záznamy se vždycky poslední řádek v <xref:System.Windows.Forms.DataGridView> ovládacího prvku. Metody <xref:System.Windows.Forms.DataGridViewRowCollection> přidá řádků –<xref:System.Windows.Forms.DataGridViewRowCollection.Add%2A>, <xref:System.Windows.Forms.DataGridViewRowCollection.AddCopy%2A>, a <xref:System.Windows.Forms.DataGridViewRowCollection.AddCopies%2A>– všechny interně volání metod vložení při řádku pro nové záznamy je k dispozici.  
   
 ## <a name="visual-customization-of-the-row-for-new-records"></a>Vizuální přizpůsobení řádku pro nové záznamy  
- Při vytvoření řádku pro nové záznamy, je založena na určeném řádku <xref:System.Windows.Forms.DataGridView.RowTemplate%2A> vlastnost. Všechny styly buňky, které nejsou zadané pro tento řádek se dědí z dalších vlastností. Další informace o dědičnosti styl buňky, naleznete v tématu [styly buňky v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/cell-styles-in-the-windows-forms-datagridview-control.md).  
+ Při vytvoření řádku pro nové záznamy, je založena na určeném řádku <xref:System.Windows.Forms.DataGridView.RowTemplate%2A> vlastnost. Všechny styly buňky, které nejsou zadané pro tento řádek se dědí z dalších vlastností. Další informace o dědičnosti styl buňky, naleznete v tématu [styly buňky v ovládacím prvku Windows Forms DataGridView](cell-styles-in-the-windows-forms-datagridview-control.md).  
   
  Počáteční hodnoty pro nové záznamy se načítají z každé buňce zobrazí buňkami v řádku <xref:System.Windows.Forms.DataGridViewCell.DefaultNewRowValue%2A> vlastnost. Pro buňky ovládacího prvku typu <xref:System.Windows.Forms.DataGridViewImageCell>, vrátí tato vlastnost zástupné obrázky. V opačném případě vrátí tato vlastnost `null`. Tato vlastnost se vraťte na vlastní hodnotu lze přepsat. Ale tyto počáteční hodnoty mohou být nahrazeny <xref:System.Windows.Forms.DataGridView.DefaultValuesNeeded> obslužné rutiny události při fokusu zadá řádek pro nové záznamy.  
   
@@ -55,10 +55,10 @@ Při použití <xref:System.Windows.Forms.DataGridView> pro úpravy dat v aplika
  Řádek pro nové záznamy se vždy vytvoří v nevybraném stavu.  
   
 ## <a name="virtual-mode"></a>Virtuální režim  
- Pokud jsou implementace virtuálního režimu, je potřeba sledovat, kdy je potřeba řádek pro nové záznamy v datovém modelu a kdy se mají vrátit zpět přidání řádku. Přesné implementaci této funkce závisí na implementaci datového modelu a jeho transakce sémantiku, například, zda je obor potvrzení změn na úrovni buněk nebo řádků. Další informace najdete v tématu [virtuálního režimu v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/virtual-mode-in-the-windows-forms-datagridview-control.md).  
+ Pokud jsou implementace virtuálního režimu, je potřeba sledovat, kdy je potřeba řádek pro nové záznamy v datovém modelu a kdy se mají vrátit zpět přidání řádku. Přesné implementaci této funkce závisí na implementaci datového modelu a jeho transakce sémantiku, například, zda je obor potvrzení změn na úrovni buněk nebo řádků. Další informace najdete v tématu [virtuálního režimu v ovládacím prvku Windows Forms DataGridView](virtual-mode-in-the-windows-forms-datagridview-control.md).  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.DataGridView.DefaultValuesNeeded?displayProperty=nameWithType>
-- [Zadávání dat v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/data-entry-in-the-windows-forms-datagridview-control.md)
-- [Postupy: Určení výchozích hodnot pro nové řádky v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/specify-default-values-for-new-rows-in-the-datagrid.md)
+- [Zadávání dat v ovládacím prvku Windows Forms DataGridView](data-entry-in-the-windows-forms-datagridview-control.md)
+- [Postupy: Určení výchozích hodnot pro nové řádky v ovládacím prvku Windows Forms DataGridView](specify-default-values-for-new-rows-in-the-datagrid.md)

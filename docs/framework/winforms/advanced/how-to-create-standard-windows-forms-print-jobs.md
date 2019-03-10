@@ -10,12 +10,12 @@ helpviewer_keywords:
 - printing [Windows Forms], creating print jobs
 - printing [Visual Basic], in Windows applications
 ms.assetid: 03342b90-9cfe-40b2-838b-b479a13c5dea
-ms.openlocfilehash: 18078c5e6bf518487707a8dc5639b3d6aa8a5783
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: b0568472dadceb46257a8d35211034a718aef74c
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54723339"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57705218"
 ---
 # <a name="how-to-create-standard-windows-forms-print-jobs"></a>Postupy: Vytvoření tiskových úloh standardní Windows Forms
 Je základem pro tisk ve Windows Forms <xref:System.Drawing.Printing.PrintDocument> komponenty – přesněji řečeno <xref:System.Drawing.Printing.PrintDocument.PrintPage> událostí. Napsáním kódu pro zpracování <xref:System.Drawing.Printing.PrintDocument.PrintPage> událostí, můžete určit, co se má tisknout a jak ho vytisknout.  
@@ -72,10 +72,10 @@ Je základem pro tisk ve Windows Forms <xref:System.Drawing.Printing.PrintDocume
      Můžete také napsat kód pro <xref:System.Drawing.Printing.PrintDocument.BeginPrint> a <xref:System.Drawing.Printing.PrintDocument.EndPrint> události, například včetně celé číslo představující celkový počet stránek pro tisk, který je snížen vytiskne každou stránku.  
   
     > [!NOTE]
-    >  Můžete přidat <xref:System.Windows.Forms.PrintDialog> komponentu do formuláře k uživatelům poskytnout přehledné a efektivnější uživatelského rozhraní (UI). Nastavení <xref:System.Windows.Forms.PrintDialog.Document%2A> vlastnost <xref:System.Windows.Forms.PrintDialog> komponenta povoluje vám umožní nastavit vlastnosti související s tisk dokumentu je pracujete na formuláři. Další informace o <xref:System.Windows.Forms.PrintDialog> komponenty, naleznete v tématu [komponenty PrintDialog](../../../../docs/framework/winforms/controls/printdialog-component-windows-forms.md).  
+    >  Můžete přidat <xref:System.Windows.Forms.PrintDialog> komponentu do formuláře k uživatelům poskytnout přehledné a efektivnější uživatelského rozhraní (UI). Nastavení <xref:System.Windows.Forms.PrintDialog.Document%2A> vlastnost <xref:System.Windows.Forms.PrintDialog> komponenta povoluje vám umožní nastavit vlastnosti související s tisk dokumentu je pracujete na formuláři. Další informace o <xref:System.Windows.Forms.PrintDialog> komponenty, naleznete v tématu [komponenty PrintDialog](../controls/printdialog-component-windows-forms.md).  
   
      Další informace o podrobnosti Windows Forms tiskové úlohy, včetně vytvoření tiskovou úlohu prostřednictvím kódu programu, najdete v části <xref:System.Drawing.Printing.PrintPageEventArgs>.  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Drawing.Printing.PrintDocument>
-- [Podpora tisku v modelu Windows Forms](../../../../docs/framework/winforms/advanced/windows-forms-print-support.md)
+- [Podpora tisku v modelu Windows Forms](windows-forms-print-support.md)

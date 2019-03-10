@@ -2,12 +2,12 @@
 title: Aktivace instance
 ms.date: 03/30/2017
 ms.assetid: 134c3f70-5d4e-46d0-9d49-469a6643edd8
-ms.openlocfilehash: 78f134ca2d78261a5f6ff9376bd9a98116315f0c
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 41dfc076bdee72c2f4d0c781c6588caa927c740e
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57366042"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57703397"
 ---
 # <a name="instance-activation"></a>Aktivace instance
 Store Instance pracovního postupu SQL spouští interní úlohy, která pravidelně probudí a instance pracovních postupů spustitelných nebo aktivovatelné zjistí databáze trvalosti. Pokud najde instance pracovního postupu spustitelný, upozorní hostitele pracovního postupu, které podporují aktivaci instance. Pokud v úložišti instancí najde instanci aktivovatelné pracovního postupu, upozorní obecný hostitele, který aktivuje hostitele pracovního postupu, která pak spustí instanci pracovního postupu. Následující části v tomto tématu popisují proces aktivace instance podrobně.  
@@ -40,4 +40,4 @@ Store Instance pracovního postupu SQL spouští interní úlohy, která pravide
  Pro aktivaci WAS obecný hostitel vyžaduje sadu parametrů aktivace pro odvození adresu koncového bodu, ve kterém můžete aktivovat nové hostitele. Parametry aktivace pro aktivaci WAS jsou název lokality, cesta k aplikaci vzhledem k webu a cestu ke službě vzhledem k aplikaci. Store Instance pracovního postupu SQL ukládá tyto parametry aktivace během provádění <xref:System.Activities.DurableInstancing.SaveWorkflowCommand>.  
   
 ## <a name="runnable-instances-detection-period"></a>Interval detekce spustitelných instancí  
- **Období zjišťování spustitelných instancí** vlastnost Store Instance pracovního postupu SQL určuje časové období, po jejímž uplynutí Store Instance pracovního postupu SQL spustí úlohu detekce zjistit žádné spustitelné nebo aktivovatelné pracovního postupu instance databáze stálost po dokončení předchozího cyklu zjišťování. Zobrazit [období zjišťování spustitelných instancí](../../../docs/framework/windows-workflow-foundation/runnable-instances-detection-period.md) podrobné informace o této vlastnosti.
+ **Období zjišťování spustitelných instancí** vlastnost Store Instance pracovního postupu SQL určuje časové období, po jejímž uplynutí Store Instance pracovního postupu SQL spustí úlohu detekce zjistit žádné spustitelné nebo aktivovatelné pracovního postupu instance databáze stálost po dokončení předchozího cyklu zjišťování. Zobrazit [období zjišťování spustitelných instancí](runnable-instances-detection-period.md) podrobné informace o této vlastnosti.

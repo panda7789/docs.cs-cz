@@ -5,39 +5,39 @@ helpviewer_keywords:
 - BackgroundWorker component
 - threading [Windows Forms], controls
 ms.assetid: c311d652-0f26-45fa-bdcc-b1615d73ce4e
-ms.openlocfilehash: 68822c62a1a195ce3128d51c765cfeba2056955d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: cc7f358a62c8057abb77e1f5a28544bb6c858d98
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33536354"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57703319"
 ---
 # <a name="multithreading-in-windows-forms-controls"></a>Podpora více vláken v ovládacích prvcích Windows Forms
-V mnoha aplikacích můžete nastavit vaše uživatelské rozhraní (UI), které jsou rychlejšího provedením časově náročná operace na jiné vlákno. Počet nástroje jsou k dispozici pro multithreading vaše ovládací prvky Windows Forms, včetně <xref:System.Threading> obor názvů, <xref:System.Windows.Forms.Control.BeginInvoke%2A?displayProperty=nameWithType> metoda a `BackgroundWorker` součásti.  
+V mnoha aplikacích můžete provést uživatelského rozhraní (UI), které jsou rychlejší reakce provedením časově náročných operací v jiném vlákně. Různé nástroje jsou k dispozici pro multithreading své ovládací prvky Windows Forms, včetně <xref:System.Threading> obor názvů, <xref:System.Windows.Forms.Control.BeginInvoke%2A?displayProperty=nameWithType> metody a `BackgroundWorker` komponenty.  
   
 > [!NOTE]
->  `BackgroundWorker` Součást nahrazuje a přidá funkce <xref:System.Threading> obor názvů a <xref:System.Windows.Forms.Control.BeginInvoke%2A?displayProperty=nameWithType> metoda; však tyto se zachovají pro zpětnou kompatibilitu a budoucí použití, pokud si zvolíte. Další informace najdete v tématu [BackgroundWorker – přehled komponenty](../../../../docs/framework/winforms/controls/backgroundworker-component-overview.md).  
+>  `BackgroundWorker` Komponenty nahradí a přidá funkce, které <xref:System.Threading> obor názvů a <xref:System.Windows.Forms.Control.BeginInvoke%2A?displayProperty=nameWithType> metoda; ale ty se zachovají pro zpětnou kompatibilitu a budoucí použití, pokud se rozhodnete. Další informace najdete v tématu [přehled komponenty BackgroundWorker](backgroundworker-component-overview.md).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Postupy: Volání (bezpečná pro přístup z více vláken) ovládacích prvků Windows Forms](../../../../docs/framework/winforms/controls/how-to-make-thread-safe-calls-to-windows-forms-controls.md)  
- Ukazuje, jak provádět volání bezpečného přístupu do Windows Forms – ovládací prvky.  
+ [Postupy: Bezpečné pro vlákna volání ovládacích prvků Windows Forms](how-to-make-thread-safe-calls-to-windows-forms-controls.md)  
+ Ukazuje, jak provádět volání bezpečným pro vlákno pro ovládací prvky Windows Forms.  
   
- [Postupy: Použití vlákna na pozadí k vyhledávání souborů](../../../../docs/framework/winforms/controls/how-to-use-a-background-thread-to-search-for-files.md)  
- Ukazuje, jak používat <xref:System.Threading> obor názvů a <xref:System.Windows.Forms.Control.BeginInvoke%2A> metody na hledání souborů asynchronně.  
+ [Postupy: Použití vlákna na pozadí k vyhledávání souborů](how-to-use-a-background-thread-to-search-for-files.md)  
+ Ukazuje způsob použití <xref:System.Threading> obor názvů a <xref:System.Windows.Forms.Control.BeginInvoke%2A> metody k vyhledání souborů asynchronně.  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.ComponentModel.BackgroundWorker>  
- Dokumenty komponentu, který zapouzdřuje pracovní vlákno pro asynchronní operace.  
+ Dokumenty komponenty, která zapouzdřuje pracovní vlákno pro asynchronní operace.  
   
  <xref:System.Media.SoundPlayer.LoadAsync%2A>  
- Obsahuje informace o tom, jak asynchronní načítání zvuku.  
+ Popisem asynchronní načítání zvuku.  
   
  <xref:System.Windows.Forms.PictureBox.LoadAsync%2A>  
- Dokumenty jak načíst obrázek asynchronně.  
+ Dokumenty o načtení obrázku asynchronně.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Postupy: Spuštění operace na pozadí](../../../../docs/framework/winforms/controls/how-to-run-an-operation-in-the-background.md)  
- Ukazuje, jak provést časově náročná operace s <xref:System.ComponentModel.BackgroundWorker> součásti.  
+ [Postupy: Spuštění operace na pozadí](how-to-run-an-operation-in-the-background.md)  
+ Ukazuje, jak provádět časově náročná operace s <xref:System.ComponentModel.BackgroundWorker> komponenty.  
   
- [Přehled komponenty BackgroundWorker](../../../../docs/framework/winforms/controls/backgroundworker-component-overview.md)  
- Obsahuje témata, která popisují způsob použití <xref:System.ComponentModel.BackgroundWorker> součásti pro asynchronní operace.
+ [Přehled komponenty BackgroundWorker](backgroundworker-component-overview.md)  
+ Obsahuje témata, které popisují způsob použití <xref:System.ComponentModel.BackgroundWorker> komponenty pro asynchronní operace.

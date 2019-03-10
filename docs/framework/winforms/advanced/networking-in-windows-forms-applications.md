@@ -5,32 +5,32 @@ helpviewer_keywords:
 - networking [Windows Forms], Windows Forms
 - Windows Forms, networking
 ms.assetid: babf8af3-8000-46e2-8c68-a42127efabba
-ms.openlocfilehash: 23251116344af49509547055af824802c4878849
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2432fbd0a2c769efb126e4b9c1dc19e35fbe4c31
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33523381"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57712367"
 ---
 # <a name="networking-in-windows-forms-applications"></a>Použití sítě ve formulářových aplikacích Windows
-Rozhraní .NET Framework poskytuje třídy pro zobrazení webové stránky, stahování obsahu webu, interakci s weby protokolu FTP pro přenos souboru a využívání webových služeb, což usnadňuje sestavení síťové funkce do své aplikace. Následující prostředky vám pomůže porozumět síťové technologie rozhraní .NET Framework a jak je můžete integrovat do Windows Forms.  
+Rozhraní .NET Framework poskytuje třídy pro zobrazení webových stránek, stahování obsahu, interakci s weby souboru přenos protokolu FTP a používání webových služeb, což usnadňuje vytváření síťové funkce do vaší aplikace. Následující prostředky vám pomůže pochopit síťové technologie rozhraní .NET Framework a jak je můžete integrovat do formulářů Windows.  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Net>  
- Kořenový obor názvů pro třídy v rozhraní .NET Framework Tento popisovač síťové připojení.  
+ Kořenový obor názvů pro třídy v rozhraní .NET Framework popisovač síťové propojení.  
   
  <xref:System.Net.WebClient>  
- Pohodlný třída pro načítání webové nebo založené na protokolu HTTP obsahu prostřednictvím kódu programu.  
+ Pohodlné třída pro načítání webové nebo obsah ve formátu HTTP prostřednictvím kódu programu.  
   
  <xref:System.Net.FtpWebRequest>  
- Třída pro načítání a odesílání souborů pomocí protokolu FTP.  
+ Třída pro načítání a odesílání souborů s využitím protokolu FTP.  
   
  <xref:System.Windows.Forms.WebBrowser>  
- Třída spravovaná obálka pro `WebBrowser` ovládací prvek, který je součástí systému Windows.  
+ Spravované obálkovou třídu pro `WebBrowser` ovládací prvek, který je součástí Windows.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Síťové programování v rozhraní .NET Framework](../../../../docs/framework/network-programming/index.md)  
+ [Síťové programování v rozhraní .NET Framework](../../network-programming/index.md)  
  Úvod do sítě v rozhraní .NET Framework.  
   
- [Windows Forms – datová vazba](../../../../docs/framework/winforms/windows-forms-data-binding.md)  
- Popisuje, jak zobrazit obsah databáze ve vaší aplikaci, buď z úložiště dat pro místní nebo databázi umístěné v síti.
+ [Windows Forms – datová vazba](../windows-forms-data-binding.md)  
+ Popisuje, jak zobrazit obsah databáze ve vaší aplikaci, buď z místní úložiště nebo databáze nachází v síti.

@@ -12,12 +12,12 @@ helpviewer_keywords:
 - data binding [Windows Forms], interfaces
 - IDataErrorInfo interface [Windows Forms], Windows Forms data binding
 ms.assetid: 14e49a2e-3e46-47ca-b491-70d546333277
-ms.openlocfilehash: 5a83198a665563c3d283cac042c9fec95c60f8e2
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ec72b67da72bde9392d523787e8c0d4d0981ad7b
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54547128"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57703527"
 ---
 # <a name="interfaces-related-to-data-binding"></a>Rozhraní související s datovou vazbou
 S [!INCLUDE[vstecado](../../../includes/vstecado-md.md)], můžete vytvořit mnoha různými datovými strukturami vazby potřebám vaší aplikace a data, že pracujete s. Můžete chtít vytvořit vlastní třídy, které poskytují nebo využívají data v modelu Windows Forms. Tyto objekty lze nabízejí různé úrovně funkčnosti a složitosti, na základní datové vazby k poskytování podpory během návrhu, kontroly chyb, oznámení o změně nebo dokonce i podporu pro strukturované vrátit zpět změny provedené na vlastní data.  
@@ -150,6 +150,6 @@ S [!INCLUDE[vstecado](../../../includes/vstecado-md.md)], můžete vytvořit mno
     >  Třída, která dědí z <xref:System.Windows.Forms.Control> spravuje vazby automaticky prostřednictvím jeho <xref:System.Windows.Forms.Control.BindingContext%2A> vlastnosti, takže případy, ve kterých je nutné implementovat <xref:System.Windows.Forms.ICurrencyManagerProvider> jsou velmi malý.  
   
 ## <a name="see-also"></a>Viz také:
-- [Datové vazby a Windows Forms](../../../docs/framework/winforms/data-binding-and-windows-forms.md)
-- [Postupy: Vytvoření jednoduše vázaného ovládacího prvku ve formuláři Windows](../../../docs/framework/winforms/how-to-create-a-simple-bound-control-on-a-windows-form.md)
-- [Windows Forms – datová vazba](../../../docs/framework/winforms/windows-forms-data-binding.md)
+- [Datové vazby a Windows Forms](data-binding-and-windows-forms.md)
+- [Postupy: Vytvoření jednoduše vázaného ovládacího prvku ve formuláři Windows](how-to-create-a-simple-bound-control-on-a-windows-form.md)
+- [Windows Forms – datová vazba](windows-forms-data-binding.md)

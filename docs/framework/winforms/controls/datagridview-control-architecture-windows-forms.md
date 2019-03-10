@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - DataGridView control [Windows Forms], architecture
 ms.assetid: 1c6cabf0-02ee-4bbc-9574-b54bb7f5b19e
-ms.openlocfilehash: c57f7d22219c0cda91dad174be4e225808a9949d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d215eeaa367156c6228615a8f6e0a7f889efdf60
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54494922"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57713810"
 ---
 # <a name="datagridview-control-architecture-windows-forms"></a>Architektura ovládacího prvku DataGridView (Windows Forms)
 <xref:System.Windows.Forms.DataGridView> Ovládacího prvku a jeho souvisejícími třídami jsou navržené tak flexibilní a rozšiřitelný systém pro zobrazení a úpravy tabulková data. Tyto třídy jsou obsaženy v <xref:System.Windows.Forms?displayProperty=nameWithType> obor názvů a že jsou všechny pojmenované s předponou "DataGridView".  
@@ -17,7 +17,7 @@ ms.locfileid: "54494922"
 ## <a name="architecture-elements"></a>Prvky architektury  
  Primární <xref:System.Windows.Forms.DataGridView> doprovodné třídy odvozovat z <xref:System.Windows.Forms.DataGridViewElement>. Následující objektový model ukazuje <xref:System.Windows.Forms.DataGridViewElement> hierarchii dědičnosti.  
   
- ![DataGridViewElement – objektový Model](../../../../docs/framework/winforms/controls/media/datagridviewelement.gif "DataGridViewElement –")  
+ ![DataGridViewElement – objektový Model](./media/datagridviewelement.gif "DataGridViewElement –")  
 DataGridViewElement – objektový model  
   
  <xref:System.Windows.Forms.DataGridViewElement> Třída poskytuje odkaz na nadřazený <xref:System.Windows.Forms.DataGridView> ovládací prvek a má <xref:System.Windows.Forms.DataGridViewElement.State%2A> vlastnost, která obsahuje hodnotu, která představuje kombinaci hodnot z <xref:System.Windows.Forms.DataGridViewElementStates> výčtu.  
@@ -51,7 +51,7 @@ DataGridViewElement – objektový model
 ### <a name="datagridviewcell"></a>DataGridViewCell  
  Je základní jednotkou interakce pro buňku <xref:System.Windows.Forms.DataGridView>. U buněk zarovnaný na střed zobrazení a zadávání dat často probíhá prostřednictvím buňky. Přistupujete buňky pomocí <xref:System.Windows.Forms.DataGridViewRow.Cells%2A> kolekce <xref:System.Windows.Forms.DataGridViewRow> třídy kde můžete přistupovat pomocí vybrané buňky <xref:System.Windows.Forms.DataGridView.SelectedCells%2A> kolekce <xref:System.Windows.Forms.DataGridView> ovládacího prvku. Následující objektový model ukazuje toto využití a ukazuje, <xref:System.Windows.Forms.DataGridViewCell> hierarchii dědičnosti.  
   
- ![DataGridViewCell Object Model](../../../../docs/framework/winforms/controls/media/datagridviewcell.gif "DataGridViewCell")  
+ ![DataGridViewCell Object Model](./media/datagridviewcell.gif "DataGridViewCell")  
 Model objektu DataGridViewCell  
   
  <xref:System.Windows.Forms.DataGridViewCell> Typ je abstraktní základní třída, ze které jsou odvozeny všechny typy buňky. <xref:System.Windows.Forms.DataGridViewCell> a jeho odvozených typů nejsou ovládacích prvků Windows Forms, ale některé hostitelské ovládací prvky Windows Forms. Žádné funkce pro úpravy podporovaných buňky je obvykle zpracovávána hostovaného ovládacího prvku.  
@@ -85,7 +85,7 @@ Model objektu DataGridViewCell
 ### <a name="datagridviewcolumn"></a>DataGridViewColumn  
  Schéma <xref:System.Windows.Forms.DataGridView> ovládacího prvku připojené datové úložiště je vyjádřen v <xref:System.Windows.Forms.DataGridView> sloupce ovládacího prvku. Můžete přistupovat <xref:System.Windows.Forms.DataGridView> sloupce ovládacího prvku s použitím <xref:System.Windows.Forms.DataGridView.Columns%2A> kolekce. Dostanete z vybraných sloupců pomocí <xref:System.Windows.Forms.DataGridView.SelectedColumns%2A> kolekce. Následující objektový model ukazuje toto využití a ukazuje, <xref:System.Windows.Forms.DataGridViewColumn> hierarchii dědičnosti.  
   
- ![DataGridViewColumn Object Model](../../../../docs/framework/winforms/controls/media/datagridviewcolumn.gif "DataGridViewColumn")  
+ ![DataGridViewColumn Object Model](./media/datagridviewcolumn.gif "DataGridViewColumn")  
 Ovládací prvek DataGridViewColumn objektový model  
   
  Některé typy klíčů buněk mají odpovídající typy sloupců. Tyto jsou odvozeny z <xref:System.Windows.Forms.DataGridViewColumn> základní třídy.  
@@ -109,7 +109,7 @@ Ovládací prvek DataGridViewColumn objektový model
 ### <a name="datagridview-editing-controls"></a>Úpravy ovládacích prvků DataGridView  
  Buňky, které podporují pokročilé funkce pro úpravy obvykle používají hostovaného ovládacího prvku, který je odvozen z ovládacího prvku Windows Forms. Tyto ovládací prvky implementovat taky <xref:System.Windows.Forms.IDataGridViewEditingControl> rozhraní. Následující objektový model ukazuje využití těchto ovládacích prvků.  
   
- ![Úpravy objektový Model ovládacího prvku DataGridView](../../../../docs/framework/winforms/controls/media/datagridviewediting.gif "DataGridViewEditing")  
+ ![Úpravy objektový Model ovládacího prvku DataGridView](./media/datagridviewediting.gif "DataGridViewEditing")  
 Objektový model úprav ovládacího prvku DataGridView  
   
  Následující ovládací prvky pro úpravy jsou součástí <xref:System.Windows.Forms.DataGridView> ovládacího prvku:  
@@ -118,7 +118,7 @@ Objektový model úprav ovládacího prvku DataGridView
   
 -   <xref:System.Windows.Forms.DataGridViewTextBoxEditingControl>  
   
- Informace o vytváření vlastních úprav ovládacích prvků naleznete v tématu [jak: Hostování ovládacích prvků ve Windows Forms DataGridView buňky](../../../../docs/framework/winforms/controls/how-to-host-controls-in-windows-forms-datagridview-cells.md).  
+ Informace o vytváření vlastních úprav ovládacích prvků naleznete v tématu [jak: Hostování ovládacích prvků ve Windows Forms DataGridView buňky](how-to-host-controls-in-windows-forms-datagridview-cells.md).  
   
  Následující tabulka znázorňuje vztah mezi typy buněk, typy sloupců a ovládací prvky pro úpravy.  
   
@@ -134,14 +134,14 @@ Objektový model úprav ovládacího prvku DataGridView
 ### <a name="datagridviewrow"></a>DataGridViewRow  
  <xref:System.Windows.Forms.DataGridViewRow> Třídy zobrazí pole záznamu dat z data ukládat do kterého <xref:System.Windows.Forms.DataGridView> ovládací prvek připojen. Můžete přistupovat <xref:System.Windows.Forms.DataGridView> řádků ovládacího prvku s použitím <xref:System.Windows.Forms.DataGridView.Rows%2A> kolekce. Vybrané řádky přístupné prostřednictvím <xref:System.Windows.Forms.DataGridView.SelectedRows%2A> kolekce. Následující objektový model ukazuje toto využití a ukazuje, <xref:System.Windows.Forms.DataGridViewRow> hierarchii dědičnosti.  
   
- ![Model objektu DataGridViewRow](../../../../docs/framework/winforms/controls/media/datagridviewrow.gif "DataGridViewRow")  
+ ![Model objektu DataGridViewRow](./media/datagridviewrow.gif "DataGridViewRow")  
 DataGridViewRow objektový model  
   
  Můžete odvozovat vlastní typy z <xref:System.Windows.Forms.DataGridViewRow> třídy, i když to není obvykle nutné. <xref:System.Windows.Forms.DataGridView> Ovládací prvek má několik řádků související události a vlastnosti pro přizpůsobení chování jeho <xref:System.Windows.Forms.DataGridViewRow> objekty.  
   
- Pokud povolíte <xref:System.Windows.Forms.DataGridView> ovládacího prvku <xref:System.Windows.Forms.DataGridView.AllowUserToAddRows%2A> , zvláštní řádek pro přidání nových řádků se zobrazí jako poslední řádek. Tento řádek je součástí <xref:System.Windows.Forms.DataGridView.Rows%2A> kolekce, ale má speciální funkce, které můžou vyžadovat vaši pozornost. Další informace najdete v tématu [použití řádku pro nové záznamy v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/using-the-row-for-new-records-in-the-windows-forms-datagridview-control.md).  
+ Pokud povolíte <xref:System.Windows.Forms.DataGridView> ovládacího prvku <xref:System.Windows.Forms.DataGridView.AllowUserToAddRows%2A> , zvláštní řádek pro přidání nových řádků se zobrazí jako poslední řádek. Tento řádek je součástí <xref:System.Windows.Forms.DataGridView.Rows%2A> kolekce, ale má speciální funkce, které můžou vyžadovat vaši pozornost. Další informace najdete v tématu [použití řádku pro nové záznamy v ovládacím prvku Windows Forms DataGridView](using-the-row-for-new-records-in-the-windows-forms-datagridview-control.md).  
   
 ## <a name="see-also"></a>Viz také:
-- [Přehled ovládacího prvku DataGridView](../../../../docs/framework/winforms/controls/datagridview-control-overview-windows-forms.md)
-- [Přizpůsobení ovládacího prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/customizing-the-windows-forms-datagridview-control.md)
-- [Použití řádku pro nové záznamy v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/using-the-row-for-new-records-in-the-windows-forms-datagridview-control.md)
+- [Přehled ovládacího prvku DataGridView](datagridview-control-overview-windows-forms.md)
+- [Přizpůsobení ovládacího prvku Windows Forms DataGridView](customizing-the-windows-forms-datagridview-control.md)
+- [Použití řádku pro nové záznamy v ovládacím prvku Windows Forms DataGridView](using-the-row-for-new-records-in-the-windows-forms-datagridview-control.md)

@@ -11,12 +11,12 @@ helpviewer_keywords:
 - PictureBox control [Windows Forms], picture size and alignment
 - pictures [Windows Forms], controlling placement in PictureBox control [Windows Forms]
 ms.assetid: d0b332a3-fae2-4891-957c-dc3e17743326
-ms.openlocfilehash: fa8bdf17f7dc7f6d09059e54b208acaec6207e48
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 021cb448e5dbcb3ea1405d5cedaed1ae6d4f1b53
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54604779"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57709783"
 ---
 # <a name="how-to-modify-the-size-or-placement-of-a-picture-at-run-time-windows-forms"></a>Postupy: Změna velikosti či umístění obrázku za běhu (Windows Forms)
 Pokud používáte Windows Forms <xref:System.Windows.Forms.PictureBox> ovládací prvek ve formuláři, můžete nastavit <xref:System.Windows.Forms.PictureBox.SizeMode%2A> vlastnost ji:  
@@ -84,7 +84,7 @@ Pokud používáte Windows Forms <xref:System.Windows.Forms.PictureBox> ovládac
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Forms.PictureBox>
-- [Postupy: Načtení obrázku pomocí návrháře](../../../../docs/framework/winforms/controls/how-to-load-a-picture-using-the-designer-windows-forms.md)
-- [Přehled ovládacího prvku PictureBox](../../../../docs/framework/winforms/controls/picturebox-control-overview-windows-forms.md)
-- [Postupy: Nastavení obrázků za běhu](../../../../docs/framework/winforms/controls/how-to-set-pictures-at-run-time-windows-forms.md)
-- [Ovládací prvek PictureBox](../../../../docs/framework/winforms/controls/picturebox-control-windows-forms.md)
+- [Postupy: Načtení obrázku pomocí návrháře](how-to-load-a-picture-using-the-designer-windows-forms.md)
+- [Přehled ovládacího prvku PictureBox](picturebox-control-overview-windows-forms.md)
+- [Postupy: Nastavení obrázků za běhu](how-to-set-pictures-at-run-time-windows-forms.md)
+- [Ovládací prvek PictureBox](picturebox-control-windows-forms.md)

@@ -2,12 +2,12 @@
 title: Povinné argumenty a skupiny přetížení
 ms.date: 03/30/2017
 ms.assetid: 4ca3ed06-b9af-4b85-8b70-88c2186aefa3
-ms.openlocfilehash: d7cfe00d93f1eede77bcda5881c63843722c9a17
-ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
+ms.openlocfilehash: b5006a201ce5db68e925bd5764fadde308bbccb4
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49452898"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57707869"
 ---
 # <a name="required-arguments-and-overload-groups"></a>Povinné argumenty a skupiny přetížení
 Aktivity lze nastavit tak, aby některé argumenty jsou povinné vázat pro aktivitu platná pro spuštění. `RequiredArgument` Atribut se používá k označení, že se vyžadují některé argumenty pro aktivitu a `OverloadGroup` atribut se používá k seskupení kategorie povinnými argumenty. Pomocí atributů lze aktivity autoři uvádějí aktivitu jednoduchých nebo složitých ověření konfigurace.  
@@ -63,7 +63,7 @@ public sealed class Add : CodeActivity<int>
   
  **Nebyla zadána hodnota pro povinný argument aktivity "Operand1".**  
 > [!NOTE]
-> Další informace o zjišťování a zpracování chyby a upozornění ověření najdete v tématu [vyvolání ověřování aktivit](../../../docs/framework/windows-workflow-foundation/invoking-activity-validation.md).  
+> Další informace o zjišťování a zpracování chyby a upozornění ověření najdete v tématu [vyvolání ověřování aktivit](invoking-activity-validation.md).  
   
 ## <a name="using-overload-groups"></a>Používání skupiny přetížení
 
@@ -106,7 +106,7 @@ class CreateLocation: Activity
   
  Cílem této aktivity je a zadejte umístění v USA. K tomuto účelu můžete zadat uživatelské aktivity umístění pomocí jedné ze tří skupin argumentů. Chcete-li určit platné kombinace argumentů, jsou definovány tři přetížené skupiny. `G1` obsahuje `Latitude` a `Longitude` argumenty. `G2` obsahuje `Street`, `City`, a `State`. `G3` obsahuje `Street` a `Zip`. `Name` je také požadovaný argument, ale není součástí skupiny přetížení. Pro tuto aktivitu platná `Name` musel být vázaný spolu s všechny argumenty z jeden a pouze jednu přetíženou skupinu.  
   
- V následujícím příkladu se pořídí z [aktivity přístupu k databázi](../../../docs/framework/windows-workflow-foundation/samples/database-access-activities.md) ukázku, existují dvě přetížení skupin: `ConnectionString` a `ConfigFileSectionName`. Pro tuto aktivitu platit, buď `ProviderName` a `ConnectionString` argumenty musí být vázán, nebo `ConfigName` argument, ale ne obojí.  
+ V následujícím příkladu se pořídí z [aktivity přístupu k databázi](./samples/database-access-activities.md) ukázku, existují dvě přetížení skupin: `ConnectionString` a `ConfigFileSectionName`. Pro tuto aktivitu platit, buď `ProviderName` a `ConnectionString` argumenty musí být vázán, nebo `ConfigName` argument, ale ne obojí.  
   
 ```  
 Public class DbUpdate: AsyncCodeActivity  

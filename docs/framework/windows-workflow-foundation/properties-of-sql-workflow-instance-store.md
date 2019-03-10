@@ -2,29 +2,29 @@
 title: Vlastnosti Store Instance pracovních postupů SQL
 ms.date: 03/30/2017
 ms.assetid: 5bf75f3c-8f33-450d-967f-6ee862c14c67
-ms.openlocfilehash: 202234c6447ec34295892e23482cc74ac8fc2024
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 7490528d31d76c62b15b32cc1f809ecfe9126eca
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54543981"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57704320"
 ---
 # <a name="properties-of-sql-workflow-instance-store"></a>Vlastnosti Store Instance pracovních postupů SQL
 Témata v této části obsahují podrobnosti o vlastnostech Store Instance pracovního postupu SQL.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
   
--   [Možnost kódování instance](../../../docs/framework/windows-workflow-foundation/instance-encoding-option.md)  
+-   [Možnost kódování instance](instance-encoding-option.md)  
   
--   [Akce dokončení instance](../../../docs/framework/windows-workflow-foundation/instance-completion-action.md)  
+-   [Akce dokončení instance](instance-completion-action.md)  
   
--   [Akce uzamčené výjimky instance](../../../docs/framework/windows-workflow-foundation/instance-locked-exception-action.md)  
+-   [Akce uzamčené výjimky instance](instance-locked-exception-action.md)  
   
--   [Interval obnovování zámku hostitele](../../../docs/framework/windows-workflow-foundation/host-lock-renewal-period.md)  
+-   [Interval obnovování zámku hostitele](host-lock-renewal-period.md)  
   
--   [Interval detekce spustitelných instancí](../../../docs/framework/windows-workflow-foundation/runnable-instances-detection-period.md)  
+-   [Interval detekce spustitelných instancí](runnable-instances-detection-period.md)  
   
--   [Připojovací řetězec a název připojovacího řetězce](../../../docs/framework/windows-workflow-foundation/connection-string-and-connection-string-name.md)  
+-   [Připojovací řetězec a název připojovacího řetězce](connection-string-and-connection-string-name.md)  
   
 ## <a name="see-also"></a>Viz také:
 - [Windows Server App Fabric Instance Store](https://go.microsoft.com/fwlink/?LinkId=201201)

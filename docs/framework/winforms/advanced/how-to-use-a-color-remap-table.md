@@ -9,12 +9,12 @@ helpviewer_keywords:
 - custom colors [Windows Forms], creating with color remap table
 - color remap tables [Windows Forms], using
 ms.assetid: 977df1ce-8665-42d4-9fb1-ef7f0ff63419
-ms.openlocfilehash: 06a25179a3afc004029972bbf7d4d5691d42b25b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 72965d6968aab256579929acc00e629bcd3c71f0
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54683908"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57707330"
 ---
 # <a name="how-to-use-a-color-remap-table"></a>Postupy: Použití tabulky přemapování barev
 Přemapování je proces převodu barvy v bitovou kopii podle tabulky přemapování barev. Tabulky přemapování barev je pole <xref:System.Drawing.Imaging.ColorMap> objekty. Každý <xref:System.Drawing.Imaging.ColorMap> objekt pole má <xref:System.Drawing.Imaging.ColorMap.OldColor%2A> vlastnost a <xref:System.Drawing.Imaging.ColorMap.NewColor%2A> vlastnost.  
@@ -28,14 +28,14 @@ Přemapování je proces převodu barvy v bitovou kopii podle tabulky přemapov�
   
  Následující obrázek znázorňuje původní obrázek na levé straně a změnu mapování image na pravé straně.  
   
- ![Přemapování barev](../../../../docs/framework/winforms/advanced/media/colortrans7.png "colortrans7")  
+ ![Přemapování barev](./media/colortrans7.png "colortrans7")  
   
- [!code-csharp[System.Drawing.RecoloringImages#31](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.RecoloringImages/CS/Class1.cs#31)]
- [!code-vb[System.Drawing.RecoloringImages#31](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.RecoloringImages/VB/Class1.vb#31)]  
+ [!code-csharp[System.Drawing.RecoloringImages#31](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.RecoloringImages/CS/Class1.cs#31)]
+ [!code-vb[System.Drawing.RecoloringImages#31](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.RecoloringImages/VB/Class1.vb#31)]  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  V předchozím příkladu je určený k použití pomocí Windows Forms a vyžaduje <xref:System.Windows.Forms.PaintEventArgs> `e`, což je parametr <xref:System.Windows.Forms.Control.Paint> obslužné rutiny události.  
   
 ## <a name="see-also"></a>Viz také:
-- [Přebarvení obrázků](../../../../docs/framework/winforms/advanced/recoloring-images.md)
-- [Obrázky, rastrové obrázky a metasoubory](../../../../docs/framework/winforms/advanced/images-bitmaps-and-metafiles.md)
+- [Přebarvení obrázků](recoloring-images.md)
+- [Obrázky, rastrové obrázky a metasoubory](images-bitmaps-and-metafiles.md)

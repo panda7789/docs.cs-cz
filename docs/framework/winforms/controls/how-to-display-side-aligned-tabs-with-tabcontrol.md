@@ -9,12 +9,12 @@ helpviewer_keywords:
 - tabs [Windows Forms], displaying side-aligned tabs
 - TabControl control [Windows Forms], displaying side-aligned tabs
 ms.assetid: 110d5abd-3ae3-4ded-95bf-778aaac798a0
-ms.openlocfilehash: 9b2d691cb41a48b51bb48291e321d763a9ff7e08
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 8715cb1a1f0d5795afc4003afcecdb3fb89912c3
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54650574"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57705181"
 ---
 # <a name="how-to-display-side-aligned-tabs-with-tabcontrol"></a>Postupy: Zobrazení bočně zarovnaných karet pomocí TabControl
 <xref:System.Windows.Forms.TabControl.Alignment%2A> Vlastnost <xref:System.Windows.Forms.TabControl> podporuje zobrazení tabulek svisle (podél levého nebo pravého okraje ovládacího prvku) nikoli vodorovně (v horní nebo dolní okraj ovládacího prvku). Ve výchozím nastavení, svislé zobrazení má za následek nízký uživatelské prostředí, protože <xref:System.Windows.Forms.TabPage.Text%2A> vlastnost <xref:System.Windows.Forms.TabPage> objekt se nezobrazuje na kartě Pokud jsou vizuální styly povoleny. Neexistuje žádný přímý způsob, jak řídit směr textu v kartě. Můžete použít vlastníka nakreslit <xref:System.Windows.Forms.TabControl> na zdokonalování tohoto prostředí.  
@@ -37,8 +37,8 @@ ms.locfileid: "54650574"
   
 6.  Definování obslužné rutiny pro <xref:System.Windows.Forms.TabControl.DrawItem> událost <xref:System.Windows.Forms.TabControl> , která generuje text zleva doprava.  
   
-     [!code-csharp[TabControl.RightAlignedTabs#1](../../../../samples/snippets/csharp/VS_Snippets_Winforms/TabControl.RightAlignedTabs/CS/Form1.cs#1)]
-     [!code-vb[TabControl.RightAlignedTabs#1](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/TabControl.RightAlignedTabs/VB/Form1.vb#1)]  
+     [!code-csharp[TabControl.RightAlignedTabs#1](~/samples/snippets/csharp/VS_Snippets_Winforms/TabControl.RightAlignedTabs/CS/Form1.cs#1)]
+     [!code-vb[TabControl.RightAlignedTabs#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/TabControl.RightAlignedTabs/VB/Form1.vb#1)]  
   
 ## <a name="see-also"></a>Viz také:
-- [Ovládací prvek TabControl](../../../../docs/framework/winforms/controls/tabcontrol-control-windows-forms.md)
+- [Ovládací prvek TabControl](tabcontrol-control-windows-forms.md)

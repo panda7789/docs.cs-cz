@@ -9,12 +9,12 @@ helpviewer_keywords:
 - controls [Windows Forms]
 - custom controls [Windows Forms]
 ms.assetid: fddbe951-4485-459d-a5fd-665ea346dbc1
-ms.openlocfilehash: 8ab1fa9ccbffc7ca9621e32e00455a9b75a91126
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e8ae5ec00ee488f0b7400bfa99483c4efc29e016
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54533085"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57703241"
 ---
 # <a name="overview-of-using-controls-in-windows-forms"></a>Přehled používání ovládacích prvků ve Windows Forms
 Toto téma popisuje základní prvky aplikace modelu Windows Forms a nabízí jednoduchý příklad, který používá ovládací prvky a zpracovává události v aplikaci Windows Forms.  
@@ -224,5 +224,5 @@ public class MyForm : Form {
 ```  
   
 ## <a name="see-also"></a>Viz také:
-- [Vývoj vlastních ovládacích prvků Windows Forms pomocí rozhraní .NET Framework](../../../../docs/framework/winforms/controls/developing-custom-windows-forms-controls.md)
-- [Základní informace o vývoji ovládacích prvků Windows Forms](../../../../docs/framework/winforms/controls/windows-forms-control-development-basics.md)
+- [Vývoj vlastních ovládacích prvků Windows Forms pomocí rozhraní .NET Framework](developing-custom-windows-forms-controls.md)
+- [Základní informace o vývoji ovládacích prvků Windows Forms](windows-forms-control-development-basics.md)

@@ -7,21 +7,21 @@ helpviewer_keywords:
 - data formats
 - data [Windows Forms], setting formats
 ms.assetid: fc6da49f-8942-41da-b49f-b2afc38cc656
-ms.openlocfilehash: 4a4cd1e7582e6e7443ceb1f4188eb3359638d8df
-ms.sourcegitcommit: 0069cb3de8eed4e92b2195d29e5769a76111acdd
+ms.openlocfilehash: 44180c1d8e7f6fd29778ef6b9f5bd5e333c3ece2
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "56332205"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57702344"
 ---
 # <a name="how-to-set-default-cell-styles-and-data-formats-for-the-windows-forms-datagridview-control-using-the-designer"></a>Postupy: Nastavení výchozích stylů buňky a datových formátů pro ovládací prvek Windows Forms DataGridView pomocí návrháře
 <xref:System.Windows.Forms.DataGridView> Řízení umožňuje určení výchozích stylů buňky a datových formátů pro celý ovládací prvek, pro konkrétní sloupce, pro záhlaví řádků a sloupců a pro střídavé řádky k vytvoření účetní knihy efektu buňky. Ve výchozím nastavení nastavený styly sloupců a střídavé řádky se přepíšou výchozí styly nastavit pro celý ovládací prvek. Kromě toho stylů, které jste nastavili v kódu pro jednotlivé řádky a buňky přepsat výchozí styly.  
   
- Další informace o styly buňky v tématu [styly buňky v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/cell-styles-in-the-windows-forms-datagridview-control.md). Nastavení stylů střídavých řádků, najdete v článku [jak: Nastavení stylů střídavých řádků pro Windows Forms DataGridView pomocí návrháře](../../../../docs/framework/winforms/controls/set-alternating-row-styles-for-the-datagrid-using-the-designer.md).  
+ Další informace o styly buňky v tématu [styly buňky v ovládacím prvku Windows Forms DataGridView](cell-styles-in-the-windows-forms-datagridview-control.md). Nastavení stylů střídavých řádků, najdete v článku [jak: Nastavení stylů střídavých řádků pro Windows Forms DataGridView pomocí návrháře](set-alternating-row-styles-for-the-datagrid-using-the-designer.md).  
   
- Můžete také nastavit pomocí stylů <xref:System.Windows.Forms.DataGridView.RowTemplate%2A> vlastnost ovlivnit všechny řádky, které se přidají do ovládacího prvku. Další informace o šabloně řádku, naleznete v tématu [jak: Použití šablony řádku k přizpůsobení řádků v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/use-the-row-template-to-customize-rows-in-the-datagrid.md).  
+ Můžete také nastavit pomocí stylů <xref:System.Windows.Forms.DataGridView.RowTemplate%2A> vlastnost ovlivnit všechny řádky, které se přidají do ovládacího prvku. Další informace o šabloně řádku, naleznete v tématu [jak: Použití šablony řádku k přizpůsobení řádků v ovládacím prvku Windows Forms DataGridView](use-the-row-template-to-customize-rows-in-the-datagrid.md).  
   
- Následující postup vyžaduje **aplikace Windows** projektu s formulář obsahující <xref:System.Windows.Forms.DataGridView> ovládacího prvku. Informace o nastavení takový projekt, naleznete v tématu [jak: Vytvoření projektu aplikace Windows Forms](/visualstudio/ide/step-1-create-a-windows-forms-application-project) a [jak: Přidání ovládacích prvků Windows Forms](../../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md).  
+ Následující postup vyžaduje **aplikace Windows** projektu s formulář obsahující <xref:System.Windows.Forms.DataGridView> ovládacího prvku. Informace o nastavení takový projekt, naleznete v tématu [jak: Vytvoření projektu aplikace Windows Forms](/visualstudio/ide/step-1-create-a-windows-forms-application-project) a [jak: Přidání ovládacích prvků Windows Forms](how-to-add-controls-to-windows-forms.md).  
   
 > [!NOTE]
 >  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení integrovaného vývojového prostředí sady Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).  
@@ -30,7 +30,7 @@ ms.locfileid: "56332205"
   
 1.  Vyberte <xref:System.Windows.Forms.DataGridView> ovládací prvek v návrháři.  
   
-2.  V **vlastnosti** okna, klikněte na tlačítko se třemi tečkami (![snímek obrazovky VisualStudioEllipsesButton](../../../../docs/framework/winforms/media/vbellipsesbutton.png "vbEllipsesButton")) vedle položky <xref:System.Windows.Forms.DataGridView.DefaultCellStyle%2A>, <xref:System.Windows.Forms.DataGridView.ColumnHeadersDefaultCellStyle%2A>, nebo <xref:System.Windows.Forms.DataGridView.RowHeadersDefaultCellStyle%2A> vlastnost. **Sestavení objektu CellStyle** zobrazí se dialogové okno.  
+2.  V **vlastnosti** okna, klikněte na tlačítko se třemi tečkami (![snímek obrazovky VisualStudioEllipsesButton](../media/vbellipsesbutton.png "vbEllipsesButton")) vedle položky <xref:System.Windows.Forms.DataGridView.DefaultCellStyle%2A>, <xref:System.Windows.Forms.DataGridView.ColumnHeadersDefaultCellStyle%2A>, nebo <xref:System.Windows.Forms.DataGridView.RowHeadersDefaultCellStyle%2A> vlastnost. **Sestavení objektu CellStyle** zobrazí se dialogové okno.  
   
 3.  Definování styl nastavením vlastností, pomocí **ve verzi Preview** podokně zkontrolujte zvolené volby.  
   
@@ -45,7 +45,7 @@ ms.locfileid: "56332205"
   
 2.  Vyberte sloupec **vybrané sloupce** seznamu.  
   
-3.  V **vlastnosti sloupce** mřížky, klikněte na tlačítko se třemi tečkami (![snímek obrazovky VisualStudioEllipsesButton](../../../../docs/framework/winforms/media/vbellipsesbutton.png "vbEllipsesButton")) vedle položky <xref:System.Windows.Forms.DataGridViewColumn.DefaultCellStyle%2A> vlastnost. **Sestavení objektu CellStyle** zobrazí se dialogové okno.  
+3.  V **vlastnosti sloupce** mřížky, klikněte na tlačítko se třemi tečkami (![snímek obrazovky VisualStudioEllipsesButton](../media/vbellipsesbutton.png "vbEllipsesButton")) vedle položky <xref:System.Windows.Forms.DataGridViewColumn.DefaultCellStyle%2A> vlastnost. **Sestavení objektu CellStyle** zobrazí se dialogové okno.  
   
 4.  Definování styl nastavením vlastností, pomocí **ve verzi Preview** podokně zkontrolujte zvolené volby.  
   
@@ -53,7 +53,7 @@ ms.locfileid: "56332205"
   
 1.  Použijte jednu z předchozích postupů k zobrazení **sestavení objektu CellStyle** dialogovém související vlastnost Výchozí styl buňky.  
   
-2.  V **Tvůrce CellStyle** dialogového okna klikněte na tlačítko se třemi tečkami (![snímek obrazovky VisualStudioEllipsesButton](../../../../docs/framework/winforms/media/vbellipsesbutton.png "vbEllipsesButton")) vedle položky <xref:System.Windows.Forms.DataGridViewCellStyle.Format%2A> Vlastnost. **Formátovací řetězec** zobrazí se dialogové okno.  
+2.  V **Tvůrce CellStyle** dialogového okna klikněte na tlačítko se třemi tečkami (![snímek obrazovky VisualStudioEllipsesButton](../media/vbellipsesbutton.png "vbEllipsesButton")) vedle položky <xref:System.Windows.Forms.DataGridViewCellStyle.Format%2A> Vlastnost. **Formátovací řetězec** zobrazí se dialogové okno.  
   
 3.  Vyberte typ formátu a úpravě podobností o typ (například počet zobrazovaných desetinných míst), pomocí **ukázka** políčka potvrďte zvolené volby.  
   
@@ -66,7 +66,7 @@ ms.locfileid: "56332205"
 - <xref:System.Windows.Forms.DataGridView.RowsDefaultCellStyle%2A?displayProperty=nameWithType>
 - <xref:System.Windows.Forms.DataGridViewColumn.DefaultCellStyle%2A?displayProperty=nameWithType>
 - <xref:System.Windows.Forms.DataGridViewCellStyle.Format%2A?displayProperty=nameWithType>
-- [Styly buňky v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/cell-styles-in-the-windows-forms-datagridview-control.md)
-- [Postupy: Nastavení stylů střídavých řádků pro ovládací prvek Windows Forms DataGridView pomocí návrháře](../../../../docs/framework/winforms/controls/set-alternating-row-styles-for-the-datagrid-using-the-designer.md)
+- [Styly buňky v ovládacím prvku Windows Forms DataGridView](cell-styles-in-the-windows-forms-datagridview-control.md)
+- [Postupy: Nastavení stylů střídavých řádků pro ovládací prvek Windows Forms DataGridView pomocí návrháře](set-alternating-row-styles-for-the-datagrid-using-the-designer.md)
 - [Postupy: Vytvoření projektu aplikace Windows Forms](/visualstudio/ide/step-1-create-a-windows-forms-application-project)
-- [Postupy: Přidání ovládacích prvků do formulářů Windows](../../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md)
+- [Postupy: Přidání ovládacích prvků do formulářů Windows](how-to-add-controls-to-windows-forms.md)

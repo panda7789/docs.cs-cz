@@ -10,12 +10,12 @@ helpviewer_keywords:
 - examples [Windows Forms], toolbars
 - CanOverflow property
 ms.assetid: fa10e0ad-4cbf-4c0d-9082-359c2f855d4e
-ms.openlocfilehash: 24304b64b4214f9c15006e4f6cf35fac0bd0ced1
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: 53f610a728925d454a8833a49e705818f027aec5
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57480075"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57707271"
 ---
 # <a name="how-to-manage-toolstrip-overflow-in-windows-forms"></a>Postupy: Správa přetečení ToolStrip ve Windows Forms
 
@@ -49,6 +49,6 @@ Po přidání <xref:System.Windows.Forms.ToolStripItem>, které vyžadují více
 - <xref:System.Windows.Forms.ToolStripOverflowButton>
 - <xref:System.Windows.Forms.ToolStripItem.Overflow%2A>
 - <xref:System.Windows.Forms.ToolStrip.CanOverflow%2A>
-- [Přehled ovládacího prvku ToolStrip](../../../../docs/framework/winforms/controls/toolstrip-control-overview-windows-forms.md)
-- [Architektura ovládacího prvku ToolStrip](../../../../docs/framework/winforms/controls/toolstrip-control-architecture.md)
-- [Shrnutí technologie ToolStrip](../../../../docs/framework/winforms/controls/toolstrip-technology-summary.md)
+- [Přehled ovládacího prvku ToolStrip](toolstrip-control-overview-windows-forms.md)
+- [Architektura ovládacího prvku ToolStrip](toolstrip-control-architecture.md)
+- [Shrnutí technologie ToolStrip](toolstrip-technology-summary.md)

@@ -17,12 +17,12 @@ helpviewer_keywords:
 - threading [Windows Forms], background operations
 - background operations
 ms.assetid: 64e9b3ab-7443-4a77-ab17-b8b8c0cb3f62
-ms.openlocfilehash: d7d99cf87507237b23cb40c58b2308643f7f1056
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: da535da0b0d1416597d2a62a96cec544d7be68fb
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44185295"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57707609"
 ---
 # <a name="backgroundworker-component-overview"></a>BackgroundWorker – přehled komponenty
 Existuje mnoho běžně provádí operace, které může trvat dlouhou dobu spuštění. Příklad:  
@@ -47,21 +47,21 @@ Existuje mnoho běžně provádí operace, které může trvat dlouhou dobu spu�
   
  Chcete-li začít asynchronní operace, použijte <xref:System.ComponentModel.BackgroundWorker.RunWorkerAsync%2A> metody. <xref:System.ComponentModel.BackgroundWorker.RunWorkerAsync%2A> přijímá volitelný `object` parametr, který slouží k předání argumentů metodě pracovního procesu. <xref:System.ComponentModel.BackgroundWorker> Třídy zpřístupňuje <xref:System.ComponentModel.BackgroundWorker.DoWork> události, ke kterému je připojený pracovní podproces prostřednictvím <xref:System.ComponentModel.BackgroundWorker.DoWork> obslužné rutiny události.  
   
- <xref:System.ComponentModel.BackgroundWorker.DoWork> Obslužná rutina události <xref:System.ComponentModel.DoWorkEventArgs> parametr, který má <xref:System.ComponentModel.DoWorkEventArgs.Argument%2A> vlastnost. Tato vlastnost přijímá parametr z <xref:System.ComponentModel.BackgroundWorker.RunWorkerAsync%2A> a mohou být předány do metody pracovního procesu, která bude volána v <xref:System.ComponentModel.BackgroundWorker.DoWork> obslužné rutiny události. Následující příklad ukazuje, jak přiřadit výsledek z pracovního procesu metodu nazvanou `ComputeFibonacci`. Je součástí většího příkladu, které můžete vyhledat v [postupy: implementace formuláře, který používá operaci na pozadí](../../../../docs/framework/winforms/controls/how-to-implement-a-form-that-uses-a-background-operation.md).  
+ <xref:System.ComponentModel.BackgroundWorker.DoWork> Obslužná rutina události <xref:System.ComponentModel.DoWorkEventArgs> parametr, který má <xref:System.ComponentModel.DoWorkEventArgs.Argument%2A> vlastnost. Tato vlastnost přijímá parametr z <xref:System.ComponentModel.BackgroundWorker.RunWorkerAsync%2A> a mohou být předány do metody pracovního procesu, která bude volána v <xref:System.ComponentModel.BackgroundWorker.DoWork> obslužné rutiny události. Následující příklad ukazuje, jak přiřadit výsledek z pracovního procesu metodu nazvanou `ComputeFibonacci`. Je součástí většího příkladu, které můžete vyhledat v [jak: Implementace formuláře, který používá operaci na pozadí](how-to-implement-a-form-that-uses-a-background-operation.md).  
   
- [!code-cpp[System.ComponentModel.BackgroundWorker#5](../../../../samples/snippets/cpp/VS_Snippets_Winforms/System.ComponentModel.BackgroundWorker/CPP/fibonacciform.cpp#5)]
- [!code-csharp[System.ComponentModel.BackgroundWorker#5](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.BackgroundWorker/CS/fibonacciform.cs#5)]
- [!code-vb[System.ComponentModel.BackgroundWorker#5](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.BackgroundWorker/VB/fibonacciform.vb#5)]  
+ [!code-cpp[System.ComponentModel.BackgroundWorker#5](~/samples/snippets/cpp/VS_Snippets_Winforms/System.ComponentModel.BackgroundWorker/CPP/fibonacciform.cpp#5)]
+ [!code-csharp[System.ComponentModel.BackgroundWorker#5](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.BackgroundWorker/CS/fibonacciform.cs#5)]
+ [!code-vb[System.ComponentModel.BackgroundWorker#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.BackgroundWorker/VB/fibonacciform.vb#5)]  
   
- Další informace o používání obslužných rutin událostí, naleznete v tématu [události](../../../../docs/standard/events/index.md).  
+ Další informace o používání obslužných rutin událostí, naleznete v tématu [události](../../../standard/events/index.md).  
   
 > [!CAUTION]
->  Pokud používáte multithreading jakéhokoli druhu, potenciálně zpřístupníte sami velmi závažných a složitých chyb. Poraďte [spravovaných vláken osvědčené postupy](../../../../docs/standard/threading/managed-threading-best-practices.md) před implementací jakéhokoli řešení, které používá multithreading.  
+>  Pokud používáte multithreading jakéhokoli druhu, potenciálně zpřístupníte sami velmi závažných a složitých chyb. Poraďte [spravovaných vláken osvědčené postupy](../../../standard/threading/managed-threading-best-practices.md) před implementací jakéhokoli řešení, které používá multithreading.  
   
- Další informace o používání <xref:System.ComponentModel.BackgroundWorker> najdete v tématu [postupy: spuštění operace na pozadí](../../../../docs/framework/winforms/controls/how-to-run-an-operation-in-the-background.md).  
+ Další informace o používání <xref:System.ComponentModel.BackgroundWorker> najdete v tématu [jak: Spuštění operace na pozadí](how-to-run-an-operation-in-the-background.md).  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Dělení na spravovaná vlákna](../../../../docs/standard/threading/index.md)
-- [Přehled asynchronních vzorů založených na událostech](../../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md)
+- [Dělení na spravovaná vlákna](../../../standard/threading/index.md)
+- [Přehled asynchronních vzorů založených na událostech](../../../standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md)
 - [Postupy: Implementace formuláře, který používá operaci na pozadí](how-to-implement-a-form-that-uses-a-background-operation.md)

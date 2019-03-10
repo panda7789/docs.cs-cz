@@ -13,12 +13,12 @@ helpviewer_keywords:
 - images [Windows Forms], adding to ImageList component
 - images [Windows Forms], displaying with controls
 ms.assetid: c5eacc56-f769-4e2e-bfb7-f756620913db
-ms.openlocfilehash: a81cf11ea5ca405e2013b7c7375a863aeb1f110f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 81c85186d2f15917a6aa1067814a0119edf3f460
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54609613"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57705165"
 ---
 # <a name="how-to-add-or-remove-images-with-the-windows-forms-imagelist-component"></a>Postupy: Přidávání a odebírání obrázků pomocí komponenty Windows Forms ImageList
 Windows Forms <xref:System.Windows.Forms.ImageList> komponenty se obvykle vyplní imagí dřív, než bude přidružena k ovládacímu prvku. Můžete ale přidávat a odebírat Image po přidružení seznamu obrázků s ovládacím prvkem.  
@@ -142,6 +142,6 @@ imageList1.Images.RemoveByKey("myPhoto");
 ```  
   
 ## <a name="see-also"></a>Viz také:
-- [Komponenta ImageList](../../../../docs/framework/winforms/controls/imagelist-component-windows-forms.md)
-- [Přehled komponenty ImageList](../../../../docs/framework/winforms/controls/imagelist-component-overview-windows-forms.md)
-- [Obrázky, rastrové obrázky a metasoubory](../../../../docs/framework/winforms/advanced/images-bitmaps-and-metafiles.md)
+- [Komponenta ImageList](imagelist-component-windows-forms.md)
+- [Přehled komponenty ImageList](imagelist-component-overview-windows-forms.md)
+- [Obrázky, rastrové obrázky a metasoubory](../advanced/images-bitmaps-and-metafiles.md)

@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - application settings [Windows Forms], architecture
 ms.assetid: c8eb2ad0-fac6-4ea2-9140-675a4a44d562
-ms.openlocfilehash: 0e26684933ee2e35dfb0daa52588c2c87505f3f9
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: dd527234b90e94b5883d15b336f5e5abc9709880
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54687242"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57710677"
 ---
 # <a name="application-settings-architecture"></a>Architektura nastavení aplikace
 Toto téma popisuje, jak funguje nastavení aplikace architektury a zkoumá možnosti pokročilých funkcích sady architektury, jako jsou seskupené nastavení a nastavení klíče.  
@@ -34,12 +34,12 @@ Toto téma popisuje, jak funguje nastavení aplikace architektury a zkoumá mož
   
 -   Ověřují se nastavení, než se mění nebo před jejich uložením  
   
- Tato nastavení můžete popsaná s počtem atributů definovaných v rámci <xref:System.Configuration> obor názvů; tyto možnosti jsou popsány v [atributy nastavení aplikace](../../../../docs/framework/winforms/advanced/application-settings-attributes.md). Při definování nastavení, musí ho použít s oběma <xref:System.Configuration.ApplicationScopedSettingAttribute> nebo <xref:System.Configuration.UserScopedSettingAttribute>, která popisuje, zda nastavení platí pro celou aplikaci nebo jenom pro aktuálního uživatele.  
+ Tato nastavení můžete popsaná s počtem atributů definovaných v rámci <xref:System.Configuration> obor názvů; tyto možnosti jsou popsány v [atributy nastavení aplikace](application-settings-attributes.md). Při definování nastavení, musí ho použít s oběma <xref:System.Configuration.ApplicationScopedSettingAttribute> nebo <xref:System.Configuration.UserScopedSettingAttribute>, která popisuje, zda nastavení platí pro celou aplikaci nebo jenom pro aktuálního uživatele.  
   
  Následující příklad kódu definuje vlastní nastavení třída s atributem jedno nastavení `BackgroundColor`.  
   
- [!code-csharp[ApplicationSettings.Create#1](../../../../samples/snippets/csharp/VS_Snippets_Winforms/ApplicationSettings.Create/CS/MyAppSettings.cs#1)]
- [!code-vb[ApplicationSettings.Create#1](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ApplicationSettings.Create/VB/MyAppSettings.vb#1)]  
+ [!code-csharp[ApplicationSettings.Create#1](~/samples/snippets/csharp/VS_Snippets_Winforms/ApplicationSettings.Create/CS/MyAppSettings.cs#1)]
+ [!code-vb[ApplicationSettings.Create#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ApplicationSettings.Create/VB/MyAppSettings.vb#1)]  
   
 ## <a name="settings-persistence"></a>Nastavení trvalosti  
  <xref:System.Configuration.ApplicationSettingsBase> Třída nemá sama zachovat nebo načíst nastavení; tato úloha přejde k nastavení zprostředkovatele, třídy, která je odvozena z <xref:System.Configuration.SettingsProvider>. Pokud odvozenou třídu <xref:System.Configuration.ApplicationSettingsBase> neurčuje zprostředkovatele nastavení prostřednictvím <xref:System.Configuration.SettingsProviderAttribute>, pak výchozí zprostředkovatel <xref:System.Configuration.LocalFileSettingsProvider>, se používá.  
@@ -88,7 +88,7 @@ Toto téma popisuje, jak funguje nastavení aplikace architektury a zkoumá mož
 </configuration>  
 ```  
   
- Definice prvků v sekci nastavení aplikace konfiguračního souboru, naleznete v tématu [schéma nastavení aplikace](../../../../docs/framework/configure-apps/file-schema/application-settings-schema.md).  
+ Definice prvků v sekci nastavení aplikace konfiguračního souboru, naleznete v tématu [schéma nastavení aplikace](../../configure-apps/file-schema/application-settings-schema.md).  
   
 ### <a name="settings-bindings"></a>Nastavení vazby  
  Nastavení aplikace používá architekturu vazby Windows Forms data pro zajištění obousměrná komunikace aktualizace nastavení mezi objekt nastavení a komponenty. Pokud používáte sadu Visual Studio můžete vytvořit nastavení aplikace a přiřadit je k vlastnosti komponenty, tyto vazby automaticky generovány.  
@@ -106,7 +106,7 @@ Toto téma popisuje, jak funguje nastavení aplikace architektury a zkoumá mož
   
 3.  Určuje které nastavení přejděte v které soubory na základě nastavení atributu.  
   
- Pokud se rozhodnete implementovat vlastní třídu nastavení, můžete použít <xref:System.Configuration.SettingsSerializeAsAttribute> k označení nastavení buď pomocí binární nebo vlastní serializace <xref:System.Configuration.SettingsSerializeAs> výčtu. Další informace o vytváření vlastních nastavení třídy v kódu, naleznete v tématu [jak: Vytvořit nastavení aplikace](../../../../docs/framework/winforms/advanced/how-to-create-application-settings.md).  
+ Pokud se rozhodnete implementovat vlastní třídu nastavení, můžete použít <xref:System.Configuration.SettingsSerializeAsAttribute> k označení nastavení buď pomocí binární nebo vlastní serializace <xref:System.Configuration.SettingsSerializeAs> výčtu. Další informace o vytváření vlastních nastavení třídy v kódu, naleznete v tématu [jak: Vytvořit nastavení aplikace](how-to-create-application-settings.md).  
   
 ### <a name="settings-file-locations"></a>Umístění souboru nastavení  
  Umístění `app`. exe.config a *uživatele*souborech .config se liší v závislosti na tom, jak se aplikace nainstaluje. Pro aplikace založené na formulářích Windows zkopírovat do místního počítače `app`. exe.config se bude nacházet ve stejném adresáři jako základní adresář aplikace hlavní spustitelný soubor, a *uživatele*.config se bude nacházet v umístění určeného proměnnou <xref:System.Windows.Forms.Application.LocalUserAppDataPath%2A?displayProperty=nameWithType> vlastnost. Pro aplikace nainstalované prostřednictvím [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)], oba tyto soubory se bude nacházet v [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)] adresář dat pod %InstallRoot%\Documents a nastavení\\*uživatelské jméno*\Local nastavení.  
@@ -127,8 +127,8 @@ Toto téma popisuje, jak funguje nastavení aplikace architektury a zkoumá mož
   
  Váš poskytovatel bude nutné implementovat jednou vlastností a metod, jejichž implementace nemusí být samozřejmé. <xref:System.Configuration.SettingsProvider.ApplicationName%2A> Je abstraktní vlastnost z <xref:System.Configuration.SettingsProvider>; by se vrátit následující program:  
   
- [!code-csharp[ApplicationSettings.Architecture#2](../../../../samples/snippets/csharp/VS_Snippets_Winforms/ApplicationSettings.Architecture/CS/DummyClass.cs#2)]
- [!code-vb[ApplicationSettings.Architecture#2](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ApplicationSettings.Architecture/VB/DummyProviderClass.vb#2)]  
+ [!code-csharp[ApplicationSettings.Architecture#2](~/samples/snippets/csharp/VS_Snippets_Winforms/ApplicationSettings.Architecture/CS/DummyClass.cs#2)]
+ [!code-vb[ApplicationSettings.Architecture#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ApplicationSettings.Architecture/VB/DummyProviderClass.vb#2)]  
   
  Odvozené třídy musí implementovat taky `Initialize` metodu, která nepřijímá žádné argumenty a nevrací žádnou hodnotu. Tato metoda není definována <xref:System.Configuration.SettingsProvider>.  
   
@@ -136,8 +136,8 @@ Toto téma popisuje, jak funguje nastavení aplikace architektury a zkoumá mož
   
  Po implementovat a kompilaci vašeho poskytovatele, je potřeba dát pokyn k používání tohoto poskytovatele místo výchozího nastavení třídu. Toho dosáhnete pomocí <xref:System.Configuration.SettingsProviderAttribute>. Pokud se použije pro celou třídu nastavení zprostředkovatele se používá pro každé nastavení, která definuje třídu; Pokud individuální nastavení, použije architektura nastavení aplikace používá zprostředkovatele pro tato nastavení jenom a používá <xref:System.Configuration.LocalFileSettingsProvider> pro ostatní. Následující příklad kódu ukazuje, jak dát pokyn třídu nastavení vlastního zprostředkovatele.  
   
- [!code-csharp[ApplicationSettings.Architecture#1](../../../../samples/snippets/csharp/VS_Snippets_Winforms/ApplicationSettings.Architecture/CS/DummyClass.cs#1)]
- [!code-vb[ApplicationSettings.Architecture#1](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ApplicationSettings.Architecture/VB/DummyProviderClass.vb#1)]  
+ [!code-csharp[ApplicationSettings.Architecture#1](~/samples/snippets/csharp/VS_Snippets_Winforms/ApplicationSettings.Architecture/CS/DummyClass.cs#1)]
+ [!code-vb[ApplicationSettings.Architecture#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ApplicationSettings.Architecture/VB/DummyProviderClass.vb#1)]  
   
  Zprostředkovatel může být volána z více vláken současně, ale bude vždy zapisovat do stejného umístění úložiště; Architektura nastavení aplikace, proto vytvoří instanci vždy jen jednu instanci třídy zprostředkovatele.  
   
@@ -150,7 +150,7 @@ Toto téma popisuje, jak funguje nastavení aplikace architektury a zkoumá mož
 - <xref:System.Configuration.ApplicationSettingsBase>
 - <xref:System.Configuration.SettingsProvider>
 - <xref:System.Configuration.LocalFileSettingsProvider>
-- [Přehled nastavení aplikace](../../../../docs/framework/winforms/advanced/application-settings-overview.md)
-- [Nastavení aplikace pro vlastní ovládací prvky](../../../../docs/framework/winforms/advanced/application-settings-for-custom-controls.md)
+- [Přehled nastavení aplikace](application-settings-overview.md)
+- [Nastavení aplikace pro vlastní ovládací prvky](application-settings-for-custom-controls.md)
 - [ClickOnce a nastavení aplikace](/visualstudio/deployment/clickonce-and-application-settings)
-- [Schéma nastavení aplikace](../../../../docs/framework/configure-apps/file-schema/application-settings-schema.md)
+- [Schéma nastavení aplikace](../../configure-apps/file-schema/application-settings-schema.md)

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - best practices [Windows Forms], dataGridView control
 - DataGridView control [Windows Forms], scaling
 ms.assetid: 8321a8a6-6340-4fd1-b475-fa090b905aaf
-ms.openlocfilehash: 5adbcdb4aa34b3878e278d47337defe4388dd892
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 895dd132c070157355c28a935e43240f2750159e
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54710869"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57706414"
 ---
 # <a name="best-practices-for-scaling-the-windows-forms-datagridview-control"></a>Doporučené postupy pro změnu velikosti v ovládacím prvku Windows Forms DataGridView
 <xref:System.Windows.Forms.DataGridView> Ovládací prvek je navrženo pro zajištění maximální škálovatelnosti. Pokud potřebujete zobrazit velké objemy dat, postupujte podle pokynů popsaných v tomto tématu, aby se zabránilo zpracovávání velké množství paměti a snížení rychlosti odezvy uživatelského rozhraní (UI). Toto téma popisuje následující problémy:  
@@ -31,16 +31,16 @@ ms.locfileid: "54710869"
   
 -   Brání stávají odstranit řádky  
   
- Pokud máte zvláštní výkon, můžete implementace virtuálního režimu a zadat vlastní operace správy data. Další informace najdete v tématu [režimy zobrazení dat v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/data-display-modes-in-the-windows-forms-datagridview-control.md).  
+ Pokud máte zvláštní výkon, můžete implementace virtuálního režimu a zadat vlastní operace správy data. Další informace najdete v tématu [režimy zobrazení dat v ovládacím prvku Windows Forms DataGridView](data-display-modes-in-the-windows-forms-datagridview-control.md).  
   
 ## <a name="using-cell-styles-efficiently"></a>Efektivní využívání styly buňky  
  Každý buněk, řádků a sloupců může mít svůj vlastní informace o stylu. Styl informace jsou uloženy v <xref:System.Windows.Forms.DataGridViewCellStyle> objekty. Vytváření objektů styl buňky pro mnoho jednotlivých <xref:System.Windows.Forms.DataGridView> elementy může být neefektivní, zejména při práci s velkými objemy dat. Aby se zabránilo vlivu na výkon, použijte následující pokyny:  
   
 -   Vyhněte se nastavování vlastnosti stylu buňky jednotlivce <xref:System.Windows.Forms.DataGridViewCell> nebo <xref:System.Windows.Forms.DataGridViewRow> objekty. Jedná se o objekt řádku určené <xref:System.Windows.Forms.DataGridView.RowTemplate%2A> vlastnost. Každý nový řádek, který naklonována ze šablony řádku obdrží vlastní kopii šablony objektu stylu buňky. Pro maximální rozšiřitelnost, nastavte vlastnosti stylu buňky v <xref:System.Windows.Forms.DataGridView> úroveň. Například nastavit <xref:System.Windows.Forms.DataGridView.DefaultCellStyle%2A?displayProperty=nameWithType> vlastnost místo <xref:System.Windows.Forms.DataGridViewCell.Style%2A?displayProperty=nameWithType> vlastnost.  
   
--   Pokud u některých buněk vyžadují jiné než výchozí formátování formátování, použijte stejný <xref:System.Windows.Forms.DataGridViewCellStyle> instance napříč skupinami buněk, řádků nebo sloupců. Vyhněte se přímo nastavení vlastnosti typu <xref:System.Windows.Forms.DataGridViewCellStyle> na jednotlivých buněk, řádků a sloupců. Příklad sdílení styl buňky, naleznete v tématu [jak: Nastavení výchozích stylů buňky pro Windows Forms DataGridView – ovládací prvek](../../../../docs/framework/winforms/controls/how-to-set-default-cell-styles-for-the-windows-forms-datagridview-control.md). Při nastavování stylů buňky samostatně pomocí manipulace se můžete vyhnout snížení výkonu <xref:System.Windows.Forms.DataGridView.CellFormatting> obslužné rutiny události. Příklad najdete v tématu [jak: Přizpůsobení formátování dat v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/how-to-customize-data-formatting-in-the-windows-forms-datagridview-control.md).  
+-   Pokud u některých buněk vyžadují jiné než výchozí formátování formátování, použijte stejný <xref:System.Windows.Forms.DataGridViewCellStyle> instance napříč skupinami buněk, řádků nebo sloupců. Vyhněte se přímo nastavení vlastnosti typu <xref:System.Windows.Forms.DataGridViewCellStyle> na jednotlivých buněk, řádků a sloupců. Příklad sdílení styl buňky, naleznete v tématu [jak: Nastavení výchozích stylů buňky pro Windows Forms DataGridView – ovládací prvek](how-to-set-default-cell-styles-for-the-windows-forms-datagridview-control.md). Při nastavování stylů buňky samostatně pomocí manipulace se můžete vyhnout snížení výkonu <xref:System.Windows.Forms.DataGridView.CellFormatting> obslužné rutiny události. Příklad najdete v tématu [jak: Přizpůsobení formátování dat v ovládacím prvku Windows Forms DataGridView](how-to-customize-data-formatting-in-the-windows-forms-datagridview-control.md).  
   
--   Při určování styl buňky, použijte <xref:System.Windows.Forms.DataGridViewCell.InheritedStyle%2A?displayProperty=nameWithType> vlastnost místo <xref:System.Windows.Forms.DataGridViewCell.Style%2A?displayProperty=nameWithType> vlastnost. Přístup k <xref:System.Windows.Forms.DataGridViewCell.Style%2A> vlastnost vytvoří novou instanci třídy <xref:System.Windows.Forms.DataGridViewCellStyle> třídy, pokud vlastnost ještě nebyl použit. Kromě toho tento objekt nemusí obsahovat informace o dokončení styl buňky, pokud některé styly jsou zděděny z řádků, sloupců nebo ovládacího prvku. Další informace o dědičnosti styl buňky, naleznete v tématu [styly buňky v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/cell-styles-in-the-windows-forms-datagridview-control.md).  
+-   Při určování styl buňky, použijte <xref:System.Windows.Forms.DataGridViewCell.InheritedStyle%2A?displayProperty=nameWithType> vlastnost místo <xref:System.Windows.Forms.DataGridViewCell.Style%2A?displayProperty=nameWithType> vlastnost. Přístup k <xref:System.Windows.Forms.DataGridViewCell.Style%2A> vlastnost vytvoří novou instanci třídy <xref:System.Windows.Forms.DataGridViewCellStyle> třídy, pokud vlastnost ještě nebyl použit. Kromě toho tento objekt nemusí obsahovat informace o dokončení styl buňky, pokud některé styly jsou zděděny z řádků, sloupců nebo ovládacího prvku. Další informace o dědičnosti styl buňky, naleznete v tématu [styly buňky v ovládacím prvku Windows Forms DataGridView](cell-styles-in-the-windows-forms-datagridview-control.md).  
   
 ## <a name="using-shortcut-menus-efficiently"></a>Efektivní využívání nabídek  
  Každý buněk, řádků a sloupců může mít svůj vlastní místní nabídky. Místní nabídky v <xref:System.Windows.Forms.DataGridView> ovládacího prvku jsou reprezentovány <xref:System.Windows.Forms.ContextMenuStrip> ovládacích prvků. Stejně jako u objektů styl buňky, vytváření místních nabídek pro mnoho jednotlivých <xref:System.Windows.Forms.DataGridView> prvky budou mít negativní vliv na výkon. Abyste předešli této penalizace, použijte následující pokyny:  
@@ -60,7 +60,7 @@ ms.locfileid: "54710869"
   
 -   Pro maximální rozšiřitelnost vypněte automatické velikosti a používání Programová změna velikosti.  
   
- Další informace najdete v tématu [možnosti nastavení velikosti v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/sizing-options-in-the-windows-forms-datagridview-control.md).  
+ Další informace najdete v tématu [možnosti nastavení velikosti v ovládacím prvku Windows Forms DataGridView](sizing-options-in-the-windows-forms-datagridview-control.md).  
   
 ## <a name="using-the-selected-cells-rows-and-columns-collections-efficiently"></a>Efektivní využívání vybraných buněk, řádků a sloupců kolekce  
  <xref:System.Windows.Forms.DataGridView.SelectedCells%2A> Kolekce neprovádí efektivně velké výběry. <xref:System.Windows.Forms.DataGridView.SelectedRows%2A> a <xref:System.Windows.Forms.DataGridView.SelectedColumns%2A> kolekce může být také neefektivní, i když se do menší míry vzhledem k tomu, že existují mnoho méně řádků než buněk v typické <xref:System.Windows.Forms.DataGridView> ovládacího prvku a řadu méně sloupců, než řádků. Aby se zabránilo snížení výkonu při práci s těchto kolekcí, použijte následující pokyny:  
@@ -137,9 +137,9 @@ ms.locfileid: "54710869"
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Forms.DataGridView>
-- [Ladění výkonu v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/performance-tuning-in-the-windows-forms-datagridview-control.md)
-- [Virtuální režim v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/virtual-mode-in-the-windows-forms-datagridview-control.md)
-- [Režimy zobrazení dat v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/data-display-modes-in-the-windows-forms-datagridview-control.md)
-- [Styly buňky v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/cell-styles-in-the-windows-forms-datagridview-control.md)
-- [Postupy: Nastavení výchozích stylů buňky pro ovládací prvek Windows Forms DataGridView](../../../../docs/framework/winforms/controls/how-to-set-default-cell-styles-for-the-windows-forms-datagridview-control.md)
-- [Možnosti změny velikosti v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/sizing-options-in-the-windows-forms-datagridview-control.md)
+- [Ladění výkonu v ovládacím prvku Windows Forms DataGridView](performance-tuning-in-the-windows-forms-datagridview-control.md)
+- [Virtuální režim v ovládacím prvku Windows Forms DataGridView](virtual-mode-in-the-windows-forms-datagridview-control.md)
+- [Režimy zobrazení dat v ovládacím prvku Windows Forms DataGridView](data-display-modes-in-the-windows-forms-datagridview-control.md)
+- [Styly buňky v ovládacím prvku Windows Forms DataGridView](cell-styles-in-the-windows-forms-datagridview-control.md)
+- [Postupy: Nastavení výchozích stylů buňky pro ovládací prvek Windows Forms DataGridView](how-to-set-default-cell-styles-for-the-windows-forms-datagridview-control.md)
+- [Možnosti změny velikosti v ovládacím prvku Windows Forms DataGridView](sizing-options-in-the-windows-forms-datagridview-control.md)

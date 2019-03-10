@@ -1,163 +1,163 @@
 ---
-title: 'Návod: Vytvoření aplikace systému Windows s usnadněnou obsluhou'
+title: 'Návod: Vytvoření přístupné aplikace založené na Windows'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - accessibility [Windows Forms], Windows applications
 - Windows applications [Windows Forms], accessibility
 - applications [Windows Forms], accessibility
 ms.assetid: 654c7f2f-1586-480b-9f12-9d9b8f5cc32b
-ms.openlocfilehash: 6c798d0f6a454c7ee819d5556970bca12f1812e9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b27203f46c1d89577825e40541d9789d3b9e17de
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33529620"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57708272"
 ---
-# <a name="walkthrough-creating-an-accessible-windows-based-application"></a>Návod: Vytvoření aplikace systému Windows s usnadněnou obsluhou
-Vytváření přístupné aplikací má zásadní obchodní dopad. Mnoho vlády mají požadavky na usnadnění nákup softwaru. Logo Certified for Windows obsahuje požadavky na usnadnění přístupu. Usnadnění softwaru se vztahuje odhadované 30 milionů obyvatele samostatně, USA, kolika z nich potenciální zákazníky.  
+# <a name="walkthrough-creating-an-accessible-windows-based-application"></a>Návod: Vytvoření přístupné aplikace založené na Windows
+Vytvoření přístupné aplikace má vliv na důležitá obchodní. Mnoha vlád mají usnadnění předpisy pro nákup softwaru. Logo Certified pro Windows obsahuje požadavky na usnadnění přístupu. Odhadované pobytem 30 milionů amerických samostatně, mnoho z nich potenciálních zákazníků, jsou ovlivněny usnadnění softwaru.  
   
- Tento názorný postup vyřeší pět požadavky na usnadnění přístupu pro logo Certified for Windows. Dostupné aplikace se podle těchto požadavků:  
+ Tento názorný postup bude zabývat pět požadavků usnadnění přístupu pro logo Certified pro Windows. Podle těchto požadavků se dostupné aplikace:  
   
--   Podporovat velikost ovládacích panelů, barvy, písma a zadejte nastavení. Panel nabídek, záhlaví, ohraničení a stavového řádku změní všechny velikost sami když uživatel změní nastavení ovládacího panelu. V této aplikaci se nevyžadují žádné další změny ovládací prvky nebo kódu.  
+-   Podpora velikost ovládacích panelů, barvy, písma a vstupní nastavení. Řádku nabídek, záhlaví, ohraničení a stavový řádek všechny velikost se sami když uživatel změní nastavení ovládacího panelu. Nevyžaduje žádné další změny ovládací prvky nebo kód v této aplikaci.  
   
--   Podpora režimu vysokého kontrastu.  
+-   Podporovat režim s vysokým kontrastem.  
   
--   Zadejte zdokumentovaných klávesnice přístup ke všem funkcím.  
+-   Zadejte zdokumentovaných klávesnici přístup ke všem funkcím.  
   
--   Vystavení umístění fokus klávesnice vizuálně a programově.  
+-   Vizuálně a programově zpřístupnit umístění fokus klávesnice.  
   
 -   Vyhněte se předávání důležitých informací zvukovou samostatně.  
   
- Další informace najdete v tématu [prostředky pro navrhování přístupné aplikace](/visualstudio/ide/reference/resources-for-designing-accessible-applications).  
+ Další informace najdete v tématu [prostředky pro návrh aplikace přístupné](/visualstudio/ide/reference/resources-for-designing-accessible-applications).  
   
- Informace na podporu různých rozložení klávesnice najdete v tématu [osvědčené postupy pro vývoj aplikací připravených](../../../../docs/standard/globalization-localization/best-practices-for-developing-world-ready-apps.md).  
+ Informace o podpoře proměnlivé rozložení klávesnice, naleznete v tématu [osvědčené postupy pro vývoj globalizovaných aplikací](../../../standard/globalization-localization/best-practices-for-developing-world-ready-apps.md).  
   
 ## <a name="creating-the-project"></a>Vytvoření projektu  
- Tento návod vytvoří uživatelské rozhraní pro aplikaci, která přebírá pizza objednávky. Skládá se z <xref:System.Windows.Forms.TextBox> pro název zákazníka, <xref:System.Windows.Forms.RadioButton> skupina a vyberte velikost pizza <xref:System.Windows.Forms.CheckedListBox> pro výběr toppings, dvou ovládacích prvků tlačítko s názvem bez přípony pořadí a zrušit a nabídky pomocí příkazu pro ukončení.  
+ Tento návod vytvoří uživatelské rozhraní pro aplikace, která přebírá pizza objednávky. Skládá se z <xref:System.Windows.Forms.TextBox> pro jméno zákazníka <xref:System.Windows.Forms.RadioButton> skupina a vyberte velikost pizza <xref:System.Windows.Forms.CheckedListBox> pro výběr toppings, dva ovládací prvky tlačítek označené jako pořadí a zrušit a nabídky pomocí příkazu pro ukončení.  
   
- Uživatel zadá název zákazníka, velikost pizza a toppings potřeby. Když uživatel klikne na tlačítko pořadí, souhrn pořadí a jeho náklady jsou zobrazeny v okně se zprávou a ovládací prvky jsou nezaškrtnuté a připravené pro další pořadí. Když uživatel klikne na tlačítko Storno, ovládací prvky jsou nezaškrtnuté a připravené pro další pořadí. Když uživatel klikne na položku nabídky ukončení, program se ukončí.  
+ Uživatel zadá název zákazníka, velikost pizza a toppings potřeby. Když uživatel klikne na tlačítko pořadí, souhrn pořadí a její náklady jsou zobrazeny v okně se zprávou a ovládací prvky se vymažou a připravené pro další objednávku. Když uživatel klikne na tlačítko Storno, ovládací prvky se vymažou a připravené pro další objednávku. Když uživatel klikne na položku nabídky ukončení, program se ukončí.  
   
- Zvýraznění tohoto návodu není kód pro maloobchodní pořadí systému, ale usnadnění uživatelského rozhraní. Průvodce ukazuje, že funkce pro usnadnění přístupu několik často používané ovládací prvky, včetně tlačítka, přepínače, textových polí a popisky.  
+ Zvýraznění tohoto názorného postupu není kód systému prodejní objednávky, ale usnadnění přístupu uživatelského rozhraní. Návodu ukazuje, že funkce pro usnadnění přístupu z několika často používané ovládací prvky, včetně tlačítek, přepínacích tlačítek, textová pole a popisky.  
   
 #### <a name="to-begin-making-the-application"></a>Chcete-li začít vytvářet aplikace  
   
--   Vytvoření nové aplikace Windows v jazyce Visual Basic a Visual C#. Název projektu **PizzaOrder**. (Podrobnosti najdete v tématu [vytváření nových řešení a projekty](/visualstudio/ide/creating-solutions-and-projects).)  
+-   Vytvoření nové aplikace Windows v jazyce Visual Basic nebo Visual C#. Pojmenujte projekt **PizzaOrder**. (Podrobnosti najdete v tématu [vytváří se nová řešení a projekty](/visualstudio/ide/creating-solutions-and-projects).)  
   
-## <a name="adding-the-controls-to-the-form"></a>Přidání ovládacích prvků formuláře  
- Při přidávání ovládacích prvků na formuláři, mějte na paměti následující pokyny, aby se aplikace dostupné:  
+## <a name="adding-the-controls-to-the-form"></a>Přidání ovládacích prvků do formuláře  
+ Když přidáváte ovládací prvky do formuláře, mějte na paměti následující pokyny, aby dostupné aplikace:  
   
--   Nastavte <xref:System.Windows.Forms.Control.AccessibleDescription%2A> a <xref:System.Windows.Forms.Control.AccessibleName%2A> vlastnosti. V tomto příkladu výchozí nastavení <xref:System.Windows.Forms.Control.AccessibleRole%2A> je dostačující. Další informace o vlastnostech usnadnění přístupu najdete v tématu [poskytuje informace o usnadnění pro ovládací prvky na formuláři Windows](../../../../docs/framework/winforms/controls/providing-accessibility-information-for-controls-on-a-windows-form.md).  
+-   Nastavte <xref:System.Windows.Forms.Control.AccessibleDescription%2A> a <xref:System.Windows.Forms.Control.AccessibleName%2A> vlastnosti. V tomto příkladu ve výchozím nastavení <xref:System.Windows.Forms.Control.AccessibleRole%2A> je dostačující. Další informace o vlastnostech usnadnění, naleznete v tématu [poskytování informací o usnadnění pro ovládací prvky ve formuláři Windows](../controls/providing-accessibility-information-for-controls-on-a-windows-form.md).  
   
--   Nastavení velikosti písma 10 bodů nebo větší.  
+-   Nastavte velikost písma 10 bodů nebo větší.  
   
     > [!NOTE]
-    >  Pokud nastavíte velikost písma formuláře na 10, při spuštění, bude mít všechny ovládací prvky, později přidané do formuláře velikost písma 10.  
+    >  Pokud nastavíte velikost písma formuláře na 10 při spuštění, bude mít všechny ovládací prvky do formuláře přidán následně velikost písma 10.  
   
--   Ujistěte se, že libovolný ovládací prvek popisek, který popisuje ovládacím prvku TextBox okamžitě předchází TextBox – ovládací prvek v pořadí.  
+-   Zajistěte, aby libovolný ovládací prvek popisek, který popisuje ovládací prvek textového pole bezprostředně předchází ovládacího prvku textového pole v pořadí.  
   
--   Přidat přístupový klíč, pomocí znaku "&" na <xref:System.Windows.Forms.Control.Text%2A> vlastnosti libovolného ovládacího prvku, uživatel může chtít přejděte do.  
+-   Přidat přístupový kód, používat "&" znak <xref:System.Windows.Forms.Control.Text%2A> vlastnost libovolný ovládací prvek, uživatel může chtít přejít na.  
   
--   Přidat přístupový klíč, pomocí znaku "&", položky <xref:System.Windows.Forms.Control.Text%2A> vlastnost štítek, který předchází ovládacího prvku, který uživatel může chtít přejděte do. Nastavit zobrazí popisky <xref:System.Windows.Forms.Label.UseMnemonic%2A> vlastnost `true`, tak, aby fokus je nastavena na další ovládací prvek v pořadí, když uživatel stiskne přístupový klíč.  
+-   Přidat přístupový kód, používat "&" znak <xref:System.Windows.Forms.Control.Text%2A> popisku, který předchází ovládací prvek, který uživatel může chtít přejít na. Nastavit jmenovky <xref:System.Windows.Forms.Label.UseMnemonic%2A> vlastnost `true`, tak, aby fokus na další ovládací prvek v pořadí karet při stisknutí přístupové klávesy.  
   
--   Přidejte přístupové klíče pro všechny položky nabídky.  
+-   Přidáte všechny položky nabídky přístupové klíče.  
   
-#### <a name="to-make-your-windows-application-accessible"></a>Pro zpřístupnění aplikací pro Windows  
+#### <a name="to-make-your-windows-application-accessible"></a>Chcete-li zpřístupnit svoji aplikaci Windows  
   
--   Přidání ovládacích prvků formuláře a nastavte vlastnosti, jak je popsáno níže. Zobrazí se obrázek na konci v tabulce pro model, jak k uspořádání ovládacích prvků na formuláři.  
+-   Přidat ovládací prvky do formuláře a nastavte vlastnosti, jak je popsáno níže. Podívejte se na obrázku na konec tabulky modelu o tom, jak uspořádat ovládací prvky ve formuláři.  
   
     |Objekt|Vlastnost|Hodnota|  
     |------------|--------------|-----------|  
-    |Form1|AccessibleDescription|Pořadí formuláře|  
-    ||AccessibleName|Pořadí formuláře|  
+    |Form1|AccessibleDescription|Formulář objednávky|  
+    ||AccessibleName|Formulář objednávky|  
     ||Velikost písma|10|  
-    ||Text|Formulář pro objednání pizzy|  
-    |PictureBox|Název|Logo|  
+    ||Text|Formulář objednávky pizza|  
+    |PictureBox|Název|logo|  
     ||AccessibleDescription|Řez pizza|  
     ||AccessibleName|Logo společnosti|  
-    ||Image|Všechny ikony nebo rastrového obrázku|  
+    ||Image|Žádné ikona nebo rastrový obrázek|  
     |Popisek|Název|companyLabel|  
-    ||Text|Dobrý Pizza|  
-    ||Pořadové číslo prvku|1|  
+    ||Text|Good Pizza|  
+    ||TabIndex|1|  
     ||AccessibleDescription|Název společnosti|  
     ||AccessibleName|Název společnosti|  
-    ||Barva pozadí|modrá|  
-    ||ForeColor|žlutý|  
+    ||Barva pozadí|Modrá|  
+    ||Barva popředí|Žlutá|  
     ||Velikost písma|18|  
     |Popisek|Název|customerLabel|  
     ||Text|& název|  
-    ||Pořadové číslo prvku|2|  
+    ||TabIndex|2|  
     ||AccessibleDescription|Popisek názvu zákazníka|  
     ||AccessibleName|Popisek názvu zákazníka|  
-    ||Usemnemonic –|Hodnota TRUE|  
-    |TextBox|Název|JménoZákazníka|  
-    ||Text|(žádný)|  
-    ||Pořadové číslo prvku|3|  
+    ||Usemnemonic –|Pravda|  
+    |TextBox|Název|customerName|  
+    ||Text|(žádné)|  
+    ||TabIndex|3|  
     ||AccessibleDescription|Jméno zákazníka|  
     ||AccessibleName|Jméno zákazníka|  
     |GroupBox|Název|sizeOptions|  
     ||AccessibleDescription|Možnosti velikosti pizza|  
     ||AccessibleName|Možnosti velikosti pizza|  
     ||Text|Velikost pizza|  
-    ||Pořadové číslo prvku|4|  
+    ||TabIndex|4|  
     |RadioButton|Název|smallPizza|  
     ||Text|& malé $6.00|  
-    ||Zaškrtnutí|Hodnota TRUE|  
-    ||Pořadové číslo prvku|0|  
+    ||Zaškrtnuto|Pravda|  
+    ||TabIndex|0|  
     ||AccessibleDescription|Malé pizza|  
     ||AccessibleName|Malé pizza|  
     |RadioButton|Název|largePizza|  
     ||Text|& velké 10,00 USD|  
-    ||Pořadové číslo prvku|1|  
+    ||TabIndex|1|  
     ||AccessibleDescription|Velké pizza|  
     ||AccessibleName|Velké pizza|  
     |Popisek|Název|toppingsLabel|  
     ||Text|& toppings ($0,75 každý)|  
-    ||Pořadové číslo prvku|5|  
+    ||TabIndex|5|  
     ||AccessibleDescription|Popisek toppings|  
     ||AccessibleName|Popisek toppings|  
-    ||Usemnemonic –|Hodnota TRUE|  
+    ||Usemnemonic –|Pravda|  
     |CheckedListBox|Název|toppings|  
-    ||Pořadové číslo prvku|6|  
+    ||TabIndex|6|  
     ||AccessibleDescription|K dispozici toppings|  
     ||AccessibleName|K dispozici toppings|  
     ||Položky|Pepperoni salám, hub|  
     |Tlačítko|Název|pořadí|  
     ||Text|& pořadí|  
-    ||Pořadové číslo prvku|7|  
+    ||TabIndex|7|  
     ||AccessibleDescription|Celkový počet pořadí|  
-    ||AccessibleName|Celkové pořadí|  
+    ||AccessibleName|Celkový počet pořadí|  
     |Tlačítko|Název|Zrušit|  
     ||Text|& Zrušit|  
-    ||Pořadové číslo prvku|8|  
+    ||TabIndex|8|  
     ||AccessibleDescription|Zrušit pořadí|  
-    ||AccessibleName|Zrušit pořadí|  
+    ||AccessibleName|Zrušit objednávku|  
     |MainMenu|Název|theMainMenu|  
-    |Položka nabídky|Název|fileCommands|  
-    ||Text|& souboru|  
-    |Položka nabídky|Název|exitApp|  
-    ||Text|& Konec|  
+    |Položku nabídky|Název|fileCommands|  
+    ||Text|& soubor|  
+    |Položku nabídky|Název|exitApp|  
+    ||Text|U & končit|  
   
-     ![Formulář pro objednání pizzy](../../../../docs/framework/winforms/advanced/media/vbpizzaorderform.gif "vbPizzaOrderForm")  
+     ![Formulář objednávky pizza](./media/vbpizzaorderform.gif "vbPizzaOrderForm")  
 Formulář bude vypadat přibližně takto:  
   
-## <a name="supporting-high-contrast-mode"></a>Podpora režimu vysokého kontrastu  
- V režimu Vysoký kontrast je nastavení systému Windows, který zlepšuje čitelnosti pomocí kontrastní barvy a velikosti písma, které jsou užitečné pro uživatele se zrakovým postižením. <xref:System.Windows.Forms.SystemInformation.HighContrast%2A> Vlastnost je poskytována k určení, zda je nastaven režimu vysokého kontrastu.  
+## <a name="supporting-high-contrast-mode"></a>Podporující režim s vysokým kontrastem  
+ Vysoký kontrast je nastavení systému Windows, který zlepšuje čitelnost pomocí kontrastní barvy a velikosti písem, které jsou užitečné pro uživatele se zrakovým postižením. <xref:System.Windows.Forms.SystemInformation.HighContrast%2A> Vlastnost je k dispozici k určení, zda je nastaven režim s vysokým kontrastem.  
   
  Pokud je SystemInformation.HighContrast `true`, by měla aplikace:  
   
--   Zobrazit všechny prvky uživatelského rozhraní pomocí barevného schématu systému  
+-   Zobrazit všechny prvky uživatelského rozhraní pomocí systému barevné schéma  
   
--   Oznamují vizuální upozornění nebo zvukových veškeré informace, které se bude předávat přes barvu. Například pokud konkrétní seznam položek se zvýrazní pomocí red písmo, můžete také přidat tučné písmo, tak, aby uživatel má jiný color upozornění, že jsou vyznačené položky.  
+-   Oznamují vizuální prvky nebo zvuk veškeré informace, které se předávají prostřednictvím barvu. Například pokud pomocí red písma jsou zvýrazněny konkrétní seznam položek, můžete také přidat tučné písmo, tak, aby uživatel měl jiné barvy upozornění, že jsou zvýrazněné položky.  
   
--   Vynechat všechny bitové kopie nebo vzory za text  
+-   Vynechat všechny obrázky nebo vzory za text  
   
- Aplikace by se mělo zjistit nastavením <xref:System.Windows.Forms.SystemInformation.HighContrast%2A> když aplikaci spustí a reagovat na systémové události <xref:Microsoft.Win32.SystemEvents.UserPreferenceChanged>. <xref:Microsoft.Win32.SystemEvents.UserPreferenceChanged> Událost se vyvolá, vždy, když hodnota <xref:System.Windows.Forms.SystemInformation.HighContrast%2A> změny.  
+ Aplikace by měla kontrolovat nastavení <xref:System.Windows.Forms.SystemInformation.HighContrast%2A> když aplikaci spustí a reagovat na událost systému <xref:Microsoft.Win32.SystemEvents.UserPreferenceChanged>. <xref:Microsoft.Win32.SystemEvents.UserPreferenceChanged> Událost se vyvolá vždy, když hodnota <xref:System.Windows.Forms.SystemInformation.HighContrast%2A> změny.  
   
- V naší aplikaci, je jediným prvkem, který nepoužívá nastavení systému pro barvu `lblCompanyName`. <xref:System.Drawing.SystemColors> Třída se používá k změňte nastavení barvu popisku na barvy vybraných uživatelem systému.  
+ V naší aplikaci, je jediným prvkem, který se nepoužívá nastavení systému pro barvu `lblCompanyName`. <xref:System.Drawing.SystemColors> Třída se používá, chcete-li změnit nastavení barev popisku uživatel vybral systémových barev.  
   
-#### <a name="to-enable-high-contrast-mode-in-an-effective-way"></a>Chcete-li povolit režimu vysokého kontrastu účinným způsobem  
+#### <a name="to-enable-high-contrast-mode-in-an-effective-way"></a>Povolit režim s vysokým kontrastem účinným způsobem  
   
-1.  Vytvořte metodu a nastavit barvy popisku pro barev systému.  
+1.  Vytvořte metodu pro nastavení barvy popisku na systémových barev.  
   
     ```  
     ' Visual Basic  
@@ -187,7 +187,7 @@ Formulář bude vypadat přibližně takto:
     }  
     ```  
   
-2.  Volání `SetColorScheme` postup v konstruktoru formuláře (`Public Sub New()` v jazyce Visual Basic a `public class Form1` v jazyce Visual C#). Pro přístup k konstruktoru v jazyce Visual Basic, budete muset rozbalte oblast s názvem bez přípony **Windows Form Designer generovaného kódu**.  
+2.  Volání `SetColorScheme` postup v konstruktoru formuláře (`Public Sub New()` v jazyce Visual Basic a `public class Form1` ve Vizuálu C#). Pro přístup k konstruktoru v jazyce Visual Basic, budete muset rozbalit oblast s názvem **kód generovaný návrhářem formulářů Windows**.  
   
     ```  
     ' Visual Basic   
@@ -205,7 +205,7 @@ Formulář bude vypadat přibližně takto:
     }  
     ```  
   
-3.  Vytvořit procedury události s odpovídajícím podpisem, aby odpovídal na <xref:Microsoft.Win32.SystemEvents.UserPreferenceChanged> událostí.  
+3.  Vytvořit procedury události s odpovídajícím podpisem na <xref:Microsoft.Win32.SystemEvents.UserPreferenceChanged> událostí.  
   
     ```  
     ' Visual Basic  
@@ -222,7 +222,7 @@ Formulář bude vypadat přibližně takto:
     }  
     ```  
   
-4.  Přidejte do konstruktoru formuláře kód po volání `InitializeComponents`, spojit události postup systémové události. Tato metoda volá `SetColorScheme` postupu.  
+4.  Přidejte kód konstruktoru formuláře po volání `InitializeComponents`, k připojení události postup systémové události. Tato metoda volá `SetColorScheme` postup.  
   
     ```  
     ' Visual Basic  
@@ -245,10 +245,10 @@ Formulář bude vypadat přibližně takto:
     }  
     ```  
   
-5.  Přidejte kód pro formulář <xref:System.Windows.Forms.Control.Dispose%2A> metody před volání <xref:System.Windows.Forms.Control.Dispose%2A> metoda základní třídy, chcete-li uvolnit událostí po ukončení aplikace. Abyste měli přístup <xref:System.Windows.Forms.Control.Dispose%2A> metody v jazyce Visual Basic, budete muset rozbalte oblast s názvem bez přípony Windows Form Designer vygenerovat kód.  
+5.  Přidejte kód do formuláře <xref:System.Windows.Forms.Control.Dispose%2A> metoda před voláním <xref:System.Windows.Forms.Control.Dispose%2A> metody základní třídy k uvolnění události po zavření aplikace. Pro přístup <xref:System.Windows.Forms.Control.Dispose%2A> metody v jazyce Visual Basic, budete muset rozbalit oblast s názvem kód generovaný návrhářem formulářů Windows.  
   
     > [!NOTE]
-    >  Spustí kód událostí systému vlákno odděleně od hlavní aplikace. Pokud není verze události, kód, který spojit události se spustí i po ukončení programu.  
+    >  Kód události systému běží vlákno oddělená od hlavní aplikace. Pokud vydané události, spustí kód, který jste připojili k této události i po ukončení programu.  
   
     ```  
     ' Visual Basic  
@@ -282,36 +282,36 @@ Formulář bude vypadat přibližně takto:
   
 6.  Stisknutím klávesy F5 spusťte aplikaci.  
   
-## <a name="conveying-important-information-by-means-other-than-sound"></a>Předávání důležitých informací jiným způsobem než zvuk  
- V této aplikaci žádné informace předávají zvukovou samostatně. Pokud používáte zvuku ve vaší aplikaci, musí jiným způsobem a zadejte informace.  
+## <a name="conveying-important-information-by-means-other-than-sound"></a>Předávání důležitých informací prostředky než zvuku  
+ V této aplikaci žádné informace předávají zvukovou samostatně. Pokud používáte zvuku ve vaší aplikaci, by měl jiným způsobem a zadejte informace.  
   
-#### <a name="to-supply-information-by-some-other-means-than-sound"></a>K poskytování informací jiným způsobem než zvuk  
+#### <a name="to-supply-information-by-some-other-means-than-sound"></a>Slouží k poskytování informací jiným způsobem než zvuku  
   
-1.  Zkontrolujte záhlaví s použitím funkce rozhraní API systému Windows FlashWindow, flash. Příklad toho, jak volat funkce rozhraní API systému Windows, naleznete v části [návod: volání rozhraní API systému Windows](~/docs/visual-basic/programming-guide/com-interop/walkthrough-calling-windows-apis.md).  
+1.  Vytvoření záhlaví flash pomocí funkce rozhraní Windows API FlashWindow. Příklad toho, jak volat funkce rozhraní API Windows, naleznete v tématu [názorný postup: Volání rozhraní API Windows](~/docs/visual-basic/programming-guide/com-interop/walkthrough-calling-windows-apis.md).  
   
     > [!NOTE]
-    >  Uživatel může mít povoleno, službu Popis zvuku Windows, která způsobí také okno na flash po přehrání zvuku systému prostřednictvím předdefinované mluvčího počítače.  
+    >  Uživatel může mít povoleno, službu Windows Popis zvuku, která také způsobí, že v okně tak, aby při přehrávání zvuků systému prostřednictvím vestavěné reproduktorů počítače.  
   
-2.  Důležité informace zobrazí v nemodálním okně, tak, aby uživatel může odpovědět na ni.  
+2.  Zobrazení důležitých informací v nemodálním okně tak, aby uživatel může odpovědět na ni.  
   
-3.  Zobrazte okno se zprávou, který získá fokus klávesnice. Tato metoda Vyhněte se při uživatel může být psaní.  
+3.  Zobrazí okno se zprávou, která získá fokus klávesnice. Tato metoda vyhněte, když uživatel může být psaní.  
   
-4.  Zobrazí indikátor stavu v oznamovací oblasti stav na hlavním panelu. Podrobnosti najdete v tématu [přidání ikon aplikací do TaskBar se součástí Windows Forms NotifyIcon](../../../../docs/framework/winforms/controls/app-icons-to-the-taskbar-with-wf-notifyicon.md).  
+4.  Zobrazte indikátor stavu v oznamovací oblasti na hlavním panelu Stav. Podrobnosti najdete v tématu [přidání ikon aplikací do TaskBar s komponentou Windows Forms NotifyIcon](../controls/app-icons-to-the-taskbar-with-wf-notifyicon.md).  
   
 ## <a name="testing-the-application"></a>Testování aplikace  
- Před nasazením aplikace, měli byste otestovat funkce usnadnění, které jste implementovali.  
+ Před nasazením aplikace, měli byste otestovat funkce pro usnadnění přístupu, které jste implementovali.  
   
-#### <a name="to-test-accessibility-features"></a>Testování funkce pro usnadnění přístupu  
+#### <a name="to-test-accessibility-features"></a>K otestování funkce pro usnadnění přístupu  
   
-1.  Test přístupu k klávesnice, myš odpojte a Navigovat v uživatelském rozhraní pro každou funkci pouze pomocí klávesnice. Zajistěte, aby všechny úlohy mohou být provedeny pomocí klávesnice jenom.  
+1.  K otestování klávesnice, myš odpojte a Navigovat v uživatelském rozhraní pro každou funkci pouze pomocí klávesnice. Ujistěte se, že všechny úlohy lze provádět pomocí klávesnice pouze.  
   
-2.  K otestování podpory vysoký kontrast, zvolte ikonu Možnosti usnadnění v Ovládacích panelech. Klikněte na kartu zobrazení a zaškrtněte políčko použití vysokého kontrastu. Procházejte všechny prvky uživatelského rozhraní pro zajištění, že barev a písem změny se projeví. Ujistěte se také, vynechání bitové kopie nebo vzory vykreslovat za text.  
+2.  K otestování podpory vysoký kontrast, zvolte ikonu možností usnadnění přístupu v Ovládacích panelech. Klikněte na kartu zobrazení a použití vysoký kontrast – zaškrtnutím políčka. Procházejte všechny prvky uživatelského rozhraní k zajištění, že se projeví změny barev a písma. Také se ujistěte, že jsou vynechány Image nebo vzorce vykreslit za text.  
   
     > [!NOTE]
-    >  Systém Windows NT 4 nemá ikonu Možnosti usnadnění v Ovládacích panelech. Tento postup pro změnu nastavení SystemInformation.HighContrast proto nefunguje v systému Windows NT 4.  
+    >  Windows NT 4 nemá ikonu možností usnadnění přístupu v Ovládacích panelech. Tento postup pro změnu nastavení SystemInformation.HighContrast proto nebude fungovat v systému Windows NT 4.  
   
-3.  Další nástroje jsou snadno dostupné pro testování usnadnění aplikace.  
+3.  Další nástroje jsou snadno dostupné pro testování přístupnosti aplikace.  
   
-4.  Chcete-li otestovat vystavení fokus klávesnice, spusťte Lupa. (Otevřete ho kliknutím na **spustit** nabídky, přejděte na příkaz **programy**, přejděte na příkaz **Příslušenství**, přejděte na **usnadnění**a pak klikněte na tlačítko  **Lupa**). Navigovat v uživatelském rozhraní, pomocí procházení tabulátorem klávesnice a myši. Ujistěte se, že je správně sledovat všechny navigační **Lupa**.  
+4.  Pokud chcete otestovat, vystavení fokus klávesnice, spusťte Lupa. (Pokud chcete soubor otevřít, klikněte na tlačítko **Start** nabídky, přejděte k **programy**, přejděte na **Příslušenství**, přejděte na **usnadnění**a potom klikněte na tlačítko  **Lupa**). Navigovat v uživatelském rozhraní pomocí tabulátor klávesnice a myši. Ujistěte se, že je správně v sledovat všechny navigační **Lupa**.  
   
-5.  K testování zpřístupňuje prvky obrazovky, spusťte kontroly a použít k dosažení každý prvek myši a klávesy TAB. Zajistěte, aby byl informace uvedené v polích pro název, stav, Role, umístění a hodnota okna kontroly srozumitelné pro uživatele pro každý objekt v uživatelském rozhraní.
+5.  K otestování zpřístupňuje prvky na obrazovce, spusťte zkontrolujte, jestli se a pomocí myši a klávesu TAB k dosažení jednotlivých prvků. Ujistěte se, že informace uváděné v pole název, stav, Role, umístění a hodnota okna zkontrolujte, jestli se má smysl pro uživatele pro každý objekt v uživatelském rozhraní.
