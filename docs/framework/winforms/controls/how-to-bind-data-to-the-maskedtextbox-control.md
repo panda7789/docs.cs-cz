@@ -10,29 +10,29 @@ helpviewer_keywords:
 - data binding [Windows Forms], MaskedTextBox control [Windows Forms]
 - MaskedTextBox control [Windows Forms], binding data
 ms.assetid: 34b29f07-e8df-48d4-b08b-53fcca524708
-ms.openlocfilehash: 1eccfb40cd256cb3ebea6f0dcf38d73d5d53e8bd
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: b03eff45b8494253918ae4462c29f50568c81569
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54735075"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57717463"
 ---
-# <a name="how-to-bind-data-to-the-maskedtextbox-control"></a><span data-ttu-id="3df64-102">Postupy: Vytvoření vazby dat k ovládacímu prvku MaskedTextBox</span><span class="sxs-lookup"><span data-stu-id="3df64-102">How to: Bind Data to the MaskedTextBox Control</span></span>
-<span data-ttu-id="3df64-103">Můžete svázat data <xref:System.Windows.Forms.MaskedTextBox> řídit stejně jako na jakýkoli jiný ovládací prvek Windows Forms.</span><span class="sxs-lookup"><span data-stu-id="3df64-103">You can bind data to a <xref:System.Windows.Forms.MaskedTextBox> control just as you can to any other Windows Forms control.</span></span> <span data-ttu-id="3df64-104">Ale pokud formátu vašich dat v databázi neodpovídá formátu očekávaném definicí maska, je potřeba změnit formát data.</span><span class="sxs-lookup"><span data-stu-id="3df64-104">However, if the format of your data in the database does not match the format expected by your mask definition, you will need to reformat the data.</span></span> <span data-ttu-id="3df64-105">Následující postup ukazuje, jak to udělat <xref:System.Windows.Forms.Binding.Format> a <xref:System.Windows.Forms.Binding.Parse> události <xref:System.Windows.Forms.Binding> třídy k zobrazení samostatné telefonní číslo a Telefon rozšíření databázová pole jako jedno pole upravitelné.</span><span class="sxs-lookup"><span data-stu-id="3df64-105">The following procedure demonstrates how to do this using the <xref:System.Windows.Forms.Binding.Format> and <xref:System.Windows.Forms.Binding.Parse> events of the <xref:System.Windows.Forms.Binding> class to display separate phone number and phone extension database fields as a single editable field.</span></span>  
+# <a name="how-to-bind-data-to-the-maskedtextbox-control"></a><span data-ttu-id="e9894-102">Postupy: Vytvoření vazby dat k ovládacímu prvku MaskedTextBox</span><span class="sxs-lookup"><span data-stu-id="e9894-102">How to: Bind Data to the MaskedTextBox Control</span></span>
+<span data-ttu-id="e9894-103">Můžete svázat data <xref:System.Windows.Forms.MaskedTextBox> řídit stejně jako na jakýkoli jiný ovládací prvek Windows Forms.</span><span class="sxs-lookup"><span data-stu-id="e9894-103">You can bind data to a <xref:System.Windows.Forms.MaskedTextBox> control just as you can to any other Windows Forms control.</span></span> <span data-ttu-id="e9894-104">Ale pokud formátu vašich dat v databázi neodpovídá formátu očekávaném definicí maska, je potřeba změnit formát data.</span><span class="sxs-lookup"><span data-stu-id="e9894-104">However, if the format of your data in the database does not match the format expected by your mask definition, you will need to reformat the data.</span></span> <span data-ttu-id="e9894-105">Následující postup ukazuje, jak to udělat <xref:System.Windows.Forms.Binding.Format> a <xref:System.Windows.Forms.Binding.Parse> události <xref:System.Windows.Forms.Binding> třídy k zobrazení samostatné telefonní číslo a Telefon rozšíření databázová pole jako jedno pole upravitelné.</span><span class="sxs-lookup"><span data-stu-id="e9894-105">The following procedure demonstrates how to do this using the <xref:System.Windows.Forms.Binding.Format> and <xref:System.Windows.Forms.Binding.Parse> events of the <xref:System.Windows.Forms.Binding> class to display separate phone number and phone extension database fields as a single editable field.</span></span>  
   
- <span data-ttu-id="3df64-106">Následující postup vyžaduje, abyste měli přístup k databázi SQL serveru s ukázkovou databází Northwind nainstalované.</span><span class="sxs-lookup"><span data-stu-id="3df64-106">The following procedure requires that you have access to a SQL Server database with the Northwind sample database installed.</span></span>  
+ <span data-ttu-id="e9894-106">Následující postup vyžaduje, abyste měli přístup k databázi SQL serveru s ukázkovou databází Northwind nainstalované.</span><span class="sxs-lookup"><span data-stu-id="e9894-106">The following procedure requires that you have access to a SQL Server database with the Northwind sample database installed.</span></span>  
   
-### <a name="to-bind-data-to-a-maskedtextbox-control"></a><span data-ttu-id="3df64-107">Vazba dat k ovládacímu prvku MaskedTextBox</span><span class="sxs-lookup"><span data-stu-id="3df64-107">To bind data to a MaskedTextBox control</span></span>  
+### <a name="to-bind-data-to-a-maskedtextbox-control"></a><span data-ttu-id="e9894-107">Vazba dat k ovládacímu prvku MaskedTextBox</span><span class="sxs-lookup"><span data-stu-id="e9894-107">To bind data to a MaskedTextBox control</span></span>  
   
-1.  <span data-ttu-id="3df64-108">Vytvoření nového projektu Windows Forms.</span><span class="sxs-lookup"><span data-stu-id="3df64-108">Create a new Windows Forms project.</span></span>  
+1.  <span data-ttu-id="e9894-108">Vytvoření nového projektu Windows Forms.</span><span class="sxs-lookup"><span data-stu-id="e9894-108">Create a new Windows Forms project.</span></span>  
   
-2.  <span data-ttu-id="3df64-109">Přetáhněte dva <xref:System.Windows.Forms.TextBox> ovládací prvky do formuláře; je název `FirstName` a `LastName`.</span><span class="sxs-lookup"><span data-stu-id="3df64-109">Drag two <xref:System.Windows.Forms.TextBox> controls onto your form; name them `FirstName` and `LastName`.</span></span>  
+2.  <span data-ttu-id="e9894-109">Přetáhněte dva <xref:System.Windows.Forms.TextBox> ovládací prvky do formuláře; je název `FirstName` a `LastName`.</span><span class="sxs-lookup"><span data-stu-id="e9894-109">Drag two <xref:System.Windows.Forms.TextBox> controls onto your form; name them `FirstName` and `LastName`.</span></span>  
   
-3.  <span data-ttu-id="3df64-110">Přetáhněte <xref:System.Windows.Forms.MaskedTextBox> ovládací prvek do formuláře; pojmenujte ji `PhoneMask`.</span><span class="sxs-lookup"><span data-stu-id="3df64-110">Drag a <xref:System.Windows.Forms.MaskedTextBox> control onto your form; name it `PhoneMask`.</span></span>  
+3.  <span data-ttu-id="e9894-110">Přetáhněte <xref:System.Windows.Forms.MaskedTextBox> ovládací prvek do formuláře; pojmenujte ji `PhoneMask`.</span><span class="sxs-lookup"><span data-stu-id="e9894-110">Drag a <xref:System.Windows.Forms.MaskedTextBox> control onto your form; name it `PhoneMask`.</span></span>  
   
-4.  <span data-ttu-id="3df64-111">Nastavte <xref:System.Windows.Forms.MaskedTextBox.Mask%2A> vlastnost `PhoneMask` k `(000) 000-0000 x9999`.</span><span class="sxs-lookup"><span data-stu-id="3df64-111">Set the <xref:System.Windows.Forms.MaskedTextBox.Mask%2A> property of `PhoneMask` to `(000) 000-0000 x9999`.</span></span>  
+4.  <span data-ttu-id="e9894-111">Nastavte <xref:System.Windows.Forms.MaskedTextBox.Mask%2A> vlastnost `PhoneMask` k `(000) 000-0000 x9999`.</span><span class="sxs-lookup"><span data-stu-id="e9894-111">Set the <xref:System.Windows.Forms.MaskedTextBox.Mask%2A> property of `PhoneMask` to `(000) 000-0000 x9999`.</span></span>  
   
-5.  <span data-ttu-id="3df64-112">Přidáte že následující obor názvů naimportuje do formuláře.</span><span class="sxs-lookup"><span data-stu-id="3df64-112">Add the following namespace imports to the form.</span></span>  
+5.  <span data-ttu-id="e9894-112">Přidáte že následující obor názvů naimportuje do formuláře.</span><span class="sxs-lookup"><span data-stu-id="e9894-112">Add the following namespace imports to the form.</span></span>  
   
     ```csharp  
     using System.Data.SqlClient;  
@@ -42,7 +42,7 @@ ms.locfileid: "54735075"
     Imports System.Data.SqlClient  
     ```  
   
-6.  <span data-ttu-id="3df64-113">Klikněte pravým tlačítkem na formuláři a zvolte **zobrazit kód**.</span><span class="sxs-lookup"><span data-stu-id="3df64-113">Right-click the form and choose **View Code**.</span></span> <span data-ttu-id="3df64-114">Tento kód umístíte kamkoli do vaší třídy formuláře.</span><span class="sxs-lookup"><span data-stu-id="3df64-114">Place this code anywhere in your form class.</span></span>  
+6.  <span data-ttu-id="e9894-113">Klikněte pravým tlačítkem na formuláři a zvolte **zobrazit kód**.</span><span class="sxs-lookup"><span data-stu-id="e9894-113">Right-click the form and choose **View Code**.</span></span> <span data-ttu-id="e9894-114">Tento kód umístíte kamkoli do vaší třídy formuláře.</span><span class="sxs-lookup"><span data-stu-id="e9894-114">Place this code anywhere in your form class.</span></span>  
   
     ```csharp  
     Binding currentBinding, phoneBinding;  
@@ -136,7 +136,7 @@ ms.locfileid: "54735075"
     End Sub  
     ```  
   
-7.  <span data-ttu-id="3df64-115">Přidání obslužné rutiny událostí pro <xref:System.Windows.Forms.Binding.Format> a <xref:System.Windows.Forms.Binding.Parse> události zkombinovat a oddělit `PhoneNumber` a `Extension` pole z vázaného <xref:System.Data.DataSet>.</span><span class="sxs-lookup"><span data-stu-id="3df64-115">Add event handlers for the <xref:System.Windows.Forms.Binding.Format> and <xref:System.Windows.Forms.Binding.Parse> events to combine and separate the `PhoneNumber` and `Extension` fields from the bound <xref:System.Data.DataSet>.</span></span>  
+7.  <span data-ttu-id="e9894-115">Přidání obslužné rutiny událostí pro <xref:System.Windows.Forms.Binding.Format> a <xref:System.Windows.Forms.Binding.Parse> události zkombinovat a oddělit `PhoneNumber` a `Extension` pole z vázaného <xref:System.Data.DataSet>.</span><span class="sxs-lookup"><span data-stu-id="e9894-115">Add event handlers for the <xref:System.Windows.Forms.Binding.Format> and <xref:System.Windows.Forms.Binding.Parse> events to combine and separate the `PhoneNumber` and `Extension` fields from the bound <xref:System.Data.DataSet>.</span></span>  
   
     ```csharp  
     private void phoneBinding_Format(Object sender, ConvertEventArgs e)  
@@ -204,7 +204,7 @@ ms.locfileid: "54735075"
     End Sub  
     ```  
   
-8.  <span data-ttu-id="3df64-116">Přidejte dva <xref:System.Windows.Forms.Button> ovládací prvky do formuláře.</span><span class="sxs-lookup"><span data-stu-id="3df64-116">Add two <xref:System.Windows.Forms.Button> controls to the form.</span></span> <span data-ttu-id="3df64-117">Pojmenujte je `previousButton` a `nextButton`.</span><span class="sxs-lookup"><span data-stu-id="3df64-117">Name them `previousButton` and `nextButton`.</span></span> <span data-ttu-id="3df64-118">Klikněte dvakrát na každé tlačítko pro přidání <xref:System.Windows.Forms.Control.Click> obslužné rutiny události a vyplňte obslužné rutiny událostí, jak je znázorněno v následujícím příkladu kódu.</span><span class="sxs-lookup"><span data-stu-id="3df64-118">Double-click each button to add a <xref:System.Windows.Forms.Control.Click> event handler, and fill in the event handlers as shown in the following code example.</span></span>  
+8.  <span data-ttu-id="e9894-116">Přidejte dva <xref:System.Windows.Forms.Button> ovládací prvky do formuláře.</span><span class="sxs-lookup"><span data-stu-id="e9894-116">Add two <xref:System.Windows.Forms.Button> controls to the form.</span></span> <span data-ttu-id="e9894-117">Pojmenujte je `previousButton` a `nextButton`.</span><span class="sxs-lookup"><span data-stu-id="e9894-117">Name them `previousButton` and `nextButton`.</span></span> <span data-ttu-id="e9894-118">Klikněte dvakrát na každé tlačítko pro přidání <xref:System.Windows.Forms.Control.Click> obslužné rutiny události a vyplňte obslužné rutiny událostí, jak je znázorněno v následujícím příkladu kódu.</span><span class="sxs-lookup"><span data-stu-id="e9894-118">Double-click each button to add a <xref:System.Windows.Forms.Control.Click> event handler, and fill in the event handlers as shown in the following code example.</span></span>  
   
     ```csharp  
     private void previousButton_Click(object sender, EventArgs e)  
@@ -228,26 +228,26 @@ ms.locfileid: "54735075"
     End Sub  
     ```  
   
-9. <span data-ttu-id="3df64-119">Spusťte ukázku.</span><span class="sxs-lookup"><span data-stu-id="3df64-119">Run the sample.</span></span> <span data-ttu-id="3df64-120">Upravit data a použít **předchozí** a **Další** tlačítek a uvidíte, že data se ukládají správně do <xref:System.Data.DataSet>.</span><span class="sxs-lookup"><span data-stu-id="3df64-120">Edit the data, and use the **Previous** and **Next** buttons to see that the data is properly persisted to the <xref:System.Data.DataSet>.</span></span>  
+9. <span data-ttu-id="e9894-119">Spusťte ukázku.</span><span class="sxs-lookup"><span data-stu-id="e9894-119">Run the sample.</span></span> <span data-ttu-id="e9894-120">Upravit data a použít **předchozí** a **Další** tlačítek a uvidíte, že data se ukládají správně do <xref:System.Data.DataSet>.</span><span class="sxs-lookup"><span data-stu-id="e9894-120">Edit the data, and use the **Previous** and **Next** buttons to see that the data is properly persisted to the <xref:System.Data.DataSet>.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="3df64-121">Příklad</span><span class="sxs-lookup"><span data-stu-id="3df64-121">Example</span></span>  
- <span data-ttu-id="3df64-122">Následující příklad kódu je celý kód informacích, které je výsledkem dokončení předchozího postupu.</span><span class="sxs-lookup"><span data-stu-id="3df64-122">The following code example is the full code listing that results from completing the previous procedure.</span></span>  
+## <a name="example"></a><span data-ttu-id="e9894-121">Příklad</span><span class="sxs-lookup"><span data-stu-id="e9894-121">Example</span></span>  
+ <span data-ttu-id="e9894-122">Následující příklad kódu je celý kód informacích, které je výsledkem dokončení předchozího postupu.</span><span class="sxs-lookup"><span data-stu-id="e9894-122">The following code example is the full code listing that results from completing the previous procedure.</span></span>  
   
- [!code-cpp[MaskedTextBoxData#1](../../../../samples/snippets/cpp/VS_Snippets_Winforms/MaskedTextBoxData/cpp/form1.cpp#1)]
- [!code-csharp[MaskedTextBoxData#1](../../../../samples/snippets/csharp/VS_Snippets_Winforms/MaskedTextBoxData/CS/form1.cs#1)]
- [!code-vb[MaskedTextBoxData#1](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/MaskedTextBoxData/VB/form1.vb#1)]  
+ [!code-cpp[MaskedTextBoxData#1](~/samples/snippets/cpp/VS_Snippets_Winforms/MaskedTextBoxData/cpp/form1.cpp#1)]
+ [!code-csharp[MaskedTextBoxData#1](~/samples/snippets/csharp/VS_Snippets_Winforms/MaskedTextBoxData/CS/form1.cs#1)]
+ [!code-vb[MaskedTextBoxData#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/MaskedTextBoxData/VB/form1.vb#1)]  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="3df64-123">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="3df64-123">Compiling the Code</span></span>  
+## <a name="compiling-the-code"></a><span data-ttu-id="e9894-123">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="e9894-123">Compiling the Code</span></span>  
   
--   <span data-ttu-id="3df64-124">Vytvoření Vizuálu C# nebo projektu jazyka Visual Basic.</span><span class="sxs-lookup"><span data-stu-id="3df64-124">Create a Visual C# or Visual Basic project.</span></span>  
+-   <span data-ttu-id="e9894-124">Vytvoření Vizuálu C# nebo projektu jazyka Visual Basic.</span><span class="sxs-lookup"><span data-stu-id="e9894-124">Create a Visual C# or Visual Basic project.</span></span>  
   
--   <span data-ttu-id="3df64-125">Přidat <xref:System.Windows.Forms.TextBox> a <xref:System.Windows.Forms.MaskedTextBox> ovládacích prvků do formuláře, jak je popsáno v předchozím postupu.</span><span class="sxs-lookup"><span data-stu-id="3df64-125">Add the <xref:System.Windows.Forms.TextBox> and <xref:System.Windows.Forms.MaskedTextBox> controls to the form, as described in the previous procedure.</span></span>  
+-   <span data-ttu-id="e9894-125">Přidat <xref:System.Windows.Forms.TextBox> a <xref:System.Windows.Forms.MaskedTextBox> ovládacích prvků do formuláře, jak je popsáno v předchozím postupu.</span><span class="sxs-lookup"><span data-stu-id="e9894-125">Add the <xref:System.Windows.Forms.TextBox> and <xref:System.Windows.Forms.MaskedTextBox> controls to the form, as described in the previous procedure.</span></span>  
   
--   <span data-ttu-id="3df64-126">Otevření souboru se zdrojovým kódem pro výchozí formuláře projektu.</span><span class="sxs-lookup"><span data-stu-id="3df64-126">Open the source code file for the project's default form.</span></span>  
+-   <span data-ttu-id="e9894-126">Otevření souboru se zdrojovým kódem pro výchozí formuláře projektu.</span><span class="sxs-lookup"><span data-stu-id="e9894-126">Open the source code file for the project's default form.</span></span>  
   
--   <span data-ttu-id="3df64-127">Zdrojový kód v tomto souboru nahraďte kód uvedený v předchozí části "Kód".</span><span class="sxs-lookup"><span data-stu-id="3df64-127">Replace the source code in this file with the code listed in the previous "Code" section.</span></span>  
+-   <span data-ttu-id="e9894-127">Zdrojový kód v tomto souboru nahraďte kód uvedený v předchozí části "Kód".</span><span class="sxs-lookup"><span data-stu-id="e9894-127">Replace the source code in this file with the code listed in the previous "Code" section.</span></span>  
   
--   <span data-ttu-id="3df64-128">Zkompilujte aplikaci.</span><span class="sxs-lookup"><span data-stu-id="3df64-128">Compile the application.</span></span>  
+-   <span data-ttu-id="e9894-128">Zkompilujte aplikaci.</span><span class="sxs-lookup"><span data-stu-id="e9894-128">Compile the application.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="3df64-129">Viz také:</span><span class="sxs-lookup"><span data-stu-id="3df64-129">See also</span></span>
-- [<span data-ttu-id="3df64-130">Návod: Práce s ovládacím prvkem MaskedTextBox</span><span class="sxs-lookup"><span data-stu-id="3df64-130">Walkthrough: Working with the MaskedTextBox Control</span></span>](../../../../docs/framework/winforms/controls/walkthrough-working-with-the-maskedtextbox-control.md)
+## <a name="see-also"></a><span data-ttu-id="e9894-129">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e9894-129">See also</span></span>
+- [<span data-ttu-id="e9894-130">Návod: Práce s ovládacím prvkem MaskedTextBox</span><span class="sxs-lookup"><span data-stu-id="e9894-130">Walkthrough: Working with the MaskedTextBox Control</span></span>](walkthrough-working-with-the-maskedtextbox-control.md)
