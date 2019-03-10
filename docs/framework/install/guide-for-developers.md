@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: daf9d9d5-84ac-4bd9-a864-27665ffd0f5c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 01bbd3e4fd113c39fe6fdd95945381978ab49f9f
-ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
+ms.openlocfilehash: ac6dbf4792df9e287c849ba2a1a93468a444d221
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56093941"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57715682"
 ---
 # <a name="install-the-net-framework-for-developers"></a>Instalace rozhraní .NET Framework pro vývojáře
 
@@ -228,7 +228,7 @@ V následující tabulce jsou uvedeny podporované jazyky.
 
 - Informace o migraci aplikace z rozhraní .NET Framework 4 do [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] nebo jeden z jeho vydání bodu najdete v článku [Průvodce migrací](~/docs/framework/migration-guide/index.md).
 
-- Zobrazit [referenční zdroje rozhraní .NET Framework](https://referencesource.microsoft.com/) procházet zdrojový kód rozhraní .NET Framework online. Zdroj odkazu je také k dispozici na [Githubu](https://github.com/Microsoft/referencesource). Je možné [stáhnout zdroj odkazu](https://referencesource.microsoft.com/download.html) pro prohlížení v režimu offline a procházení zdroje (včetně oprav a aktualizací) během ladění. Další informace najdete v příspěvku na blogu [nový vzhled pro zdroj odkazu .NET](https://blogs.msdn.com/b/dotnet/archive/2014/02/24/a-new-look-for-net-reference-source.aspx).
+- Zobrazit [referenční zdroje rozhraní .NET Framework](https://referencesource.microsoft.com/) procházet zdrojový kód rozhraní .NET Framework online. Zdroj odkazu je také k dispozici na [Githubu](https://github.com/Microsoft/referencesource). Je možné [stáhnout zdroj odkazu](https://referencesource.microsoft.com/download.html) pro prohlížení v režimu offline a procházení zdroje (včetně oprav a aktualizací) během ladění. Další informace najdete v příspěvku na blogu [nový vzhled pro zdroj odkazu .NET](https://devblogs.microsoft.com/dotnet/a-new-look-for-net-reference-source/).
 
 ## <a name="see-also"></a>Viz také:
 

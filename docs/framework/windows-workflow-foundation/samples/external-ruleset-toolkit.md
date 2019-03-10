@@ -2,12 +2,12 @@
 title: Externí Toolkit sady pravidel
 ms.date: 03/30/2017
 ms.assetid: a306d283-a031-475e-aa01-9ae86e7adcb0
-ms.openlocfilehash: 7a331f139fd7d3127892e6a103b370ec50dc9c99
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: 510b70f7ebeda784dce4731bb4a08896ac2e8361
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57482363"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57710040"
 ---
 # <a name="external-ruleset-toolkit"></a>Externí Toolkit sady pravidel
 
@@ -30,7 +30,7 @@ Součástí této ukázky zahrnout:
 
 Na obrázku 1 je zobrazena interakce součástí. Následující části popisují jednotlivé komponenty.
 
-![Koncepční přehled externí ukázková RuleSet](../../../../docs/framework/windows-workflow-foundation/samples/media/rulesettoolkitsampleoverview.gif "RuleSetToolkitSampleOverview")
+![Koncepční přehled externí ukázková RuleSet](./media/rulesettoolkitsampleoverview.gif "RuleSetToolkitSampleOverview")
 
 Obrázek 1: Přehled ukázky
 
@@ -47,7 +47,7 @@ Obrázek 1: Přehled ukázky
 
 Snímek obrazovky nástroje sady pravidel je znázorněno na obrázku 2. Z **pravidlo Store** nabídku, můžete načíst dostupné sady pravidel z databáze a uložit změny pravidel zpět do úložiště. Konfigurační soubor aplikace obsahuje připojovací řetězec databáze pro databázi sady pravidel. Při spuštění nástroje, automaticky se načte sady pravidel z nakonfigurované databáze.
 
-![Externí sady pravidel Toolkit ukázkový výstup](../../../../docs/framework/windows-workflow-foundation/samples/media/rulesetbrowser.gif "RuleSetBrowser")
+![Externí sady pravidel Toolkit ukázkový výstup](./media/rulesetbrowser.gif "RuleSetBrowser")
 
 Obrázek 2: Sada pravidel pro prohlížeč
 
@@ -55,13 +55,13 @@ Nástroje sady pravidel se týká čísla hlavní verze a podverze sady pravidel
 
 Po kliknutí na **upravit pravidla**, spustí editor sady pravidel, jak je znázorněno na obrázku 3.
 
-![Ukázkový výstup externích nástrojů sady pravidel](../../../../docs/framework/windows-workflow-foundation/samples/media/ruleseteditor.gif "RuleSetEditor")
+![Ukázkový výstup externích nástrojů sady pravidel](./media/ruleseteditor.gif "RuleSetEditor")
 
 Obrázek 3: RuleSet Editor
 
 Toto je opětovné hostování editor dialogového okna, která je součástí doplňku sady Visual Studio Windows Workflow Foundation. Nabízí stejné funkce, včetně podporu technologie Intellisense. Pravidla pro čtení zleva doprava vůči cílový typ (například pracovní postup), který je spojen s sady pravidel v nástroji; Po kliknutí na **Procházet** v dialogovém okně hlavní nástroj **selektor pracovního postupu a typu** dialogového okna se zobrazí, jak je znázorněno na obrázku 4.
 
-![Pracovní postup &#47;výběru typu](../../../../docs/framework/windows-workflow-foundation/samples/media/71f08d57-e8f2-499e-8151-ece2cbdcabfd.gif "71f08d57-e8f2-499e-8151-ece2cbdcabfd")
+![Pracovní postup &#47;výběru typu](./media/71f08d57-e8f2-499e-8151-ece2cbdcabfd.gif "71f08d57-e8f2-499e-8151-ece2cbdcabfd")
 
 Obrázek 4: Výběr pracovního postupu/typu
 
@@ -71,7 +71,7 @@ Cesta k souboru sestavení a typu `name are stored with the` sady pravidel v dat
 
 Po kliknutí na **OK** v **selektor pracovního postupu a typu** dialogového okna, ověřuje vybraného typu proti sady pravidel, zajistit, že všechny členy, které odkazují pravidla cílového typu. Zobrazují se chyby v **chyby ověření** dialogového okna (viz obrázek 5). Můžete pokračovat ve změně bez ohledu na chyby, nebo klikněte na **zrušit**. Z **nástroje** nabídky v dialogovém okně hlavní nástroj, můžete kliknout na **ověřit** znovu ověřit verzi sady pravidel na cílovou aktivitu.
 
-![Chyby ověření z externí ukázková RuleSet](../../../../docs/framework/windows-workflow-foundation/samples/media/validationerrorsruleset.png "ValidationErrorsRuleSet")
+![Chyby ověření z externí ukázková RuleSet](./media/validationerrorsruleset.png "ValidationErrorsRuleSet")
 
 Obrázek 5: Chyby ověření
 
@@ -81,7 +81,7 @@ Po výběru souboru .rules **selektor sady pravidel** se zobrazí dialogové okn
 
 U každé sady pravidel, který importuje nástroj pokusí vyhledat přidruženého typu ve složce bin\Debug podle umístění souboru .rules (pokud existuje), závisí na členy používané sady pravidel. Pokud nástroj zjistí, několik odpovídajících typů, pokusí se zvolte typ na základě shody mezi .rules název souboru a název typu (například `Workflow1` typu odpovídá Workflow1.rules). Pokud existuje více shod, zobrazí se výzva k výběru typu. Pokud tento mechanismus automatického identifikace nepodaří najít odpovídající sestavení nebo typ, pak po dokončení importu můžete kliknout na **Procházet** v dialogovém okně hlavní nástroj přejděte do přidruženého typu.
 
-![Selektor sady pravidel](../../../../docs/framework/windows-workflow-foundation/samples/media/rulesetselector.gif "RuleSetSelector")
+![Selektor sady pravidel](./media/rulesetselector.gif "RuleSetSelector")
 
 Obrázek 6: Selektor sady pravidel
 

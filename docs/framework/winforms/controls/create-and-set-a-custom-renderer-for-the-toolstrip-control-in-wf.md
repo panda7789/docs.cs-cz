@@ -10,12 +10,12 @@ helpviewer_keywords:
 - examples [Windows Forms], toolbars
 - ToolStrip control [Windows Forms], rendering
 ms.assetid: 88a804ba-679f-4ba3-938a-0dc396199c5b
-ms.openlocfilehash: a70503dd4def19dd303a7362c9ca4d92f1419ff6
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 379cb8862ce5dda5cfffc625cc72906cf6a2c305
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54538502"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57721005"
 ---
 # <a name="how-to-create-and-set-a-custom-renderer-for-the-toolstrip-control-in-windows-forms"></a>Postupy: Vytvoření a nastavení vlastního Rendereru pro ovládací prvek ToolStrip ve Windows Forms
 <xref:System.Windows.Forms.ToolStrip> ovládací prvky umožňují snadno podporu k používání motivů a stylů. Zcela vlastní vzhled a chování (vzhled a chování) můžete dosáhnout tím, že buď nastavíte <xref:System.Windows.Forms.ToolStrip.Renderer%2A?displayProperty=nameWithType> vlastnost nebo <xref:System.Windows.Forms.ToolStripManager.Renderer%2A?displayProperty=nameWithType> vlastnost vlastní zobrazovací jednotky.  
@@ -29,7 +29,7 @@ ms.locfileid: "54538502"
   
 1.  Rozšíření <xref:System.Windows.Forms.ToolStripRenderer> třídy.  
   
-2.  Implementovat požadované vlastní vykreslování tak, že přepíšete odpovídající *na...* členové  
+2.  Implementovat požadované vlastní vykreslování tak, že přepíšete odpovídající *na...* členy  
   
     ```vb  
     Public Class RedTextRenderer  
@@ -85,6 +85,6 @@ ms.locfileid: "54538502"
 - <xref:System.Windows.Forms.ToolStripManager.Renderer%2A>
 - <xref:System.Windows.Forms.ToolStripRenderer>
 - <xref:System.Windows.Forms.ToolStrip.RenderMode%2A>
-- [Přehled ovládacího prvku ToolStrip](../../../../docs/framework/winforms/controls/toolstrip-control-overview-windows-forms.md)
-- [Architektura ovládacího prvku ToolStrip](../../../../docs/framework/winforms/controls/toolstrip-control-architecture.md)
-- [Shrnutí technologie ToolStrip](../../../../docs/framework/winforms/controls/toolstrip-technology-summary.md)
+- [Přehled ovládacího prvku ToolStrip](toolstrip-control-overview-windows-forms.md)
+- [Architektura ovládacího prvku ToolStrip](toolstrip-control-architecture.md)
+- [Shrnutí technologie ToolStrip](toolstrip-technology-summary.md)

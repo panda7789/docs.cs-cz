@@ -8,12 +8,12 @@ helpviewer_keywords:
 - regions [Windows Forms], clipping
 - regions [Windows Forms], restricting drawing surface
 ms.assetid: 43d121b4-e14c-4901-b25c-2d6c25ba4e29
-ms.openlocfilehash: 5482218a8d6310ce49a1f9f5f02b3b8e36c1fd90
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2ae9a99ef25c7ee5e52f5995a2d057e42e7d3127
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54590653"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57715877"
 ---
 # <a name="how-to-use-clipping-with-a-region"></a>Postupy: Použití oříznutí s oblastí
 Jedna z vlastností objektu <xref:System.Drawing.Graphics> třída je oblast ústřižku. Všechny kreslení provádí daný <xref:System.Drawing.Graphics> je omezen na oblast ústřižku tohoto objektu <xref:System.Drawing.Graphics> objektu. Můžete nastavit oblast ústřižku voláním <xref:System.Drawing.Graphics.SetClip%2A> metody.  
@@ -23,14 +23,14 @@ Jedna z vlastností objektu <xref:System.Drawing.Graphics> třída je oblast ús
   
  Následující obrázek znázorňuje zkrácený řetězce.  
   
- ![Clip](../../../../docs/framework/winforms/advanced/media/clip1.png "clip1")  
+ ![Clip](./media/clip1.png "clip1")  
   
- [!code-csharp[System.Drawing.MiscLegacyTopics#41](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.MiscLegacyTopics/CS/Class1.cs#41)]
- [!code-vb[System.Drawing.MiscLegacyTopics#41](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.MiscLegacyTopics/VB/Class1.vb#41)]  
+ [!code-csharp[System.Drawing.MiscLegacyTopics#41](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.MiscLegacyTopics/CS/Class1.cs#41)]
+ [!code-vb[System.Drawing.MiscLegacyTopics#41](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.MiscLegacyTopics/VB/Class1.vb#41)]  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  V předchozím příkladu je určený k použití pomocí Windows Forms a vyžaduje <xref:System.Windows.Forms.PaintEventArgs> `e`, což je parametr <xref:System.Windows.Forms.PaintEventHandler>.  
   
 ## <a name="see-also"></a>Viz také:
-- [Oblasti v rozhraní GDI+](../../../../docs/framework/winforms/advanced/regions-in-gdi.md)
-- [Použití oblastí](../../../../docs/framework/winforms/advanced/using-regions.md)
+- [Oblasti v rozhraní GDI+](regions-in-gdi.md)
+- [Použití oblastí](using-regions.md)

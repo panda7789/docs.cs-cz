@@ -6,27 +6,27 @@ helpviewer_keywords:
 - Splitter control [Windows Forms]
 - views [Windows Forms], multiple per frame
 ms.assetid: 6f287407-e895-4b07-a46a-a5bff8388d46
-ms.openlocfilehash: 4340c4647ffda79bcd919e9bd778dcabab0fc511
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 37d9cb91e28a93b98394620a4385989968700fae
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33534635"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57715331"
 ---
 # <a name="splitter-control-windows-forms"></a>Rozdělovač – ovládací prvek (Windows Forms)
-Windows Forms `Splitter` ovládací prvky se používají ke změně velikosti ukotvených ovládacích prvků za běhu. `Splitter` Řízení se často používá ve formulářích s ovládacími prvky, které mají různých délek data k dispozici jako Průzkumník Windows, jejichž data podokna obsahovat informace o různých šířek v různých časech.  
+Windows Forms `Splitter` ovládací prvky se používají ke změně velikosti ukotvených ovládacích prvků za běhu. `Splitter` Ovládací prvek se často používá ve formulářích s ovládacími prvky, které mají různých délek data k prezentaci, jako je Průzkumník Windows, jejichž podokna data obsahují informace o různých šířkách v různých časech.  
   
 > [!NOTE]
->  I když <xref:System.Windows.Forms.SplitContainer> nahrazuje a přidá funkce `Splitter` řízení předchozí verze, `Splitter` se zachovává kvůli zpětné kompatibilitě a budoucí použití, pokud si zvolíte.  
+>  I když <xref:System.Windows.Forms.SplitContainer> nahradí a přidá funkce, které `Splitter` ovládacího prvku z předchozích verzí `Splitter` se zachovává kvůli zpětné kompatibilitě a budoucí použití, pokud se rozhodnete.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Přehled ovládacího prvku Splitter](../../../../docs/framework/winforms/controls/splitter-control-overview-windows-forms.md)  
+ [Přehled ovládacího prvku Splitter](splitter-control-overview-windows-forms.md)  
  Vysvětluje, co je tento ovládací prvek a jeho klíčové funkce a vlastnosti.  
   
 ## <a name="reference"></a>Odkaz  
- <xref:System.Windows.Forms.Splitter> – Třída  
+ <xref:System.Windows.Forms.Splitter> Třída  
  Tato třída popisuje a obsahuje odkazy na všechny její členy.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Ovládací prvky používané ve Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
- Poskytuje úplný seznam Windows Forms – ovládací prvky, odkazy na informace o jejich používání.
+ [Ovládací prvky používané ve Windows Forms](controls-to-use-on-windows-forms.md)  
+ Obsahuje úplný seznam všech ovládacích prvcích Windows Forms, s odkazy na informace o jejich použití.

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 0c1534e5-979b-4c8a-a588-1c24301aefb3
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8f6b758dd509ac2d318180c014ac3d262fe331f2
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: b116944a45546604d1d60a5a44afcce8fee2f026
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54623232"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57721512"
 ---
 # <a name="working-with-calendars"></a>Práce s kalendáři
 
@@ -138,7 +138,7 @@ Existuje však jedna důležitá výjimka. Výchozí (neinicializovaná) hodnota
 Data v kalendářích jsou obvykle rozdělena do období. Ale <xref:System.Globalization.Calendar> třídy v rozhraní .NET nepodporují každé období definované kalendářem a většina <xref:System.Globalization.Calendar> třídy podporují pouze jediné období. Pouze <xref:System.Globalization.JapaneseCalendar> a <xref:System.Globalization.JapaneseLunisolarCalendar> třídy podporují větší počet období.
 
 > [!IMPORTANT]
->  A nové éry v <xref:System.Globalization.JapaneseCalendar> a <xref:System.Globalization.JapaneseLunisolarCalendar> začíná 1. května 2019. Tato změna ovlivní všechny aplikace, které používají tyto kalendáře. Zobrazit [zpracování do nové éry v japonské kalendáře v rozhraní .NET](https://blogs.msdn.microsoft.com/dotnet/2018/11/14/handling-a-new-era-in-the-japanese-calendar-in-net/) Další informace a na zjištění, zda jsou vliv na vaše aplikace. Zobrazit [Příprava aplikace pro změnu japonské období](/windows/uwp/design/globalizing/japanese-era-change) informace o testování aplikací na Windows k zajištění jejich připravenosti změna éry.
+>  A nové éry v <xref:System.Globalization.JapaneseCalendar> a <xref:System.Globalization.JapaneseLunisolarCalendar> začíná 1. května 2019. Tato změna ovlivní všechny aplikace, které používají tyto kalendáře. Zobrazit [zpracování do nové éry v japonské kalendáře v rozhraní .NET](https://devblogs.microsoft.com/dotnet/handling-a-new-era-in-the-japanese-calendar-in-net/) Další informace a na zjištění, zda jsou vliv na vaše aplikace. Zobrazit [Příprava aplikace pro změnu japonské období](/windows/uwp/design/globalizing/japanese-era-change) informace o testování aplikací na Windows k zajištění jejich připravenosti změna éry.
 
 ### <a name="eras-and-era-names"></a>Období a názvy období
 

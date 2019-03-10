@@ -6,12 +6,12 @@ helpviewer_keywords:
 - attributes [Windows Forms], application settings
 - wrapper classes [Windows Forms], application settings
 ms.assetid: 53caa66c-a9fb-43a5-953c-ad092590098d
-ms.openlocfilehash: a46f1fd14400995fef91c117502df24eae613fac
-ms.sourcegitcommit: acd8ed14fe94e9d4e3a7fb685fe83d05e941073c
+ms.openlocfilehash: cfbaac8ad9a8576d076ed34059fb62e9e0a91ebc
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56442552"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57714655"
 ---
 # <a name="application-settings-attributes"></a>Atributy nastavení aplikace
 Architektura nastavení aplikace poskytuje mnoho atributů, které lze použít buď pro obálkovou třídu nastavení aplikace nebo jeho jednotlivé vlastnosti. Tyto atributy jsou zkoumány za běhu aplikace nastavení infrastruktury, často konkrétně poskytovatel nastavení, aby bylo možné přizpůsobit jejich fungování stanovených potřebám vlastní obálku.  
@@ -40,5 +40,5 @@ Architektura nastavení aplikace poskytuje mnoho atributů, které lze použít 
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Configuration.ApplicationSettingsBase>
 - <xref:System.Configuration.SettingsProvider>
-- [Architektura nastavení aplikace](../../../../docs/framework/winforms/advanced/application-settings-architecture.md)
+- [Architektura nastavení aplikace](application-settings-architecture.md)
 - [Postupy: Vytvořit nastavení aplikace](how-to-create-application-settings.md)

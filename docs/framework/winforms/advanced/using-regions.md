@@ -5,24 +5,24 @@ helpviewer_keywords:
 - examples [Windows Forms], regions
 - regions [Windows Forms], using
 ms.assetid: 7809295b-870f-4107-a8b5-8386c298acd5
-ms.openlocfilehash: bb116cd22c87aab1402bd2989f4039acc4ba137c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ec11b8c7d2eeb153eb4a8c8772fef24977310e13
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33522605"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57713745"
 ---
 # <a name="using-regions"></a>Použití oblastí
-[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] <xref:System.Drawing.Region> Třída umožňuje definovat vlastní obrazce. Tvar, který může být vytvořena řádky, mnohoúhelníky a křivek.  
+[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] <xref:System.Drawing.Region> Třída umožňuje definovat vlastní obrazce. Tvar může být vytvořena řádky, mnohoúhelníků a křivky.  
   
- Dvě běžné používá pro oblasti jsou dosáhl testování a výstřižek. Testování přístupů je určení, zda v určité oblasti obrazovky označeného kliknutím myší. Výstřižek se omezení do určité oblasti.  
+ Dvě běžné použití oblastech jsou spuštění, testování a oříznutí. Testování přístupů je určení, zda v určité oblasti obrazovky označeného kliknutím myši. Výstřižek se omezení kreslení v určité oblasti.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Postupy: Použití testování průchodu s oblastí](../../../../docs/framework/winforms/advanced/how-to-use-hit-testing-with-a-region.md)  
- Ukazuje, jak používat <xref:System.Drawing.Region> k provedení testu přístupů.  
+ [Postupy: Použití testování průchodu s oblast](how-to-use-hit-testing-with-a-region.md)  
+ Ukazuje, jak používat <xref:System.Drawing.Region> k provedení ověření pozice.  
   
- [Postupy: Použití oříznutí s oblastí](../../../../docs/framework/winforms/advanced/how-to-use-clipping-with-a-region.md)  
- Vysvětluje, jak nastavit pro oblast ořezu <xref:System.Drawing.Graphics> objektu.  
+ [Postupy: Použití oříznutí s oblastí](how-to-use-clipping-with-a-region.md)  
+ Vysvětluje, jak nastavit oblast ořezu pro <xref:System.Drawing.Graphics> objektu.  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Drawing.Region>  

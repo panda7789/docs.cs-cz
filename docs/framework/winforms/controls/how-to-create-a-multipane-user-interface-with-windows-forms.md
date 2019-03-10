@@ -12,17 +12,17 @@ helpviewer_keywords:
 - TreeView control [Windows Forms], examples
 - Splitter control [Windows Forms], examples
 ms.assetid: e79f6bcc-3740-4d1e-b46a-c5594d9b7327
-ms.openlocfilehash: 1f7ba0ab7f0701fe39c3cefb979b9226eeeddffe
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 4db424b27af09dcb7def0051fba070fe9ccf0491
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54531405"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57721967"
 ---
 # <a name="how-to-create-a-multipane-user-interface-with-windows-forms"></a>Postupy: Vytvoření více podokny uživatelského rozhraní pomocí Windows Forms
 V následujícím postupu vytvoříte, který je podobný tomu použitému v aplikaci Microsoft Outlook s více podokny uživatelské rozhraní **složky** seznamu, **zprávy** podokně a **veverziPreview** podokně. Toto uspořádání se dosahuje hlavně prostřednictvím Ukotvování ovládacích prvků ve formuláři.  
   
- Můžete ukotvit ovládacího prvku, zjistíte, které okrajem nadřazeného kontejneru ovládacího prvku je připojen k. Proto pokud nastavíte <xref:System.Windows.Forms.SplitContainer.Dock%2A> vlastnost <xref:System.Windows.Forms.DockStyle.Right>, pravým okrajem ovládacího prvku se ukotven k pravým okrajem jeho nadřazeného ovládacího prvku. Kromě toho ukotvených okrajem ovládacího prvku svou velikost tak, aby odpovídaly u ovládacího prvku kontejneru. Další informace o tom, jak <xref:System.Windows.Forms.SplitContainer.Dock%2A> vlastnost funguje, najdete v článku [jak: Ukotvování ovládacích prvků ve Windows Forms](../../../../docs/framework/winforms/controls/how-to-dock-controls-on-windows-forms.md).  
+ Můžete ukotvit ovládacího prvku, zjistíte, které okrajem nadřazeného kontejneru ovládacího prvku je připojen k. Proto pokud nastavíte <xref:System.Windows.Forms.SplitContainer.Dock%2A> vlastnost <xref:System.Windows.Forms.DockStyle.Right>, pravým okrajem ovládacího prvku se ukotven k pravým okrajem jeho nadřazeného ovládacího prvku. Kromě toho ukotvených okrajem ovládacího prvku svou velikost tak, aby odpovídaly u ovládacího prvku kontejneru. Další informace o tom, jak <xref:System.Windows.Forms.SplitContainer.Dock%2A> vlastnost funguje, najdete v článku [jak: Ukotvování ovládacích prvků ve Windows Forms](how-to-dock-controls-on-windows-forms.md).  
   
  Tento postup se zaměřuje na uspořádání <xref:System.Windows.Forms.SplitContainer> a další ovládací prvky ve formuláři, nikoli na přidání funkce do aplikace, které napodobují aplikace Microsoft Outlook.  
   
@@ -178,5 +178,5 @@ V následujícím postupu vytvoříte, který je podobný tomu použitému v apl
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Forms.SplitContainer>
-- [Ovládací prvek SplitContainer](../../../../docs/framework/winforms/controls/splitcontainer-control-windows-forms.md)
-- [Postupy: Vytvoření více podokny uživatelského rozhraní pomocí Windows Forms pomocí návrháře](../../../../docs/framework/winforms/controls/create-a-multipane-user-interface-with-wf-using-the-designer.md)
+- [Ovládací prvek SplitContainer](splitcontainer-control-windows-forms.md)
+- [Postupy: Vytvoření více podokny uživatelského rozhraní pomocí Windows Forms pomocí návrháře](create-a-multipane-user-interface-with-wf-using-the-designer.md)

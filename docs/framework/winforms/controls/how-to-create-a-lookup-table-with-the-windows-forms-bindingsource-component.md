@@ -7,12 +7,12 @@ helpviewer_keywords:
 - BindingSource component [Windows Forms], creating a lookup table
 - BindingSource component [Windows Forms], examples
 ms.assetid: 622fce80-879d-44be-abbf-8350ec22ca2b
-ms.openlocfilehash: 79459364fba51e8e10194a5e3681d6384beb16a7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: de61369f9fcc7493dbc3197d91c58cec9e926c13
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54539893"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57723917"
 ---
 # <a name="how-to-create-a-lookup-table-with-the-windows-forms-bindingsource-component"></a>Postupy: Vytvoření vyhledávací tabulky s komponentou Windows Forms BindingSource
 Vyhledávací tabulka je tabulka dat, která má sloupec, který zobrazuje data ze záznamů v související tabulce. V následujících postupech <xref:System.Windows.Forms.ComboBox> ovládacího prvku se používá k zobrazení pole relace cizího klíče z nadřazené do podřízené tabulky.  
@@ -35,7 +35,7 @@ Vyhledávací tabulka je tabulka dat, která má sloupec, který zobrazuje data 
   
  V tomto scénáři jedné tabulky, CustomersTable, ukládá informace, které chcete zobrazit a uložte. Ale pro úsporu místa, v tabulce ponechá si data, která se přidá na srozumitelnosti. Dalších table OrdersTable, obsahuje pouze vzhled související informace o zákazníkovi, který je ekvivalentní k které data objednávky a pořadí ID. identifikační číslo Není k dispozici žádnou zmínku o názvy zákazníků.  
   
- Čtyři důležité vlastnosti jsou nastaveny na [ovládacího prvku ComboBox](../../../../docs/framework/winforms/controls/combobox-control-windows-forms.md) ovládacího prvku k vytvoření vyhledávací tabulky.  
+ Čtyři důležité vlastnosti jsou nastaveny na [ovládacího prvku ComboBox](combobox-control-windows-forms.md) ovládacího prvku k vytvoření vyhledávací tabulky.  
   
 -   <xref:System.Windows.Forms.ComboBox.DataSource%2A> Vlastnosti obsahuje název tabulky.  
   
@@ -53,7 +53,7 @@ Vyhledávací tabulka je tabulka dat, která má sloupec, který zobrazuje data 
   
      Tento ovládací prvek zobrazí sloupec z nadřazené tabulky.  
   
-2.  Přetáhněte jiných ovládacích prvků pro zobrazení podrobností z podřízené tabulky. Formát dat v tabulce byste určit, jaké ovládací prvky, které zvolíte. Další informace najdete v tématu [ovládacích prvků Windows Forms podle funkce](../../../../docs/framework/winforms/controls/windows-forms-controls-by-function.md).  
+2.  Přetáhněte jiných ovládacích prvků pro zobrazení podrobností z podřízené tabulky. Formát dat v tabulce byste určit, jaké ovládací prvky, které zvolíte. Další informace najdete v tématu [ovládacích prvků Windows Forms podle funkce](windows-forms-controls-by-function.md).  
   
 3.  Přetáhněte <xref:System.Windows.Forms.BindingNavigator> ovládací prvek do formuláře; to vám umožní procházet data v podřízené tabulce.  
   
@@ -93,6 +93,6 @@ Vyhledávací tabulka je tabulka dat, která má sloupec, který zobrazuje data 
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Forms.BindingSource>
-- [Komponenta BindingSource](../../../../docs/framework/winforms/controls/bindingsource-component.md)
-- [Ovládací prvek ComboBox](../../../../docs/framework/winforms/controls/combobox-control-windows-forms.md)
+- [Komponenta BindingSource](bindingsource-component.md)
+- [Ovládací prvek ComboBox](combobox-control-windows-forms.md)
 - [Vytvoření vazby ovládacích prvků k datům v sadě Visual Studio](/visualstudio/data-tools/bind-controls-to-data-in-visual-studio)

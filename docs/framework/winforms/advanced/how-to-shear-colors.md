@@ -8,12 +8,12 @@ helpviewer_keywords:
 - colors [Windows Forms], transforming with color matrices
 - colors [Windows Forms], shearing
 ms.assetid: 0a424171-5b8b-45c4-afef-e9720a6c3e22
-ms.openlocfilehash: bde3271398c6bc6a37c975476b76acb85511c1a4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: eff468e5761038723e16eddf84bdcf8849ac30d1
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54589829"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57720222"
 ---
 # <a name="how-to-shear-colors"></a>Postupy: Zkosení barev
 Zkosení zvyšuje nebo snižuje složku barvy podle zadaného množství úměrná jiné součásti barvy. Představte si třeba transformace, kde se hodnota červené zvýší o polovinu hodnota modré. V takové transformace barvu (0.2, 0,5, 1) by se mohla stát (0,7, 0,5, 1). Nová hodnota červené je 0.2 + (1/2)(1) = 0,7.  
@@ -23,7 +23,7 @@ Zkosení zvyšuje nebo snižuje složku barvy podle zadaného množství úměrn
   
  Následující obrázek znázorňuje původní obrázek na levé straně a zkosené image na pravé straně.  
   
- ![Zkosení barev](../../../../docs/framework/winforms/advanced/media/colortrans6.png "colortrans6")  
+ ![Zkosení barev](./media/colortrans6.png "colortrans6")  
   
  Následující tabulka uvádí vektory barvu pro čtyři pruhy před a po transformaci zkosení.  
   
@@ -34,8 +34,8 @@ Zkosení zvyšuje nebo snižuje složku barvy podle zadaného množství úměrn
 |(1, 1, 0, 1)|(1, 1, 0, 1)|  
 |(0.4, 0.4, 0.4, 1)|(0.6, 0.4, 0.4, 1)|  
   
- [!code-csharp[System.Drawing.Misc3#9](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Misc3/CS/Form1.cs#9)]
- [!code-vb[System.Drawing.Misc3#9](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Misc3/VB/Form1.vb#9)]  
+ [!code-csharp[System.Drawing.Misc3#9](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Misc3/CS/Form1.cs#9)]
+ [!code-vb[System.Drawing.Misc3#9](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Misc3/VB/Form1.vb#9)]  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  V předchozím příkladu je určený k použití pomocí Windows Forms a vyžaduje <xref:System.Windows.Forms.PaintEventArgs> `e`, což je parametr <xref:System.Windows.Forms.Control.Paint> obslužné rutiny události. Nahraďte `ColorBars.bmp` image název a cesta platné ve vašem systému.  
@@ -43,5 +43,5 @@ Zkosení zvyšuje nebo snižuje složku barvy podle zadaného množství úměrn
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Drawing.Imaging.ColorMatrix>
 - <xref:System.Drawing.Imaging.ImageAttributes>
-- [Grafika a kreslení v modelu Windows Forms](../../../../docs/framework/winforms/advanced/graphics-and-drawing-in-windows-forms.md)
-- [Přebarvení obrázků](../../../../docs/framework/winforms/advanced/recoloring-images.md)
+- [Grafika a kreslení v modelu Windows Forms](graphics-and-drawing-in-windows-forms.md)
+- [Přebarvení obrázků](recoloring-images.md)

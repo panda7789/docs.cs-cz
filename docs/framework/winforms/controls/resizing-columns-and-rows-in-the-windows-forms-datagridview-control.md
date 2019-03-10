@@ -6,12 +6,12 @@ helpviewer_keywords:
 - columns [Windows Forms], resizing in grids
 - data grids [Windows Forms], resizing columns and rows
 ms.assetid: 7532764d-e5c1-4943-a08b-6377a722d3b6
-ms.openlocfilehash: e2be90a1367bdcbb5b9c6441a407e3e23e5204c8
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 8eae5dafa314bb293f55a780f6be67d06f376004
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54711246"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57709650"
 ---
 # <a name="resizing-columns-and-rows-in-the-windows-forms-datagridview-control"></a>Změna velikosti sloupců a řádků v ovládacím prvku Windows Forms DataGridView
 `DataGridView` Řízení poskytuje mnoho možností pro přizpůsobení chování nastavení velikosti řádků a sloupců. Obvykle `DataGridView` buněk nelze změnit velikost na základě jejich obsahu. Místo toho galerie zobrazit hodnotu, která je větší než buňku. Pokud obsah může být zobrazena jako řetězec, zobrazí se buňku v popisku.  
@@ -21,19 +21,19 @@ ms.locfileid: "54711246"
  `DataGridView` Ovládací prvek obsahuje vlastnosti, metody a události, které vám umožní přizpůsobit nebo vypnout všechny z těchto projevů se uživatel přesměruje. Kromě toho můžete programově změnit velikost řádky, sloupce a záhlaví podle jejich obsahu, nebo můžete nakonfigurovat, je automaticky změní velikost sami při každé změně jejich obsah. Můžete také nakonfigurovat sloupce, které chcete automaticky dělit dostupná šířka ovládacího prvku v proporcích, které zadáte.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Možnosti změny velikosti v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/sizing-options-in-the-windows-forms-datagridview-control.md)  
+ [Možnosti změny velikosti v ovládacím prvku Windows Forms DataGridView](sizing-options-in-the-windows-forms-datagridview-control.md)  
  Popisuje možnosti pro nastavení velikosti řádků, sloupců a záhlaví. Také poskytuje podrobné informace o určení velikosti související vlastnosti a metody a popisuje běžné scénáře použití.  
   
- [Režim vyplnění sloupce v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/column-fill-mode-in-the-windows-forms-datagridview-control.md)  
+ [Režim vyplnění sloupce v ovládacím prvku Windows Forms DataGridView](column-fill-mode-in-the-windows-forms-datagridview-control.md)  
  Režim vyplnění sloupce podrobně popisuje a obsahuje ukázky kódu, který vám pomůže experimentovat s režim vyplnění sloupce a jiné režimy.  
   
- [Postupy: Nastavení režimů změny velikosti ovládacího prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/how-to-set-the-sizing-modes-of-the-windows-forms-datagridview-control.md)  
+ [Postupy: Nastavení režimů změny velikosti ovládacího prvku Windows Forms DataGridView](how-to-set-the-sizing-modes-of-the-windows-forms-datagridview-control.md)  
  Popisuje postup konfigurace režimů změny velikosti pro běžné účely.  
   
- [Postupy: Programová změna velikosti buněk k zobrazení celého obsahu v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/programmatically-resize-cells-to-fit-content-in-the-datagrid.md)  
+ [Postupy: Programová změna velikosti buněk k zobrazení celého obsahu v ovládacím prvku Windows Forms DataGridView](programmatically-resize-cells-to-fit-content-in-the-datagrid.md)  
  Obsahuje ukázku kódu, který vám pomůže experimentovat s Programová změna velikosti.  
   
- [Postupy: Automatická změna velikosti buněk při změně obsahu v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/automatically-resize-cells-when-content-changes-in-the-datagrid.md)  
+ [Postupy: Automatická změna velikosti buněk při změně obsahu v ovládacím prvku Windows Forms DataGridView](automatically-resize-cells-when-content-changes-in-the-datagrid.md)  
  Obsahuje ukázku kódu, který vám pomůže experimentovat s režim automatické velikosti.  
   
 ## <a name="reference"></a>Odkaz  
@@ -41,4 +41,4 @@ ms.locfileid: "54711246"
  Poskytuje referenční dokumentaci pro <xref:System.Windows.Forms.DataGridView> ovládacího prvku.  
   
 ## <a name="see-also"></a>Viz také:
-- [Ovládací prvek DataGridView](../../../../docs/framework/winforms/controls/datagridview-control-windows-forms.md)
+- [Ovládací prvek DataGridView](datagridview-control-windows-forms.md)

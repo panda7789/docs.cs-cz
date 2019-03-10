@@ -8,12 +8,12 @@ helpviewer_keywords:
 - controls [Windows Forms], manipulating
 - BindingNavigator control [Windows Forms], adding buttons
 ms.assetid: faa33042-186e-4bb2-8798-17ceb987ec62
-ms.openlocfilehash: dc91a4a91d26cd51a06b1c08dcb76f8966c52594
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d86ded0b93d876eac4b97938678cafbb22c3ac8a
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54671106"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57722435"
 ---
 # <a name="how-to-add-load-save-and-cancel-buttons-to-the-windows-forms-bindingnavigator-control"></a>Postupy: Přidat načíst, uložit, a tlačítka Storno pro Windows Forms BindingNavigator – ovládací prvek
 <xref:System.Windows.Forms.BindingNavigator> Ovládací prvek se speciálním účelem <xref:System.Windows.Forms.ToolStrip> ovládací prvek, který je určený pro navigaci a manipulaci se ovládací prvky na formuláři, které jsou vázány na data.  
@@ -34,7 +34,7 @@ ms.locfileid: "54671106"
   
 5.  Vyberte <xref:System.Windows.Forms.BindingNavigator> ovládacího prvku.  
   
-6.  Klikněte na inteligentní označit piktogram (![piktogram inteligentní](../../../../docs/framework/winforms/controls/media/vs-winformsmttagglyph.gif "VS_WinFormSmtTagGlyph")) proto **BindingNavigator úlohy** dialogové okno se zobrazí a vyberte **upravit položky**.  
+6.  Klikněte na inteligentní označit piktogram (![piktogram inteligentní](./media/vs-winformsmttagglyph.gif "VS_WinFormSmtTagGlyph")) proto **BindingNavigator úlohy** dialogové okno se zobrazí a vyberte **upravit položky**.  
   
      **Editor kolekce položek** se zobrazí.  
   
@@ -113,5 +113,5 @@ ms.locfileid: "54671106"
 - <xref:System.Windows.Forms.BindingNavigator>
 - <xref:System.Windows.Forms.BindingSource>
 - <xref:System.Windows.Forms.ToolStrip>
-- [Ovládací prvek BindingNavigator](../../../../docs/framework/winforms/controls/bindingnavigator-control-windows-forms.md)
-- [Přehled komponenty BindingSource](../../../../docs/framework/winforms/controls/bindingsource-component-overview.md)
+- [Ovládací prvek BindingNavigator](bindingnavigator-control-windows-forms.md)
+- [Přehled komponenty BindingSource](bindingsource-component-overview.md)

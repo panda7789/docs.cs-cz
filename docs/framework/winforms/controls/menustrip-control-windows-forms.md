@@ -5,54 +5,54 @@ helpviewer_keywords:
 - MenuStrip control [Windows Forms]
 - menus
 ms.assetid: e361bf98-eed8-4ed3-9dfb-5a2e865e3ce6
-ms.openlocfilehash: f94a5c5c45d3115de647085607aac396a0a8f2bc
-ms.sourcegitcommit: 2b986afe4ce9e13bbeec929c9737757eb61de60e
+ms.openlocfilehash: 9d3956c10467e80f370188138d6c50b39986ba76
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56664481"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57707583"
 ---
 # <a name="menustrip-control-windows-forms"></a>MenuStrip – ovládací prvek (Windows Forms)
 Tato aplikace ovládacího prvku skupiny příkazů a jsou snadno přístupné.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Přehled ovládacího prvku MenuStrip](../../../../docs/framework/winforms/controls/menustrip-control-overview-windows-forms.md)  
+ [Přehled ovládacího prvku MenuStrip](menustrip-control-overview-windows-forms.md)  
  Vysvětluje, co je ovládací prvek a jeho klíčové funkce a vlastnosti.  
   
- [Postupy: Přidání vylepšení do ToolStripMenuItems](../../../../docs/framework/winforms/controls/how-to-add-enhancements-to-toolstripmenuitems.md)  
+ [Postupy: Přidání vylepšení do ToolStripMenuItems](how-to-add-enhancements-to-toolstripmenuitems.md)  
  Popisuje postup přidání značek zaškrtnutí, obrázky, klávesové zkratky, přístupové klíče a oddělovacích pruhů do nabídek a příkazů nabídky.  
   
- [Postupy: Připojení prvku MenuStrip do nadřazeného okna MDI](../../../../docs/framework/winforms/controls/how-to-append-a-menustrip-to-an-mdi-parent-window-windows-forms.md)  
+ [Postupy: Připojení prvku MenuStrip do nadřazeného okna MDI](how-to-append-a-menustrip-to-an-mdi-parent-window-windows-forms.md)  
  Popisuje, jak nastavit několik vlastností pro připojení k nadřazené nabídky MDI nabídky podřízené rozhraní více dokumentů (MDI).  
   
- [Postupy: Vytvoření seznamu okna MDI pomocí MenuStrip](../../../../docs/framework/winforms/controls/how-to-create-an-mdi-window-list-with-menustrip-windows-forms.md)  
+ [Postupy: Vytvoření seznamu okna MDI pomocí MenuStrip](how-to-create-an-mdi-window-list-with-menustrip-windows-forms.md)  
  Ukazuje, jak vytvořit seznam všech aktivních podřízených formulářů v nabídce okno nadřazeného objektu.  
   
- [Postupy: Zákaz ToolStripMenuItems](../../../../docs/framework/winforms/controls/how-to-disable-toolstripmenuitems.md)  
+ [Postupy: Zákaz ToolStripMenuItems](how-to-disable-toolstripmenuitems.md)  
  Popisuje, jak zakázat celou nabídek a příkazů jednotlivé nabídky.  
   
- [Postupy: Skrytí ToolStripMenuItems](../../../../docs/framework/winforms/controls/how-to-hide-toolstripmenuitems.md)  
+ [Postupy: Skrytí ToolStripMenuItems](how-to-hide-toolstripmenuitems.md)  
  Popisuje, jak skrýt celý nabídek a příkazů jednotlivé nabídky.  
   
- [Postupy: Vložení prvku MenuStrip do rozevíracího seznamu MDI](../../../../docs/framework/winforms/controls/how-to-insert-a-menustrip-into-an-mdi-drop-down-menu-windows-forms.md)  
+ [Postupy: Vložení prvku MenuStrip do rozevíracího seznamu MDI](how-to-insert-a-menustrip-into-an-mdi-drop-down-menu-windows-forms.md)  
  Popisuje, jak nastavit několik vlastností k vložení do část rozevíracího seznamu MDI nadřazené nabídky Skupina položek nabídky v nabídce podřízeného MDI.  
   
- [Postupy: Odebrání prvku ToolStripMenuItem z rozevíracího seznamu MDI](../../../../docs/framework/winforms/controls/how-to-remove-a-toolstripmenuitem-from-an-mdi-drop-down-menu-windows-forms.md)  
+ [Postupy: Odebrání prvku ToolStripMenuItem z rozevíracího seznamu MDI](how-to-remove-a-toolstripmenuitem-from-an-mdi-drop-down-menu-windows-forms.md)  
  Popisuje, jak nastavit několik vlastností pro odebrání položky nabídky z část rozevíracího seznamu MDI nadřazené nabídky.  
   
- [Postupy: Nakonfigurovat zaškrtnutí MenuStrip okrajů a okrajů obrázků](../../../../docs/framework/winforms/controls/how-to-configure-menustrip-check-margins-and-image-margins.md)  
+ [Postupy: Nakonfigurovat zaškrtnutí MenuStrip okrajů a okrajů obrázků](how-to-configure-menustrip-check-margins-and-image-margins.md)  
  Popisuje, jak přizpůsobit <xref:System.Windows.Forms.MenuStrip> nastavením vlastnosti okraj pro zaškrtnutí a obrázků různými způsoby.  
   
- [Postupy: Zajištění standardních položek nabídky pro formulář](../../../../docs/framework/winforms/controls/how-to-provide-standard-menu-items-to-a-form.md)  
+ [Postupy: Zajištění standardních položek nabídky pro formulář](how-to-provide-standard-menu-items-to-a-form.md)  
  Popisuje způsob použití <xref:System.Windows.Forms.MenuStrip> ovládacího prvku na formulář s standardní nabídky vytvořit.  
   
- [Postupy: Zobrazení tlačítek možností v MenuStrip](../../../../docs/framework/winforms/controls/how-to-display-option-buttons-in-a-menustrip-windows-forms.md)  
+ [Postupy: Zobrazení tlačítek možností v MenuStrip](how-to-display-option-buttons-in-a-menustrip-windows-forms.md)  
  Popisuje, jak implementovat tlačítko možnost (nebo přepínač) chování v <xref:System.Windows.Forms.ToolStripMenuItem>.  
   
- [Slučování položek nabídky v ovládacím prvku Windows Forms MenuStrip](../../../../docs/framework/winforms/controls/merging-menu-items-in-the-windows-forms-menustrip-control.md)  
+ [Slučování položek nabídky v ovládacím prvku Windows Forms MenuStrip](merging-menu-items-in-the-windows-forms-menustrip-control.md)  
  Popisuje obecné koncepty a metody pro slučování nabídek.  
   
- [Postupy: Nastavení automatického slučování nabídek pro aplikace MDI](../../../../docs/framework/winforms/controls/how-to-set-up-automatic-menu-merging-for-mdi-applications.md)  
+ [Postupy: Nastavení automatického slučování nabídek pro aplikace MDI](how-to-set-up-automatic-menu-merging-for-mdi-applications.md)  
  Popisuje, jak automaticky sloučit položky nabídky v době běhu.  
   
 -   [MenuStrip – Editor kolekce položek](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/ms233625(v=vs.100))  
@@ -80,5 +80,5 @@ Tato aplikace ovládacího prvku skupiny příkazů a jsou snadno přístupné.
  Popisuje funkce <xref:System.Windows.Forms.ToolStripMenuItem> třídu, která představuje volitelnou možnost zobrazí na <xref:System.Windows.Forms.MenuStrip> nebo <xref:System.Windows.Forms.ContextMenuStrip>.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Ovládací prvky používané ve Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
+ [Ovládací prvky používané ve Windows Forms](controls-to-use-on-windows-forms.md)  
  Obsahuje úplný seznam všech ovládacích prvcích Windows Forms, s odkazy na informace o jejich použití.

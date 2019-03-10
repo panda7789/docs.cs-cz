@@ -2,12 +2,6 @@
 title: Ukázková dokumentace Windows pracovního postupu (WF)
 ms.date: 09/24/2018
 ms.assetid: e0aef017-4381-4f2f-a904-6e1ed898687e
-ms.openlocfilehash: e451ecd18b68ba42aa2c8a71e394077ee6b492ce
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
-ms.translationtype: MT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50201331"
 ---
 # <a name="windows-workflow-wf-samples"></a>Ukázky Windows Workflow
 
@@ -20,8 +14,8 @@ Je možné [stáhnout ukázky Windows Workflow](https://go.microsoft.com/fwlink/
 
 ## <a name="in-this-section"></a>V tomto oddílu
 
-[Aplikace](../../../../docs/framework/windows-workflow-foundation/samples/application.md) – obsahuje ukázky, které souvisejí s aplikací pracovních postupů.
+[Aplikace](application.md) – obsahuje ukázky, které souvisejí s aplikací pracovních postupů.
 
-[Základní](../../../../docs/framework/windows-workflow-foundation/samples/basic.md) – obsahuje ukázky, které ukazují základní funkce Windows Workflow Foundation (WF).
+[Základní](basic.md) – obsahuje ukázky, které ukazují základní funkce Windows Workflow Foundation (WF).
 
-[Scénář](../../../../docs/framework/windows-workflow-foundation/samples/scenario.md) – poskytuje příklady scénářů Windows Workflow Foundation (WF).
+[Scénář](scenario.md) – poskytuje příklady scénářů Windows Workflow Foundation (WF).

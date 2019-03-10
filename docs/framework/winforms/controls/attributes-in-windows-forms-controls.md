@@ -7,18 +7,18 @@ helpviewer_keywords:
 - attributes [Windows Forms], control properties
 - attributes [Windows Forms], classes
 ms.assetid: 2c5640e9-6c6c-49d7-a5e4-a768f6be7853
-ms.openlocfilehash: a8bbc59087b5d1d296c25b6aaf0836b31611a54a
-ms.sourcegitcommit: acd8ed14fe94e9d4e3a7fb685fe83d05e941073c
+ms.openlocfilehash: 8e845df7eb83f01adb2086025cf47e7fdc896ba6
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56441239"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57724398"
 ---
 # <a name="attributes-in-windows-forms-controls"></a>Atributy v ovládacích prvcích Windows Forms
 Rozhraní .NET Framework poskytuje širokou škálu atributy, které můžete provést u členů vlastní ovládací prvky a součásti. Některé z těchto atributů ovlivňují chování za běhu třídy a jiné ovlivňují chování během návrhu.  
   
 ## <a name="attributes-for-control-and-component-properties"></a>Atributy pro ovládací prvek a vlastnosti komponent  
- V následující tabulce jsou uvedeny atributy, že které můžete použít k vlastnosti nebo další členové vaší vlastní ovládací prvky a součásti. Příklad, který používá mnoho z těchto atributů, naleznete v tématu [jak: Použití atributů v ovládacích prvcích Windows Forms](../../../../docs/framework/winforms/controls/how-to-apply-attributes-in-windows-forms-controls.md).  
+ V následující tabulce jsou uvedeny atributy, že které můžete použít k vlastnosti nebo další členové vaší vlastní ovládací prvky a součásti. Příklad, který používá mnoho z těchto atributů, naleznete v tématu [jak: Použití atributů v ovládacích prvcích Windows Forms](how-to-apply-attributes-in-windows-forms-controls.md).  
   
 |Atribut|Popis|  
 |---------------|-----------------|  
@@ -62,6 +62,6 @@ Rozhraní .NET Framework poskytuje širokou škálu atributy, které můžete pr
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Attribute>
-- [Postupy: Použití atributů v ovládacích prvcích Windows Forms](../../../../docs/framework/winforms/controls/how-to-apply-attributes-in-windows-forms-controls.md)
+- [Postupy: Použití atributů v ovládacích prvcích Windows Forms](how-to-apply-attributes-in-windows-forms-controls.md)
 - [Rozšíření podpory během návrhu](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/37899azc(v=vs.120))
-- [Vývoj vlastních ovládacích prvků Windows Forms pomocí rozhraní .NET Framework](../../../../docs/framework/winforms/controls/developing-custom-windows-forms-controls.md)
+- [Vývoj vlastních ovládacích prvků Windows Forms pomocí rozhraní .NET Framework](developing-custom-windows-forms-controls.md)

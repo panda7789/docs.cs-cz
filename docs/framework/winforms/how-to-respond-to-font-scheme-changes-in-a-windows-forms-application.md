@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - Windows Forms, font scheme changes
 ms.assetid: 4db27702-22e7-43bf-a07d-9a004549853c
-ms.openlocfilehash: 73a6c20f1790ca4ad1dbe331d693af2331da1ea1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 4c34a65ed8ddabfb99451e055048502cb7617e4f
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54682265"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57715968"
 ---
 # <a name="how-to-respond-to-font-scheme-changes-in-a-windows-forms-application"></a>Postupy: Reakce na změny schématu písem ve formulářové aplikaci Windows
 V operačních systémech Windows uživatel může změnit nastavení systémová písma a ujistěte se zobrazí výchozí písmo větší nebo menší. Změna těchto písmo nastavení je velmi důležité pro uživatele, kteří jsou slabozraké a vyžadují větší typ čtení textu na obrazovce. Můžete upravit aplikaci Windows Forms k reagovat na tyto změny zvýšením nebo snížením velikosti formuláře a veškerý text při každé změně schématu písem. Pokud chcete formuláře dynamicky přizpůsobí změny velikosti písma, můžete přidat kód do formuláře.  
@@ -21,30 +21,30 @@ V operačních systémech Windows uživatel může změnit nastavení systémov�
   
 ### <a name="to-use-the-desktop-font-and-respond-to-font-scheme-changes"></a>Písmo plochy pomocí a reagovat na změny schématu písem  
   
-1.  Vytvoření formuláře a ovládací prvky, které chcete přidat do ní. Další informace najdete v tématu [jak: Vytvoření aplikace Windows Forms z příkazového řádku](../../../docs/framework/winforms/how-to-create-a-windows-forms-application-from-the-command-line.md) a [ovládací prvky používané ve formulářích Windows](../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md).  
+1.  Vytvoření formuláře a ovládací prvky, které chcete přidat do ní. Další informace najdete v tématu [jak: Vytvoření aplikace Windows Forms z příkazového řádku](how-to-create-a-windows-forms-application-from-the-command-line.md) a [ovládací prvky používané ve formulářích Windows](./controls/controls-to-use-on-windows-forms.md).  
   
 2.  Přidejte odkaz na <xref:Microsoft.Win32> oboru názvů do vašeho kódu.  
   
-     [!code-csharp[WinFormsAutoScaling#2](../../../samples/snippets/csharp/VS_Snippets_Winforms/WinFormsAutoScaling/CS/Form1.cs#2)]
-     [!code-vb[WinFormsAutoScaling#2](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/WinFormsAutoScaling/VB/Form1.vb#2)]  
+     [!code-csharp[WinFormsAutoScaling#2](~/samples/snippets/csharp/VS_Snippets_Winforms/WinFormsAutoScaling/CS/Form1.cs#2)]
+     [!code-vb[WinFormsAutoScaling#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/WinFormsAutoScaling/VB/Form1.vb#2)]  
   
 3.  Přidejte následující kód do konstruktoru formuláře k obslužné rutiny události požadované připojení a chcete-li změnit výchozí písmo používané pro daný formulář.  
   
-     [!code-csharp[WinFormsAutoScaling#3](../../../samples/snippets/csharp/VS_Snippets_Winforms/WinFormsAutoScaling/CS/Form1.cs#3)]
-     [!code-vb[WinFormsAutoScaling#3](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/WinFormsAutoScaling/VB/Form1.vb#3)]  
+     [!code-csharp[WinFormsAutoScaling#3](~/samples/snippets/csharp/VS_Snippets_Winforms/WinFormsAutoScaling/CS/Form1.cs#3)]
+     [!code-vb[WinFormsAutoScaling#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/WinFormsAutoScaling/VB/Form1.vb#3)]  
   
 4.  Implementujte obslužnou rutinu pro <xref:Microsoft.Win32.SystemEvents.UserPreferenceChanged> událost, která způsobí, že formulář pro automatické škálování při <xref:Microsoft.Win32.UserPreferenceCategory.Window> změny kategorií.  
   
-     [!code-csharp[WinFormsAutoScaling#4](../../../samples/snippets/csharp/VS_Snippets_Winforms/WinFormsAutoScaling/CS/Form1.cs#4)]
-     [!code-vb[WinFormsAutoScaling#4](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/WinFormsAutoScaling/VB/Form1.vb#4)]  
+     [!code-csharp[WinFormsAutoScaling#4](~/samples/snippets/csharp/VS_Snippets_Winforms/WinFormsAutoScaling/CS/Form1.cs#4)]
+     [!code-vb[WinFormsAutoScaling#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/WinFormsAutoScaling/VB/Form1.vb#4)]  
   
 5.  A konečně, implementujte obslužnou rutinu pro <xref:System.Windows.Forms.Form.FormClosing> událost, která se odpojí <xref:Microsoft.Win32.SystemEvents.UserPreferenceChanged> obslužné rutiny události.  
   
      > [!IMPORTANT]
      > Nepodařilo se přidat tento kód způsobí aplikace únik paměti.  
   
-     [!code-csharp[WinFormsAutoScaling#5](../../../samples/snippets/csharp/VS_Snippets_Winforms/WinFormsAutoScaling/CS/Form1.cs#5)]
-     [!code-vb[WinFormsAutoScaling#5](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/WinFormsAutoScaling/VB/Form1.vb#5)]  
+     [!code-csharp[WinFormsAutoScaling#5](~/samples/snippets/csharp/VS_Snippets_Winforms/WinFormsAutoScaling/CS/Form1.cs#5)]
+     [!code-vb[WinFormsAutoScaling#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/WinFormsAutoScaling/VB/Form1.vb#5)]  
   
 6.  Kompilace a spuštění kódu.  
   
@@ -59,11 +59,11 @@ V operačních systémech Windows uživatel může změnit nastavení systémov�
      Můžete si všimnout, že formulář nyní reaguje na změny za běhu v režimu plochy písma. Když uživatel změní mezi **normální**, **velká písma**, a **další velký písma**, formulář se změní písmo a škáluje správně.  
   
 ## <a name="example"></a>Příklad  
- [!code-csharp[WinFormsAutoScaling#1](../../../samples/snippets/csharp/VS_Snippets_Winforms/WinFormsAutoScaling/CS/Form1.cs#1)]
- [!code-vb[WinFormsAutoScaling#1](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/WinFormsAutoScaling/VB/Form1.vb#1)]  
+ [!code-csharp[WinFormsAutoScaling#1](~/samples/snippets/csharp/VS_Snippets_Winforms/WinFormsAutoScaling/CS/Form1.cs#1)]
+ [!code-vb[WinFormsAutoScaling#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/WinFormsAutoScaling/VB/Form1.vb#1)]  
   
  Constructer v tomto příkladu kód obsahuje volání `InitializeComponent`, který je definován při vytváření nového projektu Windows Forms v sadě Visual Studio. Odeberte tento řádek kódu, pokud vytváříte aplikaci na příkazovém řádku.  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Forms.ContainerControl.PerformAutoScale%2A>
-- [Automatická změna měřítka ve Windows Forms](../../../docs/framework/winforms/automatic-scaling-in-windows-forms.md)
+- [Automatická změna měřítka ve Windows Forms](automatic-scaling-in-windows-forms.md)

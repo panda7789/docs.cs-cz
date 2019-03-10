@@ -10,19 +10,19 @@ helpviewer_keywords:
 - printing a form
 - printing [Windows Forms], printing a form
 ms.assetid: c8dff5f8-f56a-4c07-ae31-64643b31f8fc
-ms.openlocfilehash: 5e672f40797a90111daefed0be74c941d4cc37b8
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 80bf88ad048e55a381d034d2a796de6f77f8691c
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54628133"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57714148"
 ---
 # <a name="how-to-print-a-windows-form"></a>Postupy: Tisk formuláře Windows
 Jako součást procesu vývoje obvykle chcete vytisknout kopii formuláře Windows. Následující příklad kódu ukazuje, jak vytisknout kopii aktuálního formuláře pomocí <xref:System.Drawing.Graphics.CopyFromScreen%2A> metody.  
   
 ## <a name="example"></a>Příklad  
- [!code-csharp[System.Drawing.Graphics.CopyFromScreen#1](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Graphics.CopyFromScreen/CS/Form1.cs#1)]
- [!code-vb[System.Drawing.Graphics.CopyFromScreen#1](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Graphics.CopyFromScreen/VB/Form1.vb#1)]  
+ [!code-csharp[System.Drawing.Graphics.CopyFromScreen#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Graphics.CopyFromScreen/CS/Form1.cs#1)]
+ [!code-vb[System.Drawing.Graphics.CopyFromScreen#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Graphics.CopyFromScreen/VB/Form1.vb#1)]  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Toto je příklad úplného kódu, který obsahuje `Main` metoda.  
@@ -39,5 +39,5 @@ Jako součást procesu vývoje obvykle chcete vytisknout kopii formuláře Windo
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Drawing.Printing.PrintDocument>
-- [Postupy: Vykreslení obrázků pomocí GDI +](../../../../docs/framework/winforms/advanced/how-to-render-images-with-gdi.md)
-- [Postupy: Tisk grafiky ve Windows Forms](../../../../docs/framework/winforms/advanced/how-to-print-graphics-in-windows-forms.md)
+- [Postupy: Vykreslení obrázků pomocí GDI +](how-to-render-images-with-gdi.md)
+- [Postupy: Tisk grafiky ve Windows Forms](how-to-print-graphics-in-windows-forms.md)

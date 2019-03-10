@@ -5,12 +5,12 @@ helpviewer_keywords:
 - application settings [Windows Forms], changing
 - application settings [Windows Forms], between application sessions
 ms.assetid: 1a85911f-97b2-476c-930b-83379edd890c
-ms.openlocfilehash: 475e57e8bfdd5f3296c6af0fb20a472c729ea75c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c1626cea581e5c180665d0ce805dea3e67f27a05
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54540712"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57714356"
 ---
 # <a name="how-to-change-the-value-of-a-setting-between-application-sessions"></a>Postupy: Změna hodnoty nastavení mezi relacemi aplikace
 V některých případech můžete chtít změnit hodnoty nastavení mezi relacemi aplikace poté, co byl zkompilován a nasazení aplikace. Například můžete chtít změnit připojovací řetězec tak, aby odkazoval na správnou databázi umístění. Protože návrhových nástrojů nejsou k dispozici, poté, co byl zkompilován a nasazení aplikace, musíte změnit hodnotu nastavení v souboru ručně.  
@@ -30,5 +30,5 @@ V některých případech můžete chtít změnit hodnoty nastavení mezi relace
 3.  Zadejte novou hodnotu pro nastavení a soubor uložte.  
   
 ## <a name="see-also"></a>Viz také:
-- [Použití nastavení aplikace a uživatelských nastavení](../../../../docs/framework/winforms/advanced/using-application-settings-and-user-settings.md)
-- [Přehled nastavení aplikace](../../../../docs/framework/winforms/advanced/application-settings-overview.md)
+- [Použití nastavení aplikace a uživatelských nastavení](using-application-settings-and-user-settings.md)
+- [Přehled nastavení aplikace](application-settings-overview.md)

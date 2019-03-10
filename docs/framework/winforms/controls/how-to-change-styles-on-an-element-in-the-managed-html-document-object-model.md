@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - managed HTML DOM [Windows Forms], changing styles on elements
 ms.assetid: 154e8d9f-3e2d-4e8b-a6f3-c85a070e9cc1
-ms.openlocfilehash: ad91f7591e2fa07605fe4f7ac026b7c969ab7ef0
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.openlocfilehash: a1abfaeab735746edbf089d576dc6f56dc4a6eea
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57678928"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57712770"
 ---
 # <a name="how-to-change-styles-on-an-element-in-the-managed-html-document-object-model"></a>Postupy: Změna stylů v elementu v modelu objektu spravovaného dokumentu HTML
 
@@ -63,20 +63,19 @@ Následující postup obsahuje kód, který vám umožní snadno pracovat s styl
 6. Přidejte následující kód do souboru kódu projektu.
 
     > [!IMPORTANT]
-    > Ujistěte se, že `webBrowser1_DocumentCompleted` obslužná rutina události je nakonfigurovaný jako naslouchací proces pro <xref:System.Windows.Forms.WebBrowser.DocumentCompleted> událostí. V sadě Visual Studio, poklepejte na <xref:System.Windows.Forms.WebBrowser> ovládací prvek; v textovém editoru, nakonfigurujte naslouchací proces prostřednictvím kódu programu.
-
-    [!code-csharp[ManagedDOMStyles#2](../../../../samples/snippets/csharp/VS_Snippets_Winforms/ManagedDOMStyles/CS/Form1.cs#2)]
-    [!code-vb[ManagedDOMStyles#2](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ManagedDOMStyles/VB/Form1.vb#2)]
-
-7. Spusťte projekt. Spustit ukazatel myši nad první `DIV` chcete sledovat účinky kód.
-
-## <a name="example"></a>Příklad
-
-Následující příklad kódu ukazuje celý kód pro `StyleGenerator` třídu, která analyzuje existující hodnotu stylu, podporuje přidání, změně a odebrání styly a vrátí novou hodnotu stylu s požadované změny.
-
-[!code-csharp[ManagedDOMStyles#1](../../../../samples/snippets/csharp/VS_Snippets_Winforms/ManagedDOMStyles/CS/StyleGenerator.cs#1)]
-[!code-vb[ManagedDOMStyles#1](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ManagedDOMStyles/VB/StyleGenerator.vb#1)]
-
+    >  Ujistěte se, že `webBrowser1_DocumentCompleted` obslužnou rutinu události je nakonfigurovaný jako naslouchací proces pro <xref:System.Windows.Forms.WebBrowser.DocumentCompleted> událostí. V sadě Visual Studio, poklepejte na <xref:System.Windows.Forms.WebBrowser> ovládací prvek; v textovém editoru, nakonfigurujte naslouchací proces prostřednictvím kódu programu.  
+  
+     [!code-csharp[ManagedDOMStyles#2](~/samples/snippets/csharp/VS_Snippets_Winforms/ManagedDOMStyles/CS/Form1.cs#2)]
+     [!code-vb[ManagedDOMStyles#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ManagedDOMStyles/VB/Form1.vb#2)]  
+  
+7.  Spusťte projekt. Spustit ukazatel myši nad první `DIV` chcete sledovat účinky kód.  
+  
+## <a name="example"></a>Příklad  
+ Následující příklad kódu ukazuje celý kód pro `StyleGenerator` třídu, která analyzuje existující hodnotu stylu, podporuje přidání, změně a odebrání styly a vrátí novou hodnotu stylu s požadované změny.  
+  
+ [!code-csharp[ManagedDOMStyles#1](~/samples/snippets/csharp/VS_Snippets_Winforms/ManagedDOMStyles/CS/StyleGenerator.cs#1)]
+ [!code-vb[ManagedDOMStyles#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ManagedDOMStyles/VB/StyleGenerator.vb#1)]  
+  
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Forms.HtmlElement>

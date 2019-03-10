@@ -6,12 +6,12 @@ helpviewer_keywords:
 - ListView control [Windows Forms], tile view
 - tiling [Windows Forms], Windows Forms, controls
 ms.assetid: 12f0816a-52b8-41ee-a6d9-ded3a8a5817a
-ms.openlocfilehash: b365ada2d38f8fca97b66bb3d46b2c8e93d7cb1d
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.openlocfilehash: 2b075cdb4ec9910e81c7baa7c714c5c155a8586d
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57676236"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57720092"
 ---
 # <a name="how-to-enable-tile-view-in-a-windows-forms-listview-control-using-the-designer"></a>Postupy: Povolení zobrazení Tile v ovládacím prvku Windows Forms ListView pomocí návrháře
 Funkci zobrazení dlaždice <xref:System.Windows.Forms.ListView> ovládací prvek můžete zadat vizuální rovnováhu mezi textové a grafické informace. Textové informace zobrazené položky v zobrazení tile je stejný jako sloupec informace definované pro zobrazení podrobností. Dlaždice zobrazit funkce v kombinaci s seskupení nebo vložení označit funkce <xref:System.Windows.Forms.ListView> ovládacího prvku.  
@@ -22,7 +22,7 @@ Funkci zobrazení dlaždice <xref:System.Windows.Forms.ListView> ovládací prve
   
  Zobrazení, vlastnosti a metody umožňují určit sloupce pole k zobrazení pro každou položku a souhrnně řídit velikost a vzhled všech položek v dlaždici zobrazení okna vedle sebe. Pro přehlednost první řádek textu v bloku je vždy název položky. nelze změnit.  
   
- Následující postup vyžaduje, **aplikace Windows** projektu s formulář obsahující <xref:System.Windows.Forms.ListView> ovládacího prvku. Informace o nastavení takový projekt, naleznete v tématu [jak: Vytvoření projektu aplikace Windows Forms](/visualstudio/ide/step-1-create-a-windows-forms-application-project) a [jak: Přidání ovládacích prvků Windows Forms](../../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md).  
+ Následující postup vyžaduje, **aplikace Windows** projektu s formulář obsahující <xref:System.Windows.Forms.ListView> ovládacího prvku. Informace o nastavení takový projekt, naleznete v tématu [jak: Vytvoření projektu aplikace Windows Forms](/visualstudio/ide/step-1-create-a-windows-forms-application-project) a [jak: Přidání ovládacích prvků Windows Forms](how-to-add-controls-to-windows-forms.md).  
   
 > [!NOTE]
 >  Je k dispozici pouze v zobrazení tile [!INCLUDE[WinXpFamily](../../../../includes/winxpfamily-md.md)] když vaše aplikace volá <xref:System.Windows.Forms.Application.EnableVisualStyles%2A?displayProperty=nameWithType> metody. Ve starších operačních systémech, jakýkoli kód související s zobrazení tile nemá žádný účinek a <xref:System.Windows.Forms.ListView> ovládací prvek zobrazí v zobrazení LargeIcon. Další informace naleznete v tématu <xref:System.Windows.Forms.ListView.View%2A?displayProperty=nameWithType>.  
@@ -37,4 +37,4 @@ Funkci zobrazení dlaždice <xref:System.Windows.Forms.ListView> ovládací prve
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Forms.ListView.TileSize%2A>
-- [Přehled ovládacího prvku ListView](../../../../docs/framework/winforms/controls/listview-control-overview-windows-forms.md)
+- [Přehled ovládacího prvku ListView](listview-control-overview-windows-forms.md)

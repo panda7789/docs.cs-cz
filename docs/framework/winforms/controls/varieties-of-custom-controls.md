@@ -11,12 +11,12 @@ helpviewer_keywords:
 - custom controls [Windows Forms]
 - controls [Windows Forms], composite
 ms.assetid: 3cea09e5-4344-4ccb-9858-b66ccac210ff
-ms.openlocfilehash: 907355ca78b299b34b231b8b8d88353b0dde19c0
-ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
+ms.openlocfilehash: 140b9284d9361aa149b4f739908376d1cbe6902c
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56746601"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57713017"
 ---
 # <a name="varieties-of-custom-controls"></a>Typy vlastních ovládacích prvků
 Pomocí rozhraní .NET Framework můžete vyvíjet a implementovat nové ovládací prvky. Funkce ovládacího prvku známé uživatelské můžete rozšířit také existující ovládací prvky prostřednictvím dědičnosti. Můžete taky psát vlastní ovládací prvky, které vlastní vykreslení.  
@@ -53,9 +53,9 @@ Pomocí rozhraní .NET Framework můžete vyvíjet a implementovat nové ovláda
   
  Složený ovládací prvek obsahuje všechny vlastní funkce spojené s jednotlivými obsažené ovládací prvky Windows Forms a umožňuje selektivně vystavení a vytvořit vazbu vlastnosti. Složený ovládací prvek také poskytuje spoustu výchozí klávesnice zpracování funkce s žádná náročnost vývoje navíc z vaší strany.  
   
- Například může být postavená složený ovládací prvek pro zobrazení adresy zákaznická data z databáze. Tento ovládací prvek může zahrnovat <xref:System.Windows.Forms.DataGridView> ovládací prvek pro zobrazení databázová pole, <xref:System.Windows.Forms.BindingSource> zpracování vazby ke zdroji dat a <xref:System.Windows.Forms.BindingNavigator> ovládací prvek pro procházení záznamů. Selektivně může zpřístupnit datové vazby vlastnosti, a můžete zabalit a znovu použít celý ovládací prvek z aplikací. Příklad tohoto druhu složeného ovládacího prvku, naleznete v tématu [jak: Použití atributů v ovládacích prvcích Windows Forms](../../../../docs/framework/winforms/controls/how-to-apply-attributes-in-windows-forms-controls.md).  
+ Například může být postavená složený ovládací prvek pro zobrazení adresy zákaznická data z databáze. Tento ovládací prvek může zahrnovat <xref:System.Windows.Forms.DataGridView> ovládací prvek pro zobrazení databázová pole, <xref:System.Windows.Forms.BindingSource> zpracování vazby ke zdroji dat a <xref:System.Windows.Forms.BindingNavigator> ovládací prvek pro procházení záznamů. Selektivně může zpřístupnit datové vazby vlastnosti, a můžete zabalit a znovu použít celý ovládací prvek z aplikací. Příklad tohoto druhu složeného ovládacího prvku, naleznete v tématu [jak: Použití atributů v ovládacích prvcích Windows Forms](how-to-apply-attributes-in-windows-forms-controls.md).  
   
- Vytvoření složeného ovládacího prvku, odvozovat <xref:System.Windows.Forms.UserControl> třídy. <xref:System.Windows.Forms.UserControl> Základní třída poskytuje směrování klávesnice pro podřízené ovládací prvky a umožňuje podřízené ovládací prvky pro práci s jako skupinu. Další informace najdete v tématu [vývoj složeného ovládacího prvku Windows Forms](../../../../docs/framework/winforms/controls/developing-a-composite-windows-forms-control.md).  
+ Vytvoření složeného ovládacího prvku, odvozovat <xref:System.Windows.Forms.UserControl> třídy. <xref:System.Windows.Forms.UserControl> Základní třída poskytuje směrování klávesnice pro podřízené ovládací prvky a umožňuje podřízené ovládací prvky pro práci s jako skupinu. Další informace najdete v tématu [vývoj složeného ovládacího prvku Windows Forms](developing-a-composite-windows-forms-control.md).  
   
  **Doporučení**  
   
@@ -85,7 +85,7 @@ Pomocí rozhraní .NET Framework můžete vyvíjet a implementovat nové ovláda
   
  Pro implementaci vlastního ovládacího prvku, je nutné napsat kód pro <xref:System.Windows.Forms.Control.OnPaint%2A> události ovládacího prvku, stejně jako jakýkoli kód specifickými funkcemi, budete potřebovat. Můžete také přepsat <xref:System.Windows.Forms.Control.WndProc%2A> metoda a popisovač zpráv systému windows přímo. Jedná se o procesorově nejvýkonnější způsob vytvoření ovládacího prvku, ale efektivně používat tuto techniku, musíte se seznámit s rozhraním API Microsoft Win32®.  
   
- Příklad vlastního ovládacího prvku je hodiny ovládací prvek, který napodobuje vzhled a chování analogové hodiny. Vlastní vykreslování je vyvolán způsobit rukou hodiny tak, aby v reakci na přesunutí <xref:System.Windows.Forms.Timer.Tick> události z interní <xref:System.Windows.Forms.Timer> komponenty. Další informace najdete v tématu [jak: Vývoj ovládacího prvku jednoduchého Windows Forms](../../../../docs/framework/winforms/controls/how-to-develop-a-simple-windows-forms-control.md).  
+ Příklad vlastního ovládacího prvku je hodiny ovládací prvek, který napodobuje vzhled a chování analogové hodiny. Vlastní vykreslování je vyvolán způsobit rukou hodiny tak, aby v reakci na přesunutí <xref:System.Windows.Forms.Timer.Tick> události z interní <xref:System.Windows.Forms.Timer> komponenty. Další informace najdete v tématu [jak: Vývoj ovládacího prvku jednoduchého Windows Forms](how-to-develop-a-simple-windows-forms-control.md).  
   
  **Doporučení**  
   
@@ -96,7 +96,7 @@ Pomocí rozhraní .NET Framework můžete vyvíjet a implementovat nové ovláda
 -   Potřebujete implementovat vlastní funkce, které nejsou k dispozici prostřednictvím standardní ovládací prvky.  
   
 ### <a name="activex-controls"></a>ActiveX – ovládací prvky  
- I když byla optimalizována pro infrastrukturu formulářů Windows do hostitelské ovládací prvky Windows Forms, můžete stále použít ovládací prvky ActiveX. Není poskytována podpora pro tuto úlohu v sadě Visual Studio. Další informace najdete v tématu [jak: Přidávání ovládacích prvků ActiveX do formulářů Windows](../../../../docs/framework/winforms/controls/how-to-add-activex-controls-to-windows-forms.md).  
+ I když byla optimalizována pro infrastrukturu formulářů Windows do hostitelské ovládací prvky Windows Forms, můžete stále použít ovládací prvky ActiveX. Není poskytována podpora pro tuto úlohu v sadě Visual Studio. Další informace najdete v tématu [jak: Přidávání ovládacích prvků ActiveX do formulářů Windows](how-to-add-activex-controls-to-windows-forms.md).  
   
 ### <a name="windowless-controls"></a>Ovládací prvky bez oken  
  Podpora technologie ActiveX the Microsoft Visual Basic® 6.0and *bez oken* ovládacích prvků. Ovládací prvky bez oken nejsou podporovány v rozhraní Windows Forms.  
@@ -107,8 +107,8 @@ Pomocí rozhraní .NET Framework můžete vyvíjet a implementovat nové ovláda
  Použití <xref:System.ComponentModel.DesignerAttribute> chcete přidružit k vaší návrhář ovládacího prvku. Další informace najdete v tématu [rozšíření podpory během návrhu](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/37899azc(v=vs.120)) a [jak: Vytvoření ovládacího prvku Windows Forms, který využívá funkce návrhu](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/307hck25(v=vs.120)).  
   
 ## <a name="see-also"></a>Viz také:
-- [Vývoj vlastních ovládacích prvků Windows Forms pomocí rozhraní .NET Framework](../../../../docs/framework/winforms/controls/developing-custom-windows-forms-controls.md)
-- [Postupy: Vývoj ovládacího prvku jednoduchého Windows Forms](../../../../docs/framework/winforms/controls/how-to-develop-a-simple-windows-forms-control.md)
-- [Vývoj složeného ovládacího prvku Windows Forms](../../../../docs/framework/winforms/controls/developing-a-composite-windows-forms-control.md)
+- [Vývoj vlastních ovládacích prvků Windows Forms pomocí rozhraní .NET Framework](developing-custom-windows-forms-controls.md)
+- [Postupy: Vývoj ovládacího prvku jednoduchého Windows Forms](how-to-develop-a-simple-windows-forms-control.md)
+- [Vývoj složeného ovládacího prvku Windows Forms](developing-a-composite-windows-forms-control.md)
 - [Rozšíření podpory během návrhu](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/37899azc(v=vs.120))
 - [Postupy: Vytvoření ovládacího prvku Windows Forms, který využívá funkce návrhu aplikace](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/307hck25(v=vs.120))

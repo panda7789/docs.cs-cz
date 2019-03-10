@@ -10,17 +10,17 @@ helpviewer_keywords:
 - threading [Windows Forms], custom controls
 - custom controls [Windows Forms], samples
 ms.assetid: 7fe3956f-5b8f-4f78-8aae-c9eb0b28f13a
-ms.openlocfilehash: a4bb4f0e1c54429e1d014050fc85d956493f9080
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5bf345e4195c64d3cf7fab7bf9a826dc99d47463
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54536322"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57723163"
 ---
 # <a name="how-to-use-a-background-thread-to-search-for-files"></a>Postupy: Použití vlákna na pozadí k vyhledávání souborů
-<xref:System.ComponentModel.BackgroundWorker> Komponenty nahradí a přidá funkce, které <xref:System.Threading> obor názvů, nicméně <xref:System.Threading> obor názvů se zachovává kvůli zpětné kompatibilitě a budoucí použití, pokud se rozhodnete. Další informace najdete v tématu [přehled komponenty BackgroundWorker](../../../../docs/framework/winforms/controls/backgroundworker-component-overview.md).  
+<xref:System.ComponentModel.BackgroundWorker> Komponenty nahradí a přidá funkce, které <xref:System.Threading> obor názvů, nicméně <xref:System.Threading> obor názvů se zachovává kvůli zpětné kompatibilitě a budoucí použití, pokud se rozhodnete. Další informace najdete v tématu [přehled komponenty BackgroundWorker](backgroundworker-component-overview.md).  
   
- Windows Forms používá jednovláknový apartment (STA) modelu aplikace Windows Forms je založena na nativní Win32 pro systém windows, které jsou ze své podstaty podprocesový model apartment. Model STA. znamená, že pro jakékoli vlákno lze vytvořit časové období, ale ho nejde přepnout po vytvoření vlákna a všechna volání funkce k němu se musí vyskytovat na jeho vytvoření vlákna. Mimo Windows Forms pomocí třídy v rozhraní .NET Framework bezplatný model vláken. Informace o dělení na vlákna v rozhraní .NET Framework najdete v tématu [zřetězení](../../../../docs/standard/threading/index.md).  
+ Windows Forms používá jednovláknový apartment (STA) modelu aplikace Windows Forms je založena na nativní Win32 pro systém windows, které jsou ze své podstaty podprocesový model apartment. Model STA. znamená, že pro jakékoli vlákno lze vytvořit časové období, ale ho nejde přepnout po vytvoření vlákna a všechna volání funkce k němu se musí vyskytovat na jeho vytvoření vlákna. Mimo Windows Forms pomocí třídy v rozhraní .NET Framework bezplatný model vláken. Informace o dělení na vlákna v rozhraní .NET Framework najdete v tématu [zřetězení](../../../standard/threading/index.md).  
   
  STA model vyžaduje, že všechny metody na ovládací prvek, který musí být volána z mimo vlákno vytvoření ovládacího prvku musí být zařazen do (spustí se na) ovládacího prvku vytvoření vlákna. Základní třída <xref:System.Windows.Forms.Control> nabízí několik metod (<xref:System.Windows.Forms.Control.Invoke%2A>, <xref:System.Windows.Forms.Control.BeginInvoke%2A>, a <xref:System.Windows.Forms.Control.EndInvoke%2A>) pro tento účel. <xref:System.Windows.Forms.Control.Invoke%2A> synchronní metoda volá; <xref:System.Windows.Forms.Control.BeginInvoke%2A> volá asynchronní metodu.  
   
@@ -764,5 +764,5 @@ namespace SampleUsage
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.ComponentModel.BackgroundWorker>
-- [Vývoj vlastních ovládacích prvků Windows Forms pomocí rozhraní .NET Framework](../../../../docs/framework/winforms/controls/developing-custom-windows-forms-controls.md)
-- [Přehled asynchronních vzorů založených na událostech](../../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md)
+- [Vývoj vlastních ovládacích prvků Windows Forms pomocí rozhraní .NET Framework](developing-custom-windows-forms-controls.md)
+- [Přehled asynchronních vzorů založených na událostech](../../../standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md)

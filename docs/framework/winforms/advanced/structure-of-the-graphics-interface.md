@@ -5,12 +5,12 @@ helpviewer_keywords:
 - GDI+, using managed interface
 - graphics [Windows Forms], class structure
 ms.assetid: 010a1e46-656b-40a1-8d5d-87aa05ee1243
-ms.openlocfilehash: 4d000adfa02555a766410833fabe4039dd06c268
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 33be9d4d4e5a1aca933bb84e948b2200cd96b152
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54592043"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57708107"
 ---
 # <a name="structure-of-the-graphics-interface"></a>Struktura rozhraní grafiky
 Spravované třídy rozhraní [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] obsahuje přibližně 60 třídy, 50 výčty a struktury 8. <xref:System.Drawing.Graphics> Třída je v jádru služby [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] funkce; je třída, která ve skutečnosti kreslí řádky, křivek, obrázky, obrázky a text.  
@@ -23,6 +23,6 @@ Spravované třídy rozhraní [!INCLUDE[ndptecgdiplus](../../../../includes/ndpt
  [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] definuje několik výčty, které jsou kolekce související s konstantami. Například <xref:System.Drawing.Drawing2D.LineJoin> výčet obsahuje prvky <xref:System.Drawing.Drawing2D.LineJoin.Bevel>, <xref:System.Drawing.Drawing2D.LineJoin.Miter>, a <xref:System.Drawing.Drawing2D.LineJoin.Round>, která zadejte stylů, které je možné připojit dva řádky.  
   
 ## <a name="see-also"></a>Viz také:
-- [Přehled grafiky](../../../../docs/framework/winforms/advanced/graphics-overview-windows-forms.md)
-- [Informace o spravovaném kódu GDI+](../../../../docs/framework/winforms/advanced/about-gdi-managed-code.md)
-- [Použití spravovaných grafických tříd](../../../../docs/framework/winforms/advanced/using-managed-graphics-classes.md)
+- [Přehled grafiky](graphics-overview-windows-forms.md)
+- [Informace o spravovaném kódu GDI+](about-gdi-managed-code.md)
+- [Použití spravovaných grafických tříd](using-managed-graphics-classes.md)

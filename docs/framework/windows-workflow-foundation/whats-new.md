@@ -5,18 +5,18 @@ helpviewer_keywords:
 - Windows Workflow Foundation [WF], what's new
 - WF [WF], what's new
 ms.assetid: 11f96014-001e-41a0-bcc2-d0684a52fa43
-ms.openlocfilehash: 327a2ddbf9a45bc1d4633548ced7a8f39928345b
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 5ab1419a29dd77ac276681bb49dc529fc05d5b15
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55263794"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57711821"
 ---
 # <a name="whats-new-in-windows-workflow-foundation"></a>Co je nového ve Windows Workflow Foundation
-Windows Workflow Foundation (WF) v [!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)] více paradigmat vývoj se změní z předchozí verze. Pracovní postupy se teď snadněji vytvářet, spouštět a udržovat a implementovat celou řadu nových funkcí. Další informace o migraci .NET 3.0 a 3.5 rozhraní .NET aplikace pracovního postupu chcete používat nejnovější verzi najdete v tématu [pokyny k migraci](../../../docs/framework/windows-workflow-foundation/migration-guidance.md).  
+Windows Workflow Foundation (WF) v [!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)] více paradigmat vývoj se změní z předchozí verze. Pracovní postupy se teď snadněji vytvářet, spouštět a udržovat a implementovat celou řadu nových funkcí. Další informace o migraci .NET 3.0 a 3.5 rozhraní .NET aplikace pracovního postupu chcete používat nejnovější verzi najdete v tématu [pokyny k migraci](migration-guidance.md).  
   
 ## <a name="workflow-activity-model"></a>Model aktivity pracovního postupu  
- Aktivita je nyní základní jednotky vytvoření pracovního postupu, spíš než <xref:System.Workflow.Activities.SequentialWorkflowActivity> nebo <xref:System.Workflow.Activities.StateMachineWorkflowActivity> třídy. <xref:System.Activities.Activity> Třída poskytuje základní abstrakce chování pracovního postupu. Autoři aktivitu poté můžete implementovat buď <xref:System.Activities.CodeActivity> pro vlastní aktivity základní funkce, nebo <xref:System.Activities.NativeActivity> pro vlastní aktivity funkci, která používá kontejnerových nástrojů modulu runtime. <xref:System.Activities.Activity> je třída používaná autory aktivity vyjádřit nové chování deklarativně z hlediska jiné <xref:System.Activities.NativeActivity>, <xref:System.Activities.CodeActivity>, <xref:System.Activities.AsyncCodeActivity>, nebo <xref:System.Activities.DynamicActivity> objektů, ať už jsou vlastní nebo součástí [předdefinovanou aktivitu Knihovna](../../../docs/framework/windows-workflow-foundation/net-framework-4-5-built-in-activity-library.md).  
+ Aktivita je nyní základní jednotky vytvoření pracovního postupu, spíš než <xref:System.Workflow.Activities.SequentialWorkflowActivity> nebo <xref:System.Workflow.Activities.StateMachineWorkflowActivity> třídy. <xref:System.Activities.Activity> Třída poskytuje základní abstrakce chování pracovního postupu. Autoři aktivitu poté můžete implementovat buď <xref:System.Activities.CodeActivity> pro vlastní aktivity základní funkce, nebo <xref:System.Activities.NativeActivity> pro vlastní aktivity funkci, která používá kontejnerových nástrojů modulu runtime. <xref:System.Activities.Activity> je třída používaná autory aktivity vyjádřit nové chování deklarativně z hlediska jiné <xref:System.Activities.NativeActivity>, <xref:System.Activities.CodeActivity>, <xref:System.Activities.AsyncCodeActivity>, nebo <xref:System.Activities.DynamicActivity> objektů, ať už jsou vlastní nebo součástí [předdefinovanou aktivitu Knihovna](net-framework-4-5-built-in-activity-library.md).  
   
 ## <a name="rich-composite-activity-options"></a>Složené bohaté možnosti aktivity  
  <xref:System.Activities.Statements.Flowchart> je výkonný novou aktivitu toku řízení, která umožňuje autorům model libovolného smyček a podmíněného větvení. <xref:System.Activities.Statements.Flowchart> poskytuje založený na událostech programovací model, který byl dříve pouze moct pomocí provádí <xref:System.Workflow.Activities.StateMachineWorkflowActivity>. Procedurální pracovní postupy těžit z nových aktivit řízení toku, které modelují tradiční řízení toku na struktury, jako například <xref:System.Activities.Statements.TryCatch> a <xref:System.Activities.Statements.Switch%601>.  
@@ -33,7 +33,7 @@ Windows Workflow Foundation (WF) v [!INCLUDE[netfx40_long](../../../includes/net
 -   Nové aktivity zasílání zpráv, jako <xref:System.ServiceModel.Activities.SendContent> a <xref:System.ServiceModel.Activities.ReceiveReply>.  
   
 ## <a name="explicit-activity-data-model"></a>Datový Model explicitní aktivity  
- [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] obsahuje nové možnosti pro ukládání nebo při přenosech dat. Data mohou být uložena v aktivity pomocí <xref:System.Activities.Variable>. Při přesouvání dat do a z aktivity, typy argumentů specializované slouží k určení, která data směr pohybuje. Tyto typy jsou <xref:System.Activities.InArgument>, <xref:System.Activities.InOutArgument>, a <xref:System.Activities.OutArgument>. Další informace najdete v tématu [Windows Workflow Foundation Data Model](../../../docs/framework/windows-workflow-foundation/data-model.md).  
+ [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] obsahuje nové možnosti pro ukládání nebo při přenosech dat. Data mohou být uložena v aktivity pomocí <xref:System.Activities.Variable>. Při přesouvání dat do a z aktivity, typy argumentů specializované slouží k určení, která data směr pohybuje. Tyto typy jsou <xref:System.Activities.InArgument>, <xref:System.Activities.InOutArgument>, a <xref:System.Activities.OutArgument>. Další informace najdete v tématu [Windows Workflow Foundation Data Model](data-model.md).  
   
 ## <a name="enhanced-hosting-persistence-and-tracking-options"></a>Rozšířená hostování, stálost a možnosti sledování  
  [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] obsahuje vylepšení trvalost, jako je následující:  
@@ -55,4 +55,4 @@ Windows Workflow Foundation (WF) v [!INCLUDE[netfx40_long](../../../includes/net
 -   Obnovení čekající pracovního postupu je teď spravovaná pomocí <xref:System.Activities.Bookmark> objektu.  
   
 ## <a name="easier-ability-to-extend-wf-designer-experience"></a>Snazší možnost rozšíření prostředí Návrháře pracovního postupu  
- Nové Návrháře pracovního postupu je založená na Windows Presentation Foundation (WPF) nabízí jednodušší model pro použití při změna hostování návrháře pracovního postupu mimo sadu Visual Studio a poskytuje také snazší mechanismy pro vytvoření vlastní návrháři aktivit. Další informace najdete v tématu [Kustomizace možností návrhu pracovního postupu](../../../docs/framework/windows-workflow-foundation/customizing-the-workflow-design-experience.md).
+ Nové Návrháře pracovního postupu je založená na Windows Presentation Foundation (WPF) nabízí jednodušší model pro použití při změna hostování návrháře pracovního postupu mimo sadu Visual Studio a poskytuje také snazší mechanismy pro vytvoření vlastní návrháři aktivit. Další informace najdete v tématu [Kustomizace možností návrhu pracovního postupu](customizing-the-workflow-design-experience.md).

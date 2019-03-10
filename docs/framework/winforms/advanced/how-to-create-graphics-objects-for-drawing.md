@@ -10,12 +10,12 @@ helpviewer_keywords:
 - images [Windows Forms], creating
 - GDI+, creating images
 ms.assetid: 162861f9-f050-445e-8abb-b2c43a918b8b
-ms.openlocfilehash: a21e049cb91ec29bcd46eb04efd78487da9a6317
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e609fbff29d058c04a839a5dcb79aab16a518298
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54497029"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57709046"
 ---
 # <a name="how-to-create-graphics-objects-for-drawing"></a>Postupy: Vytváření grafických objektů pro kreslení
 Předtím, než můžete kreslení čar a obrazců, vykreslení textu, nebo zobrazení a manipulaci s obrázky s [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)], je potřeba vytvořit <xref:System.Drawing.Graphics> objektu. <xref:System.Drawing.Graphics> Objekt představuje [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] kreslení ploše a je objekt, který se používá k vytvoření grafické obrázky.  
@@ -165,13 +165,13 @@ Předtím, než můžete kreslení čar a obrazců, vykreslení textu, nebo zobr
   
     |K vykreslení|Další informace naleznete v tématu|  
     |---------------|---------|  
-    |řádky|[Postupy: Nakreslit čáru na formuláři Windows](../../../../docs/framework/winforms/advanced/how-to-draw-a-line-on-a-windows-form.md)|  
-    |Obrazce|[Postupy: Kreslení obrazce s obrysem](../../../../docs/framework/winforms/advanced/how-to-draw-an-outlined-shape.md)|  
-    |Text|[Postupy: Vykreslení textu ve formuláři Windows](../../../../docs/framework/winforms/advanced/how-to-draw-text-on-a-windows-form.md)|  
-    |Obrázky|[Postupy: Vykreslení obrázků pomocí GDI +](../../../../docs/framework/winforms/advanced/how-to-render-images-with-gdi.md)|  
+    |řádky|[Postupy: Nakreslit čáru na formuláři Windows](how-to-draw-a-line-on-a-windows-form.md)|  
+    |Obrazce|[Postupy: Kreslení obrazce s obrysem](how-to-draw-an-outlined-shape.md)|  
+    |Text|[Postupy: Vykreslení textu ve formuláři Windows](how-to-draw-text-on-a-windows-form.md)|  
+    |Obrázky|[Postupy: Vykreslení obrázků pomocí GDI +](how-to-render-images-with-gdi.md)|  
   
 ## <a name="see-also"></a>Viz také:
-- [Začínáme s programováním grafiky](../../../../docs/framework/winforms/advanced/getting-started-with-graphics-programming.md)
-- [Grafika a kreslení v modelu Windows Forms](../../../../docs/framework/winforms/advanced/graphics-and-drawing-in-windows-forms.md)
-- [Čáry, křivky a obrazce](../../../../docs/framework/winforms/advanced/lines-curves-and-shapes.md)
-- [Postupy: Vykreslení obrázků pomocí GDI +](../../../../docs/framework/winforms/advanced/how-to-render-images-with-gdi.md)
+- [Začínáme s programováním grafiky](getting-started-with-graphics-programming.md)
+- [Grafika a kreslení v modelu Windows Forms](graphics-and-drawing-in-windows-forms.md)
+- [Čáry, křivky a obrazce](lines-curves-and-shapes.md)
+- [Postupy: Vykreslení obrázků pomocí GDI +](how-to-render-images-with-gdi.md)

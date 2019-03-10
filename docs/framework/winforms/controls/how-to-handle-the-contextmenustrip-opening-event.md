@@ -11,21 +11,21 @@ helpviewer_keywords:
 - event handling [Windows Forms], context menus
 - shortcut menus [Windows Forms], event handling
 ms.assetid: b661b3dd-7815-4cc2-a1aa-a9a391ab3427
-ms.openlocfilehash: fe4c8fc3d2446b09add7336fa11670ff9ca8fed2
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 179411da96362fd9ba42e2b97682f335beb894c1
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54532109"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57715448"
 ---
 # <a name="how-to-handle-the-contextmenustrip-opening-event"></a>Postupy: Zpracování události otevření ContextMenuStrip
 Můžete přizpůsobit chování vašeho <xref:System.Windows.Forms.ContextMenuStrip> ovládacího prvku pomocí zpracování <xref:System.Windows.Forms.ToolStripDropDown.Opening> událostí.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu ukazuje, jak zpracovat <xref:System.Windows.Forms.ToolStripDropDown.Opening> událostí. Obslužná rutina události do dynamicky přidá položky <xref:System.Windows.Forms.ContextMenuStrip> ovládacího prvku. Příklad úplného kódu naleznete v tématu [jak: Dynamické přidávání položek ToolStrip](../../../../docs/framework/winforms/controls/how-to-add-toolstrip-items-dynamically.md).  
+ Následující příklad kódu ukazuje, jak zpracovat <xref:System.Windows.Forms.ToolStripDropDown.Opening> událostí. Obslužná rutina události do dynamicky přidá položky <xref:System.Windows.Forms.ContextMenuStrip> ovládacího prvku. Příklad úplného kódu naleznete v tématu [jak: Dynamické přidávání položek ToolStrip](how-to-add-toolstrip-items-dynamically.md).  
   
- [!code-csharp[System.Windows.Forms.ToolStrip.Misc#42](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.Misc/CS/Program.cs#42)]
- [!code-vb[System.Windows.Forms.ToolStrip.Misc#42](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.Misc/VB/Program.vb#42)]  
+ [!code-csharp[System.Windows.Forms.ToolStrip.Misc#42](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.Misc/CS/Program.cs#42)]
+ [!code-vb[System.Windows.Forms.ToolStrip.Misc#42](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.Misc/VB/Program.vb#42)]  
   
  Nastavte <xref:System.ComponentModel.CancelEventArgs.Cancel%2A?displayProperty=nameWithType> vlastnost `true` zabránit v nabídce otevřít.  
   
@@ -33,4 +33,4 @@ Můžete přizpůsobit chování vašeho <xref:System.Windows.Forms.ContextMenuS
 - <xref:System.Windows.Forms.ContextMenuStrip>
 - <xref:System.ComponentModel.CancelEventArgs.Cancel%2A>
 - <xref:System.Windows.Forms.ToolStripDropDown>
-- [Ovládací prvek ToolStrip](../../../../docs/framework/winforms/controls/toolstrip-control-windows-forms.md)
+- [Ovládací prvek ToolStrip](toolstrip-control-windows-forms.md)

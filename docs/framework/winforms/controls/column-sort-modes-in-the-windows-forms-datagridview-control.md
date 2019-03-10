@@ -5,12 +5,12 @@ helpviewer_keywords:
 - data grids [Windows Forms], sort modes
 - DataGridView control [Windows Forms], sort mode
 ms.assetid: 43715887-2df9-4da7-bcf1-b9c7c842b2bf
-ms.openlocfilehash: b2b73d36230d12f4e1075dde201e941cbe9d228d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 935251c783bbe74903cee6afd5e14eed4483d69d
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54615046"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57717853"
 ---
 # <a name="column-sort-modes-in-the-windows-forms-datagridview-control"></a>Režimy třídění sloupce v ovládacím prvku Windows Forms DataGridView
 <xref:System.Windows.Forms.DataGridView> sloupce mají tři režimy řazení. Režim řazení pro každý sloupec se specifikuje prostřednictvím <xref:System.Windows.Forms.DataGridViewColumn.SortMode%2A> vlastnost sloupec, který může být nastavena na jednu z následujících <xref:System.Windows.Forms.DataGridViewColumnSortMode> hodnot výčtu.  
@@ -31,7 +31,7 @@ ms.locfileid: "54615046"
   
  Když <xref:System.Windows.Forms.DataGridView> je seřazený, můžete určit řazení sloupců a pořadí řazení kontrolou hodnoty <xref:System.Windows.Forms.DataGridView.SortedColumn%2A> a <xref:System.Windows.Forms.DataGridView.SortOrder%2A> vlastnosti. Tyto hodnoty nejsou smysluplné po vlastní operace řazení. Další informace o vlastní řazení naleznete v části vlastní řazení dále v tomto tématu.  
   
- Když <xref:System.Windows.Forms.DataGridView> ovládací prvek obsahující provázaná a nevázaného sloupce má řazení proběhnout, hodnoty v nevázaných sloupců nelze automaticky udržuje. Pokud chcete zachovat tyto hodnoty, je nutné implementovat virtuální režim nastavením <xref:System.Windows.Forms.DataGridView.VirtualMode%2A> vlastnost `true` a zpracování <xref:System.Windows.Forms.DataGridView.CellValueNeeded> a <xref:System.Windows.Forms.DataGridView.CellValuePushed> události. Další informace najdete v tématu [jak: Implementace virtuálního režimu v Windows Forms DataGridView – ovládací prvek](../../../../docs/framework/winforms/controls/how-to-implement-virtual-mode-in-the-windows-forms-datagridview-control.md). Řazení podle nevázaných sloupců v vázaný režimu není podporováno.  
+ Když <xref:System.Windows.Forms.DataGridView> ovládací prvek obsahující provázaná a nevázaného sloupce má řazení proběhnout, hodnoty v nevázaných sloupců nelze automaticky udržuje. Pokud chcete zachovat tyto hodnoty, je nutné implementovat virtuální režim nastavením <xref:System.Windows.Forms.DataGridView.VirtualMode%2A> vlastnost `true` a zpracování <xref:System.Windows.Forms.DataGridView.CellValueNeeded> a <xref:System.Windows.Forms.DataGridView.CellValuePushed> události. Další informace najdete v tématu [jak: Implementace virtuálního režimu v Windows Forms DataGridView – ovládací prvek](how-to-implement-virtual-mode-in-the-windows-forms-datagridview-control.md). Řazení podle nevázaných sloupců v vázaný režimu není podporováno.  
   
 ## <a name="programmatic-sorting"></a>Řazení prostřednictvím kódu programu  
  Můžete řadit <xref:System.Windows.Forms.DataGridView> programově zavoláním jeho <xref:System.Windows.Forms.DataGridView.Sort%2A> metoda.  
@@ -65,6 +65,6 @@ ms.locfileid: "54615046"
 - <xref:System.Windows.Forms.DataGridView.SortOrder%2A?displayProperty=nameWithType>
 - <xref:System.Windows.Forms.DataGridViewColumn.SortMode%2A?displayProperty=nameWithType>
 - <xref:System.Windows.Forms.DataGridViewColumnHeaderCell.SortGlyphDirection%2A?displayProperty=nameWithType>
-- [Řazení dat v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/sorting-data-in-the-windows-forms-datagridview-control.md)
-- [Postupy: Nastavení režimů řazení pro sloupce v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/set-the-sort-modes-for-columns-wf-datagridview-control.md)
-- [Postupy: Přizpůsobení třídění v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/how-to-customize-sorting-in-the-windows-forms-datagridview-control.md)
+- [Řazení dat v ovládacím prvku Windows Forms DataGridView](sorting-data-in-the-windows-forms-datagridview-control.md)
+- [Postupy: Nastavení režimů řazení pro sloupce v ovládacím prvku Windows Forms DataGridView](set-the-sort-modes-for-columns-wf-datagridview-control.md)
+- [Postupy: Přizpůsobení třídění v ovládacím prvku Windows Forms DataGridView](how-to-customize-sorting-in-the-windows-forms-datagridview-control.md)

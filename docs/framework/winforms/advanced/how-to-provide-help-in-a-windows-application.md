@@ -8,12 +8,12 @@ helpviewer_keywords:
 - HelpProvider component [Windows Forms]
 - forms [Windows Forms], providing Help
 ms.assetid: 7c4e5cec-2bd2-4f0b-8d75-c2b88929bd61
-ms.openlocfilehash: 00ee19f343d8f471d84f3dc8180e61b7354e3985
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: bb05842eb7cd30611c68f685ea3dae9200d87d35
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54738599"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57724931"
 ---
 # <a name="how-to-provide-help-in-a-windows-application"></a>Postupy: Poskytnutí nápovědy v aplikaci Windows
 Lze použít <xref:System.Windows.Forms.HelpProvider> součásti pro připojení témata nápovědy v souboru nápovědy k určité ovládací prvky v modelu Windows Forms. Soubor nápovědy může být ve formátu HTML nebo HTMLHelp 1.x nebo větší formátu.  
@@ -53,10 +53,10 @@ Lze použít <xref:System.Windows.Forms.HelpProvider> součásti pro připojení
 > [!IMPORTANT]
 >  Pečlivě zkontrolujte všechny informace odesílané z klienta před jeho použitím v aplikaci. Uživatelé se zlými úmysly se může pokusit o odeslání nebo vložit spustitelný soubor skriptu, příkazy SQL nebo jiný kód. Před zobrazení vstupu uživatele, ukládat v databázi nebo s ním pracovat, zkontrolujte neobsahuje informace o potenciálně nebezpečné. Typické způsob, jak zkontrolovat je použit regulární výraz k vyhledání klíčová slova, jako je "Skript" při přijímání vstupu od uživatele.  
   
- Můžete také použít <xref:System.Windows.Forms.HelpProvider> součásti k zobrazení místní nápovědy, i v případě, že jste si ji nakonfigurovali zobrazíte soubory nápovědy pro ovládací prvky ve formulářích Windows. Další informace najdete v tématu [jak: Zobrazení místní nápovědy](../../../../docs/framework/winforms/advanced/how-to-display-pop-up-help.md).  
+ Můžete také použít <xref:System.Windows.Forms.HelpProvider> součásti k zobrazení místní nápovědy, i v případě, že jste si ji nakonfigurovali zobrazíte soubory nápovědy pro ovládací prvky ve formulářích Windows. Další informace najdete v tématu [jak: Zobrazení místní nápovědy](how-to-display-pop-up-help.md).  
   
 ## <a name="see-also"></a>Viz také:
-- [Postupy: Zobrazení místní nápovědy](../../../../docs/framework/winforms/advanced/how-to-display-pop-up-help.md)
-- [Nápověda ovládacího prvku pomocí ToolTips](../../../../docs/framework/winforms/advanced/control-help-using-tooltips.md)
-- [Integrace uživatelské nápovědy v modelu Windows Forms](../../../../docs/framework/winforms/advanced/integrating-user-help-in-windows-forms.md)
-- [Windows Forms](../../../../docs/framework/winforms/index.md)
+- [Postupy: Zobrazení místní nápovědy](how-to-display-pop-up-help.md)
+- [Nápověda ovládacího prvku pomocí ToolTips](control-help-using-tooltips.md)
+- [Integrace uživatelské nápovědy v modelu Windows Forms](integrating-user-help-in-windows-forms.md)
+- [Windows Forms](../index.md)

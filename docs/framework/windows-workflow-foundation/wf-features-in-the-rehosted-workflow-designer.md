@@ -2,21 +2,21 @@
 title: Podpora nových funkcí Workflow Foundation 4.5 v Návrháři postupu provádění se změněným hostováním
 ms.date: 03/30/2017
 ms.assetid: 1a4a4038-d8e6-41dd-99ea-93bd76286772
-ms.openlocfilehash: c6f6c6baedba0c932472a087d378ccce90b60db7
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: bed49e4a62e597c9cffd113b24551872ee1053d5
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48836976"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57714941"
 ---
 # <a name="support-for-new-workflow-foundation-45-features-in-the-rehosted-workflow-designer"></a>Podpora nových funkcí Workflow Foundation 4.5 v Návrháři postupu provádění se změněným hostováním
 Windows Workflow Foundation (WF) v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] přichází s mnoha novými funkcemi včetně několik vylepšení prostředí Návrháře pracovního postupu. Toto téma podrobně popisuje tyto funkce jsou podporované v návrháři se změněným hostováním, a ty, které nejsou aktuálně podporovány.
 
 > [!NOTE]
->  Pro všechny nové funkce Windows Workflow Foundation (WF) v seznamu [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], včetně těch, které nesouvisí s změna hostování návrháře, najdete v tématu [co je nového ve Windows Workflow Foundation v rozhraní .NET 4.5](../../../docs/framework/windows-workflow-foundation/whats-new-in-wf-in-dotnet.md).
+>  Pro všechny nové funkce Windows Workflow Foundation (WF) v seznamu [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], včetně těch, které nesouvisí s změna hostování návrháře, najdete v tématu [co je nového ve Windows Workflow Foundation v rozhraní .NET 4.5](whats-new-in-wf-in-dotnet.md).
 
 ## <a name="activities"></a>Aktivity
- Knihovna předdefinovaných aktivit obsahuje nové aktivity a nové funkce pro existujících aktivit. Všechny tyto nové aktivity jsou podporované v návrháři se změněným hostováním. Další informace o těchto nových aktivit najdete v článku [aktivity](../../../docs/framework/windows-workflow-foundation/whats-new-in-wf-in-dotnet.md#BKMK_NewActivities) část [co je nového ve Windows Workflow Foundation v rozhraní .NET 4.5](../../../docs/framework/windows-workflow-foundation/whats-new-in-wf-in-dotnet.md).
+ Knihovna předdefinovaných aktivit obsahuje nové aktivity a nové funkce pro existujících aktivit. Všechny tyto nové aktivity jsou podporované v návrháři se změněným hostováním. Další informace o těchto nových aktivit najdete v článku [aktivity](whats-new-in-wf-in-dotnet.md#BKMK_NewActivities) část [co je nového ve Windows Workflow Foundation v rozhraní .NET 4.5](whats-new-in-wf-in-dotnet.md).
 
 ## <a name="c-expressions"></a>Výrazy jazyka C#
  Před verzí [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], všechny výrazy v pracovních postupech, může být pouze napsaná v jazyce Visual Basic. V [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], výrazy jazyka Visual Basic se používají pouze pro projekty vytvořené pomocí jazyka Visual Basic. Projekty Visual C# nyní pomocí C# pro výrazy. Při vytváření pracovních postupů v sadě Visual Studio 2012, plně funkční editor výrazů C# poskytuje jaké schopnosti zvýraznění gramatiky a technologie intellisense. Pracovní postup projekty jazyka C# vytvořené v předchozích verzích, které používají výrazy jazyka Visual Basic, budou nadále fungovat.
@@ -27,35 +27,35 @@ Windows Workflow Foundation (WF) v [!INCLUDE[net_v45](../../../includes/net-v45-
 ## <a name="new-designer-capabilities"></a>Nové možnosti návrháře
 
 ### <a name="designer-search"></a>Návrháře vyhledávání
- [Rychlé hledání](../../../docs/framework/windows-workflow-foundation/whats-new-in-wf-in-dotnet.md#BKMK_QuickFind) a [najít v souborech](../../../docs/framework/windows-workflow-foundation/whats-new-in-wf-in-dotnet.md#BKMK_FindInFiles) nepředchází funkce [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] nejsou podporovány v návrháři se změněným hostováním. `Toolbox` Hledání je podporované v návrháři se změněným hostováním. Další informace o těchto funkcích najdete v tématu [návrháře hledání](../../../docs/framework/windows-workflow-foundation/whats-new-in-wf-in-dotnet.md#BKMK_DesignerSearch).
+ [Rychlé hledání](whats-new-in-wf-in-dotnet.md#BKMK_QuickFind) a [najít v souborech](whats-new-in-wf-in-dotnet.md#BKMK_FindInFiles) nepředchází funkce [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] nejsou podporovány v návrháři se změněným hostováním. `Toolbox` Hledání je podporované v návrháři se změněným hostováním. Další informace o těchto funkcích najdete v tématu [návrháře hledání](whats-new-in-wf-in-dotnet.md#BKMK_DesignerSearch).
 
 > [!WARNING]
->  [Rychlé hledání](../../../docs/framework/windows-workflow-foundation/whats-new-in-wf-in-dotnet.md#BKMK_QuickFind) a [najít v souborech](../../../docs/framework/windows-workflow-foundation/whats-new-in-wf-in-dotnet.md#BKMK_FindInFiles) nejsou podporovány v návrháři se změněným hostováním.
+>  [Rychlé hledání](whats-new-in-wf-in-dotnet.md#BKMK_QuickFind) a [najít v souborech](whats-new-in-wf-in-dotnet.md#BKMK_FindInFiles) nejsou podporovány v návrháři se změněným hostováním.
 
 ### <a name="delete-context-menu-item-in-variable-and-argument-designer"></a>Odstranit položky kontextové nabídky v Návrháři proměnných a argumentů
  V [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], proměnné a argumenty může odstranit jenom v Návrháři pomocí klávesnice. Počínaje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], proměnné a argumenty je možné odstranit pomocí místní nabídky. Tato funkce je podporovaná v návrháři se změněným hostováním.
 
  Následující snímek obrazovky ukazuje návrháře kontextové nabídky proměnných a argumentů.
 
- ![Proměnné a Argument místní nabídka návrháře](../../../docs/framework/windows-workflow-foundation/media/designercontextmenu.png "DesignerContextMenu")
+ ![Proměnné a Argument místní nabídka návrháře](./media/designercontextmenu.png "DesignerContextMenu")
 
 ### <a name="auto-surround-with-sequence"></a>Automatické kulatých pořadí
  Od pracovního postupu nebo určité aktivity kontejneru (například <xref:System.Activities.Statements.NoPersistScope>) může obsahovat jenom jeden text aktivity, přidání druhé aktivity vyžaduje vývojářům první aktivita odstranění, přidání <xref:System.Activities.Statements.Sequence> aktivity a pak přidat obě aktivity k sekvenční aktivity. Počínaje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], při přidání druhé aktivity na plochu návrháře `Sequence` aktivity se automaticky vytvoří při zabalení obě aktivity. Tato funkce je podporovaná v návrháři se změněným hostováním.
 
  Následující snímek obrazovky ukazuje `WriteLine` aktivity v `Body` z `NoPersistScope`.
 
- ![Automatické&#45;před a za místo přetažení](../../../docs/framework/windows-workflow-foundation/media/autosurround1.png "AutoSurround1")
+ ![Automatické&#45;před a za místo přetažení](./media/autosurround1.png "AutoSurround1")
 
  Následující snímek obrazovky ukazuje automaticky vytvořený `Sequence` aktivity v `Body` při sekundy `WriteLine` neklesla pod první.
 
- ![Automaticky vytvořit sekvenční aktivitu](../../../docs/framework/windows-workflow-foundation/media/autosurround2.png "AutoSurround2")
+ ![Automaticky vytvořit sekvenční aktivitu](./media/autosurround2.png "AutoSurround2")
 
 ### <a name="pan-mode"></a>Režim posouvání
  Velké pracovní postup v Návrháři snadněji přejít, je možné povolit režim posouvání umožňuje vývojářům klikněte a tažením přesuňte viditelnou část pracovního postupu, místo nutnosti použít posuvníky. Tlačítko aktivovat režim posouvání se v pravém dolním rohu návrháře. Tato funkce je podporovaná v návrháři se změněným hostováním.
 
  Následující snímek obrazovky ukazuje tlačítko posouvání, která se nachází v pravém dolním rohu návrháře postupu provádění.
 
- ![Tlačítko posouvání v Návrháři pracovních postupů](../../../docs/framework/windows-workflow-foundation/media/panbutton.png "PanButton")
+ ![Tlačítko posouvání v Návrháři pracovních postupů](./media/panbutton.png "PanButton")
 
  Prostřední tlačítko myši nebo MEZERNÍK lze použít také k posouvání návrháře postupu provádění.
 
@@ -67,9 +67,9 @@ Windows Workflow Foundation (WF) v [!INCLUDE[net_v45](../../../includes/net-v45-
 ### <a name="outline-view-of-workflow-items"></a>Zobrazení osnovy položky pracovního postupu
  Pokud chcete mít hierarchické pracovních postupů přehlednější a díky tomu, komponenty pracovního postupu se zobrazí v zobrazení stromové osnovy. Zobrazí se v zobrazení osnovy **Osnova dokumentu** zobrazení. Chcete-li toto zobrazení otevřít v sadě Visual Studio z hlavní nabídky, vyberte **zobrazení**, **ostatní Windows**, **Osnova dokumentu**, nebo stiskněte klávesy Ctrl W, U. Kliknutím na uzel v zobrazení osnovy přejdete na odpovídající aktivity v Návrháři pracovních postupů a zobrazení osnovy se aktualizuje a zobrazí aktivity, které jsou vybrány v návrháři. Tato funkce je podporovaná v návrháři se změněným hostováním.
 
- Na následujícím snímku obrazovky dokončené pracovní postup [kurz Začínáme](../../../docs/framework/windows-workflow-foundation/getting-started-tutorial.md) zobrazuje zobrazení osnovy s sekvenčního pracovního postupu.
+ Na následujícím snímku obrazovky dokončené pracovní postup [kurz Začínáme](getting-started-tutorial.md) zobrazuje zobrazení osnovy s sekvenčního pracovního postupu.
 
- ![Zobrazení v Návrháři pracovních postupů osnovy](../../../docs/framework/windows-workflow-foundation/media/outlineviewinworkflowdesigner.jpg "OutlineViewinWorkflowDesigner")
+ ![Zobrazení v Návrháři pracovních postupů osnovy](./media/outlineviewinworkflowdesigner.jpg "OutlineViewinWorkflowDesigner")
 
 ### <a name="more-control-of-visibility-of-shell-bar-and-header-items"></a>Větší míra kontroly viditelnost panelu prostředí a v záhlaví položek
  V návrháři se změněným hostováním některé standardní ovládací prvky uživatelského rozhraní nemůže mít význam pro daný pracovní postup a může být vypnuté. V [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], tato přizpůsobení je podporována pouze na prostředí panelu v dolní části okna návrháře. V [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], viditelnost prostředí položek záhlaví v horní části okna návrháře je možné upravit tak, že nastavíte <xref:System.Activities.Presentation.View.DesignerView.WorkflowShellHeaderItemsVisibility%2A> příslušnou <xref:System.Activities.Presentation.View.ShellHeaderItemsVisibility> hodnotu.
@@ -79,23 +79,23 @@ Windows Workflow Foundation (WF) v [!INCLUDE[net_v45](../../../includes/net-v45-
 
  Následující snímek obrazovky ukazuje body přílohy, které pak bude viditelný, když je aktivita přetáhnout z panelu nástrojů.
 
- ![Počáteční uzel vývojový diagram zobrazuje body automatické připojení](../../../docs/framework/windows-workflow-foundation/media/autoconnect1.png "Autoconnect1")
+ ![Počáteční uzel vývojový diagram zobrazuje body automatické připojení](./media/autoconnect1.png "Autoconnect1")
 
  Aktivity můžete také přetahovat do připojení mezi uzly vývojový diagram a stavy pro automatické vložení uzlu mezi dvou jiných uzlech. Následující snímek obrazovky ukazuje zvýrazněný řádek připojení, kde můžete přetáhnout z panelu nástrojů a vyřadit aktivity.
 
- ![Automatické&#45;vložit úchyt pro přetažení aktivity](../../../docs/framework/windows-workflow-foundation/media/autoinsert.png "Autoinsert")
+ ![Automatické&#45;vložit úchyt pro přetažení aktivity](./media/autoinsert.png "Autoinsert")
 
  Automaticky připojit a automaticky vkládat jsou podporovány v návrháři se změněným hostováním.
 
 ### <a name="designer-annotations"></a>Návrháře poznámky
  Usnadňuje vývoj větší pracovních postupů návrháře nyní podporuje přidávání poznámek k pomáhají udržovat přehled o procesu návrhu. Komentáře lze přidat do aktivity, státy, vývojový diagram uzly, proměnné a argumenty. Na následujícím snímku obrazovky se zobrazí místní nabídku pro přidání poznámky do návrháře.
 
- ![Poznámka kontextovou nabídku](../../../docs/framework/windows-workflow-foundation/media/annotationdialog.png "annotationdialog")
+ ![Poznámka kontextovou nabídku](./media/annotationdialog.png "annotationdialog")
 
  Návrháře poznámky jsou podporovány v návrháři se změněným hostováním.
 
 ### <a name="define-and-consume-activitydelegate-objects-in-the-designer"></a>Definice a používání objektu ActivityDelegate objektů v Návrháři
- Aktivity v [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] použít <xref:System.Activities.ActivityDelegate> objekty k vystavení body provádění kde ostatní části pracovního postupu může pracovat s pracovní postup spouštění, ale obvykle pomocí těchto bodů provádění požadované množství kódu. V této verzi můžou vývojáři definice a používání delegátů aktivit pomocí návrháře postupu provádění. Další informace najdete v tématu [postupy: definice a používání delegátů aktivit v Návrháři postupu provádění](/visualstudio/workflow-designer/how-to-define-and-consume-activity-delegates-in-the-workflow-designer).
+ Aktivity v [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] použít <xref:System.Activities.ActivityDelegate> objekty k vystavení body provádění kde ostatní části pracovního postupu může pracovat s pracovní postup spouštění, ale obvykle pomocí těchto bodů provádění požadované množství kódu. V této verzi můžou vývojáři definice a používání delegátů aktivit pomocí návrháře postupu provádění. Další informace najdete v tématu [jak: Definice a používání delegátů aktivit v Návrháři postupu provádění](/visualstudio/workflow-designer/how-to-define-and-consume-activity-delegates-in-the-workflow-designer).
 
  Delegátů aktivit jsou podporovány v návrháři se změněným hostováním.
 
@@ -132,14 +132,14 @@ Windows Workflow Foundation (WF) v [!INCLUDE[net_v45](../../../includes/net-v45-
   
 4.  Aktivity použít k vytváření pracovních postupů stavového stroje, včetně: <xref:System.Activities.Statements.StateMachine>, <xref:System.Activities.Statements.State>, a <xref:System.Activities.Statements.Transition>  
   
- Následující snímek obrazovky ukazuje pracovní postup dokončený stav stroje ze [kurz Začínáme](../../../docs/framework/windows-workflow-foundation/getting-started-tutorial.md) krok [jak: vytvořit pracovní postup stavového stroje](../../../docs/framework/windows-workflow-foundation/how-to-create-a-state-machine-workflow.md).  
+ Následující snímek obrazovky ukazuje pracovní postup dokončený stav stroje ze [kurz Začínáme](getting-started-tutorial.md) krok [jak: Vytvoření pracovního postupu stavového stroje](how-to-create-a-state-machine-workflow.md).  
   
- ![Dokončení pracovního postupu stavového stroje](../../../docs/framework/windows-workflow-foundation/media/wfstatemachinegettingstartedtutorialcomplete.JPG "WFStateMachineGettingStartedTutorialComplete")  
+ ![Dokončení pracovního postupu stavového stroje](./media/wfstatemachinegettingstartedtutorialcomplete.JPG "WFStateMachineGettingStartedTutorialComplete")  
   
- Další informace o vytváření pracovní postupy stavu počítače, naleznete v tématu [pracovní postupy stavu počítače](../../../docs/framework/windows-workflow-foundation/state-machine-workflows.md). V návrháři se změněným hostováním jsou podporovány pracovních postupů stavového stroje.  
+ Další informace o vytváření pracovní postupy stavu počítače, naleznete v tématu [pracovní postupy stavu počítače](state-machine-workflows.md). V návrháři se změněným hostováním jsou podporovány pracovních postupů stavového stroje.  
   
 ### <a name="contract-first-workflow-development"></a>Vývoj stavící do pracovního postupu  
- Pracovní postup kontraktem vývojový nástroj umožňuje vývojářům navrhovat smlouvy v kódu a potom pomocí několika kliknutí v sadě Visual Studio automaticky vygenerovat šablonu aktivit v sadě nástrojů představující každé operace. Tyto aktivity se pak používají k vytvoření pracovního postupu, který implementuje operace definované ve smlouvě. Návrháře postupu provádění se ověří pracovní postup služby zajistíte, že tyto operace jsou implementovány a podpis pracovního postupu odpovídá podpisu smlouvu. Vývojář můžete taky přidružit kolekce implementované kontrakty služby pracovního postupu. Další informace o vývoj služby stavící do pracovního postupu najdete v tématu [postupy: vytvoření služby pracovního postupu, která využívá existující kontrakt služby](../../../docs/framework/windows-workflow-foundation/how-to-create-a-workflow-service-that-consumes-an-existing-service-contract.md).  
+ Pracovní postup kontraktem vývojový nástroj umožňuje vývojářům navrhovat smlouvy v kódu a potom pomocí několika kliknutí v sadě Visual Studio automaticky vygenerovat šablonu aktivit v sadě nástrojů představující každé operace. Tyto aktivity se pak používají k vytvoření pracovního postupu, který implementuje operace definované ve smlouvě. Návrháře postupu provádění se ověří pracovní postup služby zajistíte, že tyto operace jsou implementovány a podpis pracovního postupu odpovídá podpisu smlouvu. Vývojář můžete taky přidružit kolekce implementované kontrakty služby pracovního postupu. Další informace o vývoj služby stavící do pracovního postupu najdete v tématu [jak: Vytvoření služby pracovního postupu, která využívá existující kontrakt služby](how-to-create-a-workflow-service-that-consumes-an-existing-service-contract.md).  
   
 > [!WARNING]
 >  Vývoj stavící do pracovního postupu není podporován v Návrháři pracovních postupů.

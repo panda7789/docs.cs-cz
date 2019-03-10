@@ -7,31 +7,31 @@ helpviewer_keywords:
 - Windows Forms, MDI applications
 - MDI
 ms.assetid: 599faf75-13cf-49cc-ad3c-255545e5cb97
-ms.openlocfilehash: 3fa6f2517b52ecaaf4ad9db4f0de55908eac4c96
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0ce7c66946d03d566b21473711cb6b3315885236
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33523965"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57717440"
 ---
 # <a name="multiple-document-interface-mdi-applications"></a>Aplikace MDI (Multiple-Document Interface)
-Aplikace rozhraní více dokumentů (MDI) umožňují zobrazit více dokumentů ve stejnou dobu, s každý dokument zobrazí v samostatném okně. Aplikace MDI mají často položku nabídky okno s dílčích pro přepínání mezi windows nebo dokumenty.  
+Aplikace rozhraní více dokumentů (MDI) umožňují zobrazit více dokumentů současně, s každého dokumentu zobrazí v samostatném okně. Aplikace MDI mají často položky nabídky okna s podnabídky pro přepínání mezi windows nebo dokumenty.  
   
 > [!NOTE]
->  Existují určité rozdíly chování mezi MDI formuláře a systému windows (SDI) rozhraní s jedním dokumentem ve Windows Forms. `Opacity` Vlastnost nemá vliv na vzhled podřízených formulářů MDI. Kromě toho <xref:System.Windows.Forms.Form.CenterToParent%2A> – metoda neovlivňuje chování podřízených formulářů MDI.  
+>  Existují některé rozdíly v chování mezi formulářů MDI a interface jednoho dokumentu (SDI) systému windows ve Windows Forms. `Opacity` Vlastnost nemá vliv na vzhled podřízené formuláře MDI. Kromě toho <xref:System.Windows.Forms.Form.CenterToParent%2A> metoda nemá vliv na chování podřízené formuláře MDI.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Postupy: Vytváření nadřazených formulářů MDI](../../../../docs/framework/winforms/advanced/how-to-create-mdi-parent-forms.md)  
- Poskytuje pokyny pro vytváření kontejneru pro více dokumentů v rámci aplikace MDI.  
+ [Postupy: Vytváření nadřazených formulářů MDI](how-to-create-mdi-parent-forms.md)  
+ Poskytuje pokyny pro vytvoření kontejneru pro více dokumentů v rámci aplikace MDI.  
   
- [Postupy: Vytváření podřízených formulářů MDI](../../../../docs/framework/winforms/advanced/how-to-create-mdi-child-forms.md)  
- Poskytuje pokyny pro vytvoření jednoho nebo více windows, které fungují v rámci nadřazené formuláře MDI.  
+ [Postupy: Vytváření podřízených formulářů MDI](how-to-create-mdi-child-forms.md)  
+ Poskytuje pokyny pro vytváření jeden nebo více oken, které působí v rámci nadřazený formulář MDI.  
   
- [Postupy: Určení podřízeného prvku aktivního MDI](../../../../docs/framework/winforms/advanced/how-to-determine-the-active-mdi-child.md)  
- Poskytuje pokyny pro ověření podřízeného okna, který má právě fokus, (a odesílat její obsah do schránky).  
+ [Postupy: Určení podřízeného prvku aktivního MDI](how-to-determine-the-active-mdi-child.md)  
+ Poskytuje pokyny pro ověření, který má právě fokus, podřízené okno (a odesílat její obsah do schránky.).  
   
- [Postupy: Odesílání dat do aktivního podřízeného MDI](../../../../docs/framework/winforms/advanced/how-to-send-data-to-the-active-mdi-child.md)  
- Poskytuje pokyny pro přenos informací do okna aktivních podřízených.  
+ [Postupy: Odesílání dat do aktivního podřízeného MDI](how-to-send-data-to-the-active-mdi-child.md)  
+ Poskytuje pokyny pro přenos informací na aktivní podřízené okno.  
   
- [Postupy: Uspořádání podřízených formulářů MDI](../../../../docs/framework/winforms/advanced/how-to-arrange-mdi-child-forms.md)  
- Poskytuje pokyny pro dlaždice, kaskádových nebo uspořádání podřízených oken MDI aplikace.
+ [Postupy: Uspořádání podřízených formulářů MDI](how-to-arrange-mdi-child-forms.md)  
+ Poskytuje pokyny pro dělení do bloků, CSS a uspořádání podřízených oken MDI aplikace.

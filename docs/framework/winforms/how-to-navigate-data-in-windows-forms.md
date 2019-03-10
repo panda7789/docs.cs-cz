@@ -11,12 +11,12 @@ helpviewer_keywords:
 - CurrencyManager class [Windows Forms], navigating Windows Forms data
 - data [Windows Forms], navigating
 ms.assetid: 97360f7b-b181-4084-966a-4c62518f735b
-ms.openlocfilehash: 0d3703019f081f07ecb29bf9229f0a2044764ae6
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 920f6d6206a8f33a912d8a7d1b46a3047ed874bc
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54586901"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57725330"
 ---
 # <a name="how-to-navigate-data-in-windows-forms"></a>Postupy: Procházení dat v modelu Windows Forms
 V aplikaci Windows, je nejjednodušší způsob, jak procházet záznamy ve zdroji dat pro vazbu <xref:System.Windows.Forms.BindingSource> zdroj dat a vazby ovládacích prvků pro komponentu <xref:System.Windows.Forms.BindingSource>. Pak můžete použít metodu předdefinovanou navigaci na <xref:System.Windows.Forms.BindingSource> takové <xref:System.Windows.Forms.BindingSource.MoveNext%2A>, <xref:System.Windows.Forms.BindingSource.MoveLast%2A>, <xref:System.Windows.Forms.BindingSource.MovePrevious%2A> a <xref:System.Windows.Forms.BindingSource.MoveFirst%2A>. Použití těchto metod se upraví <xref:System.Windows.Forms.BindingSource.Position%2A> a <xref:System.Windows.Forms.BindingSource.Current%2A> vlastnosti <xref:System.Windows.Forms.BindingSource> odpovídajícím způsobem. Můžete také najít položku a nastavte ji jako aktuální položky tak, že nastavíte <xref:System.Windows.Forms.BindingSource.Position%2A> vlastnost.  
@@ -28,8 +28,8 @@ V aplikaci Windows, je nejjednodušší způsob, jak procházet záznamy ve zdro
     > [!NOTE]
     >  Nastavení <xref:System.Windows.Forms.BindingSource.Position%2A> vlastnost na hodnotu za první nebo poslední záznam nemá za následek chybu, jako [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] nedovolí vám umožní nastavit pozice na hodnotu mimo rozsah seznamu. Pokud je to důležité ve vaší aplikaci vědět, jestli jste došli za první nebo poslední záznam, obsahují logiku pro ověření, zda překročí počet prvků data.  
   
-     [!code-csharp[System.Windows.Forms.NavigatingData#4](../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.NavigatingData/CS/Form1.cs#4)]
-     [!code-vb[System.Windows.Forms.NavigatingData#4](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.NavigatingData/VB/Form1.vb#4)]  
+     [!code-csharp[System.Windows.Forms.NavigatingData#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.NavigatingData/CS/Form1.cs#4)]
+     [!code-vb[System.Windows.Forms.NavigatingData#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.NavigatingData/VB/Form1.vb#4)]  
   
 ### <a name="to-check-whether-you-have-passed-the-end-or-beginning"></a>Chcete-li zkontrolovat, jestli jste předali koncové nebo počáteční  
   
@@ -40,18 +40,18 @@ V aplikaci Windows, je nejjednodušší způsob, jak procházet záznamy ve zdro
     > [!NOTE]
     >  Mějte na paměti, že můžete změnit v seznamu jsou navigace v kódu, měli byste znovu povolit **Další** tlačítko, takže uživatelé můžou procházet celou délku nového seznamu. Kromě toho mějte na paměti, která výše <xref:System.Windows.Forms.BindingSource.PositionChanged> události pro konkrétní <xref:System.Windows.Forms.BindingSource> pracujete se musí přiřadit pomocí jeho metody zpracování událostí. Následuje příklad metody pro zpracování <xref:System.Windows.Forms.BindingSource.PositionChanged> události:  
   
-     [!code-csharp[System.Windows.Forms.NavigatingData#3](../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.NavigatingData/CS/Form1.cs#3)]
-     [!code-vb[System.Windows.Forms.NavigatingData#3](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.NavigatingData/VB/Form1.vb#3)]  
+     [!code-csharp[System.Windows.Forms.NavigatingData#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.NavigatingData/CS/Form1.cs#3)]
+     [!code-vb[System.Windows.Forms.NavigatingData#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.NavigatingData/VB/Form1.vb#3)]  
   
 ### <a name="to-find-an-item-and-set-it-as-the-current-item"></a>K vyhledání položky a nastavte ji jako aktuální položky  
   
 1.  Najděte záznam, který chcete nastavit jako aktuální položku. Můžete provést pomocí <xref:System.Windows.Forms.BindingSource.Find%2A> metodu <xref:System.Windows.Forms.BindingSource>, pokud zdroj dat implementuje <xref:System.ComponentModel.IBindingList>. Některé příklady datového zdroje, které implementují <xref:System.ComponentModel.IBindingList> jsou <xref:System.ComponentModel.BindingList%601> a <xref:System.Data.DataView>.  
   
-     [!code-csharp[System.Windows.Forms.NavigatingData#2](../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.NavigatingData/CS/Form1.cs#2)]
-     [!code-vb[System.Windows.Forms.NavigatingData#2](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.NavigatingData/VB/Form1.vb#2)]  
+     [!code-csharp[System.Windows.Forms.NavigatingData#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.NavigatingData/CS/Form1.cs#2)]
+     [!code-vb[System.Windows.Forms.NavigatingData#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.NavigatingData/VB/Form1.vb#2)]  
   
 ## <a name="see-also"></a>Viz také:
-- [Zdroje dat podporované rozhraním Windows Forms](../../../docs/framework/winforms/data-sources-supported-by-windows-forms.md)
-- [Oznámení změn v datové vazbě Windows Forms](../../../docs/framework/winforms/change-notification-in-windows-forms-data-binding.md)
-- [Datové vazby a Windows Forms](../../../docs/framework/winforms/data-binding-and-windows-forms.md)
-- [Windows Forms – datová vazba](../../../docs/framework/winforms/windows-forms-data-binding.md)
+- [Zdroje dat podporované rozhraním Windows Forms](data-sources-supported-by-windows-forms.md)
+- [Oznámení změn v datové vazbě Windows Forms](change-notification-in-windows-forms-data-binding.md)
+- [Datové vazby a Windows Forms](data-binding-and-windows-forms.md)
+- [Windows Forms – datová vazba](windows-forms-data-binding.md)

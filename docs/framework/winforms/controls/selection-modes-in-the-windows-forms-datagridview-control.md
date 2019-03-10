@@ -5,12 +5,12 @@ helpviewer_keywords:
 - selection [Windows Forms], modes in DataGridView control
 - DataGridView control [Windows Forms], selection mode
 ms.assetid: a3ebfd3d-0525-479d-9d96-d9e017289b36
-ms.openlocfilehash: c512a296f618ab32781dd8718a47c4b20fd7f54a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 931df04bbe6b8448030e26cd2cc2c904865ac0d3
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54745906"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57717294"
 ---
 # <a name="selection-modes-in-the-windows-forms-datagridview-control"></a>Režimy výběru v ovládacím prvku Windows Forms DataGridView
 Občas můžete chtít vaše aplikace k provádění akcí na základě výběrů uživatele v rámci <xref:System.Windows.Forms.DataGridView> ovládacího prvku. V závislosti na akce můžete omezit, které jsou možné druhy výběru. Předpokládejme například, že aplikace můžete vytisknout sestavu pro aktuálně vybraný záznam. V takovém případě můžete chtít konfigurovat <xref:System.Windows.Forms.DataGridView> ovládacího prvku tak, aby kliknutím kamkoli na řádku vždy vybere celý řádek, a proto je možné vybrat tuto pouze jeden řádek v čase.  
@@ -49,5 +49,5 @@ Občas můžete chtít vaše aplikace k provádění akcí na základě výběr�
 - <xref:System.Windows.Forms.DataGridView.MultiSelect%2A>
 - <xref:System.Windows.Forms.DataGridView.SelectionMode%2A>
 - <xref:System.Windows.Forms.DataGridViewSelectionMode>
-- [Výběr a používání schránky s ovládacím prvkem Windows Forms DataGridView](../../../../docs/framework/winforms/controls/selection-and-clipboard-use-with-the-windows-forms-datagridview-control.md)
-- [Postupy: Nastavení režimu výběru ovládacího prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/how-to-set-the-selection-mode-of-the-windows-forms-datagridview-control.md)
+- [Výběr a používání schránky s ovládacím prvkem Windows Forms DataGridView](selection-and-clipboard-use-with-the-windows-forms-datagridview-control.md)
+- [Postupy: Nastavení režimu výběru ovládacího prvku Windows Forms DataGridView](how-to-set-the-selection-mode-of-the-windows-forms-datagridview-control.md)

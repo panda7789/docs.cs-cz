@@ -5,12 +5,12 @@ helpviewer_keywords:
 - application settings [Windows Forms], design time
 - application settings [Windows Forms], changing
 ms.assetid: 5da91272-ad7e-49e7-9d1f-eb64439a1e4d
-ms.openlocfilehash: f40b6b6e38785b1e8dcc9061f8cf0b459f4ed8b5
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: f9a7f5aefc07bb9700e0b0b59684e5882d7109b2
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56965277"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57722695"
 ---
 # <a name="how-to-change-the-value-of-an-existing-setting-at-design-time"></a>Postupy: Změna hodnoty existujícího nastavení při návrhu
 Visual Studio můžete použít k úpravě hodnoty existujícího nastavení ve vašem projektu.  
@@ -32,6 +32,6 @@ Visual Studio můžete použít k úpravě hodnoty existujícího nastavení ve 
 3.  V Návrháři nastavení najdete nastavení, pro kterou chcete změnit hodnotu a zadejte novou hodnotu ve sloupci hodnota.  
   
 ## <a name="see-also"></a>Viz také:
-- [Použití nastavení aplikace a uživatelských nastavení](../../../../docs/framework/winforms/advanced/using-application-settings-and-user-settings.md)
-- [Postupy: Vytvořit nové nastavení v době návrhu](../../../../docs/framework/winforms/advanced/how-to-create-a-new-setting-at-design-time.md)
-- [Přehled nastavení aplikace](../../../../docs/framework/winforms/advanced/application-settings-overview.md)
+- [Použití nastavení aplikace a uživatelských nastavení](using-application-settings-and-user-settings.md)
+- [Postupy: Vytvořit nové nastavení v době návrhu](how-to-create-a-new-setting-at-design-time.md)
+- [Přehled nastavení aplikace](application-settings-overview.md)

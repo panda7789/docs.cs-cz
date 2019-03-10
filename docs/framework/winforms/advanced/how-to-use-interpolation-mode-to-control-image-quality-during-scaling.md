@@ -9,12 +9,12 @@ helpviewer_keywords:
 - images [Windows Forms], scaling
 - images [Windows Forms], controlling quality
 ms.assetid: fde9bccf-8aa5-4b0d-ba4b-788740627b02
-ms.openlocfilehash: 0c295411418dabac74626c3c4ab43fb8210bbfa4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 83f1e569f1fb1ae49143f4ed11837759df29fe79
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54631422"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57721954"
 ---
 # <a name="how-to-use-interpolation-mode-to-control-image-quality-during-scaling"></a>Postupy: Použití režimu interpolace pro řízení kvality obrázku během změny měřítka
 Režim interpolace <xref:System.Drawing.Graphics> objekt ovlivňuje způsob, jakým [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] imagí škálování (úseky a zmenší). <xref:System.Drawing.Drawing2D.InterpolationMode> Výčet definuje několik režimů interpolace, z nichž některé jsou uvedeny v následujícím seznamu:  
@@ -38,14 +38,14 @@ Režim interpolace <xref:System.Drawing.Graphics> objekt ovlivňuje způsob, jak
   
  Následující obrázek znázorňuje původní bitové kopie a tři menší Image.  
   
- ![Obrázek s proměnlivým nastavením interpolace](../../../../docs/framework/winforms/advanced/media/csgrapes1.png "csgrapes1")  
+ ![Obrázek s proměnlivým nastavením interpolace](./media/csgrapes1.png "csgrapes1")  
   
- [!code-csharp[System.Drawing.WorkingWithImages#81](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.WorkingWithImages/CS/Class1.cs#81)]
- [!code-vb[System.Drawing.WorkingWithImages#81](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.WorkingWithImages/VB/Class1.vb#81)]  
+ [!code-csharp[System.Drawing.WorkingWithImages#81](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.WorkingWithImages/CS/Class1.cs#81)]
+ [!code-vb[System.Drawing.WorkingWithImages#81](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.WorkingWithImages/VB/Class1.vb#81)]  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  V předchozím příkladu je určený k použití pomocí Windows Forms a vyžaduje <xref:System.Windows.Forms.PaintEventArgs> `e`, což je parametr <xref:System.Windows.Forms.Control.Paint> obslužné rutiny události.  
   
 ## <a name="see-also"></a>Viz také:
-- [Obrázky, rastrové obrázky a metasoubory](../../../../docs/framework/winforms/advanced/images-bitmaps-and-metafiles.md)
-- [Práce s obrázky, rastrovými obrázky, ikonami a metasoubory](../../../../docs/framework/winforms/advanced/working-with-images-bitmaps-icons-and-metafiles.md)
+- [Obrázky, rastrové obrázky a metasoubory](images-bitmaps-and-metafiles.md)
+- [Práce s obrázky, rastrovými obrázky, ikonami a metasoubory](working-with-images-bitmaps-icons-and-metafiles.md)

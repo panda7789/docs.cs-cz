@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Windows Forms controls, locking
 - controls [Windows Forms], locking
 ms.assetid: 94efe0d2-c14e-4d14-b903-63ea9b07e290
-ms.openlocfilehash: a59e5997104b9438681702d460dd8f6937df41b0
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: cff3b0a3ba547c15e7b1c896bde49931a6a3c742
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54741454"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57702643"
 ---
 # <a name="how-to-lock-controls-to-windows-forms"></a>Postupy: Uzamknout ovládací prvky Windows Forms
 Při návrhu uživatelského rozhraní (UI) aplikace Windows můžete uzamknout ovládací prvky, jakmile náleží správně, tak, aby nikoli neúmyslně přesunout nebo změnit jejich velikost, při nastavení dalších vlastností.  
@@ -47,8 +47,8 @@ Při návrhu uživatelského rozhraní (UI) aplikace Windows můžete uzamknout 
 1.  V **vlastnosti** okna, klikněte na tlačítko **uzamčené** vlastnosti a vyberte `false`. (Poklepete na název přepíná nastavení vlastnosti.)  
   
 ## <a name="see-also"></a>Viz také:
-- [Windows Forms – ovládací prvky](../../../../docs/framework/winforms/controls/index.md)
-- [Uspořádávání ovládacích prvků ve Windows Forms](../../../../docs/framework/winforms/controls/arranging-controls-on-windows-forms.md)
-- [Popisování jednotlivých ovládacích prvků Windows Forms a zajišťování zástupců pro tyto prvky](../../../../docs/framework/winforms/controls/labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them.md)
-- [Ovládací prvky používané ve Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)
-- [Ovládací prvky Windows Forms podle funkce](../../../../docs/framework/winforms/controls/windows-forms-controls-by-function.md)
+- [Windows Forms – ovládací prvky](index.md)
+- [Uspořádávání ovládacích prvků ve Windows Forms](arranging-controls-on-windows-forms.md)
+- [Popisování jednotlivých ovládacích prvků Windows Forms a zajišťování zástupců pro tyto prvky](labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them.md)
+- [Ovládací prvky používané ve Windows Forms](controls-to-use-on-windows-forms.md)
+- [Ovládací prvky Windows Forms podle funkce](windows-forms-controls-by-function.md)

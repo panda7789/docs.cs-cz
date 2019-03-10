@@ -20,12 +20,12 @@ helpviewer_keywords:
 - bitmaps [Windows Forms], file format
 - Exchangeable Image File
 ms.assetid: 6be085a2-2c13-47c8-b80a-c18b32777d8d
-ms.openlocfilehash: 3083c075bfbbd21a26f7442f9bbccbe800d73cf1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a78c84e82ac8507ad40cf3a9fdb44d58858a38d2
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54674765"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57713212"
 ---
 # <a name="types-of-bitmaps"></a>Typy rastrových obrázků
 Rastrový obrázek je pole bitů, které určují barvu každého obrazového bodu obdélníkové pole v pixelech. Počet bitů věnovaný jednotlivých obrazových bodů určuje počet barev, které lze přiřadit k obrazového bodu. Například pokud každý pixel, je reprezentována 4 bitů, daný pixelů může se mu přiřadit jednu z 16 různé barvy (2 ^ 4 = 16). Následující tabulka ukazuje několik příkladů počet barev, které lze přiřadit k pixelu vyjádřena daný počet bitů.  
@@ -41,7 +41,7 @@ Rastrový obrázek je pole bitů, které určují barvu každého obrazového bo
   
  Soubory disku, které obvykle ukládají rastrové obrázky obsahují jeden nebo více bloků s informacemi, které obsahují informace, jako je počet bitů na pixel, počet pixelů na každém řádku a počet řádků v poli. Tento soubor může obsahovat také tabulky barev (říká se jim paletu barev). Tabulky barev mapuje čísla rastrového obrázku nastaven na určitých barev. Následující obrázek znázorňuje zvětšeným image spolu s jeho tabulky rastrového obrázku a barvu. Každý pixel je reprezentována číslo 4 bitů, tedy 2 ^ 4 = 16 barev v tabulce barev. Každá barva v tabulce je reprezentována 24-bit číslo: 8 bitů pro red, 8 bitů pro zelenou a 8 bitů pro modrou. Číslo se zobrazuje ve formuláři šestnáctkové (základní 16): A = 10, B = 11, C = 12, D = 13, E = 14, F = 15.  
   
- ![Bitmap sample](../../../../docs/framework/winforms/advanced/media/aboutgdip03-art01.gif "AboutGdip03_Art01")  
+ ![Bitmap sample](./media/aboutgdip03-art01.gif "AboutGdip03_Art01")  
   
  Podívejte se na pixel na řádku 3 sloupci 5 bitové kopie. Odpovídající číslo rastrového obrázku nastaven je 1. Tabulky barev manažerech, že 1 představuje červenou barvu, je pixel je red. Jsou všechny položky v horním řádku rastrového obrázku 3. Tabulky barev víme, že 3 představuje modrá, tak, aby byly všechny pixely obrázku do horního řádku modrá.  
   
@@ -50,7 +50,7 @@ Rastrový obrázek je pole bitů, které určují barvu každého obrazového bo
   
  Rastrový obrázek, který ukládá indexy v tabulce barev je volána indexovat palety rastrový obrázek. Některé rastrové obrázky nepotřebujete tabulky barev. Například pokud rastrový obrázek používá 24 bitů na pixel, tento rastrový obrázek uložit barvy sami místo indexy v tabulce barev. Následující obrázek znázorňuje rastrový obrázek, který ukládá přímo barvy (24 bitů na pixel) namísto tabulky barev. Tento obrázek také ukazuje zvětšeným zobrazením příslušné bitové kopie. Rastrového obrázku nastaven FFFFFF představuje white, FF0000 představuje červená, 00FF00 představuje zelené a 0000FF představuje modrou.  
   
- ![Bitmap sample](../../../../docs/framework/winforms/advanced/media/aboutgdip03-art02.gif "AboutGdip03_Art02")  
+ ![Bitmap sample](./media/aboutgdip03-art02.gif "AboutGdip03_Art02")  
   
 ## <a name="graphics-file-formats"></a>Formáty souborů grafiky  
  Existuje mnoho standardní formáty pro ukládání bitmap ve soubory na disku. [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] podporuje grafiky souboru formáty popsané v následujících odstavcích.  
@@ -66,11 +66,11 @@ Rastrový obrázek je pole bitů, které určují barvu každého obrazového bo
   
  Úroveň komprese obrázků JPEG je možné konfigurovat, ale vyšší úrovně komprese (menší soubory) způsobit ztrátu Další informace. 20:1 kompresního poměru často výsledný obraz, který hledá těžko odlišili od původního z pohledu uživatele. Následující obrázek znázorňuje obrázku Bpm na obrázek a dvě obrázků JPEG, které byly z tohoto obrázku Bpm na obrázek komprimované. První JPEG má kompresní poměr 4:1 a druhý JPEG kompresní poměr přibližně 8:1.  
   
- ![Ukázky FileType](../../../../docs/framework/winforms/advanced/media/aboutgdip03-art03.gif "AboutGdip03_Art03")  
+ ![Ukázky FileType](./media/aboutgdip03-art03.gif "AboutGdip03_Art03")  
   
  Komprese JPEG nepodporuje fungovat dobře pro kreslení čáry, bloky plnou barvou a ostrých hranice. Následující obrázek znázorňuje BMP spolu s dvěma JPEG a formátu GIF. JPEG a GIF byly komprimované z BMP. Kompresní poměr je 4:1 pro GIF, 4:1 pro menší JPEG a 8:3 pro větší JPEG. Všimněte si, že GIF udržuje sharp hranice podél řádky, ale JPEG mají tendenci rozostření hranice.  
   
- ![Filetypes](../../../../docs/framework/winforms/advanced/media/aboutgdip03-art03a.gif "AboutGdip03_Art03A")  
+ ![Filetypes](./media/aboutgdip03-art03a.gif "AboutGdip03_Art03A")  
   
  JPEG je schéma komprese, formát souboru. JPEG souboru Interchange Format (JFIF) formát souboru je obvykle používají pro ukládání a přenos bitové kopie, které komprimované podle schématu JPEG. Soubory JFIF zobrazeného ve webových prohlížečích používají příponu JPG.  
   
@@ -89,5 +89,5 @@ Rastrový obrázek je pole bitů, které určují barvu každého obrazového bo
 - <xref:System.Drawing.Image?displayProperty=nameWithType>
 - <xref:System.Drawing.Bitmap?displayProperty=nameWithType>
 - <xref:System.Drawing.Imaging.PixelFormat?displayProperty=nameWithType>
-- [Obrázky, rastrové obrázky a metasoubory](../../../../docs/framework/winforms/advanced/images-bitmaps-and-metafiles.md)
-- [Práce s obrázky, rastrovými obrázky, ikonami a metasoubory](../../../../docs/framework/winforms/advanced/working-with-images-bitmaps-icons-and-metafiles.md)
+- [Obrázky, rastrové obrázky a metasoubory](images-bitmaps-and-metafiles.md)
+- [Práce s obrázky, rastrovými obrázky, ikonami a metasoubory](working-with-images-bitmaps-icons-and-metafiles.md)

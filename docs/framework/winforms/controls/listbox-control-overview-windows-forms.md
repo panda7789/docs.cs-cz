@@ -7,12 +7,12 @@ helpviewer_keywords:
 - list boxes [Windows Forms], about list boxes
 - ListBox control [Windows Forms], about ListBox control
 ms.assetid: 37ea226b-6fc8-4c70-936a-c6af4e0cad4c
-ms.openlocfilehash: 58fb5c40ab054a71b6d15beaa00190f3eaff3019
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2bba90f704458e1c724328feccaaf6f04b98ecb4
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54591549"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57723982"
 ---
 # <a name="listbox-control-overview-windows-forms"></a>ListBox – přehled ovládacího prvku (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.ListBox> ovládací prvek zobrazí seznam, ze kterého může uživatel vybrat jednu nebo více položek. Pokud celkový počet položek překročí číslo, které mohou být zobrazeny, posuvník se automaticky přidá do <xref:System.Windows.Forms.ListBox> ovládacího prvku. Když <xref:System.Windows.Forms.ListBox.MultiColumn%2A> je nastavena na `true`, pole se seznamem zobrazí položky ve více sloupcích a zobrazí se vodorovný posuvník. Když <xref:System.Windows.Forms.ListBox.MultiColumn%2A> je nastavena na `false`, pole se seznamem zobrazí položky v jednom sloupci a se zobrazí svislý posuvník. Když <xref:System.Windows.Forms.ListBox.ScrollAlwaysVisible%2A> je nastavena na `true`, bez ohledu na počet položek, které se zobrazí posuvník. <xref:System.Windows.Forms.ListBox.SelectionMode%2A> Vlastnost určuje, kolik položek seznamu můžete vybrat najednou.  
@@ -24,10 +24,10 @@ Windows Forms <xref:System.Windows.Forms.ListBox> ovládací prvek zobrazí sezn
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Forms.ListBox>
-- [Postupy: Přidání a odebrání položek z Windows Forms ComboBox, ListBox nebo CheckedListBox – ovládací prvek](../../../../docs/framework/winforms/controls/add-and-remove-items-from-a-wf-combobox.md)
-- [Postupy: Řazení obsahu Windows Forms ComboBox, ListBox nebo CheckedListBox – ovládací prvek](../../../../docs/framework/winforms/controls/sort-the-contents-of-a-wf-combobox-listbox-or-checkedlistbox-control.md)
-- [Postupy: Windows Forms ComboBox nebo ListBox – ovládací prvek svázat Data](../../../../docs/framework/winforms/controls/how-to-bind-a-windows-forms-combobox-or-listbox-control-to-data.md)
-- [Přehled ovládacího prvku ComboBox](../../../../docs/framework/winforms/controls/combobox-control-overview-windows-forms.md)
-- [Přehled ovládacího prvku CheckedListBox](../../../../docs/framework/winforms/controls/checkedlistbox-control-overview-windows-forms.md)
-- [Ovládací prvky Windows Forms používané k výpisu možností](../../../../docs/framework/winforms/controls/windows-forms-controls-used-to-list-options.md)
-- [Postupy: Vytvoření vyhledávací tabulky pro Windows Forms ComboBox, ListBox nebo CheckedListBox – ovládací prvek](../../../../docs/framework/winforms/controls/create-a-lookup-table-for-a-wf-combobox-listbox.md)
+- [Postupy: Přidání a odebrání položek z Windows Forms ComboBox, ListBox nebo CheckedListBox – ovládací prvek](add-and-remove-items-from-a-wf-combobox.md)
+- [Postupy: Řazení obsahu Windows Forms ComboBox, ListBox nebo CheckedListBox – ovládací prvek](sort-the-contents-of-a-wf-combobox-listbox-or-checkedlistbox-control.md)
+- [Postupy: Windows Forms ComboBox nebo ListBox – ovládací prvek svázat Data](how-to-bind-a-windows-forms-combobox-or-listbox-control-to-data.md)
+- [Přehled ovládacího prvku ComboBox](combobox-control-overview-windows-forms.md)
+- [Přehled ovládacího prvku CheckedListBox](checkedlistbox-control-overview-windows-forms.md)
+- [Ovládací prvky Windows Forms používané k výpisu možností](windows-forms-controls-used-to-list-options.md)
+- [Postupy: Vytvoření vyhledávací tabulky pro Windows Forms ComboBox, ListBox nebo CheckedListBox – ovládací prvek](create-a-lookup-table-for-a-wf-combobox-listbox.md)

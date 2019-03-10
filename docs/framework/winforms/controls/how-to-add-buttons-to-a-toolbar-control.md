@@ -12,12 +12,12 @@ helpviewer_keywords:
 - examples [Windows Forms], toolbars
 - ToolBar control [Windows Forms], adding drop-down menus
 ms.assetid: 78a58a8d-1041-4e38-9219-4096fa6a5c5c
-ms.openlocfilehash: 134cda4aa0042323e39966d60a7d51fda54cb954
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 347ca067a5ae5544351f29afe3ebcfe11d0b1e0f
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54711548"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57713235"
 ---
 # <a name="how-to-add-buttons-to-a-toolbar-control"></a>Postupy: Přidání tlačítek do ovládacího prvku ToolBar
 > [!NOTE]
@@ -150,7 +150,7 @@ ms.locfileid: "54711548"
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Forms.ToolBar>
-- [Postupy: Definování ikony pro tlačítko ToolBar](../../../../docs/framework/winforms/controls/how-to-define-an-icon-for-a-toolbar-button.md)
-- [Postupy: Aktivační události nabídky pro tlačítka panelu nástrojů](../../../../docs/framework/winforms/controls/how-to-trigger-menu-events-for-toolbar-buttons.md)
-- [Přehled ovládacího prvku ToolBar](../../../../docs/framework/winforms/controls/toolbar-control-overview-windows-forms.md)
-- [Ovládací prvek ToolBar](../../../../docs/framework/winforms/controls/toolbar-control-windows-forms.md)
+- [Postupy: Definování ikony pro tlačítko ToolBar](how-to-define-an-icon-for-a-toolbar-button.md)
+- [Postupy: Aktivační události nabídky pro tlačítka panelu nástrojů](how-to-trigger-menu-events-for-toolbar-buttons.md)
+- [Přehled ovládacího prvku ToolBar](toolbar-control-overview-windows-forms.md)
+- [Ovládací prvek ToolBar](toolbar-control-windows-forms.md)

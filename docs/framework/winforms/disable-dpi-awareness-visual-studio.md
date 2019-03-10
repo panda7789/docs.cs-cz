@@ -6,12 +6,12 @@ ms.prod: visual-studio-dev15
 ms.technology: vs-ide-designers
 author: gewarren
 ms.author: gewarren
-ms.openlocfilehash: 0820450fb9ae257cba87b3055ea1dde91112b19e
-ms.sourcegitcommit: 3d0c29b878f00caec288dfecb3a5c959de5aa629
+ms.openlocfilehash: 92096663032b85058dc8c918d1f90153820f6f71
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655995"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57710534"
 ---
 # <a name="disable-dpi-awareness-in-visual-studio"></a>Zakázání sledování DPI v sadě Visual Studio
 
@@ -21,11 +21,11 @@ Visual Studio je bodů na palec (DPI) vědět aplikaci, což znamená, že zobra
 
 **Návrháře formulářů Windows** v sadě Visual Studio nemá škálování podpory. To způsobí, že problémy zobrazení při otevření některé formulářů v **Návrháře formulářů Windows** na vysokým počtem bodů na palec (HDPI) monitorování. Příklady můžete ovládací prvky se zobrazí překrytí, jak je znázorněno na následujícím obrázku:
 
-![Návrhář formulářů Windows na monitoru HDPI](media/disable-dpi-awareness-visual-studio/win-forms-designer-hdpi.png)
+![Návrhář formulářů Windows na monitoru HDPI](./media/disable-dpi-awareness-visual-studio/win-forms-designer-hdpi.png)
 
 V sadě Visual Studio 2017 verze 15,8 a novější, když otevřete formulář v nástrojích pro **Návrháře formulářů Windows** na monitoru HDPI sady Visual Studio zobrazí žlutý informační pruh v horní části návrháře:
 
-![Informační panel v sadě Visual Studio k restartování v DPI nepodporující režim](media/disable-dpi-awareness-visual-studio/scaling-gold-bar.png)
+![Informační panel v sadě Visual Studio k restartování v DPI nepodporující režim](./media/disable-dpi-awareness-visual-studio/scaling-gold-bar.png)
 
 Přečte zprávu **škálování na hlavní obrazovce je nastavena na 200 % (192 dpi). To může způsobit problémů s vykreslováním v okně návrháře.**
 
@@ -51,7 +51,7 @@ Je důležité restartovat Visual Studio jako rozlišením DPI proces, až budet
 
 Visual Studio můžete označit jako nepodporující DPI úpravou registru. Otevřít **Editor registru** a přidání položky do **HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers** podklíč:
 
-**Položka**: C:\Program soubory (x86) \Microsoft Visual Studio\2017\Community\Common7\IDE\devenv.exe
+**Položka**: C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\devenv.exe
 
    > [!NOTE]
    > Pokud používáte edici Professional nebo Enterprise sady Visual Studio 2017, nahraďte **komunity** s **Professional** nebo **Enterprise** v položce. Také nahraďte podle potřeby písmeno jednotky.
@@ -75,7 +75,7 @@ Můžete se informováni o DPI škálování problémy v sadě Visual Studio. M�
 
 Chcete-li zakázat oznámení, zvolte **nástroje** > **možnosti** otevřít **možnosti** dialogového okna. Potom kliknutím na možnost **Návrháře formulářů Windows** > **Obecné**a nastavte **DPI škálování oznámení** k **False**.
 
-![DPI škálování možnost oznámení v sadě Visual Studio](media/disable-dpi-awareness-visual-studio/notifications-option.png)
+![DPI škálování možnost oznámení v sadě Visual Studio](./media/disable-dpi-awareness-visual-studio/notifications-option.png)
 
 Pokud chcete později znovu povolit škálování oznámení, nastavte vlastnost na **True**.
 

@@ -10,15 +10,15 @@ helpviewer_keywords:
 - page setup
 - PageSetupDialog component
 ms.assetid: 6dae05bc-c0fd-4357-bb93-841a1631d98f
-ms.openlocfilehash: c72ed5e6db6149f2161e0586c783e041eb0b731b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 482825c1e17811b31c3520a0280d7d0434489bf5
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54713535"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57713199"
 ---
 # <a name="how-to-determine-page-properties-using-the-pagesetupdialog-component"></a>Postupy: Určení vlastností stránky pomocí komponenty PageSetupDialog
-[PageSetupDialog](../../../../docs/framework/winforms/controls/pagesetupdialog-component-windows-forms.md) součást se zobrazí rozložení, formát papíru a jiné možnosti rozložení stránky pro uživatele pro dokument.  
+[PageSetupDialog](pagesetupdialog-component-windows-forms.md) součást se zobrazí rozložení, formát papíru a jiné možnosti rozložení stránky pro uživatele pro dokument.  
   
  Je třeba zadat instanci <xref:System.Drawing.Printing.PrintDocument> třídy – jedná o dokument, které se mají vytisknout. Kromě toho uživatelé musí mít tiskárny nainstalované v počítači, místně nebo prostřednictvím sítě, protože je částečně jak <xref:System.Windows.Forms.PageSetupDialog> komponenty Určuje stránky se uživateli zobrazí možnosti formátování.  
   
@@ -89,5 +89,5 @@ ms.locfileid: "54713535"
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Forms.PageSetupDialog>
-- [Postupy: Vytvoření tiskových úloh standardní Windows Forms](../../../../docs/framework/winforms/advanced/how-to-create-standard-windows-forms-print-jobs.md)
-- [Komponenta PageSetupDialog](../../../../docs/framework/winforms/controls/pagesetupdialog-component-windows-forms.md)
+- [Postupy: Vytvoření tiskových úloh standardní Windows Forms](../advanced/how-to-create-standard-windows-forms-print-jobs.md)
+- [Komponenta PageSetupDialog](pagesetupdialog-component-windows-forms.md)

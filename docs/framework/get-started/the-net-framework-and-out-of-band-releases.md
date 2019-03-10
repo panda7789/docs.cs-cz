@@ -4,12 +4,12 @@ ms.date: 10/10/2018
 ms.assetid: 721f10fa-3189-4124-a00d-56ddabd889b3
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 6605809f984a4a1323f555cd73ecb04a67830f46
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f29d6d5e3942296905088eb250d09f3a5ace1fa4
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54582055"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57708350"
 ---
 # <a name="the-net-framework-and-out-of-band-releases"></a>Rozhraní .NET Framework a nesvázaná vydání
 
@@ -49,7 +49,7 @@ Verze OOB pro součásti jádra common language runtime (CLR) jsou poskytovány 
  Jak bylo zmíněno dříve, pokud nasadíte aplikaci, která používá balíček OOB, sestavení OOB bude dodáváno spolu s balíčkem aplikace.
 
 ## <a name="types-of-oob-releases"></a>Typy verzí OOB
- Balíček OOB obvykle má jednu nebo více předprodejních verzí a stabilní verzi. Licence, která doprovází zkušební verzi, obvykle neumožňuje přerozdělování, ale umožňuje vyzkoušet balíček a poskytnout zpětnou vazbu. Zpětná vazba je součástí všech aktualizací balíčku. Konečná vydaná verze je distribuována jako stabilní balíček NuGet a obsahuje licenci, která umožňuje tento balíček NuGet distribuovat s vaší aplikací. Stabilní balíčky jsou podporovány společností Microsoft. Společnost Microsoft poskytuje podporu technologie IntelliSense, jakož i jiné druhy dokumentace, jako jsou příspěvky blogu a odpovědi na fóru pro všechny balíčky. Navíc zdrojový kód může být k dispozici některé, ale ne všechny balíčky. Pro oznámení týkající se nové a aktualizované balíčky, můžete odebírat [blogu .NET Framework](https://blogs.msdn.com/b/dotnet/).
+ Balíček OOB obvykle má jednu nebo více předprodejních verzí a stabilní verzi. Licence, která doprovází zkušební verzi, obvykle neumožňuje přerozdělování, ale umožňuje vyzkoušet balíček a poskytnout zpětnou vazbu. Zpětná vazba je součástí všech aktualizací balíčku. Konečná vydaná verze je distribuována jako stabilní balíček NuGet a obsahuje licenci, která umožňuje tento balíček NuGet distribuovat s vaší aplikací. Stabilní balíčky jsou podporovány společností Microsoft. Společnost Microsoft poskytuje podporu technologie IntelliSense, jakož i jiné druhy dokumentace, jako jsou příspěvky blogu a odpovědi na fóru pro všechny balíčky. Navíc zdrojový kód může být k dispozici některé, ale ne všechny balíčky. Pro oznámení týkající se nové a aktualizované balíčky, můžete odebírat [blogu .NET Framework](https://devblogs.microsoft.com/dotnet/).
 
  Chcete-li vyhledat balíčky předprodejní a stabilní, zvolte **zahrnout předběžné verze** ve správci balíčků NuGet.
 

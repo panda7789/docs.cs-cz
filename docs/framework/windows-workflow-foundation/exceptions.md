@@ -2,12 +2,12 @@
 title: Výjimky
 ms.date: 03/30/2017
 ms.assetid: 065205cc-52dd-4f30-9578-b17d8d113136
-ms.openlocfilehash: f50e1afa9b1d264a4577bcfe62e939ee669f8ba0
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 94a0a2430ffe7db47152517c742aed1c18a39e64
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54523971"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57717268"
 ---
 # <a name="exceptions"></a>Výjimky
 Pracovní postupy můžete použít <xref:System.Activities.Statements.TryCatch> aktivity pro zpracování výjimek, které jsou aktivovány v průběhu provádění pracovního postupu. Tyto výjimky mohou být zpracovány nebo se může být znovu vyvolány při použití <xref:System.Activities.Statements.Rethrow> aktivity. Aktivity ve službě <xref:System.Activities.Statements.TryCatch.Finally%2A> oddílu jsou spuštěna při buď <xref:System.Activities.Statements.TryCatch.Try%2A> části nebo <xref:System.Activities.Statements.TryCatch.Catches%2A> části dokončí. Hostitelem pracovních postupů <xref:System.Activities.WorkflowApplication> instance můžete použít také <xref:System.Activities.WorkflowApplication.OnUnhandledException%2A> obslužnou rutinu události pro zpracování výjimek, které nejsou zpracovány <xref:System.Activities.Statements.TryCatch> aktivity.  
@@ -34,21 +34,21 @@ Pracovní postupy můžete použít <xref:System.Activities.Statements.TryCatch>
   
  Následující příklad vyvolá pracovní postup, který vyvolá výjimku. Není výjimka ošetřena tímto pracovním postupem a <xref:System.Activities.WorkflowApplication.OnUnhandledException%2A> je vyvolána obslužná rutina. <xref:System.Activities.WorkflowApplicationUnhandledExceptionEventArgs> Jsou kontrolovány k poskytnutí informací o výjimce, a pracovní postup se ukončí.  
   
- [!code-csharp[CFX_WorkflowApplicationExample#1](../../../samples/snippets/csharp/VS_Snippets_CFX/cfx_workflowapplicationexample/cs/program.cs#1)]  
+ [!code-csharp[CFX_WorkflowApplicationExample#1](~/samples/snippets/csharp/VS_Snippets_CFX/cfx_workflowapplicationexample/cs/program.cs#1)]  
   
 ### <a name="handling-exceptions-with-the-trycatch-activity"></a>Zpracování výjimek s aktivitou TryCatch  
  Zpracování výjimek v pracovním postupu pomocí provádí <xref:System.Activities.Statements.TryCatch> aktivity. <xref:System.Activities.Statements.TryCatch> Má aktivita <xref:System.Activities.Statements.TryCatch.Catches%2A> kolekce <xref:System.Activities.Statements.Catch> aktivity, které jsou spojené s konkrétním <xref:System.Exception> typu. Pokud výjimky vyvolané aktivitou, která je součástí <xref:System.Activities.Statements.TryCatch.Try%2A> část <xref:System.Activities.Statements.TryCatch> aktivity shoduje s výjimkou <xref:System.Activities.Statements.Catch%601> aktivity v <xref:System.Activities.Statements.TryCatch.Catches%2A> kolekce a pak výjimka je zpracována. Pokud je explicitně znovu vyvolána výjimka nebo vyvolána nová výjimka pak tato výjimka předá Nadřazená aktivita. Následující příklad kódu ukazuje <xref:System.Activities.Statements.TryCatch> aktivitu, která zpracovává <xref:System.ApplicationException> , která je vyvolána <xref:System.Activities.Statements.TryCatch.Try%2A> části podle <xref:System.Activities.Statements.Throw> aktivity. Zpráva výjimky je zapsána do konzole <xref:System.Activities.Statements.Catch%601> aktivitu a pak napište zprávu, je zapsán v konzole <xref:System.Activities.Statements.TryCatch.Finally%2A> oddílu.  
   
- [!code-csharp[CFX_WorkflowApplicationExample#33](../../../samples/snippets/csharp/VS_Snippets_CFX/cfx_workflowapplicationexample/cs/program.cs#33)]  
+ [!code-csharp[CFX_WorkflowApplicationExample#33](~/samples/snippets/csharp/VS_Snippets_CFX/cfx_workflowapplicationexample/cs/program.cs#33)]  
   
  Aktivity v <xref:System.Activities.Statements.TryCatch.Finally%2A> oddílu jsou spuštěna při buď <xref:System.Activities.Statements.TryCatch.Try%2A> části nebo <xref:System.Activities.Statements.TryCatch.Catches%2A> části úspěšně dokončí. <xref:System.Activities.Statements.TryCatch.Try%2A> Části úspěšně dokončí, pokud nejsou vyvolány žádné výjimky z něj a <xref:System.Activities.Statements.TryCatch.Catches%2A> části úspěšně dokončí, pokud žádné výjimky jsou vyvolány nebo znovu vyvolány z něj. Pokud dojde k výjimce <xref:System.Activities.Statements.TryCatch.Try%2A> část <xref:System.Activities.Statements.TryCatch> a není buď zpracována <xref:System.Activities.Statements.Catch%601> v <xref:System.Activities.Statements.TryCatch.Catches%2A> části nebo je znovu vyvolána z <xref:System.Activities.Statements.TryCatch.Catches%2A>, aktivity v <xref:System.Activities.Statements.TryCatch.Finally%2A> nebude provedena, pokud dojde k jedné z následujících akcí.  
   
 -   Výjimka je zachycena ve vyšší úrovni <xref:System.Activities.Statements.TryCatch> aktivity v pracovním postupu, bez ohledu na to, zda se je znovu vyvolána z tuto vyšší úroveň <xref:System.Activities.Statements.TryCatch>.  
   
--   Tato výjimka není ošetřena ve vyšší úrovni <xref:System.Activities.Statements.TryCatch>, řídící kořenového pracovního postupu a pracovní postup nastaven na zrušení namísto ukončit nebo přerušení. Pracovní postupy, které jsou hostované pomocí <xref:System.Activities.WorkflowApplication> to můžete nakonfigurovat pomocí manipulace <xref:System.Activities.WorkflowApplication.OnUnhandledException%2A> a vrácení <xref:System.Activities.UnhandledExceptionAction.Cancel>. Příklad zpracování <xref:System.Activities.WorkflowApplication.OnUnhandledException%2A> je uvedené dříve v tomto tématu. To služby pracovního postupu můžete nakonfigurovat pomocí <xref:System.ServiceModel.Activities.Description.WorkflowUnhandledExceptionBehavior> uvedete <xref:System.ServiceModel.Activities.Description.WorkflowUnhandledExceptionAction.Cancel>. Příklad konfigurace <xref:System.ServiceModel.Activities.Description.WorkflowUnhandledExceptionBehavior>, naleznete v tématu [rozšíření hostitele služby pracovního postupu](../../../docs/framework/wcf/feature-details/workflow-service-host-extensibility.md).  
+-   Tato výjimka není ošetřena ve vyšší úrovni <xref:System.Activities.Statements.TryCatch>, řídící kořenového pracovního postupu a pracovní postup nastaven na zrušení namísto ukončit nebo přerušení. Pracovní postupy, které jsou hostované pomocí <xref:System.Activities.WorkflowApplication> to můžete nakonfigurovat pomocí manipulace <xref:System.Activities.WorkflowApplication.OnUnhandledException%2A> a vrácení <xref:System.Activities.UnhandledExceptionAction.Cancel>. Příklad zpracování <xref:System.Activities.WorkflowApplication.OnUnhandledException%2A> je uvedené dříve v tomto tématu. To služby pracovního postupu můžete nakonfigurovat pomocí <xref:System.ServiceModel.Activities.Description.WorkflowUnhandledExceptionBehavior> uvedete <xref:System.ServiceModel.Activities.Description.WorkflowUnhandledExceptionAction.Cancel>. Příklad konfigurace <xref:System.ServiceModel.Activities.Description.WorkflowUnhandledExceptionBehavior>, naleznete v tématu [rozšíření hostitele služby pracovního postupu](../wcf/feature-details/workflow-service-host-extensibility.md).  
   
 ## <a name="exception-handling-versus-compensation"></a>Výjimka manipulace a kompenzace  
- Rozdíl mezi zpracování výjimek a kompenzace je, že zpracování výjimek dochází při provádění aktivity. Kompenzace vyvolá se po úspěšném dokončení aktivity. Zpracování výjimek představuje příležitost k vyčištění po aktivita vyvolá výjimku, zatímco poskytuje mechanismus, pomocí kterého lze vrátit zpět úspěšně dokončená práce dříve dokončené aktivity kompenzace. Další informace najdete v tématu [kompenzace](../../../docs/framework/windows-workflow-foundation/compensation.md).  
+ Rozdíl mezi zpracování výjimek a kompenzace je, že zpracování výjimek dochází při provádění aktivity. Kompenzace vyvolá se po úspěšném dokončení aktivity. Zpracování výjimek představuje příležitost k vyčištění po aktivita vyvolá výjimku, zatímco poskytuje mechanismus, pomocí kterého lze vrátit zpět úspěšně dokončená práce dříve dokončené aktivity kompenzace. Další informace najdete v tématu [kompenzace](compensation.md).  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Activities.Statements.TryCatch>

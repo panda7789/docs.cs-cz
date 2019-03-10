@@ -11,20 +11,20 @@ ms.assetid: 627df1e9-b254-41af-bbac-9a4f02810c54
 Základní jednotka vaší aplikace jsou formuláře je nezbytné, abyste udělili uvažujete jejich funkce a návrhu. Formuláře v konečném důsledku je prázdným projektem, je, jako vývojář, zvýšit s ovládacími prvky pro vytvoření uživatelského rozhraní a s kódem pro manipulaci s daty. Za tímto účelem sady Visual Studio poskytuje integrované vývojové prostředí (IDE), které vám pomůže při psaní kódu, jakož i bohaté ovládací prvek nastavit písemné s [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)]. Ve vzájemně doplňuje funkce tyto ovládací prvky s vaším kódem, můžete snadno a rychle vyvinout řešení, které potřebujete.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Začínáme s Windows Forms](../../../docs/framework/winforms/getting-started-with-windows-forms.md)  
+ [Začínáme s Windows Forms](getting-started-with-windows-forms.md)  
  Obsahuje odkazy na témata o tom, jak Využijte sílu Windows Forms k zobrazení dat, zpracování vstupu uživatele a nasadit vaše aplikace snadno a s více robustní zabezpečení.  
   
- [Rozšiřování aplikací Windows Forms](../../../docs/framework/winforms/advanced/index.md)  
+ [Rozšiřování aplikací Windows Forms](./advanced/index.md)  
  Obsahuje odkazy na témata o tom, jak vylepšit vaše formuláře Windows s širokou škálu funkcí.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Windows Forms – ovládací prvky](../../../docs/framework/winforms/controls/index.md)  
+ [Windows Forms – ovládací prvky](./controls/index.md)  
  Obsahuje odkazy na témata, které popisují ovládacích prvků Windows Forms a ukazují, jak pro jejich implementaci.  
   
- [Windows Forms – datová vazba](../../../docs/framework/winforms/windows-forms-data-binding.md)  
+ [Windows Forms – datová vazba](windows-forms-data-binding.md)  
  Obsahuje odkazy na témata, která popisují architekturu datové vazby Windows Forms.  
   
- [Přehled grafiky](../../../docs/framework/winforms/advanced/graphics-overview-windows-forms.md)  
+ [Přehled grafiky](./advanced/graphics-overview-windows-forms.md)  
  Popisuje, jak vytvořit grafiky, kreslení textu a manipulaci s grafické obrázky jako objekty pomocí pokročilé implementaci rozhraní Windows grafiky návrhu.  
   
  [ClickOnce – zabezpečení a nasazení](/visualstudio/deployment/clickonce-security-and-deployment)  
@@ -42,5 +42,5 @@ Základní jednotka vaší aplikace jsou formuláře je nezbytné, abyste uděli
  [První pohled na nasazení v sadě Visual Studio](/visualstudio/deployment/deploying-applications-services-and-components)  
  Popisuje proces, pomocí kterého můžete distribuovat dokončenou aplikaci nebo součásti nainstalovat na jiných počítačích.  
   
- [Sestavování konzolových aplikací](../../../docs/standard/building-console-apps.md)  
+ [Sestavování konzolových aplikací](../../standard/building-console-apps.md)  
  Popisuje základní informace o vytváření s použitím aplikace konzoly <xref:System.Console> třídy.

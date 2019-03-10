@@ -8,12 +8,12 @@ helpviewer_keywords:
 - private font collections [Windows Forms], creating
 - fonts [Windows Forms], creating private collections
 ms.assetid: 6533d5e5-a8dc-4b76-9fc4-3bf75c8b9212
-ms.openlocfilehash: e698e93f96e0b19d45fb40408249aedcb0edeec7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 7cfd2a1fd29b58019d49c8cd5df9adb5b0873302
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54505832"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57723774"
 ---
 # <a name="how-to-create-a-private-font-collection"></a>Postupy: Vytvoření soukromé kolekce písem
 <xref:System.Drawing.Text.PrivateFontCollection> Třída dědí z <xref:System.Drawing.Text.FontCollection> abstraktní základní třída. Můžete použít <xref:System.Drawing.Text.PrivateFontCollection> objekt udržovat sadu písem speciálně pro danou aplikaci. Privátní písma kolekce může obsahovat nainstalované systémových písem, jakož i písma, které nebyly nainstalované v počítači. Chcete-li přidat soubor písma pro kolekci privátní písma, zavolejte <xref:System.Drawing.Text.PrivateFontCollection.AddFontFile%2A> metodu <xref:System.Drawing.Text.PrivateFontCollection> objektu.  
@@ -39,18 +39,18 @@ ms.locfileid: "54505832"
   
  Následující kód výstup je podobný výstup je znázorněno na následujícím obrázku.  
   
- ![Písma textu](../../../../docs/framework/winforms/advanced/media/csfontstext7.png "csfontstext7")  
+ ![Písma textu](./media/csfontstext7.png "csfontstext7")  
   
  Arial.tff (který byl přidán do kolekce privátní písem v následujícím příkladu kódu) je písmo pro Arial regulární style. Upozorňujeme však, že program výstup ukazuje několik dostupných stylů než standardní řady Arial písmo. Důvodem je, že [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] můžete simulovat tučné, kurzíva a Tučná kurzíva styly ze standardního stylu. [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] Můžete také vytvářet vlnovkou a přeškrtnutí ze standardního stylu.  
   
  Obdobně [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] můžete simulovat tučný styl kurzíva tučný styl nebo kurzívu. Výstup programu ukazuje, že tučný styl kurzíva k dispozici pro řadu časy Přestože TimesBd.tff (časy New Roman, bold) je jediná časy soubor v kolekci.  
   
- [!code-csharp[System.Drawing.FontsAndText#51](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.FontsAndText/CS/Class1.cs#51)]
- [!code-vb[System.Drawing.FontsAndText#51](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.FontsAndText/VB/Class1.vb#51)]  
+ [!code-csharp[System.Drawing.FontsAndText#51](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.FontsAndText/CS/Class1.cs#51)]
+ [!code-vb[System.Drawing.FontsAndText#51](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.FontsAndText/VB/Class1.vb#51)]  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  V předchozím příkladu je určený k použití pomocí Windows Forms a vyžaduje <xref:System.Windows.Forms.PaintEventArgs> `e`, což je parametr <xref:System.Windows.Forms.PaintEventHandler>.  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Drawing.Text.PrivateFontCollection>
-- [Použití písem a textu](../../../../docs/framework/winforms/advanced/using-fonts-and-text.md)
+- [Použití písem a textu](using-fonts-and-text.md)

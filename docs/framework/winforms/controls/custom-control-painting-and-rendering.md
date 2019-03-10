@@ -6,34 +6,34 @@ helpviewer_keywords:
 - custom controls [Windows Forms], painting
 - user controls [Windows Forms], painting
 ms.assetid: a09dbf76-0966-4cbf-a66a-2083ba98e068
-ms.openlocfilehash: 18a05a739f42d41a650e66723f44aae69c1707c7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ec9002ffa4a7e2c82f59d52344764a01afe4c568
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33526048"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57722136"
 ---
 # <a name="custom-control-painting-and-rendering"></a>Malování a vykreslování vlastního ovládacího prvku
-Vlastní vykreslování ovládacích prvků je jedním z mnoha složitá úloha, umožněno pomocí rozhraní .NET Framework. Při vytváření vlastního ovládacího prvku, máte mnoho možnosti týkající se grafické vzhledu ovládacího prvku. Vytváříte-li ovládací prvek, který dědí z `Control`, je nutné zadat kód, který umožňuje vaší řídit k vykreslení jeho grafické reprezentace. Pokud vytváříte uživatelský ovládací prvek dědění ze `UserControl`, nebo se dědí z jednoho z ovládacích prvků Windows Forms, můžete přepsat standardní grafické vyjádření a zadejte vlastní kód grafiky. Pokud chcete zadat vlastní vykreslení pro základní ovládací prvky systému `UserControl` vytváříte, možnosti omezenější, ale stále povolit širokou škálu grafické možnosti pro ovládací prvky a aplikace.  
+Vlastní vykreslování ovládacích prvků je jednou z mnoha složité úkoly snadné rozhraním .NET Framework. Při vytváření vlastního ovládacího prvku, máte celou řadu možností týkající se vzhled grafického ovládacího prvku. Vytváříte-li ovládací prvek, který dědí z `Control`, je nutné zadat kód, který umožňuje ovládacího prvku k vykreslení jeho grafickou reprezentaci. Pokud vytváříte uživatelský ovládací prvek děděním z `UserControl`, nebo dědí z jednoho z ovládacích prvků Windows Forms, mohou přepsat standardní grafické vyjádření a poskytují grafického kódu. Pokud chcete poskytnout vlastní vykreslování pro základní ovládací prvky `UserControl` vytváříte, vaše možnosti omezenější, ale přesto umožňuje širokou škálu grafické možnosti pro ovládací prvky a aplikace.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Vykreslení ovládacího prvku Windows Forms](../../../../docs/framework/winforms/controls/rendering-a-windows-forms-control.md)  
- Ukazuje, jak program logiky, která zobrazuje ovládacího prvku.  
+ [Vykreslení ovládacího prvku Windows Forms](rendering-a-windows-forms-control.md)  
+ Ukazuje, jak aplikaci logiky, která se zobrazí ovládací prvek.  
   
- [Ovládací prvky vykreslované uživatelem](../../../../docs/framework/winforms/controls/user-drawn-controls.md)  
- Poskytuje přehled jednotlivými kroky při psaní a přepsání kód vykreslování ovládacího prvku.  
+ [Ovládací prvky vykreslované uživatelem](user-drawn-controls.md)  
+ Poskytuje přehled o postup psaní a přepsáním kód pro vykreslování ovládacího prvku.  
   
- [Základní ovládací prvky](../../../../docs/framework/winforms/controls/constituent-controls.md)  
- Popisuje, jak implementovat vlastní vykreslení kód pro základních ovládacích prvků ve formulářích a uživatelské ovládací prvky.  
+ [Základní ovládací prvky](constituent-controls.md)  
+ Popisuje, jak implementovat vlastní vykreslování kód pro základních ovládacích prvků ve formulářích a uživatelských ovládacích prvků.  
   
- [Postupy: Skrytí vlastního ovládacího prvku za běhu](../../../../docs/framework/winforms/controls/how-to-make-your-control-invisible-at-run-time.md)  
- Ukazuje, jak používat <xref:System.Windows.Forms.Control.Visible%2A> vlastnost skrýt a zobrazit ovládacího prvku.  
+ [Postupy: Skrytí vlastního ovládacího prvku za běhu](how-to-make-your-control-invisible-at-run-time.md)  
+ Ukazuje způsob použití <xref:System.Windows.Forms.Control.Visible%2A> vlastnost skrytí a zobrazení ovládacího prvku.  
   
- [Postupy: Zajištění průhledného pozadí pro vlastní ovládací prvek](../../../../docs/framework/winforms/controls/how-to-give-your-control-a-transparent-background.md)  
- Ukazuje, jak používat <xref:System.Windows.Forms.Control.SetStyle%2A> metodu pro vytvoření barvu pozadí, který je plné krytí, transparentní nebo částečně transparentní.  
+ [Postupy: Zadejte svůj ovládací prvek průhledné pozadí](how-to-give-your-control-a-transparent-background.md)  
+ Ukazuje způsob použití <xref:System.Windows.Forms.Control.SetStyle%2A> metodu pro vytvoření barvu pozadí, který je neprůhledný, průhledného nebo částečně.  
   
- [Vykreslování ovládacích prvků s vizuálními styly](../../../../docs/framework/winforms/controls/rendering-controls-with-visual-styles.md)  
- Ukazuje, jak k vykreslení ovládacích prvků pomocí vizuální styly v operačních systémech, které je podporují.  
+ [Vykreslování ovládacích prvků s vizuálními styly](rendering-controls-with-visual-styles.md)  
+ Ukazuje, jak pro vykreslení ovládacích prvků pomocí vizuálních stylů v operačních systémech, které je podporují.  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Forms.Control>  
@@ -46,8 +46,8 @@ Vlastní vykreslování ovládacích prvků je jedním z mnoha složitá úloha,
  Popisuje tuto metodu.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Postupy: Vytváření grafických objektů pro kreslení](../../../../docs/framework/winforms/advanced/how-to-create-graphics-objects-for-drawing.md)  
- Představuje [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] funkce grafiky sady Visual Studio perspektivy a poskytuje odkazy na další informace.  
+ [Postupy: Vytváření grafických objektů pro kreslení](../advanced/how-to-create-graphics-objects-for-drawing.md)  
+ Zavádí [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] grafické funkce z Visual Studio perspektivy a poskytuje odkazy na další informace.  
   
- [Typy vlastních ovládacích prvků](../../../../docs/framework/winforms/controls/varieties-of-custom-controls.md)  
+ [Typy vlastních ovládacích prvků](varieties-of-custom-controls.md)  
  Popisuje typy vlastních ovládacích prvků, které můžete vytvářet.

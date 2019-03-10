@@ -5,12 +5,12 @@ helpviewer_keywords:
 - DataGridView control [Windows Forms], about DataGridView control
 - data grids [Windows Forms], about data grids
 ms.assetid: 094498c3-a126-4a3f-83fe-f69e96c7717b
-ms.openlocfilehash: efa567e6f8a91b40d2710b4cef0d1a56d38650c0
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 9a1738e8be0471e24744a440fee10e5b1152ab10
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54737829"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57717632"
 ---
 # <a name="datagridview-control-technology-summary-windows-forms"></a>Souhrn technologie ovládacího prvku DataGridView (Windows Forms)
 Toto téma shrnuje informace o `DataGridView` ovládacího prvku a tříd, které podporují jeho použití.  
@@ -31,7 +31,7 @@ Toto téma shrnuje informace o `DataGridView` ovládacího prvku a tříd, kter�
 ## <a name="background"></a>Pozadí  
  Návrháře uživatelské rozhraní (UI) často někdy nutné uživatelům zobrazit data tabulky. [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Poskytuje několik způsobů, jak zobrazit data v tabulce nebo v mřížce. `DataGridView` Řízení představuje nejnovější vývoj tuto technologii pro aplikace Windows Forms.  
   
- `DataGridView` Ovládací prvek mohl zobrazit řádky dat z úložiště dat. Mnoho typů úložišť dat podporovaných. Úložiště dat může obsahovat jednoduché, netypové datové, jako je jednorozměrné pole, nebo může obsahovat typy dat, jako například <xref:System.Data.DataSet>. Další informace najdete v tématu [jak: Vytvoření vazby dat k Windows Forms DataGridView – ovládací prvek](../../../../docs/framework/winforms/controls/how-to-bind-data-to-the-windows-forms-datagridview-control.md).  
+ `DataGridView` Ovládací prvek mohl zobrazit řádky dat z úložiště dat. Mnoho typů úložišť dat podporovaných. Úložiště dat může obsahovat jednoduché, netypové datové, jako je jednorozměrné pole, nebo může obsahovat typy dat, jako například <xref:System.Data.DataSet>. Další informace najdete v tématu [jak: Vytvoření vazby dat k Windows Forms DataGridView – ovládací prvek](how-to-bind-data-to-the-windows-forms-datagridview-control.md).  
   
  `DataGridView` Ovládacího prvku poskytuje výkonný a flexibilní způsob, jak zobrazit data ve formátu tabulky. K zobrazení jen pro čtení nebo upravovat malé a velmi velké sady dat můžete použít ovládací prvek.  
   
@@ -44,7 +44,7 @@ Toto téma shrnuje informace o `DataGridView` ovládacího prvku a tříd, kter�
   
  Můžete implementovat `IDataGridViewEditingCell` rozhraní ve třídě odvozené buňky a vytvořte typ buňky, která má funkcí pro úpravy, ale není hostitelem ovládací prvek v režimu úprav. Vytvoření ovládacího prvku, který může hostovat v buňce v režimu úprav, můžete implementovat `IDataGridViewEditingControl` rozhraní v třídě odvozené z <xref:System.Windows.Forms.Control>.  
   
- Další informace najdete v tématu [jak: Přizpůsobení buněk a sloupců v Windows Forms DataGridView rozšířením jejich chování a vzhledu](../../../../docs/framework/winforms/controls/customize-cells-and-columns-in-the-datagrid-by-extending-behavior.md) a [jak: Hostování ovládacích prvků ve Windows Forms DataGridView buňky](../../../../docs/framework/winforms/controls/how-to-host-controls-in-windows-forms-datagridview-cells.md).  
+ Další informace najdete v tématu [jak: Přizpůsobení buněk a sloupců v Windows Forms DataGridView rozšířením jejich chování a vzhledu](customize-cells-and-columns-in-the-datagrid-by-extending-behavior.md) a [jak: Hostování ovládacích prvků ve Windows Forms DataGridView buňky](how-to-host-controls-in-windows-forms-datagridview-cells.md).  
   
 ## <a name="datagridview-classes-at-a-glance"></a>Třídy ovládacího prvku DataGridView na první pohled  
  <xref:System.Windows.Forms>  
@@ -56,11 +56,11 @@ Toto téma shrnuje informace o `DataGridView` ovládacího prvku a tříd, kter�
 |<xref:System.Windows.Forms.DataGridView> Rozšiřitelnost|<xref:System.Windows.Forms.DataGridViewCell> a odvozené třídy<br /><br /> <xref:System.Windows.Forms.DataGridViewColumn> a odvozené třídy<br /><br /> <xref:System.Windows.Forms.IDataGridViewEditingCell><br /><br /> <xref:System.Windows.Forms.IDataGridViewEditingControl>|  
   
 ## <a name="whats-new"></a>Co je nového  
- <xref:System.Windows.Forms.DataGridView> Ovládací prvek je navržena jako kompletní řešení pro zobrazení tabulkových dat ovládacím prvkem Windows Forms. Měli byste zvážit použití <xref:System.Windows.Forms.DataGridView> ovládací prvek před další řešení, jako například <xref:System.Windows.Forms.DataGrid>, při vytváření nové aplikace. Další informace najdete v tématu [rozdíly mezi Windows Forms DataGridView a DataGrid – ovládací prvky](../../../../docs/framework/winforms/controls/differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).  
+ <xref:System.Windows.Forms.DataGridView> Ovládací prvek je navržena jako kompletní řešení pro zobrazení tabulkových dat ovládacím prvkem Windows Forms. Měli byste zvážit použití <xref:System.Windows.Forms.DataGridView> ovládací prvek před další řešení, jako například <xref:System.Windows.Forms.DataGrid>, při vytváření nové aplikace. Další informace najdete v tématu [rozdíly mezi Windows Forms DataGridView a DataGrid – ovládací prvky](differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).  
   
  <xref:System.Windows.Forms.DataGridView> Ovládací prvek můžou fungovat zavřít společně s <xref:System.Windows.Forms.BindingSource> komponenty. Tato součást byla navržena jako zdroj primární datové formuláře. Interakce mezi dokáže spravovat <xref:System.Windows.Forms.DataGridView> typ zdrojového ovládacího prvku a zdrojem dat, bez ohledu na data.  
   
 ## <a name="see-also"></a>Viz také:
-- [Přehled ovládacího prvku DataGridView](../../../../docs/framework/winforms/controls/datagridview-control-overview-windows-forms.md)
-- [Architektura ovládacího prvku DataGridView](../../../../docs/framework/winforms/controls/datagridview-control-architecture-windows-forms.md)
-- [Ochrana informací o připojení](../../../../docs/framework/data/adonet/protecting-connection-information.md)
+- [Přehled ovládacího prvku DataGridView](datagridview-control-overview-windows-forms.md)
+- [Architektura ovládacího prvku DataGridView](datagridview-control-architecture-windows-forms.md)
+- [Ochrana informací o připojení](../../data/adonet/protecting-connection-information.md)

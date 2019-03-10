@@ -8,12 +8,12 @@ helpviewer_keywords:
 - image colors [Windows Forms], transforming
 - color matrices [Windows Forms], using
 ms.assetid: 44df4556-a433-49c0-ac0f-9a12063a5860
-ms.openlocfilehash: 050bb147358636ff9ce250bd5026facd53e9bf51
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f19039c69f27f78e838ea1a891690451af3f0cdc
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54498944"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57705594"
 ---
 # <a name="how-to-use-a-color-matrix-to-transform-a-single-color"></a>Postupy: Použití matice barev k transformaci jedné barvy
 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] poskytuje <xref:System.Drawing.Image> a <xref:System.Drawing.Bitmap> třídy pro ukládání a manipulaci s obrázky. <xref:System.Drawing.Image> a <xref:System.Drawing.Bitmap> objekty ukládání barvu každého obrazového bodu jako 32bitová čísla: 8 bity pro červená, zelená, modrá a alfa. Každý ze čtyř komponent je číslo od 0 do 255, kde 0 představuje žádné intenzity a 255 představující plné intenzity. Hodnota alfa Určuje průhlednost barvy: 0 je zcela transparentní, a je úplně neprůhledná 255.  
@@ -32,22 +32,22 @@ ms.locfileid: "54498944"
   
  Následující násobení matic provede pár transformace v uvedeném pořadí.  
   
- ![Přebarvení](../../../../docs/framework/winforms/advanced/media/recoloring01.gif "recoloring01")  
+ ![Přebarvení](./media/recoloring01.gif "recoloring01")  
   
  Prvky matice barev jsou indexovány pomocí řádku a potom sloupce (počítáno od nuly). Například, položku pátý řádek a třetí sloupec matice M udávají M [4] [2].  
   
  5 × 5 jednotkovou matici (viz následující obrázek) má 1s na diagonální a 0s všude, kde jiný. Pokud je barva vektor vynásobit jednotkovou matici, barva vektoru se nezmění. Pohodlný způsob, jak tvoří matice barev transformace je začít s jednotkovou matici a proveďte malou změnu, která vytváří svou požadovanou transformaci.  
   
- ![Přebarvení](../../../../docs/framework/winforms/advanced/media/recoloring02.gif "recoloring02")  
+ ![Přebarvení](./media/recoloring02.gif "recoloring02")  
   
- Podrobnější diskuzi o matice a transformace, najdete v článku [systém souřadnic a transformace](../../../../docs/framework/winforms/advanced/coordinate-systems-and-transformations.md).  
+ Podrobnější diskuzi o matice a transformace, najdete v článku [systém souřadnic a transformace](coordinate-systems-and-transformations.md).  
   
 ## <a name="example"></a>Příklad  
  Následující příklad používá image, která je všechny jednu barvu (0.2, 0.0, 0.4, 1.0) a platí transformace je popsáno v předchozích odstavcích.  
   
  Následující obrázek znázorňuje původní obrázek na levé straně a transformovaná image na pravé straně.  
   
- ![Colors](../../../../docs/framework/winforms/advanced/media/colortrans1.png "colortrans1")  
+ ![Colors](./media/colortrans1.png "colortrans1")  
   
  Kód v následujícím příkladu používá následující kroky provést přebarvení:  
   
@@ -57,12 +57,12 @@ ms.locfileid: "54498944"
   
 3.  Předání <xref:System.Drawing.Imaging.ImageAttributes> objektu <xref:System.Drawing.Graphics.DrawImage%2A> metodu <xref:System.Drawing.Graphics> objektu.  
   
- [!code-csharp[System.Drawing.RecoloringImages#21](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.RecoloringImages/CS/Class1.cs#21)]
- [!code-vb[System.Drawing.RecoloringImages#21](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.RecoloringImages/VB/Class1.vb#21)]  
+ [!code-csharp[System.Drawing.RecoloringImages#21](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.RecoloringImages/CS/Class1.cs#21)]
+ [!code-vb[System.Drawing.RecoloringImages#21](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.RecoloringImages/VB/Class1.vb#21)]  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  V předchozím příkladu je určený k použití pomocí Windows Forms a vyžaduje <xref:System.Windows.Forms.PaintEventArgs> `e`, což je parametr <xref:System.Windows.Forms.Control.Paint> obslužné rutiny události.  
   
 ## <a name="see-also"></a>Viz také:
-- [Přebarvení obrázků](../../../../docs/framework/winforms/advanced/recoloring-images.md)
-- [Systém souřadnic a transformace](../../../../docs/framework/winforms/advanced/coordinate-systems-and-transformations.md)
+- [Přebarvení obrázků](recoloring-images.md)
+- [Systém souřadnic a transformace](coordinate-systems-and-transformations.md)

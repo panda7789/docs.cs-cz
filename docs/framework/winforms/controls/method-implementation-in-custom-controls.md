@@ -11,12 +11,12 @@ helpviewer_keywords:
 - methods [Windows Forms]
 - methods [Windows Forms], custom controls
 ms.assetid: 35d14fca-4bb4-4a27-8211-1f7a98ea27de
-ms.openlocfilehash: f65c34c965ddf19c7a287eeeaafe2583c97583ef
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5bcc6441ab1a615c31a5a028fc7f8f09cbdd4c10
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54506067"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57710365"
 ---
 # <a name="method-implementation-in-custom-controls"></a>Implementace metody ve vlastních ovládacích prvcích
 Metoda je implementována v ovládacím prvku stejným způsobem, který by implementovat metodu v jiné součásti.  
@@ -76,5 +76,5 @@ public void Spin(Widget driver)
 ```  
   
 ## <a name="see-also"></a>Viz také:
-- [Události](../../../../docs/standard/events/index.md)
-- [Vlastnosti v ovládacích prvcích Windows Forms](../../../../docs/framework/winforms/controls/properties-in-windows-forms-controls.md)
+- [Události](../../../standard/events/index.md)
+- [Vlastnosti v ovládacích prvcích Windows Forms](properties-in-windows-forms-controls.md)

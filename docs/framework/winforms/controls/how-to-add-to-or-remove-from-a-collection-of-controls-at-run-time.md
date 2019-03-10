@@ -12,12 +12,12 @@ helpviewer_keywords:
 - run time [Windows Forms], adding controls
 - controls [Windows Forms], removing using collections
 ms.assetid: 771bf895-3d5f-469b-a324-3528f343657e
-ms.openlocfilehash: 88a743cc6d0a1e90d2912c9ec610fae326ff5770
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 6ec4e41f5a3bee6302996f21afa81f2b5eeb9568
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54744905"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57720888"
 ---
 # <a name="how-to-add-to-or-remove-from-a-collection-of-controls-at-run-time"></a>Postupy: Přidat nebo odebrat z kolekce ovládacích prvků za běhu
 Běžné úlohy při vývoji aplikace se přidání ovládacích prvků pro a odebírání ovládacích prvků z kontejneru ovládacích prvků ve formulářích (například <xref:System.Windows.Forms.Panel> nebo <xref:System.Windows.Forms.GroupBox> ovládací prvek nebo dokonce i samotný formulář). V době návrhu můžete přetáhnout ovládací prvky přímo na panelu nebo skupiny. V době běhu, udržovat tyto ovládací prvky `Controls` kolekce, která uchovává informace o jaké ovládací prvky jsou umístěny na ně.  
@@ -102,4 +102,4 @@ Běžné úlohy při vývoji aplikace se přidání ovládacích prvků pro a od
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Forms.Panel>
-- [Ovládací prvek Panel](../../../../docs/framework/winforms/controls/panel-control-windows-forms.md)
+- [Ovládací prvek Panel](panel-control-windows-forms.md)

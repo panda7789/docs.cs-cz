@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - extending [WF], Workflow Designer
 ms.assetid: 98135077-0f5d-4d16-9337-01094e843537
-ms.openlocfilehash: 87b49b025cfb27812933511b76c5a024cde4995a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2d6ef24d00baa4df6dfc8e0af69c1d489b79a41f
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54680297"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57724649"
 ---
 # <a name="customizing-the-workflow-design-experience"></a>Kustomizace možností návrhu pracovního postupu
 
@@ -17,15 +17,15 @@ Scénáře pro návrh vlastní aktivity a změna hostování [!INCLUDE[wfd1](../
 
 ## <a name="in-this-section"></a>V tomto oddílu
 
- [Použití vlastních návrhářů a šablon aktivity](../../../docs/framework/windows-workflow-foundation/using-custom-activity-designers-and-templates.md)
+ [Použití vlastních návrhářů a šablon aktivity](using-custom-activity-designers-and-templates.md)
 
  Popisuje, jak vytvořit novou vlastní aktivitu návrhářů a šablon.
 
- [Změna hostování Návrháře postupu provádění](../../../docs/framework/windows-workflow-foundation/rehosting-the-workflow-designer.md)
+ [Změna hostování Návrháře postupu provádění](rehosting-the-workflow-designer.md)
 
  Popisuje, jak znovu hostovat [!INCLUDE[wfd1](../../../includes/wfd1-md.md)] mimo aplikaci Visual Studio a jak zobrazit chyby ověření.
 
- [Použití editoru vlastních výrazů](../../../docs/framework/windows-workflow-foundation/using-a-custom-expression-editor.md)
+ [Použití editoru vlastních výrazů](using-a-custom-expression-editor.md)
 
  Popisuje, jak implementovat editoru vlastních výrazů pomocí návrháře postupu provádění se změněným hostováním mimo sadu Visual Studio 2010.
 
@@ -35,7 +35,7 @@ Scénáře pro návrh vlastní aktivity a změna hostování [!INCLUDE[wfd1](../
 
 ## <a name="see-also"></a>Viz také:
 
-- [Rozšíření Windows Workflow Foundation](../../../docs/framework/windows-workflow-foundation/extend.md)
-- [Návrhář](../../../docs/framework/windows-workflow-foundation/samples/designer.md)
-- [Návrháři vlastních aktivit](../../../docs/framework/windows-workflow-foundation/samples/custom-activity-designers.md)
-- [Změna hostování návrháře](../../../docs/framework/windows-workflow-foundation/samples/designer-rehosting.md)
+- [Rozšíření Windows Workflow Foundation](extend.md)
+- [Návrhář](./samples/designer.md)
+- [Návrháři vlastních aktivit](./samples/custom-activity-designers.md)
+- [Změna hostování návrháře](./samples/designer-rehosting.md)

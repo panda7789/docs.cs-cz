@@ -9,27 +9,27 @@ helpviewer_keywords:
 - validating user input [Windows Forms], Windows Forms
 - text boxes [Windows Forms], validating user input
 ms.assetid: 235d6121-027d-481d-8d59-4f6794d15d0c
-ms.openlocfilehash: 84e01e3c8b2275f910c7daf3de31d1ffbe891171
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: af699875f6f3dea2f384574c85d85bd77a4507af
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33539835"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57713709"
 ---
 # <a name="maskedtextbox-control-windows-forms"></a>MaskedTextBox – ovládací prvek (Windows Forms)
-Toto téma obsahuje odkazy na jiné o `MaskedTextBox` ovládacího prvku.  
+Toto téma obsahuje odkazy na další informace o `MaskedTextBox` ovládacího prvku.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Návod: Práce s ovládacím prvkem MaskedTextBox](../../../../docs/framework/winforms/controls/walkthrough-working-with-the-maskedtextbox-control.md)  
- Klíčové funkce ukazuje `MaskedTextBox` ovládacího prvku.  
+ [Návod: Práce s ovládacím prvkem MaskedTextBox](walkthrough-working-with-the-maskedtextbox-control.md)  
+ Ukazuje klíčové funkce `MaskedTextBox` ovládacího prvku.  
   
- [Postupy: Vytvoření vazby dat k ovládacímu prvku MaskedTextBox](../../../../docs/framework/winforms/controls/how-to-bind-data-to-the-maskedtextbox-control.md)  
- Ukazuje, jak k opakovanému formátování data, když data v databázi není ve formátu očekávanou svou definici. maska.  
+ [Postupy: Vytvoření vazby dat k ovládacímu prvku MaskedTextBox](how-to-bind-data-to-the-maskedtextbox-control.md)  
+ Ukazuje, jak opakovaně formátovat data, když data v databázi se neshoduje s formátu očekávaném definicí masky.  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Forms.MaskedTextBox>  
- Primární třídou pro implementaci maskované textové pole.  
+ Primární třída pro implementace maskované textové pole.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Ovládací prvky používané ve Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
- Poskytuje úplný seznam Windows Forms – ovládací prvky, odkazy na informace o jejich používání.
+ [Ovládací prvky používané ve Windows Forms](controls-to-use-on-windows-forms.md)  
+ Obsahuje úplný seznam všech ovládacích prvcích Windows Forms, s odkazy na informace o jejich použití.

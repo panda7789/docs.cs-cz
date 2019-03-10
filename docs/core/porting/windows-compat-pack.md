@@ -4,12 +4,12 @@ description: Další informace o Windows Compatibility Pack a jak můžete pomoc
 author: terrajobst
 ms.date: 12/07/2018
 ms.custom: seodec18
-ms.openlocfilehash: 09c5533dbc46d16585b7f3cbfd2a3a70819ceb75
-ms.sourcegitcommit: c6f69b0cf149f6b54483a6d5c2ece222913f43ce
+ms.openlocfilehash: c4fd888e0fbce86ab317f18fd77374af5d3ca244
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55903752"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57717892"
 ---
 # <a name="use-the-windows-compatibility-pack-to-port-code-to-net-core"></a>Použití sady Windows Compatibility Pack port kódu až po .NET Core
 
@@ -53,7 +53,7 @@ Další informace najdete v tématu [specifikace sady kompatibility](https://git
 
 3. Pokud budete chtít zůstat na Windows, všechno je nastavené.
 
-4. Pokud chcete spustit aplikaci .NET Core nebo .NET Standard knihovny v Linuxu nebo macOS, použijte [analyzátor rozhraní API](https://blogs.msdn.microsoft.com/dotnet/2017/10/31/introducing-api-analyzer/) najít využití rozhraní API, která nebude fungovat napříč platformami.
+4. Pokud chcete spustit aplikaci .NET Core nebo .NET Standard knihovny v Linuxu nebo macOS, použijte [analyzátor rozhraní API](https://devblogs.microsoft.com/dotnet/introducing-api-analyzer/) najít využití rozhraní API, která nebude fungovat napříč platformami.
 
 5. Odeberte použití těchto rozhraní API, je nahradit alternativami napříč platformami nebo chránit je pomocí kontroly platformy, jako jsou:
 

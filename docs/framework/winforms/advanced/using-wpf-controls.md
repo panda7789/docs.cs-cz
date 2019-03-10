@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Windows Forms Designer [Windows Forms], interoperability with WPF
 - interoperability [WPF]
 ms.assetid: 03c85dce-26ad-44cd-bc1d-8e0cb56de096
-ms.openlocfilehash: be925bdceea3dd01c568d85fe025d6e037066454
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 24b88e456628c5a0bdc3cded60b0e52a92057851
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48841600"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57713797"
 ---
 # <a name="using-wpf-controls"></a>Používání ovládacích prvků WPF
 Ovládací prvky Windows Presentation Foundation (WPF) můžete použít ve svých aplikacích pomocí formulářů Windows. I když jsou dvě technologie jiné zobrazení, jejich vzájemnou spolupráci plynule.  
@@ -20,19 +20,19 @@ Ovládací prvky Windows Presentation Foundation (WPF) můžete použít ve svý
  Můžete také použít ovládací prvky Windows Forms ve svých aplikacích založeného na WPF. Další informace najdete v tématu [návrh XAML v sadě Visual Studio](/visualstudio/designers/designing-xaml-in-visual-studio).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Postupy: Zkopírování a vložení ovládacího prvku ElementHost během návrhu](../../../../docs/framework/winforms/advanced/how-to-copy-and-paste-an-elementhost-control-at-design-time.md)  
+ [Postupy: Kopírování a vložení ovládacího prvku ElementHost během návrhu](how-to-copy-and-paste-an-elementhost-control-at-design-time.md)  
  Ukazuje, jak zkopírovat ovládací prvek Windows Presentation Foundation ve formuláři Windows.  
   
- [Návod: Uspořádání obsahu WPF v modelu Windows Forms během návrhu](../../../../docs/framework/winforms/advanced/walkthrough-arranging-wpf-content-on-windows-forms-at-design-time.md)  
+ [Návod: Uspořádání obsahu WPF ve Windows Forms během návrhu](walkthrough-arranging-wpf-content-on-windows-forms-at-design-time.md)  
  Ukazuje způsob použití funkcí rozložení Windows Forms, jako je například ukotvení a zarovnávacích čar, k uspořádání ovládacích prvků Windows Presentation Foundation.
   
- [Návod: Vytvoření nového obsahu WPF v modelu Windows Forms během návrhu](../../../../docs/framework/winforms/advanced/walkthrough-creating-new-wpf-content-on-windows-forms-at-design-time.md)  
+ [Návod: Vytvoření nového obsahu WPF ve Windows Forms v době návrhu](walkthrough-creating-new-wpf-content-on-windows-forms-at-design-time.md)  
  Ukazuje, jak vytvořit ovládací prvek Windows Presentation Foundation pro použití ve svých aplikacích pomocí formulářů Windows.
   
- [Návod: Přiřazení obsahu WPF v modelu Windows Forms během návrhu](../../../../docs/framework/winforms/advanced/walkthrough-assigning-wpf-content-on-windows-forms-at-design-time.md)  
+ [Návod: Přiřazení obsahu WPF ve Windows Forms v době návrhu](walkthrough-assigning-wpf-content-on-windows-forms-at-design-time.md)  
  Ukazuje, jak vybrat typy ovládacích prvků Windows Presentation Foundation, který chcete zobrazit ve formuláři.  
   
- [Návod: Určení stylu obsahu WPF](../../../../docs/framework/winforms/advanced/walkthrough-styling-wpf-content.md)  
+ [Návod: Určení stylu obsahu WPF](walkthrough-styling-wpf-content.md)  
  Zobrazuje pracovní postupy mezi návrháři formulářů Windows a [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)] pro aplikování stylů pro ovládací prvky Windows Presentation Foundation.  
   
 ## <a name="reference"></a>Odkaz  
@@ -43,7 +43,7 @@ Ovládací prvky Windows Presentation Foundation (WPF) můžete použít ve svý
  Popisuje třídy, která vám pomůže hostitelské ovládací prvky Windows Forms v aplikaci založené na Windows Presentation Foundation.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Migrace a interoperabilita](../../../../docs/framework/wpf/advanced/migration-and-interoperability.md)  
+ [Migrace a interoperabilita](../../wpf/advanced/migration-and-interoperability.md)  
  Popisuje interoperabilitu mezi Windows Presentation Foundation a Windows Forms technologií.  
   
  [Návrh kódu XAML v sadě Visual Studio](/visualstudio/designers/designing-xaml-in-visual-studio)  

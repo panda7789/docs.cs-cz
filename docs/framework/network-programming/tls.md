@@ -12,12 +12,12 @@ helpviewer_keywords:
 - Internet, security
 - security [.NET Framework], Internet
 - permissions [.NET Framework], Internet
-ms.openlocfilehash: b08d119c0c7edb71ceab5c763c1359bf4c90cfec
-ms.sourcegitcommit: 79066169e93d9d65203028b21983574ad9dcf6b4
+ms.openlocfilehash: cb2dd26d3f111e8de0dc9c7904837d9b053d17bb
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57212531"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57724710"
 ---
 # <a name="transport-layer-security-tls-best-practices-with-the-net-framework"></a>Zabezpečení TLS (Transport Layer) osvědčené postupy s použitím rozhraní .NET Framework
 
@@ -252,8 +252,8 @@ Osvědčené postupy v tomto článku, závisí na instalaci nejnovější aktua
 
 Pokud chcete aktualizovat rozhraní .NET Framework umožňuje zvolit nejlepší verzi TLS použití operačního systému, musíte nainstalovat alespoň:
 
-- [Rozhraní .NET Framework. srpna 2017 Preview kvality kumulativní](https://blogs.msdn.microsoft.com/dotnet/2017/08/16/net-framework-august-2017-preview-of-quality-rollup).
-- **Nebo** [kumulativní kvality a zabezpečení rozhraní .NET Framework. září 2017](https://blogs.msdn.microsoft.com/dotnet/2017/09/12/net-framework-september-2017-security-and-quality-rollup).
+- [Rozhraní .NET Framework. srpna 2017 Preview kvality kumulativní](https://devblogs.microsoft.com/dotnet/net-framework-august-2017-preview-of-quality-rollup/).
+- **Nebo** [kumulativní kvality a zabezpečení rozhraní .NET Framework. září 2017](https://devblogs.microsoft.com/dotnet/net-framework-september-2017-security-and-quality-rollup/).
 
 Viz také:
 

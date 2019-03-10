@@ -6,58 +6,58 @@ helpviewer_keywords:
 - graphics [Windows Forms], using in Windows Forms
 - graphics [Windows Forms], managed classes
 ms.assetid: e6d1a42d-2100-46aa-97e6-a5ddc0baaae5
-ms.openlocfilehash: 1a2407065930da6fff74e50d1a6946dad94560da
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 86f6b3fff1937694f4b7890249e36d5e12b769dc
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33524883"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57720446"
 ---
 # <a name="using-managed-graphics-classes"></a>Použití spravovaných grafických tříd
-Následující témata popisují postup použití [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] rozhraní API v rámci spravované třídy.  
+Následující témata popisují způsob použití [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] rozhraní API v rámci spravované třídy.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Začínáme s programováním grafiky](../../../../docs/framework/winforms/advanced/getting-started-with-graphics-programming.md)  
+ [Začínáme s programováním grafiky](getting-started-with-graphics-programming.md)  
  Popisuje, jak provádět základní úlohy s [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)].  
   
- [Kreslení čar a obrazců pomocí pera](../../../../docs/framework/winforms/advanced/using-a-pen-to-draw-lines-and-shapes.md)  
- Demonstruje postup vytvoření pera a použít ho k vykreslení celou řadu čar a tvarů.  
+ [Kreslení čar a obrazců pomocí pera](using-a-pen-to-draw-lines-and-shapes.md)  
+ Ukazuje, jak vytvořit pero a použít ho k vykreslení širokou škálu čar a obrazců.  
   
- [Použití štětce k vyplnění obrazců](../../../../docs/framework/winforms/advanced/using-a-brush-to-fill-shapes.md)  
- Ukazuje, jak vytvořit štětce a vyplňte tvarů s různými účinky.  
+ [Použití štětce k vyplnění obrazců](using-a-brush-to-fill-shapes.md)  
+ Ukazuje, jak vytvořit štětce a vyplňte tvary s celou řadou účinky.  
   
- [Použití štětce přechodu k vyplnění obrazců](../../../../docs/framework/winforms/advanced/using-a-gradient-brush-to-fill-shapes.md)  
- Ukazuje, jak vytvořit a používat různé typy štětce přechodu.  
+ [Použití štětce přechodu k vyplnění obrazců](using-a-gradient-brush-to-fill-shapes.md)  
+ Ukazuje, jak vytvořit a použít různé typy štětce přechodu.  
   
- [Práce s obrázky, rastrovými obrázky, ikonami a metasoubory](../../../../docs/framework/winforms/advanced/working-with-images-bitmaps-icons-and-metafiles.md)  
- Ukazuje, jak vytvořit a manipulaci s obrázky.  
+ [Práce s obrázky, rastrovými obrázky, ikonami a metasoubory](working-with-images-bitmaps-icons-and-metafiles.md)  
+ Ukazuje, jak vytvořit a pracovat s obrázky.  
   
- [Alfa míchání čar a výplní](../../../../docs/framework/winforms/advanced/alpha-blending-lines-and-fills.md)  
- Ukazuje, jak zajistit průhlednost pro tvarů a řádky.  
+ [Alfa míchání čar a výplní](alpha-blending-lines-and-fills.md)  
+ Ukazuje, jak k dosažení transparentnosti pro tvary a čáry.  
   
- [Použití písem a textu](../../../../docs/framework/winforms/advanced/using-fonts-and-text.md)  
- Ukazuje, jak kreslení textu a použití písem a rodiny písem.  
+ [Použití písem a textu](using-fonts-and-text.md)  
+ Předvádí postup při kreslení textu a použití písem a rodiny písem.  
   
- [Sestavování a kreslení křivek](../../../../docs/framework/winforms/advanced/constructing-and-drawing-curves.md)  
- Ukazuje, jak kreslení základních a Bézierovy křivky.  
+ [Sestavování a kreslení křivek](constructing-and-drawing-curves.md)  
+ Ukazuje, jak nakreslit mohutnosti a Bézierovy křivky.  
   
- [Sestavování a kreslení cest](../../../../docs/framework/winforms/advanced/constructing-and-drawing-paths.md)  
- Ukazuje, jak vytváření obrázků pomocí cesty.  
+ [Sestavování a kreslení cest](constructing-and-drawing-paths.md)  
+ Ukazuje, jak vytvářet obrázky pomocí cesty.  
   
- [Použití transformací ve spravovaném GDI+](../../../../docs/framework/winforms/advanced/using-transformations-in-managed-gdi.md)  
- Demonstruje maticové transformace.  
+ [Použití transformací ve spravovaném GDI+](using-transformations-in-managed-gdi.md)  
+ Ukazuje maticové transformace.  
   
- [Použití grafických kontejnerů](../../../../docs/framework/winforms/advanced/using-graphics-containers.md)  
- Ukazuje, jak spravovat grafiky objekt stavu a vnořených grafických kontejnerů.  
+ [Použití grafických kontejnerů](using-graphics-containers.md)  
+ Ukazuje, jak spravovat grafický objekt stavu a vnořených grafických kontejnerů.  
   
- [Použití oblastí](../../../../docs/framework/winforms/advanced/using-regions.md)  
- Demonstruje přístupů testování a výstřižek s oblastí.  
+ [Použití oblastí](using-regions.md)  
+ Ukazuje volání testování a oříznutí s oblastí.  
   
- [Přebarvení obrázků](../../../../docs/framework/winforms/advanced/recoloring-images.md)  
- Ukazuje různé aspekty manipulace s barvy.  
+ [Přebarvení obrázků](recoloring-images.md)  
+ Ukazuje různé aspekty manipulace s barvami.  
   
- [Použití kodérů a dekodérů ve spravovaném GDI+](../../../../docs/framework/winforms/advanced/using-image-encoders-and-decoders-in-managed-gdi.md)  
+ [Použití kodérů a dekodérů ve spravovaném GDI+](using-image-encoders-and-decoders-in-managed-gdi.md)  
  Zobrazit použití kodérů a dekodérů k manipulaci s obrázky.  
   
- [Grafiky s dvojitou vyrovnávací pamětí](../../../../docs/framework/winforms/advanced/double-buffered-graphics.md)  
- Ukazuje, jak snížit blikání pomocí dvojité vyrovnávací paměti.
+ [Grafiky s dvojitou vyrovnávací pamětí](double-buffered-graphics.md)  
+ Ukazuje, jak omezení blikání dvojité ukládání do vyrovnávací paměti.

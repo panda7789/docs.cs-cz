@@ -9,46 +9,46 @@ helpviewer_keywords:
 - images [Windows Forms], working with
 - examples [Windows Forms], metafiles
 ms.assetid: a626d701-bd99-4fd8-b92f-7b8f794e042b
-ms.openlocfilehash: 6d2f0a2f4acebaac59f2d8180f2de4ccb88b2965
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 61d534f8299c920f656abe4280cc3ea5e609c0b2
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33526831"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57710456"
 ---
 # <a name="working-with-images-bitmaps-icons-and-metafiles"></a>Práce s obrázky, rastrovými obrázky, ikonami a metasoubory
-[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] poskytuje `Bitmap` třídy pro práci s rastrových obrázků a `Metafile` třídy pro práci s obrázky vektoru. `Bitmap` a `Metafile` obě třídy dědí `Image` třídy.  
+[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] poskytuje `Bitmap` tříd pro práci s rastrové obrázky a `Metafile` tříd pro práci s imagemi vektoru. `Bitmap` a `Metafile` obě třídy dědí `Image` třídy.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Postupy: Nakreslení existujícího rastrového obrázku na obrazovku](../../../../docs/framework/winforms/advanced/how-to-draw-an-existing-bitmap-to-the-screen.md)  
- Popisuje, jak načíst a kreslení rastrové obrázky.  
+ [Postupy: Nakreslení existujícího rastrového obrázku na obrazovku](how-to-draw-an-existing-bitmap-to-the-screen.md)  
+ Popisuje, jak načíst a nakreslete rastrových obrázků.  
   
- [Postupy: Zavedení a zobrazení metasouborů](../../../../docs/framework/winforms/advanced/how-to-load-and-display-metafiles.md)  
- Ukazuje, jak načíst a kreslení metasoubory.  
+ [Postupy: Načtení a zobrazení metasouborů](how-to-load-and-display-metafiles.md)  
+ Ukazuje, jak načíst a metasoubory nakreslit.  
   
- [Oříznutí a změna měřítka obrázků v GDI+](../../../../docs/framework/winforms/advanced/cropping-and-scaling-images-in-gdi.md)  
- Vysvětluje, jak oříznout a škálování vektoru a rastrových obrázků.  
+ [Oříznutí a změna měřítka obrázků v GDI+](cropping-and-scaling-images-in-gdi.md)  
+ Vysvětluje, jak oříznout a škálovat vektoru a rastrových obrázků.  
   
- [Postupy: Otáčení, převrácení a zkosení obrázků](../../../../docs/framework/winforms/advanced/how-to-rotate-reflect-and-skew-images.md)  
- Popisuje, jak k vykreslení otočený, reflektované a zkreslilo bitové kopie.  
+ [Postupy: Otáčení, převrácení a zkosení obrázků](how-to-rotate-reflect-and-skew-images.md)  
+ Popisuje, jak nakreslit otočený, zrcadlených a výrazně nerovnoměrnou distribucí Image.  
   
- [Postupy: Použití režimu interpolace pro řízení kvality obrázku během změny měřítka](../../../../docs/framework/winforms/advanced/how-to-use-interpolation-mode-to-control-image-quality-during-scaling.md)  
- Ukazuje, jak používat <xref:System.Drawing.Drawing2D.InterpolationMode> výčtu Změna bitové kopie kvality.  
+ [Postupy: Použití režimu interpolace pro řízení kvality obrázku během změny měřítka](how-to-use-interpolation-mode-to-control-image-quality-during-scaling.md)  
+ Ukazuje způsob použití <xref:System.Drawing.Drawing2D.InterpolationMode> výčet změnit kvality obrázku.  
   
- [Postupy: Vytváření miniatur obrázků](../../../../docs/framework/winforms/advanced/how-to-create-thumbnail-images.md)  
- Popisuje postup vytváření miniatur obrázků.  
+ [Postupy: Vytváření miniatur obrázků](how-to-create-thumbnail-images.md)  
+ Popisuje postup vytvoření obrázků miniatur.  
   
- [Postupy: Zvýšení výkonu zabráněním automatické změně měřítka](../../../../docs/framework/winforms/advanced/how-to-improve-performance-by-avoiding-automatic-scaling.md)  
- Vysvětluje, jak kreslení obrázku bez automatického měřítka.  
+ [Postupy: Zvýšení výkonu zabráněním automatické změně měřítka](how-to-improve-performance-by-avoiding-automatic-scaling.md)  
+ Vysvětluje způsob vykreslení obrázku bez automatického škálování.  
   
- [Postupy: Čtení metadat obrázku](../../../../docs/framework/winforms/advanced/how-to-read-image-metadata.md)  
- Popisuje, jak číst metadata z bitové kopie.  
+ [Postupy: Čtení metadat obrázku](how-to-read-image-metadata.md)  
+ Popisuje postup při čtení metadat z image.  
   
- [Postupy: Vytvoření rastrového obrázku za běhu](../../../../docs/framework/winforms/advanced/how-to-create-a-bitmap-at-run-time.md)  
- Ukazuje, jak k vykreslení rastrového obrázku za běhu.  
+ [Postupy: Vytvoření rastrového obrázku za běhu](how-to-create-a-bitmap-at-run-time.md)  
+ Ukazuje, jak nakreslit za běhu rastrový obrázek.  
   
- [Postupy: Extrahování ikony přidružené k souboru v modelu Windows Forms](../../../../docs/framework/winforms/advanced/how-to-extract-the-icon-associated-with-a-file-in-windows-forms.md)  
- Popisuje, jak extrahovat ikonu, která je vložený prostředek souboru.  
+ [Postupy: Extrahování ikony přidružené k souboru v modelu Windows Forms](how-to-extract-the-icon-associated-with-a-file-in-windows-forms.md)  
+ Popisuje, jak extrahovat, který je vloženým prostředkem souboru ikony.  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Drawing.Image>  
@@ -61,5 +61,5 @@ ms.locfileid: "33526831"
  Tato třída popisuje a obsahuje odkazy na všechny její členy.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Obrázky, rastrové obrázky a metasoubory](../../../../docs/framework/winforms/advanced/images-bitmaps-and-metafiles.md)  
- Obsahuje odkazy na témata, která popisují různé typy rastrové obrázky a manipulace s nimi ve svých aplikacích.
+ [Obrázky, rastrové obrázky a metasoubory](images-bitmaps-and-metafiles.md)  
+ Obsahuje odkazy na témata, které popisují různé typy rastrových obrázků a manipulaci s nimi ve svých aplikacích.

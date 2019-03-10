@@ -13,12 +13,12 @@ helpviewer_keywords:
 - file access [Windows Forms]
 - security [Windows Forms], data access
 ms.assetid: 3cd3e55b-2f5e-40dd-835d-f50f7ce08967
-ms.openlocfilehash: 2c4aecb4c7c7a15a7a0aad668b697af3ca0b033f
-ms.sourcegitcommit: 2b986afe4ce9e13bbeec929c9737757eb61de60e
+ms.openlocfilehash: 60a9ffa8061f5bc576aa919aa742f1c5e6b07124
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56664923"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57724541"
 ---
 # <a name="more-secure-file-and-data-access-in-windows-forms"></a>Více zabezpečený přístup k souborům a datům ve Windows Forms
 [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] Používá oprávnění k ochraně prostředkům a datům. Pokud vaše aplikace může číst nebo zapisovat data závisí na oprávněních udělených aplikaci. Když aplikace běží v prostředí částečným vztahem důvěryhodnosti, možná nebudete mít přístup k datům nebo budete muset změnit způsob, jak přistupovat k datům.  
@@ -26,7 +26,7 @@ ms.locfileid: "56664923"
  Pokud narazíte na omezení zabezpečení, máte dvě možnosti: uplatnit oprávnění (za předpokladu, že bylo uděleno pro vaši aplikaci) nebo verze operačního systému funkce napsané pro práci v částečném vztahu důvěryhodnosti. Následující části popisují, jak pracovat s souboru, database a přístup k registru z aplikací, které jsou spuštěny v prostředí s částečnou důvěryhodností.  
   
 > [!NOTE]
->  Ve výchozím nastavení nástroje, které generují [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] nasazení ve výchozím nastavení tato nasazení žádající plné důvěryhodnosti z počítače, na kterých se používají. Pokud chcete využít výhod vyššího zabezpečení spouštění v částečném vztahu důvěryhodnosti, je nutné změnit toto výchozí nastavení v sadě Visual Studio nebo jeden z [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)] nástroje (Mage.exe nebo MageUI.exe). Další informace o Windows Forms – zabezpečení a o tom, jak určit, příslušné úrovně důvěryhodnosti pro vaši aplikaci najdete v tématu [Přehled zabezpečení ve Windows Forms](../../../docs/framework/winforms/security-in-windows-forms-overview.md).  
+>  Ve výchozím nastavení nástroje, které generují [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] nasazení ve výchozím nastavení tato nasazení žádající plné důvěryhodnosti z počítače, na kterých se používají. Pokud chcete využít výhod vyššího zabezpečení spouštění v částečném vztahu důvěryhodnosti, je nutné změnit toto výchozí nastavení v sadě Visual Studio nebo jeden z [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)] nástroje (Mage.exe nebo MageUI.exe). Další informace o Windows Forms – zabezpečení a o tom, jak určit, příslušné úrovně důvěryhodnosti pro vaši aplikaci najdete v tématu [Přehled zabezpečení ve Windows Forms](security-in-windows-forms-overview.md).  
   
 ## <a name="file-access"></a>Přístup k souborům  
  <xref:System.Security.Permissions.FileIOPermission> Třídy ovládacích prvků přístupu souborů a složek v [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)]. Ve výchozím nastavení, systém zabezpečení nejsou udělena <xref:System.Security.Permissions.FileIOPermission> do prostředí částečným vztahem důvěryhodnosti, jako je místní intranet a Internet zóny. Aplikace, která vyžaduje přístup k souborům lze však i nadále fungovat v těchto prostředích je-li upravit návrh aplikace nebo použít různé metody pro přístup k souborům. Ve výchozím nastavení zóny místního intranetu je uděleno právo mít stejný přístup k serveru a stejný přístup adresáře pro připojení zpět k původnímu serveru a číst z jeho instalačního adresáře. Ve výchozím nastavení zóně Internet, je pouze uděleno právo na zpětné připojení k původnímu serveru.  
@@ -136,7 +136,7 @@ private void ButtonOpen_Click(object sender, System.EventArgs e)
 >  V jazyce Visual C#, ujistěte se, že přidáte kód pro povolení obslužné rutiny události. S použitím kódu z předchozího příkladu, následující kód ukazuje, jak povolit obslužné rutiny události.`this.ButtonOpen.Click += newSystem.Windows.Forms.EventHandler(this.ButtonOpen_Click);`  
   
 ### <a name="other-files"></a>Další soubory  
- Někdy můžete potřebovat pro čtení nebo zápis do souborů, že uživatel není zadán, například když musíte zachovat nastavení aplikace. V místní intranet a Internet zóny vaše aplikace nebude mít oprávnění k ukládání dat do místního souboru. Ale aplikace bude moct ukládání dat v izolovaném úložišti. Izolované úložiště je abstraktní datové přihrádky (nikoli specifickým umístěním úložiště), který obsahuje jeden nebo více souborů izolovaného úložiště nazývají "úložiště", které obsahují umístění skutečného adresáře, kde jsou uložená data. Soubor přístupová oprávnění jako <xref:System.Security.Permissions.FileIOPermission> nejsou povinné; místo toho <xref:System.Security.Permissions.IsolatedStoragePermission> třídy řídí oprávnění pro izolované úložiště. Ve výchozím nastavení aplikace, které jsou spuštěny v místním intranetu a Internetu zóny může ukládat data pomocí izolované úložiště. nastavení, jako je disková kvóta se však může lišit. Další informace o izolovaného úložiště naleznete v tématu [izolovaného úložiště](../../../docs/standard/io/isolated-storage.md).  
+ Někdy můžete potřebovat pro čtení nebo zápis do souborů, že uživatel není zadán, například když musíte zachovat nastavení aplikace. V místní intranet a Internet zóny vaše aplikace nebude mít oprávnění k ukládání dat do místního souboru. Ale aplikace bude moct ukládání dat v izolovaném úložišti. Izolované úložiště je abstraktní datové přihrádky (nikoli specifickým umístěním úložiště), který obsahuje jeden nebo více souborů izolovaného úložiště nazývají "úložiště", které obsahují umístění skutečného adresáře, kde jsou uložená data. Soubor přístupová oprávnění jako <xref:System.Security.Permissions.FileIOPermission> nejsou povinné; místo toho <xref:System.Security.Permissions.IsolatedStoragePermission> třídy řídí oprávnění pro izolované úložiště. Ve výchozím nastavení aplikace, které jsou spuštěny v místním intranetu a Internetu zóny může ukládat data pomocí izolované úložiště. nastavení, jako je disková kvóta se však může lišit. Další informace o izolovaného úložiště naleznete v tématu [izolovaného úložiště](../../standard/io/isolated-storage.md).  
   
  Následující příklad používá k zápisu dat do souboru, který je umístěn v úložišti izolovaného úložiště. V příkladu vyžaduje <xref:System.Security.Permissions.IsolatedStorageFilePermission> a <xref:System.Security.Permissions.IsolatedStorageContainment.DomainIsolationByUser> hodnota výčtu. Příklad ukazuje, čtení a zápis do určité hodnoty vlastností <xref:System.Windows.Forms.Button> ovládacího prvku do souboru v izolovaném úložišti. `Read` Funkce by byla volána po spuštění aplikace a `Write` funkce by byla volána před ukončením aplikace. V příkladu vyžaduje, aby `Read` a `Write` funkce existovat jako členy <xref:System.Windows.Forms.Form> , která obsahuje <xref:System.Windows.Forms.Button> ovládací prvek s názvem `MainButton`.  
   
@@ -349,7 +349,7 @@ public void Write()
 ```  
   
 ## <a name="database-access"></a>Přístup k databázi  
- Oprávnění potřebná pro přístup k databázi se liší v závislosti na poskytovateli databáze; jenom aplikace, které jsou spuštěny s příslušnými oprávněními ale může přístup k databázi prostřednictvím datového připojení. Další informace o oprávněních, které jsou nutné pro přístup k databázi, naleznete v tématu [zabezpečení přístupu kódu a ADO.NET](../../../docs/framework/data/adonet/code-access-security.md).  
+ Oprávnění potřebná pro přístup k databázi se liší v závislosti na poskytovateli databáze; jenom aplikace, které jsou spuštěny s příslušnými oprávněními ale může přístup k databázi prostřednictvím datového připojení. Další informace o oprávněních, které jsou nutné pro přístup k databázi, naleznete v tématu [zabezpečení přístupu kódu a ADO.NET](../data/adonet/code-access-security.md).  
   
  Pokud databáze nemůžete použít přímo, protože chcete, aby aplikace na spouštění v částečném vztahu důvěryhodnosti, můžete použít webovou službu, jako alternativu znamená, že přístup k datům. Webové služby je software, který můžete programově přistupovat přes síť. U webových služeb mohou aplikace sdílet data napříč zónami skupiny kódu. Ve výchozím nastavení aplikace v místním intranetu a Internetu zóny jsou udělena oprávnění k přístupu k jejich lokality původ, odkud můžou k volání webové služby hostované na stejném serveru. Další informace najdete v části [webové služby v technologii ASP.NET AJAX](https://docs.microsoft.com/previous-versions/aspnet/bb398785(v=vs.100)) nebo [Windows Communication Foundation](../wcf/index.md).  
   
@@ -359,9 +359,9 @@ public void Write()
  Protože nelze získat přístup k registru v částečném vztahu důvěryhodnosti, budete muset najít jiné metody ukládání dat. Při ukládání nastavení aplikace používání izolovaného úložiště namísto registru. Izolované úložiště lze také ukládat další soubory specifické pro aplikaci. Můžete také ukládat informace o globální aplikace o server nebo server původu, protože ve výchozím nastavení aplikace jsou udělena oprávnění k přístupu k původnímu serveru.  
   
 ## <a name="see-also"></a>Viz také:
-- [Zabezpečenější tisk ve Windows Forms](../../../docs/framework/winforms/more-secure-printing-in-windows-forms.md)
-- [Dodatečné informace o zabezpečení ve Windows Forms](../../../docs/framework/winforms/additional-security-considerations-in-windows-forms.md)
-- [Přehled zabezpečení ve Windows Forms](../../../docs/framework/winforms/security-in-windows-forms-overview.md)
-- [Windows Forms – zabezpečení](../../../docs/framework/winforms/windows-forms-security.md)
-- [Mage.exe (Manifest Generation and Editing Tool)](../../../docs/framework/tools/mage-exe-manifest-generation-and-editing-tool.md)
-- [MageUI.exe (Manifest Generation and Editing Tool, grafický klient)](../../../docs/framework/tools/mageui-exe-manifest-generation-and-editing-tool-graphical-client.md)
+- [Zabezpečenější tisk ve Windows Forms](more-secure-printing-in-windows-forms.md)
+- [Dodatečné informace o zabezpečení ve Windows Forms](additional-security-considerations-in-windows-forms.md)
+- [Přehled zabezpečení ve Windows Forms](security-in-windows-forms-overview.md)
+- [Windows Forms – zabezpečení](windows-forms-security.md)
+- [Mage.exe (Manifest Generation and Editing Tool)](../tools/mage-exe-manifest-generation-and-editing-tool.md)
+- [MageUI.exe (Manifest Generation and Editing Tool, grafický klient)](../tools/mageui-exe-manifest-generation-and-editing-tool-graphical-client.md)

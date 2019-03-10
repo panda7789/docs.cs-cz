@@ -19,21 +19,21 @@ helpviewer_keywords:
 - page header
 - printing [Windows Forms], headers and footers
 ms.assetid: 1c7ccb02-ac62-4fc8-8e4f-c67b01a86802
-ms.openlocfilehash: 8caa984799d7f8f5a8f4b017e8c40eeb44d8b6c4
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 93d5466c1f528ea3c8fa360222f046b0c2672fa6
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45964563"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57723930"
 ---
 # <a name="pagesetupdialog-component-windows-forms"></a>PageSetupDialog – komponenta (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.PageSetupDialog> komponenta je předem nakonfigurované dialogové okno používá k nastavení stránky podrobností pro tisk v aplikacích založených na Windows. Použití v rámci aplikace založené na Windows jako jednoduché řešení pro uživatele nastavit předvolby stránky namísto dialogové okno Vlastní konfigurace. Můžete povolit uživatelům nastavit okraj a okraj úpravy, záhlaví a zápatí a na výšku a šířku. Pomocí standardní dialogová okna Windows, můžete vytvořit aplikace, jejichž základní funkce je okamžitě uživatelé znají.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Přehled komponenty PageSetupDialog](../../../../docs/framework/winforms/controls/pagesetupdialog-component-overview-windows-forms.md)  
+ [Přehled komponenty PageSetupDialog](pagesetupdialog-component-overview-windows-forms.md)  
  Představuje obecné koncepty <xref:System.Windows.Forms.PageSetupDialog> součást, kterou můžete použít k zobrazení předem nakonfigurované dialogové okno, které mohou uživatelé použít k manipulaci s nastavení stránky.  
   
- [Postupy: Určení vlastností stránky pomocí komponenty PageSetupDialog](../../../../docs/framework/winforms/controls/how-to-determine-page-properties-using-the-pagesetupdialog-component.md)  
+ [Postupy: Určení vlastností stránky pomocí komponenty PageSetupDialog](how-to-determine-page-properties-using-the-pagesetupdialog-component.md)  
  Vysvětluje, jak nastavit vlastnosti stránky pomocí instance <xref:System.Windows.Forms.PageSetupDialog> komponentu v době běhu.  
   
 ## <a name="reference"></a>Odkaz  
@@ -41,10 +41,10 @@ Windows Forms <xref:System.Windows.Forms.PageSetupDialog> komponenta je předem 
  Poskytuje referenční informace o třídě a její členy.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Ovládací prvky používané ve Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
+ [Ovládací prvky používané ve Windows Forms](controls-to-use-on-windows-forms.md)  
  Obsahuje úplný seznam všech ovládacích prvcích Windows Forms, s odkazy na informace o jejich použití.  
   
- [Ovládací prvky a součásti dialogového okna](../../../../docs/framework/winforms/controls/dialog-box-controls-and-components-windows-forms.md)  
+ [Ovládací prvky a součásti dialogového okna](dialog-box-controls-and-components-windows-forms.md)  
  Popisuje sadu ovládacích prvků a komponent, které umožňují uživatelům provádět standardní interakce s aplikací nebo systému.  
   
  [Základní kód pro Windows Forms dialogová okna](https://go.microsoft.com/fwlink/?LinkID=102575)  

@@ -1,16 +1,16 @@
 ---
-title: 'Postupy: vytvoření vlastního účastníka trvalosti'
+title: 'Postupy: Vytvoření vlastního účastníka trvalosti'
 ms.date: 03/30/2017
 ms.assetid: 1d9cc47a-8966-4286-94d5-4221403d9c06
-ms.openlocfilehash: 8daf4924db48c79486e85660357e3b28a2583836
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: fca8db41a415965f10990069682c561f680bf386
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43855839"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57725074"
 ---
-# <a name="how-to-create-a-custom-persistence-participant"></a>Postupy: vytvoření vlastního účastníka trvalosti
-Následující postup obsahuje kroky k vytvoření trvalého účastníka. Najdete v článku [účastní trvalost](https://go.microsoft.com/fwlink/?LinkID=177735) ukázky a [Store rozšíření](../../../docs/framework/windows-workflow-foundation/store-extensibility.md) tématu pro ukázková implementace účastníci trvalosti.  
+# <a name="how-to-create-a-custom-persistence-participant"></a>Postupy: Vytvoření vlastního účastníka trvalosti
+Následující postup obsahuje kroky k vytvoření trvalého účastníka. Najdete v článku [účastní trvalost](https://go.microsoft.com/fwlink/?LinkID=177735) ukázky a [Store rozšíření](store-extensibility.md) tématu pro ukázková implementace účastníci trvalosti.  
   
 1.  Vytvořte třídu odvozenou z <xref:System.Activities.Persistence.PersistenceParticipant> nebo <xref:System.Activities.Persistence.PersistenceIOParticipant> třídy. Třída PersistenceIOParticipant nabízí stejné body rozšiřitelnosti jako třída PersistenceParticipant navíc nebudou moct zúčastnit vstupně-výstupních operací. Postupujte podle jednoho nebo více z následujících kroků.  
   

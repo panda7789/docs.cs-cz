@@ -11,12 +11,12 @@ helpviewer_keywords:
 - layout [Windows Forms], TableLayoutPanel control
 - TableLayoutPanel control [Windows Forms], about TableLayoutPanel control
 ms.assetid: 337661c8-61cb-44ee-93e0-3662bddec327
-ms.openlocfilehash: a0971fd02e27ea718af7fafe2404cd77d5946e25
-ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
+ms.openlocfilehash: 127ab849fffb586261f1ac25f74f540c0f46d295
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56748684"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57714798"
 ---
 # <a name="tablelayoutpanel-control-overview"></a>TableLayoutPanel – přehled ovládacího prvku
 <xref:System.Windows.Forms.TableLayoutPanel> Ovládací prvek uspořádá její obsah do mřížky. Protože je prováděna rozložení i v době návrhu a běhu, můžete změnit dynamicky se změnami prostředí aplikace. To umožňuje ovládací prvky v panelu proporcionálně velikost, tak můžou reagovat na změny, jako je například změna velikosti nadřazeného ovládacího prvku nebo text délka mění kvůli lokalizace.  
@@ -44,6 +44,6 @@ ms.locfileid: "56748684"
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Forms.FlowLayoutPanel>
 - <xref:System.Windows.Forms.TableLayoutSettings>
-- [Postupy: Návrh rozložení Windows Forms, jež odpovídá lokalizaci](../../../../docs/framework/winforms/controls/how-to-design-a-windows-forms-layout-that-responds-well-to-localization.md)
-- [Postupy: Vytvoření formuláře Windows s možností změny velikosti pro zadávání dat](../../../../docs/framework/winforms/controls/how-to-create-a-resizable-windows-form-for-data-entry.md)
-- [Doporučené postupy pro ovládací prvek TableLayoutPanel](../../../../docs/framework/winforms/controls/best-practices-for-the-tablelayoutpanel-control.md)
+- [Postupy: Návrh rozložení Windows Forms, jež odpovídá lokalizaci](how-to-design-a-windows-forms-layout-that-responds-well-to-localization.md)
+- [Postupy: Vytvoření formuláře Windows s možností změny velikosti pro zadávání dat](how-to-create-a-resizable-windows-form-for-data-entry.md)
+- [Doporučené postupy pro ovládací prvek TableLayoutPanel](best-practices-for-the-tablelayoutpanel-control.md)

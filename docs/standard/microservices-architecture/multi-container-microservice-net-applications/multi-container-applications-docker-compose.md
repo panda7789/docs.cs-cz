@@ -4,14 +4,14 @@ description: Jak určit složení mikroslužeb pro vícekontejnerových aplikac�
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/02/2018
-ms.openlocfilehash: 908837c470e97e66a6f6b06ef89e87fca80982f2
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: bde29f1c67e7c6636932f063f35bc500a27abcef
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56973506"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57712354"
 ---
-# <a name="defining-your-multi-container-application-with-docker-composeyml"></a>Definování vícekontejnerové aplikace pomocí docker-compose.yml 
+# <a name="defining-your-multi-container-application-with-docker-composeyml"></a>Definování vícekontejnerové aplikace pomocí docker-compose.yml
 
 V této příručce [docker-compose.yml](https://docs.docker.com/compose/compose-file/) souboru byla zavedena v části [kroku 4. Definování vašich služeb v docker-compose.yml při sestavování aplikace více kontejnerů Dockeru](../docker-application-development-process/docker-app-development-workflow.md#step-4-define-your-services-in-docker-composeyml-when-building-a-multi-container-docker-application). Existují však další způsoby, jak používat docker-compose soubory, které stojí za prozkoumání podrobněji.
 
@@ -117,21 +117,21 @@ Se zaměříte na jediný kontejner, kontejner catalog.api-mikroslužeb má jedn
 
 Tato kontejnerizovaná služba má následující základní konfigurace:
 
--   Je založena na imagi vlastní eshop/catalog.api. Pro jednoduchost saké neexistuje žádné sestavení: nastavení v souboru klíče. To znamená, že obrázek musí mít byla dříve vytvořena (pomocí sestavení dockeru) se stáhly (pomocí příkazu docker pull) z libovolného registru Dockeru.
+- Je založena na imagi vlastní eshop/catalog.api. Pro jednoduchost saké neexistuje žádné sestavení: nastavení v souboru klíče. To znamená, že obrázek musí mít byla dříve vytvořena (pomocí sestavení dockeru) se stáhly (pomocí příkazu docker pull) z libovolného registru Dockeru.
 
--   Definuje proměnnou prostředí s názvem připojovací řetězec připojovacím řetězcem Entity Framework používané pro přístup k instanci serveru SQL Server, který obsahuje datový model katalogu. V takovém případě stejného kontejneru systému SQL Server obsahuje více databází. Proto je nutné méně paměti v počítači pro vývoj pro Docker. Můžete však také nasadit jeden kontejner systému SQL Server pro každou databázi mikroslužeb.
+- Definuje proměnnou prostředí s názvem připojovací řetězec připojovacím řetězcem Entity Framework používané pro přístup k instanci serveru SQL Server, který obsahuje datový model katalogu. V takovém případě stejného kontejneru systému SQL Server obsahuje více databází. Proto je nutné méně paměti v počítači pro vývoj pro Docker. Můžete však také nasadit jeden kontejner systému SQL Server pro každou databázi mikroslužeb.
 
--   Název systému SQL Server je sql.data, které se stejným názvem, který pro kontejner, na kterém běží instance systému SQL Server pro Linux. Tato možnost je pohodlná; bude možné použít tento překlad (interní hostitele Dockeru) vyřeší síťovou adresu, takže není nutné znát interní IP adresa pro kontejnery, které spouštíte z jiných kontejnerů.
+- Název systému SQL Server je sql.data, které se stejným názvem, který pro kontejner, na kterém běží instance systému SQL Server pro Linux. Tato možnost je pohodlná; bude možné použít tento překlad (interní hostitele Dockeru) vyřeší síťovou adresu, takže není nutné znát interní IP adresa pro kontejnery, které spouštíte z jiných kontejnerů.
 
 Vzhledem k tomu, že připojovací řetězec je určené proměnnou prostředí, můžete tuto proměnnou nastavit prostřednictvím jiným způsobem a jiný čas. Například můžete nastavit různé připojovací řetězec při nasazení do produkčního prostředí v posledním hostitele nebo provedením z vašich kanálů CI/CD v Azure DevOps služby nebo systému upřednostňované DevOps.
 
--   Zpřístupňuje port 80 pro interní přístup ke službě catalog.api v rámci hostitele Dockeru. Hostitel je aktuálně virtuálního počítače s Linuxem, protože je založen na image Dockeru pro Linux, ale můžete nakonfigurovat tak, kontejner pro spuštění v imagi Windows místo.
+- Zpřístupňuje port 80 pro interní přístup ke službě catalog.api v rámci hostitele Dockeru. Hostitel je aktuálně virtuálního počítače s Linuxem, protože je založen na image Dockeru pro Linux, ale můžete nakonfigurovat tak, kontejner pro spuštění v imagi Windows místo.
 
--   Předá vystavené port 80 v kontejneru na port 5101 hostitele Docker Machine (virtuálního počítače s Linuxem).
+- Předá vystavené port 80 v kontejneru na port 5101 hostitele Docker Machine (virtuálního počítače s Linuxem).
 
--   Webové služby odkazuje ve službě sql.data (instance systému SQL Server pro Linux databáze spuštěné v kontejneru). Pokud zadáte tuto závislost, kontejneru catalog.api nespustí, dokud již bylo zahájeno sql.data kontejneru; To je důležité, protože catalog.api musí být databáze serveru SQL Server a spuštěna nejprve. Však tento druh závislosti kontejneru není dostatečně v mnoha případech, protože Docker zkontroluje pouze na úrovni kontejneru. Někdy služby (v tomto případě systému SQL Server) nemusí nadále budete mít, proto se doporučuje implementovat logiku opakování pomocí exponenciálního omezení rychlosti mikroslužby klienta. Tímto způsobem, pokud kontejner závislosti není připravený na krátkou dobu, aplikace bude nadále odolný.
+- Webové služby odkazuje ve službě sql.data (instance systému SQL Server pro Linux databáze spuštěné v kontejneru). Pokud zadáte tuto závislost, kontejneru catalog.api nespustí, dokud již bylo zahájeno sql.data kontejneru; To je důležité, protože catalog.api musí být databáze serveru SQL Server a spuštěna nejprve. Však tento druh závislosti kontejneru není dostatečně v mnoha případech, protože Docker zkontroluje pouze na úrovni kontejneru. Někdy služby (v tomto případě systému SQL Server) nemusí nadále budete mít, proto se doporučuje implementovat logiku opakování pomocí exponenciálního omezení rychlosti mikroslužby klienta. Tímto způsobem, pokud kontejner závislosti není připravený na krátkou dobu, aplikace bude nadále odolný.
 
--   Je nakonfigurována pro povolení přístupu k externím serverům: nadbytečné\_hostitelů nastavení vám umožní přistupovat k externí servery nebo počítače mimo hostitele Docker (tedy mimo výchozí linuxového virtuálního počítače, který je vývoj Docker hostitele), jako je například místní databáze SQL Instance serveru na vašem počítači.
+- Je nakonfigurována pro povolení přístupu k externím serverům: nadbytečné\_hostitelů nastavení vám umožní přistupovat k externí servery nebo počítače mimo hostitele Docker (tedy mimo výchozí linuxového virtuálního počítače, který je vývoj Docker hostitele), jako je například místní databáze SQL Instance serveru na vašem počítači.
 
 Existují také jiné, pokročilejší docker-compose.yml nastavení, které se budeme zabývat v dalších částech.
 
@@ -155,7 +155,7 @@ Důležitou součástí procesu kontinuální integrace (CI) ani průběžného 
 
 Pomocí Docker Compose můžete vytvořit a odstranit izolované prostředí velmi snadno v několika příkazů z příkazového řádku nebo skripty, například následující příkazy:
 
-```
+```console
 docker-compose -f docker-compose.yml -f docker-compose-test.override.yml up -d
 ./run_unit_tests
 docker-compose -f docker-compose.yml -f docker-compose.test.override.yml down
@@ -207,7 +207,7 @@ services:
     image: eshop/basket.api:${TAG:-latest}
     build:
       context: .
-      dockerfile: src/Services/Basket/Basket.API/Dockerfile    
+      dockerfile: src/Services/Basket/Basket.API/Dockerfile
     depends_on:
       - basket.data
       - identity.api
@@ -217,7 +217,7 @@ services:
     image: eshop/catalog.api:${TAG:-latest}
     build:
       context: .
-      dockerfile: src/Services/Catalog/Catalog.API/Dockerfile    
+      dockerfile: src/Services/Catalog/Catalog.API/Dockerfile
     depends_on:
       - sql.data
       - rabbitmq
@@ -226,7 +226,7 @@ services:
     image: eshop/marketing.api:${TAG:-latest}
     build:
       context: .
-      dockerfile: src/Services/Marketing/Marketing.API/Dockerfile    
+      dockerfile: src/Services/Marketing/Marketing.API/Dockerfile
     depends_on:
       - sql.data
       - nosql.data
@@ -237,7 +237,7 @@ services:
     image: eshop/webmvc:${TAG:-latest}
     build:
       context: .
-      dockerfile: src/Web/WebMVC/Dockerfile    
+      dockerfile: src/Web/WebMVC/Dockerfile
     depends_on:
       - catalog.api
       - ordering.api
@@ -253,7 +253,7 @@ services:
 
   basket.data:
     image: redis
-      
+
   rabbitmq:
     image: rabbitmq:3-management
 
@@ -263,13 +263,13 @@ Hodnoty v souboru základní docker-compose.yml by neměly měnit z důvodu růz
 
 Pokud vám soustředit se na definici služby webmvc, například uvidíte jak tyto informace je skoro stejné bez ohledu na to, co prostředí, které vám může cílí. Máte následující informace:
 
--   Název služby: webmvc.
+- Název služby: webmvc.
 
--   Vlastní image kontejneru: eshop/webmvc.
+- Vlastní image kontejneru: eshop/webmvc.
 
--   Příkaz k vytvoření vlastní image Dockeru, určující, které soubor Dockerfile používat.
+- Příkaz k vytvoření vlastní image Dockeru, určující, které soubor Dockerfile používat.
 
--   Závislosti na dalších službách, takže tento kontejner se nespustí, dokud jste spustili dalších kontejnerů závislostí.
+- Závislosti na dalších službách, takže tento kontejner se nespustí, dokud jste spustili dalších kontejnerů závislostí.
 
 Můžete mít další konfiguraci, ale důležité je, že v souboru docker-compose.yml základní jenom chcete nastavit informace, které jsou společné napříč prostředími. Potom v docker-compose.override.yml nebo podobné soubory provozního nebo testovacího měli umístit konfigurace, které jsou specifické pro každé prostředí.
 
@@ -279,19 +279,19 @@ Docker-compose.override.yml se obvykle používá pro vaše vývojové prostřed
 #docker-compose.override.yml (Extended config for DEVELOPMENT env.)
 version: '3.4'
 
-services: 
-# Simplified number of services here: 
-      
+services:
+# Simplified number of services here:
+
   basket.api:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://0.0.0.0:80
       - ConnectionString=${ESHOP_AZURE_REDIS_BASKET_DB:-basket.data}
-      - identityUrl=http://identity.api              
+      - identityUrl=http://identity.api
       - IdentityUrlExternal=http://${ESHOP_EXTERNAL_DNS_NAME_OR_IP}:5105
       - EventBusConnection=${ESHOP_AZURE_SERVICE_BUS:-rabbitmq}
       - EventBusUserName=${ESHOP_SERVICE_BUS_USERNAME}
-      - EventBusPassword=${ESHOP_SERVICE_BUS_PASSWORD}      
+      - EventBusPassword=${ESHOP_SERVICE_BUS_PASSWORD}
       - AzureServiceBusEnabled=False
       - ApplicationInsights__InstrumentationKey=${INSTRUMENTATION_KEY}
       - OrchestratorType=${ORCHESTRATOR_TYPE}
@@ -305,10 +305,10 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://0.0.0.0:80
       - ConnectionString=${ESHOP_AZURE_CATALOG_DB:-Server=sql.data;Database=Microsoft.eShopOnContainers.Services.CatalogDb;User Id=sa;Password=Pass@word}
-      - PicBaseUrl=${ESHOP_AZURE_STORAGE_CATALOG_URL:-http://localhost:5202/api/v1/catalog/items/[0]/pic/}   
+      - PicBaseUrl=${ESHOP_AZURE_STORAGE_CATALOG_URL:-http://localhost:5202/api/v1/catalog/items/[0]/pic/}
       - EventBusConnection=${ESHOP_AZURE_SERVICE_BUS:-rabbitmq}
       - EventBusUserName=${ESHOP_SERVICE_BUS_USERNAME}
-      - EventBusPassword=${ESHOP_SERVICE_BUS_PASSWORD}         
+      - EventBusPassword=${ESHOP_SERVICE_BUS_PASSWORD}
       - AzureStorageAccountName=${ESHOP_AZURE_STORAGE_CATALOG_NAME}
       - AzureStorageAccountKey=${ESHOP_AZURE_STORAGE_CATALOG_KEY}
       - UseCustomizationData=True
@@ -328,8 +328,8 @@ services:
       - MongoDatabase=MarketingDb
       - EventBusConnection=${ESHOP_AZURE_SERVICE_BUS:-rabbitmq}
       - EventBusUserName=${ESHOP_SERVICE_BUS_USERNAME}
-      - EventBusPassword=${ESHOP_SERVICE_BUS_PASSWORD}          
-      - identityUrl=http://identity.api              
+      - EventBusPassword=${ESHOP_SERVICE_BUS_PASSWORD}
+      - identityUrl=http://identity.api
       - IdentityUrlExternal=http://${ESHOP_EXTERNAL_DNS_NAME_OR_IP}:5105
       - CampaignDetailFunctionUri=${ESHOP_AZUREFUNC_CAMPAIGN_DETAILS_URI}
       - PicBaseUrl=${ESHOP_AZURE_STORAGE_MARKETING_URL:-http://localhost:5110/api/v1/campaigns/[0]/pic/}
@@ -374,7 +374,7 @@ services:
       - "27017:27017"
   basket.data:
     ports:
-      - "6379:6379"      
+      - "6379:6379"
   rabbitmq:
     ports:
       - "15672:15672"
@@ -386,13 +386,13 @@ V tomto příkladu konfigurace přepisování vývoj uvádí některé porty na 
 
 Při spuštění `docker-compose up` (nebo ji spustit ze sady Visual Studio), tento příkaz načte přepsání automaticky jako kdyby to byly sloučení oba soubory.
 
-Předpokládejme, že má jiný soubor Compose pro produkční prostředí s jinou konfiguraci hodnoty, porty nebo připojovací řetězce. Můžete vytvořit soubor přepsání, jako je soubor s názvem `docker-compose.prod.yml` s různými nastaveními a proměnných prostředí.  Tento soubor může být uložená v různých úložiště Git nebo spravovat a zabezpečit jiný tým.
+Předpokládejme, že má jiný soubor Compose pro produkční prostředí s jinou konfiguraci hodnoty, porty nebo připojovací řetězce. Můžete vytvořit soubor přepsání, jako je soubor s názvem `docker-compose.prod.yml` s různými nastaveními a proměnných prostředí. Tento soubor může být uložená v různých úložiště Git nebo spravovat a zabezpečit jiný tým.
 
 #### <a name="how-to-deploy-with-a-specific-override-file"></a>Nasazení se souborem specifické přepsání
 
 Pokud chcete použít více souborů přepsání nebo přepsání souboru s jiným názvem, můžete použít možnost -f s příkazu docker-compose a zadejte soubory. Vytvoření souborů sloučení v pořadí, v jakém jsou uvedeny v příkazovém řádku. Následující příklad ukazuje, jak nasadit pomocí přepsání souborů.
 
-```
+```console
 docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d
 ```
 
@@ -422,17 +422,17 @@ Všimněte si, že hodnoty nastavené v běhovém prostředí vždy přepsat hod
 
 #### <a name="additional-resources"></a>Další zdroje
 
--   **Přehled služby Docker Compose** <br/>
+- **Přehled služby Docker Compose** <br/>
     [*https://docs.docker.com/compose/overview/*](https://docs.docker.com/compose/overview/)
 
--   **Více soubory Compose** <br/>
+- **Více soubory Compose** <br/>
     [*https://docs.docker.com/compose/extends/\#multiple-compose-files*](https://docs.docker.com/compose/extends/#multiple-compose-files)
 
 ### <a name="building-optimized-aspnet-core-docker-images"></a>Vytváření optimalizované Image Dockeru ASP.NET Core
 
 Pokud zkoumáte Dockeru a .NET Core na zdroje v síti Internet, zjistíte soubory Dockerfile, které ukazují zjednodušení vytváření image Dockeru pomocí kopírování zdroje do kontejneru. Tyto příklady navrhnout pomocí jednoduchou konfiguraci a může mít image Dockeru s prostředím zabalit s aplikací. Následující příklad ukazuje jednoduchý soubor Dockerfile v této souvislosti.
 
-```
+```Dockerfile
 FROM microsoft/dotnet
 WORKDIR /app
 ENV ASPNETCORE_URLS http://+:80
@@ -446,30 +446,30 @@ Soubor Dockerfile takto bude fungovat. Je ale podstatně optimalizovat Image, ze
 
 V modelu mikroslužeb a kontejnerů jsou neustále spouštění kontejnerů. Typické způsob, jak pomocí kontejnerů nerestartuje spící kontejner, protože kontejneru je jedno použití. Orchestrátory (jako je Kubernetes a Azure Service Fabric) jednoduše vytvořte nové instance z imagí. To znamená, že potřebujete optimalizovat předkompilace aplikace, když je sestaven tak proces vytváření instancí bude rychlejší. Při spuštění kontejneru musí být připraveny ke spuštění. Nesmí obnovit a kompilaci za běhu použití `dotnet restore` a `dotnet build` příkazy z rozhraní příkazového řádku dotnet to, jak vidíte v mnoha blogové příspěvky o .NET Core a Docker.
 
-Tým .NET má způsobem důležitou práci provést optimalizovaný kontejner rozhraní .NET Core a ASP.NET Core. Nejen .NET Core je jednoduché rozhraní s malé paměťové nároky; tým zaměřený na optimalizované Image Dockeru pro tři hlavní scénáře a publikované v registru Docker Hub v <span class="underline">microsoft/dotnet</span>, začínající s verzí 2.1:
+Tým .NET má způsobem důležitou práci provést optimalizovaný kontejner rozhraní .NET Core a ASP.NET Core. Nejen .NET Core je jednoduché rozhraní s malé paměťové nároky; tým zaměřený na optimalizované Image Dockeru pro tři hlavní scénáře a publikované v registru Docker Hub v *microsoft/dotnet*, začínající s verzí 2.1:
 
-1.  **Vývoj**: Pokud priorita je schopnost rychle interate a ladění změnám a velikosti je sekundární.
+1. **Vývoj**: Kde je schopnost rychle iterovat a ladit změny prioritu a kde velikost je sekundární.
 
-2.  **Sestavení**: Priorita je při kompilaci aplikace a obsahuje binární soubory a další závislosti optimalizovat binární soubory.
+2. **Sestavení**: Priorita je při kompilaci aplikace a obsahuje binární soubory a další závislosti optimalizovat binární soubory.
 
-3.  **Produkční**: Pokud je fokus rychlé nasazení a spouštění kontejnerů, takže tyto Image jsou omezené na binární soubory a obsahu nedded ke spuštění aplikace.
+3. **Produkční**: Pokud je fokus rychlé nasazení a spouštění kontejnerů, takže tyto Image jsou omezené na binární soubory a obsah potřebný ke spuštění aplikace.
 
 Za tím účelem týmu .NET nabízí tři základní varianty v [microsoft/dotnet](https://hub.docker.com/r/microsoft/dotnet/) (v Docker Hubu):
 
-1.  **Sada SDK**: pro scénáře vývoje a sestavení.
-2.  **modul runtime**: pro produkční scénář a
-3.  **modul runtime deps**: pro produkční scénáře [samostatná aplikace](../../../core/deploying/index.md#self-contained-deployments-scd).
+1. **Sada SDK**: pro scénáře vývoje a sestavení.
+2. **modul runtime**: pro produkční scénář a
+3. **modul runtime deps**: pro produkční scénáře [samostatná aplikace](../../../core/deploying/index.md#self-contained-deployments-scd).
 
-Modul runtime imagí taky poskytuje automatické nastavení aspnetcore\_adresy URL na port 80 a pre-ngend mezipaměti sestavení, které vám pomůžou získat rychlejší spuštění.
+Pro rychlejší spuštění, runtime Image také automaticky nastaví aspnetcore\_adresy URL a port 80 k vytvoření mezipaměti nativních bitových kopií sestavení použije Ngen.
 
 #### <a name="additional-resources"></a>Další zdroje
 
--   **Vytváření optimalizované Image Dockeru s ASP.NET Core** <br/>
+- **Vytváření optimalizované Image Dockeru s ASP.NET Core** <br/>
     [*https://blogs.msdn.microsoft.com/stevelasker/2016/09/29/building-optimized-docker-images-with-asp-net-core/*](https://blogs.msdn.microsoft.com/stevelasker/2016/09/29/building-optimized-docker-images-with-asp-net-core/)
 
--   **Vytváření imagí Dockeru pro aplikace .NET Core** <br/>
+- **Vytváření imagí Dockeru pro aplikace .NET Core** <br/>
     [*https://docs.microsoft.com/dotnet/core/docker/building-net-docker-images*](../../../core/docker/building-net-docker-images.md)
 
->[!div class="step-by-step"]
->[Předchozí](data-driven-crud-microservice.md)
->[další](database-server-container.md)
+> [!div class="step-by-step"]
+> [Předchozí](data-driven-crud-microservice.md)
+> [další](database-server-container.md)

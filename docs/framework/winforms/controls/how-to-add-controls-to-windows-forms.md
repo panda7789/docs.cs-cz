@@ -9,15 +9,15 @@ helpviewer_keywords:
 - Windows Forms controls, adding to form
 - controls [Windows Forms], adding
 ms.assetid: 2af86001-9d62-4154-87fb-66db2c3cd9fd
-ms.openlocfilehash: 29a268f645810d84d9f6fb722e4728842b04ee14
-ms.sourcegitcommit: acd8ed14fe94e9d4e3a7fb685fe83d05e941073c
+ms.openlocfilehash: 31820775d4f7fb981599e806aa5e27655039e6ac
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56443169"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57720771"
 ---
 # <a name="how-to-add-controls-to-windows-forms"></a>Postupy: Přidání ovládacích prvků do formulářů Windows
-Většinou forem jsou navržené tak, že přidáte ovládací prvky na plochu formuláře k definování uživatelského rozhraní (UI). A *ovládací prvek* je součást na formulář pro zobrazení informací ani nebude přijímat uživatelský vstup. Další informace o ovládacích prvcích najdete v tématu [ovládacích prvků Windows Forms](../../../../docs/framework/winforms/controls/index.md).  
+Většinou forem jsou navržené tak, že přidáte ovládací prvky na plochu formuláře k definování uživatelského rozhraní (UI). A *ovládací prvek* je součást na formulář pro zobrazení informací ani nebude přijímat uživatelský vstup. Další informace o ovládacích prvcích najdete v tématu [ovládacích prvků Windows Forms](index.md).  
   
 > [!NOTE]
 >  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení integrovaného vývojového prostředí sady Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).  
@@ -90,8 +90,8 @@ Většinou forem jsou navržené tak, že přidáte ovládací prvky na plochu f
     >  Místního počítače k ohrožení zabezpečení prostřednictvím sítě může být odkazem škodlivý `UserControl`. To může být pouze v případě nežádoucí osoba vytváření škodlivé vlastního ovládacího prvku, za nímž následuje omylem přidání do projektu žádný problém.  
   
 ## <a name="see-also"></a>Viz také:
-- [Windows Forms – ovládací prvky](../../../../docs/framework/winforms/controls/index.md)
-- [Uspořádávání ovládacích prvků ve Windows Forms](../../../../docs/framework/winforms/controls/arranging-controls-on-windows-forms.md)
-- [Postupy: Změna velikosti ovládacích prvků ve formulářích Windows](../../../../docs/framework/winforms/controls/how-to-resize-controls-on-windows-forms.md)
-- [Postupy: Nastavit Text, zobrazený ovládacím prvkem Windows Forms](../../../../docs/framework/winforms/controls/how-to-set-the-text-displayed-by-a-windows-forms-control.md)
-- [Ovládací prvky používané ve Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)
+- [Windows Forms – ovládací prvky](index.md)
+- [Uspořádávání ovládacích prvků ve Windows Forms](arranging-controls-on-windows-forms.md)
+- [Postupy: Změna velikosti ovládacích prvků ve formulářích Windows](how-to-resize-controls-on-windows-forms.md)
+- [Postupy: Nastavit Text, zobrazený ovládacím prvkem Windows Forms](how-to-set-the-text-displayed-by-a-windows-forms-control.md)
+- [Ovládací prvky používané ve Windows Forms](controls-to-use-on-windows-forms.md)

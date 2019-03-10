@@ -5,16 +5,16 @@ helpviewer_keywords:
 - parent forms
 - MDI [Windows Forms], creating forms
 ms.assetid: 12c71221-2377-4bb6-b10b-7b4b300fd462
-ms.openlocfilehash: 1cc3d813b77ddf8220242f4a1dfc7fe39f9cb520
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5da7f1a53412cf30a5898fec096aaa01e3aa65d2
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54512564"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57722981"
 ---
 # <a name="how-to-create-mdi-parent-forms"></a>Postupy: Vytváření nadřazených formulářů MDI
 > [!IMPORTANT]
->  Toto téma používá <xref:System.Windows.Forms.MainMenu> ovládací prvek, který byl nahrazen <xref:System.Windows.Forms.MenuStrip> ovládacího prvku. <xref:System.Windows.Forms.MainMenu> Ovládací prvek se zachovává kvůli zpětné kompatibilitě a budoucí použití, pokud se rozhodnete.  Informace o vytváření MDI nadřazený formulář s využitím <xref:System.Windows.Forms.MenuStrip>, naleznete v tématu [jak: Vytvoření seznamu okna MDI pomocí MenuStrip](../../../../docs/framework/winforms/controls/how-to-create-an-mdi-window-list-with-menustrip-windows-forms.md).  
+>  Toto téma používá <xref:System.Windows.Forms.MainMenu> ovládací prvek, který byl nahrazen <xref:System.Windows.Forms.MenuStrip> ovládacího prvku. <xref:System.Windows.Forms.MainMenu> Ovládací prvek se zachovává kvůli zpětné kompatibilitě a budoucí použití, pokud se rozhodnete.  Informace o vytváření MDI nadřazený formulář s využitím <xref:System.Windows.Forms.MenuStrip>, naleznete v tématu [jak: Vytvoření seznamu okna MDI pomocí MenuStrip](../controls/how-to-create-an-mdi-window-list-with-menustrip-windows-forms.md).  
   
  Základ pro aplikace rozhraní více dokumentů (MDI) je nadřazený formulář MDI. Toto je formulář, který obsahuje podřízených oken MDI, které jsou dílčí windows, ve kterém uživatel pracuje v aplikaci MDI. Vytvoření nadřazený formulář MDI je jednoduché, v Návrháři formulářů Windows a prostřednictvím kódu programu.  
   
@@ -33,11 +33,11 @@ ms.locfileid: "54512564"
   
      Vytvoří a skrytí položek nabídky v době běhu nabídce první a druhé nabídky bude sledovat, otevřete podřízených oken MDI. V tomto okamžiku jste vytvořili nadřazeného okna MDI.  
   
-4.  Stisknutím klávesy **F5** ke spuštění aplikace. Informace o vytváření podřízeného MDI windows, které působí v rámci nadřazený formulář MDI, naleznete v tématu [jak: Vytváření podřízených formulářů MDI](../../../../docs/framework/winforms/advanced/how-to-create-mdi-child-forms.md).  
+4.  Stisknutím klávesy **F5** ke spuštění aplikace. Informace o vytváření podřízeného MDI windows, které působí v rámci nadřazený formulář MDI, naleznete v tématu [jak: Vytváření podřízených formulářů MDI](how-to-create-mdi-child-forms.md).  
   
 ## <a name="see-also"></a>Viz také:
-- [Aplikace MDI (Multiple-Document Interface)](../../../../docs/framework/winforms/advanced/multiple-document-interface-mdi-applications.md)
-- [Postupy: Vytváření podřízených formulářů MDI](../../../../docs/framework/winforms/advanced/how-to-create-mdi-child-forms.md)
-- [Postupy: Určení podřízeného prvku aktivního MDI](../../../../docs/framework/winforms/advanced/how-to-determine-the-active-mdi-child.md)
-- [Postupy: Odesílání dat do aktivního podřízeného MDI](../../../../docs/framework/winforms/advanced/how-to-send-data-to-the-active-mdi-child.md)
-- [Postupy: Uspořádání podřízených formulářů MDI](../../../../docs/framework/winforms/advanced/how-to-arrange-mdi-child-forms.md)
+- [Aplikace MDI (Multiple-Document Interface)](multiple-document-interface-mdi-applications.md)
+- [Postupy: Vytváření podřízených formulářů MDI](how-to-create-mdi-child-forms.md)
+- [Postupy: Určení podřízeného prvku aktivního MDI](how-to-determine-the-active-mdi-child.md)
+- [Postupy: Odesílání dat do aktivního podřízeného MDI](how-to-send-data-to-the-active-mdi-child.md)
+- [Postupy: Uspořádání podřízených formulářů MDI](how-to-arrange-mdi-child-forms.md)

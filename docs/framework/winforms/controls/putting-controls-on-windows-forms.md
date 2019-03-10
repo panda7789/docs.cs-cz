@@ -6,38 +6,38 @@ f1_keywords:
 helpviewer_keywords:
 - Windows Forms controls, adding to form
 ms.assetid: 997508f2-87e5-4bec-a78e-9eec8f1fb15b
-ms.openlocfilehash: 065fb60903fef2b571cb247fec90f3b9e6a3a36d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b9ffe797fef9e063470ef93ce73f881aed80e7f6
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33536215"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57705308"
 ---
 # <a name="putting-controls-on-windows-forms"></a>Vkládání ovládacích prvků do formulářů Windows
-Existují celou řadu ovládacích prvků, které lze zadat v rozhraní Windows Forms v závislosti na potřebách vaší aplikace.  
+Existují širokou škálu ovládacích prvků, které můžete do formulářů Windows, v závislosti na potřebách vaší aplikace.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Postupy: Přidávání ovládacích prvků do Windows Forms](../../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md)  
+ [Postupy: Přidání ovládacích prvků do formulářů Windows](how-to-add-controls-to-windows-forms.md)  
  Poskytuje pokyny pro připojení do svého formuláře ovládací prvky.  
   
- [Postupy: Přidávání ovládacích prvků bez uživatelského rozhraní do Windows Forms](../../../../docs/framework/winforms/controls/how-to-add-controls-without-a-user-interface-to-windows-forms.md)  
- Poskytuje pokyny pro připojování ovládacích prvků bez uživatelského rozhraní do vaší aplikace.  
+ [Postupy: Přidání ovládacích prvků bez uživatelského rozhraní do formulářů Windows](how-to-add-controls-without-a-user-interface-to-windows-forms.md)  
+ Poskytuje pokyny pro přidávání ovládacích prvků bez uživatelského rozhraní pro vaši aplikaci.  
   
- [Postupy: Přidávání ovládacích prvků do kolekce a odebírání ovládacích prvků z kolekce za běhu](../../../../docs/framework/winforms/controls/how-to-add-to-or-remove-from-a-collection-of-controls-at-run-time.md)  
+ [Postupy: Přidat nebo odebrat z kolekce ovládacích prvků za běhu](how-to-add-to-or-remove-from-a-collection-of-controls-at-run-time.md)  
  Vysvětluje, jak přidávat a odebírat ovládacích prvků na panelu v době běhu.  
   
- [Návod: Automatické vyplnění sady nástrojů vlastními komponentami](../../../../docs/framework/winforms/controls/walkthrough-automatically-populating-the-toolbox-with-custom-components.md)  
- Ukazuje, jak můžete použít vlastní součást automaticky zobrazí v **sada nástrojů** po vytvoření komponentou.  
+ [Návod: Automatické vyplnění nástrojů vlastními komponentami](walkthrough-automatically-populating-the-toolbox-with-custom-components.md)  
+ Předvádí, jak můžete automaticky zobrazí ve vlastní komponenty **nástrojů** po vytvoření komponenty.  
   
- [Postupy: Přidávání ovládacích prvků ActiveX do Windows Forms](../../../../docs/framework/winforms/controls/how-to-add-activex-controls-to-windows-forms.md)  
- Poskytuje pokyny pro práci s ovládacími prvky ActiveX starší verze.  
+ [Postupy: Přidávání ovládacích prvků ActiveX do formulářů Windows](how-to-add-activex-controls-to-windows-forms.md)  
+ Poskytuje pokyny pro práci s starší verze – ovládací prvky ActiveX.  
   
- [Aspekty hostování ovládacího prvku ActiveX ve formuláři Windows Forms](../../../../docs/framework/winforms/controls/considerations-when-hosting-an-activex-control-on-a-windows-form.md)  
- Popisuje, co je třeba brát ohled při plánování aplikace, která používá ovládací prvky ActiveX.  
+ [Aspekty hostování ovládacího prvku ActiveX ve formuláři Windows Forms](considerations-when-hosting-an-activex-control-on-a-windows-form.md)  
+ Popisuje, co je potřeba vzít v úvahu při plánování aplikaci používá ovládací prvky ActiveX.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Windows Forms – ovládací prvky](../../../../docs/framework/winforms/controls/index.md)  
- Obsahuje odkazy na témata úvodní ovládacích prvků a co můžete dělat s nimi.  
+ [Windows Forms – ovládací prvky](index.md)  
+ Obsahuje odkazy na úvodní témata o ovládací prvky a co můžete dělat s nimi.  
   
- [Ověřování uživatelského vstupu ve Windows Forms](../../../../docs/framework/winforms/user-input-validation-in-windows-forms.md)  
- Vysvětluje základy a teoreticky za ověření obsahu ovládacích prvků Windows Forms.
+ [Ověřování uživatelského vstupu ve Windows Forms](../user-input-validation-in-windows-forms.md)  
+ Vysvětluje základy a teorii za ověření obsahu ovládacích prvků Windows Forms.

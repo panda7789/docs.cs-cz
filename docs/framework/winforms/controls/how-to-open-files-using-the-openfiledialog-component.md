@@ -9,18 +9,18 @@ helpviewer_keywords:
 - OpenFile method [Windows Forms], OpenFileDialog component
 - files [Windows Forms], opening with OpenFileDialog component
 ms.assetid: 9d88367a-cc21-4ffd-be74-89fd63767d35
-ms.openlocfilehash: f297b557e86c13c00a57a2033ba4cd61753b3d0b
-ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
+ms.openlocfilehash: 5781543a61d77ef8f0658e95759c57fdb77cfc4f
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57202649"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57723085"
 ---
 # <a name="how-to-open-files-with-the-openfiledialog"></a>Postupy: Otevřít soubory s OpenFileDialog 
 
 <xref:System.Windows.Forms.OpenFileDialog?displayProperty=nameWithType> Komponenty otevře dialogové okno Windows pro procházení a výběr souborů. Otevřít a přečíst si vybrané soubory, můžete použít <xref:System.Windows.Forms.OpenFileDialog.OpenFile%2A?displayProperty=nameWithType> metodu, nebo vytvořit instanci <xref:System.IO.StreamReader?displayProperty=nameWithType> třídy. Následující příklady ukazují oba přístupy. 
 
-V rozhraní .NET Framework pro získání nebo nastavení <xref:System.Windows.Forms.FileDialog.FileName%2A> vlastnost vyžaduje úroveň oprávnění udělenou <xref:System.Security.Permissions.FileIOPermission?displayProperty=nameWithType> třídy. Spuštění příkladů <xref:System.Security.Permissions.FileIOPermission> oprávnění Zkontrolujte a může vyvolat výjimku z důvodu nedostatečné oprávnění, pokud spuštění v kontextu částečným vztahem důvěryhodnosti. Další informace najdete v tématu [Základy zabezpečení přístupu kódu](../../../../docs/framework/misc/code-access-security-basics.md).
+V rozhraní .NET Framework pro získání nebo nastavení <xref:System.Windows.Forms.FileDialog.FileName%2A> vlastnost vyžaduje úroveň oprávnění udělenou <xref:System.Security.Permissions.FileIOPermission?displayProperty=nameWithType> třídy. Spuštění příkladů <xref:System.Security.Permissions.FileIOPermission> oprávnění Zkontrolujte a může vyvolat výjimku z důvodu nedostatečné oprávnění, pokud spuštění v kontextu částečným vztahem důvěryhodnosti. Další informace najdete v tématu [Základy zabezpečení přístupu kódu](../../misc/code-access-security-basics.md).
 
 Můžete sestavit a spustit tyto příklady jako aplikace rozhraní .NET Framework C# nebo příkazového řádku jazyka Visual Basic. Další informace najdete v tématu [příkazového řádku pomocí csc.exe](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md) nebo [sestavení z příkazového řádku](../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md). 
 
@@ -30,16 +30,16 @@ Od verze .NET Core 3.0, můžete také sestavit a spustit v příkladech jako Wi
   
 Následující příklad používá Windows Forms <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Click> obslužná rutina události otevřete <xref:System.Windows.Forms.OpenFileDialog> s <xref:System.Windows.Forms.CommonDialog.ShowDialog%2A> metody. Poté, co uživatel vybere soubor a vybere **OK**, instance <xref:System.IO.StreamReader> třídy načte soubor a zobrazí jeho obsah v textovém poli formuláři. Další informace o čtení ze souborů datových proudů, naleznete v tématu <xref:System.IO.FileStream.BeginRead%2A?displayProperty=nameWithType> a <xref:System.IO.FileStream.Read%2A?displayProperty=nameWithType>.  
 
- [!code-csharp[OpenFileDialog#1](../../../../samples/snippets/winforms/open-files/example1/cs/Form1.cs)]
- [!code-vb[OpenFileDialog#1](../../../../samples/snippets/winforms/open-files/example1/vb/Form1.vb)]  
+ [!code-csharp[OpenFileDialog#1](~/samples/snippets/winforms/open-files/example1/cs/Form1.cs)]
+ [!code-vb[OpenFileDialog#1](~/samples/snippets/winforms/open-files/example1/vb/Form1.vb)]  
 
 ## <a name="example-open-a-file-from-a-filtered-selection-with-openfile"></a>Příklad: Otevřete soubor z filtrovaný výběr s OpenFile 
 
 V následujícím příkladu <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Click> obslužná rutina události otevřete <xref:System.Windows.Forms.OpenFileDialog> s filtrem, který zobrazuje pouze textové soubory. Poté, co uživatel vybere textový soubor a vybere **OK**, <xref:System.Windows.Forms.OpenFileDialog.OpenFile%2A> metoda se používá k otevření souboru v poznámkovém bloku.
 
- [!code-csharp[OpenFileDialog#2](../../../../samples/snippets/winforms/open-files/example2/cs/Form1.cs)]
- [!code-vb[OpenFileDialog#2](../../../../samples/snippets/winforms/open-files/example2/vb/Form1.vb)]  
+ [!code-csharp[OpenFileDialog#2](~/samples/snippets/winforms/open-files/example2/cs/Form1.cs)]
+ [!code-vb[OpenFileDialog#2](~/samples/snippets/winforms/open-files/example2/vb/Form1.vb)]  
 
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Forms.OpenFileDialog>
-- [OpenFileDialog – komponenta](../../../../docs/framework/winforms/controls/openfiledialog-component-windows-forms.md)
+- [OpenFileDialog – komponenta](openfiledialog-component-windows-forms.md)

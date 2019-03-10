@@ -5,12 +5,12 @@ helpviewer_keywords:
 - data binding [Windows Forms], simple data binding
 - Windows Forms controls, data binding
 ms.assetid: 3bcaded8-0f1a-4cc0-8830-f59be253bf4e
-ms.openlocfilehash: 129301354c67d43783e997bcf42f848c5c39ab3c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f481b85c07a107b10d88d47c4873b555191bac7f
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54643569"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57708337"
 ---
 # <a name="how-to-create-a-simple-bound-control-on-a-windows-form"></a>Postupy: Vytvoření jednoduše vázaného ovládacího prvku ve formuláři Windows
 S *jednoduchá vazba*, jeden datový prvek, jako je například hodnota sloupce z tabulky datovou sadu, můžete zobrazit v ovládacím prvku. Vám může jednoduché bind nějaká vlastnost ovládacího prvku na hodnotu data.  
@@ -20,7 +20,7 @@ S *jednoduchá vazba*, jeden datový prvek, jako je například hodnota sloupce 
   
 ### <a name="to-simple-bind-a-control"></a>Ovládací prvek jednoduché metody Bind  
   
-1.  Připojení ke zdroji dat. Další informace najdete v tématu [připojení ke zdroji dat](../../../docs/framework/data/adonet/connecting-to-a-data-source.md).  
+1.  Připojení ke zdroji dat. Další informace najdete v tématu [připojení ke zdroji dat](../data/adonet/connecting-to-a-data-source.md).  
   
 2.  Ve formuláři, vyberte ovládací prvek a zobrazí **vlastnosti** okna.  
   
@@ -28,7 +28,7 @@ S *jednoduchá vazba*, jeden datový prvek, jako je například hodnota sloupce 
   
      Zobrazí se vlastnosti nejčastěji vázané pod **(DataBindings)** vlastnost. Například ve většině ovládacích prvků **Text** vlastnost nejčastěji vázána.  
   
-4.  Pokud vlastnost, kterou chcete bind není jedním z nejčastěji vázané vlastnosti, klikněte na tlačítko **tlačítko se třemi tečkami** tlačítko (![snímek obrazovky VisualStudioEllipsesButton](../../../docs/framework/winforms/media/vbellipsesbutton.png "vbEllipsesButton") ) v **(rozšířené)** pole zobrazíte **formátování a rozšířené vazby** dialogové okno s kompletní seznam vlastností pro ovládací prvek.  
+4.  Pokud vlastnost, kterou chcete bind není jedním z nejčastěji vázané vlastnosti, klikněte na tlačítko **tlačítko se třemi tečkami** tlačítko (![snímek obrazovky VisualStudioEllipsesButton](./media/vbellipsesbutton.png "vbEllipsesButton") ) v **(rozšířené)** pole zobrazíte **formátování a rozšířené vazby** dialogové okno s kompletní seznam vlastností pro ovládací prvek.  
   
 5.  Vyberte vlastnost, kterou chcete vytvořit vazbu a klikněte na šipku rozevíracího seznamu v části **vazby**.  
   
@@ -47,5 +47,5 @@ S *jednoduchá vazba*, jeden datový prvek, jako je například hodnota sloupce 
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Forms.Binding>
-- [Windows Forms – datová vazba](../../../docs/framework/winforms/windows-forms-data-binding.md)
-- [Datové vazby a Windows Forms](../../../docs/framework/winforms/data-binding-and-windows-forms.md)
+- [Windows Forms – datová vazba](windows-forms-data-binding.md)
+- [Datové vazby a Windows Forms](data-binding-and-windows-forms.md)

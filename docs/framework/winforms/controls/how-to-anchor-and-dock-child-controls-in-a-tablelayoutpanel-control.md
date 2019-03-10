@@ -12,12 +12,12 @@ helpviewer_keywords:
 - child controls [Windows Forms], anchoring and docking
 - TableLayoutPanel control [Windows Forms], child controls
 ms.assetid: 0d267c35-25f1-49b8-8976-c64e8f0ddc0b
-ms.openlocfilehash: cfa0d374bf08ab1ea1753ed46e3e87ca177343b6
-ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
+ms.openlocfilehash: a4fcb4e527825a9946861a46dc336db227e52296
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56219851"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57709618"
 ---
 # <a name="how-to-anchor-and-dock-child-controls-in-a-tablelayoutpanel-control"></a>Postupy: Ukotvení a podřízených ovládacích prvků v ovládacím prvku TableLayoutPanel
 <xref:System.Windows.Forms.TableLayoutPanel> Podporuje ovládací prvek <xref:System.Windows.Forms.Control.Anchor%2A> a <xref:System.Windows.Forms.Control.Dock%2A> vlastnosti v jeho podřízených ovládacích prvků.  
@@ -62,20 +62,20 @@ ms.locfileid: "56219851"
 ## <a name="example"></a>Příklad  
  Následující obrázek znázorňuje pět tlačítek ukotvené pět samostatné <xref:System.Windows.Forms.TableLayoutPanel> buňky.  
   
- ![Kontejner TableLayoutPanel ukotvení](../../../../docs/framework/winforms/controls/media/vs-tlpanchor.gif "VS_TLPanchor")  
+ ![Kontejner TableLayoutPanel ukotvení](./media/vs-tlpanchor.gif "VS_TLPanchor")  
   
  Následující obrázek znázorňuje čtyři tlačítka ukotvené v rozích čtyři samostatné <xref:System.Windows.Forms.TableLayoutPanel> buňky.  
   
- ![Kontejner TableLayoutPanel ukotvení](../../../../docs/framework/winforms/controls/media/vs-tlpanchor2.gif "VS_TLPanchor2")  
+ ![Kontejner TableLayoutPanel ukotvení](./media/vs-tlpanchor2.gif "VS_TLPanchor2")  
   
  Následující obrázek znázorňuje tři tlačítka roztažená podle ukotvení tři samostatné <xref:System.Windows.Forms.TableLayoutPanel> buňky.  
   
- ![Kontejner TableLayoutPanel ukotvení](../../../../docs/framework/winforms/controls/media/vs-tlpanchor3.gif "VS_TLPAnchor3")  
+ ![Kontejner TableLayoutPanel ukotvení](./media/vs-tlpanchor3.gif "VS_TLPAnchor3")  
   
  Následující příklad kódu ukazuje všechny kombinace <xref:System.Windows.Forms.Control.Anchor%2A> hodnot vlastností pro <xref:System.Windows.Forms.Button> v ovládacím prvku <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku.  
   
- [!code-csharp[System.Windows.Forms.TableLayoutPanel.AnchorExampleForm#1](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.TableLayoutPanel.AnchorExampleForm/CS/TlpAnchorExampleForm.cs#1)]
- [!code-vb[System.Windows.Forms.TableLayoutPanel.AnchorExampleForm#1](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.TableLayoutPanel.AnchorExampleForm/VB/TlpAnchorExampleForm.vb#1)]  
+ [!code-csharp[System.Windows.Forms.TableLayoutPanel.AnchorExampleForm#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.TableLayoutPanel.AnchorExampleForm/CS/TlpAnchorExampleForm.cs#1)]
+ [!code-vb[System.Windows.Forms.TableLayoutPanel.AnchorExampleForm#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.TableLayoutPanel.AnchorExampleForm/VB/TlpAnchorExampleForm.vb#1)]  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
@@ -86,4 +86,4 @@ ms.locfileid: "56219851"
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Forms.TableLayoutPanel>
-- [Ovládací prvek TableLayoutPanel](../../../../docs/framework/winforms/controls/tablelayoutpanel-control-windows-forms.md)
+- [Ovládací prvek TableLayoutPanel](tablelayoutpanel-control-windows-forms.md)

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - DataGridView control [Windows Forms], column fill mode
 - data grids [Windows Forms], column fill mode
 ms.assetid: b4ef7411-ebf4-4e26-bb33-aecec90de80c
-ms.openlocfilehash: 823d3c06648ed37003176eab9df538d95f1ced69
-ms.sourcegitcommit: bef803e2025642df39f2f1e046767d89031e0304
+ms.openlocfilehash: bd6c27203284b392742b766b22f664b08a7b3a40
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56304307"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57722409"
 ---
 # <a name="column-fill-mode-in-the-windows-forms-datagridview-control"></a>Režim vyplnění sloupce v ovládacím prvku Windows Forms DataGridView
 V režim vyplnění sloupce <xref:System.Windows.Forms.DataGridView> ovládací prvek změní její sloupce automaticky tak, aby Šířka oblasti k dispozici zobrazení. Ovládací prvek nezobrazí vodorovný posuvník, kromě případů, kdy je také k zachování konzistence každý sloupec, rovna nebo větší než jeho <xref:System.Windows.Forms.DataGridViewColumn.MinimumWidth%2A> hodnotu vlastnosti.  
@@ -39,8 +39,8 @@ V režim vyplnění sloupce <xref:System.Windows.Forms.DataGridView> ovládací 
  Následující ukázkový kód umožňuje experimentovat s různými hodnotami parametru <xref:System.Windows.Forms.DataGridViewColumn.AutoSizeMode%2A>, <xref:System.Windows.Forms.DataGridViewColumn.FillWeight%2A>, a <xref:System.Windows.Forms.DataGridViewColumn.MinimumWidth%2A> vlastnosti různých sloupců. V tomto příkladu <xref:System.Windows.Forms.DataGridView> ovládací prvek vázán na vlastní <xref:System.Windows.Forms.DataGridView.Columns%2A> kolekce a jeden sloupec je vázána na každý <xref:System.Windows.Forms.DataGridViewColumn.HeaderText%2A>, <xref:System.Windows.Forms.DataGridViewColumn.AutoSizeMode%2A>, <xref:System.Windows.Forms.DataGridViewColumn.FillWeight%2A>, <xref:System.Windows.Forms.DataGridViewColumn.MinimumWidth%2A>, a <xref:System.Windows.Forms.DataGridViewColumn.Width%2A> vlastnosti. Jednotlivé sloupce je představováno také řádků v ovládacím prvku a změna hodnoty v řádku aktualizuje vlastnosti odpovídající sloupec tak, abyste viděli, jak pracují hodnoty.  
   
 ### <a name="code"></a>Kód  
- [!code-csharp[System.Windows.Forms.DataGridViewFillColumnsDemo#00](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewFillColumnsDemo/CS/fillcolumns.cs#00)]
- [!code-vb[System.Windows.Forms.DataGridViewFillColumnsDemo#00](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewFillColumnsDemo/vb/fillcolumns.vb#00)]  
+ [!code-csharp[System.Windows.Forms.DataGridViewFillColumnsDemo#00](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewFillColumnsDemo/CS/fillcolumns.cs#00)]
+ [!code-vb[System.Windows.Forms.DataGridViewFillColumnsDemo#00](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewFillColumnsDemo/vb/fillcolumns.vb#00)]  
   
 ### <a name="comments"></a>Komentáře  
  Použití této ukázkové aplikaci:  
@@ -76,4 +76,4 @@ V režim vyplnění sloupce <xref:System.Windows.Forms.DataGridView> ovládací 
 - <xref:System.Windows.Forms.DataGridViewColumn.Width%2A?displayProperty=nameWithType>
 - <xref:System.Windows.Forms.DataGridViewColumn.Resizable%2A?displayProperty=nameWithType>
 - <xref:System.Windows.Forms.Control.RightToLeft%2A?displayProperty=nameWithType>
-- [Změna velikosti sloupců a řádků v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/resizing-columns-and-rows-in-the-windows-forms-datagridview-control.md)
+- [Změna velikosti sloupců a řádků v ovládacím prvku Windows Forms DataGridView](resizing-columns-and-rows-in-the-windows-forms-datagridview-control.md)

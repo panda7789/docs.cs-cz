@@ -4,30 +4,30 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - managed HTML DOM
 ms.assetid: a017dd5c-cd7b-47e4-952c-f4f54cb48409
-ms.openlocfilehash: 5c3882e29caa0c327242ed3e815b7c17ef0e2075
-ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
+ms.openlocfilehash: c18c6df29f79e9bde8474fa38e45dea03d4e0020
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56746675"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57721898"
 ---
 # <a name="using-the-managed-html-document-object-model"></a>Použití modelu spravovaného objektu dokumentu HTML
 Spravovaný model (DOM) objektu dokumentu HTML poskytuje obálku na základě [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] pro třídy HTML vystavené aplikace Internet Explorer. Použít tyto třídy manipulovat s HTML stránek hostovaných v <xref:System.Windows.Forms.WebBrowser> ovládacího prvku, nebo vytvářet nové stránky od začátku.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Postupy: Přístup k modelu objektu spravovaného dokumentu HTML](../../../../docs/framework/winforms/controls/how-to-access-the-managed-html-document-object-model.md)  
+ [Postupy: Přístup k modelu objektu spravovaného dokumentu HTML](how-to-access-the-managed-html-document-object-model.md)  
  Popisuje, jak získat platnou instanci <xref:System.Windows.Forms.HtmlDocument> z aplikace Windows Forms nebo <xref:System.Windows.Forms.UserControl> hostované v aplikaci Internet Explorer.  
   
- [Postupy: Přístup ke zdroji HTML v objektovém modelu spravovaného dokumentu HTML](../../../../docs/framework/winforms/controls/how-to-access-the-html-source-in-the-managed-html-document-object-model.md)  
+ [Postupy: Přístup ke zdroji HTML v objektovém modelu spravovaného dokumentu HTML](how-to-access-the-html-source-in-the-managed-html-document-object-model.md)  
  Popisuje, jak získat zdrojový kód HTML původní, bez úprav a tom, jak získat zdroje "živé", který odráží aktuální stav modelu DOM.  
   
- [Postupy: Změna stylů v elementu v modelu objektu spravovaného dokumentu HTML](../../../../docs/framework/winforms/controls/how-to-change-styles-on-an-element-in-the-managed-html-document-object-model.md)  
+ [Postupy: Změna stylů v elementu v modelu objektu spravovaného dokumentu HTML](how-to-change-styles-on-an-element-in-the-managed-html-document-object-model.md)  
  Popisuje, jak pracovat s styly, které se používají k řízení vizuální zobrazení elementů.  
   
- [Přístup k rámcům ve spravovaném modelu DOM (Document Object Model) HTML](../../../../docs/framework/winforms/controls/accessing-frames-in-the-managed-html-document-object-model.md)  
+ [Přístup k rámcům ve spravovaném modelu DOM (Document Object Model) HTML](accessing-frames-in-the-managed-html-document-object-model.md)  
  Popisuje, co jsou snímky a sady rámců a jak získat přístup k modelu DOM rámce.  
   
- [Přístup k nevystaveným členům ve spravovaném modelu DOM (Document Object Model) HTML](../../../../docs/framework/winforms/controls/accessing-unexposed-members-on-the-managed-html-document-object-model.md)  
+ [Přístup k nevystaveným členům ve spravovaném modelu DOM (Document Object Model) HTML](accessing-unexposed-members-on-the-managed-html-document-object-model.md)  
  Popisuje, jak pro přístup ke členům základní modelu DOM, které nemají ekvivalent spravované.  
   
 ## <a name="reference"></a>Odkaz  
@@ -38,4 +38,4 @@ Spravovaný model (DOM) objektu dokumentu HTML poskytuje obálku na základě [!
  <xref:System.Windows.Forms.HtmlWindow>  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Ovládací prvek WebBrowser](../../../../docs/framework/winforms/controls/webbrowser-control-windows-forms.md)  
+ [Ovládací prvek WebBrowser](webbrowser-control-windows-forms.md)  

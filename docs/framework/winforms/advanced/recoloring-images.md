@@ -6,33 +6,33 @@ helpviewer_keywords:
 - recoloring images
 - examples [Windows Forms], recoloring images
 ms.assetid: f28c54fd-9c80-4f6f-b242-55f7ffcda84b
-ms.openlocfilehash: 6a85a0637e86657d68b5ea34d8c6eea74cb31af8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b6ec90f5102b562a252218be84aa7b3141e05b83
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33525951"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57708818"
 ---
 # <a name="recoloring-images"></a>Přebarvení obrázků
-Přebarvení je proces změny barvy obrázku. Některé příklady přebarvení jsou změna jedné barvy na jiný, úpravě intenzitou barvu, která je relativní vzhledem k jiné barvy, úpravě také průraznost nebo kontrast všechny barvy a převádění barvy na odstínech šedi.  
+Přebarvení je proces přizpůsobení barev obrázku. Některé příklady přebarvení se mění jednu barvu na jiný, úprava intenzita barvy vzhledem k jiné barvy, úprava jas a kontrast mezi všechny barvy a převodu barev odstíny šedé.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Postupy: Použití matice barev k transformaci jedné barvy](../../../../docs/framework/winforms/advanced/how-to-use-a-color-matrix-to-transform-a-single-color.md)  
+ [Postupy: Použití matice barev k transformaci jedné barvy](how-to-use-a-color-matrix-to-transform-a-single-color.md)  
  Popisuje použití matice barev k transformaci barvy.  
   
- [Postupy: Posunutí barev obrázku](../../../../docs/framework/winforms/advanced/how-to-translate-image-colors.md)  
- Ukazuje, jak přeložit barvy použití matice barev.  
+ [Postupy: Translate Image Colors](how-to-translate-image-colors.md)  
+ Ukazuje, jak převést barvy použití matice barev.  
   
- [Použití transformací pro škálování barev](../../../../docs/framework/winforms/advanced/using-transformations-to-scale-colors.md)  
- Vysvětluje postup škálování barev použití matice barev.  
+ [Použití transformací pro škálování barev](using-transformations-to-scale-colors.md)  
+ Vysvětluje, jak škálovat barvy použití matice barev.  
   
- [Postupy: Otáčení barev](../../../../docs/framework/winforms/advanced/how-to-rotate-colors.md)  
- Popisuje, jak otočit barvu použití matice barev.  
+ [Postupy: Otáčení barev](how-to-rotate-colors.md)  
+ Popisuje, jak otočení barev použití matice barev.  
   
- [Postupy: Zkosení barev](../../../../docs/framework/winforms/advanced/how-to-shear-colors.md)  
+ [Postupy: Zkosení barev](how-to-shear-colors.md)  
  Definuje zkosení a vysvětluje, jak zkosení barev použití matice barev.  
   
- [Postupy: Použití tabulky přemapování barev](../../../../docs/framework/winforms/advanced/how-to-use-a-color-remap-table.md)  
+ [Postupy: Použití tabulky přemapování barev](how-to-use-a-color-remap-table.md)  
  Definuje přemapování a ukazuje způsob použití tabulky přemapování barev.  
   
 ## <a name="reference"></a>Odkaz  
@@ -43,11 +43,11 @@ Přebarvení je proces změny barvy obrázku. Některé příklady přebarvení 
  Tato třída popisuje a obsahuje odkazy na všechny její členy.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Obrázky, rastrové obrázky a metasoubory](../../../../docs/framework/winforms/advanced/images-bitmaps-and-metafiles.md)  
- Poskytuje seznam témata týkající se různé typy bitové kopie.  
+ [Obrázky, rastrové obrázky a metasoubory](images-bitmaps-and-metafiles.md)  
+ Obsahuje seznam témata týkající se různé typy imagí.  
   
- [Práce s obrázky, rastrovými obrázky, ikonami a metasoubory](../../../../docs/framework/winforms/advanced/working-with-images-bitmaps-icons-and-metafiles.md)  
- Obsahuje seznam témat, která ukazují, jak používat jiné typy obrázků.  
+ [Práce s obrázky, rastrovými obrázky, ikonami a metasoubory](working-with-images-bitmaps-icons-and-metafiles.md)  
+ Obsahuje seznam témat, která ukazují, jak použít různé typy imagí.  
   
- [Použití spravovaných grafických tříd](../../../../docs/framework/winforms/advanced/using-managed-graphics-classes.md)  
- Obsahuje seznam témat s popisem použití spravovaných grafických tříd.
+ [Použití spravovaných grafických tříd](using-managed-graphics-classes.md)  
+ Obsahuje seznam témat, který popisuje způsob použití spravovaných grafických tříd.

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - data grids [Windows Forms], row sizing
 - data grids [Windows Forms], sizing options
 ms.assetid: a5620a9c-0d06-41e3-8934-c25ddb16c9e6
-ms.openlocfilehash: d3082da455df7497a4c54f963017910e54ac677a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a236289939b9355e961ce1bfc9a7e0ff5349a95a
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54536305"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57717905"
 ---
 # <a name="sizing-options-in-the-windows-forms-datagridview-control"></a>Možnosti změny velikosti v ovládacím prvku Windows Forms DataGridView
 <xref:System.Windows.Forms.DataGridView> řádky, sloupce a záhlaví můžete změnit velikost v důsledku mnoho různých výskytů. V následující tabulce jsou uvedeny těchto událostech.  
@@ -61,7 +61,7 @@ ms.locfileid: "54536305"
 ## <a name="automatic-sizing"></a>Automatické nastavení velikosti  
  Existují dva druhy automatické velikosti v <xref:System.Windows.Forms.DataGridView> ovládacího prvku: režim vyplnění sloupce a automatické velikosti podle obsahu.  
   
- Režim vyplnění sloupce způsobí, že viditelných sloupců v ovládacím prvku celou šířku zobrazované oblasti ovládacího prvku. Další informace o tomto režimu najdete v tématu [režim vyplnění sloupce v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/column-fill-mode-in-the-windows-forms-datagridview-control.md).  
+ Režim vyplnění sloupce způsobí, že viditelných sloupců v ovládacím prvku celou šířku zobrazované oblasti ovládacího prvku. Další informace o tomto režimu najdete v tématu [režim vyplnění sloupce v ovládacím prvku Windows Forms DataGridView](column-fill-mode-in-the-windows-forms-datagridview-control.md).  
   
  Můžete také nakonfigurovat řádky, sloupce a záhlaví má automaticky upravovat jejich velikosti podle jejich obsah buňky. V takovém případě úpravu velikosti vyvolá se při každé změně obsahu buňky.  
   
@@ -154,6 +154,6 @@ ms.locfileid: "54536305"
 - <xref:System.Windows.Forms.DataGridViewAutoSizeColumnsMode>
 - <xref:System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode>
 - <xref:System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode>
-- [Změna velikosti sloupců a řádků v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/resizing-columns-and-rows-in-the-windows-forms-datagridview-control.md)
-- [Režim vyplnění sloupce v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/column-fill-mode-in-the-windows-forms-datagridview-control.md)
-- [Postupy: Nastavení režimů změny velikosti ovládacího prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/how-to-set-the-sizing-modes-of-the-windows-forms-datagridview-control.md)
+- [Změna velikosti sloupců a řádků v ovládacím prvku Windows Forms DataGridView](resizing-columns-and-rows-in-the-windows-forms-datagridview-control.md)
+- [Režim vyplnění sloupce v ovládacím prvku Windows Forms DataGridView](column-fill-mode-in-the-windows-forms-datagridview-control.md)
+- [Postupy: Nastavení režimů změny velikosti ovládacího prvku Windows Forms DataGridView](how-to-set-the-sizing-modes-of-the-windows-forms-datagridview-control.md)

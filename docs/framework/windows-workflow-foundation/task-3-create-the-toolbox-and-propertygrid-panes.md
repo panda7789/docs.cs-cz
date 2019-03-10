@@ -2,21 +2,21 @@
 title: 'Úloha 3: Vytvořit panel nástrojů a PropertyGrid podokna'
 ms.date: 03/30/2017
 ms.assetid: 72c1546a-eed5-4f0f-a616-719a163414f4
-ms.openlocfilehash: 8e332c2caa43e1c9703272d7f2be16b545c44fd3
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 45819577c39185a5d95da81521cd541087a64efc
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54558420"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57721216"
 ---
 # <a name="task-3-create-the-toolbox-and-propertygrid-panes"></a>Úloha 3: Vytvořit panel nástrojů a PropertyGrid podokna
 V této úloze vytvoříte **nástrojů** a **PropertyGrid** podokna a přidat je do změněným hostováním [!INCLUDE[wfd1](../../../includes/wfd1-md.md)].  
   
- Pro srovnání kód, který by měl být v souboru MainWindow.xaml.cs po dokončení tři úkoly v [změna hostování návrháře postupu provádění](../../../docs/framework/windows-workflow-foundation/rehosting-the-workflow-designer.md) řady témat najdete na konci tohoto tématu.  
+ Pro srovnání kód, který by měl být v souboru MainWindow.xaml.cs po dokončení tři úkoly v [změna hostování návrháře postupu provádění](rehosting-the-workflow-designer.md) řady témat najdete na konci tohoto tématu.  
   
 ### <a name="to-create-the-toolbox-and-add-it-to-the-grid"></a>Vytvořit panel nástrojů a přidat do mřížky  
   
-1.  Otevřete projekt HostingApplication můžete získat pomocí následujícího postupu popsaného v [úloha 2: Hostování návrháře postupu provádění](../../../docs/framework/windows-workflow-foundation/task-2-host-the-workflow-designer.md).  
+1.  Otevřete projekt HostingApplication můžete získat pomocí následujícího postupu popsaného v [úloha 2: Hostování návrháře postupu provádění](task-2-host-the-workflow-designer.md).  
   
 2.  V **Průzkumníka řešení** podokně klikněte pravým tlačítkem na soubor MainWindow.xaml a vyberte **zobrazit kód**.  
   
@@ -213,6 +213,6 @@ namespace HostingApplication
 ```  
   
 ## <a name="see-also"></a>Viz také:
-- [Změna hostování Návrháře postupu provádění](../../../docs/framework/windows-workflow-foundation/rehosting-the-workflow-designer.md)
-- [Úloha 1: Vytvoření nové aplikace Windows Presentation Foundation](../../../docs/framework/windows-workflow-foundation/task-1-create-a-new-wpf-app.md)
-- [Úloha 2: Hostování návrháře postupu provádění](../../../docs/framework/windows-workflow-foundation/task-2-host-the-workflow-designer.md)
+- [Změna hostování Návrháře postupu provádění](rehosting-the-workflow-designer.md)
+- [Úloha 1: Vytvoření nové aplikace Windows Presentation Foundation](task-1-create-a-new-wpf-app.md)
+- [Úloha 2: Hostování návrháře postupu provádění](task-2-host-the-workflow-designer.md)

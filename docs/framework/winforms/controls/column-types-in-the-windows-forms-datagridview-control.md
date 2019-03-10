@@ -6,12 +6,12 @@ helpviewer_keywords:
 - DataGridView control [Windows Forms], column types
 - data grids [Windows Forms], columns
 ms.assetid: f0a0a9f1-8757-4bfd-891f-d7d12870dbed
-ms.openlocfilehash: d4331d5f502165a73c7f322358b2d6ee88d92977
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 8fd3ad0da369702c2a5e27c0b8b9a39a71c372ac
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54591581"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57724567"
 ---
 # <a name="column-types-in-the-windows-forms-datagridview-control"></a>Typy sloupců v ovládacím prvku Windows Forms DataGridView
 <xref:System.Windows.Forms.DataGridView> Ovládací prvek používá několik typů sloupce k zobrazení jeho informace a umožňují uživatelům změnit nebo přidat informace.  
@@ -30,7 +30,7 @@ ms.locfileid: "54591581"
 |<xref:System.Windows.Forms.DataGridViewButtonColumn>|Slouží k zobrazení tlačítka v buňkách. Nelze automaticky generovat při vytváření vazby. Obvykle se používá jako nevázaných sloupců.|  
 |<xref:System.Windows.Forms.DataGridViewComboBoxColumn>|Slouží k zobrazení v buňkách rozevírací seznamy. Nelze automaticky generovat při vytváření vazby. Obvykle vázané na data ručně.|  
 |<xref:System.Windows.Forms.DataGridViewLinkColumn>|Slouží k zobrazení odkazů v buňkách. Nelze automaticky generovat při vytváření vazby. Obvykle vázané na data ručně.|  
-|Typ vlastního sloupce|Můžete vytvořit vlastní třídu sloupec děděním <xref:System.Windows.Forms.DataGridViewColumn> třída nebo některý z jeho odvozené třídy, které poskytují vlastní vzhled, chování nebo hostované ovládací prvky. Další informace najdete v tématu [jak: Přizpůsobení buněk a sloupců v ovládacím prvku Windows Forms DataGridView rozšířením jejich chování a vzhledu](../../../../docs/framework/winforms/controls/customize-cells-and-columns-in-the-datagrid-by-extending-behavior.md)|  
+|Typ vlastního sloupce|Můžete vytvořit vlastní třídu sloupec děděním <xref:System.Windows.Forms.DataGridViewColumn> třída nebo některý z jeho odvozené třídy, které poskytují vlastní vzhled, chování nebo hostované ovládací prvky. Další informace najdete v tématu [jak: Přizpůsobení buněk a sloupců v ovládacím prvku Windows Forms DataGridView rozšířením jejich chování a vzhledu](customize-cells-and-columns-in-the-datagrid-by-extending-behavior.md)|  
   
  Tyto typy sloupců jsou popsány podrobněji v následujících částech.  
   
@@ -65,7 +65,7 @@ ms.locfileid: "54591581"
 ## <a name="datagridviewcomboboxcolumn"></a>DataGridViewComboBoxColumn  
  S <xref:System.Windows.Forms.DataGridViewComboBoxColumn>, můžete zobrazit sloupec buňky, které obsahují pole se seznamem rozevíracího seznamu. To je užitečné pro zadávání dat v polích, která mohou obsahovat pouze konkrétní hodnoty, jako je například sloupec kategorie produktů tabulky v ukázkové databázi Northwind.  
   
- Můžete naplnit rozevíracího seznamu, použít pro všechny buňky stejným způsobem by naplnit <xref:System.Windows.Forms.ComboBox> rozevíracího seznamu, buď ručně přes kolekci vrácené poskytovatelem <xref:System.Windows.Forms.DataGridViewComboBoxColumn.Items%2A> vlastnost, nebo pomocí vazby ke zdroji dat prostřednictvím <xref:System.Windows.Forms.DataGridViewComboBoxColumn.DataSource%2A>, <xref:System.Windows.Forms.DataGridViewComboBoxColumn.DisplayMember%2A>, a <xref:System.Windows.Forms.DataGridViewComboBoxColumn.ValueMember%2A> vlastnosti. Další informace najdete v tématu [ovládacího prvku ComboBox](../../../../docs/framework/winforms/controls/combobox-control-windows-forms.md).  
+ Můžete naplnit rozevíracího seznamu, použít pro všechny buňky stejným způsobem by naplnit <xref:System.Windows.Forms.ComboBox> rozevíracího seznamu, buď ručně přes kolekci vrácené poskytovatelem <xref:System.Windows.Forms.DataGridViewComboBoxColumn.Items%2A> vlastnost, nebo pomocí vazby ke zdroji dat prostřednictvím <xref:System.Windows.Forms.DataGridViewComboBoxColumn.DataSource%2A>, <xref:System.Windows.Forms.DataGridViewComboBoxColumn.DisplayMember%2A>, a <xref:System.Windows.Forms.DataGridViewComboBoxColumn.ValueMember%2A> vlastnosti. Další informace najdete v tématu [ovládacího prvku ComboBox](combobox-control-windows-forms.md).  
   
  Buňka skutečné hodnoty lze svázat zdroj dat používaný <xref:System.Windows.Forms.DataGridView> ovládacího prvku tak, že nastavíte <xref:System.Windows.Forms.DataGridViewColumn.DataPropertyName%2A> vlastnost <xref:System.Windows.Forms.DataGridViewComboBoxColumn?displayProperty=nameWithType>.  
   
@@ -89,7 +89,7 @@ ms.locfileid: "54591581"
 - <xref:System.Windows.Forms.DataGridViewImageColumn>
 - <xref:System.Windows.Forms.DataGridViewTextBoxColumn>
 - <xref:System.Windows.Forms.DataGridViewLinkColumn>
-- [Ovládací prvek DataGridView](../../../../docs/framework/winforms/controls/datagridview-control-windows-forms.md)
-- [Postupy: Zobrazení obrázků v buňkách ovládacího prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/how-to-display-images-in-cells-of-the-windows-forms-datagridview-control.md)
-- [Postupy: Práce se sloupci obrázků v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/how-to-work-with-image-columns-in-the-windows-forms-datagridview-control.md)
-- [Přizpůsobení ovládacího prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/customizing-the-windows-forms-datagridview-control.md)
+- [Ovládací prvek DataGridView](datagridview-control-windows-forms.md)
+- [Postupy: Zobrazení obrázků v buňkách ovládacího prvku Windows Forms DataGridView](how-to-display-images-in-cells-of-the-windows-forms-datagridview-control.md)
+- [Postupy: Práce se sloupci obrázků v ovládacím prvku Windows Forms DataGridView](how-to-work-with-image-columns-in-the-windows-forms-datagridview-control.md)
+- [Přizpůsobení ovládacího prvku Windows Forms DataGridView](customizing-the-windows-forms-datagridview-control.md)

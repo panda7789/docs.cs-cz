@@ -2,12 +2,12 @@
 title: Typy s možnou hodnotou Null odkazů
 description: Tento článek obsahuje přehled typů s povolenou hodnotou Null odkaz, přidá C# 8. Dozvíte se, jak tato funkce poskytuje zabezpečení proti výjimky odkaz s hodnotou null pro nové i stávající projekty.
 ms.date: 02/19/2019
-ms.openlocfilehash: 1eb4ccb5ec4397cb81aab37c13a31c41533238e9
-ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
+ms.openlocfilehash: 9ce9efb890f0eff5a6c6747f96c143a4d093dbfb
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57203277"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57725022"
 ---
 # <a name="nullable-reference-types"></a>Typy s možnou hodnotou Null odkazů
 
@@ -41,7 +41,7 @@ Kompilátor používá statickou analýzu k určení, zda se ví, že s možnou 
 name!.Length;
 ```
 
-Si můžete přečíst podrobnosti o tomto operátoru v [koncept typy s možnou hodnotou Null odkazů](https://github.com/dotnet/csharplang/blob/master/proposals/csharp-8.0/nullable-reference-types-specification.md#the-null-forgiving-operator) specifikace návrhu na Githubu.
+Si můžete přečíst podrobnosti o tomto operátoru v [koncept typy s možnou hodnotou Null odkazů](../../_csharplang/proposals/csharp-8.0/nullable-reference-types-specification.md#the-null-forgiving-operator) specifikace návrhu na Githubu.
 
 ## <a name="nullability-of-types"></a>Možnost použití hodnoty Null z typů
 

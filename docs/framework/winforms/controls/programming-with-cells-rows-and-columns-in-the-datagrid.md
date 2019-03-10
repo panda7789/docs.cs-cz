@@ -8,33 +8,33 @@ helpviewer_keywords:
 - DataGridView control [Windows Forms], programming with grid elements
 - rows [Windows Forms], data grids
 ms.assetid: 0d76f7e4-4149-42c6-9118-bb37d6669dc5
-ms.openlocfilehash: d447d60286980b2364dfc828ca613f2d05f1fe8d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a32b42a63225dbd94233258a5d61c8dd4a0b728f
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54557718"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57715407"
 ---
 # <a name="programming-with-cells-rows-and-columns-in-the-windows-forms-datagridview-control"></a>Programování s buňkami, řádky a sloupci v ovládacím prvku Windows Forms DataGridView
 Tato část obsahuje témata, které ukazují různé programovací úkoly zahrnující buňky, řádku a sloupci objekty.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Postupy: Přidání ToolTips do jednotlivých buněk v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/add-tooltips-to-individual-cells-in-a-wf-datagridview-control.md)  
+ [Postupy: Přidání ToolTips do jednotlivých buněk v ovládacím prvku Windows Forms DataGridView](add-tooltips-to-individual-cells-in-a-wf-datagridview-control.md)  
  Popisuje způsob zpracování <xref:System.Windows.Forms.DataGridView.CellFormatting> událost různé popisy pro jednotlivé buňky.  
   
- [Postupy: Provedení vlastní akce na základě změn v buňce ovládacího prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/perform-a-custom-action-based-on-changes-in-a-cell-of-a-datagrid.md)  
+ [Postupy: Provedení vlastní akce na základě změn v buňce ovládacího prvku Windows Forms DataGridView](perform-a-custom-action-based-on-changes-in-a-cell-of-a-datagrid.md)  
  Popisuje způsob zpracování <xref:System.Windows.Forms.DataGridView.CellValueChanged> a <xref:System.Windows.Forms.DataGridView.CellStateChanged> události.  
   
- [Postupy: Manipulace s pruhy v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/how-to-manipulate-bands-in-the-windows-forms-datagridview-control.md)  
+ [Postupy: Manipulace s pruhy v ovládacím prvku Windows Forms DataGridView](how-to-manipulate-bands-in-the-windows-forms-datagridview-control.md)  
  Popisuje, jak programovat s objekty typu <xref:System.Windows.Forms.DataGridViewBand>, což je základní typ pro řádky a sloupce.  
   
- [Postupy: Manipulace s řádky v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/how-to-manipulate-rows-in-the-windows-forms-datagridview-control.md)  
+ [Postupy: Manipulace s řádky v ovládacím prvku Windows Forms DataGridView](how-to-manipulate-rows-in-the-windows-forms-datagridview-control.md)  
  Popisuje, jak programovat s objekty typu `DataGridViewRow`.  
   
- [Postupy: Manipulace se sloupci v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/how-to-manipulate-columns-in-the-windows-forms-datagridview-control.md)  
+ [Postupy: Manipulace se sloupci v ovládacím prvku Windows Forms DataGridView](how-to-manipulate-columns-in-the-windows-forms-datagridview-control.md)  
  Popisuje, jak programovat s objekty typu `DataGridViewColumn`.  
   
- [Postupy: Práce se sloupci obrázků v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/how-to-work-with-image-columns-in-the-windows-forms-datagridview-control.md)  
+ [Postupy: Práce se sloupci obrázků v ovládacím prvku Windows Forms DataGridView](how-to-work-with-image-columns-in-the-windows-forms-datagridview-control.md)  
  Popisuje, jak programovat s `DataGridViewImageColumn` třídy.  
   
 ## <a name="reference"></a>Odkaz  
@@ -51,9 +51,9 @@ Tato část obsahuje témata, které ukazují různé programovací úkoly zahrn
  Poskytuje referenční dokumentaci pro <xref:System.Windows.Forms.DataGridViewColumn> třídy.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Základní funkce sloupce, řádku a buňky v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/basic-column-row-and-cell-features-wf-datagridview-control.md)  
+ [Základní funkce sloupce, řádku a buňky v ovládacím prvku Windows Forms DataGridView](basic-column-row-and-cell-features-wf-datagridview-control.md)  
  Obsahuje témata, která popisují běžně používané vlastnosti buněk, řádků a sloupců.  
   
 ## <a name="see-also"></a>Viz také:
-- [Ovládací prvek DataGridView](../../../../docs/framework/winforms/controls/datagridview-control-windows-forms.md)
-- [Typy sloupců v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/column-types-in-the-windows-forms-datagridview-control.md)
+- [Ovládací prvek DataGridView](datagridview-control-windows-forms.md)
+- [Typy sloupců v ovládacím prvku Windows Forms DataGridView](column-types-in-the-windows-forms-datagridview-control.md)

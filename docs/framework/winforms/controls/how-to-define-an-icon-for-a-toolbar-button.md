@@ -13,18 +13,18 @@ helpviewer_keywords:
 - icons [Windows Forms], toolbar buttons
 - ToolBar control [Windows Forms], adding icons to buttons
 ms.assetid: 84db98b4-8566-49ce-b2c8-1fd66a5eb3a0
-ms.openlocfilehash: fa622245155a1e7bdeb0184b0cd5ff07f651bfbc
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: fb4a492b081cd9f9e3ccc1d47a4120c705058dd0
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54644791"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57712744"
 ---
 # <a name="how-to-define-an-icon-for-a-toolbar-button"></a>Postupy: Definování ikony pro tlačítko ToolBar
 > [!NOTE]
 >  <xref:System.Windows.Forms.ToolStrip> Ovládací prvek nahradí a přidá funkce, které <xref:System.Windows.Forms.ToolBar> řízení; však <xref:System.Windows.Forms.ToolBar> ovládací prvek se zachovává kvůli zpětné kompatibilitě a budoucí použití, pokud se rozhodnete.  
   
- <xref:System.Windows.Forms.ToolBar> tlačítka budou moct zobrazit ikony v nich pro snadnou identifikaci uživatelů. Toho můžete dosáhnout přidávání obrázků [ImageList – komponenta](../../../../docs/framework/winforms/controls/imagelist-component-windows-forms.md) komponentu a potom přidružení <xref:System.Windows.Forms.ImageList> komponentu s <xref:System.Windows.Forms.ToolBar> ovládacího prvku.  
+ <xref:System.Windows.Forms.ToolBar> tlačítka budou moct zobrazit ikony v nich pro snadnou identifikaci uživatelů. Toho můžete dosáhnout přidávání obrázků [ImageList – komponenta](imagelist-component-windows-forms.md) komponentu a potom přidružení <xref:System.Windows.Forms.ImageList> komponentu s <xref:System.Windows.Forms.ToolBar> ovládacího prvku.  
   
 ### <a name="to-set-an-icon-for-a-toolbar-button-programmatically"></a>Chcete-li nastavit ikonu pro tlačítko toolbar prostřednictvím kódu programu  
   
@@ -117,6 +117,6 @@ ms.locfileid: "54644791"
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Forms.ToolBar>
-- [Postupy: Aktivační události nabídky pro tlačítka panelu nástrojů](../../../../docs/framework/winforms/controls/how-to-trigger-menu-events-for-toolbar-buttons.md)
-- [Ovládací prvek ToolBar](../../../../docs/framework/winforms/controls/toolbar-control-windows-forms.md)
-- [Komponenta ImageList](../../../../docs/framework/winforms/controls/imagelist-component-windows-forms.md)
+- [Postupy: Aktivační události nabídky pro tlačítka panelu nástrojů](how-to-trigger-menu-events-for-toolbar-buttons.md)
+- [Ovládací prvek ToolBar](toolbar-control-windows-forms.md)
+- [Komponenta ImageList](imagelist-component-windows-forms.md)

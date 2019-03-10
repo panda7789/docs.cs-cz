@@ -2,48 +2,48 @@
 title: Podpora pro dotazy
 ms.date: 03/30/2017
 ms.assetid: 093c22f5-3294-4642-857a-5252233d6796
-ms.openlocfilehash: 5c46ed5ae2fc2cc2275bfa7251fe5f8fa346c1f4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2314a111cb4c4b82cacd91b7638ef0c8eaba5c3c
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33517988"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57711998"
 ---
 # <a name="support-for-queries"></a>Podpora pro dotazy
-Ukládání Instance pracovního postupu SQL zaznamenává sadu známých vlastností v úložišti. Uživatelé mohou odesílat dotazy na instancí na základě těchto vlastností. Následující seznam obsahuje některé z těchto známých vlastností:  
+Store Instance pracovního postupu SQL zaznamenává sadu dobře známé vlastnosti v úložišti. Uživatelé mohou odesílat dotazy na instance založené na těchto vlastností. Následující seznam obsahuje některé z těchto dobře známé vlastnosti:  
   
--   **Název lokality.** Název webu, který obsahuje službu.  
+-   **Název webu.** Název webu, který obsahuje službu.  
   
--   **Relativní cesta.** Cesta aplikace relativně k webu.  
+-   **Cesta relativní aplikace.** Cesta k aplikaci vzhledem k webu.  
   
--   **Cesta relativní služby.** Cesta relativní k aplikaci služby.  
+-   **Cesta relativní služby.** Cesta ke službě vzhledem k aplikaci.  
   
 -   **Název služby.** Název služby  
   
--   **Namespace služby.** Název oboru názvů, který služba používá.  
+-   **Služba Namespace.** Název oboru názvů, který služba používá.  
   
--   **Aktuálního počítače.**  
+-   **Aktuálním počítači.**  
   
--   **Poslední počítač**. Počítač, na kterém byla spuštěna instance pracovního postupu služby čas poslední.  
+-   **Poslední počítač**. Počítač, na kterém běžel instance služby pracovního postupu posledního.  
   
 > [!NOTE]
->  Pro scénáře s vlastním hostováním pomocí hostitele služby pracovního postupu naplní se pouze poslední čtyři vlastnosti. Pro scénáře aplikace pracovního postupu se importují pouze poslední vlastnost.  
+>  Pro scénáře, v místním prostředí pomocí hostitele služby pracovního postupu naplní se pouze poslední čtyři vlastnosti. U scénářů s aplikace pracovního postupu se vyplní pouze poslední vlastnost.  
   
- Modul runtime pracovního postupu poskytuje hodnoty pro první tři vlastnosti. Hostitel služby pracovního postupu poskytuje hodnota **pozastavit důvod** vlastnost. Poskytuje hodnoty pro samotného úložiště Instance pracovního postupu SQL **poslední aktualizovat počítač** vlastnost.  
+ Hodnoty pro první tři vlastnosti dodá modul runtime pracovního postupu. Poskytuje hodnoty pro tohoto hostitele služby pracovního postupu **pozastavit důvod** vlastnost. Určuje hodnoty pro Store Instance pracovního postupu SQL, samotný **poslední aktualizovat počítač** vlastnost.  
   
- Funkce úložiště Instance pracovního postupu SQL také umožňuje určit, že vlastní vlastnosti, pro které chcete uložit hodnoty v databázi trvalosti a, které chcete použít v dotazech. Další informace o vlastní povýšení najdete v tématu [rozšiřitelnost úložiště](../../../docs/framework/windows-workflow-foundation/store-extensibility.md).  
+ Funkce SQL Store Instance pracovního postupu také umožňuje určit, že vlastní vlastnosti, pro které chcete hodnoty uložte do databáze trvalosti a, které chcete použít v dotazech. Další informace o vlastních propagačních akcí, naleznete v tématu [Store rozšíření](store-extensibility.md).  
   
-## <a name="views"></a>zobrazení  
- Instance úložiště obsahuje následující zobrazení. V tématu [schéma databáze trvalost](../../../docs/framework/windows-workflow-foundation/persistence-database-schema.md) další podrobnosti.  
+## <a name="views"></a>Zobrazení  
+ V úložišti instancí obsahuje následující zobrazení. Zobrazit [schéma databáze trvalosti](persistence-database-schema.md) další podrobnosti.  
   
 ### <a name="the-instances-view"></a>Zobrazení instancí  
- Zobrazení instancí obsahuje následující pole:  
+ Zobrazení instance obsahuje následující pole:  
   
 1.  **ID**  
   
 2.  **PendingTimer**  
   
-3.  **Čas vytvoření**  
+3.  **CreationTime**  
   
 4.  **LastUpdatedTime**  
   
@@ -61,7 +61,7 @@ Ukládání Instance pracovního postupu SQL zaznamenává sadu známých vlastn
   
 11. **ExecutionStatus**  
   
-12. **IsInitialized.**  
+12. **IsInitialized**  
   
 13. **IsSuspended**  
   
@@ -91,12 +91,12 @@ Ukládání Instance pracovního postupu SQL zaznamenává sadu známých vlastn
 5.  **ServiceNamespace**  
   
 ### <a name="the-instancepromotedproperties-view"></a>Zobrazení InstancePromotedProperties  
- Zobrazení InstancePromotedProperties obsahuje následující pole. Podrobnosti propagovaných vlastností najdete v tématu [rozšiřitelnost úložiště](../../../docs/framework/windows-workflow-foundation/store-extensibility.md) tématu.  
+ Zobrazení InstancePromotedProperties obsahuje následující pole. Podrobnosti o propagované vlastnosti, najdete v článku [Store rozšíření](store-extensibility.md) tématu.  
   
-1.  **identifikátor instanceId**  
+1.  **InstanceId**  
   
 2.  **EncodingOption**  
   
 3.  **PromotionName**  
   
-4.  **Hodnota #** (rozsah pole z **Value1** k **Value64**).
+4.  **Hodnota #** (rozsah pole z **hodnota1** k **Value64**).

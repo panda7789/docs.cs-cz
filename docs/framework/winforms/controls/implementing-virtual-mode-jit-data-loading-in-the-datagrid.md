@@ -12,12 +12,12 @@ helpviewer_keywords:
 - DataGridView control [Windows Forms], large data sets
 - virtual mode [Windows Forms], just-in-time data loading
 ms.assetid: c2a052b9-423c-4ff7-91dc-d8c7c79345f6
-ms.openlocfilehash: c8290fe7722dba564bf5addab662a9f6b62d924f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 44c985cef035e33e88ba246584efcb30fe0e9b97
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54607878"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57705555"
 ---
 # <a name="implementing-virtual-mode-with-just-in-time-data-loading-in-the-windows-forms-datagridview-control"></a>Implementace virtuálního režimu s načítáním dat za běhu v ovládacím prvku Windows Forms DataGridView
 Jedním z důvodů implementace virtuálního režimu v <xref:System.Windows.Forms.DataGridView> je ovládací prvek k načtení dat pouze dle potřeby. Tento postup se nazývá *načítání dat just-in-time*.  
@@ -26,7 +26,7 @@ Jedním z důvodů implementace virtuálního režimu v <xref:System.Windows.For
   
  Následující části popisují způsob použití <xref:System.Windows.Forms.DataGridView> ovládacího prvku s mezipamětí just-in-time.  
   
- Pokud chcete zkopírovat kód v tomto tématu jako jeden seznam, naleznete v tématu [jak: Implementace virtuálního režimu s načítáním dat za běhu v Windows Forms DataGridView – ovládací prvek](../../../../docs/framework/winforms/controls/virtual-mode-with-just-in-time-data-loading-in-the-datagrid.md).  
+ Pokud chcete zkopírovat kód v tomto tématu jako jeden seznam, naleznete v tématu [jak: Implementace virtuálního režimu s načítáním dat za běhu v Windows Forms DataGridView – ovládací prvek](virtual-mode-with-just-in-time-data-loading-in-the-datagrid.md).  
   
 ## <a name="the-form"></a>Formulář  
  Následující příklad kódu definuje formulář obsahující jen pro čtení <xref:System.Windows.Forms.DataGridView> ovládací prvek, který komunikuje `Cache` objektu <xref:System.Windows.Forms.DataGridView.CellValueNeeded> obslužné rutiny události. `Cache` Objekt spravuje místně uložené hodnoty a používá `DataRetriever` objektu k načtení hodnoty v tabulce objednávky v ukázkové databázi Northwind. `DataRetriever` Objektu, který implementuje `IDataPageRetriever` rozhraní vyžadované `Cache` třídy, slouží k inicializaci <xref:System.Windows.Forms.DataGridView> řídit řádků a sloupců.  
@@ -34,24 +34,24 @@ Jedním z důvodů implementace virtuálního režimu v <xref:System.Windows.For
  `IDataPageRetriever`, `DataRetriever`, A `Cache` typy jsou popsány dále v tomto tématu.  
   
 > [!NOTE]
->  Ukládání citlivých informací, jako jsou hesla, v rámci připojovací řetězec může ovlivnit zabezpečení aplikace. Bezpečnější způsob, jak řídit přístup k databázi, je ověřování systému Windows (označované také jako integrované zabezpečení). Další informace najdete v tématu [chrání informace o připojení](../../../../docs/framework/data/adonet/protecting-connection-information.md).  
+>  Ukládání citlivých informací, jako jsou hesla, v rámci připojovací řetězec může ovlivnit zabezpečení aplikace. Bezpečnější způsob, jak řídit přístup k databázi, je ověřování systému Windows (označované také jako integrované zabezpečení). Další informace najdete v tématu [chrání informace o připojení](../../data/adonet/protecting-connection-information.md).  
   
- [!code-csharp[System.Windows.Forms.DataGridView.Virtual_lazyloading#100](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.Virtual_lazyloading/CS/lazyloading.cs#100)]
- [!code-vb[System.Windows.Forms.DataGridView.Virtual_lazyloading#100](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.Virtual_lazyloading/VB/lazyloading.vb#100)]  
+ [!code-csharp[System.Windows.Forms.DataGridView.Virtual_lazyloading#100](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.Virtual_lazyloading/CS/lazyloading.cs#100)]
+ [!code-vb[System.Windows.Forms.DataGridView.Virtual_lazyloading#100](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.Virtual_lazyloading/VB/lazyloading.vb#100)]  
   
 ## <a name="the-idatapageretriever-interface"></a>Rozhraní IDataPageRetriever  
  Následující příklad kódu definuje `IDataPageRetriever` rozhraní, které je implementované `DataRetriever` třídy. Pouze metody deklarované v tomto rozhraní je `SupplyPageOfData` metodu, která vyžaduje počáteční řádek indexu a počet řádků v jediné stránce data. Tyto hodnoty jsou používány implementátora načíst podmnožinu dat z datového zdroje.  
   
  A `Cache` objektu používá k načtení dat dvě počáteční stránky implementace tohoto rozhraní během konstrukce. Pokaždé, když se potřeby bez vyrovnávací paměti hodnotu mezipaměti odstraní jednu z těchto stránek a požádá o novou stránku obsahující hodnotu z `IDataPageRetriever`.  
   
- [!code-csharp[System.Windows.Forms.DataGridView.Virtual_lazyloading#201](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.Virtual_lazyloading/CS/lazyloading.cs#201)]
- [!code-vb[System.Windows.Forms.DataGridView.Virtual_lazyloading#201](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.Virtual_lazyloading/VB/lazyloading.vb#201)]  
+ [!code-csharp[System.Windows.Forms.DataGridView.Virtual_lazyloading#201](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.Virtual_lazyloading/CS/lazyloading.cs#201)]
+ [!code-vb[System.Windows.Forms.DataGridView.Virtual_lazyloading#201](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.Virtual_lazyloading/VB/lazyloading.vb#201)]  
   
 ## <a name="the-dataretriever-class"></a>Třída DataRetriever  
  Následující příklad kódu definuje `DataRetriever` třídy, která implementuje `IDataPageRetriever` rozhraní pro načtení stránek ze serveru. `DataRetriever` Třída rovněž poskytuje `Columns` a `RowCount` vlastnosti, které <xref:System.Windows.Forms.DataGridView> ovládací prvek používá k vytvoření potřebných sloupců a přidejte odpovídající počet prázdných řádků do <xref:System.Windows.Forms.DataGridView.Rows%2A> kolekce. Přidání prázdných řádků je nezbytné, aby ovládací prvek se bude chovat, jako by šlo obsahuje všechna data v tabulce. To znamená, že jezdce do oblasti posuvníku bude mít odpovídající velikost, a uživatel bude mít přístup všechny řádky v tabulce. Řádky jsou vyplněny <xref:System.Windows.Forms.DataGridView.CellValueNeeded> obslužné rutiny události pouze v případě, že jsou přešli do zobrazení.  
   
- [!code-csharp[System.Windows.Forms.DataGridView.Virtual_lazyloading#200](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.Virtual_lazyloading/CS/lazyloading.cs#200)]
- [!code-vb[System.Windows.Forms.DataGridView.Virtual_lazyloading#200](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.Virtual_lazyloading/VB/lazyloading.vb#200)]  
+ [!code-csharp[System.Windows.Forms.DataGridView.Virtual_lazyloading#200](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.Virtual_lazyloading/CS/lazyloading.cs#200)]
+ [!code-vb[System.Windows.Forms.DataGridView.Virtual_lazyloading#200](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.Virtual_lazyloading/VB/lazyloading.vb#200)]  
   
 ## <a name="the-cache-class"></a>Třída Cache  
  Následující příklad kódu definuje `Cache` třídu, která spravuje dvě stránky vyplní pomocí dat `IDataPageRetriever` implementace. `Cache` Třída definuje vnitřního `DataPage` struktura, která obsahuje <xref:System.Data.DataTable> pro uložení hodnot v jedné mezipaměti stránky a která vypočítá řádku indexy, které představují horní a dolní hranice stránky.  
@@ -60,8 +60,8 @@ Jedním z důvodů implementace virtuálního režimu v <xref:System.Windows.For
   
  Za předpokladu, že počet řádků na stránce dat je stejný jako počet řádků, které se dají zobrazit na obrazovce najednou, tento model umožňuje uživatelům procházení tabulky efektivně vrátit k naposledy zobrazené stránky.  
   
- [!code-csharp[System.Windows.Forms.DataGridView.Virtual_lazyloading#300](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.Virtual_lazyloading/CS/lazyloading.cs#300)]
- [!code-vb[System.Windows.Forms.DataGridView.Virtual_lazyloading#300](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.Virtual_lazyloading/VB/lazyloading.vb#300)]  
+ [!code-csharp[System.Windows.Forms.DataGridView.Virtual_lazyloading#300](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.Virtual_lazyloading/CS/lazyloading.cs#300)]
+ [!code-vb[System.Windows.Forms.DataGridView.Virtual_lazyloading#300](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.Virtual_lazyloading/VB/lazyloading.vb#300)]  
   
 ## <a name="additional-considerations"></a>Další informace  
  Předchozí příklady kódu slouží jako ukázka načítání dat just-in-time. Je potřeba upravit kód pro vaše konkrétní potřeby k dosažení maximální efektivity. Minimálně je potřeba vybrat odpovídající hodnotu pro počet řádků na stránce dat v mezipaměti. Tato hodnota je předána do `Cache` konstruktoru. Počet řádků na stránce by měl být méně než počet řádků, které se dají zobrazit najednou v vaše <xref:System.Windows.Forms.DataGridView> ovládacího prvku.  
@@ -73,8 +73,8 @@ Jedním z důvodů implementace virtuálního režimu v <xref:System.Windows.For
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.DataGridView.VirtualMode%2A>
-- [Ladění výkonu v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/performance-tuning-in-the-windows-forms-datagridview-control.md)
-- [Doporučené postupy pro změnu velikosti ovládacího prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/best-practices-for-scaling-the-windows-forms-datagridview-control.md)
-- [Virtuální režim v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/virtual-mode-in-the-windows-forms-datagridview-control.md)
-- [Návod: Implementace virtuálního režimu v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/implementing-virtual-mode-wf-datagridview-control.md)
-- [Postupy: Implementace virtuálního režimu s načítáním dat za běhu v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/virtual-mode-with-just-in-time-data-loading-in-the-datagrid.md)
+- [Ladění výkonu v ovládacím prvku Windows Forms DataGridView](performance-tuning-in-the-windows-forms-datagridview-control.md)
+- [Doporučené postupy pro změnu velikosti ovládacího prvku Windows Forms DataGridView](best-practices-for-scaling-the-windows-forms-datagridview-control.md)
+- [Virtuální režim v ovládacím prvku Windows Forms DataGridView](virtual-mode-in-the-windows-forms-datagridview-control.md)
+- [Návod: Implementace virtuálního režimu v ovládacím prvku Windows Forms DataGridView](implementing-virtual-mode-wf-datagridview-control.md)
+- [Postupy: Implementace virtuálního režimu s načítáním dat za běhu v ovládacím prvku Windows Forms DataGridView](virtual-mode-with-just-in-time-data-loading-in-the-datagrid.md)

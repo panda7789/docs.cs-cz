@@ -7,27 +7,27 @@ helpviewer_keywords:
 - PrintPreview control (using designer)
 - print preview [Windows Forms], custom interface (using designer)
 ms.assetid: 3fdb2e46-92a3-4e26-bb8d-63a89087b337
-ms.openlocfilehash: 7f4b6f71427a750799d102a8602d3a2c1d43d034
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 28e85efa7d929bb6305bf2a22d71e2a1d986e216
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33534310"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57723891"
 ---
 # <a name="printpreviewcontrol-control-windows-forms"></a>PrintPreviewControl – ovládací prvek (Windows Forms)
-Windows Forms `PrintPreviewControl` se používá k zobrazení dokumentu, který se zobrazí při tisku. Tento ovládací prvek má žádné tlačítka nebo další prvky uživatelského rozhraní, takže obvykle použijete `PrintPreviewControl` pouze v případě, že chcete napsat vlastní náhledu uživatelské rozhraní. Pokud chcete standardní uživatelské rozhraní, použijte <xref:System.Windows.Forms.PrintPreviewDialog> ovládacího prvku.  
+Windows Forms `PrintPreviewControl` slouží k zobrazení dokumentu, jak bude vypadat po vytištění. Tento ovládací prvek nemá žádné tlačítka nebo další prvky uživatelského rozhraní, proto obvykle použijete `PrintPreviewControl` pouze v případě, že chcete napsat vlastní náhled tisku uživatelské rozhraní. Pokud chcete, aby se standardní uživatelské rozhraní, použijte <xref:System.Windows.Forms.PrintPreviewDialog> ovládacího prvku.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Přehled ovládacího prvku PrintPreviewControl](../../../../docs/framework/winforms/controls/printpreviewcontrol-control-overview-windows-forms.md)  
- Představuje obecné koncepty `PrintPreviewControl`, který můžete použít k návrhu vlastní dialogové okno náhledu tisku nebo součást.  
+ [Přehled ovládacího prvku PrintPreviewControl](printpreviewcontrol-control-overview-windows-forms.md)  
+ Představuje obecné koncepty `PrintPreviewControl`, což vám umožní navrhnout vlastní okno náhledu nebo komponenty.  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Forms.PrintPreviewControl>  
  Poskytuje referenční informace o třídě a její členy.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Ovládací prvek PrintPreviewDialog](../../../../docs/framework/winforms/controls/printpreviewdialog-control-windows-forms.md)  
- Popisuje jiný způsob, jak vytvořit funkce náhledu tisku.  
+ [Ovládací prvek PrintPreviewDialog](printpreviewdialog-control-windows-forms.md)  
+ Popisuje alternativní způsob vytvoření funkce náhledu.  
   
- [Ovládací prvky používané ve Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
- Poskytuje úplný seznam Windows Forms – ovládací prvky, odkazy na informace o jejich používání.
+ [Ovládací prvky používané ve Windows Forms](controls-to-use-on-windows-forms.md)  
+ Obsahuje úplný seznam všech ovládacích prvcích Windows Forms, s odkazy na informace o jejich použití.

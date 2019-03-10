@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 075ea4c3-900c-4f8a-9dd2-13ea6804346b
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8b5ad28fbfd668819b0bcab30c33892679b4bd8c
-ms.sourcegitcommit: b8ace47d839f943f785b89e2fff8092b0bf8f565
+ms.openlocfilehash: 3dbb5af9c5cf1d8796544592602c645584d21a04
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55674916"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57711785"
 ---
 # <a name="high-dpi-support-in-windows-forms"></a>Podpora vysoké DPI ve Windows Forms
 
@@ -49,7 +49,7 @@ Kromě toho Konfigurace vysoké rozlišení DPI podpory ve vaší aplikaci Windo
 
 - Povolit sledování DPI podle monitoru *app.config* souboru.
 
-  Windows Forms zavádí nový [ `<System.Windows.Forms.ApplicationConfigurationSection>` ](../../../docs/framework/configure-apps/file-schema/winforms/index.md) element na podporu nových funkcí a od verze rozhraní .NET Framework 4.7 přidání vlastního nastavení. Abyste mohli využívat nové funkce, které podporují vysoké rozlišení DPI, přidejte následující konfigurační soubor aplikace.   
+  Windows Forms zavádí nový [ `<System.Windows.Forms.ApplicationConfigurationSection>` ](../configure-apps/file-schema/winforms/index.md) element na podporu nových funkcí a od verze rozhraní .NET Framework 4.7 přidání vlastního nastavení. Abyste mohli využívat nové funkce, které podporují vysoké rozlišení DPI, přidejte následující konfigurační soubor aplikace.   
 
   ```xml
   <System.Windows.Forms.ApplicationConfigurationSection>
@@ -84,7 +84,7 @@ Nastavení `DpiAwareness` hodnota, která se `PerMonitorV2` umožňuje všechny 
 </System.Windows.Forms.ApplicationConfigurationSection>    
 ```
 
-Seznam jednotlivých klíče a jejich hodnoty, najdete v části [přidat Element konfigurace aplikace Windows Forms](../../../docs/framework/configure-apps/file-schema/winforms/windows-forms-add-configuration-element.md).
+Seznam jednotlivých klíče a jejich hodnoty, najdete v části [přidat Element konfigurace aplikace Windows Forms](../configure-apps/file-schema/winforms/windows-forms-add-configuration-element.md).
 
 ## <a name="new-dpi-change-events"></a>Nové události změny DPI
 
@@ -132,5 +132,5 @@ Console.WriteLine(AppDomain.CurrentDomain.SetupInformation.TargetFrameworkName);
 
 ## <a name="see-also"></a>Viz také:
 
-- [Přidání konfiguračního prvku Windows Forms](../../../docs/framework/configure-apps/file-schema/winforms/windows-forms-add-configuration-element.md)
-- [Úprava velikosti a měřítka Windows Forms](../../../docs/framework/winforms/adjusting-the-size-and-scale-of-windows-forms.md)
+- [Přidání konfiguračního prvku Windows Forms](../configure-apps/file-schema/winforms/windows-forms-add-configuration-element.md)
+- [Úprava velikosti a měřítka Windows Forms](adjusting-the-size-and-scale-of-windows-forms.md)

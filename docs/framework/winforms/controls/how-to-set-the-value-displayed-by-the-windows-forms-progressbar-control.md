@@ -8,12 +8,12 @@ helpviewer_keywords:
 - ProgressBar control [Windows Forms], setting value displayed
 - progress controls [Windows Forms], setting value displayed
 ms.assetid: 0e5010ad-1e9a-4271-895e-5a3d24d37a26
-ms.openlocfilehash: d1be2bb2c909b8074f1092d4ce138feff5c9607f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a889d6e5cd40833353c1b294031621b7b289ac4d
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54496033"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57715890"
 ---
 # <a name="how-to-set-the-value-displayed-by-the-windows-forms-progressbar-control"></a>Postupy: Nastavení hodnoty zobrazované v ovládacím prvku Windows Forms ProgressBar
 > [!IMPORTANT]
@@ -227,5 +227,5 @@ ms.locfileid: "54496033"
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Forms.ProgressBar>
 - <xref:System.Windows.Forms.ToolStripProgressBar>
-- [Přehled ovládacího prvku ProgressBar](../../../../docs/framework/winforms/controls/progressbar-control-overview-windows-forms.md)
-- [Ovládací prvek ProgressBar](../../../../docs/framework/winforms/controls/progressbar-control-windows-forms.md)
+- [Přehled ovládacího prvku ProgressBar](progressbar-control-overview-windows-forms.md)
+- [Ovládací prvek ProgressBar](progressbar-control-windows-forms.md)

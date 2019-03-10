@@ -1,5 +1,5 @@
 ---
-title: 'Průvodce: Uspořádání obsahu WPF ve Windows Forms během návrhu'
+title: 'Návod: Uspořádání obsahu WPF ve Windows Forms během návrhu'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - WPF user control [Windows Forms], hosting in a layout panel
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - Windows Forms, anchoring and docking WPF content
 - interoperability [WPF]
 ms.assetid: 5efb1c53-1484-43d6-aa8a-f4861b99bb8a
-ms.openlocfilehash: 543546de4f9b93deb5fa70c98608246e9c06e4f7
-ms.sourcegitcommit: bef803e2025642df39f2f1e046767d89031e0304
+ms.openlocfilehash: 0738d1522c8ade8f026a3bf69fbff0bc2c2d6d85
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56304554"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57712458"
 ---
-# <a name="walkthrough-arranging-wpf-content-on-windows-forms-at-design-time"></a>Průvodce: Uspořádání obsahu WPF ve Windows Forms během návrhu
+# <a name="walkthrough-arranging-wpf-content-on-windows-forms-at-design-time"></a>Návod: Uspořádání obsahu WPF ve Windows Forms během návrhu
 Tento návod ukazuje způsob použití funkcí rozložení Windows Forms, jako je například ukotvení a zarovnávacích čar, k uspořádání ovládacích prvků Windows Presentation Foundation (WPF).
 
  V tomto podrobném návodu můžete provádět následující úlohy:
@@ -54,7 +54,7 @@ Tento návod ukazuje způsob použití funkcí rozložení Windows Forms, jako j
   
 #### <a name="to-create-wpf-controls"></a>Chcete-li vytvořit ovládací prvky WPF  
   
-1.  Přidat nový WPF <xref:System.Windows.Controls.UserControl> do projektu. Použití výchozího názvu pro typ ovládacího prvku `UserControl1.xaml`. Další informace najdete v tématu [názorný postup: Vytvoření nového obsahu WPF ve Windows Forms v době návrhu](../../../../docs/framework/winforms/advanced/walkthrough-creating-new-wpf-content-on-windows-forms-at-design-time.md).  
+1.  Přidat nový WPF <xref:System.Windows.Controls.UserControl> do projektu. Použití výchozího názvu pro typ ovládacího prvku `UserControl1.xaml`. Další informace najdete v tématu [názorný postup: Vytvoření nového obsahu WPF ve Windows Forms v době návrhu](walkthrough-creating-new-wpf-content-on-windows-forms-at-design-time.md).  
   
 2.  V návrhovém zobrazení, ujistěte se, že `UserControl1` zaškrtnuto. Další informace najdete v tématu [jak: Vyberte a přesuňte prvků na návrhové ploše](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/bb514527(v=vs.100)).  
   
@@ -90,7 +90,7 @@ Tento návod ukazuje způsob použití funkcí rozložení Windows Forms, jako j
      Obě <xref:System.Windows.Forms.Integration.ElementHost> ovládací prvky se přizpůsobí do nového rozložení.  
   
 ## <a name="using-snaplines-to-align-wpf-controls"></a>Zarovnání ovládacích prvků WPF pomocí zarovnávacích čar  
- Zarovnávacích čar bylo možné snadno zarovnání ovládacích prvků ve formuláři. Zarovnání ovládacích prvků WPF také můžete použít zarovnávacích čar. Další informace najdete v tématu [názorný postup: Uspořádání ovládacích prvků ve Windows Forms pomocí zarovnávacích čar](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-snaplines.md).  
+ Zarovnávacích čar bylo možné snadno zarovnání ovládacích prvků ve formuláři. Zarovnání ovládacích prvků WPF také můžete použít zarovnávacích čar. Další informace najdete v tématu [názorný postup: Uspořádání ovládacích prvků ve Windows Forms pomocí zarovnávacích čar](../controls/walkthrough-arranging-controls-on-windows-forms-using-snaplines.md).  
   
 #### <a name="to-use-snaplines-to-align-wpf-controls"></a>Určuje zarovnání WPF pomocí zarovnávacích čar  
   
@@ -145,14 +145,14 @@ Tento návod ukazuje způsob použití funkcí rozložení Windows Forms, jako j
   
      Všechny tři <xref:System.Windows.Forms.Integration.ElementHost> odpovídajícím způsobem změňte velikost ovládacích prvků.  
   
-     Další informace najdete v tématu [jak: Ukotvení a podřízených ovládacích prvků v ovládacím prvku TableLayoutPanel](../../../../docs/framework/winforms/controls/how-to-anchor-and-dock-child-controls-in-a-tablelayoutpanel-control.md).  
+     Další informace najdete v tématu [jak: Ukotvení a podřízených ovládacích prvků v ovládacím prvku TableLayoutPanel](../controls/how-to-anchor-and-dock-child-controls-in-a-tablelayoutpanel-control.md).  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Forms.Integration.ElementHost>
 - <xref:System.Windows.Forms.Integration.WindowsFormsHost>
-- [Postupy: Ukotvení a podřízených ovládacích prvků v ovládacím prvku TableLayoutPanel](../../../../docs/framework/winforms/controls/how-to-anchor-and-dock-child-controls-in-a-tablelayoutpanel-control.md)
-- [Postupy: Zarovnání ovládacího prvku k okrajům formulářů během návrhu](../../../../docs/framework/winforms/controls/how-to-align-a-control-to-the-edges-of-forms-at-design-time.md)
-- [Návod: Uspořádání ovládacích prvků ve Windows Forms pomocí zarovnávacích čar](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-snaplines.md)
-- [Migrace a interoperabilita](../../../../docs/framework/wpf/advanced/migration-and-interoperability.md)
-- [Používání ovládacích prvků WPF](../../../../docs/framework/winforms/advanced/using-wpf-controls.md)
+- [Postupy: Ukotvení a podřízených ovládacích prvků v ovládacím prvku TableLayoutPanel](../controls/how-to-anchor-and-dock-child-controls-in-a-tablelayoutpanel-control.md)
+- [Postupy: Zarovnání ovládacího prvku k okrajům formulářů během návrhu](../controls/how-to-align-a-control-to-the-edges-of-forms-at-design-time.md)
+- [Návod: Uspořádání ovládacích prvků ve Windows Forms pomocí zarovnávacích čar](../controls/walkthrough-arranging-controls-on-windows-forms-using-snaplines.md)
+- [Migrace a interoperabilita](../../wpf/advanced/migration-and-interoperability.md)
+- [Používání ovládacích prvků WPF](using-wpf-controls.md)
 - [Návrh kódu XAML v sadě Visual Studio](/visualstudio/designers/designing-xaml-in-visual-studio)

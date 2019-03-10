@@ -7,12 +7,12 @@ helpviewer_keywords:
 - color dialog box [Windows Forms], about color dialog box
 - ColorDialog component [Windows Forms], about ColorDialog
 ms.assetid: 6dbdd8f0-f697-4728-bb09-7ea156f6d800
-ms.openlocfilehash: 9ef7d667b582d3b227f0f0e8af5e7e0335cd4860
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 7dd48c8df0a36262962df596e8efadf4de1c2cd3
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54570106"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57713329"
 ---
 # <a name="colordialog-component-overview-windows-forms"></a>ColorDialog – přehled komponenty (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.ColorDialog> komponenta je předem nakonfigurované dialogové okno, které umožňuje uživateli vybrat barvu z palety a přidat vlastní barvy palety. Tento. Je stejný dialogovém okně, které se zobrazí v ostatních aplikace založené na Windows k výběru barev. Použijte v rámci vaší aplikace založené na Windows jako jednoduchým řešením namísto dialogové okno Vlastní konfigurace.  
@@ -21,6 +21,6 @@ Windows Forms <xref:System.Windows.Forms.ColorDialog> komponenta je předem nako
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Forms.ColorDialog>
-- [Komponenta ColorDialog](../../../../docs/framework/winforms/controls/colordialog-component-windows-forms.md)
-- [Ovládací prvky a součásti dialogového okna](../../../../docs/framework/winforms/controls/dialog-box-controls-and-components-windows-forms.md)
-- [Postupy: Změna vzhledu Windows Forms ColorDialog – komponenta](../../../../docs/framework/winforms/controls/how-to-change-the-appearance-of-the-windows-forms-colordialog-component.md)
+- [Komponenta ColorDialog](colordialog-component-windows-forms.md)
+- [Ovládací prvky a součásti dialogového okna](dialog-box-controls-and-components-windows-forms.md)
+- [Postupy: Změna vzhledu Windows Forms ColorDialog – komponenta](how-to-change-the-appearance-of-the-windows-forms-colordialog-component.md)

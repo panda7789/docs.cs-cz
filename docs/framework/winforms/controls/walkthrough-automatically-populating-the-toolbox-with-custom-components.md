@@ -1,19 +1,19 @@
 ---
-title: 'Průvodce: Automatické vyplnění nástrojů vlastními komponentami'
+title: 'Návod: Automatické vyplnění nástrojů vlastními komponentami'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - IToolboxService interface
 - Toolbox [Windows Forms], populating
 - custom components [Windows Forms], adding to Toolbox
 ms.assetid: 2fa1e3e8-6b9f-42b2-97c0-2be57444dba4
-ms.openlocfilehash: b4c6bf42bdd1ba6b0f9ccddb730dc517dbaab963
-ms.sourcegitcommit: bef803e2025642df39f2f1e046767d89031e0304
+ms.openlocfilehash: 8ddb248d2e011714ddc7fb68474f0e92e9ad8b5e
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56304086"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57723969"
 ---
-# <a name="walkthrough-automatically-populating-the-toolbox-with-custom-components"></a>Průvodce: Automatické vyplnění nástrojů vlastními komponentami
+# <a name="walkthrough-automatically-populating-the-toolbox-with-custom-components"></a>Návod: Automatické vyplnění nástrojů vlastními komponentami
 Pokud vaše komponenty jsou definovány projektu v aktuálně otevřené řešení, se automaticky zobrazí v **nástrojů**, třeba akce. Můžete také ručně naplnit **nástrojů** pomocí vlastních součástí s použitím [tlačítko panelu nástrojů položky dialogové okno (Visual Studio)](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/dyca0t6t(v=vs.100)), ale **nástrojů** bere v úvahu položky ve vašem řešení sestavení výstupy s následujícími charakteristikami:  
   
 -   Implementuje <xref:System.ComponentModel.IComponent>;  
@@ -97,4 +97,4 @@ Pokud vaše komponenty jsou definovány projektu v aktuálně otevřené řešen
 - [Obecné, Návrhář formulářů Windows, dialogové okno Možnosti](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/5aazxs78(v=vs.100))
 - [Postupy: Manipulace s karty panelu nástrojů](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/66kwe227(v=vs.100))
 - [Zvolte dialogové okno položky panelu nástrojů (Visual Studio)](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/dyca0t6t(v=vs.100))
-- [Vkládání ovládacích prvků do Windows Forms](../../../../docs/framework/winforms/controls/putting-controls-on-windows-forms.md)
+- [Vkládání ovládacích prvků do Windows Forms](putting-controls-on-windows-forms.md)

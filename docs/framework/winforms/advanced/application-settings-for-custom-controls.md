@@ -5,12 +5,12 @@ helpviewer_keywords:
 - custom controls [Windows Forms], application settings
 - application settings [Windows Forms], custom controls
 ms.assetid: f44afb74-76cc-44f2-890a-44b7cdc211a1
-ms.openlocfilehash: 96145a6205c3e80b23f3c69750f7faaec04aabba
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d12caf9ed2cb80d837080badab436b2e9b0b3728
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54526740"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57714343"
 ---
 # <a name="application-settings-for-custom-controls"></a>Nastavení aplikace pro vlastní ovládací prvky
 Je třeba provést určité úlohy poskytnout vlastní ovládací prvky umožňuje zachovat nastavení aplikace, když jsou ovládací prvky jsou hostované v aplikacích třetích stran.  
@@ -26,7 +26,7 @@ Je třeba provést určité úlohy poskytnout vlastní ovládací prvky umožňu
   
 2.  Po ovládací prvek byl vytvořen a umístěné do formuláře, jako například v formuláře vytvořit toto vlastní nastavení třídy <xref:System.Windows.Forms.Form.Load> obslužné rutiny události.  
   
- Pokyny týkající se vytvoření vlastního nastavení třídy naleznete v tématu [jak: Vytvořit nastavení aplikace](../../../../docs/framework/winforms/advanced/how-to-create-application-settings.md).  
+ Pokyny týkající se vytvoření vlastního nastavení třídy naleznete v tématu [jak: Vytvořit nastavení aplikace](how-to-create-application-settings.md).  
   
 ## <a name="settings-keys-and-shared-settings"></a>Nastavení klíče a sdíleným nastavením  
  Některé ovládací prvky lze použít více než jednou v rámci stejného formuláře. Ve většině případů, měli byste tyto ovládací prvky se zachovat jejich vlastní nastavení. S <xref:System.Configuration.IPersistComponentSettings.SettingsKey%2A> vlastnost <xref:System.Configuration.IPersistComponentSettings>, můžete zadat jedinečný řetězec, který slouží k rozlišení více verzí ovládací prvek na formuláři.  
@@ -48,4 +48,4 @@ Je třeba provést určité úlohy poskytnout vlastní ovládací prvky umožňu
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Configuration.ApplicationSettingsBase>
 - <xref:System.Configuration.IPersistComponentSettings>
-- [Architektura nastavení aplikace](../../../../docs/framework/winforms/advanced/application-settings-architecture.md)
+- [Architektura nastavení aplikace](application-settings-architecture.md)

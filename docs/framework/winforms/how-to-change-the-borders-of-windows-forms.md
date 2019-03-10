@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - Windows Forms, changing the borders
 ms.assetid: b3d5fa56-80c6-4b10-b505-f9672307ed55
-ms.openlocfilehash: 5efda369b2059afd350fc947b706fb9f4c27ae14
-ms.sourcegitcommit: 2b986afe4ce9e13bbeec929c9737757eb61de60e
+ms.openlocfilehash: f188e14b304970840bfc35a592a445f68f9d7af7
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56664442"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57713901"
 ---
 # <a name="how-to-change-the-borders-of-windows-forms"></a>Postupy: Změna ohraničení Windows Forms
 Máte několik stylů ohraničení lze vybírat při určování vzhled a chování formulářů Windows. Pomocí změny <xref:System.Windows.Forms.Form.FormBorderStyle%2A> vlastnost, můžete řídit chování změny velikosti ve formuláři. Kromě toho nastavení <xref:System.Windows.Forms.Form.FormBorderStyle%2A> má vliv na způsob zobrazení záhlaví a co tlačítka se může zobrazit na to. Další informace naleznete v tématu <xref:System.Windows.Forms.FormBorderStyle>.  
@@ -46,4 +46,4 @@ Máte několik stylů ohraničení lze vybírat při určování vzhled a chová
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Forms.FormBorderStyle>
 - <xref:System.Windows.Forms.FormBorderStyle.FixedDialog>
-- [Začínáme s Windows Forms](../../../docs/framework/winforms/getting-started-with-windows-forms.md)
+- [Začínáme s Windows Forms](getting-started-with-windows-forms.md)

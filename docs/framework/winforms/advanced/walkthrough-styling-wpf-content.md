@@ -1,19 +1,19 @@
 ---
-title: 'Průvodce: Určení stylu obsahu WPF'
+title: 'Návod: Určení stylu obsahu WPF'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - WPF Designer [Windows Forms], styling WPF content
 - interoperability [WDF]
 - styles [Windows Forms], WPF content
 ms.assetid: e574aac7-7ea4-4cdb-8034-bab541f000df
-ms.openlocfilehash: ef81d9272acdddfc7d547de6f44725481e55dc3e
-ms.sourcegitcommit: bef803e2025642df39f2f1e046767d89031e0304
+ms.openlocfilehash: 6329f25b8ead128c32ae0c7aca1f0bceaac8474c
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56303722"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57712393"
 ---
-# <a name="walkthrough-styling-wpf-content"></a>Průvodce: Určení stylu obsahu WPF
+# <a name="walkthrough-styling-wpf-content"></a>Návod: Určení stylu obsahu WPF
 Tento názorný postup ukazují, jak použít používání stylů pro ovládací prvek Windows Presentation Foundation (WPF) hostovaného ve formuláři Windows.
 
  V tomto podrobném návodu můžete provádět následující úlohy:
@@ -47,7 +47,7 @@ Tento názorný postup ukazují, jak použít používání stylů pro ovládac�
   
 #### <a name="to-create-wpf-control-types"></a>Chcete-li vytvořit typy ovládacích prvků WPF  
   
-1.  Přidat nový WPF <xref:System.Windows.Controls.UserControl> projektu do řešení. Použití výchozího názvu pro typ ovládacího prvku `UserControl1.xaml`. Další informace najdete v tématu [názorný postup: Vytvoření nového obsahu WPF ve Windows Forms v době návrhu](../../../../docs/framework/winforms/advanced/walkthrough-creating-new-wpf-content-on-windows-forms-at-design-time.md).  
+1.  Přidat nový WPF <xref:System.Windows.Controls.UserControl> projektu do řešení. Použití výchozího názvu pro typ ovládacího prvku `UserControl1.xaml`. Další informace najdete v tématu [názorný postup: Vytvoření nového obsahu WPF ve Windows Forms v době návrhu](walkthrough-creating-new-wpf-content-on-windows-forms-at-design-time.md).  
   
 2.  V návrhovém zobrazení, ujistěte se, že `UserControl1` zaškrtnuto. Další informace najdete v tématu [jak: Vyberte a přesuňte prvků na návrhové ploše](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/bb514527(v=vs.100)).  
   
@@ -76,7 +76,7 @@ Tento názorný postup ukazují, jak použít používání stylů pro ovládac�
   
 4.  V XAML zobrazení, vložte následující XAML po `<UserControl>` počáteční značku.  
   
-     Tento XAML vytvoří přechod kontrastní přechodu ohraničení. Po kliknutí na ovládací prvek přechody jsou změněny na generování vzhled při stisknutí tlačítka. Další informace najdete v tématu [styly a šablony](../../../../docs/framework/wpf/controls/styling-and-templating.md).  
+     Tento XAML vytvoří přechod kontrastní přechodu ohraničení. Po kliknutí na ovládací prvek přechody jsou změněny na generování vzhled při stisknutí tlačítka. Další informace najdete v tématu [styly a šablony](../../wpf/controls/styling-and-templating.md).  
   
 ```xaml  
 <UserControl.Resources>  
@@ -152,8 +152,8 @@ Tento názorný postup ukazují, jak použít používání stylů pro ovládac�
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Forms.Integration.ElementHost>
 - <xref:System.Windows.Forms.Integration.WindowsFormsHost>
-- [Migrace a interoperabilita](../../../../docs/framework/wpf/advanced/migration-and-interoperability.md)
-- [Používání ovládacích prvků WPF](../../../../docs/framework/winforms/advanced/using-wpf-controls.md)
+- [Migrace a interoperabilita](../../wpf/advanced/migration-and-interoperability.md)
+- [Používání ovládacích prvků WPF](using-wpf-controls.md)
 - [Návrh kódu XAML v sadě Visual Studio](/visualstudio/designers/designing-xaml-in-visual-studio)
-- [Přehled XAML (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)
-- [Styly a šablony](../../../../docs/framework/wpf/controls/styling-and-templating.md)
+- [Přehled XAML (WPF)](../../wpf/advanced/xaml-overview-wpf.md)
+- [Styly a šablony](../../wpf/controls/styling-and-templating.md)

@@ -2,25 +2,25 @@
 title: Použití WorkflowIdentity a správy verzí
 ms.date: 03/30/2017
 ms.assetid: b8451735-8046-478f-912b-40870a6c0c3a
-ms.openlocfilehash: ad1d3385801b451795c6be321094851339a55f81
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 64abab815c523abce88b00515239155499de9c4c
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57373423"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57708168"
 ---
 # <a name="using-workflowidentity-and-versioning"></a>Použití WorkflowIdentity a správy verzí
-<xref:System.Activities.WorkflowIdentity> nabízí způsob, jak pro pracovní postup přidružit název a <xref:System.Version> s definicí pracovního postupu a tyto informace k trvalé instance práce. Tyto informace identita umožňuje vývojáři aplikace pracovního postupu povolení scénářů, jako je vedle sebe spuštění více verzí modulu definice pracovního postupu a poskytuje základní kámen pro další funkce, jako je například dynamická aktualizace. Toto téma obsahuje přehled používání <xref:System.Activities.WorkflowIdentity> s <xref:System.Activities.WorkflowApplication> hostování. Informace o spuštění vedle sebe definice pracovního postupu ve službě pracovního postupu v tématu [správy verzí vedle sebe ve třídě WorkflowServiceHost](../../../docs/framework/wcf/feature-details/side-by-side-versioning-in-workflowservicehost.md). Informace o dynamické aktualizace, naleznete v tématu [dynamická aktualizace](../../../docs/framework/windows-workflow-foundation/dynamic-update.md).  
+<xref:System.Activities.WorkflowIdentity> nabízí způsob, jak pro pracovní postup přidružit název a <xref:System.Version> s definicí pracovního postupu a tyto informace k trvalé instance práce. Tyto informace identita umožňuje vývojáři aplikace pracovního postupu povolení scénářů, jako je vedle sebe spuštění více verzí modulu definice pracovního postupu a poskytuje základní kámen pro další funkce, jako je například dynamická aktualizace. Toto téma obsahuje přehled používání <xref:System.Activities.WorkflowIdentity> s <xref:System.Activities.WorkflowApplication> hostování. Informace o spuštění vedle sebe definice pracovního postupu ve službě pracovního postupu v tématu [správy verzí vedle sebe ve třídě WorkflowServiceHost](../wcf/feature-details/side-by-side-versioning-in-workflowservicehost.md). Informace o dynamické aktualizace, naleznete v tématu [dynamická aktualizace](dynamic-update.md).  
   
 ## <a name="in-this-topic"></a>V tomto tématu  
   
--   [Pomocí identita WorkflowIdentity](../../../docs/framework/windows-workflow-foundation/using-workflowidentity-and-versioning.md#UsingWorkflowIdentity)  
+-   [Pomocí identita WorkflowIdentity](using-workflowidentity-and-versioning.md#UsingWorkflowIdentity)  
   
-    -   [Pomocí identita WorkflowIdentity spuštění vedle sebe](../../../docs/framework/windows-workflow-foundation/using-workflowidentity-and-versioning.md#SxS)  
+    -   [Pomocí identita WorkflowIdentity spuštění vedle sebe](using-workflowidentity-and-versioning.md#SxS)  
   
--   [Upgrade rozhraní .NET Framework 4 trvalost databází pro podporu správy verzí pracovního postupu](../../../docs/framework/windows-workflow-foundation/using-workflowidentity-and-versioning.md#UpdatingWF4PersistenceDatabases)  
+-   [Upgrade rozhraní .NET Framework 4 trvalost databází pro podporu správy verzí pracovního postupu](using-workflowidentity-and-versioning.md#UpdatingWF4PersistenceDatabases)  
   
-    -   [Aktualizace schématu databáze](../../../docs/framework/windows-workflow-foundation/using-workflowidentity-and-versioning.md#ToUpgrade)  
+    -   [Aktualizace schématu databáze](using-workflowidentity-and-versioning.md#ToUpgrade)  
   
 ## <a name="UsingWorkflowIdentity"></a> Pomocí identita WorkflowIdentity  
  Použití <xref:System.Activities.WorkflowIdentity>vytvořit instanci, nakonfigurujte ji a přidružte jej k <xref:System.Activities.WorkflowApplication> instance. A <xref:System.Activities.WorkflowIdentity> instance obsahuje tři identifikační údaje. <xref:System.Activities.WorkflowIdentity.Name%2A> a <xref:System.Activities.WorkflowIdentity.Version%2A> obsahovat název a <xref:System.Version> a jsou povinné, a <xref:System.Activities.WorkflowIdentity.Package%2A> je volitelný a slouží k určení další řetězec obsahující informace, jako je název sestavení nebo jiné požadované informace. A <xref:System.Activities.WorkflowIdentity> je jedinečné, pokud některý z jeho tři vlastnosti se liší od jiného <xref:System.Activities.WorkflowIdentity>.  
@@ -83,7 +83,7 @@ wfApp.Load(instanceId);
  Načíst <xref:System.Activities.WorkflowIdentity> z trvalé instance práce, <xref:System.Activities.WorkflowApplication.GetInstance%2A> metoda se používá. <xref:System.Activities.WorkflowApplication.GetInstance%2A> Přijímá metodu <xref:System.Activities.WorkflowApplication.Id%2A> instance trvalá pracovního postupu a <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> , který obsahuje trvalé instanci a vrátí <xref:System.Activities.WorkflowApplicationInstance>. A <xref:System.Activities.WorkflowApplicationInstance> obsahuje informace o trvalé instance práce, včetně jeho přidruženého <xref:System.Activities.WorkflowIdentity>. Tato související <xref:System.Activities.WorkflowIdentity> je možné zadat definici správné pracovního postupu při načítání a obnovení instance pracovního postupu hostitele.  
   
 > [!NOTE]
->  S hodnotou null <xref:System.Activities.WorkflowIdentity> je platný a je možné mapovat instancí, které byly trvale uložena s žádné přidružené hostitelem <xref:System.Activities.WorkflowIdentity> k definici pracovního postupu správné. Tato situace může nastat, když aplikace pracovního postupu nebyl původně zapsán s verzí pracovního postupu, nebo když aplikace se upgraduje z [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)]. Další informace najdete v tématu [upgrade rozhraní .NET Framework 4 trvalost databází na podporu pracovních postupů správy verzí](../../../docs/framework/windows-workflow-foundation/using-workflowidentity-and-versioning.md#UpdatingWF4PersistenceDatabases).  
+>  S hodnotou null <xref:System.Activities.WorkflowIdentity> je platný a je možné mapovat instancí, které byly trvale uložena s žádné přidružené hostitelem <xref:System.Activities.WorkflowIdentity> k definici pracovního postupu správné. Tato situace může nastat, když aplikace pracovního postupu nebyl původně zapsán s verzí pracovního postupu, nebo když aplikace se upgraduje z [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)]. Další informace najdete v tématu [upgrade rozhraní .NET Framework 4 trvalost databází na podporu pracovních postupů správy verzí](using-workflowidentity-and-versioning.md#UpdatingWF4PersistenceDatabases).  
   
  V následujícím příkladu `Dictionary<WorkflowIdentity, Activity>` slouží k přidružení <xref:System.Activities.WorkflowIdentity> instance s jejich odpovídající definice pracovního postupu a pracovní postup je začít používat `MortgageWorkflow` definice pracovního postupu, který je přidružený `identityV1` <xref:System.Activities.WorkflowIdentity>.  
   

@@ -1,6 +1,7 @@
 ---
 title: Základy kolekce paměti
-ms.date: 03/30/2017
+description: Zjistěte, jak funguje systému uvolňování paměti a jak ho lze konfigurovat pro optimální výkon.
+ms.date: 03/08/2018
 ms.technology: dotnet-standard
 helpviewer_keywords:
 - garbage collection, generations
@@ -12,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 67c5a20d-1be1-4ea7-8a9a-92b0b08658d2
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a3eae9ea2c5a776d702d0868bdc858f8489f8f78
-ms.sourcegitcommit: d9a0071d0fd490ae006c816f78a563b9946e269a
+ms.openlocfilehash: 9bb09571ea8c9fb3a6d16a9f16c5269326d7f7da
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "55066319"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57712471"
 ---
 # <a name="fundamentals-of-garbage-collection"></a>Základy kolekce paměti
 <a name="top"></a> V modulu common language runtime (CLR) slouží systému uvolňování paměti jako automatický správce paměti. Poskytuje následující výhody:  
@@ -30,28 +31,8 @@ ms.locfileid: "55066319"
   
 -   Zajišťuje bezpečnost paměti a ujistěte se, že objekt nemůže použít obsah jiného objektu.  
   
- Toto téma popisuje základní koncepty uvolňování paměti. Obsahuje následující oddíly:  
-  
--   [Základní informace o paměti](#fundamentals_of_memory)  
-  
--   [Podmínky pro uvolnění paměti](#conditions_for_a_garbage_collection)  
-  
--   [Spravovaná halda](#the_managed_heap)  
-  
--   [Generace](#generations)  
-  
--   [Co se stane během uvolňování paměti](#what_happens_during_a_garbage_collection)  
-  
--   [Manipulace s nespravovanými prostředky](#manipulating_unmanaged_resources)  
-  
--   [Uvolňování paměti pracovní stanice a serveru](#workstation_and_server_garbage_collection)  
-  
--   [Souběžné uvolňování paměti](#concurrent_garbage_collection)  
-  
--   [Uvolnění paměti pracovní stanice na pozadí](#background_garbage_collection)  
-  
--   [Uvolnění paměti serveru na pozadí](#background_server_garbage_collection)  
-  
+ Toto téma popisuje základní koncepty uvolňování paměti. 
+ 
 <a name="fundamentals_of_memory"></a>   
 ## <a name="fundamentals-of-memory"></a>Základní informace o paměti  
  Následující seznam shrnuje důležité pojmy paměti CLR.  
@@ -109,9 +90,9 @@ ms.locfileid: "55066319"
   
  Intrusiveness (četnost a doba trvání) uvolnění paměti je výsledkem objem přidělení a množství paměti naživu na spravované haldě.  
   
- Halda může být považována za souběh dvou hald: haldy velkých objektů a haldy malých objektů.  
+ Halda může být považována za souběh dvou hald: [haldy pro velké objekty](large-object-heap.md) a haldy malých objektů.  
   
- Haldy velkých objektů obsahují velmi velké objekty o velikosti 85 000 bajtů a větší. Pole jsou obvykle objekty na velkých objektových haldách. Navíc není obvyklé velmi velká instance objektu.  
+ [Haldy pro velké objekty](large-object-heap.md) obsahují velmi velké objekty o velikosti 85 000 bajtů a větší. Pole jsou obvykle objekty na velkých objektových haldách. Navíc není obvyklé velmi velká instance objektu.  
   
  [Zpět na začátek](#top)  
   
@@ -143,7 +124,7 @@ ms.locfileid: "55066319"
   
  Velikost dočasného segmentu se liší v závislosti na tom, zda je systém 32 - a 64-bit a na druhu systému uvolňování paměti, kterým je spuštěný. Výchozí hodnoty jsou uvedeny v následující tabulce.  
   
-||32bitová|64bitových|  
+||32bitová|64bitová|  
 |-|-------------|-------------|  
 |Uvolňování paměti pracovní stanice|16 MB|256 MB|  
 |Server globálního katalogu|64 MB|4 GB|  

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - colors [Windows Forms], creating linear gradients
 - gradients
 ms.assetid: 6c88e1cc-1217-4399-ac12-cb37592b9f01
-ms.openlocfilehash: d9ceb10eb5990742271c8d952d9293807c21677a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e47707d040cd7bf67008fab33ac482706963ce39
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54696292"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57725243"
 ---
 # <a name="how-to-create-a-linear-gradient"></a>Postupy: Vytvoření lineárního přechodu
 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] poskytuje vodorovné, svislé a diagonální lineárními přechody. Ve výchozím nastavení změní barvu v lineárním přechodem jednotně. Lineární přechod však můžete přizpůsobit tak, aby se barva mění, nerovnoměrné způsobem.  
@@ -28,14 +28,14 @@ ms.locfileid: "54696292"
   
  Následující obrázek znázorňuje řádku, na tři tečky a obdélníku. Všimněte si, že barva přechodu opakuje jako bod se souřadnicemi vodorovné zvýší nad 200.  
   
- ![Linear Gradient](../../../../docs/framework/winforms/advanced/media/cslineargradient1.png "cslineargradient1")  
+ ![Linear Gradient](./media/cslineargradient1.png "cslineargradient1")  
   
 ### <a name="to-use-horizontal-linear-gradients"></a>Určený horizontální lineárními přechody  
   
 -   Předejte modře neprůhledné červené a neprůhledné jako třetí a čtvrtý argument, v uvedeném pořadí.  
   
-     [!code-csharp[System.Drawing.UsingaGradientBrush#21](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.UsingaGradientBrush/CS/Class1.cs#21)]
-     [!code-vb[System.Drawing.UsingaGradientBrush#21](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.UsingaGradientBrush/VB/Class1.vb#21)]  
+     [!code-csharp[System.Drawing.UsingaGradientBrush#21](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.UsingaGradientBrush/CS/Class1.cs#21)]
+     [!code-vb[System.Drawing.UsingaGradientBrush#21](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.UsingaGradientBrush/VB/Class1.vb#21)]  
   
  V předchozím příkladu složky barvy změnit lineárně při přesunu z vodorovné souřadnice 0 vodorovné souřadnice 200. Bod, jehož první souřadnice je uprostřed mezi 0 a 200 bude mít například komponentu modrý uprostřed mezi 0 a 255.  
   
@@ -53,14 +53,14 @@ ms.locfileid: "54696292"
   
  Následující obrázek znázorňuje výsledný tři tečky a obdélník.  
   
- ![Linear Gradient](../../../../docs/framework/winforms/advanced/media/cslineargradient2.png "cslineargradient2")  
+ ![Linear Gradient](./media/cslineargradient2.png "cslineargradient2")  
   
 ### <a name="to-customize-linear-gradients"></a>Chcete-li přizpůsobit lineárními přechody  
   
 -   Předejte červeně neprůhledný černý a neprůhledné jako třetí a čtvrtý argument, v uvedeném pořadí.  
   
-     [!code-csharp[System.Drawing.UsingaGradientBrush#22](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.UsingaGradientBrush/CS/Class1.cs#22)]
-     [!code-vb[System.Drawing.UsingaGradientBrush#22](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.UsingaGradientBrush/VB/Class1.vb#22)]  
+     [!code-csharp[System.Drawing.UsingaGradientBrush#22](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.UsingaGradientBrush/CS/Class1.cs#22)]
+     [!code-vb[System.Drawing.UsingaGradientBrush#22](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.UsingaGradientBrush/VB/Class1.vb#22)]  
   
  Přechody v předchozích příkladech byly vodorovné; To znamená barva se změní postupně při přesunu podél jakékoli vodorovnou čáru. Můžete také definovat svislé barevné přechody a Úhlopříčný přechody.  
   
@@ -68,15 +68,15 @@ ms.locfileid: "54696292"
   
  Následující obrázek znázorňuje řádku a na tři tečky. Všimněte si, že barvu v elipsa změny postupně při přesunu podél žádný řádek, který je paralelní řádku procházející (0, 0) a (200, 100).  
   
- ![Linear Gradient](../../../../docs/framework/winforms/advanced/media/cslineargradient3.png "cslineargradient3")  
+ ![Linear Gradient](./media/cslineargradient3.png "cslineargradient3")  
   
 ### <a name="to-create-diagonal-linear-gradients"></a>Chcete-li vytvořit Úhlopříčný lineárními přechody  
   
 -   Předejte zeleně neprůhledné modré a neprůhledné jako třetí a čtvrtý argument, v uvedeném pořadí.  
   
-     [!code-csharp[System.Drawing.UsingaGradientBrush#23](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.UsingaGradientBrush/CS/Class1.cs#23)]
-     [!code-vb[System.Drawing.UsingaGradientBrush#23](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.UsingaGradientBrush/VB/Class1.vb#23)]  
+     [!code-csharp[System.Drawing.UsingaGradientBrush#23](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.UsingaGradientBrush/CS/Class1.cs#23)]
+     [!code-vb[System.Drawing.UsingaGradientBrush#23](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.UsingaGradientBrush/VB/Class1.vb#23)]  
   
 ## <a name="see-also"></a>Viz také:
-- [Použití štětce přechodu k vyplnění obrazců](../../../../docs/framework/winforms/advanced/using-a-gradient-brush-to-fill-shapes.md)
-- [Grafika a kreslení v modelu Windows Forms](../../../../docs/framework/winforms/advanced/graphics-and-drawing-in-windows-forms.md)
+- [Použití štětce přechodu k vyplnění obrazců](using-a-gradient-brush-to-fill-shapes.md)
+- [Grafika a kreslení v modelu Windows Forms](graphics-and-drawing-in-windows-forms.md)

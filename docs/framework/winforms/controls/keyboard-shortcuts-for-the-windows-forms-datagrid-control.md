@@ -5,16 +5,16 @@ helpviewer_keywords:
 - keyboard shortcuts [Windows Forms], DataGrid control
 - DataGrid control [Windows Forms], navigation keys
 ms.assetid: a01780f9-20d5-4f5f-808f-c790c9a007a5
-ms.openlocfilehash: cf79fb5594410fc479b0e2dd6f1663715e09af86
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c04340cf2d2c8e318ea7348c978ef943563c24da
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54509529"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57711769"
 ---
 # <a name="keyboard-shortcuts-for-the-windows-forms-datagrid-control"></a>Klávesové zkratky pro ovládací prvek Windows Forms DataGrid
 > [!NOTE]
->  <xref:System.Windows.Forms.DataGridView> Ovládací prvek nahradí a přidá funkce, které <xref:System.Windows.Forms.DataGrid> řízení; však <xref:System.Windows.Forms.DataGrid> ovládací prvek se zachovává kvůli zpětné kompatibilitě a budoucí použití, pokud se rozhodnete. Další informace najdete v tématu [rozdíly mezi Windows Forms DataGridView a DataGrid – ovládací prvky](../../../../docs/framework/winforms/controls/differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).  
+>  <xref:System.Windows.Forms.DataGridView> Ovládací prvek nahradí a přidá funkce, které <xref:System.Windows.Forms.DataGrid> řízení; však <xref:System.Windows.Forms.DataGrid> ovládací prvek se zachovává kvůli zpětné kompatibilitě a budoucí použití, pokud se rozhodnete. Další informace najdete v tématu [rozdíly mezi Windows Forms DataGridView a DataGrid – ovládací prvky](differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).  
   
  V následující tabulce jsou uvedeny klávesové zkratky, které lze použít pro navigaci v rámci formuláře Windows <xref:System.Windows.Forms.DataGrid> ovládacího prvku:  
   
@@ -51,5 +51,5 @@ ms.locfileid: "54509529"
 |Zadejte <xref:System.DBNull.Value?displayProperty=nameWithType> hodnoty do buňky v režimu úprav.|CTRL+0|  
   
 ## <a name="see-also"></a>Viz také:
-- [Přehled ovládacího prvku DataGrid](../../../../docs/framework/winforms/controls/datagrid-control-overview-windows-forms.md)
-- [Ovládací prvek DataGrid](../../../../docs/framework/winforms/controls/datagrid-control-windows-forms.md)
+- [Přehled ovládacího prvku DataGrid](datagrid-control-overview-windows-forms.md)
+- [Ovládací prvek DataGrid](datagrid-control-windows-forms.md)

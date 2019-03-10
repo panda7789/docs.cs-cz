@@ -8,53 +8,53 @@ helpviewer_keywords:
 - Windows Forms, getting started
 - getting started [Windows Forms], Windows Forms
 ms.assetid: a031aa58-5027-4082-b590-df7c12c77dec
-ms.openlocfilehash: 7fc45efec8878ba4a098ad686e53bca375200c23
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 27c26d3575c2a931f407a475c655f29d042a8653
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33538962"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57720433"
 ---
 # <a name="getting-started-with-windows-forms"></a>Začínáme s Windows Forms
-S Windows Forms můžete vytvořit výkonné aplikace pro systém Windows. Následující témata popisují podrobný postup plně využívat Windows Forms k zobrazení dat, zpracování uživatelského vstupu a nasazení aplikací, jednoduše a s rozšířeným zabezpečením.  
+Pomocí Windows Forms můžete vytvořit výkonné aplikace pro systém Windows. Následující témata popisují podrobné postupy Využijte sílu Windows Forms k zobrazení dat, zpracování vstupu uživatele a nasadit vaše aplikace snadno a s rozšířeným zabezpečením.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Přehled produktu Windows Forms](../../../docs/framework/winforms/windows-forms-overview.md)  
- Obsahuje přehled Windows Forms a inteligentní klientské aplikace.  
+ [Přehled produktu Windows Forms](windows-forms-overview.md)  
+ Obsahuje přehled o Windows Forms a inteligentní klientské aplikace.  
   
- [Vytvoření nového formuláře Windows Forms](../../../docs/framework/winforms/creating-a-new-windows-form.md)  
+ [Vytvoření nového formuláře Windows Forms](creating-a-new-windows-form.md)  
  Obsahuje odkazy na témata, která popisují základní koncepty pro vytváření aplikací pro Windows Forms.  
   
- [Vytváření obslužných rutin událostí ve Windows Forms](../../../docs/framework/winforms/creating-event-handlers-in-windows-forms.md)  
- Obsahuje odkazy na témata, která popisují postup vytváření obslužných rutin událostí pro Windows Forms.  
+ [Vytváření obslužných rutin událostí ve Windows Forms](creating-event-handlers-in-windows-forms.md)  
+ Obsahuje odkazy na témata popisující vytváření obslužných rutin událostí Windows Forms.  
   
- [Úprava velikosti a měřítka Windows Forms](../../../docs/framework/winforms/adjusting-the-size-and-scale-of-windows-forms.md)  
- Obsahuje odkazy na témata, která ukazují, jak upravit velikosti a měřítka Windows Forms.  
+ [Úprava velikosti a měřítka Windows Forms](adjusting-the-size-and-scale-of-windows-forms.md)  
+ Obsahuje odkazy na témata, která ukazují postupy nastavení velikosti a měřítka Windows Forms.  
   
- [Změna vzhledu Windows Forms](../../../docs/framework/winforms/changing-the-appearance-of-windows-forms.md)  
- Obsahuje odkazy na témata, která ukazují, jak změnit vzhled formulářových aplikací Windows.  
+ [Změna vzhledu Windows Forms](changing-the-appearance-of-windows-forms.md)  
+ Obsahuje odkazy na témata, která ukazují, jak změnit vzhled aplikace Windows Forms.  
   
- [Windows Forms – ovládací prvky](../../../docs/framework/winforms/controls/index.md)  
- Obsahuje odkazy na témata, která popisují a ukazují, jak pomocí Windows Forms – ovládací prvky a součásti.  
+ [Windows Forms – ovládací prvky](./controls/index.md)  
+ Obsahuje odkazy na témata, které popisují a ukazují, jak používat ovládací prvky Windows Forms a komponenty.  
   
- [Uživatelský vstup ve Windows Forms](../../../docs/framework/winforms/user-input-in-windows-forms.md)  
- Obsahuje odkazy na témata, která popisují a ukazují, jak zpracovat vstup od uživatele v aplikacích Windows Forms.  
+ [Uživatelský vstup ve Windows Forms](user-input-in-windows-forms.md)  
+ Obsahuje odkazy na témata, které popisují a ukazují, jak zpracovat vstup od uživatele v aplikacích Windows Forms.  
   
- [Dialogová okna ve Windows Forms](../../../docs/framework/winforms/dialog-boxes-in-windows-forms.md)  
- Obsahuje odkazy na témata, která popisují různé dialogových oken pro použití v systému Windows Forms.  
+ [Dialogová okna ve Windows Forms](dialog-boxes-in-windows-forms.md)  
+ Obsahuje odkazy na témata popisující různé dialogových oknech pro použití v modelu Windows Forms.  
   
- [Windows Forms – datová vazba](../../../docs/framework/winforms/windows-forms-data-binding.md)  
- Obsahuje odkazy na témata, která popisují architekturu vazby dat Windows Forms a způsobu jeho použití v aplikacích Windows Forms.  
+ [Windows Forms – datová vazba](windows-forms-data-binding.md)  
+ Obsahuje odkazy na témata popisující architektura vazby dat Windows Forms a jak ji používat v aplikacích Windows Forms.  
   
- [Windows Forms – zabezpečení](../../../docs/framework/winforms/windows-forms-security.md)  
- Obsahuje odkazy na témata, které popisují, jak vytvářet aplikace Windows Forms, které mají rozšířené zabezpečení.  
+ [Windows Forms – zabezpečení](windows-forms-security.md)  
+ Obsahuje odkazy na témata, která popisují, jak vytvářet aplikace Windows Forms, které mají zvýšené zabezpečení.  
   
- [ClickOnce – nasazení pro Windows Forms](../../../docs/framework/winforms/clickonce-deployment-for-windows-forms.md)  
- Obsahuje odkazy na témata, které popisují, jak snadno nasadit formulářových aplikací Windows.  
+ [ClickOnce – nasazení pro Windows Forms](clickonce-deployment-for-windows-forms.md)  
+ Obsahuje odkazy na témata, která popisují, jak nasazovat aplikace Windows Forms.  
   
- [Postupy: Přístup ke kolekcím s klíči ve Windows Forms](../../../docs/framework/winforms/how-to-access-keyed-collections-in-windows-forms.md)  
- Demonstruje způsob přístupu k kolekce s klíče spíše než indexy.  
+ [Postupy: Přístup kolekcím s klíči ve Windows Forms](how-to-access-keyed-collections-in-windows-forms.md)  
+ Ukazuje, jak pro přístup ke kolekci pomocí klíčů, nikoli indexy.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Rozšiřování aplikací Windows Forms](../../../docs/framework/winforms/advanced/index.md)  
- Obsahuje odkazy na témata, která popisují pokročilejší koncepty pro vytváření aplikací pro Windows Forms.
+ [Rozšiřování aplikací Windows Forms](./advanced/index.md)  
+ Obsahuje odkazy na témata popisující pokročilejších pojmech pro vytváření aplikací pro Windows Forms.

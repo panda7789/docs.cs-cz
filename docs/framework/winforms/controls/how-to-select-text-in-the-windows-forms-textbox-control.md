@@ -10,12 +10,12 @@ helpviewer_keywords:
 - text boxes [Windows Forms], selecting text programmatically
 - text [Windows Forms], selecting in text boxes programmatically
 ms.assetid: 8c591546-6a01-45c7-8e03-f78431f903b1
-ms.openlocfilehash: df2aec3ff108c0106f29e453a93b06c60e67c6af
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: acb5434911b569b0a663f47ec5de04db13b436d3
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54649411"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57722282"
 ---
 # <a name="how-to-select-text-in-the-windows-forms-textbox-control"></a>Postupy: Výběr textu v ovládacím prvku Windows Forms TextBox
 Text můžete vybrat programově v rozhraní Windows Forms <xref:System.Windows.Forms.TextBox> ovládacího prvku. Pokud vytvoříte funkci, která hledá text pro určitý řetězec, můžete vybrat text, který má vizuální upozornění čtečky nalezený řetězec pozici.  
@@ -32,7 +32,7 @@ Text můžete vybrat programově v rozhraní Windows Forms <xref:System.Windows.
   
 3.  (Volitelné) Přístup prostřednictvím vybraný text <xref:System.Windows.Forms.TextBoxBase.SelectedText%2A> vlastnost.  
   
-     Kód uvedený níže vybere obsah textového pole, když ovládací prvek <xref:System.Windows.Forms.Control.Enter> dojde k události. Tento příklad kontroluje, jestli do textového pole má hodnotu <xref:System.Windows.Forms.TextBox.Text%2A> vlastnost, která není `null` nebo prázdný řetězec. Když bude vybrán, do textového pole, je vybrána aktuální text v textovém poli. `TextBox1_Enter` Obslužné rutiny události musí být vázán na ovládací prvek; další informace naleznete v tématu [jak: Vytváření obslužných rutin událostí pro Windows Forms v době běhu](../../../../docs/framework/winforms/how-to-create-event-handlers-at-run-time-for-windows-forms.md).  
+     Kód uvedený níže vybere obsah textového pole, když ovládací prvek <xref:System.Windows.Forms.Control.Enter> dojde k události. Tento příklad kontroluje, jestli do textového pole má hodnotu <xref:System.Windows.Forms.TextBox.Text%2A> vlastnost, která není `null` nebo prázdný řetězec. Když bude vybrán, do textového pole, je vybrána aktuální text v textovém poli. `TextBox1_Enter` Obslužné rutiny události musí být vázán na ovládací prvek; další informace naleznete v tématu [jak: Vytváření obslužných rutin událostí pro Windows Forms v době běhu](../how-to-create-event-handlers-at-run-time-for-windows-forms.md).  
   
      K otestování v tomto příkladu, stiskněte klávesu Tab, dokud do textového pole má fokus. Pokud kliknete do textového pole, text byl zrušen výběr cesty.  
   
@@ -69,10 +69,10 @@ Text můžete vybrat programově v rozhraní Windows Forms <xref:System.Windows.
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Forms.TextBox>
-- [Přehled ovládacího prvku TextBox](../../../../docs/framework/winforms/controls/textbox-control-overview-windows-forms.md)
-- [Postupy: Řízení místa vložení v ovládacím prvku Windows Forms TextBox](../../../../docs/framework/winforms/controls/how-to-control-the-insertion-point-in-a-windows-forms-textbox-control.md)
-- [Postupy: Vytvoření textového pole hesla pomocí ovládacího prvku Windows Forms TextBox](../../../../docs/framework/winforms/controls/how-to-create-a-password-text-box-with-the-windows-forms-textbox-control.md)
-- [Postupy: Vytvoření pole jen pro čtení textu](../../../../docs/framework/winforms/controls/how-to-create-a-read-only-text-box-windows-forms.md)
-- [Postupy: Vkládání uvozovek do řetězce](../../../../docs/framework/winforms/controls/how-to-put-quotation-marks-in-a-string-windows-forms.md)
-- [Postupy: Zobrazit více řádků v ovládacím prvku Windows Forms TextBox](../../../../docs/framework/winforms/controls/how-to-view-multiple-lines-in-the-windows-forms-textbox-control.md)
-- [Ovládací prvek TextBox](../../../../docs/framework/winforms/controls/textbox-control-windows-forms.md)
+- [Přehled ovládacího prvku TextBox](textbox-control-overview-windows-forms.md)
+- [Postupy: Řízení místa vložení v ovládacím prvku Windows Forms TextBox](how-to-control-the-insertion-point-in-a-windows-forms-textbox-control.md)
+- [Postupy: Vytvoření textového pole hesla pomocí ovládacího prvku Windows Forms TextBox](how-to-create-a-password-text-box-with-the-windows-forms-textbox-control.md)
+- [Postupy: Vytvoření pole jen pro čtení textu](how-to-create-a-read-only-text-box-windows-forms.md)
+- [Postupy: Vkládání uvozovek do řetězce](how-to-put-quotation-marks-in-a-string-windows-forms.md)
+- [Postupy: Zobrazit více řádků v ovládacím prvku Windows Forms TextBox](how-to-view-multiple-lines-in-the-windows-forms-textbox-control.md)
+- [Ovládací prvek TextBox](textbox-control-windows-forms.md)

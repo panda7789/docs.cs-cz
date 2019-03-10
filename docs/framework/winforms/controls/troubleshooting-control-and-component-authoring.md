@@ -11,12 +11,12 @@ helpviewer_keywords:
 - components [Windows Forms], troubleshooting
 - Windows Forms controls, debugging
 ms.assetid: e9c8c099-2271-4737-882f-50f336c7a55e
-ms.openlocfilehash: 10981f6e49b1d109dce0f3b2b4dc0ab9043ceb0f
-ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
+ms.openlocfilehash: aa3548ce8f785f7c8b1adddf54dde0cd07482749
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56746374"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57712692"
 ---
 # <a name="troubleshooting-control-and-component-authoring"></a>Řešení potíží s vytvářením ovládacích prvků a komponent
 Toto téma uvádí následující běžné problémy, které vznikají při vývoji komponent a ovládacích prvků. Další informace najdete v tématu [programování pomocí komponent](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/0ffkdtkf(v=vs.120)).  
@@ -34,7 +34,7 @@ Toto téma uvádí následující běžné problémy, které vznikají při výv
 -   Ikona komponenty se nezobrazují v panelu nástrojů  
   
 ## <a name="cannot-add-control-to-toolbox"></a>Nelze přidat ovládací prvek na panelu nástrojů  
- Pokud chcete přidat vlastní ovládací prvek, který jste vytvořili v jiném projektu nebo ovládací prvek třetích stran pro **nástrojů**, musíte to udělat ručně. Pokud projekt obsahuje ovládacího prvku nebo komponenty, měl by se zobrazit v **nástrojů** automaticky. Další informace najdete v tématu [názorný postup: Automatické vyplnění nástrojů vlastními komponentami](../../../../docs/framework/winforms/controls/walkthrough-automatically-populating-the-toolbox-with-custom-components.md).  
+ Pokud chcete přidat vlastní ovládací prvek, který jste vytvořili v jiném projektu nebo ovládací prvek třetích stran pro **nástrojů**, musíte to udělat ručně. Pokud projekt obsahuje ovládacího prvku nebo komponenty, měl by se zobrazit v **nástrojů** automaticky. Další informace najdete v tématu [názorný postup: Automatické vyplnění nástrojů vlastními komponentami](walkthrough-automatically-populating-the-toolbox-with-custom-components.md).  
   
 #### <a name="to-add-a-control-to-the-toolbox"></a>Přidání ovládacího prvku na panelu nástrojů  
   
@@ -67,7 +67,7 @@ Toto téma uvádí následující běžné problémy, které vznikají při výv
          Váš ovládací prvek je přidán do **nástrojů**.  
   
 ## <a name="cannot-debug-the-windows-forms-user-control-or-component"></a>Nelze ladit uživatelského ovládacího prvku formulářů Windows nebo komponenty  
- Pokud váš ovládací prvek odvozen z <xref:System.Windows.Forms.UserControl> třídy, můžete ladit jeho chování za běhu pomocí testovacího kontejneru. Další informace najdete v tématu [jak: Testování běhového chování UserControl](../../../../docs/framework/winforms/controls/how-to-test-the-run-time-behavior-of-a-usercontrol.md).  
+ Pokud váš ovládací prvek odvozen z <xref:System.Windows.Forms.UserControl> třídy, můžete ladit jeho chování za běhu pomocí testovacího kontejneru. Další informace najdete v tématu [jak: Testování běhového chování UserControl](how-to-test-the-run-time-behavior-of-a-usercontrol.md).  
   
  Další vlastní ovládací prvky a součásti nejsou samostatné projekty. Musí být hostovaný jako je například projekt aplikace Windows Forms a aplikací. Chcete-li ladit ovládací prvek nebo komponenty, třeba přidat ji do projektu Windows Forms.  
   
@@ -93,7 +93,7 @@ Toto téma uvádí následující běžné problémy, které vznikají při výv
   
      Teď můžete ladit ovládacího prvku nebo komponenty jako obvykle.  
   
- Další informace o ladění naleznete v tématu [ladění v sadě Visual Studio](/visualstudio/debugger/debugging-in-visual-studio) a [názorný postup: Ovládací prvky ladění vlastního Windows Forms v době návrhu](../../../../docs/framework/winforms/controls/walkthrough-debugging-custom-windows-forms-controls-at-design-time.md).  
+ Další informace o ladění naleznete v tématu [ladění v sadě Visual Studio](/visualstudio/debugger/debugging-in-visual-studio) a [názorný postup: Ovládací prvky ladění vlastního Windows Forms v době návrhu](walkthrough-debugging-custom-windows-forms-controls-at-design-time.md).  
   
 ## <a name="event-is-raised-twice-in-inherited-control-or-component"></a>Událost se vyvolá dvakrát v zděděný ovládací prvek nebo komponenty  
  To je pravděpodobně v důsledku duplikovaného `Handles` klauzuli. Další informace najdete v tématu [řešení potíží s zděděné obslužných rutin událostí v jazyce Visual Basic](~/docs/visual-basic/programming-guide/language-features/events/troubleshooting-inherited-event-handlers.md).  
@@ -105,12 +105,12 @@ Toto téma uvádí následující běžné problémy, které vznikají při výv
  <xref:System.STAThreadAttribute> Informuje common language runtime (CLR), Windows Forms používá jednovláknový apartment modelu. Pokud použijete tento atribut není pro aplikace Windows Forms může dojít k neúmyslnému chování `Main` metody. Například nemusí zobrazit obrázky na pozadí pro ovládací prvky jako <xref:System.Windows.Forms.ListView>. Některé ovládací prvky budete možná muset tento atribut pro správné funkce automatického dokončování a chování a přetažení.  
   
 ## <a name="component-icon-does-not-appear-in-toolbox"></a>Ikona komponenty se nezobrazují v panelu nástrojů  
- Při použití <xref:System.Drawing.ToolboxBitmapAttribute> na vlastní komponentu přidružit ikonu, nezobrazí rastrového obrázku panelu nástrojů pro automaticky generované součásti. Rastrový obrázek zobrazíte načtěte pomocí ovládacího prvku **zvolit položky nástrojů** dialogové okno. Další informace najdete v tématu [jak: Poskytnutí rastrového obrázku panelu nástrojů pro ovládací prvek](../../../../docs/framework/winforms/controls/how-to-provide-a-toolbox-bitmap-for-a-control.md).  
+ Při použití <xref:System.Drawing.ToolboxBitmapAttribute> na vlastní komponentu přidružit ikonu, nezobrazí rastrového obrázku panelu nástrojů pro automaticky generované součásti. Rastrový obrázek zobrazíte načtěte pomocí ovládacího prvku **zvolit položky nástrojů** dialogové okno. Další informace najdete v tématu [jak: Poskytnutí rastrového obrázku panelu nástrojů pro ovládací prvek](how-to-provide-a-toolbox-bitmap-for-a-control.md).  
   
 ## <a name="see-also"></a>Viz také:
-- [Vývoj ovládacích prvků Windows Forms v době návrhu](../../../../docs/framework/winforms/controls/developing-windows-forms-controls-at-design-time.md)
-- [Návod: Automatické vyplnění nástrojů vlastními komponentami](../../../../docs/framework/winforms/controls/walkthrough-automatically-populating-the-toolbox-with-custom-components.md)
-- [Postupy: Testování běhového chování UserControl](../../../../docs/framework/winforms/controls/how-to-test-the-run-time-behavior-of-a-usercontrol.md)
-- [Návod: Ovládací prvky ladění vlastního Windows Forms v době návrhu](../../../../docs/framework/winforms/controls/walkthrough-debugging-custom-windows-forms-controls-at-design-time.md)
+- [Vývoj ovládacích prvků Windows Forms v době návrhu](developing-windows-forms-controls-at-design-time.md)
+- [Návod: Automatické vyplnění nástrojů vlastními komponentami](walkthrough-automatically-populating-the-toolbox-with-custom-components.md)
+- [Postupy: Testování běhového chování UserControl](how-to-test-the-run-time-behavior-of-a-usercontrol.md)
+- [Návod: Ovládací prvky ladění vlastního Windows Forms v době návrhu](walkthrough-debugging-custom-windows-forms-controls-at-design-time.md)
 - [Tvorba komponent](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/5dya64wy(v=vs.120))
 - [Řešení potíží s vývojem během návrhu](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/ms171843(v=vs.120))

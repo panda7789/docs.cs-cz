@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Windows Forms controls, events
 - menu items [Windows Forms], multicasting event-handling methods
 ms.assetid: 5a20749a-41b5-4acc-8eb1-9e5040b0a2c4
-ms.openlocfilehash: 869ef0d7717ca64209bc61c2ae22ce929edcec5e
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 71b17e8a4bedca54cb7fff5f14ce28a0c572fe88
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56967864"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57722647"
 ---
 # <a name="how-to-connect-multiple-events-to-a-single-event-handler-in-windows-forms"></a>Postupy: Připojení více událostí jedné obslužné rutině událostí ve Windows Forms
 V návrhu aplikace možná bude nutné použít jedné obslužné rutině událostí pro více událostí nebo mít více událostí, použijte stejný postup. Je například často výkonné spoustu času mít příkaz nabídky vyvolat stejnou událost, stejně jako tlačítko na formuláři pokud zveřejňovaly stejné funkce. Můžete to provést pomocí zobrazení události v okně Vlastnosti v C# nebo pomocí `Handles` – klíčové slovo a **název třídy** a **název metody** rozevírací seznamy v editoru kódu jazyka Visual Basic.  
@@ -50,7 +50,7 @@ V návrhu aplikace možná bude nutné použít jedné obslužné rutině událo
   
 1.  Vyberte ovládací prvek, ke kterému chcete připojit obslužné rutiny události.  
   
-2.  V okně Vlastnosti klikněte na tlačítko **události** tlačítko (![tlačítko události](../../../docs/framework/winforms/media/vxeventsbutton-propertieswindow.png "vxEventsButton_PropertiesWindow")).  
+2.  V okně Vlastnosti klikněte na tlačítko **události** tlačítko (![tlačítko události](./media/vxeventsbutton-propertieswindow.png "vxEventsButton_PropertiesWindow")).  
   
 3.  Klikněte na název události, ke které chcete zpracovat.  
   
@@ -61,5 +61,5 @@ V návrhu aplikace možná bude nutné použít jedné obslužné rutině událo
      Kód bude přidán do formuláře pro vazbu události do existující obslužné rutiny události.  
   
 ## <a name="see-also"></a>Viz také:
-- [Vytváření obslužných rutin událostí ve Windows Forms](../../../docs/framework/winforms/creating-event-handlers-in-windows-forms.md)
-- [Přehled obslužných rutin událostí](../../../docs/framework/winforms/event-handlers-overview-windows-forms.md)
+- [Vytváření obslužných rutin událostí ve Windows Forms](creating-event-handlers-in-windows-forms.md)
+- [Přehled obslužných rutin událostí](event-handlers-overview-windows-forms.md)

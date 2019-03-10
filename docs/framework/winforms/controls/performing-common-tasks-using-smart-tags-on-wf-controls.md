@@ -1,19 +1,19 @@
 ---
-title: 'Průvodce: Provádění obecných úloh pomocí inteligentních značek na Windows Forms ovládací prvky'
+title: 'Návod: Provádění obecných úloh pomocí inteligentních značek na Windows Forms ovládací prvky'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - DesignerAction object model
 - smart tags
 - designer actions
 ms.assetid: cac337e6-00f6-4584-80f4-75728f5ea113
-ms.openlocfilehash: 93a477bcaed8ebdc2c7cb4daaa1dce1651cccd12
-ms.sourcegitcommit: 2b986afe4ce9e13bbeec929c9737757eb61de60e
+ms.openlocfilehash: 2805ebc66be5908c333e9a5db41076518ad77c1a
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56664312"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57705854"
 ---
-# <a name="walkthrough-performing-common-tasks-using-smart-tags-on-windows-forms-controls"></a>Průvodce: Provádění obecných úloh pomocí inteligentních značek na Windows Forms ovládací prvky
+# <a name="walkthrough-performing-common-tasks-using-smart-tags-on-windows-forms-controls"></a>Návod: Provádění obecných úloh pomocí inteligentních značek na Windows Forms ovládací prvky
 Jak vytvořit formuláře a ovládací prvky pro aplikace Windows Forms, existují mnoho úloh, které budete opakovaně provádět. Toto jsou některé běžně prováděné úlohy, které se zobrazí:  
   
 -   Přidání nebo odebrání kartu na <xref:System.Windows.Forms.TabControl>.  
@@ -53,7 +53,7 @@ Jak vytvořit formuláře a ovládací prvky pro aplikace Windows Forms, existuj
   
 #### <a name="to-use-smart-tags"></a>Použití inteligentních značek  
   
-1.  Přetáhněte <xref:System.Windows.Forms.TabControl> z **nástrojů** do formuláře. Všimněte si smart piktogram (![piktogram inteligentní](../../../../docs/framework/winforms/controls/media/vs-winformsmttagglyph.gif "VS_WinFormSmtTagGlyph")), který se zobrazí na straně aplikace <xref:System.Windows.Forms.TabControl>.  
+1.  Přetáhněte <xref:System.Windows.Forms.TabControl> z **nástrojů** do formuláře. Všimněte si smart piktogram (![piktogram inteligentní](./media/vs-winformsmttagglyph.gif "VS_WinFormSmtTagGlyph")), který se zobrazí na straně aplikace <xref:System.Windows.Forms.TabControl>.  
   
 2.  Klikněte na tlačítko smart piktogram. V místní nabídce, která se zobrazí vedle šifra, vyberte **přidat kartu** položky. Podívejte se, že je do nové stránky karty <xref:System.Windows.Forms.TabControl>.  
   

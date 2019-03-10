@@ -9,12 +9,12 @@ helpviewer_keywords:
 - icons [Windows Forms], toolbar buttons
 - ToolBar control [Windows Forms], adding icons to buttons
 ms.assetid: d848f38e-67f2-49d4-8e88-01c845c06c02
-ms.openlocfilehash: ba24cb13b80a90bbf309ae23de15b33caf14735b
-ms.sourcegitcommit: bef803e2025642df39f2f1e046767d89031e0304
+ms.openlocfilehash: 2099738d5b666aa305d678c962c0b203d3ab67b2
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56303371"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57717736"
 ---
 # <a name="how-to-define-an-icon-for-a-toolbar-button-using-the-designer"></a>Postupy: Definování ikony pro tlačítko ToolBar pomocí návrháře
 > [!NOTE]
@@ -22,20 +22,20 @@ ms.locfileid: "56303371"
   
  <xref:System.Windows.Forms.ToolBar> tlačítka budou moct zobrazit ikony v nich pro snadnou identifikaci uživatelů. Toho můžete dosáhnout přidávání obrázků na <xref:System.Windows.Forms.ImageList> komponenty a přidružíte ho <xref:System.Windows.Forms.ToolBar> ovládacího prvku.  
   
- Následující postup vyžaduje, **aplikace Windows** projektu s formulář obsahující <xref:System.Windows.Forms.ToolBar> ovládacího prvku a <xref:System.Windows.Forms.ImageList> komponenty. Informace o nastavení takový projekt, naleznete v tématu [jak: Vytvoření projektu aplikace Windows Forms](/visualstudio/ide/step-1-create-a-windows-forms-application-project) a [jak: Přidání ovládacích prvků Windows Forms](../../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md).  
+ Následující postup vyžaduje, **aplikace Windows** projektu s formulář obsahující <xref:System.Windows.Forms.ToolBar> ovládacího prvku a <xref:System.Windows.Forms.ImageList> komponenty. Informace o nastavení takový projekt, naleznete v tématu [jak: Vytvoření projektu aplikace Windows Forms](/visualstudio/ide/step-1-create-a-windows-forms-application-project) a [jak: Přidání ovládacích prvků Windows Forms](how-to-add-controls-to-windows-forms.md).  
   
 > [!NOTE]
 >  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení integrovaného vývojového prostředí sady Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).  
   
 ### <a name="to-set-an-icon-for-a-toolbar-button-at-design-time"></a>Chcete-li nastavit ikonu pro tlačítko panelu nástrojů v době návrhu  
   
-1.  Přidání obrázků do <xref:System.Windows.Forms.ImageList> komponenty. Další informace najdete v tématu [jak: Přidávání a odebírání obrázků ImageList pomocí návrháře](../../../../docs/framework/winforms/controls/how-to-add-or-remove-imagelist-images-with-the-designer.md).  
+1.  Přidání obrázků do <xref:System.Windows.Forms.ImageList> komponenty. Další informace najdete v tématu [jak: Přidávání a odebírání obrázků ImageList pomocí návrháře](how-to-add-or-remove-imagelist-images-with-the-designer.md).  
   
 2.  Vyberte <xref:System.Windows.Forms.ToolBar> ovládací prvek na formuláři.  
   
 3.  V **vlastnosti** okno, nastaveno <xref:System.Windows.Forms.ToolBar> ovládacího prvku <xref:System.Windows.Forms.ToolBar.ImageList%2A> vlastnost <xref:System.Windows.Forms.ImageList> komponenty.  
   
-4.  Klikněte na tlačítko <xref:System.Windows.Forms.ToolBar> ovládacího prvku <xref:System.Windows.Forms.ToolBar.Buttons%2A> vlastnost vyberte ho a klikněte na tlačítko se třemi tečkami (![snímek obrazovky VisualStudioEllipsesButton](../../../../docs/framework/winforms/media/vbellipsesbutton.png "vbEllipsesButton")) tlačítko Otevřít **Editor kolekce ToolBarButton**.  
+4.  Klikněte na tlačítko <xref:System.Windows.Forms.ToolBar> ovládacího prvku <xref:System.Windows.Forms.ToolBar.Buttons%2A> vlastnost vyberte ho a klikněte na tlačítko se třemi tečkami (![snímek obrazovky VisualStudioEllipsesButton](../media/vbellipsesbutton.png "vbEllipsesButton")) tlačítko Otevřít **Editor kolekce ToolBarButton**.  
   
 5.  Použití **přidat** tlačítko pro přidání tlačítka <xref:System.Windows.Forms.ToolBar> ovládacího prvku.  
   
@@ -43,6 +43,6 @@ ms.locfileid: "56303371"
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Forms.ToolBar>
-- [Postupy: Aktivační události nabídky pro tlačítka panelu nástrojů](../../../../docs/framework/winforms/controls/how-to-trigger-menu-events-for-toolbar-buttons.md)
-- [Ovládací prvek ToolBar](../../../../docs/framework/winforms/controls/toolbar-control-windows-forms.md)
-- [Komponenta ImageList](../../../../docs/framework/winforms/controls/imagelist-component-windows-forms.md)
+- [Postupy: Aktivační události nabídky pro tlačítka panelu nástrojů](how-to-trigger-menu-events-for-toolbar-buttons.md)
+- [Ovládací prvek ToolBar](toolbar-control-windows-forms.md)
+- [Komponenta ImageList](imagelist-component-windows-forms.md)

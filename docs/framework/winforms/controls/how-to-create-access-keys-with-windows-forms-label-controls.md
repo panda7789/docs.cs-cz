@@ -17,12 +17,12 @@ helpviewer_keywords:
 - keyboard shortcuts [Windows Forms], creating for controls
 - access keys [Windows Forms], Windows Forms
 ms.assetid: 5ee8f823-80be-4a4f-96a4-412671e2e306
-ms.openlocfilehash: a1317f34b39c5689e285f8822fff9bfcc42db1d2
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 227880ad15e452df3f05807c41f3923cccb6fe3a
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54680319"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57708298"
 ---
 # <a name="how-to-create-access-keys-with-windows-forms-label-controls"></a>Postupy: Vytváření přístupových klíčů pomocí ovládacích prvků Windows Forms Label
 Windows Forms <xref:System.Windows.Forms.Label> ovládací prvky lze použít k definování přístupové klíče pro ostatní ovládací prvky. Při definování přístupový klíč v ovládacím prvku popisek, může uživatel stisknout klávesy ALT a znak, který určíte přesunout fokus na ovládací prvek, který následuje v pořadí. Protože popisků nemůže být vybrán, automaticky aktivuje další ovládací prvek v pořadí karet. Tento postup použijte k přiřazení přístupových klíčů a textová pole, pole se seznamem, pole se seznamem datových mřížkách.  
@@ -37,7 +37,7 @@ Windows Forms <xref:System.Windows.Forms.Label> ovládací prvky lze použít k 
   
 2.  Nastavte jeho <xref:System.Windows.Forms.Label.UseMnemonic%2A> vlastnost `true`.  
   
-3.  Použít znak ampersand (&) v popisku <xref:System.Windows.Forms.Label.Text%2A> vlastnost má být přiřazena přístupový klíč pro popisek. Další informace najdete v tématu [vytváření klíčů pro Windows Forms řízení přístupu](../../../../docs/framework/winforms/controls/how-to-create-access-keys-for-windows-forms-controls.md).  
+3.  Použít znak ampersand (&) v popisku <xref:System.Windows.Forms.Label.Text%2A> vlastnost má být přiřazena přístupový klíč pro popisek. Další informace najdete v tématu [vytváření klíčů pro Windows Forms řízení přístupu](how-to-create-access-keys-for-windows-forms-controls.md).  
   
     > [!NOTE]
     >  Můžete chtít zobrazit tyto znaky v ovládacím prvku popisek, nikoli jejich používání při vytváření přístupových klíčů. To může dojít, pokud vytvoření vazby ovládacího prvku popisku na pole v sadě záznamů, pokud data obsahují tyto znaky. Chcete-li tyto znaky zobrazit v ovládacím prvku popisek, nastavte <xref:System.Windows.Forms.Label.UseMnemonic%2A> vlastnost `false`. Pokud si chcete zobrazit tyto znaky a mít taky přístupový kód, nastavte <xref:System.Windows.Forms.Label.UseMnemonic%2A> vlastnost `true` a přístupový klíč se jeden znak ampersand (&) a ampersand k zobrazení mají tyto dva znaky.  
@@ -64,6 +64,6 @@ Windows Forms <xref:System.Windows.Forms.Label> ovládací prvky lze použít k 
     ```  
   
 ## <a name="see-also"></a>Viz také:
-- [Postupy: Velikost ovládacího prvku Windows Forms Label k zobrazení jeho obsahu](../../../../docs/framework/winforms/controls/how-to-size-a-windows-forms-label-control-to-fit-its-contents.md)
-- [Přehled ovládacího prvku Label](../../../../docs/framework/winforms/controls/label-control-overview-windows-forms.md)
-- [Ovládací prvek Label](../../../../docs/framework/winforms/controls/label-control-windows-forms.md)
+- [Postupy: Velikost ovládacího prvku Windows Forms Label k zobrazení jeho obsahu](how-to-size-a-windows-forms-label-control-to-fit-its-contents.md)
+- [Přehled ovládacího prvku Label](label-control-overview-windows-forms.md)
+- [Ovládací prvek Label](label-control-windows-forms.md)

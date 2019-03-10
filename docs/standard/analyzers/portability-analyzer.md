@@ -4,12 +4,12 @@ description: Další informace o použití nástroje .NET Portability Analyzeru 
 ms.date: 07/26/2017
 ms.technology: dotnet-standard
 ms.assetid: 0375250f-5704-4993-a6d5-e21c499cea1e
-ms.openlocfilehash: 17b05b9434d406acec03d84d17901f8339bcb6bc
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.openlocfilehash: bd92e39a7b53e2807aff687f6dfbf71be34a506d
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57677640"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57717645"
 ---
 # <a name="the-net-portability-analyzer"></a>.NET Portability Analyzeru
 
@@ -19,7 +19,7 @@ Chcete si vytvořit multiplatformní knihovny? Chcete zobrazit, kolik práce je 
 
 * [.NET Core](../../core/index.md): Má modulárního návrhu, využívá vedle sebe a cílí na scénáře napříč platformami. Vedle sebe umožňuje přijmout nové verze .NET Core bez porušení dalších aplikací.
 * [ASP.NET Core](/aspnet/core): je moderní webové – architektura založená na .NET Core, což vývojářům stejné výhody.
-* [Universal Windows Platform](https://blogs.msdn.microsoft.com/dotnet/2014/04/24/net-native-performance): Zlepšení výkonu aplikací Windows Store, které běží na x64 a počítačů ARM pomocí statické kompilace .NET Native. 
+* [Universal Windows Platform](https://devblogs.microsoft.com/dotnet/net-native-performance/): Zlepšení výkonu aplikací Windows Store, které běží na x64 a počítačů ARM pomocí statické kompilace .NET Native. 
 * .NET core a rozšíření platformy: Zahrnuje rozhraní API .NET Core kromě jiných rozhraní API v ekosystému .NET, jako je například WCF, ASP.NET Core, FSharp a Azure.
 * .NET standard a rozšíření platformy: Zahrnuje standardní rozhraní API .NET kromě jiných ekosystému .NET, jako je například WCF, ASP.NET Core, FSharp a Azure.
 

@@ -14,16 +14,16 @@ helpviewer_keywords:
 - tables [Windows Forms], formatting in DataGrid control
 - formatting [Windows Forms]
 ms.assetid: a50fcc3b-8abf-47ec-9029-7f268af4ddb1
-ms.openlocfilehash: 58735e372793f18a3dd14ded3d5e8729d06309af
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 696fdc09d285e0a04148e82b0cece6108b7d5a45
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54616742"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57705906"
 ---
 # <a name="how-to-format-the-windows-forms-datagrid-control"></a>Postupy: Formátování ovládacího prvku Windows Forms DataGrid
 > [!NOTE]
->  <xref:System.Windows.Forms.DataGridView> Ovládací prvek nahradí a přidá funkce, které <xref:System.Windows.Forms.DataGrid> řízení; však <xref:System.Windows.Forms.DataGrid> ovládací prvek se zachovává kvůli zpětné kompatibilitě a budoucí použití, pokud se rozhodnete. Další informace najdete v tématu [rozdíly mezi Windows Forms DataGridView a DataGrid – ovládací prvky](../../../../docs/framework/winforms/controls/differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).  
+>  <xref:System.Windows.Forms.DataGridView> Ovládací prvek nahradí a přidá funkce, které <xref:System.Windows.Forms.DataGrid> řízení; však <xref:System.Windows.Forms.DataGrid> ovládací prvek se zachovává kvůli zpětné kompatibilitě a budoucí použití, pokud se rozhodnete. Další informace najdete v tématu [rozdíly mezi Windows Forms DataGridView a DataGrid – ovládací prvky](differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).  
   
  Rozlišení barvami různých částí <xref:System.Windows.Forms.DataGrid> ovládací prvek může pomoct usnadňují informace v něm přečíst a interpretovat. Barva lze použít k řádků a sloupců. Řádky a sloupce můžete také skrytí nebo zobrazení na vašem uvážení.  
   
@@ -64,7 +64,7 @@ ms.locfileid: "54616742"
     > [!NOTE]
     >  Mějte na paměti, když upravujete barvy ovládacích prvků, aby bylo možné nastavit ovládací prvek není přístupný z špatná barva výběru (například red a zelená). Použití barev, které jsou k dispozici na **systémové barvy** palety chcete vyhnout tomuto problému.  
   
-     Následující postupy předpokládají, že váš formulář má <xref:System.Windows.Forms.DataGrid> ovládací prvek vázán na data tabulky. Další informace najdete v tématu [vazby ovládacího prvku Windows Forms DataGrid ke zdroji dat](../../../../docs/framework/winforms/controls/how-to-bind-the-windows-forms-datagrid-control-to-a-data-source.md).  
+     Následující postupy předpokládají, že váš formulář má <xref:System.Windows.Forms.DataGrid> ovládací prvek vázán na data tabulky. Další informace najdete v tématu [vazby ovládacího prvku Windows Forms DataGrid ke zdroji dat](how-to-bind-the-windows-forms-datagrid-control-to-a-data-source.md).  
   
 ### <a name="to-set-the-table-and-column-style-of-a-data-table-programmatically"></a>Nastavit styl tabulky a sloupce z tabulky dat prostřednictvím kódu programu  
   
@@ -157,5 +157,5 @@ ms.locfileid: "54616742"
 - <xref:System.Windows.Forms.GridTableStylesCollection>
 - <xref:System.Windows.Forms.GridColumnStylesCollection>
 - <xref:System.Windows.Forms.DataGrid>
-- [Postupy: Odstranit nebo skrytí sloupců v ovládacím prvku Windows Forms DataGrid](../../../../docs/framework/winforms/controls/how-to-delete-or-hide-columns-in-the-windows-forms-datagrid-control.md)
-- [Ovládací prvek DataGrid](../../../../docs/framework/winforms/controls/datagrid-control-windows-forms.md)
+- [Postupy: Odstranit nebo skrytí sloupců v ovládacím prvku Windows Forms DataGrid](how-to-delete-or-hide-columns-in-the-windows-forms-datagrid-control.md)
+- [Ovládací prvek DataGrid](datagrid-control-windows-forms.md)

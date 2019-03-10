@@ -2,12 +2,12 @@
 title: Kompenzace
 ms.date: 03/30/2017
 ms.assetid: 722e9766-48d7-456c-9496-d7c5c8f0fa76
-ms.openlocfilehash: e8a7140e677b553d07014d0ac5a77dd1c7488f53
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: af29ba61ff5bede9208f2ab706f5e0ce1ff12274
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54607602"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57721291"
 ---
 # <a name="compensation"></a>Kompenzace
 Kompenzace ve Windows Workflow Foundation (WF) je mechanismus, pomocí kterého dříve Dokončená práce vrátit zpět nebo kompenzována (následující logiky definované aplikací.) dojde k následující chybě. Tato část popisuje, jak použít náhradu v pracovních postupech.  
@@ -16,12 +16,12 @@ Kompenzace ve Windows Workflow Foundation (WF) je mechanismus, pomocí kterého 
  Transakce můžete zkombinovat několik operací do jedné jednotky práce. Vaše aplikace pomocí transakce dává možnost zrušit všechny změny, které se spustí z v rámci transakce, pokud dojde k nějaké chybě během jakékoli části procesu transakce (vrácení zpět). Použití transakcí však nemusí být vhodné v případě, že je spuštěna po dlouhou dobu práce. Například plánování cestovní aplikace je implementovaný jako pracovní postup. Rezervace letenky, čeká na schválení správce a pak platíte za letu může obsahovat kroky pracovního postupu. Tento proces může trvat dlouho a není praktické kroky rezervace a platit za pochodu k účasti v rámci jedné transakce. Ve scénáři takovou situaci kompenzace může vrátit zpět rezervaci kroku pracovního postupu, pokud dojde k selhání později při zpracování.  
   
 > [!NOTE]
->  Toto téma popisuje kompenzace v pracovních postupech. Další informace o transakcích v pracovních postupech najdete v tématu [transakce](../../../docs/framework/windows-workflow-foundation/workflow-transactions.md) a <xref:System.Activities.Statements.TransactionScope>. Další informace o transakcích najdete v tématu <xref:System.Transactions?displayProperty=nameWithType> a <xref:System.Transactions.Transaction?displayProperty=nameWithType>.  
+>  Toto téma popisuje kompenzace v pracovních postupech. Další informace o transakcích v pracovních postupech najdete v tématu [transakce](workflow-transactions.md) a <xref:System.Activities.Statements.TransactionScope>. Další informace o transakcích najdete v tématu <xref:System.Transactions?displayProperty=nameWithType> a <xref:System.Transactions.Transaction?displayProperty=nameWithType>.  
   
 ## <a name="using-compensableactivity"></a>Aktivita CompensableActivity pomocí  
  <xref:System.Activities.Statements.CompensableActivity> aktivitu kompenzace jader v [!INCLUDE[wf1](../../../includes/wf1-md.md)]. Všechny aktivity, které vykonávají práci, která možná bude nutné kompenzována se umístí do <xref:System.Activities.Statements.CompensableActivity.Body%2A> z <xref:System.Activities.Statements.CompensableActivity>. V tomto příkladu je krok rezervace letenky nákupu umístí do <xref:System.Activities.Statements.CompensableActivity.Body%2A> z <xref:System.Activities.Statements.CompensableActivity> a zrušení rezervace se umístí do <xref:System.Activities.Statements.CompensableActivity.CompensationHandler%2A>. Přímo za <xref:System.Activities.Statements.CompensableActivity> v pracovním postupu jsou dvě aktivity, které čekání na schválení správce a pak dokončete nákupní krok letu. Pokud chybová podmínka způsobí, že pracovní postup zruší po <xref:System.Activities.Statements.CompensableActivity> bylo úspěšně dokončeno, pak aktivity v <xref:System.Activities.Statements.CompensableActivity.CompensationHandler%2A> obslužné rutiny jsou naplánovány a letu se zruší.  
   
- [!code-csharp[CFX_CompensationExample#1](../../../samples/snippets/csharp/VS_Snippets_CFX/CFX_CompensationExample/cs/Program.cs#1)]  
+ [!code-csharp[CFX_CompensationExample#1](~/samples/snippets/csharp/VS_Snippets_CFX/CFX_CompensationExample/cs/Program.cs#1)]  
   
  V následujícím příkladu je pracovní postup v XAML.  
   
@@ -62,7 +62,7 @@ Kompenzace ve Windows Workflow Foundation (WF) je mechanismus, pomocí kterého 
   
  V tomto příkladu je vyvolána výjimka po vyhrazené letu, ale před krokem schválení správce.  
   
- [!code-csharp[CFX_CompensationExample#2](../../../samples/snippets/csharp/VS_Snippets_CFX/CFX_CompensationExample/cs/Program.cs#2)]  
+ [!code-csharp[CFX_CompensationExample#2](~/samples/snippets/csharp/VS_Snippets_CFX/CFX_CompensationExample/cs/Program.cs#2)]  
   
  V tomto příkladu je pracovní postup v XAML.  
   
@@ -87,7 +87,7 @@ Kompenzace ve Windows Workflow Foundation (WF) je mechanismus, pomocí kterého 
 </Sequence>  
 ```  
   
- [!code-csharp[CFX_CompensationExample#100](../../../samples/snippets/csharp/VS_Snippets_CFX/CFX_CompensationExample/cs/Program.cs#100)]  
+ [!code-csharp[CFX_CompensationExample#100](~/samples/snippets/csharp/VS_Snippets_CFX/CFX_CompensationExample/cs/Program.cs#100)]  
   
  Když uživatel vyvolá pracovní postup, je simulované chybě podmínku výjimka ošetřena hostitele aplikací v <xref:System.Activities.WorkflowApplication.OnUnhandledException%2A>, pracovní postup zrušení a je vyvolána kompenzační logiky.  
   
@@ -166,12 +166,12 @@ Activity wf = new Sequence()
 **Pracovní postup neošetřená výjimka:**   
 **System.ApplicationException: Simulované chybě v pracovním postupu.**   
 **CancelCreditCard: Zrušte poplatky.**   
-**Byla úspěšně dokončena se stavem pracovního postupu: Bylo zrušeno.**  Další informace o zrušení naleznete v tématu [zrušení](../../../docs/framework/windows-workflow-foundation/modeling-cancellation-behavior-in-workflows.md).  
+**Byla úspěšně dokončena se stavem pracovního postupu: Bylo zrušeno.**  Další informace o zrušení naleznete v tématu [zrušení](modeling-cancellation-behavior-in-workflows.md).  
   
 ### <a name="explicit-compensation-using-the-compensate-activity"></a>Pomocí explicitní kompenzaci aktivitu kompenzace  
  V předchozí části zkušebním implicitní kompenzaci. Implicitní kompenzace může být vhodné pro jednoduché scénáře, ale pokud podrobnější je vyžadováno řízení nad plánováním kompenzace pak zpracování <xref:System.Activities.Statements.Compensate> aktivita se dá použít. K zahájení kompenzace s <xref:System.Activities.Statements.Compensate> aktivity, <xref:System.Activities.Statements.CompensationToken> z <xref:System.Activities.Statements.CompensableActivity> pro které kompenzace je žádoucí se používá. <xref:System.Activities.Statements.Compensate> Aktivita slouží k zahájení kompenzaci na žádném dokončení <xref:System.Activities.Statements.CompensableActivity> , která nebyla potvrzena nebo kompenzována. Například <xref:System.Activities.Statements.Compensate> aktivity se daly použít v <xref:System.Activities.Statements.TryCatch.Catches%2A> část <xref:System.Activities.Statements.TryCatch> aktivity nebo kdykoli po dokončení <xref:System.Activities.Statements.CompensableActivity> byla dokončena. V tomto příkladu <xref:System.Activities.Statements.Compensate> aktivita se používá v <xref:System.Activities.Statements.TryCatch.Catches%2A> část <xref:System.Activities.Statements.TryCatch> aktivitu pro vrácení akce <xref:System.Activities.Statements.CompensableActivity>.  
   
- [!code-csharp[CFX_CompensationExample#3](../../../samples/snippets/csharp/VS_Snippets_CFX/CFX_CompensationExample/cs/Program.cs#3)]  
+ [!code-csharp[CFX_CompensationExample#3](~/samples/snippets/csharp/VS_Snippets_CFX/CFX_CompensationExample/cs/Program.cs#3)]  
   
  V tomto příkladu je pracovní postup v XAML.  
   
@@ -251,7 +251,7 @@ Activity wf = new Sequence()
 ### <a name="confirming-compensation"></a>Potvrzují se kompenzace  
  Ve výchozím nastavení kompenzovatelné aktivity kompenzovat lze kdykoli po jejich dokončení. V některých případech to nemusí být vhodné. V předchozím příkladu byl kompenzace k rezervaci-the-ticket ke zrušení rezervace. Po dokončení letu tento krok kompenzace je však již platná. Potvrzení kompenzovatelné aktivity volá aktivita určené <xref:System.Activities.Statements.CompensableActivity.ConfirmationHandler%2A>. Jeden využití pro tuto je umožnit všechny prostředky, které jsou nezbytné k provedení náhrady uvolnit. Jakmile se potvrdí kompenzovatelné aktivity není možné, aby se kompenzována a tím dojde k pokusu o <xref:System.InvalidOperationException> je vyvolána výjimka. Po úspěšném dokončení pracovního postupu, jsou všechny nepotvrzené a kompenzována kompenzovatelné aktivity, které byla úspěšně dokončena v obráceném pořadí potvrdit dokončení. V tomto příkladu je letu vyhrazené, koupit a dokončit, a pak je potvrzen kompenzovatelné aktivity. Potvrďte <xref:System.Activities.Statements.CompensableActivity>, použijte <xref:System.Activities.Statements.Confirm> aktivity a zadejte <xref:System.Activities.Statements.CompensationToken> z <xref:System.Activities.Statements.CompensableActivity> potvrďte.  
   
- [!code-csharp[CFX_CompensationExample#4](../../../samples/snippets/csharp/VS_Snippets_CFX/CFX_CompensationExample/cs/Program.cs#4)]  
+ [!code-csharp[CFX_CompensationExample#4](~/samples/snippets/csharp/VS_Snippets_CFX/CFX_CompensationExample/cs/Program.cs#4)]  
   
  V tomto příkladu je pracovní postup v XAML.  
   

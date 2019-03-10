@@ -9,12 +9,12 @@ helpviewer_keywords:
 - cursors [Windows Forms], setting
 - mouse [Windows Forms], cursors
 ms.assetid: c3400d85-de5b-42e8-abc3-d6088d69ee53
-ms.openlocfilehash: 02f93a85ecaa13f5f72cd0f31a1f5ffc24c59f68
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c018986498bfbd7e492c3e7a26c94e0baa0576d5
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54491776"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57712731"
 ---
 # <a name="mouse-pointers-in-windows-forms"></a>Ukazatele myši ve Windows Forms
 Myši *ukazatel*, které se někdy označuje jako ukazatel, je rastrový obrázek, který určuje zaměření na obrazovce pro uživatelský vstup pomocí myši. Toto téma obsahuje základní informace o umístění ukazatele myši ve Windows Forms a popisuje některé ze způsobů, jak upravit a řízení umístění ukazatele myši.  
@@ -32,5 +32,5 @@ Myši *ukazatel*, které se někdy označuje jako ukazatel, je rastrový obráze
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Forms.Cursor>
-- [Vstup z myši v aplikaci Windows Forms](../../../docs/framework/winforms/mouse-input-in-a-windows-forms-application.md)
-- [Funkce přetažení ve Windows Forms](../../../docs/framework/winforms/drag-and-drop-functionality-in-windows-forms.md)
+- [Vstup z myši v aplikaci Windows Forms](mouse-input-in-a-windows-forms-application.md)
+- [Funkce přetažení ve Windows Forms](drag-and-drop-functionality-in-windows-forms.md)

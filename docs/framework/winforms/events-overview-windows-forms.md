@@ -9,12 +9,12 @@ helpviewer_keywords:
 - multicast event delegates
 - Windows Forms controls, events
 ms.assetid: 814a6a43-a312-4791-88d8-f75f9a4f8c4c
-ms.openlocfilehash: 6272da52103e0249112dc4ba717057951d67442f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d02705422b088800d9f2e081d6a28924d9b84078
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54543709"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57710729"
 ---
 # <a name="events-overview-windows-forms"></a>Přehled událostí (Windows Forms)
 Událost je akci, která můžete reagovat, nebo "handle" v kódu. Události mohou být generovány akci uživatele, jako je například kliknutí myší nebo stisknutí klávesy; pomocí programového kódu; nebo v systému.  
@@ -26,12 +26,12 @@ Událost je akci, která můžete reagovat, nebo "handle" v kódu. Události moh
 > [!NOTE]
 >  Mnoho událostem ve spojení s jinými událostmi. Například v průběhu z <xref:System.Windows.Forms.Control.DoubleClick> události, ke kterým dochází, <xref:System.Windows.Forms.Control.MouseDown>, <xref:System.Windows.Forms.Control.MouseUp>, a <xref:System.Windows.Forms.Control.Click> dojde k událostem.  
   
- Informace o tom, jak vyvolat a zpracovat událost, naleznete v tématu [události](../../../docs/standard/events/index.md).  
+ Informace o tom, jak vyvolat a zpracovat událost, naleznete v tématu [události](../../standard/events/index.md).  
   
 ## <a name="delegates-and-their-role"></a>Delegáty a jejich Role  
  Delegáti jsou třídy často používané v rámci [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] sestavit mechanismy zpracování událostí. Delegáti zhruba odpovídá na ukazatele funkcí, běžně používaná v [!INCLUDE[vcprvc](../../../includes/vcprvc-md.md)] a další jazyky objektově orientovaný. Na rozdíl od ukazatelů na funkce delegátů jsou však objektově orientované, typově bezpečné a zabezpečené. Kromě toho, kde obsahuje pouze odkaz na určitou funkci, ukazatel na funkci delegáta se skládá z odkazu na objekt a odkazy na jeden nebo více metod v rámci objektu.  
   
- Tento model událostí používá *delegáti* svázat události do metod, které se používají k jejich zpracování. Delegát umožňuje jiné třídy registrace pro oznámení události tak, že určíte metodu obslužné rutiny. Při výskytu události, delegát volá metodu vazby. Další informace o tom, jak definovat delegáty, naleznete v tématu [události](../../../docs/standard/events/index.md).  
+ Tento model událostí používá *delegáti* svázat události do metod, které se používají k jejich zpracování. Delegát umožňuje jiné třídy registrace pro oznámení události tak, že určíte metodu obslužné rutiny. Při výskytu události, delegát volá metodu vazby. Další informace o tom, jak definovat delegáty, naleznete v tématu [události](../../standard/events/index.md).  
   
  Delegáty lze vázána na jedinou metodu nebo více metod, označuje jako vícesměrové vysílání. Při vytváření delegáta pro událost, vy (nebo Návrhář formulářů Windows) obvykle vytvoříte vícesměrového vysílání události. Výjimečných výjimky může být událost, která má za následek konkrétní procedury (například zobrazení dialogového okna), která by logicky opakujte více než jednou na událost. Informace o tom, jak vytvořit delegáta vícesměrového vysílání najdete v tématu [jak: Kombinování delegátů (vícesměroví delegáti)](~/docs/csharp/programming-guide/delegates/how-to-combine-delegates-multicast-delegates.md).  
   
@@ -44,5 +44,5 @@ Událost je akci, která můžete reagovat, nebo "handle" v kódu. Události moh
  Mechanismus vazby, který se používá s delegáty je dynamický: delegát může být vázaný v době běhu na jakoukoli metodu, jejíž podpis odpovídá obslužné rutiny události. Pomocí této funkce můžete nastavit nebo změnit metodu vázané na podmínce a dynamicky připojit obslužnou rutinu události pro ovládací prvek.  
   
 ## <a name="see-also"></a>Viz také:
-- [Vytváření obslužných rutin událostí ve Windows Forms](../../../docs/framework/winforms/creating-event-handlers-in-windows-forms.md)
-- [Přehled obslužných rutin událostí](../../../docs/framework/winforms/event-handlers-overview-windows-forms.md)
+- [Vytváření obslužných rutin událostí ve Windows Forms](creating-event-handlers-in-windows-forms.md)
+- [Přehled obslužných rutin událostí](event-handlers-overview-windows-forms.md)

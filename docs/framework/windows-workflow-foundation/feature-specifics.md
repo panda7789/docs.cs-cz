@@ -2,12 +2,12 @@
 title: Specifické funkce aplikace Windows Workflow Foundation
 ms.date: 03/30/2017
 ms.assetid: e84d12da-a055-45f6-b4d1-878d127b46b6
-ms.openlocfilehash: b7fed8c40c998ff0ecc0080139690614d985fc42
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: 4b9a9c5c6395ed27845c8b618e49150a02aa3bda
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57492588"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57721850"
 ---
 # <a name="windows-workflow-foundation-feature-specifics"></a>Specifické funkce aplikace Windows Workflow Foundation
 
@@ -43,9 +43,9 @@ A `BestPriceFinder` služby zdůrazňuje k více službám letecká společnost 
 
 - Ukázky pro <xref:System.ServiceModel.WorkflowServiceHost> najdete v následujících částech:
 
-    - [Spuštění](samples/execution.md)
+    - [Spuštění](./samples/execution.md)
 
-    - Aplikace: [Správa pozastavené instance](samples/suspended-instance-management.md)
+    - Aplikace: [Správa pozastavené instance](./samples/suspended-instance-management.md)
 
 - [Přehled hostování služeb pracovních postupů](../wcf/feature-details/hosting-workflow-services-overview.md)
 
@@ -121,7 +121,7 @@ V rozhraní .NET 3.5 byly několik omezení v návrhu známé typy:
 
 - Nebylo možné pro uživatele k určení, jaké xsi: type mají zobrazovat na přenosu, aby, zmenšete velikost serializace instance na lince.
 
-[DataContractResolver](../../../docs/framework/wcf/samples/datacontractresolver.md) řeší tyto problémy v rozhraní .NET 4.5.
+[DataContractResolver](../wcf/samples/datacontractresolver.md) řeší tyto problémy v rozhraní .NET 4.5.
 
 ### <a name="getting-started"></a>Začínáme
 
@@ -131,9 +131,9 @@ V rozhraní .NET 3.5 byly několik omezení v návrhu známé typy:
 
 - Ukázky:
 
-    - [DataContractResolver](../../../docs/framework/wcf/samples/datacontractresolver.md)
+    - [DataContractResolver](../wcf/samples/datacontractresolver.md)
 
-    - [KnownAssemblyAttribute](../../../docs/framework/wcf/samples/knownassemblyattribute.md)
+    - [KnownAssemblyAttribute](../wcf/samples/knownassemblyattribute.md)
 
 ### <a name="data-contract-resolver-scenarios"></a>Scénáře překladač kontraktu dat
 
@@ -163,9 +163,9 @@ Vývojový diagram je dobře známé paradigma vizuálně znázornit domény pro
 
 - Ukázky:
 
-    - [Zpracování chyb v aktivitě FlowChart pomocí TryCatch](../../../docs/framework/windows-workflow-foundation/samples/fault-handling-in-a-flowchart-activity-using-trycatch.md)
+    - [Zpracování chyb v aktivitě FlowChart pomocí TryCatch](./samples/fault-handling-in-a-flowchart-activity-using-trycatch.md)
 
-    - [Proces náboru](../../../docs/framework/windows-workflow-foundation/samples/hiring-process.md)
+    - [Proces náboru](./samples/hiring-process.md)
 
 - Návrháře dokumentace:
 
@@ -197,9 +197,9 @@ Procedurálních aktivit poskytují mechanismus pro model sekvenční řízení 
 
 - Ukázky:
 
-    - [Proces náboru](../../../docs/framework/windows-workflow-foundation/samples/hiring-process.md)
+    - [Proces náboru](./samples/hiring-process.md)
 
-    - [Proces nákupu v podniku](../../../docs/framework/windows-workflow-foundation/samples/corporate-purchase-process.md)
+    - [Proces nákupu v podniku](./samples/corporate-purchase-process.md)
 
 - Návrháře dokumentace:
 
@@ -237,7 +237,7 @@ Procedurálních aktivit poskytují mechanismus pro model sekvenční řízení 
 
 - V sadě Visual Studio 2012 Vytvořte konzolovou aplikaci pracovního postupu. Přidat <xref:System.Activities.Statements.TryCatch> aktivity v Návrháři pracovních postupů.
 
-- Ukázka: [Zpracování chyb v aktivitě FlowChart pomocí TryCatch](../../../docs/framework/windows-workflow-foundation/samples/fault-handling-in-a-flowchart-activity-using-trycatch.md)
+- Ukázka: [Zpracování chyb v aktivitě FlowChart pomocí TryCatch](./samples/fault-handling-in-a-flowchart-activity-using-trycatch.md)
 
 - Návrháře dokumentace: [Návrháři aktivit zpracování chyb](/visualstudio/workflow-designer/error-handling-activity-designers)
 
@@ -253,7 +253,7 @@ Sada aktivit je nutné spustit a logika specifická pro je potřeba provést, kd
 
 - V sadě Visual Studio 2012 Vytvořte konzolovou aplikaci pracovního postupu. Přidat <xref:System.Activities.Statements.Pick> aktivity v Návrháři pracovních postupů.
 
-- Ukázka: [Použití aktivity Pick](../../../docs/framework/windows-workflow-foundation/samples/using-the-pick-activity.md)
+- Ukázka: [Použití aktivity Pick](./samples/using-the-pick-activity.md)
 
 - Návrháře dokumentace: [Návrhář aktivity Pick](/visualstudio/workflow-designer/pick-activity-designer)
 
@@ -283,9 +283,9 @@ Služba směrování v rozhraní .net 4 je navržené tak, aby tyto problémy sn
 
 ### <a name="getting-started"></a>Začínáme
 
-1. Dokumentace ke službě: [Směrování](../../../docs/framework/wcf/feature-details/routing.md)
+1. Dokumentace ke službě: [Směrování](../wcf/feature-details/routing.md)
 
-2. Ukázky: [Směrovací služby &#91;Ukázky WCF&#93;](../../../docs/framework/wcf/samples/routing-services.md)
+2. Ukázky: [Směrovací služby &#91;Ukázky WCF&#93;](../wcf/samples/routing-services.md)
 
 3. Blog: [Pravidla směrování!](https://go.microsoft.com/fwlink/?LinkId=204956)
 
@@ -317,9 +317,9 @@ Kromě toho zjišťování zprávy jsou nezávislá na protokolu sítě; můžet
 
 ### <a name="getting-started"></a>Začínáme
 
-- Dokumentace ke službě: [Zjišťování WCF](../../../docs/framework/wcf/feature-details/wcf-discovery.md)
+- Dokumentace ke službě: [Zjišťování WCF](../wcf/feature-details/wcf-discovery.md)
 
-- Ukázky: [Zjišťování (Ukázky)](../../../docs/framework/wcf/samples/discovery-samples.md)
+- Ukázky: [Zjišťování (Ukázky)](../wcf/samples/discovery-samples.md)
 
 ### <a name="discovery-scenarios"></a>Zjišťování scénáře
 
@@ -343,9 +343,9 @@ Pracovní postup sledování poskytuje přehled o spuštění instance pracovní
 
     4. Sledujte pracovního postupu událostí sledování v prohlížeči událostí.
 
-3. Ukázky: [Sledování](../../../docs/framework/windows-workflow-foundation/samples/tracking.md)
+3. Ukázky: [Sledování](./samples/tracking.md)
 
-4. Rámcové dokumentaci: [Sledování a trasování pracovních postupů](../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)
+4. Rámcové dokumentaci: [Sledování a trasování pracovních postupů](workflow-tracking-and-tracing.md)
 
 ## <a name="sql-workflow-instance-store"></a>SQL Workflow Instance Store
 
@@ -355,6 +355,6 @@ Pracovní postup sledování poskytuje přehled o spuštění instance pracovní
 
 1. V sadě Visual Studio 2012, vytvořit pracovní postup, který obsahuje implicitní nebo explicitní <xref:System.Activities.Statements.Persist> aktivity. Přidat <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> chování na hostitele služby pracovního postupu. To můžete udělat v kódu nebo konfiguračního souboru aplikace.
 
-2. Ukázky: [Uchování](../../../docs/framework/windows-workflow-foundation/samples/persistence.md)
+2. Ukázky: [Uchování](./samples/persistence.md)
 
-3. Rámcové dokumentaci: [Store Instance pracovního postupu SQL](../../../docs/framework/windows-workflow-foundation/sql-workflow-instance-store.md).
+3. Rámcové dokumentaci: [Store Instance pracovního postupu SQL](sql-workflow-instance-store.md).

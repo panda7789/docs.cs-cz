@@ -15,15 +15,15 @@ helpviewer_keywords:
 - mouse [Windows Forms], events
 - MouseUp event
 ms.assetid: 8cf0070d-793b-4876-b09e-d20d28280fab
-ms.openlocfilehash: 263ad4ccbee29b31c0b10a87de82dd3ecf650919
-ms.sourcegitcommit: 2b986afe4ce9e13bbeec929c9737757eb61de60e
+ms.openlocfilehash: d762c73862d99801c3c65ca12b4c97514834ac7f
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56664182"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57712302"
 ---
 # <a name="mouse-events-in-windows-forms"></a>Události myši ve Windows Forms
-Při zpracování vstup z myši obvykle chtít znát umístění myši ukazatele a stav tlačítka myši. Toto téma obsahuje podrobné informace o tom, jak získat tyto informace z událostí myši a vysvětluje, pořadí, ve které kliknutí myší jsou vyvolány události v ovládacích prvcích Windows Forms. Seznam a popis všech událostí myši najdete v tématu [jak funguje myši vstup ve Windows Forms](../../../docs/framework/winforms/how-mouse-input-works-in-windows-forms.md).  Viz také [Přehled obslužných rutin událostí (Windows Forms)](event-handlers-overview-windows-forms.md) a [Přehled událostí (Windows Forms)](events-overview-windows-forms.md).  
+Při zpracování vstup z myši obvykle chtít znát umístění myši ukazatele a stav tlačítka myši. Toto téma obsahuje podrobné informace o tom, jak získat tyto informace z událostí myši a vysvětluje, pořadí, ve které kliknutí myší jsou vyvolány události v ovládacích prvcích Windows Forms. Seznam a popis všech událostí myši najdete v tématu [jak funguje myši vstup ve Windows Forms](how-mouse-input-works-in-windows-forms.md).  Viz také [Přehled obslužných rutin událostí (Windows Forms)](event-handlers-overview-windows-forms.md) a [Přehled událostí (Windows Forms)](events-overview-windows-forms.md).  
   
 ## <a name="mouse-information"></a>Informace o myši  
  A <xref:System.Windows.Forms.MouseEventArgs> posílá obslužné rutiny událostí myši týkající se sledování pohybu myši a kliknutím na tlačítko myši. <xref:System.Windows.Forms.MouseEventArgs> poskytuje informace o aktuálním stavu myši, včetně umístění ukazatele myši v souřadnicích klienta, které jsou stisknutí tlačítka myši, a určuje, zda se posunul kolečko myši. Několik událostí myši, jako jsou ty, které jednoduše upozornění při umístění ukazatele myši má zadaný nebo ponechat hranice ovládacího prvku, odeslání <xref:System.EventArgs> obslužné rutiny události s žádné další informace.  
@@ -62,7 +62,7 @@ Při zpracování vstup z myši obvykle chtít znát umístění myši ukazatele
   
 8.  <xref:System.Windows.Forms.Control.MouseUp> události.  
   
- Příklad kódu, který ukazuje pořadí myši klikněte na události, najdete v článku [jak: Zpracování uživatelského vstupu událostí ve Windows Forms ovládací prvky](../../../docs/framework/winforms/how-to-handle-user-input-events-in-windows-forms-controls.md).  
+ Příklad kódu, který ukazuje pořadí myši klikněte na události, najdete v článku [jak: Zpracování uživatelského vstupu událostí ve Windows Forms ovládací prvky](how-to-handle-user-input-events-in-windows-forms-controls.md).  
   
 ### <a name="individual-controls"></a>Jednotlivých ovládacích prvků  
  Následující ovládací prvky není v souladu s Standardní zkratky myši klikněte na tlačítko chování události:  
@@ -142,4 +142,4 @@ Při zpracování vstup z myši obvykle chtít znát umístění myši ukazatele
     >  Pokud se uživatel přesune ukazatel myši mimo ovládací prvek přepínací tlačítko, zatímco je stisknuto levé tlačítko myši (jako je například hýbání myší <xref:System.Windows.Forms.Button> ovládací prvek je stisknutí), bude malovat vyvolanou ovládacím prvku přepínací tlačítko stavu a pouze <xref:System.Windows.Forms.Control.MouseUp> dojde k události. <xref:System.Windows.Forms.Control.Click> Nebo <xref:System.Windows.Forms.Control.MouseClick> nebude v této situaci dojde k událostem.  
   
 ## <a name="see-also"></a>Viz také:
-- [Vstup z myši v aplikaci Windows Forms](../../../docs/framework/winforms/mouse-input-in-a-windows-forms-application.md)
+- [Vstup z myši v aplikaci Windows Forms](mouse-input-in-a-windows-forms-application.md)

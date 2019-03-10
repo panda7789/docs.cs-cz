@@ -6,24 +6,24 @@ helpviewer_keywords:
 - Windows Forms, controls by function
 - Windows Forms controls, list of
 ms.assetid: 5e65a6c3-5d6f-480d-beb8-b28f865f07e3
-ms.openlocfilehash: 91da6409eb3a02709332d8d1a5a2d7fe54d3f401
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: bdfb2d5a3ce45deb471aaa465c35b82e738a128b
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54543065"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57717918"
 ---
 # <a name="windows-forms-controls-by-function"></a>Ovládací prvky Windows Forms podle funkce
 Windows Forms nabízí ovládací prvky a součásti, které provádějí celou řadou funkcí. V následující tabulce jsou uvedeny ovládacích prvků Windows Forms a komponentami podle toho, obecné funkce. Kromě toho tam, kde více ovládacích prvků, které slouží stejnou funkci, je uvedený doporučený ovládacího prvku s poznámky týkající se ovládací prvek, který ho nahrazuje. V samostatné tabulce následujících nahrazené ovládací prvky jsou seřazeny jejich doporučená nahrazení.  
   
 > [!NOTE]
->  Následující tabulky uvádějí ne každý ovládací prvek nebo součást, kterou můžete použít v modelu Windows Forms; ucelenější seznam najdete v tématu [ovládací prvky používané ve formulářích Windows](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
+>  Následující tabulky uvádějí ne každý ovládací prvek nebo součást, kterou můžete použít v modelu Windows Forms; ucelenější seznam najdete v tématu [ovládací prvky používané ve formulářích Windows](controls-to-use-on-windows-forms.md)  
   
 ## <a name="recommended-controls-and-components-by-function"></a>Doporučené ovládací prvky a součásti podle funkce  
   
-|Funkce|Ovládací prvek|Popis|  
+|Funkce|Control|Popis|  
 |--------------|-------------|-----------------|  
-|Zobrazení dat|<xref:System.Windows.Forms.DataGridView> Ovládací prvek|<xref:System.Windows.Forms.DataGridView> Ovládací prvek pro zobrazení dat poskytuje přizpůsobitelné tabulky. <xref:System.Windows.Forms.DataGridView> Třída umožňuje přizpůsobení buněk, řádků, sloupců a ohraničení. **Poznámka:**  <xref:System.Windows.Forms.DataGridView> Řízení poskytuje mnoho základních a pokročilých funkcí, které nebyly nalezeny v <xref:System.Windows.Forms.DataGrid> ovládacího prvku. Další informace najdete v tématu [rozdíly mezi Windows Forms DataGridView a DataGrid – ovládací prvky](../../../../docs/framework/winforms/controls/differences-between-the-windows-forms-datagridview-and-datagrid-controls.md)|  
+|Zobrazení dat|<xref:System.Windows.Forms.DataGridView> Ovládací prvek|<xref:System.Windows.Forms.DataGridView> Ovládací prvek pro zobrazení dat poskytuje přizpůsobitelné tabulky. <xref:System.Windows.Forms.DataGridView> Třída umožňuje přizpůsobení buněk, řádků, sloupců a ohraničení. **Poznámka:**  <xref:System.Windows.Forms.DataGridView> Řízení poskytuje mnoho základních a pokročilých funkcí, které nebyly nalezeny v <xref:System.Windows.Forms.DataGrid> ovládacího prvku. Další informace najdete v tématu [rozdíly mezi Windows Forms DataGridView a DataGrid – ovládací prvky](differences-between-the-windows-forms-datagridview-and-datagrid-controls.md)|  
 |Vytváření datových vazeb a navigace|<xref:System.Windows.Forms.BindingSource> Komponenta|Vazba ovládacích prvků na formuláři data zjednodušuje tím, že poskytuje správu měny, oznámení o změně a dalším službám.|  
 ||<xref:System.Windows.Forms.BindingNavigator> Ovládací prvek|Poskytuje rozhraní typ panelu nástrojů k navigaci a manipulaci s daty ve formuláři.|  
 |Úpravy textu|<xref:System.Windows.Forms.TextBox> Ovládací prvek|Zobrazí text zadaný v době návrhu, který lze upravovat uživatelé v době běhu, nebo změnit prostřednictvím kódu programu.|  
@@ -85,5 +85,5 @@ Windows Forms nabízí ovládací prvky a součásti, které provádějí celou 
 |Rozložení formuláře|<xref:System.Windows.Forms.Splitter>|<xref:System.Windows.Forms.SplitContainer>|  
   
 ## <a name="see-also"></a>Viz také:
-- [Ovládací prvky používané ve Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)
-- [Vývoj vlastních ovládacích prvků Windows Forms pomocí rozhraní .NET Framework](../../../../docs/framework/winforms/controls/developing-custom-windows-forms-controls.md)
+- [Ovládací prvky používané ve Windows Forms](controls-to-use-on-windows-forms.md)
+- [Vývoj vlastních ovládacích prvků Windows Forms pomocí rozhraní .NET Framework](developing-custom-windows-forms-controls.md)

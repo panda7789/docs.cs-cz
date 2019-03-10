@@ -15,12 +15,12 @@ helpviewer_keywords:
 - .rtf files [Windows Forms], saving in RichTextBox control
 - text files [Windows Forms], saving from RichTextBox control
 ms.assetid: 4a58ec19-84d1-4383-9110-298c06adcfca
-ms.openlocfilehash: 739cc33df873ef2c8ec7a2f5eaf867abadb8da75
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c9a5d471a58c646c786cf441ee7d7ec235788f10
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54539776"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57723020"
 ---
 # <a name="how-to-save-files-with-the-windows-forms-richtextbox-control"></a>Postupy: Ukládání souborů pomocí ovládacího prvku Windows Forms RichTextBox
 Windows Forms <xref:System.Windows.Forms.RichTextBox> ovládací prvek lze zapsat informace se zobrazí v jednom z několika formátů:  
@@ -41,7 +41,7 @@ Windows Forms <xref:System.Windows.Forms.RichTextBox> ovládací prvek lze zapsa
   
 1.  Určete cestu k souboru, který se má uložit.  
   
-     K tomu v reálné aplikaci byste obvykle použili <xref:System.Windows.Forms.SaveFileDialog> komponenty. Přehled najdete v tématu [SaveFileDialog – přehled komponenty](../../../../docs/framework/winforms/controls/savefiledialog-component-overview-windows-forms.md).  
+     K tomu v reálné aplikaci byste obvykle použili <xref:System.Windows.Forms.SaveFileDialog> komponenty. Přehled najdete v tématu [SaveFileDialog – přehled komponenty](savefiledialog-component-overview-windows-forms.md).  
   
 2.  Volání <xref:System.Windows.Forms.RichTextBox.SaveFile%2A> metodu <xref:System.Windows.Forms.RichTextBox> ovládací prvek, pro uložení souboru a volitelně typu souboru. Pokud jste volali metodu s názvem souboru jako její jediný argument, soubor se uloží ve formátu RTF. Chcete-li zadat jiný typ souboru, volejte metodu s hodnotou <xref:System.Windows.Forms.RichTextBoxStreamType> výčet jako druhý argument.  
   
@@ -90,5 +90,5 @@ Windows Forms <xref:System.Windows.Forms.RichTextBox> ovládací prvek lze zapsa
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Forms.RichTextBox.SaveFile%2A?displayProperty=nameWithType>
 - <xref:System.Windows.Forms.RichTextBox>
-- [Ovládací prvek RichTextBox](../../../../docs/framework/winforms/controls/richtextbox-control-windows-forms.md)
-- [Ovládací prvky používané ve Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)
+- [Ovládací prvek RichTextBox](richtextbox-control-windows-forms.md)
+- [Ovládací prvky používané ve Windows Forms](controls-to-use-on-windows-forms.md)

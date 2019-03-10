@@ -5,15 +5,15 @@ helpviewer_keywords:
 - Windows Forms, mouse input
 - mouse [Windows Forms], input
 ms.assetid: 48fc5240-75a6-44bf-9fce-6aa21b49705a
-ms.openlocfilehash: ac6cdbdb690a1e5e6693f2e5d1c5d2236a643ddb
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 7817b6a414f313cd2891fe0e124e230643b06e07
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54496004"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57725322"
 ---
 # <a name="how-mouse-input-works-in-windows-forms"></a>Jak funguje vstup myši ve Windows Forms
-Příjem a zpracování vstup z myši je důležitou součástí každé aplikace Windows. Můžete zpracovávat události myši k provedení akce ve vaší aplikaci nebo pomocí myši umístění informace o provedení volání testování nebo jiné akce. Kromě toho můžete změnit způsob, jakým ovládací prvky ve vaší aplikaci zpracovávat vstup z myši. Toto téma popisuje tyto události myši ve podrobností a získání a nastavení systému pro myš. Další informace o datech pomocí myši k dispozici jsou vyvolány události a pořadí, ve kterém události kliknutí myší, přečtěte si téma [události myši ve Windows Forms](../../../docs/framework/winforms/mouse-events-in-windows-forms.md).  
+Příjem a zpracování vstup z myši je důležitou součástí každé aplikace Windows. Můžete zpracovávat události myši k provedení akce ve vaší aplikaci nebo pomocí myši umístění informace o provedení volání testování nebo jiné akce. Kromě toho můžete změnit způsob, jakým ovládací prvky ve vaší aplikaci zpracovávat vstup z myši. Toto téma popisuje tyto události myši ve podrobností a získání a nastavení systému pro myš. Další informace o datech pomocí myši k dispozici jsou vyvolány události a pořadí, ve kterém události kliknutí myší, přečtěte si téma [události myši ve Windows Forms](mouse-events-in-windows-forms.md).  
   
 ## <a name="mouse-location-and-hit-testing"></a>Kurzor myši a spuštění testu  
  Když se uživatel přesune ukazatel myši, operační systém přesune ukazatel myši. Ukazatel myši obsahuje jeden pixel, volá aktivního bodu, který sleduje operačního systému a rozpozná jako pozici ukazatele. Když uživatel pohybuje ukazatelem myši nebo stiskne tlačítko myši, <xref:System.Windows.Forms.Control> obsahující <xref:System.Windows.Forms.Cursor.HotSpot%2A> vyvolává událost odpovídající myší. Můžete získat aktuální pozice myši s <xref:System.Windows.Forms.MouseEventArgs.Location%2A> vlastnost <xref:System.Windows.Forms.MouseEventArgs> při zpracování události myši nebo pomocí <xref:System.Windows.Forms.Cursor.Position%2A> vlastnost <xref:System.Windows.Forms.Cursor> třídy. Lze následně použít informace o umístění myši k provedení spuštění testu a provést akci na základě umístění myši. Možnost spuštění testu je založená na několik ovládacích prvků ve Windows Forms, jako <xref:System.Windows.Forms.ListView>, <xref:System.Windows.Forms.TreeView>, <xref:System.Windows.Forms.MonthCalendar> a <xref:System.Windows.Forms.DataGridView> ovládací prvky. Použít s událostí myši odpovídající <xref:System.Windows.Forms.Control.MouseHover> například spuštění testu je velmi užitečné pro určení, kdy má vaše aplikace provést konkrétní akce.  
@@ -53,6 +53,6 @@ Příjem a zpracování vstup z myši je důležitou součástí každé aplikac
 |<xref:System.Windows.Forms.SystemInformation.MouseWheelScrollLines%2A>|Získá počet řádků posunu otáčí kolečkem myši.|  
   
 ## <a name="see-also"></a>Viz také:
-- [Vstup z myši v aplikaci Windows Forms](../../../docs/framework/winforms/mouse-input-in-a-windows-forms-application.md)
-- [Zachycení myši ve Windows Forms](../../../docs/framework/winforms/mouse-capture-in-windows-forms.md)
-- [Ukazatele myši ve Windows Forms](../../../docs/framework/winforms/mouse-pointers-in-windows-forms.md)
+- [Vstup z myši v aplikaci Windows Forms](mouse-input-in-a-windows-forms-application.md)
+- [Zachycení myši ve Windows Forms](mouse-capture-in-windows-forms.md)
+- [Ukazatele myši ve Windows Forms](mouse-pointers-in-windows-forms.md)

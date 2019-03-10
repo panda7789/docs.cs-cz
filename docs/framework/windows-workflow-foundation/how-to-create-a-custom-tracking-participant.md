@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 1b612c7e-2381-4a7c-b07a-77030415f2a3
-ms.openlocfilehash: 4afa3f46532e365760c0dd5a9e1880a82e5ae82b
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: c4c6a8d17180ee00942c1bfd9ddc7bfa04bb962f
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54150627"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57720953"
 ---
 # <a name="how-to-create-a-custom-tracking-participant"></a>Postupy: Vytvoření vlastního účastníka sledování
 Pracovní postup sledování poskytuje přehled o stavu pracovního postupu provádění. Modul runtime pracovního postupu vysílá záznamy sledování, které popisují pracovního postupu události životního cyklu, události životního cyklu aktivit, záložku obnovení a chyb. Tyto záznamy sledování se spotřebovávají sledování účastníci. Windows Workflow Foundation (WF) zahrnuje účastník standardní sledování, který zapíše záznamy sledování jako události trasování událostí pro Windows (ETW). Je-li který nesplňuje vaše požadavky, můžete také napsat vlastní sledování účastník. Tento kurz – krok popisuje postup vytvoření vlastního účastníka sledování a sledování profil, který zachytit výstup `WriteLine` aktivity, aby mohly být zobrazeny uživateli.  
@@ -328,7 +328,7 @@ Pracovní postup sledování poskytuje přehled o stavu pracovního postupu prov
     ```
     
     > [!NOTE]
-    > Tyto informace jsou užitečné pro určení rozsahu náhodné číslo, ale neobsahuje žádné informace o tom, jaké pokusů mít dříve provedeny. Tyto informace jsou v dalším kroku [jak: Hostování několika verzí pracovní postup-souběžně](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md).
+    > Tyto informace jsou užitečné pro určení rozsahu náhodné číslo, ale neobsahuje žádné informace o tom, jaké pokusů mít dříve provedeny. Tyto informace jsou v dalším kroku [jak: Hostování několika verzí pracovní postup-souběžně](how-to-host-multiple-versions-of-a-workflow-side-by-side.md).
 
     Poznamenejte si id instance pracovního postupu a Zahrajte si hru na jeho dokončení.
   
@@ -342,4 +342,4 @@ Pracovní postup sledování poskytuje přehled o stavu pracovního postupu prov
     Please enter a number between 1 and 10
     ```
 
-    Kromě chybí pokusů uživatele tato data sledování neobsahuje informace o posledním odhad pracovního postupu. Důvodem je, že informace o sledování se skládá pouze z `WriteLine` výstup z pracovního postupu, a z Probíhá závěrečná zpráva, která se zobrazí `Completed` obslužná rutina po dokončení pracovního postupu. V dalším kroku kurzu [jak: Hostování několika verzí pracovní postup-souběžně](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md), existující `WriteLine` aktivity jsou upraveny pro zobrazení uživatele pokusů a dalších `WriteLine` je aktivita přidána, který zobrazí konečných výsledků. Jakmile tyto změny jsou integrované, [jak: Hostování několika verzí pracovní postup-souběžně](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md) ukazuje, jak hostování několika verzí pracovního postupu ve stejnou dobu.
+    Kromě chybí pokusů uživatele tato data sledování neobsahuje informace o posledním odhad pracovního postupu. Důvodem je, že informace o sledování se skládá pouze z `WriteLine` výstup z pracovního postupu, a z Probíhá závěrečná zpráva, která se zobrazí `Completed` obslužná rutina po dokončení pracovního postupu. V dalším kroku kurzu [jak: Hostování několika verzí pracovní postup-souběžně](how-to-host-multiple-versions-of-a-workflow-side-by-side.md), existující `WriteLine` aktivity jsou upraveny pro zobrazení uživatele pokusů a dalších `WriteLine` je aktivita přidána, který zobrazí konečných výsledků. Jakmile tyto změny jsou integrované, [jak: Hostování několika verzí pracovní postup-souběžně](how-to-host-multiple-versions-of-a-workflow-side-by-side.md) ukazuje, jak hostování několika verzí pracovního postupu ve stejnou dobu.
