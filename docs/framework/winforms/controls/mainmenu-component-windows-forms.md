@@ -4,27 +4,27 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - MainMenu control [Windows Forms]
 ms.assetid: 7cd22f29-828b-42e8-9c88-f08aa4533850
-ms.openlocfilehash: 03de5911baf2a26ff5fc0d3a4e7ed3f9400db8b8
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 245193498478e24b2f0be102ecbbd6f5051167c4
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54656762"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57713004"
 ---
-# <a name="mainmenu-component-windows-forms"></a><span data-ttu-id="cbf40-102">MainMenu – komponenta (Windows Forms)</span><span class="sxs-lookup"><span data-stu-id="cbf40-102">MainMenu Component (Windows Forms)</span></span>
+# <a name="mainmenu-component-windows-forms"></a><span data-ttu-id="73d73-102">MainMenu – komponenta (Windows Forms)</span><span class="sxs-lookup"><span data-stu-id="73d73-102">MainMenu Component (Windows Forms)</span></span>
 > [!NOTE]
->  <span data-ttu-id="cbf40-103">I když `MenuStrip` a `ContextMenuStrip` nahradit a přidání funkce, které `MainMenu` a <xref:System.Windows.Forms.ContextMenu> ovládací prvky z předchozích verzí `MainMenu` a <xref:System.Windows.Forms.ContextMenu> se zachovají pro zpětnou kompatibilitu a budoucí použití, pokud se rozhodnete.</span><span class="sxs-lookup"><span data-stu-id="cbf40-103">Although `MenuStrip` and `ContextMenuStrip` replace and add functionality to the `MainMenu` and <xref:System.Windows.Forms.ContextMenu> controls of previous versions, `MainMenu` and <xref:System.Windows.Forms.ContextMenu> are retained for both backward compatibility and future use if you choose.</span></span>  
+>  <span data-ttu-id="73d73-103">I když `MenuStrip` a `ContextMenuStrip` nahradit a přidání funkce, které `MainMenu` a <xref:System.Windows.Forms.ContextMenu> ovládací prvky z předchozích verzí `MainMenu` a <xref:System.Windows.Forms.ContextMenu> se zachovají pro zpětnou kompatibilitu a budoucí použití, pokud se rozhodnete.</span><span class="sxs-lookup"><span data-stu-id="73d73-103">Although `MenuStrip` and `ContextMenuStrip` replace and add functionality to the `MainMenu` and <xref:System.Windows.Forms.ContextMenu> controls of previous versions, `MainMenu` and <xref:System.Windows.Forms.ContextMenu> are retained for both backward compatibility and future use if you choose.</span></span>  
   
- <span data-ttu-id="cbf40-104">Windows Forms `MainMenu` komponenty zobrazí nabídku v době běhu.</span><span class="sxs-lookup"><span data-stu-id="cbf40-104">The Windows Forms `MainMenu` component displays a menu at run time.</span></span>  
+ <span data-ttu-id="73d73-104">Windows Forms `MainMenu` komponenty zobrazí nabídku v době běhu.</span><span class="sxs-lookup"><span data-stu-id="73d73-104">The Windows Forms `MainMenu` component displays a menu at run time.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="cbf40-105">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="cbf40-105">In This Section</span></span>  
- [<span data-ttu-id="cbf40-106">Přehled komponenty MainMenu</span><span class="sxs-lookup"><span data-stu-id="cbf40-106">MainMenu Component Overview</span></span>](../../../../docs/framework/winforms/controls/mainmenu-component-overview-windows-forms.md)  
- <span data-ttu-id="cbf40-107">Vysvětluje, co je tato součást a jeho klíčové funkce a vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="cbf40-107">Explains what this component is and its key features and properties.</span></span>  
+## <a name="in-this-section"></a><span data-ttu-id="73d73-105">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="73d73-105">In This Section</span></span>  
+ [<span data-ttu-id="73d73-106">Přehled komponenty MainMenu</span><span class="sxs-lookup"><span data-stu-id="73d73-106">MainMenu Component Overview</span></span>](mainmenu-component-overview-windows-forms.md)  
+ <span data-ttu-id="73d73-107">Vysvětluje, co je tato součást a jeho klíčové funkce a vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="73d73-107">Explains what this component is and its key features and properties.</span></span>  
   
-## <a name="reference"></a><span data-ttu-id="cbf40-108">Odkaz</span><span class="sxs-lookup"><span data-stu-id="cbf40-108">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="73d73-108">Odkaz</span><span class="sxs-lookup"><span data-stu-id="73d73-108">Reference</span></span>  
  <xref:System.Windows.Forms.MainMenu>  
- <span data-ttu-id="cbf40-109">Tato třída popisuje a obsahuje odkazy na všechny její členy.</span><span class="sxs-lookup"><span data-stu-id="cbf40-109">Describes this class and has links to all its members.</span></span>  
+ <span data-ttu-id="73d73-109">Tato třída popisuje a obsahuje odkazy na všechny její členy.</span><span class="sxs-lookup"><span data-stu-id="73d73-109">Describes this class and has links to all its members.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="cbf40-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="cbf40-110">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="73d73-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="73d73-110">See also</span></span>
 - <xref:System.Windows.Forms.MenuStrip>
 - <xref:System.Windows.Forms.ContextMenuStrip>

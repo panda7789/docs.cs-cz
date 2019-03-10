@@ -10,26 +10,26 @@ helpviewer_keywords:
 - examples [Windows Forms], toolbars
 - ToolStrip control [Windows Forms], rendering
 ms.assetid: 88a804ba-679f-4ba3-938a-0dc396199c5b
-ms.openlocfilehash: a70503dd4def19dd303a7362c9ca4d92f1419ff6
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 379cb8862ce5dda5cfffc625cc72906cf6a2c305
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54538502"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57721005"
 ---
-# <a name="how-to-create-and-set-a-custom-renderer-for-the-toolstrip-control-in-windows-forms"></a><span data-ttu-id="9ace9-102">Postupy: Vytvoření a nastavení vlastního Rendereru pro ovládací prvek ToolStrip ve Windows Forms</span><span class="sxs-lookup"><span data-stu-id="9ace9-102">How to: Create and Set a Custom Renderer for the ToolStrip Control in Windows Forms</span></span>
-<span data-ttu-id="9ace9-103"><xref:System.Windows.Forms.ToolStrip> ovládací prvky umožňují snadno podporu k používání motivů a stylů.</span><span class="sxs-lookup"><span data-stu-id="9ace9-103"><xref:System.Windows.Forms.ToolStrip> controls give easy support to themes and styles.</span></span> <span data-ttu-id="9ace9-104">Zcela vlastní vzhled a chování (vzhled a chování) můžete dosáhnout tím, že buď nastavíte <xref:System.Windows.Forms.ToolStrip.Renderer%2A?displayProperty=nameWithType> vlastnost nebo <xref:System.Windows.Forms.ToolStripManager.Renderer%2A?displayProperty=nameWithType> vlastnost vlastní zobrazovací jednotky.</span><span class="sxs-lookup"><span data-stu-id="9ace9-104">You can achieve completely custom appearance and behavior (look and feel) by setting either the <xref:System.Windows.Forms.ToolStrip.Renderer%2A?displayProperty=nameWithType> property or the <xref:System.Windows.Forms.ToolStripManager.Renderer%2A?displayProperty=nameWithType> property to a custom renderer.</span></span>  
+# <a name="how-to-create-and-set-a-custom-renderer-for-the-toolstrip-control-in-windows-forms"></a><span data-ttu-id="07a5b-102">Postupy: Vytvoření a nastavení vlastního Rendereru pro ovládací prvek ToolStrip ve Windows Forms</span><span class="sxs-lookup"><span data-stu-id="07a5b-102">How to: Create and Set a Custom Renderer for the ToolStrip Control in Windows Forms</span></span>
+<span data-ttu-id="07a5b-103"><xref:System.Windows.Forms.ToolStrip> ovládací prvky umožňují snadno podporu k používání motivů a stylů.</span><span class="sxs-lookup"><span data-stu-id="07a5b-103"><xref:System.Windows.Forms.ToolStrip> controls give easy support to themes and styles.</span></span> <span data-ttu-id="07a5b-104">Zcela vlastní vzhled a chování (vzhled a chování) můžete dosáhnout tím, že buď nastavíte <xref:System.Windows.Forms.ToolStrip.Renderer%2A?displayProperty=nameWithType> vlastnost nebo <xref:System.Windows.Forms.ToolStripManager.Renderer%2A?displayProperty=nameWithType> vlastnost vlastní zobrazovací jednotky.</span><span class="sxs-lookup"><span data-stu-id="07a5b-104">You can achieve completely custom appearance and behavior (look and feel) by setting either the <xref:System.Windows.Forms.ToolStrip.Renderer%2A?displayProperty=nameWithType> property or the <xref:System.Windows.Forms.ToolStripManager.Renderer%2A?displayProperty=nameWithType> property to a custom renderer.</span></span>  
   
- <span data-ttu-id="9ace9-105">Můžete přiřadit renderery jednotlivých <xref:System.Windows.Forms.ToolStrip>, <xref:System.Windows.Forms.MenuStrip>, <xref:System.Windows.Forms.ContextMenuStrip>, nebo <xref:System.Windows.Forms.StatusStrip> ovládacího prvku, nebo můžete použít <xref:System.Windows.Forms.ToolStripManager.Renderer%2A> vlastnost má vliv na všechny objekty tak, že nastavíte <xref:System.Windows.Forms.ToolStrip.RenderMode%2A?displayProperty=nameWithType> vlastnost <xref:System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="9ace9-105">You can assign renderers to each individual <xref:System.Windows.Forms.ToolStrip>, <xref:System.Windows.Forms.MenuStrip>, <xref:System.Windows.Forms.ContextMenuStrip>, or <xref:System.Windows.Forms.StatusStrip> control, or you can use the <xref:System.Windows.Forms.ToolStripManager.Renderer%2A> property to affect all objects by setting the <xref:System.Windows.Forms.ToolStrip.RenderMode%2A?displayProperty=nameWithType> property to <xref:System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode?displayProperty=nameWithType>.</span></span>  
+ <span data-ttu-id="07a5b-105">Můžete přiřadit renderery jednotlivých <xref:System.Windows.Forms.ToolStrip>, <xref:System.Windows.Forms.MenuStrip>, <xref:System.Windows.Forms.ContextMenuStrip>, nebo <xref:System.Windows.Forms.StatusStrip> ovládacího prvku, nebo můžete použít <xref:System.Windows.Forms.ToolStripManager.Renderer%2A> vlastnost má vliv na všechny objekty tak, že nastavíte <xref:System.Windows.Forms.ToolStrip.RenderMode%2A?displayProperty=nameWithType> vlastnost <xref:System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="07a5b-105">You can assign renderers to each individual <xref:System.Windows.Forms.ToolStrip>, <xref:System.Windows.Forms.MenuStrip>, <xref:System.Windows.Forms.ContextMenuStrip>, or <xref:System.Windows.Forms.StatusStrip> control, or you can use the <xref:System.Windows.Forms.ToolStripManager.Renderer%2A> property to affect all objects by setting the <xref:System.Windows.Forms.ToolStrip.RenderMode%2A?displayProperty=nameWithType> property to <xref:System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode?displayProperty=nameWithType>.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="9ace9-106"><xref:System.Windows.Forms.ToolStrip.RenderMode%2A> Vrátí <xref:System.Windows.Forms.ToolStripRenderMode.Custom> pouze tehdy, pokud hodnota <xref:System.Windows.Forms.ToolStrip.Renderer%2A?displayProperty=nameWithType> není `null`.</span><span class="sxs-lookup"><span data-stu-id="9ace9-106"><xref:System.Windows.Forms.ToolStrip.RenderMode%2A> returns <xref:System.Windows.Forms.ToolStripRenderMode.Custom> only if the value of <xref:System.Windows.Forms.ToolStrip.Renderer%2A?displayProperty=nameWithType> is not `null`.</span></span>  
+>  <span data-ttu-id="07a5b-106"><xref:System.Windows.Forms.ToolStrip.RenderMode%2A> Vrátí <xref:System.Windows.Forms.ToolStripRenderMode.Custom> pouze tehdy, pokud hodnota <xref:System.Windows.Forms.ToolStrip.Renderer%2A?displayProperty=nameWithType> není `null`.</span><span class="sxs-lookup"><span data-stu-id="07a5b-106"><xref:System.Windows.Forms.ToolStrip.RenderMode%2A> returns <xref:System.Windows.Forms.ToolStripRenderMode.Custom> only if the value of <xref:System.Windows.Forms.ToolStrip.Renderer%2A?displayProperty=nameWithType> is not `null`.</span></span>  
   
-### <a name="to-create-a-custom-renderer"></a><span data-ttu-id="9ace9-107">Chcete-li vytvořit vlastní zobrazovací jednotky</span><span class="sxs-lookup"><span data-stu-id="9ace9-107">To create a custom renderer</span></span>  
+### <a name="to-create-a-custom-renderer"></a><span data-ttu-id="07a5b-107">Chcete-li vytvořit vlastní zobrazovací jednotky</span><span class="sxs-lookup"><span data-stu-id="07a5b-107">To create a custom renderer</span></span>  
   
-1.  <span data-ttu-id="9ace9-108">Rozšíření <xref:System.Windows.Forms.ToolStripRenderer> třídy.</span><span class="sxs-lookup"><span data-stu-id="9ace9-108">Extend the <xref:System.Windows.Forms.ToolStripRenderer> class.</span></span>  
+1.  <span data-ttu-id="07a5b-108">Rozšíření <xref:System.Windows.Forms.ToolStripRenderer> třídy.</span><span class="sxs-lookup"><span data-stu-id="07a5b-108">Extend the <xref:System.Windows.Forms.ToolStripRenderer> class.</span></span>  
   
-2.  <span data-ttu-id="9ace9-109">Implementovat požadované vlastní vykreslování tak, že přepíšete odpovídající *na...*</span><span class="sxs-lookup"><span data-stu-id="9ace9-109">Implement desired custom rendering by overriding appropriate *On…*</span></span> <span data-ttu-id="9ace9-110">členové</span><span class="sxs-lookup"><span data-stu-id="9ace9-110">members</span></span>  
+2.  <span data-ttu-id="07a5b-109">Implementovat požadované vlastní vykreslování tak, že přepíšete odpovídající *na...*</span><span class="sxs-lookup"><span data-stu-id="07a5b-109">Implement desired custom rendering by overriding appropriate *On…*</span></span> <span data-ttu-id="07a5b-110">členy</span><span class="sxs-lookup"><span data-stu-id="07a5b-110">members</span></span>  
   
     ```vb  
     Public Class RedTextRenderer  
@@ -57,9 +57,9 @@ ms.locfileid: "54538502"
     }  
     ```  
   
-### <a name="to-set-the-custom-renderer-to-be-the-current-renderer"></a><span data-ttu-id="9ace9-111">Nastavení vlastního rendereru bude aktuální zobrazovací jednotky</span><span class="sxs-lookup"><span data-stu-id="9ace9-111">To set the custom renderer to be the current renderer</span></span>  
+### <a name="to-set-the-custom-renderer-to-be-the-current-renderer"></a><span data-ttu-id="07a5b-111">Nastavení vlastního rendereru bude aktuální zobrazovací jednotky</span><span class="sxs-lookup"><span data-stu-id="07a5b-111">To set the custom renderer to be the current renderer</span></span>  
   
-1.  <span data-ttu-id="9ace9-112">Nastavení vlastního rendereru pro jeden <xref:System.Windows.Forms.ToolStrip>, nastavte <xref:System.Windows.Forms.ToolStrip.Renderer%2A?displayProperty=nameWithType> vlastnost vlastní zobrazovací jednotky.</span><span class="sxs-lookup"><span data-stu-id="9ace9-112">To set the custom renderer for one <xref:System.Windows.Forms.ToolStrip>, set the <xref:System.Windows.Forms.ToolStrip.Renderer%2A?displayProperty=nameWithType> property to the custom renderer.</span></span>  
+1.  <span data-ttu-id="07a5b-112">Nastavení vlastního rendereru pro jeden <xref:System.Windows.Forms.ToolStrip>, nastavte <xref:System.Windows.Forms.ToolStrip.Renderer%2A?displayProperty=nameWithType> vlastnost vlastní zobrazovací jednotky.</span><span class="sxs-lookup"><span data-stu-id="07a5b-112">To set the custom renderer for one <xref:System.Windows.Forms.ToolStrip>, set the <xref:System.Windows.Forms.ToolStrip.Renderer%2A?displayProperty=nameWithType> property to the custom renderer.</span></span>  
   
     ```vb  
     toolStrip1.Renderer = New RedTextRenderer()  
@@ -69,7 +69,7 @@ ms.locfileid: "54538502"
     toolStrip1.Renderer = new RedTextRenderer();  
     ```  
   
-2.  <span data-ttu-id="9ace9-113">Nebo k nastavení vlastní zobrazovací jednotky pro všechny <xref:System.Windows.Forms.ToolStrip> třídy obsažené ve vaší aplikaci: Nastavte <xref:System.Windows.Forms.ToolStripManager.Renderer%2A?displayProperty=nameWithType> do vlastní zobrazovací jednotky a nastavte vlastnost <xref:System.Windows.Forms.ToolStrip.RenderMode%2A> vlastnost <xref:System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode>.</span><span class="sxs-lookup"><span data-stu-id="9ace9-113">Or to set the custom renderer for all <xref:System.Windows.Forms.ToolStrip> classes contained in your application: Set the <xref:System.Windows.Forms.ToolStripManager.Renderer%2A?displayProperty=nameWithType> property to the custom renderer and set the <xref:System.Windows.Forms.ToolStrip.RenderMode%2A> property to <xref:System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode>.</span></span>  
+2.  <span data-ttu-id="07a5b-113">Nebo k nastavení vlastní zobrazovací jednotky pro všechny <xref:System.Windows.Forms.ToolStrip> třídy obsažené ve vaší aplikaci: Nastavte <xref:System.Windows.Forms.ToolStripManager.Renderer%2A?displayProperty=nameWithType> do vlastní zobrazovací jednotky a nastavte vlastnost <xref:System.Windows.Forms.ToolStrip.RenderMode%2A> vlastnost <xref:System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode>.</span><span class="sxs-lookup"><span data-stu-id="07a5b-113">Or to set the custom renderer for all <xref:System.Windows.Forms.ToolStrip> classes contained in your application: Set the <xref:System.Windows.Forms.ToolStripManager.Renderer%2A?displayProperty=nameWithType> property to the custom renderer and set the <xref:System.Windows.Forms.ToolStrip.RenderMode%2A> property to <xref:System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode>.</span></span>  
   
     ```vb  
     toolStrip1.RenderMode = ToolStripRenderMode.ManagerRenderMode  
@@ -81,10 +81,10 @@ ms.locfileid: "54538502"
     ToolStripManager.Renderer = new RedTextRenderer();  
     ```  
   
-## <a name="see-also"></a><span data-ttu-id="9ace9-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="9ace9-114">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="07a5b-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="07a5b-114">See also</span></span>
 - <xref:System.Windows.Forms.ToolStripManager.Renderer%2A>
 - <xref:System.Windows.Forms.ToolStripRenderer>
 - <xref:System.Windows.Forms.ToolStrip.RenderMode%2A>
-- [<span data-ttu-id="9ace9-115">Přehled ovládacího prvku ToolStrip</span><span class="sxs-lookup"><span data-stu-id="9ace9-115">ToolStrip Control Overview</span></span>](../../../../docs/framework/winforms/controls/toolstrip-control-overview-windows-forms.md)
-- [<span data-ttu-id="9ace9-116">Architektura ovládacího prvku ToolStrip</span><span class="sxs-lookup"><span data-stu-id="9ace9-116">ToolStrip Control Architecture</span></span>](../../../../docs/framework/winforms/controls/toolstrip-control-architecture.md)
-- [<span data-ttu-id="9ace9-117">Shrnutí technologie ToolStrip</span><span class="sxs-lookup"><span data-stu-id="9ace9-117">ToolStrip Technology Summary</span></span>](../../../../docs/framework/winforms/controls/toolstrip-technology-summary.md)
+- [<span data-ttu-id="07a5b-115">Přehled ovládacího prvku ToolStrip</span><span class="sxs-lookup"><span data-stu-id="07a5b-115">ToolStrip Control Overview</span></span>](toolstrip-control-overview-windows-forms.md)
+- [<span data-ttu-id="07a5b-116">Architektura ovládacího prvku ToolStrip</span><span class="sxs-lookup"><span data-stu-id="07a5b-116">ToolStrip Control Architecture</span></span>](toolstrip-control-architecture.md)
+- [<span data-ttu-id="07a5b-117">Shrnutí technologie ToolStrip</span><span class="sxs-lookup"><span data-stu-id="07a5b-117">ToolStrip Technology Summary</span></span>](toolstrip-technology-summary.md)

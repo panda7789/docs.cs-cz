@@ -9,19 +9,19 @@ helpviewer_keywords:
 - spin button control [Windows Forms], adding items
 - DomainUpDown control [Windows Forms], adding items to
 ms.assetid: fd31d314-33eb-4181-90f8-d32ed0c4e072
-ms.openlocfilehash: 865f569da561ec5883b0a0f08fcedb34fc84820c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 06c2c83ddfba67aaff775065cc2aa4515978bf81
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54738557"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57722708"
 ---
-# <a name="how-to-add-items-to-windows-forms-domainupdown-controls-programmatically"></a><span data-ttu-id="003b0-102">Postupy: Programové přidání položek do ovládacích prvků Windows Forms DomainUpDown</span><span class="sxs-lookup"><span data-stu-id="003b0-102">How to: Add Items to Windows Forms DomainUpDown Controls Programmatically</span></span>
-<span data-ttu-id="003b0-103">Můžete přidat položky do formulářů Windows <xref:System.Windows.Forms.DomainUpDown> ovládacího prvku v kódu.</span><span class="sxs-lookup"><span data-stu-id="003b0-103">You can add items to the Windows Forms <xref:System.Windows.Forms.DomainUpDown> control in code.</span></span> <span data-ttu-id="003b0-104">Volání <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Add%2A> nebo <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Insert%2A> metodu <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection> třídy k přidání položek do ovládacího prvku <xref:System.Windows.Forms.DomainUpDown.Items%2A> vlastnost.</span><span class="sxs-lookup"><span data-stu-id="003b0-104">Call the <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Add%2A> or <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Insert%2A> method of the <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection> class to add items to the control's <xref:System.Windows.Forms.DomainUpDown.Items%2A> property.</span></span> <span data-ttu-id="003b0-105"><xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Add%2A> Metoda přidá položku na konec kolekce, zatímco <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Insert%2A> metoda přidá položku na určené pozici.</span><span class="sxs-lookup"><span data-stu-id="003b0-105">The <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Add%2A> method adds an item to the end of a collection, while the <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Insert%2A> method adds an item at a specified position.</span></span>  
+# <a name="how-to-add-items-to-windows-forms-domainupdown-controls-programmatically"></a><span data-ttu-id="d4cbd-102">Postupy: Programové přidání položek do ovládacích prvků Windows Forms DomainUpDown</span><span class="sxs-lookup"><span data-stu-id="d4cbd-102">How to: Add Items to Windows Forms DomainUpDown Controls Programmatically</span></span>
+<span data-ttu-id="d4cbd-103">Můžete přidat položky do formulářů Windows <xref:System.Windows.Forms.DomainUpDown> ovládacího prvku v kódu.</span><span class="sxs-lookup"><span data-stu-id="d4cbd-103">You can add items to the Windows Forms <xref:System.Windows.Forms.DomainUpDown> control in code.</span></span> <span data-ttu-id="d4cbd-104">Volání <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Add%2A> nebo <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Insert%2A> metodu <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection> třídy k přidání položek do ovládacího prvku <xref:System.Windows.Forms.DomainUpDown.Items%2A> vlastnost.</span><span class="sxs-lookup"><span data-stu-id="d4cbd-104">Call the <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Add%2A> or <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Insert%2A> method of the <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection> class to add items to the control's <xref:System.Windows.Forms.DomainUpDown.Items%2A> property.</span></span> <span data-ttu-id="d4cbd-105"><xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Add%2A> Metoda přidá položku na konec kolekce, zatímco <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Insert%2A> metoda přidá položku na určené pozici.</span><span class="sxs-lookup"><span data-stu-id="d4cbd-105">The <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Add%2A> method adds an item to the end of a collection, while the <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Insert%2A> method adds an item at a specified position.</span></span>  
   
-### <a name="to-add-a-new-item"></a><span data-ttu-id="003b0-106">Chcete-li přidat novou položku</span><span class="sxs-lookup"><span data-stu-id="003b0-106">To add a new item</span></span>  
+### <a name="to-add-a-new-item"></a><span data-ttu-id="d4cbd-106">Chcete-li přidat novou položku</span><span class="sxs-lookup"><span data-stu-id="d4cbd-106">To add a new item</span></span>  
   
-1.  <span data-ttu-id="003b0-107">Použití <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Add%2A> způsob, jak přidat položku na konec seznamu položek.</span><span class="sxs-lookup"><span data-stu-id="003b0-107">Use the <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Add%2A> method to add an item to the end of the list of items.</span></span>  
+1.  <span data-ttu-id="d4cbd-107">Použití <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Add%2A> způsob, jak přidat položku na konec seznamu položek.</span><span class="sxs-lookup"><span data-stu-id="d4cbd-107">Use the <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Add%2A> method to add an item to the end of the list of items.</span></span>  
   
     ```vb  
     DomainUpDown1.Items.Add("noodles")  
@@ -35,9 +35,9 @@ ms.locfileid: "54738557"
     domainUpDown1->Items->Add("noodles");  
     ```  
   
-     <span data-ttu-id="003b0-108">-nebo-</span><span class="sxs-lookup"><span data-stu-id="003b0-108">-or-</span></span>  
+     <span data-ttu-id="d4cbd-108">-nebo-</span><span class="sxs-lookup"><span data-stu-id="d4cbd-108">-or-</span></span>  
   
-2.  <span data-ttu-id="003b0-109">Použití <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Insert%2A> metodu pro vložení položky do seznamu na zadané pozici.</span><span class="sxs-lookup"><span data-stu-id="003b0-109">Use the <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Insert%2A> method to insert an item into the list at a specified position.</span></span>  
+2.  <span data-ttu-id="d4cbd-109">Použití <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Insert%2A> metodu pro vložení položky do seznamu na zadané pozici.</span><span class="sxs-lookup"><span data-stu-id="d4cbd-109">Use the <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Insert%2A> method to insert an item into the list at a specified position.</span></span>  
   
     ```vb  
     ' Inserts an item at the third position in the list  
@@ -54,9 +54,9 @@ ms.locfileid: "54738557"
     domainUpDown1->Items->Insert(2, "rice");  
     ```  
   
-## <a name="see-also"></a><span data-ttu-id="003b0-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="003b0-110">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="d4cbd-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="d4cbd-110">See also</span></span>
 - <xref:System.Windows.Forms.DomainUpDown>
 - <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Add%2A?displayProperty=nameWithType>
 - <xref:System.Collections.ArrayList.Insert%2A?displayProperty=nameWithType>
-- [<span data-ttu-id="003b0-111">Ovládací prvek DomainUpDown</span><span class="sxs-lookup"><span data-stu-id="003b0-111">DomainUpDown Control</span></span>](../../../../docs/framework/winforms/controls/domainupdown-control-windows-forms.md)
-- [<span data-ttu-id="003b0-112">Přehled ovládacího prvku DomainUpDown</span><span class="sxs-lookup"><span data-stu-id="003b0-112">DomainUpDown Control Overview</span></span>](../../../../docs/framework/winforms/controls/domainupdown-control-overview-windows-forms.md)
+- [<span data-ttu-id="d4cbd-111">Ovládací prvek DomainUpDown</span><span class="sxs-lookup"><span data-stu-id="d4cbd-111">DomainUpDown Control</span></span>](domainupdown-control-windows-forms.md)
+- [<span data-ttu-id="d4cbd-112">Přehled ovládacího prvku DomainUpDown</span><span class="sxs-lookup"><span data-stu-id="d4cbd-112">DomainUpDown Control Overview</span></span>](domainupdown-control-overview-windows-forms.md)
