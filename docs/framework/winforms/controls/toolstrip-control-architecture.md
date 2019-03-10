@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - ToolStrip control [Windows Forms], architecture
 ms.assetid: 71df2d18-862e-4701-9ff9-c1fe606f94f2
-ms.openlocfilehash: d972e738305b14f44910acf755e0ffc1d7297e49
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 6e0c5a426f05590523c178f4b56d07ee98b39d7e
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54547050"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57719383"
 ---
 # <a name="toolstrip-control-architecture"></a>Architektura ovládacího prvku ToolStrip
 <xref:System.Windows.Forms.ToolStrip> a <xref:System.Windows.Forms.ToolStripItem> třídy poskytují flexibilní a rozšiřitelný systém pro zobrazení položek panelu nástrojů, nabídek a stav. Tyto třídy jsou obsaženy v <xref:System.Windows.Forms> obor názvů a že jsou všechny obvykle s názvem s předponou "Ovládací prvek ToolStrip" (například <xref:System.Windows.Forms.ToolStripOverflow>) nebo s příponou "Odstranit" (například <xref:System.Windows.Forms.MenuStrip>).  
@@ -19,7 +19,7 @@ ms.locfileid: "54547050"
   
  <xref:System.Windows.Forms.ToolStrip> je abstraktní základní třída pro <xref:System.Windows.Forms.MenuStrip>, <xref:System.Windows.Forms.StatusStrip>, a <xref:System.Windows.Forms.ContextMenuStrip>. Následující objekt modelu ukazuje <xref:System.Windows.Forms.ToolStrip> hierarchii dědičnosti.  
   
- ![ToolStrip – objektový Model](../../../../docs/framework/winforms/controls/media/toolstripobjectmodel.gif "ToolStripObjectModel")  
+ ![ToolStrip – objektový Model](./media/toolstripobjectmodel.gif "ToolStripObjectModel")  
 ToolStrip – objektový model  
   
  Dostanete všechny položky v <xref:System.Windows.Forms.ToolStrip> prostřednictvím <xref:System.Windows.Forms.ToolStrip.Items%2A> kolekce. Dostanete všechny položky v <xref:System.Windows.Forms.ToolStripDropDownItem> prostřednictvím <xref:System.Windows.Forms.ToolStripDropDownItem.DropDownItems%2A> kolekce. Ve třídě odvozené z <xref:System.Windows.Forms.ToolStrip>, můžete použít také <xref:System.Windows.Forms.ToolStrip.DisplayedItems%2A> vlastnosti pro přístup k pouze ty položky, které jsou aktuálně zobrazeny. Toto jsou položky, které nejsou aktuálně nabídky přetečení.  
@@ -251,7 +251,7 @@ ToolStrip – objektový model
   
  <xref:System.Windows.Forms.ToolStripItem> je abstraktní základní třída pro všechny položky, které <xref:System.Windows.Forms.ToolStrip>. Následující objekt modelu ukazuje <xref:System.Windows.Forms.ToolStripItem> hierarchii dědičnosti.  
   
- ![ToolStripItem Object Model](../../../../docs/framework/winforms/controls/media/toolstripitemobjectmodel.gif "ToolStripItemObjectModel")  
+ ![ToolStripItem Object Model](./media/toolstripitemobjectmodel.gif "ToolStripItemObjectModel")  
 Ovládací prvek ToolStripItem objektový model  
   
  <xref:System.Windows.Forms.ToolStripItem> buď dědí přímo z třídy <xref:System.Windows.Forms.ToolStripItem>, nebo nepřímo dědí z <xref:System.Windows.Forms.ToolStripItem> prostřednictvím <xref:System.Windows.Forms.ToolStripControlHost> nebo <xref:System.Windows.Forms.ToolStripDropDownItem>.  
@@ -379,10 +379,10 @@ Ovládací prvek ToolStripItem objektový model
 -   <xref:System.Windows.Forms.ToolStripPanel> poskytuje prostor pro přesun a uspořádání <xref:System.Windows.Forms.ToolStrip> ovládacích prvků. Pokud se tak rozhodnete, můžete použít pouze jeden panel a <xref:System.Windows.Forms.ToolStripPanel> funguje dobře ve scénářích MDI.  
   
 ## <a name="see-also"></a>Viz také:
-- [Přehled ovládacího prvku ToolStrip](../../../../docs/framework/winforms/controls/toolstrip-control-overview-windows-forms.md)
-- [Shrnutí technologie ToolStrip](../../../../docs/framework/winforms/controls/toolstrip-technology-summary.md)
-- [Ovládací prvek ToolStrip](../../../../docs/framework/winforms/controls/toolstrip-control-windows-forms.md)
-- [Ovládací prvek MenuStrip](../../../../docs/framework/winforms/controls/menustrip-control-windows-forms.md)
-- [Ovládací prvek StatusStrip](../../../../docs/framework/winforms/controls/statusstrip-control.md)
-- [Ovládací prvek ContextMenuStrip](../../../../docs/framework/winforms/controls/contextmenustrip-control.md)
-- [Ovládací prvek BindingNavigator](../../../../docs/framework/winforms/controls/bindingnavigator-control-windows-forms.md)
+- [Přehled ovládacího prvku ToolStrip](toolstrip-control-overview-windows-forms.md)
+- [Shrnutí technologie ToolStrip](toolstrip-technology-summary.md)
+- [Ovládací prvek ToolStrip](toolstrip-control-windows-forms.md)
+- [Ovládací prvek MenuStrip](menustrip-control-windows-forms.md)
+- [Ovládací prvek StatusStrip](statusstrip-control.md)
+- [Ovládací prvek ContextMenuStrip](contextmenustrip-control.md)
+- [Ovládací prvek BindingNavigator](bindingnavigator-control-windows-forms.md)

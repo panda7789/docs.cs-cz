@@ -2,16 +2,16 @@
 title: Co je nového ve Windows Workflow Foundation v rozhraní .NET 4.5
 ms.date: 03/30/2017
 ms.assetid: 195c43a8-e0a8-43d9-aead-d65a9e6751ec
-ms.openlocfilehash: b907a592bd644bc7a9c4aa19cef78a49bf729561
-ms.sourcegitcommit: 79066169e93d9d65203028b21983574ad9dcf6b4
+ms.openlocfilehash: a76ec56cf6ac5260f00031bc815b32b1e10804a4
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57212401"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57718919"
 ---
 # <a name="whats-new-in-windows-workflow-foundation-in-net-45"></a>Co je nového ve Windows Workflow Foundation v rozhraní .NET 4.5
 
-Windows Workflow Foundation (WF) v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] přináší mnoho nových funkcí, jako jsou nové aktivity, návrháře funkce a pracovní postup vývoje modelů. Mnoho, ale ne všechny nový pracovní postup funkcí představených v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] jsou podporovány v Návrháři znovu hostovaných pracovních postupů. Další informace o nových funkcích, které jsou podporovány, naleznete v tématu [podpora nových funkcí Workflow Foundation 4.5 v Návrháři postupu provádění se změněným hostováním](../../../docs/framework/windows-workflow-foundation/wf-features-in-the-rehosted-workflow-designer.md). Další informace o migraci .NET 3.0 a 3.5 rozhraní .NET aplikace pracovního postupu chcete používat nejnovější verzi najdete v tématu [pokyny k migraci](../../../docs/framework/windows-workflow-foundation/migration-guidance.md). Toto téma obsahuje přehled o nové funkce pracovního postupu v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)].
+Windows Workflow Foundation (WF) v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] přináší mnoho nových funkcí, jako jsou nové aktivity, návrháře funkce a pracovní postup vývoje modelů. Mnoho, ale ne všechny nový pracovní postup funkcí představených v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] jsou podporovány v Návrháři znovu hostovaných pracovních postupů. Další informace o nových funkcích, které jsou podporovány, naleznete v tématu [podpora nových funkcí Workflow Foundation 4.5 v Návrháři postupu provádění se změněným hostováním](wf-features-in-the-rehosted-workflow-designer.md). Další informace o migraci .NET 3.0 a 3.5 rozhraní .NET aplikace pracovního postupu chcete používat nejnovější verzi najdete v tématu [pokyny k migraci](migration-guidance.md). Toto téma obsahuje přehled o nové funkce pracovního postupu v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)].
 
 > [!WARNING]
 > Nové funkce Windows Workflow Foundation v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] nejsou k dispozici pro projekty, které cílí na předchozí verze rozhraní Framework. Pokud projekt, který cílí na [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] znovu cílí na předchozí verzi rozhraní framework, může nastat několik problémů.
@@ -25,13 +25,13 @@ Windows Workflow Foundation (WF) v [!INCLUDE[net_v45](../../../includes/net-v45-
 
 [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] zavedená několik nových funkcí správy verzí podle nového <xref:System.Activities.WorkflowIdentity> třídy. <xref:System.Activities.WorkflowIdentity> Autoři pracovního postupu aplikace poskytuje mechanismus pro mapování trvalé instance práce s jeho definicí.
 
-- Vývojáři, kteří používají <xref:System.Activities.WorkflowApplication> hostování můžete použít <xref:System.Activities.WorkflowIdentity> k povolení hostování více verzí pracovní postup-souběžně. Instance trvalý pracovních postupů je možné načíst pomocí nového <xref:System.Activities.WorkflowApplicationInstance> třídy a pak <xref:System.Activities.WorkflowApplicationInstance.DefinitionIdentity%2A> je možné zajistit správné verze definice pracovního postupu při vytváření instance hostitele <xref:System.Activities.WorkflowApplication>. Další informace najdete v tématu [použití WorkflowIdentity a správy verzí](../../../docs/framework/windows-workflow-foundation/using-workflowidentity-and-versioning.md) a [jak: Hostování několika verzí pracovní postup-souběžně](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md).
+- Vývojáři, kteří používají <xref:System.Activities.WorkflowApplication> hostování můžete použít <xref:System.Activities.WorkflowIdentity> k povolení hostování více verzí pracovní postup-souběžně. Instance trvalý pracovních postupů je možné načíst pomocí nového <xref:System.Activities.WorkflowApplicationInstance> třídy a pak <xref:System.Activities.WorkflowApplicationInstance.DefinitionIdentity%2A> je možné zajistit správné verze definice pracovního postupu při vytváření instance hostitele <xref:System.Activities.WorkflowApplication>. Další informace najdete v tématu [použití WorkflowIdentity a správy verzí](using-workflowidentity-and-versioning.md) a [jak: Hostování několika verzí pracovní postup-souběžně](how-to-host-multiple-versions-of-a-workflow-side-by-side.md).
 
-- <xref:System.ServiceModel.WorkflowServiceHost> je teď hostitelem více verzí. Když nasadíte novou verzi služby pracovního postupu, nové instance jsou vytvořeny pomocí nové služby, ale existující instance absolvovat s použitím předchozí verze. Další informace najdete v tématu [správy verzí vedle sebe ve třídě WorkflowServiceHost](../../../docs/framework/wcf/feature-details/side-by-side-versioning-in-workflowservicehost.md).
+- <xref:System.ServiceModel.WorkflowServiceHost> je teď hostitelem více verzí. Když nasadíte novou verzi služby pracovního postupu, nové instance jsou vytvořeny pomocí nové služby, ale existující instance absolvovat s použitím předchozí verze. Další informace najdete v tématu [správy verzí vedle sebe ve třídě WorkflowServiceHost](../wcf/feature-details/side-by-side-versioning-in-workflowservicehost.md).
 
-- Dynamická aktualizace byla zavedená, které poskytuje mechanismus pro aktualizaci definice trvalé instance práce. Další informace najdete v tématu [dynamická aktualizace](../../../docs/framework/windows-workflow-foundation/dynamic-update.md) a [jak: Aktualizace definice běžící Instance pracovního postupu](../../../docs/framework/windows-workflow-foundation/how-to-update-the-definition-of-a-running-workflow-instance.md).
+- Dynamická aktualizace byla zavedená, které poskytuje mechanismus pro aktualizaci definice trvalé instance práce. Další informace najdete v tématu [dynamická aktualizace](dynamic-update.md) a [jak: Aktualizace definice běžící Instance pracovního postupu](how-to-update-the-definition-of-a-running-workflow-instance.md).
 
-- Upgrade databáze trvalosti vytvořené ve službě je poskytován skript databáze SqlWorkflowInstanceStoreSchemaUpgrade.sql [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] databázové skripty. Tento skript aktualizace [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] databáze trvalosti pro podporu nové možnosti správy verzí, počínaje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]. Instance trvalá pracovního postupu v databázi jsou uvedeny výchozí hodnoty správy verzí a účastnit se spuštění vedle sebe a dynamické aktualizace. Další informace najdete v tématu [upgrade rozhraní .NET Framework 4 trvalost databází na podporu pracovních postupů správy verzí](../../../docs/framework/windows-workflow-foundation/using-workflowidentity-and-versioning.md#UpdatingWF4PersistenceDatabases).
+- Upgrade databáze trvalosti vytvořené ve službě je poskytován skript databáze SqlWorkflowInstanceStoreSchemaUpgrade.sql [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] databázové skripty. Tento skript aktualizace [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] databáze trvalosti pro podporu nové možnosti správy verzí, počínaje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]. Instance trvalá pracovního postupu v databázi jsou uvedeny výchozí hodnoty správy verzí a účastnit se spuštění vedle sebe a dynamické aktualizace. Další informace najdete v tématu [upgrade rozhraní .NET Framework 4 trvalost databází na podporu pracovních postupů správy verzí](using-workflowidentity-and-versioning.md#UpdatingWF4PersistenceDatabases).
 
 ## <a name="BKMK_NewActivities"></a> Aktivity
 
@@ -72,7 +72,7 @@ Pracovní postupy v [!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md
 
      Pokud není k serializaci jsou výjimky, ujistěte se, že výjimky se používají v rámci <xref:System.Activities.Statements.NoPersistScope>.
 
-4. Aktivita autoři by měly přepsat <xref:System.Activities.Activity.CacheMetadata%2A> vyhnout modulu runtime pracovního postupu automaticky spustit reflexe proti typu. Argumenty a podřízené aktivity musí mít hodnotu null, a <xref:System.Activities.ActivityMetadata.Bind%2A> musí být explicitně volána. Další informace o přepsání <xref:System.Activities.Activity.CacheMetadata%2A>, naleznete v tématu [zveřejnění dat pomocí CacheMetadata](../../../docs/framework/windows-workflow-foundation/exposing-data-with-cachemetadata.md). Navíc instancí argumentů, které jsou typu, který je `internal` nebo **privátní** musí být explicitně vytvořeny v <xref:System.Activities.Activity.CacheMetadata%2A> , aby se vytvořil reflexe.
+4. Aktivita autoři by měly přepsat <xref:System.Activities.Activity.CacheMetadata%2A> vyhnout modulu runtime pracovního postupu automaticky spustit reflexe proti typu. Argumenty a podřízené aktivity musí mít hodnotu null, a <xref:System.Activities.ActivityMetadata.Bind%2A> musí být explicitně volána. Další informace o přepsání <xref:System.Activities.Activity.CacheMetadata%2A>, naleznete v tématu [zveřejnění dat pomocí CacheMetadata](exposing-data-with-cachemetadata.md). Navíc instancí argumentů, které jsou typu, který je `internal` nebo **privátní** musí být explicitně vytvořeny v <xref:System.Activities.Activity.CacheMetadata%2A> , aby se vytvořil reflexe.
 
 5. Nebudeme používat typy <xref:System.Runtime.Serialization.ISerializable> nebo <xref:System.SerializableAttribute> pro serializaci; typy, které jsou k serializaci musí podporovat <xref:System.Runtime.Serialization.DataContractSerializer>.
 
@@ -118,7 +118,7 @@ V [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], proměnné a
 
 Následující snímek obrazovky ukazuje návrháře kontextové nabídky proměnných a argumentů.
 
-![Proměnné a Argument místní nabídka návrháře](../../../docs/framework/windows-workflow-foundation/media/designercontextmenu.png "DesignerContextMenu")
+![Proměnné a Argument místní nabídka návrháře](./media/designercontextmenu.png "DesignerContextMenu")
 
 ### <a name="BKMK_AutoSurround"></a> Automatické kulatých pořadí
 
@@ -126,11 +126,11 @@ Od pracovního postupu nebo určité aktivity kontejneru (například <xref:Syst
 
 Následující snímek obrazovky ukazuje `WriteLine` aktivity v `Body` z `NoPersistScope`.
 
-![Automatické&#45;před a za místo přetažení](../../../docs/framework/windows-workflow-foundation/media/autosurround1.png "AutoSurround1")
+![Automatické&#45;před a za místo přetažení](./media/autosurround1.png "AutoSurround1")
 
 Následující snímek obrazovky ukazuje automaticky vytvořený `Sequence` aktivity v `Body` při sekundy `WriteLine` neklesla pod první.
 
-![Automaticky vytvořit sekvenční aktivitu](../../../docs/framework/windows-workflow-foundation/media/autosurround2.png "AutoSurround2")
+![Automaticky vytvořit sekvenční aktivitu](./media/autosurround2.png "AutoSurround2")
 
 ### <a name="BKMK_PanMode"></a> Režim posouvání
 
@@ -138,7 +138,7 @@ Velké pracovní postup v Návrháři snadněji přejít, je možné povolit re�
 
 Následující snímek obrazovky ukazuje tlačítko posouvání, která se nachází v pravém dolním rohu návrháře postupu provádění.
 
-![Tlačítko posouvání v Návrháři pracovních postupů](../../../docs/framework/windows-workflow-foundation/media/panbutton.png "PanButton")
+![Tlačítko posouvání v Návrháři pracovních postupů](./media/panbutton.png "PanButton")
 
 Prostřední tlačítko myši nebo MEZERNÍK lze použít také k posouvání návrháře postupu provádění.
 
@@ -152,9 +152,9 @@ Více výběrů aktivita může také být přetáhnout v návrháři a můžete
 
 Pokud chcete mít hierarchické pracovních postupů přehlednější a díky tomu, komponenty pracovního postupu se zobrazí v zobrazení stromové osnovy. Zobrazí se v zobrazení osnovy **Osnova dokumentu** zobrazení. Chcete-li otevřít toto zobrazení z hlavní nabídky, vyberte **zobrazení**, **ostatní Windows**, **Osnova dokumentu**, nebo stiskněte klávesy Ctrl W, U. Kliknutím na uzel v zobrazení osnovy přejdete na odpovídající aktivity v Návrháři pracovních postupů a zobrazení osnovy se aktualizuje a zobrazí aktivity, které jsou vybrány v návrháři.
 
-Na následujícím snímku obrazovky dokončené pracovní postup [kurz Začínáme](../../../docs/framework/windows-workflow-foundation/getting-started-tutorial.md) zobrazuje zobrazení osnovy s sekvenčního pracovního postupu.
+Na následujícím snímku obrazovky dokončené pracovní postup [kurz Začínáme](getting-started-tutorial.md) zobrazuje zobrazení osnovy s sekvenčního pracovního postupu.
 
-![Zobrazení v Návrháři pracovních postupů osnovy](../../../docs/framework/windows-workflow-foundation/media/outlineviewinworkflowdesigner.jpg "OutlineViewinWorkflowDesigner")
+![Zobrazení v Návrháři pracovních postupů osnovy](./media/outlineviewinworkflowdesigner.jpg "OutlineViewinWorkflowDesigner")
 
 ### <a name="BKMK_CSharpExpressions"></a> Výrazy jazyka C#
 
@@ -162,7 +162,7 @@ Před verzí [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], všechny výr
 
 Výrazy jazyka C# se ověřují v době návrhu. Chyby ve výrazech jazyka C#, budou označeny červenou vlnovkou.
 
-Další informace o výrazy jazyka C# najdete v tématu [výrazy jazyka C#](../../../docs/framework/windows-workflow-foundation/csharp-expressions.md).
+Další informace o výrazy jazyka C# najdete v tématu [výrazy jazyka C#](csharp-expressions.md).
 
 ### <a name="BKMK_Visibility"></a> Větší míra kontroly viditelnost panelu prostředí a v záhlaví položek
 
@@ -174,17 +174,17 @@ V [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], připojení 
 
 Následující snímek obrazovky ukazuje body přílohy, které pak bude viditelný, když je aktivita přetáhnout z panelu nástrojů.
 
-![Počáteční uzel vývojový diagram zobrazuje body automatické připojení](../../../docs/framework/windows-workflow-foundation/media/autoconnect1.png "Autoconnect1")
+![Počáteční uzel vývojový diagram zobrazuje body automatické připojení](./media/autoconnect1.png "Autoconnect1")
 
 Aktivity můžete také přetahovat do připojení mezi uzly vývojový diagram a stavy pro automatické vložení uzlu mezi dvou jiných uzlech. Následující snímek obrazovky ukazuje zvýrazněný řádek připojení, kde můžete přetáhnout z panelu nástrojů a vyřadit aktivity.
 
-![Automatické&#45;vložit úchyt pro přetažení aktivity](../../../docs/framework/windows-workflow-foundation/media/autoinsert.png "Autoinsert")
+![Automatické&#45;vložit úchyt pro přetažení aktivity](./media/autoinsert.png "Autoinsert")
 
 ### <a name="BKMK_Annotations"></a> Návrháře poznámky
 
 Usnadňuje vývoj větší pracovních postupů návrháře nyní podporuje přidávání poznámek k pomáhají udržovat přehled o procesu návrhu. Komentáře lze přidat do aktivity, státy, vývojový diagram uzly, proměnné a argumenty. Na následujícím snímku obrazovky se zobrazí místní nabídku pro přidání poznámky do návrháře.
 
-![Poznámka kontextovou nabídku](../../../docs/framework/windows-workflow-foundation/media/annotationdialog.png "annotationdialog")
+![Poznámka kontextovou nabídku](./media/annotationdialog.png "annotationdialog")
 
 ### <a name="debugging-states"></a>Ladění stavy
 
@@ -230,12 +230,12 @@ Pracovní postupy stavového stroje byly představeny jako součást rozhraní .
 
 4. Aktivity použít k vytváření pracovních postupů stavového stroje, včetně: <xref:System.Activities.Statements.StateMachine>, <xref:System.Activities.Statements.State>, a <xref:System.Activities.Statements.Transition>
 
-Následující snímek obrazovky ukazuje pracovní postup dokončený stav stroje ze [kurz Začínáme](../../../docs/framework/windows-workflow-foundation/getting-started-tutorial.md) krok [jak: Vytvoření pracovního postupu stavového stroje](../../../docs/framework/windows-workflow-foundation/how-to-create-a-state-machine-workflow.md).
+Následující snímek obrazovky ukazuje pracovní postup dokončený stav stroje ze [kurz Začínáme](getting-started-tutorial.md) krok [jak: Vytvoření pracovního postupu stavového stroje](how-to-create-a-state-machine-workflow.md).
 
-![Dokončení pracovního postupu stavového stroje](../../../docs/framework/windows-workflow-foundation/media/wfstatemachinegettingstartedtutorialcomplete.JPG "WFStateMachineGettingStartedTutorialComplete")
+![Dokončení pracovního postupu stavového stroje](./media/wfstatemachinegettingstartedtutorialcomplete.JPG "WFStateMachineGettingStartedTutorialComplete")
 
-Další informace o vytváření pracovní postupy stavu počítače, naleznete v tématu [pracovní postupy stavu počítače](../../../docs/framework/windows-workflow-foundation/state-machine-workflows.md).
+Další informace o vytváření pracovní postupy stavu počítače, naleznete v tématu [pracovní postupy stavu počítače](state-machine-workflows.md).
 
 ### <a name="BKMK_ContractFirst"></a> Vývoj stavící do pracovního postupu
 
-Pracovní postup kontraktem vývojový nástroj umožňuje vývojářům navrhovat smlouvy v kódu a potom pomocí několika kliknutí v sadě Visual Studio automaticky vygenerovat šablonu aktivit v sadě nástrojů představující každé operace. Tyto aktivity se pak používají k vytvoření pracovního postupu, který implementuje operace definované ve smlouvě. Návrháře postupu provádění se ověří pracovní postup služby zajistíte, že tyto operace jsou implementovány a podpis pracovního postupu odpovídá podpisu smlouvu. Vývojář můžete taky přidružit kolekce implementované kontrakty služby pracovního postupu. Další informace o vývoj služby stavící do pracovního postupu najdete v tématu [jak: Vytvoření služby pracovního postupu, která využívá existující kontrakt služby](../../../docs/framework/windows-workflow-foundation/how-to-create-a-workflow-service-that-consumes-an-existing-service-contract.md).
+Pracovní postup kontraktem vývojový nástroj umožňuje vývojářům navrhovat smlouvy v kódu a potom pomocí několika kliknutí v sadě Visual Studio automaticky vygenerovat šablonu aktivit v sadě nástrojů představující každé operace. Tyto aktivity se pak používají k vytvoření pracovního postupu, který implementuje operace definované ve smlouvě. Návrháře postupu provádění se ověří pracovní postup služby zajistíte, že tyto operace jsou implementovány a podpis pracovního postupu odpovídá podpisu smlouvu. Vývojář můžete taky přidružit kolekce implementované kontrakty služby pracovního postupu. Další informace o vývoj služby stavící do pracovního postupu najdete v tématu [jak: Vytvoření služby pracovního postupu, která využívá existující kontrakt služby](how-to-create-a-workflow-service-that-consumes-an-existing-service-contract.md).

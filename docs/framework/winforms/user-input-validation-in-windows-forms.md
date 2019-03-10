@@ -7,12 +7,12 @@ helpviewer_keywords:
 - user input [Windows Forms], validating in Windows Forms
 - validating user input [Windows Forms], Windows Forms
 ms.assetid: 4ec07681-1dee-4bf9-be5e-718f635a33a1
-ms.openlocfilehash: 87124438118f05d426d5a33c914634922e657c1e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: fb804e6596de14d93ec6f0405480b60c03c7cbf9
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54498905"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57711314"
 ---
 # <a name="user-input-validation-in-windows-forms"></a>Ověřování uživatelského vstupu ve Windows Forms
 Pokud uživatel zadá data do vaší aplikace, můžete chtít ověřit, že data nejsou platná předtím, než je vaše aplikace používá. Může vyžadovat určité textová pole nesmí být nulové délky, naformátovat pole jako telefonní číslo nebo jiný typ dat ve správném formátu, nebo zda řetězec neobsahuje všechny problematické znaky, které může ohrozit zabezpečení databáze. Windows Forms poskytuje několik způsobů, jak si můžete ověřit vstup ve vaší aplikaci.  
@@ -22,14 +22,14 @@ Pokud uživatel zadá data do vaší aplikace, můžete chtít ověřit, že dat
   
  Maskování jazyk, ve kterém je používán <xref:System.Windows.Forms.MaskedTextBox> je velmi flexibilní. Umožňuje zadat požadované znaky, volitelné znaky, literály, například pomlčky a závorky, měny znaky a oddělovače data. I když svázán se zdrojem dat funguje také ovládací prvek. <xref:System.Windows.Forms.Binding.Format> Událostí o datové vazbě je možné opakovaně formátovat příchozích dat k zajištění souladu s maskou a <xref:System.Windows.Forms.Binding.Parse> události je možné změnit formát odchozích dat k zajištění souladu se specifikací datové pole.  
   
- Další informace najdete v tématu [MaskedTextBox – ovládací prvek](../../../docs/framework/winforms/controls/maskedtextbox-control-windows-forms.md).  
+ Další informace najdete v tématu [MaskedTextBox – ovládací prvek](./controls/maskedtextbox-control-windows-forms.md).  
   
 ## <a name="event-driven-validation"></a>Ověřování založené na událostech  
  Pokud chcete úplné programový kontrolu nad ověření nebo potřeba provádět složité ověřovacích kontrol, měli byste použít události ověření integrované do většiny ovládacích prvků Windows Forms. Každý ovládací prvek, který přijímá vstup uživatele volného tvaru <xref:System.Windows.Forms.Control.Validating> události, ke které dojde pokaždé, když se vyžaduje ověření dat ovládací prvek. V <xref:System.Windows.Forms.Control.Validating> metody zpracování událostí, můžete ověřit uživatelský vstup několika způsoby. Pokud máte textové pole, které musí obsahovat poštovní směrovací číslo, je třeba provést ověření následujícími způsoby:  
   
 -   Pokud PSČ musí patřit do specifické skupiny aplikace PSČ, můžete provést porovnání řetězců na vstupu se ověřit data zadaná uživatelem. Například pokud v sadě {10001, 10002, 10003} musí být poštovní směrovací číslo místa, pak můžete použít porovnání řetězců ověřit data.  
   
--   Pokud poštovní směrovací číslo musí být ve formě konkrétní můžete ověřit data zadaná uživatelem regulární výrazy. Například pro ověření formuláře `#####` nebo `#####-####`, můžete použít regulární výraz `^(\d{5})(-\d{4})?$`. Ověření formuláře `A#A #A#`, můžete použít regulární výraz `[A-Z]\d[A-Z] \d[A-Z]\d`. Další informace o formátování regulárních výrazů, naleznete v tématu [regulárních výrazech .NET Frameworku](../../../docs/standard/base-types/regular-expressions.md) a [Příklady regulárních výrazů](../../../docs/standard/base-types/regular-expression-examples.md).  
+-   Pokud poštovní směrovací číslo musí být ve formě konkrétní můžete ověřit data zadaná uživatelem regulární výrazy. Například pro ověření formuláře `#####` nebo `#####-####`, můžete použít regulární výraz `^(\d{5})(-\d{4})?$`. Ověření formuláře `A#A #A#`, můžete použít regulární výraz `[A-Z]\d[A-Z] \d[A-Z]\d`. Další informace o formátování regulárních výrazů, naleznete v tématu [regulárních výrazech .NET Frameworku](../../standard/base-types/regular-expressions.md) a [Příklady regulárních výrazů](../../standard/base-types/regular-expression-examples.md).  
   
 -   Pokud poštovní směrovací číslo musí být platné PSČ USA, lze volat PSČ webovou službu, která ověřit data zadaná uživatelem.  
   
@@ -67,7 +67,7 @@ Pokud uživatel zadá data do vaší aplikace, můžete chtít ověřit, že dat
 #### <a name="default-implicit-validation-behavior-for-windows-forms-controls"></a>Výchozí chování implicitní ověřování pro Windows Forms ovládací prvky  
  Různé ovládací prvky Windows Forms mít různé výchozí hodnoty pro jejich <xref:System.Windows.Forms.ContainerControl.AutoValidate%2A> vlastnost. V následující tabulce jsou uvedeny nejčastěji používané ovládací prvky a jejich výchozí hodnoty.  
   
-|Ovládací prvek|Výchozí chování ověřování|  
+|Control|Výchozí chování ověřování|  
 |-------------|---------------------------------|  
 |<xref:System.Windows.Forms.ContainerControl>|<xref:System.Windows.Forms.AutoValidate.Inherit>|  
 |<xref:System.Windows.Forms.Form>|<xref:System.Windows.Forms.AutoValidate.EnableAllowFocusChange>|  
@@ -94,5 +94,5 @@ Pokud uživatel zadá data do vaší aplikace, můžete chtít ověřit, že dat
 - <xref:System.Windows.Forms.Control.Validating?displayProperty=nameWithType>
 - <xref:System.Windows.Forms.Form.Closing?displayProperty=nameWithType>
 - <xref:System.ComponentModel.CancelEventArgs?displayProperty=nameWithType>
-- [Ovládací prvek MaskedTextBox](../../../docs/framework/winforms/controls/maskedtextbox-control-windows-forms.md)
-- [Příklady regulárních výrazů](../../../docs/standard/base-types/regular-expression-examples.md)
+- [Ovládací prvek MaskedTextBox](./controls/maskedtextbox-control-windows-forms.md)
+- [Příklady regulárních výrazů](../../standard/base-types/regular-expression-examples.md)

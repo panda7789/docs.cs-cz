@@ -2,12 +2,12 @@
 title: Zabezpečení
 ms.date: 03/30/2017
 ms.assetid: 737ec121-bfc5-4b75-a504-2d53c2c8af39
-ms.openlocfilehash: 6c4e64e928e3ada4210138878426fea9ffe5bdec
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: c27ac9cf41436332d560e11987e3ce4b68576895
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43519246"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57720628"
 ---
 # <a name="security"></a>Zabezpečení
 Store Instance SQL pracovní postup používá Tyhle role zabezpečení databázi zabezpečit přístup k informacím o stavu instance databáze trvalosti.  
@@ -16,7 +16,7 @@ Store Instance SQL pracovní postup používá Tyhle role zabezpečení databáz
   
 -   **System.Activities.DurableInstancing.InstanceStoreObservers**. Tato role má oprávnění jen pro čtení k veřejné zobrazení.  
   
--   **System.Activities.DurableInstancing.WorkflowActivationUsers**. Tato role má práva spuštění uložené procedury, které jsou součástí procesu aktivace instance. Další informace o aktivaci instance najdete v tématu [aktivace Instance](../../../docs/framework/windows-workflow-foundation/instance-activation.md). Uživatelský účet, pod kterým obecný hostitele (jako je například služba pracovního postupu správy [!INCLUDE[dublin](../../../includes/dublin-md.md)]) spuštění měla být přidána do této databázové roli.  
+-   **System.Activities.DurableInstancing.WorkflowActivationUsers**. Tato role má práva spuštění uložené procedury, které jsou součástí procesu aktivace instance. Další informace o aktivaci instance najdete v tématu [aktivace Instance](instance-activation.md). Uživatelský účet, pod kterým obecný hostitele (jako je například služba pracovního postupu správy [!INCLUDE[dublin](../../../includes/dublin-md.md)]) spuštění měla být přidána do této databázové roli.  
   
  Další informace o zabezpečení pro úložiště trvalosti pomocí systému Windows Server App Fabric najdete v tématu [konfiguraci zabezpečení pro trvalého úložiště v prostředcích infrastruktury aplikace](https://go.microsoft.com/fwlink/?LinkId=201208)  
   

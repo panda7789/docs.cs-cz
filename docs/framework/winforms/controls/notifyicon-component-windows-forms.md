@@ -11,30 +11,30 @@ helpviewer_keywords:
 - NotifyIcon component
 - SysTray icons
 ms.assetid: 20312268-1d67-494a-8601-5c43b7f1b513
-ms.openlocfilehash: 3bf55c4a48b5b12347f951b99c0c00450cd9e5f7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b1237a1280142cf65002ca307179b054a8fb7dd2
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33535266"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57718802"
 ---
 # <a name="notifyicon-component-windows-forms"></a>NotifyIcon – komponenta (Windows Forms)
-Windows Forms `NotifyIcon` součásti pro procesy, které běží na pozadí a v opačném případě by není mít uživatelské rozhraní zobrazí ikony v oznamovací oblasti stav na hlavním panelu. Příkladem může být antivirový program, můžete dostat kliknutím na ikonu v oznamovací oblasti stav na hlavním panelu.  
+Windows Forms `NotifyIcon` komponenty zobrazuje ikony v oznamovací oblasti hlavního panelu Stav pro procesy, které běží na pozadí a v opačném případě nebude mít uživatelská rozhraní. Příkladem může být program antivirové ochrany, který je přístupný kliknutím na ikonu v oznamovací oblasti na hlavním panelu Stav.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Přehled komponenty NotifyIcon](../../../../docs/framework/winforms/controls/notifyicon-component-overview-windows-forms.md)  
- Představuje obecné koncepty `NotifyIcon` komponenta, která umožňuje uživatelům zobrazit ikony procesů spuštěných na pozadí, které nemají uživatelské rozhraní.  
+ [Přehled komponenty NotifyIcon](notifyicon-component-overview-windows-forms.md)  
+ Představuje obecné koncepty `NotifyIcon` komponenta, která umožňuje uživatelům zobrazit ikony pro procesy běžící na pozadí, které nemají uživatelské rozhraní.  
   
- [Postupy: Přidání ikon aplikací do TaskBar s komponentou Windows Forms NotifyIcon](../../../../docs/framework/winforms/controls/app-icons-to-the-taskbar-with-wf-notifyicon.md)  
- Popisuje kroky pro nastavení ikonu zobrazuje `NotifyIcon` součásti.  
+ [Postupy: Přidání ikon aplikací do TaskBar s komponentou Windows Forms NotifyIcon](app-icons-to-the-taskbar-with-wf-notifyicon.md)  
+ Popisuje kroky pro nastavení Ikona zobrazovaná ve `NotifyIcon` komponenty.  
   
- [Postupy: Přidružení místní nabídky ke komponentě Windows Forms NotifyIcon](../../../../docs/framework/winforms/controls/how-to-associate-a-shortcut-menu-with-a-windows-forms-notifyicon-component.md)  
- Popisuje kroky pro přidání místní nabídky k `NotifyIcon` součásti.  
+ [Postupy: Přidružení místní nabídky s komponentou Windows Forms NotifyIcon](how-to-associate-a-shortcut-menu-with-a-windows-forms-notifyicon-component.md)  
+ Popisuje kroky pro přidání do místní nabídky `NotifyIcon` komponenty.  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Forms.NotifyIcon>  
  Poskytuje referenční informace o třídě a její členy.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Ovládací prvky používané ve Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
- Poskytuje úplný seznam Windows Forms – ovládací prvky, odkazy na informace o jejich používání.
+ [Ovládací prvky používané ve Windows Forms](controls-to-use-on-windows-forms.md)  
+ Obsahuje úplný seznam všech ovládacích prvcích Windows Forms, s odkazy na informace o jejich použití.
