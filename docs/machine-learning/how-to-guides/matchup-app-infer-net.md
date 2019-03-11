@@ -1,22 +1,27 @@
 ---
-title: Vytvoření hry shoda seznamu aplikaci pomocí Infer.NET a probalistic programování
-description: Objevte, jak pomocí probalistic programování Infer.NET k vytvoření aplikace seznamu her zápasu založen na zjednodušené verzi TrueSkill.
-ms.date: 03/01/2019
+title: Vytvoření hry shoda seznamu aplikaci pomocí Infer.NET a pravděpodobnostní programování
+description: Zjistěte, jak používat pravděpodobnostní programování s Infer.NET k vytvoření aplikace seznamu her zápasu založen na zjednodušené verzi TrueSkill.
+ms.date: 03/05/2019
 ms.custom: mvc,how-to
-ms.openlocfilehash: d760c364d874ec9670823be0664005d62526ee93
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: 06538ec9de26f5aeabe474fbcae69f0a313c8d32
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57473131"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57679130"
 ---
 # <a name="create-a-game-match-up-list-app-with-infernet-and-probabilistic-programming"></a>Vytvoření hry shoda seznamu aplikaci pomocí Infer.NET a pravděpodobnostní programování
+
+> [!NOTE]
+> Toto téma odkazuje na ML.NET, která je aktuálně ve verzi Preview, a materiálu se můžou stát terčem změnit. Další informace najdete v článku [Úvod ML.NET](https://www.microsoft.com/net/learn/apps/machine-learning-and-ai/ml-dotnet).
+
+Aktuálně používáte této ukázky s postupy a související **ML.NET verze 0.10**. Další informace najdete v tématu poznámky k verzi v [úložiště GitHub dotnet/machinelearning](https://github.com/dotnet/machinelearning/tree/master/docs/release-notes).
 
 Tato příručka vás naučí o pravděpodobnostní programování pomocí Infer.NET. Pravděpodobnostní programování je přístup založený na machine learning, ve kterém jsou vlastní modely vyjádřené jako počítačové programy. Umožňuje pro začlenění znalosti v těchto modelech a je strojové učení více interpretovatelném systému. Podporuje také online odvození – proces učení příchodu nových dat. Infer.NET se používá v různých produktů v Microsoftu v Azure, Xbox a Bing.
 
 ## <a name="what-is-probabilistic-programming"></a>Co je pravděpodobnostní programování?
 
-Pravděpodobnostní programování umožňuje vytvořit statistických modelů procesů reálného světa. 
+Pravděpodobnostní programování umožňuje vytvořit statistických modelů procesů reálného světa.
 
 ## <a name="prerequisites"></a>Požadavky
 
@@ -85,7 +90,7 @@ namespace myApp
             var winnerData = new[] { 0, 0, 0, 1, 3, 4 };
             var loserData = new[] { 1, 3, 4, 2, 1, 2 };
 
-            // Define the statistical model as a probabilistic program 
+            // Define the statistical model as a probabilistic program
             var game = new Range(winnerData.Length);
             var player = new Range(winnerData.Concat(loserData).Max() + 1);
             var playerSkills = Variable.Array<double>(player);
@@ -149,7 +154,7 @@ Player 1 skill: Gaussian(4.955, 3.503)
 Player 2 skill: Gaussian(2.639, 4.288)
 ```
 
-Ve výsledcích Všimněte si, že tento přehrávač 3 řadí mírně zvýšené v přehrávači 4 podle našeho modelu. Důvodem je, že vítězství player 3 přes player 1 je mnohem závažnější než vítězství player 4 přes player 2 – Poznámka: Tento přehrávač 1 údery player 2. Přehrávač 0 je celkový specialita!  
+Ve výsledcích Všimněte si, že tento přehrávač 3 řadí mírně zvýšené v přehrávači 4 podle našeho modelu. Důvodem je, že vítězství player 3 přes player 1 je mnohem závažnější než vítězství player 4 přes player 2 – Poznámka: Tento přehrávač 1 údery player 2. Přehrávač 0 je celkový specialita!
 
 ## <a name="keep-learning"></a>Zajištění, že výuka
 

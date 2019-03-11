@@ -6,15 +6,15 @@ helpviewer_keywords:
 - keyboards [Windows Forms], keyboard input
 - Windows Forms, keyboard input
 ms.assetid: 9a29433c-a180-49bb-b74c-d187786584c8
-ms.openlocfilehash: 540388e316a761df3c32842cbe626e9e52f7e3f5
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a7965c1dcf36e956abd7930b8ff0154b13173b76
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54645480"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57718022"
 ---
 # <a name="how-keyboard-input-works"></a>Jak funguje vstup z klávesnice
-Windows Forms zpracovává vstup z klávesnice vyvoláním události klávesnice v reakci na Windows zprávy. Většina aplikací Windows Forms zpracovávat vstup z klávesnice výhradně ve zpracování událostí klávesnice. Ale budete muset porozumět fungování zprávy týkající se klávesnice, abyste mohli implementovat pokročilejší scénáře vstup z klávesnice, jako je například zachycení klíče, než dosáhnou ovládacího prvku. Toto téma popisuje typy klíče dat, formulářů Windows rozpoznává a poskytuje přehled o tom, jak se směrují zprávy týkající se klávesnice. Informace o události klávesnice, naleznete v tématu [použití událostí klávesnice](../../../docs/framework/winforms/using-keyboard-events.md).  
+Windows Forms zpracovává vstup z klávesnice vyvoláním události klávesnice v reakci na Windows zprávy. Většina aplikací Windows Forms zpracovávat vstup z klávesnice výhradně ve zpracování událostí klávesnice. Ale budete muset porozumět fungování zprávy týkající se klávesnice, abyste mohli implementovat pokročilejší scénáře vstup z klávesnice, jako je například zachycení klíče, než dosáhnou ovládacího prvku. Toto téma popisuje typy klíče dat, formulářů Windows rozpoznává a poskytuje přehled o tom, jak se směrují zprávy týkající se klávesnice. Informace o události klávesnice, naleznete v tématu [použití událostí klávesnice](using-keyboard-events.md).  
   
 ## <a name="types-of-keys"></a>Typy klíčů  
  Windows Forms identifikuje vstup z klávesnice jako virtuální klíč kódy, které jsou reprezentovány pomocí bitového <xref:System.Windows.Forms.Keys> výčtu. S <xref:System.Windows.Forms.Keys> výčet, můžete kombinovat řadu při stisknutí klávesy za následek jednu hodnotu. Tyto hodnoty odpovídají hodnotám, které nejsou poskytnuty WM_KEYDOWN a WM_SYSKEYDOWN Windows zprávy. Můžete zjistit většiny fyzických stisknutí kláves zpracování <xref:System.Windows.Forms.Control.KeyDown> nebo <xref:System.Windows.Forms.Control.KeyUp> události. Znaky jsou podmnožinou <xref:System.Windows.Forms.Keys> výčet a odpovídají hodnotám, které nejsou poskytnuty WM_CHAR a WM_SYSCHAR Windows zprávy. Pokud je výsledkem kombinace při stisknutí kláves je znak, můžete zjistit znak zpracování <xref:System.Windows.Forms.Control.KeyPress> událostí. Alternativně můžete použít <xref:Microsoft.VisualBasic.Devices.Keyboard>, vystavené pomocí programovacího rozhraní jazyka Visual Basic, a zjistit, které jsou stisknuty poslat klíči. Další informace najdete v tématu [přístup ke klávesnici](~/docs/visual-basic/developing-apps/programming/computer-resources/accessing-the-keyboard.md).  
@@ -74,4 +74,4 @@ Windows Forms zpracovává vstup z klávesnice vyvoláním události klávesnice
 - <xref:System.Windows.Forms.Control.PreProcessMessage%2A>
 - [Objekt My.Computer.Keyboard](~/docs/visual-basic/language-reference/objects/my-computer-keyboard-object.md)
 - [Přístup ke klávesnici](~/docs/visual-basic/developing-apps/programming/computer-resources/accessing-the-keyboard.md)
-- [Použití událostí klávesnice](../../../docs/framework/winforms/using-keyboard-events.md)
+- [Použití událostí klávesnice](using-keyboard-events.md)

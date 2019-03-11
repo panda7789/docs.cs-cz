@@ -5,12 +5,12 @@ helpviewer_keywords:
 - smart clients
 - Windows Forms, about Windows Forms
 ms.assetid: 3a2b6284-c8d6-4e1c-8c69-0bed38f38cd4
-ms.openlocfilehash: 4c4d3c2f323492cafaa2dc4d52ab994323eba69b
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: bbc77c0074b35a95140b35d71e89c51ad8abac62
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57375321"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57705841"
 ---
 # <a name="windows-forms-overview"></a>Přehled produktu Windows Forms
 
@@ -26,9 +26,9 @@ Následující přehled popisuje výhody inteligentní klientské aplikace, hlav
 
  Ve Windows Forms *formuláře* je vizuální povrch, na kterém můžete zobrazit informace pro uživatele. Obvykle vytvoříte aplikace Windows Forms přidáním ovládacích prvků do formulářů a vývoj odpovědi na akce uživatele, jako je například kliknutí myší nebo stisknutí kláves. A *ovládací prvek* je prvek diskrétní uživatelského rozhraní (UI), která zobrazuje data nebo přijímá vstupní data.
 
- Když uživatel provede něco formuláře nebo jeden z jeho ovládacích prvků, akce vygeneruje událost. Vaše aplikace reaguje na tyto události pomocí kódu a zpracovává události, které se objeví. Další informace najdete v tématu [vytváření obslužných rutin událostí ve Windows Forms](../../../docs/framework/winforms/creating-event-handlers-in-windows-forms.md).
+ Když uživatel provede něco formuláře nebo jeden z jeho ovládacích prvků, akce vygeneruje událost. Vaše aplikace reaguje na tyto události pomocí kódu a zpracovává události, které se objeví. Další informace najdete v tématu [vytváření obslužných rutin událostí ve Windows Forms](creating-event-handlers-in-windows-forms.md).
 
- Windows Forms obsahuje celou řadu ovládacích prvků, které můžete přidat do formuláře: ovládací prvky zobrazující textová pole, tlačítka, rozevírací seznamy, přepínačů a dokonce i webové stránky. Seznam všech ovládacích prvků, můžete použít ve formuláři, naleznete v tématu [ovládací prvky používané ve formulářích Windows](../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md). Pokud existujícího ovládacího prvku nevyhovuje vašim potřebám, Windows Forms podporuje také vytváření vlastních pomocí vlastních ovládacích prvků <xref:System.Windows.Forms.UserControl> třídy.
+ Windows Forms obsahuje celou řadu ovládacích prvků, které můžete přidat do formuláře: ovládací prvky zobrazující textová pole, tlačítka, rozevírací seznamy, přepínačů a dokonce i webové stránky. Seznam všech ovládacích prvků, můžete použít ve formuláři, naleznete v tématu [ovládací prvky používané ve formulářích Windows](./controls/controls-to-use-on-windows-forms.md). Pokud existujícího ovládacího prvku nevyhovuje vašim potřebám, Windows Forms podporuje také vytváření vlastních pomocí vlastních ovládacích prvků <xref:System.Windows.Forms.UserControl> třídy.
 
  Windows Forms obsahuje bohaté ovládací prvky uživatelského rozhraní, která emulují funkce v špičková aplikací, jako je Microsoft Office. Při použití <xref:System.Windows.Forms.ToolStrip> a <xref:System.Windows.Forms.MenuStrip> ovládacího prvku, můžete vytvořit panelů nástrojů a nabídek, které obsahují text a obrázky, zobrazují podnabídky a hostují jiné ovládací prvky, jako je například textová pole a pole se seznamem.
 
@@ -45,10 +45,10 @@ Podrobné informace o tom, jak používat tyto funkce najdete v následujících
 
 |Popis|Téma nápovědy|
 |-----------------|----------------|
-|Použití ovládacích prvků ve formulářích|[Postupy: Přidání ovládacích prvků do formulářů Windows](../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md)|
-|Použití <xref:System.Windows.Forms.ToolStrip> ovládacího prvku|[Postupy: Vytvoření základního prvku ToolStrip se standardními položkami pomocí návrháře](../../../docs/framework/winforms/controls/create-a-basic-wf-toolstrip-with-standard-items-using-the-designer.md)|
-|Vytvářet grafické obrazce s <xref:System.Drawing>|[Začínáme s programováním grafiky](../../../docs/framework/winforms/advanced/getting-started-with-graphics-programming.md)|
-|Vytváření vlastních ovládacích prvků|[Postupy: Dědit ze třídy UserControl](../../../docs/framework/winforms/controls/how-to-inherit-from-the-usercontrol-class.md)|
+|Použití ovládacích prvků ve formulářích|[Postupy: Přidání ovládacích prvků do formulářů Windows](./controls/how-to-add-controls-to-windows-forms.md)|
+|Použití <xref:System.Windows.Forms.ToolStrip> ovládacího prvku|[Postupy: Vytvoření základního prvku ToolStrip se standardními položkami pomocí návrháře](./controls/create-a-basic-wf-toolstrip-with-standard-items-using-the-designer.md)|
+|Vytvářet grafické obrazce s <xref:System.Drawing>|[Začínáme s programováním grafiky](./advanced/getting-started-with-graphics-programming.md)|
+|Vytváření vlastních ovládacích prvků|[Postupy: Dědit ze třídy UserControl](./controls/how-to-inherit-from-the-usercontrol-class.md)|
 
 ### <a name="display-and-manipulate-data"></a>Zobrazit a pracovat s daty
  Mnoho aplikací se musí zobrazovat data z databáze nebo soubor XML, webové služby XML nebo jiný zdroj dat. Windows Forms poskytuje flexibilní ovládací prvek, který je pojmenován <xref:System.Windows.Forms.DataGridView> ovládací prvek pro zobrazení těchto tabulková data v tradiční řádků a sloupců formátu tak, aby každá část data zabírá vlastní buňku. Při použití <xref:System.Windows.Forms.DataGridView>, můžete přizpůsobit vzhled jednotlivé buňky, uzamčení libovolné řádky a sloupce v umístit a zobrazit komplexní ovládací prvky do buněk, kromě jiných funkcí.
@@ -65,10 +65,10 @@ Podrobné informace o tom, jak používat tyto funkce najdete v následujících
 
 |Popis|Téma nápovědy|
 |-----------------|----------------|
-|Použití <xref:System.Windows.Forms.BindingSource> komponenty|[Postupy: Vytvoření vazby ovládacích prvků Windows Forms ke komponentě BindingSource pomocí návrháře](../../../docs/framework/winforms/controls/bind-wf-controls-with-the-bindingsource.md)|
-|Práce s [!INCLUDE[vstecado](../../../includes/vstecado-md.md)] zdroje dat|[Postupy: Řazení a filtrování dat ADO.NET pomocí Windows Forms BindingSource – komponenta](../../../docs/framework/winforms/controls/sort-and-filter-ado-net-data-with-wf-bindingsource-component.md)|
+|Použití <xref:System.Windows.Forms.BindingSource> komponenty|[Postupy: Vytvoření vazby ovládacích prvků Windows Forms ke komponentě BindingSource pomocí návrháře](./controls/bind-wf-controls-with-the-bindingsource.md)|
+|Práce s [!INCLUDE[vstecado](../../../includes/vstecado-md.md)] zdroje dat|[Postupy: Řazení a filtrování dat ADO.NET pomocí Windows Forms BindingSource – komponenta](./controls/sort-and-filter-ado-net-data-with-wf-bindingsource-component.md)|
 |Pomocí okna zdrojů dat|[Vytvoření vazby ovládacích prvků modelu Windows Forms k datům v sadě Visual Studio](/visualstudio/data-tools/bind-windows-forms-controls-to-data-in-visual-studio)|
-|Pomocí nastavení aplikace|[Postupy: Vytvořit nastavení aplikace](../../../docs/framework/winforms/advanced/how-to-create-application-settings.md)|
+|Pomocí nastavení aplikace|[Postupy: Vytvořit nastavení aplikace](./advanced/how-to-create-application-settings.md)|
 
 ### <a name="deploy-apps-to-client-computers"></a>Nasazení aplikace do klientských počítačů
 
@@ -98,15 +98,15 @@ Podrobné informace o tom, jak používat tyto funkce najdete v následujících
 
 |Popis|Téma nápovědy|
 |-----------------|----------------|
-|Tisk obsahu formuláře|[Postupy: Tisk grafiky ve Windows Forms](../../../docs/framework/winforms/advanced/how-to-print-graphics-in-windows-forms.md)<br /><br /> [Postupy: Tisk vícestránkového textového souboru ve Windows Forms](../../../docs/framework/winforms/advanced/how-to-print-a-multi-page-text-file-in-windows-forms.md)|
-|Další informace o Windows Forms – zabezpečení|[Přehled zabezpečení ve Windows Forms](../../../docs/framework/winforms/security-in-windows-forms-overview.md)|
+|Tisk obsahu formuláře|[Postupy: Tisk grafiky ve Windows Forms](./advanced/how-to-print-graphics-in-windows-forms.md)<br /><br /> [Postupy: Tisk vícestránkového textového souboru ve Windows Forms](./advanced/how-to-print-a-multi-page-text-file-in-windows-forms.md)|
+|Další informace o Windows Forms – zabezpečení|[Přehled zabezpečení ve Windows Forms](security-in-windows-forms-overview.md)|
 
 ## <a name="see-also"></a>Viz také:
 
-- [Začínáme s Windows Forms](../../../docs/framework/winforms/getting-started-with-windows-forms.md)
-- [Vytvoření nového formuláře Windows Forms](../../../docs/framework/winforms/creating-a-new-windows-form.md)
-- [Přehled ovládacího prvku ToolStrip](../../../docs/framework/winforms/controls/toolstrip-control-overview-windows-forms.md)
-- [Přehled ovládacího prvku DataGridView](../../../docs/framework/winforms/controls/datagridview-control-overview-windows-forms.md)
-- [Přehled komponenty BindingSource](../../../docs/framework/winforms/controls/bindingsource-component-overview.md)
-- [Přehled nastavení aplikace](../../../docs/framework/winforms/advanced/application-settings-overview.md)
+- [Začínáme s Windows Forms](getting-started-with-windows-forms.md)
+- [Vytvoření nového formuláře Windows Forms](creating-a-new-windows-form.md)
+- [Přehled ovládacího prvku ToolStrip](./controls/toolstrip-control-overview-windows-forms.md)
+- [Přehled ovládacího prvku DataGridView](./controls/datagridview-control-overview-windows-forms.md)
+- [Přehled komponenty BindingSource](./controls/bindingsource-component-overview.md)
+- [Přehled nastavení aplikace](./advanced/application-settings-overview.md)
 - [ClickOnce – zabezpečení a nasazení](/visualstudio/deployment/clickonce-security-and-deployment)

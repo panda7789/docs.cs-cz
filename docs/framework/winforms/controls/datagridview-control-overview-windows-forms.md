@@ -19,16 +19,16 @@ helpviewer_keywords:
 - data sources [Windows Forms], binding to DataGridView control
 - DataGridView control [Windows Forms], data binding
 ms.assetid: 0a45c661-89dc-4390-9cc6-c47eee501488
-ms.openlocfilehash: a327b225dca3dfcab8444567d37a6a5ebe7490ad
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d7ff88f877f73382f69874c58392c3374a83c019
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54710531"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57705997"
 ---
 # <a name="datagridview-control-overview-windows-forms"></a>DataGridView – přehled ovládacího prvku (Windows Forms)
 > [!NOTE]
->  <xref:System.Windows.Forms.DataGridView> Ovládací prvek nahradí a přidá funkce, které <xref:System.Windows.Forms.DataGrid> řízení; však <xref:System.Windows.Forms.DataGrid> ovládací prvek se zachovává kvůli zpětné kompatibilitě a budoucí použití, pokud se rozhodnete. Další informace najdete v tématu [rozdíly mezi Windows Forms DataGridView a DataGrid – ovládací prvky](../../../../docs/framework/winforms/controls/differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).  
+>  <xref:System.Windows.Forms.DataGridView> Ovládací prvek nahradí a přidá funkce, které <xref:System.Windows.Forms.DataGrid> řízení; však <xref:System.Windows.Forms.DataGrid> ovládací prvek se zachovává kvůli zpětné kompatibilitě a budoucí použití, pokud se rozhodnete. Další informace najdete v tématu [rozdíly mezi Windows Forms DataGridView a DataGrid – ovládací prvky](differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).  
   
  S <xref:System.Windows.Forms.DataGridView> ovládacího prvku, můžete zobrazit a upravit tabulková data z mnoha různých druhů zdrojů dat.  
   
@@ -46,41 +46,41 @@ ms.locfileid: "54710531"
   
  <xref:System.Windows.Forms.DataGridView> Ovládací prvek podporuje datové vazby k veřejné vlastnosti objektů vrácených podle těchto rozhraní a vlastnosti kolekci vrácené poskytovatelem <xref:System.ComponentModel.ICustomTypeDescriptor> rozhraní, je-li implementovat na vrácených objektů.  
   
- Obvykle vytvoří vazbu k <xref:System.Windows.Forms.BindingSource> komponenty a vazby <xref:System.Windows.Forms.BindingSource> komponentu do jiného zdroje dat, nebo přidejte do ní pro obchodní objekty. <xref:System.Windows.Forms.BindingSource> Komponenta je upřednostňovaný zdroj, protože můžete vázat na širokou škálu zdrojů dat a můžete vyřešit řadu problémů vazby dat automaticky. Další informace najdete v tématu [komponenty BindingSource](../../../../docs/framework/winforms/controls/bindingsource-component.md).  
+ Obvykle vytvoří vazbu k <xref:System.Windows.Forms.BindingSource> komponenty a vazby <xref:System.Windows.Forms.BindingSource> komponentu do jiného zdroje dat, nebo přidejte do ní pro obchodní objekty. <xref:System.Windows.Forms.BindingSource> Komponenta je upřednostňovaný zdroj, protože můžete vázat na širokou škálu zdrojů dat a můžete vyřešit řadu problémů vazby dat automaticky. Další informace najdete v tématu [komponenty BindingSource](bindingsource-component.md).  
   
- <xref:System.Windows.Forms.DataGridView> Ovládací prvek lze také v *nevázaného* režimu s žádná základní data store. Příklad kódu, který používá nevázaný <xref:System.Windows.Forms.DataGridView> řídí, najdete v článku [názorný postup: Vytvoření nevázaného Windows Forms DataGridView – ovládací prvek](../../../../docs/framework/winforms/controls/walkthrough-creating-an-unbound-windows-forms-datagridview-control.md).  
+ <xref:System.Windows.Forms.DataGridView> Ovládací prvek lze také v *nevázaného* režimu s žádná základní data store. Příklad kódu, který používá nevázaný <xref:System.Windows.Forms.DataGridView> řídí, najdete v článku [názorný postup: Vytvoření nevázaného Windows Forms DataGridView – ovládací prvek](walkthrough-creating-an-unbound-windows-forms-datagridview-control.md).  
   
  <xref:System.Windows.Forms.DataGridView> Ovládací prvek je vysoce konfigurovatelné a rozšiřitelné, a poskytuje mnoho vlastnosti, metody a události přizpůsobit její vzhled a chování. Pokud chcete aplikaci Windows Forms k zobrazení tabulky dat, zvažte použití <xref:System.Windows.Forms.DataGridView> ovládací prvek před ostatními (například <xref:System.Windows.Forms.DataGrid>). Pokud zobrazujete Jemná mřížka jen pro čtení hodnot, nebo pokud chcete povolit uživatelům upravit tabulku s milióny záznamů, <xref:System.Windows.Forms.DataGridView> ovládací prvek vám poskytne řešení snadno programovatelná, efektivně využívajícího paměť.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Souhrn technologie ovládacího prvku DataGridView](../../../../docs/framework/winforms/controls/datagridview-control-technology-summary-windows-forms.md)  
+ [Souhrn technologie ovládacího prvku DataGridView](datagridview-control-technology-summary-windows-forms.md)  
  Shrnuje <xref:System.Windows.Forms.DataGridView> řídit koncepty a používání související třídy.  
   
- [Architektura ovládacího prvku DataGridView](../../../../docs/framework/winforms/controls/datagridview-control-architecture-windows-forms.md)  
+ [Architektura ovládacího prvku DataGridView](datagridview-control-architecture-windows-forms.md)  
  Popisuje architekturu <xref:System.Windows.Forms.DataGridView> ovládacího prvku, s vysvětlením, její typ struktura hierarchie a dědičnost.  
   
- [Scénáře ovládacího prvku DataGridView](../../../../docs/framework/winforms/controls/datagridview-control-scenarios-windows-forms.md)  
+ [Scénáře ovládacího prvku DataGridView](datagridview-control-scenarios-windows-forms.md)  
  Popisuje nejběžnější scénáře, ve kterém <xref:System.Windows.Forms.DataGridView> ovládací prvky se používají.  
   
- [Adresář kódu ovládacího prvku DataGridView](../../../../docs/framework/winforms/controls/datagridview-control-code-directory-windows-forms.md)  
+ [Adresář kódu ovládacího prvku DataGridView](datagridview-control-code-directory-windows-forms.md)  
  Obsahuje odkazy na příklady kódu v dokumentaci pro různé <xref:System.Windows.Forms.DataGridView> úlohy. Tyto příklady jsou rozděleny podle typu úlohy.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Typy sloupců v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/column-types-in-the-windows-forms-datagridview-control.md)  
+ [Typy sloupců v ovládacím prvku Windows Forms DataGridView](column-types-in-the-windows-forms-datagridview-control.md)  
  Tento článek popisuje typy sloupců v modelu Windows Forms <xref:System.Windows.Forms.DataGridView> ovládací prvek použitý k zobrazení informací a umožní uživatelům změnit nebo přidat informace.  
   
- [Zobrazení dat v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/displaying-data-in-the-windows-forms-datagridview-control.md)  
+ [Zobrazení dat v ovládacím prvku Windows Forms DataGridView](displaying-data-in-the-windows-forms-datagridview-control.md)  
  Obsahuje témata, které popisují, jak ručně, nebo z externího zdroje dat naplnění ovládacího prvku s daty.  
   
- [Přizpůsobení ovládacího prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/customizing-the-windows-forms-datagridview-control.md)  
+ [Přizpůsobení ovládacího prvku Windows Forms DataGridView](customizing-the-windows-forms-datagridview-control.md)  
  Obsahuje témata, které popisují vlastní Malování <xref:System.Windows.Forms.DataGridView> buňky a řádky a vytváření odvozené buňky, sloupce a typy řádků.  
   
- [Ladění výkonu v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/performance-tuning-in-the-windows-forms-datagridview-control.md)  
+ [Ladění výkonu v ovládacím prvku Windows Forms DataGridView](performance-tuning-in-the-windows-forms-datagridview-control.md)  
  Obsahuje témata, které popisují, jak pomocí efektivně se vyhnout problémům s výkonem při práci s velkými objemy dat ovládacího prvku.  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.BindingSource>
-- [Ovládací prvek DataGridView](../../../../docs/framework/winforms/controls/datagridview-control-windows-forms.md)
-- [Výchozí funkce v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/default-functionality-in-the-windows-forms-datagridview-control.md)
-- [Výchozí zpracování klávesnice a myši v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/default-keyboard-and-mouse-handling-in-the-windows-forms-datagridview-control.md)
+- [Ovládací prvek DataGridView](datagridview-control-windows-forms.md)
+- [Výchozí funkce v ovládacím prvku Windows Forms DataGridView](default-functionality-in-the-windows-forms-datagridview-control.md)
+- [Výchozí zpracování klávesnice a myši v ovládacím prvku Windows Forms DataGridView](default-keyboard-and-mouse-handling-in-the-windows-forms-datagridview-control.md)

@@ -4,12 +4,12 @@ description: Další informace k dispozici možnost pro uložení stavu v kontej
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 02/15/2019
-ms.openlocfilehash: 1e30a545ba0003acb8b85dee9896d54934f0d737
-ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
+ms.openlocfilehash: 30dde3ce44aa61fff3fad1841ae4a8b941573877
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56745995"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57678077"
 ---
 # <a name="state-and-data-in-docker-applications"></a>Stav a data v aplikacích Dockeru
 
@@ -47,7 +47,7 @@ Svazky mohou být pojmenované a anonymní (výchozí). Vývoj jsou pojmenované
 
 **`tmpfs` Připojí** jsou virtuální složky, které live pouze v paměti hostitele a nikdy se zapisují do systému souborů. Jsou rychlé a zabezpečené, ale používají paměti a jsou určeny pouze pro dočasné data.
 
-Jak ukazuje obrázek 4 – 5, pravidelné Docker svazky mohou být uloženy mimo kontejnery sami, ale v rámci fyzické hranice hostitelský server nebo virtuální počítač. Ale kontejnerů Dockeru od nemají přístup k svazku jeden hostitelský server nebo virtuální počítač do jiného. Jinými slovy tyto svazky, není možné spravovat data sdílená mezi kontejnerů, které běží na různých hostitelích, Docker, i když ho lze dosáhnout pomocí ovladače svazku, který podporuje vzdáleného hostitele.
+Jak ukazuje obrázek 4 – 5, pravidelné Docker svazky mohou být uloženy mimo kontejnery sami, ale v rámci fyzické hranice hostitelský server nebo virtuální počítač. Ale kontejnerů Dockeru od nemají přístup k svazku jeden hostitelský server nebo virtuální počítač do jiného. Jinými slovy tyto svazky, není možné spravovat data sdílena mezi kontejnerů, které běží na různých hostitelích, Docker, i když ho lze dosáhnout pomocí ovladače svazku, který podporuje vzdáleného hostitele.
 
 ![Svazky lze sdílet mezi kontejnery, ale jenom do stejného hostitele, pokud nechcete použít vzdálené ovladač, který podporuje vzdálené hostitele. ](./media/image5.png)
 

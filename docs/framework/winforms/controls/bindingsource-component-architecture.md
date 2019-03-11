@@ -7,12 +7,12 @@ helpviewer_keywords:
 - BindingSource component [Windows Forms], about BindingSource component
 - data binding [Windows Forms], BindingSource component
 ms.assetid: 7bc69c90-8a11-48b1-9336-3adab5b41591
-ms.openlocfilehash: 9fb343cd7ca3f17509353ddd088ab6d945118903
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 9348d44697b2c617481b55242faa83ab517e6226
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54514176"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57707817"
 ---
 # <a name="bindingsource-component-architecture"></a>Architektura součásti BindingSource
 S <xref:System.Windows.Forms.BindingSource> komponentu, můžete ke zdrojům dat univerzálně svázat všechny ovládací prvky Windows Forms.  
@@ -69,9 +69,9 @@ S <xref:System.Windows.Forms.BindingSource> komponentu, můžete ke zdrojům dat
   
 -   Můžete připojit <xref:System.Windows.Forms.BindingSource> k různým zdrojům dat. při zachování aktuální vazby ovládacího prvku.  
   
--   Můžete změnit položky ve zdroji dat a upozornit vázané ovládací prvky. Další informace najdete v tématu [jak: Uplatňování aktualizací zdroje dat v ovládacím prvku Windows Forms pomocí BindingSource](../../../../docs/framework/winforms/controls/reflect-data-source-updates-in-a-wf-control-with-the-bindingsource.md).  
+-   Můžete změnit položky ve zdroji dat a upozornit vázané ovládací prvky. Další informace najdete v tématu [jak: Uplatňování aktualizací zdroje dat v ovládacím prvku Windows Forms pomocí BindingSource](reflect-data-source-updates-in-a-wf-control-with-the-bindingsource.md).  
   
--   Lze svázat <xref:System.Type> místo objektu v paměti. Další informace najdete v tématu [jak: Vytvoření vazby ovládacího prvku Windows Forms k typu](../../../../docs/framework/winforms/controls/how-to-bind-a-windows-forms-control-to-a-type.md). Můžete pak vytvoříte vazbu k objektu v době běhu.  
+-   Lze svázat <xref:System.Type> místo objektu v paměti. Další informace najdete v tématu [jak: Vytvoření vazby ovládacího prvku Windows Forms k typu](how-to-bind-a-windows-forms-control-to-a-type.md). Můžete pak vytvoříte vazbu k objektu v době běhu.  
   
 ### <a name="currency-management"></a>Správa měn  
  <xref:System.Windows.Forms.BindingSource> Komponenta implementuje <xref:System.Windows.Forms.ICurrencyManagerProvider> rozhraní pro zpracování správy měny. S <xref:System.Windows.Forms.ICurrencyManagerProvider> rozhraní, se dá dostat taky pro správce měny pro <xref:System.Windows.Forms.BindingSource>, kromě správce měny pro jiné <xref:System.Windows.Forms.BindingSource> vázána na stejný <xref:System.Windows.Forms.BindingSource.DataMember%2A>.  
@@ -123,7 +123,7 @@ S <xref:System.Windows.Forms.BindingSource> komponentu, můžete ke zdrojům dat
 |<xref:System.Windows.Forms.BindingSource.AddNew%2A> – Metoda|Přidá novou položku do seznamu základní. Platí pro zdroje dat, které implementují <xref:System.ComponentModel.IBindingList> rozhraní a povolit přidávání položek (to znamená <xref:System.Windows.Forms.BindingSource.AllowNew%2A> je nastavena na `true`).|  
   
 ### <a name="custom-item-creation"></a>Vytvoření vlastní položky  
- Dokáže zpracovat <xref:System.Windows.Forms.BindingSource.AddingNew> události poskytnout vlastní logiku vytvoření položky. <xref:System.Windows.Forms.BindingSource.AddingNew> Před přidáním nového objektu do dojde k události <xref:System.Windows.Forms.BindingSource>. Tato událost je aktivována po <xref:System.Windows.Forms.BindingSource.AddNew%2A> metoda je volána, ale předtím, než je na nadřízeném seznamu přidá nová položka. Díky zpracování této události, můžete zadat chování vytvoření vlastní položky bez odvozený od <xref:System.Windows.Forms.BindingSource> třídy. Další informace najdete v tématu [jak: Přizpůsobení přidávání položek pomocí Windows Forms BindingSource](../../../../docs/framework/winforms/controls/how-to-customize-item-addition-with-the-windows-forms-bindingsource.md).  
+ Dokáže zpracovat <xref:System.Windows.Forms.BindingSource.AddingNew> události poskytnout vlastní logiku vytvoření položky. <xref:System.Windows.Forms.BindingSource.AddingNew> Před přidáním nového objektu do dojde k události <xref:System.Windows.Forms.BindingSource>. Tato událost je aktivována po <xref:System.Windows.Forms.BindingSource.AddNew%2A> metoda je volána, ale předtím, než je na nadřízeném seznamu přidá nová položka. Díky zpracování této události, můžete zadat chování vytvoření vlastní položky bez odvozený od <xref:System.Windows.Forms.BindingSource> třídy. Další informace najdete v tématu [jak: Přizpůsobení přidávání položek pomocí Windows Forms BindingSource](how-to-customize-item-addition-with-the-windows-forms-bindingsource.md).  
   
 ### <a name="transactional-item-creation"></a>Vytvoření transakční položky  
  <xref:System.Windows.Forms.BindingSource> Komponenta implementuje <xref:System.ComponentModel.ICancelAddNew> rozhraní, které umožňuje vytvoření transakční položky. Po vytvoření nové položky dočasně pomocí volání <xref:System.Windows.Forms.BindingSource.AddNew%2A>, přidání mohou být potvrzena nebo vrácena zpět následujícími způsoby:  
@@ -142,7 +142,7 @@ S <xref:System.Windows.Forms.BindingSource> komponentu, můžete ke zdrojům dat
 ### <a name="design-time-support"></a>Podpory během návrhu  
  Některé typy objektů nelze vytvořit v době návrhu, jako jsou objekty vytvořené z třídu objektů factory nebo objekty vrácené webové služby. V některých případech možná k vytvoření vazby ovládacích prvků pro tyto typy v době návrhu, i když není žádný objekt v paměti, ke kterému můžete svázat ovládací prvky. Například může potřebovat k popisu záhlaví sloupců z <xref:System.Windows.Forms.DataGridView> ovládací prvek s názvy vlastností vlastního typu public.  
   
- Pro podporu tohoto scénáře <xref:System.Windows.Forms.BindingSource> komponenta podporuje vazbu <xref:System.Type>. Když přiřadíte <xref:System.Type> k <xref:System.Windows.Forms.BindingSource.DataSource%2A> vlastnost, <xref:System.Windows.Forms.BindingSource> komponenta vytvoří prázdnou <xref:System.ComponentModel.BindingList%601> z <xref:System.Type> položky. Následně svázat ovládací prvky <xref:System.Windows.Forms.BindingSource> komponenty upozorněni na přítomnost vlastnosti nebo schématu typu v době návrhu nebo v době běhu. Další informace najdete v tématu [jak: Vytvoření vazby ovládacího prvku Windows Forms k typu](../../../../docs/framework/winforms/controls/how-to-bind-a-windows-forms-control-to-a-type.md).  
+ Pro podporu tohoto scénáře <xref:System.Windows.Forms.BindingSource> komponenta podporuje vazbu <xref:System.Type>. Když přiřadíte <xref:System.Type> k <xref:System.Windows.Forms.BindingSource.DataSource%2A> vlastnost, <xref:System.Windows.Forms.BindingSource> komponenta vytvoří prázdnou <xref:System.ComponentModel.BindingList%601> z <xref:System.Type> položky. Následně svázat ovládací prvky <xref:System.Windows.Forms.BindingSource> komponenty upozorněni na přítomnost vlastnosti nebo schématu typu v době návrhu nebo v době běhu. Další informace najdete v tématu [jak: Vytvoření vazby ovládacího prvku Windows Forms k typu](how-to-bind-a-windows-forms-control-to-a-type.md).  
   
 ### <a name="static-listbindinghelper-methods"></a>Statické ListBindingHelper metody  
  <xref:System.Windows.Forms.BindingContext?displayProperty=nameWithType>, <xref:System.Windows.Forms.CurrencyManager?displayProperty=nameWithType>, A <xref:System.Windows.Forms.BindingSource> veškerou logiku běžné sdílené složky pro vygenerování seznamu z typů `DataSource` / `DataMember` pár. Kromě toho tato běžné logika je veřejně zpřístupnit pro použití autoři ovládacího prvku a jiných třetích stran v následujícím `static` metody:  
@@ -166,14 +166,14 @@ S <xref:System.Windows.Forms.BindingSource> komponentu, můžete ke zdrojům dat
 |<xref:System.Windows.Forms.BindingSource.Sort%2A> Vlastnost|Pokud je zdroj dat <xref:System.ComponentModel.IBindingList>, získá nebo nastaví název sloupce pro řazení a informace o pořadí řazení.<br /><br /> -nebo-<br /><br /> Pokud je zdroj dat <xref:System.ComponentModel.IBindingListView> a podporuje rozšířené řazení, získá více názvů sloupců použité pro řazení a pořadí řazení|  
   
 ### <a name="integration-with-bindingnavigator"></a>Integrace s BindingNavigator  
- Můžete použít <xref:System.Windows.Forms.BindingSource> součásti pro vytvoření vazby libovolný ovládací prvek Windows Forms ke zdroji dat, ale <xref:System.Windows.Forms.BindingNavigator> ovládacího prvku je určený konkrétně pro práci s <xref:System.Windows.Forms.BindingSource> komponenty. <xref:System.Windows.Forms.BindingNavigator> Ovládacího prvku poskytuje uživatelské rozhraní pro řízení <xref:System.Windows.Forms.BindingSource> komponenty aktuální položky. Ve výchozím nastavení <xref:System.Windows.Forms.BindingNavigator> poskytuje ovládací prvek tlačítka, která odpovídají na metody navigace na <xref:System.Windows.Forms.BindingSource> komponenty. Další informace najdete v tématu [jak: Navigace daty pomocí ovládacího prvku Windows Forms BindingNavigator](../../../../docs/framework/winforms/controls/how-to-navigate-data-with-the-windows-forms-bindingnavigator-control.md).  
+ Můžete použít <xref:System.Windows.Forms.BindingSource> součásti pro vytvoření vazby libovolný ovládací prvek Windows Forms ke zdroji dat, ale <xref:System.Windows.Forms.BindingNavigator> ovládacího prvku je určený konkrétně pro práci s <xref:System.Windows.Forms.BindingSource> komponenty. <xref:System.Windows.Forms.BindingNavigator> Ovládacího prvku poskytuje uživatelské rozhraní pro řízení <xref:System.Windows.Forms.BindingSource> komponenty aktuální položky. Ve výchozím nastavení <xref:System.Windows.Forms.BindingNavigator> poskytuje ovládací prvek tlačítka, která odpovídají na metody navigace na <xref:System.Windows.Forms.BindingSource> komponenty. Další informace najdete v tématu [jak: Navigace daty pomocí ovládacího prvku Windows Forms BindingNavigator](how-to-navigate-data-with-the-windows-forms-bindingnavigator-control.md).  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Forms.BindingSource>
 - <xref:System.Windows.Forms.BindingNavigator>
-- [Přehled komponenty BindingSource](../../../../docs/framework/winforms/controls/bindingsource-component-overview.md)
-- [Ovládací prvek BindingNavigator](../../../../docs/framework/winforms/controls/bindingnavigator-control-windows-forms.md)
-- [Windows Forms – datová vazba](../../../../docs/framework/winforms/windows-forms-data-binding.md)
-- [Ovládací prvky používané ve Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)
-- [Postupy: Vytvoření vazby ovládacího prvku Windows Forms k typu](../../../../docs/framework/winforms/controls/how-to-bind-a-windows-forms-control-to-a-type.md)
-- [Postupy: Uplatňování aktualizací zdroje dat v ovládacím prvku Windows Forms pomocí BindingSource](../../../../docs/framework/winforms/controls/reflect-data-source-updates-in-a-wf-control-with-the-bindingsource.md)
+- [Přehled komponenty BindingSource](bindingsource-component-overview.md)
+- [Ovládací prvek BindingNavigator](bindingnavigator-control-windows-forms.md)
+- [Windows Forms – datová vazba](../windows-forms-data-binding.md)
+- [Ovládací prvky používané ve Windows Forms](controls-to-use-on-windows-forms.md)
+- [Postupy: Vytvoření vazby ovládacího prvku Windows Forms k typu](how-to-bind-a-windows-forms-control-to-a-type.md)
+- [Postupy: Uplatňování aktualizací zdroje dat v ovládacím prvku Windows Forms pomocí BindingSource](reflect-data-source-updates-in-a-wf-control-with-the-bindingsource.md)

@@ -7,21 +7,21 @@ dev_langs:
 - vb
 ms.technology: dotnet-standard
 ms.assetid: 2dbed1bc-86f5-43cd-9a57-adbb1c5efba4
-ms.openlocfilehash: 9e63b16106f69ec35b7713ffc1a28e2cfb19d2d9
-ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
+ms.openlocfilehash: 40ba9b2dcc7321c81ee3f03112e677363c37a5f9
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57203649"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57723306"
 ---
 # <a name="language-independence-and-language-independent-components"></a>Jazyková nezávislost a jazykově nezávislé komponenty
 
 .NET je nezávislá na jazyce. To znamená, že jako vývojář můžete vyvíjet v některém z mnoha jazyků, které se zaměřují implementace .NET, jako například C#, F#a Visual Basic. Typy a členům knihoven třídy vyvinutým pro implementace .NET, aniž byste museli znát jazyk, ve kterém byly původně vytvořeny a to bez nutnosti dodržovat všechny původní jazykové konvence mají přístup. Pokud jste vývojářem komponenty, přístupné příslušné součásti žádné aplikace .NET, bez ohledu na jazyk.
 
 > [!NOTE]
-> První část Tento článek se zabývá tvorbou jazykově nezávislé komponenty – tedy součástí, které mohou být spotřebovány aplikacemi, které jsou napsané v libovolném jazyce. Můžete také vytvořit jednu součást nebo aplikaci ze zdrojového kódu napsaného v několika jazycích; Zobrazit [vzájemná](#cross-language-interoperability) v druhé části tohoto článku. 
+> První část Tento článek se zabývá tvorbou jazykově nezávislé komponenty – tedy součástí, které mohou být spotřebovány aplikacemi, které jsou napsané v libovolném jazyce. Můžete také vytvořit jednu součást nebo aplikaci ze zdrojového kódu napsaného v několika jazycích; Zobrazit [vzájemná](#cross-language-interoperability) v druhé části tohoto článku.
 
-Chcete-li plně spolupracovat s ostatními objekty napsanými v libovolném jazyce, musí objektů zveřejnit volajícím pouze ty funkce, které jsou společné pro všechny jazyky. Tato běžná sada funkcí je definována tak specifikace CLS (Common Language), což je sada pravidel, která platí pro vygenerovaná sestavení. Common Language Specification je definována v oddílu I klauzule 7 až 11 [Standard ECMA-335: Common Language Infrastructure](https://www.ecma-international.org/publications/standards/Ecma-335.htm). 
+Chcete-li plně spolupracovat s ostatními objekty napsanými v libovolném jazyce, musí objektů zveřejnit volajícím pouze ty funkce, které jsou společné pro všechny jazyky. Tato běžná sada funkcí je definována tak specifikace CLS (Common Language), což je sada pravidel, která platí pro vygenerovaná sestavení. Common Language Specification je definována v oddílu I klauzule 7 až 11 [Standard ECMA-335: Common Language Infrastructure](https://www.ecma-international.org/publications/standards/Ecma-335.htm).
 
 Pokud vaše komponenta odpovídá specifikaci Common Language, je zaručeně kompatibilní se Specifikací CLS a je přístupný z kódu v sestavení, které jsou napsané v libovolném programovacím jazyce, který podporuje specifikaci CLS. Můžete určit, zda vaše komponenta odpovídá Common Language Specification v době kompilace použitím [CLSCompliantAttribute](xref:System.CLSCompliantAttribute) atribut ke zdrojovému kódu. Další informace najdete v tématu [atribut CLSCompliantAttribute](#the-clscompliantattribute-attribute).
 
@@ -32,33 +32,33 @@ V tomto článku:
     * [Typy a signatury členů typu](#types-and-type-member-signatures)
 
     * [Zásady vytváření názvů](#naming-conventions)
-    
+
     * [Převod typů](#type-conversion)
-    
+
     * [Pole](#arrays)
-    
+
     * [Rozhraní](#interfaces)
-    
+
     * [Výčty](#enumerations)
-    
+
     * [Typy členů obecně](#type-members-in-general)
-    
+
     * [Usnadnění přístupu člena](#member-accessibility)
-    
+
     * [Obecné typy a členy](#generic-types-and-members)
-    
+
     * [Konstruktory](#constructors)
-    
+
     * [Vlastnosti](#properties)
-    
+
     * [Události](#events)
-    
+
     * [Overloads](#overloads)
-    
+
     * [Výjimky](#exceptions)
-    
+
     * [Atributy](#attributes)
-    
+
 * [Atribut CLSCompliantAttribute](#the-clscompliantattribute-attribute)
 
 * [Vzájemná funkční spolupráce mezi jazyky](#cross-language-interoperability)
@@ -68,12 +68,12 @@ V tomto článku:
 Tato část popisuje pravidla pro vytváření komponent odpovídajících specifikaci CLS. Úplný seznam pravidel, naleznete v oddílu I klauzule 11 [Standard ECMA-335: Common Language Infrastructure](https://www.ecma-international.org/publications/standards/Ecma-335.htm).
 
 > [!NOTE]
-> Common Language Specification popisuje každé pravidlo pro dodržování specifikace CLS, protože se vztahuje na spotřebitele (vývojáři, kteří programově přistupují komponenty, která je kompatibilní se Specifikací CLS), rozhraní (vývojáři, kteří používají k vytvoření kompileru jazyka CLS-compliant knihovny) a zařízení Extender (vývojáři, kteří vytvářejí nástroj, jako je například kompilátor jazyka nebo analyzátor kódu, který vytváří komponenty odpovídající specifikaci CLS). Tento článek se zaměřuje na pravidla, která je použita pro platformy. Pamatujte však, že některé z pravidel, které se vztahují k rozšiřujícím objektům mohou rovněž platit pro sestavení, která jsou vytvořena pomocí [Reflection.Emit](xref:System.Reflection.Emit). 
+> Common Language Specification popisuje každé pravidlo pro dodržování specifikace CLS, protože se vztahuje na spotřebitele (vývojáři, kteří programově přistupují komponenty, která je kompatibilní se Specifikací CLS), rozhraní (vývojáři, kteří používají k vytvoření kompileru jazyka CLS-compliant knihovny) a zařízení Extender (vývojáři, kteří vytvářejí nástroj, jako je například kompilátor jazyka nebo analyzátor kódu, který vytváří komponenty odpovídající specifikaci CLS). Tento článek se zaměřuje na pravidla, která je použita pro platformy. Pamatujte však, že některé z pravidel, které se vztahují k rozšiřujícím objektům mohou rovněž platit pro sestavení, která jsou vytvořena pomocí [Reflection.Emit](xref:System.Reflection.Emit).
 
-Chcete-li navrhnout komponentu, která je nezávislá na jazyce, stačí dodržovat pravidla pro dodržování specifikace CLS pro veřejné rozhraní komponenty. Soukromá implementace nemusí odpovídat specifikaci. 
+Chcete-li navrhnout komponentu, která je nezávislá na jazyce, stačí dodržovat pravidla pro dodržování specifikace CLS pro veřejné rozhraní komponenty. Soukromá implementace nemusí odpovídat specifikaci.
 
 > [!IMPORTANT]
-> Pravidla pro dodržování specifikace CLS platí pouze pro veřejné rozhraní komponenty, nikoli pro jeho soukromou implementaci. 
+> Pravidla pro dodržování specifikace CLS platí pouze pro veřejné rozhraní komponenty, nikoli pro jeho soukromou implementaci.
 
 Například jiné než typu unsigned integer [bajtů](xref:System.Byte) nejsou kompatibilní se Specifikací CLS. Protože `Person` třídy v následujícím příkladu vystavuje `Age` vlastnost typu [UInt16](xref:System.UInt16), následující kód zobrazí upozornění kompilátoru.
 
@@ -86,7 +86,7 @@ public class Person
 {
    private UInt16 personAge = 0;
 
-   public UInt16 Age 
+   public UInt16 Age
    { get { return personAge; } }
 }
 // The attempt to compile the example displays the following compiler warning:
@@ -94,25 +94,25 @@ public class Person
 ```
 
 ```vb
-<Assembly: CLSCompliant(True)> 
+<Assembly: CLSCompliant(True)>
 
 Public Class Person
    Private personAge As UInt16
 
    Public ReadOnly Property Age As UInt16
       Get
-         Return personAge      
-      End Get   
+         Return personAge
+      End Get
    End Property
 End Class
 ' The attempt to compile the example displays the following compiler warning:
 '    Public1.vb(9) : warning BC40027: Return type of function 'Age' is not CLS-compliant.
-'    
+'
 '       Public ReadOnly Property Age As UInt16
 '                                ~~~
 ```
 
-Provedete osoba třídy odpovídající specifikaci CLS změnou typu `Age` vlastnost z `UInt16` k [Int16](xref:System.Int16), který je kompatibilní se Specifikací CLS, 16bitové celé číslo se znaménkem. Není nutné měnit typ soukromého `personAge` pole. 
+Provedete osoba třídy odpovídající specifikaci CLS změnou typu `Age` vlastnost z `UInt16` k [Int16](xref:System.Int16), který je kompatibilní se Specifikací CLS, 16bitové celé číslo se znaménkem. Není nutné měnit typ soukromého `personAge` pole.
 
 ```csharp
 using System;
@@ -123,21 +123,21 @@ public class Person
 {
    private Int16 personAge = 0;
 
-   public Int16 Age 
+   public Int16 Age
    { get { return personAge; } }
 }
 ```
 
 ```vb
-<Assembly: CLSCompliant(True)> 
+<Assembly: CLSCompliant(True)>
 
 Public Class Person
    Private personAge As UInt16
 
    Public ReadOnly Property Age As Int16
       Get
-         Return CType(personAge, Int16)      
-      End Get   
+         Return CType(personAge, Int16)
+      End Get
    End Property
 End Class
 ```
@@ -146,11 +146,11 @@ Veřejné rozhraní knihovny se skládá z následujících akcí:
 
 * Definice veřejných tříd.
 
-* Definice veřejných členů náležících veřejným třídám a definice členů schopných přistupovat k odvozeným třídám (tzn. chráněných členů). 
+* Definice veřejných členů náležících veřejným třídám a definice členů schopných přistupovat k odvozeným třídám (tzn. chráněných členů).
 
-* Parametry a návratové typy veřejných metod náležících veřejným třídám a parametry a návratové typy metod přistupovat k odvozeným třídám. 
+* Parametry a návratové typy veřejných metod náležících veřejným třídám a parametry a návratové typy metod přistupovat k odvozeným třídám.
 
-Pravidla pro dodržování specifikace CLS jsou uvedeny v následující tabulce. Text pravidel je doslova převzat z [Standard ECMA-335: Common Language Infrastructure](https://www.ecma-international.org/publications/standards/Ecma-335.htm), což je Copyright 2012 společnosti Ecma International. Podrobnější informace o těchto pravidlech naleznete v následující části. 
+Pravidla pro dodržování specifikace CLS jsou uvedeny v následující tabulce. Text pravidel je doslova převzat z [Standard ECMA-335: Common Language Infrastructure](https://www.ecma-international.org/publications/standards/Ecma-335.htm), což je Copyright 2012 společnosti Ecma International. Podrobnější informace o těchto pravidlech naleznete v následující části.
 
 Kategorie | Další informace naleznete v tématu | Pravidlo | Číslo pravidla
 -------- | --- | ---- | -----------
@@ -179,17 +179,17 @@ Obecné typy | [Obecné typy a členy](#generic-types-and-members) | Obecný typ
 Obecné typy | [Obecné typy a členy](#generic-types-and-members) | Typy použité jako omezení u obecných parametrů musí samy odpovídat specifikaci kompatibilní se Specifikací CLS. | 45
 Obecné typy | [Obecné typy a členy](#generic-types-and-members) | Viditelnost a přístupnost členů (včetně vnořených typů) v instanci obecného typu se považovat za vymezenou pro konkrétní instanci spíše než deklarace obecného typu jako celku. Za předpokladu, že to, pravidla viditelnosti a přístupnosti specifikace CLS, pravidla 12 stále platí. | 46
 Obecné typy | [Obecné typy a členy](#generic-types-and-members) | Pro každou abstraktní nebo virtuální obecnou metodu musí existovat výchozí konkrétní (neabstraktní) implementace | 47
-Rozhraní | [Rozhraní](#interfaces) | Rozhraní kompatibilní se Specifikací CLS nesmí vyžadovat definici compliantmethods neodpovídající specifikaci CLS účelem jejich implementace. | 18
+Rozhraní | [Rozhraní](#interfaces) | Rozhraní kompatibilní se Specifikací CLS nebudou vyžadovat definici metod odpovídajících neodpovídající specifikaci CLS, aby jejich implementaci. | 18
 Rozhraní | [Rozhraní](#interfaces) | Rozhraní odpovídající specifikaci CLS nesmí definovat statické metody ani musí definovat pole. | 19
 Členové | [Typy členů obecně](#type-members-in-general) | Globální statické položky a metody nejsou kompatibilní se Specifikací CLS. | 36
 Členové | -- | Hodnota statického literálu je určena pomocí metadat inicializace pole. Literál odpovídající specifikaci CLS musí mít hodnotu zadanou v poli Inicializace metadat, která je stejného typu jako literál (nebo základního typu, pokud je literál `enum`). | 13
 Členové | [Typy členů obecně](#type-members-in-general) | Omezení vararg není částí specifikace CLS a jedinou konvencí volání podporuje specifikace CLS je že standardní spravované konvence volání. | 15
-Zásady vytváření názvů | [Zásady vytváření názvů](#naming-conventions) | Sestavení musí dodržovat přílohu 7 technické zprávy 15 sady Unicode Standard3.0 řídící sadu znaků povolených pro spuštění a být součástí identifikátory, které jsou k dispozici online na [tvarů normalizace Unicode](https://www.unicode.org/unicode/reports/tr15/tr15-18.html). Identifikátory musí být v kanonickém formátu definovaném v normalizačním formuláři Unicode C. Pro účely specifikace CLS, dva identifikátory stejné v případě mapování jejich malých písmen (podle specifikací Unicode národním prostředí, 1: 1 malé písmeno mapování) jsou totožné. To znamená, že dva identifikátory, aby bylo považováno za jiné v rámci specifikace CLS se liší se ve více než jednoduchém případě. Za účelem přepsání zděděné definice však rozhraní příkazového řádku vyžaduje, přesného kódování v původní deklaraci použít. | 4
+Zásady vytváření názvů | [Zásady vytváření názvů](#naming-conventions) | Sestavení musí dodržovat přílohu 7 technické zprávy 15 sady Unicode Standard3.0 řídící sadu znaků povolených pro spuštění a být součástí identifikátory, které jsou k dispozici online na [tvarů normalizace Unicode](https://www.unicode.org/unicode/reports/tr15/tr15-18.html). Identifikátory musí být v kanonickém formátu definovaném v normalizačním formuláři Unicode C. Pro účely specifikace CLS jsou dva identifikátory stejné v případě mapování jejich malých písmen (podle specifikací Unicode národním prostředí, 1: 1 malé písmeno mapování) jsou totožné. To znamená, že dva identifikátory, aby bylo považováno za jiné v rámci specifikace CLS se liší se ve více než jednoduchém případě. Za účelem přepsání zděděné definice však rozhraní příkazového řádku vyžaduje, přesného kódování v původní deklaraci použít. | 4
 Přetížení | [Zásady vytváření názvů](#naming-conventions) | Všechny názvy zavedené v oboru kompatibilní se Specifikací CLS musí být odlišné bez ohledu na typ, s výjimkou případů, kdy jsou názvy shodné a jsou vyřešeny prostřednictvím přetížení. To znamená, že zatímco CTS umožňuje jeden typ používal stejný název pro metodu a pole, CLS to neumožňuje. | 5
-Přetížení | [Zásady vytváření názvů](#naming-conventions) | Pole a vnořené typy musí být různé podle porovnání identifikátoru, rozlišují CTS umožňuje odlišit různé podpisy. Metody, vlastnosti a události, které mají stejný název (podle porovnání identifikátoru) se musí lišit více než jen návratovým typem, mimo specifikaci v pravidla 39 CLS | 6
+Přetížení | [Zásady vytváření názvů](#naming-conventions) | Pole a vnořené typy musí být různé podle porovnání identifikátoru, i když CTS umožňuje odlišit různé podpisy. Metody, vlastnosti a události, které mají stejný název (podle porovnání identifikátoru) se musí lišit více než jen návratovým typem, mimo specifikaci v pravidla 39 CLS | 6
 Přetížení | [Overloads](#overloads) | Mohou být přetíženy pouze vlastnosti a metody. | 37
 Přetížení | [Overloads](#overloads) |Vlastnosti a metody mohou být přetíženy pouze na základě čísla a typů jejich parametrů, s výjimkou operátorů převodu s názvem `op_Implicit` a `op_Explicit`, které mohou také být přetíženy podle jejich návratového typu. | 38
-Přetížení | -- | Pokud dvě nebo více metod odpovídajících specifikaci CLS deklarovaných v typu mají stejné vytvářeních, pro konkrétní sadu vytváření instancí typů mají stejný parametr a návratové typy, pak všechny tyto metody být sémanticky rovnocenné v těchto instancí typů. | 48
+Přetížení | -- | Pokud mají dvě nebo více kompatibilní se Specifikací CLS metod deklarovaných v typu stejný název a pro konkrétní sadu vytváření instancí typů mají stejný parametr a návratové typy, musí být sémanticky rovnocenné v těchto instancí typů všechny tyto metody. | 48
 Vlastnosti | [Vlastnosti](#properties) | Metody, které implementují metody getter a setter vlastnosti musí být označeny `SpecialName` v metadatech. | 24
 Vlastnosti | [Vlastnosti](#properties) | Přistupující objekty vlastnosti musí být statická, virtuální nebo instanční. | 26
 Vlastnosti | [Vlastnosti](#properties) | Typ vlastnosti musí být návratový typ getter a typ posledního argumentu setter. Typy parametrů vlastnosti musí být typy parametrů pro getter a typy všech kromě posledního parametru metodu setter. Všechny tyto typy musí být kompatibilní se Specifikací CLS a nesmí být spravovanými ukazateli (tj. nesmí být předávány odkazem). | 27
@@ -204,16 +204,16 @@ Typy | [Typy a signatury členů typu](#types-and-type-member-signatures) | [Sys
 
 ### <a name="types-and-type-member-signatures"></a>Typy a signatury členů typu
 
-[System.Object](xref:System.Object) typ je kompatibilní se Specifikací CLS a je základní typ pro všechny typy objektů v systému typů rozhraní .NET Framework. Dědičnost v rozhraní .NET Framework je buď implicitní (například [řetězec](xref:System.String) třídy implicitně dědí z `Object` třídy) nebo explicitní (například [CultureNotFoundException](xref:System.Globalization.CultureNotFoundException) třída dědí explicitně z [ArgumentException](xref:System.ArgumentException) třída, která dědí explicitně z [výjimka](xref:System.Exception) třídy. Odvozený typ vyhovoval specifikaci CLS jeho základní typ musí být kompatibilní se Specifikací CLS. 
+[System.Object](xref:System.Object) typ je kompatibilní se Specifikací CLS a je základní typ pro všechny typy objektů v systému typů rozhraní .NET Framework. Dědičnost v rozhraní .NET Framework je buď implicitní (například [řetězec](xref:System.String) třídy implicitně dědí z `Object` třídy) nebo explicitní (například [CultureNotFoundException](xref:System.Globalization.CultureNotFoundException) třída dědí explicitně z [ArgumentException](xref:System.ArgumentException) třída, která dědí explicitně z [výjimka](xref:System.Exception) třídy. Odvozený typ vyhovoval specifikaci CLS jeho základní typ musí být kompatibilní se Specifikací CLS.
 
-Následující příklad ukazuje odvozený typ, jehož základní typ není kompatibilní se Specifikací CLS. Definuje základní `Counter` třídu, která používá nepodepsané 32bitové celé číslo jako čítač. Protože třída poskytuje funkce čítače obalením celého čísla bez znaménka, třída je označena jako bez-kompatibilní se Specifikací CLS. V důsledku toho odvozená třída `NonZeroCounter`, není kompatibilní se Specifikací CLS. 
+Následující příklad ukazuje odvozený typ, jehož základní typ není kompatibilní se Specifikací CLS. Definuje základní `Counter` třídu, která používá nepodepsané 32bitové celé číslo jako čítač. Protože třída poskytuje funkce čítače obalením celého čísla bez znaménka, třída je označena jako bez-kompatibilní se Specifikací CLS. V důsledku toho odvozená třída `NonZeroCounter`, není kompatibilní se Specifikací CLS.
 
 ```csharp
 using System;
 
 [assembly: CLSCompliant(true)]
 
-[CLSCompliant(false)] 
+[CLSCompliant(false)]
 public class Counter
 {
    UInt32 ctr;
@@ -238,7 +238,7 @@ public class Counter
       get { return ctr; }
    }
 
-   public void Increment() 
+   public void Increment()
    {
       ctr += (uint) 1;
    }
@@ -263,7 +263,7 @@ public class NonZeroCounter : Counter
 ```vb
 <Assembly: CLSCompliant(True)>
 
-<CLSCompliant(False)> _ 
+<CLSCompliant(False)> _
 Public Class Counter
    Dim ctr As UInt32
 
@@ -300,38 +300,36 @@ Public Class NonZeroCounter : Inherits Counter
    End Sub
 End Class
 ' Compilation produces a compiler warning like the following:
-'    Type3.vb(34) : warning BC40026: 'NonZeroCounter' is not CLS-compliant 
+'    Type3.vb(34) : warning BC40026: 'NonZeroCounter' is not CLS-compliant
 '    because it derives from 'Counter', which is not CLS-compliant.
-'    
+'
 '    Public Class NonZeroCounter : Inherits Counter
 '                 ~~~~~~~~~~~~~~
 ```
 
-Všechny typy, které se zobrazují v signaturách členu, včetně návratový typ metody nebo vlastnosti typu, musí být kompatibilní se Specifikací CLS. Kromě toho pro obecné typy platí: 
+Všechny typy, které se zobrazují v signaturách členu, včetně návratový typ metody nebo vlastnosti typu, musí být kompatibilní se Specifikací CLS. Kromě toho pro obecné typy platí:
 
 * Všechny typy, které píší obecný typ musí být kompatibilní se Specifikací CLS.
 
-* Všechny typy použité jako omezení u obecných parametrů musí být kompatibilní se Specifikací CLS. 
+* Všechny typy použité jako omezení u obecných parametrů musí být kompatibilní se Specifikací CLS.
 
-.NET [obecný systém typů](common-type-system.md) obsahuje několik předdefinovaných typů, které přímo podporují modul common language runtime a jsou speciálně kódovány v metadatech sestavení. Z těchto vnitřních typů typů uvedených v následující tabulce jsou kompatibilní se Specifikací CLS. 
-
+.NET [obecný systém typů](common-type-system.md) obsahuje několik předdefinovaných typů, které přímo podporují modul common language runtime a jsou speciálně kódovány v metadatech sestavení. Z těchto vnitřních typů typů uvedených v následující tabulce jsou kompatibilní se Specifikací CLS.
 
 Typ kompatibilní se Specifikací CLS | Popis
 ------------------ | -----------
-[Bajtů](xref:System.Byte) | 8bitové celé číslo bez znaménka 
-[Int16](xref:System.Int16) | 16bitové celé číslo se znaménkem 
-[Int32](xref:System.Int32) | 32bitové celé číslo se znaménkem 
+[Bajtů](xref:System.Byte) | 8bitové celé číslo bez znaménka
+[Int16](xref:System.Int16) | 16bitové celé číslo se znaménkem
+[Int32](xref:System.Int32) | 32bitové celé číslo se znaménkem
 [Int64](xref:System.Int64) | 64bitové celé číslo se znaménkem
 [Jeden](xref:System.Single) | S plovoucí desetinnou čárkou s jednoduchou přesností
 [Double](xref:System.Double) | Dvojité přesnosti s plovoucí desetinnou čárkou
-[Datový typ Boolean](xref:System.Boolean) | Typ hodnoty true nebo false 
+[Datový typ Boolean](xref:System.Boolean) | Typ hodnoty true nebo false
 [Char](xref:System.Char) | Kódová jednotka v kódování UTF-16
 [Decimal](xref:System.Decimal) | Desetinné číslo bez plovoucí desetinné čárky
 [IntPtr](xref:System.IntPtr) | Ukazatel nebo popisovač platformou definované velikosti
-[řetězec](xref:System.String) | Kolekce žádným, jedním nebo více objektů Char 
- 
-Vnitřní typy, které jsou uvedeny v následující tabulce nejsou kompatibilní se Specifikací CLS.
+[řetězec](xref:System.String) | Kolekce žádným, jedním nebo více objektů Char
 
+Vnitřní typy, které jsou uvedeny v následující tabulce nejsou kompatibilní se Specifikací CLS.
 
 Nevyhovující typ | Popis | Alternativy CLS
 ------------------ | ----------- | -------------------------
@@ -340,36 +338,36 @@ Nevyhovující typ | Popis | Alternativy CLS
 [UInt32](xref:System.UInt32) | 32bitové celé číslo bez znaménka | [Int64](xref:System.Int64)
 [UInt64](xref:System.UInt64) | 64bitové celé číslo bez znaménka | [Int64](xref:System.Int64) (může přetéci), [BigInteger](xref:System.Numerics.BigInteger), nebo [Double](xref:System.Double)
 [UIntPtr](xref:System.UIntPtr) | Nepodepsaný ukazatel nebo popisovač | [IntPtr](xref:System.IntPtr)
- 
- Knihovny tříd rozhraní .NET Framework nebo jiná knihovna tříd může obsahovat další typy, které nejsou kompatibilní se Specifikací CLS; Příklad: 
- 
- * Pevně určené typy hodnot. Následující C# příklad vytvoří třídu, která má veřejnou vlastnost typu `int`* s názvem `Value`. Protože `int`* je zabalený typ hodnoty, kompilátor jej označí příznakem jako bez-kompatibilní se Specifikací CLS.
 
-  ```csharp
-  using System;
+Knihovny tříd rozhraní .NET Framework nebo jiná knihovna tříd může obsahovat další typy, které nejsou kompatibilní se Specifikací CLS; Příklad:
 
-  [assembly:CLSCompliant(true)]
+* Pevně určené typy hodnot. Následující C# příklad vytvoří třídu, která má veřejnou vlastnost typu `int`* s názvem `Value`. Protože `int`* je zabalený typ hodnoty, kompilátor jej označí příznakem jako bez-kompatibilní se Specifikací CLS.
 
-  public unsafe class TestClass
-  {
-     private int* val;
+```csharp
+using System;
 
-     public TestClass(int number)
-     {
-        val = (int*) number;
-     }
+[assembly:CLSCompliant(true)]
 
-     public int* Value {
-        get { return val; }        
-     }
-  }
-  // The compiler generates the following output when compiling this example:
-  //        warning CS3003: Type of 'TestClass.Value' is not CLS-compliant
-  ```
+public unsafe class TestClass
+{
+   private int* val;
+
+   public TestClass(int number)
+   {
+      val = (int*) number;
+   }
+
+   public int* Value {
+      get { return val; }
+   }
+}
+// The compiler generates the following output when compiling this example:
+//        warning CS3003: Type of 'TestClass.Value' is not CLS-compliant
+```
 
 * Typové odkazy, které jsou speciální konstrukce, které obsahují odkaz na objekt a odkaz na typ.
 
-Pokud typ není kompatibilní se Specifikací CLS, měli byste použít [CLSCompliantAttribute](xref:System.CLSCompliantAttribute) atributem *isCompliant* parametr s hodnotou `false` k němu. Další informace najdete v tématu [atribut CLSCompliantAttribute](#the-clscompliantattribute-attribute) oddílu.  
+Pokud typ není kompatibilní se Specifikací CLS, měli byste použít [CLSCompliantAttribute](xref:System.CLSCompliantAttribute) atributem *isCompliant* parametr s hodnotou `false` k němu. Další informace najdete v tématu [atribut CLSCompliantAttribute](#the-clscompliantattribute-attribute) oddílu.
 
 Následující příklad ilustruje daný problém dodržování specifikace CLS v podpisu metody a obecný typ instance. Definuje `InvoiceItem` třídu s vlastností typu [UInt32](xref:System.UInt32), vlastnost typu [s možnou hodnotou Null (z UInt32)](xref:System.Nullable%601)a konstruktor s parametry typu `UInt32` a `Nullable(Of UInt32)`. Při pokusu o kompilaci tohoto příkladu, se čtyři upozornění kompilátoru.
 
@@ -426,36 +424,36 @@ Public Class InvoiceItem
    Public Property Quantity As Nullable(Of UInteger)
       Get
          Return qty
-      End Get   
-      Set 
+      End Get
+      Set
          qty = value
-      End Set   
+      End Set
    End Property
 
    Public Property InvoiceId As UInteger
-      Get   
+      Get
          Return invId
       End Get
-      Set 
+      Set
          invId = value
-      End Set   
+      End Set
    End Property
 End Class
 ' The attempt to compile the example displays output similar to the following:
 '    Type1.vb(13) : warning BC40028: Type of parameter 'sku' is not CLS-compliant.
-'    
+'
 '       Public Sub New(sku As UInteger, quantity As Nullable(Of UInteger))
 '                      ~~~
 '    Type1.vb(13) : warning BC40041: Type 'UInteger' is not CLS-compliant.
-'    
+'
 '       Public Sub New(sku As UInteger, quantity As Nullable(Of UInteger))
 '                                                               ~~~~~~~~
 '    Type1.vb(18) : warning BC40041: Type 'UInteger' is not CLS-compliant.
-'    
+'
 '       Public Property Quantity As Nullable(Of UInteger)
 '                                               ~~~~~~~~
 '    Type1.vb(27) : warning BC40027: Return type of function 'InvoiceId' is not CLS-compliant.
-'    
+'
 '       Public Property InvoiceId As UInteger
 ```
 
@@ -490,7 +488,7 @@ public class InvoiceItem
    public int InvoiceId
    {
       get { return (int) invId; }
-      set { 
+      set {
          if (value <= 0)
             throw new ArgumentOutOfRangeException("The invoice number is zero or negative.");
          invId = (uint) value; }
@@ -518,24 +516,24 @@ Public Class InvoiceItem
    Public Property Quantity As Nullable(Of Integer)
       Get
          Return qty
-      End Get   
-      Set 
+      End Get
+      Set
          qty = value
-      End Set   
+      End Set
    End Property
 
    Public Property InvoiceId As Integer
-      Get   
+      Get
          Return CInt(invId)
       End Get
-      Set 
+      Set
          invId = CUInt(value)
-      End Set   
+      End Set
    End Property
 End Class
 ```
 
-Kromě konkrétních uvedených typů některé kategorie typů nejsou kompatibilní se Specifikací CLS. Patří mezi ně typy nespravovaného ukazatele a typy ukazatelů na funkci. Následující příklad generuje upozornění kompilátoru, protože používá ukazatel na celé číslo, chcete-li vytvořit pole celých čísel. 
+Kromě konkrétních uvedených typů některé kategorie typů nejsou kompatibilní se Specifikací CLS. Patří mezi ně typy nespravovaného ukazatele a typy ukazatelů na funkci. Následující příklad generuje upozornění kompilátoru, protože používá ukazatel na celé číslo, chcete-li vytvořit pole celých čísel.
 
 ```csharp
 using System;
@@ -555,12 +553,12 @@ public class ArrayHelper
       }
       return arr;
    }
-}   
+}
 // The attempt to compile this example displays the following output:
 //    UnmanagedPtr1.cs(8,57): warning CS3001: Argument type 'int*' is not CLS-compliant
 ```
 
-```vb
+```csharp
 using System;
 
 [assembly: CLSCompliant(true)]
@@ -578,16 +576,16 @@ public class ArrayHelper
       }
       return arr;
    }
-}   
+}
 // The attempt to compile this example displays the following output:
 //    UnmanagedPtr1.cs(8,57): warning CS3001: Argument type 'int*' is not CLS-compliant
 ```
 
-Pro kompatibilní se Specifikací CLS abstraktní třídy (tedy třídy označené jako `abstract` v C#), všichni členové třídy také musí být kompatibilní se Specifikací CLS. 
+Pro kompatibilní se Specifikací CLS abstraktní třídy (tedy třídy označené jako `abstract` v C#), všichni členové třídy také musí být kompatibilní se Specifikací CLS.
 
 ### <a name="naming-conventions"></a>Zásady vytváření názvů
 
-Protože některé programovací jazyky rozlišují velká a malá písmena, musí identifikátory (například názvy oborů názvů, typů a členů) lišit více než velikostí písmen. Dva identifikátory jsou považovány za rovnocenné, pokud mapování jejich malých písmen jsou stejné. Následující příklad jazyka C# definuje dvě veřejné třídy `Person` a `person`. Protože se liší pouze velikostí písma, kompilátor jazyka C# je označí příznakem jako není kompatibilní se Specifikací CLS. 
+Protože některé programovací jazyky rozlišují velká a malá písmena, musí identifikátory (například názvy oborů názvů, typů a členů) lišit více než velikostí písmen. Dva identifikátory jsou považovány za rovnocenné, pokud mapování jejich malých písmen jsou stejné. Následující příklad jazyka C# definuje dvě veřejné třídy `Person` a `person`. Protože se liší pouze velikostí písma, kompilátor jazyka C# je označí příznakem jako není kompatibilní se Specifikací CLS.
 
 ```csharp
 using System;
@@ -604,16 +602,16 @@ public class person
 
 }
 // Compilation produces a compiler warning like the following:
-//    Naming1.cs(11,14): warning CS3005: Identifier 'person' differing 
+//    Naming1.cs(11,14): warning CS3005: Identifier 'person' differing
 //                       only in case is not CLS-compliant
 //    Naming1.cs(6,14): (Location of symbol related to previous warning)
 ```
 
 Identifikátory programovacího jazyka, jako je například názvy oborů názvů, typů a členů, musí odpovídat [Unicode Standard 3.0, technická zpráva 15, příloha 7](https://www.unicode.org/reports/tr15/tr15-18.html). To znamená, že:
 
-* První znak identifikátoru může být jakékoli Unicode velkým písmenem, malým písmenem, písmenem nadpisu, modifikátor, jiným písmenem nebo číslem. Informace o kategoriích znaků Unicode naleznete v tématu [System.Globalization.UnicodeCategory](xref:System.Globalization.UnicodeCategory) výčtu. 
+* První znak identifikátoru může být jakékoli Unicode velkým písmenem, malým písmenem, písmenem nadpisu, modifikátor, jiným písmenem nebo číslem. Informace o kategoriích znaků Unicode naleznete v tématu [System.Globalization.UnicodeCategory](xref:System.Globalization.UnicodeCategory) výčtu.
 
-* Následující znaky mohou být z kategorií jako první znak a může obsahovat také značky bez mezer mezer, kombinované značky, desetinná čísla, interpunkční znaménka konektoru a formátování kódů. 
+* Následující znaky mohou být z kategorií jako první znak a může obsahovat také značky bez mezer mezer, kombinované značky, desetinná čísla, interpunkční znaménka konektoru a formátování kódů.
 
 Než porovnáte identifikátory, měli byste odfiltrovat formátovací kódy a převést identifikátory na normalizační formu Unicode C, protože jeden znak může být reprezentován více jednotkami kódu kódování UTF-16. Sekvence znaků, které vyvolávají stejné jednotky kódu v normalizačním formuláři Unicode C nejsou kompatibilní se Specifikací CLS. Následující příklad definuje vlastnost s názvem `Å`, který se skládá ze znaku ANGSTROM SIGN (U + 212B) a druhé vlastnosti s názvem `Å` který se skládá ze znaků LATINKY velké písmeno s KROUŽKEM (U + 00 C 5). C# Kompilátor označí zdrojový kód jako bez-kompatibilní se Specifikací CLS.
 
@@ -627,7 +625,7 @@ public class Size
    {
        get { return a1; }
        set { a1 = value; }
-   }         
+   }
 
    public double Å
    {
@@ -657,10 +655,10 @@ Public Class Size
        Get
           Return a1
        End Get
-       Set 
+       Set
           a1 = value
        End Set
-   End Property         
+   End Property
 
    Public Property Å As Double
        Get
@@ -668,24 +666,24 @@ Public Class Size
        End Get
        Set
           a2 = value
-       End Set   
+       End Set
    End Property
 End Class
 ' Compilation produces a compiler warning like the following:
 '    Naming1.vb(9) : error BC30269: 'Public Property Å As Double' has multiple definitions
 '     with identical signatures.
-'    
+'
 '       Public Property Å As Double
 '                       ~
 ```
 
-Názvy členů v rámci určitého oboru (jako je například obory názvů v rámci sestavení, typy v oboru názvů nebo členy v rámci typu) musí být jedinečné, kromě názvů vyřešených prostřednictvím přetížení. Tento požadavek je přísnější než u systému obecného typu, což umožňuje více členům v rámci oboru mít stejný název, za předpokladu, že jsou různé druhy členů (například jeden je metoda a jeden je pole). Zejména pro členy typu: 
+Názvy členů v rámci určitého oboru (jako je například obory názvů v rámci sestavení, typy v oboru názvů nebo členy v rámci typu) musí být jedinečné, kromě názvů vyřešených prostřednictvím přetížení. Tento požadavek je přísnější než u systému obecného typu, což umožňuje více členům v rámci oboru mít stejný název, za předpokladu, že jsou různé druhy členů (například jeden je metoda a jeden je pole). Zejména pro členy typu:
 
-* Pole a vnořené typy se rozlišují podle názvu. 
+* Pole a vnořené typy se rozlišují podle názvu.
 
-* Metody, vlastnosti a události, které mají stejný název se musí lišit více než jen návratovým typem. 
+* Metody, vlastnosti a události, které mají stejný název se musí lišit více než jen návratovým typem.
 
-Následující příklad ukazuje požadavek, aby názvy členů musely být jedinečné v rámci jejich oboru. Definuje třídu s názvem `Converter` , který obsahuje čtyři členy s názvem `Conversion`. Tři jsou metody a jeden je vlastnost. Metoda, která zahrnuje `Int64` parametr je jedinečně pojmenovaná, ale dvě metody s `Int32` parametr nejsou, protože vrácená hodnota není považováno za součást podpisu člena. `Conversion` Vlastnost také porušuje tento požadavek, protože vlastnosti nemohou mít stejný název jako přetížené metody. 
+Následující příklad ukazuje požadavek, aby názvy členů musely být jedinečné v rámci jejich oboru. Definuje třídu s názvem `Converter` , který obsahuje čtyři členy s názvem `Conversion`. Tři jsou metody a jeden je vlastnost. Metoda, která zahrnuje `Int64` parametr je jedinečně pojmenovaná, ale dvě metody s `Int32` parametr nejsou, protože vrácená hodnota není považováno za součást podpisu člena. `Conversion` Vlastnost také porušuje tento požadavek, protože vlastnosti nemohou mít stejný název jako přetížené metody.
 
 ```csharp
 using System;
@@ -712,8 +710,8 @@ public class Converter
    public bool Conversion
    {
       get { return true; }
-   }     
-}  
+   }
+}
 // Compilation produces a compiler error like the following:
 //    Naming3.cs(13,17): error CS0111: Type 'Converter' already defines a member called
 //            'Conversion' with the same parameter types
@@ -742,34 +740,34 @@ Public Class Converter
    Public ReadOnly Property Conversion As Boolean
       Get
          Return True
-      End Get   
-   End Property     
+      End Get
+   End Property
 End Class
 ' Compilation produces a compiler error like the following:
-'    Naming3.vb(8) : error BC30301: 'Public Function Conversion(number As Integer) As Double' 
-'                    and 'Public Function Conversion(number As Integer) As Single' cannot 
+'    Naming3.vb(8) : error BC30301: 'Public Function Conversion(number As Integer) As Double'
+'                    and 'Public Function Conversion(number As Integer) As Single' cannot
 '                    overload each other because they differ only by return types.
-'    
+'
 '       Public Function Conversion(number As Integer) As Double
 '                       ~~~~~~~~~~
-'    Naming3.vb(20) : error BC30260: 'Conversion' is already declared as 'Public Function 
+'    Naming3.vb(20) : error BC30260: 'Conversion' is already declared as 'Public Function
 '                     Conversion(number As Integer) As Single' in this class.
-'    
+'
 '       Public ReadOnly Property Conversion As Boolean
 '                                ~~~~~~~~~~
 ```
 
-Jednotlivé jazyky obsahují jedinečná klíčová slova, takže jazyky, které se zaměřují modul CLR musí rovněž poskytnout určitý mechanismus pro odkazování na identifikátory (například názvy typů), které se shodují s klíčovými slovy. Například `case` je klíčové slovo v jazyce C# a Visual Basic. Následující příklad jazyka Visual Basic je však dokáže odlišit třídu s názvem `case` z `case` – klíčové slovo s využitím levé a pravé složené závorky. V opačném případě by v příkladu vytvoří chybová zpráva "Klíčové slovo není platné jako identifikátor" a kompilace selže. 
+Jednotlivé jazyky obsahují jedinečná klíčová slova, takže jazyky, které se zaměřují modul CLR musí rovněž poskytnout určitý mechanismus pro odkazování na identifikátory (například názvy typů), které se shodují s klíčovými slovy. Například `case` je klíčové slovo v jazyce C# a Visual Basic. Následující příklad jazyka Visual Basic je však dokáže odlišit třídu s názvem `case` z `case` – klíčové slovo s využitím levé a pravé složené závorky. V opačném případě by v příkladu vytvoří chybová zpráva "Klíčové slovo není platné jako identifikátor" a kompilace selže.
 
 ```vb
 Public Class [case]
    Private _id As Guid
-   Private name As String  
+   Private name As String
 
    Public Sub New(name As String)
       _id = Guid.NewGuid()
-      Me.name = name 
-   End Sub   
+      Me.name = name
+   End Sub
 
    Public ReadOnly Property ClientName As String
       Get
@@ -779,7 +777,7 @@ Public Class [case]
 End Class
 ```
 
-Následující C# příklad je možné vytvořit instanci `case` pomocí symbolem @ do rozpoznání identifikátoru z klíčového slova jazyka. Bez něho zobrazí kompilátor jazyka C# dvě chybové zprávy: "Očekáván typ" a "Neplatný výraz pojem"case." 
+Následující C# příklad je možné vytvořit instanci `case` pomocí symbolem @ do rozpoznání identifikátoru z klíčového slova jazyka. Bez něho zobrazí kompilátor jazyka C# dvě chybové zprávy: "Očekáván typ" a "Neplatný výraz pojem"case."
 
 ```csharp
 using System;
@@ -798,13 +796,13 @@ public class Example
 
 Common Language Specification definuje dva operátory převodu:
 
-* `op_Implicit`, který se používá pro rozšiřující převody, při kterých nedojde ke ztrátě dat nebo přesnosti. Například [desítkové](xref:System.Decimal) struktura obsahuje přetíženou `op_Implicit` operátor pro převod integrálních hodnot a [Char](xref:System.Char) hodnoty `Decimal` hodnoty. 
+* `op_Implicit`, který se používá pro rozšiřující převody, při kterých nedojde ke ztrátě dat nebo přesnosti. Například [desítkové](xref:System.Decimal) struktura obsahuje přetíženou `op_Implicit` operátor pro převod integrálních hodnot a [Char](xref:System.Char) hodnoty `Decimal` hodnoty.
 
-* `op_Explicit`, který se používá pro zužující převody, které můžou vést ke ztrátě velikosti (hodnota je převedena na hodnotu, která má menší rozsah) nebo přesnost. Například `Decimal` struktura obsahuje přetíženou `op_Explicit` operátor převodu [Double](xref:System.Double) a [jeden](xref:System.Single) hodnoty `Decimal` a k převodu `Decimal` hodnoty integrální hodnoty `Double`, `Single`, a `Char`. 
+* `op_Explicit`, který se používá pro zužující převody, které můžou vést ke ztrátě velikosti (hodnota je převedena na hodnotu, která má menší rozsah) nebo přesnost. Například `Decimal` struktura obsahuje přetíženou `op_Explicit` operátor převodu [Double](xref:System.Double) a [jeden](xref:System.Single) hodnoty `Decimal` a k převodu `Decimal` hodnoty integrální hodnoty `Double`, `Single`, a `Char`.
 
-Ale ne všechny jazyky podporují přetěžování nebo definici vlastních operátorů. Pokud se rozhodnete implementovat tyto operátory převodu, měli byste také poskytnout alternativní způsob provedení převodu. Doporučujeme vám, že zadáte `From`Xxx a `To`Xxx metody. 
+Ale ne všechny jazyky podporují přetěžování nebo definici vlastních operátorů. Pokud se rozhodnete implementovat tyto operátory převodu, měli byste také poskytnout alternativní způsob provedení převodu. Doporučujeme vám, že zadáte `From`Xxx a `To`Xxx metody.
 
-Následující příklad definuje odpovídající specifikaci CLS implicitní a explicitní převody. Vytvoří `UDouble` třídu, která představuje podepsané číslo s dvojitou přesností a plovoucí desetinnou čárkou. Poskytuje implicitní převody z `UDouble` k `Double` a explicitní převody z `UDouble` k `Single`, `Double` k `UDouble`, a `Single` k `UDouble`. Definuje také `ToDouble` metody jako alternativa k operátoru implicitního převodu a `ToSingle`, `FromDouble`, a `FromSingle` metody jako alternativy k operátorům explicitního převodu. 
+Následující příklad definuje odpovídající specifikaci CLS implicitní a explicitní převody. Vytvoří `UDouble` třídu, která představuje podepsané číslo s dvojitou přesností a plovoucí desetinnou čárkou. Poskytuje implicitní převody z `UDouble` k `Double` a explicitní převody z `UDouble` k `Single`, `Double` k `UDouble`, a `Single` k `UDouble`. Definuje také `ToDouble` metody jako alternativa k operátoru implicitního převodu a `ToSingle`, `FromDouble`, a `FromSingle` metody jako alternativy k operátorům explicitního převodu.
 
 ```csharp
 using System;
@@ -839,10 +837,10 @@ public struct UDouble
 
    public static implicit operator Single(UDouble value)
    {
-      if (value.number > (double) Single.MaxValue) 
+      if (value.number > (double) Single.MaxValue)
          throw new InvalidCastException("A UDouble value is out of range of the Single type.");
 
-      return (float) value.number;         
+      return (float) value.number;
    }
 
    public static explicit operator UDouble(double value)
@@ -851,7 +849,7 @@ public struct UDouble
          throw new InvalidCastException("A negative value cannot be converted to a UDouble.");
 
       return new UDouble(value);
-   } 
+   }
 
    public static implicit operator UDouble(float value)
    {
@@ -859,17 +857,17 @@ public struct UDouble
          throw new InvalidCastException("A negative value cannot be converted to a UDouble.");
 
       return new UDouble(value);
-   } 
+   }
 
    public static Double ToDouble(UDouble value)
    {
       return (Double) value;
-   }   
+   }
 
    public static float ToSingle(UDouble value)
    {
       return (float) value;
-   }   
+   }
 
    public static UDouble FromDouble(double value)
    {
@@ -879,7 +877,7 @@ public struct UDouble
    public static UDouble FromSingle(float value)
    {
       return new UDouble(value);
-   }   
+   }
 }
 ```
 
@@ -912,7 +910,7 @@ Public Structure UDouble
       If value.number > CDbl(Single.MaxValue) Then
          Throw New InvalidCastException("A UDouble value is out of range of the Single type.")
       End If
-      Return CSng(value.number)         
+      Return CSng(value.number)
    End Operator
 
    Public Shared Narrowing Operator CType(value As Double) As UDouble
@@ -920,22 +918,22 @@ Public Structure UDouble
          Throw New InvalidCastException("A negative value cannot be converted to a UDouble.")
       End If
       Return New UDouble(value)
-   End Operator 
+   End Operator
 
    Public Shared Narrowing Operator CType(value As Single) As UDouble
       If value < 0 Then
          Throw New InvalidCastException("A negative value cannot be converted to a UDouble.")
       End If
       Return New UDouble(value)
-   End Operator 
+   End Operator
 
    Public Shared Function ToDouble(value As UDouble) As Double
       Return CType(value, Double)
-   End Function   
+   End Function
 
    Public Shared Function ToSingle(value As UDouble) As Single
       Return CType(value, Single)
-   End Function   
+   End Function
 
    Public Shared Function FromDouble(value As Double) As UDouble
       Return New UDouble(value)
@@ -943,15 +941,15 @@ Public Structure UDouble
 
    Public Shared Function FromSingle(value As Single) As UDouble
       Return New UDouble(value)
-   End Function   
+   End Function
 End Structure
 ```
 
 ### <a name="arrays"></a>Pole
 
-Pole kompatibilní se Specifikací CLS v souladu s těmito pravidly: 
+Pole kompatibilní se Specifikací CLS v souladu s těmito pravidly:
 
-* Všechny dimenze pole musí mít nižší mez nula. Následující příklad vytvoří pole bez-kompatibilní se Specifikací CLS s dolní hranicí jednoho. Všimněte si, že bez ohledu na přítomnost [CLSCompliantAttribute](xref:System.CLSCompliantAttribute) atribut, kompilátor nezjistí, že pole vrácené metodou `Numbers.GetTenPrimes` metoda není kompatibilní se Specifikací CLS. 
+* Všechny dimenze pole musí mít nižší mez nula. Následující příklad vytvoří pole bez-kompatibilní se Specifikací CLS s dolní hranicí jednoho. Všimněte si, že bez ohledu na přítomnost [CLSCompliantAttribute](xref:System.CLSCompliantAttribute) atribut, kompilátor nezjistí, že pole vrácené metodou `Numbers.GetTenPrimes` metoda není kompatibilní se Specifikací CLS.
 
   ```csharp
   [assembly: CLSCompliant(true)]
@@ -966,13 +964,13 @@ Pole kompatibilní se Specifikací CLS v souladu s těmito pravidly:
         arr.SetValue(3, 3);
         arr.SetValue(5, 4);
         arr.SetValue(7, 5);
-        arr.SetValue(11, 6); 
+        arr.SetValue(11, 6);
         arr.SetValue(13, 7);
         arr.SetValue(17, 8);
         arr.SetValue(19, 9);
         arr.SetValue(23, 10);
 
-        return arr; 
+        return arr;
     }
   }
   ```
@@ -998,7 +996,7 @@ Pole kompatibilní se Specifikací CLS v souladu s těmito pravidly:
   End Class
   ```
 
-* Všechny prvky pole musí obsahovat typy odpovídající specifikaci CLS. Následující příklad definuje dvě metody, které vrací pole bez-kompatibilní se Specifikací CLS. První vrátí matici [UInt32](xref:System.UInt32) hodnoty. Druhý vrátí [objekt](xref:System.Object) pole, které zahrnuje [Int32](xref:System.Int32) a `UInt32` hodnoty. Ačkoli kompilátor identifikuje první pole jako nevyhovující z důvodu jeho `UInt32` typ, není schopna rozpoznat, že druhé pole obsahuje elementy bez-kompatibilní se Specifikací CLS. 
+* Všechny prvky pole musí obsahovat typy odpovídající specifikaci CLS. Následující příklad definuje dvě metody, které vrací pole bez-kompatibilní se Specifikací CLS. První vrátí matici [UInt32](xref:System.UInt32) hodnoty. Druhý vrátí [objekt](xref:System.Object) pole, které zahrnuje [Int32](xref:System.Int32) a `UInt32` hodnoty. Ačkoli kompilátor identifikuje první pole jako nevyhovující z důvodu jeho `UInt32` typ, není schopna rozpoznat, že druhé pole obsahuje elementy bez-kompatibilní se Specifikací CLS.
 
   ```csharp
   using System;
@@ -1038,9 +1036,9 @@ Pole kompatibilní se Specifikací CLS v souladu s těmito pravidly:
   End Class
   ' Compilation produces a compiler warning like the following:
   '    warning BC40027: Return type of function 'GetTenPrimes' is not CLS-compliant.
-  ```                             
+  ```
 
-* Rozlišení přetížení pro metody, které mají parametry pole je založeno na skutečnosti, že se jedná o pole a na jejich typu prvku. Z tohoto důvodu se následující definice přetížené `GetSquares` metoda je kompatibilní se Specifikací CLS. 
+* Rozlišení přetížení pro metody, které mají parametry pole je založeno na skutečnosti, že se jedná o pole a na jejich typu prvku. Z tohoto důvodu se následující definice přetížené `GetSquares` metoda je kompatibilní se Specifikací CLS.
 
   ```csharp
   using System;
@@ -1054,10 +1052,10 @@ Pole kompatibilní se Specifikací CLS v souladu s těmito pravidly:
     {
         byte[] numbersOut = new byte[numbers.Length];
         for (int ctr = 0; ctr < numbers.Length; ctr++) {
-            int square = ((int) numbers[ctr]) * ((int) numbers[ctr]); 
+            int square = ((int) numbers[ctr]) * ((int) numbers[ctr]);
             if (square <= Byte.MaxValue)
                 numbersOut[ctr] = (byte) square;
-            // If there's an overflow, assign MaxValue to the corresponding 
+            // If there's an overflow, assign MaxValue to the corresponding
             // element.
             else
                 numbersOut[ctr] = Byte.MaxValue;
@@ -1070,7 +1068,7 @@ Pole kompatibilní se Specifikací CLS v souladu s těmito pravidly:
   {
         BigInteger[] numbersOut = new BigInteger[numbers.Length];
         for (int ctr = 0; ctr < numbers.Length; ctr++)
-            numbersOut[ctr] = numbers[ctr] * numbers[ctr]; 
+            numbersOut[ctr] = numbers[ctr] * numbers[ctr];
 
        return numbersOut;
     }
@@ -1086,14 +1084,14 @@ Pole kompatibilní se Specifikací CLS v souladu s těmito pravidly:
      Public Function GetSquares(numbers As Byte()) As Byte()
         Dim numbersOut(numbers.Length - 1) As Byte
         For ctr As Integer = 0 To numbers.Length - 1
-           Dim square As Integer = (CInt(numbers(ctr)) * CInt(numbers(ctr))) 
+           Dim square As Integer = (CInt(numbers(ctr)) * CInt(numbers(ctr)))
            If square <= Byte.MaxValue Then
               numbersOut(ctr) = CByte(square)
-           ' If there's an overflow, assign MaxValue to the corresponding 
+           ' If there's an overflow, assign MaxValue to the corresponding
            ' element.
            Else
               numbersOut(ctr) = Byte.MaxValue
-           End If   
+           End If
         Next
         Return numbersOut
      End Function
@@ -1101,7 +1099,7 @@ Pole kompatibilní se Specifikací CLS v souladu s těmito pravidly:
      Public Function GetSquares(numbers As BigInteger()) As BigInteger()
          Dim numbersOut(numbers.Length - 1) As BigInteger
          For ctr As Integer = 0 To numbers.Length - 1
-            numbersOut(ctr) = numbers(ctr) * numbers(ctr) 
+            numbersOut(ctr) = numbers(ctr) * numbers(ctr)
          Next
          Return numbersOut
      End Function
@@ -1110,13 +1108,13 @@ Pole kompatibilní se Specifikací CLS v souladu s těmito pravidly:
 
 ### <a name="interfaces"></a>Rozhraní
 
-Rozhraní odpovídající specifikaci CLS může definovat vlastnosti, události a virtuální metody (metody bez implementace). Kompatibilní se Specifikací CLS rozhraní nemůže mít některý z následujících akcí: 
+Rozhraní odpovídající specifikaci CLS může definovat vlastnosti, události a virtuální metody (metody bez implementace). Kompatibilní se Specifikací CLS rozhraní nemůže mít některý z následujících akcí:
 
-* Statické metody nebo statická pole. C# Kompilátoru generatse chyby kompilátoru při definování statického člena v rozhraní. 
+* Statické metody nebo statická pole. C# Kompilátor vygeneruje chyby kompilátoru při definování statického člena v rozhraní.
 
-* Pole. C# Acompiler generuje chyby kompilátoru při definování pole v rozhraní.
+* Pole. C# Kompilátor vygeneruje chyby kompilátoru při definování pole v rozhraní.
 
-* Metody, které nejsou kompatibilní se Specifikací CLS. Například následující definice rozhraní obsahuje metodu, `INumber.GetUnsigned`, která je označena jako bez-kompatibilní se Specifikací CLS. Tento příklad generuje upozornění kompilátoru. 
+* Metody, které nejsou kompatibilní se Specifikací CLS. Například následující definice rozhraní obsahuje metodu, `INumber.GetUnsigned`, která je označena jako bez-kompatibilní se Specifikací CLS. Tento příklad generuje upozornění kompilátoru.
 
   ```csharp
   using System;
@@ -1138,19 +1136,19 @@ Rozhraní odpovídající specifikaci CLS může definovat vlastnosti, události
 
   Public Interface INumber
     Function Length As Integer
-      <CLSCompliant(False)> Function GetUnsigned As ULong   
+      <CLSCompliant(False)> Function GetUnsigned As ULong
     End Interface
     ' Attempting to compile the example displays output like the following:
-    '    Interface2.vb(9) : warning BC40033: Non CLS-compliant 'function' is not allowed in a 
+    '    Interface2.vb(9) : warning BC40033: Non CLS-compliant 'function' is not allowed in a
     '    CLS-compliant interface.
-    '    
+    '
     '       <CLSCompliant(False)> Function GetUnsigned As ULong
     '                                      ~~~~~~~~~~~
   ```
 
-  Kvůli tomuto pravidlu není nutné implementovat členy kompatibilní se Specifikací neodpovídajících typy kompatibilní se Specifikací CLS. Pokud rozhraní kompatibilní se Specifikací CLS zpřístupní třídu, která implementuje rozhraní kompatibilním neodpovídající specifikaci CLS, mělo by také poskytovat konkrétní implementace všech členů mimo-kompatibilní se Specifikací CLS. 
+  Kvůli tomuto pravidlu není nutné implementovat členy kompatibilní se Specifikací neodpovídajících typy kompatibilní se Specifikací CLS. Pokud rozhraní kompatibilní se Specifikací CLS zpřístupní třídu, která implementuje rozhraní kompatibilním neodpovídající specifikaci CLS, mělo by také poskytovat konkrétní implementace všech členů mimo-kompatibilní se Specifikací CLS.
 
-Kompilátory jazyka odpovídající specifikaci CLS musí také umožnit třídě poskytnout samostatné implementace členů, kteří mají stejný název a podpis ve více rozhraní. C#podporuje explicitní implementace rozhraní k poskytují tak různé implementace identicky pojmenovaných metod. Následující příklad ukazuje tento scénář definováním `Temperature` třídu, která implementuje `ICelsius` a `IFahrenheit` rozhraní jako explicitní implementace rozhraní. 
+Kompilátory jazyka odpovídající specifikaci CLS musí také umožnit třídě poskytnout samostatné implementace členů, kteří mají stejný název a podpis ve více rozhraní. C#podporuje explicitní implementace rozhraní k poskytují tak různé implementace identicky pojmenovaných metod. Následující příklad ukazuje tento scénář definováním `Temperature` třídu, která implementuje `ICelsius` a `IFahrenheit` rozhraní jako explicitní implementace rozhraní.
 
 ```csharp
 using System;
@@ -1175,7 +1173,7 @@ public class Temperature : ICelsius, IFahrenheit
    {
       // We assume that this is the Celsius value.
       _value = value;
-   } 
+   }
 
    decimal IFahrenheit.GetTemperature()
    {
@@ -1185,7 +1183,7 @@ public class Temperature : ICelsius, IFahrenheit
    decimal ICelsius.GetTemperature()
    {
       return _value;
-   } 
+   }
 }
 public class Example
 {
@@ -1194,9 +1192,9 @@ public class Example
       Temperature temp = new Temperature(100.0m);
       ICelsius cTemp = temp;
       IFahrenheit fTemp = temp;
-      Console.WriteLine("Temperature in Celsius: {0} degrees", 
+      Console.WriteLine("Temperature in Celsius: {0} degrees",
                         cTemp.GetTemperature());
-      Console.WriteLine("Temperature in Fahrenheit: {0} degrees", 
+      Console.WriteLine("Temperature in Fahrenheit: {0} degrees",
                         fTemp.GetTemperature());
    }
 }
@@ -1222,7 +1220,7 @@ Public Class Temperature : Implements ICelsius, IFahrenheit
    Public Sub New(value As Decimal)
       ' We assume that this is the Celsius value.
       _value = value
-   End Sub 
+   End Sub
 
    Public Function GetFahrenheit() As Decimal _
           Implements IFahrenheit.GetTemperature
@@ -1232,15 +1230,15 @@ Public Class Temperature : Implements ICelsius, IFahrenheit
    Public Function GetCelsius() As Decimal _
           Implements ICelsius.GetTemperature
       Return _value
-   End Function 
+   End Function
 End Class
 
 Module Example
    Public Sub Main()
       Dim temp As New Temperature(100.0d)
-      Console.WriteLine("Temperature in Celsius: {0} degrees", 
+      Console.WriteLine("Temperature in Celsius: {0} degrees",
                         temp.GetCelsius())
-      Console.WriteLine("Temperature in Fahrenheit: {0} degrees", 
+      Console.WriteLine("Temperature in Fahrenheit: {0} degrees",
                         temp.GetFahrenheit())
    End Sub
 End Module
@@ -1251,27 +1249,27 @@ End Module
 
 ### <a name="enumerations"></a>Výčty
 
-Výčty odpovídající specifikaci CLS musí postupovat podle těchto pravidel: 
+Výčty odpovídající specifikaci CLS musí postupovat podle těchto pravidel:
 
-* Základní typ výčtu musí být celé číslo kompatibilní se Specifikací CLS vnitřní ([bajtů](xref:System.Byte), [Int16](xref:System.Int16), [Int32](xref:System.Int32), nebo [Int64](xref:System.Int64)). Například následující kód se pokusí definovat výčet, jehož základní typ je [UInt32](xref:System.UInt32) a generuje upozornění kompilátoru. 
+* Základní typ výčtu musí být celé číslo kompatibilní se Specifikací CLS vnitřní ([bajtů](xref:System.Byte), [Int16](xref:System.Int16), [Int32](xref:System.Int32), nebo [Int64](xref:System.Int64)). Například následující kód se pokusí definovat výčet, jehož základní typ je [UInt32](xref:System.UInt32) a generuje upozornění kompilátoru.
 
     ```csharp
     using System;
 
     [assembly: CLSCompliant(true)]
 
-    public enum Size : uint { 
-        Unspecified = 0, 
-        XSmall = 1, 
-        Small = 2, 
-        Medium = 3, 
-        Large = 4, 
-        XLarge = 5 
+    public enum Size : uint {
+        Unspecified = 0,
+        XSmall = 1,
+        Small = 2,
+        Medium = 3,
+        Large = 4,
+        XLarge = 5
     };
 
     public class Clothing
     {
-        public string Name; 
+        public string Name;
         public string Type;
         public string Size;
     }
@@ -1298,36 +1296,36 @@ Výčty odpovídající specifikaci CLS musí postupovat podle těchto pravidel:
     End Class
     ' The attempt to compile the example displays a compiler warning like the following:
     '    Enum3.vb(6) : warning BC40032: Underlying type 'UInt32' of Enum is not CLS-compliant.
-    '    
+    '
     '    Public Enum Size As UInt32
     '                ~~~~
     ```
 
-* Typ výčtu musí mít jediné pole instance s názvem `Value__` , která je označena `FieldAttributes.RTSpecialName` atribut. To umožňuje implicitně odkazovat na hodnotu pole. 
+* Typ výčtu musí mít jediné pole instance s názvem `Value__` , která je označena `FieldAttributes.RTSpecialName` atribut. To umožňuje implicitně odkazovat na hodnotu pole.
 
-* Výčet zahrnuje statické literální pole, jejichž typy odpovídající typu stejný jako daný výčet. Například pokud definujete `State` výčet s hodnotami `State.On` a `State.Off`, `State.On` a `State.Off` jsou obě literální statická pole, jehož typ je `State`. 
+* Výčet zahrnuje statické literální pole, jejichž typy odpovídající typu stejný jako daný výčet. Například pokud definujete `State` výčet s hodnotami `State.On` a `State.Off`, `State.On` a `State.Off` jsou obě literální statická pole, jehož typ je `State`.
 
-* Existují dva typy výčtů: 
-    
+* Existují dva typy výčtů:
+
     * Výčet, který představuje sadu vzájemně se vylučujících pojmenovaných celočíselných hodnot. Tento typ výčtu se vyznačuje nepřítomností z [System.FlagsAttribute](xref:System.FlagsAttribute) vlastního atributu.
-    
-    * Výčet, který představuje sadu bitových příznaků, které lze kombinovat a generovat tak nepojmenovanou hodnotu. Tento typ výčtu se vyznačuje přítomnost [System.FlagsAttribute](xref:System.FlagsAttribute) vlastního atributu.
-    
- Další informace najdete v tématu v dokumentaci [výčtu](xref:System.Enum) struktury. 
 
-* Hodnota výčtu není omezena na rozsah zadaných hodnot. Jinými slovy rozsah hodnot ve výčtu je oblast jeho základní hodnoty. Můžete použít `Enum.IsDefined` metodou ke zjištění, zda zadaná hodnota je člen výčtu. 
+    * Výčet, který představuje sadu bitových příznaků, které lze kombinovat a generovat tak nepojmenovanou hodnotu. Tento typ výčtu se vyznačuje přítomnost [System.FlagsAttribute](xref:System.FlagsAttribute) vlastního atributu.
+
+ Další informace najdete v tématu v dokumentaci [výčtu](xref:System.Enum) struktury.
+
+* Hodnota výčtu není omezena na rozsah zadaných hodnot. Jinými slovy rozsah hodnot ve výčtu je oblast jeho základní hodnoty. Můžete použít `Enum.IsDefined` metodou ke zjištění, zda zadaná hodnota je člen výčtu.
 
 ### <a name="type-members-in-general"></a>Typy členů obecně
 
-Common Language Specification vyžaduje všem polím a metodám jako členům určité třídy přístup. Globální statické položky a metody (tedy statické pole nebo metody, které jsou definovány mimo typ) proto nejsou kompatibilní se Specifikací CLS. Pokud se pokusíte zahrnout globální pole nebo metoda ve zdrojovém kódu C# kompilátor vygeneruje chybu kompilátoru. 
+Common Language Specification vyžaduje všem polím a metodám jako členům určité třídy přístup. Globální statické položky a metody (tedy statické pole nebo metody, které jsou definovány mimo typ) proto nejsou kompatibilní se Specifikací CLS. Pokud se pokusíte zahrnout globální pole nebo metoda ve zdrojovém kódu C# kompilátor vygeneruje chybu kompilátoru.
 
-Common Language Specification podporuje pouze standardní spravované konvence volání. Nepodporuje podporovány konvence nespravovaného volání a metody se seznamy argumentů proměnných označené `varargs` – klíčové slovo. Seznamy argumentů proměnných, které jsou kompatibilní se standardní spravovanou konvencí volání, použijte [ParamArrayAttribute](xref:System.ParamArrayAttribute) atribut nebo implementaci jednotlivých jazyků, jako `params` – klíčové slovo v C# a `ParamArray` – klíčové slovo v jazyce Visual Basic. 
+Common Language Specification podporuje pouze standardní spravované konvence volání. Nepodporuje podporovány konvence nespravovaného volání a metody se seznamy argumentů proměnných označené `varargs` – klíčové slovo. Seznamy argumentů proměnných, které jsou kompatibilní se standardní spravovanou konvencí volání, použijte [ParamArrayAttribute](xref:System.ParamArrayAttribute) atribut nebo implementaci jednotlivých jazyků, jako `params` – klíčové slovo v C# a `ParamArray` – klíčové slovo v jazyce Visual Basic.
 
 ### <a name="member-accessibility"></a>Usnadnění přístupu člena
 
-Přepsání zděděných členů nemůže změnit přístupnost daného člena. Například veřejnou metodu v základní třídě nelze přepsat pomocí soukromé metody v odvozené třídě. Existuje jedna výjimka: `protected internal` (v jazyce C#) nebo `Protected Friend` (v jazyce Visual Basic) člen v jednom sestavení, který je přepsán typem v jiném sestavení.  V takovém případě je přístup k přepsání `Protected`. 
+Přepsání zděděných členů nemůže změnit přístupnost daného člena. Například veřejnou metodu v základní třídě nelze přepsat pomocí soukromé metody v odvozené třídě. Existuje jedna výjimka: `protected internal` (v jazyce C#) nebo `Protected Friend` (v jazyce Visual Basic) člen v jednom sestavení, který je přepsán typem v jiném sestavení.  V takovém případě je přístup k přepsání `Protected`.
 
-Následující příklad ukazuje chybu, která je generován, když [CLSCompliantAttribute](xref:System.CLSCompliantAttribute) atribut je nastaven na `true`, a `Person`, což je třída odvozena z `Animal`, pokouší o změnu přístupnost `Species` vlastnost z veřejné na privátní. Příklad se zkompiluje úspěšně, pokud jeho přístupnost je změněna na veřejné. 
+Následující příklad ukazuje chybu, která je generován, když [CLSCompliantAttribute](xref:System.CLSCompliantAttribute) atribut je nastaven na `true`, a `Person`, což je třída odvozena z `Animal`, pokouší o změnu přístupnost `Species` vlastnost z veřejné na privátní. Příklad se zkompiluje úspěšně, pokud jeho přístupnost je změněna na veřejné.
 
 ```csharp
 using System;
@@ -1343,15 +1341,15 @@ public class Animal
       _species = species;
    }
 
-   public virtual string Species 
-   {    
+   public virtual string Species
+   {
       get { return _species; }
    }
 
    public override string ToString()
    {
-      return _species;   
-   } 
+      return _species;
+   }
 }
 
 public class Human : Animal
@@ -1368,12 +1366,12 @@ public class Human : Animal
       get { return _name; }
    }
 
-   private override string Species 
+   private override string Species
    {
       get { return base.Species; }
    }
 
-   public override string ToString() 
+   public override string ToString()
    {
       return _name;
    }
@@ -1409,8 +1407,8 @@ Public Class Animal
    End Property
 
    Public Overrides Function ToString() As String
-      Return _species   
-   End Function 
+      Return _species
+   End Function
 End Class
 
 Public Class Human : Inherits Animal
@@ -1430,7 +1428,7 @@ Public Class Human : Inherits Animal
    Private Overrides ReadOnly Property Species As String
       Get
          Return MyBase.Species
-      End Get   
+      End Get
    End Property
 
    Public Overrides Function ToString() As String
@@ -1446,14 +1444,14 @@ Public Module Example
    End Sub
 End Module
 ' The example displays the following output:
-'     'Private Overrides ReadOnly Property Species As String' cannot override 
+'     'Private Overrides ReadOnly Property Species As String' cannot override
 '     'Public Overridable ReadOnly Property Species As String' because
 '      they have different access levels.
-' 
+'
 '         Private Overrides ReadOnly Property Species As String
 ```
 
-Typy v signatuře člena musí být přístupné, pokaždé, když se tento člen přístupný. To například znamená, že veřejný člen nemůže obsahovat parametr, jehož typ je privátní, chráněné nebo interní. Následující příklad ukazuje chybu kompilátoru, která způsobí, že když `StringWrapper` konstruktoru třídy poskytuje vnitřní `StringOperationType` hodnota výčtu, která určuje, jak by měl být uzavřen řetězcovou hodnotu. 
+Typy v signatuře člena musí být přístupné, pokaždé, když se tento člen přístupný. To například znamená, že veřejný člen nemůže obsahovat parametr, jehož typ je privátní, chráněné nebo interní. Následující příklad ukazuje chybu kompilátoru, která způsobí, že když `StringWrapper` konstruktoru třídy poskytuje vnitřní `StringOperationType` hodnota výčtu, která určuje, jak by měl být uzavřen řetězcovou hodnotu.
 
 ```csharp
 using System;
@@ -1466,14 +1464,14 @@ public class StringWrapper
    bool useSB = false;
 
    public StringWrapper(StringOperationType type)
-   {   
+   {
       if (type == StringOperationType.Normal) {
          useSB = false;
-      }   
+      }
       else {
          useSB = true;
          internalSB = new StringBuilder();
-      }    
+      }
    }
 
    // The remaining source code...
@@ -1497,13 +1495,13 @@ Public Class StringWrapper
    Dim internalSB As StringBuilder = Nothing
    Dim useSB As Boolean = False
 
-   Public Sub New(type As StringOperationType)   
+   Public Sub New(type As StringOperationType)
       If type = StringOperationType.Normal Then
          useSB = False
       Else
-         internalSB = New StringBuilder() 
+         internalSB = New StringBuilder()
          useSB = True
-      End If    
+      End If
    End Sub
 
    ' The remaining source code...
@@ -1516,16 +1514,16 @@ End Enum
 ' The attempt to compile the example displays the following output:
 '    error BC30909: 'type' cannot expose type 'StringOperationType'
 '     outside the project through class 'StringWrapper'.
-'    
+'
 '       Public Sub New(type As StringOperationType)
 '                              ~~~~~~~~~~~~~~~~~~~
 ```
 
 ### <a name="generic-types-and-members"></a>Obecné typy a členy
 
-Vnořené typy musí mít vždy alespoň tolik obecných parametrů jako jejich nadřazených typů. Tyto odpovídají podle pozice obecným parametrům nadřazeného typu. Obecný typ může zahrnovat také nové obecné parametry. 
+Vnořené typy musí mít vždy alespoň tolik obecných parametrů jako jejich nadřazených typů. Tyto odpovídají podle pozice obecným parametrům nadřazeného typu. Obecný typ může zahrnovat také nové obecné parametry.
 
-Vztah mezi parametry obecného typu nadřazeného typu a jeho vnořenými typy mohou být skryty pomocí syntaxe jednotlivých jazyků. V následujícím příkladu obecný typ `Outer<T>` obsahuje dvě vnořené třídy, `Inner1A` a `Inner1B<U>`. Volání `ToString` metoda, kterou každá třída dědí z `Object.ToString`, ukazují, že jednotlivé vnořené třídy zahrnují parametry typu jeho obsahující třídy. 
+Vztah mezi parametry obecného typu nadřazeného typu a jeho vnořenými typy mohou být skryty pomocí syntaxe jednotlivých jazyků. V následujícím příkladu obecný typ `Outer<T>` obsahuje dvě vnořené třídy, `Inner1A` a `Inner1B<U>`. Volání `ToString` metoda, kterou každá třída dědí z `Object.ToString`, ukazují, že jednotlivé vnořené třídy zahrnují parametry typu jeho obsahující třídy.
 
 ```csharp
 using System;
@@ -1622,9 +1620,9 @@ End Module
 '       Outer`1+Inner1B`1[System.String,System.Int32]
 ```
 
-Generické názvy jsou kódovány ve formě *název*"*n*, kde *název* je název typu *`* je znak literálu, a *n* je počet parametrů deklarovaných v typu, nebo případě vnořených obecných typů počet nově zavedených parametrů typu. Toto kódování názvů obecného typu je primárně určeno vývojářům, kteří používají reflexi k přístupu jsou kompatibilní se Specifikací obecné typy v knihovně. 
+Generické názvy jsou kódovány ve formě *název*"*n*, kde *název* je název typu *`* je znak literálu, a *n* je počet parametrů deklarovaných v typu, nebo případě vnořených obecných typů počet nově zavedených parametrů typu. Toto kódování názvů obecného typu je primárně určeno vývojářům, kteří používají reflexi k přístupu jsou kompatibilní se Specifikací obecné typy v knihovně.
 
-Pokud platí omezení pro obecný typ, všechny typy použité jako omezení musí být také kompatibilní se Specifikací CLS. Následující příklad definuje třídu s názvem `BaseClass` tedy není kompatibilní se Specifikací CLS a obecnou třídu s názvem `BaseCollection` jejíž typ parametru musí být odvozen od `BaseClass`. Ale protože `BaseClass` není kompatibilní se Specifikací CLS, kompilátor vytvoří upozornění. 
+Pokud platí omezení pro obecný typ, všechny typy použité jako omezení musí být také kompatibilní se Specifikací CLS. Následující příklad definuje třídu s názvem `BaseClass` tedy není kompatibilní se Specifikací CLS a obecnou třídu s názvem `BaseCollection` jejíž typ parametru musí být odvozen od `BaseClass`. Ale protože `BaseClass` není kompatibilní se Specifikací CLS, kompilátor vytvoří upozornění.
 
 ```csharp
 using System;
@@ -1651,9 +1649,9 @@ End Class
 Public Class BaseCollection(Of T As BaseClass)
 End Class
 ' Attempting to compile the example displays the following output:
-'    warning BC40040: Generic parameter constraint type 'BaseClass' is not 
+'    warning BC40040: Generic parameter constraint type 'BaseClass' is not
 '    CLS-compliant.
-'    
+'
 '    Public Class BaseCollection(Of T As BaseClass)
 '                                        ~~~~~~~~~
 ```
@@ -1675,7 +1673,7 @@ public class Number<T> where T : struct
    {
       try {
          this.number = Convert.ToDouble(value);
-      }  
+      }
       catch (OverflowException e) {
          throw new ArgumentException("value is too large.", e);
       }
@@ -1695,19 +1693,19 @@ public class Number<T> where T : struct
    }
 }
 
-public class FloatingPoint<T> : Number<T> 
+public class FloatingPoint<T> : Number<T>
 {
-   public FloatingPoint(T number) : base(number) 
+   public FloatingPoint(T number) : base(number)
    {
       if (typeof(float) == number.GetType() ||
-          typeof(double) == number.GetType() || 
+          typeof(double) == number.GetType() ||
           typeof(decimal) == number.GetType())
          this.number = Convert.ToDouble(number);
-      else   
+      else
          throw new ArgumentException("The number parameter is not a floating-point number.");
-   }       
-}           
-// The attempt to comple the example displays the following output:
+   }
+}
+// The attempt to compile the example displays the following output:
 //       error CS0453: The type 'T' must be a non-nullable value type in
 //               order to use it as parameter 'T' in the generic type or method 'Number<T>'
 ```
@@ -1739,22 +1737,22 @@ Public Class Number(Of T As Structure)
    End Function
 End Class
 
-Public Class FloatingPoint(Of T) : Inherits Number(Of T) 
+Public Class FloatingPoint(Of T) : Inherits Number(Of T)
    Public Sub New(number As T)
-      MyBase.New(number) 
+      MyBase.New(number)
       If TypeOf number Is Single Or
                TypeOf number Is Double Or
-               TypeOf number Is Decimal Then 
+               TypeOf number Is Decimal Then
          Me.number = Convert.ToDouble(number)
-      Else   
+      Else
          throw new ArgumentException("The number parameter is not a floating-point number.")
-      End If   
-   End Sub       
-End Class           
-' The attempt to comple the example displays the following output:
+      End If
+   End Sub
+End Class
+' The attempt to compile the example displays the following output:
 '    error BC32105: Type argument 'T' does not satisfy the 'Structure'
 '    constraint for type parameter 'T'.
-'    
+'
 '    Public Class FloatingPoint(Of T) : Inherits Number(Of T)
 '                                                          ~
 ```
@@ -1777,7 +1775,7 @@ public class Number<T> where T : struct
    {
       try {
          this.number = Convert.ToDouble(value);
-      }  
+      }
       catch (OverflowException e) {
          throw new ArgumentException("value is too large.", e);
       }
@@ -1797,18 +1795,18 @@ public class Number<T> where T : struct
    }
 }
 
-public class FloatingPoint<T> : Number<T> where T : struct 
+public class FloatingPoint<T> : Number<T> where T : struct
 {
-   public FloatingPoint(T number) : base(number) 
+   public FloatingPoint(T number) : base(number)
    {
       if (typeof(float) == number.GetType() ||
-          typeof(double) == number.GetType() || 
+          typeof(double) == number.GetType() ||
           typeof(decimal) == number.GetType())
          this.number = Convert.ToDouble(number);
-      else   
+      else
          throw new ArgumentException("The number parameter is not a floating-point number.");
-   }       
-}      
+   }
+}
 ```
 
 ```vb
@@ -1838,30 +1836,30 @@ Public Class Number(Of T As Structure)
    End Function
 End Class
 
-Public Class FloatingPoint(Of T As Structure) : Inherits Number(Of T) 
+Public Class FloatingPoint(Of T As Structure) : Inherits Number(Of T)
    Public Sub New(number As T)
-      MyBase.New(number) 
+      MyBase.New(number)
       If TypeOf number Is Single Or
                TypeOf number Is Double Or
-               TypeOf number Is Decimal Then 
+               TypeOf number Is Decimal Then
          Me.number = Convert.ToDouble(number)
-      Else   
+      Else
          throw new ArgumentException("The number parameter is not a floating-point number.")
-      End If   
-   End Sub       
+      End If
+   End Sub
 End Class
 ```
 
 Common Language Specification ukládá konzervativní instance modelu pro vnořené typy a chráněné členy. Otevření obecných typů nemůže vystavovat pole nebo členy s podpisy, které obsahují konkrétní instanci vnořeného, chráněného obecného typu. Neobecné typy, které rozšiřují konkrétní vytváření instancí obecné základní třídy nebo rozhraní nemůže vystavovat pole nebo členy s podpisy, které obsahují různé vytváření instancí vnořených chráněných obecných typů.
 
-Následující příklad definuje obecný typ, `C1<T>`a chráněnou třídu `C1<T>.N`. `C1<T>` poskytuje dva způsoby, `M1` a `M2`. Ale `M1` není kompatibilní se Specifikací CLS, protože se pokusí vrátit `C1<int>.N` objektu z `C1<T>`. Druhá třída `C2`, je odvozen z `C1<long>`. Nabízí dvě metody `M3` a `M4`. `M3` není kompatibilní se Specifikací CLS, protože se pokusí vrátit `C1<int>.N` objekt z podtřídy `C1<long>`. Všimněte si, že kompilátory jazyka mohou být ještě více omezující. V tomto příkladu zobrazí Visual Basic chybu při pokusu o kompilaci `M4`. 
+Následující příklad definuje obecný typ, `C1<T>`a chráněnou třídu `C1<T>.N`. `C1<T>` poskytuje dva způsoby, `M1` a `M2`. Ale `M1` není kompatibilní se Specifikací CLS, protože se pokusí vrátit `C1<int>.N` objektu z `C1<T>`. Druhá třída `C2`, je odvozen z `C1<long>`. Nabízí dvě metody `M3` a `M4`. `M3` není kompatibilní se Specifikací CLS, protože se pokusí vrátit `C1<int>.N` objekt z podtřídy `C1<long>`. Všimněte si, že kompilátory jazyka mohou být ještě více omezující. V tomto příkladu zobrazí Visual Basic chybu při pokusu o kompilaci `M4`.
 
 ```csharp
 using System;
 
 [assembly:CLSCompliant(true)]
 
-public class C1<T> 
+public class C1<T>
 {
    protected class N { }
 
@@ -1872,7 +1870,7 @@ public class C1<T>
                                       // inside C1<T>
 }
 
-public class C2 : C1<long> 
+public class C2 : C1<long>
 {
    protected void M3(C1<int>.N n) { }  // Not CLS-compliant – C1<int>.N is not
                                        // accessible in C2 (extends C1<long>)
@@ -1888,7 +1886,7 @@ public class C2 : C1<long>
 ```vb
 <Assembly:CLSCompliant(True)>
 
-Public Class C1(Of T) 
+Public Class C1(Of T)
    Protected Class N
    End Class
 
@@ -1901,39 +1899,39 @@ Public Class C1(Of T)
    End Sub                               ' inside C1(Of T)
 End Class
 
-Public Class C2 : Inherits C1(Of Long) 
+Public Class C2 : Inherits C1(Of Long)
    Protected Sub M3(n As C1(Of Integer).N)   ' Not CLS-compliant – C1(Of Integer).N is not
    End Sub                                   ' accessible in C2 (extends C1(Of Long))
 
-   Protected Sub M4(n As C1(Of Long).N)   
-   End Sub                                
+   Protected Sub M4(n As C1(Of Long).N)
+   End Sub
 End Class
 ' Attempting to compile the example displays output like the following:
-'    error BC30508: 'n' cannot expose type 'C1(Of Integer).N' in namespace 
+'    error BC30508: 'n' cannot expose type 'C1(Of Integer).N' in namespace
 '    '<Default>' through class 'C1'.
-'    
+'
 '       Protected Sub M1(n As C1(Of Integer).N)   ' Not CLS-compliant - C1<int>.N not
 '                             ~~~~~~~~~~~~~~~~
-'    error BC30389: 'C1(Of T).N' is not accessible in this context because 
+'    error BC30389: 'C1(Of T).N' is not accessible in this context because
 '    it is 'Protected'.
-'    
+'
 '       Protected Sub M3(n As C1(Of Integer).N)   ' Not CLS-compliant - C1(Of Integer).N is not
-'    
+'
 '                             ~~~~~~~~~~~~~~~~
-'    
+'
 '    error BC30389: 'C1(Of T).N' is not accessible in this context because it is 'Protected'.
-'    
-'       Protected Sub M4(n As C1(Of Long).N)  
+'
+'       Protected Sub M4(n As C1(Of Long).N)
 '                             ~~~~~~~~~~~~~
 ```
 
 ### <a name="constructors"></a>Konstruktory
 
-Konstruktory ve kompatibilní se Specifikací CLS třídách a strukturách musí dodržovat tato pravidla: 
+Konstruktory ve kompatibilní se Specifikací CLS třídách a strukturách musí dodržovat tato pravidla:
 
-* Konstruktor odvozené třídy musí volat instanci konstruktoru své základní třídy před přístupem ke zděděným datům instance. Tento požadavek je skutečnost, že konstruktory základních tříd nejsou zděděny svými odvozenými třídami. Toto pravidlo se nevztahuje na struktury, které nepodporují přímou dědičnost. 
+* Konstruktor odvozené třídy musí volat instanci konstruktoru své základní třídy před přístupem ke zděděným datům instance. Tento požadavek je skutečnost, že konstruktory základních tříd nejsou zděděny svými odvozenými třídami. Toto pravidlo se nevztahuje na struktury, které nepodporují přímou dědičnost.
 
-  Obvykle kompilátory vynucují toto pravidlo nezávisle na dodržení specifikace CLS, jak ukazuje následující příklad. Vytvoří `Doctor` třídu, která je odvozena od `Person` třídy, ale `Doctor` třídy selže při volání `Person` konstruktoru třídy inicializace zděděných polí instancí. 
+  Obvykle kompilátory vynucují toto pravidlo nezávisle na dodržení specifikace CLS, jak ukazuje následující příklad. Vytvoří `Doctor` třídu, která je odvozena od `Person` třídy, ale `Doctor` třídy selže při volání `Person` konstruktoru třídy inicializace zděděných polí instancí.
 
     ```csharp
     using System;
@@ -1947,31 +1945,31 @@ Konstruktory ve kompatibilní se Specifikací CLS třídách a strukturách mus�
     public Person(string firstName, string lastName, string id)
     {
         if (String.IsNullOrEmpty(firstName + lastName))
-            throw new ArgumentNullException("Either a first name or a last name must be provided.");    
+            throw new ArgumentNullException("Either a first name or a last name must be provided.");
 
         fName = firstName;
         lName = lastName;
         _id = id;
     }
 
-    public string FirstName 
+    public string FirstName
     {
         get { return fName; }
     }
 
-    public string LastName 
+    public string LastName
     {
         get { return lName; }
     }
 
-    public string Id 
+    public string Id
     {
         get { return _id; }
     }
 
     public override string ToString()
     {
-        return String.Format("{0}{1}{2}", fName, 
+        return String.Format("{0}{1}{2}", fName,
                             String.IsNullOrEmpty(fName) ?  "" : " ",
                             lName);
     }
@@ -1995,14 +1993,14 @@ Konstruktory ve kompatibilní se Specifikací CLS třídách a strukturách mus�
     ```
 
     ```vb
-    <Assembly: CLSCompliant(True)> 
+    <Assembly: CLSCompliant(True)>
 
     Public Class Person
        Private fName, lName, _id As String
 
        Public Sub New(firstName As String, lastName As String, id As String)
           If String.IsNullOrEmpty(firstName + lastName) Then
-             Throw New ArgumentNullException("Either a first name or a last name must be provided.")    
+             Throw New ArgumentNullException("Either a first name or a last name must be provided.")
           End If
 
           fName = firstName
@@ -2029,7 +2027,7 @@ Konstruktory ve kompatibilní se Specifikací CLS třídách a strukturách mus�
        End Property
 
        Public Overrides Function ToString() As String
-          Return String.Format("{0}{1}{2}", fName, 
+          Return String.Format("{0}{1}{2}", fName,
                                If(String.IsNullOrEmpty(fName), "", " "),
                                lName)
        End Function
@@ -2044,40 +2042,40 @@ Konstruktory ve kompatibilní se Specifikací CLS třídách a strukturách mus�
        End Function
     End Class
     ' Attempting to compile the example displays output like the following:
-    '    Ctor1.vb(46) : error BC30148: First statement of this 'Sub New' must be a call 
-    '    to 'MyBase.New' or 'MyClass.New' because base class 'Person' of 'Doctor' does 
+    '    Ctor1.vb(46) : error BC30148: First statement of this 'Sub New' must be a call
+    '    to 'MyBase.New' or 'MyClass.New' because base class 'Person' of 'Doctor' does
     '    not have an accessible 'Sub New' that can be called with no arguments.
-    '    
+    '
     '       Public Sub New()
     '                  ~~~
     ````
-    
-* S výjimkou vytvoření objektu nelze volat konstruktor objektu. Objekt navíc nelze inicializovat dvakrát. Například to znamená, že `Object.MemberwiseClone` nesmí volat konstruktory.  
+
+* S výjimkou vytvoření objektu nelze volat konstruktor objektu. Objekt navíc nelze inicializovat dvakrát. Například to znamená, že `Object.MemberwiseClone` nesmí volat konstruktory.
 
 ### <a name="properties"></a>Vlastnosti
 
 Vlastnosti v typech odpovídajících specifikaci CLS musí postupovat podle těchto pravidel:
 
-* Vlastnost musí mít setter, getter nebo oba. V sestavení, jsou implementovány jako speciální metody, což znamená, že se zobrazí jako samostatné metody (metoda getter má název `get` \_ *propertyname* a Metoda setter je `set` \_ *propertyname*) označené jako `SpecialName` v metadatech sestavení. C# Kompilátor vynucuje toto pravidlo automaticky bez nutnosti použít <xref:System.CLSCompliantAttribute> atribut. 
+* Vlastnost musí mít setter, getter nebo oba. V sestavení, jsou implementovány jako speciální metody, což znamená, že se zobrazí jako samostatné metody (metoda getter má název `get` \_ *propertyname* a Metoda setter je `set` \_ *propertyname*) označené jako `SpecialName` v metadatech sestavení. C# Kompilátor vynucuje toto pravidlo automaticky bez nutnosti použít <xref:System.CLSCompliantAttribute> atribut.
 
-* Typ vlastnosti je návratový typ vlastnosti getter a poslední argument metody setter. Tyto typy musí být kompatibilní se Specifikací CLS a argumenty nelze přiřazovat na vlastnost odkazem (to znamená, že nemůže být spravovanými ukazateli). 
+* Typ vlastnosti je návratový typ vlastnosti getter a poslední argument metody setter. Tyto typy musí být kompatibilní se Specifikací CLS a argumenty nelze přiřazovat na vlastnost odkazem (to znamená, že nemůže být spravovanými ukazateli).
 
-* Pokud je vlastnost getter a setter, musí být oba virtuální, statické, nebo obě instance. C# Kompilátor automaticky vynutí toto pravidlo prostřednictvím vlastností syntaxe definice. 
+* Pokud je vlastnost getter a setter, musí být oba virtuální, statické, nebo obě instance. C# Kompilátor automaticky vynutí toto pravidlo prostřednictvím vlastností syntaxe definice.
 
 ### <a name="events"></a>Události
 
-Událost je definována podle názvu a jeho typu. Typ události je delegát, který se používá k označení události. Například `DbConnection.StateChange` událostí je typu `StateChangeEventHandler`. Kromě samotné události zadat implementaci události tři metody s názvy založenými na názvu události a jsou označeny jako `SpecialName` v metadatech sestavení: 
+Událost je definována podle názvu a jeho typu. Typ události je delegát, který se používá k označení události. Například `DbConnection.StateChange` událostí je typu `StateChangeEventHandler`. Kromě samotné události zadat implementaci události tři metody s názvy založenými na názvu události a jsou označeny jako `SpecialName` v metadatech sestavení:
 
-* Metoda pro přidání obslužné rutiny události s názvem `add`_*EventName*. Například metoda odběru události pro `DbConnection.StateChange` událost získá název `add_StateChange`. 
+* Metoda pro přidání obslužné rutiny události s názvem `add`_*EventName*. Například metoda odběru události pro `DbConnection.StateChange` událost získá název `add_StateChange`.
 
 * Metoda pro odebrání obslužné rutiny události s názvem `remove`_*EventName*. Například metoda odebrání pro `DbConnection.StateChange` událost získá název `remove_StateChange`.
 
-* Metoda označující, že došlo k události, s názvem `raise`_*EventName*. 
+* Metoda označující, že došlo k události, s názvem `raise` \_ *EventName*.
 
 > [!NOTE]
-> Většina Common Language Specification pravidla týkající se událostí je implementována pomocí kompilátorů jazyka a je transparentní pro vývojáře komponent. 
+> Většina Common Language Specification pravidla týkající se událostí je implementována pomocí kompilátorů jazyka a je transparentní pro vývojáře komponent.
 
-Metody pro přidávání, odebírání a vyvolávání události musí mít stejné usnadnění. Musí také všechny být statické, instance, nebo virtuální. Metody pro přidávání a odebírání události mají jeden parametr, jehož typ je typ delegáta události. Metody add a remove musí být přítomen nebo nepřítomny. 
+Metody pro přidávání, odebírání a vyvolávání události musí mít stejné usnadnění. Musí také všechny být statické, instance, nebo virtuální. Metody pro přidávání a odebírání události mají jeden parametr, jehož typ je typ delegáta události. Metody add a remove musí být přítomen nebo nepřítomny.
 
 Následující příklad definuje třídu odpovídající specifikaci CLS s názvem `Temperature` , která vyvolává `TemperatureChanged` událost, pokud změna teploty mezi dvěma měřeními rovná nebo překračuje prahovou hodnotu. `Temperature` Třída explicitně definuje `raise_TemperatureChanged` metodu tak, že je možné selektivně provést obslužné rutiny událostí.
 
@@ -2091,7 +2089,7 @@ using System.Collections.Generic;
 public class TemperatureChangedEventArgs : EventArgs
 {
    private Decimal originalTemp;
-   private Decimal newTemp; 
+   private Decimal newTemp;
    private DateTimeOffset when;
 
    public TemperatureChangedEventArgs(Decimal original, Decimal @new, DateTimeOffset time)
@@ -2099,17 +2097,17 @@ public class TemperatureChangedEventArgs : EventArgs
       originalTemp = original;
       newTemp = @new;
       when = time;
-   }   
+   }
 
    public Decimal OldTemperature
    {
       get { return originalTemp; }
-   } 
+   }
 
    public Decimal CurrentTemperature
    {
       get { return newTemp; }
-   } 
+   }
 
    public DateTimeOffset Time
    {
@@ -2153,7 +2151,7 @@ public class Temperature
          ti.Recorded = DateTimeOffset.UtcNow;
          previous = current;
          current = value;
-         if (Math.Abs(current - previous) >= tolerance) 
+         if (Math.Abs(current - previous) >= tolerance)
             raise_TemperatureChanged(new TemperatureChangedEventArgs(previous, current, ti.Recorded));
       }
    }
@@ -2161,7 +2159,7 @@ public class Temperature
    public void raise_TemperatureChanged(TemperatureChangedEventArgs eventArgs)
    {
       if (TemperatureChanged == null)
-         return; 
+         return;
 
       foreach (TemperatureChanged d in TemperatureChanged.GetInvocationList()) {
          if (d.Method.Name.Contains("Duplicate"))
@@ -2203,14 +2201,14 @@ public class Example
       temp.CurrentTemperature = 63;
    }
 
-   internal void TemperatureNotification(Object sender, TemperatureChangedEventArgs e) 
+   internal void TemperatureNotification(Object sender, TemperatureChangedEventArgs e)
    {
-      Console.WriteLine("Notification 1: The temperature changed from {0} to {1}", e.OldTemperature, e.CurrentTemperature);   
+      Console.WriteLine("Notification 1: The temperature changed from {0} to {1}", e.OldTemperature, e.CurrentTemperature);
    }
 
    public void DuplicateTemperatureNotification(Object sender, TemperatureChangedEventArgs e)
-   { 
-      Console.WriteLine("Notification 2: The temperature changed from {0} to {1}", e.OldTemperature, e.CurrentTemperature);   
+   {
+      Console.WriteLine("Notification 2: The temperature changed from {0} to {1}", e.OldTemperature, e.CurrentTemperature);
    }
 }
 ```
@@ -2223,26 +2221,26 @@ Imports System.Collections.Generic
 
 Public Class TemperatureChangedEventArgs   : Inherits EventArgs
    Private originalTemp As Decimal
-   Private newTemp As Decimal 
+   Private newTemp As Decimal
    Private [when] As DateTimeOffset
 
    Public Sub New(original As Decimal, [new] As Decimal, [time] As DateTimeOffset)
       originalTemp = original
       newTemp = [new]
       [when] = [time]
-   End Sub   
+   End Sub
 
    Public ReadOnly Property OldTemperature As Decimal
       Get
          Return originalTemp
       End Get
-   End Property 
+   End Property
 
    Public ReadOnly Property CurrentTemperature As Decimal
       Get
          Return newTemp
       End Get
-   End Property 
+   End Property
 
    Public ReadOnly Property [Time] As DateTimeOffset
       Get
@@ -2332,28 +2330,28 @@ Public Class Example
 
    Friend Shared Sub TemperatureNotification(sender As Object, e As TemperatureChangedEventArgs) _
           Handles temp.TemperatureChanged
-      Console.WriteLine("Notification 1: The temperature changed from {0} to {1}", e.OldTemperature, e.CurrentTemperature)   
+      Console.WriteLine("Notification 1: The temperature changed from {0} to {1}", e.OldTemperature, e.CurrentTemperature)
    End Sub
 
    Friend Shared Sub DuplicateTemperatureNotification(sender As Object, e As TemperatureChangedEventArgs) _
           Handles temp.TemperatureChanged
-      Console.WriteLine("Notification 2: The temperature changed from {0} to {1}", e.OldTemperature, e.CurrentTemperature)   
+      Console.WriteLine("Notification 2: The temperature changed from {0} to {1}", e.OldTemperature, e.CurrentTemperature)
    End Sub
 End Class
 ```
 
 ### <a name="overloads"></a>Přetížení
 
-Common Language Specification vyžaduje následující požadavky na přetížených členů: 
+Common Language Specification vyžaduje následující požadavky na přetížených členů:
 
-* Členy můžete přetížit na základě počtu parametrů a typu parametrů. Konvence volání, návratový typ, vlastní modifikátory použité metody nebo jejího parametru a případné předání parametrů podle hodnoty nebo odkazu nejsou považovány za při rozlišování přetížení. Příklad naleznete v tématu kód pro požadavek, aby názvy musí být jedinečné v rámci oboru v [zásady vytváření názvů](#naming-conventions) oddílu. 
+* Členy můžete přetížit na základě počtu parametrů a typu parametrů. Konvence volání, návratový typ, vlastní modifikátory použité metody nebo jejího parametru a případné předání parametrů podle hodnoty nebo odkazu nejsou považovány za při rozlišování přetížení. Příklad naleznete v tématu kód pro požadavek, aby názvy musí být jedinečné v rámci oboru v [zásady vytváření názvů](#naming-conventions) oddílu.
 
-* Mohou být přetíženy pouze vlastnosti a metody. Pole a události nemohou být přetíženy. 
+* Mohou být přetíženy pouze vlastnosti a metody. Pole a události nemohou být přetíženy.
 
-* Obecné metody lze přetížit na základě počtu jejich obecných parametrů. 
+* Obecné metody lze přetížit na základě počtu jejich obecných parametrů.
 
 > [!NOTE]
->`op_Explicit` a `op_Implicit` operátory jsou výjimky z pravidla, které vracejí hodnoty není považováno za součást podpisu pro řešení přetížení. Tyto dva operátory můžete přetížit na základě jejich parametrů a jejich návratové hodnoty. 
+> `op_Explicit` a `op_Implicit` operátory jsou výjimky z pravidla, které vracejí hodnoty není považováno za součást podpisu pro řešení přetížení. Tyto dva operátory můžete přetížit na základě jejich parametrů a jejich návratové hodnoty.
 
 ### <a name="exceptions"></a>Výjimky
 
@@ -2365,7 +2363,7 @@ using System;
 [assembly: CLSCompliant(true)]
 
 public class ErrorClass
-{ 
+{
    string msg;
 
    public ErrorClass(string errorMessage)
@@ -2387,7 +2385,7 @@ public static class StringUtilities
          ErrorClass badIndex = new ErrorClass("The index is not within the string.");
          throw badIndex;
       }
-      string[] retVal = { value.Substring(0, index - 1), 
+      string[] retVal = { value.Substring(0, index - 1),
                           value.Substring(index) };
       return retVal;
    }
@@ -2402,7 +2400,7 @@ Imports System.Runtime.CompilerServices
 
 <Assembly: CLSCompliant(True)>
 
-Public Class ErrorClass 
+Public Class ErrorClass
    Dim msg As String
 
    Public Sub New(errorMessage As String)
@@ -2412,7 +2410,7 @@ Public Class ErrorClass
    Public ReadOnly Property Message As String
       Get
          Return msg
-      End Get   
+      End Get
    End Property
 End Class
 
@@ -2422,19 +2420,19 @@ Public Module StringUtilities
          Dim BadIndex As New ErrorClass("The index is not within the string.")
          Throw BadIndex
       End If
-      Dim retVal() As String = { value.Substring(0, index - 1), 
+      Dim retVal() As String = { value.Substring(0, index - 1),
                                  value.Substring(index) }
       Return retVal
    End Function
 End Module
 ' Compilation produces a compiler error like the following:
 '    Exceptions1.vb(27) : error BC30665: 'Throw' operand must derive from 'System.Exception'.
-'    
+'
 '             Throw BadIndex
 '             ~~~~~~~~~~~~~~
 ```
 
-Chcete-li opravit tuto chybu, `ErrorClass` třída musí dědit z `System.Exception`. Kromě toho se musí přepsat vlastnost zprávy. Následující příklad upravuje tyto chyby pro definování `ErrorClass` třídu, která je kompatibilní se Specifikací CLS.  
+Chcete-li opravit tuto chybu, `ErrorClass` třída musí dědit z `System.Exception`. Kromě toho se musí přepsat vlastnost zprávy. Následující příklad upravuje tyto chyby pro definování `ErrorClass` třídu, která je kompatibilní se Specifikací CLS.
 
 ```csharp
 using System;
@@ -2442,7 +2440,7 @@ using System;
 [assembly: CLSCompliant(true)]
 
 public class ErrorClass : Exception
-{ 
+{
    string msg;
 
    public ErrorClass(string errorMessage)
@@ -2464,7 +2462,7 @@ public static class StringUtilities
          ErrorClass badIndex = new ErrorClass("The index is not within the string.");
          throw badIndex;
       }
-      string[] retVal = { value.Substring(0, index - 1), 
+      string[] retVal = { value.Substring(0, index - 1),
                           value.Substring(index) };
       return retVal;
    }
@@ -2486,7 +2484,7 @@ Public Class ErrorClass : Inherits Exception
    Public Overrides ReadOnly Property Message As String
       Get
          Return msg
-      End Get   
+      End Get
    End Property
 End Class
 
@@ -2496,7 +2494,7 @@ Public Module StringUtilities
          Dim BadIndex As New ErrorClass("The index is not within the string.")
          Throw BadIndex
       End If
-      Dim retVal() As String = { value.Substring(0, index - 1), 
+      Dim retVal() As String = { value.Substring(0, index - 1),
                                  value.Substring(index) }
       Return retVal
    End Function
@@ -2507,14 +2505,14 @@ End Module
 
 V sestaveních.NET Framework vlastní atributy poskytují rozšiřitelné mechanismy pro ukládání vlastních atributů a načítání metadat o programovacích objektech, jako je například sestavení, typy, členy a parametry metody. Vlastní atributy musí být odvozen od [System.Attribute](xref:System.Attribute) nebo z typu odvozeného z `System.Attribute`.
 
-Následující příklad poruší toto pravidlo. Definuje `NumericAttribute` třídu, která není odvozena od `System.Attribute`. Všimněte si, že k chybě kompilátoru dojde pouze při bez-kompatibilní se Specifikací CLS atributu se použije, ne v případě, že třída je definována. 
+Následující příklad poruší toto pravidlo. Definuje `NumericAttribute` třídu, která není odvozena od `System.Attribute`. Všimněte si, že k chybě kompilátoru dojde pouze při bez-kompatibilní se Specifikací CLS atributu se použije, ne v případě, že třída je definována.
 
 ```csharp
 using System;
 
 [assembly: CLSCompliant(true)]
 
-[AttributeUsageAttribute(AttributeTargets.Class | AttributeTargets.Struct)] 
+[AttributeUsageAttribute(AttributeTargets.Class | AttributeTargets.Struct)]
 public class NumericAttribute
 {
    private bool _isNumeric;
@@ -2524,7 +2522,7 @@ public class NumericAttribute
       _isNumeric = isNumeric;
    }
 
-   public bool IsNumeric 
+   public bool IsNumeric
    {
       get { return _isNumeric; }
    }
@@ -2561,9 +2559,9 @@ End Class
    Dim Value As Double
 End Structure
 ' Compilation produces a compiler error like the following:
-'    error BC31504: 'NumericAttribute' cannot be used as an attribute because it 
+'    error BC31504: 'NumericAttribute' cannot be used as an attribute because it
 '    does not inherit from 'System.Attribute'.
-'    
+'
 '    <Numeric(True)> Public Structure UDouble
 '     ~~~~~~~~~~~~~
 ```
@@ -2590,9 +2588,9 @@ Konstruktor nebo vlastnosti odpovídající specifikaci CLS atributu mohou vysta
 
 * [Typ](xref:System.Type)
 
-* Libovolný typ výčtu, jehož základní typ je `Byte`, `Int16`, `Int32`, nebo `Int64`. 
+* Libovolný typ výčtu, jehož základní typ je `Byte`, `Int16`, `Int32`, nebo `Int64`.
 
-Následující příklad definuje `DescriptionAttribute` třídu odvozenou od [atribut](xref:System.Attribute). Konstruktor třídy má parametr typu `Descriptor`, takže třída není kompatibilní se Specifikací CLS. Všimněte si, C# kompilátor vydá upozornění, ale provede kompilaci úspěšně. 
+Následující příklad definuje `DescriptionAttribute` třídu odvozenou od [atribut](xref:System.Attribute). Konstruktor třídy má parametr typu `Descriptor`, takže třída není kompatibilní se Specifikací CLS. Všimněte si, C# kompilátor vydá upozornění, ale provede kompilaci úspěšně.
 
 ```csharp
 using System;
@@ -2604,7 +2602,7 @@ public enum DescriptorType { type, member };
 public class Descriptor
 {
    public DescriptorType Type;
-   public String Description; 
+   public String Description;
 }
 
 [AttributeUsage(AttributeTargets.All)]
@@ -2614,11 +2612,11 @@ public class DescriptionAttribute : Attribute
 
    public DescriptionAttribute(Descriptor d)
    {
-      desc = d; 
+      desc = d;
    }
 
    public Descriptor Descriptor
-   { get { return desc; } } 
+   { get { return desc; } }
 }
 // Attempting to compile the example displays output like the following:
 //       warning CS3015: 'DescriptionAttribute' has no accessible
@@ -2634,8 +2632,8 @@ Public Enum DescriptorType As Integer
 End Enum
 
 Public Class Descriptor
-   Public Type As DescriptorType 
-   Public Description As String 
+   Public Type As DescriptorType
+   Public Description As String
 End Class
 
 <AttributeUsage(AttributeTargets.All)> _
@@ -2643,53 +2641,53 @@ Public Class DescriptionAttribute : Inherits Attribute
    Private desc As Descriptor
 
    Public Sub New(d As Descriptor)
-      desc = d 
+      desc = d
    End Sub
 
    Public ReadOnly Property Descriptor As Descriptor
-      Get 
+      Get
          Return desc
-      End Get    
+      End Get
    End Property
 End Class
 ```
 
 ## <a name="the-clscompliantattribute-attribute"></a>Atribut CLSCompliantAttribute
 
-[CLSCompliantAttribute](xref:System.CLSCompliantAttribute) atribut se používá k označení, zda prvek programu v souladu s Common Language Specification. `CLSCompliantAttribute.CLSCompliantAttribute(Boolean)` Konstruktor obsahuje jeden povinný parametr, *isCompliant*, který určuje, zda ovládací prvek programu je kompatibilní se Specifikací CLS. 
+[CLSCompliantAttribute](xref:System.CLSCompliantAttribute) atribut se používá k označení, zda prvek programu v souladu s Common Language Specification. `CLSCompliantAttribute.CLSCompliantAttribute(Boolean)` Konstruktor obsahuje jeden povinný parametr, *isCompliant*, který určuje, zda ovládací prvek programu je kompatibilní se Specifikací CLS.
 
-V době kompilace kompilátor zjistí nekompatibilní prvky, které jsou považovány za kompatibilní se Specifikací CLS a vysílá varování. Kompilátor negeneruje upozornění pro typy nebo členy, které jsou výslovně prohlášeny za nedodržující předpisy. 
+V době kompilace kompilátor zjistí nekompatibilní prvky, které jsou považovány za kompatibilní se Specifikací CLS a vysílá varování. Kompilátor negeneruje upozornění pro typy nebo členy, které jsou výslovně prohlášeny za nedodržující předpisy.
 
-Vývojáři komponent mohou používat `CLSCompliantAttribute` atribut dvěma způsoby: 
+Vývojáři komponent mohou používat `CLSCompliantAttribute` atribut dvěma způsoby:
 
-* Chcete-li definovat částí veřejného rozhraní vystavené komponentou, které jsou kompatibilní se Specifikací CLS a části, které nejsou kompatibilní se Specifikací CLS. Pokud atribut slouží k označení určitých prvků programu jako odpovídajících specifikaci CLS, jeho použití zaručuje, že tyto prvky jsou přístupné ze všech jazyků a nástrojů, které se zaměřují na rozhraní .NET Framework. 
+* Chcete-li definovat částí veřejného rozhraní vystavené komponentou, které jsou kompatibilní se Specifikací CLS a části, které nejsou kompatibilní se Specifikací CLS. Pokud atribut slouží k označení určitých prvků programu jako odpovídajících specifikaci CLS, jeho použití zaručuje, že tyto prvky jsou přístupné ze všech jazyků a nástrojů, které se zaměřují na rozhraní .NET Framework.
 
 * Chcete-li zajistit, aby veřejné rozhraní knihovny součástí zpřístupňuje pouze prvky programu, které jsou kompatibilní se Specifikací CLS. Pokud nejsou prvky odpovídající specifikaci CLS, kompilátory standardně upozornění.
 
 > [!WARNING]
 > V některých případech vynucují kompilátory jazyka odpovídající specifikaci CLS pravidla bez ohledu na to, zda `CLSCompliantAttribute` atribut se používá. Například definování `*static` člena v rozhraní porušuje pravidla specifikace CLS. Ale pokud definujete `*static` člena v rozhraní, C# kompilátor zobrazí chybovou zprávu a kompilace aplikace selže.
 
-`CLSCompliantAttribute` Je označena atributem [AttributeUsageAttribute](xref:System.AttributeUsageAttribute) atribut, který má hodnotu `AttributeTargets.All`. Tato hodnota vám umožní použít `CLSCompliantAttribute` atribut na libovolný prvek programu, včetně sestavení, modulů, typů (tříd, struktur, výčtů, rozhraní a delegátů), zadejte členů (konstruktorů, metody, vlastnosti, pole a události), parametrů, obecných parametrů a návratové hodnoty. V praxi však měli použít atribut pouze na sestavení, typy a členy typu. Jinak kompilátory ignorují atribut a pokračují v generování upozornění překladače pokaždé, když dojde k nevyhovující parametr, obecný parametr nebo vrátí hodnotu do veřejného rozhraní knihovny.  
+`CLSCompliantAttribute` Je označena atributem [AttributeUsageAttribute](xref:System.AttributeUsageAttribute) atribut, který má hodnotu `AttributeTargets.All`. Tato hodnota vám umožní použít `CLSCompliantAttribute` atribut na libovolný prvek programu, včetně sestavení, modulů, typů (tříd, struktur, výčtů, rozhraní a delegátů), zadejte členů (konstruktorů, metody, vlastnosti, pole a události), parametrů, obecných parametrů a návratové hodnoty. V praxi však měli použít atribut pouze na sestavení, typy a členy typu. Jinak kompilátory ignorují atribut a pokračují v generování upozornění překladače pokaždé, když dojde k nevyhovující parametr, obecný parametr nebo vrátí hodnotu do veřejného rozhraní knihovny.
 
-Hodnota `CLSCompliantAttribute` atribut je děděna prvky obsaženého programu. Například pokud je sestavení označeno jako kompatibilní se Specifikací CLS, jeho typy jsou také kompatibilní se Specifikací CLS. Pokud je typ označen jako kompatibilní se Specifikací CLS, jeho vnořené typy a členy jsou také kompatibilní se Specifikací CLS. 
+Hodnota `CLSCompliantAttribute` atribut je děděna prvky obsaženého programu. Například pokud je sestavení označeno jako kompatibilní se Specifikací CLS, jeho typy jsou také kompatibilní se Specifikací CLS. Pokud je typ označen jako kompatibilní se Specifikací CLS, jeho vnořené typy a členy jsou také kompatibilní se Specifikací CLS.
 
-Můžete explicitně přepsat zděděný soulad použitím `CLSCompliantAttribute` atribut u obsaženého elementu programu. Například můžete použít `CLSCompliantAttribute` atributem *isCompliant* hodnotu `false` definovat nekompatibilní typ ve vyhovujícím sestavení a vy můžete použít atribut s *isComplian*hodnotu `true` definovat kompatibilní typ v sestavení nevyhovující. Můžete také definovat nekompatibilní členy v kompatibilním typu. Nevyhovující typ však nemůže mít kompatibilní členy, proto nelze použít atribut s *isCompliant* hodnotu `true` k potlačení dědičnosti z nevyhovujícího typu. 
+Můžete explicitně přepsat zděděný soulad použitím `CLSCompliantAttribute` atribut u obsaženého elementu programu. Například můžete použít `CLSCompliantAttribute` atributem *isCompliant* hodnotu `false` definovat nekompatibilní typ ve vyhovujícím sestavení a vy můžete použít atribut s *isCompliant*hodnotu `true` definovat kompatibilní typ v sestavení nevyhovující. Můžete také definovat nekompatibilní členy v kompatibilním typu. Nevyhovující typ však nemůže mít kompatibilní členy, proto nelze použít atribut s *isCompliant* hodnotu `true` k potlačení dědičnosti z nevyhovujícího typu.
 
-Při vývoji komponentu byste měli vždy používat `CLSCompliantAttribute` atribut označuje, zda vaše sestavení, jeho typy a její členy jsou kompatibilní se Specifikací CLS. 
+Při vývoji komponentu byste měli vždy používat `CLSCompliantAttribute` atribut označuje, zda vaše sestavení, jeho typy a její členy jsou kompatibilní se Specifikací CLS.
 
-Vytváření komponent odpovídajících specifikaci CLS: 
+Vytváření komponent odpovídajících specifikaci CLS:
 
 1. Použití `CLSCompliantAttribute` označit sestavení jako kompatibilní se Specifikací CLS.
 
-2. Označte všechny veřejně vystavené typy v sestavení, které nejsou kompatibilní se Specifikací CLS jako nevyhovující. 
+2. Označte všechny veřejně vystavené typy v sestavení, které nejsou kompatibilní se Specifikací CLS jako nevyhovující.
 
-3. Označte všechny veřejně vystavené členy v typech odpovídajících specifikaci CLS jako nevyhovující. 
+3. Označte všechny veřejně vystavené členy v typech odpovídajících specifikaci CLS jako nevyhovující.
 
-4. Poskytnout alternativu odpovídající specifikaci CLS pro členy mimo-kompatibilní se Specifikací CLS. 
+4. Poskytnout alternativu odpovídající specifikaci CLS pro členy mimo-kompatibilní se Specifikací CLS.
 
-Pokud jste úspěšně označili nekompatibilní typy a členy, kompilátor by neměl generovat upozornění na nekompatibilitu. Však vhodné určit členy, které nejsou kompatibilní se Specifikací CLS a seznam jejich alternativ kompatibilní se Specifikací CLS v dokumentaci k produktu. 
+Pokud jste úspěšně označili nekompatibilní typy a členy, kompilátor by neměl generovat upozornění na nekompatibilitu. Však vhodné určit členy, které nejsou kompatibilní se Specifikací CLS a seznam jejich alternativ kompatibilní se Specifikací CLS v dokumentaci k produktu.
 
-V následujícím příkladu `CLSCompliantAttribute` atribut pro definování kompatibilní se Specifikací CLS sestavení a typu, `CharacterUtilities`, který má dva členy mimo-kompatibilní se Specifikací CLS. Vzhledem k tomu, že oba členy jsou označeny `CLSCompliant(false)` atribut, kompilátor nevytvoří žádná varování. Třída rovněž poskytuje alternativy CLS pro obě metody. Obvykle bychom jen přidali dvě přetížení k `ToUTF16` metodu k dispozici alternativ odpovídajících specifikaci CLS. Ale vzhledem k tomu, že metody nemohou být přetíženy podle návratové hodnoty, názvy metod odpovídajících specifikaci CLS se liší od názvů nekompatibilních metod.  
+V následujícím příkladu `CLSCompliantAttribute` atribut pro definování kompatibilní se Specifikací CLS sestavení a typu, `CharacterUtilities`, který má dva členy mimo-kompatibilní se Specifikací CLS. Vzhledem k tomu, že oba členy jsou označeny `CLSCompliant(false)` atribut, kompilátor nevytvoří žádná varování. Třída rovněž poskytuje alternativy CLS pro obě metody. Obvykle bychom jen přidali dvě přetížení k `ToUTF16` metodu k dispozici alternativ odpovídajících specifikaci CLS. Ale vzhledem k tomu, že metody nemohou být přetíženy podle návratové hodnoty, názvy metod odpovídajících specifikaci CLS se liší od názvů nekompatibilních metod.
 
 ```csharp
 using System;
@@ -2707,7 +2705,7 @@ public class CharacterUtilities
 
    [CLSCompliant(false)] public static ushort ToUTF16(Char ch)
    {
-      return Convert.ToUInt16(ch); 
+      return Convert.ToUInt16(ch);
    }
 
    // CLS-compliant alternative for ToUTF16(String).
@@ -2726,7 +2724,7 @@ public class CharacterUtilities
    public bool HasMultipleRepresentations(String s)
    {
       String s1 = s.Normalize(NormalizationForm.FormC);
-      return s.Equals(s1);   
+      return s.Equals(s1);
    }
 
    public int GetUnicodeCodePoint(Char ch)
@@ -2734,7 +2732,7 @@ public class CharacterUtilities
       if (Char.IsSurrogate(ch))
          throw new ArgumentException("ch cannot be a high or low surrogate.");
 
-      return Char.ConvertToUtf32(ch.ToString(), 0);   
+      return Char.ConvertToUtf32(ch.ToString(), 0);
    }
 
    public int GetUnicodeCodePoint(Char[] chars)
@@ -2750,7 +2748,7 @@ public class CharacterUtilities
       }
       else {
          return Char.ConvertToUtf32(chars.ToString(), 0);
-      } 
+      }
    }
 }
 ```
@@ -2767,7 +2765,7 @@ Public Class CharacterUtilities
    End Function
 
    <CLSCompliant(False)> Public Shared Function ToUTF16(ch As Char) As UShort
-      Return Convert.ToUInt16(ch) 
+      Return Convert.ToUInt16(ch)
    End Function
 
    ' CLS-compliant alternative for ToUTF16(String).
@@ -2783,14 +2781,14 @@ Public Class CharacterUtilities
 
    Public Function HasMultipleRepresentations(s As String) As Boolean
       Dim s1 As String = s.Normalize(NormalizationForm.FormC)
-      Return s.Equals(s1)   
+      Return s.Equals(s1)
    End Function
 
    Public Function GetUnicodeCodePoint(ch As Char) As Integer
       If Char.IsSurrogate(ch) Then
          Throw New ArgumentException("ch cannot be a high or low surrogate.")
       End If
-      Return Char.ConvertToUtf32(ch.ToString(), 0)   
+      Return Char.ConvertToUtf32(ch.ToString(), 0)
    End Function
 
    Public Function GetUnicodeCodePoint(chars() As Char) As Integer
@@ -2805,16 +2803,16 @@ Public Class CharacterUtilities
          End If
       Else
          Return Char.ConvertToUtf32(chars.ToString(), 0)
-      End If 
-   End Function            
+      End If
+   End Function
 End Class
 ```
 
-Pokud vyvíjíte aplikaci, nikoli knihovnu (tedy pokud nevystavujete typy nebo členy, které mohou být spotřebovány další vývojáři aplikací), dodržování specifikace CLS u prvků programu, které vaše aplikace využívá službu jsou zajímavé pouze v případě, že je váš jazyk nepodporuje . V takovém případě kompilátor jazyka vygeneruje chybu při pokusu o použití prvku bez-kompatibilní se Specifikací CLS. 
+Pokud vyvíjíte aplikaci, nikoli knihovnu (tedy pokud nevystavujete typy nebo členy, které mohou být spotřebovány další vývojáři aplikací), dodržování specifikace CLS u prvků programu, které vaše aplikace využívá službu jsou zajímavé pouze v případě, že je váš jazyk nepodporuje . V takovém případě kompilátor jazyka vygeneruje chybu při pokusu o použití prvku bez-kompatibilní se Specifikací CLS.
 
 ## <a name="cross-language-interoperability"></a>Vzájemná funkční spolupráce mezi jazyky
 
-Jazyková nezávislost má několik možných významů. Jeden význam, zahrnuje bezproblémové využití typů napsaných v jednom jazyce aplikací v jiném jazyce. Druhý význam, který je hlavním cílem tohoto článku, zahrnuje sloučení kódu napsaného ve více jazycích do jediného sestavení rozhraní .NET Framework. 
+Jazyková nezávislost má několik možných významů. Jeden význam, zahrnuje bezproblémové využití typů napsaných v jednom jazyce aplikací v jiném jazyce. Druhý význam, který je hlavním cílem tohoto článku, zahrnuje sloučení kódu napsaného ve více jazycích do jediného sestavení rozhraní .NET Framework.
 
 Následující příklad znázorňuje interoperabilitu mezi jazyky vytvořením knihovny tříd s názvem Utilities.dll, která obsahuje dvě třídy `NumericLib` a `StringLib`. Třída `NumericLib` je napsána v jazyce C# a třída `StringLib` je napsána v jazyce Visual Basic. Zde je zdrojový kód pro `StringUtil.vb`, který obsahuje jeden člen, `ToTitleCase`v jeho `StringLib` třídy.
 
@@ -2823,7 +2821,7 @@ Imports System.Collections.Generic
 Imports System.Runtime.CompilerServices
 
 Public Module StringLib
-   Private exclusions As List(Of String) 
+   Private exclusions As List(Of String)
 
    Sub New()
       Dim words() As String = { "a", "an", "and", "of", "the" }
@@ -2833,7 +2831,7 @@ Public Module StringLib
 
    <Extension()> _
    Public Function ToTitleCase(title As String) As String
-      Dim words() As String = title.Split() 
+      Dim words() As String = title.Split()
       Dim result As String = String.Empty
 
       For ctr As Integer = 0 To words.Length - 1
@@ -2845,10 +2843,10 @@ Public Module StringLib
             result += word.ToLower()
          End If
          If ctr <= words.Length - 1 Then
-            result += " "             
-         End If   
-      Next 
-      Return result 
+            result += " "
+         End If
+      Next
+      Return result
    End Function
 End Module
 ```
@@ -2858,15 +2856,15 @@ Zde je zdrojový kód pro NumberUtil.cs, který definuje třídu `NumericLib` se
 ```csharp
 using System;
 
-public static class NumericLib 
+public static class NumericLib
 {
    public static bool IsEven(this IConvertible number)
    {
       if (number is Byte ||
           number is SByte ||
           number is Int16 ||
-          number is UInt16 || 
-          number is Int32 || 
+          number is UInt16 ||
+          number is Int32 ||
           number is UInt32 ||
           number is Int64)
          return ((long) number) % 2 == 0;
@@ -2878,26 +2876,26 @@ public static class NumericLib
 
    public static bool NearZero(double number)
    {
-      return number < .00001; 
+      return number < .00001;
    }
 }
 ```
 
-Chcete-li zabalit dvě třídy do jednoho sestavení, musíte je zkompilovat do modulů. Pro kompilaci zdrojového kódu jazyka Visual Basic do modulu použijte tento příkaz: 
+Chcete-li zabalit dvě třídy do jednoho sestavení, musíte je zkompilovat do modulů. Pro kompilaci zdrojového kódu jazyka Visual Basic do modulu použijte tento příkaz:
 
-```
-vbc /t:module StringUtil.vb 
+```console
+vbc /t:module StringUtil.vb
 ```
 
 Pro kompilaci zdrojového kódu jazyka C# do modulu použijte tento příkaz:
 
-```
+```console
 csc /t:module NumberUtil.cs
 ```
 
-Pak použijete nástroj Link (Link.exe) ke kompilaci dvou modulů do sestavení: 
+Pak použijete nástroj Link (Link.exe) ke kompilaci dvou modulů do sestavení:
 
-```
+```console
 link numberutil.netmodule stringutil.netmodule /out:UtilityLib.dll /dll
 ```
 
@@ -2939,13 +2937,12 @@ End Module
 
 Pro kompilaci kódu jazyka Visual Basic použijte tento příkaz:
 
-```
+```console
 vbc example.vb /r:UtilityLib.dll
 ```
 
 Pro kompilaci pomocí C#, změňte název kompilátoru z Vbc – na csc a příponu souboru změňte z .vb na .cs:
 
-```
+```console
 csc example.cs /r:UtilityLib.dll
 ```
-
