@@ -197,6 +197,7 @@
 ### [Uspořádání projektů pro .NET Core](core/porting/project-structure.md)
 ### [Nástroje pro pomoc s přenosem aplikací do .NET Core](core/porting/tools.md)
 ### [Použití sady Windows Compatibility Pack](core/porting/windows-compat-pack.md)
+### [Portování projektů Windows Forms](core/porting/winforms.md)
 <!--### [🔧 NuGet packages](core/porting/nuget-packages.md)-->
 ## [Sestavení .NET Core ze zdroje](core/build/index.md)
 ### [Vytváření distribučních balíčků .NET Core](core/build/distribution-packaging.md)
