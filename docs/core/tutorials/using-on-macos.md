@@ -1,17 +1,17 @@
 ---
-title: Začínáme s .NET Core v systému macOS
+title: Začínáme s .NET Core v macOS
 description: Tento dokument obsahuje kroky a pracovní postup k vytvoření řešení .NET Core používat Visual Studio Code.
 author: bleroy
 ms.date: 03/23/2017
 ms.custom: seodec18
-ms.openlocfilehash: ad403ed96435f162899e600a317d00bab00638f2
-ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
+ms.openlocfilehash: 8deaab67f7a824f6eb079f49b7fd75e0c02f1025
+ms.sourcegitcommit: 5d9f4b805787f890ca6e0dc7ea30a43018bc9cbb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53170268"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57788450"
 ---
-# <a name="getting-started-with-net-core-on-macos"></a>Začínáme s .NET Core v systému macOS
+# <a name="get-started-with-net-core-on-macos"></a>Začínáme s .NET Core v macOS
 
 Tento dokument obsahuje kroky a pracovní postup pro vytvoření řešení .NET Core pro macOS. Zjistěte, jak vytvářet projekty testování částí, použijte ladicí nástroje a začlenit knihovny třetích stran přes [NuGet](https://www.nuget.org/).
 
@@ -26,7 +26,7 @@ Nainstalujte [Visual Studio Code](https://code.visualstudio.com). V průběhu to
 
 Instalace rozšíření Visual Studio kódu C# otevřete Visual Studio Code a stisknutím klávesy <kbd>F1</kbd> otevřete paletu Visual Studio Code. Typ **ext, přípona instalace** zobrazíte seznam přípon. Vyberte rozšíření jazyka C#. Restartujte Visual Studio Code k aktivaci rozšíření. Další informace najdete v tématu [dokumentaci kódu C# rozšíření sady Visual Studio](https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger.md).
 
-## <a name="getting-started"></a>Začínáme
+## <a name="get-started"></a>Začínáme
 
 V tomto kurzu vytvoříte tři projekty: projekt knihovny testů pro daný projekt knihovny a konzolové aplikace, která používá knihovnu. Je možné [zobrazení nebo stažení zdroj](https://github.com/dotnet/samples/tree/master/core/getting-started/golden) pro toto téma v úložišti dotnet/samples na Githubu. Pokyny ke stažení najdete v tématu [ukázek a kurzů](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
 

@@ -23,8 +23,8 @@ V následujících kurzech jsou k dispozici pro získání informací o .NET Cor
 
 ## <a name="building-applications-with-visual-studio-code"></a>Vytváření aplikací pomocí Visual Studio Code
 
-- [Začínáme s C# a Visual Studio Code](with-visual-studio-code.md)
-- [Začínáme s .NET Core v systému macOS](using-on-macos.md)
+- [Začínáme s jazykem C# a nástrojem Visual Studio Code](with-visual-studio-code.md)
+- [Začínáme s .NET Core v macOS](using-on-macos.md)
 
 ## <a name="building-applications-with-visual-studio-for-mac"></a>Vytváření aplikací pomocí sady Visual Studio pro Mac
 

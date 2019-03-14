@@ -3,12 +3,12 @@ title: Začínáme s syntaxe transformace (rozhraní Roslyn API)
 description: Úvod do procházení, dotazování a procházení stromu syntaxe.
 ms.date: 06/01/2018
 ms.custom: mvc
-ms.openlocfilehash: 3f8d152a2e17bc9e480bd0a76488c563720a63b1
-ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
+ms.openlocfilehash: 3ca6ba19f84366b4e1f74ac4a0dea1edef3cee05
+ms.sourcegitcommit: 5d9f4b805787f890ca6e0dc7ea30a43018bc9cbb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49122563"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57788437"
 ---
 # <a name="get-started-with-syntax-transformation"></a>Začínáme s syntaxe transformace
 
@@ -30,7 +30,7 @@ Zvolte jednu ze dvou strategií pro syntaxe transformace. **Metody pro vytváře
 
 První transformace syntaxe ukazuje metody pro vytváření objektů. Chystáte se nahradit `using System.Collections;` příkazem `using System.Collections.Generic;` příkazu. Tento příklad ukazuje, jak vytvořit <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode?displayProperty=nameWithType> objektů pomocí <xref:Microsoft.CodeAnalysis.CSharp.SyntaxFactory?displayProperty=nameWithType> metody pro vytváření objektů. Pro každý typ z **uzel**, **token**, nebo **triviální prvek** je metoda factory, který vytvoří instanci daného typu. Při vytváření stromu syntaxe vytváření uzly hierarchicky způsobem zdola nahoru. Potom budete transformace existující program nahrazujete stávající uzly s větve, které jste vytvořili.
 
-Spusťte sadu Visual Studio a vytvořte nový C# **samostatný nástroj pro analýzu kódu** projektu. V sadě Visual Studio, zvolte **souboru** > **nový** > **projektu** zobrazíte dialogové okno Nový projekt. V části **Visual C#** > **rozšiřitelnost** zvolte **samostatný nástroj pro analýzu kódu**. V tomto rychlém startu má dva vzorové projekty, takže název řešení **SyntaxTransformationQuickStart**a název projektu **ConstructionCS**. Klikněte na tlačítko **OK**.
+Spusťte sadu Visual Studio a vytvořte nový C# **samostatný nástroj pro analýzu kódu** projektu. V sadě Visual Studio, zvolte **souboru** > **nový** > **projektu** zobrazíte dialogové okno Nový projekt. V části **Visual C#** > **rozšiřitelnost** zvolte **samostatný nástroj pro analýzu kódu**. V tomto rychlém startu má dva vzorové projekty, takže název řešení **SyntaxTransformationQuickStart**a název projektu **ConstructionCS**. Klikněte na **OK**.
 
 Tento projekt používá <xref:Microsoft.CodeAnalysis.CSharp.SyntaxFactory?displayProperty=nameWithType> metody k vytvoření třídy <xref:Microsoft.CodeAnalysis.CSharp.Syntax.NameSyntax?displayProperty=nameWithType> představující `System.Collections.Generic` oboru názvů.
 
@@ -152,7 +152,7 @@ Teď přidejte tento příkaz k vytvoření vazby inicializačního výrazu:
 
 Nakonec přidejte následující `if` příkaz Nahradit existující název typu se `var` – klíčové slovo, pokud zadaný typ odpovídá typu inicializačního výrazu:
 
-[!code-csharp[ReplaceNode](../../../../samples/csharp/roslyn-sdk/SyntaxTransformationQuickStart/TransformationCS/TypeInferenceRewriter.cs#BindInitializer "Replace the initializer node")]
+[!code-csharp[ReplaceNode](../../../../samples/csharp/roslyn-sdk/SyntaxTransformationQuickStart/TransformationCS/TypeInferenceRewriter.cs#ReplaceNode "Replace the initializer node")]
 
 Podmíněným totiž deklarace může hlasovat inicializačního výrazu na základní třídu nebo rozhraní. V případě potřeby, typy na levé a pravé straně přiřazení se neshodují. Odebrání explicitního typu v těchto případech by změnila sémantiku programu. `var` je zadán jako identifikátor místo klíčového slova, protože `var` je kontextové klíčové slovo. Úvodní a Koncové triviální prvek (prázdné znaky) jsou přenášena starý název typu má `var` – klíčové slovo k udržovat prázdné znaky svislé a odsazení. Je jednodušší použít `ReplaceNode` spíše než `With*` k transformaci <xref:Microsoft.CodeAnalysis.CSharp.Syntax.LocalDeclarationStatementSyntax> vzhledem k tomu, že název typu je ve skutečnosti podřízený příkazu deklarace.
 

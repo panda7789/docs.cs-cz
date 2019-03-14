@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 3e3e04de-99d1-4658-b716-44cb669d9589
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 107de172e523758474bafb3b86a2960b926a010a
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: eca84aa3a3d7bffaac31cc36ed14e5d5bb5a37cc
+ms.sourcegitcommit: 5d9f4b805787f890ca6e0dc7ea30a43018bc9cbb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57371369"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57788476"
 ---
 # <a name="windows-forms-add-configuration-element"></a>Přidání konfiguračního prvku Windows Forms
 
@@ -41,14 +41,14 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 | `key` Jméno | Hodnoty | Popis |
 | ---------- | ------ | ----------- |
-| "AnchorLayout.DisableSinglePassControlScaling" | "true"&#124;"false" | Určuje, zda se upraví ukotvených ovládacích prvků v jediném kroku. "true" zakážete jeden předat škálování; v opačném případě hodnota false. Naleznete v části "Jedním předat škálování" [poznámky](#Remarks) Další informace. |
+| "AnchorLayout.DisableSinglePassControlScaling" | "true"&#124;"false" | Určuje, zda se upraví ukotvených ovládacích prvků v jediném kroku. "true" zakážete jeden předat škálování; v opačném případě hodnota false. Naleznete v části "Jedním předat škálování" [poznámky](#remarks) Další informace. |
 | "DpiAwareness" | "PerMonitorV2"&#124;"false" | Označuje, zda je aplikace s ohledem na DPI. Nastavte klíč k "PerMonitorV2" pro podporu sledování Dpi; jinak ji nastavte na hodnotu "false". Rozpoznání nastavení dpi je přihlašovaná funkce; Abyste mohli využívat podporu vysoké rozlišení DPI Windows Forms, byste měli nastavit hodnotu na "PerMonitorV2". Zobrazit [poznámky](#remarks) části Další informace. |
 | "CheckedListBox.DisableHighDpiImprovements" | "true"&#124;"false" | Určuje, zda <xref:System.Windows.Forms.CheckedListBox> ovládací prvek využívá výhod změnu měřítka a rozložení vylepšení v rozhraní .NET Framework 4.7. "true" chcete vyjádřit výslovný nesouhlas caling a rozložení vylepšení; jinak, "Nepravda". |
 | "DataGridView.DisableHighDpiImprovements" | "true"&#124;"false" | Určuje, zda <xref:System.Windows.Forms.DataGridView> řídit změnu měřítka a rozložení vylepšení v rozhraní .NET Framework 4.7. "true" chcete vyjádřit výslovný nesouhlas rozpoznání nastavení dpi; "false" jinak. |
 | "DisableDpiChangedMessageHandling" | "true"&#124;"false" | "true" chcete vyjádřit výslovný nesouhlas příjem zprávy týkající se DPI škálování změny. "false" jinak. Zobrazit [poznámky](#remarks) části Další informace. |
 | "EnableWindowsFormsHighDpiAutoResizing" | "true"&#124;"false" | Určuje, zda aplikace modelu Windows Forms velikost automaticky z důvodu změn Škálování DPI. "true" Povolit automatickou změnu velikosti; v opačném případě hodnota false. |
-| "Form.DisableSinglePassControlScaling" | "true"&#124;"false" | Určuje, zda <xref:System.Windows.Forms.Form> škálovat v jediném kroku. "true" zakážete jednoho průchodu škálování; v opačném případě hodnota false. Naleznete v části "Jedním předat škálování" [poznámky](#Remarks) Další informace. |
-| "MonthCalendar.DisableSinglePassControlScaling" | "true"&#124;"false" | Určuje, zda <xref:System.Windows.Forms.MonthCalendar> ovládací prvek je škálování v jediném kroku. "true" zakážete jednoho průchodu škálování; v opačném případě hodnota false. Naleznete v části "Jedním předat škálování" [poznámky](#Remarks) Další informace. |
+| "Form.DisableSinglePassControlScaling" | "true"&#124;"false" | Určuje, zda <xref:System.Windows.Forms.Form> škálovat v jediném kroku. "true" zakážete jednoho průchodu škálování; v opačném případě hodnota false. Naleznete v části "Jedním předat škálování" [poznámky](#remarks) Další informace. |
+| "MonthCalendar.DisableSinglePassControlScaling" | "true"&#124;"false" | Určuje, zda <xref:System.Windows.Forms.MonthCalendar> ovládací prvek je škálování v jediném kroku. "true" zakážete jednoho průchodu škálování; v opačném případě hodnota false. Naleznete v části "Jedním předat škálování" [poznámky](#remarks) Další informace. |
 | "Toolstrip.DisableHighDpiImprovements" | "true"&#124;"false" | Určuje, zda <xref:System.Windows.Forms.ToolStrip> ovládací prvek využívá výhod změnu měřítka a rozložení vylepšení v rozhraní .NET Framework 4.7. "true" chcete vyjádřit výslovný nesouhlas rozpoznání nastavení dpi; "false" jinak. |
 
 ### <a name="child-elements"></a>Podřízené prvky
@@ -61,7 +61,7 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 | ------- | ----------- |
 | [`<System.Windows.Forms.ApplicationConfigurationSection>`](../../../../../docs/framework/configure-apps/file-schema/winforms/index.md) | Konfiguruje podporu pro nové funkce pro aplikace Windows Forms. |
 
-## <a name="a-nameremarks--remarks"></a><a name="remarks" /> Poznámky
+## <a name="remarks"></a>Poznámky
 
 Od verze rozhraní .NET Framework 4.7, `<System.Windows.Forms.ApplicationConfigurationSection>` element umožňuje konfigurace aplikací Windows Forms, abyste mohli využívat funkce přidané v posledních verzích rozhraní .NET Framework.
 
@@ -96,6 +96,7 @@ Jedno výchozí vyjádřit výslovný souhlas nastavení zadat nastavením `DpiA
    <add key="EnableWindowsFormsHighDpiAutoResizing" value="false" />
 </System.Windows.Forms.ApplicationConfigurationSection>
 ```
+
 Obvykle Pokud se rozhodnete konkrétní funkci vzhledem k tomu, že jste se rozhodli zpracovávat prostřednictvím kódu programu.
 
 Další informace o a současně využívat podpora vysokého nastavení DPI v aplikacích Windows Forms, naleznete v tématu [vysoké rozlišení DPI podporují ve Windows Forms](../../../../../docs/framework/winforms/high-dpi-support-in-windows-forms.md).

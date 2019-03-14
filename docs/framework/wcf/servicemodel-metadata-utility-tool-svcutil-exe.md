@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Svcutil.exe
 - clients [WCF], consuming services
 ms.assetid: 1abf3d9f-b420-46f1-b628-df238751f308
-ms.openlocfilehash: 9682d79a912ac24e549093e0713cf65fb61bb4d6
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 02b1b0f6215f7d26974a8e1e58fbefbb5d159cf7
+ms.sourcegitcommit: 5d9f4b805787f890ca6e0dc7ea30a43018bc9cbb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54533205"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57788424"
 ---
 # <a name="servicemodel-metadata-utility-tool-svcutilexe"></a>Nástroj ServiceModel Metadata Utility (Svcutil.exe)
 
@@ -43,7 +43,7 @@ Následující tabulka shrnuje různé funkce tak, že tento nástroj a příslu
 
 Nástroj má časový limit 5 minut při načítání metadat. Tento časový limit platí jenom pro načítání metadat přes síť. Nevztahuje se na zpracování těchto metadat.
 
-### <a name="multi-targetting"></a>Která cílí na více
+### <a name="multi-targeting"></a>Cílení na více platforem
 
 Nástroj nepodporuje cílení na více platforem. Pokud chcete generovat .NET 4 artefaktů z *svcutil.exe*, použijte *svcutil.exe* ze sady SDK rozhraní .NET 4. Ke generování artefaktu .NET 3.5, pomocí spustitelného souboru z .NET 3.5 SDK.
 
@@ -71,7 +71,7 @@ Svcutil.exe lze generovat kód pro typy kontraktů, klientů a dat služby z dok
 
 Můžete použít *SvcUtil.exe* nástroj generovat kontrakty služby a dat na základě předdefinovaných dokumentu WSDL. Použijte přepínač /serviceContract a zadejte adresu URL nebo soubor umístění, kam dokument WSDL si můžete stáhnout nebo najít. Tím se vygeneruje kontrakty služby a data definovaný v dokumentu WSDL, který lze použít k implementaci služby předpisy. Další informace najdete v tématu [jak: Načítání metadat a implementace kompatibilní služby](../../../docs/framework/wcf/feature-details/how-to-retrieve-metadata-and-implement-a-compliant-service.md).
 
-Pro službu s koncovým bodem třída BasicHttpContextbinding *Svcutil.exe* generuje BasicHttpBinding s `allowCookies` atribut nastaven na `true` místo. Soubory cookie se používají pro kontext na serveru. Pokud chcete ke správě kontextu na straně klienta, pokud služba používá soubory cookie, můžete ručně upravit konfigurace, aby používala kontextu vazby.
+Pro službu s koncovým bodem třída BasicHttpContextBinding *Svcutil.exe* generuje BasicHttpBinding s `allowCookies` atribut nastaven na `true` místo. Soubory cookie se používají pro kontext na serveru. Pokud chcete ke správě kontextu na straně klienta, pokud služba používá soubory cookie, můžete ručně upravit konfigurace, aby používala kontextu vazby.
 
 > [!CAUTION]
 > Svcutil.exe generuje klienta na základě souboru WSDL nebo zásad přijatých ze služby. Hlavní název uživatele (UPN) je generována zřetězením uživatelské jméno, "\@" a plně kvalifikovaný název domény (FQDN). Pro uživatele, kteří si zaregistrovali ve službě Active Directory, ale tento formát není platný a hlavní název uživatele generovaný nástrojem způsobí, že k chybě v ověřování protokolem Kerberos s chybovou zprávou "Pokus o přihlášení se nezdařilo". Chcete-li vyřešit tento problém, by měla vyřešit ručně instalační soubor klienta generované tímto nástrojem.

@@ -1209,6 +1209,7 @@
 ### Použití vytrénovaného modelu
 #### [Postupné předpovědi pomocí PredictionEngine](machine-learning/how-to-guides/single-predict-model-ml-net.md)
 #### [Zprovoznění vytrénovaného modelu](machine-learning/how-to-guides/consuming-model-ml-net.md)
+#### [Azure Functions – využívání modelu](machine-learning/how-to-guides/serve-model-serverless-azure-functions-ml-net.md)
 ### Infer.NET
 #### [Pravděpodobnostní programování s Infer.NET](machine-learning/how-to-guides/matchup-app-infer-net.md)
 ## Odkaz
