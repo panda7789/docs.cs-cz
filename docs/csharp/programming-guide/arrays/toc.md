@@ -5,5 +5,4 @@
 ## [Vícenásobná pole](jagged-arrays.md)
 ## [Použití příkazu foreach s poli](using-foreach-with-arrays.md)
 ## [Předávání polí jako argumentů](passing-arrays-as-arguments.md)
-## [Předávání polí pomocí parametrů ref a out](passing-arrays-using-ref-and-out.md)
 ## [Implicitně typovaná pole](implicitly-typed-arrays.md)
