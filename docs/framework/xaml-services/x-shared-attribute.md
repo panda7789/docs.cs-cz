@@ -6,12 +6,12 @@ helpviewer_keywords:
 - x:Shared attribute [XAML Services]
 - Shared attribute in XAML [XAML Services]
 ms.assetid: c8cff434-2785-405f-9f95-16deb34c9e64
-ms.openlocfilehash: 1c718522a20fb2047ebf500adbf4044265e3af3d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 42de341d59e3e70103db765faf3160b5fe3250d3
+ms.sourcegitcommit: 5c1abeec15fbddcc7dbaa729fabc1f1f29f12045
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54542250"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58039402"
 ---
 # <a name="xshared-attribute"></a>x:Shared – atribut
 Pokud je nastavena na `false`, upravuje chování načtení prostředku WPF, takže požadavky s atributy prostředku vytvoření nové instance pro každý požadavek místo sdílení stejné instanci pro všechny požadavky.  
@@ -33,7 +33,7 @@ Pokud je nastavena na `false`, upravuje chování načtení prostředku WPF, tak
   
  Úpravy objektu, která je vrácena prostřednictvím prostředku rozhraní API, jako například <xref:System.Windows.FrameworkElement.FindResource%2A>, nebo úprava objektu přímo v rámci <xref:System.Windows.ResourceDictionary>, původní prostředek se změní. Odkazy na tento prostředek byl dynamický prostředek odkazy, získejte příjemci tento prostředek změněných prostředků.  
   
- Pokud nebyly odkazy na prostředek odkazy na statické prostředky, se změní na prostředek po [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] doba zpracování nejsou relevantní. Další informace o statických a odkazy na dynamické prostředky, najdete v části [prostředky XAML](../../../docs/framework/wpf/advanced/xaml-resources.md).  
+ Pokud nebyly odkazy na prostředek odkazy na statické prostředky, se změní na prostředek po [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] doba zpracování nejsou relevantní. Další informace o statických a odkazy na dynamické prostředky, najdete v části [prostředky XAML](../wpf/advanced/xaml-resources.md).  
   
  Explicitní určení `x:Shared="true"` zřídka probíhá, protože to je již výchozí. Neexistuje žádné přímé kódu ekvivalentní `x:Shared` ve WPF objektu modelu; lze zadat pouze v XAML využití a je potřeba zpracovat výchozí chování WPF nebo zprostředkující proudu uzlu XAML v cestě zatížení Pokud zpracovány pomocí rozhraní .NET Framework XAML Se rvices a jeho čtenáři XAML.  
   
@@ -51,5 +51,5 @@ Pokud je nastavena na `false`, upravuje chování načtení prostředku WPF, tak
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.ResourceDictionary>
-- [Prostředky XAML](../../../docs/framework/wpf/advanced/xaml-resources.md)
-- [Základní elementy](../../../docs/framework/wpf/advanced/base-elements.md)
+- [Prostředky XAML](../wpf/advanced/xaml-resources.md)
+- [Základní elementy](../wpf/advanced/base-elements.md)

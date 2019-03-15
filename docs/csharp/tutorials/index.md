@@ -43,7 +43,11 @@ Tento kurz předpokládá, že dokončení lekce uvedené výše.
 
 ## <a name="explore-new-features-in-c"></a>Prozkoumání nových funkcí v jazyce C\#
 
-Vyzkoušejte si nové funkce v [ C# 6](../whats-new/csharp-6.md) v tomto [interaktivní zkoumání](exploration/csharp-6.yml).
+* [Vyzkoušejte si nové funkce v C# 6 interaktivně](exploration/csharp-6.yml): Seznamte se s funkcemi přidá [ C# 6](../whats-new/csharp-6.md) interaktivně v prohlížeči.
+* [Interpolace řetězců](string-interpolation.md): ukazuje, jak pomocí interpolace řetězců můžete vytvořit formátovaných řetězců v C#.
+* [Typy s možnou hodnotou Null odkazů](nullable-reference-types.md): Popisuje způsob použití typů s povolenou hodnotou Null odkazu k vyjádření vašich představ pro odkazy s hodnotou null.
+* [Aktualizovat projekt pro použití s možnou hodnotou NULL referenční typy](upgrade-to-nullable-references.md): ukazuje techniky pro upgrade existující projekt, aby použití typů s povolenou hodnotou Null odkazu.
+* [Rozšíření možností dat pomocí porovnávání vzorů](pattern-matching.md): ukazuje, jak použít porovnávání vzorů pro rozšíření typů nad rámec svých základních funkcí.
 
 ## <a name="general-tutorials"></a>Obecné kurzy
 
@@ -53,6 +57,4 @@ V následujících kurzech umožňují vytvářet C# programy pomocí [.NET Core
 * [Klient REST](console-webapiclient.md): ukazuje webové komunikace, serializaci JSON a objektově orientovaných vlastností v C# jazyka.
 * [Dědičnost v C# a .NET](inheritance.md): ukazuje dědičnosti v C#, včetně využití čipu TPM dědičnosti, chcete-li definovat základních tříd, abstraktní základní třídy a odvozené třídy.
 * [Práce s jazykem LINQ](working-with-linq.md): ukazuje mnoho funkcí LINQ a prvky jazyka, které ho podporují.
-* [Interpolace řetězců](string-interpolation.md): ukazuje, jak pomocí interpolace řetězců můžete vytvořit formátovaných řetězců v C#.
 * [Pomocí atributů](attributes.md): ukazuje, jak vytvořit a použít atributy v C#.
-* [Typy s možnou hodnotou Null odkazů](nullable-reference-types.md): Popisuje způsob použití typů s povolenou hodnotou Null odkazu k vyjádření vašich představ pro odkazy s hodnotou null.
