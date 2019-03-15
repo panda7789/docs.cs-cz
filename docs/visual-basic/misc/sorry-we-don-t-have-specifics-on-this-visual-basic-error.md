@@ -3044,12 +3044,12 @@ f1_keywords:
 - bc30233
 - bc30829
 ms.assetid: 0938efc2-e205-450b-9314-99951fcbd702
-ms.openlocfilehash: 5eb00854f27a195ac3121aea16e2889897e6ef3d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 6a339fc91ce5e1b4ff3c5cbaacdae72f02fdf733
+ms.sourcegitcommit: 5c1abeec15fbddcc7dbaa729fabc1f1f29f12045
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54667658"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58022964"
 ---
 # <a name="sorry-we-dont-have-specifics-on-this-visual-basic-error"></a>Omlouváme se, ale k téhle chybě Visual Basicu nemáme podrobnosti.
 Je nám líto, ale nemáme žádné konkrétní informace o této chybě. Můžete vyhledat text chyby číslo a zprávou k nalezení informací o na webu. Nebo můžete požádat o další vývojáři pomocí jedné z těchto fór:  
@@ -3073,5 +3073,6 @@ Je nám líto, ale nemáme žádné konkrétní informace o této chybě. Může
  [Další zdroje informací pro programátory, kteří používají Visual Basic](../../visual-basic/getting-started/additional-resources.md)  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Průvodce programováním v jazyce Visual Basic](../../visual-basic/programming-guide/index.md)
 - [Referenční dokumentace jazyka Visual Basic](../../visual-basic/reference/index.md)

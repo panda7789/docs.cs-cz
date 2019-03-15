@@ -20,12 +20,12 @@ helpviewer_keywords:
 - quotation mark (") [XAML Services]
 - less-than (<) character [XAML Services]
 ms.assetid: 6896d0ce-74f7-420a-9ab4-de9bbf390e8d
-ms.openlocfilehash: 03ce1645b859e9c3ebe470131ae2aee578cb366f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 3fefbe9696ba7618dc811c6ac8f600bb6322dad5
+ms.sourcegitcommit: 5c1abeec15fbddcc7dbaa729fabc1f1f29f12045
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54661345"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58048058"
 ---
 # <a name="xml-character-entities-and-xaml"></a>Znakové entity XML a jazyk XAML
 XAML používá entity znaků, které jsou definované v kódu XML pro zvláštní znaky. Toto téma popisuje některé specifické znakové entity a obecné informace pro další koncepty XML v XAML.  
@@ -34,7 +34,7 @@ XAML používá entity znaků, které jsou definované v kódu XML pro zvláštn
 ## <a name="character-entities-and-escaping-issues-that-are-unique-to-xaml"></a>Znakové entity a problémy s uvozovací znaky, které jsou jedinečné pro XAML  
  Značky XAML se obvykle používá stejné znakové entity a řídicí sekvence, které jsou definovány ve formátu XML.  
   
- Hlavní výjimkou je, že složené závorky ({a}) mají význam v XAML, protože tyto znaky informovat XAML procesoru, sekvence znaků uzavřeny ve složených závorkách musí být interpretován jako rozšíření značek. Další informace o rozšíření značek, naleznete v tématu [– rozšíření značek XAML přehled](../../../docs/framework/xaml-services/markup-extensions-for-xaml-overview.md).  
+ Hlavní výjimkou je, že složené závorky ({a}) mají význam v XAML, protože tyto znaky informovat XAML procesoru, sekvence znaků uzavřeny ve složených závorkách musí být interpretován jako rozšíření značek. Další informace o rozšíření značek, naleznete v tématu [– rozšíření značek XAML přehled](markup-extensions-for-xaml-overview.md).  
   
  Ale můžete pořád zobrazit složené závorky jako literální znaky pomocí řídicí sekvence, které je specifický pro XAML místo XML. Další informace najdete v tématu [{} řídicí sekvence - rozšíření značek](escape-sequence-markup-extension.md).  
   
@@ -52,7 +52,7 @@ XAML používá entity znaků, které jsou definované v kódu XML pro zvláštn
 |"(dvojité uvozovky)|\&quot;|Musí být použito pro hodnotu atributu, ale dvojité uvozovky (") je přijatelná obsahu elementu. Všimněte si, že mohou být uzavřeny hodnoty atributů jednoduché uvozovky (') nebo dvojité uvozovky ("); libovolný znak jako první se objeví definuje skříň hodnotu atributu a alternativní nabídky je pak možné jako literál v rámci hodnoty.|  
 |"(jednoduché uvozovky)|\&Očekávaný|Musí být použito pro hodnotu atributu, ale jednoduché uvozovky (') je přijatelná obsahu elementu. Všimněte si, že mohou být uzavřeny hodnoty atributů jednoduché uvozovky (') nebo dvojité uvozovky ("); libovolný znak jako první se objeví definuje skříň hodnotu atributu a alternativní nabídky je pak možné jako literál v rámci hodnoty.|  
 |(mapování číselný znak)|&#*[číslo]* ; nebo & #x2713 *[hex]*;|XAML podporuje mapování číselný znak do kódování, které je aktivní.|  
-|(pevná mezera)|&\#160; (za předpokladu, že kódování UTF-8)|Pro tok elementů dokumentu, ani prvků, které trvat text, například WPF <xref:System.Windows.Controls.TextBox>, nejsou pevných mezer normalizovat mimo kód, dokonce i pro `xml:space="default"`. (Další informace najdete v tématu [– zpracování mezerových znaků v XAML](../../../docs/framework/xaml-services/whitespace-processing-in-xaml.md).)|  
+|(pevná mezera)|&\#160; (za předpokladu, že kódování UTF-8)|Pro tok elementů dokumentu, ani prvků, které trvat text, například WPF <xref:System.Windows.Controls.TextBox>, nejsou pevných mezer normalizovat mimo kód, dokonce i pro `xml:space="default"`. (Další informace najdete v tématu [– zpracování mezerových znaků v XAML](whitespace-processing-in-xaml.md).)|  
   
 <a name="xml_comment_format"></a>   
 ## <a name="xml-comment-format"></a>Formát komentáře XML  
@@ -63,7 +63,7 @@ XAML používá entity znaků, které jsou definované v kódu XML pro zvláštn
  XAML zpracovává pokyny pro zpracování XML podle specifikace XML, které stavu pokynů musí předává. XAML zpracování v rozhraní .NET Framework XAML Services nepoužívá žádné instrukce ke zpracování. Další stávajících architektur, které používají XAML nevyužívají pokyny pro zpracování z XAML.  
   
 ## <a name="see-also"></a>Viz také:
-- [Přehled XAML (WPF)](../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)
-- [Rozšíření značek a WPF XAML](../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)
-- [XamlName – gramatika](../../../docs/framework/xaml-services/xamlname-grammar.md)
-- [Zpracování mezerových znaků v XAML](../../../docs/framework/xaml-services/whitespace-processing-in-xaml.md)
+- [Přehled XAML (WPF)](../wpf/advanced/xaml-overview-wpf.md)
+- [Rozšíření značek a WPF XAML](../wpf/advanced/markup-extensions-and-wpf-xaml.md)
+- [XamlName – gramatika](xamlname-grammar.md)
+- [Zpracování mezerových znaků v XAML](whitespace-processing-in-xaml.md)
