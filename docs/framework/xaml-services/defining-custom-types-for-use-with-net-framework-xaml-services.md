@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - defining custom types [XAML Services]
 ms.assetid: c2667cbd-2f46-4a7f-9dfc-53696e35e8e4
-ms.openlocfilehash: 672660f73e9e6faf25985a651290e979f9deb9f4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: fa341b7df32823c653df25ddb0dabcb4658b72b5
+ms.sourcegitcommit: 5c1abeec15fbddcc7dbaa729fabc1f1f29f12045
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54492504"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58042625"
 ---
 # <a name="defining-custom-types-for-use-with-net-framework-xaml-services"></a>Definování vlastních typů pro práci s technologií .NET Framework XAML Services
 Při definování vlastních typů, které jsou pro obchodní objekty nebo jsou typy, které nemají závislost na určité rozhraní, jsou některé osvědčené postupy pro XAML, můžete postupovat podle. Pokud budete postupovat podle těchto postupů, můžete zjistit vlastnosti XAML stejného typu a přiřaďte jí vhodné vyjádření v datovém proudu uzlu XAML pomocí typu systému XAML rozhraní .NET Framework XAML Services a jeho XAML čtečky a zapisovače XAML. Toto téma popisuje osvědčené postupy pro definice typu, definice členů a zapisujících CLR typy nebo členy.  
@@ -23,7 +23,7 @@ Při definování vlastních typů, které jsou pro obchodní objekty nebo jsou 
   
  Pokud objekt může být vytvořen jako element objektu, vytvořený objekt vyplnit formu všechny vlastnosti, které získat objekt jako jeho základní typ vlastnosti elementu.  
   
- Stále můžete zadat objekt hodnoty pro typy, které nesplňují tato kritéria, pokud povolíte převaděč hodnoty. Další informace najdete v tématu [převaděče typů a rozšíření značek pro XAML](../../../docs/framework/xaml-services/type-converters-and-markup-extensions-for-xaml.md).  
+ Stále můžete zadat objekt hodnoty pro typy, které nesplňují tato kritéria, pokud povolíte převaděč hodnoty. Další informace najdete v tématu [převaděče typů a rozšíření značek pro XAML](type-converters-and-markup-extensions-for-xaml.md).  
   
 ### <a name="structures"></a>Struktury  
  Struktury jsou vždycky možné zkonstruovat v XAML, podle definice CLR. Je to proto, že kompilátor CLR implicitně vytvoří výchozí konstruktor pro struktury. Tento konstruktor inicializuje všechny hodnoty vlastností, které jejich výchozích hodnotách.  
@@ -34,12 +34,12 @@ Při definování vlastních typů, které jsou pro obchodní objekty nebo jsou 
  Rozhraní může sloužit jako základní typy členů. Systém typů XAML kontroluje seznamu přiřadit a očekává, že objekt, který je uvedený jako hodnota může být přiřazen k rozhraní. Neexistuje žádný koncept jak musí být rozhraní zobrazí jako typ XAML tak dlouho, dokud odpovídající typ přiřaditelný podporuje požadavky dané XAML konstrukce.  
   
 ### <a name="factory-methods"></a>Metody pro vytváření objektů  
- Metody pro vytváření objektů jsou funkce XAML 2009. Mění se zásadou XAML, že objekty musí mít výchozí konstruktory. Metody pro vytváření objektů nejsou uvedené v tomto tématu. Zobrazit [x: FactoryMethod – direktiva](../../../docs/framework/xaml-services/x-factorymethod-directive.md).  
+ Metody pro vytváření objektů jsou funkce XAML 2009. Mění se zásadou XAML, že objekty musí mít výchozí konstruktory. Metody pro vytváření objektů nejsou uvedené v tomto tématu. Zobrazit [x: FactoryMethod – direktiva](x-factorymethod-directive.md).  
   
 ## <a name="enumerations"></a>Výčty  
  Výčty mají XAML nativní typ převodu chování. Výčet konstantní názvy zadané v XAML jsou vyřešeny před nadřízený typ výčtu a vrátí hodnotu výčtu pro zápis objektu XAML.  
   
- XAML podporuje použití stylu příznaky pro výčty s <xref:System.FlagsAttribute> použít. Další informace najdete v tématu [syntaxe XAML v podrobnosti o](../../../docs/framework/wpf/advanced/xaml-syntax-in-detail.md). ([Syntaxe XAML v podrobnosti o](../../../docs/framework/wpf/advanced/xaml-syntax-in-detail.md) je určené pro cílovou skupinu WPF, ale většina informace v tomto tématu je relevantní pro XAML, která není specifická pro konkrétní implementaci rozhraní.)  
+ XAML podporuje použití stylu příznaky pro výčty s <xref:System.FlagsAttribute> použít. Další informace najdete v tématu [syntaxe XAML v podrobnosti o](../wpf/advanced/xaml-syntax-in-detail.md). ([Syntaxe XAML v podrobnosti o](../wpf/advanced/xaml-syntax-in-detail.md) je určené pro cílovou skupinu WPF, ale většina informace v tomto tématu je relevantní pro XAML, která není specifická pro konkrétní implementaci rozhraní.)  
   
 ## <a name="member-definitions"></a>Definice členů  
  Typy lze definovat členy pro využití XAML. Je možné pro typy, které definují členy, které jsou použitelné XAML i v případě konkrétního typu se nedá použít pro XAML. To je možné z důvodu CLR dědičnosti. Tak dlouho, dokud nějaký typ, který dědí člen podporuje použití XAML jako typ a člen podporuje použití XAML pro jeho základní typ nebo má nativní syntaxe XAML k dispozici, je daný člen XAML počítačově využitelný.  
@@ -47,23 +47,23 @@ Při definování vlastních typů, které jsou pro obchodní objekty nebo jsou 
 ### <a name="properties"></a>Vlastnosti  
  Pokud definujete vlastnosti jako veřejná vlastnost CLR pomocí typické CLR `get` a `set` přístupové vzory a používání jazyka odpovídající typu systému XAML můžete nahlásit zadaná pro vlastnost jako člena s příslušnými informacemi <xref:System.Xaml.XamlMember> vlastnosti, jako například <xref:System.Xaml.XamlMember.IsReadPublic%2A> a <xref:System.Xaml.XamlMember.IsWritePublic%2A>.  
   
- Specifické vlastnosti můžete povolit syntaxe textu s použitím <xref:System.ComponentModel.TypeConverterAttribute>. Další informace najdete v tématu [převaděče typů a rozšíření značek pro XAML](../../../docs/framework/xaml-services/type-converters-and-markup-extensions-for-xaml.md).  
+ Specifické vlastnosti můžete povolit syntaxe textu s použitím <xref:System.ComponentModel.TypeConverterAttribute>. Další informace najdete v tématu [převaděče typů a rozšíření značek pro XAML](type-converters-and-markup-extensions-for-xaml.md).  
   
  Chybí text syntaxe nebo nativní převod XAML a neexistují další dereference, jako je například použití rozšíření značky, typ vlastnosti (<xref:System.Xaml.XamlMember.TargetType%2A> XAML zadejte system) musí být schopni vracet instanci pro zápis objektu XAML díky tomu t, že Typ cíle jako typ CLR.  
   
- Pokud používáte XAML 2009 [x: Reference – rozšíření značek](../../../docs/framework/xaml-services/x-reference-markup-extension.md) je možné zadat hodnoty, pokud předchozí požadavky nejsou splněny; který je ale více problém použití než v případě problému definice typu.  
+ Pokud používáte XAML 2009 [x: Reference – rozšíření značek](x-reference-markup-extension.md) je možné zadat hodnoty, pokud předchozí požadavky nejsou splněny; který je ale více problém použití než v případě problému definice typu.  
   
 ### <a name="events"></a>Události  
  Pokud definujete události jako veřejná událost CLR, typu systému XAML můžete nahlásit události jako člena s <xref:System.Xaml.XamlMember.IsEvent%2A> jako `true`. Vzájemné propojení obslužné rutiny událostí není v rámci oboru funkce rozhraní .NET Framework XAML Services; To je ponecháno na konkrétní rozhraní a implementaci.  
   
 ### <a name="methods"></a>Metody  
- Vložený kód pro metody není výchozí možnost XAML. Ve většině případů můžete přímo neodkazujte metoda členy z XAML a roli metod v XAML je jenom k poskytování podpory pro určité vzory XAML. [x: FactoryMethod – direktiva](../../../docs/framework/xaml-services/x-factorymethod-directive.md) výjimka.  
+ Vložený kód pro metody není výchozí možnost XAML. Ve většině případů můžete přímo neodkazujte metoda členy z XAML a roli metod v XAML je jenom k poskytování podpory pro určité vzory XAML. [x: FactoryMethod – direktiva](x-factorymethod-directive.md) výjimka.  
   
 ### <a name="fields"></a>Pole  
- Pokyny k návrhu CLR Zabraňte nestatické pole. Pro statické pole se zobrazí hodnoty statických polí jen prostřednictvím [x: Static – rozšíření značek](../../../docs/framework/xaml-services/x-static-markup-extension.md); v takovém případě nejsou dělat nic zvláštního v definici CLR vystavit pole pro [x: Static](../../../docs/framework/xaml-services/x-static-markup-extension.md) použití.  
+ Pokyny k návrhu CLR Zabraňte nestatické pole. Pro statické pole se zobrazí hodnoty statických polí jen prostřednictvím [x: Static – rozšíření značek](x-static-markup-extension.md); v takovém případě nejsou dělat nic zvláštního v definici CLR vystavit pole pro [x: Static](x-static-markup-extension.md) použití.  
   
 ## <a name="attachable-members"></a>Připojitelná členy  
- Připojitelná členy jsou přístupné na XAML prostřednictvím na definující typ přístupového objektu metoda vzorek. Definující typ, samotný nemusí být XAML použitelné jako objekt. Ve skutečnosti se běžně používá k deklaraci třídy služby, jejichž role je vlastní připojitelný člen a implementovat související chování, ale sloužit jiné funkce, jako je například znázornění uživatelského rozhraní. Na následující oddíly, zástupný symbol *PropertyName* představuje název připojitelný člen. Tento název musí být platné v [xamlname – gramatika](../../../docs/framework/xaml-services/xamlname-grammar.md).  
+ Připojitelná členy jsou přístupné na XAML prostřednictvím na definující typ přístupového objektu metoda vzorek. Definující typ, samotný nemusí být XAML použitelné jako objekt. Ve skutečnosti se běžně používá k deklaraci třídy služby, jejichž role je vlastní připojitelný člen a implementovat související chování, ale sloužit jiné funkce, jako je například znázornění uživatelského rozhraní. Na následující oddíly, zástupný symbol *PropertyName* představuje název připojitelný člen. Tento název musí být platné v [xamlname – gramatika](xamlname-grammar.md).  
   
  Buďte opatrní kolizí název mezi tyto vzory a jiné metody typu. Pokud existuje člen, který odpovídá jednomu ze vzorů, ji lze interpretovat jako cestu připojitelný člen využití procesoru XAML i v případě, který nebyl váš záměr.  
   
@@ -95,7 +95,7 @@ Při definování vlastních typů, které jsou pro obchodní objekty nebo jsou 
 ## <a name="xaml-related-clr-attributes"></a>Atributy CLR související s jazykem XAML  
  Správně zapisujících typy, členy a sestavení je důležité, aby sestavy informací o typu systému XAML pro rozhraní .NET Framework XAML Services. Toto je relevantní, pokud máte v úmyslu vaše typy pro použití s XAML systémy, které jsou přímo založena na rozhraní .NET Framework XAML Services XAML čtečky a zapisovače XAML, nebo pokud definujete nebo pomocí rozhraní využívá XAML, která je založena na těchto XAML čtečky a zapisovače XAML.  
   
- Výpis každého atributu souvisejícím s XAML, který je relevantní informace o podpoře XAML vlastní typy, najdete v části [XAML-Related CLR atributy pro vlastní typy a knihovny](../../../docs/framework/xaml-services/xaml-related-clr-attributes-for-custom-types-and-libraries.md).  
+ Výpis každého atributu souvisejícím s XAML, který je relevantní informace o podpoře XAML vlastní typy, najdete v části [XAML-Related CLR atributy pro vlastní typy a knihovny](xaml-related-clr-attributes-for-custom-types-and-libraries.md).  
   
 ## <a name="usage"></a>Použití  
  Použití vlastních typů vyžaduje, že autor značky musí být namapovaný předponu pro sestavení a názvový prostor CLR, které obsahují vlastního typu. Tento postup není uvedeno v tomto tématu.  
@@ -115,5 +115,5 @@ Při definování vlastních typů, které jsou pro obchodní objekty nebo jsou 
  V terminologii WPF XAML *vnitřní typ* je typ, který je definován ve stejném sestavení, která zahrnuje i odkazující XAML. Takový typ lze mapovat pomocí oboru názvů XAML, která záměrně vynechá sestavení = část mapování, například `xmlns:local="clr-namespace:WPFApplication1"`.  Pokud BAML odkazuje na vnitřní typ a zda má typ `internal` přístup k úrovni, tím se vygeneruje `GeneratedInternalTypeHelper` třídy pro sestavení. Pokud chcete, aby se zabránilo `GeneratedInternalTypeHelper`, buď musíte použít `public` přístup k úrovni, nebo musí zohlednit příslušné třídě do samostatných sestavení a ujistěte se, že sestavení závislé.  
   
 ## <a name="see-also"></a>Viz také:
-- [Atributy CLR související s jazykem XAML pro vlastní typy a knihovny](../../../docs/framework/xaml-services/xaml-related-clr-attributes-for-custom-types-and-libraries.md)
-- [XAML Services](../../../docs/framework/xaml-services/index.md)
+- [Atributy CLR související s jazykem XAML pro vlastní typy a knihovny](xaml-related-clr-attributes-for-custom-types-and-libraries.md)
+- [XAML Services](index.md)

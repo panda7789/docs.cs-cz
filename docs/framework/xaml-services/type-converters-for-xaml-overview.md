@@ -6,12 +6,12 @@ helpviewer_keywords:
 - XAML [XAML Services], TypeConverter
 - type conversion for XAML [XAML Services]
 ms.assetid: 51a65860-efcb-4fe0-95a0-1c679cde66b7
-ms.openlocfilehash: 79b4d972e5d82eaac6571efebb974ac7d764d30e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 62e92a0bf537bd5a15b71751b3d62755c6b12dfa
+ms.sourcegitcommit: 5c1abeec15fbddcc7dbaa729fabc1f1f29f12045
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54659147"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58049501"
 ---
 # <a name="type-converters-for-xaml-overview"></a>Přehled převaděčů typů pro jazyk XAML
 Typ převaděče dodavatelského logiku pro objekt zapisovače, který převede z řetězce v kódu XAML na konkrétní objekty v grafu objektů. V rozhraní .NET Framework XAML Services musí být převaděč typu třída, která je odvozena z <xref:System.ComponentModel.TypeConverter>. Některé převaděče také podporují XAML cesta pro uložení a je možné serializovat objekt do formátu řetězce v kódu serializace. Toto téma popisuje, jak a kdy jsou vyvolány převaděče typů v XAML a obsahuje implementace doporučení pro metody přepsání <xref:System.ComponentModel.TypeConverter>.  
@@ -29,7 +29,7 @@ Typ převaděče dodavatelského logiku pro objekt zapisovače, který převede 
 >  Direktivy jazyka XAML nepoužívejte typ převaděče.  
   
 ### <a name="type-converters-and-markup-extensions"></a>Převaděče typů a rozšíření značek  
- Použití rozšíření značky musí být zpracován procesorem XAML zkontroluje pro typ vlastnosti a další důležité informace. Například pokud je vlastnost nastavena jako atribut obvykle obsahuje převod typu, ale v konkrétním případě podle použití rozšíření značky, chování rozšíření značek zpracuje první. Jedna běžné situace, kde je nutné rozšíření značek, je vytvořit odkaz na objekt, který již existuje. V tomto scénáři bezstavový typ převaděče generovat jenom nové instance, který nemusí být žádoucí. Další informace o rozšíření značek, naleznete v tématu [– rozšíření značek XAML přehled](../../../docs/framework/xaml-services/markup-extensions-for-xaml-overview.md).  
+ Použití rozšíření značky musí být zpracován procesorem XAML zkontroluje pro typ vlastnosti a další důležité informace. Například pokud je vlastnost nastavena jako atribut obvykle obsahuje převod typu, ale v konkrétním případě podle použití rozšíření značky, chování rozšíření značek zpracuje první. Jedna běžné situace, kde je nutné rozšíření značek, je vytvořit odkaz na objekt, který již existuje. V tomto scénáři bezstavový typ převaděče generovat jenom nové instance, který nemusí být žádoucí. Další informace o rozšíření značek, naleznete v tématu [– rozšíření značek XAML přehled](markup-extensions-for-xaml-overview.md).  
   
 ### <a name="native-type-converters"></a>Nativní typ převaděče  
  Implementace služby WPF a .NET XAML existují určité typy CLR, které mají nativní typ převodu zpracování, ale tyto typy CLR nejsou představit konvenčně primitivní. Příklad takového typu je <xref:System.DateTime>. Jedním z důvodů je, jak funguje architektury .NET Framework: typ <xref:System.DateTime> je definována v mscorlib, většina základních knihoven v .NET. <xref:System.DateTime> není dovoleno přiřadit atributem, který pochází z jiného sestavení, který vytvoří závislost (<xref:System.ComponentModel.TypeConverterAttribute> je ze systému), proto nelze podporovat mechanismu obvykle typ převaděče zjišťování přidělování. Místo toho analyzátoru XAML obsahuje seznam typů, které je třeba nativní zpracování a zpracování těchto typů podobný zpracování true primitiv. V případě třídy <xref:System.DateTime>, toto zpracování zahrnuje volání <xref:System.DateTime.Parse%2A>.  
@@ -60,7 +60,7 @@ Typ převaděče dodavatelského logiku pro objekt zapisovače, který převede 
  <xref:System.ComponentModel.TypeConverter.CanConvertTo%2A> a <xref:System.ComponentModel.TypeConverter.CanConvertFrom%2A> jsou metody podpory, které se používají, když služba dotazuje možnosti <xref:System.ComponentModel.TypeConverter> implementace. Je nutné implementovat tyto metody k vrácení `true` pro konkrétní typ, který odpovídá převod metody vaše konvertoru podporují. Pro účely XAML to obvykle znamená, <xref:System.String> typu.  
   
 ### <a name="culture-information-and-type-converters-for-xaml"></a>Informace o jazykové verzi a převaděčů typů pro XAML  
- Každý <xref:System.ComponentModel.TypeConverter> implementace jednoznačně interpretovat, co je platný řetězec pro převod a můžete také použít nebo ignorovat popis typu, který je předán jako parametry. Což je důležité pro převod typu jazykovou verzi a XAML je následující: i když lokalizovatelných řetězců pomocí jako hodnoty atributů je podporovaná XAML, nelze použít tyto lokalizovatelných řetězců jako vstupní typ převaděče s požadavky na konkrétní jazykové verze. Toto omezení je, protože typ převaděče hodnot atributů XAML zahrnují chování nutně oprava jazyka XAML zpracování, které používá `en-US` jazykovou verzi. Další informace o návrhu důvody pro toto omezení, naleznete v tématu Specifikace jazyka XAML ([\[MS-XAML\]](https://go.microsoft.com/fwlink/?LinkId=114525)) nebo [WPF přehled globalizace a lokalizace](../../../docs/framework/wpf/advanced/wpf-globalization-and-localization-overview.md).  
+ Každý <xref:System.ComponentModel.TypeConverter> implementace jednoznačně interpretovat, co je platný řetězec pro převod a můžete také použít nebo ignorovat popis typu, který je předán jako parametry. Což je důležité pro převod typu jazykovou verzi a XAML je následující: i když lokalizovatelných řetězců pomocí jako hodnoty atributů je podporovaná XAML, nelze použít tyto lokalizovatelných řetězců jako vstupní typ převaděče s požadavky na konkrétní jazykové verze. Toto omezení je, protože typ převaděče hodnot atributů XAML zahrnují chování nutně oprava jazyka XAML zpracování, které používá `en-US` jazykovou verzi. Další informace o návrhu důvody pro toto omezení, naleznete v tématu Specifikace jazyka XAML ([\[MS-XAML\]](https://go.microsoft.com/fwlink/?LinkId=114525)) nebo [WPF přehled globalizace a lokalizace](../wpf/advanced/wpf-globalization-and-localization-overview.md).  
   
  Jako příklad, kde jazykovou verzi může být problém některých jazykových verzí čárku místo použít tečku jako oddělovač desetinné čárky pro čísla ve formátu řetězce. Toto použití koliduje s chování, které mají mnoho existujících převaděče typů, která se má použít čárku jako oddělovač. Předání jazykovou verzi prostřednictvím `xml:lang` v okolního XAML nebyl vyřešen problém.  
   
@@ -101,7 +101,7 @@ Typ převaděče dodavatelského logiku pro objekt zapisovače, který převede 
   
 <a name="accessing_service_provider_context_from_a_markup_extension_implementation"></a>   
 ## <a name="accessing-service-provider-context-from-a-markup-extension-implementation"></a>Přístup k kontext zprostředkovatele služby z implementace rozšíření značek  
- Dostupné služby jsou stejné pro všechny převaděč hodnoty. Rozdíl je v jak každý převaděč hodnoty obdrží kontext služby. Přístup k službám a službám, které jsou k dispozici jsou popsány v tématu [převaděče typů a rozšíření značek pro XAML](../../../docs/framework/xaml-services/type-converters-and-markup-extensions-for-xaml.md).  
+ Dostupné služby jsou stejné pro všechny převaděč hodnoty. Rozdíl je v jak každý převaděč hodnoty obdrží kontext služby. Přístup k službám a službám, které jsou k dispozici jsou popsány v tématu [převaděče typů a rozšíření značek pro XAML](type-converters-and-markup-extensions-for-xaml.md).  
   
 <a name="type_converters_in_the_xaml_node_stream"></a>   
 ## <a name="type-converters-in-the-xaml-node-stream"></a>Převaděče typů v Stream uzlu XAML  
@@ -109,5 +109,5 @@ Typ převaděče dodavatelského logiku pro objekt zapisovače, který převede 
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.ComponentModel.TypeConverterAttribute>
-- [Převaděče typů a rozšíření značek pro jazyk XAML](../../../docs/framework/xaml-services/type-converters-and-markup-extensions-for-xaml.md)
-- [Přehled XAML (WPF)](../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)
+- [Převaděče typů a rozšíření značek pro jazyk XAML](type-converters-and-markup-extensions-for-xaml.md)
+- [Přehled XAML (WPF)](../wpf/advanced/xaml-overview-wpf.md)

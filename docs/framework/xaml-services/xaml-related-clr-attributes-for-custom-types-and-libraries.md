@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - CLR attributes for custom types [XAML Services]
 ms.assetid: 5dfb299a-b6e2-41b8-8694-e6ac987547f1
-ms.openlocfilehash: e194dbef0f18657646161a3f5cc4812b3ab78f7e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 80127bae06a90dccd204b0f2a4baef10732ade76
+ms.sourcegitcommit: 5c1abeec15fbddcc7dbaa729fabc1f1f29f12045
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54530098"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58039469"
 ---
 # <a name="xaml-related-clr-attributes-for-custom-types-and-libraries"></a>Atributy CLR související s jazykem XAML pro vlastní typy a knihovny
 Toto téma popisuje běžné atributy modulu runtime (CLR) jazyka, které jsou definovány pomocí rozhraní .NET Framework XAML Services. Popisuje také další atributy CLR, které jsou definovány v rozhraní .NET Framework, které mají související s XAML scénář pro aplikaci na sestavení nebo typy. Přidělování sestavení, typy nebo členy s těmito atributy CLR poskytuje typ informace o systému XAML souvisejících typů. Informace jsou poskytovány k příjemci XAML, který používá rozhraní .NET Framework XAML Services pro zpracování datový proud uzlu XAML přímo nebo prostřednictvím vyhrazené XAML čtečky a zapisovače XAML.  
@@ -81,7 +81,7 @@ Toto téma popisuje běžné atributy modulu runtime (CLR) jazyka, které jsou d
   
  **Argumenty:** A <xref:System.Type> , který určuje typ nejpřesnější očekávat jako `ProvideValue` výsledek s atributy <xref:System.Windows.Markup.MarkupExtension>.  
   
- Další informace najdete v tématu [– rozšíření značek XAML přehled](../../../docs/framework/xaml-services/markup-extensions-for-xaml-overview.md).  
+ Další informace najdete v tématu [– rozšíření značek XAML přehled](markup-extensions-for-xaml-overview.md).  
   
 ### <a name="namescopepropertyattribute"></a>NameScopePropertyAttribute  
  **Referenční dokumentace:**  <xref:System.Windows.Markup.NameScopePropertyAttribute>  
@@ -103,7 +103,7 @@ Toto téma popisuje běžné atributy modulu runtime (CLR) jazyka, které jsou d
   
  **Argumenty:** Řetězec, který určuje název vlastnosti název běhu s atributy typu.  
   
- <xref:System.Windows.Markup.RuntimeNamePropertyAttribute> sestavy vlastnost s atributy typu, který se mapuje XAML [x: Name – direktiva](../../../docs/framework/xaml-services/x-name-directive.md). Vlastnost musí být typu <xref:System.String> a musí být pro čtení a zápisu.  
+ <xref:System.Windows.Markup.RuntimeNamePropertyAttribute> sestavy vlastnost s atributy typu, který se mapuje XAML [x: Name – direktiva](x-name-directive.md). Vlastnost musí být typu <xref:System.String> a musí být pro čtení a zápisu.  
   
  Definice zdědí všechny odvozené typy, které jsou přiřadit k definování typu. Definice na konkrétní odvozený typ může přepsat s použitím <xref:System.Windows.Markup.RuntimeNamePropertyAttribute> na konkrétní odvozeného typu.  
   
@@ -114,7 +114,7 @@ Toto téma popisuje běžné atributy modulu runtime (CLR) jazyka, které jsou d
   
  **Argumenty:** Žádné  
   
- <xref:System.Windows.Markup.TrimSurroundingWhitespaceAttribute> platí pro konkrétní typy, které se zobrazují jako podřízené prvky v rámci prázdné místo důležité obsahu (obsah drží kolekce, která má <xref:System.Windows.Markup.WhitespaceSignificantCollectionAttribute>). <xref:System.Windows.Markup.TrimSurroundingWhitespaceAttribute> především vztahující se k uložení cesty, ale je k dispozici v systému typů XAML v cestě zatížení prozkoumáním <xref:System.Xaml.XamlType.TrimSurroundingWhitespace%2A?displayProperty=nameWithType>. Další informace najdete v tématu [– zpracování mezerových znaků v XAML](../../../docs/framework/xaml-services/whitespace-processing-in-xaml.md).  
+ <xref:System.Windows.Markup.TrimSurroundingWhitespaceAttribute> platí pro konkrétní typy, které se zobrazují jako podřízené prvky v rámci prázdné místo důležité obsahu (obsah drží kolekce, která má <xref:System.Windows.Markup.WhitespaceSignificantCollectionAttribute>). <xref:System.Windows.Markup.TrimSurroundingWhitespaceAttribute> především vztahující se k uložení cesty, ale je k dispozici v systému typů XAML v cestě zatížení prozkoumáním <xref:System.Xaml.XamlType.TrimSurroundingWhitespace%2A?displayProperty=nameWithType>. Další informace najdete v tématu [– zpracování mezerových znaků v XAML](whitespace-processing-in-xaml.md).  
   
 ### <a name="typeconverterattribute"></a>TypeConverterAttribute  
  **Referenční dokumentace:**  <xref:System.ComponentModel.TypeConverterAttribute>  
@@ -127,7 +127,7 @@ Toto téma popisuje běžné atributy modulu runtime (CLR) jazyka, které jsou d
   
  Můžete použít <xref:System.ComponentModel.TypeConverterAttribute> atribut pro váš typ odkazování na vaší implementace převodníku typů. Převaděče typů pro XAML můžete definovat na třídy, struktury nebo rozhraní. Není potřeba poskytovat převod typů výčtů, nativně povolen převod.  
   
- Váš typ převaděče měli být schopni převést z řetězce, který se používá pro atributy nebo inicializace text v kódu, do vašeho typu požadovaného cíle. Další informace najdete v tématu [TypeConverters a XAML](../../../docs/framework/wpf/advanced/typeconverters-and-xaml.md).  
+ Váš typ převaděče měli být schopni převést z řetězce, který se používá pro atributy nebo inicializace text v kódu, do vašeho typu požadovaného cíle. Další informace najdete v tématu [TypeConverters a XAML](../wpf/advanced/typeconverters-and-xaml.md).  
   
  Nejsou implementovány všechny hodnoty typu, ale typ převaděče chování pro XAML můžete také navázat na specifickou vlastnost. V tomto případě použijete <xref:System.ComponentModel.TypeConverterAttribute> v definici vlastnosti (vnějšího definice, nikoli konkrétní `get` a `set` definic).  
   
@@ -142,7 +142,7 @@ Toto téma popisuje běžné atributy modulu runtime (CLR) jazyka, které jsou d
   
  **Argumenty:** Řetězec, který odkazuje na odpovídající vlastnosti podle názvu.  
   
- Označuje vlastnost CLR třídy, že aliasy [x: Uid – direktiva](../../../docs/framework/xaml-services/x-uid-directive.md).  
+ Označuje vlastnost CLR třídy, že aliasy [x: Uid – direktiva](x-uid-directive.md).  
   
 ### <a name="usableduringinitializationattribute"></a>UsableDuringInitializationAttribute  
  **Referenční dokumentace:**  <xref:System.Windows.Markup.UsableDuringInitializationAttribute>  
@@ -169,7 +169,7 @@ Toto téma popisuje běžné atributy modulu runtime (CLR) jazyka, které jsou d
   
  **Argumenty:** Žádné  
   
- <xref:System.Windows.Markup.WhitespaceSignificantCollectionAttribute> Označuje, že typ kolekce má být zpracován jako prázdné místo důležité procesorem XAML, který ovlivňuje konstrukce uzly hodnot datový proud uzlu XAML v rámci kolekce. Další informace najdete v tématu [– zpracování mezerových znaků v XAML](../../../docs/framework/xaml-services/whitespace-processing-in-xaml.md).  
+ <xref:System.Windows.Markup.WhitespaceSignificantCollectionAttribute> Označuje, že typ kolekce má být zpracován jako prázdné místo důležité procesorem XAML, který ovlivňuje konstrukce uzly hodnot datový proud uzlu XAML v rámci kolekce. Další informace najdete v tématu [– zpracování mezerových znaků v XAML](whitespace-processing-in-xaml.md).  
   
 ### <a name="xamldeferloadattribute"></a>XamlDeferLoadAttribute  
  **Referenční dokumentace:**  <xref:System.Windows.Markup.XamlDeferLoadAttribute>  
@@ -270,4 +270,4 @@ Toto téma popisuje běžné atributy modulu runtime (CLR) jazyka, které jsou d
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Attribute>
-- [Definování vlastních typů pro práci s technologií .NET Framework XAML Services](../../../docs/framework/xaml-services/defining-custom-types-for-use-with-net-framework-xaml-services.md)
+- [Definování vlastních typů pro práci s technologií .NET Framework XAML Services](defining-custom-types-for-use-with-net-framework-xaml-services.md)

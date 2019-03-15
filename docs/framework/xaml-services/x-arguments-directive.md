@@ -6,12 +6,12 @@ helpviewer_keywords:
 - Arguments directive in XAML [XAML Services]
 - XAML [XAML Services], x:Arguments directive
 ms.assetid: 87cc10b0-b610-4025-b6b0-ab27ca27c92e
-ms.openlocfilehash: d4cff4c2f95d1418371921a3ac992a3b243d1c07
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 351974786b9f4748499279d29202e2051d9268fd
+ms.sourcegitcommit: 5c1abeec15fbddcc7dbaa729fabc1f1f29f12045
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54490814"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58043338"
 ---
 # <a name="xarguments-directive"></a>x:Arguments – direktiva
 Argumenty vytváření balíčků pro deklaraci jiného než výchozího konstruktoru objektu prvku v XAML nebo pro deklaraci objektu factory metody.  
@@ -107,5 +107,5 @@ public Food TryLookupFood(string name)
 ```  
   
 ## <a name="see-also"></a>Viz také:
-- [Definování vlastních typů pro práci s technologií .NET Framework XAML Services](../../../docs/framework/xaml-services/defining-custom-types-for-use-with-net-framework-xaml-services.md)
-- [Přehled XAML (WPF)](../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)
+- [Definování vlastních typů pro práci s technologií .NET Framework XAML Services](defining-custom-types-for-use-with-net-framework-xaml-services.md)
+- [Přehled XAML (WPF)](../wpf/advanced/xaml-overview-wpf.md)
