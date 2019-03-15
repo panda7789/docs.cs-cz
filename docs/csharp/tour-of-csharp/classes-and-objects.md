@@ -3,12 +3,12 @@ title: Třídy a objekty v C# – připravuje C# jazyka
 description: Teprve se C#? Přečtěte si tento přehled tříd, objektů a dědičnost
 ms.date: 08/10/2016
 ms.assetid: 63a89bde-0f05-4bc4-b0cd-4f693854f0cd
-ms.openlocfilehash: 51661a0728e9a68c0c646f493b648120897f95fd
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: c13265829c3b33d2c2cddfb3de9cd849b439fa67
+ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53147545"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "57846139"
 ---
 # <a name="classes-and-objects"></a>Třídy a objekty
 
@@ -123,7 +123,7 @@ Podobně jako typy metody mají také sadu parametrů typu, pro které musí bý
 
 Parametry se používají k předávání hodnot nebo proměnné odkazy na metody. Parametry metody získávají skutečné hodnoty z *argumenty* , které jsou určeny při vyvolání metody. Existují čtyři druhy parametry: hodnoty, parametry, parametry odkazů, výstupní parametry a pole parametrů.
 
-A *parametr hodnoty* slouží k předání vstupních argumentů. Hodnota parametru odpovídá místní proměnná, která se získá z argumentu, který byl předán parametr počáteční hodnoty. Úpravy parametru hodnoty nemají vliv na argument, který byl předán parametr. 
+A *parametr hodnoty* slouží k předání vstupních argumentů. Hodnota parametru odpovídá místní proměnná, která se získá z argumentu, který byl předán parametr počáteční hodnoty. Úpravy parametru hodnoty nemají vliv na argument, který byl předán parametr.
 
 Parametry s hodnotou může být volitelný, a zadat výchozí hodnotu tak, aby odpovídající argumenty lze vynechat.
 
@@ -293,6 +293,6 @@ Uvolňování paměti je povolená široké šířky při rozhodování, kdy se 
 
 `using` Příkaz poskytuje lepší přístup ke zničení objektu.
 
->[!div class="step-by-step"]
->[Předchozí](statements.md)
->[další](structs.md)
+> [!div class="step-by-step"]
+> [Předchozí](statements.md)
+> [další](structs.md)

@@ -2,12 +2,12 @@
 title: Připojovací řetězce v ADO.NET
 ms.date: 10/10/2018
 ms.assetid: 745c5f95-2f02-4674-b378-6d51a7ec2490
-ms.openlocfilehash: c765eee661858499240344cb5059fe1fa9a58ab5
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1197335f3ba2a09b6e7303d31bc32383d1fd3436
+ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54627561"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "57844869"
 ---
 # <a name="connection-strings-in-adonet"></a>Připojovací řetězce v ADO.NET
 
@@ -16,9 +16,9 @@ Připojovací řetězec obsahuje informace o inicializaci, která je předána j
 ## <a name="connection-string-syntax"></a>Syntaxe připojovacího řetězce
 
 Připojovací řetězec se středníkem oddělený seznam dvojic klíč/hodnota parametru:
-  
+
     keyword1=value; keyword2=value;
-  
+
 Klíčová slova nerozlišují malá a velká písmena. Hodnoty, ale mohou být velká a malá písmena, v závislosti na zdroji dat. Klíčová slova a hodnoty mohou obsahovat [prázdné znaky](https://en.wikipedia.org/wiki/Whitespace_character#Unicode). Počáteční a koncové mezery bude ignorován v klíčových slov a nekotované hodnoty.
 
 Obsahuje-li hodnota středník, [řídící znaky Unicode](https://en.wikipedia.org/wiki/Unicode_control_characters), nebo úvodní a koncové prázdné znaky, musí být uzavřen v jednoduchých nebo dvojitých uvozovek. Příklad:
@@ -44,19 +44,21 @@ Překlepů mohou způsobit chyby. Například `Integrated Security=true` je plat
 
 Připojovací řetězce s ručně vytvořeným za běhu z neověřený vstup uživatele je ohrožen útoky prostřednictvím injektáže řetězec a by mohly ohrozit zabezpečení ve zdroji dat. K řešení těchto problémů *ADO.NET* 2.0 zavedl [tvůrci připojovacích řetězců](../../../../docs/framework/data/adonet/connection-string-builders.md) pro každou *rozhraní .NET Framework* poskytovatele dat služeb. Tyto tvůrci připojovacích řetězců vystavit parametry jako vlastnosti silného typu a bude možné ověřit připojovací řetězec před odesláním do zdroje dat.
 
-## <a name="in-this-section"></a>V tomto oddílu  
- [Tvůrci připojovacích řetězců](../../../../docs/framework/data/adonet/connection-string-builders.md)  
- Popisuje způsob použití `ConnectionStringBuilder` třídy sestavit platný připojovací řetězce v běhu.
-  
- [Připojovací řetězce a konfigurační soubory](../../../../docs/framework/data/adonet/connection-strings-and-configuration-files.md)  
- Ukazuje, jak k ukládání a načítání připojovacích řetězců v konfiguračních souborech.
-  
- [Syntaxe připojovacího řetězce](../../../../docs/framework/data/adonet/connection-string-syntax.md)  
- Popisuje postup konfigurace specifickým pro zprostředkovatele připojovací řetězce pro `SqlClient`, `OracleClient`, `OleDb`, a `Odbc`.
-  
- [Ochrana informací o připojení](../../../../docs/framework/data/adonet/protecting-connection-information.md)  
- Ukazuje postupy ochrany osobních údajů pro připojení ke zdroji dat.
-  
+## <a name="in-this-section"></a>V tomto oddílu
+
+[Tvůrci připojovacích řetězců](../../../../docs/framework/data/adonet/connection-string-builders.md)\
+Popisuje způsob použití `ConnectionStringBuilder` třídy sestavit platný připojovací řetězce v běhu.
+
+[Připojovací řetězce a konfigurační soubory](../../../../docs/framework/data/adonet/connection-strings-and-configuration-files.md)\
+Ukazuje, jak k ukládání a načítání připojovacích řetězců v konfiguračních souborech.
+
+[Syntaxe připojovacího řetězce](../../../../docs/framework/data/adonet/connection-string-syntax.md)\
+Popisuje postup konfigurace specifickým pro zprostředkovatele připojovací řetězce pro `SqlClient`, `OracleClient`, `OleDb`, a `Odbc`.
+
+[Ochrana informací o připojení](../../../../docs/framework/data/adonet/protecting-connection-information.md)\
+Ukazuje postupy ochrany osobních údajů pro připojení ke zdroji dat.
+
 ## <a name="see-also"></a>Viz také:
+
 - [Připojení ke zdroji dat](/cpp/data/odbc/connecting-to-a-data-source)
 - [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
