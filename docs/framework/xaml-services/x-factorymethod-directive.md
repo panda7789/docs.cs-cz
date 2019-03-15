@@ -6,12 +6,12 @@ helpviewer_keywords:
 - FactoryMethod directive in XAML [XAML Services]
 - x:FactoryMethod directive [XAML Services]
 ms.assetid: 829bcbdf-5318-4afb-9a03-c310e0d2f23d
-ms.openlocfilehash: 2d5656e6328e1902bddcda3d1ac4b4eabb148d28
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: cb78514540f5f44b07b1fdd16283d26c647a3ac4
+ms.sourcegitcommit: 5c1abeec15fbddcc7dbaa729fabc1f1f29f12045
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54731358"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58034542"
 ---
 # <a name="xfactorymethod-directive"></a>x:FactoryMethod – direktiva
 Určuje jiné metody než konstruktor, který procesor XAML by měla použít pro inicializaci objektu po vyřešení jeho základní typ.  
@@ -57,4 +57,4 @@ Určuje jiné metody než konstruktor, který procesor XAML by měla použít pr
  `x:FactoryMethod` jak elementu musí předcházet před jinými prvky, vlastnost, musí předcházet všechny `x:Arguments` také ve formě elementy a musí předcházet text obsahu/vnitřní text/inicializace.  
   
 ## <a name="see-also"></a>Viz také:
-- [x:Arguments – direktiva](../../../docs/framework/xaml-services/x-arguments-directive.md)
+- [x:Arguments – direktiva](x-arguments-directive.md)

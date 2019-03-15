@@ -15,12 +15,12 @@ helpviewer_keywords:
 - x:Single [XAML Services]
 - x:Int32 [XAML Services]
 ms.assetid: 11de2f08-5b95-4989-b5ec-5178eb968184
-ms.openlocfilehash: f6225dfcc02b90da58ccafd5c70726b6f80f29d4
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: feda058a9672a3150f7beb5c1bc124eee1eae9eb
+ms.sourcegitcommit: 5c1abeec15fbddcc7dbaa729fabc1f1f29f12045
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48839089"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58048670"
 ---
 # <a name="built-in-types-for-common-xaml-language-primitives"></a>Předdefinované typy obecných primitiv jazyka XAML
 XAML 2009 zavádí podporu na úrovni jazyka XAML pro několik typů dat, které jsou často používají primitivy v modulu common language runtime (CLR) a v jiných programovacích jazycích. XAML 2009 dodává podporu těchto primitivních hodnot: `x:Object`, `x:Boolean`, `x:Char`, `x:String`, `x:Decimal`, `x:Single`, `x:Double`, `x:Int16`, `x:Int32`, `x:Int64`, `x:TimeSpan`, `x:Uri`, `x:Byte`, a `x:Array`  
@@ -88,17 +88,17 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib">
   
  Definice specifikace jazyka XAML, naleznete v tématu [ \[MS-XAML\] části 5.2.9 a 5.4.3](https://go.microsoft.com/fwlink/?LinkId=114525).  
   
-### <a name="xint16"></a>x: Int16  
+### <a name="xint16"></a>x:Int16  
  Pro zálohování CLR `x:Int16` primitivní odpovídá <xref:System.Int16> a `x:Int16` je považován za podepsaný. V XAML, neexistence znaku plus (`+`) v syntaxi textu je vyjádřena jako kladná hodnota se znaménkem.  
   
  Definice specifikace jazyka XAML, naleznete v tématu [ \[MS-XAML\] části 5.2.11 a 5.4.5](https://go.microsoft.com/fwlink/?LinkId=114525).  
   
-### <a name="xint32"></a>x: Int32  
+### <a name="xint32"></a>x:Int32  
  Pro zálohování CLR `x:Int32` primitivní odpovídá <xref:System.Int32>. `x:Int32` je považován za podepsaný. V XAML, neexistence znaku plus (`+`) v syntaxi textu je vyjádřena jako kladná hodnota se znaménkem.  
   
  Definice specifikace jazyka XAML, naleznete v tématu [ \[MS-XAML\] části 5.2.12 a 5.4.6](https://go.microsoft.com/fwlink/?LinkId=114525).  
   
-### <a name="xint64"></a>x: Int64  
+### <a name="xint64"></a>x:Int64  
  Pro zálohování CLR `x:Int64` primitivní odpovídá <xref:System.Int64>. `x:Int64` je považován za podepsaný. V XAML, neexistence znaku plus (`+`) v syntaxi textu je vyjádřena jako kladná hodnota se znaménkem.  
   
  Definice specifikace jazyka XAML, naleznete v tématu [ \[MS-XAML\] části 5.2.13 a 5.4.7](https://go.microsoft.com/fwlink/?LinkId=114525).  
@@ -125,12 +125,12 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib">
 ### <a name="xarray"></a>x: Array  
  Pro zálohování CLR `x:Array` primitivní odpovídá <xref:System.Array>.  
   
- V XAML 2006 můžete definovat pole pomocí syntaxe rozšíření značek; Syntaxe XAML 2009 je však jazykově definovaná primitivní, která nevyžaduje přístup k rozšíření značek. Další informace o podpoře XAML 2006 najdete v tématu [x: Array – rozšíření značek](../../../docs/framework/xaml-services/x-array-markup-extension.md).  
+ V XAML 2006 můžete definovat pole pomocí syntaxe rozšíření značek; Syntaxe XAML 2009 je však jazykově definovaná primitivní, která nevyžaduje přístup k rozšíření značek. Další informace o podpoře XAML 2006 najdete v tématu [x: Array – rozšíření značek](x-array-markup-extension.md).  
   
  Definice specifikace jazyka XAML, naleznete v tématu [ \[MS-XAML\] části 5.2.18](https://go.microsoft.com/fwlink/?LinkId=114525).  
   
 <a name="wpf_support"></a>   
-## <a name="wpf-support"></a>Podpora WPF  
+## <a name="wpf-support"></a>WPF Support  
  V WPF můžete použít funkce XAML 2009 ale pouze pro XAML, který není kompilována značka. Kompilována značka XAML pro WPF a BAML formu XAML aktuálně nepodporují klíčová slova XAML 2009 a funkce.  
   
  Scénář, kde je možné použít funkce XAML 2009 spolu s WPF je, pokud vytvoříte volný XAML a pak načíst tento XAML do WPF runtime a grafu objektu s <xref:System.Windows.Markup.XamlReader.Load%2A?displayProperty=nameWithType>. WPF <xref:System.Windows.Markup.XamlReader?displayProperty=nameWithType> a jeho <xref:System.Windows.Markup.XamlReader.Load%2A> mohou zpracovávat klíčová slova jazyka XAML 2009 a funkce do platnou reprezentaci grafu objektů.
