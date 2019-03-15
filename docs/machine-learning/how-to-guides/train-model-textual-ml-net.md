@@ -3,33 +3,34 @@ title: Použijte vytváření funkcí k tréninku modelu na textová data - ML.N
 description: Zjistěte, jak použít vytváření funkcí k tréninku modelu na textová data s ML.NET
 ms.date: 03/05/2019
 ms.custom: mvc,how-to
-ms.openlocfilehash: 8733db281dbc60ae3f4ac0c139c482b39089f2b8
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.openlocfilehash: e26a4b293869b7cdad3c439237bd0145cafa314a
+ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57680071"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "57844354"
 ---
-# <a name="apply-feature-engineering-for-machine-learning-model-training-on-textual-data-with-mlnet"></a><span data-ttu-id="048be-103">Použít vytváření funkcí pro strojové učení cvičení modelu na textová data s ML.NET</span><span class="sxs-lookup"><span data-stu-id="048be-103">Apply feature engineering for machine learning model training on textual data with ML.NET</span></span>
+# <a name="apply-feature-engineering-for-machine-learning-model-training-on-textual-data-with-mlnet"></a><span data-ttu-id="d89c4-103">Použít vytváření funkcí pro strojové učení cvičení modelu na textová data s ML.NET</span><span class="sxs-lookup"><span data-stu-id="d89c4-103">Apply feature engineering for machine learning model training on textual data with ML.NET</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="048be-104">Toto téma odkazuje na ML.NET, která je aktuálně ve verzi Preview, a materiálu se můžou stát terčem změnit.</span><span class="sxs-lookup"><span data-stu-id="048be-104">This topic refers to ML.NET, which is currently in Preview, and material may be subject to change.</span></span> <span data-ttu-id="048be-105">Další informace najdete v článku [Úvod ML.NET](https://www.microsoft.com/net/learn/apps/machine-learning-and-ai/ml-dotnet).</span><span class="sxs-lookup"><span data-stu-id="048be-105">For more information, visit [the ML.NET introduction](https://www.microsoft.com/net/learn/apps/machine-learning-and-ai/ml-dotnet).</span></span>
+> <span data-ttu-id="d89c4-104">Toto téma odkazuje na ML.NET, která je aktuálně ve verzi Preview, a materiálu se můžou stát terčem změnit.</span><span class="sxs-lookup"><span data-stu-id="d89c4-104">This topic refers to ML.NET, which is currently in Preview, and material may be subject to change.</span></span> <span data-ttu-id="d89c4-105">Další informace najdete v článku [Úvod ML.NET](https://www.microsoft.com/net/learn/apps/machine-learning-and-ai/ml-dotnet).</span><span class="sxs-lookup"><span data-stu-id="d89c4-105">For more information, visit [the ML.NET introduction](https://www.microsoft.com/net/learn/apps/machine-learning-and-ai/ml-dotnet).</span></span>
 
-<span data-ttu-id="048be-106">Aktuálně používáte této ukázky s postupy a související **ML.NET verze 0.10**.</span><span class="sxs-lookup"><span data-stu-id="048be-106">This how-to and related sample are currently using **ML.NET version 0.10**.</span></span> <span data-ttu-id="048be-107">Další informace najdete v tématu poznámky k verzi v [úložiště GitHub dotnet/machinelearning](https://github.com/dotnet/machinelearning/tree/master/docs/release-notes).</span><span class="sxs-lookup"><span data-stu-id="048be-107">For more information, see the release notes at the [dotnet/machinelearning GitHub repo](https://github.com/dotnet/machinelearning/tree/master/docs/release-notes).</span></span>
+<span data-ttu-id="d89c4-106">Aktuálně používáte této ukázky s postupy a související **ML.NET verze 0.10**.</span><span class="sxs-lookup"><span data-stu-id="d89c4-106">This how-to and related sample are currently using **ML.NET version 0.10**.</span></span> <span data-ttu-id="d89c4-107">Další informace najdete v tématu poznámky k verzi v [úložiště GitHub dotnet/machinelearning](https://github.com/dotnet/machinelearning/tree/master/docs/release-notes).</span><span class="sxs-lookup"><span data-stu-id="d89c4-107">For more information, see the release notes at the [dotnet/machinelearning GitHub repo](https://github.com/dotnet/machinelearning/tree/master/docs/release-notes).</span></span>
 
-<span data-ttu-id="048be-108">Je potřeba převést všechna data bez typu float pro `float` datové typy od všech ML.NET `learners` očekávat funkce, jako je `float vector`.</span><span class="sxs-lookup"><span data-stu-id="048be-108">You need to convert any non float data to `float` data types since all ML.NET `learners` expect features as a `float vector`.</span></span>
+<span data-ttu-id="d89c4-108">Je potřeba převést všechna data bez typu float pro `float` datové typy od všech ML.NET `learners` očekávat funkce, jako je `float vector`.</span><span class="sxs-lookup"><span data-stu-id="d89c4-108">You need to convert any non float data to `float` data types since all ML.NET `learners` expect features as a `float vector`.</span></span>
 
-<span data-ttu-id="048be-109">Další informace o textových dat, musíte extrahovat text funkce.</span><span class="sxs-lookup"><span data-stu-id="048be-109">To learn on textual data, you need to extract text features.</span></span> <span data-ttu-id="048be-110">ML.NET má některé základní text funkce extrakce mechanismy:</span><span class="sxs-lookup"><span data-stu-id="048be-110">ML.NET has some basic text feature extraction mechanisms:</span></span>
+<span data-ttu-id="d89c4-109">Další informace o textových dat, musíte extrahovat text funkce.</span><span class="sxs-lookup"><span data-stu-id="d89c4-109">To learn on textual data, you need to extract text features.</span></span> <span data-ttu-id="d89c4-110">ML.NET má některé základní text funkce extrakce mechanismy:</span><span class="sxs-lookup"><span data-stu-id="d89c4-110">ML.NET has some basic text feature extraction mechanisms:</span></span>
 
-- <span data-ttu-id="048be-111">`Text normalization` (odebrání interpunkční znaménka, diakritiky přepnutí na malá písmena atd.)</span><span class="sxs-lookup"><span data-stu-id="048be-111">`Text normalization` (removing punctuation, diacritics, switching to lowercase etc.)</span></span>
-- <span data-ttu-id="048be-112">`Separator-based tokenization`.</span><span class="sxs-lookup"><span data-stu-id="048be-112">`Separator-based tokenization`.</span></span>
-- <span data-ttu-id="048be-113">`Stopword` odebrání.</span><span class="sxs-lookup"><span data-stu-id="048be-113">`Stopword` removal.</span></span>
-- <span data-ttu-id="048be-114">`Ngram` a `skip-gram` extrakce.</span><span class="sxs-lookup"><span data-stu-id="048be-114">`Ngram` and `skip-gram` extraction.</span></span>
-- <span data-ttu-id="048be-115">`TF-IDF` změny měřítka.</span><span class="sxs-lookup"><span data-stu-id="048be-115">`TF-IDF` rescaling.</span></span>
-- <span data-ttu-id="048be-116">`Bag of words` převod.</span><span class="sxs-lookup"><span data-stu-id="048be-116">`Bag of words` conversion.</span></span>
+- <span data-ttu-id="d89c4-111">`Text normalization` (odebrání interpunkční znaménka, diakritiky přepnutí na malá písmena atd.)</span><span class="sxs-lookup"><span data-stu-id="d89c4-111">`Text normalization` (removing punctuation, diacritics, switching to lowercase etc.)</span></span>
+- <span data-ttu-id="d89c4-112">`Separator-based tokenization`.</span><span class="sxs-lookup"><span data-stu-id="d89c4-112">`Separator-based tokenization`.</span></span>
+- <span data-ttu-id="d89c4-113">`Stopword` odebrání.</span><span class="sxs-lookup"><span data-stu-id="d89c4-113">`Stopword` removal.</span></span>
+- <span data-ttu-id="d89c4-114">`Ngram` a `skip-gram` extrakce.</span><span class="sxs-lookup"><span data-stu-id="d89c4-114">`Ngram` and `skip-gram` extraction.</span></span>
+- <span data-ttu-id="d89c4-115">`TF-IDF` změny měřítka.</span><span class="sxs-lookup"><span data-stu-id="d89c4-115">`TF-IDF` rescaling.</span></span>
+- <span data-ttu-id="d89c4-116">`Bag of words` převod.</span><span class="sxs-lookup"><span data-stu-id="d89c4-116">`Bag of words` conversion.</span></span>
 
-<span data-ttu-id="048be-117">Následující příklad ukazuje ML.NET textové funkce extrakce mechanismy pomocí [Wikipedia detox dataset](https://github.com/dotnet/machinelearning/blob/master/test/data/wikipedia-detox-250-line-data.tsv):</span><span class="sxs-lookup"><span data-stu-id="048be-117">The following example demonstrates ML.NET text feature extraction mechanisms using the [Wikipedia detox dataset](https://github.com/dotnet/machinelearning/blob/master/test/data/wikipedia-detox-250-line-data.tsv):</span></span>
+<span data-ttu-id="d89c4-117">Následující příklad ukazuje ML.NET textové funkce extrakce mechanismy pomocí [Wikipedia detox dataset](https://github.com/dotnet/machinelearning/blob/master/test/data/wikipedia-detox-250-line-data.tsv):</span><span class="sxs-lookup"><span data-stu-id="d89c4-117">The following example demonstrates ML.NET text feature extraction mechanisms using the [Wikipedia detox dataset](https://github.com/dotnet/machinelearning/blob/master/test/data/wikipedia-detox-250-line-data.tsv):</span></span>
 
+<!-- markdownlint-disable MD010 -->
 ```console
 Sentiment   SentimentText
 1   Stop trolling, zapatancas, calling me a liar merely demonstartes that you arer Zapatancas. You may choose to chase every legitimate editor from this site and ignore me but I am an editor with a record that isnt 99% trolling and therefore my wishes are not to be completely ignored by a sockpuppet like yourself. The consensus is overwhelmingly against you and your trolling lover Zapatancas,  
@@ -37,6 +38,7 @@ Sentiment   SentimentText
 0   " *::Your POV and propaganda pushing is dully noted. However listing interesting facts in a netral and unacusitory tone is not POV. You seem to be confusing Censorship with POV monitoring. I see nothing POV expressed in the listing of intersting facts. If you want to contribute more facts or edit wording of the cited fact to make them sound more netral then go ahead. No need to CENSOR interesting factual information. "
 0   ::::::::This is a gross exaggeration. Nobody is setting a kangaroo court. There was a simple addition concerning the airline. It is the only one disputed here.   
 ```
+<!-- markdownlint-enable MD010 -->
 
 ```csharp
 // Define the reader: specify the data columns and where to find them in the text file.

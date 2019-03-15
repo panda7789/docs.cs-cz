@@ -2,28 +2,28 @@
 title: Soubory Oracle LOB
 ms.date: 03/30/2017
 ms.assetid: 272e8e1e-a31f-475a-8c2a-ae8e1286bdab
-ms.openlocfilehash: 70928cdd1ff82e54fd8e45563bb14df6340e4a95
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: faf7ec75334f20742ff9d27f029d88bfaca9efd4
+ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54747996"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "57845840"
 ---
-# <a name="oracle-lobs"></a><span data-ttu-id="31165-102">Soubory Oracle LOB</span><span class="sxs-lookup"><span data-stu-id="31165-102">Oracle LOBs</span></span>
-<span data-ttu-id="31165-103">Zprostředkovatel dat .NET Framework pro Oracle se zahrnuje <xref:System.Data.OracleClient.OracleLob> třídu, která se používá pro práci se společností Oracle **LOB** datové typy.</span><span class="sxs-lookup"><span data-stu-id="31165-103">The .NET Framework Data Provider for Oracle includes the <xref:System.Data.OracleClient.OracleLob> class, which is used to work with Oracle **LOB** data types.</span></span>  
+# <a name="oracle-lobs"></a><span data-ttu-id="b94d2-102">Soubory Oracle LOB</span><span class="sxs-lookup"><span data-stu-id="b94d2-102">Oracle LOBs</span></span>
+<span data-ttu-id="b94d2-103">Zprostředkovatel dat .NET Framework pro Oracle se zahrnuje <xref:System.Data.OracleClient.OracleLob> třídu, která se používá pro práci se společností Oracle **LOB** datové typy.</span><span class="sxs-lookup"><span data-stu-id="b94d2-103">The .NET Framework Data Provider for Oracle includes the <xref:System.Data.OracleClient.OracleLob> class, which is used to work with Oracle **LOB** data types.</span></span>  
   
- <span data-ttu-id="31165-104">**OracleLob** může být jedna z těchto <xref:System.Data.OracleClient.OracleType> datové typy:</span><span class="sxs-lookup"><span data-stu-id="31165-104">An **OracleLob** may be one of these <xref:System.Data.OracleClient.OracleType> data types:</span></span>  
+ <span data-ttu-id="b94d2-104">**OracleLob** může být jedna z těchto <xref:System.Data.OracleClient.OracleType> datové typy:</span><span class="sxs-lookup"><span data-stu-id="b94d2-104">An **OracleLob** may be one of these <xref:System.Data.OracleClient.OracleType> data types:</span></span>  
   
-|<span data-ttu-id="31165-105">Datový typ</span><span class="sxs-lookup"><span data-stu-id="31165-105">Data type</span></span>|<span data-ttu-id="31165-106">Popis</span><span class="sxs-lookup"><span data-stu-id="31165-106">Description</span></span>|  
+|<span data-ttu-id="b94d2-105">Datový typ</span><span class="sxs-lookup"><span data-stu-id="b94d2-105">Data type</span></span>|<span data-ttu-id="b94d2-106">Popis</span><span class="sxs-lookup"><span data-stu-id="b94d2-106">Description</span></span>|  
 |---------------|-----------------|  
-|<span data-ttu-id="31165-107">**Objekt blob**</span><span class="sxs-lookup"><span data-stu-id="31165-107">**Blob**</span></span>|<span data-ttu-id="31165-108">Oracle **BLOB** datový typ, který obsahuje binární data a maximální velikost 4 GB.</span><span class="sxs-lookup"><span data-stu-id="31165-108">An Oracle **BLOB** data type that contains binary data with a maximum size of 4 gigabytes.</span></span> <span data-ttu-id="31165-109">To se mapuje **pole** typu **bajtů**.</span><span class="sxs-lookup"><span data-stu-id="31165-109">This maps to an **Array** of type **Byte**.</span></span>|  
-|<span data-ttu-id="31165-110">**Clob**</span><span class="sxs-lookup"><span data-stu-id="31165-110">**Clob**</span></span>|<span data-ttu-id="31165-111">Oracle **datový typ CLOB** datový typ, který obsahuje znak dat v závislosti na znak výchozí nastavení na serveru, a maximální velikost 4 GB.</span><span class="sxs-lookup"><span data-stu-id="31165-111">An Oracle **CLOB** data type that contains character data, based on the default character set on the server, with a maximum size of 4 gigabytes.</span></span> <span data-ttu-id="31165-112">To se mapuje na **řetězec**.</span><span class="sxs-lookup"><span data-stu-id="31165-112">This maps to **String**.</span></span>|  
-|<span data-ttu-id="31165-113">**NClob**</span><span class="sxs-lookup"><span data-stu-id="31165-113">**NClob**</span></span>|<span data-ttu-id="31165-114">Oracle **NCLOB** datový typ, který obsahuje znak data podle národního znakovou sadu na serveru s maximální velikost 4 GB.</span><span class="sxs-lookup"><span data-stu-id="31165-114">An Oracle **NCLOB** data type that contains character data, based on the national character set on the server with a maximum size of 4 gigabytes.</span></span> <span data-ttu-id="31165-115">To se mapuje na **řetězec**.</span><span class="sxs-lookup"><span data-stu-id="31165-115">This maps to **String**.</span></span>|  
+|<span data-ttu-id="b94d2-107">**Objekt blob**</span><span class="sxs-lookup"><span data-stu-id="b94d2-107">**Blob**</span></span>|<span data-ttu-id="b94d2-108">Oracle **BLOB** datový typ, který obsahuje binární data a maximální velikost 4 GB.</span><span class="sxs-lookup"><span data-stu-id="b94d2-108">An Oracle **BLOB** data type that contains binary data with a maximum size of 4 gigabytes.</span></span> <span data-ttu-id="b94d2-109">To se mapuje **pole** typu **bajtů**.</span><span class="sxs-lookup"><span data-stu-id="b94d2-109">This maps to an **Array** of type **Byte**.</span></span>|  
+|<span data-ttu-id="b94d2-110">**Clob**</span><span class="sxs-lookup"><span data-stu-id="b94d2-110">**Clob**</span></span>|<span data-ttu-id="b94d2-111">Oracle **datový typ CLOB** datový typ, který obsahuje znak dat v závislosti na znak výchozí nastavení na serveru, a maximální velikost 4 GB.</span><span class="sxs-lookup"><span data-stu-id="b94d2-111">An Oracle **CLOB** data type that contains character data, based on the default character set on the server, with a maximum size of 4 gigabytes.</span></span> <span data-ttu-id="b94d2-112">To se mapuje na **řetězec**.</span><span class="sxs-lookup"><span data-stu-id="b94d2-112">This maps to **String**.</span></span>|  
+|<span data-ttu-id="b94d2-113">**NClob**</span><span class="sxs-lookup"><span data-stu-id="b94d2-113">**NClob**</span></span>|<span data-ttu-id="b94d2-114">Oracle **NCLOB** datový typ, který obsahuje znak data podle národního znakovou sadu na serveru s maximální velikost 4 GB.</span><span class="sxs-lookup"><span data-stu-id="b94d2-114">An Oracle **NCLOB** data type that contains character data, based on the national character set on the server with a maximum size of 4 gigabytes.</span></span> <span data-ttu-id="b94d2-115">To se mapuje na **řetězec**.</span><span class="sxs-lookup"><span data-stu-id="b94d2-115">This maps to **String**.</span></span>|  
   
- <span data-ttu-id="31165-116">**OracleLob** se liší od <xref:System.Data.OracleClient.OracleBFile> v tom, že jsou data uložená na serveru místo ve fyzických souborů v operačním systému.</span><span class="sxs-lookup"><span data-stu-id="31165-116">An **OracleLob** differs from an <xref:System.Data.OracleClient.OracleBFile> in that the data is stored on the server instead of in a physical file in the operating system.</span></span> <span data-ttu-id="31165-117">Na rozdíl od může být objekt pro čtení a zápis **OracleBFile**, což je vždy jen pro čtení.</span><span class="sxs-lookup"><span data-stu-id="31165-117">It can also be a read-write object, unlike an **OracleBFile**, which is always read-only.</span></span>  
+ <span data-ttu-id="b94d2-116">**OracleLob** se liší od <xref:System.Data.OracleClient.OracleBFile> v tom, že jsou data uložená na serveru místo ve fyzických souborů v operačním systému.</span><span class="sxs-lookup"><span data-stu-id="b94d2-116">An **OracleLob** differs from an <xref:System.Data.OracleClient.OracleBFile> in that the data is stored on the server instead of in a physical file in the operating system.</span></span> <span data-ttu-id="b94d2-117">Na rozdíl od může být objekt pro čtení a zápis **OracleBFile**, což je vždy jen pro čtení.</span><span class="sxs-lookup"><span data-stu-id="b94d2-117">It can also be a read-write object, unlike an **OracleBFile**, which is always read-only.</span></span>  
   
-## <a name="creating-retrieving-and-writing-to-a-lob"></a><span data-ttu-id="31165-118">Vytvářet, načítat a zápis do objektu LOB</span><span class="sxs-lookup"><span data-stu-id="31165-118">Creating, Retrieving, and Writing to a LOB</span></span>  
- <span data-ttu-id="31165-119">Následující příklad jazyka C# ukazuje, jak můžete vytvořit objekty LOBs v tabulce Oracle a pak načíst a zápis do nich ve formě **OracleLob** objekty.</span><span class="sxs-lookup"><span data-stu-id="31165-119">The following C# example demonstrates how you can create LOBs in an Oracle table, and then retrieve and write to them in the form of **OracleLob** objects.</span></span> <span data-ttu-id="31165-120">Tento příklad ukazuje použití <xref:System.Data.OracleClient.OracleDataReader> objektu a **OracleLob** **čtení** a **zápisu** metody.</span><span class="sxs-lookup"><span data-stu-id="31165-120">The example demonstrates using the <xref:System.Data.OracleClient.OracleDataReader> object and the **OracleLob** **Read** and **Write** methods.</span></span> <span data-ttu-id="31165-121">V příkladu se používá Oracle **BLOB**, **datový typ CLOB**, a **NCLOB** datové typy.</span><span class="sxs-lookup"><span data-stu-id="31165-121">The example uses Oracle **BLOB**, **CLOB**, and **NCLOB** data types.</span></span>  
+## <a name="creating-retrieving-and-writing-to-a-lob"></a><span data-ttu-id="b94d2-118">Vytvářet, načítat a zápis do objektu LOB</span><span class="sxs-lookup"><span data-stu-id="b94d2-118">Creating, Retrieving, and Writing to a LOB</span></span>  
+ <span data-ttu-id="b94d2-119">Následující příklad jazyka C# ukazuje, jak můžete vytvořit objekty LOBs v tabulce Oracle a pak načíst a zápis do nich ve formě **OracleLob** objekty.</span><span class="sxs-lookup"><span data-stu-id="b94d2-119">The following C# example demonstrates how you can create LOBs in an Oracle table, and then retrieve and write to them in the form of **OracleLob** objects.</span></span> <span data-ttu-id="b94d2-120">Tento příklad ukazuje použití <xref:System.Data.OracleClient.OracleDataReader> objektu a **OracleLob** **čtení** a **zápisu** metody.</span><span class="sxs-lookup"><span data-stu-id="b94d2-120">The example demonstrates using the <xref:System.Data.OracleClient.OracleDataReader> object and the **OracleLob** **Read** and **Write** methods.</span></span> <span data-ttu-id="b94d2-121">V příkladu se používá Oracle **BLOB**, **datový typ CLOB**, a **NCLOB** datové typy.</span><span class="sxs-lookup"><span data-stu-id="b94d2-121">The example uses Oracle **BLOB**, **CLOB**, and **NCLOB** data types.</span></span>  
   
 ```csharp  
 using System;  
@@ -90,10 +90,10 @@ public class LobExample
          // Note: You can read character data as raw Unicode bytes   
          // (using OracleLob.Read as in the above example).  
          // However, because the OracleLob object inherits directly   
-         // from the .Net stream object,   
+         // from the .NET stream object,   
          // all the existing classes that manipluate streams can   
          // also be used. For example, the   
-         // .Net StreamReader makes it easier to convert the raw bytes   
+         // .NET StreamReader makes it easier to convert the raw bytes   
          // into actual characters.  
          StreamReader streamreader =   
            new StreamReader(clob, Encoding.Unicode);  
@@ -215,8 +215,8 @@ public class LobExample
 }  
 ```  
   
-## <a name="creating-a-temporary-lob"></a><span data-ttu-id="31165-122">Vytváří se dočasný OBJEKT</span><span class="sxs-lookup"><span data-stu-id="31165-122">Creating a Temporary LOB</span></span>  
- <span data-ttu-id="31165-123">Následující příklad jazyka C# ukazuje, jak vytvořit dočasný OBJEKT.</span><span class="sxs-lookup"><span data-stu-id="31165-123">The following C# example demonstrates how to create a temporary LOB.</span></span>  
+## <a name="creating-a-temporary-lob"></a><span data-ttu-id="b94d2-122">Vytváří se dočasný OBJEKT</span><span class="sxs-lookup"><span data-stu-id="b94d2-122">Creating a Temporary LOB</span></span>  
+ <span data-ttu-id="b94d2-123">Následující příklad jazyka C# ukazuje, jak vytvořit dočasný OBJEKT.</span><span class="sxs-lookup"><span data-stu-id="b94d2-123">The following C# example demonstrates how to create a temporary LOB.</span></span>  
   
 ```csharp  
 OracleConnection conn = new OracleConnection(  
@@ -247,6 +247,6 @@ cmd.ExecuteNonQuery();
 tx.Commit();  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="31165-124">Viz také:</span><span class="sxs-lookup"><span data-stu-id="31165-124">See also</span></span>
-- [<span data-ttu-id="31165-125">Oracle a ADO.NET</span><span class="sxs-lookup"><span data-stu-id="31165-125">Oracle and ADO.NET</span></span>](../../../../docs/framework/data/adonet/oracle-and-adonet.md)
-- [<span data-ttu-id="31165-126">ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře</span><span class="sxs-lookup"><span data-stu-id="31165-126">ADO.NET Managed Providers and DataSet Developer Center</span></span>](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="b94d2-124">Viz také:</span><span class="sxs-lookup"><span data-stu-id="b94d2-124">See also</span></span>
+- [<span data-ttu-id="b94d2-125">Oracle a ADO.NET</span><span class="sxs-lookup"><span data-stu-id="b94d2-125">Oracle and ADO.NET</span></span>](../../../../docs/framework/data/adonet/oracle-and-adonet.md)
+- [<span data-ttu-id="b94d2-126">ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře</span><span class="sxs-lookup"><span data-stu-id="b94d2-126">ADO.NET Managed Providers and DataSet Developer Center</span></span>](https://go.microsoft.com/fwlink/?LinkId=217917)
