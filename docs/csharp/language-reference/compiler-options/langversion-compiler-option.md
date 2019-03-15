@@ -8,12 +8,12 @@ helpviewer_keywords:
 - -langversion compiler option [C#]
 - langversion compiler option [C#]
 ms.assetid: 3fb00b05-a0ff-4782-b313-13a4c0f62d94
-ms.openlocfilehash: 19d7f20bf33de6e23860d475f38d49553049dec1
-ms.sourcegitcommit: 79066169e93d9d65203028b21983574ad9dcf6b4
+ms.openlocfilehash: af30095c18a333d5ac3089fe3bf201c32739d9cf
+ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57211959"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "57846347"
 ---
 # <a name="-langversion-c-compiler-options"></a>-langversion (možnosti kompilátoru C#)
 
@@ -89,4 +89,4 @@ Způsobí, že kompilátor tak, aby přijímal pouze syntaxi, která je součás
 [↩](#TCS4)<a name="FCS4">CS4</a>: Microsoft Visual Studio/Build Tools 2010 nebo jako součást balíčku rozhraní .NET Framework 4.0 kompilátoru  
 [↩](#TCS3)<a name="FCS3">CS3</a>: Microsoft Visual Studio/Build Tools 2008 nebo jako součást balíčku rozhraní .NET Framework 3.5 kompilátoru  
 [↩](#TISO2)<a name="FISO2">ISO2</a>: Microsoft Visual Studio/Build Tools 2005 nebo jako součást balíčku rozhraní .NET Framework 2.0 kompilátoru  
-[↩](#TISO1)<a name="FISO1">ISO1</a>: Microsoft Visual Studio/Build Tools .net 2002 nebo jako součást balíčku. Kompilátor N Framework 1.0  
+[↩](#TISO1)<a name="FISO1">ISO1</a>: Microsoft Visual Studio/sestavení nástroje .NET 2002 nebo jako součást balíčku. Kompilátor N Framework 1.0  

@@ -6,12 +6,12 @@ ms.author: wiwagn
 ms.date: 06/20/2016
 ms.technology: dotnet-standard
 ms.assetid: 1e38f9d9-8f84-46ee-a15f-199aec4f2e34
-ms.openlocfilehash: 45dc8b72bd61fc9aa04c977a2dc67c37384697fc
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.openlocfilehash: 7b9017c30deebf6762b60d70e2be0b68ab5e27fc
+ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57677523"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "57844733"
 ---
 # <a name="async-in-depth"></a>Asynchronní do hloubky
 
@@ -21,12 +21,12 @@ Zápis vázané na vstupně-výstupní operace a procesor asynchronní kód je j
 
 Úkoly jsou konstrukce používaný k implementaci, která se označuje jako [Promise modelu Concurrency](https://en.wikipedia.org/wiki/Futures_and_promises).  Stručně řečeno nabízejí, že jste "příslib", které pracují se dokončit později, umožňuje zajistěte ve spolupráci se příslib pomocí rozhraní API pro vyčištění.
 
-*   `Task` představuje jednu operaci, která nevrací hodnotu.
-*   `Task<T>` představuje jednu operaci, která vrátí hodnotu typu `T`.
+* `Task` představuje jednu operaci, která nevrací hodnotu.
+* `Task<T>` představuje jednu operaci, která vrátí hodnotu typu `T`.
 
 Je důležité o úlohy jako abstrakce práce děje asynchronně, a *není* abstrakci přes dělení na vlákna. Ve výchozím nastavení se úkoly spustí v aktuální vlákno a delegátem práci do operačního systému, podle potřeby. Volitelně můžete úlohy můžete výslovně požadovány ke spuštění v samostatném vlákně prostřednictvím `Task.Run` rozhraní API.
 
-Úlohy vystavit protokol rozhraní API pro monitorování, čeká na a přístup k výsledku hodnotu (v případě třídy `Task<T>`) úlohy. Integrace jazyka s `await` – klíčové slovo, poskytuje vyšší úroveň abstrakce pro používání úloh. 
+Úlohy vystavit protokol rozhraní API pro monitorování, čeká na a přístup k výsledku hodnotu (v případě třídy `Task<T>`) úlohy. Integrace jazyka s `await` – klíčové slovo, poskytuje vyšší úroveň abstrakce pro používání úloh.
 
 Pomocí `await` umožňuje vaše aplikace nebo služba provádět užitečnou práci, zatímco úloha běží získávání řízení volajícímu, až po dokončení úkolu. Váš kód nemusí spoléhat na zpětná volání nebo událostí, které pokračovat v provádění po dokončení úlohy. Jazyk a úlohy integrace rozhraní API, které udělá za vás. Pokud používáte `Task<T>`, `await` – klíčové slovo bude kromě "rozbalení" hodnota vrácená po dokončení úkolu.  Podrobnosti o tom, jak to funguje jsou vysvětleny níže.
 
@@ -43,7 +43,7 @@ public Task<string> GetHtmlAsync()
 {
     // Execution is synchronous here
     var client = new HttpClient();
-    
+
     return client.GetStringAsync("https://www.dotnetfoundation.org");
 }
 ```
@@ -55,14 +55,14 @@ public async Task<string> GetFirstCharactersCountAsync(string url, int count)
 {
     // Execution is synchronous here
     var client = new HttpClient();
-    
+
     // Execution of GetFirstCharactersCountAsync() is yielded to the caller here
     // GetStringAsync returns a Task<string>, which is *awaited*
     var page = await client.GetStringAsync("https://www.dotnetfoundation.org");
-    
+
     // Execution resumes when the client.GetStringAsync task completes,
     // becoming synchronous again.
-    
+
     if (count > page.Length)
     {
         return page;
@@ -74,7 +74,7 @@ public async Task<string> GetFirstCharactersCountAsync(string url, int count)
 }
 ```
 
-Volání `GetStringAsync()` volání prostřednictvím nižší úrovně knihovny .NET (například voláním ostatních metod asynchronní) dokud nedosáhne P/Invoke spolupráce volání do nativního síťové knihovny. Nativní knihovna může následně volání do volání rozhraní API systému (například `write()` na soket v Linuxu). Objekt úlohy se vytvoří spravované/nativní hranice, případně pomocí [TaskCompletionSource](xref:System.Threading.Tasks.TaskCompletionSource%601.SetResult(%600)). Objekt úlohy se předává vrstvy, pravděpodobně provozovaná nebo přímo vrácená, nakonec se vrátí volajícímu počáteční. 
+Volání `GetStringAsync()` volání prostřednictvím nižší úrovně knihovny .NET (například voláním ostatních metod asynchronní) dokud nedosáhne P/Invoke spolupráce volání do nativního síťové knihovny. Nativní knihovna může následně volání do volání rozhraní API systému (například `write()` na soket v Linuxu). Objekt úlohy se vytvoří spravované/nativní hranice, případně pomocí [TaskCompletionSource](xref:System.Threading.Tasks.TaskCompletionSource%601.SetResult(%600)). Objekt úlohy se předává vrstvy, pravděpodobně provozovaná nebo přímo vrácená, nakonec se vrátí volajícímu počáteční.
 
 V druhém příkladu výše `Task<T>` objektu bude vrácen z `GetStringAsync`. Použití `await` – klíčové slovo způsobí, že metoda vrátí objekt nově vytvořené úlohy. Ovládací prvek vrátí volajícímu z tohoto umístění v `GetFirstCharactersCountAsync` metody. Metody a vlastnosti [úloh&lt;T&gt; ](xref:System.Threading.Tasks.Task%601) objektu povolení volajícím můžete sledovat průběh úlohy, která bude dokončena, pokud byl proveden v GetFirstCharactersCountAsync zbývající kód.
 
@@ -90,9 +90,9 @@ I když výše může jevit jako toho ještě hodně udělat, když se měří s
 
 0-1————————————————————————————————————————————————–2-3
 
-*   Doba trvání z bodů `0` k `1` všechno, co je až do asynchronní metody vrací řízení volajícímu.
-*   Doba trvání z bodů `1` k `2` čas strávený vstupně-výstupní operace se žádné náklady.
-*   A konečně, doba trvání z bodů `2` k `3` předává řízení zpět (a potenciálně hodnotu) do asynchronní metody, v tomto okamžiku je znovu prováděna.
+* Doba trvání z bodů `0` k `1` všechno, co je až do asynchronní metody vrací řízení volajícímu.
+* Doba trvání z bodů `1` k `2` čas strávený vstupně-výstupní operace se žádné náklady.
+* A konečně, doba trvání z bodů `2` k `3` předává řízení zpět (a potenciálně hodnotu) do asynchronní metody, v tomto okamžiku je znovu prováděna.
 
 ### <a name="what-does-this-mean-for-a-server-scenario"></a>Co to znamená pro scénář serveru?
 
@@ -125,13 +125,13 @@ public async Task<int> CalculateResult(InputData data)
 {
     // This queues up the work on the threadpool.
     var expensiveResultTask = Task.Run(() => DoExpensiveCalculation(data));
-    
+
     // Note that at this point, you can do some other work concurrently,
     // as CalculateResult() is still executing!
-    
+
     // Execution of CalculateResult is yielded here!
     var result = await expensiveResultTask;
-    
+
     return result;
 }
 ```

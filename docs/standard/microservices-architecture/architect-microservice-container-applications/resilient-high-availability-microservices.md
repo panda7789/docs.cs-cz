@@ -4,12 +4,12 @@ description: Mikroslužeb mají být navržena k odolat přechodných síťovýc
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/20/2018
-ms.openlocfilehash: c5bd272380f25f801c7b75c8b8e73a080ac89eef
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 5e601ccae8ee3493e6a5d9cd35c4573a9df2da46
+ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56970789"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "57846620"
 ---
 # <a name="resiliency-and-high-availability-in-microservices"></a>Odolnost a vysoká dostupnost v mikroslužbách
 
@@ -77,7 +77,7 @@ Různé orchestrátory může zní podobně, ale diagnostiky a kontroly stavu na
   [*https://www.splunk.com/*](https://www.splunk.com/)
 
 - **EventSource – třída** rozhraní API pro události trasování pro Windows (ETW) \
-  [*https://docs.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource*](https://docs.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource)
+  [*https://docs.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource*](xref:System.Diagnostics.Tracing.EventSource)
 
 >[!div class="step-by-step"]
 >[Předchozí](microservice-based-composite-ui-shape-layout.md)

@@ -2,12 +2,12 @@
 title: Specifické funkce aplikace Windows Workflow Foundation
 ms.date: 03/30/2017
 ms.assetid: e84d12da-a055-45f6-b4d1-878d127b46b6
-ms.openlocfilehash: 4b9a9c5c6395ed27845c8b618e49150a02aa3bda
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: fae42332c19a8b39070d9922b6fec4aadd73505b
+ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57721850"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "57846542"
 ---
 # <a name="windows-workflow-foundation-feature-specifics"></a>Specifické funkce aplikace Windows Workflow Foundation
 
@@ -101,7 +101,7 @@ Konfigurační schéma služby WCF je složitá a poskytuje uživatelům s mnoha
 
 - [Standardní koncový bod elementu](https://go.microsoft.com/fwlink/?LinkId=204942)
 
-- [Služba konfigurace vylepšení v rozhraní .net Framework 4](https://go.microsoft.com/fwlink/?LinkId=204943)
+- [Služba konfigurace vylepšení v rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=204943)
 
 - [Běžnou chybou uživatele v rozhraní .NET 4: Chybným zadáním názvu služby konfigurace WF/WCF](https://go.microsoft.com/fwlink/?LinkId=204944)
 
@@ -263,7 +263,7 @@ Uživatel musí být vyzváni k zadání vstupu. Za normálních okolností byst
 
 ## <a name="wcf-routing-service"></a>Směrovací služba WCF
 
-Směrovací služba je navržena jako obecný softwaru směrovač, který umožňuje řídit, jak tok zpráv WCF mezi klienty a služby. Směrovací služba umožňuje oddělit klienty od služeb, které dává větší svobodu z hlediska konfigurace, může podporovat a flexibilitu, je nutné při úvahách o tom, jak hostovat vaše služby. V rozhraní .NET 3.5 klienty a služby byly úzce párované; Klient musí vědět o všechny potřebné ke komunikaci a kde se nachází služby. Kromě toho WCF v rozhraní .net Framework 3.5 má následující omezení:
+Směrovací služba je navržena jako obecný softwaru směrovač, který umožňuje řídit, jak tok zpráv WCF mezi klienty a služby. Směrovací služba umožňuje oddělit klienty od služeb, které dává větší svobodu z hlediska konfigurace, může podporovat a flexibilitu, je nutné při úvahách o tom, jak hostovat vaše služby. V rozhraní .NET 3.5 klienty a služby byly úzce párované; Klient musí vědět o všechny potřebné ke komunikaci a kde se nachází služby. Kromě toho WCF v rozhraní .NET Framework 3.5 mělo následující omezení:
 
 - Zpracování chyb bylo složité, jak tuto logiku, musela být pevně zakódovaný do klienta.
 
@@ -271,7 +271,7 @@ Směrovací služba je navržena jako obecný softwaru směrovač, který umož�
 
 - Služby byly jen zřídka a dostaneme: jde snadno můžete mít klienta, obraťte se na jednu službu, která implementuje všechno, co, nikoli vyžadující si vybrat mezi více služeb.
 
-Služba směrování v rozhraní .net 4 je navržené tak, aby tyto problémy snadněji řešit. Nová služba Směrování má následující funkce:
+Služba směrování v rozhraní .NET 4 je navržené tak, aby tyto problémy snadněji řešit. Nová služba Směrování má následující funkce:
 
 1. Směrování na základě obsahu (<xref:System.ServiceModel.Dispatcher.MessageFilter> objekty zkontrolovat zprávy k určení, kde má být odeslána.)
 
@@ -327,7 +327,7 @@ Vývojář nechce pevný kód koncové body, protože není známo, kdy bude slu
 
 ## <a name="tracking"></a>Sledování
 
-Pracovní postup sledování poskytuje přehled o spuštění instance pracovního postupu. Sledování události se vysílají z pracovního postupu na úrovni instance pracovního postupu a při spuštění aktivity v rámci pracovního postupu. Sledování účastník pracovního postupu musí být přidán do hostitele pracovního postupu k odběru sledování záznamů. Na sledování záznamy jsou filtrovány pomocí profilu sledování. Rozhraní .net Framework poskytuje účastník sledování ETW (událost trasování pro Windows) a základní profil je nainstalovaný v souboru machine.config.
+Pracovní postup sledování poskytuje přehled o spuštění instance pracovního postupu. Sledování události se vysílají z pracovního postupu na úrovni instance pracovního postupu a při spuštění aktivity v rámci pracovního postupu. Sledování účastník pracovního postupu musí být přidán do hostitele pracovního postupu k odběru sledování záznamů. Na sledování záznamy jsou filtrovány pomocí profilu sledování. Rozhraní .NET Framework poskytuje účastník sledování ETW (událost trasování pro Windows) a základní profil je nainstalovaný v souboru machine.config.
 
 ### <a name="getting-started"></a>Začínáme
 

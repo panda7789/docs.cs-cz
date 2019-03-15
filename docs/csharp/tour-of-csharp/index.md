@@ -1,16 +1,11 @@
 ---
-title: Prohlídku C# - C# Průvodce
-description: Teprve se C#? Naučte se základy jazyka.
+title: 'Prohlídku C# - C# Průvodce'
+description: 'Teprve se C#? Naučte se základy jazyka.'
 ms.date: 08/10/2016
 ms.assetid: ebc727cd-8112-42e7-b59c-3c2873ad661c
-ms.openlocfilehash: bece954c095870651126e486c2c6eb978e78f96d
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
-ms.translationtype: MT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53150391"
 ---
-# <a name="a-tour-of-the-c-language"></a>Připravuje C# jazyka  
+
+# <a name="a-tour-of-the-c-language"></a>Připravuje C# jazyka
 
 C# (čteno "v tématu Sharp") je jednoduchý, moderní, objektově orientované a bezpečnost typů programovací jazyk. C#má jeho kořeny řady jazyků C a bude okamžitě znát programátory C, C++, Javy a JavaScriptu.
 
@@ -73,7 +68,7 @@ Další informace o mnohem víc C#.  V následujících tématech přehledu elem
 * [Delegáti](delegates.md)
     - A ***typ delegáta*** seznamu představuje odkazy na metody pomocí konkrétních parametrů a návratový typ. Delegáty umožňují považovat za entity, které může být přiřazena k proměnné a předány jako parametry metod. Delegáti jsou podobný koncept ukazatelů na funkce v některých jiných jazycích, ale na rozdíl od ukazatelů na funkce, Delegáti jsou objektově orientované a typově bezpečné.
 * [Atributy](attributes.md)
-    * ***Atributy*** programu povolit programy k určení dalších deklarativní informace o typy, členy a dalších entit.
+     * ***Atributy*** programu povolit programy k určení dalších deklarativní informace o typy, členy a dalších entit.
 
->[!div class="step-by-step"]
->[Next](program-structure.md)
+> [!div class="step-by-step"]
+> [Next](program-structure.md)

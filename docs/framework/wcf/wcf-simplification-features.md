@@ -2,12 +2,12 @@
 title: Funkce zjednodušení WCF
 ms.date: 03/30/2017
 ms.assetid: 4535a511-6064-4da0-b361-80262a891663
-ms.openlocfilehash: f4c5d1c0dc5aa9df92368de1266044db3a6c294a
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: 54255e07df5a46cc975ffd4db5c18dc828a1de44
+ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57467178"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "57845269"
 ---
 # <a name="wcf-simplification-features"></a>Funkce zjednodušení WCF
 
@@ -96,7 +96,7 @@ Následující tabulka popisuje nastavení, které se změnily a kde najít dal�
 
 |Vlastnost|On|Nová výchozí hodnota|Další informace|
 |--------------|--------|-----------------|----------------------|
-|třídě channelInitializationTimeout|<xref:System.ServiceModel.NetTcpBinding>|30 sekund|Tato vlastnost určuje, jak dlouho může trvat připojení TCP autentizaci pomocí .net Framing protokolu. Klient potřebuje k odesílání nějaká počáteční data předtím, než má server dostatek informací k provedení ověřování. Tento časový limit je záměrně provedli menší než ReceiveTimeout (10 minut) tak, aby škodlivé neověřené klienty nezachovat připojení vázané na serveru pro dlouho. Výchozí hodnota je 30 sekund. Další informace o <xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.ChannelInitializationTimeout%2A>|
+|třídě channelInitializationTimeout|<xref:System.ServiceModel.NetTcpBinding>|30 sekund|Tato vlastnost určuje, jak dlouho může trvat připojení TCP ke svému pomocí protokolu .NET Framing ověření. Klient potřebuje k odesílání nějaká počáteční data předtím, než má server dostatek informací k provedení ověřování. Tento časový limit je záměrně provedli menší než ReceiveTimeout (10 minut) tak, aby škodlivé neověřené klienty nezachovat připojení vázané na serveru pro dlouho. Výchozí hodnota je 30 sekund. Další informace o <xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.ChannelInitializationTimeout%2A>|
 |listenBacklog|<xref:System.ServiceModel.NetTcpBinding>|16 * počet procesorů|Tato vlastnost úrovni soketu popisuje počet "čekající na přijmout" požadavky ve frontě. Pokud nevyřízené položky fronty naslouchání zaplní, budou odmítnuty nové žádosti o soketu. Další informace o <xref:System.ServiceModel.NetTcpBinding.ListenBacklog%2A>|
 |maxPendingAccepts|ConnectionOrientedTransportBindingElement<br /><br /> SMSvcHost.exe|2 * počet procesorů pro přenos<br /><br /> 4 \* počtu procesorů pro SMSvcHost.exe|Tato vlastnost omezuje počet kanálů, které serveru může být čekání na naslouchací proces. Když MaxPendingAccepts je příliš nízké, bude existovat malý interval času, ve kterém všechny kanály čekání spustili údržby připojení, ale nové kanály, které jste začali naslouchání. Připojení můžou přijít během tohoto intervalu a selže, protože nic čeká se na serveru. Tuto vlastnost lze nastavit tak, že nastavíte <xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.MaxPendingConnections%2A> vlastnost většímu počtu. Další informace najdete v tématu <xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.MaxPendingAccepts%2A> a [konfigurace služby Sdílení portů Net.TCP](../../../docs/framework/wcf/feature-details/configuring-the-net-tcp-port-sharing-service.md)|
 |maxPendingConnections|ConnectionOrientedTransportBindingElement|12 * počet procesorů|Tato vlastnost určuje, kolik připojení přenosu přijal, ale nebyly vyzvednou ServiceModel dispečera. Chcete-li nastavit tuto hodnotu, použijte `MaxConnections` ve vazbě nebo `maxOutboundConnectionsPerEndpoint` v elementu vazby. Další informace o <xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.MaxPendingConnections%2A>|

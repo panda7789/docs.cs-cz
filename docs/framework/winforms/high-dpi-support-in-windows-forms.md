@@ -9,18 +9,18 @@ helpviewer_keywords:
 ms.assetid: 075ea4c3-900c-4f8a-9dd2-13ea6804346b
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3dbb5af9c5cf1d8796544592602c645584d21a04
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 1641702c7b1c3d3b0e83c59a96529de70f699d17
+ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57711785"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "57843606"
 ---
 # <a name="high-dpi-support-in-windows-forms"></a>Podpora vysoké DPI ve Windows Forms
 
-Od verze rozhraní .NET Framework 4.7, Windows Forms obsahuje vylepšení pro běžné vysokého nastavení DPI a scénáře dynamických DPI. Zde jsou některé z nich: 
+Od verze rozhraní .NET Framework 4.7, Windows Forms obsahuje vylepšení pro běžné vysokého nastavení DPI a scénáře dynamických DPI. Zde jsou některé z nich:
 
-- Vylepšení ve škálování a rozložení počtu Windows Forms ovládací prvky, jako <xref:System.Windows.Forms.MonthCalendar> ovládacího prvku a <xref:System.Windows.Forms.CheckedListBox> ovládacího prvku. 
+- Vylepšení ve škálování a rozložení počtu Windows Forms ovládací prvky, jako <xref:System.Windows.Forms.MonthCalendar> ovládacího prvku a <xref:System.Windows.Forms.CheckedListBox> ovládacího prvku.
 
 - Škálování jednoho průchodu.  V rozhraní .NET Framework 4.6 a dřívějších verzích škálování se provádí prostřednictvím několik průchodů, která způsobila některé ovládací prvky škálovat víc než bylo nutné.
 
@@ -30,7 +30,7 @@ Ve verzích rozhraní .NET Framework počínaje .NET Framework 4.7 rozšířenou
 
 ## <a name="configuring-your-windows-forms-app-for-high-dpi-support"></a>Konfigurace aplikace Windows Forms pro podporu vysoké rozlišení DPI
 
-Nové funkce Windows Forms, které podporují vysokou rozpoznání nastavení dpi jsou k dispozici pouze v aplikacích, které cílí .NET Framework 4.7 a běží na operačních systémech Windows od verze Windows 10 Creators Update. 
+Nové funkce Windows Forms, které podporují vysokou rozpoznání nastavení dpi jsou k dispozici pouze v aplikacích, které cílí .NET Framework 4.7 a běží na operačních systémech Windows od verze Windows 10 Creators Update.
 
 Kromě toho Konfigurace vysoké rozlišení DPI podpory ve vaší aplikaci Windows Forms, je nutné takto:
 
@@ -49,27 +49,27 @@ Kromě toho Konfigurace vysoké rozlišení DPI podpory ve vaší aplikaci Windo
 
 - Povolit sledování DPI podle monitoru *app.config* souboru.
 
-  Windows Forms zavádí nový [ `<System.Windows.Forms.ApplicationConfigurationSection>` ](../configure-apps/file-schema/winforms/index.md) element na podporu nových funkcí a od verze rozhraní .NET Framework 4.7 přidání vlastního nastavení. Abyste mohli využívat nové funkce, které podporují vysoké rozlišení DPI, přidejte následující konfigurační soubor aplikace.   
+  Windows Forms zavádí nový [ `<System.Windows.Forms.ApplicationConfigurationSection>` ](../configure-apps/file-schema/winforms/index.md) element na podporu nových funkcí a od verze rozhraní .NET Framework 4.7 přidání vlastního nastavení. Abyste mohli využívat nové funkce, které podporují vysoké rozlišení DPI, přidejte následující konfigurační soubor aplikace.
 
   ```xml
   <System.Windows.Forms.ApplicationConfigurationSection>
     <add key="DpiAwareness" value="PerMonitorV2" />
-  </System.Windows.Forms.ApplicationConfigurationSection>      
+  </System.Windows.Forms.ApplicationConfigurationSection>
   ```
-   
+
   > [!IMPORTANT]
   > V předchozích verzích rozhraní .NET Framework použít manifest přidává vysoké rozlišení DPI. Tento přístup je už se nedoporučuje, protože přepisuje nastaveních definovaných v souboru app.config.
-   
+
 - Zavolejte statickou <xref:System.Windows.Forms.Application.EnableVisualStyles%2A> metody.
-   
+
   To by mělo být prvním volání metoda ve vstupní bod aplikace. Příklad:
-   
+
   ```csharp
   static void Main()
   {
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
-      Application.Run(new Form2());   
+      Application.Run(new Form2());
   }
   ```
 
@@ -80,8 +80,8 @@ Nastavení `DpiAwareness` hodnota, která se `PerMonitorV2` umožňuje všechny 
 ```xml
 <System.Windows.Forms.ApplicationConfigurationSection>
   <add key="DpiAwareness" value="PerMonitorV2" />
-  <add key="EnableWindowsFormsHighDpiAutoResizing" value="false" /> 
-</System.Windows.Forms.ApplicationConfigurationSection>    
+  <add key="EnableWindowsFormsHighDpiAutoResizing" value="false" />
+</System.Windows.Forms.ApplicationConfigurationSection>
 ```
 
 Seznam jednotlivých klíče a jejich hodnoty, najdete v části [přidat Element konfigurace aplikace Windows Forms](../configure-apps/file-schema/winforms/windows-forms-add-configuration-element.md).

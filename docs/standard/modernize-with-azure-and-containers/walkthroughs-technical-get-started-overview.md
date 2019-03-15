@@ -4,12 +4,12 @@ description: Modernizace stávajících aplikací .NET pomocí cloudu Azure a ko
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 04/28/2018
-ms.openlocfilehash: 15ea074693a75aa04b4f3a03e6e5e3d7f748cea1
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.openlocfilehash: e89f1e79eec16919b2e70952392b6f640433156b
+ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57674936"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "57846256"
 ---
 # <a name="walkthroughs-and-technical-get-started-overview"></a>Návody a technický přehled Začínáme
 
@@ -83,7 +83,7 @@ Výhody tohoto názorného postupu jsou jednoduché: Získejte zkušenosti s kó
 Tento obsah podrobnější zkoumání na Wiki úložiště GitHub:
 
 - [Prohlídka na základní technologie ASP.NET MVC a aplikace webových formulářů "starší"](https://github.com/dotnet-architecture/eShopModernizing/wiki/01.-Tour-on-the-ASP.NET-MVC-and-WebForms-apps-implementation-code)
--   [Prohlídka na aplikace WinForms v "starší" (3 vrstvy) a služby WCF směrného plánu](https://github.com/dotnet-architecture/eShopModernizing/wiki/21.-Tour-on-the-WCF-service-and-WinForms-apps)
+- [Prohlídka na aplikace WinForms v "starší" (3 vrstvy) a služby WCF směrného plánu](https://github.com/dotnet-architecture/eShopModernizing/wiki/21.-Tour-on-the-WCF-service-and-WinForms-apps)
 
 ## <a name="walkthrough-2-containerize-your-existing-net-applications-with-windows-containers"></a>Návod 2: Kontejnerizace existující aplikace .NET s kontejnery Windows
 

@@ -4,12 +4,12 @@ description: Tento kurz vysvětluje, jak uspořádat a Testovací projekty .NET 
 author: cartermp
 ms.date: 09/10/2018
 ms.custom: seodec18
-ms.openlocfilehash: b8460cb04297a0a5c1785009cbf3d86f5e133b00
-ms.sourcegitcommit: 5d9f4b805787f890ca6e0dc7ea30a43018bc9cbb
+ms.openlocfilehash: ffd15edc633142116089d206135eb16416eb14cb
+ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57788255"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "57845905"
 ---
 # <a name="organizing-and-testing-projects-with-the-net-core-command-line"></a>Uspořádání a testování projektů pomocí příkazového řádku .NET Core
 
@@ -48,7 +48,7 @@ Projekty, které logicky skupiny soubory do složek, které jsou snadno procház
 
 Následující postup, můžete buď absolvovat pomocí [NewTypes domácí zvířata ukázka](https://github.com/dotnet/samples/tree/master/core/console-apps/NewTypesMsBuild) nebo vytvořit vlastní soubory a složky. Typy jsou logicky uspořádány do struktury složek, který umožňuje přidání dalších typů později, a testy jsou také logicky umístěny ve složkách umožňující přidání další testy později.
 
-Ukázka obsahuje dva typy `Dog` a `Cat`a je jim implementovat obecné rozhraní `IPet`. Pro `NewTypes` projektu, vaším cílem je uspořádat domácí mazlíček souvisejících typů do *Mazlíčci* složky. Pokud se později přidá jinou sadu typů *WildAnimals* například přejdou na *NewTypes* složce společně s *Mazlíčci* složky. *WildAnimals* složka může obsahovat typy pro zvířata, které nejsou mazlíčků, jako například `Squirrel` a `Rabbit` typy. Tímto způsobem přidávání typů projektu zůstane dobře uspořádané. 
+Ukázka obsahuje dva typy `Dog` a `Cat`a je jim implementovat obecné rozhraní `IPet`. Pro `NewTypes` projektu, vaším cílem je uspořádat domácí mazlíček souvisejících typů do *Mazlíčci* složky. Pokud se později přidá jinou sadu typů *WildAnimals* například přejdou na *NewTypes* složce společně s *Mazlíčci* složky. *WildAnimals* složka může obsahovat typy pro zvířata, které nejsou mazlíčků, jako například `Squirrel` a `Rabbit` typy. Tímto způsobem přidávání typů projektu zůstane dobře uspořádané.
 
 Vytvořte následující strukturu složek s obsahem souboru uvedené:
 
@@ -144,16 +144,16 @@ public class PetTests
     {
         string expected = "Woof!";
         string actual = new Dog().TalkToOwner();
-        
+
         Assert.NotEqual(expected, actual);
     }
-    
+
     [Fact]
     public void CatTalkToOwnerReturnsMeow()
     {
         string expected = "Meow!";
         string actual = new Cat().TalkToOwner();
-        
+
         Assert.NotEqual(expected, actual);
     }
 }
@@ -184,9 +184,8 @@ Následuje ukázka struktury dokončený projekt:
 
 Spustit v *test/NewTypesTests* adresáře. Obnovit testovací projekt s [ `dotnet restore` ](../tools/dotnet-restore.md) příkazu. Spustit testy pomocí [ `dotnet test` ](../tools/dotnet-test.md) příkazu. Tento příkaz spustí nástroj test runner zadané v souboru projektu.
 
- [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
+[!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
 
- 
 Podle očekávání, testování selže a konzoly se zobrazí následující výstup:
 
 ```
@@ -238,4 +237,3 @@ Test execution time: 1.6029 Seconds
 Testuje se předá. Domácí mazlíčky typy metody vrací správné hodnoty, když mluvíme vlastníkovi.
 
 Když jste se naučili techniky k uspořádání a testování projektů s použitím xUnit. Pomocí následujících postupů jejich použití ve vašich vlastních projektů přejdete vpřed. *Šťastné kódování!*
-

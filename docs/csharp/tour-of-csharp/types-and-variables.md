@@ -3,12 +3,12 @@ title: C#Typy a proměnné – připravuje C# jazyka
 description: Další informace o definování typů a deklarace proměnné vC#
 ms.date: 08/10/2016
 ms.assetid: f8a8051e-0049-43f1-b594-9c84cc7b1224
-ms.openlocfilehash: 6880fa51ca30dadac901d2b86de189b59658d164
-ms.sourcegitcommit: 79066169e93d9d65203028b21983574ad9dcf6b4
+ms.openlocfilehash: 5159d75c601bbcb8248a11993a4aaf39299734f0
+ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57211998"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "57846607"
 ---
 # <a name="types-and-variables"></a>Typy a proměnné
 

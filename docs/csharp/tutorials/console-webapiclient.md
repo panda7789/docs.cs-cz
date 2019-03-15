@@ -3,23 +3,25 @@ title: Vytvoření klienta REST s využitím .NET Core
 description: V tomto kurzu se naučíte mnoho funkcí v jazyce C# a .NET Core.
 ms.date: 03/06/2017
 ms.assetid: 51033ce2-7a53-4cdd-966d-9da15c8204d2
-ms.openlocfilehash: 521c6edfa7163219ea86c6fb8444bc95859c9aa1
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: e7859e9db53e8b126fd66b88d9a5e7565ea1a4ad
+ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53126638"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "57846165"
 ---
 # <a name="rest-client"></a>Klient REST
 
 ## <a name="introduction"></a>Úvod
+
 V tomto kurzu se naučíte mnoho funkcí v jazyce C# a .NET Core. Získáte informace:
-*   Základní informace o .NET Core rozhraní příkazového řádku (CLI).
-*   Přehled funkcí jazyka C#.
-*   Správa závislostí nuget
-*   Komunikace protokolu HTTP
-*   Informace o zpracování JSON
-*   Správa konfigurace s atributy. 
+
+* Základní informace o .NET Core rozhraní příkazového řádku (CLI).
+* Přehled funkcí jazyka C#.
+* Správa závislostí nuget
+* Komunikace protokolu HTTP
+* Informace o zpracování JSON
+* Správa konfigurace s atributy.
 
 Vytvoříte aplikaci, která vydává požadavků HTTP pro službu REST na Githubu. Budete číst informace ve formátu JSON a převést paketu JSON na objekty jazyka C#. Nakonec uvidíte, jak pracovat s objekty jazyka C#.
 
@@ -28,15 +30,20 @@ Existuje mnoho funkcí v tomto kurzu. Vytvořme je jeden po druhém.
 Pokud chcete postupovat podle [konečný vzorek](https://github.com/dotnet/samples/tree/master/csharp/getting-started/console-webapiclient) pro toto téma, můžete ji stáhnout. Pokyny ke stažení najdete v tématu [ukázek a kurzů](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
 
 ## <a name="prerequisites"></a>Požadavky
-Budete muset nastavit počítač pro spuštění .NET core. Můžete najít pokyny k instalaci na [.NET Core](https://www.microsoft.com/net/core) stránky. Tuto aplikaci můžete spustit na Windows, Linux, macOS nebo v kontejneru Dockeru. Bude potřeba nainstalovat váš oblíbený editor kódu. Popisy níže použití [Visual Studio Code](https://code.visualstudio.com/), což je open source pro různé platformy editoru. Ale můžete použít jakýkoli nástroje jste obeznámeni.
+
+Budete muset nastavit počítač pro spuštění .NET core. Můžete najít pokyny k instalaci na [.NET Core](https://www.microsoft.com/net/core) stránky. Tuto aplikaci můžete spustit na Windows, Linux, macOS nebo v kontejneru Dockeru.
+Bude potřeba nainstalovat váš oblíbený editor kódu. Popisy níže použití [Visual Studio Code](https://code.visualstudio.com/), což je open source pro různé platformy editoru. Ale můžete použít jakýkoli nástroje jste obeznámeni.
+
 ## <a name="create-the-application"></a>Vytvoření aplikace
+
 Prvním krokem je vytvoření nové aplikace. Otevřete příkazový řádek a vytvořte nový adresář pro vaši aplikaci. Ujistěte se, že do aktuálního adresáře. Zadejte příkaz `dotnet new console` příkazového řádku. Tím se vytvoří počáteční soubory pro základní aplikace "Hello World".
 
-Než začnete, úpravy, Podívejme se kroky ke spuštění jednoduché aplikace Hello World. Po vytvoření aplikace, zadejte `dotnet restore` ([viz Poznámka](#dotnet-restore-note)) na příkazovém řádku. Tento příkaz spustí proces obnovení balíčku NuGet. Správce balíčků NuGet je Správce balíčků .NET. Tento příkaz načte všechny chybějící závislosti pro váš projekt. Toto je nový projekt, závislosti nejsou v místě, tak při prvním spuštění se stáhnout .NET Core framework. Po provedení tohoto kroku počáteční je pouze potřeba spustit `dotnet restore` ([viz Poznámka](#dotnet-restore-note)) při přidání nové závislé balíčky nebo aktualizace verze závislosti.  
+Než začnete, úpravy, Podívejme se kroky ke spuštění jednoduché aplikace Hello World. Po vytvoření aplikace, zadejte `dotnet restore` ([viz Poznámka](#dotnet-restore-note)) na příkazovém řádku. Tento příkaz spustí proces obnovení balíčku NuGet. Správce balíčků NuGet je Správce balíčků .NET. Tento příkaz načte všechny chybějící závislosti pro váš projekt. Toto je nový projekt, závislosti nejsou v místě, tak při prvním spuštění se stáhnout .NET Core framework. Po provedení tohoto kroku počáteční je pouze potřeba spustit `dotnet restore` ([viz Poznámka](#dotnet-restore-note)) při přidání nové závislé balíčky nebo aktualizace verze závislosti.
 
 Po obnovení balíčků, spustíte `dotnet build`. To spustí modul sestavení a vytvoří vaší aplikace. Nakonec spuštěním `dotnet run` ke spuštění aplikace.
 
 ## <a name="adding-new-dependencies"></a>Přidání nové závislosti
+
 Jedním z hlavních cílů pro .NET Core je minimální velikost instalace rozhraní .NET. Pokud aplikace potřebuje další knihovny pro některé z jejích funkcí, přidejte tyto závislosti do projektu C# (\*.csproj) souboru. V našem příkladu bude potřeba přidat `System.Runtime.Serialization.Json` balíček, vaše aplikace dokáže zpracovat odpověďmi ve formátu JSON.
 
 Otevřete váš `csproj` souboru projektu. První řádek souboru by měl vypadat jako:
@@ -45,18 +52,20 @@ Otevřete váš `csproj` souboru projektu. První řádek souboru by měl vypada
 <Project Sdk="Microsoft.NET.Sdk">
 ```
 
-Přidejte následující ihned po tomto řádku: 
+Přidejte následující ihned po tomto řádku:
 
 ```xml
    <ItemGroup>
       <PackageReference Include="System.Runtime.Serialization.Json" Version="4.3.0" />
-   </ItemGroup> 
+   </ItemGroup>
 ```
+
 Většina editory kódu bude poskytovat dokončování pro různé verze knihoven. Obvykle budete chtít používat nejnovější verzi balíčku, který přidáte. Je důležité, abyste měli jistotu, že odpovídají verze všechny balíčky a aby splňovaly verzi rozhraní framework aplikace .NET Core.
 
 Po provedení těchto změn, měli byste spustit `dotnet restore` ([viz Poznámka](#dotnet-restore-note)) znovu tak, aby se balíček nainstaluje do systému.
 
 ## <a name="making-web-requests"></a>Vytváření webových požadavků
+
 Teď jste připravení začít, načítání dat z webu. V této aplikaci, nemusíte se věnovat čtení informací z [rozhraní API Githubu](https://developer.github.com/v3/). Načteme informace o projektech v rámci [.NET Foundation](https://www.dotnetfoundation.org/) zastřešující. Začnete tím, že požadavek na rozhraní API Githubu k načtení informací o projektech. Koncový bod, který budete používat: [ https://api.github.com/orgs/dotnet/repos ](https://api.github.com/orgs/dotnet/repos). Budete chtít získat všechny informace o těchto projektů, takže budete používat požadavek HTTP GET.
 Váš prohlížeč také používá HTTP GET požadavky, takže vložíte je, že adresy URL do prohlížeče informací vám bude přijímat a zpracování.
 
@@ -66,7 +75,6 @@ Začněte tím, že asynchronní metody. Implementace budete vyplňte během vyt
 ```csharp
 private static async Task ProcessRepositories()
 {
-    
 }
 ```
 
@@ -108,7 +116,7 @@ namespace WebAPIClient
 }
 ```
 
- Vraťme se k `ProcessRepositories` metoda a vyplňte první verzi:
+Vraťme se k `ProcessRepositories` metoda a vyplňte první verzi:
 
 ```csharp
 private static async Task ProcessRepositories()
@@ -135,10 +143,10 @@ using System.Net.Http.Headers;
 Tato první verze díky webový požadavek na čtení seznamu všechna úložiště v rámci organizace foundation dotnet. (ID Githubu pro .NET Foundation je "dotnet"). Nastavit několik prvních řádků <xref:System.Net.Http.HttpClient> pro tento požadavek. Nejprve je nakonfigurován tak, aby přijímal odpověďmi ve formátu JSON Githubu.
 Tento formát je jednoduše JSON. Další řádek přidá hlavičku uživatelského agenta na všechny požadavky z tohoto objektu. Tyto dvě záhlaví jsou kontrolovány v kódu serveru Githubu a jsou nezbytné k načtení informací z Githubu.
 
-Po dokončení konfigurace <xref:System.Net.Http.HttpClient>, provedete webové žádosti a načíst odpovědi. V této první verzi, můžete použít <xref:System.Net.Http.HttpClient.GetStringAsync(System.String)?displayProperty=nameWithType> metoda pohodlí. Tato metoda pohodlí spustí úlohu, která provádí na webový požadavek, a potom po návratu požadavek načte datový proud odpovědí a extrahuje obsah z datového proudu. Text odpovědi se vrátí jako <xref:System.String>. Řetězec je k dispozici po dokončení úlohy. 
+Po dokončení konfigurace <xref:System.Net.Http.HttpClient>, provedete webové žádosti a načíst odpovědi. V této první verzi, můžete použít <xref:System.Net.Http.HttpClient.GetStringAsync(System.String)?displayProperty=nameWithType> metoda pohodlí. Tato metoda pohodlí spustí úlohu, která provádí na webový požadavek, a potom po návratu požadavek načte datový proud odpovědí a extrahuje obsah z datového proudu. Text odpovědi se vrátí jako <xref:System.String>. Řetězec je k dispozici po dokončení úlohy.
 
 Poslední dva řádky této metody await tento úkol a pak vytiskněte odpovědi do konzoly.
-Sestavení aplikace a spustíme ji. Upozornění sestavení je pryč nyní, protože `ProcessRepositories` teď obsahují `await` operátor. Uvidíte, že se že jedná o dlouho zobrazení JSON formátovaného textu.   
+Sestavení aplikace a spustíme ji. Upozornění sestavení je pryč nyní, protože `ProcessRepositories` teď obsahují `await` operátor. Uvidíte, že se že jedná o dlouho zobrazení JSON formátovaného textu.
 
 ## <a name="processing-the-json-result"></a>Zpracování výsledku JSON
 
@@ -156,7 +164,7 @@ namespace WebAPIClient
         public string name;
     }
 }
-``` 
+```
 
 Výše uvedený kód umístěte do nového souboru s názvem "repo.cs". Tato verze třídy představuje nejjednodušší způsob zpracování dat JSON. Název třídy a název člena shodovat s názvy používanými v paketu JSON, namísto následující převody C#. Opravíte to tím, že poskytuje některé atributy konfigurace později. Tato třída ukazuje další důležitou funkcí JSON serializace a deserializace: Ne všechna pole v paketu JSON jsou součástí této třídy.
 Serializátor JSON bude ignorovat informace, které není součástí typu třídy se používají.
@@ -184,7 +192,8 @@ var repositories = serializer.ReadObject(await streamTask) as List<repo>;
 
 Všimněte si, že teď používáte <xref:System.Net.Http.HttpClient.GetStreamAsync(System.String)> místo <xref:System.Net.Http.HttpClient.GetStringAsync(System.String)>. Serializátoru, který používá jako zdroj datového proudu namísto řetězce. Pojďme vysvětlují několik funkcí jazyka C#, která se používají v druhý řádek výše. Argument <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(System.IO.Stream)> je `await` výrazu. Operátor await výrazy se mohou objevit skoro kdekoli v kódu, i když až doteď jste viděli pouze jejich jako součást příkazu přiřazení.
 
-Za druhé `as` operátor převede typ času kompilace `object` k `List<repo>`. Deklarace <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(System.IO.Stream)> deklaruje, že vrátí objekt typu <xref:System.Object?displayProperty=nameWithType>. <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(System.IO.Stream)> Vrátí typ, který jste zadali při jeho vytvořený (`List<repo>` v tomto kurzu). Pokud převod selže, `as` vyhodnotí jako operátor `null`, namísto vyvolání výjimky.
+Za druhé `as` operátor převede typ času kompilace `object` k `List<repo>`.
+Deklarace <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(System.IO.Stream)> deklaruje, že vrátí objekt typu <xref:System.Object?displayProperty=nameWithType>. <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(System.IO.Stream)> Vrátí typ, který jste zadali při jeho vytvořený (`List<repo>` v tomto kurzu). Pokud převod selže, `as` vyhodnotí jako operátor `null`, namísto vyvolání výjimky.
 
 Téměř dokončení této části. Teď, když jste převést JSON na objekty jazyka C#, Pojďme zobrazovaný název každého úložiště. Nahraďte řádky, které čtou:
 
@@ -204,7 +213,7 @@ Kompilace a spuštění aplikace. Vytiskne názvy úložišť, které jsou souč
 
 ## <a name="controlling-serialization"></a>Řízení serializace
 
-Předtím, než přidáte další funkce, Pojďme adres `repo` typ a nastavte ji více standard jazyka C# pro vytváření. Provedete to anotací `repo` typ s *atributy* , které řídí, jak funguje serializátor JSON. Ve vašem případě použijete tyto atributy definovat mapování mezi názvy klíčů JSON a C# názvy tříd a členů. Jsou dva atributy použité `DataContract` atribut a `DataMember` atribut. Podle konvence, všechny třídy atributu končit příponou `Attribute`. Ale není potřeba použít tuto příponu při použití atributu. 
+Předtím, než přidáte další funkce, Pojďme adres `repo` typ a nastavte ji více standard jazyka C# pro vytváření. Provedete to anotací `repo` typ s *atributy* , které řídí, jak funguje serializátor JSON. Ve vašem případě použijete tyto atributy definovat mapování mezi názvy klíčů JSON a C# názvy tříd a členů. Jsou dva atributy použité `DataContract` atribut a `DataMember` atribut. Podle konvence, všechny třídy atributu končit příponou `Attribute`. Ale není potřeba použít tuto příponu při použití atributu.
 
 `DataContract` a `DataMember` atributy jsou v jiné knihovny, takže budete muset přidat tuto knihovnu do souboru projektu C# jako závislost. Přidejte následující řádek, který `<ItemGroup>` část souboru projektu:
 
@@ -261,8 +270,8 @@ public string Name { get; set; }
 Kompilátor generuje text `get` a `set` přístupové objekty, stejně jako soukromé pole pro uložení názvu. By měl vypadat přibližně následující kód, který můžete ručně zadat:
 
 ```csharp
-public string Name 
-{ 
+public string Name
+{
     get { return this._name; }
     set { this._name = value; }
 }
@@ -334,6 +343,7 @@ foreach (var repo in repositories)
     Console.WriteLine();
 }
 ```
+
 V posledním kroku Pojďme přidat informace o poslední operaci push. Tyto informace je ve formátu tímto způsobem v odpovědi JSON:
 
 ```json
@@ -375,10 +385,11 @@ Console.WriteLine(repo.LastPush);
 ```
 
 Vaše verze by měla odpovídat nyní [dokončení ukázkové](https://github.com/dotnet/samples/tree/master/csharp/getting-started/console-webapiclient).
- 
+
 ## <a name="conclusion"></a>Závěr
 
 Tento kurz vám ukázal vytvoření webových požadavků, výsledek analyzovat a zobrazovat vlastnosti těchto výsledků. Jste také přidali nové balíčky jako závislosti ve vašem projektu. Jste viděli některé z funkcí jazyka C# podporující objektově orientované techniky.
 
 <a name="dotnet-restore-note"></a>
+
 [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]

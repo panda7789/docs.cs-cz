@@ -2,12 +2,12 @@
 title: Nástroj Contract-First
 ms.date: 03/30/2017
 ms.assetid: 0a880690-f460-4475-a5f4-9f91ce08fcc6
-ms.openlocfilehash: 86ef109425a75e46e056447f4f40df36aa332293
-ms.sourcegitcommit: 700b9003ea6bdd83a53458bbc436c9b5778344f1
+ms.openlocfilehash: ef19843d6c8a9de0b926dd8512f5a58a5966e1bf
+ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48261612"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "57846178"
 ---
 # <a name="contract-first-tool"></a>Nástroj Contract-First
 Kontrakty služeb často potřebují vytvořit z existujících služeb. V [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], třídy kontraktu dat může automaticky vytvořen z existující služby používat nástroj pro upřednostnění kontraktu. Pokud chcete použít nástroj pro upřednostnění kontraktu, musí být soubor definice schématu XML (XSD) stažen místně; Nástroj nemůže importovat kontrakty vzdálených dat přes protokol HTTP.
@@ -87,7 +87,7 @@ Kontrakty služeb často potřebují vytvořit z existujících služeb. V [!INC
 
 -   **ImportXMLTypes**: Toto nastavení určuje, jestli se má nakonfigurovat serializátor kontraktu dat. Chcete-li použít <xref:System.SerializableAttribute> atribut třídy bez <xref:System.Runtime.Serialization.DataContractAttribute> atribut.  Toto nastavení platí, pouze pokud **serializátor režimu** je nastavena na **serializátor kontraktu dat**.
 
--   **SupportFx35TypedDataSets**: Toto nastavení určuje, jestli se mají poskytnout další funkce pro typové datové sady vytvořené pro rozhraní .net Framework 3.5. Když **serializátor režimu** je nastavena na **serializátor XML**, <xref:System.Data.Design.TypedDataSetSchemaImporterExtensionFx35> rozšíření se přidají do programu pro import schématu XML, když je tato hodnota nastavena na hodnotu True. Při **serializátor režimu** je nastavena na **serializátor kontraktu dat**, typ <xref:System.DateTimeOffset> budou vyloučeny z odkazů, pokud tato hodnota nastavena na hodnotu False, tak, aby <xref:System.DateTimeOffset> se vždy vygeneruje pro starší verze rozhraní framework.
+-   **SupportFx35TypedDataSets**: Toto nastavení určuje, jestli se mají poskytnout dodatečné funkce pro typové datové sady vytvořené pro rozhraní .NET Framework 3.5. Když **serializátor režimu** je nastavena na **serializátor XML**, <xref:System.Data.Design.TypedDataSetSchemaImporterExtensionFx35> rozšíření se přidají do programu pro import schématu XML, když je tato hodnota nastavena na hodnotu True. Při **serializátor režimu** je nastavena na **serializátor kontraktu dat**, typ <xref:System.DateTimeOffset> budou vyloučeny z odkazů, pokud tato hodnota nastavena na hodnotu False, tak, aby <xref:System.DateTimeOffset> se vždy vygeneruje pro starší verze rozhraní framework.
 
 -   **InputXsdFiles**: Toto nastavení určuje seznam vstupních souborů. Každý soubor musí obsahovat platné schéma XML.
 

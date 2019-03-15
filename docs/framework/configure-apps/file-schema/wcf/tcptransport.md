@@ -2,12 +2,12 @@
 title: <tcpTransport>
 ms.date: 03/30/2017
 ms.assetid: 8fcd18c1-9958-42e7-b442-7903f7bdb563
-ms.openlocfilehash: 20591186448fa1c3b4a91ed303bd2a5c6e452491
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 683c28d626f32971e7e1fa5f50343b3e7ea125be
+ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55272016"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "57845957"
 ---
 # <a name="tcptransport"></a>\<tcpTransport>
 Definuje přenos TCP, který mohou využívat pro vlastní vazbu kanálu pro přenos zpráv.  
@@ -49,7 +49,7 @@ Definuje přenos TCP, který mohou využívat pro vlastní vazbu kanálu pro př
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|třídě channelInitializationTimeout|Získá nebo nastaví časový limit pro inicializaci kanálu na přijetí.  Maximální doba kanálu může být ve stavu inicializace před jeho odpojením během několika sekund. Tato kvóta obsahuje dobu připojení protokolu TCP může trvat až ke své autentizaci pomocí .net Framing zprávu protokolu. Klient potřebuje k odesílání nějaká počáteční data předtím, než má server dostatek informací k provedení ověřování. Výchozí hodnota je 30 sekund.|  
+|třídě channelInitializationTimeout|Získá nebo nastaví časový limit pro inicializaci kanálu na přijetí.  Maximální doba kanálu může být ve stavu inicializace před jeho odpojením během několika sekund. Tato kvóta obsahuje čas připojení TCP provádět ověření pomocí protokolu rámce zpráv technologie .NET. Klient potřebuje k odesílání nějaká počáteční data předtím, než má server dostatek informací k provedení ověřování. Výchozí hodnota je 30 sekund.|  
 |connectionBufferSize|Získá nebo nastaví velikost vyrovnávací paměti použité k přenosu bloku serializovaných zpráv od klienta nebo služby.|  
 |hostNameComparisonMode|Získá nebo nastaví hodnotu určující, zda je ke zpřístupnění služby při shodě s identifikátoru URI používá název hostitele.|  
 |listenBacklog|Maximální počet připojení zařazených do fronty požadavků, které mohou být nevyřízeny pro webovou službu. `connectionLeaseTimeout` Atribut omezuje doby trvání, klient bude čekat před vyvolání výjimky připojení připojený k Internetu. Toto je vlastnost úrovni soketu, která určuje maximální počet připojení zařazených do fronty požadavků, které mohou být nevyřízeny pro webovou službu. Když ListenBacklog je příliš nízké, WCF zastaví přijímá žádosti a proto vyřadit nová připojení, dokud server potvrdí některé z existujících připojení zařazených do fronty. Výchozí hodnota je 16 * počet procesorů.|  

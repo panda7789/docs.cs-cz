@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/11/2018
-ms.openlocfilehash: b283916d6ae4d19fdc6a4f7976a3adbb66d26b2c
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: b2ede45afee93e8d87a22b2b489eb2a230e04e7d
+ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53143400"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "57844272"
 ---
 # <a name="when-to-choose-net-core-for-docker-containers"></a>Kdy pro kontejnery Dockeru zvolit .NET Core
 
@@ -29,9 +29,9 @@ Je zřejmé Pokud je vaším cílem je, aby aplikace (webová aplikace nebo slu�
 
 [Visual Studio pro Mac](https://www.visualstudio.com/vs/visual-studio-mac/) je integrované vývojové prostředí, vývoj Xamarin Studio, který běží v systému macOS a podporuje vývoj aplikací založených na Dockeru. To by měl být upřednostňovanou volbu pro vývojáře pracující na počítačích Mac, které také chtějí využívat výkonné integrované vývojové prostředí.
 
-Můžete také použít [Visual Studio Code](https://code.visualstudio.com/) (VS Code) v systémech macOS, Linux a Windows. VS Code plně podporuje .NET Core, včetně technologie IntelliSense a ladění. Vzhledem k tomu, že VS Code je jednoduchý editor, je můžete použít pro vývoj kontejnerizovaných aplikací v počítačích Mac ve spojení s rozhraní příkazového řádku Dockeru a [rozhraní příkazového řádku .NET Core (CLI)](https://docs.microsoft.com/dotnet/core/tools/?tabs=netcore2x). .NET Core můžete také směrovat pomocí editorů nejvíce třetích stran, jako je Sublime (emacs), vi a OmniSharp projekt open source, který také poskytuje podporu technologie IntelliSense.
+Můžete také použít [Visual Studio Code](https://code.visualstudio.com/) (VS Code) v systémech macOS, Linux a Windows. VS Code plně podporuje .NET Core, včetně technologie IntelliSense a ladění. Vzhledem k tomu, že VS Code je jednoduchý editor, je můžete použít pro vývoj kontejnerizovaných aplikací v počítačích Mac ve spojení s rozhraní příkazového řádku Dockeru a [rozhraní příkazového řádku .NET Core (CLI)](../../../core/tools/index.md). .NET Core můžete také směrovat pomocí editorů nejvíce třetích stran, jako je Sublime (emacs), vi a OmniSharp projekt open source, který také poskytuje podporu technologie IntelliSense.
 
-Kromě Integrovaná vývojová prostředí a editory, můžete použít [rozhraní příkazového řádku .NET Core](https://docs.microsoft.com/dotnet/core/tools/?tabs=netcore2x) nástroje pro všechny podporované platformy.
+Kromě Integrovaná vývojová prostředí a editory, můžete použít [rozhraní příkazového řádku .NET Core](../../../core/tools/index.md) nástroje pro všechny podporované platformy.
 
 ## <a name="using-containers-for-new-green-field-projects"></a>Pomocí kontejnerů pro nové projekty ("zelená pole")
 

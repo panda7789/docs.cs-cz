@@ -2,12 +2,12 @@
 title: Asynchronní programování
 ms.date: 10/18/2018
 ms.assetid: 85da7447-7125-426e-aa5f-438a290d1f77
-ms.openlocfilehash: 30eb07f9f6f3a9e1d1d6a346ca0dca272c262bb3
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: b13ff7f67e7a62e071a27a77e72b7844dcb74d73
+ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57366124"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "57846126"
 ---
 # <a name="asynchronous-programming"></a>Asynchronní programování
 
@@ -38,9 +38,9 @@ Další informace o asynchronní programovací funkce, která byla zavedena v [!
 
 - [Asynchronní programování pomocí modifikátoru Async a operátoru Await (Visual Basic)](../../../visual-basic/programming-guide/concepts/async/index.md)
 
-- [Použití SqlDataReader nový asynchronní metody v rozhraní .net 4.5 (část 1)](https://blogs.msdn.microsoft.com/adonet/2012/04/20/using-sqldatareaders-new-async-methods-in-net-4-5/)
+- [Pomocí SqlDataReader nový asynchronní metody v rozhraní .NET 4.5 (část 1)](https://blogs.msdn.microsoft.com/adonet/2012/04/20/using-sqldatareaders-new-async-methods-in-net-4-5/)
 
-- [Použití SqlDataReader nový asynchronní metody v rozhraní .net 4.5 (část 2)](https://blogs.msdn.microsoft.com/adonet/2012/07/15/using-sqldatareaders-new-async-methods-in-net-4-5-part-2-examples/)
+- [Pomocí SqlDataReader nový asynchronní metody v rozhraní .NET 4.5 (část 2)](https://blogs.msdn.microsoft.com/adonet/2012/07/15/using-sqldatareaders-new-async-methods-in-net-4-5-part-2-examples/)
 
 Když přestane reagovat uživatelské rozhraní nebo nejsou adekvátní váš server, je pravděpodobné, že potřebujete kódu, aby byl více asynchronní. Psaní asynchronního kódu má obvykle součástí instalace zpětné volání (také nazývané pokračování) vyjádřit logiku, která nastane po dokončení asynchronní operace. To komplikuje strukturu asynchronní kód mezi synchronního kódu.
 

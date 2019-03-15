@@ -3,12 +3,12 @@ title: C#Výčty – připravuje C# jazyka
 description: Další informace o výčtů diskrétní pojmenované konstanty vC#
 ms.date: 08/10/2016
 ms.assetid: 7faba1cc-6ea9-4a19-adb9-0335e4b132e5
-ms.openlocfilehash: d55462f0360b6896c398d581918a9c17a87583be
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 8c1c29c3c06829da81a9c9be8bb5bd99f1c9e395
+ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53126651"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "57843121"
 ---
 # <a name="enums"></a>Výčty
 
@@ -34,6 +34,6 @@ Zadejte výchozí hodnotu kterékoli `enum` je celočíselná hodnota nula, pře
 
 [!code-csharp[EnumZero](../../../samples/snippets/csharp/tour/enums/Program.cs#L58-L58)]
 
->[!div class="step-by-step"]
->[Předchozí](interfaces.md)
->[další](delegates.md)
+> [!div class="step-by-step"]
+> [Předchozí](interfaces.md)
+> [další](delegates.md)

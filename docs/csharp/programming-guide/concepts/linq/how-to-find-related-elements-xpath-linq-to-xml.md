@@ -2,12 +2,12 @@
 title: 'Postupy: Vyhledání souvisejících elementů (XPath – LINQ to XML) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 41b386ee-562d-4841-bd6b-e44a7eb69f26
-ms.openlocfilehash: 47609f9bf047000585c56387acf648bcfa6ee5b9
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 0463be7cabca088a1a5a200b9e8648914f16e7f5
+ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54617405"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "57843336"
 ---
 # <a name="how-to-find-related-elements-xpath-linq-to-xml-c"></a>Postupy: Vyhledání souvisejících elementů (XPath – LINQ to XML) (C#)
 Toto téma ukazuje, jak získat prvek Výběr na atribut, který je uvedené hodnotou jiného elementu.  
@@ -19,7 +19,7 @@ Toto téma ukazuje, jak získat prvek Výběr na atribut, který je uvedené hod
 ## <a name="example"></a>Příklad  
  Tento příklad vyhledá 12. `Order` prvek a následně vyhledá zákazníka pro tuto objednávku.  
   
- Všimněte si, že indexování do seznamu v rozhraní .net je "žádný" na základě. Indexování do kolekce uzlů v predikát jazyka XPath je "jedna" na základě. Tento příklad zobrazuje tento rozdíl.  
+ Všimněte si, že indexování do seznamu v rozhraní .NET je "žádný" na základě. Indexování do kolekce uzlů v predikát jazyka XPath je "jedna" na základě. Tento příklad zobrazuje tento rozdíl.  
   
  Tento příklad používá následujícího dokumentu XML: [Ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml-2.md).  
   

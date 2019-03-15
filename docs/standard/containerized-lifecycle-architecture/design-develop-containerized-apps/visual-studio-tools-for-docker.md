@@ -5,12 +5,12 @@ author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 02/15/2019
 ms.custom: vs-dotnet
-ms.openlocfilehash: 78ea3e553e4e449b307bc3585ed66fa48d2c0d8e
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.openlocfilehash: 431a0f34ba913c18c35e28ca45660495403bf688
+ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57680357"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "57844246"
 ---
 # <a name="use-docker-tools-in-visual-studio-2017-on-windows"></a>Použití nástrojů Dockeru v sadě Visual Studio 2017 na Windows
 
@@ -20,7 +20,8 @@ Pracovní postup pro vývojáře při používání nástroje Dockeru, které js
 
 S nejnovější verzí Docker pro Windows je jednodušší než někdy k vývoji aplikací Dockeru vzhledem k tomu, že instalační program je jasné, jak je vysvětleno v následující odkazy.
 
-> [! Informace o] Další informace o instalaci Dockeru pro Windows, přejděte na (<https://docs.docker.com/docker-for-windows/>).
+> [!TIP]
+> Další informace o instalaci Dockeru pro Windows, přejděte na (<https://docs.docker.com/docker-for-windows/>).
 
 ## <a name="docker-support-in-visual-studio-2017"></a>Podpora dockeru v sadě Visual Studio 2017
 
@@ -83,7 +84,8 @@ V následující tabulce může pomoct při rozhodování, jak nastavit tyto mo�
 > [!WARNING]
 > Pokud localhost certifikát SSL není důvěryhodný a zaškrtněte políčko pro potlačení výzvy k potvrzení, nemusí podařit HTTPS webové požadavky v době běhu ve vaší aplikaci nebo službě. V takovém případě zrušte zaškrtnutí políčka **nechcete zobrazovat výzvu** zaškrtávací políčko, spouštění vašeho projektu a označuje vztah důvěryhodnosti na řádku.
 
-> [! Informace o] Další podrobnosti o implementaci služby a použití sady Visual Studio Tools for Docker v následujících článcích:
+> [!TIP]
+> Další podrobnosti o implementaci služby a použití sady Visual Studio Tools for Docker v následujících článcích:
 >
 >Ladění aplikací v místním kontejneru Dockeru: <https://docs.microsoft.com/azure/vs-azure-tools-docker-edit-and-refresh>
 >

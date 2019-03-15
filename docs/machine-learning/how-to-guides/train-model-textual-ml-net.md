@@ -3,12 +3,12 @@ title: Použijte vytváření funkcí k tréninku modelu na textová data - ML.N
 description: Zjistěte, jak použít vytváření funkcí k tréninku modelu na textová data s ML.NET
 ms.date: 03/05/2019
 ms.custom: mvc,how-to
-ms.openlocfilehash: 8733db281dbc60ae3f4ac0c139c482b39089f2b8
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.openlocfilehash: e26a4b293869b7cdad3c439237bd0145cafa314a
+ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57680071"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "57844354"
 ---
 # <a name="apply-feature-engineering-for-machine-learning-model-training-on-textual-data-with-mlnet"></a>Použít vytváření funkcí pro strojové učení cvičení modelu na textová data s ML.NET
 
@@ -30,6 +30,7 @@ Další informace o textových dat, musíte extrahovat text funkce. ML.NET má n
 
 Následující příklad ukazuje ML.NET textové funkce extrakce mechanismy pomocí [Wikipedia detox dataset](https://github.com/dotnet/machinelearning/blob/master/test/data/wikipedia-detox-250-line-data.tsv):
 
+<!-- markdownlint-disable MD010 -->
 ```console
 Sentiment   SentimentText
 1   Stop trolling, zapatancas, calling me a liar merely demonstartes that you arer Zapatancas. You may choose to chase every legitimate editor from this site and ignore me but I am an editor with a record that isnt 99% trolling and therefore my wishes are not to be completely ignored by a sockpuppet like yourself. The consensus is overwhelmingly against you and your trolling lover Zapatancas,  
@@ -37,6 +38,7 @@ Sentiment   SentimentText
 0   " *::Your POV and propaganda pushing is dully noted. However listing interesting facts in a netral and unacusitory tone is not POV. You seem to be confusing Censorship with POV monitoring. I see nothing POV expressed in the listing of intersting facts. If you want to contribute more facts or edit wording of the cited fact to make them sound more netral then go ahead. No need to CENSOR interesting factual information. "
 0   ::::::::This is a gross exaggeration. Nobody is setting a kangaroo court. There was a simple addition concerning the airline. It is the only one disputed here.   
 ```
+<!-- markdownlint-enable MD010 -->
 
 ```csharp
 // Define the reader: specify the data columns and where to find them in the text file.

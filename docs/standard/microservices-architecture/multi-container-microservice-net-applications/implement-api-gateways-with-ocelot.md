@@ -4,12 +4,12 @@ description: Zjistěte, jak implementovat brány rozhraní API s Ocelot a použi
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/02/2018
-ms.openlocfilehash: b51341b25fb81d93f85ff33fe6f2225196126ea0
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.openlocfilehash: 404f19f55b3be1e4be161543556bb2619f164b9b
+ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57679486"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "57846100"
 ---
 # <a name="implement-api-gateways-with-ocelot"></a>Implementace brány rozhraní API s Ocelot
 
@@ -176,10 +176,10 @@ namespace OcelotApiGw
             var builder = WebHost.CreateDefaultBuilder(args);
 
             builder.ConfigureServices(s => s.AddSingleton(builder))
-                                                          .ConfigureAppConfiguration(
-                              ic => ic.AddJsonFile(Path.Combine("configuration",
-                                                                "configuration.json")))
-                                                                .UseStartup<Startup>();
+                    .ConfigureAppConfiguration(
+                          ic => ic.AddJsonFile(Path.Combine("configuration",
+                                                            "configuration.json")))
+                    .UseStartup<Startup>();
             var host = builder.Build();
             return host;
         }
@@ -541,19 +541,19 @@ Příchozí přenos, ale je stejně přesměrovávání požadavků HTTP, ale po
 
 S vrstvou Nginx příchozího přenosu dat Kubernetes před webových aplikací a navíc několik bran rozhraní API Ocelot / BFF je ideální architekturu, jak je znázorněno v následujícím diagramu.
 
- ![Příchozího přenosu dat Kubernetes slouží jako reverzní proxy server pro veškerý provoz do aplikace, včetně webových aplikací, které jsou obvykle mimo rozsah brány rozhraní Api.](./media/image41.png)
+![Příchozího přenosu dat Kubernetes slouží jako reverzní proxy server pro veškerý provoz do aplikace, včetně webových aplikací, které jsou obvykle mimo rozsah brány rozhraní Api.](./media/image41.png)
 
 **Obrázek 6 – 41**. Úroveň příchozího přenosu dat v aplikaci eShopOnContainers při nasazení do Kubernetes
 
 Když nasadíte aplikaci eShopOnContainers do Kubernetes, zpřístupní několika služeb nebo na koncové body prostřednictvím _příchozího přenosu dat_, v podstatě postfixes na adresy URL v následujícím seznamu:
 
--   `/` pro klienta webové aplikace SPA
--   `/webmvc` pro klienta webové aplikace MVC
--   `/webstatus` Zobrazení stavu/healthchecks klienta webové aplikace
--   `/webshoppingapigw` pro web BFF a nákupního obchodních procesů
--   `/webmarketingapigw` pro web BFF a marketingové obchodních procesů
--   `/mobileshoppingapigw` pro mobilní BFF a nákupního obchodních procesů
--   `/mobilemarketingapigw` mobilní BFF a marketingové obchodních procesů
+- `/` pro klienta webové aplikace SPA
+- `/webmvc` pro klienta webové aplikace MVC
+- `/webstatus` Zobrazení stavu/healthchecks klienta webové aplikace
+- `/webshoppingapigw` pro web BFF a nákupního obchodních procesů
+- `/webmarketingapigw` pro web BFF a marketingové obchodních procesů
+- `/mobileshoppingapigw` pro mobilní BFF a nákupního obchodních procesů
+- `/mobilemarketingapigw` mobilní BFF a marketingové obchodních procesů
 
 Při nasazování do Kubernetes, každá brána rozhraní API Ocelot používá různé "configuration.json" soubor pro každý _pod_ spuštění brány rozhraní API. Jsou k dispozici tyto soubory "configuration.json" tak, že připojí svazek vytvořený podle Kubernetes (původně se skriptem deploy.ps1) _mapování pro config_ s názvem "ocelot". Každý kontejner připojí souvisejících konfiguračních souborů ve složce kontejneru s názvem `/app/configuration`.
 

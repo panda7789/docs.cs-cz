@@ -4,12 +4,12 @@ description: Základní koncepce pro kontejnerizování monolitických aplikací
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 02/15/2019
-ms.openlocfilehash: 76e1db8886fe75b79cea2e28ef05e62ca519ae58
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.openlocfilehash: e7454100b09f602e1e103c38685609e1dab62fe9
+ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57676834"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "57843542"
 ---
 # <a name="monolithic-applications"></a>Monolitické aplikace
 
@@ -63,7 +63,7 @@ Vzhledem k tomu, že kontejnery jsou ze své podstaty neměnné záměrné, pot�
 
 Přestože monolitických aplikací můžete využívat Docker, jsme se dotýká na pouze tipy výhody. Větší výhody správy kontejnerů, pocházejí z nasazení pomocí orchestrátorů kontejnerů, které spravují různé instance a životního cyklu každou instanci kontejneru. Rozdělení monolitické aplikace do subsystémů, které můžete škálovat, vyvinuli a nasazují samostatně je vstupním bodem do sféry mikroslužeb.
 
-Další informace o tom, jak "metodou lift and shift" monolitické aplikace s kontejnery a jak můžete modernizovat aplikace, najdete další příručky Microsoftu [modernizace stávajících aplikací .NET pomocí cloudu Azure a kontejnery Windows ](https://docs.microsoft.com/dotnet/standard/modernize-with-azure-and-containers/), kterou můžete také stáhnout ve formátu PDF z <https://aka.ms/LiftAndShiftWithContainersEbook>.
+Další informace o tom, jak "metodou lift and shift" monolitické aplikace s kontejnery a jak můžete modernizovat aplikace, najdete další příručky Microsoftu [modernizace stávajících aplikací .NET pomocí cloudu Azure a kontejnery Windows ](../../modernize-with-azure-and-containers/index.md), kterou můžete také stáhnout ve formátu PDF z <https://aka.ms/LiftAndShiftWithContainersEbook>.
 
 ## <a name="publish-a-single-docker-container-app-to-azure-app-service"></a>Publikovat jedinou aplikaci kontejneru Dockeru do služby Azure App Service
 

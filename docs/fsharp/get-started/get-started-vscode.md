@@ -2,12 +2,12 @@
 title: Začínáme s F# ve Visual Studio Code
 description: Další informace o použití F# s Visual Studio Code a Ionide suite modulu plug-in.
 ms.date: 12/23/2018
-ms.openlocfilehash: 79863d57abbc71d59ce01fe30abf1db0a569f1e1
-ms.sourcegitcommit: 5d9f4b805787f890ca6e0dc7ea30a43018bc9cbb
+ms.openlocfilehash: 3e526d33a8b52e3c1241ed861d5ceb37eac10451
+ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57788489"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "57846568"
 ---
 # <a name="get-started-with-f-in-visual-studio-code"></a>Začínáme s F# ve Visual Studio Code
 
@@ -16,7 +16,7 @@ Můžete napsat F# v [Visual Studio Code](https://code.visualstudio.com) s [modu
 Pokud chcete začít, ujistěte se, že máte [ F# a modul plug-in Ionide správně nainstalovaný](install-fsharp.md#install-f-with-visual-studio-code).
 
 > [!NOTE]
-> Ionide vygeneruje rozhraní .NET Framework F# projekty, není dotnet core, který může mít problémy s kompatibilitou napříč platformami. Pokud používáte **Linux** nebo **OSX**, je jednodušší způsob, jak začít používat (nástroje příkazového řádku) [https://docs.microsoft.com/en-us/dotnet/fsharp/get-started/get-started-command-line].
+> Ionide vygeneruje rozhraní .NET Framework F# projekty, není dotnet core, který může mít problémy s kompatibilitou napříč platformami. Pokud používáte **Linux** nebo **OSX**, jednodušší způsob, jak začít, je použít [nástroje příkazového řádku](https://docs.microsoft.com/en-us/dotnet/fsharp/get-started/get-started-command-line).
 
 ## <a name="creating-your-first-project-with-ionide"></a>Vytvoření prvního projektu s Ionide
 

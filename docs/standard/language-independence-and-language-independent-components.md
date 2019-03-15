@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 4f0b77d0-4844-464f-af73-6e06bedeafc6
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2d8957a5376e17ff69bf9e811125af5a4af1e3b6
-ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
+ms.openlocfilehash: 4b40e12c7cb077d6ef128d4ee1aada6086cb9c1d
+ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56836549"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "57846464"
 ---
 # <a name="language-independence-and-language-independent-components"></a>Jazyková nezávislost a jazykově nezávislé komponenty
 Rozhraní .NET Framework je nezávislá na jazyce. To znamená, že jako vývojář můžete vyvíjet v některém z mnoha jazyků, které se zaměřují rozhraní .NET Framework, například C#, C + +/ CLI, Eiffel, F#, IronPython, IronRuby, PowerBuilder, Visual Basic, Visual COBOL a Windows Powershellu. Typy a členům knihoven třídy vyvinutým pro rozhraní .NET Framework, aniž byste museli znát jazyk, ve kterém byly původně vytvořeny a to bez nutnosti dodržovat všechny původní jazykové konvence mají přístup. Pokud jste vývojářem komponenty, přístupné příslušné součásti žádné aplikace rozhraní .NET Framework bez ohledu na jazyk.  
@@ -343,7 +343,7 @@ Rozhraní .NET Framework je nezávislá na jazyce. To znamená, že jako vývoj�
 ### <a name="member-accessibility"></a>Usnadnění přístupu člena  
  Přepsání zděděných členů nemůže změnit přístupnost daného člena. Například veřejnou metodu v základní třídě nelze přepsat pomocí soukromé metody v odvozené třídě. Existuje jedna výjimka: `protected internal` (v jazyce C#) nebo `Protected Friend` (v jazyce Visual Basic) člen v jednom sestavení, který je přepsán typem v jiném sestavení. V takovém případě je přístup k přepsání `Protected`.  
   
- Následující příklad ukazuje chybu, která je generován, když <xref:System.CLSCompliantAttribute> atribut je nastaven na `true`, a `Person`, což je třída odvozena z `Animal`, se pokusí změnit dostupnost `Species` vlastnost z veřejné na privátní. Příklad se zkompiluje úspěšně, pokud jeho přístupnost je změněna na veřejné.  
+ Následující příklad ukazuje chybu, která je generován, když <xref:System.CLSCompliantAttribute> atribut je nastaven na `true`, a `Human`, což je třída odvozena z `Animal`, se pokusí změnit dostupnost `Species` vlastnost z veřejné na privátní. Příklad se zkompiluje úspěšně, pokud jeho přístupnost je změněna na veřejné.  
   
  [!code-csharp[Conceptual.CLSCompliant#28](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/accessibility1.cs#28)]
  [!code-vb[Conceptual.CLSCompliant#28](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/accessibility1.vb#28)]  

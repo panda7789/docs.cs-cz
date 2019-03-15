@@ -7,17 +7,17 @@ f1_keywords:
 helpviewer_keywords:
 - '#line directive [C#]'
 ms.assetid: 6439e525-5dd5-4acb-b8ea-efabb32ff95b
-ms.openlocfilehash: 81c719698e1dc3462e13c149c0f6a26657052f5b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 51cffe40321aad2c91fb9a09821531545a415aec
+ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54740547"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "57845918"
 ---
 # <a name="line-c-reference"></a>#line (referenční dokumentace jazyka C#)
 `#line` Umožňuje upravit kompilátoru číslování řádků a (volitelně) název výstupního souboru pro chyby a upozornění.
 
-Následující příklad ukazuje, jak ohlásit dvě upozornění související s čísly řádků. `#line 200` – Direktiva vynutí na další řádek číslo, které má být 200 (i když výchozí hodnota je #6) a až do další #line – direktiva, název souboru budou hlášené jako "Zvláštní". #Line – direktiva výchozí vrátí řádku číslování na jeho výchozí čísla, která vrátí počet řádků, které se označuje jako předchozí direktivou.  
+Následující příklad ukazuje, jak ohlásit dvě upozornění související s čísly řádků. `#line 200` Směrnice vynutí na další řádek číslo, které má být 200 (i když výchozí hodnota je #6) a až do další `#line` direktiv, název souboru se ohlásí jako "Speciální". `#line default` – Direktiva vrátí řádku číslování na jeho výchozí čísla, která vrátí počet řádků, které se označuje jako předchozí direktivou.  
   
 ```csharp
 class MainClass  
