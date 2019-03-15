@@ -449,7 +449,7 @@
 ### [Soubory podpisů](fsharp/language-reference/signature-files.md)
 ### [Měrné jednotky](fsharp/language-reference/units-of-measure.md)
 ### [Dokumentace XML](fsharp/language-reference/xml-documentation.md)
-### [Opožděné výpočty](fsharp/language-reference/lazy-computations.md)
+### [Výrazy Lazy](fsharp/language-reference/lazy-expressions.md)
 ### [Výpočetní výrazy](fsharp/language-reference/computation-expressions.md)
 ### [Asynchronní pracovní postupy](fsharp/language-reference/asynchronous-workflows.md)
 ### [Výrazy dotazu](fsharp/language-reference/query-expressions.md)
@@ -1210,6 +1210,7 @@
 #### [Postupné předpovědi pomocí PredictionEngine](machine-learning/how-to-guides/single-predict-model-ml-net.md)
 #### [Zprovoznění vytrénovaného modelu](machine-learning/how-to-guides/consuming-model-ml-net.md)
 #### [Azure Functions – využívání modelu](machine-learning/how-to-guides/serve-model-serverless-azure-functions-ml-net.md)
+#### [Poskytování modelu v rozhraní Web API](machine-learning/how-to-guides/serve-model-web-api-ml-net.md)
 ### Infer.NET
 #### [Pravděpodobnostní programování s Infer.NET](machine-learning/how-to-guides/matchup-app-infer-net.md)
 ## Odkaz
