@@ -2,12 +2,12 @@
 title: Neplatný řetězec vzoru.
 ms.date: 07/20/2015
 ms.assetid: ec1aecdb-5339-4a93-be71-eec56b1d7438
-ms.openlocfilehash: 3fa42632ad6d69642d7b8ec36bf2880bc10a5024
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: bc2e91060ca1b0e21ea28b0f08febc3e0c54f4f1
+ms.sourcegitcommit: 5c1abeec15fbddcc7dbaa729fabc1f1f29f12045
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54732476"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58027317"
 ---
 # <a name="invalid-pattern-string"></a>Neplatný řetězec vzoru.
 Vzor řetězec zadaný v poli `Like` operace hledání je neplatná.  
@@ -23,4 +23,5 @@ Vzor řetězec zadaný v poli `Like` operace hledání je neplatná.
 4.  Koncový rozsahů vzor s pravou hranatou závorku.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Operátor Like](../../visual-basic/language-reference/operators/like-operator.md)
