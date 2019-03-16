@@ -7,12 +7,12 @@ helpviewer_keywords:
 - white-space processing in XAML [XAML Services]
 - characters [XAML Services], East Asian
 ms.assetid: cc9cc377-7544-4fd0-b65b-117b90bb0b23
-ms.openlocfilehash: 750f054c908cd9d837a18ee6c8a537285b325288
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: da559a7e009861faaba16484276eb97be537482b
+ms.sourcegitcommit: 5c1abeec15fbddcc7dbaa729fabc1f1f29f12045
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54728350"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58048044"
 ---
 # <a name="white-space-processing-in-xaml"></a>Zpracování mezerových znaků v XAML
 Stav jazykových pravidel pro XAML, že významné mezery, musí být zpracovány [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] implementace procesoru. Toto téma popisuje tato pravidla jazyka XAML. Také dokumenty prázdných další zpracování, který je definován [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] provádění procesoru XAML a XAML zapisovače pro serializaci.  
@@ -35,7 +35,7 @@ Stav jazykových pravidel pro XAML, že významné mezery, musí být zpracován
   
 5.  Odstraní se místo těsně před koncovou značku.  
   
- "Výchozí" odpovídá stavu udávají výchozí hodnota [XML: Space](../../../docs/framework/xaml-services/xml-space-handling-in-xaml.md) atribut.  
+ "Výchozí" odpovídá stavu udávají výchozí hodnota [XML: Space](xml-space-handling-in-xaml.md) atribut.  
   
 <a name="whitespace_in_inner_text_and_string_primitives"></a>   
 ## <a name="white-space-in-inner-text-and-string-primitives"></a>Prázdný znak ve vnitřním textu a řetězce primitiv  
@@ -75,6 +75,6 @@ Stav jazykových pravidel pro XAML, že významné mezery, musí být zpracován
  Navíc některé vložené prvky, které connote linebreak v modelu dokument toku by měl záměrně kritickému mezeru i v kolekci významné prázdné znaky. Například <xref:System.Windows.Documents.LineBreak> element má ke stejnému účelu jako \<BR / > značku [!INCLUDE[TLA2#tla_html](../../../includes/tla2sharptla-html-md.md)]a pro lepší čitelnost v kódu, obvykle <xref:System.Windows.Documents.LineBreak> je oddělen od všechny následující text vytvořené znak odřádkování. Tento znak odřádkování by neměl být normalizovány na stát přední místa na následujícím řádku. Povolit chování, definice třídy pro <xref:System.Windows.Documents.LineBreak> element se vztahuje <xref:System.Windows.Markup.TrimSurroundingWhitespaceAttribute>, který je pak interpretována [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] procesoru k označení tohoto mezery kolem <xref:System.Windows.Documents.LineBreak> vždy oříznut.  
   
 ## <a name="see-also"></a>Viz také:
-- [Přehled XAML (WPF)](../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)
-- [Znakové entity XML a XAML](../../../docs/framework/xaml-services/xml-character-entities-and-xaml.md)
-- [XML: space v XAML](../../../docs/framework/xaml-services/xml-space-handling-in-xaml.md)
+- [Přehled XAML (WPF)](../wpf/advanced/xaml-overview-wpf.md)
+- [Znakové entity XML a XAML](xml-character-entities-and-xaml.md)
+- [XML: space v XAML](xml-space-handling-in-xaml.md)

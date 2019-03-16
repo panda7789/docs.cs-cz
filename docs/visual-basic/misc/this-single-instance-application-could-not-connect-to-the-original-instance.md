@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrAppModel_SingleInstanceCantConnect
 ms.assetid: 7c2c0cee-02a1-4157-be03-39d18e18408f
-ms.openlocfilehash: 80c1ec0bf1aa4b6dbf885294c680b3bfe8897eac
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 241ad5b9986e78f88ab5ca39bc73f7372162ba76
+ms.sourcegitcommit: 5c1abeec15fbddcc7dbaa729fabc1f1f29f12045
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54565706"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58037500"
 ---
 # <a name="this-single-instance-application-could-not-connect-to-the-original-instance"></a>Nelze se připojit k původní instanci této aplikace s jedinou instancí
 Tato aplikace s jedinou instancí se nemohl připojit k původní instanci. Některé možné příčiny tohoto problému jsou následující:  
@@ -33,5 +33,5 @@ Tato aplikace s jedinou instancí se nemohl připojit k původní instanci. Něk
 5.  Všimněte si okolnosti, kdy došlo k chybě a telefonní Microsoft Product Support Services.  
   
 ## <a name="see-also"></a>Viz také:
-- [Základy ladicího programu](/visualstudio/debugger/debugger-basics)
 
+- [Základy ladicího programu](/visualstudio/debugger/debugger-basics)

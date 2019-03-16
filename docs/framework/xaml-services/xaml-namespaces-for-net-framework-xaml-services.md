@@ -2,12 +2,12 @@
 title: Obory názvů jazyka XAML pro technologii .NET Framework XAML Services
 ms.date: 03/30/2017
 ms.assetid: e4f15f13-c420-4c1e-aeab-9b6f50212047
-ms.openlocfilehash: 2e9e2d9e2257e5e6059210b82a69d7a837254032
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e9d644f4f62d70a1feec0030a680067412baa5e6
+ms.sourcegitcommit: 5c1abeec15fbddcc7dbaa729fabc1f1f29f12045
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54736796"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58030522"
 ---
 # <a name="xaml-namespaces-for-net-framework-xaml-services"></a>Obory názvů jazyka XAML pro technologii .NET Framework XAML Services
 Obor názvů XAML je pojem, který rozšiřuje definici oboru názvů XML. Podobně jako obor názvů XML, můžete definovat obor názvů XAML pomocí `xmlns` atribut v kódu. Obory názvů XAML jsou také reprezentované v datovém proudu uzlu XAML a jiných rozhraní API služeb XAML. Toto téma definuje pojem oboru názvů XAML a popisuje, jak lze definovat obory názvů XAML a jsou používány kontext schématu XAML a další aspekty rozhraní .NET Framework XAML Services.  
@@ -44,14 +44,14 @@ Obor názvů XAML je pojem, který rozšiřuje definici oboru názvů XML. Podob
   
  *assemblyName* představuje libovolný řetězec, který je platný jako <xref:System.Reflection.Assembly.Load%28System.String%29?displayProperty=nameWithType> vstupu. Tento řetězec může obsahovat jazykové verze, veřejného klíče nebo informace o verzi (definice těchto konceptů, které jsou definovány v referenčním tématu pro <xref:System.Reflection.Assembly>). COFF formátu a důkazy (jako další přetížení <xref:System.Reflection.Assembly.Load%2A>) nejsou relevantní pro načítání účely; sestavení XAML všechny informace o načtení musí být uvedené jako řetězec.  
   
- Zadáte veřejný klíč pro sestavení je užitečná technika XAML zabezpečení nebo pro odebrání možné nejednoznačnost, která mohou existovat, pokud se načetl jednoduchý název sestavení nebo existovat v doméně mezipaměti nebo aplikace. Další informace najdete v tématu [aspekty zabezpečení XAML](../../../docs/framework/xaml-services/xaml-security-considerations.md).  
+ Zadáte veřejný klíč pro sestavení je užitečná technika XAML zabezpečení nebo pro odebrání možné nejednoznačnost, která mohou existovat, pokud se načetl jednoduchý název sestavení nebo existovat v doméně mezipaměti nebo aplikace. Další informace najdete v tématu [aspekty zabezpečení XAML](xaml-security-considerations.md).  
   
 ## <a name="xaml-namespace-declarations-in-the-xaml-services-api"></a>Deklarace Namespace XAML v rozhraní API služeb XAML  
  V rozhraní API služby XAML je reprezentována deklarace oboru názvů XAML <xref:System.Xaml.NamespaceDeclaration> objektu. Pokud se deklarace oboru názvů XAML v kódu, můžete volat <xref:System.Xaml.NamespaceDeclaration.%23ctor%28System.String%2CSystem.String%29> konstruktoru. `ns` a `prefix` parametry jsou zadané jako řetězce a vstup k poskytování těchto parametrů odpovídá definici identifikátor oboru názvů XAML a předponu oboru názvů XAML uvedené dříve v tomto tématu.  
   
  Pokud zkoumáte informace oboru názvů XAML jako součást datový proud uzlu XAML nebo prostřednictvím jiný přístup k typu systému XAML <xref:System.Xaml.NamespaceDeclaration.Namespace%2A?displayProperty=nameWithType> sestavy identifikátor oboru názvů XAML a <xref:System.Xaml.NamespaceDeclaration.Prefix%2A?displayProperty=nameWithType> sestavy předponu oboru názvů XAML.  
   
- V datovém proudu uzlu XAML informace oboru názvů XAML zobrazit jako uzel XAML, který předchází entit, ke kterému se vztahuje. To zahrnuje případy, kdy předchází informace oboru názvů XAML `StartObject` pro daný kořenový prvek XAML. Další informace najdete v tématu [Principy XAML Stream struktur a koncepcí uzlů](../../../docs/framework/xaml-services/understanding-xaml-node-stream-structures-and-concepts.md).  
+ V datovém proudu uzlu XAML informace oboru názvů XAML zobrazit jako uzel XAML, který předchází entit, ke kterému se vztahuje. To zahrnuje případy, kdy předchází informace oboru názvů XAML `StartObject` pro daný kořenový prvek XAML. Další informace najdete v tématu [Principy XAML Stream struktur a koncepcí uzlů](understanding-xaml-node-stream-structures-and-concepts.md).  
   
  Pro většinu scénářů, které používají rozhraní .NET Framework XAML Services API nejmíň jednu deklaraci oboru názvů XAML je se očekával a deklarace musí obsahovat nebo o informace, které vyžaduje kontext schématu XAML. Obory názvů XAML musí zadat sestavení, které může být načteny, nebo pomáhají při řešení konkrétních typů v rámci obory názvů a sestavení, která jsou už načteny nebo nezná kontext schématu XAML.  
   
@@ -61,7 +61,7 @@ Obor názvů XAML je pojem, který rozšiřuje definici oboru názvů XML. Podob
   
  Potřebujete předvyplní informace oboru názvů XAML, v případech, kde máte v úmyslu kontext schématu XAML používat obor názvů XAML není definovaný v kódu, je jednou z metod můžete použít k deklarování deklarace oboru názvů XML v <xref:System.Xml.XmlParserContext> pro <xref:System.Xml.XmlReader>. Potom používat <xref:System.Xml.XmlReader> jako vstup pro konstruktor čtečky XAML nebo <xref:System.Xaml.XamlServices.Load%28System.Xml.XmlReader%29?displayProperty=nameWithType>.  
   
- Dva další rozhraní API, které jsou relevantní pro obor názvů XAML v rozhraní .NET Framework XAML Services jsou atributy <xref:System.Windows.Markup.XmlnsDefinitionAttribute> a <xref:System.Windows.Markup.XmlnsPrefixAttribute>. Tyto atributy se vztahují na sestavení. <xref:System.Windows.Markup.XmlnsDefinitionAttribute> používá kontext schématu XAML pro interpretaci všechny deklarace oboru názvů XAML, která obsahuje identifikátor URI. <xref:System.Windows.Markup.XmlnsPrefixAttribute> používá nástroje, které generují XAML tak, aby konkrétní obor názvů XAML lze serializovat s příznakem předponu předvídatelné. Další informace najdete v tématu [XAML-Related CLR atributy pro vlastní typy a knihovny](../../../docs/framework/xaml-services/xaml-related-clr-attributes-for-custom-types-and-libraries.md).  
+ Dva další rozhraní API, které jsou relevantní pro obor názvů XAML v rozhraní .NET Framework XAML Services jsou atributy <xref:System.Windows.Markup.XmlnsDefinitionAttribute> a <xref:System.Windows.Markup.XmlnsPrefixAttribute>. Tyto atributy se vztahují na sestavení. <xref:System.Windows.Markup.XmlnsDefinitionAttribute> používá kontext schématu XAML pro interpretaci všechny deklarace oboru názvů XAML, která obsahuje identifikátor URI. <xref:System.Windows.Markup.XmlnsPrefixAttribute> používá nástroje, které generují XAML tak, aby konkrétní obor názvů XAML lze serializovat s příznakem předponu předvídatelné. Další informace najdete v tématu [XAML-Related CLR atributy pro vlastní typy a knihovny](xaml-related-clr-attributes-for-custom-types-and-libraries.md).  
   
 ## <a name="see-also"></a>Viz také:
-- [Principy struktur a koncepcí streamu uzlů XAML](../../../docs/framework/xaml-services/understanding-xaml-node-stream-structures-and-concepts.md)
+- [Principy struktur a koncepcí streamu uzlů XAML](understanding-xaml-node-stream-structures-and-concepts.md)

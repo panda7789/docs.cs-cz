@@ -12,12 +12,12 @@ helpviewer_keywords:
 - x:Null markup extension [XAML Services]
 - XAML [XAML Services], x:Null markup extension
 ms.assetid: 2e3ccc21-4996-481d-91b5-3910d8b3bfa3
-ms.openlocfilehash: 5f0856f50e73a090d0ef624e2fb894d68b73c07e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 34a2de71bec9b0929070aa908741de38b5904643
+ms.sourcegitcommit: 5c1abeec15fbddcc7dbaa729fabc1f1f29f12045
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54553318"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58029372"
 ---
 # <a name="xnull-markup-extension"></a>x:Null – rozšíření značek
 Určuje `null` jako hodnotu pro člena XAML.  
@@ -37,14 +37,14 @@ Určuje `null` jako hodnotu pro člena XAML.
   
  `x:Null` – Rozšíření značek, stejně jako všechna rozšíření značek XAML, používá složené závorky (`{,}`) pro uvození zpracování hodnoty atributů, aby byla jiná než literály nebo odkazy na obslužnou rutinu události. Syntaxe atributu je syntaxe nejčastěji používané u tohoto rozšíření značek. Syntaxi elementu objektu `<x:Null />` je technicky možné, ale je použita jen zřídka, protože `x:Null` – rozšíření značek nemá žádné poziční parametry a argumenty konstrukce.  
   
- Informace o rozšíření značek, naleznete v tématu [– rozšíření značek a WPF XAML](../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md).  
+ Informace o rozšíření značek, naleznete v tématu [– rozšíření značek a WPF XAML](../wpf/advanced/markup-extensions-and-wpf-xaml.md).  
   
  V rozhraní .NET Framework XAML Services zpracování tohoto rozšíření značek definováno <xref:System.Windows.Markup.NullExtension> třídy.  
   
 ## <a name="wpf-usage-notes"></a>Poznámky k použití WPF  
- Všimněte si, že `null` není nutně zrušit nastavení počáteční hodnotu pro vlastnost závislosti typu odkazu. Počáteční výchozí hodnota pro každou vlastnost závislostí se může lišit a může být založen na metadata specifická pro vlastnost. Mnoho vlastností závislostí nepřijímají `null` jako hodnotu, buď prostřednictvím značek nebo kódu z důvodu jejich implementace zpětného volání pro ověření. Další informace o vlastnosti závislosti, naleznete v tématu [přehled vlastností závislosti](../../../docs/framework/wpf/advanced/dependency-properties-overview.md).  
+ Všimněte si, že `null` není nutně zrušit nastavení počáteční hodnotu pro vlastnost závislosti typu odkazu. Počáteční výchozí hodnota pro každou vlastnost závislostí se může lišit a může být založen na metadata specifická pro vlastnost. Mnoho vlastností závislostí nepřijímají `null` jako hodnotu, buď prostřednictvím značek nebo kódu z důvodu jejich implementace zpětného volání pro ověření. Další informace o vlastnosti závislosti, naleznete v tématu [přehled vlastností závislosti](../wpf/advanced/dependency-properties-overview.md).  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.DependencyProperty.UnsetValue>
-- [Přehled XAML (WPF)](../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)
-- [Rozšíření značek a WPF XAML](../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)
+- [Přehled XAML (WPF)](../wpf/advanced/xaml-overview-wpf.md)
+- [Rozšíření značek a WPF XAML](../wpf/advanced/markup-extensions-and-wpf-xaml.md)

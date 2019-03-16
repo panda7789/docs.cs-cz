@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Visual C# compiler, options listed alphabetically
 - Visual C#, compiler options listed alphabetically
 ms.assetid: 43535ea0-ca47-4a15-b528-615087a86092
-ms.openlocfilehash: d225a4bf9da35a59a409a783347ec407b49bf16a
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.openlocfilehash: 1e7b19999ab8536e9a1b05c1ad5d548c8da2cbd6
+ms.sourcegitcommit: 5c1abeec15fbddcc7dbaa729fabc1f1f29f12045
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57677727"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58037697"
 ---
 # <a name="c-compiler-options-listed-alphabetically"></a>Možnosti kompilátoru C# (abecední pořadí)
 
@@ -29,7 +29,7 @@ Následující možnosti kompilátoru jsou seřazená podle abecedy. Seznam kate
 |[-baseaddress](baseaddress-compiler-option.md)|Určuje základní adresu knihovny, který má být sestaven.|
 |[-bugreport](bugreport-compiler-option.md)|Vytvoří soubor hlášení o chybě. Tento soubor se odesílá spolu s žádné informace o chybách, pokud se použije s parametrem-errorreport: řádek nebo - errorreport: Odeslat.|
 |[-checked](checked-compiler-option.md)|Způsobí, že kompilátor generovat kontroly přetečení.|
-|-checksumalgorithm:\<alg >|Určuje algoritmus pro výpočet kontrolního součtu souboru zdroje uloženo v PDB.  Podporované hodnoty jsou: SHA1 (výchozí) nebo SHA256.|
+|-checksumalgorithm:\<alg >|Určuje algoritmus pro výpočet kontrolního součtu souboru zdroje uloženo v PDB.  Podporované hodnoty jsou: SHA1 (výchozí) nebo SHA256.<br>Společnost Microsoft doporučuje způsobeny problémy kolizí se SHA1, SHA256. |
 |[-codepage](codepage-compiler-option.md)|Určuje znakovou stránku, která má použít při otevírání zdrojových souborů.|
 |[-debug](debug-compiler-option.md)|Generuje ladicí informace.|
 |[-define](define-compiler-option.md)|Definuje symboly podmíněné kompilace.|

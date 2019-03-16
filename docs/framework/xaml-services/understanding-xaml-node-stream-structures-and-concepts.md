@@ -6,12 +6,12 @@ helpviewer_keywords:
 - nodes [XAML Services], XAML node stream
 - XAML [XAML Services], XAML node streams
 ms.assetid: 7c11abec-1075-474c-9d9b-778e5dab21c3
-ms.openlocfilehash: 261c44ae06959ed387a4619bf2fdb99b37141c86
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: e75d7f9454018b4a5f31eb36f1790d3a7b49af78
+ms.sourcegitcommit: 5c1abeec15fbddcc7dbaa729fabc1f1f29f12045
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57365721"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58034748"
 ---
 # <a name="understanding-xaml-node-stream-structures-and-concepts"></a>Principy struktur a koncepcí datových proudů uzlů XAML
 
@@ -232,7 +232,7 @@ Některé direktivy jsou určené konkrétně pro zajištění Další informace
 
 ### <a name="xamlobjectwriter-behavior-and-node-order"></a>Chování XamlObjectWriter a pořadí uzlů
 
-`StartObject` k <xref:System.Xaml.XamlObjectWriter> není nutně signál, který objekt zapisovače XAML okamžitě vytvořit instanci objektu. XAML obsahuje několik funkcí jazyka, které umožňují inicializovat objekt s další vstupy a nespoléhala se výhradně na vyvolání výchozího konstruktoru vytvoří počáteční objekt a teprve pak nastavení vlastnosti. Tyto funkce patří: <xref:System.Windows.Markup.XamlDeferLoadAttribute>; inicializace textu. [x: TypeArguments](../../../docs/framework/xaml-services/x-typearguments-directive.md); poziční parametry rozšíření značek; metody pro vytváření objektů a související [x: Arguments](../../../docs/framework/xaml-services/x-arguments-directive.md) uzly (XAML 2009). Každá z těchto případů zpoždění konstrukce skutečný objekt a vzhledem k tomu, že je pořadí změníte datový proud uzlu, můžete zapisovače objektu XAML Spolehněte se na chování ve skutečnosti vytváření instance pokaždé, když se zjistila člen start, které nejsou konkrétně konstrukce směrnice pro tento typ objektu.
+`StartObject` k <xref:System.Xaml.XamlObjectWriter> není nutně signál, který objekt zapisovače XAML okamžitě vytvořit instanci objektu. XAML obsahuje několik funkcí jazyka, které umožňují inicializovat objekt s další vstupy a nespoléhala se výhradně na vyvolání výchozího konstruktoru vytvoří počáteční objekt a teprve pak nastavení vlastnosti. Tyto funkce patří: <xref:System.Windows.Markup.XamlDeferLoadAttribute>; inicializace textu. [x: TypeArguments](x-typearguments-directive.md); poziční parametry rozšíření značek; metody pro vytváření objektů a související [x: Arguments](x-arguments-directive.md) uzly (XAML 2009). Každá z těchto případů zpoždění konstrukce skutečný objekt a vzhledem k tomu, že je pořadí změníte datový proud uzlu, můžete zapisovače objektu XAML Spolehněte se na chování ve skutečnosti vytváření instance pokaždé, když se zjistila člen start, které nejsou konkrétně konstrukce směrnice pro tento typ objektu.
 
 ### <a name="getobject"></a>Funkce GetObject
 
@@ -241,5 +241,5 @@ Některé direktivy jsou určené konkrétně pro zajištění Další informace
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Xaml.XamlObjectReader>
-- [XAML Services](../../../docs/framework/xaml-services/index.md)
-- [Obory názvů jazyka XAML](../../../docs/framework/xaml-services/xaml-namespaces-for-net-framework-xaml-services.md)
+- [XAML Services](index.md)
+- [Obory názvů jazyka XAML](xaml-namespaces-for-net-framework-xaml-services.md)

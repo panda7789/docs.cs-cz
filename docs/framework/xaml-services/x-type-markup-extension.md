@@ -14,12 +14,12 @@ helpviewer_keywords:
 - TargetType attribute [XAML Services]
 - Type markup extension in XAML [XAML Services]
 ms.assetid: e0e0ce6f-e873-49c7-8ad7-8b840eb353ec
-ms.openlocfilehash: 2fc44163db99be5a0f2ddb2820053a5bdda3ccbe
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 86e5619774cc1512e39fa2fb50f4c0ba5f1d074c
+ms.sourcegitcommit: 5c1abeec15fbddcc7dbaa729fabc1f1f29f12045
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54668987"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58042096"
 ---
 # <a name="xtype-markup-extension"></a>x:Type – rozšíření značek
 CLR poskytuje <xref:System.Type> objekt, který je základní typ pro zadaný typ XAML.  
@@ -61,7 +61,7 @@ CLR poskytuje <xref:System.Type> objekt, který je základní typ pro zadaný ty
 ## <a name="wpf-usage-notes"></a>Poznámky k použití WPF  
   
 ### <a name="default-xaml-namespace-and-type-mapping"></a>Výchozí Namespace XAML a mapování typu  
- Výchozí obor názvů XAML pro programování WPF obsahuje většinu typů XAML, které potřebujete pro typické scénáře XAML; Při odkazování na hodnoty typu XAML proto můžete vyhnout často předpony. Můžete potřebovat k mapování předpony, pokud odkazujete na typ z vlastních sestavení nebo pro typy, které existují v WPF sestavení, ale jsou z oboru názvů CLR, který nebyl namapován na výchozí obor názvů XAML. Další informace o předpon oborů názvů XAML a mapování oborů názvů CLR naleznete v tématu [obory názvů XAML a mapování Namespace pro WPF XAML](../../../docs/framework/wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md).  
+ Výchozí obor názvů XAML pro programování WPF obsahuje většinu typů XAML, které potřebujete pro typické scénáře XAML; Při odkazování na hodnoty typu XAML proto můžete vyhnout často předpony. Můžete potřebovat k mapování předpony, pokud odkazujete na typ z vlastních sestavení nebo pro typy, které existují v WPF sestavení, ale jsou z oboru názvů CLR, který nebyl namapován na výchozí obor názvů XAML. Další informace o předpon oborů názvů XAML a mapování oborů názvů CLR naleznete v tématu [obory názvů XAML a mapování Namespace pro WPF XAML](../wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md).  
   
 ### <a name="type-properties-that-support-typename-as-string"></a>Zadejte vlastnosti této podpory Typename jako String  
  WPF podporuje techniky, které umožňují určující hodnotu některé vlastnosti typu <xref:System.Type> bez nutnosti `x:Type` použití rozšíření značky. Místo toho můžete zadat hodnotu jako řetězec, který označuje typ. Příklady jsou <xref:System.Windows.Controls.ControlTemplate.TargetType%2A?displayProperty=nameWithType> a <xref:System.Windows.Style.TargetType%2A?displayProperty=nameWithType>. Podpora pro toto chování není k dispozici prostřednictvím převaděče typů a rozšíření značek. Místo toho jde odložení chování implementované pomocí <xref:System.Windows.FrameworkElementFactory>.  
@@ -71,7 +71,7 @@ CLR poskytuje <xref:System.Type> objekt, který je základní typ pro zadaný ty
 ## <a name="xaml-2009"></a>XAML 2009  
  XAML 2009 poskytuje další podporu pro obecné typy a upravuje chování funkce `x:TypeArguments` a `x:Type` pro tuto funkci podporují.  
   
--   `x:TypeArguments` a element přidruženého objektu pro vytváření instancí obecné objektu může být u jiných elementů než kořenovém adresáři. Další informace najdete v části "XAML 2009" v [x: TypeArguments – direktiva](../../../docs/framework/xaml-services/x-typearguments-directive.md).  
+-   `x:TypeArguments` a element přidruženého objektu pro vytváření instancí obecné objektu může být u jiných elementů než kořenovém adresáři. Další informace najdete v části "XAML 2009" v [x: TypeArguments – direktiva](x-typearguments-directive.md).  
   
 -   XAML 2009 podporuje syntaxi pro zadání omezení obecného typu v kódu. To může využívat `x:TypeArguments`, `x:Type`, nebo dvě funkce v kombinaci.  
   
@@ -81,6 +81,6 @@ CLR poskytuje <xref:System.Type> objekt, který je základní typ pro zadaný ty
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Style>
-- [Styly a šablony](../../../docs/framework/wpf/controls/styling-and-templating.md)
-- [Přehled XAML (WPF)](../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)
-- [Rozšíření značek a WPF XAML](../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)
+- [Styly a šablony](../wpf/controls/styling-and-templating.md)
+- [Přehled XAML (WPF)](../wpf/advanced/xaml-overview-wpf.md)
+- [Rozšíření značek a WPF XAML](../wpf/advanced/markup-extensions-and-wpf-xaml.md)

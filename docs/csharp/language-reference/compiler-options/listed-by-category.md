@@ -6,12 +6,12 @@ helpviewer_keywords:
 - compiler options [C#], listed by category
 - Visual C#, compiler options listed by category
 ms.assetid: 96437ecc-6502-4cd3-b070-e9386a298e83
-ms.openlocfilehash: a2b0668b1d55afc331484339d579752646ffa88b
-ms.sourcegitcommit: acd8ed14fe94e9d4e3a7fb685fe83d05e941073c
+ms.openlocfilehash: bceb6283e202dfa699115edd6e0a1a040095783d
+ms.sourcegitcommit: 5c1abeec15fbddcc7dbaa729fabc1f1f29f12045
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56442409"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58028700"
 ---
 # <a name="c-compiler-options-listed-by-category"></a>Možnosti kompilátoru C# uvedené podle kategorie
 
@@ -105,7 +105,7 @@ Jsou následující možnosti kompilátoru seřazené podle kategorie. Abecední
 |[-unsafe](unsafe-compiler-option.md)|Zapne kompilaci kódu, který používá [nebezpečné](../../../csharp/language-reference/keywords/unsafe.md) – klíčové slovo.|
 |[-utf8output](utf8output-compiler-option.md)|Zobrazí výstup kompilátoru pomocí kódování UTF-8.|
 |-paralelní [+&#124;-]|Určuje, jestli se má použít souběžné sestavení (+).|
-|-checksumalgorithm:\<alg >|Zadejte algoritmus pro výpočet kontrolního součtu souboru zdroje uloženo v PDB.  Podporované hodnoty jsou: SHA1 (výchozí) nebo SHA256.|
+|-checksumalgorithm:\<alg >|Zadejte algoritmus pro výpočet kontrolního součtu souboru zdroje uloženo v PDB.  Podporované hodnoty jsou: SHA1 (výchozí) nebo SHA256.<br>Společnost Microsoft doporučuje způsobeny problémy kolizí se SHA1, SHA256.|
 
 ## <a name="obsolete-options"></a>Zastaralé možnosti
 

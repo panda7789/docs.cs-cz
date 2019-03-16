@@ -2,12 +2,12 @@
 title: <msmqTransportSecurity>
 ms.date: 03/30/2017
 ms.assetid: 092e911b-ab1b-4069-a26e-6134c3299e06
-ms.openlocfilehash: eb7ff953fcb61232fad16a99ac80cb98dbd83186
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: a5832d0117c6560d527706443d4966ce34bb3748
+ms.sourcegitcommit: 5c1abeec15fbddcc7dbaa729fabc1f1f29f12045
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55259966"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58018949"
 ---
 # <a name="msmqtransportsecurity"></a>\<msmqTransportSecurity>
 Určuje nastavení zabezpečení přenosu služby MSMQ pro vlastní vazbu.  
@@ -39,7 +39,7 @@ Určuje nastavení zabezpečení přenosu služby MSMQ pro vlastní vazbu.
 |`msmqAuthenticationMode`|Určuje, jak ověření zprávy dopravou služby MSMQ. Pokud je nastavené na `None`, hodnota `msmqProtectionLevel` atribut musí být také nastaven na `None`.<br /><br /> Platné hodnoty patří:<br /><br /> -Žádný: Bez ověřování.<br />– Windows: Mechanismus ověřování používá služby Active Directory k získání certifikátů X.509 pro identifikátor SID spojený se zprávou. Potom se používá ke kontrole, že seznam ACL fronty, aby uživatel má oprávnění k zápisu do fronty.<br />-Certifikátu: Kanál obdrží certifikát z úložiště certifikátů.<br /><br /> Výchozí hodnota je Windows. Tento atribut je typu <xref:System.ServiceModel.MsmqAuthenticationMode>.|  
 |`msmqEncryptionAlgorithm`|Určuje algoritmus se má použít pro šifrování zpráv na lince, přenos zpráv mezi správci fronty zpráv. Platné hodnoty patří:<br /><br /> -RC4Stream<br />-   AES<br /><br /> Výchozí hodnota je RC4Stream. Tento atribut je typu <xref:System.ServiceModel.MsmqEncryptionAlgorithm>.|  
 |`msmqProtectionLevel`|Určuje, jak je zpráva zabezpečena na úrovni přenosu služby MSMQ. Šifrování zajišťuje integrity zprávy, zatímco EncryptAndSign zajišťuje zprávu integrity a nepopiratelnosti; To znamená že zpráva pochází skutečně od odesílatele a odesílatel je, který říká, že je. Platné hodnoty patří:<br /><br /> -Žádný: Žádná ochrana.<br />– Přihlášení: Zprávy jsou podepsané.<br />-EncryptAndSign: Zprávy jsou zašifrovaná a podepsaná.<br /><br /> Výchozí hodnota je znak. Tento atribut je typu <xref:System.Net.Security.ProtectionLevel>.|  
-|`msmqSecureHashAlgorithm`|Určuje algoritmus pro výpočet výběru jako součást podpisu. Platné hodnoty patří:<br /><br /> -   MD5<br />-   SHA1<br />-   SHA256<br />-   SHA512<br /><br /> Výchozí hodnota je SHA1. Tento atribut je typu <xref:System.ServiceModel.MsmqSecureHashAlgorithm>.|  
+|`msmqSecureHashAlgorithm`|Určuje algoritmus pro výpočet výběru jako součást podpisu. Platné hodnoty patří:<br /><br /> -   MD5<br />-   SHA1<br />-   SHA256<br />-   SHA512<br /><br /> Výchozí hodnota je SHA1. Tento atribut je typu <xref:System.ServiceModel.MsmqSecureHashAlgorithm>.<br>Způsobeny problémy kolizí se MD5 a SHA1 společnost Microsoft doporučuje SHA256 nebo vyšší.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  

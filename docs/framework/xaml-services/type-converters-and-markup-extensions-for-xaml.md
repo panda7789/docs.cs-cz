@@ -8,12 +8,12 @@ helpviewer_keywords:
 - value converters for XAML [XAML Services]
 - XAML [XAML Services], service context
 ms.assetid: db07a952-05ce-4aa4-b6f9-aac7397d0326
-ms.openlocfilehash: 3bcf78ce6fe0e56e027b2d473a95d6663971744d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1704a7a86e89685763da7bf49a67c1fe8373124a
+ms.sourcegitcommit: 5c1abeec15fbddcc7dbaa729fabc1f1f29f12045
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54588220"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58050541"
 ---
 # <a name="type-converters-and-markup-extensions-for-xaml"></a>Převaděče typů a rozšíření značek pro jazyk XAML
 Převaděče typů a rozšíření značek jsou dvě techniky, které systémy typ XAML a XAML zapisovače používají ke generování komponenty grafu objektu. I když některé vlastnosti sdílejí, převaděče typů a rozšíření značek jsou reprezentovány odlišně v datovém proudu uzlu XAML. V této dokumentaci sady, převaděče typů, rozšíření značek a podobné konstrukce jsou někdy souhrnně označovány jako převaděče hodnot.  
@@ -32,7 +32,7 @@ Převaděče typů a rozšíření značek jsou dvě techniky, které systémy t
   
 <a name="type_converters"></a>   
 ## <a name="type-converters"></a>Převaděče typů  
- V definici rozhraní .NET Framework XAML Services jsou převaděče typů tříd, které jsou odvozeny z CLR <xref:System.ComponentModel.TypeConverter> třídy. <xref:System.ComponentModel.TypeConverter> je třída, která byla v rozhraní Microsoft .NET Framework před existoval XAML. Původnímu účelu se na podporu windows vlastnost a podobné úpravy metaphors založený na textu plody pro [!INCLUDE[TLA2#tla_ide](../../../includes/tla2sharptla-ide-md.md)] vlastnosti. Úvod XAML do rozhraní .NET Framework používá <xref:System.ComponentModel.TypeConverter> textová syntaxe (jak se nachází v hodnotě atributu nebo uzel hodnoty XAML) převést na objekt. <xref:System.ComponentModel.TypeConverter> Můžete také použít k serializaci hodnotu objektu na textová syntaxe. <xref:System.ComponentModel.TypeConverter> byl použit také v předchozích implementacích specifické pro architekturu XAML Windows Presentation Foundation (WPF) a Windows Communication Foundation (WCF). Další informace o <xref:System.ComponentModel.TypeConverter> v XAML, naleznete v tématu [XAML přehled převaděčů typů pro](../../../docs/framework/xaml-services/type-converters-for-xaml-overview.md).  
+ V definici rozhraní .NET Framework XAML Services jsou převaděče typů tříd, které jsou odvozeny z CLR <xref:System.ComponentModel.TypeConverter> třídy. <xref:System.ComponentModel.TypeConverter> je třída, která byla v rozhraní Microsoft .NET Framework před existoval XAML. Původnímu účelu se na podporu windows vlastnost a podobné úpravy metaphors založený na textu plody pro [!INCLUDE[TLA2#tla_ide](../../../includes/tla2sharptla-ide-md.md)] vlastnosti. Úvod XAML do rozhraní .NET Framework používá <xref:System.ComponentModel.TypeConverter> textová syntaxe (jak se nachází v hodnotě atributu nebo uzel hodnoty XAML) převést na objekt. <xref:System.ComponentModel.TypeConverter> Můžete také použít k serializaci hodnotu objektu na textová syntaxe. <xref:System.ComponentModel.TypeConverter> byl použit také v předchozích implementacích specifické pro architekturu XAML Windows Presentation Foundation (WPF) a Windows Communication Foundation (WCF). Další informace o <xref:System.ComponentModel.TypeConverter> v XAML, naleznete v tématu [XAML přehled převaděčů typů pro](type-converters-for-xaml-overview.md).  
   
 <a name="markup_extensions"></a>   
 ## <a name="markup-extensions"></a>Rozšíření značek  
@@ -42,10 +42,10 @@ Převaděče typů a rozšíření značek jsou dvě techniky, které systémy t
   
  Rozšíření značek jsou spojeny s třídou jeden podpůrné služby, ale můžete použít pro libovolnou hodnotu člena. (Můžete ale implementovat vaše – rozšíření značek záměrně omezit jeho použití na některé členy nebo určení typů s použitím místní služby.) Rozšíření značek můžete přepsat přidružení konvertor typu. Nebo můžete využít k určete název atributu pro členy, které by jinak podporují textová syntaxe.  
   
- Další informace o implementaci vzoru rozšíření značek XAML naleznete v tématu [– rozšíření značek XAML přehled](../../../docs/framework/xaml-services/markup-extensions-for-xaml-overview.md).  
+ Další informace o implementaci vzoru rozšíření značek XAML naleznete v tématu [– rozšíření značek XAML přehled](markup-extensions-for-xaml-overview.md).  
   
 > [!NOTE]
->  <xref:System.Windows.Markup.MarkupExtension> a <xref:System.Windows.Markup.ValueSerializer> typy jsou v <xref:System.Windows.Markup> obor názvů a nikoli v <xref:System.Xaml> oboru názvů. To neznamená, že tyto typy jsou specifické pro WPF nebo Windows Forms technologií, které jinak naplnit oborů názvů CLR, které obsahují řetězec `Windows`. <xref:System.Windows.Markup.MarkupExtension> a <xref:System.Windows.Markup.ValueSerializer> jsou v oboru názvů System.Xaml sestavení a nejsou závislé na konkrétní verzi rozhraní framework. Tyto typy existovala v oboru názvů CLR pro [!INCLUDE[net_v30_short](../../../includes/net-v30-short-md.md)] a zůstanou v oboru názvů CLR v [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] k vyhnuli narušení funkčnosti odkazů v existující projekty WPF. Další informace najdete v tématu [typy migrované z prostředí WPF do oboru názvů System.Xaml](../../../docs/framework/xaml-services/types-migrated-from-wpf-to-system-xaml.md).  
+>  <xref:System.Windows.Markup.MarkupExtension> a <xref:System.Windows.Markup.ValueSerializer> typy jsou v <xref:System.Windows.Markup> obor názvů a nikoli v <xref:System.Xaml> oboru názvů. To neznamená, že tyto typy jsou specifické pro WPF nebo Windows Forms technologií, které jinak naplnit oborů názvů CLR, které obsahují řetězec `Windows`. <xref:System.Windows.Markup.MarkupExtension> a <xref:System.Windows.Markup.ValueSerializer> jsou v oboru názvů System.Xaml sestavení a nejsou závislé na konkrétní verzi rozhraní framework. Tyto typy existovala v oboru názvů CLR pro [!INCLUDE[net_v30_short](../../../includes/net-v30-short-md.md)] a zůstanou v oboru názvů CLR v [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] k vyhnuli narušení funkčnosti odkazů v existující projekty WPF. Další informace najdete v tématu [typy migrované z prostředí WPF do oboru názvů System.Xaml](types-migrated-from-wpf-to-system-xaml.md).  
   
 <a name="value_serializers"></a>   
 ## <a name="value-serializers"></a>Hodnota Serializátorů  
@@ -63,11 +63,11 @@ Převaděče typů a rozšíření značek jsou dvě techniky, které systémy t
   
 <a name="service_context_for_a_value_converter"></a>   
 ## <a name="service-context-for-a-value-converter"></a>Kontext služby pro převaděč hodnoty  
- Při implementaci převaděč hodnoty často potřebují přístup ke kontextu, ve kterém se použije převaděč hodnoty. Tento kontext se označuje jako kontext služby. Kontext služby může obsahovat informace, jako je aktivní kontext schématu XAML, přístup k mapování systém typů, které poskytují kontext schématu XAML a XAML objektu zapisovače a tak dále. Další informace o kontexty služby dostupné pro převaděče hodnoty a jak získat přístup ke službám, které můžou poskytovat kontext služby najdete v tématu [služby kontexty dostupné pro převaděče typů a rozšíření značek](../../../docs/framework/xaml-services/service-contexts-available-to-type-converters-and-markup-extensions.md).  
+ Při implementaci převaděč hodnoty často potřebují přístup ke kontextu, ve kterém se použije převaděč hodnoty. Tento kontext se označuje jako kontext služby. Kontext služby může obsahovat informace, jako je aktivní kontext schématu XAML, přístup k mapování systém typů, které poskytují kontext schématu XAML a XAML objektu zapisovače a tak dále. Další informace o kontexty služby dostupné pro převaděče hodnoty a jak získat přístup ke službám, které můžou poskytovat kontext služby najdete v tématu [služby kontexty dostupné pro převaděče typů a rozšíření značek](service-contexts-available-to-type-converters-and-markup-extensions.md).  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Markup.MarkupExtension>
 - <xref:System.Xaml.XamlObjectWriter>
-- [Přehled rozšíření značek pro jazyk XAML](../../../docs/framework/xaml-services/markup-extensions-for-xaml-overview.md)
-- [Přehled převaděčů typů pro jazyk XAML](../../../docs/framework/xaml-services/type-converters-for-xaml-overview.md)
-- [Kontexty služby dostupné pro převaděče typů a rozšíření značek](../../../docs/framework/xaml-services/service-contexts-available-to-type-converters-and-markup-extensions.md)
+- [Přehled rozšíření značek pro jazyk XAML](markup-extensions-for-xaml-overview.md)
+- [Přehled převaděčů typů pro jazyk XAML](type-converters-for-xaml-overview.md)
+- [Kontexty služby dostupné pro převaděče typů a rozšíření značek](service-contexts-available-to-type-converters-and-markup-extensions.md)

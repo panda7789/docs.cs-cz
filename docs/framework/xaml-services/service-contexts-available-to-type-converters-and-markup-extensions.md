@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - XAML [XAML Services], type converter services how-to
 ms.assetid: b4dad00f-03da-4579-a4e9-d8d72d2ccbce
-ms.openlocfilehash: f3417ed53131a695623ea6c365314ab2c5eedd37
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 04d1a8b1c6f05537f12c3df79fda007332621264
+ms.sourcegitcommit: 5c1abeec15fbddcc7dbaa729fabc1f1f29f12045
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54629293"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58049455"
 ---
 # <a name="service-contexts-available-to-type-converters-and-markup-extensions"></a>Kontexty služby dostupné pro převaděče typů a rozšíření značek
 Autoři typy, které podporují použití rozšíření typ převaděče a značky musí mít často kontextové informace o tom, kde je umístěn v kódu nebo v kolem objektu struktura využití. Informace může být nutné tak, že je správně vytvořena instance zadaného objektu, nebo tak, aby odkazy na objekty existujících objektů v grafu objektů lze provést. Při použití rozhraní .NET Framework XAML Services, kontext, který může být vyžadováno vystavena jako řadu rozhraní služeb. Kód podpory rozšíření typ pro převaděč nebo značky můžete dotazovat služby pomocí kontextu poskytovatele služby, který je k dispozici a předaných z <xref:System.Xaml.XamlObjectWriter> nebo souvisejících typů. Kontext schématu XAML je k dispozici přímo prostřednictvím jedné konkrétní služby. Toto téma popisuje, jak získat přístup k kontexty služby z implementace převodníku hodnotu a uvádí obvykle dostupných služeb a jejich rolí.  
@@ -90,7 +90,7 @@ public override object ConvertFrom(ITypeDescriptorContext typeDescriptorContext,
 ### <a name="ixamltyperesolver"></a>IXamlTypeResolver  
  **Referenční dokumentace**: <xref:System.Windows.Markup.IXamlTypeResolver>  
   
- **Určené:** <xref:System.Windows.Markup> oboru názvů System.Xaml sestavení    
+ **Určené:** <xref:System.Windows.Markup> oboru názvů System.Xaml sestavení  
   
  **Relevantní pro:** Načíst cestu scénáře a interakci se kontext schématu XAML  
   
@@ -101,7 +101,7 @@ public override object ConvertFrom(ITypeDescriptorContext typeDescriptorContext,
 ### <a name="iuricontext"></a>IUriContext  
  **Referenční dokumentace**: <xref:System.Windows.Markup.IUriContext>  
   
- **Určené:** <xref:System.Windows.Markup> oboru názvů System.Xaml sestavení    
+ **Určené:** <xref:System.Windows.Markup> oboru názvů System.Xaml sestavení  
   
  **Relevantní pro:** Načíst cestu a uložit cestu zpracování hodnoty členů, které jsou identifikátory URI nebo `x:Uri` hodnoty.  
   
@@ -112,29 +112,29 @@ public override object ConvertFrom(ITypeDescriptorContext typeDescriptorContext,
 ### <a name="iambientprovider"></a>IAmbientProvider  
  **Referenční dokumentace**: <xref:System.Xaml.IAmbientProvider>  
   
- **Určené:** <xref:System.Xaml> oboru názvů System.Xaml sestavení    
+ **Určené:** <xref:System.Xaml> oboru názvů System.Xaml sestavení  
   
  **Relevantní pro:** Načíst vyhledávání odložení zpracování a zadejte cestu nebo optimalizace.  
   
- **Rozhraní API služeb:**<xref:System.Xaml.IAmbientProvider.GetAllAmbientValues%2A>, 3 ostatní.    
+ **Rozhraní API služeb:**<xref:System.Xaml.IAmbientProvider.GetAllAmbientValues%2A>, 3 ostatní.  
   
  Koncept podmínek v XAML je technika k označení určitého člena typu jako okolí. Typ, případně může být okolí tak, aby všechny hodnoty vlastností, které obsahují instanci typu by měl být vedlejším vlastnostem. Rozšíření značek nebo převaděče typů, které jsou dále na datový proud uzlu XAML a následníky v grafu objektů, které jsou přístupné vedlejší vlastnost nebo typ instance v okamžiku načtení; nebo může použít znalostní báze v okolí struktury ušetřit čas. To může ovlivnit stupeň podmínku, které je potřeba vyřešit typy pro jiné služby, například pro <xref:System.Windows.Markup.IXamlTypeResolver> nebo pro `x:Type`. Viz také <xref:System.Xaml.AmbientPropertyValue>.  
   
 ### <a name="ixamlschemacontextprovider"></a>IXamlSchemaContextProvider  
  **Referenční dokumentace**: <xref:System.Xaml.IXamlSchemaContextProvider>  
   
- **Určené:** <xref:System.Xaml> oboru názvů System.Xaml sestavení    
+ **Určené:** <xref:System.Xaml> oboru názvů System.Xaml sestavení  
   
  **Relevantní pro:** Načíst cestu a jakékoli operaci, která se musí přeložit typ XAML základního typu.  
   
  **Rozhraní API služby:**  <xref:System.Xaml.IXamlSchemaContextProvider.SchemaContext%2A>  
   
- Kontext schématu XAML je nezbytné pro všechny operace zatížení odložit, protože stejný kontext schématu musí fungovat odložené oblasti, aby bylo možné integrovat odloženého obsahu. Další informace o roli kontext schématu XAML najdete v tématu [XAML Services](../../../docs/framework/xaml-services/index.md).  
+ Kontext schématu XAML je nezbytné pro všechny operace zatížení odložit, protože stejný kontext schématu musí fungovat odložené oblasti, aby bylo možné integrovat odloženého obsahu. Další informace o roli kontext schématu XAML najdete v tématu [XAML Services](index.md).  
   
 ### <a name="irootobjectprovider"></a>IRootObjectProvider  
  **Referenční dokumentace**: <xref:System.Xaml.IRootObjectProvider>  
   
- **Určené:** <xref:System.Xaml> oboru názvů System.Xaml sestavení    
+ **Určené:** <xref:System.Xaml> oboru názvů System.Xaml sestavení  
   
  **Relevantní pro:** Načíst cestu.  
   
@@ -145,7 +145,7 @@ public override object ConvertFrom(ITypeDescriptorContext typeDescriptorContext,
 ### <a name="ixamlnamespaceresolver"></a>IXamlNamespaceResolver  
  **Referenční dokumentace**: <xref:System.Xaml.IXamlNamespaceResolver>  
   
- **Určené:** <xref:System.Xaml> oboru názvů System.Xaml sestavení    
+ **Určené:** <xref:System.Xaml> oboru názvů System.Xaml sestavení  
   
  **Relevantní pro:** Načíst cestu, cesta pro uložení.  
   
@@ -156,29 +156,29 @@ public override object ConvertFrom(ITypeDescriptorContext typeDescriptorContext,
 ### <a name="iprovidevaluetarget"></a>IProvideValueTarget  
  **Referenční dokumentace**: <xref:System.Windows.Markup.IProvideValueTarget>  
   
- **Určené:** <xref:System.Windows.Markup> oboru názvů System.Xaml sestavení    
+ **Určené:** <xref:System.Windows.Markup> oboru názvů System.Xaml sestavení  
   
  **Relevantní pro:** Načíst cestu a uložit cestu.  
   
- **Rozhraní API služeb:**<xref:System.Windows.Markup.IProvideValueTarget.TargetObject%2A>, <xref:System.Windows.Markup.IProvideValueTarget.TargetProperty%2A>.    
+ **Rozhraní API služeb:**<xref:System.Windows.Markup.IProvideValueTarget.TargetObject%2A>, <xref:System.Windows.Markup.IProvideValueTarget.TargetProperty%2A>.  
   
  <xref:System.Windows.Markup.IProvideValueTarget> umožňuje získat kontext, o kterém funguje v okamžiku načtení typ převaděče nebo značky rozšíření. Implementace může používat kontext tohoto zrušit platnost využití. Například WPF, jako je logika uvnitř některé z jeho rozšíření značek <xref:System.Windows.DynamicResourceExtension>. Logické kontroly <xref:System.Windows.Markup.IProvideValueTarget.TargetProperty%2A> abyste měli jistotu, že rozšíření slouží pouze k nastavení vlastnosti závislosti (nebo krátký seznam dalších vlastností bez závislostí).  
   
 ### <a name="ixamlnameresolver"></a>IXamlNameResolver  
  **Referenční dokumentace**: <xref:System.Xaml.IXamlNameResolver>  
   
- **Určené:** <xref:System.Xaml> oboru názvů System.Xaml sestavení    
+ **Určené:** <xref:System.Xaml> oboru názvů System.Xaml sestavení  
   
  **Relevantní pro:** Načíst definice grafu objekt cesty, řešení objekty identifikovaný `x:Name`, `x:Reference`, nebo techniky pro konkrétní rozhraní.  
   
- **Rozhraní API služeb:**<xref:System.Xaml.IXamlNameResolver.Resolve%2A>; jiná rozhraní API pro pokročilejší scénáře, jako je řešení dopředné odkazy.    
+ **Rozhraní API služeb:**<xref:System.Xaml.IXamlNameResolver.Resolve%2A>; jiná rozhraní API pro pokročilejší scénáře, jako je řešení dopředné odkazy.  
   
  Implementace rozhraní .NET Framework XAML Services `x:Reference` zpracování závisí na tuto službu. Konkrétní rozhraní nebo nástroje, které podporují rozhraní framework pomocí této služby pro `x:Name` zpracování nebo ekvivalentní (<xref:System.Windows.Markup.RuntimeNamePropertyAttribute> s atributy) vlastnosti zpracování.  
   
 ### <a name="idestinationtypeprovider"></a>IDestinationTypeProvider  
  **Referenční dokumentace**: <xref:System.Xaml.IDestinationTypeProvider>  
   
- **Určené:** <xref:System.Xaml> oboru názvů System.Xaml sestavení    
+ **Určené:** <xref:System.Xaml> oboru názvů System.Xaml sestavení  
   
  **Relevantní pro:** Načíst cestu řešení nepřímé informace o typu modulu CLR.  
   
@@ -189,5 +189,5 @@ public override object ConvertFrom(ITypeDescriptorContext typeDescriptorContext,
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Markup.MarkupExtension>
 - <xref:System.Xaml.XamlObjectWriter>
-- [Přehled rozšíření značek pro jazyk XAML](../../../docs/framework/xaml-services/markup-extensions-for-xaml-overview.md)
-- [Přehled převaděčů typů pro jazyk XAML](../../../docs/framework/xaml-services/type-converters-for-xaml-overview.md)
+- [Přehled rozšíření značek pro jazyk XAML](markup-extensions-for-xaml-overview.md)
+- [Přehled převaděčů typů pro jazyk XAML](type-converters-for-xaml-overview.md)
