@@ -2,12 +2,12 @@
 title: ProhlídkaF#
 description: Prozkoumat některé klíčové funkce F# programovací jazyk v této ukázky s ukázkami kódu.
 ms.date: 11/06/2018
-ms.openlocfilehash: d741f7066517ad9bc004e2a89ba0d85a1d4c424d
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 4b3ec7fd2c42712440ea7d7045c560ab20390b45
+ms.sourcegitcommit: 16aefeb2d265e69c0d80967580365fabf0c5d39a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56968293"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58125574"
 ---
 # <a name="tour-of-f"></a>Prohlídka F\#
 
@@ -136,10 +136,6 @@ Pokud nedodržíte výše způsobí chybu kompilace.
 [Vzor odpovídající](language-reference/pattern-matching.md) je F# funkci jazyka, která umožňuje správnosti provozu na F# typy.  Ve výše uvedené ukázky, budete si pravděpodobně všimli hodně `match x with ...` syntaxe.  Tento konstruktor umožňuje kompilátoru, který by rozuměla "tvar" datové typy, chcete-li požadovat, abyste pro účet pro všechny případy, je to možné, používáte-li datový typ prostřednictvím, která se označuje jako vyčerpávající porovnávání vzorů.  To je velmi efektivní správnost a cleverly umožňuje "přenést" co bude obvykle runtime problém v době kompilace.
 
 [!code-fsharp[PatternMatching](../../samples/snippets/fsharp/tour.fs#L705-L742)]
-
-Můžete také použít zkrácený `function` konstrukce pro porovnávání vzorů, což je užitečné při psaní využívání funkce, která zjednodušují [částečné použití argumentů](language-reference/functions/index.md#partial-application-of-arguments):
-
-[!code-fsharp[PatternMatching](../../samples/snippets/fsharp/tour.fs#L744-L762)]
 
 Možná jste si je použití `_` vzor.  To se označuje jako [zástupných](language-reference/pattern-matching.md#wildcard-pattern), což je způsob, jak o tom, že "I nezáleží na tom něco je".  I když je to praktické, můžete nechtěně vynechat vyčerpávající porovnávání vzorů už výhod kompilace enforcements, pokud si nejste opatrní při použití `_`.  To je nejlepší použít při nezáleží určité rozložená typu při vzor odpovídající nebo konečné klauzule mají výčtu každopádně smysluplné ve vzorku s odpovídajícím výrazem.
 

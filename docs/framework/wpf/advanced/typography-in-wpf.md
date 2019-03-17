@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - typography [WPF], about typography
 ms.assetid: 06cbf17b-6eff-4fe5-949d-2dd533e4e1f4
-ms.openlocfilehash: 16897413c31e39be5c1d45b43d6ef816d3f80aad
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: 3afb6a9bd62083704a3147df9d1cc5477b4f5921
+ms.sourcegitcommit: 16aefeb2d265e69c0d80967580365fabf0c5d39a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57482688"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58125626"
 ---
 # <a name="typography-in-wpf"></a>Typografie v rozhraní WPF
 Toto téma popisuje hlavní funkce typografickém [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Tyto funkce patří vylepšení kvality a výkonu při vykreslování textu [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] Typografie support, rozšířené mezinárodní text, vylepšená podpora písma a rozhraní (API) nové application programming text.  
@@ -18,13 +18,12 @@ Toto téma popisuje hlavní funkce typografickém [!INCLUDE[TLA2#tla_winclient](
 ## <a name="improved-quality-and-performance-of-text"></a>Zlepšení kvality a výkonu textu  
  Text v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] je vykreslen pomocí [!INCLUDE[TLA#tla_ct](../../../../includes/tlasharptla-ct-md.md)], která vylepšuje přehlednost a čitelnost textu. [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] je software technologie vyvinutá společností [!INCLUDE[TLA#tla_ms](../../../../includes/tlasharptla-ms-md.md)] , který zlepšuje čitelnost textu na existující monitorů LCD (zobrazí se Liquid Crystal), například Notebook obrazovky, obrazovky v prostředí Pocket PC a monitorování plochý. [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] používá vykreslování dílčí pixel, což umožní text zobrazený větší věrně k jeho skutečný tvar znaky zarovnání v jiné části sekundového údaje o jeden pixel. Další řešení zvyšuje ostrost malý podrobnosti zobrazení textu, tím se velmi zjednoduší si přečíst dlouhé doby trvání. Další vylepšení [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] je směru osy y vyhlazení, který vyhladí tolní počítače a DNA bez podstruktury křivky v textové znaky. Podrobné informace o [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] funkce, najdete v článku [ClearType – přehled](cleartype-overview.md).  
   
- ![Text s ClearType y&#45;směru spojení anti&#45;aliasing](./media/typographyinwpf02.gif "TypographyInWPF02")  
+ ![Text s ClearType směru osy y vyhlazení](./media/typography-in-wpf/text-y-direction-antialiasing.gif)  
 Text s ClearType směru osy y vyhlazení  
   
  Kanál vykreslení celý text může být hardwarově urychlené v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] předpokladu, že váš počítač splňuje minimální hardwarové požadavky. Vykreslování, které nelze provést pomocí hardwaru vrátí k softwarové vykreslování. Hardwarovou akceleraci ovlivňuje všechny fáze kanálu vykreslování textu – ukládání jednotlivých glyfy skládání glyfy do šifer, použití efektů, k použití [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] prolnutí algoritmů a poslední zobrazený výstup. Další informace o hardwarovou akceleraci, naleznete v tématu [vrstvy vykreslování grafiky](graphics-rendering-tiers.md).  
   
- ![Diagram kanálu vykreslování textu](./media/typographyinwpf01.png "TypographyInWPF01")  
-Diagram kanálu vykreslování textu  
+ ![Diagram kanálu vykreslování textu](./media/typography-in-wpf/text-rendering-pipeline.png)  
   
  Kromě toho animovaný text podle znaku nebo glyf plně využívá grafiky schopnost hardwaru, kterou [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Výsledkem je hladké textové animace.  
   
@@ -86,70 +85,57 @@ Diagram kanálu vykreslování textu
 #### <a name="using-bitmap-effects-transforms-and-text-effects"></a>Pomocí bitmapových efektů, transformace a textových efektů  
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] můžete vytvořit vizuálně zajímavé používá textu používá funkce, jako je například bitmapových efektů, transformace a textových efektů. Následující příklad ukazuje typické typu efektem stínu použitý pro text.  
   
- ![Stín Softness &#61; 0,25](./media/shadowtext01.jpg "ShadowText01")  
-Text s vrhá stín  
+ ![Stín Softness &#61; 0,25](./media/typography-in-wpf/drop-shadow-text-effect.jpg) 
   
  Následující příklad ukazuje efektem stínu a šumu použitý pro text.  
   
- ![Stín textu s šumu](./media/shadowtext04.jpg "ShadowText04")  
-Text s vrhá stín a šumu  
+ ![Stín textu s šumu](./media/typography-in-wpf/drop-shadow-noise-text.jpg) 
   
  Následující příklad ukazuje efekt vnější záře použitý pro text.  
   
- ![Stín textu pomocí OuterGlowBitmapEffect](./media/shadowtext05.jpg "ShadowText05")  
-Text s efektem vnější záře  
+ ![Stín textu pomocí OuterGlowBitmapEffect](./media/typography-in-wpf/text-shadow-glow-effect.jpg)
   
  Následující příklad ukazuje efekt rozostření použitý pro text.  
   
- ![Stín textu pomocí BlurBitmapEffect](./media/shadowtext06.jpg "ShadowText06")  
-Text s efektem rozostření  
-  
+ ![Pomocí BlurBitmapEffect Stín textu](./media/typography-in-wpf/text-shadow-blur-effect.jpg)  
+
  Následující příklad ukazuje, druhý řádek textu měřítkem řídit 150 % podél osy x a třetí řádek textu měřítkem řídit 150 % podél osy y.  
   
- ![Text, škálování, použití ScaleTransform –](./media/transformedtext02.jpg "TransformedText02")  
-Textu s použitím ScaleTransform –  
+ ![Škálování, použití ScaleTransform – text](./media/typography-in-wpf/scaled-text-scaletransform.jpg) 
   
  Následující příklad ukazuje text zkosený podél osy x.  
   
- ![Text zkosený pomocí SkewTransform](./media/transformedtext03.jpg "TransformedText03")  
-Textu s použitím SkewTransform  
+ ![Text zkosený pomocí SkewTransform](./media/typography-in-wpf/skewed-transformed-text.jpg)
   
  A <xref:System.Windows.Media.TextEffect> objekt je objekt pomocné rutiny, která umožňuje zpracovávat text jako jeden nebo více skupin znaků v textovém řetězci. Následující příklad ukazuje jednotlivý znak se otočí. Každý znak v intervalech 1 sekundu otočena nezávisle na sobě.  
   
- ![Snímek obrazovky efekt textu otáčení textu](./media/texteffect01.jpg "TextEffect01")  
-Příklad otáčení animace efekt textu  
+ ![Snímek obrazovky efekt textu otáčení textu](./media/typography-in-wpf/rotating-text-effect.jpg) 
   
 #### <a name="using-flow-documents"></a>Použití toku dokumentů  
  Kromě společné [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] ovládací prvky, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] nabízí rozložení ovládacího prvku pro textové prezentaci – <xref:System.Windows.Documents.FlowDocument> elementu. <xref:System.Windows.Documents.FlowDocument> Element ve spojení s <xref:System.Windows.Controls.DocumentViewer> element, obsahuje ovládací prvek pro velkého množství textu s použitím různých požadavkům na rozložení. Rozložení ovládacích prvků poskytují přístup k rozšířené Typografie prostřednictvím <xref:System.Windows.Documents.Typography> objektu a vlastnosti související se písmo jiných [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] ovládacích prvků.  
   
  Následující příklad ukazuje, textového obsahu konání <xref:System.Windows.Controls.FlowDocumentReader>, poskytující vyhledávání, navigace, stránkování a obsah škálování podpory.  
   
- ![Příklad použití písem OpenType snímek obrazovky](./media/typographyinwpf-03.png "TypographyInWPF_03")  
-Text konání FlowDocumentReader  
+ ![Snímek obrazovky zobrazující písem OpenType.](./media/typography-in-wpf/typography-text-flowdocumentreader.png)
   
  Další informace najdete v tématu [dokumenty v platformě WPF](documents-in-wpf.md).  
   
 ### <a name="lightweight-text-drawing"></a>Kreslení jednoduchý Text  
  Text lze nakreslit přímo na [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] objektů pomocí <xref:System.Windows.Media.DrawingContext.DrawText%2A> metodu <xref:System.Windows.Media.DrawingContext> objektu. Chcete-li použít tuto metodu, vytvoříte <xref:System.Windows.Media.FormattedText> objektu. Tento objekt umožňuje nakreslit více řádky textu, ve kterém každý znak v textu jednotlivě naformátovaná. Funkce <xref:System.Windows.Media.FormattedText> objekt obsahuje většinu funkcí příznaky DrawText v rozhraní API systému Win32. Kromě toho <xref:System.Windows.Media.FormattedText> objekt obsahuje funkce, jako je například podpora tlačítko se třemi tečkami, ve kterém se třemi tečkami zobrazí, když text překročí jeho hranice. Následující příklad ukazuje, text, který má několik formátování, včetně lineárního přechodu na druhý a třetí slova.  
   
- ![Text zobrazený pomocí objektu FormattedText](./media/formattedtext01.jpg "FormattedText01")  
-Zobrazený text pomocí objektu FormattedText  
+ ![Text zobrazený pomocí objektu FormattedText](./media/typography-in-wpf/text-formatted-linear-gradient.jpg) 
   
  Můžete převést formátovaný text do <xref:System.Windows.Media.Geometry> objekty, které umožňuje vytvoření jiných typů vizuálně zajímavou text. Například můžete vytvořit <xref:System.Windows.Media.Geometry> objektu podle obrysu textového řetězce.  
   
- ![Text osnovy pomocí štětec lineárního přechodu](./media/outlinedtext02.jpg "OutlinedText02")  
-Text osnovy pomocí štětec lineárního přechodu  
+ ![Text osnovy pomocí štětec lineárního přechodu](./media/typography-in-wpf/text-outline-linear-gradient.jpg)  
   
  Následující příklady znázorňují několik možností, jak vytvářet zajímavé vizuální efekty úpravou stroke, výplň a zvýraznit text převedený.  
   
- ![Text mají různé barvy výplně a stroke](./media/outlinedtext03.jpg "OutlinedText03")  
-Příklad nastavení tahu a výplně různé barvy  
+ ![Text mají různé barvy výplně a tahu](./media/typography-in-wpf/fill-stroke-text-effect.jpg)  
   
- ![Text s obrázkový štětec u stroke](./media/outlinedtext04.jpg "OutlinedText04")  
-Příklad obrázkový štětec u tahu  
+ ![Text použitý pro stroke obrázkový štětec](./media/typography-in-wpf/image-brush-application.jpg)
   
- ![Text s obrázkový štětec u stroke](./media/outlinedtext05.jpg "OutlinedText05")  
-Příklad obrázkový štětec, který je použitý ke stroke a zvýraznění  
+ ![Text s použita k obtažení a zvýraznit obrázkový štětec](./media/typography-in-wpf/image-brush-text-application.jpg)
   
  Další informace o <xref:System.Windows.Media.FormattedText> objektu, najdete v článku [kreslení textu ve formátu](drawing-formatted-text.md).  
   
@@ -158,8 +144,7 @@ Příklad obrázkový štětec, který je použitý ke stroke a zvýraznění
   
  Na rozdíl od tradičních text [!INCLUDE[TLA#tla_api](../../../../includes/tlasharptla-api-md.md)], <xref:System.Windows.Media.TextFormatting.TextFormatter> komunikuje přes sadu metod zpětného volání klienta rozložení textu. Vyžaduje od klienta tyto metody v implementaci <xref:System.Windows.Media.TextFormatting.TextSource> třídy. Následující diagram znázorňuje interakci rozložení textu mezi klientskou aplikací a <xref:System.Windows.Media.TextFormatting.TextFormatter>.  
   
- ![Diagram klienta rozložení textu a objektu TextFormatter](./media/textformatter01.png "TextFormatter01")  
-Interakce mezi aplikací a objektu TextFormatter  
+ ![Diagram klienta rozložení textu a objektu TextFormatter](./media/typography-in-wpf/text-layout-text-formatter-interaction.png)  
   
  Další informace o vytváření rozložení vlastního textu, naleznete v tématu [pokročilé formátování textu](advanced-text-formatting.md).  
   

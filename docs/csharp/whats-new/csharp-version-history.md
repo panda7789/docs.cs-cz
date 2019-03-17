@@ -3,12 +3,12 @@ title: Historie jazyka C# – průvodce v C#
 description: Co vzhled jazyka, jako je v jeho nejstarší verze a jak vyvinula od?
 author: erikdietrich
 ms.date: 09/20/2017
-ms.openlocfilehash: c750bf8e1ae6dd94c11dc887921c5c365cc04b10
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 84274f8ddfd8295d5db1e861c790c134ba30c6e2
+ms.sourcegitcommit: 16aefeb2d265e69c0d80967580365fabf0c5d39a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56981930"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58126146"
 ---
 # <a name="the-history-of-c"></a>Historie jazyka C\#
 
@@ -84,7 +84,7 @@ C# verze 3.0 byli zaznamenáni v pozdní 2007, spolu s Visual Studio 2008, i kdy
 - [Automaticky implementované vlastnosti](../programming-guide/classes-and-structs/auto-implemented-properties.md)
 - [Anonymní typy](../programming-guide/classes-and-structs/anonymous-types.md)
 - [Výrazy dotazů](../linq/query-expression-basics.md)
-- [Výrazy lambda](../lambda-expressions.md)
+- [Výrazy lambda](../programming-guide/statements-expressions-operators/lambda-expressions.md)
 - [Stromy výrazů](../expression-trees.md)
 - [Rozšiřující metody](../programming-guide/classes-and-structs/extension-methods.md)
 - [Implicitně typované lokální proměnné](../language-reference/keywords/var.md)
@@ -168,7 +168,7 @@ Další funkce zahrnuté:
 
 - [Zahození](./csharp-7.md#discards)
 - [Binární literály a oddělovače číslic:](./csharp-7.md#numeric-literal-syntax-improvements)
-- [Vyvolání výrazů](./csharp-7.md#throw-expressions)
+- [Výrazy throw](./csharp-7.md#throw-expressions)
 
 Všechny tyto funkce nabízejí zajímavé nové funkce pro vývojáře a příležitosti pro zápis i čistější kód než kdy dřív. Zvýraznění je kondenzačních deklarace proměnné pro použití s `out` – klíčové slovo a tím, že více návratových hodnot přes řazené kolekce členů.
 

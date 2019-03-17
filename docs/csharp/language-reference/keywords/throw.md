@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 5ac4feef-4b1a-4c61-aeb4-61d549e5dd42
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4e29c0cc85f0ec6ccd3f428d64121f53b91ae9a7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d6911ff96ca847f554e9b615aba6ab83a212efee
+ms.sourcegitcommit: 16aefeb2d265e69c0d80967580365fabf0c5d39a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54713847"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58125990"
 ---
 # <a name="throw-c-reference"></a>throw (Referenční dokumentace jazyka C#)
 
@@ -60,7 +60,7 @@ Od verze C# 7.0, `throw` lze použít jako výraz, stejně jako příkaz. To umo
 
    [!code-csharp[csrefKeyword#5](~/samples/snippets/csharp/language-reference/keywords/throw/coalescing.cs#1)]  
 
-- s výrazem v těle [lambda](../../lambda-expressions.md) nebo metody. Následující příklad ukazuje metodu s výrazem v těle, která se vyvolá <xref:System.InvalidCastException> protože převod na <xref:System.DateTime> hodnota není podporována.
+- s výrazem v těle [lambda](../../programming-guide/statements-expressions-operators/lambda-expressions.md) nebo metody. Následující příklad ukazuje metodu s výrazem v těle, která se vyvolá <xref:System.InvalidCastException> protože převod na <xref:System.DateTime> hodnota není podporována.
 
    [!code-csharp[csrefKeyword#6](~/samples/snippets/csharp/language-reference/keywords/throw/exp-bodied.cs#1)]  
 

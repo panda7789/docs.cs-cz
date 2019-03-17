@@ -9,12 +9,12 @@ helpviewer_keywords:
 - graphics [Windows Forms], clipping
 - graphics [Windows Forms], transformations in nested objects
 ms.assetid: a0d9f178-43a4-4323-bb5a-d3e3f77ae6c1
-ms.openlocfilehash: 639b53ada8639ed686d04b4aa2e5295ca08240b0
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: a66edd0297b723b81c31675c9b0e6b6def9ed10a
+ms.sourcegitcommit: 16aefeb2d265e69c0d80967580365fabf0c5d39a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57714174"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58125860"
 ---
 # <a name="using-nested-graphics-containers"></a>Použití vnořených grafických kontejnerů
 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] poskytuje kontejnery, které vám umožní dočasně nahradit nebo rozšířit části stavu v <xref:System.Drawing.Graphics> objektu. Vytvořte kontejner zavoláním <xref:System.Drawing.Graphics.BeginContainer%2A> metodu <xref:System.Drawing.Graphics> objektu. Můžete volat <xref:System.Drawing.Graphics.BeginContainer%2A> opakovaně k formulářů vnořeného kontejnery. Každé volání <xref:System.Drawing.Graphics.BeginContainer%2A> musí být párována s volání <xref:System.Drawing.Graphics.EndContainer%2A>.  
@@ -25,9 +25,9 @@ ms.locfileid: "57714174"
  [!code-csharp[System.Drawing.MiscLegacyTopics#61](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.MiscLegacyTopics/CS/Class1.cs#61)]
  [!code-vb[System.Drawing.MiscLegacyTopics#61](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.MiscLegacyTopics/VB/Class1.vb#61)]  
   
- V předchozím kódu obdélník načtené z uvnitř kontejneru se transformuje nejprve podle Světové transformace kontejneru (rotace) a pak podle Světové transformace <xref:System.Drawing.Graphics> objektu (překlad). Obdélník načtené z mimo kontejner je transformovat pouze Světové transformace <xref:System.Drawing.Graphics> objektu (překlad). Následující obrázek znázorňuje těmito dvěma obdélníky.  
+ V předchozím kódu obdélník načtené z uvnitř kontejneru se transformuje nejprve podle Světové transformace kontejneru (rotace) a pak podle Světové transformace <xref:System.Drawing.Graphics> objektu (překlad). Obdélník načtené z mimo kontejner je transformovat pouze Světové transformace <xref:System.Drawing.Graphics> objektu (překlad). Následující obrázek znázorňuje těmito dvěma obdélníky: 
   
- ![Nested Containers](./media/csnestedcontainers1.png "csnestedcontainers1")  
+ ![Obrázek, na kterém vnořené kontejnery.](./media/using-nested-graphics-containers/nested-containers-illustration.png)  
   
 ## <a name="clipping-in-nested-containers"></a>Omezení ve vnořené kontejnery  
  Následující příklad ukazuje, jak vnořené kontejnery zpracování výstřižek oblastech. Kód vytvoří <xref:System.Drawing.Graphics> objektů a kontejnerů, které <xref:System.Drawing.Graphics> objektu. Výstřižek oblast <xref:System.Drawing.Graphics> obdélníku je objekt a oblast ořezu kontejneru je elipsu. Kód vytvoří dvě volání <xref:System.Drawing.Graphics.DrawLine%2A> metody. První volání <xref:System.Drawing.Graphics.DrawLine%2A> se nachází uvnitř kontejneru a druhé volání <xref:System.Drawing.Graphics.DrawLine%2A> je mimo kontejner (po volání <xref:System.Drawing.Graphics.EndContainer%2A>). První řádek je oříznutý ořezovou průnik dvou výstřižek oblastech. Druhý řádek je oříznut pouze podle oblasti Obdélníkový výstřižek <xref:System.Drawing.Graphics> objektu.  
@@ -35,9 +35,9 @@ ms.locfileid: "57714174"
  [!code-csharp[System.Drawing.MiscLegacyTopics#62](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.MiscLegacyTopics/CS/Class1.cs#62)]
  [!code-vb[System.Drawing.MiscLegacyTopics#62](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.MiscLegacyTopics/VB/Class1.vb#62)]  
   
- Následující obrázek znázorňuje následující dva řádky oříznuté.  
+ Následující obrázek znázorňuje dvě zkrácený řádky:
   
- ![Nested Container](./media/nestedcontainers2.png "nestedcontainers2")  
+ ![Obrázek, na kterém vnořený kontejner zkrácený řádky.](./media/using-nested-graphics-containers/nested-container-clipped-lines.png)  
   
  Jak dvě předchozí příklady ukazují, transformace a výstřižek oblasti jsou kumulativní ve vnořené kontejnery. Pokud nastavíte Světové transformace kontejneru a <xref:System.Drawing.Graphics> objektu, obě transformace uplatní na položky načtené z uvnitř kontejneru. Transformace kontejneru budou použité první a transformaci <xref:System.Drawing.Graphics> objektu se použije druhý. Pokud nastavíte oblastech oříznutí kontejneru a <xref:System.Drawing.Graphics> objektu položky načtené z uvnitř kontejneru bude oříznutý ořezovou průnik dvou výstřižek oblastech.  
   
@@ -54,7 +54,7 @@ ms.locfileid: "57714174"
   
  Následující obrázek znázorňuje tři řetězce. Vykreslení z vnitřní kontejner a z řetězce <xref:System.Drawing.Graphics> objektu jsou vyhlazené podle vyhlazení. Řetězec z vnějšího kontejneru není vyhlazené podle vyhlazení vzhledem k tomu, <xref:System.Drawing.Graphics.TextRenderingHint%2A> je nastavena na <xref:System.Drawing.Text.TextRenderingHint.SingleBitPerPixel>.  
   
- ![Vnořené kontejnery](./media/nestedcontainers3.png "nestedcontainers3")  
+ ![Obrázek, na kterém řetězce z vnořené kontejnery.](./media/using-nested-graphics-containers/nested-containers-three-strings.png)  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Drawing.Graphics>

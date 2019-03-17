@@ -9,12 +9,12 @@ helpviewer_keywords:
 - gradients [Windows Forms], creating path
 - graphics paths [Windows Forms], creating gradient
 ms.assetid: 1948e834-e104-481c-b71d-d8aa9e4d106e
-ms.openlocfilehash: 6fbe8a78131cb64e28326133a7cc0fbdcbffd46b
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: cbbffa7b9250c5e489a95f687ea58eaf2a08d1bf
+ms.sourcegitcommit: 16aefeb2d265e69c0d80967580365fabf0c5d39a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57720394"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58126224"
 ---
 # <a name="how-to-create-a-path-gradient"></a>Postupy: Vytvoření přechodu cesty
 <xref:System.Drawing.Drawing2D.PathGradientBrush> Třída umožňuje přizpůsobit způsob vyplnění obrazce pomocí postupně Změna barev. Například můžete určit jednu barvu pro System center cesty a jinou barvu dané hranice lze cesty. Můžete také zadat samostatnou barvy pro každý z několika bodů podél hranici cesty.  
@@ -26,13 +26,13 @@ ms.locfileid: "57720394"
   
 -   Následující příklad zkopíruje elipsu s štětce přechodu cesty. Barva center je nastavena na modrou a hranice barva je nastavena na akvamarínovou. Následující obrázek znázorňuje vyplněnou elipsu.  
   
-     ![Cesta přechodu](./media/pathgradient1.png "pathgradient1")  
+     ![Cesta přechodu výplně elipsu.](./media/how-to-create-a-path-gradient/gradient-path-filled-ellipse.png)  
   
      Ve výchozím nastavení nerozšiřuje štětce přechodu cesty mimo hranice cesty. Pokud používáte štětce přechodu cesty tak, aby vyplnil obrázek, která se rozpíná za hranice cesty, nebude vyplnění oblasti obrazovky mimo cestu.  
   
-     Následující obrázek znázorňuje, co se stane, když změníte <xref:System.Drawing.Graphics.FillEllipse%2A> volání v následující kód, který `e.Graphics.FillRectangle(pthGrBrush, 0, 10, 200, 40)`.  
+     Následující obrázek znázorňuje, co se stane, když změníte <xref:System.Drawing.Graphics.FillEllipse%2A> volání v následující kód, který `e.Graphics.FillRectangle(pthGrBrush, 0, 10, 200, 40)`:  
   
-     ![Cesta přechodu](./media/pathgradient2.png "pathgradient2")  
+     ![Cesta přechodu rozšířenou nad rámec hranic cesty.](./media/how-to-create-a-path-gradient/gradient-path-extended-beyond-boundary.png)  
   
      [!code-csharp[System.Drawing.UsingaGradientBrush#11](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.UsingaGradientBrush/CS/Class1.cs#11)]
      [!code-vb[System.Drawing.UsingaGradientBrush#11](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.UsingaGradientBrush/VB/Class1.vb#11)]  
@@ -46,9 +46,9 @@ ms.locfileid: "57720394"
      [!code-csharp[System.Drawing.UsingaGradientBrush#12](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.UsingaGradientBrush/CS/Class1.cs#12)]
      [!code-vb[System.Drawing.UsingaGradientBrush#12](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.UsingaGradientBrush/VB/Class1.vb#12)]  
   
--   Následující příklad nakreslí přechodu cesty bez <xref:System.Drawing.Drawing2D.GraphicsPath> objekt v kódu. Konkrétní <xref:System.Drawing.Drawing2D.PathGradientBrush.%23ctor%2A> konstruktor v příkladu přijímá pole bodů, ale nevyžaduje <xref:System.Drawing.Drawing2D.GraphicsPath> objektu. Všimněte si také, že <xref:System.Drawing.Drawing2D.PathGradientBrush> slouží k naplnění obdélníku, ne cestu. Obdélníku je větší než uzavřené cesty používá k definování štětce, takže některé obdélníku není kresleno stopy. Následující obrázek znázorňuje obdélník (tečkovaná čára) a část obdélník kresleno štětce přechodu cesty.  
+-   Následující příklad nakreslí přechodu cesty bez <xref:System.Drawing.Drawing2D.GraphicsPath> objekt v kódu. Konkrétní <xref:System.Drawing.Drawing2D.PathGradientBrush.%23ctor%2A> konstruktor v příkladu přijímá pole bodů, ale nevyžaduje <xref:System.Drawing.Drawing2D.GraphicsPath> objektu. Všimněte si také, že <xref:System.Drawing.Drawing2D.PathGradientBrush> slouží k naplnění obdélníku, ne cestu. Obdélníku je větší než uzavřené cesty používá k definování štětce, takže některé obdélníku není kresleno stopy. Následující obrázek znázorňuje obdélník (tečkovaná čára) a část obdélník kresleno štětce přechodu cesty: 
   
-     ![Přechodu](./media/gradient4.png "gradient4")  
+     ![Část barevného přechodu kresleno štětce přechodu cesty.](./media/how-to-create-a-path-gradient/gradient-painted-path-gradient-brush.png)  
   
      [!code-csharp[System.Drawing.UsingaGradientBrush#13](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.UsingaGradientBrush/CS/Class1.cs#13)]
      [!code-vb[System.Drawing.UsingaGradientBrush#13](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.UsingaGradientBrush/VB/Class1.vb#13)]  
@@ -65,7 +65,7 @@ ms.locfileid: "57720394"
   
      Následující obrázek znázorňuje výstup následující kód. Tři tečky na levé straně je aqua pouze v případě System center. Se třemi tečkami na pravé straně je aqua kdekoli uvnitř vnitřní cesty.  
   
- ![Gradient](./media/focusscales1nogamma.png "focusscales1NoGamma")  
+ ![Efekt přechodu z nastaví fokus](./media/how-to-create-a-path-gradient/focus-scales-aqua-inner-outer-ellipse.png)  
   
  [!code-csharp[System.Drawing.UsingaGradientBrush#14](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.UsingaGradientBrush/CS/Class1.cs#14)]
  [!code-vb[System.Drawing.UsingaGradientBrush#14](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.UsingaGradientBrush/VB/Class1.vb#14)]  
@@ -78,7 +78,7 @@ ms.locfileid: "57720394"
   
      Následující obrázek znázorňuje trojúhelník vyplněny štětce přechodu na vlastní cestu.  
   
-     ![Cesta přechodu](./media/pathgradient4.png "pathgradient4")  
+     ![Trojúhelník vyplněny štětce přechodu na vlastní cestu.](./media/how-to-create-a-path-gradient/gradient-brush-filled-triangle.png)  
   
      [!code-csharp[System.Drawing.UsingaGradientBrush#15](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.UsingaGradientBrush/CS/Class1.cs#15)]
      [!code-vb[System.Drawing.UsingaGradientBrush#15](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.UsingaGradientBrush/VB/Class1.vb#15)]  
@@ -92,18 +92,18 @@ ms.locfileid: "57720394"
      [!code-csharp[System.Drawing.UsingaGradientBrush#16](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.UsingaGradientBrush/CS/Class1.cs#16)]
      [!code-vb[System.Drawing.UsingaGradientBrush#16](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.UsingaGradientBrush/VB/Class1.vb#16)]  
   
-     Následující obrázek znázorňuje vyplněnou elipsu a středového bodu štětce přechodu cesty.  
+     Následující obrázek znázorňuje vyplněnou elipsu a středového bodu štětce přechodu cesty:  
   
-     ![Cesta přechodu](./media/pathgradient5.png "pathgradient5")  
+     ![Cesta přechodu vyplněnou elipsu a System center bodu.](./media/how-to-create-a-path-gradient/gradient-path-filled-ellipse-center-point.png)  
   
 -   Můžete nastavit středového bodu štětce přechodu cesty do umístění mimo cestu, která byla použita k sestavení kompletních stopy. Následující příklad nahradí volání nastavení <xref:System.Drawing.Drawing2D.PathGradientBrush.CenterPoint%2A> vlastnost v předchozím kódu.  
   
      [!code-csharp[System.Drawing.UsingaGradientBrush#17](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.UsingaGradientBrush/CS/Class1.cs#17)]
      [!code-vb[System.Drawing.UsingaGradientBrush#17](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.UsingaGradientBrush/VB/Class1.vb#17)]  
   
-     Následující obrázek znázorňuje výstup s touto změnou.  
+     Následující obrázek znázorňuje výstup s touto změnou:  
   
-     ![Gradient Path](./media/pathgradient6.png "pathgradient6")  
+     ![Cesta přechodu středový bod mimo cestu.](./media/how-to-create-a-path-gradient/gradient-path-center-point-outside.png)  
   
      V předchozí ilustraci nejsou body úplně vpravo se třemi tečkami čistě modrá, (i když jsou velmi podobné). Barev v gradientu jsou umístěny, jako kdyby výplně dosáhne stavu (145, 35), kde barva by být čistě modré (0, 0, 255). Ale výplně nikdy dosáhne (145, 35) vzhledem k tomu, že pouze uvnitř jeho cesty jsou vykreslovány štětce přechodu cesty.  
   

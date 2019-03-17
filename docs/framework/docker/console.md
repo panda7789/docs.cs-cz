@@ -4,12 +4,12 @@ description: Zjistěte, jak využít stávající aplikace konzoly rozhraní .NE
 author: spboyer
 ms.date: 09/28/2016
 ms.assetid: 85cca1d5-c9a4-4eb2-93e6-4f878de07fd7
-ms.openlocfilehash: 379e0814d7d254935ef23a483d5e0f9163babcd1
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 31da5c4fc8f057709b2abcab49657c2c0992d3e5
+ms.sourcegitcommit: 16aefeb2d265e69c0d80967580365fabf0c5d39a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53145277"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58126081"
 ---
 # <a name="running-console-applications-in-windows-containers"></a>Spuštění konzolové aplikace v kontejnerech Windows
 
@@ -50,7 +50,7 @@ Kontejnery Windows se podporují na [Windows 10 Anniversary Update](https://www.
 
 Musíte mít Docker pro Windows, kontejnery Windows verze 1.12 Beta 26 nebo vyšší pro podporu. Ve výchozím nastavení Docker umožňuje kontejnery založené na Linuxu; Přepnout na kontejnery Windows klikněte pravým tlačítkem myši klikněte na ikonu Dockeru na hlavním panelu systému a vyberte **přepnout na kontejnery Windows**. Docker se spustí proces změny a může vyžadovat restartování.
 
-![Kontejnery Windows](./media/console/SwitchContainer.png)
+![Snímek obrazovky možností nabídky kontejneru Windows.](./media/console/windows-container-option.png)
 
 ## <a name="building-the-application"></a>Sestavení aplikace
 Obvykle se distribuují konzolové aplikace pomocí instalačního programu, FTP nebo sdílené složky nasazení. Při nasazování do kontejneru, třeba prostředky zkompilovat a připravené k umístění, ke kterému se dá použít při vytvoření image Dockeru.

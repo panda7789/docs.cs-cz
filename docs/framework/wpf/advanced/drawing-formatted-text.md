@@ -10,12 +10,12 @@ helpviewer_keywords:
 - formatted text [WPF]
 - drawing [WPF], formatted text
 ms.assetid: b1d851c1-331c-4814-9964-6fe769db6f1f
-ms.openlocfilehash: 538cc23a3ee7696a28de43e5724dc450328205ff
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 705e91923f6ab38f7dce83e511027102112539f3
+ms.sourcegitcommit: 16aefeb2d265e69c0d80967580365fabf0c5d39a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57372175"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58125431"
 ---
 # <a name="drawing-formatted-text"></a>Kreslení formátovaného textu
 Toto téma obsahuje přehled funkce <xref:System.Windows.Media.FormattedText> objektu. Tento objekt lze podrobně pro kreslení textu [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikací.  
@@ -24,8 +24,7 @@ Toto téma obsahuje přehled funkce <xref:System.Windows.Media.FormattedText> ob
 ## <a name="technology-overview"></a>Přehled technologie  
  <xref:System.Windows.Media.FormattedText> Objekt umožňuje nakreslit více řádky textu, ve kterém každý znak v textu jednotlivě naformátovaná. Následující příklad ukazuje, text, který má několik formátů použit.  
   
- ![Text zobrazený pomocí objektu FormattedText](./media/formattedtext01.jpg "FormattedText01")  
-Zobrazený text pomocí FormattedText – metoda  
+ ![Text zobrazený pomocí objektu FormattedText](./media/typography-in-wpf/text-formatted-linear-gradient.jpg)  
   
 > [!NOTE]
 >  Pro tyto vývojáře migrace z [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] rozhraní API tabulky [Win32 migrace](#win32_migration) části seznamy [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] DrawText příznaky a přibližný ekvivalent v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].  
@@ -42,8 +41,7 @@ Zobrazený text pomocí FormattedText – metoda
   
  Použití <xref:System.Windows.Media.FormattedText.MaxTextWidth%2A> vlastnost Omezit text na konkrétní šířku. Aby nedošlo k překročení nastavená šířka se automaticky zalomí text. Použití <xref:System.Windows.Media.FormattedText.MaxTextHeight%2A> vlastnost Omezit text na konkrétní výšce. Text se zobrazí tři tečky "..." pro text, který překračuje zadaný výška.  
   
- ![Text zobrazený pomocí objektu FormattedText](./media/formattedtext02.png "FormattedText02")  
-Zobrazí text zobrazující zalamování řádků a tlačítko se třemi tečkami  
+ ![Text zobrazený zalamování řádků a tlačítko se třemi tečkami.](./media/drawing-formatted-text/formatted-text-wordwrap-ellipsis.png)    
   
  Můžete změnit více styl na jeden nebo více znaků. Například lze zavolat i <xref:System.Windows.Media.FormattedText.SetFontSize%2A> a <xref:System.Windows.Media.FormattedText.SetForegroundBrush%2A> metody, chcete-li změnit formátování prvních pěti znaků v textu.  
   
@@ -62,19 +60,15 @@ Zobrazí text zobrazující zalamování řádků a tlačítko se třemi tečkam
 ### <a name="converting-formatted-text-to-a-geometry"></a>Převod formátovaného textu pro geometrii  
  Můžete převést formátovaný text do <xref:System.Windows.Media.Geometry> objekty, které umožňuje vytvoření jiných typů vizuálně zajímavou text. Například můžete vytvořit <xref:System.Windows.Media.Geometry> objektu podle obrysu textového řetězce.  
   
- ![Text osnovy pomocí štětec lineárního přechodu](./media/outlinedtext02.jpg "OutlinedText02")  
-Text osnovy pomocí štětec lineárního přechodu  
+ ![Text osnovy pomocí štětec lineárního přechodu](./media/typography-in-wpf/text-outline-linear-gradient.jpg)    
   
  Následující příklady znázorňují několik možností, jak vytvářet zajímavé vizuální efekty úpravou stroke, výplň a zvýraznit text převedený.  
   
- ![Text mají různé barvy výplně a stroke](./media/outlinedtext03.jpg "OutlinedText03")  
-Příklad nastavení tahu a výplně různé barvy  
+ ![Text mají různé barvy výplně a tahu](./media/typography-in-wpf/fill-stroke-text-effect.jpg)  
   
- ![Text s obrázkový štětec u stroke](./media/outlinedtext04.jpg "OutlinedText04")  
-Příklad obrázkový štětec u tahu  
+ ![Text použitý pro stroke obrázkový štětec](./media/typography-in-wpf/image-brush-application.jpg)
   
- ![Text s obrázkový štětec u stroke](./media/outlinedtext05.jpg "OutlinedText05")  
-Příklad obrázkový štětec, který je použitý ke stroke a zvýraznění  
+ ![Text s použita k obtažení a zvýraznit obrázkový štětec](./media/typography-in-wpf/image-brush-text-application.jpg)
   
  Pokud je text převést na <xref:System.Windows.Media.Geometry> objektu, není již sadu znaků – nelze upravit znaků v textovém řetězci. Můžete však vliv na vzhled text převedený úpravou jeho vlastností tahu a výplně. Protože byl zdvih odkazuje na osnovy převedený textu. Výplň odkazuje na oblast uvnitř osnovy text převedený. Další informace najdete v tématu [vytvořit uvedených Text](how-to-create-outlined-text.md).  
   
@@ -82,15 +76,14 @@ Příklad obrázkový štětec, který je použitý ke stroke a zvýraznění
   
  Následující příklad ukazuje formátovaný text, který byl převeden na <xref:System.Windows.Media.PathGeometry> objektu. Animovaný elipsa sleduje cestu tahů vykresleného textu.  
   
- ![Sphere následující cestu geometrii textu](./media/textpathgeometry01.gif "TextPathGeometry01")  
+ ![Sphere následující cestu geometrii textu](./media/drawing-formatted-text/sphere-following-geometry-path.gif)  
 Sphere následující cestu geometrii textu  
   
  Další informace najdete v tématu [jak: Vytvořit animaci PathGeometry textu](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms743610(v=vs.100)).  
   
  Jakmile se převedlo na můžete vytvořit další zajímavé způsoby využití formátovaný text <xref:System.Windows.Media.PathGeometry> objektu. Například můžete oříznout video k zobrazení dovnitř.  
   
- ![Zobrazení videa v geometrické cesty textu](./media/videotextdemo01.png "VideoTextDemo01")  
-Zobrazení videa v geometrické cesty textu  
+ ![Zobrazení videa v geometrické cesty textu](./media/drawing-formatted-text/video-displaying-text-path-geometry.png)
   
 <a name="win32_migration"></a>   
 ## <a name="win32-migration"></a>Migrace Win32  

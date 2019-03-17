@@ -11,39 +11,34 @@ helpviewer_keywords:
 - linear gradient brush [WPF]
 - typography [WPF], outline effects
 ms.assetid: 4aa3cf6e-1953-4f26-8230-7c1409e5f28d
-ms.openlocfilehash: 409981e9c751144d26151210977a45b5e1eccf0a
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 5de1068401dac61c5de5b86604da9417e18a94ae
+ms.sourcegitcommit: 16aefeb2d265e69c0d80967580365fabf0c5d39a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57368148"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58125938"
 ---
 # <a name="how-to-create-outlined-text"></a>Postupy: Vytvoření textu osnovy
 Ve většině případů při přidávání dekoru na textové řetězce do vaší [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikace, používáte text z hlediska kolekce samostatných znaky nebo glyfů. Například lze vytvořit štětec lineárního přechodu a použít ho k <xref:System.Windows.Controls.Control.Foreground%2A> vlastnost <xref:System.Windows.Controls.TextBox> objektu. Při zobrazení nebo upravte pole štětec lineárního přechodu se automaticky využije na aktuální sady znaků v textovém řetězci.  
   
- ![Text zobrazený s štětec lineárního přechodu](./media/outlinedtext01.jpg "OutlinedText01")  
-Příklad štětec lineárního přechodu u textového pole  
+ ![Text zobrazený s štětec lineárního přechodu](./media/how-to-create-outlined-text/text-linear-gradient.jpg)    
   
  Ale můžete také převést text do <xref:System.Windows.Media.Geometry> objektům, umožňuje vytvářet jiné druhy vizuálně formátovaný text. Například můžete vytvořit <xref:System.Windows.Media.Geometry> objektu podle obrysu textového řetězce.  
   
- ![Text osnovy pomocí štětec lineárního přechodu](./media/outlinedtext02.jpg "OutlinedText02")  
-Příklad štětec lineárního přechodu u geometrie obrysu textu  
+ ![Text osnovy pomocí štětec lineárního přechodu](./media/how-to-create-outlined-text/text-outline-linear-gradient.jpg)  
   
  Pokud je text převést na <xref:System.Windows.Media.Geometry> objektu, není již sadu znaků – nelze upravit znaků v textovém řetězci. Můžete však vliv na vzhled text převedený úpravou jeho vlastností tahu a výplně. Protože byl zdvih odkazuje na osnovy převedený textu. Výplň odkazuje na oblast uvnitř osnovy text převedený.  
   
  Následující příklady znázorňují několik způsobů vytváření vizuálních efektů úpravou tahu a zadejte text převedený.  
   
- ![Text mají různé barvy výplně a stroke](./media/outlinedtext03.jpg "OutlinedText03")  
-Příklad nastavení tahu a výplně různé barvy  
+ ![Text mají různé barvy výplně a tahu](./media/how-to-create-outlined-text/fill-stroke-text-effect.jpg)  
   
- ![Text s obrázkový štětec u stroke](./media/outlinedtext04.jpg "OutlinedText04")  
-Příklad obrázkový štětec u tahu  
+ ![Text použitý pro stroke obrázkový štětec](./media/how-to-create-outlined-text/image-brush-application.jpg)
   
  Je také možné změnit ohraničující obdélník pole nebo zvýraznění převedeného textu. Následující příklad ukazuje způsob, jak vytváření vizuálních efektů úpravou tahu a zvýraznit text převedený.  
   
- ![Text s obrázkový štětec u stroke](./media/outlinedtext05.jpg "OutlinedText05")  
-Příklad obrázkový štětec, který je použitý ke stroke a zvýraznění  
-  
+ ![Text s použita k obtažení a zvýraznit obrázkový štětec](./media/how-to-create-outlined-text/image-brush-text-application.jpg)
+
 ## <a name="example"></a>Příklad  
  Klíč k převodu textu <xref:System.Windows.Media.Geometry> objektu je použití <xref:System.Windows.Media.FormattedText> objektu. Po vytvoření tohoto objektu můžete použít <xref:System.Windows.Media.FormattedText.BuildGeometry%2A> a <xref:System.Windows.Media.FormattedText.BuildHighlightGeometry%2A> metody pro převod textu na <xref:System.Windows.Media.Geometry> objekty. První metoda vrátí geometrie formátovaného textu. Druhá metoda vrátí geometrie formátovaný text ohraničovacího rámečku. Následující příklad kódu ukazuje, jak vytvořit <xref:System.Windows.Media.FormattedText> objektu a k načtení geometrie formátovaný text a jeho ohraničujícího rámečku.  
   

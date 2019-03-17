@@ -10,12 +10,12 @@ helpviewer_keywords:
 - virtual methods [C#]
 - C# language, inheritance
 ms.assetid: 81d64ee4-50f9-4d6c-a8dc-257c348d2eea
-ms.openlocfilehash: a6e9e095caaa8c0e4330df3f766dbef927c5acd2
-ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
+ms.openlocfilehash: 9ad7253fb9efc891e1f0fdea118e1fe7bde6a857
+ms.sourcegitcommit: 16aefeb2d265e69c0d80967580365fabf0c5d39a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57202350"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58125912"
 ---
 # <a name="inheritance-c-programming-guide"></a>Dědičnost (Průvodce programováním v C#)
 
@@ -30,8 +30,7 @@ Dědičnost, společně s zapouzdření a polymorfismu, je jednou tři primárn�
   
  Následující obrázek ukazuje třídu `WorkItem` , která představuje položky práce v některých obchodních procesů. Stejně jako všechny třídy je odvozen z <xref:System.Object?displayProperty=nameWithType> a dědí její metody. `WorkItem` Přidá pět členů své vlastní. Patří mezi ně konstruktor, protože nejsou zděděných konstruktorů. Třída `ChangeRequest` dědí z `WorkItem` a představuje konkrétní typ pracovní položky. `ChangeRequest` Přidá dva další členy, které dědí z členů `WorkItem` a z <xref:System.Object>. Je nutné přidat vlastní konstruktor a také přidá `originalItemID`. Vlastnost `originalItemID` umožňuje `ChangeRequest` instance má být přidružena k původní `WorkItem` pro kterou platí žádost o změnu.  
   
- ![Dědičnost třídy](../../../csharp/programming-guide/classes-and-structs/media/class_inheritance.png "Class_Inheritance")  
-Dědičnost tříd  
+ ![Diagram zobrazující průběh dědičnost tříd](./media/inheritance/class-inheritance-diagram.png)  
   
  Následující příklad ukazuje, jak relace tříd jsme vám ukázali v předchozí ilustraci jsou vyjádřeny v jazyce C#. Příklad také ukazuje, jak `WorkItem` přepisuje metodu virtuální <xref:System.Object.ToString%2A?displayProperty=nameWithType>a jak `ChangeRequest` třída dědí `WorkItem` implementace metody.  
   

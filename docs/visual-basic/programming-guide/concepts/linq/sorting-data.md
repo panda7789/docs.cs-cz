@@ -2,19 +2,19 @@
 title: Řazení dat (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 6f81065c-0c89-4bf3-a6d8-442273f8810e
-ms.openlocfilehash: e36ccc72689e756105f51c988d4cafd06d4d8da5
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5875b15dbdec69aca653b8f6cca4dd07fc9af343
+ms.sourcegitcommit: 16aefeb2d265e69c0d80967580365fabf0c5d39a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54520123"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58126250"
 ---
 # <a name="sorting-data-visual-basic"></a>Řazení dat (Visual Basic)
 Operace řazení Seřadí prvky pořadí na základě jednoho nebo více atributů. První kritérium řazení provede primární řazení elementů. Zadáním druhý kritérium řazení, lze řazení elementů v rámci jednotlivých skupin primární řazení.  
   
  Následující obrázek znázorňuje výsledky operace abecední řazení na sekvenci znaků.  
   
- ![Řazení operace LINQ](../../../../csharp/programming-guide/concepts/linq/media/linq_ordering.png "LINQ_Ordering")  
+ ![Obrázek znázorňující, operace abecední řazení.](./media/sorting-data/alphabetical-sort-operation.png)  
   
  Standardní metody operátoru dotazu, které řazení dat jsou uvedené v následující části.  
   

@@ -2,19 +2,19 @@
 title: Řazení dat (C#)
 ms.date: 07/20/2015
 ms.assetid: d93fa055-2f19-46d2-9898-e2aed628f1c9
-ms.openlocfilehash: dfa0a4a030cab8ec33c90d8edaef0d6070755034
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: bceb599d9e8eb3c51c07526b9ad22d3d4206efdd
+ms.sourcegitcommit: 16aefeb2d265e69c0d80967580365fabf0c5d39a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54721952"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58125717"
 ---
 # <a name="sorting-data-c"></a>Řazení dat (C#)
 Operace řazení Seřadí prvky pořadí na základě jednoho nebo více atributů. První kritérium řazení provede primární řazení elementů. Zadáním druhý kritérium řazení, lze řazení elementů v rámci jednotlivých skupin primární řazení.  
   
- Následující obrázek znázorňuje výsledky operace abecední řazení na sekvenci znaků.  
+ Následující obrázek znázorňuje výsledky operace abecední řazení na sekvenci znaků: 
   
- ![Řazení operace LINQ](../../../../csharp/programming-guide/concepts/linq/media/linq_ordering.png "LINQ_Ordering")  
+ ![Obrázek znázorňující, operace abecední řazení.](./media/sorting-data/alphabetical-sort-operation.png)  
   
  Standardní metody operátoru dotazu, které řazení dat jsou uvedené v následující části.  
   

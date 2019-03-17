@@ -1,13 +1,13 @@
 ---
 title: Výpočetní výrazy
 description: Zjistěte, jak vytvořit pohodlné syntaxe pro zápis výpočty v F# , můžete být sekvencované a kombinované pomocí řídit tok konstrukcí a vazby.
-ms.date: 07/27/2018
-ms.openlocfilehash: 7524a42f8efb951be255ca6cc285740ef1fa12c3
-ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
+ms.date: 03/15/2019
+ms.openlocfilehash: 3c2abb5c6204309fc8d5215a53ce8af46c01d218
+ms.sourcegitcommit: 16aefeb2d265e69c0d80967580365fabf0c5d39a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56093512"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58125509"
 ---
 # <a name="computation-expressions"></a>Výpočetní výrazy
 
@@ -246,7 +246,7 @@ Ve výše uvedeném kódu volání `Run` a `Delay` jsou vynechány, pokud nejsou
 |<code>{&#124; match expr with &#124; pattern_i -> cexpr_i &#124;}</code>|<code>match expr with &#124; pattern_i -> {&#124; cexpr_i &#124;}</code>|
 |<code>{&#124; for pattern in expr do cexpr &#124;}</code>|<code>builder.For(enumeration, (fun pattern -> {&#124; cexpr &#124;}))</code>|
 |<code>{&#124; for identifier = expr1 to expr2 do cexpr &#124;}</code>|<code>builder.For(enumeration, (fun identifier -> {&#124; cexpr &#124;}))</code>|
-|<code>{&#124; while expr do cexpr &#124;}</code>|<code>builder.While(fun () -> expr), builder.Delay({&#124;cexpr &#124;})</code>|
+|<code>{&#124; while expr do cexpr &#124;}</code>|<code>builder.While(fun () -> expr, builder.Delay({&#124;cexpr &#124;}))</code>|
 |<code>{&#124; try cexpr with &#124; pattern_i -> expr_i &#124;}</code>|<code>builder.TryWith(builder.Delay({&#124; cexpr &#124;}), (fun value -> match value with &#124; pattern_i -> expr_i &#124; exn -> reraise exn)))</code>|
 |<code>{&#124; try cexpr finally expr &#124;}</code>|<code>builder.TryFinally(builder.Delay( {&#124; cexpr &#124;}), (fun () -> expr))</code>|
 |<code>{&#124; cexpr1; cexpr2 &#124;}</code>|<code>builder.Combine({&#124;cexpr1 &#124;}, {&#124; cexpr2 &#124;})</code>|

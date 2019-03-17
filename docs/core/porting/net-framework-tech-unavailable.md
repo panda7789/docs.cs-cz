@@ -4,12 +4,12 @@ description: Seznamte se s technologií rozhraní .NET Framework, které jsou k 
 author: cartermp
 ms.author: mairaw
 ms.date: 12/7/2018
-ms.openlocfilehash: 8b43c15a942e0effab486e5399325bec746484a2
-ms.sourcegitcommit: c6f69b0cf149f6b54483a6d5c2ece222913f43ce
+ms.openlocfilehash: 9d7860184806288dd0d5eb3b0447839d5e47c27f
+ms.sourcegitcommit: 16aefeb2d265e69c0d80967580365fabf0c5d39a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55904901"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58125470"
 ---
 # <a name="net-framework-technologies-unavailable-on-net-core"></a>Technologií rozhraní .NET framework není k dispozici v rozhraní .NET Core
 
@@ -21,7 +21,7 @@ To, že rozhraní API nebo technologie v současnosti není implementovaná nebu
 
 Domény aplikace (AppDomains) izolace aplikace od sebe. Objektů třídy AppDomains vyžadují podpora modulu CLR a obvykle jsou dost drahé. Nepodporuje vytváření domén další aplikace... Plánujeme není na přidání této funkce v budoucnu. Izolace kódu, doporučujeme samostatné procesy nebo pomocí kontejnerů jako alternativu. Pro dynamické načítání sestavení, doporučujeme vám nový <xref:System.Runtime.Loader.AssemblyLoadContext> třídy.
 
-Pro usnadnění migrace kódu z rozhraní .NET Framework, .NET Core uvádí některé <xref:System.AppDomain> rovinu rozhraní API. Některá rozhraní API normálně fungovat (například <xref:System.AppDomain.UnhandledException?displayProperty=nameWithType>), některé členy Neprovádět žádnou akci (třeba <xref:System.AppDomain.SetCachePath%2A>), a některé z nich výjimku <xref:System.PlatformNotSupportedException> (například <xref:System.AppDomain.CreateDomain%2A>). Zkontrolujte typy použít proti [ `System.AppDomain` zdroj odkazu](https://github.com/dotnet/corefx/blob/master/src/System.Runtime.Extensions/src/System/AppDomain.cs) v [úložiště GitHub dotnet/corefx](https://github.com/dotnet/corefx)a vyberte větev, která odpovídá verzi implementovaná.
+Pro usnadnění migrace kódu z rozhraní .NET Framework, .NET Core uvádí některé <xref:System.AppDomain> rovinu rozhraní API. Některá rozhraní API normálně fungovat (například <xref:System.AppDomain.UnhandledException?displayProperty=nameWithType>), některé členy Neprovádět žádnou akci (třeba <xref:System.AppDomain.SetCachePath%2A>), a některé z nich výjimku <xref:System.PlatformNotSupportedException> (například <xref:System.AppDomain.CreateDomain%2A>). Zkontrolujte typy použít proti [ `System.AppDomain` zdroj odkazu](https://github.com/dotnet/corefx/blob/master/src/Common/src/CoreLib/System/AppDomain.cs) v [úložiště GitHub dotnet/corefx](https://github.com/dotnet/corefx)a vyberte větev, která odpovídá verzi implementovaná.
 
 ## <a name="remoting"></a>Vzdálená komunikace
 

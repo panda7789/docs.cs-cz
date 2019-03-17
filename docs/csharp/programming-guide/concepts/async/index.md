@@ -98,9 +98,9 @@ Následující charakteristiky představují shrnutí, co dělá předchozí př
  Další informace o asynchronii v předchozích verzích rozhraní .NET Framework najdete v tématu [TPL a tradiční rozhraní .NET Framework Asynchronous Programming](../../../../standard/parallel-programming/tpl-and-traditional-async-programming.md).  
   
 ## <a name="BKMK_WhatHappensUnderstandinganAsyncMethod"></a> Co se děje v asynchronní metodě  
- Nejdůležitějším principem, který je třeba pochopit v asynchronním programování, je, jak ovládat přesuny toků od metody k metodě. Následující diagram vás provede procesem.  
+ Nejdůležitějším principem, který je třeba pochopit v asynchronním programování, je, jak ovládat přesuny toků od metody k metodě. Následující diagram vás provede procesem:  
   
- ![Trasování aplikace asynchronní](../../../../csharp/programming-guide/concepts/async/media/navigationtrace.png "NavigationTrace")  
+ ![Diagram zobrazující průběh trasování asynchronního programu.](./media/index/navigation-trace-async-program.png)  
   
  Čísla v diagramu odpovídají následujícím krokům.  
   

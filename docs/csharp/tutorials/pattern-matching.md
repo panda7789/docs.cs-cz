@@ -3,12 +3,12 @@ title: Použít porovnávání vzorů funkce k rozšíření datových typů
 description: V tomto kurzu pokročilé ukazuje, jak použít porovnávání vzorů techniky k vytvoření funkce pomocí dat a algoritmy, které se vytvářejí zvlášť.
 ms.date: 03/13/2019
 ms.custom: mvc
-ms.openlocfilehash: 210cb15699057482e36984f80dd08f8b19db55d3
-ms.sourcegitcommit: 5c1abeec15fbddcc7dbaa729fabc1f1f29f12045
+ms.openlocfilehash: 0d7c853709d0986710bf4d1a72daeb1f7cda3109
+ms.sourcegitcommit: 16aefeb2d265e69c0d80967580365fabf0c5d39a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58051543"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58125808"
 ---
 # <a name="tutorial-using-pattern-matching-features-to-extend-data-types"></a>Kurz: Použití porovnávání vzorů funkce k rozšíření datových typů
 
@@ -39,7 +39,7 @@ Vezměte v úvahu hlavní metro oblast, která používá ke správě přenosů 
 
 Z tohoto stručný popis vám může mít rychle šrafují si hierarchii objektů modelování tohoto systému. Však vaše data pochází z více zdrojů, jako jsou jinými systémy pro správu registrace vozidlo. Tyto systémy poskytují různé třídy k modelování dat a není nutné jeden objekt modelu, která vám pomůže. V tomto kurzu použijete tyto zjednodušené třídy k modelování dat vozidla mezi těmito externími systémy, jak je znázorněno v následujícím kódu:
 
-[!code-csharp[ExternalSystems](../../../samples/csharp/tutorials/patterns/start/toll-calculator/ExternalSystems.cs)]
+[!code-csharp[ExternalSystems](~/samples/csharp/tutorials/patterns/start/toll-calculator/ExternalSystems.cs)]
 
 Můžete stáhnout počáteční kód z [dotnet/samples](https://github.com/dotnet/samples/tree/master/csharp/tutorials/patterns/start) úložiště GitHub. Uvidíte, že třídy vozidlo jsou z různých systémů a jsou v různých oborech názvů. Žádné společné základní třídy, jiné než `System.Object` můžete využít.
 
@@ -76,18 +76,18 @@ namespace toll_calculator
         public decimal CalculateToll(object vehicle) =>
             vehicle switch
         {
-            Car c => 2.00m,
-            Taxi t => 3.50m,
-            Bus b => 5.00m,
+            Car c           => 2.00m,
+            Taxi t          => 3.50m,
+            Bus b           => 5.00m,
             DeliveryTruck t => 10.00m,
-            { } => throw new ArgumentException(message: "Not a known vehicle type", paramName: nameof(vehicle)),
-            null => throw new ArgumentNullException(nameof(vehicle))
+            { }             => throw new ArgumentException(message: "Not a known vehicle type", paramName: nameof(vehicle)),
+            null            => throw new ArgumentNullException(nameof(vehicle))
         };
     }
 }
 ```
 
-Předchozí kód používá **výraz switch** (není stejný jako [ `switch` ](../language-reference/keywords/switch.md) příkaz), který testuje **vzor typu**. A **výraz switch** začíná proměnnou, `vehicle` v předchozím kódu, za nímž následuje `switch` – klíčové slovo. Dále obsahuje všechny přepínače arms uvnitř složených závorek. `switch` Výraz vytvoří další upřesnění zpráv o syntaxi, která obklopuje `switch` příkazu. `case` – Klíčové slovo je vynechán, a výsledek každého arm je výraz. Poslední dva arms zobrazit novou funkci jazyka. `{ }` Případ odpovídá libovolný nenulový objekt, který neodpovídal starší arm. Tato arm zachytí nesprávné typy předaný této metodě. Nakonec `null` vzor zachytí při `null` je předaný této metodě. `null` Model může být poslední, protože jiné vzory typ shodný s pouze nenulový objekt nesprávného typu.
+Předchozí kód používá **výraz switch** (není stejný jako [ `switch` ](../language-reference/keywords/switch.md) příkaz), který testuje **vzor typu**. A **výraz switch** začíná proměnnou, `vehicle` v předchozím kódu, za nímž následuje `switch` – klíčové slovo. Dále obsahuje všechny **přepnout arms** uvnitř složených závorek. `switch` Výraz vytvoří další upřesnění zpráv o syntaxi, která obklopuje `switch` příkazu. `case` – Klíčové slovo je vynechán, a výsledek každého arm je výraz. Poslední dva arms zobrazit novou funkci jazyka. `{ }` Případ odpovídá libovolný nenulový objekt, který neodpovídal starší arm. Tato arm zachytí nesprávné typy předaný této metodě. Nakonec `null` vzor zachytí při `null` je předaný této metodě. `null` Model může být poslední, protože jiné vzory typ shodný s pouze nenulový objekt nesprávného typu.
 
 Můžete otestovat tento kód, pomocí následujícího kódu v `Program.cs`:
 
@@ -155,16 +155,16 @@ Tato pravidla je možné implementovat pomocí **vlastnost vzor** ve stejném v�
 ```csharp
 vehicle switch
 {
-    Car { Passengers: 0} => 2.00m + 0.50m,
-    Car { Passengers: 1 } => 2.0m,
-    Car { Passengers: 2} => 2.0m - 0.50m,
+    Car { Passengers: 0}        => 2.00m + 0.50m,
+    Car { Passengers: 1 }       => 2.0m,
+    Car { Passengers: 2}        => 2.0m - 0.50m,
     Car c when c.Passengers > 2 => 2.00m - 1.0m,
 
     // ...
 };
 ```
 
-První tři případy typ jako testu `Car`, zkontrolujte hodnotu `Passengers` vlastnost. Pokud se obě shodovat, tento výraz je vyhodnocen a vrácena. Zobrazí poslední klauzule `when` klauzule pro vlastnosti modelu. Můžete použít `when` klauzule k testování podmínek jiné než rovnost pro vlastnost. V předchozím příkladu `when` klauzule testy, že jsou k dispozici více než 2 cestujících v autě. Přesněji řečeno není nutné v tomto příkladu.
+První tři případy typ jako testu `Car`, zkontrolujte hodnotu `Passengers` vlastnost. Pokud se obě shodovat, tento výraz je vyhodnocen a vrácena. Zobrazí poslední klauzule `when` klauzule přepínače arm. Můžete použít `when` klauzule k testování podmínek jiné než rovnost pro vlastnost. V předchozím příkladu `when` klauzule testy, že jsou k dispozici více než 2 cestujících v autě. Přesněji řečeno není nutné v tomto příkladu.
 
 By bylo třeba rozbalit také případy taxi podobným způsobem:
 
@@ -173,10 +173,10 @@ vehicle switch
 {
     // ...
 
-    Taxi { Fares: 0} => 3.50m + 1.00m,
+    Taxi { Fares: 0}  => 3.50m + 1.00m,
     Taxi { Fares: 1 } => 3.50m,
-    Taxi { Fares: 2} => 3.50m - 0.50m,
-    Taxi t => 3.50m - 1.00m,
+    Taxi { Fares: 2}  => 3.50m - 0.50m,
+    Taxi t            => 3.50m - 1.00m,
 
     // ...
 };
@@ -217,15 +217,15 @@ Po dokončení budete mít metodu, která vypadá podobně jako následující:
 ```csharp
 vehicle switch
 {
-    Car { Passengers: 0} => 2.00m + 0.50m,
-    Car { Passengers: 1 } => 2.0m,
-    Car { Passengers: 2} => 2.0m - 0.50m,
+    Car { Passengers: 0}        => 2.00m + 0.50m,
+    Car { Passengers: 1}        => 2.0m,
+    Car { Passengers: 2}        => 2.0m - 0.50m,
     Car c when c.Passengers > 2 => 2.00m - 1.0m,
    
-    Taxi { Fares: 0} => 3.50m + 1.00m,
+    Taxi { Fares: 0}  => 3.50m + 1.00m,
     Taxi { Fares: 1 } => 3.50m,
-    Taxi { Fares: 2} => 3.50m - 0.50m,
-    Taxi t => 3.50m - 1.00m,
+    Taxi { Fares: 2}  => 3.50m - 0.50m,
+    Taxi t            => 3.50m - 1.00m,
     
     Bus b when ((double)b.Riders / (double)b.Capacity) < 0.50 => 5.00m + 2.00m,
     Bus b when ((double)b.Riders / (double)b.Capacity) > 0.90 => 5.00m - 1.00m, 
@@ -237,9 +237,9 @@ vehicle switch
 };
 ```
 
-## <a name="recursive-patterns"></a>Rekurzivní vzory
+Mnohé z nich přepnout arms jsou příklady **rekurzivní vzory**. Například `Car { Passengers: 1}` zobrazuje konstantní vzorek uvnitř vlastnosti modelu.
 
-Můžete provést tento kód méně opakované pomocí **rekurzivní vzory**. `Car` a `Taxi` mají čtyři různé arms v předchozích příkladech. V obou případech můžete vytvořit typ vzor, který se předají do vlastnosti modelu. Tato technika je znázorněno v následujícím kódu:
+Méně opakované tento kód můžete provést pomocí vnořených přepínače. `Car` a `Taxi` mají čtyři různé arms v předchozích příkladech. V obou případech můžete vytvořit typ vzor, který se předají do vlastnosti modelu. Tato technika je znázorněno v následujícím kódu:
 
 ```csharp
 public decimal CalculateToll(object vehicle) =>
@@ -268,7 +268,8 @@ public decimal CalculateToll(object vehicle) =>
         DeliveryTruck t when (t.GrossWeightClass > 5000) => 10.00m + 5.00m,
         DeliveryTruck t when (t.GrossWeightClass < 3000) => 10.00m - 2.00m,
         DeliveryTruck t => 10.00m,
-        { } => throw new ArgumentException(message: "Not a known vehicle type", paramName: nameof(vehicle)),
+
+        { }  => throw new ArgumentException(message: "Not a known vehicle type", paramName: nameof(vehicle)),
         null => throw new ArgumentNullException(nameof(vehicle))
     };
 ```
@@ -314,41 +315,29 @@ Používá systém, který shromažďuje nástroje <xref:System.DateTime> strukt
 private static bool IsWeekDay(DateTime timeOfToll) =>
     timeOfToll.DayOfWeek switch
     {
-        DayOfWeek.Monday => true,
-        DayOfWeek.Tuesday => true,
+        DayOfWeek.Monday    => true,
+        DayOfWeek.Tuesday   => true,
         DayOfWeek.Wednesday => true,
-        DayOfWeek.Thursday => true,
-        DayOfWeek.Friday => true,
-        DayOfWeek.Saturday => false,
-        DayOfWeek.Sunday => false
+        DayOfWeek.Thursday  => true,
+        DayOfWeek.Friday    => true,
+        DayOfWeek.Saturday  => false,
+        DayOfWeek.Sunday    => false
     };
 ```
 
 Tato metoda funguje, ale je automatizujete. Nemůžete zjednodušit, jak je znázorněno v následujícím kódu:
 
-```csharp
-private static bool IsWeekDay(DateTime timeOfToll) =>
-    timeOfToll.DayOfWeek switch
-    {
-        DayOfWeek.Saturday,  => false,
-        DayOfWeek.Sunday => false,
-        _ => true
-    };
-```
-
-Kombinací dvou hodnot do jedné arm, můžete provést další zjednodušení na tento výraz:
-
-[!code-csharp[IsWeekDay](../../../samples/csharp/tutorials/patterns/finished/toll-calculator/TollCalculator.cs#IsWeekDay)]
+[!code-csharp[IsWeekDay](~/samples/csharp/tutorials/patterns/finished/toll-calculator/TollCalculator.cs#IsWeekDay)]
 
 V dalším kroku přidejte podobnou funkci ke kategorizaci času bloky:
 
-[!code-csharp[GetTimeBand](../../../samples/csharp/tutorials/patterns/finished/toll-calculator/TollCalculator.cs#GetTimeBand)]
+[!code-csharp[GetTimeBand](~/samples/csharp/tutorials/patterns/finished/toll-calculator/TollCalculator.cs#GetTimeBand)]
 
 Předchozí metoda nepoužívá porovnávání vzorů. Je jasnější, pomocí známých cascade z `if` příkazy. Přidat soukromé `enum` převést každý časový rozsah na diskrétní hodnoty.
 
 Po vytvoření tyto metody můžete použít jiné `switch` výraz s **vzor n-tice** k výpočtu cenové úrovně premium. Může vytvářet `switch` výraz s všechny 16 arms:
 
-[!code-csharp[FullTuplePattern](../../../samples/csharp/tutorials/patterns/finished/toll-calculator/TollCalculator.cs#TuplePatternOne)]
+[!code-csharp[FullTuplePattern](~/samples/csharp/tutorials/patterns/finished/toll-calculator/TollCalculator.cs#TuplePatternOne)]
 
 Výše kód funguje, ale můžete se dá zjednodušit. Všechny osm kombinace pro víkendu mají stejné linka. Můžete nahradit všechny osm tento jeden řádek:
 
@@ -360,7 +349,7 @@ Příchozí a odchozí provoz mají stejné multiplikátor během denní den v t
 
 ```csharp
 (true, TimeBand.Overnight, _) => 0.75m,
-(true, TimeBand.Daytime, _) => 1.5m,
+(true, TimeBand.Daytime, _)   => 1.5m,
 ```
 
 Kód by měl vypadat jako v následujícím kódu až tyto dvě změny:
@@ -369,13 +358,13 @@ Kód by měl vypadat jako v následujícím kódu až tyto dvě změny:
 public decimal PeakTimePremium(DateTime timeOfToll, bool inbound) =>
     (IsWeekDay(timeOfToll), GetTimeBand(timeOfToll), inbound) switch
     {
-        (true, TimeBand.MorningRush, true) => 2.00m,
+        (true, TimeBand.MorningRush, true)  => 2.00m,
         (true, TimeBand.MorningRush, false) => 1.00m,
-        (true, TimeBand.Daytime, _) => 1.50m,
-        (true, TimeBand.EveningRush, true) => 1.00m,
+        (true, TimeBand.Daytime,     _)     => 1.50m,
+        (true, TimeBand.EveningRush, true)  => 1.00m,
         (true, TimeBand.EveningRush, false) => 2.00m,
-        (true, TimeBand.Overnight, _) => 0.75m,
-        (false, _, _) => 1.00m,
+        (true, TimeBand.Overnight,   _)     => 0.75m,
+        (false, _,                   _)     => 1.00m,
     };
 ```
 

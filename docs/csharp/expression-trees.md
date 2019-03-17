@@ -3,16 +3,16 @@ title: Stromy výrazů
 description: Další informace o stromů výrazů v .NET Core a jak se dají použít k reprezentaci kód jako struktury, které můžete zkontrolovat, upravit a spustit.
 ms.date: 06/20/2016
 ms.assetid: aceb4719-0d5a-4b19-b01f-b51063bcc54f
-ms.openlocfilehash: 56509f1eb0f2bdca8a8f3a51df958d42e95af6f4
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: b7a39ccec293a22e4b4d7d01b30f9f441fd0079b
+ms.sourcegitcommit: 16aefeb2d265e69c0d80967580365fabf0c5d39a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50190733"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58125834"
 ---
 # <a name="expression-trees"></a>Stromy výrazů
 
-Pokud jste použili LINQ, budete mít prostředí, bohatá knihovna kde `Func` typy jsou součástí sady rozhraní API. (Pokud nejste obeznámeni s jazykem LINQ, pravděpodobně chtít číst [kurzu LINQ](linq/index.md) a kurz týkající se [výrazy lambda](lambda-expressions.md) před tímto.) *Stromy výrazů* poskytovat lepší interakci s argumenty, které jsou funkce.
+Pokud jste použili LINQ, budete mít prostředí, bohatá knihovna kde `Func` typy jsou součástí sady rozhraní API. (Pokud nejste obeznámeni s jazykem LINQ, pravděpodobně chtít číst [kurzu LINQ](linq/index.md) a v článku o [výrazy lambda](./programming-guide/statements-expressions-operators/lambda-expressions.md) před tímto.) *Stromy výrazů* poskytovat lepší interakci s argumenty, které jsou funkce.
 
 Můžete napsat argumenty funkce, obvykle pomocí výrazů Lambda, při vytváření dotazů LINQ. V typické dotaz LINQ jsou tyto argumenty funkce transformuje na delegáta, který kompilátor vytvoří. 
 

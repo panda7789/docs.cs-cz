@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - structured navigation [WPF]
 ms.assetid: 025d30ef-fec5-436d-ad7a-5d5483331c26
-ms.openlocfilehash: 0a10a3f5fd07c7e3ceb7e08802f2c821b7d9a7f2
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 7c8c1697ff18e919711e84e724b5b8698dfe088e
+ms.sourcegitcommit: 16aefeb2d265e69c0d80967580365fabf0c5d39a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57369744"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58125600"
 ---
 # <a name="structured-navigation-overview"></a>Přehled strukturované navigace
 Obsah, který může být hostován [!INCLUDE[TLA#tla_xbap](../../../../includes/tlasharptla-xbap-md.md)], <xref:System.Windows.Controls.Frame>, nebo <xref:System.Windows.Navigation.NavigationWindow> se skládá z stránky, které lze identifikovat podle pack [!INCLUDE[TLA#tla_uri#plural](../../../../includes/tlasharptla-urisharpplural-md.md)] a kterou se odkazuje hypertextové odkazy. Struktura stránek a způsoby, ve kterém se dá Navigovat, tak jak je definoval hypertextové odkazy, se označuje jako topologie navigace. Tato topologie vyhovuje širokou škálu typů aplikací, zejména těch, které procházejí dokumenty. Pro takové aplikace uživatele můžete přejít z jedné stránky na jinou stránku bez buď stránky museli cokoliv vědět o nich.  
@@ -37,9 +37,9 @@ Obsah, který může být hostován [!INCLUDE[TLA#tla_xbap](../../../../includes
   
 -   Po návratu volání stránky na stránku volané stránce volané Odebereme z historii navigace k izolaci jeden výskyt stránku volané z jiného.  
   
- Podle na následujícím obrázku jsou znázorněny těchto chování.  
+ Těchto projevů je znázorněn ve na následujícím obrázku:  
   
- ![Tok mezi volajícím a volané stránky](./media/structurednavigationoverviewfigure1.png "StructuredNavigationOverviewFigure1")  
+ ![Snímek obrazovky znázorňuje tok mezi volajícím a volané stránky.](./media/structured-navigation-overview/flow-between-calling-page-called-page.png)  
   
  Tyto chování můžete implementovat pomocí <xref:System.Windows.Navigation.PageFunction%601> jako názvem stránky.  
   

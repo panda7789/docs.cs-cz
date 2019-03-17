@@ -98,7 +98,7 @@ Dim urlContents As String = Await client.GetStringAsync()
 ## <a name="BKMK_WhatHappensUnderstandinganAsyncMethod"></a> Co se děje v asynchronní metodě  
  Nejdůležitějším principem, který je třeba pochopit v asynchronním programování, je, jak ovládat přesuny toků od metody k metodě. Následující diagram vás provede procesem.  
   
- ![Trasování aplikace asynchronní](../../../../csharp/programming-guide/concepts/async/media/navigationtrace.png "NavigationTrace")  
+ ![Diagram zobrazující průběh trasování asynchronního programu.](./media/index/navigation-trace-async-program.png)  
   
  Čísla v diagramu odpovídají následujícím krokům.  
   

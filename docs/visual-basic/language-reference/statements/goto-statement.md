@@ -13,12 +13,12 @@ helpviewer_keywords:
 - conditional statements [Visual Basic], GoTo statement
 - GoTo statement [Visual Basic], syntax
 ms.assetid: 313274c2-8ab3-4b9c-9ba3-0fd6798e4f6d
-ms.openlocfilehash: 9d2cec7f9cd2cc9d8985c9add103748583c25dc9
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 5e7aa036f632b4c310c4978d0d684c1222d2b096
+ms.sourcegitcommit: 16aefeb2d265e69c0d80967580365fabf0c5d39a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56968930"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58125561"
 ---
 # <a name="goto-statement"></a>GoTo – příkaz
 Rozvětví se nepodmíněně na určený řádek v proceduře.  
@@ -54,8 +54,7 @@ GoTo line
   
  Následující obrázek znázorňuje jeden `Try` konstrukce vnořit do jiného. Různými větvemi mezi bloky dvě konstrukce jsou označeny jako platný nebo neplatný.  
   
- ![Grafický diagram větvení v konstrukcích Try](../../../visual-basic/language-reference/statements/media/trybranching.gif "TryBranching")  
-Platné a neplatné větve v konstrukcích Try  
+ ![Grafický diagram větvení v konstrukcích Try](./media/goto-statement/try-construction-branching.gif)  
   
 ## <a name="example"></a>Příklad  
  V následujícím příkladu `GoTo` příkaz vzorce pro větvení popisků čáry v postupu.  

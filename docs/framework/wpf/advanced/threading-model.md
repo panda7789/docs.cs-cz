@@ -18,12 +18,12 @@ helpviewer_keywords:
 - nested message processing [WPF]
 - reentrancy [WPF]
 ms.assetid: 02d8fd00-8d7c-4604-874c-58e40786770b
-ms.openlocfilehash: e2a4b1157ec1f114b9e33f220e09fc791cfb9fc3
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: a1417c5ee6fe774214c10b0164eb84dbfb2ed2bb
+ms.sourcegitcommit: 16aefeb2d265e69c0d80967580365fabf0c5d39a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57353033"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58125678"
 ---
 # <a name="threading-model"></a>Model vláken
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] slouží k uložení vývojáři z obtížné dělení na vlákna. V důsledku toho většina [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vývojáři nebudete muset psát rozhraní, které používá více než jedno vlákno. Protože s více vlákny jsou složité a těžko ladění, mělo by se vyhnout při existují řešení s jedním vláknem.  
@@ -62,7 +62,7 @@ ms.locfileid: "57353033"
   
  Vezměte v úvahu v následujícím příkladu:  
   
- ![Snímek obrazovky prvočísel](./media/threadingprimenumberscreenshot.PNG "ThreadingPrimeNumberScreenShot")  
+ ![Snímek obrazovky zobrazující dělení na vlákna prvočísel.](./media/threading-model/threading-prime-numbers.png)  
   
  Tato jednoduchá aplikace počítá směrem nahoru ve třech, vyhledání prvočísel. Pokud uživatel klikne **Start** tlačítko hledání začne. Když program vyhledá prime, aktualizuje uživatelské rozhraní s jeho zjišťování. V kterékoli fázi můžete uživatele zastavit hledání.  
   
@@ -74,7 +74,7 @@ ms.locfileid: "57353033"
   
  Ke správě výpočtu z je nejlepší způsob, jak rozdělit doba zpracování mezi výpočet a zpracování událostí <xref:System.Windows.Threading.Dispatcher>. Pomocí <xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A> metoda, jsme naplánovat kontroly prime číslo ve stejné fronty, která [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] události jsou vykreslovány vedle z. V našem příkladu jsme naplánovat jenom jedno číslo prime kontrolu najednou. Po dokončení kontroly prime číslo k další kontrole jsme naplánovat okamžitě. Tato kontrola probíhá až poté, co čekající [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] události byly zpracovány.  
   
- ![Dispečer fronty obrázek](./media/threadingdispatcherqueue.PNG "ThreadingDispatcherQueue")  
+ ![Snímek obrazovky zobrazující fronty dispečera.](./media/threading-model/threading-dispatcher-queue.png)  
   
  [!INCLUDE[TLA#tla_word](../../../../includes/tlasharptla-word-md.md)] provede kontrolu pravopisu pomocí tohoto mechanismu. Kontrola pravopisu probíhá na pozadí pomocí doby nečinnosti [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] vlákna. Pojďme se podívat na kód.  
   
@@ -109,7 +109,7 @@ ms.locfileid: "57353033"
   
  V tomto příkladu jsme napodobovat vzdálené volání procedury, která načte předpověď počasí. Používáme samostatné pracovní vlákno k provedení tohoto volání a můžeme plánovat metodu aktualizace v <xref:System.Windows.Threading.Dispatcher> z [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] vlákna, když jsme hotovi.  
   
- ![Snímek obrazovky uživatelského rozhraní weather](./media/threadingweatheruiscreenshot.PNG "ThreadingWeatherUIScreenShot")  
+ ![Snímek obrazovky zobrazující počasí uživatelského rozhraní.](./media/threading-model/threading-weather-ui.png)  
   
  [!code-csharp[ThreadingWeatherForecast#ThreadingWeatherCodeBehind](~/samples/snippets/csharp/VS_Snippets_Wpf/ThreadingWeatherForecast/CSharp/Window1.xaml.cs#threadingweathercodebehind)]
  [!code-vb[ThreadingWeatherForecast#ThreadingWeatherCodeBehind](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ThreadingWeatherForecast/visualbasic/window1.xaml.vb#threadingweathercodebehind)]  
@@ -189,7 +189,7 @@ ms.locfileid: "57353033"
 ### <a name="nested-pumping"></a>Vnořené – čerpání  
  Někdy není možné úplně zamčení [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] vlákna. Pojďme se podívat <xref:System.Windows.MessageBox.Show%2A> metodu <xref:System.Windows.MessageBox> třídy. <xref:System.Windows.MessageBox.Show%2A> nevrací se, dokud uživatel neklikne na tlačítko OK. Ale vytváří okno, které musí mít interaktivní smyčku zpráv. Zatímco čekáme na uživatele kliknutím na tlačítko OK, neodpovídá původní okna aplikace na vstup uživatele. Nicméně, dál zpracovávat malovat zprávy. V původním okně překreslí samotná popsaná a zobrazení.  
   
- ![MessageBox tlačítko "OK"](./media/threadingnestedpumping.png "ThreadingNestedPumping")  
+ ![Snímek obrazovky, který zobrazí prvek MessageBox s tlačítko OK](./media/threading-model/threading-message-loop.png)  
   
  Některé vlákno musí mít na starost okno zprávy. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vytvořit nové vlákno jen pro okno zprávy, ale toto vlákno nebudou moct vykreslení zakázané prvků v okně původní (Nezapomeňte starší diskuzi o vzájemné vyloučení). Místo toho [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] používá vnořené zprávy systému zpracování. <xref:System.Windows.Threading.Dispatcher> Třída zahrnuje zvláštní metodu nazvanou <xref:System.Windows.Threading.Dispatcher.PushFrame%2A>, který pak ukládá aktuální bod provádění aplikace začíná nové smyčky zpráv. Po dokončení vnořené zpráva smyčky, provádění pokračuje po původním <xref:System.Windows.Threading.Dispatcher.PushFrame%2A> volání.  
   
@@ -209,7 +209,7 @@ ms.locfileid: "57353033"
   
  Většina rozhraní nejsou vytvořené pomocí bezpečný přístup z více vláken v úvahu vzhledem k tomu, že vývojáři pracují za předpokladu, který [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] nikdy je nevyužili ve více než jedno vlákno. V tomto případě, že jedno vlákno může provést změny v prostředí v neočekávanou dobu, způsobí tyto nesprávně dopad, který <xref:System.Windows.Threading.DispatcherObject> mechanismus vzájemné vyloučení by měl řešit. Vezměte v úvahu následujícím pseudokódu:  
   
- ![Práce s vlákny opětovný vstup diagram](./media/threadingreentrancy.png "ThreadingReentrancy")  
+ ![Diagram tohoto ukazuje dělení na vlákna vícenásobného přístupu. ](./media/threading-model/threading-reentrancy.png "ThreadingReentrancy")  
   
  Ve většině případů je správné věci, ale existují situace v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] kde takové neočekávané vícenásobného přístupu může ve skutečnosti způsobovat problémy. Ano, v určitých časech klíče [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] volání <xref:System.Windows.Threading.Dispatcher.DisableProcessing%2A>, instrukce zámek pro toto vlákno použít změny, které [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] opětovné zadání bez zámku, namísto obvyklého [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] zámku.  
   
