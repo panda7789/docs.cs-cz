@@ -26,7 +26,7 @@ Tento článek shrnuje hlavní nové funkce a vylepšení v následujících ver
 - [.NET Framework 4.5.1](#v451)
 - [.NET Framework 4.5](#v45)
 
-Tento článek neposkytuje úplné informace o každé nové funkce a může se změnit. Obecné informace o rozhraní .NET Framework najdete v tématu [Začínáme](../../../docs/framework/get-started/index.md). Podporované platformy naleznete v tématu [požadavky na systém](~/docs/framework/get-started/system-requirements.md). Odkazy ke stažení a pokyny k instalaci najdete v tématu [Průvodce instalací](../../../docs/framework/install/guide-for-developers.md).
+Tento článek neposkytuje úplné informace o každé nové funkce a může se změnit. Obecné informace o rozhraní .NET Framework najdete v tématu [Začínáme](../get-started/index.md). Podporované platformy naleznete v tématu [požadavky na systém](~/docs/framework/get-started/system-requirements.md). Odkazy ke stažení a pokyny k instalaci najdete v tématu [Průvodce instalací](../install/guide-for-developers.md).
 
 > [!NOTE]
 > Tým rozhraní .NET Framework verze také funkce mimo pásmo s NuGet se rozšiřuje podpora platformy a pro zavedení nových funkcí, jako jsou neměnné kolekce a typy vektorů s podporou SIMD. Další informace najdete v tématu [další knihovny tříd a rozhraní API](../additional-apis/index.md) a [The .NET Framework a vydání Out-of-Band](~/docs/framework/get-started/the-net-framework-and-out-of-band-releases.md). Najdete v článku [úplný seznam balíčků NuGet](https://blogs.msdn.microsoft.com/dotnet/p/nugetpackages/) pro rozhraní .NET Framework, nebo se přihlásit k odběru [našeho kanálu](https://nuget.org/api/v2/curated-feeds/dotnetframework/Packages/).
@@ -535,7 +535,7 @@ Zobrazí se [příklad rozhraní .NET Framework 4.7 kryptografických vylepšen�
 
 **Lepší podporu pro řídicí znaky pomocí objektu DataContractJsonSerializer**
 
-V rozhraní .NET Framework 4.7 <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> serializuje řídicí znaky podle standardu ECMAScript 6. Toto chování je povoleno standardně pro aplikace, které jsou cíleny rozhraní .NET Framework 4.7 a je přihlašovaná funkce pro aplikace, které jsou spuštěny v rozhraní .NET Framework 4.7 ale cílení na předchozí verzi rozhraní .NET Framework. Další informace najdete v tématu [změny mění se cílení v rozhraní .NET Framework 4.7](../../../docs/framework/migration-guide/retargeting-changes-in-the-net-framework-4-7.md).
+V rozhraní .NET Framework 4.7 <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> serializuje řídicí znaky podle standardu ECMAScript 6. Toto chování je povoleno standardně pro aplikace, které jsou cíleny rozhraní .NET Framework 4.7 a je přihlašovaná funkce pro aplikace, které jsou spuštěny v rozhraní .NET Framework 4.7 ale cílení na předchozí verzi rozhraní .NET Framework. Další informace najdete v tématu [změny mění se cílení v rozhraní .NET Framework 4.7](../migration-guide/retargeting-changes-in-the-net-framework-4-7.md).
 
 <a name="net47" />
 
@@ -728,7 +728,7 @@ public interface ISessionStateModule : IHttpModule {
 
 Znaky v [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] jsou klasifikovány podle [Unicode Standard, verze 8.0.0](https://www.unicode.org/versions/Unicode8.0.0/). V [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] a [!INCLUDE[net_v461](../../../includes/net-v461-md.md)], znaky byly klasifikovány podle kategorií znaků Unicode 6.3.
 
-Podpora pro Unicode 8.0 je omezena na klasifikaci znaků, o <xref:System.Globalization.CharUnicodeInfo> třídy a typy a metody, které jsou na něm závislí. Patří mezi ně <xref:System.Globalization.StringInfo> třídy přetížené <xref:System.Char.GetUnicodeCategory%2A?displayProperty=nameWithType> metody a [znaku třídy](../../../docs/standard/base-types/character-classes-in-regular-expressions.md) rozpoznávaných modul regulárních výrazů rozhraní .NET Framework.  Znakové a řetězcové porovnání a řazení není touto změnou ovlivněna a Spolehněte se na příslušný operační systém, nebo v systémech Windows 7, v rozhraní .NET Framework poskytuje znaková data i nadále.
+Podpora pro Unicode 8.0 je omezena na klasifikaci znaků, o <xref:System.Globalization.CharUnicodeInfo> třídy a typy a metody, které jsou na něm závislí. Patří mezi ně <xref:System.Globalization.StringInfo> třídy přetížené <xref:System.Char.GetUnicodeCategory%2A?displayProperty=nameWithType> metody a [znaku třídy](../../standard/base-types/character-classes-in-regular-expressions.md) rozpoznávaných modul regulárních výrazů rozhraní .NET Framework.  Znakové a řetězcové porovnání a řazení není touto změnou ovlivněna a Spolehněte se na příslušný operační systém, nebo v systémech Windows 7, v rozhraní .NET Framework poskytuje znaková data i nadále.
 
 Změny v kategoriích znaků Unicode 6.0 do kódování Unicode 7.0, naleznete v tématu [standardu Unicode, verze 7.0.0](https://www.unicode.org/versions/Unicode7.0.0/) na webu Unicode Consortium. Změny z kódování Unicode 7.0 Unicode 8.0, naleznete v tématu [standardu Unicode, verze 8.0.0](https://www.unicode.org/versions/Unicode8.0.0/) na webu Unicode Consortium.
 
@@ -862,7 +862,7 @@ Zprostředkovatel dat .NET framework pro SQL Server (<xref:System.Data.SqlClient
 
 **Sdružování připojení a časových limitů s databází Azure SQL**
 
-Když povoleno sdružování připojení a dojde k vypršení časového limitu nebo jiná chyba přihlášení, výjimka se uloží do mezipaměti a uložená v mezipaměti se výjimka při pokusu o jakékoli další připojení pro další 5 sekund až 1 minuty.  Další podrobnosti najdete v tématu [SQL sdružování připojení serveru (ADO.NET)](../../../docs/framework/data/adonet/sql-server-connection-pooling.md).
+Když povoleno sdružování připojení a dojde k vypršení časového limitu nebo jiná chyba přihlášení, výjimka se uloží do mezipaměti a uložená v mezipaměti se výjimka při pokusu o jakékoli další připojení pro další 5 sekund až 1 minuty.  Další podrobnosti najdete v tématu [SQL sdružování připojení serveru (ADO.NET)](../data/adonet/sql-server-connection-pooling.md).
 
 Toto chování není žádoucí, při připojování ke službě Azure SQL Database, protože pokusy o připojení může selhat s přechodným chybám, které jsou obvykle rychle obnovit. Pro lepší optimalizaci prostředí opakovat připojení, období blokování připojení fondu, chování je odebrána, když dojde k selhání připojení k databázím SQL Azure.
 
@@ -906,7 +906,7 @@ V [!INCLUDE[net_v462](../../../includes/net-v462-md.md)], Windows Communication 
 
 Zabezpečení přenosu WCF podporuje certifikátů uložených pomocí knihovny šifrování Windows (CNG). V [!INCLUDE[net_v462](../../../includes/net-v462-md.md)], tato podpora je omezena na použití certifikátů s veřejným klíčem, který má v délka exponentu více než 32 bitů. Když aplikace cílena [!INCLUDE[net_v462](../../../includes/net-v462-md.md)], tato funkce je ve výchozím.
 
-Pro aplikace, které se zaměřují [!INCLUDE[net_v461](../../../includes/net-v461-md.md)] a starší ale jsou spuštěny na [!INCLUDE[net_v462](../../../includes/net-v462-md.md)], tuto funkci je možné povolit tak, že přidáte následující řádek, který [ \<runtime >](../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md) část app.config nebo web.config soubor.
+Pro aplikace, které se zaměřují [!INCLUDE[net_v461](../../../includes/net-v461-md.md)] a starší ale jsou spuštěny na [!INCLUDE[net_v462](../../../includes/net-v462-md.md)], tuto funkci je možné povolit tak, že přidáte následující řádek, který [ \<runtime >](../configure-apps/file-schema/runtime/runtime-element.md) část app.config nebo web.config soubor.
 
 ```xml
 <AppContextSwitchOverrides
@@ -938,7 +938,7 @@ Zákazníci mohou používat nastavení konfigurace aplikace k určení, zda <xr
 
 Pokud je tato funkce povolena, <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> objektu používá <xref:System.TimeZoneInfo> zadejte místo <xref:System.TimeZone> typ k deserializaci data a času. <xref:System.TimeZoneInfo> podporuje víc úpravy pravidel, které umožňuje pracovat s daty historické časové pásmo;   <xref:System.TimeZone> tak není.
 
-Další informace o <xref:System.TimeZoneInfo> strukturu a úpravy časového pásma, naleznete v tématu [Přehled časových pásem](../../../docs/standard/datetime/time-zone-overview.md).
+Další informace o <xref:System.TimeZoneInfo> strukturu a úpravy časového pásma, naleznete v tématu [Přehled časových pásem](../../standard/datetime/time-zone-overview.md).
 
 **Nejlepší shoda NetNamedPipeBinding**
 
@@ -967,9 +967,9 @@ Pokud používáte NetTcp k zabezpečení přenosů a přihlašovacích údajů 
 
 - <xref:System.ServiceModel.TcpTransportSecurity.SslProtocols%2A?displayProperty=nameWithType> Vlastnost
 
-- [ \<Přenosu >](../../../docs/framework/configure-apps/file-schema/wcf/transport-of-nettcpbinding.md) část [ \<netTcpBinding >](../../../docs/framework/configure-apps/file-schema/wcf/nettcpbinding.md) oddílu
+- [ \<Přenosu >](../configure-apps/file-schema/wcf/transport-of-nettcpbinding.md) část [ \<netTcpBinding >](../configure-apps/file-schema/wcf/nettcpbinding.md) oddílu
 
-- [ \<SslStreamSecurity >](../../../docs/framework/configure-apps/file-schema/wcf/sslstreamsecurity.md) část [ \<customBinding >](../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md) oddílu
+- [ \<SslStreamSecurity >](../configure-apps/file-schema/wcf/sslstreamsecurity.md) část [ \<customBinding >](../configure-apps/file-schema/wcf/custombinding.md) oddílu
 
 <a name="WPF462" />
 
@@ -1013,7 +1013,7 @@ Pro podporu poslední růst počtu vysokých hodnot DPI a DPI hybridní prostře
 
 V předchozích verzích rozhraní .NET Framework jsou aplikace WPF systému – rozpoznání nastavení DPI. Jinými slovy uživatelského rozhraní aplikace se škálovat podle operačního systému podle potřeby, v závislosti na DPI monitorování, na kterém je vykreslen aplikace. , 
 
-Pro aplikace běžící v rámci [!INCLUDE[net_v462](../../../includes/net-v462-md.md)], DPI za monitorování změn v aplikacích WPF můžete zakázat přidáním konfiguraci příkazu [ \<runtime >](../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md) část konfigurace aplikací souboru následujícím způsobem:
+Pro aplikace běžící v rámci [!INCLUDE[net_v462](../../../includes/net-v462-md.md)], DPI za monitorování změn v aplikacích WPF můžete zakázat přidáním konfiguraci příkazu [ \<runtime >](../configure-apps/file-schema/runtime/runtime-element.md) část konfigurace aplikací souboru následujícím způsobem:
 
 ```xml
 <runtime>
@@ -1071,9 +1071,9 @@ Převedené aplikace klasické pracovní plochy získat identitu aplikace podobn
 
 *Nespravované ladění v rozhraní API* v bylo vylepšeno [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] k další analýze při <xref:System.NullReferenceException> je vyvolána výjimka, aby bylo možné určit, které proměnné na jednom řádku zdrojového kódu je `null`.   Pro podporu tohoto scénáře, byly přidány následující rozhraní API pro spravované ladění rozhraní API.
 
-- [Icordebugcode4 –](../../../docs/framework/unmanaged-api/debugging/icordebugcode4-interface.md), [icordebugvariablehome –](../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md), a [icordebugvariablehomeenum –](../../../docs/framework/unmanaged-api/debugging/icordebugvariablehomeenum-interface.md) rozhraní, které zpřístupňují nativní domovů spravované proměnné. To umožňuje ladicí programy chtít provést i analýzy toku kódu při <xref:System.NullReferenceException> dojde k a práci zpět k určení spravované proměnné, která odpovídá nativní umístění, která byla `null`.
+- [Icordebugcode4 –](../unmanaged-api/debugging/icordebugcode4-interface.md), [icordebugvariablehome –](../unmanaged-api/debugging/icordebugvariablehome-interface.md), a [icordebugvariablehomeenum –](../unmanaged-api/debugging/icordebugvariablehomeenum-interface.md) rozhraní, které zpřístupňují nativní domovů spravované proměnné. To umožňuje ladicí programy chtít provést i analýzy toku kódu při <xref:System.NullReferenceException> dojde k a práci zpět k určení spravované proměnné, která odpovídá nativní umístění, která byla `null`.
 
-- [ICorDebugType2::GetTypeID](../../../docs/framework/unmanaged-api/debugging/icordebugtype2-gettypeid-method.md) metoda poskytuje mapování pro ICorDebugType k [cor_typeid –](../../../docs/framework/unmanaged-api/debugging/cor-typeid-structure.md), umožňuje ladicího programu k získání [cor_typeid –](../../../docs/framework/unmanaged-api/debugging/cor-typeid-structure.md) bez instance z ICorDebugType. Stávající rozhraní API na [cor_typeid –](../../../docs/framework/unmanaged-api/debugging/cor-typeid-structure.md) lze použít k určení rozložení třídy typu.
+- [ICorDebugType2::GetTypeID](../unmanaged-api/debugging/icordebugtype2-gettypeid-method.md) metoda poskytuje mapování pro ICorDebugType k [cor_typeid –](../unmanaged-api/debugging/cor-typeid-structure.md), umožňuje ladicího programu k získání [cor_typeid –](../unmanaged-api/debugging/cor-typeid-structure.md) bez instance z ICorDebugType. Stávající rozhraní API na [cor_typeid –](../unmanaged-api/debugging/cor-typeid-structure.md) lze použít k určení rozložení třídy typu.
 
 <a name="v461" />
 
@@ -1097,7 +1097,7 @@ Další informace o [!INCLUDE[net_v461](../../../includes/net-v461-md.md)], nale
 
 - [Seznam změn v rozhraní .NET Framework 4.6.1](https://go.microsoft.com/fwlink/?LinkId=622964)
 
-- [Kompatibilita aplikací ve verzi 4.6.1](../../../docs/framework/migration-guide/application-compatibility-in-the-net-framework-4-6-1.md)
+- [Kompatibilita aplikací ve verzi 4.6.1](../migration-guide/application-compatibility-in-the-net-framework-4-6-1.md)
 
 - [Rozdíly v rozhraních na rozhraní .NET Framework API](https://go.microsoft.com/fwlink/?LinkId=622989) (na Githubu)
 
@@ -1111,13 +1111,13 @@ ECDSA nabízí lepší výkon a je bezpečnější algoritmus šifrování než 
 
 Následující příklad kódu ukazuje, jak snadné je a generuje podpis pro datový proud bajtů pomocí novou podporu pro ECDSA certifikátů X 509 součástí [!INCLUDE[net_v461](../../../includes/net-v461-md.md)].
 
-[!code-csharp[whatsnew.461.crypto#1](../../../samples/snippets/csharp/VS_Snippets_CLR/whatsnew.461.crypto/cs/Code46.cs#1)]
-[!code-vb[whatsnew.461.crypto#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/whatsnew.461.crypto/vb/Code461.vb#1)]
+[!code-csharp[whatsnew.461.crypto#1](~/samples/snippets/csharp/VS_Snippets_CLR/whatsnew.461.crypto/cs/Code46.cs#1)]
+[!code-vb[whatsnew.461.crypto#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/whatsnew.461.crypto/vb/Code461.vb#1)]
 
 To nabízí označené kontrast pro kód potřebný k vygenerování podpisu v rozhraní .NET Framework 4.6.
 
-[!code-csharp[whatsnew.461.crypto#2](../../../samples/snippets/csharp/VS_Snippets_CLR/whatsnew.461.crypto/cs/Code46.cs#2)]
-[!code-vb[whatsnew.461.crypto#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/whatsnew.461.crypto/vb/Code46.vb#2)]
+[!code-csharp[whatsnew.461.crypto#2](~/samples/snippets/csharp/VS_Snippets_CLR/whatsnew.461.crypto/cs/Code46.cs#2)]
+[!code-vb[whatsnew.461.crypto#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/whatsnew.461.crypto/vb/Code46.vb#2)]
 
 <a name="ADO.NET461" />
 
@@ -1133,7 +1133,7 @@ Zákazníkům musíte nainstalovat poskytovatele CSP poskytnutých dodavatelem m
 
 **Vylepšené <xref:System.Data.SqlClient.SqlConnectionStringBuilder.MultiSubnetFailover%2A> chování připojení AlwaysOn**
 
-SqlClient teď automaticky poskytuje rychlejší připojení do dostupnosti skupiny (skupina dostupnosti AlwaysOn). Transparentně zjišťuje, zda vaše aplikace se připojuje ke skupině dostupnosti AlwaysOn (AG) v jiné podsíti a rychle zjistí aktuální aktivní server a poskytuje připojení k serveru. Před touto verzí musel nastavíme připojovací řetězec, který chcete zahrnout aplikace `"MultisubnetFailover=true"` k označení, že se připojuje ke skupině dostupnosti AlwaysOn. Bez nastavení připojení – klíčové slovo `true`, aplikace může dojít k vypršení časového limitu při připojování ke skupině dostupnosti AlwaysOn. V této vydané verzi, aplikace provede *není* potřeba nastavit <xref:System.Data.SqlClient.SqlConnectionStringBuilder.MultiSubnetFailover%2A> k `true` zobrazovat. Další informace o podpora klienta SqlClient pro skupiny dostupnosti Always On najdete v tématu [podpora klienta SqlClient pro vysokou dostupnost, zotavení po havárii](../../../docs/framework/data/adonet/sql/sqlclient-support-for-high-availability-disaster-recovery.md).
+SqlClient teď automaticky poskytuje rychlejší připojení do dostupnosti skupiny (skupina dostupnosti AlwaysOn). Transparentně zjišťuje, zda vaše aplikace se připojuje ke skupině dostupnosti AlwaysOn (AG) v jiné podsíti a rychle zjistí aktuální aktivní server a poskytuje připojení k serveru. Před touto verzí musel nastavíme připojovací řetězec, který chcete zahrnout aplikace `"MultisubnetFailover=true"` k označení, že se připojuje ke skupině dostupnosti AlwaysOn. Bez nastavení připojení – klíčové slovo `true`, aplikace může dojít k vypršení časového limitu při připojování ke skupině dostupnosti AlwaysOn. V této vydané verzi, aplikace provede *není* potřeba nastavit <xref:System.Data.SqlClient.SqlConnectionStringBuilder.MultiSubnetFailover%2A> k `true` zobrazovat. Další informace o podpora klienta SqlClient pro skupiny dostupnosti Always On najdete v tématu [podpora klienta SqlClient pro vysokou dostupnost, zotavení po havárii](../data/adonet/sql/sqlclient-support-for-high-availability-disaster-recovery.md).
 
 <a name="WPF461" />
 
@@ -1208,13 +1208,13 @@ Uživatelé nového <xref:System.Transactions.Transaction.EnlistPromotableSingle
 
 Nespravované rozhraní API profilování bylo vylepšeno následujícím způsobem:
 
-- Lepší podpora pro přístup k PDB v [icorprofilerinfo7 –](../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo7-interface.md) rozhraní.
+- Lepší podpora pro přístup k PDB v [icorprofilerinfo7 –](../unmanaged-api/profiling/icorprofilerinfo7-interface.md) rozhraní.
 
-   V ASP.NET Core je stále mnohem běžnější pro sestavení zkompilované v paměti podle Roslyn. Pro vývojáře a nástroje pro profilaci to znamená, že soubory PDB, které byly v minulosti serializovat na disk nemusí být k dispozici. Profiler nástroje často používají soubory PDB pro mapování kódu zpět do zdrojové řádky pro úlohy, jako je například analýza výkonu pokrytí nebo řádek po řádku kódu. [Icorprofilerinfo7 –](../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo7-interface.md) rozhraní teď obsahuje dvě nové metody, [ICorProfilerInfo7::GetInMemorySymbolsLength](../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo7-getinmemorysymbolslength-method.md) a [ICorProfilerInfo7::ReadInMemorySymbols](../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo7-readinmemorysymbols.md) , tyto nástroje profiler poskytnout přístup k datům PDB v paměti, s využitím nových rozhraní API, profiler může získat obsah souboru PDB v paměti jako bajtové pole a potom ji zpracovat nebo ho serializovat na disk.
+   V ASP.NET Core je stále mnohem běžnější pro sestavení zkompilované v paměti podle Roslyn. Pro vývojáře a nástroje pro profilaci to znamená, že soubory PDB, které byly v minulosti serializovat na disk nemusí být k dispozici. Profiler nástroje často používají soubory PDB pro mapování kódu zpět do zdrojové řádky pro úlohy, jako je například analýza výkonu pokrytí nebo řádek po řádku kódu. [Icorprofilerinfo7 –](../unmanaged-api/profiling/icorprofilerinfo7-interface.md) rozhraní teď obsahuje dvě nové metody, [ICorProfilerInfo7::GetInMemorySymbolsLength](../unmanaged-api/profiling/icorprofilerinfo7-getinmemorysymbolslength-method.md) a [ICorProfilerInfo7::ReadInMemorySymbols](../unmanaged-api/profiling/icorprofilerinfo7-readinmemorysymbols.md) , tyto nástroje profiler poskytnout přístup k datům PDB v paměti, s využitím nových rozhraní API, profiler může získat obsah souboru PDB v paměti jako bajtové pole a potom ji zpracovat nebo ho serializovat na disk.
 
 - Lepší instrumentace ICorProfiler rozhraní.
 
-   Profilovací programy, které používáte `ICorProfiler` funkce ReJit rozhraní API pro dynamické instrumentace nyní můžete upravit některá metadata. Dříve by mohl tyto nástroje instrumentace IL kdykoli, ale metadata můžou upravovat jenom v okamžiku načtení modulu. Protože IL odkazuje na metadata, to omezené druhy instrumentaci, která se nedala provést. Budeme mít některé z těchto omezení zrušeno tak, že přidáte [ICorProfilerInfo7::ApplyMetaData](../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo7-applymetadata-method.md) do podmnožinu úpravy metadat po tento modul se načte, konkrétně tak, že přidáte nové metody `AssemblyRef`, `TypeRef`, `TypeSpec`, `MemberRef`, `MemberSpec`, a `UserString` záznamy. Tato změna umožňuje mnohem širší rozsah o průběžné instrumentace.
+   Profilovací programy, které používáte `ICorProfiler` funkce ReJit rozhraní API pro dynamické instrumentace nyní můžete upravit některá metadata. Dříve by mohl tyto nástroje instrumentace IL kdykoli, ale metadata můžou upravovat jenom v okamžiku načtení modulu. Protože IL odkazuje na metadata, to omezené druhy instrumentaci, která se nedala provést. Budeme mít některé z těchto omezení zrušeno tak, že přidáte [ICorProfilerInfo7::ApplyMetaData](../unmanaged-api/profiling/icorprofilerinfo7-applymetadata-method.md) do podmnožinu úpravy metadat po tento modul se načte, konkrétně tak, že přidáte nové metody `AssemblyRef`, `TypeRef`, `TypeSpec`, `MemberRef`, `MemberSpec`, a `UserString` záznamy. Tato změna umožňuje mnohem širší rozsah o průběžné instrumentace.
 
 <a name="NGEN461" />
 
@@ -1339,13 +1339,13 @@ Představuje .NET 2015 [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] a .N
 
         - Vylepšení rozhraní API RSA tak, aby běžné akce už nevyžadují přetypování. Například na šifrování dat pomocí <xref:System.Security.Cryptography.X509Certificates.X509Certificate2> objektu vyžaduje kód následujícím postupem v předchozích verzích rozhraní .NET Framework.
 
-             [!code-csharp[WhatsNew.Casting#1](../../../samples/snippets/csharp/VS_Snippets_CLR/whatsnew.casting/cs/program.cs#1)]
-             [!code-vb[WhatsNew.Casting#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/whatsnew.casting/vb/module1.vb#1)]
+             [!code-csharp[WhatsNew.Casting#1](~/samples/snippets/csharp/VS_Snippets_CLR/whatsnew.casting/cs/program.cs#1)]
+             [!code-vb[WhatsNew.Casting#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/whatsnew.casting/vb/module1.vb#1)]
 
              Kód, který využívá šifrování nové rozhraní API v rozhraní .NET Framework 4.6 může být přepsán následujícím způsobem, aby se zabránilo přetypování.
 
-             [!code-csharp[WhatsNew.Casting#2](../../../samples/snippets/csharp/VS_Snippets_CLR/whatsnew.casting/cs/program.cs#2)]
-             [!code-vb[WhatsNew.Casting#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/whatsnew.casting/vb/module1.vb#2)]
+             [!code-csharp[WhatsNew.Casting#2](~/samples/snippets/csharp/VS_Snippets_CLR/whatsnew.casting/cs/program.cs#2)]
+             [!code-vb[WhatsNew.Casting#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/whatsnew.casting/vb/module1.vb#2)]
 
     - **Podpora pro převod data a časy na Unixový čas nebo z**
 
@@ -1433,7 +1433,7 @@ Představuje .NET 2015 [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] a .N
 
     - **HDPI vylepšení**
 
-         Podpora HDPI ve WPF je teď lepší v [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]. Změny byly provedeny na rozložení zaokrouhluje se směrem snížit instance výstřižek v ovládacích prvcích s ohraničením. Ve výchozím nastavení, tato funkce je povolena pouze v případě vaší <xref:System.Runtime.Versioning.TargetFrameworkAttribute> je nastavena na rozhraní .NET 4.6.  Aplikace, které jsou cíleny na starší verze rozhraní Framework, ale jsou spuštěny na [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] můžete přejít k nové chování tak, že přidáte následující řádek, který [ \<runtime >](../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md) část souboru app.config:
+         Podpora HDPI ve WPF je teď lepší v [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]. Změny byly provedeny na rozložení zaokrouhluje se směrem snížit instance výstřižek v ovládacích prvcích s ohraničením. Ve výchozím nastavení, tato funkce je povolena pouze v případě vaší <xref:System.Runtime.Versioning.TargetFrameworkAttribute> je nastavena na rozhraní .NET 4.6.  Aplikace, které jsou cíleny na starší verze rozhraní Framework, ale jsou spuštěny na [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] můžete přejít k nové chování tak, že přidáte následující řádek, který [ \<runtime >](../configure-apps/file-schema/runtime/runtime-element.md) část souboru app.config:
 
         ```xml
         <AppContextSwitchOverrides
@@ -1560,15 +1560,15 @@ Představuje .NET 2015 [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] a .N
 
 - **.NET Native**
 
-     Aplikace Windows pro Windows 10, které se zaměřují [!INCLUDE[net_core](../../../includes/net-core-md.md)] a jsou napsané v C# nebo Visual Basic můžete využívat nové technologie, která sestavuje aplikace do nativního kódu, nikoli IL. Vytvářejí charakteristické rychlejší spouštění a časy spuštění aplikace. Další informace najdete v tématu [kompilování aplikací pomocí .NET Native](../../../docs/framework/net-native/index.md). Přehled rozhraní .NET Native, který zkoumá, jak se liší od kompilace JIT a NGEN a tom, jak to znamená, že pro váš kód, naleznete v tématu [.NET Native a kompilace](../../../docs/framework/net-native/net-native-and-compilation.md).
+     Aplikace Windows pro Windows 10, které se zaměřují [!INCLUDE[net_core](../../../includes/net-core-md.md)] a jsou napsané v C# nebo Visual Basic můžete využívat nové technologie, která sestavuje aplikace do nativního kódu, nikoli IL. Vytvářejí charakteristické rychlejší spouštění a časy spuštění aplikace. Další informace najdete v tématu [kompilování aplikací pomocí .NET Native](../net-native/index.md). Přehled rozhraní .NET Native, který zkoumá, jak se liší od kompilace JIT a NGEN a tom, jak to znamená, že pro váš kód, naleznete v tématu [.NET Native a kompilace](../net-native/net-native-and-compilation.md).
 
-     Vaše aplikace se kompilují do nativního kódu ve výchozím nastavení při jejich kompilaci pomocí sady Visual Studio 2015 nebo novější. Další informace najdete v tématu [Začínáme s .NET Native](../../../docs/framework/net-native/getting-started-with-net-native.md).
+     Vaše aplikace se kompilují do nativního kódu ve výchozím nastavení při jejich kompilaci pomocí sady Visual Studio 2015 nebo novější. Další informace najdete v tématu [Začínáme s .NET Native](../net-native/getting-started-with-net-native.md).
 
-     Počet nových rozhraní a výčty byly přidány pro podporu ladění aplikací .NET Native, nespravované ladění rozhraní API. Další informace najdete v tématu [ladění (referenční dokumentace nespravovaného rozhraní API)](../../../docs/framework/unmanaged-api/debugging/index.md) tématu.
+     Počet nových rozhraní a výčty byly přidány pro podporu ladění aplikací .NET Native, nespravované ladění rozhraní API. Další informace najdete v tématu [ladění (referenční dokumentace nespravovaného rozhraní API)](../unmanaged-api/debugging/index.md) tématu.
 
 - **Open sourcové balíčky rozhraní .NET Framework**
 
-     Balíčků .NET core, jako jsou neměnné kolekce [SIMD API](https://go.microsoft.com/fwlink/?LinkID=518639), a například síťové rozhraní API najdete v <xref:System.Net.Http> obor názvů jsou teď k dispozici jako opensourcových balíčků na [Githubu](https://github.com/). Chcete-li přistupovat ke kódu, přečtěte si téma [CoreFx na Githubu](https://github.com/dotnet/corefx). Další informace a jak přispívat na těchto balíčků naleznete v tématu [.NET Core a Open Source](../../../docs/framework/get-started/net-core-and-open-source.md), [.NET domovskou stránku na Githubu](https://github.com/dotnet/home).
+     Balíčků .NET core, jako jsou neměnné kolekce [SIMD API](https://go.microsoft.com/fwlink/?LinkID=518639), a například síťové rozhraní API najdete v <xref:System.Net.Http> obor názvů jsou teď k dispozici jako opensourcových balíčků na [Githubu](https://github.com/). Chcete-li přistupovat ke kódu, přečtěte si téma [CoreFx na Githubu](https://github.com/dotnet/corefx). Další informace a jak přispívat na těchto balíčků naleznete v tématu [.NET Core a Open Source](../get-started/net-core-and-open-source.md), [.NET domovskou stránku na Githubu](https://github.com/dotnet/home).
 
 <a name="v452" />
 
@@ -1607,23 +1607,23 @@ Představuje .NET 2015 [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] a .N
 
 - **Vylepšení profilování.** Následující nové nespravované profilování rozhraní API poskytuje robustnější profilování:
 
-    - [COR_PRF_ASSEMBLY_REFERENCE_INFO – struktura](../../../docs/framework/unmanaged-api/profiling/cor-prf-assembly-reference-info-structure.md)
-    - [COR_PRF_HIGH_MONITOR – výčet](../../../docs/framework/unmanaged-api/profiling/cor-prf-high-monitor-enumeration.md)
-    - [GetAssemblyReferences – metoda](../../../docs/framework/unmanaged-api/profiling/icorprofilercallback6-getassemblyreferences-method.md)
-    - [GetEventMask2 – metoda](../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo5-geteventmask2-method.md)
-    - [SetEventMask2 – metoda](../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo5-seteventmask2-method.md)
-    - [AddAssemblyReference – metoda](../../../docs/framework/unmanaged-api/profiling/icorprofilerassemblyreferenceprovider-addassemblyreference-method.md)
+    - [COR_PRF_ASSEMBLY_REFERENCE_INFO – struktura](../unmanaged-api/profiling/cor-prf-assembly-reference-info-structure.md)
+    - [COR_PRF_HIGH_MONITOR – výčet](../unmanaged-api/profiling/cor-prf-high-monitor-enumeration.md)
+    - [GetAssemblyReferences – metoda](../unmanaged-api/profiling/icorprofilercallback6-getassemblyreferences-method.md)
+    - [GetEventMask2 – metoda](../unmanaged-api/profiling/icorprofilerinfo5-geteventmask2-method.md)
+    - [SetEventMask2 – metoda](../unmanaged-api/profiling/icorprofilerinfo5-seteventmask2-method.md)
+    - [AddAssemblyReference – metoda](../unmanaged-api/profiling/icorprofilerassemblyreferenceprovider-addassemblyreference-method.md)
 
      Předchozí `ICorProfiler` implementace nepodporuje opožděné načtení závislých sestavení. Nová rozhraní API profilování vyžaduje závislá sestavení, které jsou vloženy možné načíst okamžitě, místo po kompletní inicializaci aplikace načítání profileru. Tato změna nemá vliv na stávající uživatelé `ICorProfiler` rozhraní API.
 
 - **Vylepšení ladění.** Následující nové nespravované ladění rozhraní API poskytuje lepší integraci s profiler. Je možné teď přístup metadata tak, že profiler i lokálních proměnných a kódu vložen vytvářených kompilátoru ReJIT požadavky při vypsat ladění.
 
-    - [SetWriteableMetadataUpdateMode – metoda](../../../docs/framework/unmanaged-api/debugging/icordebugprocess7-setwriteablemetadataupdatemode-method.md)
-    - [EnumerateLocalVariablesEx – metoda](../../../docs/framework/unmanaged-api/debugging/icordebugilframe4-enumeratelocalvariablesex-method.md)
-    - [GetLocalVariableEx – metoda](../../../docs/framework/unmanaged-api/debugging/icordebugilframe4-getlocalvariableex-method.md)
-    - [GetCodeEx – metoda](../../../docs/framework/unmanaged-api/debugging/icordebugilframe4-getcodeex-method.md)
-    - [GetActiveReJitRequestILCode – metoda](../../../docs/framework/unmanaged-api/debugging/icordebugfunction3-getactiverejitrequestilcode-method.md)
-    - [GetInstrumentedILMap – metoda](../../../docs/framework/unmanaged-api/debugging/icordebugilcode2-getinstrumentedilmap-method.md)
+    - [SetWriteableMetadataUpdateMode – metoda](../unmanaged-api/debugging/icordebugprocess7-setwriteablemetadataupdatemode-method.md)
+    - [EnumerateLocalVariablesEx – metoda](../unmanaged-api/debugging/icordebugilframe4-enumeratelocalvariablesex-method.md)
+    - [GetLocalVariableEx – metoda](../unmanaged-api/debugging/icordebugilframe4-getlocalvariableex-method.md)
+    - [GetCodeEx – metoda](../unmanaged-api/debugging/icordebugilframe4-getcodeex-method.md)
+    - [GetActiveReJitRequestILCode – metoda](../unmanaged-api/debugging/icordebugfunction3-getactiverejitrequestilcode-method.md)
+    - [GetInstrumentedILMap – metoda](../unmanaged-api/debugging/icordebugilcode2-getinstrumentedilmap-method.md)
 
 - **Událost sledování změn.** Rozhraní .NET Framework 4.5.2 umožňuje trasování mimo proces, na základě Event Tracing for Windows ETW aktivit pro větší plochu povrchu. To umožňuje dodavatelům rozšířené Power Management (APM) poskytuje jednoduché nástroje, které lépe sledovat náklady na jednotlivé požadavky a aktivity, které překračují vlákna.  Tyto události jsou vyvolány pouze v případě, že je; povolit řadiče trasování událostí pro Windows změny proto neovlivní doposud zapsán trasování událostí pro Windows kód nebo kód, který běží s trasování událostí pro Windows, které jsou zakázané.
 
@@ -1657,15 +1657,15 @@ Představuje .NET 2015 [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] a .N
 
     - Windows Store nebo Windows Phone Store knihovny tříd jako jsou přenosné knihovny tříd můžete změnit cíl.
 
-     Další informace o těchto změnách najdete v tématu [přenosné knihovny tříd](../../../docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md).
+     Další informace o těchto změnách najdete v tématu [přenosné knihovny tříd](../../standard/cross-platform/cross-platform-development-with-the-portable-class-library.md).
 
-- Rozhraní .NET Framework obsahu, teď obsahuje dokumentaci pro [!INCLUDE[net_native](../../../includes/net-native-md.md)], což je technologie předkompilace pro sestavování a nasazování aplikací pro Windows. [!INCLUDE[net_native](../../../includes/net-native-md.md)] své aplikace přímo do nativního kódu namísto (IL intermediate language), zkompiluje pro vyšší výkon. Podrobnosti najdete v tématu [kompilování aplikací pomocí .NET Native](../../../docs/framework/net-native/index.md).
+- Rozhraní .NET Framework obsahu, teď obsahuje dokumentaci pro [!INCLUDE[net_native](../../../includes/net-native-md.md)], což je technologie předkompilace pro sestavování a nasazování aplikací pro Windows. [!INCLUDE[net_native](../../../includes/net-native-md.md)] své aplikace přímo do nativního kódu namísto (IL intermediate language), zkompiluje pro vyšší výkon. Podrobnosti najdete v tématu [kompilování aplikací pomocí .NET Native](../net-native/index.md).
 
 - [Referenční zdroje rozhraní .NET Framework](https://referencesource.microsoft.com/) poskytuje nové možnosti procházení a vylepšené funkce. Můžete nyní procházet zdrojový kód rozhraní .NET Framework online, [stáhnout odkaz](https://referencesource.microsoft.com/download.html) pro prohlížení v režimu offline a procházení zdroje (včetně oprav a aktualizací) během ladění. Další informace najdete v příspěvku na blogu [nový vzhled pro zdroj odkazu .NET](https://devblogs.microsoft.com/dotnet/a-new-look-for-net-reference-source/).
 
 Hlavní nové vlastnosti a vylepšení v rozhraní .NET Framework 4.5.1 zahrnují:
 
-- Automatické přesměrování vazby pro sestavení. Od verze Visual Studio 2013, pokud kompilujete aplikace, která se zaměřuje [!INCLUDE[net_v451](../../../includes/net-v451-md.md)], přesměrování vazby může být přidáno do konfiguračního souboru aplikace Pokud vaše aplikace nebo její součásti odkazují na více verzí stejného sestavení. Můžete také povolit tuto funkci pro projekty, které jsou cíleny na starší verze rozhraní .NET Framework. Další informace najdete v tématu [jak: Povolení a zákaz automatického přesměrování vazby](../../../docs/framework/configure-apps/how-to-enable-and-disable-automatic-binding-redirection.md).
+- Automatické přesměrování vazby pro sestavení. Od verze Visual Studio 2013, pokud kompilujete aplikace, která se zaměřuje [!INCLUDE[net_v451](../../../includes/net-v451-md.md)], přesměrování vazby může být přidáno do konfiguračního souboru aplikace Pokud vaše aplikace nebo její součásti odkazují na více verzí stejného sestavení. Můžete také povolit tuto funkci pro projekty, které jsou cíleny na starší verze rozhraní .NET Framework. Další informace najdete v tématu [jak: Povolení a zákaz automatického přesměrování vazby](../configure-apps/how-to-enable-and-disable-automatic-binding-redirection.md).
 
 - Schopnost shromažďovat diagnostické informace umožňující vývojářům zvyšovat výkon serverových a cloudových aplikací. Další informace najdete v tématu <xref:System.Diagnostics.Tracing.EventSource.WriteEventWithRelatedActivityId%2A> a <xref:System.Diagnostics.Tracing.EventSource.WriteEventWithRelatedActivityIdCore%2A> metody v <xref:System.Diagnostics.Tracing.EventSource> třídy.
 
@@ -1699,7 +1699,7 @@ Vylepšení při ladění aplikací rozhraní .NET Framework v sadě Visual Stud
 
 - Lepší podpora výjimek součásti prostředí Windows Runtime. V [!INCLUDE[win81](../../../includes/win81-md.md)], výjimky, které vznikají v aplikacích pro Windows Store, uchovávají informace o chybě, která způsobila výjimku, i přes jazykové hranice. Může číst informace o této funkci v části "Vývoj aplikací pro Windows Store" [oznámení .NET Framework 4.5.1](https://devblogs.microsoft.com/dotnet/announcing-the-net-framework-4-5-1-preview/).
 
-Od verze Visual Studio 2013, můžete použít [profilu nástroj Optimalizace řízený spravovanými (Mpgo.exe)](../../../docs/framework/tools/mpgo-exe-managed-profile-guided-optimization-tool.md) optimalizovat [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikací, jakož i aplikace klasické pracovní plochy.
+Od verze Visual Studio 2013, můžete použít [profilu nástroj Optimalizace řízený spravovanými (Mpgo.exe)](../tools/mpgo-exe-managed-profile-guided-optimization-tool.md) optimalizovat [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikací, jakož i aplikace klasické pracovní plochy.
 
 Nové funkce v technologii ASP.NET 4.5.1 naleznete v tématu [ASP.NET and Web Tools pro Visual Studio 2013 – poznámky k](/aspnet/visual-studio/overview/2013/release-notes).
 
@@ -1709,11 +1709,11 @@ Nové funkce v technologii ASP.NET 4.5.1 naleznete v tématu [ASP.NET and Web To
 
 ### <a name="core-new-features-and-improvements"></a>Hlavní nové vlastnosti a vylepšení
 
-- Schopnost systému pro redukci restartuje pomocí detekce a zavření aplikací rozhraní .NET Framework 4 během nasazení. Zobrazit [omezení restartů systému při instalaci rozhraní .NET Framework 4.5](../../../docs/framework/deployment/reducing-system-restarts.md).
+- Schopnost systému pro redukci restartuje pomocí detekce a zavření aplikací rozhraní .NET Framework 4 během nasazení. Zobrazit [omezení restartů systému při instalaci rozhraní .NET Framework 4.5](../deployment/reducing-system-restarts.md).
 
-- Podpora pro pole, které jsou větší než 2 gigabajty (GB) na 64bitových platformách. Tuto funkci je možné povolit v konfiguračním souboru aplikace. Naleznete v tématu [ \<gcAllowVeryLargeObjects > element](../../../docs/framework/configure-apps/file-schema/runtime/gcallowverylargeobjects-element.md), které jsou uvedeny také další omezení velikosti objektu a velikost pole.
+- Podpora pro pole, které jsou větší než 2 gigabajty (GB) na 64bitových platformách. Tuto funkci je možné povolit v konfiguračním souboru aplikace. Naleznete v tématu [ \<gcAllowVeryLargeObjects > element](../configure-apps/file-schema/runtime/gcallowverylargeobjects-element.md), které jsou uvedeny také další omezení velikosti objektu a velikost pole.
 
-- Lepší výkon pomocí sběru plýtvání na pozadí pro servery. Při použití v uvolňování paměti serveru [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], uvolňování paměti na pozadí je automaticky povolen. Najdete v části uvolňování paměti serveru na pozadí [základy kolekce paměti](../../../docs/standard/garbage-collection/fundamentals.md) tématu.
+- Lepší výkon pomocí sběru plýtvání na pozadí pro servery. Při použití v uvolňování paměti serveru [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], uvolňování paměti na pozadí je automaticky povolen. Najdete v části uvolňování paměti serveru na pozadí [základy kolekce paměti](../../standard/garbage-collection/fundamentals.md) tématu.
 
 - Kompilace just-in-time (JIT) na pozadí, která je volitelně k dispozici také u vícejádrových procesorů pro zvýšení výkonu aplikací. Viz <xref:System.Runtime.ProfileOptimization>.
 
@@ -1725,7 +1725,7 @@ Nové funkce v technologii ASP.NET 4.5.1 naleznete v tématu [ASP.NET and Web To
 
 - Podpora verzního objednávání kultury řetězce a porovnávání dat. Zobrazit <xref:System.Globalization.SortVersion> třídy.
 
-- Lepšího výkonu při načítání prostředků. Zobrazit [zabalení a nasazení prostředků](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md).
+- Lepšího výkonu při načítání prostředků. Zobrazit [zabalení a nasazení prostředků](../resources/packaging-and-deploying-resources-in-desktop-apps.md).
 
 - Vylepšení komprese ZIP ke zmenšení velikosti komprimovaného souboru. Zobrazit <xref:System.IO.Compression?displayProperty=nameWithType> oboru názvů.
 
@@ -1735,9 +1735,9 @@ Nové funkce v technologii ASP.NET 4.5.1 naleznete v tématu [ASP.NET and Web To
 
 - Delegování porovnání řetězců pro operační systém, který implementuje znakovou sadu Unicode 6.0 při použití rozhraní .NET Framework na [!INCLUDE[win8](../../../includes/win8-md.md)]. Při spuštění na jiných platformách, rozhraní .NET Framework obsahuje vlastní řetězec porovnání dat, který implementuje Unicode 5.x. Najdete v článku <xref:System.String> třídy a části poznámky <xref:System.Globalization.SortVersion> třídy.
 
-- Možnost spočítat hodnoty hash pro řetězce na základě domény aplikace. Zobrazit [ \<UseRandomizedStringHashAlgorithm > Element](../../../docs/framework/configure-apps/file-schema/runtime/userandomizedstringhashalgorithm-element.md).
+- Možnost spočítat hodnoty hash pro řetězce na základě domény aplikace. Zobrazit [ \<UseRandomizedStringHashAlgorithm > Element](../configure-apps/file-schema/runtime/userandomizedstringhashalgorithm-element.md).
 
-- Podpora reflexe typů byla rozdělena mezi <xref:System.Type> a <xref:System.Reflection.TypeInfo> třídy. Zobrazit [reflexe v rozhraní .NET Framework pro aplikace Windows Store](../../../docs/framework/reflection-and-codedom/reflection-for-windows-store-apps.md).
+- Podpora reflexe typů byla rozdělena mezi <xref:System.Type> a <xref:System.Reflection.TypeInfo> třídy. Zobrazit [reflexe v rozhraní .NET Framework pro aplikace Windows Store](../reflection-and-codedom/reflection-for-windows-store-apps.md).
 
 ### <a name="managed-extensibility-framework-mef"></a>Managed Extensibility Framework (MEF)
 
@@ -1751,19 +1751,19 @@ V [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], Managed Extensibility Fr
 
 - Podmnožina MEF, který vám pomůže při vytváření [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace. Tato podmnožina je k dispozici jako [balíčku ke stažení](https://go.microsoft.com/fwlink/?LinkId=256238) v galerii NuGet. K instalaci balíčku, otevřete projekt v sadě Visual Studio, zvolte **spravovat balíčky NuGet** z **projektu** nabídky a Hledat online `Microsoft.Composition` balíčku.
 
-Další informace najdete v tématu [Managed Extensibility Framework (MEF)](../../../docs/framework/mef/index.md).
+Další informace najdete v tématu [Managed Extensibility Framework (MEF)](../mef/index.md).
 
 ### <a name="asynchronous-file-operations"></a>Asynchronní operace se soubory
 
-V [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], byly přidány nové asynchronní funkce k jazykům C# a Visual Basic. Tyto funkce přidají modelu provádění asynchronních operací založené na úlohách. Pokud chcete použít tento nový model, použijte asynchronní metody v vstupně-výstupních tříd. Zobrazit [vstupně-výstupní asynchronní](../../../docs/standard/io/asynchronous-file-i-o.md).
+V [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], byly přidány nové asynchronní funkce k jazykům C# a Visual Basic. Tyto funkce přidají modelu provádění asynchronních operací založené na úlohách. Pokud chcete použít tento nový model, použijte asynchronní metody v vstupně-výstupních tříd. Zobrazit [vstupně-výstupní asynchronní](../../standard/io/asynchronous-file-i-o.md).
 
 <a name="tools" />
 
 ### <a name="tools"></a>Nástroje
 
-V [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], Resource File Generator (Resgen.exe) umožňuje vytvořit soubor .resw pro použití v [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] vložené aplikace ze souboru .resources v sestavení rozhraní .NET Framework. Další informace najdete v tématu [Resgen.exe (Generátor zdrojových souborů)](../../../docs/framework/tools/resgen-exe-resource-file-generator.md).
+V [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], Resource File Generator (Resgen.exe) umožňuje vytvořit soubor .resw pro použití v [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] vložené aplikace ze souboru .resources v sestavení rozhraní .NET Framework. Další informace najdete v tématu [Resgen.exe (Generátor zdrojových souborů)](../tools/resgen-exe-resource-file-generator.md).
 
-Optimalizace řízená spravovanými profily (Mpgo.exe) umožňuje zlepšit dobu spuštění aplikace, využití paměti (velikost pracovní sady) a propustnost optimalizací sestavení nativních bitových kopií. Nástroj příkazového řádku generuje data profilu pro sestavení aplikací nativních bitových kopií. Zobrazit [Mpgo.exe (nástroj pro optimalizaci na základě spravovaného profilu)](../../../docs/framework/tools/mpgo-exe-managed-profile-guided-optimization-tool.md). Od verze Visual Studio 2013, můžete použít Mpgo.exe k optimalizaci [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikací, jakož i aplikace klasické pracovní plochy.
+Optimalizace řízená spravovanými profily (Mpgo.exe) umožňuje zlepšit dobu spuštění aplikace, využití paměti (velikost pracovní sady) a propustnost optimalizací sestavení nativních bitových kopií. Nástroj příkazového řádku generuje data profilu pro sestavení aplikací nativních bitových kopií. Zobrazit [Mpgo.exe (nástroj pro optimalizaci na základě spravovaného profilu)](../tools/mpgo-exe-managed-profile-guided-optimization-tool.md). Od verze Visual Studio 2013, můžete použít Mpgo.exe k optimalizaci [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikací, jakož i aplikace klasické pracovní plochy.
 
 <a name="parallel" />
 
@@ -1927,11 +1927,11 @@ V [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], bylo přidáno několik 
 
 ### <a name="portable-class-libraries-a-nameportable-"></a>Přenosné knihovny tříd <a name="portable" />
 
-Knihovny přenosných tříd projektu v sadě Visual Studio 2012 (a novějších verzích) umožňuje zapisovat a vytvářet spravovaná sestavení, které pracují na více platformách rozhraní .NET Framework. Používání knihovny přenosných tříd projektu zvolte platformy (jako jsou Windows Phone a [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)]) do cíle. Dostupné typy a členy v projektu jsou automaticky omezeny na běžnými typy a členy v těchto platformách. Další informace najdete v tématu [přenosné knihovny tříd](../../../docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md).
+Knihovny přenosných tříd projektu v sadě Visual Studio 2012 (a novějších verzích) umožňuje zapisovat a vytvářet spravovaná sestavení, které pracují na více platformách rozhraní .NET Framework. Používání knihovny přenosných tříd projektu zvolte platformy (jako jsou Windows Phone a [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)]) do cíle. Dostupné typy a členy v projektu jsou automaticky omezeny na běžnými typy a členy v těchto platformách. Další informace najdete v tématu [přenosné knihovny tříd](../../standard/cross-platform/cross-platform-development-with-the-portable-class-library.md).
 
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní .NET Framework a nesvázaná vydání](../../../docs/framework/get-started/the-net-framework-and-out-of-band-releases.md)
+- [Rozhraní .NET Framework a nesvázaná vydání](../get-started/the-net-framework-and-out-of-band-releases.md)
 - [Co je nového v usnadnění přístupu v rozhraní .NET Framework](whats-new-in-accessibility.md)
 - [Co je nového v sadě Visual Studio 2017](/visualstudio/ide/whats-new-in-visual-studio)
 - [ASP.NET](/aspnet)
