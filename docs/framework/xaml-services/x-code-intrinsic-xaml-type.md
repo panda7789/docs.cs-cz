@@ -10,12 +10,12 @@ helpviewer_keywords:
 - x:Code XAML directive element [XAML Services]
 - XAML [XAML Services], x:Code directive element
 ms.assetid: 87986b13-1a2e-4830-ae36-15f9dc5629e8
-ms.openlocfilehash: 74fcc158c0556b85ac5175584fa4948513c69053
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 8d0dbc03bb5eaedd89d5a6ce97d625a51507e820
+ms.sourcegitcommit: 5c1abeec15fbddcc7dbaa729fabc1f1f29f12045
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54641106"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58050598"
 ---
 # <a name="xcode-intrinsic-xaml-type"></a>x:Code – vnitřní typ jazyka XAML
 Umožňuje umístění kódu v rámci výrobní XAML. Takový kód můžete buď zkompilován s žádnou implementaci procesoru XAML, který zkompiluje XAML nebo doleva v produkčním prostředí XAML pro pozdější použití například interpretace modulem runtime, který.  
@@ -40,7 +40,7 @@ Umožňuje umístění kódu v rámci výrobní XAML. Takový kód můžete buď
   
 -   `x:Code` – Element direktivy musí být bezprostřední podřízený element kořenového elementu XAML výroby.  
   
--   [x: Class – direktiva](../../../docs/framework/xaml-services/x-class-directive.md) musí být zadaná na nadřazený kořenový element.  
+-   [x: Class – direktiva](x-class-directive.md) musí být zadaná na nadřazený kořenový element.  
   
 -   Kód umístit `x:Code` kompilace musí být v rozsahu částečné třídy, která už se vytváří pro příslušnou stránku XAML se zpracuje. Proto veškerý kód, který definujete musí být členy nebo proměnné částečné třídy.  
   
@@ -49,6 +49,6 @@ Umožňuje umístění kódu v rámci výrobní XAML. Takový kód můžete buď
 -   Odkazy na entity kód mimo obor názvů CLR částečné třídy musí být plně kvalifikovaný. Pokud jsou členy deklarované přepsání na částečné třídy overridable členy, to musí být zadaný pomocí klíčové slovo override specifické pro jazyk. Pokud členy deklarované v `x:Code` oboru v konfliktu s členy částečné třídy vytvořený mimo XAML, tak, že kompilátor oznámí konfliktu, soubor XAML nelze kompilovat nebo načíst.  
   
 ## <a name="see-also"></a>Viz také:
-- [x:Class – direktiva](../../../docs/framework/xaml-services/x-class-directive.md)
-- [Podkladový kód a kód XAML v subsystému WPF](../../../docs/framework/wpf/advanced/code-behind-and-xaml-in-wpf.md)
-- [Přehled XAML (WPF)](../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)
+- [x:Class – direktiva](x-class-directive.md)
+- [Podkladový kód a kód XAML v subsystému WPF](../wpf/advanced/code-behind-and-xaml-in-wpf.md)
+- [Přehled XAML (WPF)](../wpf/advanced/xaml-overview-wpf.md)

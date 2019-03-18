@@ -7,12 +7,12 @@ helpviewer_keywords:
 - x:Uid attribute [XAML Services]
 - Uid attribute [XAML Services]
 ms.assetid: 81defade-483b-4a89-b76d-9b25bba34010
-ms.openlocfilehash: 361240c2d2c140c7bf521ece423df4aaed075ba4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 6e946c63227a06b2032ce27e61899c1b8f05ec9f
+ms.sourcegitcommit: 5c1abeec15fbddcc7dbaa729fabc1f1f29f12045
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54745412"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58042968"
 ---
 # <a name="xuid-directive"></a>x:Uid – direktiva
 Poskytuje jedinečný identifikátor pro elementy značek. V mnoha scénářích používá tento jedinečný identifikátor nástroje a procesy lokalizace XAML.  
@@ -39,9 +39,9 @@ Poskytuje jedinečný identifikátor pro elementy značek. V mnoha scénářích
  Rozhraní můžete určit konkrétní vlastnost v modelu objektu jako alias pro `x:Uid` použitím atributu <xref:System.Windows.Markup.UidPropertyAttribute> k definování typu. Pokud rozhraní určuje konkrétní vlastnost, není platný pro zadání obou `x:Uid` a alias člena na stejný objekt. Pokud mají oba `x:Uid` a zadávají se člen alias, obvykle vyvolá rozhraní API .NET Framework XAML Services <xref:System.Xaml.XamlDuplicateMemberException> pro tento případ.  
   
 ## <a name="wpf-usage-notes"></a>Poznámky k použití WPF  
- Další informace o roli `x:Uid` proces lokalizace WPF a BAML formu XAML najdete v tématu [globalizace pro WPF](../../../docs/framework/wpf/advanced/globalization-for-wpf.md) nebo <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A>  
+ Další informace o roli `x:Uid` proces lokalizace WPF a BAML formu XAML najdete v tématu [globalizace pro WPF](../wpf/advanced/globalization-for-wpf.md) nebo <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A>  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A>
 - <xref:Microsoft.Build.Tasks.Windows.UidManager>
-- [Globalizace pro WPF](../../../docs/framework/wpf/advanced/globalization-for-wpf.md)
+- [Globalizace pro WPF](../wpf/advanced/globalization-for-wpf.md)

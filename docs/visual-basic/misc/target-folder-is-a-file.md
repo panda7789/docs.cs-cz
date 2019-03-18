@@ -2,12 +2,12 @@
 title: Cílová složka je soubor
 ms.date: 07/20/2015
 ms.assetid: c5e40bcb-2414-4484-b2b9-a9c391ad0029
-ms.openlocfilehash: eff48eadf57e749c768f88e11f5a36b79912f558
-ms.sourcegitcommit: facefcacd7ae2e5645e463bc841df213c505ffd4
+ms.openlocfilehash: 3189b6284939fabaaff923b80e6e767b89df50b2
+ms.sourcegitcommit: 5c1abeec15fbddcc7dbaa729fabc1f1f29f12045
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55738601"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58035089"
 ---
 # <a name="target-folder-is-a-file"></a>Cílová složka je soubor
 Při pokusu o provedení akce související s složky zadáváte souboru.  
@@ -17,6 +17,7 @@ Při pokusu o provedení akce související s složky zadáváte souboru.
 -   Zkontrolujte cestu zadáváte Ujistěte se, že zadáváte složky, nikoli soubor.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Postupy: Analýza cest k souborům](../../visual-basic/developing-apps/programming/drives-directories-files/how-to-parse-file-paths.md)
 - [My.Computer.FileSystem](xref:Microsoft.VisualBasic.FileIO.FileSystem)
 - [Vytváření, odstraňování a přesouvání souborů a adresářů](../../visual-basic/developing-apps/programming/drives-directories-files/creating-deleting-and-moving-files-and-directories.md)

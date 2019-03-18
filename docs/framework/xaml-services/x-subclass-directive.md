@@ -10,12 +10,12 @@ helpviewer_keywords:
 - XAML [XAML Services], x:Subclass attribute
 - Subclass attribute in XAML [XAML Services]
 ms.assetid: 99f66072-8107-4362-ab99-8171dc83b469
-ms.openlocfilehash: 67d699782cd2ce2b13e159d2b7218b4868a8794c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c348d8fa2bd66a9abbb64c9363bb4dae0933ba34
+ms.sourcegitcommit: 5c1abeec15fbddcc7dbaa729fabc1f1f29f12045
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54670924"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58047997"
 ---
 # <a name="xsubclass-directive"></a>x:Subclass – direktiva
 Upravuje chování kompilace kódu XAML při `x:Class` je také k dispozici. Místo vytváření částečnou třídu, která je založena na `x:Class`, poskytnutého `x:Class` je vytvořen jako zprostředkující třída, a pak se očekává na základě zadané odvozené třídy `x:Class`.  
@@ -38,7 +38,7 @@ Upravuje chování kompilace kódu XAML při `x:Class` je také k dispozici. Mí
 |`subclassName`|Povinný parametr. Určuje název CLR podtřídy.|  
   
 ## <a name="dependencies"></a>Závislosti  
- [x: Class – direktiva](../../../docs/framework/xaml-services/x-class-directive.md) musí se poskytnout i na stejný objekt, a tento objekt musí být kořenovým prvkem produkční XAML.  
+ [x: Class – direktiva](x-class-directive.md) musí se poskytnout i na stejný objekt, a tento objekt musí být kořenovým prvkem produkční XAML.  
   
 ## <a name="remarks"></a>Poznámky  
  `x:Subclass` využití je primárně určena pro jazyky, které nepodporují deklarace částečné třídy.  
@@ -57,5 +57,5 @@ Upravuje chování kompilace kódu XAML při `x:Class` je také k dispozici. Mí
  Při definování obě `x:Class` a `x:Subclass`, není potřeba poskytovat žádné implementace třídy, který je odkazován `x:Class`. Je potřeba jenom s názvem prostřednictvím `x:Class` atribut tak, aby kompilátor má některé pokyny pro třídu, která vytvoří v mezilehlé soubory (kompilátor není vyberte výchozí název v tomto případě). Můžete poskytnout `x:Class` třídy implementace, ale to není Typický scénář použití obou `x:Class` a `x:Subclass`.  
   
 ## <a name="see-also"></a>Viz také:
-- [x:Class – direktiva](../../../docs/framework/xaml-services/x-class-directive.md)
-- [XAML a vlastní třídy pro WPF](../../../docs/framework/wpf/advanced/xaml-and-custom-classes-for-wpf.md)
+- [x:Class – direktiva](x-class-directive.md)
+- [XAML a vlastní třídy pro WPF](../wpf/advanced/xaml-and-custom-classes-for-wpf.md)

@@ -2,12 +2,12 @@
 title: příkaz DotNet pack
 description: Příkaz dotnet pack vytvoří balíčky NuGet pro projekt .NET Core.
 ms.date: 12/04/2018
-ms.openlocfilehash: ca88dd4c7dfd45c9295043cd2352ba6bdf5464af
-ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
+ms.openlocfilehash: 43ee31c7cd070cf0e73975c1444ef13496afae91
+ms.sourcegitcommit: 5c1abeec15fbddcc7dbaa729fabc1f1f29f12045
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53170090"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58020930"
 ---
 # <a name="dotnet-pack"></a>balíčku DotNet
 
@@ -19,13 +19,13 @@ ms.locfileid: "53170090"
 
 ## <a name="synopsis"></a>Souhrn
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET core 2.x](#tab/netcore2x)
+# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
 ```
 dotnet pack [<PROJECT>] [-c|--configuration] [--force] [--include-source] [--include-symbols] [--no-build] [--no-dependencies]
     [--no-restore] [-o|--output] [--runtime] [-s|--serviceable] [-v|--verbosity] [--version-suffix]
 dotnet pack [-h|--help]
 ```
-# <a name="net-core-1xtabnetcore1x"></a>[.NET core 1.x](#tab/netcore1x)
+# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
 ```
 dotnet pack [<PROJECT>] [-c|--configuration] [--include-source] [--include-symbols] [--no-build] [-o|--output]
     [-s|--serviceable] [-v|--verbosity] [--version-suffix]
@@ -53,7 +53,7 @@ Můžete zadat vlastnosti nástroje MSBuild k `dotnet pack` příkaz pro proces 
 
 ## <a name="options"></a>Možnosti
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET core 2.x](#tab/netcore2x)
+# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
 
 * **`-c|--configuration {Debug|Release}`**
 
@@ -115,7 +115,7 @@ Můžete zadat vlastnosti nástroje MSBuild k `dotnet pack` příkaz pro proces 
 > </PropertyGroup>
 > ```
 
-# <a name="net-core-1xtabnetcore1x"></a>[.NET core 1.x](#tab/netcore1x)
+# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
 
 * **`-c|--configuration {Debug|Release}`**
 
@@ -205,7 +205,7 @@ Můžete zadat vlastnosti nástroje MSBuild k `dotnet pack` příkaz pro proces 
   dotnet pack --runtime win10-x64
   ```
 
-* Pack pomocí produktu Project [soubor souboru .nuspec](https://docs.microsoft.com/nuget/reference/msbuild-targets#packing-using-a-nuspec):
+* Pack projekt pomocí [soubor souboru .nuspec](https://docs.microsoft.com/nuget/reference/msbuild-targets#packing-using-a-nuspec):
 
   ```console
   dotnet pack  ~/projects/app1/project.csproj /p:NuspecFile=~/projects/app1/project.nuspec /p:NuspecBasePath=~/projects/app1/nuget
