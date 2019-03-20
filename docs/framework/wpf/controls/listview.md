@@ -7,29 +7,29 @@ helpviewer_keywords:
 - controls [WPF], ListView
 - ListView control [WPF]
 ms.assetid: fc3784a7-c9e8-4e2b-909a-7af37cef9b43
-ms.openlocfilehash: 7de612992c7ccab57259146e8b8fa294e503b733
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: c90849c27f7bbef2338ef255350a7dccd40c99e3
+ms.sourcegitcommit: 462dc41a13942e467984e48f4018d1f79ae67346
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57376218"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58186049"
 ---
-# <a name="listview"></a><span data-ttu-id="3f698-102">ListView</span><span class="sxs-lookup"><span data-stu-id="3f698-102">ListView</span></span>
-<span data-ttu-id="3f698-103"><xref:System.Windows.Controls.ListView> Ovládacího prvku poskytuje infrastrukturu pro zobrazení množinou datových položek v zobrazení nebo různá rozložení.</span><span class="sxs-lookup"><span data-stu-id="3f698-103">The <xref:System.Windows.Controls.ListView> control provides the infrastructure to display a set of data items in different layouts or views.</span></span>  
+# <a name="listview"></a><span data-ttu-id="291d0-102">ListView</span><span class="sxs-lookup"><span data-stu-id="291d0-102">ListView</span></span>
+<span data-ttu-id="291d0-103"><xref:System.Windows.Controls.ListView> Ovládacího prvku poskytuje infrastrukturu pro zobrazení množinou datových položek v zobrazení nebo různá rozložení.</span><span class="sxs-lookup"><span data-stu-id="291d0-103">The <xref:System.Windows.Controls.ListView> control provides the infrastructure to display a set of data items in different layouts or views.</span></span>  
   
- <span data-ttu-id="3f698-104">Následující ilustrace ukazuje <xref:System.Windows.Controls.ListView>.</span><span class="sxs-lookup"><span data-stu-id="3f698-104">The following illustration shows a <xref:System.Windows.Controls.ListView>.</span></span>  
+ <span data-ttu-id="291d0-104">Následující ilustrace ukazuje <xref:System.Windows.Controls.ListView>.</span><span class="sxs-lookup"><span data-stu-id="291d0-104">The following illustration shows a <xref:System.Windows.Controls.ListView>.</span></span>  
   
- <span data-ttu-id="3f698-105">![ListView s výstupem GridView](./media/listviewgridview.JPG "ListViewGridView")</span><span class="sxs-lookup"><span data-stu-id="3f698-105">![ListView with GridView output](./media/listviewgridview.JPG "ListViewGridView")</span></span>  
+ ![Snímek obrazovky zobrazující ListView s výstupem ovládacího prvku GridView.](./media/gridview-overview/listview-gridview-output.jpg)  
   
-## <a name="in-this-section"></a><span data-ttu-id="3f698-106">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="3f698-106">In This Section</span></span>  
- [<span data-ttu-id="3f698-107">Přehledy</span><span class="sxs-lookup"><span data-stu-id="3f698-107">Overviews</span></span>](listview-overviews.md)  
- [<span data-ttu-id="3f698-108">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="3f698-108">How-to Topics</span></span>](listview-how-to-topics.md)  
+## <a name="in-this-section"></a><span data-ttu-id="291d0-106">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="291d0-106">In This Section</span></span>  
+ [<span data-ttu-id="291d0-107">Přehledy</span><span class="sxs-lookup"><span data-stu-id="291d0-107">Overviews</span></span>](listview-overviews.md)  
+ [<span data-ttu-id="291d0-108">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="291d0-108">How-to Topics</span></span>](listview-how-to-topics.md)  
   
-## <a name="reference"></a><span data-ttu-id="3f698-109">Odkaz</span><span class="sxs-lookup"><span data-stu-id="3f698-109">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="291d0-109">Odkaz</span><span class="sxs-lookup"><span data-stu-id="291d0-109">Reference</span></span>  
  <xref:System.Windows.Controls.ListView>  
   <xref:System.Windows.Controls.ListViewItem>  
   <xref:System.Windows.Controls.GridView>  
   
-## <a name="related-sections"></a><span data-ttu-id="3f698-110">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="3f698-110">Related Sections</span></span>  
- [<span data-ttu-id="3f698-111">Přehled datových vazeb</span><span class="sxs-lookup"><span data-stu-id="3f698-111">Data Binding Overview</span></span>](../data/data-binding-overview.md)  
-  [<span data-ttu-id="3f698-112">Přehled datových šablon</span><span class="sxs-lookup"><span data-stu-id="3f698-112">Data Templating Overview</span></span>](../data/data-templating-overview.md)
+## <a name="related-sections"></a><span data-ttu-id="291d0-110">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="291d0-110">Related Sections</span></span>  
+ [<span data-ttu-id="291d0-111">Přehled datových vazeb</span><span class="sxs-lookup"><span data-stu-id="291d0-111">Data Binding Overview</span></span>](../data/data-binding-overview.md)  
+  [<span data-ttu-id="291d0-112">Přehled datových šablon</span><span class="sxs-lookup"><span data-stu-id="291d0-112">Data Templating Overview</span></span>](../data/data-templating-overview.md)
