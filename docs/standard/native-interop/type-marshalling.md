@@ -4,12 +4,12 @@ description: Zjistěte, jak .NET zařazuje vaše typy pro nativní reprezentace.
 author: jkoritzinsky
 ms.author: jekoritz
 ms.date: 01/18/2019
-ms.openlocfilehash: 2c62581d34e77f208b7764f955dfa37613615ee4
-ms.sourcegitcommit: b56d59ad42140d277f2acbd003b74d655fdbc9f1
+ms.openlocfilehash: b4846f2e6cd945a25ec6a747c9038d48fe115559
+ms.sourcegitcommit: 462dc41a13942e467984e48f4018d1f79ae67346
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2019
-ms.locfileid: "54416230"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58185412"
 ---
 # <a name="type-marshalling"></a>Zařazování typů
 
@@ -38,8 +38,8 @@ V první tabulce popisuje mapování pro různé typy, pro které zařazování 
 | `uint`    | `uint32_t`              |
 | `long`    | `int64_t`               |
 | `ulong`   | `uint64_t`              |
-| `char`    | Buď `char` nebo `char16_t` v závislosti na tom `CharSet` P/Invoke nebo struktury. Zobrazit [znaková sada dokumentace](/.charset.md). |
-| `string`  | Buď `char*` nebo `char16_t*` v závislosti na tom `CharSet` P/Invoke nebo struktury. Zobrazit [znaková sada dokumentace](/.charset.md). |
+| `char`    | Buď `char` nebo `char16_t` v závislosti na tom `CharSet` P/Invoke nebo struktury. Zobrazit [znaková sada dokumentace](charset.md). |
+| `string`  | Buď `char*` nebo `char16_t*` v závislosti na tom `CharSet` P/Invoke nebo struktury. Zobrazit [znaková sada dokumentace](charset.md). |
 | `System.IntPtr` | `intptr_t`        |
 | `System.UIntPtr` | `uintptr_t`      |
 | Typy ukazatelů rozhraní .NET (např.) `void*`)  | `void*` |
@@ -73,7 +73,7 @@ Některé typy může být zařazeno pouze jako parametry a ne jako pole. Tyto t
 
 | Typ formátu .NET | Nativní typ (pouze parametr) |
 |-----------|------------------------------|
-| `System.Text.StringBuilder` | Buď `char*` nebo `char16_t*` v závislosti na tom `CharSet` P/Invoke.  Zobrazit [znaková sada dokumentace](/.charset.md). |
+| `System.Text.StringBuilder` | Buď `char*` nebo `char16_t*` v závislosti na tom `CharSet` P/Invoke.  Zobrazit [znaková sada dokumentace](charset.md). |
 | `System.ArgIterator` | `va_list` (pro Windows x86/x64/arm64 jenom) |
 | `System.Runtime.InteropServices.ArrayWithOffset` | `void*` |
 | `System.Runtime.InteropServices.HandleRef` | `void*` |

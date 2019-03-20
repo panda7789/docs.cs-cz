@@ -4,12 +4,12 @@ description: Modernizace stávajících aplikací .NET pomocí cloudu Azure a Wi
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/04/2018
-ms.openlocfilehash: 20d8899d404ec72e3b1b9c2471524133a6428c44
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: f251aecfeaf2421a5cecf218577369963bc736fb
+ms.sourcegitcommit: 462dc41a13942e467984e48f4018d1f79ae67346
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53125493"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58186101"
 ---
 # <a name="choosing-azure-compute-platforms-for-container-based-applications"></a>Výběr platformy výpočetní prostředky Azure pro aplikace založené na kontejnerech
 
@@ -17,12 +17,12 @@ Protože jste si všimli po přečtení v předchozích částech, Azure je otev
 
 Jako *výchozím* doporučení, tady je hlavním kritériem doporučení v tomto dokumentu:
 
-  - **Monolitické aplikace s jedním:** Zvolte Azure App Service
-  - **N-vrstvé aplikace:** Pokud máte jednu nebo několik back endovým službám, zvolte orchestrátorů, jako je například Azure Kubernetes Service (AKS), Service Fabric (SF) nebo služby App Service
-  - **Mikroslužby Linux:** Zvolte AKS/Kubernetes
-  - **Mikroslužby Windows:** Zvolte Service Fabric
-  - **Funkce bez serveru a obslužné rutiny události:** Zvolte Azure Functions
-  - **Ve velkém měřítku Batch:** Zvolte Azure Batch
+- **Monolitické aplikace s jedním:** Zvolte Azure App Service
+- **N-vrstvé aplikace:** Pokud máte jednu nebo několik back endovým službám, zvolte orchestrátorů, jako je například Azure Kubernetes Service (AKS), Service Fabric (SF) nebo služby App Service
+- **Mikroslužby Linux:** Zvolte AKS/Kubernetes
+- **Mikroslužby Windows:** Zvolte Service Fabric
+- **Funkce bez serveru a obslužné rutiny události:** Zvolte Azure Functions
+- **Ve velkém měřítku Batch:** Zvolte Azure Batch
 
 Toto doporučení by však provést s roztažením o hodnota salt, jako výběr produktu, bude záviset na konkrétní aplikaci požadavky a vlastnosti. Ne všechny aplikace jsou stejné, i když zpočátku může vypadat podobně jako typy.
 
@@ -36,6 +36,6 @@ Všimněte si, že jak základní operační systém (Windows vs. Linux) může 
 
 Však bude v budoucnu fade těchto rozdílů v OS vyspělosti a více platforem budou mít srovnatelné vyspělosti operačního systému a rozhodnutí budou obsahovat další informace o předvolby podle konkrétních příznaků, které vaše aplikace může být nutné nebo založené na každou platformu ekosystém z důvodů.
 
->[!div class="step-by-step"]
->[Předchozí](when-to-deploy-windows-containers-to-azure-container-service-kubernetes.md)
->[další](build-resilient-services-ready-for-the-cloud-embrace-transient-failures-in-the-cloud.md)
+> [!div class="step-by-step"]
+> [Předchozí](when-to-deploy-windows-containers-to-azure-container-service-kubernetes.md)
+> [další](build-resilient-services-ready-for-the-cloud-embrace-transient-failures-in-the-cloud.md)

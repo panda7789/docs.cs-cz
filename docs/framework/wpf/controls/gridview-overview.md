@@ -6,12 +6,12 @@ helpviewer_keywords:
 - ListView controls [WPF], GridView view mode
 - controls [WPF], ListView
 ms.assetid: b2d02267-32b3-40ce-8e9f-06972d8749d9
-ms.openlocfilehash: 37332e529992f963f576a273dac917d671a3c198
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 9457430ab61681ad154aba98d72850f19d30280d
+ms.sourcegitcommit: 462dc41a13942e467984e48f4018d1f79ae67346
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57360196"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58185438"
 ---
 # <a name="gridview-overview"></a>GridView – přehled
 <xref:System.Windows.Controls.GridView> režim zobrazení je jeden z režimů zobrazení pro <xref:System.Windows.Controls.ListView> ovládacího prvku. <xref:System.Windows.Controls.GridView> Třída a její podpůrnou třídy povolit vy a vaši uživatelé zobrazit položky kolekce tabulku, která se obvykle používá jako záhlaví sloupců interaktivní tlačítka. Toto téma představuje <xref:System.Windows.Controls.GridView> třídy a popisuje jejich použití.  
@@ -26,10 +26,8 @@ ms.locfileid: "57360196"
 >  Tlačítko – ovládací prvky, které <xref:System.Windows.Controls.GridView> používá pro záhlaví sloupců jsou odvozeny z <xref:System.Windows.Controls.Primitives.ButtonBase>.  
   
  Následující ilustrace ukazuje <xref:System.Windows.Controls.GridView> zobrazení <xref:System.Windows.Controls.ListView> obsah.  
-  
- **GridView zobrazení obsahu ListView**  
-  
- ![Styl ListView](./media/styledlistview.PNG "StyledListView")  
+    
+ ![Snímek obrazovky zobrazující GridView zobrazení obsahu ListView.](./media/gridview-overview/styled-listview-content.png)  
   
  <xref:System.Windows.Controls.GridView> sloupce jsou reprezentovány <xref:System.Windows.Controls.GridViewColumn> objekty, které lze automaticky velikosti jejich obsahu. Volitelně můžete explicitně nastavit <xref:System.Windows.Controls.GridViewColumn> určité šířce. Změna velikosti sloupců přetažením úchytu mezi záhlaví sloupců. Můžete taky dynamicky přidat, odebrat, nahraďte a změnit uspořádání sloupců, protože tato funkce je integrovaná do <xref:System.Windows.Controls.GridView>. Ale <xref:System.Windows.Controls.GridView> nelze přímo aktualizovat data, která se zobrazí.  
   
@@ -37,11 +35,9 @@ ms.locfileid: "57360196"
   
  [!code-xaml[ListViewCode#ListViewEmployee](~/samples/snippets/csharp/VS_Snippets_Wpf/ListViewCode/CSharp/Window1.xaml#listviewemployee)]  
   
- Následující obrázek ukazuje tabulku, že v předchozím příkladu vytvoří.  
-  
- **GridView zobrazující data z vlastnost ItemsSource.**  
-  
- ![ListView s výstupem GridView](./media/listviewgridview.JPG "ListViewGridView")  
+ Následující obrázek ukazuje tabulku, že v předchozím příkladu vytvoří. Ovládací prvek GridView zobrazí data z objektu vlastnost ItemsSource:
+    
+ ![Snímek obrazovky zobrazující ListView s výstupem ovládacího prvku GridView.](./media/gridview-overview/listview-gridview-output.jpg)  
   
 <a name="GridViewLayoutandStyle"></a>   
 ## <a name="gridview-layout-and-style"></a>Rozložení ovládacího prvku GridView a stylu  

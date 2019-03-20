@@ -8,12 +8,12 @@ helpviewer_keywords:
 - controls [WPF], ListView
 - ListView controls [WPF], about ListView control
 ms.assetid: 989e12b0-260e-4570-95c6-489284003ce2
-ms.openlocfilehash: 07328a83e431bab02a72c3f252299e4b6b919b82
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 33f4cc55a52a67381c1fbf0d0a92bfad5e50b1ec
+ms.sourcegitcommit: 462dc41a13942e467984e48f4018d1f79ae67346
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57379143"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58186114"
 ---
 # <a name="listview-overview"></a>ListView – přehled
 <xref:System.Windows.Controls.ListView> Ovládacího prvku poskytuje infrastrukturu pro zobrazení množinou datových položek v zobrazení nebo různá rozložení. Uživatel může být vhodné například pro zobrazení položek dat v tabulce a také k seřazení její sloupce.  
@@ -33,7 +33,7 @@ ms.locfileid: "57379143"
   
  Následující obrázek znázorňuje, jak se zobrazí data pro předchozí příklad.  
   
- ![ListView s výstupem GridView](./media/listviewgridview.JPG "ListViewGridView")  
+ ![Snímek obrazovky zobrazující ListView s výstupem ovládacího prvku GridView.](./media/gridview-overview/listview-gridview-output.jpg)  
   
  Můžete vytvořit tak, že definujete třídu, která dědí z vlastního režimu zobrazení <xref:System.Windows.Controls.ViewBase> třídy. <xref:System.Windows.Controls.ViewBase> Třída poskytuje infrastrukturu, která je potřeba vytvořit vlastní zobrazení. Další informace o tom, jak vytvořit vlastní zobrazení najdete v tématu [vytvoření vlastního režimu zobrazení pro ListView](how-to-create-a-custom-view-mode-for-a-listview.md).  
   

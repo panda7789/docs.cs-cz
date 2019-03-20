@@ -4,12 +4,12 @@ description: Nápovědu k projektu vlastníky, kteří chtějí kompilaci své �
 author: conniey
 ms.date: 12/07/2018
 ms.custom: seodec18
-ms.openlocfilehash: 57bb766f1d91c502a508b6362dc642310009c8c4
-ms.sourcegitcommit: c6f69b0cf149f6b54483a6d5c2ece222913f43ce
+ms.openlocfilehash: ab484ccc2c5b51b2ee1dca57df51669d288f3e6b
+ms.sourcegitcommit: 462dc41a13942e467984e48f4018d1f79ae67346
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55904027"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58186062"
 ---
 # <a name="organize-your-project-to-support-both-net-framework-and-net-core"></a>Uspořádání vašeho projektu pro podporu rozhraní .NET Framework a .NET Core
 
@@ -36,7 +36,7 @@ Zjistěte, jak vytvořit řešení, které zkompiluje pro rozhraní .NET Framewo
 
 Vezměte v úvahu následující úložiště:
 
-![Existující projekt](media/project-structure/project.png)
+![Existující projekt](./media/project-structure/existing-project-structure.png)
 
 [**Zdrojový kód**](https://github.com/dotnet/samples/tree/master/framework/libraries/migrate-library/)
 
@@ -46,7 +46,7 @@ Následující část popisuje několik způsobů, jak přidat podporu pro .NET 
 
 Uspořádání úložiště tak, že všechny existující  *\*.csproj* soubory jsou odebrané a jednu  *\*.csproj* se vytvoří soubor, který cílí na více platforem. To je skvělá možnost, protože jednoho projektu je schopen kompilace pro různá rozhraní. Má také výkon pro zpracování různých kompilace možností a závislosti na cílové rozhraní.
 
-![Vytvoření csproj, který cílí na více platforem](media/project-structure/project.csproj.png)
+![Vytvoření csproj, který cílí na více platforem](./media/project-structure/multi-targeted-project.png)
 
 [**Zdrojový kód**](https://github.com/dotnet/samples/tree/master/framework/libraries/migrate-library-csproj/)
 
@@ -58,7 +58,7 @@ Všimněte si změny jsou:
 
 Pokud je existující projekty, které jsou cíleny na starší rozhraní, můžete ponechat beze změny těchto projektů a používat projekt .NET Core pro budoucí platforem.
 
-![Projekt .NET core s existující projekt do jiné složky](media/project-structure/project.csproj.different.png)
+![Projekt .NET core s existující projekt do jiné složky](./media/project-structure/separate-projects-same-source.png)
 
 [**Zdrojový kód**](https://github.com/dotnet/samples/tree/master/framework/libraries/migrate-library-csproj-keep-existing/)
 

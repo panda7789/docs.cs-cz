@@ -2,12 +2,12 @@
 title: Co je nového v jazyce C# 7.2
 description: Přehled nových funkcí v jazyce C# 7.2.
 ms.date: 08/16/2017
-ms.openlocfilehash: 9525d52e5eab4b8213b8a1920531dc4b4d7ac0a3
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.openlocfilehash: b8b2be68aac3cba92e0dbd74dfe4ee3cbbef0e88
+ms.sourcegitcommit: 462dc41a13942e467984e48f4018d1f79ae67346
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57673220"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58185347"
 ---
 # <a name="whats-new-in-c-72"></a>Co je nového v jazyce C# 7.2
 
@@ -35,10 +35,10 @@ Nové funkce jazyků v této verzi jsou:
 
 Jazykových funkcí 7.2 zavedený umožňují pracovat s typy hodnot a zároveň pomocí odkazové sémantiky. Jsou určené ke zvýšení výkonu minimalizací kopírování hodnotové typy bez dalších nákladů na přidělení paměti spojených s použitím typy odkazů. Mezi funkce patří:
 
- - `in` Modifikátor parametrů k určení, zda je argument předaný odkazem, ale nedojde ke změně ve volané metody. Přidání `in` modifikátor na argument [zdroj kompatibilní změnu](version-update-considerations.md#source-compatible-changes).
- - `ref readonly` Modifikátor metoda vrátí hodnotu označující, že metoda vrátí jeho hodnota podle odkazu, ale neumožňuje zápisy do tohoto objektu. Přidání `ref readonly` modifikátor [zdroj kompatibilní změnu](version-update-considerations.md#source-compatible-changes), pokud je vrácená přiřadit hodnotu. Přidávání `readonly` Modifikátor pro stávající `ref` návratový příkaz je [nekompatibilní změna](version-update-considerations.md#incompatible-changes). Vyžaduje volající aktualizovat deklarace `ref` místní proměnné k zahrnutí `readonly` modifikátor.
- - `readonly struct` Deklarace můžete určit, že struktura je neměnná a mají být předány jako `in` parametr metody jeho členů. Přidání `readonly` modifikátor na existující deklaraci struktury [binární kompatibilní změnu](version-update-considerations.md#binary-compatible-changes).
- - `ref struct` Deklarace můžete určit, že typu Struktura přistupuje k nim spravované paměti přímo a musí vždy zásobníku přidělovat. Přidávání `ref` Modifikátor pro stávající `struct` deklarace je [nekompatibilní změna](version-update-considerations.md#incompatible-changes). A `ref struct` nemůže být členem třídy nebo použít v jiných umístěních, kde mohou být přiděleny do haldy.
+- `in` Modifikátor parametrů k určení, zda je argument předaný odkazem, ale nedojde ke změně ve volané metody. Přidání `in` modifikátor na argument [zdroj kompatibilní změnu](version-update-considerations.md#source-compatible-changes).
+- `ref readonly` Modifikátor metoda vrátí hodnotu označující, že metoda vrátí jeho hodnota podle odkazu, ale neumožňuje zápisy do tohoto objektu. Přidání `ref readonly` modifikátor [zdroj kompatibilní změnu](version-update-considerations.md#source-compatible-changes), pokud je vrácená přiřadit hodnotu. Přidávání `readonly` Modifikátor pro stávající `ref` návratový příkaz je [nekompatibilní změna](version-update-considerations.md#incompatible-changes). Vyžaduje volající aktualizovat deklarace `ref` místní proměnné k zahrnutí `readonly` modifikátor.
+- `readonly struct` Deklarace můžete určit, že struktura je neměnná a mají být předány jako `in` parametr metody jeho členů. Přidání `readonly` modifikátor na existující deklaraci struktury [binární kompatibilní změnu](version-update-considerations.md#binary-compatible-changes).
+- `ref struct` Deklarace můžete určit, že typu Struktura přistupuje k nim spravované paměti přímo a musí vždy zásobníku přidělovat. Přidávání `ref` Modifikátor pro stávající `struct` deklarace je [nekompatibilní změna](version-update-considerations.md#incompatible-changes). A `ref struct` nemůže být členem třídy nebo použít v jiných umístěních, kde mohou být přiděleny do haldy.
 
 Můžete si přečíst další informace o všech těchto změn v [psát bezpečný kód efektivní](../write-safe-efficient-code.md).
 

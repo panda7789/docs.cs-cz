@@ -5,12 +5,12 @@ author: cartermp
 ms.date: 06/20/2016
 ms.assetid: b878c34c-a78f-419e-a594-a2b44fa521a4
 ms.custom: seodec18
-ms.openlocfilehash: a36f4a6f01c4e11429fda3a3022b4092e98db6cf
-ms.sourcegitcommit: 79066169e93d9d65203028b21983574ad9dcf6b4
+ms.openlocfilehash: 90fd7332242ed58d7716e248248e2c06a6ba023f
+ms.sourcegitcommit: 462dc41a13942e467984e48f4018d1f79ae67346
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57212206"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58185737"
 ---
 # <a name="asynchronous-programming"></a>Asynchronní programování
 
@@ -254,12 +254,12 @@ Blokuje aktuální vlákno jako prostředek k čekání na dokončení úkolu m�
 
 Nejsou závislé na stavu globálních objektů nebo provádění některých metod. Místo toho záviset pouze na návratové hodnoty metod. Proč?
 
-  * Kód bude jednodušší argumentovat o.
-  * Kód bude snazší testování.
-  * Kombinace asynchronní a synchronní kód je mnohem jednodušší.
-  * Ke konfliktům časování obvykle vyhnout úplně.
-  * V závislosti na návratové hodnoty zjednodušuje koordinační asynchronní kód.
-  * (Bonusové) je velice dobře funguje pro vkládání závislostí.
+* Kód bude jednodušší argumentovat o.
+* Kód bude snazší testování.
+* Kombinace asynchronní a synchronní kód je mnohem jednodušší.
+* Ke konfliktům časování obvykle vyhnout úplně.
+* V závislosti na návratové hodnoty zjednodušuje koordinační asynchronní kód.
+* (Bonusové) je velice dobře funguje pro vkládání závislostí.
 
 Doporučené cílem je dosáhnout úplné nebo téměř úplnou [referenční transparentnosti](https://en.wikipedia.org/wiki/Referential_transparency_%28computer_science%29) ve vašem kódu. To způsobí velmi předvídatelné, možností intenzivního testování a udržovatelný kód.
 
