@@ -1,5 +1,5 @@
 ---
-title: Řešení potíží s poli (Visual basic)
+title: Řešení potíží s poli (Visual Basic)
 ms.date: 07/20/2015
 helpviewer_keywords:
 - troubleshooting arrays
@@ -16,7 +16,7 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 01/23/2019
 ms.locfileid: "54707619"
 ---
-# <a name="troubleshooting-arrays-visual-basic"></a>Řešení potíží s poli (Visual basic)
+# <a name="troubleshooting-arrays-visual-basic"></a>Řešení potíží s poli (Visual Basic)
 Tato stránka obsahuje některé běžné problémy, které se mohou vyskytnout při práci s poli.  
   
 ## <a name="compilation-errors-declaring-and-initializing-an-array"></a>Chyby při kompilaci deklarace a inicializace pole  
