@@ -3,15 +3,15 @@ title: Předvídání cen pomocí learner regrese ML.NET
 description: Předvídání cen pomocí ML.NET learner regrese.
 author: aditidugar
 ms.author: johalex
-ms.date: 03/12/2019
+ms.date: 03/20/2019
 ms.topic: tutorial
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 7830849efaff2aa36f9bd436851a22f948908bb6
-ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
+ms.openlocfilehash: 0a027b3b4930f7dda48d884faf0484cf33856c8d
+ms.sourcegitcommit: 77854e8704b9689b73103d691db34d71c2bf1dad
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57846325"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58307977"
 ---
 # <a name="tutorial-predict-prices-using-a-regression-learner-with-mlnet"></a>Kurz: Předvídání cen pomocí learner regrese ML.NET
 
@@ -152,7 +152,7 @@ Načtení dat pomocí `MLContext.Data.LoadFromTextFile` obálky pro [LoadFromTex
 
 Jako vstup a výstup `Transforms`, `DataView` je základní datový kanál typ, srovnatelná s hodnotou `IEnumerable` pro `LINQ`.
 
-Data jsou v ML.NET, podobně jako zobrazení SQL. Je laxně Vyhodnocená schematizovanými a heterogenní. Objekt představuje první část kanálu a načte data. Pro účely tohoto kurzu načte datovou sadu s komentáři a odpovídající toxické nebo jiných toxické mínění. Slouží k vytvoření modelu a jeho trénování.
+Data jsou v ML.NET, podobně jako zobrazení SQL. Je laxně Vyhodnocená schematizovanými a heterogenní. Objekt představuje první část kanálu a načte data. Pro účely tohoto kurzu načte datovou sadu s cesty taxíkem informace o cenách. Slouží k vytvoření modelu a jeho trénování.
 
 Přidejte následující kód jako první řádek `Train` metody:
 
@@ -187,8 +187,6 @@ Přidejte následující kód do `Train` způsob, jak přidat `FastTreeRegressio
 Posledním krokem je pro trénování modelu. Model trénujeme <xref:Microsoft.ML.Data.TransformerChain>založená na datovou sadu, která má načíst a transformovat. Po definování odhadu trénujeme pomocí modelu <xref:Microsoft.ML.Data.EstimatorChain%601.Fit%2A> současně už načtený trénovací data. Vrátí model pro předpovědi. `pipeline.Fit()` trénovat kanálu a vrátí `Transformer` na základě `DataView` předán. Experiment není spuštěn, dokud k tomu dojde.
 
 [!code-csharp[TrainModel](../../../samples/machine-learning/tutorials/TaxiFarePrediction/Program.cs#11 "Train the model")]
-
-A to je všechno! Úspěšně jste trénuje model, který může předpovídat tarify taxislužby města v NYC strojového učení. Nyní Pojďme podívat, abyste pochopili, jak přesný je model a zjistěte, jak ho použít k předpovědi hodnot tarif taxislužby.
 
 ### <a name="save-the-model"></a>Uložit model
 

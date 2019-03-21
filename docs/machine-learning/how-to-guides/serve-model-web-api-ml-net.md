@@ -3,12 +3,12 @@ title: Poskytování strojového učení modelu ve webovém rozhraní API ASP.NE
 description: Poskytování modelu strojového učení ML.NET mínění analýzy prostřednictvím Internetu pomocí webového rozhraní API ASP.NET Core
 ms.date: 03/05/2019
 ms.custom: mvc,how-to
-ms.openlocfilehash: 07b751caff8ef0ca9a23bed68ddf88feb7b5ae4f
-ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
+ms.openlocfilehash: 0cc13ec22b3a8805ec4aa17bf10560b2564ccd63
+ms.sourcegitcommit: 77854e8704b9689b73103d691db34d71c2bf1dad
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57849061"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58307912"
 ---
 # <a name="how-to-serve-machine-learning-model-through-aspnet-core-web-api"></a>Postupy: Slouží k Machine Learning Model prostřednictvím webové rozhraní API ASP.NET Core
 
@@ -96,56 +96,9 @@ public class SentimentPrediction
 }
 ```
 
-## <a name="create-prediction-service"></a>Vytvoření Predikcí služby
+## <a name="register-predictionengine-for-use-in-application"></a>Zaregistrujte PredictionEngine pro použití v aplikaci
 
-Chcete-li uspořádat a opakované použití logiky predikce v celé aplikaci, vytvoření predikcí služby.
-
-1. Vytvořte adresář *služby* ve vašem projektu a stiskněte služeb používané aplikace:
-
-    V Průzkumníku řešení klikněte pravým tlačítkem na projekt a vyberte **Přidat > Nová složka**. Zadejte "Služby" a stiskněte **Enter**.
-
-1. V Průzkumníku řešení klikněte pravým tlačítkem myši *služby* adresář a potom vyberte možnost **Přidat > Nová položka**.
-1. V **přidat novou položku** dialogu **třídy** a změnit **název** pole *PredictionService.cs*. Vyberte **přidat** tlačítko. *PredictionService.cs* soubor se otevře v editoru kódu. Přidejte následující příkaz k hornímu okraji *PredictionService.cs*:
-
-```csharp
-using System;
-using System.IO;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.ML;
-using Microsoft.ML.Core.Data;
-using SentimentAnalysisWebAPI.DataModels;
-```
-
-Odeberte stávající definice třídy a přidejte následující kód, který *PredictionService.cs* souboru:
-
-```csharp
-public class PredictionService
-{
-    private readonly PredictionEngine<SentimentData, SentimentPrediction> _predictionEngine;
-    public PredictionService(PredictionEngine<SentimentData,SentimentPrediction> predictionEngine)
-    {
-        _predictionEngine = predictionEngine;
-    }
-
-    public string Predict(SentimentData input)
-    {
-        // Make a prediction
-        SentimentPrediction prediction = _predictionEngine.Predict(input);
-
-        //If prediction is true then it is toxic. If it is false, the it is not.
-        string isToxic = Convert.ToBoolean(prediction.Prediction) ? "Toxic" : "Not Toxic";
-
-        return isToxic;
-
-    }
-}
-```
-
-## <a name="register-predictions-service-for-use-in-application"></a>Zaregistrovat službu předpovědi pro použití v aplikaci
-
-K používání služby předpovědi ve své aplikaci budete muset pokaždé, když je potřeba ho vytvořit. V takovém případě je vhodné zvážit je injektáž závislostí ASP.NET Core.
+Chcete-li jeden predikcí, můžete použít `PredictionEngine`. Chcete-li použít `PredictionEngine` ve vaší aplikaci, budete muset pokaždé, když je potřeba ho vytvořit. V takovém případě je vhodné zvážit je injektáž závislostí ASP.NET Core.
 
 Pod následujícím odkazem najdete další informace, pokud chcete další informace o [injektáž závislostí](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-2.1).
 
@@ -161,18 +114,17 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.ML;
 using Microsoft.ML.Core.Data;
 using SentimentAnalysisWebAPI.DataModels;
-using SentimentAnalysisWebAPI.Services;
 ```
 
-1. Přidejte následující řádky kódu, který *ConfigureServices* metody:
+2. Přidejte následující řádky kódu, který *ConfigureServices* metody:
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
 {
     services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-    services.AddSingleton<MLContext>();
-    services.AddSingleton<PredictionEngine<SentimentData, SentimentPrediction>>((ctx) =>
+    services.AddScoped<MLContext>();
+    services.AddScoped<PredictionEngine<SentimentData, SentimentPrediction>>((ctx) =>
     {
         MLContext mlContext = ctx.GetRequiredService<MLContext>();
         string modelFilePathName = "MLModels/sentiment_model.zip";
@@ -187,9 +139,11 @@ public void ConfigureServices(IServiceCollection services)
         // Return prediction engine
         return model.CreatePredictionEngine<SentimentData, SentimentPrediction>(mlContext);
     });
-    services.AddSingleton<PredictionService>();
 }
 ```
+
+> [!WARNING]
+> `PredictionEngine` není bezpečné pro vlákna. Způsob, jak můžete omezit náklady na vytvoření objektu je tím, že jeho doba platnosti služby *obor*. Objekty s vymezenou *životností* jsou stejné v rámci jednoho požadavku, ale jiné napříč různými požadavky. Navštivte následující odkaz na další informace o [služby životnosti](/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-2.1#service-lifetimes).
 
 Na vysoké úrovni tento kód inicializuje objekty a služby automaticky, pokud je požadovaná aplikací místo nutnosti ručně provést.
 
@@ -202,9 +156,10 @@ Ke zpracování příchozích žádostí HTTP, budete muset vytvořit řadič.
 1. Příkazový řádek změnu **názvu Kontroleru** pole *PredictController.cs*. Vyberte tlačítko Přidat. *PredictController.cs* soubor se otevře v editoru kódu. Přidejte následující příkaz k hornímu okraji *PredictController.cs*:
 
 ```csharp
+using System;
 using Microsoft.AspNetCore.Mvc;
 using SentimentAnalysisWebAPI.DataModels;
-using SentimentAnalysisWebAPI.Services;
+using Microsoft.ML;
 ```
 
 Odeberte stávající definice třídy a přidejte následující kód, který *PredictController.cs* souboru:
@@ -212,12 +167,12 @@ Odeberte stávající definice třídy a přidejte následující kód, který *
 ```csharp
 public class PredictController : ControllerBase
 {
+    
+    private readonly PredictionEngine<SentimentData,SentimentPrediction> _predictionEngine;
 
-    private readonly PredictionService _predictionService;
-
-    public PredictController(PredictionService predictionService)
+    public PredictController(PredictionEngine<SentimentData, SentimentPrediction> predictionEngine)
     {
-        _predictionService = predictionService; //Define prediction service
+        _predictionEngine = predictionEngine; //Define prediction engine
     }
 
     [HttpPost]
@@ -227,13 +182,20 @@ public class PredictController : ControllerBase
         {
             return BadRequest();
         }
-        return Ok(_predictionService.Predict(input));
-    }
 
+        // Make a prediction
+        SentimentPrediction prediction = _predictionEngine.Predict(input);
+
+        //If prediction is true then it is toxic. If it is false, the it is not.
+        string isToxic = Convert.ToBoolean(prediction.Prediction) ? "Toxic" : "Not Toxic";
+
+        return Ok(isToxic);
+    }
+    
 }
 ```
 
-To je přiřazení Predikcí služby předáním konstruktoru kontroleru, který můžete získat pomocí vkládání závislostí. Potom v příspěvku tohoto řadiče Predikcí služby se používá metoda k predikci a výsledek se vrátí zpět na uživatele v případě úspěšného ověření.
+Toto přiřazení `PredictionEngine` předáním konstruktoru kontroleru, který můžete získat pomocí vkládání závislostí. Pak na metodu POST tento kontroler `PredictionEngine` se používá k vytváření předpovědí a výsledek se vrátí zpět na uživatele v případě úspěšného ověření.
 
 ## <a name="test-web-api-locally"></a>Místní test webové rozhraní API
 

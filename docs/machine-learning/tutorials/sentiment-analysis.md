@@ -4,12 +4,12 @@ description: Objevte, jak používat ML.NET ve scénáři binární klasifikace 
 ms.date: 03/07/2019
 ms.topic: tutorial
 ms.custom: mvc, seodec18
-ms.openlocfilehash: ce9060fa8557cc5798828a965084c98375d57913
-ms.sourcegitcommit: e994e47d3582bf09ae487ecbd53c0dac30aebaf7
+ms.openlocfilehash: a88ed38b76a230095f35304aa2b52af0a7c9c22d
+ms.sourcegitcommit: 77854e8704b9689b73103d691db34d71c2bf1dad
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58262630"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58307938"
 ---
 # <a name="tutorial-use-mlnet-in-a-sentiment-analysis-binary-classification-scenario"></a>Kurz: Použití ML.NET ve scénáři binární klasifikace analýzy mínění
 
@@ -321,8 +321,6 @@ private static void SaveModelAsFile(MLContext mlContext, ITransformer model)
 Dále vytvořte metodu k uložit model, takže můžete opakovaně používat a využívat v jiných aplikacích. `ITransformer` Má <xref:Microsoft.ML.Data.TransformerChain%601.SaveTo(Microsoft.ML.IHostEnvironment,System.IO.Stream)> metodu, která přijímá `_modelPath` globální pole a <xref:System.IO.Stream>. Uložit jako soubor zip, vytvoříte `FileStream` bezprostředně před volání `SaveTo` metody. Přidejte následující kód, který `SaveModelAsFile` metody jako další řádek:
 
 [!code-csharp[SaveToMethod](../../../samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#SaveModel "Add the SaveTo Method")]
-
-## <a name="deploy-and-predict-with-a-loaded-model"></a>Nasazení a predikce v načíst model
 
 Může také zobrazit, kde soubor byl zapsán napsáním zprávu konzoly `_modelPath`, pomocí následujícího kódu:
 
