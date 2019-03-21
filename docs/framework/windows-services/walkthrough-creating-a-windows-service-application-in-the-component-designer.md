@@ -1,6 +1,6 @@
 ---
-title: Vytvoření aplikace služby Windows v sadě Visual Studio
-ms.date: 09/10/2018
+title: 'Kurz: Vytvoření aplikace služby Windows'
+ms.date: 03/14/2019
 dev_langs:
 - csharp
 - vb
@@ -9,68 +9,80 @@ helpviewer_keywords:
 - Windows service applications, creating
 ms.assetid: e24d8a3d-edc6-485c-b6e0-5672d91fb607
 author: ghogen
-ms.openlocfilehash: 52c2f64bbb71e07dcab1fd7cd42662f9ed2c8445
-ms.sourcegitcommit: 2b986afe4ce9e13bbeec929c9737757eb61de60e
+ms.openlocfilehash: 786b9e28607cced0a15793415ff5fd470b559374
+ms.sourcegitcommit: e994e47d3582bf09ae487ecbd53c0dac30aebaf7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56665027"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58262489"
 ---
-# <a name="walkthrough-create-a-windows-service-app"></a><span data-ttu-id="7e49c-102">Průvodce: Vytvoření aplikace služby Windows</span><span class="sxs-lookup"><span data-stu-id="7e49c-102">Walkthrough: Create a Windows service app</span></span>
+# <a name="tutorial-create-a-windows-service-app"></a><span data-ttu-id="9d24c-102">Kurz: Vytvoření aplikace služby Windows</span><span class="sxs-lookup"><span data-stu-id="9d24c-102">Tutorial: Create a Windows service app</span></span>
 
-<span data-ttu-id="7e49c-103">Tento článek ukazuje, jak vytvořit jednoduchou aplikaci služby Windows v sadě Visual Studio, která zapisuje zprávy do protokolu událostí.</span><span class="sxs-lookup"><span data-stu-id="7e49c-103">This article demonstrates how to create a simple Windows service app in Visual Studio that writes messages to an event log.</span></span>
+<span data-ttu-id="9d24c-103">Tento článek ukazuje, jak vytvořit aplikaci služby Windows v sadě Visual Studio, která zapisuje zprávy do protokolu událostí.</span><span class="sxs-lookup"><span data-stu-id="9d24c-103">This article demonstrates how to create a Windows service app in Visual Studio that writes messages to an event log.</span></span>
 
-## <a name="create-a-service"></a><span data-ttu-id="7e49c-104">Vytvoření služby</span><span class="sxs-lookup"><span data-stu-id="7e49c-104">Create a service</span></span>
+## <a name="create-a-service"></a><span data-ttu-id="9d24c-104">Vytvoření služby</span><span class="sxs-lookup"><span data-stu-id="9d24c-104">Create a service</span></span>
 
-<span data-ttu-id="7e49c-105">Pokud chcete začít, vytvořte projekt a nastavte hodnoty, které jsou požadovány pro správné fungování služby.</span><span class="sxs-lookup"><span data-stu-id="7e49c-105">To begin, create the project and set values that are required for the service to function correctly.</span></span>
+<span data-ttu-id="9d24c-105">Pokud chcete začít, vytvořte projekt a nastavte hodnoty, které jsou požadovány pro správné fungování služby.</span><span class="sxs-lookup"><span data-stu-id="9d24c-105">To begin, create the project and set the values that are required for the service to function correctly.</span></span>
 
-1. <span data-ttu-id="7e49c-106">V sadě Visual Studio v panelu nabídek zvolte **souboru** > **nový** > **projektu** (nebo stiskněte klávesu **Ctrl** + **Shift**+**N**) Chcete-li otevřít **nový projekt** dialogového okna.</span><span class="sxs-lookup"><span data-stu-id="7e49c-106">In Visual Studio, on the menu bar, choose **File** > **New** > **Project** (or press **Ctrl**+**Shift**+**N**) to open the **New Project** dialog.</span></span>
+1. <span data-ttu-id="9d24c-106">Ze sady Visual Studio **souboru** nabídce vyberte možnost **nový** > **projektu** (nebo stiskněte klávesu **Ctrl** + **Shift**+**N**) Chcete-li otevřít **nový projekt** okna.</span><span class="sxs-lookup"><span data-stu-id="9d24c-106">From the Visual Studio **File** menu, select **New** > **Project** (or press **Ctrl**+**Shift**+**N**) to open the **New Project** window.</span></span>
 
-2. <span data-ttu-id="7e49c-107">Vyhledejte a vyberte **Windows Service** šablony projektu.</span><span class="sxs-lookup"><span data-stu-id="7e49c-107">Navigate to and select the **Windows Service** project template.</span></span> <span data-ttu-id="7e49c-108">Rozbalte **nainstalováno** > [**Visual C#**  nebo **jazyka Visual Basic**] > **Windows Desktop**, nebo typ **Windows Služba** do vyhledávacího pole v pravém horním rohu.</span><span class="sxs-lookup"><span data-stu-id="7e49c-108">Expand **Installed** > [**Visual C#** or **Visual Basic**] > **Windows Desktop**, or type **Windows Service** in the search box on the upper right.</span></span>
+2. <span data-ttu-id="9d24c-107">Vyhledejte a vyberte **služba Windows (.NET Framework)** šablony projektu.</span><span class="sxs-lookup"><span data-stu-id="9d24c-107">Navigate to and select the **Windows Service (.NET Framework)** project template.</span></span> <span data-ttu-id="9d24c-108">Pokud chcete ji najít, rozbalte **nainstalováno** a **Visual C#**  nebo **jazyka Visual Basic**a pak vyberte **Windows Desktop**.</span><span class="sxs-lookup"><span data-stu-id="9d24c-108">To find it, expand **Installed** and **Visual C#** or **Visual Basic**, then select **Windows Desktop**.</span></span> <span data-ttu-id="9d24c-109">Nebo zadejte *Windows Service* do vyhledávacího pole na vpravo nahoře a stiskněte klávesu **Enter**.</span><span class="sxs-lookup"><span data-stu-id="9d24c-109">Or, enter *Windows Service* in the search box on the upper right and press **Enter**.</span></span>
 
    ![Šablona služby Windows v dialogu Nový projekt v sadě Visual Studio](media/new-project-dialog.png)
 
    > [!NOTE]
-   > <span data-ttu-id="7e49c-110">Pokud se nezobrazí **Windows Service** šablony, je nutné nainstalovat **vývoj desktopových aplikací .NET** pracovního vytížení.</span><span class="sxs-lookup"><span data-stu-id="7e49c-110">If you don't see the **Windows Service** template, you may need to install the **.NET desktop development** workload.</span></span> <span data-ttu-id="7e49c-111">V **nový projekt** dialogového okna, klikněte na odkaz, který říká **otevřít instalační program Visual Studio** v levé dolní části.</span><span class="sxs-lookup"><span data-stu-id="7e49c-111">In the **New Project** dialog, click the link that says **Open Visual Studio Installer** on the lower left.</span></span> <span data-ttu-id="7e49c-112">V **instalační program sady Visual Studio**, vyberte **vývoj desktopových aplikací .NET** úloh a klikněte na tlačítko **změnit**.</span><span class="sxs-lookup"><span data-stu-id="7e49c-112">In **Visual Studio Installer**, select the **.NET desktop development** workload and then choose **Modify**.</span></span>
+   > <span data-ttu-id="9d24c-111">Pokud se nezobrazí **Windows Service** šablony, je nutné nainstalovat **vývoj desktopových aplikací .NET** úlohy:</span><span class="sxs-lookup"><span data-stu-id="9d24c-111">If you don't see the **Windows Service** template, you may need to install the **.NET desktop development** workload:</span></span>
+   >  
+   > <span data-ttu-id="9d24c-112">V **nový projekt** dialogového okna, vyberte **otevřít instalační program Visual Studio** v levé dolní části.</span><span class="sxs-lookup"><span data-stu-id="9d24c-112">In the **New Project** dialog, select **Open Visual Studio Installer** on the lower left.</span></span> <span data-ttu-id="9d24c-113">Vyberte **vývoj desktopových aplikací .NET** úlohy a pak vyberte **změnit**.</span><span class="sxs-lookup"><span data-stu-id="9d24c-113">Select the **.NET desktop development** workload, and then select **Modify**.</span></span>
 
-3. <span data-ttu-id="7e49c-113">Pojmenujte projekt **MyNewService**a klikněte na tlačítko **OK**.</span><span class="sxs-lookup"><span data-stu-id="7e49c-113">Name the project **MyNewService**, and then choose **OK**.</span></span>
+3. <span data-ttu-id="9d24c-114">Pro **název**, zadejte *MyNewService*a pak vyberte **OK**.</span><span class="sxs-lookup"><span data-stu-id="9d24c-114">For **Name**, enter *MyNewService*, and then select **OK**.</span></span>
 
-   <span data-ttu-id="7e49c-114">Šablona projektu zahrnuje komponentní třídu s názvem `Service1` , která dědí z <xref:System.ServiceProcess.ServiceBase?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="7e49c-114">The project template includes a component class named `Service1` that inherits from <xref:System.ServiceProcess.ServiceBase?displayProperty=nameWithType>.</span></span> <span data-ttu-id="7e49c-115">Obsahuje velkou část základního kódu služby, jako je například kód ke spuštění služby.</span><span class="sxs-lookup"><span data-stu-id="7e49c-115">It includes much of the basic service code, such as the code to start the service.</span></span>
+   <span data-ttu-id="9d24c-115">**Návrhu** se zobrazí karta (**Service1.cs [Design]** nebo **Service1.vb [Design]**).</span><span class="sxs-lookup"><span data-stu-id="9d24c-115">The **Design** tab appears (**Service1.cs [Design]** or **Service1.vb [Design]**).</span></span>
+   
+   <span data-ttu-id="9d24c-116">Šablona projektu zahrnuje komponentní třídu s názvem `Service1` , která dědí z <xref:System.ServiceProcess.ServiceBase?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="9d24c-116">The project template includes a component class named `Service1` that inherits from <xref:System.ServiceProcess.ServiceBase?displayProperty=nameWithType>.</span></span> <span data-ttu-id="9d24c-117">Obsahuje velkou část základního kódu služby, jako je například kód ke spuštění služby.</span><span class="sxs-lookup"><span data-stu-id="9d24c-117">It includes much of the basic service code, such as the code to start the service.</span></span>
 
-## <a name="rename-the-service"></a><span data-ttu-id="7e49c-116">Přejmenování služby</span><span class="sxs-lookup"><span data-stu-id="7e49c-116">Rename the service</span></span>
+## <a name="rename-the-service"></a><span data-ttu-id="9d24c-118">Přejmenování služby</span><span class="sxs-lookup"><span data-stu-id="9d24c-118">Rename the service</span></span>
 
-<span data-ttu-id="7e49c-117">Přejmenování služby z **Service1** k **MyNewService**.</span><span class="sxs-lookup"><span data-stu-id="7e49c-117">Rename the service from **Service1** to **MyNewService**.</span></span>
+<span data-ttu-id="9d24c-119">Přejmenování služby z **Service1** k **MyNewService**.</span><span class="sxs-lookup"><span data-stu-id="9d24c-119">Rename the service from **Service1** to **MyNewService**.</span></span>
 
-1. <span data-ttu-id="7e49c-118">V **návrhu** zobrazení Service1.cs (nebo Service1.vb), klikněte na odkaz pro **přepněte do zobrazení kódu**.</span><span class="sxs-lookup"><span data-stu-id="7e49c-118">In the **Design** view for Service1.cs (or Service1.vb), click the link to **switch to code view**.</span></span> <span data-ttu-id="7e49c-119">Klikněte pravým tlačítkem na **Service1** a vyberte **přejmenovat** v místní nabídce.</span><span class="sxs-lookup"><span data-stu-id="7e49c-119">Right-click on **Service1** and select **Rename** from the context menu.</span></span> <span data-ttu-id="7e49c-120">Zadejte **MyNewService** a potom stiskněte klávesu **Enter** nebo klikněte na tlačítko **použít**.</span><span class="sxs-lookup"><span data-stu-id="7e49c-120">Enter **MyNewService** and then press **Enter** or click **Apply**.</span></span>
+1. <span data-ttu-id="9d24c-120">V **Průzkumníka řešení**vyberte **Service1.cs**, nebo **Service1.vb**a zvolte **přejmenovat** z místní nabídky.</span><span class="sxs-lookup"><span data-stu-id="9d24c-120">In **Solution Explorer**, select **Service1.cs**, or **Service1.vb**, and choose **Rename** from the shortcut menu.</span></span> <span data-ttu-id="9d24c-121">Přejmenujte soubor na **MyNewService.cs**, nebo **MyNewService.vb**a potom stiskněte klávesu **Enter**</span><span class="sxs-lookup"><span data-stu-id="9d24c-121">Rename the file to **MyNewService.cs**, or **MyNewService.vb**, and then press **Enter**</span></span>
 
-2. <span data-ttu-id="7e49c-121">V **vlastnosti** okně **Service1.cs [Design]** nebo **Service1.vb [Design]**, změnit **ServiceName** hodnota, která má **MyNewService**.</span><span class="sxs-lookup"><span data-stu-id="7e49c-121">In the **Properties** window for **Service1.cs [Design]** or **Service1.vb [Design]**, change the **ServiceName** value to **MyNewService**.</span></span>
+    <span data-ttu-id="9d24c-122">Zobrazí se automaticky otevírané okno s dotazem, zda chcete přejmenovat všechny odkazy na prvek kódu *Service1*.</span><span class="sxs-lookup"><span data-stu-id="9d24c-122">A pop-up window appears asking whether you would like to rename all references to the code element *Service1*.</span></span>
 
-3. <span data-ttu-id="7e49c-122">V **Průzkumníka řešení**, přejmenujte **Service1.cs** k **MyNewService.cs**, nebo přejmenujte **Service1.vb** k  **MyNewService.vb**.</span><span class="sxs-lookup"><span data-stu-id="7e49c-122">In **Solution Explorer**, rename **Service1.cs** to **MyNewService.cs**, or rename **Service1.vb** to **MyNewService.vb**.</span></span>
+2. <span data-ttu-id="9d24c-123">V místním okně vyberte **Ano**.</span><span class="sxs-lookup"><span data-stu-id="9d24c-123">In the pop-up window, select **Yes**.</span></span>
 
-## <a name="add-features-to-the-service"></a><span data-ttu-id="7e49c-123">Přidání funkcí do služby</span><span class="sxs-lookup"><span data-stu-id="7e49c-123">Add features to the service</span></span>
+    <span data-ttu-id="9d24c-124">![Přejmenovat řádku](media/windows-service-rename.png "Windows service přejmenovat řádku")</span><span class="sxs-lookup"><span data-stu-id="9d24c-124">![Rename prompt](media/windows-service-rename.png "Windows service rename prompt")</span></span>
 
-<span data-ttu-id="7e49c-124">V této části přidáte do služby Windows vlastního protokolu událostí.</span><span class="sxs-lookup"><span data-stu-id="7e49c-124">In this section, you add a custom event log to the Windows service.</span></span> <span data-ttu-id="7e49c-125">Protokoly událostí nejsou nijak spojené se službami systému Windows.</span><span class="sxs-lookup"><span data-stu-id="7e49c-125">Event logs are not associated in any way with Windows services.</span></span> <span data-ttu-id="7e49c-126"><xref:System.Diagnostics.EventLog> Součást slouží jako příklad typ součásti, můžete přidat do služby Windows.</span><span class="sxs-lookup"><span data-stu-id="7e49c-126">The <xref:System.Diagnostics.EventLog> component is used here as an example of the type of component you can add to a Windows service.</span></span>
+2. <span data-ttu-id="9d24c-125">V **návrhu** kartu, vyberte možnost **vlastnosti** z místní nabídky.</span><span class="sxs-lookup"><span data-stu-id="9d24c-125">In the **Design** tab, select **Properties** from the shortcut menu.</span></span> <span data-ttu-id="9d24c-126">Z **vlastnosti** okno Změnit **ServiceName** hodnota, která se *MyNewService*.</span><span class="sxs-lookup"><span data-stu-id="9d24c-126">From the **Properties** window, change the **ServiceName** value to *MyNewService*.</span></span>
 
-### <a name="add-custom-event-log-functionality"></a><span data-ttu-id="7e49c-127">Přidání funkce vlastního protokolu událostí</span><span class="sxs-lookup"><span data-stu-id="7e49c-127">Add custom event log functionality</span></span>
+    <span data-ttu-id="9d24c-127">![Vlastnosti služby](media/windows-service-properties.png "vlastností služby Windows")</span><span class="sxs-lookup"><span data-stu-id="9d24c-127">![Service properties](media/windows-service-properties.png "Windows service properties")</span></span>
 
-1. <span data-ttu-id="7e49c-128">V **Průzkumníka řešení**, otevřete kontextovou nabídku pro **MyNewService.cs** nebo **MyNewService.vb**a klikněte na tlačítko **Návrhář zobrazení**.</span><span class="sxs-lookup"><span data-stu-id="7e49c-128">In **Solution Explorer**, open the context menu for **MyNewService.cs** or **MyNewService.vb**, and then choose **View Designer**.</span></span>
+3. <span data-ttu-id="9d24c-128">Vyberte **Uložit vše** z **souboru** nabídky.</span><span class="sxs-lookup"><span data-stu-id="9d24c-128">Select **Save All** from the **File** menu.</span></span>
 
-2. <span data-ttu-id="7e49c-129">Z **součásti** část **nástrojů**, přetáhněte <xref:System.Diagnostics.EventLog> komponentu do návrháře.</span><span class="sxs-lookup"><span data-stu-id="7e49c-129">From the **Components** section of the **Toolbox**, drag an <xref:System.Diagnostics.EventLog> component to the designer.</span></span>
 
-3. <span data-ttu-id="7e49c-130">V **Průzkumníka řešení**, otevřete kontextovou nabídku pro **MyNewService.cs** nebo **MyNewService.vb**a klikněte na tlačítko **zobrazit kód**.</span><span class="sxs-lookup"><span data-stu-id="7e49c-130">In **Solution Explorer**, open the context menu for **MyNewService.cs** or **MyNewService.vb**, and then choose **View Code**.</span></span>
+## <a name="add-features-to-the-service"></a><span data-ttu-id="9d24c-129">Přidání funkcí do služby</span><span class="sxs-lookup"><span data-stu-id="9d24c-129">Add features to the service</span></span>
 
-4. <span data-ttu-id="7e49c-131">Upravte konstruktor pro definování vlastního protokolu událostí:</span><span class="sxs-lookup"><span data-stu-id="7e49c-131">Edit the constructor to define a custom event log:</span></span>
+<span data-ttu-id="9d24c-130">V této části přidáte do služby Windows vlastního protokolu událostí.</span><span class="sxs-lookup"><span data-stu-id="9d24c-130">In this section, you add a custom event log to the Windows service.</span></span> <span data-ttu-id="9d24c-131"><xref:System.Diagnostics.EventLog> Komponenta je příkladem typ součásti, můžete přidat do služby Windows.</span><span class="sxs-lookup"><span data-stu-id="9d24c-131">The <xref:System.Diagnostics.EventLog> component is an example of the type of component you can add to a Windows service.</span></span>
+
+### <a name="add-custom-event-log-functionality"></a><span data-ttu-id="9d24c-132">Přidání funkce vlastního protokolu událostí</span><span class="sxs-lookup"><span data-stu-id="9d24c-132">Add custom event log functionality</span></span>
+
+1. <span data-ttu-id="9d24c-133">V **Průzkumníka řešení**, v místní nabídce pro **MyNewService.cs**, nebo **MyNewService.vb**, zvolte **Návrhář zobrazení**.</span><span class="sxs-lookup"><span data-stu-id="9d24c-133">In **Solution Explorer**, from the shortcut menu for **MyNewService.cs**, or **MyNewService.vb**, choose **View Designer**.</span></span>
+
+2. <span data-ttu-id="9d24c-134">V **nástrojů**, rozbalte **součásti**a pak přetáhněte **EventLog** komponentu do **Service1.cs [Design]**, nebo  **Service1.VB [Design]** kartu.</span><span class="sxs-lookup"><span data-stu-id="9d24c-134">In **Toolbox**, expand **Components**, and then drag the **EventLog** component to the **Service1.cs [Design]**, or **Service1.vb [Design]** tab.</span></span>
+
+3. <span data-ttu-id="9d24c-135">V **Průzkumníka řešení**, v místní nabídce pro **MyNewService.cs**, nebo **MyNewService.vb**, zvolte **zobrazit kód**.</span><span class="sxs-lookup"><span data-stu-id="9d24c-135">In **Solution Explorer**, from the shortcut menu for **MyNewService.cs**, or **MyNewService.vb**, choose **View Code**.</span></span>
+
+4. <span data-ttu-id="9d24c-136">Definování vlastního protokolu událostí.</span><span class="sxs-lookup"><span data-stu-id="9d24c-136">Define a custom event log.</span></span> <span data-ttu-id="9d24c-137">Pro C#, upravte existující `MyNewService()` konstruktor; v jazyce Visual Basic přidejte `New()` konstruktor:</span><span class="sxs-lookup"><span data-stu-id="9d24c-137">For C#, edit the existing `MyNewService()` constructor; for Visual Basic, add the `New()` constructor:</span></span>
 
    ```csharp
    public MyNewService()
    {
         InitializeComponent();
 
-        eventLog1 = new System.Diagnostics.EventLog();
-        if (!System.Diagnostics.EventLog.SourceExists("MySource"))
+        eventLog1 = new EventLog();
+        if (!EventLog.SourceExists("MySource"))
         {
-            System.Diagnostics.EventLog.CreateEventSource(
-                "MySource", "MyNewLog");
+            EventLog.CreateEventSource("MySource", "MyNewLog");
         }
         eventLog1.Source = "MySource";
         eventLog1.Log = "MyNewLog";
@@ -79,64 +91,99 @@ ms.locfileid: "56665027"
 
    [!code-vb[VbRadconService#2](../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRadconService/VB/MyNewService.vb#2)]
 
-### <a name="define-what-occurs-when-the-service-starts"></a><span data-ttu-id="7e49c-132">Definujte, co se stane při spuštění služby</span><span class="sxs-lookup"><span data-stu-id="7e49c-132">Define what occurs when the service starts</span></span>
+5. <span data-ttu-id="9d24c-138">Přidat `using` příkazu **MyNewService.cs** (pokud ještě neexistuje), nebo `Imports` příkaz **MyNewService.vb**, pro <xref:System.Diagnostics?displayProperty=nameWithType> obor názvů:</span><span class="sxs-lookup"><span data-stu-id="9d24c-138">Add a `using` statement to **MyNewService.cs** (if it doesn't already exist), or an `Imports` statement **MyNewService.vb**, for the <xref:System.Diagnostics?displayProperty=nameWithType> namespace:</span></span>
 
-<span data-ttu-id="7e49c-133">V editoru kódu vyhledejte <xref:System.ServiceProcess.ServiceBase.OnStart%2A> metodu, která byla automaticky přepsána při vytvoření projektu.</span><span class="sxs-lookup"><span data-stu-id="7e49c-133">In the code editor, locate the <xref:System.ServiceProcess.ServiceBase.OnStart%2A> method that was automatically overridden when you created the project.</span></span> <span data-ttu-id="7e49c-134">Přidáte řádek kódu, který zapíše položku do protokolu událostí při spuštění služby:</span><span class="sxs-lookup"><span data-stu-id="7e49c-134">Add a line of code that writes an entry to the event log when the service starts:</span></span>
+    ```csharp
+    using System.Diagnostics;
+    ```
+
+    ```vb
+    Imports System.Diagnostics
+    ```
+
+6. <span data-ttu-id="9d24c-139">Vyberte **Uložit vše** z **souboru** nabídky.</span><span class="sxs-lookup"><span data-stu-id="9d24c-139">Select **Save All** from the **File** menu.</span></span>
+
+### <a name="define-what-occurs-when-the-service-starts"></a><span data-ttu-id="9d24c-140">Definujte, co se stane při spuštění služby</span><span class="sxs-lookup"><span data-stu-id="9d24c-140">Define what occurs when the service starts</span></span>
+
+<span data-ttu-id="9d24c-141">V editoru kódu pro **MyNewService.cs** nebo **MyNewService.vb**, vyhledejte <xref:System.ServiceProcess.ServiceBase.OnStart%2A> metody. Visual Studio automaticky vytvoří definici prázdnou metodu při vytváření projektu.</span><span class="sxs-lookup"><span data-stu-id="9d24c-141">In the code editor for **MyNewService.cs** or **MyNewService.vb**, locate the <xref:System.ServiceProcess.ServiceBase.OnStart%2A> method; Visual Studio automatically created an empty method definition when you created the project.</span></span> <span data-ttu-id="9d24c-142">Přidejte kód, který zapíše položku do protokolu událostí při spuštění služby:</span><span class="sxs-lookup"><span data-stu-id="9d24c-142">Add code that writes an entry to the event log when the service starts:</span></span>
 
 [!code-csharp[VbRadconService#3](../../../samples/snippets/csharp/VS_Snippets_VBCSharp/VbRadconService/CS/MyNewService.cs#3)]
 [!code-vb[VbRadconService#3](../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRadconService/VB/MyNewService.vb#3)]
 
-<span data-ttu-id="7e49c-135">Aplikace služby byla navržena jako dlouhotrvající, takže obvykle dotazuje nebo něco monitoruje v systému.</span><span class="sxs-lookup"><span data-stu-id="7e49c-135">A service application is designed to be long-running, so it usually polls or monitors something in the system.</span></span> <span data-ttu-id="7e49c-136">Monitorování je nastavení <xref:System.ServiceProcess.ServiceBase.OnStart%2A> metody.</span><span class="sxs-lookup"><span data-stu-id="7e49c-136">The monitoring is set up in the <xref:System.ServiceProcess.ServiceBase.OnStart%2A> method.</span></span> <span data-ttu-id="7e49c-137">Ale <xref:System.ServiceProcess.ServiceBase.OnStart%2A> neumí skutečně monitorování.</span><span class="sxs-lookup"><span data-stu-id="7e49c-137">However, <xref:System.ServiceProcess.ServiceBase.OnStart%2A> doesn’t actually do the monitoring.</span></span> <span data-ttu-id="7e49c-138"><xref:System.ServiceProcess.ServiceBase.OnStart%2A> Metoda musí vracet v operačním systému po operaci služby.</span><span class="sxs-lookup"><span data-stu-id="7e49c-138">The <xref:System.ServiceProcess.ServiceBase.OnStart%2A> method must return to the operating system after the service's operation has begun.</span></span> <span data-ttu-id="7e49c-139">Nesmí spustit nekonečnou smyčku ani blokovat.</span><span class="sxs-lookup"><span data-stu-id="7e49c-139">It must not loop forever or block.</span></span> <span data-ttu-id="7e49c-140">Pokud chcete nastavit jednoduchý mechanismus dotazování, můžete použít <xref:System.Timers.Timer?displayProperty=nameWithType> komponenty následujícím způsobem: V <xref:System.ServiceProcess.ServiceBase.OnStart%2A> metodu, nastavení parametrů na komponentu a potom nastavte <xref:System.Timers.Timer.Enabled%2A> vlastnost `true`.</span><span class="sxs-lookup"><span data-stu-id="7e49c-140">To set up a simple polling mechanism, you can use the <xref:System.Timers.Timer?displayProperty=nameWithType> component as follows: In the <xref:System.ServiceProcess.ServiceBase.OnStart%2A> method, set parameters on the component, and then set the <xref:System.Timers.Timer.Enabled%2A> property to `true`.</span></span> <span data-ttu-id="7e49c-141">Časovač vyvolává události ve vašem kódu pravidelně, po kterém může služba provádět monitorování.</span><span class="sxs-lookup"><span data-stu-id="7e49c-141">The timer raises events in your code periodically, at which time your service could do its monitoring.</span></span> <span data-ttu-id="7e49c-142">K tomu můžete použít následující kód:</span><span class="sxs-lookup"><span data-stu-id="7e49c-142">You can use the following code to do this:</span></span>
+#### <a name="polling"></a><span data-ttu-id="9d24c-143">Dotazování</span><span class="sxs-lookup"><span data-stu-id="9d24c-143">Polling</span></span>
 
-```csharp
-// Set up a timer that triggers every minute.
-System.Timers.Timer timer = new System.Timers.Timer();
-timer.Interval = 60000; // 60 seconds
-timer.Elapsed += new System.Timers.ElapsedEventHandler(this.OnTimer);
-timer.Start();
-```
+<span data-ttu-id="9d24c-144">Protože aplikace služby byla navržena jako dlouhotrvající, obvykle dotazuje nebo sleduje systém, který jste vytvořili v <xref:System.ServiceProcess.ServiceBase.OnStart%2A> metody.</span><span class="sxs-lookup"><span data-stu-id="9d24c-144">Because a service application is designed to be long-running, it usually polls or monitors the system, which you set up in the <xref:System.ServiceProcess.ServiceBase.OnStart%2A> method.</span></span> <span data-ttu-id="9d24c-145">`OnStart` Metoda musí vracet v operačním systému po operaci služby tak, aby systém není blokován.</span><span class="sxs-lookup"><span data-stu-id="9d24c-145">The `OnStart` method must return to the operating system after the service's operation has begun so that the system isn't blocked.</span></span> 
 
-```vb
-' Set up a timer that triggers every minute.
-Dim timer As System.Timers.Timer = New System.Timers.Timer()
-timer.Interval = 60000 ' 60 seconds
-AddHandler timer.Elapsed, AddressOf Me.OnTimer
-timer.Start()
-```
+<span data-ttu-id="9d24c-146">Pokud chcete nastavit jednoduchý mechanismus dotazování, použijte <xref:System.Timers.Timer?displayProperty=nameWithType> komponenty.</span><span class="sxs-lookup"><span data-stu-id="9d24c-146">To set up a simple polling mechanism, use the <xref:System.Timers.Timer?displayProperty=nameWithType> component.</span></span> <span data-ttu-id="9d24c-147">Časovač vyvolá <xref:System.Timers.Timer.Elapsed> události v pravidelných intervalech, po kterém můžete provádět monitorování vaší služby.</span><span class="sxs-lookup"><span data-stu-id="9d24c-147">The timer raises an <xref:System.Timers.Timer.Elapsed> event at regular intervals, at which time your service can do its monitoring.</span></span> <span data-ttu-id="9d24c-148">Můžete použít <xref:System.Timers.Timer> komponenty následujícím způsobem:</span><span class="sxs-lookup"><span data-stu-id="9d24c-148">You use the <xref:System.Timers.Timer> component as follows:</span></span>
 
-<span data-ttu-id="7e49c-143">Přidání členské proměnné třídy.</span><span class="sxs-lookup"><span data-stu-id="7e49c-143">Add a member variable to the class.</span></span> <span data-ttu-id="7e49c-144">Obsahuje identifikátor další události pro zápis do protokolu událostí.</span><span class="sxs-lookup"><span data-stu-id="7e49c-144">It contains the identifier of the next event to write into the event log.</span></span>
+- <span data-ttu-id="9d24c-149">Nastavte vlastnosti <xref:System.Timers.Timer> v komponentu `MyNewService.OnStart` metody.</span><span class="sxs-lookup"><span data-stu-id="9d24c-149">Set the properties of the <xref:System.Timers.Timer> component in the `MyNewService.OnStart` method.</span></span>
+- <span data-ttu-id="9d24c-150">Spuštění časovače voláním <xref:System.Timers.Timer.Start%2A> metody.</span><span class="sxs-lookup"><span data-stu-id="9d24c-150">Start the timer by calling the <xref:System.Timers.Timer.Start%2A> method.</span></span>
 
-```csharp
-private int eventId = 1;
-```
+##### <a name="set-up-the-polling-mechanism"></a><span data-ttu-id="9d24c-151">Nastavte dotazovací mechanismus.</span><span class="sxs-lookup"><span data-stu-id="9d24c-151">Set up the polling mechanism.</span></span>
 
-```vb
-Private eventId As Integer = 1
-```
+1. <span data-ttu-id="9d24c-152">Přidejte následující kód `MyNewService.OnStart` událost nastavit dotazovací mechanismus:</span><span class="sxs-lookup"><span data-stu-id="9d24c-152">Add the following code in the `MyNewService.OnStart` event to set up the polling mechanism:</span></span>
 
-<span data-ttu-id="7e49c-145">Přidáte nové metody pro zpracování události časovače:</span><span class="sxs-lookup"><span data-stu-id="7e49c-145">Add a new method to handle the timer event:</span></span>
+   ```csharp
+   // Set up a timer that triggers every minute.
+   Timer timer = new Timer();
+   timer.Interval = 60000; // 60 seconds
+   timer.Elapsed += new ElapsedEventHandler(this.OnTimer);
+   timer.Start();
+   ```
 
-```csharp
-public void OnTimer(object sender, System.Timers.ElapsedEventArgs args)
-{
-    // TODO: Insert monitoring activities here.
-    eventLog1.WriteEntry("Monitoring the System", EventLogEntryType.Information, eventId++);
-}
-```
+   ```vb
+   ' Set up a timer that triggers every minute.
+   Dim timer As Timer = New Timer()
+   timer.Interval = 60000 ' 60 seconds
+   AddHandler timer.Elapsed, AddressOf Me.OnTimer
+   timer.Start()
+   ```
 
-```vb
-Private Sub OnTimer(sender As Object, e As Timers.ElapsedEventArgs)
-    ' TODO: Insert monitoring activities here.
-    eventLog1.WriteEntry("Monitoring the System", EventLogEntryType.Information, eventId)
-    eventId = eventId + 1
-End Sub
-```
+2. <span data-ttu-id="9d24c-153">Přidat `using` příkazu **MyNewService.cs**, nebo `Imports` příkazu **MyNewService.vb**, pro <xref:System.Timers?displayProperty=nameWithType> obor názvů:</span><span class="sxs-lookup"><span data-stu-id="9d24c-153">Add a `using` statement to **MyNewService.cs**, or an `Imports` statement to **MyNewService.vb**, for the <xref:System.Timers?displayProperty=nameWithType> namespace:</span></span>
 
-<span data-ttu-id="7e49c-146">Můžete chtít provádět úlohy pomocí pracovních vláken na pozadí místo spouštění veškerou práci na hlavním vlákně.</span><span class="sxs-lookup"><span data-stu-id="7e49c-146">You might want to perform tasks by using background worker threads instead of running all your work on the main thread.</span></span> <span data-ttu-id="7e49c-147">Další informace naleznete v tématu <xref:System.ComponentModel.BackgroundWorker?displayProperty=fullName>.</span><span class="sxs-lookup"><span data-stu-id="7e49c-147">For more information, see <xref:System.ComponentModel.BackgroundWorker?displayProperty=fullName>.</span></span>
 
-### <a name="define-what-occurs-when-the-service-is-stopped"></a><span data-ttu-id="7e49c-148">Definujte, co se stane při zastavení služby</span><span class="sxs-lookup"><span data-stu-id="7e49c-148">Define what occurs when the service is stopped</span></span>
+   ```csharp
+   using System.Timers;
+   ```
 
-<span data-ttu-id="7e49c-149">Přidat řádek kódu, který <xref:System.ServiceProcess.ServiceBase.OnStop%2A> metodu, která přidá položku do protokolu událostí po zastavení služby:</span><span class="sxs-lookup"><span data-stu-id="7e49c-149">Add a line of code to the <xref:System.ServiceProcess.ServiceBase.OnStop%2A> method that adds an entry to the event log when the service is stopped:</span></span>
+   ```vb
+   Imports System.Timers
+   ```
+
+
+3. <span data-ttu-id="9d24c-154">V `MyNewService` třídy, přidejte `OnTimer` metodu ke zpracování <xref:System.Timers.Timer.Elapsed?displayProperty=nameWithType> události:</span><span class="sxs-lookup"><span data-stu-id="9d24c-154">In the `MyNewService` class, add the `OnTimer` method to handle the <xref:System.Timers.Timer.Elapsed?displayProperty=nameWithType> event:</span></span>
+
+   ```csharp
+   public void OnTimer(object sender, ElapsedEventArgs args)
+   {
+       // TODO: Insert monitoring activities here.
+       eventLog1.WriteEntry("Monitoring the System", EventLogEntryType.Information, eventId++);
+   }
+   ```
+
+   ```vb
+   Private Sub OnTimer(sender As Object, e As Timers.ElapsedEventArgs)
+      ' TODO: Insert monitoring activities here.
+      eventLog1.WriteEntry("Monitoring the System", EventLogEntryType.Information, eventId)
+      eventId = eventId + 1
+   End Sub
+   ```
+
+4. <span data-ttu-id="9d24c-155">V `MyNewService` třídy, přidat členskou proměnnou.</span><span class="sxs-lookup"><span data-stu-id="9d24c-155">In the `MyNewService` class, add a member variable.</span></span> <span data-ttu-id="9d24c-156">Obsahuje identifikátor další události pro zápis do protokolu událostí:</span><span class="sxs-lookup"><span data-stu-id="9d24c-156">It contains the identifier of the next event to write into the event log:</span></span>
+
+   ```csharp
+   private int eventId = 1;
+   ```
+
+   ```vb
+   Private eventId As Integer = 1
+   ```
+
+<span data-ttu-id="9d24c-157">Místo spouštění veškerou práci na hlavním vlákně, můžete spouštět úlohy s použitím pracovních vláken na pozadí.</span><span class="sxs-lookup"><span data-stu-id="9d24c-157">Instead of running all your work on the main thread, you can run tasks by using background worker threads.</span></span> <span data-ttu-id="9d24c-158">Další informace naleznete v tématu <xref:System.ComponentModel.BackgroundWorker?displayProperty=fullName>.</span><span class="sxs-lookup"><span data-stu-id="9d24c-158">For more information, see <xref:System.ComponentModel.BackgroundWorker?displayProperty=fullName>.</span></span>
+
+### <a name="define-what-occurs-when-the-service-is-stopped"></a><span data-ttu-id="9d24c-159">Definujte, co se stane při zastavení služby</span><span class="sxs-lookup"><span data-stu-id="9d24c-159">Define what occurs when the service is stopped</span></span>
+
+<span data-ttu-id="9d24c-160">Vložit řádek kódu <xref:System.ServiceProcess.ServiceBase.OnStop%2A> metodu, která přidá položku do protokolu událostí po zastavení služby:</span><span class="sxs-lookup"><span data-stu-id="9d24c-160">Insert a line of code in the <xref:System.ServiceProcess.ServiceBase.OnStop%2A> method that adds an entry to the event log when the service is stopped:</span></span>
 
 ```csharp
 eventLog1.WriteEntry("In OnStop.");
@@ -144,22 +191,26 @@ eventLog1.WriteEntry("In OnStop.");
 
 [!code-vb[VbRadconService#4](../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRadconService/VB/MyNewService.vb#4)]
 
-### <a name="define-other-actions-for-the-service"></a><span data-ttu-id="7e49c-150">Definování dalších akcí služby</span><span class="sxs-lookup"><span data-stu-id="7e49c-150">Define other actions for the service</span></span>
+### <a name="define-other-actions-for-the-service"></a><span data-ttu-id="9d24c-161">Definování dalších akcí služby</span><span class="sxs-lookup"><span data-stu-id="9d24c-161">Define other actions for the service</span></span>
 
-<span data-ttu-id="7e49c-151">Je možné přepsat <xref:System.ServiceProcess.ServiceBase.OnPause%2A>, <xref:System.ServiceProcess.ServiceBase.OnContinue%2A>, a <xref:System.ServiceProcess.ServiceBase.OnShutdown%2A> metody definovat další zpracování pro komponentu.</span><span class="sxs-lookup"><span data-stu-id="7e49c-151">You can override the <xref:System.ServiceProcess.ServiceBase.OnPause%2A>, <xref:System.ServiceProcess.ServiceBase.OnContinue%2A>, and <xref:System.ServiceProcess.ServiceBase.OnShutdown%2A> methods to define additional processing for your component.</span></span> <span data-ttu-id="7e49c-152">Následující kód ukazuje, jak je možné přepsat <xref:System.ServiceProcess.ServiceBase.OnContinue%2A> metody:</span><span class="sxs-lookup"><span data-stu-id="7e49c-152">The following code shows how you can override the <xref:System.ServiceProcess.ServiceBase.OnContinue%2A> method:</span></span>
+<span data-ttu-id="9d24c-162">Je možné přepsat <xref:System.ServiceProcess.ServiceBase.OnPause%2A>, <xref:System.ServiceProcess.ServiceBase.OnContinue%2A>, a <xref:System.ServiceProcess.ServiceBase.OnShutdown%2A> metody definovat další zpracování pro komponentu.</span><span class="sxs-lookup"><span data-stu-id="9d24c-162">You can override the <xref:System.ServiceProcess.ServiceBase.OnPause%2A>, <xref:System.ServiceProcess.ServiceBase.OnContinue%2A>, and <xref:System.ServiceProcess.ServiceBase.OnShutdown%2A> methods to define additional processing for your component.</span></span> 
+
+<span data-ttu-id="9d24c-163">Následující kód ukazuje, jak přepsat <xref:System.ServiceProcess.ServiceBase.OnContinue%2A> metodu `MyNewService` třídy:</span><span class="sxs-lookup"><span data-stu-id="9d24c-163">The following code shows how you to override the <xref:System.ServiceProcess.ServiceBase.OnContinue%2A> method in the `MyNewService` class:</span></span>
 
 [!code-csharp[VbRadconService#5](../../../samples/snippets/csharp/VS_Snippets_VBCSharp/VbRadconService/CS/MyNewService.cs#5)]
 [!code-vb[VbRadconService#5](../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRadconService/VB/MyNewService.vb#5)]
 
-<span data-ttu-id="7e49c-153">Některé vlastní akce musejí nastat při instalaci služby Windows podle <xref:System.Configuration.Install.Installer> třídy.</span><span class="sxs-lookup"><span data-stu-id="7e49c-153">Some custom actions have to occur when a Windows service is installed by the <xref:System.Configuration.Install.Installer> class.</span></span> <span data-ttu-id="7e49c-154">Sada Visual Studio může vytvořit tyto instalační programy speciálně pro službu systému Windows a přidat je do projektu.</span><span class="sxs-lookup"><span data-stu-id="7e49c-154">Visual Studio can create these installers specifically for a Windows service and add them to your project.</span></span>
 
-## <a name="set-service-status"></a><span data-ttu-id="7e49c-155">Nastavit stav služby</span><span class="sxs-lookup"><span data-stu-id="7e49c-155">Set service status</span></span>
+## <a name="set-service-status"></a><span data-ttu-id="9d24c-164">Nastavit stav služby</span><span class="sxs-lookup"><span data-stu-id="9d24c-164">Set service status</span></span>
 
-<span data-ttu-id="7e49c-156">Služby oznamují svůj stav tak, aby uživatelé můžete říct, jestli služba správně funguje ke správci řízení služeb.</span><span class="sxs-lookup"><span data-stu-id="7e49c-156">Services report their status to the Service Control Manager, so that users can tell whether a service is functioning correctly.</span></span> <span data-ttu-id="7e49c-157">Ve výchozím nastavení, služby, které dědí <xref:System.ServiceProcess.ServiceBase> omezenou sadu nastavení, stav, včetně zastaven, pozastaven a spouštění sestav.</span><span class="sxs-lookup"><span data-stu-id="7e49c-157">By default, services that inherit from <xref:System.ServiceProcess.ServiceBase> report a limited set of status settings, including Stopped, Paused, and Running.</span></span> <span data-ttu-id="7e49c-158">Pokud služba trvá o něco se spustí ho může být užitečné oznámit spuštění čeká na stav.</span><span class="sxs-lookup"><span data-stu-id="7e49c-158">If a service takes a little while to start up, it might be helpful to report a Start Pending status.</span></span> <span data-ttu-id="7e49c-159">Nastavení stavu čeká na spuštění a zastavení probíhající můžete také implementovat přidáním kódu, která volá Windows [SetServiceStatus funkce](/windows/desktop/api/winsvc/nf-winsvc-setservicestatus).</span><span class="sxs-lookup"><span data-stu-id="7e49c-159">You can also implement the Start Pending and Stop Pending status settings by adding code that calls into the Windows [SetServiceStatus function](/windows/desktop/api/winsvc/nf-winsvc-setservicestatus).</span></span>
+<span data-ttu-id="9d24c-165">Služby oznamují svůj stav na [správce řízení služeb](/windows/desktop/Services/service-control-manager) tak, aby uživatel můžete zjistit, jestli služba správně funguje.</span><span class="sxs-lookup"><span data-stu-id="9d24c-165">Services report their status to the [Service Control Manager](/windows/desktop/Services/service-control-manager) so that a user can tell whether a service is functioning correctly.</span></span> <span data-ttu-id="9d24c-166">Ve výchozím nastavení, služby, která dědí z <xref:System.ServiceProcess.ServiceBase> omezenou sadu nastavení stavu, které zahrnují SERVICE_STOPPED SERVICE_PAUSED a SERVICE_RUNNING sestavy.</span><span class="sxs-lookup"><span data-stu-id="9d24c-166">By default, a service that inherits from <xref:System.ServiceProcess.ServiceBase> reports a limited set of status settings, which include SERVICE_STOPPED, SERVICE_PAUSED, and SERVICE_RUNNING.</span></span> <span data-ttu-id="9d24c-167">Pokud služba chvíli trvat, než se spustí, je vhodné informuje o stavu SERVICE_START_PENDING.</span><span class="sxs-lookup"><span data-stu-id="9d24c-167">If a service takes a while to start up, it's useful to report a SERVICE_START_PENDING status.</span></span> 
 
-<span data-ttu-id="7e49c-160">K implementaci služby čekajícím stavu:</span><span class="sxs-lookup"><span data-stu-id="7e49c-160">To implement service pending status:</span></span>
+<span data-ttu-id="9d24c-168">Nastavení stavu SERVICE_START_PENDING a SERVICE_STOP_PENDING můžete implementovat přidáním kódu, který volá Windows [SetServiceStatus](/windows/desktop/api/winsvc/nf-winsvc-setservicestatus) funkce.</span><span class="sxs-lookup"><span data-stu-id="9d24c-168">You can implement the SERVICE_START_PENDING and SERVICE_STOP_PENDING status settings by adding code that calls the Windows [SetServiceStatus](/windows/desktop/api/winsvc/nf-winsvc-setservicestatus) function.</span></span>
 
-1. <span data-ttu-id="7e49c-161">Přidat `using` příkaz nebo `Imports` deklarace <xref:System.Runtime.InteropServices?displayProperty=nameWithType> obor názvů v souboru MyNewService.cs nebo MyNewService.vb:</span><span class="sxs-lookup"><span data-stu-id="7e49c-161">Add a `using` statement or `Imports` declaration for the <xref:System.Runtime.InteropServices?displayProperty=nameWithType> namespace in the MyNewService.cs or MyNewService.vb file:</span></span>
+
+### <a name="implement-service-pending-status"></a><span data-ttu-id="9d24c-169">Implementace služby čekajícím stavu</span><span class="sxs-lookup"><span data-stu-id="9d24c-169">Implement service pending status</span></span>
+
+1. <span data-ttu-id="9d24c-170">Přidat `using` příkazu **MyNewService.cs**, nebo `Imports` příkazu **MyNewService.vb**, pro <xref:System.Runtime.InteropServices?displayProperty=nameWithType> obor názvů:</span><span class="sxs-lookup"><span data-stu-id="9d24c-170">Add a `using` statement to **MyNewService.cs**, or an `Imports` statement to **MyNewService.vb**, for the <xref:System.Runtime.InteropServices?displayProperty=nameWithType> namespace:</span></span>
 
     ```csharp
     using System.Runtime.InteropServices;
@@ -169,7 +220,7 @@ eventLog1.WriteEntry("In OnStop.");
     Imports System.Runtime.InteropServices
     ```
 
-2. <span data-ttu-id="7e49c-162">Přidejte následující kód k MyNewService.cs pro deklaraci `ServiceState` hodnoty a přidat strukturu pro stav, který budete používat ve volání funkce invoke:</span><span class="sxs-lookup"><span data-stu-id="7e49c-162">Add the following code to MyNewService.cs to declare the `ServiceState` values and to add a structure for the status, which you'll use in a platform invoke call:</span></span>
+2. <span data-ttu-id="9d24c-171">Přidejte následující kód, který **MyNewService.cs**, nebo **MyNewService.vb**, chcete-li deklarovat `ServiceState` hodnoty a přidat strukturu pro stav, který budete používat ve volání funkce invoke:</span><span class="sxs-lookup"><span data-stu-id="9d24c-171">Add the following code to **MyNewService.cs**, or **MyNewService.vb**, to declare the `ServiceState` values and to add a structure for the status, which you'll use in a platform invoke call:</span></span>
 
     ```csharp
     public enum ServiceState
@@ -219,7 +270,7 @@ eventLog1.WriteEntry("In OnStop.");
     End Structure
     ```
 
-3. <span data-ttu-id="7e49c-163">Teď v `MyNewService` třídy, deklarujte [SetServiceStatus funkce](/windows/desktop/api/winsvc/nf-winsvc-setservicestatus) pomocí [vyvolání platformy](../interop/consuming-unmanaged-dll-functions.md):</span><span class="sxs-lookup"><span data-stu-id="7e49c-163">Now, in the `MyNewService` class, declare the [SetServiceStatus function](/windows/desktop/api/winsvc/nf-winsvc-setservicestatus) by using [platform invoke](../interop/consuming-unmanaged-dll-functions.md):</span></span>
+3. <span data-ttu-id="9d24c-172">V `MyNewService` třídy, deklarujte [SetServiceStatus](/windows/desktop/api/winsvc/nf-winsvc-setservicestatus) funkce s použitím [vyvolání platformy](../interop/consuming-unmanaged-dll-functions.md):</span><span class="sxs-lookup"><span data-stu-id="9d24c-172">In the `MyNewService` class, declare the [SetServiceStatus](/windows/desktop/api/winsvc/nf-winsvc-setservicestatus) function by using [platform invoke](../interop/consuming-unmanaged-dll-functions.md):</span></span>
 
     ```csharp
     [DllImport("advapi32.dll", SetLastError = true)]
@@ -230,7 +281,7 @@ eventLog1.WriteEntry("In OnStop.");
     Declare Auto Function SetServiceStatus Lib "advapi32.dll" (ByVal handle As IntPtr, ByRef serviceStatus As ServiceStatus) As Boolean
     ```
 
-4. <span data-ttu-id="7e49c-164">K implementaci spuštění čeká na stav, přidejte následující kód do začátku <xref:System.ServiceProcess.ServiceBase.OnStart%2A> metody:</span><span class="sxs-lookup"><span data-stu-id="7e49c-164">To implement the Start Pending status, add the following code to the beginning of the <xref:System.ServiceProcess.ServiceBase.OnStart%2A> method:</span></span>
+4. <span data-ttu-id="9d24c-173">K implementaci SERVICE_START_PENDING stavu, přidejte následující kód do začátku <xref:System.ServiceProcess.ServiceBase.OnStart%2A> metody:</span><span class="sxs-lookup"><span data-stu-id="9d24c-173">To implement the SERVICE_START_PENDING status, add the following code to the beginning of the <xref:System.ServiceProcess.ServiceBase.OnStart%2A> method:</span></span>
 
     ```csharp
     // Update the service state to Start Pending.
@@ -248,7 +299,7 @@ eventLog1.WriteEntry("In OnStop.");
     SetServiceStatus(Me.ServiceHandle, serviceStatus)
     ```
 
-5. <span data-ttu-id="7e49c-165">Přidejte kód pro spuštění na konci nastavit stav <xref:System.ServiceProcess.ServiceBase.OnStart%2A> metody.</span><span class="sxs-lookup"><span data-stu-id="7e49c-165">Add code to set the status to Running at the end of the <xref:System.ServiceProcess.ServiceBase.OnStart%2A> method.</span></span>
+5. <span data-ttu-id="9d24c-174">Přidejte kód do konce `OnStart` metody nastavte stav SERVICE_RUNNING:</span><span class="sxs-lookup"><span data-stu-id="9d24c-174">Add code to the end of the `OnStart` method to set the status to SERVICE_RUNNING:</span></span>
 
     ```csharp
     // Update the service state to Running.
@@ -262,52 +313,88 @@ eventLog1.WriteEntry("In OnStop.");
     SetServiceStatus(Me.ServiceHandle, serviceStatus)
     ```
 
-6. <span data-ttu-id="7e49c-166">(Volitelné) Tento postup zopakujte pro <xref:System.ServiceProcess.ServiceBase.OnStop%2A> metody.</span><span class="sxs-lookup"><span data-stu-id="7e49c-166">(Optional) Repeat this procedure for the <xref:System.ServiceProcess.ServiceBase.OnStop%2A> method.</span></span>
+6. <span data-ttu-id="9d24c-175">(Volitelné) Pokud <xref:System.ServiceProcess.ServiceBase.OnStop%2A> je metoda dlouhotrvající, opakujte tento postup `OnStop` metoda.</span><span class="sxs-lookup"><span data-stu-id="9d24c-175">(Optional) If <xref:System.ServiceProcess.ServiceBase.OnStop%2A> is a long-running method, repeat this procedure in the `OnStop` method.</span></span> <span data-ttu-id="9d24c-176">Implementace SERVICE_STOP_PENDING stav a stav SERVICE_STOPPED před vrácení `OnStop` metoda ukončení.</span><span class="sxs-lookup"><span data-stu-id="9d24c-176">Implement the SERVICE_STOP_PENDING status and return the SERVICE_STOPPED status before the `OnStop` method exits.</span></span>
+
+   <span data-ttu-id="9d24c-177">Příklad:</span><span class="sxs-lookup"><span data-stu-id="9d24c-177">For example:</span></span>
+
+    ```csharp
+    // Update the service state to Stop Pending.
+    ServiceStatus serviceStatus = new ServiceStatus();
+    serviceStatus.dwCurrentState = ServiceState.SERVICE_STOP_PENDING;
+    serviceStatus.dwWaitHint = 100000;
+    SetServiceStatus(this.ServiceHandle, ref serviceStatus);
+
+    // Update the service state to Stopped.
+    serviceStatus.dwCurrentState = ServiceState.SERVICE_STOPPED;
+    SetServiceStatus(this.ServiceHandle, ref serviceStatus);
+    ```
+
+    ```vb
+    ' Update the service state to Stop Pending.
+    Dim serviceStatus As ServiceStatus = New ServiceStatus()
+    serviceStatus.dwCurrentState = ServiceState.SERVICE_STOP_PENDING
+    serviceStatus.dwWaitHint = 100000
+    SetServiceStatus(Me.ServiceHandle, serviceStatus)
+
+    ' Update the service state to Stopped.
+    serviceStatus.dwCurrentState = ServiceState.SERVICE_STOPPED
+    SetServiceStatus(Me.ServiceHandle, serviceStatus)    
+    ```
 
 > [!NOTE]
-> <span data-ttu-id="7e49c-167">[Správce řízení služeb](/windows/desktop/Services/service-control-manager) používá `dwWaitHint` a `dwCheckpoint` členy [SERVICE_STATUS struktura](/windows/desktop/api/winsvc/ns-winsvc-_service_status) k určení doby čekání na službu Windows ke spuštění nebo vypnutí.</span><span class="sxs-lookup"><span data-stu-id="7e49c-167">The [Service Control Manager](/windows/desktop/Services/service-control-manager) uses the `dwWaitHint` and `dwCheckpoint` members of the [SERVICE_STATUS structure](/windows/desktop/api/winsvc/ns-winsvc-_service_status) to determine how much time to wait for a Windows service to start or shut down.</span></span> <span data-ttu-id="7e49c-168">Pokud vaše <xref:System.ServiceProcess.ServiceBase.OnStart%2A> a <xref:System.ServiceProcess.ServiceBase.OnStop%2A> metody se spustí, long, vaše služba může požádat o víc času voláním [SetServiceStatus](/windows/desktop/api/winsvc/nf-winsvc-setservicestatus) znovu se zvýšena `dwCheckPoint` hodnotu.</span><span class="sxs-lookup"><span data-stu-id="7e49c-168">If your <xref:System.ServiceProcess.ServiceBase.OnStart%2A> and <xref:System.ServiceProcess.ServiceBase.OnStop%2A> methods run long, your service can request more time by calling [SetServiceStatus](/windows/desktop/api/winsvc/nf-winsvc-setservicestatus) again with an incremented `dwCheckPoint` value.</span></span>
+> <span data-ttu-id="9d24c-178">Správce řízení služeb používá `dwWaitHint` a `dwCheckpoint` členy [SERVICE_STATUS struktura](/windows/desktop/api/winsvc/ns-winsvc-_service_status) k určení doby čekání na službu Windows ke spuštění nebo vypnutí.</span><span class="sxs-lookup"><span data-stu-id="9d24c-178">The Service Control Manager uses the `dwWaitHint` and `dwCheckpoint` members of the [SERVICE_STATUS structure](/windows/desktop/api/winsvc/ns-winsvc-_service_status) to determine how much time to wait for a Windows service to start or shut down.</span></span> <span data-ttu-id="9d24c-179">Pokud vaše `OnStart` a `OnStop` metody se spustí, long, vaše služba může požádat o víc času voláním `SetServiceStatus` znovu se zvýšena `dwCheckPoint` hodnotu.</span><span class="sxs-lookup"><span data-stu-id="9d24c-179">If your `OnStart` and `OnStop` methods run long, your service can request more time by calling `SetServiceStatus` again with an incremented `dwCheckPoint` value.</span></span>
 
-## <a name="add-installers-to-the-service"></a><span data-ttu-id="7e49c-169">Přidání instalačních programů do služby</span><span class="sxs-lookup"><span data-stu-id="7e49c-169">Add installers to the service</span></span>
+## <a name="add-installers-to-the-service"></a><span data-ttu-id="9d24c-180">Přidání instalačních programů do služby</span><span class="sxs-lookup"><span data-stu-id="9d24c-180">Add installers to the service</span></span>
 
-<span data-ttu-id="7e49c-170">Před spuštěním služby Windows, musíte nainstalovat, které je zaregistruje ho s správce řízení služeb.</span><span class="sxs-lookup"><span data-stu-id="7e49c-170">Before you can run a Windows service, you need to install it, which registers it with the Service Control Manager.</span></span> <span data-ttu-id="7e49c-171">Přidání instalačních programů do projektu, který zpracovat podrobnosti registrace.</span><span class="sxs-lookup"><span data-stu-id="7e49c-171">You can add installers to your project that handle the registration details.</span></span>
+<span data-ttu-id="9d24c-181">Před spuštěním služby Windows musíte nainstalovat, které je zaregistruje ho s správce řízení služeb.</span><span class="sxs-lookup"><span data-stu-id="9d24c-181">Before you run a Windows service, you need to install it, which registers it with the Service Control Manager.</span></span> <span data-ttu-id="9d24c-182">Přidání instalačních programů do projektu pro zpracování podrobnosti registrace.</span><span class="sxs-lookup"><span data-stu-id="9d24c-182">Add installers to your project to handle the registration details.</span></span>
 
-1. <span data-ttu-id="7e49c-172">V **Průzkumníka řešení**, otevřete kontextovou nabídku pro **MyNewService.cs** nebo **MyNewService.vb**a klikněte na tlačítko **Návrhář zobrazení**.</span><span class="sxs-lookup"><span data-stu-id="7e49c-172">In **Solution Explorer**, open the context menu for **MyNewService.cs** or **MyNewService.vb**, and then choose **View Designer**.</span></span>
+1. <span data-ttu-id="9d24c-183">V **Průzkumníka řešení**, v místní nabídce pro **MyNewService.cs**, nebo **MyNewService.vb**, zvolte **Návrhář zobrazení**.</span><span class="sxs-lookup"><span data-stu-id="9d24c-183">In **Solution Explorer**, from the shortcut menu for **MyNewService.cs**, or **MyNewService.vb**, choose **View Designer**.</span></span>
 
-2. <span data-ttu-id="7e49c-173">Kliknutím na pozadí návrháře vyberte samotnou službu namísto některé z jejích komponent.</span><span class="sxs-lookup"><span data-stu-id="7e49c-173">Click the background of the designer to select the service itself, instead of any of its contents.</span></span>
+2. <span data-ttu-id="9d24c-184">V **návrhu** zobrazení, vyberte oblast, pozadí a pak zvolte **přidat instalační program** z místní nabídky.</span><span class="sxs-lookup"><span data-stu-id="9d24c-184">In the **Design** view, select the background area, then choose **Add Installer** from the shortcut menu.</span></span>
 
-3. <span data-ttu-id="7e49c-174">Otevřete místní nabídku pro okna návrháře (Pokud používáte polohovací zařízení, klikněte pravým tlačítkem uvnitř okna) a klikněte na tlačítko **přidat instalační program**.</span><span class="sxs-lookup"><span data-stu-id="7e49c-174">Open the context menu for the designer window (if you’re using a pointing device, right-click inside the window), and then choose **Add Installer**.</span></span>
+     <span data-ttu-id="9d24c-185">Ve výchozím nastavení, sada Visual Studio přidá komponentní třídu s názvem `ProjectInstaller`, který obsahuje dva instalační programy, do projektu.</span><span class="sxs-lookup"><span data-stu-id="9d24c-185">By default, Visual Studio adds a component class named `ProjectInstaller`, which contains two installers, to your project.</span></span> <span data-ttu-id="9d24c-186">Tyto instalační programy jsou pro vaši službu a pro služby přidruženého procesu.</span><span class="sxs-lookup"><span data-stu-id="9d24c-186">These installers are for your service and for the service's associated process.</span></span>
 
-   <span data-ttu-id="7e49c-175">Ve výchozím nastavení bude do projektu přidána komponentní třída, která obsahuje dva instalační programy.</span><span class="sxs-lookup"><span data-stu-id="7e49c-175">By default, a component class that contains two installers is added to your project.</span></span> <span data-ttu-id="7e49c-176">Komponenta má název **ProjectInstaller**a obsahuje instalační program pro vaši službu a instalační program služby přidruženého k tomuto procesu.</span><span class="sxs-lookup"><span data-stu-id="7e49c-176">The component is named **ProjectInstaller**, and the installers it contains are the installer for your service and the installer for the service's associated process.</span></span>
+4. <span data-ttu-id="9d24c-187">V **návrhu** zobrazit **ProjectInstaller**vyberte **serviceInstaller1** vizuálu C# projektu, nebo **ServiceInstaller1**projektu jazyka Visual Basic, zvolte **vlastnosti** z místní nabídky.</span><span class="sxs-lookup"><span data-stu-id="9d24c-187">In the **Design** view for **ProjectInstaller**, select **serviceInstaller1** for a Visual C# project, or **ServiceInstaller1** for a Visual Basic project, then choose **Properties** from the shortcut menu.</span></span>
 
-4. <span data-ttu-id="7e49c-177">V **návrhu** zobrazit **ProjectInstaller**, zvolte **serviceInstaller1** pro projekt jazyka Visual C#, nebo **ServiceInstaller1** vizuálu Základní projekt.</span><span class="sxs-lookup"><span data-stu-id="7e49c-177">In **Design** view for **ProjectInstaller**, choose **serviceInstaller1** for a Visual C# project, or **ServiceInstaller1** for a Visual Basic project.</span></span>
+5. <span data-ttu-id="9d24c-188">V **vlastnosti** okna, ověřte <xref:System.ServiceProcess.ServiceInstaller.ServiceName%2A> je nastavena na **MyNewService**.</span><span class="sxs-lookup"><span data-stu-id="9d24c-188">In the **Properties** window, verify the <xref:System.ServiceProcess.ServiceInstaller.ServiceName%2A> property is set to **MyNewService**.</span></span>
 
-5. <span data-ttu-id="7e49c-178">V **vlastnosti** okno, ujistěte se, že <xref:System.ServiceProcess.ServiceInstaller.ServiceName%2A> je nastavena na **MyNewService**.</span><span class="sxs-lookup"><span data-stu-id="7e49c-178">In the **Properties** window, make sure the <xref:System.ServiceProcess.ServiceInstaller.ServiceName%2A> property is set to **MyNewService**.</span></span>
+6. <span data-ttu-id="9d24c-189">Přidejte text, který se <xref:System.ServiceProcess.ServiceInstaller.Description%2A> vlastnost, jako například *Ukázka služby*.</span><span class="sxs-lookup"><span data-stu-id="9d24c-189">Add text to the <xref:System.ServiceProcess.ServiceInstaller.Description%2A> property, such as *A sample service*.</span></span> 
 
-6. <span data-ttu-id="7e49c-179">Nastavte **popis** vlastnost nějaký text, například "Ukázková služba".</span><span class="sxs-lookup"><span data-stu-id="7e49c-179">Set the **Description** property to some text, such as "A sample service".</span></span> <span data-ttu-id="7e49c-180">Tento text se zobrazí v okně služby a pomáhá uživatelům identifikaci služby a pochopit, co se používá.</span><span class="sxs-lookup"><span data-stu-id="7e49c-180">This text appears in the Services window and helps the user identify the service and understand what it’s used for.</span></span>
+     <span data-ttu-id="9d24c-190">Tento text se zobrazí **popis** sloupec **služby** okno a popisuje službu pro uživatele.</span><span class="sxs-lookup"><span data-stu-id="9d24c-190">This text appears in the **Description** column of the **Services** window and describes the service to the user.</span></span>
 
-7. <span data-ttu-id="7e49c-181">Nastavte <xref:System.ServiceProcess.ServiceInstaller.DisplayName%2A> vlastnost text, který se má zobrazit v okně služby **název** sloupec.</span><span class="sxs-lookup"><span data-stu-id="7e49c-181">Set the <xref:System.ServiceProcess.ServiceInstaller.DisplayName%2A> property to the text that you want to appear in the Services window in the **Name** column.</span></span> <span data-ttu-id="7e49c-182">Můžete například zadat "MyNewService zobrazované jméno".</span><span class="sxs-lookup"><span data-stu-id="7e49c-182">For example, you can enter "MyNewService Display Name".</span></span> <span data-ttu-id="7e49c-183">Tento název se může lišit od <xref:System.ServiceProcess.ServiceInstaller.ServiceName%2A> vlastnost, která je název použitý v systému (třeba když použijete `net start` příkaz pro spuštění služby).</span><span class="sxs-lookup"><span data-stu-id="7e49c-183">This name can be different from the <xref:System.ServiceProcess.ServiceInstaller.ServiceName%2A> property, which is the name used by the system (for example, when you use the `net start` command to start your service).</span></span>
+    <span data-ttu-id="9d24c-191">![Popis služby v okně služby. ](media/windows-service-description.png "Popis služby")</span><span class="sxs-lookup"><span data-stu-id="9d24c-191">![Service description in the Services window.](media/windows-service-description.png "Service description")</span></span>
 
-8. <span data-ttu-id="7e49c-184">Nastavte <xref:System.ServiceProcess.ServiceInstaller.StartType%2A> vlastnost <xref:System.ServiceProcess.ServiceStartMode.Automatic>.</span><span class="sxs-lookup"><span data-stu-id="7e49c-184">Set the <xref:System.ServiceProcess.ServiceInstaller.StartType%2A> property to <xref:System.ServiceProcess.ServiceStartMode.Automatic>.</span></span>
+7. <span data-ttu-id="9d24c-192">Přidejte text, který má <xref:System.ServiceProcess.ServiceInstaller.DisplayName%2A> vlastnost.</span><span class="sxs-lookup"><span data-stu-id="9d24c-192">Add text to the <xref:System.ServiceProcess.ServiceInstaller.DisplayName%2A> property.</span></span> <span data-ttu-id="9d24c-193">Například *MyNewService zobrazovaný název*.</span><span class="sxs-lookup"><span data-stu-id="9d24c-193">For example, *MyNewService Display Name*.</span></span> 
 
-     <span data-ttu-id="7e49c-185">![Vlastnosti Instalační služby systému Windows služby](../../../docs/framework/windows-services/media/windowsservice-installerproperties.PNG "WindowsService_InstallerProperties")</span><span class="sxs-lookup"><span data-stu-id="7e49c-185">![Installer Properties for a Windows service](../../../docs/framework/windows-services/media/windowsservice-installerproperties.PNG "WindowsService_InstallerProperties")</span></span>
+     <span data-ttu-id="9d24c-194">Tento text se zobrazí **zobrazovaný název** sloupec **služby** okna.</span><span class="sxs-lookup"><span data-stu-id="9d24c-194">This text appears in the **Display Name** column of the **Services** window.</span></span> <span data-ttu-id="9d24c-195">Tento název se může lišit od <xref:System.ServiceProcess.ServiceInstaller.ServiceName%2A> vlastnost, která je název, použije systém (třeba název, který slouží pro `net start` příkaz pro spuštění služby).</span><span class="sxs-lookup"><span data-stu-id="9d24c-195">This name can be different from the <xref:System.ServiceProcess.ServiceInstaller.ServiceName%2A> property, which is the name the system uses (for example, the name you use for the `net start` command to start your service).</span></span>
 
-9. <span data-ttu-id="7e49c-186">V návrháři, zvolte **serviceProcessInstaller1** pro projekt jazyka Visual C#, nebo **ServiceProcessInstaller1** pro projekt jazyka Visual Basic.</span><span class="sxs-lookup"><span data-stu-id="7e49c-186">In the designer, choose **serviceProcessInstaller1** for a Visual C# project, or **ServiceProcessInstaller1** for a Visual Basic project.</span></span> <span data-ttu-id="7e49c-187">Nastavte <xref:System.ServiceProcess.ServiceProcessInstaller.Account%2A> vlastnost <xref:System.ServiceProcess.ServiceAccount.LocalSystem>.</span><span class="sxs-lookup"><span data-stu-id="7e49c-187">Set the <xref:System.ServiceProcess.ServiceProcessInstaller.Account%2A> property to <xref:System.ServiceProcess.ServiceAccount.LocalSystem>.</span></span> <span data-ttu-id="7e49c-188">To způsobí, že služba nainstalována a spuštěna s použitím místního systémového účtu.</span><span class="sxs-lookup"><span data-stu-id="7e49c-188">This causes the service to be installed and to run using the local system account.</span></span>
+8. <span data-ttu-id="9d24c-196">Nastavte <xref:System.ServiceProcess.ServiceInstaller.StartType%2A> vlastnost <xref:System.ServiceProcess.ServiceStartMode.Automatic> z rozevíracího seznamu.</span><span class="sxs-lookup"><span data-stu-id="9d24c-196">Set the <xref:System.ServiceProcess.ServiceInstaller.StartType%2A> property to <xref:System.ServiceProcess.ServiceStartMode.Automatic> from the drop-down list.</span></span>
+
+9. <span data-ttu-id="9d24c-197">Jakmile budete hotovi, **vlastnosti** windows by měl vypadat jako na následujícím obrázku:</span><span class="sxs-lookup"><span data-stu-id="9d24c-197">When you're finished, the **Properties** windows should look like the following figure:</span></span>
+
+     <span data-ttu-id="9d24c-198">![Vlastnosti Instalační služby systému Windows služby](media/windows-service-installer-properties.png "služby vlastnosti Instalační služby systému Windows")</span><span class="sxs-lookup"><span data-stu-id="9d24c-198">![Installer Properties for a Windows service](media/windows-service-installer-properties.png "Windows service installer properties")</span></span>
+
+9. <span data-ttu-id="9d24c-199">V **návrhu** zobrazit **ProjectInstaller**, zvolte **serviceProcessInstaller1** vizuálu C# projektu, nebo **ServiceProcessInstaller1**  projektu jazyka Visual Basic, zvolte **vlastnosti** z místní nabídky.</span><span class="sxs-lookup"><span data-stu-id="9d24c-199">In the **Design** view for **ProjectInstaller**, choose **serviceProcessInstaller1** for a Visual C# project, or **ServiceProcessInstaller1** for a Visual Basic project, then choose **Properties** from the shortcut menu.</span></span> <span data-ttu-id="9d24c-200">Nastavte <xref:System.ServiceProcess.ServiceProcessInstaller.Account%2A> vlastnost <xref:System.ServiceProcess.ServiceAccount.LocalSystem> z rozevíracího seznamu.</span><span class="sxs-lookup"><span data-stu-id="9d24c-200">Set the <xref:System.ServiceProcess.ServiceProcessInstaller.Account%2A> property to <xref:System.ServiceProcess.ServiceAccount.LocalSystem> from the drop-down list.</span></span> 
+
+     <span data-ttu-id="9d24c-201">Toto nastavení se nainstaluje službu a běží za použití místního systémového účtu.</span><span class="sxs-lookup"><span data-stu-id="9d24c-201">This setting installs the service and runs it by using the local system account.</span></span>
 
     > [!IMPORTANT]
-    > <span data-ttu-id="7e49c-189"><xref:System.ServiceProcess.ServiceAccount.LocalSystem> Účet má širší oprávnění, včetně možnosti zapisovat do protokolu událostí.</span><span class="sxs-lookup"><span data-stu-id="7e49c-189">The <xref:System.ServiceProcess.ServiceAccount.LocalSystem> account has broad permissions, including the ability to write to the event log.</span></span> <span data-ttu-id="7e49c-190">Používejte tento účet opatrně, protože může zvýšit riziko napadení škodlivým softwarem.</span><span class="sxs-lookup"><span data-stu-id="7e49c-190">Use this account with caution, because it might increase your risk of attacks from malicious software.</span></span> <span data-ttu-id="7e49c-191">Pro jiné úlohy zvažte použití <xref:System.ServiceProcess.ServiceAccount.LocalService> účet, který funguje jako neprivilegované uživatele v místním počítači a nabízí pověření anonymního a jakémukoli vzdálenému serveru.</span><span class="sxs-lookup"><span data-stu-id="7e49c-191">For other tasks, consider using the <xref:System.ServiceProcess.ServiceAccount.LocalService> account, which acts as a non-privileged user on the local computer and presents anonymous credentials to any remote server.</span></span> <span data-ttu-id="7e49c-192">V tomto příkladu se nezdaří, pokud se pokusíte použít <xref:System.ServiceProcess.ServiceAccount.LocalService> účtu, proto, že potřebuje oprávnění k zápisu do protokolu událostí.</span><span class="sxs-lookup"><span data-stu-id="7e49c-192">This example fails if you try to use the <xref:System.ServiceProcess.ServiceAccount.LocalService> account, because it needs permission to write to the event log.</span></span>
+    > <span data-ttu-id="9d24c-202"><xref:System.ServiceProcess.ServiceAccount.LocalSystem> Účet má širší oprávnění, včetně možnosti zapisovat do protokolu událostí.</span><span class="sxs-lookup"><span data-stu-id="9d24c-202">The <xref:System.ServiceProcess.ServiceAccount.LocalSystem> account has broad permissions, including the ability to write to the event log.</span></span> <span data-ttu-id="9d24c-203">Používejte tento účet opatrně, protože může zvýšit riziko napadení škodlivým softwarem.</span><span class="sxs-lookup"><span data-stu-id="9d24c-203">Use this account with caution, because it might increase your risk of attacks from malicious software.</span></span> <span data-ttu-id="9d24c-204">Pro jiné úlohy zvažte použití <xref:System.ServiceProcess.ServiceAccount.LocalService> účet, který funguje jako neprivilegované uživatele v místním počítači a nabízí pověření anonymního a jakémukoli vzdálenému serveru.</span><span class="sxs-lookup"><span data-stu-id="9d24c-204">For other tasks, consider using the <xref:System.ServiceProcess.ServiceAccount.LocalService> account, which acts as a non-privileged user on the local computer and presents anonymous credentials to any remote server.</span></span> <span data-ttu-id="9d24c-205">V tomto příkladu se nezdaří, pokud se pokusíte použít <xref:System.ServiceProcess.ServiceAccount.LocalService> účtu, proto, že potřebuje oprávnění k zápisu do protokolu událostí.</span><span class="sxs-lookup"><span data-stu-id="9d24c-205">This example fails if you try to use the <xref:System.ServiceProcess.ServiceAccount.LocalService> account, because it needs permission to write to the event log.</span></span>
 
-<span data-ttu-id="7e49c-193">Další informace o instalačních programů najdete v tématu [jak: Přidání instalačních programů do aplikace služby](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md).</span><span class="sxs-lookup"><span data-stu-id="7e49c-193">For more information about installers, see [How to: Add Installers to Your service Application](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md).</span></span>
+<span data-ttu-id="9d24c-206">Další informace o instalačních programů najdete v tématu [jak: Přidání instalačních programů do aplikace služby](how-to-add-installers-to-your-service-application.md).</span><span class="sxs-lookup"><span data-stu-id="9d24c-206">For more information about installers, see [How to: Add installers to your service application](how-to-add-installers-to-your-service-application.md).</span></span>
 
-## <a name="optional-set-startup-parameters"></a><span data-ttu-id="7e49c-194">(Volitelné) Nastavit parametry spuštění</span><span class="sxs-lookup"><span data-stu-id="7e49c-194">(Optional) Set startup parameters</span></span>
-
-<span data-ttu-id="7e49c-195">Služba Windows, stejně jako jakéhokoliv jiného spustitelného souboru, může přijmout argumenty příkazového řádku, nebo parametry spuštění.</span><span class="sxs-lookup"><span data-stu-id="7e49c-195">A Windows service, like any other executable, can accept command-line arguments, or startup parameters.</span></span> <span data-ttu-id="7e49c-196">Když přidáte kód do parametrů spuštění procesu, uživatelé mohou spustit služby s vlastní vlastní spouštěcí parametry pomocí okna služby v Ovládacích panelech Windows.</span><span class="sxs-lookup"><span data-stu-id="7e49c-196">When you add code to process startup parameters, users can start your service with their own custom startup parameters by using the Services window in the Windows Control Panel.</span></span> <span data-ttu-id="7e49c-197">Tyto spouštěcí parametry nejsou však zachované při příštím spuštění služby.</span><span class="sxs-lookup"><span data-stu-id="7e49c-197">However, these startup parameters are not persisted the next time the service starts.</span></span> <span data-ttu-id="7e49c-198">Pokud chcete nastavit spouštěcí parametry trvale, můžete nastavit je v registru, jak je znázorněno v tomto postupu.</span><span class="sxs-lookup"><span data-stu-id="7e49c-198">To set startup parameters permanently, you can set them in the registry, as shown in this procedure.</span></span>
+## <a name="optional-set-startup-parameters"></a><span data-ttu-id="9d24c-207">(Volitelné) Nastavit parametry spuštění</span><span class="sxs-lookup"><span data-stu-id="9d24c-207">(Optional) Set startup parameters</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="7e49c-199">Předtím, než se rozhodnete přidat parametry spuštění, zvažte, jestli, která je nejlepší způsob, jak předávání informací do vaší služby.</span><span class="sxs-lookup"><span data-stu-id="7e49c-199">Before you decide to add startup parameters, consider whether that is the best way to pass information to your service.</span></span> <span data-ttu-id="7e49c-200">I když parametry spuštění jsou snadno použitelné a pro analýzy a uživatelé snadno je můžete přepsat, mohou být obtížnější uživatelům objevit a používat bez dokumentaci.</span><span class="sxs-lookup"><span data-stu-id="7e49c-200">Although startup parameters are easy to use and to parse, and users can easily override them, they might be harder for users to discover and use without documentation.</span></span> <span data-ttu-id="7e49c-201">Obecně platí Pokud vaše služba vyžaduje více než několik parametrů spuštění, měli byste zvážit použití registru nebo konfiguračního souboru místo toho.</span><span class="sxs-lookup"><span data-stu-id="7e49c-201">Generally, if your service requires more than just a few startup parameters, you should consider using the registry or a configuration file instead.</span></span> <span data-ttu-id="7e49c-202">Každá služba Windows má záznam v registru pod **HKLM\System\CurrentControlSet\services**.</span><span class="sxs-lookup"><span data-stu-id="7e49c-202">Every Windows service has an entry in the registry under **HKLM\System\CurrentControlSet\services**.</span></span> <span data-ttu-id="7e49c-203">V klíči služby, můžete použít **parametry** podklíč pro ukládání informací, které můžou přistupovat k vaší služby.</span><span class="sxs-lookup"><span data-stu-id="7e49c-203">Under the service's key, you can use the **Parameters** subkey to store information that your service can access.</span></span> <span data-ttu-id="7e49c-204">Konfigurační soubory aplikace můžete použít pro službu Windows stejným způsobem jako u jiných typů aplikací.</span><span class="sxs-lookup"><span data-stu-id="7e49c-204">You can use application configuration files for a Windows service the same way you do for other types of programs.</span></span> <span data-ttu-id="7e49c-205">Příklad kódu naleznete v tématu <xref:System.Configuration.ConfigurationManager.AppSettings%2A>.</span><span class="sxs-lookup"><span data-stu-id="7e49c-205">For example code, see <xref:System.Configuration.ConfigurationManager.AppSettings%2A>.</span></span>
+> <span data-ttu-id="9d24c-208">Předtím, než se rozhodnete přidat parametry spuštění, zvažte, zda je nejlepší způsob, jak předávání informací do vaší služby.</span><span class="sxs-lookup"><span data-stu-id="9d24c-208">Before you decide to add startup parameters, consider whether it's the best way to pass information to your service.</span></span> <span data-ttu-id="9d24c-209">I když jsou snadno použitelné a analýzy a uživatel snadno je můžete přepsat, mohou být obtížnější uživatelům objevit a používat bez dokumentaci.</span><span class="sxs-lookup"><span data-stu-id="9d24c-209">Although they're easy to use and parse, and a user can easily override them, they might be harder for a user to discover and use without documentation.</span></span> <span data-ttu-id="9d24c-210">Obecně platí Pokud vaše služba vyžaduje více než několik parametrů spuštění, měli byste použít registru nebo konfiguračního souboru místo toho.</span><span class="sxs-lookup"><span data-stu-id="9d24c-210">Generally, if your service requires more than just a few startup parameters, you should use the registry or a configuration file instead.</span></span> 
 
-<span data-ttu-id="7e49c-206">Chcete-li přidat parametry spuštění:</span><span class="sxs-lookup"><span data-stu-id="7e49c-206">To add startup parameters:</span></span>
+<span data-ttu-id="9d24c-211">Služba Windows může přijmout argumenty příkazového řádku, nebo parametry spuštění.</span><span class="sxs-lookup"><span data-stu-id="9d24c-211">A Windows service can accept command-line arguments, or startup parameters.</span></span> <span data-ttu-id="9d24c-212">Když přidáte kód do parametrů spuštění procesu, uživatele můžete začít vaši službu s vlastní vlastní spouštěcí parametry v okně Vlastnosti služby.</span><span class="sxs-lookup"><span data-stu-id="9d24c-212">When you add code to process startup parameters, a user can start your service with their own custom startup parameters in the service properties window.</span></span> <span data-ttu-id="9d24c-213">Tyto spouštěcí parametry nejsou však zachované při příštím spuštění služby.</span><span class="sxs-lookup"><span data-stu-id="9d24c-213">However, these startup parameters aren't persisted the next time the service starts.</span></span> <span data-ttu-id="9d24c-214">Pokud chcete nastavit spouštěcí parametry trvale, jejich nastavení v registru.</span><span class="sxs-lookup"><span data-stu-id="9d24c-214">To set startup parameters permanently, set them in the registry.</span></span>
 
-1. <span data-ttu-id="7e49c-207">V `Main` metodu v souboru Program.cs nebo MyNewService.Designer.vb, přidejte vstupní parametr předat konstruktoru služby:</span><span class="sxs-lookup"><span data-stu-id="7e49c-207">In the `Main` method in Program.cs or in MyNewService.Designer.vb, add an input parameter to pass to the service constructor:</span></span>
+<span data-ttu-id="9d24c-215">Každá služba Windows má záznam v registru pod **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services** podklíči.</span><span class="sxs-lookup"><span data-stu-id="9d24c-215">Each Windows service has a registry entry under the **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services** subkey.</span></span> <span data-ttu-id="9d24c-216">V podklíči každou službu, použijte **parametry** podklíč pro ukládání informací, které můžou přistupovat k vaší služby.</span><span class="sxs-lookup"><span data-stu-id="9d24c-216">Under each service's subkey, use the **Parameters** subkey to store information that your service can access.</span></span> <span data-ttu-id="9d24c-217">Konfigurační soubory aplikace můžete použít pro službu Windows stejným způsobem jako u jiných typů aplikací.</span><span class="sxs-lookup"><span data-stu-id="9d24c-217">You can use application configuration files for a Windows service the same way you do for other types of programs.</span></span> <span data-ttu-id="9d24c-218">Ukázkový kód, naleznete v tématu <xref:System.Configuration.ConfigurationManager.AppSettings?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="9d24c-218">For sample code, see <xref:System.Configuration.ConfigurationManager.AppSettings?displayProperty=nameWithType>.</span></span>
+
+### <a name="to-add-startup-parameters"></a><span data-ttu-id="9d24c-219">Chcete-li přidat parametry spuštění</span><span class="sxs-lookup"><span data-stu-id="9d24c-219">To add startup parameters</span></span>
+
+1. <span data-ttu-id="9d24c-220">Vyberte **Program.cs**, nebo **MyNewService.Designer.vb**, klikněte na tlačítko **zobrazit kód** z místní nabídky.</span><span class="sxs-lookup"><span data-stu-id="9d24c-220">Select **Program.cs**, or **MyNewService.Designer.vb**, then choose **View Code** from the shortcut menu.</span></span> <span data-ttu-id="9d24c-221">V `Main` metodu, změňte kód pro přidání vstupního parametru a předejte jej do konstruktoru služby:</span><span class="sxs-lookup"><span data-stu-id="9d24c-221">In the `Main` method, change the code to add an input parameter and pass it to the service constructor:</span></span>
 
    ```csharp
    static void Main(string[] args)
@@ -323,44 +410,48 @@ eventLog1.WriteEntry("In OnStop.");
 
    ```vb
    Shared Sub Main(ByVal cmdArgs() As String)
-       Dim ServicesToRun() As System.ServiceProcess.ServiceBase = New System.ServiceProcess.ServiceBase() {New MyNewServiceVB(cmdArgs)}
+       Dim ServicesToRun() As System.ServiceProcess.ServiceBase = New System.ServiceProcess.ServiceBase() {New MyNewService(cmdArgs)}
        System.ServiceProcess.ServiceBase.Run(ServicesToRun)
    End Sub
    ```
 
-2. <span data-ttu-id="7e49c-208">Změnit `MyNewService` konstruktor následujícím způsobem:</span><span class="sxs-lookup"><span data-stu-id="7e49c-208">Change the `MyNewService` constructor as follows:</span></span>
+2. <span data-ttu-id="9d24c-222">V **MyNewService.cs**, nebo **MyNewService.vb**, změnit `MyNewService` konstruktor zpracovat vstupní parametr následujícím způsobem:</span><span class="sxs-lookup"><span data-stu-id="9d24c-222">In **MyNewService.cs**, or **MyNewService.vb**, change the `MyNewService` constructor to process the input parameter as follows:</span></span>
 
    ```csharp
+   using System.Diagnostics;
+
    public MyNewService(string[] args)
    {
        InitializeComponent();
 
-        string eventSourceName = "MySource";
-        string logName = "MyNewLog";
+       string eventSourceName = "MySource";
+       string logName = "MyNewLog";
 
-        if (args.Length > 0)
-        {
-            eventSourceName = args[0];
-        }
+       if (args.Length > 0)
+       {
+          eventSourceName = args[0];
+       }
 
-        if (args.Length > 1)
-        {
-            logName = args[1];
-        }
+       if (args.Length > 1)
+       {
+           logName = args[1];
+       }
 
-        eventLog1 = new System.Diagnostics.EventLog();
+       eventLog1 = new EventLog();
 
-        if (!System.Diagnostics.EventLog.SourceExists(eventSourceName))
-        {
-            System.Diagnostics.EventLog.CreateEventSource(eventSourceName, logName);
-        }
+       if (!EventLog.SourceExists(eventSourceName))
+       {
+           EventLog.CreateEventSource(eventSourceName, logName);
+       }
 
-        eventLog1.Source = eventSourceName;
-        eventLog1.Log = logName;
+       eventLog1.Source = eventSourceName;
+       eventLog1.Log = logName;
    }
    ```
 
    ```vb
+   Imports System.Diagnostics
+
    Public Sub New(ByVal cmdArgs() As String)
        InitializeComponent()
        Dim eventSourceName As String = "MySource"
@@ -371,18 +462,18 @@ eventLog1.WriteEntry("In OnStop.");
        If (cmdArgs.Count() > 1) Then
            logName = cmdArgs(1)
        End If
-       eventLog1 = New System.Diagnostics.EventLog()
-       If (Not System.Diagnostics.EventLog.SourceExists(eventSourceName)) Then
-           System.Diagnostics.EventLog.CreateEventSource(eventSourceName, logName)
+       eventLog1 = New EventLog()
+       If (Not EventLog.SourceExists(eventSourceName)) Then
+           EventLog.CreateEventSource(eventSourceName, logName)
        End If
        eventLog1.Source = eventSourceName
        eventLog1.Log = logName
    End Sub
    ```
 
-   <span data-ttu-id="7e49c-209">Tento kód nastaví název zdroje a protokol událostí podle Zadaný spouštěcí parametry, nebo použije výchozí hodnoty, pokud nejsou dodány žádné argumenty.</span><span class="sxs-lookup"><span data-stu-id="7e49c-209">This code sets the event source and log name according to the supplied startup parameters, or uses default values if no arguments are supplied.</span></span>
+   <span data-ttu-id="9d24c-223">Tento kód nastaví název zdroje a protokol událostí podle spouštěcí parametry, které uživatel zadává.</span><span class="sxs-lookup"><span data-stu-id="9d24c-223">This code sets the event source and log name according to the startup parameters that the user supplies.</span></span> <span data-ttu-id="9d24c-224">Pokud nejsou dodány žádné argumenty, použije výchozí hodnoty.</span><span class="sxs-lookup"><span data-stu-id="9d24c-224">If no arguments are supplied, it uses default values.</span></span>
 
-3. <span data-ttu-id="7e49c-210">Chcete-li zadat argumenty příkazového řádku, přidejte následující kód, který `ProjectInstaller` třídy v ProjectInstaller.cs nebo ProjectInstaller.vb:</span><span class="sxs-lookup"><span data-stu-id="7e49c-210">To specify the command-line arguments, add the following code to the `ProjectInstaller` class in ProjectInstaller.cs or ProjectInstaller.vb:</span></span>
+3. <span data-ttu-id="9d24c-225">Chcete-li zadat argumenty příkazového řádku, přidejte následující kód, který `ProjectInstaller` třídy v **ProjectInstaller.cs**, nebo **ProjectInstaller.vb**:</span><span class="sxs-lookup"><span data-stu-id="9d24c-225">To specify the command-line arguments, add the following code to the `ProjectInstaller` class in **ProjectInstaller.cs**, or **ProjectInstaller.vb**:</span></span>
 
    ```csharp
    protected override void OnBeforeInstall(IDictionary savedState)
@@ -401,90 +492,100 @@ eventLog1.WriteEntry("In OnStop.");
    End Sub
    ```
 
-   <span data-ttu-id="7e49c-211">Tento kód změní **ImagePath** klíč registru, který obvykle obsahuje úplnou cestu ke spustitelnému souboru pro službu Windows tak, že přidáte výchozí hodnoty parametrů.</span><span class="sxs-lookup"><span data-stu-id="7e49c-211">This code modifies the **ImagePath** registry key, which typically contains the full path to the executable for the Windows service, by adding the default parameter values.</span></span> <span data-ttu-id="7e49c-212">Uvozovky kolem cestu (a po každé jednotlivé parametr) jsou požadovány pro službu spustit správně.</span><span class="sxs-lookup"><span data-stu-id="7e49c-212">The quotation marks around the path (and around each individual parameter) are required for the service to start up correctly.</span></span> <span data-ttu-id="7e49c-213">Chcete-li změnit spouštěcí parametry pro tuto službu Windows, uživatelé mohou změnit parametrech daných **ImagePath** klíč registru, i když lepší je vytvoření a změna programu zpřístupnění funkcí pro uživatele v popisný způsobem (třeba správu nebo konfigurace nástroje).</span><span class="sxs-lookup"><span data-stu-id="7e49c-213">To change the startup parameters for this Windows service, users can change the parameters given in the **ImagePath** registry key, although the better way is to change it programmatically and expose the functionality to users in a friendly way (for example, in a management or configuration utility).</span></span>
+   <span data-ttu-id="9d24c-226">Tato hodnota se obvykle obsahuje úplnou cestu ke spustitelnému souboru pro službu Windows.</span><span class="sxs-lookup"><span data-stu-id="9d24c-226">Typically, this value contains the full path to the executable for the Windows service.</span></span> <span data-ttu-id="9d24c-227">Služba správně je nutné zadat znaky uvozovek pro cestu a jednotlivé jednotlivé parametry.</span><span class="sxs-lookup"><span data-stu-id="9d24c-227">For the service to start up correctly, the user must supply quotation marks for the path and each individual parameter.</span></span> <span data-ttu-id="9d24c-228">Uživatel může změnit na parametry **ImagePath** záznam v registru můžete změnit parametry spuštění pro službu Windows.</span><span class="sxs-lookup"><span data-stu-id="9d24c-228">A user can change the parameters in the **ImagePath** registry entry to change the startup parameters for the Windows service.</span></span> <span data-ttu-id="9d24c-229">Je však lepší způsob, a změňte hodnotu prostřednictvím kódu programu zpřístupnění funkce a uživatelsky přívětivé, například pomocí nástroje pro správu nebo konfigurace.</span><span class="sxs-lookup"><span data-stu-id="9d24c-229">However, a better way is to change the value programmatically and expose the functionality in a user-friendly way, such as by using a management or configuration utility.</span></span>
 
-## <a name="build-the-service"></a><span data-ttu-id="7e49c-214">Vytvoření služby</span><span class="sxs-lookup"><span data-stu-id="7e49c-214">Build the service</span></span>
 
-1. <span data-ttu-id="7e49c-215">V **Průzkumníka řešení**, otevřete kontextovou nabídku pro váš projekt a klikněte na tlačítko **vlastnosti**.</span><span class="sxs-lookup"><span data-stu-id="7e49c-215">In **Solution Explorer**, open the context menu for your project, and then choose **Properties**.</span></span>
+## <a name="build-the-service"></a><span data-ttu-id="9d24c-230">Vytvoření služby</span><span class="sxs-lookup"><span data-stu-id="9d24c-230">Build the service</span></span>
 
-   <span data-ttu-id="7e49c-216">Stránky vlastností pro váš projekt se zobrazí.</span><span class="sxs-lookup"><span data-stu-id="7e49c-216">The property pages for your project appear.</span></span>
+1. <span data-ttu-id="9d24c-231">V **Průzkumníka řešení**, zvolte **vlastnosti** z místní nabídky pro **MyNewService** projektu.</span><span class="sxs-lookup"><span data-stu-id="9d24c-231">In **Solution Explorer**, choose **Properties** from the shortcut menu for the **MyNewService** project.</span></span>
 
-2. <span data-ttu-id="7e49c-217">Na **aplikace** kartě **spouštěcí objekt** klikněte na položku **MyNewService.Program**.</span><span class="sxs-lookup"><span data-stu-id="7e49c-217">On the **Application** tab, in the **Startup object** list, choose **MyNewService.Program**.</span></span>
+   <span data-ttu-id="9d24c-232">Stránky vlastností pro váš projekt se zobrazí.</span><span class="sxs-lookup"><span data-stu-id="9d24c-232">The property pages for your project appear.</span></span>
 
-3. <span data-ttu-id="7e49c-218">V **Průzkumníka řešení**, otevřete kontextovou nabídku pro váš projekt a klikněte na tlačítko **sestavení** k sestavení projektu (nebo stiskněte klávesu **Ctrl**+**Shift**  + **B**).</span><span class="sxs-lookup"><span data-stu-id="7e49c-218">In **Solution Explorer**, open the context menu for your project, and then choose **Build** to build the project (or press **Ctrl**+**Shift**+**B**).</span></span>
+2. <span data-ttu-id="9d24c-233">Na **aplikace** kartě **spouštěcí objekt** klikněte na položku **MyNewService.Program**, nebo **Sub Main** pro projekty jazyka Visual Basic.</span><span class="sxs-lookup"><span data-stu-id="9d24c-233">On the **Application** tab, in the **Startup object** list, choose **MyNewService.Program**, or **Sub Main** for Visual Basic projects.</span></span>
 
-## <a name="install-the-service"></a><span data-ttu-id="7e49c-219">Instalace služby</span><span class="sxs-lookup"><span data-stu-id="7e49c-219">Install the service</span></span>
+3. <span data-ttu-id="9d24c-234">Sestavte projekt, v **Průzkumníka řešení**, zvolte **sestavení** z místní nabídky projektu (nebo stiskněte klávesu **Ctrl**+**Shift** + **B**).</span><span class="sxs-lookup"><span data-stu-id="9d24c-234">To build the project, in **Solution Explorer**, choose **Build** from the shortcut menu for your project (or press **Ctrl**+**Shift**+**B**).</span></span>
 
-<span data-ttu-id="7e49c-220">Teď, když jste vytvořili službu Windows, můžete ho nainstalovat.</span><span class="sxs-lookup"><span data-stu-id="7e49c-220">Now that you've built the Windows service, you can install it.</span></span> <span data-ttu-id="7e49c-221">Pro instalaci služby Windows, musíte mít pověření správce na počítači, na kterém instalujete ho.</span><span class="sxs-lookup"><span data-stu-id="7e49c-221">To install a Windows service, you must have administrator credentials on the computer on which you're installing it.</span></span>
+## <a name="install-the-service"></a><span data-ttu-id="9d24c-235">Instalace služby</span><span class="sxs-lookup"><span data-stu-id="9d24c-235">Install the service</span></span>
 
-1. <span data-ttu-id="7e49c-222">Otevřít **Developer Command Prompt pro sadu Visual Studio** s přihlašovacími údaji správce.</span><span class="sxs-lookup"><span data-stu-id="7e49c-222">Open **Developer Command Prompt for Visual Studio** with administrative credentials.</span></span> <span data-ttu-id="7e49c-223">Pokud používáte myš, klikněte pravým tlačítkem na **Developer Command Prompt for VS 2017** nabídky Start v Windows a klikněte na tlačítko **Další** > **spustit jako správce** .</span><span class="sxs-lookup"><span data-stu-id="7e49c-223">If you’re using a mouse, right-click on **Developer Command Prompt for VS 2017** in the Windows Start menu, and then choose **More** > **Run as Administrator**.</span></span>
+<span data-ttu-id="9d24c-236">Teď, když jste vytvořili službu Windows, můžete ho nainstalovat.</span><span class="sxs-lookup"><span data-stu-id="9d24c-236">Now that you've built the Windows service, you can install it.</span></span> <span data-ttu-id="9d24c-237">Pro instalaci služby Windows, musíte mít pověření správce na počítači, kde je nainstalován.</span><span class="sxs-lookup"><span data-stu-id="9d24c-237">To install a Windows service, you must have administrator credentials on the computer where it's installed.</span></span>
 
-2. <span data-ttu-id="7e49c-224">V **Developer Command Prompt** okno, přejděte do složky, který obsahuje výstup projektu (ve výchozím nastavení, je *\bin\Debug* podadresáře projektu).</span><span class="sxs-lookup"><span data-stu-id="7e49c-224">In the **Developer Command Prompt** window, navigate to the folder that contains your project's output (by default, it's the *\bin\Debug* subdirectory of your project).</span></span>
+1. <span data-ttu-id="9d24c-238">Otevřít [Developer Command Prompt pro sadu Visual Studio](https://docs.microsoft.com/dotnet/framework/tools/developer-command-prompt-for-vs) s přihlašovacími údaji správce.</span><span class="sxs-lookup"><span data-stu-id="9d24c-238">Open [Developer Command Prompt for Visual Studio](https://docs.microsoft.com/dotnet/framework/tools/developer-command-prompt-for-vs) with administrative credentials.</span></span> <span data-ttu-id="9d24c-239">Z Windows **Start** nabídce vyberte možnost **Developer Command Prompt for VS 2017** ve složce aplikace Visual Studio vyberte **Další** > **spustit jako Správce** z místní nabídky.</span><span class="sxs-lookup"><span data-stu-id="9d24c-239">From the Windows **Start** menu, select **Developer Command Prompt for VS 2017** in the Visual Studio folder, then select **More** > **Run as Administrator** from the shortcut menu.</span></span>
 
-3. <span data-ttu-id="7e49c-225">Zadejte následující příkaz:</span><span class="sxs-lookup"><span data-stu-id="7e49c-225">Enter the following command:</span></span>
+2. <span data-ttu-id="9d24c-240">V **Developer Command Prompt pro sadu Visual Studio** okno, přejděte do složky, který obsahuje výstup projektu (ve výchozím nastavení, *\bin\Debug* podadresáře projektu).</span><span class="sxs-lookup"><span data-stu-id="9d24c-240">In the **Developer Command Prompt for Visual Studio** window, navigate to the folder that contains your project's output (by default, the *\bin\Debug* subdirectory of your project).</span></span>
+
+3. <span data-ttu-id="9d24c-241">Zadejte následující příkaz:</span><span class="sxs-lookup"><span data-stu-id="9d24c-241">Enter the following command:</span></span>
 
     ```shell
-    installutil.exe MyNewService.exe
+    installutil MyNewService.exe
     ```
 
-    <span data-ttu-id="7e49c-226">Pokud je služba nainstalována úspěšně, **installutil.exe** oznámí úspěšné dokončení.</span><span class="sxs-lookup"><span data-stu-id="7e49c-226">If the service installs successfully, **installutil.exe** reports success.</span></span> <span data-ttu-id="7e49c-227">Pokud systém nemůže najít **InstallUtil.exe**, ujistěte se, že existuje ve vašem počítači.</span><span class="sxs-lookup"><span data-stu-id="7e49c-227">If the system could not find **InstallUtil.exe**, make sure that it exists on your computer.</span></span> <span data-ttu-id="7e49c-228">Tento nástroj je nainstalován pomocí rozhraní .NET Framework do složky *% windir%\Microsoft.NET\Framework[64]\\[framework verze]*.</span><span class="sxs-lookup"><span data-stu-id="7e49c-228">This tool is installed with the .NET Framework to the folder *%windir%\Microsoft.NET\Framework[64]\\[framework version]*.</span></span> <span data-ttu-id="7e49c-229">Například výchozí cesta pro 32bitovou verzi je *%windir%\Microsoft.NET\Framework\v4.0.30319\InstallUtil.exe*.</span><span class="sxs-lookup"><span data-stu-id="7e49c-229">For example, the default path for the 32-bit version is *%windir%\Microsoft.NET\Framework\v4.0.30319\InstallUtil.exe*.</span></span>
+    <span data-ttu-id="9d24c-242">Pokud je služba nainstalována úspěšně, příkaz oznámí úspěšné dokončení.</span><span class="sxs-lookup"><span data-stu-id="9d24c-242">If the service installs successfully, the command reports success.</span></span> 
 
-    <span data-ttu-id="7e49c-230">Pokud **installutil.exe** zpracovat selhání zpráv, najdete v protokolu instalace a zjistěte, proč.</span><span class="sxs-lookup"><span data-stu-id="7e49c-230">If the **installutil.exe** process reports failure, check the install log to find out why.</span></span> <span data-ttu-id="7e49c-231">Ve výchozím nastavení protokolu je ve stejné složce jako spustitelný soubor služby.</span><span class="sxs-lookup"><span data-stu-id="7e49c-231">By default the log is in the same folder as the service executable.</span></span> <span data-ttu-id="7e49c-232">Instalace může selhat, pokud <xref:System.ComponentModel.RunInstallerAttribute> třída není k dispozici na `ProjectInstaller` třídy, pokud atribut není nastavená na **true**, nebo pokud `ProjectInstaller` třída není označena **veřejné**.</span><span class="sxs-lookup"><span data-stu-id="7e49c-232">The installation can fail if  the <xref:System.ComponentModel.RunInstallerAttribute> Class is not present on the `ProjectInstaller` class, if the attribute is not set to **true**, or if the `ProjectInstaller` class is not marked **public**.</span></span>
+    <span data-ttu-id="9d24c-243">Pokud systém nemůže najít *installutil.exe*, ujistěte se, že existuje ve vašem počítači.</span><span class="sxs-lookup"><span data-stu-id="9d24c-243">If the system can't find *installutil.exe*, make sure that it exists on your computer.</span></span> <span data-ttu-id="9d24c-244">Tento nástroj je nainstalován pomocí rozhraní .NET Framework do složky *% windir%\Microsoft.NET\Framework[64]\\&lt;verzi rozhraní framework&gt;*.</span><span class="sxs-lookup"><span data-stu-id="9d24c-244">This tool is installed with the .NET Framework to the folder *%windir%\Microsoft.NET\Framework[64]\\&lt;framework version&gt;*.</span></span> <span data-ttu-id="9d24c-245">Například výchozí cesta pro 64bitovou verzi je *%windir%\Microsoft.NET\Framework64\v4.0.30319\InstallUtil.exe*.</span><span class="sxs-lookup"><span data-stu-id="9d24c-245">For example, the default path for the 64-bit version is *%windir%\Microsoft.NET\Framework64\v4.0.30319\InstallUtil.exe*.</span></span>
 
-<span data-ttu-id="7e49c-233">Další informace najdete v tématu [jak: Instalace a odinstalace služeb](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md).</span><span class="sxs-lookup"><span data-stu-id="7e49c-233">For more information, see [How to: Install and Uninstall Services](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md).</span></span>
+    <span data-ttu-id="9d24c-246">Pokud **installutil.exe** proces selže, najdete v protokolu instalace a zjistěte, proč.</span><span class="sxs-lookup"><span data-stu-id="9d24c-246">If the **installutil.exe** process fails, check the install log to find out why.</span></span> <span data-ttu-id="9d24c-247">Ve výchozím nastavení v protokolu je ve stejné složce jako spustitelný soubor služby.</span><span class="sxs-lookup"><span data-stu-id="9d24c-247">By default, the log is in the same folder as the service executable.</span></span> <span data-ttu-id="9d24c-248">Instalace může selhat, pokud:</span><span class="sxs-lookup"><span data-stu-id="9d24c-248">The installation can fail if:</span></span> 
+    - <span data-ttu-id="9d24c-249"><xref:System.ComponentModel.RunInstallerAttribute> Třída není k dispozici na `ProjectInstaller` třídy.</span><span class="sxs-lookup"><span data-stu-id="9d24c-249">The <xref:System.ComponentModel.RunInstallerAttribute> class isn't present on the `ProjectInstaller` class.</span></span>
+    -  <span data-ttu-id="9d24c-250">Atribut není nastavená na `true`.</span><span class="sxs-lookup"><span data-stu-id="9d24c-250">The attribute isn't set to `true`.</span></span> 
+    - <span data-ttu-id="9d24c-251">`ProjectInstaller` Třída není definován jako `public`.</span><span class="sxs-lookup"><span data-stu-id="9d24c-251">The `ProjectInstaller` class isn't defined as `public`.</span></span>
 
-## <a name="start-and-run-the-service"></a><span data-ttu-id="7e49c-234">Spuštění a spuštění služby</span><span class="sxs-lookup"><span data-stu-id="7e49c-234">Start and run the service</span></span>
+<span data-ttu-id="9d24c-252">Další informace najdete v tématu [jak: Instalace a odinstalace služeb](how-to-install-and-uninstall-services.md).</span><span class="sxs-lookup"><span data-stu-id="9d24c-252">For more information, see [How to: Install and uninstall services](how-to-install-and-uninstall-services.md).</span></span>
 
-1. <span data-ttu-id="7e49c-235">Ve Windows, otevřete **služby** aplikace klasické pracovní plochy.</span><span class="sxs-lookup"><span data-stu-id="7e49c-235">In Windows, open the **Services** desktop app.</span></span> <span data-ttu-id="7e49c-236">Stisknutím klávesy **Windows**+**R** otevřít **spustit** a pak zadejte **services.msc** a stiskněte klávesu **Enter**  nebo klikněte na tlačítko **OK**.</span><span class="sxs-lookup"><span data-stu-id="7e49c-236">Press **Windows**+**R** to open the **Run** box, and then enter **services.msc** and press **Enter** or click **OK**.</span></span>
+## <a name="start-and-run-the-service"></a><span data-ttu-id="9d24c-253">Spuštění a spuštění služby</span><span class="sxs-lookup"><span data-stu-id="9d24c-253">Start and run the service</span></span>
 
-     <span data-ttu-id="7e49c-237">Měli byste vidět vaše služba uvedená v **služby**, zobrazené abecedně podle zobrazovaného názvu, kterou jste nastavili pro něj.</span><span class="sxs-lookup"><span data-stu-id="7e49c-237">You should see your service listed in **Services**, displayed alphabetically by the display name that you set for it.</span></span>
+1. <span data-ttu-id="9d24c-254">Ve Windows, otevřete **služby** aplikace klasické pracovní plochy.</span><span class="sxs-lookup"><span data-stu-id="9d24c-254">In Windows, open the **Services** desktop app.</span></span> <span data-ttu-id="9d24c-255">Stisknutím klávesy **Windows**+**R** otevřít **spustit** zadejte *services.msc*a potom stiskněte klávesu **Enter** nebo vyberte **OK**.</span><span class="sxs-lookup"><span data-stu-id="9d24c-255">Press **Windows**+**R** to open the **Run** box, enter *services.msc*, and then press **Enter** or select **OK**.</span></span>
 
-     ![MyNewService v okně služby.](../../../docs/framework/windows-services/media/windowsservices-serviceswindow.PNG)
+     <span data-ttu-id="9d24c-256">Měli byste vidět vaše služba uvedená v **služby**, zobrazené abecedně podle zobrazovaného názvu, kterou jste nastavili pro něj.</span><span class="sxs-lookup"><span data-stu-id="9d24c-256">You should see your service listed in **Services**, displayed alphabetically by the display name that you set for it.</span></span>
 
-2. <span data-ttu-id="7e49c-239">V **služby**, otevřete místní nabídku pro vaši službu a pak zvolte **Start**.</span><span class="sxs-lookup"><span data-stu-id="7e49c-239">In **Services**, open the shortcut menu for your service, and then choose **Start**.</span></span>
+     ![MyNewService v okně služby.](media/windowsservices-serviceswindow.PNG)
 
-3. <span data-ttu-id="7e49c-240">K zastavení služby, otevřete místní nabídku pro službu a pak zvolte **Zastavit**.</span><span class="sxs-lookup"><span data-stu-id="7e49c-240">To stop the service, open the shortcut menu for the service, and then choose **Stop**.</span></span>
+2. <span data-ttu-id="9d24c-258">Chcete-li spustit službu, zvolte **Start** z místní nabídky služby.</span><span class="sxs-lookup"><span data-stu-id="9d24c-258">To start the service, choose **Start** from the service's shortcut menu.</span></span>
 
-4. <span data-ttu-id="7e49c-241">(Volitelné) Z příkazového řádku, můžete použít příkazy `net start ServiceName` a `net stop ServiceName` spuštění a zastavení služby.</span><span class="sxs-lookup"><span data-stu-id="7e49c-241">(Optional) From the command line, you can use the commands `net start ServiceName` and `net stop ServiceName` to start and stop your service.</span></span>
+3. <span data-ttu-id="9d24c-259">Chcete-li zastavit službu, zvolte **Zastavit** z místní nabídky služby.</span><span class="sxs-lookup"><span data-stu-id="9d24c-259">To stop the service, choose **Stop** from the service's shortcut menu.</span></span>
 
-### <a name="verify-the-event-log-output-of-your-service"></a><span data-ttu-id="7e49c-242">Ověření výstupu služby v protokolu událostí</span><span class="sxs-lookup"><span data-stu-id="7e49c-242">Verify the event log output of your service</span></span>
+4. <span data-ttu-id="9d24c-260">(Volitelné) Z příkazového řádku, použijte příkazy **net start &lt;název služby&gt;**  a **net stop &lt;název služby&gt;**  spuštění a zastavení služby.</span><span class="sxs-lookup"><span data-stu-id="9d24c-260">(Optional) From the command line, use the commands **net start &lt;service name&gt;** and **net stop &lt;service name&gt;** to start and stop your service.</span></span>
 
-1. <span data-ttu-id="7e49c-243">Otevřít **Prohlížeč událostí** spuštěním na typ **Prohlížeč událostí** do vyhledávacího pole na hlavním panelu Windows a pak vyberete **Prohlížeč událostí** ve výsledcích hledání.</span><span class="sxs-lookup"><span data-stu-id="7e49c-243">Open **Event Viewer** by starting to type **Event Viewer** in the search box on the Windows task bar, and then selecting **Event Viewer** from the search results.</span></span>
+### <a name="verify-the-event-log-output-of-your-service"></a><span data-ttu-id="9d24c-261">Ověření výstupu služby v protokolu událostí</span><span class="sxs-lookup"><span data-stu-id="9d24c-261">Verify the event log output of your service</span></span>
+
+1. <span data-ttu-id="9d24c-262">Ve Windows, otevřete **Prohlížeč událostí** aplikace klasické pracovní plochy.</span><span class="sxs-lookup"><span data-stu-id="9d24c-262">In Windows, open the **Event Viewer** desktop app.</span></span> <span data-ttu-id="9d24c-263">Zadejte *Prohlížeč událostí* ve službě Windows search panelu a pak vyberte **Prohlížeč událostí** ve výsledcích hledání.</span><span class="sxs-lookup"><span data-stu-id="9d24c-263">Enter *Event Viewer* in the Windows search bar, and then select **Event Viewer** from the search results.</span></span>
 
    > [!TIP]
-   > <span data-ttu-id="7e49c-244">V sadě Visual Studio, dostanete protokoly událostí tak, že otevřete **Průzkumníka serveru** (klávesnice: **CTRL**+**Alt**+**S**) rozšiřuje i **protokoly událostí** uzel v místním počítači.</span><span class="sxs-lookup"><span data-stu-id="7e49c-244">In Visual Studio, you can access event logs by opening **Server Explorer** (Keyboard: **Ctrl**+**Alt**+**S**) and expanding the **Event Logs** node for the local computer.</span></span>
+   > <span data-ttu-id="9d24c-264">V sadě Visual Studio, dostanete protokoly událostí tak, že otevřete **Průzkumníka serveru** z **zobrazení** nabídce (nebo stiskněte klávesu **Ctrl**+**Alt** + **S**) rozšiřuje i **protokoly událostí** uzel v místním počítači.</span><span class="sxs-lookup"><span data-stu-id="9d24c-264">In Visual Studio, you can access event logs by opening **Server Explorer** from the **View** menu (or press **Ctrl**+**Alt**+**S**) and expanding the **Event Logs** node for the local computer.</span></span>
 
-2. <span data-ttu-id="7e49c-245">V **Prohlížeč událostí**, rozbalte **protokoly aplikací a služeb**.</span><span class="sxs-lookup"><span data-stu-id="7e49c-245">In **Event Viewer**, expand **Applications and Services Logs**.</span></span>
+2. <span data-ttu-id="9d24c-265">V **Prohlížeč událostí**, rozbalte **protokoly aplikací a služeb**.</span><span class="sxs-lookup"><span data-stu-id="9d24c-265">In **Event Viewer**, expand **Applications and Services Logs**.</span></span>
 
-3. <span data-ttu-id="7e49c-246">Vyhledejte výpis pro **MyNewLog** (nebo **MyLogFile1**, pokud jste postupovali podle volitelný postup pro přidání argumentů příkazového řádku) a rozbalte ho.</span><span class="sxs-lookup"><span data-stu-id="7e49c-246">Locate the listing for **MyNewLog** (or **MyLogFile1**, if you followed the optional procedure to add command-line arguments) and expand it.</span></span> <span data-ttu-id="7e49c-247">Měli byste vidět položky pro dvě akce (spouštění a zastavování), které provádí vaší služby.</span><span class="sxs-lookup"><span data-stu-id="7e49c-247">You should see entries for the two actions (start and stop) that your service performed.</span></span>
+3. <span data-ttu-id="9d24c-266">Vyhledejte výpis pro **MyNewLog** (nebo **MyLogFile1** Pokud jste postupovali podle postupu pro přidání argumentů příkazového řádku) a rozbalte ho.</span><span class="sxs-lookup"><span data-stu-id="9d24c-266">Locate the listing for **MyNewLog** (or **MyLogFile1** if you followed the procedure to add command-line arguments) and expand it.</span></span> <span data-ttu-id="9d24c-267">Měli byste vidět položky pro dvě akce (spouštění a zastavování), které provádí vaší služby.</span><span class="sxs-lookup"><span data-stu-id="9d24c-267">You should see the entries for the two actions (start and stop) that your service performed.</span></span>
 
-     ![Pomocí prohlížeče událostí zobrazíte položky protokolu událostí](../../../docs/framework/windows-services/media/windows-service-event-viewer.png)
+     ![Pomocí prohlížeče událostí zobrazíte položky protokolu událostí](media/windows-service-event-viewer.png)
 
-## <a name="uninstall-the-service"></a><span data-ttu-id="7e49c-249">Odinstalujte službu</span><span class="sxs-lookup"><span data-stu-id="7e49c-249">Uninstall the service</span></span>
+## <a name="clean-up-resources"></a><span data-ttu-id="9d24c-269">Vyčištění prostředků</span><span class="sxs-lookup"><span data-stu-id="9d24c-269">Clean up resources</span></span>
 
-1. <span data-ttu-id="7e49c-250">Otevřít **Developer Command Prompt pro sadu Visual Studio** s přihlašovacími údaji správce.</span><span class="sxs-lookup"><span data-stu-id="7e49c-250">Open **Developer Command Prompt for Visual Studio** with administrative credentials.</span></span>
+<span data-ttu-id="9d24c-270">Pokud už nepotřebujete Windows service app, můžete ho odebrat.</span><span class="sxs-lookup"><span data-stu-id="9d24c-270">If you no longer need the Windows service app, you can remove it.</span></span> 
 
-2. <span data-ttu-id="7e49c-251">V okně příkazového řádku přejděte do složky, který obsahuje výstup projektu.</span><span class="sxs-lookup"><span data-stu-id="7e49c-251">In the command prompt window, navigate to the folder that contains your project's output.</span></span>
+1. <span data-ttu-id="9d24c-271">Otevřít **Developer Command Prompt pro sadu Visual Studio** s přihlašovacími údaji správce.</span><span class="sxs-lookup"><span data-stu-id="9d24c-271">Open **Developer Command Prompt for Visual Studio** with administrative credentials.</span></span>
 
-3. <span data-ttu-id="7e49c-252">Zadejte následující příkaz:</span><span class="sxs-lookup"><span data-stu-id="7e49c-252">Enter the following command:</span></span>
+2. <span data-ttu-id="9d24c-272">V **Developer Command Prompt pro sadu Visual Studio** okno, přejděte do složky, který obsahuje výstup projektu.</span><span class="sxs-lookup"><span data-stu-id="9d24c-272">In the **Developer Command Prompt for Visual Studio** window, navigate to the folder that contains your project's output.</span></span>
+
+3. <span data-ttu-id="9d24c-273">Zadejte následující příkaz:</span><span class="sxs-lookup"><span data-stu-id="9d24c-273">Enter the following command:</span></span>
 
     ```shell
     installutil.exe /u MyNewService.exe
     ```
 
-   <span data-ttu-id="7e49c-253">Pokud služba úspěšně, odinstalována **installutil.exe** hlásí, že vaše služba byla úspěšně odebrána.</span><span class="sxs-lookup"><span data-stu-id="7e49c-253">If the service uninstalls successfully, **installutil.exe** reports that your service was successfully removed.</span></span> <span data-ttu-id="7e49c-254">Další informace najdete v tématu [jak: Instalace a odinstalace služeb](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md).</span><span class="sxs-lookup"><span data-stu-id="7e49c-254">For more information, see [How to: Install and Uninstall Services](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md).</span></span>
+   <span data-ttu-id="9d24c-274">Pokud služba úspěšně odinstalována, příkaz hlásí, že vaše služba byla úspěšně odebrána.</span><span class="sxs-lookup"><span data-stu-id="9d24c-274">If the service uninstalls successfully, the command reports that your service was successfully removed.</span></span> <span data-ttu-id="9d24c-275">Další informace najdete v tématu [jak: Instalace a odinstalace služeb](how-to-install-and-uninstall-services.md).</span><span class="sxs-lookup"><span data-stu-id="9d24c-275">For more information, see [How to: Install and uninstall services](how-to-install-and-uninstall-services.md).</span></span>
 
-## <a name="next-steps"></a><span data-ttu-id="7e49c-255">Další kroky</span><span class="sxs-lookup"><span data-stu-id="7e49c-255">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="9d24c-276">Další kroky</span><span class="sxs-lookup"><span data-stu-id="9d24c-276">Next steps</span></span>
 
-<span data-ttu-id="7e49c-256">Teď, když jste vytvořili službu, můžete chtít vytvořit samostatný instalační program, který ostatní mohli používat k instalaci služby Windows.</span><span class="sxs-lookup"><span data-stu-id="7e49c-256">Now that you've created the service, you might want to create a standalone setup program that others can use to install your Windows service.</span></span> <span data-ttu-id="7e49c-257">Technologie ClickOnce nepodporuje služby Windows, ale můžete použít [sadu nástrojů WiX Toolset](http://wixtoolset.org/) vytvořit instalační službu pro službu Windows.</span><span class="sxs-lookup"><span data-stu-id="7e49c-257">ClickOnce doesn't support Windows services, but you can use the [WiX Toolset](http://wixtoolset.org/) to create an installer for a Windows service.</span></span> <span data-ttu-id="7e49c-258">Další příklady naleznete v tématu [vytvoření instalačního balíčku](/visualstudio/deployment/deploying-applications-services-and-components#create-an-installer-package-windows-desktop).</span><span class="sxs-lookup"><span data-stu-id="7e49c-258">For other ideas, see [Create an installer package](/visualstudio/deployment/deploying-applications-services-and-components#create-an-installer-package-windows-desktop).</span></span>
+<span data-ttu-id="9d24c-277">Teď, když jste vytvořili službu, můžete:</span><span class="sxs-lookup"><span data-stu-id="9d24c-277">Now that you've created the service, you can:</span></span>
 
-<span data-ttu-id="7e49c-259">Použití může zkoumat <xref:System.ServiceProcess.ServiceController> komponenta, která vám umožní odesílat příkazy do služby, které jste nainstalovali.</span><span class="sxs-lookup"><span data-stu-id="7e49c-259">You might explore the use of a <xref:System.ServiceProcess.ServiceController> component, which enables you to send commands to the service you've installed.</span></span>
+- <span data-ttu-id="9d24c-278">Vytvořte samostatný instalační program ostatním uživatelům pro instalaci služby Windows.</span><span class="sxs-lookup"><span data-stu-id="9d24c-278">Create a standalone setup program for others to use to install your Windows service.</span></span> <span data-ttu-id="9d24c-279">Použití [sadu nástrojů WiX Toolset](http://wixtoolset.org/) vytvořit instalační službu pro službu Windows.</span><span class="sxs-lookup"><span data-stu-id="9d24c-279">Use the [WiX Toolset](http://wixtoolset.org/) to create an installer for a Windows service.</span></span> <span data-ttu-id="9d24c-280">Další příklady naleznete v tématu [vytvoření instalačního balíčku](/visualstudio/deployment/deploying-applications-services-and-components#create-an-installer-package-windows-desktop).</span><span class="sxs-lookup"><span data-stu-id="9d24c-280">For other ideas, see [Create an installer package](/visualstudio/deployment/deploying-applications-services-and-components#create-an-installer-package-windows-desktop).</span></span>
 
-<span data-ttu-id="7e49c-260">Pomocí instalačního programu můžete vytvořit protokol událostí při instalaci aplikace namísto vytvoření protokolu událostí po spuštění aplikace.</span><span class="sxs-lookup"><span data-stu-id="7e49c-260">You can use an installer to create an event log when the application is installed instead of creating the event log when the application runs.</span></span> <span data-ttu-id="7e49c-261">Při odinstalaci aplikace navíc instalační program protokol událostí odstraní.</span><span class="sxs-lookup"><span data-stu-id="7e49c-261">Additionally, the event log will be deleted by the installer when the application is uninstalled.</span></span> <span data-ttu-id="7e49c-262">Další informace najdete v tématu <xref:System.Diagnostics.EventLogInstaller> referenční stránce.</span><span class="sxs-lookup"><span data-stu-id="7e49c-262">For more information, see the <xref:System.Diagnostics.EventLogInstaller> reference page.</span></span>
+- <span data-ttu-id="9d24c-281">Prozkoumejte <xref:System.ServiceProcess.ServiceController> komponenta, která vám umožní odesílat příkazy do služby, které jste nainstalovali.</span><span class="sxs-lookup"><span data-stu-id="9d24c-281">Explore the <xref:System.ServiceProcess.ServiceController> component, which enables you to send commands to the service you've installed.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="7e49c-263">Viz také:</span><span class="sxs-lookup"><span data-stu-id="7e49c-263">See also</span></span>
+- <span data-ttu-id="9d24c-282">Namísto vytvoření protokolu událostí při spuštění aplikace, použijte instalační program k vytvoření protokolu událostí při instalaci aplikace.</span><span class="sxs-lookup"><span data-stu-id="9d24c-282">Instead of creating the event log when the application runs, use an installer to create an event log when you install the application.</span></span> <span data-ttu-id="9d24c-283">Když odinstalujete aplikaci je protokol událostí odstraní instalační služby.</span><span class="sxs-lookup"><span data-stu-id="9d24c-283">The event log is deleted by the installer when you uninstall the application.</span></span> <span data-ttu-id="9d24c-284">Další informace naleznete v tématu <xref:System.Diagnostics.EventLogInstaller>.</span><span class="sxs-lookup"><span data-stu-id="9d24c-284">For more information, see <xref:System.Diagnostics.EventLogInstaller>.</span></span>
 
-- [<span data-ttu-id="7e49c-264">Aplikace služby Windows</span><span class="sxs-lookup"><span data-stu-id="7e49c-264">Windows service applications</span></span>](../../../docs/framework/windows-services/index.md)
-- [<span data-ttu-id="7e49c-265">Úvod do aplikace služby Windows</span><span class="sxs-lookup"><span data-stu-id="7e49c-265">Introduction to Windows service applications</span></span>](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)
-- [<span data-ttu-id="7e49c-266">Postupy: Ladění aplikace služby Windows</span><span class="sxs-lookup"><span data-stu-id="7e49c-266">How to: Debug Windows service applications</span></span>](../../../docs/framework/windows-services/how-to-debug-windows-service-applications.md)
-- [<span data-ttu-id="7e49c-267">Služby (Windows)</span><span class="sxs-lookup"><span data-stu-id="7e49c-267">Services (Windows)</span></span>](/windows/desktop/Services/services)
+## <a name="see-also"></a><span data-ttu-id="9d24c-285">Viz také:</span><span class="sxs-lookup"><span data-stu-id="9d24c-285">See also</span></span>
+
+- [<span data-ttu-id="9d24c-286">Aplikace služby Windows</span><span class="sxs-lookup"><span data-stu-id="9d24c-286">Windows service applications</span></span>](index.md)
+- [<span data-ttu-id="9d24c-287">Úvod do aplikace služby Windows</span><span class="sxs-lookup"><span data-stu-id="9d24c-287">Introduction to Windows service applications</span></span>](introduction-to-windows-service-applications.md)
+- [<span data-ttu-id="9d24c-288">Postupy: Ladění aplikace služby Windows</span><span class="sxs-lookup"><span data-stu-id="9d24c-288">How to: Debug Windows service applications</span></span>](how-to-debug-windows-service-applications.md)
+- [<span data-ttu-id="9d24c-289">Služby (Windows)</span><span class="sxs-lookup"><span data-stu-id="9d24c-289">Services (Windows)</span></span>](/windows/desktop/Services/services)
