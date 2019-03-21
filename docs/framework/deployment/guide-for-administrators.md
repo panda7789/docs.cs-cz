@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: bee14036-0436-44e8-89f5-4bc61317977a
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 50ea2b1fefe5c41f0c67ab8c12362f19ea125b5b
-ms.sourcegitcommit: 90775b20343b6ad831af6f5380f8ab7553abb16b
+ms.openlocfilehash: be053c9f8b431a9e157e53ec2d32fef874cf2d6b
+ms.sourcegitcommit: e994e47d3582bf09ae487ecbd53c0dac30aebaf7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54186212"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58262459"
 ---
 # <a name="net-framework-deployment-guide-for-administrators"></a>.NET Framework – průvodce nasazením pro administrátory
 Tento článek popisuje, jak může správce systému nasadit [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] a jeho systémové závislosti napříč sítí pomocí nástroje System Center Configuration Manager. V tomto článku se předpokládá, že všechny cílové klientské počítače splňují minimální požadavky rozhraní .NET Framework. Seznam všech softwarových a hardwarových požadavků pro instalaci [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], naleznete v tématu [požadavky na systém](../../../docs/framework/get-started/system-requirements.md).  
@@ -189,7 +189,7 @@ Tento článek popisuje, jak může správce systému nasadit [!INCLUDE[net_v45]
 ## <a name="resources"></a>Prostředky  
  Další informace o infrastruktuře pro testovaní nasazení [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] Distribuovatelný balíček, najdete v následujících zdrojích informací.  
   
- **Služba Active Directory, DNS a DHCP.**  
+ **Active Directory, DNS, DHCP:**  
   
 -   [Active Directory Domain Services](/windows/desktop/ad/active-directory-domain-services)  
   
@@ -199,7 +199,7 @@ Tento článek popisuje, jak může správce systému nasadit [!INCLUDE[net_v45]
   
  **SQL Server 2008:**  
   
--   [Instalace systému SQL Server 2008 (Video o systému SQL Server)](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/dd299415%28v=sql.100%29)  
+-   [Installing SQL Server 2008 (SQL Server Video)](https://docs.microsoft.com/previous-versions/sql/sql-server-2008/dd299415(v=sql.100))  
   
 -   [Přehled zabezpečení služby SQL Server 2008 pro správce databáze](https://download.microsoft.com/download/a/c/d/acd8e043-d69b-4f09-bc9e-4168b65aaa71/SQL2008SecurityOverviewforAdmins.docx)  
   
@@ -220,7 +220,7 @@ Tento článek popisuje, jak může správce systému nasadit [!INCLUDE[net_v45]
  Následující soubory protokolu jsou generovány během instalace rozhraní .NET Framework:  
   
  %temp%\Microsoft rozhraní .NET framework *verze*\*txt  
- %temp%\Microsoft rozhraní .NET framework *verze*\*HTML  
+ %temp%\Microsoft .NET Framework *version*\*.html  
   
  kde *verze* je verze rozhraní .NET Framework, které chcete instalovat, jako je například 4.5 nebo 4.7.2.  
  

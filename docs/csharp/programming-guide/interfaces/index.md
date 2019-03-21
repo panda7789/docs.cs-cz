@@ -21,7 +21,7 @@ Název struktury musí být platný C# [název identifikátoru](../inside-a-prog
 
 Každá třída nebo struktura, která implementuje <xref:System.IEquatable%601> rozhraní může obsahovat definici <xref:System.IEquatable%601.Equals%2A> metodu, která odpovídá podpisu, který určuje rozhraní. V důsledku toho se můžete spolehnout na třídu, která implementuje `IEquatable<T>` tak, aby obsahovala `Equals` metodu, pomocí kterého můžete určit, zda je rovna jiná instance stejné třídy instance třídy.  
   
-Definice `IEquatable<T>` neposkytuje implementaci pro `Equals`. Rozhraní definuje pouze podpis. Tímto způsobem je podobný abstraktní třída, ve kterém jsou všechny metody abstraktní rozhraní v jazyce C#. Třídy nebo struktury může implementovat více rozhraní, ale třída může dědit pouze jednu třídu, abstraktní nebo ne. Proto to s využitím rozhraní, můžete zahrnout chování z různých zdrojů ve třídě.  
+Definice `IEquatable<T>` neposkytuje implementaci pro `Equals`. Rozhraní definuje pouze podpis. Tímto způsobem je podobný abstraktní třída, ve kterém jsou všechny metody abstraktní rozhraní v jazyce C#. Třídy nebo struktury může implementovat více rozhraní, ale třída může dědit pouze jednu třídu, abstraktní nebo ne.
   
 Další informace o abstraktních tříd naleznete v tématu [abstraktní a zapečetěné třídy a členové](../classes-and-structs/abstract-and-sealed-classes-and-class-members.md).  
   
@@ -45,7 +45,7 @@ Základní třídu můžete také implementovat členy rozhraní pomocí virtuá
 
 Rozhraní má následující vlastnosti:  
 
-- Rozhraní je jako abstraktní základní třídu. Každá třída nebo struktura, která implementuje rozhraní musí implementovat všechny její členy.
+- Rozhraní je jako abstraktní základní třída se pouze abstraktní členy. Každá třída nebo struktura, která implementuje rozhraní musí implementovat všechny její členy.
 - Rozhraní nemůže být přímo vytvořeny instance. Její členy jsou implementované všechny třídy nebo struktury, která implementuje rozhraní.
 - Rozhraní může obsahovat události, indexery, metody a vlastnosti.
 - Rozhraní obsahovat žádnou implementaci metody.

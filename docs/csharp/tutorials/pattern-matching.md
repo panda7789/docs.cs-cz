@@ -3,12 +3,12 @@ title: Použít porovnávání vzorů funkce k rozšíření datových typů
 description: V tomto kurzu pokročilé ukazuje, jak použít porovnávání vzorů techniky k vytvoření funkce pomocí dat a algoritmy, které se vytvářejí zvlášť.
 ms.date: 03/13/2019
 ms.custom: mvc
-ms.openlocfilehash: 78b7215631a3988cff1ab942b677bcd5205e311c
-ms.sourcegitcommit: 462dc41a13942e467984e48f4018d1f79ae67346
+ms.openlocfilehash: c064af5fdf85587d0c4fa1471894122d6fe0d2f7
+ms.sourcegitcommit: e994e47d3582bf09ae487ecbd53c0dac30aebaf7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58185828"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58262525"
 ---
 # <a name="tutorial-using-pattern-matching-features-to-extend-data-types"></a>Kurz: Použití porovnávání vzorů funkce k rozšíření datových typů
 
@@ -61,7 +61,7 @@ Pouze na typ, který využívá nejzákladnější výpočtu linka:
 - A `Bus` je 5.00 $.
 - A `DeliveryTruck` je 10,00 USD
 
-Vytvořte nový `TollCalculator` třídy a implementovat vzorce pro porovnávání na typ, který má získat velikost linka.
+Vytvořte nový `TollCalculator` třídy a implementovat vzorce pro porovnávání na typ, který má získat velikost linka. Následující kód ukazuje počáteční implementace `TollCalculator`.
 
 ```csharp
 using System;
@@ -87,7 +87,7 @@ namespace toll_calculator
 }
 ```
 
-Předchozí kód používá **výraz switch** (není stejný jako [ `switch` ](../language-reference/keywords/switch.md) příkaz), který testuje **vzor typu**. A **výraz switch** začíná proměnnou, `vehicle` v předchozím kódu, za nímž následuje `switch` – klíčové slovo. Dále obsahuje všechny **přepnout arms** uvnitř složených závorek. `switch` Výraz vytvoří další upřesnění zpráv o syntaxi, která obklopuje `switch` příkazu. `case` – Klíčové slovo je vynechán, a výsledek každého arm je výraz. Poslední dva arms zobrazit novou funkci jazyka. `{ }` Případ odpovídá libovolný nenulový objekt, který neodpovídal starší arm. Tato arm zachytí nesprávné typy předaný této metodě. Nakonec `null` vzor zachytí při `null` je předaný této metodě. `null` Model může být poslední, protože jiné vzory typ shodný s pouze nenulový objekt nesprávného typu.
+Předchozí kód používá **výraz switch** (není stejný jako [ `switch` ](../language-reference/keywords/switch.md) příkaz), který testuje **vzor typu**. A **výraz switch** začíná proměnnou, `vehicle` v předchozím kódu, za nímž následuje `switch` – klíčové slovo. Dále obsahuje všechny **přepnout arms** uvnitř složených závorek. `switch` Výraz vytvoří další upřesnění zpráv o syntaxi, která obklopuje `switch` příkazu. `case` – Klíčové slovo je vynechán, a výsledek každého arm je výraz. Poslední dva arms zobrazit novou funkci jazyka. `{ }` Případ odpovídá libovolný nenulový objekt, který neodpovídal starší arm. Tato arm zachytí nesprávné typy předaný této metodě.  `{ }` Případu musí následovat případů pro každý typ vozidlo. Pokud pořadí byly vráceny zpět, `{ }` případ má přednost. Nakonec `null` zjistí vzor, kdy `null` je předaný této metodě. `null` Model může být poslední, protože jiné vzory typ shodný s pouze nenulový objekt nesprávného typu.
 
 Můžete otestovat tento kód, pomocí následujícího kódu v `Program.cs`:
 
@@ -121,7 +121,7 @@ namespace toll_calculator
             }
             catch (ArgumentException e)
             {
-                Console.WriteLine("Caught an argument exception when using the wrong type", DayOfWeek.Friday);
+                Console.WriteLine("Caught an argument exception when using the wrong type");
             }
             try
             {
@@ -158,13 +158,13 @@ vehicle switch
     Car { Passengers: 0}        => 2.00m + 0.50m,
     Car { Passengers: 1 }       => 2.0m,
     Car { Passengers: 2}        => 2.0m - 0.50m,
-    Car c when c.Passengers > 2 => 2.00m - 1.0m,
+    Car c                       => 2.00m - 1.0m,
 
     // ...
 };
 ```
 
-První tři případy typ jako testu `Car`, zkontrolujte hodnotu `Passengers` vlastnost. Pokud se obě shodovat, tento výraz je vyhodnocen a vrácena. Zobrazí poslední klauzule `when` klauzule přepínače arm. Můžete použít `when` klauzule k testování podmínek jiné než rovnost pro vlastnost. V předchozím příkladu `when` klauzule testy, že jsou k dispozici více než 2 cestujících v autě. Přesněji řečeno není nutné v tomto příkladu.
+První tři případy typ jako testu `Car`, zkontrolujte hodnotu `Passengers` vlastnost. Pokud se obě shodovat, tento výraz je vyhodnocen a vrácena.
 
 By bylo třeba rozbalit také případy taxi podobným způsobem:
 
@@ -212,7 +212,7 @@ vehicle switch
 };
 ```
 
-Po dokončení budete mít metodu, která vypadá podobně jako následující:
+Předchozí kód ukazuje `when` klauzule přepínače arm. Můžete použít `when` klauzule k testování podmínek jiné než rovnost pro vlastnost. Po dokončení budete mít metodu, která vypadá podobně jako následující:
 
 ```csharp
 vehicle switch
@@ -220,7 +220,7 @@ vehicle switch
     Car { Passengers: 0}        => 2.00m + 0.50m,
     Car { Passengers: 1}        => 2.0m,
     Car { Passengers: 2}        => 2.0m - 0.50m,
-    Car c when c.Passengers > 2 => 2.00m - 1.0m,
+    Car c                       => 2.00m - 1.0m,
 
     Taxi { Fares: 0}  => 3.50m + 1.00m,
     Taxi { Fares: 1 } => 3.50m,
@@ -372,9 +372,9 @@ Nakonec můžete odebrat dvě špičce hodinu případů, kdy platíte běžná 
 
 [!code-csharp[SimplifiedTuplePattern](../../../samples/csharp/tutorials/patterns/finished/toll-calculator/TollCalculator.cs#FinalTuplePattern)]
 
-Tento příklad ukazuje, jednou z výhod porovnávání vzorů: větví vzor se vyhodnocují v pořadí. Pokud změníte uspořádání, je tak, aby starší větev zpracovává jeden z novějších případy, kompilátor zobrazí upozornění. Tato pravidla jazyk usnadnili provést předchozí zjednodušení s vědomím, že kód nezměnila.
+Tento příklad ukazuje, jednou z výhod porovnávání vzorů: větví vzor se vyhodnocují v pořadí. Pokud změníte uspořádání, je tak, aby starší větev zpracovává jeden z novějších případy, kompilátor vás upozorní o nedosažitelném kódu. Tato pravidla jazyk usnadnili provést předchozí zjednodušení s vědomím, že kód nezměnila.
 
-Porovnávání vzorů poskytuje přirozený syntaxi provádět jiné řešení než vytvoříte, pokud jste použili objektově orientované techniky. Data a funkce live této doby změny nepublikujete, příčinou je v cloudu. *Tvar* dat a *operace* na to nejsou popsané nutně společně. V tomto kurzu využívat existující data z jeho původní funkce zcela různými způsoby. Porovnávání vzorů přiřadil schopnost psát funkce, které overrode těchto typů, i když nelze rozšířit, je.
+Porovnávání vzorů provede některé typy kód lépe čitelný a nabízí alternativu k objektově orientované techniky, když kód nelze přidat do vašich tříd. Data a funkce live této doby změny nepublikujete, příčinou je v cloudu. *Tvar* dat a *operace* na to nejsou popsané nutně společně. V tomto kurzu využívat existující data z jeho původní funkce zcela různými způsoby. Porovnávání vzorů přiřadil schopnost psát funkce, které overrode těchto typů, i když nelze rozšířit, je.
 
 ## <a name="next-steps"></a>Další kroky
 

@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8bef18468ef02e37b857316cd9fa2bf4cf5f9e9b
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 44a84b03c85cc1332c07ffbaf53187b7f01d0236
+ms.sourcegitcommit: e994e47d3582bf09ae487ecbd53c0dac30aebaf7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57369330"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58262472"
 ---
 # <a name="formatfromrawvalue-function"></a>Funkce FormatFromRawValue
 Převede jednu hodnotu hrubý výkon při zpracování dat pro zadaný formát nebo dvě hodnoty hrubý výkon při zpracování dat, pokud převod formátu podle času. 
@@ -85,7 +85,7 @@ Následující hodnoty jsou vráceny pomocí této funkce:
 
 ## <a name="remarks"></a>Poznámky
 
-Tato funkce zalamuje volání na [FormatFromRawValue](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.0/ms231047%28v=vs.85%29) funkce.
+Tato funkce zalamuje volání na [FormatFromRawValue](https://docs.microsoft.com/previous-versions/ms231047(v=vs.85)) funkce.
 
 ## <a name="requirements"></a>Požadavky
 

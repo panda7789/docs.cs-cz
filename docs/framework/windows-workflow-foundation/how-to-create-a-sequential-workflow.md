@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 5280e816-ae17-48c4-8de0-a1e6895dd8f0
-ms.openlocfilehash: 2213d766435aaafbf37b8646a66ea3007bfcb734
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: d924d684561a2dd90ff18c803c3b12e8ac3581ce
+ms.sourcegitcommit: e994e47d3582bf09ae487ecbd53c0dac30aebaf7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57719634"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58262566"
 ---
 # <a name="how-to-create-a-sequential-workflow"></a>Postupy: Vytvoření sekvenčního pracovního postupu
 Pracovní postupy lze zkonstruovat z předdefinovaných aktivit a také z vlastních aktivit. Toto téma se provede vytvořením pracovního postupu, který používá obě integrované aktivity, jako <xref:System.Activities.Statements.Sequence> aktivity a vlastní aktivity z předchozího [jak: Vytvořit aktivitu](how-to-create-an-activity.md) tématu. Pracovní postup modely číslo rozluštění hru.  
@@ -21,7 +21,7 @@ Pracovní postupy lze zkonstruovat z předdefinovaných aktivit a také z vlastn
 > [!NOTE]
 >  Chcete-li stáhnout úplnou verzi tohoto kurzu, přečtěte si téma [Windows Workflow Foundation (WF45) – kurz Začínáme](https://go.microsoft.com/fwlink/?LinkID=248976).  
   
-### <a name="to-create-the-workflow"></a>Vytvoření pracovního postupu  
+## <a name="to-create-the-workflow"></a>Vytvoření pracovního postupu  
   
 1.  Klikněte pravým tlačítkem na **NumberGuessWorkflowActivities** v **Průzkumníka řešení** a vyberte **přidat**, **nová položka**.  
   
@@ -31,7 +31,7 @@ Pracovní postupy lze zkonstruovat z předdefinovaných aktivit a také z vlastn
   
 4.  Přetáhněte **pořadí** aktivita z **tok řízení** část **nástrojů** a umístěte ho do **Sem přetáhněte aktivitu** popisek pracovní postup návrhovou plochu.  
   
-### <a name="to-create-the-workflow-variables-and-arguments"></a>Chcete-li vytvořit pracovní postup proměnné a argumenty  
+## <a name="to-create-the-workflow-variables-and-arguments"></a>Chcete-li vytvořit pracovní postup proměnné a argumenty  
   
 1.  Dvakrát klikněte na panel **SequentialNumberGuessWorkflow.xaml** v **Průzkumníka řešení** zobrazíte pracovního postupu v návrháři, pokud se už nezobrazí.  
   
@@ -62,7 +62,7 @@ Pracovní postupy lze zkonstruovat z předdefinovaných aktivit a také z vlastn
   
 13. Klikněte na tlačítko **proměnné** v levého dolního rohu návrháře aktivit, zavřete **proměnné** podokně.  
   
-### <a name="to-add-the-workflow-activities"></a>Přidání aktivit pracovního postupu  
+## <a name="to-add-the-workflow-activities"></a>Přidání aktivit pracovního postupu  
   
 1.  Přetáhněte **přiřadit** aktivita z **primitiv** část **nástrojů** a umístěte ho do **pořadí** aktivity. Typ `Target` do **k** pole a následující výraz, který **zadejte výraz C#** nebo **zadejte výraz jazyka VB.** pole.  
   
@@ -137,13 +137,13 @@ Pracovní postupy lze zkonstruovat z předdefinovaných aktivit a také z vlastn
   
 13. Klikněte na tlačítko **WriteLine** aktivity v **pak** části jej vyberte a zadejte následující výraz do **Text** pole s hodnotou vlastnosti.  
   
-    ```vb  
+    ```text
     "Your guess is too low."  
     ```  
   
 14. Klikněte na tlačítko **WriteLine** aktivity v **Else** části jej vyberte a zadejte následující výraz do **Text** pole s hodnotou vlastnosti.  
   
-    ```vb  
+    ```text
     "Your guess is too high."  
     ```  
   
@@ -151,7 +151,7 @@ Pracovní postupy lze zkonstruovat z předdefinovaných aktivit a také z vlastn
   
      ![Dokončení sekvenčního pracovního postupu](./media/wfsequentialgettingstartedtutorialcomplete.JPG "WFSequentialGettingStartedTutorialComplete")  
   
-### <a name="to-build-the-workflow"></a>K vytvoření pracovního postupu  
+## <a name="to-build-the-workflow"></a>K vytvoření pracovního postupu  
   
 1.  Stiskněte kombinaci kláves CTRL + SHIFT + B, abyste mohli sestavit řešení.  
   
