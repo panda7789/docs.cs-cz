@@ -11,12 +11,12 @@ helpviewer_keywords:
 - trace listeners, <sharedListeners> element
 - sharedListeners element
 ms.assetid: de200534-19dd-4156-86cf-c50521802c4c
-ms.openlocfilehash: 56a4111f2e0fd290321756c43c7f245e46044b02
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 281cc0bd2e577dedaffb7f7eaf04fe46e6ee0b59
+ms.sourcegitcommit: 344d82456f27d09a210671214a14cfd7daf1f97c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55254932"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58348814"
 ---
 # <a name="sharedlisteners-element"></a>\<sharedListeners > – Element
 Obsahuje moduly pro naslouchání, které všechny zdroje nebo trasování – element může odkazovat.  Tyto moduly pro naslouchání se nezobrazí žádné trasování ve výchozím nastavení a není možné načíst tyto moduly pro naslouchání v době běhu. Naslouchací procesy, které jsou identifikovány jako sdílené moduly pro naslouchání lze přidat do zdroje nebo trasování podle názvu.  
@@ -85,7 +85,7 @@ Obsahuje moduly pro naslouchání, které všechny zdroje nebo trasování – e
       </listeners>  
     </trace>  
   </system.diagnostics>  
-</configuration></system.diagnostics>   
+</configuration>
 ```  
   
 ## <a name="see-also"></a>Viz také:

@@ -7,14 +7,14 @@ helpviewer_keywords:
 - ?. operator [C#]
 - ?[] operator [C#]
 ms.assetid: 9c7b2c8f-a785-44ca-836c-407bfb6d27f5
-ms.openlocfilehash: 38298cded904cbfedeaf3c6b66c74d610d714902
-ms.sourcegitcommit: 5c36aaa8299a2437c155700c810585aff19edbec
+ms.openlocfilehash: 9cbf8a0f860f0bc0328cd98e558b20b5e8e1bf8f
+ms.sourcegitcommit: 344d82456f27d09a210671214a14cfd7daf1f97c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54333236"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58348840"
 ---
-# <a name="-and--null-conditional-operators-c-and-visual-basic"></a>?. a? [] podmíněné operátory s null (C# a Visual Basic)
+# <a name="-and--null-conditional-operators-c-reference"></a>?. a? [] podmíněné operátory s null (C# odkaz)
 
 Testuje hodnotu levý operand pro hodnotu null, před provedením přístup ke členu (`?.`) nebo indexu (`?[]`) časový limit operace; vrátí `null` pokud levý operand je vyhodnocen jako `null`.
 
