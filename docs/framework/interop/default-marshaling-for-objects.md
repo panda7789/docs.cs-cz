@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: c2ef0284-b061-4e12-b6d3-6a502b9cc558
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c226960373783c45594e4a41dfaff353bf0b9db4
-ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
+ms.openlocfilehash: 65b13d99873fe1027d0b316d1cf90e766799dbb1
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56219604"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58409273"
 ---
 # <a name="default-marshaling-for-objects"></a>Výchozí zařazování pro objekty
 Parametry a pole typu <xref:System.Object?displayProperty=nameWithType> daly vystavit do nespravovaného kódu jako jeden z následujících typů:  
@@ -26,19 +26,6 @@ Parametry a pole typu <xref:System.Object?displayProperty=nameWithType> daly vys
   
  Jenom komunikace s objekty COM podporuje zařazování pro typy objektů. Výchozí chování je zařadit objektů variant modelu COM. Tato pravidla se vztahují pouze na typ **objekt** a se nedá použít u objektů se silným typem, které jsou odvozeny z **objekt** třídy.  
   
- Toto téma obsahuje následující doplňkové informace o zařazování typy objektů:  
-  
--   [Zařazování možnosti](#cpcondefaultmarshalingforobjectsanchor7)  
-  
--   [Zařazování objektu rozhraní](#cpcondefaultmarshalingforobjectsanchor2)  
-  
--   [Zařazování objektu Variant](#cpcondefaultmarshalingforobjectsanchor3)  
-  
--   [Zařazování typu Variant pro objekt](#cpcondefaultmarshalingforobjectsanchor4)  
-  
--   [Zařazování varianty ByRef](#cpcondefaultmarshalingforobjectsanchor6)  
-  
-<a name="cpcondefaultmarshalingforobjectsanchor7"></a>   
 ## <a name="marshaling-options"></a>Zařazování možnosti  
  V následující tabulce jsou uvedeny možnosti zařazování pro **objekt** datového typu. <xref:System.Runtime.InteropServices.MarshalAsAttribute> Atribut nabízí několik <xref:System.Runtime.InteropServices.UnmanagedType> na objekty zařazování hodnot výčtu.  
   
@@ -127,11 +114,9 @@ struct ObjectHolder {
 }  
 ```  
   
-<a name="cpcondefaultmarshalingforobjectsanchor2"></a>   
 ## <a name="marshaling-object-to-interface"></a>Zařazování objektu rozhraní  
  Pokud objekt je vystavit rozhraní COM jako rozhraní, toto rozhraní je rozhraní pro spravovaný typ <xref:System.Object> ( **d_ostupné** rozhraní). Toto rozhraní je zadán jako **IDispatch** (<xref:System.Runtime.InteropServices.UnmanagedType>) nebo **IUnknown** (**UnmanagedType.IUnknown**) v výslednou knihovnu typů. Klienti modelu COM může vyvolat dynamicky členy spravovanou třídu nebo všechny členy implementovány z příslušných odvozených tříd prostřednictvím **d_ostupné** rozhraní. Klient může také volat **QueryInterface** získat žádné jiné rozhraní explicitně implementovaných spravovaného typu.  
   
-<a name="cpcondefaultmarshalingforobjectsanchor3"></a>   
 ## <a name="marshaling-object-to-variant"></a>Zařazování objektu Variant  
  Při objektu je zařazení na hodnotu typu variant, interní variantního typu se určuje v době běhu na základě následujících pravidel:  
   
@@ -255,7 +240,6 @@ mo.SetVariant(new CurrencyWrapper(new Decimal(5.25)));
   
  Hodnota variant modelu COM je určena voláním **IConvertible.To** *typ* rozhraní, ve kterém **k** *typ* je převod rutiny, která odpovídá typu, který byl vrácen z **IConvertible.GetTypeCode**. Například objekt, který vrátí **TypeCode.Double** z **IConvertible.GetTypeCode** zařazena jako hodnotu typu variant modelu COM typu **VT_R8**. Můžete získat hodnotu objektu variant (uložené v **dblVal** pole z variant modelu COM) pomocí přetypování na **IConvertible** rozhraní a volání <xref:System.IConvertible.ToDouble%2A> metoda.  
   
-<a name="cpcondefaultmarshalingforobjectsanchor4"></a>   
 ## <a name="marshaling-variant-to-object"></a>Zařazování typu Variant pro objekt  
  Při zařazování typu variant pro objekt, typ a někdy hodnota zařazené varianty Určuje typ objektu vytvořený. V následující tabulce jsou uvedeny každý typ variant a odpovídající typ objektu, který vytváří zařazování při hodnotu typu variant je předán z modelu COM pro rozhraní .NET Framework.  
   
@@ -289,18 +273,17 @@ mo.SetVariant(new CurrencyWrapper(new Decimal(5.25)));
   
  Variantních typů předávaného z modelu COM pro spravovaný kód a pak zpátky do modelu COM nemusí uchovávat stejný typ variant po dobu trvání volání. Zvažte, co se stane, když variant typu **VT_DISPATCH** je předán z modelu COM pro rozhraní .NET Framework. Při zařazování, varianty převést na <xref:System.Object?displayProperty=nameWithType>. Pokud **objekt** je pak předán zpět do modelu COM, je zařazené zpět na hodnotu typu variant typu **VT_UNKNOWN**. Není zaručeno, že typ variant vytvořen, pokud objekt je zařazení ze spravovaného kódu na COM bude stejného typu jako typ variant původně použitý k vytvoření objektu.  
   
-<a name="cpcondefaultmarshalingforobjectsanchor6"></a>   
 ## <a name="marshaling-byref-variants"></a>Zařazování varianty ByRef  
- I když varianty sami mohou být předány podle hodnoty nebo podle odkazu, **VT_BYREF** příznak můžete také použít s žádným typem variant k označení, že se obsah objektu variant předávají odkazem místo podle hodnoty. Rozdíl mezi zařazování varianty podle odkazu a zařazování variantpro s **VT_BYREF** nastaven příznak může být matoucí. Na následujícím obrázku vysvětluje rozdíly.  
+ I když varianty sami mohou být předány podle hodnoty nebo podle odkazu, **VT_BYREF** příznak můžete také použít s žádným typem variant k označení, že se obsah objektu variant předávají odkazem místo podle hodnoty. Rozdíl mezi zařazování varianty podle odkazu a zařazování variantpro s **VT_BYREF** nastaven příznak může být matoucí. Na následujícím obrázku vysvětluje rozdíly:  
   
- ![Typ Variant předány do zásobníku](./media/interopvariant.gif "interopvariant")  
+ ![Diagram zobrazující průběh variant předány do zásobníku.](./media/default-marshaling-for-objects/interop-variant-passed-value-reference.gif)  
 Varianty předán podle hodnoty a podle reference  
   
  **Výchozí chování zařazování objektů a proměnných typu Variant podle hodnoty**  
   
--   Při předávání objektů modelu COM ze spravovaného kódu, obsah objektu se zkopíruje do novou variantu vytvořili zařazováním použitím z pravidel definovaných v [zařazování objektu Variant](#cpcondefaultmarshalingforobjectsanchor3). Změny provedené v variant v nespravované oblasti nejsou šířeny zpět do původního objektu při návratu z volání.  
+-   Při předávání objektů modelu COM ze spravovaného kódu, obsah objektu se zkopíruje do novou variantu vytvořili zařazováním použitím z pravidel definovaných v [zařazování objektu Variant](#marshaling-object-to-variant). Změny provedené v variant v nespravované oblasti nejsou šířeny zpět do původního objektu při návratu z volání.  
   
--   Při předání proměnných typu Variant z modelu COM pro spravovaný kód, obsah objektu variant zkopírují do nově vytvořeného objektu pomocí pravidel definovaných v [zařazování typu Variant pro objekt](#cpcondefaultmarshalingforobjectsanchor4). Změny provedené v objektu na spravované straně nejsou šířeny zpět do původní typ variant při návratu z volání.  
+-   Při předání proměnných typu Variant z modelu COM pro spravovaný kód, obsah objektu variant zkopírují do nově vytvořeného objektu pomocí pravidel definovaných v [zařazování typu Variant pro objekt](#marshaling-variant-to-object). Změny provedené v objektu na spravované straně nejsou šířeny zpět do původní typ variant při návratu z volání.  
   
  **Výchozí chování zařazování objektů a proměnných typu Variant odkazem.**  
   

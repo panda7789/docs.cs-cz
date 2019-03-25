@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - data contracts [WCF], naming
 ms.assetid: 31f87e6c-247b-48f5-8e94-b9e1e33d8d09
-ms.openlocfilehash: cd878452f3ec99627507334a26873a004e5b5314
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 16a42a2808104a77e56e93564a679dfc578e73f6
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47196691"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58408870"
 ---
 # <a name="data-contract-names"></a>Názvy kontraktu dat
 
@@ -64,7 +64,7 @@ V tomto příkladu typ `Drawing<Square,RegularRedBrush>` má název kontraktu da
 
 ## <a name="customizing-data-contract-names-for-generic-types"></a>Přizpůsobení názvů kontraktu dat pro obecné typy
 
-V některých případech jsou názvy datových kontraktů vygenerované pro obecné typy, jak je popsáno výše, nepřijatelné. Například můžete vědět předem do kolize názvů se nespustí a může být vhodné odebrat-the-hash. V takovém případě můžete použít <xref:System.Runtime.Serialization.DataContractAttribute.Name%2A> vlastnost `DataContractAttribute` atribut k určení způsobu, jak generovat názvy. Můžete použít číslice ve složených závorkách uvnitř `Name` vlastnost odkazovat na data názvy kontraktů obecné parametry. (0 označuje první parametr, 1 odkazuje na druhé atd.) Znak čísla (#) uvnitř složených závorek můžete použít k odkazování na-the-hash. Můžete použít každý z těchto odkazů vícekrát nebo vůbec.
+V některých případech jsou názvy datových kontraktů vygenerované pro obecné typy, jak je popsáno výše, nepřijatelné. Například můžete vědět předem do kolize názvů se nespustí a může být vhodné odebrat-the-hash. V takovém případě můžete použít <xref:System.Runtime.Serialization.DataContractAttribute.Name%2A?displayProperty=nameWithType> vlastnosti k určení způsobu, jak generovat názvy. Můžete použít číslice ve složených závorkách uvnitř `Name` vlastnost odkazovat na data názvy kontraktů obecné parametry. (0 označuje první parametr, 1 odkazuje na druhé atd.) Znak čísla (#) uvnitř složených závorek můžete použít k odkazování na-the-hash. Můžete použít každý z těchto odkazů vícekrát nebo vůbec.
 
 Například předchozí obecný `Drawing` typ může být deklarovány jak je znázorněno v následujícím příkladu.
 

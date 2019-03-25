@@ -2,19 +2,19 @@
 title: Výběr aktivity
 ms.date: 03/30/2017
 ms.assetid: b3e49b7f-0285-4720-8c09-11ae18f0d53e
-ms.openlocfilehash: 7626dda3689f89831d98ad484d7eab62c25def5b
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: b9ee6c06377760d27bc54d39c1d1f3ecf67ea0d8
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57717944"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58409988"
 ---
 # <a name="pick-activity"></a>Výběr aktivity
 <xref:System.Activities.Statements.Pick> Aktivity zjednodušuje modelování sadu triggerů událostí a jejich odpovídající obslužné rutiny.  A <xref:System.Activities.Statements.Pick> aktivita obsahuje kolekci <xref:System.Activities.Statements.PickBranch> aktivity, ve kterém každý <xref:System.Activities.Statements.PickBranch> je párování mezi <xref:System.Activities.Statements.PickBranch.Trigger%2A> aktivity a <xref:System.Activities.Statements.PickBranch.Action%2A> aktivity.  V době spuštění aktivační události pro všechny větve spouští paralelně.  Po dokončení jednu aktivační událost, pak je její odpovídající akci provést, a další triggery se zruší.  Chování [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] <xref:System.Activities.Statements.Pick> aktivity se podobá [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] <xref:System.Workflow.Activities.ListenActivity> aktivity.  
   
  Na následujícím snímku obrazovky z [pomocí aktivity vyberte](./samples/using-the-pick-activity.md) SDK – ukázka ukazuje aktivitě Pick se dvě větve.  Jedna větev obsahuje trigger s názvem **čtení vstup**, vlastní aktivitu, která načte vstup z příkazového řádku. Druhý větev <xref:System.Activities.Statements.Delay> aktivační událost pro aktivitu. Pokud **čtení vstup** aktivita přijímá data před <xref:System.Activities.Statements.Delay> dokončení aktivity <xref:System.Activities.Statements.Delay> zruší zpoždění a pozdrav se zapíše do konzoly.  Jinak, pokud **čtení vstup** aktivity nedostane data v přiděleném čase, pak se zruší a časový limit zprávy, se zapíšou do konzoly.  To se běžně používá k přidání vypršení časového limitu na každou akci.  
   
- ![Výběr aktivity](./media/pickconceptual.JPG "PickConceptual")  
+ ![Výběr aktivity](./media/pick-activity/pick-activity-two-branches.jpg)  
   
 ## <a name="best-practices"></a>Osvědčené postupy  
  Při použití výběru, je větev, která spustí větev, jejíž aktivační událost dokončení první.  Koncepčně paralelně spustit všechny aktivační události a jedna aktivační událost může mít provedeny většinou svou logikou předtím, než ji zruší dokončení další trigger.  Myslete na to obecných pokynů při použití aktivity Pick se bude považovat aktivační událost jako jedna událost a vložit jako malé logikou, jako je to možné do něj.  V ideálním případě aktivační událost může obsahovat jenom dostatek logiku pro přijetí události a veškeré zpracování této události by měly patřit do akce větve.  Tato metoda minimalizuje množství překrytí spuštění aktivační události.  Představte si třeba <xref:System.Activities.Statements.Pick> s dvěma aktivačními procedurami, kde každá aktivační událost obsahuje <xref:System.ServiceModel.Activities.Receive> aktivity za nímž následuje další logiku.  Pokud nečinnosti bodu zavádí další logiku, pak je možné obou <xref:System.ServiceModel.Activities.Receive> úspěšném dokončení aktivity.  Jedna aktivační událost se plně kompletní při jiné se částečně dokončeno.  V některých případech nepřijatelné přijímat zprávy a potom částečně dokončí zpracování.  Proto při použití předdefinovaných zasílání zpráv aktivity WF, jako <xref:System.ServiceModel.Activities.Receive> a <xref:System.ServiceModel.Activities.SendReply>, zatímco <xref:System.ServiceModel.Activities.Receive> se běžně používá v triggeru, <xref:System.ServiceModel.Activities.SendReply> a další logiky měly být umístěny v akci, kdykoli je to možné.  

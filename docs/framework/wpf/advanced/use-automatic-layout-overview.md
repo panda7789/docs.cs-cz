@@ -5,12 +5,12 @@ helpviewer_keywords:
 - layout [WPF], automatic
 - automatic layout [WPF]
 ms.assetid: 6fed9264-18bb-4d05-8867-1fe356c6f687
-ms.openlocfilehash: af564c4ca865c47c7efdda6ed86732581f677218
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 74c4e10e8f28fb00a5528c1ab860b88d0caa4303
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57353592"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58408753"
 ---
 # <a name="use-automatic-layout-overview"></a>Přehled automatického rozložení
 Toto téma popisuje pokyny pro vývojáře na tom, jak psát [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikací s lokalizovatelné [!INCLUDE[TLA#tla_ui#plural](../../../../includes/tlasharptla-uisharpplural-md.md)]. Lokalizace uživatelského rozhraní v minulosti bylo časově náročný proces. Každý jazyk, který byl přizpůsobit uživatelské rozhraní pro požadované úpravy podle pixelů. Dnes s správný návrh a pravá standardy kódování, [!INCLUDE[TLA2#tla_ui#plural](../../../../includes/tla2sharptla-uisharpplural-md.md)] lze sestavit tak, aby Lokalizátoři menší změny velikosti a přemístění provést. Přístup k vytváření aplikací, které se dají snadno změněnou velikostí a přemístěných nazývá Automatické rozložení a lze dosáhnout pomocí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] návrhu aplikace.  
@@ -39,10 +39,9 @@ Toto téma popisuje pokyny pro vývojáře na tom, jak psát [!INCLUDE[TLA#tla_w
   
  [!code-xaml[LocalizationBtn#1](~/samples/snippets/csharp/VS_Snippets_Wpf/LocalizationBtn/CS/Pane1.xaml#1)]  
   
- Následující obrázek ukazuje výstup z ukázek kódu.  
+ Následující obrázek ukazuje výstup z ukázek kódu:  
   
- ![Stejné tlačítko s textem v různých jazycích](./media/globalizationbutton.png "GlobalizationButton")  
-Tlačítko automaticky umožňující změnu velikosti  
+ ![Stejné tlačítko s textem v různých jazycích](./media/use-automatic-layout-overview/auto-resizable-button.png)  
   
 <a name="autolayout_coding"></a>   
 ## <a name="automatic-layout-and-coding-standards"></a>Automatické rozložení a standardy kódování  

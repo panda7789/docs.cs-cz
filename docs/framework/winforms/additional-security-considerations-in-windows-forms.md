@@ -7,17 +7,17 @@ helpviewer_keywords:
 - security [Windows Forms], calling APIs
 - Clipboard [Windows Forms], securing access
 ms.assetid: 15abda8b-0527-47c7-aedb-77ab595f2bf1
-ms.openlocfilehash: 276def9db2ff610a22b42a88ad658727793b53de
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 6ab7b4d8fe8366a214d70cd73e7e33cafcc584f8
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57718906"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58409390"
 ---
 # <a name="additional-security-considerations-in-windows-forms"></a>Dodatečné informace o zabezpečení ve Windows Forms
-[!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] nastavení zabezpečení může způsobit, že aplikace na spouštění v prostředí částečným vztahem důvěryhodnosti než jinak než v místním počítači. [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] Omezuje přístup k takové kritické místním prostředkům jako systém souborů, síťové a nespravované rozhraní API, mimo jiné. Nastavení zabezpečení ovlivňuje možnost volat rozhraní API systému Win32 Microsoftu nebo jiných rozhraní API, který nelze ověřit pomocí zabezpečení systému. Zabezpečení má vliv také na dalších aspektů vaší aplikace, včetně přístupu k souborům a dat a tisku. Další informace o přístupu k souborům a data v částečně důvěryhodném prostředí, najdete v části [další soubor zabezpečení a přístup k datům ve Windows Forms](more-secure-file-and-data-access-in-windows-forms.md). Další informace o tisku v prostředí částečné důvěryhodnosti, naleznete v tématu [další zabezpečení tisku ve Windows Forms](more-secure-printing-in-windows-forms.md).  
+[!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] nastavení zabezpečení může způsobit, že aplikace na spouštění v prostředí částečným vztahem důvěryhodnosti než jinak než v místním počítači. [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] Omezuje přístup k takové kritické místním prostředkům jako systém souborů, síťové a nespravované rozhraní API, mimo jiné. Nastavení zabezpečení ovlivňuje možnost volat rozhraní API Microsoft Windows nebo jiná rozhraní API, který nelze ověřit pomocí zabezpečení systému. Zabezpečení má vliv také na dalších aspektů vaší aplikace, včetně přístupu k souborům a dat a tisku. Další informace o přístupu k souborům a data v částečně důvěryhodném prostředí, najdete v části [další soubor zabezpečení a přístup k datům ve Windows Forms](more-secure-file-and-data-access-in-windows-forms.md). Další informace o tisku v prostředí částečné důvěryhodnosti, naleznete v tématu [další zabezpečení tisku ve Windows Forms](more-secure-printing-in-windows-forms.md).  
   
- Následující části popisují, jak pracovat s schránky, provádět manipulace s okna a volání rozhraní API Win32 z aplikací, které jsou spuštěny v prostředí s částečnou důvěryhodností.  
+ Následující části popisují, jak pracovat s schránky, provádět manipulace s okna a volání rozhraní Windows API z aplikace, které jsou spuštěny v prostředí s částečnou důvěryhodností.  
   
 ## <a name="clipboard-access"></a>Přístup schránky  
  <xref:System.Security.Permissions.UIPermission> Třída určuje přístup do schránky a přidružené <xref:System.Security.Permissions.UIPermissionClipboard> hodnota výčtu určuje úroveň přístupu. V následující tabulce jsou uvedeny úrovně oprávnění je to možné.  
@@ -69,8 +69,8 @@ ms.locfileid: "57718906"
   
  Chcete-li toto riziko omezit, použijte ovládací prvky třetích stran pouze od dodavatelů, kterému můžete důvěřovat. Pokud používáte ovládací prvky třetích stran, které jste si stáhli z neověřitelný zdroje, doporučujeme, abyste si zdrojový kód pro potenciální zneužití. Po ověření, že je zdroj bez zlých, byste měli kompilovat sestavení sobě a zajistěte, aby odpovídal zdroj sestavení.  
   
-## <a name="win32-api-calls"></a>Volání rozhraní API Win32  
- Pokud váš návrh aplikace vyžaduje volání funkce z rozhraní API systému Win32, je přístup k nespravovanému kódu. Akce kódu do okna nebo operační systém v tomto případě nelze určit, když pracujete s volání rozhraní API Win32 nebo hodnoty. <xref:System.Security.Permissions.SecurityPermission> Třídy a <xref:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode> hodnotu <xref:System.Security.Permissions.SecurityPermissionFlag> výčet řízení přístupu na nespravovaný kód. Aplikace můžete přístup k nespravovanému kódu, jenom když jsou udělena <xref:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode> oprávnění. Ve výchozím nastavení můžete pouze aplikace, které jsou spuštěné místně volání nespravovaného kódu.  
+## <a name="windows-api-calls"></a>Volání rozhraní API Windows  
+ Pokud váš návrh aplikace vyžaduje volání funkce z rozhraní Windows API, se přístup k nespravovanému kódu. Akce kódu do okna nebo operační systém v tomto případě nelze určit, když pracujete s volání Windows API nebo hodnoty. <xref:System.Security.Permissions.SecurityPermission> Třídy a <xref:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode> hodnotu <xref:System.Security.Permissions.SecurityPermissionFlag> výčet řízení přístupu na nespravovaný kód. Aplikace můžete přístup k nespravovanému kódu, jenom když jsou udělena <xref:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode> oprávnění. Ve výchozím nastavení můžete pouze aplikace, které jsou spuštěné místně volání nespravovaného kódu.  
   
  Někteří členové Windows Forms poskytují nespravovaný přístup, který vyžaduje <xref:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode> oprávnění. Následující tabulka uvádí členy <xref:System.Windows.Forms> obor názvů, které vyžadují oprávnění. Další informace o oprávněních, které jsou požadovány pro člena najdete v dokumentaci knihovny tříd rozhraní .NET Framework.  
   
@@ -84,7 +84,7 @@ ms.locfileid: "57718906"
 |<xref:System.Windows.Forms.Screen>|-   <xref:System.Windows.Forms.Screen.FromHandle%2A> – Metoda|  
 |<xref:System.Windows.Forms.SendKeys>|-   <xref:System.Windows.Forms.SendKeys.Send%2A> – Metoda<br />-   <xref:System.Windows.Forms.SendKeys.SendWait%2A> – Metoda|  
   
- Pokud aplikace nemá oprávnění volat nespravovaný kód, vaše aplikace musí požádat o <xref:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode> oprávnění, nebo musíte zvážit alternativní způsoby implementace funkce; v mnoha případech Windows Forms poskytuje spravované alternativy k rozhraní API systému Win32 funkce. Pokud žádná alternativa znamená, že existují a aplikace musí přístup k nespravovanému kódu, budete muset zvýšení oprávnění pro aplikaci.  
+ Pokud aplikace nemá oprávnění volat nespravovaný kód, vaše aplikace musí požádat o <xref:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode> oprávnění, nebo musíte zvážit alternativní způsoby implementace funkce; v mnoha případech Windows Forms poskytuje spravované alternativy k Windows Funkce rozhraní API. Pokud žádná alternativa znamená, že existují a aplikace musí přístup k nespravovanému kódu, budete muset zvýšení oprávnění pro aplikaci.  
   
  Oprávnění pro volání nespravovaného kódu umožňuje aplikaci provést nejvíce cokoli. Proto by měl oprávnění pro volání nespravovaného kódu udělena pouze pro aplikace, které pocházejí z důvěryhodného zdroje. V závislosti na aplikaci, může také část funkčnost aplikace, která provádí volání nespravovaného kódu být, volitelné, nebo není povolen v úplném vztahu důvěryhodnosti pouze prostředí. Další informace o nebezpečná oprávnění najdete v tématu [Správa nebezpečných oprávnění a zásad](../misc/dangerous-permissions-and-policy-administration.md). Další informace o zvyšování oprávnění najdete v tématu [obecné Správa zásad zabezpečení](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ed5htz45(v=vs.100)).  
   

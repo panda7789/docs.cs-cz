@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: a15ae411-8dc2-4ca3-84d2-01c9d5f1972a
-ms.openlocfilehash: 12d7dd8d47262f8eefe8f71f144c5648f089be45
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 56ebe888b816972f8d72873e4fca9f5204e6c772
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54593573"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58408922"
 ---
 # <a name="serialization"></a>Serializace
 Toto téma popisuje [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] možnosti serializace. Odstavců, které následují poskytují informace o tom, jak přidat serializace při generování kódu v době návrhu a chování za běhu serializace [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] třídy.  
@@ -50,7 +50,7 @@ Toto téma popisuje [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-
  [!code-csharp[DLinqSerialization#3](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqSerialization/cs/northwind-ser.cs#3)]
  [!code-vb[DLinqSerialization#3](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqSerialization/vb/northwind-ser.vb#3)]  
   
- Pro `Order` třídy v následujícím příkladu, pouze vlastnost reverzní přidružení odpovídající `Customer` je například pro zkrácení. Nemá `DataMember` atribut, aby se zabránilo cyklus.  
+ Pro `Order` třídy v následujícím příkladu, pouze vlastnost reverzní přidružení odpovídající `Customer` je například pro zkrácení. Nemá <xref:System.Runtime.Serialization.DataMemberAttribute> atribut, aby se zabránilo cyklus.  
   
  [!code-csharp[DLinqSerialization#4](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqSerialization/cs/northwind-ser.cs#4)]
  [!code-vb[DLinqSerialization#4](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqSerialization/vb/northwind-ser.vb#4)]  
@@ -65,7 +65,7 @@ Toto téma popisuje [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-
  [!code-vb[DLinqSerialization#6](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqSerialization/vb/Module1.vb#6)]  
   
 ### <a name="self-recursive-relationships"></a>Self rekurzivní relace  
- Self rekurzivní relace postupují stejným způsobem. Vlastnost přidružení cizího klíče odpovídající nemá `DataMember` atribut, že nadřazená vlastnost nepodporuje.  
+ Self rekurzivní relace postupují stejným způsobem. Vlastnost přidružení cizího klíče odpovídající nemá <xref:System.Runtime.Serialization.DataMemberAttribute> atribut, že nadřazená vlastnost nepodporuje.  
   
  Vezměte v úvahu následující třídy, která obsahuje dvě self rekurzivní relace: Employee.Manager/Reports a Employee.Mentor/Mentees.  
   

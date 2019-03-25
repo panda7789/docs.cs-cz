@@ -4,12 +4,12 @@ description: Tento dokument obsahuje kroky a pracovní postup k vytvoření ře�
 author: bleroy
 ms.date: 03/23/2017
 ms.custom: seodec18
-ms.openlocfilehash: 8deaab67f7a824f6eb079f49b7fd75e0c02f1025
-ms.sourcegitcommit: 5d9f4b805787f890ca6e0dc7ea30a43018bc9cbb
+ms.openlocfilehash: e5ac6fa04a2a5001146936de56acafeec7dd895d
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57788450"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58409494"
 ---
 # <a name="get-started-with-net-core-on-macos"></a>Začínáme s .NET Core v macOS
 
@@ -215,7 +215,7 @@ Nastavit zarážku na `WriteLine` příkaz v `Main` metody. To udělat buď stis
 
 Výběrem ikony ladění na panelu nástrojů Visual Studio Code otevřete kartu ladicí program výběrem **zobrazení > ladění** z řádku nabídek nebo pomocí klávesové zkratky <kbd>CTRL</kbd> + <kbd> SHIFT</kbd>+<kbd>D</kbd>:
 
-![Ladicí program sady Visual Studio Code](./media/using-on-macos/vscodedebugger.png)
+![Ladicí program sady Visual Studio Code](./media/using-on-macos/visual-studio-code-debugger.png)
 
 Kliknutím na tlačítko Přehrát a spusťte tak aplikaci v ladicím programu. Aplikace zahájí vykonávání a běží na zarážku, kde se zastaví. Krokovat s vnořením `Get` metoda a ujistěte se, že jste předali v správné argumenty. Potvrďte, že odpověď je 42.
 

@@ -2,12 +2,12 @@
 title: Připojte se k operací (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 39ab4854-ac84-4738-9d0b-3cb79be84db4
-ms.openlocfilehash: 6113949986aafdcaa2afa55d0a56d8e2186811b7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c7bd81f729558c8ec41baacda99765eb2f862b29
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54527858"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58411145"
 ---
 # <a name="join-operations-visual-basic"></a>Připojte se k operací (Visual Basic)
 A *spojení* dva zdroje dat je přidružení objektů v jednom zdroji dat s objekty, které sdílejí společný atribut v jiném zdroji dat.  
@@ -18,7 +18,7 @@ A *spojení* dva zdroje dat je přidružení objektů v jednom zdroji dat s obje
   
  Na následujícím obrázku ukazují konceptuální zobrazení dvou sad a elementů v rámci těchto sad, které jsou součástí vnitřní spojení a levé vnější spojení.  
   
- ![Dvě překrývající se kruhy zobrazující vnitřní&#47;vnější. ](../../../../csharp/programming-guide/concepts/linq/media/joincircles.png "JoinCircles")  
+ ![Dvě překrývající se kruhy zobrazující vnitřní&#47;vnější.](./media/join-operations/join-method-overlapping-circles.png)  
   
 ## <a name="methods"></a>Metody  
   

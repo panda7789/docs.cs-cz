@@ -5,12 +5,12 @@ helpviewer_keywords:
 - globalization [WPF], about globalization
 - localization [WPF], about localization
 ms.assetid: 56e5a5c8-6c96-4d19-b8e1-a5be1dc564af
-ms.openlocfilehash: 55a60a74c246e0eefb854bed3d22cfb97eff15b1
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: 279fe008c8624ff2209f5e08c3c9f9713ad201cd
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57492664"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58412029"
 ---
 # <a name="wpf-globalization-and-localization-overview"></a>Přehled globalizace a lokalizace WPF
 
@@ -144,9 +144,9 @@ Proces lokalizace začne za nelokalizované `MyDialog.resources.dll` sestavení 
   
  Všimněte si, že v příkladu používá funkci sdílí velikosti <xref:System.Windows.Controls.Grid>. Poslední tři sloupce využít to tak, že sami ve stejném <xref:System.Windows.Controls.DefinitionBase.SharedSizeGroup%2A>. Jako jeden byste očekávali od názvu vlastnosti, díky tomu sloupce, které chcete sdílet stejnou velikost. Proto při "Procházet..." získá lokalizovaný řetězec delší "Durchsuchen...", všechna tlačítka Zvětšit šířku nemuseli malé tlačítko "OK" a nepřiměřeně velké tlačítko "Durchsuchen...".  
   
- **Xml:lang**
+ **xml:lang**
   
- `Xml:lang="en-US"`  
+ `xml:lang="en-US"`  
   
  Všimněte si, že [XML: lang v XAML](../../xaml-services/xml-lang-handling-in-xaml.md) objektu umístěn na kořenový element [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]. Tato vlastnost popisuje jazyková verze daného elementu a jeho podřízené položky. Tato hodnota se používá několik funkcí v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a by měla být změněna odpovídajícím způsobem při lokalizaci. Tato hodnota se změní, jaké slovník je použít k dělení slov a slova kontrolu pravopisu. Ovlivní také zobrazení číslic a jak záložní systém písmo vybere písmo použít. A konečně vlastnost ovlivňuje, čísla způsob, jak se zobrazují a způsob, jak textu napsaného ve složitých skriptech jsou ve tvaru. Výchozí hodnota je "en US".  
   

@@ -44,8 +44,7 @@ Hodnotu každé možnosti lze nastavit na 0 nebo 1 a chybějící možnost bude 
 
 Od verze rozhraní .NET Framework verze 2.0, kompilátor JIT vždy generovat informace o sledování bez ohledu na hodnotu pro `GenerateTrackingInfo`, nicméně `AllowOptimize` hodnota stále má vliv. Při použití [Ngen.exe (Generátor nativních obrázků)](../../../docs/framework/tools/ngen-exe-native-image-generator.md) předkompilování nativní bitové kopie bez optimalizace, musí být k dispozici v cílové složce s souboru INI `AllowOptimize=0` při Ngen.exe spustí. Pokud máte předkompilovaných sestavení bez optimalizace, je nutné odebrat předkompilovaný kód pomocí NGen.exe **/ uninstall** možnost před opětovným spuštěním Ngen.exe předkompilování kódu jako optimalizovaného. Pokud není k dispozici ve složce soubor .ini, Ngen.exe předkompilování kódu jako optimalizovaného.
 
-
-  <xref:System.Diagnostics.DebuggableAttribute?displayProperty=nameWithType> určuje nastavení sestavení. **DebuggableAttribute** obsahuje dvě pole určující, zda kompilátor JIT by měl optimalizaci a/nebo generovat informace o sledování. Od verze rozhraní .NET Framework verze 2.0, kompilátor JIT vždy generovat informace o sledování.
+<xref:System.Diagnostics.DebuggableAttribute?displayProperty=nameWithType> určuje nastavení sestavení. **DebuggableAttribute** obsahuje dvě pole určující, zda kompilátor JIT by měl optimalizaci a/nebo generovat informace o sledování. Od verze rozhraní .NET Framework verze 2.0, kompilátor JIT vždy generovat informace o sledování.
 
 Pro sestavení prodejní verze, kompilátory nemají nastavený žádný **DebuggableAttribute**. Ve výchozím nastavení vygeneruje kompilátor JIT nejvyšší výkon s nejtěžší možností ladění strojového kódu. Povolením JIT sledování se snižuje výkon a vypnutím optimalizace se výkon razantně snižuje.
 
