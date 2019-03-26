@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: eca7606e-ebfb-4f47-b8d9-289903fdc045
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 771d1e56d323ee4b450f25773569f7a0b7b038e6
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
+ms.openlocfilehash: 50bfcf5c27236ca704a24f49128becfbee716c21
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58411158"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58463082"
 ---
 # <a name="consuming-unmanaged-dll-functions"></a>Používání nespravovaných funkcí DLL
 Vyvolání platformy je služba, umožňuje spravovaným kódu volat nespravované funkce implementované v dynamické knihovny (DLL), jako jsou ty v rozhraní Windows API. Vyhledá a volá exportované funkce a zařadí argumenty (celá čísla, řetězce, pole, struktury a tak dále) napříč hranicemi podle potřeby.  
@@ -54,8 +54,7 @@ Vyvolání platformy je služba, umožňuje spravovaným kódu volat nespravovan
 ## <a name="a-closer-look-at-platform-invoke"></a>Bližší pohled na vyvolání platformy  
  Vyvolání platformy spoléhá na metadata k vyhledání exportovaných funkcí a jejich argumenty zařazování v době běhu. Tento proces je znázorněn na následujícím obrázku.  
   
- ![Vyvolání platformy](../../../docs/framework/interop/media/pinvoke.gif "pinvoke")  
-Vyvolání platformy volání nespravovaných funkcí DLL  
+ ![Diagram zobrazující platformu vyvolání volání.](./media/consuming-unmanaged-dll-functions/platform-invoke-call.gif)  
   
  Při vyvolání platformy volá nespravovaná funkce provádí následující posloupnost akcí:  
   

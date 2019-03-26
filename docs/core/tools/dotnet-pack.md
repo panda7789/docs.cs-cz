@@ -2,18 +2,18 @@
 title: příkaz DotNet pack
 description: Příkaz dotnet pack vytvoří balíčky NuGet pro projekt .NET Core.
 ms.date: 12/04/2018
-ms.openlocfilehash: 43ee31c7cd070cf0e73975c1444ef13496afae91
-ms.sourcegitcommit: 5c1abeec15fbddcc7dbaa729fabc1f1f29f12045
+ms.openlocfilehash: 4b665140f7c660c5851fb68b07ecec2d9391b925
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58020930"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58464473"
 ---
 # <a name="dotnet-pack"></a>balíčku DotNet
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
-## <a name="name"></a>Název
+## <a name="name"></a>Name
 
 `dotnet pack` -Sbalit kód do balíčku NuGet.
 
@@ -77,7 +77,7 @@ Můžete zadat vlastnosti nástroje MSBuild k `dotnet pack` příkaz pro proces 
 
 * **`--no-build`**
 
-  Nelze sestavit projekt před balení. Také implicitní nastaví `--no-restore` příznak.
+  Nelze sestavit projekt před balení. Také implicitně nastaví `--no-restore` příznak.
 
 * **`--no-dependencies`**
 

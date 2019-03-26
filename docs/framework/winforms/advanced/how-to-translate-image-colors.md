@@ -9,12 +9,12 @@ helpviewer_keywords:
 - images [Windows Forms], changing colors
 - image colors [Windows Forms]
 ms.assetid: 2106fb9a-4d60-4dcf-9220-9f189a6c4d19
-ms.openlocfilehash: 81aecddb28903649ff2d59e80fc90368df5e2db4
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 8b2e28cab2d2d04f7c99880f2b35a02ebe80dcd8
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57703020"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58464460"
 ---
 # <a name="how-to-translate-image-colors"></a>Postupy: Translate Image Colors
 Překlad přidá hodnotu na jeden nebo více součástí čtyři barvy. Matice položek barev, které představují překlady jsou uvedeny v následující tabulce.  
@@ -29,9 +29,9 @@ Překlad přidá hodnotu na jeden nebo více součástí čtyři barvy. Matice p
 ## <a name="example"></a>Příklad  
  Následující příklad vytvoří <xref:System.Drawing.Image> objekt ze souboru ColorBars.bmp. Potom kód přidá 0,75 červené každý pixel na obrázku. Původní bitové kopie nakreslen spolu s transformovaný bitové kopie.  
   
- Následující obrázek znázorňuje původní obrázek na levé straně a transformovaná image na pravé straně.  
+ Následující obrázek znázorňuje původní obrázek na levé straně a transformovaná image na pravé straně:  
   
- ![Translate Colors](./media/colortrans2.png "colortrans2")  
+ ![Snímek obrazovky s původní a transformovaná image.](./media/how-to-translate-image-colors/original-image-translate-colors.png)  
   
  Následující tabulka uvádí vektory barvu pro čtyři pruhy před a po červenou překladu. Mějte na paměti, protože maximální hodnota složky barvy je 1, červené ve druhém řádku nezmění. (Podobně, minimální hodnota složky barvy je 0.)  
   

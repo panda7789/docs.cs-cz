@@ -2,12 +2,12 @@
 title: Iterovat kolekcí v jazyce C#
 ms.date: 08/14/2018
 ms.assetid: c93f6dd4-e72a-4a06-be1c-a98b3255b734
-ms.openlocfilehash: 386f4145c38e3a573ec04d2a0b8e260bcdc63491
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2b0e1d509cf80e13d2cee3cf0ddf2021d6c84c5b
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54720795"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58464317"
 ---
 # <a name="iterators-c"></a>Iterátory (C#)
 
@@ -324,7 +324,7 @@ public class Stack<T> : IEnumerable<T>
 
 Iterátor může dojít, jako metodu nebo `get` přistupujícího objektu. V události, konstruktor instance, statický konstruktor nebo statická finalizační metoda nemůže dojít k iterátoru.
 
-Musí existovat implicitní převod z typu výrazu v `yield return` příkaz na argument typu pro IEnumerable<T> vrácený iterátor.
+Musí existovat implicitní převod z typu výrazu v `yield return` příkaz na argument typu pro IEnumerable\<T > vrátí iterátor.
 
 V jazyce C#, nemůže obsahovat metodu iterátoru ani `in`, `ref`, nebo `out` parametry.
 

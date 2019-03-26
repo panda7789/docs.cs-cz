@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Použití toku dat ve formulářové aplikaci Windows'
+title: 'Návod: Použití toku dat ve formulářové aplikaci Windows'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -9,14 +9,14 @@ helpviewer_keywords:
 ms.assetid: 9c65cdf7-660c-409f-89ea-59d7ec8e127c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 49935c471d10e438763e41b07944047b0924af09
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: c6d27500332c59f24e121c9c15ac27a36ed93d07
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43864667"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58465799"
 ---
-# <a name="walkthrough-using-dataflow-in-a-windows-forms-application"></a>Postupy: Použití toku dat ve formulářové aplikaci Windows
+# <a name="walkthrough-using-dataflow-in-a-windows-forms-application"></a>Návod: Použití toku dat ve formulářové aplikaci Windows
 Tento dokument ukazuje, jak vytvořit síť bloků toku dat, které provádějí zpracování obrázků v aplikaci Windows Forms.  
   
  Tento příklad načte soubory obrázků ve složce zadané, vytvoří bitovou kopii složené a zobrazí výsledek. V příkladu používá model toku dat pro trasu Image přes síť. V toku dat modelu nezávislé komponenty aplikace mezi sebou komunikovat odesíláním zpráv. Když komponenta obdrží zprávu, provede určitou akci a jinou součást pak předá výsledek. Porovnejte s model řízení toku, ve které aplikace používá řídicí struktury, například, podmíněné příkazy, smyčky a tak dále, k řízení pořadí operací v programu.  
@@ -86,7 +86,7 @@ Tento dokument ukazuje, jak vytvořit síť bloků toku dat, které provádějí
   
  Následující tabulka popisuje členy v síti.  
   
-|Člen|Typ|Popis|  
+|Člen|Type|Popis|  
 |------------|----------|-----------------|  
 |`loadBitmaps`|<xref:System.Threading.Tasks.Dataflow.TransformBlock%602>|Přijímá jako vstup cestu ke složce a vytvoří kolekci <xref:System.Drawing.Bitmap> objekty jako výstup.|  
 |`createCompositeBitmap`|<xref:System.Threading.Tasks.Dataflow.TransformBlock%602>|Vezme kolekci <xref:System.Drawing.Bitmap> objekty jako vstup a vytvoří složené rastrového obrázku jako výstup.|  
@@ -95,13 +95,13 @@ Tento dokument ukazuje, jak vytvořit síť bloků toku dat, které provádějí
   
  Pro připojení bloků toku dat pro formulář k síti, v tomto příkladu <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601.LinkTo%2A> metody. <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601.LinkTo%2A> Metoda obsahuje přetížené verze, která přijímá <xref:System.Predicate%601> objekt, který určuje, zda cílový blok přijme nebo odmítne zprávy. Tento mechanismus filtrování umožňuje blokům zpráv přijímat jenom konkrétní hodnoty. V tomto příkladu můžete větvit sítě v jednom ze dvou způsobů. Hlavní větev načte obrázky z disku, vytvoří složené bitovou kopii a této bitové kopie se zobrazí ve formuláři. Alternativní větev zruší aktuální operaci. <xref:System.Predicate%601> Objekty povolit bloků toku dat podél hlavní větve, přepnout na větev alternativní odmítnutím některé zprávy. Například, pokud uživatel zruší operaci bloku toku dat `createCompositeBitmap` vytváří `null` (`Nothing` v jazyce Visual Basic) jako výstup. Blok toku dat `displayCompositeBitmap` odmítne `null` vstupní hodnoty a proto zprávy se nabízí na `operationCancelled`. Blok toku dat `operationCancelled` přijímá všechny zprávy a proto se zobrazí obrázek k označení, že operace je zrušená.  
   
- Následující ilustrace znázorňuje sítě pro zpracování obrazu.  
+ Následující ilustrace znázorňuje sítě pro zpracování obrazu:  
   
- ![Sítě pro zpracování obrazu](../../../docs/standard/parallel-programming/media/dataflowwinforms.png "DataflowWinForms")  
+ ![Ilustrace znázorňující sítě pro zpracování obrazu.](./media/walkthrough-using-dataflow-in-a-windows-forms-application/dataflow-winforms-image-processing.png)  
   
  Vzhledem k tomu, `displayCompositeBitmap` a `operationCancelled` toku dat bloky fungovat na uživatelské rozhraní, je důležité, že provedou tyto akce ve vlákně uživatelského rozhraní. Provedete to, že během konstrukce tyto objekty každý poskytují <xref:System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions> objekt, který má <xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.TaskScheduler%2A> vlastnost nastavena na <xref:System.Threading.Tasks.TaskScheduler.FromCurrentSynchronizationContext%2A?displayProperty=nameWithType>. <xref:System.Threading.Tasks.TaskScheduler.FromCurrentSynchronizationContext%2A?displayProperty=nameWithType> Metoda vytvoří <xref:System.Threading.Tasks.TaskScheduler> objekt, který provede práci na aktuálním kontextu synchronizace. Protože `CreateImageProcessingNetwork` metoda je volána z obslužné rutiny **vybrat složku** tlačítko, které běží v uživatelském rozhraní vlákna, akce `displayCompositeBitmap` a `operationCancelled` bloků toku dat spustit také na vlákna uživatelského rozhraní.  
   
- Tento příklad používá token zrušení sdílené místo nastavení <xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.CancellationToken%2A> vlastnost protože <xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.CancellationToken%2A> vlastnost trvale zruší tok dat zablokovat spuštění. Token zrušení umožňuje znovu použít stejné síti toku dat více než jednou, i když uživatel zruší jednu nebo více operací v tomto příkladu. Příklad, který používá <xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.CancellationToken%2A> trvale zrušit provádění bloku toku dat, naleznete v tématu [postupy: zrušení bloku toku dat](../../../docs/standard/parallel-programming/how-to-cancel-a-dataflow-block.md).  
+ Tento příklad používá token zrušení sdílené místo nastavení <xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.CancellationToken%2A> vlastnost protože <xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.CancellationToken%2A> vlastnost trvale zruší tok dat zablokovat spuštění. Token zrušení umožňuje znovu použít stejné síti toku dat více než jednou, i když uživatel zruší jednu nebo více operací v tomto příkladu. Příklad, který používá <xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.CancellationToken%2A> trvale zrušit provádění bloku toku dat, naleznete v tématu [jak: Zrušení bloku toku dat](../../../docs/standard/parallel-programming/how-to-cancel-a-dataflow-block.md).  
   
 <a name="ui"></a>   
 ## <a name="connecting-the-dataflow-network-to-the-user-interface"></a>Připojení sítě toku dat v uživatelském rozhraní  

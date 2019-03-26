@@ -11,18 +11,17 @@ helpviewer_keywords:
 - inferring type information [LINQ in Visual Basic]
 - relationships [LINQ in Visual Basic]
 ms.assetid: b5ff4da5-f3fd-4a8e-aaac-1cbf52fa16f6
-ms.openlocfilehash: d72a55cadce287979fad25396327680e1f0e0aaf
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 4dc5497f2e9bacac3062fde6e7dc48270697f1df
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56979096"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58465214"
 ---
 # <a name="type-relationships-in-query-operations-visual-basic"></a>Vztahy typů v operacích dotazu (Visual Basic)
 Proměnné použité v [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] dotazu operace jsou silného typu a musí být navzájem kompatibilní. Silné typování se používá ve zdroji dat, v samotném dotazu a ve spuštění dotazu. Následující obrázek označuje termíny používané k popisu [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazu. Další informace o části dotazu, naleznete v tématu [základní operace dotazů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-query-operations.md).  
   
- ![Pseudokódu dotazu se zvýrazněnými elementy. ](../../../../visual-basic/programming-guide/concepts/linq/media/sjltyperels.png "SJLtypeRels")  
-Část dotazu LINQ  
+ ![Snímek obrazovky zobrazující pseudokódu dotazu se zvýrazněnými elementy.](./media/type-relationships-in-query-operations/linq-query-description-terms.png)  
   
  Musí být kompatibilní s typem prvků ve zdroji dat typu proměnné rozsahu v dotazu. Typ proměnné dotazu musí být kompatibilní s pořadí element definovaný v `Select` klauzuli. Nakonec typu pořadí elementů také musí být kompatibilní s typem řídicí proměnná smyčky for, který se používá v `For Each` příkaz, který provede daný dotaz. Silné typování usnadňuje identifikaci chyby typu v době kompilace.  
   

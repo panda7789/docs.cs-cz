@@ -9,12 +9,12 @@ helpviewer_keywords:
 - drawing [Windows Forms], cardinal splines
 - graphics [Windows Forms], cardinal splines
 ms.assetid: a4a41e80-4461-4b47-b6bd-2c5e68881994
-ms.openlocfilehash: 687143273a07acba4b4d60acb1be25eee165b91d
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 0f5c7a8555130e884b641648d1ffc9865f44dc1e
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57710482"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58464694"
 ---
 # <a name="how-to-draw-cardinal-splines"></a>Postupy: Kreslení základních křivek
 Křivky mohutnosti je křivku plynule prochází danou sadu body. K nakreslení křivky mohutnosti, vytvořit <xref:System.Drawing.Graphics> objektu a předat adresu pole odkazuje na <xref:System.Drawing.Graphics.DrawCurve%2A> metoda.  
@@ -23,16 +23,16 @@ Křivky mohutnosti je křivku plynule prochází danou sadu body. K nakreslení 
   
 -   Následující příklad kreslení ve tvaru zvonu základní křivka vyhlazení, který prochází pět bodů určené. Následující obrázek znázorňuje křivky a pět bodů.  
   
-     ![Křivky mohutnosti](./media/cardinalspline1.png "CardinalSpline1")  
+     ![Diagram zobrazující průběh křivky mohutnosti ve tvaru zvonu.](./media/how-to-draw-cardinal-splines/bell-shaped-cardinal-spline.png)  
   
  [!code-csharp[System.Drawing.ConstructingDrawingCurves#21](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ConstructingDrawingCurves/CS/Class1.cs#21)]
  [!code-vb[System.Drawing.ConstructingDrawingCurves#21](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ConstructingDrawingCurves/VB/Class1.vb#21)]  
   
 ### <a name="drawing-a-closed-cardinal-spline"></a>Kreslení uzavřené křivky mohutnosti  
   
--   Použití <xref:System.Drawing.Graphics.DrawClosedCurve%2A> metodu <xref:System.Drawing.Graphics> třídy kreslení uzavřené křivky mohutnosti. V uzavřené křivky mohutnosti křivka pokračuje přes poslední bod v poli a připojí se s prvním bodem v poli. Následující příklad kreslení uzavřené vyhlazení, který prochází šest určené body. Následující obrázek znázorňuje uzavřené křivky spolu s šest bodů.  
+-   Použití <xref:System.Drawing.Graphics.DrawClosedCurve%2A> metodu <xref:System.Drawing.Graphics> třídy kreslení uzavřené křivky mohutnosti. V uzavřené křivky mohutnosti křivka pokračuje přes poslední bod v poli a připojí se s prvním bodem v poli. Následující příklad kreslení uzavřené vyhlazení, který prochází šest určené body. Následující obrázek znázorňuje uzavřené křivky spolu s šest bodů:  
   
- ![Křivky mohutnosti](./media/cardinalspline1a.png "CardinalSpline1A")  
+ ![Diagram zobrazující průběh uzavřené křivky mohutnosti.](./media/how-to-draw-cardinal-splines/closed-cardinal-spine.png)  
   
  [!code-csharp[System.Drawing.ConstructingDrawingCurves#22](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ConstructingDrawingCurves/CS/Class1.cs#22)]
  [!code-vb[System.Drawing.ConstructingDrawingCurves#22](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ConstructingDrawingCurves/VB/Class1.vb#22)]  
@@ -41,7 +41,7 @@ Křivky mohutnosti je křivku plynule prochází danou sadu body. K nakreslení 
   
 -   Změnit způsob předáním napětí argument zatáčkách křivky mohutnosti <xref:System.Drawing.Graphics.DrawCurve%2A> metody. Následující příklad kreslení tři křivky mohutnosti, které prochází stejnou sadu body. Následující obrázek znázorňuje tři křivky spolu s příslušnými hodnotami napětí. Všimněte si, že 0 po hodnotu napětí body jsou spojeny čarami přímo.  
   
- ![Křivky mohutnosti](./media/cardinalspline2.png "CardinalSpline2")  
+ ![Diagram znázorňující tři křivky mohutnosti.](./media/how-to-draw-cardinal-splines/three-cardinal-splines.png)  
   
  [!code-csharp[System.Drawing.ConstructingDrawingCurves#23](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ConstructingDrawingCurves/CS/Class1.cs#23)]
  [!code-vb[System.Drawing.ConstructingDrawingCurves#23](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ConstructingDrawingCurves/VB/Class1.vb#23)]  

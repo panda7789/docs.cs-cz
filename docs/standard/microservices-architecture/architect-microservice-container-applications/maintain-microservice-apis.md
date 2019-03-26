@@ -4,12 +4,12 @@ description: Vytváření mikroslužeb rozhraní API a kontraktů zvažujete vý
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/20/2018
-ms.openlocfilehash: 5d3e031217159a695b67f67859b8cf412a4419c2
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 6580418ea04d64650cefe2f4c91f03e3f40a058f
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53152536"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58466046"
 ---
 # <a name="creating-evolving-and-versioning-microservice-apis-and-contracts"></a>Kontraktů a kontraktů mikroslužeb vytváření, vývoj a správa verzí rozhraní API
 
@@ -28,13 +28,13 @@ Nakonec, pokud používáte s architekturou REST [Hypermédia](https://www.infoq
 ## <a name="additional-resources"></a>Další zdroje
 
 - **Scott Hanselman. Správa verzí RESTful webového rozhraní API ASP.NET Core snadné** \
-  [*https://www.hanselman.com/blog/ASPNETCoreRESTfulWebAPIVersioningMadeEasy.aspx*](https://www.hanselman.com/blog/ASPNETCoreRESTfulWebAPIVersioningMadeEasy.aspx)
+  [https://www.hanselman.com/blog/ASPNETCoreRESTfulWebAPIVersioningMadeEasy.aspx](https://www.hanselman.com/blog/ASPNETCoreRESTfulWebAPIVersioningMadeEasy.aspx)
 
 - **Správa verzí RESTful webového rozhraní API** \
-  [*https://docs.microsoft.com/azure/architecture/best-practices/api-design#versioning-a-restful-web-api*](https://docs.microsoft.com/azure/architecture/best-practices/api-design#versioning-a-restful-web-api)
+  [https://docs.microsoft.com/azure/architecture/best-practices/api-design#versioning-a-restful-web-api](https://docs.microsoft.com/azure/architecture/best-practices/api-design#versioning-a-restful-web-api)
 
 - **Roy Fielding. Správa verzí, Hypermédia a REST** \
-  [*https://www.infoq.com/articles/roy-fielding-on-versioning*](https://www.infoq.com/articles/roy-fielding-on-versioning)
+  [https://www.infoq.com/articles/roy-fielding-on-versioning](https://www.infoq.com/articles/roy-fielding-on-versioning)
 
 >[!div class="step-by-step"]
 >[Předchozí](asynchronous-message-based-communication.md)

@@ -66,10 +66,12 @@ ms.assetid: f782d7cc-035e-4500-b1b1-36a9881130ad
   
 -   Každý typ v CTS je definována buď jako *typ hodnoty* nebo *odkazovat na typ*. To zahrnuje všechny vlastní typy v knihovně tříd rozhraní .NET a také vlastní uživatelem definované typy. Typy, které definujete pomocí [struktura](../../../csharp/language-reference/keywords/struct.md) – klíčové slovo jsou typy hodnot; předdefinované číselné typy jsou `structs`. Typy, které definujete pomocí [třídy](../../../csharp/language-reference/keywords/class.md) – klíčové slovo jsou referenční typy. Typy odkazů a typy hodnot mají jiná pravidla pro kompilaci a jiné chování za běhu.  
   
- Následující ilustrace znázorňuje vztah mezi typy hodnot a odkazové typy v CTS.  
+ Následující ilustrace znázorňuje vztah mezi typy hodnot a odkazové typy v CTS.
+
+ Následující obrázek ukazuje typy hodnot a odkazové typy v CTS: 
   
- ![Typy hodnot a odkazové typy](../../../csharp/programming-guide/types/media/valuetypescts.png "ValueTypesCTS")  
-Typy hodnot a odkazové typy v CTS  
+  
+ ![Snímek obrazovky, že ukazuje CTS typy hodnot a typy odkazů.](./media/index/value-reference-types-common-type-system.png)  
   
 > [!NOTE]
 >  Uvidíte, že nejčastěji používané typy jsou všechny uspořádány v <xref:System> oboru názvů. Obor názvů, ve kterém je obsažen typ, nemá však žádný vztah k tom, zda je hodnota typu nebo typu odkazu.  

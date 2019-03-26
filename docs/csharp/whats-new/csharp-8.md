@@ -2,12 +2,12 @@
 title: Co je nového v C# 8.0 – C# Průvodce
 description: Získejte přehled o nových funkcí dostupných v C# 8.0. V tomto článku je aktuální verze Preview 2.
 ms.date: 02/12/2019
-ms.openlocfilehash: d95ec3dc050f5633b4b069caa5bd2811f6b61300
-ms.sourcegitcommit: e994e47d3582bf09ae487ecbd53c0dac30aebaf7
+ms.openlocfilehash: faef8a0a0c1f38766482384f46959928e378a3fd
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58262589"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58463511"
 ---
 # <a name="whats-new-in-c-80"></a>Co je nového v C# 8.0
 
@@ -229,7 +229,7 @@ V obou případech platí, kompilátor vygeneruje volání `Dispose()`. Kompilá
 
 ## <a name="static-local-functions"></a>Statická lokální funkce
 
-Teď můžete přidávat `static` modifikátor lokální funkce zajistit, že místní funkce nezachytí (referenční dokumentace) všechny proměnné v ohraničujícím oboru. Tím se vygeneruje `CS8421`, "statické lokální funkce nesmí obsahovat odkaz na <variable>." 
+Teď můžete přidávat `static` modifikátor lokální funkce zajistit, že místní funkce nezachytí (referenční dokumentace) všechny proměnné v ohraničujícím oboru. Tím se vygeneruje `CS8421`, "statické lokální funkce nesmí obsahovat odkaz na \<proměnná >." 
 
 Uvažujme následující kód. Lokální funkce `LocalFunction` přistupuje k proměnné `y`, které jsou deklarovány v ohraničujícím oboru (metoda `M`). Proto `LocalFunction` se nedá deklarovat pomocí `static` modifikátor:
 

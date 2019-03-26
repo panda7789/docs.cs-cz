@@ -3,12 +3,12 @@ title: System.Delegate a `delegate` – klíčové slovo
 description: Další informace o třídách v rozhraní .NET Framework, které podporují delegáty a jak jsou mapovány – klíčové slovo 'delegáta'.
 ms.date: 06/20/2016
 ms.assetid: f3742fda-13c2-4283-8966-9e21c2674393
-ms.openlocfilehash: 88179af0ac072464d8e9903f685ff578ca591bf0
-ms.sourcegitcommit: 16aefeb2d265e69c0d80967580365fabf0c5d39a
+ms.openlocfilehash: 4cf2b113fc9e2c6621f648af7ecb272a42b1f056
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58126172"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58465773"
 ---
 # <a name="systemdelegate-and-the-delegate-keyword"></a>System.Delegate a `delegate` – klíčové slovo
 
@@ -92,7 +92,7 @@ phrases.Sort(CompareLength);
 
 Všimněte si, že název metody, který se používá, bez závorek. Pomocí metody jako argument instruuje kompilátor, aby metoda odkaz převést na odkaz, který lze použít jako cíl vyvolání delegáta a připojit jako cíl volání metody.
 
-Může také byli jste explicitní deklarováním proměnné typu ' porovnání<string>"a provádění přiřazení:
+Může také byli jste explicitní deklarováním proměnné typu `Comparison<string>` a provádění přiřazení:
 
 ```csharp
 Comparison<string> comparer = CompareLength;

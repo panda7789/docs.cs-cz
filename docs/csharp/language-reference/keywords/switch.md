@@ -12,12 +12,12 @@ helpviewer_keywords:
 - case statement [C#]
 - default keyword [C#]
 ms.assetid: 44bae8b8-8841-4d85-826b-8a94277daecb
-ms.openlocfilehash: 371b6e232e9d97df3ce34d69bcb10155c1242e1e
-ms.sourcegitcommit: d09c77414e9e4fc72c79b04deee7a756a120674e
+ms.openlocfilehash: 73524fd54aeffc86fe0c451ec4418308da764682
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54084716"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58463251"
 ---
 # <a name="switch-c-reference"></a>Přepnout (referenční dokumentace jazyka C#)
 
@@ -59,7 +59,7 @@ A `switch` příkaz může obsahovat libovolný počet oddílů přepínače a k
 
 [!code-csharp[switch#2](../../../../samples/snippets/csharp/language-reference/keywords/switch/switch2.cs#1)]
 
-Provede přepínači pouze jeden oddíl v příkazu switch. C# neumožňuje spuštění pokračovat z jednoho oddílu přepnutí na další. Proto následující kód vygeneruje chybu kompilátoru CS0163: "Ovládací prvek nemůže být předáno z jednoho návěstí příkazu case (<case label>) do jiného."
+Provede přepínači pouze jeden oddíl v příkazu switch. C# neumožňuje spuštění pokračovat z jednoho oddílu přepnutí na další. Proto následující kód vygeneruje chybu kompilátoru CS0163: "Ovládací prvek nemůže být předáno z jednoho návěstí příkazu case (\<návěstí příkazu case >) do jiného."
 
 ```csharp
 switch (caseSwitch)

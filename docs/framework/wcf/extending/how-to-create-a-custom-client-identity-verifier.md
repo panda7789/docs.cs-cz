@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: f2d34e43-fa8b-46d2-91cf-d2960e13e16b
-ms.openlocfilehash: a7107e6e0bfdb948b584b5cbd57eafc3aff1bd59
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 19be92acb16ffb5e98eb39ba36a406d66e58d97b
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54569372"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58464018"
 ---
 # <a name="how-to-create-a-custom-client-identity-verifier"></a>Postupy: Vytvoření vlastního ověřovatele identity klientů
 *Identity* funkce Windows Communication Foundation (WCF) umožňuje klientovi předem určit Očekávaná identita služby. Pokaždé, když se server ověří na klientovi, identita je porovnávána s Očekávaná identita. (Vysvětlení identity a jak to funguje, najdete v článku [identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).)  
@@ -86,5 +86,4 @@ ms.locfileid: "54569372"
 - <xref:System.ServiceModel.EndpointIdentity>
 - <xref:System.ServiceModel.Security.IdentityVerifier>
 - [Ukázka identity služby](../../../../docs/framework/wcf/samples/service-identity-sample.md)
-- [Zásady autorizace](../../../../docs/framework/wcf/samples/authorization-policy.md)
 - [Zásady autorizace](../../../../docs/framework/wcf/samples/authorization-policy.md)

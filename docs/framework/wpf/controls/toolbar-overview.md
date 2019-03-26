@@ -5,12 +5,12 @@ helpviewer_keywords:
 - controls [WPF], ToolBar
 - ToolBar control [WPF]
 ms.assetid: a8edb32c-118d-4f31-b6e6-8899082b504b
-ms.openlocfilehash: 7d591c85211492e4ad0b7e226cffba309e8d418b
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 6bd44e4b8406e945ea8f0913563d2f2f6e0b3822
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57379637"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58464954"
 ---
 # <a name="toolbar-overview"></a>ToolBar – přehled
 <xref:System.Windows.Controls.ToolBar> ovládací prvky jsou kontejnery pro skupinu příkazů nebo ovládacích prvků, které jsou obvykle související funkce. A <xref:System.Windows.Controls.ToolBar> obvykle obsahuje tlačítka, pomocí kterých vyvolat příkazy.  
@@ -28,10 +28,9 @@ ms.locfileid: "57379637"
   
 <a name="ToolBars_with_Overflow_Items"></a>   
 ## <a name="toolbars-with-overflow-items"></a>Panely nástrojů s položkami přetečení  
- Často <xref:System.Windows.Controls.ToolBar> ovládací prvky obsahovat více položek, než se vejde do velikosti panelu nástrojů. Pokud k tomu dojde, <xref:System.Windows.Controls.ToolBar> zobrazí tlačítku přetečení. Chcete-li zobrazit položky přetečení, uživatel klikne na tlačítko přetečení a položky jsou uvedeny v následující automaticky otevírané okno <xref:System.Windows.Controls.ToolBar>. Následující grafické ukazuje <xref:System.Windows.Controls.ToolBar> s položkami přetečení.  
+ Často <xref:System.Windows.Controls.ToolBar> ovládací prvky obsahovat více položek, než se vejde do velikosti panelu nástrojů. Pokud k tomu dojde, <xref:System.Windows.Controls.ToolBar> zobrazí tlačítku přetečení. Chcete-li zobrazit položky přetečení, uživatel klikne na tlačítko přetečení a položky jsou uvedeny v následující automaticky otevírané okno <xref:System.Windows.Controls.ToolBar>. Následující grafické ukazuje <xref:System.Windows.Controls.ToolBar> přetečení položkami:  
   
- ![Panel nástrojů s přetečením](./media/toolbarwithoverflowitem.png "ToolbarWithOverflowItem")  
-Panel nástrojů s položkami přetečení  
+ ![Snímek obrazovky zobrazující nástrojů s položkami přetečení.](./media/toolbar-overview/toolbar-overflow-items.png)  
   
  Můžete zadat, pokud je uskutečněn položky na panelu nástrojů na panelu přetečení tak, že nastavíte <xref:System.Windows.Controls.ToolBar.OverflowMode%2A?displayProperty=nameWithType> připojené vlastnosti <xref:System.Windows.Controls.OverflowMode.Always?displayProperty=nameWithType>, <xref:System.Windows.Controls.OverflowMode.Never?displayProperty=nameWithType>, nebo <xref:System.Windows.Controls.OverflowMode.AsNeeded?displayProperty=nameWithType>. Následující příklad určuje, že poslední čtyři tlačítka na panelu nástrojů by měla být vždy v panelu přetečení.  
   

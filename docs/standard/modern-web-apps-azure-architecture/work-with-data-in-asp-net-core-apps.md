@@ -4,12 +4,12 @@ description: Navrhování moderních webových aplikací pomocí ASP.NET Core a 
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: 914a10724c416f453d93f6efc16f9ad192798264
-ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
+ms.openlocfilehash: 23c0995c512a07c41b3e2dbe8bc7528723379efa
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55827172"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58463732"
 ---
 # <a name="working-with-data-in-aspnet-core-apps"></a>Práce s daty v aplikacích ASP.NET Core
 
@@ -51,7 +51,7 @@ public class CatalogContext : DbContext
 }
 ```
 
-Vaše DbContext musí mít konstruktor, který přijímá DbContextOptions a předat tento argument pro konstruktor základní třídy DbContext. Poznámka: Pokud máte pouze jeden DbContext v aplikaci, můžete předat instanci DbContextOptions, ale pokud máte více než jeden je nutné použít obecný DbContextOptions<T> typ, předejte typ DbContext jako na generický parametr.
+Vaše DbContext musí mít konstruktor, který přijímá DbContextOptions a předat tento argument pro konstruktor základní třídy DbContext. Poznámka: Pokud máte pouze jeden DbContext v aplikaci, můžete předat instanci DbContextOptions, ale pokud máte více než jeden je nutné použít obecný DbContextOptions\<T > typ, předejte typ DbContext jako na generický parametr.
 
 ### <a name="configuring-ef-core"></a>Konfigurace EF Core
 
@@ -89,7 +89,7 @@ var brandItems = await _context.CatalogBrands
     .ToListAsync();
 ```
 
-Je důležité v příkladu výše a přidejte volání do ToListAsync, aby bylo možné okamžitě spustit dotaz. V opačném případě bude příkaz Přiřadit položku IQueryable<SelectListItem> k brandItems, který nebude provedeno, dokud je ve výčtu. Existují výhody a nevýhody vrací typ IQueryable výsledky z metod. Umožňuje dotazu, které EF Core vytvoří dále upravit, ale můžete také za následek chyby, které se vztahuje pouze na za běhu, pokud operace jsou přidány do dotazu, který nelze přeložit EF Core. Obecně je bezpečnější pro předání nějaké filtry do metody provádí přístup k datům a vrátit zpět kolekce v paměti (například seznamu<T>) jako výsledek.
+Je důležité v příkladu výše a přidejte volání do ToListAsync, aby bylo možné okamžitě spustit dotaz. V opačném případě bude příkaz Přiřadit položku IQueryable\<SelectListItem > do brandItems, který nebude provedeno, dokud je ve výčtu. Existují výhody a nevýhody vrací typ IQueryable výsledky z metod. Umožňuje dotazu, které EF Core vytvoří dále upravit, ale můžete také za následek chyby, které se vztahuje pouze na za běhu, pokud operace jsou přidány do dotazu, který nelze přeložit EF Core. Obecně je bezpečnější pro předání nějaké filtry do metody provádí přístup k datům a vrátit zpět kolekce v paměti (například seznamu\<T >) jako výsledek.
 
 EF Core sleduje změny u entit, který načte z trvalého úložiště. Pokud chcete uložit změny do sledované entity, stačí zavolat metodu SaveChanges objekt dbcontext, ujistěte se, že se že jedná o stejnou instanci DbContext, který byl použit pro načtení entity. Přidávání a odebírání entity se provádí přímo na odpovídající vlastnosti DbSet, znovu s volání SaveChanges pro spuštění databázových příkazů. Následující příklad ukazuje přidání, aktualizace nebo odebrání entity z trvalého úložiště.
 

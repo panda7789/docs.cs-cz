@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - programming [WF], tracking and tracing
 ms.assetid: b965ded6-370a-483d-8790-f794f65b137e
-ms.openlocfilehash: 298791fc43d976e339c42c45a8fd30c25d73bdb9
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: d7bbaf8ac68e7078735a2b2a6f08db2e6f3a9216
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57708012"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58462783"
 ---
 # <a name="workflow-tracking-and-tracing"></a>Pracovní postup sledování a trasování
 Sledování pracovního postupu Windows je [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] funkce poskytují přehled o provádění pracovního postupu. Poskytuje sledování infrastruktury pro sledování spuštění instance pracovního postupu. Sledování infrastruktury WF nástroje transparentně pracovního postupu pro vydávání záznamy, které odráží klíče události během provádění. Tato funkce je k dispozici ve výchozím nastavení pro všechny [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] pracovního postupu. Nejsou potřeba k tomu žádné změny [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] pracovního postupu pro sledování na výskyt. Je jenom pár rozhodování o tom, kolik dat sledování chcete dostávat. Při spuštění instance pracovního postupu nebo dokončí zpracování sledování jsou emitovány záznamy. Sledování lze rovněž extrahovat obchodní relevantní data přidružená k proměnné pracovního postupu. Například, pokud pracovní postup představuje pořadí zpracování systému, ID objednávky může být extrahována spolu s <xref:System.Activities.Tracking.TrackingRecord> objektu. Obecně platí povolení WF sledování zajišťuje diagnostiky nebo obchodní data analytics přistupovat z pracovního postupu provádění.  
@@ -31,9 +31,9 @@ Sledování pracovního postupu Windows je [!INCLUDE[netfx_current_long](../../.
 ## <a name="workflow-tracking-infrastructure"></a>Pracovní postup sledování infrastruktury  
  Pracovní postup sledování infrastruktury následuje paradigma se publikování a odběr. Instance pracovního postupu je vydavatelem sledování záznamů, zatímco předplatitele sledování záznamů, které jsou registrovány jako rozšíření do pracovního postupu. Tato rozšíření by pro přihlášení k odběru <xref:System.Activities.Tracking.TrackingRecord> objekty jsou volány sledování účastníci. Sledování účastníci jsou body rozšiřitelnosti, které přistupují k <xref:System.Activities.Tracking.TrackingRecord> objektů a jejich zpracování libovolné způsobem jsou zapsány Uděláte to tak. Sledování infrastruktury umožňuje aplikaci filtru na odchozí záznamy sledování účastníka přihlásit k podmnožinu záznamů odběru povolit. Tento mechanismus filtrování se provádí prostřednictvím sleduje soubor profilu.  
   
- Vyšší úroveň tohoto sledování infrastruktury je znázorněno na následujícím obrázku.  
+ Zobrazení nejvyšší úrovně sledování infrastruktury můžete vidět na následujícím obrázku:  
   
- ![Pracovní postup sledování infrastruktury](./media/wv.gif "WV")  
+ ![Snímek obrazovky zobrazující pracovní postup sledování infrastruktury. ](./media/workflow-tracking-and-tracing/workflow-tracking-infrastructure.gif "WV")  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Sledování záznamů](tracking-records.md)  

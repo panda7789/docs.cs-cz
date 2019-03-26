@@ -9,12 +9,12 @@ helpviewer_keywords:
 - controls [WPF], layout system
 - layout system [WPF]
 ms.assetid: 3eecdced-3623-403a-a077-7595453a9221
-ms.openlocfilehash: 4c114d7ed22ac01b69f9ad77a69b4089f574c13f
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 4c967bf34c66cd2dcc4365a2a3ec214c9bac5623
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57369848"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58464564"
 ---
 # <a name="layout"></a>Rozložení
 Toto téma popisuje [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] systém rozložení. Vysvětlení, jak a kdy probíhá výpočet rozložení je nezbytné pro vytváření uživatelských rozhraní v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
@@ -41,7 +41,7 @@ Toto téma popisuje [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptl
   
  Následující obrázek znázorňuje jednoduché rozložení.  
   
- ![Typické mřížky žádné ohraničujícího rámečku, který bude zobrazen. ](./media/boundingbox1.png "boundingbox1")  
+ ![Snímek obrazovky zobrazující typické mřížky, žádné ohraničujícího rámečku, který bude zobrazen.](./media/layout/grid-no-bounding-box-superimpose.png)  
   
  Toto rozložení lze dosáhnout pomocí následujících [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)].  
   
@@ -49,7 +49,7 @@ Toto téma popisuje [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptl
   
  Jediný <xref:System.Windows.Controls.TextBlock> element hostována v rámci <xref:System.Windows.Controls.Grid>. Zatímco vyplní pouze levém horním rohu prvního sloupce do přiděleného místa pro text <xref:System.Windows.Controls.TextBlock> je ve skutečnosti mnohem větší. Ohraničující rámeček žádné <xref:System.Windows.FrameworkElement> lze načíst s použitím <xref:System.Windows.Controls.Primitives.LayoutInformation.GetLayoutSlot%2A> metody. Následující obrázek znázorňuje rámeček ohraničující konkrétní <xref:System.Windows.Controls.TextBlock> elementu.  
   
- ![Ohraničující rámeček ovládacím prvku TextBlock je nyní viditelné. ](./media/boundingbox2.png "boundingbox2")  
+ ![Snímek obrazovky zobrazující ohraničující rámeček TextBlock je nyní viditelné.](./media/layout/visible-textblock-bounding-box.png)  
   
  Jak je uvedeno žlutý obdélníku do přiděleného místa pro <xref:System.Windows.Controls.TextBlock> prvek je ve skutečnosti mnohem větší, než se zobrazí. Jako další prvky jsou přidány do <xref:System.Windows.Controls.Grid>, toto přidělení může zmenšit nebo zvětšit, v závislosti na typu a velikosti prvků, které jsou přidány.  
   

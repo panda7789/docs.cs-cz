@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/08/2018
-ms.openlocfilehash: fa292cb97db612506eb7a6f83bb24f37425d690a
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.openlocfilehash: 4a6a7faac6d0419d88e613ca23d9862475659918
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57678654"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58464200"
 ---
 # <a name="design-the-microservice-application-layer-and-web-api"></a>Návrh aplikační vrstvy mikroslužby a webové rozhraní API
 
@@ -38,13 +38,13 @@ By to obnášelo jiného průvodce k podrobně zahrnovat PLNÝ. Proto tato pří
 #### <a name="additional-resources"></a>Další zdroje
 
 - **PLNÁ: Základní OOP zásady** \
-  [*https://deviq.com/solid/*](https://deviq.com/solid/%20)
+  [https://deviq.com/solid/](https://deviq.com/solid/)
 
 - **Inverze – kontejnery ovládacích prvků a vzor injektáž závislostí** \
-  [*https://martinfowler.com/articles/injection.html*](https://martinfowler.com/articles/injection.html)
+  [https://martinfowler.com/articles/injection.html](https://martinfowler.com/articles/injection.html)
 
 - **Steve Smith. Je nový spojovací** \
-  [*https://ardalis.com/new-is-glue*](https://ardalis.com/new-is-glue)
+  [https://ardalis.com/new-is-glue](https://ardalis.com/new-is-glue)
 
 > [!div class="step-by-step"]
 > [Předchozí](nosql-database-persistence-infrastructure.md)

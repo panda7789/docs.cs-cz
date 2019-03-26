@@ -4,12 +4,12 @@ description: Zjistěte podrobnosti pracovního postupu pro vývoj aplikací zalo
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 01/07/2019
-ms.openlocfilehash: 92dd63fa155ea6e49ddb1eee9c201d5d9dc0418e
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.openlocfilehash: a8016b2b55313cb6e1d84bfb2c50a62347858de9
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57679525"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58464356"
 ---
 # <a name="development-workflow-for-docker-apps"></a>Pracovní postup vývoje aplikací Dockeru
 
@@ -64,10 +64,10 @@ Spuštění aplikace v .NET prostý (obvykle v případě, že používání kon
 ### <a name="additional-resources"></a>Další zdroje
 
 - **Začínáme s Docker CE pro Windows** \
-  [*https://docs.docker.com/docker-for-windows/*](https://docs.docker.com/docker-for-windows/)
+  [https://docs.docker.com/docker-for-windows/](https://docs.docker.com/docker-for-windows/)
 
 - **Visual Studio 2017** \
-  [*https://visualstudio.microsoft.com/downloads/*](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs)
+  [https://visualstudio.microsoft.com/downloads/](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs)
 
 ![2 - zapisovat soubory Dockerfile](./media/image4.png)
 
@@ -119,16 +119,16 @@ Můžete zadat další nastavení konfigurace v souboru Dockerfile, v závislost
 ### <a name="additional-resources"></a>Další zdroje
 
 - **Vytváření Imagí Dockeru pro aplikace .NET Core** \
-  [*https://docs.microsoft.com/dotnet/core/docker/building-net-docker-images*](../../../core/docker/building-net-docker-images.md)
+  [https://docs.microsoft.com/dotnet/core/docker/building-net-docker-images](../../../core/docker/building-net-docker-images.md)
 
 - **Vytvoření vlastní image**. V oficiální dokumentaci k Dockeru. \
-  [*https://docs.docker.com/engine/tutorials/dockerimages/*](https://docs.docker.com/engine/tutorials/dockerimages/)
+  [https://docs.docker.com/engine/tutorials/dockerimages/](https://docs.docker.com/engine/tutorials/dockerimages/)
 
 - **Udržování aktuálnosti s Imagí kontejnerů v rozhraní .NET** \
-  *<https://devblogs.microsoft.com/dotnet/staying-up-to-date-with-net-container-images/>*
+  <https://devblogs.microsoft.com/dotnet/staying-up-to-date-with-net-container-images/>
 
 - **Pomocí .NET a Dockeru společně - DockerCon 2018 Update** \
-  *<https://devblogs.microsoft.com/dotnet/using-net-and-docker-together-dockercon-2018-update/>*
+  <https://devblogs.microsoft.com/dotnet/using-net-and-docker-together-dockercon-2018-update/>
 
 ### <a name="using-multi-arch-image-repositories"></a>Pomocí více architektury image úložišť
 
@@ -290,10 +290,10 @@ Vlastní základní image Dockeru můžete vytvořit úplně od začátku. Tento
 ### <a name="additional-resources"></a>Další zdroje
 
 - **Více architektury .NET Core imagí**. \
-  [*https://github.com/dotnet/announcements/issues/14*](https://github.com/dotnet/announcements/issues/14)
+  [https://github.com/dotnet/announcements/issues/14](https://github.com/dotnet/announcements/issues/14)
 
 - **Vytvoření základní image**. Oficiální dokumentace k Dockeru. \
-  [*https://docs.docker.com/engine/userguide/eng-image/baseimages/*](https://docs.docker.com/engine/userguide/eng-image/baseimages/)
+  [https://docs.docker.com/engine/userguide/eng-image/baseimages/](https://docs.docker.com/engine/userguide/eng-image/baseimages/)
 
 ![3. vytvoření imagí, které jsou definované na soubory Dockerfile](./media/image7.png)
 
@@ -485,7 +485,7 @@ Důležitý bod je, že, jak je znázorněno v obrázek 5 – 12, v sadě Visual
 ### <a name="additional-resources"></a>Další zdroje
 
 - **Nasazení kontejneru ASP.NET na vzdáleného hostitele Docker** \
-  [*https://docs.microsoft.com/azure/vs-azure-tools-docker-hosting-web-apps-in-docker*](https://docs.microsoft.com/azure/vs-azure-tools-docker-hosting-web-apps-in-docker)
+  [https://docs.microsoft.com/azure/vs-azure-tools-docker-hosting-web-apps-in-docker](https://docs.microsoft.com/azure/vs-azure-tools-docker-hosting-web-apps-in-docker)
 
 ### <a name="a-note-about-testing-and-deploying-with-orchestrators"></a>Poznámka k testování a nasazení s orchestrátory
 
@@ -522,10 +522,10 @@ Pokud vyvíjíte pomocí editoru/CLI přístup, ladění kontejnerů je obtížn
 ### <a name="additional-resources"></a>Další zdroje
 
 - **Ladění aplikací v místním kontejneru Dockeru** \
-  [*https://docs.microsoft.com/azure/vs-azure-tools-docker-edit-and-refresh*](https://docs.microsoft.com/azure/vs-azure-tools-docker-edit-and-refresh)
+  [https://docs.microsoft.com/azure/vs-azure-tools-docker-edit-and-refresh](https://docs.microsoft.com/azure/vs-azure-tools-docker-edit-and-refresh)
 
 - **Steve Lasker. Sestavení, ladění, nasazení aplikace ASP.NET Core s Dockerem.** Video. \
-  [*https://channel9.msdn.com/Events/Visual-Studio/Visual-Studio-2017-Launch/T115*](https://channel9.msdn.com/Events/Visual-Studio/Visual-Studio-2017-Launch/T115)
+  [https://channel9.msdn.com/Events/Visual-Studio/Visual-Studio-2017-Launch/T115](https://channel9.msdn.com/Events/Visual-Studio/Visual-Studio-2017-Launch/T115)
 
 ## <a name="simplified-workflow-when-developing-containers-with-visual-studio"></a>Zjednodušené pracovní postupy při vývoji kontejnery pomocí sady Visual Studio
 
@@ -540,7 +540,7 @@ Kromě toho budete muset provést krok 2 (Přidání podpory Dockeru do vašich 
 ### <a name="additional-resources"></a>Další zdroje
 
 - **Steve Lasker. Vývoj na platformě .NET dockeru pomocí sady Visual Studio 2017** \
-  [*https://channel9.msdn.com/Events/Visual-Studio/Visual-Studio-2017-Launch/T111*](https://channel9.msdn.com/Events/Visual-Studio/Visual-Studio-2017-Launch/T111)
+  [https://channel9.msdn.com/Events/Visual-Studio/Visual-Studio-2017-Launch/T111](https://channel9.msdn.com/Events/Visual-Studio/Visual-Studio-2017-Launch/T111)
 
 ## <a name="using-powershell-commands-in-a-dockerfile-to-set-up-windows-containers"></a>Pomocí příkazů prostředí PowerShell v souboru Dockerfile k nastavení kontejnery Windows 
 
@@ -562,7 +562,7 @@ RUN powershell add-windowsfeature web-asp-net45
 ### <a name="additional-resources"></a>Další zdroje
 
 - **aspnet-docker/Dockerfile.** Příklady příkazů Powershellu spouštět z soubory dockerfile začlenit funkce Windows. \
-  [*https://github.com/Microsoft/aspnet-docker/blob/master/4.7.1-windowsservercore-ltsc2016/runtime/Dockerfile*](https://github.com/Microsoft/aspnet-docker/blob/master/4.7.1-windowsservercore-ltsc2016/runtime/Dockerfile)
+  [https://github.com/Microsoft/aspnet-docker/blob/master/4.7.1-windowsservercore-ltsc2016/runtime/Dockerfile](https://github.com/Microsoft/aspnet-docker/blob/master/4.7.1-windowsservercore-ltsc2016/runtime/Dockerfile)
 
 >[!div class="step-by-step"]
 >[Předchozí](index.md)

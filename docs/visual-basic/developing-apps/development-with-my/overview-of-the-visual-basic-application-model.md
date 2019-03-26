@@ -5,12 +5,12 @@ helpviewer_keywords:
 - My.Application object [Visual Basic], Visual Basic application model
 - Visual Basic application model
 ms.assetid: 17538984-84fe-43c9-82c8-724c9529fe8b
-ms.openlocfilehash: 16522424ecd3009cb905bacb39694189a9540318
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 258e3862da79e78510991df26cc286c7231ad097
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54517380"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58464096"
 ---
 # <a name="overview-of-the-visual-basic-application-model"></a>Přehled aplikačního modelu jazyka Visual Basic
 Visual Basic poskytuje pro řízení chování aplikací modelu Windows Forms dobře definovaný model: model aplikace Visual Basic. Tento model obsahuje události pro zpracování aplikace při spuštění a vypnutí, jakož i události pro zachycení neošetřené výjimky. Také poskytuje podporu pro vývoj aplikací s jednou instancí. Aplikační model je rozšiřitelný, takže vývojáři, kteří potřebují mít větší kontrolu můžete přizpůsobit jeho přepisovatelné metody.  
@@ -26,9 +26,9 @@ Visual Basic poskytuje pro řízení chování aplikací modelu Windows Forms do
   
 -   Každý další pokus o spuštění aplikace, zatímco první instance je spuštěná, má za následek velmi odlišné chování. Následné pokusy o upozorní na první instanci o argumenty příkazového řádku a okamžitě se ukončí. První instance zpracuje `StartupNextInstance` události a určit, co argumenty příkazového řádku další instance byly a nadále běží.  
   
-     Tento diagram znázorňuje, jak další instance signály první instance.  
+     Tento diagram znázorňuje, jak další instance signály první instance:  
   
-     ![Jedna Instance aplikace Image](../../../visual-basic/developing-apps/development-with-my/media/singleinstance.gif "SingleInstance")  
+     ![Diagram zobrazující průběh bitové kopie jedné instance aplikace.](./media/overview-of-the-visual-basic-application-model/single-instance-application.gif)  
   
  Pomocí manipulace `StartupNextInstance` událostí, můžete řídit chování vaší aplikace s jedinou instancí. Například aplikace Microsoft Outlook obvykle běží jako jedinou instancí aplikace; Když při spuštěném Outlooku a při pokusu o spuštění aplikace Outlook znovu, se pozornost zaměří na původní instanci, ale jiná instance neotevře.  
   

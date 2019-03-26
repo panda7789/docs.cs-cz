@@ -2,12 +2,12 @@
 title: Přehled Windows Workflow
 ms.date: 03/30/2017
 ms.assetid: fc44adbe-1412-49ae-81af-0298be44aae6
-ms.openlocfilehash: 385be91538bb6ee9ee570107c22d4b0ffc6afcba
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 049d955b191e14ac79702df3fe218e23a555e6d3
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57718750"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58464681"
 ---
 # <a name="windows-workflow-overview"></a>Přehled Windows Workflow
 Pracovní postup je sada elemental jednotky nazvané *aktivity* , které jsou uloženy jako model, který popisuje proces reálného světa. Pracovní postupy umožňují popsat pořadí spuštění a závislé vztahy mezi částmi krátkodobé nebo dlouho probíhající práce. Tato práce prochází modelu od začátku do konce a aktivity mohou být prováděny osobami nebo funkcemi systému.  
@@ -31,7 +31,7 @@ Komponenty pracovní postup v hostitelském procesu
 ## <a name="interaction-between-workflow-components"></a>Interakce mezi komponentami pracovního postupu  
  Následující diagram ukazuje, jak komponenty pracovního postupu komunikovat mezi sebou.  
   
- ![Pracovní postup interakce](./media/workflowinteraction.gif "WorkflowInteraction")  
+ ![Diagram znázorňující, jak pracují komponenty pracovního postupu.](./media/overview/workflow-component-interatction.gif)  
   
  Na předchozím obrázku <xref:System.Activities.WorkflowInvoker.Invoke%2A> metodu <xref:System.Activities.WorkflowInvoker> třída se používá pro vyvolání několika instancí pracovních postupů. <xref:System.Activities.WorkflowInvoker> se používá pro zjednodušené pracovní postupy, které nepotřebují správy z hostitele; pracovní postupy, které je třeba Správa z hostitele (například <xref:System.Activities.Bookmark> obnovení) je třeba spustit pomocí <xref:System.Activities.WorkflowApplication.Run%2A> místo. Není to nutné čekat pro jednu instanci pracovního postupu k dokončení před vyvoláním modul runtime podporuje spuštění více instancí pracovního postupu současně.  Vyvolá pracovní postupy jsou následující:  
   

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - streams
 - streams, definition
 ms.assetid: 49d837c0-cf28-416f-8606-4d83d7b479ef
-ms.openlocfilehash: 365c3b8f0aa107f7106e0c83d1fa60de6f4903f2
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.openlocfilehash: f0d5c4e48d8a44c2e39942cbe76acbb5ef44ea7d
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57674559"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58462770"
 ---
 # <a name="basics-of-net-framework-file-io-and-the-file-system-visual-basic"></a>Základy vstupně-výstupních operací se soubory a systému souborů v rozhraní .NET Framework (Visual Basic)
 
@@ -29,7 +29,7 @@ Třídy v <xref:System.IO> obor názvů se používají k práci s disky, soubor
 
 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] Používá datové proudy k čtení a zápis do souborů. Datový proud si lze představit jako jednorozměrné sadu souvislých dat, který má začátek a konec a kdy kurzor ukazuje aktuální pozici v datovém proudu.
 
-![Kurzor ukazuje aktuální pozici v filestream. ](../../../../visual-basic/developing-apps/programming/drives-directories-files/media/filestream.gif "FileStream")
+![Kurzor ukazuje aktuální pozici v filestream.](./media/basics-of-net-framework-file-io-and-the-file-system/filestream-cursor-position.gif)
 
 ## <a name="stream-operations"></a>Operace Stream
 

@@ -28,12 +28,12 @@ helpviewer_keywords:
 - modal dialog boxes [WPF]
 - displaying XAML pages [WPF]
 ms.assetid: 737d04ec-8861-46c3-8d44-fa11d3528d23
-ms.openlocfilehash: d1a93fe81b892b85f77547d48428d3d9a78d5173
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: ab9b36857e2508190a212844f3c6b53d777c0552
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57373094"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58466215"
 ---
 # <a name="wpf-windows-overview"></a>Přehled WPF Windows
 Uživatelé komunikují s samostatné aplikace Windows Presentation Foundation (WPF) prostřednictvím systému windows. Primárním účelem okna je jako hostitele obsahu, která data vizualizuje a umožňuje uživatelům interakci s daty. Samostatné [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace poskytují jejich vlastní okna s použitím <xref:System.Windows.Window> třídy. Toto téma představuje <xref:System.Windows.Window> před pokrývají základní informace o vytváření a správa systému windows v samostatné aplikace.  
@@ -44,9 +44,9 @@ Uživatelé komunikují s samostatné aplikace Windows Presentation Foundation (
   
 <a name="TheWindowClass"></a>   
 ## <a name="the-window-class"></a>Třídy oken  
- Následující obrázek znázorňuje základní části okna.  
+ Následující obrázek znázorňuje základní části okna:  
   
- ![Okno prvky](./media/windowoverviewfigure1.PNG "WindowOverviewFigure1")  
+ ![Snímek obrazovky zobrazující prvků okna.](./media/wpf-windows-overview/window-constituent-elements.png)  
   
  Okno je rozdělen do dvou oblastí: neklientská oblast a klientské oblasti.  
   
@@ -146,7 +146,7 @@ Uživatelé komunikují s samostatné aplikace Windows Presentation Foundation (
   
  Otevření okna je nakonec voláním <xref:System.Windows.Window.Show%2A> metoda; výsledek je znázorněno na následujícím obrázku.  
   
- ![Otevřít okno otevřené voláním metody window.show](./media/windowoverviewfigure8.png "WindowOverviewFigure8")  
+ ![Otevření okna voláním Window.Show](./media/wpf-windows-overview//window-opened-show-method.png)  
   
  Okno, které se otevře voláním <xref:System.Windows.Window.Show%2A> je nemodálním okně, což znamená, že aplikace funguje v režimu, který umožňuje uživatelům aktivovat ostatní okna ve stejné aplikaci.  
   
@@ -282,13 +282,13 @@ Uživatelé komunikují s samostatné aplikace Windows Presentation Foundation (
   
 <a name="Window_Lifetime_Events"></a>   
 ### <a name="window-lifetime-events"></a>Události doby života okno  
- Následující obrázek znázorňuje posloupnost událostí instančního objektu v životnost časového období.  
+ Následující obrázek znázorňuje posloupnost událostí instančního objektu v životnost časového období:  
   
- ![Doba života okna](./media/windowlifetimeevents.png "WindowLifetimeEvents")  
+ ![Diagram, který zobrazuje události do okna životnost.](./media/wpf-windows-overview/window-lifetime-events.png)  
   
- Následující obrázek znázorňuje posloupnost událostí instančního objektu v době životnosti okno, které se zobrazí bez aktivace (<xref:System.Windows.Window.ShowActivated%2A> je nastavena na `false` předtím, než se zobrazí v okně).  
+ Následující obrázek znázorňuje posloupnost událostí instančního objektu v době životnosti okno, které se zobrazí bez aktivace (<xref:System.Windows.Window.ShowActivated%2A> je nastavena na `false` předtím, než se zobrazí v okně):  
   
- ![Doba života okna &#40;Window.ShowActivated &#61; False&#41;](./media/windowlifetimenoact.png "WindowLifetimeNoAct")  
+ ![Diagram, který zobrazuje události do okna životnost bez aktivace.](./media/wpf-windows-overview/window-lifetime-no-activation.png)  
   
 <a name="WindowLocation"></a>   
 ## <a name="window-location"></a>Umístění okna  
@@ -351,21 +351,21 @@ Uživatelé komunikují s samostatné aplikace Windows Presentation Foundation (
   
  **Pro vlastnosti Height:**  
   
-1.  <xref:System.Windows.FrameworkElement.MinHeight%2A?displayProperty=nameWithType> >  
+1.  <xref:System.Windows.FrameworkElement.MinHeight%2A?displayProperty=nameWithType>
   
-2.  <xref:System.Windows.FrameworkElement.MaxHeight%2A?displayProperty=nameWithType> >  
+2.  <xref:System.Windows.FrameworkElement.MaxHeight%2A?displayProperty=nameWithType>
   
-3.  <xref:System.Windows.SizeToContent.Height?displayProperty=nameWithType>/<xref:System.Windows.SizeToContent.WidthAndHeight?displayProperty=nameWithType> >  
+3.  <xref:System.Windows.SizeToContent.Height?displayProperty=nameWithType>/<xref:System.Windows.SizeToContent.WidthAndHeight?displayProperty=nameWithType>
   
 4.  <xref:System.Windows.FrameworkElement.Height%2A?displayProperty=nameWithType>  
   
  **Pro vlastnosti Šířka:**  
   
-1.  <xref:System.Windows.FrameworkElement.MinWidth%2A?displayProperty=nameWithType> >  
+1.  <xref:System.Windows.FrameworkElement.MinWidth%2A?displayProperty=nameWithType>
   
-2.  <xref:System.Windows.FrameworkElement.MaxWidth%2A?displayProperty=nameWithType> >  
+2.  <xref:System.Windows.FrameworkElement.MaxWidth%2A?displayProperty=nameWithType>
   
-3.  <xref:System.Windows.SizeToContent.Width?displayProperty=nameWithType>/<xref:System.Windows.SizeToContent.WidthAndHeight?displayProperty=nameWithType> >  
+3.  <xref:System.Windows.SizeToContent.Width?displayProperty=nameWithType>/<xref:System.Windows.SizeToContent.WidthAndHeight?displayProperty=nameWithType>
   
 4.  <xref:System.Windows.FrameworkElement.Width%2A?displayProperty=nameWithType>  
   
@@ -437,9 +437,9 @@ Uživatelé komunikují s samostatné aplikace Windows Presentation Foundation (
   
 -   <xref:System.Windows.WindowStyle.ToolWindow>  
   
- Vliv tyto styly oken jsou znázorněné na následujícím obrázku.  
+ Vliv tyto styly oken jsou znázorněné na následujícím obrázku:  
   
- ![Styly oken](./media/windowoverviewfigure6.PNG "WindowOverviewFigure6")  
+ ![Obrázek styly ohraničení okna.](./media/wpf-windows-overview/window-border-styles.png)  
   
  Můžete nastavit <xref:System.Windows.Window.WindowStyle%2A> buď pomocí [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] značek nebo kódu, protože nepravděpodobné, chcete-li změnit během životního cyklu okna, bude pravděpodobně nakonfigurujete pomocí [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] značek.  
   
@@ -448,9 +448,9 @@ Uživatelé komunikují s samostatné aplikace Windows Presentation Foundation (
 #### <a name="non-rectangular-window-style"></a>Styl neobdélníkových oken  
  Také existují situace, kdy styly ohraničení, které <xref:System.Windows.Window.WindowStyle%2A> umožňuje mít nestačí. Můžete například vytvořit aplikaci s neobdélníkových ohraničení, jako je [!INCLUDE[TLA#tla_wmp](../../../../includes/tlasharptla-wmp-md.md)] používá.  
   
- Představte si třeba okně bublin řeči je znázorněno na následujícím obrázku.  
+ Představte si třeba okně bublin řeči je znázorněno na následujícím obrázku:  
   
- ![Vytvoření nepravoúhlého okna](./media/nonrectangularwindowfigure.PNG "NonRectangularWindowFigure")  
+ ![Okno bublin řeči, s upozorněním přetáhněte Me.](./media/wpf-windows-overview/non-rectangular-window-figure.png)  
   
  Tento typ okna je vytvořit tak, že nastavíte <xref:System.Windows.Window.WindowStyle%2A> vlastnost <xref:System.Windows.WindowStyle.None>a pomocí speciální podporu, která <xref:System.Windows.Window> má transparentnosti.  
   
@@ -460,9 +460,10 @@ Uživatelé komunikují s samostatné aplikace Windows Presentation Foundation (
   
 <a name="Task_Bar_Presence"></a>   
 ### <a name="task-bar-presence"></a>Přítomnost hlavního panelu  
- Výchozí vzhled okna obsahuje tlačítko na hlavním panelu, podobný jako na následujícím obrázku.  
-  
- ![Okno s tlačítko na hlavním panelu](./media/windowoverviewfigure7.PNG "WindowOverviewFigure7")  
+
+Výchozí vzhled okna obsahuje tlačítko na hlavním panelu, podobný jako na následujícím obrázku:
+
+ ![Snímek obrazovky zobrazující okno s tlačítkem na hlavním panelu.](./media/wpf-windows-overview/window-taskbar-button.png)  
   
  Některé typy windows nemají tlačítko na hlavním panelu, jako jsou okna se zprávou a dialogová okna (viz [přehled dialogových oken](dialog-boxes-overview.md)). Můžete řídit, zda je zobrazen tlačítko na hlavním panelu okna tak, že nastavíte <xref:System.Windows.Window.ShowInTaskbar%2A> vlastnosti (`true` ve výchozím nastavení).  
   

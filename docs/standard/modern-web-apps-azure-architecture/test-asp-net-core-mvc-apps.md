@@ -4,12 +4,12 @@ description: Navrhování moderních webových aplikací pomocí ASP.NET Core a 
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: e3edec65fd10b0a7c05d1865703f2e0a591d8b03
-ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
+ms.openlocfilehash: e93c33ae29268c3968ccb59739e899966ae4339d
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55827549"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58463706"
 ---
 # <a name="test-aspnet-core-mvc-apps"></a>ASP.NET Core MVC testování aplikace
 
@@ -197,7 +197,7 @@ public class BasicWebTests : IClassFixture<WebApplicationFactory<Startup>>
 }
 ```
 
-Často, bude potřeba provést další konfiguraci vašeho webu, před spuštěním každého testu, jako je například konfigurace aplikace pro použití v paměti úložiště dat a pak synchronizace replik indexů aplikace s daty testu. Proto byste měli vytvořit vlastní podtřídy WebApplicationFactory<TEntry> a přepsat její ConfigureWebHost metodu. Následující příklad je z projektu FunctionalTests eShopOnWeb a slouží jako součást testy na hlavní webové aplikace.
+Často, bude potřeba provést další konfiguraci vašeho webu, před spuštěním každého testu, jako je například konfigurace aplikace pro použití v paměti úložiště dat a pak synchronizace replik indexů aplikace s daty testu. Proto byste měli vytvořit vlastní podtřídy WebApplicationFactory\<TEntry > a přepsat její ConfigureWebHost metodu. Následující příklad je z projektu FunctionalTests eShopOnWeb a slouží jako součást testy na hlavní webové aplikace.
 
 ```cs
 using Microsoft.AspNetCore.Hosting;

@@ -8,12 +8,12 @@ dev_langs:
 ms.assetid: 500335af-f9b5-413b-968a-e6d9a824478c
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 9aebc284e845eff229fff5bd41792e0c990a1092
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: db10dda3cbb328cd143afa48e300588ccc7667a6
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54691354"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58463069"
 ---
 # <a name="xslt-transformations-with-the-xsltransform-class"></a>Transformace XSLT s třídou XslTransform
 
@@ -24,8 +24,7 @@ Cílem XSLT je transformace do jiného dokumentu, který se liší ve formátu n
 
 ## <a name="overview"></a>Přehled
 
-![Architektura transformace XSLT](media/xslttransformationswithxsltransformclass.gif "xsltTransformationsWithXslTransformClass")  
-Architektura transformace
+![Diagram znázorňující architekturu transformace XSLT.](./media/xslt-transformations-with-the-xsltransform-class/xslt-transformation-architecture.gif) 
 
 Doporučení XSLT používá jazyk XML Path (XPath) pro výběr součástí dokumentu XML, pokud výraz XPath je dotazovací jazyk pro pohyb mezi uzly stromu dokumentu. Jak je znázorněno na diagramu [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] implementace XPath slouží k výběru součástí jazyka XML uložené v několik tříd, jako například <xref:System.Xml.XmlDocument>, <xref:System.Xml.XmlDataDocument>a <xref:System.Xml.XPath.XPathDocument>. <xref:System.Xml.XPath.XPathDocument> Je optimalizované XSLT datové úložiště a při použití s <xref:System.Xml.Xsl.XslTransform>, poskytuje transformace XSLT s dobrého výkonu.
 

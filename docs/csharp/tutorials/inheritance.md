@@ -5,12 +5,12 @@ author: rpetrusha
 ms.author: ronpet
 ms.date: 07/05/2018
 ms.assetid: aeb68c74-0ea0-406f-9fbe-2ce02d47ef31
-ms.openlocfilehash: 942950570253b73cfb9896117bd22189e56389ea
-ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
+ms.openlocfilehash: 644e0bb281525fad12e263b31263bb9caba149f0
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56836640"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58463810"
 ---
 # <a name="inheritance-in-c-and-net"></a>Dědičnost v jazyce C# a .NET
 
@@ -61,7 +61,7 @@ Přestože všechny členy základní třídy jsou zděděny z odvozených tří
 
 [!code-csharp[Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/basics.cs#1)]
 
-Odvozené třídy lze také *přepsat* zděděné členy tím, že poskytuje alternativní implementace. Aby bylo možné přepsat členy, musí být označeny člena základní třídy [virtuální](../language-reference/keywords/virtual.md) – klíčové slovo. Ve výchozím nastavení, členy základní třídy nejsou označeny jako `virtual` a nedají se přepsat. Pokus přepsat nevirtuální člen, stejně jako v následujícím příkladu, vygeneruje chybu kompilátoru CS0506: "<member> nejde přepsat zděděný člen <member> protože není označena jako virtuální, abstraktní nebo přepis.
+Odvozené třídy lze také *přepsat* zděděné členy tím, že poskytuje alternativní implementace. Aby bylo možné přepsat členy, musí být označeny člena základní třídy [virtuální](../language-reference/keywords/virtual.md) – klíčové slovo. Ve výchozím nastavení, členy základní třídy nejsou označeny jako `virtual` a nedají se přepsat. Pokus přepsat nevirtuální člen, stejně jako v následujícím příkladu, vygeneruje chybu kompilátoru CS0506: "\<člena > nejde přepsat zděděný člen \<člena > protože není označena jako virtuální, abstraktní nebo přepis.
 
 ```csharp
 public class A
@@ -194,7 +194,7 @@ Při navrhování vaší `Publication` třídy, je třeba provést několik rozh
 
  `Publication` Třída nemá žádné `abstract` metody, ale samotné třídě je `abstract`.
 
-- Určuje, zda odvozená třída představuje poslední třídy v hierarchii dědičnosti a samotné nelze zadat jako základní třída pro další odvozené třídy. Ve výchozím nastavení jakákoli třída může sloužit jako základní třídu. Můžete použít [zapečetěné](../language-reference/keywords/sealed.md) – klíčové slovo k označení, že třída nemůže sloužit jako základní třída pro všechny další třídy. Při pokusu o odvození z zapečetěnou třídu vygeneruje chybu kompilátoru CS0509, "se nemůže odvozovat ze zapečetěného typu <typeName>".
+- Určuje, zda odvozená třída představuje poslední třídy v hierarchii dědičnosti a samotné nelze zadat jako základní třída pro další odvozené třídy. Ve výchozím nastavení jakákoli třída může sloužit jako základní třídu. Můžete použít [zapečetěné](../language-reference/keywords/sealed.md) – klíčové slovo k označení, že třída nemůže sloužit jako základní třída pro všechny další třídy. Při pokusu o odvození z zapečetěnou třídu vygeneruje chybu kompilátoru CS0509, "se nemůže odvozovat ze zapečetěného typu \<typeName >".
 
   Pro příklad, budete označit odvozené třídy jako `sealed`.
 

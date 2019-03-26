@@ -4,12 +4,12 @@ description: Informace o nových funkcích v .NET Core.
 author: rpetrusha
 ms.author: ronpet
 ms.date: 08/13/2017
-ms.openlocfilehash: 5d21d2e07342d52dc438b67f9738f43fca47469a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2d0f6a9faaec4d4438452054624751a40c96c8e5
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54679890"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58464070"
 ---
 # <a name="whats-new-in-net-core-20"></a>Co je nového v .NET Core 2.0
 
@@ -144,7 +144,7 @@ Další informace najdete v tématu [Live Unit Testing v sadě Visual Studio 201
 
 Pokud vytváříte projekt pro více cílových platforem, teď můžete vybrat cílovou platformu z nabídek nejvyšší úrovně. Na následujícím obrázku, projekt s názvem SCD1 cíle 64bitová verze macOS X 10.11 (`osx.10.11-x64`) a 64bitová verze Windows 10/Windows Server 2016 (`win10-x64`). Před výběrem tlačítka projektu, v tomto případě ke spuštění sestavení pro ladění, můžete vybrat cílovou architekturu.
 
-![Výběr cílové rozhraní při sestavování projektu](media/multitarget.png)
+![Snímek obrazovky výběru cílového rozhraní framework při sestavování projektu.](./media/dotnet-core-2-0/target-framework-selection.png)
 
 ### <a name="side-by-side-support-for-net-core-sdks"></a>Podpora .NET Core SDK vedle sebe
 

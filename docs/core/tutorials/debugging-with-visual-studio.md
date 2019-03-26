@@ -3,12 +3,12 @@ title: Ladění aplikace Hello World .NET Core pomocí sady Visual Studio 2017
 description: Zjistěte, jak ladit aplikaci Hello World v jazyce C# nebo Visual Basic pomocí sady Visual Studio 2017.
 ms.date: 12/15/2017
 ms.custom: vs-dotnet, seodec18
-ms.openlocfilehash: b08744e784ffdde6682a6271888ae55d3fbd242b
-ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
+ms.openlocfilehash: 268a0d47b63b8d6baa25305296395d7d8a86729e
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53170662"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58463420"
 ---
 # <a name="debug-your-c-or-visual-basic-net-core-hello-world-application-using-visual-studio-2017"></a>Ladit vaše C# nebo Visual Basic .NET Core aplikace Hello World pomocí sady Visual Studio 2017
 
@@ -39,7 +39,7 @@ Spusťte svůj program v režimu ladění a zkuste několik funkcí ladění:
 
 1. Zastaví spuštění programu při dosažení zarážky a před `Console.WriteLine` metody. **Automatické hodnoty** okně zobrazí hodnoty proměnných, které se používají kolem aktuálního řádku. **Lokální** okno (které můžete zobrazit kliknutím **místní hodnoty** kartu) zobrazuje hodnoty proměnné, které jsou definovány v aktuálně prováděné metody.
 
-   ![Okno aplikace Visual Studio](./media/debugging-with-visual-studio/break.png)
+   ![Snímek obrazovky zarážky v sadě Visual Studio.](./media/debugging-with-visual-studio/breakpoint-console-window.png)
 
 1. Můžete změnit hodnotu proměnné, chcete-li zjistit, jak to ovlivní váš program. Pokud **podokna** není viditelný, ho zobrazit výběrem **ladění** > **Windows** > **okamžité**položky nabídky. **Podokna** umožňuje pracovat s aplikací, kterou ladíte.
 

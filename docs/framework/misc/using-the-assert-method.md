@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: 1e40f4d3-fb7d-4f19-b334-b6076d469ea9
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 31dcaeb6d3adcd658a9844ae5cf8e758172bd7bc
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5799ab8e827305fca565064a0ae7290c6c19eb01
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54516509"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58463004"
 ---
 # <a name="using-the-assert-method"></a>Použití metody Assert
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
@@ -57,8 +57,7 @@ ms.locfileid: "54516509"
   
 -   Metoda A je obsažen v sestavení A, metoda B je obsažen v sestavení B a tak dále.  
   
- ![](../../../docs/framework/misc/media/assert.gif "assert")  
-Použití metody Assert  
+ ![Diagram zobrazující průběh sestavení metody Assert.](./media/using-the-assert-method/assert-method-assemblies.gif)    
   
  V tomto scénáři, metody A volá B, volá B, C, volání jazyka C E, volání E F. Metoda C uplatňuje oprávnění ke čtení souborů na jednotce C (oprávnění P1) a metoda E požaduje oprávnění ke čtení souborů .txt na jednotce C (oprávnění P1A). Při vyžádání v F dochází za běhu, procházení zásobníku se provádí pro kontrolu oprávnění všech volajících F, počínaje E. E bylo uděleno oprávnění P1A tak procházení zásobníku pokračuje ke kontrole oprávnění C, kde je zjištěna kontrolní výraz. Vzhledem k tomu, že požadované oprávnění (P1A) je podmnožinou s potvrzením oprávnění (P1), procházení zásobníku se zastaví a kontrola zabezpečení automaticky proběhne úspěšně. Není důležité, že sestavením A a B nebyla udělena oprávnění P1A. Pomocí uplatňování P1, metoda jazyka C zajišťuje, že jeho volající neměly přístup k prostředku chráněny P1, i v případě, že volající nebylo uděleno oprávnění pro přístup k prostředku.  
   

@@ -3,17 +3,17 @@ title: Technologie WIF deklarací programovací Model
 ms.date: 03/30/2017
 ms.assetid: 149cb875-9b1c-4695-b88a-fbf1725a02f9
 author: BrucePerlerMS
-ms.openlocfilehash: 91b719967cd4ab9fd412e5c0799bb5e1921a4801
-ms.sourcegitcommit: d88024e6d6d8b242feae5f4007a709379355aa24
+ms.openlocfilehash: 543db91eaa058a87cfe579a23abb710f21ec1b85
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49316503"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58462809"
 ---
 # <a name="wif-claims-programming-model"></a>Technologie WIF deklarací programovací Model
 ASP.NET a služby Windows Communication Foundation (WCF) obvykle vývojáři IIdentity a IPrincipal rozhraní pro práci s informací o identitě uživatele. V rozhraní .NET 4.5 Windows Identity Foundation (WIF) byla integrována tak, že deklarace identity jsou teď vždy k dispozici pro všechny instanční objekt, jak je znázorněno v následujícím diagramu:
 
- ![Technologie WIF deklarací programovací Model](../../../docs/framework/security/media/wifclaimsprogrammingmodel.png "WIFClaimsProgrammingModel")
+ ![Diagram zobrazující průběh programovacího modelu technologie WIF deklarací identity.](./media/wif-claims-programming-model/wif-claims-programming-model.png)
 
  V rozhraní .NET 4.5 System.Security.Claims obsahuje nové třídy ClaimsPrincipal a ClaimsIdentity (viz diagram výše). Všechny objekty zabezpečení v rozhraní .NET jsou nyní odvozeny z objektu ClaimsPrincipal. Všechny třídy integrované identita, jako je FormsIdentity pro ASP.NET a nyní WindowsIdentity odvozovat ClaimsIdentity. Podobně všechny předdefinované instančního objektu třídy jako objektů GenericPrincipal a WindowsPrincipal odvozovat z objektu ClaimsPrincipal.
 
@@ -56,10 +56,10 @@ Technologie WIF podporuje několik kombinace ověřovacích mechanismů úprav. 
 |Typ tokenu|Generované deklarace identity|Mapu, aby Windows přístupový Token|
 |-|-|-|
 |SAML 1.1|1.  All claims from System.IdentityModel.SecurityTokenService.GetOutputClaimsIdentity(System.Security.Claims.ClaimsPrincipal,System.IdentityModel.Protocols.WSTrust.RequestSecurityToken,System.IdentityModel.Scope).<br />2.  `http://schemas.microsoft.com/ws/2008/06/identity/claims/confirmationkey` Deklarace identity, který obsahuje XML serializaci klíč potvrzení, pokud token, který obsahuje token důkazu.<br />3.  `http://schemas.microsoft.com/ws/2008/06/identity/claims/samlissuername` Deklarace identity z elementu vystavitele.<br />4.  AuthenticationMethod a AuthenticationInstant deklarací identity, pokud token, který obsahuje příkaz ověřování.|Kromě deklarace uvedené v "SAML 1.1", s výjimkou deklarací identity typu `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`, přidá se deklarace identity a identity budou mít stejné WindowsClaimsIdentity související s ověřováním Windows.|
-|PROTOKOL SAML 2.0|Stejné jako "SAML 1.1".|Stejné jako "SAML 1.1 namapovaných na účet Windows".|
+|SAML 2.0|Stejné jako "SAML 1.1".|Stejné jako "SAML 1.1 namapovaných na účet Windows".|
 |X509|1.  Deklarace identity s X500 rozlišující název, název_e-mailu, dnsName, SimpleName, UpnName, UrlName, kryptografický otisk, RsaKey (to může být extrahována pomocí metody RSACryptoServiceProvider.ExportParameters z vlastnosti X509Certificate2.PublicKey.Key), DsaKey () To může být extrahována pomocí metody DSACryptoServiceProvider.ExportParameters z vlastnosti X509Certificate2.PublicKey.Key), z X509 SerialNumber vlastnosti certifikátu.<br />2.  AuthenticationMethod deklarace identity s hodnotou `http://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509`. AuthenticationInstant deklarace identity s hodnotou času, kdy byl certifikát ověřen ve formátu data a času XmlSchema.|1.  Použije název plně kvalifikované domény účtu Windows, jako `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name` hodnoty deklarace identity. .<br />2.  Deklarace identity z X509 certifikát není namapován na Windows a deklarace identity z účtu systému windows získat pomocí mapování certifikátu Windows.|
 |HLAVNÍ NÁZEV UŽIVATELE|1.  Deklarace identity jsou podobně jako deklarace identity v části ověřování Windows.<br />2.  AuthenticationMethod deklarace identity s hodnotou `http://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password`. AuthenticationInstant deklarace identity s hodnotou času, kdy byla ověřena heslo ve formátu data a času XmlSchema.||
-|Windows (Kerberos nebo NTLM)|1.  Deklarace identity generují z přístupového tokenu, jako: PrimarySID DenyOnlyPrimarySID, PrimaryGroupSID, DenyOnlyPrimaryGroupSID, GroupSID, DenyOnlySID a název<br />2.  AuthenticationMethod s hodnotou `http://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/windows`. AuthenticationInstant hodnotu čas, kdy Windows přístupový token byl vytvořen ve formátu data a času XMLSchema.||
+|Windows (Kerberos nebo NTLM)|1.  Deklarace identity generují z přístupového tokenu, jako například: PrimarySID DenyOnlyPrimarySID, PrimaryGroupSID, DenyOnlyPrimaryGroupSID, GroupSID, DenyOnlySID a název<br />2.  AuthenticationMethod s hodnotou `http://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/windows`. AuthenticationInstant hodnotu čas, kdy Windows přístupový token byl vytvořen ve formátu data a času XMLSchema.||
 |Pár klíče RSA|1.  `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/rsa` Deklarace identity s hodnotou RSAKeyValue.<br />2.  AuthenticationMethod deklarace identity s hodnotou `http://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/signature`. AuthenticationInstant deklarace identity s hodnotou času, kdy došlo k ověření klíče RSA (to znamená, podpis se neověřuje) ve formátu data a času XMLSchema.||
 
 |Typ ověřování|Identifikátor URI, protože ho v "AuthenticationMethod" deklarace identity|

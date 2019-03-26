@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Windows Communication Foundation, extending
 - OperationRequirement class
 ms.assetid: 6214afde-44c1-4bf5-ba07-5ad6493620ea
-ms.openlocfilehash: 64eb44c948f669ea5364cc38c7416fdd12cdabd6
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 571c1d66bcf1ea62972eb1be3fd694964581db38
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54573946"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58465136"
 ---
 # <a name="how-to-create-a-custom-authorization-manager-for-a-service"></a>Postupy: Vytvoření vlastního správce autorizací pro službu
 Infrastruktura modelu identit ve Windows Communication Foundation (WCF) podporuje model extensible autorizace na základě rolí. Extrahuje z tokenů a volitelně zpracování pomocí zásad autorizace a pak umístit do deklarace identity <xref:System.IdentityModel.Policy.AuthorizationContext>. Správce autorizací prozkoumá deklarace identity v <xref:System.IdentityModel.Policy.AuthorizationContext> pro autorizační rozhodnutí.  
@@ -119,5 +119,4 @@ Infrastruktura modelu identit ve Windows Communication Foundation (WCF) podporuj
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.ServiceModel.ServiceAuthorizationManager>
-- [Zásady autorizace](../../../../docs/framework/wcf/samples/authorization-policy.md)
 - [Zásady autorizace](../../../../docs/framework/wcf/samples/authorization-policy.md)

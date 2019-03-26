@@ -4,12 +4,12 @@ description: Vysvětlení, že Docker, kontejnery a architekturu Mikroslužeb ne
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 11/23/2018
-ms.openlocfilehash: ac4ca2d4a24e2d26fd639eafd62968188dbeb483
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.openlocfilehash: 94f7bc27409048ec80a4e485cea4a16d30e7c1e2
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57674429"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58462679"
 ---
 # <a name="road-to-modern-applications-based-on-containers"></a>Silniční moderních aplikací založených na kontejnerech
 
@@ -24,10 +24,10 @@ Tato kniha patří do sady Microsoft příručky, které pokrývají mnoho poža
 Můžete najít další Microsoft e knihy související s kontejnery Dockeru v níže uvedeném seznamu:
 
 - **Mikroslužby .NET: Architektura pro Kontejnerizované aplikace .NET** \
-  [*https://docs.microsoft.com/dotnet/standard/microservices-architecture/*](../microservices-architecture/index.md)
+  [https://docs.microsoft.com/dotnet/standard/microservices-architecture/](../microservices-architecture/index.md)
 
 - **Modernizace stávajících aplikací .NET pomocí cloudu Azure a kontejnery Windows** \
-  [*https://docs.microsoft.com/dotnet/standard/modernize-with-azure-and-containers/*](../modernize-with-azure-and-containers/index.md)
+  [https://docs.microsoft.com/dotnet/standard/modernize-with-azure-and-containers/](../modernize-with-azure-and-containers/index.md)
 
 >[!div class="step-by-step"]
 >[Předchozí](docker-containers-images-and-registries.md)

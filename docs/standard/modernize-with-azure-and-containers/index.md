@@ -1,15 +1,9 @@
 ---
 title: Modernizujte stávající .NET aplikací s Azure Cloud a kontejnerů Windows (verze 2.)
-description: Zjistěte, jak přenést a podržte klávesu shift a modernizace stávajících aplikací do cloudu Azure a kontejnery s tuto elektronickou příručku.
+description: 'Zjistěte, jak přenést a podržte klávesu shift a modernizace stávajících aplikací do cloudu Azure a kontejnery s tuto elektronickou příručku.'
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 04/28/2018
-ms.openlocfilehash: 0cfb052daa41264ae00d48906477eae99ea159d8
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
-ms.translationtype: MT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50200082"
 ---
 # <a name="modernize-existing-net-applications-with-azure-cloud-and-windows-containers-2nd-edition"></a>Modernizace stávajících aplikací .NET pomocí cloudu Azure a kontejnery Windows (verze 2.)
 
@@ -17,11 +11,11 @@ ms.locfileid: "50200082"
 
 PUBLIKOVAL(A)  
 Microsoft Press a Microsoft DevDiv  
-Divize společnosti Microsoft Corporation  
+Divisions of Microsoft Corporation  
 One Microsoft Way  
 Redmond, Washington 98052-6399  
 
-Copyright © 2018 Microsoft Corporation  
+Copyright © 2018 by Microsoft Corporation  
 
 Všechna práva vyhrazena. Žádná část obsahu této knihy může reprodukovat v libovolné formě nebo jakýmikoli prostředky bez písemného souhlasu vydavatele.
 
@@ -36,12 +30,12 @@ Některé zde uvedené příklady jsou k dispozici pouze pro ilustraci a jsou sm
 Microsoft a ochranné známky uvedený na <https://www.microsoft.com> na webové stránce "Ochranné známky" jsou obchodní známky společností skupiny Microsoft. Všechny ostatní značky jsou majetkem příslušných vlastníků.
 
 Autor:
-> **De la Torre Cesarovi**, vyšší ODP., .NET produktu Team, Microsoft Corp.
+> **De la Torre Cesarovi**, Senior PM, .NET produktu Team, Microsoft Corp.
 
 Účastníci a recenzenti:
 > **Scott Hunter**, Partner Director oddělení PM, týmu .NET, Microsoft  
 > **Paulem Yuknewiczem**, hlavní manažer PM, týmu Visual Studio Tools, Microsoft  
-> **Lisa Guthrie**, vyšší ODP., týmu Visual Studio Tools, Microsoft  
+> **Lisa Guthrie**, Senior PM, týmu Visual Studio Tools, Microsoft  
 > **Ankit Asthana**, hlavní manažer PM, týmu .NET, Microsoft  
 > **Unai Zorrilla**, vedoucí vývojář, Plain Concepts  
 > **Javier Valero**, hlavní, provozní ředitel ve Grupo řešení  
@@ -80,27 +74,27 @@ Každý přístup k migraci má různé výhody a důvody k jeho používání. 
 
 Definice a krátkým vysvětlením pro každou úroveň vyspělosti aplikace jsou následující:
 
-**Úrovně 1: Infrastruktury připravené Cloud** aplikací: V rámci tohoto přístupu migrace můžete jednoduše migrovat nebo opětovným hostováním stávajících místních aplikací pro infrastrukturu jako službu ([IaaS](https://azure.microsoft.com/overview/what-is-iaas/)) platformu. Vaše aplikace mají téměř stejné složení jako před, ale teď je nasadit na virtuální počítače v cloudu.
+**1. úrovně: Cloud připravený pro infrastrukturu** aplikace: V rámci tohoto přístupu migrace můžete jednoduše migrovat nebo opětovným hostováním stávajících místních aplikací pro infrastrukturu jako službu ([IaaS](https://azure.microsoft.com/overview/what-is-iaas/)) platformu. Vaše aplikace mají téměř stejné složení jako před, ale teď je nasadit na virtuální počítače v cloudu.
 Tento jednoduchý typ migrace se obvykle označuje v odvětví jako "Lift & Posunout."
 
-**Úroveň 2: Cloud optimalizovaný** aplikace: na této úrovni a stále bez změna architektury nebo změnou významné kódu můžete získat další výhody spuštění vaší aplikace v cloudu s využitím moderních technologií, jako jsou kontejnery a další spravované cloudové služby. Je zvýšit flexibilitu, vaše aplikace rychleji dodávat tím, že upřesníte vašich podnikových procesů vývoje operací (DevOps). Můžete toho dosáhnout pomocí technologie, jako jsou kontejnery Windows, která je založena na modul Docker. Kontejnery odeberte řešit zádrhele spojené s, jež je způsobena závislosti aplikací při nasazení v několika fázích. V tomto modelu vyspělosti můžete nasadit kontejnery na IaaS nebo PaaS při používání další spravované cloudové služby související s databází, mezipaměti jako služba, monitorování a průběžné integrace a nasazování (CI/CD) kanálů.
+**Úroveň 2: Cloud optimalizovaný** aplikace: Na této úrovni a stále bez změna architektury nebo změnou významné kódu můžete získat další výhody spuštění vaší aplikace v cloudu s využitím moderních technologií, jako jsou kontejnery a další spravované cloudové služby. Je zvýšit flexibilitu, vaše aplikace rychleji dodávat tím, že upřesníte vašich podnikových procesů vývoje operací (DevOps). Můžete toho dosáhnout pomocí technologie, jako jsou kontejnery Windows, která je založena na modul Docker. Kontejnery odeberte řešit zádrhele spojené s, jež je způsobena závislosti aplikací při nasazení v několika fázích. V tomto modelu vyspělosti můžete nasadit kontejnery na IaaS nebo PaaS při používání další spravované cloudové služby související s databází, mezipaměti jako služba, monitorování a průběžné integrace a nasazování (CI/CD) kanálů.
 
 Na třetí úrovni vyspělosti je konečným cílem v cloudu, ale je nepovinné pro mnoho aplikací a nikoli hlavní fokus této příručky:
 
-**Úroveň 3: Cloudově nativních** aplikací: Tento postup migrace obvykle doprovází cíle modernizace klíčových aplikací a obchodní potřeby. Na této úrovni pomocí služeb PaaS přesunout vaše aplikace na výpočetní platformy PaaS. Můžete implementovat [nativní pro cloud](https://www.gartner.com/doc/3181919/architect-design-cloudnative-applications) architektury mikroslužeb a aplikace rozvoj aplikací s flexibilitou dlouhodobé a škálovat na nová omezení. Tento typ modernizaci obvykle vyžaduje aplikační architektura založená na speciálně pro cloud. Nové často musí být kód zapsán, zejména v případě, že přejdete na aplikace nativní pro cloud a modely založených na mikroslužbách. Tento přístup vám může pomoct získat výhody, které je obtížné dosáhnout v monolitické i v místním prostředí pro vaše aplikace.
+**Úroveň 3: Nativní pro cloud** aplikace: Tento postup migrace obvykle doprovází cíle modernizace klíčových aplikací a obchodní potřeby. Na této úrovni pomocí služeb PaaS přesunout vaše aplikace na výpočetní platformy PaaS. Můžete implementovat [nativní pro cloud](https://www.gartner.com/doc/3181919/architect-design-cloudnative-applications) architektury mikroslužeb a aplikace rozvoj aplikací s flexibilitou dlouhodobé a škálovat na nová omezení. Tento typ modernizaci obvykle vyžaduje aplikační architektura založená na speciálně pro cloud. Nové často musí být kód zapsán, zejména v případě, že přejdete na aplikace nativní pro cloud a modely založených na mikroslužbách. Tento přístup vám může pomoct získat výhody, které je obtížné dosáhnout v monolitické i v místním prostředí pro vaše aplikace.
 
 Tabulka 1-1 popisuje hlavní výhody a důvodů pro volbu každý migrace nebo modernizaci přístup.
 
-| **Infrastruktury připravené pro cloud** <br /> *Přenést* | **Optimalizované pro cloud** <br /> *Modernizujte* | **Nativní pro cloud** <br /> *Modernizace, úprava architektury a revize* |
+| **Infrastruktury připravené pro cloud** <br /> *Přenést* | **Optimalizované pro cloud** <br /> *Modernizujte* | **Cloud-Native** <br /> *Modernizace, úprava architektury a revize* |
 |---|---|---|
 | **Cílové výpočetní prostředí vaší aplikace** |
 | Aplikace nasazené pro virtuální počítače v Azure | Monolitické nebo N-vrstvá aplikace nasazené do služby Azure App Service, Azure Container Instance (ACI), virtuální počítače s kontejnery, Azure Service Fabric nebo AKS (služby Azure Kubernetes Service) | Kontejnerizované mikroslužby v Azure Kubernetes Service (AKS), Service Fabric a/nebo založené na Azure Functions bez serveru mikroslužeb. |
 | **Cíl dat** |
 | SQL nebo jakoukoli relační databázi na virtuálním počítači | Azure SQL Database Managed Instance nebo jiné spravované databáze v cloudu. | Pokutu intervalem databází na mikroslužbách, založené na Azure SQL Database, Azure Cosmos DB nebo jiné spravované databáze v cloudu |
 | **Výhody**|
-| <li>Žádná změna architektury, nové kódu <li> Minimálním úsilí pro rychlé migrace <li> Nejméně společným faktorem podporované v Azure <li> Zaručuje základní dostupnosti <li> Po přesunu do cloudu, je jednodušší modernizovat ještě víc | <li> Žádná změna architektury <li> Změny minimální kódu/konfigurace <li> Vylepšené nasazení a flexibilita DevOps uvolnit z důvodu kontejnery <li> Vyšší hustotu a nižší náklady na nasazení <li> Přenositelnost aplikací a závislostí <li> Flexibilita hostitele cíle: PaaS přístupy nebo IaaS | <li> Návrhář pro cloud, získáte nejlepší výhody z cloudu, ale je potřeba nový kód <li> Mikroslužby cloudově nativních postupů <li> Moderní aplikace, odolné cloudové hyperškálovatelném <li> Plně spravované služby <li> Optimalizováno pro škálování <li> Optimalizovaný pro flexibilitu autonomní podsystémem <li> Založená na nasazení a nástroji DevOps |
+| <li>Žádná změna architektury, nové kódu <li> Minimálním úsilí pro rychlé migrace <li> Nejméně společným faktorem podporované v Azure <li> Zaručuje základní dostupnosti <li> Po přesunu do cloudu, je jednodušší modernizovat ještě víc | <li> Žádná změna architektury <li> Změny minimální kódu/konfigurace <li> Vylepšené nasazení a flexibilita DevOps uvolnit z důvodu kontejnery <li> Vyšší hustotu a nižší náklady na nasazení <li> Přenositelnost aplikací a závislostí <li> Flexibilita hostitele cíle: Přístupy k PaaS nebo IaaS | <li> Návrhář pro cloud, získáte nejlepší výhody z cloudu, ale je potřeba nový kód <li> Mikroslužby cloudově nativních postupů <li> Moderní aplikace, odolné cloudové hyperškálovatelném <li> Plně spravované služby <li> Optimalizováno pro škálování <li> Optimalizovaný pro flexibilitu autonomní podsystémem <li> Založená na nasazení a nástroji DevOps |
 | **Výzvy** |
-| <li> Menší hodnota cloudu, než shift v provozních výdajů nebo zavírání datových centrech <li> Trochu spravuje: žádný operační systém nebo middleware oprav; použít řešení infrastruktury, jako jsou Puppet, Terraformu nebo Spinnaker | <li> Uzavření do kontejneru se na další krok v Křivka osvojování znalostí pro vývojáře a IT oddělení <li> Kanály DevOps a CI/CD je obvykle "nezbytnost' pro tento přístup. Pokud není aktuálně k dispozici v jazykové verzi organizace, může být dalším problémem| <li> Vyžaduje rearchitecture pro architektury mikroslužeb a nativních aplikací pro cloud a obvykle vyžaduje významné kódu refaktoringu nebo přepsání při modernizaci (zvýšená času a prostředků) <li> Kanály DevOps a CI/CD je obvykle "nezbytnost' pro tento přístup. Pokud není aktuálně k dispozici v jazykové verzi organizace, může být dalším problémem|
+| <li> Menší hodnota cloudu, než shift v provozních výdajů nebo zavírání datových centrech <li> Trochu spravuje: Žádný operační systém nebo middleware oprav; použít řešení infrastruktury, jako jsou Puppet, Terraformu nebo Spinnaker | <li> Uzavření do kontejneru se na další krok v Křivka osvojování znalostí pro vývojáře a IT oddělení <li> Kanály DevOps a CI/CD je obvykle "nezbytnost' pro tento přístup. Pokud není aktuálně k dispozici v jazykové verzi organizace, může být dalším problémem| <li> Vyžaduje rearchitecture pro architektury mikroslužeb a nativních aplikací pro cloud a obvykle vyžaduje významné kódu refaktoringu nebo přepsání při modernizaci (zvýšená času a prostředků) <li> Kanály DevOps a CI/CD je obvykle "nezbytnost' pro tento přístup. Pokud není aktuálně k dispozici v jazykové verzi organizace, může být dalším problémem|
 > **Tabulka 1-1.** Výhody i výzvy cest modernizaci stávajících aplikací .NET a služeb
 
 ### <a name="key-technologies-and-architectures-by-maturity-level"></a>Klíčové technologie a architektury podle úrovně vyspělosti
@@ -119,11 +113,11 @@ Obrázek 1 – 2 zvýrazní nejběžnějších scénářů, ale mnoho hybridní 
 
 Každé úrovni vyspělosti v procesu modernizaci je přidružen následující klíčových technologií a postupů:
 
-- **Cloud připravený pro infrastrukturu** (metody opětovného hostování nebo basic lift & shift): jako první krok, řada organizací má jenom rychle provést strategii migrace na cloud. V tomto případě aplikace se změněným hostováním. Změna hostování většiny je možné automatizovat pomocí [Azure Migrate](https://aka.ms/azuremigrate), služba, která poskytuje pokyny, přehledy a mechanizmy, které potřebuje pomoc při migraci do Azure založené na cloudu nástrojů, jako je [Azure Site Recovery](https://azure.microsoft.com/services/site-recovery/)a [Azure Database Migration Service](https://azure.microsoft.com/campaigns/database-migration/). Můžete vytvořit také ručně, změna hostování tak, aby informace infrastruktury podrobnosti o vašich prostředků při přesunu starší verze aplikací do cloudu. Například můžete přesunout vaše aplikace na virtuální počítače v Azure s minimem úpravy – pravděpodobně s pouze změny menší konfigurace. Sítě je v tomto případě podobné v místním prostředí, zejména v případě, že vytvoříte virtuální sítě v Azure.
+- **Cloud připravený pro infrastrukturu** (metody opětovného hostování nebo basic lift & shift): Jako první krok řada organizací má pouze rychle provést strategii migrace na cloud. V tomto případě aplikace se změněným hostováním. Změna hostování většiny je možné automatizovat pomocí [Azure Migrate](https://aka.ms/azuremigrate), služba, která poskytuje pokyny, přehledy a mechanizmy, které potřebuje pomoc při migraci do Azure založené na cloudu nástrojů, jako je [Azure Site Recovery](https://azure.microsoft.com/services/site-recovery/)a [Azure Database Migration Service](https://azure.microsoft.com/campaigns/database-migration/). Můžete vytvořit také ručně, změna hostování tak, aby informace infrastruktury podrobnosti o vašich prostředků při přesunu starší verze aplikací do cloudu. Například můžete přesunout vaše aplikace na virtuální počítače v Azure s minimem úpravy – pravděpodobně s pouze změny menší konfigurace. Sítě je v tomto případě podobné v místním prostředí, zejména v případě, že vytvoříte virtuální sítě v Azure.
 
 - **Optimalizované pro cloud** (spravované služby a kontejnery Windows): Tento model je o tom, že několik důležitých nasazení optimalizace získat některé velké výhody cloudu, beze změny základní architektury aplikace. Tady základní krokem je přidání [kontejnery Windows](https://docs.microsoft.com/virtualization/windowscontainers/about/) podporu pro existující aplikace rozhraní .NET Framework. Tento krok důležité (kontejnerizace) nevyžaduje, aby vůbec měnil kód, tak celkové úsilí výtah a posunout je světla. Můžete použít nástroje, jako je [Image2Docker](https://github.com/docker/communitytools-image2docker-win) nebo Visual Studio se svými nástroji pro [Docker](https://www.docker.com/). Visual Studio automaticky zvolí inteligentních výchozích hodnot pro aplikace ASP.NET a imagí kontejnerů Windows. Tyto nástroje nabízejí rychlý vnitřní smyčky a Rychlá cesta k získání kontejnerů do Azure. Zlepšení vaší flexibilitu při nasazování do různých prostředí. Potom přesunem do produkčního prostředí, můžete nasadit kontejnery Windows na [Azure Web App for Containers](https://azure.microsoft.com/services/app-service/containers/), [Azure Container Instances (ACI) a virtuální počítače Azure s Windows serverem 2016 a kontejnery, pokud chcete přístup IaaS. Pro o něco složitější vícekontejnerových aplikací do orchestrátorů, jako je [Azure Service Fabric](https://azure.microsoft.com/services/service-fabric/) nebo [Azure Kubernetes Service (AKS/ACS)](https://azure.microsoft.com/services/container-service/). Během této počáteční modernizaci, můžete také přidat prostředky z cloudu, např. monitorování pomocí nástrojů, jako je [Azure Application Insights](https://docs.microsoft.com/azure/application-insights/app-insights-overview); Kanály CI/CD pro váš životní cyklus aplikace s [Azure DevOps služby](https://visualstudio.microsoft.com/team-services/); a mnoho více datových prostředků služeb, které jsou dostupné v Azure. Například můžete upravit monolitické webovou aplikaci, která byla původně vyvinuta pomocí tradiční [webových formulářů ASP.NET](https://www.asp.net/web-forms) nebo [ASP.NET MVC](https://www.asp.net/mvc), ale teď můžete nasadit s využitím kontejnerů Windows. Při použití kontejnerů Windows by měl taky migrovat data do databáze v [Azure SQL Database Managed Instance](https://docs.microsoft.com/azure/sql-database/), všechny beze změny základní architektury vaší aplikace.
 
-- **Nativní pro cloud**: zavedeném, byste uvažovat o navrhování [nativní pro cloud](https://www.gartner.com/doc/3181919/architect-design-cloudnative-applications) aplikací, pokud cílíte na velkých a složitých aplikací s více nezávislých vývojové týmy pracující na různé mikroslužeb, která můžete vyvinuli a nasadit samostatně. Také kvůli škálovatelnosti granularized a nezávisle na mikroslužbách. Tyto přístupy k architektuře pro rozpoznávání tváře velmi důležité výzev a složitosti ale může být výrazně zjednodušuje použití cloudu PaaS a orchestrátorů, jako jsou [Azure Kubernetes Service (AKS/ACS)](https://azure.microsoft.com/services/container-service/) (managed Kubernetes), [Azure Service Prostředky infrastruktury, a [Azure Functions](https://azure.microsoft.com/services/functions/) a bez serveru přístup. Všechny tyto přístupy (jako jsou mikroslužby a bez serveru) obvykle vyžadují, abyste navrhovat pro cloud a vytvoření nového kódu – kód, který je přizpůsobené pro konkrétní platformy PaaS nebo kód, který odpovídá různé architektury, jako jsou mikroslužby.
+- **Cloud-Native**: Jak to je zavedeno, byste uvažovat o navrhování [nativní pro cloud](https://www.gartner.com/doc/3181919/architect-design-cloudnative-applications) aplikací, pokud cílíte na velkých a složitých aplikací s více nezávislých vývojové týmy pracující na různých mikroslužeb, která může být vyvinul a nasadit samostatně. Také kvůli škálovatelnosti granularized a nezávisle na mikroslužbách. Tyto přístupy k architektuře pro rozpoznávání tváře velmi důležité výzev a složitosti ale může být výrazně zjednodušuje použití cloudu PaaS a orchestrátorů, jako jsou [Azure Kubernetes Service (AKS/ACS)](https://azure.microsoft.com/services/container-service/) (managed Kubernetes), [Azure Service Prostředky infrastruktury, a [Azure Functions](https://azure.microsoft.com/services/functions/) a bez serveru přístup. Všechny tyto přístupy (jako jsou mikroslužby a bez serveru) obvykle vyžadují, abyste navrhovat pro cloud a vytvoření nového kódu – kód, který je přizpůsobené pro konkrétní platformy PaaS nebo kód, který odpovídá různé architektury, jako jsou mikroslužby.
 
 Obrázek 1 – 3 ukazuje interní technologie, můžete použít pro každou úroveň vyspělosti:
 
@@ -166,15 +160,18 @@ Tento průvodce popisuje určitou podmnožinu ukázkové scénáře, jak ukazuje
 
 Fokus Tato příručka se věnuje. Zobrazuje cestu, která můžete provést k dosažení lift and shift existující aplikace .NET bez změna architektury a beze změny kódu. Nakonec se ukazuje, jak vaše aplikace optimalizované pro Cloud.
 
-Tato příručka nepodporuje ukazují, jak vytvářet aplikace nativní pro Cloud, jako je například způsobu, jak rozvíjet na architekturu mikroslužeb. Úprava architektury aplikace nebo vytvoření zcela nové aplikace, které jsou založené na mikroslužbách najdete v e kniha [Mikroslužby .NET: architektura pro kontejnerizované aplikace .NET](https://aka.ms/microservicesebook).
+Tato příručka nepodporuje ukazují, jak vytvářet aplikace nativní pro Cloud, jako je například způsobu, jak rozvíjet na architekturu mikroslužeb. Úprava architektury aplikace nebo vytvoření zcela nové aplikace, které jsou založené na mikroslužbách najdete v e kniha [Mikroslužby .NET: Architektura pro kontejnerizované aplikace .NET](https://aka.ms/microservicesebook).
 
 ### <a name="additional-resources"></a>Další zdroje
 
-- **Životní cyklus aplikace Dockeru s platformou a nástroji Microsoft kontejnerizovaných** (ke stažení e kniha): [*https://aka.ms/dockerlifecycleebook*](https://aka.ms/dockerlifecycleebook)
+- **Životní cyklus aplikace Dockeru s platformou a nástroji Microsoft kontejnerizovaných** (ke stažení e kniha) \
+  [https://aka.ms/dockerlifecycleebook](https://aka.ms/dockerlifecycleebook)
 
-- **Mikroslužby .NET: Architektura pro kontejnerizované aplikace .NET** (ke stažení e kniha): [*https://aka.ms/microservicesebook*](https://aka.ms/microservicesebook)
+- **Mikroslužby .NET: Architektura pro kontejnerizované aplikace .NET** (ke stažení e kniha) \
+  [https://aka.ms/microservicesebook](https://aka.ms/microservicesebook)
 
-- **Navrhování moderních webových aplikací pomocí ASP.NET Core a Azure** (ke stažení e kniha): [*https://aka.ms/webappebook*](https://aka.ms/webappebook)
+- **Navrhování moderních webových aplikací pomocí ASP.NET Core a Azure** (ke stažení e kniha) \
+  [https://aka.ms/webappebook](https://aka.ms/webappebook)
 
 ## <a name="who-should-use-this-guide"></a>Kdo by měl používat tohoto průvodce
 
@@ -196,7 +193,7 @@ Tyto ukázkové aplikace druhou verzi, modernizované kódem a která jsou pomě
 
 ## <a name="send-your-feedback"></a>Pošlete svůj názor
 
-Tato příručka byla zapsána do vám pomůže pochopit možnosti zlepšení a modernizaci stávajících webových aplikací .NET. Průvodce a související ukázkové aplikace se vyvíjejí. Vaše zpětná vazba je Vítejte! Pokud máte poznámky o tom, jak tento průvodce může být užitečnější, odešlete jim [ dotnet-architecture-ebooks-feedback@service.microsoft.com ](mailto:dotnet-architecture-ebooks-feedback@service.microsoft.com?subject=Feedback%20for%20.NET%20Container%20&%20Microservices%20Architecture%20book).
+Tato příručka byla zapsána do vám pomůže pochopit možnosti zlepšení a modernizaci stávajících webových aplikací .NET. Průvodce a související ukázkové aplikace se vyvíjejí. Vítáme vaše připomínky a názory. Pokud máte poznámky o tom, jak tento průvodce může být užitečnější, odešlete jim [ dotnet-architecture-ebooks-feedback@service.microsoft.com ](mailto:dotnet-architecture-ebooks-feedback@service.microsoft.com?subject=Feedback%20for%20.NET%20Container%20&%20Microservices%20Architecture%20book).
 
 >[!div class="step-by-step"]
-[Next](lift-and-shift-existing-apps-azure-iaas.md)
+>[Next](lift-and-shift-existing-apps-azure-iaas.md)

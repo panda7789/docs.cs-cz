@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/02/2018
-ms.openlocfilehash: 347e6d36b7e838082f47d39c5ae67c219ec11d45
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 2adc58339012095c9dc58d633a9b3815cf7aba3f
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53127716"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58463342"
 ---
 # <a name="using-a-database-server-running-as-a-container"></a>Použití databázového serveru běžícího jako kontejner
 
@@ -47,11 +47,11 @@ S SQL serveru běžícího jako kontejner není právě užitečná pro ukázku 
 
 #### <a name="additional-resources"></a>Další zdroje
 
--   **Spuštění image SQL serveru Docker v Linuxu, Mac nebo Windows** <br/>
-    [*https://docs.microsoft.com/sql/linux/sql-server-linux-setup-docker*](https://docs.microsoft.com/sql/linux/sql-server-linux-setup-docker)
+- **Spuštění image SQL serveru Docker v Linuxu, Mac nebo Windows** \
+    [https://docs.microsoft.com/sql/linux/sql-server-linux-setup-docker](https://docs.microsoft.com/sql/linux/sql-server-linux-setup-docker)
 
--   **Připojení a dotazování SQL serveru v Linuxu pomocí sqlcmd** <br/>
-    [*https://docs.microsoft.com/sql/linux/sql-server-linux-connect-and-query-sqlcmd*](https://docs.microsoft.com/sql/linux/sql-server-linux-connect-and-query-sqlcmd)
+- **Připojení a dotazování SQL serveru v Linuxu pomocí sqlcmd** \
+    [https://docs.microsoft.com/sql/linux/sql-server-linux-connect-and-query-sqlcmd](https://docs.microsoft.com/sql/linux/sql-server-linux-connect-and-query-sqlcmd)
 
 ### <a name="seeding-with-test-data-on-web-application-startup"></a>Předvyplnění daty testu při spuštění webové aplikace
 

@@ -2,12 +2,12 @@
 title: Služby WCF a ASP.NET
 ms.date: 03/30/2017
 ms.assetid: b980496a-f0b0-4319-8e55-a0f0fa32da70
-ms.openlocfilehash: 837d03bbbac01be48d03c9170fc0a9a36c970da0
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 80f4f9a473f223928981ee3f0c2e9f2464cbafaf
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55282604"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58463472"
 ---
 # <a name="wcf-services-and-aspnet"></a>Služby WCF a ASP.NET
 
@@ -17,7 +17,7 @@ Toto téma popisuje hostování Windows Communication Foundation (WCF) služby-s
 
 Služby WCF hostované v Internetové informační služby (IIS) mohou být umístěny s. Stránky ASPX a ASMX webovými službami v rámci jednoho, běžné domény aplikace. Technologie ASP.NET poskytuje běžné služby infrastruktury, jako je Správa domény aplikace a dynamická kompilace pro WCF a ASP.NET HTTP runtime. Výchozí konfigurace pro službu WCF je vedle sebe s technologií ASP.NET.
 
-![Služby WCF a ASP .NET: sdílení stavu](./media/hostingwcfwithaspnet.gif "HostingWCFwithASPNET")
+![Snímek obrazovky s informacemi služby WCF a ASP .NET: sdílení stavu.](./media/wcf-services-and-aspnet/windows-communication-foundation-services-asp-dotnet-configuration.gif)
 
 Modul runtime ASP.NET HTTP zpracovává požadavky ASP.NET, ale není součástí zpracování požadavků určených pro služby WCF, i když tyto služby jsou hostované v téže doméně AppDomain, jako je ASP.NET obsahu. Místo toho modelu služby WCF zachycuje zprávy adresované do služby WCF a směruje je do zásobníku/kanál přenosu WCF.
 
