@@ -1,6 +1,0 @@
-# [Atributy](index.md)
-## [Vytváření vlastních atributů](creating-custom-attributes.md)
-### [AttributeUsage](attributeusage.md)
-## [Přístup k atributům pomocí reflexe](accessing-attributes-by-using-reflection.md)
-## [Postupy: Vytváření sjednocení C/C++ pomocí atributů](how-to-create-a-c-cpp-union-by-using-attributes.md)
-## [Běžné atributy](common-attributes.md)

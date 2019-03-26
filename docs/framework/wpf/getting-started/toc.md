@@ -1,6 +1,0 @@
-# [Začínáme](index.md)
-## [Úvod k použití WPF v sadě Visual Studio](introduction-to-wpf-in-vs.md)
-## [Novinky ve verzi 4.5 grafického subsystému WPF](whats-new.md)
-## [Návod: Moje první desktopová aplikace WPF](walkthrough-my-first-wpf-desktop-application.md)
-## [Návody pro WPF](wpf-walkthroughs.md)
-## [Zpětná vazba komunity WPF](community-feedback.md)

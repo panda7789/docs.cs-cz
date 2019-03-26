@@ -1,5 +1,0 @@
-# [Začínáme](index.md)
-## [Přehled](overview.md)
-## [Rozhraní .NET Framework a nesvázaná vydání](the-net-framework-and-out-of-band-releases.md)
-## [.NET Core a open source](net-core-and-open-source.md)
-## [Požadavky na systém](system-requirements.md)
