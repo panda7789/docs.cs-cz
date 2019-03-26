@@ -69,9 +69,8 @@ Tento dokument obsahuje seznam pokyny k serializaci zvážit při navrhování r
      [!code-csharp[SerializationGuidelines#3](../../../samples/snippets/csharp/VS_Snippets_CFX/serializationguidelines/cs/source.cs#3)]
      [!code-vb[SerializationGuidelines#3](../../../samples/snippets/visualbasic/VS_Snippets_CFX/serializationguidelines/vb/source.vb#3)]  
   
-     
-      <xref:System.Runtime.Serialization.OnDeserializedAttribute> Se atribut nejčastěji používané zpětného volání. Další atributy řady jsou <xref:System.Runtime.Serialization.OnDeserializingAttribute>,    
-<xref:System.Runtime.Serialization.OnSerializingAttribute>, a <xref:System.Runtime.Serialization.OnSerializedAttribute>. Jejich lze použít k označení zpětná volání, které získat spuštěny před deserializace před serializací a nakonec po serializaci, v uvedeném pořadí.  
+     <xref:System.Runtime.Serialization.OnDeserializedAttribute> Se atribut nejčastěji používané zpětného volání. Další atributy řady jsou <xref:System.Runtime.Serialization.OnDeserializingAttribute>,    
+    <xref:System.Runtime.Serialization.OnSerializingAttribute>, a <xref:System.Runtime.Serialization.OnSerializedAttribute>. Jejich lze použít k označení zpětná volání, které získat spuštěny před deserializace před serializací a nakonec po serializaci, v uvedeném pořadí.  
   
 4.  ZVAŽTE použití <xref:System.Runtime.Serialization.KnownTypeAttribute> označuje konkrétní typy, které se mají používat při deserializaci komplexní objekt grafu.  
   
