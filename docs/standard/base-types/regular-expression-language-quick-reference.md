@@ -16,35 +16,23 @@ helpviewer_keywords:
 ms.assetid: 930653a6-95d2-4697-9d5a-52d11bb6fd4c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f44bf779060a2f9ff2de96ccad5f397a9cdd33c7
-ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
+ms.openlocfilehash: 9224e78a422b20f33f19d05e43ed1e2ec8d1c5ce
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56836302"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58410521"
 ---
 # <a name="regular-expression-language---quick-reference"></a>Jazyk regulárních výrazů – stručná referenční dokumentace
-<a name="top"></a> Regulární výraz je vzor, který modul regulárních výrazů pokusí shodovat se vstupním textem. Vzor sestává z jednoho nebo více znakových literálů, operátorů nebo konstrukcí.  Stručný úvod naleznete zde [regulárních výrazů .NET](../../../docs/standard/base-types/regular-expressions.md).  
+ Regulární výraz je vzor, který modul regulárních výrazů porovnává se vstupním textem. Vzor sestává z jednoho nebo více znakových literálů, operátorů nebo konstrukcí.  Stručný úvod naleznete zde [regulárních výrazů .NET](../../../docs/standard/base-types/regular-expressions.md).  
   
- Jednotlivé oddíly v tomto stručném přehledu obsahují určitou kategorii znaků, operátorů a konstrukcí, pomocí kterých lze definovat regulární výrazy:  
-  
- [Řídicí sekvence znaků](#character_escapes)  
- [Třídy znaků](#character_classes)  
- [Kotvy](#anchors)  
- [Seskupovací konstrukce](#grouping_constructs)  
- [Kvantifikátory](#quantifiers)  
- [Konstrukce zpětných odkazů](#backreference_constructs)  
- [Konstrukce alternace](#alternation_constructs)  
- [Náhrady](#substitutions)  
- [Možnosti regulárních výrazů](#options)  
- [Různé konstrukce](#miscellaneous_constructs)  
+ Každý oddíl v tomto stručném přehledu obsahují určitou kategorii znaků, operátorů a konstrukcí, které můžete použít pro definování regulárních výrazů.  
   
  Tyto informace v dva formáty, které si můžete stáhnout a vytisknout poskytujeme také pro snadné odkazování:  
   
  [Stáhnout ve formátu aplikace Word (.docx)](https://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.docx)  
  [Stáhnout ve formátu PDF (PDF)](https://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.pdf)  
   
-<a name="character_escapes"></a>   
 ## <a name="character-escapes"></a>Řídicí znaky  
  Znak zpětného lomítka (\\) v regulárním výrazu označuje, že buď následující znak je speciální znak (jak je znázorněno v následující tabulce), nebo by měl být interpretován literálně. Další informace najdete v tématu [řídicí sekvence znaků](../../../docs/standard/base-types/character-escapes-in-regular-expressions.md).  
   
@@ -66,7 +54,6 @@ ms.locfileid: "56836302"
   
  [Zpět na začátek](#top)  
   
-<a name="character_classes"></a>   
 ## <a name="character-classes"></a>Třídy znaků  
  Třída znaků odpovídá jakémukoli znaku z množiny znaků. Třídy znaků obsahují prvky jazyka uvedené v následující tabulce. Další informace najdete v tématu [třídy znaků](../../../docs/standard/base-types/character-classes-in-regular-expressions.md).  
   
@@ -103,7 +90,6 @@ ms.locfileid: "56836302"
   
  [Zpět na začátek](#top)  
   
-<a name="grouping_constructs"></a>   
 ## <a name="grouping-constructs"></a>Seskupovací konstrukce  
  Seskupovací konstrukce vymezují dílčí výrazy regulárních výrazů a obvykle zachytávají podřetězce vstupního řetězce. Seskupovací konstrukce obsahují prvky jazyka uvedené v následující tabulce. Další informace najdete v tématu [Seskupovací konstrukce](grouping-constructs-in-regular-expressions.md).  
   
@@ -122,7 +108,6 @@ ms.locfileid: "56836302"
   
  [Zpět na začátek](#top)  
   
-<a name="quantifiers"></a>   
 ## <a name="quantifiers"></a>Kvantifikátory  
  Kvantifikátor určuje, kolik instancí předchozího prvku (kterým může být znak, skupina nebo třída znaků) musí být přítomných ve vstupním řetězci, aby došlo ke shodě. Kvantifikátory zahrnují prvky jazyka uvedené v následující tabulce. Další informace najdete v tématu [kvantifikátory](quantifiers-in-regular-expressions.md).  
   
@@ -143,7 +128,6 @@ ms.locfileid: "56836302"
   
  [Zpět na začátek](#top)  
   
-<a name="backreference_constructs"></a>   
 ## <a name="backreference-constructs"></a>Konstrukce zpětných odkazů  
  Zpětné odkazy umožňují dříve porovnaným dílčím výrazům, aby byly identifikovány následně ve stejném pořadí v daném regulárním výrazu. Následující tabulka uvádí konstrukce zpětných odkazů podporované regulárními výrazy v rozhraní .NET. Další informace najdete v tématu [konstrukce zpětných odkazů](backreference-constructs-in-regular-expressions.md).  
   
@@ -154,7 +138,6 @@ ms.locfileid: "56836302"
   
  [Zpět na začátek](#top)  
   
-<a name="alternation_constructs"></a>   
 ## <a name="alternation-constructs"></a>Konstrukce alternace  
  Konstrukce alternace upravují regulární výraz, aby došlo ke shodě typu buď/anebo. Tyto konstrukce obsahují prvky jazyka uvedené v následující tabulce. Další informace najdete v tématu [alternace](alternation-constructs-in-regular-expressions.md).  
   
@@ -166,7 +149,6 @@ ms.locfileid: "56836302"
   
  [Zpět na začátek](#top)  
   
-<a name="substitutions"></a>   
 ## <a name="substitutions"></a>Náhrady  
  Náhrady jsou prvky jazyka regulárních výrazů, které jsou podporovány ve vzorech pro nahrazení. Další informace najdete v tématu [náhrady](substitutions-in-regular-expressions.md). Metaznaky uvedené v následující tabulce jsou atomické kontrolní výrazy s nulovou šířkou.  
   
@@ -183,7 +165,6 @@ ms.locfileid: "56836302"
   
  [Zpět na začátek](#top)  
   
-<a name="options"></a>   
 ## <a name="regular-expression-options"></a>Možnosti regulárních výrazů  
  Můžete zadat možnosti, které řídí způsob, jakým modul regulárních výrazů interpretuje vzor regulárního výrazu. Mnohé z těchto možností může být zadán buď jako vložené (ve vzoru regulárního výrazu), nebo jako jeden nebo více <xref:System.Text.RegularExpressions.RegexOptions> konstanty. Tyto stručné referenční informace uvádí pouze vložené možnosti. Další informace o vložených a <xref:System.Text.RegularExpressions.RegexOptions> možnosti, najdete v článku [Možnosti regulárních výrazů](regular-expression-options.md).  
   
@@ -205,7 +186,6 @@ ms.locfileid: "56836302"
   
  [Zpět na začátek](#top)  
   
-<a name="miscellaneous_constructs"></a>   
 ## <a name="miscellaneous-constructs"></a>Různé konstrukce  
  Různé konstrukce buď upraví vzor regulárního výrazu, nebo o tomto vzoru poskytnou informace. Následující tabulka obsahuje seznam různých konstrukcí podporovaných rozhraním .NET. Další informace najdete v tématu [různé vytvoří](miscellaneous-constructs-in-regular-expressions.md).  
   
