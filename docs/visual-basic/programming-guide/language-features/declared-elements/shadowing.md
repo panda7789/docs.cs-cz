@@ -18,12 +18,12 @@ helpviewer_keywords:
 - objects [Visual Basic], names
 - names [Visual Basic], shadowing
 ms.assetid: 54bb4c25-12c4-4181-b4a0-93546053964e
-ms.openlocfilehash: 6ac973493b67fa15ca935f61bbb8e5c07bda1e0f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 15c7112f7e318542859162655c78e19558178e5a
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54580860"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58411002"
 ---
 # <a name="shadowing-in-visual-basic"></a>Stínění v jazyce Visual Basic
 Když dva programovací prvky sdílí se stejným názvem, jeden z nich můžete skrýt, nebo *stínové*, druhou. V takové situaci stínovaný prvek není k dispozici pro referenci; Místo toho se při váš kód používá název elementu, kompilátor jazyka Visual Basic se přeloží na elementu stínového provozu.  
@@ -41,8 +41,7 @@ Když dva programovací prvky sdílí se stejným názvem, jeden z nich můžete
   
  Následující obrázek znázorňuje dvě proměnné, oba s názvem `temp`. Lokální proměnná `temp` zastiňuje členskou proměnnou `temp` při přístupu z v rámci své vlastní procedury `p`. Ale `MyClass` – klíčové slovo stínový provoz obchází a přistupuje k členské proměnné.  
   
- ![Stínový provoz prostřednictvím oboru Grafický diagram](../../../../visual-basic/programming-guide/language-features/declared-elements/media/shadowscope.gif "ShadowScope")  
-Stínový provoz prostřednictvím oboru  
+ ![Obrázek znázorňující, stínování prostřednictvím oboru.](./media/shadowing/shadow-scope-diagram.gif)
   
  Příklad stínování prostřednictvím oboru, naleznete v tématu [jak: Skrytí proměnné se stejným názvem jako má vaše proměnná](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-hide-a-variable-with-the-same-name-as-your-variable.md).  
   
@@ -51,8 +50,7 @@ Stínový provoz prostřednictvím oboru
   
  Následující obrázek ukazuje základní třídu `b` a odvozená třída `d` , která dědí z `b`. Základní třída definuje proceduru s názvem `proc`, a odvozená třída zastiňuje ho pomocí jiné proceduře se stejným názvem. První `Call` příkaz přistupuje stínováním `proc` v odvozené třídě. Ale `MyBase` – klíčové slovo stínový provoz obchází a budou k dispozici stínovaný postup v základní třídě.  
   
- ![Stínový provoz prostřednictvím dědičnosti Grafický diagram](../../../../visual-basic/programming-guide/language-features/declared-elements/media/shadowinherit.gif "ShadowInherit")  
-Stínový provoz prostřednictvím dědičnosti  
+ ![Grafický diagram stínový provoz prostřednictvím dědičnosti](./media/shadowing/shadowing-inherit-diagram.gif)  
   
  Příklad stínový provoz prostřednictvím dědičnosti, naleznete v tématu [jak: Skrytí proměnné se stejným názvem jako má vaše proměnná](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-hide-a-variable-with-the-same-name-as-your-variable.md) a [jak: Skrytí zděděné proměnné](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-hide-an-inherited-variable.md).  
   

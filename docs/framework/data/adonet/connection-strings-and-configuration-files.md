@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 37df2641-661e-407a-a3fb-7bf9540f01e8
-ms.openlocfilehash: 5de30627d6d0e1209b12912437ae3403890f1678
-ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
+ms.openlocfilehash: 5e83d13d24a0b17fd886995e552dd0a7e2cf8ff4
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55828342"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58409949"
 ---
 # <a name="connection-strings-and-configuration-files"></a>Připojovací řetězce a konfigurační soubory
 Vkládání připojovacích řetězců v kódu vaší aplikace může vést k ohrožení zabezpečení a problémy s údržbou. Nešifrované připojovací řetězce, které jsou kompilovány do zdrojového kódu aplikace lze zobrazit pomocí [Ildasm.exe (IL Disassembler)](../../../../docs/framework/tools/ildasm-exe-il-disassembler.md) nástroj. Kromě toho pokud připojovací řetězec neustále mění, musí aplikace zopakovat. Z těchto důvodů doporučujeme ukládání připojovacích řetězců do konfiguračního souboru aplikace.  
@@ -81,7 +81,7 @@ Vkládání připojovacích řetězců v kódu vaší aplikace může vést k oh
 |<xref:System.Configuration.ConnectionStringSettings.ConnectionString%2A>|Připojovací řetězec. Mapuje **connectionString** atribut.|  
   
 ### <a name="example-listing-all-connection-strings"></a>Příklad: Výpis všech připojovacích řetězců  
- Tento příklad provede iteraci `ConnectionStringSettings` kolekce a zobrazí <xref:System.Configuration.ConnectionStringSettings.Name%2A>, <xref:System.Configuration.ConnectionStringSettings.ProviderName%2A>, a <xref:System.Configuration.ConnectionStringSettings.ConnectionString%2A> vlastnosti v okně konzoly.  
+ Tento příklad provede iteraci <xref:System.Configuration.ConnectionStringSettingsCollection> a zobrazí <xref:System.Configuration.ConnectionStringSettings.Name%2A?displayProperty=nameWithType>, <xref:System.Configuration.ConnectionStringSettings.ProviderName%2A?displayProperty=nameWithType>, a <xref:System.Configuration.ConnectionStringSettings.ConnectionString%2A?displayProperty=nameWithType> vlastnosti v okně konzoly.  
   
 > [!NOTE]
 >  System.Configuration.dll není zahrnut ve všech typech projektů a budete muset nastavit na ni odkaz použít třídy konfigurace. Název a umístění konfiguračního souboru pro konkrétní aplikace se liší podle typu aplikace a proces hostování.  
@@ -139,7 +139,7 @@ Vkládání připojovacích řetězců v kódu vaší aplikace může vést k oh
 |<xref:System.Configuration.RsaProtectedConfigurationProvider>|K šifrování a dešifrování dat používá šifrovací algoritmus RSA. Algoritmus RSA lze použít pro šifrování s veřejným klíčem a digitálním podpisům. Je také známý jako "veřejný klíč" nebo asymetrické šifrování protože využívá dva různé klíče. Můžete použít [registrační nástroj služby IIS technologie ASP.NET (Aspnet_regiis.exe)](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/k6h9cz8h(v=vs.90)) pro šifrování oddílů v souboru Web.config a správu šifrovacích klíčů. ASP.NET dešifruje konfigurační soubor při zpracování souboru. Identita aplikace technologie ASP.NET musí mít přístup pro čtení k šifrovacímu klíči, který se používá k šifrování a dešifrování šifrovaných oddílů.|  
 |<xref:System.Configuration.DpapiProtectedConfigurationProvider>|Windows Data Protection API (DPAPI) používá k šifrování konfigurační oddíly funkce. Používá Windows vestavěné kryptografické služby a může být nakonfigurována pro ochranu specifické pro počítač nebo konkrétního uživatele účtu. Je užitečné pro více aplikací na stejném serveru, potřebujete sdílet informace specifické pro počítač ochrany. Uživatelská účet ochrany je možné pomocí služeb, které fungují s specifická identita uživatele, jako jsou sdílené hostitelského prostředí. Každá aplikace běží pod samostatnou identitu, která omezuje přístup k prostředkům, například soubory a databáze.|  
   
- Oba poskytovatelé nabízejí silné šifrování data. Nicméně pokud máte v úmyslu použít stejný soubor zašifrovanou konfiguraci na více serverech, jako jsou webové farmy, pouze `RsaProtectedConfigurationProvider` umožňuje exportovat šifrovací klíče použité k šifrování dat a import na jiném serveru. Další informace najdete v tématu [import a export chráněné konfigurace RSA kontejnery klíčů](https://docs.microsoft.com/previous-versions/aspnet/yxw286t2(v=vs.100)).  
+ Oba poskytovatelé nabízejí silné šifrování data. Nicméně pokud máte v úmyslu použít stejný soubor zašifrovanou konfiguraci na více serverech, jako jsou webové farmy, pouze <xref:System.Configuration.RsaProtectedConfigurationProvider> umožňuje exportovat šifrovací klíče použité k šifrování dat a import na jiném serveru. Další informace najdete v tématu [import a export chráněné konfigurace RSA kontejnery klíčů](https://docs.microsoft.com/previous-versions/aspnet/yxw286t2(v=vs.100)).  
   
 ### <a name="using-the-configuration-classes"></a>Použití tříd konfigurace  
  <xref:System.Configuration> Obor názvů obsahuje třídy pro práci s nastavením konfigurace prostřednictvím kódu programu. <xref:System.Configuration.ConfigurationManager> Třídě poskytuje přístup ke konfigurační soubory počítače, aplikace a uživatele. Pokud vytváříte aplikaci ASP.NET, můžete použít <xref:System.Web.Configuration.WebConfigurationManager> třídu, která poskytuje stejné funkce, zatímco služba také umožňuje přístup k nastavení, které jsou jedinečné pro aplikace ASP.NET, jako jsou ty součástí  **\< System.Web >**.  

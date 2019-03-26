@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 458b5e69-5210-45e5-bc44-3888f86abd6f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d2a525a8aff6f6b05777de736d97c72c38a2fa62
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 0ecc1090f2697eb0243a081cde70338c0e6fffec
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55268025"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58409923"
 ---
 # <a name="task-based-asynchronous-programming"></a>Asynchronní programování založené na úlohách
 
@@ -236,7 +236,7 @@ Další informace o výjimkách a úlohách naleznete v tématu [zpracování v�
 
 ## <a name="canceling-tasks"></a>Zrušení úloh
 
-`Task` Třídy podporuje kooperativní zrušení a je plně integrováno <xref:System.Threading.CancellationTokenSource?displayProperty=nameWithType> a <xref:System.Threading.CancellationToken?displayProperty=nameWithType> třídy, které byly zavedeny v rozhraní .NET Framework 4. Mnoho konstruktorů ve <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> třídě <xref:System.Threading.CancellationToken> jako vstupní parametr objekt. Mnoho <xref:System.Threading.Tasks.TaskFactory.StartNew%2A> a <xref:System.Threading.Tasks.Task.Run%2A> také zahrnovat přetížení <xref:System.Threading.CancellationToken> parametru.
+<xref:System.Threading.Tasks.Task> Třídy podporuje kooperativní zrušení a je plně integrováno <xref:System.Threading.CancellationTokenSource?displayProperty=nameWithType> a <xref:System.Threading.CancellationToken?displayProperty=nameWithType> třídy, které byly zavedeny v rozhraní .NET Framework 4. Mnoho konstruktorů ve <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> třídě <xref:System.Threading.CancellationToken> jako vstupní parametr objekt. Mnoho <xref:System.Threading.Tasks.TaskFactory.StartNew%2A> a <xref:System.Threading.Tasks.Task.Run%2A> také zahrnovat přetížení <xref:System.Threading.CancellationToken> parametru.
 
 Můžete vytvořit token a vyslat žádost zrušení později, s použitím <xref:System.Threading.CancellationTokenSource> třídy. Předat token, který má <xref:System.Threading.Tasks.Task> jako argument a také odkazovat stejný token v uživatelském delegátu, který provádí reakci na žádost o zrušení.
 

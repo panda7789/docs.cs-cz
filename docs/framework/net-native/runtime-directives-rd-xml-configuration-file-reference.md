@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 8241523f-d8e1-4fb6-bf6a-b29bfe07b38a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f8314f34f9fe0be43e7371d29cb4b366a819807c
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 5ca8cf76745190bd9819dde522c34e57952cd1ca
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57356101"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58410456"
 ---
 # <a name="runtime-directives-rdxml-configuration-file-reference"></a>Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)
 
@@ -405,7 +405,7 @@ Použití `Serialize` zásad pole zahrnuje následující změny zásad:
 
 #### <a name="the-effect-of-xmlserializer-datacontractserializer-and-datacontractjsonserializer-policies"></a>Účinek zásady XmlSerializer, Třída DataContractSerializer a DataContractJsonSerializer
 
-Na rozdíl od `Serialize` zásad, která je určena pro serializátory založenými na reflexi, `XmlSerializer`, `DataContractSerializer`, a `DataContractJsonSerializer` zásady slouží k povolení sadu serializátory, které jsou známé [!INCLUDE[net_native](../../../includes/net-native-md.md)] nástroj řetězce. Tyto serializátory nejsou implementované pomocí reflexe, ale sadu typů, které lze serializovat v době běhu je určen podobným způsobem jako typy, které jsou reflektovatelné.
+Na rozdíl od `Serialize` zásad, která je určena pro serializátory založenými na reflexi, <xref:System.Xml.Serialization.XmlSerializer>, <xref:System.Runtime.Serialization.DataContractSerializer>, a <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> zásady slouží k povolení sadu serializátory, které jsou známé [!INCLUDE[net_native](../../../includes/net-native-md.md)] nástroj řetězce. Tyto serializátory nejsou implementované pomocí reflexe, ale sadu typů, které lze serializovat v době běhu je určen podobným způsobem jako typy, které jsou reflektovatelné.
 
 Použít některou z těchto zásad do typu umožňuje, aby typ k serializaci pomocí serializátoru odpovídající. Navíc všechny typy, které potřebují serializace staticky určit Serializační stroj se také být serializovatelný.
 

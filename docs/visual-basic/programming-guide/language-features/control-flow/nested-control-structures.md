@@ -10,12 +10,12 @@ helpviewer_keywords:
 - structures [Visual Basic], nested control
 - nested control statements [Visual Basic]
 ms.assetid: cf60b061-65d9-44a8-81f2-b0bdccd23a05
-ms.openlocfilehash: 9b10363e2273a22ac7ee3d9a943a1bec4616d232
-ms.sourcegitcommit: 462dc41a13942e467984e48f4018d1f79ae67346
+ms.openlocfilehash: 13e2c5c8d818a09ec5e77ec47fe8a2c83b675d82
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58185724"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58409793"
 ---
 # <a name="nested-control-structures-visual-basic"></a>Vnořené řídicí struktury (Visual Basic)
 Můžete například umístit řídicí příkazy uvnitř jiné řídicí příkazy `If...Then...Else` blokovat v rámci `For...Next` smyčky. Ovládací prvek příkaz umístit do jiného příkazu ovládacího prvku se říká, že *vnořené*.  
@@ -67,8 +67,7 @@ Next ctl
 ## <a name="overlapping-control-structures"></a>Překrývající se řídicí struktury  
  Řídicí struktury nemůžou překrývat. To znamená, že všechny vnořené struktury musí být zcela obsažen v rámci další vnitřní struktury. Například následující uspořádání je neplatný protože `For` smyčku ukončí před vnitřní `With` blok ukončí.  
   
- ![Grafický diagram neplatné vnoření](../../../../visual-basic/programming-guide/language-features/control-flow/media/nestexampleinvalid.gif "NestExampleInvalid")  
-Neplatné vnoření pro a struktury  
+ ![Diagram zobrazující příklad neplatné vnoření.](./media/nested-control-structures/example-invalid-nesting.gif) 
   
  Kompilátor jazyka Visual Basic zjistí překrývající se ovládací prvek struktur a signály chybu v době kompilace.  
   

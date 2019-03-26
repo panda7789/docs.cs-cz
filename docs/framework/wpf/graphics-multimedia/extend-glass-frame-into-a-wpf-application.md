@@ -10,12 +10,12 @@ helpviewer_keywords:
 - extending glass frames into applications [WPF]
 - glass frames [WPF], extending into applications
 ms.assetid: 74388a3a-4b69-4a9d-ba1f-e107636bd660
-ms.openlocfilehash: d7a00f2508769534e49c965d098dbacb01a1f189
-ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
+ms.openlocfilehash: 8da1f49bf5b7d3daf6319906fb49390c008d209c
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57843529"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58412211"
 ---
 # <a name="extend-glass-frame-into-a-wpf-application"></a>Rozšíření skleněného rámečku do aplikace WPF
 
@@ -26,11 +26,9 @@ Toto téma ukazuje, jak rozšířit [!INCLUDE[TLA#tla_winvista](../../../../incl
 
 ## <a name="example"></a>Příklad
 
-Následující obrázek ukazuje skleněného rámečku rozšířit do adresa aplikace Internet Explorer 7.
+Následující obrázek ukazuje skleněného rámečku do adresa aplikace Internet Explorer 7 rozšířené:
 
-**Internet Explorer s rozšířenou skleněného rámečku za adresního řádku.**
-
-![Aplikace Internet Explorer 7 s rozšířeným za adresního řádku skleněného rámečku. ](./media/ie7glasstopbar.PNG "IE7glasstopbar")
+![Snímek obrazovky zobrazující skleněného rámečku rozšířené za panelu Adresa aplikace Internet Explorer 7.](./media/extend-glass-frame-into-a-wpf-application/internet-explorer-glass-frame-extended-address-bar.png)
 
 Rozšíření skleněného rámečku na [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikací, přístupu k nespravované [!INCLUDE[TLA#tla_api](../../../../includes/tlasharptla-api-md.md)] je potřeba. Následující příklad kódu nemá nespravovaného kódu (pinvoke) pro dva [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] potřeba splnit pro rozšíření rámce do klientské oblasti. Každá z těchto [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] jsou deklarovány ve třídě volá **NonClientRegionAPI**.
 
@@ -147,11 +145,9 @@ Následující příklad ukazuje, jednoduché okno, ve kterém je rámec rozší
 </Window>
 ```
 
-Následující obrázek ukazuje skleněného rámečku do rozšířené [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace.
+Následující obrázek ukazuje skleněného rámečku do rozšířené [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace:
 
-**Rozšíří skleněného rámečku do**[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]**aplikace.**
-
-![Skleněného rámečku rozšíří do aplikace WPF. ](./media/wpfextendedglassintoclient.PNG "WPFextendedGlassIntoClient")
+![Snímek obrazovky zobrazující skleněného rámečku do aplikace WPF extended.](./media/extend-glass-frame-into-a-wpf-application/glass-frame-extended-wpf-application.png)
 
 ## <a name="see-also"></a>Viz také:
 

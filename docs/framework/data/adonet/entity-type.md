@@ -2,12 +2,12 @@
 title: Typ entity
 ms.date: 03/30/2017
 ms.assetid: a6dee9ab-9e4a-48f2-a169-3f79cc15821c
-ms.openlocfilehash: 3955de1873d80e85df713a557750e34e76efeb41
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: cb542a1750a6b45dd2fca4d32501719470d9a78a
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54502881"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58410885"
 ---
 # <a name="entity-type"></a>Typ entity
 *Typ entity* je základním stavebním blokem pro popis struktury data pomocí modelu Entity Data Model (EDM). Typ entity v konceptuálním modelu reprezentuje strukturu těchto koncepty nejvyšší úrovně, jako je například Zákazníci a objednávky. Typ entity je šablona pro instance typu entity. Každá šablona obsahuje následující informace:  
@@ -27,7 +27,7 @@ ms.locfileid: "54502881"
 ## <a name="example"></a>Příklad  
  Následující diagram znázorňuje Koncepční model s tři typy entit: `Book`, `Publisher`, a `Author`:  
   
- ![Ukázkový Model](../../../../docs/framework/data/adonet/media/examplemodel.gif "ExampleModel")  
+ ![Příklad modelu s tři typy entit](./media/entity-type/example-model-three-entity-types.gif)  
   
  Všimněte si, že vlastnosti každého typu entity, které tvoří jeho klíč entity, jsou označeny "(klíč)".  
   

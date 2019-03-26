@@ -3,12 +3,12 @@ title: Model deklarovaných identit
 ms.date: 03/30/2017
 ms.assetid: 4a96a9af-d980-43be-bf91-341a23401431
 author: BrucePerlerMS
-ms.openlocfilehash: 7248cf51946d4bf798209c047ec2c7ed3bb04ebe
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 21ed5b7616b51109ef21ee91bdf93b2808e00715
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47197939"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58411731"
 ---
 # <a name="claims-based-identity-model"></a>Model deklarovaných identit
 Při vytváření aplikací pracujících s deklaracemi je identita uživatele ve vaší aplikaci reprezentována jako sada deklarací. Deklarace může být jméno uživatele, jiné můžou být e-mailovou adresu. Princip spočívá v tom, že je nakonfigurován externí systém identit, který vaší aplikaci poskytuje vše, co pro každou žádost potřebuje o uživateli vědět, a současně pomocí kryptografických metod zaručuje, že přijatá data identity pocházejí z důvěryhodného zdroje.  
@@ -73,10 +73,10 @@ Při vytváření aplikací pracujících s deklaracemi je identita uživatele 
   
  Tento diagram znázorňuje web (aplikace předávající strany, RP), který byl nakonfigurován, aby pro ověřování používal technologii WIF, a klienta, webový prohlížeč, který chce tento web používat.  
   
-1.  Když neověřený uživatel požádá o stránku, je jeho prohlížeč přesměrován na stránky poskytovatele identity (IP).  
+1.  Když neověřený uživatel požádá o stránku, je jeho prohlížeč přesměrován na stránky poskytovatele (IdP) identity.  
   
-2.  Poskytovatel identity požádá uživatele, aby poskytl svá pověření, například uživatelské jméno a heslo, lístky protokolu Kerberos atd.  
+2.  Zprostředkovatel identity vyžaduje uživatele, aby poskytl svá pověření, jako je například uživatelské jméno/heslo nebo ověřování pomocí protokolu Kerberos.  
   
-3.  Poskytovatel identity vystaví token, který se vrátí do prohlížeče.  
+3.  Problémy zprostředkovatele identity token, který je vrácen do prohlížeče.  
   
 4.  Nyní bude prohlížeč přesměrován zpět na původně požadovanou stránku, kde technologie WIF určí, zda token splňuje požadavky pro přístup ke stránce. Pokud ano, je vystaven soubor cookie pro vytvoření relace, aby ověřování nemuselo probíhat víc než jedenkrát, a řízení je předáno aplikaci.

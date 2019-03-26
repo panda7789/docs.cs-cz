@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - WCF, security
 ms.assetid: d171b5ca-96ef-47ff-800c-c138023cf76e
-ms.openlocfilehash: 83b55ca42a3cebb6ceb2aec128202f14dc35da0a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: b5fece86dca524cb3f94f64dcb98361a93bf84a3
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54657555"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58410924"
 ---
 # <a name="how-to-secure-a-service-with-windows-credentials"></a>Postupy: Zabezpečení služby pomocí pověření systému Windows
 Toto téma ukazuje, jak povolit zabezpečení přenosu pro službu Windows Communication Foundation (WCF), která se nachází v doméně Windows a je volán klienty ve stejné doméně. Další informace o tomto scénáři najdete v tématu [zabezpečení přenosu pomocí ověřování Windows](../../../docs/framework/wcf/feature-details/transport-security-with-windows-authentication.md). Ukázková aplikace, najdete v článku [WSHttpBinding](../../../docs/framework/wcf/samples/wshttpbinding.md) vzorku.  
@@ -52,7 +52,7 @@ Toto téma ukazuje, jak povolit zabezpečení přenosu pro službu Windows Commu
   
 2.  Vytvoření <xref:System.Type> proměnnou s názvem `contractType` a přiřaďte ho typu rozhraní (`ICalculator`). Při použití jazyka Visual Basic, použijte `GetType` operátor; při použití jazyka C#, použijte `typeof` – klíčové slovo.  
   
-3.  Vytvořte druhý `Type` proměnnou s názvem `serviceType` a přiřaďte ho typu implementovaného kontraktu (`Calculator`).  
+3.  Vytvořte druhý <xref:System.Type> proměnnou s názvem `serviceType` a přiřaďte ho typu implementovaného kontraktu (`Calculator`).  
   
 4.  Vytvoření instance <xref:System.Uri> třídu s názvem `baseAddress` základní adresu služby. Základní adresa musí mít schéma, které odpovídá přenos. V takovém případě je schéma přenosu HTTP a adresa obsahuje speciální identifikátor URI (Uniform Resource) "localhost" a port číslo (8036) a také adresu základního koncového bodu ("serviceModelSamples /): `http://localhost:8036/serviceModelSamples/`.  
   

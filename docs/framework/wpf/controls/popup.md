@@ -9,19 +9,19 @@ helpviewer_keywords:
 - popups [WPF]
 - controls [WPF], Popup
 ms.assetid: 36a4320f-91ce-4f5f-9621-7934de3eff77
-ms.openlocfilehash: a36af4730a494448387ad059ff75199a19a1a359
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 3b43456de1b161763c6197956003c9e7f07135fc
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57370654"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58410105"
 ---
 # <a name="popup"></a>Překryvný
 <xref:System.Windows.Controls.Primitives.Popup> Ovládací prvek zobrazí obsah v samostatném okně umístěný za aktuální období aplikace.  
   
- Následující ilustrace ukazuje <xref:System.Windows.Controls.Primitives.Popup> ovládací prvek, který je umístěn s ohledem na <xref:System.Windows.Controls.Button> , který je jeho nadřazený objekt.  
+ Následující ilustrace ukazuje <xref:System.Windows.Controls.Primitives.Popup> ovládací prvek, který je umístěn s ohledem na <xref:System.Windows.Controls.Button> , který je jeho nadřazený objekt:  
   
- ![Automaticky otevírané okno obrázku](./media/popuppicture.JPG "PopupPicture")  
+ ![Místní nabídka obrázku](./media/popup/popup-picture-button.jpg)  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Přehled prvku Popup](popup-overview.md)  

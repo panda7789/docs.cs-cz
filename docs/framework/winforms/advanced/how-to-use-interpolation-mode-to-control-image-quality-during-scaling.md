@@ -9,12 +9,12 @@ helpviewer_keywords:
 - images [Windows Forms], scaling
 - images [Windows Forms], controlling quality
 ms.assetid: fde9bccf-8aa5-4b0d-ba4b-788740627b02
-ms.openlocfilehash: 83f1e569f1fb1ae49143f4ed11837759df29fe79
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 93430f521904d9d38ba98f4055480583fd650114
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57721954"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58410365"
 ---
 # <a name="how-to-use-interpolation-mode-to-control-image-quality-during-scaling"></a>Postupy: Použití režimu interpolace pro řízení kvality obrázku během změny měřítka
 Režim interpolace <xref:System.Drawing.Graphics> objekt ovlivňuje způsob, jakým [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] imagí škálování (úseky a zmenší). <xref:System.Drawing.Drawing2D.InterpolationMode> Výčet definuje několik režimů interpolace, z nichž některé jsou uvedeny v následujícím seznamu:  
@@ -38,7 +38,7 @@ Režim interpolace <xref:System.Drawing.Graphics> objekt ovlivňuje způsob, jak
   
  Následující obrázek znázorňuje původní bitové kopie a tři menší Image.  
   
- ![Obrázek s proměnlivým nastavením interpolace](./media/csgrapes1.png "csgrapes1")  
+ ![Snímek obrazovky zobrazující image s rozdílnými interpolace nastavení.](./media/how-to-use-interpolation-mode-to-control-image-quality-during-scaling/varied-interpolation-settings.png)  
   
  [!code-csharp[System.Drawing.WorkingWithImages#81](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.WorkingWithImages/CS/Class1.cs#81)]
  [!code-vb[System.Drawing.WorkingWithImages#81](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.WorkingWithImages/VB/Class1.vb#81)]  

@@ -8,12 +8,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: seodec18
-ms.openlocfilehash: 22494a87b4f6aaa6bd1a57873493f64df3b1ecb8
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: efb42d773669b949aeafa52fdcc445f18b469a5e
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57359728"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58410261"
 ---
 # <a name="publish-net-core-apps-with-the-cli"></a>Publikování .NET Core aplikací pomocí rozhraní příkazového řádku
 
@@ -50,7 +50,7 @@ Pokud používáte .NET Core SDK 2.1, výchozí režim pro aplikace, že je verz
 
 ### <a name="native-dependencies"></a>Nativní závislosti
 
-Pokud vaše aplikace obsahuje nativní závislosti, nebude fungovat v různých operačních systémů. Například pokud vaše aplikace používá nativní rozhraní API systému Win32, nebude fungovat v systému macOS nebo Linux. Je třeba zadat kód specifický pro platformu a kompilace spustitelný soubor pro každou platformu.
+Pokud vaše aplikace obsahuje nativní závislosti, nebude fungovat v různých operačních systémů. Například pokud vaše aplikace používá nativní rozhraní API Windows, nebude fungovat v systému macOS nebo Linux. Je třeba zadat kód specifický pro platformu a kompilace spustitelný soubor pro každou platformu.
 
 Zvažte také, pokud má knihovna odkazujete nativní závislost, vaše aplikace se možná nespustí na všech platformách. Ale je možné, který se odkazuje na balíček NuGet je součástí verze specifické pro platformu pro zpracování požadované závislosti nativního za vás.
 

@@ -2,12 +2,12 @@
 title: sada entit
 ms.date: 03/30/2017
 ms.assetid: 59ec6ab0-88e5-4d25-b112-7a4eccbe61f0
-ms.openlocfilehash: 3cd212c0bf5eefb73a87aa01c9403d6f2304d506
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d75002d4a5ac55538f76e6bace0fc16095a9ef74
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54557117"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58412185"
 ---
 # <a name="entity-set"></a>sada entit
 *Sadu entit* je logický kontejner pro instance [typ entity](../../../../docs/framework/data/adonet/entity-type.md) a instance libovolného typu odvozeného z tohoto typu entity. (Informace o odvozených typech naleznete v tématu [modelu Entity Data Model: Dědičnost](../../../../docs/framework/data/adonet/entity-data-model-inheritance.md).) Vztah mezi typem entity a sady entit je obdobou vztah mezi řádek a tabulky v relační databázi: Jako řádek typ entity, který popisuje strukturu dat a jako tabulka, obsahuje sadu entit instance dané struktury. Sadu entit není konstrukce; modelování dat strukturu dat nepopisuje. Místo toho sadu entit poskytuje konstrukci pro prostředí hostování nebo úložiště (například do databáze SQL serveru nebo modul common language runtime) do instance typu entity skupiny tak, že je možné mapovat do úložiště dat.  
@@ -30,11 +30,11 @@ ms.locfileid: "54557117"
 ## <a name="example"></a>Příklad  
  Následující diagram znázorňuje Koncepční model s tři typy entit: `Book`, `Publisher`, a `Author`.  
   
- ![Ukázkový Model](../../../../docs/framework/data/adonet/media/examplemodel.gif "ExampleModel")  
+ ![Příklad modelu s tři typy entit](./media/entity-set/example-model-three-entity-types.gif)  
   
  Následující diagram znázorňuje dvě sady entit (`Books` a `Publishers`) a sada přidružení (`PublishedBy`) založené na konceptuální model, uvedené výše. BI v `Books` sadu entit představuje instanci `Book` typ entity v době běhu. Obdobně Pj představují `Publisher` instance v `Publishers` sady entit. BiPj představuje instanci `PublishedBy` přidružení v `PublishedBy` sada přidružení.  
   
- ![Nastaví příklad](../../../../docs/framework/data/adonet/media/setsexample.gif "SetsExample")  
+ ![Snímek obrazovky zobrazující příklad sady.](./media/entity-set/sets-example-association.gif)  
   
  [ADO.NET Entity Framework](../../../../docs/framework/data/adonet/ef/index.md) používá jazyka specifického pro doménu (DSL) volá Konceptuální schéma definici jazyka ([CSDL](../../../../docs/framework/data/adonet/ef/language-reference/csdl-specification.md)) k definování konceptuálních modelů. Následující CSDL definuje kontejneru entity s entitami nastavit pro každý typ entity v konceptuálním modelu uvedené výše. Všimněte si, že název a entita, zadejte pro každou sadu entit, jsou definovány pomocí atributů XML.  
   

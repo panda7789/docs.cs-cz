@@ -9,12 +9,12 @@ helpviewer_keywords:
 - documents [WPF], tables
 - tables [WPF]
 ms.assetid: 5e1105f4-8fc4-473a-ba55-88c8e71386e6
-ms.openlocfilehash: e202fe839de547145c36a5664b62c350f40bfce6
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 4abb6368946f9dac5fdefd6ca44f3adeed55f78f
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57379008"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58410814"
 ---
 # <a name="table-overview"></a>Přehled tabulky
 <xref:System.Windows.Documents.Table> je element úrovni bloku, který podporuje předložení mřížky plovoucího obsahu dokumentu. Flexibilita tohoto elementu je velmi užitečné, ale také umožňuje složitější pochopitelný a správně.  
@@ -72,7 +72,7 @@ ms.locfileid: "57379008"
   
  Následující obrázek ukazuje, jak se vykreslí v tomto příkladu.  
   
- ![Snímek obrazovky: Vykreslit základní tabulka](./media/basictablerrender.png "BasicTablerRender")  
+ ![Snímek obrazovky zobrazující, jak se vykreslí základní tabulky.](./media/table-overview/basic-table-render-example.png)  
   
 <a name="table_containment"></a>   
 ### <a name="table-containment"></a>Tabulka členství ve skupině  

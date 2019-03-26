@@ -2,12 +2,12 @@
 title: Směrování – úvod
 ms.date: 03/30/2017
 ms.assetid: bf6ceb38-6622-433b-9ee7-f79bc93497a1
-ms.openlocfilehash: d13a5cc86b7f0bbd67e1ef3ab6094bfb004972c8
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 12eb58c53749fb76da9352947f07df32e09bf5a2
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54563766"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58409845"
 ---
 # <a name="routing-introduction"></a>Směrování – úvod
 Směrovací služba poskytuje obecný modulární SOAP zprostředkovatel, který je schopen směrování zpráv na základě obsahu zpráv. Ve službě Směrování můžete vytvořit komplexní logiku směrování, která umožňuje implementovat scénáře, jako je služba agregace, Správa verzí služby, priority směrování a směrování vícesměrového vysílání. Směrovací služba taky poskytuje chyba zpracování, který umožňuje nastavení seznamů zálohování koncových bodů, do které se odešlou zprávy, pokud dojde k chybě při odesílání na cílové primární koncový bod.  
@@ -357,19 +357,19 @@ rc.FilterTable.Add(new MatchAllMessageFilter(), backupList);
 |Vzor|Relace|Transakce|Kontextu přijetí|Nepodporuje zálohování seznamu|Poznámky|  
 |-------------|-------------|-----------------|---------------------|---------------------------|-----------|  
 |Jednosměrný||||Ano|Pokusí se znovu odeslat zprávu na záložního koncového bodu. Pokud se tato zpráva vícesměrového vysílání, pouze zprávu na selhání kanálu je přesunout do jeho cílovou složku zálohy.|  
-|Jednosměrný||![Zaškrtávací políčko](media/checkmark.gif "značky zaškrtnutí")||Ne|Vyvolá se výjimka a transakce je vrácena zpět.|  
-|Jednosměrný|||![Zaškrtávací políčko](media/checkmark.gif "značky zaškrtnutí")|Ano|Pokusí se znovu odeslat zprávu na záložního koncového bodu. Po zprávy se úspěšně přijatá, dokončení všech zobrazí kontexty. Pokud zpráva není úspěšně přijme libovolný koncový bod, nejsou dokončeny kontext přijetí.<br /><br /> Když se tato zpráva vícesměrového vysílání, kontext přijetí se dokončí, pouze pokud zpráva se úspěšně přijme aspoň jeden koncový bod (primárních nebo záložních). Pokud žádný z koncových bodů v některém z vícesměrového vysílání cesty úspěšně zobrazí zpráva, kontext přijetí nedokončí.|  
-|Jednosměrný||![Zaškrtávací políčko](media/checkmark.gif "značky zaškrtnutí")|![Zaškrtávací políčko](media/checkmark.gif "značky zaškrtnutí")|Ano|Přerušit předchozí transakce, vytvořte novou transakci a znovu odeslat všechny zprávy. Cíl zálohy se přenáší zprávy, které došlo k chybě.<br /><br /> Po vytvoření transakce ve kterém veškeré přenosy dat úspěšné dokončení kontexty přijetí a potvrzení transakce.|  
-|Jednosměrný|![Zaškrtávací políčko](media/checkmark.gif "značky zaškrtnutí")|||Ano|Pokusí se znovu odeslat zprávu na záložního koncového bodu. V případě vícesměrového vysílání se znovu pouze zprávy v relaci došlo k chybě nebo relaci zavřete jehož relaci se nepovedlo odeslat do cíle zálohování.|  
-|Jednosměrný|![Zaškrtávací políčko](media/checkmark.gif "značky zaškrtnutí")|![Zaškrtávací políčko](media/checkmark.gif "značky zaškrtnutí")||Ne|Vyvolá se výjimka a transakce je vrácena zpět.|  
-|Jednosměrný|![Zaškrtávací políčko](media/checkmark.gif "značky zaškrtnutí")||![Zaškrtávací políčko](media/checkmark.gif "značky zaškrtnutí")|Ano|Pokusí se znovu odeslat zprávu na záložního koncového bodu. Po všechny zprávy odešle dokončena bez chyb, relace indikuje žádné další zprávy a služba Směrování úspěšně zavře všechny odchozí relace kanálů, obdrží všechny kontexty jsou dokončeny, a kanálů příchozích relací je uzavřen.|  
-|Jednosměrný|![Zaškrtávací políčko](media/checkmark.gif "značky zaškrtnutí")|![Zaškrtávací políčko](media/checkmark.gif "značky zaškrtnutí")|![Zaškrtávací políčko](media/checkmark.gif "značky zaškrtnutí")|Ano|Zrušit aktuální transakci a vytvořte novou. Znovu odešlete všechny předchozí zprávy v relaci. Poté, co byl vytvořen transakce které všechny zprávy se úspěšně odeslaly a relace indikuje, že se žádné další zprávy, všechny odchozí relace kanály zavřená, zobrazí všechny kontexty jsou dokončeny s transakcí, je kanálů příchozích relací zavření, a je transakce potvrzena.<br /><br /> Když probíhá relace vícesměrového vysílání zpráv, u kterých nedošlo k chybě se zopakuje pro stejný cíl jako před a zpráv, ke které došlo k chybě odesílají do cíle zálohování.|  
+|Jednosměrný||✓||Ne|Vyvolá se výjimka a transakce je vrácena zpět.|  
+|Jednosměrný|||✓|Ano|Pokusí se znovu odeslat zprávu na záložního koncového bodu. Po zprávy se úspěšně přijatá, dokončení všech zobrazí kontexty. Pokud zpráva není úspěšně přijme libovolný koncový bod, nejsou dokončeny kontext přijetí.<br /><br /> Když se tato zpráva vícesměrového vysílání, kontext přijetí se dokončí, pouze pokud zpráva se úspěšně přijme aspoň jeden koncový bod (primárních nebo záložních). Pokud žádný z koncových bodů v některém z vícesměrového vysílání cesty úspěšně zobrazí zpráva, kontext přijetí nedokončí.|  
+|Jednosměrný||✓|✓|Ano|Přerušit předchozí transakce, vytvořte novou transakci a znovu odeslat všechny zprávy. Cíl zálohy se přenáší zprávy, které došlo k chybě.<br /><br /> Po vytvoření transakce ve kterém veškeré přenosy dat úspěšné dokončení kontexty přijetí a potvrzení transakce.|  
+|Jednosměrný|✓|||Ano|Pokusí se znovu odeslat zprávu na záložního koncového bodu. V případě vícesměrového vysílání se znovu pouze zprávy v relaci došlo k chybě nebo relaci zavřete jehož relaci se nepovedlo odeslat do cíle zálohování.|  
+|Jednosměrný|✓|✓||Ne|Vyvolá se výjimka a transakce je vrácena zpět.|  
+|Jednosměrný|✓||✓|Ano|Pokusí se znovu odeslat zprávu na záložního koncového bodu. Po všechny zprávy odešle dokončena bez chyb, relace indikuje žádné další zprávy a služba Směrování úspěšně zavře všechny odchozí relace kanálů, obdrží všechny kontexty jsou dokončeny, a kanálů příchozích relací je uzavřen.|  
+|Jednosměrný|✓|✓|✓|Ano|Zrušit aktuální transakci a vytvořte novou. Znovu odešlete všechny předchozí zprávy v relaci. Poté, co byl vytvořen transakce které všechny zprávy se úspěšně odeslaly a relace indikuje, že se žádné další zprávy, všechny odchozí relace kanály zavřená, zobrazí všechny kontexty jsou dokončeny s transakcí, je kanálů příchozích relací zavření, a je transakce potvrzena.<br /><br /> Když probíhá relace vícesměrového vysílání zpráv, u kterých nedošlo k chybě se zopakuje pro stejný cíl jako před a zpráv, ke které došlo k chybě odesílají do cíle zálohování.|  
 |Obousměrný||||Ano|Poslat cílovou složku zálohy.  Po kanál vrátí zprávu odpovědi, vrátí odpověď klientovi původní.|  
-|Obousměrný|![Zaškrtávací políčko](media/checkmark.gif "značky zaškrtnutí")|||Ano|Odeslání všech zpráv na kanál pro cílovou složku zálohy.  Po kanál vrátí zprávu odpovědi, vrátí odpověď klientovi původní.|  
-|Obousměrný||![Zaškrtávací políčko](media/checkmark.gif "značky zaškrtnutí")||Ne|Vyvolá se výjimka a transakce je vrácena zpět.|  
-|Obousměrný|![Zaškrtávací políčko](media/checkmark.gif "značky zaškrtnutí")|![Zaškrtávací políčko](media/checkmark.gif "značky zaškrtnutí")||Ne|Vyvolá se výjimka a transakce je vrácena zpět.|  
+|Obousměrný|✓|||Ano|Odeslání všech zpráv na kanál pro cílovou složku zálohy.  Po kanál vrátí zprávu odpovědi, vrátí odpověď klientovi původní.|  
+|Obousměrný||✓||Ne|Vyvolá se výjimka a transakce je vrácena zpět.|  
+|Obousměrný|✓|✓||Ne|Vyvolá se výjimka a transakce je vrácena zpět.|  
 |Duplex||||Ne|Duplexní komunikaci mimo relace se aktuálně nepodporuje.|  
-|Duplex|![Zaškrtávací políčko](media/checkmark.gif "značky zaškrtnutí")|||Ano|Poslat cílovou složku zálohy.|  
+|Duplex|✓|||Ano|Poslat cílovou složku zálohy.|  
   
 ## <a name="hosting"></a>Hostování  
  Protože směrovací služba je implementovaná jako služba WCF, se musí být buď v rámci aplikace v místním prostředí nebo hostované službou IIS nebo WAS. Doporučuje se, že směrovací služba hostitelem služby IIS, WAS nebo aplikace služby Windows využít k automatickému spuštění a životního cyklu správy funkce dostupné v těchto prostředích.  

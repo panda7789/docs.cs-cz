@@ -8,12 +8,12 @@ helpviewer_keywords:
 - graphics [WPF], rendering
 - rendering graphics [WPF]
 ms.assetid: 6dec9657-4d8c-4e46-8c54-40fb80008265
-ms.openlocfilehash: c1d7654dc190b00363fa6cc47c362b5f9e90d8f9
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: da455adb23dd70a915e81217c6c30f2d523e001c
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57375529"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58409650"
 ---
 # <a name="wpf-graphics-rendering-overview"></a>Přehled vykreslování grafiky WPF
 Toto téma obsahuje přehled [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vizuální vrstvy. Zaměřuje se na roli <xref:System.Windows.Media.Visual> třídy pro vykreslování podpora v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] modelu.  
@@ -49,8 +49,7 @@ Toto téma obsahuje přehled [!INCLUDE[TLA2#tla_winclient](../../../../includes/
   
  <xref:System.Windows.Media.Visual> je vystavena jako veřejné abstraktní třída, ze kterého musí být podřízené třídy odvozeny. Následující obrázek znázorňuje hierarchii vizuální objekty, které jsou vystaveny [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
   
- ![Diagram tříd odvozených z Visual objektu](./media/visualclass01.png "VisualClass01")  
-Hierarchie Visual – třída  
+ ![Diagram tříd odvozených z vizuální objekty](./media/wpf-graphics-rendering-overview/classes-derived-visual-object.png)    
   
 ### <a name="drawingvisual-class"></a>DrawingVisual Class  
  <xref:System.Windows.Media.DrawingVisual> Představuje jednoduché kreslení třídu, která se použije k vykreslení obrazce, Image nebo text. Tato třída se považuje za jednoduché, protože neposkytuje rozložení nebo událostí zpracování, což zvyšuje výkon modulu runtime. Z tohoto důvodu jsou ideální pro pozadí a klipart kreslení. <xref:System.Windows.Media.DrawingVisual> Slouží k vytvoření vlastní vizuální objekty. Další informace najdete v tématu [použití objektů DrawingVisual](using-drawingvisual-objects.md).  
@@ -110,8 +109,7 @@ Pořadí operací DrawingGroup –
   
  Pokud byste chtěli vytvořit výčet vizuální objekty, které tvoří výchozí <xref:System.Windows.Controls.Button> ovládací prvek, jehož ekvivalent byste našli hierarchie vizuální objekty znázorněno níže:  
   
- ![Diagram hierarchie vizuální strom](./media/visuallayeroverview03.gif "VisualLayerOverview03")  
-Diagram hierarchie vizuální strom  
+ ![Diagram hierarchie vizuální strom](./media/wpf-graphics-rendering-overview/visual-object-diagram.gif) 
   
  <xref:System.Windows.Controls.Button> Obsahuje ovládací prvek <xref:Microsoft.Windows.Themes.ClassicBorderDecorator> element, který zase obsahuje <xref:System.Windows.Controls.ContentPresenter> elementu. <xref:Microsoft.Windows.Themes.ClassicBorderDecorator> Element je zodpovědné za vykreslování ohraničení a pozadí <xref:System.Windows.Controls.Button>. <xref:System.Windows.Controls.ContentPresenter> Element je zodpovědný za zobrazení obsahu <xref:System.Windows.Controls.Button>. V takovém případě od té doby zobrazujete text, <xref:System.Windows.Controls.ContentPresenter> obsahuje element <xref:System.Windows.Controls.TextBlock> elementu. Skutečnost, který <xref:System.Windows.Controls.Button> používá ovládací prvek <xref:System.Windows.Controls.ContentPresenter> znamená, že obsah může být reprezentována další prvky, jako <xref:System.Windows.Controls.Image> nebo geometrie, například <xref:System.Windows.Media.EllipseGeometry>.  
   
@@ -124,8 +122,7 @@ Diagram hierarchie vizuální strom
   
  Pokud byste chtěli vytvořit výčet vizuální objekty a vektorové grafiky instrukce seznamy, které tvoří <xref:System.Windows.Controls.Button> ovládací prvek, jehož ekvivalent byste našli hierarchii objektů znázorněno níže:  
   
- ![Diagram vizuální strom a datech pro vykreslení](./media/visuallayeroverview04.png "VisualLayerOverview04")  
-Diagram vizuální strom a datech pro vykreslení  
+ ![Diagram vizuální strom a datech pro vykreslení](./media/wpf-graphics-rendering-overview/visual-tree-rendering-data.png)  
   
  <xref:System.Windows.Controls.Button> Obsahuje ovládací prvek <xref:Microsoft.Windows.Themes.ClassicBorderDecorator> element, který zase obsahuje <xref:System.Windows.Controls.ContentPresenter> elementu. <xref:Microsoft.Windows.Themes.ClassicBorderDecorator> Element je zodpovědné za vykreslování všechny samostatné grafické prvky, které tvoří ohraničení a pozadí tlačítka. <xref:System.Windows.Controls.ContentPresenter> Element je zodpovědný za zobrazení obsahu <xref:System.Windows.Controls.Button>. V tomto případě od té doby zobrazujete bitové kopie, <xref:System.Windows.Controls.ContentPresenter> obsahuje element <xref:System.Windows.Controls.Image> elementu.  
   
@@ -149,14 +146,12 @@ Diagram vizuální strom a datech pro vykreslení
   
  Pokud byste chtěli vytvořit výčet vizuální objekty, které tvoří <xref:System.Windows.Controls.StackPanel> element v příkladu kódu, jehož ekvivalent byste našli hierarchie vizuální objekty znázorněno níže:  
   
- ![Diagram hierarchie vizuální strom](./media/visuallayeroverview05.gif "VisualLayerOverview05")  
-Diagram hierarchie vizuální strom  
+ ![Diagram hierarchie vizuální strom](./media/wpf-graphics-rendering-overview/visual-tree-hierarchy.gif)  
   
 ### <a name="rendering-order"></a>Pořadí vykreslování  
  Vizuální strom určuje pořadí vykreslování [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] visual a vykreslení objektů. Pořadí procházení začíná vizuál, root, což je nejvyšší uzel ve vizuálním stromu. Podřízené kořenové vizuálu je pak provázán, zleva doprava. Pokud má vizuál podřízené položky, je před vizuálu na stejné úrovni provázán své podřízené objekty. To znamená, že obsah pro podřízenou položku visual je vykreslen před vizuálu vlastní obsah.  
   
- ![Diagram vizuální strom pořadí vykreslování](./media/visuallayeroverview06.gif "VisualLayerOverview06")  
-Diagram pořadí vykreslování vizuální strom  
+ ![Diagram pořadí vykreslování vizuální strom](./media/wpf-graphics-rendering-overview/visual-tree-rendering-order.gif) 
   
 ### <a name="root-visual"></a>Kořenové Vizuálu  
  **Kořenové visual** je nejvyšší element v hierarchii vizuálního stromu. Ve většině aplikací základní třídy visual kořenový adresář je buď <xref:System.Windows.Window> nebo <xref:System.Windows.Navigation.NavigationWindow>. Pokud byly hostování vizuální objektů v aplikaci Win32, ale kořenové visual by vizuálu úplně nahoře, které byly hostování v okně Win32. Další informace najdete v tématu [kurzu: Hostování vizuální objektů v aplikaci Win32](tutorial-hosting-visual-objects-in-a-win32-application.md).  
@@ -178,9 +173,8 @@ Diagram logického stromu
 ### <a name="viewing-the-visual-tree-with-xamlpad"></a>Zobrazení s nástroj XamlPad vizuální strom  
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Nástroj, nástroj XamlPad, poskytuje možnost pro zobrazením a koumáním vizuálního stromu, který odpovídá na aktuálně definovaných [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)] obsah. Klikněte na tlačítko **zobrazit vizuální strom** tlačítko na panelu nabídek, chcete-li zobrazit ve vizuálním stromu. Následující obrázek znázorňuje rozšíření [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)] do vizuálního stromu uzlů v obsahu **vizuální stromové struktury Průzkumníka** panel ovládacího prvku nástroj XamlPad:  
   
- ![Panel Průzkumníka vizuálního stromu v nástroj XamlPad](./media/visuallayeroverview08.png "VisualLayerOverview08")  
-Panel Průzkumníka vizuálního stromu v nástroj XamlPad  
-  
+ ![Panel Průzkumníka vizuálního stromu v nástroj XamlPad](./media/wpf-graphics-rendering-overview/visual-tree-explorer.png)  
+
  Všimněte si, že jak <xref:System.Windows.Controls.Label>, <xref:System.Windows.Controls.TextBox>, a <xref:System.Windows.Controls.Button> hierarchie samostatné vizuální objekty v zobrazení ovládacích prvků každé **vizuální stromové struktury Průzkumníka** panel ovládacího prvku nástroj XamlPad. Důvodem je, že [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ovládací prvky mají <xref:System.Windows.Controls.ControlTemplate> vizuálním stromu ovládacího prvku, který obsahuje. Když explicitně odkazovat na ovládací prvek, je implicitně odkazovat hierarchii visual.  
   
 ### <a name="profiling-visual-performance"></a>Profilace výkonu Visual  
@@ -196,14 +190,12 @@ Zobrazit výstup Visual Profiler
 ### <a name="retained-mode-graphics"></a>Zachované režimu grafiky  
  Jeden z klíčů k pochopení roli Visual objektu je pochopit rozdíl mezi **přímý režim** a **uchovávají režimu** grafické systémy. Standardní aplikace Win32 na základě GDI nebo rozhraní GDI + používá systém grafiky přímý režim. To znamená, že aplikace je zodpovědná za překreslení část oblasti klienta, která je zrušena z důvodu akce, jako je časové období, během změny velikosti, nebo objekt změnou jeho vizuálního vzhledu.  
   
- ![Diagram pořadí vykreslování Win32](./media/visuallayeroverview01.png "VisualLayerOverview01")  
-Diagram pořadí vykreslování Win32  
+ ![Diagram pořadí vykreslování Win32](./media/wpf-graphics-rendering-overview/win32-rendering-squence.png)  
   
  Naproti tomu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] využívá uchovanou režimu systém. To znamená, že objekty aplikací, které mají vizuálního vzhledu definovat sadu výkresu serializovaná data. Po vykreslení dat je definován, systém je po tomto datu za reagovat na všechny požadavky na repaint pro vykreslení objektů aplikace. I v době běhu můžete upravit nebo vytvořit objekty aplikací a stále spoléhají na systém pro reakce na žádosti vykreslení. Výkon systému grafiky uchovanou režimu je, že kreslení informace je vždy trvale uložen v serializovaný stav aplikace, ale vykreslování odpovědnost ponecháno na systém. Následující diagram znázorňuje, jak aplikace spoléhá na [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] pro zpracování požadavků k vykreslení.  
   
- ![Diagram pořadí vykreslování WPF](./media/visuallayeroverview02.png "VisualLayerOverview02")  
-Diagram pořadí vykreslování WPF  
-  
+ ![Diagram pořadí vykreslování WPF](./media/wpf-graphics-rendering-overview/wpf-rendering-sequence.png)  
+
 #### <a name="intelligent-redrawing"></a>Inteligentní překreslování  
  Jeden z největších výhod použití uchovanou režimu grafiky je, že [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] můžete efektivně optimalizovat, co je potřeba se měl překreslit v aplikaci. I v případě, že máte komplexní scény s různými úrovněmi krytí, obvykle není potřeba psát kód speciální optimalizovat překreslení. Porovnejte s programování Win32, ve kterém strávíte spoustu úsilí v optimalizaci aplikace minimalizací množství překreslování v oblasti aktualizací. Zobrazit [překreslování v oblasti aktualizací](/windows/desktop/gdi/redrawing-in-the-update-region) příklad typu složitost součástí optimalizace překreslování v aplikacích Win32.  
   
@@ -214,8 +206,7 @@ Diagram pořadí vykreslování WPF
   
  Následující obrázek znázorňuje zdrojového obrazu, který 300 % se změnila. Všimněte si, že narušení, které se zobrazí při zdrojového obrázku je roztažení jako rastrový obrázek grafiky spíše než škálování jako vektorovou grafiku.  
   
- ![Rozdíly mezi rastrové a vektorové grafiky](./media/vectorgraphics01.png "VectorGraphics01")  
-Rozdíly mezi rastrové a vektorové grafiky  
+ ![Rozdíly mezi rastrové a vektorové grafiky](./media/wpf-graphics-rendering-overview/raster-vector-differences.png)  
   
  Následující kód ukazuje dva <xref:System.Windows.Shapes.Path> prvky definované. Druhý prvek používá <xref:System.Windows.Media.ScaleTransform> ke změně velikosti vykreslování pokynů prvního prvku 300 %. Všimněte si, že vykreslování pokynů <xref:System.Windows.Shapes.Path> prvky zůstanou beze změny.  
   

@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Button controls [WPF], creating with automatic layout
 - automatic layout [WPF], creating buttons
 ms.assetid: 96c206d0-9e77-4784-9d2d-5045aed2021c
-ms.openlocfilehash: 185bf71d4105d10a2bb85e6a0abd9da63c7d26f0
-ms.sourcegitcommit: 462dc41a13942e467984e48f4018d1f79ae67346
+ms.openlocfilehash: 8eb1e93dd87c210812c9b7758c744a616ef2d862
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58185451"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58409780"
 ---
 # <a name="how-to-use-automatic-layout-to-create-a-button"></a>Postupy: Vytvoření tlačítka pomocí automatického rozložení
 Tento příklad popisuje, jak automatické rozložení metodu použijte, chcete-li vytvořit tlačítko v lokalizovatelných aplikacích.  
@@ -25,10 +25,9 @@ Následující dva [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml
   
 [!code-xaml[LocalizationBtn#1](~/samples/snippets/csharp/VS_Snippets_Wpf/LocalizationBtn/CS/Pane1.xaml#1)]  
   
- Následující obrázek ukazuje výstup z ukázek kódu.  
+ Následující obrázek znázorňuje výstup z ukázek kódu s možností změny velikosti automatické tlačítka:
   
- ![Stejné tlačítko s textem v různých jazycích](./media/globalizationbutton.png "GlobalizationButton")  
-Tlačítko automaticky umožňující změnu velikosti  
+ ![Stejné tlačítko s textem v různých jazycích](./media/use-automatic-layout-overview/auto-resizable-button.png)  
   
 ## <a name="see-also"></a>Viz také:
 

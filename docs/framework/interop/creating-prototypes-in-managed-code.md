@@ -19,12 +19,12 @@ helpviewer_keywords:
 ms.assetid: ecdcf25d-cae3-4f07-a2b6-8397ac6dc42d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6ad93144dcb56d60f9aa688400918218ef8171df
-ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
+ms.openlocfilehash: c65634a1046b193d500e505d945784504285f93a
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56219565"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58412328"
 ---
 # <a name="creating-prototypes-in-managed-code"></a>Vytváření prototypů ve spravovaném kódu
 Toto téma popisuje, jak získat přístup k nespravovaným funkcím a zavádí několik polí atributů, které opatřit poznámkami definici metody ve spravovaném kódu. Příklady, které ukazují, jak vytvořit. Na základě NET deklarace pro použití s platformu vyvolání, naleznete v tématu [zařazování dat pomocí vyvolání platformy](marshaling-data-with-platform-invoke.md).  
@@ -32,47 +32,60 @@ Toto téma popisuje, jak získat přístup k nespravovaným funkcím a zavádí 
  Abyste mohli nespravovanou funkci knihovny DLL ze spravovaného kódu, musíte znát název funkce a název knihovny DLL, která se exportuje. Pomocí těchto informací můžete začít psát spravované definici pro nespravovanou funkci, která je implementována v knihovně DLL. Kromě toho můžete upravit způsob, aby voláním nespravovaného kódu vytvoří funkci a zařadí data do a z funkce.  
   
 > [!NOTE]
->  Funkce rozhraní Win32 API, které přidělují řetězec umožňují zdarma řetězec pomocí metody `LocalFree`. Vyvolání platformy zpracovává jinak tyto parametry. Voláními vyvolání platformy, ujistěte se, parametr `IntPtr` zadejte místo `String` typu. Použít metody, které jsou poskytovány <xref:System.Runtime.InteropServices.Marshal?displayProperty=nameWithType> třídy na typ ručně převést na řetězec a ručně ji zdarma.  
+>  Funkce rozhraní Windows API, které přidělit řetězec umožňují zdarma řetězec pomocí metody `LocalFree`. Vyvolání platformy zpracovává jinak tyto parametry. Voláními vyvolání platformy, ujistěte se, parametr `IntPtr` zadejte místo `String` typu. Použít metody, které jsou poskytovány <xref:System.Runtime.InteropServices.Marshal?displayProperty=nameWithType> třídy na typ ručně převést na řetězec a ručně ji zdarma.  
   
 ## <a name="declaration-basics"></a>Základní informace o deklaraci  
  Definice spravované na nespravované funkce jsou závislá na jazyku, jak je vidět v následujícím příkladu. Kompletní příklady kódu naleznete v tématu [příklady vyvolání platformy](platform-invoke-examples.md).  
   
-```vb  
-Imports System.Runtime.InteropServices  
-Public Class Win32  
-    Declare Auto Function MessageBox Lib "user32.dll" _  
-       (ByVal hWnd As Integer, _  
-        ByVal txt As String, ByVal caption As String, _  
-        ByVal Typ As Integer) As IntPtr  
-End Class  
-```  
+```vb
+Imports System
+
+Friend Class WindowsAPI
+    Friend Shared Declare Auto Function MessageBox Lib "user32.dll" (
+        ByVal hWnd As IntPtr,
+        ByVal lpText As String,
+        ByVal lpCaption As String,
+        ByVal uType As UInteger) As Integer
+End Class
+```
   
  Použít <xref:System.Runtime.InteropServices.DllImportAttribute.BestFitMapping>, <xref:System.Runtime.InteropServices.DllImportAttribute.CallingConvention>, <xref:System.Runtime.InteropServices.DllImportAttribute.ExactSpelling>, <xref:System.Runtime.InteropServices.DllImportAttribute.PreserveSig>, <xref:System.Runtime.InteropServices.DllImportAttribute.SetLastError>, nebo <xref:System.Runtime.InteropServices.DllImportAttribute.ThrowOnUnmappableChar> polím [!INCLUDE[vbprvbext](../../../includes/vbprvbext-md.md)] prohlášení, je nutné použít <xref:System.Runtime.InteropServices.DllImportAttribute> atribut místo `Declare` příkazu.  
   
-```vb  
-Imports System.Runtime.InteropServices  
-Public Class Win32  
-   <DllImport ("user32.dll", CharSet := CharSet.Auto)> _  
-   Public Shared Function MessageBox (ByVal hWnd As Integer, _  
-        ByVal txt As String, ByVal caption As String, _  
-        ByVal Typ As Integer) As IntPtr  
-   End Function  
-End Class  
-```  
+```vb
+Imports System
+Imports System.Runtime.InteropServices
+
+Friend Class WindowsAPI
+    <DllImport("user32.dll", CharSet:=CharSet.Auto)>
+    Friend Shared Function MessageBox(
+        ByVal hWnd As IntPtr,
+        ByVal lpText As String,
+        ByVal lpCaption As String,
+        ByVal uType As UInteger) As Integer
+    End Function
+End Class
+```
   
-```csharp  
-using System.Runtime.InteropServices;  
-[DllImport("user32.dll")]  
-    public static extern IntPtr MessageBox(int hWnd, String text,   
-                                       String caption, uint type);  
-```  
+```csharp
+using System;
+using System.Runtime.InteropServices;
+
+internal static class WindowsAPI
+{
+    [DllImport("user32.dll")]
+    internal static extern int MessageBox(
+        IntPtr hWnd, string lpText, string lpCaption, uint uType);
+}
+```
   
-```cpp  
-using namespace System::Runtime::InteropServices;  
-[DllImport("user32.dll")]  
-    extern "C" IntPtr MessageBox(int hWnd, String* pText,  
-    String* pCaption unsigned int uType);  
-```  
+```cpp
+using namespace System;
+using namespace System::Runtime::InteropServices;
+
+[DllImport("user32.dll")]
+extern "C" int MessageBox(
+    IntPtr hWnd, String* lpText, String* lpCaption, unsigned int uType);
+```
   
 ## <a name="adjusting-the-definition"></a>Úprava definice  
  Ať už jste nastavili, je explicitně nebo Ne, atribut pole jsou v práci, která definuje chování spravovaného kódu. Vyvolání platformy pracuje podle výchozí hodnoty nastavené v různých polí, která jsou jako metadata do sestavení. Toto výchozí chování můžete změnit úpravou hodnoty jednoho nebo více polí. V mnoha případech můžete použít <xref:System.Runtime.InteropServices.DllImportAttribute> nastavit hodnotu.  

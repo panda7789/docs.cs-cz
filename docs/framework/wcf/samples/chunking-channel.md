@@ -2,12 +2,12 @@
 title: Kanál s dělením dat do bloků
 ms.date: 03/30/2017
 ms.assetid: e4d53379-b37c-4b19-8726-9cc914d5d39f
-ms.openlocfilehash: db14ceb956202bee06ff5e6b37b21fb837c6f1d9
-ms.sourcegitcommit: d9a0071d0fd490ae006c816f78a563b9946e269a
+ms.openlocfilehash: 4adbd558aff9e1689b1e14521c43f1cad281dbc6
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "55066412"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58411496"
 ---
 # <a name="chunking-channel"></a>Kanál s dělením dat do bloků
 Při odesílání velkých zpráv pomocí služby Windows Communication Foundation (WCF), je často žádoucí omezit množství paměti pro zprávy ve vyrovnávací paměti. Jedním z možných řešení je do datového proudu zprávy (za předpokladu, že hromadných dat je v textu). Ale některé protokoly vyžadují celé zprávy do vyrovnávací paměti. Spolehlivé zasílání zpráv a zabezpečení jsou tyto dva příklady. Další možnou příčinou je zdola nahoru objemné zprávy do menších zprávy označované jako bloky dat, odesílání jednoho bloku tyto bloky dat najednou a znovuvytvoření velkých zpráv na straně příjmu. Zrušení bloků nebo ho může používat vlastní kanál k tomu a samotná aplikace udělat tento bloků. Vytváření bloků kanál příklad ukazuje, jak vlastní protokol nebo vrstvami kanálu lze provést bloků a zrušení bloků libovolně velkých zpráv.  
@@ -201,11 +201,11 @@ as the ChunkingStart message.
 ## <a name="chunking-channel-architecture"></a>Vytváření bloků architektura kanálů  
  Vytváření bloků kanál `IDuplexSessionChannel` , na vysoké úrovni, následuje architektura typické kanálu. Je `ChunkingBindingElement` , které můžete vytvářet `ChunkingChannelFactory` a `ChunkingChannelListener`. `ChunkingChannelFactory` Vytváří instance `ChunkingChannel` když je vyzván k. `ChunkingChannelListener` Vytváří instance `ChunkingChannel` při přijetí nového vnitřního kanálu. `ChunkingChannel` Samotného je zodpovědná za odesílání a příjem zpráv.  
   
- Na další úrovni, `ChunkingChannel` spoléhá na několik komponent k implementaci bloků protokolu. Na straně odesílání kanál používá vlastní `XmlDictionaryWriter` volá `ChunkingWriter` , který neodpovídá skutečné bloků. `ChunkingWriter` používá vnitřního kanálu přímo k odesílání bloků. Použití vlastní `XmlDictionaryWriter` , umožníte nám odeslat bloky dat jako rozsáhlý na původní zprávu o průběhu zapisování. To znamená, že jsme neukládaného ve vyrovnávací paměti celý původní zprávy.  
+ Na další úrovni, `ChunkingChannel` spoléhá na několik komponent k implementaci bloků protokolu. Na straně odesílání kanál používá vlastní <xref:System.Xml.XmlDictionaryWriter> volá `ChunkingWriter` , který neodpovídá skutečné bloků. `ChunkingWriter` používá vnitřního kanálu přímo k odesílání bloků. Použití vlastní `XmlDictionaryWriter` , umožníte nám odeslat bloky dat jako rozsáhlý na původní zprávu o průběhu zapisování. To znamená, že jsme neukládaného ve vyrovnávací paměti celý původní zprávy.  
   
  ![Dělením dat do bloků kanál](../../../../docs/framework/wcf/samples/media/chunkingchannel1.gif "ChunkingChannel1")  
   
- Na straně příjmu `ChunkingChannel` přetáhne zprávy z vnitřního kanálu a předá je do vlastní `XmlDictionaryReader` volá `ChunkingReader`, který reconstitutes původní zprávu z příchozí datové dávky. `ChunkingChannel` zabalí to `ChunkingReader` ve vlastním `Message` volaná implementaci `ChunkingMessage` a vrátí tuto zprávu vrstvě nad ní. Tato kombinace `ChunkingReader` a `ChunkingMessage` umožňuje zrušení bloku dat původní text zprávy, jako je čten stranou vrstvu nad namísto toho, aby do vyrovnávací paměti celý původní text zprávy. `ChunkingReader` má fronty, kde vyrovnávacích pamětí příchozí bloky dat až po maximální Konfigurovatelný počet bloků dat ve vyrovnávací paměti. Po dosažení maximální limit čtečky čeká na zprávy z fronty vybíjet ve vrstvě nad ní (to znamená podle jen pro čtení z původní text zprávy) nebo dokud se zobrazí maximální počet je dosaženo časového limitu.  
+ Na straně příjmu `ChunkingChannel` přetáhne zprávy z vnitřního kanálu a předá je do vlastní <xref:System.Xml.XmlDictionaryReader> volá `ChunkingReader`, který reconstitutes původní zprávu z příchozí datové dávky. `ChunkingChannel` zabalí to `ChunkingReader` ve vlastním `Message` volaná implementaci `ChunkingMessage` a vrátí tuto zprávu vrstvě nad ní. Tato kombinace `ChunkingReader` a `ChunkingMessage` umožňuje zrušení bloku dat původní text zprávy, jako je čten stranou vrstvu nad namísto toho, aby do vyrovnávací paměti celý původní text zprávy. `ChunkingReader` má fronty, kde vyrovnávacích pamětí příchozí bloky dat až po maximální Konfigurovatelný počet bloků dat ve vyrovnávací paměti. Po dosažení maximální limit čtečky čeká na zprávy z fronty vybíjet ve vrstvě nad ní (to znamená podle jen pro čtení z původní text zprávy) nebo dokud se zobrazí maximální počet je dosaženo časového limitu.  
   
  ![Dělením dat do bloků kanál](../../../../docs/framework/wcf/samples/media/chunkingchannel2.gif "ChunkingChannel2")  
   
@@ -248,7 +248,7 @@ interface ITestService
   
 -   Časový limit předaný k odeslání se používá jako časový limit operace celý odeslání, který obsahuje všechny bloky dat odesílání.  
   
--   Vlastní `XmlDictionaryWriter` návrh byl zvolen ke Vyhněte se ukládání do vyrovnávací paměti celý původní text zprávy. Pokud se nám získat `XmlDictionaryReader` na text pomocí `message.GetReaderAtBodyContents` celého obsahu by být ukládány do vyrovnávací paměti. Místo toho budeme mít vlastní `XmlDictionaryWriter` , který je předán `message.WriteBodyContents`. Jako zprávu, která volá WriteBase64 zapisovače zapisovač zabalí bloků dat do zpráv a odešle je pomocí vnitřního kanálu. WriteBase64 blokuje, dokud se nepošle bloků.  
+-   Vlastní <xref:System.Xml.XmlDictionaryWriter> návrh byl zvolen ke Vyhněte se ukládání do vyrovnávací paměti celý původní text zprávy. Pokud se nám získat <xref:System.Xml.XmlDictionaryReader> na text pomocí `message.GetReaderAtBodyContents` celého obsahu by být ukládány do vyrovnávací paměti. Místo toho budeme mít vlastní <xref:System.Xml.XmlDictionaryWriter> , který je předán `message.WriteBodyContents`. Jako zprávu, která volá WriteBase64 zapisovače zapisovač zabalí bloků dat do zpráv a odešle je pomocí vnitřního kanálu. WriteBase64 blokuje, dokud se nepošle bloků.  
   
 ## <a name="implementing-the-receive-operation"></a>Implementace operace přijetí  
  Na vysoké úrovni operace obdržení nejprve zkontroluje, že příchozí zpráva není `null` a, který je akcí `ChunkingAction`. Pokud obě kritéria nesplňuje, je vrácená zpráva beze změny z parametru Receive. Jinak, vytvoří novou Receive `ChunkingReader` a nový `ChunkingMessage` zabalené kolem něj (pomocí volání `GetNewChunkingMessage`). Teprve potom se informuje, že noví `ChunkingMessage`, příjmu používá ke spouštění vláken fondu vláken `ReceiveChunkLoop`, který volá `innerChannel.Receive` ve smyčce a praktické vypnout bloků dat na `ChunkingReader` dokud přijatá zpráva ukončení bloku nebo dosažení časový limit přijetí.  

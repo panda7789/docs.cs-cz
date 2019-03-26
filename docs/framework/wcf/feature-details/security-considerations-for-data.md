@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: a7eb98da-4a93-4692-8b59-9d670c79ffb2
-ms.openlocfilehash: 3895bb44139a05d1933f1d3af19ccb9799309515
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 13e596ea64fc62ed6280e74636243619178ce069
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57363082"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58411431"
 ---
 # <a name="security-considerations-for-data"></a>Důležité informace o zabezpečení pro data
 
@@ -276,7 +276,7 @@ Tato situace se můžete vyhnout tím, že je seznámen následující body:
 
 - Je třeba dbát pomocí starší verze typů označené <xref:System.SerializableAttribute> atribut. Mnohé z nich byly navrženy pro práci s [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] vzdálené komunikace pro použití s jenom důvěryhodná data. Existující typy označené tento atribut nemusí byly navrženy s stavu zabezpečení v úvahu.
 
-- Nespoléhejte na <xref:System.Runtime.Serialization.DataMemberAttribute.IsRequired%2A> vlastnost `DataMemberAttribute` atribut zajistit přítomnost data, co se týče stavu zabezpečení. Data mohou být vždy `null`, `zero`, nebo `invalid`.
+- Nespoléhejte na <xref:System.Runtime.Serialization.DataMemberAttribute.IsRequired%2A> vlastnost <xref:System.Runtime.Serialization.DataMemberAttribute> atribut zajistit přítomnost data, co se týče stavu zabezpečení. Data mohou být vždy `null`, `zero`, nebo `invalid`.
 
 - Nikdy důvěryhodnosti grafu objektů v daném kontextu deserializovat zdroj nedůvěryhodná data bez ověřování se nejdřív. Každého jednotlivého objektu může být v konzistentním stavu, ale graf objektu jako celek nesmí být. Kromě toho i v případě režimu zachování graf objektu je zakázané, deserializovat graf může mít více odkazů na stejný objekt nebo mít cyklické odkazy. Další informace najdete v tématu [serializace a deserializace](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md).
 
@@ -312,33 +312,33 @@ Mějte na paměti následující aspekty týkající se hrozeb týkající se k�
 
 - Pokud je povoleno částečně důvěryhodným kódem přístup k vaší <xref:System.Runtime.Serialization.DataContractSerializer> instance nebo jinak kontrolujete [náhrady kontraktů dat](../../../../docs/framework/wcf/extending/data-contract-surrogates.md), uplatnit velkou kontrolu nad procesu serializace/deserializace. Například to může vložit libovolné typy, způsobit zpřístupnění informací, manipulovat s Výsledný graf objektu nebo serializovaná data nebo přetečení výsledná serializovaného datového proudu. Ekvivalentní <xref:System.Runtime.Serialization.NetDataContractSerializer> hrozeb je popsaný v části "Použití NetDataContractSerializer bezpečně".
 
-- Pokud <xref:System.Runtime.Serialization.DataContractAttribute> atributu je použité u typu (nebo typ označen jako `[Serializable]` , ale není `ISerializable`), deserializátor může vytvořit instanci takového typu, i v případě, že všechny konstruktory jsou privátní nebo chráněné podle požadavků.
+- Pokud <xref:System.Runtime.Serialization.DataContractAttribute> atributu je použité u typu (nebo typ označen jako <xref:System.SerializableAttribute> , ale není <xref:System.Runtime.Serialization.ISerializable>), deserializátor může vytvořit instanci takového typu, i v případě, že všechny konstruktory jsou privátní nebo chráněné podle požadavků.
 
 - Nikdy nepředpokládejte výsledek deserializace, pokud data k deserializaci není důvěryhodný a jste si jisti, že všechny známé typy jsou typy, které důvěřujete. Všimněte si, že známých typů nejsou načtené z konfiguračního souboru aplikace (však jsou načteny z konfiguračního souboru počítače) při spouštění v částečném vztahu důvěryhodnosti.
 
-- Pokud předáte `DataContractSerializer` instanci s náhradní přidán do částečně důvěryhodným kódem, kód můžete změnit lze měnit nastavení na této náhradní.
+- Pokud předáte <xref:System.Runtime.Serialization.DataContractSerializer> instanci s náhradní přidán do částečně důvěryhodným kódem, kód můžete změnit lze měnit nastavení na této náhradní.
 
 - Deserializovaný objekt Pokud čtecí funkce XML (nebo data v něm) pochází z částečně důvěryhodného kódu, považovat za výsledný objekt deserializovaný nedůvěryhodná data.
 
 - Fakt, který <xref:System.Runtime.Serialization.ExtensionDataObject> typ nemá žádné veřejné členy neznamená, že data v něm jsou zabezpečená. Například pokud jste ze zdroje dat privileged deserializovat do objektu, ve kterém některá data se nachází, pak ručně, tento objekt částečně důvěryhodným kódem, částečně důvěryhodným kódem můžete číst data v `ExtensionDataObject` o serializaci objektu. Zvažte nastavení <xref:System.Runtime.Serialization.DataContractSerializer.IgnoreExtensionDataObject%2A> k `true` při deserializaci na objekt, který je pozdější ze zdroje dat privileged předán částečně důvěryhodným kódem.
 
-- <xref:System.Runtime.Serialization.DataContractSerializer> a <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> podporují serializaci privátní, chráněné, interní a veřejné členy v úplném vztahu důvěryhodnosti. Nicméně v částečném vztahu důvěryhodnosti pouze veřejné členy lze serializovat. A `SecurityException` je vyvolána, pokud se aplikace pokusí serializovat neveřejný člen.
+- <xref:System.Runtime.Serialization.DataContractSerializer> a <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> podporují serializaci privátní, chráněné, interní a veřejné členy v úplném vztahu důvěryhodnosti. Nicméně v částečném vztahu důvěryhodnosti pouze veřejné členy lze serializovat. A <xref:System.Security.SecurityException> je vyvolána, pokud se aplikace pokusí serializovat neveřejný člen.
 
-    Povolit interní nebo chráněné členy interní se musí serializovat v částečném vztahu důvěryhodnosti, použijte `System.Runtime.CompilerServices.InternalsVisibleTo` atribut sestavení. Tento atribut umožňuje sestavení, které chcete-li deklarovat, že její interní členy jsou viditelné pro některé sestavení. V takovém případě sestavení, které chce mít jeho vnitřní členy serializovat deklaruje, že její interní členy jsou viditelné pro System.Runtime.Serialization.dll.
+    Povolit interní nebo chráněné členy interní se musí serializovat v částečném vztahu důvěryhodnosti, použijte <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut sestavení. Tento atribut umožňuje sestavení, které chcete-li deklarovat, že její interní členy jsou viditelné pro některé sestavení. V takovém případě sestavení, které chce mít jeho vnitřní členy serializovat deklaruje, že její interní členy jsou viditelné pro System.Runtime.Serialization.dll.
 
     Výhodou tohoto přístupu je, že nevyžaduje cestu k generování kódu se zvýšenými oprávněními.
 
     Ve stejnou dobu existují dvě hlavní nevýhody.
 
-    První nevýhodou je, že vlastnost opt-in z `InternalsVisibleTo` atribut je celé sestavení. To znamená nelze zadat, že pouze určité třída může mít jeho vnitřní členy serializovat. Samozřejmě stále můžete není určená k serializaci konkrétní vnitřní člen, stačí přidat není `DataMember` atribut pro tohoto člena. Podobně vývojář můžete také zvolit, jestli členem interní místo soukromé nebo chráněné, se týká mírné viditelnost.
+    První nevýhodou je, že vlastnost opt-in z <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut je celé sestavení. To znamená nelze zadat, že pouze určité třída může mít jeho vnitřní členy serializovat. Samozřejmě stále můžete není určená k serializaci konkrétní vnitřní člen, stačí přidat není <xref:System.Runtime.Serialization.DataMemberAttribute> atribut pro tohoto člena. Podobně vývojář můžete také zvolit, jestli členem interní místo soukromé nebo chráněné, se týká mírné viditelnost.
 
     Druhý nevýhodou je, že stále nepodporuje soukromé nebo chráněné členy.
 
-    Pro ilustraci použití `InternalsVisibleTo` atribut v částečném vztahu důvěryhodnosti, vezměte v úvahu následující program:
+    Pro ilustraci použití <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut v částečném vztahu důvěryhodnosti, vezměte v úvahu následující program:
 
     [!code-csharp[CDF_WCF_SecurityConsiderationsForData#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/cdf_wcf_securityconsiderationsfordata/cs/program.cs#1)]
 
-    V příkladu výše `PermissionsHelper.InternetZone` odpovídá `PermissionSet` pro částečnou důvěryhodností. Nyní, bez `InternalsVisibleToAttribute`, aplikace selže, vyvolání `SecurityException` označující, že neveřejné členy nejde serializovat v částečném vztahu důvěryhodnosti.
+    V příkladu výše `PermissionsHelper.InternetZone` odpovídá <xref:System.Security.PermissionSet> pro částečnou důvěryhodností. Nyní, aniž by <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut, aplikace selže, vyvolání <xref:System.Security.SecurityException> označující, že neveřejné členy nejde serializovat v částečném vztahu důvěryhodnosti.
 
     Nicméně pokud jsme do zdrojového souboru přidejte následující řádek, program se úspěšně spustí.
 

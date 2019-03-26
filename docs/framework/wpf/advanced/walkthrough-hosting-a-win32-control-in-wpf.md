@@ -8,12 +8,12 @@ helpviewer_keywords:
 - hosting Win32 control in WPF [WPF]
 - Win32 code [WPF], WPF interoperation
 ms.assetid: a676b1eb-fc55-4355-93ab-df840c41cea0
-ms.openlocfilehash: 1bb5def111aad850a5f74afaba352394ac2587e9
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 13845eb662064e0ac1db913bedc0b21214292db5
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57377401"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58412315"
 ---
 # <a name="walkthrough-hosting-a-win32-control-in-wpf"></a>Návod: Hostování ovládacího prvku Win32 v subsystému WPF
 Windows Presentation Foundation (WPF) poskytuje bohaté prostředí pro vytváření aplikací. Ale pokud máte značné investice v kódu Win32, může být efektivnější opakovaně používat alespoň některé tohoto kódu v aplikaci WPF spíše než přepíše zcela. WPF poskytuje jednoduchý mechanismus pro hostování okně Win32, na stránce WPF.  
@@ -23,9 +23,9 @@ Windows Presentation Foundation (WPF) poskytuje bohaté prostředí pro vytvář
   
 <a name="requirements"></a>   
 ## <a name="requirements"></a>Požadavky  
- Toto téma předpokládá základní znalost programování WPF a systému Win32. Základní informace o programování WPF, naleznete v tématu [Začínáme](../getting-started/index.md). Úvod do programování Win32, můžete by měly odkazovat všechny mnoho knih, které k tomuto tématu, zejména *programování Windows* podle Charles Petzold.  
+ Toto téma předpokládá základní znalost WPF a Windows API programování. Základní informace o programování WPF, naleznete v tématu [Začínáme](../getting-started/index.md). Úvod k programování v rozhraní Windows API, naleznete v některém z mnoha knihy k tomuto tématu, zejména *programování Windows* podle Charles Petzold.  
   
- Protože vzorku, který doprovází toto téma je implementována v C#, ho využívá platformu vyvolání služby (PInvoke) pro přístup k rozhraní API systému Win32. Některé znalost PInvoke je užitečné, ale není nutná.  
+ Protože vzorku, který doprovází toto téma je implementována v C#, ho využívá platformu vyvolání služby (PInvoke) pro přístup k rozhraní API Windows. Některé znalost PInvoke je užitečné, ale není nutná.  
   
 > [!NOTE]
 >  Toto téma obsahuje několik příkladů kódu z ukázky přidružené. Ale pro lepší čitelnost, neobsahuje úplnou ukázku kódu. Můžete získat nebo zobrazit kompletní kód z [hostování ovládacím prvku Win32 v ukázce WPF](https://github.com/Microsoft/WPF-Samples/tree/master/Migration%20and%20Interoperability/WPFHostingWin32Control).  

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - -target compiler options [Visual Basic]
 - /target compiler options [Visual Basic]
 ms.assetid: e0954147-548b-461f-9c4b-a8f88845616c
-ms.openlocfilehash: f600e8f27345f6555b0ecf9269ba97d34ba65477
-ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
+ms.openlocfilehash: 69312ca3512c5407185df11e66d95ce9f5cdddff
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56748216"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58412289"
 ---
 # <a name="-target-visual-basic"></a>-target (Visual Basic)
 Určuje formát výstupu kompilátoru.  
@@ -30,7 +30,7 @@ Určuje formát výstupu kompilátoru.
 |`-target:exe`|Způsobí, že kompilátor vytvoří spustitelný soubor konzoly aplikace.<br /><br /> Toto je výchozí možnost, pokud žádný `-target` je zadána možnost. Spustitelný soubor se vytvoří s příponou .exe.<br /><br /> Pokud není uvedeno jinak se `/out` možnost, název výstupního souboru přebírá název vstupního souboru, který obsahuje `Sub Main` postup.<br /><br /> Pouze jeden `Sub Main` postup je požadován v souborech zdrojového kódu, které jsou kompilovány do souboru s příponou .exe. Použití `-main` – možnost kompilátoru k určení, která třída obsahuje `Sub Main` postup.|  
 |`-target:library`|Způsobí, že kompilátor vytvoří dynamickou knihovnu (DLL).<br /><br /> Je vytvořen soubor dynamické knihovny s příponou .dll.<br /><br /> Pokud není uvedeno jinak se `-out` možnost, název výstupního souboru využívá názvu prvního vstupního souboru.<br /><br /> Při sestavování knihovny DLL `Sub Main` postup není nutný.|  
 |`-target:module`|Způsobí, že kompilátor generuje modul, který lze přidat do sestavení.<br /><br /> Vytvořil výstupní soubor s příponou .netmodule.<br /><br /> Modul common language runtime rozhraní .NET nelze načíst soubor, který nemá žádné sestavení. Tento soubor je však můžete začlenit do sestavení manifestu sestavení s použitím `-reference`.<br /><br /> Pokud kód do jednoho modulu odkazuje na vnitřní typy v jiném modulu, musí být oba moduly začleněny do manifestu sestavení s použitím `-reference`.<br /><br /> [- Addmodule](../../../visual-basic/reference/command-line-compiler/addmodule.md) možnost Importuje metadata z modulu.|  
-|`-target:winexe`|Způsobí, že kompilátor vytvoří spustitelný soubor aplikace založené na Windows.<br /><br /> Spustitelný soubor se vytvoří s příponou .exe. Aplikace pro systém Windows je ten, který poskytuje uživatelské rozhraní buď z [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] knihovny tříd nebo pomocí rozhraní API systému Win32.<br /><br /> Pokud není uvedeno jinak se `-out` možnost, název výstupního souboru přebírá název vstupního souboru, který obsahuje `Sub Main` postup.<br /><br /> Pouze jeden `Sub Main` postup je požadován v souborech zdrojového kódu, které jsou kompilovány do souboru s příponou .exe. V případech, kdy váš kód obsahuje více než jednu třídu, která má `Sub Main` postupu, použijte `-main` – možnost kompilátoru k určení, která třída obsahuje `Sub Main` procedury|  
+|`-target:winexe`|Způsobí, že kompilátor vytvoří spustitelný soubor aplikace založené na Windows.<br /><br /> Spustitelný soubor se vytvoří s příponou .exe. Aplikace pro systém Windows je ten, který poskytuje uživatelské rozhraní buď z [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] knihovny tříd nebo s rozhraními API pro Windows.<br /><br /> Pokud není uvedeno jinak se `-out` možnost, název výstupního souboru přebírá název vstupního souboru, který obsahuje `Sub Main` postup.<br /><br /> Pouze jeden `Sub Main` postup je požadován v souborech zdrojového kódu, které jsou kompilovány do souboru s příponou .exe. V případech, kdy váš kód obsahuje více než jednu třídu, která má `Sub Main` postupu, použijte `-main` – možnost kompilátoru k určení, která třída obsahuje `Sub Main` procedury|  
 |`-target:appcontainerexe`|Způsobí, že kompilátor vytvoří spustitelný soubor aplikace založené na Windows, která musí být spuštěn v kontejneru aplikace. Toto nastavení je navržená pro [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] aplikací.<br /><br /> **Appcontainerexe** nastavení nastaví bit v poli vlastnosti [přenosný spustitelný soubor](/windows/desktop/Debug/pe-format) souboru. Tato verze označuje, že aplikace musí být spuštěn v kontejneru aplikace. Pokud je tento bit nastaven, pokud dojde k chybě `CreateProcess` metoda se pokusí spustit aplikaci mimo kontejner aplikace. Kromě toto bit nastavení **-target: appcontainerexe** je ekvivalentní **-target: winexe**.<br /><br /> Spustitelný soubor se vytvoří s příponou .exe.<br /><br /> Pokud neurčíte jinak pomocí `-out` možnost, název výstupního souboru přebírá název vstupního souboru, který obsahuje `Sub Main` postup.<br /><br /> Pouze jeden `Sub Main` postup je požadován v souborech zdrojového kódu, které jsou kompilovány do souboru s příponou .exe. Pokud váš kód obsahuje více než jednu třídu, která má `Sub Main` postupu, použijte `-main` – možnost kompilátoru k určení, která třída obsahuje `Sub Main` procedury|  
 |`-target:winmdobj`|Způsobí, že kompilátor vytvořit pomocný soubor, který lze převést do binárního souboru (.winmd) souboru Windows Runtime. Soubor .winmd mohou být spotřebovány programy JavaScript a C++, kromě programů spravovaného jazyka.<br /><br /> Pomocný soubor se vytvoří s příponou .winmdobj.<br /><br /> Pokud neurčíte jinak pomocí `-out` možnost, název výstupního souboru využívá názvu prvního vstupního souboru. A `Sub Main` postup není povinné.<br /><br /> Soubor .winmdobj je určen pro použití jako vstup pro <xref:Microsoft.Build.Tasks.WinMDExp> exportovat nástroj k vytvoření souboru Windows metadata (WinMD). Soubor WinMD obsahuje příponu .winmd a obsahuje kód z původní knihovny i WinMD definice, které jazyk JavaScript, C++ a použití prostředí Windows Runtime.|  
   
@@ -63,5 +63,5 @@ vbc -target:library in.vb
 - [– referenční dokumentace (Visual Basic)](../../../visual-basic/reference/command-line-compiler/reference.md)
 - [-addmodule](../../../visual-basic/reference/command-line-compiler/addmodule.md)
 - [-moduleassemblyname](../../../visual-basic/reference/command-line-compiler/moduleassemblyname.md)
-- [Sestavení v rozhraní .NET](../../../standard/assembly/index.md)
+- [Sestavení v .NET](../../../standard/assembly/index.md)
 - [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

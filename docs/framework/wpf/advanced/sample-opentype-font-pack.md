@@ -6,12 +6,12 @@ helpviewer_keywords:
 - fonts [WPF], OpenType font pack
 - typography [WPF], OpenType font pack
 ms.assetid: 56b46fa1-a44e-419b-8f14-25ad51c715c3
-ms.openlocfilehash: aa7eca674bd2758358bec244f2a21a341526d4b8
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 0a2db2392c2380a397da42474a311449c8fdf9fb
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57377070"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58412159"
 ---
 # <a name="sample-opentype-font-pack"></a>Ukázková sada písem OpenType
 Toto téma obsahuje přehled ukázky [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písma, které jsou distribuovány s [!INCLUDE[TLA2#tla_wcsdk](../../../../includes/tla2sharptla-wcsdk-md.md)]. Rozšířená podpora písma ukázka [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] funkce, které mohou být využívána [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikací.  
@@ -34,8 +34,7 @@ Toto téma obsahuje přehled ukázky [!INCLUDE[TLA#tla_opentype](../../../../inc
   
  Následující obrázek znázorňuje, co ukázka [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] vypadat písma.  
   
- ![Seznam názvů písma v balík vzorových písmo](./media/samplefontpack01.gif "samplefontpack01")  
-V této sady sada písem OpenType je víc písem  
+ ![Seznam názvů písma v balík vzorových písma](./media/sample-opentype-font-pack/font-names-sample-pack.gif)  
   
  Ukázka písma jsou dodávané v rámci licence od horní dotah Corporation. Horní dotah je poskytovatel produktů, pokročilé písma. Licence rozšířené nebo vlastní verze ukázka písma, najdete v článku [horní dotah Corporation webu](https://go.microsoft.com/fwlink/?LinkId=182627).  
   

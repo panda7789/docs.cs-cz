@@ -2,19 +2,19 @@
 title: Operace kvantifikátoru (C#)
 ms.date: 07/20/2015
 ms.assetid: 84ac2ac2-7a63-4581-bc4c-14e34be1493b
-ms.openlocfilehash: 22d7b86a5935c7721b7ab13eea1252231d6ac095
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 090bc53c3dcedc82972ab7d16fa2968011a7db65
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54509211"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58412250"
 ---
 # <a name="quantifier-operations-c"></a>Operace kvantifikátoru (C#)
 Operace kvantifikátoru vrátit <xref:System.Boolean> hodnotu, která určuje, jestli některé nebo všechny prvky v sekvenci splňují podmínku.  
   
  Následující obrázek znázorňuje dvě různé kvantifikátor operace na dvou sekvencí jiného zdroje. První operace požádá, pokud jeden nebo více elementů jsou znaky "A" a výsledkem je `true`. Druhou operaci požádá, pokud jsou všechny prvky znaků "A" a výsledkem je `true`.  
   
- ![Operace kvantifikátoru LINQ](../../../../csharp/programming-guide/concepts/linq/media/linq_quantifier.png "LINQ_Quantifier")  
+ ![Operace kvantifikátoru LINQ](./media/quantifier-operations/linq-quantifier-operations.png)  
   
  Standardní metody operátoru dotazu, které provádějí operace kvantifikátoru jsou uvedeny v následující části.  
   
@@ -22,9 +22,9 @@ Operace kvantifikátoru vrátit <xref:System.Boolean> hodnotu, která určuje, j
   
 |Název metody|Popis|Syntaxe výrazu dotazu jazyka C#|Další informace|  
 |-----------------|-----------------|---------------------------------|----------------------|  
-|Všechny|Určuje, zda všechny prvky v sekvenci splňují podmínku.|Nelze použít.|<xref:System.Linq.Enumerable.All%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.All%2A?displayProperty=nameWithType>|  
-|Jakýkoli|Určuje, zda všechny prvky v sekvenci splňují podmínku.|Nelze použít.|<xref:System.Linq.Enumerable.Any%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Any%2A?displayProperty=nameWithType>|  
-|Obsahuje|Určuje, zda sekvence obsahuje zadaný prvek.|Nelze použít.|<xref:System.Linq.Enumerable.Contains%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Contains%2A?displayProperty=nameWithType>|  
+|Všechny|Určuje, zda všechny prvky v sekvenci splňují podmínku.|Není k dispozici.|<xref:System.Linq.Enumerable.All%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.All%2A?displayProperty=nameWithType>|  
+|Jakýkoli|Určuje, zda všechny prvky v sekvenci splňují podmínku.|Není k dispozici.|<xref:System.Linq.Enumerable.Any%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Any%2A?displayProperty=nameWithType>|  
+|Obsahuje|Určuje, zda sekvence obsahuje zadaný prvek.|Není k dispozici.|<xref:System.Linq.Enumerable.Contains%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Contains%2A?displayProperty=nameWithType>|  
   
 ## <a name="see-also"></a>Viz také:
 

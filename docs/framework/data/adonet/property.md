@@ -2,12 +2,12 @@
 title: property
 ms.date: 03/30/2017
 ms.assetid: a941c53f-fc97-42c2-8832-0fb9f1d55c06
-ms.openlocfilehash: bc8f890479e195f1e6ef847219a74f165c722fd6
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 80c4bb3ccbab75c17b098723fc10b8b996e40576
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54589422"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58409715"
 ---
 # <a name="property"></a>property
 *Vlastnosti* jsou základní stavební kameny [typy entit](../../../../docs/framework/data/adonet/entity-type.md) a [komplexní typy](../../../../docs/framework/data/adonet/complex-type.md). Vlastnosti definovat tvar a vlastnosti dat, která bude obsahovat instance typu entity nebo komplexní typ instance. Vlastnosti v konceptuálním modelu jsou podobná vlastnosti definované ve třídě. Stejným způsobem, že vlastnosti třídy definovat tvar třídy a budou mít informace o objektech vlastnosti v konceptuálním modelu definovat tvar typu entity a nesou informaci o instancí typu entity.  
@@ -31,7 +31,7 @@ ms.locfileid: "54589422"
 ## <a name="example"></a>Příklad  
  Následující diagram znázorňuje Koncepční model s tři typy entit: `Book`, `Publisher`, a `Author`. Každý typ entity má několik vlastností, i když se předávají informace o typu pro každou vlastnost v diagramu. Vlastnosti, které jsou [klíče entit](../../../../docs/framework/data/adonet/entity-key.md) jsou rozlišeny pomocí (klíč).  
   
- ![Ukázkový Model](../../../../docs/framework/data/adonet/media/examplemodel.gif "ExampleModel")  
+ ![Příklad modelu s tři typy entit](./media/property/example-model-three-entity-types.gif)  
   
  [ADO.NET Entity Framework](../../../../docs/framework/data/adonet/ef/index.md) používá jazyka specifického pro doménu (DSL) volá Konceptuální schéma definici jazyka ([CSDL](../../../../docs/framework/data/adonet/ef/language-reference/csdl-specification.md)) k definování konceptuálních modelů. Definuje následující CSDL `Book` entity typu (jak je uvedeno ve výše uvedeném diagramu) a určuje typ a název každé vlastnosti pomocí atributů XML. Volitelné omezující vlastnost, `Nullable`, je také definován pomocí atribut XML.  
   

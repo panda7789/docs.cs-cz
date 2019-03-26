@@ -2,12 +2,12 @@
 title: Typ přidružení
 ms.date: 03/30/2017
 ms.assetid: 26c409f6-06e8-4441-ac78-1b1076a3c005
-ms.openlocfilehash: 65fb5c8e37c8edf7f36cc08258874eeaf234c402
-ms.sourcegitcommit: 462dc41a13942e467984e48f4018d1f79ae67346
+ms.openlocfilehash: 895d7fdc464741723322717c3ace027dc49eed9c
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58185594"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58411444"
 ---
 # <a name="association-type"></a>Typ přidružení
 *Typ přidružení* (také nazývané přidružení) je základním stavebním blokem popisující relace v modelu Entity Data Model (EDM). V konceptuálním modelu, přidružení představuje vztah mezi dvěma [typy entit](../../../../docs/framework/data/adonet/entity-type.md) (například `Customer` a `Order`). V aplikaci, která představuje instance přidružení konkrétní přidružení (jako je například přidružení mezi instance `Customer` a instance `Order`). Přidružení instance jsou logicky seskupeny do [sada přidružení](../../../../docs/framework/data/adonet/association-set.md).  
@@ -28,7 +28,7 @@ ms.locfileid: "58185594"
 ## <a name="example"></a>Příklad  
  Následující diagram znázorňuje Koncepční model se dvěma přidružení: `PublishedBy` a `WrittenBy`. Konec asociace `PublishedBy` přidružení se `Book` a `Publisher` typy entit. Násobnost `Publisher` end je jedna (1) a násobnost `Book` end je mnoho (\*), označující, že vydavatel publikuje mnoho knih a knihy se publikuje vydavatele.  
   
- ![Ukázkový Model](../../../../docs/framework/data/adonet/media/examplemodel.gif "ExampleModel")  
+ ![Příklad modelu s tři typy entit](./media/association-type/example-model-three-entity-types.gif)  
   
  [ADO.NET Entity Framework](../../../../docs/framework/data/adonet/ef/index.md) používá jazyka specifického pro doménu (DSL) volá Konceptuální schéma definici jazyka ([CSDL](../../../../docs/framework/data/adonet/ef/language-reference/csdl-specification.md)) k definování konceptuálních modelů. Definuje následující CSDL `PublishedBy` přidružení, které jsou zobrazeny ve výše uvedeném diagramu:  
   

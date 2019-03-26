@@ -2,12 +2,12 @@
 title: Náhrada kontraktu dat
 ms.date: 03/30/2017
 ms.assetid: b0188f3c-00a9-4cf0-a887-a2284c8fb014
-ms.openlocfilehash: 5729943f455d4669f047eb2d86fb7292824c0f2c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 341b56727c910d552a5238d95976884162f1c524
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54645415"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58409832"
 ---
 # <a name="datacontract-surrogate"></a>Náhrada kontraktu dat
 Tato ukázka předvádí, jak procesy, jako jsou serializace, deserializace, schéma export a import schématu je možné přizpůsobit pomocí kontraktu dat náhradní třídy. Tento příklad ukazuje způsob použití náhradní ve scénáři klient a server se data serializována a přenosu mezi klienta Windows Communication Foundation (WCF) a služby.  
@@ -64,9 +64,9 @@ public class Person
 }  
 ```  
   
- Můžete použít `DataContract` atribut `Person` třídy, ale to není vždy možné. Například `Person` třídy lze definovat v samostatném sestavení nad tím, které nemají žádnou kontrolu.  
+ Můžete použít <xref:System.Runtime.Serialization.DataContractAttribute> atribut `Person` třídy, ale to není vždy možné. Například `Person` třídy lze definovat v samostatném sestavení nad tím, které nemají žádnou kontrolu.  
   
- Toto omezení, jeden ze způsobů, jak serializovat daný `Person` třída má nahradit jinou třídu, která je označena `DataContractAttribute` a kopii přes data potřebná pro novou třídu. Cílem je, aby `Person` třídy se zobrazí jako kontraktu DataContract pro <xref:System.Runtime.Serialization.DataContractSerializer>. Všimněte si, že se jedná o jeden způsob, jak třídy bez data smlouvy serializace.  
+ Toto omezení, jeden ze způsobů, jak serializovat daný `Person` třída má nahradit jinou třídu, která je označena <xref:System.Runtime.Serialization.DataContractAttribute> a kopii přes data potřebná pro novou třídu. Cílem je, aby `Person` třídy se zobrazí jako kontraktu DataContract pro <xref:System.Runtime.Serialization.DataContractSerializer>. Všimněte si, že se jedná o jeden způsob, jak třídy bez data smlouvy serializace.  
   
  Ukázka logicky nahradí `Person` třídy s jinou třídu s názvem `PersonSurrogated`.  
   

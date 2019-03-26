@@ -40,12 +40,12 @@ helpviewer_keywords:
 ms.assetid: cf624c1f-c160-46a1-bb2b-213587688da7
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 37e6b995a84a54dfcb52460d11e9843a933a5684
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 10ed899f1eda3b7fcaa95391b9af6dddb5c94560
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57353072"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58409871"
 ---
 # <a name="reliability-best-practices"></a>Spolehlivost – doporučené postupy
 
@@ -241,7 +241,7 @@ Pro SQL Server musí HPA označeny všechny metody, které slouží k uvození s
 
 ### <a name="do-not-block-indefinitely-in-unmanaged-code"></a>Po neomezenou dobu nebrání v nespravovaném kódu
 
-Blokování v nespravovaném kódu místo ve spravovaném kódu může způsobit útoku DOS, protože modul CLR není možné přerušit vlákno.  Blokovaná vlákna zabraňuje uvolnění modulu CLR <xref:System.AppDomain>, alespoň bez provádění některých operací velmi nebezpečné.  Blokuje použití Win32 je primitiv synchronizace vymazat příkladem něco, co jsme nemůže povolit.  Při volání k blokování `ReadFile` na soketu mělo by se vyhnout Pokud je to možné – v ideálním případě by měl rozhraní Win32 API poskytují mechanismus pro vypršení časového limitu operace následujícím způsobem.
+Blokování v nespravovaném kódu místo ve spravovaném kódu může způsobit útoku DOS, protože modul CLR není možné přerušit vlákno.  Blokovaná vlákna zabraňuje uvolnění modulu CLR <xref:System.AppDomain>, alespoň bez provádění některých operací velmi nebezpečné.  Blokuje použití Windows je primitiv synchronizace vymazat příkladem něco, co jsme nemůže povolit.  Při volání k blokování `ReadFile` na soketu mělo by se vyhnout Pokud je to možné – v ideálním případě by měl rozhraní Windows API poskytují mechanismus pro vypršení časového limitu operace následujícím způsobem.
 
 Jakoukoli metodu, která volá do nativní by měl v ideálním případě pomocí přiměřené omezený časový limit volání Win32.  Pokud uživatel může zadat časový limit, uživatel by neměl povoleno zadat neomezený časový limit bez nějaká konkrétní bezpečnostní oprávnění.  Jako vodítko Pokud metoda bude blokovat více než přibližně 10 sekund, budete muset používat verzi, která podporuje vypršení časového limitu nebo potřebujete další podporu modulu CLR.
 

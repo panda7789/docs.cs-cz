@@ -2,12 +2,12 @@
 title: Vlastní kodéry
 ms.date: 03/30/2017
 ms.assetid: fa0e1d7f-af36-4bf4-aac9-cd4eab95bc4f
-ms.openlocfilehash: a438ad327cdd75e981af2ef8ca3999a2f482a2b3
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 7b68725346a2de23d405ed21ead93e3a6a8374e6
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54509360"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58411366"
 ---
 # <a name="custom-encoders"></a>Vlastní kodéry
 Toto téma popisuje, jak vytvořit vlastní kodéry.  
@@ -50,7 +50,7 @@ Toto téma popisuje, jak vytvořit vlastní kodéry.
 ### <a name="pooling"></a>Sdružování  
  Každá implementace kodér pokusí fondu co největší míře. Omezení přidělení je klíče způsob, jak zlepšit výkon spravovaného kódu. K provedení této sdružování, implementace použít `SynchronizedPool` třídy. C# Soubor obsahuje popis Další optimalizace použitou touto třídou.  
   
- `XmlDictionaryReader` a `XmlDictionaryWriter` instance jsou ve fondu a znovu inicializovat, aby se zabránilo přidělení nové značky pro každou zprávu. Pro čtenáře `OnClose` čtečky uvolňuje zpětného volání při `Close()` je volána. Kodér recykluje také některé objekty stavu zprávy používá při vytváření zpráv. Velikosti tyto fondy se dají konfigurovat pomocí `MaxReadPoolSize` a `MaxWritePoolSize` vlastnosti na každé tři třídy odvozené z <xref:System.ServiceModel.Channels.MessageEncodingBindingElement>.  
+ <xref:System.Xml.XmlDictionaryReader> a <xref:System.Xml.XmlDictionaryWriter> instance jsou ve fondu a znovu inicializovat, aby se zabránilo přidělení nové značky pro každou zprávu. Pro čtenáře `OnClose` čtečky uvolňuje zpětného volání při `Close()` je volána. Kodér recykluje také některé objekty stavu zprávy používá při vytváření zpráv. Velikosti tyto fondy se dají konfigurovat pomocí `MaxReadPoolSize` a `MaxWritePoolSize` vlastnosti na každé tři třídy odvozené z <xref:System.ServiceModel.Channels.MessageEncodingBindingElement>.  
   
 ### <a name="binary-encoding"></a>Binární kódování  
  Když binární kódování používá relace, řetězec dynamický slovník musí sdělí příjemce zprávy. To se provádí přidáním prefixu zprávu s řetězci dynamický slovník. Příjemce odstraní vypnout řetězce, se přidají do relace a zprávu zpracuje. Správně předávání řetězce slovníku vyžaduje, že přenos do vyrovnávací paměti.  

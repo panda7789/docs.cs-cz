@@ -27,12 +27,12 @@ helpviewer_keywords:
 - Visual Basic code, Sub procedures
 - Function procedures [Visual Basic], declaring
 ms.assetid: d3f21fb0-b804-4c99-97ed-583b23894cf1
-ms.openlocfilehash: 4a2e1704e72e608f5b5fd9c6dace42c144f92bb4
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 5f9ac99078d64387acee9160118928ad8de1764c
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56973168"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58411535"
 ---
 # <a name="declare-statement"></a>Declare – příkaz
 Deklaruje odkaz na proceduru implementovanou v externím souboru.  
@@ -127,7 +127,7 @@ Declare [ charsetmodifier ] [ Function ] name Lib "libname" _
 -   **Mechanismus.** Jazyk Visual Basic používá rozhraní .NET Framework *vyvolání platformy* (PInvoke) mechanismus řešení a přístup k externí procedury. `Declare` Příkazu a <xref:System.Runtime.InteropServices.DllImportAttribute> třída oba použít tento mechanismus automaticky a není nutné žádnou znalost PInvoke. Další informace najdete v tématu [názorný postup: Volání rozhraní API Windows](../../../visual-basic/programming-guide/com-interop/walkthrough-calling-windows-apis.md).  
   
 > [!IMPORTANT]
->  V případě, že externí procedura běží mimo modul CLR (CLR), je *nespravovaný kód*. Při volání tento postup, například funkce rozhraní Win32 API nebo metodu modelu COM může zveřejnit aplikaci na bezpečnostní rizika. Další informace najdete v tématu [zabezpečené kódování pokyny pro nespravovaný kód](../../../framework/security/secure-coding-guidelines-for-unmanaged-code.md).  
+>  V případě, že externí procedura běží mimo modul CLR (CLR), je *nespravovaný kód*. Při volání tento postup, například funkce rozhraní Windows API nebo metodu modelu COM může zveřejnit aplikaci na bezpečnostní rizika. Další informace najdete v tématu [zabezpečené kódování pokyny pro nespravovaný kód](../../../framework/security/secure-coding-guidelines-for-unmanaged-code.md).  
   
 ## <a name="example"></a>Příklad  
  Následující příklad deklaruje externí odkaz na `Function` proceduru, která vrací aktuální uživatelské jméno. Potom volá externí procedura `GetUserNameA` jako součást `getUser` postup.  

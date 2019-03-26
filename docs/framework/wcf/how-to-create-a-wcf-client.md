@@ -1,72 +1,133 @@
 ---
-title: 'Postupy: Vytvoření klienta Windows Communication Foundation'
-ms.date: 09/14/2018
+title: 'Kurz: Vytvoření klienta Windows Communication Foundation'
+ms.dat8: 03/19/2019
 helpviewer_keywords:
 - clients [WCF], running
 - WCF clients [WCF], running
 ms.assetid: a67884cc-1c4b-416b-8c96-5c954099f19f
-ms.openlocfilehash: 9572f3e2c0cddf75daf343f250b16e94bc2b0dbf
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 051275e56a8e63c6ab8136dbb9e24bdcf4c387df
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50181667"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58411854"
 ---
-# <a name="how-to-create-a-windows-communication-foundation-client"></a>Postupy: Vytvoření klienta Windows Communication Foundation
+# <a name="tutorial-create-a-windows-communication-foundation-client"></a>Kurz: Vytvoření klienta Windows Communication Foundation
 
-Toto je čtvrtý z šesti úkolů potřebný k vytvoření aplikace Windows Communication Foundation (WCF). Přehled všech šesti úkoly, naleznete v tématu [kurz Začínáme](../../../docs/framework/wcf/getting-started-tutorial.md) tématu.
+Tento kurz popisuje čtvrté pět úloh potřebných k vytvoření základní aplikace Windows Communication Foundation (WCF). Přehled v kurzech, naleznete v tématu [kurzu: Začínáme s aplikacemi Windows Communication Foundation](getting-started-tutorial.md).
 
-Toto téma popisuje, jak načíst metadata ze služby WCF a použijte ji k vytvoření proxy WCF, které můžete přístup ke službě. Tuto úlohu provedete pomocí **přidat odkaz na službu** funkce poskytované službou Visual Studio. Tento nástroj získává metadata z koncového bodu služby MEX a vygeneruje soubor spravovaném zdrojovém kódu pro proxy server klienta v jazyce rozhodli (C# ve výchozím nastavení). Kromě vytvoření proxy serveru klienta, nástroj také vytvoří nebo aktualizuje konfigurační soubor klienta, která umožňuje klientské aplikaci připojení ke službě na jeden z jeho koncových bodů.
-
-> [!NOTE]
-> Můžete také použít [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) nástroj pro generování třídy proxy serveru a konfigurace namísto použití **přidat odkaz na službu** v sadě Visual Studio.
+Dalším úkolem pro vytvoření aplikace WCF je vytvoření klienta načtením metadata ze služby WCF. Přidání odkazu na službu, která načte metadata z koncového bodu MEX služby pomocí sady Visual Studio. Visual Studio poté vygeneruje soubor spravovaném zdrojovém kódu pro proxy server klienta v jazyce, který jste zvolili. Také vytvoří soubor konfigurace klienta (*App.config*). Tento soubor umožňuje klientské aplikaci připojení ke službě na koncový bod. 
 
 > [!NOTE]
-> Při volání služby WCF z projektu knihovny tříd v sadě Visual Studio, můžete použít **přidat odkaz na službu** funkci, která automaticky generovat proxy serveru a související konfigurační soubor. Konfigurační soubor se nepoužije projekt knihovny tříd. Budete muset přidat nastavení v souboru vygenerovanou konfiguraci do souboru app.config pro spustitelný soubor, který volá knihovnu tříd.
+> Při volání služby WCF z projektu knihovny tříd v sadě Visual Studio, použijte **přidat odkaz na službu** funkci, která automaticky generovat proxy serveru a související konfigurační soubor. Ale protože projekty knihovny tříd nepoužívejte tento konfigurační soubor, budete muset přidat nastavení v generované konfiguračního souboru k *App.config* soubor pro spustitelný soubor, který volá knihovnu tříd.
 
-Klientská aplikace používá třídu proxy generovaný ke komunikaci se službou. Tento postup je popsaný v [postupy: používání klienta](../../../docs/framework/wcf/how-to-use-a-wcf-client.md).
+> [!NOTE]
+> Jako alternativu použijte [nástroj ServiceModel Metadata Utility](#servicemodel-metadata-utility-tool) místo sady Visual Studio ke generování třídy a konfigurační soubor proxy serveru.
 
-## <a name="to-create-a-windows-communication-foundation-client"></a>K vytvoření klienta Windows Communication Foundation
+Klientská aplikace používá třídu proxy generovaný ke komunikaci se službou. Tento postup je popsaný v [kurzu: Používání klienta](how-to-use-a-wcf-client.md).
 
-1. Vytvořte nový projekt konzolové aplikace v sadě Visual Studio. Klikněte pravým tlačítkem na řešení Začínáme v **Průzkumníka řešení** a vyberte **přidat** > **nový projekt**. V **přidat nový projekt** dialogového okna na levé straně, vyberte **Windows Desktop** kategorie v části **Visual C#** nebo **jazyka Visual Basic**. Vyberte **Konzolová aplikace (.NET Framework)** šablony a poté pojmenujte projekt **GettingStartedClient**.
+V tomto kurzu se naučíte:
+> [!div class="checklist"]
+> - Vytvořte a nakonfigurujte projekt konzolové aplikace pro klienta WCF.
+> - Přidání odkazu na službu ve službě WCF pro vygenerování souborů třídy a konfiguraci proxy serveru.
 
-2. Přidáte odkaz na System.ServiceModel GettingStartedClient projektu. Klikněte pravým tlačítkem na **odkazy** ve složce projektu GettingStartedClient v **Průzkumníka řešení**a pak vyberte **přidat odkaz**. V **přidat odkaz** dialogového okna, vyberte **Framework** na levé straně dialogového okna v části **sestavení**. Vyhledejte a vyberte **System.ServiceModel**a klikněte na tlačítko **OK**. Uložte řešení tak, že vyberete **souboru** > **Uložit vše**.
 
-3. Přidání odkazu na službu ve službě kalkulačku.
+## <a name="create-a-windows-communication-foundation-client"></a>Vytvoření klienta Windows Communication Foundation
 
-   1. Nejprve spusťte GettingStartedHost konzolové aplikace.
+1. Vytvořte projekt konzolové aplikace v sadě Visual Studio: 
 
-   2. Po spuštění hostitele, klikněte pravým tlačítkem **odkazy** ve složce projektu GettingStartedClient v **Průzkumníku řešení** a vyberte **přidat**  >   **Odkaz na službu**.
+    1. Z **souboru** nabídce vyberte možnost **otevřít** > **projekt či řešení** a přejděte do **GettingStarted** řešení můžete vytvořené (*GettingStarted.sln*). Vyberte **Open** (Otevřít).
 
-   3. Do pole Adresa zadejte následující adresu URL **přidat odkaz na službu** dialogové okno: [http://localhost:8000/GettingStarted/CalculatorService](http://localhost:8000/GettingStarted/CalculatorService)
+    2. Z **zobrazení** nabídce vyberte možnost **Průzkumníka řešení**.
 
-   4. Zvolte **Přejít**.
+    3. V **Průzkumníka řešení** okna, vyberte **GettingStarted** řešení (nejvyšší uzel) a pak vyberte **přidat** > **nový projekt** z místní nabídky. 
+    
+    4. V **přidat nový projekt** na levé straně vyberte okno **Windows Desktop** kategorie v části **Visual C#**  nebo **jazyka Visual Basic**. 
 
-   Se zobrazí CalculatorService **služby** pole se seznamem. Dvakrát klikněte na panel CalculatorService se rozbalí a zobrazí služba kontraktů implementovaných službou. Ponechte výchozí obor názvů jako- a zvolíte **OK**.
+    5. Vyberte **Konzolová aplikace (.NET Framework)** šablony a zadejte *GettingStartedClient* pro **název**. Vyberte **OK**.
 
-    Když přidáte odkaz na službu pomocí sady Visual Studio, objeví nová položka v **Průzkumníka řešení** pod **odkazy na služby** GettingStartedClient projektu ve složce. Pokud používáte [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) jsou generovány nástroj, zdrojový soubor a soubor app.config.
+2. Přidat odkaz **GettingStartedClient** projektu <xref:System.ServiceModel> sestavení: 
 
-    Můžete také použít nástroj příkazového řádku [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) pomocí příslušných přepínačů vytvořte klientský kód. Následující příklad generuje soubor kódu a konfiguračním souboru služby. První příklad ukazuje, jak generovat proxy serveru v jazyce Visual Basic a druhý ukazuje, jak generovat proxy serveru v jazyce C#:
+    1.  V **Průzkumníka řešení** okna, vyberte **odkazy** ve složce **GettingStartedClient** projektu a pak vyberte **přidat odkaz** z místní nabídky. 
 
-    ```shell
-    svcutil.exe /language:vb /out:generatedProxy.vb /config:app.config http://localhost:8000/GettingStarted/CalculatorService
-    ```
+    2. V **přidat odkaz** okně v části **sestavení** v levé části okna vyberte **Framework**.
+    
+    3. Vyhledejte a vyberte **System.ServiceModel**a klikněte na tlačítko **OK**. 
 
-    ```shell
-    svcutil.exe /language:cs /out:generatedProxy.cs /config:app.config http://localhost:8000/GettingStarted/CalculatorService
-    ```
+    4. Uložte řešení tak, že vyberete **souboru** > **Uložit vše**.
+
+3. Přidání odkazu na službu do kalkulačky služby:
+
+   1. V **Průzkumníka řešení** okna, vyberte **odkazy** ve složce **GettingStartedClient** projektu a pak vyberte **přidat odkaz na službu**  z místní nabídky.
+
+   2. V **přidat odkaz na službu** okně **Discover**.
+
+      Spuštění služby CalculatorService a sady Visual Studio zobrazí ho v **služby** pole.
+
+   3. Vyberte **CalculatorService** se rozbalí a zobrazí služba kontraktů implementovaných službou. Ponechte výchozí nastavení **Namespace** a zvolte **OK**.
+
+      Přidá novou položku v sadě Visual Studio **připojené služby** složky **GettingStartedClient** projektu. 
+
+
+### <a name="servicemodel-metadata-utility-tool"></a>Nástroj ServiceModel Metadata Utility
+
+Následující příklady ukazují, jak volitelně použít [nástroj ServiceModel Metadata Utility (Svcutil.exe)](servicemodel-metadata-utility-tool-svcutil-exe.md) ke generování souboru třídy proxy serveru. Tento nástroj generuje soubor třídy proxy a *App.config* souboru. Následující příklady ukazují, jak generovat proxy serverem v C# a Visual Basic, v uvedeném pořadí:
+
+```shell
+svcutil.exe /language:cs /out:generatedProxy.cs /config:app.config http://localhost:8000/GettingStarted/CalculatorService
+```
+
+```shell
+svcutil.exe /language:vb /out:generatedProxy.vb /config:app.config http://localhost:8000/GettingStarted/CalculatorService
+```
+
+### <a name="client-configuration-file"></a>Soubor konfigurace klienta
+
+Po vytvoření klienta, vytvoří Visual Studio **App.config** v konfiguračním souboru **GettingStartedClient** projekt, který by měl vypadat přibližně jako v následujícím příkladu:
+
+```xml
+    <?xml version="1.0" encoding="utf-8" ?>
+    <configuration>
+        <startup>
+            <!-- specifies the version of WCF to use-->
+            <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.6.1" />
+        </startup>
+        <system.serviceModel>
+            <bindings>
+                <!-- Uses wsHttpBinding-->
+                <wsHttpBinding>
+                    <binding name="WSHttpBinding_ICalculator" />
+                </wsHttpBinding>
+            </bindings>
+            <client>
+                <!-- specifies the endpoint to use when calling the service -->
+                <endpoint address="http://localhost:8000/GettingStarted/CalculatorService"
+                    binding="wsHttpBinding" bindingConfiguration="WSHttpBinding_ICalculator"
+                    contract="ServiceReference1.ICalculator" name="WSHttpBinding_ICalculator">
+                    <identity>
+                        <dns value="localhost" />
+                    </identity>
+                </endpoint>
+            </client>
+        </system.serviceModel>
+    </configuration>
+```
+
+V části [ \<system.serviceModel >](../configure-apps/file-schema/wcf/system-servicemodel.md) části, Všimněte si, že [ \<koncový bod >](../configure-apps/file-schema/wcf/endpoint-element.md) elementu. **&lt;Koncový bod&gt;** definuje element koncového bodu, který klient používá pro přístup ke službě následujícím způsobem:
+- Adresa: `http://localhost:8000/GettingStarted/CalculatorService`. Adresa koncového bodu.
+- Kontrakt služby: `ServiceReference1.ICalculator`. Kontrakt služby zpracovává vnitřní komunikaci mezi klienta WCF a službou. Visual Studio vygeneruje tuto smlouvu, když jste použili jeho **přidat odkaz na službu** funkce. Je v podstatě kopií kontrakt, který jste definovali v projektu GettingStartedLib. 
+- Vazba: <xref:System.ServiceModel.WSHttpBinding>. Vazba určuje HTTP jako přenosu, interoperabilní zabezpečení a další podrobnosti o konfiguraci.
 
 ## <a name="next-steps"></a>Další kroky
 
-Vytvořili jste proxy server, který klientská aplikace bude používat k volání služby kalkulačku. Pokračujte k dalšímu tématu, v řadě.
+V tomto kurzu jste se naučili:
+> [!div class="checklist"]
+> - Vytvořte a nakonfigurujte projekt konzolové aplikace pro klienta WCF.
+> - Přidání odkazu na službu ve službě WCF ke generování proxy třída a konfigurační soubory pro klientskou aplikaci.
+
+Přejděte k dalšímu kurzu, kde se naučíte, jak pomocí generovaného klienta.
 
 > [!div class="nextstepaction"]
-> [Postupy: Konfigurace klienta](../../../docs/framework/wcf/how-to-configure-a-basic-wcf-client.md)
+> [Kurz: Pomocí klienta WCF](how-to-use-a-wcf-client.md)
 
-## <a name="see-also"></a>Viz také:
 
-- [Nástroj metadat modelu služby (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)
-- [Začínáme](../../../docs/framework/wcf/samples/getting-started-sample.md)
-- [Vlastní hostování](../../../docs/framework/wcf/samples/self-host.md)
-- [Postupy: Publikování metadat služby promocí konfiguračního souboru](../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-a-configuration-file.md)
-- [Postupy: Stažení dokumentů metadat pomocí nástroje Svcutil.exe](../../../docs/framework/wcf/feature-details/how-to-use-svcutil-exe-to-download-metadata-documents.md)

@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 3e3f6780-6d90-4413-bad7-ba641220364d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: eb1aba9e794928b0eb905722e2a5d7df84100ea4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: cfe2be8784fd4baf6ce9e603da1c6e2388126b5a
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54729207"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58409325"
 ---
 # <a name="identifying-functions-in-dlls"></a>Identifikace funkcí ve knihovnách DLL
 Identita funkce knihovny DLL se skládá z následujících elementů:  
@@ -27,15 +27,15 @@ Identita funkce knihovny DLL se skládá z následujících elementů:
   
 -   Název souboru knihovny DLL, ve kterém můžete najít implementaci  
   
- Například zadání **MessageBox** funkce User32.dll určuje funkci (**MessageBox**) a jeho umístění (User32.dll, User32 nebo user32). Rozhraní (API systému Win32) Windows Microsoft může obsahovat dvě verze jednotlivých funkcí, která zpracovává znaků a řetězce: verze ANSI 1 dvoubajtového znaku zjistí a 2bajtové znaky Unicode verze. Pokud tento parametr nezadáte, znakové sady reprezentována <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet> pole, výchozí hodnota je ANSI. Některé funkce mohou mít více než dvě verze.  
+ Například zadání **MessageBox** funkce User32.dll určuje funkci (**MessageBox**) a jeho umístění (User32.dll, User32 nebo user32). Rozhraní (Windows API) Windows Microsoft může obsahovat dvě verze jednotlivých funkcí, která zpracovává znaků a řetězce: verze ANSI 1 dvoubajtového znaku zjistí a 2bajtové znaky Unicode verze. Pokud tento parametr nezadáte, znakové sady reprezentována <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet> pole, výchozí hodnota je ANSI. Některé funkce mohou mít více než dvě verze.  
   
  **MessageBoxA** ANSI vstupní bod pro **MessageBox** funkce; **Funkce** je verze Unicode. Názvy funkcí pro konkrétní knihovny DLL, jako je například user32.dll, můžete vytvořit seznam spuštěním širokou škálu nástrojů příkazového řádku. Například můžete použít `dumpbin /exports user32.dll` nebo `link /dump /exports user32.dll` získat názvy funkcí.  
   
  Nespravovaná funkce můžete přejmenovat na cokoli, co chcete v rámci vašeho kódu tak dlouho, dokud mapování nový název na původní vstupní bod v knihovně DLL. Pokyny k přejmenování nespravovanou funkci knihovny DLL ve spravovaném zdrojovém kódu, najdete v článku [určení vstupního bodu](../../../docs/framework/interop/specifying-an-entry-point.md).  
   
- Povolí vyvolání platformy je možné řídit podstatnou část operačního systému pomocí volání funkce v rozhraní API systému Win32 a další knihovny DLL. Kromě rozhraní API systému Win32 existuje mnoho jiných rozhraní API a volání knihovny DLL, které jsou k dispozici prostřednictvím platformy.  
+ Povolí vyvolání platformy je možné řídit podstatnou část operačního systému pomocí volání funkce v rozhraní Windows API a další knihovny DLL. Kromě rozhraní API pro Windows existuje mnoho jiných rozhraní API a volání knihovny DLL, které jsou k dispozici prostřednictvím platformy.  
   
- Následující tabulka popisuje několik běžně používané knihovny DLL v rozhraní API systému Win32.  
+ Následující tabulka popisuje několik běžně používané knihovny DLL v rozhraní Windows API.  
   
 |DLL|Popis obsahu|  
 |---------|-----------------------------|  
@@ -43,7 +43,7 @@ Identita funkce knihovny DLL se skládá z následujících elementů:
 |Kernel32.dll|Funkce nízké úrovně operačního systému pro správu paměti a zpracování prostředků.|  
 |User32.dll|Funkce správy Windows pro zpracování zpráv, časovače, nabídky a komunikace.|  
   
- Úplnou dokumentaci k rozhraní API systému Win32 naleznete v tématu Platform SDK. Příklady, které ukazují, jak vytvořit. Na základě NET deklarace pro použití s platformu vyvolání, naleznete v tématu [zařazování dat pomocí vyvolání platformy](../../../docs/framework/interop/marshaling-data-with-platform-invoke.md).  
+ Úplnou dokumentaci k rozhraní API pro Windows naleznete v tématu Platform SDK. Příklady, které ukazují, jak vytvořit. Na základě NET deklarace pro použití s platformu vyvolání, naleznete v tématu [zařazování dat pomocí vyvolání platformy](../../../docs/framework/interop/marshaling-data-with-platform-invoke.md).  
   
 ## <a name="see-also"></a>Viz také:
 - [Používání nespravovaných funkcí DLL](../../../docs/framework/interop/consuming-unmanaged-dll-functions.md)

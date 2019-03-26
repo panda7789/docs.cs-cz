@@ -8,9 +8,9 @@ Serializace je proces převodu objektu do datového proudu bajtů k uložení ob
 
 ## <a name="how-serialization-works"></a>Principy serializace
 
-Tento obrázek ukazuje celkový proces serializace.
+Tento obrázek ukazuje celkový proces serializace:
 
-![Obrázek serializace](./media/serialization.gif "serializace")
+![Obrázek serializace](./media/index/serialization-process.gif)
 
 Je objekt serializován do datového proudu, který nese nejen data, ale informace o typu objektu, například jeho název verze, jazykovou verzi a sestavení. Z tohoto datového proudu mohou být uloženy v databázi, soubor nebo paměti.
 

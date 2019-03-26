@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 40a67826-e4df-4f59-a651-d9eb0fdc755d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8b7c7704c4f417ef16d3a79fa6d955265e42cf14
-ms.sourcegitcommit: e994e47d3582bf09ae487ecbd53c0dac30aebaf7
+ms.openlocfilehash: 74c68aec535515803b9048aeed8395b53a4aaa4b
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58262443"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58411041"
 ---
 # <a name="how-to-determine-which-net-framework-versions-are-installed"></a>Postupy: Zjištění nainstalovaných verzí rozhraní .NET Framework
 
@@ -44,14 +44,14 @@ Pokud chcete získat seznam verzí rozhraní .NET Framework nainstalované na po
      - [Pomocí Editoru registru vyhledejte verze rozhraní .NET Framework](#net_b)  
      - [Použít kód k dotazování registru pro verze rozhraní .NET Framework](#net_d)  
      - [Použití Powershellu k dotazování registru pro verze rozhraní .NET Framework](#ps_a)
- - Najít starší verze rozhraní .NET Framework (1&#8211;4):
+- Najít starší verze rozhraní .NET Framework (1&#8211;4):
      - [Pomocí Editoru registru vyhledejte verze rozhraní .NET Framework](#net_a)
      - [Použít kód k dotazování registru pro verze rozhraní .NET Framework](#net_c)   
 
 Pokud chcete získat seznam verzí modulu CLR nainstalované v počítači, pomocí nástroje nebo kódu:  
   
- - [Použití nástroje Clrver](#clr_a)  
- - [Dotaz na třídu prostředí pomocí kódu](#clr_b)  
+- [Použití nástroje Clrver](#clr_a)  
+- [Dotaz na třídu prostředí pomocí kódu](#clr_b)  
 
 Informace o zjišťování nainstalovaných aktualizací pro každou verzi rozhraní .NET Framework najdete v tématu [jak: Zjištění nainstalovaných aktualizací rozhraní .NET Framework](how-to-determine-which-net-framework-updates-are-installed.md). 
   

@@ -2,12 +2,12 @@
 title: end přidružení
 ms.date: 03/30/2017
 ms.assetid: 2c345213-0296-4d90-ac6d-cef179798a75
-ms.openlocfilehash: c1b43dea98b65427065387aedd2305f9c7b370bd
-ms.sourcegitcommit: 462dc41a13942e467984e48f4018d1f79ae67346
+ms.openlocfilehash: 7fb9b48c5ed832e83f2a1e344d17d9a9797d393b
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58185581"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58410326"
 ---
 # <a name="association-end"></a>end přidružení
 *End přidružení* identifikuje [typ entity](../../../../docs/framework/data/adonet/entity-type.md) na jednom konci [přidružení](../../../../docs/framework/data/adonet/association-type.md) a počet entit zadejte instancí, které mohou existovat, které končí přidružení. Zakončení jsou definované jako součást přidružení; přidružení musí mít přesně dva elementy přidružení. [Vlastnosti navigace](../../../../docs/framework/data/adonet/navigation-property.md) umožňují navigace z end přidružení jednoho na druhý.  
@@ -28,7 +28,7 @@ ms.locfileid: "58185581"
 ## <a name="example"></a>Příklad  
  Následující diagram znázorňuje Koncepční model se dvěma přidružení: `PublishedBy` a `WrittenBy`. Konec asociace `PublishedBy` přidružení se `Book` a `Publisher` typy entit. Násobnost `Publisher` end je jedna (1) a násobnost `Book` end je mnoho (\*), označující, že vydavatel publikuje mnoho knih a knihy se publikuje vydavatele.  
   
- ![Ukázkový Model](../../../../docs/framework/data/adonet/media/examplemodel.gif "ExampleModel")  
+ ![Příklad modelu s tři typy entit](./media/association-end/example-model-three-entity-types.gif)  
   
  ADO.NET Entity Framework používá jazyka specifického pro doménu (DSL) volá Konceptuální schéma definici jazyka ([CSDL](../../../../docs/framework/data/adonet/ef/language-reference/csdl-specification.md)) k definování konceptuálních modelů. Definuje CSDL níže `PublishedBy` přidružení, které jsou zobrazeny ve výše uvedeném diagramu. Všimněte si, že typ, název a násobnost každý konec asociace jsou určena pomocí atributů XML ( `Type`, `Role`, a `Multiplicity` atributů). Volitelné informace o operace provedené na skončí je zadaný v elementu XML ( `OnDelete` element). V tomto případě pokud vydavatele se odstraní, proto jsou všechny přidružené knihy.  
   

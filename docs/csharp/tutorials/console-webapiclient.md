@@ -3,12 +3,12 @@ title: Vytvoření klienta REST s využitím .NET Core
 description: V tomto kurzu se naučíte mnoho funkcí v jazyce C# a .NET Core.
 ms.date: 03/06/2017
 ms.assetid: 51033ce2-7a53-4cdd-966d-9da15c8204d2
-ms.openlocfilehash: e7859e9db53e8b126fd66b88d9a5e7565ea1a4ad
-ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
+ms.openlocfilehash: a375215f2d31845333290c85f7701c1a7dfbe780
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57846165"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58412302"
 ---
 # <a name="rest-client"></a>Klient REST
 
@@ -213,9 +213,9 @@ Kompilace a spuštění aplikace. Vytiskne názvy úložišť, které jsou souč
 
 ## <a name="controlling-serialization"></a>Řízení serializace
 
-Předtím, než přidáte další funkce, Pojďme adres `repo` typ a nastavte ji více standard jazyka C# pro vytváření. Provedete to anotací `repo` typ s *atributy* , které řídí, jak funguje serializátor JSON. Ve vašem případě použijete tyto atributy definovat mapování mezi názvy klíčů JSON a C# názvy tříd a členů. Jsou dva atributy použité `DataContract` atribut a `DataMember` atribut. Podle konvence, všechny třídy atributu končit příponou `Attribute`. Ale není potřeba použít tuto příponu při použití atributu.
+Předtím, než přidáte další funkce, Pojďme adres `repo` typ a nastavte ji více standard jazyka C# pro vytváření. Provedete to anotací `repo` typ s *atributy* , které řídí, jak funguje serializátor JSON. Ve vašem případě použijete tyto atributy definovat mapování mezi názvy klíčů JSON a C# názvy tříd a členů. Jsou dva atributy použité <xref:System.Runtime.Serialization.DataContractAttribute> a <xref:System.Runtime.Serialization.DataMemberAttribute> atributy. Podle konvence, všechny třídy atributu končit příponou `Attribute`. Ale není potřeba použít tuto příponu při použití atributu.
 
-`DataContract` a `DataMember` atributy jsou v jiné knihovny, takže budete muset přidat tuto knihovnu do souboru projektu C# jako závislost. Přidejte následující řádek, který `<ItemGroup>` část souboru projektu:
+<xref:System.Runtime.Serialization.DataContractAttribute> a <xref:System.Runtime.Serialization.DataMemberAttribute> atributy jsou v jiné knihovny, takže budete muset přidat tuto knihovnu do souboru projektu C# jako závislost. Přidejte následující řádek, který `<ItemGroup>` část souboru projektu:
 
 ```xml
 <PackageReference Include="System.Runtime.Serialization.Primitives" Version="4.3.0" />
@@ -223,7 +223,7 @@ Předtím, než přidáte další funkce, Pojďme adres `repo` typ a nastavte ji
 
 Až soubor uložíte, spusťte `dotnet restore` ([viz Poznámka](#dotnet-restore-note)) pro načtení tohoto balíčku.
 
-Dále otevřete `repo.cs` souboru. Umožňuje změnit název Pascalcase a plně pravopisu jméno `Repository`. Chceme mapují JSON "úložiště" uzly k tomuto typu, takže budete muset přidat `DataContract` atribut deklarace třídy. Nastavíte `Name` vlastnost atributu název JSON uzly, které se mapují k tomuto typu:
+Dále otevřete `repo.cs` souboru. Umožňuje změnit název Pascalcase a plně pravopisu jméno `Repository`. Chceme mapují JSON "úložiště" uzly k tomuto typu, takže budete muset přidat <xref:System.Runtime.Serialization.DataContractAttribute> atribut deklarace třídy. Nastavíte `Name` vlastnost atributu název JSON uzly, které se mapují k tomuto typu:
 
 ```csharp
 [DataContract(Name="repo")]
@@ -357,7 +357,7 @@ Tento formát nedodržuje některé standardní .NET <xref:System.DateTime> form
 private string JsonDate { get; set; }
 ```
 
-`DataMember` Atribut informuje serializátoru, který je, že to má být zpracován, i když není veřejný člen. Dále je třeba napsat veřejnou vlastnost jen pro čtení, která převede řetězec na platnou <xref:System.DateTime> objekt a vrátí ji <xref:System.DateTime>:
+<xref:System.Runtime.Serialization.DataMemberAttribute> Atribut informuje serializátoru, který je, že to má být zpracován, i když není veřejný člen. Dále je třeba napsat veřejnou vlastnost jen pro čtení, která převede řetězec na platnou <xref:System.DateTime> objekt a vrátí ji <xref:System.DateTime>:
 
 ```csharp
 [IgnoreDataMember]

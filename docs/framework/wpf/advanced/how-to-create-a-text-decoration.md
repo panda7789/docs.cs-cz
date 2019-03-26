@@ -16,33 +16,30 @@ helpviewer_keywords:
 - typography [WPF], text decorations
 - baseline type [WPF]
 ms.assetid: cf3cb4e7-782a-4be7-b2d4-e0935e21e4e0
-ms.openlocfilehash: a142604fdb36ec6f85e9411b37077bfffff587d4
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 22ff91770786e39e019de307167007548396ab33
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57363914"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58411327"
 ---
 # <a name="how-to-create-a-text-decoration"></a>Postupy: Vytvoření dekorace textu
 A <xref:System.Windows.TextDecoration> objekt je vizuální dekoru můžete přidat do textu. Existují čtyři druhy dekorace textu: podtržení, Směrný plán, přeškrtnutí a přeškrtnutí. Následující příklad ukazuje umístění dekorace textu vzhledem k textu.  
   
- ![Diagram umístění textové dekorace](./media/textdecoration01.gif "TextDecoration01")  
-Příklad typů dekorace textu  
+ ![Diagram typů dekorace textu](./media/how-to-create-a-text-decoration/text-decoration-types.gif)  
   
  Pro přidání do textové dekorace textu, vytvořte <xref:System.Windows.TextDecoration> objekt a upravit její vlastnosti. Použití <xref:System.Windows.TextDecoration.Location%2A> vlastnosti a určit, kde dekorace textu se zobrazí, jako je například podtržení. Použití <xref:System.Windows.TextDecoration.Pen%2A> vlastnosti k určení vzhledu textové dekorace, jako je například plné barvy nebo barevný přechod. Pokud nezadáte hodnotu <xref:System.Windows.TextDecoration.Pen%2A> vlastnost dekorace výchozí hodnoty na stejnou barvu jako text. Po definování <xref:System.Windows.TextDecoration> objektu, přidejte ji tak <xref:System.Windows.TextDecorations> kolekce objektu požadovaný text.  
   
  Následující příklad ukazuje dekorace textu, který byl navržen štětec lineárního přechodu a přerušované pera.  
   
- ![Dekorace textu pomocí lineárního přechodu podtržení](./media/textdecoration02.png "TextDecoration02")  
-Příklad podtržení stylem lineárního přechodu štětce a přerušované pera  
+ ![Dekorace textu pomocí lineárního přechodu podtržení](./media/how-to-create-a-text-decoration/text-decoration-gradient.png)  
   
  <xref:System.Windows.Documents.Hyperlink> Je objekt, který vám umožní hostitele hypertextové odkazy do plovoucího obsahu toku na úrovni vložení obsahu elementu. Ve výchozím nastavení <xref:System.Windows.Documents.Hyperlink> používá <xref:System.Windows.TextDecoration> zobrazíte podtržení. <xref:System.Windows.TextDecoration> objekty lze vytvořit instanci, náročné na výkon, zejména v případě, že budete mít mnoho <xref:System.Windows.Documents.Hyperlink> objekty. Pokud provedete převážně <xref:System.Windows.Documents.Hyperlink> prvky, možná budete chtít zvážit zobrazující podtržení jenom v případě, že se aktivuje událost, například <xref:System.Windows.ContentElement.MouseEnter> událostí.  
   
  V následujícím příkladu je dynamický podtržení pro odkaz "My MSN" – zobrazí se jenom v případě <xref:System.Windows.ContentElement.MouseEnter> událost se aktivuje.  
   
- ![Hypertextové odkazy zobrazení TextDecorations](./media/textdecoration03.png "TextDecoration03")  
-Hypertextové odkazy definované pomocí TextDecorations  
-  
+ ![Zobrazení TextDecorations hypertextových odkazů](./media/how-to-create-a-text-decoration/text-decorations-hyperlinks.png)  
+   
  Další informace najdete v tématu [podtržený zadejte hypertextového odkazu](how-to-specify-whether-a-hyperlink-is-underlined.md).  
   
 ## <a name="example"></a>Příklad  

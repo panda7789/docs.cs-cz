@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 9baea3ce-27b3-4b4f-af98-9ad0f9467e6f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: df65f54a9a7408a22f8b558f99ab42d6c37ae55b
-ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
+ms.openlocfilehash: aeba97a5caef8fc705a3b04496ce1fd17085ec5d
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56221066"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58409312"
 ---
 # <a name="default-marshaling-for-strings"></a>Výchozí zařazování pro řetězce
 Jak <xref:System.String?displayProperty=nameWithType> a <xref:System.Text.StringBuilder?displayProperty=nameWithType> třídy mají podobné chování zařazování.  
@@ -220,7 +220,7 @@ struct StringInfoT {
   
  Řešením je předat <xref:System.Text.StringBuilder> vyrovnávací paměti jako argument namísto řetězce. A `StringBuilder` lze přistoupit přes ukazatel a upravit volaným, pokud nepřekročí kapacitu `StringBuilder`. Můžete být navíc inicializované na pevnou délku. Například, pokud je inicializovat `StringBuilder` vyrovnávací paměť kapacitu `N`, aby zařazování odvozovalo poskytuje vyrovnávací paměť o velikosti (`N`+ 1) znaků. Účty + 1 pro skutečnost, že nespravovaný řetězec má ukončovací znak null při `StringBuilder` tak není.  
   
- Například rozhraní Microsoft Win32 API `GetWindowText` – funkce (definováno v Windows.h) je znaků pevné délky vyrovnávací paměť, která musí být předán do nespravovaného kódu na manipulovat. `LpString` odkazuje na volající – přidělené vyrovnávací paměti o velikosti `nMaxCount`. Očekává se volající přidělení vyrovnávací paměti a nastavit `nMaxCount` argument velikost přidělené vyrovnávací paměti. Následující kód ukazuje `GetWindowText` deklaraci funkce, jak jsou definovány v Windows.h.  
+ Například rozhraní API Microsoft Windows `GetWindowText` – funkce (definováno v Windows.h) je znaků pevné délky vyrovnávací paměť, která musí být předán do nespravovaného kódu na manipulovat. `LpString` odkazuje na volající – přidělené vyrovnávací paměti o velikosti `nMaxCount`. Očekává se volající přidělení vyrovnávací paměti a nastavit `nMaxCount` argument velikost přidělené vyrovnávací paměti. Následující kód ukazuje `GetWindowText` deklaraci funkce, jak jsou definovány v Windows.h.  
   
 ```  
 int GetWindowText(  

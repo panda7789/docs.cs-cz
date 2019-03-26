@@ -10,20 +10,19 @@ helpviewer_keywords:
 - Expander control [WPF]
 - collapsing headers [WPF]
 ms.assetid: e9dfc8d6-4555-47b9-a4de-0acd64f8770a
-ms.openlocfilehash: ba034dfceb4a42e1f88d15379b482e47a0700b8d
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: a7dc0d2cc32d387f87221748ab94ac82c2dfc8b0
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57371937"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58410508"
 ---
 # <a name="expander"></a>Rozšíření
 <xref:System.Windows.Controls.Expander> Umožňuje uživateli zobrazit záhlaví a rozbalte tuto hlavičku k dalším podrobnostem a Sbalit oddíl až záhlaví.  
   
  Následující obrázek poskytuje příklad tohoto ovládacího prvku v pozici rozbalený.  
   
- ![Rozšíření příkladu](./media/expanderexample.JPG "ExpanderExample")  
-Rozšíření – ovládací prvek  
+ ![Rozšíření příkladu](./media/expander/expander-control-example.jpg)
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Přehled rozšíření](expander-overview.md)  

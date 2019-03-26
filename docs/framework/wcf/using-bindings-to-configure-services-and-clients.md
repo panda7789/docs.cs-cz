@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - bindings [WCF], using
 ms.assetid: c39479c3-0766-4a17-ba4c-97a74607f392
-ms.openlocfilehash: 8aed2b2efa0408371a8da47fef64340fd30fffcc
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 45a904eb9e38b13fc3502264f4659bfd25465630
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54577097"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58410417"
 ---
 # <a name="using-bindings-to-configure-services-and-clients"></a>Používání vazeb ke konfiguraci služeb a klientů
 Vazby jsou objekty, které určují podrobnosti o komunikaci požadované pro připojení na koncový bod. Přesněji řečeno vazby obsahují informace o konfiguraci, která se používá k vytvoření modul runtime klienta nebo služby tak, že definujete, jaké jsou specifikace přenosy, formáty (kódování zpráv) a protokoly pro příslušného klienta nebo koncový bod kanálu. K vytvoření funkční služby Windows Communication Foundation (WCF), každý koncový bod služby vyžaduje vazbu. Toto téma vysvětluje, co jsou vazby, jak jsou definovány a jak je určeno konkrétní vazeb pro koncový bod.  
@@ -54,7 +54,7 @@ Vazby jsou objekty, které určují podrobnosti o komunikaci požadované pro p�
   
 -   [Postupy: Hostování služby WCF ve spravované aplikace](../../../docs/framework/wcf/how-to-host-a-wcf-service-in-a-managed-application.md) poskytuje příklad vytvoření vazby v kódu.  
   
--   [Postupy: Konfigurace klienta](../../../docs/framework/wcf/how-to-configure-a-basic-wcf-client.md) poskytuje příklad vytvoření klienta pomocí konfigurace.  
+-   [Kurz: Vytvoření klienta Windows Communication Foundation](../../../docs/framework/wcf/how-to-create-a-wcf-client.md) poskytuje příklad vytvoření klienta s použitím konfigurace.  
   
 ## <a name="see-also"></a>Viz také:
 - [Přehled vytváření koncových bodů](../../../docs/framework/wcf/endpoint-creation-overview.md)

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - controls [WPF], Expander
 - Expander control [WPF], about Expander control
 ms.assetid: 877bf425-0e54-49ec-8fd2-13a211377abb
-ms.openlocfilehash: 2eff66377a3ba9b0e30417cc7dd1e1413d9074d9
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 29003779825b92402fa12b810c1a099731ac8af6
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57369926"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58409455"
 ---
 # <a name="expander-overview"></a>Přehled rozšíření
 <xref:System.Windows.Controls.Expander> Ovládacího prvku poskytuje způsob, jak zadat obsah v rozšiřitelné oblasti, která se podobá okno a obsahuje hlavičku.  
@@ -45,7 +45,7 @@ ms.locfileid: "57369926"
   
  **Rozšíření v prvku ScrollViewer**  
   
- ![Rozšíření s posuvník](./media/expanderwithscrollbar.JPG "ExpanderWithScrollBar")  
+ ![Snímek obrazovky zobrazující rozšíření s posuvník.](./media/expander-overview/expander-scrollbar-control.jpg)  
   
  Když umístíte <xref:System.Windows.Controls.Expander> v ovládacím prvku <xref:System.Windows.Controls.ScrollViewer>, nastavte <xref:System.Windows.Controls.ScrollViewer> dimenze vlastnost, která odpovídá směr, ve kterém <xref:System.Windows.Controls.Expander> otevře obsah na velikost <xref:System.Windows.Controls.Expander> obsahu oblasti. Například, pokud jste nastavili <xref:System.Windows.Controls.Expander.ExpandDirection%2A> vlastnost <xref:System.Windows.Controls.Expander> k <xref:System.Windows.Controls.ExpandDirection.Down> (oblasti obsahu otevře dolů), nastavit <xref:System.Windows.FrameworkElement.Height%2A> vlastnost <xref:System.Windows.Controls.ScrollViewer> ovládacího prvku na požadované výšku oblasti obsahu. Pokud nastavíte dimenze výšce místo na samotný, obsah <xref:System.Windows.Controls.ScrollViewer> nerozpozná toto nastavení a proto neposkytuje posouvatelným obsahem.  
   

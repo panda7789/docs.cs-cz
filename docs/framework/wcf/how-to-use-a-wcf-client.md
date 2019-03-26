@@ -1,34 +1,38 @@
 ---
-title: 'Postupy: Používání klienta Windows Communication Foundation'
-ms.date: 09/14/2018
+title: 'Kurz: Používání klienta Windows Communication Foundation'
+ms.date: 03/19/2019
 helpviewer_keywords:
 - WCF clients [WCF], using
 dev_langs:
 - CSharp
 - VB
 ms.assetid: 190349fc-0573-49c7-bb85-8e316df7f31f
-ms.openlocfilehash: 780a51e3e0f61f292c997202614e43a85dd90820
-ms.sourcegitcommit: a532e8314c3a4b5b039656567fedff9787a31957
+ms.openlocfilehash: 4d883277f795ea84c59aee91ffcb9b9802b0933b
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57250920"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58411717"
 ---
-# <a name="how-to-use-a-windows-communication-foundation-client"></a>Postupy: Používání klienta Windows Communication Foundation
+# <a name="tutorial-use-a-windows-communication-foundation-client"></a>Kurz: Používání klienta Windows Communication Foundation
 
-Toto je poslední z šesti úkolů, muset vytvořit základní aplikaci Windows Communication Foundation (WCF). Přehled všech šesti úkoly, naleznete v tématu [kurz Začínáme](../../../docs/framework/wcf/getting-started-tutorial.md) tématu.
+Tento kurz popisuje posledních pět úloh potřebných k vytvoření základní aplikace Windows Communication Foundation (WCF). Přehled v kurzech, naleznete v tématu [kurzu: Začínáme s aplikacemi Windows Communication Foundation](getting-started-tutorial.md).
 
-Jakmile se proxy server služby Windows Communication Foundation (WCF) bylo vytvořeno a nakonfigurováno, lze vytvořit instanci klienta a klientská aplikace může být sestaven a používaný ke komunikaci se službou WCF. Toto téma popisuje postupy pro vytvoření instance a pomocí klienta WCF. Tato procedura dělá tři věci:
+Jakmile máte vytvořený a nakonfigurovaný proxy server služby Windows Communication Foundation (WCF), vytvoříte instanci klienta a kompilace aplikace klienta. Pak použijete ho ke komunikaci se službou WCF. 
 
-1.  Vytvoří instanci klienta WCF.
+V tomto kurzu se naučíte:
+> [!div class="checklist"]
+> - Přidejte kód pro použití klienta WCF.
+> - Testovací klient WCF.
 
-2.  Volání operace služby od vygenerovaný proxy server.
+## <a name="add-code-to-use-the-wcf-client"></a>Přidejte kód, který pomocí klienta WCF
 
-3.  Klient se zavře po dokončení volání operace.
+Klientský kód provede následující kroky:
+- Vytvoří instanci klienta WCF.
+- Volání operace služby od vygenerovaný proxy server.
+- Klient se zavře po dokončení volání operace.
 
-## <a name="use-a-windows-communication-foundation-client"></a>Používání klienta Windows Communication Foundation
-
-Otevřete soubor Program.cs nebo soubor Program.vb z projektu GettingStartedClient a nahraďte existující kód následujícím kódem:
+Otevřít **Program.cs** nebo **Module1.vb** soubor **GettingStartedClient** projektu a nahraďte jeho kód následujícím kódem:
 
 ```csharp
 using System;
@@ -71,7 +75,9 @@ namespace GettingStartedClient
             result = client.Divide(value1, value2);
             Console.WriteLine("Divide({0},{1}) = {2}", value1, value2, result);
 
-            //Step 3: Closing the client gracefully closes the connection and cleans up resources.
+            // Step 3: Close the client to gracefully close the connection and clean up resources.
+            Console.WriteLine("\nPress <Enter> to terminate the client.");
+            Console.ReadLine();
             client.Close();
         }
     }
@@ -83,89 +89,108 @@ Imports System
 Imports System.Collections.Generic
 Imports System.Text
 Imports System.ServiceModel
-Imports GettingStartedClientVB2.ServiceReference1
+Imports GettingStartedClient.ServiceReference1
 
 Module Module1
 
     Sub Main()
-        ' Step 1: Create an instance of the WCF proxy
+        ' Step 1: Create an instance of the WCF proxy.
         Dim Client As New CalculatorClient()
 
-        'Step 2: Call the service operations.
-        'Call the Add service operation.
+        ' Step 2: Call the service operations.
+        ' Call the Add service operation.
         Dim value1 As Double = 100D
         Dim value2 As Double = 15.99D
         Dim result As Double = Client.Add(value1, value2)
         Console.WriteLine("Add({0},{1}) = {2}", value1, value2, result)
 
-        'Call the Subtract service operation.
+        ' Call the Subtract service operation.
         value1 = 145D
         value2 = 76.54D
         result = Client.Subtract(value1, value2)
         Console.WriteLine("Subtract({0},{1}) = {2}", value1, value2, result)
 
-        'Call the Multiply service operation.
+        ' Call the Multiply service operation.
         value1 = 9D
         value2 = 81.25D
         result = Client.Multiply(value1, value2)
         Console.WriteLine("Multiply({0},{1}) = {2}", value1, value2, result)
 
-        'Call the Divide service operation.
+        ' Call the Divide service operation.
         value1 = 22D
         value2 = 7D
         result = Client.Divide(value1, value2)
         Console.WriteLine("Divide({0},{1}) = {2}", value1, value2, result)
 
-        ' Step 3: Closing the client gracefully closes the connection and cleans up resources.
-        Client.Close()
-
+        ' Step 3: Close the client to gracefully close the connection and clean up resources.
         Console.WriteLine()
-        Console.WriteLine("Press <ENTER> to terminate client.")
+        Console.WriteLine("Press <Enter> to terminate the client.")
         Console.ReadLine()
+        Client.Close()
 
     End Sub
 
 End Module
 ```
 
-Všimněte si, že `using` nebo `Imports` příkaz, který importuje `GettingStartedClient.ServiceReference1`. Tento postup importuje kód vygenerovaný **přidat odkaz na službu** v sadě Visual Studio. Kód vytvoří instanci WCF proxy a pak volá všechny operace služby, vystavený službou kalkulačky, zavře server proxy a ukončí.
+Všimněte si, že `using` (pro vizuál C#) nebo `Imports` (pro jazyk Visual Basic), který importuje `GettingStartedClient.ServiceReference1`. Tento příkaz importuje kód, který generuje sada Visual Studio s použitím **přidat odkaz na službu** funkce. Kód vytvoří instanci WCF proxy a volá všechny operace služby, které zpřístupňuje službu kalkulačky. Potom zavře proxy serveru a ukončení programu.
 
-Teď jste dokončili kurz. Definice kontraktu služby, implementovat kontrakt služby, vygeneruje WCF proxy, nakonfigurovat klientskou aplikaci WCF a poté použít proxy server k volání operací služby. K otestování aplikace, nejprve spusťte GettingStartedHost spusťte službu a pak spusťte GettingStartedClient.
+## <a name="test-the-wcf-client"></a>Testovací klient WCF
 
-Výstup z GettingStartedHost by měl vypadat takto:
+### <a name="test-the-application-from-visual-studio"></a>Testování aplikace ze sady Visual Studio
 
-```text
-The service is ready.
-Press <ENTER> to terminate service.
+1. Uložit a sestavit řešení.
 
-Received Add(100,15.99)
-Return: 115.99
-Received Subtract(145,76.54)
-Return: 68.46
-Received Multiply(9,81.25)
-Return: 731.25
-Received Divide(22,7)
-Return: 3.14285714285714
-```
+2. Vyberte **GettingStartedLib** složku a pak vyberte **nastavit jako spouštěný projekt** z místní nabídky.
 
-Výstup z GettingStartedClient by měl vypadat takto:
+3. Z **projektů po spuštění**vyberte **GettingStartedLib** z rozevíracího seznamu vyberte **spustit** nebo stiskněte klávesu **F5**.
 
-```text
-Add(100,15.99) = 115.99
-Subtract(145,76.54) = 68.46
-Multiply(9,81.25) = 731.25
-Divide(22,7) = 3.14285714285714
+### <a name="test-the-application-from-a-command-prompt"></a>Testování aplikace z příkazového řádku
 
-Press <ENTER> to terminate client.
-```
+1. Otevřete příkazový řádek jako správce a pak přejděte do adresáře řešení sady Visual Studio. 
 
-## <a name="see-also"></a>Viz také:
+2. Chcete-li spustit službu: Zadejte *GettingStartedHost\bin\Debug\GettingStartedHost.exe*.
 
-- [Sestavování klientů](../../../docs/framework/wcf/building-clients.md)
-- [Postupy: Vytvoření klienta](../../../docs/framework/wcf/how-to-create-a-wcf-client.md)
-- [Kurz Začínáme](../../../docs/framework/wcf/getting-started-tutorial.md)
-- [Základní programování WCF](../../../docs/framework/wcf/basic-wcf-programming.md)
-- [Postupy: Vytvoření duplexního kontraktu](../../../docs/framework/wcf/feature-details/how-to-create-a-duplex-contract.md)
-- [Postupy: Přístup ke službám pomocí duplexního kontraktu](../../../docs/framework/wcf/feature-details/how-to-access-services-with-a-duplex-contract.md)
-- [Začínáme](../../../docs/framework/wcf/samples/getting-started-sample.md)
-- [Vlastní hostování](../../../docs/framework/wcf/samples/self-host.md)
+3. Chcete spustit klienta: Otevřete další příkazový řádek, přejděte do adresáře řešení sady Visual Studio a pak zadejte *GettingStartedClient\bin\Debug\GettingStartedClient.exe*.
+
+   *GettingStartedHost.exe* vytvoří následující výstup:
+
+   ```text
+   The service is ready.
+   Press <Enter> to terminate the service.
+
+   Received Add(100,15.99)
+   Return: 115.99
+   Received Subtract(145,76.54)
+   Return: 68.46
+   Received Multiply(9,81.25)
+   Return: 731.25
+   Received Divide(22,7)
+   Return: 3.14285714285714
+   ```
+
+   *GettingStartedClient.exe* vytvoří následující výstup:
+
+   ```text
+   Add(100,15.99) = 115.99
+   Subtract(145,76.54) = 68.46
+   Multiply(9,81.25) = 731.25
+   Divide(22,7) = 3.14285714285714
+
+   Press <Enter> to terminate the client.
+   ```
+
+## <a name="next-steps"></a>Další kroky
+
+Právě jste dokončili všechny úkoly v tomto kurzu Začínáme get WCF. V tomto kurzu jste se naučili:
+
+V tomto kurzu se naučíte:
+> [!div class="checklist"]
+> - Přidejte kód pro použití klienta WCF.
+> - Testovací klient WCF.
+
+Pokud máte problémy nebo chyby v žádném z kroků, postupujte podle kroků v článku s řešením potíží a opravte je.
+
+> [!div class="nextstepaction"]
+> [Řešení potíží s Get začít kurzy WCF](troubleshooting-the-getting-started-tutorial.md)
+

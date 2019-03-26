@@ -2,12 +2,12 @@
 title: FILESTREAM Data
 ms.date: 03/30/2017
 ms.assetid: bd8b845c-0f09-4295-b466-97ef106eefa8
-ms.openlocfilehash: cd496909a387f5726b2d22adae14085a60eae881
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.openlocfilehash: 1dea5d1e2f40c44e8f24bdbc9742288429d9933a
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57674731"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58410274"
 ---
 # <a name="filestream-data"></a>FILESTREAM Data
 
@@ -180,7 +180,7 @@ Kompletní dokumentaci k FILESTREAM je umístěn v následujících částech v 
 |Téma|Popis|
 |-----------|-----------------|
 |[FILESTREAM (SQL Server)](/sql/relational-databases/blob/filestream-sql-server)|Popisuje použití úložiště FILESTREAM a popisuje integraci této služby databázového stroje SQL Server pomocí systému souborů NTFS.|
-|[Vytvoření klientské aplikace pro FILESTREAM Data](/sql/relational-databases/blob/create-client-applications-for-filestream-data)|Popisuje funkce rozhraní Win32 API pro práci s daty FILESTREAM.|
+|[Vytvoření klientské aplikace pro FILESTREAM Data](/sql/relational-databases/blob/create-client-applications-for-filestream-data)|Popisuje funkce rozhraní Windows API pro práci s daty FILESTREAM.|
 |[FILESTREAM a další funkce SQL serveru](/sql/relational-databases/blob/filestream-compatibility-with-other-sql-server-features)|Obsahuje důležité informace, pokyny a omezení pro používání dat FILESTREAM s jinými funkcemi systému SQL Server.|
 
 ## <a name="see-also"></a>Viz také:

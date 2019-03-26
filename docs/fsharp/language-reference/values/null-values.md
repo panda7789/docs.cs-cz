@@ -1,13 +1,13 @@
 ---
 title: Hodnoty Null
 description: Zjistěte, jak se používá hodnotu null v F# programovací jazyk.
-ms.date: 05/16/2016
-ms.openlocfilehash: 58c54065a98a84c4d4e912cbc42d59cfea8c6de1
-ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
+ms.date: 03/22/2019
+ms.openlocfilehash: 93ac48eddf36981b9df550e76405c3175ae92e0a
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53610993"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58409637"
 ---
 # <a name="null-values"></a>Hodnoty Null
 
@@ -19,7 +19,7 @@ Hodnota null se obvykle nepoužívá F# hodnot nebo proměnné. Hodnota null se 
 
 Pro typ definovaný v F# a slouží výhradně z F#, jedině k vytvoření hodnoty null pomocí F# knihovny je přímo použít [Unchecked.defaultof](https://msdn.microsoft.com/library/9ff97f2a-1bd4-4f4c-afbe-5886a74ab977) nebo [Array.zeroCreate](https://msdn.microsoft.com/library/fa5b8e7a-1b5b-411c-8622-b58d7a14d3b2). Ale pro F# typ, který se používá od jiných jazyků .NET, nebo pokud při použití tohoto typu se rozhraní API, která není zapsána v F#, jako je například rozhraní .NET Framework, může dojít, hodnoty null.
 
-Můžete použít `option` zadejte F# může při použití proměnné odkazu s hodnotou null je to možné v jiném jazyce .NET. Místo null pomocí F# `option` typ, použijte hodnotu možnosti `None` Pokud neexistuje žádný objekt. Použijte hodnotu možnosti `Some(obj)` s objektem `obj` po objektu. Další informace najdete v tématu [možnosti](../options.md).
+Můžete použít `option` zadejte F# může při použití proměnné odkazu s hodnotou null je to možné v jiném jazyce .NET. Místo null pomocí F# `option` typ, použijte hodnotu možnosti `None` Pokud neexistuje žádný objekt. Použijte hodnotu možnosti `Some(obj)` s objektem `obj` po objektu. Další informace najdete v tématu [možnosti](../options.md). Všimněte si, že se můžete stále aktualizací Service pack `null` hodnoty do možnost if, pro `Some x`, `x` je `null`. Z toho důvodu je důležité, můžete použít `None` po hodnotu `null`.
 
 `null` – Klíčové slovo je platný – klíčové slovo v F# jazyk a je nutné ho používat při práci se rozhraní API .NET Framework nebo jiná rozhraní API, které jsou napsané v jiném jazyce .NET. Dvě situace, ve kterých je třeba hodnotu null jsou při volání rozhraní API .NET a předat hodnotu null jako argument a při interpretaci návratová hodnota nebo výstupní parametr z volání metody rozhraní .NET.
 

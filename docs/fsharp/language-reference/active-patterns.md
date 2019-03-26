@@ -2,12 +2,12 @@
 title: Aktivní vzorky
 description: Zjistěte, jak můžete definovat pojmenované oddíly, které rozdělit vstupní data v aktivní vzory F# programovací jazyk.
 ms.date: 05/16/2016
-ms.openlocfilehash: c830011b69809bd399aab0c8a8bc25d40d5c82cc
-ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
+ms.openlocfilehash: 0f1f57de425836738201d2d8f84ab67a0df142ee
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53612839"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58412081"
 ---
 # <a name="active-patterns"></a>Aktivní vzorky
 
@@ -86,23 +86,23 @@ Výstup z předchozího příkladu vypadá takto:
 Something else : Not matched.
 ```
 
-Při použití částečné aktivní vzory, někdy jednotlivé volby lze nesouvislé, nebo vylučují, ale nemusí být. V následujícím příkladu model datové krychle a druhou mocninu vzoru nejsou nesouvislý, protože některá čísla jsou pole a datové krychle, jako je například 64. Následující program vytiskne všechny celých čísel až 1000000, které jsou pole a datové krychle.
+Při použití částečné aktivní vzory, někdy jednotlivé volby lze nesouvislé, nebo vylučují, ale nemusí být. V následujícím příkladu model datové krychle a druhou mocninu vzoru nejsou nesouvislý, protože některá čísla jsou pole a datové krychle, jako je například 64. Následující program používá vzor a zkombinovat vzory hranaté a datové krychle. Vytiskne všechny celých čísel až 1000, které jsou jak čtverce a datové krychle, tak i ty, které jsou pouze datové krychle. 
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet5005.fs)]
 
 Výstup je následující:
 
 ```
-1
-64
-729
-4096
-15625
-46656
-117649
-262144
-531441
-1000000
+1 is a cube and a square
+8 is a cube
+27 is a cube
+64 is a cube and a square
+125 is a cube
+216 is a cube
+343 is a cube
+512 is a cube
+729 is a cube and a square
+1000 is a cube
 ```
 
 ## <a name="parameterized-active-patterns"></a>Parametrizované aktivní vzory

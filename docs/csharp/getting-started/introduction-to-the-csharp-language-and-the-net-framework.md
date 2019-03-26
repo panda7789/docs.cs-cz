@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, about C# language
 - Visual C#, about
 ms.assetid: 0a2dff4e-cd84-42ff-8141-e89889b24081
-ms.openlocfilehash: ff0845f7d15a7b65cee755110d26a1e56a9b94af
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 28fde47721e6354612ffec557da25c6d3bb775e4
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53153940"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58409221"
 ---
 # <a name="introduction-to-the-c-language-and-the-net-framework"></a>Úvod do jazyka C# a rozhraní .NET Framework
 
@@ -58,7 +58,7 @@ C# je elegantní a typově bezpečný objektově orientované jazyka, který umo
   
  Když je spuštěn program C#, je načten do CLR, který může mít různé akce na základě informací v manifestu sestavení. Potom Pokud jsou splněny požadavky na zabezpečení, modul CLR provede pouze v time (JIT) kompilaci kódu IL převod na nativních strojové instrukce. CLR také poskytuje jiné služby související s automatickým uvolňování paměti, zpracování výjimek a správu prostředků. Kód, který je proveden součástí CLR je někdy označovány jako "spravovaný kód" na rozdíl od "nespravovaného kódu", který je kompilován do nativního strojového jazyka, který se zaměřuje na konkrétní systém. Následující diagram znázorňuje vztahy během kompilace a za běhu jazyka C# souborů se zdrojovým kódem, knihovny tříd rozhraní .NET Framework, sestavení, a CLR.  
   
- ![From C&#35; zdrojový kód pro spuštění počítače](../../csharp/getting-started/media/netarchitecture.png "NETarchitecture")  
+ ![From C&#35; zdrojový kód pro spuštění počítače](./media/introduction-to-the-csharp-language-and-the-net-framework/net-architecture-relationships.png)  
   
  Vzájemná spolupráce jazyků je klíčovou funkcí [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]. Protože kód IL produkovaný kompilátorem jazyka C# odpovídá na běžné specifikaci typů (CTS), kód IL generovaný jazykem C# můžete pracovat s kódem, který byl vytvořen .NET verzí jazyka Visual Basic, Visual C++ nebo některý z více než 20 dalších jazyků kompatibilních s CTS. Jediné sestavení může obsahovat více modulů napsaných v různých jazycích .NET, a typy mohou odkazovat na sebe navzájem tak, jako kdyby byly napsány ve stejném jazyce.  
   

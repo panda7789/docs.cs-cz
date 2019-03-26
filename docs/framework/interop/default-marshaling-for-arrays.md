@@ -10,29 +10,20 @@ helpviewer_keywords:
 ms.assetid: 8a3cca8b-dd94-4e3d-ad9a-9ee7590654bc
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ae339b18032becffcaece1924a22b958ed86d364
-ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
+ms.openlocfilehash: c2b5646a1a556c57814602790d5f17104d2148e5
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56219682"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58410742"
 ---
 # <a name="default-marshaling-for-arrays"></a>Výchozí zařazování pro pole
 V případě aplikace tvořené zcela spravovaný kód modul common language runtime předá typy polí jako vstup a výstup parametry. Naproti tomu interoperační zařazovač předá pole jako parametry in ve výchozím nastavení.  
   
  S [Připnutí optimalizace](copying-and-pinning.md), pole typu blittable můžou zdánlivě pracovat jako vstupně -výstupní parametr při práci s objekty ve stejném objektu apartment. Ale pokud později exportovat do knihovny typů sloužící ke generování mezi počítači proxy kód a tuto knihovnu je použitý k zařazování volání napříč objekty apartment, volání můžete vrátit na hodnotu true parametru chování.  
   
- Pole jsou komplexní podle povahy a rozdíly mezi spravovanými a nespravovanými pole vyžadují více informace než jiné nepřenositelné typy. Toto téma obsahuje následující informace o zařazování polí:  
+ Pole jsou komplexní podle povahy a rozdíly mezi spravovanými a nespravovanými pole vyžadují více informace než jiné nepřenositelné typy.  
   
--   [Spravovaná pole](#cpcondefaultmarshalingforarraysanchor1)  
-  
--   [Nespravované pole](#cpcondefaultmarshalingforarraysanchor2)  
-  
--   [Předávání parametrů pole pro kód .NET](#cpcondefaultmarshalingforarraysanchor3)  
-  
--   [Předávání polí do modelu COM](#cpcondefaultmarshalingforarraysanchor4)  
-  
-<a name="cpcondefaultmarshalingforarraysanchor1"></a>   
 ## <a name="managed-arrays"></a>Spravovaná pole  
  Spravované pole, které mohou být různé typy; ale <xref:System.Array?displayProperty=nameWithType> třída je základní třídou všechny typy polí. **System.Array** třída obsahuje vlastnosti pro určení pořadí, délku a dolní a horní hranice pole, jakož i metody pro přístup k řazení, hledání, kopírování a tvorba polí.  
   
@@ -46,11 +37,9 @@ V případě aplikace tvořené zcela spravovaný kód modul common language run
 |**ELEMENT_TYPE_CLASS**|Neznámé|Neznámé|Neznámé|**System.Array** |  
 |**ELEMENT_TYPE_SZARRAY**|Určený typem.|1|0|*typ* **[** *n* **]**|  
   
-<a name="cpcondefaultmarshalingforarraysanchor2"></a>   
 ## <a name="unmanaged-arrays"></a>Nespravované pole  
  Nespravované pole jsou bezpečné pole stylu modelu COM nebo pole stylu C s pevným nebo variabilním délkou. Zabezpečeným polím popisující samy sebe, pole, která mají typ, pořadí a rozsah dat přidružené pole. Pole stylu jazyka C jsou jednorozměrné typovaná pole s pevnou dolní mez 0. Zařazovací služby má omezenou podporu pro oba typy polí.  
   
-<a name="cpcondefaultmarshalingforarraysanchor3"></a>   
 ## <a name="passing-array-parameters-to-net-code"></a>Předávání parametrů pole pro kód .NET  
  Pole stylu C a zabezpečeným polím lze předat kód .NET z nespravovaného kódu jako bezpečné pole nebo pole stylu C. Následující tabulka uvádí hodnotu nespravovaný typ a importovaným typem.  
   
@@ -190,7 +179,6 @@ void New3(ref String ar);
   
  Interoperační zařazovač používá **CoTaskMemAlloc** a **CoTaskMemFree** metody přidělení a načítat paměti. Přidělení paměti provedené nespravovaný kód musí taky používat tyto metody.  
   
-<a name="cpcondefaultmarshalingforarraysanchor4"></a>   
 ## <a name="passing-arrays-to-com"></a>Předávání polí do modelu COM  
  Všechny typy spravovaného pole může být předán nespravovanému kódu ze spravovaného kódu. V závislosti na spravovaný typ a atributy použité na jeho pole je přístupná jako bezpečné pole nebo pole stylu C, jak je znázorněno v následující tabulce.  
   

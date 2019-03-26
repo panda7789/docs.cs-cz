@@ -2,12 +2,12 @@
 title: Množinové operace (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 2b06e822-e030-438f-9db7-ee402bd3a706
-ms.openlocfilehash: 8ec7f2785617c354a1aa506ac0df9eef7d051b59
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.openlocfilehash: 7b8dcaaa82ac5a30c35222417245153e55a522cc
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57679291"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58409247"
 ---
 # <a name="set-operations-visual-basic"></a>Množinové operace (Visual Basic)
 Množinové operace LINQ naleznete operace dotazů, které vytvářejí sadu výsledků dotazu, který je založen na přítomnosti nebo nepřítomnosti ekvivalentních prvků ve stejném nebo různém kolekcí (nebo sady).  
@@ -19,16 +19,16 @@ Množinové operace LINQ naleznete operace dotazů, které vytvářejí sadu vý
 |Název metody|Popis|Syntaxe výrazu dotazu jazyka Visual Basic|Další informace|  
 |-----------------|-----------------|------------------------------------------|----------------------|  
 |Distinct|Odebere duplicitní hodnoty z kolekce.|`Distinct`|<xref:System.Linq.Enumerable.Distinct%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Distinct%2A?displayProperty=nameWithType>|  
-|S výjimkou|Vrátí množinových rozdílů, což znamená, že prvky jednu kolekci, která není uvedena v druhé kolekci.|Nelze použít.|<xref:System.Linq.Enumerable.Except%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Except%2A?displayProperty=nameWithType>|  
-|Intersect|Vrátí průnik set, což znamená, že prvky, které se zobrazují v každé dvě kolekce.|Nelze použít.|<xref:System.Linq.Enumerable.Intersect%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Intersect%2A?displayProperty=nameWithType>|  
-|Unie|Vrátí sjednocení, což znamená, že jedinečných prvků, které se zobrazují v některém z dvě kolekce.|Nelze použít.|<xref:System.Linq.Enumerable.Union%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Union%2A?displayProperty=nameWithType>|  
+|S výjimkou|Vrátí množinových rozdílů, což znamená, že prvky jednu kolekci, která není uvedena v druhé kolekci.|Není k dispozici.|<xref:System.Linq.Enumerable.Except%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Except%2A?displayProperty=nameWithType>|  
+|Intersect|Vrátí průnik set, což znamená, že prvky, které se zobrazují v každé dvě kolekce.|Není k dispozici.|<xref:System.Linq.Enumerable.Intersect%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Intersect%2A?displayProperty=nameWithType>|  
+|Unie|Vrátí sjednocení, což znamená, že jedinečných prvků, které se zobrazují v některém z dvě kolekce.|Není k dispozici.|<xref:System.Linq.Enumerable.Union%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Union%2A?displayProperty=nameWithType>|  
   
 ## <a name="comparison-of-set-operations"></a>Porovnání množinové operace  
   
 ### <a name="distinct"></a>Distinct  
  Následující obrázek znázorňuje chování <xref:System.Linq.Enumerable.Distinct%2A?displayProperty=nameWithType> metodu na posloupnost znaků. Vrácená sekvence obsahuje jedinečných prvků ze vstupní sekvence.  
   
- ![Obrázek znázorňující chování Distinct&#40;&#41;. ](../../../../csharp/programming-guide/concepts/linq/media/distinct.png "Distinct")  
+ ![Obrázek znázorňující chování Distinct&#40;&#41;.](./media/set-operations/distinct-method-behavior.png)  
   
 ### <a name="except"></a>S výjimkou  
  Následující obrázek znázorňuje chování <xref:System.Linq.Enumerable.Except%2A?displayProperty=nameWithType>. Vrácená sekvence obsahuje pouze elementy z první vstupní sekvence, které nejsou v druhé vstupní sekvence.  
@@ -38,13 +38,11 @@ Množinové operace LINQ naleznete operace dotazů, které vytvářejí sadu vý
 ### <a name="intersect"></a>Intersect  
  Následující obrázek znázorňuje chování <xref:System.Linq.Enumerable.Intersect%2A?displayProperty=nameWithType>. Vrácená sekvence obsahuje prvky, které jsou společné pro vstupní sekvence.  
   
- ![Obrázek znázorňující průniku množin mezi dvěma sekvencemi. ](../../../../csharp/programming-guide/concepts/linq/media/intersect.png "Intersect")  
-  
+ ![Obrázek znázorňující průniku množin mezi dvěma sekvencemi.](./media/set-operations/intersection-two-sequences.png)    
 ### <a name="union"></a>Unie  
  Následující ilustrace znázorňuje operaci s sjednocení dvou sekvencí znaků. Vrácená sekvence obsahuje jedinečných prvků z obou vstupních sekvencí.  
   
- ![Obrázek znázorňující sjednocení množin mezi dvěma sekvencemi. ](../../../../csharp/programming-guide/concepts/linq/media/union.png "Union")  
-  
+ ![Obrázek znázorňující sjednocení množin mezi dvěma sekvencemi.](./media/set-operations/union-operation-two-sequences.png)    
 ## <a name="query-expression-syntax-example"></a>Příklad syntaxe výrazu dotazu  
  V následujícím příkladu `Distinct` klauzuli v LINQ dotaz, který vrací jedinečný čísla ze seznamu celých čísel.  
   

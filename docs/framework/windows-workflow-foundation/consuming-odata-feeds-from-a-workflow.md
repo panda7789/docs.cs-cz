@@ -2,12 +2,12 @@
 title: Využití informačních kanálů OData z pracovního postupu - WF
 ms.date: 03/30/2017
 ms.assetid: 1b26617c-53e9-476a-81af-675c36d95919
-ms.openlocfilehash: ac7a5aef6a699f85ac5a1ce7417d02d42f6c0281
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: aec23667e7388d6bc31d122617795ff5dfdefa5f
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55275818"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58408992"
 ---
 # <a name="consuming-odata-feeds-from-a-workflow"></a>Využití informačních kanálů OData z pracovního postupu
 
@@ -25,7 +25,7 @@ Služby WCF Data Services obsahuje klientské knihovny, které vám umožní sna
 
 Ke generování klientských knihoven Northwind, můžete použít **přidat odkaz na službu** dialogové okno Visual Studio 2012 a přidejte odkaz na službu OData s názvem Northwind.
 
-![Přidání odkazu na službu](./media/addservicereferencetonorthwindodataservice.gif "AddServiceReferencetoNorthwindODataService")
+![Snímek obrazovky ukazující dialogové okno Přidat odkaz na službu.](./media/consuming-odata-feeds-from-a-workflow/add-service-reference-dialog.gif)
 
 Všimněte si, že neexistují žádné operace služby, vystavený službou a v **služby** seznamu položek představující entity zveřejněné datová služba Northwind. Když se přidá odkaz na službu, bude generovat třídy pro tyto entity a lze v kódu klienta. Příklady v tomto tématu používají tyto třídy a `NorthwindEntities` pro provádění dotazů.
 
@@ -43,7 +43,7 @@ Na adresu možné problémy s latencí, které mohou nastat při přístupu k pr
 
 <xref:System.Data.Services.Client.DataServiceQuery%601> Třída poskytuje <xref:System.Data.Services.Client.DataServiceQuery%601.BeginExecute%2A> a <xref:System.Data.Services.Client.DataServiceQuery%601.EndExecute%2A> metody pro dotazování služby OData asynchronně. Tyto metody lze volat z <xref:System.Activities.AsyncCodeActivity.BeginExecute%2A> a <xref:System.Activities.AsyncCodeActivity.EndExecute%2A> přepsání <xref:System.Activities.AsyncCodeActivity> odvozené třídy. Když <xref:System.Activities.AsyncCodeActivity> <xref:System.Activities.AsyncCodeActivity.BeginExecute%2A> přepsání vrátí pracovního postupu můžete přejít nečinnosti (ale není zachována) a dokončení asynchronní práce a <xref:System.Activities.AsyncCodeActivity.EndExecute%2A> vyvolán modulem runtime.
 
-V následujícím příkladu `OrdersByCustomer` aktivity je definován, že má dva vstupní argumenty. `CustomerId` Argument představuje zákazníka, který identifikuje objednávky, které chcete vrátit, a `ServiceUri` argument představuje identifikátor URI služby OData, aby se dalo dotazovat. Protože aktivity je odvozena z `AsyncCodeActivity<IEnumerable<Order>>` k dispozici je také <xref:System.Activities.Activity%601.Result%2A> výstupní argument, který se používá k vrácení výsledků dotazu. <xref:System.Activities.AsyncCodeActivity.BeginExecute%2A> Přepsání vytvoří dotaz LINQ, který vybere všechny objednávky daného zákazníka. Tento dotaz je zadán jako <xref:System.Activities.AsyncCodeActivityContext.UserState%2A> předané <xref:System.Activities.AsyncCodeActivityContext>a pak v dotazu <xref:System.Data.Services.Client.DataServiceQuery%601.BeginExecute%2A> metoda je volána. Všimněte si, že zpětného volání a stavu, ve kterém jsou předány do dotazu <xref:System.Data.Services.Client.DataServiceQuery%601.BeginExecute%2A> jsou ty, které jsou předány v aktivity <xref:System.Activities.AsyncCodeActivity.BeginExecute%2A> metody. Když dotaz byl dokončen, aktivity <xref:System.Activities.AsyncCodeActivity.EndExecute%2A> vyvolání metody. Dotaz je načten z <xref:System.Activities.AsyncCodeActivityContext.UserState%2A>a pak v dotazu <xref:System.Data.Services.Client.DataServiceQuery%601.EndExecute%2A> metoda je volána. Tato metoda vrátí <xref:System.Collections.Generic.IEnumerable%601> zadaného typu entity; v tomto případě `Order`. Protože `IEnumerable<Order>` je generický typ <xref:System.Activities.AsyncCodeActivity%601>tento `IEnumerable` je nastaven jako <xref:System.Activities.Activity%601.Result%2A> <xref:System.Activities.OutArgument%601> aktivity.
+V následujícím příkladu `OrdersByCustomer` aktivity je definován, že má dva vstupní argumenty. `CustomerId` Argument představuje zákazníka, který identifikuje objednávky, které chcete vrátit, a `ServiceUri` argument představuje identifikátor URI služby OData, aby se dalo dotazovat. Protože aktivity je odvozena z `AsyncCodeActivity<IEnumerable<Order>>` k dispozici je také <xref:System.Activities.Activity%601.Result%2A> výstupní argument, který se používá k vrácení výsledků dotazu. <xref:System.Activities.AsyncCodeActivity.BeginExecute%2A> Přepsání vytvoří dotaz LINQ, který vybere všechny objednávky daného zákazníka. Tento dotaz je zadán jako <xref:System.Activities.AsyncCodeActivityContext.UserState%2A> předané <xref:System.Activities.AsyncCodeActivityContext>a pak v dotazu <xref:System.Data.Services.Client.DataServiceQuery%601.BeginExecute%2A> metoda je volána. Všimněte si, že zpětného volání a stavu, ve kterém jsou předány do dotazu <xref:System.Data.Services.Client.DataServiceQuery%601.BeginExecute%2A> jsou ty, které jsou předány v aktivity <xref:System.Activities.AsyncCodeActivity.BeginExecute%2A> metody. Když dotaz byl dokončen, aktivity <xref:System.Activities.AsyncCodeActivity.EndExecute%2A> vyvolání metody. Dotaz je načten z <xref:System.Activities.AsyncCodeActivityContext.UserState%2A>a pak v dotazu <xref:System.Data.Services.Client.DataServiceQuery%601.EndExecute%2A> metoda je volána. Tato metoda vrátí <xref:System.Collections.Generic.IEnumerable%601> zadaného typu entity; v tomto případě `Order`. Protože `IEnumerable<Order>` je generický typ <xref:System.Activities.AsyncCodeActivity%601>tento <xref:System.Collections.IEnumerable> je nastaven jako <xref:System.Activities.Activity%601.Result%2A> <xref:System.Activities.OutArgument%601> aktivity.
 
 [!code-csharp[CFX_WCFDataServicesActivityExample#100](~/samples/snippets/csharp/VS_Snippets_CFX/CFX_WCFDataServicesActivityExample/cs/Program.cs#100)]
 

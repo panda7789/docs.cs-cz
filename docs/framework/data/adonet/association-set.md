@@ -2,12 +2,12 @@
 title: Sada přidružení
 ms.date: 03/30/2017
 ms.assetid: a65247b6-ce59-44ea-974c-14ae20a7995f
-ms.openlocfilehash: 29150eea7781784c2cdbd1f0137e02b94f66e106
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2eaa4d3c70e0efbf9705b4285d1abd4753bd1db9
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54565927"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58411262"
 ---
 # <a name="association-set"></a>Sada přidružení
 *Sada přidružení* je logický kontejner [přidružení](../../../../docs/framework/data/adonet/association-type.md) instance stejného typu. Skupinu přidružení není konstrukce; modelování dat nepopisuje to znamená, že struktura dat nebo vztahy. Místo toho přidružení sady zajišťující konstrukci prostředí hostování nebo úložiště (například do databáze SQL serveru nebo modul common language runtime) do skupiny přidružení instance tak, že je možné mapovat do úložiště dat.  
@@ -25,11 +25,11 @@ ms.locfileid: "54565927"
 ## <a name="example"></a>Příklad  
  Následující diagram znázorňuje Koncepční model se dvěma přidružení: `PublishedBy`, a `WrittenBy`. I když se informace o sadách přidružení se předávají v diagramu, následující diagram znázorňuje příklad sad přidružení a sady entit na základě tohoto modelu.  
   
- ![Ukázkový Model](../../../../docs/framework/data/adonet/media/examplemodel.gif "ExampleModel")  
+ ![Příklad modelu s tři typy entit](./media/association-set/example-model-three-entity-types.gif)  
   
  Následující příklad ukazuje skupinu přidružení (`PublishedBy`) a dvě sady entit (`Books` a `Publishers`) založené na konceptuální model, uvedené výše. BI v `Books` sadu entit představuje instanci `Book` typ entity v době běhu. Obdobně Pj představuje `Publisher` instance v `Publishers` sady entit. BiPj představuje instanci `PublishedBy` přidružení v `PublishedBy` sada přidružení.  
   
- ![Nastaví příklad](../../../../docs/framework/data/adonet/media/setsexample.gif "SetsExample")  
+ ![Snímek obrazovky zobrazující příklad sady.](./media/association-set/sets-example-association.gif)  
   
  [ADO.NET Entity Framework](../../../../docs/framework/data/adonet/ef/index.md) používá jazyka specifického pro doménu (DSL) volá Konceptuální schéma definici jazyka ([CSDL](../../../../docs/framework/data/adonet/ef/language-reference/csdl-specification.md)) k definování konceptuálních modelů. Následující CSDL definuje kontejneru entity s jeden přidružení nastavení pro každé přidružení ve výše uvedeném diagramu. Všimněte si, že název a přidružení pro každé přidružení nastavení jsou definovány pomocí atributů XML.  
   

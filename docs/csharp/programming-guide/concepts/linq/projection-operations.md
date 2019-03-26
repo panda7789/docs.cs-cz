@@ -2,12 +2,12 @@
 title: Operace projekce (C#)
 ms.date: 07/20/2015
 ms.assetid: 98df573a-aad9-4b8c-9a71-844be2c4fb41
-ms.openlocfilehash: fa9b1d2a0dc63be89e8a93fd5d234f131a2943e9
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 74792c1a58aa17c65f3a153216d50c672e0b6cf6
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54723950"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58411210"
 ---
 # <a name="projection-operations-c"></a>Operace projekce (C#)
 Projekce odkazuje na operace transformace objektu na nový formulář, který často se skládá pouze z těchto vlastností, které se následně použijí. S použitím projekce, můžete vytvořit nový typ, který je sestaven z každého objektu. Můžete vlastnosti projektu a provádění matematických funkcí na něj. Můžete také promítnout na původní objekt bez provedení změn.  
@@ -77,11 +77,11 @@ foreach (string s in query)
   
  Tento obrázek znázorňuje, jak `Select()` vrátí kolekci, která má stejný počet prvků jako zdrojové kolekce.  
   
- ![Ilustrace akci vyberte&#40;&#41;](../../../../csharp/programming-guide/concepts/linq/media/selectaction.png "SelectAction")  
+ ![Obrázek znázorňující, akce Select&#40;&#41;](./media/projection-operations/select-action-graphic.png)  
   
  Tento obrázek znázorňuje, jak `SelectMany()` zřetězí zprostředkující pořadí polí do jedné hodnoty konečný výsledek, který obsahuje každou hodnotu z každé zprostředkující pole.  
   
- ![Obrázek znázorňující akce operátor SelectMany&#40;&#41;. ](../../../../csharp/programming-guide/concepts/linq/media/selectmany.png "Operátor SelectMany")  
+ ![Obrázek znázorňující akce operátor SelectMany&#40;&#41;.](./media/projection-operations/select-many-action-graphic.png )  
   
 ### <a name="code-example"></a>Příklad kódu  
  Následující příklad porovnává chování `Select()` a `SelectMany()`. Kód vytvoří "kytice" květin díky první dvě položky z každého seznam názvů květinu ve zdrojové kolekce. V tomto příkladu "jedna hodnota", který funkce transformace <xref:System.Linq.Enumerable.Select%60%602%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2C%60%601%7D%29> používá, je samotný kolekci hodnot. To vyžaduje, aby nadbytečné `foreach` smyčky, aby bylo možné vytvořit výčet každého řetězce v každé dílčí sekvenci.  

@@ -2,12 +2,12 @@
 title: <netTcpContextBinding>
 ms.date: 03/30/2017
 ms.assetid: 1d4715e1-5fff-4c3d-a226-18f21d0b30c4
-ms.openlocfilehash: 998f44d691231db14d24c36bdf769b502642d8c5
-ms.sourcegitcommit: 01ea420eaa4bf76d5fc47673294c8881379b3369
+ms.openlocfilehash: f508d814fb1e23c59606fcf78ad38f7661609c26
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55758713"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58411288"
 ---
 # <a name="nettcpcontextbinding"></a>\<netTcpContextBinding>
 Určuje kontext pro <xref:System.ServiceModel.NetTcpBinding> , která vyžaduje, aby úroveň ochrany byla podepsána. ContextExchangeMechanism pro NetTcpContextBinding je SOAPHeader.  
@@ -68,8 +68,8 @@ Určuje kontext pro <xref:System.ServiceModel.NetTcpBinding> , která vyžaduje,
 |Atribut|Popis|  
 |---------------|-----------------|  
 |closeTimeout|A <xref:System.TimeSpan> hodnotu, která určuje, časový interval poskytnutý pro dokončení operace uzavření. Tato hodnota by měla být větší než nebo rovna hodnotě <xref:System.TimeSpan.Zero>. Výchozí hodnota je 00:01:00.|  
-|contextProtectionLevel|Platný <xref:System.Net.Security.ProtectionLevel> hodnotu, která určuje úroveň ochrany požadované záhlaví SOAP umožňuje šíření informací o kontextu.  Výchozí hodnota je `Sign`.|  
-|hostnameComparisonMode|Určuje režim porovnání jména hostitele HTTP použít k analýze identifikátoru URI. Tento atribut je typu `System.ServiceModel.HostnameComparisonMode`, což znamená, zda je ke zpřístupnění služby při shodě s identifikátoru URI používá název hostitele. Výchozí hodnota je `StrongWildcard`, které ignoruje jako název hostitele v porovnávání.|  
+|contextProtectionLevel|Platný <xref:System.Net.Security.ProtectionLevel> hodnotu, která určuje úroveň ochrany požadované záhlaví SOAP umožňuje šíření informací o kontextu.  Výchozí hodnota je <xref:System.Net.Security.ProtectionLevel.Sign>.|  
+|hostnameComparisonMode|Určuje režim porovnání jména hostitele HTTP použít k analýze identifikátoru URI. Tento atribut je typu <xref:System.ServiceModel.HostNameComparisonMode>, což znamená, zda je ke zpřístupnění služby při shodě s identifikátoru URI používá název hostitele. Výchozí hodnota je <xref:System.ServiceModel.HostNameComparisonMode.StrongWildcard>, které ignoruje jako název hostitele v porovnávání.|  
 |listenBacklog|Kladné celé číslo, určující maximální počet kanálů čekat na přijetí na naslouchací proces. Připojení překračující tento limit se zařadí do fronty, dokud nebude k dispozici prostor pod limit. `connectionTimeout` Atribut omezuje času, klient bude čekat před vyvolání výjimky připojení připojený k Internetu. Výchozí hodnota je 10.|  
 |maxBufferPoolSize|Celé číslo, které určuje velikost fondu maximální vyrovnávací paměti pro tuto vazbu. Výchozí hodnota je 512 * 1024 bajtů. Mnoho částí Windows Communication Foundation (WCF) použít vyrovnávací paměti. Vytváření a ničení pokaždé, když používají se vyrovnávací paměti je nákladné a uvolňování paměti pro vyrovnávací paměť je také náročné. S fondy vyrovnávací paměti může trvat vyrovnávací paměti z fondu, ho použít a vrátit do fondu, až budete hotovi. Proto je vyloučeno režie při vytváření a ničení vyrovnávací paměti.|  
 |maxBufferSize|Kladné celé číslo, které určuje maximální velikost v bajtech, vyrovnávací paměti používané k ukládání zpráv v paměti. Pokud vyrovnávací paměť je plná, zůstane nadbytečná data řadit v podkladové soketu, dokud znovu místnosti má vyrovnávací paměť. Tato hodnota nemůže být menší než `maxReceivedMessageSize` atribut. Výchozí hodnota je 65536. Další informace naleznete v tématu <xref:System.ServiceModel.Configuration.NetNamedPipeBindingElement.MaxBufferSize%2A>.|  

@@ -2,12 +2,12 @@
 title: <httpsTransport>
 ms.date: 03/30/2017
 ms.assetid: f6ed4bc0-7e38-4348-9259-30bf61eb9435
-ms.openlocfilehash: efc568990c6af87f24f93790886388e4c505456c
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: dc95b1a31d582f255740152a235b9ca5e67cf5c6
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55289780"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58411314"
 ---
 # <a name="httpstransport"></a>\<httpsTransport>
 Určuje přenos pomocí protokolu HTTP při odesílání zpráv SOAP pro vlastní vazbu.  
@@ -54,7 +54,7 @@ Určuje přenos pomocí protokolu HTTP při odesílání zpráv SOAP pro vlastn�
 |maxBufferSize|Kladné celé číslo, které určuje maximální velikost vyrovnávací paměti. Výchozí hodnota je 524288|  
 |maxReceivedMessageSize|Kladné celé číslo, určující maximální povolenou velikost zprávy, která může být přijata. Výchozí hodnota je 65536.|  
 |proxyAddress|Identifikátor URI, který určuje adresu proxy serveru HTTP. Pokud `useSystemWebProxy` je `true`, toto nastavení musí být `null`. Výchozí hodnota je `null`.|  
-|proxyAuthenticationScheme|Určuje protokol použitý pro ověřování požadavků klientů zpracovávaných HTTP proxy. Platné hodnoty patří:<br /><br /> -Žádný: Neprobíhá žádné ověřování.<br />-Algoritmus Digest: Určuje, ověřování hodnotou hash.<br />-Vyjednat: Vyjednává s klientem nástroje k určení schéma ověřování. Pokud klient i server podporovat protokol Kerberos, je použit. v opačném případě je použit protokol NTLM.<br />– Protokol Ntlm: Určuje ověřování protokolem NTLM.<br />-Základní: Určuje základní ověřování.<br />-Anonymní: Určuje anonymní ověřování.<br /><br /> Výchozí hodnota je Anonymous. Tento atribut je typu <xref:System.Net.AuthenticationSchemes>. Všimněte si, že `IntegratedWindowsAuthentication` se nepodporuje.|  
+|proxyAuthenticationScheme|Určuje protokol použitý pro ověřování požadavků klientů zpracovávaných HTTP proxy. Platné hodnoty patří:<br /><br /> -Žádný: Neprobíhá žádné ověřování.<br />-Algoritmus Digest: Určuje, ověřování hodnotou hash.<br />-Vyjednat: Vyjednává s klientem nástroje k určení schéma ověřování. Pokud klient i server podporovat protokol Kerberos, je použit. v opačném případě je použit protokol NTLM.<br />– Protokol Ntlm: Určuje ověřování protokolem NTLM.<br />-Základní: Určuje základní ověřování.<br />-Anonymní: Určuje anonymní ověřování.<br /><br /> Výchozí hodnota je Anonymous. Tento atribut je typu <xref:System.Net.AuthenticationSchemes>. Všimněte si, že <xref:System.Net.AuthenticationSchemes.IntegratedWindowsAuthentication?displayProperty=nameWithType> se nepodporuje.|  
 |Sféra|Řetězec určující sféru na serveru nebo proxy serveru. Výchozí hodnota je prázdný řetězec.<br /><br /> Servery používají sféry při vytváření oddílů chráněným prostředkům. Každý oddíl může mít vlastní databázi schéma a/nebo povolení ověřování. Sféry se používají pouze pro základní a ověřování algoritmem digest. Po klienta úspěšně ověřen, je platný pro všechny prostředky v danou sféru ověřování. Podrobný popis sféry, naleznete v tématu RFC 2617 na [IETF webu](https://www.ietf.org).|  
 |requireClientCertificate|Logická hodnota určující, zda server vyžaduje od klienta klientský certifikát jako součást metody handshake HTTPS. Výchozí hodnota je `false`.|  
 |transferMode|Určuje, zda jsou zprávy ukládány do vyrovnávací paměti nebo prostřednictvím datového proudu nebo požadavek nebo odpověď. Platné hodnoty patří:<br /><br /> -Ukládány do vyrovnávací paměti: Zprávy požadavků a odpovědí jsou ukládány do vyrovnávací paměti.<br />-Streamování: Se streamují zprávy požadavků a odpovědí.<br />-StreamedRequest: Zprávy s požadavkem je streamování a zprávy s odpovědí do vyrovnávací paměti.<br />-StreamedResponse: Zpráva požadavku do vyrovnávací paměti a Streamovat zprávy s odpovědí.<br /><br /> Výchozí hodnota je uložená do vyrovnávací paměti. Tento atribut je typu <xref:System.ServiceModel.TransferMode>.|  

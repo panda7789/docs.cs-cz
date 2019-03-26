@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: c0a9bcdf-3df8-4db3-b1b6-abbdb2af809a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8c9716193c3429d5dd3aff1734415105713d2538
-ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
+ms.openlocfilehash: fe1d35f091eb98ca0080a73283d7e158e2ae26eb
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56221287"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58409442"
 ---
 # <a name="default-marshaling-behavior"></a>Výchozí chování zařazování
 Zařazování spolupráce funguje v pravidlech této diktování chování data související s parametry metody během mezi spravovanými a nespravovanými paměti. Tato integrovaná pravidla takové zařazování aktivity jako typ transformace dat, řízení, zda volaný můžete změnit data předaná do ní a tyto změny vrátit volající a pod kterým okolností, aby zařazování odvozovalo poskytuje optimalizace výkonu.  
@@ -33,7 +33,7 @@ Zařazování spolupráce funguje v pravidlech této diktování chování data 
   
 ### <a name="unmanaged-signature"></a>Nespravovanému podpisu  
   
-```  
+```cpp  
 BSTR MethodOne (BSTR b) {  
      return b;  
 }  
@@ -101,7 +101,7 @@ void m5([MarshalAs(UnmanagedType.FunctionPtr)] ref Delegate d);
   
 ### <a name="type-library-representation"></a>Knihovna reprezentaci typu  
   
-```  
+```cpp  
 importlib("mscorlib.tlb");  
 interface DelegateTest : IDispatch {  
 [id(…)] HRESULT m1([in] _Delegate* d);  
@@ -164,13 +164,13 @@ internal class DelegateTest {
 ## <a name="default-marshaling-for-value-types"></a>Výchozí zařazování pro typy hodnot  
  Většina typy hodnot, jako jsou celá čísla a čísla s plovoucí desetinnou čárkou, jsou [blittable](blittable-and-non-blittable-types.md) a nevyžadují, aby zařazování. Další [nepřenositelné](blittable-and-non-blittable-types.md) typy mají odlišné reprezentace v spravované a nespravované paměti a nevyžadují zařazování. Jiné typy stále vyžadují explicitní formátování napříč hranicemi.  
   
- Toto téma obsahuje informace použijte pro typy formátovaná hodnota:  
+ Tato část obsahuje informace o následujících typech formátovaná hodnota:  
   
--   [Typy hodnot používá v platformě vyvolání](#cpcondefaultmarshalingforvaluetypesanchor2)  
+-   [Typy hodnot používá v platformě vyvolání](#value-types-used-in-platform-invoke)  
   
--   [Typy hodnot používá ve spolupráci s COM](#cpcondefaultmarshalingforvaluetypesanchor3)  
+-   [Typy hodnot používá ve spolupráci s COM](#value-types-used-in-com-interop)  
   
- Kromě popisující typy formátovaný, toto téma popisuje [systém hodnotou typy](#cpcondefaultmarshalingforvaluetypesanchor1) , které mají neobvyklé chování zařazování.  
+ Kromě popisující typy formátovaný, toto téma popisuje [systém hodnotou typy](#system-value-types) , které mají neobvyklé chování zařazování.  
   
  Formátovaný typ je komplexní typ, který obsahuje informace, které explicitně určuje rozložení z jejích členů v paměti. Informace o rozložení člen je prováděno pomocí <xref:System.Runtime.InteropServices.StructLayoutAttribute> atribut. Rozložení může být jedna z následujících <xref:System.Runtime.InteropServices.LayoutKind> hodnot výčtu:  
   
@@ -186,7 +186,6 @@ internal class DelegateTest {
   
      Označuje, že členové jsou rozloženy podle <xref:System.Runtime.InteropServices.FieldOffsetAttribute> součástí každé pole.  
   
-<a name="cpcondefaultmarshalingforvaluetypesanchor2"></a>   
 ### <a name="value-types-used-in-platform-invoke"></a>Typy hodnot používá v platformě vyvolání  
  V následujícím příkladu `Point` a `Rect` typy poskytují člen informace o rozložení pomocí **StructLayoutAttribute –**.  
   
@@ -221,27 +220,28 @@ public struct Rect {
 }  
 ```  
   
- Při zařazení na nespravovaný kód, jsou tyto typy formátovaný zařadit jako struktury C-style. To poskytuje snadný způsob volání nespravovaného rozhraní API, která má strukturu argumenty. Například `POINT` a `RECT` struktury může být předán rozhraní Microsoft Win32 API **PtInRect** funkce takto:  
+ Při zařazení na nespravovaný kód, jsou tyto typy formátovaný zařadit jako struktury C-style. To poskytuje snadný způsob volání nespravovaného rozhraní API, která má strukturu argumenty. Například `POINT` a `RECT` struktury mohou být předány do rozhraní API Microsoft Windows **PtInRect** funkce takto:  
   
-```  
+```cpp  
 BOOL PtInRect(const RECT *lprc, POINT pt);  
 ```  
   
  Můžete předat struktury použití následující platformy vyvolat definice:  
   
-```vb  
-Class Win32API      
-   Declare Auto Function PtInRect Lib "User32.dll" _  
-    (ByRef r As Rect, p As Point) As Boolean  
-End Class  
-```  
+```vb
+Friend Class WindowsAPI
+    Friend Shared Declare Auto Function PtInRect Lib "User32.dll" (
+        ByRef r As Rect, p As Point) As Boolean
+End Class
+```
   
-```csharp  
-class Win32API {  
-   [DllImport("User32.dll")]  
-   public static extern Bool PtInRect(ref Rect r, Point p);  
-}  
-```  
+```csharp
+internal static class WindowsAPI
+{
+   [DllImport("User32.dll")]
+   internal static extern bool PtInRect(ref Rect r, Point p);
+}
+```
   
  `Rect` Hodnotový typ musí být předány podle odkazu, protože nespravované rozhraní API očekává ukazatel `RECT` má být předán funkci. `Point` Typ hodnoty je předán podle hodnoty, protože nespravované rozhraní API očekává, že `POINT` mají být předány do zásobníku. Tento malý rozdíl je velmi důležité. Odkazy jsou předány do nespravovaného kódu jako ukazatele. Hodnoty jsou předány na nespravovaný kód v zásobníku.  
   
@@ -253,7 +253,7 @@ class Win32API {
 > [!NOTE]
 >  Pokud je odkazový typ členy nepřenositelné typy, je vyžadován převod dvakrát: poprvé, když je argument předaný do nespravované oblasti a druhý čas při návratu z volání. Kvůli tomu nároky parametry In nebo Out musí explicitně použít pro argument Pokud volající požaduje zobrazíte změny volaným.  
   
- V následujícím příkladu `SystemTime` třída má sekvenční rozložení a mohou být předány do rozhraní API systému Win32 **GetSystemTime** funkce.  
+ V následujícím příkladu `SystemTime` třída má sekvenční rozložení a mohou být předány do rozhraní API Windows **GetSystemTime** funkce.  
   
 ```vb  
 <StructLayout(LayoutKind.Sequential)> Public Class SystemTime  
@@ -284,25 +284,26 @@ End Class
   
  **GetSystemTime** funkce je definována takto:  
   
-```  
+```cpp  
 void GetSystemTime(SYSTEMTIME* SystemTime);  
 ```  
   
  Definice pro vyvolání ekvivalentní platformy **GetSystemTime** vypadá takto:  
   
-```vb  
-Public Class Win32  
-   Declare Auto Sub GetSystemTime Lib "Kernel32.dll" (ByVal sysTime _  
-   As SystemTime)  
-End Class  
-```  
+```vb
+Friend Class WindowsAPI
+    Friend Shared Declare Auto Sub GetSystemTime Lib "Kernel32.dll" (
+        ByVal sysTime As SystemTime)
+End Class
+```
   
-```csharp  
-class Win32API {  
-   [DllImport("Kernel32.dll", CharSet=CharSet.Auto)]  
-   public static extern void GetSystemTime(SystemTime st);  
-}  
-```  
+```csharp
+internal static class WindowsAPI
+{
+   [DllImport("Kernel32.dll", CharSet = CharSet.Auto)]
+   internal static extern void GetSystemTime(SystemTime st);
+}
+```
   
  Všimněte si, že `SystemTime` argument není zadána jako argument typu odkaz, protože `SystemTime` je třída, nikoli typu hodnoty. Na rozdíl od typy hodnot jsou vždy třídy předány podle odkazu.  
   
@@ -329,13 +330,12 @@ public class Point {
 }  
 ```  
   
-<a name="cpcondefaultmarshalingforvaluetypesanchor3"></a>   
 ### <a name="value-types-used-in-com-interop"></a>Typy hodnot používá ve spolupráci s COM  
  Volání metody vzájemné spolupráce COM může být předán také formátovaný typy. Ve skutečnosti při exportu do knihovny typů, typů hodnot se automaticky převedou na struktury. Jak ukazuje následující příklad `Point` typ hodnoty změní typ definice (typedef) s názvem `Point`. Všude, kde `Point` jsou nahrazeny typ hodnoty jinde v knihovně typů `Point` typedef.  
   
  **Knihovna reprezentaci typu**  
   
-```  
+```cpp  
 typedef struct tagPoint {  
    int x;  
    int y;  
@@ -353,7 +353,6 @@ interface _Graphics {
 > [!NOTE]
 >  Struktury s <xref:System.Runtime.InteropServices.LayoutKind> nastavena na hodnotu výčtu **explicitní** nelze použít ve spolupráci s COM, protože exportované knihovny typů nemůže express s explicitním rozložením.  
   
-<a name="cpcondefaultmarshalingforvaluetypesanchor1"></a>   
 ### <a name="system-value-types"></a>Systém typů hodnot  
  <xref:System> Obor názvů má několik typy hodnot, které představují v podobě boxed primitivních typů modulu runtime. Například typ hodnoty <xref:System.Int32?displayProperty=nameWithType> struktura představuje v podobě boxed z **ELEMENT_TYPE_I4**. Místo zařazování typů jako struktury, jako ostatní typy formátovaný můžete přeuspořádat je stejným způsobem jako primitivní typy, které jsou pole. **System.Int32** proto zařazena jako **ELEMENT_TYPE_I4** místo jako struktura obsahující jednoho člena typu **dlouhé**. Následující tabulka obsahuje seznam typů hodnot v **systému** obor názvů, který jsou zabalené reprezentace primitivní typy.  
   
@@ -388,7 +387,7 @@ interface _Graphics {
   
 #### <a name="type-library-representation"></a>Knihovna reprezentaci typu  
   
-```  
+```cpp  
 typedef double DATE;  
 typedef DWORD OLE_COLOR;  
   
@@ -430,7 +429,7 @@ public interface IValueTypes {
   
 #### <a name="type-library-representation"></a>Knihovna reprezentaci typu  
   
-```  
+```cpp  
 […]  
 interface IValueTypes : IDispatch {  
    HRESULT M1([in] DATE d);  

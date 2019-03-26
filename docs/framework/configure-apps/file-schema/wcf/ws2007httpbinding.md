@@ -2,12 +2,12 @@
 title: <ws2007HttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 8586ecc9-bdaa-44d6-8d4d-7038e4ea1741
-ms.openlocfilehash: 35e47d582a6b8534597945a626904d084fbeeade
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 01b8f20607de1cdd9c6b1ad9fc030c1d050ed749
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57376998"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58410638"
 ---
 # <a name="ws2007httpbinding"></a>\<ws2007HttpBinding>
 Definuje interoperabilní vazbu, která poskytuje podporu pro správné verze prvků <xref:System.ServiceModel.WSHttpBinding.Security%2A>, <xref:System.ServiceModel.ReliableSession>, a <xref:System.ServiceModel.WSHttpBindingBase.TransactionFlow%2A> elementů vazby.  
@@ -67,7 +67,7 @@ Definuje interoperabilní vazbu, která poskytuje podporu pro správné verze pr
 |`allowCookies`|Hodnota, která určuje, zda klient přijímá soubory cookie a šíří je v budoucích požadavcích. Výchozí hodnota je `false`.<br /><br /> Tuto vlastnost můžete použít, když pracujete s webovými službami ASP.NET (ASMX), které používají soubory cookie. Tím se zajistí, že soubory cookie, které vrací na server se automaticky zkopírují do všechny budoucí požadavky za danou službu.|  
 |`bypassProxyOnLocal`|Hodnota, která označuje, zda obejít proxy server pro místní adresy. Výchozí hodnota je `false`.|  
 |`closeTimeout`|A <xref:System.TimeSpan> hodnota, která určuje časový interval pro dokončení operace uzavření. Tato hodnota by měla být větší než nebo rovna hodnotě <xref:System.TimeSpan.Zero>. Výchozí hodnota je 00:01:00.|  
-|`hostnameComparisonMode`|Určuje režim porovnání jména hostitele HTTP použitá k analýze Uniform Resource Identifier (identifikátory URI). Tento atribut je typu <xref:System.ServiceModel.HostNameComparisonMode>, což znamená, zda je ke zpřístupnění služby při shodě s identifikátoru URI používá název hostitele. Výchozí hodnota je <xref:System.ServiceModel.HostNameComparisonMode.StrongWildcard>, které ignoruje jako název hostitele v porovnávání.|  
+|`hostNameComparisonMode`|Určuje režim porovnání jména hostitele HTTP použitá k analýze Uniform Resource Identifier (identifikátory URI). Tento atribut je typu <xref:System.ServiceModel.HostNameComparisonMode>, což znamená, zda je ke zpřístupnění služby při shodě s identifikátoru URI používá název hostitele. Výchozí hodnota je <xref:System.ServiceModel.HostNameComparisonMode.StrongWildcard>, které ignoruje jako název hostitele v porovnávání.|  
 |`maxBufferPoolSize`|Velikost fondu maximální vyrovnávací paměti pro tuto vazbu. Výchozí hodnota je 524,288 bajtů (512 x 1 024 jednotek). Mnoho částí Windows Communication Foundation (WCF) použít vyrovnávací paměti. Vytváření a ničení pokaždé, když používají se vyrovnávací paměti je nákladná, stejně jako uvolňování paměti pro vyrovnávací paměti. S fondy vyrovnávací paměti může trvat vyrovnávací paměti z fondu, ji použít a vrátit do fondu, jakmile budete hotovi. Tím se vyhnete režie při vytváření a ničení vyrovnávací paměti.|  
 |`maxReceivedMessageSize`|Maximální velikost v bajtech, včetně záhlaví, které můžou přijímat kanál nakonfigurovaným s touto vazbou. Odesílatel zprávy překračující tento limit obdrží chybu protokolu SOAP. Příjemce zahodí a vytvoří záznam události v protokolu trasování. Výchozí hodnota je 65536.|  
 |`messageEncoding`|Definuje kodér pro kódování zprávy. Platné hodnoty patří:<br /><br /> -   `Text`: Použijte kodér textu zprávy.<br />-   `Mtom`: Pomocí kodéru zpráv přenosu organizace mechanismus 1.0 (MTOM).<br /><br /> Výchozí hodnota je `Text`.<br /><br /> Tento atribut je typu <xref:System.ServiceModel.WSMessageEncoding>.|  

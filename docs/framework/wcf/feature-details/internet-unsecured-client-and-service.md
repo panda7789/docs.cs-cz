@@ -5,27 +5,27 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 97a10d79-3e7d-4bd1-9a99-fd9807fd70bc
-ms.openlocfilehash: e8aa8d66e667036f09bd5670e779f14fa9401450
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 480242d519fee6ddabac3b39ff21f8e1b76827f0
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54643803"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58410664"
 ---
 # <a name="internet-unsecured-client-and-service"></a>Nezabezpečený internetový klient a služba
-Následující obrázek znázorňuje příklad veřejné, zabezpečená klienta Windows Communication Foundation (WCF) a služby.  
+Následující obrázek znázorňuje příklad veřejné, zabezpečená klienta Windows Communication Foundation (WCF) a služby:  
   
- ![Zabezpečená scénář cleint a službu Internet](../../../../docs/framework/wcf/feature-details/media/publicunsecured.gif "publicUnsecured")  
+ ![Snímek obrazovky zobrazující nezabezpečené scénáře Internet](./media/internet-unsecured-client-and-service/public-unsecured-internet.gif)  
   
 |Vlastnost|Popis|  
 |--------------------|-----------------|  
-|Režim zabezpečení|Žádná|  
+|Režim zabezpečení|Žádné|  
 |Přenos|HTTP|  
 |Vazba|<xref:System.ServiceModel.BasicHttpBinding> v kódu nebo [ \<basicHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md) element v konfiguraci.|  
 |Interoperabilita|Stávající klienty webové služby a služby|  
-|Ověřování|Žádná|  
-|Integrita|Žádná|  
-|Důvěrnost|Žádná|  
+|Ověřování|Žádné|  
+|Integrita|Žádné|  
+|Důvěrnost|Žádné|  
   
 ## <a name="service"></a>Služba  
  Následující kód a konfigurace mají běžet nezávisle. Proveďte jednu z těchto akcí:  

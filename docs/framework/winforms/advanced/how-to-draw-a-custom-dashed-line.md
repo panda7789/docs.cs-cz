@@ -9,12 +9,12 @@ helpviewer_keywords:
 - lines [Windows Forms], drawing
 - lines [Windows Forms], dashed
 ms.assetid: cd0ed96a-cce4-47b9-b58a-3bae2e3d1bee
-ms.openlocfilehash: 830fa45fc88c35b8aa5f047e065ae1efc161f581
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 06555309b8432397e754bc9dfa717c89b052343f
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57718941"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58410222"
 ---
 # <a name="how-to-draw-a-custom-dashed-line"></a>Postupy: Kreslení vlastní přerušované čáry
 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] poskytuje několik styly čar, které jsou uvedeny v <xref:System.Drawing.Drawing2D.DashStyle> výčtu. Pokud tyto styly standardní dash nevyhovují vašim potřebám, můžete vytvořit vlastní dash vzor.  
@@ -24,7 +24,7 @@ ms.locfileid: "57718941"
   
  Následující obrázek znázorňuje výsledný přerušované čáry. Všimněte si, že poslední dash musí být kratší než 25 jednotky tak, aby můžete konec řádku (405, 5).  
   
- ![Pera](./media/pens6.gif "pens6")  
+ ![Obrázek, který ukazuje na přerušovanou čáru. ](./media/how-to-draw-a-custom-dashed-line/dashed-line-illustration.gif "pens6")  
   
  [!code-csharp[System.Drawing.UsingAPen#51](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.UsingAPen/CS/Class1.cs#51)]
  [!code-vb[System.Drawing.UsingAPen#51](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.UsingAPen/VB/Class1.vb#51)]  

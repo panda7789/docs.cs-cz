@@ -2,12 +2,12 @@
 title: Objemná data a vysílání datových proudů
 ms.date: 03/30/2017
 ms.assetid: ab2851f5-966b-4549-80ab-c94c5c0502d2
-ms.openlocfilehash: c6514903294147671804b5b8de47fddc764b0547
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 8fa49f9da7caf9146f73017ec051381a8e9ef9e2
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54674112"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58411054"
 ---
 # <a name="large-data-and-streaming"></a>Objemná data a vysílání datových proudů
 Windows Communication Foundation (WCF) jsou infrastruktura komunikace založený na formátu XML. Protože XML data je běžně zakódován do formátu standardního textu definované v [specifikace XML 1.0](https://go.microsoft.com/fwlink/?LinkId=94838), připojené systémy vývojářům a architektům jsou obvykle, které zajímá nároky na místo při přenosu (nebo velikost) zprávy odeslané přes síť a založený na textu kódování XML představuje zvláštní výzev pro efektivní přenos binární data.  
@@ -67,7 +67,7 @@ Windows Communication Foundation (WCF) jsou infrastruktura komunikace založený
   
 |Element vazby kodér|Popis|  
 |-----------------------------|-----------------|  
-|<xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>|Kodér textu zprávy je kodéru pro všechny vazby založené na protokolu HTTP a vhodnou volbou pro všechny vlastní vazby, kde je vzájemná funkční spolupráce nejvyšší žádný problém. Tomto kodéru čte a zapisuje standardní protokol SOAP 1.1 a SOAP 1.2 textové zprávy s žádné speciální zpracování pro binární data. Pokud <xref:System.ServiceModel.Channels.MessageVersion> zprávy je nastavena na `None`obálky obálky protokolu SOAP je vynecháno z výstupu a serializuje pouze obsah textu zprávy.|  
+|<xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>|Kodér textu zprávy je kodéru pro všechny vazby založené na protokolu HTTP a vhodnou volbou pro všechny vlastní vazby, kde je vzájemná funkční spolupráce nejvyšší žádný problém. Tomto kodéru čte a zapisuje standardní protokol SOAP 1.1 a SOAP 1.2 textové zprávy s žádné speciální zpracování pro binární data. Pokud <xref:System.ServiceModel.Channels.MessageVersion?displayProperty=nameWithType> zprávy je nastavena na <xref:System.ServiceModel.Channels.MessageVersion.None?displayProperty=nameWithType>obálky obálky protokolu SOAP je vynecháno z výstupu a serializuje pouze obsah textu zprávy.|  
 |<xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement>|Kodér MTOM zpráv je kodér textu, který implementuje speciální zpracování binárních dat a není použita ve výchozím nastavení v některém z standardní vazby, protože je výhradně nástroj Optimalizace případ od případu. Pokud zpráva obsahuje binární data, která překročí prahovou hodnotu, pokud kódování MTOM přínosy, se do části MIME následující obálky zprávy externalized data. V tématu Povolení MTOM dál v této části.|  
 |<xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement>|Kodér binárních zpráv je kodéru pro Net * vazbách a vhodnou volbou pokaždé, když oba komunikujících stran jsou založené na WCF. Kodér binárních zpráv používá .NET binární formát XML, specifické pro společnost Microsoft binární reprezentaci XML informace sad (Infosets), které obvykle vrací menší nároky na místo než ekvivalentní reprezentaci XML 1.0 a zakóduje binární data v bajtové podobě datový proud.|  
   

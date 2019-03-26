@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 93e099eb-daa1-4f1e-b031-c1e10a996f88
-ms.openlocfilehash: 5712b0f7ef67e0a925207858e17d256dbf50cc60
-ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
+ms.openlocfilehash: af3fe9a233972e939dc14117fc08343bca9d5fd6
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55826255"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58411561"
 ---
 # <a name="code-access-security-and-adonet"></a>Zabezpečení přístupu kódu a ADO.NET
 Rozhraní .NET Framework poskytuje zabezpečení na základě rolí stejně jako zabezpečení přístupu kódu (CAS), které jsou implementovány pomocí společnou infrastrukturu pro zadaný modulem common language runtime (CLR). Většina aplikace na světě nespravovaného kódu jsou spouštěny s oprávnění uživatele nebo instanční objekt. V důsledku toho počítačových systémů může být poškozený a privátních dat dojde k ohrožení bezpečnosti při škodlivý nebo plný chyb softwaru je spuštěna uživatelem, se zvýšenými oprávněními.  
@@ -190,7 +190,7 @@ Failed, as expected: Request failed.
 ```  
   
 ## <a name="interoperability-with-unmanaged-code"></a>Vzájemná funkční spolupráce s nespravovaným kódem  
- Kód, který běží mimo rámec platformy CLR je volat nespravovaný kód. Proto nelze použít mechanismy zabezpečení, jako jsou certifikační Autority do nespravovaného kódu. Komponenty modelu COM, ActiveX, rozhraní a funkce rozhraní Win32 API jsou příkladem nespravovaného kódu. Při provádění nespravovaný kód tak, aby nebyl ohrozit zabezpečení aplikací platí zvláštní bezpečnostní aspekty. Další informace najdete v tématu [spolupráce s nespravovaným kódem](../../../../docs/framework/interop/index.md).  
+ Kód, který běží mimo rámec platformy CLR je volat nespravovaný kód. Proto nelze použít mechanismy zabezpečení, jako jsou certifikační Autority do nespravovaného kódu. Komponenty modelu COM, ActiveX rozhraní a funkcí rozhraní API Windows jsou příkladem nespravovaného kódu. Při provádění nespravovaný kód tak, aby nebyl ohrozit zabezpečení aplikací platí zvláštní bezpečnostní aspekty. Další informace najdete v tématu [spolupráce s nespravovaným kódem](../../../../docs/framework/interop/index.md).  
   
  Rozhraní .NET Framework podporuje také zpětnou kompatibilitu pro existující komponenty modelu COM s přístupem prostřednictvím zprostředkovatele komunikace s objekty COM. Komponenty modelu COM můžete začlenit do aplikace rozhraní .NET Framework pomocí nástroje vzájemné spolupráce COM k importování odpovídajících typů modelu COM. Po importu, typy modelu COM jsou připravené k použití. Komunikace s objekty COM také umožňuje klientům modelu COM pro export metadat sestavení na knihovnu typů a registraci spravované komponenty jako součást COM přístup k spravovaného kódu. Další informace najdete v tématu [rozšířená interoperabilita modelů COM](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bd9cdfyx).  
   

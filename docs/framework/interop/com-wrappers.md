@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: e56c485b-6b67-4345-8e66-fd21835a6092
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8d02d1b170362a5175fb24d68b00e4648819541e
-ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
+ms.openlocfilehash: ce15e0535bbd6bc67054c651a518f11cf9dd2ae1
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56092654"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58410352"
 ---
 # <a name="com-wrappers"></a>Obálky COM
 COM se liší od objektový model rozhraní .NET Framework důležité několika způsoby:  
@@ -29,8 +29,7 @@ COM se liší od objektový model rozhraní .NET Framework důležité několika
   
  Chcete-li vyřešit tyto rozdíly, modul runtime poskytuje obálkové třídy, aby klienti spravovaných i nespravovaných myslíte, že volání objektů v rámci svých odpovídajících prostředí. Pokaždé, když spravovaného klienta volá metodu na objekt modelu COM, modul runtime vytvoří [obálka volatelná za běhu](runtime-callable-wrapper.md) (RCW). RCW abstraktní rozdíly mezi spravovanými a nespravovanými odkaz mechanismy mimo jiné. Modul runtime vytvoří také [obálka volatelná aplikacemi COM](com-callable-wrapper.md) (CCW) vrátit procesu a umožnit tak klient modelu COM bez problémů volat metodu na objekt .NET. Jak ukazuje následující obrázek, určuje, které obálkovou třídu modul runtime vytvoří perspektivy volající kód.  
   
- ![Přehled obálky COM](media/bidirectional.gif "obousměrné")  
-Přehled obálky COM  
+ ![Přehled obálky COM](./media/com-wrappers/bidirectional-com-overview.gif)  
   
  Ve většině případů poskytuje standardní obálky RCW nebo objekt CCW vygenerované modulem runtime odpovídající zařazování pro volání, které překračují hranice mezi modelem COM a rozhraní .NET Framework. Pomocí vlastních atributů, můžete volitelně můžete upravit způsob, jakým modul runtime představuje spravovaným a nespravovaným kódem.  
   

@@ -2,21 +2,21 @@
 title: Používání vazeb NetHttpBinding
 ms.date: 03/30/2017
 ms.assetid: fe134acf-ceca-49de-84a9-05a37e3841f1
-ms.openlocfilehash: b00b4ed24d15519baf91ce38678fd91056eff521
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 47a4da6dd709c300b62a7380e6e0754e31782dd8
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54658725"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58411067"
 ---
 # <a name="using-the-nethttpbinding"></a>Používání vazeb NetHttpBinding
 <xref:System.ServiceModel.NetHttpBinding> Vazba určená pro použití protokolu HTTP nebo objektu websocket na straně služby a používá binární kódování ve výchozím nastavení. <xref:System.ServiceModel.NetHttpBinding> zjistí, jestli se používá s kontraktů požadavek odpověď nebo duplexní kontrakt a změnit její chování tak, aby odpovídaly – použije HTTP pro kontraktů požadavek odpověď a protokoly Websocket pro duplexní kontrakty. Toto chování lze přepsat pomocí <xref:System.ServiceModel.Channels.WebSocketTransportUsage> nastavení:  
   
-1. `Always` – To přinutí WebSockets se použije i pro kontraktů požadavek odpověď.  
+1. <xref:System.ServiceModel.Channels.WebSocketTransportUsage.Always> – To přinutí WebSockets se použije i pro kontraktů požadavek odpověď.  
   
-2. `Never` – To brání použití objekty Websocket. Pokus o použití duplexního kontraktu s tímto nastavením bude mít za následek výjimku.  
+2. <xref:System.ServiceModel.Channels.WebSocketTransportUsage.Never> – To brání použití objekty Websocket. Pokus o použití duplexního kontraktu s tímto nastavením bude mít za následek výjimku.  
   
-3. `WhenDuplex` – Toto je výchozí hodnota a chová, jak je popsáno výše.  
+3. <xref:System.ServiceModel.Channels.WebSocketTransportUsage.WhenDuplex> – Toto je výchozí hodnota a chová, jak je popsáno výše.  
   
  <xref:System.ServiceModel.NetHttpBinding> podporuje spolehlivé relace v režimu HTTP a WebSocket režimu. V objektu websocket na straně relace režimu jsou poskytovány přenos.  
   

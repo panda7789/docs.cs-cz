@@ -9,12 +9,12 @@ helpviewer_keywords:
 - loading non-resource files
 - application management [WPF]
 ms.assetid: 43adb517-21a7-4df3-98e8-09e9cdf764c4
-ms.openlocfilehash: 9e7ded2869e3553eab302e150d80608b8dd7091f
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: e84f586e621aa54d7e8a8f62e605ec3016cfb757
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57377309"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58411275"
 ---
 # <a name="pack-uris-in-wpf"></a>Sbalení URI v technologii WPF
 Ve Windows Presentation Foundation (WPF), [!INCLUDE[TLA#tla_uri#plural](../../../../includes/tlasharptla-urisharpplural-md.md)] slouží k identifikaci a načíst soubory mnoha způsoby, včetně následujících:  
@@ -44,7 +44,7 @@ Ve Windows Presentation Foundation (WPF), [!INCLUDE[TLA#tla_uri#plural](../../..
 ## <a name="the-pack-uri-scheme"></a>Schéma URI balíku  
  Této sady [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] používá schéma [Open Packaging Conventions](https://go.microsoft.com/fwlink/?LinkID=71255) specifikace (OPC), který popisuje model pro organizaci a identifikaci obsahu. Klíčové prvky tohoto modelu jsou balíčky a části, kde *balíčku* je logický kontejner pro jeden nebo více logických *částí*. Tento koncept znázorňuje následující obrázek.  
   
- ![Diagram balíčku a částí](./media/wpfpackurischemefigure1.PNG "WPFPackURISchemeFigure1")  
+ ![Balíček a části diagramu](./media/pack-uris-in-wpf/wpf-package-parts-diagram.png)  
   
  K identifikaci částí specifikace OPC využívá rozšiřitelnosti RFC 2396 (identifikátory URI (Uniform Resource): Obecná syntaxe) pro definování sady [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] schéma.  
   
@@ -56,7 +56,7 @@ Ve Windows Presentation Foundation (WPF), [!INCLUDE[TLA#tla_uri#plural](../../..
   
  Tento koncept je znázorněn v následujícím obrázku:  
   
- ![Vztah mezi balíčku, autority a cestu](./media/wpfpackurischemefigure2.PNG "WPFPackURISchemeFigure2")  
+ ![Vztah mezi balíčku, autority a cesty](./media/pack-uris-in-wpf/wpf-relationship-diagram.png)  
   
  Balíčky a části jsou podobná aplikace a soubory, kde aplikace (balíček) může obsahovat jeden nebo více souborů (částí), včetně:  
   
@@ -72,7 +72,7 @@ Ve Windows Presentation Foundation (WPF), [!INCLUDE[TLA#tla_uri#plural](../../..
   
  Pro přístup k tyto typy souborů, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] podporuje dva orgány: aplikace: / / / / / a siteoforigin: / / / / /. Aplikace: / / / / / autority identifikuje datové soubory aplikace, která jsou známá v době kompilace, včetně souborů prostředků a obsahu. Siteoforigin: / / / / / autority identifikuje lokality původní soubory. Rozsah každé oprávnění je znázorněno na následujícím obrázku.  
   
- ![Pack URI diagram](./media/wpfpackurischemefigure4.png "WPFPackURISchemeFigure4")  
+ ![Diagram identifikátoru URI balíčku](./media/pack-uris-in-wpf/wpf-pack-uri-scheme.png)  
   
 > [!NOTE]
 >  Komponenta autority sadu [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] je vložený [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] , který odkazuje na balíček a musí odpovídat specifikaci RFC 2396. Kromě toho musí být nahrazen znakem "," znak "/" a vyhrazené znaky, jako je například "%" a "?" musí být uvozeny řídicími znaky. Zobrazit OPC podrobnosti.  

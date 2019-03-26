@@ -5,12 +5,12 @@ ms.technology: dotnet-standard
 ms.assetid: 896a1e12-5655-42c6-8cdd-89c12862b34b
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c63a21ed871bf967674d09230f897b7ab98dfa4d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: cdd43f7079563be6b1377f743a84625429ba4f16
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54554943"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58411691"
 ---
 # <a name="xml-schema-object-model-overview"></a>Přehled modelu objektu schématu XML
 Model objektu schématu (SOM) v rozhraní Microsoft .NET Framework je plnohodnotné rozhraní API, která umožňuje vytvářet, upravovat a ověřit schémata prostřednictvím kódu programu. SOM funguje v dokumentech schémat XML. Podobně jako na způsob, jakým funguje Document Object Model (DOM) v dokumentech XML. Dokumentů schématu XML jsou platné soubory XML, které po načtení do SOM, významu o struktuře a platnosti jiných dokumentů XML, které odpovídají schématu.  
@@ -34,7 +34,7 @@ Model objektu schématu (SOM) v rozhraní Microsoft .NET Framework je plnohodnot
 ## <a name="the-schema-object-model"></a>Model objektu schématu  
  SOM se skládá z rozsáhlou sadu tříd v <xref:System.Xml.Schema?displayProperty=nameWithType> odpovídající elementy ve schématu XML obor názvů. Například `<xsd:schema>...</xsd:schema>` prvek mapuje na <xref:System.Xml.Schema.XmlSchema?displayProperty=nameWithType> třídy a všechny informace, které mohou být obsaženy v rámci `<xsd:schema/>` elementu lze znázornit pomocí <xref:System.Xml.Schema.XmlSchema> třídy. Podobně `<xsd:element>...</xsd:element>` a `<xsd:attribute>...</xsd:attribute>` mapování elementů na <xref:System.Xml.Schema.XmlSchemaElement?displayProperty=nameWithType> a <xref:System.Xml.Schema.XmlSchemaAttribute?displayProperty=nameWithType> třídy v uvedeném pořadí. Toto mapování pokračuje pro všechny prvky schématu XML, vytvoření modelu objektu schématu XML v <xref:System.Xml.Schema> obor názvů znázorněn v následujícím diagramu.  
   
- ![System.Xml.Schema Object Model](../../../../docs/standard/data/xml/media/xmlschemaobjmodeloverview.gif "XMLSchemaObjModelOverview")  
+ ![Objektový Model System.Xml.Schema](./media/xml-schema-object-model-overview/xml-schema-object-model.gif)  
   
  Další informace o každé třídě <xref:System.Xml.Schema> obor názvů, najdete v článku <xref:System.Xml.Schema> oboru názvů v dokumentaci v knihovně tříd rozhraní .NET Framework.  
   

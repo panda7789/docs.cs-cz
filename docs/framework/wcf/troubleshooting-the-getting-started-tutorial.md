@@ -1,63 +1,100 @@
 ---
-title: Odstraňování problémů v kurzu Začínáme
-ms.date: 03/30/2017
+title: Řešení potíží s Get začít kurzy Windows Communication Foundation
+ms.date: 01/25/2019
 ms.assetid: 69a21511-0871-4c41-9a53-93110e84d7fd
-ms.openlocfilehash: 5b8cd04ef4d98e522e255e1b7529e848351b2e0c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 8089e0fee262d07be591069982b1aacfbeae2521
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54695657"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58410495"
 ---
-# <a name="troubleshooting-the-getting-started-tutorial"></a>Odstraňování problémů v kurzu Začínáme
-Toto téma uvádí nejběžnější problémy vzniklé při práci prostřednictvím kurzu Začínáme a způsob jejich řešení.  
+# <a name="troubleshoot-the-get-started-with-windows-communication-foundation-tutorials"></a>Řešení potíží s Get začít kurzy Windows Communication Foundation
+
+Tento článek obsahuje nejčastější problémy a chyby může být setkáte, pokud budete postupovat podle kroků v řešení [kurzu: Začínáme s aplikacemi Windows Communication Foundation](getting-started-tutorial.md). 
   
-**Nejde najít soubory projektu na pevném disku.**
+## <a name="common-problems"></a>Běžné problémy
 
- Visual Studio uloží soubory projektu v c:\users\\<user name>\Documents\\< verze sady Visual Studio\>\Projects.  
+**Nemůžu najít soubory projektu na pevném disku.**
+
+ Uloží soubory projektu v sadě Visual Studio *C:\Users\\&lt;uživatelské jméno&gt;\source\repos*.  
+
+**Nemůžu najít *App.config* soubor generovaný nástrojem *Svcutil.exe*.**
+
+ V sadě Visual Studio **přidat existující položku** okně zobrazí pouze soubory s těmito příponami ve výchozím nastavení: 
+- *.cs* 
+- *resx* 
+- *.settings*
+- *.xsd* 
+- *.wsdl*
+
+Chcete-li zobrazit všechny typy souborů, vyberte **všechny soubory (\*.\*)**  v rozevíracím seznamu v pravém horním rohu **přidat existující položku** okna.  
   
-**Došlo k pokusu o spuštění služby aplikace: Protokol HTTP nemohl zaregistrovat adresu URL `http://+:8000/ServiceModelSamples/Service/`.** 
- **Váš proces nemá přístupová práva k tomuto oboru názvů.** 
+## <a name="common-errors"></a>Běžné chyby
 
- Proces, který hostuje službu WCF musí být spuštěn s oprávněním správce. Pokud používáte službu ze sady Visual Studio, musíte spustit aplikaci Visual Studio jako správce. Klepněte na tlačítko **Start**, klikněte pravým tlačítkem na **sady Visual Studio \< *verze* >**  a vyberte **spustit jako správce**. Pokud používáte službu z příkazového řádku v okně konzoly, musí v okně konzoly spusťte jako správce podobným způsobem. Klikněte na tlačítko **Start**, klikněte pravým tlačítkem na **příkazového řádku** a vyberte **spustit jako správce**.  
+### <a name="compile-the-service-application"></a>Zkompilujte aplikaci služby 
+
+**Chyba BC30420 'Sub Main' nebyla nalezena v "GettingStartedHost.Module1".**
+
+Vstupní bod není pro aplikaci Visual Basic. Proveďte následující změnu:
+
+   1. V **Průzkumníka řešení** okna, vyberte **GettingStartedHost** složku a pak vyberte **vlastnosti** z místní nabídky.
+    a. V **GettingStartedHost** okně pro **spouštěcí objekt**vyberte **Service.Program** (nebo vstupní bod pro konkrétní aplikaci) ze seznamu. 
+    b. V hlavní nabídce vyberte **souboru** > **Uložit vše**.
+
+### <a name="run-the-service-application"></a>Spuštění služby aplikace 
+
+**Protokol HTTP nemohl zaregistrovat adresu URL: http:\// +: 8000/GettingStarted/CalculatorService ". Váš proces nemá přístupová práva k tomuto oboru názvů.** 
+
+ Pro přístup zahájíte proces hostování služby Windows Communication Foundation (WCF) s oprávněními správce:
+- For Visual Studio: Vyberte program sady Visual Studio **Start** nabídky a pak vyberte **Další** > **spustit jako správce** z místní nabídky.
+- Okna konzoly: Vyberte **příkazového řádku** v **Start** nabídky a pak vyberte **Další** > **spustit jako správce** ze zástupce nabídka.
+- Pro aplikaci Windows Explorer: Vybrat spustitelný soubor a pak vyberte **spustit jako správce** z místní nabídky.
+
+### <a name="compile-the-client-application"></a>Kompilace klientské aplikace
+
+**'CalculatorClient' neobsahuje definici pro '\<název metody > "a žádná metoda rozšíření '\<název metody >' přijímala první argument typu 'CalculatorClient' nebyla nalezena. (nechybí using – direktiva nebo odkaz na sestavení?)**  
+
+Pouze těch metod, které označíte s `ServiceOperationAttribute` atribut jsou veřejně přístupné. Vynecháte-li `ServiceOperationAttribute` atribut z metody v `ICalculator` rozhraní, zobrazí tato chybová zpráva při kompilaci.  
+
+**Typ nebo obor názvů 'CalculatorClient' nebyl nalezen. (nechybí using – direktiva nebo odkaz na sestavení?)**
+
+ Tato chyba se zobrazí, pokud nepřidáte *generatedProxy.cs* (nebo *generatedProxy.vb*) soubor do projektu klienta při generování s *Svcutil.exe* nástroj .  
+
+### <a name="run-the-client-application"></a>Spuštění klientské aplikace
+
+**Neošetřená výjimka: System.ServiceModel.EndpointNotFoundException: Nelze se připojit k "http:\//localhost:8000/GettingStarted/CalculatorService". Kód chyby TCP 10061: Protože cílový počítač aktivně odmítl může nevytváří žádné připojení.**
+
+K této chybě dochází, pokud spuštění klientské aplikace bez první spuštění služby. Nejprve spustit hostitelskou aplikaci spustit službu a pak spusťte klientskou aplikaci.
+
+### <a name="use-the-svcutilexe-tool"></a>Použití nástroje Svcutil.exe
+   
+**'Svcutil' nebyl rozpoznán jako vnitřního ani vnějšího příkazu, spustitelného programu nebo dávkového souboru.**
+
+ *Svcutil.exe* musí být v systémové cestě. Nejjednodušším řešením je použít příkazový řádek sady Visual Studio. Z **Start** nabídku, vyberte **sady Visual Studio \<verze >** adresář a potom vyberte **Developer Command Prompt for VS \<verze >**. Tento příkazový řádek nastaví systémové cesty na správné umístění pro všechny nástroje dodávané jako součást sady Visual Studio.  
   
-**Pokus o použití nástroje Svcutil.exe: 'svcutil' nebyl rozpoznán jako vnitřního ani vnějšího příkazu, spustitelného programu nebo dávkového souboru.**
+### <a name="run-the-service-and-client-applications"></a>Spuštění služeb a klientských aplikací
 
- Svcutil.exe musí být v systémové cestě. Nejjednodušším řešením je použít příkazový řádek. Klikněte na tlačítko **Start**vyberte **všechny programy**, **sady Visual Studio \< *verze*>**,  **Nástroje sady Visual Studio**, a **Developer Command Prompt pro sadu Visual Studio**. Tento příkazový řádek nastaví systémové cesty na správné umístění pro všechny nástroje dodávané jako součást sady Visual Studio.  
+**System.ServiceModel.Security.SecurityNegotiationException: Vyjednávání zabezpečení SOAP s "http:\//localhost:8000/GettingStarted/CalculatorService" pro cíl "http:\//localhost:8000/GettingStarted/CalculatorService ' se nezdařilo**  
 
-**Nepovedlo se najít soubor App.config generovaných Svcutil.exe.**
+K této chybě dochází v počítači připojeném k doméně, která nemá připojení k síti. Připojení počítače k síti nebo vypněte zabezpečení pro službu a klienta. 
 
- **Přidat existující položku** dialogové okno zobrazí ve výchozím nastavení pouze soubory s těmito příponami: .cs, .resx, .settings, XSD, WSDL. Můžete určit, že chcete zobrazit všechny typy souborů tak, že vyberete **všechny soubory (\*.\*)**  v rozevíracím seznamu v pravém dolním rohu **přidat existující položku** dialogové okno.  
+Chcete-li vypnout zabezpečení:
 
-
-**Kompilování klientská aplikace: 'CalculatorClient' neobsahuje definici pro '\<název metody > "a žádná metoda rozšíření '\<název metody >' přijímala první argument typu 'CalculatorClient' nebyla nalezena. (nechybí using – direktiva nebo odkaz na sestavení?)**  
-
-Pouze těch metod, které jsou označené `ServiceOperationAttribute` jsou vystaveny vnějším světem. Pokud je vynechán `ServiceOperationAttribute` atribut z jedné z metod v `ICalculator` rozhraní, dostanete tuto chybovou zprávu při kompilaci klientskou aplikaci, která provádí volání na operaci chybí atribut.  
-
-**Kompilování klientská aplikace: Typ nebo obor názvů 'CalculatorClient' nebyl nalezen. (nechybí using – direktiva nebo odkaz na sestavení?)**
-
- K této chybě získáte, pokud nepřidáte Proxy.cs nebo Proxy.vb soubor do projektu klienta.  
-
-**Spuštění klienta: Neošetřená výjimka: System.ServiceModel.EndpointNotFoundException: Nelze se připojit k `http://localhost:8000/ServiceModelSamples/Service/CalculatorService`. Kód chyby TCP 10061: Protože cílový počítač aktivně odmítl může nevytváří žádné připojení.**
-
-K této chybě dochází, pokud spuštění klientské aplikace bez nutnosti spuštění služby.  
+- Pro službu, nahraďte kód, který vytvoří `WSHttpBinding` následujícím kódem:  
   
-**Neošetřená výjimka: System.ServiceModel.Security.SecurityNegotiationException: Vyjednávání zabezpečení SOAP s `http://localhost:8000/ServiceModelSamples/Service/CalculatorService` pro cíl `http://localhost:8000/ServiceModelSamples/Service/CalculatorService` se nezdařilo**  
+    ```csharp
+    // Step 3: Add a service endpoint.
+    selfhost.AddServiceEndpoint(typeof(ICalculator), new WSHttpBinding(SecurityMode.None), "CalculatorService");  
+    ```
 
-K této chybě dochází v počítači připojeném k doméně, která nemá připojení k síti. Připojení počítače k síti nebo vypnout zabezpečení klienta a služby. Pro službu upravte kód, který se vytvoří vazba WSHttpBinding takto.  
+- Aktualizace klienta v konfiguračním souboru  **\<zabezpečení >** element v rámci  **\<vazby >** element následujícím způsobem:  
   
-```csharp
-// Step 3 of the hosting procedure: Add a service endpoint  
-selfhost.AddServiceEndpoint(typeof(ICalculator), new WSHttpBinding(SecurityMode.None), "CalculatorService");  
-```
+    ```xml
+    <binding name="WSHttpBinding_ICalculator" security mode="None" />
+    ```  
 
-Pro klienta, změnit  **\<zabezpečení >** element v rámci  **\<vazby >** – element pro následující:  
-  
-```xml
-<security mode="Node" />  
-```  
-
-## <a name="see-also"></a>Viz také:
-- [Kurz Začínáme](../../../docs/framework/wcf/getting-started-tutorial.md)
-- [Řešení problémů s WCF – úvodní příručka](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md)
-- [Řešení problémů s instalací](../../../docs/framework/wcf/troubleshooting-setup-issues.md)
+## <a name="see-also"></a>Viz také:  
+ [Začínáme s aplikací služby WCF](getting-started-tutorial.md)  
+ [Řešení problémů s WCF – úvodní příručka](wcf-troubleshooting-quickstart.md)  
+ [Řešení problémů s instalací](troubleshooting-setup-issues.md)

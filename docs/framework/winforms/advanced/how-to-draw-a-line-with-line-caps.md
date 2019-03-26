@@ -10,12 +10,12 @@ helpviewer_keywords:
 - pens [Windows Forms], drawing lines
 - drawing lines [Windows Forms], line caps
 ms.assetid: eb68c3e1-c400-4886-8a04-76978a429cb6
-ms.openlocfilehash: 05c678b25563eb7a4e2e5ce0e49138b5445b4764
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 7ebb49ad5e1262dcb71dcd31c9073dfe52c49789
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57707596"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58409858"
 ---
 # <a name="how-to-draw-a-line-with-line-caps"></a>Postupy: Kreslení čáry s ukončením
 V jednom z několika obrazců volá ukončením lze nakreslit začátek nebo konec řádku. [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] podporuje několik ukončením, jako je kruhové, čtverec, kosočtverce a šipky.  
@@ -25,7 +25,7 @@ V jednom z několika obrazců volá ukončením lze nakreslit začátek nebo kon
   
  V následujícím příkladu kreslení čáry s šipkou na jednom konci a kruhové zakončení na druhém konci. Na obrázku vidíte výsledný řádek:  
   
- ![Pera](./media/pens4.gif "pens4")  
+ ![Obrázek, na kterém řádku s kruhové zakončení.](./media/how-to-draw-a-line-with-line-caps/line-cap-arrowhead-example.gif)  
   
  [!code-csharp[System.Drawing.UsingAPen#71](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.UsingAPen/CS/Class1.cs#71)]
  [!code-vb[System.Drawing.UsingAPen#71](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.UsingAPen/VB/Class1.vb#71)]  

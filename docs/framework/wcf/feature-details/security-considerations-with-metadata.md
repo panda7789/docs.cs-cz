@@ -2,12 +2,12 @@
 title: Informace o zabezpečení pro metadata
 ms.date: 03/30/2017
 ms.assetid: e78ef8ab-4f63-4656-ab93-b1deab2666d5
-ms.openlocfilehash: fa1a79a0be6682a8459043955a7956f6f8444bf5
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2e1ad9f3c7d2a77ec6237bf1fc12c0d1a67181ad
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54585562"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58411910"
 ---
 # <a name="security-considerations-with-metadata"></a>Informace o zabezpečení pro metadata
 Při použití funkce metadat Windows Communication Foundation (WCF), vezměte v úvahu bezpečnostních důsledcích publikování, načítání a používání metadat služby.  
@@ -28,7 +28,7 @@ Při použití funkce metadat Windows Communication Foundation (WCF), vezměte v
 ## <a name="using-safe-techniques-for-processing-metadata"></a>Bezpečné technik zpracování metadat  
  Metadata služby se často načítají ze služby přes síť pomocí standardizovaných protokolů, jako je WS-MetadataExchange (MEX). Mnoho metadat formáty odkazuje na mechanismy pro odkazující na další metadata. <xref:System.ServiceModel.Description.MetadataExchangeClient> Typ automaticky zpracovává odkazy pro vás v dokumenty služby popis jazyka WSDL (Web), schématu XML a MEX dokumenty. Velikost <xref:System.ServiceModel.Description.MetadataSet> objekt vytvořený z načtených metadat je přímo úměrná <xref:System.ServiceModel.Description.MetadataExchangeClient.MaximumResolvedReferences%2A> hodnota <xref:System.ServiceModel.Description.MetadataExchangeClient> instanci, která se používá a `MaxReceivedMessageSize` hodnota pro vazbu, která používá <xref:System.ServiceModel.Description.MetadataExchangeClient> instance. Nastavte tyto kvóty na odpovídající hodnoty, protože závisí váš scénář.  
   
- Ve službě WCF metadata služby zpracování formátu XML. Při zpracování dokumentů XML, aplikace by měla chránit proti škodlivým struktury XML. Použití `XmlDictionaryReader` s příslušným kvóty při zpracování jazyka XML a také nastavit <xref:System.Xml.XmlTextReader.DtdProcessing%2A> vlastnost `Prohibit`.  
+ Ve službě WCF metadata služby zpracování formátu XML. Při zpracování dokumentů XML, aplikace by měla chránit proti škodlivým struktury XML. Použití <xref:System.Xml.XmlDictionaryReader> s příslušným kvóty při zpracování jazyka XML a také nastavit <xref:System.Xml.XmlTextReader.DtdProcessing%2A> vlastnost <xref:System.Xml.DtdProcessing.Prohibit>.  
   
  Metadata systému ve službě WCF je možné rozšířit a metadata rozšíření může být registrováno v konfiguračním souboru aplikace (viz [rozšíření systému metadat](../../../../docs/framework/wcf/extending/extending-the-metadata-system.md)). Metadata rozšíření může spustit libovolný kód, takže by měla chránit váš konfigurační soubor aplikace pomocí řízení přístupu na příslušné seznamy ACL a zaregistrovat jenom důvěryhodné metadata rozšíření implementace.  
   

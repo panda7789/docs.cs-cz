@@ -4,12 +4,12 @@ ms.date: 10/22/2008
 ms.technology: dotnet-standard
 ms.assetid: bebb27ac-9712-4196-9931-de19fc04dbac
 author: KrzysztofCwalina
-ms.openlocfilehash: c2a5a69186e41642abf77357db8b04e2611a43f4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f0ef8ab378fb3898f2d2e134f0b38668f6794ef3
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54513130"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58409208"
 ---
 # <a name="serialization"></a>Serializace
 Serializace je proces převodu objektu do formátu, který lze snadno zachovat nebo přenášet. Například může serializovat objekt, přenosu je prostřednictvím Internetu pomocí protokolu HTTP a deserializovat ho na cílovém počítači.  
@@ -86,14 +86,16 @@ Serializace je proces převodu objektu do formátu, který lze snadno zachovat n
   
 ```csharp
 [Serializable]  
-public class Person : ISerializable {  
-    protected Person(SerializationInfo info, StreamingContext context) {  
-        ...  
+public class Person : ISerializable
+{  
+    protected Person(SerializationInfo info, StreamingContext context)
+    {  
+        // ...  
     }  
 }  
 ```
   
- **✓ DO** implementovat `ISerializable` členy explicitně.  
+ **✓ DO** implementovat <xref:System.Runtime.Serialization.ISerializable> členy explicitně.  
   
  **✓ DO** použít požadavek propojení na <xref:System.Runtime.Serialization.ISerializable.GetObjectData%2A?displayProperty=nameWithType> implementace. Tím se zajistí, že pouze plně důvěryhodné, jádro a serializátor Runtime máte přístup ke členu.  
   

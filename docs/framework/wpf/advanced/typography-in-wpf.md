@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - typography [WPF], about typography
 ms.assetid: 06cbf17b-6eff-4fe5-949d-2dd533e4e1f4
-ms.openlocfilehash: 3afb6a9bd62083704a3147df9d1cc5477b4f5921
-ms.sourcegitcommit: 16aefeb2d265e69c0d80967580365fabf0c5d39a
+ms.openlocfilehash: 7378ddc8ada198beb005bc8682e6cb131def4ceb
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58125626"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58412133"
 ---
 # <a name="typography-in-wpf"></a>Typografie v rozhraní WPF
 Toto téma popisuje hlavní funkce typografickém [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Tyto funkce patří vylepšení kvality a výkonu při vykreslování textu [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] Typografie support, rozšířené mezinárodní text, vylepšená podpora písma a rozhraní (API) nové application programming text.  
@@ -121,7 +121,7 @@ Text s ClearType směru osy y vyhlazení
  Další informace najdete v tématu [dokumenty v platformě WPF](documents-in-wpf.md).  
   
 ### <a name="lightweight-text-drawing"></a>Kreslení jednoduchý Text  
- Text lze nakreslit přímo na [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] objektů pomocí <xref:System.Windows.Media.DrawingContext.DrawText%2A> metodu <xref:System.Windows.Media.DrawingContext> objektu. Chcete-li použít tuto metodu, vytvoříte <xref:System.Windows.Media.FormattedText> objektu. Tento objekt umožňuje nakreslit více řádky textu, ve kterém každý znak v textu jednotlivě naformátovaná. Funkce <xref:System.Windows.Media.FormattedText> objekt obsahuje většinu funkcí příznaky DrawText v rozhraní API systému Win32. Kromě toho <xref:System.Windows.Media.FormattedText> objekt obsahuje funkce, jako je například podpora tlačítko se třemi tečkami, ve kterém se třemi tečkami zobrazí, když text překročí jeho hranice. Následující příklad ukazuje, text, který má několik formátování, včetně lineárního přechodu na druhý a třetí slova.  
+ Text lze nakreslit přímo na [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] objektů pomocí <xref:System.Windows.Media.DrawingContext.DrawText%2A> metodu <xref:System.Windows.Media.DrawingContext> objektu. Chcete-li použít tuto metodu, vytvoříte <xref:System.Windows.Media.FormattedText> objektu. Tento objekt umožňuje nakreslit více řádky textu, ve kterém každý znak v textu jednotlivě naformátovaná. Funkce <xref:System.Windows.Media.FormattedText> objekt obsahuje většinu funkcí příznaky DrawText v rozhraní Windows API. Kromě toho <xref:System.Windows.Media.FormattedText> objekt obsahuje funkce, jako je například podpora tlačítko se třemi tečkami, ve kterém se třemi tečkami zobrazí, když text překročí jeho hranice. Následující příklad ukazuje, text, který má několik formátování, včetně lineárního přechodu na druhý a třetí slova.  
   
  ![Text zobrazený pomocí objektu FormattedText](./media/typography-in-wpf/text-formatted-linear-gradient.jpg) 
   
