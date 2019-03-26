@@ -1,5 +1,5 @@
 ---
-title: Cesta "<pathname>' nebyl nalezen
+title: Cesta '<pathname>' nebyl nalezen
 ms.date: 07/20/2015
 f1_keywords:
 - vbrFileSystem_PathNotFound1
@@ -11,7 +11,7 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/15/2019
 ms.locfileid: "58041440"
 ---
-# <a name="path-pathname-not-found"></a>Cesta "\<cesta >' nebyl nalezen
+# <a name="path-pathname-not-found"></a>Cesta '\<cesta >' nebyl nalezen
 Nepovedlo se najít zadanou cestu cesta během operace přístupu k souborům nebo přístup k disku je operační systém. Cesta k souboru musí obsahovat specifikaci jednotky, adresářů a podadresářů, které musí procházet a vyhledejte soubor. Cesta může být relativní nebo absolutní.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  

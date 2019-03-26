@@ -13,8 +13,7 @@ ms.lasthandoff: 03/05/2019
 ms.locfileid: "57375243"
 ---
 # <a name="implementing-an-implicit-transaction-using-transaction-scope"></a>Implementace implicitní transakce s využitím oboru transakcí
-
-  <xref:System.Transactions.TransactionScope> Třída poskytuje jednoduchý způsob, jak označit bloku kódu jako účasti na transakci, aniž by bylo nutné k interakci se vlastní transakce. Obor transakce můžete vybrat a spravovat okolí transakce automaticky. Z důvodu jeho snadno použitelných a efektivitu, je doporučeno používat <xref:System.Transactions.TransactionScope> třídy při vývoji aplikace transakce.  
+<xref:System.Transactions.TransactionScope> Třída poskytuje jednoduchý způsob, jak označit bloku kódu jako účasti na transakci, aniž by bylo nutné k interakci se vlastní transakce. Obor transakce můžete vybrat a spravovat okolí transakce automaticky. Z důvodu jeho snadno použitelných a efektivitu, je doporučeno používat <xref:System.Transactions.TransactionScope> třídy při vývoji aplikace transakce.  
   
  Kromě toho není nutné zařazení prostředky explicitně s transakcí. Jakékoli <xref:System.Transactions> můžete zjišťovat existenci transakci okolí Autor oboru a automaticky zařazení správce prostředků (například SQL Server 2005).  
   
@@ -35,8 +34,7 @@ ms.locfileid: "57375243"
   
  Pokud <xref:System.Transactions.TransactionScope> objektu, původně vytvořil transakci skutečná práce potvrzování transakcí správcem transakcí dojde poté, co poslední řádek kódu **pomocí** bloku. Pokud nebyl vytvořen transakce, potvrzení dochází, pokud <xref:System.Transactions.CommittableTransaction.Commit%2A> je volána metodou vlastníka <xref:System.Transactions.CommittableTransaction> objektu. V tomto okamžiku správce transakcí volá prostředek manažery a informovat je na zápis nebo vrácení zpět, podle toho, jestli <xref:System.Transactions.TransactionScope.Complete%2A> byla volána metoda <xref:System.Transactions.TransactionScope> objektu.  
   
- **Pomocí** příkaz zajistí, že <xref:System.Transactions.TransactionScope.Dispose%2A> metodu <xref:System.Transactions.TransactionScope> objekt, se nazývá i v případě, že dojde k výjimce. 
-  <xref:System.Transactions.TransactionScope.Dispose%2A> Metoda označuje konec rozsahu transakce. Výjimky, k nimž došlo po volání této metody nemusí mít vliv na transakci. Tato metoda také obnoví okolí transakci ji předchozího stavu.  
+ **Pomocí** příkaz zajistí, že <xref:System.Transactions.TransactionScope.Dispose%2A> metodu <xref:System.Transactions.TransactionScope> objekt, se nazývá i v případě, že dojde k výjimce. <xref:System.Transactions.TransactionScope.Dispose%2A> Metoda označuje konec rozsahu transakce. Výjimky, k nimž došlo po volání této metody nemusí mít vliv na transakci. Tato metoda také obnoví okolí transakci ji předchozího stavu.  
   
  Objekt <xref:System.Transactions.TransactionAbortedException> je vyvolána, pokud obor vytvoří transakce a transakce je přerušená. Objekt <xref:System.Transactions.TransactionInDoubtException> je vyvolána, pokud správce transakcí nelze dosáhnout rozhodnutí o potvrzení. Pokud transakce není vyvolána žádná výjimka.  
   
@@ -123,11 +121,11 @@ using(TransactionScope scope1 = new TransactionScope())
 }  
 ```  
   
- Příklad ukazuje bloku kódu, bez jakékoli okolí transakce vytváření nového oboru (`scope1`) s <xref:System.Transactions.TransactionScopeOption.Required>. Rozsah `scope1` je kořenového oboru, který ji vytvoří novou transakci (transakce A) a usnadňuje transakce A okolí transakce. `Scope1`poté vytvoří tři více objektů s jiným <xref:System.Transactions.TransactionScopeOption> hodnotu. Můžete například `scope2` je vytvořen s <xref:System.Transactions.TransactionScopeOption.Required>, a vzhledem k tomu, že existuje okolí transakce, spojení první transakce vytvořené `scope1`. Všimněte si, že `scope3` kořenového oboru novou transakci a že je `scope4` nemá žádné okolí transakce.  
+ Příklad ukazuje bloku kódu, bez jakékoli okolí transakce vytváření nového oboru (`scope1`) s <xref:System.Transactions.TransactionScopeOption.Required>. Rozsah `scope1` je kořenového oboru, který ji vytvoří novou transakci (transakce A) a usnadňuje transakce A okolí transakce. `Scope1` poté vytvoří tři více objektů s jiným <xref:System.Transactions.TransactionScopeOption> hodnotu. Můžete například `scope2` je vytvořen s <xref:System.Transactions.TransactionScopeOption.Required>, a vzhledem k tomu, že existuje okolí transakce, spojení první transakce vytvořené `scope1`. Všimněte si, že `scope3` kořenového oboru novou transakci a že je `scope4` nemá žádné okolí transakce.  
   
  I když ve výchozím nastavení a většinu běžně používá hodnotu <xref:System.Transactions.TransactionScopeOption> je <xref:System.Transactions.TransactionScopeOption.Required>, všechny ostatní hodnoty, má své jedinečné účel.  
   
- <xref:System.Transactions.TransactionScopeOption.Suppress>je užitečné, pokud chcete zachovat prováděných části kódu a nechcete, aby na zrušení okolí transakce, pokud se nezdaří operace. Například když chcete provádět protokolování nebo auditovat operace, nebo když chcete publikovat události odběratelům bez ohledu na tom, zda váš okolí potvrzení nebo přerušení transakce. Tato hodnota slouží k mít část s kódem netransakční v rámci oboru transakcí, jak je znázorněno v následujícím příkladu.  
+ <xref:System.Transactions.TransactionScopeOption.Suppress> je užitečné, když chcete zachovat prováděných části kódu a nechcete, aby na zrušení okolí transakce, pokud se nezdaří operace. Například když chcete provádět protokolování nebo auditovat operace, nebo když chcete publikovat události odběratelům bez ohledu na tom, zda váš okolí potvrzení nebo přerušení transakce. Tato hodnota slouží k mít část s kódem netransakční v rámci oboru transakcí, jak je znázorněno v následujícím příkladu.  
   
 ```csharp  
 using(TransactionScope scope1 = new TransactionScope())  
