@@ -1,5 +1,5 @@
 ---
-title: Cesta "<pathname>' nebyl nalezen
+title: Cesta '<pathname>' nebyl nalezen
 ms.date: 07/20/2015
 f1_keywords:
 - vbrFileSystem_PathNotFound1
@@ -11,14 +11,14 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/15/2019
 ms.locfileid: "58041440"
 ---
-# <a name="path-pathname-not-found"></a><span data-ttu-id="ac2a8-102">Cesta "\<cesta >' nebyl nalezen</span><span class="sxs-lookup"><span data-stu-id="ac2a8-102">Path '\<pathname>' not found</span></span>
-<span data-ttu-id="ac2a8-103">Nepovedlo se najít zadanou cestu cesta během operace přístupu k souborům nebo přístup k disku je operační systém.</span><span class="sxs-lookup"><span data-stu-id="ac2a8-103">The operating system is unable to find the path specified path during a file-access or disk-access operation.</span></span> <span data-ttu-id="ac2a8-104">Cesta k souboru musí obsahovat specifikaci jednotky, adresářů a podadresářů, které musí procházet a vyhledejte soubor.</span><span class="sxs-lookup"><span data-stu-id="ac2a8-104">The path to a file must include the drive specification and the directories and subdirectories that must be traversed to locate the file.</span></span> <span data-ttu-id="ac2a8-105">Cesta může být relativní nebo absolutní.</span><span class="sxs-lookup"><span data-stu-id="ac2a8-105">A path can be relative or absolute.</span></span>  
+# <a name="path-pathname-not-found"></a><span data-ttu-id="acd56-102">Cesta '\<cesta >' nebyl nalezen</span><span class="sxs-lookup"><span data-stu-id="acd56-102">Path '\<pathname>' not found</span></span>
+<span data-ttu-id="acd56-103">Nepovedlo se najít zadanou cestu cesta během operace přístupu k souborům nebo přístup k disku je operační systém.</span><span class="sxs-lookup"><span data-stu-id="acd56-103">The operating system is unable to find the path specified path during a file-access or disk-access operation.</span></span> <span data-ttu-id="acd56-104">Cesta k souboru musí obsahovat specifikaci jednotky, adresářů a podadresářů, které musí procházet a vyhledejte soubor.</span><span class="sxs-lookup"><span data-stu-id="acd56-104">The path to a file must include the drive specification and the directories and subdirectories that must be traversed to locate the file.</span></span> <span data-ttu-id="acd56-105">Cesta může být relativní nebo absolutní.</span><span class="sxs-lookup"><span data-stu-id="acd56-105">A path can be relative or absolute.</span></span>  
   
-## <a name="to-correct-this-error"></a><span data-ttu-id="ac2a8-106">Oprava této chyby</span><span class="sxs-lookup"><span data-stu-id="ac2a8-106">To correct this error</span></span>  
+## <a name="to-correct-this-error"></a><span data-ttu-id="acd56-106">Oprava této chyby</span><span class="sxs-lookup"><span data-stu-id="acd56-106">To correct this error</span></span>  
   
-1.  <span data-ttu-id="ac2a8-107">Ujistěte se, že cesta obsahuje požadované prvky.</span><span class="sxs-lookup"><span data-stu-id="ac2a8-107">Ensure that the path includes the required elements.</span></span>  
+1.  <span data-ttu-id="acd56-107">Ujistěte se, že cesta obsahuje požadované prvky.</span><span class="sxs-lookup"><span data-stu-id="acd56-107">Ensure that the path includes the required elements.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="ac2a8-108">Viz také:</span><span class="sxs-lookup"><span data-stu-id="ac2a8-108">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="acd56-108">Viz také:</span><span class="sxs-lookup"><span data-stu-id="acd56-108">See also</span></span>
 
-- [<span data-ttu-id="ac2a8-109">My.Computer.FileSystem</span><span class="sxs-lookup"><span data-stu-id="ac2a8-109">My.Computer.FileSystem</span></span>](xref:Microsoft.VisualBasic.FileIO.FileSystem)
-- [<span data-ttu-id="ac2a8-110">Postupy: Analýza cest k souborům</span><span class="sxs-lookup"><span data-stu-id="ac2a8-110">How to: Parse File Paths</span></span>](../../visual-basic/developing-apps/programming/drives-directories-files/how-to-parse-file-paths.md)
+- [<span data-ttu-id="acd56-109">My.Computer.FileSystem</span><span class="sxs-lookup"><span data-stu-id="acd56-109">My.Computer.FileSystem</span></span>](xref:Microsoft.VisualBasic.FileIO.FileSystem)
+- [<span data-ttu-id="acd56-110">Postupy: Analýza cest k souborům</span><span class="sxs-lookup"><span data-stu-id="acd56-110">How to: Parse File Paths</span></span>](../../visual-basic/developing-apps/programming/drives-directories-files/how-to-parse-file-paths.md)
