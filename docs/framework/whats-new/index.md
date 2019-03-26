@@ -868,7 +868,7 @@ Toto chování není žádoucí, při připojování ke službě Azure SQL Datab
 
 Přidání nového `PoolBlockingPeriod` – klíčové slovo umožňuje vyberte období blokování pro vaši aplikaci nejvhodnější. Mezi hodnoty patří:
 
-`Auto`
+<xref:System.Data.SqlClient.PoolBlockingPeriod.Auto>
 
 Fond připojení blokování období pro aplikaci, která se připojuje ke službě Azure SQL Database je zakázaná a fond připojení blokování období pro aplikaci, která se připojuje k jiné instanci serveru SQL Server je povolen. Jedná se o výchozí hodnotu. Pokud název koncového bodu serveru skončí s žádným z následujících akcí, jsou považovány za Azure SQL Database:
 
@@ -880,11 +880,11 @@ Fond připojení blokování období pro aplikaci, která se připojuje ke služ
 
 - .database.cloudapi.de
 
-`AlwaysBlock`
+<xref:System.Data.SqlClient.PoolBlockingPeriod.AlwaysBlock>
 
 V období blokování fondu připojení je vždy povolena.
 
-`NeverBlock`
+<xref:System.Data.SqlClient.PoolBlockingPeriod.NeverBlock>
 
 V období blokování fondu připojení je vždy zakázaná.
 
