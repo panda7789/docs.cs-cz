@@ -1,72 +1,133 @@
 ---
-title: 'Postupy: Vytvoření klienta Windows Communication Foundation'
-ms.date: 09/14/2018
+title: 'Kurz: Vytvoření klienta Windows Communication Foundation'
+ms.dat8: 03/19/2019
 helpviewer_keywords:
 - clients [WCF], running
 - WCF clients [WCF], running
 ms.assetid: a67884cc-1c4b-416b-8c96-5c954099f19f
-ms.openlocfilehash: 9572f3e2c0cddf75daf343f250b16e94bc2b0dbf
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 051275e56a8e63c6ab8136dbb9e24bdcf4c387df
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50181667"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58411854"
 ---
-# <a name="how-to-create-a-windows-communication-foundation-client"></a><span data-ttu-id="df5f6-102">Postupy: Vytvoření klienta Windows Communication Foundation</span><span class="sxs-lookup"><span data-stu-id="df5f6-102">How to: Create a Windows Communication Foundation Client</span></span>
+# <a name="tutorial-create-a-windows-communication-foundation-client"></a><span data-ttu-id="225f5-102">Kurz: Vytvoření klienta Windows Communication Foundation</span><span class="sxs-lookup"><span data-stu-id="225f5-102">Tutorial: Create a Windows Communication Foundation client</span></span>
 
-<span data-ttu-id="df5f6-103">Toto je čtvrtý z šesti úkolů potřebný k vytvoření aplikace Windows Communication Foundation (WCF).</span><span class="sxs-lookup"><span data-stu-id="df5f6-103">This is the fourth of six tasks required to create a Windows Communication Foundation (WCF) application.</span></span> <span data-ttu-id="df5f6-104">Přehled všech šesti úkoly, naleznete v tématu [kurz Začínáme](../../../docs/framework/wcf/getting-started-tutorial.md) tématu.</span><span class="sxs-lookup"><span data-stu-id="df5f6-104">For an overview of all six of the tasks, see the [Getting Started Tutorial](../../../docs/framework/wcf/getting-started-tutorial.md) topic.</span></span>
+<span data-ttu-id="225f5-103">Tento kurz popisuje čtvrté pět úloh potřebných k vytvoření základní aplikace Windows Communication Foundation (WCF).</span><span class="sxs-lookup"><span data-stu-id="225f5-103">This tutorial describes the fourth of five tasks required to create a basic Windows Communication Foundation (WCF) application.</span></span> <span data-ttu-id="225f5-104">Přehled v kurzech, naleznete v tématu [kurzu: Začínáme s aplikacemi Windows Communication Foundation](getting-started-tutorial.md).</span><span class="sxs-lookup"><span data-stu-id="225f5-104">For an overview of the tutorials, see [Tutorial: Get started with Windows Communication Foundation applications](getting-started-tutorial.md).</span></span>
 
-<span data-ttu-id="df5f6-105">Toto téma popisuje, jak načíst metadata ze služby WCF a použijte ji k vytvoření proxy WCF, které můžete přístup ke službě.</span><span class="sxs-lookup"><span data-stu-id="df5f6-105">This topic describes how to retrieve metadata from a WCF service and use it to create a WCF proxy that can access the service.</span></span> <span data-ttu-id="df5f6-106">Tuto úlohu provedete pomocí **přidat odkaz na službu** funkce poskytované službou Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="df5f6-106">This task is completed by using the **Add Service Reference** functionality provided by Visual Studio.</span></span> <span data-ttu-id="df5f6-107">Tento nástroj získává metadata z koncového bodu služby MEX a vygeneruje soubor spravovaném zdrojovém kódu pro proxy server klienta v jazyce rozhodli (C# ve výchozím nastavení).</span><span class="sxs-lookup"><span data-stu-id="df5f6-107">This tool obtains the metadata from the service’s MEX endpoint and generates a managed source code file for a client proxy in the language you have chosen (C# by default).</span></span> <span data-ttu-id="df5f6-108">Kromě vytvoření proxy serveru klienta, nástroj také vytvoří nebo aktualizuje konfigurační soubor klienta, která umožňuje klientské aplikaci připojení ke službě na jeden z jeho koncových bodů.</span><span class="sxs-lookup"><span data-stu-id="df5f6-108">In addition to creating the client proxy, the tool also creates or updates the client configuration file which enables the client application to connect to the service at one of its endpoints.</span></span>
-
-> [!NOTE]
-> <span data-ttu-id="df5f6-109">Můžete také použít [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) nástroj pro generování třídy proxy serveru a konfigurace namísto použití **přidat odkaz na službu** v sadě Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="df5f6-109">You can also use the [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) tool to generate the proxy class and configuration instead of using **Add Service Reference** in Visual Studio.</span></span>
+<span data-ttu-id="225f5-105">Dalším úkolem pro vytvoření aplikace WCF je vytvoření klienta načtením metadata ze služby WCF.</span><span class="sxs-lookup"><span data-stu-id="225f5-105">The next task for creating a WCF application is to create a client by retrieving metadata from a WCF service.</span></span> <span data-ttu-id="225f5-106">Přidání odkazu na službu, která načte metadata z koncového bodu MEX služby pomocí sady Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="225f5-106">You use Visual Studio to add a service reference, which gets the metadata from the service’s MEX endpoint.</span></span> <span data-ttu-id="225f5-107">Visual Studio poté vygeneruje soubor spravovaném zdrojovém kódu pro proxy server klienta v jazyce, který jste zvolili.</span><span class="sxs-lookup"><span data-stu-id="225f5-107">Visual Studio then generates a managed source code file for a client proxy in the language you've chosen.</span></span> <span data-ttu-id="225f5-108">Také vytvoří soubor konfigurace klienta (*App.config*).</span><span class="sxs-lookup"><span data-stu-id="225f5-108">It also creates a client configuration file (*App.config*).</span></span> <span data-ttu-id="225f5-109">Tento soubor umožňuje klientské aplikaci připojení ke službě na koncový bod.</span><span class="sxs-lookup"><span data-stu-id="225f5-109">This file enables the client application to connect to the service at an endpoint.</span></span> 
 
 > [!NOTE]
-> <span data-ttu-id="df5f6-110">Při volání služby WCF z projektu knihovny tříd v sadě Visual Studio, můžete použít **přidat odkaz na službu** funkci, která automaticky generovat proxy serveru a související konfigurační soubor.</span><span class="sxs-lookup"><span data-stu-id="df5f6-110">When calling a WCF service from a class library project in Visual Studio, you can use the **Add Service Reference** feature to automatically generate a proxy and associated configuration file.</span></span> <span data-ttu-id="df5f6-111">Konfigurační soubor se nepoužije projekt knihovny tříd.</span><span class="sxs-lookup"><span data-stu-id="df5f6-111">The configuration file will not be used by the class library project.</span></span> <span data-ttu-id="df5f6-112">Budete muset přidat nastavení v souboru vygenerovanou konfiguraci do souboru app.config pro spustitelný soubor, který volá knihovnu tříd.</span><span class="sxs-lookup"><span data-stu-id="df5f6-112">You need to add the settings in the generated configuration file to the app.config file for the executable that calls the class library.</span></span>
+> <span data-ttu-id="225f5-110">Při volání služby WCF z projektu knihovny tříd v sadě Visual Studio, použijte **přidat odkaz na službu** funkci, která automaticky generovat proxy serveru a související konfigurační soubor.</span><span class="sxs-lookup"><span data-stu-id="225f5-110">If you call a WCF service from a class library project in Visual Studio, use the **Add Service Reference** feature to automatically generate a proxy and associated configuration file.</span></span> <span data-ttu-id="225f5-111">Ale protože projekty knihovny tříd nepoužívejte tento konfigurační soubor, budete muset přidat nastavení v generované konfiguračního souboru k *App.config* soubor pro spustitelný soubor, který volá knihovnu tříd.</span><span class="sxs-lookup"><span data-stu-id="225f5-111">However, because class library projects don't use this configuration file, you need to add the settings in the generated configuration file to the *App.config* file for the executable that calls the class library.</span></span>
 
-<span data-ttu-id="df5f6-113">Klientská aplikace používá třídu proxy generovaný ke komunikaci se službou.</span><span class="sxs-lookup"><span data-stu-id="df5f6-113">The client application uses the generated proxy class to communicate with the service.</span></span> <span data-ttu-id="df5f6-114">Tento postup je popsaný v [postupy: používání klienta](../../../docs/framework/wcf/how-to-use-a-wcf-client.md).</span><span class="sxs-lookup"><span data-stu-id="df5f6-114">This procedure is described in [How to: Use a Client](../../../docs/framework/wcf/how-to-use-a-wcf-client.md).</span></span>
+> [!NOTE]
+> <span data-ttu-id="225f5-112">Jako alternativu použijte [nástroj ServiceModel Metadata Utility](#servicemodel-metadata-utility-tool) místo sady Visual Studio ke generování třídy a konfigurační soubor proxy serveru.</span><span class="sxs-lookup"><span data-stu-id="225f5-112">As an alternative, use the [ServiceModel Metadata Utility tool](#servicemodel-metadata-utility-tool) instead of Visual Studio to generate the proxy class and configuration file.</span></span>
 
-## <a name="to-create-a-windows-communication-foundation-client"></a><span data-ttu-id="df5f6-115">K vytvoření klienta Windows Communication Foundation</span><span class="sxs-lookup"><span data-stu-id="df5f6-115">To create a Windows Communication Foundation client</span></span>
+<span data-ttu-id="225f5-113">Klientská aplikace používá třídu proxy generovaný ke komunikaci se službou.</span><span class="sxs-lookup"><span data-stu-id="225f5-113">The client application uses the generated proxy class to communicate with the service.</span></span> <span data-ttu-id="225f5-114">Tento postup je popsaný v [kurzu: Používání klienta](how-to-use-a-wcf-client.md).</span><span class="sxs-lookup"><span data-stu-id="225f5-114">This procedure is described in [Tutorial: Use a client](how-to-use-a-wcf-client.md).</span></span>
 
-1. <span data-ttu-id="df5f6-116">Vytvořte nový projekt konzolové aplikace v sadě Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="df5f6-116">Create a new console application project in Visual Studio.</span></span> <span data-ttu-id="df5f6-117">Klikněte pravým tlačítkem na řešení Začínáme v **Průzkumníka řešení** a vyberte **přidat** > **nový projekt**.</span><span class="sxs-lookup"><span data-stu-id="df5f6-117">Right-click on the Getting Started solution in **Solution Explorer** and select **Add** > **New Project**.</span></span> <span data-ttu-id="df5f6-118">V **přidat nový projekt** dialogového okna na levé straně, vyberte **Windows Desktop** kategorie v části **Visual C#** nebo **jazyka Visual Basic**.</span><span class="sxs-lookup"><span data-stu-id="df5f6-118">In the **Add New Project** dialog, on the left-hand side, select the **Windows Desktop** category under **Visual C#** or **Visual Basic**.</span></span> <span data-ttu-id="df5f6-119">Vyberte **Konzolová aplikace (.NET Framework)** šablony a poté pojmenujte projekt **GettingStartedClient**.</span><span class="sxs-lookup"><span data-stu-id="df5f6-119">Select the **Console App (.NET Framework)** template, and then name the project **GettingStartedClient**.</span></span>
+<span data-ttu-id="225f5-115">V tomto kurzu se naučíte:</span><span class="sxs-lookup"><span data-stu-id="225f5-115">In this tutorial, you learn how to:</span></span>
+> [!div class="checklist"]
+> - <span data-ttu-id="225f5-116">Vytvořte a nakonfigurujte projekt konzolové aplikace pro klienta WCF.</span><span class="sxs-lookup"><span data-stu-id="225f5-116">Create and configure a console app project for the WCF client.</span></span>
+> - <span data-ttu-id="225f5-117">Přidání odkazu na službu ve službě WCF pro vygenerování souborů třídy a konfiguraci proxy serveru.</span><span class="sxs-lookup"><span data-stu-id="225f5-117">Add a service reference to the WCF service to generate the proxy class and configuration files.</span></span>
 
-2. <span data-ttu-id="df5f6-120">Přidáte odkaz na System.ServiceModel GettingStartedClient projektu.</span><span class="sxs-lookup"><span data-stu-id="df5f6-120">Add a reference to System.ServiceModel to the GettingStartedClient project.</span></span> <span data-ttu-id="df5f6-121">Klikněte pravým tlačítkem na **odkazy** ve složce projektu GettingStartedClient v **Průzkumníka řešení**a pak vyberte **přidat odkaz**.</span><span class="sxs-lookup"><span data-stu-id="df5f6-121">Right-click on the **References** folder under the GettingStartedClient project in **Solution Explorer**, and then select **Add Reference**.</span></span> <span data-ttu-id="df5f6-122">V **přidat odkaz** dialogového okna, vyberte **Framework** na levé straně dialogového okna v části **sestavení**.</span><span class="sxs-lookup"><span data-stu-id="df5f6-122">In the **Add Reference** dialog, select **Framework** on the left-hand side of the dialog under **Assemblies**.</span></span> <span data-ttu-id="df5f6-123">Vyhledejte a vyberte **System.ServiceModel**a klikněte na tlačítko **OK**.</span><span class="sxs-lookup"><span data-stu-id="df5f6-123">Find and select **System.ServiceModel**, and then choose **OK**.</span></span> <span data-ttu-id="df5f6-124">Uložte řešení tak, že vyberete **souboru** > **Uložit vše**.</span><span class="sxs-lookup"><span data-stu-id="df5f6-124">Save the solution by selecting **File** > **Save All**.</span></span>
 
-3. <span data-ttu-id="df5f6-125">Přidání odkazu na službu ve službě kalkulačku.</span><span class="sxs-lookup"><span data-stu-id="df5f6-125">Add a service reference to the Calculator Service.</span></span>
+## <a name="create-a-windows-communication-foundation-client"></a><span data-ttu-id="225f5-118">Vytvoření klienta Windows Communication Foundation</span><span class="sxs-lookup"><span data-stu-id="225f5-118">Create a Windows Communication Foundation client</span></span>
 
-   1. <span data-ttu-id="df5f6-126">Nejprve spusťte GettingStartedHost konzolové aplikace.</span><span class="sxs-lookup"><span data-stu-id="df5f6-126">First, start up the GettingStartedHost console application.</span></span>
+1. <span data-ttu-id="225f5-119">Vytvořte projekt konzolové aplikace v sadě Visual Studio:</span><span class="sxs-lookup"><span data-stu-id="225f5-119">Create a console app project in Visual Studio:</span></span> 
 
-   2. <span data-ttu-id="df5f6-127">Po spuštění hostitele, klikněte pravým tlačítkem **odkazy** ve složce projektu GettingStartedClient v **Průzkumníku řešení** a vyberte **přidat**  >   **Odkaz na službu**.</span><span class="sxs-lookup"><span data-stu-id="df5f6-127">Once the host is running, right-click the **References** folder under the GettingStartedClient project in **Solution Explorer** and select **Add** > **Service Reference**.</span></span>
+    1. <span data-ttu-id="225f5-120">Z **souboru** nabídce vyberte možnost **otevřít** > **projekt či řešení** a přejděte do **GettingStarted** řešení můžete vytvořené (*GettingStarted.sln*).</span><span class="sxs-lookup"><span data-stu-id="225f5-120">From the **File** menu, select **Open** > **Project/Solution** and browse to the **GettingStarted** solution you previously created (*GettingStarted.sln*).</span></span> <span data-ttu-id="225f5-121">Vyberte **Open** (Otevřít).</span><span class="sxs-lookup"><span data-stu-id="225f5-121">Select **Open**.</span></span>
 
-   3. <span data-ttu-id="df5f6-128">Do pole Adresa zadejte následující adresu URL **přidat odkaz na službu** dialogové okno: [http://localhost:8000/GettingStarted/CalculatorService](http://localhost:8000/GettingStarted/CalculatorService)</span><span class="sxs-lookup"><span data-stu-id="df5f6-128">Enter the following URL in the address box of the **Add Service Reference** dialog: [http://localhost:8000/GettingStarted/CalculatorService](http://localhost:8000/GettingStarted/CalculatorService)</span></span>
+    2. <span data-ttu-id="225f5-122">Z **zobrazení** nabídce vyberte možnost **Průzkumníka řešení**.</span><span class="sxs-lookup"><span data-stu-id="225f5-122">From the **View** menu, select **Solution Explorer**.</span></span>
 
-   4. <span data-ttu-id="df5f6-129">Zvolte **Přejít**.</span><span class="sxs-lookup"><span data-stu-id="df5f6-129">Choose **Go**.</span></span>
+    3. <span data-ttu-id="225f5-123">V **Průzkumníka řešení** okna, vyberte **GettingStarted** řešení (nejvyšší uzel) a pak vyberte **přidat** > **nový projekt** z místní nabídky.</span><span class="sxs-lookup"><span data-stu-id="225f5-123">In the **Solution Explorer** window, select the **GettingStarted** solution (top node), and then select **Add** > **New Project** from the shortcut menu.</span></span> 
+    
+    4. <span data-ttu-id="225f5-124">V **přidat nový projekt** na levé straně vyberte okno **Windows Desktop** kategorie v části **Visual C#**  nebo **jazyka Visual Basic**.</span><span class="sxs-lookup"><span data-stu-id="225f5-124">In the **Add New Project** window, on the left side, select the **Windows Desktop** category under **Visual C#** or **Visual Basic**.</span></span> 
 
-   <span data-ttu-id="df5f6-130">Se zobrazí CalculatorService **služby** pole se seznamem.</span><span class="sxs-lookup"><span data-stu-id="df5f6-130">The CalculatorService is displayed in the **Services** list box.</span></span> <span data-ttu-id="df5f6-131">Dvakrát klikněte na panel CalculatorService se rozbalí a zobrazí služba kontraktů implementovaných službou.</span><span class="sxs-lookup"><span data-stu-id="df5f6-131">Double-click CalculatorService to expand it and show the service contracts implemented by the service.</span></span> <span data-ttu-id="df5f6-132">Ponechte výchozí obor názvů jako- a zvolíte **OK**.</span><span class="sxs-lookup"><span data-stu-id="df5f6-132">Leave the default namespace as-is and choose **OK**.</span></span>
+    5. <span data-ttu-id="225f5-125">Vyberte **Konzolová aplikace (.NET Framework)** šablony a zadejte *GettingStartedClient* pro **název**.</span><span class="sxs-lookup"><span data-stu-id="225f5-125">Select the **Console App (.NET Framework)** template, and enter *GettingStartedClient* for the **Name**.</span></span> <span data-ttu-id="225f5-126">Vyberte **OK**.</span><span class="sxs-lookup"><span data-stu-id="225f5-126">Select **OK**.</span></span>
 
-    <span data-ttu-id="df5f6-133">Když přidáte odkaz na službu pomocí sady Visual Studio, objeví nová položka v **Průzkumníka řešení** pod **odkazy na služby** GettingStartedClient projektu ve složce.</span><span class="sxs-lookup"><span data-stu-id="df5f6-133">When you add a reference to a service using Visual Studio, a new item appears in **Solution Explorer** under the **Service References** folder under the GettingStartedClient project.</span></span> <span data-ttu-id="df5f6-134">Pokud používáte [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) jsou generovány nástroj, zdrojový soubor a soubor app.config.</span><span class="sxs-lookup"><span data-stu-id="df5f6-134">If you use the [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) tool, a source code file and app.config file are generated.</span></span>
+2. <span data-ttu-id="225f5-127">Přidat odkaz **GettingStartedClient** projektu <xref:System.ServiceModel> sestavení:</span><span class="sxs-lookup"><span data-stu-id="225f5-127">Add a reference in the **GettingStartedClient** project to the <xref:System.ServiceModel> assembly:</span></span> 
 
-    <span data-ttu-id="df5f6-135">Můžete také použít nástroj příkazového řádku [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) pomocí příslušných přepínačů vytvořte klientský kód.</span><span class="sxs-lookup"><span data-stu-id="df5f6-135">You can also use the command-line tool [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) with the appropriate switches to create the client code.</span></span> <span data-ttu-id="df5f6-136">Následující příklad generuje soubor kódu a konfiguračním souboru služby.</span><span class="sxs-lookup"><span data-stu-id="df5f6-136">The following example generates a code file and a configuration file for the service.</span></span> <span data-ttu-id="df5f6-137">První příklad ukazuje, jak generovat proxy serveru v jazyce Visual Basic a druhý ukazuje, jak generovat proxy serveru v jazyce C#:</span><span class="sxs-lookup"><span data-stu-id="df5f6-137">The first example shows how to generate the proxy in VB, and the second shows how to generate the proxy in C#:</span></span>
+    1.  <span data-ttu-id="225f5-128">V **Průzkumníka řešení** okna, vyberte **odkazy** ve složce **GettingStartedClient** projektu a pak vyberte **přidat odkaz** z místní nabídky.</span><span class="sxs-lookup"><span data-stu-id="225f5-128">In the **Solution Explorer** window, select the **References** folder under the **GettingStartedClient** project, and then select **Add Reference** from the shortcut menu.</span></span> 
 
-    ```shell
-    svcutil.exe /language:vb /out:generatedProxy.vb /config:app.config http://localhost:8000/GettingStarted/CalculatorService
-    ```
+    2. <span data-ttu-id="225f5-129">V **přidat odkaz** okně v části **sestavení** v levé části okna vyberte **Framework**.</span><span class="sxs-lookup"><span data-stu-id="225f5-129">In the **Add Reference** window, under **Assemblies** on the left side of the window, select **Framework**.</span></span>
+    
+    3. <span data-ttu-id="225f5-130">Vyhledejte a vyberte **System.ServiceModel**a klikněte na tlačítko **OK**.</span><span class="sxs-lookup"><span data-stu-id="225f5-130">Find and select **System.ServiceModel**, and then choose **OK**.</span></span> 
 
-    ```shell
-    svcutil.exe /language:cs /out:generatedProxy.cs /config:app.config http://localhost:8000/GettingStarted/CalculatorService
-    ```
+    4. <span data-ttu-id="225f5-131">Uložte řešení tak, že vyberete **souboru** > **Uložit vše**.</span><span class="sxs-lookup"><span data-stu-id="225f5-131">Save the solution by selecting **File** > **Save All**.</span></span>
 
-## <a name="next-steps"></a><span data-ttu-id="df5f6-138">Další kroky</span><span class="sxs-lookup"><span data-stu-id="df5f6-138">Next steps</span></span>
+3. <span data-ttu-id="225f5-132">Přidání odkazu na službu do kalkulačky služby:</span><span class="sxs-lookup"><span data-stu-id="225f5-132">Add a service reference to the calculator service:</span></span>
 
-<span data-ttu-id="df5f6-139">Vytvořili jste proxy server, který klientská aplikace bude používat k volání služby kalkulačku.</span><span class="sxs-lookup"><span data-stu-id="df5f6-139">You've created the proxy that the client application will use to call the calculator service.</span></span> <span data-ttu-id="df5f6-140">Pokračujte k dalšímu tématu, v řadě.</span><span class="sxs-lookup"><span data-stu-id="df5f6-140">Proceed to the next topic in the series.</span></span>
+   1. <span data-ttu-id="225f5-133">V **Průzkumníka řešení** okna, vyberte **odkazy** ve složce **GettingStartedClient** projektu a pak vyberte **přidat odkaz na službu**  z místní nabídky.</span><span class="sxs-lookup"><span data-stu-id="225f5-133">In the **Solution Explorer** window, select the **References** folder under the **GettingStartedClient** project, and then select **Add Service Reference** from the shortcut menu.</span></span>
+
+   2. <span data-ttu-id="225f5-134">V **přidat odkaz na službu** okně **Discover**.</span><span class="sxs-lookup"><span data-stu-id="225f5-134">In the **Add Service Reference** window, select **Discover**.</span></span>
+
+      <span data-ttu-id="225f5-135">Spuštění služby CalculatorService a sady Visual Studio zobrazí ho v **služby** pole.</span><span class="sxs-lookup"><span data-stu-id="225f5-135">The CalculatorService service starts and Visual Studio displays it in the **Services** box.</span></span>
+
+   3. <span data-ttu-id="225f5-136">Vyberte **CalculatorService** se rozbalí a zobrazí služba kontraktů implementovaných službou.</span><span class="sxs-lookup"><span data-stu-id="225f5-136">Select **CalculatorService** to expand it and display the service contracts implemented by the service.</span></span> <span data-ttu-id="225f5-137">Ponechte výchozí nastavení **Namespace** a zvolte **OK**.</span><span class="sxs-lookup"><span data-stu-id="225f5-137">Leave the default **Namespace** and choose **OK**.</span></span>
+
+      <span data-ttu-id="225f5-138">Přidá novou položku v sadě Visual Studio **připojené služby** složky **GettingStartedClient** projektu.</span><span class="sxs-lookup"><span data-stu-id="225f5-138">Visual Studio adds a new item under the **Connected Services** folder in the **GettingStartedClient** project.</span></span> 
+
+
+### <a name="servicemodel-metadata-utility-tool"></a><span data-ttu-id="225f5-139">Nástroj ServiceModel Metadata Utility</span><span class="sxs-lookup"><span data-stu-id="225f5-139">ServiceModel Metadata Utility tool</span></span>
+
+<span data-ttu-id="225f5-140">Následující příklady ukazují, jak volitelně použít [nástroj ServiceModel Metadata Utility (Svcutil.exe)](servicemodel-metadata-utility-tool-svcutil-exe.md) ke generování souboru třídy proxy serveru.</span><span class="sxs-lookup"><span data-stu-id="225f5-140">The following examples show how to optionally use the [ServiceModel Metadata Utility tool (Svcutil.exe)](servicemodel-metadata-utility-tool-svcutil-exe.md) to generate the proxy class file.</span></span> <span data-ttu-id="225f5-141">Tento nástroj generuje soubor třídy proxy a *App.config* souboru.</span><span class="sxs-lookup"><span data-stu-id="225f5-141">This tool generates the proxy class file and the *App.config* file.</span></span> <span data-ttu-id="225f5-142">Následující příklady ukazují, jak generovat proxy serverem v C# a Visual Basic, v uvedeném pořadí:</span><span class="sxs-lookup"><span data-stu-id="225f5-142">The following examples show how to generate the proxy in C# and Visual Basic, respectively:</span></span>
+
+```shell
+svcutil.exe /language:cs /out:generatedProxy.cs /config:app.config http://localhost:8000/GettingStarted/CalculatorService
+```
+
+```shell
+svcutil.exe /language:vb /out:generatedProxy.vb /config:app.config http://localhost:8000/GettingStarted/CalculatorService
+```
+
+### <a name="client-configuration-file"></a><span data-ttu-id="225f5-143">Soubor konfigurace klienta</span><span class="sxs-lookup"><span data-stu-id="225f5-143">Client configuration file</span></span>
+
+<span data-ttu-id="225f5-144">Po vytvoření klienta, vytvoří Visual Studio **App.config** v konfiguračním souboru **GettingStartedClient** projekt, který by měl vypadat přibližně jako v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="225f5-144">After you've created the client, Visual Studio creates the **App.config** configuration file in the **GettingStartedClient** project, which should be similar to the following example:</span></span>
+
+```xml
+    <?xml version="1.0" encoding="utf-8" ?>
+    <configuration>
+        <startup>
+            <!-- specifies the version of WCF to use-->
+            <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.6.1" />
+        </startup>
+        <system.serviceModel>
+            <bindings>
+                <!-- Uses wsHttpBinding-->
+                <wsHttpBinding>
+                    <binding name="WSHttpBinding_ICalculator" />
+                </wsHttpBinding>
+            </bindings>
+            <client>
+                <!-- specifies the endpoint to use when calling the service -->
+                <endpoint address="http://localhost:8000/GettingStarted/CalculatorService"
+                    binding="wsHttpBinding" bindingConfiguration="WSHttpBinding_ICalculator"
+                    contract="ServiceReference1.ICalculator" name="WSHttpBinding_ICalculator">
+                    <identity>
+                        <dns value="localhost" />
+                    </identity>
+                </endpoint>
+            </client>
+        </system.serviceModel>
+    </configuration>
+```
+
+<span data-ttu-id="225f5-145">V části [ \<system.serviceModel >](../configure-apps/file-schema/wcf/system-servicemodel.md) části, Všimněte si, že [ \<koncový bod >](../configure-apps/file-schema/wcf/endpoint-element.md) elementu.</span><span class="sxs-lookup"><span data-stu-id="225f5-145">Under the [\<system.serviceModel>](../configure-apps/file-schema/wcf/system-servicemodel.md) section, notice the [\<endpoint>](../configure-apps/file-schema/wcf/endpoint-element.md) element.</span></span> <span data-ttu-id="225f5-146">**&lt;Koncový bod&gt;** definuje element koncového bodu, který klient používá pro přístup ke službě následujícím způsobem:</span><span class="sxs-lookup"><span data-stu-id="225f5-146">The **&lt;endpoint&gt;** element defines the endpoint that the client uses to access the service as follows:</span></span>
+- <span data-ttu-id="225f5-147">Adresa: `http://localhost:8000/GettingStarted/CalculatorService`.</span><span class="sxs-lookup"><span data-stu-id="225f5-147">Address: `http://localhost:8000/GettingStarted/CalculatorService`.</span></span> <span data-ttu-id="225f5-148">Adresa koncového bodu.</span><span class="sxs-lookup"><span data-stu-id="225f5-148">The address of the endpoint.</span></span>
+- <span data-ttu-id="225f5-149">Kontrakt služby: `ServiceReference1.ICalculator`.</span><span class="sxs-lookup"><span data-stu-id="225f5-149">Service contract: `ServiceReference1.ICalculator`.</span></span> <span data-ttu-id="225f5-150">Kontrakt služby zpracovává vnitřní komunikaci mezi klienta WCF a službou.</span><span class="sxs-lookup"><span data-stu-id="225f5-150">The service contract handles communication between the WCF client and the service.</span></span> <span data-ttu-id="225f5-151">Visual Studio vygeneruje tuto smlouvu, když jste použili jeho **přidat odkaz na službu** funkce.</span><span class="sxs-lookup"><span data-stu-id="225f5-151">Visual Studio generated this contract when you used its **Add Service Reference** function.</span></span> <span data-ttu-id="225f5-152">Je v podstatě kopií kontrakt, který jste definovali v projektu GettingStartedLib.</span><span class="sxs-lookup"><span data-stu-id="225f5-152">It's essentially a copy of the contract that you defined in the GettingStartedLib project.</span></span> 
+- <span data-ttu-id="225f5-153">Vazba: <xref:System.ServiceModel.WSHttpBinding>.</span><span class="sxs-lookup"><span data-stu-id="225f5-153">Binding: <xref:System.ServiceModel.WSHttpBinding>.</span></span> <span data-ttu-id="225f5-154">Vazba určuje HTTP jako přenosu, interoperabilní zabezpečení a další podrobnosti o konfiguraci.</span><span class="sxs-lookup"><span data-stu-id="225f5-154">The binding specifies HTTP as the transport, interoperable security, and other configuration details.</span></span>
+
+## <a name="next-steps"></a><span data-ttu-id="225f5-155">Další kroky</span><span class="sxs-lookup"><span data-stu-id="225f5-155">Next steps</span></span>
+
+<span data-ttu-id="225f5-156">V tomto kurzu jste se naučili:</span><span class="sxs-lookup"><span data-stu-id="225f5-156">In this tutorial, you learned how to:</span></span>
+> [!div class="checklist"]
+> - <span data-ttu-id="225f5-157">Vytvořte a nakonfigurujte projekt konzolové aplikace pro klienta WCF.</span><span class="sxs-lookup"><span data-stu-id="225f5-157">Create and configure a console app project for the WCF client.</span></span>
+> - <span data-ttu-id="225f5-158">Přidání odkazu na službu ve službě WCF ke generování proxy třída a konfigurační soubory pro klientskou aplikaci.</span><span class="sxs-lookup"><span data-stu-id="225f5-158">Add a service reference to the WCF service to generate the proxy class and configuration files for the client application.</span></span>
+
+<span data-ttu-id="225f5-159">Přejděte k dalšímu kurzu, kde se naučíte, jak pomocí generovaného klienta.</span><span class="sxs-lookup"><span data-stu-id="225f5-159">Advance to the next tutorial to learn how to use the generated client.</span></span>
 
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="df5f6-141">Postupy: Konfigurace klienta</span><span class="sxs-lookup"><span data-stu-id="df5f6-141">How to: Configure a Client</span></span>](../../../docs/framework/wcf/how-to-configure-a-basic-wcf-client.md)
+> [<span data-ttu-id="225f5-160">Kurz: Pomocí klienta WCF</span><span class="sxs-lookup"><span data-stu-id="225f5-160">Tutorial: Use a WCF client</span></span>](how-to-use-a-wcf-client.md)
 
-## <a name="see-also"></a><span data-ttu-id="df5f6-142">Viz také:</span><span class="sxs-lookup"><span data-stu-id="df5f6-142">See also</span></span>
 
-- [<span data-ttu-id="df5f6-143">Nástroj metadat modelu služby (Svcutil.exe)</span><span class="sxs-lookup"><span data-stu-id="df5f6-143">ServiceModel Metadata Utility Tool (Svcutil.exe)</span></span>](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)
-- [<span data-ttu-id="df5f6-144">Začínáme</span><span class="sxs-lookup"><span data-stu-id="df5f6-144">Getting Started</span></span>](../../../docs/framework/wcf/samples/getting-started-sample.md)
-- [<span data-ttu-id="df5f6-145">Vlastní hostování</span><span class="sxs-lookup"><span data-stu-id="df5f6-145">Self-Host</span></span>](../../../docs/framework/wcf/samples/self-host.md)
-- [<span data-ttu-id="df5f6-146">Postupy: Publikování metadat služby promocí konfiguračního souboru</span><span class="sxs-lookup"><span data-stu-id="df5f6-146">How to: Publish Metadata for a Service Using a Configuration File</span></span>](../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-a-configuration-file.md)
-- [<span data-ttu-id="df5f6-147">Postupy: Stažení dokumentů metadat pomocí nástroje Svcutil.exe</span><span class="sxs-lookup"><span data-stu-id="df5f6-147">How to: Use Svcutil.exe to Download Metadata Documents</span></span>](../../../docs/framework/wcf/feature-details/how-to-use-svcutil-exe-to-download-metadata-documents.md)
