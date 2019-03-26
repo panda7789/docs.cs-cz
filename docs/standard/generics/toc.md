@@ -1,5 +1,0 @@
-# [Obecné typy](index.md)
-## [Obecné kolekce na platformě .NET](collections.md)
-## [Obecné delegáty pro manipulaci s poli a seznamy](delegates-for-manipulating-arrays-and-lists.md)
-## [Obecná rozhraní](interfaces.md)
-## [Kovariance a kontravariance](covariance-and-contravariance.md)

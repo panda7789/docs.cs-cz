@@ -1,8 +1,0 @@
-# [Události](index.md)
-## [Postupy: Vyvolávání a zpracovávání událostí](how-to-raise-and-consume-events.md)
-## [Postupy: Zpracování více událostí pomocí vlastností událostí](how-to-handle-multiple-events-using-event-properties.md)
-## [Postupy: Zpracování událostí v aplikaci Web Forms](how-to-consume-events-in-a-web-forms-application.md)
-## [Návrhový vzor Pozorovatel](observer-design-pattern.md)
-### [Doporučené postupy pro návrhový vzor Pozorovatel](observer-design-pattern-best-practices.md)
-### [Postupy: Implementace poskytovatele](how-to-implement-a-provider.md)
-### [Postupy: Implementace pozorovatele](how-to-implement-an-observer.md)

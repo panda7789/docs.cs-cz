@@ -1,8 +1,0 @@
-# [Pole](index.md)
-## [Pole jako objekty](arrays-as-objects.md)
-## [Jednorozměrná pole](single-dimensional-arrays.md)
-## [Vícerozměrná pole](multidimensional-arrays.md)
-## [Vícenásobná pole](jagged-arrays.md)
-## [Použití příkazu foreach s poli](using-foreach-with-arrays.md)
-## [Předávání polí jako argumentů](passing-arrays-as-arguments.md)
-## [Implicitně typovaná pole](implicitly-typed-arrays.md)

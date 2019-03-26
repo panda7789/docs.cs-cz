@@ -1,5 +1,0 @@
-# [Podpůrné funkce Tlbexp](index.md)
-## [GetTypeLibInfo – funkce](gettypelibinfo-function.md)
-## [LoadTypeLibWithResolver – funkce](loadtypelibwithresolver-function.md)
-## [ITypeLibResolver – rozhraní](itypelibresolver-interface.md)
-### [ResolveTypeLib – metoda](resolvetypelib-method.md)
