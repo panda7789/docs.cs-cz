@@ -7,12 +7,12 @@ helpviewer_keywords:
 - C# language, operators
 - operators [C#], about operators
 ms.assetid: 214e7b83-1a41-4f7c-9867-64e9c0bab39f
-ms.openlocfilehash: a0174ca42cb65c7c8f0c8ba2dc9adfd5c43c22b8
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 78f52f4aa6e3d27bc7076d3074cb654d5e7fc56d
+ms.sourcegitcommit: 8258515adc6c37ab6278e5a3d102d593246f8672
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56981579"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58504519"
 ---
 # <a name="operators-c-programming-guide"></a>Operátory (Průvodce programováním v C#)
 
@@ -45,8 +45,8 @@ V jazyce C# *operátor* je prvek programu, který se použije pro jeden nebo ně
 |x[.](../../../csharp/language-reference/operators/member-access-operator.md)y<br /><br /> x?.y|Přístup ke členům<br /><br /> Podmíněný člen přístup|  
 |f[(x)](../../../csharp/language-reference/operators/invocation-operator.md)|Vyvolání metod a delegátů|  
 |a[&#91;x&#93;](../../../csharp/language-reference/operators/index-operator.md)<br /><br /> a?[x]|Přístup k poli a indexeru<br /><br /> Podmíněný přístup k poli a indexeru|  
-|x[++](../../../csharp/language-reference/operators/increment-operator.md)|Postinkrementace|  
-|x[--](../../../csharp/language-reference/operators/decrement-operator.md)|Postdekrementace|  
+|x[++](../../../csharp/language-reference/operators/arithmetic-operators.md#increment-operator-)|Postinkrementace|  
+|x[--](../../../csharp/language-reference/operators/arithmetic-operators.md#decrement-operator---)|Postdekrementace|  
 |[nové](../../../csharp/language-reference/keywords/new-operator.md) T(...)|Vytvoření objektu a delegátu|  
 |`new` T(...){...}|Vytvoření objektu s inicializátorem. Zobrazit [inicializátory objektu a kolekce](../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md).|  
 |`new` {...}|Inicializátor anonymních objektů. Zobrazit [anonymní typy](../../../csharp/programming-guide/classes-and-structs/anonymous-types.md).|  
@@ -65,17 +65,17 @@ V jazyce C# *operátor* je prvek programu, který se použije pro jeden nebo ně
 |[-](../../../csharp/language-reference/operators/subtraction-operator.md)x|Negace|  
 |[\!](../../../csharp/language-reference/operators/logical-negation-operator.md)x|Logická negace|  
 |[~](../../../csharp/language-reference/operators/bitwise-complement-operator.md)x|Bitová negace.|  
-|[++](../../../csharp/language-reference/operators/increment-operator.md)x|Preinkrementace|  
-|[--](../../../csharp/language-reference/operators/decrement-operator.md)x|Predekrementace|  
+|[++](../../../csharp/language-reference/operators/arithmetic-operators.md#increment-operator-)x|Preinkrementace|  
+|[--](../../../csharp/language-reference/operators/arithmetic-operators.md#decrement-operator---)x|Predekrementace|  
 |[(T)](../../../csharp/language-reference/operators/invocation-operator.md)x|Explicitní převod x na typ T|  
   
  **Operátory násobení**  
   
 |Výraz|Popis|  
 |----------------|-----------------|  
-|[*](../../../csharp/language-reference/operators/multiplication-operator.md)|Násobení|  
-|[/](../../../csharp/language-reference/operators/division-operator.md)|Dělení|  
-|[%](../../../csharp/language-reference/operators/modulus-operator.md)|Zbytek|  
+|[*](../../../csharp/language-reference/operators/arithmetic-operators.md#multiplication-operator-)|Násobení|  
+|[/](../../../csharp/language-reference/operators/arithmetic-operators.md#division-operator-)|Dělení|  
+|[%](../../../csharp/language-reference/operators/arithmetic-operators.md#remainder-operator-)|Zbytek|  
   
  **Operátory sčítání**  
   
@@ -126,7 +126,7 @@ V jazyce C# *operátor* je prvek programu, který se použije pro jeden nebo ně
 |Výraz|Popis|  
 |----------------|-----------------|  
 |[=](../../../csharp/language-reference/operators/assignment-operator.md)|Přiřazení|  
-|x op= y|Složené přiřazení. Podporuje tyto operátory: [ += ](../../../csharp/language-reference/operators/addition-assignment-operator.md), [ -= ](../../../csharp/language-reference/operators/subtraction-assignment-operator.md), [ *= ](../../../csharp/language-reference/operators/multiplication-assignment-operator.md), [ /= ](../../../csharp/language-reference/operators/division-assignment-operator.md), [ %= ](../../../csharp/language-reference/operators/modulus-assignment-operator.md) , [&=](../../../csharp/language-reference/operators/and-assignment-operator.md), [&#124;=](../../../csharp/language-reference/operators/or-assignment-operator.md), [^=](../../../csharp/language-reference/operators/xor-assignment-operator.md), [<\<=](../../../csharp/language-reference/operators/left-shift-assignment-operator.md), [>>=](../../../csharp/language-reference/operators/right-shift-assignment-operator.md)|  
+|x op= y|Složené přiřazení. Podporuje tyto operátory: [ += ](../../../csharp/language-reference/operators/addition-assignment-operator.md), [ -= ](../../../csharp/language-reference/operators/subtraction-assignment-operator.md), [ *= ](../../../csharp/language-reference/operators/arithmetic-operators.md#compound-assignment), [ /= ](../../../csharp/language-reference/operators/arithmetic-operators.md#compound-assignment), [ %= ](../../../csharp/language-reference/operators/arithmetic-operators.md#compound-assignment) , [&=](../../../csharp/language-reference/operators/and-assignment-operator.md), [&#124;=](../../../csharp/language-reference/operators/or-assignment-operator.md), [^=](../../../csharp/language-reference/operators/xor-assignment-operator.md), [<\<=](../../../csharp/language-reference/operators/left-shift-assignment-operator.md), [>>=](../../../csharp/language-reference/operators/right-shift-assignment-operator.md)|  
 |(T x) [=>](../../../csharp/language-reference/operators/lambda-operator.md) y|Anonymní funkce (výraz lambda)|  
   
 ## <a name="associativity"></a>Asociativita

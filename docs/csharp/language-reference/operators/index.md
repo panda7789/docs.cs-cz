@@ -1,29 +1,23 @@
 ---
-title: C#operátory
+title: 'C#operátory'
 ms.date: 04/04/2018
 f1_keywords:
-- cs.operators
+  - cs.operators
 helpviewer_keywords:
-- boolean operators [C#]
-- expressions [C#], operators
-- logical operators [C#]
-- operators [C#]
-- Visual C#, operators
-- indirection operators [C#]
-- assignment operators [C#]
-- shift operators [C#]
-- relational operators [C#]
-- bitwise operators [C#]
-- address operators [C#]
-- keywords [C#], operators
-- arithmetic operators [C#]
+  - 'boolean operators [C#]'
+  - 'expressions [C#], operators'
+  - 'logical operators [C#]'
+  - 'operators [C#]'
+  - 'Visual C#, operators'
+  - 'indirection operators [C#]'
+  - 'assignment operators [C#]'
+  - 'shift operators [C#]'
+  - 'relational operators [C#]'
+  - 'bitwise operators [C#]'
+  - 'address operators [C#]'
+  - 'keywords [C#], operators'
+  - 'arithmetic operators [C#]'
 ms.assetid: 0301e31f-22ad-49af-ac3c-d5eae7f0ac43
-ms.openlocfilehash: 6380fa4ec99f598be0d01db1061900520e94d5f1
-ms.sourcegitcommit: 5c36aaa8299a2437c155700c810585aff19edbec
-ms.translationtype: MT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54333405"
 ---
 # <a name="c-operators"></a>C#operátory
 
@@ -47,9 +41,9 @@ Jedná se o nejvyšší priorita operátorů.
 
 [&#91;x&#93; ](index-operator.md) – indexování agregovaný objekt.
 
-[x ++](increment-operator.md) – Příponové operátory Inkrementace. Vrací hodnotu x a následně aktualizuje umístění úložiště hodnota x je jeden znak větší (obvykle přidá na celé číslo 1).
+[x ++](arithmetic-operators.md#increment-operator-) – Příponové operátory Inkrementace. Vrací hodnotu x a následně aktualizuje umístění úložiště hodnota x je jeden znak větší (obvykle přidá na celé číslo 1).
 
-[x--](decrement-operator.md) – snížení příponového operátora. Vrací hodnotu x a následně aktualizuje umístění úložiště hodnota x je jeden méně (obvykle odečte 1 na celé číslo).
+[x--](arithmetic-operators.md#decrement-operator---) – snížení příponového operátora. Vrací hodnotu x a následně aktualizuje umístění úložiště hodnota x je jeden méně (obvykle odečte 1 na celé číslo).
 
 [nové](../keywords/new-operator.md) – typ vytváření instancí.
 
@@ -79,9 +73,9 @@ Tyto operátory mají vyšší prioritu než v další části a nižší priori
 
 [~ x](bitwise-complement-operator.md) – bitového doplňku.
 
-[++ x](increment-operator.md) – předponového. Vrátí hodnotu x po aktualizaci umístění úložiště s hodnotou x, která je větší (obvykle přidá na celé číslo 1).
+[++ x](arithmetic-operators.md#increment-operator-) – předponového. Vrátí hodnotu x po aktualizaci umístění úložiště s hodnotou x, která je větší (obvykle přidá na celé číslo 1).
 
-[--x](decrement-operator.md) – předponového. Vrátí hodnotu x po aktualizaci umístění úložiště s hodnotou x je jeden méně (obvykle odečte 1 na celé číslo).
+[--x](arithmetic-operators.md#decrement-operator---) – předponového. Vrátí hodnotu x po aktualizaci umístění úložiště s hodnotou x je jeden méně (obvykle odečte 1 na celé číslo).
 
 [(T) x](invocation-operator.md) – typ přetypování.
 
@@ -95,19 +89,19 @@ Tyto operátory mají vyšší prioritu než v další části a nižší priori
 
 Tyto operátory mají vyšší prioritu než v další části a nižší prioritu než předchozí části.
 
-[x * y](multiplication-operator.md) – násobení.
+[x * y](arithmetic-operators.md#multiplication-operator-) – násobení.
 
-[x a y](division-operator.md) – dělení. Pokud jsou operandy celých čísel, výsledek je celé číslo zkráceno směrem k nule (například `-7 / 2 is -3`).
+[x a y](arithmetic-operators.md#division-operator-) – dělení. Pokud jsou operandy celých čísel, výsledek je celé číslo zkráceno směrem k nule (například `-7 / 2 is -3`).
 
-[x, % y](remainder-operator.md) – zbytek. Pokud jsou operandy celých čísel, vrátí zbytek dělicí x y.  Pokud `q = x / y` a `r = x % y`, pak `x = q * y + r`.
+[x, % y](arithmetic-operators.md#remainder-operator-) – zbytek. Pokud jsou operandy celých čísel, vrátí zbytek dělicí x y.  Pokud `q = x / y` a `r = x % y`, pak `x = q * y + r`.
 
 ## <a name="additive-operators"></a>Operátory sčítání
 
 Tyto operátory mají vyšší prioritu než v další části a nižší prioritu než předchozí části.
 
-[x + y](addition-operator.md) – přidání.
+[x + y](arithmetic-operators.md#addition-operator-) – přidání.
 
-[x-y](subtraction-operator.md) – odčítání.
+[x-y](arithmetic-operators.md#subtraction-operator--) – odčítání.
 
 ## <a name="shift-operators"></a>Operátory posunutí
 
@@ -195,9 +189,9 @@ Tyto operátory mají vyšší prioritu než v další části a nižší priori
 
 [x * = y](multiplication-assignment-operator.md) – přiřazení násobení. Vynásobí hodnotu `y` hodnotě `x`, uloží výsledek v `x`a vrátí novou hodnotu.
 
-[x / = y](division-assignment-operator.md) – přiřazení dělení. Vydělí hodnotu `x` hodnotou `y`, uloží výsledek v `x`a vrátí novou hodnotu.
+[x / = y](arithmetic-operators.md#compound-assignment) – přiřazení dělení. Vydělí hodnotu `x` hodnotou `y`, uloží výsledek v `x`a vrátí novou hodnotu.
 
-[x % = y](remainder-assignment-operator.md) – remainder přiřazení. Vydělí hodnotu `x` hodnotou `y`, uložení zbytku v `x`a vrátí novou hodnotu.
+[x % = y](arithmetic-operators.md#compound-assignment) – remainder přiřazení. Vydělí hodnotu `x` hodnotou `y`, uložení zbytku v `x`a vrátí novou hodnotu.
 
 [x & = y](and-assignment-operator.md) – a přiřazení. A hodnota `y` s hodnotou `x`, uloží výsledek v `x`a vrátí novou hodnotu.
 
@@ -210,20 +204,6 @@ Tyto operátory mají vyšší prioritu než v další části a nižší priori
 [x >> = y](right-shift-assignment-operator.md) – přiřazení posunutí doprava. Posune hodnotu `x` právo `y` místech, uloží výsledek v `x`a vrátí novou hodnotu.
 
 [=>](lambda-operator.md) – deklaraci lambda.
-
-## <a name="arithmetic-overflow"></a>Aritmetické přetečení
-
-Aritmetické operátory ([+](addition-operator.md), [ - ](subtraction-operator.md), [ * ](multiplication-operator.md), [ / ](division-operator.md)) může výsledky, které jsou mimo rozsah možných hodnot pro uvedeného číselného typu. By měla odkazovat na část na konkrétní operátor podrobnosti, ale obecně:
-
-- Aritmetické přetečení celého čísla buď vyvolá <xref:System.OverflowException> nebo zruší nejvýznamnější části výsledku. Dělení celého čísla nulou vždy vyvolá <xref:System.DivideByZeroException>.
-
-   Pokud dojde k přetečení celého čísla, co se stane, závisí na kontextu spuštění, který může být [zaškrtnuté nebo nezaškrtnuté](../keywords/checked-and-unchecked.md). Ve zkontrolovaném kontextu <xref:System.OverflowException> je vyvolána výjimka. V nekontrolovaném kontextu jsou nejvýznamnější části výsledku ignorovány a provádění bude pokračovat. Proto jazyk C# umožňuje volbu zpracování nebo ignorování přetečení. Ve výchozím nastavení, aritmetické operace prováděny v *Nekontrolovaná* kontextu.
-
-   Kromě aritmetických operací, přetypování integrálového typu na integrálový typ může způsobit přetečení (jako je například, pokud přetypovat [dlouhé](../keywords/long.md) do [int](../keywords/int.md)) a můžou se nekontrolovaným prováděním. Nicméně bitové operátory a operátory posunutí nikdy nezpůsobí přetečení.
-
-- Plovoucí aritmetické přetečení nebo dělení nulou nikdy nevyvolá výjimku, protože typy s plovoucí desetinnou čárkou jsou založeny na standardu IEEE 754 a tak mají opatření představující nekonečno a NaN (není číslo).
-
-- [Desetinné](../keywords/decimal.md) aritmetické přetečení vždy vyvolá <xref:System.OverflowException>. Dělení desetinného čísla nulou vždy vyvolá <xref:System.DivideByZeroException>.
 
 ## <a name="see-also"></a>Viz také:
 

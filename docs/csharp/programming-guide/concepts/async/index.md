@@ -3,7 +3,7 @@ title: 'Asynchronní programování v jazyce C#'
 description: 'Přehled C# jazykovou podporu pro asynchronní programování pomocí asynchronní, await, úloh a úkolů<T>'
 ms.date: 03/18/2019
 ---
-# <a name="the-task-asynchronous-programming-model-in-c"></a>Asynchronní programovací model úkolu vC# #
+# <a name="the-task-asynchronous-programming-model-in-c"></a>Asynchronní programovací model úkolu v jazyce C\#
 
 Asynchronní programovací model úloh (TAP) poskytuje abstrakci přes asynchronní kód. Při psaní kódu jako sekvenci příkazů, stejně jako vždy. Tento kód si můžete přečíst, jakoby dokončení každého příkazu před zahájením na další. Kompilátor provede několik transformace, protože některé z těchto příkazů může zahájit práci a vrátí <xref:System.Threading.Tasks.Task> , která představuje probíhající práci.
 

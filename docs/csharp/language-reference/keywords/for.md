@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - for keyword [C#]
 ms.assetid: 34041a40-2c87-467a-9ffb-a0417d8f67a8
-ms.openlocfilehash: 6584889f527e1459090bea322720f0cd8d9694f6
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: ba156eed25f28a0568e11c986de1e84db3cd9cf0
+ms.sourcegitcommit: 8258515adc6c37ab6278e5a3d102d593246f8672
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53149234"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58504480"
 ---
 # <a name="for-c-reference"></a>for (referenční dokumentace jazyka C#)
 
@@ -47,9 +47,9 @@ Příkazy v *inicializátor* oddílu jsou spouštěny pouze jednou, před vstupe
 
   - vyvolání metody
 
-  - Přidání předpony nebo přípony [přírůstek](../operators/increment-operator.md) výraz, jako například `++i` nebo `i++`
+  - Přidání předpony nebo přípony [přírůstek](../operators/arithmetic-operators.md#increment-operator-) výraz, jako například `++i` nebo `i++`
 
-  - Přidání předpony nebo přípony [snížení](../operators/decrement-operator.md) výraz, jako například `--i` nebo `i--`
+  - Přidání předpony nebo přípony [snížení](../operators/arithmetic-operators.md#decrement-operator---) výraz, jako například `--i` nebo `i--`
 
   - Vytvoření objektu pomocí [nové](new-operator.md) – klíčové slovo
 
@@ -79,9 +79,9 @@ i < 5
 
 - vyvolání metody
 
-- Přidání předpony nebo přípony [přírůstek](../operators/increment-operator.md) výraz, jako například `++i` nebo `i++`
+- Přidání předpony nebo přípony [přírůstek](../operators/arithmetic-operators.md#increment-operator-) výraz, jako například `++i` nebo `i++`
 
-- Přidání předpony nebo přípony [snížení](../operators/decrement-operator.md) výraz, jako například `--i` nebo `i--`
+- Přidání předpony nebo přípony [snížení](../operators/arithmetic-operators.md#decrement-operator---) výraz, jako například `--i` nebo `i--`
 
 - Vytvoření objektu pomocí [nové](new-operator.md) – klíčové slovo
 

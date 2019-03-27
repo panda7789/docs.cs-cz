@@ -6,12 +6,12 @@ helpviewer_keywords:
 - using Memory&lt;T&gt; and Span&lt;T&gt;
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a72e90a6233d03fd641675bfbeee2145709e57fe
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.openlocfilehash: e942b3f6f6572c05d42a0267f98e6c876a113616
+ms.sourcegitcommit: 8258515adc6c37ab6278e5a3d102d593246f8672
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58463147"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58504337"
 ---
 # <a name="memoryt-and-spant-usage-guidelines"></a>Paměť\<T > a rozpětí\<T > Pokyny k používání
 
@@ -46,12 +46,14 @@ class Program
     static void Main()
     {
         var buffer = CreateBuffer();
-        try {
+        try
+        {
             int value = Int32.Parse(Console.ReadLine());
             WriteInt32ToBuffer(value, buffer);
             DisplayBufferToConsole(buffer);
         }
-        finally {
+        finally
+        {
             buffer.Destroy();
         }
     }
@@ -152,9 +154,11 @@ Ale Představte si, že `Log` má tuto implementaci.
 static void Log(ReadOnlyMemory<char> message)
 {
     // Run in background so that we don't block the main thread while performing IO.
-    Task.Run(() => {
+    Task.Run(() =>
+    {
         StreamWriter sw = File.AppendText(@".\input-numbers.dat");
-        sw.WriteLine(message);    });
+        sw.WriteLine(message);
+    });
 }
 ```
 
@@ -185,7 +189,8 @@ Tento návod se vztahuje k metody, které vracejí <xref:System.Threading.Tasks.
 Vezměte v úvahu v následujícím příkladu:
 
 ```csharp
-class OddValueExtractor {
+class OddValueExtractor
+{
     public OddValueExtractor(ReadOnlyMemory<int> input);
     public bool TryReadNextOddValue(out int value);
 }
@@ -298,19 +303,23 @@ public unsafe Task<int> ManagedWrapperAsync(Memory<byte> data)
 {
     // setup
     var tcs = new TaskCompletionSource<int>();
-    var state = new MyCompletedCallbackState {
+    var state = new MyCompletedCallbackState
+    {
         Tcs = tcs
     };
-    var pState = (IntPtr)GCHandle.Alloc(state;
+    var pState = (IntPtr)GCHandle.Alloc(state);
 
     var memoryHandle = data.Pin();
     state.MemoryHandle = memoryHandle;
 
     // make the call
     int result;
-    try {
+    try
+    {
         result = ExportedAsyncMethod((byte*)memoryHandle.Pointer, data.Length, pState, _callbackPtr);
-    } catch {
+    }
+    catch
+    {
         ((GCHandle)pState).Free(); // cleanup since callback won't be invoked
         memoryHandle.Dispose();
         throw;
@@ -335,8 +344,14 @@ private static void MyCompletedCallbackImplementation(IntPtr state, int result)
 
     /* error checking result goes here */
 
-    if (error) { actualState.Tcs.SetException(...); }
-    else { actualState.Tcs.SetResult(result); }
+    if (error)
+    {
+        actualState.Tcs.SetException(...);
+    }
+    else
+    {
+        actualState.Tcs.SetResult(result);
+    }
 }
 
 private static IntPtr GetCompletionCallbackPointer()

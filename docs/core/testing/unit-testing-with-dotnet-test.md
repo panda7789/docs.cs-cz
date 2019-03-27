@@ -5,12 +5,12 @@ author: ardalis
 ms.author: wiwagn
 ms.date: 11/29/2017
 ms.custom: seodec18
-ms.openlocfilehash: f84792e5d973f2b2d8bcf418f68e7038fd7a81f5
-ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
+ms.openlocfilehash: 97cf42c78154375ce06639d4a3029ed87b993ced
+ms.sourcegitcommit: 8258515adc6c37ab6278e5a3d102d593246f8672
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56747846"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58504350"
 ---
 # <a name="unit-testing-c-in-net-core-using-dotnet-test-and-xunit"></a>Testování jednotek C# v .NET Core pomocí příkazu dotnet test a xUnit
 
@@ -50,7 +50,7 @@ Vraťte do adresáře *testování použití dotnet testování částí* adres�
 Spustit [dotnet sln](../tools/dotnet-sln.md) příkaz pro přidání do řešení projekt knihovny tříd:
 
 ```
-dotnet sln add .\PrimeService\PrimeService.csproj
+dotnet sln add ./PrimeService/PrimeService.csproj
 ```
 
 ## <a name="creating-the-test-project"></a>Vytvoření testovacího projektu
@@ -100,7 +100,7 @@ Následující obrázek znázorňuje rozložení konečné řešení:
 Chcete-li přidat testovací projekt do řešení, spusťte [dotnet sln](../tools/dotnet-sln.md) v *testování použití dotnet testování částí* adresáře:
 
 ```
-dotnet sln add .\PrimeService.Tests\PrimeService.Tests.csproj
+dotnet sln add ./PrimeService.Tests/PrimeService.Tests.csproj
 ```
 
 ## <a name="creating-the-first-test"></a>Vytvoření prvního testu
