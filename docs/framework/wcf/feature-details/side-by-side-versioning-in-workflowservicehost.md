@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 60887eed-df40-4412-b812-41e1dd329d15
-ms.openlocfilehash: 05bec31cb0d1dca3dc906c183d001fb526173bb5
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 3f180fa115453be86fa5f99fbabb776eb7198623
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43502548"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58465864"
 ---
 # <a name="side-by-side-versioning-in-workflowservicehost"></a>Práce s víc verzemi současně ve třídě WorkflowServiceHost
 <xref:System.ServiceModel.Activities.WorkflowServiceHost> Počínaje verzí vedle sebe [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)] poskytuje možnost hostování několika verzí služby pracovního postupu v jednom koncovém bodu. Vedle sebe funkce poskytované umožňuje nakonfigurovat tak, aby nové instance služby pracovního postupu jsou vytvořené pomocí novou definici pracovního postupu při spuštění úplné pomocí existující definici instance služby pracovního postupu. Toto téma obsahuje přehled používání vedle sebe provádění pracovního postupu služby <xref:System.ServiceModel.Activities.WorkflowServiceHost>.  
@@ -46,7 +46,7 @@ ms.locfileid: "43502548"
 ### <a name="configuring-the-definitionidentity"></a>Konfigurace identitou DefinitionIdentity  
  Při vytvoření služby pracovních postupů pomocí návrháře postupu provádění <xref:System.ServiceModel.Activities.WorkflowService.DefinitionIdentity%2A> se nastavuje pomocí **vlastnosti** okna. Klikněte na tlačítko mimo kořenová aktivita služby v Návrháři vyberte služby pracovního postupu a zvolte **okno vlastností** z **zobrazení** nabídky. Vyberte **identita WorkflowIdentity** z rozevíracího seznamu, který se zobrazí vedle **identitou DefinitionIdentity** vlastnosti, rozbalte položku a zadejte požadovaný <xref:System.Activities.WorkflowIdentity> vlastnosti. V následujícím příkladu <xref:System.ServiceModel.Activities.WorkflowService.DefinitionIdentity%2A> má nakonfigurovanou <xref:System.Activities.WorkflowIdentity.Name%2A> `MortgageWorkflow` a <xref:System.Activities.WorkflowIdentity.Version%2A> z `1.0.0.0`. <xref:System.Activities.WorkflowIdentity.Package%2A> je volitelný a v tomto příkladu je `null`.  
   
- ![Identitou DefinitionIdentity](../../../../docs/framework/wcf/feature-details/media/workflowservicedefinitionidentityv1.bmp "WorkflowServiceDefinitionIdentityv1")  
+ ![Snímek obrazovky s identitou DefinitionIdentity vlastnost.](./media/side-by-side-versioning-in-workflowservicehost/definitionidentity-property.bmp)  
   
  Když je služba pracovního postupu v místním prostředí, <xref:System.ServiceModel.Activities.WorkflowService.DefinitionIdentity%2A> je nakonfigurovaný, když se služba pracovního postupu. V následujícím příkladu <xref:System.ServiceModel.Activities.WorkflowService.DefinitionIdentity%2A> konfigurován pomocí stejné hodnoty jako předchozí příklad s <xref:System.Activities.WorkflowIdentity.Name%2A> `MortgageWorkflow` a <xref:System.Activities.WorkflowIdentity.Name%2A> z `1.0.0.0`.  
   
@@ -84,7 +84,7 @@ End With
 ### <a name="adding-a-new-version-to-a-web-hosted-workflow-service"></a>Přidává se nová verze služby hostované webového pracovního postupu  
  Prvním krokem při konfiguraci nové verze služby pracovních postupů v hostované webové služby je vytvoření nové složky v `App_Code` složku, která má stejný název jako soubor služby. Pokud služby `xamlx` soubor `MortgageWorkflow.xamlx`, pak musí mít název složky `MortgageWorkflow`. Umístěte kopii původní službě `xamlx` souboru do této složky a přejmenujte jej na nový název, jako například `MortgageWorkflowV1.xamlx`. Proveďte požadované změny pro primární služby, aktualizujte její <xref:System.ServiceModel.Activities.WorkflowService.DefinitionIdentity%2A>a poté nasaďte službu. V následujícím příkladu <xref:System.ServiceModel.Activities.WorkflowService.DefinitionIdentity%2A> byla aktualizována <xref:System.Activities.WorkflowIdentity.Name%2A> z `MortageWorkflow` a <xref:System.Activities.WorkflowIdentity.Version%2A> z `2.0.0.0`.  
   
- ![Identitou DefinitionIdentity](../../../../docs/framework/wcf/feature-details/media/workflowservicedefinitionidentityv2.bmp "WorkflowServiceDefinitionIdentityv2")  
+ ![Snímek obrazovky s identitou DefinitionIdentity identita WorkflowIdentity.](./media/side-by-side-versioning-in-workflowservicehost/definitionidentity-workflowidentity.bmp)  
   
  Po restartování služby předchozí verzi se automaticky přidají do <xref:System.ServiceModel.Activities.WorkflowServiceHost.SupportedVersions%2A> kolekce vzhledem k tomu, že se nachází v určené `App_Code` podsložky. Všimněte si, že pokud má primární verzí služby pracovního postupu `null` <xref:System.ServiceModel.Activities.WorkflowService.DefinitionIdentity%2A> předchozích verzích se nepřidá. Může mít jednu verzi `null` <xref:System.ServiceModel.Activities.WorkflowService.DefinitionIdentity%2A>, ale pokud existuje více verzí primární verze nesmí být se `null` <xref:System.ServiceModel.Activities.WorkflowService.DefinitionIdentity%2A> nebo jinak nepřidají do předchozí verze <xref:System.ServiceModel.Activities.WorkflowServiceHost.SupportedVersions%2A> kolekce.  
   

@@ -1,0 +1,153 @@
+items:
+- name: Čítače výkonu
+  href: index.md
+  items:
+  - name: Čítače provozního výkonu
+    href: operation-performance-counters.md
+    items:
+    - name: Počet volání
+      href: calls.md
+    - name: Počet volání za sekundu
+      href: calls-per-second.md
+    - name: Počet nevyřízených volání
+      href: calls-outstanding.md
+    - name: Počet nezdařených volání
+      href: calls-failed.md
+    - name: Počet nezdařených volání za sekundu
+      href: calls-failed-per-second.md
+    - name: Počet volání s chybou
+      href: calls-faulted.md
+    - name: Počet volání s chybou za sekundu
+      href: calls-faulted-per-second.md
+    - name: Doba volání
+      href: calls-duration.md
+    - name: Počet chyb ověření zabezpečení
+      href: security-validation-and-authentication-failures.md
+    - name: Ověřování zabezpečení a počet selhání ověření za sekundu
+      href: security-validation-and-authentication-failures-per-second.md
+    - name: Počet neautorizovaných volání zabezpečení
+      href: security-calls-not-authorized.md
+    - name: Počet neautorizovaných volání zabezpečení za sekundu
+      href: security-calls-not-authorized-per-second.md
+    - name: Počet plynoucích transakcí
+      href: transactions-flowed.md
+    - name: Počet plynoucích transakcí za sekundu
+      href: transactions-flowed-per-second.md
+  - name: Čítače výkonu služby
+    href: service-performance-counters.md
+    items:
+    - name: Počet volání
+      href: service-calls.md
+    - name: Počet volání za sekundu
+      href: service-calls-per-second.md
+    - name: Počet nevyřízených volání
+      href: service-calls-outstanding.md
+    - name: Počet nezdařených volání
+      href: service-calls-failed.md
+    - name: Počet nezdařených volání za sekundu
+      href: service-calls-failed-per-second.md
+    - name: Počet volání s chybou
+      href: service-calls-faulted.md
+    - name: Počet volání s chybou za sekundu
+      href: service-calls-faulted-per-second.md
+    - name: Doba volání
+      href: service-calls-duration.md
+    - name: Instance
+      href: instances.md
+    - name: Počet instancí za sekundu
+      href: instances-per-second.md
+    - name: Procento maximálního počtu souběžných volání
+      href: percent-of-max-concurrent-calls.md
+    - name: Procenta maximálního počtu současných instancí
+      href: percent-of-max-concurrent-instances.md
+    - name: Procenta maximálního počtu současných relací
+      href: percent-of-max-concurrent-sessions.md
+    - name: Vynechané zprávy fronty
+      href: queue-dropped-messages.md
+    - name: Počet zpráv vyřazených z fronty za sekundu
+      href: queue-dropped-messages-per-second.md
+    - name: Počet poškozených zpráv
+      href: queued-poison-messages.md
+    - name: Počet poškozených zpráv za sekundu
+      href: queued-poison-messages-per-second.md
+    - name: Odmítnuté zprávy zařazené do fronty
+      href: queued-rejected-messages.md
+    - name: Počet odmítnutých zpráv zařazených do fronty za sekundu
+      href: queued-rejected-messages-per-second.md
+    - name: Počet ztracených zpráv spolehlivého zasílání zpráv
+      href: reliable-messaging-messages-dropped.md
+    - name: Počet ztracených zpráv spolehlivého zasílání zpráv za sekundu
+      href: reliable-messaging-messages-dropped-per-second.md
+    - name: Počet nezdařených relací spolehlivého zasílání zpráv
+      href: reliable-messaging-sessions-faulted.md
+    - name: Počet nezdařených relací spolehlivého zasílání zpráv za sekundu
+      href: reliable-messaging-sessions-faulted-per-second.md
+    - name: Počet neautorizovaných volání zabezpečení
+      href: service-security-calls-not-authorized.md
+    - name: Počet neautorizovaných volání zabezpečení za sekundu
+      href: service-security-calls-not-authorized-per-second.md
+    - name: Počet chyb ověření zabezpečení
+      href: service-security-validation-and-authentication-failures.md
+    - name: Ověřování zabezpečení a počet selhání ověření za sekundu
+      href: service-security-validation-and-authentication-failures-per-second.md
+    - name: Počet plynoucích transakcí
+      href: service-transactions-flowed.md
+    - name: Počet plynoucích transakcí za sekundu
+      href: service-transactions-flowed-per-second.md
+    - name: Počet přerušených transakčních operací
+      href: transacted-operations-aborted.md
+    - name: Počet zrušených zpracovaných operací za sekundu
+      href: transacted-operations-aborted-per-second.md
+    - name: Počet potvrzených zpracovaných operací
+      href: transacted-operations-committed.md
+    - name: Počet potvrzených zpracovaných operací za sekundu
+      href: transacted-operations-committed-per-second.md
+    - name: Počet nejistých zpracovaných operací
+      href: transacted-operations-in-doubt.md
+    - name: Počet nejistých zpracovaných operací za sekundu
+      href: transacted-operations-in-doubt-per-second.md
+  - name: Čítače výkonu koncového bodu
+    href: endpoint-performance-counters.md
+    items:
+    - name: Počet volání
+      href: endpoint-calls.md
+    - name: Počet volání za sekundu
+      href: endpoint-calls-per-second.md
+    - name: Počet nevyřízených volání
+      href: endpoint-calls-outstanding.md
+    - name: Počet nezdařených volání
+      href: endpoint-calls-failed.md
+    - name: Počet nezdařených volání za sekundu
+      href: endpoint-calls-failed-per-second.md
+    - name: Počet volání s chybou
+      href: endpoint-calls-faulted.md
+    - name: Počet volání s chybou za sekundu
+      href: endpoint-calls-faulted-per-second.md
+    - name: Doba volání
+      href: endpoint-calls-duration.md
+    - name: Počet ztracených zpráv spolehlivého zasílání zpráv
+      href: endpoint-reliable-messaging-messages-dropped.md
+    - name: Počet ztracených zpráv spolehlivého zasílání zpráv za sekundu
+      href: endpoint-reliable-messaging-messages-dropped-per-second.md
+    - name: Počet nezdařených relací spolehlivého zasílání zpráv
+      href: endpoint-reliable-messaging-sessions-faulted.md
+    - name: Počet nezdařených relací spolehlivého zasílání zpráv za sekundu
+      href: endpoint-reliable-messaging-sessions-faulted-per-second.md
+    - name: Počet neautorizovaných volání zabezpečení
+      href: endpoint-security-calls-not-authorized.md
+    - name: Počet neautorizovaných volání zabezpečení za sekundu
+      href: endpoint-security-calls-not-authorized-per-second.md
+    - name: Počet chyb ověření zabezpečení
+      href: endpoint-security-validation-and-authentication-failures.md
+    - name: Ověřování zabezpečení a počet selhání ověření za sekundu
+      href: endpoint-security-validation-and-authentication-failures-per-second.md
+    - name: Počet plynoucích transakcí
+      href: endpoint-transactions-flowed.md
+    - name: Počet plynoucích transakcí za sekundu
+      href: endpoint-transactions-flowed-per-second.md
+ms.openlocfilehash: 1330af4c40fecfb31fd26ddf3dd152bd5b33deb6
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58471128"
