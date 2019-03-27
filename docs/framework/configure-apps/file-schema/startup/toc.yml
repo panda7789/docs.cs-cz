@@ -1,0 +1,17 @@
+items:
+- name: Schéma nastavení spouštění
+  href: index.md
+  items:
+  - name: Element <startup>
+    href: startup-element.md
+    items:
+    - name: Element <requiredRuntime>
+      href: requiredruntime-element.md
+    - name: Element <supportedRuntime>
+      href: supportedruntime-element.md
+ms.openlocfilehash: f96275d0e3028d80b2dd1894be0d15fc869f86a7
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58471098"

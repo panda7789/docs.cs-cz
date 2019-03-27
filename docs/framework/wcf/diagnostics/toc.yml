@@ -1,0 +1,38 @@
+items:
+- name: Správa a diagnostika
+  href: index.md
+- name: Protokolování zpráv
+  href: message-logging.md
+  items:
+  - name: Tok zpráv – přehled
+    href: message-flow-overview.md
+  - name: Konfigurace protokolování zpráv
+    href: configuring-message-logging.md
+  - name: Prohlížení protokolů zpráv
+    href: viewing-message-logs.md
+  - name: Zajištění zabezpečení pro protokolování zpráv
+    href: security-concerns-for-message-logging.md
+  - name: Trasování
+    href: tracing/
+  - name: Analytické trasování s ETW
+    href: etw/
+  - name: Čítače výkonu
+    href: performance-counters/
+  - name: Protokolování událostí
+    href: event-logging/
+  - name: Diagnostika prostřednictvím rozhraní WMI (Windows Management Instrumentation)
+    href: wmi/
+  - name: Přehled výjimek
+    href: exceptions-reference/
+- name: Konfigurace vaší aplikace
+  href: configuring-your-application.md
+- name: Nástroj ServiceModelReg.exe
+  href: servicemodel-registration-tool.md
+- name: Nasazení služeb
+  href: deploying-services.md
+ms.openlocfilehash: 4d111b1284ffcb29397a6caafdad4df9abc85086
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58471568"

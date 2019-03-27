@@ -1,0 +1,252 @@
+items:
+- name: Usnadnění
+  href: index.md
+  items:
+  - name: Usnadnění – doporučené postupy
+    href: accessibility-best-practices.md
+  - name: Principy automatizace uživatelského rozhraní
+    href: ui-automation-fundamentals.md
+    items:
+    - name: Přehled automatizace uživatelského rozhraní
+      href: ui-automation-overview.md
+    - name: Automatizace uživatelského rozhraní a technologie Microsoft Active Accessibility
+      href: ui-automation-and-microsoft-active-accessibility.md
+    - name: Přehled stromu automatizace uživatelského rozhraní
+      href: ui-automation-tree-overview.md
+    - name: Přehled vzorů ovládacích prvků pro automatizaci uživatelského rozhraní
+      href: ui-automation-control-patterns-overview.md
+    - name: Přehled vlastností automatizace uživatelského rozhraní
+      href: ui-automation-properties-overview.md
+    - name: Přehled událostí automatizace uživatelského rozhraní
+      href: ui-automation-events-overview.md
+    - name: Přehled zabezpečení automatizace uživatelského rozhraní
+      href: ui-automation-security-overview.md
+    - name: Použití automatizace uživatelského rozhraní pro automatizované testování
+      href: using-ui-automation-for-automated-testing.md
+  - name: Zprostředkovatelé automatizace uživatelského rozhraní pro spravovaný kód
+    href: ui-automation-providers-for-managed-code.md
+    items:
+    - name: Implementace zprostředkovatele automatizace uživatelského rozhraní na straně serveru
+      href: server-side-ui-automation-provider-implementation.md
+    - name: Přehled zprostředkovatelů automatizace uživatelského rozhraní
+      href: ui-automation-providers-overview.md
+    - name: Implementace zprostředkovatele automatizace uživatelského rozhraní na straně klienta
+      href: client-side-ui-automation-provider-implementation.md
+    - name: " – postupy"
+      href: ui-automation-providers-for-managed-code-how-to-topics.md
+      items:
+      - name: Vystavení zprostředkovatele automatizace uživatelského rozhraní na straně serveru
+        href: expose-a-server-side-ui-automation-provider.md
+      - name: Vrácení vlastností ze zprostředkovatele automatizace uživatelského rozhraní
+        href: return-properties-from-a-ui-automation-provider.md
+      - name: Vyvolávání událostí ze zprostředkovatele automatizace uživatelského rozhraní
+        href: raise-events-from-a-ui-automation-provider.md
+      - name: Povolení navigace u zprostředkovatele fragmentu automatizace uživatelského rozhraní na straně klienta
+        href: enable-navigation-in-a-ui-automation-fragment-provider.md
+      - name: Podpora vzorů ovládacích prvků u zprostředkovatele automatizace uživatelského rozhraní
+        href: support-control-patterns-in-a-ui-automation-provider.md
+      - name: Vytvoření zprostředkovatele automatizace uživatelského rozhraní na straně klienta
+        href: create-a-client-side-ui-automation-provider.md
+      - name: Implementace zprostředkovatelů automatizace uživatelského rozhraní v klientských aplikacích
+        href: implement-ui-automation-providers-in-a-client-application.md
+  - name: Klienti automatizace uživatelského rozhraní pro spravovaný kód
+    href: ui-automation-clients-for-managed-code.md
+    items:
+    - name: Automatizace uživatelského rozhraní a změna velikosti obrazovky
+      href: ui-automation-and-screen-scaling.md
+    - name: Podpora automatizace uživatelského rozhraní pro standardní ovládací prvky
+      href: ui-automation-support-for-standard-controls.md
+    - name: Události automatizace uživatelského rozhraní pro klienty
+      href: ui-automation-events-for-clients.md
+    - name: Práce s mezipamětí u klientů automatizace uživatelského rozhraní
+      href: caching-in-ui-automation-clients.md
+    - name: Vlastnosti automatizace uživatelského rozhraní pro klienty
+      href: ui-automation-properties-for-clients.md
+    - name: Mapování vzorů ovládacích prvků pro klienty automatizace uživatelského rozhraní
+      href: control-pattern-mapping-for-ui-automation-clients.md
+    - name: Vzory ovládacích prvků automatizace uživatelského rozhraní pro klienty
+      href: ui-automation-control-patterns-for-clients.md
+    - name: Získání elementů automatizace uživatelského rozhraní
+      href: obtaining-ui-automation-elements.md
+    - name: Potíže s vlákny při automatizaci uživatelského rozhraní
+      href: ui-automation-threading-issues.md
+    - name: " – postupy"
+      href: ui-automation-clients-for-managed-code-how-to-topics.md
+      items:
+      - name: Hledání prvku automatizace uživatelského rozhraní na základě podmínky pro vlastnost
+        href: find-a-ui-automation-element-based-on-a-property-condition.md
+      - name: Pohyb mezi elementy automatizace uživatelského rozhraní pomocí třídy TreeWalker
+        href: navigate-among-ui-automation-elements-with-treewalker.md
+      - name: Hledání prvku automatizace uživatelského rozhraní pro položku seznamu
+        href: find-a-ui-automation-element-for-a-list-item.md
+      - name: Získání vlastností elementů automatizace uživatelského rozhraní
+        href: get-ui-automation-element-properties.md
+      - name: Použití mezipaměti při automatizaci uživatelského rozhraní
+        href: use-caching-in-ui-automation.md
+      - name: Přihlášení k odběru událostí automatizace uživatelského rozhraní
+        href: subscribe-to-ui-automation-events.md
+      - name: Registrace sestavení zprostředkovatele na straně klienta
+        href: register-a-client-side-provider-assembly.md
+      - name: Používání vlastnosti AutomationID
+        href: use-the-automationid-property.md
+  - name: Vzory ovládacích prvků pro automatizaci uživatelského rozhraní
+    href: ui-automation-control-patterns.md
+    items:
+    - name: Implementace vzoru ovládacích prvků ukotvení pro automatizaci uživatelského rozhraní
+      href: implementing-the-ui-automation-dock-control-pattern.md
+    - name: Implementace vzoru ovládacích prvků ExpandCollapse pro automatizaci uživatelského rozhraní
+      href: implementing-the-ui-automation-expandcollapse-control-pattern.md
+    - name: Implementace vzoru ovládacích prvků mřížka pro automatizaci uživatelského rozhraní
+      href: implementing-the-ui-automation-grid-control-pattern.md
+    - name: Implementace vzoru ovládacích prvků GridItem pro automatizaci uživatelského rozhraní
+      href: implementing-the-ui-automation-griditem-control-pattern.md
+    - name: Implementace vzoru ovládacích prvků vyvolání pro automatizaci uživatelského rozhraní
+      href: implementing-the-ui-automation-invoke-control-pattern.md
+    - name: Implementace vzoru ovládacích prvků MultipleView pro automatizaci uživatelského rozhraní
+      href: implementing-the-ui-automation-multipleview-control-pattern.md
+    - name: Implementace vzoru ovládacích prvků RangeValue pro automatizaci uživatelského rozhraní
+      href: implementing-the-ui-automation-rangevalue-control-pattern.md
+    - name: Implementace vzoru ovládacích prvků posuv pro automatizaci uživatelského rozhraní
+      href: implementing-the-ui-automation-scroll-control-pattern.md
+    - name: Implementace vzoru ovládacích prvků ScrollItem pro automatizaci uživatelského rozhraní
+      href: implementing-the-ui-automation-scrollitem-control-pattern.md
+    - name: Implementace vzoru ovládacích prvků výběr pro automatizaci uživatelského rozhraní
+      href: implementing-the-ui-automation-selection-control-pattern.md
+    - name: Implementace vzoru ovládacích prvků SelectionItem pro automatizaci uživatelského rozhraní
+      href: implementing-the-ui-automation-selectionitem-control-pattern.md
+    - name: Implementace vzoru ovládacích prvků tabulka pro automatizaci uživatelského rozhraní
+      href: implementing-the-ui-automation-table-control-pattern.md
+    - name: Implementace vzoru ovládacích prvků TableItem pro automatizaci uživatelského rozhraní
+      href: implementing-the-ui-automation-tableitem-control-pattern.md
+    - name: Implementace vzoru ovládacích prvků přepínání pro automatizaci uživatelského rozhraní
+      href: implementing-the-ui-automation-toggle-control-pattern.md
+    - name: Implementace vzoru ovládacích prvků transformace pro automatizaci uživatelského rozhraní
+      href: implementing-the-ui-automation-transform-control-pattern.md
+    - name: Implementace vzoru ovládacích prvků hodnota pro automatizaci uživatelského rozhraní
+      href: implementing-the-ui-automation-value-control-pattern.md
+    - name: Implementace vzoru ovládacích prvků okno pro automatizaci uživatelského rozhraní
+      href: implementing-the-ui-automation-window-control-pattern.md
+    - name: " – postupy"
+      href: ui-automation-control-patterns-how-to-topics.md
+      items:
+      - name: Vystavení obsahu tabulky s použitím automatizace uživatelského rozhraní
+        href: expose-the-content-of-a-table-using-ui-automation.md
+      - name: Získání podporovaných vzorů ovládacích prvků pro automatizaci uživatelského rozhraní
+        href: get-supported-ui-automation-control-patterns.md
+      - name: Zjištění stavu přepnutí zaškrtávacího políčka pomocí automatizace uživatelského rozhraní
+        href: get-the-toggle-state-of-a-check-box-using-ui-automation.md
+      - name: Vyvolání ovládacího prvku s použitím automatizace uživatelského rozhraní
+        href: invoke-a-control-using-ui-automation.md
+      - name: Přesunutí elementu automatizace uživatelského rozhraní
+        href: move-a-ui-automation-element.md
+  - name: Vzor ovládacích prvků text pro automatizaci uživatelského rozhraní
+    href: ui-automation-text-pattern.md
+    items:
+    - name: Přehled prvku TextPattern automatizace uživatelského rozhraní
+      href: ui-automation-textpattern-overview.md
+    - name: TextPattern a vložené objekty – přehled
+      href: textpattern-and-embedded-objects-overview.md
+    - name: " – postupy"
+      href: ui-automation-text-pattern-how-to-topics.md
+      items:
+      - name: Přidání obsahu textového pole s použitím automatizace uživatelského rozhraní
+        href: add-content-to-a-text-box-using-ui-automation.md
+      - name: Hledání a zvýrazňování textu s použitím automatizace uživatelského rozhraní
+        href: find-and-highlight-text-using-ui-automation.md
+      - name: Získání textových atributů s použitím automatizace uživatelského rozhraní
+        href: obtain-text-attributes-using-ui-automation.md
+      - name: Získání podrobných informací o smíšených textových atributech s použitím automatizace uživatelského rozhraní
+        href: obtain-mixed-text-attribute-details-using-ui-automation.md
+      - name: Procházení textu s použitím automatizace uživatelského rozhraní
+        href: traverse-text-using-ui-automation.md
+      - name: Přístup k vloženým objektům s použitím automatizace uživatelského rozhraní
+        href: access-embedded-objects-using-ui-automation.md
+  - name: Typy ovládacích prvků pro automatizaci uživatelského rozhraní
+    href: ui-automation-control-types.md
+    items:
+    - name: Přehled typů ovládacích prvků pro automatizaci uživatelského rozhraní
+      href: ui-automation-control-types-overview.md
+    - name: Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku tlačítko
+      href: ui-automation-support-for-the-button-control-type.md
+    - name: Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku kalendář
+      href: ui-automation-support-for-the-calendar-control-type.md
+    - name: Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku CheckBox
+      href: ui-automation-support-for-the-checkbox-control-type.md
+    - name: Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku ComboBox
+      href: ui-automation-support-for-the-combobox-control-type.md
+    - name: Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku DataGrid
+      href: ui-automation-support-for-the-datagrid-control-type.md
+    - name: Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku DataItem
+      href: ui-automation-support-for-the-dataitem-control-type.md
+    - name: Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku dokument
+      href: ui-automation-support-for-the-document-control-type.md
+    - name: Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku úprav
+      href: ui-automation-support-for-the-edit-control-type.md
+    - name: Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku skupina
+      href: ui-automation-support-for-the-group-control-type.md
+    - name: Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku záhlaví
+      href: ui-automation-support-for-the-header-control-type.md
+    - name: Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku HeaderItem
+      href: ui-automation-support-for-the-headeritem-control-type.md
+    - name: Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku hypertextový odkaz
+      href: ui-automation-support-for-the-hyperlink-control-type.md
+    - name: Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku obrázek
+      href: ui-automation-support-for-the-image-control-type.md
+    - name: Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku seznam
+      href: ui-automation-support-for-the-list-control-type.md
+    - name: Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku ListItem
+      href: ui-automation-support-for-the-listitem-control-type.md
+    - name: Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku nabídka
+      href: ui-automation-support-for-the-menu-control-type.md
+    - name: Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku MenuBar
+      href: ui-automation-support-for-the-menubar-control-type.md
+    - name: Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku MenuItem
+      href: ui-automation-support-for-the-menuitem-control-type.md
+    - name: Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku podokno
+      href: ui-automation-support-for-the-pane-control-type.md
+    - name: Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku ProgressBar
+      href: ui-automation-support-for-the-progressbar-control-type.md
+    - name: Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku RadioButton
+      href: ui-automation-support-for-the-radiobutton-control-type.md
+    - name: Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku ScrollBar
+      href: ui-automation-support-for-the-scrollbar-control-type.md
+    - name: Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku oddělovač
+      href: ui-automation-support-for-the-separator-control-type.md
+    - name: Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku posuvník
+      href: ui-automation-support-for-the-slider-control-type.md
+    - name: Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku číselník
+      href: ui-automation-support-for-the-spinner-control-type.md
+    - name: Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku SplitButton
+      href: ui-automation-support-for-the-splitbutton-control-type.md
+    - name: Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku StatusBar
+      href: ui-automation-support-for-the-statusbar-control-type.md
+    - name: Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku karta
+      href: ui-automation-support-for-the-tab-control-type.md
+    - name: Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku TabItem
+      href: ui-automation-support-for-the-tabitem-control-type.md
+    - name: Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku tabulka
+      href: ui-automation-support-for-the-table-control-type.md
+    - name: Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku text
+      href: ui-automation-support-for-the-text-control-type.md
+    - name: Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku jezdec
+      href: ui-automation-support-for-the-thumb-control-type.md
+    - name: Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku TitleBar
+      href: ui-automation-support-for-the-titlebar-control-type.md
+    - name: Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku ToolBar
+      href: ui-automation-support-for-the-toolbar-control-type.md
+    - name: Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku ToolTip
+      href: ui-automation-support-for-the-tooltip-control-type.md
+    - name: Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku strom
+      href: ui-automation-support-for-the-tree-control-type.md
+    - name: Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku TreeItem
+      href: ui-automation-support-for-the-treeitem-control-type.md
+    - name: Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku okno
+      href: ui-automation-support-for-the-window-control-type.md
+  - name: Specifikace automatizace uživatelského rozhraní a příslib komunitě
+    href: ui-automation-specification-and-community-promise.md
+ms.openlocfilehash: b30bb47e5b2bfb91c64a07c055889e83310da789
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58471216"
