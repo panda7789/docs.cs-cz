@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/02/2018
-ms.openlocfilehash: 8ddc966710f6a9a949983726fd93505fbc88391f
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.openlocfilehash: afd3148f77dc4222a077f7ce020260ee889e92cb
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57675027"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58466137"
 ---
 # <a name="subscribing-to-events"></a>Přihlášení k odběru událostí
 
@@ -109,7 +109,7 @@ Jak je uvedeno výše v části architektura, může mít několik přístupů p
 
 - Použití [pošta k odeslání vzoru](http://gistlabs.com/2014/05/the-outbox/). Toto je transakční tabulku pro ukládání událostí integrace (rozšíření místní transakce).
 
-V tomto scénáři použití úplné modelu Event Sourcing (ES) je jedním z osvědčených postupů, není-li ** nejlepší. V mnoha scénářích aplikací, ale nemusí být schopni implementovat úplnou ES operace. ES znamená, že ukládání pouze události domény v transakční databáze, místo uložení aktuální data o stavu. Uložení pouze událostí domény může mít skvělé výhody, jako je například s historii vašeho systému, které jsou k dispozici a nebudou moct určení stavu systému v každém okamžiku v minulosti. Ale implementace úplnou ES vyžaduje, abyste úprava architektury většina vašeho systému a přináší mnoho dalších složitosti a požadavky. Například můžete chcete použít databázi vytvořené speciálně pro model event sourcing, například [události Store](https://eventstore.org/), nebo databáze dokumentově orientované, jako je Azure Cosmos DB, MongoDB, Cassandra, CouchDB nebo RavenDB. ES je skvělé přístup k tomuto problému, ale ne Nejjednodušším řešením, pokud jste již obeznámeni s modelem event sourcing.
+V tomto scénáři použití úplné modelu Event Sourcing (ES) je jedním z osvědčených postupů, není-li *nejlepší*. V mnoha scénářích aplikací, ale nemusí být schopni implementovat úplnou ES operace. ES znamená, že ukládání pouze události domény v transakční databáze, místo uložení aktuální data o stavu. Uložení pouze událostí domény může mít skvělé výhody, jako je například s historii vašeho systému, které jsou k dispozici a nebudou moct určení stavu systému v každém okamžiku v minulosti. Ale implementace úplnou ES vyžaduje, abyste úprava architektury většina vašeho systému a přináší mnoho dalších složitosti a požadavky. Například můžete chcete použít databázi vytvořené speciálně pro model event sourcing, například [události Store](https://eventstore.org/), nebo databáze dokumentově orientované, jako je Azure Cosmos DB, MongoDB, Cassandra, CouchDB nebo RavenDB. ES je skvělé přístup k tomuto problému, ale ne Nejjednodušším řešením, pokud jste již obeznámeni s modelem event sourcing.
 
 Možnost použití transakční protokol dolování zpočátku vypadá velmi transparentní. Ale pro tuto metodu použijte mikroslužbách musí být vázány na protokol transakce relační databázový systém, jako je například protokolu transakcí serveru SQL Server. To je pravděpodobně není žádoucí. Jiné nevýhodou je, že nízké úrovně aktualizací zaznamenaných v transakčním protokolu nemusí být na stejné úrovni jako základní integrace událostí. Pokud ano, proces zpětnou tyto operace protokolu transakcí může být obtížné.
 
@@ -324,68 +324,68 @@ Pokud je nastavený příznak "redelivered", příjemce, který přijme v úvahu
 
 ### <a name="additional-resources"></a>Další zdroje
 
-- **Rozvětveného aplikaci eShopOnContainers pomocí NServiceBus (určitého softwaru)** <br/>
-    [*https://go.particular.net/eShopOnContainers*](https://go.particular.net/eShopOnContainers)
+- **Rozvětveného aplikaci eShopOnContainers pomocí NServiceBus (určitého softwaru)** \
+    [https://go.particular.net/eShopOnContainers](https://go.particular.net/eShopOnContainers)
 
-- **Řízené zasílání zpráv** <br/>
-    [*http://soapatterns.org/design\_patterns/event\_driven\_messaging*](http://soapatterns.org/design_patterns/event_driven_messaging)
+- **Řízené zasílání zpráv** \
+    [http://soapatterns.org/design\_patterns/event\_driven\_messaging](http://soapatterns.org/design_patterns/event_driven_messaging)
 
-- **Jimmy Bogard. Refaktoring směrem k odolnosti: Vyhodnocení párování** <br/>
-    [*https://jimmybogard.com/refactoring-towards-resilience-evaluating-coupling/*](https://jimmybogard.com/refactoring-towards-resilience-evaluating-coupling/)
+- **Jimmy Bogard. Refaktoring směrem k odolnosti: Vyhodnocení párování** \
+    [https://jimmybogard.com/refactoring-towards-resilience-evaluating-coupling/](https://jimmybogard.com/refactoring-towards-resilience-evaluating-coupling/)
 
-- **Publikování a odběru kanálu** <br/>
-    [*https://www.enterpriseintegrationpatterns.com/patterns/messaging/PublishSubscribeChannel.html*](https://www.enterpriseintegrationpatterns.com/patterns/messaging/PublishSubscribeChannel.html)
+- **Publikování a odběru kanálu** \
+    [https://www.enterpriseintegrationpatterns.com/patterns/messaging/PublishSubscribeChannel.html](https://www.enterpriseintegrationpatterns.com/patterns/messaging/PublishSubscribeChannel.html)
 
-- **Komunikace mezi ohraničené kontexty** <br/>
+- **Komunikace mezi ohraničené kontexty** \
     <https://docs.microsoft.com/previous-versions/msp-n-p/jj591572(v=pandp.10)>
 
-- **Konzistence typu případné** <br/>
-    [*https://en.wikipedia.org/wiki/Eventual\_consistency*](https://en.wikipedia.org/wiki/Eventual_consistency)
+- **Konzistence typu případné** \
+    [https://en.wikipedia.org/wiki/Eventual\_consistency](https://en.wikipedia.org/wiki/Eventual_consistency)
 
-- **Philip Brown. Strategie pro integraci ohraničených kontextech** <br/>
-    [*https://www.culttt.com/2014/11/26/strategies-integrating-bounded-contexts/*](https://www.culttt.com/2014/11/26/strategies-integrating-bounded-contexts/)
+- **Philip Brown. Strategie pro integraci ohraničených kontextech** \
+    [https://www.culttt.com/2014/11/26/strategies-integrating-bounded-contexts/](https://www.culttt.com/2014/11/26/strategies-integrating-bounded-contexts/)
 
-- **Chris Richardson. Vývoj transakční Mikroslužeb pomocí agregace, modelu Event Sourcing a CQRS – část 2** <br/>
-    [*https://www.infoq.com/articles/microservices-aggregates-events-cqrs-part-2-richardson*](https://www.infoq.com/articles/microservices-aggregates-events-cqrs-part-2-richardson)
+- **Chris Richardson. Vývoj transakční Mikroslužeb pomocí agregace, modelu Event Sourcing a CQRS – část 2** \
+    [https://www.infoq.com/articles/microservices-aggregates-events-cqrs-part-2-richardson](https://www.infoq.com/articles/microservices-aggregates-events-cqrs-part-2-richardson)
 
-- **Chris Richardson. Model Event Sourcing** <br/>
-    [*https://microservices.io/patterns/data/event-sourcing.html*](https://microservices.io/patterns/data/event-sourcing.html)
+- **Chris Richardson. Model Event Sourcing** \
+    [https://microservices.io/patterns/data/event-sourcing.html](https://microservices.io/patterns/data/event-sourcing.html)
 
-- **Úvod do modelu Event Sourcing** <br/>
+- **Úvod do modelu Event Sourcing** \
     <https://docs.microsoft.com/previous-versions/msp-n-p/jj591559(v=pandp.10)>
 
-- **Událost Store databáze**. Oficiální web. <br/>
-    [*https://geteventstore.com/*](https://geteventstore.com/)
+- **Událost Store databáze**. Oficiální web. \
+    [https://geteventstore.com/](https://geteventstore.com/)
 
-- **Patrick Nommensen. Správa dat založené na událostech pro Mikroslužby** <br/>
-    *<https://dzone.com/articles/event-driven-data-management-for-microservices-1> *
+- **Patrick Nommensen. Správa dat založené na událostech pro Mikroslužby** \
+    <https://dzone.com/articles/event-driven-data-management-for-microservices-1>
 
-- **Věty** <br/>
-    [*https://en.wikipedia.org/wiki/CAP\_theorem*](https://en.wikipedia.org/wiki/CAP_theorem)
+- **Věty** \
+    [https://en.wikipedia.org/wiki/CAP\_theorem](https://en.wikipedia.org/wiki/CAP_theorem)
 
-- **Co je věty?** <br/>
-    [*https://www.quora.com/What-Is-CAP-Theorem-1*](https://www.quora.com/What-Is-CAP-Theorem-1)
+- **Co je věty?** \
+    [https://www.quora.com/What-Is-CAP-Theorem-1](https://www.quora.com/What-Is-CAP-Theorem-1)
 
-- **Úvod do konzistence dat** <br/>
+- **Úvod do konzistence dat** \
     <https://docs.microsoft.com/previous-versions/msp-n-p/dn589800(v=pandp.10)>
 
-- **Rick Saling. Věty: Proč "všechno, co jsou různé" bez cloudu a Internetu** <br/>
-    [*https://blogs.msdn.microsoft.com/rickatmicrosoft/2013/01/03/the-cap-theorem-why-everything-is-different-with-the-cloud-and-internet/*](https://blogs.msdn.microsoft.com/rickatmicrosoft/2013/01/03/the-cap-theorem-why-everything-is-different-with-the-cloud-and-internet/)
+- **Rick Saling. Věty: Proč "všechno, co jsou různé" bez cloudu a Internetu** \
+    [https://blogs.msdn.microsoft.com/rickatmicrosoft/2013/01/03/the-cap-theorem-why-everything-is-different-with-the-cloud-and-internet/](https://blogs.msdn.microsoft.com/rickatmicrosoft/2013/01/03/the-cap-theorem-why-everything-is-different-with-the-cloud-and-internet/)
 
-- **Eric Bureš. Zakončení 12 letech později: Jak se mění "Pravidla"** <br/>
-    [*https://www.infoq.com/articles/cap-twelve-years-later-how-the-rules-have-changed*](https://www.infoq.com/articles/cap-twelve-years-later-how-the-rules-have-changed)
+- **Eric Bureš. Zakončení 12 letech později: Jak se mění "Pravidla"** \
+    [https://www.infoq.com/articles/cap-twelve-years-later-how-the-rules-have-changed](https://www.infoq.com/articles/cap-twelve-years-later-how-the-rules-have-changed)
 
-- **Azure Service Bus. Zprostředkované zasílání zpráv: Vyhledávání duplicit**  <br/>
-    [*https://code.msdn.microsoft.com/Brokered-Messaging-c0acea25*](https://code.msdn.microsoft.com/Brokered-Messaging-c0acea25)
+- **Azure Service Bus. Zprostředkované zasílání zpráv: Vyhledávání duplicit**  \
+    [https://code.msdn.microsoft.com/Brokered-Messaging-c0acea25](https://code.msdn.microsoft.com/Brokered-Messaging-c0acea25)
 
-- **Průvodce spolehlivost** (RabbitMQ dokumentace) * <br/>
-    [*https://www.rabbitmq.com/reliability.html\#consumer*](https://www.rabbitmq.com/reliability.html#consumer)
+- **Průvodce spolehlivost** (RabbitMQ dokumentace) \
+    [https://www.rabbitmq.com/reliability.html\#consumer](https://www.rabbitmq.com/reliability.html#consumer)
 
-- **Azure Service Bus. Zprostředkované zasílání zpráv: Vyhledávání duplicit** <br/>
-    [*https://code.msdn.microsoft.com/Brokered-Messaging-c0acea25*](https://code.msdn.microsoft.com/Brokered-Messaging-c0acea25)
+- **Azure Service Bus. Zprostředkované zasílání zpráv: Vyhledávání duplicit** \
+    [https://code.msdn.microsoft.com/Brokered-Messaging-c0acea25](https://code.msdn.microsoft.com/Brokered-Messaging-c0acea25)
 
-- **Průvodce spolehlivost** (RabbitMQ dokumentace) <br/>
-    [*https://www.rabbitmq.com/reliability.html\#consumer*](https://www.rabbitmq.com/reliability.html%23consumer)
+- **Průvodce spolehlivost** (RabbitMQ dokumentace) \
+    [https://www.rabbitmq.com/reliability.html\#consumer](https://www.rabbitmq.com/reliability.html%23consumer)
 
 > [!div class="step-by-step"]
 > [Předchozí](rabbitmq-event-bus-development-test-environment.md)

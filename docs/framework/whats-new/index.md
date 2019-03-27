@@ -205,18 +205,18 @@ Přidá počet nových rozhraní API pro rozhraní .NET Framework 4.7.2 <xref:Sy
 
 - `TryGetValue` metody, které rozšiřují zkuste používaným v jiných typech kolekce na tyto dva typy. Metody jsou:
 
-   - [veřejné bool HashSet<T>. TryGetValue (out T actualValue T equalValue)](xref:System.Collections.Generic.SortedSet%601.TryGetValue%2A)
-   - [veřejné bool SortedSet<T>. TryGetValue (out T actualValue T equalValue)](xref:System.Collections.Generic.SortedSet%601.TryGetValue%2A)
+   - [veřejné bool HashSet\<T >. TryGetValue (out T actualValue T equalValue)](xref:System.Collections.Generic.SortedSet%601.TryGetValue%2A)
+   - [veřejné bool SortedSet\<T >. TryGetValue (out T actualValue T equalValue)](xref:System.Collections.Generic.SortedSet%601.TryGetValue%2A)
 
 - `Enumerable.To*` rozšiřující metody, které převést kolekci, <xref:System.Collections.Generic.HashSet%601>:
 
-   - [Veřejné statické HashSet<TSource> ToHashSet<TSource>(toto rozhraní IEnumerable<TSource> zdroje)](xref:System.Linq.Enumerable.ToHashSet%2A)
-   - [Veřejné statické HashSet<TSource> ToHashSet<TSource>(toto rozhraní IEnumerable<TSource> zdroje IEqualityComparer<TSource> porovnávače)](xref:System.Linq.Enumerable.ToHashSet%2A)
+   - [Veřejné statické HashSet\<TSource > ToHashSet\<TSource > (toto rozhraní IEnumerable\<TSource > zdroj)](xref:System.Linq.Enumerable.ToHashSet%2A)
+   - [Veřejné statické HashSet\<TSource > ToHashSet\<TSource > (toto rozhraní IEnumerable\<TSource > zdroj, IEqualityComparer\<TSource > comparer)](xref:System.Linq.Enumerable.ToHashSet%2A)
 
 - Nové <xref:System.Collections.Generic.HashSet%601> konstruktory, které vám umožní nastavit kapacitu kolekce, který dává zvýšení výkonu, když víte, velikost <xref:System.Collections.Generic.HashSet%601> předem:
 
    - [HashSet – Public (int kapacitu)](xref:System.Collections.Generic.HashSet%601.%23ctor(System.Int32))
-   - [HashSet – Public (int kapacitu, IEqualityComparer<T> porovnávače)](xref:System.Collections.Generic.HashSet%601.%23ctor(System.Int32,System.Collections.Generic.IEqualityComparer%7B%600%7D))
+   - [HashSet – veřejné (int kapacitu, IEqualityComparer\<T > comparer)](xref:System.Collections.Generic.HashSet%601.%23ctor(System.Int32,System.Collections.Generic.IEqualityComparer%7B%600%7D))
 
 <xref:System.Collections.Concurrent.ConcurrentDictionary%602> Třída zahrnuje nové přetížení <xref:System.Collections.Concurrent.ConcurrentDictionary%602.AddOrUpdate%2A> a <xref:System.Collections.Concurrent.ConcurrentDictionary%602.GetOrAdd%2A> metody k načtení hodnoty ze slovníku nebo ho přidat, pokud není nalezen a k přidání hodnoty do slovníku nebo ji aktualizovat, pokud již existuje.
 
@@ -681,7 +681,7 @@ End Class
 
 Potom můžete vytvořit soubor prostředků DataAnnotation.Localization.fr.resx, jehož klíč je řetězec chybové zprávy a jehož hodnota je lokalizované chybové zprávy. Soubor musí být nalezen v `App.LocalResources` složky. Například následující je klíč a její hodnotu v lokalizovaných francouzština (fr) jazyka chybová zpráva:
 
-| Název                                 | Hodnota                                     |
+| Name                                 | Hodnota                                     |
 | ------------------------------------ | ----------------------------------------- |
 | Hodnocení musí být mezi 1 a 10. | La note doit être comprise entre 1 et 10. |
 

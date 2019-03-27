@@ -3,12 +3,12 @@ title: Třídy a objekty v C# – připravuje C# jazyka
 description: Teprve se C#? Přečtěte si tento přehled tříd, objektů a dědičnost
 ms.date: 08/10/2016
 ms.assetid: 63a89bde-0f05-4bc4-b0cd-4f693854f0cd
-ms.openlocfilehash: c13265829c3b33d2c2cddfb3de9cd849b439fa67
-ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
+ms.openlocfilehash: a4276e214bbb6edb3fb1b75c21c26f18bb9fdc25
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57846139"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58466255"
 ---
 # <a name="classes-and-objects"></a>Třídy a objekty
 
@@ -217,7 +217,7 @@ Jak je znázorněno v příkladu, konkrétní metody lze vybrat vždy explicitn�
 
 Členy, které obsahují spustitelného kódu jsou souhrnně označovány jako *funkce členy* třídy. Předchozí část popisuje metody, které jsou primární druh členy funkce. Tato část popisuje jiné druhy členů funkce nepodporuje C#: konstruktory, vlastnosti, indexery, události, operátory a finalizační metody.
 
-Následující příklad zobrazuje obecný třídu s názvem seznamu<T>, který implementuje growable seznam objektů. Třída obsahuje několik příkladů nejběžnější druhy členů funkce.
+Následující příklad zobrazuje obecný třídu s názvem seznamu\<T >, která implementuje growable seznam objektů. Třída obsahuje několik příkladů nejběžnější druhy členů funkce.
 
 [!code-csharp[ListClass](../../../samples/snippets/csharp/tour/classes-and-objects/ListBasedExamples.cs#L4-L89)]
 
