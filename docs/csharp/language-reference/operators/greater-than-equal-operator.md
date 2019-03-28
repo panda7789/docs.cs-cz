@@ -8,14 +8,14 @@ helpviewer_keywords:
 - greater than or equal to operator (>=) [C#]
 - '>= operator [C#]'
 ms.assetid: 0db4dcaf-56a3-4884-a7ad-35f64978a58d
-ms.openlocfilehash: 821369734e64648714bf89efb0c02d12d4d816e3
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 0dd3aa8976c10f0adc5dc7620237991202f772ee
+ms.sourcegitcommit: 4a8c2b8d0df44142728b68ebc842575840476f6d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55256550"
+ms.lasthandoff: 03/28/2019
+ms.locfileid: "58545543"
 ---
-# <a name="-operator-c-reference"></a>>= – operátor (Referenční dokumentace jazyka C#)
+# <a name="-operator-c-reference"></a>> = – operátor (C# odkaz)
 
 Relační operátor "větší než nebo rovno" `>=` vrátí `true` Pokud svůj první operand je větší než nebo rovna hodnotě svým druhým operandem, `false` jinak. Všechny typy číselné a výčet podporují `>=` operátor. Pro operandy stejného [výčtu](../keywords/enum.md) porovnání typu hodnoty odpovídající základní celočíselného typu.
 
@@ -40,5 +40,5 @@ Další informace najdete v tématu [relační a typové zkoušky operátory](~/
 - [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
 - [Operátory jazyka C#](index.md)
 - [> – operátor](greater-than-operator.md)
-- [== – operátor](equality-comparison-operator.md)
+- [== – operátor](equality-operators.md#equality-operator-)
 - <xref:System.IComparable%601?displayProperty=nameWithType>

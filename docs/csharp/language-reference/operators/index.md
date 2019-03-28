@@ -131,9 +131,9 @@ Tyto operátory mají vyšší prioritu než v další části a nižší priori
 
 Tyto operátory mají vyšší prioritu než v další části a nižší prioritu než předchozí části.
 
-[x == y](equality-comparison-operator.md) – rovnosti. Ve výchozím nastavení, pro referenční typy jiné než `string`tento vrátí referenční rovnosti (identity test). Však můžete přetížit typy `==`, takže pokud máte v úmyslu k otestování identity, je nejvhodnější použít `ReferenceEquals` metodu na `object`.
+[x == y](equality-operators.md#equality-operator-) – rovnosti. Ve výchozím nastavení, pro referenční typy jiné než `string`tento vrátí referenční rovnosti (identity test). Však můžete přetížit typy `==`, takže pokud máte v úmyslu k otestování identity, je nejvhodnější použít `ReferenceEquals` metodu na `object`.
 
-[x! = y](not-equal-operator.md) – není rovno. Viz komentář `==`. Pokud typ přetížení `==`, pak musí přetížení `!=`.
+[x! = y](equality-operators.md#inequality-operator-) – není rovno. Viz komentář `==`. Pokud typ přetížení `==`, pak musí přetížení `!=`.
 
 ## <a name="logical-and-operator"></a>Logický operátor AND
 

@@ -5,12 +5,12 @@ author: cartermp
 ms.date: 09/10/2018
 ms.technology: dotnet-cli
 ms.custom: seodec18
-ms.openlocfilehash: 664ff07bad596ae38b4e31a00c7af0579d8245b8
-ms.sourcegitcommit: 5d9f4b805787f890ca6e0dc7ea30a43018bc9cbb
+ms.openlocfilehash: 92ca5149ad5f0e4a50c809a316123fbf77d4152d
+ms.sourcegitcommit: 4a8c2b8d0df44142728b68ebc842575840476f6d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57788307"
+ms.lasthandoff: 03/28/2019
+ms.locfileid: "58545361"
 ---
 # <a name="get-started-with-net-core-on-windowslinuxmacos-using-the-command-line"></a>Začínáme s .NET Core ve Windows, Linux nebo macOS pomocí příkazového řádku
 
@@ -119,7 +119,8 @@ A to je všechno!  Můžete rozšířit `Program.cs` jakkoli chcete.
 
 ## <a name="working-with-multiple-files"></a>Práce s více soubory
 
-Jednotlivé soubory, které se dají pro jednoduché jednorázové programy, ale využijete při vytváření složitějších aplikací, budete pravděpodobně to můžeme mít více zdrojové soubory projektu pro sestavení z předchozího příkladu Fibonacciho ukládáním hodnoty Fibonacciho a přidat některé rekurzivní funkce.
+Jednotlivé soubory, které se dají pro jednoduché jednorázové programy, ale využijete při vytváření složitějších aplikací, pravděpodobně budete mít více zdrojových souborů v projektu.
+Pojďme sestavení z předchozího příkladu Fibonacciho ukládáním hodnoty Fibonacciho a přidat některé rekurzivní funkce.
 
 1. Přidat nový soubor *Hello* adresář s názvem *FibonacciGenerator.cs* následujícím kódem:
 
