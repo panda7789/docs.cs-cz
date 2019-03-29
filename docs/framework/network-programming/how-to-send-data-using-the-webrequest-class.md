@@ -1,6 +1,6 @@
 ---
 title: 'Postupy: Odesílání dat pomocí třídy WebRequest'
-ms.date: 03/30/2017
+ms.date: 03/25/2019
 dev_langs:
 - csharp
 - vb
@@ -8,32 +8,33 @@ helpviewer_keywords:
 - WebRequest class, sending data to a host
 - Sending data to a host, using WebRequest class
 ms.assetid: 66686878-38ac-4aa6-bf42-ffb568ffc459
-ms.openlocfilehash: dac372ce4f9da99b91b6f8d140d69ce9f1238f30
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 591a1129625a4ff08c9aa37ce651bbc0320ff25d
+ms.sourcegitcommit: d938c39afb9216db377d0f0ecdaa53936a851059
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54562895"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58634268"
 ---
-# <a name="how-to-send-data-using-the-webrequest-class"></a><span data-ttu-id="df41d-102">Postupy: Odesílání dat pomocí třídy WebRequest</span><span class="sxs-lookup"><span data-stu-id="df41d-102">How to: Send Data Using the WebRequest Class</span></span>
-<span data-ttu-id="df41d-103">Následující postup popisuje kroky, které používají k odesílání dat na server.</span><span class="sxs-lookup"><span data-stu-id="df41d-103">The following procedure describes the steps used to send data to a server.</span></span> <span data-ttu-id="df41d-104">Tento postup se běžně používá k odesílání dat na webovou stránku.</span><span class="sxs-lookup"><span data-stu-id="df41d-104">This procedure is commonly used to post data to a Web page.</span></span>  
+# <a name="how-to-send-data-by-using-the-webrequest-class"></a><span data-ttu-id="c4ac2-102">Postupy: Odesílání dat pomocí třídy WebRequest</span><span class="sxs-lookup"><span data-stu-id="c4ac2-102">How to: Send data by using the WebRequest class</span></span>
+<span data-ttu-id="c4ac2-103">Následující postup popisuje kroky k odesílání dat na server.</span><span class="sxs-lookup"><span data-stu-id="c4ac2-103">The following procedure describes the steps to send data to a server.</span></span> <span data-ttu-id="c4ac2-104">Tento postup se běžně používá k odesílání dat na webovou stránku.</span><span class="sxs-lookup"><span data-stu-id="c4ac2-104">This procedure is commonly used to post data to a Web page.</span></span> 
   
-### <a name="to-send-data-to-a-host-server"></a><span data-ttu-id="df41d-105">K odesílání dat na hostitelský server</span><span class="sxs-lookup"><span data-stu-id="df41d-105">To send data to a host server</span></span>  
+## <a name="to-send-data-to-a-host-server"></a><span data-ttu-id="c4ac2-105">K odesílání dat na hostitelský server</span><span class="sxs-lookup"><span data-stu-id="c4ac2-105">To send data to a host server</span></span>  
   
-1.  <span data-ttu-id="df41d-106">Vytvoření <xref:System.Net.WebRequest> instance voláním <xref:System.Net.WebRequest.Create%2A> s identifikátorem URI prostředku, který přijímá data, například, skript nebo stránky ASP.NET.</span><span class="sxs-lookup"><span data-stu-id="df41d-106">Create a <xref:System.Net.WebRequest> instance by calling <xref:System.Net.WebRequest.Create%2A> with the URI of the resource that accepts data, for example, a script or ASP.NET page.</span></span>  
+1.  <span data-ttu-id="c4ac2-106">Vytvoření <xref:System.Net.WebRequest> instance voláním <xref:System.Net.WebRequest.Create%2A?displayProperty=nameWithType> s identifikátorem URI prostředku, jako je skript nebo stránky ASP.NET, která přijímá data.</span><span class="sxs-lookup"><span data-stu-id="c4ac2-106">Create a <xref:System.Net.WebRequest> instance by calling <xref:System.Net.WebRequest.Create%2A?displayProperty=nameWithType> with the URI of a resource, such as a script or ASP.NET page, that accepts data.</span></span> <span data-ttu-id="c4ac2-107">Příklad:</span><span class="sxs-lookup"><span data-stu-id="c4ac2-107">For example:</span></span> 
   
     ```csharp  
-    WebRequest request = WebRequest.Create("http://www.contoso.com/");  
+    WebRequest request = WebRequest.Create("http://www.contoso.com/PostAccepter.aspx");  
     ```  
   
     ```vb  
-    Dim request as WebRequest = WebRequest.Create("http://www.contoso.com/")  
+    Dim request as WebRequest = WebRequest.Create("http://www.contoso.com/PostAccepter.aspx")  
     ```  
   
     > [!NOTE]
-    >  <span data-ttu-id="df41d-107">Rozhraní .NET Framework poskytuje třídy pro konkrétní odvozený z **WebRequest** a **WebResponse** pro identifikátory URI, které začínají řetězcem "http:", "protokol https:", "ftp:", a "souboru:".</span><span class="sxs-lookup"><span data-stu-id="df41d-107">The .NET Framework provides protocol-specific classes derived from **WebRequest** and **WebResponse** for URIs that begin with "http:", "https:'', "ftp:", and "file:".</span></span> <span data-ttu-id="df41d-108">Přístup k prostředkům prostřednictvím jiné protokoly, je nutné implementovat, které jsou odvozeny z třídy pro konkrétní **WebRequest** a **WebResponse**.</span><span class="sxs-lookup"><span data-stu-id="df41d-108">To access resources using other protocols, you must implement protocol-specific classes that derive from **WebRequest** and **WebResponse**.</span></span> <span data-ttu-id="df41d-109">Další informace najdete v tématu [programování připojitelných protokolů](../../../docs/framework/network-programming/programming-pluggable-protocols.md) .</span><span class="sxs-lookup"><span data-stu-id="df41d-109">For more information, see [Programming Pluggable Protocols](../../../docs/framework/network-programming/programming-pluggable-protocols.md) .</span></span>  
+    > <span data-ttu-id="c4ac2-108">Rozhraní .NET Framework poskytuje konkrétní třídy odvozené od <xref:System.Net.WebRequest> a <xref:System.Net.WebResponse> třídy pro identifikátory URI, které začínají *http:*, *https:*, *ftp:* , a *souboru:*.</span><span class="sxs-lookup"><span data-stu-id="c4ac2-108">The .NET Framework provides protocol-specific classes derived from the <xref:System.Net.WebRequest> and <xref:System.Net.WebResponse> classes for URIs that begin with *http:*, *https:*, *ftp:*, and *file:*.</span></span>
+    <span data-ttu-id="c4ac2-109">Pokud je potřeba sada nebo čtení vlastnosti specifické pro protokol, musíte přetypovat vaše <xref:System.Net.WebRequest> nebo <xref:System.Net.WebResponse> objektu na typ object specifický pro protokol.</span><span class="sxs-lookup"><span data-stu-id="c4ac2-109">If you need to set or read protocol-specific properties, you must cast your <xref:System.Net.WebRequest> or <xref:System.Net.WebResponse> object to a protocol-specific object type.</span></span> <span data-ttu-id="c4ac2-110">Další informace najdete v tématu [programování připojitelných protokolů](programming-pluggable-protocols.md).</span><span class="sxs-lookup"><span data-stu-id="c4ac2-110">For more information, see [Programming pluggable protocols](programming-pluggable-protocols.md).</span></span> 
   
-2.  <span data-ttu-id="df41d-110">Nastavte všechny hodnoty vlastností, které budete potřebovat v **WebRequest**.</span><span class="sxs-lookup"><span data-stu-id="df41d-110">Set any property values that you need in the **WebRequest**.</span></span> <span data-ttu-id="df41d-111">Například chcete-li povolit ověřování, nastavte **pověření** vlastnost instance <xref:System.Net.NetworkCredential> třídy.</span><span class="sxs-lookup"><span data-stu-id="df41d-111">For example, to enable authentication, set the **Credentials** property to an instance of the <xref:System.Net.NetworkCredential> class.</span></span>  
+2.  <span data-ttu-id="c4ac2-111">Nastavte všechny hodnoty vlastností, které potřebujete ve vaší `WebRequest` objektu.</span><span class="sxs-lookup"><span data-stu-id="c4ac2-111">Set any property values that you need in your `WebRequest` object.</span></span> <span data-ttu-id="c4ac2-112">Například chcete-li povolit ověřování, nastavte <xref:System.Net.WebRequest.Credentials%2A?displayProperty=nameWithType> vlastnost instance <xref:System.Net.NetworkCredential> třídy:</span><span class="sxs-lookup"><span data-stu-id="c4ac2-112">For example, to enable authentication, set the <xref:System.Net.WebRequest.Credentials%2A?displayProperty=nameWithType> property to an instance of the <xref:System.Net.NetworkCredential> class:</span></span>
   
     ```csharp  
     request.Credentials = CredentialCache.DefaultCredentials;  
@@ -43,17 +44,7 @@ ms.locfileid: "54562895"
     request.Credentials = CredentialCache.DefaultCredentials  
     ```  
   
-     <span data-ttu-id="df41d-112">Ve většině případů **WebRequest** je dostačující k odesílání dat k řazení samotné.</span><span class="sxs-lookup"><span data-stu-id="df41d-112">In most cases, the **WebRequest** instance itself is sufficient to send data.</span></span> <span data-ttu-id="df41d-113">Nicméně, pokud je potřeba nastavit vlastnosti specifické pro protokol, musíte přetypovat **WebRequest** na konkrétní typ.</span><span class="sxs-lookup"><span data-stu-id="df41d-113">However, if you need to set protocol-specific properties, you must cast the **WebRequest** to the protocol-specific type.</span></span> <span data-ttu-id="df41d-114">Například pro přístup k protokolu HTTP specifické vlastnostem <xref:System.Net.HttpWebRequest>, vícesměrového vysílání **WebRequest** do **HttpWebRequest** odkaz.</span><span class="sxs-lookup"><span data-stu-id="df41d-114">For example, to access the HTTP-specific properties of <xref:System.Net.HttpWebRequest>, cast the **WebRequest** to an **HttpWebRequest** reference.</span></span> <span data-ttu-id="df41d-115">Následující příklad kódu ukazuje, jak nastavit konkrétní HTTP <xref:System.Net.HttpWebRequest.UserAgent%2A> vlastnost.</span><span class="sxs-lookup"><span data-stu-id="df41d-115">The following code example shows how to set the HTTP-specific <xref:System.Net.HttpWebRequest.UserAgent%2A> property.</span></span>  
-  
-    ```csharp  
-    ((HttpWebRequest)request).UserAgent = ".NET Framework Example Client";  
-    ```  
-  
-    ```vb  
-    Ctype(request,HttpWebRequest).UserAgent = ".NET Framework Example Client"  
-    ```  
-  
-3.  <span data-ttu-id="df41d-116">Zadejte metodu protokolu, která povoluje ukládání dat k odeslání požadavku, jako je například HTTP **příspěvek** metody.</span><span class="sxs-lookup"><span data-stu-id="df41d-116">Specify a protocol method that permits data to be sent with a request, such as the HTTP **POST** method.</span></span>  
+3.  <span data-ttu-id="c4ac2-113">Zadejte metodu protokolu, která povoluje ukládání dat k odeslání požadavku, jako je například HTTP `POST` metody:</span><span class="sxs-lookup"><span data-stu-id="c4ac2-113">Specify a protocol method that permits data to be sent with a request, such as the HTTP `POST` method:</span></span>  
   
     ```csharp  
     request.Method = "POST";  
@@ -63,7 +54,7 @@ ms.locfileid: "54562895"
     request.Method = "POST"  
     ```  
   
-4.  <span data-ttu-id="df41d-117">Nastavte **ContentLength** vlastnost.</span><span class="sxs-lookup"><span data-stu-id="df41d-117">Set the **ContentLength** property.</span></span>  
+4.  <span data-ttu-id="c4ac2-114">Nastavte <xref:System.Web.HttpRequest.ContentLength> na počet bajtů zahrnutí při zpracování požadavku.</span><span class="sxs-lookup"><span data-stu-id="c4ac2-114">Set the <xref:System.Web.HttpRequest.ContentLength> property to the number of bytes you're including with your request.</span></span> <span data-ttu-id="c4ac2-115">Příklad:</span><span class="sxs-lookup"><span data-stu-id="c4ac2-115">For example:</span></span> 
   
     ```csharp  
     request.ContentLength = byteArray.Length;  
@@ -73,7 +64,7 @@ ms.locfileid: "54562895"
     request.ContentLength = byteArray.Length  
     ```  
   
-5.  <span data-ttu-id="df41d-118">Nastavte **ContentType** vlastnost na odpovídající hodnotu.</span><span class="sxs-lookup"><span data-stu-id="df41d-118">Set the **ContentType** property to an appropriate value.</span></span>  
+5.  <span data-ttu-id="c4ac2-116">Nastavte <xref:System.Web.HttpRequest.ContentType> vlastnost na odpovídající hodnotu.</span><span class="sxs-lookup"><span data-stu-id="c4ac2-116">Set the <xref:System.Web.HttpRequest.ContentType> property to an appropriate value.</span></span> <span data-ttu-id="c4ac2-117">Příklad:</span><span class="sxs-lookup"><span data-stu-id="c4ac2-117">For example:</span></span>
   
     ```csharp  
     request.ContentType = "application/x-www-form-urlencoded";  
@@ -83,37 +74,37 @@ ms.locfileid: "54562895"
     request.ContentType = "application/x-www-form-urlencoded"  
     ```  
   
-6.  <span data-ttu-id="df41d-119">Získání datového proudu, obsahuje data žádosti voláním <xref:System.Net.WebRequest.GetRequestStream%2A> metody.</span><span class="sxs-lookup"><span data-stu-id="df41d-119">Get the stream that holds request data by calling the <xref:System.Net.WebRequest.GetRequestStream%2A> method.</span></span>  
+6.  <span data-ttu-id="c4ac2-118">Získání datového proudu, obsahuje data žádosti voláním <xref:System.Net.WebRequest.GetRequestStream%2A> metody.</span><span class="sxs-lookup"><span data-stu-id="c4ac2-118">Get the stream that holds request data by calling the <xref:System.Net.WebRequest.GetRequestStream%2A> method.</span></span> <span data-ttu-id="c4ac2-119">Příklad:</span><span class="sxs-lookup"><span data-stu-id="c4ac2-119">For example:</span></span>
   
     ```csharp  
-    Stream dataStream = request.GetRequestStream ();  
+    Stream dataStream = request.GetRequestStream();  
     ```  
   
     ```vb  
-    Stream dataStream = request.GetRequestStream ()  
+    Stream dataStream = request.GetRequestStream()  
     ```  
   
-7.  <span data-ttu-id="df41d-120">Zapsat data do <xref:System.IO.Stream> objekt vrácený touto metodou.</span><span class="sxs-lookup"><span data-stu-id="df41d-120">Write the data to the <xref:System.IO.Stream> object returned by this method.</span></span>  
+7.  <span data-ttu-id="c4ac2-120">Zapsat data do <xref:System.IO.Stream> vrácený `GetRequestStream` metody.</span><span class="sxs-lookup"><span data-stu-id="c4ac2-120">Write the data to the <xref:System.IO.Stream> object returned by the `GetRequestStream` method.</span></span> <span data-ttu-id="c4ac2-121">Příklad:</span><span class="sxs-lookup"><span data-stu-id="c4ac2-121">For example:</span></span>
   
     ```csharp  
-    dataStream.Write (byteArray, 0, byteArray.Length);  
+    dataStream.Write(byteArray, 0, byteArray.Length);  
     ```  
   
     ```vb  
-    dataStream.Write (byteArray, 0, byteArray.Length)  
+    dataStream.Write(byteArray, 0, byteArray.Length)  
     ```  
   
-8.  <span data-ttu-id="df41d-121">Zavřete datový proud požadavku voláním **Stream.Close** metody.</span><span class="sxs-lookup"><span data-stu-id="df41d-121">Close the request stream by calling the **Stream.Close** method.</span></span>  
+8.  <span data-ttu-id="c4ac2-122">Zavřete datový proud požadavku voláním <xref:System.IO.Stream.Close%2A?displayProperty=nameWithType> metody.</span><span class="sxs-lookup"><span data-stu-id="c4ac2-122">Close the request stream by calling the <xref:System.IO.Stream.Close%2A?displayProperty=nameWithType> method.</span></span> <span data-ttu-id="c4ac2-123">Příklad:</span><span class="sxs-lookup"><span data-stu-id="c4ac2-123">For example:</span></span>
   
     ```csharp  
-    dataStream.Close ();  
+    dataStream.Close();  
     ```  
   
     ```vb  
-    dataStream.Close ()  
+    dataStream.Close()  
     ```  
   
-9. <span data-ttu-id="df41d-122">Odesílání požadavku na server voláním <xref:System.Net.WebRequest.GetResponse%2A>.</span><span class="sxs-lookup"><span data-stu-id="df41d-122">Send the request to the server by calling <xref:System.Net.WebRequest.GetResponse%2A>.</span></span> <span data-ttu-id="df41d-123">Tato metoda vrátí objekt, který obsahuje odpověď serveru.</span><span class="sxs-lookup"><span data-stu-id="df41d-123">This method returns an object containing the server's response.</span></span> <span data-ttu-id="df41d-124">Vrácený <xref:System.Net.WebResponse> typ objektu je určeno schéma identifikátoru URI požadavku.</span><span class="sxs-lookup"><span data-stu-id="df41d-124">The returned <xref:System.Net.WebResponse> object's type is determined by the scheme of the request's URI.</span></span>  
+9. <span data-ttu-id="c4ac2-124">Odesílání požadavku na server voláním <xref:System.Net.WebRequest.GetResponse%2A?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="c4ac2-124">Send the request to the server by calling <xref:System.Net.WebRequest.GetResponse%2A?displayProperty=nameWithType>.</span></span> <span data-ttu-id="c4ac2-125">Tato metoda vrátí objekt, který obsahuje odpověď serveru.</span><span class="sxs-lookup"><span data-stu-id="c4ac2-125">This method returns an object containing the server's response.</span></span> <span data-ttu-id="c4ac2-126">Vrácený `WebResponse` typ objektu je určeno schéma identifikátoru URI požadavku.</span><span class="sxs-lookup"><span data-stu-id="c4ac2-126">The returned `WebResponse` object's type is determined by the scheme of the request's URI.</span></span> <span data-ttu-id="c4ac2-127">Příklad:</span><span class="sxs-lookup"><span data-stu-id="c4ac2-127">For example:</span></span>
   
     ```csharp  
     WebResponse response = request.GetResponse();  
@@ -123,30 +114,29 @@ ms.locfileid: "54562895"
     Dim response As WebResponse = request.GetResponse()  
     ```  
   
-    > [!NOTE]
-    >  <span data-ttu-id="df41d-125">Po dokončení <xref:System.Net.WebResponse> objektu, je nutné zavřít voláním <xref:System.Net.WebResponse.Close%2A> metody.</span><span class="sxs-lookup"><span data-stu-id="df41d-125">After you are finished with a <xref:System.Net.WebResponse> object, you must close it by calling the <xref:System.Net.WebResponse.Close%2A> method.</span></span> <span data-ttu-id="df41d-126">Případně, pokud datový proud odpovědí jste získali z objektu odpovědi, můžete zavřít datový proud voláním <xref:System.IO.Stream.Close%2A?displayProperty=nameWithType> metody.</span><span class="sxs-lookup"><span data-stu-id="df41d-126">Alternatively, if you have gotten the response stream from the response object, you can close the stream by calling the <xref:System.IO.Stream.Close%2A?displayProperty=nameWithType> method.</span></span> <span data-ttu-id="df41d-127">Pokud instalací neukončíte odpovědi nebo datový proud, může vaše aplikace vyčerpala volné připojení k serveru nebo budou moct zpracovávat další požadavky.</span><span class="sxs-lookup"><span data-stu-id="df41d-127">If you do not close the response or the stream, your application can run out of connections to the server and become unable to process additional requests.</span></span>  
-  
-10. <span data-ttu-id="df41d-128">Můžete přístup k vlastnostem **WebResponse** nebo přetypovat **WebResponse** na konkrétní instanci číst vlastnosti specifické pro protokol.</span><span class="sxs-lookup"><span data-stu-id="df41d-128">You can access the properties of the **WebResponse** or cast the **WebResponse** to a protocol-specific instance to read protocol-specific properties.</span></span> <span data-ttu-id="df41d-129">Například pro přístup k protokolu HTTP specifické vlastnostem <xref:System.Net.HttpWebResponse>, vícesměrového vysílání **WebResponse** do **HttpWebResponse** odkaz.</span><span class="sxs-lookup"><span data-stu-id="df41d-129">For example, to access the HTTP-specific properties of <xref:System.Net.HttpWebResponse>, cast the **WebResponse** to an **HttpWebResponse** reference.</span></span>  
+10. <span data-ttu-id="c4ac2-128">Můžete přistupovat k vlastnosti vaší `WebResponse` objektu nebo přetypování na konkrétní instanci číst vlastnosti specifické pro protokol.</span><span class="sxs-lookup"><span data-stu-id="c4ac2-128">You can access the properties of your `WebResponse` object or cast it to a protocol-specific instance to read protocol-specific properties.</span></span> 
+
+    <span data-ttu-id="c4ac2-129">Například pro přístup k protokolu HTTP specifické vlastnostem <xref:System.Net.HttpWebResponse>, vícesměrového vysílání vaše `WebResponse` objektu <xref:System.Net.HttpWebResponse> odkaz.</span><span class="sxs-lookup"><span data-stu-id="c4ac2-129">For example, to access the HTTP-specific properties of <xref:System.Net.HttpWebResponse>, cast your `WebResponse` object to an <xref:System.Net.HttpWebResponse> reference.</span></span> <span data-ttu-id="c4ac2-130">Následující příklad kódu ukazuje, jak zobrazit konkrétní HTTP <xref:System.Net.HttpWebResponse.StatusDescription%2A?displayProperty=nameWithType> vlastnost odeslaných odpovědí:</span><span class="sxs-lookup"><span data-stu-id="c4ac2-130">The following code example shows how to display the HTTP-specific <xref:System.Net.HttpWebResponse.StatusDescription%2A?displayProperty=nameWithType> property sent with a response:</span></span>
   
     ```csharp  
-    Console.WriteLine (((HttpWebResponse)response).StatusDescription);  
+    Console.WriteLine(((HttpWebResponse)response).StatusDescription);    
     ```  
   
     ```vb  
     Console.WriteLine(CType(response, HttpWebResponse).StatusDescription)  
     ```  
   
-11. <span data-ttu-id="df41d-130">Chcete-li získat datový proud s daty odpověď odesílanou serverem, zavolejte <xref:System.Net.WebResponse.GetResponseStream%2A> metodu **WebResponse**.</span><span class="sxs-lookup"><span data-stu-id="df41d-130">To get the stream containing response data sent by the server, call the <xref:System.Net.WebResponse.GetResponseStream%2A> method of the **WebResponse**.</span></span>  
+11. <span data-ttu-id="c4ac2-131">Chcete-li získat datový proud s daty odpověď odesílanou serverem, zavolejte <xref:System.Net.WebResponse.GetResponseStream%2A?displayProperty=nameWithType> metodu vaše `WebResponse` objektu.</span><span class="sxs-lookup"><span data-stu-id="c4ac2-131">To get the stream containing response data sent by the server, call the <xref:System.Net.WebResponse.GetResponseStream%2A?displayProperty=nameWithType> method of your `WebResponse` object.</span></span> <span data-ttu-id="c4ac2-132">Příklad:</span><span class="sxs-lookup"><span data-stu-id="c4ac2-132">For example:</span></span>
   
     ```csharp  
-    Stream data = response.GetResponseStream;  
+    Stream dataStream = response.GetResponseStream();  
     ```  
   
     ```vb  
-    Dim data As Stream = response.GetResponseStream  
+    Dim dataStream As Stream = response.GetResponseStream()  
     ```  
   
-12. <span data-ttu-id="df41d-131">Po načtení dat z odpovědi, musíte buď zavřít pomocí datového proudu odpovědi **Stream.Close** metody nebo Zavřít odpověď pomocí **WebResponse.Close** metody.</span><span class="sxs-lookup"><span data-stu-id="df41d-131">After reading the data from the response, you must either close the response stream using the **Stream.Close** method or close the response using the **WebResponse.Close** method.</span></span> <span data-ttu-id="df41d-132">Není nutné volat **Zavřít** metoda u datového proudu s odpovědí a **WebResponse**, ale to uděláte tak, není škodlivé.</span><span class="sxs-lookup"><span data-stu-id="df41d-132">It is not necessary to call the **Close** method on both the response stream and the **WebResponse**, but doing so is not harmful.</span></span>  
+12. <span data-ttu-id="c4ac2-133">Po přečtení dat z objektu odpovědi, buď ji zavřít <xref:System.Net.WebResponse.Close%2A?displayProperty=nameWithType> metody nebo zavřít pomocí datového proudu odpovědi <xref:System.IO.Stream.Close%2A?displayProperty=nameWithType> metoda.</span><span class="sxs-lookup"><span data-stu-id="c4ac2-133">After you've read the data from the response object, either close it with the <xref:System.Net.WebResponse.Close%2A?displayProperty=nameWithType> method or close the response stream with the <xref:System.IO.Stream.Close%2A?displayProperty=nameWithType> method.</span></span> <span data-ttu-id="c4ac2-134">Nezavírejte odpovědi nebo datový proud, může vaše aplikace vyčerpala volné připojení k serveru nebo stát nemůže zpracovat požadavky.</span><span class="sxs-lookup"><span data-stu-id="c4ac2-134">If you don't close either the response or the stream, your application can run out of server connections and become unable to process additional requests.</span></span> <span data-ttu-id="c4ac2-135">Protože `WebResponse.Close` volání metody `Stream.Close` když se toto okno zavře odpověď, není nutné volat `Close` na objekty odpovědi i datový proud, i když to není tak škodlivé.</span><span class="sxs-lookup"><span data-stu-id="c4ac2-135">Because the `WebResponse.Close` method calls `Stream.Close` when it closes the response, it's not necessary to call `Close` on both the response and stream objects, although doing so isn't harmful.</span></span> <span data-ttu-id="c4ac2-136">Příklad:</span><span class="sxs-lookup"><span data-stu-id="c4ac2-136">For example:</span></span>
   
     ```csharp  
     response.Close();  
@@ -156,8 +146,10 @@ ms.locfileid: "54562895"
     response.Close()  
     ```  
   
-## <a name="example"></a><span data-ttu-id="df41d-133">Příklad</span><span class="sxs-lookup"><span data-stu-id="df41d-133">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="c4ac2-137">Příklad</span><span class="sxs-lookup"><span data-stu-id="c4ac2-137">Example</span></span>  
   
+<span data-ttu-id="c4ac2-138">Následující příklad kódu ukazuje, jak odesílat data do webového serveru a tato data číst v odpovědi:</span><span class="sxs-lookup"><span data-stu-id="c4ac2-138">The following code example shows how to send data to a web server and read the data in its response:</span></span>  
+
 ```csharp  
 using System;  
 using System.IO;  
@@ -168,41 +160,47 @@ namespace Examples.System.Net
 {  
     public class WebRequestPostExample  
     {  
-        public static void Main ()  
+        public static void Main()  
         {  
-            // Create a request using a URL that can receive a post.   
-            WebRequest request = WebRequest.Create ("http://www.contoso.com/PostAccepter.aspx ");  
+            // Create a request by using a URL that can receive a post.   
+            WebRequest request = WebRequest.Create("http://www.contoso.com/PostAccepter.aspx ");  
             // Set the Method property of the request to POST.  
             request.Method = "POST";  
+
             // Create POST data and convert it to a byte array.  
             string postData = "This is a test that posts this string to a Web server.";  
-            byte[] byteArray = Encoding.UTF8.GetBytes (postData);  
-            // Set the ContentType property of the WebRequest.  
+            byte[] byteArray = Encoding.UTF8.GetBytes(postData);  
+
+            // Set the ContentType property of the request.  
             request.ContentType = "application/x-www-form-urlencoded";  
-            // Set the ContentLength property of the WebRequest.  
+            // Set the ContentLength property of the request.  
             request.ContentLength = byteArray.Length;  
+
             // Get the request stream.  
-            Stream dataStream = request.GetRequestStream ();  
+            Stream dataStream = request.GetRequestStream();  
             // Write the data to the request stream.  
-            dataStream.Write (byteArray, 0, byteArray.Length);  
-            // Close the Stream object.  
-            dataStream.Close ();  
+            dataStream.Write(byteArray, 0, byteArray.Length);  
+            // Close the stream.  
+            dataStream.Close();  
+
             // Get the response.  
-            WebResponse response = request.GetResponse ();  
+            WebResponse response = request.GetResponse();  
             // Display the status.  
-            Console.WriteLine (((HttpWebResponse)response).StatusDescription);  
+            Console.WriteLine(((HttpWebResponse)response).StatusDescription);  
+
             // Get the stream containing content returned by the server.  
-            dataStream = response.GetResponseStream ();  
-            // Open the stream using a StreamReader for easy access.  
-            StreamReader reader = new StreamReader (dataStream);  
+            dataStream = response.GetResponseStream();  
+            // Open the stream by using a StreamReader for easy access.  
+            StreamReader reader = new StreamReader(dataStream);  
+
             // Read the content.  
-            string responseFromServer = reader.ReadToEnd ();  
+            string responseFromServer = reader.ReadToEnd();  
             // Display the content.  
-            Console.WriteLine (responseFromServer);  
-            // Clean up the streams.  
-            reader.Close ();  
-            dataStream.Close ();  
-            response.Close ();  
+            Console.WriteLine(responseFromServer);  
+
+            // Clean up the response.  
+            reader.Close();  
+            response.Close();  
         }  
     }  
 }  
@@ -213,51 +211,63 @@ Imports System
 Imports System.IO  
 Imports System.Net  
 Imports System.Text  
+
 Namespace Examples.System.Net  
+
     Public Class WebRequestPostExample  
   
         Public Shared Sub Main()  
-            ' Create a request using a URL that can receive a post.   
+
+            ' Create a request by using a URL that can receive a post.   
             Dim request As WebRequest = WebRequest.Create("http://www.contoso.com/PostAccepter.aspx ")  
             ' Set the Method property of the request to POST.  
             request.Method = "POST"  
+
             ' Create POST data and convert it to a byte array.  
             Dim postData As String = "This is a test that posts this string to a Web server."  
             Dim byteArray As Byte() = Encoding.UTF8.GetBytes(postData)  
+
             ' Set the ContentType property of the WebRequest.  
             request.ContentType = "application/x-www-form-urlencoded"  
             ' Set the ContentLength property of the WebRequest.  
             request.ContentLength = byteArray.Length  
+
             ' Get the request stream.  
             Dim dataStream As Stream = request.GetRequestStream()  
             ' Write the data to the request stream.  
             dataStream.Write(byteArray, 0, byteArray.Length)  
-            ' Close the Stream object.  
+            ' Close the stream.  
             dataStream.Close()  
+
             ' Get the response.  
             Dim response As WebResponse = request.GetResponse()  
             ' Display the status.  
             Console.WriteLine(CType(response, HttpWebResponse).StatusDescription)  
+
             ' Get the stream containing content returned by the server.  
             dataStream = response.GetResponseStream()  
-            ' Open the stream using a StreamReader for easy access.  
+            ' Open the stream by using a StreamReader for easy access.  
             Dim reader As New StreamReader(dataStream)  
+
             ' Read the content.  
             Dim responseFromServer As String = reader.ReadToEnd()  
             ' Display the content.  
             Console.WriteLine(responseFromServer)  
-            ' Clean up the streams.  
+
+            ' Clean up the response.  
             reader.Close()  
-            dataStream.Close()  
             response.Close()  
+
         End Sub  
+
     End Class  
+
 End Namespace  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="df41d-134">Viz také:</span><span class="sxs-lookup"><span data-stu-id="df41d-134">See also</span></span>
-- [<span data-ttu-id="df41d-135">Vytváření internetových žádostí</span><span class="sxs-lookup"><span data-stu-id="df41d-135">Creating Internet Requests</span></span>](../../../docs/framework/network-programming/creating-internet-requests.md)
-- [<span data-ttu-id="df41d-136">Použití streamů v síti</span><span class="sxs-lookup"><span data-stu-id="df41d-136">Using Streams on the Network</span></span>](../../../docs/framework/network-programming/using-streams-on-the-network.md)
-- [<span data-ttu-id="df41d-137">Přístup k internetu přes proxy server</span><span class="sxs-lookup"><span data-stu-id="df41d-137">Accessing the Internet Through a Proxy</span></span>](../../../docs/framework/network-programming/accessing-the-internet-through-a-proxy.md)
-- [<span data-ttu-id="df41d-138">Žádosti o data</span><span class="sxs-lookup"><span data-stu-id="df41d-138">Requesting Data</span></span>](../../../docs/framework/network-programming/requesting-data.md)
-- [<span data-ttu-id="df41d-139">Postupy: Žádost o Data pomocí třídy WebRequest</span><span class="sxs-lookup"><span data-stu-id="df41d-139">How to: Request Data Using the WebRequest Class</span></span>](../../../docs/framework/network-programming/how-to-request-data-using-the-webrequest-class.md)
+## <a name="see-also"></a><span data-ttu-id="c4ac2-139">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c4ac2-139">See also</span></span>
+- [<span data-ttu-id="c4ac2-140">Vytváření internetových žádostí</span><span class="sxs-lookup"><span data-stu-id="c4ac2-140">Creating internet requests</span></span>](creating-internet-requests.md)
+- [<span data-ttu-id="c4ac2-141">Použití streamů v síti</span><span class="sxs-lookup"><span data-stu-id="c4ac2-141">Using streams on the network</span></span>](using-streams-on-the-network.md)
+- [<span data-ttu-id="c4ac2-142">Přístup k Internetu prostřednictvím proxy serveru</span><span class="sxs-lookup"><span data-stu-id="c4ac2-142">Accessing the internet through a proxy</span></span>](accessing-the-internet-through-a-proxy.md)
+- [<span data-ttu-id="c4ac2-143">Požadavek na data</span><span class="sxs-lookup"><span data-stu-id="c4ac2-143">Requesting data</span></span>](requesting-data.md)
+- [<span data-ttu-id="c4ac2-144">Postupy: Data žádosti pomocí třídy WebRequest</span><span class="sxs-lookup"><span data-stu-id="c4ac2-144">How to: Request data by using the WebRequest class</span></span>](how-to-request-data-using-the-webrequest-class.md)
