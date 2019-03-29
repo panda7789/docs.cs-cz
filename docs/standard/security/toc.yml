@@ -1,0 +1,79 @@
+items:
+- name: Zabezpečení
+  href: index.md
+  items:
+  - name: Klíčové koncepty zabezpečení
+    href: key-security-concepts.md
+  - name: Zabezpečení na základě rolí
+    href: role-based-security.md
+    items:
+    - name: Objekty zabezpečení a identity
+      href: principal-and-identity-objects.md
+    - name: 'Postupy: Vytvoření objektu WindowsPrincipal'
+      href: how-to-create-a-windowsprincipal-object.md
+    - name: 'Postupy: Vytváření objektů GenericPrincipal a GenericIdentity'
+      href: how-to-create-genericprincipal-and-genericidentity-objects.md
+    - name: Nahrazení objektu zabezpečení
+      href: replacing-a-principal-object.md
+    - name: Zosobnění a návrat
+      href: impersonating-and-reverting.md
+  - name: Kryptografický model
+    href: cryptography-model.md
+    items:
+    - name: Šifrovací služby
+      href: cryptographic-services.md
+    - name: Generování klíčů pro šifrování a dešifrování
+      href: generating-keys-for-encryption-and-decryption.md
+    - name: 'Postupy: Uložení asymetrického klíče v kontejneru klíčů'
+      href: how-to-store-asymmetric-keys-in-a-key-container.md
+    - name: Šifrování dat
+      href: encrypting-data.md
+    - name: Dešifrování dat
+      href: decrypting-data.md
+    - name: Kryptografické podpisy
+      href: cryptographic-signatures.md
+    - name: Zajištění integrity dat pomocí hodnot hash
+      href: ensuring-data-integrity-with-hash-codes.md
+    - name: Vytváření šifrovacích schémat
+      href: creating-a-cryptographic-scheme.md
+    - name: 'Postupy: Šifrování elementů XML pomocí symetrických klíčů'
+      href: how-to-encrypt-xml-elements-with-symmetric-keys.md
+    - name: 'Postupy: Dešifrování elementů XML pomocí symetrických klíčů'
+      href: how-to-decrypt-xml-elements-with-symmetric-keys.md
+    - name: 'Postupy: Šifrování elementů XML pomocí asymetrických klíčů'
+      href: how-to-encrypt-xml-elements-with-asymmetric-keys.md
+    - name: 'Postupy: Dešifrování elementů XML pomocí asymetrických klíčů'
+      href: how-to-decrypt-xml-elements-with-asymmetric-keys.md
+    - name: 'Postupy: Šifrování elementů XML pomocí certifikátů X.509'
+      href: how-to-encrypt-xml-elements-with-x-509-certificates.md
+    - name: 'Postupy: Dešifrování elementů XML pomocí certifikátů X.509'
+      href: how-to-decrypt-xml-elements-with-x-509-certificates.md
+    - name: 'Postupy: Podepisování dokumentů XML digitálními podpisy'
+      href: how-to-sign-xml-documents-with-digital-signatures.md
+    - name: 'Postupy: Ověření digitálních podpisů dokumentů XML'
+      href: how-to-verify-the-digital-signatures-of-xml-documents.md
+    - name: 'Postupy: Použití ochrany dat'
+      href: how-to-use-data-protection.md
+    - name: 'Postupy: Přístup k hardwarovým šifrovacím zařízením'
+      href: how-to-access-hardware-encryption-devices.md
+    - name: 'Návod: Vytvoření šifrovací aplikace'
+      href: walkthrough-creating-a-cryptographic-application.md
+  - name: Pokyny pro zabezpečené kódování
+    href: secure-coding-guidelines.md
+    items:
+    - name: Zabezpečení stavových dat
+      href: securing-state-data.md
+    - name: Zabezpečení a uživatelský vstup
+      href: security-and-user-input.md
+    - name: Zabezpečení a konflikty časování
+      href: security-and-race-conditions.md
+    - name: Zabezpečení a průběžné vytváření kódu
+      href: security-and-on-the-fly-code-generation.md
+    - name: Ohrožení zabezpečení časování u symetrického dešifrování pomocí odsazení v režimu CBC
+      href: vulnerabilities-cbc-mode.md
+ms.openlocfilehash: bf0a409f88486c4fb5ca476ab5f96be6e1aa823d
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58471317"

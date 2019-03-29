@@ -1,0 +1,30 @@
+items:
+- name: LINQ v jazyce Visual Basic
+  href: index.md
+  items:
+  - name: Úvod do jazyka LINQ
+    href: introduction-to-linq.md
+  - name: 'Postupy: Dotaz na databázi pomocí LINQ'
+    href: how-to-query-a-database-by-using-linq.md
+  - name: 'Postupy: Volání uložené procedury pomocí LINQ'
+    href: how-to-call-a-stored-procedure-by-using-linq.md
+  - name: 'Postupy: Změna dat v databázi pomocí LINQ'
+    href: how-to-modify-data-in-a-database-by-using-linq.md
+  - name: 'Postupy: Kombinace dat s LINQ pomocí spojení'
+    href: how-to-combine-data-with-linq-by-using-joins.md
+  - name: 'Postupy: Řazení výsledků dotazu pomocí LINQ'
+    href: how-to-sort-query-results-by-using-linq.md
+  - name: 'Postupy: Filtrování výsledků dotazu pomocí LINQ'
+    href: how-to-filter-query-results-by-using-linq.md
+  - name: 'Postupy: Počet, suma nebo průměr dat pomocí LINQ'
+    href: how-to-count-sum-or-average-data-by-using-linq.md
+  - name: 'Postupy: Hledání minimální nebo maximální hodnoty ve výsledku dotazu pomocí LINQ'
+    href: how-to-find-the-minimum-or-maximum-value-in-a-query-result.md
+  - name: 'Postupy: Vrácení výsledku dotazu LINQ jako specifického typu'
+    href: how-to-return-a-linq-query-result-as-a-specific-type.md
+ms.openlocfilehash: 0d56e6e5c147b71bbd4aa35bab93751b15e63a8d
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58471566"

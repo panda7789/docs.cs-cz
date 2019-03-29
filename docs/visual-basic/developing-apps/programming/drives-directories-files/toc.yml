@@ -1,0 +1,87 @@
+items:
+- name: Zpracování jednotek, adresářů a souborů
+  href: processing.md
+  items:
+  - name: Přístup k souborům v jazyce Visual Basic
+    href: file-access.md
+    items:
+    - name: Čtení ze souborů
+      href: reading-from-files.md
+      items:
+      - name: 'Postupy: Čtení z textových souborů'
+        href: how-to-read-from-text-files.md
+      - name: 'Postupy: Čtení z textových souborů s oddělovačem čárkou'
+        href: how-to-read-from-comma-delimited-text-files.md
+      - name: 'Postupy: Čtení z textových souborů s pevnou šířkou'
+        href: how-to-read-from-fixed-width-text-files.md
+      - name: 'Postupy: Čtení z textových souborů ve více formátech'
+        href: how-to-read-from-text-files-with-multiple-formats.md
+      - name: 'Postupy: Čtení z binárních souborů'
+        href: how-to-read-from-binary-files.md
+      - name: 'Postupy: Čtení textu ze souborů pomocí třídy StreamReader'
+        href: how-to-read-text-from-files-with-a-streamreader.md
+    - name: Zápis do souborů
+      href: writing-to-files.md
+      items:
+      - name: 'Postupy: Zápis textu do souborů'
+        href: how-to-write-text-to-files.md
+      - name: 'Postupy: Připojování k textovým souborům'
+        href: how-to-append-to-text-files.md
+      - name: 'Postupy: Zápis do binárních souborů'
+        href: how-to-write-to-binary-files.md
+      - name: 'Postupy: Zápis textu do souborů v adresáři Moje dokumenty'
+        href: how-to-write-text-to-files-in-the-my-documents-directory.md
+      - name: 'Postupy: Zápis textu do souborů pomocí třídy StreamWriter'
+        href: how-to-write-text-to-files-with-a-streamwriter.md
+    - name: Vytváření, odstraňování a přesouvání souborů a adresářů
+      href: creating-deleting-and-moving-files-and-directories.md
+      items:
+      - name: 'Postupy: Kopírování souborů vyhovujících určitému vzoru do jiného adresáře'
+        href: how-to-copy-files-with-a-specific-pattern-to-a-directory.md
+      - name: 'Postupy: Vytvoření kopie souboru ve stejném adresáři'
+        href: how-to-create-a-copy-of-a-file-in-the-same-directory.md
+      - name: 'Postupy: Vytvoření kopie souboru v jiném adresáři'
+        href: how-to-create-a-copy-of-a-file-in-a-different-directory.md
+      - name: 'Postupy: Vytvoření souboru'
+        href: how-to-create-a-file.md
+      - name: 'Postupy: Odstranění souboru'
+        href: how-to-delete-a-file.md
+      - name: 'Postupy: Hledání souborů pomocí specifického vzoru'
+        href: how-to-find-files-with-a-specific-pattern.md
+      - name: 'Postupy: Přesunutí souboru'
+        href: how-to-move-a-file.md
+      - name: 'Postupy: Přejmenování souboru'
+        href: how-to-rename-a-file.md
+      - name: 'Postupy: Zkopírování adresáře do jiného adresáře'
+        href: how-to-copy-a-directory-to-another-directory.md
+      - name: 'Postupy: Vytvoření adresáře'
+        href: how-to-create-a-directory.md
+      - name: 'Postupy: Hledání podadresářů pomocí specifického vzoru'
+        href: how-to-find-subdirectories-with-a-specific-pattern.md
+      - name: 'Postupy: Získání kolekce souborů z adresáře'
+        href: how-to-get-the-collection-of-files-in-a-directory.md
+      - name: 'Postupy: Načtení obsahu adresáře Moje dokumenty'
+        href: how-to-retrieve-the-contents-of-the-my-documents-directory.md
+      - name: 'Postupy: Analýza cest k souborům'
+        href: how-to-parse-file-paths.md
+    - name: Analýza textových souborů pomocí objektu TextFieldParser
+      href: parsing-text-files-with-the-textfieldparser-object.md
+    - name: Kódování souborů
+      href: file-encodings.md
+    - name: 'Řešení potíží: Čtení z textových souborů a zápis do nich'
+      href: troubleshooting-reading-from-and-writing-to-text-files.md
+  - name: Základy vstupně-výstupních operací se soubory a systému souborů v rozhraní .NET Framework
+    href: basics-of-net-framework-file-io-and-the-file-system.md
+    items:
+    - name: Třídy používané ve vstupně-výstupních operacích se soubory a v systému souborů v rozhraní .NET Framework
+      href: classes-used-in-net-framework-file-io-and-the-file-system.md
+  - name: 'Návod: Práce se soubory pomocí metod rozhraní .NET Framework'
+    href: walkthrough-manipulating-files-by-using-net-framework-methods.md
+  - name: 'Návod: Práce se soubory a adresáři'
+    href: walkthrough-manipulating-files-and-directories.md
+ms.openlocfilehash: 04d5b3252fa087fcbba7d29662e7ad1e3fb24d2e
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58471516"

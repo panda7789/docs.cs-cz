@@ -1,0 +1,36 @@
+items:
+- name: Konstanty a výčty
+  href: index.md
+  items:
+  - name: Přehled konstant
+    href: constants-overview.md
+    items:
+    - name: 'Postupy: Deklarace konstanty'
+      href: how-to-declare-a-constant.md
+    - name: Uživatelem definované konstanty
+      href: user-defined-constants.md
+    - name: Datové typy konstanty a literálu
+      href: constant-and-literal-data-types.md
+    - name: 'Postupy: Seskupení souvisejících hodnot konstant'
+      href: how-to-group-related-constant-values-together.md
+  - name: Přehled výčtů
+    href: enumerations-overview.md
+    items:
+    - name: 'Postupy: Deklarace výčtů'
+      href: how-to-declare-enumerations.md
+    - name: 'Postupy: Odkazování na člena výčtu'
+      href: how-to-refer-to-an-enumeration-member.md
+    - name: Výčty a kvalifikace názvu
+      href: enumerations-and-name-qualification.md
+    - name: 'Postupy: Iterace ve výčtu'
+      href: how-to-iterate-through-an-enumeration.md
+    - name: 'Postupy: Určení řetězce spojeného s hodnotou výčtu'
+      href: how-to-determine-the-string-associated-with-an-enumeration-value.md
+    - name: Kdy použít výčet
+      href: when-to-use-an-enumeration.md
+ms.openlocfilehash: d04784aa644ef5d37a7b3d416f8a15f2e5113f98
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58471531"

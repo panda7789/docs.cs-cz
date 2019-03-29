@@ -1,0 +1,152 @@
+items:
+- name: Fúze
+  href: index.md
+  items:
+  - name: Rozhraní fúze
+    href: fusion-interfaces.md
+    items:
+    - name: IAppIdAuthority – rozhraní
+      href: iappidauthority-interface.md
+    - name: IAssemblyCache – rozhraní
+      href: iassemblycache-interface.md
+      items:
+      - name: CreateAssemblyCacheItem – metoda
+        href: iassemblycache-createassemblycacheitem-method.md
+      - name: CreateAssemblyScavenger – metoda
+        href: iassemblycache-createassemblyscavenger-method.md
+      - name: InstallAssembly – metoda
+        href: iassemblycache-installassembly-method.md
+      - name: QueryAssemblyInfo – metoda
+        href: iassemblycache-queryassemblyinfo-method.md
+      - name: UninstallAssembly – metoda
+        href: iassemblycache-uninstallassembly-method.md
+    - name: IAssemblyCacheItem – rozhraní
+      href: iassemblycacheitem-interface.md
+      items:
+      - name: AbortItem – metoda
+        href: iassemblycacheitem-abortitem-method.md
+      - name: Commit – metoda
+        href: iassemblycacheitem-commit-method.md
+      - name: CreateStream – metoda
+        href: iassemblycacheitem-createstream-method.md
+    - name: IAssemblyEnum – rozhraní
+      href: iassemblyenum-interface.md
+      items:
+      - name: Clone – metoda
+        href: iassemblyenum-clone-method.md
+      - name: GetNextAssembly – metoda
+        href: iassemblyenum-getnextassembly-method.md
+      - name: Reset – metoda
+        href: iassemblyenum-reset-method.md
+    - name: IAssemblyName – rozhraní
+      href: iassemblyname-interface.md
+      items:
+      - name: Clone – metoda
+        href: iassemblyname-clone-method.md
+      - name: Finalize – metoda
+        href: iassemblyname-finalize-method.md
+      - name: GetDisplayName – metoda
+        href: iassemblyname-getdisplayname-method.md
+      - name: GetName – metoda
+        href: iassemblyname-getname-method.md
+      - name: GetProperty – metoda
+        href: iassemblyname-getproperty-method.md
+      - name: GetVersion – metoda
+        href: iassemblyname-getversion-method.md
+      - name: IsEqual – metoda
+        href: iassemblyname-isequal-method.md
+      - name: SetProperty – metoda
+        href: iassemblyname-setproperty-method.md
+    - name: IDefinitionAppId – rozhraní
+      href: idefinitionappid-interface.md
+    - name: IDefinitionIdentity – rozhraní
+      href: idefinitionidentity-interface.md
+    - name: IEnumDefinitionIdentity – rozhraní
+      href: ienumdefinitionidentity-interface.md
+    - name: IEnumIDENTITY_ATTRIBUTE – rozhraní
+      href: ienumidentity-attribute-interface.md
+    - name: IEnumReferenceIdentity – rozhraní
+      href: ienumreferenceidentity-interface.md
+    - name: IIdentityAuthority – rozhraní
+      href: iidentityauthority-interface.md
+    - name: IInstallReferenceEnum – rozhraní
+      href: iinstallreferenceenum-interface.md
+      items:
+      - name: GetNextInstallReferenceItem – metoda
+        href: iinstallreferenceenum-getnextinstallreferenceitem-method.md
+    - name: IInstallReferenceItem – rozhraní
+      href: iinstallreferenceitem-interface.md
+      items:
+      - name: GetReference – metoda
+        href: iinstallreferenceitem-getreference-method.md
+    - name: IReferenceAppId – rozhraní
+      href: ireferenceappid-interface.md
+    - name: IReferenceIdentity – rozhraní
+      href: ireferenceidentity-interface.md
+  - name: Fúze globálních statických funkcí
+    href: fusion-global-static-functions.md
+    items:
+    - name: ClearDownloadCache – funkce
+      href: cleardownloadcache-function.md
+    - name: CompareAssemblyIdentity – funkce
+      href: compareassemblyidentity-function.md
+    - name: CreateApplicationContext – funkce
+      href: createapplicationcontext-function.md
+    - name: CreateAssemblyCache – funkce
+      href: createassemblycache-function.md
+    - name: CreateAssemblyEnum – funkce
+      href: createassemblyenum-function.md
+    - name: CreateAssemblyNameObject – funkce
+      href: createassemblynameobject-function.md
+    - name: CreateHistoryReader – funkce
+      href: createhistoryreader-function.md
+    - name: CreateInstallReferenceEnum – funkce
+      href: createinstallreferenceenum-function.md
+    - name: GetAppIdAuthority – funkce
+      href: getappidauthority-function.md
+    - name: GetAssemblyIdentityFromFile – funkce
+      href: getassemblyidentityfromfile-function.md
+    - name: GetCachePath – funkce
+      href: getcachepath-function.md
+    - name: GetHistoryFileDirectory – funkce
+      href: gethistoryfiledirectory-function.md
+    - name: GetIdentityAuthority – funkce
+      href: getidentityauthority-function.md
+    - name: IsFrameworkAssembly – funkce
+      href: isframeworkassembly-function.md
+    - name: NukeDownloadedCache – funkce
+      href: nukedownloadedcache-function.md
+    - name: PreBindAssemblyEx – funkce
+      href: prebindassemblyex-function.md
+  - name: Výčty fúzí
+    href: fusion-enumerations.md
+    items:
+    - name: ASM_CACHE_FLAGS – výčet
+      href: asm-cache-flags-enumeration.md
+    - name: ASM_CMP_FLAGS – výčet
+      href: asm-cmp-flags-enumeration.md
+    - name: ASM_DISPLAY_FLAGS – výčet
+      href: asm-display-flags-enumeration.md
+    - name: ASM_NAME – výčet
+      href: asm-name-enumeration.md
+    - name: AssemblyComparisonResult – výčet
+      href: assemblycomparisonresult-enumeration.md
+    - name: CREATE_ASM_NAME_OBJ_FLAGS – výčet
+      href: create-asm-name-obj-flags-enumeration.md
+  - name: Struktury fúzí
+    href: fusion-structures.md
+    items:
+    - name: ASSEMBLY_INFO – struktura
+      href: assembly-info-structure.md
+    - name: FUSION_INSTALL_REFERENCE – struktura
+      href: fusion-install-reference-structure.md
+    - name: IDENTITY_ATTRIBUTE – struktura
+      href: identity-attribute-structure.md
+    - name: IDENTITY_ATTRIBUTE_BLOB – struktura
+      href: identity-attribute-blob-structure.md
+ms.openlocfilehash: 1f0a82977e7a39315ab8c4d328be76dd5804ae71
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58471174"

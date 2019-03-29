@@ -1,0 +1,21 @@
+items:
+- name: Schéma nastavení kompilátoru a poskytovatele jazyka
+  href: index.md
+  items:
+  - name: <system.codedom> – element
+    href: system-codedom-element.md
+    items:
+    - name: Element <compilers>
+      href: compilers-element.md
+      items:
+      - name: Element <compiler>
+        href: compiler-element.md
+        items:
+        - name: Element <providerOption>
+          href: provideroption-element.md
+ms.openlocfilehash: 9d49c036cf0bb5279ff014c962c31a8d0ae04ff2
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58471587"

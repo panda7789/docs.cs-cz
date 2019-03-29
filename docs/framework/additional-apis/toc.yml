@@ -1,0 +1,99 @@
+items:
+- name: Další knihovny tříd a rozhraní API
+  href: index.md
+  items:
+  - name: Microsoft.SqlServer.Server
+    items:
+    - name: SmiOrderProperty – třída
+      items:
+      - name: SmiOrderProperty.Item
+        href: microsoft.sqlserver.server.smiorderproperty.item.md
+  - name: System.Data.SqlTypes
+    items:
+    - name: SqlChars – třída
+      items:
+      - name: SqlChars.Stream – vlastnost
+        href: system.data.sqltypes.sqlchars.stream.md
+    - name: SqlStreamChars– třída
+      items:
+      - name: SqlStreamChars – konstruktor
+        href: system.data.sqltypes.sqlstreamchars.-ctor.md
+      - name: CanSeek – vlastnost
+        href: system.data.sqltypes.sqlstreamchars.canseek.md
+      - name: IsNull – vlastnost
+        href: system.data.sqltypes.sqlstreamchars.isnull.md
+      - name: Length – vlastnost
+        href: system.data.sqltypes.sqlstreamchars.length.md
+      - name: Close – metoda
+        href: system.data.sqltypes.sqlstreamchars.close.md
+      - name: Dispose – metoda
+        href: system.data.sqltypes.sqlstreamchars.dispose.md
+      - name: Flush – metoda
+        href: system.data.sqltypes.sqlstreamchars.flush.md
+      - name: Read – metoda
+        href: system.data.sqltypes.sqlstreamchars.read.md
+      - name: Seek – metoda
+        href: system.data.sqltypes.sqlstreamchars.seek.md
+      - name: SetLength – metoda
+        href: system.data.sqltypes.sqlstreamchars.setlength.md
+      - name: Write – metoda
+        href: system.data.sqltypes.sqlstreamchars.write.md
+  - name: System.Net
+    items:
+    - name: Connection – třída
+      href: connection.md
+      items:
+      - name: m_WriteList – pole
+        href: m_writelist.md
+    - name: ConnectionGroup – třída
+      href: connectiongroup.md
+      items:
+      - name: m_ConnectionList – pole
+        href: m_connectionlist.md
+    - name: CoreResponseData – třída
+      href: coreresponsedata.md
+      items:
+      - name: m_ResponseHeaders – pole
+        href: coreresponsedata_m_responseheaders.md
+      - name: m_StatusCode – pole
+        href: coreresponsedata_m_statuscode.md
+    - name: Třída HttpWebRequest
+      items:
+      - name: _AutoRedirects – pole
+        href: _autoredirects.md
+      - name: _CoreResponse – pole
+        href: httpwebrequest__coreresponse.md
+      - name: _HttpResponse – pole
+        href: _httpresponse.md
+    - name: Třída ServicePoint
+      items:
+      - name: m_ConnectionGroupList – pole
+        href: m_connectiongrouplist.md
+      - name: s_ServicePointTable – pole
+        href: s_servicepointtable.md
+  - name: System.Windows.Diagnostics
+    items:
+    - name: Třída VisualDiagnostics
+      items:
+      - name: s_isDebuggerCheckDisabledForTestPurposes – pole
+        href: s-isdebuggercheckdisabledfortestpurposes-field.md
+  - name: System.Windows.Forms.Design
+    items:
+    - name: DataMemberFieldEditor – třída
+      href: datamemberfieldeditor-class.md
+    - name: DataMemberListEditor – třída
+      href: datamemberlisteditor-class.md
+  - name: stdole – obor názvů
+    items:
+    - name: IFont.Name – vlastnost
+      href: stdole.ifont.name.md
+    - name: IPicture.Handle – vlastnost
+      href: stdole.ipicture.handle.md
+    - name: IPictureDisp.Handle – vlastnost
+      href: stdole.ipicturedisp.handle.md
+ms.openlocfilehash: fc163ef7a254443ce25676eafd75f34b36e8f336
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58471592"

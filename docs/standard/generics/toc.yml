@@ -1,0 +1,18 @@
+items:
+- name: Obecné typy
+  href: index.md
+  items:
+  - name: Obecné kolekce na platformě .NET
+    href: collections.md
+  - name: Obecní delegáty pro manipulaci s poli a seznamy
+    href: delegates-for-manipulating-arrays-and-lists.md
+  - name: Obecná rozhraní
+    href: interfaces.md
+  - name: Kovariance a kontravariance
+    href: covariance-and-contravariance.md
+ms.openlocfilehash: 84f8686eb8c70ecc4b36a2335f673319bcc2dd4a
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58471206"

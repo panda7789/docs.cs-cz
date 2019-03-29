@@ -1,0 +1,96 @@
+items:
+- name: Serializace
+  href: index.md
+  items:
+  - name: 'Postupy: Serializace'
+    href: serialization-how-to-topics.md
+  - name: Binární serializace
+    href: binary-serialization.md
+    items:
+    - name: Koncepty serializace
+      href: serialization-concepts.md
+    - name: Základní serializace
+      href: basic-serialization.md
+    - name: Selektivní serializace
+      href: selective-serialization.md
+    - name: Vlastní serializace
+      href: custom-serialization.md
+    - name: Kroky v procesu serializace
+      href: steps-in-the-serialization-process.md
+    - name: Serializace tolerantní vůči verzím
+      href: version-tolerant-serialization.md
+    - name: Pokyny pro serializaci
+      href: serialization-guidelines.md
+    - name: 'Postupy: Rozdělení serializovaných dat do bloků'
+      href: how-to-chunk-serialized-data.md
+    - name: 'Postupy: Určení, zda lze objekt .NET Standard serializovat'
+      href: how-to-determine-if-netstandard-object-is-serializable.md
+  - name: Serializace XML a SOAP
+    href: xml-and-soap-serialization.md
+    items:
+    - name: 'Postupy: Řízení serializace odvozených tříd'
+      href: how-to-control-serialization-of-derived-classes.md
+    - name: Představení serializace XML
+      href: introducing-xml-serialization.md
+    - name: 'Postupy: Deserializace objektu'
+      href: how-to-deserialize-an-object.md
+    - name: Příklady serializace XML
+      href: examples-of-xml-serialization.md
+    - name: Nástroj definice schématu XML a serializace XML
+      href: the-xml-schema-definition-tool-and-xml-serialization.md
+    - name: 'Postupy: Generování tříd a dokumentace ke schématu XML pomocí nástroje definice schématu XML'
+      href: xml-schema-def-tool-gen.md
+    - name: Řízení serializace XML pomocí atributů
+      href: controlling-xml-serialization-using-attributes.md
+    - name: Atributy, které řídí serializaci XML
+      href: attributes-that-control-xml-serialization.md
+    - name: 'Postupy: Zadání alternativního názvu elementu pro XML stream'
+      href: how-to-specify-an-alternate-element-name-for-an-xml-stream.md
+    - name: 'Postupy: Serializace objektu'
+      href: how-to-serialize-an-object.md
+    - name: 'Postupy: Kvalifikace názvů elementů a atributů XML'
+      href: how-to-qualify-xml-element-and-xml-attribute-names.md
+    - name: Serializace XML pomocí webových služeb XML
+      href: xml-serialization-with-xml-web-services.md
+    - name: 'Postupy: Serializace objektu jako XML streamu zakódovaného v protokolu SOAP'
+      href: how-to-serialize-an-object-as-a-soap-encoded-xml-stream.md
+    - name: 'Postupy: Přepsání serializace XML zakódované v protokolu SOAP'
+      href: how-to-override-encoded-soap-xml-serialization.md
+    - name: Atributy, které řídí serializaci zakódovanou v protokolu SOAP
+      href: attributes-that-control-encoded-soap-serialization.md
+    - name: Element <system.xml.serialization>
+      href: system-xml-serialization-element.md
+    - name: Element <dateTimeSerialization>
+      href: datetimeserialization-element.md
+    - name: Element <schemaImporterExtensions>
+      href: schemaimporterextensions-element.md
+    - name: Element <add> pro <schemaImporterExtensions>
+      href: add-element-for-schemaimporterextensions.md
+    - name: Element <xmlSerializer>
+      href: xmlserializer-element.md
+  - name: Nástroje pro serializaci
+    href: serialization-tools.md
+    items:
+    - name: Nástroj XML Serializer Generator Tool (Sgen.exe)
+      href: xml-serializer-generator-tool-sgen-exe.md
+    - name: Nástroje definice schématu XML (Xsd.exe)
+      href: xml-schema-definition-tool-xsd-exe.md
+  - name: Ukázky serializace
+    href: serialization-samples.md
+    items:
+    - name: Ukázka technologie základní serializace
+      href: basic-serialization-technology-sample.md
+    - name: Vlastní pořadí serializace pomocí třídy XmlSerializer
+      href: custom-serialization-order-with-xmlserializer.md
+    - name: Ukázka technologie SchemaImporterExtension
+      href: schemaimporterextension-technology-sample.md
+    - name: Ukázka technologie serializace tolerantní vůči verzím
+      href: version-tolerant-serialization-technology-sample.md
+    - name: Ukázka technologie serializace obecných typů ve webových službách
+      href: web-services-generics-serialization-technology-sample.md
+ms.openlocfilehash: ab9134268559fadb0e5f586773d5963535d4b12a
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58471093"

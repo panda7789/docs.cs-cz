@@ -1,0 +1,39 @@
+items:
+- name: Nezabezpečený kód a ukazatele
+  href: index.md
+  items:
+  - name: Vyrovnávací paměti pevné velikosti
+    href: fixed-size-buffers.md
+  - name: Typy ukazatelů
+    href: pointer-types.md
+    items:
+    - name: Převody ukazatele
+      href: pointer-conversions.md
+    - name: Výrazy ukazatelů
+      href: pointer-expressions.md
+      items:
+      - name: 'Postupy: Získávání hodnoty proměnné ukazatele'
+        href: how-to-obtain-the-value-of-a-pointer-variable.md
+      - name: 'Postupy: Získávání adresy proměnné'
+        href: how-to-obtain-the-address-of-a-variable.md
+      - name: 'Postupy: Přístup ke členu pomocí ukazatele'
+        href: how-to-access-a-member-with-a-pointer.md
+      - name: 'Postupy: Přístup k elementu pole pomocí ukazatele'
+        href: how-to-access-an-array-element-with-a-pointer.md
+      - name: Manipulace s ukazateli
+        href: manipulating-pointers.md
+        items:
+        - name: 'Postupy: Přírůstek a úbytek ukazatelů'
+          href: how-to-increment-and-decrement-pointers.md
+        - name: Aritmetické operace na ukazatelích
+          href: arithmetic-operations-on-pointers.md
+        - name: Porovnání ukazatelů
+          href: pointer-comparison.md
+    - name: 'Postupy: Použití ukazatelů ke kopírování pole bajtů'
+      href: how-to-use-pointers-to-copy-an-array-of-bytes.md
+ms.openlocfilehash: 094fa68222bcb4d92ab19a57373789a8234d2606
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58471256"

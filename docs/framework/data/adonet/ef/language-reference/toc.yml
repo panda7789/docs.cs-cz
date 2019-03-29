@@ -1,0 +1,281 @@
+items:
+- name: Referenční dokumentace jazyka
+  href: index.md
+  items:
+  - name: LINQ to Entities
+    href: linq-to-entities.md
+    items:
+    - name: Dotazy v technologii LINQ to Entities
+      href: queries-in-linq-to-entities.md
+      items:
+      - name: 'Příklady syntaxe dotazů založených na volání metody: Projekce'
+        href: method-based-query-syntax-examples-projection.md
+      - name: 'Příklady syntaxe dotazů založených na volání metody: Filtrování'
+        href: method-based-query-syntax-examples-filtering.md
+      - name: 'Příklady syntaxe dotazů založených na volání metody: Řazení'
+        href: method-based-query-syntax-examples-ordering.md
+      - name: 'Příklady syntaxe dotazů založených na volání metody: Agregační operátory'
+        href: method-based-query-syntax-examples-aggregate-operators.md
+      - name: 'Příklady syntaxe dotazů založených na volání metody: Dělení'
+        href: method-based-query-syntax-examples-partitioning.md
+      - name: 'Příklady syntaxe dotazů založených na volání metody: Konverze'
+        href: method-based-query-syntax-examples-conversion.md
+      - name: 'Příklady syntaxe dotazů založených na volání metody: Operátory spojení'
+        href: method-based-query-syntax-examples-join-operators.md
+      - name: 'Příklady syntaxe dotazů založených na volání metody: Operátory elementů'
+        href: method-based-query-syntax-examples-element-operators.md
+      - name: 'Příklady syntaxe dotazů založených na volání metody: Seskupování'
+        href: method-based-query-syntax-examples-grouping.md
+      - name: 'Příklady syntaxe dotazů založených na volání metody: Navigace v relacích'
+        href: method-based-query-syntax-examples-navigating-relationships.md
+      - name: 'Příklady syntaxe výrazů dotazů: Projekce'
+        href: query-expression-syntax-examples-projection.md
+      - name: 'Příklady syntaxe výrazů dotazů: Filtrování'
+        href: query-expression-syntax-examples-filtering.md
+      - name: 'Příklady syntaxe výrazů dotazů: Řazení'
+        href: query-expression-syntax-examples-ordering.md
+      - name: 'Příklady syntaxe výrazů dotazů: Agregační operátory'
+        href: query-expression-syntax-examples-aggregate-operators.md
+      - name: 'Příklady syntaxe výrazů dotazů: Dělení'
+        href: query-expression-syntax-examples-partitioning.md
+      - name: 'Příklady syntaxe výrazů dotazů: Operátory spojení'
+        href: query-expression-syntax-examples-join-operators.md
+      - name: 'Příklady syntaxe výrazů dotazů: Operátory elementů'
+        href: query-expression-syntax-examples-element-operators.md
+      - name: 'Příklady syntaxe výrazů dotazů: Seskupování'
+        href: query-expression-syntax-examples-grouping.md
+      - name: 'Příklady syntaxe výrazů dotazů: Navigace v relacích'
+        href: query-expression-syntax-examples-navigating-relationships.md
+    - name: Výrazy v dotazech LINQ to Entities
+      href: expressions-in-linq-to-entities-queries.md
+      items:
+      - name: Výrazy konstant
+        href: constant-expressions.md
+      - name: Výrazy porovnání
+        href: comparison-expressions.md
+      - name: Porovnávání s hodnotou Null
+        href: null-comparisons.md
+      - name: Výrazy inicializace
+        href: initialization-expressions.md
+    - name: Volání funkcí v dotazech LINQ to Entities
+      href: calling-functions-in-linq-to-entities-queries.md
+      items:
+      - name: 'Postupy: Volání kanonických funkcí'
+        href: how-to-call-canonical-functions.md
+      - name: 'Postupy: Volání databázových funkcí'
+        href: how-to-call-database-functions.md
+      - name: 'Postupy: Volání vlastních databázových funkcí'
+        href: how-to-call-custom-database-functions.md
+      - name: 'Postupy: Volání modelově definovaných funkcí v dotazech'
+        href: how-to-call-model-defined-functions-in-queries.md
+      - name: 'Postupy: Volání modelově definovaných funkcí jako objektových metod'
+        href: how-to-call-model-defined-functions-as-object-methods.md
+    - name: Kompilované dotazy (LINQ to Entities)
+      href: compiled-queries-linq-to-entities.md
+    - name: Provádění dotazů
+      href: query-execution.md
+    - name: Výsledky dotazu
+      href: query-results.md
+    - name: Standardní operátory dotazů LINQ to Entities
+      href: standard-query-operators-in-linq-to-entities-queries.md
+    - name: Metoda CLR pro mapování kanonických funkcí
+      href: clr-method-to-canonical-function-mapping.md
+    - name: Podporované a nepodporované metody LINQ (LINQ to Entities)
+      href: supported-and-unsupported-linq-methods-linq-to-entities.md
+    - name: Známé problémy a aspekty u LINQ to Entities
+      href: known-issues-and-considerations-in-linq-to-entities.md
+  - name: Jazyk Entity SQL
+    href: entity-sql-language.md
+    items:
+    - name: Přehled Entity SQL
+      href: entity-sql-overview.md
+      items:
+      - name: Jak se Entity SQL liší od Transact-SQL
+        href: how-entity-sql-differs-from-transact-sql.md
+      - name: Stručné reference k Entity SQL
+        href: entity-sql-quick-reference.md
+      - name: Systém typů
+        href: type-system-entity-sql.md
+      - name: Definice typů
+        href: type-definitions-entity-sql.md
+      - name: Vytváření typů
+        href: constructing-types-entity-sql.md
+      - name: Ukládání do mezipaměti plánu dotazu
+        href: query-plan-caching-entity-sql.md
+      - name: Jmenné prostory
+        href: namespaces-entity-sql.md
+      - name: Identifikátory
+        href: identifiers-entity-sql.md
+      - name: Parametry
+        href: parameters-entity-sql.md
+      - name: Proměnné
+        href: variables-entity-sql.md
+      - name: Nepodporované výrazy
+        href: unsupported-expressions-entity-sql.md
+      - name: Literály
+        href: literals-entity-sql.md
+      - name: Literály s hodnotou null a odvození typu proměnné
+        href: null-literals-and-type-inference-entity-sql.md
+      - name: Vstupní znaková sada
+        href: input-character-set-entity-sql.md
+      - name: Výrazy dotazu
+        href: query-expressions-entity-sql.md
+      - name: Funkce
+        href: functions-entity-sql.md
+        items:
+        - name: Uživatelem definované funkce
+          href: user-defined-functions-entity-sql.md
+        - name: Řešení přetížení funkce
+          href: function-overload-resolution-entity-sql.md
+        - name: Agregační funkce
+          href: aggregate-functions-entity-sql.md
+      - name: Priorita operátorů
+        href: operator-precedence-entity-sql.md
+      - name: Stránkování
+        href: paging-entity-sql.md
+      - name: Sémantika porovnání
+        href: comparison-semantics-entity-sql.md
+      - name: Sestavování dotazů s vnořeným jazykem Entity SQL
+        href: composing-nested-entity-sql-queries.md
+      - name: Strukturované typy s možnou hodnotou Null
+        href: nullable-structured-types-entity-sql.md
+    - name: Reference k Entity SQL
+      href: entity-sql-reference.md
+      items:
+      - name: + (Sečíst)
+        href: add.md
+      - name: + (Zřetězení řetězců)
+        href: string-concatenation-entity-sql.md
+      - name: '- (Záporné)'
+        href: negative-entity-sql.md
+      - name: '- (Odečíst)'
+        href: subtract-entity-sql.md
+      - name: '* (Násobit)'
+        href: multiply-entity-sql.md
+      - name: / (Dělit)
+        href: divide-entity-sql.md
+      - name: Procento (Modulo)
+        href: modulo-entity-sql.md
+      - name: '&& (A)'
+        href: and-entity-sql.md
+      - name: '|| (NEBO)'
+        href: or-entity-sql.md
+      - name: '! (NE)'
+        href: not-entity-sql.md
+      - name: = (Je rovno)
+        href: equals-entity-sql.md
+      - name: '> (Větší než)'
+        href: greater-than-entity-sql.md
+      - name: '>= (Větší než nebo rovno)'
+        href: greater-than-or-equal-to-entity-sql.md
+      - name: < (Menší než)
+        href: less-than-entity-sql.md
+      - name: <= (Menší než nebo rovno)
+        href: less-than-or-equal-to-entity-sql.md
+      - name: '!= (Není rovno)'
+        href: not-equal-to-entity-sql.md
+      - name: . (Přístup ke členu)
+        href: member-access-entity-sql.md
+      - name: -- (Komentář)
+        href: comment-entity-sql.md
+      - name: ANYELEMENT
+        href: anyelement-entity-sql.md
+      - name: BETWEEN
+        href: between-entity-sql.md
+      - name: CASE
+        href: case-entity-sql.md
+      - name: CAST
+        href: cast-entity-sql.md
+      - name: COLLECTION
+        href: collection-entity-sql.md
+      - name: CREATEREF
+        href: createref-entity-sql.md
+      - name: DEREF
+        href: deref-entity-sql.md
+      - name: EXCEPT
+        href: except-entity-sql.md
+      - name: EXISTS
+        href: exists-entity-sql.md
+      - name: FLATTEN
+        href: flatten-entity-sql.md
+      - name: FROM
+        href: from-entity-sql.md
+      - name: FUNCTION
+        href: function-entity-sql.md
+      - name: GROUP BY
+        href: group-by-entity-sql.md
+      - name: GROUPPARTITION
+        href: grouppartition-entity-sql.md
+      - name: HAVING
+        href: having-entity-sql.md
+      - name: KEY
+        href: key-entity-sql.md
+      - name: IN
+        href: in-entity-sql.md
+      - name: INTERSECT
+        href: intersect-entity-sql.md
+      - name: ISNULL
+        href: isnull-entity-sql.md
+      - name: ISOF
+        href: isof-entity-sql.md
+      - name: LIKE
+        href: like-entity-sql.md
+      - name: LIMIT
+        href: limit-entity-sql.md
+      - name: MULTISET
+        href: multiset-entity-sql.md
+      - name: Konstruktor pojmenovaného typu
+        href: named-type-constructor-entity-sql.md
+      - name: NAVIGATE
+        href: navigate-entity-sql.md
+      - name: OFTYPE
+        href: oftype-entity-sql.md
+      - name: ŘADIT PODLE
+        href: order-by-entity-sql.md
+      - name: OVERLAPS
+        href: overlaps-entity-sql.md
+      - name: REF
+        href: ref-entity-sql.md
+      - name: ROW
+        href: row-entity-sql.md
+      - name: SELECT
+        href: select-entity-sql.md
+      - name: SET
+        href: set-entity-sql.md
+      - name: SKIP
+        href: skip-entity-sql.md
+      - name: THEN
+        href: then-entity-sql.md
+      - name: TOP
+        href: top-entity-sql.md
+      - name: TREAT
+        href: treat-entity-sql.md
+      - name: UNION
+        href: union-entity-sql.md
+      - name: USING
+        href: using-entity-sql.md
+      - name: WHERE
+        href: where-entity-sql.md
+  - name: Kanonické funkce
+    href: canonical-functions.md
+    items:
+    - name: Agregační kanonické funkce
+      href: aggregate-canonical-functions.md
+    - name: Matematické kanonické funkce
+      href: math-canonical-functions.md
+    - name: Řetězcové kanonické funkce
+      href: string-canonical-functions.md
+    - name: Kanonické funkce pro datum a čas
+      href: date-and-time-canonical-functions.md
+    - name: Bitové kanonické funkce
+      href: bitwise-canonical-functions.md
+    - name: Prostorové funkce
+      href: spatial-functions.md
+    - name: Jiné kanonické funkce
+      href: other-canonical-functions.md
+ms.openlocfilehash: 5886642c5f0074893aa960333fa4d85aa5fa1e46
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58471159"

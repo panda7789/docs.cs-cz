@@ -1,0 +1,18 @@
+items:
+- name: Main() a argumenty příkazového řádku
+  href: index.md
+  items:
+  - name: Argumenty příkazového řádku
+    href: command-line-arguments.md
+  - name: 'Postupy: Zobrazení argumentů příkazového řádku'
+    href: how-to-display-command-line-arguments.md
+  - name: 'Postupy: Přístup k argumentům příkazového řádku pomocí příkazu foreach'
+    href: how-to-access-command-line-arguments-using-foreach.md
+  - name: Návratové hodnoty Main()
+    href: main-return-values.md
+ms.openlocfilehash: f46f240118ac595dc8d933ecd5f7efbf16cb25ab
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58471265"

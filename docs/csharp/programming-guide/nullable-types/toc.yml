@@ -1,0 +1,14 @@
+items:
+- name: Typy s povolenou hodnotou Null
+  href: index.md
+  items:
+  - name: Použití typů s povolenou hodnotou Null
+    href: using-nullable-types.md
+  - name: 'Postupy: Identifikace typu s povolenou hodnotou Null'
+    href: how-to-identify-a-nullable-type.md
+ms.openlocfilehash: d90838048915f0e9cf0a7efe88dd7d0439864e49
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58471179"

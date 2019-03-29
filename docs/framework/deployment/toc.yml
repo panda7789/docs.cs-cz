@@ -1,0 +1,43 @@
+items:
+- name: Nasazení
+  href: index.md
+  items:
+  - name: Nasazení rozhraní .NET Framework
+    href: deploying-the-net-framework.md
+    items:
+    - name: Průvodce nasazením pro vývojáře
+      href: deployment-guide-for-developers.md
+    - name: Příručka nasazení pro administrátory
+      href: guide-for-administrators.md
+    - name: Omezení restartů systému při instalaci rozhraní .NET Framework 4.5
+      href: reducing-system-restarts.md
+    - name: 'Postupy: Získání procesu z instalačního programu .NET Framework 4.5'
+      href: how-to-get-progress-from-the-dotnet-installer.md
+    - name: 'Chyby inicializace rozhraní .NET Framework: Správa zkušeností uživatele'
+      href: initialization-errors-managing-the-user-experience.md
+    - name: 'Postupy: Ladění problémů aktivace CLR'
+      href: how-to-debug-clr-activation-issues.md
+  - name: Nasazení aplikací .NET Framework
+    href: net-framework-applications.md
+    items:
+    - name: Jak běhové prostředí vyhledává sestavení
+      href: how-the-runtime-locates-assemblies.md
+    - name: Doporučené postupy pro načtení sestavení
+      href: best-practices-for-assembly-loading.md
+  - name: Profil klienta rozhraní .NET Framework
+    href: client-profile.md
+  - name: Souběžné spouštění
+    href: side-by-side-execution.md
+    items:
+    - name: Konfigurace přesměrování vazby sestavení
+      href: configuring-assembly-binding-redirection.md
+    - name: Pokyny pro vytváření komponent pro souběžné spouštění
+      href: guidelines-for-creating-components-for-side-by-side-execution.md
+    - name: Vnitroprocesové souběžné provádění
+      href: in-process-side-by-side-execution.md
+ms.openlocfilehash: 73f101fc5031c1ae97a626025d6b16c5729a2568
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58471252"

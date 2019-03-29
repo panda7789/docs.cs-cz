@@ -1,0 +1,49 @@
+items:
+- name: Příkazy, výrazy a operátory
+  href: index.md
+  items:
+  - name: Příkazy
+    href: statements.md
+  - name: Výrazy
+    href: expressions.md
+    items:
+    - name: Členové tvoření výrazy
+      href: expression-bodied-members.md
+  - name: Operátory
+    href: operators.md
+  - name: Anonymní funkce
+    href: anonymous-functions.md
+    items:
+    - name: Lambda – výrazy
+      href: lambda-expressions.md
+      items:
+      - name: 'Postupy: Použití výrazů lambda v dotazu'
+        href: how-to-use-lambda-expressions-in-a-query.md
+      - name: 'Postupy: Použití výrazů lambda mimo LINQ'
+        href: how-to-use-lambda-expressions-outside-linq.md
+    - name: Anonymní metody
+      href: anonymous-methods.md
+  - name: Přetížitelné operátory
+    href: overloadable-operators.md
+  - name: Operátory převodu
+    href: conversion-operators.md
+    items:
+    - name: Použití operátorů převodu
+      href: using-conversion-operators.md
+    - name: 'Postupy: Implementace uživatelem definovaných převodů mezi strukturami'
+      href: how-to-implement-user-defined-conversions-between-structs.md
+  - name: Výrazy s výchozími hodnotami
+    href: default-value-expressions.md
+  - name: Porovnání rovnosti
+    href: equality-comparisons.md
+    items:
+    - name: 'Postupy: Definování rovnosti hodnoty pro typ'
+      href: how-to-define-value-equality-for-a-type.md
+    - name: 'Postupy: Testování rovnosti (identity) odkazů'
+      href: how-to-test-for-reference-equality-identity.md
+ms.openlocfilehash: d5f37fd97cf72c7c8d9b7854753eb25fdea8bbb2
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58471175"

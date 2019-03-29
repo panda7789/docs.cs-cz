@@ -1,0 +1,106 @@
+items:
+- name: Schéma nastavení sítě
+  href: index.md
+  items:
+  - name: <system.Net> – element (nastavení sítě)
+    href: system-net-element-network-settings.md
+    items:
+    - name: <authenticationModules> – element (nastavení sítě)
+      href: authenticationmodules-element-network-settings.md
+      items:
+      - name: <add> – element pro authenticationModules (nastavení sítě)
+        href: add-element-for-authenticationmodules-network-settings.md
+      - name: <remove> – element pro authenticationModules (nastavení sítě)
+        href: remove-element-for-authenticationmodules-network-settings.md
+      - name: <clear> – element pro authenticationModules (nastavení sítě)
+        href: clear-element-for-authenticationmodules-network-settings.md
+    - name: <connectionManagement> – element (nastavení sítě)
+      href: connectionmanagement-element-network-settings.md
+      items:
+      - name: <add> – element pro connectionManagement (nastavení sítě)
+        href: add-element-for-connectionmanagement-network-settings.md
+      - name: <clear> – element pro connectionManagement (nastavení sítě)
+        href: clear-element-for-connectionmanagement-network-settings.md
+      - name: <remove> – element pro connectionManagement (nastavení sítě)
+        href: remove-element-for-connectionmanagement-network-settings.md
+    - name: <defaultProxy> – element (nastavení sítě)
+      href: defaultproxy-element-network-settings.md
+      items:
+      - name: <bypasslist> – element (nastavení sítě)
+        href: bypasslist-element-network-settings.md
+        items:
+        - name: <add> – element pro bypasslist (nastavení sítě)
+          href: add-element-for-bypasslist-network-settings.md
+        - name: <clear> – element pro bypasslist (nastavení sítě)
+          href: clear-element-for-bypasslist-network-settings.md
+        - name: <remove> – element pro bypasslist (nastavení sítě)
+          href: remove-element-for-bypasslist-network-settings.md
+      - name: <module> – element (nastavení sítě)
+        href: module-element-network-settings.md
+      - name: <proxy> – element (nastavení sítě)
+        href: proxy-element-network-settings.md
+    - name: <mailSettings> – element (nastavení sítě)
+      href: mailsettings-element-network-settings.md
+      items:
+      - name: <smtp> – element (nastavení sítě)
+        href: smtp-element-network-settings.md
+        items:
+        - name: <specifiedPickupDirectory> – element (nastavení sítě)
+          href: specifiedpickupdirectory-element-network-settings.md
+        - name: <network> – element (nastavení sítě)
+          href: network-element-network-settings.md
+    - name: <requestCaching> – element (nastavení sítě)
+      href: requestcaching-element-network-settings.md
+      items:
+      - name: <defaultHttpCachePolicy> – element (nastavení sítě)
+        href: defaulthttpcachepolicy-element-network-settings.md
+      - name: <defaultFtpCachePolicy> – element (nastavení sítě)
+        href: defaultftpcachepolicy-element-network-settings.md
+    - name: <settings> – element (nastavení sítě)
+      href: settings-element-network-settings.md
+      items:
+      - name: <httpWebRequest> – element (nastavení sítě)
+        href: httpwebrequest-element-network-settings.md
+      - name: <ipv6> – element (nastavení sítě)
+        href: ipv6-element-network-settings.md
+      - name: <performanceCounter> – element (nastavení sítě)
+        href: performancecounter-element-network-settings.md
+      - name: <servicePointManager> – element (nastavení sítě)
+        href: servicepointmanager-element-network-settings.md
+      - name: <socket> – element (nastavení sítě)
+        href: socket-element-network-settings.md
+      - name: <webProxyScript> – element (nastavení sítě)
+        href: webproxyscript-element-network-settings.md
+      - name: <httpListener> – element (nastavení sítě)
+        href: httplistener-element-network-settings.md
+    - name: <webRequestModules> – element (nastavení sítě)
+      href: webrequestmodules-element-network-settings.md
+      items:
+      - name: <add> – element pro webRequestModules (nastavení sítě)
+        href: add-element-for-webrequestmodules-network-settings.md
+      - name: <remove> – element pro webRequestModules (nastavení sítě)
+        href: remove-element-for-webrequestmodules-network-settings.md
+      - name: <clear> – element pro webRequestModules (nastavení sítě)
+        href: clear-element-for-webrequestmodules-network-settings.md
+  - name: <Uri> – element (nastavení URI)
+    href: uri-element-uri-settings.md
+    items:
+    - name: <idn> – element (nastavení URI)
+      href: idn-element-uri-settings.md
+    - name: <iriParsing> – element (nastavení URI)
+      href: iriparsing-element-uri-settings.md
+    - name: <schemeSettings> – element (nastavení URI)
+      href: schemesettings-element-uri-settings.md
+      items:
+      - name: <add> – element pro schemeSettings (nastavení URI)
+        href: add-element-for-schemesettings-uri-settings.md
+      - name: <clear> – element pro schemeSettings (nastavení URI)
+        href: clear-element-for-schemesettings-uri-settings.md
+      - name: <remove> – element pro schemeSettings (nastavení URI)
+        href: remove-element-for-schemesettings-uri-settings.md
+ms.openlocfilehash: fb6762a20d1c5210e860b9720a62c200f3109ddd
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58471207"

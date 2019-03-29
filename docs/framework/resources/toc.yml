@@ -1,0 +1,21 @@
+items:
+- name: Prostředky v aplikacích .NET
+  href: index.md
+  items:
+  - name: Vytváření souborů prostředků
+    href: creating-resource-files-for-desktop-apps.md
+    items:
+    - name: Práce se soubory .resx programově
+      href: working-with-resx-files-programmatically.md
+  - name: Vytváření satelitních sestavení
+    href: creating-satellite-assemblies-for-desktop-apps.md
+  - name: Balení a nasazování prostředků
+    href: packaging-and-deploying-resources-in-desktop-apps.md
+  - name: Načítání prostředků
+    href: retrieving-resources-in-desktop-apps.md
+ms.openlocfilehash: b927e35892ced172b528008abe74a26524ffaaa7
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58471524"

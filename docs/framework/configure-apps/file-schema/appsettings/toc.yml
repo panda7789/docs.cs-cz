@@ -1,0 +1,19 @@
+items:
+- name: Schéma nastavení aplikace
+  href: index.md
+  items:
+  - name: <appSettings> – element pro <configuration>
+    href: appsettings-element-for-configuration.md
+    items:
+    - name: <add> – element
+      href: add-element-for-appsettings.md
+    - name: <clear> – element
+      href: clear-element-for-appsettings.md
+    - name: <remove> – element
+      href: remove-element-for-appsettings.md
+ms.openlocfilehash: 691bddd9bb444f3fbf7dd1c4b21bd1463aa9ec29
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58471280"

@@ -1,0 +1,49 @@
+items:
+- name: XML v jazyce Visual Basic
+  href: index.md
+  items:
+  - name: Přehled technologie LINQ to XML
+    href: overview-of-linq-to-xml.md
+  - name: Vytváření XML
+    href: creating-xml.md
+    items:
+    - name: Přehled literálů XML
+      href: xml-literals-overview.md
+    - name: Vložené výrazy v XML
+      href: embedded-expressions-in-xml.md
+    - name: Názvy deklarovaných XML elementů a atributů
+      href: names-of-declared-xml-elements-and-attributes.md
+    - name: Literály XML a specifikace XML 1.0
+      href: xml-literals-and-the-xml-1-0-specification.md
+    - name: Prázdné znaky v literálech XML
+      href: white-space-in-xml-literals.md
+    - name: 'Postupy: Vytváření literálů XML'
+      href: how-to-create-xml-literals.md
+    - name: 'Postupy: Vložení výrazů do literálů XML'
+      href: how-to-embed-expressions-in-xml-literals.md
+  - name: Manipulace s XML
+    href: manipulating-xml.md
+    items:
+    - name: 'Postupy: Načtení XML ze souboru, řetězce nebo streamu'
+      href: how-to-load-xml-from-a-file-string-or-stream.md
+    - name: 'Postupy: Transformace XML pomocí jazyka LINQ'
+      href: how-to-transform-xml-by-using-linq.md
+    - name: 'Postupy: Změna literálů XML'
+      href: how-to-modify-xml-literals.md
+  - name: Přístup k XML
+    href: accessing-xml.md
+    items:
+    - name: 'Postupy: Přístup k následnickým elementům XML'
+      href: how-to-access-xml-descendant-elements.md
+    - name: 'Postupy: Přístup k podřízeným elementům XML'
+      href: how-to-access-xml-child-elements.md
+    - name: 'Postupy: Přístup k atributům XML'
+      href: how-to-access-xml-attributes.md
+    - name: 'Postupy: Deklarace a používání předpon názvového prostoru XML'
+      href: how-to-declare-and-use-xml-namespace-prefixes.md
+ms.openlocfilehash: 7d2d931b5f88e9af9a2cdef92168d907e3fd6ce6
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58471258"

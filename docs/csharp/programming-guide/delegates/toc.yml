@@ -1,0 +1,18 @@
+items:
+- name: Delegáti
+  href: index.md
+  items:
+  - name: Použití delegátů
+    href: using-delegates.md
+  - name: Delegáti s pojmenovanými vs. anonymními metodami
+    href: delegates-with-named-vs-anonymous-methods.md
+  - name: 'Postupy: Kombinování delegátů (vícesměroví delegáti) (Průvodce programováním v C#)'
+    href: how-to-combine-delegates-multicast-delegates.md
+  - name: 'Postupy: Deklarování, vytváření instancí a použití delegáta'
+    href: how-to-declare-instantiate-and-use-a-delegate.md
+ms.openlocfilehash: f9857a805966b3b3c9d1c6776027c77c6183235b
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58471526"

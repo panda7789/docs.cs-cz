@@ -1,0 +1,41 @@
+items:
+- name: Aplikace služby systému Windows
+  href: index.md
+  items:
+  - name: Představení aplikací spouštěných jako služby systému Windows
+    href: introduction-to-windows-service-applications.md
+  - name: 'Návod: Vytvoření aplikace služby systému Windows'
+    href: walkthrough-creating-a-windows-service-application-in-the-component-designer.md
+  - name: Architektura programování aplikace služby
+    href: service-application-programming-architecture.md
+  - name: 'Postupy: Vytváření služeb systému Windows'
+    href: how-to-create-windows-services.md
+    items:
+    - name: 'Postupy: Zápis služeb prostřednictvím kódu programu'
+      href: how-to-write-services-programmatically.md
+    - name: 'Postupy: Přidání instalačních programů do aplikace služby'
+      href: how-to-add-installers-to-your-service-application.md
+    - name: 'Postupy: Určení kontextu zabezpečení pro služby'
+      href: how-to-specify-the-security-context-for-services.md
+    - name: 'Postupy: Instalace a odinstalace služeb'
+      href: how-to-install-and-uninstall-services.md
+    - name: 'Postupy: Spuštění služby'
+      href: how-to-start-services.md
+    - name: 'Postupy: Pozastavení služby systému Windows (Visual Basic)'
+      href: how-to-pause-a-windows-service-visual-basic.md
+    - name: 'Postupy: Pokračování služby systému Windows (Visual Basic)'
+      href: how-to-continue-a-windows-service-visual-basic.md
+    - name: 'Postupy: Ladění aplikací spouštěných jako služby systému Windows'
+      href: how-to-debug-windows-service-applications.md
+    - name: 'Postupy: Zaznamenávání informací o službách'
+      href: how-to-log-information-about-services.md
+    - name: 'Řešení potíží: Ladění služeb systému Windows'
+      href: troubleshooting-debugging-windows-services.md
+    - name: 'Řešení potíží: Aplikace služby se nenainstaluje'
+      href: troubleshooting-service-application-wont-install.md
+ms.openlocfilehash: 0b60da73c822f1b87d437076915735c327ca60f8
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58471160"

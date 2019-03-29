@@ -1,0 +1,130 @@
+items:
+- name: Ladění, trasování a profilace
+  href: index.md
+  items:
+  - name: 'Povolení JIT – ladění Attach '
+    href: enabling-jit-attach-debugging.md
+  - name: Usnadnění ladění image
+    href: making-an-image-easier-to-debug.md
+  - name: Trasování a instrumentace aplikací
+    href: tracing-and-instrumenting-applications.md
+    items:
+    - name: Kontrakty kódu
+      href: code-contracts.md
+    - name: Přepínače trasování
+      href: trace-switches.md
+    - name: 'Postupy: Vytváření, inicializace a konfigurace přepínačů trasování'
+      href: how-to-create-initialize-and-configure-trace-switches.md
+    - name: Naslouchací procesy trasování
+      href: trace-listeners.md
+    - name: 'Postupy: Použití třídy TraceSource a filtrů s naslouchacími procesy trasování'
+      href: how-to-use-tracesource-and-filters-with-trace-listeners.md
+    - name: 'Postupy: Vytváření a inicializace naslouchacích procesů trasování'
+      href: how-to-create-and-initialize-trace-listeners.md
+    - name: 'Postupy: Vytváření a inicializace zdrojů trasování'
+      href: how-to-create-and-initialize-trace-sources.md
+    - name: 'Postupy: Přidání příkazů trasování do kódu aplikace'
+      href: how-to-add-trace-statements-to-application-code.md
+    - name: 'Postupy: Podmíněná kompilace pomocí atributu Trace a Debug'
+      href: how-to-compile-conditionally-with-trace-and-debug.md
+  - name: Diagnostikování chyb pomocí asistentů spravovaného ladění
+    href: diagnosing-errors-with-managed-debugging-assistants.md
+    items:
+    - name: asynchronousThreadAbort
+      href: asynchronousthreadabort-mda.md
+    - name: bindingFailure
+      href: bindingfailure-mda.md
+    - name: callbackOnCollectedDelegate
+      href: callbackoncollecteddelegate-mda.md
+    - name: contextSwitchDeadlock
+      href: contextswitchdeadlock-mda.md
+    - name: dangerousThreadingAPI
+      href: dangerousthreadingapi-mda.md
+    - name: dateTimeInvalidLocalFormat
+      href: datetimeinvalidlocalformat-mda.md
+    - name: dirtyCastAndCallOnInterface
+      href: dirtycastandcalloninterface-mda.md
+    - name: disconnectedContext
+      href: disconnectedcontext-mda.md
+    - name: dllMainReturnsFalse
+      href: dllmainreturnsfalse-mda.md
+    - name: exceptionSwallowedOnCallFromCom
+      href: exceptionswallowedoncallfromcom-mda.md
+    - name: failedQI
+      href: failedqi-mda.md
+    - name: fatalExecutionEngineError
+      href: fatalexecutionengineerror-mda.md
+    - name: gcManagedToUnmanaged
+      href: gcmanagedtounmanaged-mda.md
+    - name: gcUnmanagedToManaged
+      href: gcunmanagedtomanaged-mda.md
+    - name: illegalPrepareConstrainedRegion
+      href: illegalprepareconstrainedregion-mda.md
+    - name: invalidApartmentStateChange
+      href: invalidapartmentstatechange-mda.md
+    - name: invalidCERCall
+      href: invalidcercall-mda.md
+    - name: invalidFunctionPointerInDelegate
+      href: invalidfunctionpointerindelegate-mda.md
+    - name: invalidGCHandleCookie
+      href: invalidgchandlecookie-mda.md
+    - name: invalidIUnknown
+      href: invalidiunknown-mda.md
+    - name: invalidMemberDeclaration
+      href: invalidmemberdeclaration-mda.md
+    - name: invalidOverlappedToPinvoke
+      href: invalidoverlappedtopinvoke-mda.md
+    - name: invalidVariant
+      href: invalidvariant-mda.md
+    - name: jitCompilationStart
+      href: jitcompilationstart-mda.md
+    - name: loaderLock
+      href: loaderlock-mda.md
+    - name: loadFromContext
+      href: loadfromcontext-mda.md
+    - name: marshalCleanupError
+      href: marshalcleanuperror-mda.md
+    - name: marshaling
+      href: marshaling-mda.md
+    - name: memberInfoCacheCreation
+      href: memberinfocachecreation-mda.md
+    - name: moduloObjectHashcode
+      href: moduloobjecthashcode-mda.md
+    - name: nonComVisibleBaseClass
+      href: noncomvisiblebaseclass-mda.md
+    - name: notMarshalable
+      href: notmarshalable-mda.md
+    - name: openGenericCERCall
+      href: opengenericcercall-mda.md
+    - name: overlappedFreeError
+      href: overlappedfreeerror-mda.md
+    - name: pInvokeLog
+      href: pinvokelog-mda.md
+    - name: pInvokeStackImbalance
+      href: pinvokestackimbalance-mda.md
+    - name: raceOnRCWCleanup
+      href: raceonrcwcleanup-mda.md
+    - name: reentrancy
+      href: reentrancy-mda.md
+    - name: releaseHandleFailed
+      href: releasehandlefailed-mda.md
+    - name: reportAvOnComRelease
+      href: reportavoncomrelease-mda.md
+    - name: streamWriterBufferedDataLost
+      href: streamwriterbuffereddatalost-mda.md
+    - name: virtualCERCall
+      href: virtualcercall-mda.md
+  - name: Rozšíření ladění pomocí atributů zobrazení ladicího programu
+    href: enhancing-debugging-with-the-debugger-display-attributes.md
+  - name: Běhová profilace
+    href: runtime-profiling.md
+  - name: Čítače výkonu
+    href: performance-counters.md
+  - name: Čítače výkonu a vnitroprocesové souběžné aplikace
+    href: performance-counters-and-in-process-side-by-side-applications.md
+ms.openlocfilehash: 2dd53aa163049b2a9e92e4fc7dcf67a1ffa0492a
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58471510"

@@ -1,0 +1,35 @@
+items:
+- name: Průvodce migrací
+  href: index.md
+  items:
+  - name: Kompatibilita aplikací
+    href: application-compatibility.md
+    items:
+    - name: Změny v modulu runtime
+      href: runtime/index.md
+    - name: Odlišnosti ve změnách cílení
+      href: retargeting/index.md
+  - name: Kompatibilita verzí
+    href: version-compatibility.md
+  - name: Verze a závislosti
+    href: versions-and-dependencies.md
+    items:
+    - name: 'Postupy: Zjištění nainstalovaných verzí rozhraní .NET Framework'
+      href: how-to-determine-which-versions-are-installed.md
+      items:
+      - name: Klíče verzí rozhraní .NET Framework a verze operačního systému Windows
+        href: release-keys-and-os-versions.md
+    - name: 'Postupy: Zjištění nainstalovaných aktualizací rozhraní .NET Framework'
+      href: how-to-determine-which-net-framework-updates-are-installed.md
+  - name: 'Postupy: Konfigurace aplikace pro podporu rozhraní .NET Framework 4 nebo novějších verzí'
+    href: how-to-configure-an-app-to-support-net-framework-4-or-4-5.md
+  - name: Migrace z rozhraní .NET Framework 1.1
+    href: migrating-from-the-net-framework-1-1.md
+  - name: Problémy s migrací rozhraní .NET Framework 4
+    href: net-framework-4-migration-issues.md
+ms.openlocfilehash: c46b7ac4680e6aa988e39055cb51c80a4bb0e8b4
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58471293"

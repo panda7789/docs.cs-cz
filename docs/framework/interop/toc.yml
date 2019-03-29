@@ -1,0 +1,122 @@
+items:
+- name: Spolupráce s nespravovaným kódem
+  href: index.md
+  items:
+  - name: Vystavení komponent COM pro rozhraní .NET Framework
+    href: exposing-com-components.md
+    items:
+    - name: Import knihovny typů ve formě sestavení
+      href: importing-a-type-library-as-an-assembly.md
+    - name: 'Postupy: Přidávání odkazů do knihoven typů'
+      href: how-to-add-references-to-type-libraries.md
+    - name: 'Postupy: Generování sestavení vzájemné spolupráce z knihoven typů'
+      href: how-to-generate-interop-assemblies-from-type-libraries.md
+    - name: Kompilace projektu interoperability
+      href: compiling-an-interop-project.md
+    - name: Nasazení aplikace spolupráce
+      href: deploying-an-interop-application.md
+    - name: 'Ukázka zprostředkovatele s objekty COM: klient .NET a server COM'
+      href: com-interop-sample-net-client-and-com-server.md
+  - name: Vystavení komponent architektury .NET Framework pro COM
+    href: exposing-dotnet-components-to-com.md
+    items:
+    - name: Kvalifikace typů .NET pro spolupráci
+      href: qualifying-net-types-for-interoperation.md
+    - name: Použití atributů spolupráce
+      href: applying-interop-attributes.md
+    - name: Zabalení sestavení pro model COM
+      href: packaging-an-assembly-for-com.md
+    - name: Registrování sestav pomocí modelu COM
+      href: registering-assemblies-with-com.md
+    - name: 'Postupy: Odkazování na typy .NET z modelu COM'
+      href: how-to-reference-net-types-from-com.md
+    - name: 'Ukázka zprostředkovatele s objekty COM: klient COM a server .NET'
+      href: com-interop-sample-com-client-and-net-server.md
+  - name: Používání nespravovaných funkcí DLL
+    href: consuming-unmanaged-dll-functions.md
+    items:
+    - name: Identifikace funkcí ve knihovnách DLL
+      href: identifying-functions-in-dlls.md
+    - name: Vytvoření třídy k umístění funkcí DLL
+      href: creating-a-class-to-hold-dll-functions.md
+    - name: Vytváření prototypů ve spravovaném kódu
+      href: creating-prototypes-in-managed-code.md
+      items:
+      - name: Určení vstupního bodu
+        href: specifying-an-entry-point.md
+      - name: Určení sady znaků
+        href: specifying-a-character-set.md
+      - name: Příklady vyvolání platformy
+        href: platform-invoke-examples.md
+    - name: Volání funkce DLL
+      href: calling-a-dll-function.md
+      items:
+      - name: Předávání struktur
+        href: passing-structures.md
+      - name: Funkce zpětného volání
+        href: callback-functions.md
+      - name: 'Postupy: Implementace funkcí zpětného volání'
+        href: how-to-implement-callback-functions.md
+  - name: Zařazování spolupráce
+    href: interop-marshaling.md
+    items:
+    - name: Výchozí chování zařazování
+      href: default-marshaling-behavior.md
+      items:
+      - name: Přenositelné a nepřenositelné typy
+        href: blittable-and-non-blittable-types.md
+      - name: Kopírování a přichycování
+        href: copying-and-pinning.md
+      - name: Výchozí zařazování pro pole
+        href: default-marshaling-for-arrays.md
+      - name: Výchozí zařazování pro objekty
+        href: default-marshaling-for-objects.md
+      - name: Výchozí zařazování pro řetězce
+        href: default-marshaling-for-strings.md
+    - name: Zařazování dat s voláním platformy
+      href: marshaling-data-with-platform-invoke.md
+      items:
+      - name: Zařazování řetězců
+        href: marshaling-strings.md
+      - name: MsgBox – ukázka
+        href: msgbox-sample.md
+      - name: Zařazování tříd, struktur a sjednocení
+        href: marshaling-classes-structures-and-unions.md
+      - name: Zařazování různých typů polí
+        href: marshaling-different-types-of-arrays.md
+      - name: Zařazování delegáta jako metody zpětného volání
+        href: marshaling-a-delegate-as-a-callback-method.md
+    - name: Zařazování dat se spoluprací COM
+      href: marshaling-data-with-com-interop.md
+      items:
+      - name: 'Postupy: Ruční vytváření obálek'
+        href: how-to-create-wrappers-manually.md
+      - name: 'Postupy: Migrace spravovaného kódu DCOM do WCF'
+        href: how-to-migrate-managed-code-dcom-to-wcf.md
+  - name: 'Postupy: Mapování výsledků HRESULT a výjimek'
+    href: how-to-map-hresults-and-exceptions.md
+  - name: Obálky COM
+    href: com-wrappers.md
+    items:
+    - name: Obálka volatelná za běhu
+      href: runtime-callable-wrapper.md
+    - name: Obálka volatelná aplikacemi COM
+      href: com-callable-wrapper.md
+    - name: 'Postupy: Vytváření obálek COM'
+      href: how-to-create-com-wrappers.md
+  - name: Ekvivalence typů a vestavěné typy spolupráce
+    href: type-equivalence-and-embedded-interop-types.md
+  - name: 'Postupy: Generování primárních sestavení vzájemné spolupráce pomocí Tlbimp.exe'
+    href: how-to-generate-primary-interop-assemblies-using-tlbimp-exe.md
+  - name: 'Postupy: Registrace primárních sestavení spolupráce'
+    href: how-to-register-primary-interop-assemblies.md
+  - name: Zprostředkovatel komunikace s objekty COM bez registrace
+    href: registration-free-com-interop.md
+  - name: 'Postupy: Konfigurace komponent COM využívajících rozhraní .NET Framework pro aktivaci bez registrace'
+    href: configure-net-framework-based-com-components-for-reg.md
+ms.openlocfilehash: be9d4bcdaeb8b7389d72bddfa36e1594b5149ce4
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58471116"

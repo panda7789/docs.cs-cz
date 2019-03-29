@@ -1,0 +1,32 @@
+items:
+- name: Konfigurace aplikací
+  href: index.md
+  items:
+  - name: 'Postupy: Vyhledání sestavení pomocí mechanismu DEVPATH'
+    href: how-to-locate-assemblies-by-using-devpath.md
+  - name: Přesměrování verzí sestavení
+    href: redirect-assembly-versions.md
+    items:
+    - name: 'Postupy: Povolení a zákaz automatického přesměrování vazby'
+      href: how-to-enable-and-disable-automatic-binding-redirection.md
+    - name: Bezpečnostní oprávnění k přesměrování vazby sestavení
+      href: assembly-binding-redirection-security-permission.md
+  - name: Určení umístění sestavení
+    href: specify-assembly-location.md
+  - name: Konfigurace šifrovacích tříd
+    href: configure-cryptography-classes.md
+    items:
+    - name: Mapování názvů algoritmů na třídy šifrování
+      href: map-algorithm-names-to-cryptography-classes.md
+    - name: Mapování identifikátorů objektů na algoritmy šifrování
+      href: map-object-identifiers-to-cryptography-algorithms.md
+  - name: 'Postupy: Vytváření zásad vydavatele'
+    href: how-to-create-a-publisher-policy.md
+  - name: Schéma konfiguračního souboru
+    href: file-schema/index.md
+ms.openlocfilehash: 17fd8cdff154ae7e61609a6b819b14ad8fb4805b
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58471194"

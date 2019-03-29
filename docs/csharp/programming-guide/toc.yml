@@ -1,0 +1,52 @@
+items:
+- name: Průvodce programováním v C#
+  href: index.md
+  items:
+  - name: V programu jazyka C#
+    href: inside-a-program/
+  - name: Main() a argumenty příkazového řádku
+    href: main-and-command-args/
+  - name: Koncepty programování
+    href: concepts/
+  - name: Příkazy, výrazy a operátory
+    href: statements-expressions-operators/
+  - name: Typy
+    href: types/
+  - name: Třídy a struktury
+    href: classes-and-structs/
+  - name: Rozhraní
+    href: interfaces/
+  - name: Výčtové typy
+    href: enumeration-types.md
+  - name: Delegáty
+    href: delegates/index.md
+  - name: Pole
+    href: arrays/
+  - name: Řetězce
+    href: strings/
+  - name: Indexery
+    href: indexers/
+  - name: Události
+    href: events/
+  - name: Obecné typy
+    href: generics/
+  - name: Jmenné prostory
+    href: namespaces/
+  - name: Typy s povolenou hodnotou Null
+    href: nullable-types/
+  - name: Nezabezpečený kód a ukazatele
+    href: unsafe-code-pointers/
+  - name: Dokumentační komentáře XML
+    href: xmldoc/
+  - name: Výjimky a jejich zpracování
+    href: exceptions/
+  - name: Systém souborů a registr
+    href: file-system/
+  - name: Interoperabilita
+    href: interop/
+ms.openlocfilehash: 735c939dd903ff7e713fc9870afeda99786f8e77
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58471591"

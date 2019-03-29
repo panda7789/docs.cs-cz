@@ -1,0 +1,24 @@
+items:
+- name: Tok řízení
+  href: index.md
+  items:
+  - name: Rozhodovací struktury
+    href: decision-structures.md
+  - name: Struktury smyčky
+    href: loop-structures.md
+    items:
+    - name: 'Návod: Implementace IEnumerable(Of T)'
+      href: walkthrough-implementing-ienumerable-of-t.md
+  - name: Ostatní řídicí struktury
+    href: other-control-structures.md
+    items:
+    - name: 'Postupy: Odstranění systémového prostředku'
+      href: how-to-dispose-of-a-system-resource.md
+  - name: Vnořené řídicí struktury
+    href: nested-control-structures.md
+ms.openlocfilehash: 8f6ec473d9d635ca93013aa23f21dee916fba1ba
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58471266"
