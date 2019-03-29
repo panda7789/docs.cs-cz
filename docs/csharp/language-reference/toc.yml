@@ -1,0 +1,138 @@
+items:
+- name: Referenční dokumentace jazyka
+  href: index.md
+  items:
+  - name: Konfigurace verze jazyka
+    href: configure-language-version.md
+  - name: Klíčová slova jazyka C#
+    href: keywords/index.md
+  - name: Operátory jazyka C#
+    href: operators/index.md
+  - name: Speciální znaky jazyka C#
+    href: tokens/index.md
+  - name: Direktivy preprocesoru jazyka C#
+    href: preprocessor-directives/index.md
+  - name: Možnosti kompilátoru jazyka C#
+    href: compiler-options/index.md
+  - name: Chyby kompilátoru jazyka C#
+    href: compiler-messages/index.md
+  - name: Specifikace konceptu jazyka C# 6.0
+    items:
+    - name: Úvod
+      href: ../../../_csharplang/spec/introduction.md
+    - name: Lexikální struktura
+      href: ../../../_csharplang/spec/lexical-structure.md
+    - name: Základní koncepty
+      href: ../../../_csharplang/spec/basic-concepts.md
+    - name: Typy
+      href: ../../../_csharplang/spec/types.md
+    - name: Proměnné
+      href: ../../../_csharplang/spec/variables.md
+    - name: Převody
+      href: ../../../_csharplang/spec/conversions.md
+    - name: Výrazy
+      href: ../../../_csharplang/spec/expressions.md
+    - name: Příkazy
+      href: ../../../_csharplang/spec/statements.md
+    - name: Jmenné prostory
+      href: ../../../_csharplang/spec/namespaces.md
+    - name: Třídy
+      href: ../../../_csharplang/spec/classes.md
+    - name: Struktury
+      href: ../../../_csharplang/spec/structs.md
+    - name: Pole
+      href: ../../../_csharplang/spec/arrays.md
+    - name: Rozhraní
+      href: ../../../_csharplang/spec/interfaces.md
+    - name: Výčty
+      href: ../../../_csharplang/spec/enums.md
+    - name: Delegáty
+      href: ../../../_csharplang/spec/delegates.md
+    - name: Výjimky
+      href: ../../../_csharplang/spec/exceptions.md
+    - name: Atributy
+      href: ../../../_csharplang/spec/attributes.md
+    - name: Nebezpečný kód
+      href: ../../../_csharplang/spec/unsafe-code.md
+    - name: Komentáře dokumentace
+      href: ../../../_csharplang/spec/documentation-comments.md
+  - name: Návrhy jazyka C#7.0
+    items:
+    - name: Porovnávání vzorů
+      href: ../../../_csharplang/proposals/csharp-7.0/pattern-matching.md
+    - name: Lokální funkce
+      href: ../../../_csharplang/proposals/csharp-7.0/local-functions.md
+    - name: Deklarace proměnné out
+      href: ../../../_csharplang/proposals/csharp-7.0/out-var.md
+    - name: Výrazy throw
+      href: ../../../_csharplang/proposals/csharp-7.0/throw-expression.md
+    - name: Binární literály
+      href: ../../../_csharplang/proposals/csharp-7.0/binary-literals.md
+    - name: Oddělovače číslic
+      href: ../../../_csharplang/proposals/csharp-7.0/digit-separators.md
+  - name: Návrhy jazyka C#7.1
+    items:
+    - name: Asynchronní metoda main
+      href: ../../../_csharplang/proposals/csharp-7.1/async-main.md
+    - name: Výchozí výrazy
+      href: ../../../_csharplang/proposals/csharp-7.1/target-typed-default.md
+    - name: Odvození názvů řazených kolekcí členů
+      href: ../../../_csharplang/proposals/csharp-7.1/infer-tuple-names.md
+    - name: Porovnávání vzorů s obecnými typy
+      href: ../../../_csharplang/proposals/csharp-7.1/generics-pattern-match.md
+  - name: Návrhy jazyka C#7.2
+    items:
+    - name: Odkazy jen pro čtení
+      href: ../../../_csharplang/proposals/csharp-7.2/readonly-ref.md
+    - name: Zabezpečení typů ref-like za kompilace
+      href: ../../../_csharplang/proposals/csharp-7.2/span-safety.md
+    - name: Nekoncové pojmenované argumenty
+      href: ../../../_csharplang/proposals/csharp-7.2/non-trailing-named-arguments.md
+    - name: Modifikátor private protected
+      href: ../../../_csharplang/proposals/csharp-7.2/private-protected.md
+    - name: Podmíněné výrazy ref
+      href: ../../../_csharplang/proposals/csharp-7.2/conditional-ref.md
+    - name: Úvodní oddělovač číslic
+      href: ../../../_csharplang/proposals/csharp-7.2/leading-separator.md
+  - name: Návrhy jazyka C#7.3
+    items:
+    - name: Omezení obecného typu unmanaged
+      href: ../../../_csharplang/proposals/csharp-7.3/blittable.md
+    - name: Indexovací pole `fixed` by neměla potřebovat připnutí bez ohledu na přesunutelný/nepřesunutelný kontext
+      href: ../../../_csharplang/proposals/csharp-7.3/indexing-movable-fixed-fields.md
+    - name: Příkaz `fixed` na základě vzoru
+      href: ../../../_csharplang/proposals/csharp-7.3/pattern-based-fixed.md
+    - name: Změna přiřazení místní proměnné ref
+      href: ../../../_csharplang/proposals/csharp-7.3/ref-local-reassignment.md
+    - name: Inicializátory pole stackalloc
+      href: ../../../_csharplang/proposals/csharp-7.3/stackalloc-array-initializers.md
+    - name: Atributy cílené na pole automaticky implementovaných vlastností
+      href: ../../../_csharplang/proposals/csharp-7.3/auto-prop-field-attrs.md
+    - name: Proměnné výrazů v inicializátorech
+      href: ../../../_csharplang/proposals/csharp-7.3/expression-variables-in-initializers.md
+    - name: Rovnost (==) a nerovnost (!=) řazených kolekcí členů
+      href: ../../../_csharplang/proposals/csharp-7.3/tuple-equality.md
+    - name: Vylepšení kandidátů přetížení
+      href: ../../../_csharplang/proposals/csharp-7.3/improved-overload-candidates.md
+  - name: Návrhy jazyka C#8.0
+    items:
+    - name: Odkazové typy s možnou hodnotou null – návrh
+      href: ../../../_csharplang/proposals/csharp-8.0/nullable-reference-types.md
+    - name: Odkazové typy s možnou hodnotou null – specifikace
+      href: ../../../_csharplang/proposals/csharp-8.0/nullable-reference-types-specification.md
+    - name: Rekurzivní porovnávání vzorů
+      href: ../../../_csharplang/proposals/csharp-8.0/patterns.md
+    - name: Asynchronní streamy
+      href: ../../../_csharplang/proposals/csharp-8.0/async-streams.md
+    - name: Rozsahy
+      href: ../../../_csharplang/proposals/csharp-8.0/ranges.md
+    - name: Příkazy using na základě vzorů a deklarace using
+      href: ../../../_csharplang/proposals/csharp-8.0/using.md
+    - name: Přiřazení sloučení s hodnotou null
+      href: ../../../_csharplang/proposals/csharp-8.0/null-coalescing-assignment.md
+ms.openlocfilehash: a2c2b2377b093b542f9d45ae688de121db1c1959
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58471306"

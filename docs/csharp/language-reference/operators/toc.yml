@@ -1,0 +1,94 @@
+items:
+- name: Operátory jazyka C#
+  href: index.md
+  items:
+  - name: '[] – operátor'
+    href: index-operator.md
+  - name: () – operátor
+    href: invocation-operator.md
+  - name: . Operátor
+    href: member-access-operator.md
+  - name: ?. a ?[] – operátory
+    href: null-conditional-operators.md
+  - name: ':: Operátor'
+    href: namespace-alias-qualifer.md
+  - name: + Operátor
+    href: addition-operator.md
+  - name: '- Operátor'
+    href: subtraction-operator.md
+  - name: '* Operátor'
+    href: multiplication-operator.md
+  - name: / – operátor
+    href: division-operator.md
+  - name: '% – operátor'
+    href: modulus-operator.md
+  - name: '& – operátor'
+    href: and-operator.md
+  - name: '| – operátor'
+    href: or-operator.md
+  - name: ^ – operátor
+    href: xor-operator.md
+  - name: '! Operátor'
+    href: logical-negation-operator.md
+  - name: ~ – operátor
+    href: bitwise-complement-operator.md
+  - name: = – operátor
+    href: assignment-operator.md
+  - name: < – operátor
+    href: less-than-operator.md
+  - name: '> Operátor'
+    href: greater-than-operator.md
+  - name: '?: Operátor'
+    href: conditional-operator.md
+  - name: ++ – operátor
+    href: increment-operator.md
+  - name: -- – operátor
+    href: decrement-operator.md
+  - name: '&& – operátor'
+    href: conditional-and-operator.md
+  - name: '|| – operátor'
+    href: conditional-or-operator.md
+  - name: << – operátor
+    href: left-shift-operator.md
+  - name: '>> Operátor'
+    href: right-shift-operator.md
+  - name: == – operátor
+    href: equality-comparison-operator.md
+  - name: '!= – operátor'
+    href: not-equal-operator.md
+  - name: <= – operátor
+    href: less-than-equal-operator.md
+  - name: '>= – operátor'
+    href: greater-than-equal-operator.md
+  - name: += – operátor
+    href: addition-assignment-operator.md
+  - name: -= – operátor
+    href: subtraction-assignment-operator.md
+  - name: '*= – operátor'
+    href: multiplication-assignment-operator.md
+  - name: /= – operátor
+    href: division-assignment-operator.md
+  - name: '%= – operátor'
+    href: modulus-assignment-operator.md
+  - name: '&= – operátor'
+    href: and-assignment-operator.md
+  - name: '|= – operátor'
+    href: or-assignment-operator.md
+  - name: ^= – operátor
+    href: xor-assignment-operator.md
+  - name: <<= – operátor
+    href: left-shift-assignment-operator.md
+  - name: '>>= – operátor'
+    href: right-shift-assignment-operator.md
+  - name: -> – operátor
+    href: dereference-operator.md
+  - name: ?? Operátor
+    href: null-coalescing-operator.md
+  - name: => – operátor
+    href: lambda-operator.md
+ms.openlocfilehash: 43c791ad292ef95e3e3e2bc8f58e7b92280e6747
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58471164"

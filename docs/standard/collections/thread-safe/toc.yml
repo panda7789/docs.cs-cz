@@ -1,0 +1,26 @@
+items:
+- name: Kolekce se zabezpečenými vlákny
+  href: index.md
+  items:
+  - name: BlockingCollection – přehled
+    href: blockingcollection-overview.md
+  - name: Kdy použít kolekci s bezpečnými vlákny
+    href: when-to-use-a-thread-safe-collection.md
+  - name: 'Postupy: Přidávání a odebírání jednotlivých položek v BlockingCollection'
+    href: how-to-add-and-take-items.md
+  - name: 'Postupy: Použití příkazu ForEach k odebrání položek v BlockingCollection'
+    href: how-to-use-foreach-to-remove.md
+  - name: 'Postupy: Přidávání a odebírání položek v ConcurrentDictionary'
+    href: how-to-add-and-remove-items.md
+  - name: 'Postupy: Přidání funkcí ohraničování a blokování do kolekce'
+    href: how-to-add-bounding-and-blocking.md
+  - name: 'Postupy: Použití polí blokujících kolekcí v datovém kanálu'
+    href: how-to-use-arrays-of-blockingcollections.md
+  - name: 'Postupy: Vytvoření fondu objektů pomocí ConcurrentBag'
+    href: how-to-create-an-object-pool.md
+ms.openlocfilehash: 6b17867548e1089eaa58d2c8a262fe4c6438948f
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58471210"

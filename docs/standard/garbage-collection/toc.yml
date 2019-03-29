@@ -1,0 +1,38 @@
+items:
+- name: Správa paměti a uvolňování paměti
+  href: memory-management-and-gc.md
+  items:
+  - name: Vymazání nespravovaných prostředků
+    href: unmanaged.md
+    items:
+    - name: Implementace metody Dispose
+      href: implementing-dispose.md
+    - name: Použití objektů implementujících rozhraní IDisposable
+      href: using-objects.md
+  - name: Kolekce paměti
+    href: index.md
+    items:
+    - name: Základy uvolnění paměti
+      href: fundamentals.md
+    - name: Halda pro velké objekty
+      href: large-object-heap.md
+    - name: Uvolnění paměti a výkon
+      href: performance.md
+    - name: Vyvolané kolekce
+      href: induced.md
+    - name: Latentní režimy
+      href: latency.md
+    - name: Optimalizace pro sdílené hostování webů
+      href: optimization-for-shared-web-hosting.md
+    - name: Oznámení pro kolekci paměti
+      href: notifications.md
+    - name: Sledování prostředků domény aplikace
+      href: app-domain-resource-monitoring.md
+    - name: Slabé odkazy
+      href: weak-references.md
+ms.openlocfilehash: ad426c53df40be9a5222bd0e5a6292d8f1ec8e30
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58471534"

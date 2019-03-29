@@ -1,0 +1,12 @@
+items:
+- name: Začínáme
+  href: index.md
+  items:
+  - name: Úvod do jazyka C# a rozhraní .NET Framework
+    href: introduction-to-the-csharp-language-and-the-net-framework.md
+ms.openlocfilehash: b28cf0d14c72247997a94f90ad842b4451843d9e
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58471508"

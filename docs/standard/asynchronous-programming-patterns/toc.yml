@@ -1,0 +1,58 @@
+items:
+- name: Vzory asynchronního programování
+  href: index.md
+  items:
+  - name: Asynchronní vzor založený na úlohách (TAP)
+    href: task-based-asynchronous-pattern-tap.md
+    items:
+    - name: Implementace asynchronního vzoru založeného na úlohách
+      href: implementing-the-task-based-asynchronous-pattern.md
+    - name: Použití asynchronního vzoru založeného na úloze
+      href: consuming-the-task-based-asynchronous-pattern.md
+    - name: Interoperabilita s jinými asynchronními vzory a typy
+      href: interop-with-other-asynchronous-patterns-and-types.md
+  - name: Asynchronní vzor založený na událostech (EAP)
+    href: event-based-asynchronous-pattern-eap.md
+    items:
+    - name: Přehled asynchronních vzorů založených na událostech
+      href: event-based-asynchronous-pattern-overview.md
+    - name: Implementace asynchronního vzoru založeného na událostech
+      href: implementing-the-event-based-asynchronous-pattern.md
+    - name: Osvědčené postupy pro implementaci asynchronního vzoru založeného na událostech
+      href: best-practices-for-implementing-the-event-based-asynchronous-pattern.md
+    - name: Rozhodování, kdy implementovat asynchronní vzor založený na událostech
+      href: deciding-when-to-implement-the-event-based-asynchronous-pattern.md
+    - name: 'Postupy: Implementace komponenty, která podporuje asynchronní vzor založený na událostech'
+      href: component-that-supports-the-event-based-asynchronous-pattern.md
+    - name: 'Postupy: Implementace klienta asynchronního vzoru založeného na událostech'
+      href: how-to-implement-a-client-of-the-event-based-asynchronous-pattern.md
+    - name: 'Postupy: Použití komponent, které podporují asynchronní vzor založený na událostech'
+      href: how-to-use-components-that-support-the-event-based-asynchronous-pattern.md
+  - name: Model asynchronního programování (APM)
+    href: asynchronous-programming-model-apm.md
+    items:
+    - name: Volání asynchronních metod pomocí rozhraní IAsyncResult
+      href: calling-asynchronous-methods-using-iasyncresult.md
+      items:
+      - name: Blokování provádění aplikací pomocí vlastnosti AsyncWaitHandle
+        href: blocking-application-execution-using-an-asyncwaithandle.md
+      - name: Blokování provádění aplikace ukončením asynchronní operace
+        href: blocking-application-execution-by-ending-an-async-operation.md
+      - name: Dotazování na stav asynchronní operace
+        href: polling-for-the-status-of-an-asynchronous-operation.md
+      - name: Použití delegáta AsyncCallback k ukončení asynchronní operace
+        href: using-an-asynccallback-delegate-to-end-an-asynchronous-operation.md
+        items:
+        - name: Použití delegáta AsyncCallback a stavového objektu
+          href: using-an-asynccallback-delegate-and-state-object.md
+    - name: Asynchronní programování pomocí delegátů
+      href: asynchronous-programming-using-delegates.md
+      items:
+      - name: Asynchronní volání synchronních metod
+        href: calling-synchronous-methods-asynchronously.md
+ms.openlocfilehash: 2f93abd762516ade20948cceb3b2a1617af04885
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58471219"

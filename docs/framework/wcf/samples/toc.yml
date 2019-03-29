@@ -1,0 +1,525 @@
+items:
+- name: Ukázky Windows Communication Foundation
+  href: index.md
+  items:
+  - name: Pokyny k instalaci
+    href: set-up-instructions.md
+    items:
+    - name: Jednorázový postup nastavení pro ukázky Windows Communication Foundation
+      href: one-time-setup-procedure-for-the-wcf-samples.md
+      items:
+      - name: Pokyny k bráně firewall
+        href: firewall-instructions.md
+      - name: Pokyny k hostování služby IIS
+        href: internet-information-service-hosting-instructions.md
+      - name: Pokyny k instalaci certifikátu serveru Internetové informační služby (IIS)
+        href: iis-server-certificate-installation-instructions.md
+      - name: Pokyny pro instalaci virtuálního adresáře
+        href: virtual-directory-setup-instructions.md
+      - name: Instalace služby Řízení front zpráv (MSMQ)
+        href: installing-message-queuing-msmq.md
+    - name: Ukázky vytváření Windows Communication Foundation
+      href: building-the-samples.md
+    - name: Spouštění ukázek Windows Communication Foundation
+      href: running-the-samples.md
+  - name: Základní
+    href: basic.md
+    items:
+    - name: Začínáme
+      href: getting-started-sample.md
+    - name: AJAX
+      href: ajax.md
+      items:
+      - name: JSONP
+        href: jsonp.md
+      - name: Serializace JSON
+        href: json-serialization.md
+      - name: Základní služba AJAX
+        href: basic-ajax-service.md
+      - name: Služba AJAX, která používá HTTP POST
+        href: ajax-service-using-http-post.md
+      - name: Služba AJAX bez konfigurace
+        href: ajax-service-without-configuration.md
+      - name: Služba AJAX využívající komplexní typy
+        href: ajax-service-using-complex-types-sample.md
+      - name: Služba AJAX s protokoly JSON a XML
+        href: ajax-service-with-json-and-xml-sample.md
+    - name: Vazba
+      href: binding.md
+      items:
+      - name: Základní vazby
+        href: basic-binding.md
+        items:
+        - name: Ukázka zabezpečení zpráv
+          href: message-security-sample.md
+        - name: Základní vazby u zabezpečení přenosu
+          href: basicbinding-with-transport-security.md
+        - name: BasicBinding
+          href: basicbinding.md
+      - name: Vlastní vazba
+        href: custom-binding.md
+        items:
+        - name: Imperativní vlastní vazby
+          href: custom-binding-imperative.md
+        - name: Kódování a přenos vlastní vazby
+          href: custom-binding-transport-and-encoding.md
+        - name: Spolehlivá relace s vlastními vazbami
+          href: custom-binding-reliable-session.md
+        - name: Spolehlivá relace vlastních vazeb přes HTTPS
+          href: custom-binding-reliable-session-over-https.md
+        - name: Zabezpečení vlastních vazeb
+          href: custom-binding-security.md
+      - name: Síťová vazba
+        href: net-binding.md
+        items:
+        - name: Vazby Net MSMQ
+          href: net-msmq-binding.md
+          items:
+          - name: Zpracované vazby služby MSMQ
+            href: transacted-msmq-binding.md
+          - name: Nestálá komunikace ve frontě
+            href: volatile-queued-communication.md
+          - name: Fronty nedoručených zpráv
+            href: dead-letter-queues.md
+          - name: Zacházení s nezpracovatelnými zprávami v MSMQ 4.0
+            href: poison-message-handling-in-msmq-4-0.md
+          - name: Relace a fronty
+            href: sessions-and-queues.md
+          - name: Obousměrná komunikace
+            href: two-way-communication.md
+          - name: SRMP
+            href: srmp.md
+          - name: Zabezpečení zprávy pomocí služby Řízení front zpráv
+            href: message-security-over-message-queuing.md
+        - name: Integrace služby Řízení front zpráv
+          href: message-queueing-integration.md
+          items:
+          - name: Řízení front zpráv do WCF
+            href: message-queuing-to-wcf.md
+          - name: Z WCF do Řízení front zpráv
+            href: wcf-to-message-queuing.md
+          - name: Korelace zprávy
+            href: message-correlation.md
+        - name: NetTCPBinding
+          href: nettcpbinding.md
+          items:
+          - name: Výchozí NetTcpBinding
+            href: default-nettcpbinding.md
+          - name: Ukázka služby Net.TCP Port Sharing
+            href: net-tcp-port-sharing-sample.md
+        - name: NetNamedPipeBinding
+          href: netnamedpipebinding.md
+      - name: Vazby WS
+        href: ws-binding.md
+        items:
+        - name: Prvek ws2007FederationHttpBinding
+          href: ws-2007-federation-http-binding.md
+        - name: WS Dual Http
+          href: ws-dual-http.md
+        - name: Kódování MTOM
+          href: mtom-encoding.md
+        - name: WSHttpBinding
+          href: wshttpbinding.md
+        - name: Spolehlivá relace WS
+          href: ws-reliable-session.md
+        - name: Zabezpečení přenosu WS
+          href: ws-transport-security.md
+        - name: Vazby zabezpečení zpráv
+          href: message-security-binding.md
+          items:
+          - name: Zabezpečení zpráv s anonymní metodou
+            href: message-security-anonymous.md
+          - name: Certifikát zabezpečení zprávy
+            href: message-security-certificate.md
+          - name: Zabezpečení zpráv s uživatelským jménem
+            href: message-security-user-name.md
+          - name: Zabezpečení zpráv – Windows
+            href: message-security-windows.md
+        - name: Přenos WS s pověřením zpráv
+          href: ws-transport-with-message-credential.md
+        - name: Tok transakcí webové služby
+          href: ws-transaction-flow.md
+    - name: Klient
+      href: client.md
+      items:
+      - name: Interoperabilita klientů
+        href: client-interoperability.md
+        items:
+        - name: Spolupráce s webovými službami ASMX
+          href: interoperating-with-asmx-web-services.md
+        - name: Ukázka třídy XMLSerializer
+          href: xmlserializer-sample.md
+      - name: Hlavičky adresy
+        href: address-headers.md
+      - name: Vytvoření postupu kanálu
+        href: channel-factory.md
+      - name: Očekávané výjimky
+        href: expected-exceptions.md
+      - name: Načítání metadat
+        href: retrieve-metadata.md
+      - name: Použití metod Close a Abort k uvolnění prostředků klienta WCF
+        href: use-close-abort-release-wcf-client-resources.md
+      - name: Typový klient
+        href: typed-client.md
+    - name: Kontrakt
+      href: contract.md
+      items:
+      - name: Kontrakty dat
+        href: data-contracts.md
+        items:
+        - name: Základní kontrakt dat
+          href: basic-data-contract.md
+        - name: Ukázka třídy DataContractSerializer
+          href: datacontractserializer-sample.md
+        - name: Známé typy
+          href: known-types.md
+        - name: Odkazy na objekty
+          href: object-references.md
+        - name: Podpora objektů POCO
+          href: poco-support.md
+        - name: Použití vazače serializace
+          href: usage-of-serialization-binder.md
+      - name: Kontrakty zpráv
+        href: message-contracts.md
+        items:
+        - name: Výchozí kontrakt zprávy
+          href: default-message-contract.md
+        - name: Netypový požadavek/odpověď
+          href: untyped-request-reply.md
+        - name: Nerozbalené zprávy
+          href: unwrapped-messages.md
+        - name: Nastavení vlastností Use a Style
+          href: setting-the-use-and-style-properties.md
+        - name: Ukázka třídy XmlReader
+          href: xmlreader-sample.md
+      - name: Kontrakty služeb
+        href: service-contracts.md
+        items:
+        - name: Duplex
+          href: duplex.md
+        - name: Chyba – kontrakt
+          href: fault-contract.md
+        - name: Jednosměrný
+          href: one-way.md
+        - name: Relace
+          href: session.md
+        - name: Stream
+          href: stream.md
+        - name: XmlSerializer – zpracování chyb
+          href: xmlserializer-faults.md
+      - name: DataContractResolver
+        href: datacontractresolver.md
+      - name: KnownAssemblyAttribute
+        href: knownassemblyattribute.md
+      - name: Použití DataContractSerializer a DataContractResolver pro zajištění funkcí NetDataContractSerializer
+        href: datacontractserializer-datacontractresolver-netdatacontractserializer.md
+    - name: Zjišťování
+      href: discovery-samples.md
+      items:
+      - name: Oznámení
+        href: announcements-sample.md
+      - name: Základní
+        href: basic-sample.md
+      - name: Konfigurace
+        href: configuration-sample.md
+      - name: Zjišťování pomocí oborů
+        href: discovery-with-scopes-sample.md
+      - name: Vlastní kritérium hledání
+        href: custom-find-criteria.md
+      - name: Ukázka zjišťování pracovního postupu
+        href: workflow-discovery-sample.md
+      - name: Služba zjišťování směrovačů
+        href: discovery-router-service.md
+    - name: Správa
+      href: management.md
+      items:
+      - name: Služby WCF a Trasování událostí pro Windows
+        href: wcf-services-and-event-tracing-for-windows.md
+      - name: Analytické trasování WCF
+        href: wcf-analytic-tracing.md
+      - name: Cyklické sledování
+        href: circular-tracing.md
+      - name: Trasování událostí pro Windows
+        href: etw-tracing.md
+      - name: Rozšíření trasování
+        href: extending-tracing.md
+      - name: Bezpečnostní uzamčení PII
+        href: pii-security-lockdown.md
+      - name: Použití čítačů výkonu
+        href: using-performance-counters.md
+      - name: Trasování a protokolování zpráv
+        href: tracing-and-message-logging.md
+      - name: Ověřování zabezpečení
+        href: security-validation.md
+      - name: Poskytovatel WMI
+        href: wmi-provider.md
+    - name: Směrovací služby
+      href: routing-services.md
+      items:
+      - name: Hello World se směrovací službou
+        href: hello-world-with-the-routing-service.md
+    - name: Zabezpečení
+      href: security-in-wcf.md
+      items:
+      - name: Kryptografická flexibilita v zabezpečení WCF
+        href: cryptographic-agility-in-wcf-security.md
+    - name: Služby
+      href: services.md
+      items:
+      - name: Hostování
+        href: hosting.md
+        items:
+        - name: Aktivace procesu Windows
+          href: windows-process-activation.md
+          items:
+          - name: Aktivace pojmenovaného kanálu
+            href: namedpipe-activation.md
+          - name: Aktivace protokolem TCP
+            href: tcp-activation.md
+          - name: Aktivace MSMQ
+            href: msmq-activation.md
+        - name: Ukázka integrace názvového prostoru SystemWebRouting
+          href: systemwebrouting-integration-sample.md
+        - name: Režim kompatibility ASP.NET
+          href: aspnet-compatibility.md
+        - name: Hostování IIS pomocí vloženého kódu
+          href: iis-hosting-using-inline-code.md
+        - name: Hostitel služby Windows
+          href: windows-service-host.md
+        - name: Vlastní hostování
+          href: self-host.md
+      - name: Vzájemná spolupráce služeb
+        href: service-interoperability.md
+        items:
+        - name: Použití monikeru služby WCF u klientů modelu COM
+          href: using-the-wcf-moniker-with-com-clients.md
+        - name: Klient ASMX se službou WCF
+          href: asmx-client-with-a-wcf-service.md
+      - name: Chování
+        href: behaviors.md
+        items:
+        - name: Souběžnost
+          href: concurrency.md
+        - name: Výchozí chování služby
+          href: default-service-behavior.md
+        - name: Vytváření instancí
+          href: instancing.md
+        - name: Chování publikování metadat
+          href: metadata-publishing-behavior.md
+        - name: Chování transakce služby
+          href: service-transaction-behavior.md
+        - name: Chování ladění služby
+          href: service-debug-behavior.md
+        - name: Omezování
+          href: throttling.md
+        - name: Zabezpečení chování
+          href: behavior-security.md
+          items:
+          - name: Chování auditování služby
+            href: service-auditing-behavior.md
+          - name: Členství a poskytovatel rolí
+            href: membership-and-role-provider.md
+          - name: Autorizace přístupu k operacím služby
+            href: authorizing-access-to-service-operations.md
+          - name: Zosobnění klienta
+            href: impersonating-the-client.md
+      - name: Zjednodušená konfigurace pro služby WCF
+        href: simplified-configuration-for-wcf-services.md
+      - name: Používání standardních koncových bodů
+        href: usage-of-standard-endpoints.md
+      - name: Zásady rozšířené ochrany
+        href: extended-protection-policy.md
+      - name: Postup konfiguračního kanálu
+        href: configuration-channel-factory.md
+      - name: Adresování
+        href: addressing.md
+      - name: Imperative
+        href: imperative.md
+      - name: Víc kontraktů
+        href: multiple-contracts.md
+      - name: Víc koncových bodů
+        href: multiple-endpoints.md
+      - name: Víc koncových bodů na jedné adrese ListenUri
+        href: multiple-endpoints-at-a-single-listenuri.md
+      - name: OperationContextScope
+        href: operationcontextscope.md
+      - name: Popis služby
+        href: service-description.md
+      - name: ConcurrencyMode.Reentrant
+        href: concurrencymode-reentrant.md
+      - name: Zabezpečení služby
+        href: service-security.md
+        items:
+        - name: Ukázka identity služby
+          href: service-identity-sample.md
+    - name: Syndikace
+      href: syndication.md
+      items:
+      - name: Samostatný diagnostický informační kanál
+        href: stand-alone-diagnostics-feed-sample.md
+      - name: Rozšíření volného typu
+        href: loosely-typed-extensions-sample.md
+    - name: Web
+      href: web.md
+      items:
+      - name: Základní služba HTTP
+        href: basic-http-service.md
+      - name: Koncové body SOAP a HTTP
+        href: soap-and-http-endpoints.md
+      - name: Integrace mezipaměti ASP.NET
+        href: aspnet-caching-integration.md
+      - name: UriTemplate
+        href: uritemplate-sample.md
+      - name: Tabulka UriTemplate
+        href: uritemplate-table-sample.md
+      - name: Dispečer tabulky UriTemplate
+        href: uritemplate-table-dispatcher-sample.md
+  - name: Rozšiřitelnost
+    href: extensibility.md
+    items:
+    - name: Vazby – rozšiřitelnost
+      href: binding-extensibility.md
+      items:
+      - name: WSStreamedHttpBinding
+        href: wsstreamedhttpbinding.md
+    - name: Rozšiřitelnost kanálů
+      href: channels-extensibility.md
+      items:
+      - name: Místní kanál
+        href: local-channel.md
+      - name: Řešení ReliableSecureProfile
+        href: reliable-secure-profile.md
+      - name: Dispečer vlastního kanálu
+        href: custom-channel-dispatcher.md
+      - name: Kanál s dělením dat do bloků
+        href: chunking-channel.md
+      - name: HttpCookieSession
+        href: httpcookiesession.md
+      - name: Vlastní zachycování zpráv
+        href: custom-message-interceptor.md
+    - name: Rozšiřitelnost vytváření instancí
+      href: instancing-extensibility.md
+      items:
+      - name: Trvanlivý kontext instance
+        href: durable-instance-context.md
+      - name: Vlastní doba života
+        href: custom-lifetime.md
+      - name: Inicializace vytváření instancí
+        href: instancing-initialization.md
+      - name: Sdružování
+        href: pooling.md
+    - name: Rozšiřitelnost interoperability
+      href: interop-extensibility.md
+      items:
+      - name: Přiřazování zpráv metodám podle elementu těla
+        href: dispatch-by-body-element.md
+      - name: Trasa podle textu
+        href: route-by-body.md
+    - name: Rozšiřitelnost kodéru zpráv
+      href: message-encoder-extensibility.md
+      items:
+      - name: 'Vlastní kodér zpráv: Vlastní kodér textu'
+        href: custom-message-encoder-custom-text-encoder.md
+      - name: 'Vlastní kodér zpráv: Kompresní kodér'
+        href: custom-message-encoder-compression-encoder.md
+    - name: Rozšiřitelnost metadat
+      href: metadata-extensibility.md
+      items:
+      - name: Vlastní zabezpečený koncový bod metadat
+        href: custom-secure-metadata-endpoint.md
+      - name: Vlastní publikování WSDL
+        href: custom-wsdl-publication.md
+    - name: Rozšiřitelnost zabezpečení
+      href: security-extensibility.md
+      items:
+      - name: Trvale vydaný poskytovatel tokenu
+        href: durable-issued-token-provider.md
+      - name: Zprostředkovatel tokenů zabezpečení SAML
+        href: saml-token-provider.md
+      - name: Podpora tokenů
+        href: supporting-tokens.md
+      - name: Ověřovací data tokenu
+        href: token-authenticator.md
+      - name: Zprostředkovatel tokenu
+        href: token-provider.md
+      - name: Validátor hesel pro uživatelská jména
+        href: user-name-password-validator.md
+      - name: Validátor certifikátu X.509
+        href: x-509-certificate-validator.md
+      - name: Zásada autorizace
+        href: authorization-policy.md
+      - name: Vlastní token
+        href: custom-token.md
+      - name: Ověřování ze strany klienta
+        href: client-validation.md
+    - name: Ukázky rozšiřitelnosti syndikace
+      href: syndication-extensibility-samples.md
+      items:
+      - name: Rozšíření silného typu
+        href: strongly-typed-extensions-sample.md
+      - name: Formátování informačního kanálu (JSON)
+        href: feed-formatter-json.md
+      - name: Streamování informačních kanálů
+        href: streaming-feeds-sample.md
+    - name: Rozšiřitelnost přenosů
+      href: transport-extensibility.md
+      items:
+      - name: Aktivace UDP
+        href: udp-activation.md
+      - name: 'Přenos: Vlastní transakce přes UDP'
+        href: transport-custom-transactions-over-udp-sample.md
+      - name: 'Přenos: UDP'
+        href: transport-udp.md
+      - name: 'Přenos: Interoperabilita TCP ve WSE 3.0'
+        href: transport-wse-3-0-tcp-interoperability.md
+    - name: Formátovací modul a selektor operace
+      href: operation-formatter-and-operation-selector.md
+    - name: Vlastní filtr zpráv
+      href: custom-message-filter.md
+    - name: Vlastní hostitel služby
+      href: custom-service-host.md
+    - name: Náhrada kontraktu dat
+      href: datacontract-surrogate.md
+    - name: Rozšíření kontroly nad zpracováním a vykazováním chyb
+      href: extending-control-over-error-handling-and-reporting.md
+    - name: Inspektoři zpráv
+      href: message-inspectors.md
+    - name: WebContentTypeMapper
+      href: webcontenttypemapper-sample.md
+  - name: Scénář
+    href: scenario.md
+    items:
+    - name: Scénáře datových vazeb
+      href: data-binding-scenarios.md
+      items:
+      - name: Datové vazby v klientovi Windows Forms
+        href: data-binding-in-a-windows-forms-client.md
+      - name: Vazba dat v klientovi ASP.NET
+        href: data-binding-in-an-aspnet-client.md
+      - name: Datové vazby v klientovi Windows Presentation Foundation
+        href: data-binding-in-a-wpf-client.md
+    - name: Ukázka zabezpečení zjišťování
+      href: discovery-security-sample.md
+    - name: Ukázka federace
+      href: federation-sample.md
+    - name: Serializace JSON slabého typu (AJAX)
+      href: weakly-typed-json-serialization-sample.md
+    - name: Důvěryhodná služba facade
+      href: trusted-facade-service.md
+    - name: 'Vzory návrhu: Vzor publikování–odběr založený na seznamu'
+      href: design-patterns-list-based-publish-subscribe.md
+  - name: Ukázky nástrojů
+    href: tool-samples.md
+    items:
+    - name: ConfigurationCodeGenerator
+      href: configurationcodegenerator.md
+    - name: CustomChannelsTester
+      href: customchannelstester.md
+    - name: FindPrivateKey
+      href: findprivatekey.md
+ms.openlocfilehash: 3c198d8f9f00d86343d05a59df52b703d35d1bcf
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58471328"

@@ -1,0 +1,18 @@
+items:
+- name: V programu jazyka C#
+  href: index.md
+  items:
+  - name: Hello World – váš první program
+    href: hello-world-your-first-program.md
+  - name: Obecná struktura programu v C#
+    href: general-structure-of-a-csharp-program.md
+  - name: Názvy identifikátorů
+    href: identifier-names.md
+  - name: Konvence kódování v C#
+    href: coding-conventions.md
+ms.openlocfilehash: 1772c8e85b53055cddffa4ffc2cac15f3cd32c77
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58471288"

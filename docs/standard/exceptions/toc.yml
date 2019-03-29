@@ -1,0 +1,28 @@
+items:
+- name: Výjimky
+  href: index.md
+  items:
+  - name: Třída a vlastnosti výjimky
+    href: exception-class-and-properties.md
+  - name: 'Postupy: Používání bloku Try/Catch k zachycování výjimek'
+    href: how-to-use-the-try-catch-block-to-catch-exceptions.md
+  - name: 'Postupy: Používání specifických výjimek v bloku Catch'
+    href: how-to-use-specific-exceptions-in-a-catch-block.md
+  - name: 'Postupy: Explicitní generování výjimek'
+    href: how-to-explicitly-throw-exceptions.md
+  - name: 'Postupy: Vytváření uživatelsky definovaných výjimek'
+    href: how-to-create-user-defined-exceptions.md
+  - name: Používání obslužných rutin uživatelsky filtrovaných výjimek
+    href: using-user-filtered-exception-handlers.md
+  - name: 'Postupy: Používání bloků Finally'
+    href: how-to-use-finally-blocks.md
+  - name: Zpracování výjimek vzájemné spolupráce COM
+    href: handling-com-interop-exceptions.md
+  - name: Doporučené postupy pro výjimky
+    href: best-practices-for-exceptions.md
+ms.openlocfilehash: 30a6abc9671ff2728792e74345be12fff7cfefbc
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58471331"

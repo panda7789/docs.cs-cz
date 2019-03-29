@@ -1,0 +1,16 @@
+items:
+- name: Managed Extensibility Framework (MEF)
+  href: index.md
+  items:
+  - name: Přehled modelu programování s přidělenými atributy (MEF)
+    href: attributed-programming-model-overview-mef.md
+  - name: Nástroj pro analýzu sestavení (Mefx)
+    href: composition-analysis-tool-mefx.md
+  - name: Rozhraní MEF pro .NET pro aplikace pro Windows Store
+    href: mef-for-net-for-windows-store-apps.md
+ms.openlocfilehash: de9b31206949c867343b112769d71d7b9c9035fa
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58471102"

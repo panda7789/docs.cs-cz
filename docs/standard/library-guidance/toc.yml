@@ -1,0 +1,30 @@
+items:
+- name: Pokyny pro open-source knihovnu
+  href: index.md
+  items:
+  - name: Začínáme
+    href: get-started.md
+  - name: Cílení na více platforem
+    href: cross-platform-targeting.md
+  - name: Vytváření silných názvů
+    href: strong-naming.md
+  - name: NuGet
+    href: nuget.md
+    items:
+    - name: Závislosti
+      href: dependencies.md
+    - name: Odkaz na zdroj
+      href: sourcelink.md
+    - name: Publikování
+      href: publish-nuget-package.md
+  - name: Správa verzí
+    href: versioning.md
+    items:
+    - name: Změny způsobující chyby
+      href: breaking-changes.md
+ms.openlocfilehash: eb2748f71480aee063efadd8291c76440347169b
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58471105"

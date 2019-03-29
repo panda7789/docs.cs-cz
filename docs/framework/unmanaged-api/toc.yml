@@ -1,0 +1,38 @@
+items:
+- name: Nespravované rozhraní API
+  href: index.md
+  items:
+  - name: Běžné typy dat
+    href: common-data-types-unmanaged-api-reference.md
+  - name: Rozhraní API ALink
+    href: alink/
+  - name: Authenticode
+    href: authenticode/
+  - name: Konstanty
+    href: constants-unmanaged-api-reference.md
+  - name: Ladění
+    href: debugging/
+  - name: Úložiště symbolů diagnostiky
+    href: diagnostics/
+  - name: Fúze
+    href: fusion/
+  - name: Hostování
+    href: hosting/
+  - name: Metadata
+    href: metadata/
+  - name: Profilace
+    href: profiling/
+  - name: Vytváření silných názvů
+    href: strong-naming/
+  - name: WMI a čítače výkonu
+    href: wmi/
+  - name: Pomocné funkce Tlbexp
+    href: tlbexp/
+  - name: GUID_ManagedName – atribut
+    href: guid-managedname-attribute.md
+ms.openlocfilehash: 48454d1cf9285a229de8d3b852d33c985c3b53bc
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58471558"

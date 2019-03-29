@@ -1,0 +1,57 @@
+items:
+- name: Řetězce v jazyce Visual Basic
+  href: index.md
+  items:
+  - name: Úvod do řetězců
+    href: introduction-to-strings.md
+    items:
+    - name: Základní informace o řetězcích
+      href: string-basics.md
+    - name: Typy metod pro manipulaci s řetězci
+      href: types-of-string-manipulation-methods.md
+    - name: Nothing a řetězce
+      href: nothing-and-strings.md
+    - name: Vliv jazykové verze na řetězce
+      href: how-culture-affects-strings.md
+    - name: Interpolované řetězce
+      href: interpolated-strings.md
+    - name: Přístup k řetězci se základem 0 vs. přístup k řetězci se základem 1
+      href: zero-based-vs-one-based-string-access.md
+  - name: 'Postupy: Vytváření řetězců pomocí třídy StringBuilder'
+    href: how-to-create-strings-using-a-stringbuilder.md
+  - name: 'Postupy: Vyhledávání v řetězci'
+    href: how-to-search-within-a-string.md
+  - name: Převod mezi řetězci a ostatními datovými typy
+    href: converting-between-strings-and-other-data-types.md
+    items:
+    - name: 'Postupy: Převod pole bajtů na řetězec'
+      href: how-to-convert-an-array-of-bytes-into-a-string.md
+    - name: 'Postupy: Převod řetězců na pole bajtů'
+      href: how-to-convert-strings-into-an-array-of-bytes.md
+    - name: 'Postupy: Vytvoření řetězce z pole hodnot typu Char'
+      href: how-to-create-a-string-from-an-array-of-char-values.md
+    - name: 'Postupy: Převod hexadecimálních řetězců na čísla'
+      href: how-to-convert-hexadecimal-strings-to-numbers.md
+    - name: 'Postupy: Převod řetězce na pole znaků'
+      href: how-to-convert-a-string-to-an-array-of-characters.md
+    - name: 'Postupy: Přístup ke znakům v řetězcích'
+      href: how-to-access-characters-in-strings.md
+  - name: Ověřování řetězců
+    href: validating-strings.md
+    items:
+    - name: 'Postupy: Ověření názvů a cest souborů'
+      href: how-to-validate-file-names-and-paths.md
+    - name: 'Postupy: Ověření řetězců, které představují data nebo časy'
+      href: how-to-validate-strings-that-represent-dates-or-times.md
+    - name: Používání regulárních výrazů s ovládacím prvkem MaskedTextBox
+      href: using-regular-expressions-with-the-maskedtextbox-control.md
+    - name: 'Návod: Ověření, že hesla jsou složitá'
+      href: walkthrough-validating-that-passwords-are-complex.md
+  - name: 'Návod: Šifrování a dešifrování řetězců'
+    href: walkthrough-encrypting-and-decrypting-strings.md
+ms.openlocfilehash: 2c148e2d34ef032785f1ccd723fb1d8aad136332
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58471309"

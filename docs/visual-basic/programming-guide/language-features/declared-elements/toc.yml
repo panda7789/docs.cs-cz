@@ -1,0 +1,42 @@
+items:
+- name: Deklarované elementy
+  href: index.md
+  items:
+  - name: Deklarované názvy elementů
+    href: declared-element-names.md
+  - name: Deklarované charakteristiky elementů
+    href: declared-element-characteristics.md
+    items:
+    - name: Doba platnosti
+      href: lifetime.md
+    - name: Rozsah
+      href: scope.md
+      items:
+      - name: 'Postupy: Řízení rozsahu proměnné'
+        href: how-to-control-the-scope-of-a-variable.md
+      - name: Propagace typu
+        href: type-promotion.md
+    - name: Úrovně přístupu
+      href: access-levels.md
+      items:
+      - name: 'Postupy: Řízení dostupnosti proměnné'
+        href: how-to-control-the-availability-of-a-variable.md
+    - name: Odkazy na deklarované elementy
+      href: references-to-declared-elements.md
+    - name: Stínování
+      href: shadowing.md
+      items:
+      - name: Rozdíly mezi stínováním a přepsáním
+        href: differences-between-shadowing-and-overriding.md
+      - name: 'Postupy: Skrytí proměnné se stejným názvem jako má vaše proměnná'
+        href: how-to-hide-a-variable-with-the-same-name-as-your-variable.md
+      - name: 'Postupy: Skrytí zděděné proměnné'
+        href: how-to-hide-an-inherited-variable.md
+      - name: 'Postupy: Přístup k proměnné skryté odvozenou třídou'
+        href: how-to-access-a-variable-hidden-by-a-derived-class.md
+ms.openlocfilehash: d747436df2e7ad7187e39808ea19d64ac1b082fc
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58471137"

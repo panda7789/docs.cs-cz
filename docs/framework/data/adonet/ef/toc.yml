@@ -1,0 +1,126 @@
+items:
+- name: ADO.NET Entity Framework
+  href: index.md
+- name: Přehled Entity Framework
+  href: overview.md
+- name: Modelování a mapování
+  href: modeling-and-mapping.md
+  items:
+  - name: EDM Generator (EdmGen.exe)
+    href: edm-generator-edmgen-exe.md
+    items:
+    - name: 'Postupy: Použití EdmGen.exe pro generování modelu a souborů mapování'
+      href: how-to-use-edmgen-exe-to-generate-the-model-and-mapping-files.md
+    - name: 'Postupy: Použití EdmGen.exe pro generování kódu na objektové vrstvě'
+      href: how-to-use-edmgen-exe-to-generate-object-layer-code.md
+    - name: 'Postupy: Použití EdmGen.exe pro ověření modelu a souborů mapování'
+      href: how-to-use-edmgen-exe-to-validate-model-and-mapping-files.md
+  - name: 'Postupy: Definování připojovacího řetězce'
+    href: how-to-define-the-connection-string.md
+  - name: 'Postupy: Vytvoření vložených prostředků modelu a souborů mapování'
+    href: how-to-make-model-and-mapping-files-embedded-resources.md
+  - name: Práce s jazykem DDL (Data Description Language)
+    href: working-with-data-definition-language.md
+- name: Dotazování na konceptuální model
+  href: querying-a-conceptual-model.md
+- name: Práce s objekty
+  href: working-with-objects.md
+- name: Práce se zprostředkovateli dat
+  href: working-with-data-providers.md
+  items:
+  - name: Připojovací řetězce
+    href: connection-strings.md
+  - name: Zprostředkovatelé dat Entity Framework
+    href: data-providers.md
+    items:
+    - name: Zprostředkovatel EntityClient pro Entity Framework
+      href: entityclient-provider-for-the-entity-framework.md
+      items:
+      - name: 'Postupy: Sestavení připojovacího řetězce EntityConnection'
+        href: how-to-build-an-entityconnection-connection-string.md
+      - name: 'Postupy: Provedení dotazu, který vrátí výsledky typu PrimitiveType'
+        href: how-to-execute-a-query-that-returns-primitivetype-results.md
+      - name: 'Postupy: Provedení dotazu, který vrátí výsledky typu StructuralType'
+        href: how-to-execute-a-query-that-returns-structuraltype-results.md
+      - name: 'Postupy: Provedení dotazu, který vrátí výsledky typu RefType'
+        href: how-to-execute-a-query-that-returns-reftype-results.md
+      - name: 'Postupy: Provedení dotazu, který vrátí komplexní typy'
+        href: how-to-execute-a-query-that-returns-complex-types.md
+      - name: 'Postupy: Provedení dotazu, který vrátí vnořené kolekce'
+        href: how-to-execute-a-query-that-returns-nested-collections.md
+      - name: 'Postupy: Spuštění parametrizovaného dotazu Entity SQL pomocí EntityCommand'
+        href: how-to-execute-a-parameterized-entity-sql-query-using-entitycommand.md
+      - name: 'Postupy: Spuštění parametrizované uložené procedury pomocí EntityCommand'
+        href: how-to-execute-a-parameterized-stored-procedure-using-entitycommand.md
+      - name: 'Postupy: Spuštění polymorfního dotazu'
+        href: how-to-execute-a-polymorphic-query.md
+      - name: 'Postupy: Procházení relací pomocí navigačního operátoru'
+        href: how-to-navigate-relationships-with-the-navigate-operator.md
+    - name: SqlClient pro Entity Framework
+      href: sqlclient-for-the-entity-framework.md
+      items:
+      - name: SqlClient pro funkce Entity Framework
+        href: sqlclient-for-ef-functions.md
+        items:
+        - name: Konceptuální model v kanonickém formátu pro mapování funkcí SQL Serveru
+          href: conceptual-model-canonical-to-sql-server-functions-mapping.md
+        - name: Agregační funkce
+          href: aggregate-functions-sqlclient-for-entity-framework.md
+        - name: Funkce pro datum a čas
+          href: date-and-time-functions.md
+        - name: Matematické funkce
+          href: mathematical-functions.md
+        - name: Funkce řetězce
+          href: string-functions.md
+        - name: Systémové funkce
+          href: system-functions.md
+      - name: SqlClient pro typy Entity Framework
+        href: sqlclient-for-ef-types.md
+      - name: Známé problémy v SqlClient pro Entity Framework
+        href: known-issues-in-sqlclient-for-entity-framework.md
+  - name: Zápis zprostředkovatele dat Entity Framework
+    href: writing-an-ef-data-provider.md
+    items:
+    - name: Generování SQL
+      href: sql-generation.md
+      items:
+      - name: Tvar stromu příkazů
+        href: the-shape-of-the-command-trees.md
+      - name: Generování SQL ze stromů příkazů – osvědčené postupy
+        href: generating-sql-from-command-trees-best-practices.md
+      - name: Generování SQL ve zprostředkovateli ukázek
+        href: sql-generation-in-the-sample-provider.md
+        items:
+        - name: Architektura a návrh
+          href: architecture-and-design.md
+        - name: 'Návod: Generování SQL'
+          href: walkthrough-sql-generation.md
+    - name: Úpravy generování SQL
+      href: modification-sql-generation.md
+    - name: Specifikace manifestu zprostředkovatele
+      href: provider-manifest-specification.md
+- name: Důležité informace o vývoji a nasazení
+  href: development-and-deployment-considerations.md
+  items:
+  - name: Důležité informace o zabezpečení
+    href: security-considerations.md
+  - name: Faktory ovlivňující výkon
+    href: performance-considerations.md
+  - name: Důležité informace o migraci
+    href: migration-considerations.md
+  - name: Důležité informace o nasazení
+    href: deployment-considerations.md
+- name: Prostředky Entity Framework
+  href: resources.md
+- name: Terminologie Entity Framework
+  href: terminology.md
+- name: Začínáme
+  href: getting-started.md
+- name: Referenční dokumentace jazyka
+  href: language-reference/index.md
+ms.openlocfilehash: 7b6de341e548ca64690cf9a17281fcbb30f160cf
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58471517"

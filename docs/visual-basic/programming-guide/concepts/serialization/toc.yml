@@ -1,0 +1,16 @@
+items:
+- name: Serializace
+  href: index.md
+  items:
+  - name: 'Postupy: Zápis dat objektů do souboru XML'
+    href: how-to-write-object-data-to-an-xml-file.md
+  - name: 'Postupy: Čtení dat objektů ze souboru XML'
+    href: how-to-read-object-data-from-an-xml-file.md
+  - name: 'Návod: Uchování objektu'
+    href: walkthrough-persisting-an-object-in-visual-studio.md
+ms.openlocfilehash: fb7160fa8eae06a13bf917fff42316fb608d6a95
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58471327"

@@ -1,0 +1,19 @@
+items:
+- name: Pomocné funkce Tlbexp
+  href: index.md
+  items:
+  - name: GetTypeLibInfo – funkce
+    href: gettypelibinfo-function.md
+  - name: LoadTypeLibWithResolver – funkce
+    href: loadtypelibwithresolver-function.md
+  - name: ITypeLibResolver – rozhraní
+    href: itypelibresolver-interface.md
+    items:
+    - name: ResolveTypeLib – metoda
+      href: resolvetypelib-method.md
+ms.openlocfilehash: 0e93432ddbf8f67674a555cac4be9d07c268d9b7
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58471171"

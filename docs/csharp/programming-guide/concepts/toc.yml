@@ -1,0 +1,34 @@
+items:
+- name: Koncepty programování
+  href: index.md
+  items:
+  - name: Sestavení a globální mezipaměť sestavení (GAC)
+    href: assemblies-gac/
+  - name: Asynchronní programování pomocí modifikátoru Async a operátoru Await
+    href: async/
+  - name: Atributy
+    href: attributes/
+  - name: Informace o volajícím
+    href: caller-information.md
+  - name: Kolekce
+    href: collections.md
+  - name: Kovariance a kontravariance
+    href: covariance-contravariance/
+  - name: Stromy výrazů
+    href: expression-trees/
+  - name: Iterátory
+    href: iterators.md
+  - name: LINQ (Language-Integrated Query)
+    href: linq/
+  - name: Objektově orientované programování
+    href: object-oriented-programming.md
+  - name: Reflexe
+    href: reflection.md
+  - name: Serializace (C#)
+    href: serialization/
+ms.openlocfilehash: 43357f3e4d438d96ba5778100585453792ed29c6
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58471530"

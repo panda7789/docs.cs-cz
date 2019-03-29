@@ -1,0 +1,24 @@
+items:
+- name: Pole
+  href: index.md
+  items:
+  - name: Pole jako objekty
+    href: arrays-as-objects.md
+  - name: Jednorozměrná pole
+    href: single-dimensional-arrays.md
+  - name: Vícerozměrná pole
+    href: multidimensional-arrays.md
+  - name: Vícenásobná pole
+    href: jagged-arrays.md
+  - name: Použití příkazu foreach s poli
+    href: using-foreach-with-arrays.md
+  - name: Předávání polí jako argumentů
+    href: passing-arrays-as-arguments.md
+  - name: Implicitně typovaná pole
+    href: implicitly-typed-arrays.md
+ms.openlocfilehash: b587998861fba9ae9f13da1e58fd24e9279c6224
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58471555"
