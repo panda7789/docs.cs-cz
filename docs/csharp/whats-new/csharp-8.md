@@ -2,12 +2,12 @@
 title: Co je nového v C# 8.0 – C# Průvodce
 description: Získejte přehled o nových funkcí dostupných v C# 8.0. V tomto článku je aktuální verze Preview 2.
 ms.date: 02/12/2019
-ms.openlocfilehash: faef8a0a0c1f38766482384f46959928e378a3fd
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.openlocfilehash: 07752d6d7784ff4aeb70900ef3bcd90cb29f7c22
+ms.sourcegitcommit: 4a8c2b8d0df44142728b68ebc842575840476f6d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58463511"
+ms.lasthandoff: 03/28/2019
+ms.locfileid: "58545556"
 ---
 # <a name="whats-new-in-c-80"></a>Co je nového v C# 8.0
 
@@ -164,22 +164,37 @@ public class Point
 }
 ```
 
-Používá následující metodu **poziční vzor** k extrakci hodnot z `x` a `y`. Potom použije `when` klauzule určit do kvadrantu bodu:
+Kromě toho zvažte následující výčtového typu, který představuje různé pozic kvadrantu:
 
 ```csharp
-static string Quadrant(Point p) => p switch
+public enum Quadrant
 {
-    (0, 0) => "origin",
-    (var x, var y) when x > 0 && y > 0 => "Quadrant 1",
-    (var x, var y) when x < 0 && y > 0 => "Quadrant 2",
-    (var x, var y) when x < 0 && y < 0 => "Quadrant 3",
-    (var x, var y) when x > 0 && y < 0 => "Quadrant 4",
-    (var x, var y) => "on a border",
-    _ => "unknown"
+    Unknown,
+    Origin,
+    One,
+    Two,
+    Three,
+    Four,
+    OnBorder
+}
+```
+
+Používá následující metodu **poziční vzor** k extrakci hodnot z `x` a `y`. Potom použije `when` klauzule určit `Quadrant` bodu:
+
+```csharp
+static Quadrant GetQuadrant(Point point) => point switch
+{
+    (0, 0) => Quadrant.Origin,
+    var (x, y) when x > 0 && y > 0 => Quadrant.One,
+    var (x, y) when x < 0 && y > 0 => Quadrant.Two,
+    var (x, y) when x < 0 && y < 0 => Quadrant.Three,
+    var (x, y) when x > 0 && y < 0 => Quadrant.Four,
+    var (_, _) => Quadrant.OnBorder,
+    _ => Quadrant.Unknown
 };
 ```
 
-Vzor zrušení v předchozím přepínače odpovídá při buď `x` nebo `y`, ale ne obojí je 0. Výraz přepínače musíte vytvořit hodnotu nebo vyvolat výjimku. Výraz přepínače vyvolá výjimku, pokud neodpovídá žádná případů. Kompilátor vygeneruje upozornění za vás, pokud jste ve výrazu přepínače nepokrývají všechny možné případy.
+Vzor zrušení v předchozím přepínače odpovídá při buď `x` nebo `y` je 0, ale ne obojí. Výraz přepínače musíte vytvořit hodnotu nebo vyvolat výjimku. Výraz přepínače vyvolá výjimku, pokud neodpovídá žádná případů. Kompilátor vygeneruje upozornění za vás, pokud jste ve výrazu přepínače nepokrývají všechny možné případy.
 
 Můžete prozkoumat porovnávání vzorů postupy v tomto [Upřesnit kurz o porovnávání vzorů](../tutorials/pattern-matching.md).
 
