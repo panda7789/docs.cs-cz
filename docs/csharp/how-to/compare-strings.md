@@ -5,12 +5,12 @@ ms.date: 10/03/2018
 helpviewer_keywords:
 - strings [C#], comparison
 - comparing strings [C#]
-ms.openlocfilehash: 479e6d9250c546943da3ddd837f2f03a5c4e7b1e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: bce234ca3a86f057ec35e1c53d22169ee29b7b94
+ms.sourcegitcommit: d938c39afb9216db377d0f0ecdaa53936a851059
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54563987"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58634229"
 ---
 # <a name="how-to-compare-strings-in-c"></a>Jak bude probíhat porovnávání řetězců v jazyce C\#
 
@@ -55,7 +55,7 @@ Při provádění velkých a malých písmen řadové porovnání těchto metod 
 ## <a name="linguistic-comparisons"></a>Porovnání nezávislá na
 
 Řetězce lze provést řazení také použití jazykových pravidel pro aktuální jazykovou verzi.
-To se někdy označuje jako "pořadí řazení slov." Při provádění jazykové porovnání některé nealfanumerické znaky Unicode mohou mít zvláštní váhu přiřazené. Například pomlčka "-" může mít velmi malou přiřazenou váhu, tak, aby "co-op" a "coop" zobrazily vedle sebe v pořadí řazení. Kromě toho některé znaky Unicode mohou být odpovídá sekvenci <xref:System.Char> instancí. Následující příklad používá frázi "Jejich taneček v ulici." v Německu "ss" (U + 0073 U + 0073) v jednom řetězci a ß"(U + 00DF) v jiném. Lingvistických (ve Windows), "ss" je rovno Essetz Němčina: znak "ß" v "en US" i "de-DE" jazykové verze.
+To se někdy označuje jako "pořadí řazení slov." Při provádění jazykové porovnání některé nealfanumerické znaky Unicode mohou mít zvláštní váhu přiřazené. Například pomlčka "-" může mít velmi malou přiřazenou váhu, tak, aby "co-op" a "coop" zobrazily vedle sebe v pořadí řazení. Kromě toho některé znaky Unicode mohou být odpovídá sekvenci <xref:System.Char> instancí. Následující příklad používá frázi "Jejich taneček v ulici." v Německu "ss" (U + 0073 U + 0073) v jednom řetězci a ß"(U + 00DF) v jiném. Lingvistických (ve Windows), "ss" je rovno Esszet Němčina: znak "ß" v "en US" i "de-DE" jazykové verze.
 
 [!code-csharp-interactive[Comparing strings using linguistic rules](../../../samples/snippets/csharp/how-to/strings/CompareStrings.cs#3)]
 

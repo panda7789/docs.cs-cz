@@ -1,6 +1,6 @@
 ---
-title: 'Postupy: Žádost o Data pomocí třídy WebRequest'
-ms.date: 03/30/2017
+title: 'Postupy: Data žádosti pomocí třídy WebRequest'
+ms.date: 03/21/2019
 dev_langs:
 - csharp
 - vb
@@ -11,32 +11,33 @@ helpviewer_keywords:
 - receiving data, using WebRequest class
 - Internet, requesting data
 ms.assetid: 368b8d0f-dc5e-4469-a8b8-b2adbf5dd800
-ms.openlocfilehash: ac7f9fc4a3c7a376d96d7cf820d2051bf2103e51
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1b71327d007e66cc217f6d69e11122c481e5118f
+ms.sourcegitcommit: d938c39afb9216db377d0f0ecdaa53936a851059
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54623063"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58634034"
 ---
-# <a name="how-to-request-data-using-the-webrequest-class"></a>Postupy: Žádost o Data pomocí třídy WebRequest
-Následující postup popisuje kroky používaná pro požádání o prostředku ze serveru, například webovou stránku nebo soubor. Prostředek musí být označeny identifikátorem URI.  
+# <a name="how-to-request-data-by-using-the-webrequest-class"></a>Postupy: Data žádosti pomocí třídy WebRequest
+Následující postup popisuje kroky pro žádost o prostředek, například webovou stránku nebo soubor, ze serveru. Prostředek musí být označeny identifikátorem URI.  
   
-### <a name="to-request-data-from-a-host-server"></a>Žádost o data z hostitelského serveru  
+## <a name="to-request-data-from-a-host-server"></a>Žádost o data z hostitelského serveru  
   
-1.  Vytvoření <xref:System.Net.WebRequest> instance voláním <xref:System.Net.WebRequest.Create%2A> s identifikátorem URI prostředku.  
+1.  Vytvoření <xref:System.Net.WebRequest> instance voláním <xref:System.Net.WebRequest.Create%2A?displayProperty=nameWithType> s identifikátorem URI prostředku. Příklad: 
   
     ```csharp  
-    WebRequest request = WebRequest.Create("http://www.contoso.com/");  
+    WebRequest request = WebRequest.Create("http://www.contoso.com/default.html");  
     ```  
   
     ```vb  
-    Dim request as WebRequest = WebRequest.Create("http://www.contoso.com/")  
+    Dim request as WebRequest = WebRequest.Create("http://www.contoso.com/default.html")  
     ```  
   
     > [!NOTE]
-    >  Rozhraní .NET Framework poskytuje třídy pro konkrétní odvozený z **WebRequest** a **WebResponse** pro identifikátory URI, které začínají řetězcem "http:", "protokol https:", "ftp:", a "souboru:". Přístup k prostředkům prostřednictvím jiné protokoly, je nutné implementovat, které jsou odvozeny z třídy pro konkrétní **WebRequest** a **WebResponse**. Další informace najdete v tématu [programování připojitelných protokolů](../../../docs/framework/network-programming/programming-pluggable-protocols.md) .  
+    > Rozhraní .NET Framework poskytuje konkrétní třídy odvozené od <xref:System.Net.WebRequest> a <xref:System.Net.WebResponse> třídy pro identifikátory URI, které začínají *http:*, *https:*, *ftp:* , a *souboru:*.
+    Pokud je potřeba sada nebo čtení vlastnosti specifické pro protokol, musíte přetypovat vaše <xref:System.Net.WebRequest> nebo <xref:System.Net.WebResponse> objektu na typ object specifický pro protokol. Další informace najdete v tématu [programování připojitelných protokolů](programming-pluggable-protocols.md). 
   
-2.  Nastavte všechny hodnoty vlastností, které budete potřebovat v **WebRequest**. Například chcete-li povolit ověřování, nastavte **pověření** vlastnost instance <xref:System.Net.NetworkCredential> třídy.  
+2.  Nastavte všechny hodnoty vlastností, které potřebujete ve vaší `WebRequest` objektu. Například chcete-li povolit ověřování, nastavte <xref:System.Net.WebRequest.Credentials%2A?displayProperty=nameWithType> vlastnost instance <xref:System.Net.NetworkCredential> třídy:  
   
     ```csharp  
     request.Credentials = CredentialCache.DefaultCredentials;  
@@ -46,17 +47,7 @@ Následující postup popisuje kroky používaná pro požádání o prostředku
     request.Credentials = CredentialCache.DefaultCredentials  
     ```  
   
-     Ve většině případů **WebRequest** třídy je dostačující přijímat data. Nicméně, pokud je potřeba nastavit vlastnosti specifické pro protokol, musíte přetypovat **WebRequest** na konkrétní typ. Například pro přístup k protokolu HTTP specifické vlastnostem <xref:System.Net.HttpWebRequest>, vícesměrového vysílání **WebRequest** do **HttpWebRequest** odkaz. Následující příklad kódu ukazuje, jak nastavit konkrétní HTTP <xref:System.Net.HttpWebRequest.UserAgent%2A> vlastnost.  
-  
-    ```csharp  
-    ((HttpWebRequest)request).UserAgent = ".NET Framework Example Client";  
-    ```  
-  
-    ```vb  
-    Ctype(request,HttpWebRequest).UserAgent = ".NET Framework Example Client"  
-    ```  
-  
-3.  Chcete-li odeslat požadavek na server, zavolejte <xref:System.Net.HttpWebRequest.GetResponse%2A>. Skutečný typ vrácený **WebResponse** objektu se určuje podle schématu požadovaný identifikátor URI.  
+3.  Odesílání požadavku na server voláním <xref:System.Net.WebRequest.GetResponse%2A?displayProperty=nameWithType>. Tato metoda vrátí objekt, který obsahuje odpověď serveru. Vrácený <xref:System.Net.WebResponse> typ objektu je určeno schéma identifikátoru URI požadavku. Příklad:
   
     ```csharp  
     WebResponse response = request.GetResponse();  
@@ -66,10 +57,9 @@ Následující postup popisuje kroky používaná pro požádání o prostředku
     Dim response As WebResponse = request.GetResponse()  
     ```  
   
-    > [!NOTE]
-    >  Po dokončení <xref:System.Net.WebResponse> objektu, je nutné zavřít voláním <xref:System.Net.WebResponse.Close%2A> metody. Případně, pokud datový proud odpovědí jste získali z objektu odpovědi, můžete zavřít datový proud voláním <xref:System.IO.Stream.Close%2A?displayProperty=nameWithType> metody. Pokud instalací neukončíte odpovědi nebo datový proud, může vaše aplikace vyčerpala volné připojení k serveru nebo budou moct zpracovávat další požadavky.  
-  
-4.  Můžete přístup k vlastnostem **WebResponse** nebo přetypovat **WebResponse** na konkrétní instanci číst vlastnosti specifické pro protokol. Například pro přístup k protokolu HTTP specifické vlastnostem <xref:System.Net.HttpWebResponse>, vícesměrového vysílání **WebResponse** k **HttpWebResponse** odkaz. Následující příklad kódu ukazuje, jak zobrazit informace o stavu odeslaných odpovědí.  
+4.  Můžete přistupovat k vlastnosti vaší `WebResponse` objektu nebo přetypování na konkrétní instanci číst vlastnosti specifické pro protokol. 
+
+    Například pro přístup k protokolu HTTP specifické vlastnostem <xref:System.Net.HttpWebResponse>, vícesměrového vysílání vaše `WebResponse` objektu `HttpWebResponse` odkaz. Následující příklad kódu ukazuje, jak zobrazit konkrétní HTTP <xref:System.Net.HttpWebResponse.StatusDescription%2A?displayProperty=nameWithType> vlastnost odeslaných odpovědí:
   
     ```csharp  
     Console.WriteLine (((HttpWebResponse)response).StatusDescription);  
@@ -79,7 +69,7 @@ Následující postup popisuje kroky používaná pro požádání o prostředku
     Console.WriteLine(CType(response,HttpWebResponse).StatusDescription)  
     ```  
   
-5.  Chcete-li získat datový proud s daty odpověď odesílanou serverem, použijte <xref:System.Net.HttpWebResponse.GetResponseStream%2A> metodu **WebResponse**.  
+5.  Chcete-li získat datový proud s daty odpověď odesílanou serverem, zavolejte <xref:System.Net.WebResponse.GetResponseStream%2A?displayProperty=nameWithType> metody. Příklad:  
   
     ```csharp  
     Stream dataStream = response.GetResponseStream();  
@@ -89,7 +79,7 @@ Následující postup popisuje kroky používaná pro požádání o prostředku
     Dim dataStream As Stream = response.GetResponseStream()  
     ```  
   
-6.  Po načtení dat z odpovědi, musíte buď zavřít pomocí datového proudu odpovědi **Stream.Close** metody nebo Zavřít odpověď pomocí **WebResponse.Close** metody. Není nutné volat **Zavřít** metoda u datového proudu s odpovědí a **WebResponse**, ale to uděláte tak, není škodlivé. **WebResponse.Close** volání **Stream.Close** při zavření odpovědi.  
+6.  Po přečtení dat z objektu odpovědi, buď ji zavřít <xref:System.Net.WebResponse.Close%2A?displayProperty=nameWithType> metody nebo zavřít pomocí datového proudu odpovědi <xref:System.IO.Stream.Close%2A?displayProperty=nameWithType> metoda. Nezavírejte objektu odpovědi nebo datový proud, může vaše aplikace vyčerpala volné připojení k serveru nebo stát nemůže zpracovat požadavky. Protože `WebResponse.Close` volání metody `Stream.Close` když se toto okno zavře odpověď, není nutné volat `Close` na objekty odpovědi i datový proud, i když to není tak škodlivé. Příklad:
   
     ```csharp  
     response.Close();  
@@ -100,6 +90,8 @@ Následující postup popisuje kroky používaná pro požádání o prostředku
     ```  
   
 ## <a name="example"></a>Příklad  
+
+Následující příklad kódu ukazuje, jak vytvořit požadavek na webový server a načtěte data v odpovědi:  
   
 ```csharp  
 using System;  
@@ -118,19 +110,23 @@ namespace Examples.System.Net
               "http://www.contoso.com/default.html");  
             // If required by the server, set the credentials.  
             request.Credentials = CredentialCache.DefaultCredentials;  
+
             // Get the response.  
             WebResponse response = request.GetResponse();  
             // Display the status.  
             Console.WriteLine (((HttpWebResponse)response).StatusDescription);  
+
             // Get the stream containing content returned by the server.  
             Stream dataStream = response.GetResponseStream();  
-            // Open the stream using a StreamReader for easy access.  
+            // Open the stream by using a StreamReader for easy access.  
             StreamReader reader = new StreamReader(dataStream);  
+
             // Read the content.  
             string responseFromServer = reader.ReadToEnd();  
             // Display the content.  
             Console.WriteLine(responseFromServer);  
-            // Clean up the streams and the response.  
+
+            // Clean up the response.  
             reader.Close();  
             response.Close();  
         }  
@@ -143,38 +139,48 @@ Imports System
 Imports System.IO  
 Imports System.Net  
 Imports System.Text  
-Namespace Examples.System.Net  
+
+Namespace Examples.System.Net 
+
     Public Class WebRequestGetExample  
-  
+
         Public Shared Sub Main()  
+
             ' Create a request for the URL.   
             Dim request As WebRequest = _  
               WebRequest.Create("http://www.contoso.com/default.html")  
             ' If required by the server, set the credentials.  
             request.Credentials = CredentialCache.DefaultCredentials  
+
             ' Get the response.  
             Dim response As WebResponse = request.GetResponse()  
             ' Display the status.  
             Console.WriteLine(CType(response,HttpWebResponse).StatusDescription)  
+
             ' Get the stream containing content returned by the server.  
             Dim dataStream As Stream = response.GetResponseStream()  
-            ' Open the stream using a StreamReader for easy access.  
+            ' Open the stream by using a StreamReader for easy access.  
             Dim reader As New StreamReader(dataStream)  
+
             ' Read the content.  
             Dim responseFromServer As String = reader.ReadToEnd()  
             ' Display the content.  
             Console.WriteLine(responseFromServer)  
-            ' Clean up the streams and the response.  
+
+            ' Clean up the response.  
             reader.Close()  
-            response.Close()  
+            response.Close() 
+
         End Sub   
-    End Class   
+
+    End Class  
+ 
 End Namespace  
 ```  
   
 ## <a name="see-also"></a>Viz také:
-- [Vytváření internetových žádostí](../../../docs/framework/network-programming/creating-internet-requests.md)
-- [Použití streamů v síti](../../../docs/framework/network-programming/using-streams-on-the-network.md)
-- [Přístup k internetu přes proxy server](../../../docs/framework/network-programming/accessing-the-internet-through-a-proxy.md)
-- [Žádosti o data](../../../docs/framework/network-programming/requesting-data.md)
-- [Postupy: Odesílání dat pomocí třídy WebRequest](../../../docs/framework/network-programming/how-to-send-data-using-the-webrequest-class.md)
+- [Vytváření internetových žádostí](creating-internet-requests.md)
+- [Použití streamů v síti](using-streams-on-the-network.md)
+- [Přístup k Internetu prostřednictvím proxy serveru](accessing-the-internet-through-a-proxy.md)
+- [Požadavek na data](requesting-data.md)
+- [Postupy: Odesílání dat pomocí třídy WebRequest](how-to-send-data-using-the-webrequest-class.md)

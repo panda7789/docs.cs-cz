@@ -2,12 +2,12 @@
 title: Možnosti
 description: Další informace o použití F# možnost typy skutečnou hodnotu nemusí existovat pojmenovaná hodnota nebo proměnná.
 ms.date: 05/16/2016
-ms.openlocfilehash: ebd1c1c39468594de83b3c2af1da48c277bfcbe1
-ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
+ms.openlocfilehash: 6d32693bccc74c2cab642e4f626c9463092e8a39
+ms.sourcegitcommit: d938c39afb9216db377d0f0ecdaa53936a851059
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53613502"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58634099"
 ---
 # <a name="options"></a>Možnosti
 
@@ -41,11 +41,13 @@ Možnosti mohou být užitečné také při nemusí existovat hodnotu, napříkl
 
 `openFile` Funkce v předchozím příkladu má typ `string -> File option` vzhledem k tomu, že ji vrací `File` objektu, pokud soubor úspěšně otevřen a `None` Pokud dojde k výjimce. V závislosti na situaci nemusí být příslušné návrhu zachytit výjimku nepovolí na dokončení propagace.
 
+Kromě toho je stále možné předat `null` nebo hodnotu, která je null, aby se `Some` případu možnosti. Toto je obvykle se jim vyhnout a je obvykle v rutině F# programování, ale je možné vzhledem k povaze referenční typy v rozhraní .NET.
+
 ## <a name="option-properties-and-methods"></a>Možnost Vlastnosti a metody
 
 Typ možnosti podporuje následující vlastnosti a metody.
 
-|Vlastnost nebo metoda|Typ|Popis|
+|Vlastnost nebo metoda|Type|Popis|
 |------------------|----|-----------|
 |[Žádné](https://msdn.microsoft.com/library/83ef260a-aa33-4e6f-aee6-b9bf0a461476)|`'T option`|Statická vlastnost, která vám umožní vytvořit hodnotu možnosti, která má `None` hodnotu.|
 |[Isnone –](https://msdn.microsoft.com/library/f08532ca-1716-4f60-ae59-8ef6256df234)|`bool`|Vrátí `true` Pokud má možnost `None` hodnotu.|

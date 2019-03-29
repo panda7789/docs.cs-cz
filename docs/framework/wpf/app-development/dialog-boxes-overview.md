@@ -10,12 +10,12 @@ helpviewer_keywords:
 - message boxes [WPF]
 - modal dialog boxes [WPF]
 ms.assetid: 0d23d544-a393-4a02-a3aa-d8cd5d3d6511
-ms.openlocfilehash: e0a52dcd3b403b3b5795dc0d025ac93176f009c3
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 14ed5655f31c8c73e6d7b8e987d1856fc869c9de
+ms.sourcegitcommit: d938c39afb9216db377d0f0ecdaa53936a851059
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57359130"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58634450"
 ---
 # <a name="dialog-boxes-overview"></a>Přehled dialogových oken
 Samostatné aplikace mají obvykle hlavní okno, že oba zobrazuje hlavní data nad tím, které aplikace funguje a zpřístupňuje funkci ke zpracování dat prostřednictvím [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] mechanismy, jako je panel nabídek, panelů nástrojů a stavové řádky. Aplikace nejsou v netriviálních může také zobrazit další okna provést následující kroky:  
@@ -40,7 +40,7 @@ Samostatné aplikace mají obvykle hlavní okno, že oba zobrazuje hlavní data 
 ## <a name="message-boxes"></a>Okna se zprávou  
  A *okno se zprávou* je dialogové okno, které lze použít k zobrazení textové informace a umožňují uživatelům rozhodování využívat tlačítka. Následující obrázek znázorňuje okno se zprávou, která zobrazí textové informace, zeptá na otázku a poskytuje tři tlačítka odpověď na otázku uživatele.  
   
- ![Dialogové okno textový procesor](./media/dialogboxesoverviewfigure1.png "DialogBoxesOverviewFigure1")  
+ ![Textový procesor dialogové okno s dotazem, zda chcete uložit změny v dokumentu, než aplikaci zavře.](./media/dialog-boxes-overview/word-processor-dialog.png)  
   
  K vytvoření okna se zprávou, použijete <xref:System.Windows.MessageBox> třídy. <xref:System.Windows.MessageBox> Umožňuje konfigurovat pole text zprávy, název, ikonu a tlačítek pomocí kódu, jako je následující.  
   
@@ -73,7 +73,7 @@ Samostatné aplikace mají obvykle hlavní okno, že oba zobrazuje hlavní data 
 ### <a name="open-file-dialog"></a>Dialogové okno otevřít soubor  
  Dialogovém okně Otevřít soubor je znázorněno na následujícím obrázku používá soubor otevírání funkce načíst název souboru k otevření.  
   
- ![Otevřete dialogové okno](./media/dialogboxesoverviewfigure2.png "DialogBoxesOverviewFigure2")  
+ ![Otevřené dialogové okno zobrazuje umístění pro načtení souboru.](./media/dialog-boxes-overview/open-file-dialog-box.png)  
   
  Běžné dialogové okno otevřít soubor je implementovaný jako <xref:Microsoft.Win32.OpenFileDialog> třídy a je umístěn v <xref:Microsoft.Win32> oboru názvů. Následující kód ukazuje, jak vytvářet, konfigurovat a zobrazit jednu a tom, jak zpracovat výsledek.  
   
@@ -89,7 +89,7 @@ Samostatné aplikace mají obvykle hlavní okno, že oba zobrazuje hlavní data 
 ### <a name="save-file-dialog-box"></a>Soubor dialogové okno Uložit  
  Uložení souboru dialogovém okně je znázorněno na následujícím obrázku používá funkci pro uložení souboru načíst název soubor, který chcete uložit.  
   
- ![Dialogové okno Uložit jako](./media/dialogboxesoverviewfigure3.png "DialogBoxesOverviewFigure3")  
+ ![Uložit jako dialogové okno zobrazuje umístění pro uložení souboru.](./media/dialog-boxes-overview/save-file-dialog-box.png)  
   
  Běžné uložit soubor dialogovému oknu je implementovaný jako <xref:Microsoft.Win32.SaveFileDialog> třídy a je umístěn v <xref:Microsoft.Win32> oboru názvů. Následující kód ukazuje, jak vytvářet, konfigurovat a zobrazit jednu a tom, jak zpracovat výsledek.  
   
@@ -102,7 +102,7 @@ Samostatné aplikace mají obvykle hlavní okno, že oba zobrazuje hlavní data 
 ### <a name="print-dialog-box"></a>Dialogové okno Tisk  
  Do dialogového okna Tisk pole, je znázorněno na následujícím obrázku, používá funkce tisku vyberte a nakonfigurujte tiskárny, uživatele chcete vytisknout data.  
   
- ![Dialogové okno tisku](./media/dialogboxesoverviewfigure4.png "DialogBoxesOverviewFigure4")  
+ ![Snímek obrazovky ukazující dialogové okno Tisk.](./media/dialog-boxes-overview/print-data-dialog-box.png)  
   
  Běžné dialogového okna Tisk pole je implementovaný jako <xref:System.Windows.Controls.PrintDialog> třídy a je umístěn v <xref:System.Windows.Controls> oboru názvů. Následující kód ukazuje, jak vytvářet, konfigurovat a zobrazit jednu.  
   
@@ -119,7 +119,7 @@ Samostatné aplikace mají obvykle hlavní okno, že oba zobrazuje hlavní data 
 ### <a name="creating-a-modal-custom-dialog-box"></a>Vytvoření modálního dialogového okna vlastní  
  Toto téma ukazuje, jak používat <xref:System.Windows.Window> pro vytvoření pole implementace typické modální dialogové okno, pomocí `Margins` dialogové okno s ukázkovým (naleznete v tématu [dialogové okno pole ukázka](https://go.microsoft.com/fwlink/?LinkID=159984)). `Margins` Dialogové okno se zobrazí na následujícím obrázku.  
   
- ![Dialogové okno okraje](./media/dialogboxesoverviewfigure5.png "DialogBoxesOverviewFigure5")  
+ ![Dialogové okno okraje s pole k definování levý okraj, horní okraj, pravý okraj a dolní okraj.](./media/dialog-boxes-overview/margin-size-dialog-box.png)  
   
 #### <a name="configuring-a-modal-dialog-box"></a>Konfigurace modální dialogové okno  
  Uživatelské rozhraní pro typické dialogové okno obsahuje následující:  
@@ -208,7 +208,7 @@ Samostatné aplikace mají obvykle hlavní okno, že oba zobrazuje hlavní data 
   
  Po přidružení, ověřovací pravidlo [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] automaticky použije se při zadávání dat do vázaného ovládacího prvku. Když ovládací prvek obsahuje neplatná data [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] červené ohraničení kolem neplatný ovládací prvek se zobrazí, jak je znázorněno na následujícím obrázku.  
   
- ![Neplatný levý okraj](./media/dialogboxesoverviewfigure7.png "DialogBoxesOverviewFigure7")  
+ ![Dialogové okno okraje červené ohraničení kolem hodnoty Neplatný levý okraj.](./media/dialog-boxes-overview/invalid-left-margin-dialog.png)  
   
  [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] neomezuje uživatele na neplatný ovládací prvek, dokud zadali platná data. Toto je správné chování pro dialogové okno; Uživatel by měl být schopní vyznat volně ovládacích prvků v dialogovém okně, jestli data jsou platná. To ale znamená může uživatel zadat neplatná data a stiskněte klávesu **OK** tlačítko. Z tohoto důvodu je váš kód také potřeba ověřit všechny ovládací prvky v dialogovém okně když **OK** stisknutí tlačítka pomocí manipulace <xref:System.Windows.Controls.Primitives.ButtonBase.Click> událostí.  
   
@@ -277,7 +277,7 @@ Samostatné aplikace mají obvykle hlavní okno, že oba zobrazuje hlavní data 
 ### <a name="creating-a-modeless-custom-dialog-box"></a>Vytvoření nemodálního dialogového okna vlastní  
  Nemodálního dialogového okna, například dialogového okna Najít, které je znázorněno na následujícím obrázku má stejné základní vzhled jako modální dialogové.  
   
- ![Dialogové okno vyhledávacího](./media/dialogboxesoverviewfigure6.PNG "DialogBoxesOverviewFigure6")  
+ ![Snímek obrazovky ukazující dialogové okno hledání.](./media/dialog-boxes-overview/find-modeless-dialog-box.png)  
   
  Chování je však poněkud lišit, a jak je popsáno v následujících částech.  
   

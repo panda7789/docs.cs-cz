@@ -2,14 +2,14 @@
 title: Úkolu asynchronní programovací Model (TAP) pomocí modifikátoru async a operátoru await (C#)
 ms.date: 05/22/2017
 ms.assetid: 9bcf896a-5826-4189-8c1a-3e35fa08243a
-ms.openlocfilehash: a8497364e0ec9294d84fb669fcada6452df71392
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.openlocfilehash: b89b36f7645d3cb40945b14a4cf88b4a83dea89c
+ms.sourcegitcommit: d938c39afb9216db377d0f0ecdaa53936a851059
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58472157"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58634541"
 ---
-# <a name="task-asynchronous-programming-model"></a>Asynchronní model programování úkolů
+# <a name="task-asynchronous-programming-model"></a>Model asynchronního programování úloh
 Pomocí asynchronního programování se můžete vyhnout kritickým bodům a zlepšit celkovou rychlost reakce aplikace. Tradiční techniky pro psaní asynchronních aplikací však mohou být složité, takže je obtížné je napsat, ladit a udržovat.  
   
 [C# 5](../../../whats-new/csharp-version-history.md#c-version-50) zavedené zjednodušený přístup, asynchronní programování, který využívá asynchronní podpory v rozhraní .NET Framework 4.5 a vyšší, .NET Core a prostředí Windows Runtime. Kompilátor na sebe přejímá náročnou práci, kterou vykonával vývojář, a vaše aplikace si zachovává logickou strukturu, která se podobá synchronnímu kódu. Výsledkem je, že získáte všechny výhody asynchronního programování při pouhém zlomku úsilí.  
@@ -62,10 +62,10 @@ async Task<int> AccessTheWebAsync()
 
  Pozornosti `await` operátor. Se provádění metody pozastaví `AccessTheWebAsync`;
  
-    - `AccessTheWebAsync` nejde pokračovat, dokud nebudou `getStringTask` je dokončena.  
-    - Mezitím se ovládací prvek vrátí volajícímu metody `AccessTheWebAsync`.  
-    - Tady se obnoví ovládací prvek při `getStringTask` je dokončena.   
-    - `await` Operátor pak načte `string `výsledkem `getStringTask`.  
+- `AccessTheWebAsync` nejde pokračovat, dokud nebudou `getStringTask` je dokončena.  
+- Mezitím se ovládací prvek vrátí volajícímu metody `AccessTheWebAsync`.  
+- Tady se obnoví ovládací prvek při `getStringTask` je dokončena.   
+- `await` Operátor pak načte `string `výsledkem `getStringTask`.  
 
  Příkaz return Určuje celé číslo. Všechny metody, které čekají na `AccessTheWebAsync` načtení hodnoty délky.  
 

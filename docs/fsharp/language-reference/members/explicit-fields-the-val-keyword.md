@@ -2,12 +2,12 @@
 title: 'Explicitní pole: Val – klíčové slovo'
 description: Další informace o F# klíčové slovo "val", které se používá k deklaraci umístění pro uložení hodnoty v typu třídy nebo struktury bez inicializace typu.
 ms.date: 05/16/2016
-ms.openlocfilehash: 492541f6eeba94d2177e92de935fa524b9def567
-ms.sourcegitcommit: 0888d7b24f475c346a3f444de8d83ec1ca7cd234
+ms.openlocfilehash: 6557514f13a9e86c7f367713775535db79e99a0c
+ms.sourcegitcommit: d938c39afb9216db377d0f0ecdaa53936a851059
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "53773624"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58634008"
 ---
 # <a name="explicit-fields-the-val-keyword"></a>Explicitní pole: Val – klíčové slovo
 
@@ -40,7 +40,7 @@ Například neměnné pole s názvem `someField` zkompiloval pomocným polem v r
 Proměnlivé pole je reprezentace .NET zkompilován pole .NET.
 
 >[!WARNING]
-`Note` Obor názvů rozhraní .NET Framework `System.ComponentModel` obsahuje atribut, který má stejný název. Informace o tomto atributu naleznete v tématu `System.ComponentModel.DefaultValueAttribute`.
+>Obor názvů rozhraní .NET Framework `System.ComponentModel` obsahuje atribut, který má stejný název. Informace o tomto atributu naleznete v tématu `System.ComponentModel.DefaultValueAttribute`.
 
 Následující kód ukazuje použití explicitní pole a pro porovnání, `let` vazby ve třídě, která má primární konstruktor. Všimněte si, že `let`-vázané pole `myInt1` je privátní. Když `let`-vázané pole `myInt1` se odkazuje z metody člen, identifikátoru samotného `this` se nevyžaduje. Když odkazujete na explicitní pole, ale `myInt2` a `myString`, identifikátoru samotného je povinný.
 

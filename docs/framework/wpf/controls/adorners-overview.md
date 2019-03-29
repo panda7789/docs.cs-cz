@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - adorners [WPF], about adorners
 ms.assetid: 33d4c5c2-2daf-4e45-ba9a-5b673e2b8280
-ms.openlocfilehash: 9c9d77c9771fd8759530267bd38cb7c0bb59598c
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 94075189d82e5d446b3058b944c789a4288c26ca
+ms.sourcegitcommit: d938c39afb9216db377d0f0ecdaa53936a851059
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57357939"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58634528"
 ---
 # <a name="adorners-overview"></a>Přehled doplňků
 Doplňky pro úpravy jsou zvláštní druh <xref:System.Windows.FrameworkElement>, která slouží k poskytování vizuální upozornění na uživatele. Mimo jiné účely je možné přidat funkční zpracovává na prvky nebo poskytují informace o ovládací prvek stavu doplňků pro úpravy.  
@@ -55,7 +55,7 @@ Doplňky pro úpravy jsou zvláštní druh <xref:System.Windows.FrameworkElement
   
  Následující obrázek ukazuje SimpleCircleAdorner u <xref:System.Windows.Controls.TextBox>.  
   
- ![Příklad doplňků pro úpravy: S textového pole](./media/adornedtextbox.png "AdornedTextBox")  
+ ![Snímek obrazovky zobrazující s textového pole.](./media/adorners-overview/simplecircleadorner-textbox.png)  
   
 <a name="rendering_behavior_for_Adorners"></a>   
 ## <a name="rendering-behavior-for-adorners"></a>Chování vykreslování pro doplňky pro úpravy  

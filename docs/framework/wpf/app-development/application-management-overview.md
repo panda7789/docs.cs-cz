@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - application management [WPF]
 ms.assetid: 32b1c054-5aca-423b-b4b5-ed8dc4dc637d
-ms.openlocfilehash: ef9771f44ce5bc61787f2060469d7a0b244e96b7
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 395077b7c82ee54a51b8086df0c59f731e3a2b70
+ms.sourcegitcommit: d938c39afb9216db377d0f0ecdaa53936a851059
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57356504"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58634216"
 ---
 # <a name="application-management-overview"></a>Přehled správy aplikací
 Všechny aplikace mají tendenci sdílejí společnou sadu funkcí, které se vztahuje na aplikace implementaci a správu. Toto téma obsahuje přehled funkcí v <xref:System.Windows.Application> třídy pro vytváření a správu aplikací.  
@@ -323,7 +323,7 @@ Všechny aplikace mají tendenci sdílejí společnou sadu funkcí, které se vz
 ### <a name="unhandled-exceptions"></a>Nezpracované výjimky  
  Aplikace může někdy vypnout podle nestandardní podmínky, třeba když dojde k neočekávané výjimce. V tomto případě aplikace nemusí mít kód ke zjištění a zpracování výjimky. Tento typ výjimka je neošetřená výjimka; Před ukončením aplikace, zobrazí se oznámení podobný tomu je znázorněno na následujícím obrázku.  
   
- ![Neošetřená výjimka oznámení](./media/applicationmanagementoverviewfigure2.png "ApplicationManagementOverviewFigure2")  
+ ![Snímek obrazovky zobrazující oznámení o neošetřené výjimce.](./media/application-management-overview/unhandled-exception-notification.png)  
   
  Z pohledu zkušenosti uživatele je lepší pro aplikaci, aby toto výchozí chování provedením některé nebo všechny z následujících akcí:  
   

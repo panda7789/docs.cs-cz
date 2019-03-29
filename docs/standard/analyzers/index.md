@@ -2,7 +2,7 @@
 title: Platformě Roslyn na základě analyzátory – .NET
 description: 'Další informace o analyzátory Roslyn na základě, které najít problémy a navrhují opravy těchto problémů.'
 author: billwagner
-ms.author: billwagner
+ms.author: wiwagn
 ms.date: 01/24/2018
 ms.technology: dotnet-standard
 ---

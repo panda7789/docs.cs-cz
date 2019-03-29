@@ -1,6 +1,6 @@
 ---
-title: Doporučené postupy pro výjimky
-ms.date: 12/05.2018
+title: Doporučené postupy pro výjimky – .NET
+ms.date: 12/05/2018
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
@@ -9,12 +9,12 @@ dev_langs:
 helpviewer_keywords:
 - exceptions, best practices
 ms.assetid: f06da765-235b-427a-bfb6-47cd219af539
-ms.openlocfilehash: e069e9556b02221a91dafdd9f224940aed8476b8
-ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
+ms.openlocfilehash: 6c979483497ff640be7d1126d63ce95130f6c02b
+ms.sourcegitcommit: d938c39afb9216db377d0f0ecdaa53936a851059
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57845931"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58633748"
 ---
 # <a name="best-practices-for-exceptions"></a>Doporučené postupy pro výjimky
 

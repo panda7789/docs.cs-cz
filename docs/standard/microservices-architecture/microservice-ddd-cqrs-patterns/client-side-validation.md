@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/08/2018
-ms.openlocfilehash: 0b4bef8c80f26cea5552d4f59468811ae1f18a8d
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.openlocfilehash: 4c039356e94f843c75430ff61d5fe68906c5c0ed
+ms.sourcegitcommit: d938c39afb9216db377d0f0ecdaa53936a851059
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58462796"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58633826"
 ---
 # <a name="client-side-validation-validation-in-the-presentation-layers"></a>Ověřování na straně klienta (ověřování v prezentačních vrstvách)
 
@@ -23,7 +23,7 @@ I při použití ověřování na straně klienta, by měla vždy ověřování 
 
 Proto v kódu na straně klienta je obvykle ověřit modely ViewModel. Může také ověřit klienta výstup DTO nebo příkazy před jejich odesláním do služby.
 
-Implementace ověřování na straně klienta, závisí na druhu klientskou aplikaci, kterou vytváříte. Bude jiný, jsou ověřování dat ve webovém webové aplikace MVC s největším počtem kód v .NET, webové aplikace SPA pomocí tohoto ověřování je zakódovaný v jazyce JavaScript nebo TypeScript, nebo kódované mobilní aplikace pomocí Xamarinu a C#.
+Implementace ověřování na straně klienta, závisí na druhu klientskou aplikaci, kterou vytváříte. Bude jiný, jsou ověřování dat ve webovém webové aplikace MVC s největším počtem kód v .NET, webová aplikace SPA se tohoto ověření je zakódovaný v jazyce JavaScript nebo TypeScript, nebo kódované mobilních aplikací s využitím kódu Xamarin a C#.
 
 ## <a name="additional-resources"></a>Další zdroje
 

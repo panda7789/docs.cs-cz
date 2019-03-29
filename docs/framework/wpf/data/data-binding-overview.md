@@ -10,12 +10,12 @@ helpviewer_keywords:
 - data binding [WPF], about data binding
 - conversion for data binding [WPF]
 ms.assetid: c707c95f-7811-401d-956e-2fffd019a211
-ms.openlocfilehash: ad86577aa4a66d9296c3c1844c9f8fa8c2b89d24
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 9e55714db55168c95f744665165e333d7f2ca730
+ms.sourcegitcommit: d938c39afb9216db377d0f0ecdaa53936a851059
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57364824"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58634554"
 ---
 # <a name="data-binding-overview"></a>Přehled datových vazeb
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] vytváření datových vazeb nabízí jednoduchý a konzistentní způsob pro aplikace k zobrazení a interakci s daty. Elementy mohou být vázány na data z různých zdrojů dat ve formě [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] objekty a [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)]. <xref:System.Windows.Controls.ContentControl>s jako <xref:System.Windows.Controls.Button> a <xref:System.Windows.Controls.ItemsControl>s jako <xref:System.Windows.Controls.ListBox> a <xref:System.Windows.Controls.ListView> mají integrované funkce, které umožňují flexibilní styly jednotlivých datových položek nebo kolekce datových položek. Řazení, filtrování a zobrazení skupiny můžete generovat na data.  
@@ -61,7 +61,7 @@ ms.locfileid: "57364824"
   
  Bez ohledu na to, jaký element jsou vazby a povaze zdroje dat, každý vazby vždy řídí modelem návodu na následujícím obrázku:  
   
- ![Diagram základní datové vazby](./media/databindingmostbasic.png "DataBindingMostBasic")  
+ ![Diagram, který zobrazuje základní datový model vazby.](./media/data-binding-overview/basic-data-binding-diagram.png)  
   
  Vidíte na obrázku výše, datové vazby je v podstatě most mezi vaší cíl vazby a zdrojem vazby. Na obrázku ukazuje následující základní [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] koncepty vazeb dat:  
   
@@ -101,7 +101,7 @@ ms.locfileid: "57364824"
   
  Však zdrojovou hodnotu aktualizován při úpravách text nebo po dokončení úprav textu a přesuňte ukazatel myši mimo textového pole? <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A> Vlastnost vazby Určuje, co spustí aktualizaci zdroje. Tečky vpravo šipky na následujícím obrázku ukazují role <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A> vlastnost:  
   
- ![UpdateSourceTrigger diagram](./media/databindingupdatesourcetrigger.png "DataBindingUpdateSourceTrigger")  
+ ![Diagram zobrazující průběh role vlastnost UpdateSourceTrigger.](./media/data-binding-overview/data-binding-updatesource-trigger.png)  
   
  Pokud <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A> hodnotu <xref:System.Windows.Data.UpdateSourceTrigger.PropertyChanged>, pak hodnota odkazuje pravou šipku <xref:System.Windows.Data.BindingMode.TwoWay> nebo <xref:System.Windows.Data.BindingMode.OneWayToSource> co nejdříve změny vlastností cílové aktualizuje vazby. Ale pokud <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A> hodnotu <xref:System.Windows.Data.UpdateSourceTrigger.LostFocus>, pak tato hodnota pouze získá aktualizováno s novou hodnotu, pokud vlastnost target ztratí fokus.  
   
@@ -132,7 +132,7 @@ ms.locfileid: "57364824"
   
  Pokud používáme v tomto příkladu pro naši základní diagram, výsledná hodnota vypadá takto. Jedná se <xref:System.Windows.Data.BindingMode.OneWay> vazby, protože vlastnost pozadí podporuje <xref:System.Windows.Data.BindingMode.OneWay> vazby ve výchozím nastavení.  
   
- ![Diagram datové vazby](./media/databindingbuttonbackgroundexample.png "DataBindingButtonBackgroundExample")  
+ ![Diagram zobrazující průběh na pozadí vlastnost datové vazby.](./media/data-binding-overview/data-binding-button-background-example.png)  
   
  Budete divit, proč tento postup funguje, i když *ColorName* je vlastnost typu řetězec při <xref:System.Windows.Controls.Control.Background%2A> vlastnost je typu <xref:System.Windows.Media.Brush>. Toto je výchozí převod typů v práci a je podrobněji popsána [převod dat](#data_conversion) oddílu.  
   
@@ -185,7 +185,7 @@ ms.locfileid: "57364824"
   
  Chcete-li přidat tyto informace pro obrázek v [vytváření vazby](#creating_a_binding) části diagramu vypadá takto:  
   
- ![Diagram datové vazby](./media/databindingbuttondefaultconversion.png "DataBindingButtonDefaultConversion")  
+ ![Diagram, který zobrazuje výchozí vlastnost datové vazby.](./media/data-binding-overview/data-binding-button-default-conversion.png)  
   
  Co když, ale namísto toho, aby vlastnost typu řetězec má váš zdrojový objekt vazby *barva* vlastnost typu <xref:System.Windows.Media.Color>? V takovém případě v pořadí pro vytvoření vazby na pracovní je třeba do prvního zapnutí *barva* hodnotu vlastnosti na něco jiného, který <xref:System.Windows.Controls.Control.Background%2A> tato vlastnost přijímá parametry. Je třeba vytvořit vlastní převaděč implementací <xref:System.Windows.Data.IValueConverter> rozhraní, jako v následujícím příkladu:  
   
@@ -196,7 +196,7 @@ ms.locfileid: "57364824"
   
  Teď se používá vlastní převaděč namísto výchozí převod a naše diagram vypadá takto:  
   
- ![Diagram datové vazby](./media/databindingconvertercolorexample.png "DataBindingConverterColorExample")  
+ ![Diagram zobrazující průběh dat konvertoru vlastní vazby.](./media/data-binding-overview/data-binding-converter-color-example.png)  
   
  Zdůrazňujeme, mohou být převody výchozí k dispozici z důvodu převaděče typů, které se nacházejí v typu svázaný s. Toto chování bude záviset na které převaděče typů jsou dostupné na cíli. Pokud máte pochybnosti, vytvořte vlastní převaděče.  
   
@@ -217,7 +217,7 @@ ms.locfileid: "57364824"
   
  Naštěstí naše základní diagram stále platí. Pokud vytváříte vazbu <xref:System.Windows.Controls.ItemsControl> do kolekce, diagram vypadá takto:  
   
- ![Vytváření datových vazeb ItemsControl diagram](./media/databindingitemscontrol.png "DataBindingItemsControl")  
+ ![Diagram zobrazující průběh objektu ItemsControl datové vazby.](./media/data-binding-overview/data-binding-itemscontrol.png)  
   
  Jak je znázorněno v tomto diagramu pro vytvoření vazby <xref:System.Windows.Controls.ItemsControl> na objekt kolekce <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> je vlastnost použít. Můžete si představit <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> vlastnost jako obsah <xref:System.Windows.Controls.ItemsControl>. Všimněte si, že je vazba <xref:System.Windows.Data.BindingMode.OneWay> vzhledem k tomu, <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> podporuje vlastnost <xref:System.Windows.Data.BindingMode.OneWay> vazby ve výchozím nastavení.  
   
@@ -340,7 +340,7 @@ ms.locfileid: "57364824"
 ## <a name="data-templating"></a>Šablon dat  
  Bez použití šablony, naši aplikaci [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] v [co je datová vazba?](#what_is_data_binding) oddílu by vypadat nějak takto:  
   
- ![Ukázka datové vazby bez datové šablony](./media/databindingdemotemplates.png "DataBindingDemoTemplates")  
+ ![Ukázka bez datové šablony datové vazby](./media/data-binding-overview/data-binding-demo-templates.png)  
   
  Jak je znázorněno v příkladu v předchozí části, jak <xref:System.Windows.Controls.ListBox> ovládacího prvku a <xref:System.Windows.Controls.ContentControl> je vázána na objekt celou kolekci (nebo přesněji řečeno, zobrazení přes objekt kolekce) z *AuctionItem*s. Bez konkrétní pokyny o tom, jak zobrazit shromažďování dat <xref:System.Windows.Controls.ListBox> zobrazuje řetězcovou reprezentaci jednotlivých objektů v kolekci základní a <xref:System.Windows.Controls.ContentControl> zobrazena řetězcová reprezentace je vázán na objekt.  
   

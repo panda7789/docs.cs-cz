@@ -9,12 +9,12 @@ helpviewer_keywords:
 - rectangular arrays
 - ranking, arrays
 ms.assetid: 385e911b-18c1-4e98-9924-c6d279101dd9
-ms.openlocfilehash: 5ba92e113faf9d68bad97968937cc736132b2065
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 47b90a6c513a5808dc0669d2d861de5e16406a34
+ms.sourcegitcommit: d938c39afb9216db377d0f0ecdaa53936a851059
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54708529"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58634164"
 ---
 # <a name="array-dimensions-in-visual-basic"></a>Rozměry pole v jazyce Visual Basic
 A *dimenze* je směr, ve kterém můžete měnit specifikace prvků tohoto pole. Pole, která obsahuje celkový prodej za každý den v měsíci má jednu dimenzi (den v měsíci). Pole, která obsahuje celkový prodej podle oddělení pro každý den v měsíci má dvě dimenze (číslo oddělení a den v měsíci). Počet rozměrů pole má nazývá jeho *pořadí*.  
@@ -27,14 +27,11 @@ A *dimenze* je směr, ve kterém můžete měnit specifikace prvků tohoto pole.
   
  Na následujících obrázcích je koncepční struktura polí se různé rozměry. Každý prvek na obrázcích zobrazuje hodnoty indexu, které k němu přístup. Například můžete přístup k první prvek druhého řádku dvourozměrné pole tak, že zadáte indexy `(1, 0)`.  
   
- ![Grafický diagram jednoho&#45;jednorozměrné pole](../../../../visual-basic/programming-guide/language-features/arrays/media/arrayexdimone.gif "ArrayExDimOne")  
-Jednorozměrné pole  
+ ![Diagram zobrazující průběh jednorozměrné pole.](./media/array-dimensions/one-dimensional-array.gif)  
   
- ![Grafický diagram dvou&#45;jednorozměrné pole](../../../../visual-basic/programming-guide/language-features/arrays/media/arrayexdimtwo.gif "ArrayExDimTwo")  
-dvourozměrné pole  
+ ![Diagram zobrazující průběh dvourozměrné pole.](./media/array-dimensions/two-dimensional-array.gif)  
   
- ![Grafický diagram tři&#45;jednorozměrné pole](../../../../visual-basic/programming-guide/language-features/arrays/media/arrayexdimthree.gif "ArrayExDimThree")  
-trojrozměrného pole  
+ ![Diagram zobrazující průběh trojrozměrného pole.](./media/array-dimensions/three-dimensional-array.gif)  
   
 ### <a name="one-dimension"></a>Jedna dimenze  
  Mnoho pole mají pouze jednu dimenzi, například počet lidí každý věk. Chcete-li určit element Jediným požadavkem je věk, pro které tento prvek obsahuje počet. Proto se takové pole používá pouze jeden index. Následující příklad deklaruje proměnnou pro uchování *jednorozměrné pole* věku se počítá od 0 až 120.  
