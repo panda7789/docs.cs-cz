@@ -2,19 +2,19 @@
 title: Aggregation Operations (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 0f47e92c-5dd2-4007-baf4-c5fe5dc3b4a8
-ms.openlocfilehash: fe39c2efb5d9f24a7d9d5240b20a9ca687ed1aa9
-ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
+ms.openlocfilehash: 5d8e5c589b19527062f7752b2f795c8396683bbd
+ms.sourcegitcommit: 0aca6c5d166d7961a1e354c248495645b97a1dc5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57202181"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58675637"
 ---
 # <a name="aggregation-operations-visual-basic"></a>Aggregation Operations (Visual Basic)
 Operace agregace vypočítá jedinou hodnotu z kolekce hodnot. Příklad operace agregace je výpočet denní teplota z za měsíc denní teplotní hodnoty.  
   
  Následující obrázek ukazuje výsledky dvou různých agregační operace na sekvenci čísel. První operace sečte čísla. Druhou operaci vrátí maximální hodnotu v pořadí.  
   
- ![Agregační operace LINQ](../../../../csharp/programming-guide/concepts/linq/media/linq_aggregation.png "LINQ_Aggregation")  
+ ![Obrázek, na kterém agregační operace LINQ.](./media/aggregation-operations/linq-aggregation-operations.png)  
   
  Standardní metody operátoru dotazu, které provádějí operace agregace jsou uvedeny v následující části.  
   
@@ -22,7 +22,7 @@ Operace agregace vypočítá jedinou hodnotu z kolekce hodnot. Příklad operace
   
 |Název metody|Popis|Syntaxe výrazu dotazu jazyka Visual Basic|Další informace|  
 |-----------------|-----------------|------------------------------------------|----------------------|  
-|Aggregate|Provede vlastní agregační operace na hodnotách kolekce.|Nelze použít.|<xref:System.Linq.Enumerable.Aggregate%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Aggregate%2A?displayProperty=nameWithType>|  
+|Aggregate|Provede vlastní agregační operace na hodnotách kolekce.|Není k dispozici.|<xref:System.Linq.Enumerable.Aggregate%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Aggregate%2A?displayProperty=nameWithType>|  
 |Průměr|Vypočítá průměrnou hodnotu kolekci hodnot.|`Aggregate … In … Into Average()`|<xref:System.Linq.Enumerable.Average%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Average%2A?displayProperty=nameWithType>|  
 |Počet|Vrátí počet prvků v kolekci, volitelně pouze elementy, které splňují funkce predikátu.|`Aggregate … In … Into Count()`|<xref:System.Linq.Enumerable.Count%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Count%2A?displayProperty=nameWithType>|  
 |LongCount|Vrátí počet prvků v velkou kolekci volitelně pouze elementy, které splňují funkce predikátu.|`Aggregate … In … Into LongCount()`|<xref:System.Linq.Enumerable.LongCount%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.LongCount%2A?displayProperty=nameWithType>|  

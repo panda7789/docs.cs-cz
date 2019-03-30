@@ -4,12 +4,12 @@ ms.date: 10/10/2018
 ms.assetid: 721f10fa-3189-4124-a00d-56ddabd889b3
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: f29d6d5e3942296905088eb250d09f3a5ace1fa4
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 3c70382b0d74e830610d1cd7746fd14244b829a0
+ms.sourcegitcommit: 15ab532fd5e1f8073a4b678922d93b68b521bfa0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57708350"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58654559"
 ---
 # <a name="the-net-framework-and-out-of-band-releases"></a>Rozhraní .NET Framework a nesvázaná vydání
 
@@ -44,7 +44,7 @@ Verze OOB pro součásti jádra common language runtime (CLR) jsou poskytovány 
 
 4.  V pravém podokně můžete použít **hledání** políčka k vyhledání balíčku, které chcete použít. Některé balíčky společnosti Microsoft jsou označeny logem rozhraní Microsoft .NET Framework a všechny identifikují společnost Microsoft jako vydavatele.
 
- ![Správce balíčků NuGet](../../../docs/framework/get-started/media/clrnugetdialog.png "clrNugetDialog")
+ ![Snímek obrazovky zobrazující Správce balíčků NuGet.](./media/the-net-framework-and-out-of-band-releases/nuget-package-manager-dialog.png)
 
  Jak bylo zmíněno dříve, pokud nasadíte aplikaci, která používá balíček OOB, sestavení OOB bude dodáváno spolu s balíčkem aplikace.
 

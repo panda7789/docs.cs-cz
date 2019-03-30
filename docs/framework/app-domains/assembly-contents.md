@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 28116714-da77-45f7-826d-fa035d121948
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 27bbc1b382d962379a50fba4557e3f2a408d9bc4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2be1aad4d222917364a57abc93b414af40b1e9ae
+ms.sourcegitcommit: 0aca6c5d166d7961a1e354c248495645b97a1dc5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54649164"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58675650"
 ---
 # <a name="assembly-contents"></a>Obsah sestavení
 Obecně platí Statická sestavení se může skládat z čtyři elementy:  
@@ -31,15 +31,13 @@ Obecně platí Statická sestavení se může skládat z čtyři elementy:
   
  Existuje několik způsobů seskupení těchto prvků v sestavení. Můžete seskupit všechny prvky v jednom fyzickém souboru, která je znázorněna na následujícím obrázku.  
   
- ![MyAssembly.dll](../../../docs/framework/app-domains/media/assemblyover1.gif "assemblyover1")  
-Jeden soubor sestavení  
+ ![Diagram zobrazující průběh jednosouborového sestavení nazvané MyAssembly.dll.](./media/assembly-contents/single-file-assembly.gif)  
   
  Alternativně prvky sestavení mohou být obsaženy v několika souborů. Tyto soubory mohou být moduly zkompilovaného kódu (.netmodule), prostředky (například soubory .bmp nebo .jpg) nebo jiné soubory vyžadované aplikací. Pokud chcete kombinovat modulů napsaných v různých jazycích tak, že aplikace tak, že vložíte zřídka použít typy v modulu, který se stáhne jenom v případě potřeby vytvořte vícesouborové sestavení.  
   
  Na následujícím obrázku vývojář aplikace hypotetické zvolil oddělit nějaký kód nástroje do jiného modulu a zachovat velkého souboru prostředků (v tomto případě obrázek bmp) v původním souboru. Rozhraní .NET Framework stáhne soubor pouze v případě, že se na ni odkazuje; udržování kódu zřídka odkazované v samostatném souboru z aplikace optimalizuje kód ke stažení.  
   
- ![MyAssembly.dll](../../../docs/framework/app-domains/media/assemblyover2.gif "assemblyover2")  
-Vícesouborová sestavení  
+ ![Diagram zobrazující průběh vícesouborové sestavení.](./media/assembly-contents/multifile-assembly-diagram.gif) 
   
 > [!NOTE]
 >  Soubory, které tvoří vícesouborového sestavení nejsou fyzicky připojeny systémem souborů. Místo toho jsou propojeny prostřednictvím manifest sestavení a modul common language runtime spravuje jako celek.  

@@ -2,12 +2,12 @@
 title: Úkolu asynchronní programovací Model (TAP) pomocí modifikátoru async a operátoru await (C#)
 ms.date: 05/22/2017
 ms.assetid: 9bcf896a-5826-4189-8c1a-3e35fa08243a
-ms.openlocfilehash: b89b36f7645d3cb40945b14a4cf88b4a83dea89c
-ms.sourcegitcommit: d938c39afb9216db377d0f0ecdaa53936a851059
+ms.openlocfilehash: edcf9222c34b7cf29fedabd676605db95133d68c
+ms.sourcegitcommit: 0aca6c5d166d7961a1e354c248495645b97a1dc5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58634541"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58675884"
 ---
 # <a name="task-asynchronous-programming-model"></a>Model asynchronního programování úloh
 Pomocí asynchronního programování se můžete vyhnout kritickým bodům a zlepšit celkovou rychlost reakce aplikace. Tradiční techniky pro psaní asynchronních aplikací však mohou být složité, takže je obtížné je napsat, ladit a udržovat.  
@@ -65,7 +65,7 @@ async Task<int> AccessTheWebAsync()
 - `AccessTheWebAsync` nejde pokračovat, dokud nebudou `getStringTask` je dokončena.  
 - Mezitím se ovládací prvek vrátí volajícímu metody `AccessTheWebAsync`.  
 - Tady se obnoví ovládací prvek při `getStringTask` je dokončena.   
-- `await` Operátor pak načte `string `výsledkem `getStringTask`.  
+- `await` Operátor pak načte `string` výsledkem `getStringTask`.  
 
  Příkaz return Určuje celé číslo. Všechny metody, které čekají na `AccessTheWebAsync` načtení hodnoty délky.  
 

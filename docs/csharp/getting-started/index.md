@@ -36,10 +36,6 @@ Jsou k dispozici v následujících tématech:
 
 ## <a name="related-sections"></a>Související oddíly
 
-* [Použití vývojového prostředí sady Visual Studio pro jazyk C#](/visualstudio/csharp-ide/using-the-visual-studio-development-environment-for-csharp)  
-
-    Poskytuje návod k použití integrovaného vývojového prostředí jazyka Visual C#.
-
 * [Průvodce programováním v jazyce C#](../../csharp/programming-guide/index.md)
 
     Poskytuje informace o jazyce C# koncepty programování a popisuje, jak provádět různé úlohy v jazyce C#.
@@ -48,14 +44,10 @@ Jsou k dispozici v následujících tématech:
 
     Poskytuje podrobné referenční informace o jazyce C# klíčová slova, operátory, direktivy preprocesoru, – možnosti kompilátoru a kompilátor chyby a upozornění.
 
-* [Ukázky sady Visual Studio](/visualstudio/ide/visual-studio-samples)
-
-    Poskytuje informace o přístupu k online ukázkám.
-
 * [Návody](../../csharp/walkthroughs.md)
 
     Poskytuje odkazy na programovací návody, které používají jazyk C#, a stručný popis každého návodu.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Začínáme s Visual C# a Visual Basic pomocí sady Visual Studio](/visualstudio/ide/getting-started-with-visual-csharp-and-visual-basic)
+- * [C#Vývoj v sadě Visual Studio](/visualstudio/get-started/csharp/)

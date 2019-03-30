@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: a483d1b5-64aa-45b6-86ef-11b859f7f02e
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 6b4c1b075d54189d195ea38d421463ea6b9e6161
-ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
+ms.openlocfilehash: ebd54afb312de0796b5a96b3d41f1e98dd97bd1b
+ms.sourcegitcommit: 15ab532fd5e1f8073a4b678922d93b68b521bfa0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56835353"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58654351"
 ---
 # <a name="memory-mapped-files"></a>Soubory mapované paměti
 Soubor mapovaných do paměti obsahuje obsah souboru ve virtuální paměti. Toto mapování mezi prostoru soubor a paměť umožňuje aplikaci, včetně více procesů, upravte soubor tak, že čtení a zápis přímo na paměť. Počínaje [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], spravovaný kód můžete použít pro přístup k souborům mapované paměti stejným způsobem, že nativní funkce Windows přístup k souborům mapované paměti, jak je popsáno v [soubory mapované paměti](https://docs.microsoft.com/previous-versions/ms810613(v=msdn.10)).  
@@ -42,10 +42,11 @@ Soubor mapovaných do paměti obsahuje obsah souboru ve virtuální paměti. Tot
   
  Soubory mapované paměti jsou přístupné prostřednictvím Správce paměti operačního systému, takže soubor automaticky je rozdělen do několika stránek a přístup podle potřeby. Není potřeba zpracovávat správu paměti.  
   
- Následující obrázek znázorňuje způsob více procesů může mít více a překrývající se zobrazení stejné souborů mapovaných do paměti ve stejnou dobu.  
+ Následující obrázek znázorňuje způsob více procesů může mít více a překrývající se zobrazení stejné souborů mapovaných do paměti ve stejnou dobu.
+
+ Následující obrázek ukazuje několik a překrývající se zobrazení souboru mapovaných do paměti:  
   
- ![Umožňuje zobrazovat na paměťově&#45;namapované souboru. ](../../../docs/standard/io/media/memmappersisted.png "MemMapPersisted")  
-Více a překrývající se zobrazení souboru mapované paměti  
+ ![Snímek obrazovky zobrazující zobrazení paměti&#45;namapované souboru.](./media/memory-mapped-files/memory-map-persist-file.png)  
   
 ## <a name="programming-with-memory-mapped-files"></a>Programování s soubory mapované paměti  
  Následující tabulka obsahuje návod pro použití souborů mapovaných do paměti objektů a jejich členy.  

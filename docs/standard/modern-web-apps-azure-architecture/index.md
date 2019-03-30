@@ -8,7 +8,7 @@ ms.date: 01/30/2019
 
 # <a name="architect-modern-web-applications-with-aspnet-core-and-azure"></a>Navrhování moderních webových aplikací pomocí ASP.NET Core a Azure
 
-![titulní obrázek](./media/cover.png)
+![Titulní obrázek Průvodce architekt moderních webových aplikací.](./media/index/web-application-guide-cover-image.png)
 
 PUBLIKOVAL(A)
 

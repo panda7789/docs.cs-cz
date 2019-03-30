@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 775ad4fb-914f-453c-98ef-ce1089b6f903
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 87fb99ee8379a14a4a1d272a6eabb7fa8413bf64
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: cbb681567090cb26d20a31e8645c0b651bef9244
+ms.sourcegitcommit: 0aca6c5d166d7961a1e354c248495645b97a1dc5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54724067"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58675949"
 ---
 # <a name="assembly-versioning"></a>Správa verzí sestavení
 Všechny verze sestavení, které používají modul common language runtime se provádí na úrovni sestavení. Konkrétní verzi sestavení a verze závislých sestavení jsou zaznamenány v manifestu sestavení. Výchozí zásada verze modulu runtime je, že aplikace spuštěny pouze verze by byly vytvořené a testovány, pokud není přepsán explicitní verze zásad v konfiguračních souborech (konfigurační soubor aplikace, soubor zásad vydavatele a Správce konfigurační soubor počítače).  
@@ -33,10 +33,9 @@ Všechny verze sestavení, které používají modul common language runtime se 
   
 4.  Zkontroluje globální mezipaměti sestavení, základů kódu v konfiguračních souborech a pak kontroluje aplikace adresáře a podadresáře pomocí pravidel zjišťování je vysvětleno v [jak modul Runtime vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md).  
   
- Následující obrázek znázorňuje tyto kroky.  
+ Následující obrázek znázorňuje tyto kroky:  
   
- ![.Assembly extern myAssembly](../../../docs/framework/app-domains/media/versioningover.gif "versioningover")  
-Řešení požadavků sestavení na vazby  
+ ![Diagram znázorňující kroky v sestavení řešení žádostí vazby.](./media/assembly-versioning/resolve-assembly-binding-request.gif)
   
  Další informace o konfiguraci aplikací najdete v tématu [konfigurace aplikace](../../../docs/framework/configure-apps/index.md). Další informace o vazbě zásady, najdete v části [jak modul Runtime vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md).  
   

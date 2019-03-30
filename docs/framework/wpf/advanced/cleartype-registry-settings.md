@@ -5,12 +5,12 @@ helpviewer_keywords:
 - ClearType [WPF], registry settings
 - typography [WPF], ClearType registry settings
 ms.assetid: 56f314bb-b30b-4f67-8492-8b8a9fa432ae
-ms.openlocfilehash: 471a94333260d30bc9c650f13e3a7489d9d5db7e
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: a2b24077145b3b24fa021121450534264aea0c8b
+ms.sourcegitcommit: 0aca6c5d166d7961a1e354c248495645b97a1dc5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57369718"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58675897"
 ---
 # <a name="cleartype-registry-settings"></a>Nastavení registru ClearType
 Toto téma obsahuje přehled [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA#tla_ct](../../../../includes/tlasharptla-ct-md.md)] nastavení registru, které jsou používány [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikací.  
@@ -57,7 +57,7 @@ Toto téma obsahuje přehled [!INCLUDE[TLA2#tla_winclient](../../../../includes/
   
  Pro každý zobrazovaný název zařízení pro uživatele `ClearTypeLevel` je definována hodnota DWORD. Následující snímek obrazovky ukazuje nastavení editoru registru [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] úroveň.  
   
- ![Nastavení v editoru registru ClearType](./media/cleartyperegistry01.png "ClearTypeRegistry01")  
+ ![ClearType – nastavení v editoru registru.](./media/cleartype-registry-settings/cleartype-settings-registry-editor.png)  
   
 > [!NOTE]
 >  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vykreslení textu v obou dvou režimech a nemusíte aplikace [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)]. Když text je vykreslen bez [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)], jsou označovány jako šedé vykreslování.  
@@ -75,13 +75,13 @@ Toto téma obsahuje přehled [!INCLUDE[TLA2#tla_winclient](../../../../includes/
   
  Pro každý zobrazovaný název zařízení pro uživatele `GammaLevel` je definována hodnota DWORD. Následující snímek obrazovky ukazuje nastavení Editor registru pro úroveň funkce gamma.  
   
- ![Nastavení v editoru registru ClearType](./media/cleartyperegistry02.png "ClearTypeRegistry02")  
+ ![ClearType – funkce gamma nastavení úrovně v editoru registru](./media/cleartype-registry-settings/cleartype-gamma-level-settings-registry-editor.png)  
   
 <a name="pixel_structure"></a>   
 ## <a name="pixel-structure"></a>Struktura pixelů  
  Struktura pixel popisuje typ v pixelech, které tvoří zobrazovací zařízení. Struktura pixel je definován jako jeden ze tří typů:  
   
-|Typ|Hodnota|Popis|  
+|Type|Hodnota|Popis|  
 |----------|-----------|-----------------|  
 |Paušální|0|Zobrazovací zařízení nemá žádné struktura pixelů. To znamená, že zdroje světla u každé barvy jsou rovnoměrně v oblasti pixel – to se označuje jako šedé vykreslování. To je, jak se standardní zobrazí zařízení funguje. [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] nikdy použita na vykreslený text.|  
 |RGB|1|Zařízení má pixelů, které se skládají z tři pruhy v následujícím pořadí: červené, zelené a modré. [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] platí pro vykreslený text.|  
@@ -99,7 +99,7 @@ Toto téma obsahuje přehled [!INCLUDE[TLA2#tla_winclient](../../../../includes/
   
  Pro každý zobrazovaný název zařízení pro uživatele `PixelStructure` je definována hodnota DWORD. Následující snímek obrazovky ukazuje nastavení Editor registru pro strukturu pixelů.  
   
- ![Nastavení v editoru registru ClearType](./media/cleartyperegistry02.png "ClearTypeRegistry02")  
+ ![ClearType – funkce gamma nastavení úrovně v editoru registru](./media/cleartype-registry-settings/cleartype-gamma-level-settings-registry-editor.png)  
   
 <a name="text_contrast_level"></a>   
 ## <a name="text-contrast-level"></a>Úroveň kontrastu text  
@@ -112,7 +112,7 @@ Toto téma obsahuje přehled [!INCLUDE[TLA2#tla_winclient](../../../../includes/
   
  Pro každý zobrazovaný název zařízení pro uživatele `TextContrastLevel` je definována hodnota DWORD. Následující snímek obrazovky ukazuje nastavení Editor registru pro úroveň kontrastu text.  
   
- ![Nastavení v editoru registru ClearType](./media/cleartyperegistry01.png "ClearTypeRegistry01")  
+ ![ClearType – nastavení v editoru registru.](./media/cleartype-registry-settings/cleartype-settings-registry-editor.png)  
   
 ## <a name="see-also"></a>Viz také:
 - [ClearType – přehled](cleartype-overview.md)
