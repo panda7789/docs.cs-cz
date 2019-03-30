@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: c5ac9920-5b6e-4dc9-bf2d-1f6f8ad3b0bf
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 147c22758c68bd3b48ab1c5cf8e26ed0afdbce09
-ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
+ms.openlocfilehash: 56ca8e6c077d41552f85b65ba5f6b755165ee11a
+ms.sourcegitcommit: 15ab532fd5e1f8073a4b678922d93b68b521bfa0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56219461"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58654611"
 ---
 # <a name="marshaling-different-types-of-arrays"></a>Zařazování různých typů polí
 Pole je typem odkazu ve spravovaném kódu, který obsahuje jeden nebo víc elementů stejného typu. I když pole jsou typy odkazů, jsou předány jako parametry in k nespravovaným funkcím. Toto chování je konzistentní se způsobem spravovaných polí jsou předány do spravovaných objektů, což je jako vstup a výstup parametry. Další podrobnosti najdete v tématu [kopírování a přichycování](copying-and-pinning.md).  
@@ -29,7 +29,7 @@ Pole je typem odkazu ve spravovaném kódu, který obsahuje jeden nebo víc elem
 |Celých čísel podle hodnoty (dvojrozměrné).|Matice celých čísel se předá jako parametr In.|  
 |Z řetězce podle hodnoty.|Pole řetězců, které se předá jako parametr In.|  
 |Struktury s celými čísly.|Předá pole struktury, které obsahují celých čísel jako parametr In.|  
-|Struktury s řetězci.|Předá pole struktury, které obsahují pouze celá čísla jako vstupně-výstupní parametr. Členy pole lze změnit.|  
+|Struktury s řetězci.|Předá pole struktur, které obsahují řetězce pouze jako vstupně-výstupní parametr. Členy pole lze změnit.|  
   
 ## <a name="example"></a>Příklad  
  Tato ukázka demonstruje následující typy polí:  

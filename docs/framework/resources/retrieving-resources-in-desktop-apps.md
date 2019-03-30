@@ -20,12 +20,12 @@ helpviewer_keywords:
 ms.assetid: eca16922-1c46-4f68-aefe-e7a12283641f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9cbfd608f52a11f267ade25f80bc60bdfcd89364
-ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
+ms.openlocfilehash: 6db8f5914a325a276872ff804f679f8b3e0745a0
+ms.sourcegitcommit: 15ab532fd5e1f8073a4b678922d93b68b521bfa0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56221222"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58653922"
 ---
 # <a name="retrieving-resources-in-desktop-apps"></a>Načítání prostředků v aplikacích klasické pracovní plochy
 Při práci s lokalizované prostředky v desktopových aplikacích rozhraní .NET Framework by měl v ideálním případě balíček prostředků pro výchozí nebo neutrální jazykovou verzi s hlavním sestavením a vytvořte samostatné satelitní sestavení pro každý jazyk nebo jazykovou verzi, která vaše aplikace podporuje. Pak můžete použít <xref:System.Resources.ResourceManager> třídy, jak je popsáno v další části a přístup k pojmenovaným prostředkům. Pokud se rozhodnete vložit prostředky do hlavního sestavení a satelitní sestavení, se dá dostat taky binárních souborů .resources přímo, jak je popsáno v části [načítání prostředků ze souborů .resources](#from_file) dále v tomto článek.  Pro načtení prostředků v [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikací, najdete v článku [vytváření a načítání prostředků v aplikacích pro Windows Store](https://go.microsoft.com/fwlink/p/?LinkID=241674) Windows Dev Center.  
@@ -149,10 +149,11 @@ GetObject.exe
  Pokud se rozhodnete nasazení prostředků v satelitních sestaveních, které můžete použít <xref:System.Resources.ResourceManager> objektu pro přístup k prostředkům z .resources soubory přímo. Chcete-li to provést, musíte nasadit soubory .resources správně. Použít <xref:System.Resources.ResourceManager.CreateFileBasedResourceManager%2A?displayProperty=nameWithType> metoda pro vytvoření instance <xref:System.Resources.ResourceManager> objektu a zadejte adresář, který obsahuje samostatné soubory .resources.  
   
 ### <a name="deploying-resources-files"></a>Nasazení souborů .resources  
- Při vložení souborů .resources v sestavení aplikace a satelitní sestavení každé satelitní sestavení má stejný název souboru, ale je umístěn v podadresáři, která zohledňuje jazykovou verzi satelitního sestavení. Naproti tomu při přístupu k prostředkům ze souborů .resources přímo, můžete umístit všechny soubory .resources v jednom adresáři, obvykle jedná o podadresář adresáře aplikace. Název souboru .resources výchozí aplikace se skládá z názvu kořenového pouze, bez upozornění jeho jazykové verze (například strings.resources). Prostředky pro každou lokalizovanou jazykovou verzi jsou uloženy v souboru, jehož název se skládá z názvu kořenové a potom podle jazykové verze (například strings.ja.resources nebo strings.de-DE.resources). Následující ilustrace ukazuje, kde se soubory prostředků musí nacházet v adresářové struktuře.  
-  
- ![Hlavní adresář pro vaši aplikaci](../../../docs/framework/resources/media/resappdir.gif "resappdir")  
-Struktura adresářů a konvence pojmenování pro soubory .resources  
+ Při vložení souborů .resources v sestavení aplikace a satelitní sestavení každé satelitní sestavení má stejný název souboru, ale je umístěn v podadresáři, která zohledňuje jazykovou verzi satelitního sestavení. Naproti tomu při přístupu k prostředkům ze souborů .resources přímo, můžete umístit všechny soubory .resources v jednom adresáři, obvykle jedná o podadresář adresáře aplikace. Název souboru .resources výchozí aplikace se skládá z názvu kořenového pouze, bez upozornění jeho jazykové verze (například strings.resources). Prostředky pro každou lokalizovanou jazykovou verzi jsou uloženy v souboru, jehož název se skládá z názvu kořenové a potom podle jazykové verze (například strings.ja.resources nebo strings.de-DE.resources). 
+ 
+ Následující ilustrace ukazuje, kde se soubory prostředků musí nacházet v adresářové struktuře. Také poskytuje zásady vytváření názvů pro soubory Resource.  
+
+ ![Obrázek, na kterém hlavní adresář pro vaši aplikaci.](./media/retrieving-resources-in-desktop-apps/resource-application-directory.gif)  
   
 ### <a name="using-the-resource-manager"></a>Pomocí Resource Manageru  
  Poté, co jste vytvořili prostředky a umístí je do příslušného adresáře, vytváření <xref:System.Resources.ResourceManager> objektu, který chcete používat prostředky voláním <xref:System.Resources.ResourceManager.CreateFileBasedResourceManager%28System.String%2CSystem.String%2CSystem.Type%29> metody. První parametr určuje název kořenového souboru .resources výchozí aplikace (jde "řetězce", například v předchozí části). Druhý parametr určuje umístění prostředků ("Resources" předchozího příkladu). Třetí parametr určuje, <xref:System.Resources.ResourceSet> implementace. Pokud třetí parametr je `null`, výchozí modul runtime <xref:System.Resources.ResourceSet> se používá.  

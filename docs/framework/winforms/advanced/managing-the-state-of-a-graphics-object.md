@@ -8,12 +8,12 @@ helpviewer_keywords:
 - graphics [Windows Forms], managing state
 - graphics [Windows Forms], clipping
 ms.assetid: 6207cad1-7a34-4bd6-bfc1-db823ca7a73e
-ms.openlocfilehash: fc961b59dabc2f7f123b792e7e45a4ff3b535fc1
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: a0166d2ee5a16916fdc2ece95eaf130ebd2598d5
+ms.sourcegitcommit: 15ab532fd5e1f8073a4b678922d93b68b521bfa0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57717619"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58653779"
 ---
 # <a name="managing-the-state-of-a-graphics-object"></a>Správa stavu grafického objektu
 <xref:System.Drawing.Graphics> Třída je srdcem [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]. Chcete-li nakreslit nic, můžete získat <xref:System.Drawing.Graphics> objektu, vlastností a volat jeho metody <xref:System.Drawing.Graphics.DrawLine%2A>, <xref:System.Drawing.Graphics.DrawImage%2A>, <xref:System.Drawing.Graphics.DrawString%2A>a podobně).  
@@ -95,7 +95,7 @@ graphics.DrawEllipse(pen, 0, 0, 100, 50);
   
  Následující obrázek znázorňuje dvě symbol tří teček. Všimněte si, otočení kolem osy z 30stupňů o původu souřadnicovém systému (levého horního rohu oblasti klienta), ne o centrech symbol tří teček. Všimněte si také, že šířka pera 1 znamená, že 1 pixelu pro první tři tečky a 1 milimetru pro druhý elipsy.  
   
- ![Ovals](./media/csgraphicsascon1.png "csgraphicsascon1")  
+ ![Obrázek, který ukazuje dvě symbol tří teček: šířka rotace a psaní perem.](./media/managing-the-state-of-a-graphics-object/set-rotation-pen-width-drawellipse-method.png)  
   
 ### <a name="clipping-region"></a>Oblast ořezu  
  A <xref:System.Drawing.Graphics> objektu udržuje výstřižek oblast, která se vztahuje na všechny položky, které vykreslené <xref:System.Drawing.Graphics> objektu. Můžete nastavit oblast ořezu voláním <xref:System.Drawing.Graphics.SetClip%2A> metody.  
@@ -146,9 +146,9 @@ graphics.DrawLine(pen, 0, 30, 150, 160);
 graphics.DrawLine(pen, 40, 20, 190, 150);  
 ```  
   
- Následující obrázek znázorňuje zkrácený řádky.  
+ Následující obrázek znázorňuje zkrácený řádky:  
   
- ![Omezenou oblast Ústřižku](./media/graphicsascon2.png "graphicsascon2")  
+ ![Diagram zobrazující oblast ústřižku omezené.](./media/managing-the-state-of-a-graphics-object/set-clipping-region-setclip-method.png)  
   
 ## <a name="see-also"></a>Viz také:
 - [Grafika a kreslení v modelu Windows Forms](graphics-and-drawing-in-windows-forms.md)

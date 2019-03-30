@@ -10,20 +10,22 @@ helpviewer_keywords:
 ms.assetid: 7e542583-1e31-4e10-b523-8cf2f29cb4a4
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d3abce6ef7cb1d3287d9c8b7ceb9333f209e75ad
-ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
+ms.openlocfilehash: 1962815b8e294b1321320ce500554046d05f4c8f
+ms.sourcegitcommit: 15ab532fd5e1f8073a4b678922d93b68b521bfa0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56219518"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58654130"
 ---
 # <a name="runtime-callable-wrapper"></a>Obálka volatelná za běhu
 Modul common language runtime poskytuje objekty modelu COM přes proxy server volá obálka volatelná za běhu (RCW). I když objekt RCW se zdá být běžný objekt pro klienty .NET, jeho primární funkce je zařadit volání mezi klient .NET a COM objekty.  
   
  Modul runtime vytvoří přesně jeden objekt RCW pro každý objekt modelu COM, bez ohledu na počet odkazů, které existují k tomuto objektu. Modul runtime udržuje jeden objekt RCW proces pro každý objekt.  Pokud vytvoříte obálky RCW v jedné doméně aplikace nebo objektu apartment a pak předejte odkaz na další aplikační domény nebo objektu apartment, proxy první objekt, který se použije.  Jak ukazuje následující obrázek, může obsahovat libovolný počet spravovaných klientů odkaz na objekty modelu COM, které zveřejňují rozhraní INew a INewer.  
-  
- ![RCW](./media/rcw.gif "rcw")  
-Přístup k objektům modelu COM pomocí obálka volatelná za běhu  
+
+Následující obrázek znázorňuje proces pro získání přístupu k objektům modelu COM pomocí obálka volatelná za běhu:
+
+ ![Proces pro přístup k modelu COM objekty throug RCW.](./media/runtime-callable-wrapper/runtime-callable-wrapper.gif)  
+   
   
  Používání metadat odvozený z knihovny typů, modul runtime vytvoří volaný objekt modelu COM a obálku pro daný objekt. Každý objekt RCW udržuje mezipaměť ukazatele rozhraní na objekt COM, se zabalí a uvolní svůj odkaz na objekt modelu COM, pokud objekt RCW je už nepotřebujete. Modul runtime provádí uvolňování paměti RCW.  
   
@@ -32,10 +34,11 @@ Přístup k objektům modelu COM pomocí obálka volatelná za běhu
  Standardní obálky vynucuje integrované zařazování pravidla. Když klient .NET předá jako součást argumentu typu řetězec neřízeným objektem, obálku převede řetězec na typ BSTR. Volající by měl vrátit objekt modelu COM BSTR spravované volajícímu, přijímá řetězec. Klient i server odesílat a přijímat data, která je pro jejich srozumitelná. Jiné typy vyžadují žádný převod. Například standardní obálky vždycky předá 4bajtové celé číslo mezi spravovaným a nespravovaným kódem bez převodu typu.  
   
 ## <a name="marshaling-selected-interfaces"></a>Zařazování vybraných rozhraní  
- Hlavním cílem [obálka volatelná za běhu](runtime-callable-wrapper.md) (RCW), je skrýt rozdíly mezi spravovanými a nespravovanými programovacích modelů. Vytvořit jednoduchý přechod obálky RCW využívá vybrané rozhraní modelu COM bez vystavení klientovi .NET, jak je znázorněno na následujícím obrázku.  
+ Hlavním cílem [obálka volatelná za běhu](runtime-callable-wrapper.md) (RCW), je skrýt rozdíly mezi spravovanými a nespravovanými programovacích modelů. Vytvořit jednoduchý přechod obálky RCW využívá vybrané rozhraní modelu COM bez vystavení klientovi .NET, jak je znázorněno na následujícím obrázku. 
+
+ Následující obrázek ukazuje rozhraní COM a obálka volatelná za běhu: 
   
- ![RCW pomocí rozhraní](./media/rcwwithinterfaces.gif "rcwwithinterfaces")  
-Rozhraní COM a obálka volatelná za běhu  
+ ![Snímek obrazovky obálka volatelná za běhu pomocí rozhraní.](./media/runtime-callable-wrapper/runtime-callable-wrapper-interfaces.gif)  
   
  Po vytvoření jako objekt časné vazby Obálka RCW je určitého typu. Implementuje rozhraní, že objekt modelu COM implementuje a zveřejňuje metody, vlastnosti a události z rozhraní objektu. Na obrázku RCW zpřístupňuje rozhraní INew ale spotřebovává **IUnknown** a **IDispatch** rozhraní. Dále RCW zpřístupňuje všechny členy rozhraní INew na klienta rozhraní .NET.  
   

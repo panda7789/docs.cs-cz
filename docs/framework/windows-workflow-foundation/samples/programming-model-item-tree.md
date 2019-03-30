@@ -1,21 +1,21 @@
 ---
-title: Strom položek programovacího modelu
+title: Programování stromu položek modelu
 ms.date: 03/30/2017
 ms.assetid: 0229efde-19ac-4bdc-a187-c6227a7bd1a5
-ms.openlocfilehash: 9a2af628e10d8b04a91c4f6565dfa1d0d879e870
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 428012cf483595a280ef70b488ed1f344474948a
+ms.sourcegitcommit: 15ab532fd5e1f8073a4b678922d93b68b521bfa0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57714744"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58653844"
 ---
-# <a name="programming-model-item-tree"></a>Strom položek programovacího modelu
+# <a name="programming-model-item-tree"></a>Programování stromu položek modelu
 Tato ukázka předvádí, jak přejít <xref:System.Activities.Presentation.Model.ModelItem> stromové struktury pomocí deklarativní datové vazby ve stromovém zobrazení Windows Presentation Foundation (WPF).
 
 ## <a name="sample-details"></a>Ukázka podrobnosti
  <xref:System.Activities.Presentation.Model.ModelItem> Stromu je úrovní abstrakce, jakou používají [!INCLUDE[wfd1](../../../../includes/wfd1-md.md)] infrastruktury ke zveřejňování dat o základní instance, který právě upravujete. Na následujícím obrázku je znázornění různé vrstvy v rámci infrastruktury [!INCLUDE[wfd2](../../../../includes/wfd2-md.md)].
 
- ![Architektura Návrháře pracovního postupu](./media/workflowdesignerarch.JPG "WorkflowDesignerArch")
+ ![Diagram znázorňující architekturu návrháře postupu provádění.](./media/programming-model-item-tree/workflow-designer-architecture.jpg)
 
  A <xref:System.Activities.Presentation.Model.ModelItem> se skládá z ukazatele na základní hodnotu, stejně jako kolekce <xref:System.Activities.Presentation.Model.ModelProperty> objekty. A <xref:System.Activities.Presentation.Model.ModelProperty> objekt zase obsahuje data, jako jsou název a typ vlastnosti a pak ukazatel na hodnotu, která je dále jiného <xref:System.Activities.Presentation.Model.ModelItem>. Převaděč hodnoty se používá k manipulaci s některé <xref:System.Activities.Presentation.Model.ModelItem>s vrácená <xref:System.Activities.Presentation.Model.ModelProperty> tak, aby byly správně zobrazí ve stromovém zobrazení. Ukázka pak ukazuje, jak toho programovat proti <xref:System.Activities.Presentation.Model.ModelItem> stromu pomocí imperativní syntaxe, jak je znázorněno v následujícím příkladu.
 

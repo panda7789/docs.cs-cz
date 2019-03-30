@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - ToolStrip control [Windows Forms], architecture
 ms.assetid: 71df2d18-862e-4701-9ff9-c1fe606f94f2
-ms.openlocfilehash: 6e0c5a426f05590523c178f4b56d07ee98b39d7e
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: bede247ca9e1c2c20ffc8fef9fd4fab89aa78453
+ms.sourcegitcommit: 15ab532fd5e1f8073a4b678922d93b68b521bfa0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57719383"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58654767"
 ---
 # <a name="toolstrip-control-architecture"></a>Architektura ovládacího prvku ToolStrip
 <xref:System.Windows.Forms.ToolStrip> a <xref:System.Windows.Forms.ToolStripItem> třídy poskytují flexibilní a rozšiřitelný systém pro zobrazení položek panelu nástrojů, nabídek a stav. Tyto třídy jsou obsaženy v <xref:System.Windows.Forms> obor názvů a že jsou všechny obvykle s názvem s předponou "Ovládací prvek ToolStrip" (například <xref:System.Windows.Forms.ToolStripOverflow>) nebo s příponou "Odstranit" (například <xref:System.Windows.Forms.MenuStrip>).  
@@ -19,8 +19,7 @@ ms.locfileid: "57719383"
   
  <xref:System.Windows.Forms.ToolStrip> je abstraktní základní třída pro <xref:System.Windows.Forms.MenuStrip>, <xref:System.Windows.Forms.StatusStrip>, a <xref:System.Windows.Forms.ContextMenuStrip>. Následující objekt modelu ukazuje <xref:System.Windows.Forms.ToolStrip> hierarchii dědičnosti.  
   
- ![ToolStrip – objektový Model](./media/toolstripobjectmodel.gif "ToolStripObjectModel")  
-ToolStrip – objektový model  
+ ![Diagram, který je znázorněn objektový model prvku ToolStrip.](./media/toolstrip-control-architecture/toolstrip-object-model.gif)  
   
  Dostanete všechny položky v <xref:System.Windows.Forms.ToolStrip> prostřednictvím <xref:System.Windows.Forms.ToolStrip.Items%2A> kolekce. Dostanete všechny položky v <xref:System.Windows.Forms.ToolStripDropDownItem> prostřednictvím <xref:System.Windows.Forms.ToolStripDropDownItem.DropDownItems%2A> kolekce. Ve třídě odvozené z <xref:System.Windows.Forms.ToolStrip>, můžete použít také <xref:System.Windows.Forms.ToolStrip.DisplayedItems%2A> vlastnosti pro přístup k pouze ty položky, které jsou aktuálně zobrazeny. Toto jsou položky, které nejsou aktuálně nabídky přetečení.  
   
@@ -251,8 +250,7 @@ ToolStrip – objektový model
   
  <xref:System.Windows.Forms.ToolStripItem> je abstraktní základní třída pro všechny položky, které <xref:System.Windows.Forms.ToolStrip>. Následující objekt modelu ukazuje <xref:System.Windows.Forms.ToolStripItem> hierarchii dědičnosti.  
   
- ![ToolStripItem Object Model](./media/toolstripitemobjectmodel.gif "ToolStripItemObjectModel")  
-Ovládací prvek ToolStripItem objektový model  
+ ![Diagram, který je znázorněn objektový model prvku ToolStripItem.](./media/toolstrip-control-architecture/toolstripitem-object-model.gif)  
   
  <xref:System.Windows.Forms.ToolStripItem> buď dědí přímo z třídy <xref:System.Windows.Forms.ToolStripItem>, nebo nepřímo dědí z <xref:System.Windows.Forms.ToolStripItem> prostřednictvím <xref:System.Windows.Forms.ToolStripControlHost> nebo <xref:System.Windows.Forms.ToolStripDropDownItem>.  
   

@@ -3,12 +3,12 @@ title: <wsFederation>
 ms.date: 03/30/2017
 ms.assetid: c537f770-68bd-4f82-96ad-6424ad91369f
 author: BrucePerlerMS
-ms.openlocfilehash: 801970ec05fc88587a5b45b5bb3a855d1a81afb3
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: de79ad6447fe67afc596783eff3fa3e6a02b600c
+ms.sourcegitcommit: 15ab532fd5e1f8073a4b678922d93b68b521bfa0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57356088"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58654585"
 ---
 # <a name="wsfederation"></a>\<wsFederation>
 Poskytuje konfiguraci pro <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> (WSFAM).  
@@ -52,7 +52,7 @@ Poskytuje konfiguraci pro <xref:System.IdentityModel.Services.WSFederationAuthen
 |---------------|-----------------|  
 |authenticationType.|Identifikátor URI, který určuje typ ověřování. Nastaví parametr wauth požadavek WS-Federation. Volitelné. Výchozí hodnota je prázdný řetězec, který určuje, že parametr wauth není zahrnutý v požadavku.|  
 |aktuálnost|Požadovaný maximální dobu žádosti o ověření během několika minut. Nastaví parametr wfresh požadavek WS-Federation. Volitelné. Výchozí hodnota je nula. Volitelné. **Upozornění:**  V další vydané verzi rozhraní .NET Framework 4.5 `freshness` atribut budou typu `xs:string` a její výchozí hodnotu bude `null`.|  
-|homeRealm|Domovské sféry zprostředkovatele identity (IP) pro účely ověření. Nastaví parametr Wh požadavek WS-Federation. Volitelné. Výchozí hodnota je prázdný řetězec, který určuje, že parametr Wh není zahrnutý v požadavku.|  
+|homeRealm|Domovské sféry zprostředkovatele identity (IdP) pro účely ověření. Nastaví parametr Wh požadavek WS-Federation. Volitelné. Výchozí hodnota je prázdný řetězec, který určuje, že parametr Wh není zahrnutý v požadavku.|  
 |issuer|Identifikátor URI zamýšlený vydavatel tokenu. Nastaví základní adresu URL WS-Federation žádostí o přihlášení a odhlášení požadavky vyžaduje.|  
 |persistentCookiesOnPassiveRedirects|Určuje, zda jsou trvalé soubory cookie vydala na ověřování. Volitelné. Výchozí hodnota je "false", nejsou vysílány soubory cookie.|  
 |passiveRedirectEnabled|Určuje, zda je povoleno WSFAM automaticky přesměrovat neoprávněné požadavky služby tokenů zabezpečení. Volitelné. Výchozí hodnota je "true", se automaticky přesměrují neoprávněné požadavky.|  
@@ -68,7 +68,7 @@ Poskytuje konfiguraci pro <xref:System.IdentityModel.Services.WSFederationAuthen
 |signOutReply|Určuje adresu URL, ke kterému by měla být klient přesměruje pomocí služby tokenů zabezpečení (STS) během pasivní odhlašování přes protokol WS-Federation. Nastaví parametr wreply na žádost o odhlašování přes protokol WS-Federation. Volitelné. Výchozí hodnota je prázdný řetězec, který určuje, že žádné další parametry, měly by být součástí požadavku.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádná  
+ Žádné  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   

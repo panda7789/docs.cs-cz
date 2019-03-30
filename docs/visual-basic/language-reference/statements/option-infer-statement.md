@@ -11,12 +11,12 @@ helpviewer_keywords:
 - declaring variables [Visual Basic], inferred
 - inferred variable declaration
 ms.assetid: 4ad3e6e9-8f5b-4209-a248-de22ef6e4652
-ms.openlocfilehash: 38c60245ff2c0b08ee731da6c1f88c30e1af8e3f
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 43ac5bc9e32892541ed2f9b0410b6e0ef10558a6
+ms.sourcegitcommit: 15ab532fd5e1f8073a4b678922d93b68b521bfa0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56965819"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58654325"
 ---
 # <a name="option-infer-statement"></a>Option Infer – příkaz
 Umožňuje použití odvození místního typu v deklarujících proměnných.  
@@ -39,15 +39,17 @@ Option Infer { On | Off }
   
  Pokud nastavíte `Option Infer` k `On`, bez explicitní uvedení datový typ je možné deklarovat lokální proměnné. Kompilátor odvodí datový typ proměnné z typu výrazu jeho inicializaci.  
   
- Na následujícím obrázku `Option Infer` zapnutý. Proměnné v deklaraci `Dim someVar = 2` je deklarován jako celé číslo odvození typu proměnné.  
+ Na následujícím obrázku `Option Infer` zapnutý. Proměnné v deklaraci `Dim someVar = 2` je deklarován jako celé číslo odvození typu proměnné.
+
+ Následující snímek obrazovky ukazuje technologie IntelliSense, když Option Infer na: 
   
- ![Zobrazení technologie IntelliSense deklarace. ](../../../visual-basic/language-reference/statements/media/optioninferasinteger.png "optionInferAsInteger")  
-Technologie IntelliSense při Option Infer zapnutý  
+ ![Snímek obrazovky s IntelliSense zobrazení Option Infer je na.](./media/option-infer-statement/option-infer-as-integer-on.png)  
   
  Na následujícím obrázku `Option Infer` je vypnutý. Proměnné v deklaraci `Dim someVar = 2` je deklarován jako `Object` podle odvození typu proměnné. V tomto příkladu **Option Strict** nastavená na **vypnout** na [stránka kompilovat, Návrhář projektu (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic).  
   
- ![Zobrazení technologie IntelliSense deklarace. ](../../../visual-basic/language-reference/statements/media/optioninferasobject.png "optionInferAsObject")  
-Technologie IntelliSense při Option Infer je vypnuté  
+ Následující snímek obrazovky ukazuje technologie IntelliSense, když Option Infer je vypnuté:
+ 
+ ![Snímek obrazovky zobrazení technologie IntelliSense při Option Infer je vypnuté.](./media/option-infer-statement/option-infer-as-object-off.png)  
   
 > [!NOTE]
 >  Pokud je proměnná deklarována jako `Object`, run-time typu můžete změnit, zatímco program běží. Visual Basic provádí operace volat *zabalení* a *rozbalení* k převodu mezi `Object` a typ hodnoty, takže provádění pomalejší. Informace o zabalení a rozbalení, najdete v článku [specifikace jazyka Visual Basic](~/_vblang/spec/conversions.md#value-type-conversions).

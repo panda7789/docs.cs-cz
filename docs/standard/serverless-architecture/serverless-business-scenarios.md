@@ -4,14 +4,14 @@ description: Zjistěte, bez serveru pomocí praktických přístup díky příst
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
-ms.openlocfilehash: 4299768b701336e427b22b295bc459424bfc5927
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 177fb1d7f79a0067ab185e520778b593d4b8eaf6
+ms.sourcegitcommit: 15ab532fd5e1f8073a4b678922d93b68b521bfa0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53153784"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58653896"
 ---
-# <a name="serverless-business-scenarios-and-use-cases"></a>Bez serveru obchodní scénáře a případy použití
+# <a name="serverless-business-scenarios-and-use-cases"></a>Obchodní scénáře aplikací bez serveru a případy použití
 
 Existuje mnoho případy použití a scénáře pro aplikace bez serveru. Tato kapitola obsahuje ukázky, které demonstrují různé scénáře. Scénáře zahrnují odkazy na související dokumentaci a veřejných úložišť zdrojového kódu. Příklady v této kapitole umožňují snadno začít vlastními silami, vytváření a implementaci řešení bez serveru.
 
@@ -61,7 +61,7 @@ Můžete zobrazit video, které vás provede celou migrace: [Zvedněte a shift s
 
 Extrakce, transformace a načítání (ETL) je běžné obchodní funkce, která integruje různé systémy. Tradiční přístupy často zahrnuje nastavení vyhrazené servery FTP a nasazení naplánované úlohy, které chcete analyzovat soubory a překládat je pro použití v podniku. Architektura bez serveru usnadňuje úlohy, protože aktivační událost může aktivovat při nahrání souboru. Azure Functions probere úkoly, jako jsou ETL prostřednictvím jeho ideální složení malé části kódu, které se soustředí na konkrétní problém.
 
-![Architektura ETL](./media/csvimport.png)
+![Snímek obrazovky zobrazující parsování procesu csv.](./media/serverless-business-scenarios/csv-parse-database-import.png)
 
 Zdrojový kód a praktických cvičení, naleznete v tématu [CSV importovat lab](https://github.com/JeremyLikness/azure-fn-file-process-hol).
 

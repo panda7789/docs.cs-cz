@@ -22,12 +22,12 @@ helpviewer_keywords:
 - Sub Dispose destructor
 - garbage collection [Visual Basic], Visual Basic
 ms.assetid: f1ee8458-b156-44e0-9a8a-5dd171648cd8
-ms.openlocfilehash: e6274f470e042fa5d581a574d13bd67ae8e8d6e9
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 582988c9eed19fe49bc86e75e7a9d80bbf2a6d59
+ms.sourcegitcommit: 15ab532fd5e1f8073a4b678922d93b68b521bfa0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56979460"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58654523"
 ---
 # <a name="object-lifetime-how-objects-are-created-and-destroyed-visual-basic"></a>Doba života objektu: Jak objekty jsou vytvořeny a zničen (Visual Basic)
 Instance třídy objektu, je vytvořen pomocí `New` – klíčové slovo. Inicializace úlohy často je nutné provádět na nové objekty před jejich použití. Běžné úlohy inicializace zahrnují otevírání souborů, připojení k databázím a čtení hodnoty z klíče registru. Visual Basic řídí Inicializace nové objekty pomocí procedury volané *konstruktory* (speciální metody, které umožňují kontrolu nad inicializace).  
@@ -70,11 +70,11 @@ Instance třídy objektu, je vytvořen pomocí `New` – klíčové slovo. Inici
   
  Když je vytvořena instance odvozené třídy, `Sub New` konstruktor základní třídy, spustí nejprve, za nímž následuje konstruktory v odvozených třídách. Je to způsobeno první řádek kódu v `Sub New` konstruktor používá syntaxi `MyBase.New()`volat konstruktor třídy přímo nad sám v hierarchii tříd. `Sub New` Pak volání konstruktoru pro každou třídu v hierarchii tříd do konstruktoru pro dosažení základní třídy. V tu chvíli se kód v konstruktoru pro základní třídu spustí, za nímž následuje kód v jednotlivých konstruktor všechny odvozené třídy a poslední spuštění kódu v nejvíce odvozené třídy.  
   
- ![Konstruktory a dědičnost](../../../../visual-basic/programming-guide/language-features/objects-and-classes/media/vaconstructorsinheritance.gif "vaConstructorsInheritance")  
+ ![Snímek obrazovky s konstruktory hierarchie třídy a dědičnost.](./media/object-lifetime-how-objects-are-created-and-destroyed/subnew-constructor-inheritance.gif)  
   
  Pokud objekt je už nepotřebujete, kterou volá CLR <xref:System.Object.Finalize%2A> metodu pro tento objekt před uvolněním paměti. <xref:System.Object.Finalize%2A> Metoda je volána `destructor` protože provádí úlohy čištění, jako je například ukládání informací o stavu, zavírání souborů a připojení k databázím a dalších úlohách, které je třeba provést před uvolněním objektu.  
   
- ![Constructors Inheritance2](../../../../visual-basic/programming-guide/language-features/objects-and-classes/media/vaconstructorsinheritance_2.gif "vaConstructorsInheritance_2")  
+ ![Snímek obrazovky zobrazující destruktor metodu Finalize.](./media/object-lifetime-how-objects-are-created-and-destroyed/finalize-method-destructor.gif)  
   
 ## <a name="idisposable-interface"></a>Rozhraní IDisposable  
  Instance třídy často řídit prostředky, které nejsou spravované přes modul CLR, jako jsou popisovače Windows a připojení k databázi. Tyto prostředky musí být odstraněny v `Finalize` metoda třídy, tak, aby se bude vydána při zničení objektu pomocí systému uvolňování paměti. Ale systému uvolňování paměti odstraní objekty pouze v případě, že modul CLR vyžaduje další volné paměti. To znamená, že prostředky nesmí uvolnit dokud dlouho po objekt dostane mimo rozsah.  

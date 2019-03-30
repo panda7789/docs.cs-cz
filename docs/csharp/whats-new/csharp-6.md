@@ -2,18 +2,18 @@
 title: Co je nového v jazyce C# 6 – Průvodce v C#
 description: Informace o nových funkcích v jazyce C# verze 6
 ms.date: 12/12/2018
-ms.openlocfilehash: d7e3392412ad6f01cd150e31cec43aa99c42b437
-ms.sourcegitcommit: d09c77414e9e4fc72c79b04deee7a756a120674e
+ms.openlocfilehash: 1c8c8003f81d4c15f2abdc26dc15849d88582843
+ms.sourcegitcommit: 15ab532fd5e1f8073a4b678922d93b68b521bfa0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54084677"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58654572"
 ---
 # <a name="whats-new-in-c-6"></a>Co je nového v jazyce C# 6
 
 C# 6.0 vydání obsahovala řadu funkcí, které zvyšují produktivitu pro vývojáře. Celkový efekt z těchto funkcí je, že napíšete stručnější kód, který je také lépe čitelný. Syntaxe obsahuje méně procedury pro mnoho běžných postupech. Je snazší zjistit záměr návrhu s méně procedury. Přečtěte si tyto funkce dobře, a budete produktivnější a napsat kód lépe čitelný. Více můžete soustředit na funkce než na konstrukce jazyka.
 
-Zbývající část tohoto článku poskytuje přehled o každé z těchto funkcí s odkazem k prozkoumání jednotlivých funkcí. Můžete si taky prostudovat funkce [Interaktivní kurz týkající se C# 6](../tutorials/exploration/csharp-6.yml) v části kurzy.
+Zbývající část tohoto článku poskytuje přehled o každé z těchto funkcí s odkazem k prozkoumání jednotlivých funkcí. Můžete si taky prostudovat funkce [interaktivní zkoumání na C# 6](../tutorials/exploration/csharp-6.yml) v části kurzy.
 
 ## <a name="read-only-auto-properties"></a>Auto vlastnosti jen pro čtení
 

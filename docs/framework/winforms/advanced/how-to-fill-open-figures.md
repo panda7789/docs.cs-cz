@@ -8,12 +8,12 @@ helpviewer_keywords:
 - open figures [Windows Forms], filling
 - figures [Windows Forms], filling
 ms.assetid: 5a36b0e4-f1f4-46c0-a85a-22ae98491950
-ms.openlocfilehash: e9743d3268a7a2acfb6266872c3346a05269c369
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: c7d193fdad554048ecd0f2cca5a83cfccbc2a403
+ms.sourcegitcommit: 15ab532fd5e1f8073a4b678922d93b68b521bfa0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57702722"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58654078"
 ---
 # <a name="how-to-fill-open-figures"></a>Postupy: Vyplňování otevřených obrázků
 Můžete přejít k vyplnění cestu předáním <xref:System.Drawing.Drawing2D.GraphicsPath> objektu <xref:System.Drawing.Graphics.FillPath%2A> metoda. <xref:System.Drawing.Graphics.FillPath%2A> Metoda vyplní cestu podle režim vyplnění (alternativní nebo vinutí) aktuálně nastavený pro danou cestu. Pokud cesta obsahuje všechny otevřených obrázků, cesta je vyplněné, jakoby nebyly uzavřeny tyto údaje. [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] Zavře elementu figure podle Kreslení rovné čáry z koncového bodu pro výchozí bod.  
@@ -23,7 +23,7 @@ Můžete přejít k vyplnění cestu předáním <xref:System.Drawing.Drawing2D.
   
  Následující obrázek znázorňuje výstup tohoto ukázkového kódu. Všimněte si, že ji naplní (podle <xref:System.Drawing.Drawing2D.FillMode.Alternate>) jako kdyby bylo uzavřeno otevřený útvar rovnou linii od její koncový bod pro výchozí bod.  
   
- ![Vyplnit otevřít cestu](./media/fillopenpath.png "FillOpenPath")  
+ ![Diagram, který zobrazuje výstup FillPath – metoda](./media/how-to-fill-open-figures/fill-path-alternate-mode.png)  
   
  [!code-csharp[System.Drawing.ConstructingDrawingPaths#11](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ConstructingDrawingPaths/CS/Class1.cs#11)]
  [!code-vb[System.Drawing.ConstructingDrawingPaths#11](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ConstructingDrawingPaths/VB/Class1.vb#11)]  

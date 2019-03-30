@@ -2,63 +2,63 @@
 title: Synchronní scénáře využívající HTTP, TCP nebo pojmenované kanály
 ms.date: 03/30/2017
 ms.assetid: 7e90af1b-f8f6-41b9-a63a-8490ada502b1
-ms.openlocfilehash: 11a5d8f43d12d35728c65c7a60ad8a4fa2fc1b3a
-ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.openlocfilehash: 28e612b190f4993e1ce7da0d1083c4e55f827d4a
+ms.sourcegitcommit: 15ab532fd5e1f8073a4b678922d93b68b521bfa0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33810171"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58654000"
 ---
 # <a name="synchronous-scenarios-using-http-tcp-or-named-pipe"></a>Synchronní scénáře využívající HTTP, TCP nebo pojmenované kanály
-Toto téma popisuje aktivity a přenosy pro různé synchronní požadavek nebo odpověď scénáře s jedním podprocesem klienta, pomocí protokolu HTTP, TCP nebo pojmenovaného kanálu. V tématu [asynchronní scénáře použití HTTP, TCP nebo pojmenované kanály](../../../../../docs/framework/wcf/diagnostics/tracing/asynchronous-scenarios-using-http-tcp-or-named-pipe.md) Další informace o Vícevláknová požadavky.  
+Toto téma popisuje aktivity a přenosy pro různé synchronní požadavku/odpovědi scénáře pomocí klienta s jedním vláknem, pomocí protokolu HTTP, TCP nebo pojmenovaného kanálu. Zobrazit [asynchronní scénáře využívající HTTP, TCP nebo pojmenované kanály](../../../../../docs/framework/wcf/diagnostics/tracing/asynchronous-scenarios-using-http-tcp-or-named-pipe.md) Další informace o vícevláknových požadavky.  
   
-## <a name="synchronous-requestreply-without-errors"></a>Synchronní požadavek nebo odpověď bez chyb  
- Tato část popisuje aktivity a přenosy pro scénář platný synchronní požadavek nebo odpověď s jedním podprocesem klienta.  
+## <a name="synchronous-requestreply-without-errors"></a>Synchronní požadavku/odpovědi bez chyb  
+ Tato část popisuje aktivity a přenosy pro scénář platný synchronní požadavek/odpověď s klientem s jedním vláknem.  
   
 ### <a name="client"></a>Klient  
   
-#### <a name="establishing-communication-with-service-endpoint"></a>Navazování komunikace se koncový bod služby  
- Klient je vytvořená a otevřít. Pro každý z těchto kroků vedlejším aktivity (A) přenesen na "Vytvořit klienta" (B) a "Otevřete klienta" (C) aktivitu v uvedeném pořadí. Pro každou aktivitu přenášení na vedlejším aktivity je pozastaven, dokud nedojde k převodu zpět, tedy dokud ServiceModel kód se spustí.  
+#### <a name="establishing-communication-with-service-endpoint"></a>Navázání komunikace s koncový bod služby  
+ Klient je vytvořen a otevřen. Pro každý z těchto kroků okolí aktivity (A) je předány "Vytvoření klienta" (B) a "Otevřít klienta" (C) aktivitu v uvedeném pořadí. Pro každou aktivitu přenášejí do okolí aktivity je pozastaveno, dokud se nepřenášejí zpět, to znamená, dokud je provedena ServiceModel kódu.  
   
-#### <a name="making-a-request-to-service-endpoint"></a>Vytváření požadavku na koncový bod služby  
- Vedlejším aktivity je převede na aktivitu "ProcessAction" (D). V rámci této aktivity je odeslána zpráva požadavku a obdrží zprávu odpovědi. Aktivity skončí, když řízení vrátí do uživatelského kódu. Protože se jedná o žádost o synchronní, vedlejším aktivity pozastaví, dokud vrátí ovládací prvek.  
+#### <a name="making-a-request-to-service-endpoint"></a>Požadavku na koncový bod služby  
+ Ambientní aktivity se přenesou do činnosti "ProcessAction" (D). V rámci této aktivity je žádost odeslána zpráva a obdrží zprávu odpovědi. Aktivita končí, když ovládací prvek se vrátí do uživatelského kódu. Protože to je požadavek na synchronní, okolí aktivity pozastaví, dokud se ovládací prvek vrátí.  
   
-#### <a name="closing-communication-with-service-endpoint"></a>Zavřením komunikaci s koncovým bodem služby  
- Aktivity uzavření klienta (I) je vytvořen z vedlejším aktivity. Toto je stejný jako nové a otevřete.  
+#### <a name="closing-communication-with-service-endpoint"></a>Zavření komunikaci s koncovým bodem služby  
+ Zavřít aktivitu klienta, (I) se vytvoří v okolí aktivity. To je stejný jako nový a otevřete.  
   
 ### <a name="server"></a>Server  
   
 #### <a name="setting-up-a-service-host"></a>Nastavení hostitele služby  
- ServiceHost nové a otevřete aktivity (N a O) jsou vytvořeny z vedlejším aktivity (M).  
+ V rámci ambientní aktivity (M) jsou vytvořeny ServiceHost nový a otevřete aktivity (N a O).  
   
- Otevření ServiceHost pro každý naslouchací proces se vytvoří naslouchací proces aktivity (P). Aktivita naslouchací proces čeká na přijímat a zpracovávat data.  
+ Otevírání ServiceHost pro každý naslouchací proces vytvoření naslouchacího procesu aktivity (P). Aktivita naslouchací proces čeká na příjem a zpracování dat.  
   
-#### <a name="receiving-data-on-the-wire"></a>Přijetí dat v drátové síti  
- Když data dorazí v drátové síti, vytvoří se aktivita "ReceiveBytes" Pokud již neexistuje (Q) ke zpracování přijatých dat. Tuto aktivitu můžete znovu použít pro více zpráv v rámci připojení a fronty.  
+#### <a name="receiving-data-on-the-wire"></a>Příjem dat na lince  
+ Po přijetí dat na lince, vytvoření aktivity "ReceiveBytes" Pokud již neexistuje (Q) ke zpracování přijatá data. Tuto aktivitu lze znovu použít pro více zpráv v rámci připojení nebo fronty.  
   
- ReceiveBytes aktivity spouští aktivitu ProcessMessage (R), pokud má dostatek dat na formuláři Akce zprávu protokolu SOAP.  
+ Aktivita ReceiveBytes spustí aktivitu ProcessMessage (R), pokud má dostatek dat k vytvoření zprávy akce SOAP.  
   
- V aktivitě R jsou zpracovávány záhlaví zprávy a bude ověřen hlavičku aktivity. Pokud tuto hlavičku je k dispozici, ID aktivity nastavená na aktivity ProcessAction; jinak se vytvoří nové ID.  
+ V aktivitě R se zpracují záhlaví zpráv a hlavičku activityID je ověřený. Pokud toto záhlaví je k dispozici, ID aktivity nastavená na aktivitu ProcessAction; v opačném případě se vytvoří nové ID.  
   
- Vytvoření aktivity ProcessAction (S) a přenášení na při volání je zpracovat. Tato aktivita končí po dokončení veškeré zpracování související s příchozí zprávy, včetně spuštění uživatelského kódu (T) a odešle zprávu odpovědi, pokud je k dispozici.  
+ Vytvoření aktivity ProcessAction (S) a přenášejí do, když volání se zpracovává. Tato aktivita končí po dokončení veškeré zpracování související s příchozí zprávy, včetně spouštění uživatelského kódu (T) a odesílá zprávy s odpovědí, pokud je k dispozici.  
   
-#### <a name="closing-a-service-host"></a>Ukončování hostitele služby  
- Hostiteli služby zavřít aktivity (Z) je vytvořený z vedlejším aktivity.  
+#### <a name="closing-a-service-host"></a>Zavření hostitele služby  
+ Hostitel služby Zavřít aktivitu (Z) se vytvoří v okolí aktivity.  
   
- ![Synchronní scénáře využívající HTTP&#47;TCP&#47; pojmenovaných kanálů](../../../../../docs/framework/wcf/diagnostics/tracing/media/sync.gif "synchronizace")  
+ ![Diagram znázorňující synchronní scénáře: HTTP, TCP nebo pojmenované kanály.](./media/synchronous-scenarios-using-http-tcp-or-named-pipe/synchronous-scenario-http-tcp-named-pipes.gif)  
   
- V \<A: název >, `A` je symbol zástupce, který popisuje aktivitu v předchozí textu a v tabulce 3. `Name` je zkrácený název aktivity.  
+ V \<A: název >, `A` je místní symbol, který popisuje aktivitu v předchozí text a v tabulce 3. `Name` je zkrácený název aktivity.  
   
- Pokud `propagateActivity` = `true`, proces akce na klientovi a služby mají stejné ID aktivity.  
+ Pokud `propagateActivity` = `true`, akce proces na klienta a služby mají stejné ID aktivity.  
   
-## <a name="synchronous-requestreply-with-errors"></a>Synchronní požadavek nebo odpověď s chybami  
- Jediným rozdílem s předchozím scénáři je, že zprávu o chybě protokolu SOAP se vrátí jako zprávu odpovědi. Pokud `propagateActivity` = `true`, ID aktivity zprávy požadavku se přidá do selhání zprávu protokolu SOAP.  
+## <a name="synchronous-requestreply-with-errors"></a>Synchronní požadavek/odpověď s chybami  
+ S předchozím scénáři jediným rozdílem je, že se jako odpověď vrátí zprávu o chybě protokolu SOAP. Pokud `propagateActivity` = `true`, ID aktivity požadavku se přidá do chybová zpráva SOAP.  
   
-## <a name="synchronous-one-way-without-errors"></a>Synchronní jednosměrný bez chyb  
- První scénář jediným rozdílem je, že na server je vrácena žádná zpráva. Pro protokoly založené na protokolu HTTP, stav (platné nebo chyba) je stále vrácen do klienta. Je to proto, že je protokol pouze s sémantiku požadavků a odpovědí, který je součástí v zásobníku protokolů WCF HTTP. Protože zpracování protokolu TCP je skryta WCF, potvrzení je odeslán do klienta.  
+## <a name="synchronous-one-way-without-errors"></a>Synchronní jednosměrné bez chyb  
+ První scénář jediným rozdílem je, že žádná zpráva je vrácen do serveru. Pro protokoly založené na protokolu HTTP, stav (platné nebo chyba) je stále vrácen do klienta. Toto je vzhledem k tomu je jediný protokol se sémantikou typu žádost odpověď, který je součástí WCF zásobník protokolu HTTP. Vzhledem k tomu, že zpracování protokolu TCP je skrytá WCF, bez potvrzení posílá do klienta.  
   
-## <a name="synchronous-one-way-with-errors"></a>Synchronní jednosměrný s chybami  
- Pokud dojde k chybě při zpracování zprávy (Q nebo novější), žádná oznámení je vrácen do klienta. Toto je stejný jako scénář "Synchronní One-Way bez chyby". Jednosměrný situaci byste neměli používat, pokud chcete zobrazit chybová zpráva.  
+## <a name="synchronous-one-way-with-errors"></a>Synchronní jednosměrné s chybami  
+ Pokud dojde k chybě při zpracování zprávy (Q nebo novější), žádná oznámení je vrácen do klienta. To je stejný jako scénáře "Synchronních One-Way bez chyb". Jednosměrná scénáři byste neměli používat, pokud chcete zobrazit chybová zpráva.  
   
 ## <a name="duplex"></a>Duplex  
- Rozdíl oproti předchozím scénáře je, že klient funguje jako služba, ve kterém se vytvoří ReceiveBytes a ProcessMessage aktivity, podobně jako asynchronní scénáře.
+ Rozdíl oproti předchozím scénáře je, že klient funguje jako služba, ve kterém se vytvoří aktivity ReceiveBytes a ProcessMessage, podobně jako asynchronní scénáře.

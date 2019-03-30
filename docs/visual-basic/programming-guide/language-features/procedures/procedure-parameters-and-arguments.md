@@ -18,12 +18,12 @@ helpviewer_keywords:
 - argument lists [Visual Basic]
 - procedures [Visual Basic], parameter lists
 ms.assetid: ff275aff-aa13-40df-bd4c-63486db8c1e9
-ms.openlocfilehash: f7291d809c754249c155eb9382f3fcd8a63c20c7
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 4b62e4b752074bb8d1a660e51ab230a87ff21db4
+ms.sourcegitcommit: 15ab532fd5e1f8073a4b678922d93b68b521bfa0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56972538"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58654234"
 ---
 # <a name="procedure-parameters-and-arguments-visual-basic"></a>Parametry a argumenty procedury (Visual Basic)
 Ve většině případů postup potřebuje určité informace o okolnostech, ve kterých byla volána. Postup, který provádí úlohy opakovaných nebo sdílené používá různé informace pro každé volání. Tyto informace se skládá z proměnné, konstanty a výrazy, které předáváte k postupu při jeho volání.  
@@ -36,8 +36,7 @@ Ve většině případů postup potřebuje určité informace o okolnostech, ve 
   
  Následující obrázek znázorňuje kódu volající proces `safeSquareRoot` ze dvou různých míst. První volání předá hodnotu proměnné `x` (4.0) k parametru `number`a návratová hodnota v `root` (2.0) je přiřazená k proměnné `y`. Druhé volání předá hodnotu literálu 9.0 na `number`a přiřadí proměnné návratovou hodnotu (3.0) `z`.  
   
- ![Grafický diagram předání argumentu pro parametr](./media/parametersargue.gif "ParametersArgue")  
-Předání argumentu pro parametr  
+ ![Diagram zobrazující průběh předání argumentu pro parametr](./media/procedure-parameters-and-arguments/pass-argument-parameter.gif)  
   
  Další informace najdete v tématu [rozdíly mezi parametry a argumenty](./differences-between-parameters-and-arguments.md).  
   

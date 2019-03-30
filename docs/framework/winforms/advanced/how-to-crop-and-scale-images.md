@@ -8,12 +8,12 @@ helpviewer_keywords:
 - images [Windows Forms], cropping
 - images [Windows Forms], scaling
 ms.assetid: 053e3360-bca0-4b25-9afa-0e77a6f17b03
-ms.openlocfilehash: 95343ad2c7bc6a83bc4d935f33712ab910d658ff
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: ff0567dca0fd86736e02a9dd827ec15df8bf2df8
+ms.sourcegitcommit: 15ab532fd5e1f8073a4b678922d93b68b521bfa0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57705815"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58654494"
 ---
 # <a name="how-to-crop-and-scale-images"></a>Postupy: Oříznutí a změna měřítka obrázků
 <xref:System.Drawing.Graphics> Třída poskytuje několik <xref:System.Drawing.Graphics.DrawImage%2A> metody, některé z nich mají zdrojové a cílové parametry obdélníku, které slouží k oříznutí a změna měřítka obrázků.  
@@ -27,7 +27,7 @@ ms.locfileid: "57705815"
   
  Následující obrázek znázorňuje původní apple a škálovanou, oříznuté apple.  
   
- ![Crop & Scale](./media/cscropscale1.png "csCropScale1")  
+ ![Snímek obrazovky s původní bitové kopie a stejnou bitovou kopii oříznuté.](./media/how-to-crop-and-scale-images/original-image-cropped-image.png)  
   
  [!code-csharp[System.Drawing.WorkingWithImages#11](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.WorkingWithImages/CS/Class1.cs#11)]
  [!code-vb[System.Drawing.WorkingWithImages#11](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.WorkingWithImages/VB/Class1.vb#11)]  

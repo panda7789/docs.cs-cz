@@ -4,12 +4,12 @@ description: Zjistěte, jak hostitele modulu runtime .NET Core z nativního kód
 author: mjrousos
 ms.date: 12/21/2018
 ms.custom: seodec18
-ms.openlocfilehash: 78eb4bb1f0dfb1b2469b69f2b90b9bacc66754aa
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 27717cd68d2ef7c19289a9e06f99bb8767f2f582
+ms.sourcegitcommit: 15ab532fd5e1f8073a4b678922d93b68b521bfa0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56980370"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58654052"
 ---
 # <a name="write-a-custom-net-core-host-to-control-the-net-runtime-from-your-native-code"></a>Vytvořit vlastního hostitele řídit modul .NET runtime z nativního kódu .NET Core
 
@@ -208,4 +208,4 @@ Jakmile hostitele je sestavená, ho můžete otestovat spuštěním z příkazov
 
 Pokud věci zpočátku nefunguje, zkontrolujte *coreclr.dll* je k dispozici v umístění očekává hostitele, jsou v seznamu TPA všechny potřebné knihovny rozhraní Framework, který odpovídá této CoreCLR bitové verze (32 - a 64-bit) jak byla vytvořena hostitele.
 
-Hostování modulu runtime .NET Core je pokročilý scénář celá řada vývojářů nebude vyžadovat, že pro ty, kteří potřebují ke spuštění spravovaného kódu z nativní proces nebo který potřebujete větší kontrolu nad chování modulu runtime .NET Core, může být velmi užitečné. Protože je možné spouštět vedle sebe .NET Core se sebou samým, je dokonce možné vytvořit hostitele, kteří inicializaci a spuštění více verzí modulu runtime .NET Core a spouštění aplikací na všechny z nich ve stejném procesu.
+Hostování modulu runtime .NET Core je pokročilý scénář celá řada vývojářů nebude vyžadovat, že pro ty, kteří potřebují ke spuštění spravovaného kódu z nativní proces nebo který potřebujete větší kontrolu nad chování modulu runtime .NET Core, může být velmi užitečné.

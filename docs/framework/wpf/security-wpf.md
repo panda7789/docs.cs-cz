@@ -13,12 +13,12 @@ helpviewer_keywords:
 - XBAP security [WPF]
 - Internet Explorer security settings [WPF]
 ms.assetid: ee1baea0-3611-4e36-9ad6-fcd5205376fb
-ms.openlocfilehash: be9f1916722b493490541046906a38b9fac63a4e
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 84f7e0f1174a048d650741075344de3158c2994e
+ms.sourcegitcommit: 15ab532fd5e1f8073a4b678922d93b68b521bfa0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57371980"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58654312"
 ---
 # <a name="security-wpf"></a>Zabezpečení (WPF)
 <a name="introduction"></a> Při vývoji, nasazení samostatné služby Windows Presentation Foundation (WPF) a aplikace hostované v prohlížeči, je nutné zvážit modelu zabezpečení. [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] samostatné aplikace jsou spouštěny s neomezenými oprávněními ( [!INCLUDE[TLA2#tla_cas](../../../includes/tla2sharptla-cas-md.md)] **FullTrust** sada oprávnění), ať už nasazeným v rámci Windows Installer (MSI), příkazu XCopy, nebo [!INCLUDE[TLA2#tla_clickonce](../../../includes/tla2sharptla-clickonce-md.md)]. Nasazení částečným vztahem důvěryhodnosti, samostatné aplikace WPF s ClickOnce se nepodporuje. Však vytvořit hostitele úplného vztahu důvěryhodnosti aplikace s částečnou důvěryhodností <xref:System.AppDomain> pomocí modelu doplňku rozhraní .NET Framework. Další informace najdete v tématu [přehled doplňků WPF](./app-development/wpf-add-ins-overview.md).  
@@ -49,7 +49,7 @@ ms.locfileid: "57371980"
   
  *Navigační aplikace* je navigace mezi položkami obsahu v rámci aplikace, která je hostovaná v prohlížeči. *Navigace v prohlížeči* se navigační prvek se změní obsah a umístění URL samotného prohlížeče. Vztah mezi navigační aplikace (obvykle XAML) a navigace v prohlížeči (obvykle ve formátu HTML) je znázorněn na následujícím obrázku:
   
- ![Diagram navigačního](./media/safetoplevelnavigationfigure.png "SafeTopLevelNavigationFigure")  
+ ![Vztah mezi navigační aplikace a navigace v prohlížeči.](./media/security-wpf/application-browser-navigation-relationship.png)  
   
  Typ obsahu, který je bezpečný pro [!INCLUDE[TLA2#tla_xbap](../../../includes/tla2sharptla-xbap-md.md)] přejděte k položce je primárně určeno, jestli se používá navigaci v rámci aplikace nebo navigace v prohlížeči.  
   
@@ -115,7 +115,7 @@ ms.locfileid: "57371980"
   
      **Nastavení zabezpečení** dialogové okno se zobrazí a můžete nakonfigurovat nastavení zabezpečení pro vybrané zóny.  
   
-     ![Dialogové okno nastavení zabezpečení](./media/wpfsecurityfigure1.PNG "WPFSecurityFigure1")  
+     ![Snímek obrazovky ukazující dialogové okno nastavení zabezpečení.](./media/security-wpf/windows-presentation-foundation-security-settings.png)  
   
 > [!NOTE]
 >  Do dialogového okna Možnosti Internetu můžete získat také z aplikace Internet Explorer. Klikněte na tlačítko **nástroje** a potom klikněte na tlačítko **Možnosti Internetu**.  

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - hosting Windows Forms control in WPF [WPF]
 - composite controls [WPF], hosting in WPF
 ms.assetid: 96fcd78d-1c77-4206-8928-3a0579476ef4
-ms.openlocfilehash: 4263b81b0917b544f37c55299b1e394e5fbaa6ac
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 50d85b74b523c8985bd0d3d407097a4f42cfeb60
+ms.sourcegitcommit: 15ab532fd5e1f8073a4b678922d93b68b521bfa0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57359715"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58654221"
 ---
 # <a name="walkthrough-hosting-a-windows-forms-composite-control-in-wpf"></a>Návod: Hostování složeného ovládacího Windows Forms v subsystému WPF
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje bohaté prostředí pro vytváření aplikací. Pokud však máte značné investice [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] kódu, může být efektivnější opakovaně používat alespoň některé tohoto kódu v vaše [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace namísto jeho přepsání úplně od začátku. Nejběžnější scénář je, pokud máte existující ovládací prvky Windows Forms. V některých případech nemusí mít i přístup ke zdrojovému kódu pro tyto ovládací prvky. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje jednoduchý postup pro hostování těchto ovládacích prvků v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace. Například můžete použít [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] u většiny vašich programování při hostování vaší specializované <xref:System.Windows.Forms.DataGridView> ovládacích prvků.  
@@ -36,9 +36,10 @@ Visual Studio k dokončení tohoto návodu potřebujete.
   
 ## <a name="implementing-the-windows-forms-composite-control"></a>Implementace složeného ovládacího prvku Windows Forms  
  Složeného ovládacího prvku Windows Forms použitý v tomto příkladu je jednoduché zadávání dat formuláře. Tento formulář přebírá uživatelské jméno a adresa a pak se vraťte tyto informace do hostitele používá vlastní událost. Následující obrázek ukazuje ovládací prvek vykreslené.  
-  
- ![Ovládací prvek jednoduché Windows Forms](./media/wfcontrol.gif "WFControl")  
-Složeného ovládacího prvku Windows Forms  
+
+ Následující obrázek ukazuje složeného ovládacího prvku formuláře Windows:  
+
+ ![Snímek obrazovky, který ukazuje jednoduchý ovládací prvek Windows Forms.](./media/walkthrough-hosting-a-windows-forms-composite-control-in-wpf/windows-forms-control.gif)  
   
 ### <a name="creating-the-project"></a>Vytvoření projektu  
  Ke spuštění projektu:  
@@ -128,7 +129,9 @@ Složeného ovládacího prvku Windows Forms
 ## <a name="implementing-the-wpf-host-application"></a>Implementace hostitele aplikace WPF
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Hostovat aplikace používá <xref:System.Windows.Forms.Integration.WindowsFormsHost> ovládacího prvku na hostitele `MyControl1`. Aplikace zpracovává `OnButtonClick` události přijímat data z ovládacího prvku. Má také kolekce, která vám umožní změnit některé vlastnosti ovládacího prvku z přepínačů [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace. Následující obrázek ukazuje dokončenou aplikaci.
 
- ![Ovládací prvek vložený na stránce WPF](./media/avalonhost.gif "AvalonHost") hotové aplikace zobrazuje ovládací prvek vložený do aplikace WPF
+Následující obrázek ukazuje hotové aplikace včetně ovládací prvek vložený do aplikace WPF:
+
+ ![Snímek obrazovky zobrazující ovládací prvek vložený na stránce WPF.](./media/walkthrough-hosting-a-windows-forms-composite-control-in-wpf/windows-presentation-foundation-page-control.gif)
 
 ### <a name="creating-the-project"></a>Vytvoření projektu
  Ke spuštění projektu:

@@ -10,20 +10,19 @@ helpviewer_keywords:
 - Do statement [Visual Basic], Do loops
 - conditional statements [Visual Basic], loop structures
 ms.assetid: ecacb09b-a4c9-42be-98b2-a15d368b5db8
-ms.openlocfilehash: b72eef632b4564abc69e6ebef43b940eb0950e9a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c09c0bdee0e8740abb7cc085f0796048a5db150c
+ms.sourcegitcommit: 15ab532fd5e1f8073a4b678922d93b68b521bfa0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54523386"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58654364"
 ---
 # <a name="loop-structures-visual-basic"></a>Struktury smyčky (Visual Basic)
 Struktury smyčky v jazyce Visual Basic umožňují opakovaně spustit jeden nebo více řádků kódu. Příkazy ve smyčce struktura můžete opakovat, dokud je podmínka `True`, dokud je podmínka `False`, zadaný počet opakování, nebo jednou pro každý prvek v kolekci.  
   
- Následující ilustrace znázorňuje strukturu smyčku, která spustí sadu příkazů, dokud se podmínka stane pravdivou.  
+ Struktury smyčky, na kterém běží sada příkazů, dokud se podmínka stane pravdivou naleznete na následujícím obrázku:  
   
- ![Vývojový diagram DNT... Smyčka UNTIL](../../../../visual-basic/programming-guide/language-features/control-flow/media/dountilloop.gif "DoUntilLoop")  
-Spuštění sady příkazů, dokud se podmínka stane pravdivou  
+ ![Vývojový diagram zobrazující DNT... Až do smyčky.](./media/loop-structures/do-until-loop-true-condition.gif)  
   
 ## <a name="while-loops"></a>Smyčky while  
  `While`... `End While` konstrukce spustí sadu příkazů tak dlouho, dokud podmínka podle `While` příkaz je `True`. Další informace najdete v tématu [během... End While – příkaz](../../../../visual-basic/language-reference/statements/while-end-while-statement.md).  

@@ -5,12 +5,12 @@ helpviewer_keywords:
 - LINQ [C#], query syntax vs. method syntax
 - queries [LINQ in C#], syntax comparisons
 ms.assetid: eedd6dd9-fec2-428c-9581-5b8783810ded
-ms.openlocfilehash: 6333094230e09220ab5ccf462e20ae3423d42eb6
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 1d6bd14a88f22bfa961ee28f0014b1f89ccb28b5
+ms.sourcegitcommit: 15ab532fd5e1f8073a4b678922d93b68b521bfa0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56978646"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58654039"
 ---
 # <a name="query-syntax-and-method-syntax-in-linq-c"></a>Syntaxe využívající dotazy a syntaxe využívající metody v jazyce LINQ (C#)
 Většina dotazů v úvodní Language Integrated Query ([!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]) dokumentace jsou zapsány pomocí syntaxe deklarativní dotazů LINQ. Syntaxe dotazu však musí být převedeny do volání metod pro .NET common language runtime (CLR) při kompilaci kódu. Tato metoda volání vyvolat operátory standardního dotazu, které mají názvy, jako `Where`, `Select`, `GroupBy`, `Join`, `Max`, a `Average`. Můžete je volat přímo pomocí syntaxe metody místo syntaxe dotazu.  
@@ -26,7 +26,7 @@ Většina dotazů v úvodní Language Integrated Query ([!INCLUDE[vbteclinq](~/i
   
  Informace o tom dotazů založených na volání metody, Podívejme se na to podrobněji. Na pravé straně výrazu, Všimněte si, že `where` klauzule nyní vyjádřený jako metodu instance na `numbers` má typ objektu, který bude odvolat při `IEnumerable<int>`. Pokud jste se seznámili s Obecné <xref:System.Collections.Generic.IEnumerable%601> rozhraní, víte, že nemá `Where` metody. Nicméně pokud vyvoláte seznamu doplňování technologie IntelliSense v integrovaném vývojovém prostředí sady Visual Studio, zobrazí se pouze `Where` metody, ale mnoho metod, jako `Select`, `SelectMany`, `Join`, a `Orderby`. Jedná se o všech standardních operátorů pro dotazování.  
   
- ![Operátory standardního dotazu v technologii Intellisense](../../../../csharp/programming-guide/concepts/linq/media/standardqueryops.png "StandardQueryOps")  
+ ![Snímek obrazovky zobrazující všechny operátory standardního dotazu v technologii Intellisense.](./media/query-syntax-and-method-syntax-in-linq/standard-query-operators.png)  
   
  Přestože vypadá jako <xref:System.Collections.Generic.IEnumerable%601> podřízených zahrnout tyto další metody, ve skutečnosti nejedná o tento případ. Operátory standardního dotazu jsou implementovány jako nový typ metodu s názvem *rozšiřující metody*. Metody rozšíření "rozšířit" existující typ; může být volána jako kdyby byly metodami instance typu. Rozšíření standardních operátorů pro dotazování <xref:System.Collections.Generic.IEnumerable%601> a, který je proč můžete napsat `numbers.Where(...)`.  
   
