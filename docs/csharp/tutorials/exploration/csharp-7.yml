@@ -8,12 +8,12 @@ metadata:
   ms.date: 03/20/2019
   displayType: two-column
   interactive: csharp
-  ms.openlocfilehash: f488d6c05a8be1b2e6ad73d241533ac23b65b9ce
-  ms.sourcegitcommit: 15ab532fd5e1f8073a4b678922d93b68b521bfa0
-  ms.translationtype: HT
+  ms.openlocfilehash: 70f4e93460c69b54702f160d502163827ec73218
+  ms.sourcegitcommit: 0aca6c5d166d7961a1e354c248495645b97a1dc5
+  ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 03/29/2019
-  ms.locfileid: "58655536"
+  ms.lasthandoff: 03/30/2019
+  ms.locfileid: "58675520"
 items:
 - durationInMinutes: 1
   content: >
@@ -57,11 +57,6 @@ items:
 
 
     Výše uvedené nebude kompilovat, protože `number` není přiřazená ve `else` větve. Je jenom přiřazená `true` větev `if` příkazu.
-
-
-    > [!NOTE]
-
-    > Je [problém](https://github.com/dotnet/try/issues/175) kde můžou získat nesprávná výstup v předchozím příkladu.
 
 
     `is` Vzor výrazu typu je užitečné, když máte malý počet typů pro porovnání výsledků testů. Často je potřeba testovat více typů. Který vyžaduje porovnávání vzorů `switch` příkazu.
@@ -125,7 +120,108 @@ items:
     Další informace o vzoru porovnávání ve článku vyhrazený pro [porovnávání vzorů v C# ](../../pattern-matching.md).
 - title: Optimalizace paměti úložiště pomocí místní referenční hodnoty a vrátí
   durationInMinutes: 2
-  content: "Tato funkce umožňuje algoritmy, které používají a vrátit odkazy na proměnné definované jinde. Jedním z příkladů je velké matice a na jednom místě s určité vlastnosti hledání. Jedna metoda vrátí dvou indexů na jednom místě v matici:\n\n```csharp\npublic class Program\n{\n    private static (int i, int j) Find(int[,] matrix, Func<int, bool> predicate)\n    {\n        for (int i = 0; i < matrix.GetLength(0); i++)\n            for (int j = 0; j < matrix.GetLength(1); j++)\n                if (predicate(matrix[i, j]))\n                    return (i, j);\n        return (-1, -1); // Not found\n    }\n\n    public static void Main()\n    {\n        int[,] sourceMatrix = new int[10, 10];\n        for (int x = 0; x < 10; x++)\n            for (int y = 0; y < 10; y++)\n                sourceMatrix[x, y] = x * 10 + y;\n\n        var indices = Find(sourceMatrix, (val) => val == 42);\n        Console.WriteLine(indices);\n        sourceMatrix[indices.i, indices.j] = 24;        \n    }\n\n}\n```\n\n\nTo `Find` metoda vrátí indexy na položku v matici. Který vede volajícím napsat kód, který používá tyto indexy přistoupit přes ukazatel matice a upravovat jeden element. Měli byste spíše napsat metodu, která vrátí *odkaz* na prvek matrice, který chcete změnit.\n\nProjděme si prostřednictvím řady změn k předvedení funkcí místní ref a ukazují, jak vytvořit metodu, která vrátí odkaz na interní úložiště. Na cestě se dozvíte pravidla vrácených hodnot ref a ref místní funkce, které můžete chránit před omylem zneužití.\n\nZačněte tím, že změna `Find` deklarace metody tak, aby se `ref int` místo řazené kolekce členů.\n\n```csharp\nprivate static ref int Find(int[,] matrix, Func<int, bool> predicate)\n```\n\nUpravte návratový příkaz vrátit položky na správnou indexů:\n\n```csharp\nreturn matrix[i,j];\n```\n\nZměňte poslední vrácení namísto vyvolání výjimky:\n\n```csharp\nthrow new InvalidOperationException(\"Not found\");\n```\n\nVšimněte si, že to nebude kompilovat. Označuje deklarace metody `ref` vrátit, ale návratový příkaz určuje návratovou hodnotu. Je nutné přidat `ref` – klíčové slovo pro každý příkaz return. Který označuje návrat podle odkazu a pomáhá vývojářům čtení kódu později mějte na paměti, že metoda vrací odkazem:\n\n```csharp\nreturn ref matrix[i,j];\n```\n\nTeď, když metoda vrátí odkaz na celočíselnou hodnotu v matici, budete muset upravit, kde je volán. `var` Prohlášení znamená, že `valItem` je teď `int` místo řazené kolekce členů. Volající kód v změnit `Main` metoda pro následující:\n\n```csharp\nvar valItem = Find(matrix, (val) => val == 42);\nConsole.WriteLine(valItem);\nvalItem = 24;\nConsole.WriteLine(matrix[4, 2]);\n```\n\nDruhá `WriteLine` příkaz v předchozím příkladu vytiskne hodnotu `42`, nikoli `24`. Proměnná `valItem` je `int`, nikoli `ref int`. `var` – Klíčové slovo umožňuje kompilátoru k určení typu, ale nepřidá implicitně `ref` modifikátor. Místo toho hodnota odkazuje `ref return` je *zkopírovat* do proměnné na levé straně přiřazení. Proměnná není `ref` místní.\n\nPokud chcete upravit vráceného odkazu, je potřeba přidat `ref` modifikátoru deklarace lokální proměnné a před volání `Find` při vrácená hodnota je odkaz vytvořit odkaz proměnnou. Upravit `Main` metoda v prohlížeči tak, aby odpovídala následující:\n\n```csharp\npublic static void Main()\n{\n    int[,] sourceMatrix = new int[10, 10];\n    for (int x = 0; x < 10; x++)\n        for (int y = 0; y < 10; y++)\n            sourceMatrix[x, y] = x * 10 + y;\n\n    ref var item = ref Find(sourceMatrix, (val) => val == 42);\n    Console.WriteLine(item);\n    item = 24;\n    Console.WriteLine(sourceMatrix[4, 2]);\n}\n```\n\nNyní, druhý `WriteLine` příkaz v předchozím příkladu vytiskne hodnotu `24`, označující, že byla změněna úložiště v matici. Lokální proměnná jsou deklarované v rámci `ref` modifikátor který bude trvat `ref` vrátit. Je nutné inicializovat `ref` proměnné při deklaraci; nelze rozdělit deklaraci a inicializaci.\n\nJazyk C# má tři další pravidla, které chrání vás před zneužitím `ref` místní hodnoty a vrátí:\n\n* Nelze přiřadit standardní metoda návratovou hodnotu pro `ref` místní proměnné.\n* Nelze vrátit `ref` do proměnné, jehož doba života nerozšiřuje nad rámec provádění metody.\n* `ref` místní hodnoty a vrátí nelze použít u asynchronních metod.\n\nPřidání místní referenční hodnoty a ref vrátí povolit algoritmy, které jsou efektivnější se vyhnout kopírování hodnot nebo provádění operací přesměrování více než jednou.\n\nDalší informace najdete v tématu [ref – klíčové slovo](../../language-reference/keywords/ref.md) článku.\n"
+  content: >
+    Tato funkce umožňuje algoritmy, které používají a vrátit odkazy na proměnné definované jinde. Jedním z příkladů je velké matice a na jednom místě s určité vlastnosti hledání. Jedna metoda vrátí dvou indexů na jednom místě v matici:
+
+
+    [!code-csharp[EverythingByValue](~/samples/snippets/csharp/new-in-7/MatrixSearch.cs#EverythingByValue "return indices by value")]
+
+
+    Otestováním této metody pomocí následujícího kódu:
+
+
+    [!code-csharp[TestByValue](~/samples/snippets/csharp/new-in-7/MatrixSearch.cs#TestByValue "test code for return indices by value")]
+
+
+
+    To `Find` metoda vrátí indexy na položku v matici. Který vede volajícím napsat kód, který používá tyto indexy přistoupit přes ukazatel matice a upravovat jeden element. Měli byste spíše napsat metodu, která vrátí *odkaz* na prvek matrice, který chcete změnit.
+
+
+    Projděme si prostřednictvím řady změn k předvedení funkcí místní ref a ukazují, jak vytvořit metodu, která vrátí odkaz na interní úložiště. Na cestě se dozvíte pravidla vrácených hodnot ref a ref místní funkce, které můžete chránit před omylem zneužití.
+
+
+    Začněte tím, že změna `Find` deklarace metody tak, aby se `ref int` místo řazené kolekce členů.
+
+
+    ```csharp
+
+    ref int Find(int[,] matrix, Func<int, bool> predicate)
+
+    ```
+
+
+    Upravte návratový příkaz vrátit položky na správnou indexů:
+
+
+    ```csharp
+
+    return matrix[i,j];
+
+    ```
+
+
+    Změňte poslední vrácení namísto vyvolání výjimky:
+
+
+    ```csharp
+
+    throw new InvalidOperationException("Not found");
+
+    ```
+
+
+    Všimněte si, že to nebude kompilovat. Označuje deklarace metody `ref` vrátit, ale návratový příkaz určuje návratovou hodnotu. Je nutné přidat `ref` – klíčové slovo pro každý příkaz return. Který označuje návrat podle odkazu a pomáhá vývojářům čtení kódu později mějte na paměti, že metoda vrací odkazem:
+
+
+    ```csharp
+
+    return ref matrix[i,j];
+
+    ```
+
+
+    Teď, když metoda vrátí odkaz na celočíselnou hodnotu v matici, budete muset upravit, kde je volán. `var` Prohlášení znamená, že `valItem` je teď `int` místo řazené kolekce členů. Volající kód změňte takto:
+
+
+    ```csharp
+
+    var valItem = Find(matrix, (val) => val == 42);
+
+    Console.WriteLine(valItem);
+
+    valItem = 24;
+
+    Console.WriteLine(matrix[4, 2]);
+
+    ```
+
+
+    Druhá `WriteLine` příkaz v předchozím příkladu vytiskne hodnotu `42`, nikoli `24`. Proměnná `valItem` je `int`, nikoli `ref int`. `var` – Klíčové slovo umožňuje kompilátoru k určení typu, ale nepřidá implicitně `ref` modifikátor. Místo toho hodnota odkazuje `ref return` je *zkopírovat* do proměnné na levé straně přiřazení. Proměnná není `ref` místní.
+
+
+    Pokud chcete upravit vráceného odkazu, je potřeba přidat `ref` modifikátoru deklarace lokální proměnné a před volání `Find` při vrácená hodnota je odkaz vytvořit odkaz proměnnou. Upravte testovací kód v prohlížeči tak, aby odpovídala následující:
+
+
+    [!code-csharp[EverythingByValue](~/samples/snippets/csharp/new-in-7/MatrixSearch.cs#TestByValue "test code for return object by reference")]
+
+
+    Nyní, druhý `WriteLine` příkaz v předchozím příkladu vytiskne hodnotu `24`, označující, že byla změněna úložiště v matici. Lokální proměnná jsou deklarované v rámci `ref` modifikátor který bude trvat `ref` vrátit. Je nutné inicializovat `ref` proměnné při deklaraci; nelze rozdělit deklaraci a inicializaci.
+
+
+    Jazyk C# má tři další pravidla, které chrání vás před zneužitím `ref` místní hodnoty a vrátí:
+
+
+    * Nelze přiřadit standardní metoda návratovou hodnotu pro `ref` místní proměnné.
+
+    * Nelze vrátit `ref` do proměnné, jehož doba života nerozšiřuje nad rámec provádění metody.
+
+    * `ref` místní hodnoty a vrátí nelze použít u asynchronních metod.
+
+
+    Přidání místní referenční hodnoty a ref vrátí povolit algoritmy, které jsou efektivnější se vyhnout kopírování hodnot nebo provádění operací přesměrování více než jednou.
+
+
+    Další informace najdete v tématu [ref – klíčové slovo](../../language-reference/keywords/ref.md) článku.
 - title: Minimalizovat přístup ke kódu s lokální funkce
   durationInMinutes: 2
   content: "Nyní můžete deklarovat lokální funkce, které jsou vnořené uvnitř jiné funkce. To umožňuje minimalizovat, zda se tyto funkce. Existují tři případy použití zřejmé pro lokální funkce:\n\n- Rekurzivní funkce.\n- Metody iterátorů.\n- Asynchronní metody.\n\nZačněme rekurzivní metody. Následující kód v prohlížeči k výpočtu `6!` (faktoriál):\n\n```csharp\nint LocalFunctionFactorial(int n)\n{\n    return nthFactorial(n);\n\n    int nthFactorial(int number) => (number < 2) ? \n        1 : number * nthFactorial(number - 1);\n}\n\nConsole.WriteLine(LocalFunctionFactorial(6));\n```\n\nLokální funkce jsou skvělý způsob, jak implementovat rekurzivní algoritmy. Další běžné způsoby použití jsou určené pro veřejné iterátory a veřejné asynchronní metody. Oba typy metod generování kódu, který bude hlásit chyby později, než se dalo očekávat programátory. V případě metody iterátoru, všechny výjimky, jsou dodržovány pouze při volání metody kód, který uvádí, že vrácená sekvence. V případě asynchronní metody, všechny výjimky jsou pouze dodržovat při vráceného `Task` je očekáváno.\n\nMetody iterátorů se snadněji data prozkoumat v prohlížeči, takže použijeme v tomto průzkumu. Vyzkoušejte následující kód, který volá metodu iterátoru v prohlížeči:\n\n[!code-csharp[IteratorMethod](~/samples/snippets/csharp/new-in-7/Iterator.cs#SnippetIteratorMethod \"Iterator method\")]\n\nSpusťte kód. Všimněte si, že je vyvolána výjimka, když kód začne iterace druhou sadu výsledků. Kód, který iteruje první sada výsledků byla již spuštěna. Tato ukázka je malý a nezmění žádné datové struktury, dso neškodné a snadno to vyřešíme. Ale v rozsáhlejšího programu, ve kterém dvěma iterátoru objekty mohou být vytvořeny v metodách různé podřízené kořenové příčinou může být obtížné najít. Pokud první metodu iterátoru změnit stav dat, může i poškození dat. příčinou. Chcete, že byla výjimka okamžitě, předtím, než se provádí veškerou práci. Možné Refaktorovat kód, tak, aby veřejné metody ověří všechny argumenty a lokální funkce, která provádí výčtu:\n\n[!code-csharp[IteratorMethodRefactored](~/samples/snippets/csharp/new-in-7/Iterator.cs#IteratorMethodLocalInteractive \"Iterator method refactored\")]\n\nPředchozí verze je zřejmé, na který odkazuje místní metodu pouze v kontextu vnější metody. Pravidla pro lokální funkce také zajistěte, aby vývojář nesmí omylem z jiného umístění ve třídě zavolejte funkci Místní a obejít ověřování argumentu.\n\nStejným způsobem mohou být použity s `async` metody k zajištění, že výjimky vyplývající z ověřování argumentu jsou vyvolány před zahájením asynchronní práce.\n\n> [!NOTE]\n> Některé návrhy, které jsou podporovány lokální funkce také je možné dosáhnout použitím *výrazy lambda*. Tyto zúčastněné můžete [Další informace o rozdílech](../../local-functions-vs-lambdas.md).\n"
