@@ -29,12 +29,12 @@ helpviewer_keywords:
 ms.assetid: 864c2344-71dc-46f9-96b2-ed59fb6427a8
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: dd0fef0e8a2c4b94cd5dd7beb140e669c52a07a8
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 598722c44d8d20adab9ce7d624edb820f67c0fa4
+ms.sourcegitcommit: 15ab532fd5e1f8073a4b678922d93b68b521bfa0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43862313"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58654091"
 ---
 # <a name="profiling-overview"></a>Přehled profilace
 <a name="top"></a> Profiler je nástroj, který sleduje spuštění jiné aplikace. Common language runtime (CLR) profiler je dynamická knihovna (DLL), který obsahuje funkce, které přijímají zprávy z a odesílání zpráv do CLR pomocí Profilování rozhraní API. Knihovna DLL profileru je načtena modulem CLR za běhu.  
@@ -78,8 +78,7 @@ ms.locfileid: "43862313"
   
  Následující obrázek znázorňuje interakci profileru DLL s aplikací, která je právě profilována a CLR.  
   
- ![Architektura profilování](../../../../docs/framework/unmanaged-api/profiling/media/profilingarch.png "ProfilingArch")  
-Architektura profilování  
+ ![Snímek obrazovky zobrazující profilování architektury.](./media/profiling-overview/profiling-architecture.png)  
   
 ### <a name="the-notification-interfaces"></a>Rozhraní oznámení  
  [ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) a [ICorProfilerCallback2](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-interface.md) lze považovat za rozhraní upozornění. Tato rozhraní se skládají z metod, jako [ClassLoadStarted](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-classloadstarted-method.md), [ClassLoadFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-classloadfinished-method.md), a [JITCompilationStarted](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-jitcompilationstarted-method.md). Pokaždé, když modul CLR načte nebo zruší načtení třídy, zkompiluje funkci, a tak dále, zavolá odpovídající metodu v profileru `ICorProfilerCallback` nebo `ICorProfilerCallback2` rozhraní.  

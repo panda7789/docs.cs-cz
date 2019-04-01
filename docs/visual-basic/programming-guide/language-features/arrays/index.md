@@ -56,7 +56,7 @@ Je vidět na následujícím obrázku `students` pole. Pro každý prvek pole:
 
 - Hodnota, která je obsažena v elementu představuje počet studentů v této platové třídě.
 
-![Obrázek znázorňující počet studentů pole](../../language-features/arrays/media/arrayexampleschool.gif "ArrayExampleSchool") elementy pole "studenti"
+![Diagram znázorňující, bude pole čísel studentů](./media/index/students-array-elements.gif)
 
 Následující příklad obsahuje kód jazyka Visual Basic, které vytváří a používá pole:
 
