@@ -1,5 +1,5 @@
 ---
-title: Metoda "<methodname>" nelze volat pomocí <number> argumenty
+title: Metoda '<methodname>' nelze volat pomocí <number> argumenty
 ms.date: 07/20/2015
 f1_keywords:
 - vbrNoMethodTakingXArguments2
@@ -11,7 +11,7 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/15/2019
 ms.locfileid: "58025112"
 ---
-# <a name="method-methodname-cannot-be-called-with-number-arguments"></a>Metoda "\<methodname >" nelze volat pomocí \<číslo > argumenty
+# <a name="method-methodname-cannot-be-called-with-number-arguments"></a>Metoda '\<methodname >' nelze volat pomocí \<číslo > argumenty
 Volání metody obsahuje nesprávný počet argumentů.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  

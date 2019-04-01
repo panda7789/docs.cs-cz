@@ -1,5 +1,5 @@
 ---
-title: Nejde převést argument '<argumentname>"typu"<type1>' na typ'<type2>.
+title: Nejde převést argument '<argumentname>'typu'<type1>' na typ'<type2>.
 ms.date: 07/20/2015
 f1_keywords:
 - vbrForLoop_ConvertToType3
@@ -11,7 +11,7 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/15/2019
 ms.locfileid: "58049982"
 ---
-# <a name="cannot-convert-argument-argumentname-of-type-type1-to-type-type2"></a>Nejde převést argument '\<název argumentu argumentname > "typu"\<type1 >' na typ '\<type2 > "
+# <a name="cannot-convert-argument-argumentname-of-type-type1-to-type-type2"></a>Nejde převést argument '\<název argumentu argumentname > 'typu'\<type1 >' na typ '\<type2 > '
 Operaci převodu se pokusí převést argument na nekompatibilní typ.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  

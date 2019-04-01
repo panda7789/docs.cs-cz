@@ -1,5 +1,5 @@
 ---
-title: Žádná dostupná přetížení "<methodname>" nelze volat s těmito argumenty bez zužujícího převodu
+title: Žádná dostupná přetížení '<methodname>' nelze volat s těmito argumenty bez zužujícího převodu
 ms.date: 07/20/2015
 f1_keywords:
 - vbrAmbiguousMatch_NarrowingConversion1
@@ -11,7 +11,7 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/15/2019
 ms.locfileid: "58029290"
 ---
-# <a name="no-accessible-overloaded-methodname-can-be-called-with-these-arguments-without-a-narrowing-conversion"></a>Žádná dostupná přetížení "\<methodname >" nelze volat s těmito argumenty bez zužujícího převodu
+# <a name="no-accessible-overloaded-methodname-can-be-called-with-these-arguments-without-a-narrowing-conversion"></a>Žádná dostupná přetížení '\<methodname >' nelze volat s těmito argumenty bez zužujícího převodu
 Byla volána přetížená metoda, ale žádná metoda byla shoda se seznamem zadané argumenty bez zužujícího převodu.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  

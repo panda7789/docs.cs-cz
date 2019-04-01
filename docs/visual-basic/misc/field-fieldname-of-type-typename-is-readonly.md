@@ -1,5 +1,5 @@
 ---
-title: Pole '<fieldname>"typu"<typename>"je"jen pro čtení.
+title: Pole '<fieldname>'typu'<typename>'je'jen pro čtení.
 ms.date: 07/20/2015
 f1_keywords:
 - vbrMissingMember_ReadOnlyField2
@@ -11,7 +11,7 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/15/2019
 ms.locfileid: "58043719"
 ---
-# <a name="field-fieldname-of-type-typename-is-readonly"></a>Pole '\<fieldname > "typu"\<typename >' je "jen pro čtení.
+# <a name="field-fieldname-of-type-typename-is-readonly"></a>Pole '\<fieldname > 'typu'\<typename >' je 'jen pro čtení.
 Pokus o zápis do pole, která je deklarována `ReadOnly`.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  

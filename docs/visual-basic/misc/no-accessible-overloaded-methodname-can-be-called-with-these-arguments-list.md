@@ -1,5 +1,5 @@
 ---
-title: "Žádná dostupná přetížení \"<methodname>' lze volat s těmito argumenty: <list>"
+title: "Žádná dostupná přetížení '<methodname>' lze volat s těmito argumenty: <list>"
 ms.date: 07/20/2015
 f1_keywords:
 - vbrAmbiguousCall_ExactMatch2
@@ -11,7 +11,7 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/15/2019
 ms.locfileid: "58051467"
 ---
-# <a name="no-accessible-overloaded-methodname-can-be-called-with-these-arguments-list"></a>Žádná dostupná přetížení "\<methodname >" lze volat s těmito argumenty: \<seznamu >
+# <a name="no-accessible-overloaded-methodname-can-be-called-with-these-arguments-list"></a>Žádná dostupná přetížení '\<methodname >' lze volat s těmito argumenty: \<seznamu >
 Je volána přetížená metoda, ale žádná metoda by se shodovala se seznamem zadaných argumentů.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  

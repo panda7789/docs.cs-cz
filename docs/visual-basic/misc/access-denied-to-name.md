@@ -9,7 +9,7 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/15/2019
 ms.locfileid: "58044659"
 ---
-# <a name="access-denied-to-name"></a>Přístup odepřen "\<název >"
+# <a name="access-denied-to-name"></a>Přístup odepřen '\<název >'
 Zařízení, soubor nebo disk není dostupný, protože jsou nedostatečná oprávnění zabezpečení vašeho počítače.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  

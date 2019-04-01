@@ -11,7 +11,7 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/15/2019
 ms.locfileid: "58022444"
 ---
-# <a name="no-default-member-found-for-type-typename"></a>Pro typ se nenašly žádné výchozí člen "\<typename >"
+# <a name="no-default-member-found-for-type-typename"></a>Pro typ se nenašly žádné výchozí člen '\<typename >'
 Index s pozdní vazbou `Get` nebo `Set` pokusil volání.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  

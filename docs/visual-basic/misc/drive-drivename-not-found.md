@@ -1,5 +1,5 @@
 ---
-title: Jednotka "<drivename>' nebyl nalezen
+title: Jednotka '<drivename>' nebyl nalezen
 ms.date: 07/20/2015
 f1_keywords:
 - vbrFileSystem_DriveNotFound1
@@ -11,7 +11,7 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/15/2019
 ms.locfileid: "58034417"
 ---
-# <a name="drive-drivename-not-found"></a>Jednotka "\<drivename >' nebyl nalezen
+# <a name="drive-drivename-not-found"></a>Jednotka '\<drivename >' nebyl nalezen
 Na jednotce se nenašel. Bylo ztraceno připojení k síti, nebo jednotku, kterou se pokoušíte získat přístup v režimu offline nebo neexistuje.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  

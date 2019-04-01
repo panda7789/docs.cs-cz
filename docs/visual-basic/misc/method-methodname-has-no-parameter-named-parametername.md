@@ -1,5 +1,5 @@
 ---
-title: Metoda "<methodname>"nemá žádný parametr s názvem"<parametername>.
+title: Metoda '<methodname>'nemá žádný parametr s názvem'<parametername>.
 ms.date: 07/20/2015
 f1_keywords:
 - vbrArgument_InvalidNamedArg2
@@ -11,7 +11,7 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/15/2019
 ms.locfileid: "58043770"
 ---
-# <a name="method-methodname-has-no-parameter-named-parametername"></a>Metoda "\<methodname >" nemá žádný parametr s názvem "\<parametername >"
+# <a name="method-methodname-has-no-parameter-named-parametername"></a>Metoda '\<methodname >' nemá žádný parametr s názvem '\<parametername >'
 Zadaný argument s názvem neodpovídá žádnému z argumentů cílové metody.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  

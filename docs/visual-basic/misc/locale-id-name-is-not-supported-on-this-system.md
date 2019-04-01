@@ -1,5 +1,5 @@
 ---
-title: ID národního prostředí "<name>" není v tomto systému podporován.
+title: ID národního prostředí '<name>' není v tomto systému podporován.
 ms.date: 07/20/2015
 f1_keywords:
 - vbrArgument_LCIDNotSupported1
@@ -11,7 +11,7 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/15/2019
 ms.locfileid: "58039002"
 ---
-# <a name="locale-id-name-is-not-supported-on-this-system"></a>ID národního prostředí "\<název >' není v tomto systému podporován.
+# <a name="locale-id-name-is-not-supported-on-this-system"></a>ID národního prostředí '\<název >' není v tomto systému podporován.
 Pokoušíte se použít `VbStrConv`, ale váš systém nepodporuje zadané národní prostředí.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  

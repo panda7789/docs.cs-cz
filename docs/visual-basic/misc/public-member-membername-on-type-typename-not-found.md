@@ -1,5 +1,5 @@
 ---
-title: Veřejný člen "<membername>'na typ"<typename>' nebyl nalezen
+title: Veřejný člen '<membername>'na typ'<typename>' nebyl nalezen
 ms.date: 07/20/2015
 f1_keywords:
 - vbrMissingMember_MemberNotFoundOnType2
@@ -11,7 +11,7 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/15/2019
 ms.locfileid: "58050581"
 ---
-# <a name="public-member-membername-on-type-typename-not-found"></a>Veřejný člen "\<membername >' v typu"\<typename >' nebyl nalezen
+# <a name="public-member-membername-on-type-typename-not-found"></a>Veřejný člen '\<membername >' v typu'\<typename >' nebyl nalezen
 Nelze nalézt členu, který se pokoušíte získat přístup. Této chybě může dojít, když přistupoval k neveřejným členům objektů s pozdní vazbou.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  

@@ -1,5 +1,5 @@
 ---
-title: 'Žádná dostupná přetížení "<methodname>" nelze volat s těmito argumenty bez zužujícího převodu: <list>'
+title: "Žádná dostupná přetížení '<methodname>' nelze volat s těmito argumenty bez zužujícího převodu: <list>"
 ms.date: 07/20/2015
 f1_keywords:
 - vbrAmbiguousCall2
@@ -11,7 +11,7 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/15/2019
 ms.locfileid: "58022259"
 ---
-# <a name="no-accessible-overloaded-methodname-can-be-called-with-these-arguments-without-a-narrowing-conversion-list"></a>Žádná dostupná přetížení "\<methodname >" nelze volat s těmito argumenty bez zužujícího převodu: \<seznamu >
+# <a name="no-accessible-overloaded-methodname-can-be-called-with-these-arguments-without-a-narrowing-conversion-list"></a>Žádná dostupná přetížení '\<methodname >' nelze volat s těmito argumenty bez zužujícího převodu: \<seznamu >
 Byla volána přetížená metoda, ale metoda nejde spárovat se seznamem zadané argumenty bez zužujícího převodu.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  

@@ -1,5 +1,5 @@
 ---
-title: 'Žádná dostupná přetížení "<methodname>" nelze volat s těmito argumenty bez rozšiřujícího převodu: <list>'
+title: "Žádná dostupná přetížení '<methodname>' nelze volat s těmito argumenty bez rozšiřujícího převodu: <list>"
 ms.date: 07/20/2015
 f1_keywords:
 - vbrAmbiguousCall_WideningConversion2
@@ -11,7 +11,7 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/15/2019
 ms.locfileid: "58027418"
 ---
-# <a name="no-accessible-overloaded-methodname-can-be-called-with-these-arguments-without-a-widening-conversion-list"></a>Žádná dostupná přetížení "\<methodname >" nelze volat s těmito argumenty bez rozšiřujícího převodu: \<seznamu >
+# <a name="no-accessible-overloaded-methodname-can-be-called-with-these-arguments-without-a-widening-conversion-list"></a>Žádná dostupná přetížení '\<methodname >' nelze volat s těmito argumenty bez rozšiřujícího převodu: \<seznamu >
 Byla volána přetížená metoda, ale žádná metoda může být spojeno s seznam zadané argumenty bez rozšiřujícího převodu.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  

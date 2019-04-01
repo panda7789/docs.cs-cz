@@ -1,5 +1,5 @@
 ---
-title: Soubor vstupně-výstupní operace se strukturou s polem '<fieldname>"typu"<typename>' je neplatný
+title: Soubor vstupně-výstupní operace se strukturou s polem '<fieldname>'typu'<typename>' je neplatný
 ms.date: 07/20/2015
 f1_keywords:
 - vbrArgument_UnsupportedFieldType2

@@ -1,5 +1,5 @@
 ---
-title: Klíč registru "<keyname>' nebyl nalezen
+title: Klíč registru '<keyname>' nebyl nalezen
 ms.date: 07/20/2015
 ms.assetid: ca4eb74f-8303-48fc-9ea8-d792fa4c810b
 ms.openlocfilehash: 291501bb464418bb8cef9fb55b28f0afd97e20ed
