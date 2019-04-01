@@ -83,17 +83,37 @@ items:
       href: datamemberfieldeditor-class.md
     - name: DataMemberListEditor – třída
       href: datamemberlisteditor-class.md
-  - name: stdole – obor názvů
+  - name: adodb – názvový prostor
     items:
+    - name: Připojení rozhraní
+      href: adodb.connection.md
+    - name: EventReason – výčet
+      href: adodb.eventreasonenum.md
+    - name: EventStatus – výčet
+      href: adodb.eventstatusenum.md
+  - name: stdole – názvový prostor
+    items:
+    - name: DISPPARAMS – struktura
+      href: stdole.dispparams.md
+    - name: EXCEPINFO – struktura
+      href: stdole.excepinfo.md
     - name: IFont.Name – vlastnost
       href: stdole.ifont.name.md
+    - name: IFontDisp – rozhraní
+      href: stdole.ifontdisp.md
     - name: IPicture.Handle – vlastnost
       href: stdole.ipicture.handle.md
+    - name: IPictureDisp – rozhraní
+      href: stdole.ipicturedisp.md
     - name: IPictureDisp.Handle – vlastnost
       href: stdole.ipicturedisp.handle.md
-ms.openlocfilehash: fc163ef7a254443ce25676eafd75f34b36e8f336
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+    - name: StdFont – rozhraní
+      href: stdole.stdfont.md
+    - name: StdPicture – rozhraní
+      href: stdole.stdpicture.md
+ms.openlocfilehash: b585db5164cd29fdb7f7e203ef56d6f39b1d0960
+ms.sourcegitcommit: d938c39afb9216db377d0f0ecdaa53936a851059
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58471592"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58634047"
