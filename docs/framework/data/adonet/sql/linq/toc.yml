@@ -1,0 +1,344 @@
+items:
+- name: Technologie LINQ to SQL
+  href: index.md
+  items:
+  - name: Začínáme
+    href: getting-started.md
+    items:
+    - name: Možnosti použití LINQ to SQL
+      href: what-you-can-do-with-linq-to-sql.md
+    - name: Typické postupy použití LINQ to SQL
+      href: typical-steps-for-using-linq-to-sql.md
+    - name: Stažení ukázkových databází a nástrojů
+      href: downloading-sample-databases.md
+    - name: Učení podle návodů
+      href: learning-by-walkthroughs.md
+      items:
+      - name: 'Návod: Jednoduchý objektový model a dotaz (Visual Basic)'
+        href: walkthrough-simple-object-model-and-query-visual-basic.md
+      - name: 'Návod: Dotazování napříč relacemi (Visual Basic)'
+        href: walkthrough-querying-across-relationships-visual-basic.md
+      - name: 'Návod: Manipulace s daty (Visual Basic)'
+        href: walkthrough-manipulating-data-visual-basic.md
+      - name: 'Návod: Použití jen uložených procedur (Visual Basic)'
+        href: walkthrough-using-only-stored-procedures-visual-basic.md
+      - name: 'Návod: Jednoduchý objektový model a dotaz (C#)'
+        href: walkthrough-simple-object-model-and-query-csharp.md
+      - name: 'Návod: Dotazování napříč relacemi (C#)'
+        href: walkthrough-querying-across-relationships-csharp.md
+      - name: 'Návod: Manipulace s daty (C#)'
+        href: walkthrough-manipulating-data-csharp.md
+      - name: 'Návod: Použití jen uložených procedur (C#)'
+        href: walkthrough-using-only-stored-procedures-csharp.md
+  - name: Průvodce programováním
+    href: programming-guide.md
+    items:
+    - name: Vytvoření objektového modelu
+      href: creating-the-object-model.md
+      items:
+      - name: 'Postupy: Generování objektového modelu v jazyce Visual Basic nebo C#'
+        href: how-to-generate-the-object-model-in-visual-basic-or-csharp.md
+      - name: 'Postupy: Generování objektového modelu jako externího souboru'
+        href: how-to-generate-the-object-model-as-an-external-file.md
+      - name: 'Postupy: Generování přizpůsobeného kódu úpravou souboru DBML'
+        href: how-to-generate-customized-code-by-modifying-a-dbml-file.md
+      - name: 'Postupy: Ověření DBML a externí soubory mapování'
+        href: how-to-validate-dbml-and-external-mapping-files.md
+      - name: 'Postupy: Nastavení entit jako serializovatelných'
+        href: how-to-make-entities-serializable.md
+      - name: 'Postupy: Přizpůsobení tříd entit pomocí editoru kódu'
+        href: how-to-customize-entity-classes-by-using-the-code-editor.md
+        items:
+        - name: 'Postupy: Zadání názvů databází'
+          href: how-to-specify-database-names.md
+        - name: 'Postupy: Znázornění tabulek jako tříd'
+          href: how-to-represent-tables-as-classes.md
+        - name: 'Postupy: Znázornění sloupců jako členů tříd'
+          href: how-to-represent-columns-as-class-members.md
+        - name: 'Postupy: Znázornění primárních klíčů'
+          href: how-to-represent-primary-keys.md
+        - name: 'Postupy: Mapování databázových relací'
+          href: how-to-map-database-relationships.md
+        - name: 'Postupy: Znázornění sloupců jako generovaných databází'
+          href: how-to-represent-columns-as-database-generated.md
+        - name: 'Postupy: Znázornění sloupců jako sloupců časového razítka nebo verze'
+          href: how-to-represent-columns-as-timestamp-or-version-columns.md
+        - name: 'Postupy: Zadání datových typů v databázi'
+          href: how-to-specify-database-data-types.md
+        - name: 'Postupy: Znázornění vypočítaných sloupců'
+          href: how-to-represent-computed-columns.md
+        - name: 'Postupy: Zadání polí privátního úložiště'
+          href: how-to-specify-private-storage-fields.md
+        - name: 'Postupy: Znázornění sloupců jako povolujících hodnoty null'
+          href: how-to-represent-columns-as-allowing-null-values.md
+        - name: 'Postupy: Mapování hierarchií dědičnosti'
+          href: how-to-map-inheritance-hierarchies.md
+        - name: 'Postupy: Zadání kontroly konfliktů souběžnosti'
+          href: how-to-specify-concurrency-conflict-checking.md
+    - name: Komunikace s databází
+      href: communicating-with-the-database.md
+      items:
+      - name: 'Postupy: Připojení k databázi'
+        href: how-to-connect-to-a-database.md
+      - name: 'Postupy: Přímé spuštění příkazů SQL'
+        href: how-to-directly-execute-sql-commands.md
+      - name: 'Postupy: Opakované použití propojení mezi příkazem ADO.NET a položkou DataContext'
+        href: how-to-reuse-a-connection-between-an-ado-net-command-and-a-datacontext.md
+    - name: Dotazy do databáze
+      href: querying-the-database.md
+      items:
+      - name: 'Postupy: Dotaz na informace'
+        href: how-to-query-for-information.md
+      - name: 'Postupy: Načtení informací ve stavu jen pro čtení'
+        href: how-to-retrieve-information-as-read-only.md
+      - name: 'Postupy: Určení objemu načítaných souvisejících dat'
+        href: how-to-control-how-much-related-data-is-retrieved.md
+      - name: 'Postupy: Filtrování souvisejících dat'
+        href: how-to-filter-related-data.md
+      - name: 'Postupy: Vypnutí odloženého načítání'
+        href: how-to-turn-off-deferred-loading.md
+      - name: 'Postupy: Přímé spuštění dotazů SQL'
+        href: how-to-directly-execute-sql-queries.md
+      - name: 'Postupy: Uložení a opakované použití dotazů'
+        href: how-to-store-and-reuse-queries.md
+      - name: 'Postupy: Zpracování složených klíčů v dotazech'
+        href: how-to-handle-composite-keys-in-queries.md
+      - name: 'Postupy: Načtení mnoha objektů najednou'
+        href: how-to-retrieve-many-objects-at-once.md
+      - name: 'Postupy: Filtrování na úrovni DataContext'
+        href: how-to-filter-at-the-datacontext-level.md
+      - name: Příklady dotazů
+        href: query-examples.md
+        items:
+        - name: Agregační dotazy
+          href: aggregate-queries.md
+          items:
+          - name: Vrácení průměrné hodnoty z číselné posloupnosti
+            href: return-the-average-value-from-a-numeric-sequence.md
+          - name: Určení počtu prvků v posloupnosti
+            href: count-the-number-of-elements-in-a-sequence.md
+          - name: Nalezení maximální hodnoty v číselné posloupnosti
+            href: find-the-maximum-value-in-a-numeric-sequence.md
+          - name: Nalezení minimální hodnoty v číselné posloupnosti
+            href: find-the-minimum-value-in-a-numeric-sequence.md
+          - name: Určení součtu hodnot v číselné posloupnosti
+            href: compute-the-sum-of-values-in-a-numeric-sequence.md
+        - name: Vrácení prvního prvku v posloupnosti
+          href: return-the-first-element-in-a-sequence.md
+        - name: Vrácení nebo přeskočení prvků v posloupnosti
+          href: return-or-skip-elements-in-a-sequence.md
+        - name: Řazení prvků v posloupnosti
+          href: sort-elements-in-a-sequence.md
+        - name: Seskupení prvků v posloupnosti
+          href: group-elements-in-a-sequence.md
+        - name: Odstranění duplicitních prvků z posloupnosti
+          href: eliminate-duplicate-elements-from-a-sequence.md
+        - name: Určení, jestli některé nebo všechny prvky v posloupnosti vyhovují podmínce
+          href: determine-if-any-or-all-elements-in-a-sequence-satisfy-a-condition.md
+        - name: Zřetězení dvou sekvencí
+          href: concatenate-two-sequences.md
+        - name: Vrácení rozdílu množin mezi dvěma sekvencemi
+          href: return-the-set-difference-between-two-sequences.md
+        - name: Vrácení průniku množin mezi dvěma sekvencemi
+          href: return-the-set-intersection-of-two-sequences.md
+        - name: Vrácení sjednocení množin mezi dvěma sekvencemi
+          href: return-the-set-union-of-two-sequences.md
+        - name: Převod sekvence na pole
+          href: convert-a-sequence-to-an-array.md
+        - name: Převod sekvence na obecný seznam
+          href: convert-a-sequence-to-a-generic-list.md
+        - name: Převod typu na obecnou položku IEnumerable
+          href: convert-a-type-to-a-generic-ienumerable.md
+        - name: Formulování spojení a dotazů napříč produkty
+          href: formulate-joins-and-cross-product-queries.md
+        - name: Formulování projekcí
+          href: formulate-projections.md
+    - name: Vytvoření a odeslání změn dat
+      href: making-and-submitting-data-changes.md
+      items:
+      - name: 'Postupy: Vložení řádků do databáze'
+        href: how-to-insert-rows-into-the-database.md
+      - name: 'Postupy: Aktualizace řádků v databázi'
+        href: how-to-update-rows-in-the-database.md
+      - name: 'Postupy: Odstranění řádků z databáze'
+        href: how-to-delete-rows-from-the-database.md
+      - name: 'Postupy: Odeslání změn do databáze'
+        href: how-to-submit-changes-to-the-database.md
+      - name: 'Postupy: Vytvoření transakčních sad pro odesílání dat'
+        href: how-to-bracket-data-submissions-by-using-transactions.md
+      - name: 'Postupy: Dynamické vytvoření databáze'
+        href: how-to-dynamically-create-a-database.md
+      - name: 'Postupy: Správa konfliktů změn'
+        href: how-to-manage-change-conflicts.md
+        items:
+        - name: 'Postupy: Zjištění a vyřešení konfliktních odeslání'
+          href: how-to-detect-and-resolve-conflicting-submissions.md
+        - name: 'Postupy: Určení, kdy se mají objevit výjimky souběžnosti'
+          href: how-to-specify-when-concurrency-exceptions-are-thrown.md
+        - name: 'Postupy: Určení, kdy se mají členové testovat na konflikty souběžnosti'
+          href: how-to-specify-which-members-are-tested-for-concurrency-conflicts.md
+        - name: 'Postupy: Načtení informací o konfliktech entit'
+          href: how-to-retrieve-entity-conflict-information.md
+        - name: 'Postupy: Načtení informací o konfliktech členů'
+          href: how-to-retrieve-member-conflict-information.md
+        - name: 'Postupy: Řešení konfliktů zachováním hodnot v databázi'
+          href: how-to-resolve-conflicts-by-retaining-database-values.md
+        - name: 'Postupy: Řešení konfliktů přepsáním hodnot v databázi'
+          href: how-to-resolve-conflicts-by-overwriting-database-values.md
+        - name: 'Postupy: Řešení konfliktů sloučením s hodnotami v databázi'
+          href: how-to-resolve-conflicts-by-merging-with-database-values.md
+    - name: Podpora ladění
+      href: debugging-support.md
+      items:
+      - name: 'Postupy: Zobrazení generovaného SQL'
+        href: how-to-display-generated-sql.md
+      - name: 'Postupy: Zobrazení sady změn'
+        href: how-to-display-a-changeset.md
+      - name: 'Postupy: Zobrazení příkazů LINQ to SQL'
+        href: how-to-display-linq-to-sql-commands.md
+      - name: Poradce při potížích
+        href: troubleshooting.md
+    - name: Základní informace
+      href: background-information.md
+      items:
+      - name: ADO.NET a LINQ to SQL
+        href: ado-net-and-linq-to-sql.md
+      - name: Analýza zdrojového kódu LINQ to SQL
+        href: analyzing-linq-to-sql-source-code.md
+      - name: Přizpůsobení operací vložení, aktualizace a odstranění
+        href: customizing-insert-update-and-delete-operations.md
+        items:
+        - name: 'Přizpůsobení operací: Přehled'
+          href: customizing-operations-overview.md
+        - name: Operace vložení, aktualizace a odstranění
+          href: insert-update-and-delete-operations.md
+        - name: Odpovědnosti vývojáře při přepisu výchozího chování
+          href: responsibilities-of-the-developer-in-overriding-default-behavior.md
+        - name: Přidání obchodní logiky pomocí částečných metod
+          href: adding-business-logic-by-using-partial-methods.md
+      - name: Datová vazba
+        href: data-binding.md
+      - name: Podpora dědičnosti
+        href: inheritance-support.md
+      - name: Volání místních metod
+        href: local-method-calls.md
+      - name: N-vrstvé a vzdálené aplikace s LINQ to SQL
+        href: n-tier-and-remote-applications-with-linq-to-sql.md
+        items:
+        - name: N-vrstvé nastavení LINQ to SQL s ASP.NET
+          href: linq-to-sql-n-tier-with-aspnet.md
+        - name: N-vrstvé nastavení LINQ to SQL s webovými službami
+          href: linq-to-sql-n-tier-with-web-services.md
+        - name: Implementace N-vrstvé obchodní logiky
+          href: implementing-business-logic-linq-to-sql.md
+        - name: Operace načítání dat a vytvoření, aktualizace a odstranění v N-úrovňových aplikacích (LINQ to SQL)
+          href: data-retrieval-and-cud-operations-in-n-tier-applications.md
+      - name: Identita objektu
+        href: object-identity.md
+      - name: Objektový model LINQ to SQL
+        href: the-linq-to-sql-object-model.md
+      - name: Stavy objektů a sledování změn
+        href: object-states-and-change-tracking.md
+      - name: 'Optimistická metoda souběžného zpracování: Přehled'
+        href: optimistic-concurrency-overview.md
+      - name: Koncepty dotazů
+        href: query-concepts.md
+        items:
+        - name: Dotazy LINQ to SQL
+          href: linq-to-sql-queries.md
+        - name: Dotazování napříč relacemi
+          href: querying-across-relationships.md
+        - name: Vzdálené vs. místní spuštění
+          href: remote-vs-local-execution.md
+        - name: Odložené vs. okamžité načítání
+          href: deferred-versus-immediate-loading.md
+      - name: Načítání objektů z mezipaměti identit
+        href: retrieving-objects-from-the-identity-cache.md
+      - name: Zabezpečení v LINQ to SQL
+        href: security-in-linq-to-sql.md
+      - name: Serializace
+        href: serialization.md
+      - name: Uložené procedury
+        href: stored-procedures.md
+        items:
+        - name: 'Postupy: Vrácení sad řádků'
+          href: how-to-return-rowsets.md
+        - name: 'Postupy: Použití uložených procedur, které přijímají parametry'
+          href: how-to-use-stored-procedures-that-take-parameters.md
+        - name: 'Postupy: Použití uložených procedur mapovaných pro vícečetné tvary výsledků'
+          href: how-to-use-stored-procedures-mapped-for-multiple-result-shapes.md
+        - name: 'Postupy: Použití uložených procedur mapovaných pro sekvenční tvary výsledků'
+          href: how-to-use-stored-procedures-mapped-for-sequential-result-shapes.md
+        - name: Přizpůsobení operací pomocí uložených procedur
+          href: customizing-operations-by-using-stored-procedures.md
+        - name: Přizpůsobení operací výhradně pomocí uložených procedur
+          href: customizing-operations-by-using-stored-procedures-exclusively.md
+      - name: Podpora transakcí
+        href: transaction-support.md
+      - name: Neshody typů SQL a CLR
+        href: sql-clr-type-mismatches.md
+      - name: Mapování vlastních typů SQL a CLR
+        href: sql-clr-custom-type-mappings.md
+      - name: Uživatelem definované funkce
+        href: user-defined-functions.md
+        items:
+        - name: 'Postupy: Použití uživatelem definovaných funkcí se skalárními hodnotami'
+          href: how-to-use-scalar-valued-user-defined-functions.md
+        - name: 'Postupy: Použití uživatelem definovaných funkcí s tabulkovými hodnotami'
+          href: how-to-use-table-valued-user-defined-functions.md
+        - name: 'Postupy: Volání uživatelem definovaných vložených funkcí'
+          href: how-to-call-user-defined-functions-inline.md
+  - name: Odkaz
+    href: reference.md
+    items:
+    - name: Datové typy a funkce
+      href: data-types-and-functions.md
+      items:
+      - name: Mapování typů SQL a CLR
+        href: sql-clr-type-mapping.md
+      - name: Základní datové typy
+        href: basic-data-types.md
+      - name: Logické datové typy
+        href: boolean-data-types.md
+      - name: Sémantika s hodnotou null
+        href: null-semantics.md
+      - name: Číselné a porovnávací operátory
+        href: numeric-and-comparison-operators.md
+      - name: Operátory sekvence
+        href: sequence-operators.md
+      - name: Metody System.Convert
+        href: system-convert-methods.md
+      - name: Metody System.DateTime
+        href: system-datetime-methods.md
+      - name: Metody System.Math
+        href: system-math-methods.md
+      - name: Metody System.Object
+        href: system-object-methods.md
+      - name: Metody System.String
+        href: system-string-methods.md
+      - name: Metody System.TimeSpan
+        href: system-timespan-methods.md
+      - name: Nepodporované funkce
+        href: unsupported-functionality.md
+      - name: Metody System.DateTimeOffset
+        href: system-datetimeoffset-methods.md
+    - name: Mapování na základě atributů
+      href: attribute-based-mapping.md
+    - name: Generování kódu v LINQ to SQL
+      href: code-generation-in-linq-to-sql.md
+    - name: Externí mapování
+      href: external-mapping.md
+    - name: Nejčastější dotazy
+      href: frequently-asked-questions.md
+    - name: SQL Server Compact a LINQ to SQL
+      href: sql-server-compact-and-linq-to-sql.md
+    - name: Převod standardních operátorů dotazů
+      href: standard-query-operator-translation.md
+  - name: Ukázky
+    href: samples.md
+ms.openlocfilehash: 754a552a01d40f6dc020536ef090b2bcbb3f90c2
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58471533"

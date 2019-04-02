@@ -1,0 +1,510 @@
+items:
+- name: Ovládací prvky
+  href: index.md
+  items:
+  - name: Řízení podle kategorie
+    href: controls-by-category.md
+  - name: Model obsahu WPF
+    href: wpf-content-model.md
+  - name: Knihovna ovládacích prvků
+    href: control-library.md
+    items:
+    - name: Ohraničení
+      href: border.md
+      items:
+      - name: Animace hodnoty BorderThickness
+        href: how-to-animate-a-borderthickness-value.md
+    - name: BulletDecorator
+      href: bulletdecorator.md
+    - name: Tlačítko
+      href: button.md
+      items:
+      - name: Vytvoření tlačítka s obrázkem
+        href: how-to-create-a-button-that-has-an-image.md
+    - name: Kalendář
+      href: calendar.md
+    - name: Plátno
+      href: canvas.md
+      items:
+      - name: – postupy
+        href: canvas-how-to-topics.md
+        items:
+        - name: Zalomení ohraničení kolem obsahu plátna
+          href: how-to-wrap-a-border-around-the-content-of-a-canvas.md
+        - name: Získání nebo nastavení vlastností umístění plátna
+          href: how-to-get-or-set-canvas-positioning-properties.md
+        - name: Vytvoření a použití plátna
+          href: how-to-create-and-use-a-canvas.md
+        - name: Umístění podřízených elementů pomocí vlastností přidružených k plátnu
+          href: how-to-use-the-attached-properties-of-canvas-to-position-child-elements.md
+        - name: Změna velikosti plátna použitím jezdce
+          href: how-to-resize-a-canvas-by-using-a-thumb.md
+    - name: CheckBox
+      href: checkbox.md
+    - name: ComboBox
+      href: combobox.md
+    - name: ContextMenu
+      href: contextmenu.md
+      items:
+      - name: ContextMenu – přehled
+        href: contextmenu-overview.md
+    - name: DataGrid
+      href: datagrid.md
+      items:
+      - name: Výchozí chování klávesnice a myši v ovládacím prvku DataGrid
+        href: default-keyboard-and-mouse-behavior-in-the-datagrid-control.md
+      - name: 'Postupy: Přidání podrobností řádku do ovládacího prvku DataGrid'
+        href: how-to-add-row-details-to-a-datagrid-control.md
+      - name: 'Postupy: Seskupení, řazení a filtrování dat v ovládacím prvku DataGrid'
+        href: how-to-group-sort-and-filter-data-in-the-datagrid-control.md
+      - name: 'Postupy: Implementace ověření pomocí ovládacího prvku DataGrid'
+        href: how-to-implement-validation-with-the-datagrid-control.md
+      - name: 'Návod: Zobrazení dat z databáze SQL Serveru v ovládacím prvku DataGrid'
+        href: walkthrough-display-data-from-a-sql-server-database-in-a-datagrid-control.md
+      - name: Možnosti změny velikosti v ovládacím prvku DataGrid
+        href: sizing-options-in-the-datagrid-control.md
+    - name: DatePicker
+      href: datepicker.md
+    - name: DockPanel
+      href: dockpanel.md
+      items:
+      - name: – postupy
+        href: dockpanel-how-to-topics.md
+        items:
+        - name: Získání nebo nastavení hodnoty ukotvení
+          href: how-to-get-or-set-a-dock-value.md
+        - name: Vytvoření objektu DockPanel
+          href: how-to-create-a-dockpanel.md
+        - name: Rozdělení prostoru pomocí elementu DockPanel
+          href: how-to-partition-space-by-using-the-dockpanel-element.md
+    - name: DocumentViewer
+      href: documentviewer.md
+    - name: Rozšíření
+      href: expander.md
+      items:
+      - name: Přehled rozšíření
+        href: expander-overview.md
+      - name: – postupy
+        href: expander-how-to-topics.md
+        items:
+        - name: Vytvoření rozšíření pomocí prvku ScrollViewer
+          href: how-to-create-an-expander-with-a-scrollviewer.md
+    - name: FlowDocumentPageViewer
+      href: flowdocumentpageviewer.md
+    - name: FlowDocumentReader
+      href: flowdocumentreader.md
+    - name: FlowDocumentScrollViewer
+      href: flowdocumentscrollviewer.md
+    - name: Rámec
+      href: frame.md
+    - name: Mřížka
+      href: grid.md
+      items:
+      - name: – postupy
+        href: grid-how-to-topics.md
+        items:
+        - name: Sestavení standardního dialogového okna uživatelského rozhraní pomocí mřížky
+          href: how-to-build-a-standard-ui-dialog-box-by-using-grid.md
+        - name: Vytvoření komplexní mřížky
+          href: how-to-create-a-complex-grid.md
+        - name: Vytvoření elementu mřížky
+          href: how-to-create-a-grid-element.md
+        - name: Vytvoření a použití objektu GridLengthConverter
+          href: how-to-create-and-use-a-gridlengthconverter-object.md
+        - name: Práce se sloupci a řádky pomocí objektů ColumnDefinitionsCollections a RowDefinitionsCollections
+          href: manipulate-columns-and-rows-by-using-columndefinitionscollections.md
+        - name: Umístění podřízených elementů mřížky
+          href: how-to-position-the-child-elements-of-a-grid.md
+        - name: Sdílení vlastností změny velikosti mezi mřížkami
+          href: how-to-share-sizing-properties-between-grids.md
+    - name: GridSplitter
+      href: gridsplitter.md
+      items:
+      - name: – postupy
+        href: gridsplitter-how-to-topics.md
+        items:
+        - name: Změna velikosti řádků pomocí prvku GridSplitter
+          href: how-to-resize-rows-with-a-gridsplitter.md
+        - name: Změna velikosti sloupců pomocí objektu GridSplitter
+          href: how-to-resize-columns-with-a-gridsplitter.md
+        - name: Kontrola viditelnosti objektu GridSplitter
+          href: how-to-make-sure-that-a-gridsplitter-is-visible.md
+    - name: GroupBox
+      href: groupbox.md
+      items:
+      - name: Definice šablony GroupBox
+        href: how-to-define-a-groupbox-template.md
+    - name: Image
+      href: image.md
+      items:
+      - name: – postupy
+        href: image-how-to-topics.md
+        items:
+        - name: Použití elementu obrázku
+          href: how-to-use-the-image-element.md
+        - name: Převedení obrázku na odstíny šedi
+          href: how-to-convert-an-image-to-greyscale.md
+        - name: Oříznutí obrázku
+          href: how-to-crop-an-image.md
+        - name: Otočení obrázku
+          href: how-to-rotate-an-image.md
+    - name: Popisek
+      href: label.md
+      items:
+      - name: Vytvoření ovládacího prvku obsahujícího přístupový klíč a zalamování textu
+        href: how-to-create-a-control-that-has-an-access-key-and-text-wrapping.md
+    - name: ListBox
+      href: listbox.md
+      items:
+      - name: – postupy
+        href: listbox-how-to-topics.md
+        items:
+        - name: Svázání prvku ListBox s daty
+          href: how-to-bind-a-listbox-to-data.md
+        - name: Získání položky ListBoxItem
+          href: how-to-get-a-listboxitem.md
+        - name: Zvýšení výkonu posunování prvku ListBox
+          href: how-to-improve-the-scrolling-performance-of-a-listbox.md
+    - name: ListView
+      href: listview.md
+      items:
+      - name: Přehledy
+        href: listview-overviews.md
+        items:
+        - name: ListView – přehled
+          href: listview-overview.md
+        - name: GridView – přehled
+          href: gridview-overview.md
+        - name: GridView Styly záhlaví sloupců a přehled šablon
+          href: gridview-column-header-styles-and-templates-overview.md
+      - name: – postupy
+        href: listview-how-to-topics.md
+        items:
+        - name: Řazení sloupce GridView při kliknutí na záhlaví
+          href: how-to-sort-a-gridview-column-when-a-header-is-clicked.md
+        - name: Vytvoření vlastního režimu zobrazení pro ListView
+          href: how-to-create-a-custom-view-mode-for-a-listview.md
+        - name: Použití šablon na styl ListView používající GridView
+          href: how-to-use-templates-to-style-a-listview-that-uses-gridview.md
+        - name: Vytvoření stylu pro přetahované záhlaví sloupce GridView
+          href: how-to-create-a-style-for-a-dragged-gridview-column-header.md
+        - name: Zobrazení obsahu ListView použitím GridView
+          href: how-to-display-listview-contents-by-using-a-gridview.md
+        - name: Nastavení stylu vybraných položek v zobrazení ListView použitím triggerů
+          href: how-to-use-triggers-to-style-selected-items-in-a-listview.md
+        - name: Vytvoření ListViewItems pomocí CheckBox
+          href: how-to-create-listviewitems-with-a-checkbox.md
+        - name: Zobrazení dat pomocí GridViewRowPresenter
+          href: how-to-display-data-by-using-gridviewrowpresenter.md
+        - name: Seskupení položek v objektu ListView s implementací GridView
+          href: how-to-group-items-in-a-listview-that-implements-a-gridview.md
+        - name: Nastavení stylu řádku v zobrazení ListView s implementací GridView
+          href: how-to-style-a-row-in-a-listview-that-implements-a-gridview.md
+        - name: Změna vodorovného zarovnání sloupce v objektu ListView
+          href: how-to-change-the-horizontal-alignment-of-a-column-in-a-listview.md
+        - name: Zpracování události MouseDoubleClick pro jednotlivé položky v objektu ListView
+          href: how-to-handle-the-mousedoubleclick-event-for-each-item-in-a-listview.md
+    - name: Nabídka
+      href: menu.md
+      items:
+      - name: Přehled nabídky
+        href: menu-overview.md
+    - name: Panel
+      href: panel.md
+      items:
+      - name: Přehled panelů
+        href: panels-overview.md
+      - name: – postupy
+        href: panel-how-to-topics.md
+        items:
+        - name: Vytvoření vlastního elementu panelu
+          href: how-to-create-a-custom-panel-element.md
+        - name: Přepsání metody panelu OnRender
+          href: how-to-override-the-panel-onrender-method.md
+        - name: Nastavení vlastností výšky elementu
+          href: how-to-set-the-height-properties-of-an-element.md
+        - name: Nastavení vlastností šířky elementu
+          href: how-to-set-the-width-properties-of-an-element.md
+    - name: PasswordBox
+      href: passwordbox.md
+    - name: Překryvný
+      href: popup.md
+      items:
+      - name: Přehled překryvných objektů
+        href: popup-overview.md
+      - name: Chování při umístění překryvného objektu
+        href: popup-placement-behavior.md
+      - name: – postupy
+        href: popup-how-to-topics.md
+        items:
+        - name: Animace prvku Popup
+          href: how-to-animate-a-popup.md
+        - name: Určení vlastního umístění prvku Popup
+          href: how-to-specify-a-custom-popup-position.md
+    - name: ProgressBar
+      href: progressbar.md
+    - name: PrintDialog
+      href: printdialog.md
+    - name: RadioButton
+      href: radiobutton.md
+    - name: RepeatButton
+      href: repeatbutton.md
+    - name: RichTextBox
+      href: richtextbox.md
+      items:
+      - name: RichTextBox – přehled
+        href: richtextbox-overview.md
+      - name: – postupy
+        href: richtextbox-how-to-topics.md
+        items:
+        - name: Extrahování textového obsahu z pole RichTextBox
+          href: how-to-extract-the-text-content-from-a-richtextbox.md
+        - name: Programová změna výběru v poli RichTextBox
+          href: change-selection-in-a-richtextbox-programmatically.md
+        - name: Uložení, načtení a tisk obsahu RichTextBox
+          href: how-to-save-load-and-print-richtextbox-content.md
+        - name: Umístění vlastní místní nabídky v prvku RichTextBox
+          href: how-to-position-a-custom-context-menu-in-a-richtextbox.md
+    - name: ScrollBar
+      href: scrollbar.md
+      items:
+      - name: Přizpůsobení velikosti jezdce v prvku ScrollBar
+        href: how-to-customize-the-thumb-size-on-a-scrollbar.md
+    - name: ScrollViewer
+      href: scrollviewer.md
+      items:
+      - name: ScrollViewer – přehled
+        href: scrollviewer-overview.md
+      - name: – postupy
+        href: scrollviewer-how-to-topics.md
+        items:
+        - name: Zpracování události ScrollChanged
+          href: how-to-handle-the-scrollchanged-event.md
+        - name: Posunutí obsahu použitím rozhraní IScrollInfo
+          href: how-to-scroll-content-by-using-the-iscrollinfo-interface.md
+        - name: Použití metod pro posunutí obsahu prvku ScrollViewer
+          href: how-to-use-the-content-scrolling-methods-of-scrollviewer.md
+    - name: Oddělovač
+      href: separator.md
+    - name: Posuvník
+      href: slider.md
+      items:
+      - name: Přizpůsobení dílků na posuvníku
+        href: how-to-customize-the-ticks-on-a-slider.md
+    - name: StackPanel
+      href: stackpanel.md
+      items:
+      - name: – postupy
+        href: stackpanel-how-to-topics.md
+        items:
+        - name: Výběr mezi elementy StackPanel a DockPanel
+          href: how-to-choose-between-stackpanel-and-dockpanel.md
+        - name: Vytvoření elementu StackPanel
+          href: how-to-create-a-stackpanel.md
+        - name: Vodorovné a svislé zarovnání obsahu v elementu StackPanel
+          href: how-to-horizontally-or-vertically-align-content-in-a-stackpanel.md
+    - name: StatusBar
+      href: statusbar.md
+    - name: TabControl
+      href: tabcontrol.md
+    - name: TextBlock
+      href: textblock.md
+      items:
+      - name: TextBlock – přehled
+        href: textblock-overview.md
+    - name: TextBox
+      href: textbox.md
+      items:
+      - name: TextBox – přehled
+        href: textbox-overview.md
+      - name: – postupy
+        href: textbox-how-to-topics.md
+        items:
+        - name: Vytvoření víceřádkového ovládacího prvku TextBox
+          href: how-to-create-a-multiline-textbox-control.md
+        - name: Zjištění, kdy došlo ke změně textu v prvku TextBox
+          href: how-to-detect-when-text-in-a-textbox-has-changed.md
+        - name: Povolení znaků tabulátoru v ovládacím prvku TextBox
+          href: how-to-enable-tab-characters-in-a-textbox-control.md
+        - name: Získání kolekce řádků z prvku TextBox
+          href: how-to-get-a-collection-of-lines-from-a-textbox.md
+        - name: Nastavení ovládacího prvku TextBox jen pro čtení
+          href: how-to-make-a-textbox-control-read-only.md
+        - name: Umístění kurzoru na začátek nebo konec textu v ovládacím prvku TextBox
+          href: position-the-cursor-at-the-beginning-or-end-of-text.md
+        - name: Načtení výběru textu
+          href: how-to-retrieve-a-text-selection.md
+        - name: Nastavení fokusu v ovládacím prvku TextBox
+          href: how-to-set-focus-in-a-textbox-control.md
+        - name: Nastavení obsahu textu ovládacího prvku TextBox
+          href: how-to-set-the-text-content-of-a-textbox-control.md
+        - name: Povolení kontroly pravopisu v ovládacím prvku pro úpravy textu
+          href: how-to-enable-spell-checking-in-a-text-editing-control.md
+        - name: Použití vlastní místní nabídky s prvkem TextBox
+          href: how-to-use-a-custom-context-menu-with-a-textbox.md
+        - name: Použití kontroly pravopisu s místní nabídkou
+          href: how-to-use-spell-checking-with-a-context-menu.md
+        - name: Přidání vodoznaku do pole TextBox
+          href: how-to-add-a-watermark-to-a-textbox.md
+    - name: ToolBar
+      href: toolbar.md
+      items:
+      - name: ToolBar – přehled
+        href: toolbar-overview.md
+      - name: Ovládací prvky stylu na prvku ToolBar
+        href: how-to-style-controls-on-a-toolbar.md
+    - name: Popisy tlačítek
+      href: tooltip.md
+      items:
+      - name: ToolTip – přehled
+        href: tooltip-overview.md
+      - name: – postupy
+        href: tooltip-how-to-topics.md
+        items:
+        - name: Umístění prvku ToolTip
+          href: how-to-position-a-tooltip.md
+        - name: Používání vlastnosti BetweenShowDelay
+          href: how-to-use-the-betweenshowdelay-property.md
+    - name: TreeView
+      href: treeview.md
+      items:
+      - name: TreeView – přehled
+        href: treeview-overview.md
+      - name: – postupy
+        href: treeview-how-to-topics.md
+        items:
+        - name: Vytvoření jednoduchého nebo složitého zobrazení TreeViews
+          href: how-to-create-simple-or-complex-treeviews.md
+        - name: Použití SelectedValue, SelectedValuePath a SelectedItem
+          href: how-to-use-selectedvalue-selectedvaluepath-and-selecteditem.md
+        - name: Připojení TreeView k datům nezjistitelné hloubky
+          href: how-to-bind-a-treeview-to-data-that-has-an-indeterminable-depth.md
+        - name: Zvýšení výkonu TreeView
+          href: how-to-improve-the-performance-of-a-treeview.md
+        - name: Hledání TreeViewItem v objektu TreeView
+          href: how-to-find-a-treeviewitem-in-a-treeview.md
+    - name: WrapPanel
+      href: wrappanel.md
+    - name: Viewbox
+      href: viewbox.md
+      items:
+      - name: Použití vlastností roztažení na obsah Viewbox
+        href: how-to-apply-stretch-properties-to-the-contents-of-a-viewbox.md
+  - name: " – styly a šablony"
+    href: styles-and-templates.md
+    items:
+    - name: Styly a šablony
+      href: styling-and-templating.md
+    - name: Přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením ControlTemplate
+      href: customizing-the-appearance-of-an-existing-control.md
+    - name: 'Postupy: Vyhledávání elementů generovaných objektem ControlTemplate'
+      href: how-to-find-controltemplate-generated-elements.md
+  - name: Přizpůsobení ovládacího prvku
+    href: control-customization.md
+    items:
+    - name: Přehled řízeného vytváření
+      href: control-authoring-overview.md
+    - name: Vytvoření ovládacího prvku se vzhledem, který lze přizpůsobit
+      href: creating-a-control-that-has-a-customizable-appearance.md
+    - name: Pokyny pro návrh ovládacích prvků s podporou stylů
+      href: guidelines-for-designing-stylable-controls.md
+    - name: Doplňky pro úpravy
+      href: adorners.md
+      items:
+      - name: Přehled doplňků
+        href: adorners-overview.md
+      - name: – postupy
+        href: adorners-how-to-topics.md
+        items:
+        - name: Implementace doplňku pro úpravy
+          href: how-to-implement-an-adorner.md
+        - name: Svázání doplňku pro úpravy s elementem
+          href: how-to-bind-an-adorner-to-an-element.md
+        - name: Doplnění podřízených položek panelu
+          href: how-to-adorn-the-children-of-a-panel.md
+        - name: Odebrání doplňku pro úpravy z elementu
+          href: how-to-remove-an-adorner-from-an-element.md
+        - name: Odebrání všech doplňků pro úpravy z elementu
+          href: how-to-remove-all-adorners-from-an-element.md
+    - name: Styly a šablony ovládacích prvků
+      href: control-styles-and-templates.md
+      items:
+      - name: Styly a šablony tlačítek
+        href: button-styles-and-templates.md
+      - name: Styly a šablony kalendáře
+        href: calendar-styles-and-templates.md
+      - name: CheckBox – styly a šablony
+        href: checkbox-styles-and-templates.md
+      - name: ComboBox – styly a šablony
+        href: combobox-styles-and-templates.md
+      - name: ContextMenu – styly a šablony
+        href: contextmenu-styles-and-templates.md
+      - name: DataGrid – styly a šablony
+        href: datagrid-styles-and-templates.md
+      - name: DatePicker – styly a šablony
+        href: datepicker-styles-and-templates.md
+      - name: DocumentViewer – styly a šablony
+        href: documentviewer-styles-and-templates.md
+      - name: Styly a šablony rozšíření
+        href: expander-styles-and-templates.md
+      - name: Styly a šablony rámců
+        href: frame-styles-and-templates.md
+      - name: GroupBox – styly a šablony
+        href: groupbox-styles-and-templates.md
+      - name: Styly a šablony popisků
+        href: label-styles-and-templates.md
+      - name: ListBox – styly a šablony
+        href: listbox-styles-and-templates.md
+      - name: ListView – styly a šablony
+        href: listview-styles-and-templates.md
+      - name: Styly a šablony nabídky
+        href: menu-styles-and-templates.md
+      - name: NavigationWindow – styly a šablony
+        href: navigationwindow-styles-and-templates.md
+      - name: PasswordBox – styly a šablony
+        href: passwordbox-styles-and-templates.md
+      - name: ProgressBar – styly a šablony
+        href: progressbar-styles-and-templates.md
+      - name: RadioButton – styly a šablony
+        href: radiobutton-styles-and-templates.md
+      - name: RepeatButton – styly a šablony
+        href: repeatbutton-styles-and-templates.md
+      - name: ScrollBar – styly a šablony
+        href: scrollbar-styles-and-templates.md
+      - name: ScrollViewer – styly a šablony
+        href: scrollviewer-styles-and-templates.md
+      - name: Styly a šablony posuvníku
+        href: slider-styles-and-templates.md
+      - name: StatusBar – styly a šablony
+        href: statusbar-styles-and-templates.md
+      - name: TabControl – styly a šablony
+        href: tabcontrol-styles-and-templates.md
+      - name: TextBox – styly a šablony
+        href: textbox-styles-and-templates.md
+      - name: Styly a šablony jezdce
+        href: thumb-styles-and-templates.md
+      - name: ToggleButton – styly a šablony
+        href: togglebutton-styles-and-templates.md
+      - name: ToolBar – styly a šablony
+        href: toolbar-styles-and-templates.md
+      - name: ToolTip – styly a šablony
+        href: tooltip-styles-and-templates.md
+      - name: TreeView – styly a šablony
+        href: treeview-styles-and-templates.md
+      - name: Styly a šablony oken
+        href: window-styles-and-templates.md
+    - name: Automatizace uživatelského rozhraní vlastního ovládacího prvku WPF
+      href: ui-automation-of-a-wpf-custom-control.md
+    - name: 'Návody: Vytvoření tlačítka s vlastní animací'
+      href: walkthroughs-create-a-custom-animated-button.md
+      items:
+      - name: Vytvoření tlačítka pomocí nástroje Microsoft Expression Blend
+        href: walkthrough-create-a-button-by-using-microsoft-expression-blend.md
+      - name: Vytvoření tlačítka pomocí XAML
+        href: walkthrough-create-a-button-by-using-xaml.md
+ms.openlocfilehash: e1f4c9978b5a1d640c721cb7b6584b556c622264
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58471275"

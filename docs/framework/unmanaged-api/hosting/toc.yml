@@ -1,0 +1,1007 @@
+items:
+- name: Hostování
+  href: index.md
+  items:
+  - name: Třídy typu coclass hostování
+    href: hosting-coclasses.md
+    items:
+    - name: CLRRuntimeHost – třída typu coclass
+      href: clrruntimehost-coclass.md
+    - name: ComCallUnmarshal – třída typu coclass
+      href: comcallunmarshal-coclass.md
+    - name: CorRuntimeHost – třída typu coclass
+      href: corruntimehost-coclass.md
+    - name: TypeNameFactory – třída typu coclass
+      href: typenamefactory-coclass.md
+  - name: Výčty hostování
+    href: hosting-enumerations.md
+    items:
+    - name: CLSID_RESOLUTION_FLAGS – výčet
+      href: clsid-resolution-flags-enumeration.md
+    - name: COR_GC_STAT_TYPES – výčet
+      href: cor-gc-stat-types-enumeration.md
+    - name: COR_GC_THREAD_STATS_TYPES – výčet
+      href: cor-gc-thread-stats-types-enumeration.md
+    - name: EApiCategories – výčet
+      href: eapicategories-enumeration.md
+    - name: EBindPolicyLevels – výčet
+      href: ebindpolicylevels-enumeration.md
+    - name: ECLRAssemblyIdentityFlags – výčet
+      href: eclrassemblyidentityflags-enumeration.md
+    - name: EClrEvent – výčet
+      href: eclrevent-enumeration.md
+    - name: EClrFailure – výčet
+      href: eclrfailure-enumeration.md
+    - name: EClrOperation – výčet
+      href: eclroperation-enumeration.md
+    - name: EClrUnhandledException – výčet
+      href: eclrunhandledexception-enumeration.md
+    - name: EContextType – výčet
+      href: econtexttype-enumeration.md
+    - name: ECustomDumpFlavor – výčet
+      href: ecustomdumpflavor-enumeration.md
+    - name: ECustomDumpItemKind – výčet
+      href: ecustomdumpitemkind-enumeration.md
+    - name: EHostApplicationPolicy – výčet
+      href: ehostapplicationpolicy-enumeration.md
+    - name: EHostBindingPolicyModifyFlags – výčet
+      href: ehostbindingpolicymodifyflags-enumeration.md
+    - name: EInitializeNewDomainFlags – výčet
+      href: einitializenewdomainflags-enumeration.md
+    - name: EMemoryAvailable – výčet
+      href: ememoryavailable-enumeration.md
+    - name: EMemoryCriticalLevel – výčet
+      href: ememorycriticallevel-enumeration.md
+    - name: EPolicyAction – výčet
+      href: epolicyaction-enumeration.md
+    - name: ESymbolReadingPolicy – výčet
+      href: esymbolreadingpolicy-enumeration.md
+    - name: ETaskType – výčet
+      href: etasktype-enumeration.md
+    - name: HOST_TYPE – výčet
+      href: host-type-enumeration.md
+    - name: MALLOC_TYPE – výčet
+      href: malloc-type-enumeration.md
+    - name: METAHOST_CONFIG_FLAGS – výčet
+      href: metahost-config-flags-enumeration.md
+    - name: METAHOST_POLICY_FLAGS – výčet
+      href: metahost-policy-flags-enumeration.md
+    - name: RUNTIME_INFO_FLAGS – výčet
+      href: runtime-info-flags-enumeration.md
+    - name: StackOverflowType – výčet
+      href: stackoverflowtype-enumeration.md
+    - name: STARTUP_FLAGS – výčet
+      href: startup-flags-enumeration.md
+    - name: ValidatorFlags – výčet
+      href: validatorflags-enumeration.md
+    - name: WAIT_OPTION – výčet
+      href: wait-option-enumeration.md
+  - name: Hostování globálních statických funkcí
+    href: hosting-global-static-functions.md
+    items:
+    - name: .NET Framework 4 – hostování globálních statických funkcí
+      href: net-framework-4-hosting-global-static-functions.md
+      items:
+      - name: CLRCreateInstance – funkce
+        href: clrcreateinstance-function.md
+    - name: Zastaralé funkce hostování CLR
+      href: deprecated-clr-hosting-functions.md
+      items:
+      - name: _CorDllMain – funkce
+        href: cordllmain-function.md
+      - name: _CorExeMain – funkce
+        href: corexemain-function.md
+      - name: _CorExeMain2 – funkce
+        href: corexemain2-function.md
+      - name: _CorImageUnloading – funkce
+        href: corimageunloading-function.md
+      - name: _CorValidateImage – funkce
+        href: corvalidateimage-function.md
+      - name: CallFunctionShim – funkce
+        href: callfunctionshim-function.md
+      - name: ClrCreateManagedInstance – funkce
+        href: clrcreatemanagedinstance-function.md
+      - name: CoEEShutDownCOM – funkce
+        href: coeeshutdowncom-function.md
+      - name: CoInitializeCor – funkce
+        href: coinitializecor-function.md
+      - name: CoInitializeEE – funkce
+        href: coinitializeee-function.md
+      - name: CorBindToCurrentRuntime – funkce
+        href: corbindtocurrentruntime-function.md
+      - name: CorBindToRuntime – funkce
+        href: corbindtoruntime-function.md
+      - name: CorBindToRuntimeByCfg – funkce
+        href: corbindtoruntimebycfg-function.md
+      - name: CorBindToRuntimeEx – funkce
+        href: corbindtoruntimeex-function.md
+      - name: CorBindToRuntimeHost – funkce
+        href: corbindtoruntimehost-function.md
+      - name: CorExitProcess – funkce
+        href: corexitprocess-function.md
+      - name: CorLaunchApplication – funkce
+        href: corlaunchapplication-function.md
+      - name: CorMarkThreadInThreadPool – funkce
+        href: cormarkthreadinthreadpool-function.md
+      - name: CoUninitializeCor – funkce
+        href: couninitializecor-function.md
+      - name: CoUninitializeEE – funkce
+        href: couninitializeee-function.md
+      - name: CreateDebuggingInterfaceFromVersion – funkce
+        href: createdebugginginterfacefromversion-function.md
+      - name: CreateICeeFileGen – funkce
+        href: createiceefilegen-function.md
+      - name: DestroyICeeFileGen – funkce
+        href: destroyiceefilegen-function.md
+      - name: FExecuteInAppDomainCallback – ukazatel na funkci
+        href: fexecuteinappdomaincallback-function-pointer.md
+      - name: FLockClrVersionCallback – ukazatel na funkci
+        href: flockclrversioncallback-function-pointer.md
+      - name: GetCLRIdentityManager – funkce
+        href: getclridentitymanager-function.md
+      - name: GetCORRequiredVersion – funkce
+        href: getcorrequiredversion-function.md
+      - name: GetCORSystemDirectory – funkce
+        href: getcorsystemdirectory-function.md
+      - name: GetCORVersion – funkce
+        href: getcorversion-function.md
+      - name: GetFileVersion – funkce
+        href: getfileversion-function.md
+      - name: GetRealProcAddress – funkce
+        href: getrealprocaddress-function.md
+      - name: GetRequestedRuntimeInfo – funkce
+        href: getrequestedruntimeinfo-function.md
+      - name: GetRequestedRuntimeVersion – funkce
+        href: getrequestedruntimeversion-function.md
+      - name: GetRequestedRuntimeVersionForCLSID – funkce
+        href: getrequestedruntimeversionforclsid-function.md
+      - name: GetVersionFromProcess – funkce
+        href: getversionfromprocess-function.md
+      - name: LoadLibraryShim – funkce
+        href: loadlibraryshim-function.md
+      - name: LoadStringRC – funkce
+        href: loadstringrc-function.md
+      - name: LoadStringRCEx – funkce
+        href: loadstringrcex-function.md
+      - name: LockClrVersion – funkce
+        href: lockclrversion-function.md
+      - name: LPOVERLAPPED_COMPLETION_ROUTINE – ukazatel na funkci
+        href: lpoverlapped-completion-routine-function-pointer.md
+      - name: LPTHREAD_START_ROUTINE – ukazatel na funkci
+        href: lpthread-start-routine-function-pointer.md
+      - name: RunDll32ShimW – funkce
+        href: rundll32shimw-function.md
+      - name: WAITORTIMERCALLBACK – ukazatel na funkci
+        href: waitortimercallback-function-pointer.md
+  - name: Rozhraní hostování
+    href: hosting-interfaces.md
+    items:
+    - name: Zastaralá rozhraní a třídy typu Coclass rozhraní hostování CLR
+      href: deprecated-clr-hosting-interfaces-and-coclasses.md
+      items:
+      - name: IAppDomainSetup – rozhraní
+        href: iappdomainsetup-interface.md
+      - name: ICeeFileGen – třída
+        href: iceefilegen-class.md
+      - name: ICorRuntimeHost – rozhraní
+        href: icorruntimehost-interface.md
+        items:
+        - name: CloseEnum – metoda
+          href: icorruntimehost-closeenum-method.md
+        - name: CreateDomain – metoda
+          href: icorruntimehost-createdomain-method.md
+        - name: CreateDomainSetup – metoda
+          href: icorruntimehost-createdomainsetup-method.md
+        - name: CreateDomainEx – metoda
+          href: icorruntimehost-createdomainex-method.md
+        - name: CreateEvidence – metoda
+          href: icorruntimehost-createevidence-method.md
+        - name: CreateLogicalThreadState – metoda
+          href: icorruntimehost-createlogicalthreadstate-method.md
+        - name: CurrentDomain – metoda
+          href: icorruntimehost-currentdomain-method.md
+        - name: DeleteLogicalThreadState – metoda
+          href: icorruntimehost-deletelogicalthreadstate-method.md
+        - name: EnumDomains – metoda
+          href: icorruntimehost-enumdomains-method.md
+        - name: GetConfiguration – metoda
+          href: icorruntimehost-getconfiguration-method.md
+        - name: GetDefaultDomain – metoda
+          href: icorruntimehost-getdefaultdomain-method.md
+        - name: LocksHeldByLogicalThread – metoda
+          href: icorruntimehost-locksheldbylogicalthread-method.md
+        - name: MapFile – metoda
+          href: icorruntimehost-mapfile-method.md
+        - name: NextDomain – metoda
+          href: icorruntimehost-nextdomain-method.md
+        - name: Start – metoda
+          href: icorruntimehost-start-method.md
+        - name: Stop – metoda
+          href: icorruntimehost-stop-method.md
+        - name: SwitchInLogicalThreadState – metoda
+          href: icorruntimehost-switchinlogicalthreadstate-method.md
+        - name: SwitchOutLogicalThreadState – metoda
+          href: icorruntimehost-switchoutlogicalthreadstate-method.md
+        - name: UnloadDomain – metoda
+          href: icorruntimehost-unloaddomain-method.md
+    - name: Rozhraní hostování CLR
+      href: clr-hosting-interfaces.md
+      items:
+      - name: IActionOnCLREvent – rozhraní
+        href: iactiononclrevent-interface.md
+        items:
+        - name: OnEvent – metoda
+          href: iactiononclrevent-onevent-method.md
+      - name: IApartmentCallback – rozhraní
+        href: iapartmentcallback-interface.md
+        items:
+        - name: DoCallback – metoda
+          href: iapartmentcallback-docallback-method.md
+      - name: IAppDomainBinding – rozhraní
+        href: iappdomainbinding-interface.md
+        items:
+        - name: OnAppDomain – metoda
+          href: iappdomainbinding-onappdomain-method.md
+      - name: ICatalogServices – rozhraní
+        href: icatalogservices-interface.md
+        items:
+        - name: Autodone – metoda
+          href: icatalogservices-autodone-method.md
+        - name: NotAutodone – metoda
+          href: icatalogservices-notautodone-method.md
+      - name: ICLRAssemblyIdentityManager – rozhraní
+        href: iclrassemblyidentitymanager-interface.md
+        items:
+        - name: GetBindingIdentityFromFile – metoda
+          href: iclrassemblyidentitymanager-getbindingidentityfromfile-method.md
+        - name: GetBindingIdentityFromStream – metoda
+          href: iclrassemblyidentitymanager-getbindingidentityfromstream-method.md
+        - name: GetCLRAssemblyReferenceList – metoda
+          href: iclrassemblyidentitymanager-getclrassemblyreferencelist-method.md
+        - name: GetProbingAssembliesFromReference – metoda
+          href: iclrassemblyidentitymanager-getprobingassembliesfromreference-method.md
+        - name: GetReferencedAssembliesFromFile – metoda
+          href: iclrassemblyidentitymanager-getreferencedassembliesfromfile-method.md
+        - name: GetReferencedAssembliesFromStream – metoda
+          href: iclrassemblyidentitymanager-getreferencedassembliesfromstream-method.md
+        - name: IsStronglyNamed – metoda
+          href: iclrassemblyidentitymanager-isstronglynamed-method.md
+      - name: ICLRAssemblyReferenceList – rozhraní
+        href: iclrassemblyreferencelist-interface.md
+        items:
+        - name: IsAssemblyReferenceInList – metoda
+          href: iclrassemblyreferencelist-isassemblyreferenceinlist-method.md
+        - name: IsStringAssemblyReferenceInList – metoda
+          href: iclrassemblyreferencelist-isstringassemblyreferenceinlist-method.md
+      - name: ICLRControl – rozhraní
+        href: iclrcontrol-interface.md
+        items:
+        - name: GetCLRManager – metoda
+          href: iclrcontrol-getclrmanager-method.md
+        - name: SetAppDomainManagerType – metoda
+          href: iclrcontrol-setappdomainmanagertype-method.md
+      - name: ICLRDebugManager – rozhraní
+        href: iclrdebugmanager-interface.md
+        items:
+        - name: BeginConnection – metoda
+          href: iclrdebugmanager-beginconnection-method.md
+        - name: EndConnection – metoda
+          href: iclrdebugmanager-endconnection-method.md
+        - name: GetDacl – metoda
+          href: iclrdebugmanager-getdacl-method.md
+        - name: IsDebuggerAttached – metoda
+          href: iclrdebugmanager-isdebuggerattached-method.md
+        - name: SetConnectionTasks – metoda
+          href: iclrdebugmanager-setconnectiontasks-method.md
+        - name: SetDacl – metoda
+          href: iclrdebugmanager-setdacl-method.md
+        - name: SetSymbolReadingPolicy – metoda
+          href: iclrdebugmanager-setsymbolreadingpolicy-method.md
+      - name: ICLRErrorReportingManager – rozhraní
+        href: iclrerrorreportingmanager-interface.md
+        items:
+        - name: BeginCustomDump – metoda
+          href: iclrerrorreportingmanager-begincustomdump-method.md
+        - name: EndCustomDump – metoda
+          href: iclrerrorreportingmanager-endcustomdump-method.md
+        - name: GetBucketParametersForCurrentException – metoda
+          href: iclrerrorreportingmanager-getbucketparametersforcurrentexception-method.md
+      - name: ICLRGCManager – rozhraní
+        href: iclrgcmanager-interface.md
+        items:
+        - name: Collect – metoda
+          href: iclrgcmanager-collect-method.md
+        - name: GetStats – metoda
+          href: iclrgcmanager-getstats-method.md
+        - name: SetGCStartupLimits – metoda
+          href: iclrgcmanager-setgcstartuplimits-method.md
+      - name: ICLRHostBindingPolicyManager – rozhraní
+        href: iclrhostbindingpolicymanager-interface.md
+        items:
+        - name: EvaluatePolicy – metoda
+          href: iclrhostbindingpolicymanager-evaluatepolicy-method.md
+        - name: ModifyApplicationPolicy – metoda
+          href: iclrhostbindingpolicymanager-modifyapplicationpolicy-method.md
+      - name: ICLRHostProtectionManager – rozhraní
+        href: iclrhostprotectionmanager-interface.md
+        items:
+        - name: SetEagerSerializeGrantSets
+          href: iclrhostprotectionmanager-seteagerserializegrantsets-method.md
+        - name: SetProtectedCategories – metoda
+          href: iclrhostprotectionmanager-setprotectedcategories-method.md
+      - name: ICLRIoCompletionManager – rozhraní
+        href: iclriocompletionmanager-interface.md
+        items:
+        - name: OnComplete – metoda
+          href: iclriocompletionmanager-oncomplete-method.md
+      - name: ICLRMemoryNotificationCallback – rozhraní
+        href: iclrmemorynotificationcallback-interface.md
+        items:
+        - name: OnMemoryNotification – metoda
+          href: iclrmemorynotificationcallback-onmemorynotification-method.md
+      - name: ICLROnEventManager – rozhraní
+        href: iclroneventmanager-interface.md
+        items:
+        - name: RegisterActionOnEvent – metoda
+          href: iclroneventmanager-registeractiononevent-method.md
+        - name: UnregisterActionOnEvent – metoda
+          href: iclroneventmanager-unregisteractiononevent-method.md
+      - name: ICLRPolicyManager – rozhraní
+        href: iclrpolicymanager-interface.md
+        items:
+        - name: SetActionOnFailure – metoda
+          href: iclrpolicymanager-setactiononfailure-method.md
+        - name: SetActionOnTimeout – metoda
+          href: iclrpolicymanager-setactionontimeout-method.md
+        - name: SetDefaultAction – metoda
+          href: iclrpolicymanager-setdefaultaction-method.md
+        - name: SetTimeout – metoda
+          href: iclrpolicymanager-settimeout-method.md
+        - name: SetTimeoutAndAction – metoda
+          href: iclrpolicymanager-settimeoutandaction-method.md
+        - name: SetUnhandledExceptionPolicy – metoda
+          href: iclrpolicymanager-setunhandledexceptionpolicy-method.md
+      - name: ICLRProbingAssemblyEnum – rozhraní
+        href: iclrprobingassemblyenum-interface.md
+        items:
+        - name: Get – metoda
+          href: iclrprobingassemblyenum-get-method.md
+      - name: ICLRReferenceAssemblyEnum – rozhraní
+        href: iclrreferenceassemblyenum-interface.md
+        items:
+        - name: Get – metoda
+          href: iclrreferenceassemblyenum-get-method.md
+      - name: ICLRRuntimeHost – rozhraní
+        href: iclrruntimehost-interface.md
+        items:
+        - name: ExecuteApplication – metoda
+          href: iclrruntimehost-executeapplication-method.md
+        - name: ExecuteInAppDomain – metoda
+          href: iclrruntimehost-executeinappdomain-method.md
+        - name: ExecuteInDefaultAppDomain – metoda
+          href: iclrruntimehost-executeindefaultappdomain-method.md
+        - name: GetCLRControl – metoda
+          href: iclrruntimehost-getclrcontrol-method.md
+        - name: GetCurrentAppDomainId – metoda
+          href: iclrruntimehost-getcurrentappdomainid-method.md
+        - name: SetHostControl – metoda
+          href: iclrruntimehost-sethostcontrol-method.md
+        - name: Start – metoda
+          href: iclrruntimehost-start-method.md
+        - name: Stop – metoda
+          href: iclrruntimehost-stop-method.md
+        - name: UnloadAppDomain – metoda
+          href: iclrruntimehost-unloadappdomain-method.md
+      - name: ICLRSyncManager – rozhraní
+        href: iclrsyncmanager-interface.md
+        items:
+        - name: CreateRWLockOwnerIterator – metoda
+          href: iclrsyncmanager-createrwlockowneriterator-method.md
+        - name: DeleteRWLockOwnerIterator – metoda
+          href: iclrsyncmanager-deleterwlockowneriterator-method.md
+        - name: GetMonitorOwner – metoda
+          href: iclrsyncmanager-getmonitorowner-method.md
+        - name: GetRWLockOwnerNext – metoda
+          href: iclrsyncmanager-getrwlockownernext-method.md
+      - name: ICLRTask – rozhraní
+        href: iclrtask-interface.md
+        items:
+        - name: Abort – metoda
+          href: iclrtask-abort-method.md
+        - name: ExitTask – metoda
+          href: iclrtask-exittask-method.md
+        - name: GetMemStats – metoda
+          href: iclrtask-getmemstats-method.md
+        - name: LocksHeld – metoda
+          href: iclrtask-locksheld-method.md
+        - name: NeedsPriorityScheduling – metoda
+          href: iclrtask-needspriorityscheduling-method.md
+        - name: Reset – metoda
+          href: iclrtask-reset-method.md
+        - name: RudeAbort – metoda
+          href: iclrtask-rudeabort-method.md
+        - name: SetTaskIdentifier – metoda
+          href: iclrtask-settaskidentifier-method.md
+        - name: SwitchIn – metoda
+          href: iclrtask-switchin-method.md
+        - name: SwitchOut – metoda
+          href: iclrtask-switchout-method.md
+        - name: YieldTask – metoda
+          href: iclrtask-yieldtask-method.md
+      - name: ICLRTaskManager – rozhraní
+        href: iclrtaskmanager-interface.md
+        items:
+        - name: CreateTask – metoda
+          href: iclrtaskmanager-createtask-method.md
+        - name: GetCurrentTask – metoda
+          href: iclrtaskmanager-getcurrenttask-method.md
+        - name: GetCurrentTaskType – metoda
+          href: iclrtaskmanager-getcurrenttasktype-method.md
+        - name: SetLocale – metoda
+          href: iclrtaskmanager-setlocale-method.md
+        - name: SetUILocale – metoda
+          href: iclrtaskmanager-setuilocale-method.md
+      - name: ICLRValidator – rozhraní
+        href: iclrvalidator-interface.md
+        items:
+        - name: FormatEventInfo – metoda
+          href: iclrvalidator-formateventinfo-method.md
+        - name: Validate – metoda
+          href: iclrvalidator-validate-method.md
+      - name: ICorConfiguration – rozhraní
+        href: icorconfiguration-interface.md
+        items:
+        - name: AddDebuggerSpecialThread – metoda
+          href: icorconfiguration-adddebuggerspecialthread-method.md
+        - name: SetDebuggerThreadControl – metoda
+          href: icorconfiguration-setdebuggerthreadcontrol-method.md
+        - name: SetGCHostControl – metoda
+          href: icorconfiguration-setgchostcontrol-method.md
+        - name: SetGCThreadControl – metoda
+          href: icorconfiguration-setgcthreadcontrol-method.md
+      - name: ICorThreadpool – rozhraní
+        href: icorthreadpool-interface.md
+        items:
+        - name: CorBindIoCompletionCallback – metoda
+          href: icorthreadpool-corbindiocompletioncallback-method.md
+        - name: CorCallOrQueueUserWorkItem – metoda
+          href: icorthreadpool-corcallorqueueuserworkitem-method.md
+        - name: CorChangeTimer – metoda
+          href: icorthreadpool-corchangetimer-method.md
+        - name: CorCreateTimer – metoda
+          href: icorthreadpool-corcreatetimer-method.md
+        - name: CorDeleteTimer – metoda
+          href: icorthreadpool-cordeletetimer-method.md
+        - name: CorGetAvailableThreads – metoda
+          href: icorthreadpool-corgetavailablethreads-method.md
+        - name: CorGetMaxThreads – metoda
+          href: icorthreadpool-corgetmaxthreads-method.md
+        - name: CorQueueUserWorkItem – metoda
+          href: icorthreadpool-corqueueuserworkitem-method.md
+        - name: CorRegisterWaitForSingleObject – metoda
+          href: icorthreadpool-corregisterwaitforsingleobject-method.md
+        - name: CorSetMaxThreads – metoda
+          href: icorthreadpool-corsetmaxthreads-method.md
+        - name: CorUnregisterWait – metoda
+          href: icorthreadpool-corunregisterwait-method.md
+      - name: IDebuggerInfo – rozhraní
+        href: idebuggerinfo-interface.md
+        items:
+        - name: IsDebuggerAttached – metoda
+          href: idebuggerinfo-isdebuggerattached-method.md
+      - name: IDebuggerThreadControl – rozhraní
+        href: idebuggerthreadcontrol-interface.md
+        items:
+        - name: ReleaseAllRuntimeThreads – metoda
+          href: idebuggerthreadcontrol-releaseallruntimethreads-method.md
+        - name: StartBlockingForDebugger – metoda
+          href: idebuggerthreadcontrol-startblockingfordebugger-method.md
+        - name: ThreadIsBlockingForDebugger – metoda
+          href: idebuggerthreadcontrol-threadisblockingfordebugger-method.md
+      - name: IGCHost – rozhraní
+        href: igchost-interface.md
+        items:
+        - name: Collect – metoda
+          href: igchost-collect-method.md
+        - name: GetStats – metoda
+          href: igchost-getstats-method.md
+        - name: GetThreadStats – metoda
+          href: igchost-getthreadstats-method.md
+        - name: SetGCStartupLimits – metoda
+          href: igchost-setgcstartuplimits-method.md
+        - name: SetVirtualMemLimit – metoda
+          href: igchost-setvirtualmemlimit-method.md
+      - name: IGCHost2 – rozhraní
+        href: igchost2-interface.md
+        items:
+        - name: SetGCStartupLimitsEx – metoda
+          href: igchost2-setgcstartuplimitsex-method.md
+      - name: IGCHostControl – rozhraní
+        href: igchostcontrol-interface.md
+        items:
+        - name: RequestVirtualMemLimit – metoda
+          href: igchostcontrol-requestvirtualmemlimit-method.md
+      - name: IGCThreadControl – rozhraní
+        href: igcthreadcontrol-interface.md
+        items:
+        - name: SuspensionEnding – metoda
+          href: igcthreadcontrol-suspensionending-method.md
+        - name: SuspensionStarting – metoda
+          href: igcthreadcontrol-suspensionstarting-method.md
+        - name: ThreadIsBlockingForSuspension – metoda
+          href: igcthreadcontrol-threadisblockingforsuspension-method.md
+      - name: IHostAssemblyManager – rozhraní
+        href: ihostassemblymanager-interface.md
+        items:
+        - name: GetAssemblyStore – metoda
+          href: ihostassemblymanager-getassemblystore-method.md
+        - name: GetNonHostStoreAssemblies – metoda
+          href: ihostassemblymanager-getnonhoststoreassemblies-method.md
+      - name: IHostAssemblyStore – rozhraní
+        href: ihostassemblystore-interface.md
+        items:
+        - name: ProvideAssembly – metoda
+          href: ihostassemblystore-provideassembly-method.md
+        - name: ProvideModule – metoda
+          href: ihostassemblystore-providemodule-method.md
+      - name: IHostAutoEvent – rozhraní
+        href: ihostautoevent-interface.md
+        items:
+        - name: Set – metoda
+          href: ihostautoevent-set-method.md
+        - name: Wait – metoda
+          href: ihostautoevent-wait-method.md
+      - name: IHostControl – rozhraní
+        href: ihostcontrol-interface.md
+        items:
+        - name: GetHostManager – metoda
+          href: ihostcontrol-gethostmanager-method.md
+        - name: SetAppDomainManager – metoda
+          href: ihostcontrol-setappdomainmanager-method.md
+      - name: IHostCrst – rozhraní
+        href: ihostcrst-interface.md
+        items:
+        - name: Enter – metoda
+          href: ihostcrst-enter-method.md
+        - name: Leave – metoda
+          href: ihostcrst-leave-method.md
+        - name: SetSpinCount – metoda
+          href: ihostcrst-setspincount-method.md
+        - name: TryEnter – metoda
+          href: ihostcrst-tryenter-method.md
+      - name: IHostGCManager – rozhraní
+        href: ihostgcmanager-interface.md
+        items:
+        - name: SuspensionEnding – metoda
+          href: ihostgcmanager-suspensionending-method.md
+        - name: SuspensionStarting – metoda
+          href: ihostgcmanager-suspensionstarting-method.md
+        - name: ThreadIsBlockingForSuspension – metoda
+          href: ihostgcmanager-threadisblockingforsuspension-method.md
+      - name: IHostIoCompletionManager – rozhraní
+        href: ihostiocompletionmanager-interface.md
+        items:
+        - name: Bind – metoda
+          href: ihostiocompletionmanager-bind-method.md
+        - name: CloseIoCompletionPort – metoda
+          href: ihostiocompletionmanager-closeiocompletionport-method.md
+        - name: CreateIoCompletionPort – metoda
+          href: ihostiocompletionmanager-createiocompletionport-method.md
+        - name: GetAvailableThreads – metoda
+          href: ihostiocompletionmanager-getavailablethreads-method.md
+        - name: GetHostOverlappedSize – metoda
+          href: ihostiocompletionmanager-gethostoverlappedsize-method.md
+        - name: GetMaxThreads – metoda
+          href: ihostiocompletionmanager-getmaxthreads-method.md
+        - name: GetMinThreads – metoda
+          href: ihostiocompletionmanager-getminthreads-method.md
+        - name: InitializeHostOverlapped – metoda
+          href: ihostiocompletionmanager-initializehostoverlapped-method.md
+        - name: SetCLRIoCompletionManager – metoda
+          href: ihostiocompletionmanager-setclriocompletionmanager-method.md
+        - name: SetMaxThreads – metoda
+          href: ihostiocompletionmanager-setmaxthreads-method.md
+        - name: SetMinThreads – metoda
+          href: ihostiocompletionmanager-setminthreads-method.md
+      - name: IHostMalloc – rozhraní
+        href: ihostmalloc-interface.md
+        items:
+        - name: Alloc – metoda
+          href: ihostmalloc-alloc-method.md
+        - name: DebugAlloc – metoda
+          href: ihostmalloc-debugalloc-method.md
+        - name: Free – metoda
+          href: ihostmalloc-free-method.md
+      - name: IHostManualEvent – rozhraní
+        href: ihostmanualevent-interface.md
+        items:
+        - name: Reset – metoda
+          href: ihostmanualevent-reset-method.md
+        - name: Set – metoda
+          href: ihostmanualevent-set-method.md
+        - name: Wait – metoda
+          href: ihostmanualevent-wait-method.md
+      - name: IHostMemoryManager – rozhraní
+        href: ihostmemorymanager-interface.md
+        items:
+        - name: AcquiredVirtualAddressSpace – metoda
+          href: ihostmemorymanager-acquiredvirtualaddressspace-method.md
+        - name: CreateMAlloc – metoda
+          href: ihostmemorymanager-createmalloc-method.md
+        - name: GetMemoryLoad – metoda
+          href: ihostmemorymanager-getmemoryload-method.md
+        - name: NeedsVirtualAddressSpace – metoda
+          href: ihostmemorymanager-needsvirtualaddressspace-method.md
+        - name: RegisterMemoryNotificationCallback – metoda
+          href: ihostmemorymanager-registermemorynotificationcallback-method.md
+        - name: ReleasedVirtualAddressSpace – metoda
+          href: ihostmemorymanager-releasedvirtualaddressspace-method.md
+        - name: VirtualAlloc – metoda
+          href: ihostmemorymanager-virtualalloc-method.md
+        - name: VirtualFree – metoda
+          href: ihostmemorymanager-virtualfree-method.md
+        - name: VirtualProtect – metoda
+          href: ihostmemorymanager-virtualprotect-method.md
+        - name: VirtualQuery – metoda
+          href: ihostmemorymanager-virtualquery-method.md
+      - name: IHostPolicyManager – rozhraní
+        href: ihostpolicymanager-interface.md
+        items:
+        - name: OnDefaultAction – metoda
+          href: ihostpolicymanager-ondefaultaction-method.md
+        - name: OnFailure – metoda
+          href: ihostpolicymanager-onfailure-method.md
+        - name: OnTimeout – metoda
+          href: ihostpolicymanager-ontimeout-method.md
+      - name: IHostSecurityContext – rozhraní
+        href: ihostsecuritycontext-interface.md
+        items:
+        - name: Capture – metoda
+          href: ihostsecuritycontext-capture-method.md
+      - name: IHostSecurityManager – rozhraní
+        href: ihostsecuritymanager-interface.md
+        items:
+        - name: GetSecurityContext – metoda
+          href: ihostsecuritymanager-getsecuritycontext-method.md
+        - name: ImpersonateLoggedOnUser – metoda
+          href: ihostsecuritymanager-impersonateloggedonuser-method.md
+        - name: OpenThreadToken – metoda
+          href: ihostsecuritymanager-openthreadtoken-method.md
+        - name: RevertToSelf – metoda
+          href: ihostsecuritymanager-reverttoself-method.md
+        - name: SetSecurityContext – metoda
+          href: ihostsecuritymanager-setsecuritycontext-method.md
+        - name: SetThreadToken – metoda
+          href: ihostsecuritymanager-setthreadtoken-method.md
+      - name: IHostSemaphore – rozhraní
+        href: ihostsemaphore-interface.md
+        items:
+        - name: ReleaseSemaphore – metoda
+          href: ihostsemaphore-releasesemaphore-method.md
+        - name: Wait – metoda
+          href: ihostsemaphore-wait-method.md
+      - name: IHostSyncManager – rozhraní
+        href: ihostsyncmanager-interface.md
+        items:
+        - name: CreateAutoEvent – metoda
+          href: ihostsyncmanager-createautoevent-method.md
+        - name: CreateCrst – metoda
+          href: ihostsyncmanager-createcrst-method.md
+        - name: CreateCrstWithSpinCount – metoda
+          href: ihostsyncmanager-createcrstwithspincount-method.md
+        - name: CreateManualEvent – metoda
+          href: ihostsyncmanager-createmanualevent-method.md
+        - name: CreateMonitorEvent – metoda
+          href: ihostsyncmanager-createmonitorevent-method.md
+        - name: CreateRWLockReaderEvent – metoda
+          href: ihostsyncmanager-createrwlockreaderevent-method.md
+        - name: CreateRWLockWriterEvent – metoda
+          href: ihostsyncmanager-createrwlockwriterevent-method.md
+        - name: CreateSemaphore – metoda
+          href: ihostsyncmanager-createsemaphore-method.md
+        - name: SetCLRSyncManager – metoda
+          href: ihostsyncmanager-setclrsyncmanager-method.md
+      - name: IHostTask – rozhraní
+        href: ihosttask-interface.md
+        items:
+        - name: Alert – metoda
+          href: ihosttask-alert-method.md
+        - name: GetPriority – metoda
+          href: ihosttask-getpriority-method.md
+        - name: Join – metoda
+          href: ihosttask-join-method.md
+        - name: SetCLRTask – metoda
+          href: ihosttask-setclrtask-method.md
+        - name: SetPriority – metoda
+          href: ihosttask-setpriority-method.md
+        - name: Start – metoda
+          href: ihosttask-start-method.md
+      - name: IHostTaskManager – rozhraní
+        href: ihosttaskmanager-interface.md
+        items:
+        - name: BeginDelayAbort – metoda
+          href: ihosttaskmanager-begindelayabort-method.md
+        - name: BeginThreadAffinity – metoda
+          href: ihosttaskmanager-beginthreadaffinity-method.md
+        - name: CallNeedsHostHook – metoda
+          href: ihosttaskmanager-callneedshosthook-method.md
+        - name: CreateTask – metoda
+          href: ihosttaskmanager-createtask-method.md
+        - name: EndDelayAbort – metoda
+          href: ihosttaskmanager-enddelayabort-method.md
+        - name: EndThreadAffinity – metoda
+          href: ihosttaskmanager-endthreadaffinity-method.md
+        - name: EnterRuntime – metoda
+          href: ihosttaskmanager-enterruntime-method.md
+        - name: GetCurrentTask – metoda
+          href: ihosttaskmanager-getcurrenttask-method.md
+        - name: GetStackGuarantee – metoda
+          href: ihosttaskmanager-getstackguarantee-method.md
+        - name: LeaveRuntime – metoda
+          href: ihosttaskmanager-leaveruntime-method.md
+        - name: ReverseEnterRuntime – metoda
+          href: ihosttaskmanager-reverseenterruntime-method.md
+        - name: ReverseLeaveRuntime – metoda
+          href: ihosttaskmanager-reverseleaveruntime-method.md
+        - name: SetCLRTaskManager – metoda
+          href: ihosttaskmanager-setclrtaskmanager-method.md
+        - name: SetLocale – metoda
+          href: ihosttaskmanager-setlocale-method.md
+        - name: SetStackGuarantee – metoda
+          href: ihosttaskmanager-setstackguarantee-method.md
+        - name: SetUILocale – metoda
+          href: ihosttaskmanager-setuilocale-method.md
+        - name: Sleep – metoda
+          href: ihosttaskmanager-sleep-method.md
+        - name: SwitchToTask – metoda
+          href: ihosttaskmanager-switchtotask-method.md
+      - name: IHostThreadPoolManager – rozhraní
+        href: ihostthreadpoolmanager-interface.md
+        items:
+        - name: GetAvailableThreads – metoda
+          href: ihostthreadpoolmanager-getavailablethreads-method.md
+        - name: GetMaxThreads – metoda
+          href: ihostthreadpoolmanager-getmaxthreads-method.md
+        - name: GetMinThreads – metoda
+          href: ihostthreadpoolmanager-getminthreads-method.md
+        - name: QueueUserWorkItem – metoda
+          href: ihostthreadpoolmanager-queueuserworkitem-method.md
+        - name: SetMaxThreads – metoda
+          href: ihostthreadpoolmanager-setmaxthreads-method.md
+        - name: SetMinThreads – metoda
+          href: ihostthreadpoolmanager-setminthreads-method.md
+      - name: IManagedObject – rozhraní
+        href: imanagedobject-interface.md
+        items:
+        - name: GetObjectIdentity – metoda
+          href: imanagedobject-getobjectidentity-method.md
+        - name: GetSerializedBuffer – metoda
+          href: imanagedobject-getserializedbuffer-method.md
+      - name: IObjectHandle – rozhraní
+        href: iobjecthandle-interface.md
+        items:
+        - name: Unwrap – metoda
+          href: iobjecthandle-unwrap-method.md
+      - name: ITypeName – rozhraní
+        href: itypename-interface.md
+        items:
+        - name: GetAssemblyName – metoda
+          href: itypename-getassemblyname-method.md
+        - name: GetModifierLength – metoda
+          href: itypename-getmodifierlength-method.md
+        - name: GetModifiers – metoda
+          href: itypename-getmodifiers-method.md
+        - name: GetNameCount – metoda
+          href: itypename-getnamecount-method.md
+        - name: GetNames – metoda
+          href: itypename-getnames-method.md
+        - name: GetTypeArgumentCount – metoda
+          href: itypename-gettypeargumentcount-method.md
+        - name: GetTypeArguments – metoda
+          href: itypename-gettypearguments-method.md
+      - name: ITypeNameBuilder – rozhraní
+        href: itypenamebuilder-interface.md
+        items:
+        - name: AddArray – metoda
+          href: itypenamebuilder-addarray-method.md
+        - name: AddAssemblySpec – metoda
+          href: itypenamebuilder-addassemblyspec-method.md
+        - name: AddByRef – metoda
+          href: itypenamebuilder-addbyref-method.md
+        - name: AddName – metoda
+          href: itypenamebuilder-addname-method.md
+        - name: AddPointer – metoda
+          href: itypenamebuilder-addpointer-method.md
+        - name: AddSzArray – metoda
+          href: itypenamebuilder-addszarray-method.md
+        - name: Clear – metoda
+          href: itypenamebuilder-clear-method.md
+        - name: CloseGenericArgument – metoda
+          href: itypenamebuilder-closegenericargument-method.md
+        - name: CloseGenericArguments – metoda
+          href: itypenamebuilder-closegenericarguments-method.md
+        - name: OpenGenericArgument – metoda
+          href: itypenamebuilder-opengenericargument-method.md
+        - name: OpenGenericArguments – metoda
+          href: itypenamebuilder-opengenericarguments-method.md
+        - name: ToString – metoda
+          href: itypenamebuilder-tostring-method.md
+      - name: ITypeNameFactory – rozhraní
+        href: itypenamefactory-interface.md
+        items:
+        - name: GetTypeNameBuilder – metoda
+          href: itypenamefactory-gettypenamebuilder-method.md
+        - name: ParseTypeName – metoda
+          href: itypenamefactory-parsetypename-method.md
+      - name: IValidator – rozhraní
+        href: ivalidator-interface.md
+        items:
+        - name: FormatEventInfo – metoda
+          href: ivalidator-formateventinfo-method.md
+        - name: Validate – metoda
+          href: ivalidator-validate-method.md
+    - name: Rozhraní hostování CLR přidaná v rozhraní .NET Framework 4 a 4.5
+      href: clr-hosting-interfaces-added-in-the-net-framework-4-and-4-5.md
+      items:
+      - name: ICLRAppDomainResourceMonitor – rozhraní
+        href: iclrappdomainresourcemonitor-interface.md
+        items:
+        - name: GetCurrentAllocated – metoda
+          href: iclrappdomainresourcemonitor-getcurrentallocated-method.md
+        - name: GetCurrentSurvived – metoda
+          href: iclrappdomainresourcemonitor-getcurrentsurvived-method.md
+        - name: GetCurrentCpuTime – metoda
+          href: iclrappdomainresourcemonitor-getcurrentcputime-method.md
+      - name: ICLRDomainManager – rozhraní
+        href: iclrdomainmanager-interface.md
+        items:
+        - name: SetAppDomainManagerType – metoda
+          href: iclrdomainmanager-setappdomainmanagertype-method.md
+        - name: SetPropertiesForDefaultAppDomain – metoda
+          href: iclrdomainmanager-setpropertiesfordefaultappdomain-method.md
+      - name: ICLRGCManager2 – rozhraní
+        href: iclrgcmanager2-interface.md
+        items:
+        - name: SetGCStartupLimitsEx – metoda
+          href: iclrgcmanager2-setgcstartuplimitsex-method.md
+      - name: ICLRMetaHost – rozhraní
+        href: iclrmetahost-interface.md
+        items:
+        - name: EnumerateInstalledRuntimes – metoda
+          href: iclrmetahost-enumerateinstalledruntimes-method.md
+        - name: EnumerateLoadedRuntimes – metoda
+          href: iclrmetahost-enumerateloadedruntimes-method.md
+        - name: ExitProcess – metoda
+          href: iclrmetahost-exitprocess-method.md
+        - name: GetRuntime – metoda
+          href: iclrmetahost-getruntime-method.md
+        - name: GetVersionFromFile – metoda
+          href: iclrmetahost-getversionfromfile-method.md
+        - name: QueryLegacyV2RuntimeBinding – metoda
+          href: iclrmetahost-querylegacyv2runtimebinding-method.md
+        - name: RequestRuntimeLoadedNotification – metoda
+          href: iclrmetahost-requestruntimeloadednotification-method.md
+      - name: ICLRMetaHostPolicy – rozhraní
+        href: iclrmetahostpolicy-interface.md
+        items:
+        - name: GetRequestedRuntime – metoda
+          href: iclrmetahostpolicy-getrequestedruntime-method.md
+      - name: ICLRRuntimeInfo – rozhraní
+        href: iclrruntimeinfo-interface.md
+        items:
+        - name: BindAsLegacyV2Runtime – metoda
+          href: iclrruntimeinfo-bindaslegacyv2runtime-method.md
+        - name: GetDefaultStartupFlags – metoda
+          href: iclrruntimeinfo-getdefaultstartupflags-method.md
+        - name: GetInterface – metoda
+          href: iclrruntimeinfo-getinterface-method.md
+        - name: GetProcAddress – metoda
+          href: iclrruntimeinfo-getprocaddress-method.md
+        - name: GetRuntimeDirectory – metoda
+          href: iclrruntimeinfo-getruntimedirectory-method.md
+        - name: GetVersionString – metoda
+          href: iclrruntimeinfo-getversionstring-method.md
+        - name: IsLoadable – metoda
+          href: iclrruntimeinfo-isloadable-method.md
+        - name: IsLoaded – metoda
+          href: iclrruntimeinfo-isloaded-method.md
+        - name: IsStarted – metoda
+          href: iclrruntimeinfo-isstarted-method.md
+        - name: LoadErrorString – metoda
+          href: iclrruntimeinfo-loaderrorstring-method.md
+        - name: LoadLibrary – metoda
+          href: iclrruntimeinfo-loadlibrary-method.md
+        - name: SetDefaultStartupFlags – metoda
+          href: iclrruntimeinfo-setdefaultstartupflags-method.md
+      - name: ICLRStrongName – rozhraní
+        href: iclrstrongname-interface.md
+        items:
+        - name: GetHashFromAssemblyFile – metoda
+          href: iclrstrongname-gethashfromassemblyfile-method.md
+        - name: GetHashFromAssemblyFileW – metoda
+          href: iclrstrongname-gethashfromassemblyfilew-method.md
+        - name: GetHashFromBlob – metoda
+          href: iclrstrongname-gethashfromblob-method.md
+        - name: GetHashFromFile – metoda
+          href: iclrstrongname-gethashfromfile-method.md
+        - name: GetHashFromFileW – metoda
+          href: iclrstrongname-gethashfromfilew-method.md
+        - name: GetHashFromHandle – metoda
+          href: iclrstrongname-gethashfromhandle-method.md
+        - name: StrongNameCompareAssemblies – metoda
+          href: iclrstrongname-strongnamecompareassemblies-method.md
+        - name: StrongNameFreeBuffer – metoda
+          href: iclrstrongname-strongnamefreebuffer-method.md
+        - name: StrongNameGetBlob – metoda
+          href: iclrstrongname-strongnamegetblob-method.md
+        - name: StrongNameGetBlobFromImage – metoda
+          href: iclrstrongname-strongnamegetblobfromimage-method.md
+        - name: StrongNameGetPublicKey – metoda
+          href: iclrstrongname-strongnamegetpublickey-method.md
+        - name: StrongNameHashSize – metoda
+          href: iclrstrongname-strongnamehashsize-method.md
+        - name: StrongNameKeyDelete – metoda
+          href: iclrstrongname-strongnamekeydelete-method.md
+        - name: StrongNameKeyGen – metoda
+          href: iclrstrongname-strongnamekeygen-method.md
+        - name: StrongNameKeyGenEx – metoda
+          href: iclrstrongname-strongnamekeygenex-method.md
+        - name: StrongNameKeyInstall – metoda
+          href: iclrstrongname-strongnamekeyinstall-method.md
+        - name: StrongNameSignatureGeneration – metoda
+          href: iclrstrongname-strongnamesignaturegeneration-method.md
+        - name: StrongNameSignatureGenerationEx – metoda
+          href: iclrstrongname-strongnamesignaturegenerationex-method.md
+        - name: StrongNameSignatureSize – metoda
+          href: iclrstrongname-strongnamesignaturesize-method.md
+        - name: StrongNameSignatureVerification – metoda
+          href: iclrstrongname-strongnamesignatureverification-method.md
+        - name: StrongNameSignatureVerificationEx – metoda
+          href: iclrstrongname-strongnamesignatureverificationex-method.md
+        - name: StrongNameSignatureVerificationFromImage – metoda
+          href: iclrstrongname-strongnamesignatureverificationfromimage-method.md
+        - name: StrongNameTokenFromAssembly – metoda
+          href: iclrstrongname-strongnametokenfromassembly-method.md
+        - name: StrongNameTokenFromAssemblyEx – metoda
+          href: iclrstrongname-strongnametokenfromassemblyex-method.md
+        - name: StrongNameTokenFromPublicKey – metoda
+          href: iclrstrongname-strongnametokenfrompublickey-method.md
+      - name: ICLRStrongName2 – rozhraní
+        href: iclrstrongname2-interface.md
+        items:
+        - name: StrongNameGetPublicKeyEx – metoda
+          href: strongnamegetpublickeyex-method.md
+        - name: StrongNameSignatureVerificationEx2 – metoda
+          href: strongnamesignatureverificationex2-method.md
+      - name: ICLRTask2 – rozhraní
+        href: iclrtask2-interface.md
+        items:
+        - name: BeginPreventAsyncAbort – metoda
+          href: iclrtask2-beginpreventasyncabort-method.md
+        - name: EndPreventAsyncAbort – metoda
+          href: iclrtask2-endpreventasyncabort-method.md
+  - name: Struktury pro hostování
+    href: hosting-structures.md
+    items:
+    - name: AssemblyBindInfo – struktura
+      href: assemblybindinfo-structure.md
+    - name: BucketParameters – struktura
+      href: bucketparameters-structure.md
+    - name: COR_GC_STATS – struktura
+      href: cor-gc-stats-structure.md
+    - name: COR_GC_THREAD_STATS – struktura
+      href: cor-gc-thread-stats-structure.md
+    - name: CustomDumpItem – struktura
+      href: customdumpitem-structure.md
+    - name: MDAInfo – struktura
+      href: mdainfo-structure.md
+    - name: ModuleBindInfo – struktura
+      href: modulebindinfo-structure.md
+    - name: StackOverflowInfo – struktura
+      href: stackoverflowinfo-structure.md
+ms.openlocfilehash: c00bee82be09f0c49877ccc8aa4105e64a47f2df
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58471548"

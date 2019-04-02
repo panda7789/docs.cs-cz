@@ -1,0 +1,121 @@
+items:
+- name: Procedury v jazyce Visual Basic
+  href: index.md
+  items:
+  - name: 'Postupy: Vytvoření procedury'
+    href: how-to-create-a-procedure.md
+  - name: Procedury Sub
+    href: sub-procedures.md
+    items:
+    - name: 'Postupy: Volání procedury, která nevrací hodnotu'
+      href: how-to-call-a-procedure-that-does-not-return-a-value.md
+    - name: 'Postupy: Volání obslužné rutiny události'
+      href: how-to-call-an-event-handler.md
+  - name: Procedury Function
+    href: function-procedures.md
+    items:
+    - name: 'Postupy: Vytvoření procedury, která vrací hodnotu'
+      href: how-to-create-a-procedure-that-returns-a-value.md
+    - name: 'Postupy: Vrácení hodnoty z procedury'
+      href: how-to-return-a-value-from-a-procedure.md
+    - name: 'Postupy: Volání procedury, která vrací hodnotu'
+      href: how-to-call-a-procedure-that-returns-a-value.md
+  - name: Procedury Property
+    href: property-procedures.md
+    items:
+    - name: Automaticky implementované vlastnosti
+      href: auto-implemented-properties.md
+    - name: Rozdíly mezi vlastnostmi a proměnnými
+      href: differences-between-properties-and-variables.md
+    - name: 'Postupy: Vytvoření vlastnosti'
+      href: how-to-create-a-property.md
+    - name: 'Postupy: Deklarace vlastnosti se smíšenými úrovněmi přístupu'
+      href: how-to-declare-a-property-with-mixed-access-levels.md
+    - name: 'Postupy: Volání procedury Property'
+      href: how-to-call-a-property-procedure.md
+    - name: 'Postupy: Deklarace a volání výchozí vlastnosti'
+      href: how-to-declare-and-call-a-default-property.md
+    - name: 'Postupy: Vložení hodnoty do vlastnosti'
+      href: how-to-put-a-value-in-a-property.md
+    - name: 'Postupy: Postupy: Získání hodnoty z vlastnosti'
+      href: how-to-get-a-value-from-a-property.md
+  - name: Procedury operátoru
+    href: operator-procedures.md
+    items:
+    - name: 'Postupy: Definování operátoru'
+      href: how-to-define-an-operator.md
+    - name: 'Postupy: Definování operátoru převodu'
+      href: how-to-define-a-conversion-operator.md
+    - name: 'Postupy: Volání procedury operátoru'
+      href: how-to-call-an-operator-procedure.md
+    - name: 'Postupy: Použití třídy, která definuje operátory'
+      href: how-to-use-a-class-that-defines-operators.md
+  - name: Parametry a argumenty procedury
+    href: procedure-parameters-and-arguments.md
+    items:
+    - name: Rozdíly mezi parametry a argumenty
+      href: differences-between-parameters-and-arguments.md
+    - name: 'Postupy: Definování parametru pro proceduru'
+      href: how-to-define-a-parameter-for-a-procedure.md
+    - name: 'Postupy: Předávání argumentů proceduře'
+      href: how-to-pass-arguments-to-a-procedure.md
+    - name: Předávání argumentů hodnotou nebo referencí
+      href: passing-arguments-by-value-and-by-reference.md
+      items:
+      - name: Rozdíly mezi upravitelnými a neupravitelnými argumenty
+        href: differences-between-modifiable-and-nonmodifiable-arguments.md
+      - name: Rozdíly mezi předáváním argumentů hodnotou a referencí
+        href: differences-between-passing-an-argument-by-value-and-by-reference.md
+      - name: 'Postupy: Změna hodnoty argumentu procedury'
+        href: how-to-change-the-value-of-a-procedure-argument.md
+      - name: 'Postupy: Ochrana argumentu procedury před změnami hodnoty'
+        href: how-to-protect-a-procedure-argument-against-value-changes.md
+      - name: 'Postupy: Vynucení předání argumentu hodnotou'
+        href: how-to-force-an-argument-to-be-passed-by-value.md
+    - name: Předávání argumentů pozicí nebo názvem
+      href: passing-arguments-by-position-and-by-name.md
+    - name: Volitelné parametry
+      href: optional-parameters.md
+    - name: Pole parametrů
+      href: parameter-arrays.md
+  - name: Referenční návratové hodnoty
+    href: ref-return-values.md
+  - name: Rekurzivní procedury
+    href: recursive-procedures.md
+  - name: Přetížení procedury
+    href: procedure-overloading.md
+    items:
+    - name: 'Postupy: Definování více verzí procedury'
+      href: how-to-define-multiple-versions-of-a-procedure.md
+    - name: 'Postupy: Volání přetížené procedury'
+      href: how-to-call-an-overloaded-procedure.md
+    - name: 'Postupy: Přetížení procedury, která přebírá volitelné parametry'
+      href: how-to-overload-a-procedure-that-takes-optional-parameters.md
+    - name: 'Postupy: Přetížení procedury, která přebírá neurčitý počet parametrů'
+      href: how-to-overload-a-procedure-that-takes-an-indefinite-number-of-parameters.md
+    - name: Aspekty přetížení procedur
+      href: considerations-in-overloading-procedures.md
+    - name: Rozlišení přetěžování
+      href: overload-resolution.md
+  - name: Řešení potíží s procedurami
+    href: troubleshooting-procedures.md
+  - name: Rozšiřující metody
+    href: extension-methods.md
+    items:
+    - name: 'Postupy: Zápis rozšiřující metody'
+      href: how-to-write-an-extension-method.md
+    - name: 'Postupy: Volání rozšiřující metody'
+      href: how-to-call-an-extension-method.md
+  - name: Výrazy lambda
+    href: lambda-expressions.md
+    items:
+    - name: 'Postupy: Vytvoření výrazu lambda'
+      href: how-to-create-a-lambda-expression.md
+  - name: Částečné metody
+    href: partial-methods.md
+ms.openlocfilehash: 56cc10bf082515dcf646f005522162b4c9e3bdf0
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58471161"
