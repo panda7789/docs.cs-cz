@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: f007a2b81820a1d25a2d101b35f3a49e7794fec1
+ms.sourcegitcommit: 0aca6c5d166d7961a1e354c248495645b97a1dc5
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58760221"
+---
 ### <a name="workflow-checksums-changed-from-md5-to-sha1"></a>Kontrolní součty pracovního postupu změněn z MD5, SHA1
 
 |   |   |
@@ -6,5 +14,5 @@
 |Doporučení|Pokud váš kód nelze načíst instance pracovního postupu, protože došlo k chybě kontrolního součtu, zkuste <code>AppContext</code> přepnout &quot;Switch.System.Activities.UseMD5ForWFDebugger&quot; na hodnotu true. V kódu:<pre><code class="lang-csharp">System.AppContext.SetSwitch(&quot;Switch.System.Activities.UseMD5ForWFDebugger&quot;, true);&#13;&#10;</code></pre>Nebo v konfiguraci:<pre><code class="lang-xml">&lt;configuration&gt;&#13;&#10;&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.System.Activities.UseMD5ForWFDebugger=true&quot; /&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;&lt;/configuration&gt;&#13;&#10;</code></pre>|
 |Rozsah|Vedlejší|
 |Version|4.7|
-|Typ|Změna cílení|
+|Type|Změna cílení|
 

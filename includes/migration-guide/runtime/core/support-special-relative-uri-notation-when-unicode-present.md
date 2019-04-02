@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: c8a6870a9d34889dd8f5305035744bfc63be6af6
+ms.sourcegitcommit: 0aca6c5d166d7961a1e354c248495645b97a1dc5
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58760720"
+---
 ### <a name="support-special-relative-uri-notation-when-unicode-is-present"></a>Podpora speciální relativní identifikátor URI notation při kódování Unicode je k dispozici
 
 |   |   |
@@ -6,6 +14,6 @@
 |Doporučení|Uživatelé v závislosti na toto chování zakázat relativní identifikátory URI by měl místo toho zadejte <xref:System.UriKind.Absolute?displayProperty=nameWithType> při vytváření identifikátor URI.|
 |Rozsah|Edge|
 |Version|4.7.2|
-|Typ|Modul runtime|
+|Type|Modul runtime|
 |Ovlivněná rozhraní API|<ul><li><xref:System.Uri.TryCreate(System.Uri,System.Uri,System.Uri@)?displayProperty=nameWithType></li><li><xref:System.Uri.TryCreate(System.String,System.UriKind,System.Uri@)?displayProperty=nameWithType></li><li><xref:System.Uri.TryCreate(System.Uri,System.String,System.Uri@)?displayProperty=nameWithType></li></ul>|
 

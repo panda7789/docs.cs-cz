@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 8e37007318a55188d44607fd5e4c4f3950c105df
+ms.sourcegitcommit: 0aca6c5d166d7961a1e354c248495645b97a1dc5
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58761016"
+---
 ### <a name="applicationfiltermessage-no-longer-throws-for-re-entrant-implementations-of-imessagefilterprefiltermessage"></a>Application.FilterMessage již nevyvolá pro vícenásobně implementace IMessageFilter.PreFilterMessage
 
 |   |   |
@@ -6,6 +14,6 @@
 |Doporučení|Mějte na paměti, která <xref:System.Windows.Forms.Application.FilterMessage(System.Windows.Forms.Message@)> se již nezobrazují výjimku pro vícenásobně <xref:System.Windows.Forms.IMessageFilter.PreFilterMessage(System.Windows.Forms.Message@)> chování popsané výše. To ovlivní pouze aplikace cílí na rozhraní .NET Framework 4.6.1 můžete vyjádřit výslovný nesouhlas tato změna cílení 4.6.1.Apps rozhraní .NET Framework (nebo aplikace cílení starší rozhraní mohou vyjádřit výslovný souhlas) s použitím [DontSupportReentrantFilterMessage](~/docs/framework/migration-guide/mitigation-custom-imessagefilter-prefiltermessage-implementations.md#mitigation) přepínače kompatibility.|
 |Rozsah|Edge|
 |Version|4.6.1|
-|Typ|Změna cílení|
+|Type|Změna cílení|
 |Ovlivněná rozhraní API|<ul><li><xref:System.Windows.Forms.Application.FilterMessage(System.Windows.Forms.Message@)?displayProperty=nameWithType></li></ul>|
 

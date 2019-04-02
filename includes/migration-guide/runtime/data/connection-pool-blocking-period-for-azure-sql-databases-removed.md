@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 9605352c66f85b6942ba24942cb07c88bdd81f2a
+ms.sourcegitcommit: 0aca6c5d166d7961a1e354c248495645b97a1dc5
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58760615"
+---
 ### <a name="connection-pool-blocking-period-for-azure-sql-databases-is-removed"></a>Odebrat fond připojení blokování období pro Azure SQL Database
 
 |   |   |
@@ -6,6 +14,6 @@
 |Doporučení|Pokud toto chování nežádoucí, v období blokování fondu připojení lze nastavit tak, že nastavíte <xref:System.Data.SqlClient.SqlConnectionStringBuilder.PoolBlockingPeriod?displayProperty=name> vlastnost zavedena v rozhraní .NET Framework 4.6.2. Hodnota vlastnosti je členem skupiny <xref:System.Data.SqlClient.PoolBlockingPeriod?displayProperty=name> výčet, který může mít jednu ze tří hodnot:<ul><li><xref:System.Data.SqlClient.PoolBlockingPeriod.AlwaysBlock></li><li><xref:System.Data.SqlClient.PoolBlockingPeriod.Auto></li><li><xref:System.Data.SqlClient.PoolBlockingPeriod.NeverBlock></li></ul>Předchozí chování můžete obnovit nastavením <xref:System.Data.SqlClient.SqlConnectionStringBuilder.PoolBlockingPeriod?displayProperty=name> vlastnost <xref:System.Data.SqlClient.PoolBlockingPeriod.AlwaysBlock>.|
 |Rozsah|Vedlejší|
 |Version|4.6.2|
-|Typ|Modul runtime|
+|Type|Modul runtime|
 |Ovlivněná rozhraní API|<ul><li><xref:System.Data.Common.DbConnection.OpenAsync?displayProperty=nameWithType></li><li><xref:System.Data.SqlClient.SqlConnection.Open?displayProperty=nameWithType></li><li><xref:System.Data.SqlClient.SqlConnection.OpenAsync(System.Threading.CancellationToken)?displayProperty=nameWithType></li></ul>|
 

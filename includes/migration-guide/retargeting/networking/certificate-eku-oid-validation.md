@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 0ddd554aa114395085a9f8ff41a99ca9a6096a51
+ms.sourcegitcommit: 0aca6c5d166d7961a1e354c248495645b97a1dc5
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58761028"
+---
 ### <a name="certificate-eku-oid-validation"></a>OID rozšířeného použití klíče ověření certifikátu
 
 |   |   |
@@ -6,6 +14,6 @@
 |Doporučení|Pokud tuto změnu nežádoucí, můžete zakázat certifikát OID rozšířeného použití klíče ověření tak, že přidáte následující přepnout na [ \<AppContextSwitchOverrides >](~/docs/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) v [ ` ](~/docs/framework/configure-apps/file-schema/runtime/runtime-element.md) z vaší konfigurační soubor aplikace:<pre><code class="lang-xml">&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides&#13;&#10;value=&quot;Switch.System.Net.DontCheckCertificateEKUs=true&quot; /&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;</code></pre> <blockquote> [!IMPORTANT] Toto nastavení je dostupné pouze z důvodů zpětné kompatibility. Jeho použití v opačném případě se nedoporučuje.</blockquote> |
 |Rozsah|Vedlejší|
 |Version|4.6|
-|Typ|Změna cílení|
+|Type|Změna cílení|
 |Ovlivněná rozhraní API|<ul><li><xref:System.Net.Security.SslStream?displayProperty=nameWithType></li><li><xref:System.Net.ServicePointManager?displayProperty=nameWithType></li><li><xref:System.Net.Http.HttpClient?displayProperty=nameWithType></li><li><xref:System.Net.Mail.SmtpClient?displayProperty=nameWithType></li><li><xref:System.Net.HttpWebRequest?displayProperty=nameWithType></li><li><xref:System.Net.FtpWebRequest?displayProperty=nameWithType></li></ul>|
 

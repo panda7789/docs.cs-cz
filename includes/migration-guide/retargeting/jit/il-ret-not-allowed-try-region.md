@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 060da3ebc60057554fd572bd2569652afee6bd0f
+ms.sourcegitcommit: 0aca6c5d166d7961a1e354c248495645b97a1dc5
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58761003"
+---
 ### <a name="il-ret-not-allowed-in-a-try-region"></a>IL není povolena v oblasti, zkuste vrácená hodnota:
 
 |   |   |
@@ -6,5 +14,5 @@
 |Doporučení|Pokud aplikace generuje IL, který obsahuje operační kód ret v oblasti, zkuste, aplikace mohou být zaměřeny na rozhraní .NET Framework 4.5 používat staré JIT a vyhnout se této přerušení. Alternativně může být aktualizován IL generovaný vrátit zkuste oblasti.|
 |Rozsah|Edge|
 |Version|4.6|
-|Typ|Změna cílení|
+|Type|Změna cílení|
 

@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 8f4ee44e8432bae3537c6f064f564b9f044a7c33
+ms.sourcegitcommit: 0aca6c5d166d7961a1e354c248495645b97a1dc5
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58761453"
+---
 ### <a name="crash-in-selector-when-removing-an-item-from-a-custom-incc-collection"></a>Při odebrání položky z vlastní kolekce INCC k chybě v oblasti pro výběr
 
 |   |   |
@@ -6,5 +14,5 @@
 |Doporučení|Upgrade na rozhraní .NET Framework 4.7.1.|
 |Rozsah|Vedlejší|
 |Version|4.7|
-|Typ|Modul runtime|
+|Type|Modul runtime|
 

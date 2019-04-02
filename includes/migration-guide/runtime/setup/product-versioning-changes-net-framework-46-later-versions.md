@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: fca31a98c2dd3427501b3c6bfe4f52fcec086709
+ms.sourcegitcommit: 0aca6c5d166d7961a1e354c248495645b97a1dc5
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58761307"
+---
 ### <a name="product-versioning-changes-in-the-net-framework-46-and-later-versions"></a>Změn správy verzí produktu v rozhraní .NET Framework 4.6 a novějších verzích
 
 |   |   |
@@ -6,5 +14,5 @@
 |Doporučení|Obecně platí aplikace by měl záviset na doporučené postupy pro zjištění takové věci jako verzi modulu runtime rozhraní .NET Framework a v instalačním adresáři:<ul><li>Pokud chcete zjistit verzi modulu runtime rozhraní .NET Framework, přečtěte si téma [jak: Zjištění nainstalovaných verzí rozhraní .NET Framework](~/docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md).</li><li>Určete instalační cestu pro rozhraní .NET Framework, použijte hodnotu <code>InstallPath</code> položku <code>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full</code> klíč.</li></ul> <blockquote> [!IMPORTANT] Je název podklíče <code>NET Framework Setup</code>, nikoli <code>.NET Framework Setup</code>.</blockquote> <ul><li>Chcete-li určit cestu k adresáři na rozhraní .NET Framework common language runtime, zavolejte <xref:System.Runtime.InteropServices.RuntimeEnvironment.GetRuntimeDirectory?displayProperty=nameWithType> metody.</li><li>Chcete-li získat verzi modulu CLR, zavolejte <xref:System.Runtime.InteropServices.RuntimeEnvironment.GetSystemVersion?displayProperty=nameWithType> metody. Pro rozhraní .NET Framework 4 a jeho vydání (.NET Framework 4.5, 4.5.1, 4.5.2 a rozhraní .NET Framework 4.6, 4.6.1, 4.6.2, 4.7 a 4.7.1), vrátí řetězec v4.0.30319.</li></ul>|
 |Rozsah|Vedlejší|
 |Version|4.6|
-|Typ|Modul runtime|
+|Type|Modul runtime|
 

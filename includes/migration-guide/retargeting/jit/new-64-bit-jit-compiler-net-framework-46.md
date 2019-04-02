@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 5aa37169ae0e5c5e6b88aae5ceb5d758286c3d3a
+ms.sourcegitcommit: 0aca6c5d166d7961a1e354c248495645b97a1dc5
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58761021"
+---
 ### <a name="new-64-bit-jit-compiler-in-the-net-framework-46"></a>Nový 64bitový kompilátor JIT v rozhraní .NET Framework 4.6
 
 |   |   |
@@ -6,5 +14,5 @@
 |Doporučení|<strong>Zmírnění dopadů známých problémů</strong> <br/> Pokud narazíte na problémy uvedené výše, abyste mohli vyřešit pomocí některého z následujících akcí:<ul><li>Upgrade na rozhraní .NET Framework 4.6.2. Nový 64bitový kompilátor rozhraní .NET Framework 4.6.2 je součástí adresy každé z těchto známých problémů.</li><li>Ujistěte se, že je vaše verze Windows aktuální spuštěním aktualizace Windows. Aktualizace služeb rozhraní .NET Framework 4.6 a 4.6.1 se vztahují na všechny tyto problémy s výjimkou <xref:System.NullReferenceException> v operace rozbalení.</li><li>Kompilovat s starší 64bitovým kompilátorem JIT. Zobrazit <strong>zmírnění problémů s jinými problémy</strong> části Další informace o tom, jak to provést.</li></ul><strong>Zmírnění problémů s jinými problémy</strong> <br/> Pokud narazíte na jakékoli další rozdíl v chování mezi kód zkompilovaný s starší 64bitovým kompilátorem a nového 64bitového kompilátoru JIT, nebo ladění a verze vydání aplikace, které jsou kompilovány pomocí nového 64bitového kompilátoru JIT, vám pomůžou následující aplikace s využitím starší 64bitového kompilátoru JIT kompilace:<ul><li>Na základě jednotlivých aplikací, můžete přidat [ < ](~/docs/framework/configure-apps/file-schema/runtime/uselegacyjit-element.md) prvku do konfiguračního souboru aplikace. Následující zakazuje kompilaci pomocí nového 64bitového kompilátoru JIT a místo toho používá starší verzi 64bitového kompilátoru JIT.</li></ul><pre><code class="lang-xml">&lt;?xml version =&quot;1.0&quot;?&gt;&#13;&#10;&lt;configuration&gt;&#13;&#10;&lt;runtime&gt;&#13;&#10;&lt;useLegacyJit enabled=&quot;1&quot; /&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;&lt;/configuration&gt;&#13;&#10;</code></pre><ul><li>Na základě jednotlivých uživatelů můžete přidat <code>REG_DWORD</code> hodnotu s názvem <code>useLegacyJit</code> k <code>HKEY_CURRENT_USER\SOFTWARE\Microsoft\.NETFramework</code> klíče registru. Hodnota 1 povolí starší verzi kompilátoru JIT 64-bit; Hodnota 0 zakáže a umožňuje nové 64bitovým kompilátorem JIT.</li><li>Na základě vázaná na počítač, můžete přidat <code>REG_DWORD</code> hodnotu s názvem <code>useLegacyJit</code> k <code>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework</code> klíče registru. Hodnota <code>1</code> kompilátor JIT umožňuje starší verze 64-bit; hodnota <code>0</code> zakáže a umožňuje nové 64bitovým kompilátorem JIT.</li></ul>Vám může také dejte nám vědět o problému pomocí hlášení chyby na [Microsoft Connect](https://connect.microsoft.com/VisualStudio).|
 |Rozsah|Edge|
 |Version|4.6|
-|Typ|Změna cílení|
+|Type|Změna cílení|
 

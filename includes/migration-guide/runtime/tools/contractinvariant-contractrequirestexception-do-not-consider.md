@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 91e09e71a32bb6d410ff52a97a8d14384ee3a5f1
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.sourcegitcommit: 0aca6c5d166d7961a1e354c248495645b97a1dc5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
+ms.lasthandoff: 04/01/2019
 ms.locfileid: "58467078"
 ---
 ### <a name="contractinvariant-or-contractrequirestexception-do-not-consider-stringisnullorempty-to-be-pure"></a>Contract.Invariant nebo Contract.Requires\<TException > Neberte v úvahu String.IsNullOrEmpty být čistě

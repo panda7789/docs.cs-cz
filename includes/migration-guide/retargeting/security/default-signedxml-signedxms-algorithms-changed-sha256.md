@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 12ba683655319e42368f9f2a6cf7bf70e1dbd77d
+ms.sourcegitcommit: 0aca6c5d166d7961a1e354c248495645b97a1dc5
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58760206"
+---
 ### <a name="default-signedxml-and-signedxms-algorithms-changed-to-sha256"></a>Výchozí SignedXML a SignedXMS algoritmy SHA256 změnit
 
 |   |   |
@@ -6,6 +14,6 @@
 |Doporučení|Existují dvě nové hodnoty kontextu přepínačů do ovládacího prvku, jestli je ve výchozím nastavení použije SHA1 (není bezpečné) nebo SHA256:<ul><li>Switch.System.Security.Cryptography.Xml.UseInsecureHashAlgorithms</li><li>Switch.System.Security.Cryptography.Pkcs.UseInsecureHashAlgorithms</li></ul>Pro aplikace, že cílové rozhraní .NET Framework 4.7.1 a novější verze, pokud použití SHA256 nežádoucí, můžete obnovit výchozí SHA1 tak, že přidáte následující konfigurační přepínač na [runtime](~/docs/framework/configure-apps/file-schema/runtime/runtime-element.md) část konfigurace vaší aplikace soubor:<pre><code class="lang-xml">&lt;AppContextSwitchOverrides value=&quot;Switch.System.Security.Cryptography.Xml.UseInsecureHashAlgorithms=true;Switch.System.Security.Cryptography.Pkcs.UseInsecureHashAlgorithms=true&quot; /&gt;&#13;&#10;</code></pre>Pro aplikace, které jsou cíleny na rozhraní .NET Framework 4.7 a starší verze, můžete se rozhodnout do této změny tak, že přidáte následující konfigurační přepínač tak, aby [runtime](~/docs/framework/configure-apps/file-schema/runtime/runtime-element.md) oddílu konfiguračního souboru aplikace:<pre><code class="lang-xml">&lt;AppContextSwitchOverrides value=&quot;Switch.System.Security.Cryptography.Xml.UseInsecureHashAlgorithms=false;Switch.System.Security.Cryptography.Pkcs.UseInsecureHashAlgorithms=false&quot; /&gt;&#13;&#10;</code></pre>|
 |Rozsah|Vedlejší|
 |Version|4.7.1|
-|Typ|Změna cílení|
+|Type|Změna cílení|
 |Ovlivněná rozhraní API|<ul><li><xref:System.Security.Cryptography.Pkcs.CmsSigner?displayProperty=nameWithType></li><li><xref:System.Security.Cryptography.Xml.SignedXml?displayProperty=nameWithType></li><li><xref:System.Security.Cryptography.Xml.Reference?displayProperty=nameWithType></li></ul>|
 

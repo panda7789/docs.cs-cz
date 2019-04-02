@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 9d09f598538b9d5ee3f995d6281b8eb4b2668050
+ms.sourcegitcommit: 0aca6c5d166d7961a1e354c248495645b97a1dc5
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58761301"
+---
 ### <a name="objectdisposedexception-thrown-by-wpf-spellchecker"></a>Objectdisposedexception – vyvolané kontrolu pravopisu WPF
 
 |   |   |
@@ -6,5 +14,5 @@
 |Doporučení|Upgrade na rozhraní .NET Framework 4.7|
 |Rozsah|Edge|
 |Version|4.6.1|
-|Typ|Modul runtime|
+|Type|Modul runtime|
 

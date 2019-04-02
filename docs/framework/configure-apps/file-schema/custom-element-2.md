@@ -24,7 +24,7 @@ Definuje nastavení pro vlastní konfigurační oddíly funkce, které používa
 
 ## <a name="attributes"></a>Atributy
 
-Žádná
+Žádné
 
 ## <a name="parent-element"></a>Nadřazený element
 

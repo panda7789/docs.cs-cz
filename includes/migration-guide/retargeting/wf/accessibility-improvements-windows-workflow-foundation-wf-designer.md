@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: f7f8cec632965a75ac262fd6f1853a954d02ebec
+ms.sourcegitcommit: 0aca6c5d166d7961a1e354c248495645b97a1dc5
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58760218"
+---
 ### <a name="accessibility-improvements-in-windows-workflow-foundation-wf-workflow-designer"></a>Vylepšení přístupnosti v Návrháři pracovních postupů Windows Workflow Foundation (WF)
 
 |   |   |
@@ -6,5 +14,5 @@
 |Doporučení|Pokud máte aplikace pomocí návrháře znovu hostovaných pracovních postupů, vaše aplikace využívat tyto změny pomocí provádí obě tyto akce:<ul><li>Znovu zkompilujte vaší aplikace pro cílení na rozhraní .NET Framework 4.7.1. Ve výchozím nastavení jsou povoleny tyto změny usnadnění přístupu.</li><li>Pokud vaše aplikace cílí na .NET Framework 4.7 nebo starší, ale běží na rozhraní .NET Framework 4.7.1, můžete zrušit tyto starší verze usnadnění chování přidáním následujícího kódu [přepínač AppContext](~/docs/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) k <code>&lt;runtime&gt;</code> oddílu z app.config souboru a nastavte ho na <code>false</code>, jak ukazuje následující příklad.</li></ul><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#13;&#10;&lt;configuration&gt;&#13;&#10;&lt;startup&gt;&#13;&#10;&lt;supportedRuntime version=&quot;v4.0&quot; sku=&quot;.NETFramework,Version=v4.7&quot;/&gt;&#13;&#10;&lt;/startup&gt;&#13;&#10;&lt;runtime&gt;&#13;&#10;&lt;!-- AppContextSwitchOverrides value attribute is in the form of &#39;key1=true/false;key2=true/false  --&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.UseLegacyAccessibilityFeatures=false&quot; /&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;&lt;/configuration&gt;&#13;&#10;</code></pre>Aplikací určených pro rozhraní .NET Framework 4.7.1 nebo novější a chcete zachovat starší chování usnadnění můžete přejít k používání funkce starší verze usnadnění explicitním nastavením na tento přepínač AppContext <code>true</code>.|
 |Rozsah|Vedlejší|
 |Version|4.7.1|
-|Typ|Změna cílení|
+|Type|Změna cílení|
 

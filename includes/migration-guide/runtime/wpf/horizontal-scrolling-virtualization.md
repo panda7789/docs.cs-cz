@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 0825233c0dae131fa9d00565348fac6fdf0be063
+ms.sourcegitcommit: 0aca6c5d166d7961a1e354c248495645b97a1dc5
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58760627"
+---
 ### <a name="horizontal-scrolling-and-virtualization"></a>Vodorovné posouvání a virtualizace
 
 |   |   |
@@ -6,6 +14,6 @@
 |Doporučení|Aplikaci, která využívá předpovězené hodnoty pro <xref:System.Windows.Controls.Primitives.IScrollInfo.HorizontalOffset?displayProperty=name> by měla být změněna načíst skutečnou hodnotu (a hodnota <xref:System.Windows.Controls.Primitives.IScrollInfo.ExtentWidth?displayProperty=name>) po vodorovné rolovací, který by mohl změnit <xref:System.Windows.Controls.Primitives.IScrollInfo.ExtentWidth?displayProperty=name> kvůli uvolnění virtualizace.|
 |Rozsah|Vedlejší|
 |Version|4.6.2|
-|Typ|Modul runtime|
+|Type|Modul runtime|
 |Ovlivněná rozhraní API|<ul><li><xref:System.Windows.Controls.Primitives.IScrollInfo?displayProperty=nameWithType></li></ul>|
 

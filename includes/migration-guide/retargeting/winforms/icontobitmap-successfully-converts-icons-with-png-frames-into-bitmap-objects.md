@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 9c2a8eca3f4498906cf703ff3b8ffb7336ff7a1b
+ms.sourcegitcommit: 0aca6c5d166d7961a1e354c248495645b97a1dc5
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58760998"
+---
 ### <a name="icontobitmap-successfully-converts-icons-with-png-frames-into-bitmap-objects"></a>Ikony PNG snímky Icon.ToBitmap úspěšně převede na objekty rastrový obrázek
 
 |   |   |
@@ -6,6 +14,6 @@
 |Doporučení|Pokud toto chování nežádoucí, můžete zachovat předchozí chování tak, že přidáte následující element na <code>&lt;runtime&gt;</code> části souboru app.config:<pre><code class="lang-xml">&lt;AppContextSwitchOverrides&#13;&#10;value=&quot;Switch.System.Drawing.DontSupportPngFramesInIcons=true&quot; /&gt;&#13;&#10;</code></pre>Pokud již obsahuje soubor app.config <code>AppContextSwitchOverrides</code> elementu, nová hodnota mají sloučit s hodnotou atributu takto:<pre><code class="lang-xml">&lt;AppContextSwitchOverrides&#13;&#10;value=&quot;Switch.System.Drawing.DontSupportPngFramesInIcons=true;&lt;previous key&gt;=&lt;previous value&gt;&quot; /&gt;&#13;&#10;</code></pre>|
 |Rozsah|Vedlejší|
 |Version|4.6|
-|Typ|Změna cílení|
+|Type|Změna cílení|
 |Ovlivněná rozhraní API|<ul><li><xref:System.Drawing.Icon.ToBitmap?displayProperty=nameWithType></li></ul>|
 

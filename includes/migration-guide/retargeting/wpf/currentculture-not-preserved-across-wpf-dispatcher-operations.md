@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: cce19d6c9afa5f5ce9bb17b5b5d92f2060a08414
+ms.sourcegitcommit: 0aca6c5d166d7961a1e354c248495645b97a1dc5
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58761022"
+---
 ### <a name="currentculture-is-not-preserved-across-wpf-dispatcher-operations"></a>CurrentCulture nezachová v objektu WPF Dispatcher operace
 
 |   |   |
@@ -6,5 +14,5 @@
 |Doporučení|Touto změnou ovlivněny aplikace může obejít uložením požadovaný <xref:System.Globalization.CultureInfo.CurrentCulture?displayProperty=name> nebo <xref:System.Globalization.CultureInfo.CurrentUICulture?displayProperty=name> v poli a vracet se změnami všechny operace těla dispečer (včetně obslužné rutiny zpětných volání události uživatelského rozhraní), který správné <xref:System.Globalization.CultureInfo.CurrentCulture?displayProperty=name> a <xref:System.Globalization.CultureInfo.CurrentUICulture?displayProperty=name> jsou nastavené. Případně protože kontextu ExecutionContext změnit základní tato WPF změna ovlivní pouze aplikace určené pro rozhraní .NET Framework 4.6 nebo novější, pomocí cílení na rozhraní .NET Framework 4.5.2.Apps, který cílit na .NET Framework 4.6 nebo novější můžete také pracovat se lze vyvarovat této přerušení vyřešit tak, že nastavíte následující kompatibility přepínače:<pre><code class="lang-csharp">AppContext.SetSwitch(&quot;Switch.System.Globalization.NoAsyncCurrentCulture&quot;, true);&#13;&#10;</code></pre>Tento problém byl vyřešen ve WPF v rozhraní .NET Framework 4.6.2. Také jsme opravili .NET Framework 4.6, 4.6.1 prostřednictvím [KB 3139549](https://support.microsoft.com/kb/3139549). Aplikace cílené na rozhraní .NET Framework 4.6 nebo novější, automaticky získá správné chování v aplikaci WPF – <xref:System.Globalization.CultureInfo.CurrentCulture?displayProperty=name> / <xref:System.Globalization.CultureInfo.CurrentUICulture?displayProperty=name>) by zachovaná napříč operace dispečera.|
 |Rozsah|Vedlejší|
 |Version|4.6|
-|Typ|Změna cílení|
+|Type|Změna cílení|
 

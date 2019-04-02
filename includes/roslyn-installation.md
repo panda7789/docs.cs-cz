@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 72acd0029d0189de1c724856572957f111b9d18f
+ms.sourcegitcommit: 0aca6c5d166d7961a1e354c248495645b97a1dc5
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58760388"
+---
 ## <a name="installation-instructions"></a>Pokyny k instalaci 
 
 Existují dva různé způsoby, jak najít **sada SDK platformy kompilátoru .NET** v **instalační program sady Visual Studio**:
@@ -6,7 +14,7 @@ Existují dva různé způsoby, jak najít **sada SDK platformy kompilátoru .NE
 
 Sada SDK platformy kompilátoru .NET nebude automaticky označen jako součást sady funkcí vývoj rozšíření sady Visual Studio. Je třeba vybrat jako volitelnou komponentu.
 
-1. Spustit **instalační program sady Visual Studio** 
+1. Run **Visual Studio Installer** 
 1. Vyberte **upravit** 
 1. Zkontrolujte, **vývoj rozšíření sady Visual Studio** pracovního vytížení.
 1. Otevřít **vývoj rozšíření sady Visual Studio** uzel ve stromu souhrnu.
@@ -19,7 +27,7 @@ V případě potřeby je také vhodné **DGML editor** zobrazit grafy ve vizuali
 
 ### <a name="install-using-the-individual-components-tab"></a>Instalace na kartě jednotlivé komponenty
 
-1. Spustit **instalační program sady Visual Studio** 
+1. Run **Visual Studio Installer** 
 1. Vyberte **upravit** 
 1. Vyberte **jednotlivé komponenty** kartu 
 1. Zaškrtněte políčko u **sada SDK platformy kompilátoru .NET**. Najdete v horní části stránky v části **sestavení kompilátory, nástroje a moduly runtime** oddílu.
