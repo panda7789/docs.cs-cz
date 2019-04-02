@@ -1,0 +1,604 @@
+items:
+- name: Upřesnit
+  href: index.md
+  items:
+  - name: Architektura WPF
+    href: wpf-architecture.md
+  - name: XAML ve WPF
+    href: xaml-in-wpf.md
+    items:
+    - name: Přehled XAML (WPF)
+      href: xaml-overview-wpf.md
+    - name: Podrobná syntaxe XAML
+      href: xaml-syntax-in-detail.md
+    - name: Podkladový kód a kód XAML ve WPF
+      href: code-behind-and-xaml-in-wpf.md
+    - name: XAML a vlastní třídy pro WPF
+      href: xaml-and-custom-classes-for-wpf.md
+    - name: Rozšíření značek a WPF XAML
+      href: markup-extensions-and-wpf-xaml.md
+    - name: Obor názvů XAML mapování oboru názvů pro WPF XAML
+      href: xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md
+    - name: Obory názvů WPF XAML
+      href: wpf-xaml-namescopes.md
+    - name: Vložené styly a šablony
+      href: inline-styles-and-templates.md
+    - name: TypeConverters a XAML
+      href: typeconverters-and-xaml.md
+    - name: Rozšíření WPF XAML
+      href: wpf-xaml-extensions.md
+      items:
+      - name: Rozšíření značek připojení
+        href: binding-markup-extension.md
+      - name: ColorConvertedBitmap – rozšíření značek
+        href: colorconvertedbitmap-markup-extension.md
+      - name: ComponentResourceKey – rozšíření značek
+        href: componentresourcekey-markup-extension.md
+      - name: DateTime – syntaxe v jazyce XAML
+        href: datetime-xaml-syntax.md
+      - name: DynamicResource – rozšíření značek
+        href: dynamicresource-markup-extension.md
+      - name: RelativeSource MarkupExtension
+        href: relativesource-markupextension.md
+      - name: StaticResource – rozšíření značek
+        href: staticresource-markup-extension.md
+      - name: TemplateBinding – rozšíření značek
+        href: templatebinding-markup-extension.md
+      - name: ThemeDictionary – rozšíření značek
+        href: themedictionary-markup-extension.md
+      - name: PropertyPath – syntaxe v jazyce XAML
+        href: propertypath-xaml-syntax.md
+      - name: PresentationOptions:Freeze – atribut
+        href: presentationoptions-freeze-attribute.md
+    - name: Jazykové funkce kompatibility značek (mc:)
+      href: markup-compatibility-mc-language-features.md
+      items:
+      - name: mc:Ignorable – atribut
+        href: mc-ignorable-attribute.md
+      - name: mc:ProcessContent – atribut
+        href: mc-processcontent-attribute.md
+  - name: Základní elementy
+    href: base-elements.md
+    items:
+    - name: Přehled základních elementů
+      href: base-elements-overview.md
+    - name: Přehled zablokovatelných objektů
+      href: freezable-objects-overview.md
+    - name: Přehled zarovnání, okrajů a odsazení
+      href: alignment-margins-and-padding-overview.md
+    - name: – postupy
+      href: base-elements-how-to-topics.md
+      items:
+      - name: Vytvoření průhledného nebo poloprůhledného elementu UIElement
+        href: how-to-make-a-uielement-transparent-or-semi-transparent.md
+      - name: Animace velikosti FrameworkElement
+        href: how-to-animate-the-size-of-a-frameworkelement.md
+      - name: Určení, jestli je zablokovatelné zablokováno
+        href: how-to-determine-whether-a-freezable-is-frozen.md
+      - name: Zpracování načtené události
+        href: how-to-handle-a-loaded-event.md
+      - name: Nastavení okrajů elementů a ovládacích prvků
+        href: how-to-set-margins-of-elements-and-controls.md
+      - name: Nastavení zablokovatelného objektu jen pro čtení
+        href: how-to-make-a-freezable-read-only.md
+      - name: Získání zapisovatelné kopie zablokovatelného objektu jen pro čtení
+        href: how-to-obtain-a-writable-copy-of-a-read-only-freezable.md
+      - name: Překlopení prvku UIElement vodorovně nebo svisle
+        href: how-to-flip-a-uielement-horizontally-or-vertically.md
+      - name: Použití objektu ThicknessConverter
+        href: how-to-use-a-thicknessconverter-object.md
+      - name: Zpracování události ContextMenuOpening
+        href: how-to-handle-the-contextmenuopening-event.md
+  - name: Strom prvku a serializace
+    href: element-tree-and-serialization.md
+    items:
+    - name: Stromy ve WPF
+      href: trees-in-wpf.md
+    - name: Omezení serializace XamlWriter.Save
+      href: serialization-limitations-of-xamlwriter-save.md
+    - name: Inicializace elementů objektu, které nejsou obsaženy ve stromu objektů
+      href: initialization-for-object-elements-not-in-an-object-tree.md
+    - name: – postupy
+      href: element-tree-and-serialization-how-to-topics.md
+      items:
+      - name: Hledání elementu podle názvu
+        href: how-to-find-an-element-by-its-name.md
+      - name: Přepsání logického stromu
+        href: how-to-override-the-logical-tree.md
+  - name: Vlastnosti
+    href: properties-wpf.md
+    items:
+    - name: Přehled vlastností závislosti
+      href: dependency-properties-overview.md
+    - name: Přehled připojených vlastností
+      href: attached-properties-overview.md
+    - name: Vlastní vlastnosti závislosti
+      href: custom-dependency-properties.md
+    - name: Metadata vlastností závislosti
+      href: dependency-property-metadata.md
+    - name: Zpětné volání a ověření vlastností závislostí
+      href: dependency-property-callbacks-and-validation.md
+    - name: Metadata vlastnosti rozhraní .NET Framework
+      href: framework-property-metadata.md
+    - name: Priorita hodnot závislých vlastností
+      href: dependency-property-value-precedence.md
+    - name: Vlastnosti závislosti jen pro čtení
+      href: read-only-dependency-properties.md
+    - name: Dědičnost hodnoty vlastnosti
+      href: property-value-inheritance.md
+    - name: Zabezpečení vlastností závislosti
+      href: dependency-property-security.md
+    - name: Zabezpečené vzory konstruktoru pro DependencyObjects
+      href: safe-constructor-patterns-for-dependencyobjects.md
+    - name: Vlastnosti závislostí typu kolekce
+      href: collection-type-dependency-properties.md
+    - name: Vlastnost závislostí a načítání XAML
+      href: xaml-loading-and-dependency-properties.md
+    - name: – postupy
+      href: properties-how-to-topics.md
+      items:
+      - name: Implementace vlastnosti závislosti
+        href: how-to-implement-a-dependency-property.md
+      - name: Přidání typu vlastníka pro vlastnost závislosti
+        href: how-to-add-an-owner-type-for-a-dependency-property.md
+      - name: Registrace přidružené vlastnosti
+        href: how-to-register-an-attached-property.md
+      - name: Přepsání metadat pro vlastnost závislosti
+        href: how-to-override-metadata-for-a-dependency-property.md
+  - name: Události
+    href: events-wpf.md
+    items:
+    - name: Přehled směrovaných událostí
+      href: routed-events-overview.md
+    - name: Přehled připojených událostí
+      href: attached-events-overview.md
+    - name: Události doby života objektu
+      href: object-lifetime-events.md
+    - name: Označení směrovaných událostí jako zpracovaných a zpracování tříd
+      href: marking-routed-events-as-handled-and-class-handling.md
+    - name: Události náhledu
+      href: preview-events.md
+    - name: Události změny vlastnosti
+      href: property-change-events.md
+    - name: Zpracování událostí v jazyku Visual Basic a WPF
+      href: visual-basic-and-wpf-event-handling.md
+    - name: Slabý vzor událostí
+      href: weak-event-patterns.md
+    - name: – postupy
+      href: events-how-to-topics.md
+      items:
+      - name: Přidání obslužné rutiny události pomocí kódu
+        href: how-to-add-an-event-handler-using-code.md
+      - name: Zpracování směrované události
+        href: how-to-handle-a-routed-event.md
+      - name: Vytvoření vlastní směrované události
+        href: how-to-create-a-custom-routed-event.md
+      - name: Hledání zdrojového elementu v obslužné rutině události
+        href: how-to-find-the-source-element-in-an-event-handler.md
+      - name: Přidání zpracování třídy pro směrovanou událost
+        href: how-to-add-class-handling-for-a-routed-event.md
+  - name: Vstup
+    href: input-wpf.md
+    items:
+    - name: Přehled vstupu
+      href: input-overview.md
+    - name: Přehled příkazů
+      href: commanding-overview.md
+    - name: Přehled fokusu
+      href: focus-overview.md
+    - name: Nastavení stylů pro fokus v ovládacích prvcích a FocusVisualStyle
+      href: styling-for-focus-in-controls-and-focusvisualstyle.md
+    - name: 'Návod: Vytvoření první dotykové aplikace'
+      href: walkthrough-creating-your-first-touch-application.md
+    - name: – postupy
+      href: input-and-commands-how-to-topics.md
+      items:
+      - name: Povolení příkazu
+        href: how-to-enable-a-command.md
+      - name: Změna typu kurzoru
+        href: how-to-change-the-cursor-type.md
+      - name: Změna barvy elementu použitím událostí fokusu
+        href: how-to-change-the-color-of-an-element-using-focus-events.md
+      - name: Použití FocusVisualStyle na ovládací prvek
+        href: how-to-apply-a-focusvisualstyle-to-a-control.md
+      - name: Detekce stisknuté klávesy Enter
+        href: how-to-detect-when-the-enter-key-pressed.md
+      - name: Vytvoření efektu přechodu použitím událostí
+        href: how-to-create-a-rollover-effect-using-events.md
+      - name: Nastavení objektu tak, aby následoval ukazatel myši
+        href: how-to-make-an-object-follow-the-mouse-pointer.md
+      - name: Vytvoření objektu RoutedCommand
+        href: how-to-create-a-routedcommand.md
+      - name: Implementace rozhraní ICommandSource
+        href: how-to-implement-icommandsource.md
+      - name: Propojení příkazu s ovládacím prvkem bez podpory příkazů
+        href: how-to-hook-up-a-command-to-a-control-with-no-command-support.md
+      - name: Propojení příkazu s ovládacím prvkem s podporou příkazů
+        href: how-to-hook-up-a-command-to-a-control-with-command-support.md
+    - name: Digitální rukopis
+      href: digital-ink.md
+      items:
+      - name: Přehledy
+        href: digital-ink-overviews.md
+        items:
+        - name: Začínáme s rukopisem
+          href: getting-started-with-ink.md
+        - name: Shromáždění rukopisu
+          href: collecting-ink.md
+        - name: Rozpoznávání textu psaného rukou
+          href: handwriting-recognition.md
+        - name: Uložení rukopisu
+          href: storing-ink.md
+        - name: 'Model objektů rukopisu: Windows Forms a COM vs. WPF'
+          href: the-ink-object-model-windows-forms-and-com-versus-wpf.md
+        - name: Upřesnění zpracování rukopisu
+          href: advanced-ink-handling.md
+          items:
+          - name: Rukopis s vlastním vykreslováním
+            href: custom-rendering-ink.md
+          - name: Přijetí vstupu z pera
+            href: intercepting-input-from-the-stylus.md
+          - name: Vytvoření ovládacího prvku vstupu rukopisu
+            href: creating-an-ink-input-control.md
+          - name: Model vláken rukopisu
+            href: the-ink-threading-model.md
+      - name: – postupy
+        href: digital-ink-how-to-topics.md
+        items:
+        - name: Výběr rukopisu pomocí vlastního ovládacího prvku
+          href: how-to-select-ink-from-a-custom-control.md
+        - name: Přidání vlastních dat do dat rukopisu
+          href: how-to-add-custom-data-to-ink-data.md
+        - name: Smazání rukopisu na vlastním ovládacím prvku
+          href: how-to-erase-ink-on-a-custom-control.md
+        - name: Rozpoznání gest aplikace
+          href: how-to-recognize-application-gestures.md
+        - name: Přetažení rukopisu
+          href: how-to-drag-and-drop-ink.md
+        - name: Datová vazba k objektu InkCanvas
+          href: how-to-data-bind-to-an-inkcanvas.md
+        - name: Analýza rukopisu pomocí tipů analýzy
+          href: how-to-analyze-ink-with-analysis-hints.md
+        - name: Otočení rukopisu
+          href: how-to-rotate-ink.md
+        - name: Zákaz RealTimeStylus pro aplikace WPF
+          href: disable-the-realtimestylus-for-wpf-applications.md
+  - name: Přetažení
+    href: drag-and-drop.md
+    items:
+    - name: Přehled přetažení
+      href: drag-and-drop-overview.md
+    - name: Data a datové objekty
+      href: data-and-data-objects.md
+    - name: 'Návod: Povolení přetahování pomocí myši na uživatelském ovládacím prvku'
+      href: walkthrough-enabling-drag-and-drop-on-a-user-control.md
+    - name: – postupy
+      href: drag-and-drop-how-to-topics.md
+      items:
+      - name: Otevření souboru přetaženého na ovládací prvek RichTextBox
+        href: how-to-open-a-file-that-is-dropped-on-a-richtextbox-control.md
+      - name: Vytvoření datového objektu
+        href: how-to-create-a-data-object.md
+      - name: Určení, jestli datový objekt obsahuje formát dat
+        href: how-to-determine-if-a-data-format-is-present-in-a-data-object.md
+      - name: Seznam datových formátů v datovém objektu
+        href: how-to-list-the-data-formats-in-a-data-object.md
+      - name: Načtení dat v konkrétním datovém formátu
+        href: how-to-retrieve-data-in-a-particular-data-format.md
+      - name: Uložení několika datových formátů do datového objektu
+        href: how-to-store-multiple-data-formats-in-a-data-object.md
+  - name: Prostředky
+    href: resources-wpf.md
+    items:
+    - name: Prostředky XAML
+      href: xaml-resources.md
+      items:
+      - name: Prostředky a kód
+        href: resources-and-code.md
+      - name: Slovníky sloučených prostředků
+        href: merged-resource-dictionaries.md
+      - name: – postupy
+        href: resources-how-to-topics.md
+        items:
+        - name: Definování prostředků a odkazování na ně
+          href: how-to-define-and-reference-a-resource.md
+        - name: Používání prostředků aplikace
+          href: how-to-use-application-resources.md
+        - name: Používání třídy SystemFonts
+          href: how-to-use-systemfonts.md
+        - name: Používání klíčů systémových písem
+          href: how-to-use-system-fonts-keys.md
+        - name: Používání třídy SystemParameters
+          href: how-to-use-systemparameters.md
+        - name: Používání klíčů systémových parametrů
+          href: how-to-use-system-parameters-keys.md
+  - name: Dokumenty
+    href: documents.md
+    items:
+    - name: Dokumenty ve WPF
+      href: documents-in-wpf.md
+    - name: Serializace a úložiště dokumentu
+      href: document-serialization-and-storage.md
+    - name: Poznámky
+      href: annotations.md
+      items:
+      - name: Přehled poznámek
+        href: annotations-overview.md
+      - name: Schéma poznámek
+        href: annotations-schema.md
+    - name: Obsah toku
+      href: flow-content.md
+      items:
+      - name: Přehled toku dokumentů
+        href: flow-document-overview.md
+      - name: Přehled modelu obsahu TextElement
+        href: textelement-content-model-overview.md
+      - name: Přehled tabulky
+        href: table-overview.md
+      - name: – postupy
+        href: flow-content-elements-how-to-topics.md
+        items:
+        - name: Úprava mezer mezi odstavci
+          href: how-to-adjust-spacing-between-paragraphs.md
+        - name: Vytvoření tabulky pomocí programu
+          href: how-to-build-a-table-programmatically.md
+        - name: Změna směru toku obsahu pomocí programu
+          href: how-to-change-the-flowdirection-of-content-programmatically.md
+        - name: Změna vlastnosti TextWrapping pomocí programu
+          href: how-to-change-the-textwrapping-property-programmatically.md
+        - name: Definování tabulky pomocí jazyka XAML
+          href: how-to-define-a-table-with-xaml.md
+        - name: Změna typografie textu
+          href: how-to-alter-the-typography-of-text.md
+        - name: Povolení ořezávání textu
+          href: how-to-enable-text-trimming.md
+        - name: Vložení elementu do textu pomocí programu
+          href: how-to-insert-an-element-into-text-programmatically.md
+        - name: Zpracování elementů obsahu toku prostřednictvím vlastnosti Blocks
+          href: how-to-manipulate-flow-content-elements-through-the-blocks-property.md
+        - name: Zpracování elementů obsahu toku prostřednictvím vlastnosti Inlines
+          href: how-to-manipulate-flow-content-elements-through-the-inlines-property.md
+        - name: Zpracování objektu FlowDocument prostřednictvím vlastnosti Blocks
+          href: how-to-manipulate-a-flowdocument-through-the-blocks-property.md
+        - name: Zpracování sloupců tabulky prostřednictvím vlastnosti Columns
+          href: how-to-manipulate-table-columns-through-the-columns-property.md
+        - name: Zpracování skupin řádků tabulky prostřednictvím vlastnosti RowGroups
+          href: how-to-manipulate-table-row-groups-through-the-rowgroups-property.md
+        - name: Použití elementů obsahu toku
+          href: how-to-use-flow-content-elements.md
+        - name: Použití atributů pro oddělení sloupců FlowDocument
+          href: how-to-use-flowdocument-column-separating-attributes.md
+    - name: Typografie
+      href: typography.md
+      items:
+      - name: Typografie ve WPF
+        href: typography-in-wpf.md
+      - name: ClearType – přehled
+        href: cleartype-overview.md
+      - name: Nastavení registru ClearType
+        href: cleartype-registry-settings.md
+      - name: Kreslení formátovaného textu
+        href: drawing-formatted-text.md
+      - name: Upřesněné formátování textu
+        href: advanced-text-formatting.md
+      - name: Písma
+        href: fonts-wpf.md
+        items:
+        - name: Funkce písma OpenType
+          href: opentype-font-features.md
+        - name: Balení písem s aplikacemi
+          href: packaging-fonts-with-applications.md
+        - name: Ukázková sada písem OpenType
+          href: sample-opentype-font-pack.md
+        - name: – postupy
+          href: fonts-how-to-topics.md
+          items:
+          - name: Výčet systémových písem
+            href: how-to-enumerate-system-fonts.md
+          - name: Použití třídy FontSizeConverter
+            href: how-to-use-the-fontsizeconverter-class.md
+      - name: Glyfy
+        href: glyphs.md
+        items:
+        - name: Úvod do objektu GlyphRun a elementu Glyph
+          href: introduction-to-the-glyphrun-object-and-glyphs-element.md
+        - name: 'Postupy: Vykreslení textu použitím piktogramů'
+          href: draw-text-using-glyphs.md
+      - name: – postupy
+        href: typography-how-to-topics.md
+        items:
+        - name: Vytvoření dekorace textu
+          href: how-to-create-a-text-decoration.md
+        - name: Určení podtržení hypertextového odkazu
+          href: how-to-specify-whether-a-hyperlink-is-underlined.md
+        - name: Použití transformací na text
+          href: how-to-apply-transforms-to-text.md
+        - name: Použití animací na text
+          href: how-to-apply-animations-to-text.md
+        - name: Vytvoření textu se stínem
+          href: how-to-create-text-with-a-shadow.md
+        - name: Vytvoření obrysového textu
+          href: how-to-create-outlined-text.md
+        - name: Vykreslení textu na pozadí ovládacího prvku
+          href: how-to-draw-text-to-a-control-background.md
+        - name: Vykreslení textu do vizuálního objektu
+          href: how-to-draw-text-to-a-visual.md
+        - name: Použití speciálních znaků v kódu XAML
+          href: how-to-use-special-characters-in-xaml.md
+    - name: Tisk a systémová správa tisku
+      href: printing-and-print-system-management.md
+      items:
+      - name: Přehled tisku
+        href: printing-overview.md
+      - name: – postupy
+        href: printing-how-to-topics.md
+        items:
+        - name: Vyvolání dialogového okna Tisk
+          href: how-to-invoke-a-print-dialog.md
+        - name: Klonování tiskárny
+          href: how-to-clone-a-printer.md
+        - name: Diagnostika problematické tiskové úlohy
+          href: how-to-diagnose-problematic-print-job.md
+        - name: Zjištění, jestli jde vytisknout tiskovou úlohu v této denní době
+          href: how-to-discover-whether-a-print-job-can-be-printed-at-this-time-of-day.md
+        - name: Výčet podmnožiny tiskových front
+          href: how-to-enumerate-a-subset-of-print-queues.md
+        - name: Získání vlastností systémového objektu tisku bez reflexe
+          href: how-to-get-print-system-object-properties-without-reflection.md
+        - name: Tisk souborů XPS pomocí programu
+          href: how-to-programmatically-print-xps-files.md
+        - name: Vzdálený průzkum stavu tiskáren
+          href: how-to-remotely-survey-the-status-of-printers.md
+        - name: Ověření a sloučení PrintTickets
+          href: how-to-validate-and-merge-printtickets.md
+  - name: Globalizace a lokalizace
+    href: globalization-and-localization.md
+    items:
+    - name: Přehled globalizace a lokalizace WPF
+      href: wpf-globalization-and-localization-overview.md
+    - name: Globalizace pro WPF
+      href: globalization-for-wpf.md
+    - name: Přehled automatického rozložení
+      href: use-automatic-layout-overview.md
+    - name: Atributy a komentáře lokalizace
+      href: localization-attributes-and-comments.md
+    - name: Obousměrné funkce v přehledu WPF
+      href: bidirectional-features-in-wpf-overview.md
+    - name: – postupy
+      href: globalization-and-localization-how-to-topics.md
+      items:
+      - name: Lokalizace aplikace
+        href: how-to-localize-an-application.md
+      - name: Vytvoření tlačítka pomocí automatického rozložení
+        href: how-to-use-automatic-layout-to-create-a-button.md
+      - name: Automatické rozložení pomocí mřížky
+        href: how-to-use-a-grid-for-automatic-layout.md
+      - name: Správa lokalizovatelných řetězcových prostředků pomocí ResourceDictionary
+        href: how-to-use-a-resourcedictionary-to-manage-localizable-string-resources.md
+      - name: Použití prostředků v lokalizovatelných aplikacích
+        href: how-to-use-resources-in-localizable-applications.md
+  - name: Rozložení
+    href: layout.md
+  - name: Migrace a interoperabilita
+    href: migration-and-interoperability.md
+    items:
+    - name: Vzájemná spolupráce WPF a Windows Forms
+      href: wpf-and-windows-forms-interoperation.md
+      items:
+      - name: Architektura vstupu interoperability Windows Forms a WPF
+        href: windows-forms-and-wpf-interoperability-input-architecture.md
+      - name: Předpoklady rozložení pro element WindowsFormsHost
+        href: layout-considerations-for-the-windowsformshost-element.md
+      - name: Ovládací prvky Windows Forms a ekvivalentní ovládací prvky WPF
+        href: windows-forms-controls-and-equivalent-wpf-controls.md
+      - name: Mapování vlastnosti Windows Forms a WPF
+        href: windows-forms-and-wpf-property-mapping.md
+      - name: Řešení potíží s hybridními aplikacemi
+        href: troubleshooting-hybrid-applications.md
+      - name: 'Návod: Hostování ovládacího prvku Windows Forms ve WPF'
+        href: walkthrough-hosting-a-windows-forms-control-in-wpf.md
+      - name: 'Návod: Hostování ovládacího prvku Windows Forms ve WPF pomocí XAML'
+        href: walkthrough-hosting-a-windows-forms-control-in-wpf-by-using-xaml.md
+      - name: 'Návod: Hostování složeného ovládacího prvku Windows Forms ve WPF'
+        href: walkthrough-hosting-a-windows-forms-composite-control-in-wpf.md
+      - name: 'Návod: Hostování ovládacího prvku ActiveX ve WPF'
+        href: walkthrough-hosting-an-activex-control-in-wpf.md
+      - name: 'Postupy: Povolení vizuálních stylů v hybridní aplikaci'
+        href: how-to-enable-visual-styles-in-a-hybrid-application.md
+      - name: 'Návod: Uspořádání ovládacích prvků Windows Forms ve WPF'
+        href: walkthrough-arranging-windows-forms-controls-in-wpf.md
+      - name: 'Návod: Připojení k datům v hybridních aplikacích'
+        href: walkthrough-binding-to-data-in-hybrid-applications.md
+      - name: 'Návod: Hostování složeného ovládacího prvku 3D WPF ve Windows Forms'
+        href: walkthrough-hosting-a-3-d-wpf-composite-control-in-windows-forms.md
+      - name: 'Návod: Hostování složeného ovládacího prvku WPF ve Windows Forms'
+        href: walkthrough-hosting-a-wpf-composite-control-in-windows-forms.md
+      - name: 'Návod: Mapování vlastností použitím ovládacího prvku ElementHost'
+        href: walkthrough-mapping-properties-using-the-elementhost-control.md
+      - name: 'Návod: Mapování vlastností použitím elementu WindowsFormsHost'
+        href: walkthrough-mapping-properties-using-the-windowsformshost-element.md
+      - name: 'Návod: Lokalizace hybridní aplikace'
+        href: walkthrough-localizing-a-hybrid-application.md
+    - name: Vzájemná spolupráce WPF a Win32
+      href: wpf-and-win32-interoperation.md
+      items:
+      - name: Přehled technologie oblastí
+        href: technology-regions-overview.md
+      - name: Sdílení smyčky zpráv mezi Win32 a WPF
+        href: sharing-message-loops-between-win32-and-wpf.md
+      - name: Hostování obsahu Win32 ve WPF
+        href: hosting-win32-content-in-wpf.md
+      - name: 'Návod: Hostování ovládacího prvku Win32 ve WPF'
+        href: walkthrough-hosting-a-win32-control-in-wpf.md
+      - name: 'Návod: Hostování obsahu WPF ve Win32'
+        href: walkthrough-hosting-wpf-content-in-win32.md
+      - name: 'Návod: Hostování hodin WPF ve Win32'
+        href: walkthrough-hosting-a-wpf-clock-in-win32.md
+    - name: Vzájemná spolupráce WPF a Direct3D9
+      href: wpf-and-direct3d9-interoperation.md
+      items:
+      - name: Výkonové aspekty interoperability Direct3D9 a WPF
+        href: performance-considerations-for-direct3d9-and-wpf-interoperability.md
+      - name: 'Návod: Vytvoření obsahu Direct3D9 pro hostování ve WPF'
+        href: walkthrough-creating-direct3d9-content-for-hosting-in-wpf.md
+      - name: 'Návod: Hostování obsahu Direct3D9 ve WPF'
+        href: walkthrough-hosting-direct3d9-content-in-wpf.md
+  - name: Výkon
+    href: performance.md
+    items:
+    - name: Vrstvy vykreslování grafiky
+      href: graphics-rendering-tiers.md
+    - name: Optimalizace výkonu aplikace WPF
+      href: optimizing-wpf-application-performance.md
+      items:
+      - name: Plánování výkonu aplikace
+        href: planning-for-application-performance.md
+      - name: Využití výhod hardwaru
+        href: optimizing-performance-taking-advantage-of-hardware.md
+      - name: Rozložení a návrh
+        href: optimizing-performance-layout-and-design.md
+      - name: 2D grafika a obrázky
+        href: optimizing-performance-2d-graphics-and-imaging.md
+      - name: Chování objektu
+        href: optimizing-performance-object-behavior.md
+      - name: Prostředky aplikace
+        href: optimizing-performance-application-resources.md
+      - name: Text
+        href: optimizing-performance-text.md
+      - name: Datová vazba
+        href: optimizing-performance-data-binding.md
+      - name: Ovládací prvky
+        href: optimizing-performance-controls.md
+      - name: Další doporučení k optimalizaci výkonu
+        href: optimizing-performance-other-recommendations.md
+      - name: Rychlejší spuštění aplikace
+        href: application-startup-time.md
+    - name: 'Návod: Ukládání aplikačních dat do mezipaměti v aplikaci WPF'
+      href: walkthrough-caching-application-data-in-a-wpf-application.md
+  - name: Model vláken
+    href: threading-model.md
+  - name: Referenční informace k nespravovanému rozhraní API WPF
+    href: wpf-unmanaged-api-reference.md
+    items:
+    - name: Funkce Activate
+      href: activate-function-wpf-unmanaged-api-reference.md
+    - name: Funkce CreateIDispatchSTAForwarder
+      href: createidispatchstaforwarder-function-wpf-unmanaged-api-reference.md
+    - name: Funkce Deactivate
+      href: deactivate-function-wpf-unmanaged-api-reference.md
+    - name: Funkce ForwardTranslateAccelerator
+      href: forwardtranslateaccelerator-function-wpf-unmanaged-api-reference.md
+    - name: Funkce LoadFromHistory
+      href: loadfromhistory-function-wpf-unmanaged-api-reference.md
+    - name: Funkce ProcessUnhandledException
+      href: processunhandledexception-function-wpf-unmanaged-api-reference.md
+    - name: Funkce SaveToHistory
+      href: savetohistory-function-wpf-unmanaged-api-reference.md
+    - name: Funkce SetFakeActiveWindow
+      href: setfakeactivewindow-function-wpf-unmanaged-api-reference.md
+ms.openlocfilehash: b1ad7b19f672583fb74f1cea90cbc78b198076ef
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58471310"

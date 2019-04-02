@@ -1,0 +1,939 @@
+items:
+- name: Podrobnosti o funkcích WCF
+  href: index.md
+  items:
+  - name: Služby pracovních postupů
+    href: workflow-services.md
+    items:
+    - name: Přehled služeb pracovních postupů
+      href: workflow-services-overview.md
+    - name: Vytvoření dlouhodobé služby pracovního postupu
+      href: creating-a-long-running-workflow-service.md
+    - name: Aktivity zasílání zpráv
+      href: messaging-activities.md
+    - name: 'Postupy: Vytvoření služby pracovního postupu pomocí činnosti související se zprávami'
+      href: how-to-create-a-workflow-service-with-messaging-activities.md
+    - name: Použití kontraktů v pracovním postupu
+      href: using-contracts-in-workflow.md
+    - name: Přehled hostování služeb pracovních postupů
+      href: hosting-workflow-services-overview.md
+      items:
+      - name: Hostování služeb pracovních postupů
+        href: hosting-workflow-services.md
+      - name: Interní informace o hostiteli služby pracovního postupu
+        href: workflow-service-host-internals.md
+      - name: Rozšíření hostitele služby pracovního postupu
+        href: workflow-service-host-extensibility.md
+      - name: Kontrolní koncový bod pracovního postupu
+        href: workflow-control-endpoint.md
+      - name: 'Postupy: Hostování služby pracovního procesu pomocí Windows Server App Fabric'
+        href: how-to-host-a-workflow-service-with-windows-server-app-fabric.md
+      - name: Konfigurace třídy WorkflowServiceHost
+        href: configuring-workflowservicehost.md
+        items:
+        - name: 'Postupy: Konfigurace trvalosti pomocí třídy WorkflowServiceHost'
+          href: how-to-configure-persistence-with-workflowservicehost.md
+        - name: 'Postupy: Konfigurace sledování pomocí třídy WorkflowServiceHost'
+          href: how-to-configure-tracking-with-workflowservicehost.md
+        - name: 'Postupy: Konfigurace chování při nečinnosti pomocí WorkflowServiceHost'
+          href: how-to-configure-idle-behavior-with-workflowservicehost.md
+        - name: 'Postupy: Konfigurace chování pracovního postupu nezpracované výjimky pomocí třídy WorkflowServiceHost'
+          href: config-workflow-unhandled-exception-workflowservicehost.md
+    - name: Korelace
+      href: correlation.md
+      items:
+      - name: Korelace – přehled
+        href: correlation-overview.md
+      - name: Trvanlivý duplexní přenos
+        href: durable-duplex-correlation.md
+      - name: Požadavek a odpověď
+        href: request-reply-correlation.md
+      - name: Řešení potíží – korelace
+        href: troubleshooting-correlation.md
+    - name: Konfigurace serializace ve službě pracovních postupů
+      href: configuring-serialization-in-a-workflow-service.md
+    - name: 'Postupy: Přístup ke službě z aplikace pracovního postupu'
+      href: how-to-access-a-service-from-a-workflow-application.md
+    - name: Zpracování zpráv mimo pořadí
+      href: out-of-order-message-processing.md
+    - name: Tok transakcí do služeb pracovních postupů a mimo ně
+      href: flowing-transactions-into-and-out-of-workflow-services.md
+    - name: Změna úrovní sdílení mezipaměti pro aktivity odesílání
+      href: changing-the-cache-sharing-levels-for-send-activities.md
+    - name: Přidání odkazu na službu do řešení pracovního postupu
+      href: adding-a-service-reference-in-a-workflow-solution.md
+    - name: Práce s víc verzemi současně ve třídě WorkflowServiceHost
+      href: side-by-side-versioning-in-workflowservicehost.md
+  - name: 'Koncové body: adresy, vazby a kontrakty'
+    href: endpoints-addresses-bindings-and-contracts.md
+    items:
+    - name: Adresy
+      href: endpoint-addresses.md
+    - name: Vazby
+      href: bindings.md
+      items:
+      - name: Konfigurace vazeb poskytovaných systémem
+        href: configuring-system-provided-bindings.md
+      - name: Konfigurace hodnot časových limitů u vazby
+        href: configuring-timeout-values-on-a-binding.md
+      - name: Vytváření aplikací všesměrového vysílání pomocí přenosu UDP
+        href: creating-multicasting-applications-using-the-udp-transport.md
+    - name: Kontrakty
+      href: contracts.md
+      items:
+      - name: Atributy ServiceModel a odkazy ServiceDescription
+        href: servicemodel-attributes-and-servicedescription-reference.md
+      - name: Služby požadavku a odpovědi
+        href: request-reply-services.md
+      - name: 'Postupy: Vytvoření kontraktu požadavku a odpovědi'
+        href: how-to-create-a-request-reply-contract.md
+      - name: Jednosměrné služby
+        href: one-way-services.md
+      - name: 'Postupy: Vytvoření jednosměrného kontraktu'
+        href: how-to-create-a-one-way-contract.md
+      - name: Duplexní služby
+        href: duplex-services.md
+      - name: 'Postupy: Vytvoření duplexního kontraktu'
+        href: how-to-create-a-duplex-contract.md
+      - name: 'Postupy: Vytvoření služby s třídou kontraktu'
+        href: how-to-create-a-wcf-contract-with-a-class.md
+      - name: 'Postupy: Vytvoření služby pomocí rozhraní kontraktu'
+        href: how-to-create-a-service-with-a-contract-interface.md
+      - name: Řízení výkonu služby WCF pomocí třídy ServiceThrottlingBehavior
+        href: using-servicethrottlingbehavior-to-control-wcf-service-performance.md
+    - name: 'Postupy: Vytvoření koncového bodu služby v konfiguraci'
+      href: how-to-create-a-service-endpoint-in-configuration.md
+    - name: 'Postupy: Vytvoření koncového bodu služby v kódu'
+      href: how-to-create-a-service-endpoint-in-code.md
+    - name: 'Postupy: Ověření zkompilovaného kódu služby pomocí nástroje Svcutil.exe'
+      href: how-to-use-svcutil-exe-to-validate-compiled-service-code.md
+    - name: Standardní koncové body
+      href: standard-endpoints.md
+  - name: Přenos a serializace dat
+    href: data-transfer-and-serialization.md
+    items:
+    - name: Určování přenosu dat v kontraktech služby
+      href: specifying-data-transfer-in-service-contracts.md
+    - name: Použití kontraktů dat
+      href: using-data-contracts.md
+      items:
+      - name: 'Postupy: Vytvoření základního kontraktu dat pro třídu nebo strukturu'
+        href: how-to-create-a-basic-data-contract-for-a-class-or-structure.md
+      - name: Serializovatelné typy
+        href: serializable-types.md
+      - name: Názvy kontraktu dat
+        href: data-contract-names.md
+      - name: Ekvivalence kontraktů dat
+        href: data-contract-equivalence.md
+      - name: Pořadí datových členů
+        href: data-member-order.md
+      - name: Známé typy kontraktů dat
+        href: data-contract-known-types.md
+      - name: Kontrakty dat s dopřednou kompatibilitou
+        href: forward-compatible-data-contracts.md
+      - name: Správa verzí kontraktů dat
+        href: data-contract-versioning.md
+      - name: Zpětná volání serializace tolerantní k verzím
+        href: version-tolerant-serialization-callbacks.md
+      - name: Vychozí hodnoty datových členů
+        href: data-member-default-values.md
+      - name: Interoperabilní odkazy na objekty
+        href: interoperable-object-references.md
+      - name: Typy podporované serializátorem kontraktu dat
+        href: types-supported-by-the-data-contract-serializer.md
+        items:
+        - name: Typy kolekcí v kontraktech dat
+          href: collection-types-in-data-contracts.md
+        - name: Typy XML a ADO.NET v kontraktech dat
+          href: xml-and-ado-net-types-in-data-contracts.md
+        - name: Výčtové typy v kontraktech dat
+          href: enumeration-types-in-data-contracts.md
+    - name: Serializátor kontraktu dat
+      href: data-contract-serializer.md
+      items:
+      - name: Serializace a deserializace
+        href: serialization-and-deserialization.md
+      - name: Import a export schémat
+        href: schema-import-and-export.md
+        items:
+        - name: Import schématu pro generování tříd
+          href: importing-schema-to-generate-classes.md
+        - name: Export schémat ze tříd
+          href: exporting-schemas-from-classes.md
+        - name: Řízení serializace a deserializace pomocí třídy SerializationBinder
+          href: controlling-serialization-and-deserialization-with-serializationbinder.md
+      - name: Použití překladače kontraktů dat
+        href: using-a-data-contract-resolver.md
+    - name: Používání třídy XmlSerializer
+      href: using-the-xmlserializer-class.md
+      items:
+      - name: 'Postupy: Vylepšení doby spouštění klientských aplikací WCF pomocí třídy XmlSerializer'
+        href: startup-time-of-wcf-client-applications-using-the-xmlserializer.md
+    - name: Použití kontraktů zpráv
+      href: using-message-contracts.md
+    - name: Vytvoření vlastní hlavičky, která je podepsaná a/nebo šifrovaná
+      href: creating-a-custom-header-that-is-signed-and-or-encrypted.md
+    - name: Používání třídy Message
+      href: using-the-message-class.md
+    - name: Filtrování
+      href: filtering.md
+    - name: Objemná data a vysílání datových proudů
+      href: large-data-and-streaming.md
+      items:
+      - name: 'Postupy: Povolení streamování'
+        href: how-to-enable-streaming.md
+    - name: Důležité informace o zabezpečení pro data
+      href: security-considerations-for-data.md
+    - name: Strukturální přehled přenosu dat
+      href: data-transfer-architectural-overview.md
+  - name: Relace, vytváření instancí a souběžnost
+    href: sessions-instancing-and-concurrency.md
+    items:
+    - name: 'Postupy: Vytvoření služby vyžadující relace'
+      href: how-to-create-a-service-that-requires-sessions.md
+    - name: 'Postupy: Řízení vytváření instancí služby'
+      href: how-to-control-service-instancing.md
+    - name: Uspořádané zpracování zpráv v režimu jedné souběžnosti
+      href: ordered-processing-of-messages-in-single-concurrency-mode.md
+  - name: Přenosy
+    href: transports.md
+    items:
+    - name: Volba přenosu
+      href: choosing-a-transport.md
+    - name: Výběr kodéru zprávy
+      href: choosing-a-message-encoder.md
+    - name: Streamování přenosu zpráv
+      href: streaming-message-transfer.md
+    - name: Konfigurace HTTP a HTTPS
+      href: configuring-http-and-https.md
+    - name: 'Postupy: Nahrazení rezervace adresy URL služby WCF omezenou rezervací'
+      href: how-to-replace-the-wcf-url-reservation-with-a-restricted-reservation.md
+    - name: Přenosové kvóty
+      href: transport-quotas.md
+    - name: Práce s překlady adres (NAT) a bránami firewall
+      href: working-with-nats-and-firewalls.md
+    - name: Sdílení portů Net.TCP
+      href: net-tcp-port-sharing.md
+      items:
+      - name: 'Postupy: Povolení Služby sdílení portů Net.TCP'
+        href: how-to-enable-the-net-tcp-port-sharing-service.md
+      - name: 'Postupy: Konfigurace používání sdílení portů ve službě WCF'
+        href: how-to-configure-a-wcf-service-to-use-port-sharing.md
+      - name: Konfigurace Služby sdílení portů Net.TCP
+        href: configuring-the-net-tcp-port-sharing-service.md
+    - name: Kódování binárních objektů pomocí kodéru ByteStream
+      href: encoding-binary-objects-with-bytestream-encoder.md
+  - name: Fronty a spolehlivé relace
+    href: queues-and-reliable-sessions.md
+    items:
+    - name: Spolehlivé relace
+      href: reliable-sessions.md
+      items:
+      - name: Spolehlivé relace – přehled
+        href: reliable-sessions-overview.md
+      - name: 'Postupy: Výměna zpráv ve spolehlivých relacích'
+        href: how-to-exchange-messages-within-a-reliable-session.md
+      - name: 'Postupy: Zabezpečené zprávy ve spolehlivých relacích'
+        href: how-to-secure-messages-within-reliable-sessions.md
+      - name: 'Postupy: Vytvoření vlastní vazby pro spolehlivou relaci s HTTPS'
+        href: how-to-create-a-custom-reliable-session-binding-with-https.md
+      - name: Doporučené postupy pro spolehlivé relace
+        href: best-practices-for-reliable-sessions.md
+    - name: Fronty ve WCF
+      href: queues-in-wcf.md
+      items:
+      - name: Fronty – přehled
+        href: queues-overview.md
+      - name: Fronty ve WCF
+        href: queuing-in-wcf.md
+        items:
+        - name: Koncové body služby a adresování front
+          href: service-endpoints-and-queue-addressing.md
+        - name: Webhosting frontové aplikace
+          href: web-hosting-a-queued-application.md
+      - name: 'Postupy: Výměna zpráv zařazených do fronty pomocí koncových bodů WCF'
+        href: how-to-exchange-queued-messages-with-wcf-endpoints.md
+      - name: 'Postupy: Výměna zpráv pomocí koncových bodů WCF a aplikací pro řazení zpráv do front'
+        href: how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md
+      - name: Seskupování zpráv zařazených do fronty v relaci
+        href: grouping-queued-messages-in-a-session.md
+      - name: Dávkování zpráv v transakci
+        href: batching-messages-in-a-transaction.md
+      - name: Zpracování chyb přenosu zpráv pomocí front nedoručených zpráv
+        href: using-dead-letter-queues-to-handle-message-transfer-failures.md
+      - name: Zpracování škodlivých zpráv
+        href: poison-message-handling.md
+      - name: Rozdíly funkcí front zpráv v systémech Windows Vista, Windows Server 2003 a Windows XP
+        href: diff-in-queue-in-vista-server-2003-windows-xp.md
+      - name: Zabezpečení zpráv pomocí zabezpečení přenosu
+        href: securing-messages-using-transport-security.md
+      - name: Zabezpečení zpráv
+        href: securing-messages-using-message-security.md
+      - name: Řešení potíží se zasíláním zpráv zařazovaných do front
+        href: troubleshooting-queued-messaging.md
+      - name: Doporučené postupy pro komunikaci ve frontě
+        href: best-practices-for-queued-communication.md
+  - name: Transakce
+    href: transactions-in-wcf.md
+    items:
+    - name: Transakce ve Windows Communication Foundation – přehled
+      href: transactions-overview.md
+    - name: Modely transakcí
+      href: transaction-models.md
+    - name: Podpora transakcí v názvovém prostoru System.ServiceModel
+      href: transactional-support-in-system-servicemodel.md
+      items:
+      - name: Atributy transakce ServiceModel
+        href: servicemodel-transaction-attributes.md
+      - name: Konfigurace transakcí ServiceModel
+        href: servicemodel-transaction-configuration.md
+      - name: Povolení toku transakcí
+        href: enabling-transaction-flow.md
+      - name: 'Postupy: Vytvoření transakční služby'
+        href: how-to-create-a-transactional-service.md
+      - name: Diagnostikování transakčních aplikací
+        href: diagnosing-transactional-applications.md
+      - name: Porovnání transakcí u modelů COM+ a ServiceModel
+        href: comparing-transactions-in-com-and-servicemodel.md
+      - name: Integrace transakčních komponent služeb Enterprise Services
+        href: integrating-enterprise-services-transactional-components.md
+    - name: Používání protokolu WS-AtomicTransaction
+      href: using-ws-atomictransaction.md
+      items:
+      - name: Konfigurace podpory protokolu WS-AT (WS-Atomic Transactions)
+        href: configuring-ws-atomic-transaction-support.md
+  - name: Zabezpečení
+    href: security.md
+    items:
+    - name: Přehled zabezpečení
+      href: security-overview.md
+    - name: Koncepty zabezpečení
+      href: security-concepts.md
+      items:
+      - name: Koncepty zabezpečení používané ve službě WCF
+        href: security-concepts-used-in-wcf.md
+      - name: Zabezpečení distribuované aplikace
+        href: distributed-application-security.md
+      - name: Terminologie zabezpečení
+        href: wcf-security-terminology.md
+    - name: Běžné scénáře zabezpečení
+      href: common-security-scenarios.md
+      items:
+      - name: Nezabezpečený internetový klient a služba
+        href: internet-unsecured-client-and-service.md
+      - name: Nezabezpečený intranetový klient a služba
+        href: intranet-unsecured-client-and-service.md
+      - name: Zabezpečení přenosu pomocí anonymního klienta
+        href: transport-security-with-an-anonymous-client.md
+      - name: Zabezpečení přenosu se základním ověřováním
+        href: transport-security-with-basic-authentication.md
+      - name: Zabezpečení přenosu pomocí ověřování systému Windows
+        href: transport-security-with-windows-authentication.md
+      - name: Zabezpečení přenosu s ověřováním certifikátu
+        href: transport-security-with-certificate-authentication.md
+      - name: Zabezpečení zpráv s anonymním klientem
+        href: message-security-with-an-anonymous-client.md
+      - name: Zabezpečení zpráv s klientem uživatelského jména
+        href: message-security-with-a-user-name-client.md
+      - name: Zabezpečení zpráv pomocí klientských certifikátů
+        href: message-security-with-a-certificate-client.md
+      - name: Zabezpečení zprávy s klientem Windows
+        href: message-security-with-a-windows-client.md
+      - name: Zabezpečení zpráv u klienta Windows bez vyjednávání pověření
+        href: message-security-with-a-windows-client-without-credential-negotiation.md
+      - name: Zabezpečení zpráv vzájemnými certifikáty
+        href: message-security-with-mutual-certificates.md
+      - name: Zabezpeční zpráv pomocí vydaných tokenů
+        href: message-security-with-issued-tokens.md
+      - name: Důvěryhodný subsystém
+        href: trusted-subsystem.md
+    - name: Chování zabezpečení
+      href: security-behaviors-in-wcf.md
+    - name: Vazby a zabezpečení
+      href: bindings-and-security.md
+      items:
+      - name: Možnosti zabezpečení u vlastních vazeb
+        href: security-capabilities-with-custom-bindings.md
+        items:
+        - name: Režimy ověřování SecurityBindingElement
+          href: securitybindingelement-authentication-modes.md
+        - name: 'Postupy: Vytvoření vlastní vazby pomocí elementu SecurityBindingElement'
+          href: how-to-create-a-custom-binding-using-the-securitybindingelement.md
+        - name: 'Postupy: Vytvoření elementu SecurityBindingElement pro zadaný režim ověřování'
+          href: how-to-create-a-securitybindingelement-for-a-specified-authentication-mode.md
+        - name: 'Postupy: Zakázání zabezpečených relací u třídy WSFederationHttpBinding'
+          href: how-to-disable-secure-sessions-on-a-wsfederationhttpbinding.md
+        - name: 'Postupy: Povolit zjišťování opakování zpráv'
+          href: how-to-enable-message-replay-detection.md
+        - name: 'Postupy: Vytvoření podpůrného pověření'
+          href: how-to-create-a-supporting-credential.md
+        - name: 'Postupy: Nastavení potvrzení podpisu'
+          href: how-to-set-up-a-signature-confirmation.md
+        - name: 'Postupy: Nastvení hodnoty vlastnosti MaxClockSkew'
+          href: how-to-set-a-max-clock-skew.md
+        - name: 'Postupy: Zákaz šifrování digitálních podpisů'
+          href: how-to-disable-encryption-of-digital-signatures.md
+    - name: Zabezpečení služeb a klientů
+      href: securing-services-and-clients.md
+      items:
+      - name: Programování zabezpečení WCF
+        href: programming-wcf-security.md
+        items:
+        - name: Výběr typu pověření
+          href: selecting-a-credential-type.md
+        - name: 'Postupy: Ověřování pomocí uživatelského jména a hesla'
+          href: how-to-authenticate-with-a-user-name-and-password.md
+      - name: Zabezpečení přenosu
+        href: transport-security.md
+        items:
+        - name: Přehled zabezpečení přenosu
+          href: transport-security-overview.md
+        - name: Zabezpečení přenosu HTTP
+          href: http-transport-security.md
+        - name: Princip ověřování HTTP
+          href: understanding-http-authentication.md
+        - name: Použití zosobnění se zabezpečením přenosu
+          href: using-impersonation-with-transport-security.md
+        - name: 'Postupy: Konfigurace portu s certifikátem SSL'
+          href: how-to-configure-a-port-with-an-ssl-certificate.md
+        - name: 'Postupy: Konfigurace služby WCF hostované v IIS se SSL'
+          href: how-to-configure-an-iis-hosted-wcf-service-with-ssl.md
+      - name: Zabezpečení zpráv
+        href: message-security-in-wcf.md
+        items:
+        - name: 'Postupy: Zabezpečení služby certifikátem X.509'
+          href: how-to-secure-a-service-with-an-x-509-certificate.md
+        - name: 'Postupy: Použití přihlašovacích údajů k zabezpečení přenosů a zpráv'
+          href: how-to-use-transport-security-and-message-credentials.md
+        - name: Prevence útoků formou opakovaného přehrávání zprávy, když je služba WCF hostovaná ve webové farmě
+          href: preventing-replay-attacks-when-a-wcf-service-is-hosted-in-a-web-farm.md
+      - name: Zabezpečené relace
+        href: secure-sessions.md
+        items:
+        - name: Zabezpečené konverzace a zabezpečené relace
+          href: secure-conversations-and-secure-sessions.md
+        - name: 'Postupy: Vytvoření zabezpečené relace'
+          href: how-to-create-a-secure-session.md
+        - name: 'Postupy: Vytvoření tokenu kontextu zabezpečení pro zabezpečenou relaci'
+          href: how-to-create-a-security-context-token-for-a-secure-session.md
+        - name: Důležité informace o zabezpečení pro zabezpečené relace
+          href: security-considerations-for-secure-sessions.md
+      - name: Práce s certifikáty
+        href: working-with-certificates.md
+        items:
+        - name: 'Postupy: Získání certifikátu'
+          href: how-to-obtain-a-certificate-wcf.md
+        - name: 'Postupy: Zobrazení certifikátů pomocí modulu snap-in konzoly MMC'
+          href: how-to-view-certificates-with-the-mmc-snap-in.md
+        - name: 'Postupy: Načtení kryptografického otisku certifikátu'
+          href: how-to-retrieve-the-thumbprint-of-a-certificate.md
+        - name: 'Postupy: Zpřístupnění certifikátů X.509 pro WCF'
+          href: how-to-make-x-509-certificates-accessible-to-wcf.md
+        - name: 'Postupy: Vytváření dočasných certifikátů pro použití během vývoje'
+          href: how-to-create-temporary-certificates-for-use-during-development.md
+        - name: 'Postupy: Zadání řetězu certifikátů certifikační autority používaného k ověřování podpisů'
+          href: specify-the-certificate-authority-chain-verify-signatures-wcf.md
+        - name: Rozdíly v ověřování certifikátů mezi zabezpečeními HTTPS, SSL přes TCP a SOAP
+          href: cert-val-diff-https-ssl-over-tcp-and-soap.md
+        - name: Rozdíly mezi ověřením certifikátu služby provedeným Internet Explorerem a WCF
+          href: diff-service-certificate-validation-ie-and-wcf.md
+        - name: 'Postupy: Konzistentní odkazy na certifikáty X.509'
+          href: how-to-consistently-reference-x-509-certificates.md
+    - name: Ověřování
+      href: authentication-in-wcf.md
+      items:
+      - name: 'Postupy: Používání poskytovatele členství ASP.NET'
+        href: how-to-use-the-aspnet-membership-provider.md
+      - name: 'Postupy: Použití validátoru vlastního uživatelského jména a hesla'
+        href: how-to-use-a-custom-user-name-and-password-validator.md
+      - name: 'Postupy: Použití víc tokenů zabezpečení stejného typu'
+        href: how-to-use-multiple-security-tokens-of-the-same-type.md
+      - name: Identita a ověřování služby
+        href: service-identity-and-authentication.md
+      - name: Vyjednávání a časové limity zabezpečení
+        href: security-negotiation-and-timeouts.md
+      - name: Ladění chyb ověřování systému Windows
+        href: debugging-windows-authentication-errors.md
+      - name: Používání více schémat ověřování u WCF
+        href: using-multiple-authentication-schemes-with-wcf.md
+    - name: Autorizace
+      href: authorization-in-wcf.md
+      items:
+      - name: Mechanismy řízení přístupu
+        href: access-control-mechanisms.md
+      - name: 'Postupy: Použití zprostředkovatele rolí ASP.NET se službou'
+        href: how-to-use-the-aspnet-role-provider-with-a-service.md
+      - name: 'Postupy: Použití zprostředkovatele role Správce autorizací ASP.NET se službou'
+        href: how-to-use-the-aspnet-authorization-manager-role-provider-with-a-service.md
+      - name: Správa deklarací a autorizace s modelem identity
+        href: managing-claims-and-authorization-with-the-identity-model.md
+        items:
+        - name: Deklarace a tokeny
+          href: claims-and-tokens.md
+        - name: Deklarace a odepření přístupu k prostředkům
+          href: claims-and-denying-access-to-resources.md
+        - name: Vytvoření nároku a hodnoty prostředků
+          href: claim-creation-and-resource-values.md
+      - name: Delegace a zosobnění
+        href: delegation-and-impersonation-with-wcf.md
+    - name: Federace a vystavené tokeny
+      href: federation-and-issued-tokens.md
+      items:
+      - name: Federace
+        href: federation.md
+      - name: Federace a důvěryhodnost
+        href: federation-and-trust.md
+      - name: 'Postupy: Vytvoření federovaného klienta'
+        href: how-to-create-a-federated-client.md
+      - name: 'Postupy: Konfigurace pověření ve službě Federation Service'
+        href: how-to-configure-credentials-on-a-federation-service.md
+      - name: 'Postupy: Vytvoření instance WSFederationHttpBinding'
+        href: how-to-create-a-wsfederationhttpbinding.md
+      - name: 'Postupy: Vytvoření služby tokenů zabezpečení'
+        href: how-to-create-a-security-token-service.md
+      - name: Tokeny a deklarace identity jazyka SAML (Security Assertions Markup Language)
+        href: saml-tokens-and-claims.md
+      - name: 'Postupy: Konfigurace místního vystavitele'
+        href: how-to-configure-a-local-issuer.md
+      - name: 'Postupy: Vytvoření duplexní federované vazby'
+        href: how-to-create-a-duplex-federated-binding.md
+    - name: Auditování
+      href: auditing-security-events.md
+      items:
+      - name: 'Postupy: Auditování událostí zabezpečení'
+        href: how-to-audit-wcf-security-events.md
+    - name: Informace o zabezpečení a doporučené postupy
+      href: security-guidance-and-best-practices.md
+      items:
+      - name: Osvědčené postupy pro zabezpečení
+        href: best-practices-for-security-in-wcf.md
+      - name: Důležité informace o zabezpečení
+        href: security-considerations-in-wcf.md
+        items:
+        - name: Zpřístupnění informací
+          href: information-disclosure.md
+        - name: Zvýšení oprávnění
+          href: elevation-of-privilege.md
+        - name: Útok DoS
+          href: denial-of-service.md
+        - name: Falšování
+          href: tampering.md
+        - name: Útoky opakováním
+          href: replay-attacks.md
+        - name: Nepodporované scénáře
+          href: unsupported-scenarios.md
+      - name: Faktory ovlivňující výkon
+        href: performance-considerations.md
+        items:
+        - name: Hledání deklarací v sadě deklarací
+          href: finding-claims-in-a-claimset.md
+        - name: Šifrování digitálních podpisů
+          href: encryption-of-digital-signatures.md
+    - name: Rozšířená ochrana pro ověřování – přehled
+      href: extended-protection-for-authentication-overview.md
+      items:
+      - name: Soubor ReadMe pro ukázku rozšířené ochrany ověřování
+        href: readme-for-extended-protection-authentication-sample.md
+  - name: Síť rovnocenných počítačů
+    href: peer-to-peer-networking.md
+    items:
+    - name: Scénáře rovnocenných kanálů
+      href: peer-channel-scenarios.md
+    - name: Koncepty rovnocenného kanálu
+      href: peer-channel-concepts.md
+      items:
+      - name: Skupiny partnerských uzlů
+        href: peer-meshes.md
+      - name: Partnerské uzly
+        href: peer-nodes.md
+      - name: Zabezpečení rovnocenného kanálu
+        href: peer-channel-security.md
+      - name: Překladače partnerských uzlů
+        href: peer-resolvers.md
+        items:
+        - name: 'Uvnitř CustomPeerResolverService: Registrace klienta'
+          href: inside-the-custompeerresolverservice-client-registrations.md
+    - name: Vytvoření aplikace rovnocenného kanálu
+      href: building-a-peer-channel-application.md
+      items:
+      - name: Převedení aplikace NetTcpBinding na aplikaci rovnocenného kanálu
+        href: converting-a-nettcpbinding-application-to-a-peer-channel-application.md
+      - name: Omezení distribuce zpráv
+        href: limiting-message-distribution.md
+      - name: Přidání online a offline stavu
+        href: adding-online-and-offline-status.md
+      - name: Zabezpečení aplikací rovnocenného kanálu
+        href: securing-peer-channel-applications.md
+  - name: Metadata
+    href: metadata.md
+    items:
+    - name: Přehled architektury metadat
+      href: metadata-architecture-overview.md
+    - name: Formáty metadat
+      href: metadata-formats.md
+    - name: Export a import metadat
+      href: exporting-and-importing-metadata.md
+      items:
+      - name: 'Postupy: Import metadat do koncových bodů služeb'
+        href: how-to-import-metadata-into-service-endpoints.md
+      - name: 'Postupy: Export metadat z koncových bodů služeb'
+        href: how-to-export-metadata-from-service-endpoints.md
+      - name: ServiceDescription and WSDL Reference
+        href: servicedescription-and-wsdl-reference.md
+      - name: 'Postupy: Použití nástroje Svcutil.exe pro export metadat z kompilovaného kódu služby'
+        href: how-to-use-svcutil-exe-to-export-metadata-from-compiled-service-code.md
+    - name: Publikování metadat
+      href: publishing-metadata.md
+      items:
+      - name: 'Postupy: Publikování metadat služby promocí konfiguračního souboru'
+        href: how-to-publish-metadata-for-a-service-using-a-configuration-file.md
+      - name: 'Postupy: Publikování metadat služby promocí kódu'
+        href: how-to-publish-metadata-for-a-service-using-code.md
+    - name: Načítání metadat
+      href: retrieving-metadata.md
+      items:
+      - name: 'Postupy: Stažení dokumentů metadat pomocí nástroje Svcutil.exe'
+        href: how-to-use-svcutil-exe-to-download-metadata-documents.md
+      - name: 'Postupy: Použití třídy MetadataResolver k dynamickému získání metadat vazby'
+        href: how-to-use-metadataresolver-to-obtain-binding-metadata-dynamically.md
+      - name: 'Postupy: Načítání metadat pomocí vlastnosti MetadataExchangeClient'
+        href: how-to-use-metadataexchangeclient-to-retrieve-metadata.md
+    - name: Používání metadat
+      href: using-metadata.md
+      items:
+      - name: Principy generovaného klientského kódu
+        href: understanding-generated-client-code.md
+      - name: 'Postupy: Načítání metadat a implementace kompatibilní služby'
+        href: how-to-retrieve-metadata-and-implement-a-compliant-service.md
+      - name: Generování klienta WCF z metadat služby
+        href: generating-a-wcf-client-from-service-metadata.md
+    - name: Informace o zabezpečení pro metadata
+      href: security-considerations-with-metadata.md
+      items:
+      - name: 'Postupy: Zabezpečené koncové body metadat'
+        href: how-to-secure-metadata-endpoints.md
+      - name: 'Postupy: Povolení požadavků na metadata při autorizaci'
+        href: how-to-allow-metadata-requests-while-authorizing.md
+  - name: Klienti
+    href: clients.md
+    items:
+    - name: Architektura klienta WCF
+      href: client-architecture.md
+    - name: Přístup ke službám pomocí klienta WCF
+      href: accessing-services-using-a-client.md
+      items:
+      - name: 'Postupy: Přístup ke službám pomocí jednosměrných kontraktů a kontraktů požadavek-odpověď'
+        href: how-to-access-wcf-services-with-one-way-and-request-reply-contracts.md
+      - name: 'Postupy: Přístup ke službám pomocí duplexního kontraktu'
+        href: how-to-access-services-with-a-duplex-contract.md
+      - name: 'Postupy: Přístup ke službě WSE 3.0'
+        href: how-to-access-a-wse-3-0-service-with-a-wcf-client.md
+      - name: 'Postupy: Používání ChannelFactory'
+        href: how-to-use-the-channelfactory.md
+      - name: Postup kanálu a mezipaměť
+        href: channel-factory-and-caching.md
+      - name: 'Postupy: Asynchronní volání operací služby'
+        href: how-to-call-wcf-service-operations-asynchronously.md
+      - name: Klientské aplikace střední vrstvy
+        href: middle-tier-client-applications.md
+      - name: 'Postupy: Asynchronní volání operací pomocí ChannelFactory'
+        href: how-to-call-operations-asynchronously-using-a-channel-factory.md
+      - name: Přístup ke službám WCF pomocí klientské aplikace pro Windows Store
+        href: accessing-wcf-services-with-a-windows-store-client-app.md
+      - name: 'Postupy: Vytvoření postupu kanálu a jeho použití k vytvoření a správě kanálů'
+        href: how-to-create-a-channel-factory-and-use-it-to-create-and-manage-channels.md
+    - name: Konfigurace klienta WCF
+      href: client-configuration.md
+  - name: Hostování
+    href: hosting.md
+    items:
+    - name: Hostování v Internetové informační službě
+      href: hosting-in-internet-information-services.md
+      items:
+      - name: Nasazení služby WCF hostované Internetovou informační službou
+        href: deploying-an-internet-information-services-hosted-wcf-service.md
+      - name: Služby WCF a ASP.NET
+        href: wcf-services-and-aspnet.md
+      - name: Doporučené postupy hostování Internetové informační služby
+        href: internet-information-services-hosting-best-practices.md
+      - name: 'Postupy: Hostování služby WCF v IIS'
+        href: how-to-host-a-wcf-service-in-iis.md
+      - name: Konfigurace Internetové informační služby 7.0 pro službu Windows Communication Foundation
+        href: configuring-iis-for-wcf.md
+    - name: Hostování v Aktivační službě procesů systému Windows
+      href: hosting-in-windows-process-activation-service.md
+      items:
+      - name: Architektura aktivace WAS
+        href: was-activation-architecture.md
+      - name: Konfigurace WAS pro použití s WCF
+        href: configuring-the-wpa--service-for-use-with-wcf.md
+      - name: 'Postupy: Instalace a konfigurace aktivačních komponent WCF'
+        href: how-to-install-and-configure-wcf-activation-components.md
+      - name: 'Postupy: Hostování služby WCF ve WAS'
+        href: how-to-host-a-wcf-service-in-was.md
+    - name: Hostování v aplikaci služby pro Windows
+      href: hosting-in-a-windows-service-application.md
+      items:
+      - name: 'Postupy: Hostování služby WCF ve spravované službě Windows'
+        href: how-to-host-a-wcf-service-in-a-managed-windows-service.md
+    - name: Hostování ve spravované aplikaci
+      href: hosting-in-a-managed-application.md
+    - name: Aktivace založená na konfiguraci v IIS a WAS
+      href: configuration-based-activation-in-iis-and-was.md
+    - name: Podpora víc vazeb webu IIS
+      href: supporting-multiple-iis-site-bindings.md
+    - name: System.Web.Routing Integration
+      href: system-web-routing-integration.md
+  - name: Částečná důvěryhodnost
+    href: partial-trust.md
+    items:
+    - name: Podporované scénáře nasazení
+      href: supported-deployment-scenarios.md
+    - name: Kompatibilita funkcí s částečnou důvěryhodností
+      href: partial-trust-feature-compatibility.md
+    - name: Doporučené postupy s částečnou důvěryhodností
+      href: partial-trust-best-practices.md
+  - name: Vzájemná spolupráce a integrace
+    href: interoperability-and-integration.md
+    items:
+    - name: Průvodce interoperabilitou protokolů webových služeb
+      href: web-services-protocols-interoperability-guide.md
+      items:
+      - name: Protokoly webových služeb podporované vazbami vzájemné spolupráce poskytnutými systémem
+        href: web-services-protocols-supported-by-system-provided-interoperability-bindings.md
+      - name: Protokoly zasílání zpráv
+        href: messaging-protocols.md
+      - name: Schéma kontraktů dat – referenční informace
+        href: data-contract-schema-reference.md
+      - name: WSDL a zásady
+        href: wsdl-and-policy.md
+      - name: Protokoly zabezpečení verze 1.0
+        href: security-protocols-version-1-0.md
+      - name: Protokoly zabezpečení
+        href: security-protocols.md
+      - name: Protokol spolehlivého zasílání zpráv verze 1.0
+        href: reliable-messaging-protocol-version-1-0.md
+      - name: Protokol spolehlivého zasílání zpráv verze 1.1
+        href: reliable-messaging-protocol-version-1-1.md
+      - name: Protokoly transakce verze 1.0
+        href: transaction-protocols-version-1-0.md
+      - name: Protokoly transakcí
+        href: transaction-protocols.md
+      - name: Protokol kontextové výměny
+        href: context-exchange-protocol.md
+      - name: Smíšené používání protokolů Trust ve federovaných scénářích
+        href: mixing-trust-protocols-in-federated-scenarios.md
+    - name: Integrace s aplikacemi modelu COM+
+      href: integrating-with-com-plus-applications.md
+      items:
+      - name: Integrace s aplikacemi modelu COM+ – přehled
+        href: integrating-with-com-plus-applications-overview.md
+      - name: 'Postupy: Použití nástroje pro konfiguraci modelu služby COM+'
+        href: how-to-use-the-com-service-model-configuration-tool.md
+      - name: 'Postupy: Konfigurace nastavení služby modelu COM+'
+        href: how-to-configure-com-service-settings.md
+      - name: 'Postupy: Nasazení aplikace integrací COM+'
+        href: how-to-deploy-a-com-integration-application.md
+    - name: Integrace s aplikacemi modelu COM
+      href: integrating-with-com-applications.md
+      items:
+      - name: Přehled integrace s aplikacemi modelu COM
+        href: integrating-with-com-applications-overview.md
+      - name: 'Postupy: Registrace a konfigurace monikeru služby'
+        href: how-to-register-and-configure-a-service-moniker.md
+      - name: 'Postupy: Použití monikeru služby Windows Communication Foundation bez registrace'
+        href: use-the-wcf-service-moniker-without-registration.md
+      - name: 'Postupy: Použití monikeru služby u kontraktů WSDL'
+        href: how-to-use-a-service-moniker-with-wsdl-contracts.md
+      - name: 'Postupy: Použití monikeru služby u kontraktů Metadata Exchange'
+        href: how-to-use-a-service-moniker-with-metadata-exchange-contracts.md
+      - name: 'Postupy: Určení zabezpečovacích pověření kanálu'
+        href: how-to-specify-channel-security-credentials.md
+    - name: Migrace aplikací vzdálené komunikace .NET do WCF
+      href: migrating-net-remoting-applications-to-wcf.md
+    - name: Interoperabilita s Web Services Enhancements 3.0
+      href: interoperability-with-web-services-enhancements-3-0.md
+      items:
+      - name: 'Postupy: Konfigurace služeb WCF pro spolupráci s klienty WSE 3.0'
+        href: how-to-configure-wcf-services-to-interoperate-with-wse-3-0-clients.md
+      - name: 'Postupy: Konfigurace klienta WCF na vzájemnou spolupráci se službami WSE3.0'
+        href: how-to-configure-a-wcf-client-to-interoperate-with-wse3-0-services.md
+    - name: Migrace WSE 3.0 Web Services do WCF
+      href: migrating-wse-3-0-web-services-to-wcf.md
+    - name: Interoperabilita s webovými službami ASP.NET
+      href: interop-with-aspnet-web-services.md
+      items:
+      - name: 'Postupy: Konfigurace služby WCF pro spolupráci s klienty webové služby ASP.NET'
+        href: config-wcf-service-with-aspnet-web-service.md
+    - name: Migrace webových služeb ASP.NET na WCF
+      href: migrating-aspnet-web-services-to-wcf.md
+      items:
+      - name: Porovnání webových služeb ASP.NET se službou WCF na základě účelu a používaných standardů
+        href: comparing-aspnet-web-services-to-wcf-based-on-purpose-and-standards-used.md
+      - name: Porovnání webových služeb ASP.NET Web Services s technologií WCF z hlediska vývojových požadavků
+        href: comparing-aspnet-web-services-to-wcf-based-on-development.md
+      - name: 'Očekávání přechodu na Windows Communication Foundation: usnadnění budoucí integrace'
+        href: anticipating-adopting-the-wcf-easing-future-integration.md
+      - name: 'Očekávání přechodu na Windows Communication Foundation: usnadnění budoucí migrace'
+        href: anticipating-adopting-wcf-migration.md
+      - name: Přijetí WCF
+        href: adopting-wcf.md
+    - name: Interoperabilita s aplikacemi POX
+      href: interoperability-with-pox-applications.md
+  - name: Model programování webových služeb HTTP WCF
+    href: wcf-web-http-programming-model.md
+    items:
+    - name: Přehled modelu webového programování HTTP služby WCF
+      href: wcf-web-http-programming-model-overview.md
+    - name: Programovací objektový model WCF Web HTTP
+      href: wcf-web-http-programming-object-model.md
+    - name: 'Postupy: Vytvoření základní webové služby HTTP WCF'
+      href: how-to-create-a-basic-wcf-web-http-service.md
+    - name: 'Postupy: Zveřejnění kontraktu klientům SOAP a webovým klientům'
+      href: how-to-expose-a-contract-to-soap-and-web-clients.md
+    - name: UriTemplate a UriTemplateTable
+      href: uritemplate-and-uritemplatetable.md
+    - name: 'Postupy: Vytvoření služby, která vrací libovolná data pomocí modelu programování webových služeb HTTP WCF'
+      href: service-returns-arbitrary-data-using-the-wcf-web.md
+    - name: 'Postupy: Vytvoření služby, která přijímá libovolná data – pomocí programovacího modelu WCF REST'
+      href: create-a-service-arbitrary-data-using-wcf.md
+    - name: Podpora ukládání dat do mezipaměti pro webové HTTP služby WCF
+      href: caching-support-for-wcf-web-http-services.md
+    - name: Stránka nápovědy webové služby HTTP WCF
+      href: wcf-web-http-service-help-page.md
+    - name: Formátování webových služeb HTTP WCF
+      href: wcf-web-http-formatting.md
+    - name: Zpracování chyb HTTP programování webové služby WCF
+      href: wcf-web-http-error-handling.md
+    - name: Používání JSONP
+      href: using-jsonp.md
+    - name: Volání služby typu REST ze služby WCF
+      href: calling-a-rest-style-service-from-a-wcf-service.md
+  - name: Syndikace WCF
+    href: wcf-syndication.md
+    items:
+    - name: Syndikace WCF – přehled
+      href: wcf-syndication-overview.md
+    - name: Architektura syndikace
+      href: architecture-of-syndication.md
+    - name: Mapování modelu objektu syndikace WCF na Atom a RSS
+      href: how-the-wcf-syndication-object-model-maps-to-atom-and-rss.md
+    - name: 'Postupy: Vytvoření základního kanálu RSS'
+      href: how-to-create-a-basic-rss-feed.md
+    - name: 'Postupy: Vytvoření základního informačního kanálu Atom'
+      href: how-to-create-a-basic-atom-feed.md
+    - name: 'Postupy: Zveřejnění informačního kanálu ve formátu Atom i RSS'
+      href: how-to-expose-a-feed-as-both-atom-and-rss.md
+    - name: Rozšiřitelnost syndikace
+      href: syndication-extensibility.md
+  - name: Integrace jazyka AJAX a podpora formátu JSON
+    href: ajax-integration-and-json-support.md
+    items:
+    - name: Vytváření služeb WCF pro ASP.NET AJAX
+      href: creating-wcf-services-for-aspnet-ajax.md
+      items:
+      - name: 'Postupy: Vytvoření služby WCF, ve které je povolený AJAX, a přístup k ní'
+        href: create-an-ajax-wcf-asp-net-client.md
+      - name: 'Postupy: Přidání koncového bodu ASP.NET AJAX bez použití konfiguračního souboru'
+        href: how-to-add-an-aspnet-ajax-endpoint-without-using-configuration.md
+      - name: 'Postupy: Použití konfigurace k přidání koncového bodu ASP.NET AJAX'
+        href: how-to-use-configuration-to-add-an-aspnet-ajax-endpoint.md
+      - name: 'Postupy: Volba mezi žádostmi HTTP POST a HTTP GET u koncových bodů ASP.NET AJAX'
+        href: http-post-and-http-get-requests-for-aspnet-ajax-endpoints.md
+    - name: Vytváření služeb WCF AJAX bez ASP.NET
+      href: creating-wcf-ajax-services-without-aspnet.md
+    - name: Podpora formátu JSON a dalších formátů přenosu dat
+      href: support-for-json-and-other-data-transfer-formats.md
+      items:
+      - name: Samostatná serializace JSON
+        href: stand-alone-json-serialization.md
+      - name: 'Postupy: Serializace a deserializace dat protokolu JSON'
+        href: how-to-serialize-and-deserialize-json-data.md
+      - name: Mapování mezi JSON a XML
+        href: mapping-between-json-and-xml.md
+      - name: Serializace ve formátu Json s programováním na úrovni zpráv
+        href: serializing-in-json-with-message-level-programming.md
+    - name: 'Postupy: Migrace webových služeb ASP.NET s povolenou službou AJAX na WCF'
+      href: how-to-migrate-ajax-enabled-aspnet-web-services-to-wcf.md
+  - name: Zjišťování WCF
+    href: wcf-discovery.md
+    items:
+    - name: Přehled zjišťování WCF
+      href: wcf-discovery-overview.md
+    - name: Objektový model zjišťování WCF
+      href: wcf-discovery-object-model.md
+    - name: Hledání zjišťování a kritéria hledání
+      href: discovery-find-and-findcriteria.md
+    - name: 'Postupy: Programové přidání možností rozpoznání do klienta a služby WCF'
+      href: how-to-programmatically-add-discoverability-to-a-wcf-service-and-client.md
+    - name: Implementace proxy zjišťování
+      href: implementing-a-discovery-proxy.md
+      items:
+      - name: 'Postupy: Implementace zjišťování proxy'
+        href: how-to-implement-a-discovery-proxy.md
+      - name: 'Postupy: Implementace zjistitelné služby, která se registruje pomocí proxy zjišťování'
+        href: discoverable-service-that-registers-with-the-discovery-proxy.md
+      - name: 'Postupy: Implementace klientské aplikace používající zjišťování proxy k vyhledání služby'
+        href: client-app-discovery-proxy-to-find-a-service.md
+      - name: 'Postupy: Test proxy zjišťování'
+        href: how-to-test-the-discovery-proxy.md
+      - name: 'Postupy: Určení verze zjišťování zkušebního požadavku'
+        href: how-to-determine-the-discovery-version-of-a-probe-request.md
+    - name: Správa verzí zjišťování
+      href: discovery-versioning.md
+    - name: Konfigurace zjišťování v konfiguračním souboru
+      href: configuring-discovery-in-a-configuration-file.md
+    - name: Použití kanálu klienta zjišťování
+      href: using-the-discovery-client-channel.md
+    - name: Použití vlastní vazby s kanálem klienta zjišťování
+      href: using-a-custom-binding-with-the-discovery-client-channel.md
+    - name: Oznámení zjišťování a klient oznámení
+      href: discovery-announcements-and-announcement-client.md
+    - name: Objekty DiscoveryClient a DynamicEndpoint
+      href: discoveryclient-and-dynamicendpoint.md
+  - name: Směrování
+    href: routing.md
+    items:
+    - name: Směrování – úvod
+      href: routing-introduction.md
+    - name: Směrovací služba
+      href: routing-service.md
+    - name: Kontrakty pro směrování
+      href: routing-contracts.md
+    - name: Filtry zpráv
+      href: message-filters.md
+      items:
+      - name: Výběr filtru
+        href: choosing-a-filter.md
+      - name: Vlastní filtry
+        href: custom-filters.md
+      - name: 'Postupy: Používání filtrů'
+        href: how-to-use-filters.md
+    - name: Scénáře směrování
+      href: routing-scenarios.md
+      items:
+      - name: 'Postupy: Verze služby'
+        href: how-to-service-versioning.md
+      - name: 'Postupy: Vytvoření oddílů dat služby'
+        href: how-to-service-data-partitioning.md
+      - name: 'Postupy: Dynamická aktualizace'
+        href: how-to-dynamic-update.md
+      - name: 'Postupy: Zpracování chyb'
+        href: how-to-error-handling.md
+  - name: WCF a mezinárodní názvy domén
+    href: wcf-and-internationalized-domain-names.md
+  - name: WCF a WebSockets
+    href: wcf-and-websockets.md
+    items:
+    - name: Používání vazeb NetHttpBinding
+      href: using-the-nethttpbinding.md
+    - name: 'Postupy: Vytvoření služby WCF, která komunikuje přes WebSockets'
+      href: how-to-create-a-wcf-service-that-communicates-over-websockets.md
+  - name: Zpracování chyb
+    href: error-handling.md
+ms.openlocfilehash: e3e5ea2aa8b0462cfad8dd7094ccf7d669611ae1
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58471274"
