@@ -2,12 +2,12 @@
 title: Ukázkové dokumenty XML (LINQ to XML)
 ms.date: 07/20/2015
 ms.assetid: a734cc4e-d95d-4631-91a2-81618c8ad894
-ms.openlocfilehash: 9e1c8dc073a0079766e1239c9a31ea00696da84f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d8567d8129dd7ba32e847b8c1e28ffc992d10b1f
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54652381"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58837692"
 ---
 # <a name="sample-xml-documents-linq-to-xml"></a>Ukázkové dokumenty XML (LINQ to XML)
 Následující příklad soubory se používají v ukázky kódu a fragmenty kódu v průběhu [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentaci.  
@@ -34,4 +34,5 @@ Následující příklad soubory se používají v ukázky kódu a fragmenty kó
 |[Ukázkový soubor XML: Konsolidované nákupní objednávky](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-consolidated-purchase-orders.md)|Představuje dokument XML, který obsahuje nákupních objednávek, které jsou v různých oborech názvů.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Průvodce programováním (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/programming-guide-linq-to-xml.md)

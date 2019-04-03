@@ -2,12 +2,12 @@
 title: Vytváří se zdrojového dokumentu Office Open XML (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 61ccd6fb-0c47-4075-afdf-5b5021330f21
-ms.openlocfilehash: 124f22e3a4b3e43dd454aca9389691a89debcf6f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: dad832aeef4d6519c272589033acc6d2fe3c2676
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54617444"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58838851"
 ---
 # <a name="creating-the-source-office-open-xml-document-visual-basic"></a>Vytváří se zdrojového dokumentu Office Open XML (Visual Basic)
 Toto téma ukazuje, jak vytvořit dokumentu Office Open XML WordprocessingML, použít další příklady v tomto kurzu. Pokud budete postupovat podle těchto pokynů, výstup bude odpovídat výstup poskytovaný v každém příkladu.  
@@ -54,4 +54,5 @@ Toto téma ukazuje, jak vytvořit dokumentu Office Open XML WordprocessingML, po
     >  Pokud používáte aplikaci Microsoft Word 2003, vyberte **dokument aplikace Word 2007** v **uložit jako typ** rozevíracího seznamu.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Kurz: Manipulace s obsahem v dokumentu WordprocessingML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)

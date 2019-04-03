@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 6c0b353d-79ee-4e61-b348-be49ad0e9a16
-ms.openlocfilehash: 98d264cb081af0c0ed96b7e439f93224608467d4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 09941ce5fcf33380cbf3455866e63918edd2ea20
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54717412"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58842197"
 ---
 # <a name="custom-binding-transport-and-encoding"></a>Kódování a přenos vlastní vazby
 Seřazený seznam elementů diskrétní vazby je definován vlastní vazby. Tento příklad ukazuje, jak nakonfigurovat vlastní vazby s různými přenos a kódování prvků zprávy.  
@@ -86,4 +86,3 @@ client.Close()
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Custom\Transport`  
   
-## <a name="see-also"></a>Viz také:

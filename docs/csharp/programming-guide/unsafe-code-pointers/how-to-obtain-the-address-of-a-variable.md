@@ -7,12 +7,12 @@ helpviewer_keywords:
 - pointers [C#], & operator
 - pointer expressions [C#], address-of operator
 ms.assetid: 44fe2cd9-a64f-4ef5-be2a-09ce807c0182
-ms.openlocfilehash: cba33803c31ccc144479ad3e7b073ea7057495d5
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: b12d3bf99f32a3526bd4a1ec8c49b1fd88afd68a
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54490555"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58832343"
 ---
 # <a name="how-to-obtain-the-address-of-a-variable-c-programming-guide"></a>Postupy: získávání adresy proměnné (C# Programming Guide)
 
@@ -23,7 +23,7 @@ int number;
 int* p = &number; //address-of operator &  
 ```  
   
- Operátor address-of může používat jedině pro proměnnou. Pokud je proměnná přesunutelný proměnné, můžete použít [oprava příkazu](../../../csharp/language-reference/keywords/fixed-statement.md) dočasně vyřešit proměnnou před získáním adresy.  
+ Operátor address-of může používat jedině pro proměnnou. Pokud je proměnná přesunutelný proměnné, můžete použít [oprava příkazu](../../../csharp/language-reference/keywords/fixed-statement.md) dočasně vyřešit proměnnou před získáním adresy. Další informace o přesunutelný proměnných najdete v tématu [Fixed a přesunutelný proměnné](/dotnet/csharp/language-reference/language-specification/unsafe-code#fixed-and-moveable-variables). 
   
  Je vaší povinností ujistit, že je proměnná inicializována. Kompilátor nebude vydat chybovou zprávu, pokud proměnná není inicializovaná.  
   

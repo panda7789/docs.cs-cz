@@ -11,12 +11,12 @@ helpviewer_keywords:
 - overloaded operators [Visual Basic], calling
 - operator overloading
 ms.assetid: 0dce42cc-f0b0-4c14-9f62-018b21f33497
-ms.openlocfilehash: ab9dd9e3f9abdd8379a59ed458c47d5ec8b4f2ad
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 46614ad43e7be72c8396f47ba7f5d02185f62827
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56978966"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58837088"
 ---
 # <a name="how-to-call-an-operator-procedure-visual-basic"></a>Postupy: Volání procedury operátora (Visual Basic)
 Volání procedury operátora pomocí symbol operátoru ve výrazu. V případě operátor převodu, volání [funkce CType](../../../../visual-basic/language-reference/functions/ctype-function.md) převést hodnotu z jednoho datového typu na jiný.  
@@ -54,6 +54,7 @@ Volání procedury operátora pomocí symbol operátoru ve výrazu. V případě
  Ujistěte se, že třídy nebo struktury, které používáte definuje operátor, který chcete použít.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Procedury operátoru](./operator-procedures.md)
 - [Postupy: Definovat operátor](./how-to-define-an-operator.md)
 - [Postupy: Definice operátora převodu](./how-to-define-a-conversion-operator.md)

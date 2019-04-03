@@ -2,12 +2,12 @@
 title: Pokročilé technologie LINQ to XML programování (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 36018532-a55c-4538-8a27-98f475ea3415
-ms.openlocfilehash: 1aae385db8f989aa142f588bb459486b805074e5
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f30f8f1c6dcdbabc1f32f4f7e216ce65a50396c6
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54668376"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58835320"
 ---
 # <a name="advanced-linq-to-xml-programming-visual-basic"></a>Pokročilé technologie LINQ to XML programování (Visual Basic)
 Tato část obsahuje informace, které budou pouze pro pokročilé vývojáře v určitých [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] scénáře.  
@@ -29,4 +29,5 @@ Tato část obsahuje informace, které budou pouze pro pokročilé vývojáře v
 |[Datová vazba WPF s LINQ to XML](/visualstudio/designers/wpf-data-binding-with-linq-to-xml)|Popisuje způsob použití technologie LINQ to XML jako zdroj dat pro datové vazby v aplikacích Windows Presentation Foundation.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Průvodce programováním (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/programming-guide-linq-to-xml.md)

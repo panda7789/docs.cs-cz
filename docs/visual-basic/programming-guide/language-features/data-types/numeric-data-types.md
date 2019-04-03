@@ -23,12 +23,12 @@ helpviewer_keywords:
 - Single data type [Visual Basic], numeric types
 - Decimal data type [Visual Basic], numeric data types
 ms.assetid: a27bd4d0-7e14-43eb-9cc4-b42eaab323c9
-ms.openlocfilehash: 1188e8288bb73a49acc3e3bf0f72e3ac4fef5f7a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 75e60cb2a3a934956099ce6fc7d81bf6ecea4d11
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54636408"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58841638"
 ---
 # <a name="numeric-data-types-visual-basic"></a>Numerické datové typy (Visual Basic)
 Visual Basic poskytuje několik *číselných datových typů* pro zpracování čísel v různé reprezentace. *Integrální* typy představují pouze celá čísla (kladná, záporná a nula), a *nonintegral* typy představují celé číslo a zlomkové části čísla.  
@@ -79,6 +79,7 @@ Visual Basic poskytuje několik *číselných datových typů* pro zpracování 
  Pokud nepotřebujete celou škálu `Double` datový typ, můžete použít `Single` datového typu, který může obsahovat čísla s plovoucí desetinnou čárkou z - 3.4028235E + 38 prostřednictvím 3.4028235E + 38. Nejmenší řádově pro `Single` proměnné jsou – 1, 401298E-45 pro záporné hodnoty a 1, 401298E-45 pro kladné hodnoty. Pokud máte velký počet proměnné, které obsahují malé čísla s plovoucí desetinnou čárkou, modul common language runtime může někdy ukládat vaše `Single` proměnné efektivněji a uložte si využití paměti.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Základní datové typy](../../../../visual-basic/programming-guide/language-features/data-types/elementary-data-types.md)
 - [Znakové datové typy](../../../../visual-basic/programming-guide/language-features/data-types/character-data-types.md)
 - [Různé datové typy](../../../../visual-basic/programming-guide/language-features/data-types/miscellaneous-data-types.md)
