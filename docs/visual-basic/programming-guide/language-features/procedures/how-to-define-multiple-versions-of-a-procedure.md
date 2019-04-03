@@ -8,12 +8,12 @@ helpviewer_keywords:
 - procedures [Visual Basic], multiple versions
 - procedure overloading [Visual Basic], multiple versions
 ms.assetid: 71ccdd66-1b00-4b66-bee4-6926c0d696f4
-ms.openlocfilehash: baaaca13755b9fdc11308ff3e4df39835dbe466e
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: c31c9ad05af04aec5dc41790aea530c62611f500
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56980773"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58841162"
 ---
 # <a name="how-to-define-multiple-versions-of-a-procedure-visual-basic"></a>Postupy: Definice více verzí procedury (Visual Basic)
 Můžete definovat postup ve více verzích přidáním *přetížení* jeho pomocí se stejným názvem, ale odlišným seznamem parametrů pro každou verzi. Účelem přetížení je definovat několik úzce související verze procedury, aniž byste museli rozlišit podle názvu.  
@@ -43,6 +43,7 @@ Můžete definovat postup ve více verzích přidáním *přetížení* jeho pom
  Ujistěte se, že všechny přetížené verze má stejný název procedury, ale odlišným seznamem parametrů.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Procedury](./index.md)
 - [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)
 - [Řešení potíží s procedurami](./troubleshooting-procedures.md)

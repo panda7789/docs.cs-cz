@@ -7,12 +7,12 @@ helpviewer_keywords:
 - rapid application development (RAD), My.Forms
 - rapid application development (RAD), My.WebServices
 ms.assetid: de930027-9108-4f0c-b97c-5e7db4d6ef79
-ms.openlocfilehash: 5a81cde63de258f0996c3ddbc99e0102d58d79b8
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: ca31e1c40c77bf7f42d246019d81f4ffaed646e8
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56973909"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58839355"
 ---
 # <a name="default-object-instances-provided-by-myforms-and-mywebservices-visual-basic"></a>Výchozí instance objektů poskytované třídami My.Forms a My.WebServices (Visual Basic)
 [My.Forms](../../../visual-basic/language-reference/objects/my-forms-object.md) a [My.WebServices](../../../visual-basic/language-reference/objects/my-webservices-object.md) objekty poskytují přístup k formulářům, zdroje dat a webové služby XML používaný vaší aplikací. Je to tím, že poskytuje kolekce *výchozí instance* každého z těchto objektů.  
@@ -27,6 +27,7 @@ ms.locfileid: "56973909"
  `My.Forms` Objekt vrátí kolekci výchozí instance pro každý `Form` třídy, které existují ve vašem projektu. Obdobně `My.WebServices` poskytuje výchozí instanci třídy proxy pro každou webovou službu, že jste vytvořili odkaz na ve vaší aplikaci.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Objekt My.Forms](../../../visual-basic/language-reference/objects/my-forms-object.md)
 - [Objekt My.WebServices](../../../visual-basic/language-reference/objects/my-webservices-object.md)
 - [Závislost oboru názvů My na typu projektu](../../../visual-basic/developing-apps/development-with-my/how-my-depends-on-project-type.md)

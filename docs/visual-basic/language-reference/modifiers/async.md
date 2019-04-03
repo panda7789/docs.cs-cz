@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Async [Visual Basic]
 - Async keyword [Visual Basic]
 ms.assetid: 1be8b4b5-9689-41b5-bd33-b906bfd53bc5
-ms.openlocfilehash: 654c397918f564bbba9ce91ebd8135b14dd7abb1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ad6d671a45cee7d534347d23963bb5035ecc8dac
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54561449"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58834583"
 ---
 # <a name="async-visual-basic"></a>Async (Visual Basic)
 `Async` Modifikátor znamená, že metoda nebo [výraz lambda](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md) , mění, jsou asynchronní. Tyto metody jsou označovány jako *asynchronní metody*.  
@@ -104,6 +104,7 @@ End Function
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Runtime.CompilerServices.AsyncStateMachineAttribute>
 - [Operátor Await](../../../visual-basic/language-reference/operators/await-operator.md)
 - [Asynchronní programování pomocí modifikátoru Async a operátoru Await](../../../visual-basic/programming-guide/concepts/async/index.md)

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - data types [Visual Basic], value types
 - data types [Visual Basic], reference types
 ms.assetid: fc82ce15-5a40-4c5c-a1e1-a556830e7391
-ms.openlocfilehash: 2f09a2842edfa9471267f294c9b64229ae824098
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 4e0831a045da5eb5798d10aeb977981ecae20040
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54738745"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58819528"
 ---
 # <a name="value-types-and-reference-types"></a>Typy hodnot a typy odkazu
 Datové typy v jazyce Visual Basic jsou implementovány podle jejich klasifikace. Datové typy jazyka Visual Basic lze rozdělit podle Určuje, zda proměnná určitého typu ukládá svoje vlastní data nebo ukazatel na data. Pokud ukládá svoje vlastní data *typ hodnoty*; pokud drží ukazatel na data jinde v paměti je *odkazovat na typ*.  
@@ -73,6 +73,7 @@ Dim totals() As Single = New Single(8) {}
  Můžete zjistit, jestli se `Object` proměnné funguje jako odkaz na typ nebo hodnotový typ ji do <xref:Microsoft.VisualBasic.Information.IsReference%2A> metoda ve <xref:Microsoft.VisualBasic.Information> třídu <xref:Microsoft.VisualBasic?displayProperty=nameWithType> oboru názvů. <xref:Microsoft.VisualBasic.Information.IsReference%2A?displayProperty=nameWithType> Vrátí `True` Pokud obsah `Object` proměnná představuje typ odkazu.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Typy hodnot s povolenou hodnotou Null](../../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md)
 - [Převody typů v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)
 - [Příkaz Structure](../../../../visual-basic/language-reference/statements/structure-statement.md)

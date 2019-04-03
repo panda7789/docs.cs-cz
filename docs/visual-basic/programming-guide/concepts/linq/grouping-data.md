@@ -2,12 +2,12 @@
 title: Seskupování dat (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 8f3a0871-6958-4aef-8f6f-493e189fd57d
-ms.openlocfilehash: 14b114906a0e04a4d11c323f80b070603a7286c0
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c658ac5c46baec1bfa976074b78ac86d791b6515
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54576960"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58842054"
 ---
 # <a name="grouping-data-visual-basic"></a>Seskupování dat (Visual Basic)
 Seskupení odkazuje na operace ukládání dat do skupin, aby elementy v každé skupině sdílet společný atribut.  
@@ -23,7 +23,7 @@ Seskupení odkazuje na operace ukládání dat do skupin, aby elementy v každé
 |Název metody|Popis|Syntaxe výrazu dotazu jazyka Visual Basic|Další informace|  
 |-----------------|-----------------|------------------------------------------|----------------------|  
 |GroupBy|Seskupí elementy, které sdílejí společný atribut. Každá skupina představuje <xref:System.Linq.IGrouping%602> objektu.|`Group … By … Into …`|<xref:System.Linq.Enumerable.GroupBy%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.GroupBy%2A?displayProperty=nameWithType>|  
-|ToLookup|Vloží prvky do <xref:System.Linq.Lookup%602> (jeden na mnoho slovník) podle funkce selektoru klíče.|Nelze použít.|<xref:System.Linq.Enumerable.ToLookup%2A?displayProperty=nameWithType>|  
+|ToLookup|Vloží prvky do <xref:System.Linq.Lookup%602> (jeden na mnoho slovník) podle funkce selektoru klíče.|Není k dispozici.|<xref:System.Linq.Enumerable.ToLookup%2A?displayProperty=nameWithType>|  
   
 ## <a name="query-expression-syntax-example"></a>Příklad syntaxe výrazu dotazu  
  Následující příklad kódu používá `Group By` klauzule, která skupina celých čísel v seznamu podle toho, zda jsou sudý, nebo lichý.  
@@ -64,6 +64,7 @@ MsgBox(sb.ToString())
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Linq>
 - [Přehled standardních operátorů dotazu (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)
 - [Klauzule Group By](../../../../visual-basic/language-reference/queries/group-by-clause.md)

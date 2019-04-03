@@ -2,12 +2,12 @@
 title: 'Postupy: Řízení typu projekce (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: a0171276-0b46-4817-aee5-a8d5191b12fe
-ms.openlocfilehash: e892e6328576a9727a13a4c1acd951d44ce4daa8
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: dd09914a75a8d4b20ddf9ff452f046bf7671152f
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54628870"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58831402"
 ---
 # <a name="how-to-control-the-type-of-a-projection-visual-basic"></a>Postupy: Řízení typu projekce (Visual Basic)
 Projekce je proces trvá jednu sadu dat, filtrovat, změně jeho tvar a změnu i jejího typu. Většina výrazy dotazu provést sami. Většina výrazy dotazu uvedené v této části vyhodnotit <xref:System.Collections.Generic.IEnumerable%601> z <xref:System.Xml.Linq.XElement>, ale můžete řídit typ projekce k vytvoření kolekce jiných typů. Toto téma ukazuje, jak to provést.  
@@ -87,5 +87,6 @@ LETSS:Let's Stop N Shop:Jaime Yorres
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Linq.Enumerable.Select%2A>
 - [Projekce a transformace (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)

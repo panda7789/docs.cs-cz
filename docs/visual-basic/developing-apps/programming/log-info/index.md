@@ -9,12 +9,12 @@ helpviewer_keywords:
 - My.Application.Log object
 - examples [Visual Basic], logging application information
 ms.assetid: 8bf4f047-22d6-48d6-aec5-93b98ad5b8e8
-ms.openlocfilehash: d7cdf5a309da1f32b337bea4d609fe34487a5457
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 3202bdb2c4274e6d3127537b7cae661ba6e63a35
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54746347"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58819993"
 ---
 # <a name="logging-information-from-the-application-visual-basic"></a>Protokolování informací z aplikace (Visual Basic)
 Tento oddíl obsahuje témata, které vás provedou k protokolování informací z aplikace pomocí `My.Application.Log` nebo `My.Log` objektu a tom, jak rozšířit možnosti protokolování aplikace.  
@@ -23,7 +23,7 @@ Tento oddíl obsahuje témata, které vás provedou k protokolování informací
   
  `My.Log` Objekt je k dispozici pouze pro aplikace ASP.NET. Pro klientské aplikace, použijte `My.Application.Log`. Další informace naleznete v tématu <xref:Microsoft.VisualBasic.Logging.Log>.  
   
-## <a name="tasks"></a>Úlohy  
+## <a name="tasks"></a>Úkoly  
   
 |Chcete-li|Další informace naleznete v tématu|  
 |--------|---------|  
@@ -38,6 +38,7 @@ Tento oddíl obsahuje témata, které vás provedou k protokolování informací
 |Filtrování výstupu `My.Application.Log` protokoly.|[Návod: Filtrování výstupu My.Application.Log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-filtering-my-application-log-output.md)|  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:Microsoft.VisualBasic.Logging.Log?displayProperty=nameWithType>
 - [Práce s protokoly aplikací](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)
 - [Řešení potíží: Součásti naslouchající protokolům](../../../../visual-basic/developing-apps/programming/log-info/troubleshooting-log-listeners.md)

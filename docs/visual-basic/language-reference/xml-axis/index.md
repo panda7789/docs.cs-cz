@@ -7,12 +7,12 @@ helpviewer_keywords:
 - XML axis [Visual Basic]
 - XML [Visual Basic], accessing
 ms.assetid: 7e400e20-5d1e-4d22-a65c-9df79d5c1621
-ms.openlocfilehash: 28d8e96190328fba0769a0be247cc8b0c6bf1d68
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 90004ff2e9d5fcf1470b34b93091545b2b848b33
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54746349"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58834034"
 ---
 # <a name="xml-axis-properties-visual-basic"></a>Vlastnosti osy XML (Visual Basic)
 Témata v této části dokumentace syntaxe vlastnosti osy XML v jazyce Visual Basic. Vlastnosti osy XML usnadňují přístup přímo v kódu XML.  
@@ -28,4 +28,5 @@ Témata v této části dokumentace syntaxe vlastnosti osy XML v jazyce Visual B
 |[Vlastnost hodnoty XML](../../../visual-basic/language-reference/xml-axis/xml-value-property.md)|Popisuje, jak přistupovat k hodnotě prvního prvku kolekce <xref:System.Xml.Linq.XElement> nebo <xref:System.Xml.Linq.XAttribute> objekty.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [XML](../../../visual-basic/programming-guide/language-features/xml/index.md)

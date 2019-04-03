@@ -9,12 +9,12 @@ helpviewer_keywords:
 - My feature
 - Visual Basic, programming in
 ms.assetid: f1d04509-5e46-4551-9f9f-94334a121fca
-ms.openlocfilehash: 2758dc847d6549689d688ef4742bb334b1968988
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1d9dc1cd26b4bf110526fe6d136e943be730a443
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54720220"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58830315"
 ---
 # <a name="development-with-my-visual-basic"></a>Vývoj s použitím oboru názvů My (Visual Basic)
 Visual Basic poskytuje nové funkce pro rychlý vývoj aplikací, které přináší vyšší produktivitu a snadnost použití při současném dodávání napájení. Jedna z těchto funkcí, volá `My`, poskytuje přístup k informacím a výchozí instance objektů, které se vztahují k aplikaci a její prostředí za běhu. Tyto informace je organizována do formátu, který je zjistitelný prostřednictvím technologie IntelliSense a logicky vymezen podle použití.  
@@ -23,7 +23,7 @@ Visual Basic poskytuje nové funkce pro rychlý vývoj aplikací, které přiná
   
  Tato tabulka ukazuje na nejvyšší úrovni `My` objekty a jejich vztahu k sobě navzájem.  
   
- ![Objektový Model pro objekt Moje](../../../visual-basic/developing-apps/development-with-my/media/myobjmodel.gif "MyObjModel")  
+ ![Diagram je znázorněn objektový model pro moje.](./media/index/my-object-model-relationships.gif)  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Provádění úloh s objekty My.Application, My.Computer a My.User](../../../visual-basic/developing-apps/development-with-my/performing-tasks-with-my-application-my-computer-and-my-user.md)  
@@ -42,6 +42,7 @@ Visual Basic poskytuje nové funkce pro rychlý vývoj aplikací, které přiná
  Obsahuje údaje o kterém `My` funkce jsou k dispozici v různých typech projektů.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase>
 - <xref:Microsoft.VisualBasic.Devices.Computer>
 - <xref:Microsoft.VisualBasic.ApplicationServices.User>

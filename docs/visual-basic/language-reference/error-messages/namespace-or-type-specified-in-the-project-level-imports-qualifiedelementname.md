@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC40057
 ms.assetid: 4ae3506e-2ebe-4ff3-995d-14ac60db5e9f
-ms.openlocfilehash: 12d20a88179a3d0c93c18f0aed65ca46b001059a
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 554300f87dbfca351ebcd2d544051968e84880ab
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55283306"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58816803"
 ---
 # <a name="namespace-or-type-specified-in-the-project-level-imports-qualifiedelementname-doesnt-contain-any-public-member-or-cannot-be-found"></a>Namespace nebo typ zadaný v příkazu Imports na úrovni projektu'\<qualifiedelementname >' neobsahuje žádný veřejný člen nebo nebyl nalezen
 Namespace nebo typ zadaný v příkazu Imports na úrovni projektu'\<qualifiedelementname >' neobsahuje žádný veřejný člen nebo nebyl nalezen. Ujistěte se, že obor názvů nebo typ definován a obsahuje nejméně jeden veřejný člen. Ujistěte se, že název aliasu neobsahuje další aliasy.  
@@ -38,6 +38,7 @@ Namespace nebo typ zadaný v příkazu Imports na úrovni projektu'\<qualifiedel
 3.  Ověřte, že nadřazeného elementu zpřístupňuje alespoň jeden `Public` člena.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Stránka Odkazy, Návrhář projektu (Visual Basic)](/visualstudio/ide/reference/references-page-project-designer-visual-basic)
 - [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)
 - [Public](../../../visual-basic/language-reference/modifiers/public.md)

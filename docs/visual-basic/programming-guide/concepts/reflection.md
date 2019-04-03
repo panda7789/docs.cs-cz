@@ -2,12 +2,12 @@
 title: Reflexe (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: d991bc0f-d16a-4ac5-9351-70e5c5b9891b
-ms.openlocfilehash: 59910edda8e2dfc4ec8e697b1d5b9a0f47ff9dbe
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d2ad8957d308aa98935c862ec1864b6682be904b
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54690108"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58834878"
 ---
 # <a name="reflection-visual-basic"></a>Reflexe (Visual Basic)
 Reflexe poskytuje objekty (typu <xref:System.Type>), které popisují sestavení, modulů a typů. Vám pomůže odrazu dynamicky vytvořit instanci typu, navázat na existující objekt, nebo získat typ z existujícího objektu a volat jeho metody nebo přístup k vlastnostem a polím. Pokud používáte atributy ve vašem kódu, reflexe umožňuje přistupovat k nim. Další informace najdete v tématu [atributy](../../../standard/attributes/index.md).  
@@ -62,5 +62,6 @@ System.Console.WriteLine(info)
 -   [Načítání informací uložených v atributech](../../../standard/attributes/retrieving-information-stored-in-attributes.md)  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Průvodce programováním v jazyce Visual Basic](../../../visual-basic/programming-guide/index.md)
 - [Sestavení v modulu CLR (Common Language Runtime)](../../../framework/app-domains/assemblies-in-the-common-language-runtime.md)

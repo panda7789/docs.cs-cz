@@ -7,12 +7,12 @@ helpviewer_keywords:
 - GetType operator [Visual Basic]
 - GetType keyword [Visual Basic]
 ms.assetid: 4f733297-2503-4607-850c-15eba65fff90
-ms.openlocfilehash: de80feecda1268f3899f73c52727372452a2d366
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: 34ab192814583db5cdc0d0183c73cc22b8633e9c
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57502628"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58840313"
 ---
 # <a name="gettype-operator-visual-basic"></a>GetType – operátor (Visual Basic)
 Vrátí <xref:System.Type> objekt zadaného typu. <xref:System.Type> Objekt poskytuje informace o typu jako jeho vlastnosti, metody a události.  
@@ -58,6 +58,7 @@ GetType(typename)
  [!code-vb[VbVbalrOperators#26](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#26)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Priorita operátorů v jazyce Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
 - [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)
 - [Operátory a výrazy](../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)

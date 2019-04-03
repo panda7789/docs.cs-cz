@@ -2,12 +2,12 @@
 title: Navigační vlastnost – ADO.NET
 ms.date: 03/30/2017
 ms.assetid: d0bf1a6a-1d84-484c-b7c3-b410fd8dc0b1
-ms.openlocfilehash: 6729b22dbc012d5ccfabd64cd83b710833fe1b9d
-ms.sourcegitcommit: 5dcfeb59179e81071f54840d4902cbe00b184294
+ms.openlocfilehash: b57ecf9329aa9ea8afc07507613c9e3961bfd0a9
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54857941"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58836594"
 ---
 # <a name="navigation-property"></a>Navigační vlastnost
 
@@ -29,7 +29,7 @@ Datový typ vlastnosti navigace závisí [násobnost](association-end-multiplici
 
 Následující diagram znázorňuje Koncepční model s tři typy entit: `Book`, `Publisher`, a `Author`. Vlastnosti navigace `Publisher` a `Authors`, jsou definovány na typ entity adresáře. Navigační vlastnost `Books` je definována obě vydavatele typu entity a `Author` typ entity.
 
-![Model s navigační vlastnosti](/media/modelwithnavprops.gif "ModelWithNavProps")
+ ![Diagram znázorňující konceptuálního modelu s tři typy entit.](./media/navigation-property/conceptual-model-entity-types-associations.gif)  
 
 [ADO.NET Entity Framework](./ef/index.md) používá jazyka specifického pro doménu (DSL) volá Konceptuální schéma definici jazyka ([CSDL](./ef/language-reference/csdl-specification.md)) k definování konceptuálních modelů. Definuje následující CSDL `Book` typ entity, které jsou zobrazeny ve výše uvedeném diagramu:
 

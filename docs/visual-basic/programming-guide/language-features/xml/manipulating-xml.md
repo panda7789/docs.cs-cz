@@ -6,12 +6,12 @@ helpviewer_keywords:
 - Visual Basic code, XML
 - XML [Visual Basic], manipulating
 ms.assetid: da32cffb-198d-41b1-9af3-260fe32e3b7d
-ms.openlocfilehash: 70ba038a2bdf4bde092ef6beecf32ac9ad5cbba1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 7ed045b79460b3f1b3178d6bc85de9358d61f116
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54506898"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58835892"
 ---
 # <a name="manipulating-xml-in-visual-basic"></a>Zacházení s XML v jazyce Visual Basic
 Můžete použít *literály XML* načtení z externího zdroje, například řetězce, soubor nebo datový proud XML. Pak můžete použít [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] manipulaci s XML a použití [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] dotaz XML.  
@@ -43,6 +43,7 @@ Můžete použít *literály XML* načtení z externího zdroje, například ře
  Obsahuje odkazy na oddíly, které popisují způsob použití [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] v jazyce Visual Basic.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [XML](../../../../visual-basic/programming-guide/language-features/xml/index.md)
 - [LINQ](../../../../visual-basic/programming-guide/language-features/linq/index.md)
 - [Úvod do LINQ v JAZYKU Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)

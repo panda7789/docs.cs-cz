@@ -9,12 +9,12 @@ helpviewer_keywords:
 - rectangular arrays
 - ranking, arrays
 ms.assetid: 385e911b-18c1-4e98-9924-c6d279101dd9
-ms.openlocfilehash: 47b90a6c513a5808dc0669d2d861de5e16406a34
-ms.sourcegitcommit: d938c39afb9216db377d0f0ecdaa53936a851059
+ms.openlocfilehash: 0b4e7c9e253f94e1e28700c8669d28799ab69d91
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58634164"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58836932"
 ---
 # <a name="array-dimensions-in-visual-basic"></a>Rozměry pole v jazyce Visual Basic
 A *dimenze* je směr, ve kterém můžete měnit specifikace prvků tohoto pole. Pole, která obsahuje celkový prodej za každý den v měsíci má jednu dimenzi (den v měsíci). Pole, která obsahuje celkový prodej podle oddělení pro každý den v měsíci má dvě dimenze (číslo oddělení a den v měsíci). Počet rozměrů pole má nazývá jeho *pořadí*.  
@@ -87,5 +87,6 @@ Dim salesAmounts(4, 11, 30) As Double
 >  Můžete vytvořit pole bez použití `Dim` příkazu nebo `New` klauzuli. Například můžete volat <xref:System.Array.CreateInstance%2A> metody nebo jiné součásti předat kód pole vytvořené tímto způsobem. Takový objekt array může mít dolní hranicí jinou než 0. Můžete vždy otestovat pro dolní mez dimenze pomocí <xref:System.Array.GetLowerBound%2A> metoda nebo `LBound` funkce.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Pole](../../../../visual-basic/programming-guide/language-features/arrays/index.md)
 - [Řešení potíží s poli](../../../../visual-basic/programming-guide/language-features/arrays/troubleshooting-arrays.md)

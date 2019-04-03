@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - WS Security
 ms.assetid: d2221d1c-c9cb-48d1-b044-a3b4445c7f05
-ms.openlocfilehash: a39d43084457d07a1b2064d80226c1186e42686a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 49d7e74b908f0acfd13b6cd30c710034e71d667f
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54585169"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58838583"
 ---
 # <a name="message-security-windows"></a>Zabezpečení zpráv – Windows
 Tato ukázka předvádí, jak nakonfigurovat <xref:System.ServiceModel.WSHttpBinding> vazby pro použití zabezpečení na úrovni zprávy s ověřováním Windows. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md). V této ukázce služba je hostována v Internetové informační služby (IIS) a klient je konzolová aplikace (.exe).  
@@ -80,4 +80,3 @@ public string GetCallerIdentity()
   
 3.  Spusťte ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
-## <a name="see-also"></a>Viz také:

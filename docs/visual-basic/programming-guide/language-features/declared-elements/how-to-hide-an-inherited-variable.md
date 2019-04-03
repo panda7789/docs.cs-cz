@@ -11,12 +11,12 @@ helpviewer_keywords:
 - declared elements [Visual Basic], about declared elements
 - variables [Visual Basic], hiding inherited
 ms.assetid: 765728d9-7351-4a30-999d-b5f34f024412
-ms.openlocfilehash: 6cf45b12bebc254a0d96516ab262d7aae3d70746
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2b052b44043deba85c8b142a2bf1a684c1159809
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54691252"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58842509"
 ---
 # <a name="how-to-hide-an-inherited-variable-visual-basic"></a>Postupy: Skrytí zděděné proměnné (Visual Basic)
 Odvozené třídy dědí všechny definice své základní třídy. Pokud chcete k definování proměnné pomocí stejného názvu jako prvek základní třídy, můžete skrýt, nebo *stínové*, základní třída prvku při definování proměnné v odvozené třídě. Pokud to uděláte, kód v odvozené třídě přistupuje ke vaše proměnná, pokud explicitně obchází mechanismu stínového provozu.  
@@ -56,6 +56,7 @@ Odvozené třídy dědí všechny definice své základní třídy. Pokud chcete
  Stínový provoz přináší více než jedna verze proměnné se stejným názvem. Když příkaz kódu odkazuje na název proměnné, verze, na který přeloží kompilátor odkaz na závisí na faktorech, jako je například umístění příkaz kódu a přítomnost oprávněným řetězec. To může zvýšit riziko odkazující na stínové proměnné a nežádoucí verzi. Plně kvalifikovaný všechny odkazy na stínové proměnné můžete snížit rizika.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Odkazy na deklarované elementy](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)
 - [Stínění v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md)
 - [Rozdíly mezi stínováním a přepsáním](../../../../visual-basic/programming-guide/language-features/declared-elements/differences-between-shadowing-and-overriding.md)

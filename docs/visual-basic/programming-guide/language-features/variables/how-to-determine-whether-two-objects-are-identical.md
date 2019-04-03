@@ -6,12 +6,12 @@ helpviewer_keywords:
 - objects [Visual Basic], comparing
 - object variables [Visual Basic], determining identity
 ms.assetid: 7829f817-0d1f-4749-a707-de0b95e0cf5c
-ms.openlocfilehash: f1fdc5f69b8552ee10131c7408673457fffe16ae
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 2b2c43811cbb3a06ed1e8c092ca42e50a4d037c0
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56976847"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58816080"
 ---
 # <a name="how-to-determine-whether-two-objects-are-identical-visual-basic"></a>Postupy: Určení, zda dva objekty jsou identické (Visual Basic)
 V jazyce Visual Basic odkazy na dvě proměnné jsou považovány za shodné, pokud jejich ukazatele jsou stejné, to znamená, pokud obě proměnné odkazovat na stejnou instanci třídy v paměti. Například v aplikaci Windows Forms, můžete chtít provést porovnání k určení, zda aktuální instance (`Me`) je stejný jako konkrétní instance, jako například `Form2`.  
@@ -51,6 +51,7 @@ V jazyce Visual Basic odkazy na dvě proměnné jsou považovány za shodné, po
  `objA identical to objC? True`  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Datový typ Object](../../../../visual-basic/language-reference/data-types/object-data-type.md)
 - [Objektové proměnné](../../../../visual-basic/programming-guide/language-features/variables/object-variables.md)
 - [Hodnoty objektové proměnné](../../../../visual-basic/programming-guide/language-features/variables/object-variable-values.md)

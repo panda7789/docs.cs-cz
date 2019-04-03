@@ -10,12 +10,12 @@ helpviewer_keywords:
 - type promotion
 - declared elements [Visual Basic], visibility
 ms.assetid: 035eeb15-e4c5-4288-ab3c-6bd5d22f7051
-ms.openlocfilehash: b00fdd563a6599b3acfaaafa229fdef9400e57b6
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: f7ac6bfb944da8bd50e035ba97b2b513176dc661
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56969190"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58838869"
 ---
 # <a name="type-promotion-visual-basic"></a>Propagace typu (Visual Basic)
 Při deklaraci programovací element v modulu jazyka Visual Basic podporuje jeho obor názvů obsahující modul. To se označuje jako *zadejte povýšení*.  
@@ -59,6 +59,7 @@ Při deklaraci programovací element v modulu jazyka Visual Basic podporuje jeho
 -   **Úplné kvalifikace.** Při práci s moduly a další prvky v stejný obor názvů nejbezpečnější přístup je vždycky potřeba použít úplnou kvalifikace pro všechny programovací prvky. Propagace typu není zrušena pro člena modulu a nemáte kvalifikovanou plně tohoto člena, může nechtěně přístup různé programovací element.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Příkaz Module](../../../../visual-basic/language-reference/statements/module-statement.md)
 - [Příkaz Namespace](../../../../visual-basic/language-reference/statements/namespace-statement.md)
 - [Partial](../../../../visual-basic/language-reference/modifiers/partial.md)

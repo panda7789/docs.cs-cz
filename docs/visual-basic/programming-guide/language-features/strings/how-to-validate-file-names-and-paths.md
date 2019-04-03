@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Boolean values [Visual Basic]
 - paths [Visual Basic], validating
 ms.assetid: f673462d-57b7-4120-b13a-6a7592f7ab2c
-ms.openlocfilehash: d29553071d68319d754406b3104da6e096f908fd
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: c8e01a0f5a3f99fdbc424d6cd7d224367c7bad08
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56975521"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58835801"
 ---
 # <a name="how-to-validate-file-names-and-paths-in-visual-basic"></a>Postupy: Ověření názvy souborů a cest v jazyce Visual Basic
 V tomto příkladu vrátí `Boolean` hodnotu, která určuje, zda řetězec reprezentuje název souboru nebo cesta. Pokud název obsahuje znaky, které nejsou povoleny v systému souborů kontroly ověření.  
@@ -23,5 +23,6 @@ V tomto příkladu vrátí `Boolean` hodnotu, která určuje, zda řetězec repr
  V tomto příkladu nekontroluje, pokud název byl nesprávně umístěn dvojtečkou nebo adresáře bez názvu, nebo pokud délka názvu překračuje maximální délka definovaná systémem. Také nekontroluje Pokud aplikace nemá oprávnění pro přístup k systému souborů prostředků se zadaným názvem.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.IO.Path.GetInvalidPathChars%2A>
 - [Ověřování řetězců v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/validating-strings.md)

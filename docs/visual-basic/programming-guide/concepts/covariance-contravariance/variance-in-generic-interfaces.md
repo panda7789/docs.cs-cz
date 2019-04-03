@@ -2,12 +2,12 @@
 title: Odchylky obecných rozhraní (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: cf4096d0-4bb3-45a9-9a6b-f01e29a60333
-ms.openlocfilehash: d39f1b125875f9a9f41ccb6b25a3a88fe577adba
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 50a1aeb5c17a0f193b9e90ca2167ef298f7ed237
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54618630"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58828105"
 ---
 # <a name="variance-in-generic-interfaces-visual-basic"></a>Odchylky obecných rozhraní (Visual Basic)
 Rozhraní .NET framework 4 zavedena podpora odchylku pro existující několik obecných rozhraní. Podpora Variance umožňuje implicitní převod z třídy, které implementují tato rozhraní. Následující rozhraní jsou nyní variant:  
@@ -92,6 +92,7 @@ Dim listObjects As IEnumerable(Of Object) = New List(Of String)
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Použití odchylky v rozhraní pro obecné kolekce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/using-variance-in-interfaces-for-generic-collections.md)
 - [Vytváření variantních obecných rozhraní (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/creating-variant-generic-interfaces.md)
 - [Obecná rozhraní](../../../../standard/generics/interfaces.md)

@@ -5,12 +5,12 @@ helpviewer_keywords:
 - strings [Visual Basic], regular expressions
 - strings [Visual Basic], masked edit
 ms.assetid: 2a048fb0-7053-487d-b2c5-ffa5e22ed6f9
-ms.openlocfilehash: 58c0caa9d1df49ec53273e5b0f456cf89fc64c42
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e0165fb8d573878ae19378b2656d89627680b804
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54683687"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58826732"
 ---
 # <a name="using-regular-expressions-with-the-maskedtextbox-control-in-visual-basic"></a>Používání regulárních výrazů s ovládacím prvkem MaskedTextBox v jazyce Visual Basic
 Tento příklad ukazuje, jak převést jednoduché regulárních výrazů pro práci s <xref:System.Windows.Forms.MaskedTextBox> ovládacího prvku.  
@@ -56,6 +56,7 @@ Tento příklad ukazuje, jak převést jednoduché regulárních výrazů pro pr
 |`$\d{6}.00`|`$999,999.00`|Hodnota měny v rozsahu 0-999999. Měna, / 1 000 a decimální znaky se nahradí za běhu ekvivalenty specifické pro jazykovou verzi.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.MaskedTextBox.Mask%2A>
 - <xref:System.Windows.Forms.MaskedTextBox>
 - [Ověřování řetězců v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/validating-strings.md)

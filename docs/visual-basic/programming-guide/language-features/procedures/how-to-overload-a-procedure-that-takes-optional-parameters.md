@@ -10,12 +10,12 @@ helpviewer_keywords:
 - procedures [Visual Basic], overloading
 - procedures [Visual Basic], multiple versions
 ms.assetid: 825f9d56-4cde-43fd-993a-b9171717e2eb
-ms.openlocfilehash: 52e31ba2f9d2f5cf87a5597a3c8d639816a75535
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 070d641d5a8b683ddfe06039117cc4a8507102df
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56972661"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58827625"
 ---
 # <a name="how-to-overload-a-procedure-that-takes-optional-parameters-visual-basic"></a>Postupy: Přetížení procedury, která přebírá volitelné parametry (Visual Basic)
 Pokud procedura má jeden nebo více [volitelné](../../../../visual-basic/language-reference/modifiers/optional.md) parametry, nelze definovat přetížený verzi, která odpovídá některé z jeho implicitní přetížení. Další informace najdete v tématu "Implicitní přetížení pro volitelné parametry" [aspekty přetížení procedur](./considerations-in-overloading-procedures.md).  
@@ -62,6 +62,7 @@ Pokud procedura má jeden nebo více [volitelné](../../../../visual-basic/langu
 5.  Ukončit každý postup s `End Sub` nebo `End Function` příkaz podle potřeby.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Procedury](./index.md)
 - [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)
 - [Nepovinné parametry](./optional-parameters.md)

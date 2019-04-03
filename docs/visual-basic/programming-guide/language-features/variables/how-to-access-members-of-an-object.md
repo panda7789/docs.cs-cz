@@ -5,12 +5,12 @@ helpviewer_keywords:
 - members [Visual Basic], accessing
 - object variables [Visual Basic], accessing members
 ms.assetid: a0072514-6a79-4dd6-8d03-ca8c13e61ddc
-ms.openlocfilehash: 5e91f1b99a17f4bbdc65a77ab26050ee57e96ac4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2b7e600a23ed326fe3e914957b4e698bc34c6135
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54724840"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58819645"
 ---
 # <a name="how-to-access-members-of-an-object-visual-basic"></a>Postupy: Přístup k členům v objektu (Visual Basic)
 Až budete mít proměnné objektu, který odkazuje na objekt, často chcete pracovat s členy tohoto objektu, jako jsou metody, vlastnosti, pole a události. Například po vytvoření nového <xref:System.Windows.Forms.Form> objektu, můžete chtít nastavit jeho <xref:System.Windows.Forms.Control.Text%2A> vlastností nebo volání jeho <xref:System.Windows.Forms.Control.Focus%2A> metoda.  
@@ -71,6 +71,7 @@ Až budete mít proměnné objektu, který odkazuje na objekt, často chcete pra
      Aby bylo možné pro přístup ke členům libovolný objekt přiřadit k proměnné, je nutné nastavit `Option Strict Off`. Když toto provedete, kompilátor nemůže zaručit, že je daný člen je zveřejněný prostřednictvím objektu, který je přiřadit k proměnné. Pokud objekt nevystavuje člen pokus o přístup, <xref:System.MemberAccessException> dojde k výjimce.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Object>
 - <xref:System.Windows.Forms.Form>
 - <xref:System.MemberAccessException>

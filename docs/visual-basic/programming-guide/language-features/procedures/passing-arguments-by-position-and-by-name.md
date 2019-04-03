@@ -22,12 +22,12 @@ helpviewer_keywords:
 - argument passing [Visual Basic], by position
 - arguments [Visual Basic], listing by name
 ms.assetid: 1ad7358f-1da9-48da-a95b-f3c7ed41eff3
-ms.openlocfilehash: 78c5303461ecf25a1487e072f4f6be25bde98dca
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: b872eda97d1e349ad781b12810e4b166d6e46fe1
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54587460"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58837309"
 ---
 # <a name="passing-arguments-by-position-and-by-name-visual-basic"></a>Předávání argumentů podle pozice a názvu (Visual Basic)
 Při volání `Sub` nebo `Function` postup, můžete předat argumenty *umístěním* – v pořadí, v jakém jsou uvedeny v definici procedury – nebo můžete předat je *podle názvu*, bez ohledem na pozici.  
@@ -95,6 +95,7 @@ Argumenty nelze předávat podle názvu myslet povinnými argumenty. Vynechat je
 Pole parametrů nelze předat podle názvu. Je to proto, že při volání postupu zadáte nekonečný počet oddělovači argumentů pole parametrů a kompilátor nelze přidružit k více než jeden argument jeden název.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Procedury](./index.md)
 - [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)
 - [Postupy: Předání argumentů proceduře](./how-to-pass-arguments-to-a-procedure.md)

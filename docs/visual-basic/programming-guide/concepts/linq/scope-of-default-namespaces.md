@@ -2,12 +2,12 @@
 title: Obor výchozích názvových prostorů v jazyce Visual Basic
 ms.date: 07/20/2015
 ms.assetid: d4cce80c-342f-4097-be8b-40ab0bfa90ba
-ms.openlocfilehash: 8c48273f3788e20e24832be8bf2013af22419fac
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e33505dd8e8ad94e3c758f15f245d0cbaf6987bc
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54527013"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58836711"
 ---
 # <a name="scope-of-default-namespaces-in-visual-basic"></a>Obor výchozích názvových prostorů v jazyce Visual Basic
 Výchozí obory názvů, jak je ve stromové struktuře XML nejsou v oboru pro dotazy. Pokud budete mít soubor XML, který je ve výchozím oboru názvů, je stále třeba deklarovat <xref:System.Xml.Linq.XNamespace> proměnnou a sloučit s místním názvem vytvořit kvalifikovaný název, který se má použít v dotazu.  
@@ -100,4 +100,5 @@ End of result set
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Práce s názvovými prostory XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md)

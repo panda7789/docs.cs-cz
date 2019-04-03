@@ -1,15 +1,15 @@
 ---
-title: 'Postupy: spojení dvou kolekcí (LINQ to XML) (Visual Basic)'
+title: 'Postupy: Spojení dvou kolekcí (LINQ to XML) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 5a5758d4-906b-4285-908d-5b930db192e6
-ms.openlocfilehash: 3ceb9cf7dfdd1d18a07e93d15624fd8fac045d07
-ms.sourcegitcommit: 70c76a12449439bac0f7a359866be5a0311ce960
+ms.openlocfilehash: 85689fa756ab20a4dcd054b70eb3003c767936ea
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39245697"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58843230"
 ---
-# <a name="how-to-join-two-collections-linq-to-xml-visual-basic"></a>Postupy: spojení dvou kolekcí (LINQ to XML) (Visual Basic)
+# <a name="how-to-join-two-collections-linq-to-xml-visual-basic"></a>Postupy: Spojení dvou kolekcí (LINQ to XML) (Visual Basic)
 Prvek nebo atribut v dokumentu XML mohou někdy odkazovat na jiné elementu nebo atributu. Například [ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md) dokument XML obsahuje seznam zákazníků a seznam objednávek. Každý `Customer` obsahuje element `CustomerID` atribut. Každý `Order` obsahuje element `CustomerID` elementu. `CustomerID` Element z každé objednávky odkazuje `CustomerID` atribut v zákazníka.  
   
  Téma [ukázkový soubor XSD: Zákazníci a objednávky](../../../../visual-basic/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders.md) obsahuje XSD, který slouží k ověření tohoto dokumentu. Používá `xs:key` a `xs:keyref` funkce XSD zajistit, že `CustomerID` atribut `Customer` element je klíč a k vytvoření vztahu mezi `CustomerID` element v každé `Order` elementu a `CustomerID` atributy v každém `Customer` elementu.  
@@ -27,9 +27,9 @@ Prvek nebo atribut v dokumentu XML mohou někdy odkazovat na jiné elementu nebo
   
  Tento dotaz načte prvních všechny `Customer` prvky a poté je připojen `Order` prvky. Vybere pouze příkazy pro zákazníky s `CustomerID` větší než "K". To potom projekty nový `Order` element, který obsahuje informace o zákaznících v rámci každé objednávky.  
   
- Tento příklad používá následujícího dokumentu XML: [ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md).  
+ Tento příklad používá následujícího dokumentu XML: [Ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md).  
   
- Tento příklad používá následující schéma XSD: [ukázkový soubor XSD: Zákazníci a objednávky](../../../../visual-basic/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders.md).  
+ Tento příklad používá následující schéma XSD: [Ukázkový soubor XSD: Zákazníci a objednávky](../../../../visual-basic/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders.md).  
   
  Všimněte si, že připojení tímto způsobem nebude fungují velmi dobře. Spojení se provádí prostřednictvím lineárního hledání. Neexistují žádné zatřiďovacích tabulek nebo indexy, které vám pomůžou s výkonem.  
   
@@ -135,5 +135,6 @@ Attempting to validate, custOrdDoc validated
 </Root>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Pokročilé techniky dotazování (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)
+## <a name="see-also"></a>Viz také:
+
+- [Pokročilé techniky dotazování (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)

@@ -19,12 +19,12 @@ helpviewer_keywords:
 - zeros, trailing
 - Double data type
 ms.assetid: 0c5670f7-fcb1-453a-bef1-374730cd38fd
-ms.openlocfilehash: 456383dd2f38e96a8ff18472ff44c65ba7b4a341
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 701d10a334757a96ffd634204c1e1d5eb5418ce6
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54626482"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58824660"
 ---
 # <a name="double-data-type-visual-basic"></a>Double – datový typ (Visual Basic)
 Blokování podepsané IEEE – 64bitová (8 bajtů) dvojité přesnosti s plovoucí desetinnou čárkou čísla v rozsahu od - 1.79769313486231570E + 308 do - 4.94065645841246544E-324 pro záporné hodnoty a z 4.94065645841246544E-324 prostřednictvím 1.79769313486231570E + 308 pro kladné hodnoty. Dvojitá přesnost – čísla ukládání aproximaci reálné číslo.  
@@ -56,6 +56,7 @@ Blokování podepsané IEEE – 64bitová (8 bajtů) dvojité přesnosti s plovo
 -   **Typ architektury.** Odpovídajícím typem v rozhraní .NET Framework je <xref:System.Double?displayProperty=nameWithType> struktury.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Double?displayProperty=nameWithType>
 - [Datové typy](../../../visual-basic/language-reference/data-types/index.md)
 - [Datový typ Decimal](../../../visual-basic/language-reference/data-types/decimal-data-type.md)

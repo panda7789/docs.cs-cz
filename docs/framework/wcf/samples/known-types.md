@@ -2,12 +2,12 @@
 title: Známé typy
 ms.date: 03/30/2017
 ms.assetid: 88d83720-ca38-4b2c-86a6-f149ed1d89ec
-ms.openlocfilehash: 0f9d24f469feb3e2cc5c58cd73f671ac4837f725
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d43cdd9fff58a7918aa98616bb4195183cf3be48
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54717139"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58828364"
 ---
 # <a name="known-types"></a>Známé typy
 Tento příklad ukazuje, jak zadat informace o odvozených typů v kontraktu dat. Kontrakty dat umožňuje předání strukturovaná data do a ze služby. V objektově orientované programování, typ, který dědí z jiného typu lze namísto původní typu. V service objektově orientovaného programování, schémata spíše než typy se předávají a proto se nezachová se o vztah mezi typy. <xref:System.Runtime.Serialization.KnownTypeAttribute> Atribut umožňuje informace o odvozených typů mají být zahrnuty v kontraktu dat. Pokud není použit tento mechanismus, nelze odeslat ani přijmout, kde je očekávána základní typ odvozený typ.  
@@ -171,4 +171,3 @@ No magnitude was sent from the service
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Data\KnownTypes`  
   
-## <a name="see-also"></a>Viz také:

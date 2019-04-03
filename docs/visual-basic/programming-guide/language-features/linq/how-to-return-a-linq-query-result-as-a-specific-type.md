@@ -9,12 +9,12 @@ helpviewer_keywords:
 - queries [LINQ in Visual Basic], how-to topics
 - query samples [Visual Basic]
 ms.assetid: 621bb10a-e5d7-44fb-a025-317964b19d92
-ms.openlocfilehash: 784a848b02e75d2ae9a6c6530141e69a05a9041b
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: ba6479852f7a78fb26743a04fd08adea07c1ffff
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56973493"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58835866"
 ---
 # <a name="how-to-return-a-linq-query-result-as-a-specific-type-visual-basic"></a>Postupy: Vrácení výsledku dotazu LINQ jako specifického typu (Visual Basic)
 Language Integrated Query (LINQ) usnadňuje přístup k informacím o databázi a spouštění dotazů. Ve výchozím nastavení dotazy LINQ vrací seznam objektů jako anonymního typu. Můžete také určit, že dotaz vrátí seznam určitého typu pomocí `Select` klauzuli.  
@@ -76,6 +76,7 @@ Language Integrated Query (LINQ) usnadňuje přístup k informacím o databázi 
 5.  Stisknutím klávesy F5 spusťte váš projekt a prohlédněte si výsledky.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [LINQ](../../../../visual-basic/programming-guide/language-features/linq/index.md)
 - [Dotazy](../../../../visual-basic/language-reference/queries/index.md)
 - [LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md)

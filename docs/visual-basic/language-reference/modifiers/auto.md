@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Auto keyword [Visual Basic]
 - Auto keyword [Visual Basic], marshaling strings
 ms.assetid: bf79ba95-a62c-48a5-916f-0ac7a52c13ec
-ms.openlocfilehash: c128ab9982ae7ccd5fff34020f2750f703da16a1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e4beb320b3aa0cadb790dd3ab92255496bc32f05
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54664600"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58843835"
 ---
 # <a name="auto-visual-basic"></a>Auto (Visual Basic)
 Určuje, že by měl Visual Basic zařazovat řetězce podle pravidel rozhraní .NET Framework, které jsou založené na externí název externí procedury byl deklarován.  
@@ -34,6 +34,7 @@ Určuje, že by měl Visual Basic zařazovat řetězce podle pravidel rozhraní 
  Toto klíčové slovo se nepodporuje.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [ANSI](../../../visual-basic/language-reference/modifiers/ansi.md)
 - [Unicode](../../../visual-basic/language-reference/modifiers/unicode.md)
 - [Klíčová slova](../../../visual-basic/language-reference/keywords/index.md)

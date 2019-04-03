@@ -1,16 +1,16 @@
 ---
-title: Vytváření Moje první Claims-Aware WCF Service
+title: Sestavení první služby WCF pracující s deklaracemi
 ms.date: 03/30/2017
 ms.assetid: e0e6d091-9a97-4888-8f2c-cbcee42d90ee
 author: BrucePerlerMS
-ms.openlocfilehash: 2102ec07a26c02c7181e3422e48939c40b86a8de
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c982fae4fdbdd4963c92b17b609d517056c34b95
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54599202"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58825765"
 ---
-# <a name="building-my-first-claims-aware-wcf-service"></a>Vytváření Moje první Claims-Aware WCF Service
+# <a name="building-my-first-claims-aware-wcf-service"></a>Sestavení první služby WCF pracující s deklaracemi
 ## <a name="applies-to"></a>Platí pro  
   
 -   Windows Identity Foundation (WIF)  
@@ -20,7 +20,7 @@ ms.locfileid: "54599202"
 ## <a name="overview"></a>Přehled  
  Toto téma popisuje, jak pomocí technologie WIF vytvářet webové služby WCF pracující s deklaracemi. Scénář webových služeb pracujících s deklaracemi má obvykle tři účastníky, kterými jsou samotná webová služba, koncový uživatel a služba tokenů zabezpečení (STS). Tento scénář zachycuje následující obrázek:  
   
- ![WIF Basic Claims Aware WCF Service](../../../docs/framework/security/media/wifbasicclaimsawarewcfservice.gif "WIFBasicClaimsAwareWCFService")  
+ ![Diagram zobrazující komponenty technologie WIF základní deklarace identity používající službu WCF.](./media/building-my-first-claims-aware-wcf-service/windows-identify-foundation-basic-claims-aware-windows-communication-foundation-service.gif)  
   
 1.  Klient služby WCF (někdy označovaný jako agent) odesílá pověření službě STS pomocí technologie WIF a po úspěšném ověření vystaví služba STS agentovi token.  
   

@@ -2,12 +2,12 @@
 title: 'Postupy: Vytváření dotazů s komplexním filtrováním (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: bf286ffc-7990-4b00-a4eb-ee3d70129950
-ms.openlocfilehash: 9636e67b32107378a46c00338cb4c2bea20fc1d4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ac58394619b83e2b862e87926f0b6a722fdc3c7e
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54646682"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58820908"
 ---
 # <a name="how-to-write-queries-with-complex-filtering-visual-basic"></a>Postupy: Vytváření dotazů s komplexním filtrováním (Visual Basic)
 Někdy budete chtít napsat LINQ dotazy XML se složitějšími filtry. Například budete muset najít všechny elementy, které mají podřízený element s určitým názvem a hodnotou. V tomto tématu poskytuje příklad zápisu dotazů s komplexním filtrováním.  
@@ -77,6 +77,7 @@ End Module
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Xml.Linq.XElement.Attribute%2A>
 - <xref:System.Xml.Linq.XContainer.Elements%2A>
 - [Základní dotazy (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)

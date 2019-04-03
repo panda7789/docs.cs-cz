@@ -2,12 +2,12 @@
 title: Q-Z – příkazy (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 32a9e547-c1b7-40f2-8118-7eef1d19649e
-ms.openlocfilehash: 80b9ca7839526726e95484095b789c7c595f777d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 20d9adf92aacd1e2624fe0c3fb5a2888801c7f04
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54542626"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58842002"
 ---
 # <a name="q-z-statements"></a>Q-Z – příkazy
 Následující tabulka obsahuje seznam příkazů jazyka Visual Basic.  
@@ -21,6 +21,7 @@ Následující tabulka obsahuje seznam příkazů jazyka Visual Basic.
 |[While... Při ukončení](../../../visual-basic/language-reference/statements/while-end-while-statement.md)|[S... Končí](../../../visual-basic/language-reference/statements/with-end-with-statement.md)|[YIELD](../../../visual-basic/language-reference/statements/yield-statement.md)||  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Příkazy A-E](../../../visual-basic/language-reference/statements/a-e-statements.md)
 - [Příkazy F–P](../../../visual-basic/language-reference/statements/f-p-statements.md)
 - [Referenční příručka jazyka Visual Basic](../../../visual-basic/language-reference/index.md)

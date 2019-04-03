@@ -10,12 +10,12 @@ helpviewer_keywords:
 - names [Visual Basic], naming conventions
 - naming conventions [Visual Basic], classes
 ms.assetid: 164949a4-2a7c-4736-9d82-9c3078e2e56c
-ms.openlocfilehash: ebb9d21e32993f2eb035993d32dc3de7d97b49f6
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 46f59403feced4baafef4662065cb7daedbeaa7b
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54672133"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58837075"
 ---
 # <a name="visual-basic-naming-conventions"></a>Zásady vytváření názvů jazyka Visual Basic
 Pokud název elementu v aplikaci Visual Basic, první znak s tímto názvem musí být abecední znak nebo podtržítko. Upozorňujeme, že názvy začínající podtržítkem jsou nekompatibilní s [jazyková nezávislost a jazykově nezávislé komponenty](../../../standard/language-independence-and-language-independent-components.md) (CLS).  
@@ -41,6 +41,7 @@ Pokud název elementu v aplikaci Visual Basic, první znak s tímto názvem mus�
 -   Nepoužívejte názvy ve vnitřním oboru, které jsou stejné jako názvy ve vnějším oboru. K chybám může dojít, pokud nesprávné proměnnou přistupuje. Pokud dojde ke konfliktu mezi proměnnou a klíčové slovo se stejným názvem, je nutné určit klíčového slova před s knihovnou příslušného typu. Například, pokud máte proměnnou s názvem `Date`, můžete použít vnitřní objekt `Date` funkce pouze voláním <xref:System.DateTime.Date%2A?displayProperty=nameWithType>.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Klíčová slova jako názvy elementů v kódu](../../../visual-basic/programming-guide/program-structure/keywords-as-element-names-in-code.md)
 - [Me, My, MyBase a MyClass](../../../visual-basic/programming-guide/program-structure/me-my-mybase-and-myclass.md)
 - [Deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)

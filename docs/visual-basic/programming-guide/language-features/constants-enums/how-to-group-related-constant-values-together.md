@@ -5,12 +5,12 @@ helpviewer_keywords:
 - enumerations [Visual Basic], constants
 - constants [Visual Basic], grouping together
 ms.assetid: 09d61da5-c940-4126-a79f-ba93c36653dc
-ms.openlocfilehash: 63475487c8a35f5b306b28d4e7097324bef00d85
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 9174bcd2385103cf7fa1daf3133e388f9b4998a4
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56977822"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58843757"
 ---
 # <a name="how-to-group-related-constant-values-together-visual-basic"></a>Postupy: Seskupení souvisejících hodnot konstant společně (Visual Basic)
 Výčet je nejlepší způsob, jak seskupit související s konstantami. Vytvořit výčet s `Enum` příkazu v části deklarace třídy nebo modulu. Další informace najdete v tématu [jak: Deklarace výčtů](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-declare-enumerations.md).  
@@ -26,6 +26,7 @@ Výčet je nejlepší způsob, jak seskupit související s konstantami. Vytvoř
      [!code-vb[VbEnumsTask#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class2.vb#1)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Výčty a kvalifikace názvu](../../../../visual-basic/programming-guide/language-features/constants-enums/enumerations-and-name-qualification.md)
 - [Postupy: Odkazování na člena výčtu](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-refer-to-an-enumeration-member.md)
 - [Kdy použít výčet](../../../../visual-basic/programming-guide/language-features/constants-enums/when-to-use-an-enumeration.md)

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - object creation [Visual Basic], COM objects
 - COM objects, walkthroughs
 ms.assetid: 7b07a463-bc72-4392-9ba0-9dfcb697a44f
-ms.openlocfilehash: 6b079db3ccc07494bdfdf7dba49c27fe14dca4e5
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 5fc0105cffb5606f9382aca7b55d6544d04f9fe7
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56973935"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58838154"
 ---
 # <a name="walkthrough-creating-com-objects-with-visual-basic"></a>Návod: Vytváření objektů COM pomocí jazyka Visual Basic
 Při vytváření nové aplikace nebo komponenty, je nejlepší vytvořit sestavení rozhraní .NET Framework. Ale jazyka Visual Basic také umožňuje snadno vystavit součásti rozhraní .NET Framework do modelu COM. To umožňuje poskytovat nové součásti pro starší aplikace sad, které vyžadují komponenty modelu COM. Tento návod ukazuje, jak pomocí jazyka Visual Basic k vystavení [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] objekty jako objekty modelu COM, s i bez šablony třídy modelu COM.  
@@ -91,6 +91,7 @@ Při vytváření nové aplikace nebo komponenty, je nejlepší vytvořit sestav
     >  Objekty COM, které vygenerujete pomocí jazyka Visual Basic nelze použít jiné aplikace Visual Basic, protože nejsou splněny objektů COM. Pokusy o přidání odkazů na tyto objekty modelu COM vyvolá chybu. Podrobnosti najdete v tématu [interoperabilita modelů COM v aplikacích .NET Framework](../../../visual-basic/programming-guide/com-interop/com-interoperability-in-net-framework-applications.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:Microsoft.VisualBasic.ComClassAttribute>
 - [Zprostředkovatel komunikace s objekty COM](../../../visual-basic/programming-guide/com-interop/index.md)
 - [Návod: Implementace dědičnosti pomocí objektů COM](../../../visual-basic/programming-guide/com-interop/walkthrough-implementing-inheritance-with-com-objects.md)

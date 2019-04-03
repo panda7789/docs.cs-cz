@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Visual Basic code, enumerations
 - enumerations [Visual Basic], about enumerations
 ms.assetid: b42a38ee-5e77-4f99-a037-e3a127ead89c
-ms.openlocfilehash: 5d84711c9efbe8d73d1cfe1dc7ac431b675d0b50
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1c3465a3b2d12b110096ceedf2602d6560b82f4d
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54693091"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58821839"
 ---
 # <a name="enumerations-overview-visual-basic"></a>Přehled výčtů (Visual Basic)
 Výčty poskytují pohodlný způsob pro práci se sadami související s konstantami a přidružení konstantních hodnot s názvy. Můžete třeba deklarovat výčet sady konstanty typu integer, které jsou spojené s dny v týdnu a potom použít názvy dní, namísto jejich celočíselných hodnot ve vašem kódu.  
@@ -29,6 +29,7 @@ Výčty poskytují pohodlný způsob pro práci se sadami související s konsta
 |Při rozhodování, kdy použít výčet|[Kdy použít výčet](../../../../visual-basic/programming-guide/language-features/constants-enums/when-to-use-an-enumeration.md)|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled konstant](../../../../visual-basic/programming-guide/language-features/constants-enums/constants-overview.md)
 - [Uživatelem definované konstanty](../../../../visual-basic/programming-guide/language-features/constants-enums/user-defined-constants.md)
 - [Postupy: Deklarace konstanty](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-declare-a-constant.md)

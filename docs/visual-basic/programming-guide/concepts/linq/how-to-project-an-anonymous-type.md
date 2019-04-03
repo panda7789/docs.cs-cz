@@ -2,12 +2,12 @@
 title: 'Postupy: Projektování anonymního typu (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 30b42987-0e0e-4b2b-adb1-5255ddfbcd7b
-ms.openlocfilehash: 613bf97556306503c427a70720272dd985495b13
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: cc8e59ac1037fc173cb44d8c8ff344374c5766ae
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54527754"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58834566"
 ---
 # <a name="how-to-project-an-anonymous-type-visual-basic"></a>Postupy: Projektování anonymního typu (Visual Basic)
 V některých případech můžete chtít dotaz na nový typ projektu i v případě, že víte, že použijete tento typ se jenom na krátkou dobu. Je hodně práce navíc k vytvoření nového typu pouze pro použití v projekci. V tomto případě je efektivnější přístup k projektu anonymního typu. Anonymní typy umožňují definovat třídu, pak deklarovat a inicializovat objekt této třídy bez názvu třídy.  
@@ -54,4 +54,5 @@ LETSS:Let's Stop N Shop:Jaime Yorres
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Projekce a transformace (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)

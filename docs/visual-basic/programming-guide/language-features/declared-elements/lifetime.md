@@ -10,12 +10,12 @@ helpviewer_keywords:
 - lifetime [Visual Basic], Visual Basic
 - lifetime [Visual Basic]
 ms.assetid: bd91e390-690a-469a-9946-8dca70bc14e7
-ms.openlocfilehash: 15fb6895836de95d37081c44973f455622da178e
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 7a8730834c5241ddb1271d689cdda8942741f15f
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56976041"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58824920"
 ---
 # <a name="lifetime-in-visual-basic"></a>Doba platnosti v jazyce Visual Basic
 *Životnost* deklarované elementu je časové období, během které je k dispozici pro použití. Proměnné jsou pouze prvky, které mají životnost. Pro tento účel kompilátor zpracovává parametry procedury a funkce vrátí jako zvláštní případy proměnných. Životnost proměnné představuje dobu, během které může obsahovat hodnotu. Můžete změnit její hodnotu za dobu života, ale vždy obsahuje některá z hodnot.  
@@ -72,6 +72,7 @@ ms.locfileid: "56976041"
  V předchozím příkladu, můžete vytvořit stejnou dobu života deklarováním `applesSold` na úrovni modulu. Pokud jste změnili rozsahu proměnné tímto způsobem, ale postup by již výhradní přístup k němu. Protože může zpřístupnit další postupy `applesSold` a změňte tuto hodnotu, Mezisoučet může nespolehlivé a může být obtížnější údržbu kódu.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Shared](../../../../visual-basic/language-reference/modifiers/shared.md)
 - [Nothing](../../../../visual-basic/language-reference/nothing.md)
 - [Deklarované názvy elementů](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)

@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC30140
 ms.assetid: 1beb5aa0-7b79-4c85-946b-5c2d0a41d1d2
-ms.openlocfilehash: 86c1fabe1116e5b5d7e81022777f861f6d57e3e6
-ms.sourcegitcommit: 01ea420eaa4bf76d5fc47673294c8881379b3369
+ms.openlocfilehash: f9d7867157b65d746809d9b2f50797285d7fcd9c
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55758362"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58831956"
 ---
 # <a name="error-creating-assembly-manifest-error-message"></a>Chyba při vytváření manifestu sestavení: \<chybová zpráva >
 Kompilátor jazyka Visual Basic volá Assembly Linker (Al.exe, označované také jako Alink) ke generování sestavení s manifestem. Linker ohlásilo chybu ve fázi předběžného emisí vytváření sestavení.  
@@ -28,6 +28,7 @@ Kompilátor jazyka Visual Basic volá Assembly Linker (Al.exe, označované tak�
 2.  Pokud potíže potrvají, shromážděte informace o okolnostech a upozornit Microsoft Product Support Services.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Postupy: Podepsání sestavení silným názvem](../../../framework/app-domains/how-to-sign-an-assembly-with-a-strong-name.md)
 - [Stránka Podepisování, Návrhář projektu](/visualstudio/ide/reference/signing-page-project-designer)
 - [Al.exe](../../../framework/tools/al-exe-assembly-linker.md)

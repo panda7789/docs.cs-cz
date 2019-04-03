@@ -18,12 +18,12 @@ helpviewer_keywords:
 - argument lists [Visual Basic]
 - procedures [Visual Basic], parameter lists
 ms.assetid: ff275aff-aa13-40df-bd4c-63486db8c1e9
-ms.openlocfilehash: 4b62e4b752074bb8d1a660e51ab230a87ff21db4
-ms.sourcegitcommit: 15ab532fd5e1f8073a4b678922d93b68b521bfa0
+ms.openlocfilehash: 80065cabcacdcf44b04fef7bacb978ca9c8077ae
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58654234"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58825453"
 ---
 # <a name="procedure-parameters-and-arguments-visual-basic"></a>Parametry a argumenty procedury (Visual Basic)
 Ve většině případů postup potřebuje určité informace o okolnostech, ve kterých byla volána. Postup, který provádí úlohy opakovaných nebo sdílené používá různé informace pro každé volání. Tyto informace se skládá z proměnné, konstanty a výrazy, které předáváte k postupu při jeho volání.  
@@ -59,6 +59,7 @@ Ve většině případů postup potřebuje určité informace o okolnostech, ve 
  A *obecný postup* také definuje jeden nebo více *parametry typu* kromě své normální parametry. Obecný postup umožňuje volajícímu kódu k předání různých typů dat pokaždé, když volá proceduru, takže ho můžete přizpůsobit datové typy s požadavky každého jednotlivého volání. Zobrazit [obecné procedury v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-procedures.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Procedury](./index.md)
 - [Procedury Sub](./sub-procedures.md)
 - [Procedury funkce](./function-procedures.md)

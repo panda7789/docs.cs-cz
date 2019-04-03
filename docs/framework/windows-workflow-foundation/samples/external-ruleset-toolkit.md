@@ -1,15 +1,15 @@
 ---
-title: Externí Toolkit sady pravidel
+title: Sada nástrojů pro externí sadu pravidel
 ms.date: 03/30/2017
 ms.assetid: a306d283-a031-475e-aa01-9ae86e7adcb0
-ms.openlocfilehash: 510b70f7ebeda784dce4731bb4a08896ac2e8361
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: c453c6137beeae8eee0e356734a1f9cdf8d8568b
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57710040"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58840234"
 ---
-# <a name="external-ruleset-toolkit"></a>Externí Toolkit sady pravidel
+# <a name="external-ruleset-toolkit"></a>Sada nástrojů pro externí sadu pravidel
 
 Obvykle při použití pravidla v rámci aplikace pracovního postupu pravidla jsou součástí sestavení. V některých případech můžete chtít spravovat sady pravidel odděleně od sestavení tak, aby bylo možné aktualizovat bez nutnosti opětovného sestavování a nasazování sestavení pracovního postupu. Tato ukázka umožňuje spravovat a upravovat sady pravidel v databázi a zpřístupnit tyto sady pravidel z pracovního postupu za běhu. To umožňuje spuštěné instance pracovního postupu, jak automaticky začlenit změny sady pravidel.
 
@@ -28,11 +28,9 @@ Součástí této ukázky zahrnout:
 
 - `ExternalPolicy` Aktivitu, která požádá službu sady pravidel pravidel a spouští sada pravidel pro pracovní postup.
 
-Na obrázku 1 je zobrazena interakce součástí. Následující části popisují jednotlivé komponenty.
+Interakce komponenty je znázorněno na následujícím obrázku. Následující části popisují jednotlivé komponenty.
 
-![Koncepční přehled externí ukázková RuleSet](./media/rulesettoolkitsampleoverview.gif "RuleSetToolkitSampleOverview")
-
-Obrázek 1: Přehled ukázky
+![Diagram znázorňující Přehled ukázky externích nástrojů sady pravidel.](./media/external-ruleset-toolkit/ruleset-toolkit-overview.gif)
 
 > [!IMPORTANT]
 > Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).
@@ -45,19 +43,15 @@ Obrázek 1: Přehled ukázky
 
 ## <a name="ruleset-tool"></a>RuleSet Tool
 
-Snímek obrazovky nástroje sady pravidel je znázorněno na obrázku 2. Z **pravidlo Store** nabídku, můžete načíst dostupné sady pravidel z databáze a uložit změny pravidel zpět do úložiště. Konfigurační soubor aplikace obsahuje připojovací řetězec databáze pro databázi sady pravidel. Při spuštění nástroje, automaticky se načte sady pravidel z nakonfigurované databáze.
+Na následujícím obrázku je snímek obrazovky nástroje sady pravidel. Z **pravidlo Store** nabídku, můžete načíst dostupné sady pravidel z databáze a uložit změny pravidel zpět do úložiště. Konfigurační soubor aplikace obsahuje připojovací řetězec databáze pro databázi sady pravidel. Při spuštění nástroje, automaticky se načte sady pravidel z nakonfigurované databáze.
 
-![Externí sady pravidel Toolkit ukázkový výstup](./media/rulesetbrowser.gif "RuleSetBrowser")
-
-Obrázek 2: Sada pravidel pro prohlížeč
+![Snímek obrazovky prohlížeče sady pravidel.](./media/external-ruleset-toolkit/ruleset-browser-dialog.gif)
 
 Nástroje sady pravidel se týká čísla hlavní verze a podverze sady pravidel, což vám umožní současně udržovat a uložit více verzí (nástroj poskytuje žádná konfigurace uzamčení nebo jiné funkce správy kromě funkce správy verzí). Pomocí nástroje, můžete vytvořit nové verze sady pravidel nebo odstranit existující verze. Po kliknutí na **nový**, nástroj vytvoří nový název sady pravidel a použije verze 1.0. Při kopírování s verzí, nástroj vytvoří kopii vybrané verze sady pravidel, včetně obsažených pravidel a přiřadí čísla verzí nové, jedinečné. Tato čísla verze jsou založeny na čísla verzí pro existující sady pravidel. Můžete změnit název a verzi čísla sady pravidel pomocí přidružené pole ve formuláři.
 
-Po kliknutí na **upravit pravidla**, spustí editor sady pravidel, jak je znázorněno na obrázku 3.
+Po kliknutí na **upravit pravidla**, spustí editor sady pravidel, jak je znázorněno na následujícím obrázku:
 
-![Ukázkový výstup externích nástrojů sady pravidel](./media/ruleseteditor.gif "RuleSetEditor")
-
-Obrázek 3: RuleSet Editor
+![Snímek obrazovky Editor sady pravidel.](./media/external-ruleset-toolkit/ruleset-editor-dialog.gif)
 
 Toto je opětovné hostování editor dialogového okna, která je součástí doplňku sady Visual Studio Windows Workflow Foundation. Nabízí stejné funkce, včetně podporu technologie Intellisense. Pravidla pro čtení zleva doprava vůči cílový typ (například pracovní postup), který je spojen s sady pravidel v nástroji; Po kliknutí na **Procházet** v dialogovém okně hlavní nástroj **selektor pracovního postupu a typu** dialogového okna se zobrazí, jak je znázorněno na obrázku 4.
 
@@ -69,21 +63,17 @@ Můžete použít **selektor pracovního postupu a typu** dialogové okno k zad�
 
 Cesta k souboru sestavení a typu `name are stored with the` sady pravidel v databázi tak, že pokud sada pravidel je načtena z databáze, nástroj se pokusí automaticky načíst typ cíle.
 
-Po kliknutí na **OK** v **selektor pracovního postupu a typu** dialogového okna, ověřuje vybraného typu proti sady pravidel, zajistit, že všechny členy, které odkazují pravidla cílového typu. Zobrazují se chyby v **chyby ověření** dialogového okna (viz obrázek 5). Můžete pokračovat ve změně bez ohledu na chyby, nebo klikněte na **zrušit**. Z **nástroje** nabídky v dialogovém okně hlavní nástroj, můžete kliknout na **ověřit** znovu ověřit verzi sady pravidel na cílovou aktivitu.
+Po kliknutí na **OK** v **selektor pracovního postupu a typu** dialogového okna, ověřuje vybraného typu proti sady pravidel, zajistit, že všechny členy, které odkazují pravidla cílového typu. Zobrazují se chyby v **chyby ověření** dialogového okna. Můžete pokračovat ve změně bez ohledu na chyby, nebo klikněte na **zrušit**. Z **nástroje** nabídky v dialogovém okně hlavní nástroj, můžete kliknout na **ověřit** znovu ověřit verzi sady pravidel na cílovou aktivitu.
 
-![Chyby ověření z externí ukázková RuleSet](./media/validationerrorsruleset.png "ValidationErrorsRuleSet")
-
-Obrázek 5: Chyby ověření
+![Snímek obrazovky ukazující dialogové okno chyby ověření.](./media/external-ruleset-toolkit/validation-errors-dialog.png)
 
 Z **Data** nabídky v nástroji, můžete importovat a exportovat sady pravidel. Po kliknutí na **Import**, zobrazí se dialogové okno Výběr souboru, ve kterém můžete vybrat soubor .rules. To může nebo nemusí být soubor původně vytvořil v sadě Visual Studio. Soubor .rules by měl obsahovat serializovaného `RuleDefinitions` instance, která obsahuje kolekci podmínek a kolekce pravidel. Nástroj nevyužívá kolekci podmínek, ale nepoužívá `RuleDefinitions` .rules formátu umožňující interakci s prostředím Visual Studio.
 
-Po výběru souboru .rules **selektor sady pravidel** se zobrazí dialogové okno (viz obrázek 6). Použijete dialogové okno pro výběr sady pravidel ze souboru, který chcete importovat (výchozí hodnota určuje všechny sady pravidel). Sady pravidel v souboru .rules nemají číslo verze, protože jejich správy verzí v rámci projektu pracovního postupu je stejná jako verze sestavení. Během procesu importu nástroj automaticky přiřadí další k dispozici hlavní číslo verze (které můžete změnit po importu); můžete zobrazit čísla verzí přiřazené v **selektor sady pravidel** seznamu.
+Po výběru souboru .rules **selektor sady pravidel** se zobrazí dialogové okno. Použijete dialogové okno pro výběr sady pravidel ze souboru, který chcete importovat (výchozí hodnota určuje všechny sady pravidel). Sady pravidel v souboru .rules nemají číslo verze, protože jejich správy verzí v rámci projektu pracovního postupu je stejná jako verze sestavení. Během procesu importu nástroj automaticky přiřadí další k dispozici hlavní číslo verze (které můžete změnit po importu); můžete zobrazit čísla verzí přiřazené v **selektor sady pravidel** seznamu.
 
-U každé sady pravidel, který importuje nástroj pokusí vyhledat přidruženého typu ve složce bin\Debug podle umístění souboru .rules (pokud existuje), závisí na členy používané sady pravidel. Pokud nástroj zjistí, několik odpovídajících typů, pokusí se zvolte typ na základě shody mezi .rules název souboru a název typu (například `Workflow1` typu odpovídá Workflow1.rules). Pokud existuje více shod, zobrazí se výzva k výběru typu. Pokud tento mechanismus automatického identifikace nepodaří najít odpovídající sestavení nebo typ, pak po dokončení importu můžete kliknout na **Procházet** v dialogovém okně hlavní nástroj přejděte do přidruženého typu.
+U každé sady pravidel, který importuje nástroj pokusí vyhledat přidruženého typu ve složce bin\Debug podle umístění souboru .rules (pokud existuje), závisí na členy používané sady pravidel. Pokud nástroj zjistí, několik odpovídajících typů, pokusí se zvolte typ na základě shody mezi .rules název souboru a název typu (například `Workflow1` typu odpovídá Workflow1.rules). Pokud existuje více shod, zobrazí se výzva k výběru typu. Pokud tento mechanismus automatického identifikace nepodaří najít odpovídající sestavení nebo typ, pak po dokončení importu můžete kliknout na **Procházet** v dialogovém okně hlavní nástroj přejděte do přidruženého typu. Následující obrázek znázorňuje výběr sady pravidel:
 
-![Selektor sady pravidel](./media/rulesetselector.gif "RuleSetSelector")
-
-Obrázek 6: Selektor sady pravidel
+![Snímek obrazovky ukazující dialogové okno volič sady pravidel.](./media/external-ruleset-toolkit/ruleset-selector-dialog.gif)
 
 Po kliknutí na **Export dat** nabídce hlavní nástroj **selektor sady pravidel** se zobrazí dialogové okno znovu, ze kterého můžete určit sady pravidel z databáze, která mají být exportovány. Po kliknutí na **OK**, **uložit soubor** se zobrazí dialogové okno, ve kterém můžete zadat název a umístění souboru pro výslednou .rules. Protože .rules soubor neobsahuje informace o verzi, můžete vybrat pouze jedna verze sady pravidel se daný název sady pravidel.
 

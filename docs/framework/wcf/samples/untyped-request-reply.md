@@ -2,12 +2,12 @@
 title: Netypový požadavek odpověď
 ms.date: 03/30/2017
 ms.assetid: 0bf0f9d9-7caf-4d3d-8c9e-2d468cca16a5
-ms.openlocfilehash: 2eb6a46d339c9277c1622c0cc16d057b186f1d79
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: bdd0ae5ac53bf1a35817efba7ae11d947e3a5b33
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54612746"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58830211"
 ---
 # <a name="untyped-requestreply"></a>Netypový požadavek/odpověď
 Tento příklad ukazuje, jak definovat operace kontrakty, používající třídu zpráv.  
@@ -89,4 +89,3 @@ Press <ENTER> to terminate client.
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Message\Untyped`  
   
-## <a name="see-also"></a>Viz také:

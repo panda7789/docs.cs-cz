@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrID49
 ms.assetid: 7c7def45-b0ab-450f-ad3f-4383dfd9aed7
-ms.openlocfilehash: 70200b38ea3d1497daa091fa407accabaf3c4eda
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c4f9917a7fb807cf7da92a3bba2d3edec8045bd2
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54715774"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58813517"
 ---
 # <a name="bad-dll-calling-convention"></a>Chybná konvence volání knihovny DLL
 Argumenty předané dynamická knihovna (DLL) musí přesně odpovídat názvům rutina očekává. Konvence volání využívání počet, typ a pořadí argumentů. Váš program může být volání rutiny v knihovně DLL, který je předáván nesprávného typu nebo počet argumentů.  
@@ -23,6 +23,7 @@ Argumenty předané dynamická knihovna (DLL) musí přesně odpovídat názvům
 3.  Pokud rutina DLL očekává, že argumentů podle hodnoty, ujistěte se, že `ByVal` je určená pro tyto argumenty v deklaraci pro rutiny.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Typy chyb](../../../visual-basic/programming-guide/language-features/error-types.md)
 - [Příkaz Call](../../../visual-basic/language-reference/statements/call-statement.md)
 - [Příkaz Declare](../../../visual-basic/language-reference/statements/declare-statement.md)

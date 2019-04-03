@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC32039
 ms.assetid: 1d8b6560-c9eb-4b71-a038-24c6f5a5ce46
-ms.openlocfilehash: d8fe794adcc1c2d28437bac7e732f99a6b6c07c0
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: bee3bcd3701945f5cf77f6761defc8be77acf49f
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54518615"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58843575"
 ---
 # <a name="array-declared-as-for-loop-control-variable-cannot-be-declared-with-an-initial-size"></a>Pole deklarované jako řídicí proměnná cyklu typu for nelze deklarovat s počáteční velikostí.
 A `For Each` smyčky používá pole jako jeho *element* iterační proměnné ale inicializuje dané pole.  
@@ -34,6 +34,7 @@ For Each listElement(1) As Integer In arrayList
 -   Odebrání inicializace deklarace *element* proměnné iterace.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Příkaz For...Next](../../../visual-basic/language-reference/statements/for-next-statement.md)
 - [Pole](../../../visual-basic/programming-guide/language-features/arrays/index.md)
 - [Kolekce](../../../standard/collections/index.md)

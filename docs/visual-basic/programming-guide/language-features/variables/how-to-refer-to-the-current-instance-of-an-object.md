@@ -8,12 +8,12 @@ helpviewer_keywords:
 - current instance
 - object variables [Visual Basic]
 ms.assetid: 7f9b2c77-03cd-428f-adc2-b18070226e7c
-ms.openlocfilehash: d166ce62a2bb0522d1ca7011aeff7afe076c2d8e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 3c44748798d5ed554fc9fbded9c3a4d981a66d2f
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54542194"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58823360"
 ---
 # <a name="how-to-refer-to-the-current-instance-of-an-object-visual-basic"></a>Postupy: Odkazování na aktuální instanci objektu (Visual Basic)
 *Aktuální instance* objektu je instance, ve kterém právě spouští kód.  
@@ -32,6 +32,7 @@ ms.locfileid: "54542194"
      I když `Me` se chová stejně jako objekt proměnné, nelze ji deklarovat ani nic jí přiřadit. `Me` vždy odkazuje na aktuální instanci.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Objektové proměnné](../../../../visual-basic/programming-guide/language-features/variables/object-variables.md)
 - [Přiřazení objektové proměnné](../../../../visual-basic/programming-guide/language-features/variables/object-variable-assignment.md)
 - [Me, My, MyBase a MyClass](../../../../visual-basic/programming-guide/program-structure/me-my-mybase-and-myclass.md)

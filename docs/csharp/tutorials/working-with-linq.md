@@ -3,12 +3,12 @@ title: Práce s jazykem LINQ
 description: V tomto kurzu se naučíte, jak vygenerovat pořadí s dotazy LINQ, Zapsat metody pro použití v dotazech LINQ a rozlišovat mezi nemůžou dočkat, až a opožděné vyhodnocení.
 ms.date: 10/29/2018
 ms.assetid: 0db12548-82cb-4903-ac88-13103d70aa77
-ms.openlocfilehash: 7613051bf5a8419244453339dd036d92249d2002
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.openlocfilehash: cfb4f53f47cc316ad6f1ee2772af27af5aee4d00
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57679650"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58815580"
 ---
 # <a name="working-with-linq"></a>Práce s jazykem LINQ
 
@@ -115,7 +115,7 @@ Kompilátor překládá příkazy LINQ, které jsou napsané v syntaxi dotazů v
 
 Pokračujte a spusťte ukázku, kterou jste vytvořili v tomto okamžiku. Zobrazí se všechny 52 karty z balíčku. Může být pro vás velmi užitečné v ladicím programu sledovat tuto ukázku spustit jak `Suits()` a `Ranks()` provedení metody. Je jasně vidět, že každého řetězce v každé pořadí se vygeneruje pouze dle potřeby.
 
-![Okno konzoly aplikace výpisu 52 karet](./media/working-with-linq/console.png)
+![Okna konzoly zobrazuje aplikaci výpisu 52 karet.](./media/working-with-linq/console-52-card-application.png)
 
 ## <a name="manipulating-the-order"></a>Manipulace s pořadí
 

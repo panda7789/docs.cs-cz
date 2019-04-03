@@ -2,12 +2,12 @@
 title: Převádění datových typů (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 9b0cf1ab-de48-4c6e-9f00-05b40fade46e
-ms.openlocfilehash: 3845c14bc7390d486668916fe7d5d5ad840b7990
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ad9594cabe0e2382ae4e19f2541eec4aa74ccd75
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54653733"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58837049"
 ---
 # <a name="converting-data-types-visual-basic"></a>Převádění datových typů (Visual Basic)
 Převod metody změnit typ objektu, vstupu.  
@@ -27,14 +27,14 @@ Převod metody změnit typ objektu, vstupu.
   
 |Název metody|Popis|Syntaxe výrazu dotazu jazyka Visual Basic|Další informace|  
 |-----------------|-----------------|------------------------------------------|----------------------|  
-|Jako výčet|Vrátí zadaný jako vstup <xref:System.Collections.Generic.IEnumerable%601>.|Nelze použít.|<xref:System.Linq.Enumerable.AsEnumerable%2A?displayProperty=nameWithType>|  
-|AsQueryable|Převede (Obecné) <xref:System.Collections.IEnumerable> pro (obecný) <xref:System.Linq.IQueryable>.|Nelze použít.|<xref:System.Linq.Queryable.AsQueryable%2A?displayProperty=nameWithType>|  
+|Jako výčet|Vrátí zadaný jako vstup <xref:System.Collections.Generic.IEnumerable%601>.|Není k dispozici.|<xref:System.Linq.Enumerable.AsEnumerable%2A?displayProperty=nameWithType>|  
+|AsQueryable|Převede (Obecné) <xref:System.Collections.IEnumerable> pro (obecný) <xref:System.Linq.IQueryable>.|Není k dispozici.|<xref:System.Linq.Queryable.AsQueryable%2A?displayProperty=nameWithType>|  
 |Změna typu|Elementy kolekce do zadaného typu přetypování.|`From … As …`|<xref:System.Linq.Enumerable.Cast%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Cast%2A?displayProperty=nameWithType>|  
-|OfType|Hodnoty v závislosti na jejich schopnost převést na zadaný typ filtrů.|Nelze použít.|<xref:System.Linq.Enumerable.OfType%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.OfType%2A?displayProperty=nameWithType>|  
-|ToArray –|Převede kolekci na pole. Tato metoda donutí provádění dotazu.|Nelze použít.|<xref:System.Linq.Enumerable.ToArray%2A?displayProperty=nameWithType>|  
-|Metody ToDictionary|Vloží prvky do <xref:System.Collections.Generic.Dictionary%602> podle funkce selektoru klíče. Tato metoda donutí provádění dotazu.|Nelze použít.|<xref:System.Linq.Enumerable.ToDictionary%2A?displayProperty=nameWithType>|  
-|ToList –|Převede kolekci <xref:System.Collections.Generic.List%601>. Tato metoda donutí provádění dotazu.|Nelze použít.|<xref:System.Linq.Enumerable.ToList%2A?displayProperty=nameWithType>|  
-|ToLookup|Vloží prvky do <xref:System.Linq.Lookup%602> (jeden na mnoho slovník) podle funkce selektoru klíče. Tato metoda donutí provádění dotazu.|Nelze použít.|<xref:System.Linq.Enumerable.ToLookup%2A?displayProperty=nameWithType>|  
+|OfType|Hodnoty v závislosti na jejich schopnost převést na zadaný typ filtrů.|Není k dispozici.|<xref:System.Linq.Enumerable.OfType%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.OfType%2A?displayProperty=nameWithType>|  
+|ToArray –|Převede kolekci na pole. Tato metoda donutí provádění dotazu.|Není k dispozici.|<xref:System.Linq.Enumerable.ToArray%2A?displayProperty=nameWithType>|  
+|Metody ToDictionary|Vloží prvky do <xref:System.Collections.Generic.Dictionary%602> podle funkce selektoru klíče. Tato metoda donutí provádění dotazu.|Není k dispozici.|<xref:System.Linq.Enumerable.ToDictionary%2A?displayProperty=nameWithType>|  
+|ToList –|Převede kolekci <xref:System.Collections.Generic.List%601>. Tato metoda donutí provádění dotazu.|Není k dispozici.|<xref:System.Linq.Enumerable.ToList%2A?displayProperty=nameWithType>|  
+|ToLookup|Vloží prvky do <xref:System.Linq.Lookup%602> (jeden na mnoho slovník) podle funkce selektoru klíče. Tato metoda donutí provádění dotazu.|Není k dispozici.|<xref:System.Linq.Enumerable.ToLookup%2A?displayProperty=nameWithType>|  
   
 ## <a name="query-expression-syntax-example"></a>Příklad syntaxe výrazu dotazu  
  Následující příklad kódu používá `From As` klauzule přetypovat na typ podtyp před přístupem k členu, který je k dispozici pouze na podtyp.  
@@ -78,6 +78,7 @@ End Sub
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Linq>
 - [Přehled standardních operátorů dotazu (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)
 - [Klauzule From](../../../../visual-basic/language-reference/queries/from-clause.md)

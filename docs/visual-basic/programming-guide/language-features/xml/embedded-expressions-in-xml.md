@@ -8,12 +8,12 @@ helpviewer_keywords:
 - LINQ to XML [Visual Basic], embedded expressions
 - XML literals [Visual Basic], embedded expressions
 ms.assetid: bf2eb779-b751-4b7c-854f-9f2161482352
-ms.openlocfilehash: feb0168c216b23ff02ca9350f868e091fefca689
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 4c96665994a7e56bc70f72b66d5922f5a6472a13
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56965784"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58827572"
 ---
 # <a name="embedded-expressions-in-xml-visual-basic"></a>Vložené výrazy v XML (Visual Basic)
 Vložené výrazy umožňují vytváření literálů XML, které obsahují výrazy, které jsou vyhodnocovány v době běhu. Syntaxe pro vložený výraz je `<%=` `expression` `%>`, která je stejná jako syntaxe používané [!INCLUDE[vstecasp](~/includes/vstecasp-md.md)].  
@@ -81,6 +81,7 @@ Vložené výrazy umožňují vytváření literálů XML, které obsahují výr
 >  Pokud deklarujete předponu oboru názvů XML s použitím `xmlns` atribut oboru názvů, hodnota atributu musí být konstanty typu řetězec. V tomto ohledu pomocí `xmlns` atribut je například `Imports` příkaz deklarujte obor názvů XML. Chcete-li určit hodnotu oboru názvů XML nelze použít vložený výraz.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Vytvoření XML v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)
 - [Literál dokumentu XML](../../../../visual-basic/language-reference/xml-literals/xml-document-literal.md)
 - [Literál XML elementu](../../../../visual-basic/language-reference/xml-literals/xml-element-literal.md)

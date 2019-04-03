@@ -2,12 +2,12 @@
 title: 'Postupy: Dotazu na duplicitní soubory v adresářovém stromu (LINQ) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 387d7c97-95dd-4a50-9761-7e9cf8ae9e6a
-ms.openlocfilehash: 5663c368c319c8c667171f65292667029951dae9
-ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
+ms.openlocfilehash: 81955b18755f41a582aed7768c709c8e77cffba6
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57200621"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58819070"
 ---
 # <a name="how-to-query-for-duplicate-files-in-a-directory-tree-linq-visual-basic"></a>Postupy: Dotazu na duplicitní soubory v adresářovém stromu (LINQ) (Visual Basic)
 Někdy může nacházet v více složek soubory, které mají stejný název. Například v instalační složce aplikace Visual Studio, mají několik složek souboru readme.htm. Tento příklad ukazuje, jak se dotázat na tyto duplicitní názvy zadané kořenové složce. Druhý příklad ukazuje, jak provádět dotazy pro soubory, jejichž velikost a také odpovídat času vytvoření.  
@@ -104,5 +104,6 @@ End Module
  Vytvořit projekt, který cílí na rozhraní .NET Framework verze 3.5 nebo vyšší s odkazem na knihovnu System.Core.dll a `Imports` příkaz pro obor názvů System.Linq.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [LINQ to Objects (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)
 - [LINQ a souborové adresáře (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)

@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC30909
 ms.assetid: ffa7395d-e182-4087-8ce8-079810fdae54
-ms.openlocfilehash: 03767501488a395073f925e27adea439751c0de6
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 16f579a05236ba8977a071cb08068be8e98799f8
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55265061"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58818333"
 ---
 # <a name="membername-cannot-expose-type-typename-outside-the-project-through-containertype-containertypename"></a>"\<membername >' nemůže vystavovat typ '\<typename >' mimo projekt prostřednictvím \<containertype > '\<containertypename >"
 Proměnná, parametr procedury nebo návratová hodnota funkce je vystaven vně svého kontejneru, ale je deklarován jako typ, který nesmí být vystaven vně kontejneru.  
@@ -36,4 +36,5 @@ End Class
 -   Změna úrovně přístupu proměnná, parametr procedury nebo funkce vrátit se nejméně omezující jako úroveň přístupu jeho datového typu.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Úrovně přístupu v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)

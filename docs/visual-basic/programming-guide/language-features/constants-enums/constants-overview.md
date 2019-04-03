@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - constants [Visual Basic]
 ms.assetid: 29016fe8-78b3-4dc8-90b8-1cfec2fa8ac9
-ms.openlocfilehash: 34f3dee4edba58375c5c84b579e39a8a29ebc1bb
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2939110de77718baf32e2a0d8f1aa52dba997cf3
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54737686"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58841282"
 ---
 # <a name="constants-overview-visual-basic"></a>Přehled konstant (Visual Basic)
 Konstanta je smysluplný název, který probíhá číslo nebo řetězec, který se nemění. Konstanty ukládání hodnot, které, jak již název napovídá, zůstávají během spuštění aplikace. Může výrazně zlepšit čitelnost kódu a usnadňují údržbu pomocí konstanty. Jejich použití v kódu, který obsahuje hodnoty, které se zase objeví nebo, který závisí na určitých čísla, která se obtížně mějte na paměti, nebo nemají zřejmé význam.  
@@ -45,5 +45,6 @@ Konstanta je smysluplný název, který probíhá číslo nebo řetězec, který
 |[Příkaz Option Strict](../../../../visual-basic/language-reference/statements/option-strict-statement.md)|Popisuje `Option Strict` příkazu a jeho použití.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled výčtů](../../../../visual-basic/programming-guide/language-features/constants-enums/enumerations-overview.md)
 - [Postupy: Inicializace proměnné pole v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/arrays/how-to-initialize-an-array-variable.md)

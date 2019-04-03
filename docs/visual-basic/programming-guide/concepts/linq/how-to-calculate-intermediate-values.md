@@ -2,12 +2,12 @@
 title: 'Postupy: Výpočet mezilehlých hodnot (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 933a97b2-dfe7-4f4d-94ad-e6e20df84abd
-ms.openlocfilehash: 2908abae5f4c4738752fba62c36da340fb3b2ba3
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: cb619784d487ae12b1fb8bb3adc97acb0f767455
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54628818"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58827039"
 ---
 # <a name="how-to-calculate-intermediate-values-visual-basic"></a>Postupy: Výpočet mezilehlých hodnot (Visual Basic)
 Tento příklad ukazuje způsob výpočtu pomocných hodnot použitých v řazení, filtrování a vyberete.  
@@ -75,4 +75,5 @@ End Module
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Základní dotazy (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)

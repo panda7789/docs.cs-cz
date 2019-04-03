@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC30957
 ms.assetid: 561e593a-f50a-4b72-a708-4cab60ec7b28
-ms.openlocfilehash: 6c3b0d3b86e871228c4bf3b30f0871015641a730
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d024420fbbc3efbd3d19bb58c9379eacbafac5d3
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54718270"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58820734"
 ---
 # <a name="function-evaluation-is-disabled-because-a-previous-function-evaluation-timed-out"></a>Vyhodnocení funkce je zakázáno, protože při vyhodnocování předchozí verze vypršel časový limit.
 Vyhodnocení funkce je zakázaná, protože předchozímu vyhodnocení funkce vypršel. Chcete-li znovu povolit vyhodnocení funkce, proveďte krok znovu nebo restartujte ladění.  
@@ -32,5 +32,6 @@ Vyhodnocení funkce je zakázaná, protože předchozímu vyhodnocení funkce vy
 2.  Proveďte krok ladicího programu znovu nebo ladění ukončete a znovu spusťte.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Ladění v sadě Visual Studio](/visualstudio/debugger/debugging-in-visual-studio)
 - [Procházení kódu s ladicím programem](/visualstudio/debugger/navigating-through-code-with-the-debugger)

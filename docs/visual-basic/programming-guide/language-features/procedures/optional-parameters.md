@@ -12,12 +12,12 @@ helpviewer_keywords:
 - arguments [Visual Basic], optional
 - optional arguments [Visual Basic], and named arguments
 ms.assetid: 398d2845-1069-4e94-b934-a73b545c8b87
-ms.openlocfilehash: d128e4647930044e24eb544ec92213b481417cb0
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 4ae2366552426af0107c8d7a35bb5368fe30c8a7
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56965758"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58824673"
 ---
 # <a name="optional-parameters-visual-basic"></a>Volitelné parametry (Visual Basic)
 Můžete určit, že parametr procedury je volitelný, a při volání této procedury se nemusí zadávat žádný argument. *Volitelné parametry* jsou označeny `Optional` – klíčové slovo v definici procedury. Platí následující pravidla:  
@@ -60,6 +60,7 @@ Sub name(argument 1, , , argument 4)
  Proceduru s volitelnými parametry lze definovat také pomocí přetěžování. Pokud máte jeden volitelný parametr, můžete definovat dvě přetížené verze procedury – jednu s parametrem a druhou bez parametru. S rostoucím počtem volitelných parametrů se zvyšuje složitost. Výhodou ale je, že máte absolutní jistotu, zda volající program poskytl jednotlivé volitelné argumenty.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Procedury](./index.md)
 - [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)
 - [Předávání argumentů podle hodnoty a reference](./passing-arguments-by-value-and-by-reference.md)

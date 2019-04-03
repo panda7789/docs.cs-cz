@@ -2,12 +2,12 @@
 title: 'Postupy: Vyhledání předcházejících elementů (XPath – LINQ to XML) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 59055718-d0a7-4db3-8901-18dd33587703
-ms.openlocfilehash: a00845f6efcfa63021d64963b39ff568af98fa73
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 4584a84df0e25b451a440c33e17c14cd78fc78bf
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54600530"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58833006"
 ---
 # <a name="how-to-find-preceding-siblings-xpath-linq-to-xml-visual-basic"></a>Postupy: Vyhledání předcházejících elementů (XPath – LINQ to XML) (Visual Basic)
 Toto téma srovnává jazyka XPath `preceding-sibling` osy [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] podřízené <xref:System.Xml.Linq.XNode.ElementsBeforeSelf%2A?displayProperty=nameWithType> osy.  
@@ -56,4 +56,5 @@ Results are identical
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [LINQ to XML pro uživatele jazyka XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

@@ -2,12 +2,12 @@
 title: Použití XSLT transformace stromu XML (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 3390ca68-c270-4e1d-b64b-6a063a77017c
-ms.openlocfilehash: 37fd25a327906327f33106ae145d45c5387cae47
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a013e042bcaab321d8a5596368c349f296240d0b
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54690394"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58820162"
 ---
 # <a name="using-xslt-to-transform-an-xml-tree-visual-basic"></a>Použití XSLT transformace stromu XML (Visual Basic)
 Můžete vytvořit stromu XML, vytvořit <xref:System.Xml.XmlReader> ze stromu XML vytvoříte nový textový dokument a vytvoření <xref:System.Xml.XmlWriter> , která bude zapisovat do nového dokumentu. Potom můžete vyvolat transformace XSLT, předá <xref:System.Xml.XmlReader> a <xref:System.Xml.XmlWriter> k transformaci. Po úspěšném dokončení transformace nového stromu XML je vyplněno pomocí výsledků transformace.  
@@ -61,6 +61,7 @@ Console.WriteLine(newTree)
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Xml.Linq.XContainer.CreateWriter%2A?displayProperty=nameWithType>
 - <xref:System.Xml.Linq.XNode.CreateReader%2A?displayProperty=nameWithType>
 - [Pokročilé technologie LINQ to XML programování (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)

@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - objects [Visual Basic], converting
 ms.assetid: 60cb5fc7-7ba4-4ab5-9c24-480fa12ddcdc
-ms.openlocfilehash: 81ac65ad34ad6afdfb89a750fef39b121aabd644
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1e515c0f4ce8e787754c61a9b53d247fa93c49f2
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54611342"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58814377"
 ---
 # <a name="how-to-convert-an-object-to-another-type-in-visual-basic"></a>Postupy: Převést objekt na jiný typ v jazyce Visual Basic
 Převedete `Object` proměnné na jiný datový typ. pomocí klíčového slova převodu [funkce CType](../../../../visual-basic/language-reference/functions/ctype-function.md).  
@@ -34,6 +34,7 @@ End Sub
 -   Odkaz na <xref:System?displayProperty=nameWithType> oboru názvů.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Object>
 - [Převody typů v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)
 - [Rozšíření a zúžení převodů](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)

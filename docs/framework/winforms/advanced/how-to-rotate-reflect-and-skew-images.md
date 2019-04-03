@@ -9,12 +9,12 @@ helpviewer_keywords:
 - images [Windows Forms], rotating
 - images [Windows Forms], skewing
 ms.assetid: a3bf97eb-63ed-425a-ba07-dcc65efb567c
-ms.openlocfilehash: 3e539f41667edb505269fe420396c79b68f34e8f
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: dda03c9c1e1390ca6a5250471f047d3747e989e2
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57711496"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58839909"
 ---
 # <a name="how-to-rotate-reflect-and-skew-images"></a>Postupy: Otáčení, převrácení a zkosení obrázků
 Můžete otáčení, převrácení a zkosení obrázku tak, že určíte cílové body pro levého horního, pravého horního a levého dolního rohu původní bitové kopie. Tři cílovými body určit afinní transformace, která mapuje původní obrázek obdélníkové se z něj rovnoběžník.  
@@ -30,15 +30,15 @@ Můžete otáčení, převrácení a zkosení obrázku tak, že určíte cílov�
   
  Následující obrázek znázorňuje původní image a image, namapované rovnoběžník. Původní bitové kopie má byla zkosený, projeví, otáčet a přeložit. Osa x podél horního okraje původní bitové kopie je namapována na řádek, který prochází (200, 20) a (110, 100). Osa y podél levého okraje původní bitové kopie je namapována na řádek, který prochází (200, 20) a (250, 30).  
   
- ![Rozděluje](./media/stripes1.gif "Stripes1")  
+ ![Původní image a image, namapované rovnoběžník.](./media/how-to-rotate-reflect-and-skew-images/reflected-skewed-rotated-illustration.gif)  
   
- Následující obrázek znázorňuje podobné transformaci u photographic obrázku.  
+ Následující obrázek znázorňuje podobné transformaci u photographic obrázku:  
   
- ![Transformuje horolezec](./media/transformedclimber.png "TransformedClimber")  
+ ![Obrázek horolezec a obrázek namapované rovnoběžník.](./media/how-to-rotate-reflect-and-skew-images/reflected-skewed-rotated-photo.png)  
   
- Následující obrázek znázorňuje podobné transformací do metasouboru.  
+ Podobně jako transformací do metasouboru naleznete na následujícím obrázku:  
   
- ![Transformuje metasoubor](./media/transformedmetafile.png "TransformedMetafile")  
+ ![Obrázek tvary a text a, která mapuje rovnoběžník.](./media/how-to-rotate-reflect-and-skew-images/reflected-skewed-rotated-metafile.png)  
   
  Následující příklad vytvoří Image je znázorněno na prvním obrázku.  
   

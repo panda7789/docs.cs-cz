@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC42105
 ms.assetid: b6929bf4-a365-4a70-8dc9-6b0fc09e1468
-ms.openlocfilehash: 9782bb49a3327c6a8bd9938eca7cb3e899818784
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: badcfea4f24ba3858071e02ba47b8f77ab557f88
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55281057"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58824829"
 ---
 # <a name="function-procedurename-doesnt-return-a-value-on-all-code-paths"></a>Funkce "\<název_procedury >' nevrací hodnotu ve všech cestách kódu.
 Funkce "\<název_procedury >' nevrací hodnotu ve všech cestách kódu. Chybí příkaz 'Return'?  
@@ -40,6 +40,7 @@ Funkce "\<název_procedury >' nevrací hodnotu ve všech cestách kódu. Chybí 
      Je snazší zajistit, že každý návrat z procedury vrací hodnotu, pokud vždy používáte `Return` příkazu. Pokud to provedete, poslední příkaz před `End Function` by měl být `Return` příkazu.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Procedury funkce](../../../visual-basic/programming-guide/language-features/procedures/function-procedures.md)
 - [Příkaz Function](../../../visual-basic/language-reference/statements/function-statement.md)
 - [Stránka Kompilovat, Návrhář projektu (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic)

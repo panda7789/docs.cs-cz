@@ -7,12 +7,12 @@ helpviewer_keywords:
 - initializers [Visual Basic]
 - Video How tos, Visual Basic
 ms.assetid: 0f53a553-efd6-466d-80bf-6b679e5cd174
-ms.openlocfilehash: e0673c9faceb3bd9fc71123a2ae22abbc7061c04
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 314706207800b2e86aa0032a52d8c50fbb726887
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56970204"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58825131"
 ---
 # <a name="how-to-declare-an-object-by-using-an-object-initializer-visual-basic"></a>Postupy: Deklarace objektu pomocí inicializátoru objektu (Visual Basic)
 Inicializátory objektů umožňují deklarovat a vytvoří instanci třídy v jediném příkazu. Kromě toho můžete inicializovat jednoho nebo více členů instance ve stejnou dobu bez vyvolání konstruktoru s parametry.  
@@ -60,6 +60,7 @@ Inicializátory objektů umožňují deklarovat a vytvoří instanci třídy v j
      Další informace najdete v tématu [odvození místního typu](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Odvození místního typu](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)
 - [Postupy: Vytvoření seznamu položek](../../../../visual-basic/programming-guide/concepts/linq/how-to-create-a-list-of-items.md)
 - [Inicializátory objektů: Pojmenované a anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)

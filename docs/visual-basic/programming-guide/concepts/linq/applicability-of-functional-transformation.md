@@ -2,12 +2,12 @@
 title: Použitelnost funkční transformace (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 3b74e134-e19b-44bc-8d06-e26c48305040
-ms.openlocfilehash: 01ebc25e77e7098d0aad5ec612e57d7f6b078d4f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 7efeab82dafc284f64a950eb7f5e4a6ee3f2e73d
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54699399"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58827611"
 ---
 # <a name="applicability-of-functional-transformation-visual-basic"></a>Použitelnost funkční transformace (Visual Basic)
 Čistě funkční transformace se dají použít v nejrůznějších situacích.  
@@ -33,6 +33,7 @@ ms.locfileid: "54699399"
  Znovu nezapomeňte, že jazyka Visual Basic podporuje imperativní a funkční přístupy, tak optimální pro vaši aplikaci může obsahovat prvky obou.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Úvod k čistě funkčním transformacím (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/introduction-to-pure-functional-transformations.md)
 - [Funkční transformace XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/functional-transformation-of-xml.md)
 - [Refaktoring do čistých funkcí (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/refactoring-into-pure-functions.md)

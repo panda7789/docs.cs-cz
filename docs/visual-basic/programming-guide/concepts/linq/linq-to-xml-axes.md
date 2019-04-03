@@ -2,12 +2,12 @@
 title: Osy LINQ to XML (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: ecd3bd00-28e5-4517-a59f-53bff39fd478
-ms.openlocfilehash: 2b785dd43feece816675d36064b2b4218ab94cd1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 4a04c15357b5630de06dc0743523e5a98c91745e
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54684889"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58831992"
 ---
 # <a name="linq-to-xml-axes-visual-basic"></a>Osy LINQ to XML (Visual Basic)
 Po vytvoření stromu XML nebo načíst dokument XML do stromu XML, můžete ho najít prvky a atributy a jejich hodnoty získat dotazovat.  
@@ -31,4 +31,5 @@ Po vytvoření stromu XML nebo načíst dokument XML do stromu XML, můžete ho 
 |[Osy integrované v jazyce v jazyce Visual Basic (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/language-integrated-axes.md)|Obsahuje souhrn osy integrované jazyka Visual Basic.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Průvodce programováním (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/programming-guide-linq-to-xml.md)

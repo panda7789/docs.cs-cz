@@ -6,12 +6,12 @@ helpviewer_keywords:
 - Inheritance Picker dialog box
 - inherited forms [Windows Forms], creating
 ms.assetid: 969b4c04-12aa-4297-93a2-0ae747447823
-ms.openlocfilehash: 29a40102a9d2f1aa1eac12510005b997de796880
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 4b3e7a3994423c962866b643ffc5173669e3a2e5
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57719351"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58841158"
 ---
 # <a name="how-to-inherit-forms-using-the-inheritance-picker-dialog-box"></a>Postupy: Dědění formulářů pomocí dialogového okna Výběr dědičnosti
 Nejjednodušší způsob, jak dědit formuláře nebo jiný objekt je použít **výběr dědičnosti** dialogové okno. Pomocí něho můžete využít výhod kódu nebo uživatelské rozhraní (UI), již jste vytvořili v jiných řešení.  
@@ -41,7 +41,7 @@ Nejjednodušší způsob, jak dědit formuláře nebo jiný objekt je použít *
   
 6.  Vyberte komponentu.  
   
-     V **Průzkumníka řešení**, součást je přidána do projektu. Pokud má uživatelské rozhraní, ovládací prvky, které jsou součástí Zděděný formulář, budou označeny piktogram (![VisualBasicInheritanceSymbol – snímek obrazovky](./media/vbinheritanceglyph.gif "vbInheritanceGlyph")), a pokud je vybráno, mají ohraničení označující úroveň zabezpečení, který má ovládací prvek na formuláři supertřídu. Chování, které odpovídají různé úrovně zabezpečení jsou uvedeny v následující tabulce.  
+     V **Průzkumníka řešení**, součást je přidána do projektu. Pokud má uživatelské rozhraní, ovládací prvky, které jsou součástí Zděděný formulář, budou označeny piktogram (![snímek jazyka Visual Basic dědičnosti symbol.](./media/how-to-inherit-forms-using-the-inheritance-picker-dialog-box/visual-basic-inheritance-glyph.gif)) a pokud je vybráno, ohraničený označující úroveň zabezpečení, který má ovládací prvek na supertřídu formuláře. Chování, které odpovídají různé úrovně zabezpečení jsou uvedeny v následující tabulce.  
   
     |Úroveň zabezpečení ovládacího prvku|K dispozici interakce prostřednictvím Návrhář a Editor kódu s zděděné formuláře|  
     |-------------------------------|--------------------------------------------------------------------------------|  

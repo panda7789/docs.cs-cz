@@ -7,12 +7,12 @@ helpviewer_keywords:
 - data types [Visual Basic], object variable
 - variables [Visual Basic], object
 ms.assetid: 31555704-58a3-49f1-9a0a-6421f605664f
-ms.openlocfilehash: ce38089e91b25cf50e738d956881f3a44bfa3306
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c17c5f85952596f0a080ca473e8f792740e66b8f
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54588720"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58840390"
 ---
 # <a name="object-variable-values-visual-basic"></a>Hodnoty proměnné objektu (Visual Basic)
 Proměnná [datový typ objektu](../../../../visual-basic/language-reference/data-types/object-data-type.md) mohou odkazovat na data libovolného typu. Hodnota ukládáte `Object` proměnná zůstane jinde v paměti, zatímco proměnné samotné drží ukazatel na data.  
@@ -67,6 +67,7 @@ If TypeOf frm Is Object Then Debug.WriteLine("frm is Object")
  Můžete deklarovat a používat celou řadu `Object` proměnné. To je užitečné, když potřebujete zpracovávat různé datové typy a třídy objektů. Všechny prvky pole musí mít stejné deklarovanému datovému typu. Tento datový typ jako deklarace `Object` umožňuje ukládat objekty a třídy instance společně s ostatními datovými typy v poli.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Objektové proměnné](../../../../visual-basic/programming-guide/language-features/variables/object-variables.md)
 - [Deklarace objektové proměnné](../../../../visual-basic/programming-guide/language-features/variables/object-variable-declaration.md)
 - [Přiřazení objektové proměnné](../../../../visual-basic/programming-guide/language-features/variables/object-variable-assignment.md)

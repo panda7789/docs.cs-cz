@@ -18,12 +18,12 @@ helpviewer_keywords:
 - objects [Visual Basic], names
 - names [Visual Basic], shadowing
 ms.assetid: 54bb4c25-12c4-4181-b4a0-93546053964e
-ms.openlocfilehash: 15c7112f7e318542859162655c78e19558178e5a
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
+ms.openlocfilehash: 9ad992a53618fa2f410e0b0fb23886c30136384f
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58411002"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58839389"
 ---
 # <a name="shadowing-in-visual-basic"></a>Stínění v jazyce Visual Basic
 Když dva programovací prvky sdílí se stejným názvem, jeden z nich můžete skrýt, nebo *stínové*, druhou. V takové situaci stínovaný prvek není k dispozici pro referenci; Místo toho se při váš kód používá název elementu, kompilátor jazyka Visual Basic se přeloží na elementu stínového provozu.  
@@ -138,6 +138,7 @@ End Class
  V předchozím příkladu je proměnná `basObj` je deklarován jako základní třídy. Přiřazení `dervCls` objektu představuje rozšiřující převod a proto je platná. Však základní třídy nedaří stínového provozu verze proměnné `z` v odvozené třídě, takže přeloží kompilátor `basObj.z` na původní hodnotu základní třídy.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Odkazy na deklarované elementy](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)
 - [Obor v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)
 - [Rozšíření a zúžení převodů](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)

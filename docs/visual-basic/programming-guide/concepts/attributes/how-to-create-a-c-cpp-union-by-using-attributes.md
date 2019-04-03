@@ -2,12 +2,12 @@
 title: 'Postupy: Vytváření sjednocení C / C++ pomocí atributů (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 9352a7e4-c0da-4d07-aa14-55ed43736fcb
-ms.openlocfilehash: e37aac03db7a24e6519acb4eb843b46b8c60b4f2
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 0c3ebf248f5d2f20e2fff25fb8326a294b51d153
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54663281"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58829301"
 ---
 # <a name="how-to-create-a-cc-union-by-using-attributes-visual-basic"></a>Postupy: Vytváření sjednocení C/C++ pomocí atributů (Visual Basic)
 Pomocí atributů můžete přizpůsobit, jak jsou rozloženy struktury v paměti. Například můžete vytvořit, která se označuje jako sjednocení v jazyce C/C++ pomocí `StructLayout(LayoutKind.Explicit)` a `FieldOffset` atributy.  
@@ -67,6 +67,7 @@ Structure TestExplicit
  Dvě celočíselné pole, `i1` a `i2`, sdílet stejné umístění paměti jako `lg`. Tento typ kontroly nad rozložení struktury je užitečné při použití vyvolání platformy.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Reflection>
 - <xref:System.Attribute>
 - [Průvodce programováním v jazyce Visual Basic](../../../../visual-basic/programming-guide/index.md)

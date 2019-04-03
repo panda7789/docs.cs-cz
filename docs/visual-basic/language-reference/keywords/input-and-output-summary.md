@@ -6,12 +6,12 @@ helpviewer_keywords:
 - output, Visual Basic functions
 - I/O [Visual Basic], functions
 ms.assetid: 6b0cbb88-6593-43b8-8a40-a61563bc0ce9
-ms.openlocfilehash: 73db0a9b0d8c56af48f7a5f7c717b5f88dfdf9b7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 13013ee3dd9ee024cd3375003ed23c5ae4d620bd
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54667164"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58836763"
 ---
 # <a name="input-and-output-summary-visual-basic"></a>Souhrn vstupu a výstupu (Visual Basic)
 Klíčová slova jazyka Visual Basic a členy běhové knihovny jsou uspořádány podle účelu a použití.  
@@ -32,5 +32,6 @@ Klíčová slova jazyka Visual Basic a členy běhové knihovny jsou uspořádá
 |Zápis do souboru|<xref:Microsoft.VisualBasic.FileSystem.FilePut%2A>, <xref:Microsoft.VisualBasic.FileSystem.FilePutObject%2A>, <xref:Microsoft.VisualBasic.FileSystem.Print%2A>, <xref:Microsoft.VisualBasic.FileSystem.Write%2A>, <xref:Microsoft.VisualBasic.FileSystem.WriteLine%2A>|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Klíčová slova](../../../visual-basic/language-reference/keywords/index.md)
 - [Členové knihovny modulu runtime jazyka Visual Basic](../../../visual-basic/language-reference/runtime-library-members.md)

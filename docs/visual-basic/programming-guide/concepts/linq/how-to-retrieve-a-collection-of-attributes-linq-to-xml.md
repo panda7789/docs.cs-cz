@@ -2,12 +2,12 @@
 title: 'Postupy: Načtení kolekce atributů (LINQ to XML) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: a07e9645-b45b-403b-b698-f652f904c7d2
-ms.openlocfilehash: 691ec9edda6051ba1f598891dfb9331b85ceb278
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2e99e561c1d479412c7c5cd2a19563446b872049
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54716609"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58833539"
 ---
 # <a name="how-to-retrieve-a-collection-of-attributes-linq-to-xml-visual-basic"></a>Postupy: Načtení kolekce atributů (LINQ to XML) (Visual Basic)
 Toto téma představuje <xref:System.Xml.Linq.XElement.Attributes%2A> metody. Tato metoda načte atributy elementu.  
@@ -35,4 +35,5 @@ ConvertableTo="double"
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Osy LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-axes.md)

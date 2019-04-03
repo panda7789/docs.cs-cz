@@ -1,15 +1,15 @@
 ---
-title: 'Přenos: Součinnost TCP ve WSE 3.0'
+title: 'Přenos: Interoperabilita TCP ve WSE 3.0'
 ms.date: 03/30/2017
 ms.assetid: 5f7c3708-acad-4eb3-acb9-d232c77d1486
-ms.openlocfilehash: 870a0de493a4e60404d11115de58735e5fbb968f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 342c9c39eaa755363615dd83933cf00480e01c91
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54653005"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58842353"
 ---
-# <a name="transport-wse-30-tcp-interoperability"></a>Přenos: Součinnost TCP ve WSE 3.0
+# <a name="transport-wse-30-tcp-interoperability"></a>Přenos: Interoperabilita TCP ve WSE 3.0
 Ukázka přenosu interoperabilita TCP ve WSE 3.0 ukazuje, jak implementovat duplexní relace TCP jako vlastní přenosu Windows Communication Foundation (WCF). Také ukazuje, jak můžete použít rozšíření vrstvy kanálu rozhraní přenosu s existujícími systémy nasazené. Následující kroky ukazují, jak vytvořit tento vlastní přenos WCF:  
   
 1.  Počínaje soket TCP vytvořit klienta a serveru implementace <xref:System.ServiceModel.Channels.IDuplexSessionChannel> , které používají od sebe odděluje hranice zprávy DIME rámců.  
@@ -195,4 +195,3 @@ Symbols:
   
     8.  Testovací klient přenosu protokolu TCP začíná v nové konzole. Klient vyžádá akcií ze služby a potom zobrazí výsledky v okně konzoly.  
   
-## <a name="see-also"></a>Viz také:

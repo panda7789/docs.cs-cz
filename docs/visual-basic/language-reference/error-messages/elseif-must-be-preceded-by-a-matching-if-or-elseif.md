@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC30014
 ms.assetid: 5215585e-2efa-485a-9efe-9833a1cc83a0
-ms.openlocfilehash: d6fa76b2aba45e3455cef6ceafc0f737ef56225d
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: fbb8ce974a618349bd4b5e7a2a25a165d91787a7
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55271548"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58832252"
 ---
 # <a name="elseif-must-be-preceded-by-a-matching-if-or-elseif"></a>Výrazu '#If' nebo '#ElseIf' musí předcházet odpovídající výraz '#ElseIf'.
 `#ElseIf` je direktivy podmíněné kompilace. `#ElseIf` Klauzule musí předcházet párový příkaz `#If` nebo `#ElseIf` klauzuli.  
@@ -28,4 +28,5 @@ ms.locfileid: "55271548"
 3.  Pokud všechno ostatní je v pořadí, přidejte `#If` na začátku bloku podmíněné kompilace.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Direktivy #If...Then...#Else](../../../visual-basic/language-reference/directives/if-then-else-directives.md)

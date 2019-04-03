@@ -10,12 +10,12 @@ helpviewer_keywords:
 - procedures [Visual Basic], indefinite number of argument values
 - arrays [Visual Basic], parameter arrays
 ms.assetid: c43edfae-9114-4096-9ebc-8c5c957a1067
-ms.openlocfilehash: e059f471f78262320f1968c12192de710876aef4
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 8ea4c77056701b8f61c1ed5a53cf20d98ae913bc
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56966577"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58834154"
 ---
 # <a name="parameter-arrays-visual-basic"></a>Pole parametrů (Visual Basic)
 Obvykle nelze volat proceduru s více argumentů, než určuje deklaraci procedury. Když budete potřebovat nekonečný počet argumentů, je možné deklarovat *pole parametrů*, který umožňuje procedury tak, aby přijímal pole hodnot pro parametr. Není nutné znát počet prvků v poli parametrů při definování procesu. Velikost pole je samostatně určeno každé volání do procedury.  
@@ -57,6 +57,7 @@ Obvykle nelze volat proceduru s více argumentů, než určuje deklaraci procedu
  [!code-vb[VbVbcnProcedures#49](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#49)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:Microsoft.VisualBasic.Information.UBound%2A>
 - [Procedury](./index.md)
 - [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)

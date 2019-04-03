@@ -5,12 +5,12 @@ helpviewer_keywords:
 - troubleshooting [Visual Basic], variables
 - variables [Visual Basic], troubleshooting
 ms.assetid: 928a2dc8-e565-4ae4-8ba3-80cc0cb50090
-ms.openlocfilehash: b03dcba7675793070c54bdadaf6ec418f8896b7d
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 55d0fdcdbed4f994e50e83e5a25baf83c3ad79cc
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56965706"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58831121"
 ---
 # <a name="troubleshooting-variables-in-visual-basic"></a>Řešení potíží s proměnnými v jazyce Visual Basic
 Tato stránka obsahuje některé běžné problémy, které se mohou vyskytnout při práci s proměnnými v jazyce Visual Basic.  
@@ -48,6 +48,7 @@ Tato stránka obsahuje některé běžné problémy, které se mohou vyskytnout 
  Vyhněte se použití proměnné se stejným názvem, ale jiného oboru. Pokud používáte jiné projekty nebo sestavení, nepoužívejte názvy definované v těchto externích komponent co největší míře. Pokud máte více než jednu proměnnou se stejným názvem, ujistěte se, že kvalifikovat všechny odkazy na ni. Další informace najdete v tématu [odkazy na deklarované elementy](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Proměnné](../../../../visual-basic/programming-guide/language-features/variables/index.md)
 - [Deklarace proměnné](../../../../visual-basic/programming-guide/language-features/variables/variable-declaration.md)
 - [Objektové proměnné](../../../../visual-basic/programming-guide/language-features/variables/object-variables.md)

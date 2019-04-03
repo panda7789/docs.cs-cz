@@ -14,12 +14,12 @@ helpviewer_keywords:
 - exception handling, unstructured
 - throw statement [Visual Basic]
 ms.assetid: a6e07406-5c8a-4498-87a2-8339f3651d62
-ms.openlocfilehash: c17adc6df0f8cf94f06547b48a32b2ffb8f303ca
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 2494eac2f61f112f3ba6321ada7404f8cd618049
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56973480"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58821370"
 ---
 # <a name="throw-statement-visual-basic"></a>Throw – příkaz (Visual Basic)
 Generuje výjimku uvnitř procedury.  
@@ -54,5 +54,6 @@ Throw [ expression ]
  **Sestavení:** Visual Basic Runtime Library (v souboru Microsoft.VisualBasic.dll)  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Příkaz Try...Catch...Finally](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)
 - [Příkaz On Error](../../../visual-basic/language-reference/statements/on-error-statement.md)

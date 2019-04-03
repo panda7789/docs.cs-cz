@@ -8,12 +8,12 @@ helpviewer_keywords:
 - GetXmlNamespace operator [Visual Basic]
 - GetXmlNamespace keyword [Visual Basic]
 ms.assetid: d0d28cfd-0755-4896-ae0b-4981aa35517c
-ms.openlocfilehash: e02a7c5c9859352aa07bfaa741b80b7fd18d1da4
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 757ca54e5ba370bf2cc48bc70499e7b43ec96ef6
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56979902"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58834748"
 ---
 # <a name="getxmlnamespace-operator-visual-basic"></a>GetXmlNamespace – operátor (Visual Basic)
 Získá <xref:System.Xml.Linq.XNamespace> objekt, který odpovídá zadané předpony oboru názvů XML.  
@@ -46,5 +46,6 @@ GetXmlNamespace(xmlNamespacePrefix)
  `Name: Patrick Hines`  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Příkaz Imports (obor názvů XML)](../../../visual-basic/language-reference/statements/imports-statement-xml-namespace.md)
 - [Přístup ke XML v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/xml/accessing-xml.md)

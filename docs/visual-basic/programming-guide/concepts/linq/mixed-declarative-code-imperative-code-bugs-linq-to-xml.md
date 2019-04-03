@@ -2,12 +2,12 @@
 title: Smíšeného deklarativního a imperativního kódu chyby (LINQ to XML) (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: f12b1ab4-bb92-4b92-a648-0525e45b3ce7
-ms.openlocfilehash: 99987339ecfcf621bb1e21a6a5eed5df47a9d82d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e7b3b624bb91525d2cda9477c29291e25eba1b07
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54513129"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58842275"
 ---
 # <a name="mixed-declarative-codeimperative-code-bugs-linq-to-xml-visual-basic"></a>Smíšený kód deklarativní nebo imperativní kód chyby (LINQ to XML) (Visual Basic)
 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] obsahuje různé metody, které umožňují upravit stromu XML přímo. Můžete přidat prvky, odstranění prvků, změňte obsah elementu, přidejte atributy a tak dále. Toto programovací rozhraní je popsán v [změna stromů XML (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md). Pokud jste se provede iterace přes jeden z OS, jako <xref:System.Xml.Linq.XContainer.Elements%2A>a jak iterovat na ose upravujete stromu XML, můžete skončit s některé chyby neobvyklé.  
@@ -177,4 +177,5 @@ Console.WriteLine(newRoot)
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Pokročilé technologie LINQ to XML programování (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)

@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Object data type [Visual Basic], data types
 - data types [Visual Basic], choosing
 ms.assetid: 64c71a12-9057-4dbf-baca-7379c4aada69
-ms.openlocfilehash: 7e32bf158b91c23c32028eb6877bd0089a9019b2
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 4808d87322d5b21b70ec38e2eb31b2b204938745
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54655046"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58821762"
 ---
 # <a name="miscellaneous-data-types-visual-basic"></a>Různé datové typy (Visual Basic)
 Visual Basic poskytuje několik typů dat, které nejsou orientovány čísel nebo znaků. Místo toho se vypořádají s specializované dat, jako Ano/ne hodnoty, hodnoty data a času a adresy objektu.  
@@ -31,6 +31,7 @@ Visual Basic poskytuje několik typů dat, které nejsou orientovány čísel ne
  Výhodou `Object` datový typ je, že se použije k ukládání dat libovolného datového typu. Nevýhodou je, že se vám účtovat žádné další operace, které potřebují delší dobu spuštění a vaše aplikace pracovat pomaleji. Pokud používáte `Object` proměnné pro typy hodnot, se vám účtovat *zabalení* a *rozbalení*. Když ho používáte pro typy odkazů, se vám účtovat *pozdní vazby*.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Znaky typu](../../../../visual-basic/programming-guide/language-features/data-types/type-characters.md)
 - [Základní datové typy](../../../../visual-basic/programming-guide/language-features/data-types/elementary-data-types.md)
 - [Číselné datové typy](../../../../visual-basic/programming-guide/language-features/data-types/numeric-data-types.md)

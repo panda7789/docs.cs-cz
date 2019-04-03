@@ -2,12 +2,12 @@
 title: Náhrada kontraktu dat
 ms.date: 03/30/2017
 ms.assetid: b0188f3c-00a9-4cf0-a887-a2284c8fb014
-ms.openlocfilehash: 341b56727c910d552a5238d95976884162f1c524
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
+ms.openlocfilehash: 33d5db0251d22ff2fac05c475903eca7dcb3e0fb
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58409832"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58828053"
 ---
 # <a name="datacontract-surrogate"></a>Náhrada kontraktu dat
 Tato ukázka předvádí, jak procesy, jako jsou serializace, deserializace, schéma export a import schématu je možné přizpůsobit pomocí kontraktu dat náhradní třídy. Tento příklad ukazuje způsob použití náhradní ve scénáři klient a server se data serializována a přenosu mezi klienta Windows Communication Foundation (WCF) a služby.  
@@ -269,4 +269,3 @@ public void ExportContract(WsdlExporter exporter, WsdlContractConversionContext 
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\DataContract`  
   
-## <a name="see-also"></a>Viz také:

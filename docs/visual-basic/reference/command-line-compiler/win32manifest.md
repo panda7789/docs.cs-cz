@@ -6,12 +6,12 @@ helpviewer_keywords:
 - win32manifest compiler option [Visual Basic]
 - -win32manifest compiler option [Visual Basic]
 ms.assetid: 9e3191b4-90db-41c8-966a-28036fd20005
-ms.openlocfilehash: 4f31f1c32770d292f275354e0c06928e4677b7a6
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: bd9a708b99d11b90e47c3413bb0003ce2def13a1
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54618607"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58833712"
 ---
 # <a name="-win32manifest-visual-basic"></a>-win32manifest (Visual Basic)
 Určuje uživatelský soubor manifestu aplikace Win32, který má být vložen do projektu soubor (PE portable executable).  
@@ -67,5 +67,6 @@ Určuje uživatelský soubor manifestu aplikace Win32, který má být vložen d
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)
 - [-nowin32manifest (Visual Basic)](../../../visual-basic/reference/command-line-compiler/nowin32manifest.md)

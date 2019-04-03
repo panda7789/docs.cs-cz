@@ -2,12 +2,12 @@
 title: Reflexe (C#)
 ms.date: 07/20/2015
 ms.assetid: f80a2362-953b-4e8e-9759-cd5f334190d4
-ms.openlocfilehash: 8cdfe00a09d340d8b77f1f5582a3a3ad82c496b1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 4dfd9391407fec4bd20ac4ae05162763e909d665
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54537644"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58841313"
 ---
 # <a name="reflection-c"></a>Reflexe (C#)
 Reflexe poskytuje objekty (typu <xref:System.Type>), které popisují sestavení, modulů a typů. Vám pomůže odrazu dynamicky vytvořit instanci typu, navázat na existující objekt, nebo získat typ z existujícího objektu a volat jeho metody nebo přístup k vlastnostem a polím. Pokud používáte atributy ve vašem kódu, reflexe umožňuje přistupovat k nim. Další informace najdete v tématu [atributy](../../../../docs/standard/attributes/index.md).  
@@ -28,7 +28,7 @@ System.Console.WriteLine(type);
  Následující příklad používá reflexi získat úplný název načteného sestavení.  
   
 ```csharp  
-// Using Reflection to get information from an Assembly:  
+// Using Reflection to get information of an Assembly:  
 System.Reflection.Assembly info = typeof(System.Int32).Assembly;  
 System.Console.WriteLine(info);  
 ```  

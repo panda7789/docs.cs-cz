@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Do statement [Visual Basic], Do loops
 - conditional statements [Visual Basic], loop structures
 ms.assetid: ecacb09b-a4c9-42be-98b2-a15d368b5db8
-ms.openlocfilehash: c09c0bdee0e8740abb7cc085f0796048a5db150c
-ms.sourcegitcommit: 15ab532fd5e1f8073a4b678922d93b68b521bfa0
+ms.openlocfilehash: 56165eecce5e73c4e06235dac1691774fb39b794
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58654364"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58833300"
 ---
 # <a name="loop-structures-visual-basic"></a>Struktury smyčky (Visual Basic)
 Struktury smyčky v jazyce Visual Basic umožňují opakovaně spustit jeden nebo více řádků kódu. Příkazy ve smyčce struktura můžete opakovat, dokud je podmínka `True`, dokud je podmínka `False`, zadaný počet opakování, nebo jednou pro každý prvek v kolekci.  
@@ -37,6 +37,7 @@ Struktury smyčky v jazyce Visual Basic umožňují opakovaně spustit jeden neb
  `For Each`... `Next` konstrukce spustí sadu příkazů jednou pro každý prvek v kolekci. Zadat řídicí proměnná smyčky for, ale nemáte k určení počáteční nebo koncovou hodnotou pro něj. Další informace najdete v tématu [For Each... Další příkaz](../../../../visual-basic/language-reference/statements/for-each-next-statement.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Tok řízení](../../../../visual-basic/programming-guide/language-features/control-flow/index.md)
 - [Rozhodovací struktury](../../../../visual-basic/programming-guide/language-features/control-flow/decision-structures.md)
 - [Ostatní řídicí struktury](../../../../visual-basic/programming-guide/language-features/control-flow/other-control-structures.md)

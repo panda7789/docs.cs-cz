@@ -12,12 +12,12 @@ helpviewer_keywords:
 - ExternalSource directive (#ExternalSource)
 - '#ExternalSource directive'
 ms.assetid: 243bc6a2-34c3-4eeb-a776-9fd2bf988149
-ms.openlocfilehash: 550934723a5599573be578ce5746ab7520b59dd1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 39e6963c97340daab3f0ab7ad6860695f1f6c135
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54705966"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58823425"
 ---
 # <a name="externalsource-directive"></a>#ExternalSource – direktiva
 Určuje mapování mezi konkrétní řádky zdrojového kódu a textem mimo zdroj.  
@@ -51,4 +51,5 @@ Určuje mapování mezi konkrétní řádky zdrojového kódu a textem mimo zdro
  Direktivy externího zdroje nemají žádný vliv při kompilaci a nemohou být vnořeny. Ty jsou určené pro interní použití jenom aplikace.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Podmíněná kompilace](../../../visual-basic/programming-guide/program-structure/conditional-compilation.md)

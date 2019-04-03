@@ -2,12 +2,12 @@
 title: 'Postupy: Vyhledání elementu s konkrétním atributem (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 59fb7c19-d42f-40eb-8cf8-f1d5b9658eb7
-ms.openlocfilehash: f170daa58dc2ee8759beeb04df7670d9d43fb494
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d4af129cdb7e9049be747b9eb29aaa26ef5d8188
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54536058"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58813857"
 ---
 # <a name="how-to-find-an-element-with-a-specific-attribute-visual-basic"></a>Postupy: Vyhledání elementu s konkrétním atributem (Visual Basic)
 Toto téma ukazuje, jak najít element, který má atribut, který obsahuje určitou hodnotu.  
@@ -79,6 +79,7 @@ End Module
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Xml.Linq.XElement.Attribute%2A>
 - <xref:System.Xml.Linq.XContainer.Elements%2A>
 - [Základní dotazy (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)

@@ -11,12 +11,12 @@ helpviewer_keywords:
 - declaring variables [Visual Basic], inferred
 - inferred variable declaration
 ms.assetid: 4ad3e6e9-8f5b-4209-a248-de22ef6e4652
-ms.openlocfilehash: 43ac5bc9e32892541ed2f9b0410b6e0ef10558a6
-ms.sourcegitcommit: 15ab532fd5e1f8073a4b678922d93b68b521bfa0
+ms.openlocfilehash: a3846c952969a4814151757c5210d9df6f3c97b4
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58654325"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58823490"
 ---
 # <a name="option-infer-statement"></a>Option Infer – příkaz
 Umožňuje použití odvození místního typu v deklarujících proměnných.  
@@ -96,6 +96,7 @@ Option Infer { On | Off }
  [!code-vb[VbVbalrTypeInference#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrTypeInference/VB/Class1.vb#11)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Příkaz Dim](../../../visual-basic/language-reference/statements/dim-statement.md)
 - [Odvození místního typu](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)
 - [Příkaz Option Compare](../../../visual-basic/language-reference/statements/option-compare-statement.md)

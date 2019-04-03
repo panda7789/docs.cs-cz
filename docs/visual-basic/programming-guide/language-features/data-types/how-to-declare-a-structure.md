@@ -7,12 +7,12 @@ helpviewer_keywords:
 - statements [Visual Basic], structure
 - structures [Visual Basic], declaring
 ms.assetid: d5e98381-eb81-47d4-af83-48cc534a2572
-ms.openlocfilehash: cee2768d0e7475d2df123491e2b506bf5c08785f
-ms.sourcegitcommit: d9a0071d0fd490ae006c816f78a563b9946e269a
+ms.openlocfilehash: 7fc4aed4d405729b64a2f7ba772cdd794df40f2a
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "55066113"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58825090"
 ---
 # <a name="how-to-declare-a-structure-visual-basic"></a>Postupy: Definice struktury (Visual Basic)
 Začnete deklaraci struktury s [Structure – příkaz](../../../../visual-basic/language-reference/statements/structure-statement.md), a to s `End Structure` příkazu. Mezi tyto dva příkazy musí deklarovat alespoň jeden *element*. Prvků může být libovolného datového typu, ale alespoň jedna musí být nesdílené proměnné nebo nesdílených, nevlastních událostí.  
@@ -56,6 +56,7 @@ Začnete deklaraci struktury s [Structure – příkaz](../../../../visual-basic
      Kromě proměnných `Sub` procedury a události, můžete také definovat konstanty, `Function` postupy a vlastnosti ve struktuře. Můžete určit nejvýše jednu vlastnost jako *výchozí vlastnost*za předpokladu, že trvá nejméně jeden argument. Dokáže zpracovat událost se [Shared](../../../../visual-basic/language-reference/modifiers/shared.md) `Sub` postup. Další informace najdete v tématu [jak: Deklarace a volání výchozí vlastnosti v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/procedures/how-to-declare-and-call-a-default-property.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Datové typy](../../../../visual-basic/programming-guide/language-features/data-types/index.md)
 - [Základní datové typy](../../../../visual-basic/programming-guide/language-features/data-types/elementary-data-types.md)
 - [Složené datové typy](../../../../visual-basic/programming-guide/language-features/data-types/composite-data-types.md)

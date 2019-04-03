@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - attributes [Visual Basic]
 ms.assetid: 5deb2b8a-1afd-4dbd-8ee8-f093d74ad0eb
-ms.openlocfilehash: 2040cee33d41ca1dfcce068c84be0589c958a707
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: b3f93cfdde8e5063c5bf0503857dfc149ee90026
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54579335"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58818446"
 ---
 # <a name="attributes-visual-basic"></a>Atributy (Visual Basic)
 Visual Basic poskytuje několik atributů, které umožňují že objekty spolupráce s nespravovaným kódem a jeden atribut, který umožňuje členům modulu přistupovat bez názvu modulu. Následující tabulka uvádí seznam atributů používá jazyka Visual Basic.  
@@ -22,4 +22,5 @@ Visual Basic poskytuje několik atributů, které umožňují že objekty spolup
 |<xref:Microsoft.VisualBasic.VBFixedStringAttribute>|Označuje, že řetězec by měl být zpracován jako opraveny délku.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled atributy](../../visual-basic/programming-guide/concepts/attributes/index.md)

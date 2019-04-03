@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - enumerations [Visual Basic]
 ms.assetid: e6e47b5b-3ed9-452d-a481-9c3fed88519a
-ms.openlocfilehash: 826f8fffedb8c983423fbef0fbf1f4014d93be91
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ff2d8c324aee8bbccef050c020e5392368b05b1c
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54535018"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58825094"
 ---
 # <a name="when-to-use-an-enumeration-visual-basic"></a>Kdy použít výčet (Visual Basic)
 Výčty nabízí snadný způsob, jak pracovat se sadami související s konstantami. Což je výčet nebo `Enum`, je symbolický název pro sadu hodnot. Výčty jsou považovány za datových typů a můžete využít k vytvoření sady konstanty pro použití s proměnných a vlastností.  
@@ -36,6 +36,7 @@ Výčty nabízí snadný způsob, jak pracovat se sadami související s konstan
  Visual Basic nabízí celou řadu předdefinovaných výčty, jako například `FirstDayOfWeek` a `MsgBoxResult`, které usnadní váš kód. Jejich seznam naleznete v tématu [konstanty a výčty](../../../../visual-basic/language-reference/constants-and-enumerations.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Postupy: Deklarace výčtů](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-declare-enumerations.md)
 - [Postupy: Odkazování na člena výčtu](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-refer-to-an-enumeration-member.md)
 - [Výčty a kvalifikace názvu](../../../../visual-basic/programming-guide/language-features/constants-enums/enumerations-and-name-qualification.md)

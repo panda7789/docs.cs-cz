@@ -15,12 +15,12 @@ helpviewer_keywords:
 - logical disjunction
 - disjunction operator [Visual Basic]
 ms.assetid: 41ed6905-bf3d-468a-9e3b-03c10d461891
-ms.openlocfilehash: cbfc94ad70695e9a785375f2460f9f9d8f3a20c5
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 0277b6f24e62ed5f0cad3dae225c86fffc4c09b9
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56977536"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58835294"
 ---
 # <a name="or-operator-visual-basic"></a>Or – operátor (Visual Basic)
 Provede logickou disjunkci dvou `Boolean` výrazů nebo bitovou disjunkci dvou numerických výrazů.  
@@ -89,6 +89,7 @@ result = expression1 Or expression2
  V předchozím příkladu vytvoří výsledky 10, 14 a 14, v uvedeném pořadí.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Logické/bitové operátory (Visual Basic)](../../../visual-basic/language-reference/operators/logical-bitwise-operators.md)
 - [Priorita operátorů v jazyce Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
 - [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)

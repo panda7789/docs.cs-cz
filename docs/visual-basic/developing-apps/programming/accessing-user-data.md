@@ -11,19 +11,19 @@ helpviewer_keywords:
 - login names [Visual Basic]
 - examples [Visual Basic], accessing user data
 ms.assetid: 32492a15-ee59-4a63-a1f1-9b24cc13140a
-ms.openlocfilehash: 5ff071aadb189cec839b9cb41d510764a9187363
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e5d18adcb331162a72da0adb4018d1d59ecc072e
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54605486"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58825288"
 ---
 # <a name="accessing-user-data-visual-basic"></a>Přístup k uživatelským datům (Visual Basic)
 Tento oddíl obsahuje témata týkající se `My.User` objektu a úlohy, které můžete provádět s ním.  
   
  `My.User` Objekt poskytuje přístup k informacím o přihlášeného uživatele tak, že vrací objekt, který implementuje <xref:System.Security.Principal.IPrincipal> rozhraní.  
   
-## <a name="tasks"></a>Úlohy  
+## <a name="tasks"></a>Úkoly  
   
 |Chcete-li|Další informace naleznete v tématu|  
 |--------|---------|  
@@ -32,4 +32,5 @@ Tento oddíl obsahuje témata týkající se `My.User` objektu a úlohy, které 
 |Určení role uživatele|<xref:Microsoft.VisualBasic.ApplicationServices.User.IsInRole%2A>|  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:Microsoft.VisualBasic.ApplicationServices.User>

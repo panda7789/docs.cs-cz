@@ -5,12 +5,12 @@ helpviewer_keywords:
 - My namespace [Visual Basic], customizing
 - My namespace
 ms.assetid: 4e8279c2-ed5b-4681-8903-8a6671874000
-ms.openlocfilehash: caa9c2cadb9194161756f89b5acb16da0a955485
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 74be338cd6f704174d89032fb7f9e859215c2bc3
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54543708"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58843536"
 ---
 # <a name="customizing-which-objects-are-available-in-my-visual-basic"></a>Přizpůsobení výběru objektů dostupných v oboru názvů My (Visual Basic)
 Toto téma popisuje, jak můžete určit, které `My` objekty jsou povolené tak, že nastavíte váš projekt `_MYTYPE` – Konstanta podmíněné kompilace. Udržuje Visual Studio integrované vývojové prostředí (IDE) `_MYTYPE` – Konstanta podmíněné kompilace projektu synchronizované s typem projektu.  
@@ -70,6 +70,7 @@ Toto téma popisuje, jak můžete určit, které `My` objekty jsou povolené tak
 |`_MYTYPE`|Umožňuje `My.Log`, `My.Request`, a `My.Response`, pokud je konstanta "Web".|  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase>
 - <xref:Microsoft.VisualBasic.Devices.Computer>
 - <xref:Microsoft.VisualBasic.Logging.Log>

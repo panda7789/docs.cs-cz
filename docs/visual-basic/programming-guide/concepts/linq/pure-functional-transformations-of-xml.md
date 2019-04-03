@@ -2,12 +2,12 @@
 title: Čistě funkční transformace XML (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 5e19b74a-7773-4b58-b110-953ffd364c55
-ms.openlocfilehash: 1af777296c8b8d9736b701b297b2253326c9da7f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 48149faba1c41583ab4e50c539d52e4caf90592a
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54584737"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58843419"
 ---
 # <a name="pure-functional-transformations-of-xml-visual-basic"></a>Čistě funkční transformace XML (Visual Basic)
 Tato část obsahuje kurz funkční transformace XML. Jedná se o vysvětlení hlavní koncepty a jazykové konstrukty, musíte porozumět používání funkčním transformacím a příklady použití funkční transformace pro manipulaci s dokumentu XML. I když tento kurz obsahuje LINQ na příklady kódu XML, všechny základní koncepty platí také pro jiné technologie LINQ.  
@@ -27,4 +27,5 @@ Tato část obsahuje kurz funkční transformace XML. Jedná se o vysvětlení h
 |[Kurz: Manipulace s obsahem v dokumentu WordprocessingML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)|Kurz demonstrující funkční transformace.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Dotazování na stromy XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/querying-xml-trees.md)

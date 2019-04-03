@@ -2,12 +2,12 @@
 title: Klasifikace standardních operátorů dotazu podle metody provedení (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 7f55b0be-9f6e-44f8-865c-6afbea50cc54
-ms.openlocfilehash: 5e4204c3fa80acced42649e76abfa2be05f35d82
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 6331ad0994e121d2d7007c9999f3a684b83efe6d
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54595172"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58823217"
 ---
 # <a name="classification-of-standard-query-operators-by-manner-of-execution-visual-basic"></a>Klasifikace standardních operátorů dotazu podle metody provedení (Visual Basic)
 LINQ na objekty implementace metody standardních dotazovacích operátorů provést dva hlavní způsoby: okamžité nebo odložené. Operátory dotazů, které používají odložené provedení lze dále rozdělit do dvou kategorií: vysílání datových proudů a jiných datových proudů. Pokud víte, jak provést operátory jiný dotaz, se vám můžou pomoct porozumět výsledky, které jste získali z daný dotaz. To je obzvláště hodnotu true, pokud zdroj dat se mění nebo vytváření dotazu na jiný dotaz. Toto téma klasifikuje podle jejich metody provedení standardních dotazovacích operátorů.  
@@ -88,6 +88,7 @@ LINQ na objekty implementace metody standardních dotazovacích operátorů prov
 |<xref:System.Linq.Enumerable.Where%2A>|<xref:System.Collections.Generic.IEnumerable%601>||X||  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Linq.Enumerable>
 - [Přehled standardních operátorů dotazu (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)
 - [Syntaxe výrazu dotazu pro standardní operátory dotazu (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/query-expression-syntax-for-standard-query-operators.md)

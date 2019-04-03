@@ -2,12 +2,12 @@
 title: 'Postupy: Čtení dat objektů ze souboru XML (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 1e1423bf-74a4-4dde-a3bb-ae1bfc0a68ed
-ms.openlocfilehash: cd546e167afe45e2d324a784679f5a05cc1473c7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f6233fc7ce74cbd39237bab07cfd2ed22b9c2240
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54521241"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58834891"
 ---
 # <a name="how-to-read-object-data-from-an-xml-file-visual-basic"></a>Postupy: Čtení dat objektů ze souboru XML (Visual Basic)
 V tomto příkladu čte data objektu, který se předtím zapsala do souboru XML pomocí <xref:System.Xml.Serialization.XmlSerializer> třídy.  
@@ -49,6 +49,7 @@ End Sub
  Vždy zkontrolujte vstupy a nikdy deserializovat data z nedůvěryhodného zdroje. Objekt znovu vytvořit běží na místním počítači s oprávněními kód, který ji deserializovat. Před použitím dat ve své aplikaci ověřte všechny vstupy.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.IO.StreamWriter>
 - [Postupy: Zápis dat objektů do souboru XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/serialization/how-to-write-object-data-to-an-xml-file.md)
 - [Serializace (Visual Basic)](../../../../visual-basic/programming-guide/concepts/serialization/index.md)

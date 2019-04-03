@@ -2,12 +2,12 @@
 title: Dotazování na stromy XML (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 2e35c1ab-08c8-4378-9ca8-8ff344756eda
-ms.openlocfilehash: bb0024a6cfb93be5f1f78f33ad29c22f3400de48
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 0d3855a562ce5ec43b28fba21b2ab4db0583a2d3
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54671379"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58839623"
 ---
 # <a name="querying-xml-trees-visual-basic"></a>Dotazování na stromy XML (Visual Basic)
 Tato část obsahuje příklady [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dotazy.  
@@ -27,5 +27,6 @@ Tato část obsahuje příklady [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md
 |[Čistě funkční transformace XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/pure-functional-transformations-of-xml.md)|Uvede počet malých kurzu o psaní dotazů ve stylu funkčního programování.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Průvodce programováním (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/programming-guide-linq-to-xml.md)
 - [Začínáme s dotazy LINQ v jazyce Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/getting-started-with-linq.md)

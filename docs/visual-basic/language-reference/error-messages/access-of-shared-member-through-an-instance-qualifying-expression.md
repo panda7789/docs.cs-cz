@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC42025
 ms.assetid: db3337e5-c349-42bf-86df-d9c1e00952a5
-ms.openlocfilehash: 78981e5af0d4bf1694a3ad7c9ead2e4e7fd9330e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 8e6ddab16c59d7ce95d96b377e3f372f6ebe5278
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54703546"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58843562"
 ---
 # <a name="access-of-shared-member-through-an-instance-qualifying-expression-will-not-be-evaluated"></a>Přístup sdíleného člena prostřednictvím instance; kvalifikující výraz nebyl vyhodnocen.
 Proměnná instance třídy nebo struktury se používá k přístupu `Shared` proměnná, vlastnost, procedura nebo události definované v této třídě nebo struktuře. Toto upozornění může také dojít, pokud proměnnou instance se používá pro přístup k implicitně sdílenému členu třídy nebo struktury, jako je konstantní nebo výčtu, nebo vnořené třídy nebo struktury.  
@@ -56,5 +56,6 @@ End Module
 >  Být výstraha pro efekty oboru, pokud dva programovací elementy mají stejný název. V předchozím příkladu, je-li deklarována instance pomocí `Dim testClass as testClass = Nothing`, kompilátor zpracovává volání `testClass.sayHello()` jako dochází přístupu metody pomocí názvu třídy a žádné upozornění.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Shared](../../../visual-basic/language-reference/modifiers/shared.md)
 - [Obor v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)

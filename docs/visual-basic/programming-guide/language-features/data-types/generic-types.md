@@ -36,20 +36,19 @@ helpviewer_keywords:
 - type arguments [Visual Basic], defining
 - arguments [Visual Basic], type
 ms.assetid: 89f771d9-ecbb-4737-88b8-116b63c6cf4d
-ms.openlocfilehash: d990d0167152c2a97315c0540361ba8b537f1946
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 343c5c8e2625a1bd4279e0c97b7079482af0e8c6
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56978498"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58831421"
 ---
 # <a name="generic-types-in-visual-basic-visual-basic"></a>Obecné typy v jazyce Visual Basic (Visual Basic)
 A *obecného typu* je jediný prvek programování, které se přizpůsobí provádět stejné funkce pro širokou škálu datových typů. Při definování obecné třídy nebo proceduru není nutné definovat samostatné verze pro každý typ dat, pro které můžete chtít provést, které tuto funkci.  
   
  Analogie je šroubováku s vyměnitelné hlavy. Kontrola šroubovacím budete muset zapnout a vyberte správné hlavičky pro tento šroubovacím (s drážkou, překročí, označený hvězdičkou). Po vložení správný hlavní v popisovač šroubovák provádíte přesně stejnou funkci s šroubovák, a to zapnutím šroubek.  
   
- ![Diagram šroubováku jako obecný nástroj](../../../../visual-basic/programming-guide/language-features/data-types/media/genericscrewdriver.gif "GenericScrewDriver")  
-Šroubováku jako obecný nástroj  
+ ![Diagram šroubováku s jinou hlavy.](./media/generic-types/generic-screwdriver-set.gif)  
   
  Při definování obecného typu parametrizovat u jednoho nebo více datových typů. Díky tomu pomocí kódu pro přizpůsobení své požadavky na datové typy. Váš kód může deklarovat několik různých programovací prvky z obecného prvku, každý z nich na jinou sadu datových typů. Ale všechny deklarované elementy provádět stejné logiky, bez ohledu na to, jaké typy dat, které využívají.  
   

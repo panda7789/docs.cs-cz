@@ -2,21 +2,21 @@
 title: Stránka nápovědy webové služby HTTP WCF
 ms.date: 03/30/2017
 ms.assetid: 63c7c695-44b6-4f31-bb9c-00f2763f525e
-ms.openlocfilehash: f803d2046684bc1aa148e78b6325f26a8ec5c427
-ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
+ms.openlocfilehash: 60fd909d6e7d3ba0e0c0254024ef7eb40263b59e
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49121204"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58826831"
 ---
 # <a name="wcf-web-http-service-help-page"></a>Stránka nápovědy webové služby HTTP WCF
 [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] poskytuje automatickou stránku nápovědy pro služby webových služeb HTTP WCF. Tato stránka nápovědy obsahuje popis jednotlivých operace, požadavků a odpovědí formáty a schémata. Tato funkce je ve výchozím nastavení vypnuté. Když uživatel přejde do služby webových služeb HTTP WCF a přidá "/ Help" na konci adresy URL, například `http://localhost:8000/Customers/Help`, stránku nápovědy jako tento text.  
   
- ![Stránka nápovědy WCF REST](../../../../docs/framework/wcf/feature-details/media/wcfresthelppagemain.gif "WCFRESTHELPPAGEMAIN")  
+ ![Otevřete prohlížeč se stránkou pomáhají REST WCF.](./media/wcf-web-http-service-help-page/windows-communication-foundation-rest-help-page.gif)  
   
  Uživatel potom můžete kliknutím na libovolnou metodu uvedené na stránce nápovědy a zobrazí se podrobné stránka pro danou operaci, zobrazuje další informace o metodě, včetně formáty zpráv a ukázkové odpovědi. Na následujícím obrázku je příklad stránky nápovědy pro metodu.  
   
- ![Stránka nápovědy REST WCF podrobnosti](../../../../docs/framework/wcf/feature-details/media/wcfresthelppagedetail2.gif "WCFRESTHELPPAGEDETAIL2")  
+ ![Otevřete prohlížeč s podrobnostmi o stránku nápovědy REST WCF pro metodu GetCustomers.](./media/wcf-web-http-service-help-page/windows-communication-foundation-rest-help-page-detail.gif)  
   
 ## <a name="using-the-wcf-web-http-help-page"></a>Na stránce nápovědy webových služeb HTTP WCF  
  Na stránce nápovědy WCF WEB HTTP zobrazuje krátký popis pro každou operaci za předpokladu, že zadáte jednu <xref:System.ComponentModel.DescriptionAttribute>. Tento atribut přebírá řetězec, který obsahuje stručný popis operace, které bylo použito. Například následující kód ukazuje způsob použití <xref:System.ComponentModel.DescriptionAttribute> zadejte krátký popis.  

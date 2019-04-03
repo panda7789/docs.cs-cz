@@ -20,12 +20,12 @@ helpviewer_keywords:
 - '@ identifier type character'
 - identifier type characters [Visual Basic], @
 ms.assetid: 1d855b45-afe2-45b0-a623-96b6f63a43d5
-ms.openlocfilehash: 7a04f0a9862927f8588a895c7f0f099509aa4d8d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 4d530a8c1f85d2f0045184c05df63849047a8204
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54512889"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58834098"
 ---
 # <a name="decimal-data-type-visual-basic"></a>Decimal – datový typ (Visual Basic)
 Blokování podepsané 128-bit (16 bajtů) hodnoty představující celé číslo (12 bajtů) verze 96 čísla měřítkem řídit proměnné násobky 10. Koeficient změny měřítka určuje počet číslic vpravo od desetinné čárky rozsah od 0 do 28. S měřítkem 0 (bez desetinných míst), je možná největší hodnota +/-79,228,162,514,264,337,593,543,950,335 (+/-7 .9228162514264337593543950335E + 28). 28 desetinných míst největší hodnota, je +/-7,9228162514264337593543950335 a +/-0,0000000000000000000000000001 (+/-1E-28) je nejmenší nenulovou hodnotu.  
@@ -79,6 +79,7 @@ Dim bigDec3 As Decimal = 9223372036854775808D  ' No overflow.
  Pro `bigDec3`, znak typu literálu `D` řeší problém vynucením kompilátor k interpretaci jako literál `Decimal` místo jako `Long`.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Decimal?displayProperty=nameWithType>
 - <xref:System.Decimal.%23ctor%2A?displayProperty=nameWithType>
 - <xref:System.Math.Round%2A?displayProperty=nameWithType>

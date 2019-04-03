@@ -9,12 +9,12 @@ helpviewer_keywords:
 - structures [Visual Basic], structure variables
 - structure variables [Visual Basic]
 ms.assetid: a221e74a-ffcf-4bdc-a0f6-a088a9bf26cc
-ms.openlocfilehash: 78c1d529053a10fc208ee5499b759623c227cb25
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 3635729705520518d4c950f8a79da7d1249285bf
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54681807"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58841612"
 ---
 # <a name="structures-and-classes-visual-basic"></a>Struktury a třídy (Visual Basic)
 Visual Basic sjednocuje syntaxe struktur a tříd, s tím, že obě entity podporuje většinu stejné funkce. Existují však i důležité rozdíly mezi strukturami a třídami.  
@@ -87,6 +87,7 @@ Visual Basic sjednocuje syntaxe struktur a tříd, s tím, že obě entity podpo
 -   **Rovnost.** Testování rovnosti dvou struktur, je nutné provést s testu prvek po prvku. Dvě proměnné objektu lze porovnat pomocí <xref:System.Object.Equals%2A> metody. <xref:System.Object.Equals%2A> Určuje, zda dvě proměnné odkazovat na stejné instanci.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Datové typy](../../../../visual-basic/programming-guide/language-features/data-types/index.md)
 - [Složené datové typy](../../../../visual-basic/programming-guide/language-features/data-types/composite-data-types.md)
 - [Typy hodnot a odkazové typy](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)

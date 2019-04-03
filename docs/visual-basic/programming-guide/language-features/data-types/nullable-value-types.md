@@ -10,12 +10,12 @@ helpviewer_keywords:
 - nullable types [Visual Basic]
 - data types [Visual Basic], nullable
 ms.assetid: 9ac3b602-6f96-4e6d-96f7-cd4e81c468a6
-ms.openlocfilehash: 522526392dd12ede729fe8b96677029c05af57c8
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 437107bb522e1635dffa4a2de88c5d10d6707592
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54665692"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58825133"
 ---
 # <a name="nullable-value-types-visual-basic"></a>Typy hodnot s povolenou hodnotou Null (Visual Basic)
 Někdy můžete pracovat se hodnotový typ, který nemá definovanou hodnotu za určitých okolností. Například pole v databázi může mít k rozlišení mezi s přiřazenou hodnotu, která má smysl a nemají přiřazenou hodnotu. Typy hodnot je možné rozšířit na přijmout jejich normální hodnoty nebo hodnota null. Toto rozšíření je volána *typ připouštějící hodnotu Null*.  
@@ -98,6 +98,7 @@ Někdy můžete pracovat se hodnotový typ, který nemá definovanou hodnotu za 
  Databáze je jedním z nejdůležitějších místa k použití s povolenou hodnotou Null. Ne všechny databázové objekty aktuálně podporují typy připouštějící hodnotu Null, ale proveďte adaptéry tabulek generovaný návrhářem. Naleznete v části "Třída TableAdapter podporuje typy s možnou hodnotou Null" v [TableAdapter – přehled](/visualstudio/data-tools/tableadapter-overview).
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.InvalidOperationException>
 - <xref:System.Nullable%601.HasValue%2A>
 - [Použití typů s povolenou hodnotou Null](../../../../csharp/programming-guide/nullable-types/using-nullable-types.md)

@@ -2,14 +2,14 @@
 title: Uchování objektu v sadě Visual Studio (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: f1d0b562-e349-4dce-ab5f-c05108467030
-ms.openlocfilehash: 002c5470765b33d038ab0fd463fcc6ccfdf6f109
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 312545827702c2d01c50f2a92ace5a3b61494a33
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54690433"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58841573"
 ---
-# <a name="walkthrough-persisting-an-object-in-visual-studio-visual-basic"></a>Průvodce: Uchování objektu v sadě Visual Studio (Visual Basic)
+# <a name="walkthrough-persisting-an-object-in-visual-studio-visual-basic"></a>Návod: Uchování objektu v sadě Visual Studio (Visual Basic)
 V době návrhu, je možné nastavit na výchozí hodnoty vlastností objektu, všechny hodnoty zadané v době běhu budou ztraceny, pokud objekt je zničen. Serializace můžete použít k uchování dat objektu mezi instancemi, které vám umožní uložení hodnot a načíst je další čas, který je vytvořena instance objektu.  
   
 > [!NOTE]
@@ -216,5 +216,6 @@ V době návrhu, je možné nastavit na výchozí hodnoty vlastností objektu, v
  V tomto okamžiku můžete znovu sestavte a spusťte aplikaci. Na začátku zobrazí výchozí hodnoty v textových polích. Pokuste se změnit hodnoty a zadejte název do textového pole čtvrtý. Ukončete aplikaci a znovu jej spusťte. Všimněte si, že nové hodnoty teď budou zobrazovat v textových polích.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Serializace (Visual Basic)](../../../../visual-basic/programming-guide/concepts/serialization/index.md)
 - [Průvodce programováním v jazyce Visual Basic](../../../../visual-basic/programming-guide/index.md)

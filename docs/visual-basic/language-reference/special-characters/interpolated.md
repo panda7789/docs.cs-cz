@@ -1,12 +1,12 @@
 ---
 title: $ (Referenční dokumentace jazyka Visual Basic)
 ms.date: 10/31/2017
-ms.openlocfilehash: 94c88b5f6d741bb35af775b56b1bab273bbf5b1a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1927e8277b0fdeda13d715b62c6e7cede28b3c52
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54715423"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58821348"
 ---
 # <a name="-visual-basic-reference"></a>$ (Referenční dokumentace jazyka Visual Basic)
 
@@ -19,5 +19,6 @@ V následujícím příkladu `$` znak definovat interpolovaného řetězce.
 Další informace o interpolované řetězce najdete v článku [interpolované řetězce](../../programming-guide/language-features/strings/interpolated-strings.md) tématu.
 
 ## <a name="see-also"></a>Viz také:
+
 - [Referenční dokumentace jazyka Visual Basic](../index.md)
 - [Speciální znaky v jazyce Visual Basic](index.md)

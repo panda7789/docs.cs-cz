@@ -10,14 +10,14 @@ helpviewer_keywords:
 - compound assignment statements [Visual Basic]
 - '>>= operator [Visual Basic]'
 ms.assetid: 2bcd9abb-7a8c-4229-b75d-8816ff1dc700
-ms.openlocfilehash: 0ae4eb16727b2b297088170ada04cfd07d6c7a0a
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 1076ce62077391f2c88ebdd621d1dbd6fb40d647
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56980110"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58838960"
 ---
-# <a name="-operator-visual-basic"></a>>>= – operátor (Visual Basic)
+# <a name="-operator-visual-basic"></a>>>= Operator (Visual Basic)
 Provede aritmetický posunutí doprava na základě hodnoty proměnnou nebo vlastnost a přiřadí výsledek zpět na proměnnou nebo vlastnost.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -49,6 +49,7 @@ variableorproperty >>= amount
  [!code-vb[VbVbalrOperators#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#15)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [>> – operátor](../../../visual-basic/language-reference/operators/right-shift-operator.md)
 - [Operátory přiřazení](../../../visual-basic/language-reference/operators/assignment-operators.md)
 - [Operátory bitového posunu](../../../visual-basic/language-reference/operators/bit-shift-operators.md)

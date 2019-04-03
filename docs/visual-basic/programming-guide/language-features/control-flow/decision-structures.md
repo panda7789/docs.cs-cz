@@ -9,12 +9,12 @@ helpviewer_keywords:
 - decision structures [Visual Basic]
 - conditional statements [Visual Basic], decision structures
 ms.assetid: 2e2e0895-4483-442a-b17c-26aead751ec2
-ms.openlocfilehash: 4aabb1eef717b06222696980d4cbce7a781fb567
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 20b60fb425278dacb56ee5f888967554a1f76aeb
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54735244"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58825375"
 ---
 # <a name="decision-structures-visual-basic"></a>Struktury rozhodování (Visual Basic)
 Visual Basic umožňuje podmínky testu a provádět různé operace v závislosti na výsledcích testu. Můžete otestovat na hodnotu true nebo false pro různé hodnoty výrazu, nebo pro různé výjimky, které jsou generovány, pokud provedete sérii tvrzení, podmínku.  
@@ -47,6 +47,7 @@ Provádění různých akcí, pokud je podmínka true, a pokud je false
 >  Pro mnoho řídících struktur po kliknutí na klíčové slovo, všechna klíčová slova ve struktuře jsou zvýrazněné. Například po kliknutí na `If` v `If...Then...Else` konstrukce, všechny výskyty `If`, `Then`, `ElseIf`, `Else`, a `End If` jsou zvýrazněné v procesu vytváření. Přesunout další nebo předchozí zvýrazněný – klíčové slovo, stiskněte kombinaci kláves CTRL + SHIFT + šipka dolů nebo CTRL + SHIFT + šipka nahoru.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Tok řízení](../../../../visual-basic/programming-guide/language-features/control-flow/index.md)
 - [Struktury smyčky](../../../../visual-basic/programming-guide/language-features/control-flow/loop-structures.md)
 - [Ostatní řídicí struktury](../../../../visual-basic/programming-guide/language-features/control-flow/other-control-structures.md)

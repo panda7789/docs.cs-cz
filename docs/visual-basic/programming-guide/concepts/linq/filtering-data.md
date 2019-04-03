@@ -2,19 +2,19 @@
 title: Filtrování dat (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 7749519a-7edc-49fe-aef9-6a353864af6c
-ms.openlocfilehash: d65b9941ceffa7ea23c4ead192ec6b97b7b4ead8
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a673126d928a97bf522783e73fc254debe2a9de8
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54527832"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58837440"
 ---
 # <a name="filtering-data-visual-basic"></a>Filtrování dat (Visual Basic)
 Filtrování odkazuje na operaci omezení sady výsledků do obsahovat pouze prvky, které splňují zadanou podmínku. Je také označován jako výběr.  
   
  Následující obrázek ukazuje výsledky filtrování posloupnost znaků. Predikát pro filtrování operace určuje, že znak musí být "A".  
   
- ![Filtrování operace LINQ](../../../../csharp/programming-guide/concepts/linq/media/linq_filter.png "LINQ_Filter")  
+ ![Diagram, který ukazuje filtrování operace LINQ](./media/filtering-data/linq-filter-operation.png)  
   
  V následující části jsou uvedeny standardní metody operátoru dotazu, které provádějí výběru.  
   
@@ -22,7 +22,7 @@ Filtrování odkazuje na operaci omezení sady výsledků do obsahovat pouze prv
   
 |Název metody|Popis|Syntaxe výrazu dotazu jazyka Visual Basic|Další informace|  
 |-----------------|-----------------|------------------------------------------|----------------------|  
-|OfType|Vybere hodnoty v závislosti na jejich schopnost převést na zadaný typ.|Nelze použít.|<xref:System.Linq.Enumerable.OfType%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.OfType%2A?displayProperty=nameWithType>|  
+|OfType|Vybere hodnoty v závislosti na jejich schopnost převést na zadaný typ.|Není k dispozici.|<xref:System.Linq.Enumerable.OfType%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.OfType%2A?displayProperty=nameWithType>|  
 |Where|Vybere hodnoty, které jsou založeny na funkce predikátu.|`Where`|<xref:System.Linq.Enumerable.Where%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Where%2A?displayProperty=nameWithType>|  
   
 ## <a name="query-expression-syntax-example"></a>Příklad syntaxe výrazu dotazu  
@@ -50,6 +50,7 @@ MsgBox(sb.ToString())
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Linq>
 - [Přehled standardních operátorů dotazu (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)
 - [Klauzule Where](../../../../visual-basic/language-reference/queries/where-clause.md)

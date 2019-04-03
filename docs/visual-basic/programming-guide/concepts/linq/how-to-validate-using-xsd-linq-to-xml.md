@@ -2,12 +2,12 @@
 title: 'Postupy: Ověření pomocí XSD (LINQ to XML) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: a0fe88d4-4e77-49e7-90de-8953feeccc21
-ms.openlocfilehash: 9e4250ac1da4b25ce3f1644b38ff0e71693ecc57
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a29473b871961af0de033b77076686cc5b9dde0e
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54691213"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58833422"
 ---
 # <a name="how-to-validate-using-xsd-linq-to-xml-visual-basic"></a>Postupy: Ověření pomocí XSD (LINQ to XML) (Visual Basic)
 <xref:System.Xml.Schema> Obor názvů obsahuje rozšiřující metody, které usnadňují ověřit stromu XML pro soubor jazyka pro definici schématu XML (XSD). Další informace najdete v tématu <xref:System.Xml.Schema.Extensions.Validate%2A> metoda dokumentaci.  
@@ -123,5 +123,6 @@ custOrdDoc did not validate
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Xml.Schema.Extensions.Validate%2A>
 - [Vytváření stromů XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-xml-trees.md)

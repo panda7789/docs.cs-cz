@@ -2,12 +2,12 @@
 title: 'Ukázkový soubor XSD: Zákazníci a Orders2'
 ms.date: 07/20/2015
 ms.assetid: a0c0b414-c8e1-45e4-bb67-b5e650c97130
-ms.openlocfilehash: 42d6d2b85f74f2d32d373208da296343b44927a4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e2549b4d330ecd8b60ede86c55f28930ae5e41dc
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54556558"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58836828"
 ---
 # <a name="sample-xsd-file-customers-and-orders"></a>Ukázkový soubor XSD: Zákazníci a objednávky
 Následující soubor XSD se používá v různých příkladů v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentaci. Tento soubor obsahuje definici schématu pro [ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md). Schéma používá `xs:key` a `xs:keyref` funkce XSD zajistit, že `CustomerID` atribut `Customer` element je klíč a k vytvoření vztahu mezi `CustomerID` element v každé `Order` elementu a `CustomerID` atributy v každém `Customer` elementu.  
@@ -94,4 +94,5 @@ Následující soubor XSD se používá v různých příkladů v [!INCLUDE[sqlt
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Ukázkové dokumenty XML (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)

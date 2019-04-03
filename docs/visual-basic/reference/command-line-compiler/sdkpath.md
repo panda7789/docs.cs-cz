@@ -9,12 +9,12 @@ helpviewer_keywords:
 - /sdkpath compiler option [Visual Basic]
 - sdkpath compiler option [Visual Basic]
 ms.assetid: fec8a3f1-b791-4a37-8af7-344859f8212d
-ms.openlocfilehash: f9910a332aa7c08f822efaaa253033d43e6075aa
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2024ccadb06fdea0c24d9d304c2fe040f8cce1d5
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54547826"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58814324"
 ---
 # <a name="-sdkpath"></a>-sdkpath
 Určuje umístění knihovny mscorlib.dll a Microsoft.VisualBasic.dll.  
@@ -45,6 +45,7 @@ vbc -netcf -sdkpath:"c:\Program Files\Microsoft Visual Studio .NET 2003\CompactF
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)
 - [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
 - [-netcf](../../../visual-basic/reference/command-line-compiler/netcf.md)

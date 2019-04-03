@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Net Profile Named Pipe
 ms.assetid: e78e845f-c325-46e2-927d-81616f97f7d5
-ms.openlocfilehash: f57a5df92b1e1dd20575c7930ac2a6eb546e1400
-ms.sourcegitcommit: 0069cb3de8eed4e92b2195d29e5769a76111acdd
+ms.openlocfilehash: 37926e48ef6dc12a6b96bbdb8b268993c82e4b48
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "56332998"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58821267"
 ---
 # <a name="netnamedpipebinding"></a>NetNamedPipeBinding
 Tento příklad ukazuje, `netNamedPipeBinding` vazbu, která poskytuje komunikaci mezi procesy ve stejném počítači. Pojmenované kanály napříč počítači nefungují. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) Kalkulačka služby.  
@@ -94,4 +94,3 @@ Press <ENTER> to terminate client.
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Net\NamedPipe`  
   
-## <a name="see-also"></a>Viz také:

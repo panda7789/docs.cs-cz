@@ -8,12 +8,12 @@ helpviewer_keywords:
 - event handling, troubleshooting
 - event handlers, troubleshooting
 ms.assetid: e1c8759f-5370-4308-8476-8c48b73509bf
-ms.openlocfilehash: 91bded2f1249bfcbeeca28419ee9bcec819babf6
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 704ca667a6d14ade7be0192e872f5e40791cb864
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56965421"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58830185"
 ---
 # <a name="troubleshooting-inherited-event-handlers-in-visual-basic"></a>Řešení potíží s obslužnými rutinami zděděných událostí v jazyce Visual Basic
 Toto téma obsahuje seznam běžných problémů, které vznikají u obslužných rutin událostí v zděděné součásti.  
@@ -29,4 +29,5 @@ Toto téma obsahuje seznam běžných problémů, které vznikají u obslužnýc
 -   Pokud nemá žádné zděděné metody `Handles` – klíčové slovo, ověřte, že váš kód neobsahuje speciální [AddHandler – příkaz](../../../../visual-basic/language-reference/statements/addhandler-statement.md) nebo jakékoli další metody, které zpracovávají stejné události.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Události](../../../../visual-basic/programming-guide/language-features/events/index.md)

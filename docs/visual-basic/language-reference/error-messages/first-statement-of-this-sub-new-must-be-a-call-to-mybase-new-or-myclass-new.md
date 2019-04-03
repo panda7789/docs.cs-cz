@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC30148
 ms.assetid: 4426e8fc-cb39-4eb8-ba95-503cd32fcc89
-ms.openlocfilehash: d29d7609f8f3f38eadda9a9c763f3ba8e6b99e61
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: debab4e495d05a05801dd11850d0665c8bd6b299
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57365084"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58834319"
 ---
 # <a name="first-statement-of-this-sub-new-must-be-a-call-to-mybasenew-or-myclassnew-no-accessible-constructor-without-parameters"></a>První příkaz tohoto výrazu 'Sub New' musí být volání 'MyBase.New' nebo 'MyClass.New' (žádný dostupný konstruktor bez parametrů).
 Prvním příkazem této 'Sub New musí být volání 'MyBase.New' nebo 'MyClass.New', protože základní třída\<basename > "z"\<derivedname >' nemá přístupné 'Sub New, kterou lze volat bez argumentů.  
@@ -28,4 +28,5 @@ Prvním příkazem této 'Sub New musí být volání 'MyBase.New' nebo 'MyClass
      Například, pokud základní třída nemá konstruktor, který je deklarován jako `Public Sub New(ByVal index as Integer)`, první příkaz v odvozený konstruktor třídy může být `MyBase.New(100)`.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Základní informace o dědičnosti](../../../visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md)

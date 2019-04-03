@@ -2,12 +2,12 @@
 title: Inspektoři zpráv
 ms.date: 03/30/2017
 ms.assetid: 9bd1f305-ad03-4dd7-971f-fa1014b97c9b
-ms.openlocfilehash: 99886ef112a74bb86346208c5c24b09349ba4027
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 248e74e039c0ebb0b1580ec2cb4f19d713d95c51
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54552850"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58830146"
 ---
 # <a name="message-inspectors"></a>Inspektoři zpráv
 Tento příklad ukazuje, jak implementovat a konfigurovat messageinspectors klienta a služby.  
@@ -413,4 +413,3 @@ catch (Exception e)
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\MessageInspectors`  
   
-## <a name="see-also"></a>Viz také:

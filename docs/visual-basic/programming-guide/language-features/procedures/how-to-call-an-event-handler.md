@@ -8,12 +8,12 @@ helpviewer_keywords:
 - procedures [Visual Basic], event handlers
 - procedures [Visual Basic], calling
 ms.assetid: 72e18ef8-144e-40df-a1f4-066a57271e28
-ms.openlocfilehash: 58a96ccd06b70d481de335af5c3cd2be565cbd92
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: dd21f80e4b3892cbd9db901b619ecff98f6b70bd
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56973519"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58837764"
 ---
 # <a name="how-to-call-an-event-handler-in-visual-basic"></a>Postupy: Volání obslužné rutiny událostí v jazyce Visual Basic
 *Události* je akce nebo výskyt – například myši klikněte na tlačítko nebo kreditního limitu překročil – v některých součástí programu, a pro která můžete napsat kód, který je rozpoznán reagovat. *Obslužná rutina události* se psaní kódu pro reakci na událost.  
@@ -53,6 +53,7 @@ ms.locfileid: "56973519"
      Obslužná rutina události z události můžete oddělit pomocí provádí [RemoveHandler – příkaz](../../../../visual-basic/language-reference/statements/removehandler-statement.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Procedury](./index.md)
 - [Procedury Sub](./sub-procedures.md)
 - [Příkaz Sub](../../../../visual-basic/language-reference/statements/sub-statement.md)

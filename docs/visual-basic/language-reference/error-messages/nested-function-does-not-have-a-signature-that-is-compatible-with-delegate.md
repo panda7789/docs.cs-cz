@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC36532
 ms.assetid: 493f292c-d81e-40ef-8b47-61f020571829
-ms.openlocfilehash: ea6f230715520cb35809d57db76b300da326ec9a
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 04eae6d2c6d64e8a0f46ae3c2801a7eb6d893dca
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55283462"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58822259"
 ---
 # <a name="nested-function-does-not-have-a-signature-that-is-compatible-with-delegate-delegatename"></a>Vnořená funkce nemá stejný podpis kompatibilní s delegátem '\<vlastnost delegatename > "
 Výraz lambda se přiřadila do delegáta, který má nekompatibilní podpis. Například v následujícím kódu, delegátu `Del` má dva celočíselné parametry.  
@@ -36,5 +36,6 @@ Delegate Function Del(ByVal p As Integer, ByVal q As Integer) As Integer
 -   Úprava definice delegáta nebo přiřazené lambda výraz tak, aby podpisy jsou kompatibilní.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Volný převod delegáta](../../../visual-basic/programming-guide/language-features/delegates/relaxed-delegate-conversion.md)
 - [Výrazy lambda](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)

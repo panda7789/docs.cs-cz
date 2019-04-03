@@ -2,17 +2,17 @@
 title: 'Návod: Přístup k webu pomocí modifikátoru Async a operátoru Await (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 84fd047f-fab8-4d89-8ced-104fb7310a91
-ms.openlocfilehash: a9eb9f53b456b309997ef9e6fdb83b770478889b
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 4d8f650f5150f862a77cd194d91d906f505723a7
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57379117"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58816990"
 ---
 # <a name="walkthrough-accessing-the-web-by-using-async-and-await-visual-basic"></a>Návod: Přístup k webu pomocí modifikátoru Async a operátoru Await (Visual Basic)
 Asynchronní programy můžete napsat snadno a intuitivně s použitím funkce async/await. Můžete psát asynchronní kód, který vypadá jako synchronní kód a nechte kompilátor obtížné zpětného volání funkce a pokračování, které obvykle zahrnuje asynchronního kódu.  
   
- Další informace o funkci Async naleznete v tématu [Asynchronous Programming with Async and Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md).  
+ Další informace o funkci Async naleznete v tématu [Asynchronní programování pomocí modifikátoru Async a operátoru Await](../../../../visual-basic/programming-guide/concepts/async/index.md).  
   
  Tento názorný postup začíná synchronní aplikace Windows Presentation Foundation (WPF), který sumarizuje počet bajtů v seznamu webů. Návodu poté převádí aplikaci, aby asynchronní řešení pomocí nové funkce.  
   
@@ -674,6 +674,7 @@ End Class
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Ukázka asynchronní metody: Přístup k webovému návodu (C# a Visual Basic)](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f)
 - [Operátor Await](../../../../visual-basic/language-reference/operators/await-operator.md)
 - [Async](../../../../visual-basic/language-reference/modifiers/async.md)

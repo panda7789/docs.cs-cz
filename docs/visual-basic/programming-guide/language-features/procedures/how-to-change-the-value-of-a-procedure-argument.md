@@ -13,12 +13,12 @@ helpviewer_keywords:
 - arguments [Visual Basic], ByRef
 - arguments [Visual Basic], changing value
 ms.assetid: 6fad2368-5da7-4c07-8bf8-0f4e65a1be67
-ms.openlocfilehash: ea91e88f6833b9a3abbb349688c277be10312a6c
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 6aee795fefe36c2ad19390c0ac6d1613b2199415
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56974910"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58837483"
 ---
 # <a name="how-to-change-the-value-of-a-procedure-argument-visual-basic"></a>Postupy: Změna hodnoty argumentu procedury (Visual Basic)
 Při volání procedury, každý argument, který zadáte odpovídá jednomu z parametrů definovaných v postupu. V některých případech můžete změnit kód procedury hodnotu základní argumentu ve volajícím kódu. V ostatních případech procedura může změnit pouze místní kopie argumentu.  
@@ -78,6 +78,7 @@ Při volání procedury, každý argument, který zadáte odpovídá jednomu z p
  Je vždycky představuje potenciální riziko postup, chcete-li změnit hodnotu argumentu ve volajícím kódu základní, kterému je povoleno. Ujistěte se, že očekáváte, že tuto hodnotu změnit a připravit tak zkontrolovat, že platnost před jeho použitím.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Procedury](./index.md)
 - [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)
 - [Postupy: Předání argumentů proceduře](./how-to-pass-arguments-to-a-procedure.md)

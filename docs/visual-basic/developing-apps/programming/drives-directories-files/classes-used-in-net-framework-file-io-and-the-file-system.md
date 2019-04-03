@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - file I/O classes
 ms.assetid: 4a5ca924-eea8-4a95-a5f0-6ac10de276a3
-ms.openlocfilehash: 9e84ac90054e4ac3d32bb436fc0756248e84fcd0
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2fdbeb2b77e88f144bc541d01ee2e904f8a84678
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54705320"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58832525"
 ---
 # <a name="classes-used-in-net-framework-file-io-and-the-file-system-visual-basic"></a>Třídy používané ve vstupně-výstupních operacích se soubory a v systému souborů v rozhraní .NET Framework (Visual Basic)
 Následující tabulky uvádějí třídy běžně používané pro soubor rozhraní .NET Framework vstupně-výstupních operací zařazených do kategorií do souboru vstupně-výstupních tříd, použitý k vytvoření datových proudů třídy a třídy používané pro čtení a zápis do datových proudů.  
@@ -57,6 +57,7 @@ Následující tabulky uvádějí třídy běžně používané pro soubor rozhr
 |<xref:System.IO.StringWriter?displayProperty=nameWithType>|Zapíše znaků, které mají `String`. Výstup může být buď datový proud v jakémkoli kódování nebo `String`.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Skládání streamů](../../../../standard/io/composing-streams.md)
 - [Vstup/výstup souborů a streamů](../../../../standard/io/index.md)
 - [Asynchronní vstupně-výstupní operace se soubory](../../../../standard/io/asynchronous-file-i-o.md)

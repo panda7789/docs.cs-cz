@@ -30,12 +30,12 @@ helpviewer_keywords:
 - exclamation point operator (!)
 - Visual Basic code, special characters
 ms.assetid: 310dce0c-45b5-4e0d-83e9-32df258d2a3e
-ms.openlocfilehash: 17b5fcc2be2730abfd7ee0090f9f34053e81c5f8
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 65fcd10521742e287c7934080b3352a06668df7a
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56971894"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58835554"
 ---
 # <a name="special-characters-in-code-visual-basic"></a>Speciální znaky v kódu (Visual Basic)
 Někdy je nutné použít speciální znaky v kódu, to znamená, znaky, které nejsou čísla. Interpunkce a speciální znaky znakové sady Visual Basic mají různé možnosti použití, z uspořádání textu programu k definování úkolů, které kompilátor nebo zkompilovaný program provede. Nezadávejte operaci, která se má provést.  
@@ -88,5 +88,6 @@ Někdy je nutné použít speciální znaky v kódu, to znamená, znaky, které 
  `!` Znak slouží také jako `Single` znak.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Struktura programu a zásady týkající se kódu](../../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)
 - [Znaky typu](../../../visual-basic/programming-guide/language-features/data-types/type-characters.md)

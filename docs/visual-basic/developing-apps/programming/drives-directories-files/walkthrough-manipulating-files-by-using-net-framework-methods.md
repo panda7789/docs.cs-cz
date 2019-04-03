@@ -15,12 +15,12 @@ helpviewer_keywords:
 - text files [Visual Basic], reading
 - I/O [Visual Basic], reading text from files
 ms.assetid: 7d2109eb-f98a-4389-b43d-30f384aaa7d5
-ms.openlocfilehash: 56d753c9bb4e3585049eb98929774ac810d8ed40
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 2361a42ececbe12b5f61833e5a40607c8215a65d
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56978173"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58821059"
 ---
 # <a name="walkthrough-manipulating-files-by-using-net-framework-methods-visual-basic"></a>Návod: Manipulace se soubory pomocí metod rozhraní .NET Framework (Visual Basic)
 Tento návod ukazuje, jak otevřít a přečíst soubor pomocí <xref:System.IO.StreamReader> třídy, zkontrolujte, pokud je přístupu k souboru, hledání řetězce v rámci souboru pro čtení s instancí <xref:System.IO.StreamReader> třídy a zápis do souboru pomocí <xref:System.IO.StreamWriter> třídy.  
@@ -148,6 +148,7 @@ Tento návod ukazuje, jak otevřít a přečíst soubor pomocí <xref:System.IO.
  K testování kódu, stiskněte klávesu F5 pro kompilaci aplikace. Klikněte na tlačítko **najít položky**, vyberte položku a pak klikněte na tlačítko **zobrazení**. Položka se zobrazí v `DisplayEntry` <xref:System.Windows.Forms.TextBox>. Klikněte na tlačítko **upravte položku**. Položka se zobrazí v `Entry` <xref:System.Windows.Forms.TextBox>. Upravte položku ve `Entry` <xref:System.Windows.Forms.TextBox> a klikněte na tlačítko **Odeslat úpravu**. Otevřít `MyDiary.txt` souboru k ověření vašich oprav. Teď vyberte položku a klikněte na tlačítko **odstranit položku**. Když <xref:System.Windows.Forms.MessageBox> požádá o potvrzení, klikněte na tlačítko **OK**. Ukončete aplikaci a otevřete `MyDiary.txt` potvrďte odstranění.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.IO.StreamReader>
 - <xref:System.IO.StreamWriter>
 - [Návody](../../../../visual-basic/walkthroughs.md)

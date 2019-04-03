@@ -2,12 +2,12 @@
 title: Operace projekce (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: b8d38e6d-21cf-4619-8dbb-94476f4badc7
-ms.openlocfilehash: f7f1ba7b595d5ea63468aaa2d4fdda62cb9d0693
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
+ms.openlocfilehash: e2af45f9cbbed9eb88095a30e2b77a7730740898
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58408948"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58820981"
 ---
 # <a name="projection-operations-visual-basic"></a>Operace projekce (Visual Basic)
 Projekce odkazuje na operace transformace objektu na nový formulář, který často se skládá pouze z těchto vlastností, které se následně použijí. S použitím projekce, můžete vytvořit nový typ, který je sestaven z každého objektu. Můžete vlastnosti projektu a provádění matematických funkcí na něj. Můžete také promítnout na původní objekt bez provedení změn.  
@@ -171,6 +171,7 @@ End Sub
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Linq>
 - [Přehled standardních operátorů dotazu (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)
 - [Klauzule Select](../../../../visual-basic/language-reference/queries/select-clause.md)

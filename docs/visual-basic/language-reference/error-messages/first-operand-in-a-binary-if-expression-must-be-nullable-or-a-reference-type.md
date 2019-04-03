@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC33107
 ms.assetid: 493c8899-3f6b-4471-8eb6-9284e8492768
-ms.openlocfilehash: cb47670e8417e903b2886887394b972d1ac138b0
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 32ff0adca9d35e6b5439ae06be85414924dac2e6
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55284632"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58838619"
 ---
 # <a name="first-operand-in-a-binary-if-expression-must-be-nullable-or-a-reference-type"></a>První operand v binárním výrazu 'If' musí být typu, který povoluje hodnotu Null, nebo typu odkazu.
 `If` Výraz může trvat dvě až tři argumenty. Když posíláte pouze dva argumenty, první argument musí být typu odkaz nebo typ připouštějící hodnotu Null. Pokud je první argument vyhodnocen jako cokoli jiného než `Nothing`, je tato hodnota vrácena. Pokud je vyhodnocen jako první argument `Nothing`, vyhodnotí a vrátí druhý argument.  
@@ -54,6 +54,7 @@ Console.WriteLine(If(booleanVar, "Test returns True.", "Test returns False."))
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Operátor If](../../../visual-basic/language-reference/operators/if-operator.md)
 - [Příkaz If...Then...Else](../../../visual-basic/language-reference/statements/if-then-else-statement.md)
 - [Typy hodnot s povolenou hodnotou Null](../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md)

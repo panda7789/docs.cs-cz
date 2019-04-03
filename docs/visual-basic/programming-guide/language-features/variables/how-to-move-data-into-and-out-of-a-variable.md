@@ -5,12 +5,12 @@ helpviewer_keywords:
 - variables [Visual Basic], retrieving values
 - variables [Visual Basic], storing data
 ms.assetid: 93744f46-bf78-4fa0-9640-1de01bc38d9a
-ms.openlocfilehash: 9b34173ebb3226fa00610c124c7b680e18d80de9
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 30d1c0ab91724ac556e59b272782513ee8b8067b
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54717941"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58818529"
 ---
 # <a name="how-to-move-data-into-and-out-of-a-variable-visual-basic"></a>Postupy: Přesun dat do a z proměnné (Visual Basic)
 Uložení hodnoty do proměnné tak, že vložíte název proměnné na levé straně příkazu přiřazení.  
@@ -50,6 +50,7 @@ Uložení hodnoty do proměnné tak, že vložíte název proměnné na levé st
      Hodnota proměnné podílí na výraz, stejně jako by konstantu, a pak je uložen v proměnné nebo vlastnosti na levé straně příkazu přiřazení.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Proměnné](../../../../visual-basic/programming-guide/language-features/variables/index.md)
 - [Deklarace proměnné](../../../../visual-basic/programming-guide/language-features/variables/variable-declaration.md)
 - [Objektové proměnné](../../../../visual-basic/programming-guide/language-features/variables/object-variables.md)

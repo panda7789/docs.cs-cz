@@ -12,12 +12,12 @@ helpviewer_keywords:
 - conversions [Visual Basic], array types
 - object arrays
 ms.assetid: fceff7d2-a1b7-44c7-b9aa-8bd831d8a444
-ms.openlocfilehash: 4170ca53252fef3afda026393300e34b99e9d018
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 88002e2c099ed9503beddb190d243aadcc1087fc
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54583081"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58830198"
 ---
 # <a name="array-conversions-visual-basic"></a>Převody pole (Visual Basic)
 Typ pole lze převést na typ jiné pole, za předpokladu splnění následujících podmínek:  
@@ -60,6 +60,7 @@ students = names
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Datové typy](../../../../visual-basic/programming-guide/language-features/data-types/index.md)
 - [Převody typů v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)
 - [Implicitní a explicitní převody](../../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)

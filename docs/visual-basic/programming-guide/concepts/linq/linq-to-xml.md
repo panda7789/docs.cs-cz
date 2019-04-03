@@ -2,12 +2,12 @@
 title: LINQ to XML (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: f7386556-a6b9-40d5-92b6-e8701dc2c63e
-ms.openlocfilehash: a6b09bb2384b3da6e106d13aaca178252f47f5d0
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1ed438b87d2b53e7e811c22e614c60c759fa07f2
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54648956"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58835853"
 ---
 # <a name="linq-to-xml-visual-basic"></a>LINQ to XML (Visual Basic)
 Technologie LINQ to XML poskytuje programovací rozhraní v paměti XML, které využívá rozhraní .NET Language-Integrated Query (LINQ). LINQ to XML použije nejnovější funkce jazyka rozhraní .NET Framework a je srovnatelná se aktualizované, přepracovaný programovací rozhraní XML Document Object Model (DOM).  
@@ -25,6 +25,7 @@ Technologie LINQ to XML poskytuje programovací rozhraní v paměti XML, které 
  Poskytuje referenční dokumentaci spravovaného ukazatele na LINQ to XML.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled technologie LINQ to XML v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/overview-of-linq-to-xml.md)
 - [XML](../../../../visual-basic/programming-guide/language-features/xml/index.md)
 - [Language-Integrated Query (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/index.md)

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - constants [Visual Basic]
 - constants [Visual Basic], list of
 ms.assetid: 309c0ad5-83e4-4f96-99ea-83cd95107417
-ms.openlocfilehash: 33327a8d5e7ce7676ffda6245f3e4f9cccc8b1fb
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 0a9c01269e12c2d84be4f30c236c439012a88153
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54573306"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58839584"
 ---
 # <a name="constants-and-enumerations-visual-basic"></a>Konstanty a výčty (Visual Basic)
 Visual Basic poskytuje řadu předdefinovaných konstanty a výčty pro vývojáře. Konstanty ukládání hodnot, které zůstávají neměnný po celou dobu spuštění aplikace. Výčty poskytují pohodlný způsob pro práci se sadami související s konstantami a přidružení konstantních hodnot s názvy.  
@@ -78,6 +78,7 @@ Visual Basic poskytuje řadu předdefinovaných konstanty a výčty pro vývojá
 |<xref:Microsoft.VisualBasic.VbStrConv>|Určuje, jaký typ převodu se provede při volání <xref:Microsoft.VisualBasic.Strings.StrConv%2A> funkce.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Referenční příručka jazyka Visual Basic](../../visual-basic/language-reference/index.md)
 - [Visual Basic](../../visual-basic/index.md)
 - [Přehled konstant](../../visual-basic/programming-guide/language-features/constants-enums/constants-overview.md)

@@ -21,12 +21,12 @@ helpviewer_keywords:
 - degrees
 - arccosine function
 ms.assetid: 63e449d8-9444-44fb-8db1-6d9cf346e2aa
-ms.openlocfilehash: 1273871faf65afdd1a894c03f13a2c93507c1b13
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 0d0606c52d1d50fcc2fd8eea3ad2851c95b18a69
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54505858"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58836581"
 ---
 # <a name="derived-math-functions-visual-basic"></a>Derivované matematické funkce (Visual Basic)
 V následující tabulce jsou uvedeny – vnitřní matematické funkce, které může být odvozena z vnitřní matematické funkce <xref:System.Math?displayProperty=nameWithType> objektu. Vnitřní matematické funkce se zpřístupní po přidání `Imports System.Math` do souboru nebo projektu.  
@@ -55,4 +55,5 @@ V následující tabulce jsou uvedeny – vnitřní matematické funkce, které 
 |Inverzní hyperbolický kotangens (Acoth(x))|Protokol ((x + 1) / (x – 1)) / 2|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Matematické funkce](../../../visual-basic/language-reference/functions/math-functions.md)

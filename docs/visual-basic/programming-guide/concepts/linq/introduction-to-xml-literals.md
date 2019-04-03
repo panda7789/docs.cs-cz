@@ -2,12 +2,12 @@
 title: Úvod k Literálům XML v Visual Basic2
 ms.date: 07/20/2015
 ms.assetid: 94fc0e03-978e-4c08-ab6c-0dc3c1e64f10
-ms.openlocfilehash: b6c4773236c3af83603033c74e2e12e9f47a86b6
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 68ba1e018d4ad9501532745a88090f0f756b5c17
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54624025"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58841278"
 ---
 # <a name="introduction-to-xml-literals-in-visual-basic"></a>Úvod k Literálům XML v jazyce Visual Basic
 Tato část obsahuje informace o vytváření stromů XML v jazyce Visual Basic.  
@@ -157,7 +157,7 @@ Console.WriteLine(n)
 </Root>  
 ```  
   
-### <a name="cloning-vs-attaching"></a>Klonování vs. Připojení  
+### <a name="cloning-vs-attaching"></a>Klonování versus připojení  
  Jak bylo zmíněno dříve, pokud používáte vložený výraz přidat existující uzly (včetně prvky) a atributy do nového stromu XML, pokud již má nadřazenou existujících uzlů, se klonují uzly a nově naklonované uzly jsou připojené do nového stromu XML. Pokud nejsou nadřazena stávající uzly, jsou jednoduše připojené do nového stromu XML.  
   
 ```vb  
@@ -196,4 +196,5 @@ Child2 was attached
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Vytváření stromů XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-xml-trees.md)

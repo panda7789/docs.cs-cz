@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC40025
 ms.assetid: adbd34bb-43d2-4266-90e7-cd1afaf49b4e
-ms.openlocfilehash: 9b23ebca955d961771b194df2c7316cb1b7f4a50
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 0d87adee65f491f8c968e4ba93cf4b9df03aff85
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55254090"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58842652"
 ---
 # <a name="type-of-member-membername-is-not-cls-compliant"></a>Typ člena '\<membername >' není kompatibilní se Specifikací CLS
 Datový typ zadaný pro tento člen není součástí [jazyková nezávislost a jazykově nezávislé komponenty](../../../standard/language-independence-and-language-independent-components.md) (CLS). Toto není k chybě v komponentě, protože [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] a Visual Basic podporují tento datový typ. Jiné součásti, které jsou napsané v striktně kompatibilní se Specifikací CLS kódu však nemusí podporovat tento typ dat. Takové součásti nemusí být úspěšně komunikovat s vaší komponentě.  
@@ -42,5 +42,5 @@ Datový typ zadaný pro tento člen není součástí [jazyková nezávislost a 
 -   Při vzájemném propojování s objekty automatizace nebo COM, mějte na paměti, že některé typy mají různou šířkou dat než [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]. Například `uint` je často 16 bitů v jiných prostředích. Pokud takové součásti předáváte 16bitový argument, deklarujte ho jako `UShort` místo `UInteger` v spravovaného kódu jazyka Visual Basic.  
   
 ## <a name="see-also"></a>Viz také:
-- [Reflexe](../../../framework/reflection-and-codedom/reflection.md)
 
+- [Reflexe](../../../framework/reflection-and-codedom/reflection.md)

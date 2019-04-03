@@ -3,12 +3,12 @@ title: Nástroje .NET core rozhraní příkazového řádku (CLI)
 description: Přehled funkcí a nástrojů pro .NET Core rozhraní příkazového řádku (CLI).
 ms.date: 08/14/2017
 ms.custom: seodec18
-ms.openlocfilehash: 5af0dfa01763aaa2ec35576ff30117d458ca7f7b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e174867ce06e573fc85579183df0196d8276fb37
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54565797"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58826311"
 ---
 # <a name="net-core-command-line-interface-cli-tools"></a>Nástroje .NET core rozhraní příkazového řádku (CLI)
 
@@ -122,11 +122,17 @@ dotnet /build_output/my_app.dll
 
 ### <a name="driver"></a>Ovladač
 
-Ovladač jmenuje [dotnet](dotnet.md) a má dvě odpovědnosti, buď spuštěný [aplikace závisí na architektuře](../deploying/index.md) nebo spuštění příkazu. Pouze `dotnet` se používá bez příkaz je, když se používá ke spuštění aplikace.
+Ovladač jmenuje [dotnet](dotnet.md) a má dvě odpovědnosti, buď spuštěný [aplikace závisí na architektuře](../deploying/index.md) nebo spuštění příkazu. 
 
-Spuštění aplikace závisí na architektuře, zadejte aplikace, po ovladače, například `dotnet /path/to/my_app.dll`. Při provádění příkazu ze složky, ve které se nachází aplikaci knihovny DLL, stačí provést `dotnet my_app.dll`.
+Spuštění aplikace závisí na architektuře, zadejte aplikace, po ovladače, například `dotnet /path/to/my_app.dll`. Při provádění příkazu ze složky, ve které se nachází aplikaci knihovny DLL, stačí provést `dotnet my_app.dll`. Pokud chcete použít konkrétní verzi modulu .NET Core Runtime, použijte `--fx-version <VERSION>` možnost (najdete v článku [příkaz dotnet](dotnet.md) odkaz).
 
-Když zadáte příkaz k ovladači, `dotnet.exe` zahájí proces spuštění příkazu rozhraní příkazového řádku. Nejprve ovladač Určuje verzi sady SDK používat. Pokud není verze zadané v možnosti příkazu, ovladač používá nejnovější dostupnou verzi. Chcete-li určit verzi než nejnovější verze, použijte `--fx-version <VERSION>` možnost (najdete v článku [příkaz dotnet](dotnet.md) odkaz). Jakmile se určí verzi sady SDK, ovladač vykoná příkaz.
+Když zadáte příkaz k ovladači, `dotnet.exe` zahájí proces spuštění příkazu rozhraní příkazového řádku. Příklad:
+
+```bash
+> dotnet build
+```
+
+Nejprve ovladač Určuje verzi sady SDK používat. Pokud není žádný ["global.json"](global-json.md), se používá nejnovější verzi sady SDK k dispozici. To může být buď ve verzi preview nebo stabilní verze, v závislosti na tom, co je to nejnovější na počítači.  Jakmile se určí verzi sady SDK, vykoná příkaz.
 
 ### <a name="command-verb"></a>Příkaz ("operace")
 

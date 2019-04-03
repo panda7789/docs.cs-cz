@@ -6,12 +6,12 @@ helpviewer_keywords:
 - XML comments, Visual Basic
 - Visual Basic code, documenting with XML
 ms.assetid: a0d35dc7-c5f9-4d74-92ff-a1c6f28d5235
-ms.openlocfilehash: d3658076b994ae0f7aedb64e8d45f7d6b366018c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 9b53b73afb9c6b793597c00fd2eb029b18bf1f9a
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54552291"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58831576"
 ---
 # <a name="documenting-your-code-with-xml-visual-basic"></a>Dokumentace kódu s XML (Visual Basic)
 V jazyce Visual Basic můžete dokumentaci kódu pomocí XML  
@@ -47,5 +47,6 @@ V jazyce Visual Basic můžete dokumentaci kódu pomocí XML
 -   [Nástroje XML v sadě Visual Studio](/visualstudio/xml-tools/xml-tools-in-visual-studio)  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Vývoj aplikací v jazyce Visual Basic](../../../visual-basic/developing-apps/index.md)
 - [Průvodce programováním v jazyce Visual Basic](../../../visual-basic/programming-guide/index.md)

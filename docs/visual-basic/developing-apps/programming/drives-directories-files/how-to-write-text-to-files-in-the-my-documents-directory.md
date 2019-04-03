@@ -7,12 +7,12 @@ helpviewer_keywords:
 - examples [Visual Basic], text files
 - writing to files [Visual Basic], in My Documents
 ms.assetid: 1c726124-781d-4976-9baa-ed46814ff3fe
-ms.openlocfilehash: 147dad822a8bc8b8e9692b88f6b498f841bac1fa
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 245e00402196ab2a8c5998e9515205bb6f37cce0
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56966746"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58828404"
 ---
 # <a name="how-to-write-text-to-files-in-the-my-documents-directory-in-visual-basic"></a>Postupy: Zápis textu do souborů adresáři MyDocuments v jazyce Visual Basic
 `My.Computer.FileSystem.SpecialDirectories` Objekt umožňuje přístup k adresářům speciální, například **MyDocuments** adresáře.  
@@ -44,6 +44,7 @@ ms.locfileid: "56966746"
  Tento příklad vytvoří nový soubor. Pokud aplikace potřebuje vytvořit soubor, tato aplikace potřebuje vytvořit oprávnění pro složku. Oprávnění se nastavují pomocí seznamů řízení přístupu. Pokud soubor již existuje, aplikace potřebuje pouze oprávnění, a menší oprávnění k zápisu. Kde je to možné, je bezpečnější vytvořit soubor při nasazení a udělit pouze oprávnění ke čtení pro jeden soubor, nikoli k udělení oprávnění vytvořit pro složku. Navíc je bezpečnější zapsat data do uživatelské složky než do kořenové složky nebo **Program Files** složky. Další informace najdete v tématu [Přehled technologie ACL](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms229742(v=vs.100)).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.IO.Path.Combine%2A?displayProperty=nameWithType>
 - <xref:Microsoft.VisualBasic.Devices.Computer>
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem>

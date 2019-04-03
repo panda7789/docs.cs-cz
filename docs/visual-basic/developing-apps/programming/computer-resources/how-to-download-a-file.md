@@ -8,12 +8,12 @@ helpviewer_keywords:
 - files [Visual Basic], downloading
 - files [Visual Basic], transferring
 ms.assetid: ac479f81-c0e2-4b99-af73-217f446b73da
-ms.openlocfilehash: 927f2598e064ddcda30a13d811bc4a986207b23d
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: bebb40a732415312742116b0b94743495049c477
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56969008"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58826641"
 ---
 # <a name="how-to-download-a-file-in-visual-basic"></a>Postupy: Stáhněte si soubor v jazyce Visual Basic
 <xref:Microsoft.VisualBasic.Devices.Network.DownloadFile%2A> Metodu je možné stáhnout soubor vzdálené a uloží je do určitého umístění. Pokud `ShowUI` parametr je nastaven na `True`, zobrazí se dialogové okno zobrazuje průběh stahování a uživatelé si můžou na zrušení operace. Ve výchozím nastavení nejsou přepsány existující soubory se stejným názvem. Pokud chcete přepsat existující soubory, nastavte `overwrite` parametr `True`.  
@@ -55,6 +55,7 @@ ms.locfileid: "56969008"
     >  Protokol FTP používá `DownLoadFile` metoda odesílá informace, včetně hesel ve formátu prostého textu a neměli byste používat k přenosu citlivých informací.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:Microsoft.VisualBasic.Devices.Network>
 - <xref:Microsoft.VisualBasic.Devices.Network.DownloadFile%2A>
 - [Postupy: Nahrát soubor](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-upload-a-file.md)

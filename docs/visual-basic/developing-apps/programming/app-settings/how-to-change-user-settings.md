@@ -7,12 +7,12 @@ helpviewer_keywords:
 - My.Settings object [Visual Basic], changing user settings
 - examples [Visual Basic], changing user settings
 ms.assetid: 41250181-c594-4854-9988-8183b9eb03cf
-ms.openlocfilehash: 4e93dbf453b831bb28707250466ea928bfe9a716
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 05c95026d061918b38cf301209afefa9498e33bf
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56976379"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58820968"
 ---
 # <a name="how-to-change-user-settings-in-visual-basic"></a>Postupy: Změna uživatelského nastavení v jazyce Visual Basic
 Uživatelské nastavení můžete změnit přiřazení nové hodnoty pro nastavení vlastnosti na `My.Settings` objektu.  
@@ -32,6 +32,7 @@ Uživatelské nastavení můžete změnit přiřazení nové hodnoty pro nastave
  Aplikace ukládá uživatelská nastavení při ukončení aplikace. Chcete-li uložit nastavení okamžitě, zavolejte `My.Settings.Save` metody. Další informace najdete v tématu [jak: Zachování uživatelského nastavení v jazyce Visual Basic](../../../../visual-basic/developing-apps/programming/app-settings/how-to-persist-user-settings.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Objekt My.Settings](../../../../visual-basic/language-reference/objects/my-settings-object.md)
 - [Postupy: Čtení nastavení aplikace v jazyce Visual Basic](../../../../visual-basic/developing-apps/programming/app-settings/how-to-read-application-settings.md)
 - [Postupy: Zachování uživatelského nastavení v jazyce Visual Basic](../../../../visual-basic/developing-apps/programming/app-settings/how-to-persist-user-settings.md)

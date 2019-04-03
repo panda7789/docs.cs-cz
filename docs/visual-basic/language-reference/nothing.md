@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Nothing keyword [Visual Basic]
 - Nothing keyword [Visual Basic], syntax
 ms.assetid: 06176e2d-bbf7-4a37-afaa-a86ad21ee99f
-ms.openlocfilehash: b8dfc166681dbadf1d2f4ba5a985011f5427f50a
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 97c651dbcc657fbab0706c9a959bd0031c0fe343
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56981423"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58826090"
 ---
 # <a name="nothing-visual-basic"></a>Nothing (Visual Basic)
 Představuje výchozí hodnotu libovolného datového typu. U referenčních typů je výchozí hodnota `null` odkaz. U typů hodnot výchozí hodnota závisí na tom, jestli je typ hodnoty s možnou hodnotou Null.  
@@ -51,6 +51,7 @@ Představuje výchozí hodnotu libovolného datového typu. U referenčních typ
  `Nothing` se liší od <xref:System.DBNull> objektu, který představuje Neinicializovaný typ variant nebo neexistující databázový sloupec.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Příkaz Dim](../../visual-basic/language-reference/statements/dim-statement.md)
 - [Doba života objektu: Způsob vytváření a zničení objektů](../../visual-basic/programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md)
 - [Doba platnosti v jazyce Visual Basic](../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md)

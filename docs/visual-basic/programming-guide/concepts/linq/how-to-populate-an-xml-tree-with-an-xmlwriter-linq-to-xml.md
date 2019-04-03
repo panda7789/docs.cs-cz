@@ -2,12 +2,12 @@
 title: 'Postupy: Naplnění stromu XML pomocí třídy XmlWriter (LINQ to XML) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 5792a0eb-94ee-440d-b601-58cca8c0ee0b
-ms.openlocfilehash: 53c77a9b31fa51f1ba79e99d564e5092f7c079a3
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: de020444950695e27b9d840dac41fab74b9c7eba
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54625871"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58835424"
 ---
 # <a name="how-to-populate-an-xml-tree-with-an-xmlwriter-linq-to-xml-visual-basic"></a>Postupy: Naplnění stromu XML pomocí třídy XmlWriter (LINQ to XML) (Visual Basic)
 Jedním ze způsobů k naplnění stromu XML je použít <xref:System.Xml.Linq.XContainer.CreateWriter%2A> k vytvoření <xref:System.Xml.XmlWriter>a pak zápis do <xref:System.Xml.XmlWriter>. Stromu XML se vyplní všechny uzly, které jsou zapsány do <xref:System.Xml.XmlWriter>.  
@@ -63,6 +63,7 @@ Console.WriteLine(newTree)
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Xml.Linq.XContainer.CreateWriter%2A>
 - <xref:System.Xml.XmlWriter>
 - <xref:System.Xml.Xsl.XslCompiledTransform>

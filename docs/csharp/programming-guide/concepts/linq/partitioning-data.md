@@ -2,19 +2,19 @@
 title: Dělení dat (C#)
 ms.date: 07/20/2015
 ms.assetid: 2a5c507b-fe22-443c-a768-dec7f9ec568d
-ms.openlocfilehash: 184d9d34e087a06ca3fad9b0a8dad571253b225d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: b857c8c6e6b56a7263e6725a747e98ccfe4ff4fc
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54702363"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58832460"
 ---
 # <a name="partitioning-data-c"></a>Dělení dat (C#)
 Vytváření oddílů v technologii LINQ odkazuje na operaci dělení vstupní sekvence na dva oddíly bez uspořádání prvků a vrácení jednoho z částí.  
   
  Následující obrázek znázorňuje výsledky tři různé dělení operace na sekvenci znaků. První operace vrátí první tři prvky v sekvenci. Druhou operaci přeskočí první tři prvky a vrátí zbývající prvky. Třetí operace přeskočí první dva prvky v pořadí a vrátí následující tři elementy.  
   
- ![Dělení operace LINQ](../../../../csharp/programming-guide/concepts/linq/media/linq_partition.png "LINQ_Partition")  
+ ![Obrázek, který ukazuje tři operace dělení LINQ.](./media/partitioning-data/linq-partitioning-operations.png)  
   
  V následující části jsou uvedeny standardní metody operátoru dotazu, které oddílu pořadí.  
   
@@ -22,10 +22,10 @@ Vytváření oddílů v technologii LINQ odkazuje na operaci dělení vstupní s
   
 |Název operátoru|Popis|Syntaxe výrazu dotazu jazyka C#|Další informace|  
 |-------------------|-----------------|---------------------------------|----------------------|  
-|Skip|Přeskočí elementy až do zadané pozice v pořadí.|Nelze použít.|<xref:System.Linq.Enumerable.Skip%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Skip%2A?displayProperty=nameWithType>|  
-|SkipWhile –|Vynechává prvky podle funkce predikátu, dokud element nesplňuje podmínku.|Nelze použít.|<xref:System.Linq.Enumerable.SkipWhile%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.SkipWhile%2A?displayProperty=nameWithType>|  
-|Take|Získá prvků až do zadané pozice v pořadí.|Nelze použít.|<xref:System.Linq.Enumerable.Take%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Take%2A?displayProperty=nameWithType>|  
-|TakeWhile –|Přijímá prvky podle funkce predikátu, dokud element nesplňuje podmínku.|Nelze použít.|<xref:System.Linq.Enumerable.TakeWhile%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.TakeWhile%2A?displayProperty=nameWithType>|  
+|Skip|Přeskočí elementy až do zadané pozice v pořadí.|Není k dispozici.|<xref:System.Linq.Enumerable.Skip%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Skip%2A?displayProperty=nameWithType>|  
+|SkipWhile –|Vynechává prvky podle funkce predikátu, dokud element nesplňuje podmínku.|Není k dispozici.|<xref:System.Linq.Enumerable.SkipWhile%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.SkipWhile%2A?displayProperty=nameWithType>|  
+|Take|Získá prvků až do zadané pozice v pořadí.|Není k dispozici.|<xref:System.Linq.Enumerable.Take%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Take%2A?displayProperty=nameWithType>|  
+|TakeWhile –|Přijímá prvky podle funkce predikátu, dokud element nesplňuje podmínku.|Není k dispozici.|<xref:System.Linq.Enumerable.TakeWhile%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.TakeWhile%2A?displayProperty=nameWithType>|  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -2,12 +2,12 @@
 title: 'Postupy: LINQ zápis metody osy XML (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: b676f025-a24c-4076-8713-aa809b2b8ce0
-ms.openlocfilehash: 5d1fdaa9a5c3cb47bedd6d8f6e98b59f844d9ef5
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f10ee90076a71aa44f480639d3bc460ea59044ea
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54655475"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58824166"
 ---
 # <a name="how-to-write-a-linq-to-xml-axis-method-visual-basic"></a>Postupy: LINQ zápis metody osy XML (Visual Basic)
 Můžete napsat vlastní metody osy pro načtení kolekce ze stromu XML. Jedním z nejlepších způsobů je zápis metody rozšíření, která vrátí kolekci elementy nebo atributy. Můžete napsat metodu rozšíření k vrácení konkrétním podmnožinám elementy nebo atributy, na základě požadavků vaší aplikace.  
@@ -216,4 +216,5 @@ End Module
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Pokročilé techniky dotazování (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)

@@ -2,12 +2,12 @@
 title: Vlastní zachycování zpráv
 ms.date: 03/30/2017
 ms.assetid: 73f20972-53f8-475a-8bfe-c133bfa225b0
-ms.openlocfilehash: 3b24535c67c1d16da63ec3b282d456e65ff8dd95
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 789b3a2003ab96a9658eab7c092067e6110a46cd
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54733269"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58824777"
 ---
 # <a name="custom-message-interceptor"></a>Vlastní zachycování zpráv
 Tento příklad ukazuje použití model rozšiřitelnosti kanálu. Konkrétně se ukazuje, jak implementovat vlastní prvek vazby, která vytváří objekty pro vytváření kanálů a moduly pro naslouchání kanálů aby se zachytily všechny příchozí a odchozí zprávy v určitém místě v zásobníku za běhu. Ukázka zahrnuje také klienta a serveru, které ukazují použití tyto vlastní objekty pro vytváření.  
@@ -161,4 +161,3 @@ Dangerous wind detected! Reported speed (70) is greater than 64 kph.
   
 5.  Nejprve spusťte Service.exe, pak spusťte Client.exe a podívejte se na obě okna konzoly pro výstup.  
   
-## <a name="see-also"></a>Viz také:

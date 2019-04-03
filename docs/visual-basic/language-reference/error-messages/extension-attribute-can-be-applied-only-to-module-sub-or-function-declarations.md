@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC36550
 ms.assetid: 4387a51f-733c-45d7-abdb-eb64d4f51078
-ms.openlocfilehash: e2e2c41d713b0b04b8bc7208a83d059f0d16bf06
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: a4561359e4d7cb0f6ebe44a5deb09b3374556ed8
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55278717"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58826181"
 ---
 # <a name="extension-attribute-can-be-applied-only-to-module-sub-or-function-declarations"></a>Atribut 'Extension' lze použít pouze v deklaracích 'Module', 'Sub' nebo 'Function'.
 Jediný způsob, jak rozšířit datový typ v jazyce Visual Basic je definovat rozšiřující metodu v modulu standard. Metoda rozšíření může být `Sub` procedury nebo `Function` postup. Všechny metody rozšíření musí být označeny pomocí atributu rozšíření `<Extension()>`, z <xref:System.Runtime.CompilerServices?displayProperty=nameWithType> oboru názvů. Volitelně může být označena modul, který obsahuje metodu rozšíření stejným způsobem. Žádné další použití atributu rozšíření není platný.  
@@ -43,6 +43,7 @@ End Namespace
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled atributy](../../../visual-basic/programming-guide/concepts/attributes/index.md)
 - [Rozšiřující metody](../../../visual-basic/programming-guide/language-features/procedures/extension-methods.md)
 - [Příkaz Module](../../../visual-basic/language-reference/statements/module-statement.md)

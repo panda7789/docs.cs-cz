@@ -11,12 +11,12 @@ helpviewer_keywords:
 - Shadows keyword [Visual Basic]
 - names [Visual Basic], shadowing
 ms.assetid: 6bf687cd-0544-4797-b51b-911125ec57c6
-ms.openlocfilehash: e879819d945f3e7256edd34e87b9cae4a04c0829
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c314db90a1a0f89613e20897387bdec8ec534837
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54512733"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58834137"
 ---
 # <a name="shadows-visual-basic"></a>Shadows (Visual Basic)
 Určuje, že deklarovaný programový prvek znovu deklaruje a skryje identicky pojmenovanou elementu, nebo sadu přetížených elementů v základní třídě.  
@@ -69,6 +69,7 @@ Určuje, že deklarovaný programový prvek znovu deklaruje a skryje identicky p
  [Příkaz Sub](../../../visual-basic/language-reference/statements/sub-statement.md)  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Shared](../../../visual-basic/language-reference/modifiers/shared.md)
 - [Static](../../../visual-basic/language-reference/modifiers/static.md)
 - [Private](../../../visual-basic/language-reference/modifiers/private.md)

@@ -11,12 +11,12 @@ helpviewer_keywords:
 - properties [Visual Basic], write-only
 - sensitive data
 ms.assetid: 488d2899-b09f-4cee-92f0-6f9f9fc4f944
-ms.openlocfilehash: b6c8a05a4575c5d1ec01aa1b2badf2129c54bc2a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1b8de27e872914ba59d73126d2a9a7c42609165e
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54522775"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58829020"
 ---
 # <a name="writeonly-visual-basic"></a>WriteOnly (Visual Basic)
 Určuje, že vlastnost může zapisovat, ale nedá se číst.  
@@ -49,6 +49,7 @@ Určuje, že vlastnost může zapisovat, ale nedá se číst.
  [Příkaz Property](../../../visual-basic/language-reference/statements/property-statement.md)  
   
 ## <a name="see-also"></a>Viz také:
+
 - [ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md)
 - [Private](../../../visual-basic/language-reference/modifiers/private.md)
 - [Klíčová slova](../../../visual-basic/language-reference/keywords/index.md)

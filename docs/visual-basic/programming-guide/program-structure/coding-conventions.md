@@ -6,12 +6,12 @@ helpviewer_keywords:
 - examples [Visual Basic], coding conventions
 - Visual Basic code, conventions
 ms.assetid: c1df130b-fec6-49a5-becf-0a7e494a1d0f
-ms.openlocfilehash: 634e39e3e274b919f63ff1b4f3c7b0cd311beaf1
-ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
+ms.openlocfilehash: f73648888b28c349104a70e78c29eb208d438b78
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57201173"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58814559"
 ---
 # <a name="visual-basic-coding-conventions"></a>Visual Basic – konvence kódování
 Microsoft vyvíjí vzorky a dokumentaci, postupujte podle pokynů v tomto tématu. Pokud budete postupovat podle stejné konvence psaní kódu, může získat následující výhody:  
@@ -206,4 +206,5 @@ Microsoft vyvíjí vzorky a dokumentaci, postupujte podle pokynů v tomto témat
      [!code-vb[VbVbalrGuidelines#34](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#34)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Pokyny pro zabezpečené kódování](../../../standard/security/secure-coding-guidelines.md)

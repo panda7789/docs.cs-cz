@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC30955
 ms.assetid: 966b61eb-441e-48b0-bedf-ca95384ecb8b
-ms.openlocfilehash: cd2f6e4b51bc327826301d3c7b39c97a4bed3793
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 5f313a43bc3a2f983dabbd45477d120fdb80d063
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55261240"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58829017"
 ---
 # <a name="value-of-type-typename1-cannot-be-converted-to-typename2"></a>Hodnotu typu '\<NázevTypu1 >' nelze převést na "\<NázevTypu2 >"
 Hodnotu typu '\<NázevTypu1 >' nelze převést na "\<NázevTypu2 >'. Neshody typů může být způsobena kombinováním odkazu na soubor s odkazem na projekt do sestavení '\<assemblyname >'. Nahraďte odkaz na soubor "\<filepath >' v projektu"\<projectname1 >' s odkazem na projekt '\<projectname2 >'.  
@@ -60,6 +60,6 @@ Hodnotu typu '\<NázevTypu1 >' nelze převést na "\<NázevTypu2 >'. Neshody typ
 -   Změňte odkaz na soubor odkazu na projekt.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Převody typů v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)
 - [Správa odkazů v projektu](/visualstudio/ide/managing-references-in-a-project)
-

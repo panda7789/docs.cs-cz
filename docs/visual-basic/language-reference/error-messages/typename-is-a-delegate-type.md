@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC32008
 ms.assetid: dc6abba0-a9ad-450f-8899-87265bc84abc
-ms.openlocfilehash: 4278ea0fc6a8dc2c6a90b720d2da70b1c26f2a17
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: c308805f5e73d740ff18a40d95b9cc2576ac95fc
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55283449"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58841241"
 ---
 # <a name="typename-is-a-delegate-type"></a>"\<typename >' je typ delegátu
 "\<typename >' je typ delegátu. Konstrukce delegáta povoluje pouze jeden výraz AddressOf jako seznam argumentů. Výraz AddressOf často lze použít místo vytváření delegátů.  
@@ -30,6 +30,7 @@ ms.locfileid: "55283449"
 -   Pomocí jediné `AddressOf` výraz v seznamu argumentů pro třídu delegáta v `New` klauzuli.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Operátor New](../../../visual-basic/language-reference/operators/new-operator.md)
 - [Operátor AddressOf](../../../visual-basic/language-reference/operators/addressof-operator.md)
 - [Delegáti](../../../visual-basic/programming-guide/language-features/delegates/index.md)

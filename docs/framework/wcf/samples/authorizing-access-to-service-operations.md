@@ -6,12 +6,12 @@ helpviewer_keywords:
 - Authorizing Access To Service Operations Sample [Windows Communication Foundation]
 - authorization, Windows Communication Foundation sample
 ms.assetid: ddcfdaa5-8b2e-4e13-bd85-887209dc6328
-ms.openlocfilehash: b38134c901e1058e966d217e9b673083e45803c7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 50b6ab528aaebabbe709104632e269dfa68072a5
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54716610"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58842366"
 ---
 # <a name="authorizing-access-to-service-operations"></a>Autorizace přístupu k operacím služby
 Tato ukázka předvádí, jak používat [ \<serviceAuthorization >](../../../../docs/framework/configure-apps/file-schema/wcf/serviceauthorization-element.md) povolit používání <xref:System.Security.Permissions.PrincipalPermissionAttribute> atribut k autorizaci přístupu k operacím služby. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) vzorku. Klienta a služby jsou nakonfigurovány [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md). `mode` Atribut [ \<zabezpečení >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) byla nastavena na `Message` a `clientCredentialType` byla nastavena na `Windows`. <xref:System.Security.Permissions.PrincipalPermissionAttribute> Je použít pro každou metodu služby a použít k omezení přístupu k jednotlivých operacích. Volající musí být správce Windows pro přístup k každé operace.  
@@ -63,4 +63,3 @@ public double Add(double n1, double n2)
   
 3.  Spusťte ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
-## <a name="see-also"></a>Viz také:

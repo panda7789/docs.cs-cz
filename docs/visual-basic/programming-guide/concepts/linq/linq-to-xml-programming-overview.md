@@ -2,12 +2,12 @@
 title: Přehled LINQ to XML programování (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: a7c07d0a-1fae-4610-ae51-56dd7075cc14
-ms.openlocfilehash: ba13482df74f3e371f4b79899464cb31144ae0cf
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 741a9bff54f856d7283cae8c748047d24c0377a0
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54693341"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58827013"
 ---
 # <a name="linq-to-xml-programming-overview-visual-basic"></a>Přehled LINQ to XML programování (Visual Basic)
 Tato témata poskytují informace o základní přehled o [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] třídy a také podrobné informace o tři z vašich nejdůležitějších třídy.  
@@ -24,4 +24,5 @@ Tato témata poskytují informace o základní přehled o [!INCLUDE[sqltecxlinq]
 |[Postupy: Vytvoření LINQ to XML Příklady (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-build-linq-to-xml-examples.md)|Obsahuje `Imports` příkazy, které jsou nutné k vytvoření LINQ to XML příklady.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Průvodce programováním (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/programming-guide-linq-to-xml.md)

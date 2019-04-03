@@ -2,12 +2,12 @@
 title: Zabezpečení přenosu WS
 ms.date: 03/30/2017
 ms.assetid: 33a20358-5e1b-458a-a6a9-15753bc7b99b
-ms.openlocfilehash: 0bf4a4221e52f3fa57c2dce4c23300ecbead28ae
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c5a3b6df570dcdeae1c36c71ae772c30ec31178b
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54616222"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58832089"
 ---
 # <a name="ws-transport-security"></a>Zabezpečení přenosu WS
 Tato ukázka demonstruje použití zabezpečení přenosu SSL pomocí <xref:System.ServiceModel.WSHttpBinding> vazby. Ve výchozím nastavení `wsHttpBinding` vazby poskytuje komunikaci pomocí protokolu HTTP. Když je nakonfigurován pro zabezpečení přenosu, vazba podporuje komunikaci přes protokol HTTPS. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) službu kalkulačky, která implementuje. `wsHttpBinding` Je zadán a nakonfigurovat v konfiguračních souborech aplikace pro klienta a služby.  
@@ -85,4 +85,3 @@ Press <ENTER> to terminate client.
   
 5.  Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
-## <a name="see-also"></a>Viz také:

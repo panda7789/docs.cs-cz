@@ -17,12 +17,12 @@ helpviewer_keywords:
 - local variables [Visual Basic], declarations
 - scope [Visual Basic], variables
 ms.assetid: d8f10226-92b1-480f-9f53-df377b2d7e15
-ms.openlocfilehash: fc531bb619ed54cf35d2e89b8e6df3ec7175f3f9
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 699737ffbe0b136af8862931fadacec26772b928
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56973545"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58833279"
 ---
 # <a name="variable-declaration-in-visual-basic"></a>Deklarace proměnné v jazyce Visual Basic
 Deklarujete proměnnou k určení jeho název a vlastnosti. Příkaz deklarace proměnných [příkazu Dim](../../../../visual-basic/language-reference/statements/dim-statement.md). Jeho umístění a obsah zadat vlastnosti proměnnou.  
@@ -78,6 +78,7 @@ Dim l, m As Long, x, y As Single
  Proměnné *úroveň přístupu* je rozsah kód, který má oprávnění k přístupu. Ta se určují podle modifikátor přístupu (například [veřejné](../../../../visual-basic/language-reference/modifiers/public.md) nebo [privátní](../../../../visual-basic/language-reference/modifiers/private.md)), který používáte v `Dim` příkaz. Další informace najdete v tématu [úrovní v jazyce Visual Basic přístupu](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Postupy: Vytvoření nové proměnné](../../../../visual-basic/programming-guide/language-features/variables/how-to-create-a-new-variable.md)
 - [Postupy: Přesun dat do a z proměnné](../../../../visual-basic/programming-guide/language-features/variables/how-to-move-data-into-and-out-of-a-variable.md)
 - [Datové typy](../../../../visual-basic/language-reference/data-types/index.md)

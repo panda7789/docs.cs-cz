@@ -18,12 +18,12 @@ helpviewer_keywords:
 - String literals [Visual Basic]
 - identifier type characters [Visual Basic], $
 ms.assetid: 15ac03f5-cabd-42cc-a754-1df3893c25d9
-ms.openlocfilehash: d841eaab8b09c9a2c126c40a1f846876f3e88601
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 3e87dc6527b4351467b1155439ee8266157c16ff
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54598812"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58842288"
 ---
 # <a name="string-data-type-visual-basic"></a>String – datový typ (Visual Basic)
 Obsahuje pořadí bodů kódu (2bajtových) bez znaménka 16bitové tohoto rozsahu v rozmezí 0 až 65535. Každý *kódu bodu*, nebo kód znaku, představuje jeden znak Unicode. Řetězec se může skládat z 0 až přibližně dvě miliardy (2 ^ 31) znaků Unicode.  
@@ -79,6 +79,7 @@ S = Microsoft.VisualBasic.Left(S, 4)
 -   **Typ architektury.** Odpovídajícím typem v rozhraní .NET Framework je <xref:System.String?displayProperty=nameWithType> třídy.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.String?displayProperty=nameWithType>
 - [Datové typy](../../../visual-basic/language-reference/data-types/index.md)
 - [Datový typ Char](../../../visual-basic/language-reference/data-types/char-data-type.md)

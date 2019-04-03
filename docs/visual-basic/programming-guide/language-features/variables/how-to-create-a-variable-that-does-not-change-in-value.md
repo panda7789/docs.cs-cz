@@ -5,12 +5,12 @@ helpviewer_keywords:
 - variables [Visual Basic], read-only
 - variables [Visual Basic], constant value
 ms.assetid: 86b59266-25df-4635-ae15-9b59c411d036
-ms.openlocfilehash: 626b46123e3047b391cd67d3e85c25c5432b2a69
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 57792db826caa996e163bc0a51b01a6bbd6a4858
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54640196"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58823321"
 ---
 # <a name="how-to-create-a-variable-that-does-not-change-in-value-visual-basic"></a>Postupy: Vytvoření proměnné, která se nezmění na hodnotu (Visual Basic)
 Může zobrazit odporuje pojem proměnné, která se nezmění jeho hodnotu. Ale existují situace, kdy konstanty není možné vydat je a je užitečné mít proměnná s pevnou hodnotu. V takovém případě můžete členské proměnné s definovat [jen pro čtení](../../../../visual-basic/language-reference/modifiers/readonly.md) – klíčové slovo.  
@@ -44,5 +44,6 @@ Může zobrazit odporuje pojem proměnné, která se nezmění jeho hodnotu. Ale
      Pokud není známo, hodnota v době kompilace, nebo nelze vypočítat v době kompilace v jediném příkazu, stále ji můžete přiřadit v době běhu v konstruktoru. Chcete-li to provést, je třeba deklarovat `ReadOnly` proměnné na úrovni třídy nebo struktury. V konstruktoru třídy nebo struktury compute pevnou hodnotu proměnné a přiřadíte ho k proměnné návrat z konstruktoru.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [WriteOnly](../../../../visual-basic/language-reference/modifiers/writeonly.md)
 - [Příkaz Const](../../../../visual-basic/language-reference/statements/const-statement.md)

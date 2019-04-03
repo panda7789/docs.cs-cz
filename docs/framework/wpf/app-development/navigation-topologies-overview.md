@@ -9,12 +9,12 @@ helpviewer_keywords:
 - navigation topologies [WPF]
 - dynamically-generated topology
 ms.assetid: 5d5ee837-629a-4933-869a-186dc22ac43d
-ms.openlocfilehash: 16ce791c300c431b7349293d00648c881f97c372
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 3e5cca90861ccdeaff904a34c6f484cfdd32c975
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57356777"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58819590"
 ---
 # <a name="navigation-topologies-overview"></a>Přehled topologií navigace
 <a name="introduction"></a> Tento přehled poskytuje úvod do topologie navigace v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]. Tři běžné topologie navigace s ukázkami, následně jsou popsány.  
@@ -46,7 +46,7 @@ ms.locfileid: "57356777"
   
  Toto téma popisuje tři běžné topologie navigace: *pevná lineární*, *pevná hierarchická*, a *dynamicky generované*. Každá topologie navigace je znázorněn s pomocí ukázky, která má [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] , jako je ten, který je znázorněno na následujícím obrázku:  
   
- ![Úloha stránky s datovými položkami](./media/navigationtopologyfigure6.png "NavigationTopologyFigure6")  
+ ![Stránky úloh s datovými položkami a navigačních tlačítek.](./media/navigation-topologies-overview/navigation-topology-data-items.png)  
   
 <a name="Structured_Navigation_Topologies"></a>   
 ## <a name="structured-navigation-topologies"></a>Topologie strukturované navigace  
@@ -60,9 +60,9 @@ ms.locfileid: "57356777"
   
 <a name="Navigation_over_a_Fixed_Linear_Topology"></a>   
 ## <a name="navigation-over-a-fixed-linear-topology"></a>Navigace prostřednictvím pevná lineární topologie  
- Pevná lineární topologie se podobá struktuře průvodce, který má jeden nebo více stránkách průvodce, které se přejde poté, v pevné posloupnosti. Následující obrázek znázorňuje základní strukturu a tok průvodce s pevná lineární topologie.  
+ Pevná lineární topologie se podobá struktuře průvodce, který má jeden nebo více stránkách průvodce, které se přejde poté, v pevné posloupnosti. Následující obrázek znázorňuje základní strukturu a tok průvodce s pevná lineární topologie:  
   
- ![Diagram topologie navigace](./media/navigationtopologyfigure1.png "NavigationTopologyFigure1")  
+ ![Diagram zobrazující průběh pevná lineární topologie.](./media/navigation-topologies-overview/navigation-topology-fixed-linear.png)  
   
  Chování typické pro navigaci přes pevná lineární topologie patří:  
   
@@ -84,13 +84,13 @@ ms.locfileid: "57356777"
   
 <a name="Dynamic_Navigation_over_a_Fixed_Hierarchical_Topology"></a>   
 ## <a name="dynamic-navigation-over-a-fixed-hierarchical-topology"></a>Dynamické navigace přes pevná hierarchická topologie  
- V některých aplikacích stránky povolit navigaci na dvě nebo více stránek, jak je znázorněno na následujícím obrázku.  
+ V některých aplikacích stránky povolit navigaci na dvě nebo více stránek, jak je znázorněno na následujícím obrázku: 
   
- ![Stránka, která můžete přejít na několika stránkách](./media/navigationtopologyfigure2.png "NavigationTopologyFigure2")  
+ ![Diagram zobrazující stránku můžete přejít na více stránkách.](./media/navigation-topologies-overview/navigation-topology-multiple-pages.png)  
   
- Tato struktura se označuje jako pevná hierarchická topologie a pořadí, ve kterém je procházet hierarchii často stanovena v době běhu aplikace nebo uživatele. V době běhu každá stránka v hierarchii, která umožňuje navigaci na dvě nebo více stránek shromažďuje data potřebná k určení stránku, která má přejít na. Následující obrázek znázorňuje jeden z několika možných navigace pořadí založen na předchozím obrázku.  
+ Tato struktura se označuje jako pevná hierarchická topologie a pořadí, ve kterém je procházet hierarchii často stanovena v době běhu aplikace nebo uživatele. V době běhu každá stránka v hierarchii, která umožňuje navigaci na dvě nebo více stránek shromažďuje data potřebná k určení stránku, která má přejít na. Následující obrázek znázorňuje jeden z několika možných navigace pořadí založen na předchozím obrázku:  
   
- ![Diagram topologie navigace](./media/navigationtopologyfigure3.png "NavigationTopologyFigure3")  
+ ![Diagram zobrazující průběh pořadí navigace je to možné.](./media/navigation-topologies-overview/navigation-topology-fixed-hierarchical.png)  
   
  Přestože pořadí, ve kterém jsou stránky ve struktuře pevná hierarchická přejde je stanovena v době běhu, činnost koncového uživatele je stejné jako uživatelské prostředí u pevná lineární topologie:  
   
@@ -114,13 +114,13 @@ ms.locfileid: "57356777"
   
 <a name="Navigation_over_a_Dynamically_Generated_Topology"></a>   
 ## <a name="navigation-over-a-dynamically-generated-topology"></a>Navigace v dynamicky generovaném topologie  
- V některých aplikacích pořadí, ve kterém se přejde poté, dvě nebo více stránek lze pouze určit v době běhu podle uživatele, aplikace nebo externí data. Následující obrázek znázorňuje sadu stránek s neurčenou navigační sekvenci.  
+ V některých aplikacích pořadí, ve kterém se přejde poté, dvě nebo více stránek lze pouze určit v době běhu podle uživatele, aplikace nebo externí data. Následující obrázek znázorňuje sadu stránek s neurčenou navigační sekvenci:  
   
- ![Diagram topologie navigace](./media/navigationtopologyfigure4.png "NavigationTopologyFigure4")  
+ ![Sady stránek s neurčenou navigační sekvenci.](./media/navigation-topologies-overview/navigation-topology-dynamically-generated.png)  
   
- Následující obrázek znázorňuje navigační sekvenci, který byl vybrán uživatelem v době běhu.  
+ Následující obrázek znázorňuje navigační sekvenci, který byl vybrán uživatelem v době běhu:  
   
- ![Diagram navigačního](./media/navigationtopologyfigure5.png "NavigationTopologyFigure5")  
+ ![Diagram zobrazující průběh pořadí navigace zvolená v době běhu.](./media/navigation-topologies-overview/navigation-topology-sequence-chosen-run-time.png)  
   
  Navigační sekvenci se označuje jako dynamicky generovaných topologií. Pro uživatele, stejně jako u jiných topologie navigace, činnost koncového uživatele je stejné je pro předchozí topologie:  
   

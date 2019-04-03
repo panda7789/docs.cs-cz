@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Dim statement [Visual Basic]
 - variables [Visual Basic], creating
 ms.assetid: 35300be3-77b0-4bef-a156-034d3cdedde0
-ms.openlocfilehash: db317b160a27c7e38bddba82eb4eac3088886705
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 86236f7e6f4821cc45dfab80273d82b6f167fba8
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54506885"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58823282"
 ---
 # <a name="how-to-create-a-new-variable-visual-basic"></a>Postupy: Vytvoření nové proměnné (Visual Basic)
 Vytvořte proměnnou s [příkazu Dim](../../../../visual-basic/language-reference/statements/dim-statement.md).  
@@ -56,6 +56,7 @@ Vytvořte proměnnou s [příkazu Dim](../../../../visual-basic/language-referen
     ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Proměnné](../../../../visual-basic/programming-guide/language-features/variables/index.md)
 - [Deklarace proměnné](../../../../visual-basic/programming-guide/language-features/variables/variable-declaration.md)
 - [Deklarované názvy elementů](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)

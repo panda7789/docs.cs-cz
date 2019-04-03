@@ -2,12 +2,12 @@
 title: Tok řízení v asynchronních programech (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: b0443af7-c586-4cb0-b476-742ae4098a96
-ms.openlocfilehash: 24a3ece8393fd739ff76fbe759a5572414ce5748
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 57c83021551ab386f62c8d22b90db8da8054df7f
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54532523"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58837426"
 ---
 # <a name="control-flow-in-async-programs-visual-basic"></a>Tok řízení v asynchronních programech (Visual Basic)
 Můžete napsat a snadněji udržovat asynchronní programy pomocí `Async` a `Await` klíčová slova. Ale výsledků možná vás překvapí Pokud nevíte, jak program pracuje. Toto téma sleduje tok řízení prostřednictvím jednoduchého asynchronního programu k zobrazení, když se ovládací prvek přesune z jedné metody na jinou a jaké informace jsou pokaždé přeneseny.  
@@ -359,6 +359,7 @@ Dim contentLength As Integer = Await getLengthTask
  ![Step SIX](../../../../csharp/programming-guide/concepts/async/media/asynctrace-six.png "AsyncTrace-SIX")  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Asynchronní programování pomocí modifikátoru Async a operátoru Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)
 - [Asynchronní návratové typy (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/async-return-types.md)
 - [Návod: Přístup k webu pomocí modifikátoru Async a operátoru Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)

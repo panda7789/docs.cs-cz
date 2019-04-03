@@ -10,12 +10,12 @@ helpviewer_keywords:
 - properties [Visual Basic], access levels
 - Property statement [Visual Basic], declaring mixed access levels
 ms.assetid: fdbb2d97-279a-4956-b26c-cbdfbc34915a
-ms.openlocfilehash: d2b1a80863fe29901554b4912acbbfbdfdab4122
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: aa0c71621b72d01067db0749a0678b706d13fbfa
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56972581"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58832122"
 ---
 # <a name="how-to-declare-a-property-with-mixed-access-levels-visual-basic"></a>Postupy: Deklarace vlastnosti se smíšenými úrovněmi přístupu (Visual Basic)
 Pokud chcete, aby `Get` a `Set` postupy na vlastnost, která má mít různé úrovně přístupu, můžete použít úroveň mnohem mírnější v `Property` příkazu a více omezující úroveň buď `Get` nebo `Set` příkaz. Pokud chcete, aby určité části kódu, abyste mohli získat hodnotu vlastnosti a některých jiných částí kódu budete moci změnit hodnotu použijete u vlastnosti smíšenými úrovněmi přístupu.  
@@ -35,6 +35,7 @@ Pokud chcete, aby `Get` a `Set` postupy na vlastnost, která má mít různé ú
      V předchozím příkladu `Get` procedura nemá stejný `Protected` přístup jako vlastnost, zatímco `Set` procedura nemá `Private` přístup. Třída odvozená z `employee` můžete přečíst `salary` hodnotu, ale jenom `employee` třídy můžete ho nastavit.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Procedury](./index.md)
 - [Procedury vlastnosti](./property-procedures.md)
 - [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)

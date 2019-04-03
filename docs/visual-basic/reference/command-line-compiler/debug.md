@@ -7,12 +7,12 @@ helpviewer_keywords:
 - -debug compiler option [Visual Basic]
 - debug compiler option [Visual Basic]
 ms.assetid: c2b0bea5-1d5e-499f-9bd5-4f6c6b715ea2
-ms.openlocfilehash: e32ce702847375c85a805926c56fb965a057ff03
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 9bf7170cee31f92481b15fb1227f21895cd3734d
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54605499"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58827975"
 ---
 # <a name="-debug-visual-basic"></a>-debug (Visual Basic)
 Způsobí, že kompilátor generovat ladicí informace a umístěte ho do výstupních souborů.  
@@ -51,6 +51,7 @@ vbc -debug -out:app.exe test.vb
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)
 - [/bugreport](../../../visual-basic/reference/command-line-compiler/bugreport.md)
 - [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

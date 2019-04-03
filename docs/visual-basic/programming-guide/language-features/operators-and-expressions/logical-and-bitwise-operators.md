@@ -21,12 +21,12 @@ helpviewer_keywords:
 - OrElse operator [Visual Basic]
 - logical operators [Visual Basic], unary
 ms.assetid: ca474e13-567d-4b1d-a18b-301433705e57
-ms.openlocfilehash: 94d43b7bea48d85e612b5c995e20e286f14b024a
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: ac47b6d7fa4861d18646a23f442caccc4062852f
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56976496"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58819304"
 ---
 # <a name="logical-and-bitwise-operators-in-visual-basic"></a>Logické a bitové operátory v jazyce Visual Basic
 Logické operátory porovnávají `Boolean` výrazy a vraťte se `Boolean` výsledek. `And`, `Or`, `AndAlso`, `OrElse`, A `Xor` operátory jsou *binární* protože přijímají dva operandy, zatímco `Not` operátor je *unární* protože trvá jeden operand. Některé z těchto operátorů lze provést také bitové logické operace na integrální hodnoty.  
@@ -96,6 +96,7 @@ Logické operátory porovnávají `Boolean` výrazy a vraťte se `Boolean` výsl
 >  Bitová operace lze provádět na pouze pro integrální typy. Hodnoty s plovoucí desetinnou čárkou musí převést na integrální typy než bitová operace můžete pokračovat.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Logické/bitové operátory (Visual Basic)](../../../../visual-basic/language-reference/operators/logical-bitwise-operators.md)
 - [Logické výrazy](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/boolean-expressions.md)
 - [Aritmetické operátory v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)

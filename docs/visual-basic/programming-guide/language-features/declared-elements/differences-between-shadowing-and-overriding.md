@@ -5,12 +5,12 @@ helpviewer_keywords:
 - shadowing, vs. overriding
 - overriding, vs. shadowing
 ms.assetid: 2d014a0b-7630-407d-8f4e-24bd87987923
-ms.openlocfilehash: d60d668c97019418b30b89147e86f7beea1c31f7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: b935184f0e4d0378bfea69811aa4e6c068a9776f
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54640671"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58827923"
 ---
 # <a name="differences-between-shadowing-and-overriding-visual-basic"></a>Rozdíly mezi stínováním a přepsáním (Visual Basic)
 Když definujete třídu, která dědí ze základní třídy, můžete někdy chtít znovu definovat jeden nebo více prvků základní třídy v odvozené třídě. Stínováním a přepsáním jsou k dispozici pro tento účel.  
@@ -22,7 +22,7 @@ Když definujete třídu, která dědí ze základní třídy, můžete někdy c
   
 ||||  
 |---|---|---|  
-|Porovnání|Stínový provoz|Přepsání|  
+|Porovnání|Stínování|Přepsání|  
 |Účel|Chrání proti následné změny základní třídy, která představuje člena, které jsou již definovány v odvozené třídě|Dosahuje jinou implementaci procedury nebo vlastnost se stejnou volací sekvence definování polymorfismu<sup>1</sup>|  
 |Předefinované – element|Některé deklarovaný typ elementu|Pouze procedury (`Function`, `Sub`, nebo `Operator`) nebo vlastnost|  
 |Element, nově definují obor|Některé deklarovaný typ elementu|Pouze procedura nebo vlastnost s identické volací sekvence<sup>1</sup>|  
@@ -52,6 +52,7 @@ Když definujete třídu, která dědí ze základní třídy, můžete někdy c
 -   Chcete, aby svobody změna typ prvku nebo sekvence volání.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Odkazy na deklarované elementy](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)
 - [Stínění v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md)
 - [Postupy: Skrytí proměnné se stejným názvem jako má vaše proměnná](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-hide-a-variable-with-the-same-name-as-your-variable.md)

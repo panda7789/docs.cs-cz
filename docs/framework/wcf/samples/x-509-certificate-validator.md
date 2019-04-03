@@ -2,12 +2,12 @@
 title: Validátor certifikátu X.509
 ms.date: 03/30/2017
 ms.assetid: 3b042379-02c4-4395-b927-e57c842fd3e0
-ms.openlocfilehash: a94653c02b642138e5e20a0452c42f0926e25ea7
-ms.sourcegitcommit: bef803e2025642df39f2f1e046767d89031e0304
+ms.openlocfilehash: c1572e874b2575bb777accb15ac5e6182c598253
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56305984"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58838206"
 ---
 # <a name="x509-certificate-validator"></a>Validátor certifikátu X.509
 Tento příklad ukazuje, jak implementovat vlastní validátor certifikátu X.509. To je užitečné v případech, kdy je vhodné pro požadavky na aplikace žádná z předdefinovaných režimy ověřování certifikátu X.509. Tento příklad ukazuje služba, která má vlastní validátor, který přijímá samostatně vydané certifikáty. Klient používá tento certifikát k ověření ve službě.
@@ -355,5 +355,3 @@ serviceHost.Credentials.ClientCertificate.Authentication.CustomCertificateValida
   
 > [!NOTE]
 >  Tento skript neodebere certifikáty služeb v klientském počítači při spuštění této ukázky na počítačích. Pokud jste provedli ukázky Windows Communication Foundation (WCF), které používají certifikáty na počítačích, je potřeba vymazat certifikáty služeb, které jsou nainstalovány v CurrentUser - TrustedPeople úložiště. Chcete-li to provést, použijte následující příkaz: `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` Příklad: `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`.
-
-## <a name="see-also"></a>Viz také:

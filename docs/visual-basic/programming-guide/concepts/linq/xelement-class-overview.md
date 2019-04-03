@@ -2,12 +2,12 @@
 title: Přehled třídy XElement (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 52331fcd-6023-4d19-b423-7b24f2d86ded
-ms.openlocfilehash: fe2a91d2b286061453e41870d68c04424417c6ef
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 7fbe1cc484ea3482bc455c161783bd7a4513d0bd
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54628810"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58830706"
 ---
 # <a name="xelement-class-overview-visual-basic"></a>Přehled třídy XElement (Visual Basic)
 <xref:System.Xml.Linq.XElement> Třídy je jedním ze základních tříd v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]. Reprezentuje XML element. Tato třída slouží k vytváření prvků; Změňte obsah elementu; Přidání, změna nebo odstranění podřízené elementy; přidat atributy pro element. nebo serializace obsah prvek v textové podobě. Můžete také spolupracovat s jinými třídami v <xref:System.Xml?displayProperty=nameWithType>, jako například <xref:System.Xml.XmlReader>, <xref:System.Xml.XmlWriter>, a <xref:System.Xml.Xsl.XslCompiledTransform>.  
@@ -99,4 +99,5 @@ Console.WriteLine(xmlTree)
  Další informace najdete v tématu [změna stromů XML (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled LINQ to XML programování (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-programming-overview.md)

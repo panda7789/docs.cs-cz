@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Public keyword [Visual Basic], syntax
 - Public access modifier
 ms.assetid: 284c9e1b-ed23-499b-9bc9-ad87c11485a5
-ms.openlocfilehash: 062d6276ab91705a4554da2afa8459a26453906f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 0c85564503f3c83e436044cd92ee3014945f1ef3
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54703611"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58818381"
 ---
 # <a name="public-visual-basic"></a>Public (Visual Basic)
 Určuje, že nejmíň jeden deklarovaný programový prvek nemá žádné omezení přístupu.  
@@ -66,6 +66,7 @@ Určuje, že nejmíň jeden deklarovaný programový prvek nemá žádné omezen
  [Příkaz Sub](../../../visual-basic/language-reference/statements/sub-statement.md)  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Protected](../../../visual-basic/language-reference/modifiers/protected.md)
 - [Friend](../../../visual-basic/language-reference/modifiers/friend.md)
 - [Private](../../../visual-basic/language-reference/modifiers/private.md)

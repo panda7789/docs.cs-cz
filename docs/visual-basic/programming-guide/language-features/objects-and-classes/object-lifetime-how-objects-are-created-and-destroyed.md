@@ -22,12 +22,12 @@ helpviewer_keywords:
 - Sub Dispose destructor
 - garbage collection [Visual Basic], Visual Basic
 ms.assetid: f1ee8458-b156-44e0-9a8a-5dd171648cd8
-ms.openlocfilehash: 582988c9eed19fe49bc86e75e7a9d80bbf2a6d59
-ms.sourcegitcommit: 15ab532fd5e1f8073a4b678922d93b68b521bfa0
+ms.openlocfilehash: 553868ae82501e479acadd04b3d5e4447bcea36e
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58654523"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58839818"
 ---
 # <a name="object-lifetime-how-objects-are-created-and-destroyed-visual-basic"></a>Doba života objektu: Jak objekty jsou vytvořeny a zničen (Visual Basic)
 Instance třídy objektu, je vytvořen pomocí `New` – klíčové slovo. Inicializace úlohy často je nutné provádět na nové objekty před jejich použití. Běžné úlohy inicializace zahrnují otevírání souborů, připojení k databázím a čtení hodnoty z klíče registru. Visual Basic řídí Inicializace nové objekty pomocí procedury volané *konstruktory* (speciální metody, které umožňují kontrolu nad inicializace).  
@@ -147,6 +147,7 @@ End Sub
  Další rozdíl mezi systémy uvolnění paměti zahrnuje použití `Nothing`. Výhod počítání referencí v jazyce Visual Basic verze 6.0 a starší, někdy programátoři přiřazené `Nothing` objektu proměnné k uvolnění odkazy na tyto proměnné uchovávat. Pokud je proměnná uložena poslední odkaz na objekt, objektu prostředky byly vydány okamžitě. V pozdějších verzích jazyka Visual Basic zatímco můžou nastat případy, ve kterých je tento postup hodnotný, provádění se nikdy způsobí, že odkazovaného objektu k uvolnění její prostředky okamžitě. K uvolnění prostředků okamžitě, použijte objektu <xref:System.IDisposable.Dispose%2A> metodu, pokud je k dispozici. Jenom byste měli nastavit proměnnou na `Nothing` je, když je jeho životnost dlouho relativní k době systému uvolňování paměti používá ke zjišťování osamocených objektů.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.IDisposable.Dispose%2A>
 - [Inicializace a ukončování komponent](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/ws9dc6t6(v=vs.120))
 - [Operátor New](../../../../visual-basic/language-reference/operators/new-operator.md)

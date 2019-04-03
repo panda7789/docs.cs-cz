@@ -2,14 +2,20 @@
 title: Operátory a výrazy v jazyce Visual Basic
 ms.date: 07/20/2015
 helpviewer_keywords:
-  - 'operators [Visual Basic], operands'
-  - 'operators [Visual Basic]'
-  - 'operands [Visual Basic], definition'
-  - 'Visual Basic code, operators'
-  - 'Visual Basic code, expressions'
-  - operands
-  - 'expressions [Visual Basic]'
+- operators [Visual Basic], operands
+- operators [Visual Basic]
+- operands [Visual Basic], definition
+- Visual Basic code, operators
+- Visual Basic code, expressions
+- operands
+- expressions [Visual Basic]
 ms.assetid: b86f3131-94ee-448f-96cd-79611e028b26
+ms.openlocfilehash: 8de4eeaa22f83392bcb6bb79a1fea327281dfec9
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58843744"
 ---
 # <a name="operators-and-expressions-in-visual-basic"></a>Operátory a výrazy v jazyce Visual Basic
 *Operátor* je prvek kódu, který provádí operace na jeden nebo více prvků kódu, které obsahují hodnoty. Například prvky hodnotu proměnné, konstanty, literály, vlastnosti, vrátí z `Function` a `Operator` postupy a výrazy.  
@@ -58,6 +64,7 @@ ms.assetid: b86f3131-94ee-448f-96cd-79611e028b26
   
   
 ## <a name="see-also"></a>Viz také:
+
 - [Operátory](../../../../visual-basic/language-reference/operators/index.md)
 - [Účinná kombinace operátorů](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/efficient-combination-of-operators.md)
 - [Příkazy](../../../../visual-basic/language-reference/statements/index.md)

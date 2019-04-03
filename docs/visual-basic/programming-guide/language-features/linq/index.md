@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - what's new [Visual Basic]
 ms.assetid: ddba5545-ff6e-46c3-8967-5c4280db5aca
-ms.openlocfilehash: 9794c13e7bcb924bc52493dc3aad8a94eb231518
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 286e6266ef8f11a7a09a9e9fe898276a6734a96d
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54582371"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58824855"
 ---
 # <a name="linq-in-visual-basic"></a>LINQ v jazyce Visual Basic
 Tato část obsahuje přehledy, ukázky a základní informace, které vám pomůžou pochopit a používat jazyka Visual Basic a [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)].  
@@ -46,6 +46,7 @@ Tato část obsahuje přehledy, ukázky a základní informace, které vám pom�
  Obsahuje příklad toho, jak vracet výsledky dotazu LINQ jako specifického typu místo jako anonymního typu.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [LINQ (Language-Integrated Query)](../../../../visual-basic/programming-guide/concepts/linq/index.md)
 - [Přehled technologie LINQ to XML v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/overview-of-linq-to-xml.md)
 - [Přehled LINQ to DataSet](../../../../framework/data/adonet/linq-to-dataset-overview.md)

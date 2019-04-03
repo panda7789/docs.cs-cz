@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Visual Basic code, procedures
 - arguments [Visual Basic], modifiable
 ms.assetid: 87b2df69-e1f7-4657-9caf-b3f48d693428
-ms.openlocfilehash: 06f3009d984f7a303a0ee6e8d529a3ff60900fbc
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a880ae8c13eebd5d9d325468098e058f58d3fa71
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54498680"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58826662"
 ---
 # <a name="differences-between-modifiable-and-nonmodifiable-arguments-visual-basic"></a>Rozdíly mezi upravitelnými a neupravitelnými argumenty (Visual Basic)
 Při volání procedury, typicky pass jeden nebo více argumentů do něj. Každý argument odpovídá základní programovací element. Základní elementy a argumenty, sami může být upravitelnými a neupravitelnými.  
@@ -38,6 +38,7 @@ Při volání procedury, typicky pass jeden nebo více argumentů do něj. Každ
  Volané procedury může upravovat jeho místní kopii neupravitelnými argument, ale tato změna nemá vliv na základní element ve volajícím kódu.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Procedury](./index.md)
 - [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)
 - [Postupy: Předání argumentů proceduře](./how-to-pass-arguments-to-a-procedure.md)

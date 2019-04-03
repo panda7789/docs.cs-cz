@@ -2,12 +2,12 @@
 title: 'Postupy: Výpočet hodnot sloupce v textovém souboru CSV (LINQ) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 88b2b9f3-c82e-41f3-b1b4-26ede5973a02
-ms.openlocfilehash: c99696472deaa79842e3270d05b63cd591754d8e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1249b5555c9ef7074410682ad9b26e5b003aea9c
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54671899"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58828991"
 ---
 # <a name="how-to-compute-column-values-in-a-csv-text-file-linq-visual-basic"></a>Postupy: Výpočet hodnot sloupce v textovém souboru CSV (LINQ) (Visual Basic)
 Tento příklad ukazuje, jak provádět agregační výpočty, jako je součet, průměr, Min a Max pro sloupce souboru .csv. Příklad zásady, které jsou uvedeny zde lze použít na jiné typy structured textu.  
@@ -146,5 +146,6 @@ End Class
  Vytvořit projekt, který cílí na rozhraní .NET Framework verze 3.5 nebo vyšší s odkazem na knihovnu System.Core.dll a `Imports` příkaz pro obor názvů System.Linq.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [LINQ a řetězce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)
 - [LINQ a souborové adresáře (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)

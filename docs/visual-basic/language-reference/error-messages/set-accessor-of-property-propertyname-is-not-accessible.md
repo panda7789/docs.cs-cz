@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC31102
 ms.assetid: 6f7b31b7-3656-4ae1-8851-90f5f4c6950a
-ms.openlocfilehash: 1539eb1652d93402c349c65f77a3edc65b3beb57
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 3bc50d6762998ca5d8f445d84c8b698c9f46436f
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55277560"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58834462"
 ---
 # <a name="set-accessor-of-property-propertyname-is-not-accessible"></a>Nastavte přistupující objekt vlastnosti '\<propertyname >' není dostupný
 Příkaz se pokusí uložit hodnotu vlastnosti nemá přístup k vlastnosti `Set` postup.  
@@ -34,5 +34,6 @@ Příkaz se pokusí uložit hodnotu vlastnosti nemá přístup k vlastnosti `Set
 -   Pokud máte kontrolu nad zdrojový kód, který definuje vlastnost, nebo musíte omezit `Set` postup úroveň přístupu více, než se pokusí přesunout příkaz, který nastavuje hodnotu vlastnosti do oblasti kódu, který má lepší přístup k samotné, vlastnosti Vlastnost.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Procedury vlastnosti](../../../visual-basic/programming-guide/language-features/procedures/property-procedures.md)
 - [Postupy: Deklarace vlastnosti se smíšenými úrovněmi přístupu](../../../visual-basic/programming-guide/language-features/procedures/how-to-declare-a-property-with-mixed-access-levels.md)

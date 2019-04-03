@@ -6,12 +6,12 @@ helpviewer_keywords:
 - serial ports [Visual Basic], dialing
 - My.Computer.Ports object
 ms.assetid: 3834db40-f431-45f1-b671-dc91787164b6
-ms.openlocfilehash: f8eda72f72a1d152030aef620a4e3868573b7244
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 98c35e3fc7e2ef5ab5ff06de751f05ab17e2662c
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56971647"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58829899"
 ---
 # <a name="how-to-dial-modems-attached-to-serial-ports-in-visual-basic"></a>Postupy: Vytáčení čísel na modemech připojených k sériovým portům v jazyce Visual Basic
 Toto téma popisuje způsob použití `My.Computer.Ports` vytáčení modemů v jazyce Visual Basic.  
@@ -52,6 +52,7 @@ Toto téma popisuje způsob použití `My.Computer.Ports` vytáčení modemů v 
  V tomto příkladu aplikace odpojí sériového portu po vytočí modemu. Reálně můžete k přenosu dat do a z modemu. Další informace najdete v tématu [jak: Příjem řetězců ze sériových portů](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-receive-strings-from-serial-ports.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:Microsoft.VisualBasic.Devices.Ports>
 - <xref:System.IO.Ports.SerialPort?displayProperty=nameWithType>
 - [Postupy: Odesílání řetězců na sériové porty](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-send-strings-to-serial-ports.md)

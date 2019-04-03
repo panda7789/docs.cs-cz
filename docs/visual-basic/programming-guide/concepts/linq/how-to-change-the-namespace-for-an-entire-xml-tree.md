@@ -2,12 +2,12 @@
 title: 'Postupy: Změnit Namespace pro celý strom XML (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 1837324b-5cb5-4fa8-95b9-3071efa0f913
-ms.openlocfilehash: 4b0d55ded82e9b2f52bb11474bd0b8997955dc1b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5a5926583990e3abda49ceaee4786a2158275a3b
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54718530"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58824998"
 ---
 # <a name="how-to-change-the-namespace-for-an-entire-xml-tree-visual-basic"></a>Postupy: Změnit Namespace pro celý strom XML (Visual Basic)
 Někdy nutné programově změnit obor názvů pro element nebo atribut. Technologie LINQ to XML to výrazně usnadňuje. <xref:System.Xml.Linq.XElement.Name%2A?displayProperty=nameWithType> Vlastnost lze nastavit. <xref:System.Xml.Linq.XAttribute.Name%2A?displayProperty=nameWithType> Vlastnost nelze nastavit, ale můžete snadno zkopírovat do atributy <xref:System.Collections.Generic.List%601?displayProperty=nameWithType>, odeberte existující atributy a pak přidejte nové atributy, které jsou v novém požadovaného oboru názvů.  
@@ -77,4 +77,5 @@ Console.WriteLine(root)
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Změna stromů XML (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md)

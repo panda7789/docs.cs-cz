@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Widening keyword [Visual Basic]
 - data type conversion [Visual Basic]
 ms.assetid: 646ae263-94d3-40a2-b0cc-64f619292f56
-ms.openlocfilehash: 3b9d1ec15c6c2000fb0842abe25848f853cdf986
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d7d43d4f5f931881d5c8b663c719fe7f92559799
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54703705"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58825310"
 ---
 # <a name="widening-visual-basic"></a>Rozšíření (Visual Basic)
 Označuje, že operátor převodu (`CType`) převede třídu nebo strukturu na typ, který může uchovat všechny možné hodnoty původní třídy nebo struktury.  
@@ -34,6 +34,7 @@ Označuje, že operátor převodu (`CType`) převede třídu nebo strukturu na t
  Příklad naleznete v tématu definice rozšíření a zúžení operátory převodu [jak: Definice operátora převodu](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Příkaz Operator](../../../visual-basic/language-reference/statements/operator-statement.md)
 - [Narrowing](../../../visual-basic/language-reference/modifiers/narrowing.md)
 - [Rozšíření a zúžení převodů](../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)

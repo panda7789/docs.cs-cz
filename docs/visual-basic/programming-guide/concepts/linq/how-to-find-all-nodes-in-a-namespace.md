@@ -2,12 +2,12 @@
 title: 'Postupy: Vyhledání všech uzlů v Namespace (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: b735d7da-5727-48a3-ab57-a16378adc32e
-ms.openlocfilehash: 3a89b0eae4baf380787df32b1d327dd1f52b6f05
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c04447df1d4a3e29558a3bad172715d2bdee340b
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54640673"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58813844"
 ---
 # <a name="how-to-find-all-nodes-in-a-namespace-visual-basic"></a>Postupy: Vyhledání všech uzlů v Namespace (Visual Basic)
 Můžete filtrovat podle oboru názvů jednotlivých elementu nebo atributu k vyhledání všech uzlů v tomto konkrétním oboru názvů.  
@@ -110,4 +110,5 @@ End Module
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Základní dotazy (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)

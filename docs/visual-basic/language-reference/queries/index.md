@@ -5,12 +5,12 @@ helpviewer_keywords:
 - queries [Visual Basic]
 - LINQ, queries
 ms.assetid: 8edc717c-4a24-4cbc-9c16-11f479c935db
-ms.openlocfilehash: 79ae5f1c2184f99390b1ef36a91f556cc617e51f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1ea49b16f70c0af87bbd3a8978fb10fe08d5ce6b
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54746345"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58836893"
 ---
 # <a name="queries-visual-basic"></a>Dotazy (Visual Basic)
 Visual Basic umožňuje vytvářet [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] výrazy ve vašem kódu.  
@@ -59,5 +59,6 @@ Visual Basic umožňuje vytvářet [!INCLUDE[vbteclinqext](~/includes/vbteclinqe
  Popisuje `Where` klauzuli, která určuje podmínku filtrování dotazu.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [LINQ](../../../visual-basic/programming-guide/language-features/linq/index.md)
 - [Úvod do LINQ v JAZYKU Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)

@@ -2,12 +2,12 @@
 title: Zprostředkovatel tokenu
 ms.date: 03/30/2017
 ms.assetid: 947986cf-9946-4987-84e5-a14678d96edb
-ms.openlocfilehash: dd27566886db62a6f06502749212ed4109c17a28
-ms.sourcegitcommit: bef803e2025642df39f2f1e046767d89031e0304
+ms.openlocfilehash: 39a898286447168c68e2b91b03ba816b4b7aa8fc
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56304983"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58834475"
 ---
 # <a name="token-provider"></a>Zprostředkovatel tokenu
 Tento příklad ukazuje, jak implementovat vlastní zprostředkovatele tokenu. Poskytovatel tokenu ve Windows Communication Foundation (WCF) slouží k poskytnutí přihlašovacích údajů k zabezpečení infrastruktury. Poskytovatel tokenu obecně zkontroluje cíl a problémů příslušné přihlašovací údaje tak, aby infrastruktura zabezpečení se dají zabezpečit zprávy. WCF se dodává s výchozí poskytovatel tokenu přihlašovacích údajů správce. WCF se také dodává se [!INCLUDE[infocard](../../../../includes/infocard-md.md)] zprostředkovatele tokenu. Vlastní poskytovatele tokenů jsou užitečné v následujících případech:
@@ -293,4 +293,3 @@ static void DisplayIdentityInformation()
   
 1.  Spusťte Cleanup.bat ve složce samples po dokončení spuštění ukázky.  
   
-## <a name="see-also"></a>Viz také:

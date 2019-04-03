@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC42107
 ms.assetid: 06800966-9c3b-4844-9f13-83ac95607d32
-ms.openlocfilehash: 1788d06aa5236d4cfc33999df86ad72c420b41df
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: a535a6b951dc9872109527f78d7de5f3fcdd3292
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55269000"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58821878"
 ---
 # <a name="property-propertyname-doesnt-return-a-value-on-all-code-paths"></a>Vlastnost "\<propertyname >' nevrací hodnotu ve všech cestách kódu.
 Vlastnost "\<propertyname >' nevrací hodnotu ve všech cestách kódu. V době běhu při použití vráceného výsledku může dojít k výjimce odkazem s hodnotou null.  
@@ -40,6 +40,7 @@ Vlastnost "\<propertyname >' nevrací hodnotu ve všech cestách kódu. V době 
      Je snazší zajistit, že každý návrat z procedury vrací hodnotu, pokud vždy používáte `Return` příkazu. Pokud to provedete, poslední příkaz před `End Get` by měl být `Return` příkazu.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Procedury vlastnosti](../../../visual-basic/programming-guide/language-features/procedures/property-procedures.md)
 - [Příkaz Property](../../../visual-basic/language-reference/statements/property-statement.md)
 - [Příkaz Get](../../../visual-basic/language-reference/statements/get-statement.md)

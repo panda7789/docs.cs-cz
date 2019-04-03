@@ -9,12 +9,12 @@ helpviewer_keywords:
 - properties [Visual Basic], auto-implemented
 - auto-implemented properties [Visual Basic]
 ms.assetid: 5c669f0b-cf95-4b4e-ae84-9cc55212ca87
-ms.openlocfilehash: 56ea9bac1326ebab7ef44fb5541c05be8bc855e7
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: aa045dd5454819a37ad81c76d97fd3e61e7d0420
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56967201"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58841251"
 ---
 # <a name="auto-implemented-properties-visual-basic"></a>Automaticky implementované vlastnosti (Visual Basic)
 *Automaticky implementované vlastnosti* vám umožní rychle určit vlastnost třídy, aniž byste museli napsat kód, který `Get` a `Set` vlastnost. Při psaní kódu pro automaticky implementovanou vlastnost kompilátor jazyka Visual Basic automaticky vytvoří soukromé pole k uložení proměnné vlastnost kromě vytvoření přidružený `Get` a `Set` postupy.  
@@ -94,6 +94,7 @@ End Class
  Pokud budete muset převést na rozšířenou vlastnost, která obsahuje automaticky implementované vlastnosti `Get` nebo `Set` postupu, Editor kódu jazyka Visual Basic můžete automaticky vygenerovat `Get` a `Set` postupy a `End Property`příkaz Vlastnosti. Kód je generována, pokud umístěte kurzor na prázdný řádek následující `Property` příkazu, zadejte `G` (pro `Get`) nebo `S` (pro `Set`) a stiskněte klávesu ENTER. Editor kódu jazyka Visual Basic generuje automaticky `Get` nebo `Set` postup pro vlastnosti jen pro čtení a jen pro zápis při stisknutí klávesy ENTER na konci `Property` příkazu.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Postupy: Deklarace a volání výchozí vlastnosti v jazyce Visual Basic](./how-to-declare-and-call-a-default-property.md)
 - [Postupy: Deklarace vlastnosti se smíšenými úrovněmi přístupu](./how-to-declare-a-property-with-mixed-access-levels.md)
 - [Příkaz Property](../../../../visual-basic/language-reference/statements/property-statement.md)

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Take While clause [Visual Basic]
 - Take While statement [Visual Basic]
 ms.assetid: db8f9f2f-fc9f-4a6c-b0b8-1bf048147e11
-ms.openlocfilehash: f7e0587d7737d99d48fcc9cd4a102e78248a55e5
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 080a106fc1deeb54165511ed03d7c7c5d2060f21
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56979931"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58818746"
 ---
 # <a name="take-while-clause-visual-basic"></a>Take While – klauzule (Visual Basic)
 Obsahuje elementy v kolekci, tak dlouho, dokud je zadaná podmínka `true` a vynechány zbývající prvky.  
@@ -41,6 +41,7 @@ Take While expression
  [!code-vb[VbSimpleQuerySamples#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#2)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Úvod do LINQ v JAZYKU Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
 - [Dotazy](../../../visual-basic/language-reference/queries/index.md)
 - [Klauzule Select](../../../visual-basic/language-reference/queries/select-clause.md)

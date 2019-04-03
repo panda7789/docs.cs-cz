@@ -9,20 +9,21 @@ helpviewer_keywords:
 - data [Windows Forms], navigating
 - data navigation
 ms.assetid: 4423eede-f8d1-4d02-822f-5bf8432680d0
-ms.openlocfilehash: 489c60aff7b431617477a381161e1c8f587947e5
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: b6413c8481a021afa34b7de228df14c109a50889
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57703306"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58834228"
 ---
 # <a name="bindingnavigator-control-overview-windows-forms"></a>BindingNavigator – přehled ovládacího prvku (Windows Forms)
 Můžete použít <xref:System.Windows.Forms.BindingNavigator> ovládacího prvku k vytvoření standardizovaný způsob pro uživatele k vyhledání a měnit data na formuláři Windows. Často používáte <xref:System.Windows.Forms.BindingNavigator> s <xref:System.Windows.Forms.BindingSource> komponenty, aby uživatelům procházení datových záznamů ve formuláři a interakci se záznamy.  
   
 ## <a name="how-the-bindingnavigator-works"></a>Jak funguje BindingNavigator  
- <xref:System.Windows.Forms.BindingNavigator> Ovládací prvek se skládá z <xref:System.Windows.Forms.ToolStrip> s řadou <xref:System.Windows.Forms.ToolStripItem> objekty pro většinu běžné akce související s daty: přidání dat, odstranění dat a procházet data. Ve výchozím nastavení <xref:System.Windows.Forms.BindingNavigator> ovládací prvek obsahuje tyto standardní tlačítka. Snímek se následující obrazovka ukazuje <xref:System.Windows.Forms.BindingNavigator> ovládací prvek na formuláři.  
+
+ <xref:System.Windows.Forms.BindingNavigator> Ovládací prvek se skládá z <xref:System.Windows.Forms.ToolStrip> s řadou <xref:System.Windows.Forms.ToolStripItem> objekty pro většinu běžné akce související s daty: přidání dat, odstranění dat a procházet data. Ve výchozím nastavení <xref:System.Windows.Forms.BindingNavigator> ovládací prvek obsahuje tyto standardní tlačítka. Následující snímek obrazovky ukazuje <xref:System.Windows.Forms.BindingNavigator> ovládací prvek na formuláři:
   
- ![BindingNavigator Control](./media/cpdatacontainerctrl.gif "cpDataContainerCtrl")  
+ ![Snímek obrazovky zobrazující BindingNavigator – ovládací prvek.](./media/bindingnavigator-control-overview-windows-forms/bindingnavigator-control-form.gif)  
   
  V následující tabulce jsou uvedeny ovládací prvky a popisuje jejich funkce.  
   

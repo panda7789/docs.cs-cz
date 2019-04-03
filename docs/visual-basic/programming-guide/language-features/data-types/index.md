@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Visual Basic code, data types
 - data types [Visual Basic], improving speed with
 ms.assetid: 5e1b9aaf-c7ca-4b29-9b22-0e82ed8e85e2
-ms.openlocfilehash: cf16fc1d9b5713be43a041c92dbd1228f3995d55
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 192ced1da400372f877cb54aaa29d60fcd0bbcad
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54694448"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58829197"
 ---
 # <a name="data-types-in-visual-basic"></a>Datové typy v jazyce Visual Basic
 *Datový typ* programovací element odkazuje na druhu dat může obsahovat a způsobu, jakým ukládá tato data. Datové typy platí pro všechny hodnoty, které mohou být uloženy v paměti počítače či k účasti na vyhodnocení výrazu. Každou proměnnou, literal, – konstanta, výčtu, vlastnost, parametr procedury, argumentu procedury a návratová hodnota procedury má datový typ.  
@@ -35,6 +35,7 @@ ms.locfileid: "54694448"
  Seznam datových typů jazyka Visual Basic najdete v tématu [datové typy](../../../../visual-basic/language-reference/data-types/index.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Znaky typu](../../../../visual-basic/programming-guide/language-features/data-types/type-characters.md)
 - [Základní datové typy](../../../../visual-basic/programming-guide/language-features/data-types/elementary-data-types.md)
 - [Složené datové typy](../../../../visual-basic/programming-guide/language-features/data-types/composite-data-types.md)

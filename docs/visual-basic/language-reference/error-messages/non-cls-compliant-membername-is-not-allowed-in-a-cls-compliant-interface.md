@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC40033
 ms.assetid: 060c4b08-798e-40f1-94cf-c05c524f1b8a
-ms.openlocfilehash: aeacc49faad6198a9341a1ec7d010f1cd173912d
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: dbffe2bd196e798b90104aebb74269387660c794
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55288974"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58840455"
 ---
 # <a name="non-cls-compliant-membername-is-not-allowed-in-a-cls-compliant-interface"></a>Non-kompatibilní se Specifikací CLS \<membername > není povolené v rozhraní kompatibilním se Specifikací CLS
 Vlastnost, procedura nebo událost v rozhraní je označen jako `<CLSCompliant(True)>` samotným rozhraním, když je označena jako `<CLSCompliant(False)>` nebo není označen.  
@@ -36,5 +36,5 @@ Vlastnost, procedura nebo událost v rozhraní je označen jako `<CLSCompliant(T
 -   Pokud budete vyžadovat, že tento člen zůstat v rámci svého aktuálního rozhraní, odeberte <xref:System.CLSCompliantAttribute> z jeho definice nebo označte ji jako `<CLSCompliant(False)>`.  
   
 ## <a name="see-also"></a>Viz také:
-- [Příkaz Interface](../../../visual-basic/language-reference/statements/interface-statement.md)
 
+- [Příkaz Interface](../../../visual-basic/language-reference/statements/interface-statement.md)

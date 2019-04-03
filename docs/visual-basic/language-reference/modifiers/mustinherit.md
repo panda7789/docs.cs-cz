@@ -10,12 +10,12 @@ helpviewer_keywords:
 - abstract classes [Visual Basic], MustInherit class
 - MustInherit keyword [Visual Basic]
 ms.assetid: b8f05185-90e3-4dd7-adc2-90d852fab5b4
-ms.openlocfilehash: 124262695f9333ce31c4097662688e0fe30f300d
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 0bda03d3c01356317fbcc56d44199ff4f9484b5b
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56969528"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58816561"
 ---
 # <a name="mustinherit-visual-basic"></a>MustInherit (Visual Basic)
 Určuje, že třídu lze použít pouze jako základní třídu a objekt nelze vytvořit přímo z ní.  
@@ -48,6 +48,7 @@ Určuje, že třídu lze použít pouze jako základní třídu a objekt nelze v
  [Příkaz Class](../../../visual-basic/language-reference/statements/class-statement.md)  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Příkaz Inherits](../../../visual-basic/language-reference/statements/inherits-statement.md)
 - [NotInheritable](../../../visual-basic/language-reference/modifiers/notinheritable.md)
 - [Klíčová slova](../../../visual-basic/language-reference/keywords/index.md)

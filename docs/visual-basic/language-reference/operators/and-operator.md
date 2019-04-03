@@ -13,12 +13,12 @@ helpviewer_keywords:
 - operators [Visual Basic], conjunction
 - bitwise comparison [Visual Basic]
 ms.assetid: 2ea711f3-439a-4c7c-9e3a-1ffe3b0d6046
-ms.openlocfilehash: 090ae67c1e5f04c5d9c4f6aed7f8131d8f830166
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 7e25f25677fa684427bdaf00cea73916ffbad655
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56968852"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58818615"
 ---
 # <a name="and-operator-visual-basic"></a>And – operátor (Visual Basic)
 Provede logickou konjunkci dvou `Boolean` výrazů nebo bitové spojení dvou numerických výrazů.  
@@ -87,6 +87,7 @@ result = expression1 And expression2
  V předchozím příkladu vytvoří výsledky 8, 2 a 0, v uvedeném pořadí.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Logické/bitové operátory (Visual Basic)](../../../visual-basic/language-reference/operators/logical-bitwise-operators.md)
 - [Priorita operátorů v jazyce Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
 - [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)

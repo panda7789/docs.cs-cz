@@ -1,17 +1,17 @@
 ---
-title: Založený na nule vs. Přístup k řetězci základem 1 v jazyce Visual Basic
+title: Přístup k řetězci se základem 0 vs. Přístup k řetězci základem 1 v jazyce Visual Basic
 ms.date: 07/20/2015
 helpviewer_keywords:
 - strings [Visual Basic], indexing
 ms.assetid: 0ed39f35-d68e-421d-ae14-460a5c0373b8
-ms.openlocfilehash: d4b2f73f8955b103e70e240e714e2b31d6198438
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a6ceb10d4a3cb9463551d8c85375ddbbb607ffdc
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54535528"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58830328"
 ---
-# <a name="zero-based-vs-one-based-string-access-in-visual-basic"></a>Založený na nule vs. Přístup k řetězci základem 1 v jazyce Visual Basic
+# <a name="zero-based-vs-one-based-string-access-in-visual-basic"></a>Přístup k řetězci se základem 0 vs. Přístup k řetězci základem 1 v jazyce Visual Basic
 Toto téma srovnává způsobu, jakým Visual Basic a [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] poskytují přístup ke znakům v řetězci. [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] Vždy poskytuje založený na nule přístup ke znakům v řetězci, zatímco Visual Basic poskytuje přístup založený na nule a založen na jedničce, v závislosti na funkci.  
   
 ## <a name="one-based"></a>Základem 1  
@@ -21,6 +21,7 @@ Toto téma srovnává způsobu, jakým Visual Basic a [!INCLUDE[dnprdnshort](~/i
  Příklad založený na nule funkce jazyka Visual Basic, vezměte v úvahu `Split` funkce. Rozdělí řetězec a vrátí pole obsahující podřetězce. [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] <xref:System.String.Split%2A?displayProperty=nameWithType> Metoda také rozdělí řetězec a vrátí pole obsahující podřetězce. Protože `Split` funkce a <xref:System.String.Split%2A> metoda návratový [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] pole, musí být založený na nule.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:Microsoft.VisualBasic.Strings.Mid%2A>
 - <xref:Microsoft.VisualBasic.Strings.Split%2A>
 - <xref:System.String.Substring%2A>

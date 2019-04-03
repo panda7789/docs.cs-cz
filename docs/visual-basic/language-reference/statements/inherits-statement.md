@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Inherits statement [Visual Basic]
 - Inherits statement [Visual Basic], syntax
 ms.assetid: 9e6fe042-9af3-4341-8093-fc3537770cf2
-ms.openlocfilehash: 18e35bab219003439136bc5d88f4b2f0ea6cdd1c
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 5ab90e44e2809c1e71d7f100970b7be73af4a732
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56965745"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58817094"
 ---
 # <a name="inherits-statement"></a>Inherits – příkaz
 Způsobí, že aktuální třída nebo rozhraní zdědí atributy, proměnné, vlastnosti, procedury a události z jiné třídy nebo sady rozhraní.  
@@ -64,6 +64,7 @@ Inherits basetypenames
  Rozhraní s názvem `thisInterface` teď obsahuje všechny definice v <xref:System.IComparable>, <xref:System.IDisposable>, a <xref:System.IFormattable> rozhraní zděděných členů poskytují v uvedeném pořadí pro konkrétní typ porovnání dvou objektů uvolnění při přidělování prostředků a vyjádření hodnoty objektu jako `String`. Třídu, která implementuje `thisInterface` musíte implementovat každého člena každé základní rozhraní.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [MustInherit](../../../visual-basic/language-reference/modifiers/mustinherit.md)
 - [NotInheritable](../../../visual-basic/language-reference/modifiers/notinheritable.md)
 - [Objekty a třídy](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - strings [Visual Basic], Visual Basic
 - strings [Visual Basic], regular expressions
 ms.assetid: 5674418d-f00d-4f72-9f98-d15897793350
-ms.openlocfilehash: 7262fded93b02c011484919f0504bb7225d8d2af
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 9d2d3c82f5512bc1e37e3b05086fbd364ee12298
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56965982"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58820882"
 ---
 # <a name="string-basics-in-visual-basic"></a>Základní informace o řetězcích v jazyce Visual Basic
 `String` Datový typ představuje posloupnost znaků (nichž každý představuje zase instance `Char` datový typ). Toto téma představuje základní koncepty řetězců v jazyce Visual Basic.  
@@ -72,6 +72,7 @@ World]]></xml>.Value
  Na rozdíl od jiných vnitřních datových typů `String` je typem odkazu. Když proměnné typu odkazu je předán jako argument funkce nebo podprogramu, je předána odkazem na adresu paměti, kde jsou data uložená namísto skutečné hodnoty řetězce. Takže v předchozím příkladu název proměnné zůstala stejná, ale odkazuje na jiný instanci `String` třídu, která obsahuje novou hodnotu.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Úvod do řetězců v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/introduction-to-strings.md)
 - [Datový typ String](../../../../visual-basic/language-reference/data-types/string-data-type.md)
 - [Datový typ Char](../../../../visual-basic/language-reference/data-types/char-data-type.md)

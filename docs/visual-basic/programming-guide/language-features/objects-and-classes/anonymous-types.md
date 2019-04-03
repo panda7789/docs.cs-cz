@@ -8,12 +8,12 @@ helpviewer_keywords:
 - anonymous types [Visual Basic]
 - types [Visual Basic], anonymous
 ms.assetid: 7b87532c-4b3e-4398-8503-6ea9d67574a4
-ms.openlocfilehash: 824481c9c73d496998d5810c620b2317c1ec252a
-ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
+ms.openlocfilehash: 3dc2083e5b4fd06250a1387c32f0eba28e879b30
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57203438"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58829132"
 ---
 # <a name="anonymous-types-visual-basic"></a>Anonymní typy (Visual Basic)
 Visual Basic podporuje anonymní typy, které vám umožní vytvářet objekty bez psaní definice třídy datového typu. Místo toho kompilátor vygeneruje třídu za vás. Třída nemá žádný použitelný název, dědí přímo z <xref:System.Object>a obsahuje vlastnosti, které jste zadali v rámci deklarace objektu. Protože není zadán název datového typu, to se označuje jako *anonymního typu*.  
@@ -127,6 +127,7 @@ Visual Basic podporuje anonymní typy, které vám umožní vytvářet objekty b
  Další informace o kód vytvořený pomocí kompilátoru a funkce přetížené metody, naleznete v tématu [definice anonymního typu](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-type-definition.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Inicializátory objektů: Pojmenované a anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)
 - [Odvození místního typu](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)
 - [Úvod do LINQ v JAZYKU Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)

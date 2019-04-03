@@ -5,12 +5,12 @@ helpviewer_keywords:
 - TileBrush [WPF], size of tile properties
 - Viewport property of TileBrush [WPF]
 ms.assetid: 04f41090-1b46-4e36-832f-d27d28708b8c
-ms.openlocfilehash: ecac41b0ca40abf59dfcba1efffc076687c2f1ff
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: 80b5dfc668464df829db593668bea8a9a4ec09e4
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57502225"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58839673"
 ---
 # <a name="how-to-set-the-tile-size-for-a-tilebrush"></a>Postupy: Nastavení velikosti dlaždice pro TileBrush
 
@@ -22,17 +22,17 @@ Tento příklad ukazuje, jak nastavení velikosti dlaždice pro <xref:System.Win
 
 Následující příklad používá <xref:System.Windows.Media.ImageBrush>, typu <xref:System.Windows.Media.TileBrush>k vykreslení obdélníku s dlaždicemi. Příklad nastaví Každá dlaždice na 50 % 50 procent výstupní oblasti (obdélník). V důsledku toho obdélník vybarvené čtyři projekce bitové kopie.
 
-Následující obrázek znázorňuje výstup v příkladu vytvoří.
+Následující obrázek znázorňuje výstup v příkladu vytvoří:
 
-![Příklad dělení do bloků s obrázkový štětec](./media/0.png "0")
+![Obdélník se čtyři třešně demonstrace dělení do bloků s obrázkový štětec.](./media/how-to-set-the-tile-size-for-a-tilebrush/rectangle-tile-image-brush.png)
 
 [!code-csharp[UsingImageBrush_snip#RelativeTileSizeExample](~/samples/snippets/csharp/VS_Snippets_Wpf/UsingImageBrush_snip/CSharp/TileSizeExample.cs#relativetilesizeexample)]
 
 Následující příklad vytvoří <xref:System.Windows.Media.ImageBrush>, nastaví jeho <xref:System.Windows.Media.TileBrush.Viewport%2A> k `0,0,25,25` a jeho <xref:System.Windows.Media.TileBrush.ViewportUnits%2A> k <xref:System.Windows.Media.BrushMappingMode.Absolute>a použije ho k vykreslení jiného obdélník. V důsledku toho vytváří štětec, které mají šířku 25 pixelů a výšku v pixelech 25.
 
-Následující obrázek znázorňuje výstup v příkladu vytvoří.
+Následující obrázek znázorňuje výstup v příkladu vytvoří:
 
-![A vedle sebe TileBrush se oblast zobrazení 0,0,0.25,0.25](./media/25x25viewport.png "25x25viewport")
+![Obdélník se 48 třešně demonstrace TileBrush s oblast zobrazení.](./media/how-to-set-the-tile-size-for-a-tilebrush/25-x-25-viewport-tilebrush.png)
 
 [!code-csharp[UsingImageBrush_snip#AbsoluteTileSizeExample](~/samples/snippets/csharp/VS_Snippets_Wpf/UsingImageBrush_snip/CSharp/TileSizeExample.cs#absolutetilesizeexample)]
 

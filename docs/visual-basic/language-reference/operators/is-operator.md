@@ -9,12 +9,12 @@ helpviewer_keywords:
 - TypeOf...Is expression
 - Is operator [Visual Basic]
 ms.assetid: 8045a6c8-2a83-45b6-ad47-d09a704c656d
-ms.openlocfilehash: c4b23bb2d81d1f5272a5813123681da7406c3368
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: a59ff4c956724c614342f0ee4c0622a67f1c25e7
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56980334"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58817068"
 ---
 # <a name="is-operator-visual-basic"></a>Is – operátor (Visual Basic)
 Porovná dvě proměnné objektových referencí.  
@@ -51,6 +51,7 @@ result = object1 Is object2
  Jak ukazuje předchozí příklad, můžete použít `Is` operátor testování obou časné a pozdní vazby objektů.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Operátor Typeof](../../../visual-basic/language-reference/operators/typeof-operator.md)
 - [Operátor IsNot](../../../visual-basic/language-reference/operators/isnot-operator.md)
 - [Operátory porovnání v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)

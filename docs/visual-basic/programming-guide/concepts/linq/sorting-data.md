@@ -2,12 +2,12 @@
 title: Řazení dat (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 6f81065c-0c89-4bf3-a6d8-442273f8810e
-ms.openlocfilehash: 5875b15dbdec69aca653b8f6cca4dd07fc9af343
-ms.sourcegitcommit: 16aefeb2d265e69c0d80967580365fabf0c5d39a
+ms.openlocfilehash: ad39aca6a53221f077a6b8313262d508744ff5ea
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58126250"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58819083"
 ---
 # <a name="sorting-data-visual-basic"></a>Řazení dat (Visual Basic)
 Operace řazení Seřadí prvky pořadí na základě jednoho nebo více atributů. První kritérium řazení provede primární řazení elementů. Zadáním druhý kritérium řazení, lze řazení elementů v rámci jednotlivých skupin primární řazení.  
@@ -26,7 +26,7 @@ Operace řazení Seřadí prvky pořadí na základě jednoho nebo více atribut
 |OrderByDescending|Seřadí v sestupném pořadí.|`Order By … Descending`|<xref:System.Linq.Enumerable.OrderByDescending%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.OrderByDescending%2A?displayProperty=nameWithType>|  
 |ThenBy|Provede sekundární řazení ve vzestupném pořadí.|`Order By …, …`|<xref:System.Linq.Enumerable.ThenBy%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.ThenBy%2A?displayProperty=nameWithType>|  
 |ThenByDescending|Provádí sekundární seřadit v sestupném pořadí.|`Order By …, … Descending`|<xref:System.Linq.Enumerable.ThenByDescending%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.ThenByDescending%2A?displayProperty=nameWithType>|  
-|reverzní|Obrátí pořadí prvků v kolekci.|Nelze použít.|<xref:System.Linq.Enumerable.Reverse%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Reverse%2A?displayProperty=nameWithType>|  
+|reverzní|Obrátí pořadí prvků v kolekci.|Není k dispozici.|<xref:System.Linq.Enumerable.Reverse%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Reverse%2A?displayProperty=nameWithType>|  
   
 ## <a name="query-expression-syntax-examples"></a>Příklady syntaxe výrazů dotazů  
   
@@ -143,6 +143,7 @@ MsgBox(sb.ToString())
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Linq>
 - [Přehled standardních operátorů dotazu (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)
 - [Klauzule Order By](../../../../visual-basic/language-reference/queries/order-by-clause.md)

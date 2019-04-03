@@ -10,12 +10,12 @@ helpviewer_keywords:
 - XML axis [Visual Basic], attribute
 - XML [Visual Basic], accessing
 ms.assetid: 7a4777e1-0618-4de9-9510-fb9ace2bf4db
-ms.openlocfilehash: 081359f32438c6474fe5c229634b60969e25a24e
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: a7a93608d14bcbec316228b59467b23e9247e043
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56965381"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58828798"
 ---
 # <a name="xml-attribute-axis-property-visual-basic"></a>Vlastnost osy atributu XML (Visual Basic)
 Poskytuje přístup k hodnotě atributu pro <xref:System.Xml.Linq.XElement> objekt nebo na první prvek v kolekci <xref:System.Xml.Linq.XElement> objekty.  
@@ -107,6 +107,7 @@ object.@<attribute>
  `Phone type: home`  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Xml.Linq.XElement>
 - [Vlastnosti osy XML](../../../visual-basic/language-reference/xml-axis/index.md)
 - [Literály XML](../../../visual-basic/language-reference/xml-literals/index.md)

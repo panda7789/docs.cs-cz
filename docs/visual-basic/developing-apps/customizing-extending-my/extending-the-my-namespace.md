@@ -8,12 +8,12 @@ helpviewer_keywords:
 - My namespace
 - My namespace [Visual Basic], extending
 ms.assetid: 808e8617-b01c-4135-8b21-babe87389e8e
-ms.openlocfilehash: 843ea95cded81aa7870f8a7bef20df586c4085a6
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 4d7bb6eef398746a4bd2dc4dbf3d526da1c1e0f1
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57361197"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58814148"
 ---
 # <a name="extending-the-my-namespace-in-visual-basic"></a>Rozšíření oboru názvů My v jazyce Visual Basic
 `My` Oboru názvů v jazyce Visual Basic zveřejňuje vlastnosti a metody, které vám umožní snadno využít sílu rozhraní .NET Framework. `My` Obor názvů zjednodušuje běžné programovací problémy, často zkracuje těžký úkol jediný řádek kódu. Kromě toho `My` obor názvů je plně rozšiřitelná tak, aby si můžete přizpůsobit chování `My` a přidávat nové služby do své hierarchie umožní reagovat na potřeby konkrétní aplikace. Toto téma popisuje, jak tom, jak přizpůsobit stávající členové `My` obor názvů a přidání své vlastní třídy pro `My` oboru názvů.  
@@ -101,6 +101,7 @@ ms.locfileid: "57361197"
  Podrobnosti o tom, jak nasadit `My` rozšíření oboru názvů, naleznete v tématu [balení a nasazení Moje rozšíření pro vlastní](../../../visual-basic/developing-apps/customizing-extending-my/packaging-and-deploying-custom-my-extensions.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Balení a nasazení vlastních rozšíření oboru názvů My](../../../visual-basic/developing-apps/customizing-extending-my/packaging-and-deploying-custom-my-extensions.md)
 - [Rozšíření aplikačního modelu jazyka Visual Basic](../../../visual-basic/developing-apps/customizing-extending-my/extending-the-visual-basic-application-model.md)
 - [Přizpůsobení výběru objektů dostupných v oboru názvů My](../../../visual-basic/developing-apps/customizing-extending-my/customizing-which-objects-are-available-in-my.md)

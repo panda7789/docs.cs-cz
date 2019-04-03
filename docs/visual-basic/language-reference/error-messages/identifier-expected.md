@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC30203
 ms.assetid: c05162ee-55d0-4d7f-84bb-e7758d4c5081
-ms.openlocfilehash: 56d405bfe1079e9862d47bc64566fee62a573be0
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 11a305581ba498715f7f24ecb75f737acdf12bfb
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54731033"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58843549"
 ---
 # <a name="identifier-expected"></a>Byl očekáván identifikátor.
 Programový element, který není rozpoznaný element deklarovaný název nastane, pokud kontext vyžaduje název elementu. Jednou z možných příčin je, že atribut jiný než nebyl zadán někde na začátku prohlášení.  
@@ -26,6 +26,6 @@ Programový element, který není rozpoznaný element deklarovaný název nastan
 -   Ověřte, jestli jsou všechny názvy elementů v příkazu napsaný správně.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)
 - [Přehled atributy](../../../visual-basic/programming-guide/concepts/attributes/index.md)
-

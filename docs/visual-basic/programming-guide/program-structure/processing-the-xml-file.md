@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - XML comments [Visual Basic], parsing [Visual Basic]
 ms.assetid: 78a15cd0-7708-4e79-85d1-c154b7a14a8c
-ms.openlocfilehash: 1cff4d72a294a4635df72dc91c46fa5da92aa388
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: a10255be140c7c86a435cca98cec5df7df82ffee
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56976197"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58842093"
 ---
 # <a name="processing-the-xml-file-visual-basic"></a>Zpracování souboru XML (Visual Basic)
 Kompilátor generuje řetězec ID pro každý konstrukce ve vašem kódu, který je označený ke generování dokumentace. (Informace o tom, jak označit kódu najdete v tématu [značky pro komentáře XML](../../../visual-basic/language-reference/xmldoc/index.md).) Řetězec ID jednoznačně identifikuje konstrukce. Programy, které zpracování souboru XML slouží k identifikaci, odpovídající řetězec ID [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] položky metadat/reflexe.  
@@ -42,5 +42,6 @@ Kompilátor generuje řetězec ID pro každý konstrukce ve vašem kódu, který
  [!code-vb[VbVbcnXmlDocComments#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnXmlDocComments/VB/Class1.vb#10)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [/doc](../../../visual-basic/reference/command-line-compiler/doc.md)
 - [Postupy: Vytvoření dokumentace XML](../../../visual-basic/programming-guide/program-structure/how-to-create-xml-documentation.md)

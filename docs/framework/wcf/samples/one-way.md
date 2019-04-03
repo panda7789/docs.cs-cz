@@ -2,12 +2,12 @@
 title: Jednosměrný
 ms.date: 03/30/2017
 ms.assetid: 74e3e03d-cd15-4191-a6a5-1efa2dcb9e73
-ms.openlocfilehash: 7e21a1cd16c025aae0f38b6a516b3c487f7b908f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e4b8a805fdbe4f330496233d5234abc0169b8c6e
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54529020"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58826688"
 ---
 # <a name="one-way"></a>Jednosměrný
 Tato ukázka předvádí, služba kontaktovat s operací jednosměrné služby. Klient nečeká servisní operace dokončit, protože v případě obousměrné servisní operace. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) a používá `wsHttpBinding` vazby. Služby v této ukázce je aplikace v místním prostředí konzoly, která vám umožní sledovat službu, která přijímá a zpracovává požadavky. Klient je také konzolovou aplikaci.  
@@ -106,4 +106,3 @@ Processing Divide(22,7) - result: 3.14285714285714
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Service\Oneway`  
   
-## <a name="see-also"></a>Viz také:

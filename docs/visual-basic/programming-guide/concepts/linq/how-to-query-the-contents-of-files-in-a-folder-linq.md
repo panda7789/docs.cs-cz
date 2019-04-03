@@ -2,12 +2,12 @@
 title: 'Postupy: Dotaz na obsah souborů ve složce (LINQ) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: edacbcd3-f3e4-4429-a8be-28a58dc0dd70
-ms.openlocfilehash: 6bebb4bd7444516c51551a5c56171d08f9d0ef2e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 04909de9fe3898600b127f1f7a5ba46834bc239a
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54566919"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58827884"
 ---
 # <a name="how-to-query-the-contents-of-files-in-a-folder-linq-visual-basic"></a>Postupy: Dotaz na obsah souborů ve složce (LINQ) (Visual Basic)
 Tento příklad ukazuje, jak dotaz nad všechny soubory ve stromové struktuře zadaný adresář, otevřete každý soubor a zkontrolujte jeho obsah. Tento typ technika může použít k vytváření indexů nebo obrácení pořadí indexů obsah adresářovém stromu. Hledání jednoduchého řetězce se provádí v tomto příkladu. Porovnávání vzorů složitější typy však lze provést s regulárním výrazem. Další informace najdete v tématu [jak: Kombinace dotazů LINQ s regulárními výrazy (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-combine-linq-queries-with-regular-expressions.md).  
@@ -74,5 +74,6 @@ End Module
  Vytvořit projekt, který cílí na rozhraní .NET Framework verze 3.5 nebo vyšší s odkazem na knihovnu System.Core.dll a `Imports` příkaz pro obor názvů System.Linq.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [LINQ to Objects (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)
 - [LINQ a souborové adresáře (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)

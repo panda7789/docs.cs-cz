@@ -6,12 +6,12 @@ helpviewer_keywords:
 - text files [Visual Basic], writing event information to a text file
 - events [Visual Basic], writing event information to a text file
 ms.assetid: 9ca7cc03-bf99-4933-9e5e-61ee28e9a6b4
-ms.openlocfilehash: 198e78b9b94111a4c07266287b943cbbccb2e978
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ee5c7cbea09c6183b48fe1b0acd051d65bdd1875
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54646172"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58819031"
 ---
 # <a name="how-to-write-event-information-to-a-text-file-visual-basic"></a>Postupy: Zápis informací o události do textového souboru (Visual Basic)
 Můžete použít `My.Application.Log` a `My.Log` objekty k protokolování informací o události, ke kterým dochází ve vaší aplikaci. Tento příklad ukazuje způsob použití `My.Application.Log.WriteEntry` metoda ukládá do protokolu trasování údaje do souboru protokolu.  
@@ -66,6 +66,7 @@ Můžete použít `My.Application.Log` a `My.Log` objekty k protokolování info
      Po dokončení konfigurace naslouchacího procesu protokolu souborů pro sestavení přijímá všechny zprávy, které `My.Application.Log` zapíše z tohoto sestavení.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:Microsoft.VisualBasic.Logging.Log?displayProperty=nameWithType>
 - <xref:Microsoft.VisualBasic.Logging.Log.WriteEntry%2A>
 - <xref:Microsoft.VisualBasic.Logging.Log.WriteException%2A>

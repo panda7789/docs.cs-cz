@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Microsoft.VisualBasic namespace
 - members [Visual Basic], Visual Basic run-time library
 ms.assetid: f5e82c6e-3500-452b-bdb8-78f0d5477604
-ms.openlocfilehash: ef6ce3fe62bd45716184ccbbb0f5a29f18e7477f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 061782dbd0ac54286a6c0da74fe769d98848f118
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54514800"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58828700"
 ---
 # <a name="visual-basic-runtime-library-members"></a>Členové knihovny prostředí Runtime jazyka Visual Basic
 `Microsoft.VisualBasic` Obor názvů obsahuje třídy, moduly, konstanty a výčty, které tvoří knihovny prostředí runtime jazyka Visual Basic. Členové tyto knihovny poskytují postupy, vlastnosti a konstantní hodnoty, které můžete používat ve vašem kódu. Každý modul a třída představuje určité kategorie funkce.  
@@ -194,5 +194,6 @@ ms.locfileid: "54514800"
  `Microsoft.VisualBasic` Obor názvů obsahuje konstanty a výčty jako součást knihovny run-time jazyka Visual Basic. Můžete použít tyto hodnoty konstant ve vašem kódu. Každý výčet představuje konkrétní kategorii funkce. Další informace najdete v tématu [konstanty a výčty](../../visual-basic/language-reference/constants-and-enumerations.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Konstanty a výčty](../../visual-basic/language-reference/constants-and-enumerations.md)
 - [Klíčová slova](../../visual-basic/language-reference/keywords/index.md)

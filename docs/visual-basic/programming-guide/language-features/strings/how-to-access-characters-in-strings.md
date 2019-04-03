@@ -5,12 +5,12 @@ helpviewer_keywords:
 - strings [Visual Basic], accessing characters
 - characters [Visual Basic], accessing in strings
 ms.assetid: 02c5206c-ffab-494d-b648-3b2ea358dc34
-ms.openlocfilehash: f2831333008844c959c3625698fce6c485450683
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 840a769b0bb322ef7b878a312437c5ec200ab074
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56967552"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58834488"
 ---
 # <a name="how-to-access-characters-in-strings-in-visual-basic"></a>Postupy: Přístup znakům v řetězcích v jazyce Visual Basic
 Tento příklad ukazuje, jak používat <xref:System.String.Chars%2A> vlastnost přístup ke znakům v zadaném umístění v řetězci.  
@@ -28,6 +28,7 @@ Tento příklad ukazuje, jak používat <xref:System.String.Chars%2A> vlastnost 
  <xref:System.String.Chars%2A> Vlastnost vyvolá <xref:System.IndexOutOfRangeException> výjimka pokud `index` parametr je větší než nebo rovna délce řetězce, nebo pokud je menší než nula  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.String.Chars%2A>
 - [Postupy: Převod řetězce na pole znaků](../../../../visual-basic/programming-guide/language-features/strings/how-to-convert-a-string-to-an-array-of-characters.md)
 - [Převod mezi řetězci a ostatními datovými typy v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/converting-between-strings-and-other-data-types.md)

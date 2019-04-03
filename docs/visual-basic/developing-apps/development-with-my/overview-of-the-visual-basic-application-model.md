@@ -5,12 +5,12 @@ helpviewer_keywords:
 - My.Application object [Visual Basic], Visual Basic application model
 - Visual Basic application model
 ms.assetid: 17538984-84fe-43c9-82c8-724c9529fe8b
-ms.openlocfilehash: 258e3862da79e78510991df26cc286c7231ad097
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.openlocfilehash: 02cc71dbda47d078284d9a2ec07538dfa063ac75
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58464096"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58819759"
 ---
 # <a name="overview-of-the-visual-basic-application-model"></a>Přehled aplikačního modelu jazyka Visual Basic
 Visual Basic poskytuje pro řízení chování aplikací modelu Windows Forms dobře definovaný model: model aplikace Visual Basic. Tento model obsahuje události pro zpracování aplikace při spuštění a vypnutí, jakož i události pro zachycení neošetřené výjimky. Také poskytuje podporu pro vývoj aplikací s jednou instancí. Aplikační model je rozšiřitelný, takže vývojáři, kteří potřebují mít větší kontrolu můžete přizpůsobit jeho přepisovatelné metody.  
@@ -55,6 +55,7 @@ Visual Basic poskytuje pro řízení chování aplikací modelu Windows Forms do
  Ve výchozím nastavení model aplikace Visual Basic je k dispozici pro projekty Windows Forms. Pokud konfigurace aplikace pro použití jiné spouštěcí objekt, nebo začněte kódu aplikace s vlastní `Sub Main`, pak tento objekt nebo třída může být nutné zadat implementaci <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase> třídy k použití modelu aplikací. Informace o změně spouštěcí objekt najdete v tématu [stránka aplikace, Návrhář projektu (Visual Basic)](/visualstudio/ide/reference/application-page-project-designer-visual-basic).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase>
 - <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Startup>
 - <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.StartupNextInstance>

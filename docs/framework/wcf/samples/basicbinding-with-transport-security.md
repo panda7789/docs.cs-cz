@@ -2,12 +2,12 @@
 title: Základní vazby u zabezpečení přenosu
 ms.date: 03/30/2017
 ms.assetid: f49b1de6-0254-4362-8ef2-fccd8ff9688b
-ms.openlocfilehash: 40aa914bee858d7cfaad627f7276623b22c2a7e8
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5f3e2305a4ae8da13a5241bef9c438a060234132
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54568523"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58826142"
 ---
 # <a name="basicbinding-with-transport-security"></a>Základní vazby u zabezpečení přenosu
 Tento příklad ukazuje použití zabezpečení přenosu SSL s základní vazby. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) službu kalkulačky, která implementuje.  
@@ -89,4 +89,3 @@ Press <ENTER> to terminate client.
   
 5.  Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
-## <a name="see-also"></a>Viz také:

@@ -2,12 +2,12 @@
 title: Ukázka slabě typované serializace JSON
 ms.date: 03/30/2017
 ms.assetid: 0b30e501-4ef5-474d-9fad-a9d559cf9c52
-ms.openlocfilehash: 212a5ea362600e833303711b750d1c7a0f7252b6
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 370030671a6a8c6709567bf070411543722ab8d8
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54676052"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58842665"
 ---
 # <a name="weakly-typed-json-serialization-sample"></a>Ukázka slabě typované serializace JSON
 Při serializaci uživatelem definovaný typ daného přenosový formát nebo deserializaci přenosový formát zpět do uživatelem definovaný typ, daný uživatelský typ musí být k dispozici na službu nebo klienta. Obvykle k tomu, <xref:System.Runtime.Serialization.DataContractAttribute> atribut bude použit pro tyto typy definované uživatelem a <xref:System.Runtime.Serialization.DataMemberAttribute> atributu se použije pro jejich členy. Tento mechanismus platí i v případě práce s objekty JavaScript Object Notation (JSON), jak je popsáno v tématu [jak: Serializace a deserializace dat protokolu JSON](../../../../docs/framework/wcf/feature-details/how-to-serialize-and-deserialize-json-data.md).  
@@ -140,4 +140,3 @@ My favorite bands are Band ABC and Band XYZ.
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Scenario\Ajax\WeaklyTypedJson`  
   
-## <a name="see-also"></a>Viz také:

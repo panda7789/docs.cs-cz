@@ -6,12 +6,12 @@ helpviewer_keywords:
 - enumerations [Visual Basic], declaring
 - declaring enumerations [Visual Basic]
 ms.assetid: db4ca1c3-f429-4c81-ae81-29e0157b29fd
-ms.openlocfilehash: 2654860269bc57cf6aed814760414c6ccb6383da
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 1e6ec63688899533b64a6fc5215f77019b64b49c
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56968761"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58830159"
 ---
 # <a name="how-to-declare-enumerations-visual-basic"></a>Postupy: Deklarace výčtů (Visual Basic)
 Vytvořit výčet s `Enum` příkazu v části deklarace třídy nebo modulu. Nelze deklarovat výčet v rámci metody. Pokud chcete zadat odpovídající úroveň přístupu, použijte `Private`, `Protected`, `Friend`, nebo `Public`.  
@@ -43,6 +43,7 @@ Vytvořit výčet s `Enum` příkazu v části deklarace třídy nebo modulu. Ne
      [!code-vb[VbEnumsTask#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class2.vb#6)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Výčty a kvalifikace názvu](../../../../visual-basic/programming-guide/language-features/constants-enums/enumerations-and-name-qualification.md)
 - [Postupy: Odkazování na člena výčtu](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-refer-to-an-enumeration-member.md)
 - [Postupy: Iterace ve výčtu v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-iterate-through-an-enumeration.md)

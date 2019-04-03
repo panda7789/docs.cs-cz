@@ -8,12 +8,12 @@ helpviewer_keywords:
 - text [Windows Forms], drawing with tab stops
 - tabs [Windows Forms], drawn text
 ms.assetid: 64878f98-39ba-4303-b63f-0859ab682eeb
-ms.openlocfilehash: 2b3d019db1fd3e9eeb9def1c18b54d293e5faca9
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 76431d34504b40a299200693735a0a989127d683
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57722422"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58832304"
 ---
 # <a name="how-to-set-tab-stops-in-drawn-text"></a>Postupy: Nastavení zarážek v kresleném textu
 Tabulátoru pro text můžete nastavit pomocí volání <xref:System.Drawing.StringFormat.SetTabStops%2A> metodu <xref:System.Drawing.StringFormat> objektu a následné předání, který <xref:System.Drawing.StringFormat> objektu <xref:System.Drawing.Graphics.DrawString%2A> metodu <xref:System.Drawing.Graphics> třídy.  
@@ -24,9 +24,9 @@ Tabulátoru pro text můžete nastavit pomocí volání <xref:System.Drawing.Str
 ## <a name="example"></a>Příklad  
  Následující příklad nastaví zarážek na 150, 250 a 350. Potom kód zobrazí seznam s kartami názvy a skóre v testech.  
   
- Následující obrázek znázorňuje s kartami text.  
+ Následující obrázek znázorňuje následující text:  
   
- ![Písma textu](./media/fontstext4.png "fontstext4")  
+ ![Snímek obrazovky zobrazující seznam s kartami názvy a skóre.](./media/how-to-set-tab-stops-in-drawn-text/tab-list-names-test-scores.png)  
   
  Následující kód předá dva argumenty <xref:System.Drawing.StringFormat.SetTabStops%2A> metody. Druhý argument je pole, která obsahuje kartu posunů. První argument předaný metodě <xref:System.Drawing.StringFormat.SetTabStops%2A> je 0, což znamená, že první posunutí v poli se měří z pozice 0, je levý okraj ohraničující obdélník.  
   

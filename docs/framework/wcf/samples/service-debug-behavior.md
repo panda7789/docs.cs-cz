@@ -2,12 +2,12 @@
 title: Chování ladění služby
 ms.date: 03/30/2017
 ms.assetid: 9d8fd3fb-dc39-427a-8235-336a7e7162ba
-ms.openlocfilehash: d84f3281beee78f8328011026e4d4653c05ed849
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 4eac577775074abf8c5f35c73dfa3286a75c2744
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54574895"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58835766"
 ---
 # <a name="service-debug-behavior"></a>Chování ladění služby
 Tato ukázka předvádí, jak lze konfigurovat nastavení chování ladění služby. Vzorek je založen na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md), která implementuje `ICalculator` kontrakt služby. Tato ukázka explicitně definuje chování ladění služby v konfiguračním souboru. To je možné provést imperativně v kódu.  
@@ -59,4 +59,3 @@ Tato ukázka předvádí, jak lze konfigurovat nastavení chování ladění slu
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Behaviors\ServiceDebug`  
   
-## <a name="see-also"></a>Viz také:

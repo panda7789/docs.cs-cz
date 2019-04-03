@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Message Contract
 ms.assetid: 5a200b78-1a46-4104-b7fb-da6dbab33893
-ms.openlocfilehash: b1c4db312c04c4248f16a2ff7ee8b54222e66cbe
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c65004189c43e4838c9131f61aaa09a41191b702
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54620276"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58817289"
 ---
 # <a name="default-message-contract"></a>Výchozí kontrakt zprávy
 Výchozí kontrakt zprávy ukázce služby, kde je předán vlastní uživatelsky definovanou zprávu do a z operací služby. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) , který implementuje rozhraní kalkulačku jako služba typu. Místo operace jednotlivé služby pro sčítání, odčítání, násobení a dělení používané [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md), tento příklad předává vlastní zprávu, která obsahuje operandy a operátor a vrátí výsledek aritmetické výpočtu.  
@@ -185,4 +185,3 @@ Press <ENTER> to terminate client.
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Message\Default`  
   
-## <a name="see-also"></a>Viz také:

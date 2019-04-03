@@ -2,12 +2,12 @@
 title: ConfigurationCodeGenerator
 ms.date: 03/30/2017
 ms.assetid: 3913aae8-165f-4014-9262-7fe426f90cb2
-ms.openlocfilehash: eb547c89dc5d4af9330a6881d64f433de9bdad94
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a481fe1e3c3aedd74f0e1546259b4eeeb9bed118
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54669078"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58821930"
 ---
 # <a name="configurationcodegenerator"></a>ConfigurationCodeGenerator
 ConfigurationCodeGenerator je nástroj, který můžete použít ke zveřejnění vašeho vlastního kanálu implementace konfigurační systém. To umožňuje uživatelům vlastní kanál konfigurovat kanál pomocí souboru .config, stejně jako poskytnutými systémem vazby, jako by konfigurace `NetTcpBinding` nebo vlastní vazby pomocí `TcpTransportBindingElement`.  
@@ -50,4 +50,3 @@ ConfigurationCodeGenerator je nástroj, který můžete použít ke zveřejněn�
   
      SampleConfig.xml soubor obsahuje kód konfigurace, který je nutné přidat do konfiguračního souboru, který registruje obslužné rutiny definované v předchozím kroku 1 nebo 2.  
   
-## <a name="see-also"></a>Viz také:

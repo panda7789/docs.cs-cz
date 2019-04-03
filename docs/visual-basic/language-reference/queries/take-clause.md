@@ -8,12 +8,12 @@ helpviewer_keywords:
 - queries [Visual Basic], Take
 - Take clause [Visual Basic]
 ms.assetid: 77bf87b2-1476-4456-957f-fee922fbad8c
-ms.openlocfilehash: 2705b61f4ebc839a9db98f037f303b4df78bbe5f
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: cb109eaf43fee19b77ac690492b85919c9d78301
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56976210"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58816951"
 ---
 # <a name="take-clause-visual-basic"></a>Take – klauzule (Visual Basic)
 Vrátí zadaný počet souvislých prvků od začátku kolekce.  
@@ -43,6 +43,7 @@ Take count
  [!code-vb[VbSimpleQuerySamples#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#1)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Úvod do LINQ v JAZYKU Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
 - [Dotazy](../../../visual-basic/language-reference/queries/index.md)
 - [Klauzule Select](../../../visual-basic/language-reference/queries/select-clause.md)

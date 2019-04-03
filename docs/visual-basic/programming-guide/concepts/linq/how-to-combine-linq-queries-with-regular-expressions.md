@@ -2,12 +2,12 @@
 title: 'Postupy: Kombinace dotazů LINQ s regulárními výrazy (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 3da1bd10-b0d8-4d5b-a637-966891c13592
-ms.openlocfilehash: 35d82b562211a9dd7fa035fe878bcdee769b8a85
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: da693b682e9b44970f167c030f6803f8dc6d2d36
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54652472"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58820370"
 ---
 # <a name="how-to-combine-linq-queries-with-regular-expressions-visual-basic"></a>Postupy: Kombinace dotazů LINQ s regulárními výrazy (Visual Basic)
 Tento příklad ukazuje způsob použití <xref:System.Text.RegularExpressions.Regex> třídy za účelem vytvoření regulárního výrazu pro složitější porovnávání v textových řetězců. Dotaz LINQ umožňuje snadno můžete filtrovat podle přesně soubory, které chcete hledat s regulárním výrazem a obrazce výsledky.  
@@ -85,5 +85,6 @@ End Class
  Vytvořit projekt, který cílí na rozhraní .NET Framework verze 3.5 nebo vyšší s odkazem na knihovnu System.Core.dll a `Imports` příkaz pro obor názvů System.Linq.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [LINQ a řetězce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)
 - [LINQ a souborové adresáře (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)

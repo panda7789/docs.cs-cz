@@ -11,12 +11,12 @@ helpviewer_keywords:
 - procedure parameters
 - parameters [Visual Basic], definition
 ms.assetid: c237c056-74f4-4749-9f2c-15864f139a31
-ms.openlocfilehash: ec7c92975bc056fd740033b602b15cd1611c44d1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a69b956c7cffcc2a26916d6fc92f23dd4e2322d7
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54694032"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58838973"
 ---
 # <a name="differences-between-parameters-and-arguments-visual-basic"></a>Rozdíly mezi parametry a argumenty (Visual Basic)
 Ve většině případů procedury musí mít některé informace o okolnostech, ve kterých byla volána. Postup, který provádí úlohy opakovaných nebo sdílené používá různé informace pro každé volání. Tyto informace se skládá z proměnné, konstanty a výrazy, které předáváte k postupu při jeho volání.  
@@ -38,6 +38,7 @@ Ve většině případů procedury musí mít některé informace o okolnostech,
  Na rozdíl od definice parametru argumenty nemají názvy. Každý argument je výraz, který může obsahovat nula nebo více proměnných, konstant a literály. Datový typ vyhodnocený výraz by měl odpovídat obvykle datového typu definovaného u odpovídajícího parametru a v každém případě musí být převoditelný na typ parametru.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Procedury](./index.md)
 - [Procedury Sub](./sub-procedures.md)
 - [Procedury funkce](./function-procedures.md)

@@ -13,12 +13,12 @@ helpviewer_keywords:
 - pattern matching, empty strings
 - operators [Visual Basic], comparison
 ms.assetid: 19a83804-b5af-4739-928b-ac93e64e457f
-ms.openlocfilehash: 884c5ddf15deb49719915f10e107ba6a3431c4bc
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: ca6537d81f080120fcbea0cf083f450dce4e9f62
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56965940"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58826012"
 ---
 # <a name="how-to-match-a-string-against-a-pattern-visual-basic"></a>Postupy: Porovnání řetězce se vzorem (Visual Basic)
 Pokud chcete zjistit, zda výraz [datový typ String](../../../../visual-basic/language-reference/data-types/string-data-type.md) vyhovuje vzoru, můžete použít [operátor Like](../../../../visual-basic/language-reference/operators/like-operator.md).  
@@ -79,6 +79,7 @@ Pokud chcete zjistit, zda výraz [datový typ String](../../../../visual-basic/l
      [!code-vb[VbVbalrOperators#74](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#74)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Operátory porovnání](../../../../visual-basic/language-reference/operators/comparison-operators.md)
 - [Operátory a výrazy](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)
 - [Operátor Like](../../../../visual-basic/language-reference/operators/like-operator.md)

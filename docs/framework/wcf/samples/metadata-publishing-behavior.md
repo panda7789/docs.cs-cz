@@ -5,12 +5,12 @@ helpviewer_keywords:
 - service behaviors, metadata publishing sample
 - Metadata Publishing Behaviors Sample [Windows Communication Foundation]
 ms.assetid: 78c13633-d026-4814-910e-1c801cffdac7
-ms.openlocfilehash: 00e20527de97cc2aac93d6f68b0620ba8b4b6de4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 3fa806207a92e031d9015c5a8b783df4b1cc2d21
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54628116"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58843143"
 ---
 # <a name="metadata-publishing-behavior"></a>Chování publikování metadat
 Ukázka chování publikování metadat ukazuje, jak řídit funkce publikování metadat služby. Pokud chcete zabránit neúmyslnému zveřejnění metadat služby potenciálně citlivých, výchozí konfigurace pro služby Windows Communication Foundation (WCF) zakáže publikování metadat. Toto chování je ve výchozím nastavení zabezpečený, ale také znamená, že nemůžete použít metadat importovat nástroj (například Svcutil.exe) ke generování kódu klienta, který je potřeba volat službu, není-li v konfiguraci není explicitně povoleno chování publikování metadat služby.  
@@ -86,4 +86,3 @@ Ukázka chování publikování metadat ukazuje, jak řídit funkce publikován�
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Behaviors\Metadata`  
   
-## <a name="see-also"></a>Viz také:

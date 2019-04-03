@@ -10,12 +10,12 @@ helpviewer_keywords:
 - run-time errors [Visual Basic], types of errors
 - syntax errors [Visual Basic], Visual Basic
 ms.assetid: 3048aabf-8c97-4e13-9150-853769cb5f6f
-ms.openlocfilehash: dc7cba394f623ae94a0d9ca8285fc12af8f0dacf
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 07db963ac3cf9d1c0d17c420480189d362cdaf2c
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54600333"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58831563"
 ---
 # <a name="error-types-visual-basic"></a>Typy chyb (Visual Basic)
 V jazyce Visual Basic, chyby (také nazývané *výjimky*) spadají do jedné ze tří kategorií: chyby syntaxe, chyby za běhu a chyby logiky.  
@@ -33,5 +33,6 @@ V jazyce Visual Basic, chyby (také nazývané *výjimky*) spadají do jedné ze
  *Logické chyby* jsou ty, které se zobrazí, až se aplikace nepoužívá. Jsou to většina často nežádoucí nebo neočekávané výsledky v reakci na akce uživatele. Chybným zadáním klíče nebo jiných mimo vliv například může způsobit, že aplikace přestane fungovat během očekávané parametry, nebo úplně se vynechá. Logické chyby jsou obvykle nejtěžší typ k vyřešení, protože není vždy jasné kde pocházejí.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Příkaz Try...Catch...Finally](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)
 - [Základy ladicího programu](/visualstudio/debugger/debugger-basics)

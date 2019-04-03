@@ -2,12 +2,12 @@
 title: Osy integrované v jazyce v jazyce Visual Basic (LINQ to XML)
 ms.date: 07/20/2015
 ms.assetid: d450a556-a134-4261-b011-44e399660894
-ms.openlocfilehash: 2bae085e82c01644127a9dbdb3a3fe6b775a08f6
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 0de88ad55724f71f5671a044dbadcb2f6c59e829
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54702116"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58840988"
 ---
 # <a name="language-integrated-axes-in-visual-basic-linq-to-xml"></a>Osy integrované v jazyce v jazyce Visual Basic (LINQ to XML)
 Tato část popisuje funkcí integrovaných přímo do jazyka Visual Basic k tomu, aby pro přístup k XML. Mnoho příkladů v LINQ k dokumentaci XML použít tyto integrované osy jazyka Visual Basic.  
@@ -22,4 +22,5 @@ Tato část popisuje funkcí integrovaných přímo do jazyka Visual Basic k tom
 |[Vlastnost indexeru rozšíření](../../../../visual-basic/language-reference/xml-axis/extension-indexer-property.md)|Poskytuje přístup k jednotlivým prvkům v kolekci.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Osy LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-axes.md)

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - properties [Visual Basic], read-only
 - read-only variables
 ms.assetid: e868185d-6142-4359-a2fd-a7965cadfce8
-ms.openlocfilehash: c4f13964c09b60d02cd5e9f5fc9e2998d7758c3d
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 6e361cbe89f4c51f28199b008de817c2d48ef326
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56979304"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58825388"
 ---
 # <a name="readonly-visual-basic"></a>ReadOnly (Visual Basic)
 Určuje, že proměnné nebo vlastnosti lze číst, ale není zapsána.  
@@ -62,5 +62,6 @@ Určuje, že proměnné nebo vlastnosti lze číst, ale není zapsána.
  [Příkaz Property](../../../visual-basic/language-reference/statements/property-statement.md)  
   
 ## <a name="see-also"></a>Viz také:
+
 - [WriteOnly](../../../visual-basic/language-reference/modifiers/writeonly.md)
 - [Klíčová slova](../../../visual-basic/language-reference/keywords/index.md)

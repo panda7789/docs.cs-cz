@@ -2,12 +2,12 @@
 title: Syntaxe výrazu dotazu pro standardní operátory dotazu (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: eb978d86-d3b5-497b-95ce-a054bea8f510
-ms.openlocfilehash: 49a0b9d70022ee655d87b34a3bb044e1f60b308d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: bdbca93d5898e363ccf62b13231163573e2ba972
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54549675"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58832512"
 ---
 # <a name="query-expression-syntax-for-standard-query-operators-visual-basic"></a>Syntaxe výrazu dotazu pro standardní operátory dotazu (Visual Basic)
 Některé častěji používané operátory standardního dotazu mít vyhrazené klíčové slovo syntaxe jazyka Visual Basic, umožňující volat v rámci *výrazu dotazu*. Výraz dotazu je lépe čitelný, jinou formu vyjádření dotazu než jeho *založených na volání metody* ekvivalentní. Klauzule dotazového výrazu jsou přeloženy do volání metody dotazu v době kompilace.  
@@ -43,6 +43,7 @@ Některé častěji používané operátory standardního dotazu mít vyhrazené
 |<xref:System.Linq.Enumerable.Where%2A>|`Where`<br /><br /> (Další informace najdete v tématu [klauzule Where](../../../../visual-basic/language-reference/queries/where-clause.md).)|  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Linq.Enumerable>
 - <xref:System.Linq.Queryable>
 - [Přehled standardních operátorů dotazu (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)

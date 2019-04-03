@@ -1,18 +1,18 @@
 ---
-title: -deterministické
+title: -deterministic
 ms.date: 04/11/2018
 helpviewer_keywords:
 - deterministic compiler option [Visual Basic]
 - -deterministic compiler option [Visual Basic]
 - -deterministic compiler option [Visual Basic]
-ms.openlocfilehash: 8334691ff5ac09c19287dbc2ec2503dbd5149f7a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d3558976002e273aee239e518f0387033cb82873
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54572484"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58836139"
 ---
-# <a name="-deterministic"></a>-deterministické
+# <a name="-deterministic"></a>-deterministic
 
 Způsobí, že kompilátor vytvoří sestavení, jehož výstup bajt po bajtu je identické napříč kompilace identické vstupů. 
 
@@ -51,5 +51,6 @@ Kompilátor bere v úvahu následující vstupy pro účely determinismus:
 Když jsou veřejně dostupné zdroje, deterministickou kompilaci lze použít pro stanovení, zda je zkompilován do binárního souboru z důvěryhodného zdroje. Může být také užitečné v systému průběžného sestavení pro určení, jestli je potřeba spustit kroky sestavení, které jsou závislé na změny do binárního souboru. 
 
 ## <a name="see-also"></a>Viz také:
+
 - [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)
 - [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

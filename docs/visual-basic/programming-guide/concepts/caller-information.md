@@ -2,19 +2,19 @@
 title: Informace o volajícím (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 15d556eb-4d0c-4497-98a3-7f60abb7d6a1
-ms.openlocfilehash: b3d7c999137b1e62de573470b8327bf070f2b1a9
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 004cb003b6cf980f902d7625694e3d2fbfa5ee42
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57375542"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58826051"
 ---
 # <a name="caller-information-visual-basic"></a>Informace o volajícím (Visual Basic)
 Pomocí atributů Informace o volajícím můžete získat informace o volajícím metody. Můžete získat cestu k souboru zdrojového kódu, číslo řádku ve zdrojovém kódu a název členu volajícího. Tyto informace jsou užitečné pro trasování, ladění a vytváření diagnostických nástrojů.  
   
  Pro získání těchto informací můžete použít atributy, které jsou použity na volitelné parametry, z nichž každý má výchozí hodnotu. V následující tabulce jsou uvedeny atributy informace o volajícím, které jsou definovány v <xref:System.Runtime.CompilerServices?displayProperty=nameWithType> obor názvů:  
   
-|Atribut|Popis|Typ|  
+|Atribut|Popis|Type|  
 |---|---|---|  
 |<xref:System.Runtime.CompilerServices.CallerFilePathAttribute>|Úplná cesta zdrojového souboru, který obsahuje volajícího. Toto je cesta k souboru v době kompilace.|`String`|  
 |<xref:System.Runtime.CompilerServices.CallerLineNumberAttribute>|Číslo řádku ve zdrojovém souboru, ve kterém je volána metoda.|`Integer`|  
@@ -75,6 +75,7 @@ End Sub
 |Žádný obsahující člen (například úroveň sestavení nebo atributy, které jsou použity na typy)|Výchozí hodnota volitelného parametru.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Atributy (Visual Basic)](../../../visual-basic/language-reference/attributes.md)
 - [Běžné atributy (Visual Basic)](../../../visual-basic/programming-guide/concepts/attributes/common-attributes.md)
 - [Nepovinné parametry](../../../visual-basic/programming-guide/language-features/procedures/optional-parameters.md)

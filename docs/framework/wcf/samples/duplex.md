@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Duplex Service Contract
 ms.assetid: bc5de6b6-1a63-42a3-919a-67d21bae24e0
-ms.openlocfilehash: adc26caaf1d3cebb8c8887ba94a1b4412378994c
-ms.sourcegitcommit: 0069cb3de8eed4e92b2195d29e5769a76111acdd
+ms.openlocfilehash: 246c5f489f4cc0076303de8383506898fe053ae5
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "56332075"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58843138"
 ---
 # <a name="duplex"></a>Duplex
 Duplexní ukázka ukazuje, jak definovat a implementovat duplexního kontraktu. Duplexní komunikaci nastane, pokud klient vytvoří relaci se službou a poskytuje službu na kanál, na kterém služba odesílat zprávy o zpět do klienta. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md). Duplexní kontrakt je definován jako dvojici rozhraní – primární rozhraní z klienta do služby a rozhraní zpětného volání ze služby ke klientovi. V této ukázce `ICalculatorDuplex` rozhraní umožňuje klientovi k provádění matematických operací výpočtu výsledku přes relaci. Služba vrátí výsledky v `ICalculatorDuplexCallback` rozhraní. Duplexní kontrakt vyžaduje relaci, protože kontextu musí být stanovena ke korelaci sadu zprávy odesílané mezi klientem a službou.  
@@ -194,4 +194,3 @@ client.Close();
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Service\Duplex`  
   
-## <a name="see-also"></a>Viz také:

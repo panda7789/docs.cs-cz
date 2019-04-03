@@ -6,12 +6,12 @@ helpviewer_keywords:
 - references [Visual Basic], declared elements
 - qualified names [Visual Basic]
 ms.assetid: d6301709-f4cc-4b7a-b8ba-80898f14ab46
-ms.openlocfilehash: 16f4fb28ab030ccebed2a8d1b93a3a6c29d075c6
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5aea43c2dab4eb44ab40449ee6e970a28fdc4abb
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54501253"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58821449"
 ---
 # <a name="references-to-declared-elements-visual-basic"></a>Odkazy na deklarované elementy (Visual Basic)
 Pokud váš kód odkazuje na element deklarovaný, kompilátor jazyka Visual Basic odpovídá názvu v referenci na příslušné prohlášení s tímto názvem. Pokud je teď deklarována více než jeden element se stejným názvem, můžete určit, které z těchto elementů je odkazovat *oprávněným* jeho název.  
@@ -185,15 +185,16 @@ Dim xDoc As xD.XmlDocument
   
  Můžete také použít `Imports` smlouvu pro import modulů, třídy, struktury a výčty. Potom můžete členy z těchto prvků importované bez kvalifikace. Musíte však vždy kvalifikovat nesdílené členy třídy a struktury s proměnné nebo výraz, který na instance dané třídy nebo struktury.  
   
-## <a name="naming-guidelines"></a>Pokyny pro pojmenování  
+## <a name="naming-guidelines"></a>Pokyny k pojmenování  
  Při definování nejmíň dva programovací prvky, které mají stejný název, *název nejednoznačnost* může dojít, pokud se kompilátor pokusí přeložit odkaz na tento název. Pokud více než jednu definici je v oboru nebo pokud se žádná definice není v oboru, odkaz je nevyřešitelná. Příklad naleznete v části "Příklad kvalifikovaný odkaz" na tuto stránku nápovědy.  
   
  Mnohoznačnosti názvů můžete vyhnout tím, že všechny prvky jedinečné názvy. Potom můžete vytvořit odkaz na libovolný element bez nutnosti kvalifikovat stejný název jako obor názvů, modulu nebo třídy. Také snížit riziko omylem odkazující na chybný element.  
   
-## <a name="shadowing"></a>Stínový provoz  
+## <a name="shadowing"></a>Stínování  
  Když dva programovací prvky sdílí se stejným názvem, jeden z nich můžete skrýt, nebo *stínové*, druhou. Stínovaný prvek není k dispozici pro referenci; Místo toho pokud váš kód používá název stínovaný elementu, kompilátor jazyka Visual Basic to je řešeno do elementu stínového provozu. Podrobnější vysvětlení s příklady najdete v tématu [stínění v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Deklarované názvy elementů](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)
 - [Deklarované charakteristiky elementů](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-characteristics.md)
 - [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

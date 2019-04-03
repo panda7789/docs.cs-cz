@@ -7,12 +7,12 @@ helpviewer_keywords:
 - procedures [Visual Basic], structure
 - Visual Basic code, program structure
 ms.assetid: ad0c6531-d762-4c77-a700-de16b07b6119
-ms.openlocfilehash: 64ac6da99bf304639dfc0de5e24d6d6bdd3e9795
-ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
+ms.openlocfilehash: 5817d4d37610c87bb7e4ade407421ddce7a3a862
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56746520"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58828118"
 ---
 # <a name="structure-of-a-visual-basic-program"></a>Struktura programu jazyka Visual Basic
 V aplikaci Visual Basic je vytvářeny z standardních stavebních bloků. A *řešení* se skládá z jednoho nebo více projektů. A *projektu* zase může obsahovat jedno nebo více sestavení. Každý *sestavení* je zkompilován z jednoho nebo více zdrojových souborů. A *zdrojový soubor* obsahuje definice a implementaci tříd, struktur, moduly a rozhraní, takže v konečném důsledku obsahující váš kód.  
@@ -93,6 +93,7 @@ V aplikaci Visual Basic je vytvářeny z standardních stavebních bloků. A *ř
  Nejběžnější řadu tento postup je `Sub Main()`. Další informace najdete v tématu [hlavní procedura v jazyce Visual Basic](../../../visual-basic/programming-guide/program-structure/main-procedure.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Hlavní procedura v jazyce Visual Basic](../../../visual-basic/programming-guide/program-structure/main-procedure.md)
 - [Zásady vytváření názvů jazyka Visual Basic](../../../visual-basic/programming-guide/program-structure/naming-conventions.md)
 - [Visual Basic Limitations](../../../visual-basic/programming-guide/program-structure/limitations.md)

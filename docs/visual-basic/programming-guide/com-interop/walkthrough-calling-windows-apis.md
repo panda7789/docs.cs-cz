@@ -11,12 +11,12 @@ helpviewer_keywords:
 - DllImport attribute, calling Windows API
 - Declare statement [Visual Basic], declaring DLL functions
 ms.assetid: 9280ca96-7a93-47a3-8d01-6d01be0657cb
-ms.openlocfilehash: f57b5ae35bf97a04ff235d213ffad27bd015e711
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 579da4b52a9a7c4c747a9ace390c04611207c94d
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56981462"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58822905"
 ---
 # <a name="walkthrough-calling-windows-apis-visual-basic"></a>Návod: Volání rozhraní API Windows (Visual Basic)
 Rozhraní API Windows jsou dynamické knihovny (DLL), které jsou součástí operačního systému Windows. Můžete využít k provádění úkolů, když je obtížné je napsat ekvivalentní postupy. Například Windows poskytuje funkci s názvem `FlashWindowEx` , který umožňuje provádět alternativní mezi světlé a tmavé odstínů v záhlaví okna aplikace.  
@@ -148,6 +148,7 @@ Rozhraní API Windows jsou dynamické knihovny (DLL), které jsou součástí op
 12. Klikněte na tlačítko **Button2**. Pokud soubor lze přesunout, zobrazí se zpráva "soubor byl úspěšně přesunut.".  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Runtime.InteropServices.DllImportAttribute>
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
 - [Příkaz Declare](../../../visual-basic/language-reference/statements/declare-statement.md)

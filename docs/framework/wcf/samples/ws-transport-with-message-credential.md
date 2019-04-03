@@ -2,12 +2,12 @@
 title: Přenos WS s pověřením zpráv
 ms.date: 03/30/2017
 ms.assetid: 0d092f3a-b309-439b-920b-66d8f46a0e3c
-ms.openlocfilehash: fb923fd4d7271f7f364d24743c3f9f6393ef8f9f
-ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
+ms.openlocfilehash: 31c1ed5d4b62c0f0b4c0c149629bb84a7dab6f01
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57200582"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58826207"
 ---
 # <a name="ws-transport-with-message-credential"></a>Přenos WS s pověřením zpráv
 Tento příklad ukazuje použití zabezpečení přenosu SSL v kombinaci pomocí provádí ve zprávě pověření klienta. Tento příklad používá `wsHttpBinding` vazby.  
@@ -97,4 +97,3 @@ Press <ENTER> to terminate client.
   
 4.  Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
-## <a name="see-also"></a>Viz také:

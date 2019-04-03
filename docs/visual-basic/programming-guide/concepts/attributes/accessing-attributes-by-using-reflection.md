@@ -2,12 +2,12 @@
 title: Přístup k atributům pomocí reflexe (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: c56e41da-5433-464f-a7bf-2a722e78bc9f
-ms.openlocfilehash: caf48372f165f3689503d47472a5fa28d2299193
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e5cbce8529cc7554a8edacb2d83dabb73a495eec
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54625099"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58827642"
 ---
 # <a name="accessing-attributes-by-using-reflection-visual-basic"></a>Přístup k atributům pomocí reflexe (Visual Basic)
 Fakt, že můžete definovat vlastní atributy a umístit je do zdrojového kódu by nízké hodnoty bez nějaký způsob načtení těchto informací a funguje na něj. Pomocí reflexe můžete načíst informace, které se definoval pomocí vlastních atributů. Metoda klíče `GetCustomAttributes`, která vrací pole objektů, které jsou za běhu ekvivalenty atributy zdrojového kódu. Tato metoda má několik přetížených verzí. Další informace naleznete v tématu <xref:System.Attribute>.  
@@ -100,6 +100,7 @@ End Class
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Reflection>
 - <xref:System.Attribute>
 - [Průvodce programováním v jazyce Visual Basic](../../../../visual-basic/programming-guide/index.md)

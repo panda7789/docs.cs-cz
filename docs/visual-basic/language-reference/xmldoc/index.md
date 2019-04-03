@@ -2,12 +2,18 @@
 title: Doporučené značky XML pro dokumentační komentáře (Visual Basic)
 ms.date: 07/20/2015
 f1_keywords:
-  - vb.XmlDocComment
+- vb.XmlDocComment
 helpviewer_keywords:
-  - 'tags, XML'
-  - 'XML comments, recommended tags [Visual Basic]'
-  - 'comments, recommended XML tags'
+- tags, XML
+- XML comments, recommended tags [Visual Basic]
+- comments, recommended XML tags
 ms.assetid: 294e0736-ff1e-498e-af83-6db71ed41a72
+ms.openlocfilehash: e59ee25b22c51e47dc83233af33099e6c55de87b
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58814937"
 ---
 # <a name="recommended-xml-tags-for-documentation-comments-visual-basic"></a>Doporučené značky XML pro dokumentační komentáře (Visual Basic)
 Kompilátor jazyka Visual Basic můžete zpracovat dokumentační komentáře v kódu do souboru XML. Další nástroje můžete použít ke zpracování souboru XML do dokumentace ke službě.  
@@ -34,6 +40,7 @@ Kompilátor jazyka Visual Basic můžete zpracovat dokumentační komentáře v 
 >  Pokud chcete ostré závorky se zobrazí v textu Dokumentační komentář, použijte `&lt;` a `&gt;`. Například řetězec `"&lt;text in angle brackets&gt;"` se zobrazí jako `<text in angle brackets>`.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Dokumentace kódu s XML](../../../visual-basic/programming-guide/program-structure/documenting-your-code-with-xml.md)
 - [/doc](../../../visual-basic/reference/command-line-compiler/doc.md)
 - [Postupy: Vytvoření dokumentace XML](../../../visual-basic/programming-guide/program-structure/how-to-create-xml-documentation.md)

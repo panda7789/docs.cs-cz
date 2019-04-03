@@ -9,12 +9,12 @@ helpviewer_keywords:
 - events [Visual Basic], raising
 - raising events [Visual Basic], walkthroughs
 ms.assetid: 8ffb3be8-097d-4d3c-b71e-04555ebda2a2
-ms.openlocfilehash: 04f3cab43f7f7f7fc73e0b209b1bacee136513b5
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 0f48c90232c00f53007e7d2f8f08e2107406ecad
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56975391"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58841001"
 ---
 # <a name="walkthrough-declaring-and-raising-events-visual-basic"></a>Návod: Deklarace a vyvolávání událostí (Visual Basic)
 Tento návod ukazuje, jak deklarovat a vyvolávání událostí pro třídu s názvem `Widget`. Po dokončení kroků se můžete chtít přečíst téma doprovodná [názorný postup: Zpracování událostí](../../../../visual-basic/programming-guide/language-features/events/walkthrough-handling-events.md), který ukazuje, jak používat události z `Widget` objekty poskytnout informace o stavu v aplikaci.  
@@ -74,6 +74,7 @@ Tento návod ukazuje, jak deklarovat a vyvolávání událostí pro třídu s n�
  Teď, když `Widget` třída může vyvolat události, můžete přesunout do dalšího názorného postupu. [Návod: Zpracování událostí](../../../../visual-basic/programming-guide/language-features/events/walkthrough-handling-events.md) ukazuje, jak používat `WithEvents` přidružení obslužné rutiny události s `PercentDone` událostí.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:Microsoft.VisualBasic.DateAndTime.Timer%2A>
 - <xref:Microsoft.VisualBasic.DateAndTime.Now%2A>
 - [Návod: Zpracování událostí](../../../../visual-basic/programming-guide/language-features/events/walkthrough-handling-events.md)

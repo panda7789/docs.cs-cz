@@ -9,12 +9,12 @@ helpviewer_keywords:
 - type conversion [Visual Basic], string
 - regional options
 ms.assetid: c3a99596-f09a-44a5-81dd-1b89a094f1df
-ms.openlocfilehash: 292ec8c76695427ab00110d83502f7d16c6504b4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1e42fca7800a76cab10fd60058e34d31ae8b8830
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54719739"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58821657"
 ---
 # <a name="conversions-between-strings-and-other-types-visual-basic"></a>Převody mezi řetězci a ostatními typy (Visual Basic)
 Lze převést číselnou, `Boolean`, nebo hodnotu data a času `String`. Můžete také převést v opačném směru – z řetězcové hodnoty na číselnou hodnotu, `Boolean`, nebo `Date` – zadaný obsah řetězce může být interpretován jako platná hodnota cílového datového typu. Pokud to není možné, dojde k chybě za běhu.  
@@ -41,6 +41,7 @@ Str = "The total count is " & count
  Visual Basic převede řetězec na číselnou hodnotu, použije **místní nastavení** nastavení uvedená v Windows **ovládací panely** k interpretaci tisíců oddělovač, oddělovač desetinných míst, a symbol měny. To znamená, že převod může proběhnout úspěšně pod jednou, ale nejsou jiné nastavení. Například `"$14.20"` je přijatelné v národním prostředí Angličtina (Spojené státy), ale ne v jakékoli francouzské národní prostředí.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Převody typů v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)
 - [Rozšíření a zúžení převodů](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)
 - [Implicitní a explicitní převody](../../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)

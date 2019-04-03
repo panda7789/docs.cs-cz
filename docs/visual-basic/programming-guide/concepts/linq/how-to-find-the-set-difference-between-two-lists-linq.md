@@ -2,12 +2,12 @@
 title: 'Postupy: Hledání množinových rozdílů mezi dvěma seznamy (LINQ) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: b5b25474-10a8-4df6-aab5-75621bb6b68e
-ms.openlocfilehash: e1c012dbe252c494c5f77e61b56deccbb07490fc
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2d87a2bd882adb6eca144288ace72b0e7c464907
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54579716"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58829496"
 ---
 # <a name="how-to-find-the-set-difference-between-two-lists-linq-visual-basic"></a>Postupy: Hledání množinových rozdílů mezi dvěma seznamy (LINQ) (Visual Basic)
 Tento příklad ukazuje způsob použití LINQ k porovnání dvou seznamů řetězců a výstup těchto řádků, které jsou v names1.txt, ale ne v names2.txt.  
@@ -57,4 +57,5 @@ End Class
  Vytvořit projekt, který cílí na rozhraní .NET Framework verze 3.5 nebo vyšší s odkazem na knihovnu System.Core.dll a `Imports` příkaz pro obor názvů System.Linq.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [LINQ a řetězce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)

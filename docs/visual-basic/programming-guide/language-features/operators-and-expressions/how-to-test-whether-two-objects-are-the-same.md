@@ -9,12 +9,12 @@ helpviewer_keywords:
 - objects [Visual Basic], variables referring to same
 - Visual Basic code, operators
 ms.assetid: f760e828-8704-4256-bc2d-c22a4c93b524
-ms.openlocfilehash: d13671f284863fa7bf56964c2b9b963c25e8ea52
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: dbb268175d197e7b931af45a98f3a273c593e5a3
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56977445"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58819106"
 ---
 # <a name="how-to-test-whether-two-objects-are-the-same-visual-basic"></a>Postupy: Otestujte, zda jsou oba objekty stejné (Visual Basic)
 Pokud budete mít dvě proměnné, které odkazují na objekty, můžete použít buď `Is` nebo `IsNot` operátor nebo obojí, chcete-li zjistit, jestli se odkazují na stejnou instanci.  
@@ -30,4 +30,5 @@ Pokud budete mít dvě proměnné, které odkazují na objekty, můžete použí
  Ať už používáte `Is` nebo `IsNot` je otázkou osobní usnadnění práce vás. Jedna může být snadněji čtou než ten druhý v daném výrazu.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Operátory porovnání v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)

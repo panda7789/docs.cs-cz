@@ -11,12 +11,12 @@ helpviewer_keywords:
 - operators [Visual Basic], conjunction
 - short-circuit evaluation
 ms.assetid: bbc15191-b374-495b-9b8f-7b8c2f4388eb
-ms.openlocfilehash: 5ba8be5051d0723fd2654b9733933cd434ac3ac5
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 3876fd9c32d486b8ebecc9ee2428486a687a1624
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56965186"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58817120"
 ---
 # <a name="andalso-operator-visual-basic"></a>AndAlso – operátor (Visual Basic)
 Provede zkrácenou logickou konjunkci dvou výrazů.  
@@ -65,6 +65,7 @@ result = expression1 AndAlso expression2
  [!code-vb[VbVbalrOperators#25](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#25)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Logické/bitové operátory (Visual Basic)](../../../visual-basic/language-reference/operators/logical-bitwise-operators.md)
 - [Priorita operátorů v jazyce Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
 - [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)

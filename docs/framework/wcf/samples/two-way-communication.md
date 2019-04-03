@@ -2,12 +2,12 @@
 title: Obousměrná komunikace
 ms.date: 03/30/2017
 ms.assetid: fb64192d-b3ea-4e02-9fb3-46a508d26c60
-ms.openlocfilehash: 2160a1c190a23c9fbc3ec835d32121008c63e2a8
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 3aa01140ef62bd3658696e889038e099ed76da20
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54522008"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58815428"
 ---
 # <a name="two-way-communication"></a>Obousměrná komunikace
 Tento příklad ukazuje, jak provádět transakční obousměrná komunikace ve frontě prostřednictvím služby MSMQ. Tento příklad používá `netMsmqBinding` vazby. V tomto případě služba není v místním prostředí konzolovou aplikaci, která umožňuje sledovat službu přijímání zpráv zařazených do fronty.  
@@ -331,4 +331,3 @@ Status of order 124a1f69-3699-4b16-9bcc-43147a8756fc:Pending
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Binding\Net\MSMQ\Two-Way`  
   
-## <a name="see-also"></a>Viz také:

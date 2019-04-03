@@ -2,12 +2,12 @@
 title: Analýza kódu XML (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 5bcbd7e2-d9f1-4c8f-80d6-39915fe17bd1
-ms.openlocfilehash: 4f6cb9ad943214f04ecd997656f198ab4b095524
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ec9df29c239d2780b4fc13bb101a22c54eb43da5
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54548843"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58832750"
 ---
 # <a name="parsing-xml-visual-basic"></a>Analýza kódu XML (Visual Basic)
 Témata v této části popisují, jak k analýze dokumentů XML.  
@@ -24,4 +24,5 @@ Témata v této části popisují, jak k analýze dokumentů XML.
 |[Postupy: Stream fragmentů XML ze třídy XmlReader (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-stream-xml-fragments-from-an-xmlreader.md)|Ukazuje, jak pomocí streamování fragmentů XML <xref:System.Xml.XmlReader>.<br /><br /> Až budete mít ke zpracování libovolně velkých souborů XML, nemusí být možné načíst celý strom XML do paměti. Místo toho můžete streamování fragmentů XML.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Vytváření stromů XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-xml-trees.md)

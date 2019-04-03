@@ -6,12 +6,12 @@ helpviewer_keywords:
 - My.Application.Log object, filtering output
 - application event logs, output filtering
 ms.assetid: 2c0a457a-38a4-49e1-934d-a51320b7b4ca
-ms.openlocfilehash: 9f1f0efd6190ac0ced0f83db747e3c4eb81c4975
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: f38217a5385b9d736eaa744a73024f210eb8f553
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56978316"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58829372"
 ---
 # <a name="walkthrough-filtering-myapplicationlog-output-visual-basic"></a>Návod: Filtrování výstupu My.Application.Log (Visual Basic)
 Tento návod ukazuje, jak změnit výchozí filtrování pro protokolování `My.Application.Log` objekt řídit, jaké informace jsou předány z `Log` objektu pro naslouchací procesy a jaké informace jsou zapsány pomocí naslouchací procesy. Protokolování chování můžete změnit i po vytvoření aplikace, protože informace o konfiguraci jsou uložena v konfiguračním souboru aplikace.  
@@ -248,6 +248,7 @@ Tento návod ukazuje, jak změnit výchozí filtrování pro protokolování `My
  Další informace o změnách nastavení protokolu po nasazení najdete v tématu [práce s protokoly aplikací](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Návod: Určení, kam objekt My.Application.Log zapisuje informace](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)
 - [Návod: Změna, kam objekt My.Application.Log zapisuje informace](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md)
 - [Návod: Vytváření vlastních součástí naslouchajících protokolům](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-creating-custom-log-listeners.md)

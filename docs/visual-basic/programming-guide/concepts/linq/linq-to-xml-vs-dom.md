@@ -1,15 +1,15 @@
 ---
-title: LINQ to XML versus. Modelu DOM (Visual Basic)
+title: Technologie LINQ to XML vs. Modelu DOM (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 18c36130-d598-40b7-9007-828232252978
-ms.openlocfilehash: 07c54c9e2097a328ba09b16dab5b6c8b71c90934
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 282df577808342a52a70f419b2a7559752103a0f
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54494844"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58831264"
 ---
-# <a name="linq-to-xml-vs-dom-visual-basic"></a>LINQ to XML versus. Modelu DOM (Visual Basic)
+# <a name="linq-to-xml-vs-dom-visual-basic"></a>Technologie LINQ to XML vs. Modelu DOM (Visual Basic)
 Tato část popisuje některé hlavní rozdíly mezi [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] a aktuální převládající XML programování rozhraní API, W3C Document Object Model (DOM).  
   
 ## <a name="new-ways-to-construct-xml-trees"></a>Nové způsoby, jak vytvořit stromů XML  
@@ -131,4 +131,5 @@ doc.AppendChild(name)
  [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] poskytuje podporu pro ověření XSD prostřednictvím metody rozšíření v <xref:System.Xml.Schema?displayProperty=nameWithType> oboru názvů. Můžete ověřit, že stromu XML v souladu s XSD. Můžete naplnit stromu XML pomocí informační sadu po ověření (PSVI). Další informace najdete v tématu [jak: Ověření pomocí XSD](../../../../visual-basic/programming-guide/concepts/linq/how-to-validate-using-xsd-linq-to-xml.md) a <xref:System.Xml.Schema.Extensions>.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Začínáme (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/getting-started-linq-to-xml.md)

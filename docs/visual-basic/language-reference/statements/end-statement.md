@@ -14,12 +14,12 @@ helpviewer_keywords:
 - End statement [Visual Basic]
 - execution [Visual Basic], stopping
 ms.assetid: 0e64467c-0f34-4aab-9ddd-43f8b9d55d90
-ms.openlocfilehash: 8b189449044a48432a6cf05b75f39581be111495
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 4fc4fd36fb6b057195e9d8a79eb0a5b3ac9ff95c
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56979528"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58832018"
 ---
 # <a name="end-statement"></a>End – příkaz
 Ukončí provádění okamžitě.  
@@ -56,6 +56,7 @@ End
  Tento příkaz není podporován.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Security.Permissions.SecurityPermissionFlag>
 - [Příkaz Stop](../../../visual-basic/language-reference/statements/stop-statement.md)
 - [End \<– klíčové slovo > – příkaz](../../../visual-basic/language-reference/statements/end-keyword-statement.md)

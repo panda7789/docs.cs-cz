@@ -2,12 +2,12 @@
 title: 'Postupy: Transformace tvaru stromu XML (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 84b60854-48b2-452c-87f2-77d53e1d653a
-ms.openlocfilehash: c3fb1cd0995597be6c5108832750b6695d196b58
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 067bf56b8dff994080ba78147d992b97a56867cb
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54624155"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58833656"
 ---
 # <a name="how-to-transform-the-shape-of-an-xml-tree-visual-basic"></a>Postupy: Transformace tvaru stromu XML (Visual Basic)
 *Tvar* formátu XML dokumentu odkazuje na jeho názvy elementů, názvy atributů a vlastnosti ve své hierarchii.  
@@ -143,4 +143,5 @@ End Sub
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Projekce a transformace (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)

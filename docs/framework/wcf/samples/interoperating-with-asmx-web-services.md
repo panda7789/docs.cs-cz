@@ -2,12 +2,12 @@
 title: Spolupráce s webovými službami ASMX
 ms.date: 03/30/2017
 ms.assetid: a7c11f0a-9e68-4f03-a6b1-39cf478d1a89
-ms.openlocfilehash: bab97c405a3958a6c0d6502041648cecf038023e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: bef5239a52787629986eada60341cc121b22ba34
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54643413"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58843523"
 ---
 # <a name="interoperating-with-asmx-web-services"></a>Spolupráce s webovými službami ASMX
 Tento příklad ukazuje, jak integrovat existující ASMX webové služby Windows Communication Foundation (WCF) klientské aplikace.  
@@ -131,4 +131,3 @@ Press <ENTER> to terminate client.
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Client\Interop\ASMX`  
   
-## <a name="see-also"></a>Viz také:

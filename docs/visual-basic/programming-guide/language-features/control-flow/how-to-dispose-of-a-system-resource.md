@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Using statement [Visual Basic], Using...End Using
 - Using block
 ms.assetid: 8be2b239-8090-419b-8e7e-bcaa75b0ecc8
-ms.openlocfilehash: 798650bbefc0c5b2ac097b87ab44a2b380117939
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2a399b92c66c8a88d10d661ff41aef58a82bbc2a
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54523217"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58829912"
 ---
 # <a name="how-to-dispose-of-a-system-resource-visual-basic"></a>Postupy: Odstranění systémového prostředku (Visual Basic)
 Můžete použít `Using` bloku zaručí, že systém odstraňuje prostředku při opuštění bloku kódu. To je užitečné, pokud používáte systémového prostředku, která spotřebovává velké množství paměti, nebo jiné komponenty také chcete použít.  
@@ -45,6 +45,7 @@ Můžete použít `Using` bloku zaručí, že systém odstraňuje prostředku p�
      Tento stejný postup můžete použít na systémový prostředek, jako je například popisovač souboru nebo obálky COM. Můžete použít `Using` blokovat, pokud chcete mít jistotu ponechat prostředek k dispozici pro jiné komponenty po zavření `Using` bloku.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Data.SqlClient.SqlConnection>
 - [Tok řízení](../../../../visual-basic/programming-guide/language-features/control-flow/index.md)
 - [Rozhodovací struktury](../../../../visual-basic/programming-guide/language-features/control-flow/decision-structures.md)

@@ -2,12 +2,12 @@
 title: 'Postupy: Načtení hodnoty atributu (LINQ to XML) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 5f4b3790-c83f-4eb3-a889-e3587edf3ca1
-ms.openlocfilehash: ab14072317bf963e87534b743e3c5a6c39ee39c8
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 7cdd3e1f3e4c15d99511e944fd9bc2faac17dc5c
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54690719"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58824353"
 ---
 # <a name="how-to-retrieve-the-value-of-an-attribute-linq-to-xml-visual-basic"></a>Postupy: Načtení hodnoty atributu (LINQ to XML) (Visual Basic)
 Toto téma ukazuje, jak získat hodnoty atributů. Existují dva hlavní způsoby: Můžete přetypovat <xref:System.Xml.Linq.XAttribute> na požadovaný typ; operátor explicitního převodu převede obsah elementu nebo atributu do zadaného typu. Alternativně můžete použít <xref:System.Xml.Linq.XAttribute.Value%2A> vlastnost. Přetypování je však obvykle bude vhodnější. Pokud vložíte atribut na typ připouštějící hodnotu Null, kód je jednodušší zápis při načítání hodnoty atributu, který může nebo nemusí existovat. Příklady této techniky najdete v tématu [jak: Načtení hodnoty elementu (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-retrieve-the-value-of-an-element-linq-to-xml.md).  
@@ -67,4 +67,5 @@ abcde
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Osy LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-axes.md)

@@ -5,12 +5,12 @@ helpviewer_keywords:
 - <value> XML tag
 - value XML tag
 ms.assetid: 0b84b02e-9e6d-41b5-a926-0d5dc76dacb5
-ms.openlocfilehash: 7ab1f4a19793c408acfe1c4adf76aed5679fc696
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: 2938d485bf6c547c792431b93fc8959c9c36befa
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57474264"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58821410"
 ---
 # <a name="value-visual-basic"></a>\<Hodnota > (Visual Basic)
 Určuje popis vlastnosti.  
@@ -36,4 +36,5 @@ Určuje popis vlastnosti.
  [!code-vb[VbVbcnXmlDocComments#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnXmlDocComments/VB/Class1.vb#1)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Značky pro komentáře XML](../../../visual-basic/language-reference/xmldoc/index.md)

@@ -2,12 +2,12 @@
 title: Jednorázový postup nastavení pro ukázky Windows Communication Foundation
 ms.date: 03/30/2017
 ms.assetid: a5848ffd-3eb5-432d-812e-bd948ccb6bca
-ms.openlocfilehash: 705314c1eb0318fe7da53108d51f9dc985a3fdfa
-ms.sourcegitcommit: 0069cb3de8eed4e92b2195d29e5769a76111acdd
+ms.openlocfilehash: 76cf2c7ec7edbfaaa186b45f4b810c7d4c0b1d47
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "56333453"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58825167"
 ---
 # <a name="one-time-setup-procedure-for-the-windows-communication-foundation-samples"></a>Jednorázový postup nastavení pro ukázky Windows Communication Foundation
 Většina ukázek Windows Communication Foundation (WCF) jsou hostované v Internetové informační služby (IIS) a spustit z běžných virtuální adresář. Tento postup jednorázová nastavení vytvoří složku na disk. také přidá virtuální adresář služby IIS s názvem **ServiceModelSamples**.
@@ -85,5 +85,3 @@ Většina ukázek Windows Communication Foundation (WCF) jsou hostované v Inter
     >  Zajistěte spuštění služby MSMQ předtím, než spustíte všechny ukázky, které vyžadují služby Řízení front zpráv.
 
 15. Některé ukázky vyžadují certifikáty. Zobrazit [Internetové informační služby (IIS) pokyny k instalaci certifikátu serveru](../../../../docs/framework/wcf/samples/iis-server-certificate-installation-instructions.md).
-
-## <a name="see-also"></a>Viz také:

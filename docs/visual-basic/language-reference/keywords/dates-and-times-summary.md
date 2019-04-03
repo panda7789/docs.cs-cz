@@ -10,12 +10,12 @@ helpviewer_keywords:
 - time, Visual Basic keywords and run-time library members
 - time data types [Visual Basic]
 ms.assetid: 914d0563-b53c-492c-ac62-d833ce805f2f
-ms.openlocfilehash: 9cf3d26427e483a1e1e5c1bc5316a829325a841f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 44bd867412c30eae9a3092446cfd9674ba5e34a4
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54731904"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58819044"
 ---
 # <a name="dates-and-times-summary-visual-basic"></a>Souhrn dat a časů (Visual Basic)
 Klíčová slova jazyka Visual Basic a členy běhové knihovny jsou uspořádány podle účelu a použití.  
@@ -30,5 +30,6 @@ Klíčová slova jazyka Visual Basic a členy běhové knihovny jsou uspořádá
 |Když se proces.|<xref:Microsoft.VisualBasic.DateAndTime.Timer%2A>|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Klíčová slova](../../../visual-basic/language-reference/keywords/index.md)
 - [Členové knihovny modulu runtime jazyka Visual Basic](../../../visual-basic/language-reference/runtime-library-members.md)

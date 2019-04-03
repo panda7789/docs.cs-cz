@@ -9,12 +9,12 @@ helpviewer_keywords:
 - data types [Visual Basic], ranges
 - operators [Visual Basic], result data types
 ms.assetid: 9d524533-e1a1-4aa8-b1b8-622068173d06
-ms.openlocfilehash: 90e3c8b61bd920ab06090f3f889d6cc61c354294
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 45dcc80ee791da1c2731ba32f0ebd34564faf806
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54650480"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58814963"
 ---
 # <a name="data-types-of-operator-results-visual-basic"></a>Datové typy výsledků operátoru (Visual Basic)
 Visual Basic určuje datový typ výsledku operace na základě typu dat z operandů. V některých případech to může být datový typ s větší rozsah než jeden z operandů.  
@@ -176,6 +176,7 @@ Visual Basic určuje datový typ výsledku operace na základě typu dat z opera
  `Like` Operátor je určená jenom pro porovnávání vzorů z `String` operandy. Visual Basic se pokusí převést každý operand tak, aby `String` před provedením operace. Datový typ výsledku je vždy `Boolean`.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Datové typy](../../../visual-basic/language-reference/data-types/index.md)
 - [Operátory a výrazy](../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)
 - [Aritmetické operátory v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)

@@ -20,12 +20,12 @@ helpviewer_keywords:
 - abstract classes [Visual Basic], inheritance
 - overriding, Overrides keyword
 ms.assetid: dfc8deba-f5b3-4d1d-a937-7cb826446fc5
-ms.openlocfilehash: 3d772fb81eb13b9454f44ff8ae4256bdb4144caa
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 5e4b8511145e758bf3d6328141be0e526965dccf
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56970295"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58826571"
 ---
 # <a name="inheritance-basics-visual-basic"></a>Základní informace o dědičnosti (Visual Basic)
 `Inherits` Prohlášení se používá k deklaraci nové třídy, nazvané *odvozené třídy*založená na stávající třídě, označované jako *základní třída*. Odvozené třídy dědit a můžete rozšířit, vlastnosti, metody, události, polí a konstanty definované v základní třídě. Následující část popisuje některé z pravidel pro dědičnost a modifikátory, které vám umožní změnit způsob, jak třídy dědit nebo jsou zděděny:  
@@ -143,5 +143,6 @@ End Class
  I když `derivedClass` přepíše `testMethod`, `MyClass` – klíčové slovo v `useMyClass` nichž účinky přepsání a odstraňuje kompilátoru volání základní třídy verzi `testMethod`.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Příkaz Inherits](../../../../visual-basic/language-reference/statements/inherits-statement.md)
 - [Me, My, MyBase a MyClass](../../../../visual-basic/programming-guide/program-structure/me-my-mybase-and-myclass.md)

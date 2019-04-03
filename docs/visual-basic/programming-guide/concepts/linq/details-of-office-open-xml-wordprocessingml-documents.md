@@ -2,12 +2,12 @@
 title: Podrobnosti sady Office otevírání dokumentů WordprocessingML XML (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 6b1e155c-7174-4244-a6de-0fddf9a0b0d7
-ms.openlocfilehash: 80d2a25a8515d4695b773af58cb10840cf370ec1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ae684ddcb194000da6bf66d96fb1027d925d7f21
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54527676"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58836858"
 ---
 # <a name="details-of-office-open-xml-wordprocessingml-documents-visual-basic"></a>Podrobnosti sady Office otevírání dokumentů WordprocessingML XML (Visual Basic)
 Tato část obsahuje informace o podrobnosti o dokumentech Office Open XML WordprocessingML. Zobrazuje příklady dokumentu a styl částí dokumentu Open XML.  
@@ -21,4 +21,5 @@ Tato část obsahuje informace o podrobnosti o dokumentech Office Open XML Wordp
 |[Příklad, jejichž výstupem jsou části dokumentu Office Open XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/example-that-outputs-office-open-xml-document-parts.md)|Poskytuje příklad, který otevře dokumentu Office Open XML WordprocessingML a vypíše částí do konzoly.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Kurz: Manipulace s obsahem v dokumentu WordprocessingML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)

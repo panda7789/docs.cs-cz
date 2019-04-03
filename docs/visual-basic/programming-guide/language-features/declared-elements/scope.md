@@ -15,12 +15,12 @@ helpviewer_keywords:
 - scope [Visual Basic], Visual Basic
 - procedure scope [Visual Basic]
 ms.assetid: 208106fe-79c9-4eec-93c6-55f08548895f
-ms.openlocfilehash: 38dd9d6d40780c25f06a35cf1ffbe4743b7da4a4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 6139af65958cefe43578f436204fa6836a71de0b
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54537235"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58823542"
 ---
 # <a name="scope-in-visual-basic"></a>Rozsah v jazyce Visual Basic
 *Oboru* deklarované elementu je sada veškerý kód, který na ni můžete odkazovat bez kvalifikace názvu nebo ji dáte k dispozici prostřednictvím [příkaz Imports (Namespace .NET a typ)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md). Element může mít rozsah na jednu z následujících úrovní:  
@@ -135,6 +135,7 @@ Public strMsg As String
  Obecně platí, při deklarování jakoukoli proměnnou nebo konstantu, je programování je dobrým zvykem aby bylo co nejrovnoměrnější rozsah (obor bloku je nejbližší). To pomáhá šetřit paměť a minimalizuje případné chybně odkazující na proměnnou nesprávného kódu. Podobně by měla deklarovat proměnnou [statické](../../../../visual-basic/language-reference/modifiers/static.md) pouze pokud je potřeba zachovat jeho hodnotu mezi volání procedur.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Deklarované charakteristiky elementů](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-characteristics.md)
 - [Postupy: Řízení rozsahu proměnné](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-control-the-scope-of-a-variable.md)
 - [Doba platnosti v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md)

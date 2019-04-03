@@ -10,12 +10,12 @@ helpviewer_keywords:
 - reserved words, Visual Basic keywords
 - Visual Basic, keywords
 ms.assetid: b5a65ef0-c408-4836-afb6-e6828c0771ca
-ms.openlocfilehash: 654c4e4c017141893dd14c7f0f84f76096b274d6
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e00cb8579ba2692acdfbf3fd349e08bb8647e2d0
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54664873"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58814946"
 ---
 # <a name="keywords-visual-basic"></a>Klíčová slova (Visual Basic)
 Následující tabulky uvádí všechny klíčová slova jazyka Visual Basic.  
@@ -62,7 +62,7 @@ Následující tabulky uvádí všechny klíčová slova jazyka Visual Basic.
 |[ReDim](../../../visual-basic/language-reference/statements/redim-statement.md)|[REM](../../../visual-basic/language-reference/statements/rem-statement.md)|[RemoveHandler](../../../visual-basic/language-reference/statements/removehandler-statement.md)|[Resume](../../../visual-basic/language-reference/statements/resume-statement.md)|  
 |[Vrátí](../../../visual-basic/language-reference/statements/return-statement.md)|[SByte –](../../../visual-basic/language-reference/data-types/sbyte-data-type.md)|[Výběr](../../../visual-basic/language-reference/statements/select-case-statement.md)|[Nastavit](../../../visual-basic/language-reference/statements/set-statement.md)|  
 |[Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)|[Shared](../../../visual-basic/language-reference/modifiers/shared.md)|[krátké](../../../visual-basic/language-reference/data-types/short-data-type.md)|[Jeden](../../../visual-basic/language-reference/data-types/single-data-type.md)|  
-|[Static](../../../visual-basic/language-reference/modifiers/static.md)|[Step](../../../visual-basic/language-reference/statements/for-next-statement.md)|[Stop](../../../visual-basic/language-reference/statements/stop-statement.md)|[řetězec](../../../visual-basic/language-reference/data-types/string-data-type.md)|  
+|[Static](../../../visual-basic/language-reference/modifiers/static.md)|[Step](../../../visual-basic/language-reference/statements/for-next-statement.md)|[Stop](../../../visual-basic/language-reference/statements/stop-statement.md)|[Řetězec](../../../visual-basic/language-reference/data-types/string-data-type.md)|  
 |[Omezení struktury](../../../visual-basic/language-reference/statements/type-list.md)|[Příkaz Structure](../../../visual-basic/language-reference/statements/structure-statement.md)|[Sub](../../../visual-basic/language-reference/statements/sub-statement.md)|[SyncLock](../../../visual-basic/language-reference/statements/synclock-statement.md)|  
 |[Potom](../../../visual-basic/language-reference/statements/then-statement.md)|[Throw](../../../visual-basic/language-reference/statements/throw-statement.md)|[Komu](../../../visual-basic/language-reference/statements/for-next-statement.md)|[Hodnota TRUE](../../../visual-basic/language-reference/data-types/boolean-data-type.md)|  
 |[Zkuste](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)|[TryCast](../../../visual-basic/language-reference/operators/trycast-operator.md)|[TypeOf... Je](../../../visual-basic/language-reference/operators/typeof-operator.md)|[UInteger](../../../visual-basic/language-reference/data-types/uinteger-data-type.md)|  
@@ -118,4 +118,5 @@ Následující tabulky uvádí všechny klíčová slova jazyka Visual Basic.
 |[Souhrn manipulace s řetězci](../../../visual-basic/language-reference/keywords/string-manipulation-summary.md)|Seznam funkcí, které se používají k manipulaci s řetězci.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Členové knihovny modulu runtime jazyka Visual Basic](../../../visual-basic/language-reference/runtime-library-members.md)

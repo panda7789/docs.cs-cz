@@ -6,12 +6,12 @@ helpviewer_keywords:
 - -verbose compiler option [Visual Basic]
 - /verbose compiler option [Visual Basic]
 ms.assetid: d1aec0c1-0261-421d-9adc-5b13756100be
-ms.openlocfilehash: 7a5dd305d1cc40e57d0f07f383151dc1a965bdda
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f6d896fb0d41a8fa3ed613d29bc3fca2bd14cc5e
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54513916"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58832787"
 ---
 # <a name="-verbose"></a>-verbose
 Způsobí, že kompilátor vytvoří podrobné zprávy o stavu a chyba.  
@@ -40,5 +40,6 @@ vbc -verbose in.vb
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)
 - [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

@@ -2,12 +2,12 @@
 title: Zrušení asynchronní úlohy nebo seznamu úkolů (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: a9ee1b71-5bec-4736-a1e9-448042dd7215
-ms.openlocfilehash: 81676324145bcf8f6d9a13e757865fa86e6d2e23
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: deb469f2c083870fc96c9217fa862d189629df1f
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57374450"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58834982"
 ---
 # <a name="cancel-an-async-task-or-a-list-of-tasks-visual-basic"></a>Zrušení asynchronní úlohy nebo seznamu úkolů (Visual Basic)
 Můžete nastavit tlačítko, které můžete použít pro zrušení asynchronní aplikace, pokud nechcete čekat na dokončení. Podle příkladů v tomto tématu můžete přidat tlačítko pro zrušení do aplikace, která stahuje obsah z jednoho webu nebo seznamu webů.  
@@ -455,6 +455,7 @@ End Class
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Threading.CancellationTokenSource>
 - <xref:System.Threading.CancellationToken>
 - [Asynchronní programování pomocí modifikátoru Async a operátoru Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)

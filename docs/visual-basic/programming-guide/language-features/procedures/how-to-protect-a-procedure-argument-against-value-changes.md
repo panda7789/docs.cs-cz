@@ -14,12 +14,12 @@ helpviewer_keywords:
 - arguments [Visual Basic], ByRef
 - arguments [Visual Basic], changing value
 ms.assetid: d2b7c766-ce16-4d2c-8d79-3fc0e7ba2227
-ms.openlocfilehash: 2548d7a686f3557d154fc4cc15f6fc8026ac46bf
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 70378b57c6d3af5a98e0ba9c6e3aebc319561b1b
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56968371"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58837777"
 ---
 # <a name="how-to-protect-a-procedure-argument-against-value-changes-visual-basic"></a>Postupy: Ochrana argumentu procedury proti změnám hodnoty (Visual Basic)
 Pokud se deklaruje jako parametr procedury [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md), Visual Basic poskytuje kód procedury přímý odkaz na programovací prvek základní argumentu ve volajícím kódu. To umožňuje změnit hodnotu argumentu ve volajícím kódu základní postup. V některých případech volající kód může být vhodné pro ochranu před tuto změnu.  
@@ -43,6 +43,7 @@ Pokud se deklaruje jako parametr procedury [ByRef](../../../../visual-basic/lang
  Ve výchozím nastavení v jazyce Visual Basic je předání argumentů podle hodnoty. Ale při programování je dobrým zvykem zahrnout buď [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) nebo [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md) – klíčové slovo s každou deklarovaný parametr. Díky tomu váš kód lépe čitelný.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Procedury](./index.md)
 - [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)
 - [Postupy: Předání argumentů proceduře](./how-to-pass-arguments-to-a-procedure.md)

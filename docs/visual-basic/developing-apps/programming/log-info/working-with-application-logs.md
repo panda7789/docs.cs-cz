@@ -6,12 +6,12 @@ helpviewer_keywords:
 - application event logs, Visual Basic
 - application event logs
 ms.assetid: 2581afd1-5791-4bc4-86b2-46244e9fe468
-ms.openlocfilehash: afd35b67fc11cb556159ed0d37130cd86d72c30f
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 00c54a59ccfe2a49dcf35b322ca077a10a48ae7d
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57354827"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58839636"
 ---
 # <a name="working-with-application-logs-in-visual-basic"></a>Práce s protokoly aplikací v jazyce Visual Basic
 
@@ -23,11 +23,11 @@ Nejprve je zkontrolován závažnost zprávy <xref:System.Diagnostics.TraceSourc
 
 Následující obrázek ukazuje, jak se zprávy zapisují do `WriteEntry` metoda bude předána do `WriteLine` naslouchací procesy trasování metody v protokolu:
 
-![Moje volání protokolu](../../../../visual-basic/developing-apps/programming/log-info/media/mylogcall.png "MyLogCall")
+![Diagram zobrazující průběh Moje volání protokolu.](./media/working-with-application-logs/my-log-call-messages.png)
 
 Chování protokolu a naslouchacími procesy trasování můžete změnit změnou souboru konfigurace aplikace. Následující diagram ukazuje souvztažnost mezi částmi v protokolu a konfigurační soubor.
 
-![Moje nastavení protokolu](../../../../visual-basic/developing-apps/programming/log-info/media/mylogconfig.png "MyLogConfig")
+![Diagram znázorňující konfiguraci protokolu.](./media/working-with-application-logs/my-log-configuration.png)
 
 ## <a name="where-messages-are-logged"></a>Kde jsou zprávy zaznamenány
 

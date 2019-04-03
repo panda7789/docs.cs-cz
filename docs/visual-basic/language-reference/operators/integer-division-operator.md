@@ -17,12 +17,12 @@ helpviewer_keywords:
 - quotients, integer
 - truncation [Visual Basic], integer division
 ms.assetid: 4b0ee347-950c-45c9-8e23-54bc85df208e
-ms.openlocfilehash: 7ce7bdaa2bcbf2ba67f24c7e129f8f9a03a28c52
-ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
+ms.openlocfilehash: 1753199e2ecf3f156b90d8c0a5cacd672397260d
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57201908"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58828693"
 ---
 # <a name="-operator-visual-basic"></a>\ – operátor (Visual Basic)
 Provede podíl dvou čísel a vrátí celé číslo.  
@@ -69,6 +69,7 @@ expression1 \ expression2
  Výrazy uvedené v předchozím příkladu vrátí hodnoty 2, 3, 33 a-22, v uvedeném pořadí.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [\\= Operator](../../../visual-basic/language-reference/operators/integer-division-assignment-operator.md)
 - [/ – Operátor (Visual Basic)](../../../visual-basic/language-reference/operators/floating-point-division-operator.md)
 - [Příkaz Option Strict](../../../visual-basic/language-reference/statements/option-strict-statement.md)

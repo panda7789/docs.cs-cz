@@ -8,12 +8,12 @@ helpviewer_keywords:
 - pens [Windows Forms], setting width
 - pens [Windows Forms], setting alignment
 ms.assetid: a202af36-4d31-4401-a126-b232f51db581
-ms.openlocfilehash: e82f406b4fdca93df7a811eea5506846d56fda28
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: b01482c059906d76ad9e506b593d580431f0ec09
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57703046"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58828196"
 ---
 # <a name="how-to-set-pen-width-and-alignment"></a>Postupy: Nastavení šířky a pera a zarovnání
 Když vytvoříte <xref:System.Drawing.Pen>, můžete zadat šířku pera jako jeden z argumentů konstruktoru. Můžete také změnit šířku pera s <xref:System.Drawing.Pen.Width%2A> vlastnost <xref:System.Drawing.Pen> třídy.  
@@ -28,7 +28,7 @@ Když vytvoříte <xref:System.Drawing.Pen>, můžete zadat šířku pera jako j
   
 -   Nastavte hodnotu <xref:System.Drawing.Pen.Alignment%2A> vlastnost <xref:System.Drawing.Drawing2D.PenAlignment.Center> (výchozí) k určení, že bude pixelů vykreslit zelený perem teoretické řádku na střed. Následující obrázek znázorňuje výsledný řádek.  
   
-     ![Pera](./media/pens1a.gif "pens1A")  
+     ![Černá čára dynamického zajišťování s zelené zvýraznění.](./media/how-to-set-pen-width-and-alignment/green-pixels-centered-line.gif)  
   
      Následující příklad kódu kreslení obdélníku dvakrát: jednou perem černé šířky 1 a posléze s zelené pera šířky 10.  
   
@@ -39,9 +39,9 @@ Když vytvoříte <xref:System.Drawing.Pen>, můžete zadat šířku pera jako j
   
 -   Nastavte hodnotu <xref:System.Drawing.Pen.Alignment%2A> vlastnost <xref:System.Drawing.Drawing2D.PenAlignment.Center> k určení, že bude pixelů vykreslit zelený perem na hranici obdélník na střed.  
   
-     Výsledný obdélníku na následujícím obrázku.  
+     Výsledný obdélníku na následujícím obrázku:
   
-     ![Pera](./media/pens2.gif "pens2")  
+     ![Obdélník vykresleno pomocí černého dynamického zajišťování řádky s zelené zvýraznění.](./media/how-to-set-pen-width-and-alignment/green-pixels-centered-rectangle.gif)  
   
      [!code-csharp[System.Drawing.UsingAPen#42](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.UsingAPen/CS/Class1.cs#42)]
      [!code-vb[System.Drawing.UsingAPen#42](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.UsingAPen/VB/Class1.vb#42)]  
@@ -53,9 +53,9 @@ Když vytvoříte <xref:System.Drawing.Pen>, můžete zadat šířku pera jako j
      [!code-csharp[System.Drawing.UsingAPen#43](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.UsingAPen/CS/Class1.cs#43)]
      [!code-vb[System.Drawing.UsingAPen#43](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.UsingAPen/VB/Class1.vb#43)]  
   
-     Pixelů na šířku zelenou čáru zobrazují na vnitřní obdélníku, jak je znázorněno na následujícím obrázku.  
+     Pixelů na šířku zelenou čáru zobrazují na vnitřní obdélníku, jak je znázorněno na následujícím obrázku:
   
-     ![Pera](./media/pens3.gif "pens3")  
+     ![Obdélník vykresleno pomocí černého řádky široký zelenou čárou uvnitř.](./media/how-to-set-pen-width-and-alignment/green-pixels-inside-rectangle.gif)  
   
 ## <a name="see-also"></a>Viz také:
 - [Kreslení čar a obrazců pomocí pera](using-a-pen-to-draw-lines-and-shapes.md)

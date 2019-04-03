@@ -26,12 +26,12 @@ helpviewer_keywords:
 - type arguments [Visual Basic], defining
 - arguments [Visual Basic], type
 ms.assetid: a914adf8-e68f-4819-a6b1-200d1cf1c21c
-ms.openlocfilehash: e40890835ddd50d25106e318ee05a874ce355d9b
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 1bc82fe9ecee577125c4353677fb19cd3a57b0cf
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56977796"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58837062"
 ---
 # <a name="how-to-define-a-class-that-can-provide-identical-functionality-on-different-data-types-visual-basic"></a>Postupy: Definujte třídu, která poskytne identické funkce pro různé datové typy (Visual Basic)
 Můžete definovat třídu z které můžete vytvořit objekty, které poskytne identické funkce pro různé datové typy. K tomuto účelu můžete zadat jednu nebo víc *parametry typu* v definici. Třída pak může sloužit jako šablona pro objekty, které používají různé datové typy. Třída definována tímto způsobem se nazývá *obecnou třídu*.  
@@ -75,6 +75,7 @@ Můžete definovat třídu z které můžete vytvořit objekty, které poskytne 
      [!code-vb[VbVbalrDataTypes#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDataTypes/VB/Class1.vb#8)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Datové typy](../../../../visual-basic/programming-guide/language-features/data-types/index.md)
 - [Obecné typy v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
 - [Jazyková nezávislost a jazykově nezávislé komponenty](../../../../standard/language-independence-and-language-independent-components.md)

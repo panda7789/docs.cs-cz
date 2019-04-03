@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - Visual Basic Application Model, extending
 ms.assetid: e91d3bed-4c27-40e3-871d-2be17467c72c
-ms.openlocfilehash: 64c175216cf21b7947462cf79e4b88ab6fcd6d86
-ms.sourcegitcommit: 70c76a12449439bac0f7a359866be5a0311ce960
+ms.openlocfilehash: aceb63d3cb9af75fa4eb32ed5bca5d65825704e8
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39245645"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58834709"
 ---
 # <a name="extending-the-visual-basic-application-model"></a>Rozšíření aplikačního modelu jazyka Visual Basic
 Funkce můžete přidat do modelu aplikace tak, že přepíšete `Overridable` členy <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase> třídy. Tato technika umožňuje přizpůsobit chování aplikační model a přidávat volání vlastní metody aplikace po spuštění a ukončení.  
@@ -19,13 +19,13 @@ Funkce můžete přidat do modelu aplikace tak, že přepíšete `Overridable` �
   
  Následující obrázek znázorňuje sekvenci volání aplikačního modelu v normální aplikaci Windows Forms jazyka Visual Basic. Sekvence začíná, když `Sub Main` volání procedur <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Run%2A> metody.  
   
- ![Aplikační Model Visual Basic &#45; &#45; spustit](../../../visual-basic/developing-apps/customizing-extending-my/media/vb_modelrun.gif "VB_ModelRun")  
+ ![Diagram znázorňující sekvence volání aplikačního modelu.](./media/extending-the-visual-basic-application-model/application-model-call-sequence.gif)  
   
  Také poskytuje aplikačního modelu jazyka Visual Basic <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.StartupNextInstance> a <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UnhandledException> události. Následující obrázky znázorňují mechanismus pro vyvolání těchto událostí.  
   
- ![Aplikační Model Visual Basic &#45; &#45; další Instance](../../../visual-basic/developing-apps/customizing-extending-my/media/vb_modelnext.gif "VB_ModelNext")  
+ ![Diagram znázorňující OnStartupNextInstance metody vyvolání události StartupNextInstance.](./media/extending-the-visual-basic-application-model/raise-startupnextinstance-event.gif)  
   
- ![Neošetřená výjimka aplikačního modelu jazyka Visual Basic](../../../visual-basic/developing-apps/customizing-extending-my/media/vb_unhandex.gif "VB_UnhandEx")  
+ ![Diagram znázorňující OnUnhandledException metody vyvolání události UnhandledException.](./media/extending-the-visual-basic-application-model/raise-unhandledexception-event.gif)  
   
 ## <a name="overriding-the-base-methods"></a>Přepisování základních metod  
  <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Run%2A> Metoda definuje pořadí, ve kterém `Application` metody spouštění. Ve výchozím nastavení `Sub Main` volání procedur pro aplikace Windows Forms <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Run%2A> metody.  
@@ -90,13 +90,14 @@ Funkce můžete přidat do modelu aplikace tak, že přepíšete `Overridable` �
 |<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.SaveMySettingsOnExit%2A>|Pokud aplikaci automaticky uloží změny nastavení uživatele vaší aplikace při ukončení aplikace.|**Při vypnutí ukládání My.Settings** zaškrtávací políčko|  
 |<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.ShutdownStyle%2A>|Co způsobí, že je aplikace ukončena, třeba když se zavře úvodní formulář nebo když se zavře poslední formulář.|**Ukončení režimu** seznamu|  
   
-## <a name="see-also"></a>Viz také  
- <xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase>  
- <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Startup>  
- <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.StartupNextInstance>  
- <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UnhandledException>  
- <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Shutdown>  
- <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.NetworkAvailabilityChanged>  
- <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.NetworkAvailabilityChanged>  
- [Přehled aplikačního modelu jazyka Visual Basic](../../../visual-basic/developing-apps/development-with-my/overview-of-the-visual-basic-application-model.md)  
- [Stránka Aplikace, Návrhář projektu (Visual Basic)](/visualstudio/ide/reference/application-page-project-designer-visual-basic)
+## <a name="see-also"></a>Viz také:
+
+- <xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase>
+- <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Startup>
+- <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.StartupNextInstance>
+- <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UnhandledException>
+- <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Shutdown>
+- <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.NetworkAvailabilityChanged>
+- <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.NetworkAvailabilityChanged>
+- [Přehled aplikačního modelu jazyka Visual Basic](../../../visual-basic/developing-apps/development-with-my/overview-of-the-visual-basic-application-model.md)
+- [Stránka Aplikace, Návrhář projektu (Visual Basic)](/visualstudio/ide/reference/application-page-project-designer-visual-basic)

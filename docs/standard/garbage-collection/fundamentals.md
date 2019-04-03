@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 67c5a20d-1be1-4ea7-8a9a-92b0b08658d2
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9bb09571ea8c9fb3a6d16a9f16c5269326d7f7da
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: f6dcd8e47fcbbee1e17e9e9ca1cb93f6076b4475
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57712471"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58826597"
 ---
 # <a name="fundamentals-of-garbage-collection"></a>Základy kolekce paměti
 <a name="top"></a> V modulu common language runtime (CLR) slouží systému uvolňování paměti jako automatický správce paměti. Poskytuje následující výhody:  
@@ -261,21 +261,19 @@ Souběžné uvolňování paměti
   
  Uvolňování paměti na pozadí odebere omezení přidělení stanovená souběžným uvolňováním, protože k dočasnému uvolnění může dojít během uvolňování paměti na pozadí. To znamená, že uvolňování paměti na pozadí může odstraňovat neživé v dočasných generací a může také rozšířit haldu v případě potřeby v průběhu 1 uvolnění paměti generace.  
   
- Následující obrázek znázorňuje pozadí uvolňování paměti prováděné na samostatném vyhrazeném vlákně na pracovní stanici.  
+Následující obrázek znázorňuje pozadí uvolňování paměti prováděné na samostatném vyhrazeném vlákně na pracovní stanici:
   
- ![Uvolnění paměti pracovní stanice na pozadí](../../../docs/standard/garbage-collection/media/backgroundworkstn.png "BackgroundWorkstn")  
-Uvolnění paměti pracovní stanice na pozadí  
-  
+ ![Diagram zobrazující průběh uvolnění paměti pracovní stanice na pozadí.](./media/fundamentals/background-workstation-garbage-collection.png)
+   
  [Zpět na začátek](#top)  
   
 <a name="background_server_garbage_collection"></a>   
 ## <a name="background-server-garbage-collection"></a>Uvolnění paměti serveru na pozadí  
  Od verze rozhraní .NET Framework 4.5, uvolňování paměti serveru na pozadí je výchozím režimem pro uvolňování paměti serveru. Zvolit tento režim, nastavte `enabled` atribut [ \<gcServer > element](../../../docs/framework/configure-apps/file-schema/runtime/gcserver-element.md) k `true` ve schématu konfigurace modulu runtime. Tento režim funguje podobně k uvolnění paměti pracovní stanice na pozadí, je popsáno v předchozí části, ale existuje několik rozdílů. Uvolnění paměti pracovní stanice na pozadí používá jeden pozadí vyhrazené vlákno uvolňování paměti, zatímco uvolňování paměti serveru na pozadí používá více vláken, obvykle jedno vyhrazené vlákno pro každý logický procesor. Na rozdíl od kolekce vlákna uvolňování paměti na pozadí pracovní stanice tato vlákna nikdy nevyprší.  
   
- Následující obrázek znázorňuje pozadí uvolňování paměti prováděné na samostatném vyhrazeném vlákně na serveru.  
+ Následující obrázek znázorňuje pozadí uvolňování paměti prováděné na samostatném vyhrazeném vlákně na serveru:  
   
- ![Uvolnění paměti serveru na pozadí](../../../docs/standard/garbage-collection/media/backgroundserver.png "BackgroundServer")  
-Uvolnění paměti serveru na pozadí  
+ ![Diagram zobrazující průběh uvolňování paměti serveru na pozadí.](./media/fundamentals/background-server-garbage-collection.png)  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC40032
 ms.assetid: 32bf1949-fd73-456c-a323-bf1ffe1320ed
-ms.openlocfilehash: a75f66c79bcf6c857fb19acf7c5a75320b16a43d
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 636fcc36e7bac52467998dc9c59f14ba1bedead3
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55258618"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58831485"
 ---
 # <a name="underlying-type-typename-of-enum-is-not-cls-compliant"></a>Základní typ \<typename > Enum není kompatibilní se Specifikací CLS
 Datový typ zadaný pro tento výčet není součástí [jazyková nezávislost a jazykově nezávislé komponenty](../../../standard/language-independence-and-language-independent-components.md) (CLS). Toto není k chybě v komponentě, protože [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] a Visual Basic podporují tento datový typ. Jiné součásti, které jsou napsané v striktně kompatibilní se Specifikací CLS kódu však nemusí podporovat tento typ dat. Takové součásti nemusí být úspěšně komunikovat s vaší komponentě.  
@@ -42,6 +42,6 @@ Datový typ zadaný pro tento výčet není součástí [jazyková nezávislost 
 -   Při vzájemném propojování s objekty automatizace nebo COM, mějte na paměti, že některé typy mají různou šířkou dat než [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]. Například `uint` je často 16 bitů v jiných prostředích. Pokud takové součásti předáváte 16bitový argument, deklarujte ho jako `UShort` místo `UInteger` v spravovaného kódu jazyka Visual Basic.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Reflexe (Visual Basic)](../../programming-guide/concepts/reflection.md)
 - [Reflexe](../../../framework/reflection-and-codedom/reflection.md)
-

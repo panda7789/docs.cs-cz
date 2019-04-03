@@ -5,12 +5,12 @@ helpviewer_keywords:
 - locale [Visual Basic], effect on strings
 - strings [Visual Basic], locale dependence
 ms.assetid: c4664444-ee0d-47bf-bef1-eaa3c54bdd7f
-ms.openlocfilehash: b9e9b4e199e4504e21b365706ea60d63c9d5fb87
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: d3c7ae9da9c18e53da393928e34dcfbf04fc891c
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56980942"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58834618"
 ---
 # <a name="how-culture-affects-strings-in-visual-basic"></a>Vliv jazykové verze na řetězce v jazyce Visual Basic
 Tato stránka nápovědy popisuje, jak jazyka Visual Basic používá informace o jazykové verzi provádět převody řetězce a porovnávání řetězců.  
@@ -79,6 +79,7 @@ Tato stránka nápovědy popisuje, jak jazyka Visual Basic používá informace 
  Pokud vaše aplikace provádí rozhodnutí o zabezpečení založeno na výsledku porovnání nebo operaci změny velikosti písmen, pak by měl použít operaci <xref:System.String.Compare%2A?displayProperty=nameWithType> a předáte `Ordinal` nebo `OrdinalIgnoreCase` pro `comparisonType` argument.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Globalization.CultureInfo>
 - [Úvod do řetězců v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/introduction-to-strings.md)
 - [Funkce pro převod typů](../../../../visual-basic/language-reference/functions/type-conversion-functions.md)

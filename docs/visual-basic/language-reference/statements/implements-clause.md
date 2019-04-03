@@ -17,12 +17,12 @@ helpviewer_keywords:
 - members [Visual Basic], Implements keyword
 - reimplementation
 ms.assetid: 5252cdf9-964d-4fc6-af0f-0449b7126b5a
-ms.openlocfilehash: cb0ea5ce52effad4df541e6a9196b1faf279262e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 05de1d9f8966c17d84deba34f27819cce4aff3fe
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54522505"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58832616"
 ---
 # <a name="implements-clause-visual-basic"></a>Implements – klauzule (Visual Basic)
 Označuje, že člen třídy nebo struktury poskytuje implementaci pro člena definovaného v rozhraní.  
@@ -45,6 +45,7 @@ V odvozené třídě můžete znovu implementovat člen rozhraní, která je ji�
 - [Příkaz Sub](../../../visual-basic/language-reference/statements/sub-statement.md)  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Příkaz Implements](../../../visual-basic/language-reference/statements/implements-statement.md)
 - [Příkaz Interface](../../../visual-basic/language-reference/statements/interface-statement.md)
 - [Příkaz Class](../../../visual-basic/language-reference/statements/class-statement.md)

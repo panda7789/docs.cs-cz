@@ -2,12 +2,12 @@
 title: 'Postupy: Použití anotací transformace stromů LINQ to XML ve stylu XSLT (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 08e91fa2-dac2-4463-9ef1-87b1ac3fa890
-ms.openlocfilehash: ed31e00b6d67a6707a98977c58e4e7afe35c8ad7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a8db5f9dc29b4053321c81c9da58e12610ef63c7
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54746296"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58824868"
 ---
 # <a name="how-to-use-annotations-to-transform-linq-to-xml-trees-in-an-xslt-style-visual-basic"></a>Postupy: Použití anotací transformace stromů LINQ to XML ve stylu XSLT (Visual Basic)
 Poznámky lze použít k usnadnění transformace stromu XML.  
@@ -379,4 +379,5 @@ After Transform
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Pokročilé technologie LINQ to XML programování (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)

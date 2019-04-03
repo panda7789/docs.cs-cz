@@ -6,12 +6,12 @@ helpviewer_keywords:
 - persistence [Visual Basic], persisting user settings [Visual Basic]
 - user settings [Visual Basic], persisting
 ms.assetid: 0e5e6415-b6e2-4602-9be0-a65fa167d007
-ms.openlocfilehash: 45d5fbf6fda34407d8b7eb3f959f215e7621f1c5
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 35997db52a59aeaff5a2c404ea83b15639ea23a0
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56966941"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58825178"
 ---
 # <a name="how-to-persist-user-settings-in-visual-basic"></a>Postupy: Zachování uživatelského nastavení v jazyce Visual Basic
 Můžete použít `My.Settings.Save` metoda zachování změn nastavení uživatele.  
@@ -31,6 +31,7 @@ Můžete použít `My.Settings.Save` metoda zachování změn nastavení uživat
  Pro tento příklad fungoval, musí mít vaše aplikace `LastChanged` nastavení hlavního názvu uživatele, typu `Date`. Další informace najdete v tématu [Správa nastavení aplikace (.NET)](/visualstudio/ide/managing-application-settings-dotnet).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Objekt My.Settings](../../../../visual-basic/language-reference/objects/my-settings-object.md)
 - [Postupy: Čtení nastavení aplikace v jazyce Visual Basic](../../../../visual-basic/developing-apps/programming/app-settings/how-to-read-application-settings.md)
 - [Postupy: Změna uživatelského nastavení v jazyce Visual Basic](../../../../visual-basic/developing-apps/programming/app-settings/how-to-change-user-settings.md)

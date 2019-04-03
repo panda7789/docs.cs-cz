@@ -2,12 +2,12 @@
 title: Operace kvantifikátoru (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: ae1a2b73-503c-4f4b-a3fd-31b5adbee67c
-ms.openlocfilehash: c358c3181ecbefeedcbe22e6f3c877d2924c66b3
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
+ms.openlocfilehash: e871a77caf0b7cfe361f11462085180c17bf2057
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58409507"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58816041"
 ---
 # <a name="quantifier-operations-visual-basic"></a>Operace kvantifikátoru (Visual Basic)
 Operace kvantifikátoru vrátit <xref:System.Boolean> hodnotu, která určuje, jestli některé nebo všechny prvky v sekvenci splňují podmínku.  
@@ -38,6 +38,7 @@ Operace kvantifikátoru vrátit <xref:System.Boolean> hodnotu, která určuje, j
  [!code-vb[CsLINQAnyAll#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/CsLINQAnyAll/VB/AnyAll.vb#2)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Linq>
 - [Přehled standardních operátorů dotazu (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)
 - [Klauzule Aggregate](../../../../visual-basic/language-reference/queries/aggregate-clause.md)

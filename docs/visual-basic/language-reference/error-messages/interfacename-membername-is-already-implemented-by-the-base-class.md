@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC42015
 ms.assetid: 658c070a-113e-4bd8-b294-12c243191160
-ms.openlocfilehash: 5d5d9f21069c7b9aa54940525b7678bc3987b77c
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 64bd7771820c2a4073350b7a5189d3a32c4775be
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55264148"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58832358"
 ---
 # <a name="interfacenamemembername-is-already-implemented-by-the-base-class-baseclassname-re-implementation-of-type-assumed"></a>'\<interfacename >. \<membername >' je již implementováno prostřednictvím základní třídy\<baseclassname >'. Opětovná implementace \<typ > předpokládá, že
 Vlastnost, procedura nebo události v odvozené třídě používá `Implements` klauzule určující člena rozhraní, která je již implementováno základní třídy.  
@@ -30,4 +30,5 @@ Vlastnost, procedura nebo události v odvozené třídě používá `Implements`
 -   Pokud je nemáte v úmyslu znovu implementovat člen rozhraní, odeberte `Implements` klauzule v deklaraci vlastnosti, procedury nebo události.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Rozhraní](../../../visual-basic/programming-guide/language-features/interfaces/index.md)

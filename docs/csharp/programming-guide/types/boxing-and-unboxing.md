@@ -10,12 +10,12 @@ helpviewer_keywords:
 - unboxing [C#]
 - boxing [C#]
 ms.assetid: 8da9bbf4-bce9-4b08-b2e5-f64c11c56514
-ms.openlocfilehash: 8340d05b18c4fb19e9ba8f8ecffa5657b7febd79
-ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
+ms.openlocfilehash: da4aabbd0529ee239dacd2dff7c7825d41110b44
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57201752"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58835164"
 ---
 # <a name="boxing-and-unboxing-c-programming-guide"></a>Zabalení a rozbalení (Průvodce programováním v C#)
 Zabalení je proces převodu [typ hodnoty](../../../csharp/language-reference/keywords/value-types.md) typu `object` nebo na libovolný typ rozhraní implementovaný tímto typem hodnoty. Když modul CLR pole typu hodnoty, obtéká hodnotu uvnitř System.Object a uloží ji na spravované haldě. Rozbalení extrahuje typ hodnoty z objektu. Zabalení je implicitní; Rozbalení je explicitní. Pojem zabalení a rozbalení základem sjednocené zobrazení C# systému typů, ve kterém lze považovat hodnotu libovolného typu za objekt.  
@@ -46,10 +46,9 @@ Zabalení je proces převodu [typ hodnoty](../../../csharp/language-reference/ke
   
  [!code-csharp[csProgGuideTypes#18](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#18)]  
   
- Výsledkem tohoto příkazu je vytvoření odkazu na objekt `o`, v zásobníku, který odkazuje na hodnotu typu `int`, na haldě. Tuto hodnotu je kopií hodnoty hodnotového typu přiřazena k proměnné `i`. Rozdíl mezi dvěma proměnnými, `i` a `o`, je znázorněn na následujícím obrázku.  
+ Výsledkem tohoto příkazu je vytvoření odkazu na objekt `o`, v zásobníku, který odkazuje na hodnotu typu `int`, na haldě. Tuto hodnotu je kopií hodnoty hodnotového typu přiřazena k proměnné `i`. Rozdíl mezi dvěma proměnnými, `i` a `o`, je znázorněn na následujícím obrázku převod na uzavřené určení:  
   
- ![BoxingConversion – grafika](../../../csharp/programming-guide/types/media/vcboxingconversion.gif "vcBoxingConversion")  
-Převod na uzavřené určení  
+ ![Obrázek znázorňující rozdíl mezi i a o proměnné.](./media/boxing-and-unboxing/boxing-operation-i-o-variables.gif)    
   
  Je také možné provést zabalení explicitně jako v následujícím příkladu, ale nikdy není vyžadováno explicitní zabalení:  
   
@@ -72,10 +71,9 @@ Převod na uzavřené určení
   
  [!code-csharp[csProgGuideTypes#21](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#21)]  
   
- Následující obrázek ukazuje výsledek předchozích příkazů.  
+ Následující obrázek ukazuje výsledek předchozích příkazů: 
   
- ![Obrázek rozbalení převod](../../../csharp/programming-guide/types/media/vcunboxingconversion.gif "vcUnBoxingConversion")  
-Převod rozbalením  
+ ![Obrázek znázorňující unboxingového převodu.](./media/boxing-and-unboxing/unboxing-conversion-operation.gif)
   
  Pro rozbalení typů hodnot v době spuštění úspěšné, musí být rozbalená položka odkazem na objekt, který byl dříve vytvořen zabalením instance tohoto typu hodnoty. Při pokusu o rozbalení `null` způsobí, že <xref:System.NullReferenceException>. Při pokusu o vybalení odkazu na nekompatibilní hodnotu způsobí typ <xref:System.InvalidCastException>.  
   

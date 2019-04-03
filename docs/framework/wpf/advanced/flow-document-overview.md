@@ -9,12 +9,12 @@ helpviewer_keywords:
 - ', '
 - flow documents [WPF]
 ms.assetid: ef236a50-d44f-43c8-ba7c-82b0c733c0b7
-ms.openlocfilehash: a396bede9e0004c9f0681e3399af95f31592a0b0
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 9f61de9bf528690e6057ec445ea7f1b77b3be0b9
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57361405"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58828469"
 ---
 # <a name="flow-document-overview"></a>Přehled toku dokumentů
 Dokumenty toku jsou určená k optimalizaci pro zobrazení a čitelnost. Dokumenty toku místo nastavování jedno předdefinované rozložení dynamicky upravit a přeformátování jejich obsah na základě proměnných za běhu, jako je například velikost okna, rozlišení zařízení a volitelné uživatelských předvoleb. Kromě toho nabízejí dokumenty toku dokumentu pokročilé funkce, jako je stránkování a sloupce. Toto téma obsahuje přehled toku dokumentů a postupy jejich vytvoření.  
@@ -128,9 +128,9 @@ Dokumenty toku jsou určená k optimalizaci pro zobrazení a čitelnost. Dokumen
   
  [!code-xaml[SpanSnippets#_BlockUIXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/SpanSnippets/CSharp/Window1.xaml#_blockuixaml)]  
   
- Následující obrázek ukazuje, jak se vykreslí v tomto příkladu.  
+ Následující obrázek ukazuje, jak se vykreslí v tomto příkladu:  
   
- ![Snímek obrazovky: UIElement součástí plovoucího obsahu](./media/blockuicontainer.png "BlockUIContainer")  
+ ![Snímek obrazovky zobrazující prvku UIElement součástí plovoucího obsahu.](./media/flow-document-overview/embedded-blockuicontainer.png)  
   
  **Seznam**  
   

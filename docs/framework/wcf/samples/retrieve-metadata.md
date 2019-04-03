@@ -2,12 +2,12 @@
 title: Načítání metadat
 ms.date: 03/30/2017
 ms.assetid: e8a6ef8c-a195-495a-a15e-7d92bdf0b28c
-ms.openlocfilehash: 952fb737b1e86c726a4bf57cf614f02d7b108145
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 24fd2a7f3a511921354e43141b8384bdf55bbc65
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54612993"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58834530"
 ---
 # <a name="retrieve-metadata"></a>Načítání metadat
 Tento příklad ukazuje, jak implementovat klienta, který dynamicky načte metadata ze služby vybrat koncový bod pro komunikaci s. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md). Služba byla změněna vystavit dva koncové body služby – koncový bod v základní adresu pomocí `basicHttpBinding` vazby a zabezpečení koncového bodu na {*baseaddress*} / zabezpečení pomocí `wsHttpBinding` vazby. Namísto konfigurace klienta pomocí adresy koncových bodů a vazby, klienta dynamicky načte metadata pro používání služby <xref:System.ServiceModel.Description.MetadataExchangeClient> třídy a poté naimportuje metadata jako <xref:System.ServiceModel.Description.ServiceEndpointCollection> pomocí <xref:System.ServiceModel.Description.WsdlImporter> třídy.  
@@ -69,4 +69,3 @@ foreach (ServiceEndpoint ep in endpoints)
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Client\RetrieveMetadata`  
   
-## <a name="see-also"></a>Viz také:

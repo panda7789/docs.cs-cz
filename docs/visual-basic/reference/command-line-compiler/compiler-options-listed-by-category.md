@@ -4,12 +4,12 @@ ms.date: 04/12/2018
 helpviewer_keywords:
 - Visual Basic compiler, options
 ms.assetid: fbe36f7a-7cfa-4f77-a8d4-2be5958568e3
-ms.openlocfilehash: e7e81715b396580208fd7bbbb797a7c93301503d
-ms.sourcegitcommit: facefcacd7ae2e5645e463bc841df213c505ffd4
+ms.openlocfilehash: 333bfb539fc375fd8f2dd170a187002fcf81ea2b
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55738900"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58827364"
 ---
 # <a name="visual-basic-compiler-options-listed-by-category"></a>Možnosti kompilátoru jazyka Visual Basic uvedené podle kategorie
 Kompilátor příkazového řádku jazyka Visual Basic se poskytuje jako alternativu ke kompilaci programů z v rámci integrovaného vývojového prostředí (IDE) sady Visual Studio. Následuje seznam možností příkazového řádku kompilátoru jazyka Visual Basic, seřazené podle kategorie funkcí.  
@@ -127,5 +127,6 @@ Kompilátor příkazového řádku jazyka Visual Basic se poskytuje jako alterna
 |`-checksumalgorithm:<alg>`|Zadejte algoritmus pro výpočet kontrolního součtu souboru zdroje uloženo v PDB.  Podporované hodnoty jsou: SHA1 (výchozí) nebo SHA256.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Abecedně seřazené možnosti kompilátoru jazyka Visual Basic](../../../visual-basic/reference/command-line-compiler/compiler-options-listed-alphabetically.md)
 - [Správa vlastností projektu a řešení](/visualstudio/ide/managing-project-and-solution-properties?view=vs-2017)

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - decryption [Visual Basic], strings
 - strings [Visual Basic], decrypting
 ms.assetid: 1f51e40a-2f88-43e2-a83e-28a0b5c0d6fd
-ms.openlocfilehash: fe91e0062ac35859a3b85eb080d16fb88a6f9aaf
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: aaf8238a330ceb9e1cf4f9ff5892d1db1d951faa
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56972778"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58826792"
 ---
 # <a name="walkthrough-encrypting-and-decrypting-strings-in-visual-basic"></a>Návod: Šifrování a dešifrování řetězců v jazyce Visual Basic
 Tento návod ukazuje, jak používat <xref:System.Security.Cryptography.DESCryptoServiceProvider> třídy k šifrování a dešifrování řetězců v kódu pomocí verze zprostředkovatele kryptografických služeb Triple Data Encryption Standard (<xref:System.Security.Cryptography.TripleDES>) algoritmus. Prvním krokem je vytvoření jednoduchého obálkovou třídu, která zapouzdřuje algoritmus 3DES a šifrovaná data uloží jako kódovaný řetězec base-64. Potom tuto obálku slouží k bezpečné ukládání privátních dat uživatele ve veřejně přístupné textového souboru.  
@@ -75,6 +75,7 @@ Tento návod ukazuje, jak používat <xref:System.Security.Cryptography.DESCrypt
      Při testování aplikace, Všimněte si, že data se nebudou dešifrovat, pokud zadáte nesprávné heslo.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Security.Cryptography>
 - <xref:System.Security.Cryptography.DESCryptoServiceProvider>
 - <xref:System.Security.Cryptography.DES>

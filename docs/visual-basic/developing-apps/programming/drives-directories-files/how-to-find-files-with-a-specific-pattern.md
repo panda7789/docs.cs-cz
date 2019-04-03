@@ -6,12 +6,12 @@ helpviewer_keywords:
 - pattern matching
 - patterns, matching
 ms.assetid: 25e3b71d-b844-4293-9e4e-f06c5836b5cc
-ms.openlocfilehash: 879f7a2335e3c4c31b0a7ddd3d303486d8b95a22
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: e4d40c4ad3a694b3f7e830604edf94d90cb4c395
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56970464"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58825323"
 ---
 # <a name="how-to-find-files-with-a-specific-pattern-in-visual-basic"></a>Postupy: Hledání souborů pomocí specifického vzoru v jazyce Visual Basic
 <xref:Microsoft.VisualBasic.MyServices.FileSystemProxy.GetFiles%2A> Metoda vrátí kolekci řetězců, které představují názvy cest souborů jen pro čtení. Můžete použít `wildCards` parametr k určení určitému vzoru. Pokud chcete do hledání zahrnout podadresářů, nastavte `searchType` parametr `SearchOption.SearchAllSubDirectories`.  
@@ -47,6 +47,7 @@ ms.locfileid: "56970464"
 -   Uživatel nemá potřebná oprávnění (<xref:System.UnauthorizedAccessException>).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:Microsoft.VisualBasic.MyServices.FileSystemProxy.GetFiles%2A>
 - [Postupy: Hledání podadresářů pomocí specifického vzoru](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-find-subdirectories-with-a-specific-pattern.md)
 - [Řešení potíží: Čtení a zápis do textových souborů](../../../../visual-basic/developing-apps/programming/drives-directories-files/troubleshooting-reading-from-and-writing-to-text-files.md)

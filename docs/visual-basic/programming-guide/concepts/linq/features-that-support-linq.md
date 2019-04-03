@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Visual Basic, LINQ features
 - LINQ [Visual Basic], features supporting LINQ
 ms.assetid: c821bb50-b6f6-4cf9-8aba-2717e465bd3a
-ms.openlocfilehash: e76fcb891e0b258d261208f7cb9173c49899ba11
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 155d5c36483accc12d066a5530fea20a563e1498
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56974260"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58814494"
 ---
 # <a name="visual-basic-features-that-support-linq"></a>Funkce Visual Basic podporující LINQ
 Název [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] odkazuje na technologie v jazyce Visual Basic, že podporuje syntaxi dotazu a jiné jazykové konstrukty přímo v jazyce. S [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)], nemusíte učit nový jazyk k dotazu vůči externímu zdroji dat. V jazyce Visual Basic můžete dotazovat data v relačních databází, úložiště XML nebo objekty. Tato integrace možností dotazování jazyk povolí kompilaci kontrolu pro chyby syntaxe a bezpečnost typů. Tato integrační také zajišťuje, že už znáte většinu toho, co máte vědět o zápis bohatě vybaveným a různých dotazů v jazyce Visual Basic.  
@@ -94,6 +94,7 @@ Název [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] odkazuje na techn
  Další informace najdete v tématu [výrazy Lambda](../../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Language-Integrated Query (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/index.md)
 - [Začínáme s dotazy LINQ v jazyce Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/getting-started-with-linq.md)
 - [LINQ a řetězce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)

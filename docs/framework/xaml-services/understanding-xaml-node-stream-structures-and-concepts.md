@@ -6,12 +6,12 @@ helpviewer_keywords:
 - nodes [XAML Services], XAML node stream
 - XAML [XAML Services], XAML node streams
 ms.assetid: 7c11abec-1075-474c-9d9b-778e5dab21c3
-ms.openlocfilehash: e75d7f9454018b4a5f31eb36f1790d3a7b49af78
-ms.sourcegitcommit: 5c1abeec15fbddcc7dbaa729fabc1f1f29f12045
+ms.openlocfilehash: babf98b7dd30cd60e72e310ae8ba8c9a42d9125f
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58034748"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58824426"
 ---
 # <a name="understanding-xaml-node-stream-structures-and-concepts"></a>Principy struktur a koncepcí datových proudů uzlů XAML
 
@@ -218,7 +218,7 @@ Následující poznámky k seznamu, které jsou všechny případy, kde je oček
 
 - **Neznámá obsah:** Název tohoto uzlu člen je `_UnknownContent`. Přesněji řečeno, jde <xref:System.Xaml.XamlDirective>, a je definován v oboru názvů jazyka XAML XAML. Tato direktiva se používá jako sentinel pro případy, kdy elementu objektu XAML obsahuje obsah, zdroje XAML, ale v tuto chvíli k dispozici kontext schématu XAML se dá určit bez vlastnost content. Tento případ, v datovém proudu uzlu XAML můžete zjistit kontrolou pro členy s názvem `_UnknownContent`. Pokud nebyla provedena žádná další akce v XAML uzel zatížení cesty toku, výchozí <xref:System.Xaml.XamlObjectWriter> vyvolá pokus o `WriteEndObject` když narazí `_UnknownContent` člen libovolného objektu. Výchozí hodnota <xref:System.Xaml.XamlXmlWriter> nevyvolá a považuje za člena implicitní. Můžete získat statické entity pro `_UnknownContent` z <xref:System.Xaml.XamlLanguage.UnknownContent%2A>.
 
-- **Vlastnost kolekce kolekce:** i když má vyhrazené s názvem vlastnosti, která obsahuje položky kolekce základní typ CLR tohoto třídu kolekce, která se obvykle používá pro XAML, tato vlastnost není znám o typu systému XAML před zálohování typu řešení. Místo toho představuje datový proud uzlu XAML `Items` zástupný text jako člen kolekce typu XAML. V implementaci rozhraní .NET Framework XAML Services název této směrnice / člena v datovém proudu uzlu je `_Items`. Konstanty pro tuto direktivu lze získat z <xref:System.Xaml.XamlLanguage.Items%2A>.
+- **Vlastnost kolekce kolekce:** I když má vyhrazené s názvem vlastnosti, která obsahuje položky kolekce základní typ CLR tohoto třídu kolekce, která se obvykle používá pro XAML, tato vlastnost není znám o typu systému XAML před typ řešení zálohování. Místo toho představuje datový proud uzlu XAML `Items` zástupný text jako člen kolekce typu XAML. V implementaci rozhraní .NET Framework XAML Services název této směrnice / člena v datovém proudu uzlu je `_Items`. Konstanty pro tuto direktivu lze získat z <xref:System.Xaml.XamlLanguage.Items%2A>.
 
     Všimněte si, že datový proud uzlu XAML může obsahovat vlastnosti Items u položek, které vyjít najevo, nebude možné analyzovat podle typu řešení zálohování a kontext schématu XAML. Například
 

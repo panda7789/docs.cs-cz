@@ -2,12 +2,12 @@
 title: Generování trasování v uživatelském kódu
 ms.date: 03/30/2017
 ms.assetid: fa54186a-8ffa-4332-b0e7-63867126fd49
-ms.openlocfilehash: 5ecc0c2110362f715275729b5e4c4c7e1ec03496
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: eadfe1a77f815f904fb54b8bab51440f3d9f5532
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54492661"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58831771"
 ---
 # <a name="emitting-user-code-traces"></a>Generování trasování v uživatelském kódu
 Kromě povolení trasování v konfiguraci ke shromažďování dat instrumentace vygenerovaných Windows Communication Foundation (WCF), můžete také generování trasování v uživatelském kódu prostřednictvím kódu programu. Tímto způsobem můžete vytvořit proaktivně data instrumentace, který lze později prostudujte pro diagnostické účely. Toto téma popisuje, jak to udělat.  
@@ -126,15 +126,17 @@ ts.TraceEvent(TraceEventType.Warning, 0, "Throwing exception " + "exceptionMessa
  ![Prohlížeč trasování: Emitting User&#45;code traces](../../../../../docs/framework/wcf/diagnostics/tracing/media/242c9358-475a-4baf-83f3-4227aa942fcd.gif "242c9358-475a-4baf-83f3-4227aa942fcd")  
 Seznam aktivit ve čas vytvoření (levý panel) a jejich vnořené aktivity (pravém panelu)  
   
- Kód služby vyvolá výjimku, která způsobí, že klient má vyvolat také (například, když klient neobdržela odpověď na svou žádost), do stejné aktivity pro přímou spojitost s míněním dojít i služby a klient upozornění nebo chybové zprávy. V následujícím diagramu služba vyvolá výjimku, s oznámením "služba odmítne zpracovat tento požadavek v uživatelském kódu." Klient také vyvolá výjimku, s oznámením "server nemohl zpracovat požadavek, protože došlo k vnitřní chybě."  
+ Kód služby vyvolá výjimku, která způsobí, že klient má vyvolat také (například, když klient neobdržela odpověď na svou žádost), do stejné aktivity pro přímou spojitost s míněním dojít i služby a klient upozornění nebo chybové zprávy. Na následujícím obrázku služba vyvolá výjimku, s oznámením "služba odmítne zpracovat tento požadavek v uživatelském kódu." Klient také vyvolá výjimku, s oznámením "server nemohl zpracovat požadavek, protože došlo k vnitřní chybě."
+ 
+ Na následujících obrázcích zobrazí, že chyby napříč koncovými body pro daný požadavek do aktivity, pokud byla rozšířena id aktivity požadavku:       
   
- ![Použití prohlížeče trasování a vygenerovat uživatelské&#45;kódu trasování](../../../../../docs/framework/wcf/diagnostics/tracing/media/e2etrace2.gif "e2eTrace2")  
-Zobrazí chyby napříč koncovými body pro daný požadavek do aktivity, pokud byla rozšířena id aktivity požadavku  
+ ![Snímek obrazovky zobrazující chyby napříč koncovými body pro daný požadavek.](./media/emitting-user-code-traces/trace-viewer-endpoint-errors.gif)  
   
- Dvojitým kliknutím vícenásobně aktivita na levém panelu se zobrazí následující graf s trasování vynásobit aktivity pro každý proces zahrnuté. Můžeme vidět, že nejprve vygenerováno upozornění na službu (vyvolána výjimka), který je následován upozornění a chyby v klientském počítači protože požadavek nelze zpracovat. Proto jsme neznamená příčinnou chyba vztah mezi koncovými body a odvodit hlavní příčinu chyby.  
+ Dvojitým kliknutím vícenásobně aktivita na levém panelu se zobrazí následující graf s trasování vynásobit aktivity pro každý proces zahrnuté. Můžeme vidět, že nejprve vygenerováno upozornění na službu (vyvolána výjimka), který je následován upozornění a chyby v klientském počítači protože požadavek nelze zpracovat. Proto jsme neznamená příčinnou chyba vztah mezi koncovými body a odvodit hlavní příčinu chyby. 
+
+ Zobrazení grafu korelace chybě naleznete na následujícím obrázku:    
   
- ![Použití prohlížeče trasování a vygenerovat uživatelské&#45;kódu trasování](../../../../../docs/framework/wcf/diagnostics/tracing/media/e2etrace3.gif "e2eTrace3")  
-Zobrazení grafu chybě korelace  
+ ![Snímek obrazovky zobrazující zobrazení grafu chybě korelace.](./media/emitting-user-code-traces/trace-viewer-error-correlation.gif)  
   
  Získat předchozí trasování, jsme si nastavili `ActivityTracing` pro zdroje trasování uživatele a `propagateActivity=true` pro `System.ServiceModel` zdroje trasování. Jsme nenastavil `ActivityTracing` pro `System.ServiceModel` zdroj trasování umožňuje uživatelský kód pro šíření aktivity kódu uživatele. (Při trasování činnosti ServiceModel zapnutá, ID aktivity definované v klientovi se nerozšíří zcela do kódu uživatele služby; Přenosy, však korelovat klient a služba aktivit uživatelů, které kód intermediate aktivitám WCF.)  
   

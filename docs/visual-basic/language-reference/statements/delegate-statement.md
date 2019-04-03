@@ -7,12 +7,12 @@ helpviewer_keywords:
 - delegate keyword [Visual Basic]
 - Delegate statement [Visual Basic]
 ms.assetid: f799c518-0817-40cc-ad0b-4da846fdba57
-ms.openlocfilehash: c0fb524961cd04b73a8b83094880d5eaa206fe9c
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 880b4cf75d518506d2bcf788ad8460274dcccefc
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56965797"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58821306"
 ---
 # <a name="delegate-statement"></a>Delegate – příkaz
 Slouží k deklaraci delegáta. Delegát je typ odkazu, který odkazuje `Shared` metodu typu nebo metodě instance objektu. Všechny procedury s parametry a návratovým typem odpovídajícím lze použít k vytvoření instance této třídy delegáta. Postup lze poté později vyvolat prostřednictvím instance delegátu.  
@@ -65,6 +65,7 @@ Slouží k deklaraci delegáta. Delegát je typ odkazu, který odkazuje `Shared`
  [!code-vb[VbVbalrDelegates#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDelegates/VB/Class1.vb#14)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Operátor AddressOf](../../../visual-basic/language-reference/operators/addressof-operator.md)
 - [z](../../../visual-basic/language-reference/statements/of-clause.md)
 - [Delegáti](../../../visual-basic/programming-guide/language-features/delegates/index.md)

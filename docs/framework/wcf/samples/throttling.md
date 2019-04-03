@@ -5,12 +5,12 @@ helpviewer_keywords:
 - service behaviors, throttling sample
 - Throttling Sample [Windows Communication Foundation]
 ms.assetid: 40bb3582-8ae9-4410-96f0-6c515bfaf47c
-ms.openlocfilehash: 4d5c789a98ac4f288dee48a7348bd21b530275a8
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 38f42b925bad88afe973d922c163bf3bd50f0520
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54640287"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58832361"
 ---
 # <a name="throttling"></a>Omezování
 Ukázka omezování demonstruje použití omezení ovládacích prvků. Omezení ovládacích prvků umístit omezení na počtu souběžných volání, instance nebo relace, aby se zabránilo typu over-pass-the spotřebu prostředků. Chování při omezování chování je zadán v nastavení konfiguračního souboru služby. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) službu kalkulačky, která implementuje.  
@@ -82,4 +82,3 @@ Press any key to continue . . .
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Behaviors\Throttling`  
   
-## <a name="see-also"></a>Viz také:

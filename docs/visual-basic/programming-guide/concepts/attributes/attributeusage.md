@@ -2,12 +2,12 @@
 title: AttributeUsage (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 48757216-c21d-4051-86d5-8a3e03c39d2c
-ms.openlocfilehash: 0e88c57b2a18afb7f9f7d567f355d38a78892b2f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1841171f2f3fc26ba9244c72c69960b765d39807
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54648138"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58827507"
 ---
 # <a name="attributeusage-visual-basic"></a>AttributeUsage (Visual Basic)
 Určuje, jak je možné třídu vlastního atributu. `AttributeUsage` představuje atribut, který lze použít pro definice vlastní atribut pro řízení použití nového atributu. Výchozí nastavení se při použití explicitně vypadat nějak takto:  
@@ -162,6 +162,7 @@ A2
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Attribute>
 - <xref:System.Reflection>
 - [Průvodce programováním v jazyce Visual Basic](../../../../visual-basic/programming-guide/index.md)

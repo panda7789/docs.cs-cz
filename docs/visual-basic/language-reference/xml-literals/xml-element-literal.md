@@ -8,12 +8,12 @@ helpviewer_keywords:
 - element literal [Visual Basic]
 - XML literals [Visual Basic], element
 ms.assetid: 95039642-7893-48b7-b23f-45a6c55d8f67
-ms.openlocfilehash: 71e6cf3e6169434ea0a28f8691cf82f6c8e8a030
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 7bd47d2461ba86dfbd1d5ff5993382914116f9ba
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56979919"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58842249"
 ---
 # <a name="xml-element-literal-visual-basic"></a>Literál XML elementu (Visual Basic)
 
@@ -160,6 +160,7 @@ Literál, který představuje <xref:System.Xml.Linq.XElement> objektu.
  Všimněte si, že kompilátor převést předponu globálního oboru názvů XML na definici předpony oboru názvů XML. \<Ns:middle > předefinuje předponu oboru názvů XML pro prvek \<ns:inner1 > element. Ale \<ns:inner2 > element používá obor názvů definovaný smyčkou `Imports` příkazu.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Xml.Linq.XElement>
 - [Názvy deklarovaných XML elementů a atributů](../../../visual-basic/programming-guide/language-features/xml/names-of-declared-xml-elements-and-attributes.md)
 - [Literál komentáře XML](../../../visual-basic/language-reference/xml-literals/xml-comment-literal.md)

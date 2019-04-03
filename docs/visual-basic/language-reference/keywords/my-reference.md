@@ -5,12 +5,12 @@ helpviewer_keywords:
 - My feature
 - My reference
 ms.assetid: 6f803bd7-21ff-4569-b1fe-b00a6678b1e3
-ms.openlocfilehash: 637eecf9526c64c47ef3559cd5b65f16dd886a6b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: accf2464f7d8ead8bcd73c9704bea4fd5d2e410b
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54618932"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58824751"
 ---
 # <a name="my-reference-visual-basic"></a>Můj odkaz (referenční dokumentace jazyka Visual Basic)
 `My` Programování, rychlejší a snazší díky funkci poskytuje intuitivní přístup pro běžně používané metody, vlastnosti a události. Tato tabulka uvádí objekty obsažené v `My`a akce, které můžete provést pomocí každé.  
@@ -29,5 +29,6 @@ ms.locfileid: "54618932"
 |Přístup k webové služby XML odkazuje aktuální projekt.|[Objekt My.WebServices](../../../visual-basic/language-reference/objects/my-webservices-object.md)|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled aplikačního modelu jazyka Visual Basic](../../../visual-basic/developing-apps/development-with-my/overview-of-the-visual-basic-application-model.md)
 - [Vývoj s použitím oboru názvů My](../../../visual-basic/developing-apps/development-with-my/index.md)

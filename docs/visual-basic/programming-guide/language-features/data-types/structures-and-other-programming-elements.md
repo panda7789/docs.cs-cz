@@ -8,12 +8,12 @@ helpviewer_keywords:
 - arrays [Visual Basic], structure elements
 - nested structures [Visual Basic]
 ms.assetid: 0f849313-ccd2-4c9a-acb9-69de6751c088
-ms.openlocfilehash: ed406254435602dcd98bc97716cc88710a470ed1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a943bbdec617ba6c95685df3a4fcdb36b52def22
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54679588"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58819097"
 ---
 # <a name="structures-and-other-programming-elements-visual-basic"></a>Struktury a ostatní programovací elementy (Visual Basic)
 Struktury můžete použít ve spojení s pole objektů a postupy, stejně jako mezi sebou. Interakce používají stejnou syntaxi jako tyto prvky použít jednotlivě.  
@@ -123,6 +123,7 @@ allSystems(1).diskDrives(0).type = "Floppy"
  Struktury mohou obsahovat další struktury do libovolné hloubky.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Datové typy](../../../../visual-basic/programming-guide/language-features/data-types/index.md)
 - [Základní datové typy](../../../../visual-basic/programming-guide/language-features/data-types/elementary-data-types.md)
 - [Složené datové typy](../../../../visual-basic/programming-guide/language-features/data-types/composite-data-types.md)

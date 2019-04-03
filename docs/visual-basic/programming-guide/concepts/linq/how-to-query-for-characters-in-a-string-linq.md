@@ -2,12 +2,12 @@
 title: 'Postupy: Dotazu na znaky v řetězci (LINQ) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 499ebbe0-746c-4235-9dba-ce722c12b50e
-ms.openlocfilehash: 3a4f3bbca313747e0b16170719b9028e5dc9174f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 3f460f635c581eef5655c5707e3dd356e7986d74
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54559746"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58819486"
 ---
 # <a name="how-to-query-for-characters-in-a-string-linq-visual-basic"></a>Postupy: Dotazu na znaky v řetězci (LINQ) (Visual Basic)
 Vzhledem k tomu, <xref:System.String> třída implementuje obecné <xref:System.Collections.Generic.IEnumerable%601> rozhraní, libovolný řetězec může být dotázán jako posloupnost znaků. Ale to není běžné použití odkazu LINQ. Pro komplexní porovnávání vzorů operace, použijte <xref:System.Text.RegularExpressions.Regex> třídy.  
@@ -58,5 +58,6 @@ End Class
  Vytvořit projekt, který cílí na rozhraní .NET Framework verze 3.5 nebo vyšší s odkazem na knihovnu System.Core.dll a `Imports` příkaz pro obor názvů System.Linq.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [LINQ a řetězce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)
 - [Postupy: Kombinace dotazů LINQ s regulárními výrazy (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-combine-linq-queries-with-regular-expressions.md)

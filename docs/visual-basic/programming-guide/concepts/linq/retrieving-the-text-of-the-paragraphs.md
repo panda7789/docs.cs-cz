@@ -2,12 +2,12 @@
 title: Načtení textu odstavců (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 095fa0d9-7b1b-4cbb-9c13-e2c9d8923d31
-ms.openlocfilehash: 6d6f3e705e3a776f772a3507ef932d0715d2fb90
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: bc6035c7d894d30b1441dd35925c233e02d35163
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54706608"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58830003"
 ---
 # <a name="retrieving-the-text-of-the-paragraphs-visual-basic"></a>Načtení textu odstavců (Visual Basic)
 Tento příklad je založen na předchozím příkladu [načtení odstavců a jejich stylů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/retrieving-the-paragraphs-and-their-styles.md). Tento nový příklad načte text k jednotlivým odstavcům jako řetězec.  
@@ -142,5 +142,6 @@ StyleName:Code >Hello World<
 -   [Refaktoring pomocí metody rozšíření (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/refactoring-using-an-extension-method.md)  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Kurz: Manipulace s obsahem v dokumentu WordprocessingML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)
 - [Odložené provedení a opožděné vyhodnocení v LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md)

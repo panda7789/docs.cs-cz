@@ -2,12 +2,12 @@
 title: Úvod do LINQ (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: c6339c12-9b2d-433e-961c-0d2b7f0091c2
-ms.openlocfilehash: dd457ec59659743bc7cd153fb6b9cef8d99a4a0a
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
+ms.openlocfilehash: 2900cade8bc4166cccb62baf4381cb926cdff5f8
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58410183"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58822308"
 ---
 # <a name="introduction-to-linq-visual-basic"></a>Úvod do LINQ (Visual Basic)
 Language Integrated Query (LINQ) je že novinka zavedena v rozhraní .NET Framework verze 3.5 této přemostění mezery mezi řadě objekty a světě orientovaném na data.  
@@ -34,4 +34,5 @@ Language Integrated Query (LINQ) je že novinka zavedena v rozhraní .NET Framew
 -   Kolekce .NET, soubory, řetězce a tak dále: [LINQ to Objects (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Language-Integrated Query (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/index.md)

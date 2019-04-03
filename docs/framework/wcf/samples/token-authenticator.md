@@ -2,12 +2,12 @@
 title: Ověřovací data tokenu
 ms.date: 03/30/2017
 ms.assetid: 84382f2c-f6b1-4c32-82fa-aebc8f6064db
-ms.openlocfilehash: f6cbef617145e40cfc1e43012af2eb65afbbe05c
-ms.sourcegitcommit: bef803e2025642df39f2f1e046767d89031e0304
+ms.openlocfilehash: 1e0ab9a7c1cd1b5d92556973928a014957f51918
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56304999"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58824205"
 ---
 # <a name="token-authenticator"></a>Ověřovací data tokenu
 Tento příklad ukazuje, jak implementovat vlastní ověřovací data tokenu. Ve Windows Communication Foundation (WCF) ověřovací data tokenu se používá k ověření tokenu používaného se zprávou, ověření, že je konzistentní a ověření identity přidružené k tokenu.
@@ -367,4 +367,3 @@ static void DisplayIdentityInformation()
   
 1.  Spusťte Cleanup.bat ve složce samples po dokončení spuštění ukázky.  
   
-## <a name="see-also"></a>Viz také:

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - compiling source code [Visual Basic], from command line
 - Visual Basic compiler, sample command lines
 ms.assetid: 5bfbb487-5f47-4267-969a-39dfb917beeb
-ms.openlocfilehash: 601f8f3a5ea86da060b2d26796b2299d87946443
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 0771ed41d6c58ce7cc98435b405f5819e45393db
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54547797"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58824298"
 ---
 # <a name="sample-compilation-command-lines-visual-basic"></a>Příkazové řádky ukázkové kompilace (Visual Basic)
 Jako alternativu ke kompilaci programů jazyka Visual Basic v sadě Visual Studio můžete zkompilovat z příkazového řádku k vytvoření souborů spustitelný soubor (.exe) nebo dynamická knihovna (.dll).  
@@ -36,5 +36,6 @@ Jako alternativu ke kompilaci programů jazyka Visual Basic v sadě Visual Studi
 >  Při vytváření projektu pomocí rozhraní IDE sady Visual Studio můžete zobrazit informace o přidružené **Vbc –** příkaz s jeho možnosti kompilátoru v okně výstup. Chcete-li zobrazit tyto informace, otevřete [dialogové okno Možnosti, projekty a řešení, sestavení a spuštění](/visualstudio/ide/reference/options-dialog-box-projects-and-solutions-build-and-run)a pak nastavte **podrobnosti výstupu sestavení projektu nástroje MSBuild** k **normální** nebo vyšší úroveň podrobností.   
   
 ## <a name="see-also"></a>Viz také:
+
 - [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)
 - [Podmíněná kompilace](../../../visual-basic/programming-guide/program-structure/conditional-compilation.md)

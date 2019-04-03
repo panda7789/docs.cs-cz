@@ -14,12 +14,12 @@ helpviewer_keywords:
 - operators [Visual Basic], Boolean
 - Visual Basic code, expressions
 ms.assetid: d3d90406-55c8-4404-8143-50fd7f0d0d1a
-ms.openlocfilehash: 065df7d6217dd6f817dee1d11dd0fd4a68b6323c
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: ce9146791935a488108d110134e9273507b0da6f
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56965537"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58825531"
 ---
 # <a name="boolean-expressions-visual-basic"></a>Výrazy logických hodnot (Visual Basic)
 A *logický výraz* je výraz, který se vyhodnotí na hodnotu [datový typ Boolean](../../../../visual-basic/language-reference/data-types/boolean-data-type.md): `True` nebo `False`. `Boolean` Výrazy lze provést několika způsoby. Nejjednodušší je přímé porovnání hodnoty `Boolean` proměnné `Boolean` literál, jak je znázorněno v následujícím příkladu.  
@@ -67,6 +67,7 @@ A *logický výraz* je výraz, který se vyhodnotí na hodnotu [datový typ Bool
  Závorky můžete řídit pořadí vyhodnocování logických výrazů. Nejprve vyhodnotit výrazy uzavřených v uvozovkách. Pro více úrovní vnoření přednost před udělením k nejhlouběji vnořených výrazů. Mezi kulaté závorky vyhodnocování pokračuje dle pravidel priority operátorů. Další informace najdete v tématu [priorita operátorů v jazyce Visual Basic](../../../../visual-basic/language-reference/operators/operator-precedence.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Logické a bitové operátory v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md)
 - [Porovnání hodnot](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/value-comparisons.md)
 - [Příkazy](../../../../visual-basic/programming-guide/language-features/statements.md)

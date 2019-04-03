@@ -2,12 +2,12 @@
 title: 'Postupy: Přidávání vlastních metod do dotazů LINQ (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 099b2e2a-83cd-45c6-aa4d-01b398b5faaf
-ms.openlocfilehash: e45dfc6b516f1e5f5e9f7f667bbbfd5768330ffa
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a58ced83a01e41be707f2483cabe9c8e867e2c1a
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54645584"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58829171"
 ---
 # <a name="how-to-add-custom-methods-for-linq-queries-visual-basic"></a>Postupy: Přidávání vlastních metod do dotazů LINQ (Visual Basic)
 Můžete rozšířit sadu metod, které můžete použít pro LINQ dotazy přidáním rozšiřující metody, které <xref:System.Collections.Generic.IEnumerable%601> rozhraní. Kromě standardní průměr nebo maximální operace, například můžete vytvořit vlastní agregační metody pro výpočet jednu hodnotu ze sekvence hodnot. Můžete také vytvořit metodu, která funguje jako vlastní filtr a transformovat data specifická pro sekvenci hodnot a vrátí novou sekvenci. Příklady těchto metod jsou <xref:System.Linq.Enumerable.Distinct%2A>, <xref:System.Linq.Enumerable.Skip%2A>, a <xref:System.Linq.Enumerable.Reverse%2A>.  
@@ -198,5 +198,6 @@ Next
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Collections.Generic.IEnumerable%601>
 - [Rozšiřující metody](../../../../visual-basic/programming-guide/language-features/procedures/extension-methods.md)

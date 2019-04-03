@@ -12,12 +12,12 @@ helpviewer_keywords:
 - TypeOf operator [Visual Basic]
 - compatible data types [Visual Basic]
 ms.assetid: 33f65296-659a-4b9a-9a29-c2a91cff68b2
-ms.openlocfilehash: 27fdef4012d4724d45b4e990ce449bdfe09feaa6
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 7162fcc24595bbb16d268d5d9e1ea4d82f6e67fb
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56965056"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58829860"
 ---
 # <a name="typeof-operator-visual-basic"></a>TypeOf – operátor (Visual Basic)
 Porovná proměnné odkazu na objekt k datovému typu.  
@@ -63,6 +63,7 @@ result = TypeOf objectexpression IsNot typename
  Proměnná `refInteger` je za běhu typu `Integer`. Je kompatibilní s `Integer` , ale ne s `Double`. Proměnná `refForm` je za běhu typu <xref:System.Windows.Forms.Form>. Je kompatibilní s <xref:System.Windows.Forms.Form> protože jeho typ, který je s <xref:System.Windows.Forms.Control> protože <xref:System.Windows.Forms.Form> dědí z <xref:System.Windows.Forms.Control>a s <xref:System.ComponentModel.IComponent> protože <xref:System.Windows.Forms.Form> dědí z <xref:System.ComponentModel.Component>, který implementuje <xref:System.ComponentModel.IComponent>. Ale `refForm` není kompatibilní s <xref:System.Windows.Forms.Label>.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Operátor Is](../../../visual-basic/language-reference/operators/is-operator.md)
 - [Operátor IsNot](../../../visual-basic/language-reference/operators/isnot-operator.md)
 - [Operátory porovnání v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)

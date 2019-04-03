@@ -2,12 +2,12 @@
 title: Běžné atributy (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 11fe4894-1bf9-4525-a36b-cddcd3a5d22b
-ms.openlocfilehash: 9c9e8ba886697b9306a89caed4944fd2752db835
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: e001c9a637d2e5e34e77158704e4ad81d6973a50
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57375399"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58834531"
 ---
 # <a name="common-attributes-visual-basic"></a>Běžné atributy (Visual Basic)
 Toto téma popisuje atributy, které se běžně používají v aplikacích jazyka Visual Basic.  
@@ -214,7 +214,7 @@ End Class
   
  Pokud chcete získat informace o subjektu volajícím člen, použijte atributy, které jsou použity na volitelné parametry. Každý volitelný parametr určuje výchozí hodnotu. V následující tabulce jsou uvedeny atributy informace o volajícím, které jsou definovány v <xref:System.Runtime.CompilerServices?displayProperty=nameWithType> obor názvů:  
   
-|Atribut|Popis|Typ|  
+|Atribut|Popis|Type|  
 |---|---|---|  
 |<xref:System.Runtime.CompilerServices.CallerFilePathAttribute>|Úplná cesta zdrojového souboru, který obsahuje volajícího. Toto je cesta v době kompilace.|`String`|  
 |<xref:System.Runtime.CompilerServices.CallerLineNumberAttribute>|Číslo řádku ve zdrojovém souboru, ve kterém je volána metoda.|`Integer`|  
@@ -255,6 +255,7 @@ End Structure
  Použití `VBFixedArrayAttribute` Chcete-li deklarovat pole, které mají pevnou velikost. Podobně jako řetězce jazyka Visual Basic jsou pole s proměnnou délkou ve výchozím nastavení. Tento atribut je užitečné při serializaci nebo zápis dat do souborů.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Reflection>
 - <xref:System.Attribute>
 - [Průvodce programováním v jazyce Visual Basic](../../../../visual-basic/programming-guide/index.md)

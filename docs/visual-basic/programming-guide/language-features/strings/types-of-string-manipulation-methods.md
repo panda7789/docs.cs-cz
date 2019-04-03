@@ -5,12 +5,12 @@ helpviewer_keywords:
 - strings [Visual Basic], manipulating [Visual Basic]
 - string manipulation
 ms.assetid: 905055cd-7f50-48fb-9eed-b0995af1dc1f
-ms.openlocfilehash: a75984d0eb64ef8c18def3ae59d5e1f4b6d20ce2
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 44eb101ebdfeb316958a659107190ef1fc84df44
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56980335"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58821150"
 ---
 # <a name="types-of-string-manipulation-methods-in-visual-basic"></a>Typy metod manipulace s řetězci v jazyce Visual Basic
 Existuje několik různých způsobů, jak analyzovat a manipulaci s řetězci. Některé metody jsou součástí jazyka Visual Basic a jiné jsou spojené `String` třídy.  
@@ -44,4 +44,5 @@ Existuje několik různých způsobů, jak analyzovat a manipulaci s řetězci. 
  Další informace najdete v tématu v dokumentaci <xref:System.String> třídy.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Úvod do řetězců v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/introduction-to-strings.md)

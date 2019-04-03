@@ -2,12 +2,12 @@
 title: 'Postupy: Vyhledání uzlů na stejné úrovni (XPath – LINQ to XML) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 73082738-2113-4438-8545-98d5df0927cb
-ms.openlocfilehash: 740123077c24dd27fe1a4810d0cb45c4775894aa
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: dad211c9c3716f760d28e4a18a61c885fc4dd58f
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54622634"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58842106"
 ---
 # <a name="how-to-find-sibling-nodes-xpath-linq-to-xml-visual-basic"></a>Postupy: Vyhledání uzlů na stejné úrovni (XPath – LINQ to XML) (Visual Basic)
 Můžete chtít najít všechny na stejné úrovni uzlu, které mají určitý název. Výsledný kolekce může zahrnovat kontextu uzlu, pokud kontextový uzel nemá taky určitý název.  
@@ -68,4 +68,5 @@ Results are identical
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [LINQ to XML pro uživatele jazyka XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

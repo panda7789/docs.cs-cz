@@ -11,12 +11,12 @@ helpviewer_keywords:
 - classes [Visual Basic], composite types
 - types [Visual Basic], composite
 ms.assetid: 62970f2e-52c0-4369-8963-613820f1f434
-ms.openlocfilehash: c7243108d0b7c06f48a21f343321322bb2cc2946
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ea719b60a6bcd40494666d4923fad296a8ddae70
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54560279"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58833812"
 ---
 # <a name="composite-data-types-visual-basic"></a>Složené datové typy (Visual Basic)
 Kromě základní datové typy jazyka Visual Basic nabízí, můžete také sestavit položky k vytvoření různých typů *složené datové typy* například třídy, struktury a pole. Složené datové typy můžete vytvořit ze základních typů a z dalších složené typy. Například můžete definovat pole prvky struktury nebo strukturu s členy pole.  
@@ -29,7 +29,7 @@ Kromě základní datové typy jazyka Visual Basic nabízí, můžete také sest
 ## <a name="structure-types"></a>Typy struktur  
  Neexistuje žádný jednotlivý typ dat obsahující všechny struktury. Místo toho každá definice struktury představuje jedinečný datový typ, i v případě, že dvě struktury definují stejné prvky ve stejném pořadí. Nicméně pokud vytvoříte dvě nebo víc instancí se stejnou strukturou, Visual Basic je považuje za stejného datového typu.  
   
-## <a name="tuples"></a>Řazené kolekce členů
+## <a name="tuples"></a>N-tice
 
 Řazená kolekce členů je zjednodušené strukturu, která obsahuje dvě nebo více polí, jejichž typy jsou předdefinovány. Řazené kolekce členů jsou podporovány, počínaje rokem 2017 jazyka Visual Basic. Řazené kolekce členů se nejčastěji používají k vrácení více hodnot z jedné metody volání bez nutnosti předávat argumenty odkazem nebo balení pole vrácené ve více zobrazené třídy nebo struktury. Zobrazit [řazených kolekcí členů](tuples.md) tématu pro další informace o řazené kolekce členů.
 
@@ -62,6 +62,7 @@ Dim arrayE( , ) As Short = New Short(4, 10) {}
  Další informace o třídách naleznete v tématu [objekty a třídy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Datové typy](../../../../visual-basic/programming-guide/language-features/data-types/index.md)
 - [Základní datové typy](../../../../visual-basic/programming-guide/language-features/data-types/elementary-data-types.md)
 - [Obecné typy v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)

@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Umístění objektu ToolTip'
+title: 'Postupy: Umístění prvku ToolTip'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - ToolTip control [WPF], positioning
 - positioning ToolTip controls [WPF]
 ms.assetid: cddf3757-9e5f-4ce3-a6eb-44489cf3804a
-ms.openlocfilehash: d20eea0890708eb2ec2ada503f5c871d54ccc035
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 64b3823be5203ffcb9dcea371495dbb6ead1605f
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57364530"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58840494"
 ---
-# <a name="how-to-position-a-tooltip"></a>Postupy: Umístění objektu ToolTip
+# <a name="how-to-position-a-tooltip"></a>Postupy: Umístění prvku ToolTip
 Tento příklad ukazuje, jak určit pozici popisku na obrazovce.  
   
 ## <a name="example"></a>Příklad  
@@ -34,16 +34,19 @@ Tento příklad ukazuje, jak určit pozici popisku na obrazovce.
  Pokud definujete obsah popisek pomocí <xref:System.Windows.Controls.ToolTip> objektu, můžete použít vlastnosti žádné ze tříd, nicméně <xref:System.Windows.Controls.ToolTipService> vlastnosti mají přednost. Použití <xref:System.Windows.Controls.ToolTipService> vlastnosti pro popisy tlačítek, které nejsou definovány jako <xref:System.Windows.Controls.ToolTip> objekty.  
   
  Následující obrázky ukazují, jak pomocí těchto vlastností umístění objektu tooltip. I když se [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] tyto příklady ukazují, jak nastavit vlastnosti, které jsou definovány <xref:System.Windows.Controls.ToolTip> odpovídající vlastnosti z třídy <xref:System.Windows.Controls.ToolTipService> třídy řídit stejnými pravidly rozložení. Další informace o možných hodnot pro vlastnost umístění najdete v tématu [chování při umístění automaticky otevíraného okna](popup-placement-behavior.md).  
+ 
+ Umístění popisku pomocí vlastnosti umístění na následujícím obrázku:  
   
- ![Umístění popisku](./media/tooltipplacement.png "ToolTipPlacement")  
-Umístění popisku pomocí vlastnosti umístění  
+ ![Diagram znázorňující umístění popisku pomocí vlastnosti umístění.](./media/how-to-position-a-tooltip/tooltip-placement-property.png)
+ 
+ Umístění popisku pomocí vlastnosti umístění a PlacementRectangle na následujícím obrázku:   
+
+ ![Diagram znázorňující umístění popisku pomocí vlastnosti PlacementRectangle.](./media/how-to-position-a-tooltip/tooltip-placement-rectangle-property.png)  
+ 
+ Umístění popisku pomocí vlastnosti umístění, PlacementRectangle a posun na následujícím obrázku:   
   
- ![Umístění popisku pomocí umístění obdélník](./media/tooltipplacementrectangle.png "ToolTipPlacementRectangle")  
-Umístění popisku pomocí vlastnosti umístění a PlacementRectangle  
-  
- ![Diagram umístění popisku](./media/tooltipplacementprhv.png "ToolTipPlacementPRHV")  
-Umístění popisku pomocí vlastnosti umístění, PlacementRectangle a odsazení  
-  
+ ![Diagram znázorňující umístění popisku pomocí vlastnosti posun.](./media/how-to-position-a-tooltip/tooltip-placement-offset-property.png)
+
  Následující příklad ukazuje způsob použití <xref:System.Windows.Controls.ToolTip> vlastnosti k určení pozice popisku, jejichž obsah je <xref:System.Windows.Controls.ToolTip> objektu.  
   
  [!code-xaml[ToolTipService#ToolTip](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml#tooltip)]  

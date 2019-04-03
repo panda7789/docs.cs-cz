@@ -1,16 +1,16 @@
 ---
-title: Vytváření Moje první aplikace s deklaracemi identity v prostředí ASP.NET
+title: Sestavení první webové aplikace ASP.NET pracující s deklaracemi
 ms.date: 03/30/2017
 ms.assetid: 3ee8ee7f-caba-4267-9343-e313fae2876d
 author: BrucePerlerMS
-ms.openlocfilehash: 67489b2bb93719d8182159fbc91703399d5e8bc7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2fd5b36ffe26632240955307eb522cecdf4f1e73
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54588961"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58838128"
 ---
-# <a name="building-my-first-claims-aware-aspnet-web-application"></a>Vytváření Moje první aplikace s deklaracemi identity v prostředí ASP.NET
+# <a name="building-my-first-claims-aware-aspnet-web-application"></a>Sestavení první webové aplikace ASP.NET pracující s deklaracemi
 ## <a name="applies-to"></a>Platí pro  
   
 -   Windows Identity Foundation (WIF)  
@@ -19,7 +19,7 @@ ms.locfileid: "54588961"
   
  Toto téma popisuje, jak pomocí technologie WIF vytvářet webové aplikace ASP.NET pracující s deklaracemi. Scénář aplikací pracujících s deklaracemi má obvykle tři účastníky, kterými jsou samotná aplikace, koncový uživatel a služba tokenů zabezpečení (STS). Tento scénář zachycuje následující obrázek:  
   
- ![Technologie WIF základní webovou aplikaci](../../../docs/framework/security/media/wifbasicwebapp.gif "WIFBasicWebApp")  
+ ![Diagram zobrazující komponenty technologie WIF základní webovou aplikaci.](./media/building-my-first-claims-aware-aspnet-web-app/windows-identity-foundation-basic-web-application.gif)  
   
 1.  Aplikace pracující s deklaracemi zjišťují pomocí technologie WIF neověřené žádosti a směrují je na službu STS.  
   

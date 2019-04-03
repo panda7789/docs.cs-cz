@@ -22,12 +22,12 @@ helpviewer_keywords:
 - run-time errors [Visual Basic], handling
 - On Error statement [Visual Basic]
 ms.assetid: ff947930-fb84-40cf-bd66-1ea219561d5c
-ms.openlocfilehash: 5dc432f8e62430d48954b2c049cab3ebae4d442e
-ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
+ms.openlocfilehash: 0a5a5261e6b71178adce02a5635c1f91a1469f3d
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57203740"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58834260"
 ---
 # <a name="on-error-statement-visual-basic"></a>On Error – příkaz (Visual Basic)
 Umožňuje rutiny zpracování chyb a určuje umístění rutinu v rámci procedury; je také možné zakázat rutiny zpracování chyb.  
@@ -119,6 +119,7 @@ On Error { GoTo [ line | 0 | -1 ] | Resume Next }
  **Sestavení:** Visual Basic Runtime Library (v souboru Microsoft.VisualBasic.dll)  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:Microsoft.VisualBasic.Information.Err%2A>
 - <xref:Microsoft.VisualBasic.ErrObject.Number%2A>
 - <xref:Microsoft.VisualBasic.ErrObject.Description%2A>

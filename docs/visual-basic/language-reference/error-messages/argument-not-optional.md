@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrID449
 ms.assetid: 76e7bcf3-24ed-4cd5-945b-b98f1c76944b
-ms.openlocfilehash: 2004cf10d7827ac7b77773459de8158449136239
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: b531ca761e6f90ea70d13ed844c9c39faa83e44b
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54683135"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58837688"
 ---
 # <a name="argument-not-optional-visual-basic"></a>Argument není nepovinný (Visual Basic).
 Počet a typy argumentů musí odpovídat očekávalo. Buď je nesprávný počet argumentů nebo vynechaný argument není nepovinný. Argument může vynechat pouze během volání procedury definovaný uživatelem, pokud jeho deklaraci byl `Optional` v definici procedury.  
@@ -21,4 +21,5 @@ Počet a typy argumentů musí odpovídat očekávalo. Buď je nesprávný poče
 2.  Ujistěte se, že vynechaný argumenty jsou volitelné. Pokud nejsou, zadat argument ve volání nebo deklaraci parametru `Optional` v definici.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Typy chyb](../../../visual-basic/programming-guide/language-features/error-types.md)

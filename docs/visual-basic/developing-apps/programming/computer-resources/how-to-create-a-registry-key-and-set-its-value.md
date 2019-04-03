@@ -11,12 +11,12 @@ helpviewer_keywords:
 - registry keys [Visual Basic], setting values
 - examples [Visual Basic], registry
 ms.assetid: d3e40f74-c283-480c-ab18-e5e9052cd814
-ms.openlocfilehash: f3ae01057f2f2caa7ce07731c3a38f2496484713
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 6d9790d37812ff0ed4ac76049b6949901f7b5c58
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56971759"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58835450"
 ---
 # <a name="how-to-create-a-registry-key-and-set-its-value-in-visual-basic"></a>Postupy: Vytvořte klíč registru a nastavení jeho hodnoty v jazyce Visual Basic
 `CreateSubKey` Metodu `My.Computer.Registry` objekt slouží k vytvoření klíče registru.  
@@ -71,6 +71,7 @@ ms.locfileid: "56971759"
  Pokud chcete spustit tento proces, vaše sestavení vyžaduje úroveň oprávnění udělenou <xref:System.Security.Permissions.RegistryPermission> třídy. Pokud používáte v kontextu částečným vztahem důvěryhodnosti, proces může vyvolat výjimku, protože nedostatečná oprávnění. Podobně uživatel musí mít správné seznamy ACL pro vytvoření nebo zápis do nastavení. Místní aplikace, který má oprávnění zabezpečení přístupu kódu například nemusí mít oprávnění operačního systému. Další informace najdete v tématu [Základy zabezpečení přístupu kódu](../../../../framework/misc/code-access-security-basics.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:Microsoft.VisualBasic.MyServices.RegistryProxy>
 - <xref:Microsoft.VisualBasic.MyServices.RegistryProxy.CurrentUser%2A>
 - <xref:Microsoft.Win32.RegistryKey.CreateSubKey%2A>

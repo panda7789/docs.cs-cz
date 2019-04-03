@@ -2,12 +2,12 @@
 title: 'Postupy: Vytváření podepsaných přátelských sestavení (Visual Basic)'
 ms.date: 03/14/2018
 ms.assetid: f2afd83d-b044-484b-a56d-56d0a8a40647
-ms.openlocfilehash: 20d1bb571d9cd354ea3f3dba560743da00c8bf22
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 28cbd0c538441978464033df896d69f80a8396a6
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57359013"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58836737"
 ---
 # <a name="how-to-create-signed-friend-assemblies-visual-basic"></a>Postupy: Vytváření podepsaných přátelských sestavení (Visual Basic)
 Tento příklad ukazuje způsob použití sestavení typu friend se sestaveními, která mít silné názvy. Obě sestavení musí být silný název. Přestože obě sestavení v tomto příkladu pomocí stejných klíčů, můžete použít různé klíče pro dvě sestavení.  
@@ -85,6 +85,7 @@ Tento příklad ukazuje způsob použití sestavení typu friend se sestaveními
  Existují podobnost <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut a <xref:System.Security.Permissions.StrongNameIdentityPermission> třídy. Hlavní rozdíl je, že <xref:System.Security.Permissions.StrongNameIdentityPermission> může požadovat oprávnění zabezpečení ke spuštění konkrétní části kódu, zatímco <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut určuje, zda `Friend` typy a členy.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>
 - [Sestavení v .NET](../../../../standard/assembly/index.md)
 - [Přátelská sestavení](../../../../standard/assembly/friend-assemblies.md)

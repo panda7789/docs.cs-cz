@@ -2,12 +2,12 @@
 title: 'Postupy: Vyhledání elementu s konkrétním podřízeným elementem (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: b0d0a463-6a85-46c3-8453-ad25b0ecf93c
-ms.openlocfilehash: c9239ed5ff417b66cebeb3015014f1498278b602
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1b226f009776f397f73ab9ee7826484eb8869f28
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54659079"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58827052"
 ---
 # <a name="how-to-find-an-element-with-a-specific-child-element-visual-basic"></a>Postupy: Vyhledání elementu s konkrétním podřízeným elementem (Visual Basic)
 Toto téma ukazuje, jak najít konkrétní element, který má podřízený element s určitou hodnotu.  
@@ -67,6 +67,7 @@ End Module
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Xml.Linq.XElement.Attribute%2A>
 - <xref:System.Xml.Linq.XContainer.Elements%2A>
 - [Základní dotazy (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)

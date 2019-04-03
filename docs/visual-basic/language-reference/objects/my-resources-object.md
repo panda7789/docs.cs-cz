@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - My.Resources object
 ms.assetid: 34c3f2dc-7b87-432c-9d5f-17ea666bb266
-ms.openlocfilehash: 758d3334fd9d3b01e088246cf2fe28c5b03576d6
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: ee4d30b82ceada5c4f3fc4ad95dc8eeedd9355b0
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56973727"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58821735"
 ---
 # <a name="myresources-object"></a>My.Resources – objekt
 Poskytuje třídy a vlastnosti pro přístup k prostředkům aplikace.  
@@ -40,7 +40,7 @@ Poskytuje třídy a vlastnosti pro přístup k prostředkům aplikace.
   
 |Kategorie|Typ dat vlastnosti|  
 |---|---|  
-|**Řetězce**|[řetězec](../../../visual-basic/language-reference/data-types/string-data-type.md)|  
+|**Řetězce**|[Řetězec](../../../visual-basic/language-reference/data-types/string-data-type.md)|  
 |**Obrázky**|<xref:System.Drawing.Bitmap>|  
 |**Ikony**|<xref:System.Drawing.Icon>|  
 |**Zvuk**|<xref:System.IO.UnmanagedMemoryStream><br /><br /> <xref:System.IO.UnmanagedMemoryStream> Třída odvozena z <xref:System.IO.Stream> třídy, takže je možné pomocí metod, které berou datových proudů, jako například <xref:Microsoft.VisualBasic.Devices.Audio.Play%2A> metody.|  
@@ -78,6 +78,6 @@ Poskytuje třídy a vlastnosti pro přístup k prostředkům aplikace.
  [!code-vb[VbVbalrMyResources#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyResources/VB/Form1.vb#10)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Správa prostředků aplikace (.NET)](/visualstudio/ide/managing-application-resources-dotnet)
 - [Prostředky v desktopových aplikacích](../../../framework/resources/index.md)
-

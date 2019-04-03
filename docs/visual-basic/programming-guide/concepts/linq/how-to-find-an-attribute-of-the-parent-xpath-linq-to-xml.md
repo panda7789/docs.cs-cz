@@ -2,12 +2,12 @@
 title: 'Postupy: Vyhledání atributu nadřazeného elementu (XPath – LINQ to XML) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 9d2572fd-27d4-426c-b079-16854cb9ec7d
-ms.openlocfilehash: 15752805f35b145514d25208b6de44a7ed8ade47
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ded20c173063492d260aee5ba55f3c4c585bd961
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54580535"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58828651"
 ---
 # <a name="how-to-find-an-attribute-of-the-parent-xpath-linq-to-xml-visual-basic"></a>Postupy: Vyhledání atributu nadřazeného elementu (XPath – LINQ to XML) (Visual Basic)
 Toto téma ukazuje, jak přejít do nadřazeného elementu a vyhledání atributu ho.  
@@ -48,4 +48,5 @@ id="bk101"
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [LINQ to XML pro uživatele jazyka XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

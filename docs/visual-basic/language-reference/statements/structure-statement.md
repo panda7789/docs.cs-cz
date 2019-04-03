@@ -12,12 +12,12 @@ helpviewer_keywords:
 - UDT (user-defined types)
 - types [Visual Basic], user-defined
 ms.assetid: 9bd1deea-2a89-4cdc-812c-6dcbb947c391
-ms.openlocfilehash: e8d312bc14cf4df3825586de0eba5cba64856268
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: ab446319a9e0ef295387d0d6768e813a158939c9
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56977510"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58828344"
 ---
 # <a name="structure-statement"></a>Structure – příkaz
 Deklaruje název struktury a zavádí definici proměnných, vlastností, událostí a postupů, které tvoří strukturu.  
@@ -105,6 +105,7 @@ End Structure
  [!code-vb[VbVbalrStatements#57](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#57)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Příkaz Class](../../../visual-basic/language-reference/statements/class-statement.md)
 - [Příkaz Interface](../../../visual-basic/language-reference/statements/interface-statement.md)
 - [Příkaz Module](../../../visual-basic/language-reference/statements/module-statement.md)

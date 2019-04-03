@@ -2,12 +2,12 @@
 title: Rozšíření kontroly nad zpracováním a vykazováním chyb
 ms.date: 03/30/2017
 ms.assetid: 45f996a7-fa00-45cb-9d6f-b368f5778aaa
-ms.openlocfilehash: 30b36f5373563ec9faba8e655ab1e31d47b23c99
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 8a6064d5ebc8f80eb5fe3cba309c0eb1c71ee020
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54622452"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58814338"
 ---
 # <a name="extending-control-over-error-handling-and-reporting"></a>Rozšíření kontroly nad zpracováním a vykazováním chyb
 Tato ukázka předvádí, jak rozšířit řídit zpracování chyb a zpráv o chybách pomocí služby Windows Communication Foundation (WCF) <xref:System.ServiceModel.Dispatcher.IErrorHandler> rozhraní. Vzorek je založen na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) s další kód přidá ke službě pro zpracování chyb. Vynutí klient několik chybové stavy. Služba zachycuje chyby a zaznamenává je do souboru.  
@@ -158,4 +158,3 @@ Fault: Reason = Invalid Argument: The argument must be greater than zero.
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\ErrorHandling`  
   
-## <a name="see-also"></a>Viz také:

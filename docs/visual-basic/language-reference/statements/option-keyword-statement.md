@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - Option keyword [Visual Basic]
 ms.assetid: 6b2f41c4-2403-43b6-8a14-94a3775e5b47
-ms.openlocfilehash: 29b2602664387ee233574686440691d2f4da830b
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 96ab02bf61f6b326c3f09615bf19f9e2ecae7e86
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55279159"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58819561"
 ---
 # <a name="option-keyword-statement"></a>Možnost \<– klíčové slovo > – příkaz
 Zavádí příkaz, který určuje možnost kompilátoru, která se vztahuje k celému zdrojovému souboru.  
@@ -30,4 +30,5 @@ Zavádí příkaz, který určuje možnost kompilátoru, která se vztahuje k ce
  [Příkaz Option Strict](../../../visual-basic/language-reference/statements/option-strict-statement.md)  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Klíčová slova](../../../visual-basic/language-reference/keywords/index.md)

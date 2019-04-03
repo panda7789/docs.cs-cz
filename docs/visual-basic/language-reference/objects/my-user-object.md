@@ -5,12 +5,12 @@ helpviewer_keywords:
 - My.User property
 - My.User object
 ms.assetid: caa7462e-2149-4bdb-8850-802b80b93cbf
-ms.openlocfilehash: e7195a8651b96bee39ed948d2f91e4e4aa01add3
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 7154b52f6bbd45756702deccbec3d8d45778b641
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54641132"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58835086"
 ---
 # <a name="myuser-object"></a>My.User – objekt
 Poskytuje přístup k informacím o aktuálním uživateli.  
@@ -24,6 +24,7 @@ Poskytuje přístup k informacím o aktuálním uživateli.
  **Sestavení:** Visual Basic Runtime Library (v souboru Microsoft.VisualBasic.dll)  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Security.Principal.IPrincipal>
 - <xref:System.Threading.Thread.CurrentPrincipal%2A>
 - <xref:System.Web.HttpContext.User%2A>

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - From clause [Visual Basic]
 - From statement [Visual Basic]
 ms.assetid: 83e3665e-68a0-4540-a3a3-3d777a0f95d5
-ms.openlocfilehash: 67f395069c98d8b60eca8c3663fb180a8dd5a2be
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: b18ef2f291e20d8a150972a980ba063377b0bc3a
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56978160"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58839610"
 ---
 # <a name="from-clause-visual-basic"></a>From – klauzule (Visual Basic)
 Určuje jednu nebo více proměnných rozsahu a kolekce pro dotaz.  
@@ -70,6 +70,7 @@ From element [ As type ] In collection [ _ ]
  [!code-vb[VbSimpleQuerySamples#23](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#23)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Dotazy](../../../visual-basic/language-reference/queries/index.md)
 - [Úvod do LINQ v JAZYKU Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
 - [Příkaz For Each...Next](../../../visual-basic/language-reference/statements/for-each-next-statement.md)

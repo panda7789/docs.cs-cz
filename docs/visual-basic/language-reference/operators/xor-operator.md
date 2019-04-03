@@ -14,12 +14,12 @@ helpviewer_keywords:
 - Xor keyword [Visual Basic]
 - bitwise comparison [Visual Basic]
 ms.assetid: 036000a9-3934-4e7f-a9d0-a816de3d84a6
-ms.openlocfilehash: bc3df1fdee5405445b4534a6982383c49b369b01
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 0cba3a995fb1ab774c8a5308e58f0b6905fc23f3
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56980435"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58827065"
 ---
 # <a name="xor-operator-visual-basic"></a>Xor – operátor (Visual Basic)
 Provede logické vyloučení dvou `Boolean` výrazů nebo bitové vyloučení dvou numerických výrazů.  
@@ -90,6 +90,7 @@ result = expression1 Xor expression2
  Předchozí příklad vytváří výsledky 2, 12 a 14, v uvedeném pořadí.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Logické/bitové operátory (Visual Basic)](../../../visual-basic/language-reference/operators/logical-bitwise-operators.md)
 - [Priorita operátorů v jazyce Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
 - [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)

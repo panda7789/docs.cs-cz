@@ -7,12 +7,12 @@ helpviewer_keywords:
 - name conflicts [Visual Basic]
 - element names [Visual Basic], in code
 ms.assetid: 2e4e8e02-23f7-49b9-a1c8-2b0402b6b525
-ms.openlocfilehash: 053149334118d69e5e85bdbd0f9a45e855e3d4dd
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: c247ada67f6554362f287cf252dd49856c4995da
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56980097"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58841144"
 ---
 # <a name="keywords-as-element-names-in-code-visual-basic"></a>Klíčová slova jako názvy elementu v kódu (Visual Basic)
 Libovolný prvek programu, jako jsou proměnné, třídu nebo člen – může mít stejný název jako s omezeným přístupem – klíčové slovo. Můžete například vytvořit proměnnou s názvem `Loop`. Však k odkazování na vaší verzi, která má stejný název jako s omezeným přístupem `Loop` – klíčové slovo – musí předcházet řetězec úplné kvalifikace nebo uzavřete ho do hranatých závorek (`[ ]`), jak ukazuje následující příklad.  
@@ -31,6 +31,7 @@ Libovolný prvek programu, jako jsou proměnné, třídu nebo člen – může m
 >  Váš program může obsahovat také názvy elementů poskytované jiných odkazovaných sestavení. Pokud tyto názvy jsou v konfliktu s klíčovými slovy s omezeným přístupem, pak umístění hranaté závorky kolem nich způsobí, že chcete interpretovat jako definované elementy jazyka Visual Basic.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Zásady vytváření názvů jazyka Visual Basic](../../../visual-basic/programming-guide/program-structure/naming-conventions.md)
 - [Struktura programu a zásady týkající se kódu](../../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)
 - [Klíčová slova](../../../visual-basic/language-reference/keywords/index.md)
