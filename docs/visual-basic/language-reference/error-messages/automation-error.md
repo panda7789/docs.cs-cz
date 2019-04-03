@@ -4,22 +4,23 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrID440
 ms.assetid: 2c4be5c5-2f0d-4a2b-96fe-d1b24f08fc4c
-ms.openlocfilehash: 8a00efe988eb39be75818b5c2c401b58e5f7f2ef
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e0ebaabb14cf5685469f88b0be3b7fece017165e
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54490879"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58843653"
 ---
-# <a name="automation-error"></a><span data-ttu-id="9536e-102">Chyba automatizace</span><span class="sxs-lookup"><span data-stu-id="9536e-102">Automation error</span></span>
-<span data-ttu-id="9536e-103">Při provádění metody nebo získání nebo nastavení vlastnosti proměnné objektu došlo k chybě.</span><span class="sxs-lookup"><span data-stu-id="9536e-103">An error occurred while executing a method or getting or setting a property of an object variable.</span></span> <span data-ttu-id="9536e-104">Aplikace, který vytvořil objekt ohlásil chybu.</span><span class="sxs-lookup"><span data-stu-id="9536e-104">The error was reported by the application that created the object.</span></span>  
+# <a name="automation-error"></a><span data-ttu-id="85dff-102">Chyba automatizace</span><span class="sxs-lookup"><span data-stu-id="85dff-102">Automation error</span></span>
+<span data-ttu-id="85dff-103">Při provádění metody nebo získání nebo nastavení vlastnosti proměnné objektu došlo k chybě.</span><span class="sxs-lookup"><span data-stu-id="85dff-103">An error occurred while executing a method or getting or setting a property of an object variable.</span></span> <span data-ttu-id="85dff-104">Aplikace, který vytvořil objekt ohlásil chybu.</span><span class="sxs-lookup"><span data-stu-id="85dff-104">The error was reported by the application that created the object.</span></span>  
   
-## <a name="to-correct-this-error"></a><span data-ttu-id="9536e-105">Oprava této chyby</span><span class="sxs-lookup"><span data-stu-id="9536e-105">To correct this error</span></span>  
+## <a name="to-correct-this-error"></a><span data-ttu-id="85dff-105">Oprava této chyby</span><span class="sxs-lookup"><span data-stu-id="85dff-105">To correct this error</span></span>  
   
-1.  <span data-ttu-id="9536e-106">Zkontrolujte vlastnosti `Err` objektu určit zdroj a povaze chyby.</span><span class="sxs-lookup"><span data-stu-id="9536e-106">Check the properties of the `Err` object to determine the source and nature of the error.</span></span>  
+1.  <span data-ttu-id="85dff-106">Zkontrolujte vlastnosti `Err` objektu určit zdroj a povaze chyby.</span><span class="sxs-lookup"><span data-stu-id="85dff-106">Check the properties of the `Err` object to determine the source and nature of the error.</span></span>  
   
-2.  <span data-ttu-id="9536e-107">Použití `On Error Resume Next` příkaz bezprostředně před přístupem k příkazu a pak vyhledejte chyby ihned po přístupu k příkazu.</span><span class="sxs-lookup"><span data-stu-id="9536e-107">Use the `On Error Resume Next` statement immediately before the accessing statement, and then check for errors immediately after the accessing statement.</span></span>  
+2.  <span data-ttu-id="85dff-107">Použití `On Error Resume Next` příkaz bezprostředně před přístupem k příkazu a pak vyhledejte chyby ihned po přístupu k příkazu.</span><span class="sxs-lookup"><span data-stu-id="85dff-107">Use the `On Error Resume Next` statement immediately before the accessing statement, and then check for errors immediately after the accessing statement.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="9536e-108">Viz také:</span><span class="sxs-lookup"><span data-stu-id="9536e-108">See also</span></span>
-- [<span data-ttu-id="9536e-109">Typy chyb</span><span class="sxs-lookup"><span data-stu-id="9536e-109">Error Types</span></span>](../../../visual-basic/programming-guide/language-features/error-types.md)
-- [<span data-ttu-id="9536e-110">Kontaktujte nás</span><span class="sxs-lookup"><span data-stu-id="9536e-110">Talk to Us</span></span>](/visualstudio/ide/talk-to-us)
+## <a name="see-also"></a><span data-ttu-id="85dff-108">Viz také:</span><span class="sxs-lookup"><span data-stu-id="85dff-108">See also</span></span>
+
+- [<span data-ttu-id="85dff-109">Typy chyb</span><span class="sxs-lookup"><span data-stu-id="85dff-109">Error Types</span></span>](../../../visual-basic/programming-guide/language-features/error-types.md)
+- [<span data-ttu-id="85dff-110">Kontaktujte nás</span><span class="sxs-lookup"><span data-stu-id="85dff-110">Talk to Us</span></span>](/visualstudio/ide/talk-to-us)

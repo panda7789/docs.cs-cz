@@ -1,55 +1,56 @@
 ---
-title: -deterministické
+title: -deterministic
 ms.date: 04/11/2018
 helpviewer_keywords:
 - deterministic compiler option [Visual Basic]
 - -deterministic compiler option [Visual Basic]
 - -deterministic compiler option [Visual Basic]
-ms.openlocfilehash: 8334691ff5ac09c19287dbc2ec2503dbd5149f7a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d3558976002e273aee239e518f0387033cb82873
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54572484"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58836139"
 ---
-# <a name="-deterministic"></a><span data-ttu-id="ef8ef-102">-deterministické</span><span class="sxs-lookup"><span data-stu-id="ef8ef-102">-deterministic</span></span>
+# <a name="-deterministic"></a><span data-ttu-id="46939-102">-deterministic</span><span class="sxs-lookup"><span data-stu-id="46939-102">-deterministic</span></span>
 
-<span data-ttu-id="ef8ef-103">Způsobí, že kompilátor vytvoří sestavení, jehož výstup bajt po bajtu je identické napříč kompilace identické vstupů.</span><span class="sxs-lookup"><span data-stu-id="ef8ef-103">Causes the compiler to produce an assembly whose byte-for-byte output is identical across compilations for identical inputs.</span></span> 
+<span data-ttu-id="46939-103">Způsobí, že kompilátor vytvoří sestavení, jehož výstup bajt po bajtu je identické napříč kompilace identické vstupů.</span><span class="sxs-lookup"><span data-stu-id="46939-103">Causes the compiler to produce an assembly whose byte-for-byte output is identical across compilations for identical inputs.</span></span> 
 
-## <a name="syntax"></a><span data-ttu-id="ef8ef-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="ef8ef-104">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="46939-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="46939-104">Syntax</span></span>
 
 ```
 -deterministic
 ```
 
-## <a name="remarks"></a><span data-ttu-id="ef8ef-105">Poznámky</span><span class="sxs-lookup"><span data-stu-id="ef8ef-105">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="46939-105">Poznámky</span><span class="sxs-lookup"><span data-stu-id="46939-105">Remarks</span></span>
 
-<span data-ttu-id="ef8ef-106">Ve výchozím nastavení je výstup kompilátoru z danou sadu vstupů jedinečná, vzhledem k tomu, že kompilátor přidává časové razítko a identifikátor GUID, který je generován z náhodných čísel.</span><span class="sxs-lookup"><span data-stu-id="ef8ef-106">By default, compiler output from a given set of inputs is unique, since the compiler adds a timestamp and a GUID that is generated from random numbers.</span></span> <span data-ttu-id="ef8ef-107">Můžete použít `-deterministic` možnost vytvářet *deterministické sestavení*, jehož binární obsah identické napříč kompilace jako vstup zůstává stejná.</span><span class="sxs-lookup"><span data-stu-id="ef8ef-107">You use the `-deterministic` option to produce a *deterministic assembly*, one whose binary content is identical across compilations as long as the input remains the same.</span></span>
+<span data-ttu-id="46939-106">Ve výchozím nastavení je výstup kompilátoru z danou sadu vstupů jedinečná, vzhledem k tomu, že kompilátor přidává časové razítko a identifikátor GUID, který je generován z náhodných čísel.</span><span class="sxs-lookup"><span data-stu-id="46939-106">By default, compiler output from a given set of inputs is unique, since the compiler adds a timestamp and a GUID that is generated from random numbers.</span></span> <span data-ttu-id="46939-107">Můžete použít `-deterministic` možnost vytvářet *deterministické sestavení*, jehož binární obsah identické napříč kompilace jako vstup zůstává stejná.</span><span class="sxs-lookup"><span data-stu-id="46939-107">You use the `-deterministic` option to produce a *deterministic assembly*, one whose binary content is identical across compilations as long as the input remains the same.</span></span>
 
-<span data-ttu-id="ef8ef-108">Kompilátor bere v úvahu následující vstupy pro účely determinismus:</span><span class="sxs-lookup"><span data-stu-id="ef8ef-108">The compiler considers the following inputs for the purpose of determinism:</span></span>
+<span data-ttu-id="46939-108">Kompilátor bere v úvahu následující vstupy pro účely determinismus:</span><span class="sxs-lookup"><span data-stu-id="46939-108">The compiler considers the following inputs for the purpose of determinism:</span></span>
 
-- <span data-ttu-id="ef8ef-109">Pořadí parametrů příkazového řádku.</span><span class="sxs-lookup"><span data-stu-id="ef8ef-109">The sequence of command-line parameters.</span></span>
-- <span data-ttu-id="ef8ef-110">Obsah souboru odezvy kompilátoru .rsp.</span><span class="sxs-lookup"><span data-stu-id="ef8ef-110">The contents of the compiler's .rsp response file.</span></span>
-- <span data-ttu-id="ef8ef-111">Přesné verze kompilátoru použít a jeho odkazované sestavení.</span><span class="sxs-lookup"><span data-stu-id="ef8ef-111">The precise version of the compiler used, and its referenced assemblies.</span></span>
-- <span data-ttu-id="ef8ef-112">Aktuální cesta k adresáři.</span><span class="sxs-lookup"><span data-stu-id="ef8ef-112">The current directory path.</span></span>
-- <span data-ttu-id="ef8ef-113">Binární obsah všech souborů explicitně předány kompilátoru přímo nebo nepřímo, včetně:</span><span class="sxs-lookup"><span data-stu-id="ef8ef-113">The binary contents of all files explicitly passed to the compiler either directly or indirectly, including:</span></span> 
-    - <span data-ttu-id="ef8ef-114">Zdrojové soubory</span><span class="sxs-lookup"><span data-stu-id="ef8ef-114">Source files</span></span>
-    - <span data-ttu-id="ef8ef-115">Odkazovaná sestavení</span><span class="sxs-lookup"><span data-stu-id="ef8ef-115">Referenced assemblies</span></span>
-    - <span data-ttu-id="ef8ef-116">Odkazované moduly</span><span class="sxs-lookup"><span data-stu-id="ef8ef-116">Referenced modules</span></span>
-    - <span data-ttu-id="ef8ef-117">Prostředky</span><span class="sxs-lookup"><span data-stu-id="ef8ef-117">Resources</span></span>
-    - <span data-ttu-id="ef8ef-118">Soubor klíče se silným názvem</span><span class="sxs-lookup"><span data-stu-id="ef8ef-118">The strong name key file</span></span>
-    - <span data-ttu-id="ef8ef-119">@ soubory odpovědí</span><span class="sxs-lookup"><span data-stu-id="ef8ef-119">@ response files</span></span>
-    - <span data-ttu-id="ef8ef-120">Analyzátory</span><span class="sxs-lookup"><span data-stu-id="ef8ef-120">Analyzers</span></span>
-    - <span data-ttu-id="ef8ef-121">Sady pravidel</span><span class="sxs-lookup"><span data-stu-id="ef8ef-121">Rulesets</span></span>
-    - <span data-ttu-id="ef8ef-122">Další soubory, které mohou být využívána analyzátory</span><span class="sxs-lookup"><span data-stu-id="ef8ef-122">Additional files that may be used by analyzers</span></span>
-- <span data-ttu-id="ef8ef-123">Aktuální jazykové verze (pro jazyk, v které diagnostiky a výjimky se budou vytvářet zprávy).</span><span class="sxs-lookup"><span data-stu-id="ef8ef-123">The current culture (for the language in which diagnostics and exception messages are produced).</span></span>
-- <span data-ttu-id="ef8ef-124">Výchozí kódování (nebo aktuální znakové stránce) Pokud kódování není zadán.</span><span class="sxs-lookup"><span data-stu-id="ef8ef-124">The default encoding (or the current code page) if the encoding is not specified.</span></span>
-- <span data-ttu-id="ef8ef-125">Existence, neexistence a obsah souborů na vyhledávací cesty kompilátoru (například tím, že zadaný `/lib` nebo `/recurse`).</span><span class="sxs-lookup"><span data-stu-id="ef8ef-125">The existence, non-existence, and contents of files on the compiler's search paths (specified, for example, by `/lib` or `/recurse`).</span></span>
-- <span data-ttu-id="ef8ef-126">Platforma CLR, na kterém je spuštěna kompilátor.</span><span class="sxs-lookup"><span data-stu-id="ef8ef-126">The CLR platform on which the compiler is run.</span></span>
-- <span data-ttu-id="ef8ef-127">Hodnota `%LIBPATH%`, což může ovlivnit načítání analyzátoru závislostí.</span><span class="sxs-lookup"><span data-stu-id="ef8ef-127">The value of `%LIBPATH%`, which can affect analyzer dependency loading.</span></span>
+- <span data-ttu-id="46939-109">Pořadí parametrů příkazového řádku.</span><span class="sxs-lookup"><span data-stu-id="46939-109">The sequence of command-line parameters.</span></span>
+- <span data-ttu-id="46939-110">Obsah souboru odezvy kompilátoru .rsp.</span><span class="sxs-lookup"><span data-stu-id="46939-110">The contents of the compiler's .rsp response file.</span></span>
+- <span data-ttu-id="46939-111">Přesné verze kompilátoru použít a jeho odkazované sestavení.</span><span class="sxs-lookup"><span data-stu-id="46939-111">The precise version of the compiler used, and its referenced assemblies.</span></span>
+- <span data-ttu-id="46939-112">Aktuální cesta k adresáři.</span><span class="sxs-lookup"><span data-stu-id="46939-112">The current directory path.</span></span>
+- <span data-ttu-id="46939-113">Binární obsah všech souborů explicitně předány kompilátoru přímo nebo nepřímo, včetně:</span><span class="sxs-lookup"><span data-stu-id="46939-113">The binary contents of all files explicitly passed to the compiler either directly or indirectly, including:</span></span> 
+    - <span data-ttu-id="46939-114">Zdrojové soubory</span><span class="sxs-lookup"><span data-stu-id="46939-114">Source files</span></span>
+    - <span data-ttu-id="46939-115">Odkazovaná sestavení</span><span class="sxs-lookup"><span data-stu-id="46939-115">Referenced assemblies</span></span>
+    - <span data-ttu-id="46939-116">Odkazované moduly</span><span class="sxs-lookup"><span data-stu-id="46939-116">Referenced modules</span></span>
+    - <span data-ttu-id="46939-117">Prostředky</span><span class="sxs-lookup"><span data-stu-id="46939-117">Resources</span></span>
+    - <span data-ttu-id="46939-118">Soubor klíče se silným názvem</span><span class="sxs-lookup"><span data-stu-id="46939-118">The strong name key file</span></span>
+    - <span data-ttu-id="46939-119">@ soubory odpovědí</span><span class="sxs-lookup"><span data-stu-id="46939-119">@ response files</span></span>
+    - <span data-ttu-id="46939-120">Analyzátory</span><span class="sxs-lookup"><span data-stu-id="46939-120">Analyzers</span></span>
+    - <span data-ttu-id="46939-121">Sady pravidel</span><span class="sxs-lookup"><span data-stu-id="46939-121">Rulesets</span></span>
+    - <span data-ttu-id="46939-122">Další soubory, které mohou být využívána analyzátory</span><span class="sxs-lookup"><span data-stu-id="46939-122">Additional files that may be used by analyzers</span></span>
+- <span data-ttu-id="46939-123">Aktuální jazykové verze (pro jazyk, v které diagnostiky a výjimky se budou vytvářet zprávy).</span><span class="sxs-lookup"><span data-stu-id="46939-123">The current culture (for the language in which diagnostics and exception messages are produced).</span></span>
+- <span data-ttu-id="46939-124">Výchozí kódování (nebo aktuální znakové stránce) Pokud kódování není zadán.</span><span class="sxs-lookup"><span data-stu-id="46939-124">The default encoding (or the current code page) if the encoding is not specified.</span></span>
+- <span data-ttu-id="46939-125">Existence, neexistence a obsah souborů na vyhledávací cesty kompilátoru (například tím, že zadaný `/lib` nebo `/recurse`).</span><span class="sxs-lookup"><span data-stu-id="46939-125">The existence, non-existence, and contents of files on the compiler's search paths (specified, for example, by `/lib` or `/recurse`).</span></span>
+- <span data-ttu-id="46939-126">Platforma CLR, na kterém je spuštěna kompilátor.</span><span class="sxs-lookup"><span data-stu-id="46939-126">The CLR platform on which the compiler is run.</span></span>
+- <span data-ttu-id="46939-127">Hodnota `%LIBPATH%`, což může ovlivnit načítání analyzátoru závislostí.</span><span class="sxs-lookup"><span data-stu-id="46939-127">The value of `%LIBPATH%`, which can affect analyzer dependency loading.</span></span>
 
-<span data-ttu-id="ef8ef-128">Když jsou veřejně dostupné zdroje, deterministickou kompilaci lze použít pro stanovení, zda je zkompilován do binárního souboru z důvěryhodného zdroje.</span><span class="sxs-lookup"><span data-stu-id="ef8ef-128">When sources are publicly available, deterministic compilation can be used for establishing whether a binary is compiled from a trusted source.</span></span> <span data-ttu-id="ef8ef-129">Může být také užitečné v systému průběžného sestavení pro určení, jestli je potřeba spustit kroky sestavení, které jsou závislé na změny do binárního souboru.</span><span class="sxs-lookup"><span data-stu-id="ef8ef-129">It can also be useful in a continuous build system for determining whether build steps that are dependent on changes to a binary need to be executed.</span></span> 
+<span data-ttu-id="46939-128">Když jsou veřejně dostupné zdroje, deterministickou kompilaci lze použít pro stanovení, zda je zkompilován do binárního souboru z důvěryhodného zdroje.</span><span class="sxs-lookup"><span data-stu-id="46939-128">When sources are publicly available, deterministic compilation can be used for establishing whether a binary is compiled from a trusted source.</span></span> <span data-ttu-id="46939-129">Může být také užitečné v systému průběžného sestavení pro určení, jestli je potřeba spustit kroky sestavení, které jsou závislé na změny do binárního souboru.</span><span class="sxs-lookup"><span data-stu-id="46939-129">It can also be useful in a continuous build system for determining whether build steps that are dependent on changes to a binary need to be executed.</span></span> 
 
-## <a name="see-also"></a><span data-ttu-id="ef8ef-130">Viz také:</span><span class="sxs-lookup"><span data-stu-id="ef8ef-130">See also</span></span>
-- [<span data-ttu-id="ef8ef-131">Visual Basic Command-Line Compiler</span><span class="sxs-lookup"><span data-stu-id="ef8ef-131">Visual Basic Command-Line Compiler</span></span>](../../../visual-basic/reference/command-line-compiler/index.md)
-- [<span data-ttu-id="ef8ef-132">Příkazové řádky ukázkové kompilace</span><span class="sxs-lookup"><span data-stu-id="ef8ef-132">Sample Compilation Command Lines</span></span>](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
+## <a name="see-also"></a><span data-ttu-id="46939-130">Viz také:</span><span class="sxs-lookup"><span data-stu-id="46939-130">See also</span></span>
+
+- [<span data-ttu-id="46939-131">Visual Basic Command-Line Compiler</span><span class="sxs-lookup"><span data-stu-id="46939-131">Visual Basic Command-Line Compiler</span></span>](../../../visual-basic/reference/command-line-compiler/index.md)
+- [<span data-ttu-id="46939-132">Příkazové řádky ukázkové kompilace</span><span class="sxs-lookup"><span data-stu-id="46939-132">Sample Compilation Command Lines</span></span>](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

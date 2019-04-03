@@ -2,17 +2,17 @@
 title: 'Postupy: Dotaz na obsah souborů ve složce (LINQ) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: edacbcd3-f3e4-4429-a8be-28a58dc0dd70
-ms.openlocfilehash: 6bebb4bd7444516c51551a5c56171d08f9d0ef2e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 04909de9fe3898600b127f1f7a5ba46834bc239a
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54566919"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58827884"
 ---
-# <a name="how-to-query-the-contents-of-files-in-a-folder-linq-visual-basic"></a><span data-ttu-id="e4da0-102">Postupy: Dotaz na obsah souborů ve složce (LINQ) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="e4da0-102">How to: Query the Contents of Files in a Folder (LINQ) (Visual Basic)</span></span>
-<span data-ttu-id="e4da0-103">Tento příklad ukazuje, jak dotaz nad všechny soubory ve stromové struktuře zadaný adresář, otevřete každý soubor a zkontrolujte jeho obsah.</span><span class="sxs-lookup"><span data-stu-id="e4da0-103">This example shows how to query over all the files in a specified directory tree, open each file, and inspect its contents.</span></span> <span data-ttu-id="e4da0-104">Tento typ technika může použít k vytváření indexů nebo obrácení pořadí indexů obsah adresářovém stromu.</span><span class="sxs-lookup"><span data-stu-id="e4da0-104">This type of technique could be used to create indexes or reverse indexes of the contents of a directory tree.</span></span> <span data-ttu-id="e4da0-105">Hledání jednoduchého řetězce se provádí v tomto příkladu.</span><span class="sxs-lookup"><span data-stu-id="e4da0-105">A simple string search is performed in this example.</span></span> <span data-ttu-id="e4da0-106">Porovnávání vzorů složitější typy však lze provést s regulárním výrazem.</span><span class="sxs-lookup"><span data-stu-id="e4da0-106">However, more complex types of pattern matching can be performed with a regular expression.</span></span> <span data-ttu-id="e4da0-107">Další informace najdete v tématu [jak: Kombinace dotazů LINQ s regulárními výrazy (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-combine-linq-queries-with-regular-expressions.md).</span><span class="sxs-lookup"><span data-stu-id="e4da0-107">For more information, see [How to: Combine LINQ Queries with Regular Expressions (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-combine-linq-queries-with-regular-expressions.md).</span></span>  
+# <a name="how-to-query-the-contents-of-files-in-a-folder-linq-visual-basic"></a><span data-ttu-id="a00fa-102">Postupy: Dotaz na obsah souborů ve složce (LINQ) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="a00fa-102">How to: Query the Contents of Files in a Folder (LINQ) (Visual Basic)</span></span>
+<span data-ttu-id="a00fa-103">Tento příklad ukazuje, jak dotaz nad všechny soubory ve stromové struktuře zadaný adresář, otevřete každý soubor a zkontrolujte jeho obsah.</span><span class="sxs-lookup"><span data-stu-id="a00fa-103">This example shows how to query over all the files in a specified directory tree, open each file, and inspect its contents.</span></span> <span data-ttu-id="a00fa-104">Tento typ technika může použít k vytváření indexů nebo obrácení pořadí indexů obsah adresářovém stromu.</span><span class="sxs-lookup"><span data-stu-id="a00fa-104">This type of technique could be used to create indexes or reverse indexes of the contents of a directory tree.</span></span> <span data-ttu-id="a00fa-105">Hledání jednoduchého řetězce se provádí v tomto příkladu.</span><span class="sxs-lookup"><span data-stu-id="a00fa-105">A simple string search is performed in this example.</span></span> <span data-ttu-id="a00fa-106">Porovnávání vzorů složitější typy však lze provést s regulárním výrazem.</span><span class="sxs-lookup"><span data-stu-id="a00fa-106">However, more complex types of pattern matching can be performed with a regular expression.</span></span> <span data-ttu-id="a00fa-107">Další informace najdete v tématu [jak: Kombinace dotazů LINQ s regulárními výrazy (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-combine-linq-queries-with-regular-expressions.md).</span><span class="sxs-lookup"><span data-stu-id="a00fa-107">For more information, see [How to: Combine LINQ Queries with Regular Expressions (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-combine-linq-queries-with-regular-expressions.md).</span></span>  
   
-## <a name="example"></a><span data-ttu-id="e4da0-108">Příklad</span><span class="sxs-lookup"><span data-stu-id="e4da0-108">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="a00fa-108">Příklad</span><span class="sxs-lookup"><span data-stu-id="a00fa-108">Example</span></span>  
   
 ```vb  
 Module Module1  
@@ -70,9 +70,10 @@ Module Module1
 End Module  
 ```  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="e4da0-109">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="e4da0-109">Compiling the Code</span></span>  
- <span data-ttu-id="e4da0-110">Vytvořit projekt, který cílí na rozhraní .NET Framework verze 3.5 nebo vyšší s odkazem na knihovnu System.Core.dll a `Imports` příkaz pro obor názvů System.Linq.</span><span class="sxs-lookup"><span data-stu-id="e4da0-110">Create a project that targets the .NET Framework version 3.5 or higher with a reference to System.Core.dll and a `Imports` statement for the System.Linq namespace.</span></span>  
+## <a name="compiling-the-code"></a><span data-ttu-id="a00fa-109">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="a00fa-109">Compiling the Code</span></span>  
+ <span data-ttu-id="a00fa-110">Vytvořit projekt, který cílí na rozhraní .NET Framework verze 3.5 nebo vyšší s odkazem na knihovnu System.Core.dll a `Imports` příkaz pro obor názvů System.Linq.</span><span class="sxs-lookup"><span data-stu-id="a00fa-110">Create a project that targets the .NET Framework version 3.5 or higher with a reference to System.Core.dll and a `Imports` statement for the System.Linq namespace.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="e4da0-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e4da0-111">See also</span></span>
-- [<span data-ttu-id="e4da0-112">LINQ to Objects (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="e4da0-112">LINQ to Objects (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)
-- [<span data-ttu-id="e4da0-113">LINQ a souborové adresáře (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="e4da0-113">LINQ and File Directories (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)
+## <a name="see-also"></a><span data-ttu-id="a00fa-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="a00fa-111">See also</span></span>
+
+- [<span data-ttu-id="a00fa-112">LINQ to Objects (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="a00fa-112">LINQ to Objects (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)
+- [<span data-ttu-id="a00fa-113">LINQ a souborové adresáře (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="a00fa-113">LINQ and File Directories (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)

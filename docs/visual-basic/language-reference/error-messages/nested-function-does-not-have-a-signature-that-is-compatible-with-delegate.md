@@ -7,21 +7,21 @@ f1_keywords:
 helpviewer_keywords:
 - BC36532
 ms.assetid: 493f292c-d81e-40ef-8b47-61f020571829
-ms.openlocfilehash: ea6f230715520cb35809d57db76b300da326ec9a
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 04eae6d2c6d64e8a0f46ae3c2801a7eb6d893dca
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55283462"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58822259"
 ---
-# <a name="nested-function-does-not-have-a-signature-that-is-compatible-with-delegate-delegatename"></a><span data-ttu-id="8ca51-102">Vnořená funkce nemá stejný podpis kompatibilní s delegátem '\<vlastnost delegatename > "</span><span class="sxs-lookup"><span data-stu-id="8ca51-102">Nested function does not have a signature that is compatible with delegate '\<delegatename>'</span></span>
-<span data-ttu-id="8ca51-103">Výraz lambda se přiřadila do delegáta, který má nekompatibilní podpis.</span><span class="sxs-lookup"><span data-stu-id="8ca51-103">A lambda expression has been assigned to a delegate that has an incompatible signature.</span></span> <span data-ttu-id="8ca51-104">Například v následujícím kódu, delegátu `Del` má dva celočíselné parametry.</span><span class="sxs-lookup"><span data-stu-id="8ca51-104">For example, in the following code, delegate `Del` has two integer parameters.</span></span>  
+# <a name="nested-function-does-not-have-a-signature-that-is-compatible-with-delegate-delegatename"></a><span data-ttu-id="afbf8-102">Vnořená funkce nemá stejný podpis kompatibilní s delegátem '\<vlastnost delegatename > "</span><span class="sxs-lookup"><span data-stu-id="afbf8-102">Nested function does not have a signature that is compatible with delegate '\<delegatename>'</span></span>
+<span data-ttu-id="afbf8-103">Výraz lambda se přiřadila do delegáta, který má nekompatibilní podpis.</span><span class="sxs-lookup"><span data-stu-id="afbf8-103">A lambda expression has been assigned to a delegate that has an incompatible signature.</span></span> <span data-ttu-id="afbf8-104">Například v následujícím kódu, delegátu `Del` má dva celočíselné parametry.</span><span class="sxs-lookup"><span data-stu-id="afbf8-104">For example, in the following code, delegate `Del` has two integer parameters.</span></span>  
   
 ```vb  
 Delegate Function Del(ByVal p As Integer, ByVal q As Integer) As Integer  
 ```  
   
- <span data-ttu-id="8ca51-105">Chyba se vyvolá, pokud výraz lambda s jedním argumentem je deklarovaný jako typ `Del`:</span><span class="sxs-lookup"><span data-stu-id="8ca51-105">The error is raised if a lambda expression with one argument is declared as type `Del`:</span></span>  
+ <span data-ttu-id="afbf8-105">Chyba se vyvolá, pokud výraz lambda s jedním argumentem je deklarovaný jako typ `Del`:</span><span class="sxs-lookup"><span data-stu-id="afbf8-105">The error is raised if a lambda expression with one argument is declared as type `Del`:</span></span>  
   
 ```vb  
 ' Neither of these is valid.   
@@ -29,12 +29,13 @@ Delegate Function Del(ByVal p As Integer, ByVal q As Integer) As Integer
 ' Dim lambda2 As Del = Function(n) n + 1  
 ```  
   
- <span data-ttu-id="8ca51-106">**ID chyby:** BC36532</span><span class="sxs-lookup"><span data-stu-id="8ca51-106">**Error ID:** BC36532</span></span>  
+ <span data-ttu-id="afbf8-106">**ID chyby:** BC36532</span><span class="sxs-lookup"><span data-stu-id="afbf8-106">**Error ID:** BC36532</span></span>  
   
-## <a name="to-correct-this-error"></a><span data-ttu-id="8ca51-107">Oprava této chyby</span><span class="sxs-lookup"><span data-stu-id="8ca51-107">To correct this error</span></span>  
+## <a name="to-correct-this-error"></a><span data-ttu-id="afbf8-107">Oprava této chyby</span><span class="sxs-lookup"><span data-stu-id="afbf8-107">To correct this error</span></span>  
   
--   <span data-ttu-id="8ca51-108">Úprava definice delegáta nebo přiřazené lambda výraz tak, aby podpisy jsou kompatibilní.</span><span class="sxs-lookup"><span data-stu-id="8ca51-108">Adjust either the delegate definition or the assigned lambda expression so that the signatures are compatible.</span></span>  
+-   <span data-ttu-id="afbf8-108">Úprava definice delegáta nebo přiřazené lambda výraz tak, aby podpisy jsou kompatibilní.</span><span class="sxs-lookup"><span data-stu-id="afbf8-108">Adjust either the delegate definition or the assigned lambda expression so that the signatures are compatible.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="8ca51-109">Viz také:</span><span class="sxs-lookup"><span data-stu-id="8ca51-109">See also</span></span>
-- [<span data-ttu-id="8ca51-110">Volný převod delegáta</span><span class="sxs-lookup"><span data-stu-id="8ca51-110">Relaxed Delegate Conversion</span></span>](../../../visual-basic/programming-guide/language-features/delegates/relaxed-delegate-conversion.md)
-- [<span data-ttu-id="8ca51-111">Výrazy lambda</span><span class="sxs-lookup"><span data-stu-id="8ca51-111">Lambda Expressions</span></span>](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)
+## <a name="see-also"></a><span data-ttu-id="afbf8-109">Viz také:</span><span class="sxs-lookup"><span data-stu-id="afbf8-109">See also</span></span>
+
+- [<span data-ttu-id="afbf8-110">Volný převod delegáta</span><span class="sxs-lookup"><span data-stu-id="afbf8-110">Relaxed Delegate Conversion</span></span>](../../../visual-basic/programming-guide/language-features/delegates/relaxed-delegate-conversion.md)
+- [<span data-ttu-id="afbf8-111">Výrazy lambda</span><span class="sxs-lookup"><span data-stu-id="afbf8-111">Lambda Expressions</span></span>](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)

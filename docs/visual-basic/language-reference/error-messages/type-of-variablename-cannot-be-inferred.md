@@ -7,25 +7,25 @@ f1_keywords:
 helpviewer_keywords:
 - BC30982
 ms.assetid: 741e85d9-a747-42ad-a1e1-a3f1928aaff5
-ms.openlocfilehash: 1f1df0c7391c027994caabadc4b857bec55f5938
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: e90e881546c12df2c8b19ff03a4d4c7304c4596c
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57367177"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58815872"
 ---
-# <a name="type-of-variablename-cannot-be-inferred-because-the-loop-bounds-and-the-step-variable-do-not-widen-to-the-same-type"></a><span data-ttu-id="d122f-102">Typ '\<NázevProměnné >' nelze odvodit, protože omezení cyklu a klauzuli kroku nejde rozšířit na stejný typ.</span><span class="sxs-lookup"><span data-stu-id="d122f-102">Type of '\<variablename>' cannot be inferred because the loop bounds and the step variable do not widen to the same type</span></span>
-<span data-ttu-id="d122f-103">Jste napsali `For...Next` smyčku, ve kterém kompilátor nemůže odvodit typ dat pro řídicí proměnná smyčky for vzhledem k tomu, že jsou splněny následující podmínky:</span><span class="sxs-lookup"><span data-stu-id="d122f-103">You have written a `For...Next` loop in which the compiler cannot infer a data type for the loop control variable because the following conditions are true:</span></span>  
+# <a name="type-of-variablename-cannot-be-inferred-because-the-loop-bounds-and-the-step-variable-do-not-widen-to-the-same-type"></a><span data-ttu-id="9fe3a-102">Typ '\<NázevProměnné >' nelze odvodit, protože omezení cyklu a klauzuli kroku nejde rozšířit na stejný typ.</span><span class="sxs-lookup"><span data-stu-id="9fe3a-102">Type of '\<variablename>' cannot be inferred because the loop bounds and the step variable do not widen to the same type</span></span>
+<span data-ttu-id="9fe3a-103">Jste napsali `For...Next` smyčku, ve kterém kompilátor nemůže odvodit typ dat pro řídicí proměnná smyčky for vzhledem k tomu, že jsou splněny následující podmínky:</span><span class="sxs-lookup"><span data-stu-id="9fe3a-103">You have written a `For...Next` loop in which the compiler cannot infer a data type for the loop control variable because the following conditions are true:</span></span>  
   
--   <span data-ttu-id="d122f-104">Není zadaný datový typ řídicí proměnná smyčky s `As` klauzuli.</span><span class="sxs-lookup"><span data-stu-id="d122f-104">The data type of the loop control variable is not specified with an `As` clause.</span></span>  
+-   <span data-ttu-id="9fe3a-104">Není zadaný datový typ řídicí proměnná smyčky s `As` klauzuli.</span><span class="sxs-lookup"><span data-stu-id="9fe3a-104">The data type of the loop control variable is not specified with an `As` clause.</span></span>  
   
--   <span data-ttu-id="d122f-105">Omezení cyklu a klauzuli kroku obsahovat aspoň dva datové typy.</span><span class="sxs-lookup"><span data-stu-id="d122f-105">The loop bounds and step variable contain at least two data types.</span></span>  
+-   <span data-ttu-id="9fe3a-105">Omezení cyklu a klauzuli kroku obsahovat aspoň dva datové typy.</span><span class="sxs-lookup"><span data-stu-id="9fe3a-105">The loop bounds and step variable contain at least two data types.</span></span>  
   
--   <span data-ttu-id="d122f-106">Neexistuje žádný standardní převod mezi datovými typy.</span><span class="sxs-lookup"><span data-stu-id="d122f-106">No standard conversions exist between the data types.</span></span>  
+-   <span data-ttu-id="9fe3a-106">Neexistuje žádný standardní převod mezi datovými typy.</span><span class="sxs-lookup"><span data-stu-id="9fe3a-106">No standard conversions exist between the data types.</span></span>  
   
- <span data-ttu-id="d122f-107">Proto kompilátor nelze odvodit datový typ řídicí proměnná smyčky.</span><span class="sxs-lookup"><span data-stu-id="d122f-107">Therefore, the compiler cannot infer the data type of a loop's control variable.</span></span>  
+ <span data-ttu-id="9fe3a-107">Proto kompilátor nelze odvodit datový typ řídicí proměnná smyčky.</span><span class="sxs-lookup"><span data-stu-id="9fe3a-107">Therefore, the compiler cannot infer the data type of a loop's control variable.</span></span>  
   
- <span data-ttu-id="d122f-108">V následujícím příkladu krok proměnná je znak, a omezení cyklu jsou obě celá čísla.</span><span class="sxs-lookup"><span data-stu-id="d122f-108">In the following example, the step variable is a character and the loop bounds are both integers.</span></span> <span data-ttu-id="d122f-109">Protože neexistuje žádný standardní převod mezi znaky a celá čísla, tato chyba se nahlásí.</span><span class="sxs-lookup"><span data-stu-id="d122f-109">Because there is no standard conversion between characters and integers, this error is reported.</span></span>  
+ <span data-ttu-id="9fe3a-108">V následujícím příkladu krok proměnná je znak, a omezení cyklu jsou obě celá čísla.</span><span class="sxs-lookup"><span data-stu-id="9fe3a-108">In the following example, the step variable is a character and the loop bounds are both integers.</span></span> <span data-ttu-id="9fe3a-109">Protože neexistuje žádný standardní převod mezi znaky a celá čísla, tato chyba se nahlásí.</span><span class="sxs-lookup"><span data-stu-id="9fe3a-109">Because there is no standard conversion between characters and integers, this error is reported.</span></span>  
   
 ```vb  
 Dim stepVar = "1"c  
@@ -38,23 +38,23 @@ Dim n = 20
 ' Next  
 ```  
   
- <span data-ttu-id="d122f-110">**ID chyby:** BC30982</span><span class="sxs-lookup"><span data-stu-id="d122f-110">**Error ID:** BC30982</span></span>  
+ <span data-ttu-id="9fe3a-110">**ID chyby:** BC30982</span><span class="sxs-lookup"><span data-stu-id="9fe3a-110">**Error ID:** BC30982</span></span>  
   
-## <a name="to-correct-this-error"></a><span data-ttu-id="d122f-111">Oprava této chyby</span><span class="sxs-lookup"><span data-stu-id="d122f-111">To correct this error</span></span>  
+## <a name="to-correct-this-error"></a><span data-ttu-id="9fe3a-111">Oprava této chyby</span><span class="sxs-lookup"><span data-stu-id="9fe3a-111">To correct this error</span></span>  
   
--   <span data-ttu-id="d122f-112">Změňte typy omezení cyklu a klauzuli kroku podle potřeby tak, aby aspoň jeden z nich je typ, který ostatní rozšířit na.</span><span class="sxs-lookup"><span data-stu-id="d122f-112">Change the types of the loop bounds and step variable as necessary so that at least one of them is a type that the others widen to.</span></span> <span data-ttu-id="d122f-113">V předchozím příkladu, změňte typ `stepVar` k `Integer`.</span><span class="sxs-lookup"><span data-stu-id="d122f-113">In the preceding example, change the type of `stepVar` to `Integer`.</span></span>  
+-   <span data-ttu-id="9fe3a-112">Změňte typy omezení cyklu a klauzuli kroku podle potřeby tak, aby aspoň jeden z nich je typ, který ostatní rozšířit na.</span><span class="sxs-lookup"><span data-stu-id="9fe3a-112">Change the types of the loop bounds and step variable as necessary so that at least one of them is a type that the others widen to.</span></span> <span data-ttu-id="9fe3a-113">V předchozím příkladu, změňte typ `stepVar` k `Integer`.</span><span class="sxs-lookup"><span data-stu-id="9fe3a-113">In the preceding example, change the type of `stepVar` to `Integer`.</span></span>  
   
     ```  
     Dim stepVar = 1  
     ```  
   
-     <span data-ttu-id="d122f-114">—nebo—</span><span class="sxs-lookup"><span data-stu-id="d122f-114">—or—</span></span>  
+     <span data-ttu-id="9fe3a-114">—nebo—</span><span class="sxs-lookup"><span data-stu-id="9fe3a-114">—or—</span></span>  
   
     ```  
     Dim stepVar As Integer = 1  
     ```  
   
--   <span data-ttu-id="d122f-115">Převést na odpovídající typy omezení cyklu a klauzuli kroku pomocí funkce pro explicitní převod.</span><span class="sxs-lookup"><span data-stu-id="d122f-115">Use explicit conversion functions to convert the loop bounds and step variable to the appropriate types.</span></span> <span data-ttu-id="d122f-116">V předchozím příkladu platí `Val` funkce `stepVar`.</span><span class="sxs-lookup"><span data-stu-id="d122f-116">In the preceding example, apply the `Val` function to `stepVar`.</span></span>  
+-   <span data-ttu-id="9fe3a-115">Převést na odpovídající typy omezení cyklu a klauzuli kroku pomocí funkce pro explicitní převod.</span><span class="sxs-lookup"><span data-stu-id="9fe3a-115">Use explicit conversion functions to convert the loop bounds and step variable to the appropriate types.</span></span> <span data-ttu-id="9fe3a-116">V předchozím příkladu platí `Val` funkce `stepVar`.</span><span class="sxs-lookup"><span data-stu-id="9fe3a-116">In the preceding example, apply the `Val` function to `stepVar`.</span></span>  
   
     ```  
     For i = 1 To 10 Step Val(stepVar)  
@@ -62,11 +62,12 @@ Dim n = 20
     Next  
     ```  
   
-## <a name="see-also"></a><span data-ttu-id="d122f-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="d122f-117">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="9fe3a-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="9fe3a-117">See also</span></span>
+
 - <xref:Microsoft.VisualBasic.Conversion.Val%2A>
-- [<span data-ttu-id="d122f-118">Příkaz For...Next</span><span class="sxs-lookup"><span data-stu-id="d122f-118">For...Next Statement</span></span>](../../../visual-basic/language-reference/statements/for-next-statement.md)
-- [<span data-ttu-id="d122f-119">Implicitní a explicitní převody</span><span class="sxs-lookup"><span data-stu-id="d122f-119">Implicit and Explicit Conversions</span></span>](../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)
-- [<span data-ttu-id="d122f-120">Odvození místního typu</span><span class="sxs-lookup"><span data-stu-id="d122f-120">Local Type Inference</span></span>](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)
-- [<span data-ttu-id="d122f-121">Příkaz Option Infer</span><span class="sxs-lookup"><span data-stu-id="d122f-121">Option Infer Statement</span></span>](../../../visual-basic/language-reference/statements/option-infer-statement.md)
-- [<span data-ttu-id="d122f-122">Funkce pro převod typů</span><span class="sxs-lookup"><span data-stu-id="d122f-122">Type Conversion Functions</span></span>](../../../visual-basic/language-reference/functions/type-conversion-functions.md)
-- [<span data-ttu-id="d122f-123">Rozšíření a zúžení převodů</span><span class="sxs-lookup"><span data-stu-id="d122f-123">Widening and Narrowing Conversions</span></span>](../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)
+- [<span data-ttu-id="9fe3a-118">Příkaz For...Next</span><span class="sxs-lookup"><span data-stu-id="9fe3a-118">For...Next Statement</span></span>](../../../visual-basic/language-reference/statements/for-next-statement.md)
+- [<span data-ttu-id="9fe3a-119">Implicitní a explicitní převody</span><span class="sxs-lookup"><span data-stu-id="9fe3a-119">Implicit and Explicit Conversions</span></span>](../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)
+- [<span data-ttu-id="9fe3a-120">Odvození místního typu</span><span class="sxs-lookup"><span data-stu-id="9fe3a-120">Local Type Inference</span></span>](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)
+- [<span data-ttu-id="9fe3a-121">Příkaz Option Infer</span><span class="sxs-lookup"><span data-stu-id="9fe3a-121">Option Infer Statement</span></span>](../../../visual-basic/language-reference/statements/option-infer-statement.md)
+- [<span data-ttu-id="9fe3a-122">Funkce pro převod typů</span><span class="sxs-lookup"><span data-stu-id="9fe3a-122">Type Conversion Functions</span></span>](../../../visual-basic/language-reference/functions/type-conversion-functions.md)
+- [<span data-ttu-id="9fe3a-123">Rozšíření a zúžení převodů</span><span class="sxs-lookup"><span data-stu-id="9fe3a-123">Widening and Narrowing Conversions</span></span>](../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)

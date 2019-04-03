@@ -7,56 +7,56 @@ helpviewer_keywords:
 - math routines
 - Atn function
 ms.assetid: 4d2d82e7-6924-42fe-a4a7-b4dd5bebbd0c
-ms.openlocfilehash: a644183f0af7a10672acc62e39ac174b88a47b90
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e5f87a8e367e8c9df65b979fea3781b42ee3ce83
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54731813"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58824959"
 ---
-# <a name="math-functions-visual-basic"></a><span data-ttu-id="101e8-102">Matematické funkce (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="101e8-102">Math Functions (Visual Basic)</span></span>
-<span data-ttu-id="101e8-103">Metody <xref:System.Math?displayProperty=nameWithType> třídy poskytují trigonometrických logaritmických a další běžné matematické funkce.</span><span class="sxs-lookup"><span data-stu-id="101e8-103">The methods of the <xref:System.Math?displayProperty=nameWithType> class provide trigonometric, logarithmic, and other common mathematical functions.</span></span>  
+# <a name="math-functions-visual-basic"></a><span data-ttu-id="0e0e5-102">Matematické funkce (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="0e0e5-102">Math Functions (Visual Basic)</span></span>
+<span data-ttu-id="0e0e5-103">Metody <xref:System.Math?displayProperty=nameWithType> třídy poskytují trigonometrických logaritmických a další běžné matematické funkce.</span><span class="sxs-lookup"><span data-stu-id="0e0e5-103">The methods of the <xref:System.Math?displayProperty=nameWithType> class provide trigonometric, logarithmic, and other common mathematical functions.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="101e8-104">Poznámky</span><span class="sxs-lookup"><span data-stu-id="101e8-104">Remarks</span></span>  
- <span data-ttu-id="101e8-105">V následující tabulce jsou uvedeny metody objektu <xref:System.Math?displayProperty=nameWithType> třídy.</span><span class="sxs-lookup"><span data-stu-id="101e8-105">The following table lists methods of the <xref:System.Math?displayProperty=nameWithType> class.</span></span> <span data-ttu-id="101e8-106">Můžete je použít v programu Visual Basic.</span><span class="sxs-lookup"><span data-stu-id="101e8-106">You can use these in a Visual Basic program.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="0e0e5-104">Poznámky</span><span class="sxs-lookup"><span data-stu-id="0e0e5-104">Remarks</span></span>  
+ <span data-ttu-id="0e0e5-105">V následující tabulce jsou uvedeny metody objektu <xref:System.Math?displayProperty=nameWithType> třídy.</span><span class="sxs-lookup"><span data-stu-id="0e0e5-105">The following table lists methods of the <xref:System.Math?displayProperty=nameWithType> class.</span></span> <span data-ttu-id="0e0e5-106">Můžete je použít v programu Visual Basic.</span><span class="sxs-lookup"><span data-stu-id="0e0e5-106">You can use these in a Visual Basic program.</span></span>  
   
-|<span data-ttu-id="101e8-107">.NET – metoda</span><span class="sxs-lookup"><span data-stu-id="101e8-107">.NET method</span></span>|<span data-ttu-id="101e8-108">Popis</span><span class="sxs-lookup"><span data-stu-id="101e8-108">Description</span></span>|  
+|<span data-ttu-id="0e0e5-107">.NET – metoda</span><span class="sxs-lookup"><span data-stu-id="0e0e5-107">.NET method</span></span>|<span data-ttu-id="0e0e5-108">Popis</span><span class="sxs-lookup"><span data-stu-id="0e0e5-108">Description</span></span>|  
 |---------------------------|-----------------|  
-|<xref:System.Math.Abs%2A>|<span data-ttu-id="101e8-109">Vrátí absolutní hodnotu čísla.</span><span class="sxs-lookup"><span data-stu-id="101e8-109">Returns the absolute value of a number.</span></span>|  
-|<xref:System.Math.Acos%2A>|<span data-ttu-id="101e8-110">Vrací úhel, jehož kosinus odpovídá určenému číslu.</span><span class="sxs-lookup"><span data-stu-id="101e8-110">Returns the angle whose cosine is the specified number.</span></span>|  
-|<xref:System.Math.Asin%2A>|<span data-ttu-id="101e8-111">Vrací úhel, jehož sinus odpovídá určenému číslu.</span><span class="sxs-lookup"><span data-stu-id="101e8-111">Returns the angle whose sine is the specified number.</span></span>|  
-|<xref:System.Math.Atan%2A>|<span data-ttu-id="101e8-112">Vrací úhel, jehož tangens odpovídá určenému číslu.</span><span class="sxs-lookup"><span data-stu-id="101e8-112">Returns the angle whose tangent is the specified number.</span></span>|  
-|<xref:System.Math.Atan2%2A>|<span data-ttu-id="101e8-113">Vrací úhel, jehož tangens odpovídá podílu dvou zadaných čísel.</span><span class="sxs-lookup"><span data-stu-id="101e8-113">Returns the angle whose tangent is the quotient of two specified numbers.</span></span>|  
-|<xref:System.Math.BigMul%2A>|<span data-ttu-id="101e8-114">Vrátí úplný součin dvou čísel 32-bit.</span><span class="sxs-lookup"><span data-stu-id="101e8-114">Returns the full product of two 32-bit numbers.</span></span>|  
-|<xref:System.Math.Ceiling%2A>|<span data-ttu-id="101e8-115">Vrátí nejmenší integrální hodnotu, která je větší než nebo rovna hodnotě zadané `Decimal` nebo `Double`.</span><span class="sxs-lookup"><span data-stu-id="101e8-115">Returns the smallest integral value that's greater than or equal to the specified `Decimal` or `Double`.</span></span>|  
-|<xref:System.Math.Cos%2A>|<span data-ttu-id="101e8-116">Vrací kosinus určeného úhlu.</span><span class="sxs-lookup"><span data-stu-id="101e8-116">Returns the cosine of the specified angle.</span></span>|  
-|<xref:System.Math.Cosh%2A>|<span data-ttu-id="101e8-117">Vrací hyperbolický kosinus určeného úhlu.</span><span class="sxs-lookup"><span data-stu-id="101e8-117">Returns the hyperbolic cosine of the specified angle.</span></span>|  
-|<xref:System.Math.DivRem%2A>|<span data-ttu-id="101e8-118">Vrátí podíl dvou 32bitové nebo 64bitové celá čísla se znaménkem a také výstupní parametr vrátí zbytek.</span><span class="sxs-lookup"><span data-stu-id="101e8-118">Returns the quotient of two 32-bit or 64-bit signed integers, and also returns the remainder in an output parameter.</span></span>|  
-|<xref:System.Math.Exp%2A>|<span data-ttu-id="101e8-119">Vrátí e (základ přirozeného logaritmu) umocněné na zadanou mocninu.</span><span class="sxs-lookup"><span data-stu-id="101e8-119">Returns e (the base of natural logarithms) raised to the specified power.</span></span>|  
-|<xref:System.Math.Floor%2A>|<span data-ttu-id="101e8-120">Vrátí největší celé číslo, které je menší než nebo rovno zadanému `Decimal` nebo `Double` číslo.</span><span class="sxs-lookup"><span data-stu-id="101e8-120">Returns the largest integer that's less than or equal to the specified `Decimal` or `Double` number.</span></span>|  
-|<xref:System.Math.IEEERemainder%2A>|<span data-ttu-id="101e8-121">Vrátí zbytek, která je výsledkem dělení zadaným číslem jiným zadat číslo.</span><span class="sxs-lookup"><span data-stu-id="101e8-121">Returns the remainder that results from the division of a specified number by another specified number.</span></span>|  
-|<xref:System.Math.Log%2A>|<span data-ttu-id="101e8-122">Vrátí přirozený (základ e) logaritmus určeného čísla nebo logaritmus určeného čísla zadaném základu.</span><span class="sxs-lookup"><span data-stu-id="101e8-122">Returns the natural (base e) logarithm of a specified number or the logarithm of a specified number in a specified base.</span></span>|  
-|<xref:System.Math.Log10%2A>|<span data-ttu-id="101e8-123">Vrátí logaritmus o základu 10 určeného čísla.</span><span class="sxs-lookup"><span data-stu-id="101e8-123">Returns the base 10 logarithm of a specified number.</span></span>|  
-|<xref:System.Math.Max%2A>|<span data-ttu-id="101e8-124">Vrátí větší z dvou čísel.</span><span class="sxs-lookup"><span data-stu-id="101e8-124">Returns the larger of two numbers.</span></span>|  
-|<xref:System.Math.Min%2A>|<span data-ttu-id="101e8-125">Vrátí menší ze dvou čísel.</span><span class="sxs-lookup"><span data-stu-id="101e8-125">Returns the smaller of two numbers.</span></span>|  
-|<xref:System.Math.Pow%2A>|<span data-ttu-id="101e8-126">Vrací zadaný počet umocněné na zadanou mocninu.</span><span class="sxs-lookup"><span data-stu-id="101e8-126">Returns a specified number raised to the specified power.</span></span>|  
-|<xref:System.Math.Round%2A>|<span data-ttu-id="101e8-127">Vrátí `Decimal` nebo `Double` hodnotu zaokrouhlí na nejbližší celočíselnou hodnotu nebo zadaný počet míst za desetinnou čárkou.</span><span class="sxs-lookup"><span data-stu-id="101e8-127">Returns a `Decimal` or `Double` value rounded to the nearest integral value or to a specified number of fractional digits.</span></span>|  
-|<xref:System.Math.Sign%2A>|<span data-ttu-id="101e8-128">Vrátí `Integer` hodnotu udávající znaménko čísla.</span><span class="sxs-lookup"><span data-stu-id="101e8-128">Returns an `Integer` value indicating the sign of a number.</span></span>|  
-|<xref:System.Math.Sin%2A>|<span data-ttu-id="101e8-129">Vrací sinus určeného úhlu.</span><span class="sxs-lookup"><span data-stu-id="101e8-129">Returns the sine of the specified angle.</span></span>|  
-|<xref:System.Math.Sinh%2A>|<span data-ttu-id="101e8-130">Vrací hyperbolický sinus určeného úhlu.</span><span class="sxs-lookup"><span data-stu-id="101e8-130">Returns the hyperbolic sine of the specified angle.</span></span>|  
-|<xref:System.Math.Sqrt%2A>|<span data-ttu-id="101e8-131">Vrátí druhou odmocninu určeného čísla.</span><span class="sxs-lookup"><span data-stu-id="101e8-131">Returns the square root of a specified number.</span></span>|  
-|<xref:System.Math.Tan%2A>|<span data-ttu-id="101e8-132">Vrací tangens určeného úhlu.</span><span class="sxs-lookup"><span data-stu-id="101e8-132">Returns the tangent of the specified angle.</span></span>|  
-|<xref:System.Math.Tanh%2A>|<span data-ttu-id="101e8-133">Vrací hyperbolický tangens určeného úhlu.</span><span class="sxs-lookup"><span data-stu-id="101e8-133">Returns the hyperbolic tangent of the specified angle.</span></span>|  
-|<xref:System.Math.Truncate%2A>|<span data-ttu-id="101e8-134">Vypočítá nedílnou součástí zadané `Decimal` nebo `Double` číslo.</span><span class="sxs-lookup"><span data-stu-id="101e8-134">Calculates the integral part of a specified `Decimal` or `Double` number.</span></span>|  
+|<xref:System.Math.Abs%2A>|<span data-ttu-id="0e0e5-109">Vrátí absolutní hodnotu čísla.</span><span class="sxs-lookup"><span data-stu-id="0e0e5-109">Returns the absolute value of a number.</span></span>|  
+|<xref:System.Math.Acos%2A>|<span data-ttu-id="0e0e5-110">Vrací úhel, jehož kosinus odpovídá určenému číslu.</span><span class="sxs-lookup"><span data-stu-id="0e0e5-110">Returns the angle whose cosine is the specified number.</span></span>|  
+|<xref:System.Math.Asin%2A>|<span data-ttu-id="0e0e5-111">Vrací úhel, jehož sinus odpovídá určenému číslu.</span><span class="sxs-lookup"><span data-stu-id="0e0e5-111">Returns the angle whose sine is the specified number.</span></span>|  
+|<xref:System.Math.Atan%2A>|<span data-ttu-id="0e0e5-112">Vrací úhel, jehož tangens odpovídá určenému číslu.</span><span class="sxs-lookup"><span data-stu-id="0e0e5-112">Returns the angle whose tangent is the specified number.</span></span>|  
+|<xref:System.Math.Atan2%2A>|<span data-ttu-id="0e0e5-113">Vrací úhel, jehož tangens odpovídá podílu dvou zadaných čísel.</span><span class="sxs-lookup"><span data-stu-id="0e0e5-113">Returns the angle whose tangent is the quotient of two specified numbers.</span></span>|  
+|<xref:System.Math.BigMul%2A>|<span data-ttu-id="0e0e5-114">Vrátí úplný součin dvou čísel 32-bit.</span><span class="sxs-lookup"><span data-stu-id="0e0e5-114">Returns the full product of two 32-bit numbers.</span></span>|  
+|<xref:System.Math.Ceiling%2A>|<span data-ttu-id="0e0e5-115">Vrátí nejmenší integrální hodnotu, která je větší než nebo rovna hodnotě zadané `Decimal` nebo `Double`.</span><span class="sxs-lookup"><span data-stu-id="0e0e5-115">Returns the smallest integral value that's greater than or equal to the specified `Decimal` or `Double`.</span></span>|  
+|<xref:System.Math.Cos%2A>|<span data-ttu-id="0e0e5-116">Vrací kosinus určeného úhlu.</span><span class="sxs-lookup"><span data-stu-id="0e0e5-116">Returns the cosine of the specified angle.</span></span>|  
+|<xref:System.Math.Cosh%2A>|<span data-ttu-id="0e0e5-117">Vrací hyperbolický kosinus určeného úhlu.</span><span class="sxs-lookup"><span data-stu-id="0e0e5-117">Returns the hyperbolic cosine of the specified angle.</span></span>|  
+|<xref:System.Math.DivRem%2A>|<span data-ttu-id="0e0e5-118">Vrátí podíl dvou 32bitové nebo 64bitové celá čísla se znaménkem a také výstupní parametr vrátí zbytek.</span><span class="sxs-lookup"><span data-stu-id="0e0e5-118">Returns the quotient of two 32-bit or 64-bit signed integers, and also returns the remainder in an output parameter.</span></span>|  
+|<xref:System.Math.Exp%2A>|<span data-ttu-id="0e0e5-119">Vrátí e (základ přirozeného logaritmu) umocněné na zadanou mocninu.</span><span class="sxs-lookup"><span data-stu-id="0e0e5-119">Returns e (the base of natural logarithms) raised to the specified power.</span></span>|  
+|<xref:System.Math.Floor%2A>|<span data-ttu-id="0e0e5-120">Vrátí největší celé číslo, které je menší než nebo rovno zadanému `Decimal` nebo `Double` číslo.</span><span class="sxs-lookup"><span data-stu-id="0e0e5-120">Returns the largest integer that's less than or equal to the specified `Decimal` or `Double` number.</span></span>|  
+|<xref:System.Math.IEEERemainder%2A>|<span data-ttu-id="0e0e5-121">Vrátí zbytek, která je výsledkem dělení zadaným číslem jiným zadat číslo.</span><span class="sxs-lookup"><span data-stu-id="0e0e5-121">Returns the remainder that results from the division of a specified number by another specified number.</span></span>|  
+|<xref:System.Math.Log%2A>|<span data-ttu-id="0e0e5-122">Vrátí přirozený (základ e) logaritmus určeného čísla nebo logaritmus určeného čísla zadaném základu.</span><span class="sxs-lookup"><span data-stu-id="0e0e5-122">Returns the natural (base e) logarithm of a specified number or the logarithm of a specified number in a specified base.</span></span>|  
+|<xref:System.Math.Log10%2A>|<span data-ttu-id="0e0e5-123">Vrátí logaritmus o základu 10 určeného čísla.</span><span class="sxs-lookup"><span data-stu-id="0e0e5-123">Returns the base 10 logarithm of a specified number.</span></span>|  
+|<xref:System.Math.Max%2A>|<span data-ttu-id="0e0e5-124">Vrátí větší z dvou čísel.</span><span class="sxs-lookup"><span data-stu-id="0e0e5-124">Returns the larger of two numbers.</span></span>|  
+|<xref:System.Math.Min%2A>|<span data-ttu-id="0e0e5-125">Vrátí menší ze dvou čísel.</span><span class="sxs-lookup"><span data-stu-id="0e0e5-125">Returns the smaller of two numbers.</span></span>|  
+|<xref:System.Math.Pow%2A>|<span data-ttu-id="0e0e5-126">Vrací zadaný počet umocněné na zadanou mocninu.</span><span class="sxs-lookup"><span data-stu-id="0e0e5-126">Returns a specified number raised to the specified power.</span></span>|  
+|<xref:System.Math.Round%2A>|<span data-ttu-id="0e0e5-127">Vrátí `Decimal` nebo `Double` hodnotu zaokrouhlí na nejbližší celočíselnou hodnotu nebo zadaný počet míst za desetinnou čárkou.</span><span class="sxs-lookup"><span data-stu-id="0e0e5-127">Returns a `Decimal` or `Double` value rounded to the nearest integral value or to a specified number of fractional digits.</span></span>|  
+|<xref:System.Math.Sign%2A>|<span data-ttu-id="0e0e5-128">Vrátí `Integer` hodnotu udávající znaménko čísla.</span><span class="sxs-lookup"><span data-stu-id="0e0e5-128">Returns an `Integer` value indicating the sign of a number.</span></span>|  
+|<xref:System.Math.Sin%2A>|<span data-ttu-id="0e0e5-129">Vrací sinus určeného úhlu.</span><span class="sxs-lookup"><span data-stu-id="0e0e5-129">Returns the sine of the specified angle.</span></span>|  
+|<xref:System.Math.Sinh%2A>|<span data-ttu-id="0e0e5-130">Vrací hyperbolický sinus určeného úhlu.</span><span class="sxs-lookup"><span data-stu-id="0e0e5-130">Returns the hyperbolic sine of the specified angle.</span></span>|  
+|<xref:System.Math.Sqrt%2A>|<span data-ttu-id="0e0e5-131">Vrátí druhou odmocninu určeného čísla.</span><span class="sxs-lookup"><span data-stu-id="0e0e5-131">Returns the square root of a specified number.</span></span>|  
+|<xref:System.Math.Tan%2A>|<span data-ttu-id="0e0e5-132">Vrací tangens určeného úhlu.</span><span class="sxs-lookup"><span data-stu-id="0e0e5-132">Returns the tangent of the specified angle.</span></span>|  
+|<xref:System.Math.Tanh%2A>|<span data-ttu-id="0e0e5-133">Vrací hyperbolický tangens určeného úhlu.</span><span class="sxs-lookup"><span data-stu-id="0e0e5-133">Returns the hyperbolic tangent of the specified angle.</span></span>|  
+|<xref:System.Math.Truncate%2A>|<span data-ttu-id="0e0e5-134">Vypočítá nedílnou součástí zadané `Decimal` nebo `Double` číslo.</span><span class="sxs-lookup"><span data-stu-id="0e0e5-134">Calculates the integral part of a specified `Decimal` or `Double` number.</span></span>|  
   
- <span data-ttu-id="101e8-135">Použití těchto funkcí bez kvalifikace, importovat <xref:System.Math?displayProperty=nameWithType> oboru názvů do svého projektu přidejte následující kód do horní části zdrojového souboru:</span><span class="sxs-lookup"><span data-stu-id="101e8-135">To use these functions without qualification, import the <xref:System.Math?displayProperty=nameWithType> namespace into your project by adding the following code to the top of your source file:</span></span>  
+ <span data-ttu-id="0e0e5-135">Použití těchto funkcí bez kvalifikace, importovat <xref:System.Math?displayProperty=nameWithType> oboru názvů do svého projektu přidejte následující kód do horní části zdrojového souboru:</span><span class="sxs-lookup"><span data-stu-id="0e0e5-135">To use these functions without qualification, import the <xref:System.Math?displayProperty=nameWithType> namespace into your project by adding the following code to the top of your source file:</span></span>  
   
 ```vb
 Imports System.Math  
 ```  
   
-## <a name="example"></a><span data-ttu-id="101e8-136">Příklad</span><span class="sxs-lookup"><span data-stu-id="101e8-136">Example</span></span>  
- <span data-ttu-id="101e8-137">V tomto příkladu <xref:System.Math.Abs%2A> metodu <xref:System.Math> třídy pro výpočet absolutní hodnotu čísla.</span><span class="sxs-lookup"><span data-stu-id="101e8-137">This example uses the <xref:System.Math.Abs%2A> method of the <xref:System.Math> class to compute the absolute value of a number.</span></span>  
+## <a name="example"></a><span data-ttu-id="0e0e5-136">Příklad</span><span class="sxs-lookup"><span data-stu-id="0e0e5-136">Example</span></span>  
+ <span data-ttu-id="0e0e5-137">V tomto příkladu <xref:System.Math.Abs%2A> metodu <xref:System.Math> třídy pro výpočet absolutní hodnotu čísla.</span><span class="sxs-lookup"><span data-stu-id="0e0e5-137">This example uses the <xref:System.Math.Abs%2A> method of the <xref:System.Math> class to compute the absolute value of a number.</span></span>  
   
 ```vb
 ' Returns 50.3.  
@@ -65,8 +65,8 @@ Dim MyNumber1 As Double = Math.Abs(50.3)
 Dim MyNumber2 As Double = Math.Abs(-50.3)  
 ```  
   
-## <a name="example"></a><span data-ttu-id="101e8-138">Příklad</span><span class="sxs-lookup"><span data-stu-id="101e8-138">Example</span></span>  
- <span data-ttu-id="101e8-139">V tomto příkladu <xref:System.Math.Atan%2A> metodu <xref:System.Math> třídy pro výpočet hodnotu čísla pí.</span><span class="sxs-lookup"><span data-stu-id="101e8-139">This example uses the <xref:System.Math.Atan%2A> method of the <xref:System.Math> class to calculate the value of pi.</span></span>  
+## <a name="example"></a><span data-ttu-id="0e0e5-138">Příklad</span><span class="sxs-lookup"><span data-stu-id="0e0e5-138">Example</span></span>  
+ <span data-ttu-id="0e0e5-139">V tomto příkladu <xref:System.Math.Atan%2A> metodu <xref:System.Math> třídy pro výpočet hodnotu čísla pí.</span><span class="sxs-lookup"><span data-stu-id="0e0e5-139">This example uses the <xref:System.Math.Atan%2A> method of the <xref:System.Math> class to calculate the value of pi.</span></span>  
   
 ```vb
 Public Function GetPi() As Double  
@@ -75,8 +75,8 @@ Public Function GetPi() As Double
 End Function  
 ```  
   
-## <a name="example"></a><span data-ttu-id="101e8-140">Příklad</span><span class="sxs-lookup"><span data-stu-id="101e8-140">Example</span></span>  
- <span data-ttu-id="101e8-141">V tomto příkladu <xref:System.Math.Cos%2A> metodu <xref:System.Math> třídy Vrátí kosinus úhlu.</span><span class="sxs-lookup"><span data-stu-id="101e8-141">This example uses the <xref:System.Math.Cos%2A> method of the <xref:System.Math> class to return the cosine of an angle.</span></span>  
+## <a name="example"></a><span data-ttu-id="0e0e5-140">Příklad</span><span class="sxs-lookup"><span data-stu-id="0e0e5-140">Example</span></span>  
+ <span data-ttu-id="0e0e5-141">V tomto příkladu <xref:System.Math.Cos%2A> metodu <xref:System.Math> třídy Vrátí kosinus úhlu.</span><span class="sxs-lookup"><span data-stu-id="0e0e5-141">This example uses the <xref:System.Math.Cos%2A> method of the <xref:System.Math> class to return the cosine of an angle.</span></span>  
   
 ```vb
 Public Function Sec(ByVal angle As Double) As Double  
@@ -85,8 +85,8 @@ Public Function Sec(ByVal angle As Double) As Double
 End Function  
 ```  
   
-## <a name="example"></a><span data-ttu-id="101e8-142">Příklad</span><span class="sxs-lookup"><span data-stu-id="101e8-142">Example</span></span>  
- <span data-ttu-id="101e8-143">V tomto příkladu <xref:System.Math.Exp%2A> metodu <xref:System.Math> třídy Vrátí mocninu e.</span><span class="sxs-lookup"><span data-stu-id="101e8-143">This example uses the <xref:System.Math.Exp%2A> method of the <xref:System.Math> class to return e raised to a power.</span></span>  
+## <a name="example"></a><span data-ttu-id="0e0e5-142">Příklad</span><span class="sxs-lookup"><span data-stu-id="0e0e5-142">Example</span></span>  
+ <span data-ttu-id="0e0e5-143">V tomto příkladu <xref:System.Math.Exp%2A> metodu <xref:System.Math> třídy Vrátí mocninu e.</span><span class="sxs-lookup"><span data-stu-id="0e0e5-143">This example uses the <xref:System.Math.Exp%2A> method of the <xref:System.Math> class to return e raised to a power.</span></span>  
   
 ```vb
 Public Function Sinh(ByVal angle As Double) As Double  
@@ -95,8 +95,8 @@ Public Function Sinh(ByVal angle As Double) As Double
 End Function  
 ```  
   
-## <a name="example"></a><span data-ttu-id="101e8-144">Příklad</span><span class="sxs-lookup"><span data-stu-id="101e8-144">Example</span></span>  
- <span data-ttu-id="101e8-145">V tomto příkladu <xref:System.Math.Log%2A> metodu <xref:System.Math> třídy vrátí přirozený logaritmus čísla.</span><span class="sxs-lookup"><span data-stu-id="101e8-145">This example uses the <xref:System.Math.Log%2A> method of the <xref:System.Math> class to return the natural logarithm of a number.</span></span>  
+## <a name="example"></a><span data-ttu-id="0e0e5-144">Příklad</span><span class="sxs-lookup"><span data-stu-id="0e0e5-144">Example</span></span>  
+ <span data-ttu-id="0e0e5-145">V tomto příkladu <xref:System.Math.Log%2A> metodu <xref:System.Math> třídy vrátí přirozený logaritmus čísla.</span><span class="sxs-lookup"><span data-stu-id="0e0e5-145">This example uses the <xref:System.Math.Log%2A> method of the <xref:System.Math> class to return the natural logarithm of a number.</span></span>  
   
 ```vb
 Public Function Asinh(ByVal value As Double) As Double  
@@ -105,16 +105,16 @@ Public Function Asinh(ByVal value As Double) As Double
 End Function  
 ```  
   
-## <a name="example"></a><span data-ttu-id="101e8-146">Příklad</span><span class="sxs-lookup"><span data-stu-id="101e8-146">Example</span></span>  
- <span data-ttu-id="101e8-147">V tomto příkladu <xref:System.Math.Round%2A> metodu <xref:System.Math> třídy Zaokrouhlí číslo na nejbližší celé číslo.</span><span class="sxs-lookup"><span data-stu-id="101e8-147">This example uses the <xref:System.Math.Round%2A> method of the <xref:System.Math> class to round a number to the nearest integer.</span></span>  
+## <a name="example"></a><span data-ttu-id="0e0e5-146">Příklad</span><span class="sxs-lookup"><span data-stu-id="0e0e5-146">Example</span></span>  
+ <span data-ttu-id="0e0e5-147">V tomto příkladu <xref:System.Math.Round%2A> metodu <xref:System.Math> třídy Zaokrouhlí číslo na nejbližší celé číslo.</span><span class="sxs-lookup"><span data-stu-id="0e0e5-147">This example uses the <xref:System.Math.Round%2A> method of the <xref:System.Math> class to round a number to the nearest integer.</span></span>  
   
 ```vb
 ' Returns 3.  
 Dim MyVar2 As Double = Math.Round(2.8)  
 ```  
   
-## <a name="example"></a><span data-ttu-id="101e8-148">Příklad</span><span class="sxs-lookup"><span data-stu-id="101e8-148">Example</span></span>  
- <span data-ttu-id="101e8-149">V tomto příkladu <xref:System.Math.Sign%2A> metodu <xref:System.Math> třídu k určení znaménka čísla.</span><span class="sxs-lookup"><span data-stu-id="101e8-149">This example uses the <xref:System.Math.Sign%2A> method of the <xref:System.Math> class to determine the sign of a number.</span></span>  
+## <a name="example"></a><span data-ttu-id="0e0e5-148">Příklad</span><span class="sxs-lookup"><span data-stu-id="0e0e5-148">Example</span></span>  
+ <span data-ttu-id="0e0e5-149">V tomto příkladu <xref:System.Math.Sign%2A> metodu <xref:System.Math> třídu k určení znaménka čísla.</span><span class="sxs-lookup"><span data-stu-id="0e0e5-149">This example uses the <xref:System.Math.Sign%2A> method of the <xref:System.Math> class to determine the sign of a number.</span></span>  
   
 ```vb
 ' Returns 1.  
@@ -125,8 +125,8 @@ Dim MySign2 As Integer = Math.Sign(-2.4)
 Dim MySign3 As Integer = Math.Sign(0)  
 ```  
   
-## <a name="example"></a><span data-ttu-id="101e8-150">Příklad</span><span class="sxs-lookup"><span data-stu-id="101e8-150">Example</span></span>  
- <span data-ttu-id="101e8-151">V tomto příkladu <xref:System.Math.Sin%2A> metodu <xref:System.Math> třídy Vrátí sinus úhlu.</span><span class="sxs-lookup"><span data-stu-id="101e8-151">This example uses the <xref:System.Math.Sin%2A> method of the <xref:System.Math> class to return the sine of an angle.</span></span>  
+## <a name="example"></a><span data-ttu-id="0e0e5-150">Příklad</span><span class="sxs-lookup"><span data-stu-id="0e0e5-150">Example</span></span>  
+ <span data-ttu-id="0e0e5-151">V tomto příkladu <xref:System.Math.Sin%2A> metodu <xref:System.Math> třídy Vrátí sinus úhlu.</span><span class="sxs-lookup"><span data-stu-id="0e0e5-151">This example uses the <xref:System.Math.Sin%2A> method of the <xref:System.Math> class to return the sine of an angle.</span></span>  
   
 ```vb
 Public Function Csc(ByVal angle As Double) As Double  
@@ -135,8 +135,8 @@ Public Function Csc(ByVal angle As Double) As Double
 End Function  
 ```  
   
-## <a name="example"></a><span data-ttu-id="101e8-152">Příklad</span><span class="sxs-lookup"><span data-stu-id="101e8-152">Example</span></span>  
- <span data-ttu-id="101e8-153">V tomto příkladu <xref:System.Math.Sqrt%2A> metodu <xref:System.Math> třídy, které chcete vypočítat druhou odmocninu čísla.</span><span class="sxs-lookup"><span data-stu-id="101e8-153">This example uses the <xref:System.Math.Sqrt%2A> method of the <xref:System.Math> class to calculate the square root of a number.</span></span>  
+## <a name="example"></a><span data-ttu-id="0e0e5-152">Příklad</span><span class="sxs-lookup"><span data-stu-id="0e0e5-152">Example</span></span>  
+ <span data-ttu-id="0e0e5-153">V tomto příkladu <xref:System.Math.Sqrt%2A> metodu <xref:System.Math> třídy, které chcete vypočítat druhou odmocninu čísla.</span><span class="sxs-lookup"><span data-stu-id="0e0e5-153">This example uses the <xref:System.Math.Sqrt%2A> method of the <xref:System.Math> class to calculate the square root of a number.</span></span>  
   
 ```vb
 ' Returns 2.  
@@ -149,8 +149,8 @@ Dim MySqr3 As Double = Math.Sqrt(0)
 Dim MySqr4 As Double = Math.Sqrt(-4)  
 ```  
   
-## <a name="example"></a><span data-ttu-id="101e8-154">Příklad</span><span class="sxs-lookup"><span data-stu-id="101e8-154">Example</span></span>  
- <span data-ttu-id="101e8-155">V tomto příkladu <xref:System.Math.Tan%2A> metodu <xref:System.Math> třídy Vrátí tangens úhlu.</span><span class="sxs-lookup"><span data-stu-id="101e8-155">This example uses the <xref:System.Math.Tan%2A> method of the <xref:System.Math> class to return the tangent of an angle.</span></span>  
+## <a name="example"></a><span data-ttu-id="0e0e5-154">Příklad</span><span class="sxs-lookup"><span data-stu-id="0e0e5-154">Example</span></span>  
+ <span data-ttu-id="0e0e5-155">V tomto příkladu <xref:System.Math.Tan%2A> metodu <xref:System.Math> třídy Vrátí tangens úhlu.</span><span class="sxs-lookup"><span data-stu-id="0e0e5-155">This example uses the <xref:System.Math.Tan%2A> method of the <xref:System.Math> class to return the tangent of an angle.</span></span>  
   
 ```vb
 Public Function Ctan(ByVal angle As Double) As Double  
@@ -159,16 +159,17 @@ Public Function Ctan(ByVal angle As Double) As Double
 End Function  
 ```  
   
-## <a name="requirements"></a><span data-ttu-id="101e8-156">Požadavky</span><span class="sxs-lookup"><span data-stu-id="101e8-156">Requirements</span></span>  
- <span data-ttu-id="101e8-157">**Třída:** <xref:System.Math></span><span class="sxs-lookup"><span data-stu-id="101e8-157">**Class:** <xref:System.Math></span></span>  
+## <a name="requirements"></a><span data-ttu-id="0e0e5-156">Požadavky</span><span class="sxs-lookup"><span data-stu-id="0e0e5-156">Requirements</span></span>  
+ <span data-ttu-id="0e0e5-157">**Třída:** <xref:System.Math></span><span class="sxs-lookup"><span data-stu-id="0e0e5-157">**Class:** <xref:System.Math></span></span>  
   
- <span data-ttu-id="101e8-158">**Namespace:** <xref:System></span><span class="sxs-lookup"><span data-stu-id="101e8-158">**Namespace:** <xref:System></span></span>  
+ <span data-ttu-id="0e0e5-158">**Namespace:** <xref:System></span><span class="sxs-lookup"><span data-stu-id="0e0e5-158">**Namespace:** <xref:System></span></span>  
   
- <span data-ttu-id="101e8-159">**Sestavení:** mscorlib (v knihovně mscorlib.dll)</span><span class="sxs-lookup"><span data-stu-id="101e8-159">**Assembly:** mscorlib (in mscorlib.dll)</span></span>  
+ <span data-ttu-id="0e0e5-159">**Sestavení:** mscorlib (v knihovně mscorlib.dll)</span><span class="sxs-lookup"><span data-stu-id="0e0e5-159">**Assembly:** mscorlib (in mscorlib.dll)</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="101e8-160">Viz také:</span><span class="sxs-lookup"><span data-stu-id="101e8-160">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="0e0e5-160">Viz také:</span><span class="sxs-lookup"><span data-stu-id="0e0e5-160">See also</span></span>
+
 - <xref:Microsoft.VisualBasic.VBMath.Rnd%2A>
 - <xref:Microsoft.VisualBasic.VBMath.Randomize%2A>
 - <xref:System.Double.NaN>
-- [<span data-ttu-id="101e8-161">Derivované matematické funkce</span><span class="sxs-lookup"><span data-stu-id="101e8-161">Derived Math Functions</span></span>](../../../visual-basic/language-reference/keywords/derived-math-functions.md)
-- [<span data-ttu-id="101e8-162">Aritmetické operátory</span><span class="sxs-lookup"><span data-stu-id="101e8-162">Arithmetic Operators</span></span>](../../../visual-basic/language-reference/operators/arithmetic-operators.md)
+- [<span data-ttu-id="0e0e5-161">Derivované matematické funkce</span><span class="sxs-lookup"><span data-stu-id="0e0e5-161">Derived Math Functions</span></span>](../../../visual-basic/language-reference/keywords/derived-math-functions.md)
+- [<span data-ttu-id="0e0e5-162">Aritmetické operátory</span><span class="sxs-lookup"><span data-stu-id="0e0e5-162">Arithmetic Operators</span></span>](../../../visual-basic/language-reference/operators/arithmetic-operators.md)

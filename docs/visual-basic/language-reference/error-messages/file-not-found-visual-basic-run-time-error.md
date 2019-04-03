@@ -4,25 +4,26 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrID53
 ms.assetid: 57addb16-6f9a-444d-8af8-dda52431daca
-ms.openlocfilehash: 008630686256790fdf673d2b8e1830cb48061bff
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2cd5bba135284ba72eed595fdfc548cfea63ff70
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54626547"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58821891"
 ---
-# <a name="file-not-found-visual-basic-run-time-error"></a><span data-ttu-id="4a4af-102">Soubor nebyl nalezen (chyba za běhu jazyka Visual Basic).</span><span class="sxs-lookup"><span data-stu-id="4a4af-102">File not found (Visual Basic Run-Time Error)</span></span>
-<span data-ttu-id="4a4af-103">Soubor nebyl nalezen, je-li zadána.</span><span class="sxs-lookup"><span data-stu-id="4a4af-103">The file was not found where specified.</span></span> <span data-ttu-id="4a4af-104">Chyba má následující možné příčiny:</span><span class="sxs-lookup"><span data-stu-id="4a4af-104">The error has the following possible causes:</span></span>  
+# <a name="file-not-found-visual-basic-run-time-error"></a><span data-ttu-id="26c5f-102">Soubor nebyl nalezen (chyba za běhu jazyka Visual Basic).</span><span class="sxs-lookup"><span data-stu-id="26c5f-102">File not found (Visual Basic Run-Time Error)</span></span>
+<span data-ttu-id="26c5f-103">Soubor nebyl nalezen, je-li zadána.</span><span class="sxs-lookup"><span data-stu-id="26c5f-103">The file was not found where specified.</span></span> <span data-ttu-id="26c5f-104">Chyba má následující možné příčiny:</span><span class="sxs-lookup"><span data-stu-id="26c5f-104">The error has the following possible causes:</span></span>  
   
--   <span data-ttu-id="4a4af-105">Příkaz odkazuje na soubor, který neexistuje.</span><span class="sxs-lookup"><span data-stu-id="4a4af-105">A statement refers to a file that does not exist.</span></span>  
+-   <span data-ttu-id="26c5f-105">Příkaz odkazuje na soubor, který neexistuje.</span><span class="sxs-lookup"><span data-stu-id="26c5f-105">A statement refers to a file that does not exist.</span></span>  
   
--   <span data-ttu-id="4a4af-106">Byl proveden pokus o volání procedury v dynamická knihovna (DLL), ale v zadané knihovně `Lib` klauzuli `Declare` příkaz nebyl nalezen.</span><span class="sxs-lookup"><span data-stu-id="4a4af-106">An attempt was made to call a procedure in a dynamic-link library (DLL), but the library specified in the `Lib` clause of the `Declare` statement cannot be found.</span></span>  
+-   <span data-ttu-id="26c5f-106">Byl proveden pokus o volání procedury v dynamická knihovna (DLL), ale v zadané knihovně `Lib` klauzuli `Declare` příkaz nebyl nalezen.</span><span class="sxs-lookup"><span data-stu-id="26c5f-106">An attempt was made to call a procedure in a dynamic-link library (DLL), but the library specified in the `Lib` clause of the `Declare` statement cannot be found.</span></span>  
   
--   <span data-ttu-id="4a4af-107">Jste se pokusili otevřít projekt nebo načíst textový soubor, který neexistuje.</span><span class="sxs-lookup"><span data-stu-id="4a4af-107">You attempted to open a project or load a text file that does not exist.</span></span>  
+-   <span data-ttu-id="26c5f-107">Jste se pokusili otevřít projekt nebo načíst textový soubor, který neexistuje.</span><span class="sxs-lookup"><span data-stu-id="26c5f-107">You attempted to open a project or load a text file that does not exist.</span></span>  
   
-## <a name="to-correct-this-error"></a><span data-ttu-id="4a4af-108">Oprava této chyby</span><span class="sxs-lookup"><span data-stu-id="4a4af-108">To correct this error</span></span>  
+## <a name="to-correct-this-error"></a><span data-ttu-id="26c5f-108">Oprava této chyby</span><span class="sxs-lookup"><span data-stu-id="26c5f-108">To correct this error</span></span>  
   
-1.  <span data-ttu-id="4a4af-109">Zkontrolujte, zda název souboru a specifikaci cesty.</span><span class="sxs-lookup"><span data-stu-id="4a4af-109">Check the spelling of the file name and the path specification.</span></span>  
+1.  <span data-ttu-id="26c5f-109">Zkontrolujte, zda název souboru a specifikaci cesty.</span><span class="sxs-lookup"><span data-stu-id="26c5f-109">Check the spelling of the file name and the path specification.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="4a4af-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="4a4af-110">See also</span></span>
-- [<span data-ttu-id="4a4af-111">Příkaz Declare</span><span class="sxs-lookup"><span data-stu-id="4a4af-111">Declare Statement</span></span>](../../../visual-basic/language-reference/statements/declare-statement.md)
+## <a name="see-also"></a><span data-ttu-id="26c5f-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="26c5f-110">See also</span></span>
+
+- [<span data-ttu-id="26c5f-111">Příkaz Declare</span><span class="sxs-lookup"><span data-stu-id="26c5f-111">Declare Statement</span></span>](../../../visual-basic/language-reference/statements/declare-statement.md)

@@ -2,17 +2,17 @@
 title: 'Ukázkový soubor XML: Konfigurace testu v Namespace3'
 ms.date: 07/20/2015
 ms.assetid: aff02614-30ee-45e1-bc0f-d64b193d20b8
-ms.openlocfilehash: 642bc270bc502a4119b31decb0e432ec6951e610
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: aef70e1ff7a7d61a1730588cc9e2ad26e6b67007
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54609652"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58821311"
 ---
-# <a name="sample-xml-file-test-configuration-in-a-namespace"></a><span data-ttu-id="b6fad-102">Ukázkový soubor XML: Konfigurace testu v Namespace</span><span class="sxs-lookup"><span data-stu-id="b6fad-102">Sample XML File: Test Configuration in a Namespace</span></span>
-<span data-ttu-id="b6fad-103">Následující soubor XML se používá v různých příkladů v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentaci.</span><span class="sxs-lookup"><span data-stu-id="b6fad-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="b6fad-104">Toto je soubor konfigurace testu.</span><span class="sxs-lookup"><span data-stu-id="b6fad-104">This is a test configuration file.</span></span> <span data-ttu-id="b6fad-105">XML je v oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="b6fad-105">The XML is in a namespace.</span></span>  
+# <a name="sample-xml-file-test-configuration-in-a-namespace"></a><span data-ttu-id="0f4e5-102">Ukázkový soubor XML: Testovací konfigurace v názvovém prostoru</span><span class="sxs-lookup"><span data-stu-id="0f4e5-102">Sample XML File: Test Configuration in a Namespace</span></span>
+<span data-ttu-id="0f4e5-103">Následující soubor XML se používá v různých příkladů v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentaci.</span><span class="sxs-lookup"><span data-stu-id="0f4e5-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="0f4e5-104">Toto je soubor konfigurace testu.</span><span class="sxs-lookup"><span data-stu-id="0f4e5-104">This is a test configuration file.</span></span> <span data-ttu-id="0f4e5-105">XML je v oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="0f4e5-105">The XML is in a namespace.</span></span>  
   
-## <a name="testconfiginnamespacexml"></a><span data-ttu-id="b6fad-106">TestConfigInNamespace.xml</span><span class="sxs-lookup"><span data-stu-id="b6fad-106">TestConfigInNamespace.xml</span></span>  
+## <a name="testconfiginnamespacexml"></a><span data-ttu-id="0f4e5-106">TestConfigInNamespace.xml</span><span class="sxs-lookup"><span data-stu-id="0f4e5-106">TestConfigInNamespace.xml</span></span>  
   
 ```xml  
 <?xml version="1.0"?>  
@@ -56,5 +56,6 @@ ms.locfileid: "54609652"
 </Tests>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="b6fad-107">Viz také:</span><span class="sxs-lookup"><span data-stu-id="b6fad-107">See also</span></span>
-- [<span data-ttu-id="b6fad-108">Ukázkové dokumenty XML (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="b6fad-108">Sample XML Documents (LINQ to XML)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
+## <a name="see-also"></a><span data-ttu-id="0f4e5-107">Viz také:</span><span class="sxs-lookup"><span data-stu-id="0f4e5-107">See also</span></span>
+
+- [<span data-ttu-id="0f4e5-108">Ukázkové dokumenty XML (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="0f4e5-108">Sample XML Documents (LINQ to XML)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
