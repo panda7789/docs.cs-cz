@@ -9,12 +9,12 @@ helpviewer_keywords:
 - constants [Visual Basic], user-defined
 - circular references between constants [Visual Basic]
 ms.assetid: a1206d5c-c45e-4ac2-970a-4a0be6a05fdd
-ms.openlocfilehash: e519fcaf90c6f18e75d5c409cbe7067d5db36429
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: f0196457235ad77df545a367573f62b43209269d
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56975937"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58813909"
 ---
 # <a name="user-defined-constants-visual-basic"></a>Uživatelem definované konstanty (Visual Basic)
 Konstanta je smysluplný název, který probíhá číslo nebo řetězec, který se nemění. Konstanty ukládání hodnot, které, jak již název napovídá, zůstanou neměnný po celou dobu spuštění aplikace. Můžete použít konstanty, které jsou definovány ovládací prvky nebo komponenty, které můžete pracovat, nebo můžete vytvořit svoje vlastní. Konstanty, které si sami vytvoříte, jsou popsány jako *uživatelem definované*.  
@@ -56,6 +56,7 @@ Konstanta je smysluplný název, který probíhá číslo nebo řetězec, který
  Pokud dochází k zacyklení, Visual Basic vygeneruje chybu kompilátoru.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Příkaz Const](../../../../visual-basic/language-reference/statements/const-statement.md)
 - [Datové typy konstanty a literálu](../../../../visual-basic/programming-guide/language-features/constants-enums/constant-and-literal-data-types.md)
 - [Konstanty a výčty](../../../../visual-basic/programming-guide/language-features/constants-enums/index.md)

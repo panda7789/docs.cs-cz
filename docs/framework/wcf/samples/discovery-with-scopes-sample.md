@@ -2,12 +2,12 @@
 title: Ukázka zjišťování pomocí oborů
 ms.date: 03/30/2017
 ms.assetid: 6a37a754-6b8c-4ebe-bdf2-d4f0520271d5
-ms.openlocfilehash: 0d874116b90f423fbb78803a3641ef55fc848952
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ba49021022c33c1490f3dbaafc5bba1352ecf55c
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54508766"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58814287"
 ---
 # <a name="discovery-with-scopes-sample"></a>Ukázka zjišťování pomocí oborů
 Tento příklad ukazuje, jak pomocí oborů zařadit zjistitelné koncových bodů i jak používat <xref:System.ServiceModel.Discovery.DiscoveryClient> provést asynchronní hledání pro koncové body. Ve službě Tato ukázka předvádí, jak přizpůsobit přidáním chování koncového bodu zjišťování a pomocí přidání oboru ke koncovému bodu, stejně jako řízení zjistitelnost koncového bodu zjišťování pro každý koncový bod. Na straně klienta překročí jak můžou klienti vytvořit ukázky <xref:System.ServiceModel.Discovery.DiscoveryClient> a doladit parametry patří oborů tak, že přidáte obory pro hledání <xref:System.ServiceModel.Discovery.FindCriteria>. Tento příklad také ukazuje, jak klienti odpovědi omezit tak, že přidáte ukončovacího kritéria.  
@@ -37,4 +37,3 @@ Tento příklad ukazuje, jak pomocí oborů zařadit zjistitelné koncových bod
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Discovery\DiscoveryWithScopes`  
   
-## <a name="see-also"></a>Viz také:

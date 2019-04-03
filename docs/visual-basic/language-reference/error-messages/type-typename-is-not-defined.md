@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC30002
 ms.assetid: b0faf204-57fd-44de-8c05-9db027eea663
-ms.openlocfilehash: 80a3d31a8a46ce616be2dd2ab27faf0af04876f2
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: c2675d61307d92da1710368668f43af3559060a3
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55275069"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58825037"
 ---
 # <a name="type-typename-is-not-defined"></a>Typ '\<typename >' není definován
 Příkaz provedl odkaz na typ, který nebyl definován. Typ v příkazu deklarace můžete definovat jako `Enum`, `Structure`, `Class`, nebo `Interface`.  
@@ -32,6 +32,7 @@ Příkaz provedl odkaz na typ, který nebyl definován. Typ v příkazu deklarac
 -   Zajistěte, aby byl typ v sestavení, která je součástí cíleném profilu rozhraní .NET. Další informace najdete v tématu [řešení chyb cílí na .NET Framework](/visualstudio/msbuild/troubleshooting-dotnet-framework-targeting-errors).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Obory názvů v jazyce Visual Basic](../../../visual-basic/programming-guide/program-structure/namespaces.md)
 - [Příkaz Enum](../../../visual-basic/language-reference/statements/enum-statement.md)
 - [Příkaz Structure](../../../visual-basic/language-reference/statements/structure-statement.md)

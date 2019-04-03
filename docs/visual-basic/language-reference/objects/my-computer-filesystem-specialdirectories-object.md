@@ -5,12 +5,12 @@ helpviewer_keywords:
 - My.Computer.FileSystem.SpecialDirectories object
 - SpecialDirectories object
 ms.assetid: d5f375c3-094b-4011-8438-17a31bc6df2b
-ms.openlocfilehash: 6ea3b5b77ee9ab4f8dfcf7054ae14096d72cc348
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f299792204c5a8db0e82ca20596eb1a9a2dd6623
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54672809"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58822528"
 ---
 # <a name="mycomputerfilesystemspecialdirectories-object"></a>My.Computer.FileSystem.SpecialDirectories – objekt
 Poskytuje vlastnosti pro přístup k často odkazované adresáře.  
@@ -28,5 +28,6 @@ Poskytuje vlastnosti pro přístup k často odkazované adresáře.
  **Sestavení:** [!INCLUDE[vbprvbruntime](~/includes/vbprvbruntime-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Objekt My.Computer.FileSystem](../../../visual-basic/language-reference/objects/my-computer-filesystem-object.md)
 - [Objekt My.Computer](../../../visual-basic/language-reference/objects/my-computer-object.md)

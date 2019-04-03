@@ -7,17 +7,17 @@ f1_keywords:
 helpviewer_keywords:
 - BC33000
 ms.assetid: 15c5d8eb-3a8c-4141-8f41-33151afabf97
-ms.openlocfilehash: 7acec56be60f88147bac1ba4179ad0234ea1c6e1
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: dac8613d79e3262e4d1fd6ad1599fd01182e329b
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55270053"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58819369"
 ---
 # <a name="operator-declaration-must-be-one-of----amp-like-mod-and-or-xor-not--"></a>Operátor musí být jeden z: +,-, *,\,/, ^, &amp;, Like, Mod a, Or, Xor, Not, \< \<, >>...
 Je možné deklarovat pouze operátor, který opravňuje k přetížení. V následující tabulce jsou uvedeny operátory, které je možné deklarovat.  
   
-|Typ|Operátory|  
+|Type|Operátory|  
 |----------|---------------|  
 |Unární|`+`, `-`, `IsFalse`, `IsTrue`, `Not`|  
 |binární|`+`, `-`, `*`, `/`, `\`, `&`, `^`, `>>`, `<<`, `=`, `<>`, `>`, `>=`, `<`, `<=`, `And`, `Like`, `Mod`, `Or`, `Xor`|  
@@ -34,6 +34,7 @@ Je možné deklarovat pouze operátor, který opravňuje k přetížení. V nás
 2.  Pokud potřebujete funkce přetížení operátor nelze přetížit přímo, vytvořte `Function` proceduru, která mají příslušné parametry a vrátí odpovídající hodnotu.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Příkaz Operator](../../../visual-basic/language-reference/statements/operator-statement.md)
 - [Procedury operátoru](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)
 - [Postupy: Definovat operátor](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-an-operator.md)

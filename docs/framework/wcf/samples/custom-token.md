@@ -2,12 +2,12 @@
 title: Vlastní token
 ms.date: 03/30/2017
 ms.assetid: e7fd8b38-c370-454f-ba3e-19759019f03d
-ms.openlocfilehash: d00ae6eceb00ce53ad2b0bba2c14d9c4816b12e7
-ms.sourcegitcommit: bef803e2025642df39f2f1e046767d89031e0304
+ms.openlocfilehash: f056e54197a98a0218ef94e4df2fc46745a08985
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56305624"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58817315"
 ---
 # <a name="custom-token"></a>Vlastní token
 Tento příklad ukazuje, jak přidat vlastní implementaci token do aplikace Windows Communication Foundation (WCF). V příkladu se používá `CreditCardToken` bezpečně předat informace o kreditní karty klienta ke službě. Token je předán do záhlaví zprávy WS-Security je podepsaný a zašifrovaný pomocí elementu vazby zabezpečení symetrický spolu s textem zprávy a další záhlaví zpráv. To je užitečné v případech, kdy jsou předdefinované tokeny není dostatečná. Tato ukázka předvádí, jak poskytnout vlastní bezpečnostní token pro službu namísto pomocí jedné z předdefinovaných tokeny. Služba implementuje kontrakt, který definuje vzor komunikace požadavek odpověď.
@@ -629,4 +629,3 @@ string GetCallerCreditCardNumber()
   
 1.  Spusťte Cleanup.bat ve složce samples po dokončení spuštění ukázky.  
   
-## <a name="see-also"></a>Viz také:

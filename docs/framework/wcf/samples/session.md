@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Sessions
 ms.assetid: 36e1db50-008c-4b32-8d09-b56e790b8417
-ms.openlocfilehash: 84f0cc34e5de0634eff2edecead08aae3a143068
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 32a81ba462eccfc6f4ba2a694793895810074b7e
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54554163"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58817029"
 ---
 # <a name="session"></a>Relace
 Ukázková relace ukazuje, jak implementovat kontrakt, který vyžaduje relaci. Relace poskytuje kontext pro provádění více operací. To umožňuje službám přidružení stavu dané relace tak, aby následné operace můžete použít stav předchozí operace. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md), který implementuje Kalkulačka služby. `ICalculator` Povolit sadu aritmetické operace, které mají být provedeny, a zajistit přitom ochranu spuštěné výsledek byl změněn kontraktu. Tato funkce je definována `ICalculatorSession` kontraktu. Služba zajišťuje stav na klienty, jako jsou volány více operací služby k provedení výpočtu. Klient může načíst aktuální výsledek voláním `Result()` a zrušte zaškrtnutí výsledek, který má nulovou voláním `Clear()`.  
@@ -92,4 +92,3 @@ Press <ENTER> to terminate client.
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Service\Session`  
   
-## <a name="see-also"></a>Viz také:

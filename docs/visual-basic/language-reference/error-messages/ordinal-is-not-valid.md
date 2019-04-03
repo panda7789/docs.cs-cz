@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrID452
 ms.assetid: 7459562b-cd4f-4590-95e0-6126ae3589a5
-ms.openlocfilehash: 351b7ee7f1cfc5199d878c33965770693227ccc4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f3207c2cc237ae22c295c2b3ed56f18601625226
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54618958"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58822246"
 ---
 # <a name="ordinal-is-not-valid"></a>Ordinální číslo není platné.
 Volání dynamická knihovna (DLL) uvedené číslo nahrazujícím název procedury pomocí `#num` syntaxe. Tato chyba má následující možné příčiny:  
@@ -29,4 +29,5 @@ Volání dynamická knihovna (DLL) uvedené číslo nahrazujícím název proced
 3.  Vzájemnou izolací volání procedury, které jsou příčinou problému, tak kód. Zápis `Declare` příkaz pro postup a sestavy problém, který chcete dodavatele knihovny typů.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Příkaz Declare](../../../visual-basic/language-reference/statements/declare-statement.md)

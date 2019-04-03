@@ -5,12 +5,12 @@ helpviewer_keywords:
 - information functions [Visual Basic]
 - interaction functions [Visual Basic]
 ms.assetid: 6e698461-e944-4c0f-ae48-87429f1fe740
-ms.openlocfilehash: 001b3947773e767e8c746fce84c8cbda22fdce78
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1157462f743396f8fb4b4304c0529db5377bd41e
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54521306"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58823231"
 ---
 # <a name="information-and-interaction-summary-visual-basic"></a>Souhrn informací a interakce (Visual Basic)
 Klíčová slova jazyka Visual Basic a členy běhové knihovny jsou uspořádány podle účelu a použití.  
@@ -26,5 +26,6 @@ Klíčová slova jazyka Visual Basic a členy běhové knihovny jsou uspořádá
 |Dialogová okna ovládacího prvku|<xref:Microsoft.VisualBasic.Interaction.InputBox%2A>, <xref:Microsoft.VisualBasic.Interaction.MsgBox%2A>|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Klíčová slova](../../../visual-basic/language-reference/keywords/index.md)
 - [Členové knihovny modulu runtime jazyka Visual Basic](../../../visual-basic/language-reference/runtime-library-members.md)

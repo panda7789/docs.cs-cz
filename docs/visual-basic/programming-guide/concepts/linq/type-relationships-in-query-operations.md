@@ -11,12 +11,12 @@ helpviewer_keywords:
 - inferring type information [LINQ in Visual Basic]
 - relationships [LINQ in Visual Basic]
 ms.assetid: b5ff4da5-f3fd-4a8e-aaac-1cbf52fa16f6
-ms.openlocfilehash: 4dc5497f2e9bacac3062fde6e7dc48270697f1df
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.openlocfilehash: fd2bcfad0ae24288887500ae6286e6ac73fddac5
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58465214"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58822333"
 ---
 # <a name="type-relationships-in-query-operations-visual-basic"></a>Vztahy typů v operacích dotazu (Visual Basic)
 Proměnné použité v [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] dotazu operace jsou silného typu a musí být navzájem kompatibilní. Silné typování se používá ve zdroji dat, v samotném dotazu a ve spuštění dotazu. Následující obrázek označuje termíny používané k popisu [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazu. Další informace o části dotazu, naleznete v tématu [základní operace dotazů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-query-operations.md).  
@@ -117,6 +117,7 @@ Next
 3.  Typ proměnné iterace ve `For Each` smyčky je anonymní typ vytvořili v kroku 2. Vzhledem k tomu, že typ nemá žádný použitelný název, třeba implicitně určit typ proměnné iterace smyčky.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Začínáme s dotazy LINQ v jazyce Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/getting-started-with-linq.md)
 - [Anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)
 - [Odvození místního typu](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)

@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC32053
 ms.assetid: 281564b7-99f7-451f-b10d-f985e831bb25
-ms.openlocfilehash: c5d427495e8eedae9dc0163c97401338fb6d0bbd
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: fa8607bf72dfb344048ec82514182dcb6810274d
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55276611"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58817151"
 ---
 # <a name="copying-the-value-of-byref-parameter-parametername-back-to-the-matching-argument-narrows-from-type-typename1-to-type-typename2"></a>Kopírování hodnoty 'ByRef' parametru '\<parametername >' zpět na odpovídající argument způsobí zúžení z typu '\<NázevTypu1 >' na typ '\<NázevTypu2 > "
 Procedura je volána s argumentem, který rozšiřuje na odpovídající typ parametru, a je zužující převod z parametru do argumentu.  
@@ -34,6 +34,7 @@ Procedura je volána s argumentem, který rozšiřuje na odpovídající typ par
 -   Pokud potřebujete vrátit hodnotu do volání argument, definovat operátor zpětný převod jako [Widening](../../../visual-basic/language-reference/modifiers/widening.md), pokud je to možné.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Procedury](../../../visual-basic/programming-guide/language-features/procedures/index.md)
 - [Parametry a argumenty procedury](../../../visual-basic/programming-guide/language-features/procedures/procedure-parameters-and-arguments.md)
 - [Předávání argumentů podle hodnoty a reference](../../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)

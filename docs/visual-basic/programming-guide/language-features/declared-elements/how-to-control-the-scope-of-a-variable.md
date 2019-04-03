@@ -12,12 +12,12 @@ helpviewer_keywords:
 - declared elements [Visual Basic], visibility
 - visibility [Visual Basic], variables
 ms.assetid: 44b7f62a-cb5c-4d50-bce9-60ae68f87072
-ms.openlocfilehash: 656bfa6fa9b3445d91cd8ac39b83bccf3e44758e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ef7957a991718112fe01c4fa3a85f29b9226abd3
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54521410"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58818720"
 ---
 # <a name="how-to-control-the-scope-of-a-variable-visual-basic"></a>Postupy: Řízení rozsahu proměnné (Visual Basic)
 Za normálních okolností je proměnná v *oboru*, nebo viditelné pro použití v rámci oblasti, ve kterém se deklaruje. V některých případech je proměnná společnosti *úroveň přístupu* mohou mít vliv na svém oboru.  
@@ -87,6 +87,7 @@ Public strMsg As String
  Čím užší obor proměnné, čím menší pravděpodobnost, že škodlivý kód může být nesprávné použití ho.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Obor v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)
 - [Doba platnosti v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md)
 - [Úrovně přístupu v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)

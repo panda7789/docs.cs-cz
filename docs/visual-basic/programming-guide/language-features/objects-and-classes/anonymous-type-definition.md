@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - anonymous types [Visual Basic], type definition
 ms.assetid: 7a8a0ddc-55ba-4d67-869e-87a84d938bac
-ms.openlocfilehash: e74b4c7298a80f724031cc4ac1feb49ebae8f7cb
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 832d56f5c51aea87185f36ec306c3fec036a40e0
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56975612"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58825544"
 ---
 # <a name="anonymous-type-definition-visual-basic"></a>Definice autonomního typu (Visual Basic)
 V reakci na deklarace instanci anonymního typu kompilátor vytvoří novou definici třídy, která obsahuje zadané vlastnosti pro typy.  
@@ -82,5 +82,6 @@ End Class
 >  Anonymní typ deklarace vytvoření stejné anonymního typu pouze v případě, že se objeví ve stejném sestavení, jejich vlastnosti mají stejné názvy a stejné odvodit typy, vlastnosti jsou deklarovány ve stejném pořadí a stejné vlastnosti jsou označeny jako vlastnosti klíče.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)
 - [Postupy: Odvození názvů a typů v deklaracích anonymního typu vlastností](../../../../visual-basic/programming-guide/language-features/objects-and-classes/how-to-infer-property-names-and-types-in-anonymous-type-declarations.md)

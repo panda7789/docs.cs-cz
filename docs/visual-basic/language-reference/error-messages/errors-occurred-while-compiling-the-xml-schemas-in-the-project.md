@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC36810
 ms.assetid: 9323b5d2-ba14-4e49-91f1-9ad647162144
-ms.openlocfilehash: 17886ececbd418ae60d6321c7a6278a1e982b9af
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 337fc1fb4dfc83c9b4814d3e45eb0cbe0758f7ce
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54611277"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58842522"
 ---
 # <a name="errors-occurred-while-compiling-the-xml-schemas-in-the-project"></a>Při kompilování schémat XML v projektu došlo k chybám.
 Při kompilování schémat XML v projektu došlo k chybám. Z tohoto důvodu není k dispozici technologie IntelliSense jazyka XML.  
@@ -32,5 +32,6 @@ Při kompilování schémat XML v projektu došlo k chybám. Z tohoto důvodu ne
 -   Pokud se najde žádná chyba ve schématu XSD, kompilátor XML nemusí mít dostatek informací, které poskytují Podrobná chybová zpráva. Je možné získat podrobnější informace o chybě, pokud je zajistit, že obory názvů XML pro soubory XSD součástí vašeho projektu zápasu obory názvů XML pro schéma XML, nastavte v sadě Visual Studio.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Okno Seznam chyb](/visualstudio/ide/reference/error-list-window)
 - [XML](../../../visual-basic/programming-guide/language-features/xml/index.md)

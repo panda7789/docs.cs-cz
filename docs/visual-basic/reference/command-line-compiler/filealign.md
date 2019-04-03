@@ -9,12 +9,12 @@ helpviewer_keywords:
 - /filealign compiler option [Visual Basic]
 - filealign compiler option [Visual Basic]
 ms.assetid: cc61ec3d-ad38-4b28-9659-099d73cad099
-ms.openlocfilehash: 551d151ab923110c73a528a5def639fb383c889f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 9a844515a4596064937762ac05b850463f1b5e14
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54715917"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58819174"
 ---
 # <a name="-filealign"></a>-filealign
 Určuje, kam chcete zarovnat oddíly výstupního souboru.  
@@ -40,4 +40,5 @@ Určuje, kam chcete zarovnat oddíly výstupního souboru.
 >  `-filealign` Možnost není k dispozici v rámci vývojového prostředí sady Visual Studio; je k dispozici jenom při kompilaci z příkazového řádku.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)

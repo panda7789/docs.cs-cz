@@ -2,12 +2,12 @@
 title: Zahájení více úloh s modifikátorem Async a jejich zpracování po dokončení (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 57ffb748-af40-4794-bedd-bdb7fea062de
-ms.openlocfilehash: ae391bfe0c8e16a8cb967ed6df7c548109a7bc09
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 8af97658465aa8f82fe3cd01013282c767eb4ba8
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54559313"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58816925"
 ---
 # <a name="start-multiple-async-tasks-and-process-them-as-they-complete-visual-basic"></a>Zahájení více úloh s modifikátorem Async a jejich zpracování po dokončení (Visual Basic)
 S použitím <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType>, můžete spustit více úkolů současně a zpracovat je postupně tak, jak jsou dokončeny namísto zpracování v pořadí, ve kterém se spouští.  
@@ -206,6 +206,7 @@ End Class
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Threading.Tasks.Task.WhenAny%2A>
 - [Doladění aplikace s modifikátorem Async (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/fine-tuning-your-async-application.md)
 - [Asynchronní programování pomocí modifikátoru Async a operátoru Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)

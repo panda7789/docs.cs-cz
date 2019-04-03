@@ -9,12 +9,12 @@ helpviewer_keywords:
 - TypeName function
 - objects [Visual Basic], type determining
 ms.assetid: d95e7ad1-cd63-41d6-9a28-d7a1380d49c1
-ms.openlocfilehash: becbbef008e8a474db198748d45f260fcb90c758
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 625ddb8fc153708a80e8cf475f48d595efbe4df2
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56966769"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58842626"
 ---
 # <a name="determining-object-type-visual-basic"></a>Určení typu objektu (Visual Basic)
 Generický objekt proměnné (tedy proměnné můžete deklarovat jako `Object`) může obsahovat objekty z jiné třídy. Při použití proměnné typu `Object`, možná budete muset provést různé akce na základě třídy objektu; například nemusí podporovat některé objekty určité vlastnosti nebo metody. Visual Basic poskytuje dva prostředky určující, jaký typ objektu je uložen v proměnné objektu: `TypeName` funkce a `TypeOf...Is` operátor.  
@@ -45,6 +45,7 @@ Generický objekt proměnné (tedy proměnné můžete deklarovat jako `Object`)
      [!code-vb[VbVbalrOOP#95](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#95)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:Microsoft.VisualBasic.Information.TypeName%2A>
 - [Volání vlastnosti nebo metody pomocí názvu řetězce](../../../../visual-basic/programming-guide/language-features/early-late-binding/calling-a-property-or-method-using-a-string-name.md)
 - [Datový typ Object](../../../../visual-basic/language-reference/data-types/object-data-type.md)

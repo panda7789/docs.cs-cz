@@ -6,12 +6,12 @@ helpviewer_keywords:
 - variables [Visual Basic], object
 - object variables [Visual Basic], determining type
 ms.assetid: 6f6a138d-58a4-40d1-9f4e-0a3c598eaf81
-ms.openlocfilehash: 149af116f2b848082367b33d826bace8345cee05
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: dc6f54719d4f30be00b7b85f0ab18c4cb02b0d7c
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54571175"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58816405"
 ---
 # <a name="how-to-determine-what-type-an-object-variable-refers-to-visual-basic"></a>Postupy: Určit, jaký typ proměnná objektu odkazuje (Visual Basic)
 Objektová proměnná obsahuje ukazatel na data, která je uložená na jiném místě. Typ těchto dat můžete změnit za běhu. V daném okamžiku provádějí, můžete použít <xref:System.Type.GetTypeCode%2A> metodou ke zjištění aktuálního typu za běhu nebo [TypeOf – operátor](../../../../visual-basic/language-reference/operators/typeof-operator.md) zjistit, jestli aktuální run-time typu je kompatibilní s zadaného typu.  
@@ -53,6 +53,7 @@ Objektová proměnná obsahuje ukazatel na data, která je uložená na jiném m
  Všimněte si, že zadaný typ nemůže být proměnné nebo výrazu. Musí být název definovaný typ, jako jsou třídy, struktury nebo rozhraní. To zahrnuje vnitřní typy jako `Integer` a `String`.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Object.GetType%2A>
 - <xref:System.Type?displayProperty=nameWithType>
 - <xref:System.Type.GetTypeCode%2A>

@@ -2,12 +2,12 @@
 title: Nástroj Contract-First
 ms.date: 03/30/2017
 ms.assetid: 0a880690-f460-4475-a5f4-9f91ce08fcc6
-ms.openlocfilehash: ef19843d6c8a9de0b926dd8512f5a58a5966e1bf
-ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
+ms.openlocfilehash: ad0566eaff08d27e8368f091388adda7376a37ef
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57846178"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58819616"
 ---
 # <a name="contract-first-tool"></a>Nástroj Contract-First
 Kontrakty služeb často potřebují vytvořit z existujících služeb. V [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], třídy kontraktu dat může automaticky vytvořen z existující služby používat nástroj pro upřednostnění kontraktu. Pokud chcete použít nástroj pro upřednostnění kontraktu, musí být soubor definice schématu XML (XSD) stažen místně; Nástroj nemůže importovat kontrakty vzdálených dat přes protokol HTTP.
@@ -61,11 +61,11 @@ Kontrakty služeb často potřebují vytvořit z existujících služeb. V [!INC
 ## <a name="configuring-contract-first-options"></a>Konfigurace možností upřednostnění kontraktu
  Možnosti kontraktem lze nastavit v nabídce vlastnosti projektu WCF. Chcete-li povolit rozvoje prvního kontraktu, vyberte **povolit XSD jako jazyk definice typu** zaškrtávací políčko na stránce WCF v okně Vlastnosti projektu.
 
- ![Kontrakt zobrazující možnosti projektu WCF&#45;první](../../../docs/framework/wcf/media/contractfirstoptions.png "ContractFirstOptions")
+ ![Snímek obrazovky s možností WCF pomocí rozvoje prvního kontraktu povolena.](./media/contract-first-tool/contract-first-options.png)
 
  Konfigurace rozšířených vlastností, klikněte na tlačítko Upřesnit.
 
- ![Pokročilé smlouvy&#45;první vlastnosti](../../../docs/framework/wcf/media/contractfirstadvanced.png "ContractFirstAdvanced")
+ ![Nastavení generování kódu kontraktu dialogové okno Upřesnit.](./media/contract-first-tool/advanced-contract-settings.png)
 
  Toto nastavení lze nakonfigurovat pro generování kódu ze smluv. Nastavení se dá nakonfigurovat jenom pro všechny soubory v projektu. v tuto chvíli nelze konfigurovat pro jednotlivé soubory nastavení.
 
@@ -118,9 +118,9 @@ Kontrakty služeb často potřebují vytvořit z existujících služeb. V [!INC
 using MyProjectNamespace.ContractTypes;
 ```
 
- Typy definované v kontraktu služby pak bude možné přeložit v projektu, jak je znázorněno níže.
+ Typy definované v kontraktu služby pak bude možné přeložit v projektu, jak je znázorněno níže:
 
- ![Typy odvozené z kontraktu služby](../../../docs/framework/wcf/media/contractfirsttypes.png "ContractFirstTypes")
+ ![Třída SearchRequest zobrazení v IntelliSense po zadání prvních pár písmen.](./media/contract-first-tool/service-contract-types.png)
 
  Typy generované nástrojem jsou vytvořeny v souboru GeneratedXSDTypes.cs. Soubor je vytvořen \<adresáře projektu > /obj/\<konfiguraci sestavení > /XSDGeneratedCode/ adresáře ve výchozím nastavení. Ukázka schématu na začátku tohoto tématu je převést následujícím způsobem:
 

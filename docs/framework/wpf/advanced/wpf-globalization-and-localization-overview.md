@@ -5,12 +5,12 @@ helpviewer_keywords:
 - globalization [WPF], about globalization
 - localization [WPF], about localization
 ms.assetid: 56e5a5c8-6c96-4d19-b8e1-a5be1dc564af
-ms.openlocfilehash: 279fe008c8624ff2209f5e08c3c9f9713ad201cd
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
+ms.openlocfilehash: c97ae4f277395a75fb7522ffb74061001c10e07d
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58412029"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58819577"
 ---
 # <a name="wpf-globalization-and-localization-overview"></a>Přehled globalizace a lokalizace WPF
 
@@ -94,9 +94,9 @@ Proces lokalizace začne za nelokalizované `MyDialog.resources.dll` sestavení 
   
  Následující obrázek ukazuje typické lokalizace pracovního postupu, který je založen na formuláři BAML z XAML. Tento diagram předpokládá, že vývojář aplikace zapíše v angličtině. Vývojář vytvoří a globalizuje aplikaci WPF. V projektu soubor sady pro vývojáře `<UICulture>en-US</UICulture>` tak, aby při sestavování, získá jazyk neutrální hlavní sestavení generována s satelit. resources.dll obsahující všechny lokalizovatelné prostředky. Alternativně jeden může zachovat Zdrojový jazyk v hlavním sestavení, protože lokalizace WPF rozhraní API podporují extrakce z hlavní sestavení. Po dokončení procesu sestavení XAML získat zkompilován BAML. Jazykově neutrální MyDialog.exe.resources.dll získat dodat anglické mluvy zákazníkovi.  
   
- ![Pracovní postup lokalizace](./media/localizationworkflow.png "LocalizationWorkflow")  
+ ![Diagram znázorňující pracovní postup lokalizace.](./media/wpf-globalization-and-localization-overview/localization-workflow.png)  
   
- ![Nelokalizované pracovní postup](./media/localizationworkflow2.png "LocalizationWorkflow2")  
+ ![Diagram znázorňující nelokalizované pracovního postupu.](./media/wpf-globalization-and-localization-overview/unlocalized-workflow.png)  
   
 ## <a name="examples-of-wpf-localization"></a>Příklady lokalizace WPF
 
@@ -108,11 +108,11 @@ Proces lokalizace začne za nelokalizované `MyDialog.resources.dll` sestavení 
   
  **Angličtina:**  
   
- ![Dialogové okno Spustit](./media/rundialogenglish.PNG "RunDialogEnglish")  
+ ![Snímek obrazovky ukazující dialogové okno s anglickou spustit.](./media/wpf-globalization-and-localization-overview/run-dialog-box-english.png)  
   
  **Němčina:**  
   
- ![Dialogové okno spustit Němčina](./media/rundialoggerman.PNG "RunDialogGerman")  
+ ![Snímek obrazovky ukazující dialogové okno spustit němčina.](./media/wpf-globalization-and-localization-overview/run-dialog-box-german.png)  
   
  **Navrhování globální dialogového okna spustit**  
   
@@ -226,13 +226,13 @@ Proces lokalizace začne za nelokalizované `MyDialog.resources.dll` sestavení 
   
  **Angličtina:**  
   
- ![Stránka v angličtině](./media/englishhomepage.jpg "EnglishHomepage")  
+ ![Snímek obrazovky zobrazující anglické domovskou stránku.](./media/wpf-globalization-and-localization-overview/english-home-page-sample.jpg)  
   
  **Arabština:**  
   
- ![Arabské stránky](./media/arabichomepage.jpg "ArabicHomepage")  
+ ![Snímek obrazovky zobrazující Arabské domovskou stránku.](./media/wpf-globalization-and-localization-overview/arabic-home-page-sample.jpg)  
   
-### <a name="designing-a-global-microsoft-homepage"></a>Navrhování globální hlavní stránku Microsoftu.  
+### <a name="designing-a-global-microsoft-home-page"></a>Navrhování domovskou stránku globální společnosti Microsoft  
  To napodobovat webu ukazuje funkce globalizace stanovené RightToLeft jazyky Microsoft Saúdská Arábie. Například hebrejské a Arabské jazyky mají pořadí čtení zprava doleva tak rozložení [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] musí často rozloží úplně jinak než v jazycích zleva doprava, jako je angličtina. Lokalizace z jazyka zleva doprava, zprava doleva jazyk nebo naopak může být poměrně složité. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] byla navržena tak, aby takové lokalizace značně zjednodušují.  
   
  **FlowDirection**  
@@ -247,11 +247,11 @@ Proces lokalizace začne za nelokalizované `MyDialog.resources.dll` sestavení 
   
  **FlowDirection="LeftToRight"**  
   
- ![Tok zleva doprava](./media/lefttoright.PNG "LeftToRight")  
+ ![Snímek obrazovky ukazující přechod tok zleva doprava.](./media/wpf-globalization-and-localization-overview/gradient-flow-left-right.png)  
   
  **FlowDirection="RightToLeft"**  
   
- ![Tok zprava doleva](./media/righttoleft.PNG "RightToLeft")  
+ ![Snímek obrazovky ukazující přechod toku zprava doleva.](./media/wpf-globalization-and-localization-overview/gradient-flow-right-left.png)  
   
  **Vyhněte se použití pevné dimenze pro ovládací prvky a panelů**  
   

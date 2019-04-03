@@ -2,12 +2,12 @@
 title: Ukázka zabezpečení zjišťování
 ms.date: 03/30/2017
 ms.assetid: b8db01f4-b4a1-43fe-8e31-26d4e9304a65
-ms.openlocfilehash: 5a3b3ec42086eb39bffb71df2a0d6d46270a8f1f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c77bedbea3d9002b24556d240d5b788fe6c53d67
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54680332"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58815197"
 ---
 # <a name="discovery-security-sample"></a>Ukázka zabezpečení zjišťování
 Specifikace zjišťování nevyžaduje, zabezpečené koncové body, které jsou součástí procesu zjišťování. Rozšíření zjišťování zpráv pomocí zabezpečení zmírní různé typy útoků (zpráva změnou, útok DOS, znovu přehrát, falšování identity). Tato ukázka implementuje vlastní kanály, které compute a ověřování podpisů zprávu ve formátu compact podpis (popsaný v části 8.2 specifikace WS-Discovery). Ukázka podporuje i [2005 zjišťování specifikace](https://go.microsoft.com/fwlink/?LinkId=177912) a [verze 1.1](https://go.microsoft.com/fwlink/?LinkId=179677).  
@@ -75,4 +75,3 @@ Specifikace zjišťování nevyžaduje, zabezpečené koncové body, které jsou
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Scenario\DiscoveryScenario`  
   
-## <a name="see-also"></a>Viz také:

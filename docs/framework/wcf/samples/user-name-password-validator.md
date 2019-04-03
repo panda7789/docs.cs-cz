@@ -2,12 +2,12 @@
 title: Validátor hesel pro uživatelská jména
 ms.date: 03/30/2017
 ms.assetid: 42f03841-286b-42d8-ba58-18c75422bc8e
-ms.openlocfilehash: 33df3a7a8d463a9c2cd2d2586f0aa812e25a16ff
-ms.sourcegitcommit: bef803e2025642df39f2f1e046767d89031e0304
+ms.openlocfilehash: df2340393544b0eaac8f2c6d4eae55846a604e40
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56305452"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58814026"
 ---
 # <a name="user-name-password-validator"></a>Validátor hesel pro uživatelská jména
 Tento příklad ukazuje, jak implementovat vlastní UserNamePassword validátor. To je užitečné v případech, kdy se žádná z předdefinovaných režimy ověřování UserNamePassword je vhodné pro požadavky na aplikaci. například když páry uživatelského jména a hesla ukládají v některé externí úložiště, například do databáze. Tento příklad ukazuje služba, která má vlastní validátor, který kontroluje dvě dvojice konkrétního uživatelského jména a hesla. Klient používá k ověření ve službě dvojici uživatelského jména a hesla.
@@ -321,4 +321,3 @@ serviceHost.Credentials. UserNameAuthentication.CustomUserNamePasswordValidator 
   
 1.  Spusťte Cleanup.bat ve složce samples po dokončení spuštění ukázky. Tím certifikát serveru z úložiště certifikátů.  
   
-## <a name="see-also"></a>Viz také:

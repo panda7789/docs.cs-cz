@@ -14,12 +14,12 @@ helpviewer_keywords:
 - variables [Visual Basic], and properties
 - properties [Visual Basic], and variables
 ms.assetid: 7a03a8be-5381-431f-bd7c-16e887e4e07b
-ms.openlocfilehash: f2388f091278d398b5e8f3b82f147ab69937f2aa
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: de4800e23519c2cc1c8b2b219287b9fa018b9bbf
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54689520"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58842899"
 ---
 # <a name="differences-between-properties-and-variables-in-visual-basic"></a>Rozdíly mezi vlastnostmi a proměnnými v jazyce Visual Basic
 Proměnné a vlastnosti představují hodnoty, které můžete přistupovat. Nicméně existují rozdíly v úložišti a implementaci.  
@@ -38,13 +38,14 @@ Proměnné a vlastnosti představují hodnoty, které můžete přistupovat. Nic
 |Deklarace|Příkaz jediné deklaraci|Řadu příkazů v bloku kódu|  
 |Implementace|Jedno umístění úložiště|Spustitelný kód (procedury vlastnosti)|  
 |Úložiště|Přímo přidružené k hodnotě proměnné|Obvykle má interní úložiště není k dispozici mimo vlastnosti obsahující třídu nebo modul<br /><br /> Hodnota vlastnosti může nebo nemusí existovat jako prvek uložené <sup>1</sup>|  
-|Spustitelný kód|Žádná|Musí mít alespoň jeden postup|  
+|Spustitelný kód|Žádné|Musí mít alespoň jeden postup|  
 |Oprávnění ke čtení a zápis|Čtení a zápis nebo jen pro čtení|Čtení a zápis, jen pro čtení nebo jen pro zápis|  
 |Vlastní akce (navíc k přijetí nebo vrácení hodnoty)|Není možná.|Můžete provést v rámci nastavení nebo načtení hodnoty vlastnosti|  
   
  <sup>1</sup> na rozdíl od proměnné, nemusí odpovídat hodnotu vlastnosti přímo na jednu položku z úložiště. Úložiště může rozdělit na části pro usnadnění práce nebo zabezpečení, nebo hodnota může být uložena v šifrovaném tvaru. V těchto případech `Get` procedury by spojit nebo dešifrovat uložené hodnoty a `Set` procedury by šifrování novou hodnotu nebo ho rozdělte do základní úložiště. Hodnota vlastnosti může být dočasné, jako je čas, v takovém případě `Get` postup by vypočítat průběžně pokaždé, když je přístup k vlastnosti.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Procedury vlastnosti](./property-procedures.md)
 - [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)
 - [Příkaz Property](../../../../visual-basic/language-reference/statements/property-statement.md)

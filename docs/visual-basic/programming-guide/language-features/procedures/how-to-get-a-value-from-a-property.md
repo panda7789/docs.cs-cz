@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Visual Basic code, properties
 - properties [Visual Basic], values
 ms.assetid: 3954423e-6ab7-4a4c-b55c-a8d27be47891
-ms.openlocfilehash: de5719527216411c7bd156f2cc0d369442eaee20
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 7dbc9d926ae937dd032c0c054bde440037ab9f0d
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56964770"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58842912"
 ---
 # <a name="how-to-get-a-value-from-a-property-visual-basic"></a>Postupy: Získání hodnoty z vlastnosti (Visual Basic)
 Načtení hodnoty vlastnosti včetně názvu vlastnosti ve výrazu.  
@@ -39,6 +39,7 @@ Načtení hodnoty vlastnosti včetně názvu vlastnosti ve výrazu.
  Hodnota vlastnosti podílí na výraz, stejně jako proměnné by – konstanta nebo je uložen v proměnné nebo vlastnosti na levé straně příkazu přiřazení.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Procedury](./index.md)
 - [Procedury vlastnosti](./property-procedures.md)
 - [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)

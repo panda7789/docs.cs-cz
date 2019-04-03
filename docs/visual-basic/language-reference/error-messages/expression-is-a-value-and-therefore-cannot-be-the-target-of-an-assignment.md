@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC30068
 ms.assetid: d65141e1-f31e-4ac5-a3b8-0b2e02a71ebf
-ms.openlocfilehash: b2c33cb9ba0479df5e69b6979a789253f9fae565
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 3027be6ee4ed3664b81c661b6a086a3604573833
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54597330"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58826129"
 ---
 # <a name="expression-is-a-value-and-therefore-cannot-be-the-target-of-an-assignment"></a>Výraz je hodnota, a proto nemůže být cílem přiřazení.
 Příkaz se pokusí přiřadit hodnotu výrazu. Přiřadit hodnotu pouze pro zapisovatelné proměnná, vlastnost nebo prvku pole za běhu. Následující příklad ukazuje, jak k této chybě může dojít.  
@@ -58,6 +58,7 @@ exitButton.Location = exitLocation
 -   Pro přístup k vlastnosti k ní přiřadit hodnotu, použijte proměnnou.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Operátory a výrazy](../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)
 - [Příkazy](../../../visual-basic/programming-guide/language-features/statements.md)
 - [Řešení potíží s procedurami](../../../visual-basic/programming-guide/language-features/procedures/troubleshooting-procedures.md)

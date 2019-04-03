@@ -2,12 +2,12 @@
 title: 'Postupy: Práce se slovníky pomocí LINQ to XML (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 6cb3f969-1986-414a-b850-87418712edea
-ms.openlocfilehash: 9f08430aeb92b9c6e0b7b08481027fb3b5b77cad
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: def00fcd356472825ebc4b9f5c306cf3547991e1
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54572341"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58820760"
 ---
 # <a name="how-to-work-with-dictionaries-using-linq-to-xml-visual-basic"></a>Postupy: Práce se slovníky pomocí LINQ to XML (Visual Basic)
 Často je vhodné převést zpět na další datové struktury typy prvků datové struktury do XML a XML. Toto téma popisuje konkrétní implementaci tohoto přístupu obecné převedením <xref:System.Collections.Generic.Dictionary%602> XML a naopak.  
@@ -71,4 +71,5 @@ Child4:Value4
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Projekce a transformace (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)

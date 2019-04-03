@@ -1,19 +1,19 @@
 ---
-title: 'Návod: Vytvoření přístupné aplikace založené na Windows'
+title: 'Návod: Vytvoření aplikace systému Windows s usnadněním přístupu'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - accessibility [Windows Forms], Windows applications
 - Windows applications [Windows Forms], accessibility
 - applications [Windows Forms], accessibility
 ms.assetid: 654c7f2f-1586-480b-9f12-9d9b8f5cc32b
-ms.openlocfilehash: b27203f46c1d89577825e40541d9789d3b9e17de
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 19ff49cfa465cce479a4fd5264c565cbb305c84f
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57708272"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58823464"
 ---
-# <a name="walkthrough-creating-an-accessible-windows-based-application"></a>Návod: Vytvoření přístupné aplikace založené na Windows
+# <a name="walkthrough-creating-an-accessible-windows-based-application"></a>Návod: Vytvoření aplikace systému Windows s usnadněním přístupu
 Vytvoření přístupné aplikace má vliv na důležitá obchodní. Mnoha vlád mají usnadnění předpisy pro nákup softwaru. Logo Certified pro Windows obsahuje požadavky na usnadnění přístupu. Odhadované pobytem 30 milionů amerických samostatně, mnoho z nich potenciálních zákazníků, jsou ovlivněny usnadnění softwaru.  
   
  Tento názorný postup bude zabývat pět požadavků usnadnění přístupu pro logo Certified pro Windows. Podle těchto požadavků se dostupné aplikace:  
@@ -75,7 +75,7 @@ Vytvoření přístupné aplikace má vliv na důležitá obchodní. Mnoha vlád
     ||AccessibleDescription|Řez pizza|  
     ||AccessibleName|Logo společnosti|  
     ||Image|Žádné ikona nebo rastrový obrázek|  
-    |Popisek|Název|companyLabel|  
+    |Popisek|Name|companyLabel|  
     ||Text|Good Pizza|  
     ||TabIndex|1|  
     ||AccessibleDescription|Název společnosti|  
@@ -83,23 +83,23 @@ Vytvoření přístupné aplikace má vliv na důležitá obchodní. Mnoha vlád
     ||Barva pozadí|Modrá|  
     ||Barva popředí|Žlutá|  
     ||Velikost písma|18|  
-    |Popisek|Název|customerLabel|  
+    |Popisek|Name|customerLabel|  
     ||Text|& název|  
     ||TabIndex|2|  
     ||AccessibleDescription|Popisek názvu zákazníka|  
     ||AccessibleName|Popisek názvu zákazníka|  
     ||Usemnemonic –|Pravda|  
-    |TextBox|Název|customerName|  
+    |TextBox|Name|customerName|  
     ||Text|(žádné)|  
     ||TabIndex|3|  
     ||AccessibleDescription|Jméno zákazníka|  
     ||AccessibleName|Jméno zákazníka|  
-    |GroupBox|Název|sizeOptions|  
+    |GroupBox|Name|sizeOptions|  
     ||AccessibleDescription|Možnosti velikosti pizza|  
     ||AccessibleName|Možnosti velikosti pizza|  
     ||Text|Velikost pizza|  
     ||TabIndex|4|  
-    |RadioButton|Název|smallPizza|  
+    |RadioButton|Name|smallPizza|  
     ||Text|& malé $6.00|  
     ||Zaškrtnuto|Pravda|  
     ||TabIndex|0|  
@@ -110,7 +110,7 @@ Vytvoření přístupné aplikace má vliv na důležitá obchodní. Mnoha vlád
     ||TabIndex|1|  
     ||AccessibleDescription|Velké pizza|  
     ||AccessibleName|Velké pizza|  
-    |Popisek|Název|toppingsLabel|  
+    |Popisek|Name|toppingsLabel|  
     ||Text|& toppings ($0,75 každý)|  
     ||TabIndex|5|  
     ||AccessibleDescription|Popisek toppings|  
@@ -121,7 +121,7 @@ Vytvoření přístupné aplikace má vliv na důležitá obchodní. Mnoha vlád
     ||AccessibleDescription|K dispozici toppings|  
     ||AccessibleName|K dispozici toppings|  
     ||Položky|Pepperoni salám, hub|  
-    |Tlačítko|Název|pořadí|  
+    |Tlačítko|Name|pořadí|  
     ||Text|& pořadí|  
     ||TabIndex|7|  
     ||AccessibleDescription|Celkový počet pořadí|  
@@ -132,13 +132,15 @@ Vytvoření přístupné aplikace má vliv na důležitá obchodní. Mnoha vlád
     ||AccessibleDescription|Zrušit pořadí|  
     ||AccessibleName|Zrušit objednávku|  
     |MainMenu|Název|theMainMenu|  
-    |Položku nabídky|Název|fileCommands|  
+    |Položku nabídky|Name|fileCommands|  
     ||Text|& soubor|  
     |Položku nabídky|Název|exitApp|  
-    ||Text|U & končit|  
-  
-     ![Formulář objednávky pizza](./media/vbpizzaorderform.gif "vbPizzaOrderForm")  
-Formulář bude vypadat přibližně takto:  
+    ||Text|U & končit|
+    
+      Formulář bude vypadat podobně jako na následujícím obrázku:
+    
+      ![Formulář objednávky pizza s názvem textového pole a velikost a toppings výběru.](./media/walkthrough-creating-an-accessible-windows-based-application/visual-basic-pizza-order-form.gif)  
+
   
 ## <a name="supporting-high-contrast-mode"></a>Podporující režim s vysokým kontrastem  
  Vysoký kontrast je nastavení systému Windows, který zlepšuje čitelnost pomocí kontrastní barvy a velikosti písem, které jsou užitečné pro uživatele se zrakovým postižením. <xref:System.Windows.Forms.SystemInformation.HighContrast%2A> Vlastnost je k dispozici k určení, zda je nastaven režim s vysokým kontrastem.  

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - joining [LINQ in Visual Basic]
 - queries [LINQ in Visual Basic], how-to topics
 ms.assetid: 5b00a478-035b-41c6-8918-be1a97728396
-ms.openlocfilehash: 66255a9bfa2a4f9acb33073bae755efbab61042e
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: dde627edfeb1d4473c9d2e01b9ff83c580a0f122
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56977972"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58822684"
 ---
 # <a name="how-to-combine-data-with-linq-by-using-joins-visual-basic"></a>Postupy: Kombinace dat s LINQ pomocí spojení (Visual Basic)
 Visual Basic poskytuje `Join` a `Group Join` klauzulí vám umožní sloučit obsah více kolekcí založených na společné hodnoty mezi kolekcí dotazů. Tyto hodnoty jsou označovány jako *klíč* hodnoty. Rozpozná vývojářům dobře známé koncepty relační databáze `Join` klauzule jako INNER JOIN a `Group Join` klauzule jako efektivní, LEFT OUTER JOIN.  
@@ -80,6 +80,7 @@ Visual Basic poskytuje `Join` a `Group Join` klauzulí vám umožní sloučit ob
 2.  Stisknutím klávesy F5 pro spuštění příkladů.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [LINQ](../../../../visual-basic/programming-guide/language-features/linq/index.md)
 - [Úvod do LINQ v JAZYKU Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
 - [Klauzule Join](../../../../visual-basic/language-reference/queries/join-clause.md)

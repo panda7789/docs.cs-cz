@@ -8,12 +8,12 @@ helpviewer_keywords:
 - overload resolution [Visual Basic], with late-bound argument
 - BC30933
 ms.assetid: 8182eea0-dd34-4d6e-9ca0-41d8713e9dc4
-ms.openlocfilehash: 7215be3f454f4a799124620fb5db520282988035
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 7f2ae3bb0e7c09d966c53fb17b1cbe675dfce8b9
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55272630"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58814052"
 ---
 # <a name="latebound-overload-resolution-cannot-be-applied-to-procedurename-because-the-accessing-instance-is-an-interface-type"></a>Přetížení rozpoznání s pozdní vazbou nelze použít pro '\<název_procedury >' protože přistupující instance je typu rozhraní
 Kompilátor se pokouší rozpoznat odkaz na přetížená vlastnost nebo procedura, ale odkaz se nezdaří, protože argument je typu `Object` a odkazující objekt má datový typ rozhraní. `Object` Argument vynutí, aby kompilátor přeložit odkaz na jako s pozdní vazbou.  
@@ -65,6 +65,7 @@ refer.s1(CType(o1, Double))
  Jednotlivé řádky kódu, předchozí explicitní přetypování `Object` proměnnou `o1` na jeden z typů parametrů definovaných pro přetížení.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přetížení procedury](../../../visual-basic/programming-guide/language-features/procedures/procedure-overloading.md)
 - [Řešení přetížení](../../../visual-basic/programming-guide/language-features/procedures/overload-resolution.md)
 - [Funkce CType](../../../visual-basic/language-reference/functions/ctype-function.md)

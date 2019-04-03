@@ -2,12 +2,12 @@
 title: Načtení odstavců a jejich stylů (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: d9ed2238-d38e-4ad4-b88b-db7859df9bde
-ms.openlocfilehash: a726c3b609d778d8d91be61091a3627ec1358dfc
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 3c6554c44c95db13aada0d9edf96cc2df595c6d1
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54716023"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58816938"
 ---
 # <a name="retrieving-the-paragraphs-and-their-styles-visual-basic"></a>Načtení odstavců a jejich stylů (Visual Basic)
 V tomto příkladu jsme vytvořit dotaz, který načte uzly odstavců z dokumentu WordprocessingML. Styl k jednotlivým odstavcům také identifikuje.  
@@ -135,4 +135,5 @@ StyleName:Code
  V dalším tématu [načtení textu odstavců (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/retrieving-the-text-of-the-paragraphs.md), vytvoříte dotaz pro načtení textu odstavců.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Kurz: Manipulace s obsahem v dokumentu WordprocessingML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)

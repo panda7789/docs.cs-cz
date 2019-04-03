@@ -14,12 +14,12 @@ helpviewer_keywords:
 - Private access modifier
 - declared elements [Visual Basic], access level
 ms.assetid: 6e06c1ab-fd78-47f0-83a8-1152780b5e1a
-ms.openlocfilehash: 1278119ca82678267aa782f2518ab26b50966730
-ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
+ms.openlocfilehash: d8f2f16d2fb15f2e840f13f177d3fea83fda315e
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57203623"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58843092"
 ---
 # <a name="access-levels-in-visual-basic"></a>Úrovně přístupu v jazyce Visual Basic
 *Úroveň přístupu* deklarované elementu je rozsah schopnost k němu přístup, to znamená, jaký kód má oprávnění k jeho čtení nebo zápis do něj. To je určen pouze tak, jak deklarovat samotného elementu, ale také podle úrovně přístupu k elementu kontejneru. Kód, který nemá přístup k elementu s obsahem nelze použít žádnou z jeho elementů obsažených, včetně těch deklarován jako `Public`. Například `Public` v proměnné `Private` struktury lze přistupovat z uvnitř třídy, která obsahuje strukturu, ale ne z vně třídy.  
@@ -115,6 +115,7 @@ Klíčová slova, které určují úroveň přístupu se nazývají *modifikáto
 |`Private Protected`|Kód ve třídě, která deklaruje element privátní chráněný, nebo kód v odvozené třídě nalezen ve stejném sestavení jako třída bas.|Rozhraní<br /><br /> Třídy<br /><br /> Struktury<br /><br /> Procedury<br /><br /> Vlastnosti<br /><br /> Členské proměnné<br /><br /> Konstanty<br /><br /> Výčty<br /><br /> Události<br /><br /> Externí deklarace<br /><br /> Delegáty|Třída|
   
 ## <a name="see-also"></a>Viz také:
+
 - [Příkaz Dim](../../../../visual-basic/language-reference/statements/dim-statement.md)
 - [Static](../../../../visual-basic/language-reference/modifiers/static.md)
 - [Deklarované názvy elementů](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)

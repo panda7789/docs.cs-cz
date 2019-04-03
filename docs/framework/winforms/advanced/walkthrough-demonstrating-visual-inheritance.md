@@ -11,12 +11,12 @@ helpviewer_keywords:
 - walkthroughs [Windows Forms], visual inheritance
 - Windows Forms, inheritance
 ms.assetid: 01966086-3142-450e-8210-3fd4cb33f591
-ms.openlocfilehash: aa4d18c0e3bbc2613502c7232771c57acc7f0dc8
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: fa6da3248f315ad1916e6a7fdc6b0b24ca9e98a3
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57721447"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58816314"
 ---
 # <a name="walkthrough-demonstrating-visual-inheritance"></a>Návod: Demonstrace vizuálního dědění
 Vizuální dědění vám umožní zobrazit ovládací prvky ve formuláři základní a přidání nových ovládacích prvků. V tomto návodu vytvoříte základní formulář a zkompilovat ji do knihovny tříd. Bude import této knihovně tříd do jiného projektu a vytvoření nového formuláře, která dědí ze základního formuláře. V tomto návodu se dozvíte, jak:  
@@ -140,7 +140,7 @@ Vizuální dědění vám umožní zobrazit ovládací prvky ve formuláři zák
   
 5.  Otevřete Zděděný formulář (**Form2**) v Návrháři poklepáním, pokud ještě není otevřený.  
   
-     V návrháři, zděděné tlačítka mají symbol (![VisualBasicInheritanceSymbol – snímek obrazovky](./media/vbinheritanceglyph.gif "vbInheritanceGlyph")) v jejich horním rohu, která se dědí.  
+     V Návrháři zděděné tlačítka mají symbol (![Snímek obrazovky dědičnosti symbol jazyka Visual Basic.](./media/walkthrough-demonstrating-visual-inheritance/visual-basic-inheritance-glyph.gif)) v jejich horním rohu, která se dědí.  
   
 6.  Vyberte **Say Hello** tlačítko a podívejte se úchyty pro změnu velikosti. Protože toto tlačítko je chráněný, dědice můžete přesunout, změnit jeho velikost, změnit titulek a provádět další úpravy.  
   

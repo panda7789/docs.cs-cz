@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrID48
 ms.assetid: 4226cd1f-028c-477d-88a5-cb57f7e0cdc8
-ms.openlocfilehash: 76a0a443fd9f8a6dec5ead24bc75c97d89d6c36b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c3f88a5a3c37c89d23055aa413957b2add38ed67
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54518459"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58816899"
 ---
 # <a name="error-in-loading-dll-visual-basic"></a>Chyba při načítání knihovny DLL (Visual Basic)
 Dynamická knihovna (DLL) je knihovna podle `Lib` klauzuli `Declare` příkazu. Možné příčiny této chyby patří:  
@@ -33,4 +33,5 @@ Dynamická knihovna (DLL) je knihovna podle `Lib` klauzuli `Declare` příkazu. 
 -   Pokud knihovna DLL nebo odkazované knihovny DLL není v adresáři zadané cesty, přesune odkazovaný adresáře knihovny DLL.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Příkaz Declare](../../../visual-basic/language-reference/statements/declare-statement.md)

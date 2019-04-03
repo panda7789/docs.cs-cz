@@ -10,12 +10,12 @@ helpviewer_keywords:
 - operator -=
 - compound assignment statements [Visual Basic]
 ms.assetid: 5ead0c37-ae50-48f7-8435-8e341d81cae1
-ms.openlocfilehash: c3495c4e45fe5e1d497578ee3ee6afe874e90eed
-ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
+ms.openlocfilehash: be1ff4f10f6b30d8448d2441ee3ad2c1e2f80e2d
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57203042"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58815898"
 ---
 # <a name="--operator-visual-basic"></a>-= – operátor (Visual Basic)
 Odečte hodnotu výrazu od hodnoty proměnnou nebo vlastnost a výsledek přiřadí proměnné nebo vlastnosti.  
@@ -47,6 +47,7 @@ variableorproperty -= expression
  [!code-vb[VbVbalrOperators#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#11)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [-– Operátor (Visual Basic)](../../../visual-basic/language-reference/operators/subtraction-operator.md)
 - [Operátory přiřazení](../../../visual-basic/language-reference/operators/assignment-operators.md)
 - [Aritmetické operátory](../../../visual-basic/language-reference/operators/arithmetic-operators.md)

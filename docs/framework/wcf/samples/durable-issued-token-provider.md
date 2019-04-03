@@ -2,12 +2,12 @@
 title: Trvale vydaný poskytovatel tokenu
 ms.date: 03/30/2017
 ms.assetid: 76fb27f5-8787-4b6a-bf4c-99b4be1d2e8b
-ms.openlocfilehash: 911c4928a179a6595c6ebec488055dd45ae91c36
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 471e172589e578691d41690b0af7eff20e3234c9
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54736218"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58817211"
 ---
 # <a name="durable-issued-token-provider"></a>Trvale vydaný poskytovatel tokenu
 Tento příklad ukazuje, jak implementovat vlastní klienta vydaný Poskytovatel tokenu.  
@@ -254,4 +254,3 @@ Tento příklad ukazuje, jak implementovat vlastní klienta vydaný Poskytovatel
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Security\DurableIssuedTokenProvider`  
   
-## <a name="see-also"></a>Viz také:

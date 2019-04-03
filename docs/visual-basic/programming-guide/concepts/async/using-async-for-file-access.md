@@ -2,12 +2,12 @@
 title: Použití modifikátoru Async pro přístup k souborům (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: c989305f-08e3-4687-95c3-948465cda202
-ms.openlocfilehash: 76abb5460bbadd234d761a0cce2f0082bb5894a9
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 0b2b95f1e4f9bc120acdad606b0f15503285057a
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54587499"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58814546"
 ---
 # <a name="using-async-for-file-access-visual-basic"></a>Použití modifikátoru Async pro přístup k souborům (Visual Basic)
 Můžete použít funkci Async pro přístup k souborům. Pomocí asynchronní funkce může volat do asynchronní metody bez pomocí zpětných volání a rozdělení kódu mezi více metodách a výrazech lambda. Aby synchronního kódu asynchronní, stačí volání asynchronní metody namísto synchronní metody a do kódu přidat několik klíčových slov.  
@@ -161,6 +161,7 @@ End Sub
  Při použití <xref:System.IO.Stream.WriteAsync%2A> a <xref:System.IO.Stream.ReadAsync%2A> metody, můžete zadat <xref:System.Threading.CancellationToken>, který můžete použít pro zrušení operace uprostřed datového proudu. Další informace najdete v tématu [asynchronní aplikace Fine-Tuning (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/fine-tuning-your-async-application.md) a [zrušení ve spravovaných vláknech](../../../../standard/threading/cancellation-in-managed-threads.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Asynchronní programování pomocí modifikátoru Async a operátoru Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)
 - [Asynchronní návratové typy (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/async-return-types.md)
 - [Tok řízení v asynchronních programech (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/control-flow-in-async-programs.md)

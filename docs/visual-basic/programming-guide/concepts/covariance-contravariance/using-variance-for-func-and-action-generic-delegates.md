@@ -2,12 +2,12 @@
 title: Použití odchylek pro delegáty Func a Action obecný (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 36c3012f-b39c-493b-b90f-079b5912ac1b
-ms.openlocfilehash: 134b3c0776e100a4bdc7e902bc8b41477a0ee264
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f2f45a9b6536859499f882b4cd585595176208f2
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54549454"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58814291"
 ---
 # <a name="using-variance-for-func-and-action-generic-delegates-visual-basic"></a>Použití odchylek pro delegáty Func a Action obecný (Visual Basic)
 Tyto příklady ukazují, jak používat kovariance a kontravariance v `Func` a `Action` obecné delegáty umožňují opakované použití metod a poskytují větší flexibilitu v kódu.  
@@ -90,5 +90,6 @@ End Class
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Kovariance a kontravariance (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/index.md)
 - [Obecné typy](~/docs/standard/generics/index.md)

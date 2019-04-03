@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Service Transaction Behavior Sample [Windows Communication Foundation]
 ms.assetid: 1a9842a3-e84d-427c-b6ac-6999cbbc2612
-ms.openlocfilehash: df677e29534e2f451afa27b9b81159b4826c98ca
-ms.sourcegitcommit: d9a0071d0fd490ae006c816f78a563b9946e269a
+ms.openlocfilehash: dafc75c9db0dfe9b51c7425a269c166182bbcc87
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "55066139"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58843029"
 ---
 # <a name="service-transaction-behavior"></a>Chování transakce služby
 Tato ukázka demonstruje použití transakce koordinovaný klienta a nastavení atributu ServiceBehaviorAttribute a OperationBehaviorAttribute řídit chování transakce služby. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) , který implementuje službu kalkulačky, ale je rozšířit na Udržovat protokol serveru provádět operace v databázové tabulce a stavový průběžný součet pro operace kalkulačky. Trvalé zápisy do tabulky protokolu serveru jsou závislé na výsledku transakce koordinovaný klient -, pokud klientská transakce nedokončí, transakce webové služby zajišťuje, že aktualizace databáze nejsou potvrzeny.  
@@ -265,4 +265,3 @@ Creating new service instance...
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Behaviors\Transactions`  
   
-## <a name="see-also"></a>Viz také:

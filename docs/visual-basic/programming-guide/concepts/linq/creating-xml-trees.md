@@ -2,12 +2,12 @@
 title: Vytváření stromů XML (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: e86ba12b-17de-4579-81bb-66322b84cfbe
-ms.openlocfilehash: fa7afe913c0faffca23b457ce58755f1db55400c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f22dcb111b3c6da01fa60b3ea918b91cb89031b3
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54630941"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58819187"
 ---
 # <a name="creating-xml-trees-visual-basic"></a>Vytváření stromů XML (Visual Basic)
 Jeden z nejčastějších úloh XML je sestavením stromu XML. Tato část popisuje několik způsobů, jak je vytvářet.  
@@ -25,4 +25,5 @@ Jeden z nejčastějších úloh XML je sestavením stromu XML. Tato část popis
 |[Platný obsah objektů XElement a XDocument](../../../../visual-basic/programming-guide/concepts/linq/valid-content-of-xelement-and-xdocument-objects.md)|Popisuje platné argumenty, které mohou být předány konstruktorů a metod, které se používají k přidání obsahu do prvků a dokumenty.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Průvodce programováním (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/programming-guide-linq-to-xml.md)

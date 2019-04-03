@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC31393
 ms.assetid: 2963cf3f-c527-4aa7-b67c-ee80b6d23186
-ms.openlocfilehash: 6d366ec750ea5a4505ae5ea618e27f47406ba959
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 6d2edadc323994f7f25394321fb1aff18f7154c5
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55274009"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58824270"
 ---
 # <a name="expression-has-the-type-typename-which-is-a-restricted-type-and-cannot-be-used-to-access-members-inherited-from-object-or-valuetype"></a>Výraz má typ "\<typename >' který je omezený typ a nelze použít pro přístup ke členům zděděným z 'Object' nebo 'ValueType'
 Výraz je vyhodnocen jako typ, který nemůže být pevně určený modulem common language runtime (CLR), ale zpřístupňuje člen, který vyžaduje přetypování pomocí boxingu.  
@@ -32,4 +32,5 @@ Výraz je vyhodnocen jako typ, který nemůže být pevně určený modulem comm
 3.  Přepište příkaz tak, aby se zabránilo volání metody.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Implicitní a explicitní převody](../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)

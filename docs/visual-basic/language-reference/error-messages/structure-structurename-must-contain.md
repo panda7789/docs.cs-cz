@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC30941
 ms.assetid: 7054cc1e-bac3-4c3d-82f3-35772bd8dd3b
-ms.openlocfilehash: a8a85f4f089de9be6f2ecadac05256b30d3014b0
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 598aef3943a53ee6eb97064819c9128de1839f52
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55267453"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58813935"
 ---
 # <a name="structure-structurename-must-contain-at-least-one-instance-member-variable-or-at-least-one-instance-event-declaration-not-marked-custom"></a>Struktura '\<%{structurename/ >' musí obsahovat alespoň jednu členskou proměnnou instance nebo alespoň jednu deklaraci události instance není označena jako 'Custom'
 Definice struktury neobsahuje žádné nesdílených proměnných nebo nesdílené nevlastních událostí.  
@@ -26,6 +26,7 @@ Definice struktury neobsahuje žádné nesdílených proměnných nebo nesdílen
 -   Definujte alespoň jednu proměnnou nebo událostí, které nejsou `Shared`. Pokud definujete jen jednu událost, musí být nevlastní, jakož i nesdílené.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Struktury](../../../visual-basic/programming-guide/language-features/data-types/structures.md)
 - [Postupy: Deklarace struktury](../../../visual-basic/programming-guide/language-features/data-types/how-to-declare-a-structure.md)
 - [Příkaz Structure](../../../visual-basic/language-reference/statements/structure-statement.md)

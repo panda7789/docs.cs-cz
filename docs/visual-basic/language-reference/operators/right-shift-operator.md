@@ -10,14 +10,14 @@ helpviewer_keywords:
 - operator >>
 - right shift operators [Visual Basic]
 ms.assetid: 054dc6a6-47d9-47ef-82da-cfa2b59fbf8f
-ms.openlocfilehash: 46bc87c653742c8469ffaff1decb9549a29feaeb
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 8803dc2e25edde756958a243d429dd30c5c78bcf
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56972071"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58816964"
 ---
-# <a name="-operator-visual-basic"></a>>> – operátor (Visual Basic)
+# <a name="-operator-visual-basic"></a>>> – Operátor (Visual Basic)
 Provede aritmetický posunutí doprava bitový vzor.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -87,6 +87,7 @@ result = pattern >> amount
 -   `negresult2` je -1 (rozšířeno na bit znaménka).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Operátory bitového posunu](../../../visual-basic/language-reference/operators/bit-shift-operators.md)
 - [Operátory přiřazení](../../../visual-basic/language-reference/operators/assignment-operators.md)
 - [>>= – operátor](../../../visual-basic/language-reference/operators/right-shift-assignment-operator.md)

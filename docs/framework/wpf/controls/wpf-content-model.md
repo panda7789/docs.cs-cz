@@ -11,12 +11,12 @@ helpviewer_keywords:
 - arbitrary content classes [WPF], content model
 - ContentControl class [WPF], displaying content
 ms.assetid: 214da5ef-547a-4cf8-9b07-4aa8a0e52cdd
-ms.openlocfilehash: bd9dc7a441987b2089f0f21c81311a628ae3cdfa
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 6cbb13fdcba2cf014c4c31a5dc5b21fe2721b214
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57373085"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58816912"
 ---
 # <a name="wpf-content-model"></a>Model obsahu WPF
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] je prezentační platforma, která nabízí mnoho ovládacích prvků a typů ovládacího prvku, jejichž primárním účelem je zobrazit různé typy obsahu. Pokud chcete zjistit, který ovládací prvek použít nebo který ovládací prvek k odvození z, měli byste porozumět typy objektů, které nejlépe můžete zobrazit konkrétní ovládací prvek.  
@@ -38,9 +38,9 @@ ms.locfileid: "57373085"
 |<xref:System.Windows.Controls.ItemsControl>|Kolekci libovolného objektů.|  
 |<xref:System.Windows.Controls.HeaderedItemsControl>|Záhlaví a kolekci položek, z nichž všechny jsou libovolné objekty.|  
   
- Ovládací prvky, které dědí z těchto tříd může obsahovat stejné typu obsahu a zpracovávat obsah stejným způsobem. Následující obrázek znázorňuje jeden ovládací prvek z každé obsahu modelu, který obsahuje bitovou kopii a nějakým textem.  
+ Ovládací prvky, které dědí z těchto tříd může obsahovat stejné typu obsahu a zpracovávat obsah stejným způsobem. Následující obrázek znázorňuje jeden ovládací prvek z každý model obsahu, který obsahuje obrázek a text:  
   
- ![Button, GroupBox, Listbax, TreeViewItem](./media/controlcontentmodelimagetextinto.PNG "ControlContentModelImageTextInto")  
+ ![Snímek obrazovky zobrazující čtyři různé ovládací prvky, jeden z každé obsahu modelu.](./media/wpf-content-model/control-content-model-image-text.png)  
   
 ### <a name="controls-that-contain-a-single-arbitrary-object"></a>Ovládací prvky, které obsahují jednoho libovolného objektu  
  <xref:System.Windows.Controls.ContentControl> Třída obsahuje jediný libovolný obsah. Jeho vlastnost obsahu má <xref:System.Windows.Controls.ContentControl.Content%2A>. Následující ovládací prvky automaticky dědí z <xref:System.Windows.Controls.ContentControl> a použijte svůj model obsahu:  
@@ -85,10 +85,9 @@ ms.locfileid: "57373085"
   
 -   <xref:System.Windows.Window>  
   
- Následující obrázek znázorňuje čtyři tlačítka, jehož <xref:System.Windows.Controls.ContentControl.Content%2A> nastavený na řetězec, <xref:System.DateTime> objektu, <xref:System.Windows.Shapes.Rectangle>a <xref:System.Windows.Controls.Panel> , který obsahuje <xref:System.Windows.Shapes.Ellipse> a <xref:System.Windows.Controls.TextBlock>.  
+ Následující obrázek znázorňuje čtyři tlačítka, jehož <xref:System.Windows.Controls.ContentControl.Content%2A> nastavený na řetězec, <xref:System.DateTime> objektu, <xref:System.Windows.Shapes.Rectangle>a <xref:System.Windows.Controls.Panel> , který obsahuje <xref:System.Windows.Shapes.Ellipse> a <xref:System.Windows.Controls.TextBlock>:  
   
- ![Čtyři tlačítka](./media/controlcontentmodelbuttons.PNG "ControlContentModelButtons")  
-Čtyři tlačítka, které mají různé typy obsahu  
+ ![Snímek obrazovky zobrazující čtyři tlačítka s různými typy obsahu.](./media/wpf-content-model/control-content-model-buttons.png)  
   
  Příklad toho, jak nastavit <xref:System.Windows.Controls.ContentControl.Content%2A> vlastnost, naleznete v tématu <xref:System.Windows.Controls.ContentControl>.  
   
@@ -105,8 +104,7 @@ ms.locfileid: "57373085"
   
  Následující obrázek ukazuje dva <xref:System.Windows.Controls.TabItem> objekty. První <xref:System.Windows.Controls.TabItem> má <xref:System.Windows.UIElement> objektů, jako <xref:System.Windows.Controls.HeaderedContentControl.Header%2A> a <xref:System.Windows.Controls.ContentControl.Content%2A>. <xref:System.Windows.Controls.HeaderedContentControl.Header%2A> Je nastavena na <xref:System.Windows.Controls.StackPanel> , který obsahuje <xref:System.Windows.Shapes.Ellipse> a <xref:System.Windows.Controls.TextBlock>. <xref:System.Windows.Controls.ContentControl.Content%2A> Je nastavena na <xref:System.Windows.Controls.StackPanel> , která obsahuje <xref:System.Windows.Controls.TextBlock> a <xref:System.Windows.Controls.Label>. Druhá <xref:System.Windows.Controls.TabItem> má řetězec <xref:System.Windows.Controls.HeaderedContentControl.Header%2A> a <xref:System.Windows.Controls.TextBlock> v <xref:System.Windows.Controls.ContentControl.Content%2A>.  
   
- ![TabControl](./media/controlcontentmodelteabitem.PNG "ControlContentModelTeabItem")  
-TabControl –, který používá různé typy ve vlastnosti hlavička  
+ ![TabControl –, který používá různé typy ve vlastnosti záhlaví.](./media/wpf-content-model/control-content-model-tab.png)  
   
  Příklad toho, jak vytvořit <xref:System.Windows.Controls.TabItem> objekty, najdete <xref:System.Windows.Controls.HeaderedContentControl>.  
   
@@ -147,8 +145,7 @@ TabControl –, který používá různé typy ve vlastnosti hlavička
   
 -   A <xref:System.Windows.Controls.Panel> , který obsahuje <xref:System.Windows.Shapes.Ellipse> a <xref:System.Windows.Controls.TextBlock>.  
   
- ![ListBox – čtyři typy obsahu](./media/controlcontentmodellistbox2.PNG "ControlContentModelListBox2")  
-ListBox –, který obsahuje více typů objektů  
+ ![Snímek obrazovky zobrazující prvku ListBox s čtyři typy obsahu.](./media/wpf-content-model/control-content-model-listbox.png)  
   
 ### <a name="controls-that-contain-a-header-and-a-collection-of-arbitrary-objects"></a>Ovládací prvky, které obsahují záhlaví a kolekce objektů libovolného  
  <xref:System.Windows.Controls.HeaderedItemsControl> Třída dědí z <xref:System.Windows.Controls.ItemsControl> a může obsahovat několik položek, jako jsou řetězce, objekty, nebo další prvky a záhlaví. Dědí <xref:System.Windows.Controls.ItemsControl> obsah vlastnosti <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>, a <xref:System.Windows.Controls.ItemsControl.Items%2A>, a definuje <xref:System.Windows.Controls.HeaderedItemsControl.Header%2A> vlastnost, která může být libovolný objekt.  

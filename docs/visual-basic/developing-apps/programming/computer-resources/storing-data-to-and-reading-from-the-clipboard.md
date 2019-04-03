@@ -9,12 +9,12 @@ helpviewer_keywords:
 - data [Visual Basic], Clipboard
 - reading data, from Clipboard
 ms.assetid: f690119a-4378-4f7d-b20e-d9377ef49496
-ms.openlocfilehash: cc39c501520f8d25d01917114553647621438750
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 19d0fcafb76c40a00939de59968dfaf2e6bd683c
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56977705"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58816876"
 ---
 # <a name="storing-data-to-and-reading-from-the-clipboard-visual-basic"></a>Ukládání dat do schránky a čtení ze schránky (Visual Basic)
 Schránky slouží k ukládání dat, jako je například textu a obrázků. Protože schránky sdílí všech aktivních procesů, lze použít k přenosu dat mezi nimi. `My.Computer.Clipboard` Objekt umožňuje snadno přistupovat do schránky a číst z a do ní zapisovat.  
@@ -69,6 +69,7 @@ Schránky slouží k ukládání dat, jako je například textu a obrázků. Pro
 >  Protože schránky je přístupný ostatním uživatelům, nepoužívejte ho pro ukládání citlivých informací, jako jsou hesla nebo důvěrná data.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy>
 - <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.GetAudioStream%2A>
 - <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.SetDataObject%2A>
