@@ -11,48 +11,48 @@ helpviewer_keywords:
 ms.assetid: 6ddd7866-9804-4571-84de-83f5cc017a5a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 23079343244c8471f9ae5ff0a7613d0d8a84242b
-ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
+ms.openlocfilehash: 2fc265e4a7ceec291d645346bb012e2ed4600d22
+ms.sourcegitcommit: 5c2176883dc3107445702724a7caa7ac2f6cb0d3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56219734"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58890381"
 ---
-# <a name="marshaling-a-delegate-as-a-callback-method"></a><span data-ttu-id="87774-102">Zařazování delegáta jako metody zpětného volání</span><span class="sxs-lookup"><span data-stu-id="87774-102">Marshaling a Delegate as a Callback Method</span></span>
-<span data-ttu-id="87774-103">Tato ukázka předvádí, jak předat delegáti nespravovaná funkce očekává ukazatele na funkce.</span><span class="sxs-lookup"><span data-stu-id="87774-103">This sample demonstrates how to pass delegates to an unmanaged function expecting function pointers.</span></span> <span data-ttu-id="87774-104">Delegát je třída, která může obsahovat odkaz na metodu a je ekvivalentní ukazatele na funkci zajišťující bezpečnost typů nebo zpětného volání funkce.</span><span class="sxs-lookup"><span data-stu-id="87774-104">A delegate is a class that can hold a reference to a method and is equivalent to a type-safe function pointer or a callback function.</span></span>  
-  
+# <a name="marshaling-a-delegate-as-a-callback-method"></a><span data-ttu-id="9bf6b-102">Zařazování delegáta jako metody zpětného volání</span><span class="sxs-lookup"><span data-stu-id="9bf6b-102">Marshaling a Delegate as a Callback Method</span></span>
+<span data-ttu-id="9bf6b-103">Tato ukázka předvádí, jak předat delegáti nespravovaná funkce očekává ukazatele na funkce.</span><span class="sxs-lookup"><span data-stu-id="9bf6b-103">This sample demonstrates how to pass delegates to an unmanaged function expecting function pointers.</span></span> <span data-ttu-id="9bf6b-104">Delegát je třída, která může obsahovat odkaz na metodu a je ekvivalentní ukazatele na funkci zajišťující bezpečnost typů nebo zpětného volání funkce.</span><span class="sxs-lookup"><span data-stu-id="9bf6b-104">A delegate is a class that can hold a reference to a method and is equivalent to a type-safe function pointer or a callback function.</span></span>
+
 > [!NOTE]
->  <span data-ttu-id="87774-105">Při použití delegáta uvnitř volání, modul common language runtime chrání delegáta je uvolněna z paměti po dobu trvání tohoto volání.</span><span class="sxs-lookup"><span data-stu-id="87774-105">When you use a delegate inside a call, the common language runtime protects the delegate from being garbage collected for the duration of that call.</span></span> <span data-ttu-id="87774-106">Nicméně pokud nespravovaná funkce ukládá delegáta pro použití po dokončení volání, je nutné ručně zabránit uvolňování paměti až do dokončení nespravovanou funkci s delegátem.</span><span class="sxs-lookup"><span data-stu-id="87774-106">However, if the unmanaged function stores the delegate to use after the call completes, you must manually prevent garbage collection until the unmanaged function finishes with the delegate.</span></span> <span data-ttu-id="87774-107">Další informace najdete v tématu [handleref – ukázka](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/hc662t8k(v=vs.100)) a [GCHandle – ukázka](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/44ey4b32(v=vs.100)).</span><span class="sxs-lookup"><span data-stu-id="87774-107">For more information, see the [HandleRef Sample](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/hc662t8k(v=vs.100)) and [GCHandle Sample](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/44ey4b32(v=vs.100)).</span></span>  
-  
- <span data-ttu-id="87774-108">Ukázka zpětného volání používá následující nespravované funkce zobrazené s původní deklarací funkce:</span><span class="sxs-lookup"><span data-stu-id="87774-108">The Callback sample uses the following unmanaged functions, shown with their original function declaration:</span></span>  
-  
--   <span data-ttu-id="87774-109">**TestCallBack** exportovaná z knihovny PinvokeLib.dll.</span><span class="sxs-lookup"><span data-stu-id="87774-109">**TestCallBack** exported from PinvokeLib.dll.</span></span>  
-  
-    ```  
-    void TestCallBack(FPTR pf, int value);  
-    ```  
-  
--   <span data-ttu-id="87774-110">**TestCallBack2** exportovaná z knihovny PinvokeLib.dll.</span><span class="sxs-lookup"><span data-stu-id="87774-110">**TestCallBack2** exported from PinvokeLib.dll.</span></span>  
-  
-    ```  
-    void TestCallBack2(FPTR2 pf2, char* value);  
-    ```  
-  
- <span data-ttu-id="87774-111">[Knihovny PinvokeLib.dll](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/as6wyhwt(v=vs.100)) je vlastní nespravovaná knihovna, která obsahuje implementace dříve uvedených funkcí.</span><span class="sxs-lookup"><span data-stu-id="87774-111">[PinvokeLib.dll](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/as6wyhwt(v=vs.100)) is a custom unmanaged library that contains an implementation for the previously listed functions.</span></span>  
-  
- <span data-ttu-id="87774-112">V této ukázce `LibWrap` třída obsahuje spravované prototypy pro `TestCallBack` a `TestCallBack2` metody.</span><span class="sxs-lookup"><span data-stu-id="87774-112">In this sample, the `LibWrap` class contains managed prototypes for the `TestCallBack` and `TestCallBack2` methods.</span></span> <span data-ttu-id="87774-113">Obě metody předat jako parametr delegáta funkce zpětného volání.</span><span class="sxs-lookup"><span data-stu-id="87774-113">Both methods pass a delegate to a callback function as a parameter.</span></span> <span data-ttu-id="87774-114">Signatura delegáta musí odpovídat signatuře metody, na které odkazuje.</span><span class="sxs-lookup"><span data-stu-id="87774-114">The signature of the delegate must match the signature of the method it references.</span></span> <span data-ttu-id="87774-115">Například `FPtr` a `FPtr2` delegáty mají podpisy, které jsou stejné jako `DoSomething` a `DoSomething2` metody.</span><span class="sxs-lookup"><span data-stu-id="87774-115">For example, the `FPtr` and `FPtr2` delegates have signatures that are identical to the `DoSomething` and `DoSomething2` methods.</span></span>  
-  
-## <a name="declaring-prototypes"></a><span data-ttu-id="87774-116">Deklarace prototypů</span><span class="sxs-lookup"><span data-stu-id="87774-116">Declaring Prototypes</span></span>  
- [!code-cpp[Conceptual.Interop.Marshaling#37](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.interop.marshaling/cpp/callback.cpp#37)]
- [!code-csharp[Conceptual.Interop.Marshaling#37](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.interop.marshaling/cs/callback.cs#37)]
- [!code-vb[Conceptual.Interop.Marshaling#37](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.interop.marshaling/vb/callback.vb#37)]  
-  
-## <a name="calling-functions"></a><span data-ttu-id="87774-117">Volání funkcí</span><span class="sxs-lookup"><span data-stu-id="87774-117">Calling Functions</span></span>  
- [!code-cpp[Conceptual.Interop.Marshaling#38](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.interop.marshaling/cpp/callback.cpp#38)]
- [!code-csharp[Conceptual.Interop.Marshaling#38](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.interop.marshaling/cs/callback.cs#38)]
- [!code-vb[Conceptual.Interop.Marshaling#38](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.interop.marshaling/vb/callback.vb#38)]  
-  
-## <a name="see-also"></a><span data-ttu-id="87774-118">Viz také:</span><span class="sxs-lookup"><span data-stu-id="87774-118">See also</span></span>
-- <span data-ttu-id="87774-119">[Různé ukázky zařazování](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ss9sb93t(v=vs.100))</span><span class="sxs-lookup"><span data-stu-id="87774-119">[Miscellaneous Marshaling Samples](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ss9sb93t(v=vs.100))</span></span>
-- <span data-ttu-id="87774-120">[Datové typy vyvolání platformy](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ac7ay120(v=vs.100))</span><span class="sxs-lookup"><span data-stu-id="87774-120">[Platform Invoke Data Types](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ac7ay120(v=vs.100))</span></span>
-- [<span data-ttu-id="87774-121">Vytváření prototypů ve spravovaném kódu</span><span class="sxs-lookup"><span data-stu-id="87774-121">Creating Prototypes in Managed Code</span></span>](creating-prototypes-in-managed-code.md)
+>  <span data-ttu-id="9bf6b-105">Při použití delegáta uvnitř volání, modul common language runtime chrání delegáta je uvolněna z paměti po dobu trvání tohoto volání.</span><span class="sxs-lookup"><span data-stu-id="9bf6b-105">When you use a delegate inside a call, the common language runtime protects the delegate from being garbage collected for the duration of that call.</span></span> <span data-ttu-id="9bf6b-106">Nicméně pokud nespravovaná funkce ukládá delegáta pro použití po dokončení volání, je nutné ručně zabránit uvolňování paměti až do dokončení nespravovanou funkci s delegátem.</span><span class="sxs-lookup"><span data-stu-id="9bf6b-106">However, if the unmanaged function stores the delegate to use after the call completes, you must manually prevent garbage collection until the unmanaged function finishes with the delegate.</span></span> <span data-ttu-id="9bf6b-107">Další informace najdete v tématu [handleref – ukázka](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/hc662t8k(v=vs.100)) a [GCHandle – ukázka](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/44ey4b32(v=vs.100)).</span><span class="sxs-lookup"><span data-stu-id="9bf6b-107">For more information, see the [HandleRef Sample](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/hc662t8k(v=vs.100)) and [GCHandle Sample](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/44ey4b32(v=vs.100)).</span></span>
+
+<span data-ttu-id="9bf6b-108">Ukázka zpětného volání používá následující nespravované funkce zobrazené s původní deklarací funkce:</span><span class="sxs-lookup"><span data-stu-id="9bf6b-108">The Callback sample uses the following unmanaged functions, shown with their original function declaration:</span></span>
+
+-   `TestCallBack` <span data-ttu-id="9bf6b-109">exportovaná z knihovny PinvokeLib.dll.</span><span class="sxs-lookup"><span data-stu-id="9bf6b-109">exported from PinvokeLib.dll.</span></span>
+
+    ```cpp
+    void TestCallBack(FPTR pf, int value);
+    ```
+
+-   `TestCallBack2` <span data-ttu-id="9bf6b-110">exportovaná z knihovny PinvokeLib.dll.</span><span class="sxs-lookup"><span data-stu-id="9bf6b-110">exported from PinvokeLib.dll.</span></span>
+
+    ```cpp
+    void TestCallBack2(FPTR2 pf2, char* value);
+    ```
+
+<span data-ttu-id="9bf6b-111">[Knihovny PinvokeLib.dll](marshaling-data-with-platform-invoke.md#pinvokelibdll) je vlastní nespravovaná knihovna, která obsahuje implementace dříve uvedených funkcí.</span><span class="sxs-lookup"><span data-stu-id="9bf6b-111">[PinvokeLib.dll](marshaling-data-with-platform-invoke.md#pinvokelibdll) is a custom unmanaged library that contains an implementation for the previously listed functions.</span></span>
+
+<span data-ttu-id="9bf6b-112">V této ukázce `LibWrap` třída obsahuje spravované prototypy pro `TestCallBack` a `TestCallBack2` metody.</span><span class="sxs-lookup"><span data-stu-id="9bf6b-112">In this sample, the `LibWrap` class contains managed prototypes for the `TestCallBack` and `TestCallBack2` methods.</span></span> <span data-ttu-id="9bf6b-113">Obě metody předat jako parametr delegáta funkce zpětného volání.</span><span class="sxs-lookup"><span data-stu-id="9bf6b-113">Both methods pass a delegate to a callback function as a parameter.</span></span> <span data-ttu-id="9bf6b-114">Signatura delegáta musí odpovídat signatuře metody, na které odkazuje.</span><span class="sxs-lookup"><span data-stu-id="9bf6b-114">The signature of the delegate must match the signature of the method it references.</span></span> <span data-ttu-id="9bf6b-115">Například `FPtr` a `FPtr2` delegáty mají podpisy, které jsou stejné jako `DoSomething` a `DoSomething2` metody.</span><span class="sxs-lookup"><span data-stu-id="9bf6b-115">For example, the `FPtr` and `FPtr2` delegates have signatures that are identical to the `DoSomething` and `DoSomething2` methods.</span></span>
+
+## <a name="declaring-prototypes"></a><span data-ttu-id="9bf6b-116">Deklarace prototypů</span><span class="sxs-lookup"><span data-stu-id="9bf6b-116">Declaring Prototypes</span></span>
+[!code-cpp[Conceptual.Interop.Marshaling#37](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.interop.marshaling/cpp/callback.cpp#37)]
+[!code-csharp[Conceptual.Interop.Marshaling#37](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.interop.marshaling/cs/callback.cs#37)]
+[!code-vb[Conceptual.Interop.Marshaling#37](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.interop.marshaling/vb/callback.vb#37)]
+
+## <a name="calling-functions"></a><span data-ttu-id="9bf6b-117">Volání funkcí</span><span class="sxs-lookup"><span data-stu-id="9bf6b-117">Calling Functions</span></span>
+[!code-cpp[Conceptual.Interop.Marshaling#38](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.interop.marshaling/cpp/callback.cpp#38)]
+[!code-csharp[Conceptual.Interop.Marshaling#38](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.interop.marshaling/cs/callback.cs#38)]
+[!code-vb[Conceptual.Interop.Marshaling#38](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.interop.marshaling/vb/callback.vb#38)]
+
+## <a name="see-also"></a><span data-ttu-id="9bf6b-118">Viz také:</span><span class="sxs-lookup"><span data-stu-id="9bf6b-118">See also</span></span>
+- [<span data-ttu-id="9bf6b-119">Různé ukázky zařazování</span><span class="sxs-lookup"><span data-stu-id="9bf6b-119">Miscellaneous Marshaling Samples</span></span>](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ss9sb93t(v=vs.100))
+- [<span data-ttu-id="9bf6b-120">Datové typy vyvolání platformy</span><span class="sxs-lookup"><span data-stu-id="9bf6b-120">Platform Invoke Data Types</span></span>](marshaling-data-with-platform-invoke.md#platform-invoke-data-types)
+- [<span data-ttu-id="9bf6b-121">Vytváření prototypů ve spravovaném kódu</span><span class="sxs-lookup"><span data-stu-id="9bf6b-121">Creating Prototypes in Managed Code</span></span>](creating-prototypes-in-managed-code.md)
