@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC40007
 ms.assetid: 692ccf76-5715-4f11-a972-84cf9de30bc1
-ms.openlocfilehash: bc75b01532ffb112622d7f9bc837490c627883b3
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: ab45278b2e1199282e3066c34828b9bda716e162
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55270381"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58813168"
 ---
 # <a name="default-property-propertyname1-conflicts-with-default-property-propertyname2-in-classname-and-so-should-be-declared-shadows"></a>Výchozí vlastnost '\<propertyname1 >' je v konfliktu s výchozí vlastností '\<Název_vlastnosti2 >' v '\<classname > "a je třeba ji deklarovat 'Shadows'
 Vlastnost je deklarována se stejným názvem jako vlastnost definována v základní třídě. V takovém případě by měl stínové vlastnosti v této třídě vlastnost základní třídy.  
@@ -26,5 +26,6 @@ Vlastnost je deklarována se stejným názvem jako vlastnost definována v zákl
 -   Přidat `Shadows` – klíčové slovo na deklarace, nebo změňte název vlastnosti deklarované.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)
 - [Stínění v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md)
