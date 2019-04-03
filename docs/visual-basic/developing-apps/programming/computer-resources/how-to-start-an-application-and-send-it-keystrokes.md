@@ -7,12 +7,12 @@ helpviewer_keywords:
 - processes, starting and sending keystrokes
 - SendKeys.SendWait examples
 ms.assetid: f1303184-fce4-44fb-88b4-aac5f42d5d77
-ms.openlocfilehash: f130429e5b0964dc8680441fb83cb06d45904a69
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 9519fd85177d5d2adf97b54652c19330954edadf
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56966200"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58815963"
 ---
 # <a name="how-to-start-an-application-and-send-it-keystrokes-visual-basic"></a>Postupy: Spusťte aplikaci a odeslat stisknutí kláves (Visual Basic)
 Tento příklad používá `Shell` funkce a spusťte tak aplikaci kalkulačky a pak zasláním klávesových úhozů pomocí součin dvou čísel `My.Computer.Keyboard.SendKeys` metody.  
@@ -27,6 +27,7 @@ Tento příklad používá `Shell` funkce a spusťte tak aplikaci kalkulačky a 
  Volání `Shell` funkce vyžaduje úplný vztah důvěryhodnosti (<xref:System.Security.SecurityException> třídy).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:Microsoft.VisualBasic.Devices.Keyboard.SendKeys%2A>
 - <xref:Microsoft.VisualBasic.Interaction.Shell%2A>
 - <xref:Microsoft.VisualBasic.Interaction.AppActivate%2A>

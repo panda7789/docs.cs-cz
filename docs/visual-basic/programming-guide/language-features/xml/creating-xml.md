@@ -6,12 +6,12 @@ helpviewer_keywords:
 - LINQ to XML [Visual Basic], creating XML
 - XML literals [Visual Basic], creating
 ms.assetid: 8ae29ec5-e5fb-4137-9df5-60a288df7045
-ms.openlocfilehash: a9131e62ad0a4f55a88c15a8e0efa9189026eca3
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d847f589bc47f8ab3d6691666bbd879e795db0c6
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54615478"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58813038"
 ---
 # <a name="creating-xml-in-visual-basic"></a>Vytvoření XML v jazyce Visual Basic
 Visual Basic umožňuje používat *literály XML* přímo v kódu. Syntaxe XML literál představuje [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] objekty a to se podobá syntaxi XML 1.0. To usnadňuje vytvořit prvky, dokumenty a fragmenty XML prostřednictvím kódu programu, protože váš kód má stejnou strukturu jako poslední XML.  
@@ -29,4 +29,5 @@ Visual Basic umožňuje používat *literály XML* přímo v kódu. Syntaxe XML 
 |[Názvy deklarovaných XML elementů a atributů](../../../../visual-basic/programming-guide/language-features/xml/names-of-declared-xml-elements-and-attributes.md)|Popisuje pravidla pro vytváření názvů XML elementů a atributů.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [XML](../../../../visual-basic/programming-guide/language-features/xml/index.md)
