@@ -1,25 +1,27 @@
 ---
-title: Element <issuerChannelBehaviors>
+title: <issuerChannelBehaviors> Prvek
 ms.date: 03/30/2017
 ms.assetid: f7378673-8e9b-45b2-98d1-cf5dccdd8c40
-ms.openlocfilehash: 3386a287d577681b67bd3ad54a75b0276e29da1f
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 7cbd50daa82b0ca937a1bba93786545898b03c8b
+ms.sourcegitcommit: 5c2176883dc3107445702724a7caa7ac2f6cb0d3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57357245"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58890472"
 ---
 # <a name="issuerchannelbehaviors-element"></a>\<issuerChannelBehaviors> Element
 
 Obsahuje kolekci chování koncového bodu klienta Windows Communication Foundation (WCF) (definované v konfiguraci) se použije při komunikaci s určeným službám tokenu služby. Chování definované nemůže obsahovat [ \<clientCredentials >](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md) elementy.
 
-\<system.ServiceModel>\
-\<chování > \
-názvy endpointBehaviors section\
-\<chování > \
-\<clientCredentials>\
-\<issuedToken>\
-\<issuerChannelBehaviors>
+```xml
+<system.ServiceModel>
+  <behaviors>
+    <endpointBehaviors>
+      <behavior>
+        <clientCredentials>
+          <issuedToken>
+            <issuerChannelBehaviors>
+```
 
 ## <a name="syntax"></a>Syntaxe
 

@@ -4,12 +4,12 @@ description: Zjistěte, jak vytvářet a ladit vaši první aplikaci .NET Core v
 author: kendrahavens
 ms.date: 12/05/2018
 ms.custom: seodec18
-ms.openlocfilehash: 8df26651a7b35e5b6c9bdcb54d09c97525e12426
-ms.sourcegitcommit: 5d9f4b805787f890ca6e0dc7ea30a43018bc9cbb
+ms.openlocfilehash: d91427197662d61c1c3ffc242de9b1128b81b9c6
+ms.sourcegitcommit: 5c2176883dc3107445702724a7caa7ac2f6cb0d3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57788333"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58890550"
 ---
 # <a name="get-started-with-c-and-visual-studio-code"></a>Začínáme s C# a Visual Studio Code
 
@@ -91,14 +91,14 @@ Můžete také zhlédnout krátké Výukové video o další pomoc instalační 
 ## <a name="add-a-class"></a>Přidat třídu
 
 1. Vyberte a přidejte nové třídy, klikněte pravým tlačítkem v Průzkumníku VSCode **nový soubor**. To přidá nový soubor do složky, otevřeného ve VSCode.
-2. Název souboru `Class1.cs`. Musíte ji uložit `.cs` rozšíření na straně, chcete-li rozpoznán jako soubor csharp.
+2. Název souboru `MyClass.cs`. Musíte ji uložit `.cs` rozšíření na straně, chcete-li rozpoznán jako soubor csharp.
 3. Přidejte kód uvedený níže pro vytvoření vaší první třídy. Ujistěte se, že obsahují správný obor názvů, takže můžete na něj mohli odkazovat z vaší `Program.cs` souboru.
 ``` csharp
 using System;
 
 namespace HelloWorld
 {
-    public class Class1
+    public class MyClass
     {
         public string ReturnMessage()
         {
@@ -119,7 +119,7 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            Class1 c1 = new Class1();
+            MyClass c1 = new MyClass();
             Console.WriteLine($"Hello World! {c1.ReturnMessage()}");
         }
     }

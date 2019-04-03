@@ -2,12 +2,12 @@
 title: Informace o volajícím
 description: Popisuje způsob použití atributů Argument informace o volajícím získat informace o volajícím z metody.
 ms.date: 04/25/2017
-ms.openlocfilehash: 9c6b2a92a15e12d016a153b401f166c8fd1efe93
-ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
+ms.openlocfilehash: fd9ce204193ae7402a2e8cf3440cb831ac446af0
+ms.sourcegitcommit: 5c2176883dc3107445702724a7caa7ac2f6cb0d3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53613814"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58890303"
 ---
 # <a name="caller-information"></a>Informace o volajícím
 
@@ -15,7 +15,7 @@ Pomocí atributů Informace o volajícím můžete získat informace o volajíc�
 
 Pro získání těchto informací můžete použít atributy, které jsou použity na volitelné parametry, z nichž každý má výchozí hodnotu. V následující tabulce jsou uvedeny atributy informace o volajícím, které jsou definovány v [System.Runtime.CompilerServices](/dotnet/api/system.runtime.compilerservices) obor názvů:
 
-|Atribut|Popis|Typ|
+|Atribut|Popis|Type|
 |---------|-----------|----|
 |[CallerFilePath](/dotnet/api/system.runtime.compilerservices.callerfilepathattribute)|Úplná cesta zdrojového souboru, který obsahuje volajícího. Toto je cesta k souboru v době kompilace.|`String`
 |[CallerLineNumber](/dotnet/api/system.runtime.compilerservices.callerlinenumberattribute)|Číslo řádku ve zdrojovém souboru, ve kterém je volána metoda.|`Integer`|
@@ -30,9 +30,9 @@ open System.Diagnostics
 open System.Runtime.CompilerServices
 
 type Tracer() =
-    member __.DoTrace(msg: string,
+    member __.DoTrace(message: string,
                       [<CallerMemberName>] ?memberName: string,
-                      [<CallerFilePath>] ?path: string
+                      [<CallerFilePath>] ?path: string,
                       [<CallerLineNumber>] ?line: int) =
         Trace.WriteLine(sprintf "Message: %s" message)
         match (memberName, path, line) with

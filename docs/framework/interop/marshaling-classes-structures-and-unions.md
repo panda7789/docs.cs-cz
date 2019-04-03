@@ -20,19 +20,19 @@ helpviewer_keywords:
 ms.assetid: 027832a2-9b43-4fd9-9b45-7f4196261a4e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3a4461d14299264a35f36133480cb11709c346ce
-ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
+ms.openlocfilehash: c481b6889c1f10124465a4e851adfb25a1ba2eff
+ms.sourcegitcommit: 5c2176883dc3107445702724a7caa7ac2f6cb0d3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56221274"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58890290"
 ---
 # <a name="marshaling-classes-structures-and-unions"></a>Zařazování tříd, struktur a sjednocení
 Třídy a struktury jsou podobné jako u rozhraní .NET Framework. Můžete mít pole, vlastnosti a události. Můžou také mít statické a nestatické metody. Jeden velký rozdíl je, že struktury jsou typy hodnot a třídy jsou odkazové typy.  
   
  V následující tabulce jsou uvedeny možnosti zařazování pro třídy, struktury a sjednocení; Popisuje jejich použití; a získáte odkaz na odpovídající platformu vyvolání vzorku.  
   
-|Typ|Popis|Ukázka|  
+|Type|Popis|Ukázka|  
 |----------|-----------------|------------|  
 |Třída podle hodnoty.|Předá třída s atributem členů celého čísla jako vstupně-výstupní parametr, jako spravované případ.|SysTime – ukázka|  
 |Struktura podle hodnoty.|Předává struktury jako parametry in.|Ukázka struktur|  
@@ -68,7 +68,7 @@ Třídy a struktury jsou podobné jako u rozhraní .NET Framework. Můžete mít
     void TestArrayInStruct( MYARRAYSTRUCT* pStruct );  
     ```  
   
- [Knihovny PinvokeLib.dll](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/as6wyhwt(v=vs.100)) je vlastní nespravovaná knihovna, která obsahuje implementace dříve uvedených funkcí a čtyři struktury: **MYPERSON**, **MYPERSON2**, **MYPERSON3**, a **MYARRAYSTRUCT**. Tyto struktury obsahují následující prvky:  
+ [Knihovny PinvokeLib.dll](marshaling-data-with-platform-invoke.md#pinvokelibdll) je vlastní nespravovaná knihovna, která obsahuje implementace dříve uvedených funkcí a čtyři struktury: **MYPERSON**, **MYPERSON2**, **MYPERSON3**, a **MYARRAYSTRUCT**. Tyto struktury obsahují následující prvky:  
   
 ```  
 typedef struct _MYPERSON  
@@ -182,7 +182,7 @@ typedef struct _WIN32_FIND_DATA
     void TestUnion(MYUNION u, int type);  
     ```  
   
- [Knihovny PinvokeLib.dll](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/as6wyhwt(v=vs.100)) je vlastní nespravovaná knihovna, která obsahuje implementace dříve uvedených funkcí a dvě spojení **MYUNION** a **MYUNION2**. Sjednocení obsahovat následující prvky:  
+ [Knihovny PinvokeLib.dll](marshaling-data-with-platform-invoke.md#pinvokelibdll) je vlastní nespravovaná knihovna, která obsahuje implementace dříve uvedených funkcí a dvě spojení **MYUNION** a **MYUNION2**. Sjednocení obsahovat následující prvky:  
   
 ```  
 union MYUNION  
@@ -254,7 +254,7 @@ typedef struct _SYSTEMTIME {
   
  Tato ukázka předvádí, jak volat nativní funkce pomocí <xref:System.Runtime.InteropServices.Marshal> třídy a pomocí nezabezpečený kód.  
   
- Tato ukázka používá funkce obálky, a vyvolá platformu podle [knihovny PinvokeLib.dll](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/as6wyhwt(v=vs.100)), k dispozici také ve zdrojových souborech. Používá `TestOutArrayOfStructs` funkce a `MYSTRSTRUCT2` struktury. Struktura obsahuje následující prvky:  
+ Tato ukázka používá funkce obálky, a vyvolá platformu podle [knihovny PinvokeLib.dll](marshaling-data-with-platform-invoke.md#pinvokelibdll), k dispozici také ve zdrojových souborech. Používá `TestOutArrayOfStructs` funkce a `MYSTRSTRUCT2` struktury. Struktura obsahuje následující prvky:  
   
 ```  
 typedef struct _MYSTRSTRUCT2  

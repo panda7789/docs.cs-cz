@@ -6,18 +6,18 @@ helpviewer_keywords:
 - My namespace
 - My namespace [Visual Basic], extending
 ms.assetid: 06ca80b9-1192-4eb5-8537-8ef5edfb9be0
-ms.openlocfilehash: 89a9a988bab62cb77e3e5a5075fa01bdbb11f4c0
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
-ms.translationtype: HT
+ms.openlocfilehash: d7fca92f541ffeca7a6e8267260d3b665271e90a
+ms.sourcegitcommit: 5c2176883dc3107445702724a7caa7ac2f6cb0d3
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58820942"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58890394"
 ---
 # <a name="customizing-projects-and-extending-my-with-visual-basic"></a>Přizpůsobení projektů a rozšíření oboru názvů My v jazyce Visual Basic
 Můžete přizpůsobit šablony projektu k poskytnutí dalších `My` objekty. To usnadňuje vyhledání a používání vašich objektů jinými vývojáři.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Rozšíření My Namespace v jazyce Visual Basic](../../../visual-basic/developing-apps/customizing-extending-my/extending-the-my-namespace.md)  
+ [Rozšíření oboru názvů My v jazyce Visual Basic](../../../visual-basic/developing-apps/customizing-extending-my/extending-the-my-namespace.md)  
  Popisuje, jak přidat vlastní členy a hodnoty `My` oboru názvů v jazyce Visual Basic.  
   
  [Balení a nasazení vlastních rozšíření oboru názvů My](../../../visual-basic/developing-apps/customizing-extending-my/packaging-and-deploying-custom-my-extensions.md)  
@@ -27,7 +27,7 @@ Můžete přizpůsobit šablony projektu k poskytnutí dalších `My` objekty. T
  Popisuje, jak zadat vlastní rozšíření modelu aplikace tak, že přepíšete členy <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase> třídy.  
   
  [Přizpůsobení výběru objektů dostupných v oboru názvů My](../../../visual-basic/developing-apps/customizing-extending-my/customizing-which-objects-are-available-in-my.md)  
- Popisuje, jak určit, které `My` objekty jsou povoleny nastavením váš projekt _MYTYPE podmíněné kompilace.  
+ Popisuje, jak určit, které `My` objekty jsou povolené tak, že nastavíte váš projekt \_MYTYPE Konstanta podmíněné kompilace.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Vývoj s použitím oboru názvů My](../../../visual-basic/developing-apps/development-with-my/index.md)  
@@ -47,4 +47,4 @@ Můžete přizpůsobit šablony projektu k poskytnutí dalších `My` objekty. T
   
 ## <a name="see-also"></a>Viz také:
 
-- [Vývoj aplikací v jazyce Visual Basic](../../../visual-basic/developing-apps/index.md)
+- [Vývoj aplikací pomocí jazyka Visual Basic](../../../visual-basic/developing-apps/index.md)
