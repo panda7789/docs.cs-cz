@@ -2,12 +2,12 @@
 title: Koncepty a terminologie (funkční transformace) (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 24fd244d-ebae-4721-8858-89bb544aea0b
-ms.openlocfilehash: e98e24bb60dd2a5b6e84195120429fac0b8832e9
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c6308185b39651095482dca434ce25d717bd5e6b
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54651861"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58820799"
 ---
 # <a name="concepts-and-terminology-functional-transformation-visual-basic"></a>Koncepty a terminologie (funkční transformace) (Visual Basic)
 Toto téma představuje koncepty a terminologie čistě funkční transformace. Funkční transformace přístup k transformaci dat vrací kód, který je často rychlejší program, více výrazovými možnostmi a jednodušší vyladit a udržovat než tradiční, imperativní programování.  
@@ -72,5 +72,6 @@ Toto téma představuje koncepty a terminologie čistě funkční transformace. 
  Tyto funkce jazyka se použije v ukázky kódu v celé této části.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Úvod k čistě funkčním transformacím (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/introduction-to-pure-functional-transformations.md)
 - [Funkční programování vs. Imperativní programování (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/functional-programming-vs-imperative-programming.md)

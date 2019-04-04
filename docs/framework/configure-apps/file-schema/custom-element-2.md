@@ -42,7 +42,7 @@ Definuje nastavení pro vlastní konfigurační oddíly funkce, které používa
 
 ## <a name="remarks"></a>Poznámky
 
- **\<SectionName >** prvek je prvek vlastní, určené  **\<části >** značku  **\<configSections >** elementu.
+ **\<SectionName>** prvek je prvek vlastní, určené **\<části>** značku **\<configSections>** elementu.
 
 V následující tabulce jsou uvedeny typ objektu ConfigurationSettings.GetConfig metoda vrátí pro každou obslužné rutiny konfiguračního oddílu:
 

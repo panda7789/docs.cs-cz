@@ -13,12 +13,12 @@ helpviewer_keywords:
 - Visual Basic code, operators
 - arithmetic operators [Visual Basic], about arithmetic operators
 ms.assetid: 325dac7a-ea4f-41d5-8b48-f6e904211569
-ms.openlocfilehash: 2bd88b2df91c38d658e46157a9a83ce44ab9f25c
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 635c791f81107a1800e2ef381f6bea78cbc18e18
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56981267"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58820770"
 ---
 # <a name="arithmetic-operators-in-visual-basic"></a>Aritmetické operátory v jazyce Visual Basic
 Aritmetické operátory jsou používány k provádění řady známých aritmetické operace, které zahrnují výpočet číselné hodnoty literály, proměnné, ostatní výrazy, funkce a volání vlastností a konstanty. Také klasifikovat s aritmetické operátory jsou bitové posunutí – operátory, které bude fungovat na úrovni jednotlivých bitů operandy a posunout své vzorců bitů doleva nebo doprava.  
@@ -95,6 +95,7 @@ Aritmetické operátory jsou používány k provádění řady známých aritmet
  Pokud nastavíte `Option Strict Off`, ale jazyka Visual Basic umožňuje implicitní zužující převody uskutečnit, i když může způsobit neočekávané ztráty dat nebo přesnosti. Z tohoto důvodu doporučujeme používat `Option Strict On` při psaní kódu produkčního prostředí. Další informace najdete v tématu [Widening a zúžení převodů](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Aritmetické operátory](../../../../visual-basic/language-reference/operators/arithmetic-operators.md)
 - [Operátory bitového posunu](../../../../visual-basic/language-reference/operators/bit-shift-operators.md)
 - [Operátory porovnání v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)

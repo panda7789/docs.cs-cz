@@ -2,12 +2,12 @@
 title: Rozlišovaná sjednocení
 description: Další informace o použití F# rozlišovaná sjednocení.
 ms.date: 05/16/2016
-ms.openlocfilehash: 1bb6dc06fb727f85eb5500719b175fc29090450b
-ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
+ms.openlocfilehash: 9d3f423d068df1c43791919b0d71ca82304ae85e
+ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53611864"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58821423"
 ---
 # <a name="discriminated-unions"></a>Rozlišovaná sjednocení
 
@@ -156,7 +156,7 @@ Rozlišovaná sjednocení mohou být rekurzivní, což znamená, že samotné sj
 
 V předchozím kódu `resultSumTree` má hodnotu 10. Následující obrázek znázorňuje stromovou strukturu `myTree`.
 
-![Stromová struktura pro myTree](../media/TreeStructureDiagram.png)
+![Diagram zobrazující průběh stromová struktura pro myTree.](../media/discriminated-unions/tree-structure-mytree.png)
 
 Rozlišovaná sjednocení pracují dobře, pokud uzly ve stromu jsou heterogenní. V následujícím kódu, typ `Expression` představuje abstraktní strom syntaxe výrazu v jednoduchém programovacím jazyce, který podporuje sčítání a násobení čísel a proměnných. Některé sjednocovací případy nejsou rekurzivní a představují buď čísla (`Number`) nebo proměnné (`Variable`). Ostatní případy jsou rekurzivní a představují operace (`Add` a `Multiply`), kde jsou jako operandy také výrazy. `Evaluate` Funkce používá odpovídající výraz pro rekurzivní zpracování stromu syntaxe.
 
