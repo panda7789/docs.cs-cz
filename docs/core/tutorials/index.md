@@ -1,10 +1,16 @@
 ---
 title: Kurzy k .NET core
-description: 'Postupujte podle kurzů pro seznámení s .NET Core k sestavení aplikací a knihoven pro Mac, Linux a Windows.'
+description: Postupujte podle kurzů pro seznámení s .NET Core k sestavení aplikací a knihoven pro Mac, Linux a Windows.
 author: richlander
 ms.date: 03/16/2017
 titleSuffix: ''
 ms.custom: seodec18
+ms.openlocfilehash: 794aa91e11f8d7386d3fe98f692e245e8af95eaa
+ms.sourcegitcommit: 5d9f4b805787f890ca6e0dc7ea30a43018bc9cbb
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57788294"
 ---
 # <a name="learn-net-core-and-the-net-core-sdk-tools-by-exploring-these-tutorials"></a>Další nástroje sady SDK .NET Core a .NET Core, ve kterých tyto kurzy
 

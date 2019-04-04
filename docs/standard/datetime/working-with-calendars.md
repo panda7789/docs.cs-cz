@@ -1,26 +1,26 @@
 ---
 title: Práce s kalendáři
-ms.date: 02/23/2019
+ms.date: 04/01/2019
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
-- globalization [.NET Framework], calendars
+- globalization [.NET], calendars
 - calendars, global applications
 - global applications, calendars
 - world-ready applications, calendars
-- international applications [.NET Framework], calendars
+- international applications [.NET], calendars
 - culture, calendars
 ms.assetid: 0c1534e5-979b-4c8a-a588-1c24301aefb3
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6bc41f6881c8a876e77ac385c715a5517b95842c
-ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
+ms.openlocfilehash: b683784489cd68b66b4f9660f0df5e63b676a91c
+ms.sourcegitcommit: a3db1a9eafca89f95ccf361bc1833b47fbb2bb30
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57845983"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58921348"
 ---
 # <a name="working-with-calendars"></a>Práce s kalendáři
 
@@ -138,13 +138,16 @@ Existuje však jedna důležitá výjimka. Výchozí (neinicializovaná) hodnota
 Data v kalendářích jsou obvykle rozdělena do období. Ale <xref:System.Globalization.Calendar> třídy v rozhraní .NET nepodporují každé období definované kalendářem a většina <xref:System.Globalization.Calendar> třídy podporují pouze jediné období. Pouze <xref:System.Globalization.JapaneseCalendar> a <xref:System.Globalization.JapaneseLunisolarCalendar> třídy podporují větší počet období.
 
 > [!IMPORTANT]
->  A nové éry v <xref:System.Globalization.JapaneseCalendar> a <xref:System.Globalization.JapaneseLunisolarCalendar> začíná 1. května 2019. Tato změna ovlivní všechny aplikace, které používají tyto kalendáře. Zobrazit [zpracování do nové éry v japonské kalendáře v rozhraní .NET](https://devblogs.microsoft.com/dotnet/handling-a-new-era-in-the-japanese-calendar-in-net/) Další informace a na zjištění, zda jsou vliv na vaše aplikace. Zobrazit [Příprava aplikace pro změnu japonské období](/windows/uwp/design/globalizing/japanese-era-change) informace o testování aplikací na Windows k zajištění jejich připravenosti změna éry.
+>  Období Reiwa, do nové éry v <xref:System.Globalization.JapaneseCalendar> a <xref:System.Globalization.JapaneseLunisolarCalendar>, začíná 1. května 2019. Tato změna ovlivní všechny aplikace, které používají tyto kalendáře. Zobrazit další informace v následujících článcích:
+> - [Zpracování do nové éry v japonské kalendáře v rozhraní .NET](https://devblogs.microsoft.com/dotnet/handling-a-new-era-in-the-japanese-calendar-in-net/), které dokumenty funkcí v rozhraní .NET pro podporu kalendářů a s větší počet období a popisuje osvědčené postupy pro použití při zpracování více období kalendáře.
+> - [Příprava aplikace pro změnu japonské období](/windows/uwp/design/globalizing/japanese-era-change), který poskytuje informace o testování aplikací na Windows k zajištění jejich připravenosti změna éry.
+> - [Souhrnné informace o nové éry japonské aktualizace pro rozhraní .NET Framework](https://support.microsoft.com/en-us/help/4477957/new-japanese-era-updates-for-net-framework), která uvádí seznam aktualizací pro rozhraní .NET Framework pro jednotlivé verze Windows, které souvisejí s novou éru japonský kalendář, poznámky k nové funkce rozhraní .NET Framework pro podporu více období a zahrnuje možná řešení hledejte v testování aplikací.
 
-Období v většiny kalendáře označuje extrémně dlouhé časové období. V gregoriánském kalendáři například aktuálního období zahrnuje více než dva millenia. Pro <xref:System.Globalization.JapaneseCalendar> a <xref:System.Globalization.JapaneseLunisolarCalendar>dvě kalendáře, které podporují větší počet období, to není případ. Období odpovídá období císaře. Podpora pro větší počet období, zejména pokud horní limit počtu aktuálního období neznámý, představuje zvláštní problémy. 
+Období v většiny kalendáře označuje extrémně dlouhé časové období. V gregoriánském kalendáři například aktuálního období zahrnuje více než dva tisíciletí. Pro <xref:System.Globalization.JapaneseCalendar> a <xref:System.Globalization.JapaneseLunisolarCalendar>dvě kalendáře, které podporují větší počet období, to není případ. Období odpovídá období císaře. Podpora pro větší počet období, zejména pokud horní limit počtu aktuálního období neznámý, představuje zvláštní problémy. 
 
 ### <a name="eras-and-era-names"></a>Období a názvy období
 
-V rozhraní .NET, jsou celá čísla, která představují období podporovaná implementací konkrétního kalendáře v obráceném pořadí v uložené <xref:System.Globalization.Calendar.Eras%2A?displayProperty=nameWithType> pole. Aktuální období je na pozici nula a pro <xref:System.Globalization.Calendar> odráží třídy, které podporují větší počet období, jednotlivé postupné pozice předchozímu období. Statické <xref:System.Globalization.Calendar.CurrentEra?displayProperty=nameWithType> vlastnost definuje index aktuálního období v <xref:System.Globalization.Calendar.Eras%2A?displayProperty=nameWithType> pole; jedná se o konstantu, jejíž hodnota je vždycky nula. Jednotlivé <xref:System.Globalization.Calendar> třídy zahrnují také statická pole, která vrátí hodnotu aktuálního období. Jsou uvedeny v následující tabulce.
+V rozhraní .NET, jsou celá čísla, která představují období podporovaná implementací konkrétního kalendáře v obráceném pořadí v uložené <xref:System.Globalization.Calendar.Eras%2A?displayProperty=nameWithType> pole. Aktuální období (což je období s nejnovější časový rozsah) je na pozici nula a pro <xref:System.Globalization.Calendar> odráží třídy, které podporují větší počet období, jednotlivé postupné pozice předchozímu období. Statické <xref:System.Globalization.Calendar.CurrentEra?displayProperty=nameWithType> vlastnost definuje index aktuálního období v <xref:System.Globalization.Calendar.Eras%2A?displayProperty=nameWithType> pole; jedná se o konstantu, jejíž hodnota je vždycky nula. Jednotlivé <xref:System.Globalization.Calendar> třídy zahrnují také statická pole, která vrátí hodnotu aktuálního období. Jsou uvedeny v následující tabulce.
 
 | Třída kalendáře                                        | Pole aktuálního období                                                 |
 | ----------------------------------------------------- | ----------------------------------------------------------------- |
@@ -162,8 +165,8 @@ V rozhraní .NET, jsou celá čísla, která představují období podporovaná 
 
 Název, který odpovídá konkrétního období lze načíst předáním období číslo, které má <xref:System.Globalization.DateTimeFormatInfo.GetEraName%2A?displayProperty=nameWithType> nebo <xref:System.Globalization.DateTimeFormatInfo.GetAbbreviatedEraName%2A?displayProperty=nameWithType> metody. V následujícím příkladu jsou voláním metod k načtení informací o podpoře období v <xref:System.Globalization.GregorianCalendar> třídy.
 
-[!code-csharp[Conceptual.Calendars#7](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.calendars/cs/instantiatewithera1.cs#7)]
-[!code-vb[Conceptual.Calendars#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.calendars/vb/instantiatewithera1.vb#7)]
+[!code-csharp[Conceptual.Calendars#7](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.calendars/cs/instantiatewithera1.cs)]
+[!code-vb[Conceptual.Calendars#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.calendars/vb/instantiatewithera1.vb)]
 
 Kromě toho řetězec „o“ vlastního formátu data a času obsahuje název období kalendáře v řetězcovém vyjádření data a času. Další informace najdete v tématu [řetězce formátu vlastní data a času](../../../docs/standard/base-types/custom-date-and-time-format-strings.md).
 
@@ -197,7 +200,7 @@ Ale pokud období se změní, záměr tohoto kódu stane nejednoznačný. Datum 
 > [!TIP]
 > Při práci s kalendáře, které podporují větší počet období, *vždy* instance data pomocí gregoriánské datum nebo zadat období při vytváření instance datum a čas na základě tohoto kalendáře.
 
-V období pro určení <xref:System.Globalization.Calendar.ToDateTime(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)> metoda, zadejte index období ve kalendáře <xref:System.Globalization.Calendar.Eras> vlastnost. Pro kalendáře, jehož období se mohou změnit ale tyto indexy nejsou konstantní hodnoty; aktuální období je na pozici 0 a nejstarší období je v indexu `Eras.Length - 1`. Pokud do nové éry se přidá do kalendáře, indexy předchozích období zvýšit o jednu. Index odpovídající období můžete zadat následující:
+V zadání období do <xref:System.Globalization.Calendar.ToDateTime(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)> metoda, zadejte index období ve kalendáře <xref:System.Globalization.Calendar.Eras> vlastnost. Pro kalendáře, jehož období se mohou změnit ale tyto indexy nejsou konstantní hodnoty; aktuální období je na pozici 0 a nejstarší období je v indexu `Eras.Length - 1`. Pokud do nové éry se přidá do kalendáře, indexy předchozích období zvýšit o jednu. Index odpovídající období můžete zadat následující:
 
 - Kalendářních dat v rámci aktuálního období, vždy používejte v kalendáři <xref:System.Globalization.Calendar.CurrentEra> vlastnost.
 
@@ -205,7 +208,7 @@ V období pro určení <xref:System.Globalization.Calendar.ToDateTime(System.Int
 
 ### <a name="calendars-eras-and-date-ranges-relaxed-range-checks"></a>Kalendáře, větší počet období a rozsahy kalendářních dat: Volný rozsah kontroly
 
-Velmi podobně jako jednotlivé kalendáře máte podporovanou rozsahy kalendářních dat v období <xref:System.Globalization.JapaneseCalendar> a <xref:System.Globalization.JapaneseLunisolarCalendar> třídy také mají podporovány rozsahy. .NET použili striktní období rozsah kontroly k zajištění, že konkrétní období data byla v rozsahu tohoto období. Je mimo rozsah datum vede rozhraní .NET Framework používá volný rozsahové kontroluje ve výchozím nastavení. To znamená, pokud datum je mimo rozsah od zadaného období, vyvolá metoda <xref:System.ArgumentOutOfRangeException>. Aktualizace pro všechny verze rozhraní .NET Framework zavedené mírnější období rozsah kontroly; Pokus o vytvoření instance konkrétní období datum, která je mimo rozsah zadaného období "přetečení" do následujícího období a žádná výjimka je vyvolána výjimka.
+Velmi podobně jako jednotlivé kalendáře máte podporovanou rozsahy kalendářních dat v období <xref:System.Globalization.JapaneseCalendar> a <xref:System.Globalization.JapaneseLunisolarCalendar> třídy také mají podporovány rozsahy. .NET použili striktní období rozsah kontroly k zajištění, že období konkrétní datum v rozsahu tohoto období. To znamená, pokud datum je mimo rozsah od zadaného období, vyvolá metoda <xref:System.ArgumentOutOfRangeException>. V současné době používá .NET volný rozsahové kontroluje ve výchozím nastavení. Aktualizace pro všechny verze rozhraní .NET zavedené volný období rozsah kontroly; Pokus o vytvoření instance období datum, která je mimo rozsah zadaného období "přetečení" do následujícího období a není vyvolána žádná výjimka.
 
 Následující příklad se pokusí vytvořit instanci data v roce 65th Showa období, které začne na 25. prosince 1926 a skončila 7 ledna 1989. Toto datum odpovídá 9. ledna 1990, která je mimo rozsah období Showa ve <xref:System.Globalization.JapaneseCalendar>. Jak výstup z příkladu ukazuje, je datum zobrazeno pomocí příkladu 9 dne 1990, druhý rok období Heisei období.
 
@@ -240,9 +243,9 @@ Pokud volný rozsah kontroly nežádoucí, můžete obnovit rozsah striktní kon
    |  |  |
    |--|--|
    |Key | HKEY_LOCAL_MACHINE\Software\Microsoft.NETFramework\AppContext |
-   |Název | Switch.System.Globalization.EnforceJapaneseEraYearRanges |
-   |Typ | REG_SZ |
-   |Hodnota | 1 |
+   |Name | Switch.System.Globalization.EnforceJapaneseEraYearRanges |
+   |Type | REG_SZ |
+   |Value | 1 |
 
 Pomocí kontroly striktní rozsahu povolená, předchozí příklad vyvolá <xref:System.ArgumentOutOfRangeException> a zobrazí se následující výstup:
 
@@ -315,9 +318,9 @@ Pokud toto chování nežádoucí v operacích formátování, můžete obnovit 
    |  |  |
    |--|--|
    |Key | HKEY_LOCAL_MACHINE\Software\Microsoft.NETFramework\AppContext |
-   |Název | Switch.System.Globalization.FormatJapaneseFirstYearAsANumber |
-   |Typ | REG_SZ |
-   |Hodnota | 1 |
+   |Name | Switch.System.Globalization.FormatJapaneseFirstYearAsANumber |
+   |Type | REG_SZ |
+   |Value | 1 |
 
 Díky podpoře gannen v operacích zakázané formátování v předchozím příkladu se zobrazí následující výstup:
 
@@ -353,11 +356,12 @@ Japanese calendar date: 平成1年8月18日 (Gregorian: Friday, August 18, 1989)
    |  |  |
    |--|--|  
    |Key | HKEY_LOCAL_MACHINE\Software\Microsoft.NETFramework\AppContext |
-   |Název | Switch.System.Globalization.EnforceLegacyJapaneseDateParsing |
-   |Typ | REG_SZ |
-   |Hodnota | 1 | 
+   |Name | Switch.System.Globalization.EnforceLegacyJapaneseDateParsing |
+   |Type | REG_SZ |
+   |Value | 1 | 
 
 ## <a name="see-also"></a>Viz také:
 
 - [Postupy: Zobrazování dat v jiném než gregoriánském kalendáři](../../../docs/standard/base-types/how-to-display-dates-in-non-gregorian-calendars.md)
 - [Ukázka: Nástroj pro rozsah týdnů kalendáře](https://code.msdn.microsoft.com/NET-Framework-4-Calendar-3360a84a)
+- [Třída kalendáře](xref:System.Globalization.Calendar)

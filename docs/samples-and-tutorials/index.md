@@ -1,11 +1,16 @@
 ---
 title: .NET ukázky a kurzy
-description: 'Informace o ukázky a kurzy pro .NET Core, ASP.NET Core a C# jazyk, který vám pomůže Další informace o rozhraní .NET.'
+description: Informace o ukázky a kurzy pro .NET Core, ASP.NET Core a C# jazyk, který vám pomůže Další informace o rozhraní .NET.
 author: BillWagner
 ms.author: wiwagn
 ms.date: 04/11/2017
+ms.openlocfilehash: 682c60ca4a0e801ec8e138a88124b86b88f39615
+ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "57558964"
 ---
-
 # <a name="net-samples-and-tutorials"></a>.NET ukázky a kurzy
 
 Dokumentace k .NET obsahuje sadu ukázky a kurzy, které vás naučí o .NET. Toto téma popisuje, jak najít, zobrazit a stáhnout .NET Core, ASP.NET Core a C# ukázky a kurzy. Najít materiály a učte F# programovací jazyk na [ F# nadace lokality](https://fsharp.org/learn.html). Pokud vás zajímá zkoumání C# editoru kódu online začínat [toto Interaktivní kurz](https://www.microsoft.com/net/learn/in-browser-tutorial/1) a pokračujte [ C# interaktivního kurzu](../csharp/tutorials/intro-to-csharp/index.md). Pokyny o tom, jak zobrazit a stáhnout ukázkový kód, naleznete v tématu [zobrazování a stahování ukázky](#viewing-and-downloading-samples) oddílu.

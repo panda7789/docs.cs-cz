@@ -2,9 +2,15 @@
 title: Rozšiřování formulářových aplikací Windows
 ms.date: 03/30/2017
 helpviewer_keywords:
-  - 'Windows Forms, enhancing'
-  - 'Windows Forms, adding features'
+- Windows Forms, enhancing
+- Windows Forms, adding features
 ms.assetid: 733d1219-d6ad-4256-a55b-9eccf47f5a06
+ms.openlocfilehash: 82847add5b35fe767d42ee88d7754f789174e434
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57713550"
 ---
 # <a name="enhancing-windows-forms-applications"></a>Rozšiřování formulářových aplikací Windows
 Windows Forms obsahuje řadu funkcí, které můžete použít ke zvýšení vaší aplikace pro systém Windows podle konkrétních potřeb vašich uživatelů. Následující témata popisují tyto funkce a jejich použití.  

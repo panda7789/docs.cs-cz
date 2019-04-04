@@ -4,12 +4,12 @@ description: Jak určit složení mikroslužeb pro vícekontejnerových aplikac�
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/02/2018
-ms.openlocfilehash: df185950d8155d61b60c9b54e3a8751ec3980408
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.openlocfilehash: 4f4918a6f26a617fad38c7955415c4ff559a9187
+ms.sourcegitcommit: a3db1a9eafca89f95ccf361bc1833b47fbb2bb30
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58463524"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58920776"
 ---
 # <a name="defining-your-multi-container-application-with-docker-composeyml"></a>Definování vícekontejnerové aplikace pomocí docker-compose.yml
 
@@ -433,7 +433,7 @@ Všimněte si, že hodnoty nastavené v běhovém prostředí vždy přepsat hod
 Pokud zkoumáte Dockeru a .NET Core na zdroje v síti Internet, zjistíte soubory Dockerfile, které ukazují zjednodušení vytváření image Dockeru pomocí kopírování zdroje do kontejneru. Tyto příklady navrhnout pomocí jednoduchou konfiguraci a může mít image Dockeru s prostředím zabalit s aplikací. Následující příklad ukazuje jednoduchý soubor Dockerfile v této souvislosti.
 
 ```Dockerfile
-FROM microsoft/dotnet
+FROM mcr.microsoft.com/dotnet/core/sdk:2.2
 WORKDIR /app
 ENV ASPNETCORE_URLS http://+:80
 EXPOSE 80
@@ -446,7 +446,7 @@ Soubor Dockerfile takto bude fungovat. Je ale podstatně optimalizovat Image, ze
 
 V modelu mikroslužeb a kontejnerů jsou neustále spouštění kontejnerů. Typické způsob, jak pomocí kontejnerů nerestartuje spící kontejner, protože kontejneru je jedno použití. Orchestrátory (jako je Kubernetes a Azure Service Fabric) jednoduše vytvořte nové instance z imagí. To znamená, že potřebujete optimalizovat předkompilace aplikace, když je sestaven tak proces vytváření instancí bude rychlejší. Při spuštění kontejneru musí být připraveny ke spuštění. Nesmí obnovit a kompilaci za běhu použití `dotnet restore` a `dotnet build` příkazy z rozhraní příkazového řádku dotnet to, jak vidíte v mnoha blogové příspěvky o .NET Core a Docker.
 
-Tým .NET má způsobem důležitou práci provést optimalizovaný kontejner rozhraní .NET Core a ASP.NET Core. Nejen .NET Core je jednoduché rozhraní s malé paměťové nároky; tým zaměřený na optimalizované Image Dockeru pro tři hlavní scénáře a publikované v registru Docker Hub v *microsoft/dotnet*, začínající s verzí 2.1:
+Tým .NET má způsobem důležitou práci provést optimalizovaný kontejner rozhraní .NET Core a ASP.NET Core. Nejen .NET Core je jednoduché rozhraní s malé paměťové nároky; tým zaměřený na optimalizované Image Dockeru pro tři hlavní scénáře a publikované v registru Docker Hub v *dotnet/jádro*, začínající s verzí 2.1:
 
 1. **Vývoj**: Kde je schopnost rychle iterovat a ladit změny prioritu a kde velikost je sekundární.
 
@@ -454,11 +454,12 @@ Tým .NET má způsobem důležitou práci provést optimalizovaný kontejner ro
 
 3. **Produkční**: Pokud je fokus rychlé nasazení a spouštění kontejnerů, takže tyto Image jsou omezené na binární soubory a obsah potřebný ke spuštění aplikace.
 
-Za tím účelem týmu .NET nabízí tři základní varianty v [microsoft/dotnet](https://hub.docker.com/r/microsoft/dotnet/) (v Docker Hubu):
+Za tím účelem .NET týmu poskytuje čtyři základní varianty v [dotnet/jádro](https://hub.docker.com/_/microsoft-dotnet-core/) (v Docker Hubu):
 
-1. **Sada SDK**: pro scénáře vývoje a sestavení.
-2. **modul runtime**: pro produkční scénář a
-3. **modul runtime deps**: pro produkční scénáře [samostatná aplikace](../../../core/deploying/index.md#self-contained-deployments-scd).
+1. **Sada SDK**: pro scénáře vývoje a sestavení
+1. **ASPNET**: pro produkční scénáře technologie ASP.NET
+1. **modul runtime**: pro produkční scénáře .NET
+1. **modul runtime deps**: pro produkční scénáře [samostatná aplikace](../../../core/deploying/index.md#self-contained-deployments-scd).
 
 Pro rychlejší spuštění, runtime Image také automaticky nastaví aspnetcore\_adresy URL a port 80 k vytvoření mezipaměti nativních bitových kopií sestavení použije Ngen.
 

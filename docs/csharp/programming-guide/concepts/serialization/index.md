@@ -1,6 +1,12 @@
 ---
-title: 'Serializace (C#)'
+title: Serializace (C#)
 ms.date: 04/26/2018
+ms.openlocfilehash: 638fdbd31912ffeb284d734e1f8ce2ecd879b540
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58411574"
 ---
 # <a name="serialization-c"></a>Serializace (C#)
 

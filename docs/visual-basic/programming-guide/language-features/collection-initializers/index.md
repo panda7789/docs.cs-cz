@@ -2,12 +2,17 @@
 title: Inicializátory kolekcí (Visual Basic)
 ms.date: 07/20/2015
 f1_keywords:
-  - vb.CollectionInitializer
+- vb.CollectionInitializer
 helpviewer_keywords:
-  - 'collection initializers [Visual Basic]'
+- collection initializers [Visual Basic]
 ms.assetid: a9290329-77b0-4fdf-ae75-8fc17287f469
+ms.openlocfilehash: 538efc11e477a4e90b7bca286da4ed56105d7ecb
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57675457"
 ---
-
 # <a name="collection-initializers-visual-basic"></a>Inicializátory kolekcí (Visual Basic)
 
 *Inicializátory kolekcí* poskytují zkrácený syntaxi, která vám umožní vytvořit kolekci a přidejte do ní počáteční sadu hodnot. Inicializátory kolekcí jsou užitečné při vytváření kolekce na základě sady známé hodnoty, například seznam možností v nabídce nebo kategorie, počáteční sadu číselných hodnot, statický seznam řetězců, jako je například den nebo měsíc názvy nebo zeměpisné umístění, jako seznam stavů, který se používá k ověření.

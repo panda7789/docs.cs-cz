@@ -1,17 +1,17 @@
 ---
-title: Terminologie dockeru
+title: Terminologie Dockeru
 description: Přečtěte si některé základní terminologii, která byla použita každý den, při práci s Dockerem.
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 02/15/2019
-ms.openlocfilehash: 07371bee6881b1fa7edf64b9bb50d387dcbf9dde
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.openlocfilehash: 79b1c6e01c96a906925e5b81b8ea14f988becd7c
+ms.sourcegitcommit: a3db1a9eafca89f95ccf361bc1833b47fbb2bb30
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57677167"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58920646"
 ---
-# <a name="docker-terminology"></a>Terminologie dockeru
+# <a name="docker-terminology"></a>Terminologie Dockeru
 
 Tato část uvádí termíny a definice, měli byste se seznámit s před získáním Dockeru věnovat podrobněji. Další definice, najdete v článku rozsáhlé [Glosář](https://docs.docker.com/glossary/) poskytované Dockeru.
 
@@ -33,7 +33,7 @@ Tato část uvádí termíny a definice, měli byste se seznámit s před získ�
 
 **Registru**: Služba, která poskytuje přístup k úložištím. Je výchozím nastavení registru pro největší veřejné image [Docker Hubu](https://hub.docker.com/) (vlastněné Dockeru jako organizace). Registru obvykle obsahuje úložiště z několika týmů. Podniky mají často privátních registrů k ukládání a správě imagí, které jste vytvořili. Služba Azure Container Registry je další příklad.
 
-**Více architektury image**: Pro více architekturu, je funkce, která zjednodušuje výběr příslušné bitové kopie, podle platformy Dockeru se spuštěným systémem, například když vyžádá základní image soubor Dockerfile **`FROM microsoft/dotnet:2.1-sdk`** z registru ve skutečnosti získá **`2.1-sdk-nanoserver-1709`**, **`2.1-sdk-nanoserver-1803`** nebo **`2.1-sdk-alpine`**, v závislosti na operačním systému a verze se spuštěným Dockerem.
+**Více architektury image**: Pro více architekturu, je funkce, která zjednodušuje výběr příslušné bitové kopie, podle platformy Dockeru se spuštěným systémem, například když vyžádá základní image soubor Dockerfile **`FROM mcr.microsoft.com/dotnet/core/sdk:2.1`** z registru ve skutečnosti získá **`2.1-nanoserver-1709`**, **`2.1-nanoserver-1803`**, **`2.1-nanoserver-1809`** nebo **`2.1-stretch`**, v závislosti na operačním systému a verze se spuštěným Dockerem.
 
 **Docker Hubu**: Veřejného registru k nahrání imagí a práci s nimi. Docker Hubu poskytuje Docker hostování image, veřejných nebo privátních registrů, aktivačních procedur sestavení a webhooky a integraci s z Githubu nebo Bitbucketu.
 

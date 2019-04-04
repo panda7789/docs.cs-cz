@@ -3,16 +3,16 @@ title: Interpolace řetězců v jazyce C#
 description: Zjistěte, jak mají být zahrnuty výsledky výrazu formátovaný výsledný řetězec v jazyce C# pomocí interpolace řetězců.
 author: pkulikov
 ms.date: 05/09/2018
-ms.openlocfilehash: 5a637937de2f3cff7f5425f47c223a56efa8d0c2
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 5a66ba9215579a459b543a24ece338ffbbfd9aea
+ms.sourcegitcommit: a3db1a9eafca89f95ccf361bc1833b47fbb2bb30
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56976054"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58920711"
 ---
 # <a name="string-interpolation-in-c"></a>Interpolace řetězců v jazyce C\#
 
-V tomto kurzu se dozvíte, jak používat [interpolace](../language-reference/tokens/interpolated.md) formátování a zahrňte výsledky výrazu do výsledného řetězce. V příkladech se předpokládá, že máte zkušenosti s základní koncepty jazyka C# a .NET typ formátování. Pokud jste ještě interpolace řetězců nebo formátování typu .NET, podívejte se [kurzu interpolace řetězce interaktivní](../tutorials/intro-to-csharp/interpolated-strings.yml) první. Další informace o formátování typy v rozhraní .NET najdete v tématu [formátovací typy v .NET](../../standard/base-types/formatting-types.md) tématu.
+V tomto kurzu se dozvíte, jak používat [interpolace](../language-reference/tokens/interpolated.md) formátování a zahrňte výsledky výrazu do výsledného řetězce. V příkladech se předpokládá, že máte zkušenosti s základní koncepty jazyka C# a .NET typ formátování. Pokud jste ještě interpolace řetězců nebo formátování typu .NET, podívejte se [kurzu interpolace řetězce interaktivní](exploration/interpolated-strings.yml) první. Další informace o formátování typy v rozhraní .NET najdete v tématu [formátovací typy v .NET](../../standard/base-types/formatting-types.md) tématu.
 
 [!INCLUDE[interactive-note](~/includes/csharp-interactive-note.md)]
 

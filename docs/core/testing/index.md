@@ -5,8 +5,13 @@ author: ardalis
 ms.author: wiwagn
 ms.date: 08/30/2017
 ms.custom: seodec18
+ms.openlocfilehash: 73667843452bbcab52a8cd4aa7906beecc095677
+ms.sourcegitcommit: 462dc41a13942e467984e48f4018d1f79ae67346
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58185503"
 ---
-
 # <a name="unit-testing-in-net-core-and-net-standard"></a>Testování jednotek v .NET Core a .NET Standard
 
 .NET core umožňuje snadno vytvořit testy jednotek. Tento článek představuje testování částí a ukazuje, jak se liší od jiných typů testů. Propojené prostředky v dolní části stránky ukazují, jak přidat do svého řešení projekt testu. Po nastavení projektu testu bude moct spustit testování částí pomocí příkazového řádku nebo Visual Studio.

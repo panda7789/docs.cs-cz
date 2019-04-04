@@ -2,9 +2,15 @@
 title: Události (Visual Basic)
 ms.date: 07/20/2015
 helpviewer_keywords:
-  - 'events [Visual Basic], about events'
-  - 'events [Visual Basic]'
+- events [Visual Basic], about events
+- events [Visual Basic]
 ms.assetid: 8fb0353a-e41b-4e23-b78f-da65db832f70
+ms.openlocfilehash: 73a740d8fa9b9f293e4babb1d2edef81aaeae8aa
+ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57201102"
 ---
 # <a name="events-visual-basic"></a>Události (Visual Basic)
 Projekt sady Visual Studio může vizualizovat jako série postupů, které jsou spouštěny v pořadí, ve skutečnosti, většina programů jsou řízené událostmi – to znamená toku provádění se určuje podle externí výskyty volá *události*.  

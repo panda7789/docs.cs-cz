@@ -1,8 +1,14 @@
 ---
-title: 'Úvod do C# – interaktivní kurzy'
-description: 'Přečtěte si C# v prohlížeči a můžete začít s vývojovým prostředím'
+title: Úvod do C# – interaktivní kurzy
+description: Přečtěte si C# v prohlížeči a můžete začít s vývojovým prostředím
 ms.date: 01/30/2018
 ms.custom: mvc
+ms.openlocfilehash: bee52ba5e8242d4d2700949cb623df27e42e8938
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56975183"
 ---
 # <a name="introduction-to-c"></a>Úvod do jazyka C\#
 

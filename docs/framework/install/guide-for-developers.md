@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: daf9d9d5-84ac-4bd9-a864-27665ffd0f5c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ac6dbf4792df9e287c849ba2a1a93468a444d221
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 5f52b34e6fb99b52e5775482dec3c59ed6738b31
+ms.sourcegitcommit: a3db1a9eafca89f95ccf361bc1833b47fbb2bb30
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57715682"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58920555"
 ---
 # <a name="install-the-net-framework-for-developers"></a>Instalace rozhraní .NET Framework pro vývojáře
 
@@ -45,7 +45,7 @@ Použijte následující tabulku pro rychlé odkazy nebo si přečtěte další 
 |**4.6**|Součástí sady Visual Studio 2015.<br /><br /> [Microsoft .NET Framework 4.6 targeting pack](https://go.microsoft.com/fwlink/?LinkId=528261)|[Stáhněte si stránku pro 4.6 Webová instalační služba](https://go.microsoft.com/fwlink/?LinkId=528259)<br /><br /> [Stáhněte si stránku pro 4.6 offline instalační program](https://go.microsoft.com/fwlink/?LinkId=528233)|**Součástí:** <br/><br /> Windows 10 <br />[Visual Studio 2015](https://my.visualstudio.com/Downloads?q=visual%20studio%202015)<br /><br /> **Můžete také nainstalovat na:**<br /><br/> Windows 8.1 a starší<br /> Windows Server 2012 R2 a dřívějších verzí<br /> (Úplný seznam najdete v tématu [požadavky na systém](~/docs/framework/get-started/system-requirements.md))|
 |**4.5.2**|[Microsoft .NET Framework 4.5.2 Developer Pack](https://go.microsoft.com/fwlink/?LinkId=397702)<br /><br /> Pro použití se službou Visual Studio 2013, Visual Studio 2012 nebo jiná Integrovaná vývojová prostředí|[Stránka pro 4.5.2 stažení webové instalační služby systému](https://go.microsoft.com/fwlink/p/?LinkId=397703)<br /><br /> [Stránka pro 4.5.2 stažení offline instalační program](https://go.microsoft.com/fwlink/p/?LinkId=397706)|**Můžete nainstalovat na:**<br /><br/> Windows 8.1 a starší<br /> Windows Server 2012 R2 a dřívějších verzí<br /> (Úplný seznam najdete v tématu [požadavky na systém](~/docs/framework/get-started/system-requirements.md))|
 |**4.5.1**|[Microsoft .NET Framework 4.5.1 Developer Pack](https://go.microsoft.com/fwlink/?LinkId=324213)<br /><br /> Pro použití se službou Visual Studio 2013, Visual Studio 2012 nebo jiná Integrovaná vývojová prostředí|[Stránka pro stahování 4.5.1 Webová instalační služba](https://go.microsoft.com/fwlink/p/?LinkId=310158)<br /><br /> [Stránka pro stahování 4.5.1 offline instalační program](https://go.microsoft.com/fwlink/p/?LinkId=310159)|**Součástí:**<br /> <br/>[!INCLUDE[win81](../../../includes/win81-md.md)]<br /> Windows Server 2012 R2<br /> [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)<br /><br /> **Můžete také nainstalovat na:**<br /><br/> [!INCLUDE[win8](../../../includes/win8-md.md)] a starší<br /> [!INCLUDE[winserver8](../../../includes/winserver8-md.md)] a starší<br />(Úplný seznam najdete v tématu [požadavky na systém](~/docs/framework/get-started/system-requirements.md))|
-|**4.5**|Zahrnuté v sadě Visual Studio 2012<br /><br /> Také k dispozici jako součást [Windows 8 SDK](/windows/downloads/sdk-archive)|[Stáhněte si stránky pro webové instalační služby 4.5](https://go.microsoft.com/fwlink/p/?LinkId=245484)|**Součástí:** <br/><br /> [!INCLUDE[win8](../../../includes/win8-md.md)]<br /> [!INCLUDE[winserver8](../../../includes/winserver8-md.md)]<br /> [Visual Studio 2012](https://my.visualstudio.com/Downloads?q=visual%20studio%202012)<br /><br /> **Můžete také nainstalovat na:**<br/><br /> Windows 7 a starší<br /> Windows Server 2008 SP2 a starší<br />(Úplný seznam najdete v tématu [požadavky na systém](~/docs/framework/get-started/system-requirements.md))|
+|**4.5**|Zahrnuté v sadě Visual Studio 2012<br /><br /> Také k dispozici jako součást sady SDK pro Windows 8|[Stáhněte si stránky pro webové instalační služby 4.5](https://go.microsoft.com/fwlink/p/?LinkId=245484)|**Součástí:** <br/><br /> [!INCLUDE[win8](../../../includes/win8-md.md)]<br /> [!INCLUDE[winserver8](../../../includes/winserver8-md.md)]<br /> [Visual Studio 2012](https://my.visualstudio.com/Downloads?q=visual%20studio%202012)<br /><br /> **Můžete také nainstalovat na:**<br/><br /> Windows 7 a starší<br /> Windows Server 2008 SP2 a starší<br />(Úplný seznam najdete v tématu [požadavky na systém](~/docs/framework/get-started/system-requirements.md))|
 
 Můžete nainstalovat **Developer Pack** na konkrétní verzi rozhraní .NET Framework, pokud je k dispozici na všech podporovaných platformách.
 

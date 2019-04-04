@@ -3,14 +3,14 @@ title: Vítejte v .NET
 description: Začínáme s .NET řadu technologií.
 author: mairaw
 ms.author: mairaw
-ms.date: 12/03/2018
+ms.date: 04/02/2019
 ms.custom: updateeachrelease
-ms.openlocfilehash: 648dd8017f5c1f043a450ef207912cca51f2d3a7
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 5084aaa745d714184ae644ef8e9fe140c522a70d
+ms.sourcegitcommit: a3db1a9eafca89f95ccf361bc1833b47fbb2bb30
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57720266"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58920536"
 ---
 # <a name="welcome-to-net"></a>Vítejte v .NET
 
@@ -18,12 +18,12 @@ Zobrazit [Začínáme s .NET Core](core/get-started.md) se naučíte, jak vytvá
 
 Vytvoření mnoha typech aplikací pomocí .NET, jako je cloud, IoT a hry pomocí bezplatných nástrojů pro různé platformy. Vaše aplikace můžou běžet na Android, iOS, Linux, macOS a Windows. Nasazení aplikací na serverech nebo stolních počítačů a publikování do obchodu s aplikacemi pro nasazení na mobilních zařízeních. .NET je přístupná pro studenty a nadšence a všechny jsou Vítá vás účast v komunitě živá mezinárodní pro vývojáře a přispívání s přímým přístupem do mnohé z technologií .NET.
 
-## <a name="news"></a>Novinky
+## <a name="news"></a>Zprávy
 
 Novinky o .NET najdete v těchto blozích:
 
-- [Blog k .NET](https://devblogs.microsoft.com/dotnet/)
-- [Blog technologie ASP.NET](https://devblogs.microsoft.com/aspnet/)
+- [.NET Blog](https://devblogs.microsoft.com/dotnet/)
+- [ASP.NET Blog](https://devblogs.microsoft.com/aspnet/)
 - [Blog Visual Studio](https://devblogs.microsoft.com/visualstudio/)
 - [Tým jazyka Visual Basic](https://devblogs.microsoft.com/vbteam/)
 
@@ -49,19 +49,22 @@ Tato dokumentace popisuje škálu .NET napříč platformami a jazyky. Můžete 
 - [Průvodce rozhraním .NET Framework](framework/index.md)
 - [Průvodce jazykem C#](csharp/index.md)
 - [Průvodce jazykem F#](fsharp/index.md)
-- [Průvodce jazykem Visual Basic](visual-basic/index.md)
+- [Průvodce Visual Basicem](visual-basic/index.md)
 - [Průvodce ML.NET](machine-learning/index.md)
 
 Kromě toho můžete přejít [reference k rozhraní API .NET](/dotnet/api).
 
 ## <a name="open-source"></a>Open source
 
-Tato dokumentace je zcela [opensourcových](https://github.com/dotnet/docs). Můžete přispívat žádným způsobem, který vám vyhovuje, od vytváření problémy, které píšete dokumentaci. Velká část .NET samotného je navíc také otevřít zdroj:
+Tato dokumentace je zcela [opensourcových](https://github.com/dotnet/docs). Můžete přispívat žádným způsobem, který vám vyhovuje, od vytváření problémy, které píšete dokumentaci. Velká část .NET samotného je navíc také otevřít zdroj. Následující seznam obsahuje hlavní úložiště .NET GitHub:
 
 - [.NET Core Home](https://github.com/dotnet/core)
 - [Knihovny pro .NET](https://github.com/dotnet/corefx)
 - [.NET Core Runtime](https://github.com/dotnet/coreclr)
+- [.NET Core CLI](https://github.com/dotnet/cli)
 - [Platforma kompilátoru Roslyn (C# a Visual Basic) a prostředí IDE nástroje](https://github.com/dotnet/roslyn)
 - [F#Kompilátor a nástroje pro prostředí IDE](https://github.com/microsoft/visualfsharp)
+- [Windows Forms](https://github.com/dotnet/winforms)
+- [WPF](https://github.com/dotnet/wpf)
 
 Ostatní uživatele, kteří jsou již v aktivní se můžete zapojit [.NET komunity](https://www.microsoft.com/net/community) zjistit, co je nového, nebo požádat o pomoc.

@@ -1,12 +1,17 @@
 ---
 title: Platformě Roslyn na základě analyzátory – .NET
-description: 'Další informace o analyzátory Roslyn na základě, které najít problémy a navrhují opravy těchto problémů.'
+description: Další informace o analyzátory Roslyn na základě, které najít problémy a navrhují opravy těchto problémů.
 author: billwagner
 ms.author: wiwagn
 ms.date: 01/24/2018
 ms.technology: dotnet-standard
+ms.openlocfilehash: 436cfb3904f0891f8c18bb5890563a13d65e2d1c
+ms.sourcegitcommit: d938c39afb9216db377d0f0ecdaa53936a851059
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58634242"
 ---
-
 # <a name="the-roslyn-based-analyzers"></a>Analyzátory založené platformě Roslyn
 
 Založené na platformě Roslyn analyzátory analyzovat zdrojový kód projektu k vyhledání problémů a opravy zobrazovat pomocí sady SDK kompilátoru .NET (Roslyn API). Různé analyzátory vyhledejte různých tříd problémů, od postupů, které můžou způsobovat chyby k zajištění zabezpečení pro kompatibilitu s rozhraními API.

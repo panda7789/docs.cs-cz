@@ -1,13 +1,19 @@
 ---
-title: 'Referenční dokumentace jazyka C#'
+title: Referenční dokumentace jazyka C#
 ms.date: 02/14/2017
 helpviewer_keywords:
-  - 'Visual C#, language reference'
-  - 'language reference [C#]'
-  - 'Programmer''s Reference for C#'
-  - 'C# language, reference'
-  - 'reference, C# language'
+- Visual C#, language reference
+- language reference [C#]
+- Programmer's Reference for C#
+- C# language, reference
+- reference, C# language
 ms.assetid: 06de3167-c16c-4e1a-b3c5-c27841d4569a
+ms.openlocfilehash: 6862ae72b235653d4576915605f14c9e4de92bce
+ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "57845415"
 ---
 # <a name="c-reference"></a>Referenční dokumentace jazyka C#
 Tato část poskytuje referenční materiál o C# klíčová slova, operátory, speciální znaky, direktivy preprocesoru, možnostech kompilátoru a kompilátoru chyby a upozornění.  

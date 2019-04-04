@@ -4,12 +4,12 @@ description: .NET core je modulární a vysoce výkonnou implementace .NET pro v
 author: richlander
 ms.date: 08/01/2018
 ms.custom: updateeachrelease
-ms.openlocfilehash: 62019c5414857ed5eee99a6a60f5b0b183fe25e8
-ms.sourcegitcommit: 3b9b7ae6771712337d40374d2fef6b25b0d53df6
+ms.openlocfilehash: 79a0c09074159160dd01b0c7970612f7058cc3fc
+ms.sourcegitcommit: a3db1a9eafca89f95ccf361bc1833b47fbb2bb30
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54030279"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58920620"
 ---
 # <a name="net-core-guide"></a>Průvodce platformou .NET Core
 
@@ -21,11 +21,11 @@ Podívejte se na [kurzy k .NET Core](tutorials/index.md) se naučíte vytvořit 
 
 ## <a name="download-net-core-22"></a>Stáhnout .NET Core 2.2
 
-Stáhněte si [.NET Core 2.2 SDK](https://www.microsoft.com/net/download) vyzkoušet .NET Core na počítači Windows, macOS nebo Linux. Navštivte [microsoft/dotnet](https://hub.docker.com/r/microsoft/dotnet/) Pokud byste radši chtěli použít kontejnery Dockeru.
+Stáhněte si [.NET Core 2.2 SDK](https://www.microsoft.com/net/download) vyzkoušet .NET Core na počítači Windows, macOS nebo Linux. Navštivte [dotnet/jádro](https://hub.docker.com/_/microsoft-dotnet-core/) Pokud byste radši chtěli použít kontejnery Dockeru.
 
 Všechny verze .NET Core najdete na adrese [soubory ke stažení rozhraní .NET Core](https://www.microsoft.com/net/download/archives) Pokud potřebujete jinou verzi .NET Core.
 
-## <a name="net-core-22"></a>.NET core 2.2
+## <a name="net-core-22"></a>.NET Core 2.2
 
 Nejnovější verze je [.NET Core 2.2](whats-new/dotnet-core-2-2.md). Mezi nové funkce patří: závisí na architektuře nasazení, spuštění háky, ověřování AAD s Azure SQL a podpora Windows ARM32.
 

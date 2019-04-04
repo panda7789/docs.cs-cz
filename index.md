@@ -3,9 +3,15 @@ layout: HubPage
 ms.topic: hub-page
 hide_bc: true
 title: Dokumentace k rozhraní .NET
-description: 'Naučte se v rozhraní .NET vytvářet v jazycích C#, Visual Basic a F# nejrůznější aplikace určené pro libovolnou platformu. Procházejte referenční informace k rozhraní API, ukázky kódu, kurzy a další zdroje informací.'
+description: Naučte se v rozhraní .NET vytvářet v jazycích C#, Visual Basic a F# nejrůznější aplikace určené pro libovolnou platformu. Procházejte referenční informace k rozhraní API, ukázky kódu, kurzy a další zdroje informací.
 ms.custom: updateeachrelease
 ms.date: 12/04/2018
+ms.openlocfilehash: 31e810246528c99a665128d3535b92dbfcb4352d
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58464512"
 ---
 <!-- markdownlint-disable MD033 -->
 <div id="main" class="v2">

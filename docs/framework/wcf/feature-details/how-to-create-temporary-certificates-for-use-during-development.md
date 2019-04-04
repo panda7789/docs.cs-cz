@@ -5,12 +5,12 @@ helpviewer_keywords:
 - certificates [WCF], creating temporary certificates
 - temporary certificates [WCF]
 ms.assetid: bc5f6637-5513-4d27-99bb-51aad7741e4a
-ms.openlocfilehash: 609b142c5dd1cac92acf0f1c0a62d17a9b5c957e
-ms.sourcegitcommit: facefcacd7ae2e5645e463bc841df213c505ffd4
+ms.openlocfilehash: d45f18b0b8fe4e0cc9667091e166c80691faa2d4
+ms.sourcegitcommit: a3db1a9eafca89f95ccf361bc1833b47fbb2bb30
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55738627"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58921322"
 ---
 # <a name="how-to-create-temporary-certificates-for-use-during-development"></a>Postupy: Vytváření dočasných certifikátů pro použití během vývoje
 
@@ -78,7 +78,7 @@ Po nastavení dočasných certifikátů můžete je použít pro vývoj řešen�
 
 ### <a name="to-specify-a-certificate-as-the-client-credential-type"></a>Chcete-li určit certifikát jako typ pověření klienta
 
-- V konfiguračním souboru pro službu použijte následující kód XML pro nastavení režimu zabezpečení zpráv a typu pověření klienta k certifikátu.
+1. V konfiguračním souboru pro službu použijte následující kód XML pro nastavení režimu zabezpečení zpráv a typu pověření klienta k certifikátu.
 
     ```xml
     <bindings>
@@ -92,19 +92,19 @@ Po nastavení dočasných certifikátů můžete je použít pro vývoj řešen�
     </bindings>
     ```
 
-V konfiguračním souboru pro klienta použijte následující kód XML k určení, že certifikát je nalezena v úložišti uživatele a najdete tak, že pole SubjectName pro hodnotu "CohoWinery."
+2. V konfiguračním souboru pro klienta použijte následující kód XML k určení, že certifikát je nalezena v úložišti uživatele a najdete tak, že pole SubjectName pro hodnotu "CohoWinery."
 
-```xml
-<behaviors>
-  <endpointBehaviors>
-    <behavior name="CertForClient">
-      <clientCredentials>
-        <clientCertificate findValue="CohoWinery" x509FindType="FindBySubjectName" />
-       </clientCredentials>
-     </behavior>
-   </endpointBehaviors>
-</behaviors>
-```
+    ```xml
+    <behaviors>
+      <endpointBehaviors>
+        <behavior name="CertForClient">
+          <clientCredentials>
+            <clientCertificate findValue="CohoWinery" x509FindType="FindBySubjectName" />
+          </clientCredentials>
+        </behavior>
+      </endpointBehaviors>
+    </behaviors>
+    ```
 
 Další informace o používání certifikátů ve službě WCF najdete v tématu [Working with Certificates](working-with-certificates.md).
 
@@ -115,5 +115,5 @@ Nezapomeňte odstranit všechny dočasné kořenových certifikátů úřadu z *
 ## <a name="see-also"></a>Viz také:
 
 - [Práce s certifikáty](working-with-certificates.md)
-- [Postupy: Zobrazení certifikátů pomocí modulu Snap-in konzoly MMC](how-to-view-certificates-with-the-mmc-snap-in.md)
+- [Postupy: Zobrazení certifikátů pomocí modulu snap-in konzoly MMC](how-to-view-certificates-with-the-mmc-snap-in.md)
 - [Zabezpečení služeb a klientů](securing-services-and-clients.md)

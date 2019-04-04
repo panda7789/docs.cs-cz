@@ -4,8 +4,13 @@ description: Pojďme si do úlohy pro vývoj a návrh v Dockeru aplikace životn
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 02/15/2019
+ms.openlocfilehash: 2ecec1412ea1c3b6ff32e6250c7cb97c531a84fd
+ms.sourcegitcommit: 2b986afe4ce9e13bbeec929c9737757eb61de60e
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56665001"
 ---
-
 # <a name="designing-and-developing-containerized-apps-using-docker-and-microsoft-azure"></a>Návrh a vývoj kontejnerizovaných aplikací pomocí Dockeru a Microsoft Azure
 
 *Pro zpracování obrazu: Návrh a vývoj škálovatelných řešení s Dockerem v úvahu.*

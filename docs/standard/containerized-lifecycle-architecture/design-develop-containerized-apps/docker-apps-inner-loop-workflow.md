@@ -4,12 +4,12 @@ description: Přečtěte si pracovní postup "vnitřní smyčky" pro vývoj apli
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 02/15/2019
-ms.openlocfilehash: 1ed0feeec682f5a79bc38db6a101b751ea4dbc3a
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.openlocfilehash: 36fcf5769376375854c2a2631e26e8b136df0de6
+ms.sourcegitcommit: a3db1a9eafca89f95ccf361bc1833b47fbb2bb30
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57676665"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58920906"
 ---
 # <a name="inner-loop-development-workflow-for-docker-apps"></a>Pracovní postup vývoje vnitřní smyčky pro aplikace Dockeru
 
@@ -105,7 +105,7 @@ Obrázek 4 – 24 můžete zobrazit, jak docker-compose se přidá soubor s pou�
 
 **Obrázek 4 – 24**. Přidat pomocí souborů dockeru **Docker přidat soubory do příkazu pracovního prostoru**
 
-Když přidáte soubor DockerFile, zadejte co základní image Dockeru, který budete používat (například `FROM microsoft/aspnetcore`). Obvykle vytvoříte vlastní bitovou kopii nad základní image, kterou můžete získat z jakékoli oficiální úložiště [registru Docker Hub](https://hub.docker.com/) (stejně jako [bitovou kopii pro .NET Core](https://hub.docker.com/r/microsoft/dotnet/) nebo [pro Node.js](https://hub.docker.com/_/node/)).
+Když přidáte soubor DockerFile, zadejte co základní image Dockeru, který budete používat (například `FROM mcr.microsoft.com/dotnet/core/aspnet`). Obvykle vytvoříte vlastní bitovou kopii nad základní image, kterou můžete získat z jakékoli oficiální úložiště [registru Docker Hub](https://hub.docker.com/) (stejně jako [bitovou kopii pro .NET Core](https://hub.docker.com/_/microsoft-dotnet-core/) nebo [pro Node.js](https://hub.docker.com/_/node/)).
 
 ***Použít existující oficiální image Dockeru***
 
@@ -115,7 +115,7 @@ Následuje ukázkový soubor DockerFile pro .NET Core kontejneru:
 
 ```Dockerfile
 # Base Docker image to use  
-FROM microsoft/dotnet:2.1-aspnetcore-runtime
+FROM mcr.microsoft.com/dotnet/core/aspnet:2.1
   
 # Set the Working Directory and files to be copied to the image  
 ARG source  
@@ -129,7 +129,7 @@ EXPOSE 80
 ENTRYPOINT ["dotnet", "MyCustomMicroservice.dll"]
 ```
 
-V tomto případě bitovou kopii podle verze 2.1 oficiální image Dockeru ASP.NET Core (více arch pro systémy Linux a Windows), podle řádku `FROM microsoft/dotnet:2.1-aspnetcore-runtime`. (Další informace o tomto tématu najdete v článku [Image Dockeru ASP.NET Core](https://hub.docker.com/r/microsoft/aspnetcore/) stránky a [Image Dockeru .NET Core](https://hub.docker.com/r/microsoft/dotnet/) stránky).
+V tomto případě bitovou kopii podle verze 2.1 oficiální image Dockeru ASP.NET Core (více arch pro systémy Linux a Windows), podle řádku `FROM mcr.microsoft.com/dotnet/core/aspnet:2.1`. (Další informace o tomto tématu najdete v článku [Image Dockeru ASP.NET Core](https://hub.docker.com/_/microsoft-dotnet-core-aspnet/) stránky a [Image Dockeru .NET Core](https://hub.docker.com/_/microsoft-dotnet-core/) stránky).
 
 V souboru DockerFile se dá taky nastavit Docker nenaslouchá na portu TCP, který budete používat v době běhu (například port 80).
 
@@ -143,9 +143,9 @@ Můžete zadat další nastavení konfigurace v souboru Dockerfile, v závislost
 
 **Použití úložiště image více architektury**
 
-Název jedné image do úložiště může obsahovat variant, platformy, jako jsou image Linuxu a Windows image. Tato funkce umožňuje dodavatelé, jako je Microsoft (creators základní image) k vytvoření jednoho úložiště pro víc platforem (to znamená, Linux a Windows). Například [microsoft/aspnetcore](https://hub.docker.com/r/microsoft/aspnetcore/) úložiště k dispozici v registru Docker Hub poskytuje podporu pro systémy Linux a Windows Nano Server pomocí stejného názvu image.
+Název jedné image do úložiště může obsahovat variant, platformy, jako jsou image Linuxu a Windows image. Tato funkce umožňuje dodavatelé, jako je Microsoft (creators základní image) k vytvoření jednoho úložiště pro víc platforem (to znamená, Linux a Windows). Například [dotnet/core/aspnet](https://hub.docker.com/_/microsoft-dotnet-core-aspnet/) úložiště k dispozici v registru Docker Hub poskytuje podporu pro systémy Linux a Windows Nano Server pomocí stejného názvu image.
 
-Souhrnné informace [microsoft/aspnetcore](https://hub.docker.com/r/microsoft/aspnetcore/) image z hostitele Windows si vyžádá Windows variant, zatímco přebírání stejný název image z hostitele platformy Linux si vyžádá varianty Linuxu.
+Souhrnné informace [dotnet/core/aspnet](https://hub.docker.com/_/microsoft-dotnet-core-aspnet/) image z hostitele Windows si vyžádá Windows variant, zatímco přebírání stejný název image z hostitele platformy Linux si vyžádá varianty Linuxu.
 
 ***Vytvoření zcela nové základní image***
 

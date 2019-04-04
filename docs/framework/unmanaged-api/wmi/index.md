@@ -4,8 +4,13 @@ description: Shrnuje rozhraní .NET Framework nespravovaného rozhraní API pro 
 author: rpetrusha
 ms.author: ronpet
 ms.date: 11/06/2017
+ms.openlocfilehash: bbf22496098f848cc7c55652198d792c6f631c15
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57377453"
 ---
-
 # <a name="windows-management-instrumentation-wmi-and-performance-counters-unmanaged-api-reference"></a>Windows Management Instrumentation (WMI) a z čítačů výkonu (referenční dokumentace nespravovaného rozhraní API)
 
 Nespravované rozhraní API .NET Framework WMI a čítače výkonu se skládá ze sady funkcí, které obalují volání [nativní Windows Management Instrumentation rozhraní API](/windows/desktop/WmiSdk/com-api-for-wmi). To umožňuje vyvíjet nástroje a knihovny pro správu a monitorování systémů vzdáleného počítače.

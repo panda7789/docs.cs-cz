@@ -1,10 +1,15 @@
 ---
-title: 'Použití jazyka F# v Azure'
-description: 'Příručka k používání služeb Azure sF#'
+title: Použití jazyka F# v Azure
+description: Příručka k používání služeb Azure sF#
 author: sylvanc
 ms.date: 09/22/2016
+ms.openlocfilehash: 8243c021b8bc3ea9b067b278a5d9c6e3619232b7
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57371036"
 ---
-
 # <a name="using-f-on-azure"></a>Použití jazyka F# v Azure
 
 F#je vynikající jazyk pro programování v cloudu a se často používá k zápisu webové aplikace, cloudové služby, mikroslužby hostované v cloudu a pro škálovatelné zpracování dat.

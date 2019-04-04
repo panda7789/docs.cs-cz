@@ -3,12 +3,12 @@ title: Větve a smyčky – Úvod do C# kurz
 description: V tomto kurzu o větvích a smyčkách napíšete C# kódu syntaxi jazyka, který podporuje podmíněné větvení a smyček opakovaně spouštět příkazy.
 ms.date: 10/31/2017
 ms.custom: mvc
-ms.openlocfilehash: c9e2ede3ee8632304a86efdf25bb2a8db5354a13
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.openlocfilehash: ad5891c11c516a7c5e3d46bea9c17c85b4a8536e
+ms.sourcegitcommit: a3db1a9eafca89f95ccf361bc1833b47fbb2bb30
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57677783"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58920945"
 ---
 # <a name="learn-conditional-logic-with-branch-and-loop-statements"></a>Další podmíněnou logiku s příkazy větve a smyčky
 
@@ -249,11 +249,11 @@ Vyzkoušejte si to sami. Zkontrolujte, jak jste to udělali. Měli byste obdrže
 
 Dokončili jste kurz "větve a smyčky".
 
-Můžete pokračovat [interpolace](interpolated-strings-local.md) kurz ve svém vlastním vývojovém prostředí.
+Můžete pokračovat [pole a kolekce](arrays-and-collections.md) kurz ve svém vlastním vývojovém prostředí.
 
 Další informace o těchto konceptech v těchto tématech:
 
 - [Pokud a else – příkaz](../../language-reference/keywords/if-else.md)
-- [while – příkaz](../../language-reference/keywords/while.md)
-- [do – příkaz](../../language-reference/keywords/do.md)
+- [While – příkaz](../../language-reference/keywords/while.md)
+- [Do – příkaz](../../language-reference/keywords/do.md)
 - [For – příkaz](../../language-reference/keywords/for.md)
