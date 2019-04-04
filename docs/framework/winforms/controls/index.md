@@ -2,10 +2,16 @@
 title: Ovládací prvky Windows Forms
 ms.date: 03/30/2017
 helpviewer_keywords:
-  - Windows Forms controls
-  - 'controls [Windows Forms]'
-  - 'Windows Forms controls, about Windows Forms controls'
+- Windows Forms controls
+- controls [Windows Forms]
+- Windows Forms controls, about Windows Forms controls
 ms.assetid: f050de8f-4ebd-4042-94b8-edf9a1dbd52a
+ms.openlocfilehash: da5f0b4418d61b973044a89d4902900247efb115
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57707778"
 ---
 # <a name="windows-forms-controls"></a><span data-ttu-id="37783-102">Ovládací prvky Windows Forms</span><span class="sxs-lookup"><span data-stu-id="37783-102">Windows Forms Controls</span></span>
 <span data-ttu-id="37783-103">Při navrhování a upravte uživatelské rozhraní aplikace Windows Forms, je potřeba přidat, zarovnání a umístit ovládací prvky.</span><span class="sxs-lookup"><span data-stu-id="37783-103">As you design and modify the user interface of your Windows Forms applications, you will need to add, align, and position controls.</span></span> <span data-ttu-id="37783-104">Ovládací prvky jsou objekty, které jsou obsaženy v rámci formuláře objekty.</span><span class="sxs-lookup"><span data-stu-id="37783-104">Controls are objects that are contained within form objects.</span></span> <span data-ttu-id="37783-105">Každý typ ovládacího prvku má svou vlastní sadu vlastností, metody a události, které se, že je vhodný pro určitý účel.</span><span class="sxs-lookup"><span data-stu-id="37783-105">Each type of control has its own set of properties, methods, and events that make it suitable for a particular purpose.</span></span> <span data-ttu-id="37783-106">Můžete manipulace s ovládacími prvky v návrháři a napsat kód pro dynamické přidávání ovládacích prvků za běhu.</span><span class="sxs-lookup"><span data-stu-id="37783-106">You can manipulate controls in the designer and write code to add controls dynamically at run time.</span></span>  

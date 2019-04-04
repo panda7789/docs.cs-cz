@@ -2,6 +2,12 @@
 title: Serializace (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 67379a76-5465-4af8-a781-0b0b25a62d9a
+ms.openlocfilehash: 947b38e8166ba05d871aafbaba5766aa9dab21f4
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58409702"
 ---
 # <a name="serialization-visual-basic"></a><span data-ttu-id="d3759-102">Serializace (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="d3759-102">Serialization (Visual Basic)</span></span>
 <span data-ttu-id="d3759-103">Serializace je proces převodu objektu do datového proudu bajtů za účelem uložení objektu nebo přenášet do paměti, databázi nebo souboru.</span><span class="sxs-lookup"><span data-stu-id="d3759-103">Serialization is the process of converting an object into a stream of bytes in order to store the object or transmit it to memory, a database, or a file.</span></span> <span data-ttu-id="d3759-104">Jejich hlavním účelem je pro uložení stavu objektu, aby bylo možné ho v případě potřeby znovu vytvořit.</span><span class="sxs-lookup"><span data-stu-id="d3759-104">Its main purpose is to save the state of an object in order to be able to recreate it when needed.</span></span> <span data-ttu-id="d3759-105">Reverzní proces se nazývá deserializace.</span><span class="sxs-lookup"><span data-stu-id="d3759-105">The reverse process is called deserialization.</span></span>  

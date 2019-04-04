@@ -1,10 +1,15 @@
 ---
 title: .NET Compiler Platform SDK (rozhraní Roslyn API)
-description: 'Zjistěte, jak pomocí sady SDK platformy kompilátoru .NET (také nazývané rozhraní Roslyn API) a pochopení kódu .NET, přímé chyby, opravte tyto chyby.'
+description: Zjistěte, jak pomocí sady SDK platformy kompilátoru .NET (také nazývané rozhraní Roslyn API) a pochopení kódu .NET, přímé chyby, opravte tyto chyby.
 ms.date: 10/10/2017
 ms.custom: mvc
+ms.openlocfilehash: ea733d4c5c54c18e510a028f3a724f89490db9dd
+ms.sourcegitcommit: 462dc41a13942e467984e48f4018d1f79ae67346
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58185841"
 ---
-
 # <a name="the-net-compiler-platform-sdk"></a><span data-ttu-id="3cf85-103">.NET Compiler Platform SDK</span><span class="sxs-lookup"><span data-stu-id="3cf85-103">The .NET Compiler Platform SDK</span></span>
 
 <span data-ttu-id="3cf85-104">Kompilátory sestavení prováděcí model kódu aplikace, protože ověří syntaxi a sémantiku tohoto kódu.</span><span class="sxs-lookup"><span data-stu-id="3cf85-104">Compilers build a detailed model of application code as they validate the syntax and semantics of that code.</span></span> <span data-ttu-id="3cf85-105">Tento model se použít k sestavení spustitelného ze zdrojového kódu.</span><span class="sxs-lookup"><span data-stu-id="3cf85-105">They use this model to build the executable output from the source code.</span></span> <span data-ttu-id="3cf85-106">Sada SDK platformy kompilátoru .NET poskytuje přístup k tomuto modelu.</span><span class="sxs-lookup"><span data-stu-id="3cf85-106">The .NET Compiler Platform SDK provides access to this model.</span></span> <span data-ttu-id="3cf85-107">Čím dál, spoléháme na funkce integrovaného vývojového prostředí (IDE), jako jsou IntelliSense, refaktoring, inteligentní přejmenování "Najít všechny odkazy" a "Přejít k definici" zvýšit naši produktivitu.</span><span class="sxs-lookup"><span data-stu-id="3cf85-107">Increasingly, we rely on integrated development environment (IDE) features such as IntelliSense, refactoring, intelligent rename, "Find all references," and "Go to definition" to increase our productivity.</span></span> <span data-ttu-id="3cf85-108">Spoléháme na nástroji pro analýzu kódu pro zlepšení našeho kvalitu kódu a generátory kódu pro vytváření aplikací.</span><span class="sxs-lookup"><span data-stu-id="3cf85-108">We rely on code analysis tools to improve our code quality, and code generators to aid in application construction.</span></span> <span data-ttu-id="3cf85-109">Protože tyto nástroje získat inteligentnější, přistupují potřebovat více a více modelu, který pouze kompilátory vytvořit, protože budou zpracovávat kódu aplikace.</span><span class="sxs-lookup"><span data-stu-id="3cf85-109">As these tools get smarter, they need access to more and more of the model that only compilers create as they process application code.</span></span> <span data-ttu-id="3cf85-110">To je zvlášť jádro Roslyn API: černé skříňky vám otevírají a povolení nástrojů a koncovým uživatelům sdílet v řadu informace kompilátory si našeho kódu.</span><span class="sxs-lookup"><span data-stu-id="3cf85-110">This is the core mission of the Roslyn APIs: opening up the black boxes and allowing tools and end users to share in the wealth of information compilers have about our code.</span></span>

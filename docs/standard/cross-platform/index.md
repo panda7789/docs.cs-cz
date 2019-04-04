@@ -5,6 +5,12 @@ ms.technology: dotnet-standard
 ms.assetid: b153baaa-130c-4169-860b-e580591de91e
 author: mairaw
 ms.author: mairaw
+ms.openlocfilehash: 69c9cd480181d497eda7e67e57d53c32d4a8932f
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57674065"
 ---
 # <a name="developing-for-multiple-platforms-with-the-net-framework"></a><span data-ttu-id="303a4-102">Vývoj pro různé platformy s .NET Frameworkem</span><span class="sxs-lookup"><span data-stu-id="303a4-102">Developing for Multiple Platforms with the .NET Framework</span></span>
 

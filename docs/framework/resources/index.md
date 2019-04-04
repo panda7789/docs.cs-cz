@@ -2,17 +2,23 @@
 title: Prostředky v aplikacích .NET
 ms.date: 07/25/2018
 helpviewer_keywords:
-  - 'deploying applications [.NET Framework], resources'
-  - 'deploying applications [.NET Core], resources'
-  - application resources
-  - resource files
-  - satellite assemblies
-  - localization
-  - packaging application resources
-  - localizing resources
+- deploying applications [.NET Framework], resources
+- deploying applications [.NET Core], resources
+- application resources
+- resource files
+- satellite assemblies
+- localization
+- packaging application resources
+- localizing resources
 ms.assetid: 8ad495d4-2941-40cf-bf64-e82e85825890
 author: rpetrusha
 ms.author: ronpet
+ms.openlocfilehash: 889158aebb70de20b4e64044b5fa61dc3494ed73
+ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57203360"
 ---
 # <a name="resources-in-net-apps"></a><span data-ttu-id="9a728-102">Prostředky v aplikacích .NET</span><span class="sxs-lookup"><span data-stu-id="9a728-102">Resources in .NET Apps</span></span>
 <span data-ttu-id="9a728-103">Téměř každá aplikace produkční kvality musí používat prostředky.</span><span class="sxs-lookup"><span data-stu-id="9a728-103">Nearly every production-quality app has to use resources.</span></span> <span data-ttu-id="9a728-104">Prostředek je jakákoli nespustitelná část dat, která je logicky nasazována s aplikací.</span><span class="sxs-lookup"><span data-stu-id="9a728-104">A resource is any nonexecutable data that is logically deployed with an app.</span></span> <span data-ttu-id="9a728-105">Prostředek může zobrazit v aplikaci jako chybové zprávy nebo jako součást uživatelského rozhraní.</span><span class="sxs-lookup"><span data-stu-id="9a728-105">A resource might be displayed in an app as error messages or as part of the user interface.</span></span> <span data-ttu-id="9a728-106">Prostředky mohou obsahovat data v různých formách, včetně řetězců, obrázků a trvale uložených objektů.</span><span class="sxs-lookup"><span data-stu-id="9a728-106">Resources can contain data in a number of forms, including strings, images, and persisted objects.</span></span> <span data-ttu-id="9a728-107">(K zápisu do souboru prostředků trvalé objekty, objekty musí být serializovatelné.) Ukládání dat do souboru prostředků vám umožní měnit data bez opětovné kompilace celou aplikaci.</span><span class="sxs-lookup"><span data-stu-id="9a728-107">(To write persisted objects to a resource file, the objects must be serializable.) Storing your data in a resource file enables you to change the data without recompiling your entire app.</span></span> <span data-ttu-id="9a728-108">Také umožňuje ukládat data na jednom místě a eliminuje nutnost využívají pevně zakódované data, která je uložena v několika umístěních.</span><span class="sxs-lookup"><span data-stu-id="9a728-108">It also enables you to store data in a single location, and eliminates the need to rely on hard-coded data that is stored in multiple locations.</span></span>  

@@ -4,6 +4,12 @@ description: Seznamte se nabídky společnosti Microsoft pro podporu životního
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 02/15/2019
+ms.openlocfilehash: 811ebd46c97b53176bf8bb9e47a366575e273efb
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57680189"
 ---
 # <a name="introduction-to-the-microsoft-platform-andtools-for-containerized-apps"></a><span data-ttu-id="f069d-103">Úvod do Microsoft platformu a nástroje pro kontejnerizované aplikace</span><span class="sxs-lookup"><span data-stu-id="f069d-103">Introduction to the Microsoft platform and tools for containerized apps</span></span>
 

@@ -1,9 +1,14 @@
 ---
-title: 'Jak článků (Průvodce v C#)'
-description: 'Kolekce rychlé tipy a krátký, zaměřuje ukázky kódu'
+title: Jak článků (Průvodce v C#)
+description: Kolekce rychlé tipy a krátký, zaměřuje ukázky kódu
 ms.date: 12/20/2017
+ms.openlocfilehash: cc78b8ffffc4f40629f213921fab6145751a7c57
+ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57202337"
 ---
-
 # <a name="how-to-c"></a><span data-ttu-id="b5272-103">Jak (C#)</span><span class="sxs-lookup"><span data-stu-id="b5272-103">How to (C#)</span></span>
 
 <span data-ttu-id="b5272-104">V tom, jak příručce jazyka C# najdete rychlé odpovědi na běžné dotazy.</span><span class="sxs-lookup"><span data-stu-id="b5272-104">In the How to section of the C# Guide you can find quick answers to common questions.</span></span> <span data-ttu-id="b5272-105">V některých případech může být uvedena články v několika oddílech.</span><span class="sxs-lookup"><span data-stu-id="b5272-105">In some cases, articles may be listed in multiple sections.</span></span> <span data-ttu-id="b5272-106">Chtěli jsme se je bylo možné snadno najít pro více cesty pro hledání.</span><span class="sxs-lookup"><span data-stu-id="b5272-106">We wanted to make them easy to find for multiple search paths.</span></span> 
