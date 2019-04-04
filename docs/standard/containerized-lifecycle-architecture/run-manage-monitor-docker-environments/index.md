@@ -1,11 +1,16 @@
 ---
-title: 'Spuštění, Správa a monitorování produkčních prostředí Dockeru'
+title: Spuštění, Správa a monitorování produkčních prostředí Dockeru
 description: Životní cyklus aplikace kontejnerizovaných Dockeru s platformou a nástroji Microsoft
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 02/15/2019
+ms.openlocfilehash: 7c470a2d24b8807bdda10e1816bc5a430a5c63f1
+ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56834937"
 ---
-
 # <a name="run-manage-and-monitor-docker-production-environments"></a><span data-ttu-id="d41bd-103">Spuštění, Správa a monitorování produkčních prostředí Dockeru</span><span class="sxs-lookup"><span data-stu-id="d41bd-103">Run, manage, and monitor Docker production environments</span></span>
 
 <span data-ttu-id="d41bd-104">Pro zpracování obrazu: Podnikové aplikace je potřeba spustit s vysokou dostupností a vysokou škálovatelnost; IT oddělení musí mít možnost spravovat a monitorovat prostředí a samotnými aplikacemi.</span><span class="sxs-lookup"><span data-stu-id="d41bd-104">Vision: Enterprise applications need to run with high availability and high scalability; IT operations need to be able to manage and monitor the environments and the applications themselves.</span></span>

@@ -2,11 +2,17 @@
 title: Rozhraní (Visual Basic)
 ms.date: 07/20/2015
 helpviewer_keywords:
-  - 'Visual Basic code, interfaces'
-  - 'interfaces [Visual Basic], Visual Basic'
-  - interfaces
-  - 'interfaces [Visual Basic]'
+- Visual Basic code, interfaces
+- interfaces [Visual Basic], Visual Basic
+- interfaces
+- interfaces [Visual Basic]
 ms.assetid: 61b06674-12c9-430b-be68-cc67ecee1f5b
+ms.openlocfilehash: 5f85eca1026d05d8dc3d862559ee48440edf2c4b
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56972378"
 ---
 # <a name="interfaces-visual-basic"></a><span data-ttu-id="d0781-102">Rozhraní (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="d0781-102">Interfaces (Visual Basic)</span></span>
 <span data-ttu-id="d0781-103">*Rozhraní* definovat vlastnosti, metody a události, které můžete implementovat třídy.</span><span class="sxs-lookup"><span data-stu-id="d0781-103">*Interfaces* define the properties, methods, and events that classes can implement.</span></span> <span data-ttu-id="d0781-104">Rozhraní umožňují definovat funkce jako malé skupiny úzce související vlastnosti, metody a události; To snižuje problémy s kompatibilitou, protože vám umožní vytvářet lepší implementace pro vaše rozhraní bez ohrožující existující kód.</span><span class="sxs-lookup"><span data-stu-id="d0781-104">Interfaces allow you to define features as small groups of closely related properties, methods, and events; this reduces compatibility problems because you can develop enhanced implementations for your interfaces without jeopardizing existing code.</span></span> <span data-ttu-id="d0781-105">Kdykoli můžete přidat nové funkce ve vývoji, implementace a dalších rozhraní.</span><span class="sxs-lookup"><span data-stu-id="d0781-105">You can add new features at any time by developing additional interfaces and implementations.</span></span>  

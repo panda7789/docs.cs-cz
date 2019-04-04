@@ -1,23 +1,29 @@
 ---
-title: 'C#operátory'
+title: C#operátory
 ms.date: 04/04/2018
 f1_keywords:
-  - cs.operators
+- cs.operators
 helpviewer_keywords:
-  - 'boolean operators [C#]'
-  - 'expressions [C#], operators'
-  - 'logical operators [C#]'
-  - 'operators [C#]'
-  - 'Visual C#, operators'
-  - 'indirection operators [C#]'
-  - 'assignment operators [C#]'
-  - 'shift operators [C#]'
-  - 'relational operators [C#]'
-  - 'bitwise operators [C#]'
-  - 'address operators [C#]'
-  - 'keywords [C#], operators'
-  - 'arithmetic operators [C#]'
+- boolean operators [C#]
+- expressions [C#], operators
+- logical operators [C#]
+- operators [C#]
+- Visual C#, operators
+- indirection operators [C#]
+- assignment operators [C#]
+- shift operators [C#]
+- relational operators [C#]
+- bitwise operators [C#]
+- address operators [C#]
+- keywords [C#], operators
+- arithmetic operators [C#]
 ms.assetid: 0301e31f-22ad-49af-ac3c-d5eae7f0ac43
+ms.openlocfilehash: 7666918cbff7a395a93a274629fe574ff20e170c
+ms.sourcegitcommit: 4a8c2b8d0df44142728b68ebc842575840476f6d
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/28/2019
+ms.locfileid: "58545686"
 ---
 # <a name="c-operators"></a><span data-ttu-id="fc62a-102">C#operátory</span><span class="sxs-lookup"><span data-stu-id="fc62a-102">C# operators</span></span>
 

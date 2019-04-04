@@ -1,11 +1,17 @@
 ---
-title: 'Řetězce - C# Průvodce programováním'
+title: Řetězce - C# Průvodce programováním
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
-  - 'C# language, strings'
-  - 'strings [C#]'
+- C# language, strings
+- strings [C#]
 ms.assetid: 21580405-cb25-4541-89d5-037846a38b07
+ms.openlocfilehash: 9561393a78ffbf9c2bec98c849c389b92227db78
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57373449"
 ---
 # <a name="strings-c-programming-guide"></a><span data-ttu-id="03b38-102">Řetězce (Průvodce programováním v C#)</span><span class="sxs-lookup"><span data-stu-id="03b38-102">Strings (C# Programming Guide)</span></span>
 <span data-ttu-id="03b38-103">Řetězec je objekt typu <xref:System.String> jehož hodnota je text.</span><span class="sxs-lookup"><span data-stu-id="03b38-103">A string is an object of type <xref:System.String> whose value is text.</span></span> <span data-ttu-id="03b38-104">Interně, text se ukládá jako sekvenční jen pro čtení kolekcí <xref:System.Char> objekty.</span><span class="sxs-lookup"><span data-stu-id="03b38-104">Internally, the text is stored as a sequential read-only collection of <xref:System.Char> objects.</span></span> <span data-ttu-id="03b38-105">Neexistuje žádný znak null ukončující řetězec jazyka C#; na konci řetězec jazyka C# proto může obsahovat libovolný počet vložené znaky null ('\0').</span><span class="sxs-lookup"><span data-stu-id="03b38-105">There is no null-terminating character at the end of a C# string; therefore a C# string can contain any number of embedded null characters ('\0').</span></span> <span data-ttu-id="03b38-106"><xref:System.String.Length%2A> Vlastnost řetězce představuje počet `Char` objekty obsahuje, není počet znaků Unicode.</span><span class="sxs-lookup"><span data-stu-id="03b38-106">The <xref:System.String.Length%2A> property of a string represents the number of `Char` objects it contains, not the number of Unicode characters.</span></span> <span data-ttu-id="03b38-107">Chcete-li získat přístup k jednotlivým kódové body sady Unicode v řetězci, použijte <xref:System.Globalization.StringInfo> objektu.</span><span class="sxs-lookup"><span data-stu-id="03b38-107">To access the individual Unicode code points in a string, use the <xref:System.Globalization.StringInfo> object.</span></span>  

@@ -5,6 +5,12 @@ ms.technology: dotnet-standard
 ms.assetid: e695047f-3c0f-4045-8708-5baea91cc380
 author: mairaw
 ms.author: mairaw
+ms.openlocfilehash: 1edd267ed388f630cc332caa278d5c47a40d77d5
+ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56835119"
 ---
 # <a name="xml-documents-and-data"></a><span data-ttu-id="4ca87-102">Dokumenty a data XML</span><span class="sxs-lookup"><span data-stu-id="4ca87-102">XML Documents and Data</span></span>
 <span data-ttu-id="4ca87-103">Rozhraní .NET Framework poskytuje komplexního a integrovaného sadu tříd, které vám umožní snadno vytvářet aplikace pracující s XML.</span><span class="sxs-lookup"><span data-stu-id="4ca87-103">The .NET Framework provides a comprehensive and integrated set of classes that enable you to build XML-aware apps easily.</span></span> <span data-ttu-id="4ca87-104">Třídy v následující obory názvů podporují analýzu a zápis dat XML v paměti, ověřování dat a transformace XSLT pro úpravy XML.</span><span class="sxs-lookup"><span data-stu-id="4ca87-104">The classes in the following namespaces support parsing and writing XML, editing XML data in memory, data validation, and XSLT transformation.</span></span>  

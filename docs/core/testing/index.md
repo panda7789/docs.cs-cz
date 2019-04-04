@@ -5,8 +5,13 @@ author: ardalis
 ms.author: wiwagn
 ms.date: 08/30/2017
 ms.custom: seodec18
+ms.openlocfilehash: 73667843452bbcab52a8cd4aa7906beecc095677
+ms.sourcegitcommit: 462dc41a13942e467984e48f4018d1f79ae67346
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58185503"
 ---
-
 # <a name="unit-testing-in-net-core-and-net-standard"></a><span data-ttu-id="9e675-103">Testování jednotek v .NET Core a .NET Standard</span><span class="sxs-lookup"><span data-stu-id="9e675-103">Unit testing in .NET Core and .NET Standard</span></span>
 
 <span data-ttu-id="9e675-104">.NET core umožňuje snadno vytvořit testy jednotek.</span><span class="sxs-lookup"><span data-stu-id="9e675-104">.NET Core makes it easy to create unit tests.</span></span> <span data-ttu-id="9e675-105">Tento článek představuje testování částí a ukazuje, jak se liší od jiných typů testů.</span><span class="sxs-lookup"><span data-stu-id="9e675-105">This article introduces unit tests and illustrates how they differ from other kinds of tests.</span></span> <span data-ttu-id="9e675-106">Propojené prostředky v dolní části stránky ukazují, jak přidat do svého řešení projekt testu.</span><span class="sxs-lookup"><span data-stu-id="9e675-106">The linked resources near the bottom of the page show you how to add a test project to your solution.</span></span> <span data-ttu-id="9e675-107">Po nastavení projektu testu bude moct spustit testování částí pomocí příkazového řádku nebo Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="9e675-107">After you set up your test project, you will be able to run your unit tests using the command line or Visual Studio.</span></span>

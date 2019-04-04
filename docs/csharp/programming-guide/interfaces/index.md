@@ -1,11 +1,17 @@
 ---
-title: 'Rozhraní - C# Průvodce programováním'
+title: Rozhraní - C# Průvodce programováním
 ms.custom: seodec18
 ms.date: 08/21/2018
 helpviewer_keywords:
-  - 'interfaces [C#]'
-  - 'C# language, interfaces'
+- interfaces [C#]
+- C# language, interfaces
 ms.assetid: 2feda177-ce11-432d-81b4-d50f5f35fd37
+ms.openlocfilehash: 330e4e8b36f03b028786920422cd325b31d814e0
+ms.sourcegitcommit: e994e47d3582bf09ae487ecbd53c0dac30aebaf7
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58262414"
 ---
 # <a name="interfaces-c-programming-guide"></a><span data-ttu-id="cc2d8-102">Rozhraní (Průvodce programováním v C#)</span><span class="sxs-lookup"><span data-stu-id="cc2d8-102">Interfaces (C# Programming Guide)</span></span>
 

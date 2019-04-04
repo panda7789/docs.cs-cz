@@ -3,19 +3,25 @@ title: Zpracování a generování událostí
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
-  - csharp
-  - vb
+- csharp
+- vb
 helpviewer_keywords:
-  - delegate model for events
-  - 'application development [.NET], events'
-  - 'application development [.NET Framework], events'
-  - 'application development [.NET Core], events'
-  - 'events [.NET]'
-  - 'events [.NET Core]'
-  - 'events [.NET Framework]'
+- delegate model for events
+- application development [.NET], events
+- application development [.NET Framework], events
+- application development [.NET Core], events
+- events [.NET]
+- events [.NET Core]
+- events [.NET Framework]
 ms.assetid: b6f65241-e0ad-4590-a99f-200ce741bb1f
 author: rpetrusha
 ms.author: ronpet
+ms.openlocfilehash: b5e49e9d575ae2ec9b48b18f839d469632ffa769
+ms.sourcegitcommit: 344d82456f27d09a210671214a14cfd7daf1f97c
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58348801"
 ---
 # <a name="handling-and-raising-events"></a><span data-ttu-id="225c5-102">Zpracování a generování událostí</span><span class="sxs-lookup"><span data-stu-id="225c5-102">Handling and raising events</span></span>
 

@@ -1,11 +1,16 @@
 ---
 title: .NET ukázky a kurzy
-description: 'Informace o ukázky a kurzy pro .NET Core, ASP.NET Core a C# jazyk, který vám pomůže Další informace o rozhraní .NET.'
+description: Informace o ukázky a kurzy pro .NET Core, ASP.NET Core a C# jazyk, který vám pomůže Další informace o rozhraní .NET.
 author: BillWagner
 ms.author: wiwagn
 ms.date: 04/11/2017
+ms.openlocfilehash: 682c60ca4a0e801ec8e138a88124b86b88f39615
+ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "57558964"
 ---
-
 # <a name="net-samples-and-tutorials"></a><span data-ttu-id="5c405-103">.NET ukázky a kurzy</span><span class="sxs-lookup"><span data-stu-id="5c405-103">.NET samples and tutorials</span></span>
 
 <span data-ttu-id="5c405-104">Dokumentace k .NET obsahuje sadu ukázky a kurzy, které vás naučí o .NET.</span><span class="sxs-lookup"><span data-stu-id="5c405-104">The .NET documentation contains a set of samples and tutorials that teach you about .NET.</span></span> <span data-ttu-id="5c405-105">Toto téma popisuje, jak najít, zobrazit a stáhnout .NET Core, ASP.NET Core a C# ukázky a kurzy.</span><span class="sxs-lookup"><span data-stu-id="5c405-105">This topic describes how to find, view, and download .NET Core, ASP.NET Core, and C# samples and tutorials.</span></span> <span data-ttu-id="5c405-106">Najít materiály a učte F# programovací jazyk na [ F# nadace lokality](https://fsharp.org/learn.html).</span><span class="sxs-lookup"><span data-stu-id="5c405-106">Find resources to learn the F# programming language on the [F# Foundation's site](https://fsharp.org/learn.html).</span></span> <span data-ttu-id="5c405-107">Pokud vás zajímá zkoumání C# editoru kódu online začínat [toto Interaktivní kurz](https://www.microsoft.com/net/learn/in-browser-tutorial/1) a pokračujte [ C# interaktivního kurzu](../csharp/tutorials/intro-to-csharp/index.md).</span><span class="sxs-lookup"><span data-stu-id="5c405-107">If you're interested in exploring C# using an online code editor, start with [this interactive tutorial](https://www.microsoft.com/net/learn/in-browser-tutorial/1) and continue with [C# interactive tutorial](../csharp/tutorials/intro-to-csharp/index.md).</span></span> <span data-ttu-id="5c405-108">Pokyny o tom, jak zobrazit a stáhnout ukázkový kód, naleznete v tématu [zobrazování a stahování ukázky](#viewing-and-downloading-samples) oddílu.</span><span class="sxs-lookup"><span data-stu-id="5c405-108">For instructions on how to view and download sample code, see the [Viewing and downloading samples](#viewing-and-downloading-samples) section.</span></span>

@@ -1,12 +1,17 @@
 ---
 title: Platformě Roslyn na základě analyzátory – .NET
-description: 'Další informace o analyzátory Roslyn na základě, které najít problémy a navrhují opravy těchto problémů.'
+description: Další informace o analyzátory Roslyn na základě, které najít problémy a navrhují opravy těchto problémů.
 author: billwagner
 ms.author: wiwagn
 ms.date: 01/24/2018
 ms.technology: dotnet-standard
+ms.openlocfilehash: 436cfb3904f0891f8c18bb5890563a13d65e2d1c
+ms.sourcegitcommit: d938c39afb9216db377d0f0ecdaa53936a851059
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58634242"
 ---
-
 # <a name="the-roslyn-based-analyzers"></a><span data-ttu-id="ac0ec-103">Analyzátory založené platformě Roslyn</span><span class="sxs-lookup"><span data-stu-id="ac0ec-103">The Roslyn based Analyzers</span></span>
 
 <span data-ttu-id="ac0ec-104">Založené na platformě Roslyn analyzátory analyzovat zdrojový kód projektu k vyhledání problémů a opravy zobrazovat pomocí sady SDK kompilátoru .NET (Roslyn API).</span><span class="sxs-lookup"><span data-stu-id="ac0ec-104">Roslyn-based analyzers use the .NET Compiler SDK (Roslyn APIs) to analyze your project's source code to find issues and suggest corrections.</span></span> <span data-ttu-id="ac0ec-105">Různé analyzátory vyhledejte různých tříd problémů, od postupů, které můžou způsobovat chyby k zajištění zabezpečení pro kompatibilitu s rozhraními API.</span><span class="sxs-lookup"><span data-stu-id="ac0ec-105">Different analyzers look for different classes of issues, ranging from practices that are likely to cause bugs to security concerns to API compatibility.</span></span>

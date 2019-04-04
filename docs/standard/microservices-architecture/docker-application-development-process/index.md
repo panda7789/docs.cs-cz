@@ -1,9 +1,15 @@
 ---
 title: Aplikace založené na proces vývoje pro Docker
-description: 'Získáte základní přehled možností pro vývoj aplikací založených na Dockeru. Díky volbě Visual Studio pro Windows, Visual Studio pro Mac nebo Visual Studio Code pro podporu více platforem (Windows, Mac a Linux).'
+description: Získáte základní přehled možností pro vývoj aplikací založených na Dockeru. Díky volbě Visual Studio pro Windows, Visual Studio pro Mac nebo Visual Studio Code pro podporu více platforem (Windows, Mac a Linux).
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/27/2018
+ms.openlocfilehash: 219a562459be7fb1114dfdd9f139c938d1282c5c
+ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58465032"
 ---
 # <a name="development-process-for-docker-based-applications"></a><span data-ttu-id="c44c2-104">Proces vývoje pro aplikace založené na Dockeru</span><span class="sxs-lookup"><span data-stu-id="c44c2-104">Development Process for Docker-Based Applications</span></span>
 

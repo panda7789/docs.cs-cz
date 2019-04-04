@@ -1,13 +1,19 @@
 ---
-title: 'Vzájemná funkční spolupráce – C# Průvodce programováním'
+title: Vzájemná funkční spolupráce – C# Průvodce programováním
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
-  - COM interop
-  - interoperability
-  - 'platform invoke, accessing APIs with C#'
-  - 'C# language, interoperability'
+- COM interop
+- interoperability
+- platform invoke, accessing APIs with C#
+- C# language, interoperability
 ms.assetid: 238bb95a-e962-4026-bbd5-197055bdb8ee
+ms.openlocfilehash: 50f2a72bf4981a49d5597a9bc8922db81197d810
+ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58411340"
 ---
 # <a name="interoperability-c-programming-guide"></a><span data-ttu-id="eca5c-102">Interoperabilita (Průvodce programováním v C#)</span><span class="sxs-lookup"><span data-stu-id="eca5c-102">Interoperability (C# Programming Guide)</span></span>
 <span data-ttu-id="eca5c-103">Interoperabilita umožňuje zachovat a využít stávající investice do nespravovaného kódu.</span><span class="sxs-lookup"><span data-stu-id="eca5c-103">Interoperability enables you to preserve and take advantage of existing investments in unmanaged code.</span></span> <span data-ttu-id="eca5c-104">Je volána kód, který běží v rámci ovládacího prvku modulu common language runtime (CLR) *spravovaného kódu*, a je volána kód, který běží mimo rámec platformy CLR *nespravovaný kód*.</span><span class="sxs-lookup"><span data-stu-id="eca5c-104">Code that runs under the control of the common language runtime (CLR) is called *managed code*, and code that runs outside the CLR is called *unmanaged code*.</span></span> <span data-ttu-id="eca5c-105">COM, modelu COM +, komponenty C++, součásti ActiveX a rozhraní API Microsoft Windows jsou příkladem nespravovaného kódu.</span><span class="sxs-lookup"><span data-stu-id="eca5c-105">COM, COM+, C++ components, ActiveX components, and Microsoft Windows API are examples of unmanaged code.</span></span>  

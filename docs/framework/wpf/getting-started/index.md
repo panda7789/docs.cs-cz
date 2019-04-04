@@ -2,10 +2,16 @@
 title: Začínáme (WPF)
 ms.date: 01/26/2018
 helpviewer_keywords:
-  - 'getting started [WPF]'
-  - 'introduction [WPF]'
-  - 'WPF [WPF], getting started'
+- getting started [WPF]
+- introduction [WPF]
+- WPF [WPF], getting started
 ms.assetid: 04f91da8-708c-46c7-8172-f1695ec847cd
+ms.openlocfilehash: 0717536912802461e6d03e240b22d3e05d535f86
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57371128"
 ---
 # <a name="getting-started-wpf"></a><span data-ttu-id="ff373-102">Začínáme (WPF)</span><span class="sxs-lookup"><span data-stu-id="ff373-102">Getting Started (WPF)</span></span>
 <span data-ttu-id="ff373-103">Windows Presentation Foundation (WPF) je architekturu uživatelského rozhraní, která vytvoří aplikace klasické pracovní plochy klienta.</span><span class="sxs-lookup"><span data-stu-id="ff373-103">Windows Presentation Foundation (WPF) is a UI framework that creates desktop client applications.</span></span> <span data-ttu-id="ff373-104">Vývojová platforma WPF podporuje širokou škálu funkce pro vývoj aplikací, včetně aplikačního modelu, prostředky, ovládací prvky, grafiky, rozložení, datové vazby, dokumenty a zabezpečení.</span><span class="sxs-lookup"><span data-stu-id="ff373-104">The WPF development platform supports a broad set of application development features, including an application model, resources, controls, graphics, layout, data binding, documents, and security.</span></span> <span data-ttu-id="ff373-105">Je podmnožinou rozhraní .NET Framework, takže pokud jste dříve vytvořili aplikací s použitím rozhraní .NET Framework pomocí technologie ASP.NET nebo Windows Forms, by mělo být známé programovací prostředí.</span><span class="sxs-lookup"><span data-stu-id="ff373-105">It is a subset of the .NET Framework, so if you have previously built applications with the .NET Framework using ASP.NET or Windows Forms, the programming experience should be familiar.</span></span> <span data-ttu-id="ff373-106">WPF využívá rozšiřitelné aplikace Markup Language (XAML) a poskytuje deklarativní model pro programování aplikací.</span><span class="sxs-lookup"><span data-stu-id="ff373-106">WPF uses the Extensible Application Markup Language (XAML) to provide a declarative model for application programming.</span></span> <span data-ttu-id="ff373-107">Tato část obsahuje témata, které představují a pomůžou vám začít s WPF.</span><span class="sxs-lookup"><span data-stu-id="ff373-107">This section has topics that introduce and help you get started with WPF.</span></span>  

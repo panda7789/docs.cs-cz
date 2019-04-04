@@ -1,11 +1,17 @@
 ---
-title: 'Delegáti - C# Průvodce programováním'
+title: Delegáti - C# Průvodce programováním
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
-  - 'C# language, delegates'
-  - 'delegates [C#]'
+- C# language, delegates
+- delegates [C#]
 ms.assetid: 97de039b-c76b-4b9c-a27d-8c1e1c8d93da
+ms.openlocfilehash: 8dca99f5b6cd315b31bbefb9515cde5065601730
+ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57203506"
 ---
 # <a name="delegates-c-programming-guide"></a><span data-ttu-id="7afa4-102">Delegáti (Průvodce programováním v C#)</span><span class="sxs-lookup"><span data-stu-id="7afa4-102">Delegates (C# Programming Guide)</span></span>
 <span data-ttu-id="7afa4-103">A [delegovat](../../../csharp/language-reference/keywords/delegate.md) je typ, který představuje odkazy na metody se seznamem konkrétních parametrů a návratovým typem.</span><span class="sxs-lookup"><span data-stu-id="7afa4-103">A [delegate](../../../csharp/language-reference/keywords/delegate.md) is a type that represents references to methods with a particular parameter list and return type.</span></span> <span data-ttu-id="7afa4-104">Pokud vytvoříte instanci delegátu, můžete příslušnou instanci přidružit s jakoukoli metodou s kompatibilním podpisem a návratovým typem.</span><span class="sxs-lookup"><span data-stu-id="7afa4-104">When you instantiate a delegate, you can associate its instance with any method with a compatible signature and return type.</span></span> <span data-ttu-id="7afa4-105">Metodu můžete vyvolat (nebo volat) prostřednictvím instance delegátu.</span><span class="sxs-lookup"><span data-stu-id="7afa4-105">You can invoke (or call) the method through the delegate instance.</span></span>  

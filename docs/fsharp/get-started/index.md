@@ -1,7 +1,13 @@
 ---
-title: 'Začínáme sF#'
-description: 'Zjistěte, jak začít pracovat s F# programovací jazyk.'
+title: Začínáme sF#
+description: Zjistěte, jak začít pracovat s F# programovací jazyk.
 ms.date: 12/08/2018
+ms.openlocfilehash: df966d6537731650a5f2fcd795ad638ace1b059f
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56971406"
 ---
 # <a name="get-started-with-f"></a><span data-ttu-id="3727d-103">Začínáme s F\#</span><span class="sxs-lookup"><span data-stu-id="3727d-103">Get Started with F\#</span></span>
 
