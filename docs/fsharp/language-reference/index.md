@@ -1,7 +1,13 @@
 ---
-title: 'Referenční dokumentace jazyka F#'
-description: 'Najít F# jazykové funkce informace z tohoto odkazu na jazyk tokeny, koncepty, typy, výrazy a témata konstrukce podporované kompilátorem.'
+title: Referenční dokumentace jazyka F#
+description: Najít F# jazykové funkce informace z tohoto odkazu na jazyk tokeny, koncepty, typy, výrazy a témata konstrukce podporované kompilátorem.
 ms.date: 05/16/2016
+ms.openlocfilehash: b70264b44b0820993cd77cb6c4f95a1547783174
+ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "57846633"
 ---
 # <a name="f-language-reference"></a>Referenční dokumentace jazyka F#
 

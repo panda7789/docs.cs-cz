@@ -2,10 +2,16 @@
 title: Windows Forms
 ms.date: 03/30/2017
 helpviewer_keywords:
-  - Windows Forms
-  - user interface
-  - 'user interface [Windows Forms], forms'
+- Windows Forms
+- user interface
+- user interface [Windows Forms], forms
 ms.assetid: 627df1e9-b254-41af-bbac-9a4f02810c54
+ms.openlocfilehash: aa3f3d8adc34d8c51cd2cfa6b087d01e9af1ad82
+ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "57723111"
 ---
 # <a name="windows-forms"></a>Windows Forms
 Základní jednotka vaší aplikace jsou formuláře je nezbytné, abyste udělili uvažujete jejich funkce a návrhu. Formuláře v konečném důsledku je prázdným projektem, je, jako vývojář, zvýšit s ovládacími prvky pro vytvoření uživatelského rozhraní a s kódem pro manipulaci s daty. Za tímto účelem sady Visual Studio poskytuje integrované vývojové prostředí (IDE), které vám pomůže při psaní kódu, jakož i bohaté ovládací prvek nastavit písemné s [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)]. Ve vzájemně doplňuje funkce tyto ovládací prvky s vaším kódem, můžete snadno a rychle vyvinout řešení, které potřebujete.  

@@ -4,12 +4,12 @@ description: Zjistěte podrobnosti pracovního postupu pro vývoj aplikací zalo
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 01/07/2019
-ms.openlocfilehash: a8016b2b55313cb6e1d84bfb2c50a62347858de9
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.openlocfilehash: d494dba829d8065e2bc1424bc9bcc11e265fbcc0
+ms.sourcegitcommit: a3db1a9eafca89f95ccf361bc1833b47fbb2bb30
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58464356"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58921088"
 ---
 # <a name="development-workflow-for-docker-apps"></a>Pracovní postup vývoje aplikací Dockeru
 
@@ -97,14 +97,14 @@ Podobným způsobem můžete sady Visual Studio také přidat soubor docker-comp
 
 Obvykle vytvoříte vlastní image kontejneru nad základní image, můžete získat z oficiální úložiště, třeba [Docker Hubu](https://hub.docker.com/) registru. To je přesně co se stane na pozadí, když povolíte podporu Dockeru v sadě Visual Studio. Váš soubor Dockerfile použije existující `aspnetcore` bitové kopie.
 
-Dříve jsme vysvětlit, které Image Dockeru a úložiště můžete použít, v závislosti na rozhraní framework a rozhodli jste se operační systém. Například pokud chcete používat ASP.NET Core (s Linuxem nebo Windows), obrázku je `microsoft/dotnet:2.2-aspnetcore-runtime`. Proto stačí zadat jaké základní image Dockeru, který budete používat pro váš kontejner. Můžete to udělat tak, že přidáte `FROM microsoft/dotnet:2.2-aspnetcore-runtime` na vašem souboru Dockerfile. To se automaticky provede pomocí sady Visual Studio, ale pokud byste chtěli aktualizovat verzi, aktualizujte tuto hodnotu.
+Dříve jsme vysvětlit, které Image Dockeru a úložiště můžete použít, v závislosti na rozhraní framework a rozhodli jste se operační systém. Například pokud chcete používat ASP.NET Core (s Linuxem nebo Windows), obrázku je `mcr.microsoft.com/dotnet/core/aspnet:2.2`. Proto stačí zadat jaké základní image Dockeru, který budete používat pro váš kontejner. Můžete to udělat tak, že přidáte `FROM mcr.microsoft.com/dotnet/core/aspnet:2.2` na vašem souboru Dockerfile. To se automaticky provede pomocí sady Visual Studio, ale pokud byste chtěli aktualizovat verzi, aktualizujte tuto hodnotu.
 
 Použití oficiální úložiště .NET image z Docker Hubu s číslem verze zajistí, že stejné funkce jazyka jsou k dispozici na všech počítačích (včetně vývoje, testování a produkce).
 
 Následující příklad ukazuje ukázkový soubor Dockerfile pro kontejner služby ASP.NET Core.
 
 ```Dockerfile
-FROM microsoft/dotnet:2.2-aspnetcore-runtime
+FROM mcr.microsoft.com/dotnet/core/aspnet:2.2
 ARG source
 WORKDIR /app
 EXPOSE 80
@@ -112,7 +112,7 @@ COPY ${source:-obj/Docker/publish} .
 ENTRYPOINT ["dotnet", " MySingleContainerWebApp.dll "]
 ```
 
-V tomto případě bitovou kopii podle verze 2.2 oficiální image Dockeru ASP.NET Core (více arch pro systémy Linux a Windows). Toto je nastavení `FROM microsoft/dotnet:2.2-aspnetcore-runtime`. (Další informace o této základní image, najdete v článku [Image Dockeru .NET Core](https://hub.docker.com/r/microsoft/dotnet/) stránky.) V souboru Dockerfile potřebujete také dáte pokyn, aby Docker pro naslouchání na portu TCP, které se použijí v době běhu (v tomto případě portem 80, nakonfigurované s nastavením VYSTAVENÍ).
+V tomto případě bitovou kopii podle verze 2.2 oficiální image Dockeru ASP.NET Core (více arch pro systémy Linux a Windows). Toto je nastavení `FROM mcr.microsoft.com/dotnet/core/aspnet:2.2`. (Další informace o této základní image, najdete v článku [Image Dockeru .NET Core](https://hub.docker.com/_/microsoft-dotnet-core/) stránky.) V souboru Dockerfile potřebujete také dáte pokyn, aby Docker pro naslouchání na portu TCP, které se použijí v době běhu (v tomto případě portem 80, nakonfigurované s nastavením VYSTAVENÍ).
 
 Můžete zadat další nastavení konfigurace v souboru Dockerfile, v závislosti na jazyk a rozhraní, které používáte. Například řádek ENTRYPOINT s `["dotnet", "MySingleContainerWebApp.dll"]` říká Dockeru spustit aplikaci .NET Core. Pokud používáte sadu SDK a rozhraní .NET Core CLI (rozhraní příkazového řádku dotnet) k sestavení a spuštění aplikace .NET, toto nastavení bude jiný. Dolní řádek je, že řádku vstupního bodu a další nastavení budou lišit v závislosti na jazyku a platformě, kterou zvolíte pro vaši aplikaci.
 
@@ -132,7 +132,7 @@ Můžete zadat další nastavení konfigurace v souboru Dockerfile, v závislost
 
 ### <a name="using-multi-arch-image-repositories"></a>Pomocí více architektury image úložišť
 
-Jediné úložiště může obsahovat variant, platformy, jako jsou image Linuxu a Windows image. Tato funkce umožňuje dodavatelé, jako je Microsoft (creators základní image) k vytvoření jednoho úložiště pro víc platforem (to znamená operačních systémů Linux a Windows). Například [microsoft/dotnet](https://hub.docker.com/r/microsoft/dotnet/) úložiště k dispozici v registru Docker Hub poskytuje podporu pro systémy Linux a Windows Nano Server pomocí stejného názvu úložiště.
+Jediné úložiště může obsahovat variant, platformy, jako jsou image Linuxu a Windows image. Tato funkce umožňuje dodavatelé, jako je Microsoft (creators základní image) k vytvoření jednoho úložiště pro víc platforem (to znamená operačních systémů Linux a Windows). Například [dotnet/jádro](https://hub.docker.com/_/microsoft-dotnet-core/) úložiště k dispozici v registru Docker Hub poskytuje podporu pro systémy Linux a Windows Nano Server pomocí stejného názvu úložiště.
 
 Je-li zadat značky, cílení na platformu, která je explicitní jako v následujících případech:
 
@@ -174,11 +174,11 @@ Pravděpodobně nejlepší způsob, jak porozumět vícefázové prochází soub
 Počáteční souboru Docker může vypadat přibližně takto:
 
 ```Dockerfile
- 1  FROM microsoft/dotnet:2.2-aspnetcore-runtime AS base
+ 1  FROM mcr.microsoft.com/dotnet/core/aspnet:2.2 AS base
  2  WORKDIR /app
  3  EXPOSE 80
  4
- 5  FROM microsoft/dotnet:2.2-sdk AS build
+ 5  FROM mcr.microsoft.com/dotnet/core/sdk:2.2 AS build
  6  WORKDIR /src
  7  COPY src/Services/Catalog/Catalog.API/Catalog.API.csproj …
  8  COPY src/BuildingBlocks/HealthChecks/src/Microsoft.AspNetCore.HealthChecks … 
@@ -266,11 +266,11 @@ Poslední optimalizace prostě se to děje, že řádek 20 je redundantní, jako
 Výsledný soubor bude:
 
 ```Dockerfile
- 1  FROM microsoft/dotnet:2.2-aspnetcore-runtime AS base
+ 1  FROM mcr.microsoft.com/dotnet/core/aspnet:2.2 AS base
  2  WORKDIR /app
  3  EXPOSE 80
  4
- 5  FROM microsoft/dotnet:2.2-sdk AS publish
+ 5  FROM mcr.microsoft.com/dotnet/core/sdk:2.2 AS publish
  6  WORKDIR /src
  7  COPY . .
  8  RUN dotnet restore /ignoreprojectextensions:.dcproj
@@ -561,7 +561,7 @@ RUN powershell add-windowsfeature web-asp-net45
 
 ### <a name="additional-resources"></a>Další zdroje
 
-- **aspnet-docker/Dockerfile.** Příklady příkazů Powershellu spouštět z soubory dockerfile začlenit funkce Windows. \
+- **ASPNET dockeru/Dockerfile.** Příklady příkazů Powershellu spouštět z soubory dockerfile začlenit funkce Windows. \
   [https://github.com/Microsoft/aspnet-docker/blob/master/4.7.1-windowsservercore-ltsc2016/runtime/Dockerfile](https://github.com/Microsoft/aspnet-docker/blob/master/4.7.1-windowsservercore-ltsc2016/runtime/Dockerfile)
 
 >[!div class="step-by-step"]

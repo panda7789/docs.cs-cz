@@ -1,11 +1,16 @@
 ---
 title: 'Aplikace bez serveru: Architektury, vzory a implementace Azure'
-description: 'Průvodce architekturou bez serveru. Když, zjistěte, proč a jak implementovat architektury bez serveru (na rozdíl od infrastruktury jako služby [IaaS] nebo platforma jako služba [PaaS]) pro podnikové aplikace.'
+description: Průvodce architekturou bez serveru. Když, zjistěte, proč a jak implementovat architektury bez serveru (na rozdíl od infrastruktury jako služby [IaaS] nebo platforma jako služba [PaaS]) pro podnikové aplikace.
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 6/26/2018
+ms.openlocfilehash: a44af1fc76b54ec9be0d8e3b3ba2e54f3e3b220b
+ms.sourcegitcommit: 15ab532fd5e1f8073a4b678922d93b68b521bfa0
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58653935"
 ---
-
 # <a name="serverless-apps-architecture-patterns-and-azure-implementation"></a>Aplikace bez serveru: Architektury, vzory a implementace Azure
 
 ![Snímek obrazovky s e-kniha titulní aplikace bez serveru.](./media/index/serverless-apps-cover.jpg)

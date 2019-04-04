@@ -1,8 +1,14 @@
 ---
 title: .NET core migrace z project.json
-description: 'Zjistěte, jak migrovat starší aplikace project .NET Core pomocí project.json'
+description: Zjistěte, jak migrovat starší aplikace project .NET Core pomocí project.json
 ms.date: 07/19/2017
 ms.custom: seodec18
+ms.openlocfilehash: f48728e647b57a8c5796bdc2119f72b58a49d80f
+ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57675911"
 ---
 # <a name="migrating-net-core-projects-from-projectjson"></a>Migrace projektů .NET Core ze souboru project.json
 

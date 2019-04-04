@@ -1,9 +1,14 @@
 ---
-title: 'Jak článků (Průvodce v C#)'
-description: 'Kolekce rychlé tipy a krátký, zaměřuje ukázky kódu'
+title: Jak článků (Průvodce v C#)
+description: Kolekce rychlé tipy a krátký, zaměřuje ukázky kódu
 ms.date: 12/20/2017
+ms.openlocfilehash: cc78b8ffffc4f40629f213921fab6145751a7c57
+ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57202337"
 ---
-
 # <a name="how-to-c"></a>Jak (C#)
 
 V tom, jak příručce jazyka C# najdete rychlé odpovědi na běžné dotazy. V některých případech může být uvedena články v několika oddílech. Chtěli jsme se je bylo možné snadno najít pro více cesty pro hledání. 
