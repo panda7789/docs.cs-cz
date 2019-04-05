@@ -1,17 +1,17 @@
 ---
-title: Jaký operační systém mají cílit kontejnery .NET
+title: Operační systém, na který mají cílit kontejnery .NET
 description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Jaký operační systém mají cílit kontejnery .NET
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 01/07/2019
-ms.openlocfilehash: 9e1d07e48d88376efb5fbdbdadc999c8dcd5082d
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 14a0fb7cd9ecb8dfd5369da6f6bd5b47b4aea37a
+ms.sourcegitcommit: a3db1a9eafca89f95ccf361bc1833b47fbb2bb30
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57374905"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58921296"
 ---
-# <a name="what-os-to-target-with-net-containers"></a>Jaký operační systém mají cílit kontejnery .NET
+# <a name="what-os-to-target-with-net-containers"></a>Operační systém, na který mají cílit kontejnery .NET
 
 Zadaný spektrum operačních systémech podporovaných produktem rozdíly mezi rozhraní .NET Framework a .NET Core a Docker, by měl cíl konkrétní operační systém a konkrétní verze v závislosti na rozhraní, které používáte.
 
@@ -38,20 +38,20 @@ Když přidáte název bitové kopie do souboru Dockerfile, můžete vybrat oper
 </thead>
 <tbody>
 <tr>
-<td>Microsoft / dotnet:2.2 – modul runtime</td>
+<td>mcr.microsoft.com/dotnet/core/runtime:2.2</td>
 <td>Více architektury .NET core 2.2: Podporuje Linux a Windows Nano serveru v závislosti na hostitele Dockeru.</td>
 </tr>
 <tr class="odd">
-<td>Microsoft / dotnet:2.2-aspnetcore-modulu runtime</td>
+<td>mcr.microsoft.com/dotnet/core/aspnet:2.2</td>
 <td><p>Architektura ASP.NET Core 2.2 více: Podporuje Linux a Windows Nano serveru v závislosti na hostitele Dockeru.</p>
 <p>Aspnetcore image má několik optimalizací pro ASP.NET Core.</p></td>
 </tr>
 <tr class="even">
-<td>Microsoft / dotnet:2.2-aspnetcore-runtime – alpine</td>
+<td>MCR.microsoft.com/DotNet/Core/ASPNET:2.2-Alpine</td>
 <td>.NET core 2.2 pouze modul runtime na Alpine distribuce Linuxu</td>
 </tr>
 <tr class="odd">
-<td>microsoft/dotnet:2.2-aspnetcore-runtime-nanoserver-1803</td>
+<td>mcr.microsoft.com/dotnet/core/aspnet:2.2-nanoserver-1803</td>
 <td>.NET core 2.2 pouze modul runtime Windows Nano Server (Windows Server verze 1803)</td>
 </tr>
 </tbody>
