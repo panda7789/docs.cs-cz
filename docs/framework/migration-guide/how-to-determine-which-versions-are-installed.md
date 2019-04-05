@@ -1,6 +1,6 @@
 ---
 title: 'Postupy: Zjištění nainstalovaných verzí rozhraní .NET Framework'
-ms.date: 03/18/2019
+ms.date: 04/02/2019
 dev_langs:
 - csharp
 - vb
@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 40a67826-e4df-4f59-a651-d9eb0fdc755d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9c4ad3ca5694457637a82a36c8db4534df43a9d7
-ms.sourcegitcommit: 8258515adc6c37ab6278e5a3d102d593246f8672
+ms.openlocfilehash: 570cbd49fd8a8ea42d1c43ebe067a0d2d3f9dc27
+ms.sourcegitcommit: 68eb5c4928e2b082f178a42c16f73fedf52c2ab8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58504428"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59055232"
 ---
 # <a name="how-to-determine-which-net-framework-versions-are-installed"></a>Postupy: Zjištění nainstalovaných verzí rozhraní .NET Framework
 
@@ -68,17 +68,13 @@ Informace o zjišťování nainstalovaných aktualizací pro každou verzi rozhr
 2. V editoru registru otevřete následující podklíč: **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full**. Pokud **úplné** podklíč není k dispozici a není k dispozici rozhraní .NET Framework 4.5 nebo novější.
 
     > [!NOTE]
-    > **NET Framework Setup** složky v registru nezačíná tečkou.
+    > **NET Framework Setup** složky v registru neodpovídá *není* nezačíná tečkou.
 
 3. Vyhledejte položku DWORD s názvem **vydání**. Pokud existuje, pak je nutné rozhraní .NET Framework 4.5 nebo novější. Jeho hodnota je verze klíče, který odpovídá konkrétní verzi rozhraní .NET Framework. Na následujícím obrázku, například hodnoty **Release** položka je *378389*, což je verze klíč pro rozhraní .NET Framework 4.5. 
 
      ![Položky registru pro rozhraní .NET Framework 4.5](media/clr-installdir.png "položky registru pro rozhraní .NET Framework 4.5")
 
-V následující tabulce jsou uvedeny minimální hodnota **vydání** záznam pro každou verzi rozhraní .NET Framework. Tyto hodnoty můžete použít takto:
-
-- Pokud chcete zjistit, zda je k dispozici minimální verze rozhraní .NET Framework, testování, zda **verze** v registru byla nalezena hodnota DWORD je *větší než nebo rovna hodnotě* hodnota uvedená v tabulce. Například pokud vaše aplikace vyžaduje rozhraní .NET Framework 4.7 nebo novější, je otestovat pro hodnotu minimální verze klíče z *460798*.
-
-- Pokud chcete otestovat více verzí, začněte s nejnovější verzí rozhraní .NET Framework a pak test pro každou po sobě jdoucích starší verzi.
+V následující tabulce jsou uvedeny hodnoty **vydání** typu DWORD v jednotlivých operačních systémech pro rozhraní .NET Framework 4.5 a novější verze.
 
 [!INCLUDE[Release key values note](~/includes/version-keys-note.md)]
 
@@ -86,18 +82,23 @@ V následující tabulce jsou uvedeny minimální hodnota **vydání** záznam p
 
 |Verze rozhraní .NET Framework|Hodnota DWORD verze|
 |--------------------------------|-------------|
-|.NET Framework 4.5|378389|
-|.NET Framework 4.5.1|378675|
-|.NET Framework 4.5.2|379893|
-|.NET Framework 4.6|393295|
-|.NET Framework 4.6.1|394254|
-|.NET Framework 4.6.2|394802|
-|Rozhraní .NET framework 4.7|460798|
-|.NET Framework 4.7.1|461308|
-|.NET Framework 4.7.2|461808|
+|.NET Framework 4.5|Všechny operační systémy Windows: 378389|
+|.NET Framework 4.5.1|Na Windows 8.1 a Windows Server 2012 R2: 378675<br />Na všechny ostatní Windows operační systémy: 378758|
+|.NET Framework 4.5.2|Všechny operační systémy Windows: 379893|
+|.NET Framework 4.6|On Windows 10: 393295<br />Na všechny ostatní Windows operační systémy: 393297|
+|.NET Framework 4.6.1|V systémech Windows 10. listopadu Update: 394254<br />Na všechny ostatní Windows operačních systémů (včetně Windows 10): 394271|
+|.NET Framework 4.6.2|V systému Windows 10 Anniversary Update a Windows Server 2016: 394802<br />Na všechny ostatní Windows operačních systémů (včetně jiných operačních systémech Windows 10): 394806|
+|Rozhraní .NET framework 4.7|Na Windows 10 Creators Update: 460798<br />Na všechny ostatní Windows operačních systémů (včetně jiných operačních systémech Windows 10): 460805| 
+|.NET Framework 4.7.1|V systému Windows Server verze 1709 a Windows 10 Fall Creators Update: 461308<br/>Na všechny ostatní Windows operačních systémů (včetně jiných operačních systémech Windows 10): 461310|
+|.NET Framework 4.7.2|Ve Windows 10. dubna 2018 Update a Windows Server verze 1803: 461808<br/>Ve všech operačních systémech Windows než Windows 10. dubna 2018 Update a Windows Server verze 1803: 461814|  
 
-Kompletní tabulku verze klíče pro rozhraní .NET Framework pro konkrétní verze operačního systému Windows, naleznete v tématu [klíče rozhraní .NET Framework verze a verze operačního systému Windows](release-keys-and-os-versions.md).
+Tyto hodnoty můžete použít takto:
 
+- K určení, zda konkrétní verzi rozhraní .NET Framework je nainstalována na konkrétní verzi operačního systému Windows, otestovat, jestli **vydání** hodnotu DWORD *rovna* hodnota uvedená ve v tabulce. Například, pokud chcete zjistit, zda rozhraní .NET Framework 4.6 je k dispozici v systému Windows 10, test pro v **vydání** hodnotu *rovna* 393295.
+
+- Chcete-li zjistit, zda je k dispozici minimální verzi rozhraní .NET Framework, použijte menší **vydání** hodnotu DWORD pro tuto verzi. Například pokud je aplikace spuštěná v rámci rozhraní .NET Framework 4.6 nebo novější verze, testování **vydání** hodnotu DWORD *větší než nebo rovna hodnotě* 393295. Pro tabulku, která obsahuje pouze minimální **vydání** hodnotu DWORD pro každou verzi rozhraní .NET Framework naleznete v tématu [minimální hodnoty DWORD verze rozhraní .NET Framework 4.5 a novější verze](minimum-release-dword.md).
+
+- Pokud chcete testovat více verzí, začněte tím, že testování na hodnotu, která je *větší než nebo rovna hodnotě* na menší hodnotu DWORD pro nejnovější verzi rozhraní .NET Framework a pak porovnat hodnotu s menší hodnotu DWORD pro každou po sobě jdoucích starší verze. Například pokud vaše aplikace vyžaduje rozhraní .NET Framework 4.7 nebo novější a chcete zjistit, konkrétní verzi rozhraní .NET Framework, které jsou k dispozici, spusťte testováním **vydání** hodnotu DWORD *víc než nebo rovno*  k 461808 (menší hodnota DWORD pro rozhraní .NET Framework 4.7.2). Pak porovnat **vydání** hodnotu DWORD s menší hodnotu pro každou novější verzi rozhraní .NET Framework. Pro tabulku, která obsahuje pouze minimální **vydání** hodnotu DWORD pro každou verzi rozhraní .NET Framework naleznete v tématu [minimální hodnoty DWORD verze rozhraní .NET Framework 4.5 a novější verze](minimum-release-dword.md).
 
 <a name="net_d"></a> 
 ### <a name="find-net-framework-versions-45-and-later-with-code"></a>Najít rozhraní .NET Framework verze 4.5 a vyšší s kódem

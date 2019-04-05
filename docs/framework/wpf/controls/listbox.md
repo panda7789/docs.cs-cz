@@ -7,23 +7,23 @@ helpviewer_keywords:
 - ListBox control [WPF]
 - controls [WPF], ListBox
 ms.assetid: b91bb352-4f51-44e0-9017-a041f216c852
-ms.openlocfilehash: fe458ea2ca4107b7d43b160ba90b57c10b88a7f6
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 69f93b902fc3c35749871a187e57d45a404c6602
+ms.sourcegitcommit: 68eb5c4928e2b082f178a42c16f73fedf52c2ab8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57362224"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59055050"
 ---
 # <a name="listbox"></a>ListBox
 A <xref:System.Windows.Controls.ListBox> řízení poskytuje uživatelům seznam volitelných položek.  
   
  Následující obrázek ukazuje typické <xref:System.Windows.Controls.ListBox>.  
   
- ![ListBox screen shot](./media/ss-ctl-listbox.gif "SS_CTL_listbox")  
+ ![ListBox screenshot](./media/ss-ctl-listbox.gif "SS_CTL_listbox")  
 Typické ListBox  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Témata s postupy](listbox-how-to-topics.md)  
+ [– postupy](listbox-how-to-topics.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Controls.ListBox>  

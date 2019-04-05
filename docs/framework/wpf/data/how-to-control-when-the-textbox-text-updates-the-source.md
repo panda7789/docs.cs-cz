@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Určení, kdy dojde k aktualizaci textu TextBox ve zdroji'
+title: 'Postupy: Určení, kdy dojde k aktualizaci zdroje textem TextBox'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - data binding [WPF], timing of source updates
 - timing of source updates [WPF]
 ms.assetid: ffb7b96a-351d-4c68-81e7-054033781c64
-ms.openlocfilehash: 702f06a37aa98e3a84858a590655e8a4311cfa48
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 28c1e0e23247cfaf48343bf10bb79c4862623fb6
+ms.sourcegitcommit: 68eb5c4928e2b082f178a42c16f73fedf52c2ab8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57362133"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59055128"
 ---
-# <a name="how-to-control-when-the-textbox-text-updates-the-source"></a>Postupy: Určení, kdy dojde k aktualizaci textu TextBox ve zdroji
+# <a name="how-to-control-when-the-textbox-text-updates-the-source"></a>Postupy: Určení, kdy dojde k aktualizaci zdroje textem TextBox
 Toto téma popisuje způsob použití <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A> vlastností pro řízení časování aktualizací zdroje vazby. Téma používá <xref:System.Windows.Controls.TextBox> ovládací prvek jako příklad.  
   
 ## <a name="example"></a>Příklad  
@@ -28,7 +28,7 @@ Toto téma popisuje způsob použití <xref:System.Windows.Data.Binding.UpdateSo
   
  V důsledku toho <xref:System.Windows.Controls.TextBlock> zobrazí stejný text (protože mění se zdroj), protože uživatel zadá text do <xref:System.Windows.Controls.TextBox>, jak je znázorněno v následujícím snímku obrazovky ukázky:  
   
- ![Snímek obrazovky pro ukázka jednoduché datové vazby](./media/databindingsimplebindingsample2.png "DataBindingSimpleBindingSample2")  
+ ![Snímek obrazovky ukázkové jednoduchou datovou vazbu](./media/databindingsimplebindingsample2.png "DataBindingSimpleBindingSample2")  
   
  Pokud máte dialogové okno nebo upravovat uživatele formuláře a chcete odložit zdroj aktualizace, dokud uživatel je dokončení úprav pole a klikne na tlačítko "OK", můžete nastavit <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A> hodnotu vazby na <xref:System.Windows.Data.UpdateSourceTrigger.Explicit>, jako v následujícím příkladu:  
   
@@ -46,4 +46,4 @@ Toto téma popisuje způsob použití <xref:System.Windows.Data.Binding.UpdateSo
 >  <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A> Vlastnost se zabývá aktualizací zdroje a proto je platné pouze pro <xref:System.Windows.Data.BindingMode.TwoWay> nebo <xref:System.Windows.Data.BindingMode.OneWayToSource> vazby. Pro <xref:System.Windows.Data.BindingMode.TwoWay> a <xref:System.Windows.Data.BindingMode.OneWayToSource> vazby pro práci, musí objekt zdroje k poskytování oznámení změn vlastností. Mohou odkazovat na vzorcích, uvedeným v tomto tématu pro další informace. Kromě toho se můžete podívat na [implementace oznámení změn vlastností](how-to-implement-property-change-notification.md).  
   
 ## <a name="see-also"></a>Viz také:
-- [Témata s postupy](data-binding-how-to-topics.md)
+- [– postupy](data-binding-how-to-topics.md)

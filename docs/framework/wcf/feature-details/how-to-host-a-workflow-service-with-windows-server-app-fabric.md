@@ -2,12 +2,12 @@
 title: 'Postupy: Hostování služby pracovního procesu pomocí Windows Server App Fabric'
 ms.date: 03/30/2017
 ms.assetid: 83b62cce-5fc2-4c6d-b27c-5742ba3bac73
-ms.openlocfilehash: 287067391f47a0b4bcbe11bd4bfab971954cd706
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.openlocfilehash: 96842f103618b9c83f74c8ad0b758f7a425d8939
+ms.sourcegitcommit: 68eb5c4928e2b082f178a42c16f73fedf52c2ab8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58465123"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59055141"
 ---
 # <a name="how-to-host-a-workflow-service-with-windows-server-app-fabric"></a>Postupy: Hostování služby pracovního procesu pomocí Windows Server App Fabric
 Hostování služeb pracovních postupů v prostředcích infrastruktury aplikace je podobný hostování v rámci služby IIS nebo WAS. Jediným rozdílem je, nástroje, které poskytuje App Fabric pro nasazení, monitorování a správu služeb pracovních postupů. Toto téma používá služby pracovních postupů v vytvoří [vytvoření dlouhodobé služby pracovního postupu](../../../../docs/framework/wcf/feature-details/creating-a-long-running-workflow-service.md). Toto téma vás provede procesem vytvoření služby pracovních postupů. Toto téma vysvětluje, jak hostování služby pracovního postupu pomocí App Fabric. Další informace o systému Windows Server App Fabric najdete v tématu [dokumentaci k systému Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=193037&clcid=0x409). Před provedením následujících kroků zkontrolujte, že máte nainstalovaný Windows Server App Fabric.  Provedete tuto otevřete Internetová informační služba (inetmgr.exe), klikněte na název serveru v **připojení** zobrazení, klikněte na tlačítko weby a klikněte na tlačítko **výchozí webový server**. V pravém okraji obrazovky byste měli vidět část s názvem **App Fabric**. Pokud se nezobrazí v této části (bude uvedená nahoře v pravém podokně) nemáte nainstalované App Fabric. Další informace o instalaci systému Windows Server App Fabric najdete v části [instalace systému Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkId=193136).  

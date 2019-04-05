@@ -8,12 +8,12 @@ helpviewer_keywords:
 - controls [WPF], ToolTip
 - popups [WPF]
 ms.assetid: a3cb42d6-6ce3-4aa0-a557-2cc5b142f1e4
-ms.openlocfilehash: 8f471b26daa89bc513b36eaed5336aa6262cb26d
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 9fbb2fa4d403f59619792271eb3b8046cfa23949
+ms.sourcegitcommit: 68eb5c4928e2b082f178a42c16f73fedf52c2ab8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57367567"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59054985"
 ---
 # <a name="tooltip"></a>Popisy tlačítek
 Malého vyskakovacího okna, který se zobrazí, když uživatel pozastavení ukazatele myši nad prvkem, například jako více než je ovládací prvek tooltip <xref:System.Windows.Controls.Button>.  
@@ -26,7 +26,7 @@ Malého vyskakovacího okna, který se zobrazí, když uživatel pozastavení uk
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [ToolTip – přehled](tooltip-overview.md)  
-  [Témata s postupy](tooltip-how-to-topics.md)  
+  [– postupy](tooltip-how-to-topics.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Controls.ToolTip>  
@@ -34,5 +34,5 @@ Malého vyskakovacího okna, který se zobrazí, když uživatel pozastavení uk
   <xref:System.Windows.Controls.Primitives.Popup>  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Přehled prvku Popup](popup-overview.md)  
-  [Témata s postupy](popup-how-to-topics.md)
+ [Přehled překryvných objektů](popup-overview.md)  
+  [– postupy](popup-how-to-topics.md)

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - templates [WPF], data
 - data templates [WPF]
 ms.assetid: 0f4d9f8c-0230-4013-bd7b-e8e7fed01b4a
-ms.openlocfilehash: 9287656349f2a10619bfe76a36ee7855d3861cba
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 58d723ccf86e4195674c132f9fb1b76f689f57b2
+ms.sourcegitcommit: 68eb5c4928e2b082f178a42c16f73fedf52c2ab8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57376101"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59055336"
 ---
 # <a name="data-templating-overview"></a>Přehled datových šablon
 Datový model šablonování WPF vám poskytuje flexibilitu pro definování prezentace dat. Ovládací prvky WPF mít integrovanou funkci podporující přizpůsobení prezentace dat. Toto téma nejprve ukazuje, jak definovat <xref:System.Windows.DataTemplate> a potom zavádí další funkce šablon dat, jako je například výběr šablony založené na vlastní logiku a podporu pro zobrazení hierarchická data.  
@@ -198,4 +198,4 @@ Tím končí naše diskuse tohoto příkladu. Úplnou ukázku najdete v tématu 
 - [Hledání elementů generovaných šablonou DataTemplate](how-to-find-datatemplate-generated-elements.md)
 - [Styly a šablony](../controls/styling-and-templating.md)
 - [Přehled datových vazeb](data-binding-overview.md)
-- [Přehled stylů záhlaví sloupců a šablon GridView](../controls/gridview-column-header-styles-and-templates-overview.md)
+- [GridView Styly záhlaví sloupců a přehled šablon](../controls/gridview-column-header-styles-and-templates-overview.md)

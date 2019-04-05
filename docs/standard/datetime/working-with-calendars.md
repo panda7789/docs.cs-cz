@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 0c1534e5-979b-4c8a-a588-1c24301aefb3
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b683784489cd68b66b4f9660f0df5e63b676a91c
-ms.sourcegitcommit: a3db1a9eafca89f95ccf361bc1833b47fbb2bb30
+ms.openlocfilehash: a0113ef84c2b3e42f6d14d25747f7fdbb836a212
+ms.sourcegitcommit: 68eb5c4928e2b082f178a42c16f73fedf52c2ab8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58921348"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59055310"
 ---
 # <a name="working-with-calendars"></a>Práce s kalendáři
 
@@ -163,7 +163,7 @@ V rozhraní .NET, jsou celá čísla, která představují období podporovaná 
 | <xref:System.Globalization.ThaiBuddhistCalendar>      | <xref:System.Globalization.ThaiBuddhistCalendar.ThaiBuddhistEra>  |
 | <xref:System.Globalization.UmAlQuraCalendar>          | <xref:System.Globalization.UmAlQuraCalendar.UmAlQuraEra>          |
 
-Název, který odpovídá konkrétního období lze načíst předáním období číslo, které má <xref:System.Globalization.DateTimeFormatInfo.GetEraName%2A?displayProperty=nameWithType> nebo <xref:System.Globalization.DateTimeFormatInfo.GetAbbreviatedEraName%2A?displayProperty=nameWithType> metody. V následujícím příkladu jsou voláním metod k načtení informací o podpoře období v <xref:System.Globalization.GregorianCalendar> třídy.
+Název, který odpovídá konkrétního období lze načíst předáním období číslo, které má <xref:System.Globalization.DateTimeFormatInfo.GetEraName%2A?displayProperty=nameWithType> nebo <xref:System.Globalization.DateTimeFormatInfo.GetAbbreviatedEraName%2A?displayProperty=nameWithType> metody. V následujícím příkladu jsou voláním metod k načtení informací o podpoře období v <xref:System.Globalization.GregorianCalendar> třídy. Zobrazuje datum gregoriánský kalendář, který odpovídá 1. ledna druhého roku aktuálního období, jakož i datum gregoriánský kalendář, který odpovídá 1. ledna druhého roku, každého období podporované japonský kalendář.
 
 [!code-csharp[Conceptual.Calendars#7](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.calendars/cs/instantiatewithera1.cs)]
 [!code-vb[Conceptual.Calendars#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.calendars/vb/instantiatewithera1.vb)]
@@ -172,7 +172,7 @@ Kromě toho řetězec „o“ vlastního formátu data a času obsahuje název 
 
 ### <a name="instantiating-a-date-with-an-era"></a>Vytvoření instance data s obdobím
 
-Pro obě <xref:System.Globalization.Calendar> třídy, které podporují větší počet období, datum, které se skládá z konkrétního roku, měsícem a dnem v měsíci hodnota může být nejednoznačný. Například všechny období podporována <xref:System.Globalization.JapaneseCalendar> roky, jejichž omezení je 1. Pokud není období stanoveno, pak metody data a času a kalendáře obvykle předpokládají, že hodnoty patří do aktuálního období. Tato podmínka platí <xref:System.DateTime.%23ctor%2A> a <xref:System.DateTimeOffset.%23ctor%2A> konstruktorů, které zahrnují parametry typu <xref:System.Globalization.Calendar>, jakož i [JapaneseCalendar.ToDateTime](xref:System.Globalization.Calendar.ToDateTime(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)) a [JapaneseLunisolarCalendar.ToDateTime ](xref:System.Globalization.Calendar.ToDateTime(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)) metody. Následující příklad vytvoří datum, které představuje datum 1. ledna druhého roku neurčené období. Jak výstup z příkladu ukazuje datum interpretována jako druhý rok období Heisei období aktuálního období v době, kdy byl proveden v tomto příkladu. Období 平成, předchází roku v řetězec vrácený funkcí <xref:System.DateTime.ToString(System.String,System.IFormatProvider)?displayProperty=nameWithType> metoda a odpovídá 1. ledna 1990 v gregoriánském kalendáři. (Rozsah období Heisei období je od roku 1989 2019 v gregoriánském kalendáři.)
+Pro obě <xref:System.Globalization.Calendar> třídy, které podporují větší počet období, datum, které se skládá z konkrétního roku, měsícem a dnem v měsíci hodnota může být nejednoznačný. Například všechny období podporována <xref:System.Globalization.JapaneseCalendar> roky, jejichž omezení je 1. Pokud není období stanoveno, pak metody data a času a kalendáře obvykle předpokládají, že hodnoty patří do aktuálního období. Tato podmínka platí <xref:System.DateTime.%23ctor%2A> a <xref:System.DateTimeOffset.%23ctor%2A> konstruktorů, které zahrnují parametry typu <xref:System.Globalization.Calendar>, jakož i [JapaneseCalendar.ToDateTime](xref:System.Globalization.Calendar.ToDateTime(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)) a [JapaneseLunisolarCalendar.ToDateTime ](xref:System.Globalization.Calendar.ToDateTime(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)) metody. Následující příklad vytvoří datum, které představuje datum 1. ledna druhého roku neurčené období. Pokud příklad spustíte po období Reiwa aktuálního období, datum, je interpretován jako druhý rok Reiwa období. Období 令和, předchází roku v řetězec vrácený funkcí <xref:System.DateTime.ToString(System.String,System.IFormatProvider)?displayProperty=nameWithType> metoda a odpovídá 1. ledna 2020, v gregoriánském kalendáři. (Období Reiwa začne do roku 2019 gregoriánského kalendáře).
 
 [!code-csharp[A date in the current era](~/samples/snippets/standard/datetime/calendars/current-era/cs/program.cs)]
 [!code-vb[A date in the current era](~/samples/snippets/standard/datetime/calendars/current-era/vb/program.vb)]

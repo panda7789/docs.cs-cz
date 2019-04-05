@@ -2,12 +2,12 @@
 title: Parametry ByRef
 description: Další informace o typu byref a typů předávané v F#, které se používají pro programování nízké úrovně.
 ms.date: 09/02/2018
-ms.openlocfilehash: d8d8b2f0c9965a06e823e9be4e8d1b34201cc471
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: c0bad26672fbb9eb315eee1c3e275183ddeb9297
+ms.sourcegitcommit: 68eb5c4928e2b082f178a42c16f73fedf52c2ab8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56976548"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59055362"
 ---
 # <a name="byrefs"></a>Parametry ByRef
 
@@ -56,9 +56,10 @@ open System
 
 let f (dt: inref<DateTime>) =
     printfn "Now: %s" (dt.ToString())
-
-let dt = DateTime.Now
-f &dt // Pass a pointer to 'dt'
+    
+let usage =
+    let dt = DateTime.Now
+    f &dt // Pass a pointer to 'dt'
 ```
 
 Zapsat do ukazatele s použitím `outref<'T>` nebo `byref<'T>`, musíte také vzít ukazatel na hodnotu `mutable`.
@@ -84,7 +85,7 @@ Pokud vytváříte pouze ukazatele namísto jeho čtení, zvažte použití `out
 Vezměte v úvahu následující kód:
 
 ```fsharp
-let f (x: inref<SomeStruct>) = s.SomeField
+let f (x: inref<SomeStruct>) = x.SomeField
 ```
 
 Sémanticky to znamená, následující:
@@ -111,17 +112,17 @@ C# podporuje `in ref` a `out ref` klíčová slova, kromě `ref` vrátí. Násle
 
 |Konstrukce jazyka C#|F#odvodí z něj|
 |------------|---------|
-|`ref` Návratová hodnota|`outref<'T>`|
-|`ref readonly` Návratová hodnota|`inref<'T>`|
-|`in ref` Parametr|`inref<'T>`|
-|`out ref` Parametr|`outref<'T>`|
+|`ref` návratová hodnota|`outref<'T>`|
+|`ref readonly` návratová hodnota|`inref<'T>`|
+|`in ref` parametr|`inref<'T>`|
+|`out ref` parametr|`outref<'T>`|
 
 V následující tabulce jsou uvedeny co F# vysílá:
 
 |F#konstrukce|Emitovaný konstrukce|
 |------------|-----------------|
 |`inref<'T>` Argument|`[In]` atribut na argumentu|
-|`inref<'T>` Vrátí|`modreq` atribut na hodnotu|
+|`inref<'T>` return|`modreq` atribut na hodnotu|
 |`inref<'T>` abstraktní datovou oblast nebo provádění|`modreq` v argumentu nebo return|
 |`outref<'T>` Argument|`[Out]` atribut na argumentu|
 

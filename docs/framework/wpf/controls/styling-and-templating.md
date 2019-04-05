@@ -15,12 +15,12 @@ helpviewer_keywords:
 - styles [WPF], triggers
 - styles [WPF], event triggers
 ms.assetid: 481765e5-5467-4a75-9f7b-e10e2ac410d9
-ms.openlocfilehash: 580eb2c7efd00382f7fff24984f0ce6f6d8fa027
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: bc77d6e32588f48d3a4e0dd841b98b8bc65ea4f5
+ms.sourcegitcommit: 68eb5c4928e2b082f178a42c16f73fedf52c2ab8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57370719"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59055323"
 ---
 # <a name="styling-and-templating"></a>Styly a šablony
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] styly a šablony najdete suite funkcí (styly, šablony, aktivační události a scénáře), které umožňují vývojářům a návrhářům vytvářet vizuálně působivé efekty a vytvořte konzistentní vzhled pro svůj produkt. I když vývojáři a návrháři můžete přizpůsobit vzhled náročným na základě aplikace aplikace, silné styly a šablony modelu je potřeba povolit sdílení výskytu v rámci a mezi aplikacemi a údržby. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] Tento model poskytuje.  
@@ -107,7 +107,7 @@ ms.locfileid: "57370719"
  Tento přehled popisuje zatím pouze pomocí metody setter a nastavit hodnotu vlastnosti. Můžete také zadat obslužných rutin událostí ve stylu. Další informace naleznete v tématu <xref:System.Windows.EventSetter>.  
   
 <a name="styling_datatemplates"></a>   
-## <a name="data-templates"></a>Datové šablony  
+## <a name="data-templates"></a>Šablony dat  
  V této ukázkové aplikaci je <xref:System.Windows.Controls.ListBox> ovládací prvek, který je vázán na seznam fotografie:  
   
  [!code-xaml[StylingIntroSnippet#UIListBox](~/samples/snippets/csharp/VS_Snippets_Wpf/StylingIntroSnippet/CS/window1.xaml#uilistbox)]  

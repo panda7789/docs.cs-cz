@@ -10,12 +10,12 @@ helpviewer_keywords:
 - data binding [WPF], about data binding
 - conversion for data binding [WPF]
 ms.assetid: c707c95f-7811-401d-956e-2fffd019a211
-ms.openlocfilehash: 9e55714db55168c95f744665165e333d7f2ca730
-ms.sourcegitcommit: d938c39afb9216db377d0f0ecdaa53936a851059
+ms.openlocfilehash: 318473c146f5822259a3131192ce33b9d28a5461
+ms.sourcegitcommit: 68eb5c4928e2b082f178a42c16f73fedf52c2ab8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58634554"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59055349"
 ---
 # <a name="data-binding-overview"></a>Přehled datových vazeb
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] vytváření datových vazeb nabízí jednoduchý a konzistentní způsob pro aplikace k zobrazení a interakci s daty. Elementy mohou být vázány na data z různých zdrojů dat ve formě [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] objekty a [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)]. <xref:System.Windows.Controls.ContentControl>s jako <xref:System.Windows.Controls.Button> a <xref:System.Windows.Controls.ItemsControl>s jako <xref:System.Windows.Controls.ListBox> a <xref:System.Windows.Controls.ListView> mají integrované funkce, které umožňují flexibilní styly jednotlivých datových položek nebo kolekce datových položek. Řazení, filtrování a zobrazení skupiny můžete generovat na data.  
@@ -175,7 +175,7 @@ ms.locfileid: "58634554"
   
  A <xref:System.Windows.Data.BindingExpression> objektu můžete získat prostřednictvím vrácenou hodnotu volání funkce <xref:System.Windows.Data.BindingOperations.GetBindingExpression%2A> na objekt vázaný na data. Následující témata ukazují některé z použití <xref:System.Windows.Data.BindingExpression> třídy:  
   
--   [Získání objektu vazby ze svázané cílové vlastnosti](how-to-get-the-binding-object-from-a-bound-target-property.md)  
+-   [Získání objektu vazby ze vlastnosti cíle vazby](how-to-get-the-binding-object-from-a-bound-target-property.md)  
   
 -   [Určení, kdy dojde k aktualizaci zdroje textem TextBox](how-to-control-when-the-textbox-text-updates-the-source.md)  
   
@@ -435,5 +435,5 @@ ms.locfileid: "58634554"
 - [Vytvoření vazby k výsledkům dotazu LINQ](how-to-bind-to-the-results-of-a-linq-query.md)
 - [Datová vazba](../advanced/optimizing-performance-data-binding.md)
 - [Ukázka vazby dat](https://go.microsoft.com/fwlink/?LinkID=163703)
-- [Témata s postupy](data-binding-how-to-topics.md)
+- [– postupy](data-binding-how-to-topics.md)
 - [Vytvoření vazby ke zdroji dat ADO.NET](how-to-bind-to-an-ado-net-data-source.md)

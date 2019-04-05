@@ -20,12 +20,12 @@ helpviewer_keywords:
 - parent table navigation in DataGrid
 - child tables [Windows Forms], dataGrid control
 ms.assetid: 85604bce-bc03-49d9-9030-dda8896c44b1
-ms.openlocfilehash: cdf2f9aebaac09ed3e03148fdf1bc899f1e1fc45
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 33f6e5f7929c5a4231c0779964db177f45af6743
+ms.sourcegitcommit: 68eb5c4928e2b082f178a42c16f73fedf52c2ab8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57721993"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59055206"
 ---
 # <a name="datagrid-control-overview-windows-forms"></a>DataGrid – přehled ovládacího prvku (Windows Forms)
 > [!NOTE]
@@ -58,13 +58,13 @@ DataGrid vázán na data s více tabulkami
   
  Platné datové zdroje pro <xref:System.Windows.Forms.DataGrid> patří:  
   
--   <xref:System.Data.DataTable> Třída  
+-   <xref:System.Data.DataTable> třída  
   
--   <xref:System.Data.DataView> Třída  
+-   <xref:System.Data.DataView> třída  
   
--   <xref:System.Data.DataSet> Třída  
+-   <xref:System.Data.DataSet> třída  
   
--   <xref:System.Data.DataViewManager> Třída  
+-   <xref:System.Data.DataViewManager> třída  
   
  Pokud je zdrojem datovou sadu, může být datovou sadu objektu ve formě nebo objekt předaných do formuláře webové služby XML. Můžete vytvořit vazbu na typové a netypové datové sady.  
   
@@ -142,6 +142,6 @@ Následující obrázek znázorňuje objektů obsažených v ovládacím prvku D
 ## <a name="see-also"></a>Viz také:
 - [Ovládací prvek DataGrid](datagrid-control-windows-forms.md)
 - [Postupy: Vytvoření vazby ovládacího prvku Windows Forms DataGrid ke zdroji dat](how-to-bind-the-windows-forms-datagrid-control-to-a-data-source.md)
-- [Postupy: Přidávání tabulek a sloupců do ovládacího prvku Windows Forms DataGrid](how-to-add-tables-and-columns-to-the-windows-forms-datagrid-control.md)
-- [Postupy: Odstranit nebo skrytí sloupců v ovládacím prvku Windows Forms DataGrid](how-to-delete-or-hide-columns-in-the-windows-forms-datagrid-control.md)
+- [Postupy: Přidání tabulek a sloupců do ovládacího prvku Windows Forms DataGrid](how-to-add-tables-and-columns-to-the-windows-forms-datagrid-control.md)
+- [Postupy: Odstranění či skrytí sloupců v ovládacím prvku Windows Forms DataGrid](how-to-delete-or-hide-columns-in-the-windows-forms-datagrid-control.md)
 - [Postupy: Formátování ovládacího prvku Windows Forms DataGrid](how-to-format-the-windows-forms-datagrid-control.md)
