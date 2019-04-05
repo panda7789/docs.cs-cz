@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, strings
 - strings [C#]
 ms.assetid: 21580405-cb25-4541-89d5-037846a38b07
-ms.openlocfilehash: 9561393a78ffbf9c2bec98c849c389b92227db78
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
-ms.translationtype: HT
+ms.openlocfilehash: 57781dd5a988435778587636cc458256b966446c
+ms.sourcegitcommit: a3db1a9eafca89f95ccf361bc1833b47fbb2bb30
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57373449"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58920685"
 ---
 # <a name="strings-c-programming-guide"></a>Řetězce (Průvodce programováním v C#)
 Řetězec je objekt typu <xref:System.String> jehož hodnota je text. Interně, text se ukládá jako sekvenční jen pro čtení kolekcí <xref:System.Char> objekty. Neexistuje žádný znak null ukončující řetězec jazyka C#; na konci řetězec jazyka C# proto může obsahovat libovolný počet vložené znaky null ('\0'). <xref:System.String.Length%2A> Vlastnost řetězce představuje počet `Char` objekty obsahuje, není počet znaků Unicode. Chcete-li získat přístup k jednotlivým kódové body sady Unicode v řetězci, použijte <xref:System.Globalization.StringInfo> objektu.  
@@ -74,7 +74,7 @@ ms.locfileid: "57373449"
  Formátovací řetězec je řetězec, jehož obsah se určují dynamicky za běhu. Formátovací řetězce jsou vytvořeny vložením *interpolovaných výrazů* nebo zástupné symboly ve složených závorkách v rámci řetězce. Vše uvnitř složených závorek (`{...}`) bude vyhodnocena na hodnotu a výstup jako formátovaný řetězec za běhu. Existují dvě metody k vytvoření řetězce formátu: řetězec interpolace a složené formátování.
 
 ### <a name="string-interpolation"></a>Interpolace řetězců
-K dispozici v C# 6.0 a novějším, [ *interpolovaných řetězců* ](../../language-reference/tokens/interpolated.md) jsou určeny `$` speciálních znaků a obsahovat interpolované výrazy do složených závorek. Pokud jste ještě na interpolaci řetězce, najdete v článku [interpolace - C# interaktivního kurzu](../../tutorials/intro-to-csharp/interpolated-strings.yml) a získejte rychlý přehled.
+K dispozici v C# 6.0 a novějším, [ *interpolovaných řetězců* ](../../language-reference/tokens/interpolated.md) jsou určeny `$` speciálních znaků a obsahovat interpolované výrazy do složených závorek. Pokud jste ještě na interpolaci řetězce, najdete v článku [interpolace - C# interaktivního kurzu](../../tutorials/exploration/interpolated-strings.yml) a získejte rychlý přehled.
 
 Interpolace řetězců použijte ke zlepšení čitelnosti a udržovatelnosti kódu. Interpolace řetězců dosáhnete stejných výsledků jako `String.Format` metody, ale zvyšuje snadnost použití a vložené nejasnostem.
 
@@ -141,4 +141,4 @@ string s = String.Empty;
 |[Porovnávání řetězců](../../../../docs/standard/base-types/comparing.md)|Obsahuje informace o tom, jak porovnat řetězce a poskytuje příklady v C# a Visual Basic.|  
 |[Používání třídy StringBuilder](../../../standard/base-types/stringbuilder.md)|Popisuje, jak vytvářet a upravovat pomocí dynamické řetězcových objektů <xref:System.Text.StringBuilder> třídy.|  
 |[LINQ a řetězce](../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)|Poskytuje informace o tom, jak provádět různé operace s řetězci pomocí dotazů LINQ.|  
-|[Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)|Obsahuje odkazy na témata, která popisují konstrukce programování v jazyce C#.|  
+|[Průvodce programováním v C#](../../../csharp/programming-guide/index.md)|Obsahuje odkazy na témata, která popisují konstrukce programování v jazyce C#.|  
