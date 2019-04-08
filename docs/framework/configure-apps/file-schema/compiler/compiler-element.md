@@ -45,7 +45,7 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 |---------------|-----------------|
 |`compilerOptions`|Nepovinný atribut.<br /><br /> Určuje další argumenty kompilátoru specifické pro kompilaci. Hodnoty `compilerOptions` atribut jsou obvykle uvedeny v tématu možnosti kompilátoru pro kompilátor.|
 |`extension`|Požadovaný atribut.<br /><br /> Poskytuje středníkem oddělený seznam přípon názvů souborů používá zdrojové soubory pro poskytovatele jazyka. Například "cs".|
-|`language`|Požadovaný atribut.<br /><br /> Poskytuje středníkem oddělený seznam názvů jazyka podporována zprostředkovatelem jazyka. Například "c#; cs; csharp".|
+|`language`|Požadovaný atribut.<br /><br /> Poskytuje středníkem oddělený seznam názvů jazyka podporována zprostředkovatelem jazyka. Například "C#; cs; csharp".|
 |`type`|Požadovaný atribut.<br /><br /> Určuje název typu poskytovatele jazyka, včetně název sestavení obsahujícího implementaci zprostředkovatele. Název typu, musí splňovat požadavky definované v [zadání plně kvalifikované názvy typů](../../../../../docs/framework/reflection-and-codedom/specifying-fully-qualified-type-names.md).|
 |`warningLevel`|Nepovinný atribut.<br /><br /> Určuje výchozí úroveň upozornění kompilátoru; Určuje úroveň, kdy zprostředkovatel jazyka zpracuje kompilace upozornění jako chyby.|
 
