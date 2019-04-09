@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8e6512871bf9a5cb0219a470267d1be4ecd403b3
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: f53c8290271391e52176f8364b592ce6b46faf71
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57478359"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59195940"
 ---
-# <a name="icordebugnativeframegetlocalregistervalue-method"></a><span data-ttu-id="4a22c-102">ICorDebugNativeFrame::GetLocalRegisterValue – metoda</span><span class="sxs-lookup"><span data-stu-id="4a22c-102">ICorDebugNativeFrame::GetLocalRegisterValue Method</span></span>
-<span data-ttu-id="4a22c-103">Získá hodnotu argumentu nebo místní proměnná, která je uložena do zadaného registru pro tuto nativní rámce.</span><span class="sxs-lookup"><span data-stu-id="4a22c-103">Gets the value of an argument or local variable that is stored in the specified register for this native frame.</span></span>  
+# <a name="icordebugnativeframegetlocalregistervalue-method"></a><span data-ttu-id="bd12f-102">ICorDebugNativeFrame::GetLocalRegisterValue – metoda</span><span class="sxs-lookup"><span data-stu-id="bd12f-102">ICorDebugNativeFrame::GetLocalRegisterValue Method</span></span>
+<span data-ttu-id="bd12f-103">Získá hodnotu argumentu nebo místní proměnná, která je uložena do zadaného registru pro tuto nativní rámce.</span><span class="sxs-lookup"><span data-stu-id="bd12f-103">Gets the value of an argument or local variable that is stored in the specified register for this native frame.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="4a22c-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="4a22c-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="bd12f-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="bd12f-104">Syntax</span></span>  
   
 ```  
 HRESULT GetLocalRegisterValue (  
@@ -38,30 +38,29 @@ HRESULT GetLocalRegisterValue (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="4a22c-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="4a22c-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="bd12f-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="bd12f-105">Parameters</span></span>  
  `reg`  
- <span data-ttu-id="4a22c-106">[in] Hodnota výčtu "cordebugregister –", který určuje do registru, který obsahuje hodnotu.</span><span class="sxs-lookup"><span data-stu-id="4a22c-106">[in] A value of the "CorDebugRegister" enumeration that specifies the register containing the value.</span></span>  
+ <span data-ttu-id="bd12f-106">[in] Hodnota výčtu "cordebugregister –", který určuje do registru, který obsahuje hodnotu.</span><span class="sxs-lookup"><span data-stu-id="bd12f-106">[in] A value of the "CorDebugRegister" enumeration that specifies the register containing the value.</span></span>  
   
  `cbSigBlob`  
- <span data-ttu-id="4a22c-107">[in] Celé číslo, které určuje velikost podpisu binární metadat, který se odkazuje `pvSigBlob` parametru.</span><span class="sxs-lookup"><span data-stu-id="4a22c-107">[in] An integer that specifies the size of the binary metadata signature which is referenced by the `pvSigBlob` parameter.</span></span>  
+ <span data-ttu-id="bd12f-107">[in] Celé číslo, které určuje velikost podpisu binární metadat, který se odkazuje `pvSigBlob` parametru.</span><span class="sxs-lookup"><span data-stu-id="bd12f-107">[in] An integer that specifies the size of the binary metadata signature which is referenced by the `pvSigBlob` parameter.</span></span>  
   
  `pvSigBlob`  
- <span data-ttu-id="4a22c-108">[in] A `PCCOR_SIGNATURE` hodnotu, která odkazuje na podpis metadat binární typ hodnoty.</span><span class="sxs-lookup"><span data-stu-id="4a22c-108">[in] A `PCCOR_SIGNATURE` value that points to the binary metadata signature of the value's type.</span></span>  
+ <span data-ttu-id="bd12f-108">[in] A `PCCOR_SIGNATURE` hodnotu, která odkazuje na podpis metadat binární typ hodnoty.</span><span class="sxs-lookup"><span data-stu-id="bd12f-108">[in] A `PCCOR_SIGNATURE` value that points to the binary metadata signature of the value's type.</span></span>  
   
  `ppValue`  
- <span data-ttu-id="4a22c-109">[out] Ukazatel na adresu "ICorDebugValue" objekt představující získanou hodnotu, která je uložena do zadaného registru.</span><span class="sxs-lookup"><span data-stu-id="4a22c-109">[out] A pointer to the address of an "ICorDebugValue" object representing the retrieved value that is stored in the specified register.</span></span>  
+ <span data-ttu-id="bd12f-109">[out] Ukazatel na adresu "ICorDebugValue" objekt představující získanou hodnotu, která je uložena do zadaného registru.</span><span class="sxs-lookup"><span data-stu-id="bd12f-109">[out] A pointer to the address of an "ICorDebugValue" object representing the retrieved value that is stored in the specified register.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="4a22c-110">Poznámky</span><span class="sxs-lookup"><span data-stu-id="4a22c-110">Remarks</span></span>  
- <span data-ttu-id="4a22c-111">`GetLocalRegisterValue` Metodu je možné použít ve službě je nativní rámec nebo just-in-time (JIT)-zkompilován rámce.</span><span class="sxs-lookup"><span data-stu-id="4a22c-111">The `GetLocalRegisterValue` method can be used either in a native frame or a just-in-time (JIT)-compiled frame.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="bd12f-110">Poznámky</span><span class="sxs-lookup"><span data-stu-id="bd12f-110">Remarks</span></span>  
+ <span data-ttu-id="bd12f-111">`GetLocalRegisterValue` Metodu je možné použít ve službě je nativní rámec nebo just-in-time (JIT)-zkompilován rámce.</span><span class="sxs-lookup"><span data-stu-id="bd12f-111">The `GetLocalRegisterValue` method can be used either in a native frame or a just-in-time (JIT)-compiled frame.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="4a22c-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="4a22c-112">Requirements</span></span>  
- <span data-ttu-id="4a22c-113">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="4a22c-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="bd12f-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="bd12f-112">Requirements</span></span>  
+ <span data-ttu-id="bd12f-113">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="bd12f-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="4a22c-114">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="4a22c-114">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="bd12f-114">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="bd12f-114">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="4a22c-115">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="4a22c-115">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="bd12f-115">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="bd12f-115">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="4a22c-116">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="4a22c-116">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ **<span data-ttu-id="bd12f-116">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="bd12f-116">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a><span data-ttu-id="4a22c-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="4a22c-117">See also</span></span>
-
+## <a name="see-also"></a><span data-ttu-id="bd12f-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="bd12f-117">See also</span></span>

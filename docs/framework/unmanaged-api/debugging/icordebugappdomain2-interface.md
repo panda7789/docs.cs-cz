@@ -16,37 +16,38 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 82b58780472443874f2dae93c2d8568006db2e8a
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 5c6ef901f43cd6568f17657ed8e58bc2cc2cc0a1
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56978563"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59186053"
 ---
-# <a name="icordebugappdomain2-interface"></a><span data-ttu-id="8398a-102">ICorDebugAppDomain2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="8398a-102">ICorDebugAppDomain2 Interface</span></span>
+# <a name="icordebugappdomain2-interface"></a><span data-ttu-id="4f7b0-102">ICorDebugAppDomain2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="4f7b0-102">ICorDebugAppDomain2 Interface</span></span>
 
-<span data-ttu-id="8398a-103">Poskytuje metody pro práci s pole, odkazy, ukazatele na funkce a typy odkazů.</span><span class="sxs-lookup"><span data-stu-id="8398a-103">Provides methods to work with arrays, pointers, function pointers, and reference types.</span></span> <span data-ttu-id="8398a-104">Toto rozhraní je rozšířením icordebugappdomain – rozhraní.</span><span class="sxs-lookup"><span data-stu-id="8398a-104">This interface is an extension of the ICorDebugAppDomain interface.</span></span>  
+<span data-ttu-id="4f7b0-103">Poskytuje metody pro práci s pole, odkazy, ukazatele na funkce a typy odkazů.</span><span class="sxs-lookup"><span data-stu-id="4f7b0-103">Provides methods to work with arrays, pointers, function pointers, and reference types.</span></span> <span data-ttu-id="4f7b0-104">Toto rozhraní je rozšířením icordebugappdomain – rozhraní.</span><span class="sxs-lookup"><span data-stu-id="4f7b0-104">This interface is an extension of the ICorDebugAppDomain interface.</span></span>  
   
-## <a name="methods"></a><span data-ttu-id="8398a-105">Metody</span><span class="sxs-lookup"><span data-stu-id="8398a-105">Methods</span></span>  
+## <a name="methods"></a><span data-ttu-id="4f7b0-105">Metody</span><span class="sxs-lookup"><span data-stu-id="4f7b0-105">Methods</span></span>  
   
-|<span data-ttu-id="8398a-106">Metoda</span><span class="sxs-lookup"><span data-stu-id="8398a-106">Method</span></span>|<span data-ttu-id="8398a-107">Popis</span><span class="sxs-lookup"><span data-stu-id="8398a-107">Description</span></span>|  
+|<span data-ttu-id="4f7b0-106">Metoda</span><span class="sxs-lookup"><span data-stu-id="4f7b0-106">Method</span></span>|<span data-ttu-id="4f7b0-107">Popis</span><span class="sxs-lookup"><span data-stu-id="4f7b0-107">Description</span></span>|  
 |------------|-----------------|  
-|[<span data-ttu-id="8398a-108">GetArrayOrPointerType – metoda</span><span class="sxs-lookup"><span data-stu-id="8398a-108">GetArrayOrPointerType Method</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugappdomain2-getarrayorpointertype-method.md)|<span data-ttu-id="8398a-109">Získá pole objektů zadaného typu nebo ukazatel nebo odkaz na zadaný typ.</span><span class="sxs-lookup"><span data-stu-id="8398a-109">Gets an array of the specified type, or a pointer or reference to the specified type.</span></span>|  
-|[<span data-ttu-id="8398a-110">GetFunctionPointerType</span><span class="sxs-lookup"><span data-stu-id="8398a-110">GetFunctionPointerType</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugappdomain2-getfunctionpointertype-method.md)|<span data-ttu-id="8398a-111">Získá ukazatel na funkci, která má daným podpisem.</span><span class="sxs-lookup"><span data-stu-id="8398a-111">Gets a pointer to a function that has a given signature.</span></span>|  
+|[<span data-ttu-id="4f7b0-108">GetArrayOrPointerType – metoda</span><span class="sxs-lookup"><span data-stu-id="4f7b0-108">GetArrayOrPointerType Method</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugappdomain2-getarrayorpointertype-method.md)|<span data-ttu-id="4f7b0-109">Získá pole objektů zadaného typu nebo ukazatel nebo odkaz na zadaný typ.</span><span class="sxs-lookup"><span data-stu-id="4f7b0-109">Gets an array of the specified type, or a pointer or reference to the specified type.</span></span>|  
+|[<span data-ttu-id="4f7b0-110">GetFunctionPointerType</span><span class="sxs-lookup"><span data-stu-id="4f7b0-110">GetFunctionPointerType</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugappdomain2-getfunctionpointertype-method.md)|<span data-ttu-id="4f7b0-111">Získá ukazatel na funkci, která má daným podpisem.</span><span class="sxs-lookup"><span data-stu-id="4f7b0-111">Gets a pointer to a function that has a given signature.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="8398a-112">Poznámky</span><span class="sxs-lookup"><span data-stu-id="8398a-112">Remarks</span></span>  
+## <a name="remarks"></a><span data-ttu-id="4f7b0-112">Poznámky</span><span class="sxs-lookup"><span data-stu-id="4f7b0-112">Remarks</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="8398a-113">Toto rozhraní nepodporuje vzdálené volání, mezi počítači nebo procesy.</span><span class="sxs-lookup"><span data-stu-id="8398a-113">This interface does not support being called remotely, either cross-machine or cross-process.</span></span>  
+>  <span data-ttu-id="4f7b0-113">Toto rozhraní nepodporuje vzdálené volání, mezi počítači nebo procesy.</span><span class="sxs-lookup"><span data-stu-id="4f7b0-113">This interface does not support being called remotely, either cross-machine or cross-process.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="8398a-114">Požadavky</span><span class="sxs-lookup"><span data-stu-id="8398a-114">Requirements</span></span>  
- <span data-ttu-id="8398a-115">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="8398a-115">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="4f7b0-114">Požadavky</span><span class="sxs-lookup"><span data-stu-id="4f7b0-114">Requirements</span></span>  
+ <span data-ttu-id="4f7b0-115">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="4f7b0-115">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="8398a-116">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="8398a-116">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="4f7b0-116">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="4f7b0-116">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="8398a-117">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="8398a-117">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="4f7b0-117">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="4f7b0-117">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="8398a-118">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="8398a-118">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ **<span data-ttu-id="4f7b0-118">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="4f7b0-118">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a><span data-ttu-id="8398a-119">Viz také:</span><span class="sxs-lookup"><span data-stu-id="8398a-119">See also</span></span>
-- [<span data-ttu-id="8398a-120">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="8398a-120">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+## <a name="see-also"></a><span data-ttu-id="4f7b0-119">Viz také:</span><span class="sxs-lookup"><span data-stu-id="4f7b0-119">See also</span></span>
+
+- [<span data-ttu-id="4f7b0-120">Debugging – rozhraní</span><span class="sxs-lookup"><span data-stu-id="4f7b0-120">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

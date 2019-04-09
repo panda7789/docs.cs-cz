@@ -16,17 +16,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ef51ad511d1b7d8064d4bd141e2952bf723afff7
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: f968d84ae695eb1da127538ebdc5e4f55d6ebf39
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57501679"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59183154"
 ---
-# <a name="corexemain2-function"></a><span data-ttu-id="1571c-102">_CorExeMain2 – funkce</span><span class="sxs-lookup"><span data-stu-id="1571c-102">_CorExeMain2 Function</span></span>
-<span data-ttu-id="1571c-103">Spustí vstupní bod v zadané kódu mapované paměti.</span><span class="sxs-lookup"><span data-stu-id="1571c-103">Executes the entry point in the specified memory-mapped code.</span></span> <span data-ttu-id="1571c-104">Tato funkce je volána zavaděčem operačního systému.</span><span class="sxs-lookup"><span data-stu-id="1571c-104">This function is called by the operating system loader.</span></span>  
+# <a name="corexemain2-function"></a><span data-ttu-id="c4708-102">_CorExeMain2 – funkce</span><span class="sxs-lookup"><span data-stu-id="c4708-102">_CorExeMain2 Function</span></span>
+<span data-ttu-id="c4708-103">Spustí vstupní bod v zadané kódu mapované paměti.</span><span class="sxs-lookup"><span data-stu-id="c4708-103">Executes the entry point in the specified memory-mapped code.</span></span> <span data-ttu-id="c4708-104">Tato funkce je volána zavaděčem operačního systému.</span><span class="sxs-lookup"><span data-stu-id="c4708-104">This function is called by the operating system loader.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="1571c-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="1571c-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="c4708-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c4708-105">Syntax</span></span>  
   
 ```  
 __int32 STDMETHODCALLTYPE _CorExeMain2 (  
@@ -38,30 +38,31 @@ __int32 STDMETHODCALLTYPE _CorExeMain2 (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="1571c-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="1571c-106">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="c4708-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="c4708-106">Parameters</span></span>  
  `pUnmappedPE`  
- <span data-ttu-id="1571c-107">[in] Ukazatel na kódu mapované paměti.</span><span class="sxs-lookup"><span data-stu-id="1571c-107">[in] A pointer to the memory-mapped code.</span></span>  
+ <span data-ttu-id="c4708-107">[in] Ukazatel na kódu mapované paměti.</span><span class="sxs-lookup"><span data-stu-id="c4708-107">[in] A pointer to the memory-mapped code.</span></span>  
   
  `cUnmappedPE`  
- <span data-ttu-id="1571c-108">[in] Počet prvků, které `pUnmappedPE` může obsahovat.</span><span class="sxs-lookup"><span data-stu-id="1571c-108">[in] The number of elements `pUnmappedPE` can hold.</span></span>  
+ <span data-ttu-id="c4708-108">[in] Počet prvků, které `pUnmappedPE` může obsahovat.</span><span class="sxs-lookup"><span data-stu-id="c4708-108">[in] The number of elements `pUnmappedPE` can hold.</span></span>  
   
  `pImageNameIn`  
- <span data-ttu-id="1571c-109">[in] Ukazatel na název spustitelné bitové kopie.</span><span class="sxs-lookup"><span data-stu-id="1571c-109">[in] A pointer to the name of the executable image.</span></span>  
+ <span data-ttu-id="c4708-109">[in] Ukazatel na název spustitelné bitové kopie.</span><span class="sxs-lookup"><span data-stu-id="c4708-109">[in] A pointer to the name of the executable image.</span></span>  
   
  `pLoadersFileName`  
- <span data-ttu-id="1571c-110">[in] Název souboru zavaděče.</span><span class="sxs-lookup"><span data-stu-id="1571c-110">[in] The name of the loader file.</span></span>  
+ <span data-ttu-id="c4708-110">[in] Název souboru zavaděče.</span><span class="sxs-lookup"><span data-stu-id="c4708-110">[in] The name of the loader file.</span></span>  
   
  `pCmdLine`  
- <span data-ttu-id="1571c-111">[in] Parametry příkazového řádku, pokud existuje.</span><span class="sxs-lookup"><span data-stu-id="1571c-111">[in] Command-line parameters, if any.</span></span>  
+ <span data-ttu-id="c4708-111">[in] Parametry příkazového řádku, pokud existuje.</span><span class="sxs-lookup"><span data-stu-id="c4708-111">[in] Command-line parameters, if any.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="1571c-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="1571c-112">Requirements</span></span>  
- <span data-ttu-id="1571c-113">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="1571c-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="c4708-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="c4708-112">Requirements</span></span>  
+ <span data-ttu-id="c4708-113">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="c4708-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="1571c-114">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="1571c-114">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="c4708-114">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="c4708-114">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="1571c-115">**Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="1571c-115">**Library:** Included as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="c4708-115">**Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="c4708-115">**Library:** Included as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="1571c-116">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="1571c-116">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ **<span data-ttu-id="c4708-116">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="c4708-116">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a><span data-ttu-id="1571c-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="1571c-117">See also</span></span>
-- [<span data-ttu-id="1571c-118">Globální statické funkce pro metadata</span><span class="sxs-lookup"><span data-stu-id="1571c-118">Metadata Global Static Functions</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-global-static-functions.md)
+## <a name="see-also"></a><span data-ttu-id="c4708-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c4708-117">See also</span></span>
+
+- [<span data-ttu-id="c4708-118">Globální statické funkce metadat</span><span class="sxs-lookup"><span data-stu-id="c4708-118">Metadata Global Static Functions</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-global-static-functions.md)

@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: fa1fa59bf3bb33e115989eae9095752eea00a041
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: 83dec9b6ed3b1e538e0f1b7d13a33b8bdbc1cf54
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57487639"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59200802"
 ---
-# <a name="imetadataimportgetmemberprops-method"></a><span data-ttu-id="e62bc-102">IMetaDataImport::GetMemberProps – metoda</span><span class="sxs-lookup"><span data-stu-id="e62bc-102">IMetaDataImport::GetMemberProps Method</span></span>
-<span data-ttu-id="e62bc-103">Získá informace uložené v metadatech pro definici zadaného člena, včetně názvu, binární podpis a relativní virtuální adresu, <xref:System.Type> odkazuje token metadat zadaného člena.</span><span class="sxs-lookup"><span data-stu-id="e62bc-103">Gets information stored in the metadata for a specified member definition, including the name, binary signature, and relative virtual address, of the <xref:System.Type> member referenced by the specified metadata token.</span></span> <span data-ttu-id="e62bc-104">Toto je jednoduchý Pomocná metoda: Pokud *mb* typu MethodDef, pak je **getmethodprops –** se nazývá; Pokud *mb* FieldDef, pak je **getfieldprops –** je volána.</span><span class="sxs-lookup"><span data-stu-id="e62bc-104">This is a simple helper method: if *mb* is a MethodDef, then **GetMethodProps** is called; if *mb* is a FieldDef, then **GetFieldProps** is called.</span></span> <span data-ttu-id="e62bc-105">Informace najdete v těchto jiných metod podrobnosti.</span><span class="sxs-lookup"><span data-stu-id="e62bc-105">See these other methods for details.</span></span> 
+# <a name="imetadataimportgetmemberprops-method"></a><span data-ttu-id="5180c-102">IMetaDataImport::GetMemberProps – metoda</span><span class="sxs-lookup"><span data-stu-id="5180c-102">IMetaDataImport::GetMemberProps Method</span></span>
+<span data-ttu-id="5180c-103">Získá informace uložené v metadatech pro definici zadaného člena, včetně názvu, binární podpis a relativní virtuální adresu, <xref:System.Type> odkazuje token metadat zadaného člena.</span><span class="sxs-lookup"><span data-stu-id="5180c-103">Gets information stored in the metadata for a specified member definition, including the name, binary signature, and relative virtual address, of the <xref:System.Type> member referenced by the specified metadata token.</span></span> <span data-ttu-id="5180c-104">Toto je jednoduchý Pomocná metoda: Pokud *mb* typu MethodDef, pak je **getmethodprops –** se nazývá; Pokud *mb* FieldDef, pak je **getfieldprops –** je volána.</span><span class="sxs-lookup"><span data-stu-id="5180c-104">This is a simple helper method: if *mb* is a MethodDef, then **GetMethodProps** is called; if *mb* is a FieldDef, then **GetFieldProps** is called.</span></span> <span data-ttu-id="5180c-105">Informace najdete v těchto jiných metod podrobnosti.</span><span class="sxs-lookup"><span data-stu-id="5180c-105">See these other methods for details.</span></span> 
   
-## <a name="syntax"></a><span data-ttu-id="e62bc-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="e62bc-106">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="5180c-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="5180c-106">Syntax</span></span>  
   
 ```  
 HRESULT GetMemberProps (  
@@ -47,55 +47,56 @@ HRESULT GetMemberProps (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="e62bc-107">Parametry</span><span class="sxs-lookup"><span data-stu-id="e62bc-107">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="5180c-107">Parametry</span><span class="sxs-lookup"><span data-stu-id="5180c-107">Parameters</span></span>  
  `mb`  
- <span data-ttu-id="e62bc-108">[in] Token, který odkazuje na člen, který chcete získat související metadata pro.</span><span class="sxs-lookup"><span data-stu-id="e62bc-108">[in] The token that references the member to get the associated metadata for.</span></span>  
+ <span data-ttu-id="5180c-108">[in] Token, který odkazuje na člen, který chcete získat související metadata pro.</span><span class="sxs-lookup"><span data-stu-id="5180c-108">[in] The token that references the member to get the associated metadata for.</span></span>  
   
  `pClass`  
- <span data-ttu-id="e62bc-109">[out] Ukazatel na token metadat, který představuje třídu člena.</span><span class="sxs-lookup"><span data-stu-id="e62bc-109">[out] A pointer to the metadata token that represents the class of the member.</span></span>  
+ <span data-ttu-id="5180c-109">[out] Ukazatel na token metadat, který představuje třídu člena.</span><span class="sxs-lookup"><span data-stu-id="5180c-109">[out] A pointer to the metadata token that represents the class of the member.</span></span>  
   
  `szMember`  
- <span data-ttu-id="e62bc-110">[out] Název člena.</span><span class="sxs-lookup"><span data-stu-id="e62bc-110">[out] The name of the member.</span></span>  
+ <span data-ttu-id="5180c-110">[out] Název člena.</span><span class="sxs-lookup"><span data-stu-id="5180c-110">[out] The name of the member.</span></span>  
   
  `cchMember`  
- <span data-ttu-id="e62bc-111">[in] Velikost v širokých znaků `szMember` vyrovnávací paměti.</span><span class="sxs-lookup"><span data-stu-id="e62bc-111">[in] The size in wide characters of the `szMember` buffer.</span></span>  
+ <span data-ttu-id="5180c-111">[in] Velikost v širokých znaků `szMember` vyrovnávací paměti.</span><span class="sxs-lookup"><span data-stu-id="5180c-111">[in] The size in wide characters of the `szMember` buffer.</span></span>  
   
  `pchMember`  
- <span data-ttu-id="e62bc-112">[out] Velikost v široké znaky vrácený název.</span><span class="sxs-lookup"><span data-stu-id="e62bc-112">[out] The size in wide characters of the returned name.</span></span>  
+ <span data-ttu-id="5180c-112">[out] Velikost v široké znaky vrácený název.</span><span class="sxs-lookup"><span data-stu-id="5180c-112">[out] The size in wide characters of the returned name.</span></span>  
   
  `pdwAttr`  
- <span data-ttu-id="e62bc-113">[out] Žádné příznak hodnoty použité k členu.</span><span class="sxs-lookup"><span data-stu-id="e62bc-113">[out] Any flag values applied to the member.</span></span>  
+ <span data-ttu-id="5180c-113">[out] Žádné příznak hodnoty použité k členu.</span><span class="sxs-lookup"><span data-stu-id="5180c-113">[out] Any flag values applied to the member.</span></span>  
   
  `ppvSigBlob`  
- <span data-ttu-id="e62bc-114">[out] Ukazatel na binární metadat podpisu člena.</span><span class="sxs-lookup"><span data-stu-id="e62bc-114">[out] A pointer to the binary metadata signature of the member.</span></span>  
+ <span data-ttu-id="5180c-114">[out] Ukazatel na binární metadat podpisu člena.</span><span class="sxs-lookup"><span data-stu-id="5180c-114">[out] A pointer to the binary metadata signature of the member.</span></span>  
   
  `pcbSigBlob`  
- <span data-ttu-id="e62bc-115">[out] Velikost v bajtech `ppvSigBlob`.</span><span class="sxs-lookup"><span data-stu-id="e62bc-115">[out] The size in bytes of `ppvSigBlob`.</span></span>  
+ <span data-ttu-id="5180c-115">[out] Velikost v bajtech `ppvSigBlob`.</span><span class="sxs-lookup"><span data-stu-id="5180c-115">[out] The size in bytes of `ppvSigBlob`.</span></span>  
   
  `pulCodeRVA`  
- <span data-ttu-id="e62bc-116">[out] Ukazatel na relativní virtuální adresu člena.</span><span class="sxs-lookup"><span data-stu-id="e62bc-116">[out] A pointer to the relative virtual address of the member.</span></span>  
+ <span data-ttu-id="5180c-116">[out] Ukazatel na relativní virtuální adresu člena.</span><span class="sxs-lookup"><span data-stu-id="5180c-116">[out] A pointer to the relative virtual address of the member.</span></span>  
   
  `pdwImplFlags`  
- <span data-ttu-id="e62bc-117">[out] Žádné příznaky implementace spojených se členem.</span><span class="sxs-lookup"><span data-stu-id="e62bc-117">[out] Any method implementation flags associated with the member.</span></span>  
+ <span data-ttu-id="5180c-117">[out] Žádné příznaky implementace spojených se členem.</span><span class="sxs-lookup"><span data-stu-id="5180c-117">[out] Any method implementation flags associated with the member.</span></span>  
   
  `pdwCPlusTypeFlag`  
- <span data-ttu-id="e62bc-118">[out] Příznak, který označuje <xref:System.ValueType>.</span><span class="sxs-lookup"><span data-stu-id="e62bc-118">[out] A flag that marks a <xref:System.ValueType>.</span></span> <span data-ttu-id="e62bc-119">Představuje jednu ze `ELEMENT_TYPE_*` hodnoty.</span><span class="sxs-lookup"><span data-stu-id="e62bc-119">It is one of the `ELEMENT_TYPE_*` values.</span></span>
+ <span data-ttu-id="5180c-118">[out] Příznak, který označuje <xref:System.ValueType>.</span><span class="sxs-lookup"><span data-stu-id="5180c-118">[out] A flag that marks a <xref:System.ValueType>.</span></span> <span data-ttu-id="5180c-119">Představuje jednu ze `ELEMENT_TYPE_*` hodnoty.</span><span class="sxs-lookup"><span data-stu-id="5180c-119">It is one of the `ELEMENT_TYPE_*` values.</span></span>
   
  `ppValue`  
- <span data-ttu-id="e62bc-120">[out] Hodnota konstanty typu řetězec vrácený tohoto člena.</span><span class="sxs-lookup"><span data-stu-id="e62bc-120">[out] A constant string value returned by this member.</span></span>  
+ <span data-ttu-id="5180c-120">[out] Hodnota konstanty typu řetězec vrácený tohoto člena.</span><span class="sxs-lookup"><span data-stu-id="5180c-120">[out] A constant string value returned by this member.</span></span>  
   
  `pcchValue`  
- <span data-ttu-id="e62bc-121">[out] Velikost ve znacích `ppValue`, nebo nula, pokud `ppValue` neobsahuje řetězec.</span><span class="sxs-lookup"><span data-stu-id="e62bc-121">[out] The size in characters of `ppValue`, or zero if `ppValue` does not hold a string.</span></span>  
+ <span data-ttu-id="5180c-121">[out] Velikost ve znacích `ppValue`, nebo nula, pokud `ppValue` neobsahuje řetězec.</span><span class="sxs-lookup"><span data-stu-id="5180c-121">[out] The size in characters of `ppValue`, or zero if `ppValue` does not hold a string.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="e62bc-122">Požadavky</span><span class="sxs-lookup"><span data-stu-id="e62bc-122">Requirements</span></span>  
- <span data-ttu-id="e62bc-123">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="e62bc-123">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="5180c-122">Požadavky</span><span class="sxs-lookup"><span data-stu-id="5180c-122">Requirements</span></span>  
+ <span data-ttu-id="5180c-123">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="5180c-123">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="e62bc-124">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="e62bc-124">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="5180c-124">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="5180c-124">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="e62bc-125">**Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="e62bc-125">**Library:** Included as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="5180c-125">**Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="5180c-125">**Library:** Included as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="e62bc-126">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="e62bc-126">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ **<span data-ttu-id="5180c-126">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="5180c-126">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a><span data-ttu-id="e62bc-127">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e62bc-127">See also</span></span>
-- [<span data-ttu-id="e62bc-128">IMetaDataImport – rozhraní</span><span class="sxs-lookup"><span data-stu-id="e62bc-128">IMetaDataImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [<span data-ttu-id="e62bc-129">IMetaDataImport2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="e62bc-129">IMetaDataImport2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+## <a name="see-also"></a><span data-ttu-id="5180c-127">Viz také:</span><span class="sxs-lookup"><span data-stu-id="5180c-127">See also</span></span>
+
+- [<span data-ttu-id="5180c-128">IMetaDataImport – rozhraní</span><span class="sxs-lookup"><span data-stu-id="5180c-128">IMetaDataImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [<span data-ttu-id="5180c-129">IMetaDataImport2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="5180c-129">IMetaDataImport2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

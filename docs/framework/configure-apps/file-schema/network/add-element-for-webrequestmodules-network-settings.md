@@ -1,5 +1,5 @@
 ---
-title: <add> – element pro element webRequestModules (nastavení sítě)
+title: <add> – Element pro webRequestModules (nastavení sítě)
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/webRequestModules/add
@@ -10,22 +10,22 @@ helpviewer_keywords:
 - add element, webRequestModules
 - <add> element, webRequestModules
 ms.assetid: 47ec4adc-f39f-4bcd-8680-1ec21fd26890
-ms.openlocfilehash: ff564571f3f606ac526c5b9efdb904d237348ffe
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 4c1116c088c12ad3859714c8d75704d0156c12f7
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55287128"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59188236"
 ---
-# <a name="add-element-for-webrequestmodules-network-settings"></a><span data-ttu-id="81241-102">\<Přidat > – Element pro webRequestModules (nastavení sítě)</span><span class="sxs-lookup"><span data-stu-id="81241-102">\<add> Element for webRequestModules (Network Settings)</span></span>
-<span data-ttu-id="81241-103">Přidá vlastní modul webové žádosti do aplikace.</span><span class="sxs-lookup"><span data-stu-id="81241-103">Adds a custom Web request module to the application.</span></span>  
+# <a name="add-element-for-webrequestmodules-network-settings"></a><span data-ttu-id="5f560-102">\<Přidat > – Element pro webRequestModules (nastavení sítě)</span><span class="sxs-lookup"><span data-stu-id="5f560-102">\<add> Element for webRequestModules (Network Settings)</span></span>
+<span data-ttu-id="5f560-103">Přidá vlastní modul webové žádosti do aplikace.</span><span class="sxs-lookup"><span data-stu-id="5f560-103">Adds a custom Web request module to the application.</span></span>  
   
- <span data-ttu-id="81241-104">\<Konfigurace ></span><span class="sxs-lookup"><span data-stu-id="81241-104">\<configuration></span></span>  
-<span data-ttu-id="81241-105">\<system.net></span><span class="sxs-lookup"><span data-stu-id="81241-105">\<system.net></span></span>  
-<span data-ttu-id="81241-106">\<webRequestModules></span><span class="sxs-lookup"><span data-stu-id="81241-106">\<webRequestModules></span></span>  
-<span data-ttu-id="81241-107">\<add></span><span class="sxs-lookup"><span data-stu-id="81241-107">\<add></span></span>  
+ <span data-ttu-id="5f560-104">\<Konfigurace ></span><span class="sxs-lookup"><span data-stu-id="5f560-104">\<configuration></span></span>  
+<span data-ttu-id="5f560-105">\<system.net></span><span class="sxs-lookup"><span data-stu-id="5f560-105">\<system.net></span></span>  
+<span data-ttu-id="5f560-106">\<webRequestModules></span><span class="sxs-lookup"><span data-stu-id="5f560-106">\<webRequestModules></span></span>  
+<span data-ttu-id="5f560-107">\<add></span><span class="sxs-lookup"><span data-stu-id="5f560-107">\<add></span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="81241-108">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="81241-108">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="5f560-108">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="5f560-108">Syntax</span></span>  
   
 ```xml  
 <add   
@@ -34,39 +34,39 @@ ms.locfileid: "55287128"
 />  
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="81241-109">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="81241-109">Attributes and Elements</span></span>  
- <span data-ttu-id="81241-110">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="81241-110">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="5f560-109">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="5f560-109">Attributes and Elements</span></span>  
+ <span data-ttu-id="5f560-110">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="5f560-110">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="81241-111">Atributy</span><span class="sxs-lookup"><span data-stu-id="81241-111">Attributes</span></span>  
+### <a name="attributes"></a><span data-ttu-id="5f560-111">Atributy</span><span class="sxs-lookup"><span data-stu-id="5f560-111">Attributes</span></span>  
   
-|<span data-ttu-id="81241-112">**Atribut**</span><span class="sxs-lookup"><span data-stu-id="81241-112">**Attribute**</span></span>|<span data-ttu-id="81241-113">**Popis**</span><span class="sxs-lookup"><span data-stu-id="81241-113">**Description**</span></span>|  
+|**<span data-ttu-id="5f560-112">Atribut</span><span class="sxs-lookup"><span data-stu-id="5f560-112">Attribute</span></span>**|**<span data-ttu-id="5f560-113">Popis</span><span class="sxs-lookup"><span data-stu-id="5f560-113">Description</span></span>**|  
 |-------------------|---------------------|  
-|`prefix`|<span data-ttu-id="81241-114">Předponu identifikátoru URI pro žádosti zpracovat tento modul webové žádosti.</span><span class="sxs-lookup"><span data-stu-id="81241-114">The URI prefix for requests handled by this Web request module.</span></span>|  
-|`type`|<span data-ttu-id="81241-115">Plně kvalifikovaného názvu (indikován <xref:System.Type.FullName%2A> vlastnost) a název sestavení (indikován <xref:System.Reflection.Assembly.FullName%2A> vlastnost), oddělená čárkou, která implementuje tento modul webové žádosti.</span><span class="sxs-lookup"><span data-stu-id="81241-115">The fully qualified type name (indicated by the <xref:System.Type.FullName%2A> property) and the assembly name (indicated by the <xref:System.Reflection.Assembly.FullName%2A> property), separated by a comma, that implements this Web request module.</span></span>|  
+|`prefix`|<span data-ttu-id="5f560-114">Předponu identifikátoru URI pro žádosti zpracovat tento modul webové žádosti.</span><span class="sxs-lookup"><span data-stu-id="5f560-114">The URI prefix for requests handled by this Web request module.</span></span>|  
+|`type`|<span data-ttu-id="5f560-115">Plně kvalifikovaného názvu (indikován <xref:System.Type.FullName%2A> vlastnost) a název sestavení (indikován <xref:System.Reflection.Assembly.FullName%2A> vlastnost), oddělená čárkou, která implementuje tento modul webové žádosti.</span><span class="sxs-lookup"><span data-stu-id="5f560-115">The fully qualified type name (indicated by the <xref:System.Type.FullName%2A> property) and the assembly name (indicated by the <xref:System.Reflection.Assembly.FullName%2A> property), separated by a comma, that implements this Web request module.</span></span>|  
   
-### <a name="child-elements"></a><span data-ttu-id="81241-116">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="81241-116">Child Elements</span></span>  
- <span data-ttu-id="81241-117">Žádné</span><span class="sxs-lookup"><span data-stu-id="81241-117">None.</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="5f560-116">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="5f560-116">Child Elements</span></span>  
+ <span data-ttu-id="5f560-117">Žádné</span><span class="sxs-lookup"><span data-stu-id="5f560-117">None.</span></span>  
   
-### <a name="parent-elements"></a><span data-ttu-id="81241-118">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="81241-118">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="5f560-118">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="5f560-118">Parent Elements</span></span>  
   
-|<span data-ttu-id="81241-119">**Element**</span><span class="sxs-lookup"><span data-stu-id="81241-119">**Element**</span></span>|<span data-ttu-id="81241-120">**Popis**</span><span class="sxs-lookup"><span data-stu-id="81241-120">**Description**</span></span>|  
+|**<span data-ttu-id="5f560-119">Prvek</span><span class="sxs-lookup"><span data-stu-id="5f560-119">Element</span></span>**|**<span data-ttu-id="5f560-120">Popis</span><span class="sxs-lookup"><span data-stu-id="5f560-120">Description</span></span>**|  
 |-----------------|---------------------|  
-|[<span data-ttu-id="81241-121">webRequestModules</span><span class="sxs-lookup"><span data-stu-id="81241-121">webRequestModules</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/webrequestmodules-element-network-settings.md)|<span data-ttu-id="81241-122">Určuje moduly, které použijte k vyžádání informace z hostitelů v síti.</span><span class="sxs-lookup"><span data-stu-id="81241-122">Specifies modules to use to request information from network hosts.</span></span>|  
+|[<span data-ttu-id="5f560-121">webRequestModules</span><span class="sxs-lookup"><span data-stu-id="5f560-121">webRequestModules</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/webrequestmodules-element-network-settings.md)|<span data-ttu-id="5f560-122">Určuje moduly, které použijte k vyžádání informace z hostitelů v síti.</span><span class="sxs-lookup"><span data-stu-id="5f560-122">Specifies modules to use to request information from network hosts.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="81241-123">Poznámky</span><span class="sxs-lookup"><span data-stu-id="81241-123">Remarks</span></span>  
- <span data-ttu-id="81241-124">`prefix` Atribut definuje předponu identifikátoru URI, který používá zadaný modul webové žádosti.</span><span class="sxs-lookup"><span data-stu-id="81241-124">The `prefix` attribute defines the URI prefix that uses the specified Web request module.</span></span> <span data-ttu-id="81241-125">Webové žádosti moduly jsou běžně registrovány pro zpracování konkrétní protokolu, jako je například HTTP nebo FTP, ale může být registrován pro obsluhu žádost pro konkrétní server nebo cesta na serveru.</span><span class="sxs-lookup"><span data-stu-id="81241-125">Web request modules are typically registered to handle a specific protocol, such as HTTP or FTP, but can be registered to handle a request to a specific server or path on a server.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="5f560-123">Poznámky</span><span class="sxs-lookup"><span data-stu-id="5f560-123">Remarks</span></span>  
+ <span data-ttu-id="5f560-124">`prefix` Atribut definuje předponu identifikátoru URI, který používá zadaný modul webové žádosti.</span><span class="sxs-lookup"><span data-stu-id="5f560-124">The `prefix` attribute defines the URI prefix that uses the specified Web request module.</span></span> <span data-ttu-id="5f560-125">Webové žádosti moduly jsou běžně registrovány pro zpracování konkrétní protokolu, jako je například HTTP nebo FTP, ale může být registrován pro obsluhu žádost pro konkrétní server nebo cesta na serveru.</span><span class="sxs-lookup"><span data-stu-id="5f560-125">Web request modules are typically registered to handle a specific protocol, such as HTTP or FTP, but can be registered to handle a request to a specific server or path on a server.</span></span>  
   
- <span data-ttu-id="81241-126">Webový požadavek modul se vytvoří při odpovídající předpony identifikátoru URI je předán <xref:System.Net.WebRequest.Create%2A?displayProperty=nameWithType> metody.</span><span class="sxs-lookup"><span data-stu-id="81241-126">The Web request module is created when a URI matching prefix is passed to the <xref:System.Net.WebRequest.Create%2A?displayProperty=nameWithType> method.</span></span>  
+ <span data-ttu-id="5f560-126">Webový požadavek modul se vytvoří při odpovídající předpony identifikátoru URI je předán <xref:System.Net.WebRequest.Create%2A?displayProperty=nameWithType> metody.</span><span class="sxs-lookup"><span data-stu-id="5f560-126">The Web request module is created when a URI matching prefix is passed to the <xref:System.Net.WebRequest.Create%2A?displayProperty=nameWithType> method.</span></span>  
   
- <span data-ttu-id="81241-127">Hodnota `prefix` atribut by měl mít počáteční znaky platný identifikátor URI.</span><span class="sxs-lookup"><span data-stu-id="81241-127">The value for the `prefix` attribute should be the leading characters of a valid URI.</span></span> <span data-ttu-id="81241-128">Například `http` nebo `http://www.contoso.com`.</span><span class="sxs-lookup"><span data-stu-id="81241-128">For example, `http` or `http://www.contoso.com`.</span></span>
+ <span data-ttu-id="5f560-127">Hodnota `prefix` atribut by měl mít počáteční znaky platný identifikátor URI.</span><span class="sxs-lookup"><span data-stu-id="5f560-127">The value for the `prefix` attribute should be the leading characters of a valid URI.</span></span> <span data-ttu-id="5f560-128">Například `http` nebo `http://www.contoso.com`.</span><span class="sxs-lookup"><span data-stu-id="5f560-128">For example, `http` or `http://www.contoso.com`.</span></span>
   
- <span data-ttu-id="81241-129">Hodnota `type` atribut by měl být platný název typu a odpovídající název sestavení, oddělených čárkami.</span><span class="sxs-lookup"><span data-stu-id="81241-129">The value for the `type` attribute should be a valid type name and corresponding assembly name, separated by a comma.</span></span>
+ <span data-ttu-id="5f560-129">Hodnota `type` atribut by měl být platný název typu a odpovídající název sestavení, oddělených čárkami.</span><span class="sxs-lookup"><span data-stu-id="5f560-129">The value for the `type` attribute should be a valid type name and corresponding assembly name, separated by a comma.</span></span>
   
-## <a name="configuration-files"></a><span data-ttu-id="81241-130">Konfigurační soubory</span><span class="sxs-lookup"><span data-stu-id="81241-130">Configuration Files</span></span>  
- <span data-ttu-id="81241-131">Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).</span><span class="sxs-lookup"><span data-stu-id="81241-131">This element can be used in the application configuration file or the machine configuration file (Machine.config).</span></span>  
+## <a name="configuration-files"></a><span data-ttu-id="5f560-130">Konfigurační soubory</span><span class="sxs-lookup"><span data-stu-id="5f560-130">Configuration Files</span></span>  
+ <span data-ttu-id="5f560-131">Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).</span><span class="sxs-lookup"><span data-stu-id="5f560-131">This element can be used in the application configuration file or the machine configuration file (Machine.config).</span></span>  
   
-## <a name="example"></a><span data-ttu-id="81241-132">Příklad</span><span class="sxs-lookup"><span data-stu-id="81241-132">Example</span></span>  
- <span data-ttu-id="81241-133">Následující příklad registruje vlastní modul webového požadavku pro protokol HTTP.</span><span class="sxs-lookup"><span data-stu-id="81241-133">The following example registers a custom Web request module for HTTP.</span></span> <span data-ttu-id="81241-134">Měli byste nahradit hodnoty pro verzi a PublicKeyToken správné hodnoty pro zadaný modul.</span><span class="sxs-lookup"><span data-stu-id="81241-134">You should replace the values for Version and PublicKeyToken with the correct values for the specified module.</span></span>  
+## <a name="example"></a><span data-ttu-id="5f560-132">Příklad</span><span class="sxs-lookup"><span data-stu-id="5f560-132">Example</span></span>  
+ <span data-ttu-id="5f560-133">Následující příklad registruje vlastní modul webového požadavku pro protokol HTTP.</span><span class="sxs-lookup"><span data-stu-id="5f560-133">The following example registers a custom Web request module for HTTP.</span></span> <span data-ttu-id="5f560-134">Měli byste nahradit hodnoty pro verzi a PublicKeyToken správné hodnoty pro zadaný modul.</span><span class="sxs-lookup"><span data-stu-id="5f560-134">You should replace the values for Version and PublicKeyToken with the correct values for the specified module.</span></span>  
   
 ```xml  
 <configuration>  
@@ -81,6 +81,7 @@ ms.locfileid: "55287128"
 </configuration>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="81241-135">Viz také:</span><span class="sxs-lookup"><span data-stu-id="81241-135">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="5f560-135">Viz také:</span><span class="sxs-lookup"><span data-stu-id="5f560-135">See also</span></span>
+
 - <xref:System.Net.WebRequest>
-- [<span data-ttu-id="81241-136">Schéma nastavení sítě</span><span class="sxs-lookup"><span data-stu-id="81241-136">Network Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+- [<span data-ttu-id="5f560-136">Schéma nastavení sítě</span><span class="sxs-lookup"><span data-stu-id="5f560-136">Network Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

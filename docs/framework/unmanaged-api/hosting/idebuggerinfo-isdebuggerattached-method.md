@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: aae7bc60abaedef8c3491a90eae01ebc02cff1ce
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: 0708a3b501a99b5f71be5ba4c6cc4ea2b754d12a
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57469050"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59191338"
 ---
-# <a name="idebuggerinfoisdebuggerattached-method"></a><span data-ttu-id="82b3a-102">IDebuggerInfo::IsDebuggerAttached – metoda</span><span class="sxs-lookup"><span data-stu-id="82b3a-102">IDebuggerInfo::IsDebuggerAttached Method</span></span>
-<span data-ttu-id="82b3a-103">Získá hodnotu, která označuje, zda je spravovaný ladicí program připojen k tomuto procesu.</span><span class="sxs-lookup"><span data-stu-id="82b3a-103">Gets a value that indicates whether a managed debugger is attached to this process.</span></span>  
+# <a name="idebuggerinfoisdebuggerattached-method"></a><span data-ttu-id="7d078-102">IDebuggerInfo::IsDebuggerAttached – metoda</span><span class="sxs-lookup"><span data-stu-id="7d078-102">IDebuggerInfo::IsDebuggerAttached Method</span></span>
+<span data-ttu-id="7d078-103">Získá hodnotu, která označuje, zda je spravovaný ladicí program připojen k tomuto procesu.</span><span class="sxs-lookup"><span data-stu-id="7d078-103">Gets a value that indicates whether a managed debugger is attached to this process.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="82b3a-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="82b3a-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="7d078-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="7d078-104">Syntax</span></span>  
   
 ```  
 HRESULT IsDebuggerAttached (  
@@ -35,18 +35,19 @@ HRESULT IsDebuggerAttached (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="82b3a-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="82b3a-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="7d078-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="7d078-105">Parameters</span></span>  
  `pbAttached`  
- <span data-ttu-id="82b3a-106">[out] Ukazatel na hodnotu, která je `true` Pokud spravovaný ladicí program je připojené k procesu; v opačném případě `false`.</span><span class="sxs-lookup"><span data-stu-id="82b3a-106">[out] A pointer to a value that is `true` if a managed debugger is attached to the process; otherwise, `false`.</span></span>  
+ <span data-ttu-id="7d078-106">[out] Ukazatel na hodnotu, která je `true` Pokud spravovaný ladicí program je připojené k procesu; v opačném případě `false`.</span><span class="sxs-lookup"><span data-stu-id="7d078-106">[out] A pointer to a value that is `true` if a managed debugger is attached to the process; otherwise, `false`.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="82b3a-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="82b3a-107">Requirements</span></span>  
- <span data-ttu-id="82b3a-108">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="82b3a-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="7d078-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="7d078-107">Requirements</span></span>  
+ <span data-ttu-id="7d078-108">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="7d078-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="82b3a-109">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="82b3a-109">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="7d078-109">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="7d078-109">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="82b3a-110">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="82b3a-110">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="7d078-110">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="7d078-110">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="82b3a-111">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="82b3a-111">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ **<span data-ttu-id="7d078-111">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="7d078-111">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a><span data-ttu-id="82b3a-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="82b3a-112">See also</span></span>
-- [<span data-ttu-id="82b3a-113">IDebuggerInfo – rozhraní</span><span class="sxs-lookup"><span data-stu-id="82b3a-113">IDebuggerInfo Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/idebuggerinfo-interface.md)
+## <a name="see-also"></a><span data-ttu-id="7d078-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="7d078-112">See also</span></span>
+
+- [<span data-ttu-id="7d078-113">IDebuggerInfo – rozhraní</span><span class="sxs-lookup"><span data-stu-id="7d078-113">IDebuggerInfo Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/idebuggerinfo-interface.md)

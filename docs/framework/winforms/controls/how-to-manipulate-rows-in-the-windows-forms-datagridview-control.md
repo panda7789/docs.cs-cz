@@ -10,31 +10,32 @@ helpviewer_keywords:
 - data grids [Windows Forms], manipulating rows
 - rows [Windows Forms], manipulating on Windows Forms
 ms.assetid: 522d8944-e073-4488-9673-923f0a8d7214
-ms.openlocfilehash: a793c47773b0d3181b38d61b9c49fbdcdd1a4a22
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 095efc7279a1dc6702aeeb5ec5d598dbdd8818b2
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57716345"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59193288"
 ---
-# <a name="how-to-manipulate-rows-in-the-windows-forms-datagridview-control"></a><span data-ttu-id="d8b6b-102">Postupy: Manipulace s řádky v ovládacím prvku Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="d8b6b-102">How to: Manipulate Rows in the Windows Forms DataGridView Control</span></span>
-<span data-ttu-id="d8b6b-103">Následující příklad kódu ukazuje různé možnosti pro manipulaci s <xref:System.Windows.Forms.DataGridView> řádky pomocí vlastnosti <xref:System.Windows.Forms.DataGridViewRow> třídy.</span><span class="sxs-lookup"><span data-stu-id="d8b6b-103">The following code example shows the various ways to manipulate <xref:System.Windows.Forms.DataGridView> rows using properties of the <xref:System.Windows.Forms.DataGridViewRow> class.</span></span>  
+# <a name="how-to-manipulate-rows-in-the-windows-forms-datagridview-control"></a><span data-ttu-id="c3060-102">Postupy: Manipulace s řádky v ovládacím prvku Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="c3060-102">How to: Manipulate Rows in the Windows Forms DataGridView Control</span></span>
+<span data-ttu-id="c3060-103">Následující příklad kódu ukazuje různé možnosti pro manipulaci s <xref:System.Windows.Forms.DataGridView> řádky pomocí vlastnosti <xref:System.Windows.Forms.DataGridViewRow> třídy.</span><span class="sxs-lookup"><span data-stu-id="c3060-103">The following code example shows the various ways to manipulate <xref:System.Windows.Forms.DataGridView> rows using properties of the <xref:System.Windows.Forms.DataGridViewRow> class.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="d8b6b-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="d8b6b-104">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="c3060-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="c3060-104">Example</span></span>  
  [!code-cpp[System.Windows.Forms.DataGridView.ButtonDemos#200](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/CPP/DataGridViewRowDemo.cpp#200)]
  [!code-csharp[System.Windows.Forms.DataGridView.ButtonDemos#200](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/CS/DataGridViewRowDemo.cs#200)]
  [!code-vb[System.Windows.Forms.DataGridView.ButtonDemos#200](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/VB/datagridviewrowdemo.vb#200)]  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="d8b6b-105">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="d8b6b-105">Compiling the Code</span></span>  
- <span data-ttu-id="d8b6b-106">Tento příklad vyžaduje:</span><span class="sxs-lookup"><span data-stu-id="d8b6b-106">This example requires:</span></span>  
+## <a name="compiling-the-code"></a><span data-ttu-id="c3060-105">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="c3060-105">Compiling the Code</span></span>  
+ <span data-ttu-id="c3060-106">Tento příklad vyžaduje:</span><span class="sxs-lookup"><span data-stu-id="c3060-106">This example requires:</span></span>  
   
--   <span data-ttu-id="d8b6b-107">Odkazy na sestavení systému, System.Drawing a System.Windows.Forms.</span><span class="sxs-lookup"><span data-stu-id="d8b6b-107">References to the System, System.Drawing, and System.Windows.Forms assemblies.</span></span>  
+-   <span data-ttu-id="c3060-107">Odkazy na sestavení systému, System.Drawing a System.Windows.Forms.</span><span class="sxs-lookup"><span data-stu-id="c3060-107">References to the System, System.Drawing, and System.Windows.Forms assemblies.</span></span>  
   
- <span data-ttu-id="d8b6b-108">Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md).</span><span class="sxs-lookup"><span data-stu-id="d8b6b-108">For information about building this example from the command line for Visual Basic or Visual C#, see [Building from the Command Line](../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md) or [Command-line Building With csc.exe](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md).</span></span> <span data-ttu-id="d8b6b-109">Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.</span><span class="sxs-lookup"><span data-stu-id="d8b6b-109">You can also build this example in Visual Studio by pasting the code into a new project.</span></span>  
+ <span data-ttu-id="c3060-108">Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md).</span><span class="sxs-lookup"><span data-stu-id="c3060-108">For information about building this example from the command line for Visual Basic or Visual C#, see [Building from the Command Line](../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md) or [Command-line Building With csc.exe](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md).</span></span> <span data-ttu-id="c3060-109">Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.</span><span class="sxs-lookup"><span data-stu-id="c3060-109">You can also build this example in Visual Studio by pasting the code into a new project.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="d8b6b-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="d8b6b-110">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c3060-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c3060-110">See also</span></span>
+
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.DataGridViewBand>
 - <xref:System.Windows.Forms.DataGridViewRow>
 - <xref:System.Windows.Forms.DataGridViewColumn>
-- [<span data-ttu-id="d8b6b-111">Programování s buňkami, řádky a sloupci v ovládacím prvku Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="d8b6b-111">Programming with Cells, Rows, and Columns in the Windows Forms DataGridView Control</span></span>](programming-with-cells-rows-and-columns-in-the-datagrid.md)
+- [<span data-ttu-id="c3060-111">Programování s buňkami, řádky a sloupci v ovládacím prvku Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="c3060-111">Programming with Cells, Rows, and Columns in the Windows Forms DataGridView Control</span></span>](programming-with-cells-rows-and-columns-in-the-datagrid.md)

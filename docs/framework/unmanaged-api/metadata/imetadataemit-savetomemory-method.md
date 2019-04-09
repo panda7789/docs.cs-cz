@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c6e9bb51965b258093321a5dbb19447ec6d6474d
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: bc840df9dd0793a7347b7f0d8a05296a09d634c8
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57471812"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59192105"
 ---
-# <a name="imetadataemitsavetomemory-method"></a><span data-ttu-id="6991c-102">IMetaDataEmit::SaveToMemory – metoda</span><span class="sxs-lookup"><span data-stu-id="6991c-102">IMetaDataEmit::SaveToMemory Method</span></span>
-<span data-ttu-id="6991c-103">Uloží všechna metadata v aktuálním oboru k zadané oblasti paměti.</span><span class="sxs-lookup"><span data-stu-id="6991c-103">Saves all metadata in the current scope to the specified area of memory.</span></span>  
+# <a name="imetadataemitsavetomemory-method"></a><span data-ttu-id="7c323-102">IMetaDataEmit::SaveToMemory – metoda</span><span class="sxs-lookup"><span data-stu-id="7c323-102">IMetaDataEmit::SaveToMemory Method</span></span>
+<span data-ttu-id="7c323-103">Uloží všechna metadata v aktuálním oboru k zadané oblasti paměti.</span><span class="sxs-lookup"><span data-stu-id="7c323-103">Saves all metadata in the current scope to the specified area of memory.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="6991c-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="6991c-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="7c323-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="7c323-104">Syntax</span></span>  
   
 ```  
 HRESULT SaveToMemory (   
@@ -36,22 +36,23 @@ HRESULT SaveToMemory (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="6991c-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="6991c-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="7c323-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="7c323-105">Parameters</span></span>  
  `pbData`  
- <span data-ttu-id="6991c-106">[out] Adresa, na kterém má být zápis metadat.</span><span class="sxs-lookup"><span data-stu-id="6991c-106">[out] The address at which to begin writing metadata.</span></span>  
+ <span data-ttu-id="7c323-106">[out] Adresa, na kterém má být zápis metadat.</span><span class="sxs-lookup"><span data-stu-id="7c323-106">[out] The address at which to begin writing metadata.</span></span>  
   
  `cbData`  
- <span data-ttu-id="6991c-107">[in] Velikost v bajtech přidělené paměti.</span><span class="sxs-lookup"><span data-stu-id="6991c-107">[in] The size, in bytes, of the allocated memory.</span></span>  
+ <span data-ttu-id="7c323-107">[in] Velikost v bajtech přidělené paměti.</span><span class="sxs-lookup"><span data-stu-id="7c323-107">[in] The size, in bytes, of the allocated memory.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="6991c-108">Požadavky</span><span class="sxs-lookup"><span data-stu-id="6991c-108">Requirements</span></span>  
- <span data-ttu-id="6991c-109">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="6991c-109">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="7c323-108">Požadavky</span><span class="sxs-lookup"><span data-stu-id="7c323-108">Requirements</span></span>  
+ <span data-ttu-id="7c323-109">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="7c323-109">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="6991c-110">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="6991c-110">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="7c323-110">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="7c323-110">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="6991c-111">**Knihovna:** Použít jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="6991c-111">**Library:** Used as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="7c323-111">**Knihovna:** Použít jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="7c323-111">**Library:** Used as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="6991c-112">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="6991c-112">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ **<span data-ttu-id="7c323-112">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="7c323-112">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a><span data-ttu-id="6991c-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="6991c-113">See also</span></span>
-- [<span data-ttu-id="6991c-114">IMetaDataEmit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="6991c-114">IMetaDataEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
-- [<span data-ttu-id="6991c-115">IMetaDataEmit2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="6991c-115">IMetaDataEmit2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+## <a name="see-also"></a><span data-ttu-id="7c323-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="7c323-113">See also</span></span>
+
+- [<span data-ttu-id="7c323-114">IMetaDataEmit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="7c323-114">IMetaDataEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
+- [<span data-ttu-id="7c323-115">IMetaDataEmit2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="7c323-115">IMetaDataEmit2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

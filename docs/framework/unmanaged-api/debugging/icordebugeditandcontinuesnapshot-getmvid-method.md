@@ -17,15 +17,16 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f912ec38f0407f9e2758f231fd43d895b5cdfcb3
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 9218dd87b0794f3972365a4049cd8941e6671312
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54583407"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59193928"
 ---
-# <a name="icordebugeditandcontinuesnapshotgetmvid-method"></a><span data-ttu-id="5269c-102">ICorDebugEditAndContinueSnapshot::GetMvid – metoda</span><span class="sxs-lookup"><span data-stu-id="5269c-102">ICorDebugEditAndContinueSnapshot::GetMvid Method</span></span>
-<span data-ttu-id="5269c-103">`GetMvid` je zastaralý.</span><span class="sxs-lookup"><span data-stu-id="5269c-103">`GetMvid` is obsolete.</span></span> <span data-ttu-id="5269c-104">Nevolejte tuto metodu.</span><span class="sxs-lookup"><span data-stu-id="5269c-104">Do not call this method.</span></span>  
+# <a name="icordebugeditandcontinuesnapshotgetmvid-method"></a><span data-ttu-id="e96fd-102">ICorDebugEditAndContinueSnapshot::GetMvid – metoda</span><span class="sxs-lookup"><span data-stu-id="e96fd-102">ICorDebugEditAndContinueSnapshot::GetMvid Method</span></span>
+`GetMvid` <span data-ttu-id="e96fd-103">je zastaralý.</span><span class="sxs-lookup"><span data-stu-id="e96fd-103">is obsolete.</span></span> <span data-ttu-id="e96fd-104">Nevolejte tuto metodu.</span><span class="sxs-lookup"><span data-stu-id="e96fd-104">Do not call this method.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="5269c-105">Viz také:</span><span class="sxs-lookup"><span data-stu-id="5269c-105">See also</span></span>
-- [<span data-ttu-id="5269c-106">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="5269c-106">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+## <a name="see-also"></a><span data-ttu-id="e96fd-105">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e96fd-105">See also</span></span>
+
+- [<span data-ttu-id="e96fd-106">Debugging – rozhraní</span><span class="sxs-lookup"><span data-stu-id="e96fd-106">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

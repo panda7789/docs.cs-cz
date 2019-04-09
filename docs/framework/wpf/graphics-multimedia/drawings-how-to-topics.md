@@ -11,26 +11,27 @@ helpviewer_keywords:
 - Drawing objects [WPF]
 - DrawingGroup objects [WPF]
 ms.assetid: 5f445633-529c-4091-8a2c-13035ac8c41b
-ms.openlocfilehash: b812c78783b2d9ccf6c6e231d5e2a632ccb095f4
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 6be388292ce2c73b9ef555ea6b00c986c99dc11a
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57352331"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59197734"
 ---
-# <a name="drawings-how-to-topics"></a><span data-ttu-id="f2ec0-102">Postupy: Témata kresby</span><span class="sxs-lookup"><span data-stu-id="f2ec0-102">Drawings How-to Topics</span></span>
-<span data-ttu-id="f2ec0-103">Témata v této části popisují způsob použití <xref:System.Windows.Media.Drawing> objektů pro kreslení tvarů, Image nebo text.</span><span class="sxs-lookup"><span data-stu-id="f2ec0-103">The topics in this section describe how to use <xref:System.Windows.Media.Drawing> objects to draw shapes, images, or text.</span></span>  
+# <a name="drawings-how-to-topics"></a><span data-ttu-id="cf540-102">Postupy: Témata kresby</span><span class="sxs-lookup"><span data-stu-id="cf540-102">Drawings How-to Topics</span></span>
+<span data-ttu-id="cf540-103">Témata v této části popisují způsob použití <xref:System.Windows.Media.Drawing> objektů pro kreslení tvarů, Image nebo text.</span><span class="sxs-lookup"><span data-stu-id="cf540-103">The topics in this section describe how to use <xref:System.Windows.Media.Drawing> objects to draw shapes, images, or text.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="f2ec0-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="f2ec0-104">In This Section</span></span>  
- [<span data-ttu-id="f2ec0-105">Použití prvku GuidelineSet na kresbu</span><span class="sxs-lookup"><span data-stu-id="f2ec0-105">Apply a GuidelineSet to a Drawing</span></span>](how-to-apply-a-guidelineset-to-a-drawing.md)  
-  [<span data-ttu-id="f2ec0-106">Vytvoření kompozitní kresby</span><span class="sxs-lookup"><span data-stu-id="f2ec0-106">Create a Composite Drawing</span></span>](how-to-create-a-composite-drawing.md)  
-  [<span data-ttu-id="f2ec0-107">Vytvoření objektu GeometryDrawing</span><span class="sxs-lookup"><span data-stu-id="f2ec0-107">Create a GeometryDrawing</span></span>](how-to-create-a-geometrydrawing.md)  
-  [<span data-ttu-id="f2ec0-108">Vykreslení obrázku pomocí ImageDrawing</span><span class="sxs-lookup"><span data-stu-id="f2ec0-108">Draw an Image Using ImageDrawing</span></span>](how-to-draw-an-image-using-imagedrawing.md)  
-  [<span data-ttu-id="f2ec0-109">Přehrání média pomocí VideoDrawing</span><span class="sxs-lookup"><span data-stu-id="f2ec0-109">Play Media using a VideoDrawing</span></span>](how-to-play-media-using-a-videodrawing.md)  
-  [<span data-ttu-id="f2ec0-110">Použití kresby jako zdroje obrázku</span><span class="sxs-lookup"><span data-stu-id="f2ec0-110">Use a Drawing as an Image Source</span></span>](how-to-use-a-drawing-as-an-image-source.md)  
+## <a name="in-this-section"></a><span data-ttu-id="cf540-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="cf540-104">In This Section</span></span>  
+ [<span data-ttu-id="cf540-105">Použití prvku GuidelineSet na kresbu</span><span class="sxs-lookup"><span data-stu-id="cf540-105">Apply a GuidelineSet to a Drawing</span></span>](how-to-apply-a-guidelineset-to-a-drawing.md)  
+  [<span data-ttu-id="cf540-106">Vytvoření kompozitní kresby</span><span class="sxs-lookup"><span data-stu-id="cf540-106">Create a Composite Drawing</span></span>](how-to-create-a-composite-drawing.md)  
+  [<span data-ttu-id="cf540-107">Vytvoření objektu GeometryDrawing</span><span class="sxs-lookup"><span data-stu-id="cf540-107">Create a GeometryDrawing</span></span>](how-to-create-a-geometrydrawing.md)  
+  [<span data-ttu-id="cf540-108">Vykreslení obrázku pomocí ImageDrawing</span><span class="sxs-lookup"><span data-stu-id="cf540-108">Draw an Image Using ImageDrawing</span></span>](how-to-draw-an-image-using-imagedrawing.md)  
+  [<span data-ttu-id="cf540-109">Přehrání média pomocí VideoDrawing</span><span class="sxs-lookup"><span data-stu-id="cf540-109">Play Media using a VideoDrawing</span></span>](how-to-play-media-using-a-videodrawing.md)  
+  [<span data-ttu-id="cf540-110">Použití kresby jako zdroje obrázku</span><span class="sxs-lookup"><span data-stu-id="cf540-110">Use a Drawing as an Image Source</span></span>](how-to-use-a-drawing-as-an-image-source.md)  
   
-## <a name="see-also"></a><span data-ttu-id="f2ec0-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="f2ec0-111">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="cf540-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="cf540-111">See also</span></span>
+
 - <xref:System.Windows.Media.Drawing>
-- [<span data-ttu-id="f2ec0-112">Přehled vykreslování grafiky WPF</span><span class="sxs-lookup"><span data-stu-id="f2ec0-112">WPF Graphics Rendering Overview</span></span>](wpf-graphics-rendering-overview.md)
-- [<span data-ttu-id="f2ec0-113">Přehled objektů Shape a základního kreslení ve WPF</span><span class="sxs-lookup"><span data-stu-id="f2ec0-113">Shapes and Basic Drawing in WPF Overview</span></span>](shapes-and-basic-drawing-in-wpf-overview.md)
-- [<span data-ttu-id="f2ec0-114">Grafika a multimédia</span><span class="sxs-lookup"><span data-stu-id="f2ec0-114">Graphics and Multimedia</span></span>](index.md)
+- [<span data-ttu-id="cf540-112">Přehled vykreslování grafiky WPF</span><span class="sxs-lookup"><span data-stu-id="cf540-112">WPF Graphics Rendering Overview</span></span>](wpf-graphics-rendering-overview.md)
+- [<span data-ttu-id="cf540-113">Tvary a základní kresby v přehledu WPF</span><span class="sxs-lookup"><span data-stu-id="cf540-113">Shapes and Basic Drawing in WPF Overview</span></span>](shapes-and-basic-drawing-in-wpf-overview.md)
+- [<span data-ttu-id="cf540-114">Grafika a multimédia</span><span class="sxs-lookup"><span data-stu-id="cf540-114">Graphics and Multimedia</span></span>](index.md)
