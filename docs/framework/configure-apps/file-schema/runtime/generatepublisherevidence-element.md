@@ -1,5 +1,5 @@
 ---
-title: Element <generatePublisherEvidence>
+title: <generatePublisherEvidence> Prvek
 ms.date: 03/30/2017
 helpviewer_keywords:
 - generatePublisherEvidence element
@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 7d208f50-e8d5-4a42-bc1a-1cf3590706a8
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9f029131f5b10cc487021ee15e72552a26c0b04e
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 09a12f062b2fe3ad6e5ac90f0d268bbbeab44876
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55275844"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59198917"
 ---
 # <a name="generatepublisherevidence-element"></a>\<generatePublisherEvidence> Element
 Určuje, zda modul runtime vytvoří <xref:System.Security.Policy.Publisher> důkazy pro zabezpečení přístupu kódu (CAS).  
@@ -39,7 +39,7 @@ Určuje, zda modul runtime vytvoří <xref:System.Security.Policy.Publisher> dů
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |`false`|Nevytváří žádné <xref:System.Security.Policy.Publisher> důkaz.|  
 |`true`|Vytvoří <xref:System.Security.Policy.Publisher> důkaz. Toto nastavení je výchozí.|  
@@ -79,5 +79,6 @@ Určuje, zda modul runtime vytvoří <xref:System.Security.Policy.Publisher> dů
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
 - [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)

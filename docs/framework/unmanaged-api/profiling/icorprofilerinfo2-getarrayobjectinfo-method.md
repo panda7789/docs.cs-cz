@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 7fe86fbe7ee51e5f53eeea74d7d5a56046de5e00
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: 5276c69da05cedcd3195a09da12ddc5b2d0fed67
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57484391"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59201270"
 ---
 # <a name="icorprofilerinfo2getarrayobjectinfo-method"></a>ICorProfilerInfo2::GetArrayObjectInfo – metoda
 Získá podrobnosti o objektu array.  
@@ -52,7 +52,7 @@ HRESULT GetArrayObjectInfo(
  [out] Pole obsahující celá čísla, každý představující nižší mez rozměru pole.  
   
  `ppData`  
- [out] Ukazatel na adresu nezpracované vyrovnávací paměti pro pole, které se neuplatní konvence C++.  
+ [out] Ukazatel na adresu nezpracované vyrovnávací paměti pro pole, které vytvoří rozložení podle C++ konvence.  
   
 ## <a name="remarks"></a>Poznámky  
  `pDimensionSizes` a `pDimensionLowerBounds` jsou paralelní pole, takže prvky umístěné ve stejném indexu v každé pole jsou vlastnosti stejné entity.  
@@ -67,5 +67,6 @@ HRESULT GetArrayObjectInfo(
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
 - [ICorProfilerInfo2 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md)

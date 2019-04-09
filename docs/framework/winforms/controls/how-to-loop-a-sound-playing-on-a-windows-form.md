@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Smyčka přehrávání zvuku ve formuláři Windows'
+title: 'Postupy: Opakované přehrávání zvuku ve formuláři Windows Forms'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,14 +10,14 @@ helpviewer_keywords:
 - sounds [Windows Forms], looping
 - playing sounds [Windows Forms], looping
 ms.assetid: ea95dd46-10a3-46c0-8263-4b205f00df7f
-ms.openlocfilehash: 43fcc472960cc3f2432d3872160d9ace4c617836
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: a74acbbbcb5646a35de54a6000a0feae30f145a5
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57719270"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59188510"
 ---
-# <a name="how-to-loop-a-sound-playing-on-a-windows-form"></a>Postupy: Smyčka přehrávání zvuku ve formuláři Windows
+# <a name="how-to-loop-a-sound-playing-on-a-windows-form"></a>Postupy: Opakované přehrávání zvuku ve formuláři Windows Forms
 Následující příklad kódu opakovaně přehraje zvuk. Když kód v `stopPlayingButton_Click` spustí obslužnou rutinu události, všechny aktuálně přehrávání zastaví zvuku. Pokud žádný zvukový signál přehrávání, nic se nestane.  
   
 ## <a name="example"></a>Příklad  
@@ -54,6 +54,7 @@ Následující příklad kódu opakovaně přehraje zvuk. Když kód v `stopPlay
  Nečiňte rozhodnutí o obsahu souboru na základě jeho názvu. Například soubor Form1.vb nemusí být zdrojový soubor jazyka Visual Basic. Před použitím dat ve své aplikaci ověřte všechny vstupy.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Media.SoundPlayer.PlayLooping%2A>
-- [Postupy: Přehrávání zvuku z formuláře Windows](how-to-play-a-sound-from-a-windows-form.md)
+- [Postupy: Přehrávání zvuku z formuláře Windows Forms](how-to-play-a-sound-from-a-windows-form.md)
 - [Přehled třídy SoundPlayer](soundplayer-class-overview.md)

@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 5bb9b6a2-7b57-4aea-8809-32b28bc73e88
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 284b7f814f8a9355220f0da59e8fce7d79345609
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1d059a5d4df402b309f628bf3e9393114c4cdeec
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54620237"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59191390"
 ---
 # <a name="etw-events-in-the-common-language-runtime"></a>Události Trasování událostí pro Windows v CLR (Common Language Runtime)
 Modul CLR (CLR) poskytuje užitečné události trasování pro Windows (ETW) diagnostické informace prostřednictvím širokou škálu ladění a profilování události. Událostí CLR ETW pomocí systému Windows trasování událostí pro Windows trasování pro rozšíření existující profilování a ladění poskytované modulem common language runtime.  
@@ -26,14 +26,15 @@ Modul CLR (CLR) poskytuje užitečné události trasování pro Windows (ETW) di
  [Řízení přihlašování rozhraní .NET Framework](../../../docs/framework/performance/controlling-logging.md)  
  Popisuje nástroje a příkazy pro zachytávání a zobrazování událostí trasování událostí pro Windows.  
   
- [Poskytovatelé Trasování událostí pro Windows v CLR](../../../docs/framework/performance/clr-etw-providers.md)  
+ [Poskytovatelé CLR ETW](../../../docs/framework/performance/clr-etw-providers.md)  
  Poskytuje informace o modulu runtime a zprostředkovatele doběhu a jak je použít pro shromažďování dat trasování událostí pro Windows.  
   
- [Klíčová slova a úrovně Trasování událostí pro Windows v CLR](../../../docs/framework/performance/clr-etw-keywords-and-levels.md)  
+ [Klíčová slova a úrovně ETW CLR](../../../docs/framework/performance/clr-etw-keywords-and-levels.md)  
  Popisuje klíčová slova pro modul Runtime a doběhu zprostředkovatelů, které umožňují filtrovat události podle kategorie.  
   
- [Události Trasování událostí pro Windows v CLR](../../../docs/framework/performance/clr-etw-events.md)  
+ [Události ETW CLR](../../../docs/framework/performance/clr-etw-events.md)  
  Poskytuje podrobné informace o CLR ETW – události, klíčová slova, úrovní a data události.  
   
 ## <a name="see-also"></a>Viz také:
-- [Trasování událostí pro Windows – události v rozhraní .NET Framework](../../../docs/framework/performance/etw-events.md)
+
+- [Události Trasování událostí pro Windows v rozhraní .NET Framework](../../../docs/framework/performance/etw-events.md)

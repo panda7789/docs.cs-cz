@@ -2,12 +2,12 @@
 title: Vlastní formátování zpráv
 ms.date: 03/30/2017
 ms.assetid: c07435f3-5214-4791-8961-2c2b61306d71
-ms.openlocfilehash: e1633bdd3959ba812251ef1b78bcd0e83b2060c6
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: af1596c65fc87a68bc3dc2ab5ab2d82133e0fed4
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54612765"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59196239"
 ---
 # <a name="custom-message-formatters"></a>Vlastní formátování zpráv
 Obsah ve zprávě je často ve formátu XML, který není obvykle vhodné formátu pro aplikaci. Aplikace manipulovat s objekty, získávání a nastavování jejich vlastností. Windows Communication Foundation (WCF) používá *kontraktu dat* převést <xref:System.ServiceModel.Channels.Message> objektu do objektu snadno zpracovat aplikace. Tyto procesy jsou volány serializace a deserializace. Všimněte si, že tyto stejné podmínky se používají k popisu serializace a deserializace provádí přenosové vrstvy do a z přenosový formát zprávy, což je nesouvisejících procesu.  
@@ -33,6 +33,7 @@ Obsah ve zprávě je často ve formátu XML, který není obvykle vhodné formá
  Chcete-li vložit vlastní formátovací modul do aplikace služby, přiřaďte <xref:System.ServiceModel.Dispatcher.IDispatchMessageFormatter> objektu <xref:System.ServiceModel.Dispatcher.DispatchOperation.Formatter%2A> vlastnost pomocí na chování operace. Informace o chování najdete v tématu [konfigurace a rozšíření modulu Runtime s chováním](../../../../docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Dispatcher.IClientMessageFormatter>
 - <xref:System.ServiceModel.Dispatcher.IDispatchMessageFormatter>
-- [Konfigurace a rozšíření modulu runtime pomocí chování](../../../../docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md)
+- [Konfigurace a rozšíření modulu runtime s chováním](../../../../docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md)

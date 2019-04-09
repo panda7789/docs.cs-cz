@@ -1,18 +1,18 @@
 ---
-title: 'Postupy: Určete, že se že mají objevit výjimky souběžnosti při'
+title: 'Postupy: Určení, kdy se mají objevit výjimky souběžnosti'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 344ae068-ff63-4a2e-8b00-af22e143675f
-ms.openlocfilehash: a6a9fa61685caffb7b2b5d1baf9640cb5ccfa31b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 30dd83c68472ecd3244cfc87b6df97b948b9a84f
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54587161"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59182985"
 ---
-# <a name="how-to-specify-when-concurrency-exceptions-are-thrown"></a>Postupy: Určete, že se že mají objevit výjimky souběžnosti při
+# <a name="how-to-specify-when-concurrency-exceptions-are-thrown"></a>Postupy: Určení, kdy se mají objevit výjimky souběžnosti
 V [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], <xref:System.Data.Linq.ChangeConflictException> je vyvolána výjimka, pokud objekty nelze aktualizovat kvůli konfliktům optimistického řízení souběžnosti. Další informace najdete v tématu [optimistického řízení souběžnosti: Přehled](../../../../../../docs/framework/data/adonet/sql/linq/optimistic-concurrency-overview.md).  
   
  Před odesláním změn databáze můžete zadat při by měl být vyvolání výjimky souběžnosti:  
@@ -30,5 +30,6 @@ V [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], <xref:Sys
  [!code-vb[System.Data.Linq.ConflictModeEnumeration#1](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/system.data.linq.conflictmodeenumeration/vb/module1.vb#1)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Postupy: Správa konfliktů změn](../../../../../../docs/framework/data/adonet/sql/linq/how-to-manage-change-conflicts.md)
 - [Vytvoření a odeslání změn dat](../../../../../../docs/framework/data/adonet/sql/linq/making-and-submitting-data-changes.md)

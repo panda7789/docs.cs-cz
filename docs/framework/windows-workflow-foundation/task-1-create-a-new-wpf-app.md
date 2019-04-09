@@ -1,15 +1,15 @@
 ---
-title: 'Úloha 1: Vytvoření nové aplikace Windows Presentation Foundation'
+title: 'Úkol 1: Vytvoření nové aplikace Windows Presentation Foundation'
 ms.date: 03/30/2017
 ms.assetid: 270eaeba-9492-4532-af9f-403ce5c9935b
-ms.openlocfilehash: 533b4a1030ab5f47eb96ca62dc2805eae7933b9b
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: dae523714862ed36d36e65b51be62acff9b17f51
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57711882"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59193393"
 ---
-# <a name="task-1-create-a-new-windows-presentation-foundation-application"></a>Úloha 1: Vytvoření nové aplikace Windows Presentation Foundation
+# <a name="task-1-create-a-new-windows-presentation-foundation-application"></a>Úkol 1: Vytvoření nové aplikace Windows Presentation Foundation
 Při plnění tohoto úkolu Vytvoření prázdné aplikace Windows Presentation Foundation (WPF) pomocí šablony WPF aplikace Visual Studio a přidejte odkazy na příslušné [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] sestavení pracovních postupů.  
   
 ### <a name="to-create-the-wpf-application-project"></a>Vytvoření projektu aplikace WPF  
@@ -43,5 +43,6 @@ Při plnění tohoto úkolu Vytvoření prázdné aplikace Windows Presentation 
 11. Zobrazit [úloha 2: Hostování návrháře postupu provádění](task-2-host-the-workflow-designer.md) informace o hostování pracovního postupu návrháře návrhové plátno.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Změna hostování Návrháře postupu provádění](rehosting-the-workflow-designer.md)
-- [Úloha 2: Hostování návrháře postupu provádění](task-2-host-the-workflow-designer.md)
+- [Úkol 2: Hostování Návrháře postupu provádění](task-2-host-the-workflow-designer.md)

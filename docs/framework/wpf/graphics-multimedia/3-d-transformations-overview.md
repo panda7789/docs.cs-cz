@@ -8,18 +8,16 @@ helpviewer_keywords:
 - 3-D transformations
 - transformations [WPF], 3-D
 ms.assetid: e45e555d-ac1e-4b36-aced-e433afe7f27f
-ms.openlocfilehash: 578c8061271e08e4eac1ec5f11c84e63a3fa37bd
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: bbb3c413148bd2e2ab8de8a1a725f2d9a8acf2f6
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57361886"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59190626"
 ---
 # <a name="3-d-transformations-overview"></a>Přehled 3D transformací
 Toto téma popisuje způsob použití transformací na 3D modelů v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] grafiky systému. Transformace umožňuje vývojářům změnit umístění, velikost a orientaci modely beze změny základní hodnoty, které jejich definování.  
-  
 
-  
 ## <a name="3-d-coordinate-space"></a>3D souřadnicového prostoru  
  3D grafiky v obsahu [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] zapouzdřena v elementu, <xref:System.Windows.Controls.Viewport3D>, který mohl podílet na struktuře dvojrozměrné elementu. Grafika systému považuje za Viewport3D dvojrozměrné vizuální prvky jako řada dalších v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]. Viewport3D funguje jako okno – oblast zobrazení – do 3D scény. Přesněji řečeno je povrch, na kterém je předpokládané 3D scény.  I když používáte Viewport3D s jinými objekty 2D kreslení v stejný graf scén nelze interpenetrate 2D a 3D objektů v rámci Viewport3D. V následující diskuse souřadnicového prostoru popsané obsažen v elementu Viewport3D.  
   
@@ -106,6 +104,7 @@ Příklad otočení
  Vzhledem k tomu kamery také modely, je možné transformovat také vlastnosti kamery.  Zatímco určitě můžete změnit vzhled scény pomocí transformace fotoaparátu umístění nebo rovině vzdálenosti – v důsledku toho transformace projekce celý scény – mějte na paměti, že mnoho účinky dosáhnout tímto způsobem nemusí mít tolik "visual smysl" do prohlížeče jako transformace použít pro umístění nebo umístění modelů ve scéně.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled 3D grafiky](3-d-graphics-overview.md)
 - [Přehled transformace](transforms-overview.md)
 - [Ukázka 2D transformace](https://go.microsoft.com/fwlink/?LinkID=158252)

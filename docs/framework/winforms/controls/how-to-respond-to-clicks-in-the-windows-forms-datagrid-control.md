@@ -12,12 +12,12 @@ helpviewer_keywords:
 - examples [Windows Forms], DataGrid control
 - DataGrid control [Windows Forms], click events
 ms.assetid: a0aa204b-8351-4d82-9933-ee21a5c9e409
-ms.openlocfilehash: 7310557bad7e845c4b193debdefba68db2e1d116
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 55ca52390cd6c5d5af4a764ea4438d8ce935dfbb
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57708197"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59191897"
 ---
 # <a name="how-to-respond-to-clicks-in-the-windows-forms-datagrid-control"></a>Postupy: Reakce na kliknutí v ovládacím prvku Windows Forms DataGrid
 > [!NOTE]
@@ -141,5 +141,6 @@ ms.locfileid: "57708197"
     ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Ovládací prvek DataGrid](datagrid-control-windows-forms.md)
-- [Postupy: Změna zobrazených dat za běhu v ovládacím prvku Windows Forms DataGrid](change-displayed-data-at-run-time-wf-datagrid-control.md)
+- [Postupy: Změna zobrazených dat za běhu v ovládacím prvku Windows Forms DataGrid DataGrid](change-displayed-data-at-run-time-wf-datagrid-control.md)

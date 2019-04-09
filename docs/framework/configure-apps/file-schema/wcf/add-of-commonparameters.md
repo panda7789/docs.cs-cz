@@ -1,13 +1,13 @@
 ---
-title: <add> z <commonParameters>
+title: <add> of <commonParameters>
 ms.date: 03/30/2017
 ms.assetid: 3713bf25-20c8-455f-bb85-de46b6487932
-ms.openlocfilehash: e0ca00911577f9f210def9326df261f772f9c26d
-ms.sourcegitcommit: b8ace47d839f943f785b89e2fff8092b0bf8f565
+ms.openlocfilehash: 6aaba3f82966ad4496e6edaae06b5d7a8aef3863
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55674422"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59199478"
 ---
 # <a name="add-of-commonparameters"></a>\<Přidat > z \<commonParameters >
 Určuje dvojice název hodnota parametrů, které jsou používány globálně u více služeb. Obvykle tento parametr obsahuje připojovací řetězec databáze, kterou může sdílet trvalé služby.  
@@ -86,6 +86,7 @@ Určuje dvojice název hodnota parametrů, které jsou používány globálně u
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Configuration.WorkflowRuntimeElement>
 - <xref:System.Workflow.Runtime.Configuration.WorkflowRuntimeServiceElement>
 - <xref:System.Workflow.Runtime.WorkflowRuntime>

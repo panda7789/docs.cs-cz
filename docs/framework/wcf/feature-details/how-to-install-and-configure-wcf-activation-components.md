@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - HTTP activation [WCF]
 ms.assetid: 33a7054a-73ec-464d-83e5-b203aeded658
-ms.openlocfilehash: 0bc624bcacf5ab85a5ae0e833ea6b7a979946a27
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: bcd725963986d8a70584409e1ef15c42f04f0033
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54726894"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59199216"
 ---
 # <a name="how-to-install-and-configure-wcf-activation-components"></a>Postupy: Instalace a konfigurace aktivačních komponent WCF
 Toto téma popisuje kroky potřebné k nastavení služby Aktivace procesu Windows (WAS) na [!INCLUDE[wv](../../../../includes/wv-md.md)] k hostování Windows Communication Foundation (WCF) služby, které nekomunikují přes protokol HTTP síťových protokolů. Následující oddíly popisují kroky pro tuto konfiguraci:  
@@ -101,7 +101,8 @@ Toto téma popisuje kroky potřebné k nastavení služby Aktivace procesu Windo
     >  Tento příkaz je jeden řádek textu.  
   
 ## <a name="see-also"></a>Viz také:
-- [Aktivace protokolu TCP](../../../../docs/framework/wcf/samples/tcp-activation.md)
-- [Aktivace služby MSMQ](../../../../docs/framework/wcf/samples/msmq-activation.md)
+
+- [Aktivace protokolem TCP](../../../../docs/framework/wcf/samples/tcp-activation.md)
+- [Aktivace MSMQ](../../../../docs/framework/wcf/samples/msmq-activation.md)
 - [Aktivace pojmenovaného kanálu](../../../../docs/framework/wcf/samples/namedpipe-activation.md)
 - [Hostování funkcí systému Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkId=201276)

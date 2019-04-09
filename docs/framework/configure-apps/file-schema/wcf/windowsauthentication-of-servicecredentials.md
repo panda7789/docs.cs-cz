@@ -1,13 +1,13 @@
 ---
-title: <windowsAuthentication> z <serviceCredentials>
+title: <windowsAuthentication> of <serviceCredentials>
 ms.date: 03/30/2017
 ms.assetid: e0709473-0997-4de3-8f49-783527309a48
-ms.openlocfilehash: f366c85f895356594cf8bd9049ca41c8fb458c4c
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: ffddbae7effabcdafdc2638d588bbbf3e42d2c2a
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55280954"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59200386"
 ---
 # <a name="windowsauthentication-of-servicecredentials"></a>\<windowsAuthentication> of \<serviceCredentials>
 Určuje nastavení přihlašovacích údajů služby Windows.  
@@ -49,6 +49,7 @@ Určuje nastavení přihlašovacích údajů služby Windows.
  Tento element slouží k určení, jestli se má povolit přístup anonymní uživatelé Windows tak, že nastavíte `allowAnonymousLogons` atribut. Můžete také určit, zda mají být zahrnuty informace o skupinách, ke kterému uživatelé patří AuthorizationContext tak, že nastavíte `includeWindowsGroups` atribut. Pokud je nastavena na `true` (výchozí nastavení), službu můžete určit skupiny Windows, na které klient patří.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Configuration.WindowsServiceElement>
 - <xref:System.ServiceModel.Configuration.ServiceCredentialsElement.WindowsAuthentication%2A>
 - <xref:System.ServiceModel.Description.ServiceCredentials.WindowsAuthentication%2A>

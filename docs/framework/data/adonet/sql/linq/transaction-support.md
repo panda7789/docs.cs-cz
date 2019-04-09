@@ -2,12 +2,12 @@
 title: Podpora transakcí
 ms.date: 03/30/2017
 ms.assetid: 8cceb26e-8d36-4365-8967-58e2e89e0187
-ms.openlocfilehash: f53a6081102991c73543b4cd76365f7e2c0faf89
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 519ddab069cf3c4ca1ccfa7b203769b8102db844
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54517198"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59196154"
 ---
 # <a name="transaction-support"></a>Podpora transakcí
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] podporuje tři modely odlišné transakcí. Následuje seznam těchto modelů v pořadí kontroly.  
@@ -24,5 +24,6 @@ ms.locfileid: "54517198"
  Při volání <xref:System.Data.Linq.DataContext.SubmitChanges%2A>, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] kontroluje, zda je v rámci volání <xref:System.Transactions.Transaction> nebo, pokud `Transaction` vlastnosti (`IDbTransaction`) je nastavena na místní transakce uživatel začal. Pokud najde žádná transakce [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] spustí místní transakce (`IDbTransaction`) a používá ke spouštění generované příkazů SQL. Po úspěšném dokončení všech příkazů SQL [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] potvrzení místní transakci a vrátí.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Základní informace](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)
-- [Postupy: Závorky odeslání dat pomocí transakce](../../../../../../docs/framework/data/adonet/sql/linq/how-to-bracket-data-submissions-by-using-transactions.md)
+- [Postupy: Vytvoření transakčních sad pro odesílání dat](../../../../../../docs/framework/data/adonet/sql/linq/how-to-bracket-data-submissions-by-using-transactions.md)

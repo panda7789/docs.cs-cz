@@ -9,12 +9,12 @@ helpviewer_keywords:
 - GDI+, cardinal splines
 - cardinal splines
 ms.assetid: 09b3797a-6294-422d-9adf-a5a0a7695c0c
-ms.openlocfilehash: 6cc57698c8e43aefff0e0a63b0384417483d3b48
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 4588f6f606f0f479aeae1d143f23175ec4be32a5
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57705282"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59200412"
 ---
 # <a name="cardinal-splines-in-gdi"></a>Základní křivky v GDI+
 Křivky mohutnosti je posloupnost jednotlivých křivky připojené k formuláři větší křivky. Pole bodů a napětí parametr je zadaný křivky. Křivky mohutnosti plynule prochází každý bod v poli; neexistují žádné sharp rohů a žádné náhlé změny v těsnost křivky. Následující obrázek znázorňuje sadu body a vyhlazení prochází každý bod v sadě.  
@@ -36,5 +36,6 @@ Křivky mohutnosti je posloupnost jednotlivých křivky připojené k formulář
  [!code-vb[LinesCurvesAndShapes#31](~/samples/snippets/visualbasic/VS_Snippets_Winforms/LinesCurvesAndShapes/VB/Class1.vb#31)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Čáry, křivky a obrazce](lines-curves-and-shapes.md)
 - [Sestavování a kreslení křivek](constructing-and-drawing-curves.md)

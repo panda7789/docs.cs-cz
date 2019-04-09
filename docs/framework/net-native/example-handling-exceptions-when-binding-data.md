@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: bd63ed96-9853-46dc-ade5-7bd1b0f39110
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9610eb6088a59e4f577ea6dfe679130b44988645
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 25b2117de40bbe7ba36fab028526116fc01ae09b
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54725711"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59199892"
 ---
 # <a name="example-handling-exceptions-when-binding-data"></a>Příklad: Zpracování výjimek při vázání dat
 > [!NOTE]
@@ -60,5 +60,6 @@ Windows_UI_Xaml!DirectUI::PropertyPathListener::ConnectPathStep+0x113
  Existují však způsoby, jak určit `ViewModel` na stránku XAML tak, aby řetězce nástrojů můžete přidružit vlastnost vazby pomocí správného typu v době kompilace a zachovat metadata bez použití direktivy modulu runtime.  Například můžete použít <xref:Windows.UI.Xaml.Data.BindableAttribute?displayProperty=nameWithType> atribut na vlastnosti. To způsobí, že kompilátor XAML generovat informace o požadované vyhledávání a se vyhnete nutnosti direktivy modulu runtime v souboru Default.rd.xml.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Začínáme](../../../docs/framework/net-native/getting-started-with-net-native.md)
 - [Příklad: Řešení potíží s dynamickým programováním](../../../docs/framework/net-native/example-troubleshooting-dynamic-programming.md)

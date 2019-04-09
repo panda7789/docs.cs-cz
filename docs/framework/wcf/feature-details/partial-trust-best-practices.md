@@ -2,12 +2,12 @@
 title: Doporučené postupy s částečnou důvěryhodností
 ms.date: 03/30/2017
 ms.assetid: 0d052bc0-5b98-4c50-8bb5-270cc8a8b145
-ms.openlocfilehash: d63c9de4b1ea935b35f718056d191689f28c3813
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c83c36020cfd5b41e99ff9eeb7968d0b5df909a6
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54640105"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59184077"
 ---
 # <a name="partial-trust-best-practices"></a>Doporučené postupy s částečnou důvěryhodností
 Toto téma popisuje osvědčené postupy při spuštění Windows Communication Foundation (WCF) v prostředí s částečnou důvěryhodností.  
@@ -66,5 +66,6 @@ Toto téma popisuje osvědčené postupy při spuštění Windows Communication 
  Jako osvědčený postup, vyhněte se vytváření kontextu oprávnění specifické pro vlákno voláním <xref:System.Security.PermissionSet.Assert%2A>, <xref:System.Security.PermissionSet.PermitOnly%2A>, nebo <xref:System.Security.PermissionSet.Deny%2A>. Místo toho udělit nebo odepřít oprávnění k aplikaci, tak, aby žádné <xref:System.Security.PermissionSet.Assert%2A>, <xref:System.Security.PermissionSet.Deny%2A>, nebo <xref:System.Security.PermissionSet.PermitOnly%2A> je povinný.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Runtime.Serialization.DataContractSerializer>
 - <xref:System.Xml.Serialization.IXmlSerializable>

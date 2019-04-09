@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: Postupy: Vytvoření oblouku elipsy'
+title: 'Postupy: Vytvoření oblouku elipsy'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - graphics [WPF], elliptical arcs
 - elliptical arcs [WPF], creating
 - arcs [WPF], elliptical
 ms.assetid: 3dcfe502-3485-45de-99fb-d53a1367c484
-ms.openlocfilehash: bb4b4d99aab9daef70f446af176bb462b0661d54
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: aae304b9963f3a8e5833b4d8ba0a54777a750225
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57354346"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59183648"
 ---
-# <a name="how-to-create-an-elliptical-arc"></a>Postupy: Postupy: Vytvoření oblouku elipsy
+# <a name="how-to-create-an-elliptical-arc"></a>Postupy: Vytvoření oblouku elipsy
 Tento příklad ukazuje, jak nakreslit oblouk elipsy. K vytvoření oblouku elipsy, použijte <xref:System.Windows.Media.PathGeometry>, <xref:System.Windows.Media.PathFigure>, a <xref:System.Windows.Media.ArcSegment> třídy.  
   
 ## <a name="example"></a>Příklad  
@@ -36,5 +36,6 @@ Tento příklad ukazuje, jak nakreslit oblouk elipsy. K vytvoření oblouku elip
  V tomto příkladu je součástí větší ukázky. Úplnou ukázku najdete v tématu [geometrie ukázka](https://go.microsoft.com/fwlink/?LinkID=159989).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Vytvoření kvadratické Bézierovy křivky](how-to-create-a-quadratic-bezier-curve.md)
 - [Vytvoření kubické Bézierovy křivky](how-to-create-a-cubic-bezier-curve.md)

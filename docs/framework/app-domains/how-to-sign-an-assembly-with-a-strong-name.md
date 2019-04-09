@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 2c30799a-a826-46b4-a25d-c584027a6c67
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6bd250caae1bd98d238f8d99702a97f0cdbc7448
-ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
-ms.translationtype: MT
+ms.openlocfilehash: 971180465f506fa69ff562ab0fdef56c0a5ec918
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55826899"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59196551"
 ---
 # <a name="how-to-sign-an-assembly-with-a-strong-name"></a>Postupy: Podepsání sestavení silným názvem
 Existuje několik způsobů, jak můžete podepsat sestavení pomocí silného názvu:  
@@ -101,9 +101,10 @@ al /out:MyAssembly.dll MyModule.netmodule /keyfile:sgKey.snk
     ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Vytváření a používání sestavení se silným názvem](../../../docs/framework/app-domains/create-and-use-strong-named-assemblies.md)
 - [Postupy: Vytvoření páru veřejného a privátního klíče](../../../docs/framework/app-domains/how-to-create-a-public-private-key-pair.md)
 - [Al.exe (linker sestavení)](../../../docs/framework/tools/al-exe-assembly-linker.md)
 - [Zpoždění podepsání sestavení](../../../docs/framework/app-domains/delay-sign-assembly.md)
 - [Správa sestavení a podepsání manifestu](/visualstudio/ide/managing-assembly-and-manifest-signing)
-- [Stránka Podepisování, Návrhář projektu](/visualstudio/ide/reference/signing-page-project-designer)
+- [Stránka Podepisování, návrhář projektu (C#)](/visualstudio/ide/reference/signing-page-project-designer)

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - error messages [Windows Forms], displaying
 - ErrorProvider component [Windows Forms], about ErrorProvider component
 ms.assetid: ced189f2-b5c8-46a7-a6f1-37f5af95dc99
-ms.openlocfilehash: 61a8d4baba35a7a8a8ae221b054029eb59107d0e
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 485e7a17073d72618b9599113179cddde748e697
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57716254"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59181178"
 ---
 # <a name="errorprovider-component-overview-windows-forms"></a>ErrorProvider – přehled komponenty (Windows Forms)
 Windows Forms [ErrorProvider](errorprovider-component-windows-forms.md) komponenty se používá k ověření vstupu uživatele na formulář nebo ovládací prvek. To se obvykle používá ve spojení s ověřování uživatelského vstupu ve formuláři nebo zobrazování chyb v prvku dataset. Poskytovatele chyba je lepší alternativou než zobrazení chybové zprávy v okně se zprávou, protože když se zavře okno se zprávou, chybová zpráva již není viditelný. <xref:System.Windows.Forms.ErrorProvider> Komponenty zobrazuje ikonu chyby (![ErrorProvider ikonu](./media/vberrorprovidericon.gif "vbErrorProviderIcon")) vedle příslušné ovládacího prvku, jako je textové pole, když uživatel přemístí ukazatel myši ikona chyby, popisek se zobrazí, zobrazuje řetězec chybové zprávy.  
@@ -27,6 +27,7 @@ Windows Forms [ErrorProvider](errorprovider-component-windows-forms.md) komponen
 >  <xref:System.Windows.Forms.ErrorProvider> Součást neposkytuje integrovanou podporu pro klienty usnadnění. Pokud chcete zpřístupnit svoji aplikaci při použití této součásti, je nutné zadat mechanismus zpětné vazby další, přístupné.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.ErrorProvider>
 - [Postupy: Zobrazování chyb v prvku DataSet pomocí komponenty Windows Forms ErrorProvider](view-errors-within-a-dataset-with-wf-errorprovider-component.md)
-- [Postupy: Zobrazení ikon chyb pro ověřování formuláře pomocí součásti Windows Forms ErrorProvider](display-error-icons-for-form-validation-with-wf-errorprovider.md)
+- [Postupy: Zobrazení ikon chyby pro ověřování formuláře pomocí komponenty Windows Forms ErrorProvider](display-error-icons-for-form-validation-with-wf-errorprovider.md)

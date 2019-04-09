@@ -1,5 +1,5 @@
 ---
-title: <mailSettings> – element (nastavení sítě)
+title: <mailSettings> – Element (nastavení sítě)
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#mailSettings
@@ -8,12 +8,12 @@ helpviewer_keywords:
 - mailSettings element
 - <mailSettings> element
 ms.assetid: 54f0f153-17e5-4f49-afdc-deadb940c9c1
-ms.openlocfilehash: 0e71284e914dac2d28448f3d8bd4bdc7a9f6b325
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 54fb68ab0bf8aa2665d70391350c626131ccb4bc
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55277612"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59180620"
 ---
 # <a name="mailsettings-element-network-settings"></a>\<mailSettings – > – Element (nastavení sítě)
 Konfiguruje možnosti pro odesílání pošty.  
@@ -44,7 +44,7 @@ Konfiguruje možnosti pro odesílání pošty.
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|**Element**|**Popis**|  
+|**Prvek**|**Popis**|  
 |-----------------|---------------------|  
 |[\<system.Net > – Element (nastavení sítě)](../../../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md)|Obsahuje nastavení, která určují, jak rozhraní .NET Framework připojí k síti.|  
   
@@ -68,5 +68,6 @@ Konfiguruje možnosti pro odesílání pošty.
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Net.Mail.SmtpClient>
 - [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

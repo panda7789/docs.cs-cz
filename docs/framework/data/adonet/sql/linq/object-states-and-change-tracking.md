@@ -2,12 +2,12 @@
 title: Stavy objektů a sledování změn
 ms.date: 03/30/2017
 ms.assetid: 7a808b00-9c3c-479a-aa94-717280fefd71
-ms.openlocfilehash: 89e9f44a6cd3579a5ef9cc2078609ca26e0d2ae5
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 63b04d3a4b6e48594e9664833a6e539d62bbab0e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54683307"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59191152"
 ---
 # <a name="object-states-and-change-tracking"></a>Stavy objektů a sledování změn
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] objekty vždy účastnit některé *stavu*. Například když [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] vytvoří nový objekt, je objekt v `Unchanged` stavu. Nový objekt, který sami vytvoříte není znám <xref:System.Data.Linq.DataContext> a je v `Untracked` stavu. Po úspěšné provedení <xref:System.Data.Linq.DataContext.SubmitChanges%2A>, všechny objekty, které jsou známé [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] v `Unchanged` stavu. (Jednu výjimku představuje ty, které byla úspěšně odstraněna z databáze, které jsou ve `Deleted` stavu takže nepůjdou použít v tomto <xref:System.Data.Linq.DataContext> instance.)  
@@ -63,5 +63,6 @@ ms.locfileid: "54683307"
  Při aktualizaci požadovaný odkaz a odpovídající cizí klíč, musí se ujistěte, že souhlasí. <xref:System.InvalidOperationException> Je vyvolána výjimka, pokud nejsou dva synchronizaci v době, kterou je možné volat <xref:System.Data.Linq.DataContext.SubmitChanges%2A>. I když změny hodnoty cizího klíče jsou dostačující pro ovlivnění aktualizace základní řádky, měli byste změnit odkaz umožňující zachovat připojení objektu grafu a obousměrné konzistence relace.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Základní informace](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)
 - [Operace vložení, aktualizace a odstranění](../../../../../../docs/framework/data/adonet/sql/linq/insert-update-and-delete-operations.md)

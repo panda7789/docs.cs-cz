@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Windows service applications, creating
 ms.assetid: e24d8a3d-edc6-485c-b6e0-5672d91fb607
 author: ghogen
-ms.openlocfilehash: 786b9e28607cced0a15793415ff5fd470b559374
-ms.sourcegitcommit: e994e47d3582bf09ae487ecbd53c0dac30aebaf7
+ms.openlocfilehash: 7952256d1b225fe22cd189833a046590cdf0a9f2
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58262489"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59200672"
 ---
 # <a name="tutorial-create-a-windows-service-app"></a>Kurz: Vytvoření aplikace služby Windows
 
@@ -58,7 +58,6 @@ Přejmenování služby z **Service1** k **MyNewService**.
     ![Vlastnosti služby](media/windows-service-properties.png "vlastností služby Windows")
 
 3. Vyberte **Uložit vše** z **souboru** nabídky.
-
 
 ## <a name="add-features-to-the-service"></a>Přidání funkcí do služby
 
@@ -141,7 +140,6 @@ Pokud chcete nastavit jednoduchý mechanismus dotazování, použijte <xref:Syst
 
 2. Přidat `using` příkazu **MyNewService.cs**, nebo `Imports` příkazu **MyNewService.vb**, pro <xref:System.Timers?displayProperty=nameWithType> obor názvů:
 
-
    ```csharp
    using System.Timers;
    ```
@@ -149,7 +147,6 @@ Pokud chcete nastavit jednoduchý mechanismus dotazování, použijte <xref:Syst
    ```vb
    Imports System.Timers
    ```
-
 
 3. V `MyNewService` třídy, přidejte `OnTimer` metodu ke zpracování <xref:System.Timers.Timer.Elapsed?displayProperty=nameWithType> události:
 
@@ -200,13 +197,11 @@ Následující kód ukazuje, jak přepsat <xref:System.ServiceProcess.ServiceBas
 [!code-csharp[VbRadconService#5](../../../samples/snippets/csharp/VS_Snippets_VBCSharp/VbRadconService/CS/MyNewService.cs#5)]
 [!code-vb[VbRadconService#5](../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRadconService/VB/MyNewService.vb#5)]
 
-
 ## <a name="set-service-status"></a>Nastavit stav služby
 
 Služby oznamují svůj stav na [správce řízení služeb](/windows/desktop/Services/service-control-manager) tak, aby uživatel můžete zjistit, jestli služba správně funguje. Ve výchozím nastavení, služby, která dědí z <xref:System.ServiceProcess.ServiceBase> omezenou sadu nastavení stavu, které zahrnují SERVICE_STOPPED SERVICE_PAUSED a SERVICE_RUNNING sestavy. Pokud služba chvíli trvat, než se spustí, je vhodné informuje o stavu SERVICE_START_PENDING. 
 
 Nastavení stavu SERVICE_START_PENDING a SERVICE_STOP_PENDING můžete implementovat přidáním kódu, který volá Windows [SetServiceStatus](/windows/desktop/api/winsvc/nf-winsvc-setservicestatus) funkce.
-
 
 ### <a name="implement-service-pending-status"></a>Implementace služby čekajícím stavu
 
@@ -494,7 +489,6 @@ Každá služba Windows má záznam v registru pod **HKEY_LOCAL_MACHINE\SYSTEM\C
 
    Tato hodnota se obvykle obsahuje úplnou cestu ke spustitelnému souboru pro službu Windows. Služba správně je nutné zadat znaky uvozovek pro cestu a jednotlivé jednotlivé parametry. Uživatel může změnit na parametry **ImagePath** záznam v registru můžete změnit parametry spuštění pro službu Windows. Je však lepší způsob, a změňte hodnotu prostřednictvím kódu programu zpřístupnění funkce a uživatelsky přívětivé, například pomocí nástroje pro správu nebo konfigurace.
 
-
 ## <a name="build-the-service"></a>Vytvoření služby
 
 1. V **Průzkumníka řešení**, zvolte **vlastnosti** z místní nabídky pro **MyNewService** projektu.
@@ -588,4 +582,4 @@ Teď, když jste vytvořili službu, můžete:
 - [Aplikace služby Windows](index.md)
 - [Úvod do aplikace služby Windows](introduction-to-windows-service-applications.md)
 - [Postupy: Ladění aplikace služby Windows](how-to-debug-windows-service-applications.md)
-- [Služby (Windows)](/windows/desktop/Services/services)
+- [Services (Windows)](/windows/desktop/Services/services)

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - text [WPF], typography
 - typography [WPF]
 ms.assetid: e4ef38db-b7d1-4bda-87ab-8bb738440ddc
-ms.openlocfilehash: f9257414a90cd3d4f64653893c5fa6e19963ad3d
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: d8073ff272dd4c295dba11096126a535621727d0
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57369549"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59195511"
 ---
 # <a name="typography"></a>Typografie
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] zahrnuje podporu pro bohatý prezentační textový obsah. Text v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] je vykreslen pomocí [!INCLUDE[TLA#tla_ct](../../../../includes/tlasharptla-ct-md.md)], která vylepšuje přehlednost a čitelnost textu. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] podporuje také [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písma, které poskytují další funkce nad rámec těch, definované [!INCLUDE[TLA#tla_truetype](../../../../includes/tlasharptla-truetype-md.md)] formátu.  
@@ -23,12 +23,13 @@ ms.locfileid: "57369549"
  [ClearType – přehled](cleartype-overview.md)  
  [Nastavení registru ClearType](cleartype-registry-settings.md)  
  [Kreslení formátovaného textu](drawing-formatted-text.md)  
- [Pokročilé formátování textu](advanced-text-formatting.md)  
+ [Upřesněné formátování textu](advanced-text-formatting.md)  
  [Písma](fonts-wpf.md)  
  [Glyfy](glyphs.md)  
- [Témata s postupy](typography-how-to-topics.md)  
+ [– postupy](typography-how-to-topics.md)  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Documents.Typography>
 - [Dokumenty v platformě WPF](documents-in-wpf.md)
 - [Funkce písma OpenType](opentype-font-features.md)

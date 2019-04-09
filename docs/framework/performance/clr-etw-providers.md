@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 0beafad4-b2c8-47f4-b342-83411d57a51f
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 0911132a705f3de89d771324cbb63e8db31bdfdb
-ms.sourcegitcommit: 5c2176883dc3107445702724a7caa7ac2f6cb0d3
-ms.translationtype: MT
+ms.openlocfilehash: 2d7757b50eedb25247b11fced3d4f9567691c380
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58890511"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59188601"
 ---
 # <a name="clr-etw-providers"></a>Poskytovatelé CLR ETW
 Modul CLR (CLR) má dva zprostředkovatele: zprostředkovatele běhového prostředí a zprostředkovatele doběhu.  
@@ -92,4 +92,5 @@ Modul CLR (CLR) má dva zprostředkovatele: zprostředkovatele běhového prost�
  Nástroj může spustit kroky 2 a 3 (spuštění relace doběhu a potom ukončení profilování) místo okamžitého vypnutí profilování, když uživatel žádostí, aby bylo profilování zastaveno. Nástroj může také spustit krok 4.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Události Trasování událostí pro Windows v CLR (Common Language Runtime)](../../../docs/framework/performance/etw-events-in-the-common-language-runtime.md)

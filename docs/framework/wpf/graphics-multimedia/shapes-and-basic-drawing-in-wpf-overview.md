@@ -12,19 +12,18 @@ helpviewer_keywords:
 - vectors [WPF], drawing
 - Shape objects [WPF]
 ms.assetid: 66d7a6d6-e3b6-47bc-8dfe-8a1b26f7d901
-ms.openlocfilehash: 9852c811b00ee7f8d86b7c1daaaa28f28fa5a89f
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 1ce0e661d88b7c4d5719c4f11ef0912c5bacb587
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57372734"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59189128"
 ---
 # <a name="shapes-and-basic-drawing-in-wpf-overview"></a>Tvary a základní kresby v přehledu WPF
 Toto téma poskytuje přehled o tom, jak kreslení pomocí <xref:System.Windows.Shapes.Shape> objekty. A <xref:System.Windows.Shapes.Shape> je typ <xref:System.Windows.UIElement> , která umožňuje nakreslit obrazec na obrazovku. Protože jsou prvky uživatelského rozhraní, <xref:System.Windows.Shapes.Shape> objekty mohou být použity uvnitř <xref:System.Windows.Controls.Panel> elementy a většina ovládacích prvků.  
   
  [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] nabízí několik úrovní přístupu k grafické a vykreslovací služby. V horní vrstvě <xref:System.Windows.Shapes.Shape> objekty jsou snadné použití a poskytují mnoho užitečných funkcí, jako je rozložení a zúčastnit se [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] systém událostí.  
-  
-  
+
 <a name="shapes"></a>   
 ## <a name="shape-objects"></a>Shape – objekty  
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje řadu připravených k použití <xref:System.Windows.Shapes.Shape> objekty.  Dědí všechny objekty obrazce <xref:System.Windows.Shapes.Shape> třídy. K dispozici shape – objekty zahrnují <xref:System.Windows.Shapes.Ellipse>, <xref:System.Windows.Shapes.Line>, <xref:System.Windows.Shapes.Path>, <xref:System.Windows.Shapes.Polygon>, <xref:System.Windows.Shapes.Polyline>, a <xref:System.Windows.Shapes.Rectangle>. <xref:System.Windows.Shapes.Shape> objekty sdílejí společné následující vlastnosti.  
@@ -215,6 +214,7 @@ myPolygon.StrokeThickness = 2;
  V předchozích příkladech byla použita jeden transformace každého objektu shape. Použití několika transformací na tvar (nebo jiný prvek uživatelského rozhraní), použijte <xref:System.Windows.Media.TransformGroup>.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [2D grafika a obrázky](../advanced/optimizing-performance-2d-graphics-and-imaging.md)
 - [Přehled malování plnými barvami a přechody](painting-with-solid-colors-and-gradients-overview.md)
 - [Přehled geometrie](geometry-overview.md)

@@ -1,21 +1,21 @@
 ---
-title: Převody kódování F#
-description: Další obecné pokyny a idiomy při psaní kódu jazyka F#.
+title: F#konvence kódování
+description: Další obecné pokyny a idiomy při zápisu F# kódu.
 ms.date: 05/14/2018
-ms.openlocfilehash: 21119b6d69e00f359104bfb6eab7681bdbfb8d78
-ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
+ms.openlocfilehash: 1ef016184180eb8d233295e8985903e07693ad26
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "49087385"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59186742"
 ---
-# <a name="f-coding-conventions"></a>Převody kódování F#
+# <a name="f-coding-conventions"></a>F#konvence kódování
 
-Následující konvence jsou formulovat z prostředí pro práci s velké F# základů kódu. [Pět zásady dobré kódu jazyka F#](index.md#five-principles-of-good-f-code) jsou základem pro jednotlivá doporučení. Se vztahují k [pokyny pro návrh komponentu F#](component-design-guidelines.md), ale platí pro všechny kódu jazyka F#, ne jenom komponent, jako jsou knihovny.
+Následující konvence jsou formulovat z prostředí pro práci s rozsáhlými F# základů kódu. [Pět zásadami dobrého F# kód](index.md#five-principles-of-good-f-code) jsou základem pro jednotlivá doporučení. Se vztahují k [ F# pokyny k návrhu komponenty](component-design-guidelines.md), ale platí pro všechny F# kód, ne jenom komponent, jako jsou knihovny.
 
 ## <a name="organizing-code"></a>Uspořádání kódu
 
-F# obsahuje dva primární způsoby, jak organizovat kód: modulů a oborů názvů. Ty jsou podobné, ale mají tyto věci:
+F#Funkce dva primární způsoby, jak organizovat kód: modulů a oborů názvů. Ty jsou podobné, ale mají tyto věci:
 
 * Obory názvů jsou kompilovány jako obory názvů rozhraní .NET. Moduly jsou kompilovány jako statické třídy.
 * Obory názvů jsou vždy nejvyšší úrovně. Moduly je možné nejvyšší úrovně a vnořené v jiných modulů.
@@ -36,7 +36,7 @@ type MyClass() =
     ...
 ```
 
-Použití nejvyšší úrovně modulu nemusí vypadat jinak, při volání pouze z jazyka F#, ale pro C# spotřebitele, může být sledován volající tak, že k získání způsobilosti `MyClass` s `MyCode` modulu.
+Použití nejvyšší úrovně modulu nemusí vypadat jinak, když volat pouze z F#, ale pro C# spotřebitele, volající může být sledován tím, že k získání způsobilosti `MyClass` s `MyCode` modulu.
 
 ```fsharp
 // Bad!
@@ -48,7 +48,7 @@ type MyClass() =
 
 ### <a name="carefully-apply-autoopen"></a>Pečlivě použít. `[<AutoOpen>]`
 
-`[<AutoOpen>]` Konstrukce můžete znečištění směrovány správu rozsah co je k dispozici pro volající a odpověď na něco ze kterého pochází je "magické". Většinou to není dobrá věc. Výjimkou z tohoto pravidla je základní knihovny F#, samotný (i když tato skutečnost je také bit kontroverzním).
+`[<AutoOpen>]` Konstrukce můžete znečištění směrovány správu rozsah co je k dispozici pro volající a odpověď na něco ze kterého pochází je "magické". Většinou to není dobrá věc. Výjimkou z tohoto pravidla je F# základní knihovny sám (i když tato skutečnost se taky o něco kontroverzním).
 
 Je však pohodlí Pokud máte pomocnou funkci pro veřejné rozhraní API, kterou chcete uspořádat samostatně z této veřejné rozhraní API.
 
@@ -58,7 +58,6 @@ module MyAPI =
     module private Helpers =
         let helper1 x y z =
             ...
-
 
     let myFunction1 x =
         let y = ...
@@ -90,13 +89,13 @@ let parsed = StringTokenization.parse s // Must qualify to use 'parse'
 
 ### <a name="sort-open-statements-topologically"></a>Řazení `open` příkazy topologically
 
-V jazyce F#, záleží na pořadí deklarace, včetně `open` příkazy. To je rozdíl oproti C#, ve kterém účinek `using` a `using static` je nezávislý na pořadí těchto příkazů do souboru.
+V F#, pořadí deklarace věcech, včetně `open` příkazy. To je rozdíl oproti C#, ve kterém účinek `using` a `using static` je nezávislý na pořadí těchto příkazů do souboru.
 
-V jazyce F# prvky otevřít do oboru stínové ostatní již existuje. To znamená, že změny pořadí `open` příkazů může změnit význam kódu. V důsledku toho všechny libovolného řazení všech `open` příkazy (například alfanumericky) se obecně nedoporučuje, přidejte generovat různé chování by se dalo očekávat.
+V F#, prvky otevřít do oboru můžete stínové ostatní již existuje. To znamená, že změny pořadí `open` příkazů může změnit význam kódu. V důsledku toho všechny libovolného řazení všech `open` příkazy (například alfanumericky) se obecně nedoporučuje, přidejte generovat různé chování by se dalo očekávat.
 
 Namísto toho doporučujeme je seřadit [topologically](https://en.wikipedia.org/wiki/Topological_sorting); to znamená pořadí vaše `open` příkazů v pořadí, ve kterém _vrstvy_ systému jsou definovány. Provádění alfanumerické řazení v rámci různých topologické vrstvy mohou také zvážit.
 
-Jako příklad uvádíme topologické řazení pro F# kompilátoru veřejné rozhraní API souboru služby:
+Jako příklad uvádíme topologické řazení pro F# soubor veřejné rozhraní API služby kompilátoru:
 
 ```fsharp
 namespace Microsoft.FSharp.Compiler.SourceCodeServices
@@ -219,11 +218,11 @@ Obecně platí, pokud různé způsoby, jak lze modelovat, že něco můžete **
 
 ### <a name="use-exceptions-when-errors-cannot-be-represented-with-types"></a>Použijte výjimky, pokud chyby nejde reprezentovat typy
 
-Ne všechny chyby lze znázornit v doméně problému. Tyto druhy chyb jsou *výjimečných* ze své podstaty, proto schopnost vyvolat a zachycení výjimek v jazyce F#.
+Ne všechny chyby lze znázornit v doméně problému. Tyto druhy chyb jsou *výjimečných* ze své podstaty, proto schopnost vyvolat a zaznamenat tak výjimky v F#.
 
-Nejprve se doporučuje, abyste si přečetli [pokyny pro návrh výjimek](../../standard/design-guidelines/exceptions.md). Tyto platí také pro F#.
+Nejprve se doporučuje, abyste si přečetli [pokyny pro návrh výjimek](../../standard/design-guidelines/exceptions.md). To platí také pro F#.
 
-Hlavní konstrukce, které jsou k dispozici v jazyce F# za účelem vyvolání výjimky by měl být v následujícím pořadí podle priority:
+Vytvoří hlavní k dispozici v F# pro účely vyvolávání výjimek by měl být v následujícím pořadí podle priority:
 
 | Funkce | Syntaxe | Účel |
 |----------|--------|---------|
@@ -240,7 +239,7 @@ Použití `nullArg`, `invalidArg` a `invalidOp` jako mechanismus pro vyvolání 
 
 ### <a name="using-exception-handling-syntax"></a>Pomocí syntaxe zpracování výjimek
 
-Jazyk F# podporuje vzory výjimky prostřednictvím `try...with` syntaxi:
+F#podporuje vzory výjimky prostřednictvím `try...with` syntaxi:
 
 ```fsharp
 try
@@ -317,15 +316,15 @@ let tryReadAllTextIfPresent (path : string) =
 
 Místo funguje jako pokrývající vše, tato funkce bude nyní správně zpracování případu, pokud soubor se nepovedlo najít a přiřadit tento význam pro vrácení. Tuto hodnotu můžete namapovat na takovém Chyba při rušení žádné kontextové informace ani Vynucení volající řešit případ, který nemusí být od tohoto okamžiku v kódu.
 
-Typy, jako `Result<'Success, 'Error>` jsou vhodné pro základní operace, kde nejsou vnořené, a volitelné typů F# jsou ideální pro udávající, kdy se něco může buď vrátit *něco* nebo *nic*. Nejsou náhradou za výjimky, ale a neměl by se při pokusu o nahradit výjimky. Místo toho se musí uplatnit uvážlivě na adresu specifických aspektů výjimky a chybové zásady správy cílové způsoby.
+Typy, jako `Result<'Success, 'Error>` jsou vhodné pro základní operace, které nejsou vnořené, a F# doplňkové typy jsou ideální pro kdy představující něco může buď vrátit *něco* nebo *nic*. Nejsou náhradou za výjimky, ale a neměl by se při pokusu o nahradit výjimky. Místo toho se musí uplatnit uvážlivě na adresu specifických aspektů výjimky a chybové zásady správy cílové způsoby.
 
 ## <a name="partial-application-and-point-free-programming"></a>Částečné použití argumentů a bodu bez programování
 
-F# podporuje částečné použití argumentů a proto různé způsoby, jak program ve stylu bez bodu. To může být užitečné pro opakované využívání kódu v rámci modulu nebo provádění něco, ale není obvykle něco, co je veřejně zpřístupnit. Obecně platí bodu bez programování není důsledku v a sám sebe a můžete přidat kognitivní významnou překážkou pro uživatele, kteří nejsou ponoří ve stylu.
+F#podporuje částečné použití argumentů a proto různé způsoby, jak program ve stylu bez bodu. To může být užitečné pro opakované využívání kódu v rámci modulu nebo provádění něco, ale není obvykle něco, co je veřejně zpřístupnit. Obecně platí bodu bez programování není důsledku v a sám sebe a můžete přidat kognitivní významnou překážkou pro uživatele, kteří nejsou ponoří ve stylu.
 
 ### <a name="do-not-use-partial-application-and-currying-in-public-apis"></a>Nepoužívejte částečné použití argumentů a curryfikace ve veřejných rozhraní API
 
-S výjimkou malý použití částečné použití argumentů ve veřejných rozhraní API může být matoucí pro uživatele. Obvykle `let`– hodnoty vazby v kódu F# jsou **hodnoty**, nikoli **funkce hodnoty**. Kombinace společně hodnoty a hodnoty funkcí může vést k uložení malý počet řádků kódu výměnou za hodně nemuseli jsme se zdržovat, zejména v případě, že v kombinaci s operátory, jako `>>` sestavit funkce.
+S výjimkou malý použití částečné použití argumentů ve veřejných rozhraní API může být matoucí pro uživatele. Obvykle `let`-vázán hodnoty v F# kódu jsou **hodnoty**, nikoli **funkce hodnoty**. Kombinace společně hodnoty a hodnoty funkcí může vést k uložení malý počet řádků kódu výměnou za hodně nemuseli jsme se zdržovat, zejména v případě, že v kombinaci s operátory, jako `>>` sestavit funkce.
 
 ### <a name="consider-the-tooling-implications-for-point-free-programming"></a>Zvažte případné dopady nástroje bodu bez programování
 
@@ -418,7 +417,7 @@ Tento postup neměl být všeobecně aplikován na celém základu kódu, ale je
 
 ## <a name="access-control"></a>Řízení přístupu
 
-F# obsahuje několik možností [řízení přístupu](../language-reference/access-control.md), zděděné z co je k dispozici v modulu .NET runtime. Ty nejsou použitelné pouze pro typy – můžete využít pro funkce je moc.
+F#má více možností pro [řízení přístupu](../language-reference/access-control.md), zděděné z co je k dispozici v modulu .NET runtime. Ty nejsou použitelné pouze pro typy – můžete využít pro funkce je moc.
 
 * Preferovat jinou hodnotu než`public` typy a členy, dokud nebudete potřebovat, aby to byla veřejně použitelné. Tím se minimalizují také jaké několik příjemců do.
 * Přitom se snaží zachovat všechny funkce pomocné rutiny `private`.
@@ -426,7 +425,7 @@ F# obsahuje několik možností [řízení přístupu](../language-reference/acc
 
 ## <a name="type-inference-and-generics"></a>Odvození typu proměnné a obecné typy
 
-Odvození typu proměnné můžete uložit z psát spoustu často používaný text. A Automatická Generalizace v kompilátoru F# můžete napsat obecnějším kód s téměř žádná práce navíc z vaší strany. Tyto funkce však nejsou univerzálně dobré.
+Odvození typu proměnné můžete uložit z psát spoustu často používaný text. Automatická Generalizace v a F# kompilátoru vám umožňují napsat obecnějším kód s téměř žádná práce navíc z vaší strany. Tyto funkce však nejsou univerzálně dobré.
 
 * Vezměte v úvahu názvy argumentů značení s explicitní typy ve veřejných rozhraní API a nespoléhejte na odvození typu proměnné pro tuto.
 
@@ -440,17 +439,17 @@ Odvození typu proměnné můžete uložit z psát spoustu často používaný t
 
     Toto je hlavní způsob, jak k provádění akcí v .NET, proto se doporučuje použít PascalCase spíše než formátu snake_case nebo camelCase.
 
-A konečně Automatická generalizace není vždy skvělým nástrojem pro uživatele, kteří začínají s F# nebo velký základ kódu. V používání komponent, které jsou obecné, je nemuseli jsme se zdržovat. Kromě toho pokud automaticky obecné funkce nejsou použity s různými typy vstupu (umožňují samostatně, pokud jsou určeny pro použití jako takový), pak neexistuje žádné skutečné výhody je právě obecný od tohoto okamžiku v čase. Vždy zvažte, pokud kód, který píšete se skutečně přínosné obecný.
+A konečně, automatická generalizace není vždy skvělým nástrojem pro uživatele, kteří začínají s F# nebo velký základ kódu. V používání komponent, které jsou obecné, je nemuseli jsme se zdržovat. Kromě toho pokud automaticky obecné funkce nejsou použity s různými typy vstupu (umožňují samostatně, pokud jsou určeny pro použití jako takový), pak neexistuje žádné skutečné výhody je právě obecný od tohoto okamžiku v čase. Vždy zvažte, pokud kód, který píšete se skutečně přínosné obecný.
 
 ## <a name="performance"></a>Výkon
 
-F# hodnoty jsou neměnné ve výchozím nastavení, což vám umožní vyhnout určité třídy chyb (zejména těchto zahrnující souběžnosti a paralelismu). Ale v některých případech, tak, abyste dosáhli optimálního (nebo dokonce přiměřené) účinnosti doba provádění nebo přidělení paměti, rozsah práce může nejlépe dají implementovat pomocí místní mutace stavu. To je možné v základu vyjádření souhlasu s jazykem F# s `mutable` – klíčové slovo.
+F#hodnoty jsou neměnné ve výchozím nastavení, což vám umožní vyhnout určité třídy chyb (zejména těchto zahrnující souběžnosti a paralelismu). Ale v některých případech, tak, abyste dosáhli optimálního (nebo dokonce přiměřené) účinnosti doba provádění nebo přidělení paměti, rozsah práce může nejlépe dají implementovat pomocí místní mutace stavu. To je možné v základu vyjádření souhlasu s F# s `mutable` – klíčové slovo.
 
-Nicméně použití `mutable` v jazyce F# mohou mít pocit rozporu s funkční čistoty. To je v pořádku, pokud nastavíte očekávání z čistoty [referenční transparentnosti](https://en.wikipedia.org/wiki/Referential_transparency). Referenční transparentnost – ne čistoty - je cílem při psaní funkcí F#. To umožňuje psaní funkční rozhraní průběhu na základě mutace implementace výkonu kritického kódu.
+Nicméně použití `mutable` v F# mohou mít pocit rozporu s funkční čistoty. To je v pořádku, pokud nastavíte očekávání z čistoty [referenční transparentnosti](https://en.wikipedia.org/wiki/Referential_transparency). Referenční transparentnost – ne čistoty - je cílem při zápisu F# funkce. To umožňuje psaní funkční rozhraní průběhu na základě mutace implementace výkonu kritického kódu.
 
 ### <a name="wrap-mutable-code-in-immutable-interfaces"></a>Zabalení proměnlivé kód v neměnných rozhraní
 
-S referenční transparentnosti jako cíl je velmi důležité napsat kód, který nemůže vystavovat proměnlivé underbelly kritickém pro výkon funkce. Například následující kód implementuje `Array.contains` funkce v základní knihovně F#:
+S referenční transparentnosti jako cíl je velmi důležité napsat kód, který nemůže vystavovat proměnlivé underbelly kritickém pro výkon funkce. Například následující kód implementuje `Array.contains` fungovat v F# základní knihovny:
 
 ```fsharp
 [<CompiledName("Contains")>]
@@ -546,7 +545,7 @@ Kromě jediný bod mutace uprostřed výraz lambda, všechny ostatní kód, kter
 
 ## <a name="object-programming"></a>Objekt programování
 
-F# obsahuje plnou podporu pro objekty a objektově orientované koncepty (zálohy). I když mnohé koncepty zálohy jsou výkonné a užitečné, některé z nich jsou ideální pro použití. Následující seznamy nabízí pokyny k kategorie funkcí zálohy na vysoké úrovni.
+F#obsahuje plnou podporu pro objekty a objektově orientované koncepty (zálohy). I když mnohé koncepty zálohy jsou výkonné a užitečné, některé z nich jsou ideální pro použití. Následující seznamy nabízí pokyny k kategorie funkcí zálohy na vysoké úrovni.
 
 **Zvažte použití těchto funkcí v mnoha situacích:**
 
@@ -578,7 +577,7 @@ F# obsahuje plnou podporu pro objekty a objektově orientované koncepty (záloh
 
 ### <a name="prefer-composition-over-inheritance"></a>Preferovat složení prostřednictvím dědičnosti
 
-[Složení prostřednictvím dědičnosti](https://en.wikipedia.org/wiki/Composition_over_inheritance) je dlouhotrvající idiom, která může splňovat dobré kódu jazyka F#. Základním principem je, že by neměla vystavit základní třídu a vynutit volající dědit ze základní třídy pro funkce.
+[Složení prostřednictvím dědičnosti](https://en.wikipedia.org/wiki/Composition_over_inheritance) je to dobrá dlouhotrvající idiom F# kódu můžete dodržovat. Základním principem je, že by neměla vystavit základní třídu a vynutit volající dědit ze základní třídy pro funkce.
 
 ### <a name="use-object-expressions-to-implement-interfaces-if-you-dont-need-a-class"></a>Můžete implementovat rozhraní, pokud už nepotřebujete třídu objektové výrazy
 

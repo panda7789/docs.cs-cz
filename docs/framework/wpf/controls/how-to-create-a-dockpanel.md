@@ -8,12 +8,12 @@ helpviewer_keywords:
 - controls [WPF], DockPanel
 - DockPanel control [WPF], creating
 ms.assetid: 9194f663-e279-4f1a-86d7-125a57d05c6f
-ms.openlocfilehash: f725a9e56eb7194bb09aeb8b59611f319cdfe8f8
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 35434a13386ae89fdc1428bd632d21c1551c9871
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57361847"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59200594"
 ---
 # <a name="how-to-create-a-dockpanel"></a>Postupy: Vytvoření objektu DockPanel
 ## <a name="example"></a>Příklad  
@@ -23,6 +23,7 @@ ms.locfileid: "57361847"
  [!code-vb[DockPanelCode#1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DockPanelCode/VisualBasic/dockpanel_vb.vb#1)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Controls.DockPanel>
 - <xref:System.Windows.Controls.Dock>
-- [Přehled panelu](panels-overview.md)
+- [Přehled panelů](panels-overview.md)

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - WCF services [WCF]
 - WCF services [WCF], running
 ms.assetid: 31774d36-923b-4e2d-812e-aa190127266f
-ms.openlocfilehash: 38fd9b89e2719be8ce4d33b1b50f68171d587369
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
+ms.openlocfilehash: ad9536b1f27ba3945bf76d0474de4825033a1e8b
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58410092"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59197903"
 ---
 # <a name="tutorial-host-and-run-a-basic-windows-communication-foundation-service"></a>Kurz: Hostování a spuštění základní služby Windows Communication Foundation
 
@@ -30,7 +30,6 @@ V tomto kurzu se naučíte:
 > - Přidejte kód pro hostování služby WCF.
 > - Aktualizujte konfigurační soubor.
 > - Spusťte službu WCF a ověří, že je spuštěná.
-
 
 ## <a name="create-and-configure-a-console-app-project-for-hosting-the-service"></a>Vytvořte a nakonfigurujte projekt konzolové aplikace pro hostování služby
 
@@ -176,7 +175,6 @@ Proveďte následující změny kódu:
     
     Informace o tom, jak tento kód funguje, najdete v tématu [služby hostování program kroky](#service-hosting-program-steps).
 
-
 2. Aktualizace vlastností projektu:
 
    1. V **Průzkumníka řešení** okna, vyberte **GettingStartedHost** složku a pak vyberte **vlastnosti** z místní nabídky.
@@ -189,7 +187,6 @@ Proveďte následující změny kódu:
 
    3. Z **souboru** nabídce vyberte možnost **Uložit vše**.
 
-
 ## <a name="verify-the-service-is-working"></a>Ověřte, že služba funguje
 
 1. Sestavte řešení a pak spusťte **GettingStartedHost** konzoly z aplikace v sadě Visual Studio. 
@@ -200,7 +197,6 @@ Proveďte následující změny kódu:
    
    > [!NOTE]
    > Služby, jako je ten vyžadují správné oprávnění k registraci adresami protokolu HTTP na počítači pro naslouchání. Účty správců mají toto oprávnění, ale účty bez oprávnění správce musí být uděleno oprávnění pro obory názvů HTTP. Další informace o tom, jak konfigurace rezervace oboru názvů najdete v tématu [konfigurace HTTP a HTTPS](feature-details/configuring-http-and-https.md). 
-
 
 ## <a name="service-hosting-program-steps"></a>Služby hostování program kroky
 
@@ -223,7 +219,6 @@ Kroky v kódu, který jste přidali do hostitele služby jsou popsány v násled
 > Když přidáte knihovny služby WCF, Visual Studio hostuje za vás při ladění pomocí spuštění hostitele služby. Aby nedocházelo ke konfliktům, můžete zabránit sady Visual Studio hostování knihovny služby WCF. 
 > 1. Vyberte **GettingStartedLib** projekt **Průzkumníka řešení** a zvolte **vlastnosti** z místní nabídky.
 > 2. Vyberte **možnosti WCF** a zrušte zaškrtnutí políčka **spuštění hostitele služby WCF při ladění jiného projektu ve stejném řešení**.
-
 
 ## <a name="next-steps"></a>Další kroky
 

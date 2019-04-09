@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 357182d6157b63f1bccf47cb43f0c78dec5875cf
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: b0dc76a2732bf9c1e4f3a26fa2d045bfbcd837ec
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54625936"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59181087"
 ---
 # <a name="qualifiersetget-function"></a>QualifierSet_Get – funkce
 Získá zadaný s názvem kvalifikátoru.  
@@ -65,7 +65,7 @@ HRESULT QualifierSet_Get (
 
 Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
 
-|Konstanta  |Hodnota  |Popis  |
+|Konstanta  |Value  |Popis  |
 |---------|---------|---------|
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | Parametr není platný. |
 |`WBEM_E_NOT_FOUND` | 0x80041002 | Zadaný kvalifikátor neexistuje. |
@@ -83,4 +83,5 @@ Tato funkce zalamuje volání na [IWbemQualifierSet::Get](/windows/desktop/api/w
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

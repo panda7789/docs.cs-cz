@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 5c5450ea-6af1-4b75-a267-613d0ac54707
-ms.openlocfilehash: 759a5dd4cecbaf804d1ccf29fa504c2f5e1ad7f8
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 9fa6e4114e9579079705700708840f2814b03b99
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54566734"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59186872"
 ---
 # <a name="specifying-service-run-time-behavior"></a>Určování chování služby za běhu
 Jakmile jste vytvořili kontrakt služby ([navrhování kontraktů služby](../../../docs/framework/wcf/designing-service-contracts.md)) a implementovat vaše smlouva na služby ([implementace kontraktů služeb](../../../docs/framework/wcf/implementing-service-contracts.md)) můžete nakonfigurovat chování operace služby modulu runtime. Toto téma popisuje poskytované systémem služby a operace chování a popisuje, kde najdete další informace k vytvoření nové chování. Některá chování se použijí jako atributy, mnoho se aplikují pomocí konfiguračního souboru aplikace nebo prostřednictvím kódu programu. Další informace o konfiguraci aplikace služby, najdete v části [konfigurace služby](../../../docs/framework/wcf/configuring-services.md).  
@@ -121,5 +121,6 @@ Jakmile jste vytvořili kontrakt služby ([navrhování kontraktů služby](../.
 -   <xref:System.ServiceModel.TransactionFlowAttribute>. Určuje úroveň, ve kterém přijímá operace služby záhlaví transakce.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Konfigurace služeb](../../../docs/framework/wcf/configuring-services.md)
 - [Postupy: Řízení vytváření instancí služby](../../../docs/framework/wcf/feature-details/how-to-control-service-instancing.md)

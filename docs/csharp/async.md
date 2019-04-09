@@ -5,12 +5,12 @@ author: cartermp
 ms.date: 06/20/2016
 ms.assetid: b878c34c-a78f-419e-a594-a2b44fa521a4
 ms.custom: seodec18
-ms.openlocfilehash: 90fd7332242ed58d7716e248248e2c06a6ba023f
-ms.sourcegitcommit: 462dc41a13942e467984e48f4018d1f79ae67346
+ms.openlocfilehash: 8570692c02855cda7a1990f10ef97590449baccd
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58185737"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59184662"
 ---
 # <a name="asynchronous-programming"></a>Asynchronní programování
 
@@ -64,7 +64,6 @@ private DamageResult CalculateDamageDone()
     // Does an expensive calculation and returns
     // the result of that calculation.
 }
-
 
 calculateButton.Clicked += async (o, e) =>
 {
@@ -245,7 +244,7 @@ Blokuje aktuální vlákno jako prostředek k čekání na dokončení úkolu m�
 
 | Použijte tento... | Místo to... | Když chce udělat |
 | --- | --- | --- |
-| `await` | `Task.Wait` Nebo `Task.Result` | Načítání výsledků úlohy na pozadí |
+| `await` | `Task.Wait` or `Task.Result` | Načítání výsledků úlohy na pozadí |
 | `await Task.WhenAny` | `Task.WaitAny` | Čekání na dokončení úkolu |
 | `await Task.WhenAll` | `Task.WaitAll` | Čekání na dokončení všech úloh |
 | `await Task.Delay` | `Thread.Sleep` | Čekání na časový úsek |

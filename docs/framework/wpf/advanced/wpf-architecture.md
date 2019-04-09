@@ -16,17 +16,16 @@ helpviewer_keywords:
 - data templates [WPF]
 - thread [WPF], affinity
 ms.assetid: 8579c10b-76ab-4c52-9691-195ce02333c8
-ms.openlocfilehash: dee88ceb82528955d8809214bff474b92233d28c
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: f4a6e6c2a63e58c40e0cca9c67b12d1f65af0d2e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57362006"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59199424"
 ---
 # <a name="wpf-architecture"></a>Architektura WPF
 Toto téma obsahuje prohlídku s průvodcem hierarchie tříd Windows Presentation Foundation (WPF). Zabírá většinu hlavních subsystémy [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]a popisuje způsob, jakým interagují. Je také podrobné informace o některých volby provedené architektů [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)].  
-  
-  
+
 <a name="System_Object"></a>   
 ## <a name="systemobject"></a>System.Object  
  Primární [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] programovací model je přístupný prostřednictvím spravovaného kódu. Již v rané fázi ve fázi návrhu [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] došlo k několika jednáních o kde má být vykreslena spojnice mezi spravované součásti systému a nespravovaných předpon. [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] Nabízí celou řadu funkcí, které usnadňují vývoj, vyšší produktivitu a robustní (včetně správy paměti, zpracování chyb, obecný systém typů, atd.), ale jejich stinnou.  
@@ -142,6 +141,7 @@ Toto téma obsahuje prohlídku s průvodcem hierarchie tříd Windows Presentati
  Když začnete vyvíjet [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] na základě aplikací, by měl mít pocit povědomý. Můžete nastavit vlastnosti, používat objekty, a vytvořit datovou vazbu s: téměř stejným způsobem můžete pomocí [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] nebo [!INCLUDE[TLA#tla_aspnet](../../../../includes/tlasharptla-aspnet-md.md)]. Pomocí hlubší šetření architektuře [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], zjistíte, že existuje možnost vytváření mnohem bohatší aplikací, které jsou v podstatě zacházet s daty jako základní ovladač aplikace.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Media.Visual>
 - <xref:System.Windows.UIElement>
 - <xref:System.Windows.Input.ICommand>

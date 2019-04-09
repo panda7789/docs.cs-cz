@@ -12,12 +12,12 @@ helpviewer_keywords:
 - graphics features [WPF]
 - transition effects [WPF]
 ms.assetid: 1817d9dc-3d6c-46cb-afc8-63b0bae35e37
-ms.openlocfilehash: 87ae55c454a72797569de4cd944984ba18c3b2ca
-ms.sourcegitcommit: 68eb5c4928e2b082f178a42c16f73fedf52c2ab8
-ms.translationtype: MT
+ms.openlocfilehash: 1416b07818ecaeb75e8389c053344b8a367ea69d
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/05/2019
-ms.locfileid: "59055063"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59190641"
 ---
 # <a name="graphics-and-multimedia"></a>Grafika a multimédia
 <a name="introduction"></a>
@@ -146,6 +146,7 @@ End Class
  Další informace najdete v tématu [multimédia přehled](multimedia-overview.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Media>
 - <xref:System.Windows.Media.Animation>
 - <xref:System.Windows.Media.Media3D>

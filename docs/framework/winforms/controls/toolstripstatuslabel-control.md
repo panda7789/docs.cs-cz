@@ -6,18 +6,18 @@ helpviewer_keywords:
 - status bars
 - ToolStrip control [Windows Forms], ToolStripStatusLabel
 ms.assetid: 099bc74a-a29f-4f15-af0d-7c517ef50c7e
-ms.openlocfilehash: 809590ff19619b3693466d4f6a0567ff1e5ab38a
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: abda20e9add4691fd3ced2a4cf688dc25cca7530
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57722648"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59194107"
 ---
 # <a name="toolstripstatuslabel-control"></a>ToolStripStatusLabel – ovládací prvek
 <xref:System.Windows.Forms.ToolStripStatusLabel> Poskytuje zobrazení plochy v <xref:System.Windows.Forms.StatusStrip> pro text či Image.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Přehled ovládacího prvku ToolStripStatusLabel](toolstripstatuslabel-control-overview.md)  
+ [ToolStripStatusLabel – přehled ovládacího prvku](toolstripstatuslabel-control-overview.md)  
  Obsahuje témata, které popisují účel a hlavní koncepty formulářů Windows <xref:System.Windows.Forms.ToolStripStatusLabel> ovládacího prvku.  
   
 ## <a name="reference"></a>Odkaz  
@@ -31,4 +31,5 @@ ms.locfileid: "57722648"
  Poskytuje referenční dokumentaci pro <xref:System.Windows.Forms.ToolStripProgressBar> ovládacího prvku.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Ovládací prvky používané ve Windows Forms](controls-to-use-on-windows-forms.md)

@@ -2,12 +2,12 @@
 title: < = (je menší než nebo rovno) (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 7c46da5c-fa09-4d90-adcc-c7e1b769d8e6
-ms.openlocfilehash: 68a4c91800dce2ab6a632e849a8c58c378150535
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
-ms.translationtype: MT
+ms.openlocfilehash: 9e5a61cb68895982344eadec083a697bdaff54e4
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55284710"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59193951"
 ---
 # <a name="-less-than-or-equal-to-entity-sql"></a>\<= (Je menší než nebo rovno) (Entity SQL)
 Porovná dva výrazy k určení, zda levý výraz má hodnotu menší než nebo rovna pravý výraz.  
@@ -35,4 +35,5 @@ expression <= expression
  [!code-csharp[DP EntityServices Concepts 2#LESS_OR_EQUALS](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#less_or_equals)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Reference k Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)

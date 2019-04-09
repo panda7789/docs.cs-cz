@@ -17,12 +17,12 @@ helpviewer_keywords:
 ms.assetid: d2bf6123-7b0c-4e60-87ad-a39a1c3eb2e0
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7d64e254f5dd1f7d35150953c31854f45eb06b12
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: 3e6057d1ce6b5d0e961449ef298b1a50c7a407ef
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57496947"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59200529"
 ---
 # <a name="caspolexe-code-access-security-policy-tool"></a>Caspol.exe (nástroj zásad zabezpečení přístupu kódu)
 Nástroj Code Access Security (CAS) Policy (Caspol.exe) umožňuje uživatelům a správcům měnit zásady zabezpečení pro úroveň zásad počítače, úroveň zásad uživatele a úroveň zásad podniku.  
@@ -60,7 +60,7 @@ caspol [options]
 |**-f**[**orce**]|Zakáže, aby nástroj provedl autodestruktivní test a změní zásadu dle zadání uživatele. Nástroj Caspol.exe běžně ověřuje, zda může jakákoli změna zásady zabránit nástroji Caspol.exe ve správném spuštění. Pokud tomu tak je, nástroj Caspol.exe změnu zásady neuloží a zobrazí chybovou zprávu. Chcete-li vynutit Caspol.exe ke změně zásady, i když to zabrání nástroji Caspol.exe spouštění, použijte **– platnost** možnost.|  
 |**-h**[**elp**]|Zobrazí syntaxi a možnosti příkazu pro nástroj Caspol.exe.|  
 |**-l**[**ist**]|Vypíše hierarchii skupiny kódu a sad oprávnění konkrétního počítače, uživatele, podniku nebo všech úrovní zásad. Nástroj Caspol.exe zobrazuje nejprve popisek skupiny kódu a poté název, pokud není null.|  
-|**-listdescription Zobrazí**<br /><br /> or<br /><br /> **-ld**|Vypíše všechny popisy skupiny kódu pro zadanou úroveň zásad.|  
+|**-listdescription**<br /><br /> or<br /><br /> **-ld**|Vypíše všechny popisy skupiny kódu pro zadanou úroveň zásad.|  
 |**-listfulltrust**<br /><br /> or<br /><br /> **-lf**|Vypíše obsah sestavení úplného vztahu důvěryhodnosti pro zadanou úroveň zásad.|  
 |**-listgroups**<br /><br /> or<br /><br /> **-lg**|Zobrazuje skupiny kódu konkrétní úrovně nebo všech úrovní zásad. Nástroj Caspol.exe zobrazuje nejprve popisek skupiny kódu a poté název, pokud není null.|  
 |**-listpset Zobrazí** nebo **-lp**|Zobrazí sady oprávnění konkrétní úrovně nebo všech úrovní zásad.|  
@@ -194,7 +194,7 @@ caspol -chgpset Mypset newpset.xml
 caspol -force -user -chggroup 1 Nothing  
 ```  
   
- **-obnovit**  
+ **-recover**  
   
  Následující příkaz obnoví poslední uloženou zásadu počítače.  
   
@@ -247,5 +247,6 @@ caspol -all -resolveperm testassembly
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Nástroje](index.md)
 - [Příkazové řádky](developer-command-prompt-for-vs.md)

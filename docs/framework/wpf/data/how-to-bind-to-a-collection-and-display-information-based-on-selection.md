@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Připojení ke kolekci a zobrazení informací podle výběru'
+title: 'Postupy: Vytvoření vazby ke kolekci a zobrazení informací podle výběru'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,14 +10,14 @@ helpviewer_keywords:
 - data binding [WPF], selecting data for views
 - data binding [WPF], binding to collections
 ms.assetid: 952a7d76-dd29-49e5-86f5-32c4530e70eb
-ms.openlocfilehash: 5ceda723ad982fc788e8d0b81e6cf92975790682
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
-ms.translationtype: MT
+ms.openlocfilehash: 61ced27ed80adf8ac5d543584f71794b9ee59676
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57360391"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59188744"
 ---
-# <a name="how-to-bind-to-a-collection-and-display-information-based-on-selection"></a>Postupy: Připojení ke kolekci a zobrazení informací podle výběru
+# <a name="how-to-bind-to-a-collection-and-display-information-based-on-selection"></a>Postupy: Vytvoření vazby ke kolekci a zobrazení informací podle výběru
 V jednoduchém scénáři hlavní podrobnosti máte vázaný na data <xref:System.Windows.Controls.ItemsControl> například <xref:System.Windows.Controls.ListBox>. Na základě výběru uživatelem, zobrazíte další informace o vybrané položce. Tento příklad ukazuje, jak tento scénář implementovat.  
   
 ## <a name="example"></a>Příklad  
@@ -46,8 +46,9 @@ V jednoduchém scénáři hlavní podrobnosti máte vázaný na data <xref:Syste
  [!code-vb[CollectionBinding#ToString](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CollectionBinding/VisualBasic/Person.vb#tostring)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Použití vzoru seznam-podrobnosti s hierarchickými daty](how-to-use-the-master-detail-pattern-with-hierarchical-data.md)
 - [Použití vzoru seznam-podrobnosti s hierarchickými daty XML](how-to-use-the-master-detail-pattern-with-hierarchical-xml-data.md)
 - [Přehled datových vazeb](data-binding-overview.md)
 - [Přehled datových šablon](data-templating-overview.md)
-- [Témata s postupy](data-binding-how-to-topics.md)
+- [– postupy](data-binding-how-to-topics.md)

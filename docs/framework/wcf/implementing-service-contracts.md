@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - implementing service contracts [WCF]
 ms.assetid: aefb6f56-47e3-4f24-ab0a-9bc07bf9885f
-ms.openlocfilehash: d22d0ada44ca4374da0b8feccf0a37ff1016dc80
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 766e0c4d30a4fa0eed9ce154ca932f5371a43211
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54576496"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59196317"
 ---
 # <a name="implementing-service-contracts"></a>Implementace kontraktů služeb
 Služba je třída, která zpřístupňuje funkce, které jsou k dispozici pro klienty na jeden nebo více koncových bodů. Pokud chcete vytvořit službu, zápis třídu, která implementuje kontraktu Windows Communication Foundation (WCF). Provedete to jedním ze dvou způsobů. Můžete definovat kontrakt samostatně jako rozhraní a pak vytvořit třídu, která implementuje rozhraní. Alternativně můžete vytvořit třídu a kontrakt přímo tak, že <xref:System.ServiceModel.ServiceContractAttribute> atributu na vlastní třídy a <xref:System.ServiceModel.OperationContractAttribute> atributů pro metody, které jsou k dispozici pro klienty službu.  
@@ -58,6 +58,7 @@ class MathService
  Po implementaci kontraktu služby, je potřeba vytvořit jeden nebo víc koncových bodů služby. Další informace najdete v tématu [Přehled vytváření koncových bodů](../../../docs/framework/wcf/endpoint-creation-overview.md). Další informace o tom, jak spustit službu, naleznete v tématu [hostování služeb](../../../docs/framework/wcf/hosting-services.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Navrhování a implementace služeb](../../../docs/framework/wcf/designing-and-implementing-services.md)
 - [Postupy: Vytvoření služby s třídou kontraktu](../../../docs/framework/wcf/feature-details/how-to-create-a-wcf-contract-with-a-class.md)
 - [Postupy: Vytvoření služby pomocí rozhraní kontraktu](../../../docs/framework/wcf/feature-details/how-to-create-a-service-with-a-contract-interface.md)

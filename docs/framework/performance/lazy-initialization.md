@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 56b4ae5c-4745-44ff-ad78-ffe4fcde6b9b
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: fac921bbe6250b039aba8527a1b9b5203af0972e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ce217e2ed8e542ad0f7122970655aa32a353f51a
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54492946"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59182296"
 ---
 # <a name="lazy-initialization"></a>Opožděná inicializace
 *Opožděná inicializace* objektu znamená, že jeho vytvoření je odloženo, dokud je poprvé použita. (Pro toto téma podmínky *opožděné inicializace* a *opožděné instance* jsou shodné.) Opožděná inicializace slouží především ke zvýšení výkonu, zabránit plýtvání výpočtu a snížit požadavky na paměť pro program. Jedná se o nejběžnějších scénářů:  
@@ -27,7 +27,7 @@ ms.locfileid: "54492946"
   
  Následující tabulka uvádí typy opožděná inicializace v různých scénářích povolit poskytuje rozhraní .NET Framework verze 4.  
   
-|Typ|Popis|  
+|Type|Popis|  
 |----------|-----------------|  
 |<xref:System.Lazy%601>|Obálkovou třídu, která poskytuje sémantiku opožděné inicializace pro všechny knihovny tříd nebo typ definovaný uživatelem.|  
 |<xref:System.Threading.ThreadLocal%601>|Se podobá <xref:System.Lazy%601> s tím rozdílem, že poskytuje sémantiku opožděné inicializace na základě místního vlákna. Každé vlákno má přístup k vlastní jedinečnou hodnotu.|  
@@ -75,11 +75,11 @@ ms.locfileid: "54492946"
   
  Některé <xref:System.Lazy%601> mají konstruktory <xref:System.Threading.LazyThreadSafetyMode> parametr s názvem `mode`. Tyto konstruktory zadat režim zabezpečení další vlákna. Následující tabulka ukazuje, jak bezpečnost vlákna <xref:System.Lazy%601> je objekt ovlivněn parametry konstruktoru, které určují bezpečný přístup z více vláken. Každý konstruktor má nejvýše jeden takový parametr.  
   
-|Zabezpečení vlákna objektu|`LazyThreadSafetyMode` `mode` Parametr|Logická `isThreadSafe` parametr|Žádné parametry bezpečný přístup z více vláken|  
+|Zabezpečení vlákna objektu|`LazyThreadSafetyMode` `mode` parametr|Logická `isThreadSafe` parametr|Žádné parametry bezpečný přístup z více vláken|  
 |---------------------------------|---------------------------------------------|--------------------------------------|---------------------------------|  
 |Plně bezpečné pro vlákna; pouze jedno vlákno současně pokusí o inicializaci hodnoty.|<xref:System.Threading.LazyThreadSafetyMode.ExecutionAndPublication>|`true`|Ano.|  
-|Není bezpečné pro vlákna.|<xref:System.Threading.LazyThreadSafetyMode.None>|`false`|Nelze použít.|  
-|Plně bezpečné pro vlákna; závod vláken k inicializaci hodnoty.|<xref:System.Threading.LazyThreadSafetyMode.PublicationOnly>|Nelze použít.|Nelze použít.|  
+|Není bezpečné pro vlákna.|<xref:System.Threading.LazyThreadSafetyMode.None>|`false`|Není k dispozici.|  
+|Plně bezpečné pro vlákna; závod vláken k inicializaci hodnoty.|<xref:System.Threading.LazyThreadSafetyMode.PublicationOnly>|Není k dispozici.|Není k dispozici.|  
   
  Jak je zobrazeno v tabulce, určení <xref:System.Threading.LazyThreadSafetyMode.ExecutionAndPublication?displayProperty=nameWithType> pro `mode` parametr je stejné jako zadání `true` pro `isThreadSafe` parametru a zadáním <xref:System.Threading.LazyThreadSafetyMode.None?displayProperty=nameWithType> je stejné jako zadání `false`.  
   
@@ -153,6 +153,7 @@ ms.locfileid: "54492946"
  V tomto příkladu Všimněte si, že je vyvolána inicializační proceduru v každé iteraci smyčky. Ve scénářích s více procesy první vlákno k vyvolání procedury inicializace je ten, jehož hodnota je vidět všechna vlákna. Novější vláken také vyvolat inicializační proceduru, ale nepoužívají se jejich výsledky. Pokud tento druh potenciální konflikt časování není přijatelná, použijte přetížení <xref:System.Threading.LazyInitializer.EnsureInitialized%2A?displayProperty=nameWithType> , která přebírá argument typu Boolean a synchronizační objekt.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Základy dělení na spravovaná vlákna](../../../docs/standard/threading/managed-threading-basics.md)
 - [Vlákna a dělení na vlákna](../../../docs/standard/threading/threads-and-threading.md)
 - [Task Parallel Library (TPL)](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md)

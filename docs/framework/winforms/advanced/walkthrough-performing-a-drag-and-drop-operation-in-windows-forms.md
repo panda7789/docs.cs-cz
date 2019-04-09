@@ -1,5 +1,5 @@
 ---
-title: 'Návod: Operace a přetažení ve Windows Forms'
+title: 'Návod: Provádění operace přetažení v modelu Windows Forms'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - Windows Forms, drag and drop operations
 - drag and drop [Windows Forms], Windows Forms
 ms.assetid: eb66f6bf-4a7d-4c2d-b276-40fefb2d3b6c
-ms.openlocfilehash: 664c78ce3fff9651acf6ad720360cdb077f23108
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: e9b21d7bfa188ebb053f36e2637ffce5d6fa0dd7
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57715240"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59189024"
 ---
-# <a name="walkthrough-performing-a-drag-and-drop-operation-in-windows-forms"></a>Návod: Operace a přetažení ve Windows Forms
+# <a name="walkthrough-performing-a-drag-and-drop-operation-in-windows-forms"></a>Návod: Provádění operace přetažení v modelu Windows Forms
 K provádění operací přetažení myší v rámci aplikace pro systém Windows je třeba ošetřit řadu událostí, zejména <xref:System.Windows.Forms.Control.DragEnter>, <xref:System.Windows.Forms.Control.DragLeave>, a <xref:System.Windows.Forms.Control.DragDrop> události. Při práci s informacemi, které jsou k dispozici události argumenty tyto události, můžete snadno usnadnění operace přetažení myší.  
   
 ## <a name="dragging-data"></a>Přetažení dat  
@@ -107,6 +107,7 @@ K provádění operací přetažení myší v rámci aplikace pro systém Window
     >  Kromě toho můžete pracovat <xref:System.Windows.Forms.DragEventArgs.KeyState%2A> určité účinkům dochází vlastnost, takže v závislosti na klíče stisknuté během operace přetažení myší, (například je standardní kopírování Přetahované dat při stisknutí klávesy CTRL).  
   
 ## <a name="see-also"></a>Viz také:
-- [Postupy: Přidání dat do schránky.](how-to-add-data-to-the-clipboard.md)
+
+- [Postupy: Přidání dat do schránky](how-to-add-data-to-the-clipboard.md)
 - [Postupy: Načtení dat ze schránky](how-to-retrieve-data-from-the-clipboard.md)
 - [Operace přetažení a podpora schránky](drag-and-drop-operations-and-clipboard-support.md)

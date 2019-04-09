@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - TextBox control [WPF], multiple lines of text
 ms.assetid: 05914a93-d0ea-4a9a-b693-09df7d4e2ac2
-ms.openlocfilehash: 75bbee806b2b7039656d6c8e7c9a64359e77d16f
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 29fb4c9498fe163c36e71680242d3ef8cf98c089
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57352344"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59181165"
 ---
 # <a name="how-to-create-a-multiline-textbox-control"></a>Postupy: Vytvoření víceřádkového ovládacího prvku TextBox
 Tento příklad ukazuje způsob použití [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] k definování <xref:System.Windows.Controls.TextBox> ovládací prvek, který se rozbalí automaticky tak, aby vyhovovaly více řádků textu.  
@@ -24,6 +24,7 @@ Tento příklad ukazuje způsob použití [!INCLUDE[TLA#tla_xaml](../../../../in
  [!code-xaml[TextBox_MiscCode#_MultilineTextBoxXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/TextBox_MiscCode/CSharp/Window1.xaml#_multilinetextboxxaml)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.TextWrapping>
 - [TextBox – přehled](textbox-overview.md)
 - [RichTextBox – přehled](richtextbox-overview.md)

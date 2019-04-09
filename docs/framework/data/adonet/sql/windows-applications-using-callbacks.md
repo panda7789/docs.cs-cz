@@ -1,18 +1,18 @@
 ---
-title: Aplikace Windows pomocí zpětných volání
+title: Aplikace Windows využívající zpětná volání
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: ae2ea457-0764-4b06-8977-713c77e85bd2
-ms.openlocfilehash: 6775f14a6f90b9e8194a68a07b3354f8a972ece0
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1efb30581642faba3e839357ef9d6f8d6c8869e8
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54628900"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59179813"
 ---
-# <a name="windows-applications-using-callbacks"></a>Aplikace Windows pomocí zpětných volání
+# <a name="windows-applications-using-callbacks"></a>Aplikace Windows využívající zpětná volání
 Ve většině případů asynchronní zpracování budete chtít spustit operaci databáze a pokračování ve spouštění jiných procesů bez čekání na dokončení operace databáze. Mnoho scénářů však vyžaduje něco, jakmile byla ukončena operace databáze. V aplikaci Windows například můžete delegovat dlouho běžící operace ve vlákně na pozadí při povolení vlákně uživatelského rozhraní nadále reagovat. Ale po dokončení operace databáze budete chtít použít výsledky k naplnění formuláře. Tento druh scénář nejlépe implementuje pomocí zpětného volání.  
   
  Definujte zpětné volání tak, že určíte <xref:System.AsyncCallback> delegování v <xref:System.Data.SqlClient.SqlCommand.BeginExecuteNonQuery%2A>, <xref:System.Data.SqlClient.SqlCommand.BeginExecuteReader%2A>, nebo <xref:System.Data.SqlClient.SqlCommand.BeginExecuteXmlReader%2A> metoda. Delegát je volána po dokončení operace. Můžete předat delegáta odkaz na <xref:System.Data.SqlClient.SqlCommand> samostatně, což usnadňuje přístup <xref:System.Data.SqlClient.SqlCommand> objektu a volat odpovídající `End` metody bez nutnosti použít globální proměnné.  
@@ -376,5 +376,6 @@ private void Form1_Load(object sender, System.EventArgs e)
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Asynchronní operace](../../../../../docs/framework/data/adonet/sql/asynchronous-operations.md)
 - [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

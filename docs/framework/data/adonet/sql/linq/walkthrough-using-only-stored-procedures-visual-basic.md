@@ -1,17 +1,17 @@
 ---
-title: 'Průvodce: Použití jen uložených procedur (Visual Basic)'
+title: 'Návod: Použití jen uložených procedur (Visual Basic)'
 ms.date: 03/30/2017
 dev_langs:
 - vb
 ms.assetid: 5a736a30-ba66-4adb-b87c-57d19476e862
-ms.openlocfilehash: 7c696d24dd84aee568706200389839dea080d7b4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 686d1797666c36f47d1ab0244754bbf2daf97eaf
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54577384"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59188568"
 ---
-# <a name="walkthrough-using-only-stored-procedures-visual-basic"></a>Průvodce: Použití jen uložených procedur (Visual Basic)
+# <a name="walkthrough-using-only-stored-procedures-visual-basic"></a>Návod: Použití jen uložených procedur (Visual Basic)
 Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] scénář pro přístup k datům pomocí uložených procedur komponentami TableAdapter pouze. Tento přístup se často používá ve správci databází a omezit způsob přístupu k úložišti dat.  
   
 > [!NOTE]
@@ -192,5 +192,6 @@ Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdli
  Tento projekt můžete vylepšit tím, že některé změny. Můžete například seznam dostupných uložené procedury v seznamu a mít uživatele, který postup ke spuštění vyberte. Může také datový proud výstupu sestavy do textového souboru.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Učení podle návodů](../../../../../../docs/framework/data/adonet/sql/linq/learning-by-walkthroughs.md)
 - [Uložené procedury](../../../../../../docs/framework/data/adonet/sql/linq/stored-procedures.md)

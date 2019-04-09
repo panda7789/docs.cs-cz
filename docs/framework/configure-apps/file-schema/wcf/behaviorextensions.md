@@ -2,12 +2,12 @@
 title: <behaviorExtensions>
 ms.date: 03/30/2017
 ms.assetid: 59f2791a-c78f-40d7-aa80-0d9cd10135d9
-ms.openlocfilehash: b3554db2ee037eceb43126968a02e826b65928a0
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 81ce9bb0e55fe4570f8a21187d9df80ea22393fe
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55285901"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59191416"
 ---
 # <a name="behaviorextensions"></a>\<behaviorExtensions>
 Rozšíření chování povolují uživateli vytvořit uživatelem definované chování elementů. Tyto prvky lze použít společně s standardní prvky chování Windows Communication Foundation (WCF). `behaviorExtensions` Oddíl definuje element tak, že je možné v konfiguraci. Tady je příklad obvyklé chování rozšíření.  
@@ -52,5 +52,6 @@ Rozšíření chování povolují uživateli vytvořit uživatelem definované c
  Další informace najdete v tématu [jak modul Runtime vyhledává sestavení](https://go.microsoft.com/fwlink/?LinkId=95336) a <xref:System.AppDomain.TypeResolve>.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Configuration.BehaviorExtensionElement>
-- [Konfigurace a rozšíření modulu runtime pomocí chování](../../../../../docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md)
+- [Konfigurace a rozšíření modulu runtime s chováním](../../../../../docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md)

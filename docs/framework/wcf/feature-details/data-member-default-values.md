@@ -8,12 +8,12 @@ helpviewer_keywords:
 - data members [WCF], default values
 - data members [WCF]
 ms.assetid: 53a3b505-4b27-444b-b079-0eb84a97cfd8
-ms.openlocfilehash: 30836f7f1cbf742c621254ef92314d20a4fffd83
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2d323566aa211ced9ed76302756ed5dc82c5d2c3
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54715063"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59185689"
 ---
 # <a name="data-member-default-values"></a>Vychozí hodnoty datových členů
 V [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], typy mají koncept *výchozí hodnoty*. Třeba u jakéhokoliv odkazového typu, výchozí hodnota je `null`, a pro typ integer je nula. Je čas od času žádoucí chcete vynechat, nechte datový člen ze serializovaných dat. Pokud je nastavena na výchozí hodnotu. Vzhledem k tomu, že člen má výchozí hodnotu, nemusí být serializován skutečnou hodnotu; Tato akce nemá výhody výkonu.  
@@ -57,5 +57,6 @@ V [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], typy mají ko
  Při importu schématu <xref:System.Runtime.Serialization.DataMemberAttribute.EmitDefaultValue%2A> vlastností se automaticky nastaví na `false` vždy, když se dříve zjistí poznámky specifické pro WCF uvedené. Je také nastavena na `false` pro typy odkazů, které mají `nillable` vlastnost nastavena na hodnotu `false` pro zajištění podpory scénářů konkrétní vzájemná funkční spolupráce, nejčastějších při využívání [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webové služby.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Runtime.Serialization.DataMemberAttribute.EmitDefaultValue%2A>
 - <xref:System.Runtime.Serialization.DataMemberAttribute>

@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Nastavení zablokovatelného režimu jen pro čtení'
+title: 'Postupy: Nastavení zablokovatelného objektu jen pro čtení'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,14 +7,14 @@ dev_langs:
 helpviewer_keywords:
 - Freezable objects [WPF], making read-only
 ms.assetid: 6c544b7d-d3c9-4736-aa90-4b8728234ccb
-ms.openlocfilehash: 874724584b44c17ff6c01331295cfa1a60978d54
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 9b7102db4de0df7183355e50e3b372eac30d81b3
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57360346"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59191434"
 ---
-# <a name="how-to-make-a-freezable-read-only"></a>Postupy: Nastavení zablokovatelného režimu jen pro čtení
+# <a name="how-to-make-a-freezable-read-only"></a>Postupy: Nastavení zablokovatelného objektu jen pro čtení
 Tento příklad ukazuje, jak vytvořit <xref:System.Windows.Freezable> voláním jen pro čtení jeho <xref:System.Windows.Freezable.Freeze%2A> metoda.  
   
  Nelze zmrazit <xref:System.Windows.Freezable> objektu, pokud je některý z následujících podmínek `true` o objektu:  
@@ -36,8 +36,9 @@ Tento příklad ukazuje, jak vytvořit <xref:System.Windows.Freezable> voláním
  Další informace o <xref:System.Windows.Freezable> objekty, najdete [přehled Zablokovatelných objektů](freezable-objects-overview.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Freezable>
 - <xref:System.Windows.Freezable.CanFreeze%2A>
 - <xref:System.Windows.Freezable.Freeze%2A>
 - [Přehled zablokovatelných objektů](freezable-objects-overview.md)
-- [Témata s postupy](base-elements-how-to-topics.md)
+- [– postupy](base-elements-how-to-topics.md)

@@ -2,12 +2,12 @@
 title: Obory názvů (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 83991c21-60db-4af9-aca3-b416f6cae98e
-ms.openlocfilehash: eb4b956fa2ac9c0bb68c31d94e15b951807f8108
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: bef2fa96ce090a600155d68ecc3daea55b675840
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54724132"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59185520"
 ---
 # <a name="namespaces-entity-sql"></a>Obory názvů (Entity SQL)
 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] zavádí obory názvů, aby nedocházelo ke konfliktům název pro globální identifikátory, jako jsou názvy typů, sad entit, funkce a tak dále. Podpora oboru názvů v [!INCLUDE[esql](../../../../../../includes/esql-md.md)] je podobný podpora oboru názvů v [!INCLUDE[dnprdnshort](../../../../../../includes/dnprdnshort-md.md)].  
@@ -36,5 +36,6 @@ WHERE p IS OF (NamespaceName.Employee)
  Dotazy jsou vyjádřeny pomocí ADO.NET <xref:System.Data.Common.DbCommand> objekty. <xref:System.Data.Common.DbCommand> objekty mohou být vytvořeny prostřednictvím <xref:System.Data.Common.DbConnection> objekty. Obory názvů lze také zadat jako součást <xref:System.Data.Common.DbCommand> a <xref:System.Data.Common.DbConnection> objekty. Pokud [!INCLUDE[esql](../../../../../../includes/esql-md.md)] nelze přeložit identifikátor v samotném dotazu jsou vystavovány externí oborů názvů (v závislosti na podobné pravidla).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Reference k Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
 - [Přehled Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-overview.md)

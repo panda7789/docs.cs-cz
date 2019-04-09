@@ -8,17 +8,16 @@ helpviewer_keywords:
 - controls [WPF], ListView
 - ListView controls [WPF], about ListView control
 ms.assetid: 989e12b0-260e-4570-95c6-489284003ce2
-ms.openlocfilehash: 33f4cc55a52a67381c1fbf0d0a92bfad5e50b1ec
-ms.sourcegitcommit: 462dc41a13942e467984e48f4018d1f79ae67346
+ms.openlocfilehash: 6d4a6c19dc0af8a2950754f32890ae9c3bcbad21
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58186114"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59186495"
 ---
 # <a name="listview-overview"></a>ListView – přehled
 <xref:System.Windows.Controls.ListView> Ovládacího prvku poskytuje infrastrukturu pro zobrazení množinou datových položek v zobrazení nebo různá rozložení. Uživatel může být vhodné například pro zobrazení položek dat v tabulce a také k seřazení její sloupce.  
-  
-  
+
 <a name="WhatisaListView"></a>   
 ## <a name="what-is-a-listview"></a>Co je ListView?  
  <xref:System.Windows.Controls.ListView> Je ovládací prvek <xref:System.Windows.Controls.ItemsControl> , která je odvozena od <xref:System.Windows.Controls.ListBox>. Obvykle jeho položky jsou členy kolekce dat a jsou reprezentovány ve formě <xref:System.Windows.Controls.ListViewItem> objekty. A <xref:System.Windows.Controls.ListViewItem> je <xref:System.Windows.Controls.ContentControl> a může obsahovat pouze jeden podřízený prvek. Tento podřízený element však může být libovolný element visual.  
@@ -82,10 +81,11 @@ ms.locfileid: "58186114"
  Přizpůsobit zobrazení jako <xref:System.Windows.Controls.GridView> jsou odvozeny z <xref:System.Windows.Controls.ViewBase> abstraktní třídu, která poskytuje nástroje k zobrazení datových položek, které jsou reprezentovány ve formě <xref:System.Windows.Controls.ListViewItem> objekty.    
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Controls.GridView>
 - <xref:System.Windows.Controls.ListView>
 - <xref:System.Windows.Controls.ListViewItem>
 - <xref:System.Windows.Data.Binding>
 - [GridView – přehled](gridview-overview.md)
-- [Témata s postupy](listview-how-to-topics.md)
+- [– postupy](listview-how-to-topics.md)
 - [Ovládací prvky](../advanced/optimizing-performance-controls.md)

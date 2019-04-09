@@ -2,12 +2,12 @@
 title: Zjednodušená konfigurace
 ms.date: 03/30/2017
 ms.assetid: dcbe1f84-437c-495f-9324-2bc09fd79ea9
-ms.openlocfilehash: 22595a3d428da9dbd3cb8b6e67ca8b40bf39d457
-ms.sourcegitcommit: bef803e2025642df39f2f1e046767d89031e0304
+ms.openlocfilehash: 13cf8bd46ef3aabb011cb2ddd207963235468662
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56305625"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59184051"
 ---
 # <a name="simplified-configuration"></a>Zjednodušená konfigurace
 Konfigurace služby Windows Communication Foundation (WCF) může být složitý úkol. Spousta různých možností, a to není vždy jednoduché určit nastavení, které jsou požadovány. Konfigurační soubory zvýšit flexibilitu služeb WCF, ale také jsou zdroje pro mnoho obtížné najít problémy. [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] řeší tyto problémy a poskytuje způsob, jak zmenšit velikost a složitost konfigurace služby.  
@@ -114,6 +114,7 @@ Konfigurace služby Windows Communication Foundation (WCF) může být složitý
 >  Tato funkce se týká pouze konfigurace služby WCF, není konfigurace klienta. Většinu času konfigurace klienta WCF se vygeneruje pomocí nástroje, jako je svcutil.exe nebo přidáním odkazu na službu v sadě Visual Studio. Při ruční konfiguraci klienta WCF je potřeba přidat \<klienta > element konfigurace a určete žádné koncové body, kterou chcete volat.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Konfigurace služeb pomocí konfiguračních souborů](../../../docs/framework/wcf/configuring-services-using-configuration-files.md)
 - [Konfigurace vazeb pro služby](../../../docs/framework/wcf/configuring-bindings-for-wcf-services.md)
 - [Konfigurace vazeb poskytovaných systémem](../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)

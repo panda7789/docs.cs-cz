@@ -1,5 +1,5 @@
 ---
-title: Element <source>
+title: <source> Prvek
 ms.date: 09/29/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/sources/source
@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - <source> element
 - source element
-ms.openlocfilehash: a528e0f77efea6df7379a0f01495bc09d2ed0b24
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 8860f5d3ed7ee0c04d1e8afd7614f3f73b470808
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55254480"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59186547"
 ---
 # <a name="source-element"></a>\<zdroj > – Element
 Určuje zdroj trasování, který iniciuje trasovací zprávy.  
@@ -46,7 +46,7 @@ Určuje zdroj trasování, který iniciuje trasovací zprávy.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<listeners>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/listeners-element-for-source.md)|Obsahuje moduly pro naslouchání, které shromažďování, ukládání a směrovat zprávy.|  
+|[\<naslouchací procesy >](../../../../../docs/framework/configure-apps/file-schema/trace-debug/listeners-element-for-source.md)|Obsahuje moduly pro naslouchání, které shromažďování, ukládání a směrovat zprávy.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -83,5 +83,6 @@ Určuje zdroj trasování, který iniciuje trasovací zprávy.
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Trasování a ladění schématu nastavení](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)
 - [Přepínače trasování](../../../../../docs/framework/debug-trace-profile/trace-switches.md)

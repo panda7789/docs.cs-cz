@@ -1,13 +1,13 @@
 ---
-title: <transport> z <netHttpBinding>
+title: <transport> of <netHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 3b180006-1661-43bf-a699-96fd3da469af
-ms.openlocfilehash: 4d84d99660e4804a5eff2e343ba01c2983520b8f
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 44e334c3313f93a23ca7df15ba377c5568a92397
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57379728"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59188796"
 ---
 # <a name="transport-of-nethttpbinding"></a>\<přenos > z \<netHttpBinding >
 Definuje vlastnosti, které řídí parametry ověřování pro přenos pomocí protokolu HTTP.  
@@ -54,9 +54,9 @@ Definuje vlastnosti, které řídí parametry ověřování pro přenos pomocí 
   
 ## <a name="clientcredentialtype-attribute"></a>clientCredentialType Attribute  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
-|Žádná|Zprávy nejsou zabezpečená při přenosu.|  
+|Žádný|Zprávy nejsou zabezpečená při přenosu.|  
 |Základní|Určuje základní ověřování.|  
 |ověřování algoritmem Digest|Určuje, ověřování hodnotou hash.|  
 |Ntlm|Určuje ověřování protokolem NTLM, pokud je to možné a pokud se nezdaří ověřování Windows.|  
@@ -64,9 +64,9 @@ Definuje vlastnosti, které řídí parametry ověřování pro přenos pomocí 
   
 ## <a name="proxycredentialtype-attribute"></a>proxyCredentialType Attribute  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
-|Žádná|-Zprávy nejsou zabezpečená při přenosu.|  
+|Žádné|-Zprávy nejsou zabezpečená při přenosu.|  
 |Základní|Základní ověřování určuje, jak jsou definovány v dokumentu RFC 2617 – ověřování pomocí protokolu HTTP: Základní a ověřování algoritmem Digest.|  
 |ověřování algoritmem Digest|Ověřování algoritmem digest Určuje, jak jsou definovány v dokumentu RFC 2617 – ověřování pomocí protokolu HTTP: Základní a ověřování algoritmem Digest.|  
 |Ntlm|Určuje ověřování protokolem NTLM, pokud je to možné a pokud se nezdaří ověřování Windows.|  
@@ -74,13 +74,13 @@ Definuje vlastnosti, které řídí parametry ověřování pro přenos pomocí 
 |Certifikát|Provádí pomocí certifikátu ověřování klienta. Tato možnost funguje jenom v případě, `Mode` atributu nadřazeného elementu `security` element je nastavena na přenos a nebude fungovat, pokud je nastaveno na TransportCredentialOnly.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádná  
+ Žádné  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<zabezpečení >](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-nethttpbinding.md)|Definuje možnosti zabezpečení pro [ \<netHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/nethttpbinding.md).|  
+|[\<security>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-nethttpbinding.md)|Definuje možnosti zabezpečení pro [ \<netHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/nethttpbinding.md).|  
   
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje použití zabezpečení přenosu SSL s základní vazby. Základní vazby ve výchozím nastavení podporuje komunikaci pomocí protokolu HTTP.  
@@ -118,6 +118,7 @@ Definuje vlastnosti, které řídí parametry ověřování pro přenos pomocí 
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.BasicHttpSecurityMode.Transport>
 - <xref:System.ServiceModel.Configuration.HttpTransportSecurityElement>
 - <xref:System.ServiceModel.HttpTransportSecurity>

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - strings [Windows Forms], drawing vertical
 - vertical text [Windows Forms], drawing
 ms.assetid: 50c69046-4188-47d9-b949-cc2610ffd337
-ms.openlocfilehash: 720e343f1b3b20fe3df96a03fbd67ee473ec13f6
-ms.sourcegitcommit: 16aefeb2d265e69c0d80967580365fabf0c5d39a
+ms.openlocfilehash: 75f5d8faa4dc4b7e022cd6de2e6db49f4fa9030c
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58125405"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59190220"
 ---
 # <a name="how-to-create-vertical-text"></a>Postupy: Vytvoření svislého textu
 Můžete použít <xref:System.Drawing.StringFormat> objektu k určení, že text být vykreslován svisle spíše než vodorovně.  
@@ -32,7 +32,8 @@ Můžete použít <xref:System.Drawing.StringFormat> objektu k určení, že tex
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
   
--   V předchozím příkladu je určený k použití pomocí Windows Forms a vyžaduje <xref:System.Windows.Forms.PaintEventArgs> `e` , což je parametr <xref:System.Windows.Forms.PaintEventHandler>.  
+-   V předchozím příkladu je určený k použití pomocí Windows Forms a vyžaduje <xref:System.Windows.Forms.PaintEventArgs>`e` , což je parametr <xref:System.Windows.Forms.PaintEventHandler>.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Postupy: Kreslení textu pomocí GDI](how-to-draw-text-with-gdi.md)

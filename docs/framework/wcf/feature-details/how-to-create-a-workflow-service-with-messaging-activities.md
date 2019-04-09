@@ -2,12 +2,12 @@
 title: 'Postupy: Vytvoření služby pracovního postupu pomocí činnosti související se zprávami'
 ms.date: 03/30/2017
 ms.assetid: 53d094e2-6901-4aa1-88b8-024b27ccf78b
-ms.openlocfilehash: 83e96a91348cd8f703801252109bd474df58a679
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
-ms.translationtype: MT
+ms.openlocfilehash: d40273fe637e673456453ba72bdf6da282505488
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58466202"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59192815"
 ---
 # <a name="how-to-create-a-workflow-service-with-messaging-activities"></a>Postupy: Vytvoření služby pracovního postupu pomocí činnosti související se zprávami
 Toto téma popisuje, jak vytvořit jednoduchý pracovní postup službu pomocí aktivit zasílání zpráv. Toto téma se zaměřuje na mechanismu vytvoření služby pracovního postupu, kde se skládá pouze z aktivity zasílání zpráv služby. Ve službě reálného světa pracovní postup obsahuje mnoho dalších aktivit. Služba implementuje jednu operaci volat odezvu, která přebírá řetězec a vrátí řetězec volajícímu. Toto téma je první v řadě dvou tématech. Další téma [How To: Přístup k Service z aplikace pracovního postupu](../../../../docs/framework/wcf/feature-details/how-to-access-a-service-from-a-workflow-application.md) popisuje, jak vytvořit aplikace pracovního postupu, která může volat služby vytvořené v tomto tématu.  
@@ -90,6 +90,7 @@ Toto téma popisuje, jak vytvořit jednoduchý pracovní postup službu pomocí 
 4.  Pokračovat k [jak: Přístup k Service z aplikace pracovního postupu](../../../../docs/framework/wcf/feature-details/how-to-access-a-service-from-a-workflow-application.md) tématu k vytvoření klienta pracovní postup, který volá tuto službu.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Služby pracovních postupů](../../../../docs/framework/wcf/feature-details/workflow-services.md)
 - [Přehled hostování služeb pracovních postupů](../../../../docs/framework/wcf/feature-details/hosting-workflow-services-overview.md)
 - [Aktivity zasílání zpráv](../../../../docs/framework/wcf/feature-details/messaging-activities.md)

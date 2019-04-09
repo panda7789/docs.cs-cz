@@ -7,12 +7,12 @@ helpviewer_keywords:
 - toolbars [Windows Forms], built-in rafting
 - ToolStripContainer control [Windows Forms], about ToolStripContainer control
 ms.assetid: c7d63bff-64e2-4a63-bd89-d31bc96dacb8
-ms.openlocfilehash: 1f8d8bf8edd7968ed2d2a5c4ddd654dccf318f71
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c279316c2a372a1498707b27ec8658813306304b
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54654045"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59191260"
 ---
 # <a name="toolstripcontainer-control-overview"></a>ToolStripContainer – přehled ovládacího prvku
 A <xref:System.Windows.Forms.ToolStripContainer> má panely na levé, pravé, horní a dolní strana pro umístění a rafting <xref:System.Windows.Forms.ToolStrip>, <xref:System.Windows.Forms.MenuStrip>, a <xref:System.Windows.Forms.StatusStrip> ovládací prvky. Více <xref:System.Windows.Forms.ToolStrip> ovládací prvky zásobníku svisle, pokud je vložíte do doleva nebo doprava <xref:System.Windows.Forms.ToolStripContainer>. Jejich řadily vodorovně, pokud je umístíte v horní nebo dolní <xref:System.Windows.Forms.ToolStripContainer>. Můžete použít centrální <xref:System.Windows.Forms.ToolStripContentPanel> z <xref:System.Windows.Forms.ToolStripContainer> na pozici tradiční ovládací prvky ve formuláři.  
@@ -21,7 +21,7 @@ A <xref:System.Windows.Forms.ToolStripContainer> má panely na levé, pravé, ho
   
 ### <a name="important-toolstripcontainer-members"></a>ToolStripContainer – důležité členy  
   
-|Název|Popis|  
+|Name|Popis|  
 |----------|-----------------|  
 |<xref:System.Windows.Forms.ToolStripContainer.BottomToolStripPanel%2A>|Získá spodního panelu ovládacího prvku <xref:System.Windows.Forms.ToolStripContainer>.|  
 |<xref:System.Windows.Forms.ToolStripContainer.BottomToolStripPanelVisible%2A>|Získá nebo nastaví hodnotu označující, zda spodního panelu ovládacího prvku <xref:System.Windows.Forms.ToolStripContainer> je viditelný.|  
@@ -33,5 +33,6 @@ A <xref:System.Windows.Forms.ToolStripContainer> má panely na levé, pravé, ho
 |<xref:System.Windows.Forms.ToolStripContainer.TopToolStripPanelVisible%2A>|Získá nebo nastaví hodnotu označující, zda horního panelu ovládacího prvku <xref:System.Windows.Forms.ToolStripContainer> je viditelný.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.ToolStripContainer>
 - <xref:System.Windows.Forms.ToolStripContentPanel>

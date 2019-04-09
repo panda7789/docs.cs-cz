@@ -2,12 +2,12 @@
 title: 'Postupy: Zákaz šifrování digitálních podpisů'
 ms.date: 03/30/2017
 ms.assetid: fd174313-ad81-4dca-898a-016ccaff8187
-ms.openlocfilehash: 360d939db1c7e75cea1b6f3c6a013f214564a717
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 6f5004224f66f2961efc3ee920989487273c3eff
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54576366"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59192118"
 ---
 # <a name="how-to-disable-encryption-of-digital-signatures"></a>Postupy: Zákaz šifrování digitálních podpisů
 Ve výchozím nastavení zprávy je podepsaná a digitálně podpis zašifrují. Toto se řídí vytváření vlastní vazby s instancí <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement> nebo <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> a nastavení `MessageProtectionOrder` vlastnost buď třídy <xref:System.ServiceModel.Security.MessageProtectionOrder> hodnota výčtu. Výchozí hodnota je <xref:System.ServiceModel.Security.MessageProtectionOrder.SignBeforeEncryptAndEncryptSignature>. Tento proces využívá až 30 procent déle než jednoduše podepisování a šifrování založené na celkovou velikost zprávy (Čím menší zprávy, tím větší dopad na výkon). Zakázáním šifrování podpisu, ale může umožnit útočníkovi možnost uhádnout obsah zprávy. Je to možné, proto prvek podpisu obsahuje kód hash ve formátu prostého textu každý podepsaný části ve zprávě. Například i když obsah zprávy se šifrují ve výchozím nastavení, nešifrované podpis obsahuje kód hash před šifrování těla zprávy. Pokud sadu možných hodnot pro část šifrovaný a podepsaný držitelem je nízká, útočník může být možné odvodit obsah podle hodnoty hash. Šifrování podpis zmírňuje tohoto útoku.  
@@ -26,4 +26,5 @@ Ve výchozím nastavení zprávy je podepsaná a digitálně podpis zašifrují.
 3.  Nastavte <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement.MessageProtectionOrder%2A?displayProperty=nameWithType> vlastnost <xref:System.ServiceModel.Security.MessageProtectionOrder.SignBeforeEncrypt>, nebo nastavte <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement.MessageProtectionOrder%2A?displayProperty=nameWithType> vlastnost <xref:System.ServiceModel.Security.MessageProtectionOrder.SignBeforeEncrypt>.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Možnosti zabezpečení u vlastních vazeb](../../../../docs/framework/wcf/feature-details/security-capabilities-with-custom-bindings.md)

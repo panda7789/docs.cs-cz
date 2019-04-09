@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 28a3f509-07e2-4dbe-81df-874c5e969cc4
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 3daf0a1cf2d1ae55780a16612aa33a0fdb70a52b
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: e5320bc6c5105c95d63b1888e1adbc2ecf1bc5fb
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55282032"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59199996"
 ---
 # <a name="mdbgexe-net-framework-command-line-debugger"></a>MDbg.exe (ladicí program z příkazového řádku .NET Framework)
 Aplikace .NET Framework Command-Line Debugger pomáhá výrobcům nástrojů a vývojářům aplikací najít a opravit chyby v programech, které využívají .NET Framework Common Language Runtime. Tento nástroj používá API ladění za běhu k poskytování služeb ladění. Pomocí MDbg.exe můžete ladit pouze spravovaný kód; ladění nespravovaného kódu není podporováno.  
@@ -81,7 +81,7 @@ MDbg [ProgramName[arguments]] [options]
 |**t**[**hread**] [*Novévlákno*] [-*nick pojmenování*`]`|Příkaz vlákna bez parametrů zobrazí všechna spravovaná vlákna v aktuálním procesu. Vlákna jsou zpravidla identifikována číslem vlákna; pokud je však vlákno pojmenováno, zobrazí se místo čísla toto pojmenování. Můžete použít `-nick` parametr pojmenovat vlákno.<br /><br /> -   **vlákno** `-nick` *threadName* přiřadí pojmenování aktuálně běžícímu vláknu.<br /><br /> Pojmenování nesmí být číselné hodnoty. Pokud aktuální vlákno má již přiděleno pojmenování, staré pojmenování se nahradí novým. Pokud je nové pojmenování prázdný řetězec (""), pojmenování pro aktuální vlákno se odstraní a vláknu se nepřidělí další pojmenování.|  
 |**u**[**p**]|Přesune aktivní rámec zásobníku směrem nahoru.|  
 |**uwgc**[**zpracování**] [*var*] &#124; [*adresu*]|Vytiskne proměnnou sledovanou popisovačem. Popisovač lze zadat pomocí názvu nebo adresy.|  
-|**Kdy**|Zobrazí aktuálně aktivní `when` příkazy.<br /><br /> **Když** **odstranit všechny** &#124; `num` [`num` [`num` ...]] – Odstraní `when` příkaz určený argumentem číslo nebo všechny `when` příkazy Pokud `all` je zadán.<br /><br /> **Když** `stopReason` [`specific_condition`] **proveďte** `cmd` [`cmd` [`cmd` ...]] – *Důvoduzastavení* parametr může být jedna z následujících akcí:<br /><br /> `StepComplete`, `ProcessExited`, `ThreadCreated`, `BreakpointHit`, `ModuleLoaded`, `ClassLoaded`, `AssemblyLoaded`, `AssemblyUnloaded`, `ControlCTrapped`, `ExceptionThrown`, `UnhandledExceptionThrown`, `AsyncStop`, `AttachComplete`, `UserBreak`, `EvalComplete`, `EvalException`, `RemapOpportunityReached`, `NativeStop`.<br /><br /> *specific_condition* může být jedna z následujících akcí:<br /><br /> -   *číslo* – `ThreadCreated` a `BreakpointHit`, aktivuje akci pouze při zastavení vláknem ID/čísla zarážky se stejnou hodnotou.<br />-[`!`]*název* – `ModuleLoaded`, `ClassLoaded`, `AssemblyLoaded`, `AssemblyUnloaded`, `ExceptionThrown`, a `UnhandledExceptionThrown`, aktivuje akci pouze v případě, že název odpovídá názvu  *Důvoduzastavení*.<br /><br /> *specific_condition* musí být prázdná pro ostatní hodnoty *Důvoduzastavení*.|  
+|**when**|Zobrazí aktuálně aktivní `when` příkazy.<br /><br /> **Když** **odstranit všechny** &#124; `num` [`num` [`num` ...]] – Odstraní `when` příkaz určený argumentem číslo nebo všechny `when` příkazy Pokud `all` je zadán.<br /><br /> **Když** `stopReason` [`specific_condition`] **proveďte** `cmd` [`cmd` [`cmd` ...]] – *Důvoduzastavení* parametr může být jedna z následujících akcí:<br /><br /> `StepComplete`, `ProcessExited`, `ThreadCreated`, `BreakpointHit`, `ModuleLoaded`, `ClassLoaded`, `AssemblyLoaded`, `AssemblyUnloaded`, `ControlCTrapped`, `ExceptionThrown`, `UnhandledExceptionThrown`, `AsyncStop`, `AttachComplete`, `UserBreak`, `EvalComplete`, `EvalException`, `RemapOpportunityReached`, `NativeStop`.<br /><br /> *specific_condition* může být jedna z následujících akcí:<br /><br /> -   *číslo* – `ThreadCreated` a `BreakpointHit`, aktivuje akci pouze při zastavení vláknem ID/čísla zarážky se stejnou hodnotou.<br />-[`!`]*název* – `ModuleLoaded`, `ClassLoaded`, `AssemblyLoaded`, `AssemblyUnloaded`, `ExceptionThrown`, a `UnhandledExceptionThrown`, aktivuje akci pouze v případě, že název odpovídá názvu  *Důvoduzastavení*.<br /><br /> *specific_condition* musí být prázdná pro ostatní hodnoty *Důvoduzastavení*.|  
 |**w**[**tady**] [`-v`] [`-c` *hloubky*] [*Idvlákna*]|Zobrazí informace o ladění týkající se rámců zásobníku.<br /><br /> – `-v` Poskytuje podrobné informace o každém zobrazeném rámci zásobníku.<br />-Zadáním čísla pro `depth` omezuje počet rámců. Použití **všechny** příkazu zobrazíte všechny rámce. Výchozí hodnota je 100.<br />– Pokud je zadat *Idvlákna* parametr, můžete řídit, které vlákno je asociováno se zásobníkem. Ve výchozím stavu se jedná pouze o aktuální vlákno. Použití **všechny** příkazu zobrazíte všechna vlákna.|  
 |**x** [`-c`*numSymbols*] [*module*[`!`*pattern*]]|Zobrazí funkce, které odpovídají `pattern` pro modul.<br /><br /> Pokud *Číselnésymboly* není zadána, výstup se omezí na zadané číslo. Pokud `!` (značící regulární výraz) není pro zadaný *vzor*, zobrazí se všechny funkce. Pokud *modulu* není zadán, jsou zobrazeny všechny nahrané moduly. Symboly (*~#*) slouží k nastavení zarážek pomocí **přerušení** příkazu.|  
   
@@ -105,5 +105,6 @@ mdbg>
  Jakmile budete v ladicím programu, použijte příkazy a argumenty popsané v předchozí části.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Nástroje](../../../docs/framework/tools/index.md)
 - [Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

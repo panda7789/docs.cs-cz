@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 08a9bc8aa4aa70ad6b01c58abccd145ae43d8a52
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 60d3b22d8dc140bf16af7f59781d5ed103dafbf4
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54568286"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59191702"
 ---
 # <a name="icordebugheapvalue3-interface"></a>ICorDebugHeapValue3 – rozhraní
 Zpřístupní vlastnosti uzamčení sledování objektů. Toto rozhraní rozšiřuje ICorDebugHeapValue a icordebugheapvalue2 – rozhraní.  
@@ -48,5 +48,6 @@ Zpřístupní vlastnosti uzamčení sledování objektů. Toto rozhraní rozši�
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+
+- [Debugging – rozhraní](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
 - [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)

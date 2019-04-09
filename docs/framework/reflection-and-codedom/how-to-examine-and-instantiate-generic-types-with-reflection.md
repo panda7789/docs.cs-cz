@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: f93b03b0-1778-43fc-bc6d-35983d210e74
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 69864e647a7cf4e6193f4eb76ce2b7bc93b09404
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: ed5ef0ced0497895e8688bdb27c6f7f378d7cd3a
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54622049"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59189636"
 ---
 # <a name="how-to-examine-and-instantiate-generic-types-with-reflection"></a>Postupy: Prozkoumání a vytvoření instancí obecných typů pomocí reflexe
 Získat informace o obecných typů stejným způsobem jako informace o ostatních typech: prozkoumáním <xref:System.Type> objekt, který reprezentuje obecného typu. Hlavní rozdíl je, že obecný typ obsahuje seznam <xref:System.Type> reprezentují jeho parametry obecného typu. První postup v této části prozkoumá obecných typů.  
@@ -124,6 +124,7 @@ Získat informace o obecných typů stejným způsobem jako informace o ostatní
 -   Kompilace kódu do příkazového řádku pomocí csc.exe a vbc.exe, cl.exe. Ke kompilaci kódu v sadě Visual Studio, umístěte ho do šablony projektu konzolové aplikace.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Type>
 - <xref:System.Reflection.MethodInfo>
 - [Reflexe a obecné typy](../../../docs/framework/reflection-and-codedom/reflection-and-generic-types.md)

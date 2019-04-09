@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - handling faults [WCF], sending
 ms.assetid: 7be6fb96-ce2a-450b-aebe-f932c6a4bc5d
-ms.openlocfilehash: 63a761b4a79743b0d4a03392ced465c3105db9bd
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2757f98066931ca1b5e3ef147cee2c819ee22606
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54602530"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59195056"
 ---
 # <a name="sending-and-receiving-faults"></a>Chyby odesílání a přijímání
 Chyb SOAP sdělit podmínku informace o chybě ze služby do klienta a v případě duplexní z klienta ke službě interoperabilní způsobem. Obvykle služby definuje vlastní chyby obsah a určuje, které operace vrátit. (Další informace najdete v tématu [definiční a určení chyb](../../../docs/framework/wcf/defining-and-specifying-faults.md).) Toto téma popisuje, jak služba nebo duplexní klient může poslat tyto chyby došlo k odpovídající chybovou podmínku a způsob klienta nebo aplikace služby zpracovává tyto chyby. Přehled v aplikacích Windows Communication Foundation (WCF) pro zpracování chyb, naleznete v tématu [zadání a zpracování chyb v kontraktech a službách](../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md).  
@@ -105,8 +105,9 @@ Chyb SOAP sdělit podmínku informace o chybě ze služby do klienta a v přípa
  [!code-vb[FaultContractAttribute#3](../../../samples/snippets/visualbasic/VS_Snippets_CFX/faultcontractattribute/vb/client.vb#3)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.FaultException>
 - <xref:System.ServiceModel.FaultException%601>
 - <xref:System.ServiceModel.CommunicationException?displayProperty=nameWithType>
 - [Očekávané výjimky](../../../docs/framework/wcf/samples/expected-exceptions.md)
-- [Použít zavřít a přerušení k uvolnění prostředků klienta WCF](../../../docs/framework/wcf/samples/use-close-abort-release-wcf-client-resources.md)
+- [Použití metod Close a Abort k uvolnění prostředků klienta WCF](../../../docs/framework/wcf/samples/use-close-abort-release-wcf-client-resources.md)

@@ -6,18 +6,16 @@ helpviewer_keywords:
 - element tree [WPF]
 - visual tree [WPF]
 ms.assetid: e83f25e5-d66b-4fc7-92d2-50130c9a6649
-ms.openlocfilehash: 581bd29de07697794e1e752c02068d31db9e0de8
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: f9b507c874dfe0ab3feca19e7fcf79df5af93e10
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57354645"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59197682"
 ---
 # <a name="trees-in-wpf"></a>Stromy v subsystému WPF
 V mnoha technologií prvky a součásti jsou uspořádány do stromové struktury, ve kterém vývojáři přímo manipulace s uzly objektu ve stromové struktuře ovlivnit vykreslování nebo chování aplikace. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] jak definovat vztahy mezi prvky programu také používá několik metaphors stromové struktury. Ve většině případů vývojáře WPF může vytvářet aplikace v kódu nebo definovat části aplikace v XAML při koncepčně uvažovat objekt stromu jedná, ale bude volání konkrétní rozhraní API nebo použijte konkrétní značky, které udělají Ano spíše než některé obecné strom manipulaci s objekty rozhraní API jako je například můžete použít v XML modelu DOM. Poskytuje dvě třídy pomocné rutiny, které poskytují metafora strom, WPF <xref:System.Windows.LogicalTreeHelper> a <xref:System.Windows.Media.VisualTreeHelper>. Podmínky vizuální strom a Logická stromová struktura používají také v dokumentaci k WPF vzhledem k tomu, že tyto stejné struktury jsou užitečné pro pochopení chování některé klíčové funkce WPF. Toto téma definuje, co představují vizuální strom a Logická stromová struktura, pojednává o tom, jak takové stromů souvisí celkovou stromu koncept objektu a zavádí <xref:System.Windows.LogicalTreeHelper> a <xref:System.Windows.Media.VisualTreeHelper>s.  
-  
 
-  
 <a name="element_tree"></a>   
 ## <a name="trees-in-wpf"></a>Stromy v subsystému WPF  
  Nejúplnější stromové struktury v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] je strom objektů. Pokud definujete stránku aplikace v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] a pak načíst [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], stromové struktury je založeno na vnoření vztahy mezi elementy v kódu. Definovat aplikaci nebo část aplikace v kódu a potom stromové struktury je vytvořen na základě způsobu přiřazování hodnot vlastností, které implementují obsahu modelu pro daný objekt. V [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)], existují dva způsoby, které je conceptualized stromu kompletní objekt a popřípadě k jeho veřejné rozhraní API: jako Logická stromová struktura a vizuálního stromu. Rozdíly mezi Logická stromová struktura a vizuální strom vždy nejsou nezbytně důležité, ale čas od času mohou způsobit problémy s některými [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] subsystémy a vliv možností, které provedete v značek nebo kódu.  
@@ -87,8 +85,9 @@ V mnoha technologií prvky a součásti jsou uspořádány do stromové struktur
  Vyhledání prostředku můžete také rozšířit nad rámec okamžité Logická stromová struktura. Pro kód aplikace vyhledání prostředku můžete pokračovat dále na slovníky prostředků na úrovni aplikace a potom na hodnoty pro podporu a systém motivů, které jsou odkazovány jako statické vlastnosti nebo klíče. Motivy, sami odkazovat hodnot systémového mimo Logická stromová struktura motivu, pokud jsou dynamické vzorce reference na prostředky. Další informace o zdrojových slovnících a logika vyhledávání, najdete v části [prostředky XAML](xaml-resources.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled vstupu](input-overview.md)
 - [Přehled vykreslování grafiky WPF](../graphics-multimedia/wpf-graphics-rendering-overview.md)
 - [Přehled směrovaných událostí](routed-events-overview.md)
-- [Inicializace elementů objektu, které nejsou ve stromu objektů](initialization-for-object-elements-not-in-an-object-tree.md)
+- [Inicializace elementů objektu, které nejsou obsaženy ve stromu objektů](initialization-for-object-elements-not-in-an-object-tree.md)
 - [Architektura WPF](wpf-architecture.md)

@@ -7,17 +7,16 @@ dev_langs:
 helpviewer_keywords:
 - WPF application [WPF], building
 ms.assetid: a58696fd-bdad-4b55-9759-136dfdf8b91c
-ms.openlocfilehash: d60b6babebd69e45335ab4c12cb797126ec6b6a3
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
-ms.translationtype: MT
+ms.openlocfilehash: 706999cb403ecf32f5dfe8443e00dd84efdebd23
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57364291"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59184480"
 ---
 # <a name="building-a-wpf-application-wpf"></a>Sestavení aplikace WPF (WPF)
 Aplikace Windows Presentation Foundation (WPF) může být sestaven jako [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] spustitelné soubory (.exe), knihovny (DLL), nebo kombinací obou typů sestavení. Toto téma popisuje, jak vytvořit [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikací a popisuje klíčové kroky v procesu sestavení.  
-  
-  
+
 <a name="Building_a_WPF_Application_using_Command_Line"></a>   
 ## <a name="building-a-wpf-application"></a>Sestavení aplikace WPF  
  Aplikace WPF, mohou být zkompilovány následujícími způsoby:  
@@ -167,7 +166,8 @@ End Sub
 -   Nic přepsán (Pokud se nic v projektu nezměnilo).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Nasazení aplikace WPF](deploying-a-wpf-application-wpf.md)
 - [Referenční dokumentace WPF MSBuild](/visualstudio/msbuild/wpf-msbuild-reference)
 - [Sbalení URI v technologii WPF](pack-uris-in-wpf.md)
-- [Prostředek, obsah a datové soubory aplikace WPF](wpf-application-resource-content-and-data-files.md)
+- [Zdroj, obsah a datové soubory zdroje aplikací WPF](wpf-application-resource-content-and-data-files.md)

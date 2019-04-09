@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - configuring HTTP [WCF]
 ms.assetid: b0c29a86-bc0c-41b3-bc1e-4eb5bb5714d4
-ms.openlocfilehash: 25ca96104ef8a63a7c6988f6dfba309e9aa44a9b
-ms.sourcegitcommit: facefcacd7ae2e5645e463bc841df213c505ffd4
-ms.translationtype: MT
+ms.openlocfilehash: 3decf955748b156b8eff4b5286a70e67d8ac14ad
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55738926"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59195147"
 ---
 # <a name="configuring-http-and-https"></a>Konfigurace HTTP a HTTPS
 Služby WCF a klienti mohou komunikovat prostřednictvím protokolu HTTP a HTTPS. Nastavení HTTP/HTTPS se konfigurují pomocí Internetové informační služby (IIS) nebo pomocí nástroje příkazového řádku. Když je služba WCF hostované na nastavení služby IIS protokolu HTTP nebo HTTPS lze nastavit v rámci služby IIS (pomocí nástroje inetmgr.exe). Pokud je služba WCF v místním prostředí, HTTP nebo HTTPS je nakonfigurováno pomocí nástroje příkazového řádku.  
@@ -91,5 +91,6 @@ netsh http add iplisten ipaddress=0.0.0.0:8000
  Služba IIS nepodporuje sdílení portů ve [!INCLUDE[wxp](../../../../includes/wxp-md.md)]. Pokud je spuštěna služba IIS a služby WCF se pokusí použít obor názvů se stejný port, nepodaří spustit službu WCF. Služba IIS a WCF, které oba ve výchozím nastavení používá port 80. Změňte přiřazení portů pro jednu ze služeb nebo pomocí seznamu naslouchání IP k přiřazení služby WCF na síťový adaptér není používaný službou IIS. Služba IIS 6.0 a novějším mají upravený tak, aby pomocí rozhraní API serveru HTTP.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.WSDualHttpBinding>
 - [Postupy: Konfigurace portu s certifikátem SSL](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md)

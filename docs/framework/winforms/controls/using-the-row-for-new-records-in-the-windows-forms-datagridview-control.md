@@ -6,12 +6,12 @@ helpviewer_keywords:
 - rows [Windows Forms], new records
 - DataGridView control [Windows Forms], data entry
 ms.assetid: 6110f1ea-9794-442c-a98a-f104a1feeaf4
-ms.openlocfilehash: 041738ba375022be7c80526f25e5761314dffbf1
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 67c87b28f04b028f329663d6cf8215370a00ef2f
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57703917"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59184818"
 ---
 # <a name="using-the-row-for-new-records-in-the-windows-forms-datagridview-control"></a>Použití řádku pro nové záznamy v ovládacím prvku Windows Forms DataGridView
 Při použití <xref:System.Windows.Forms.DataGridView> pro úpravy dat v aplikaci, bude často chcete dát uživatelům možnost přidávat nové řádky dat do úložiště. <xref:System.Windows.Forms.DataGridView> Ovládací prvek podporuje tuto funkci poskytnutím řádek pro nové záznamy, které je vždy zobrazen jako poslední řádek. Je označené atributem symbol hvězdičky (*) v záhlaví řádku. Následující části popisují některé z akcí, byste měli zvážit, když program s řádkem pro nové záznamy povoleno.  
@@ -58,6 +58,7 @@ Při použití <xref:System.Windows.Forms.DataGridView> pro úpravy dat v aplika
  Pokud jsou implementace virtuálního režimu, je potřeba sledovat, kdy je potřeba řádek pro nové záznamy v datovém modelu a kdy se mají vrátit zpět přidání řádku. Přesné implementaci této funkce závisí na implementaci datového modelu a jeho transakce sémantiku, například, zda je obor potvrzení změn na úrovni buněk nebo řádků. Další informace najdete v tématu [virtuálního režimu v ovládacím prvku Windows Forms DataGridView](virtual-mode-in-the-windows-forms-datagridview-control.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.DataGridView.DefaultValuesNeeded?displayProperty=nameWithType>
 - [Zadávání dat v ovládacím prvku Windows Forms DataGridView](data-entry-in-the-windows-forms-datagridview-control.md)

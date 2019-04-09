@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: c4577410-602e-44e5-9dab-fea7c55bcdfe
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c3cccb94268264217a1e6a1b5def71c6c433b820
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1a68aac2a92a0569e288da858e4a4e4695fd5eaa
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54614780"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59193912"
 ---
 # <a name="invalidcercall-mda"></a>invalidCERCall – pomocník spravovaného ladění (MDA)
 `invalidCERCall` Pomocníka spravovaného ladění (MDA) se aktivuje při volání v grafu (CER) oblasti omezeného provádění metody, která nemá žádný kontrakt spolehlivosti nebo kontrakt příliš slabé. Slabé smlouvy je kontrakt, který deklaruje, že nejhorší případ stavu poškození mají větší rozsah než instance předává do volání, to znamená, <xref:System.AppDomain> stav procesu může dojít k poškození nebo, který není výsledek vždy nedeterministicky nelze vypočítat Při volání v rámci CER.  
@@ -33,7 +33,7 @@ ms.locfileid: "54614780"
   
  Protože jakoukoli metodou s kontraktem slabé nebo neexistující mohou selhat nepředvídatelnými způsoby, modul runtime nebude pokoušet odstraňte přitom všechny své vlastní nepředvídatelných chyb z metody, která vznikají zavlečením opožděné kompilace JIT, slovník obecných typů naplnění nebo vlákna přeruší, např. To znamená když je toto MDA aktivováno, znamená to, že modul runtime nenabízela volané metody CER definovanému; v tomto uzlu byl ukončen grafu volání, vzhledem k tomu, že budete pokračovat k přípravě tento podstrom by pomohl maskování potenciální chyby.  
   
-## <a name="resolution"></a>Rozlišení  
+## <a name="resolution"></a>Řešení  
  Přidat smlouvu platný spolehlivost funkci nebo Vyhněte se použití volání dané funkce.  
   
 ## <a name="effect-on-the-runtime"></a>Vliv na modul Runtime  
@@ -55,6 +55,7 @@ ms.locfileid: "54614780"
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareMethod%2A>
 - <xref:System.Runtime.ConstrainedExecution>
 - [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)

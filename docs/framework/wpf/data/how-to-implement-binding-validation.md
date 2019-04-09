@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: Implementace ověření připojení'
+title: 'Postupy: Implementace ověření vazby'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - validation of binding [WPF]
 - data binding [WPF], validation of binding
 - binding [WPF], validation of
 ms.assetid: eb98b33d-9866-49ae-b981-bc5ff20d607a
-ms.openlocfilehash: eefdb3b1205a64221e3e9352f70e3d06dc074eff
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 3950df8b6f4b48a035c6ebf37d8d65c18cb82e1e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57368542"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59197214"
 ---
-# <a name="how-to-implement-binding-validation"></a>Postupy: Implementace ověření připojení
+# <a name="how-to-implement-binding-validation"></a>Postupy: Implementace ověření vazby
 Tento příklad ukazuje způsob použití <xref:System.Windows.Controls.Validation.ErrorTemplate%2A> a aktivační událost stylu poskytnout vizuální zpětnou vazbu a informuje uživatele, pokud je zadána neplatná hodnota, podle vlastního ověřovacího pravidla.  
   
 ## <a name="example"></a>Příklad  
@@ -38,5 +38,6 @@ Tento příklad ukazuje způsob použití <xref:System.Windows.Controls.Validati
  Všimněte si, že pokud nezadáte vlastní <xref:System.Windows.Controls.Validation.ErrorTemplate%2A> výchozí šablonu chyb se zobrazí na poskytují uživateli vizuální zpětnou vazbu, když dojde k chybě ověřování. Naleznete v části "Ověření dat" v [přehled datových vazeb](data-binding-overview.md) Další informace. Navíc [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje integrované ověřovací pravidlo, které zachytí výjimky, které jsou vyvolány při aktualizaci vlastnosti zdroje vazby. Další informace naleznete v tématu <xref:System.Windows.Controls.ExceptionValidationRule>.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled datových vazeb](data-binding-overview.md)
-- [Témata s postupy](data-binding-how-to-topics.md)
+- [– postupy](data-binding-how-to-topics.md)

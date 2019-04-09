@@ -1,5 +1,5 @@
 ---
-title: Element <assert>
+title: <assert> Prvek
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/assert
@@ -8,12 +8,12 @@ helpviewer_keywords:
 - <assert> element
 - assert element
 ms.assetid: ef4c3229-b151-4d85-8091-e6456af9b935
-ms.openlocfilehash: aa5682c1cb2d662e1352c1d6c78e1a4a7e41f760
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 2f3823265e358976f970cdfa36772d2251894280
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55259511"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59197604"
 ---
 # <a name="assert-element"></a>\<Assert – > – Element
 Určuje, jestli se má zobrazit okno se zprávou, když zavoláte <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType> metoda; také určuje název souboru pro zápis zpráv do.  
@@ -40,7 +40,7 @@ Určuje, jestli se má zobrazit okno se zprávou, když zavoláte <xref:System.D
   
 ## <a name="assertuienabled-attribute"></a>assertuienabled atribut  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |`true`|Zobrazí okno se zprávou. Toto nastavení je výchozí.|  
 |`false`|Nezobrazuje okno se zprávou.|  
@@ -70,5 +70,6 @@ Určuje, jestli se má zobrazit okno se zprávou, když zavoláte <xref:System.D
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Diagnostics.Debug>
 - [Trasování a ladění schématu nastavení](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)

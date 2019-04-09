@@ -1,15 +1,15 @@
 ---
-title: 'Průvodce: Dotazování napříč relacemi (C#)'
+title: 'Návod: Dotazování napříč relacemi (C#)'
 ms.date: 03/30/2017
 ms.assetid: 552abeb1-18f2-4e93-a9c6-ef7b2db30c32
-ms.openlocfilehash: a24d96c9d138f0dcd2f162dad474da01f49e45d2
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 52623b79492908a6c387715fef002d4b8927169c
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54563662"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59184883"
 ---
-# <a name="walkthrough-querying-across-relationships-c"></a>Průvodce: Dotazování napříč relacemi (C#)
+# <a name="walkthrough-querying-across-relationships-c"></a>Návod: Dotazování napříč relacemi (C#)
 Tento návod demonstruje použití [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] *přidružení* představují relace cizího klíče v databázi.  
   
  [!INCLUDE[note_settings_general](../../../../../../includes/note-settings-general-md.md)]  
@@ -89,4 +89,5 @@ Tento návod demonstruje použití [!INCLUDE[vbtecdlinq](../../../../../../inclu
  Dalšího názorného postupu ([názorný postup: Zpracování dat (C#)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-manipulating-data-csharp.md)) ukazuje, jak pracovat s daty. Tento názorný postup nevyžaduje uložit dva postupy v této sérii, které již byly dokončeny.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Učení podle návodů](../../../../../../docs/framework/data/adonet/sql/linq/learning-by-walkthroughs.md)

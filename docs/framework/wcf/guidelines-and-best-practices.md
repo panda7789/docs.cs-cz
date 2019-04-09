@@ -8,21 +8,21 @@ helpviewer_keywords:
 - WCF, best practices
 - Windows Communication Foundation, guidelines
 ms.assetid: 5098ba46-6e8d-4e02-b0c5-d737f9fdad84
-ms.openlocfilehash: d07af0df30f46d272b81042b009fca9661bbcbe5
-ms.sourcegitcommit: 0069cb3de8eed4e92b2195d29e5769a76111acdd
+ms.openlocfilehash: 1c16c0936f729636aaa56e6e50c33e18c2b0f788
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "56332413"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59181329"
 ---
 # <a name="guidelines-and-best-practices"></a>Směrnice a doporučené postupy
 Tento oddíl obsahuje témata, která poskytují pokyny pro vytváření aplikací pro Windows Communication Foundation (WCF).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Osvědčené postupy: Správa verzí kontraktů dat](../../../docs/framework/wcf/best-practices-data-contract-versioning.md)  
+ [Doporučené postupy: Správa verzí kontraktů dat](../../../docs/framework/wcf/best-practices-data-contract-versioning.md)  
  Vysvětluje, jak a kdy k vytvoření kontraktů dat, které nenaruší při vytváření budoucích verzí.  
   
- [Správa verzí služby](../../../docs/framework/wcf/service-versioning.md)  
+ [Verze služby](../../../docs/framework/wcf/service-versioning.md)  
  Vysvětluje, jak vzít v úvahu správy verzí ve službě WCF. Po nasazení služby (a koncových bodů, která zpřístupňují) potřebovat změnit, například, tím se uspokojí mění obchodní požadavky nebo požadavky na IT, nebo chcete-li vyřešit problémy. Každá změna zavádí novou verzi služby.  
   
  [Vyrovnávání zatížení](../../../docs/framework/wcf/load-balancing.md)  
@@ -45,7 +45,8 @@ Tento oddíl obsahuje témata, která poskytují pokyny pro vytváření aplikac
  [Základní programování WCF](../../../docs/framework/wcf/basic-wcf-programming.md)  
   
 ## <a name="see-also"></a>Viz také:
-- [Co je Windows Communication Foundation](../../../docs/framework/wcf/whats-wcf.md)
+
+- [Co je to Windows Communication Foundation](../../../docs/framework/wcf/whats-wcf.md)
 - [Ukázky Windows Communication Foundation (WCF)](./samples/index.md)
 - [Koncepční přehled](../../../docs/framework/wcf/conceptual-overview.md)
 - [Sestavování klientů](../../../docs/framework/wcf/building-clients.md)

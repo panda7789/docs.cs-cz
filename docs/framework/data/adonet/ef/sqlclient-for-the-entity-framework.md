@@ -2,12 +2,12 @@
 title: SqlClient pro Entity Framework
 ms.date: 03/30/2017
 ms.assetid: 9a5d6d39-d955-43a5-a5c2-931c239398f1
-ms.openlocfilehash: 5b47b035932062b859d470716903e826b2bb6f3d
-ms.sourcegitcommit: c6f69b0cf149f6b54483a6d5c2ece222913f43ce
+ms.openlocfilehash: d81499961e7e47bba3b2594ddddd192c87a4a936
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55903845"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59195459"
 ---
 # <a name="sqlclient-for-the-entity-framework"></a>SqlClient pro Entity Framework
 Tato část popisuje zprostředkovatele dat .NET Framework pro SQL Server (SqlClient), která umožňuje rozhraní Entity Framework pracovat prostřednictvím systému Microsoft SQL Server.  
@@ -48,6 +48,7 @@ Tato část popisuje zprostředkovatele dat .NET Framework pro SQL Server (SqlCl
  [Známé problémy v SqlClient pro Entity Framework](../../../../../docs/framework/data/adonet/ef/known-issues-in-sqlclient-for-entity-framework.md)  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Jazyk Entity SQL](../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-language.md)
 - [Referenční dokumentace jazyka](../../../../../docs/framework/data/adonet/ef/language-reference/index.md)
 - [Známé problémy v zprostředkovatelem SqlClient pro Entity Framework](../../../../../docs/framework/data/adonet/ef/sqlclient-for-the-entity-framework.md)

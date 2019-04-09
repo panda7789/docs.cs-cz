@@ -8,12 +8,12 @@ helpviewer_keywords:
 - tool area [Windows Forms]
 - vertical space
 ms.assetid: aa47af39-1e71-40ee-bb75-2d2478f81bd0
-ms.openlocfilehash: 9982d7b1edde083d546681b37966358d2aac23bd
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 8dc45e1cedca6a4c73ada057168e0d3194bef741
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57718490"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59192274"
 ---
 # <a name="toolstrippanel-control"></a>ToolStripPanel – ovládací prvek
 `ToolStripPanel` ovládací prvek umožňuje sdílení vodorovný nebo svislý prostor v rámci oblasti nástroje, pokud je ukotven a uspořádání <xref:System.Windows.Forms.ToolStrip> řídí, kdy není nutné čtyř panelů a centrální panel ovládacího prvku <xref:System.Windows.Forms.ToolStripContainer>.  
@@ -21,13 +21,13 @@ ms.locfileid: "57718490"
  Témata v této části popisují, koncepty a techniky, které můžete použít k sestavení `ToolStripPanel` funkce do svých aplikací.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Přehled ovládacího prvku ToolStripPanel](toolstrippanel-control-overview.md)  
+ [ToolStripPanel – přehled ovládacího prvku](toolstrippanel-control-overview.md)  
  Obsahuje témata, které popisují účel a hlavní koncepty formulářů Windows <xref:System.Windows.Forms.ToolStripContainer> ovládacího prvku.  
   
- [Postupy: Připojte se k prvku ToolStripPanels](how-to-join-toolstrippanels.md)  
+ [Postupy: Spojení prvků ToolStripPanel](how-to-join-toolstrippanels.md)  
  Ukazuje přidání <xref:System.Windows.Forms.ToolStrip> ovládacích prvků `ToolStripPanel`.  
   
- [Postupy: Použití prvku ToolStripPanels pro MDI](how-to-use-toolstrippanels-for-mdi.md)  
+ [Postupy: Použití prvků ToolStripPanel pro MDI](how-to-use-toolstrippanels-for-mdi.md)  
  Ukazuje flexibilitu poskytované `ToolStripPanel` ovládací prvky v aplikaci rozhraní více dokumentů.  
   
 ## <a name="reference"></a>Odkaz  
@@ -35,4 +35,5 @@ ms.locfileid: "57718490"
  Poskytuje referenční dokumentaci pro <xref:System.Windows.Forms.ToolStripPanel> ovládacího prvku.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Ovládací prvky používané ve Windows Forms](controls-to-use-on-windows-forms.md)

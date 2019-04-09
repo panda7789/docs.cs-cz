@@ -8,12 +8,12 @@ helpviewer_keywords:
 - CommandBindings [WPF]
 - commanding [WPF]
 ms.assetid: d8016266-58d9-48f7-8298-a86b7ed49fbd
-ms.openlocfilehash: a24a7a31154de58051677ba41496fcf4da3f2568
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: bf01066a35672e1996f193abc6d76153e5e9dd46
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57355061"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59181698"
 ---
 # <a name="how-to-enable-a-command"></a>Postupy: Povolení příkazu
 Následující příklad ukazuje, jak pomocí příkazů v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].  Tento příklad ukazuje, jak přidružit <xref:System.Windows.Input.RoutedCommand> k <xref:System.Windows.Controls.Button>, vytvořit <xref:System.Windows.Input.CommandBinding>a vytváření obslužných rutin událostí, které implementují <xref:System.Windows.Input.RoutedCommand>.  Další informace o příkazů najdete v tématu [přehled příkazů](commanding-overview.md).  
@@ -40,4 +40,5 @@ Následující příklad ukazuje, jak pomocí příkazů v [!INCLUDE[TLA#tla_win
  [!code-vb[EnableCloseCommand#CloseCommandHandler](~/samples/snippets/visualbasic/VS_Snippets_Wpf/EnableCloseCommand/VisualBasic/Window1.xaml.vb#closecommandhandler)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled příkazů](commanding-overview.md)

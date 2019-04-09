@@ -2,12 +2,12 @@
 title: System.ServiceModel.ServiceThrottleLimitReached
 ms.date: 03/30/2017
 ms.assetid: f554a370-c3f8-4131-8639-7c36f926fbf9
-ms.openlocfilehash: dbc6a8f3d21772efe1835645a592e58051a434cc
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a5bb4e3bb00fb6e5a0d18b394ec909483a4c08be
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54490979"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59188757"
 ---
 # <a name="systemservicemodelservicethrottlelimitreached"></a>System.ServiceModel.ServiceThrottleLimitReached
 System.ServiceModel.ServiceThrottleLimitReached  
@@ -18,6 +18,7 @@ System.ServiceModel.ServiceThrottleLimitReached
  Trasování můžete použít k úpravě vynulujte hodnoty omezení na základě očekávaných a aktuálních produkční zatížení.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Trasování](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
-- [Řešení problémů s aplikací pomocí trasování](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
+- [Řešení potíží s aplikací pomocí trasování](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
 - [Správa a diagnostika](../../../../../docs/framework/wcf/diagnostics/index.md)

@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - hosting services [WCF], IIS
 ms.assetid: ddae14e8-143c-442d-b660-2046809b2d43
-ms.openlocfilehash: edf3927fb9fdbd9855561b32aec2a425d7ee0638
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 9cb67a30ca5453142f906be918b891ac959cdaf2
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54680903"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59180011"
 ---
 # <a name="hosting-in-internet-information-services"></a>Hostování v Internetové informační službě
 Jednou z možností pro hostování služby Windows Communication Foundation (WCF) je v rámci Internetové informační služby (IIS) aplikace. Tento model hostingu je podobný model používaný [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] a webových služeb ASP.NET Web Services (ASMX).  
@@ -57,9 +57,10 @@ Jednou z možností pro hostování služby Windows Communication Foundation (WC
  Může být služby WCF hostované buď na straně po boku s [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] nebo v [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] režim kompatibility, ve kterém můžete služby využívat všech výhod funkcí poskytovaných službou [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] platforma webových aplikací. Informace o těchto funkcích naleznete v tématu [služby WCF a ASP.NET](../../../../docs/framework/wcf/feature-details/wcf-services-and-aspnet.md).  
   
 ## <a name="see-also"></a>Viz také:
-- [Rozšíření hostování pomocí ServiceHostFactory](../../../../docs/framework/wcf/extending/extending-hosting-using-servicehostfactory.md)
+
+- [Rozšíření hostování pomocí třídy ServiceHostFactory](../../../../docs/framework/wcf/extending/extending-hosting-using-servicehostfactory.md)
 - [Nasazení služby WCF hostované Internetovou informační službou](../../../../docs/framework/wcf/feature-details/deploying-an-internet-information-services-hosted-wcf-service.md)
 - [Služby WCF a ASP.NET](../../../../docs/framework/wcf/feature-details/wcf-services-and-aspnet.md)
-- [Osvědčené postupy hostování Internetové informační služby](../../../../docs/framework/wcf/feature-details/internet-information-services-hosting-best-practices.md)
-- [Konfigurace Internetové informační služby 7.0 pro Windows Communication Foundation](../../../../docs/framework/wcf/feature-details/configuring-iis-for-wcf.md)
+- [Doporučené postupy hostování Internetové informační služby](../../../../docs/framework/wcf/feature-details/internet-information-services-hosting-best-practices.md)
+- [Konfigurace Internetové informační služby 7.0 pro službu Windows Communication Foundation](../../../../docs/framework/wcf/feature-details/configuring-iis-for-wcf.md)
 - [Hostování funkcí systému Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkId=201276)

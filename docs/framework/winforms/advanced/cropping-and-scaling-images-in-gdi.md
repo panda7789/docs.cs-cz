@@ -15,12 +15,12 @@ helpviewer_keywords:
 - rectangles [Windows Forms], destination
 - images [Windows Forms], compression
 ms.assetid: ad5daf26-005f-45bc-a2af-e0e97777a21a
-ms.openlocfilehash: 311673c30283cdf3e0206d143daab8c01adc2bce
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: c3cdb06e99770808461f9266fb5f07df9074149b
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57718789"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59183725"
 ---
 # <a name="cropping-and-scaling-images-in-gdi"></a>Oříznutí a změna měřítka obrázků v GDI+
 Můžete použít <xref:System.Drawing.Graphics.DrawImage%2A> metodu <xref:System.Drawing.Graphics> třídu pro vykreslení a umístění vektorové obrázky a rastrové obrázky. <xref:System.Drawing.Graphics.DrawImage%2A> je přetěžované metody, takže je můžete zadat s argumenty několika způsoby.  
@@ -47,5 +47,6 @@ Můžete použít <xref:System.Drawing.Graphics.DrawImage%2A> metodu <xref:Syste
  ![Oříznutí a změna měřítka](./media/aboutgdip03-art07.gif "AboutGdip03_Art07")  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Obrázky, rastrové obrázky a metasoubory](images-bitmaps-and-metafiles.md)
 - [Práce s obrázky, rastrovými obrázky, ikonami a metasoubory](working-with-images-bitmaps-icons-and-metafiles.md)

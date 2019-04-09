@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - COM+ [WCF], using service model configuration tool
 ms.assetid: 7e68cd8d-5fda-4641-b92f-290db874376e
-ms.openlocfilehash: 528e46a47daa6df865308592eb41658369a74b6e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 0dc126cf6528504cacd18ae29c31541833ddb5f8
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54736244"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59196889"
 ---
 # <a name="how-to-use-the-com-service-model-configuration-tool"></a>Postupy: Použití nástroje pro konfiguraci modelu služby COM+
 Jakmile vyberete příslušné hostující režim, použijte nástroj příkazového řádku konfiguraci modelu služby COM + (ComSvcConfig.exe) ke konfiguraci rozhraní aplikací, které se zveřejní jako webové služby.  
@@ -110,4 +110,5 @@ Jakmile vyberete příslušné hostující režim, použijte nástroj příkazov
     ```  
   
 ## <a name="see-also"></a>Viz také:
-- [Přehled integrace s aplikacemi modelu COM+](../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications-overview.md)
+
+- [Integrace s aplikacemi modelu COM+ – přehled](../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications-overview.md)

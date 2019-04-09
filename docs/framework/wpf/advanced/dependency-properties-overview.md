@@ -14,12 +14,12 @@ helpviewer_keywords:
 - dependency properties [WPF]
 - resources [WPF], references to
 ms.assetid: d119d00c-3afb-48d6-87a0-c4da4f83dee5
-ms.openlocfilehash: 0d336a55ee849ea3e9584cdcfd87e5d6c4befe25
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 443ea9ad56d13d26191231104ce3998b2691fc34
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57374645"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59188640"
 ---
 # <a name="dependency-properties-overview"></a>Přehled vlastností závislosti
 
@@ -197,6 +197,7 @@ Obvykle není vhodné styly vždycky používat a skrývat i místně nastavené
 - Vlastnosti závislosti by měla být obecně považují za veřejné vlastnosti, přístupné, nebo alespoň zjistitelné pomocí jakýkoli volající, který má přístup k instanci. Další informace najdete v tématu [zabezpečení vlastností závislosti](dependency-property-security.md).
 
 ## <a name="see-also"></a>Viz také:
+
 - [Vlastní vlastnosti závislosti](custom-dependency-properties.md)
 - [Vlastnosti závislosti jen pro čtení](read-only-dependency-properties.md)
 - [Přehled XAML (WPF)](xaml-overview-wpf.md)

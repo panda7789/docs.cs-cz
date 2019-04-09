@@ -7,12 +7,12 @@ dev_langs:
 author: thraka
 ms.author: adegeo
 ms.date: 12/31/2018
-ms.openlocfilehash: 89264098ed17b398c83bc2dcddd98d9d8fc958f7
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
-ms.translationtype: MT
+ms.openlocfilehash: 3ce7bbc0dfccfda7a25dfecf32e93876ddde01f1
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57679733"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59188289"
 ---
 # <a name="whats-new-in-net-core-30-preview-2"></a>Co je nového v .NET Core 3.0 (ve verzi Preview 2)
 
@@ -34,7 +34,6 @@ Další informace o co bylo vydáno se sadou jednotlivé verze najdete v násled
 - [Lepší využití vzorů v C# 8.0](https://devblogs.microsoft.com/dotnet/do-more-with-patterns-in-c-8-0/)
 - [Využijte C# 8.0 pro typu číselník](https://devblogs.microsoft.com/dotnet/take-c-8-0-for-a-spin/)
 - [Vytváření C# 8.0](https://devblogs.microsoft.com/dotnet/building-c-8-0/)
-
 
 ### <a name="ranges-and-indices"></a>Rozsahy a indexy
 
@@ -170,7 +169,6 @@ Během `dotnet build` nebo `dotnet publish`, spustitelný soubor je vytvořen, z
 `dotnet build` Nyní zkopíruje závislostí NuGet pro vaši aplikaci z mezipaměti NuGet k výstupní složce sestavení. Dříve byly závislosti pouze zkopírovány jako součást `dotnet publish`. 
 
 Existují některé operace, jako je stránka propojení a razor publikování, který se stále vyžadují publikování.
-
 
 ## <a name="local-dotnet-tools"></a>Nástroje pro místní dotnet
 
@@ -484,7 +482,6 @@ Windows nabízí bohaté nativní rozhraní API, v podobě bez stromové struktu
 
 Vidíte příklad použití modelu COM s [zdrojový kód ukázkové aplikace Excel](https://github.com/dotnet/samples/tree/master/core/extensions/ExcelDemo).
 
-
 ## <a name="type-sequencereader"></a>Zadejte: SequenceReader
 
 V rozhraní .NET Core 3.0 `System.Buffers.SequenceReader` se přidala, který může sloužit jako čtečku `ReadOnlySequence<T>`. To umožňuje snadné, vysoký výkon s nízkou přidělení parsování `System.IO.Pipelines` data, která lze napříč více vyrovnávacích pamětí zálohování. 
@@ -773,7 +770,6 @@ Byly vydány dvě nové balíčky nuget, který vám pomůže GPIO programován�
 Balíčky GPIO zahrnuje rozhraní API pro zařízení GPIO, SPI, I2C a PWM. Sada IoT vazby zahrnuje [zařízení vazby](https://github.com/dotnet/iot/blob/master/src/devices/README.md) pro různé čipy a senzory, stejné těch, které jsou k dispozici na [dotnet/iot-src/zařízení](https://github.com/dotnet/iot/tree/master/src/devices).
 
 Aktualizované sériového portu rozhraní API, které byly součástí rozhraní .NET Core 3.0 ve verzi Preview 1 oznámili nejsou součástí těchto balíčků, ale jsou k dispozici jako součást platformy .NET Core.
-
 
 ## <a name="platform-support"></a>Podpora platformy
 

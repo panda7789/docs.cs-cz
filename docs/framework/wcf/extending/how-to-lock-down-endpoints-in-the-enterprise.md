@@ -2,12 +2,12 @@
 title: 'Postupy: Uzamknutí koncových bodů v podniku'
 ms.date: 03/30/2017
 ms.assetid: 1b7eaab7-da60-4cf7-9d6a-ec02709cf75d
-ms.openlocfilehash: 5392db25c0e3ae0051a892831dd013063389d863
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 9bfd077abf0956f014c78a7c398670822724f7e5
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54663076"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59181339"
 ---
 # <a name="how-to-lock-down-endpoints-in-the-enterprise"></a>Postupy: Uzamknutí koncových bodů v podniku
 Velké podniky často vyžadují, že jsou aplikace vyvíjeny souladu se zásadami zabezpečení organizace. Následující téma popisuje, jak vyvíjet a instalace klienta validátor koncový bod, který slouží k ověření všech klientských aplikací Windows Communication Foundation (WCF) nainstalována na počítačích.  
@@ -64,5 +64,6 @@ Velké podniky často vyžadují, že jsou aplikace vyvíjeny souladu se zásada
  Můžete také chtít šifrování souboru elementů konfigurace. Další informace najdete v části Viz také.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Šifrování konfiguračních elementů souboru pomocí DPAPI](https://go.microsoft.com/fwlink/?LinkId=94954)
 - [Šifrování konfigurační soubor prvky pomocí technologie RSA](https://go.microsoft.com/fwlink/?LinkId=94955)

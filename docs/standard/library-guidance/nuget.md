@@ -4,12 +4,12 @@ description: Doporučené osvědčené postupy pro vytváření balíčků nuget
 author: jamesnk
 ms.author: mairaw
 ms.date: 01/15/2019
-ms.openlocfilehash: a721c642dd92eb299eef3b62fc845afa99f81ddc
-ms.sourcegitcommit: e39d93d358974b9ed4541cedf4e25c0101015c3c
+ms.openlocfilehash: e08629adb8074fdfb73865d2dc156cbf6e46ab9c
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55204610"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59198176"
 ---
 # <a name="nuget"></a>NuGet
 
@@ -119,7 +119,6 @@ Nevýhodou vnoření soubory symbolů se zvyšují velikost balíčku o 30 % kni
 > Balíčky symbolů (`*.snupkg`) vývojářům poskytuje dobré ladicího prostředí na vyžádání bez nadměrnému nárůstu velikosti velikost hlavního balíčku a dopadu na zvyšuje výkon pro ty, kteří nechcete ladit balíček NuGet.
 >
 > Výstrahou je, že by potřebují najít a nakonfigurujte server symbolů NuGet v jejich prostředí IDE (jako jednorázová nastavení) Chcete-li získat soubory symbolů. Visual Studio 2019 plánuje zadejte server symbolů NuGet.org jako jednu z možností úprav. 
-
 
 >[!div class="step-by-step"]
 >[Předchozí](strong-naming.md)

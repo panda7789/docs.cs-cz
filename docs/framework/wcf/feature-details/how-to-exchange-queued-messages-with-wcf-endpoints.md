@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 938e7825-f63a-4c3d-b603-63772fabfdb3
-ms.openlocfilehash: ea052a2dd843205a8108ea48f17ea84577817215
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
-ms.translationtype: MT
+ms.openlocfilehash: 98cb62c0d3f82a90ee96797a34600473dbe4dc11
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58411028"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59179163"
 ---
 # <a name="how-to-exchange-queued-messages-with-wcf-endpoints"></a>Postupy: Výměna zpráv zařazených do fronty pomocí koncových bodů WCF
 Fronty Ujistěte se, že může dojít spolehlivé zasílání zpráv, mezi klientem a službou Windows Communication Foundation (WCF), i v případě, že služba není k dispozici v době komunikace. Následující postupy ukazují, jak zajistit ve frontě trvalý komunikace mezi klientem a službou pomocí standardní připojení, při implementaci služby WCF.  
@@ -42,9 +42,7 @@ Fronty Ujistěte se, že může dojít spolehlivé zasílání zpráv, mezi klie
      [!code-vb[S_Msmq_Transacted#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_msmq_transacted/vb/hostapp.vb#4)]  
   
 5.  Definování <xref:System.ServiceModel.Description.ServiceEndpoint> v konfiguraci, která určuje adresu služby a využívá standardní <xref:System.ServiceModel.NetMsmqBinding> vazby. Další informace o použití konfigurace WCF najdete v tématu [konfigurace WCF services](../configuring-services.md).  
-  
-  
-  
+
 6.  Vytvoření hostitele pro `OrderProcessing` služby pomocí <xref:System.ServiceModel.ServiceHost> , která čte zprávy z fronty a zpracovává je. Otevření hostitele služby, aby tato služba k dispozici. Zobrazte zprávu, která uživateli říká, aby stisknutím libovolné klávesy ukončete službu. Volání `ReadLine` čekání na klávesu se aktivovala a potom zavřete okno služby.  
   
      [!code-csharp[S_Msmq_Transacted#6](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_msmq_transacted/cs/hostapp.cs#6)]
@@ -59,9 +57,7 @@ Fronty Ujistěte se, že může dojít spolehlivé zasílání zpráv, mezi klie
     ```  
   
 2.  Definování <xref:System.ServiceModel.Description.ServiceEndpoint> v konfiguraci, která určuje adresu a používá standardní <xref:System.ServiceModel.NetMsmqBinding> vazbu, jak je znázorněno v následujícím příkladu.  
-  
-  
-  
+
 3.  Vytvoření oboru transakce k zápisu transakční fronty, volání `SubmitPurchaseOrder` operace a zavřít klienta WCF, jak je znázorněno v následujícím příkladu.  
   
      [!code-csharp[S_Msmq_Transacted#8](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_msmq_transacted/cs/client.cs#8)]
@@ -75,20 +71,17 @@ Fronty Ujistěte se, že může dojít spolehlivé zasílání zpráv, mezi klie
   
  [!code-csharp[S_Msmq_Transacted#10](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_msmq_transacted/cs/hostapp.cs#10)]
  [!code-vb[S_Msmq_Transacted#10](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_msmq_transacted/vb/hostapp.vb#10)]  
-  
-  
-  
+
  [!code-csharp[S_Msmq_Transacted#12](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_msmq_transacted/cs/client.cs#12)]
  [!code-vb[S_Msmq_Transacted#12](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_msmq_transacted/vb/client.vb#12)]  
-  
-  
-  
+
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.NetMsmqBinding>
 - [Zpracované vazby služby MSMQ](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md)
-- [Zařazování do front ve WCF](../../../../docs/framework/wcf/feature-details/queuing-in-wcf.md)
-- [Postupy: Výměna zpráv pomocí koncových bodů WCF a aplikací služby Řízení front zpráv](../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)
-- [Z Windows Communication Foundation do služby Řízení front zpráv](../../../../docs/framework/wcf/samples/wcf-to-message-queuing.md)
+- [Fronty ve WCF](../../../../docs/framework/wcf/feature-details/queuing-in-wcf.md)
+- [Postupy: Výměna zpráv pomocí koncových bodů WCF a aplikací pro řazení zpráv do front](../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)
+- [Z WCF do Řízení front zpráv](../../../../docs/framework/wcf/samples/wcf-to-message-queuing.md)
 - [Instalace služby Řízení front zpráv (MSMQ)](../../../../docs/framework/wcf/samples/installing-message-queuing-msmq.md)
-- [Ze služby Řízení front zpráv do Windows Communication Foundation](../../../../docs/framework/wcf/samples/message-queuing-to-wcf.md)
+- [Řízení front zpráv do WCF](../../../../docs/framework/wcf/samples/message-queuing-to-wcf.md)
 - [Zabezpečení zprávy pomocí služby Řízení front zpráv](../../../../docs/framework/wcf/samples/message-security-over-message-queuing.md)

@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Vytvoření a připojení ke kolekci ObservableCollection'
+title: 'Postupy: Vytvoření a vytvoření vazby ke kolekci ObservableCollection'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - data binding [WPF], ObservableCollection class
 - notifications [WPF]
 ms.assetid: 6cf7e275-df76-41c6-a611-53b889b8fd5a
-ms.openlocfilehash: 10cea133651739df8bb8e27c58221b34067782f5
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 45f8b097bfdb8d3d7994e53ea05146aa6de0fc21
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57376114"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59188432"
 ---
-# <a name="how-to-create-and-bind-to-an-observablecollection"></a>Postupy: Vytvoření a připojení ke kolekci ObservableCollection
+# <a name="how-to-create-and-bind-to-an-observablecollection"></a>Postupy: Vytvoření a vytvoření vazby ke kolekci ObservableCollection
 Tento příklad ukazuje postup vytvoření a připojení ke kolekci, která je odvozena z <xref:System.Collections.ObjectModel.ObservableCollection%601> třídy, která je třídu kolekce, která poskytuje oznámení, pokud získat přidávat nebo odebírat položky.  
   
 ## <a name="example"></a>Příklad  
@@ -141,8 +141,9 @@ End Class
  Další informace najdete v tématu vazby do oddílu kolekce [přehled datových vazeb](data-binding-overview.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Řazení dat v zobrazení](how-to-sort-data-in-a-view.md)
 - [Filtrování dat v zobrazení](how-to-filter-data-in-a-view.md)
 - [Řazení a seskupení dat pomocí zobrazení XAML](how-to-sort-and-group-data-using-a-view-in-xaml.md)
 - [Přehled datových vazeb](data-binding-overview.md)
-- [Témata s postupy](data-binding-how-to-topics.md)
+- [– postupy](data-binding-how-to-topics.md)

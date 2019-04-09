@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Načítání zvuku ve formuláři Windows asynchronně'
+title: 'Postupy: Asynchronní načítání zvuku ve formuláři Windows Forms'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - sounds [Windows Forms], loading on separate threads
 - threading [Windows Forms], sounds
 ms.assetid: 3b6a9296-1d5e-4d52-a4ba-94366d6fe302
-ms.openlocfilehash: 8240e26ea0133aa091354d29f52d0692499d7765
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 1d710f1e6d3b208365d5b1eb2524fbeeaa673c2d
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57718295"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59185754"
 ---
-# <a name="how-to-load-a-sound-asynchronously-within-a-windows-form"></a>Postupy: Načítání zvuku ve formuláři Windows asynchronně
+# <a name="how-to-load-a-sound-asynchronously-within-a-windows-form"></a>Postupy: Asynchronní načítání zvuku ve formuláři Windows Forms
 Následující příklad kódu asynchronně načte zvuk z adresy URL a pak hraje v novém vláknu.  
   
 ## <a name="example"></a>Příklad  
@@ -53,7 +53,8 @@ Následující příklad kódu asynchronně načte zvuk z adresy URL a pak hraje
  Nečiňte rozhodnutí o obsahu souboru na základě jeho názvu. Například soubor `Form1.vb` nemusí být zdrojový soubor jazyka Visual Basic. Před použitím dat ve své aplikaci ověřte všechny vstupy.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Media.SoundPlayer.LoadAsync%2A>
 - <xref:System.Media.SoundPlayer.LoadCompleted>
 - <xref:System.Media.SoundPlayer.Play%2A>
-- [Postupy: Přehrávání zvuku z formuláře Windows](how-to-play-a-sound-from-a-windows-form.md)
+- [Postupy: Přehrávání zvuku z formuláře Windows Forms](how-to-play-a-sound-from-a-windows-form.md)

@@ -1,16 +1,16 @@
 ---
-title: <applicationPool> – element (nastavení webu)
+title: <applicationPool> – Element (nastavení webu)
 ms.date: 03/30/2017
 helpviewer_keywords:
 - applicationPool element
 - <applicationPool> element
 ms.assetid: 46d1baaa-e343-4639-b70d-2a43a9f62b2a
-ms.openlocfilehash: a9c81d98a5e531eaa547614c4d236b6c84526398
-ms.sourcegitcommit: 01ea420eaa4bf76d5fc47673294c8881379b3369
+ms.openlocfilehash: 16207c3f3c711d06b71cafb2b67c5d29f3f14e39
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55758271"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59184727"
 ---
 # <a name="applicationpool-element-web-settings"></a>\<applicationPool > – Element (nastavení webu)
 Určuje nastavení konfigurace, který ASP.NET používá ke správě celého procesu chování, když aplikaci ASP.NET běží v integrovaném režimu [!INCLUDE[iisver](../../../../../includes/iisver-md.md)] nebo novější.  
@@ -95,4 +95,5 @@ Určuje nastavení konfigurace, který ASP.NET používá ke správě celého pr
 |Může být prázdné.||  
   
 ## <a name="see-also"></a>Viz také:
+
 - [\<System.Web > – Element (nastavení webu)](../../../../../docs/framework/configure-apps/file-schema/web/system-web-element-web-settings.md)

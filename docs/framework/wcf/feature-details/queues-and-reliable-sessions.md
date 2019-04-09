@@ -2,12 +2,12 @@
 title: Fronty a spolehlivé relace
 ms.date: 03/30/2017
 ms.assetid: 7e794d03-141c-45ed-b6b1-6c0e104c1464
-ms.openlocfilehash: 2f79e1eac469dc1d9d775cbca0f06046f10dfb20
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1fb7d7db36aa51c63789b6daf0ac3689c87ace5c
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54642906"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59196824"
 ---
 # <a name="queues-and-reliable-sessions"></a>Fronty a spolehlivé relace
 Fronty a spolehlivé relace jsou funkce Windows Communication Foundation (WCF), které implementují spolehlivé zasílání zpráv. Témata obsažené v této části popisují funkce spolehlivé zasílání zpráv WCF.  
@@ -39,7 +39,8 @@ Fronty a spolehlivé relace jsou funkce Windows Communication Foundation (WCF), 
  Oddělení, spolu s přenosy spolehlivých zpráv mezi front, umožňuje aplikacím, které jsou volně vázány spolehlivě komunikovat. Na rozdíl od spolehlivé relace zdrojových a cílových nemusí běžet ve stejnou dobu. To umožňuje implicitně scénáře, kde fronty, v důsledku toho slouží jako mechanismus pro vyrovnávání zatížení při došlo k neshodě mezi výroby zprávy ve zdroji a frekvence zpráv konzumace cíl. Další informace o frontách najdete v tématu [fronty ve WCF](../../../../docs/framework/wcf/feature-details/queues-in-wcf.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Fronty ve WCF](../../../../docs/framework/wcf/feature-details/queues-in-wcf.md)
-- [Zařazování do front ve WCF](../../../../docs/framework/wcf/feature-details/queuing-in-wcf.md)
+- [Fronty ve WCF](../../../../docs/framework/wcf/feature-details/queuing-in-wcf.md)
 - [Spolehlivé relace](../../../../docs/framework/wcf/feature-details/reliable-sessions.md)
-- [Přehled spolehlivých relací](../../../../docs/framework/wcf/feature-details/reliable-sessions-overview.md)
+- [Spolehlivé relace – přehled](../../../../docs/framework/wcf/feature-details/reliable-sessions-overview.md)

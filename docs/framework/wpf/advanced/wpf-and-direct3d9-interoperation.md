@@ -7,12 +7,12 @@ helpviewer_keywords:
 - WPF [WPF], creating Direct3D9 content
 - Direct3D9 [WPF interoperability], creating Direct3D9 content
 ms.assetid: 1b14b823-69c4-4e8d-99e4-f6dade58f89a
-ms.openlocfilehash: e9d000ca2da9dd9b4c8a677e85bc9cca5b1b1b1d
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
-ms.translationtype: MT
+ms.openlocfilehash: 04a668ea18177d2a174569f064d9102239dd5e7d
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57372682"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59199320"
 ---
 # <a name="wpf-and-direct3d9-interoperation"></a>Vzájemná spolupráce grafického subsystému WPF a systému Direct3D9
 Můžete zahrnout obsahu Direct3D9 v aplikaci Windows Presentation Foundation (WPF). Toto téma popisuje postup vytvoření obsahu Direct3D9 tak, aby efektivně spolupracuje s WPF.  
@@ -148,7 +148,8 @@ Můžete zahrnout obsahu Direct3D9 v aplikaci Windows Presentation Foundation (W
 >  Pokud WPF je zcela vykreslování v softwaru, <xref:System.Windows.Interop.D3DImage> neuvádíme, protože WPF nemá front-vyrovnávací paměti.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Interop.D3DImage>
-- [Předpoklady výkonu pro Direct3D9 a interoperabilitu WPF](performance-considerations-for-direct3d9-and-wpf-interoperability.md)
-- [Návod: Vytvoření obsahu Direct3D9 pro hostování v subsystému WPF](walkthrough-creating-direct3d9-content-for-hosting-in-wpf.md)
-- [Návod: Hostování obsahu Direct3D9 v subsystému WPF](walkthrough-hosting-direct3d9-content-in-wpf.md)
+- [Předpokládaný výkon pro Direct3D9 a interoperabilitu WPF](performance-considerations-for-direct3d9-and-wpf-interoperability.md)
+- [Návod: Vytvoření obsahu Direct3D9 pro hostování ve WPF](walkthrough-creating-direct3d9-content-for-hosting-in-wpf.md)
+- [Návod: Hostování obsahu Direct3D9 ve WPF](walkthrough-hosting-direct3d9-content-in-wpf.md)

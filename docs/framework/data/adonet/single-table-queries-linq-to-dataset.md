@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 0b74bcf8-3f87-449f-bff7-6bcb0d69d212
-ms.openlocfilehash: 3bde9a5f718dcc7bdf31f84369546d530dca38d9
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 00b0773ba66ad8e0acfdccb37964030a9cacff52
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54637245"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59187639"
 ---
 # <a name="single-table-queries-linq-to-dataset"></a>Dotazy na jednu tabulku (LINQ to DataSet)
 [!INCLUDE[vbteclinqext](../../../../includes/vbteclinqext-md.md)] dotazy fungují u zdrojů dat, které implementují <xref:System.Collections.Generic.IEnumerable%601> rozhraní nebo <xref:System.Linq.IQueryable%601> rozhraní. <xref:System.Data.DataTable> Třída neimplementuje buď rozhraní, takže je třeba zavolat <xref:System.Data.DataTableExtensions.AsEnumerable%2A> metodu, pokud chcete použít <xref:System.Data.DataTable> jako zdroj v `From` klauzuli [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] dotazu.  
@@ -31,6 +31,7 @@ ms.locfileid: "54637245"
  Všimněte si, že datový typ zadaný v parametru obecného `T` z <xref:System.Data.DataRowExtensions.Field%2A> metoda a <xref:System.Data.DataRowExtensions.SetField%2A> metoda musí odpovídat typu základní hodnotu nebo <xref:System.InvalidCastException> bude vyvolána výjimka. Zadaný název sloupce musí taky shodovat s názvem sloupce v <xref:System.Data.DataSet> nebo <xref:System.ArgumentException> bude vyvolána výjimka. V obou případech je vyvolána výjimka za běhu výčet dat při spuštění dotazu.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Dotazy na křížovou tabulku](../../../../docs/framework/data/adonet/cross-table-queries-linq-to-dataset.md)
 - [Dotazy na typové datové sady](../../../../docs/framework/data/adonet/querying-typed-datasets.md)
 - [Obecné pole a metody SetField](../../../../docs/framework/data/adonet/generic-field-and-setfield-methods-linq-to-dataset.md)

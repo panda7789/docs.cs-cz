@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Reakce na změny schématu písem ve formulářové aplikaci Windows'
+title: 'Postupy: Odpověď na změny schématu písem v aplikaci Windows Forms'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,14 +7,14 @@ dev_langs:
 helpviewer_keywords:
 - Windows Forms, font scheme changes
 ms.assetid: 4db27702-22e7-43bf-a07d-9a004549853c
-ms.openlocfilehash: 4c34a65ed8ddabfb99451e055048502cb7617e4f
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: 85770687ecfad690a251eafec9051c4c20f45dd2
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57715968"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59182101"
 ---
-# <a name="how-to-respond-to-font-scheme-changes-in-a-windows-forms-application"></a>Postupy: Reakce na změny schématu písem ve formulářové aplikaci Windows
+# <a name="how-to-respond-to-font-scheme-changes-in-a-windows-forms-application"></a>Postupy: Odpověď na změny schématu písem v aplikaci Windows Forms
 V operačních systémech Windows uživatel může změnit nastavení systémová písma a ujistěte se zobrazí výchozí písmo větší nebo menší. Změna těchto písmo nastavení je velmi důležité pro uživatele, kteří jsou slabozraké a vyžadují větší typ čtení textu na obrazovce. Můžete upravit aplikaci Windows Forms k reagovat na tyto změny zvýšením nebo snížením velikosti formuláře a veškerý text při každé změně schématu písem. Pokud chcete formuláře dynamicky přizpůsobí změny velikosti písma, můžete přidat kód do formuláře.  
   
  Obvykle je výchozí písmo použité ve Windows Forms písma vrácené <xref:Microsoft.Win32> obor názvů volání `GetStockObject(DEFAULT_GUI_FONT)`. Pokud se rozlišení změní pouze změní písmo vrácený toto volání. Jak je znázorněno v následujícím postupu, musí váš kód změnit výchozí písmo na <xref:System.Drawing.SystemFonts.IconTitleFont%2A> reakce na změny velikosti písma.  
@@ -65,5 +65,6 @@ V operačních systémech Windows uživatel může změnit nastavení systémov�
  Constructer v tomto příkladu kód obsahuje volání `InitializeComponent`, který je definován při vytváření nového projektu Windows Forms v sadě Visual Studio. Odeberte tento řádek kódu, pokud vytváříte aplikaci na příkazovém řádku.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.ContainerControl.PerformAutoScale%2A>
 - [Automatická změna měřítka ve Windows Forms](automatic-scaling-in-windows-forms.md)

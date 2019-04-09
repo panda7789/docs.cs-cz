@@ -2,12 +2,12 @@
 title: Odvozování tabulek
 ms.date: 03/30/2017
 ms.assetid: 74a288d4-b8e9-4f1a-b2cd-10df92c1ed1f
-ms.openlocfilehash: f777b225f9fbf4e8ce38778842d30a0a3054e22a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2c2a93d413f301dc3006b701e4bc7979a3fa7a1d
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54573490"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59181828"
 ---
 # <a name="inferring-tables"></a>Odvozování tabulek
 Po odvození schématu pro <xref:System.Data.DataSet> z dokumentu XML, ADO.NET nejdřív zjistí prvky XML, které představují tabulky. Tabulka pro za následek následující struktury XML **datovou sadu** schématu:  
@@ -119,6 +119,7 @@ Po odvození schématu pro <xref:System.Data.DataSet> z dokumentu XML, ADO.NET n
 |Text2|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Odvození relační struktury datové sady z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/inferring-dataset-relational-structure-from-xml.md)
 - [Načtení datové sady z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md)
 - [Načtení informací o schématu datové sady z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-dataset-schema-information-from-xml.md)

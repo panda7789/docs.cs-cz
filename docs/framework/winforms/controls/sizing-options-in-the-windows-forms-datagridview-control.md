@@ -9,12 +9,12 @@ helpviewer_keywords:
 - data grids [Windows Forms], row sizing
 - data grids [Windows Forms], sizing options
 ms.assetid: a5620a9c-0d06-41e3-8934-c25ddb16c9e6
-ms.openlocfilehash: a236289939b9355e961ce1bfc9a7e0ff5349a95a
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 2f76bbca3d4b6e642c0eec2129c4a2abee752655
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57717905"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59197838"
 ---
 # <a name="sizing-options-in-the-windows-forms-datagridview-control"></a>Možnosti změny velikosti v ovládacím prvku Windows Forms DataGridView
 <xref:System.Windows.Forms.DataGridView> řádky, sloupce a záhlaví můžete změnit velikost v důsledku mnoho různých výskytů. V následující tabulce jsou uvedeny těchto událostech.  
@@ -128,6 +128,7 @@ ms.locfileid: "57717905"
  Výčty používané velikosti vlastnosti a metody mají podobné hodnoty pro určení velikosti na základě obsahu. S těmito hodnotami můžete omezit buněk, které se používají k výpočtu velikosti upřednostňované. Pro všechny velikosti výčty hodnot s názvy, které odkazují na zobrazených buněk omezit jejich výpočtů do buněk v zobrazených řádků. Vyloučení řádků je užitečné, aby se zabránilo snížení výkonu při práci s velké množství řádků. Můžete taky omezit výpočty na hodnotách v buňkách v záhlaví nebo nonheader buňky.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.DataGridView.AllowUserToResizeColumns%2A?displayProperty=nameWithType>
 - <xref:System.Windows.Forms.DataGridView.AllowUserToResizeRows%2A?displayProperty=nameWithType>

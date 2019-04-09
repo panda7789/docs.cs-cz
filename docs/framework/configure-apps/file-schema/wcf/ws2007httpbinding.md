@@ -2,12 +2,12 @@
 title: <ws2007HttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 8586ecc9-bdaa-44d6-8d4d-7038e4ea1741
-ms.openlocfilehash: 01b8f20607de1cdd9c6b1ad9fc030c1d050ed749
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
+ms.openlocfilehash: 9caba8dfc848a2463b1fa482ccaf55288d96af29
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58410638"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59182132"
 ---
 # <a name="ws2007httpbinding"></a>\<ws2007HttpBinding>
 Definuje interoperabilní vazbu, která poskytuje podporu pro správné verze prvků <xref:System.ServiceModel.WSHttpBinding.Security%2A>, <xref:System.ServiceModel.ReliableSession>, a <xref:System.ServiceModel.WSHttpBindingBase.TransactionFlow%2A> elementů vazby.  
@@ -84,7 +84,7 @@ Definuje interoperabilní vazbu, která poskytuje podporu pro správné verze pr
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<zabezpečení >](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-wshttpbinding.md)|Definuje nastavení zabezpečení pro vazbu. Tento prvek je typu <xref:System.ServiceModel.Configuration.WSHttpSecurityElement>.|  
+|[\<security>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-wshttpbinding.md)|Definuje nastavení zabezpečení pro vazbu. Tento prvek je typu <xref:System.ServiceModel.Configuration.WSHttpSecurityElement>.|  
 |[\<readerQuotas>](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms731325(v=vs.100))|Definuje omezení složitosti zpráv SOAP, které může zpracovat nakonfigurované s touto vazbou koncové body. Tento prvek je typu <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement>.|  
 |[\<reliableSession>](https://docs.microsoft.com/previous-versions/ms731375(v=vs.90))|Určuje, zda jsou vytvořeny spolehlivé relace mezi koncovými body kanálu.|  
   
@@ -92,7 +92,7 @@ Definuje interoperabilní vazbu, která poskytuje podporu pro správné verze pr
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<bindings>](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|Tento prvek obsahuje sadu standardních a vlastních vazeb.|  
+|[\<vazby >](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|Tento prvek obsahuje sadu standardních a vlastních vazeb.|  
   
 ## <a name="remarks"></a>Poznámky  
  `WS2007HttpBinding` Přidá vazeb poskytovaných systémem podobný `WSHttpBinding` , ale používá organizace pro rozvoj z strukturovaných informace standardy OASIS (Organization) standardní verze protokoly TransactionFlow, ReliableSession a zabezpečení. Při použití této vazby nejsou potřeba žádné změny k objektu modelu nebo výchozí nastavení.  
@@ -136,6 +136,7 @@ Definuje interoperabilní vazbu, která poskytuje podporu pro správné verze pr
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.WS2007HttpBinding>
 - <xref:System.ServiceModel.Configuration.WS2007HttpBindingElement>
 - [Vazby](../../../../../docs/framework/wcf/bindings.md)

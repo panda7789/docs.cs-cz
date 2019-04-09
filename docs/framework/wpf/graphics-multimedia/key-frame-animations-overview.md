@@ -6,12 +6,12 @@ helpviewer_keywords:
 - key frames [WPF], about key-frame animations
 - multiple animation target values [WPF]
 ms.assetid: 10028f97-bb63-41fc-b8ad-663dac7ea203
-ms.openlocfilehash: a4606b73835087a406d989960d7a6e24ad218769
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
-ms.translationtype: MT
+ms.openlocfilehash: caad7d5694139729ebe89e686ea70a981a0a94d2
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57362978"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59191583"
 ---
 # <a name="key-frame-animations-overview"></a>Přehled animací klíčových snímků
 Toto téma vás seznámí s animací klíčových snímků. Animace klíčových snímků vám umožní pomocí více než dva cílových hodnot animace a řídit metodu interpolace animace společnosti.  
@@ -284,6 +284,7 @@ Klíče křivky s ovládacím prvkem body (0,25; 0,5) a (0,75, 1.0)
 8.  Řazení klíčových snímků v pořadí doby vyřešení (primární klíč) a pořadí deklarace (sekundární klíč), to znamená, použijte stabilní řazení podle přeložit klíčový snímek <xref:System.Windows.Media.Animation.KeyTime> hodnoty.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Media.Animation.KeyTime>
 - <xref:System.Windows.Media.Animation.KeySpline>
 - <xref:System.Windows.Media.Animation.Timeline>

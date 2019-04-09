@@ -10,12 +10,12 @@ helpviewer_keywords:
 - UI (user interface), automation
 - UI Automation
 ms.assetid: 4380cad7-e509-448f-b9a5-6de042605fd4
-ms.openlocfilehash: 4b2988314afbe501623fd050a989876842f68601
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
-ms.translationtype: MT
+ms.openlocfilehash: 8c2477e5e7086e1bbfaab1e4b116c9e6bb4e2d30
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57674533"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59194058"
 ---
 # <a name="ui-automation-and-screen-scaling"></a>Automatizace uživatelského rozhraní a změna velikosti obrazovky
 > [!NOTE]
@@ -76,4 +76,5 @@ ms.locfileid: "57674533"
  Pokud vaše aplikace provádí přímou komunikaci mezi procesy s jinou hodnotu než [!INCLUDE[TLA2#tla_dpi](../../../includes/tla2sharptla-dpi-md.md)]– aplikace používající, může mít převádění mezi logické a fyzické souřadnice pomocí [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)] funkce `PhysicalToLogicalPoint` a `LogicalToPhysicalPoint`.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Ukázka zvýrazňovači nepoužívaného](https://github.com/Microsoft/WPF-Samples/tree/master/Accessibility/Highlighter)

@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 9d6a5673c2aaf287131274b0c590f00a69c64fed
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 8a78a4b82d0b2064c90c938a8614b0c7594f7856
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54517146"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59182270"
 ---
 # <a name="ceesectionrelocextra-union"></a>CeeSectionRelocExtra – sjednocení
 Představuje posun adresy používané [iceegen –](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md) rozhraní přemístit oddíl.  
@@ -50,4 +50,5 @@ typedef union  {
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
-- [Sjednocení pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-unions.md)
+
+- [Spojení metadat](../../../../docs/framework/unmanaged-api/metadata/metadata-unions.md)

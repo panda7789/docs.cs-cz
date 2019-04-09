@@ -4,12 +4,12 @@ description: Prozkoumejte funkce engineering součásti, které jsou podporovan�
 author: JRAlexander
 ms.custom: seodec18
 ms.date: 01/14/2019
-ms.openlocfilehash: e649c9a27f0409cb9cdfb554963b5c0e732991f2
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: f7a143fcce23c9043e6cc62ac9986122e71da0b5
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57355403"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59194770"
 ---
 # <a name="machine-learning-data-transforms---mlnet"></a>Strojové učení transformací dat - ML.NET
 
@@ -67,7 +67,6 @@ Následující tabulky obsahují informace o všech transformace dat v ML.NET po
 | <xref:Microsoft.ML.Transforms.Text.WordHashBagProducingTransformer> | Vytvoří kontejner počty ngrams (posloupnosti po sobě jdoucích slov o délce 1-n) v daného textu. Dělá to tak hashování každý ngram a používají hodnoty hash jako index v kontejneru a. |
 | <xref:Microsoft.ML.Transforms.Text.WordTokenizingTransformer> | Rozdělí text na slova pomocí znaky oddělovače. |
 
-
 ## <a name="image-model-featurizers"></a>Obrázek modelu featurizers
 
 | Transformace | Definice |
@@ -109,7 +108,7 @@ Následující tabulky obsahují informace o všech transformace dat v ML.NET po
 | --- | --- |
 | <xref:Microsoft.ML.Transforms.OnnxTransform> | Skóre, které se předem vytrénovaných modely ONNX využívající standardní v1.2 ONNX |
 
-## <a name="preprocessing"></a>Předběžné zpracování
+## <a name="preprocessing"></a>Předzpracování
 | Transformace | Definice |
 | --- | --- |
 | <xref:Microsoft.ML.Transforms.BootstrapSamplingTransformer> | Aproximuje bootstrap vzorkování pomocí vzorkování Poissonovo rozdělení. |
@@ -125,7 +124,6 @@ Následující tabulky obsahují informace o všech transformace dat v ML.NET po
 | <xref:Microsoft.ML.Transforms.SkipFilter> | Umožňuje omezit vstup na podmnožinu řádků přeskočením počet řádků. |
 | <xref:Microsoft.ML.Transforms.SkipTakeFilter> | Umožňuje omezení vstup na podmnožinu řádků volitelné posunem. Můžete použít k implementaci stránkování na data. Při vytvoření se SkipTakeFilter.SkipArguments chová jako `SkipFilter`.
 | <xref:Microsoft.ML.Transforms.TakeFilter> | Umožňuje omezení vstup na podmnožinu řádků provedením prvních N řádků. |
-
 
 ## <a name="schema"></a>Schéma
 
@@ -154,7 +152,7 @@ Následující tabulky obsahují informace o všech transformace dat v ML.NET po
 
 | Transformace | Definice |
 | --- | --- |
-| <xref:Microsoft.ML.TimeSeriesProcessing.ExponentialAverageTransform> | Přijímá vážený průměr hodnot: ExpAvg(y_t) = a * y_t + (1-a) * ExpAvg(y_(t-1)). |
+| <xref:Microsoft.ML.TimeSeriesProcessing.ExponentialAverageTransform> | Přijímá vážený průměr hodnot: ExpAvg(y_t) = a \* y_t + (1-a) \* ExpAvg(y_(t-1)). |
 | <xref:Microsoft.ML.TimeSeriesProcessing.IidChangePointDetector> | Implementuje transformace detektor změnu bodu pro i.i.d. pořadí na základě odhadu hustota adaptivní jádra a martingales (náhodného vzorku). |
 | <xref:Microsoft.ML.TimeSeriesProcessing.IidSpikeDetector> | Implementuje detektor zásobníku transformovat i.i.d. pořadí podle hustoty odhad adaptivní jádra (náhodného vzorku). |
 | <xref:Microsoft.ML.TimeSeriesProcessing.MovingAverageTransform> | Poskytuje vážený průměr hodnot posuvné okno. |

@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 420ae24e-762b-4e09-b4c3-2112c470ee49
-ms.openlocfilehash: 259b8e6df9b302ec50fe84a3b57d4597821bdcc8
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 8b2f195b2cb4c365693dc0f250a577a93cf25eee
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54533465"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59181529"
 ---
 # <a name="large-udts"></a>Velké uživatelsky definované typy
 Uživatelem definované typy (UDT) umožňují vývojářům rozšířit systém skalárního typu na server uložením common language runtime (CLR) objekty v databázi serveru SQL Server. Uživatelsky definovaný typ může obsahovat několik elementů a může mít chování, na rozdíl od tradičních alias datové typy, které se skládají z jednoho typ dat systému SQL Server.  
@@ -132,6 +132,7 @@ End Using
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Konfigurace parametrů a datové typy parametrů](../../../../../docs/framework/data/adonet/configuring-parameters-and-parameter-data-types.md)
 - [Načítání informací o databázovém schématu](../../../../../docs/framework/data/adonet/retrieving-database-schema-information.md)
 - [Mapování datových typů SQL Serveru](../../../../../docs/framework/data/adonet/sql-server-data-type-mappings.md)

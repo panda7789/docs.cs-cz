@@ -8,17 +8,16 @@ helpviewer_keywords:
 - geometry classes [WPF]
 - graphics [WPF], geometry classes
 ms.assetid: 9fba8934-98b7-4af6-82f6-f4ef887f963a
-ms.openlocfilehash: e002c07953320ac5e7c0854fe521896c3bca225c
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: f4f109b51ed566d1996b0c59b4ecbe51caa022cc
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57353007"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59179995"
 ---
 # <a name="geometry-overview"></a>Přehled geometrie
 Tento přehled popisuje způsob použití [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] <xref:System.Windows.Media.Geometry> tříd k popisu obrazce. V tomto tématu jsou také uvedeny rozdíly mezi <xref:System.Windows.Media.Geometry> objekty a <xref:System.Windows.Shapes.Shape> elementy.  
-  
-  
+
 <a name="wcpsdk_graphics_geometry_introduction"></a>   
 ## <a name="what-is-a-geometry"></a>Co je geometrii?  
  <xref:System.Windows.Media.Geometry> Třídy a třídy, které jsou odvozeny z něj, jako například <xref:System.Windows.Media.EllipseGeometry>, <xref:System.Windows.Media.PathGeometry>, a <xref:System.Windows.Media.CombinedGeometry>, umožňují popsat geometrie 2D obrazce. Tyto popisy geometrické mají mnoho účelů, odpovídající definující tvar k vykreslení na obrazovku nebo definování oblastí spuštění testu a Galerie. Geometrii můžete použít i k definování cestu k animace.  
@@ -42,7 +41,7 @@ Tento přehled popisuje způsob použití [!INCLUDE[TLA#tla_winclient](../../../
 ## <a name="common-properties-that-take-a-geometry"></a>Společné vlastnosti, které trvat geometrii  
  V předchozích částech uvedeno, že geometrické objekty lze použít s jinými objekty pro různé účely, jako je například kreslení tvarů, animace a oříznutí. Následující tabulka uvádí několik tříd, které mají vlastnosti, které trvat <xref:System.Windows.Media.Geometry> objektu.  
   
-|Typ|Vlastnost|  
+|Type|Vlastnost|  
 |----------|--------------|  
 |<xref:System.Windows.Media.Animation.DoubleAnimationUsingPath>|<xref:System.Windows.Media.Animation.DoubleAnimationUsingPath.PathGeometry%2A>|  
 |<xref:System.Windows.Media.DrawingGroup>|<xref:System.Windows.Media.DrawingGroup.ClipGeometry%2A>|  
@@ -217,13 +216,14 @@ PathGeometry s několika obrázků
  Zobrazit <xref:System.Windows.Media.Geometry> třídu pro úplný seznam všech její metody.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Media.Geometry>
 - <xref:System.Windows.Media.PathGeometry>
 - <xref:System.Windows.Shapes.Path>
 - <xref:System.Windows.Media.GeometryDrawing>
 - [2D grafika a obrázky](../advanced/optimizing-performance-2d-graphics-and-imaging.md)
 - [Syntaxe značek cesty](path-markup-syntax.md)
-- [Témata s postupy](geometries-how-to-topics.md)
+- [– postupy](geometries-how-to-topics.md)
 - [Přehled animace](animation-overview.md)
-- [Přehled objektů Shape a základního kreslení ve WPF](shapes-and-basic-drawing-in-wpf-overview.md)
-- [Přehled nakreslených objektů](drawing-objects-overview.md)
+- [Tvary a základní kresby v přehledu WPF](shapes-and-basic-drawing-in-wpf-overview.md)
+- [Přehled vykreslovaných objektů](drawing-objects-overview.md)

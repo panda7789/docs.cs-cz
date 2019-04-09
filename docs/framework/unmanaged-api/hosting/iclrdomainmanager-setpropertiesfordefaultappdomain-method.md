@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 43e61c4b-c435-45ec-9ef6-c68403aa4200
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: cd725f7468b26f9d8af3d7928b9df6fbefd93b6f
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: 4c42297e848844617ffdc6c85c81846b5805eb4b
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57502498"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59181327"
 ---
 # <a name="iclrdomainmanagersetpropertiesfordefaultappdomain-method"></a>ICLRDomainManager::SetPropertiesForDefaultAppDomain – metoda
 Nastaví vlastnosti, které bude sloužit k inicializaci výchozí domény aplikace.  
@@ -66,5 +66,6 @@ HRESULT SetPropertiesForDefaultAppDomain(
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Hostování](../../../../docs/framework/unmanaged-api/hosting/index.md)
 - [ICLRDomainManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrdomainmanager-interface.md)

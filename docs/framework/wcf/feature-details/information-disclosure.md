@@ -2,12 +2,12 @@
 title: Zpřístupnění informací
 ms.date: 03/30/2017
 ms.assetid: 4064c89f-afa6-444a-aa7e-807ef072131c
-ms.openlocfilehash: 267e0dc656e05ed6f95eef1c75e40c07108a164e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: b42faeb4043302e5e70379cc4e1de3cb8bd96af4
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54588242"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59195901"
 ---
 # <a name="information-disclosure"></a>Zpřístupnění informací
 Zpřístupnění informací umožňuje útočníkovi získat cenné informace o systému. Proto vždy zvažte, jaké informace jsou odhalení a určuje, zda je možné uživatele se zlými úmysly. Následující informace o možných útoků zpřístupnění obsahuje seznam a způsoby zmírnění rizik pro každý.  
@@ -57,6 +57,7 @@ MyChannelFactory.Credentials.Windows.ClientCredential = new System.Net.NetworkCr
  Pokud je zadané doméně, ale na neplatný hlavní název služby je určen pomocí funkce identity koncový bod, je použit protokol NTLM. Další informace o tom, jak je zadána identitě koncového bodu najdete v tématu [identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Důležité informace o zabezpečení](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)
 - [Zvýšení oprávnění](../../../../docs/framework/wcf/feature-details/elevation-of-privilege.md)
 - [Útok DoS](../../../../docs/framework/wcf/feature-details/denial-of-service.md)

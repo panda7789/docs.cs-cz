@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Určení typu pověření klienta'
+title: 'Postupy: Určení typu přihlašovacích údajů klienta'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - security credentials, adding to SOAP messages
 - WCF, security
 ms.assetid: 10f51bee-5f92-4c1a-9126-fa5418535d8f
-ms.openlocfilehash: 9fe999c4ee27d4a78bfad185fa3bcc065d74708a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 1138f0fe955782c71076d5c15c236d1d4ebbec01
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54643375"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59185052"
 ---
-# <a name="how-to-specify-the-client-credential-type"></a>Postupy: Určení typu pověření klienta
+# <a name="how-to-specify-the-client-credential-type"></a>Postupy: Určení typu přihlašovacích údajů klienta
 Po nastavení režimu zabezpečení (přenos nebo zpráva), máte možnost nastavit typ pověření klienta. Tato vlastnost určuje, jaký typ přihlašovacích údajů klient musí poskytnout službě pro ověřování. Další informace o nastavení režimu zabezpečení rozhraní (nezbytným krokem před nastavením typ přihlašovacích údajů klienta), najdete v části [jak: Nastavení režimu zabezpečení rozhraní](../../../docs/framework/wcf/how-to-set-the-security-mode.md).  
   
 ### <a name="to-set-the-client-credential-type-in-code"></a>Chcete-li nastavit typ přihlašovacích údajů klienta v kódu  
@@ -58,5 +58,6 @@ Po nastavení režimu zabezpečení (přenos nebo zpráva), máte možnost nasta
     ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Zabezpečení služeb](../../../docs/framework/wcf/securing-services.md)
 - [Postupy: Nastavení režimu zabezpečení](../../../docs/framework/wcf/how-to-set-the-security-mode.md)

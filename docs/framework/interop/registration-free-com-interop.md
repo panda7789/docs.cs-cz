@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 90f308b9-82dc-414a-bce1-77e0155e56bd
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a1e4dacf66cc17182265e8ea9f132938017a54e2
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: fbdc6f795aff5e84debd2e83485a22f1d42b31d4
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54698424"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59185299"
 ---
 # <a name="registration-free-com-interop"></a>Zprostředkovatel komunikace s objekty COM bez registrace
 Spolupráci s COM bez registrace se aktivuje komponenty bez použití registru Windows k ukládání informací o sestavení. Místo registrace komponenty v počítači se během nasazení, vytvářet soubory manifestu Win32 – vizuální styl v době návrhu, které obsahují informace o aktivaci a vazby. Tyto soubory manifestu, spíše než klíče registru, směrovat aktivační objekt.  
@@ -55,4 +55,5 @@ Spolupráci s COM bez registrace se aktivuje komponenty bez použití registru W
     >  Vedle sebe spuštění je funkce rozhraní .NET Framework, která umožňuje více verzí modulu runtime a více verzí aplikací a komponent, které používají verzi modulu runtime, spustit současně na stejném počítači. Spuštění vedle sebe a sestavení vedle sebe jsou různé mechanismy pro zajištění funkcí vedle sebe.  
   
 ## <a name="see-also"></a>Viz také:
-- [Postupy: Konfigurace Bezregistrační aktivace komponent COM založené na platformě .NET](../../../docs/framework/interop/configure-net-framework-based-com-components-for-reg.md)
+
+- [Postupy: Konfigurace komponent COM využívajících rozhraní .NET Framework pro aktivaci bez registrace](../../../docs/framework/interop/configure-net-framework-based-com-components-for-reg.md)

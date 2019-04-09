@@ -5,12 +5,12 @@ author: Thraka
 ms.author: adegeo
 ms.date: 03/01/2019
 ms.custom: ''
-ms.openlocfilehash: 3a50b5f085aee4afc2f388aeac8a4f68823b92c7
-ms.sourcegitcommit: 0aca6c5d166d7961a1e354c248495645b97a1dc5
-ms.translationtype: MT
+ms.openlocfilehash: 0f45c053311885c779d394a97f5845119e2b5c82
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/30/2019
-ms.locfileid: "58675858"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59186136"
 ---
 # <a name="how-to-port-a-windows-forms-desktop-app-to-net-core"></a>Postupy: Port desktopové aplikace Windows Forms až po .NET Core
 
@@ -36,7 +36,6 @@ V tomto článku najdete různé názvy umožňují určit typy souborů se pou�
 - Funkční projektu Windows Forms v řešení, které vytvoří a spustí bez problému.
 - Váš projekt musí být zakódované v C#. 
 - Nainstalujte nejnovější [.NET Core 3.0](https://aka.ms/netcore3download) ve verzi preview.
-
 
 >[!NOTE]
 >**Visual Studio 2017** nepodporuje projekty .NET Core 3.0. **Visual Studio. 2019 ve verzi Preview nebo RC** podporuje projekty .NET Core 3.0, ale zatím nepodporuje vizuálního návrháře pro projekty .NET Core 3.0 Windows Forms. Do vizuálního návrháře použít, musí mít projekt .NET Windows Forms ve vašem řešení, která sdílí soubory formuláře s projektem .NET Core.

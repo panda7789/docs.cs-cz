@@ -4,12 +4,12 @@ description: Podívejte se na osvědčené postupy pro propojení s nativními k
 author: jkoritzinsky
 ms.author: jekoritz
 ms.date: 01/18/2019
-ms.openlocfilehash: 5b65f80d3a81fab0d74ce26aec3b454c716a5d51
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
+ms.openlocfilehash: 6702d469abf317b3b1f545ce79b980e8581ab5f1
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58412055"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59196655"
 ---
 # <a name="native-interoperability-best-practices"></a>Osvědčené postupy nativní interoperabilita
 
@@ -103,7 +103,7 @@ Přenositelné typy jsou typy, které mají stejnou reprezentaci úrovni bitů v
 
 **NĚKDY blittable:**
 
-- `char`, `string`
+- `char`,  `string`
 
 Když přenositelné typy jsou předány podle odkazu, se jednoduše připnout podle marshaller namísto kopírování do zprostředkující vyrovnávací paměti. (Třídy jsou ze své podstaty předány podle odkazu, struktur jsou předány podle odkazu při použití s `ref` nebo `out`.)
 
@@ -188,7 +188,6 @@ Následující typy mají stejnou velikost na 32bitová verze a 64bitová verze 
 | 32    | `HRESULT`        | `long`               | `int`    |                                      |
 | 32    | `NTSTATUS`       | `long`               | `int`    |                                      |
 
-
 Následující typy ukazatelů, se podle šířku platformy. Použití `IntPtr` / `UIntPtr` pro tyto.
 
 | Podepsané typy ukazatelů (použijte `IntPtr`) | Typy ukazatelů, bez znaménka (použijte `UIntPtr`) |
@@ -205,7 +204,7 @@ Windows `PVOID` tedy C `void*` můžete zařadit jako buď `IntPtr` nebo `UIntPt
 
 [Datové typy Windows](/windows/desktop/WinProg/windows-data-types)
 
-[Rozsahy datových typů](/cpp/cpp/data-type-ranges)
+[Rozsahy datového typu](/cpp/cpp/data-type-ranges)
 
 ## <a name="structs"></a>Struktury
 

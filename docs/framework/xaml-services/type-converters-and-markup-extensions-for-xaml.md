@@ -8,12 +8,12 @@ helpviewer_keywords:
 - value converters for XAML [XAML Services]
 - XAML [XAML Services], service context
 ms.assetid: db07a952-05ce-4aa4-b6f9-aac7397d0326
-ms.openlocfilehash: 1704a7a86e89685763da7bf49a67c1fe8373124a
-ms.sourcegitcommit: 5c1abeec15fbddcc7dbaa729fabc1f1f29f12045
+ms.openlocfilehash: e6f8ed3b893319e771eb0af96da7a58a7fad5c9b
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58050541"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59200984"
 ---
 # <a name="type-converters-and-markup-extensions-for-xaml"></a>Převaděče typů a rozšíření značek pro jazyk XAML
 Převaděče typů a rozšíření značek jsou dvě techniky, které systémy typ XAML a XAML zapisovače používají ke generování komponenty grafu objektu. I když některé vlastnosti sdílejí, převaděče typů a rozšíření značek jsou reprezentovány odlišně v datovém proudu uzlu XAML. V této dokumentaci sady, převaděče typů, rozšíření značek a podobné konstrukce jsou někdy souhrnně označovány jako převaděče hodnot.  
@@ -66,6 +66,7 @@ Převaděče typů a rozšíření značek jsou dvě techniky, které systémy t
  Při implementaci převaděč hodnoty často potřebují přístup ke kontextu, ve kterém se použije převaděč hodnoty. Tento kontext se označuje jako kontext služby. Kontext služby může obsahovat informace, jako je aktivní kontext schématu XAML, přístup k mapování systém typů, které poskytují kontext schématu XAML a XAML objektu zapisovače a tak dále. Další informace o kontexty služby dostupné pro převaděče hodnoty a jak získat přístup ke službám, které můžou poskytovat kontext služby najdete v tématu [služby kontexty dostupné pro převaděče typů a rozšíření značek](service-contexts-available-to-type-converters-and-markup-extensions.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Markup.MarkupExtension>
 - <xref:System.Xaml.XamlObjectWriter>
 - [Přehled rozšíření značek pro jazyk XAML](markup-extensions-for-xaml-overview.md)

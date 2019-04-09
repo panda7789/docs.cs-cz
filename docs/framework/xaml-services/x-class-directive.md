@@ -10,12 +10,12 @@ helpviewer_keywords:
 - XAML [XAML Services], x:Class attribute
 - x:Class attribute [XAML Services]
 ms.assetid: bc4a3d8e-76e2-423e-a5d1-159a023e82ec
-ms.openlocfilehash: 8acc1ac099a71fbf624049b119ebe908f27cbb55
-ms.sourcegitcommit: 5c1abeec15fbddcc7dbaa729fabc1f1f29f12045
+ms.openlocfilehash: 5f7b072e90e92070dd7fda2f0ad44814009268b9
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58031230"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59199450"
 ---
 # <a name="xclass-directive"></a>x:Class – direktiva
 Nakonfiguruje kompilace kódu XAML pro připojení mezi značky a modelu code-behind částečné třídy. Kód částečná třída je definována v samostatném souboru kódu v [!INCLUDE[TLA#tla_cls](../../../includes/tlasharptla-cls-md.md)] jazyka, zatímco částečné třídy kód se obvykle vytvoří pomocí generování kódu během kompilace XAML.  
@@ -61,6 +61,7 @@ Nakonfiguruje kompilace kódu XAML pro připojení mezi značky a modelu code-be
  `x:Class` pro prostředí Silverlight je zdokumentován samostatně. Další informace najdete v tématu [Namespace XAML (x:) Funkce jazyka (Silverlight)](https://go.microsoft.com/fwlink/?LinkId=199081).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [x:Subclass – direktiva](x-subclass-directive.md)
 - [XAML a vlastní třídy pro WPF](../wpf/advanced/xaml-and-custom-classes-for-wpf.md)
 - [x:ClassModifier – direktiva](x-classmodifier-directive.md)

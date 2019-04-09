@@ -2,12 +2,12 @@
 title: 'Postupy: Hostování služby WCF ve WAS'
 ms.date: 03/30/2017
 ms.assetid: 9e3e213e-2dce-4f98-81a3-f62f44caeb54
-ms.openlocfilehash: 9094cf04ed1bc9fabe8d9df11b876007f322679a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 9c60248342c9cfa0e1b70d86df47a478dd34a60f
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54651172"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59195446"
 ---
 # <a name="how-to-host-a-wcf-service-in-was"></a>Postupy: Hostování služby WCF ve WAS
 Toto téma ukazuje základní kroky potřebné k vytvoření služby Aktivace procesu Windows (WAS) hostovaná služba Windows Communication Foundation (WCF). BYL je nová aktivační služba procesů, který je generalizace funkcí Internetové informační služby (IIS), které pracují s jiným protokolem než HTTP přenosové protokoly. WCF rozhraní adaptér naslouchací proces používá ke komunikaci žádosti o aktivaci, které jsou přijímány prostřednictvím protokolů jiným protokolem než HTTP nepodporuje WCF, jako je například TCP, pojmenované kanály a služby Řízení front zpráv.  
@@ -99,5 +99,6 @@ Toto téma ukazuje základní kroky potřebné k vytvoření služby Aktivace pr
 6.  Kompilace a spuštění klienta.  
   
 ## <a name="see-also"></a>Viz také:
-- [Aktivace protokolu TCP](../../../../docs/framework/wcf/samples/tcp-activation.md)
+
+- [Aktivace protokolem TCP](../../../../docs/framework/wcf/samples/tcp-activation.md)
 - [Hostování funkcí systému Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkId=201276)

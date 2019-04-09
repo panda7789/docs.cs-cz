@@ -2,12 +2,12 @@
 title: Útoky opakováním
 ms.date: 03/30/2017
 ms.assetid: 7a17e040-93cd-4432-81b9-9f62fec78c8f
-ms.openlocfilehash: bceaa1bb723144ee4e3b534aa1537acdc7f65fc3
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: fefcb533cedb5405736ecda70c6879ebe00b8b49
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54712074"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59186755"
 ---
 # <a name="replay-attacks"></a>Útoky opakováním
 A *přehrát útoku* nastane, pokud útočník zkopíruje datový proud zpráv mezi dvěma stranami a přehrává datový proud na jeden nebo více stran. Není-li minimalizovat, počítače v souladu s útoku zpracování datového proudu jako legitimní zprávy, což vede k celou řadu chybný důsledky, jako je například redundantní objednávky položku.  
@@ -37,6 +37,7 @@ A *přehrát útoku* nastane, pokud útočník zkopíruje datový proud zpráv m
 -   Konfigurace služby pro použití zabezpečení na úrovni přenosu.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Důležité informace o zabezpečení](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)
 - [Zpřístupnění informací](../../../../docs/framework/wcf/feature-details/information-disclosure.md)
 - [Zvýšení oprávnění](../../../../docs/framework/wcf/feature-details/elevation-of-privilege.md)

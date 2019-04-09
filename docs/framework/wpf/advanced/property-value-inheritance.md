@@ -6,18 +6,16 @@ helpviewer_keywords:
 - value inheritance [WPF]
 - properties [WPF], value inheritance
 ms.assetid: d7c338f9-f2bf-48ed-832c-7be58ac390e4
-ms.openlocfilehash: 64cafbe2f6044c83600ef227608dee24b29e3943
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 48543d2cfc11fc33dff6239cdfd7bfcd946e986a
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57359874"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59186818"
 ---
 # <a name="property-value-inheritance"></a>Dědičnost hodnoty vlastnosti
 Dědičnost hodnoty vlastnosti je funkce [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] systému vlastností. Dědičnost hodnoty vlastnosti umožňuje podřízené prvky ve stromové struktuře prvků, které mají získat hodnoty konkrétní vlastnosti od nadřízené prvky, jak je nastavit kdekoli v nejbližší nadřazený element dědí tuto hodnotu. Nadřazený element může také získali jeho hodnotu prostřednictvím dědičnost hodnoty vlastnosti, tak systému recurses potenciálně až po kořen stránky. Dědičnost hodnoty vlastnosti není výchozí chování systému vlastnosti; Vlastnost musí navázat s nastavením konkrétní metadat způsobí tuto vlastnost k zahájení dědičnost hodnoty vlastnosti na podřízené prvky.  
-  
 
-  
 <a name="Property_Value_Inheritance_is_Containment_Inheritance"></a>   
 ## <a name="property-value-inheritance-is-containment-inheritance"></a>Dědičnost hodnoty vlastnosti je členství ve skupině dědičnost  
  "Dědičnost" jako termín, který tady není úplně stejný koncept jako dědičnosti v kontextu typů a obecné objektově orientované programování, kde odvozeným třídám dědit definice členů z jejich základních tříd. Význam dědičnosti je také v aktivní [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]: vlastnosti definované v různé základní třídy jsou vystaveny jako atributy pro odvozený [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] třídy, pokud používá jako prvky jako členů pro kód. Dědičnost hodnoty vlastnosti je zvláště o jak hodnoty vlastností může zdědit z jeden element do jiného na základě vztahů nadřazenosti a podřízenosti ve stromové struktuře prvků. Stromové struktuře prvků je přímo viditelné při vnoření elementů v rámci další prvky při definování aplikací v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] značek. Stromů objektů lze také vytvořit prostřednictvím kódu programu přidáním objektů do určené kolekce jiných objektů a dědičnost hodnoty vlastnosti funguje stejně jako ve stromové struktuře dokončení v době běhu.  
@@ -42,6 +40,7 @@ Dědičnost hodnoty vlastnosti je funkce [!INCLUDE[TLA#tla_winclient](../../../.
  Dědičnost vlastnosti funguje tak, že procházení stromu prvků. Tento strom je často paralelní Logická stromová struktura. Ale vždy, když obsahovat objekt základní úrovni WPF v kódu, který definuje stromu, například <xref:System.Windows.Media.Brush>, vytvoříte jednorázová logického stromu. Hodnota true logického stromu nerozšiřuje koncepčně prostřednictvím <xref:System.Windows.Media.Brush>, protože Logická stromová struktura je koncept úrovni rozhraní WPF. Zobrazí se to projeví ve výsledcích při použití metody <xref:System.Windows.LogicalTreeHelper>. Ale dědičnost hodnoty vlastnosti dokáže Přemostit překonání tohoto rozdílu v logickém stromu a předáním stále zděděné hodnoty, tak dlouho, dokud vlastnost odvoditelný byl registrován jako připojené vlastnosti a žádné úmyslné blokování dědičnosti hranic (například <xref:System.Windows.Controls.Frame>) dochází.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Metadata vlastností závislosti](dependency-property-metadata.md)
-- [Přehled přidružených vlastností](attached-properties-overview.md)
-- [Priorita hodnot vlastností závislosti](dependency-property-value-precedence.md)
+- [Přehled připojených vlastností](attached-properties-overview.md)
+- [Priorita hodnot závislých vlastností](dependency-property-value-precedence.md)

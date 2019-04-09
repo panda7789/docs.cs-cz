@@ -5,12 +5,12 @@ author: cjgronlund
 ms.custom: seodec18
 ms.topic: overview
 ms.date: 03/01/2019
-ms.openlocfilehash: 6ba4719c830c8b0344a38dad4b86d38cc323e972
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: 3f5d44e90ba705195deba54ef658668488cdb0f7
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57466944"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59200361"
 ---
 # <a name="what-is-mlnet-and-how-do-i-understand-machine-learning-basics"></a>Co je ML.NET a jak pochopit základní informace o Machine Learning?
 
@@ -24,7 +24,6 @@ ML.NET je rozhraní zdarma, open source a multiplatformní machine learning, kte
 Strojové učení je technika datové vědy, která umožňuje počítačům s využitím existujících dat předvídat budoucí chování, výsledky a trendy. Pomocí strojového učení se počítače můžou učit, aniž by byly explicitně naprogramované.
 
 Díky předpovědím neboli predikcím ze strojového učení můžou být aplikace a zařízení chytřejší. Při online nákupu, machine learning pomáhá zboží doporučit produkty, které se vám mohly líbit podle pořízeného. Po protažení platební karty, strojové učení porovná transakci s databází transakcí a pomáhá detekci podvodného chování. Pokud takový zjišťuje místnosti, machine learning pomáhá se rozhodnout, jestli úloha dokončila.
-
 
 ## <a name="short-videos-on-data-science"></a>Krátkých videích týkajících se pro datové vědy 
 

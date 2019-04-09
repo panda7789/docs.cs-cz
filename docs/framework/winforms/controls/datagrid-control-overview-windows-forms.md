@@ -20,12 +20,12 @@ helpviewer_keywords:
 - parent table navigation in DataGrid
 - child tables [Windows Forms], dataGrid control
 ms.assetid: 85604bce-bc03-49d9-9030-dda8896c44b1
-ms.openlocfilehash: 33f6e5f7929c5a4231c0779964db177f45af6743
-ms.sourcegitcommit: 68eb5c4928e2b082f178a42c16f73fedf52c2ab8
-ms.translationtype: MT
+ms.openlocfilehash: 7fdc14257d140c92cb2450fc21b44c1f95c75ba8
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/05/2019
-ms.locfileid: "59055206"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59189310"
 ---
 # <a name="datagrid-control-overview-windows-forms"></a>DataGrid – přehled ovládacího prvku (Windows Forms)
 > [!NOTE]
@@ -140,6 +140,7 @@ Následující obrázek znázorňuje objektů obsažených v ovládacím prvku D
  Kromě běžné řízení událostí <xref:System.Windows.Forms.Control.MouseDown>, <xref:System.Windows.Forms.Control.Enter>, a <xref:System.Windows.Forms.DataGrid.Scroll>, <xref:System.Windows.Forms.DataGrid> ovládací prvek podporuje události související s úpravou a navigace v rámci mřížky. <xref:System.Windows.Forms.DataGrid.CurrentCell%2A> Výběru buňky, která určuje vlastnost. <xref:System.Windows.Forms.DataGrid.CurrentCellChanged> Událost se vyvolá, když uživatel přejde na novou buňku. Když uživatel přejde do nové tabulky prostřednictvím nadřazené a podřízené vztahy <xref:System.Windows.Forms.DataGrid.Navigate> událost se vyvolá. <xref:System.Windows.Forms.DataGrid.BackButtonClick> Událost se vyvolá, když uživatel klikne na tlačítko Zpět, když uživatel prohlíží podřízené tabulky a <xref:System.Windows.Forms.DataGrid.ShowParentDetailsButtonClick> událost je aktivována při kliknutí na ikonu Zobrazení/skrytí nadřazené řádky.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Ovládací prvek DataGrid](datagrid-control-windows-forms.md)
 - [Postupy: Vytvoření vazby ovládacího prvku Windows Forms DataGrid ke zdroji dat](how-to-bind-the-windows-forms-datagrid-control-to-a-data-source.md)
 - [Postupy: Přidání tabulek a sloupců do ovládacího prvku Windows Forms DataGrid](how-to-add-tables-and-columns-to-the-windows-forms-datagrid-control.md)

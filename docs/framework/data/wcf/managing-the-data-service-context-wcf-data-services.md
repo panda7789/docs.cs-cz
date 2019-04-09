@@ -2,12 +2,12 @@
 title: Správa kontextu datové služby (WCF Data Services)
 ms.date: 03/30/2017
 ms.assetid: 15b19d09-7de7-4638-9556-6ef396cc45ec
-ms.openlocfilehash: d339826cabc83d2e0cecb5451ba5b950e7f02321
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 33e7ce17eea5d534b941d778fd13144ad51b4094
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54631778"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59184740"
 ---
 # <a name="managing-the-data-service-context-wcf-data-services"></a>Správa kontextu datové služby (WCF Data Services)
 <xref:System.Data.Services.Client.DataServiceContext> Třída zapouzdří operace, které jsou podporovány pro zadané datové služby. I když [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] služby jsou bezstavové, kontext je. Proto můžete použít <xref:System.Data.Services.Client.DataServiceContext> třídy pro uchování stavu na straně klienta mezi interakcemi s datové služby za účelem podpory funkcí, jako je správa změn. Tato třída také spravuje identity a sleduje změny.  
@@ -37,6 +37,7 @@ ms.locfileid: "54631778"
  Ve výchozím nastavení, klient zasílá knihovny vytvoření, čtení, aktualizace a odstranění žádosti o [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] služby pomocí odpovídající metody HTTP POST, GET, PUT/SLOUČENÍ/PATCH a DELETE. Souladu se základní principy z REST Representational State Transfer (). Implementaci serveru pro každý Web, ale podporuje úplnou sadu metod HTTP. V některých případech může být omezena na stačí získat a publikovat podporovaných metod. To může nastat při zprostředkovatele, jako je brána firewall, blokuje požadavky u některých metod. Protože jsou nejčastěji podporované metody GET a POST, [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] předepisuje způsob, jak spouštět žádné nepodporované metody HTTP pomocí požadavku POST. Označuje jako *tunelování metoda* nebo *tunelování příspěvek*, to umožňuje klientovi umožní odeslat požadavek POST s skutečné metody popsané ve vlastní `X-HTTP-Method` záhlaví. Pokud chcete povolit příspěvek tunelové propojení pro požadavky, nastavte <xref:System.Data.Services.Client.DataServiceContext.UsePostTunneling%2A> vlastnost <xref:System.Data.Services.Client.DataServiceContext> instance na `true`.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Klientská knihovna pro WCF Data Services](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)
 - [Aktualizace datové služby](../../../../docs/framework/data/wcf/updating-the-data-service-wcf-data-services.md)
 - [Asynchronní operace](../../../../docs/framework/data/wcf/asynchronous-operations-wcf-data-services.md)

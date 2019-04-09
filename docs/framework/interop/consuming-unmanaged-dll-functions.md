@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: eca7606e-ebfb-4f47-b8d9-289903fdc045
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 50bfcf5c27236ca704a24f49128becfbee716c21
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
-ms.translationtype: MT
+ms.openlocfilehash: cb2aea648df5df9b69815d77a731717f8bc39bbd
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58463082"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59193353"
 ---
 # <a name="consuming-unmanaged-dll-functions"></a>Používání nespravovaných funkcí DLL
 Vyvolání platformy je služba, umožňuje spravovaným kódu volat nespravované funkce implementované v dynamické knihovny (DLL), jako jsou ty v rozhraní Windows API. Vyhledá a volá exportované funkce a zařadí argumenty (celá čísla, řetězce, pole, struktury a tak dále) napříč hranicemi podle potřeby.  
@@ -72,6 +72,7 @@ Vyvolání platformy je služba, umožňuje spravovaným kódu volat nespravovan
  Vyvolání platformy vyvolá výjimky generované nespravovanou funkci spravované volajícímu.
 
 ## <a name="see-also"></a>Viz také:
+
 - [Spolupráce s nespravovaným kódem](../../../docs/framework/interop/index.md)
 - [Příklady vyvolání platformy](../../../docs/framework/interop/platform-invoke-examples.md)
 - [Zařazování spolupráce](../../../docs/framework/interop/interop-marshaling.md)

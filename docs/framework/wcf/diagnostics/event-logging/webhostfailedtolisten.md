@@ -2,12 +2,12 @@
 title: WebHostFailedToListen
 ms.date: 03/30/2017
 ms.assetid: 328468a6-6388-425a-a122-49306e303d19
-ms.openlocfilehash: 30f4a6fa3018faf00b73d08495dc767443e734bb
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2aa1f27431cf62bcf643f822e47a3e7f7768ac3d
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54730669"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59193716"
 ---
 # <a name="webhostfailedtolisten"></a>WebHostFailedToListen
 Id: 112  
@@ -20,5 +20,6 @@ Id: 112
  Tato událost ukazuje na to, že došlo k chybě při pokusu o naslouchání na dané adrese URL. Tento pracovní proces je ukončen. Uvádí události výjimky, název procesu a ID procesu.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Protokolování událostí](../../../../../docs/framework/wcf/diagnostics/event-logging/index.md)
 - [Události – obecné referenční informace](../../../../../docs/framework/wcf/diagnostics/event-logging/events-general-reference.md)

@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Načtení nebo nastavení vlastnosti umístění plátna'
+title: 'Postupy: Získání nebo nastavení vlastností umístění plátna'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,14 +7,14 @@ dev_langs:
 helpviewer_keywords:
 - Canvas control [WPF], setting positioning properties
 ms.assetid: 1636b950-2b5a-4507-8a10-c5034cc58b1c
-ms.openlocfilehash: 9b280bf86f12b406582cb2f534edb85618515d76
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 06508e1198736ccb1cbda41641dff4bc634ef82b
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57356322"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59194406"
 ---
-# <a name="how-to-get-or-set-canvas-positioning-properties"></a>Postupy: Načtení nebo nastavení vlastnosti umístění plátna
+# <a name="how-to-get-or-set-canvas-positioning-properties"></a>Postupy: Získání nebo nastavení vlastností umístění plátna
 Tento příklad ukazuje způsob použití metod pro posunutí umístění <xref:System.Windows.Controls.Canvas> element na pozici podřízený obsah. Tento příklad používá obsah <xref:System.Windows.Controls.ListBoxItem> představující umístění hodnoty a převádí hodnoty instance <xref:System.Double>, což je povinný argument pro umístění. Hodnoty jsou poté převeden zpět do řetězce a zobrazí jako text v <xref:System.Windows.Controls.TextBlock> elementu s použitím <xref:System.Windows.Controls.Canvas.GetLeft%2A> metody.  
   
 ## <a name="example"></a>Příklad  
@@ -30,7 +30,8 @@ Tento příklad ukazuje způsob použití metod pro posunutí umístění <xref:
  [!code-vb[CanvasPositioningProperties#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CanvasPositioningProperties/VisualBasic/Window1.xaml.vb#2)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Controls.Canvas>
 - <xref:System.Windows.Controls.ListBoxItem>
 - <xref:System.Windows.LengthConverter>
-- [Přehled panelu](panels-overview.md)
+- [Přehled panelů](panels-overview.md)

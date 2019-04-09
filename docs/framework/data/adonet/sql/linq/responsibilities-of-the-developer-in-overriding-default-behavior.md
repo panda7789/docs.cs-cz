@@ -2,12 +2,12 @@
 title: Odpovědnosti vývojáře při přepisu výchozího chování
 ms.date: 03/30/2017
 ms.assetid: c6909ddd-e053-46a8-980c-0e12a9797be1
-ms.openlocfilehash: 4773d4d5cf8192dfa1f8bfad6b5846c03ab1d2c7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 12ea526d71946cdc7ab821f5e38948fcbb57d158
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54555619"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59184766"
 ---
 # <a name="responsibilities-of-the-developer-in-overriding-default-behavior"></a>Odpovědnosti vývojáře při přepisu výchozího chování
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] nevynucuje následující požadavky, ale chování není definováno, pokud nejsou splněné tyto požadavky.  
@@ -27,4 +27,5 @@ ms.locfileid: "54555619"
 -   Nakonec přepsání metody by měl provádět uvedené operace. Sémantika [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] operace, jako jsou předběžné načítání, odložené načítání, a <xref:System.Data.Linq.DataContext.SubmitChanges%2A>) vyžadují se příslušná přepsání poskytovat uvedené služby. Například zatížení přepsání, která právě bez kontroly, že obsah v databázi pravděpodobně povede k nekonzistentní data vrací prázdnou kolekci.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přizpůsobení operací vložení, aktualizace a odstranění](../../../../../../docs/framework/data/adonet/sql/linq/customizing-insert-update-and-delete-operations.md)

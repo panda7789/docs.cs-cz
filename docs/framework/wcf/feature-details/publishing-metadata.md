@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - meatadata [WCF], publishing
 ms.assetid: 3a56831a-cabc-45c0-bd02-12e2e9bd7313
-ms.openlocfilehash: 1f216fe045dff9eca98c821724372e4426620f47
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 97836cef12cd1f220e97d2c38d2dca1b878d7484
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54548804"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59183069"
 ---
 # <a name="publishing-metadata"></a>Publikování metadat
 Služby Windows Communication Foundation (WCF) měla být zveřejněna metadata a publikovat jednu nebo víc koncových bodů metadat. Publikování metadat služby zpřístupňuje metadata použitím standardizovaných protokolů, jako jsou žádosti o WS-MetadataExchange (MEX) a protokolu HTTP/GET. Koncové body metadat se podobně jako ostatní koncové body služby mají adresa, vazba a kontrakt a je možné je přidat k hostiteli služby prostřednictvím konfigurace nebo imperativního kódu.  
@@ -44,4 +44,5 @@ Služby Windows Communication Foundation (WCF) měla být zveřejněna metadata 
  <xref:System.ServiceModel.Description.MetadataExchangeBindings>  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Export a import metadat](../../../../docs/framework/wcf/feature-details/exporting-and-importing-metadata.md)

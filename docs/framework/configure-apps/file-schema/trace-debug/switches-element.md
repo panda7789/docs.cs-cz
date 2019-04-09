@@ -1,5 +1,5 @@
 ---
-title: Element <switches>
+title: <switches> Prvek
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/switches
@@ -9,12 +9,12 @@ helpviewer_keywords:
 - switches element
 - trace switches, <switches> element
 ms.assetid: 4cf36786-b89a-40e2-a0f1-86bb9b783343
-ms.openlocfilehash: afd0e955698dfc7ff3d5c843dd8db10f648265b8
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 44f5c918f19f84daf827ad4e8f3b6bfbc3e9f439
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55254662"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59196525"
 ---
 # <a name="switches-element"></a>\<přepínače > – Element
 Obsahuje přepínače trasování a úrovně, ve kterém jsou nastavené přepínačů trasování.  
@@ -67,6 +67,7 @@ Obsahuje přepínače trasování a úrovně, ve kterém jsou nastavené přepí
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Diagnostics.Switch>
 - <xref:System.Diagnostics.TraceSwitch>
 - <xref:System.Diagnostics.BooleanSwitch>

@@ -2,12 +2,12 @@
 title: <system.serviceModel.activation>
 ms.date: 03/30/2017
 ms.assetid: c0cae85f-56cb-4030-8807-6f96edff8d2d
-ms.openlocfilehash: ddb9c03c2d4ec17198719544fba9da989a6b0eb4
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: b29f7173b4d75ec9adff37449d3d56266f01a03c
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55271145"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59196187"
 ---
 # <a name="systemservicemodelactivation"></a>\<system.serviceModel.activation>
 Tento konfigurační oddíl představuje nastavení konfigurace pro nástroj SMSvcHost.exe. Konfigurační prvky můžete nakonfigurovat v souboru konfigurace SMSvcHost.exe.config. Konkrétně obsahuje všechna nastavení celý počítač, musí být nakonfigurované.  
@@ -61,4 +61,5 @@ Tento konfigurační oddíl představuje nastavení konfigurace pro nástroj SMS
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Activation.Configuration>

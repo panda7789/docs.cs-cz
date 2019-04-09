@@ -2,12 +2,12 @@
 title: Stejně jako (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 8300e6d2-875b-481e-9ef4-e1e7c12d46fa
-ms.openlocfilehash: 406e660efcc351df3fd2720a5d13d8398d1a8216
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 8f210c83a8220f11a5e0a461c8b72466f00a4e37
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54536968"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59197708"
 ---
 # <a name="like-entity-sql"></a>Stejně jako (Entity SQL)
 Určuje, zda konkrétní znak `String` odpovídá zadanému vzoru.  
@@ -57,13 +57,13 @@ match [NOT] LIKE pattern [ESCAPE escape]
 >  Pokud je cílem konkrétního zprostředkovatele můžete použít rozšíření specifické pro zprostředkovatele. Ale tyto konstrukce může považovat za odlišně podle jiných poskytovatelů, třeba. Systému SQL Server podporuje [první poslední] a [^ první poslední] vzory, kde dřívější odpovídá přesně jeden znak mezi první a poslední a druhá možnost odpovídá přesně jeden znak, který není mezi první a poslední.  
   
 ### <a name="escape"></a>Escape  
- Pomocí řídicí klauzule můžete hledat řetězce znaků, které zahrnují jeden nebo více speciální zástupné znaky jsou popsané v tabulce v předchozí části. Předpokládejme například, několik dokumentů obsahují literál "100 %" v názvu a chcete hledat ve všech těchto dokumentů. Protože znak procent (%) je zástupný znak, musíte před něj pomocí [!INCLUDE[esql](../../../../../../includes/esql-md.md)] ODCHODOVOU klauzuli úspěšně provést hledání. Následuje příklad tohoto filtru.  
+ Pomocí řídicí klauzule můžete hledat řetězce znaků, které zahrnují jeden nebo více speciální zástupné znaky jsou popsané v tabulce v předchozí části. Předpokládejme například, několik dokumentů obsahují literál "100 %" v názvu a chcete hledat ve všech těchto dokumentů. Protože procent (%) zástupný znak je znak, musíte před něj pomocí [!INCLUDE[esql](../../../../../../includes/esql-md.md)] ODCHODOVOU klauzuli úspěšně provést hledání. Následuje příklad tohoto filtru.  
   
 ```  
 "title like '%100!%%' escape '!'"  
 ```  
   
- V tomto výrazu vyhledávání procenta zástupný znak (%) hned za znak vykřičník (!) je považován za literál, místo jako zástupný znak. Můžete použít libovolný znak jako řídicí znak s výjimkou [!INCLUDE[esql](../../../../../../includes/esql-md.md)] zástupné znaky a druhou mocninu závorka (`[ ]`) znaků. V předchozím příkladu znak vykřičník (!) je řídicí znak.  
+ V tomto výrazu vyhledávání, procenta zástupného znaku (%) okamžitě následující znak vykřičník (!) je považován za literál, nikoli jako zástupný znak. Můžete použít libovolný znak jako řídicí znak s výjimkou [!INCLUDE[esql](../../../../../../includes/esql-md.md)] zástupné znaky a druhou mocninu závorka (`[ ]`) znaků. V předchozím příkladu znak vykřičník (!) je řídicí znak.  
   
 ## <a name="example"></a>Příklad  
  Následující dva [!INCLUDE[esql](../../../../../../includes/esql-md.md)] použít podobné dotazy a řídicí operátory k určení, zda řetězec konkrétní znak odpovídá zadanému vzoru. Vyhledá první dotaz `Name` , které začíná znaky `Down_`. Tento dotaz používá možnost řídicí, protože podtržítko (`_`) je zástupný znak. Bez zadání možnosti řídicí, dotaz bude vyhledávat libovolné `Name` hodnoty, které začínají slovem `Down` za nímž následuje jakémukoli jednomu znaku jiného než podtržítko. Dotazy jsou založeny na modelu Sales AdventureWorks. Kompilace a spuštění tohoto dotazu, postupujte podle těchto kroků:  
@@ -75,4 +75,5 @@ match [NOT] LIKE pattern [ESCAPE escape]
  [!code-csharp[DP EntityServices Concepts 2#LIKE](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#like)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Reference k Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)

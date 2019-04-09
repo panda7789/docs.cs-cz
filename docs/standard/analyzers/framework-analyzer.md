@@ -5,12 +5,12 @@ author: billwagner
 ms.author: wiwagn
 ms.date: 01/25/2018
 ms.technology: dotnet-standard
-ms.openlocfilehash: 562d85d47791ca253655dd05a1c9a268767ba949
-ms.sourcegitcommit: d938c39afb9216db377d0f0ecdaa53936a851059
+ms.openlocfilehash: cbd9bcdb12a423f54aa4ff82d88f07c20023c48f
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58634463"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59197644"
 ---
 # <a name="the-net-framework-analyzer"></a>Analyzátor rozhraní .NET Framework
 
@@ -114,7 +114,6 @@ Pokud používáte nezabezpečené <xref:System.Xml.XmlReaderSettings.DtdProcess
 
 Další informace: [A3075: Nezabezpečené specifikace DTD zpracování ve formátu XML](/visualstudio/code-quality/ca2237-mark-iserializable-types-with-serializableattribute)
 
-
 ### <a name="ca5350-do-not-use-weak-cryptographic-algorithms"></a>CA5350: Nepoužívejte slabé kryptografické algoritmy
 
 Postupem času degradovat kryptografické algoritmy, budou další pokročilé útoky. V závislosti na typu a použití tohoto kryptografický algoritmus dále snížení jeho kryptografická můžou útočníkům umožnit, aby číst enciphered zprávy, manipulovat s enciphered zprávy, forge digitální podpisy, manipulovat s hodnotu hash obsahu, nebo v opačném případě ohrozit zabezpečení jakékoli cryptosystem podle algoritmu. Pro šifrování, použijte algoritmus AES (AES-256, AES-192 a AES-128 jsou přijatelná) s délkou klíče větší než nebo rovna hodnotě 128 bitů. Pro vytvoření hodnoty hash, pomocí funkce algoritmu hash řady SHA-2, jako je 512 SHA-2, SHA-2 384 nebo 256 SHA-2.
@@ -134,5 +133,3 @@ Díky tomu výpočetně přerušení tento algoritmus útoku existuje. To útoč
 **Závažnost:** Upozornění
 
 Další informace: [CA5351: Nepoužívejte poškozené kryptografické algoritmy](/visualstudio/code-quality/ca5351-do-not-use-broken-cryptographic-algorithms)
-
-

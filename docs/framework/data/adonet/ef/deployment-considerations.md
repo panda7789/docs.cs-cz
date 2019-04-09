@@ -2,12 +2,12 @@
 title: Důležité informace o nasazení (rozhraní Entity Framework)
 ms.date: 03/30/2017
 ms.assetid: 3a847a22-4eb8-4565-b18b-453bbca070db
-ms.openlocfilehash: 683f5e9b43bceb09d6354079fd9f7fcb7ed09eac
-ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
+ms.openlocfilehash: 7ab3827a9f2072f6f4b0c34f3801ee5dff2821d3
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55828082"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59199593"
 ---
 # <a name="deployment-considerations-entity-framework"></a>Důležité informace o nasazení (rozhraní Entity Framework)
 Toto téma obsahuje informace o nasazení aplikace, které používají rozhraní ADO.NET Entity Framework pro přístup k datům. Další informace o rozhraní Entity Framework naleznete v tématu [Začínáme](../../../../../docs/framework/data/adonet/ef/getting-started.md).  
@@ -29,5 +29,6 @@ Toto téma obsahuje informace o nasazení aplikace, které používají rozhran�
 -   Protože Entity Framework je součástí rozhraní .NET Framework, můžete znovu distribuovat s vaší aplikací podle licenční smlouvy rozhraní .NET Framework.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [ADO.NET Entity Framework](../../../../../docs/framework/data/adonet/ef/index.md)
 - [Důležité informace o vývoji a nasazení](../../../../../docs/framework/data/adonet/ef/development-and-deployment-considerations.md)

@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0b35a901586a4e0951b9915330f974dc48e931c8
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 75bf52fbf9552dc464d9c646f0a2b1bc01cf89c0
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54632176"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59193093"
 ---
 # <a name="getqualifierset-function"></a>GetQualifierSet – funkce
 Načte kvalifikátor, nastavte pro instanci třídy nebo definice třídy.
@@ -47,13 +47,13 @@ HRESULT GetQualifierSet (
 [in] Ukazatel [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance.
 
 `ppQualSet`  
-[out] Přijímá ukazatel rozhraní, která umožňuje přístup k kvalifikátory třídy objektu. `ppQualSet` nemůže být `null`. Pokud dojde k chybě, není vrátí nový objekt a ukazatel myši zůstane bez úprav. 
+[out] Přijímá ukazatel rozhraní, která umožňuje přístup k kvalifikátory třídy objektu. `ppQualSet` Nemůže být `null`. Pokud dojde k chybě, není vrátí nový objekt a ukazatel myši zůstane bez úprav. 
 
 ## <a name="return-value"></a>Návratová hodnota
 
 Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
 
-|Konstanta  |Hodnota  |Popis  |
+|Konstanta  |Value  |Popis  |
 |---------|---------|---------|
 |`WBEM_E_FAILED` | 0x80041001 | Obecné selhání došlo. |
 |`WBEM_E_NOT_FOUND` | 0x80041002 | Zadaná metoda neexistuje. |
@@ -75,4 +75,5 @@ Tato funkce zalamuje volání na [IWbemClassObject::GetQualifierSet](/windows/de
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

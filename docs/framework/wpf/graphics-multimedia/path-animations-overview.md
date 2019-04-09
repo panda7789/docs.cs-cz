@@ -8,12 +8,12 @@ helpviewer_keywords:
 - animation [WPF], paths
 - path animations [WPF]
 ms.assetid: 979c732c-df74-47a6-be96-8e07b3707d53
-ms.openlocfilehash: c8e628e11debadb88c365ac95d355f1ee641bdbc
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 195af217ddf3a78a0ef1bb54957a65b6ce62deae
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57367853"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59182465"
 ---
 # <a name="path-animations-overview"></a>Přehled animací cesty
 <a name="introduction"></a> Toto téma představuje animace cesty, které vám umožní používat geometrické cesty k vygenerování výstupní hodnoty. Animace cesty jsou užitečné pro přesun a otočení objekty podél cest složité.  
@@ -90,6 +90,7 @@ ms.locfileid: "57367853"
  Další informace o syntaxi cestu, která se používá v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] příkladu najdete v článku [syntaxe značek cesty](path-markup-syntax.md) Přehled.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Ukázka animace cesty](https://go.microsoft.com/fwlink/?LinkID=160028)
 - [Syntaxe značek cesty](path-markup-syntax.md)
 - [Postupy: Témata animace cesty](path-animation-how-to-topics.md)

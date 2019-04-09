@@ -2,12 +2,12 @@
 title: Použití čítačů výkonu
 ms.date: 03/30/2017
 ms.assetid: 00a787af-1876-473c-a48d-f52b51e28a3f
-ms.openlocfilehash: 755d93e8165b9747f799571836d6b54e54a5fc45
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: aa4e309c7097359e538e92aa3ddf88794150f3c4
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54623154"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59186773"
 ---
 # <a name="using-performance-counters"></a>Použití čítačů výkonu
 Tato ukázka předvádí, jak získat přístup k čítače výkonu Windows Communication Foundation (WCF) a jak vytvořit uživatelsky definovaným výkonem čítače. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md).  
@@ -77,4 +77,5 @@ Tato ukázka předvádí, jak získat přístup k čítače výkonu Windows Comm
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Management\PerfCounters`  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Ukázky AppFabric monitorování](https://go.microsoft.com/fwlink/?LinkId=193959)

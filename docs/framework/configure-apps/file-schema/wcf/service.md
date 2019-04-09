@@ -2,12 +2,12 @@
 title: <service>
 ms.date: 03/30/2017
 ms.assetid: 13123dd6-c4a9-4a04-a984-df184b851788
-ms.openlocfilehash: 57fbdd2cf7c398e611f835eeb4e924fb4f3e0c9e
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 68bddc01b02d9885b3f0fc4c2cbc5c3249de03f4
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55270300"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59197955"
 ---
 # <a name="service"></a>\<služby >
 `service` Element obsahuje nastavení pro službu Windows Communication Foundation (WCF). Obsahuje také koncové body, které zpřístupňují služby.  
@@ -69,5 +69,6 @@ ms.locfileid: "55270300"
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Configuration.ServiceElement>
 - [Konfigurace služeb](../../../../../docs/framework/wcf/configuring-services.md)

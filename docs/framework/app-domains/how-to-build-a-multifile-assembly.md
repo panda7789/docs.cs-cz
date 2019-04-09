@@ -19,12 +19,12 @@ helpviewer_keywords:
 ms.assetid: 261c5583-8a76-412d-bda7-9b8ee3b131e5
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 68f525244f2238ebdc44116fc91c3ddcb0a79bfd
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: bcc451903f7fbf7f82e2ed64834d26e605a0c069
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56975053"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59187795"
 ---
 # <a name="how-to-build-a-multifile-assembly"></a>Postupy: Vytváření vícesouborového sestavení
 Tento článek vysvětluje, jak vytvořit vícesouborové sestavení a obsahuje kód, který ukazuje každý krok v postupu.
@@ -98,6 +98,7 @@ Tento článek vysvětluje, jak vytvořit vícesouborové sestavení a obsahuje 
     Můžete použít [MSIL Disassembler (Ildasm.exe)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md) zkontrolovat obsah sestavení nebo zjistit, zda je soubor sestavení nebo modulu.
 
 ## <a name="see-also"></a>Viz také:
+
 - [Vytváření sestavení](../../../docs/framework/app-domains/create-assemblies.md)
 - [Postupy: Zobrazení obsahu sestavení](../../../docs/framework/app-domains/how-to-view-assembly-contents.md)
 - [Jak běhové prostředí vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)

@@ -3,12 +3,12 @@ title: Typy architektur podporující stromy výrazů
 description: Další informace o rozhraní framework typy podporující stromy výrazů, vytváření stromů výrazů a techniky pro práci s strom výrazu rozhraní API.
 ms.date: 06/20/2016
 ms.assetid: e9c85021-0d36-48af-91b7-aaaa66f22654
-ms.openlocfilehash: 687b521c52c1ca380a12e18469b5f66000049d3c
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: c18bbfb1273156a4b070d1f195d9e823256fde9d
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45972556"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59198462"
 ---
 # <a name="framework-types-supporting-expression-trees"></a>Typy architektur podporující stromy výrazů
 
@@ -18,7 +18,7 @@ Existuje dlouhý seznam tříd v rozhraní .NET Core, které pracují s stromy v
 Podívejte se na seznam v <xref:System.Linq.Expressions>.
 Nespouštějte ho pomocí úplného seznamu, nyní se pokusíme pochopit, jak byly navrženy tříd rozhraní framework.
 
-V návrhu jazyka je výraz tělo kód, který se vyhodnotí a vrátí hodnotu. Výrazy mohou být velmi jednoduchý: konstantní výraz `1` vrací konstantní hodnotu 1. Mohou být složitější: výraz `(-B + Math.Sqrt(B*B - 4 * A * C)) / (2 * A)` vrátí jeden kořenový adresář pro kvadratické rovnice (v případě, kdy má rovnice řešení).  
+V návrhu jazyka je výraz tělo kód, který se vyhodnotí a vrátí hodnotu. Výrazy mohou být velmi jednoduchý: konstantní výraz `1` vrací konstantní hodnotu 1. Mohou být složitější: Výraz `(-B + Math.Sqrt(B*B - 4 * A * C)) / (2 * A)` vrátí jeden kořenový adresář pro kvadratické rovnice (v případě, kdy má rovnice řešení).  
 
 ## <a name="it-all-starts-with-systemlinqexpression"></a>Všechno začíná System.Linq.Expression
 
@@ -65,4 +65,3 @@ Existují výraz typy uzlů, které mapují na téměř všechny prvky syntaxe j
 Najdete tu informace, jako je podívejte se na každý z těchto tří oblastí. Vždy zjistíte, co potřebujete, když začínáte s jeden z těchto tří kroků.
  
  [Další – Provádění stromů výrazů](expression-trees-execution.md)
- 

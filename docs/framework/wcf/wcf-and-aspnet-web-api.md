@@ -2,12 +2,12 @@
 title: WCF a ASP.NET Web API
 ms.date: 03/30/2017
 ms.assetid: 08ceded3-fd9a-4467-9715-c4cbd9c7228e
-ms.openlocfilehash: 460c2d6d3acfd857c3f11db313a2ebb894a14cea
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d805c09bef45932ba006a213343429ae7c9303df
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54697020"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59192001"
 ---
 # <a name="wcf-and-aspnet-web-api"></a>WCF a ASP.NET Web API
 WCF je jednotný programovací model pro vytváření aplikací orientovaných na služby od Microsoftu. Umožňuje vývojářům vytvářet zabezpečená, spolehlivá a počet řešení, které se integrují napříč platformami vzájemnou spolupráci se službami stávajících investic. [Rozhraní ASP.NET Web API](https://www.asp.net/web-api) je architektura, která usnadňuje sestavování služeb HTTP, které jsou poskytovány širokému spektru klientů, včetně prohlížečů a mobilních zařízení. ASP.NET Web API je ideální platformu pro sestavování aplikací RESTful v rozhraní .NET Framework. Toto téma představuje některé pokyny, které vám pomohou rozhodnout, technologii, která bude nejlépe vyhovovat vašim potřebám.  
@@ -27,5 +27,6 @@ WCF je jednotný programovací model pro vytváření aplikací orientovaných n
  Použijte k vytvoření spolehlivé a zabezpečené webové služby, které jsou přístupné přes celou řadu přenosy WCF. Použijte k vytvoření založené na protokolu HTTP služby, které jsou k dispozici v celé řadě klientských rozhraní ASP.NET Web API. Webové rozhraní API technologie ASP.NET použijte, pokud jsou vytvoření a návrh nové služby ve stylu REST. I když WCF poskytuje podporu pro psaní stylu REST služby, podpora pro REST v rozhraní ASP.NET Web API je kompletní a všechna budoucí vylepšení funkce REST budou k dispozici v rozhraní ASP.NET Web API. Pokud máte existující službu WCF a chcete zobrazit další koncové body REST, použijte WCF a <xref:System.ServiceModel.WebHttpBinding>.  
   
 ## <a name="see-also"></a>Viz také:
-- [Co je Windows Communication Foundation](../../../docs/framework/wcf/whats-wcf.md)
-- [Základní koncepty Windows Communication Foundation](../../../docs/framework/wcf/fundamental-concepts.md)
+
+- [Co je to Windows Communication Foundation](../../../docs/framework/wcf/whats-wcf.md)
+- [Základní koncepty služby Windows Communication Foundation](../../../docs/framework/wcf/fundamental-concepts.md)

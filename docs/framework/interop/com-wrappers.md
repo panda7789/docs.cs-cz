@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: e56c485b-6b67-4345-8e66-fd21835a6092
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ce15e0535bbd6bc67054c651a518f11cf9dd2ae1
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
+ms.openlocfilehash: b633239be85a66c5bba54132c3732357967eb177
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58410352"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59182933"
 ---
 # <a name="com-wrappers"></a>Obálky COM
 COM se liší od objektový model rozhraní .NET Framework důležité několika způsoby:  
@@ -34,6 +34,7 @@ COM se liší od objektový model rozhraní .NET Framework důležité několika
  Ve většině případů poskytuje standardní obálky RCW nebo objekt CCW vygenerované modulem runtime odpovídající zařazování pro volání, které překračují hranice mezi modelem COM a rozhraní .NET Framework. Pomocí vlastních atributů, můžete volitelně můžete upravit způsob, jakým modul runtime představuje spravovaným a nespravovaným kódem.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Rozšířená interoperabilita modelu COM](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bd9cdfyx(v=vs.100))
 - [Obálka volatelná za běhu](runtime-callable-wrapper.md)
 - [Obálka volatelná aplikacemi COM](com-callable-wrapper.md)

@@ -2,12 +2,12 @@
 title: Dynamické povolování analytického sledování
 ms.date: 03/30/2017
 ms.assetid: 58b63cfc-307a-427d-b69d-9917ff9f44ac
-ms.openlocfilehash: 42d238c704910c2406eb580c2ce102e5e84ed0f7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 219561b1acd2259daad4c984dcf0b15517166c3f
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54719986"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59197474"
 ---
 # <a name="dynamically-enabling-analytic-tracing"></a>Dynamické povolování analytického sledování
 Pomocí nástrojů, které se dodávají s operačním systémem Windows, můžete povolit nebo zakázat trasování dynamicky pomocí Event Tracing for Windows (ETW). Pro všechny [!INCLUDE[netfx_current_long](../../../../../includes/netfx-current-long-md.md)] služby Windows Communication Foundation (WCF), analytické trasování může být povolení i Zakázaní dynamicky bez úpravy souboru Web.config aplikace nebo restartování služby. To umožňuje, aby aplikace, který vysílá události trasování k zajištění nepřerušeného.  
@@ -20,7 +20,7 @@ Pomocí nástrojů, které se dodávají s operačním systémem Windows, může
   
 -   **Nástroj Perfmon** – nástroje pro správu grafického rozhraní Windows, který používá čítače pro monitorování čítačů trasování a efekty trasování na výkon. Další informace najdete v tématu [Data Collector nastavit ručně vytvořit](https://go.microsoft.com/fwlink/?LinkId=165429).  
   
-### <a name="keywords"></a>Klíčová slova  
+### <a name="keywords"></a>klíčová slova  
  Při použití <xref:System.ServiceModel.Activation.Configuration.ServiceModelActivationSectionGroup.Diagnostics%2A> třídy, rozhraní .NET Framework trasovací zprávy jsou obecně Filtroval úroveň závažnosti (například Chyba, upozornění a informace). Trasování událostí pro Windows podporuje koncept úrovně závažnosti, ale zavádí nové, flexibilní filtrační mechanismus, pomocí klíčových slov. Klíčová slova jsou libovolné textové hodnoty, které umožní – události trasování poskytli další kontext o tom, co znamená příslušné události.  
   
  Každá událost trasování pro analytické trasování WCF, má dva typy klíčových slov. Každá událost nejprve má nejmíň jeden scénář klíčová slova. Tato klíčová slova označení scénáře, které tato událost je určena na podporu. Existují tři scénáře klíčová slova, jednotlivé nastavené pro konkrétní účel, jak je znázorněno v následující tabulce. Filtrování pomocí klíčových slov můžete změnit dynamicky bez narušení služeb WCF. To znamená, že můžete dynamicky měnit vaší aktuální situaci trasování a množství informací o trasování, který bude shromažďovat. Například můžete změnit `HealthMonitoring` k `Troubleshooting` a zvýšit členitosti trasování událostí.  
@@ -41,4 +41,5 @@ Pomocí nástrojů, které se dodávají s operačním systémem Windows, může
 |`WCFMessageLogging`|Události protokolování zpráv WCF.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Služby WCF a Trasování událostí pro Windows](../../../../../docs/framework/wcf/samples/wcf-services-and-event-tracing-for-windows.md)

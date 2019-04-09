@@ -2,12 +2,12 @@
 title: <messageLogging>
 ms.date: 03/30/2017
 ms.assetid: 1d06a7e6-9633-4a12-8c5d-123adbbc19c5
-ms.openlocfilehash: 79fadb422a2330677bc5d8c64c81931615b6be91
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 70fb2df1d37af23d9ec19932806989ce3329bf3c
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55289767"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59191566"
 ---
 # <a name="messagelogging"></a>\<messageLogging>
 Tento prvek definuje nastavení možností protokolování zpráv Windows Communication Foundation (WCF).  
@@ -122,6 +122,7 @@ Tento prvek definuje nastavení možností protokolování zpráv Windows Commun
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Configuration.DiagnosticSection>
 - <xref:System.ServiceModel.Diagnostics>
 - <xref:System.ServiceModel.Configuration.DiagnosticSection.MessageLogging%2A>

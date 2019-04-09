@@ -4,12 +4,12 @@ description: Přehled Microsoft WCF Web Service Reference Provider nástroj, kte
 author: mlacouture
 ms.date: 04/19/2018
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 3566a92e05c03cc77e59a14e3b2521a1d6d0758a
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 3452a6a598e255dd9a32629d8ef0589b88f9c00f
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53245571"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59197071"
 ---
 # <a name="use-the-wcf-web-service-reference-provider-tool"></a>Použijte nástroj WCF Web Service odkaz na poskytovatele
 
@@ -26,9 +26,9 @@ V průběhu let, celá řada vývojářů sady Visual Studio pracovalo produktiv
 
 > [!NOTE]
 > **WCF Web Service Reference** možnost se vztahuje na projekty vytvořené pomocí následující šablony projektů:
-> * **Vizuální C#**   >  **.NET Core**
-> * **Vizuální C#**   >  **.NET Standard**
-> * **Vizuální C#**   >  **webové** > **webová aplikace ASP.NET Core**
+> * **Visual C#** > **.NET Core**
+> * **Visual C#** > **.NET Standard**
+> * **Visual C#** > **Web** > **ASP.NET Core Web Application**
 
 Použití **webové aplikace ASP.NET Core** šablony projektu jako příklad, tento článek vás provede přidáním odkazu na službu WCF do projektu:
 
@@ -54,7 +54,6 @@ Použití **webové aplikace ASP.NET Core** šablony projektu jako příklad, te
     
     3c. Klikněte na tlačítko **Další** tlačítko Otevřít **možnosti datového typu** a **možnosti klienta** stránky. Alternativně klepněte na tlačítko **Dokončit** tlačítko a použijte výchozí možnosti.
 
-
 4. **Možnosti datového typu** formuláře můžete upřesnit nastavení konfigurace odkazu generované služby:
 
 ![Visual Studio datový typ možnosti pro .NET Core](./media/wcf-web-service-reference-guide/wcfcs-DataTypesPage.png)
@@ -65,7 +64,6 @@ Použití **webové aplikace ASP.NET Core** šablony projektu jako příklad, te
 Může docházet k prodlevám při načítání informací o typu, v závislosti na počtu závislostí projektu a dalších faktorů výkon systému. **Dokončit** během načítání, pokud je tlačítko neaktivní **znovu použít typy v odkazovaných sestaveních** zaškrtávací políčko je zaškrtnuté políčko.
 
 5. Klikněte na tlačítko **Dokončit** až budete hotovi.
-
 
 Při zobrazování průběhu, nástroj:
 

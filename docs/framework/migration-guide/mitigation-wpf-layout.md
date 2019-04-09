@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 805ffd7f-8d1e-427e-a648-601ca8ec37a5
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d75911c2087370cb9313c6694ce2630b80e635a5
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f81af76ed305fb614202c240e449adc62b310933
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54686033"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59189930"
 ---
 # <a name="mitigation-wpf-layout"></a>Omezení rizik: Rozložení WPF
 Rozložení ovládacích prvků WPF může mírně změnit.  
@@ -39,4 +39,5 @@ Rozložení ovládacích prvků WPF může mírně změnit.
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Odlišnosti ve změnách cílení](../../../docs/framework/migration-guide/retargeting-changes-in-the-net-framework-4-6.md)

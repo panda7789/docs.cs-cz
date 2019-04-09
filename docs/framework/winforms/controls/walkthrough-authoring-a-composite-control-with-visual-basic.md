@@ -1,5 +1,5 @@
 ---
-title: 'Návod: Vytvoření složeného ovládacího prvku s jazykem Visual Basic'
+title: 'Návod: Vytvoření složeného ovládacího prvku pomocí Visual Basicu'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -13,14 +13,14 @@ helpviewer_keywords:
 - composite controls [Windows Forms], creating
 - custom controls [Windows Forms], creating
 ms.assetid: f50e270e-4db2-409a-8319-6db6ca5c7daf
-ms.openlocfilehash: 5eaa92b6294ebf849f005f6e12d2dacb43fa4d6c
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: ed3a7dc23050412082fb10fabf6b1d5a4507973e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57714278"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59186105"
 ---
-# <a name="walkthrough-authoring-a-composite-control-with-visual-basic"></a>Návod: Vytvoření složeného ovládacího prvku s jazykem Visual Basic
+# <a name="walkthrough-authoring-a-composite-control-with-visual-basic"></a>Návod: Vytvoření složeného ovládacího prvku pomocí Visual Basicu
 Složené ovládací prvky poskytují způsob, kterým lze vytvořit vlastní grafické rozhraní a znovu použít. Složený ovládací prvek je v podstatě komponent pomocí vizuální reprezentace. V důsledku toho může obsahovat jeden nebo více Windows Forms ovládací prvky, komponenty nebo bloky kódu, který můžete rozšířit funkce ověřování uživatelského vstupu, změnou zobrazení vlastností nebo provádění jiných úloh vyžaduje autorem. Složené ovládací prvky mohou být umístěny ve Windows Forms stejným způsobem jako ostatní ovládací prvky. V první části tohoto návodu vytvoříte jednoduchou složeného ovládacího prvku volá `ctlClock`. V druhé části tohoto průvodce, které rozšiřují funkce nástroje `ctlClock` prostřednictvím dědičnosti.  
   
 > [!NOTE]
@@ -59,7 +59,7 @@ Složené ovládací prvky poskytují způsob, kterým lze vytvořit vlastní gr
   
     |Vlastnost|Změňte na|  
     |--------------|---------------|  
-    |**Název**|`lblDisplay`|  
+    |**Name**|`lblDisplay`|  
     |**Text**|`(blank space)`|  
     |**TextAlign**|`MiddleCenter`|  
     |**Font.Size**|`14`|  
@@ -244,8 +244,8 @@ Složené ovládací prvky poskytují způsob, kterým lze vytvořit vlastní gr
   
     |Vlastnost|Nastavení|  
     |--------------|-------------|  
-    |**Název**|`lblAlarm`|  
-    |**Text**|**Alarm!**|  
+    |**Name**|`lblAlarm`|  
+    |**Text**|**Upozornění!**|  
     |**TextAlign**|`MiddleCenter`|  
     |**Viditelné**|`False`|  
   
@@ -356,11 +356,11 @@ Složené ovládací prvky poskytují způsob, kterým lze vytvořit vlastní gr
   
 11. Následujícím způsobem nastavte vlastnosti těchto ovládacích prvků.  
   
-    |Control|Vlastnost|Hodnota|  
+    |Control|Vlastnost|Value|  
     |-------------|--------------|-----------|  
     |`label1`|**Text**|`(blank space)`|  
-    ||**Název**|`lblTest`|  
-    |`dateTimePicker1`|**Název**|`dtpTest`|  
+    ||**Name**|`lblTest`|  
+    |`dateTimePicker1`|**Name**|`dtpTest`|  
     ||**Formát**|<xref:System.Windows.Forms.DateTimePickerFormat.Time>|  
   
 12. V Návrháři dvakrát klikněte na panel **dtpTest**.  
@@ -396,6 +396,7 @@ Složené ovládací prvky poskytují způsob, kterým lze vytvořit vlastní gr
      Tento názorný postup zahrnují několik klíčových konceptů. Naučili jste se vytvoření složeného ovládacího prvku kombinací ovládacích prvků a komponent do složeného ovládacího prvku kontejneru. Jste se naučili přidání vlastnosti do ovládacího prvku a napsat kód k implementaci vlastních funkcí. V předchozí části jste se dozvěděli k rozšíření funkčnosti dané složeného ovládacího prvku prostřednictvím dědičnosti a změnit funkci metody hostitele tak, že přepíšete tyto metody.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Typy vlastních ovládacích prvků](varieties-of-custom-controls.md)
 - [Postupy: Vytváření složených ovládacích prvků](how-to-author-composite-controls.md)
-- [Postupy: Zobrazení ovládacího prvku v zvolit položky panelu nástrojů – dialogové okno](how-to-display-a-control-in-the-choose-toolbox-items-dialog-box.md)
+- [Postupy: Zobrazení ovládacího prvku v dialogovém okně Zvolit položky nástrojů](how-to-display-a-control-in-the-choose-toolbox-items-dialog-box.md)

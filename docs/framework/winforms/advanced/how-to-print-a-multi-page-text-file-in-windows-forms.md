@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Tisk vícestránkového textového souboru ve Windows Forms'
+title: 'Postupy: Tisk vícestránkového textového souboru v modelu Windows Forms'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,14 +10,14 @@ helpviewer_keywords:
 - Windows Forms, printing text
 - printing [Windows Forms], text
 ms.assetid: 362427f8-03d4-4826-b49f-60ab066ad322
-ms.openlocfilehash: f2f91fbaab7fb999a2243e13be9af0bbff0e41ac
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: 69fe58292eda2bb283488252f571d3c3691f6392
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57714135"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59192171"
 ---
-# <a name="how-to-print-a-multi-page-text-file-in-windows-forms"></a>Postupy: Tisk vícestránkového textového souboru ve Windows Forms
+# <a name="how-to-print-a-multi-page-text-file-in-windows-forms"></a>Postupy: Tisk vícestránkového textového souboru v modelu Windows Forms
 Je velmi běžné, že aplikace založené na Windows pro tisk textu. <xref:System.Drawing.Graphics> Třída poskytuje metody pro vykreslení objektů (grafiky nebo text) na zařízení, jako je obrazovka nebo tiskárny.  
   
 > [!NOTE]
@@ -61,6 +61,7 @@ Je velmi běžné, že aplikace založené na Windows pro tisk textu. <xref:Syst
 -   Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Drawing.Graphics>
 - <xref:System.Drawing.Brush>
-- [Podpora tisku v modelu Windows Forms](windows-forms-print-support.md)
+- [Podpora tisku ve Windows Forms](windows-forms-print-support.md)

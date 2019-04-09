@@ -1,21 +1,24 @@
 ---
 title: Zakázání sledování DPI v sadě Visual Studio
-description: Tento článek popisuje omezení pro návrháře formulářů Windows na monitorech HDPI a jak spustit aplikaci Visual Studio jako nepodporující DPI proces.
-ms.date: 03/19/2019
+description: Tento článek popisuje omezení návrháře formulářů Windows na monitorech HDPI a jak spustit aplikaci Visual Studio jako nepodporující DPI proces.
+ms.date: 04/05/2019
 ms.prod: visual-studio-windows
 ms.technology: vs-ide-designers
 author: gewarren
 ms.author: gewarren
-ms.openlocfilehash: 73f2371c40facf8902958cce020a6f02047615ba
-ms.sourcegitcommit: d938c39afb9216db377d0f0ecdaa53936a851059
+ms.custom: seoapril2019
+ms.openlocfilehash: e52debea382033417afe0bd47f899af1666192bc
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58633865"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59181376"
 ---
 # <a name="disable-dpi-awareness-in-visual-studio"></a>Zakázání sledování DPI v sadě Visual Studio
 
 Visual Studio je bodů na palec (DPI) vědět aplikaci, což znamená, že zobrazení škáluje automaticky. Pokud aplikace uvádí, že není s ohledem na DPI, škáluje operační systém aplikace jako rastrový obrázek. Toto chování se také nazývá virtualizace DPI. Aplikace stále domnívá, že se spouští ve 100 % škálování nebo 96 dpi.
+
+Tento článek popisuje omezení návrháře formulářů Windows na monitorech HDPI a jak spustit aplikaci Visual Studio jako nepodporující DPI proces.
 
 ## <a name="windows-forms-designer-on-hdpi-monitors"></a>Návrhář formulářů Windows na monitorech HDPI
 
@@ -32,11 +35,15 @@ Přečte zprávu **škálování na hlavní obrazovce je nastavena na 200 % (192
 > [!NOTE]
 > Tento informační panel byla zavedena v sadě Visual Studio 2017 verze 15.8.
 
-Pokud nefungují v návrháři a není potřeba upravit rozložení formuláře, můžete ignorovat informační panel a pokračovat v práci v editoru kódu nebo v jiných typech návrhářů. (Můžete také [zakázat oznámení](#disable-notifications) tak, aby informační panel nebude nadále zobrazovat.) Pouze **Návrháře formulářů Windows** má vliv. Pokud potřebujete pracovat **Návrháře formulářů Windows**, následující část vám pomůže [problém pomohl vyřešit](#to-resolve-the-problem).
+Pokud nefungují v návrháři a není potřeba upravit rozložení formuláře, můžete ignorovat informační panel a pokračovat v práci v editoru kódu nebo v jiných typech návrhářů. (Můžete také [zakázat oznámení](#disable-notifications) tak, aby informační panel nebude nadále zobrazovat.) Pouze **Návrháře formulářů Windows** má vliv. Pokud potřebujete pracovat **Návrháře formulářů Windows**, následující část vám pomůže [problém pomohl vyřešit](#to-resolve-the-display-problem).
 
-## <a name="to-resolve-the-problem"></a>Chcete-li vyřešit tento problém
+## <a name="to-resolve-the-display-problem"></a>Chcete-li vyřešit problém zobrazení
 
-Existují tři možnosti, jak vyřešit problém zobrazení.
+Existují tři možnosti, jak vyřešit problém zobrazení:
+
+1. [Restartujte sadu Visual Studio jako nepodporující DPI proces](#restart-visual-studio-as-a-dpi-unaware-process)
+2. [Přidat položku registru](#add-a-registry-entry)
+3. [Nastavte zobrazení škálování nastavení na 100 %](#set-your-display-scaling-setting-to-100)
 
 ### <a name="restart-visual-studio-as-a-dpi-unaware-process"></a>Restartujte sadu Visual Studio jako nepodporující DPI proces
 

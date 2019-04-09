@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 8f8c2c90-f15d-400e-87e7-a757e4f04d0e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9b210ea2126058d38c2586c5bdd0d94af2abab30
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 6bdd27511de18c6cb119ddbf8621c43606c82ad4
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54529814"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59195823"
 ---
 # <a name="assembly-names"></a>Názvy sestavení
 Název sestavení je uložená v metadatech a má významný dopad na rozsah sestavení a používat aplikace. Sestavení se silným názvem je plně kvalifikovaný název, který obsahuje název sestavení, jazykové verze, veřejného klíče a číslo verze. To se často označuje jako zobrazovaný název a pro načtená sestavení lze získat pomocí <xref:System.Reflection.Assembly.FullName%2A> vlastnost.  
@@ -58,6 +58,7 @@ System.data, version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e08
 >  Když vložíte sestavení se silným názvem do globální mezipaměti sestavení, název souboru sestavení musí odpovídat názvu sestavení (nezahrnuje příponu názvu souboru, jako je například .exe nebo .dll). Například pokud je název souboru sestavení myAssembly.dll, musí být název sestavení myAssembly. Soukromá sestavení, které jsou nasazeny pouze v kořenovém adresáři aplikace může mít název sestavení, které se liší od názvu souboru.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Postupy: Určení plně kvalifikovaného názvu sestavení](../../../docs/framework/app-domains/how-to-determine-assembly-fully-qualified-name.md)
 - [Vytváření sestavení](../../../docs/framework/app-domains/create-assemblies.md)
 - [Sestavení se silným názvem](../../../docs/framework/app-domains/strong-named-assemblies.md)

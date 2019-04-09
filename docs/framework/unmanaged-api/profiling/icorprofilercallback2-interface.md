@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 513fb623e328a8fa3abb1531715026ff9b6bf97e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 83c72704ccb01baf68a3cacb6252367e07909fa8
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54558082"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59178994"
 ---
 # <a name="icorprofilercallback2-interface"></a>ICorProfilerCallback2 – rozhraní
 Poskytuje metody, které se používají modulem common language runtime (CLR) pro oznámení profileru kód, pokud dojde k událostem, ke kterým se připojila profileru. `ICorProfilerCallback2` Rozhraní je rozšířením [ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) rozhraní. To znamená, že poskytuje nové zpětná volání zavedena v rozhraní .NET Framework verze 2.0.  
@@ -62,6 +62,7 @@ Poskytuje metody, které se používají modulem common language runtime (CLR) p
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Rozhraní pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
 - [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
 - [ICorProfilerCallback3 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback3-interface.md)

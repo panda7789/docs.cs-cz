@@ -10,12 +10,12 @@ helpviewer_keywords:
 - DataGrid [WPF], customizing the appearance of
 - DataGrid columns [WPF], using
 ms.assetid: bf89ea63-79b6-422b-bc9f-0485ad803216
-ms.openlocfilehash: 86721592f632d6d77dbfa6bc4eac3c2872628b0d
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: dda712d58a4ff956de074ecd416402ba0aece5f4
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57368135"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59197149"
 ---
 # <a name="datagrid"></a>DataGrid
 <xref:System.Windows.Controls.DataGrid> Řízení umožňuje zobrazit a upravit data z mnoha různých zdrojů, jako například z databáze SQL, dotaz LINQ nebo kterýkoli jiný zdroj dat s možností vazby. Další informace najdete v tématu [Přehled zdrojů vazby](../data/binding-sources-overview.md).  
@@ -49,7 +49,7 @@ ms.locfileid: "57368135"
   
 |Název|Popis|  
 |-----------|-----------------|  
-|[Návod: Zobrazení dat z databáze systému SQL Server v ovládacím prvku DataGrid](walkthrough-display-data-from-a-sql-server-database-in-a-datagrid-control.md)|Popisuje, jak vytvořit nový projekt WPF, přidejte Entity Framework Element, nastavit zdroje a zobrazení dat v <xref:System.Windows.Controls.DataGrid>.|  
+|[Návod: Zobrazení dat z databáze SQL Serveru v ovládacím prvku DataGrid](walkthrough-display-data-from-a-sql-server-database-in-a-datagrid-control.md)|Popisuje, jak vytvořit nový projekt WPF, přidejte Entity Framework Element, nastavit zdroje a zobrazení dat v <xref:System.Windows.Controls.DataGrid>.|  
 |[Postupy: Přidání podrobností řádku do ovládacího prvku DataGrid](how-to-add-row-details-to-a-datagrid-control.md)|Popisuje, jak vytvořit řádek podrobnosti <xref:System.Windows.Controls.DataGrid>.|  
 |[Postupy: Implementace ověření pomocí ovládacího prvku DataGrid](how-to-implement-validation-with-the-datagrid-control.md)|Popisuje, jak ověřte hodnoty v <xref:System.Windows.Controls.DataGrid> buňky a řádky a ověření zobrazení zpětné vazby.|  
 |[Výchozí chování klávesnice a myši v ovládacím prvku DataGrid](default-keyboard-and-mouse-behavior-in-the-datagrid-control.md)|Popisuje, jak pracovat <xref:System.Windows.Controls.DataGrid> ovládacího prvku pomocí klávesnice a myši.|  
@@ -57,6 +57,7 @@ ms.locfileid: "57368135"
 |[Možnosti změny velikosti v ovládacím prvku DataGrid](sizing-options-in-the-datagrid-control.md)|Popisuje, jak řídit absolutní a Automatická změna velikosti v <xref:System.Windows.Controls.DataGrid>.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Controls.DataGrid>
 - [Styly a šablony](styling-and-templating.md)
 - [Přehled datových vazeb](../data/data-binding-overview.md)

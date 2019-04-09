@@ -1,5 +1,5 @@
 ---
-title: Protokol IPv6
+title: Protokol IP (Internet Protocol) verze 6
 ms.date: 03/30/2017
 helpviewer_keywords:
 - IPv6, improvements
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - Internet Protocol version 6, improvements
 - Internet Protocol version 6
 ms.assetid: e6fa8ebd-010a-4c48-a5ec-a5102c53c06f
-ms.openlocfilehash: 6cd35ae50d76ec2276fdd08760d088cf6be1658e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 135d87f126dcdb9689c23adbaaa4786bc69a3e09
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54588155"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59182322"
 ---
-# <a name="internet-protocol-version-6"></a>Protokol IPv6
+# <a name="internet-protocol-version-6"></a>Protokol IP (Internet Protocol) verze 6
 Internet Protocol verze 6 (IPv6) je nová sada standardních protokolů pro síťové vrstvy z Internetu. Protokol IPv6 je navržená k řešení mnoha problémů je aktuální verze sady Internet Protocol (označují se termínem IPv4) s ohledem na plnění vyčerpávání, zabezpečení, automatickou konfiguraci, rozšíření a tak dále. Protokol IPv6 se rozšiřují možnosti Internetu povolit nové typy aplikací, jako jsou třeba aplikace peer-to-peer a mobilní. Toto jsou hlavní problémy aktuální protokolu IPv4:  
   
 -   Rychlé vyčerpání adresního prostoru.  
@@ -58,6 +58,7 @@ Internet Protocol verze 6 (IPv6) je nová sada standardních protokolů pro sí�
  Můžete také najít informace související s IPv6 na [IP verze 6 (IPv6)](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd379498%28v=ws.10%29).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Ukázka sokety IPv6](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.0/ms180981%28v=vs.85%29)
 - [Ukázky programování sítě](../../../docs/framework/network-programming/network-programming-samples.md)
 - [Sokety](../../../docs/framework/network-programming/sockets.md)

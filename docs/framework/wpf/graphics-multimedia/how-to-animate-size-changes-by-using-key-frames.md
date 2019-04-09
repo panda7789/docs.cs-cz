@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: Animace změn velikosti použitím klíčových snímků'
+title: 'Postupy: Animace změn velikosti pomocí klíčových snímků'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - key frames [WPF], animating size changes with
 - animation [WPF], size changes with key frames
 - size changes [WPF], animating with key frames
 ms.assetid: 86bd2950-d4c9-4ec4-aa8d-7dc3ccadded4
-ms.openlocfilehash: 967537bb1828d323f1dcaa8d049604a1a6e30fa4
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
-ms.translationtype: MT
+ms.openlocfilehash: a7adb16297f50e191628344d7e25d41f38a97861
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57374181"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59180229"
 ---
-# <a name="how-to-animate-size-changes-by-using-key-frames"></a>Postupy: Animace změn velikosti použitím klíčových snímků
+# <a name="how-to-animate-size-changes-by-using-key-frames"></a>Postupy: Animace změn velikosti pomocí klíčových snímků
 Tento příklad ukazuje, jak animace změn velikosti použitím klíčových snímků.  
   
 ## <a name="example"></a>Příklad  
@@ -30,6 +30,7 @@ Tento příklad ukazuje, jak animace změn velikosti použitím klíčových sn�
  Úplnou ukázku najdete v tématu [klíčový snímek animace ukázka](https://go.microsoft.com/fwlink/?LinkID=160012).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Media.Animation.SizeAnimationUsingKeyFrames>
 - <xref:System.Windows.Media.ArcSegment.Size%2A>
 - <xref:System.Windows.Media.ArcSegment>

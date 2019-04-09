@@ -11,12 +11,12 @@ helpviewer_keywords:
 - network, proxy configuration
 - proxies, configuring
 ms.assetid: 353c0a8b-4cee-44f6-8e65-60e286743df9
-ms.openlocfilehash: 30b61a662170b87a557a1a2ea094301ba6401742
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c6b3808a2d73070cc07b31eb0fca7ca9d6af8cdb
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54608667"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59200542"
 ---
 # <a name="proxy-configuration"></a>Konfigurace proxy serveru
 Proxy server zpracovává požadavky klientů na prostředky. Proxy server můžete vrátit požadovaný prostředek uloženou v mezipaměti nebo předání požadavku na server, ve kterém je prostředek umístěn. Proxy může zlepšit výkon sítě snížením počtu požadavky odeslané na vzdálených serverech. Proxy servery lze také omezit přístup k prostředkům.  
@@ -55,9 +55,9 @@ Proxy server zpracovává požadavky klientů na prostředky. Proxy server můž
   
 |Nastavení konfigurace, vlastnosti nebo atributu souboru|Popis|  
 |--------------------------------------------------------|-----------------|  
-|`proxyaddress` Nebo <xref:System.Net.WebProxy.Address>|Adresa proxy serveru používat.|  
-|`bypassonlocal` Nebo <xref:System.Net.WebProxy.BypassProxyOnLocal>|Určuje, zda je pro místní adresy obejít proxy server.|  
-|`bypasslist` Nebo <xref:System.Net.WebProxy.BypassArrayList>|Popisuje sadu adresy, které obcházení proxy serveru pomocí regulárních výrazů.|  
+|`proxyaddress` or <xref:System.Net.WebProxy.Address>|Adresa proxy serveru používat.|  
+|`bypassonlocal` or <xref:System.Net.WebProxy.BypassProxyOnLocal>|Určuje, zda je pro místní adresy obejít proxy server.|  
+|`bypasslist` or <xref:System.Net.WebProxy.BypassArrayList>|Popisuje sadu adresy, které obcházení proxy serveru pomocí regulárních výrazů.|  
 |`usesystemdefault`|Určuje, zda nastavení statické proxy serveru (adresa proxy serveru, seznam obcházení a obejít na místních) byste si měli přečíst z nastavení proxy aplikace Internet Explorer pro daného uživatele. Pokud tato hodnota nastavená na `true`, pak budou použita nastavení statické proxy z aplikace Internet Explorer. V rozhraní .NET Framework 2.0, pokud je tato hodnota nastavena na `true`, nastavení proxy aplikace Internet Explorer nejsou přepsána další nastavení proxy v konfiguračním souboru. V rozhraní .NET Framework 1.1 mohou být přepsány nastavení proxy aplikace Internet Explorer Další nastavení proxy v konfiguračním souboru.<br /><br /> Pokud je tato hodnota `false` nebo není nastavený, potom nastavení statické proxy serveru se dá nastavit v konfiguraci a přepíše nastavení proxy aplikace Internet Explorer. Tato hodnota musí být také nastavena `false` nebo nebyla nastavena adaptivní proxy, aby byla povolená.|  
   
  Následující příklad ukazuje konfiguraci typické statické proxy.  
@@ -76,6 +76,7 @@ Proxy server zpracovává požadavky klientů na prostředky. Proxy server můž
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Net.WebProxy>
 - <xref:System.Net.GlobalProxySelection>
 - [Automatické rozpoznávání proxy serveru](../../../docs/framework/network-programming/automatic-proxy-detection.md)
