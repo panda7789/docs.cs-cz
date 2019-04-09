@@ -16,36 +16,37 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b72f2581b9670dbc110f2ab33cb861128bd78dca
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5186df61eb82b29fcfa9776408498b748068e122
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54525843"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59173651"
 ---
-# <a name="icorpublishprocessenum-interface"></a><span data-ttu-id="50d16-102">ICorPublishProcessEnum – rozhraní</span><span class="sxs-lookup"><span data-stu-id="50d16-102">ICorPublishProcessEnum Interface</span></span>
-<span data-ttu-id="50d16-103">Podtřída [icorpublishenum –](../../../../docs/framework/unmanaged-api/debugging/icorpublishenum-interface.md) rozhraní, které poskytuje metody, které procházejí kolekci [icorpublishprocess –](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocess-interface.md) objekty.</span><span class="sxs-lookup"><span data-stu-id="50d16-103">A subclass of the [ICorPublishEnum](../../../../docs/framework/unmanaged-api/debugging/icorpublishenum-interface.md) interface that provides methods to traverse a collection of [ICorPublishProcess](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocess-interface.md) objects.</span></span>  
+# <a name="icorpublishprocessenum-interface"></a><span data-ttu-id="bd9ea-102">ICorPublishProcessEnum – rozhraní</span><span class="sxs-lookup"><span data-stu-id="bd9ea-102">ICorPublishProcessEnum Interface</span></span>
+<span data-ttu-id="bd9ea-103">Podtřída [icorpublishenum –](../../../../docs/framework/unmanaged-api/debugging/icorpublishenum-interface.md) rozhraní, které poskytuje metody, které procházejí kolekci [icorpublishprocess –](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocess-interface.md) objekty.</span><span class="sxs-lookup"><span data-stu-id="bd9ea-103">A subclass of the [ICorPublishEnum](../../../../docs/framework/unmanaged-api/debugging/icorpublishenum-interface.md) interface that provides methods to traverse a collection of [ICorPublishProcess](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocess-interface.md) objects.</span></span>  
   
-## <a name="methods"></a><span data-ttu-id="50d16-104">Metody</span><span class="sxs-lookup"><span data-stu-id="50d16-104">Methods</span></span>  
+## <a name="methods"></a><span data-ttu-id="bd9ea-104">Metody</span><span class="sxs-lookup"><span data-stu-id="bd9ea-104">Methods</span></span>  
   
-|<span data-ttu-id="50d16-105">Metoda</span><span class="sxs-lookup"><span data-stu-id="50d16-105">Method</span></span>|<span data-ttu-id="50d16-106">Popis</span><span class="sxs-lookup"><span data-stu-id="50d16-106">Description</span></span>|  
+|<span data-ttu-id="bd9ea-105">Metoda</span><span class="sxs-lookup"><span data-stu-id="bd9ea-105">Method</span></span>|<span data-ttu-id="bd9ea-106">Popis</span><span class="sxs-lookup"><span data-stu-id="bd9ea-106">Description</span></span>|  
 |------------|-----------------|  
-|[<span data-ttu-id="50d16-107">Next – metoda</span><span class="sxs-lookup"><span data-stu-id="50d16-107">Next Method</span></span>](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocessenum-next-method.md)|<span data-ttu-id="50d16-108">Získá zadaný počet `ICorPublishProcess` instancí z kolekce, spouští se na aktuální pozici.</span><span class="sxs-lookup"><span data-stu-id="50d16-108">Gets the specified number of `ICorPublishProcess` instances from the collection, starting at the current position.</span></span>|  
+|[<span data-ttu-id="bd9ea-107">Next – metoda</span><span class="sxs-lookup"><span data-stu-id="bd9ea-107">Next Method</span></span>](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocessenum-next-method.md)|<span data-ttu-id="bd9ea-108">Získá zadaný počet `ICorPublishProcess` instancí z kolekce, spouští se na aktuální pozici.</span><span class="sxs-lookup"><span data-stu-id="bd9ea-108">Gets the specified number of `ICorPublishProcess` instances from the collection, starting at the current position.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="50d16-109">Poznámky</span><span class="sxs-lookup"><span data-stu-id="50d16-109">Remarks</span></span>  
- <span data-ttu-id="50d16-110">`ICorPublishProcessEnum` Rozhraní implementuje metodu rozhraní abstraktní [icorpublishenum –](../../../../docs/framework/unmanaged-api/debugging/icorpublishenum-interface.md).</span><span class="sxs-lookup"><span data-stu-id="50d16-110">The `ICorPublishProcessEnum` interface implements the methods of the abstract interface, [ICorPublishEnum](../../../../docs/framework/unmanaged-api/debugging/icorpublishenum-interface.md).</span></span>  
+## <a name="remarks"></a><span data-ttu-id="bd9ea-109">Poznámky</span><span class="sxs-lookup"><span data-stu-id="bd9ea-109">Remarks</span></span>  
+ <span data-ttu-id="bd9ea-110">`ICorPublishProcessEnum` Rozhraní implementuje metodu rozhraní abstraktní [icorpublishenum –](../../../../docs/framework/unmanaged-api/debugging/icorpublishenum-interface.md).</span><span class="sxs-lookup"><span data-stu-id="bd9ea-110">The `ICorPublishProcessEnum` interface implements the methods of the abstract interface, [ICorPublishEnum](../../../../docs/framework/unmanaged-api/debugging/icorpublishenum-interface.md).</span></span>  
   
- <span data-ttu-id="50d16-111">`ICorPublishProcessEnum` Vytvoří instanci [icorpublish::enumprocesses –](../../../../docs/framework/unmanaged-api/debugging/icorpublish-enumprocesses-method.md) metody.</span><span class="sxs-lookup"><span data-stu-id="50d16-111">An `ICorPublishProcessEnum` instance is created by the [ICorPublish::EnumProcesses](../../../../docs/framework/unmanaged-api/debugging/icorpublish-enumprocesses-method.md) method.</span></span> <span data-ttu-id="50d16-112">Procházení kolekce `ICorPublishProcess` objekty je založená na filtru kritérií uvedených v době `ICorPublishProcessEnum` instance byla vytvořena.</span><span class="sxs-lookup"><span data-stu-id="50d16-112">The traversal of the collection of `ICorPublishProcess` objects is based on the filter criteria given at the time the `ICorPublishProcessEnum` instance was created.</span></span>  
+ <span data-ttu-id="bd9ea-111">`ICorPublishProcessEnum` Vytvoří instanci [icorpublish::enumprocesses –](../../../../docs/framework/unmanaged-api/debugging/icorpublish-enumprocesses-method.md) metody.</span><span class="sxs-lookup"><span data-stu-id="bd9ea-111">An `ICorPublishProcessEnum` instance is created by the [ICorPublish::EnumProcesses](../../../../docs/framework/unmanaged-api/debugging/icorpublish-enumprocesses-method.md) method.</span></span> <span data-ttu-id="bd9ea-112">Procházení kolekce `ICorPublishProcess` objekty je založená na filtru kritérií uvedených v době `ICorPublishProcessEnum` instance byla vytvořena.</span><span class="sxs-lookup"><span data-stu-id="bd9ea-112">The traversal of the collection of `ICorPublishProcess` objects is based on the filter criteria given at the time the `ICorPublishProcessEnum` instance was created.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="50d16-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="50d16-113">Requirements</span></span>  
- <span data-ttu-id="50d16-114">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="50d16-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="bd9ea-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="bd9ea-113">Requirements</span></span>  
+ <span data-ttu-id="bd9ea-114">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="bd9ea-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="50d16-115">**Záhlaví:** CorPub.idl, CorPub.h</span><span class="sxs-lookup"><span data-stu-id="50d16-115">**Header:** CorPub.idl, CorPub.h</span></span>  
+ <span data-ttu-id="bd9ea-115">**Záhlaví:** CorPub.idl, CorPub.h</span><span class="sxs-lookup"><span data-stu-id="bd9ea-115">**Header:** CorPub.idl, CorPub.h</span></span>  
   
- <span data-ttu-id="50d16-116">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="50d16-116">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="bd9ea-116">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="bd9ea-116">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="50d16-117">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="50d16-117">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ **<span data-ttu-id="bd9ea-117">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="bd9ea-117">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a><span data-ttu-id="50d16-118">Viz také:</span><span class="sxs-lookup"><span data-stu-id="50d16-118">See also</span></span>
-- [<span data-ttu-id="50d16-119">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="50d16-119">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [<span data-ttu-id="50d16-120">CorpubPublish – třída typu coclass</span><span class="sxs-lookup"><span data-stu-id="50d16-120">CorpubPublish Coclass</span></span>](../../../../docs/framework/unmanaged-api/debugging/corpubpublish-coclass.md)
+## <a name="see-also"></a><span data-ttu-id="bd9ea-118">Viz také:</span><span class="sxs-lookup"><span data-stu-id="bd9ea-118">See also</span></span>
+
+- [<span data-ttu-id="bd9ea-119">Debugging – rozhraní</span><span class="sxs-lookup"><span data-stu-id="bd9ea-119">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [<span data-ttu-id="bd9ea-120">CorpubPublish – třída typu coclass</span><span class="sxs-lookup"><span data-stu-id="bd9ea-120">CorpubPublish Coclass</span></span>](../../../../docs/framework/unmanaged-api/debugging/corpubpublish-coclass.md)

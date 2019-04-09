@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: af07df53c094654ab86f5e6531fd78124aded988
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 252a65c66764d60f5e307ba1eaad4ded34d9744d
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54630889"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59162147"
 ---
-# <a name="icordebugobjectvalue2getvirtualmethodandtype-method"></a><span data-ttu-id="514ef-102">ICorDebugObjectValue2::GetVirtualMethodAndType – metoda</span><span class="sxs-lookup"><span data-stu-id="514ef-102">ICorDebugObjectValue2::GetVirtualMethodAndType Method</span></span>
-<span data-ttu-id="514ef-103">Tato metoda není dosud implementována.</span><span class="sxs-lookup"><span data-stu-id="514ef-103">This method is not yet implemented.</span></span>  
+# <a name="icordebugobjectvalue2getvirtualmethodandtype-method"></a><span data-ttu-id="f6a45-102">ICorDebugObjectValue2::GetVirtualMethodAndType – metoda</span><span class="sxs-lookup"><span data-stu-id="f6a45-102">ICorDebugObjectValue2::GetVirtualMethodAndType Method</span></span>
+<span data-ttu-id="f6a45-103">Tato metoda není dosud implementována.</span><span class="sxs-lookup"><span data-stu-id="f6a45-103">This method is not yet implemented.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="514ef-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="514ef-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="f6a45-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="f6a45-104">Syntax</span></span>  
   
 ```  
 HRESULT GetVirtualMethodAndType (  
@@ -37,9 +37,7 @@ HRESULT GetVirtualMethodAndType (
 );  
 ```  
   
-## <a name="remarks"></a><span data-ttu-id="514ef-105">Poznámky</span><span class="sxs-lookup"><span data-stu-id="514ef-105">Remarks</span></span>  
- <span data-ttu-id="514ef-106">Získá rozhraní ukazatelů "ICorDebugFunction" a "ICorDebugType" instancí, které představují nejvíce Odvozená metoda a typ odkazu zadaného člena.</span><span class="sxs-lookup"><span data-stu-id="514ef-106">Gets interface pointers to the "ICorDebugFunction" and "ICorDebugType" instances that represent the most derived method and type for the specified member reference.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="f6a45-105">Poznámky</span><span class="sxs-lookup"><span data-stu-id="f6a45-105">Remarks</span></span>  
+ <span data-ttu-id="f6a45-106">Získá rozhraní ukazatelů "ICorDebugFunction" a "ICorDebugType" instancí, které představují nejvíce Odvozená metoda a typ odkazu zadaného člena.</span><span class="sxs-lookup"><span data-stu-id="f6a45-106">Gets interface pointers to the "ICorDebugFunction" and "ICorDebugType" instances that represent the most derived method and type for the specified member reference.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="514ef-107">Viz také:</span><span class="sxs-lookup"><span data-stu-id="514ef-107">See also</span></span>
-
-
+## <a name="see-also"></a><span data-ttu-id="f6a45-107">Viz také:</span><span class="sxs-lookup"><span data-stu-id="f6a45-107">See also</span></span>

@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9a6d0036a1f4c499505743fd15a115f870e9cb50
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: 2c824874d340aa3d381b3340408021ef1ed7eec6
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57492397"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59166696"
 ---
-# <a name="iassemblynameclone-method"></a><span data-ttu-id="715a6-102">IAssemblyName::Clone – metoda</span><span class="sxs-lookup"><span data-stu-id="715a6-102">IAssemblyName::Clone Method</span></span>
-<span data-ttu-id="715a6-103">Vytvoří Mělkou kopii to [iassemblyname –](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md) objektu.</span><span class="sxs-lookup"><span data-stu-id="715a6-103">Creates a shallow copy of this [IAssemblyName](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md) object.</span></span>  
+# <a name="iassemblynameclone-method"></a><span data-ttu-id="3e627-102">IAssemblyName::Clone – metoda</span><span class="sxs-lookup"><span data-stu-id="3e627-102">IAssemblyName::Clone Method</span></span>
+<span data-ttu-id="3e627-103">Vytvoří Mělkou kopii to [iassemblyname –](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md) objektu.</span><span class="sxs-lookup"><span data-stu-id="3e627-103">Creates a shallow copy of this [IAssemblyName](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md) object.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="715a6-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="715a6-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="3e627-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="3e627-104">Syntax</span></span>  
   
 ```  
 HRESULT Clone (  
@@ -35,16 +35,17 @@ HRESULT Clone (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="715a6-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="715a6-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="3e627-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="3e627-105">Parameters</span></span>  
  `pName`  
- <span data-ttu-id="715a6-106">[out] Vrácené kopie tohoto `IAssemblyName` objektu.</span><span class="sxs-lookup"><span data-stu-id="715a6-106">[out] The returned copy of this `IAssemblyName` object.</span></span>  
+ <span data-ttu-id="3e627-106">[out] Vrácené kopie tohoto `IAssemblyName` objektu.</span><span class="sxs-lookup"><span data-stu-id="3e627-106">[out] The returned copy of this `IAssemblyName` object.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="715a6-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="715a6-107">Requirements</span></span>  
- <span data-ttu-id="715a6-108">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="715a6-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="3e627-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="3e627-107">Requirements</span></span>  
+ <span data-ttu-id="3e627-108">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="3e627-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="715a6-109">**Záhlaví:** Fusion.h</span><span class="sxs-lookup"><span data-stu-id="715a6-109">**Header:** Fusion.h</span></span>  
+ <span data-ttu-id="3e627-109">**Záhlaví:** Fusion.h</span><span class="sxs-lookup"><span data-stu-id="3e627-109">**Header:** Fusion.h</span></span>  
   
- <span data-ttu-id="715a6-110">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="715a6-110">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ **<span data-ttu-id="3e627-110">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="3e627-110">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a><span data-ttu-id="715a6-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="715a6-111">See also</span></span>
-- [<span data-ttu-id="715a6-112">IAssemblyName – rozhraní</span><span class="sxs-lookup"><span data-stu-id="715a6-112">IAssemblyName Interface</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md)
+## <a name="see-also"></a><span data-ttu-id="3e627-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="3e627-111">See also</span></span>
+
+- [<span data-ttu-id="3e627-112">IAssemblyName – rozhraní</span><span class="sxs-lookup"><span data-stu-id="3e627-112">IAssemblyName Interface</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md)

@@ -2,36 +2,36 @@
 title: 'Postupy: Implementace zjistitelné služby, která se registruje pomocí proxy zjišťování'
 ms.date: 03/30/2017
 ms.assetid: eb275bc1-535b-44c8-b9f3-0b75e9aa473b
-ms.openlocfilehash: c708942265ae39ee6e4f198118741068a37512ba
-ms.sourcegitcommit: e994e47d3582bf09ae487ecbd53c0dac30aebaf7
-ms.translationtype: MT
+ms.openlocfilehash: 6cfafbc06fc4a7c37805fa1d158a41625390174a
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58262406"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59177824"
 ---
-# <a name="how-to-implement-a-discoverable-service-that-registers-with-the-discovery-proxy"></a><span data-ttu-id="08a71-102">Postupy: Implementace zjistitelné služby, která se registruje pomocí proxy zjišťování</span><span class="sxs-lookup"><span data-stu-id="08a71-102">How to: Implement a Discoverable Service that Registers with the Discovery Proxy</span></span>
-<span data-ttu-id="08a71-103">Toto téma je druhý čtyři témat, která popisuje, jak implementace zjišťování proxy.</span><span class="sxs-lookup"><span data-stu-id="08a71-103">This topic is the second of four topics that discusses how to implement a discovery proxy.</span></span> <span data-ttu-id="08a71-104">V předchozím tématu [jak: Implementace zjišťování Proxy](../../../../docs/framework/wcf/feature-details/how-to-implement-a-discovery-proxy.md), jste implementovali proxy zjišťování.</span><span class="sxs-lookup"><span data-stu-id="08a71-104">In the previous topic, [How to: Implement a Discovery Proxy](../../../../docs/framework/wcf/feature-details/how-to-implement-a-discovery-proxy.md), you implemented a discovery proxy.</span></span> <span data-ttu-id="08a71-105">V tomto tématu vytvoříte službu WCF, která odesílá zprávy oznámení (`Hello` a `Bye`) na server proxy zjišťování by ji chcete registrovat a deregistrovat pomocí proxy zjišťování.</span><span class="sxs-lookup"><span data-stu-id="08a71-105">In this topic, you create a WCF service that sends announcement messages (`Hello` and `Bye`) to the discovery proxy, causing it to register and unregister itself with the discovery proxy.</span></span>
+# <a name="how-to-implement-a-discoverable-service-that-registers-with-the-discovery-proxy"></a><span data-ttu-id="f6a23-102">Postupy: Implementace zjistitelné služby, která se registruje pomocí proxy zjišťování</span><span class="sxs-lookup"><span data-stu-id="f6a23-102">How to: Implement a Discoverable Service that Registers with the Discovery Proxy</span></span>
+<span data-ttu-id="f6a23-103">Toto téma je druhý čtyři témat, která popisuje, jak implementace zjišťování proxy.</span><span class="sxs-lookup"><span data-stu-id="f6a23-103">This topic is the second of four topics that discusses how to implement a discovery proxy.</span></span> <span data-ttu-id="f6a23-104">V předchozím tématu [jak: Implementace zjišťování Proxy](../../../../docs/framework/wcf/feature-details/how-to-implement-a-discovery-proxy.md), jste implementovali proxy zjišťování.</span><span class="sxs-lookup"><span data-stu-id="f6a23-104">In the previous topic, [How to: Implement a Discovery Proxy](../../../../docs/framework/wcf/feature-details/how-to-implement-a-discovery-proxy.md), you implemented a discovery proxy.</span></span> <span data-ttu-id="f6a23-105">V tomto tématu vytvoříte službu WCF, která odesílá zprávy oznámení (`Hello` a `Bye`) na server proxy zjišťování by ji chcete registrovat a deregistrovat pomocí proxy zjišťování.</span><span class="sxs-lookup"><span data-stu-id="f6a23-105">In this topic, you create a WCF service that sends announcement messages (`Hello` and `Bye`) to the discovery proxy, causing it to register and unregister itself with the discovery proxy.</span></span>
 
-### <a name="to-define-the-service-contract"></a><span data-ttu-id="08a71-106">K definování kontraktu služby</span><span class="sxs-lookup"><span data-stu-id="08a71-106">To define the service contract</span></span>
+### <a name="to-define-the-service-contract"></a><span data-ttu-id="f6a23-106">K definování kontraktu služby</span><span class="sxs-lookup"><span data-stu-id="f6a23-106">To define the service contract</span></span>
 
-1.  <span data-ttu-id="08a71-107">Přidat nový projekt konzolové aplikace na `DiscoveryProxyExample` řešení `Service`.</span><span class="sxs-lookup"><span data-stu-id="08a71-107">Add a new console application project to the `DiscoveryProxyExample` solution called `Service`.</span></span>
+1.  <span data-ttu-id="f6a23-107">Přidat nový projekt konzolové aplikace na `DiscoveryProxyExample` řešení `Service`.</span><span class="sxs-lookup"><span data-stu-id="f6a23-107">Add a new console application project to the `DiscoveryProxyExample` solution called `Service`.</span></span>
 
-2.  <span data-ttu-id="08a71-108">Přidejte odkazy na následující sestavení:</span><span class="sxs-lookup"><span data-stu-id="08a71-108">Add references to the following assemblies:</span></span>
+2.  <span data-ttu-id="f6a23-108">Přidejte odkazy na následující sestavení:</span><span class="sxs-lookup"><span data-stu-id="f6a23-108">Add references to the following assemblies:</span></span>
 
-    1.  <span data-ttu-id="08a71-109">System.ServiceModel</span><span class="sxs-lookup"><span data-stu-id="08a71-109">System.ServiceModel</span></span>
+    1.  <span data-ttu-id="f6a23-109">System.ServiceModel</span><span class="sxs-lookup"><span data-stu-id="f6a23-109">System.ServiceModel</span></span>
 
-    2.  <span data-ttu-id="08a71-110">System.ServiceModel.Discovery</span><span class="sxs-lookup"><span data-stu-id="08a71-110">System.ServiceModel.Discovery</span></span>
+    2.  <span data-ttu-id="f6a23-110">System.ServiceModel.Discovery</span><span class="sxs-lookup"><span data-stu-id="f6a23-110">System.ServiceModel.Discovery</span></span>
 
-3.  <span data-ttu-id="08a71-111">Přidejte novou třídu projektu s názvem `CalculatorService`.</span><span class="sxs-lookup"><span data-stu-id="08a71-111">Add a new class to the project called `CalculatorService`.</span></span>
+3.  <span data-ttu-id="f6a23-111">Přidejte novou třídu projektu s názvem `CalculatorService`.</span><span class="sxs-lookup"><span data-stu-id="f6a23-111">Add a new class to the project called `CalculatorService`.</span></span>
 
-4.  <span data-ttu-id="08a71-112">Přidejte následující příkazy using.</span><span class="sxs-lookup"><span data-stu-id="08a71-112">Add the following using statements.</span></span>
+4.  <span data-ttu-id="f6a23-112">Přidejte následující příkazy using.</span><span class="sxs-lookup"><span data-stu-id="f6a23-112">Add the following using statements.</span></span>
 
     ```csharp
     using System;
     using System.ServiceModel;
     ```
 
-5.  <span data-ttu-id="08a71-113">V rámci CalculatorService.cs definování kontraktu služby.</span><span class="sxs-lookup"><span data-stu-id="08a71-113">Within CalculatorService.cs, define the service contract.</span></span>
+5.  <span data-ttu-id="f6a23-113">V rámci CalculatorService.cs definování kontraktu služby.</span><span class="sxs-lookup"><span data-stu-id="f6a23-113">Within CalculatorService.cs, define the service contract.</span></span>
 
     ```csharp
     // Define a service contract.
@@ -49,7 +49,7 @@ ms.locfileid: "58262406"
     }
     ```
 
-6.  <span data-ttu-id="08a71-114">Také v rámci CalculatorService.cs, implementace kontraktu služby.</span><span class="sxs-lookup"><span data-stu-id="08a71-114">Also within CalculatorService.cs, implement the service contract.</span></span>
+6.  <span data-ttu-id="f6a23-114">Také v rámci CalculatorService.cs, implementace kontraktu služby.</span><span class="sxs-lookup"><span data-stu-id="f6a23-114">Also within CalculatorService.cs, implement the service contract.</span></span>
 
     ```csharp
     // Service class which implements the service contract.
@@ -89,11 +89,11 @@ ms.locfileid: "58262406"
     }
     ```
 
-### <a name="to-host-the-service"></a><span data-ttu-id="08a71-115">K hostování služby</span><span class="sxs-lookup"><span data-stu-id="08a71-115">To host the service</span></span>
+### <a name="to-host-the-service"></a><span data-ttu-id="f6a23-115">K hostování služby</span><span class="sxs-lookup"><span data-stu-id="f6a23-115">To host the service</span></span>
 
-1.  <span data-ttu-id="08a71-116">Otevřete soubor Program.cs, který byl vygenerován při vytváření projektu.</span><span class="sxs-lookup"><span data-stu-id="08a71-116">Open the Program.cs file that was generated when you created the project.</span></span>
+1.  <span data-ttu-id="f6a23-116">Otevřete soubor Program.cs, který byl vygenerován při vytváření projektu.</span><span class="sxs-lookup"><span data-stu-id="f6a23-116">Open the Program.cs file that was generated when you created the project.</span></span>
 
-2.  <span data-ttu-id="08a71-117">Přidejte následující příkazy using.</span><span class="sxs-lookup"><span data-stu-id="08a71-117">Add the following using statements.</span></span>
+2.  <span data-ttu-id="f6a23-117">Přidejte následující příkazy using.</span><span class="sxs-lookup"><span data-stu-id="f6a23-117">Add the following using statements.</span></span>
 
     ```csharp
     using System;
@@ -102,7 +102,7 @@ ms.locfileid: "58262406"
     using System.ServiceModel.Discovery;
     ```
 
-3.  <span data-ttu-id="08a71-118">V rámci `Main()` metodu, přidejte následující kód:</span><span class="sxs-lookup"><span data-stu-id="08a71-118">Within the `Main()` method, add the following code:</span></span>
+3.  <span data-ttu-id="f6a23-118">V rámci `Main()` metodu, přidejte následující kód:</span><span class="sxs-lookup"><span data-stu-id="f6a23-118">Within the `Main()` method, add the following code:</span></span>
 
     ```csharp
     // Define the base address of the service
@@ -156,10 +156,10 @@ ms.locfileid: "58262406"
     }
     ```
 
-<span data-ttu-id="08a71-119">Dokončili jste implementace zjistitelné služby.</span><span class="sxs-lookup"><span data-stu-id="08a71-119">You have completed implementing a discoverable service.</span></span> <span data-ttu-id="08a71-120">Pokračovat k [jak: Implementace klientské aplikace používající zjišťování Proxy k vyhledání služby](../../../../docs/framework/wcf/feature-details/client-app-discovery-proxy-to-find-a-service.md).</span><span class="sxs-lookup"><span data-stu-id="08a71-120">Continue on to [How to: Implement a Client Application that Uses the Discovery Proxy to Find a Service](../../../../docs/framework/wcf/feature-details/client-app-discovery-proxy-to-find-a-service.md).</span></span>
+<span data-ttu-id="f6a23-119">Dokončili jste implementace zjistitelné služby.</span><span class="sxs-lookup"><span data-stu-id="f6a23-119">You have completed implementing a discoverable service.</span></span> <span data-ttu-id="f6a23-120">Pokračovat k [jak: Implementace klientské aplikace používající zjišťování Proxy k vyhledání služby](../../../../docs/framework/wcf/feature-details/client-app-discovery-proxy-to-find-a-service.md).</span><span class="sxs-lookup"><span data-stu-id="f6a23-120">Continue on to [How to: Implement a Client Application that Uses the Discovery Proxy to Find a Service](../../../../docs/framework/wcf/feature-details/client-app-discovery-proxy-to-find-a-service.md).</span></span>
 
-## <a name="example"></a><span data-ttu-id="08a71-121">Příklad</span><span class="sxs-lookup"><span data-stu-id="08a71-121">Example</span></span>
- <span data-ttu-id="08a71-122">Toto je úplný přehled kód použitý v tomto tématu.</span><span class="sxs-lookup"><span data-stu-id="08a71-122">This is the full listing of the code used in this topic.</span></span>
+## <a name="example"></a><span data-ttu-id="f6a23-121">Příklad</span><span class="sxs-lookup"><span data-stu-id="f6a23-121">Example</span></span>
+ <span data-ttu-id="f6a23-122">Toto je úplný přehled kód použitý v tomto tématu.</span><span class="sxs-lookup"><span data-stu-id="f6a23-122">This is the full listing of the code used in this topic.</span></span>
 
 ```csharp
 // CalculatorService.cs
@@ -289,7 +289,8 @@ namespace Microsoft.Samples.Discovery
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="08a71-123">Viz také:</span><span class="sxs-lookup"><span data-stu-id="08a71-123">See also</span></span>
-- [<span data-ttu-id="08a71-124">Zjišťování WCF</span><span class="sxs-lookup"><span data-stu-id="08a71-124">WCF Discovery</span></span>](../../../../docs/framework/wcf/feature-details/wcf-discovery.md)
-- [<span data-ttu-id="08a71-125">Postupy: Implementace Proxy zjišťování</span><span class="sxs-lookup"><span data-stu-id="08a71-125">How to: Implement a Discovery Proxy</span></span>](../../../../docs/framework/wcf/feature-details/how-to-implement-a-discovery-proxy.md)
-- [<span data-ttu-id="08a71-126">Postupy: Implementace klientské aplikace používající zjišťování Proxy k vyhledání služby</span><span class="sxs-lookup"><span data-stu-id="08a71-126">How to: Implement a Client Application that Uses the Discovery Proxy to Find a Service</span></span>](../../../../docs/framework/wcf/feature-details/client-app-discovery-proxy-to-find-a-service.md)
+## <a name="see-also"></a><span data-ttu-id="f6a23-123">Viz také:</span><span class="sxs-lookup"><span data-stu-id="f6a23-123">See also</span></span>
+
+- [<span data-ttu-id="f6a23-124">Zjišťování WCF</span><span class="sxs-lookup"><span data-stu-id="f6a23-124">WCF Discovery</span></span>](../../../../docs/framework/wcf/feature-details/wcf-discovery.md)
+- [<span data-ttu-id="f6a23-125">Postupy: Implementace zjišťování proxy</span><span class="sxs-lookup"><span data-stu-id="f6a23-125">How to: Implement a Discovery Proxy</span></span>](../../../../docs/framework/wcf/feature-details/how-to-implement-a-discovery-proxy.md)
+- [<span data-ttu-id="f6a23-126">Postupy: Implementace klientské aplikace používající zjišťování proxy k vyhledání služby</span><span class="sxs-lookup"><span data-stu-id="f6a23-126">How to: Implement a Client Application that Uses the Discovery Proxy to Find a Service</span></span>](../../../../docs/framework/wcf/feature-details/client-app-discovery-proxy-to-find-a-service.md)

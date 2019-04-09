@@ -5,17 +5,17 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: f8848c7e-f5c5-4d42-b86d-9951ff8f4146
-ms.openlocfilehash: da696e40248a077e6b8e32e077509bc8a0b589b6
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 107e57ca947012f5e2f65835d684f5e6068b3681
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54619724"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59176589"
 ---
-# <a name="how-to-access-http-specific-properties"></a><span data-ttu-id="cb9cb-102">Postupy: Přístup k vlastnostem specifickým pro HTTP</span><span class="sxs-lookup"><span data-stu-id="cb9cb-102">How to: Access HTTP-Specific Properties</span></span>
-<span data-ttu-id="cb9cb-103">Tento příklad ukazuje, jak chcete-li vypnout HTTP **Keep-alive** chování a získejte verzi protokolu číslo z webového serveru.</span><span class="sxs-lookup"><span data-stu-id="cb9cb-103">This sample shows how to turn off the HTTP **Keep-alive** behavior and get the protocol version number from the Web server.</span></span>  
+# <a name="how-to-access-http-specific-properties"></a><span data-ttu-id="867e2-102">Postupy: Přístup k vlastnostem specifickým pro HTTP</span><span class="sxs-lookup"><span data-stu-id="867e2-102">How to: Access HTTP-Specific Properties</span></span>
+<span data-ttu-id="867e2-103">Tento příklad ukazuje, jak chcete-li vypnout HTTP **Keep-alive** chování a získejte verzi protokolu číslo z webového serveru.</span><span class="sxs-lookup"><span data-stu-id="867e2-103">This sample shows how to turn off the HTTP **Keep-alive** behavior and get the protocol version number from the Web server.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="cb9cb-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="cb9cb-104">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="867e2-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="867e2-104">Example</span></span>  
   
 ```vb  
 Dim HttpWReq As HttpWebRequest= _  
@@ -44,12 +44,13 @@ String ver = HttpWResp.ProtocolVersion.ToString();
 HttpWResp.Close();  
 ```  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="cb9cb-105">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="cb9cb-105">Compiling the Code</span></span>  
- <span data-ttu-id="cb9cb-106">Tento příklad vyžaduje:</span><span class="sxs-lookup"><span data-stu-id="cb9cb-106">This example requires:</span></span>  
+## <a name="compiling-the-code"></a><span data-ttu-id="867e2-105">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="867e2-105">Compiling the Code</span></span>  
+ <span data-ttu-id="867e2-106">Tento příklad vyžaduje:</span><span class="sxs-lookup"><span data-stu-id="867e2-106">This example requires:</span></span>  
   
--   <span data-ttu-id="cb9cb-107">Odkazy **System.Net** oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="cb9cb-107">References to the **System.Net** namespace.</span></span>  
+-   <span data-ttu-id="867e2-107">Odkazy **System.Net** oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="867e2-107">References to the **System.Net** namespace.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="cb9cb-108">Viz také:</span><span class="sxs-lookup"><span data-stu-id="cb9cb-108">See also</span></span>
-- [<span data-ttu-id="cb9cb-109">Přístup k internetu přes proxy server</span><span class="sxs-lookup"><span data-stu-id="cb9cb-109">Accessing the Internet Through a Proxy</span></span>](../../../docs/framework/network-programming/accessing-the-internet-through-a-proxy.md)
-- [<span data-ttu-id="cb9cb-110">Použití aplikačních protokolů</span><span class="sxs-lookup"><span data-stu-id="cb9cb-110">Using Application Protocols</span></span>](../../../docs/framework/network-programming/using-application-protocols.md)
-- [<span data-ttu-id="cb9cb-111">HTTP</span><span class="sxs-lookup"><span data-stu-id="cb9cb-111">HTTP</span></span>](../../../docs/framework/network-programming/http.md)
+## <a name="see-also"></a><span data-ttu-id="867e2-108">Viz také:</span><span class="sxs-lookup"><span data-stu-id="867e2-108">See also</span></span>
+
+- [<span data-ttu-id="867e2-109">Přístup k internetu přes proxy server</span><span class="sxs-lookup"><span data-stu-id="867e2-109">Accessing the Internet Through a Proxy</span></span>](../../../docs/framework/network-programming/accessing-the-internet-through-a-proxy.md)
+- [<span data-ttu-id="867e2-110">Použití aplikačních protokolů</span><span class="sxs-lookup"><span data-stu-id="867e2-110">Using Application Protocols</span></span>](../../../docs/framework/network-programming/using-application-protocols.md)
+- [<span data-ttu-id="867e2-111">HTTP</span><span class="sxs-lookup"><span data-stu-id="867e2-111">HTTP</span></span>](../../../docs/framework/network-programming/http.md)

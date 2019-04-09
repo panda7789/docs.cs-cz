@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6406e280cd9fd86e32169a77dbb5ef468b8cf564
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: 4373fc4e8a4c414c40e8d3c5547b5998b9300348
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57473724"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59170755"
 ---
-# <a name="ihosttaskjoin-method"></a><span data-ttu-id="a1109-102">IHostTask::Join – metoda</span><span class="sxs-lookup"><span data-stu-id="a1109-102">IHostTask::Join Method</span></span>
-<span data-ttu-id="a1109-103">Blokuje volající úlohou, dokud není úloha reprezentované aktuální [ihosttask –](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md) instance dokončení, o zadaný časový interval uplyne, nebo [ihosttask::alert –](../../../../docs/framework/unmanaged-api/hosting/ihosttask-alert-method.md) je volána.</span><span class="sxs-lookup"><span data-stu-id="a1109-103">Blocks the calling task until the task represented by the current [IHostTask](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md) instance completes, the specified time interval elapses, or [IHostTask::Alert](../../../../docs/framework/unmanaged-api/hosting/ihosttask-alert-method.md) is called.</span></span>  
+# <a name="ihosttaskjoin-method"></a><span data-ttu-id="b3339-102">IHostTask::Join – metoda</span><span class="sxs-lookup"><span data-stu-id="b3339-102">IHostTask::Join Method</span></span>
+<span data-ttu-id="b3339-103">Blokuje volající úlohou, dokud není úloha reprezentované aktuální [ihosttask –](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md) instance dokončení, o zadaný časový interval uplyne, nebo [ihosttask::alert –](../../../../docs/framework/unmanaged-api/hosting/ihosttask-alert-method.md) je volána.</span><span class="sxs-lookup"><span data-stu-id="b3339-103">Blocks the calling task until the task represented by the current [IHostTask](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md) instance completes, the specified time interval elapses, or [IHostTask::Alert](../../../../docs/framework/unmanaged-api/hosting/ihosttask-alert-method.md) is called.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="a1109-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="a1109-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="b3339-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b3339-104">Syntax</span></span>  
   
 ```  
 HRESULT Join (  
@@ -36,36 +36,37 @@ HRESULT Join (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="a1109-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="a1109-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="b3339-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="b3339-105">Parameters</span></span>  
  `milliseconds`  
- <span data-ttu-id="a1109-106">[in] Časový interval v milisekundách pro čekání na úlohu ukončit.</span><span class="sxs-lookup"><span data-stu-id="a1109-106">[in] The time interval, in milliseconds, to wait for the task to terminate.</span></span> <span data-ttu-id="a1109-107">Pokud tento interval uplyne úlohy ukončí, odblokuje se volající úlohou.</span><span class="sxs-lookup"><span data-stu-id="a1109-107">If this interval elapses before the task terminates, the calling task unblocks.</span></span>  
+ <span data-ttu-id="b3339-106">[in] Časový interval v milisekundách pro čekání na úlohu ukončit.</span><span class="sxs-lookup"><span data-stu-id="b3339-106">[in] The time interval, in milliseconds, to wait for the task to terminate.</span></span> <span data-ttu-id="b3339-107">Pokud tento interval uplyne úlohy ukončí, odblokuje se volající úlohou.</span><span class="sxs-lookup"><span data-stu-id="b3339-107">If this interval elapses before the task terminates, the calling task unblocks.</span></span>  
   
  `option`  
- <span data-ttu-id="a1109-108">[in] Jeden z [wait_option –](../../../../docs/framework/unmanaged-api/hosting/wait-option-enumeration.md) hodnoty.</span><span class="sxs-lookup"><span data-stu-id="a1109-108">[in] One of the [WAIT_OPTION](../../../../docs/framework/unmanaged-api/hosting/wait-option-enumeration.md) values.</span></span> <span data-ttu-id="a1109-109">Hodnota WAIT_ALERTABLE dává pokyn hostitelského probuzení úkolu, pokud `Alert` je volána před provedením `milliseconds` uplyne.</span><span class="sxs-lookup"><span data-stu-id="a1109-109">A value of WAIT_ALERTABLE instructs the host to wake the task if `Alert` is called before `milliseconds` elapses.</span></span>  
+ <span data-ttu-id="b3339-108">[in] Jeden z [wait_option –](../../../../docs/framework/unmanaged-api/hosting/wait-option-enumeration.md) hodnoty.</span><span class="sxs-lookup"><span data-stu-id="b3339-108">[in] One of the [WAIT_OPTION](../../../../docs/framework/unmanaged-api/hosting/wait-option-enumeration.md) values.</span></span> <span data-ttu-id="b3339-109">Hodnota WAIT_ALERTABLE dává pokyn hostitelského probuzení úkolu, pokud `Alert` je volána před provedením `milliseconds` uplyne.</span><span class="sxs-lookup"><span data-stu-id="b3339-109">A value of WAIT_ALERTABLE instructs the host to wake the task if `Alert` is called before `milliseconds` elapses.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="a1109-110">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="a1109-110">Return Value</span></span>  
+## <a name="return-value"></a><span data-ttu-id="b3339-110">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="b3339-110">Return Value</span></span>  
   
-|<span data-ttu-id="a1109-111">HRESULT</span><span class="sxs-lookup"><span data-stu-id="a1109-111">HRESULT</span></span>|<span data-ttu-id="a1109-112">Popis</span><span class="sxs-lookup"><span data-stu-id="a1109-112">Description</span></span>|  
+|<span data-ttu-id="b3339-111">HRESULT</span><span class="sxs-lookup"><span data-stu-id="b3339-111">HRESULT</span></span>|<span data-ttu-id="b3339-112">Popis</span><span class="sxs-lookup"><span data-stu-id="b3339-112">Description</span></span>|  
 |-------------|-----------------|  
-|<span data-ttu-id="a1109-113">S_OK</span><span class="sxs-lookup"><span data-stu-id="a1109-113">S_OK</span></span>|<span data-ttu-id="a1109-114">`Join` bylo úspěšně vráceno.</span><span class="sxs-lookup"><span data-stu-id="a1109-114">`Join` returned successfully.</span></span>|  
-|<span data-ttu-id="a1109-115">HOST_E_CLRNOTAVAILABLE</span><span class="sxs-lookup"><span data-stu-id="a1109-115">HOST_E_CLRNOTAVAILABLE</span></span>|<span data-ttu-id="a1109-116">Modul CLR (CLR) se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.</span><span class="sxs-lookup"><span data-stu-id="a1109-116">The common language runtime (CLR) has not been loaded into a process, or the CLR is in a state in which it cannot run managed code or process the call successfully.</span></span>|  
-|<span data-ttu-id="a1109-117">HOST_E_TIMEOUT</span><span class="sxs-lookup"><span data-stu-id="a1109-117">HOST_E_TIMEOUT</span></span>|<span data-ttu-id="a1109-118">Vypršel časový limit volání.</span><span class="sxs-lookup"><span data-stu-id="a1109-118">The call timed out.</span></span>|  
-|<span data-ttu-id="a1109-119">HOST_E_NOT_OWNER</span><span class="sxs-lookup"><span data-stu-id="a1109-119">HOST_E_NOT_OWNER</span></span>|<span data-ttu-id="a1109-120">Volající není vlastníkem zámku.</span><span class="sxs-lookup"><span data-stu-id="a1109-120">The caller does not own the lock.</span></span>|  
-|<span data-ttu-id="a1109-121">HOST_E_ABANDONED</span><span class="sxs-lookup"><span data-stu-id="a1109-121">HOST_E_ABANDONED</span></span>|<span data-ttu-id="a1109-122">Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na nebo aktuální `IHostTask` instance není přidružen k úkolu.</span><span class="sxs-lookup"><span data-stu-id="a1109-122">An event was canceled while a blocked thread or fiber was waiting on it, or the current `IHostTask` instance is not associated with a task.</span></span>|  
-|<span data-ttu-id="a1109-123">E_FAIL</span><span class="sxs-lookup"><span data-stu-id="a1109-123">E_FAIL</span></span>|<span data-ttu-id="a1109-124">Došlo k neznámé katastrofických selhání.</span><span class="sxs-lookup"><span data-stu-id="a1109-124">An unknown catastrophic failure occurred.</span></span> <span data-ttu-id="a1109-125">Po návratu metody E_FAIL, modul CLR už nejsou použitelné v rámci procesu.</span><span class="sxs-lookup"><span data-stu-id="a1109-125">When a method returns E_FAIL, the CLR is no longer usable within the process.</span></span> <span data-ttu-id="a1109-126">Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.</span><span class="sxs-lookup"><span data-stu-id="a1109-126">Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.</span></span>|  
+|<span data-ttu-id="b3339-113">S_OK</span><span class="sxs-lookup"><span data-stu-id="b3339-113">S_OK</span></span>|`Join` <span data-ttu-id="b3339-114">bylo úspěšně vráceno.</span><span class="sxs-lookup"><span data-stu-id="b3339-114">returned successfully.</span></span>|  
+|<span data-ttu-id="b3339-115">HOST_E_CLRNOTAVAILABLE</span><span class="sxs-lookup"><span data-stu-id="b3339-115">HOST_E_CLRNOTAVAILABLE</span></span>|<span data-ttu-id="b3339-116">Modul CLR (CLR) se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.</span><span class="sxs-lookup"><span data-stu-id="b3339-116">The common language runtime (CLR) has not been loaded into a process, or the CLR is in a state in which it cannot run managed code or process the call successfully.</span></span>|  
+|<span data-ttu-id="b3339-117">HOST_E_TIMEOUT</span><span class="sxs-lookup"><span data-stu-id="b3339-117">HOST_E_TIMEOUT</span></span>|<span data-ttu-id="b3339-118">Vypršel časový limit volání.</span><span class="sxs-lookup"><span data-stu-id="b3339-118">The call timed out.</span></span>|  
+|<span data-ttu-id="b3339-119">HOST_E_NOT_OWNER</span><span class="sxs-lookup"><span data-stu-id="b3339-119">HOST_E_NOT_OWNER</span></span>|<span data-ttu-id="b3339-120">Volající není vlastníkem zámku.</span><span class="sxs-lookup"><span data-stu-id="b3339-120">The caller does not own the lock.</span></span>|  
+|<span data-ttu-id="b3339-121">HOST_E_ABANDONED</span><span class="sxs-lookup"><span data-stu-id="b3339-121">HOST_E_ABANDONED</span></span>|<span data-ttu-id="b3339-122">Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na nebo aktuální `IHostTask` instance není přidružen k úkolu.</span><span class="sxs-lookup"><span data-stu-id="b3339-122">An event was canceled while a blocked thread or fiber was waiting on it, or the current `IHostTask` instance is not associated with a task.</span></span>|  
+|<span data-ttu-id="b3339-123">E_FAIL</span><span class="sxs-lookup"><span data-stu-id="b3339-123">E_FAIL</span></span>|<span data-ttu-id="b3339-124">Došlo k neznámé katastrofických selhání.</span><span class="sxs-lookup"><span data-stu-id="b3339-124">An unknown catastrophic failure occurred.</span></span> <span data-ttu-id="b3339-125">Po návratu metody E_FAIL, modul CLR už nejsou použitelné v rámci procesu.</span><span class="sxs-lookup"><span data-stu-id="b3339-125">When a method returns E_FAIL, the CLR is no longer usable within the process.</span></span> <span data-ttu-id="b3339-126">Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.</span><span class="sxs-lookup"><span data-stu-id="b3339-126">Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="a1109-127">Požadavky</span><span class="sxs-lookup"><span data-stu-id="a1109-127">Requirements</span></span>  
- <span data-ttu-id="a1109-128">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="a1109-128">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="b3339-127">Požadavky</span><span class="sxs-lookup"><span data-stu-id="b3339-127">Requirements</span></span>  
+ <span data-ttu-id="b3339-128">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="b3339-128">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="a1109-129">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="a1109-129">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="b3339-129">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="b3339-129">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="a1109-130">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="a1109-130">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="b3339-130">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="b3339-130">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="a1109-131">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="a1109-131">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ **<span data-ttu-id="b3339-131">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="b3339-131">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a><span data-ttu-id="a1109-132">Viz také:</span><span class="sxs-lookup"><span data-stu-id="a1109-132">See also</span></span>
-- [<span data-ttu-id="a1109-133">ICLRTask – rozhraní</span><span class="sxs-lookup"><span data-stu-id="a1109-133">ICLRTask Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)
-- [<span data-ttu-id="a1109-134">ICLRTaskManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="a1109-134">ICLRTaskManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrtaskmanager-interface.md)
-- [<span data-ttu-id="a1109-135">IHostTask – rozhraní</span><span class="sxs-lookup"><span data-stu-id="a1109-135">IHostTask Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md)
-- [<span data-ttu-id="a1109-136">IHostTaskManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="a1109-136">IHostTaskManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-interface.md)
-- [<span data-ttu-id="a1109-137">WAIT_OPTION – výčet</span><span class="sxs-lookup"><span data-stu-id="a1109-137">WAIT_OPTION Enumeration</span></span>](../../../../docs/framework/unmanaged-api/hosting/wait-option-enumeration.md)
+## <a name="see-also"></a><span data-ttu-id="b3339-132">Viz také:</span><span class="sxs-lookup"><span data-stu-id="b3339-132">See also</span></span>
+
+- [<span data-ttu-id="b3339-133">ICLRTask – rozhraní</span><span class="sxs-lookup"><span data-stu-id="b3339-133">ICLRTask Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)
+- [<span data-ttu-id="b3339-134">ICLRTaskManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="b3339-134">ICLRTaskManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrtaskmanager-interface.md)
+- [<span data-ttu-id="b3339-135">IHostTask – rozhraní</span><span class="sxs-lookup"><span data-stu-id="b3339-135">IHostTask Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md)
+- [<span data-ttu-id="b3339-136">IHostTaskManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="b3339-136">IHostTaskManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-interface.md)
+- [<span data-ttu-id="b3339-137">WAIT_OPTION – výčet</span><span class="sxs-lookup"><span data-stu-id="b3339-137">WAIT_OPTION Enumeration</span></span>](../../../../docs/framework/unmanaged-api/hosting/wait-option-enumeration.md)

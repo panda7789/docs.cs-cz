@@ -18,17 +18,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6ba606230be7a81fc42644c2fd3883a989bf37ac
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: 38b6785afae75888398f1c0d3d69be2ce21d67bd
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57498988"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59160781"
 ---
-# <a name="iclrstrongnamestrongnamegetblob-method"></a><span data-ttu-id="3f862-102">ICLRStrongName::StrongNameGetBlob – metoda</span><span class="sxs-lookup"><span data-stu-id="3f862-102">ICLRStrongName::StrongNameGetBlob Method</span></span>
-<span data-ttu-id="3f862-103">Vyplní zadané vyrovnávací paměti binární reprezentace spustitelný soubor na zadané adrese.</span><span class="sxs-lookup"><span data-stu-id="3f862-103">Fills the specified buffer with the binary representation of the executable file at the specified address.</span></span>  
+# <a name="iclrstrongnamestrongnamegetblob-method"></a><span data-ttu-id="f71c0-102">ICLRStrongName::StrongNameGetBlob – metoda</span><span class="sxs-lookup"><span data-stu-id="f71c0-102">ICLRStrongName::StrongNameGetBlob Method</span></span>
+<span data-ttu-id="f71c0-103">Vyplní zadané vyrovnávací paměti binární reprezentace spustitelný soubor na zadané adrese.</span><span class="sxs-lookup"><span data-stu-id="f71c0-103">Fills the specified buffer with the binary representation of the executable file at the specified address.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="3f862-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="3f862-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="f71c0-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="f71c0-104">Syntax</span></span>  
   
 ```  
 HRESULT StrongNameGetBlob (  
@@ -38,28 +38,29 @@ HRESULT StrongNameGetBlob (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="3f862-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="3f862-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="f71c0-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="f71c0-105">Parameters</span></span>  
  `wszFilePath`  
- <span data-ttu-id="3f862-106">[in] Platnou cestu ke spustitelnému souboru, který se má načíst.</span><span class="sxs-lookup"><span data-stu-id="3f862-106">[in] A valid path to the executable file to be loaded.</span></span>  
+ <span data-ttu-id="f71c0-106">[in] Platnou cestu ke spustitelnému souboru, který se má načíst.</span><span class="sxs-lookup"><span data-stu-id="f71c0-106">[in] A valid path to the executable file to be loaded.</span></span>  
   
  `pbBlob`  
- <span data-ttu-id="3f862-107">[in] Vyrovnávací paměť, do kterého chcete načíst spustitelný soubor.</span><span class="sxs-lookup"><span data-stu-id="3f862-107">[in] The buffer into which to load the executable file.</span></span>  
+ <span data-ttu-id="f71c0-107">[in] Vyrovnávací paměť, do kterého chcete načíst spustitelný soubor.</span><span class="sxs-lookup"><span data-stu-id="f71c0-107">[in] The buffer into which to load the executable file.</span></span>  
   
  `pcbBlob`  
- <span data-ttu-id="3f862-108">[out v] Požadovanou maximální velikost v bajtech, `pbBlob`.</span><span class="sxs-lookup"><span data-stu-id="3f862-108">[in, out] The requested maximum size, in bytes, of `pbBlob`.</span></span> <span data-ttu-id="3f862-109">Po návratu, skutečná velikost v bajtech, z `pbBlob`.</span><span class="sxs-lookup"><span data-stu-id="3f862-109">Upon return, the actual size, in bytes, of `pbBlob`.</span></span>  
+ <span data-ttu-id="f71c0-108">[out v] Požadovanou maximální velikost v bajtech, `pbBlob`.</span><span class="sxs-lookup"><span data-stu-id="f71c0-108">[in, out] The requested maximum size, in bytes, of `pbBlob`.</span></span> <span data-ttu-id="f71c0-109">Po návratu, skutečná velikost v bajtech, z `pbBlob`.</span><span class="sxs-lookup"><span data-stu-id="f71c0-109">Upon return, the actual size, in bytes, of `pbBlob`.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="3f862-110">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="3f862-110">Return Value</span></span>  
- <span data-ttu-id="3f862-111">`S_OK` Pokud metoda dokončena úspěšně; v opačném případě hodnotu HRESULT označující selhání (viz [běžné hodnoty HRESULT](https://go.microsoft.com/fwlink/?LinkId=213878) seznam).</span><span class="sxs-lookup"><span data-stu-id="3f862-111">`S_OK` if the method completed successfully; otherwise, an HRESULT value that indicates failure (see [Common HRESULT Values](https://go.microsoft.com/fwlink/?LinkId=213878) for a list).</span></span>  
+## <a name="return-value"></a><span data-ttu-id="f71c0-110">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="f71c0-110">Return Value</span></span>  
+ `S_OK` <span data-ttu-id="f71c0-111">Pokud metoda dokončena úspěšně; v opačném případě hodnotu HRESULT označující selhání (viz [běžné hodnoty HRESULT](https://go.microsoft.com/fwlink/?LinkId=213878) seznam).</span><span class="sxs-lookup"><span data-stu-id="f71c0-111">if the method completed successfully; otherwise, an HRESULT value that indicates failure (see [Common HRESULT Values](https://go.microsoft.com/fwlink/?LinkId=213878) for a list).</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="3f862-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="3f862-112">Requirements</span></span>  
- <span data-ttu-id="3f862-113">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="3f862-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="f71c0-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="f71c0-112">Requirements</span></span>  
+ <span data-ttu-id="f71c0-113">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="f71c0-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="3f862-114">**Záhlaví:** MetaHost.h</span><span class="sxs-lookup"><span data-stu-id="3f862-114">**Header:** MetaHost.h</span></span>  
+ <span data-ttu-id="f71c0-114">**Záhlaví:** MetaHost.h</span><span class="sxs-lookup"><span data-stu-id="f71c0-114">**Header:** MetaHost.h</span></span>  
   
- <span data-ttu-id="3f862-115">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="3f862-115">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="f71c0-115">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="f71c0-115">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="3f862-116">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="3f862-116">**.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span></span>  
+ **<span data-ttu-id="f71c0-116">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="f71c0-116">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a><span data-ttu-id="3f862-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="3f862-117">See also</span></span>
-- [<span data-ttu-id="3f862-118">StrongNameGetBlobFromImage – metoda</span><span class="sxs-lookup"><span data-stu-id="3f862-118">StrongNameGetBlobFromImage Method</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamegetblobfromimage-method.md)
-- [<span data-ttu-id="3f862-119">ICLRStrongName – rozhraní</span><span class="sxs-lookup"><span data-stu-id="3f862-119">ICLRStrongName Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)
+## <a name="see-also"></a><span data-ttu-id="f71c0-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="f71c0-117">See also</span></span>
+
+- [<span data-ttu-id="f71c0-118">StrongNameGetBlobFromImage – metoda</span><span class="sxs-lookup"><span data-stu-id="f71c0-118">StrongNameGetBlobFromImage Method</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamegetblobfromimage-method.md)
+- [<span data-ttu-id="f71c0-119">ICLRStrongName – rozhraní</span><span class="sxs-lookup"><span data-stu-id="f71c0-119">ICLRStrongName Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)

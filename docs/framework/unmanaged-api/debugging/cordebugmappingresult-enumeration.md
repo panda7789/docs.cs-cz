@@ -16,17 +16,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 16c4e03667d4af3ab5cc8b653d77f15eaef25843
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c2fecc7160cb41e31bf88f1a461265ad8fdce166
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54691824"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59170388"
 ---
-# <a name="cordebugmappingresult-enumeration"></a><span data-ttu-id="d7b0b-102">CorDebugMappingResult – výčet</span><span class="sxs-lookup"><span data-stu-id="d7b0b-102">CorDebugMappingResult Enumeration</span></span>
-<span data-ttu-id="d7b0b-103">Poskytuje podrobnosti o způsobu získání hodnoty ukazatel instrukce (IP).</span><span class="sxs-lookup"><span data-stu-id="d7b0b-103">Provides the details of how the value of the instruction pointer (IP) was obtained.</span></span>  
+# <a name="cordebugmappingresult-enumeration"></a><span data-ttu-id="f41c1-102">CorDebugMappingResult – výčet</span><span class="sxs-lookup"><span data-stu-id="f41c1-102">CorDebugMappingResult Enumeration</span></span>
+<span data-ttu-id="f41c1-103">Poskytuje podrobnosti o způsobu získání hodnoty ukazatel instrukce (IP).</span><span class="sxs-lookup"><span data-stu-id="f41c1-103">Provides the details of how the value of the instruction pointer (IP) was obtained.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="d7b0b-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="d7b0b-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="f41c1-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="f41c1-104">Syntax</span></span>  
   
 ```  
 typedef enum CorDebugMappingResult {  
@@ -39,28 +39,29 @@ typedef enum CorDebugMappingResult {
 } CorDebugMappingResult;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="d7b0b-105">Členové</span><span class="sxs-lookup"><span data-stu-id="d7b0b-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="f41c1-105">Členové</span><span class="sxs-lookup"><span data-stu-id="f41c1-105">Members</span></span>  
   
-|<span data-ttu-id="d7b0b-106">Člen</span><span class="sxs-lookup"><span data-stu-id="d7b0b-106">Member</span></span>|<span data-ttu-id="d7b0b-107">Popis</span><span class="sxs-lookup"><span data-stu-id="d7b0b-107">Description</span></span>|  
+|<span data-ttu-id="f41c1-106">Člen</span><span class="sxs-lookup"><span data-stu-id="f41c1-106">Member</span></span>|<span data-ttu-id="f41c1-107">Popis</span><span class="sxs-lookup"><span data-stu-id="f41c1-107">Description</span></span>|  
 |------------|-----------------|  
-|`MAPPING_PROLOG`|<span data-ttu-id="d7b0b-108">Nativní kód je v prologu, takže IP má hodnotu 0.</span><span class="sxs-lookup"><span data-stu-id="d7b0b-108">The native code is in the prolog, so the value of the IP is 0.</span></span>|  
-|`MAPPING_EPILOG`|<span data-ttu-id="d7b0b-109">Nativní kód epilogu, probíhá, tedy hodnota IP adresu poslední instrukce metody.</span><span class="sxs-lookup"><span data-stu-id="d7b0b-109">The native code is in an epilog, so the value of the IP is the address of the last instruction of the method.</span></span>|  
-|`MAPPING_NO_INFO`|<span data-ttu-id="d7b0b-110">Žádné informace o mapování je k dispozici pro metodu, aby IP adresa má hodnotu 0.</span><span class="sxs-lookup"><span data-stu-id="d7b0b-110">No mapping information is available for the method, so the value of the IP is 0.</span></span>|  
-|`MAPPING_UNMAPPED_ADDRESS`|<span data-ttu-id="d7b0b-111">Přestože jsou informace o mapování metody, aktuální adresu nelze mapovat na kód Microsoft intermediate language (MSIL).</span><span class="sxs-lookup"><span data-stu-id="d7b0b-111">Although there is mapping information for the method, the current address cannot be mapped to Microsoft intermediate language (MSIL) code.</span></span> <span data-ttu-id="d7b0b-112">IP adresa hodnotu 0.</span><span class="sxs-lookup"><span data-stu-id="d7b0b-112">The value of the IP is 0.</span></span>|  
-|`MAPPING_EXACT`|<span data-ttu-id="d7b0b-113">Metoda mapuje přesně na kód jazyka MSIL nebo byl interpretován rámce, tak hodnota IP adresy je přesné.</span><span class="sxs-lookup"><span data-stu-id="d7b0b-113">Either the method maps exactly to MSIL code or the frame has been interpreted, so the value of the IP is accurate.</span></span>|  
-|`MAPPING_APPROXIMATE`|<span data-ttu-id="d7b0b-114">Metoda byl úspěšně namapován, ale hodnota IP adresa může být přibližné.</span><span class="sxs-lookup"><span data-stu-id="d7b0b-114">The method was successfully mapped, but the value of the IP may be approximate.</span></span>|  
+|`MAPPING_PROLOG`|<span data-ttu-id="f41c1-108">Nativní kód je v prologu, takže IP má hodnotu 0.</span><span class="sxs-lookup"><span data-stu-id="f41c1-108">The native code is in the prolog, so the value of the IP is 0.</span></span>|  
+|`MAPPING_EPILOG`|<span data-ttu-id="f41c1-109">Nativní kód epilogu, probíhá, tedy hodnota IP adresu poslední instrukce metody.</span><span class="sxs-lookup"><span data-stu-id="f41c1-109">The native code is in an epilog, so the value of the IP is the address of the last instruction of the method.</span></span>|  
+|`MAPPING_NO_INFO`|<span data-ttu-id="f41c1-110">Žádné informace o mapování je k dispozici pro metodu, aby IP adresa má hodnotu 0.</span><span class="sxs-lookup"><span data-stu-id="f41c1-110">No mapping information is available for the method, so the value of the IP is 0.</span></span>|  
+|`MAPPING_UNMAPPED_ADDRESS`|<span data-ttu-id="f41c1-111">Přestože jsou informace o mapování metody, aktuální adresu nelze mapovat na kód Microsoft intermediate language (MSIL).</span><span class="sxs-lookup"><span data-stu-id="f41c1-111">Although there is mapping information for the method, the current address cannot be mapped to Microsoft intermediate language (MSIL) code.</span></span> <span data-ttu-id="f41c1-112">IP adresa hodnotu 0.</span><span class="sxs-lookup"><span data-stu-id="f41c1-112">The value of the IP is 0.</span></span>|  
+|`MAPPING_EXACT`|<span data-ttu-id="f41c1-113">Metoda mapuje přesně na kód jazyka MSIL nebo byl interpretován rámce, tak hodnota IP adresy je přesné.</span><span class="sxs-lookup"><span data-stu-id="f41c1-113">Either the method maps exactly to MSIL code or the frame has been interpreted, so the value of the IP is accurate.</span></span>|  
+|`MAPPING_APPROXIMATE`|<span data-ttu-id="f41c1-114">Metoda byl úspěšně namapován, ale hodnota IP adresa může být přibližné.</span><span class="sxs-lookup"><span data-stu-id="f41c1-114">The method was successfully mapped, but the value of the IP may be approximate.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="d7b0b-115">Poznámky</span><span class="sxs-lookup"><span data-stu-id="d7b0b-115">Remarks</span></span>  
- <span data-ttu-id="d7b0b-116">Můžete použít [icordebugilframe::getip –](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe-getip-method.md) metodu k získání hodnoty ukazatele na instrukci.</span><span class="sxs-lookup"><span data-stu-id="d7b0b-116">You can use the [ICorDebugILFrame::GetIP](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe-getip-method.md) method to obtain the value of the instruction pointer.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="f41c1-115">Poznámky</span><span class="sxs-lookup"><span data-stu-id="f41c1-115">Remarks</span></span>  
+ <span data-ttu-id="f41c1-116">Můžete použít [icordebugilframe::getip –](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe-getip-method.md) metodu k získání hodnoty ukazatele na instrukci.</span><span class="sxs-lookup"><span data-stu-id="f41c1-116">You can use the [ICorDebugILFrame::GetIP](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe-getip-method.md) method to obtain the value of the instruction pointer.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="d7b0b-117">Požadavky</span><span class="sxs-lookup"><span data-stu-id="d7b0b-117">Requirements</span></span>  
- <span data-ttu-id="d7b0b-118">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="d7b0b-118">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="f41c1-117">Požadavky</span><span class="sxs-lookup"><span data-stu-id="f41c1-117">Requirements</span></span>  
+ <span data-ttu-id="f41c1-118">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="f41c1-118">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="d7b0b-119">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="d7b0b-119">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="f41c1-119">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="f41c1-119">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="d7b0b-120">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="d7b0b-120">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="f41c1-120">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="f41c1-120">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="d7b0b-121">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="d7b0b-121">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ **<span data-ttu-id="f41c1-121">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="f41c1-121">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a><span data-ttu-id="d7b0b-122">Viz také:</span><span class="sxs-lookup"><span data-stu-id="d7b0b-122">See also</span></span>
-- [<span data-ttu-id="d7b0b-123">Výčty pro ladění</span><span class="sxs-lookup"><span data-stu-id="d7b0b-123">Debugging Enumerations</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
+## <a name="see-also"></a><span data-ttu-id="f41c1-122">Viz také:</span><span class="sxs-lookup"><span data-stu-id="f41c1-122">See also</span></span>
+
+- [<span data-ttu-id="f41c1-123">Ladění výčtů</span><span class="sxs-lookup"><span data-stu-id="f41c1-123">Debugging Enumerations</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)

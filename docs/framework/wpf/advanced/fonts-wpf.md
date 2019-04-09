@@ -6,24 +6,25 @@ f1_keywords:
 helpviewer_keywords:
 - fonts [WPF]
 ms.assetid: 6c766a95-ad03-475e-a36f-2243e9495941
-ms.openlocfilehash: fd3c815b3acd857b193aa02d632a33c96e324885
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: eb8a02445511935d64ebaa6d78d4b05c0b75167e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57360976"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59169244"
 ---
-# <a name="fonts-wpf"></a><span data-ttu-id="26641-102">Písma (WPF)</span><span class="sxs-lookup"><span data-stu-id="26641-102">Fonts (WPF)</span></span>
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] <span data-ttu-id="26641-103">zahrnuje podporu pro bohatou prezentaci z textu s využitím [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písma.</span><span class="sxs-lookup"><span data-stu-id="26641-103">includes support for rich presentation of text using [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] fonts.</span></span> <span data-ttu-id="26641-104">Balík ukázek z [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písma je součástí [!INCLUDE[TLA2#tla_lhsdk](../../../../includes/tla2sharptla-lhsdk-md.md)].</span><span class="sxs-lookup"><span data-stu-id="26641-104">A sample pack of [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] fonts is included with the [!INCLUDE[TLA2#tla_lhsdk](../../../../includes/tla2sharptla-lhsdk-md.md)].</span></span>  
+# <a name="fonts-wpf"></a><span data-ttu-id="be378-102">Písma (WPF)</span><span class="sxs-lookup"><span data-stu-id="be378-102">Fonts (WPF)</span></span>
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] <span data-ttu-id="be378-103">zahrnuje podporu pro bohatou prezentaci z textu s využitím [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písma.</span><span class="sxs-lookup"><span data-stu-id="be378-103">includes support for rich presentation of text using [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] fonts.</span></span> <span data-ttu-id="be378-104">Balík ukázek z [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písma je součástí [!INCLUDE[TLA2#tla_lhsdk](../../../../includes/tla2sharptla-lhsdk-md.md)].</span><span class="sxs-lookup"><span data-stu-id="be378-104">A sample pack of [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] fonts is included with the [!INCLUDE[TLA2#tla_lhsdk](../../../../includes/tla2sharptla-lhsdk-md.md)].</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="26641-105">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="26641-105">In This Section</span></span>  
- [<span data-ttu-id="26641-106">Funkce písma OpenType</span><span class="sxs-lookup"><span data-stu-id="26641-106">OpenType Font Features</span></span>](opentype-font-features.md)  
- [<span data-ttu-id="26641-107">Balení písem s aplikacemi</span><span class="sxs-lookup"><span data-stu-id="26641-107">Packaging Fonts with Applications</span></span>](packaging-fonts-with-applications.md)  
- [<span data-ttu-id="26641-108">Ukázková sada písem OpenType</span><span class="sxs-lookup"><span data-stu-id="26641-108">Sample OpenType Font Pack</span></span>](sample-opentype-font-pack.md)  
- [<span data-ttu-id="26641-109">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="26641-109">How-to Topics</span></span>](fonts-how-to-topics.md)  
+## <a name="in-this-section"></a><span data-ttu-id="be378-105">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="be378-105">In This Section</span></span>  
+ [<span data-ttu-id="be378-106">Funkce písma OpenType</span><span class="sxs-lookup"><span data-stu-id="be378-106">OpenType Font Features</span></span>](opentype-font-features.md)  
+ [<span data-ttu-id="be378-107">Balení písem s aplikacemi</span><span class="sxs-lookup"><span data-stu-id="be378-107">Packaging Fonts with Applications</span></span>](packaging-fonts-with-applications.md)  
+ [<span data-ttu-id="be378-108">Ukázková sada písem OpenType</span><span class="sxs-lookup"><span data-stu-id="be378-108">Sample OpenType Font Pack</span></span>](sample-opentype-font-pack.md)  
+ [<span data-ttu-id="be378-109">– postupy</span><span class="sxs-lookup"><span data-stu-id="be378-109">How-to Topics</span></span>](fonts-how-to-topics.md)  
   
-## <a name="see-also"></a><span data-ttu-id="26641-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="26641-110">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="be378-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="be378-110">See also</span></span>
+
 - <xref:System.Windows.FontStyle>
 - <xref:System.Windows.SystemFonts>
-- [<span data-ttu-id="26641-111">Dokumenty v platformě WPF</span><span class="sxs-lookup"><span data-stu-id="26641-111">Documents in WPF</span></span>](documents-in-wpf.md)
-- [<span data-ttu-id="26641-112">Typografie v rozhraní WPF</span><span class="sxs-lookup"><span data-stu-id="26641-112">Typography in WPF</span></span>](typography-in-wpf.md)
+- [<span data-ttu-id="be378-111">Dokumenty v platformě WPF</span><span class="sxs-lookup"><span data-stu-id="be378-111">Documents in WPF</span></span>](documents-in-wpf.md)
+- [<span data-ttu-id="be378-112">Typografie v rozhraní WPF</span><span class="sxs-lookup"><span data-stu-id="be378-112">Typography in WPF</span></span>](typography-in-wpf.md)
