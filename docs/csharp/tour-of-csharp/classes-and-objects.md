@@ -3,12 +3,12 @@ title: Třídy a objekty v C# – připravuje C# jazyka
 description: Teprve se C#? Přečtěte si tento přehled tříd, objektů a dědičnost
 ms.date: 08/10/2016
 ms.assetid: 63a89bde-0f05-4bc4-b0cd-4f693854f0cd
-ms.openlocfilehash: a4276e214bbb6edb3fb1b75c21c26f18bb9fdc25
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.openlocfilehash: 6f06a43b60a1101e5583ffa85bd948c69679943b
+ms.sourcegitcommit: a3db1a9eafca89f95ccf361bc1833b47fbb2bb30
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58466255"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58921244"
 ---
 # <a name="classes-and-objects"></a>Třídy a objekty
 
@@ -18,11 +18,11 @@ Nové třídy jsou vytvořené pomocí deklarace tříd. Deklarace třídy zač�
 
 Následuje deklaraci jednoduchou třídu pojmenovanou `Point`:
 
-[!code-csharp[PointClass](../../../samples/snippets/csharp/tour/classes-and-objects/Point.cs#L3-L11)]
+[!code-csharp[PointClass](~/samples/snippets/csharp/tour/classes-and-objects/Point.cs#L3-L11)]
 
 Jsou vytvořeny pomocí instance třídy `new` operátor, který přiděluje paměť pro novou instanci, vyvolá konstruktor k inicializaci instance a vrátí odkaz na instanci. Následující příkazy vytvořit dva objekty bod a uložit odkazy na tyto objekty do dvou proměnných:
 
-[!code-csharp[PointExample](../../../samples/snippets/csharp/tour/classes-and-objects/Program.cs#L9-L10)]
+[!code-csharp[PointExample](~/samples/snippets/csharp/tour/classes-and-objects/Program.cs#L9-L10)]
 
 Paměti obsazena objekt je automaticky uvolněn, když objekt už není dostupný. To není nezbytné ani možné explicitně uvolnit objekty v jazyce C#.
 
@@ -74,26 +74,26 @@ Každý člen třídy má přidružené usnadnění přístupu, který řídí o
 
 Definice třídy může určit sadu parametrů typu podle názvu třídy s ostré závorky uzavírající seznam názvy parametrů typů. Parametry typu pak lze v těle deklarace třídy definují členy třídy. V následujícím příkladu, parametry typu `Pair` jsou `TFirst` a `TSecond`:
 
-[!code-csharp[Pair](../../../samples/snippets/csharp/tour/classes-and-objects/Pair.cs#L3-L7)]
+[!code-csharp[Pair](~/samples/snippets/csharp/tour/classes-and-objects/Pair.cs#L3-L7)]
 
 Typ třídy, který je deklarován mít parametry typu se nazývá *typu obecné třídy*. Typy struktury, rozhraní a delegátů mohou být obecný.
 Při použití obecné třídy musí být uvedeny argumentů typu pro jednotlivé parametry typu:
 
-[!code-csharp[PairExample](../../../samples/snippets/csharp/tour/classes-and-objects/Program.cs#L15-L17)]
+[!code-csharp[PairExample](~/samples/snippets/csharp/tour/classes-and-objects/Program.cs#L15-L17)]
 
-Obecný typ s argumenty typů, které jsou k dispozici, jako je třeba `Pair<int,string>` výše, je volána *konstruovaný typ*.
+Obecný typ s argumenty typů, které jsou k dispozici, jako je třeba `Pair<int,string>` výše, je volána *konstruovaný typ.*.
 
 ## <a name="base-classes"></a>Základní třídy
 
 Deklarace třídy může určovat základní třídu pomocí následujících parametrů názvem a typem třídy pomocí dvojtečku a název základní třídy. Vynechání specifikace základní třídy je stejný jako odvozený od typu `object`. V následujícím příkladu základní třída `Point3D` je `Point`a základní třídu `Point` je `object`:
 
-[!code-csharp[Point3DClass](../../../samples/snippets/csharp/tour/classes-and-objects/Point.cs#L3-L20)]
+[!code-csharp[Point3DClass](~/samples/snippets/csharp/tour/classes-and-objects/Point.cs#L3-L20)]
 
 Třída dědí členy své základní třídy. Dědičnost znamená, že třídy implicitně obsahuje všechny členy své základní třídy, s výjimkou instance a statické konstruktory a finalizační metody základní třídy. Odvozené třídy můžete přidat nové členy pro ty, které se dědí, ale nemůže odstranit definici zděděného člena. V předchozím příkladu `Point3D` dědí `x` a `y` pole z `Point`a každý `Point3D` instance obsahuje tři pole `x`, `y`, a `z`.
 
 Implicitní převod existuje z typu třídy pro některé typy jejího základní třídy. Proměnné typu třídy. proto odkazovat instance této třídy nebo instance všechny odvozené třídy. Například dány předchozí deklarace třídy, proměnné typu `Point` odkazovat buď `Point` nebo `Point3D`:
 
-[!code-csharp[Point3DExample](../../../samples/snippets/csharp/tour/classes-and-objects/Program.cs#L22-L23)]
+[!code-csharp[Point3DExample](~/samples/snippets/csharp/tour/classes-and-objects/Program.cs#L22-L23)]
 
 ## <a name="fields"></a>Pole
 
@@ -105,7 +105,7 @@ Pole deklarované bez statickém modifikátoru definuje pole instance. Každá i
 
 V následujícím příkladu, každá instance `Color` třída má samostatnou kopii `r`, `g`, a `b` instance pole, ale existuje pouze jedna kopie `Black`, `White`, `Red`, `Green`, a `Blue` statická pole:
 
-[!code-csharp[ColorClass](../../../samples/snippets/csharp/tour/classes-and-objects/Color.cs#L3-L17)]
+[!code-csharp[ColorClass](~/samples/snippets/csharp/tour/classes-and-objects/Color.cs#L3-L17)]
 
 Jak je znázorněno v předchozím příkladu *pole jen pro čtení* mohou být deklarovány s `readonly` modifikátor. Přiřazení `readonly` pole se můžou vyskytnout jenom jako součást deklarace pole nebo v konstruktoru ve stejné třídě.
 
@@ -129,23 +129,23 @@ Parametry s hodnotou může být volitelný, a zadat výchozí hodnotu tak, aby 
 
 A *odkazovat na parametr* slouží k předávání argumentů podle odkazu. Argument předaný pro referenční parametr musí být proměnná s určitou hodnotou a při provádění metody referenční parametr představuje stejné úložiště jako argument proměnné. Parametr odkazu je deklarována s `ref` modifikátor. Následující příklad ukazuje použití `ref` parametry.
 
-[!code-csharp[swapExample](../../../samples/snippets/csharp/tour/classes-and-objects/RefExample.cs#L3-L18)]
+[!code-csharp[swapExample](~/samples/snippets/csharp/tour/classes-and-objects/RefExample.cs#L3-L18)]
 
 *Výstupní parametr* slouží k předávání argumentů podle odkazu. Je podobný parametr odkazu, s tím rozdílem, že se nevyžaduje, aby explicitně přiřadit hodnotu argumentu zadaný volajícího. Výstupní parametr je deklarována s `out` modifikátor. Následující příklad ukazuje použití `out` parametry s využitím syntaxe zavedený C# 7.
 
-[!code-csharp[OutExample](../../../samples/snippets/csharp/tour/classes-and-objects/OutExample.cs#L3-L17)]
+[!code-csharp[OutExample](~/samples/snippets/csharp/tour/classes-and-objects/OutExample.cs#L3-L17)]
 
 A *pole parametrů* povoluje proměnlivý počet argumentů, které mají být předána metodě. Pole parametrů je deklarována s `params` modifikátor. Poslední parametr metody může být pole parametrů a typ pole parametrů musí být typu jednorozměrné pole. Zápis a WriteLine metod <xref:System.Console?displayProperty=nameWithType> třídy jsou dobrým příkladem použití pole parametrů. Jsou deklarovány následujícím způsobem.
 
-[!code-csharp[ConsoleExample](../../../samples/snippets/csharp/tour/classes-and-objects/Program.cs#L78-L83)]
+[!code-csharp[ConsoleExample](~/samples/snippets/csharp/tour/classes-and-objects/Program.cs#L78-L83)]
 
 Pole parametrů se v rámci metody, která používá pole parametrů, chová stejně jako regulární parametr typu pole. Ve volání metody s polem parametrů, je možné předat buď jeden argument typu pole parametru nebo libovolný počet argumentů typu prvku pole parametrů. V druhém případě pole instance je automaticky vytvořen a inicializován pomocí dané argumenty. V tomto příkladu
 
-[!code-csharp[StringFormat](../../../samples/snippets/csharp/tour/classes-and-objects/Program.cs#L55-L55)]
+[!code-csharp[StringFormat](~/samples/snippets/csharp/tour/classes-and-objects/Program.cs#L55-L55)]
 
 je ekvivalentní zápisu následující.
 
-[!code-csharp[StringFormat2](../../../samples/snippets/csharp/tour/classes-and-objects/Program.cs#L30-L35)]
+[!code-csharp[StringFormat2](~/samples/snippets/csharp/tour/classes-and-objects/Program.cs#L30-L35)]
 
 ### <a name="method-body-and-local-variables"></a>Tělo metody a lokální proměnné
 
@@ -153,7 +153,7 @@ Tělo metody určuje příkazy ke spuštění při vyvolání metody.
 
 Tělo metody můžete deklarovat proměnné, které jsou specifické pro vyvolání metody. Tyto proměnné jsou volány *lokální proměnné*. Místní deklarace proměnné Určuje název typu, název proměnné a případně na počáteční hodnotu. Následující příklad deklaruje místní proměnnou `i` s počáteční hodnotou nula a místní proměnnou `j` s žádná počáteční hodnota.
 
-[!code-csharp[Squares](../../../samples/snippets/csharp/tour/classes-and-objects/Squares.cs#L3-L17)]
+[!code-csharp[Squares](~/samples/snippets/csharp/tour/classes-and-objects/Squares.cs#L3-L17)]
 
 C# vyžaduje místní proměnnou *jednoznačně přiřazena* před její hodnotu lze získat. Například pokud deklarace předchozí `i` počáteční hodnotu neobsahuje, kompilátor by oznámit chybu pro následné použití `i` protože `i` nemusí být jednoznačně přiřazena v těchto bodech v programu.
 
@@ -167,7 +167,7 @@ Metody deklarované bez je statický modifikátor *metodu instance*. Metodu inst
 
 Následující `Entity` má statické třídy a členy instance.
 
-[!code-csharp[Entity](../../../samples/snippets/csharp/tour/classes-and-objects/Entity.cs#L16-L36)]
+[!code-csharp[Entity](~/samples/snippets/csharp/tour/classes-and-objects/Entity.cs#L16-L36)]
 
 Každý `Entity` instance obsahuje sériové číslo (a pravděpodobně některé další informace, které tady není ukázaný). `Entity` Konstruktoru (což je jako metoda instance) inicializuje novou instanci s další dostupné sériové číslo. Protože konstruktor je členem instance, je povoleno přístup i `serialNo` pole instance a `nextSerialNo` statické pole.
 
@@ -175,7 +175,7 @@ Každý `Entity` instance obsahuje sériové číslo (a pravděpodobně někter�
 
 Následující příklad ukazuje použití třídy Entity.
 
-[!code-csharp[EntityExample](../../../samples/snippets/csharp/tour/classes-and-objects/Entity.cs#L3-L15)]
+[!code-csharp[EntityExample](~/samples/snippets/csharp/tour/classes-and-objects/Entity.cs#L3-L15)]
 
 Všimněte si, že `SetNextSerialNo` a `GetNextSerialNo` statické metody jsou vyvolány ve třídě, kdežto `GetSerialNo` metodu instance se vyvolá u instance třídy.
 
@@ -191,11 +191,11 @@ Virtuální metoda může být *přepsat* v odvozené třídě. Při deklaraci i
 
 Následující příklad deklaruje abstraktní třídu, `Expression`, který představuje uzel stromu výrazu a tři odvozené třídy, `Constant`, `VariableReference`, a `Operation`, které implementují uzly stromu výrazů konstant, proměnných Reference a aritmetické operace. (To je podobné, ale ne by se zaměňovat s typy stromu výrazů).
 
-[!code-csharp[ExpressionClass](../../../samples/snippets/csharp/tour/classes-and-objects/Expressions.cs#L3-L61)]
+[!code-csharp[ExpressionClass](~/samples/snippets/csharp/tour/classes-and-objects/Expressions.cs#L3-L61)]
 
 Předchozí čtyři třídy lze použít k modelování aritmetických výrazech. Například použití instance těchto tříd, výraz `x + 3` můžou být vyjádřeny následujícím způsobem.
 
-[!code-csharp[ExpressionExample](../../../samples/snippets/csharp/tour/classes-and-objects/Program.cs#L40-L43)]
+[!code-csharp[ExpressionExample](~/samples/snippets/csharp/tour/classes-and-objects/Program.cs#L40-L43)]
 
 `Evaluate` Metodu `Expression` instance se vyvolá, aby vyhodnotit tento výraz a vytvářet `double` hodnotu. Tato metoda přebírá `Dictionary` argument, který obsahuje názvy proměnných (jako klíče položky) a hodnoty (jako hodnoty položek). Protože `Evaluate` je abstraktní metody, jako neabstraktní třídy odvozené od `Expression` musí přepsat `Evaluate`.
 
@@ -203,13 +203,13 @@ A `Constant`vaší implementace `Evaluate` jednoduše vrací uložené – konst
 
 Následující program používá `Expression` třídy pro vyhodnocení výrazu `x * (y + 2)` pro různé hodnoty `x` a `y`.
 
-[!code-csharp[ExpressionUsage](../../../samples/snippets/csharp/tour/classes-and-objects/Expressions.cs#L66-L89)]
+[!code-csharp[ExpressionUsage](~/samples/snippets/csharp/tour/classes-and-objects/Expressions.cs#L66-L89)]
 
 ### <a name="method-overloading"></a>Přetěžování metody
 
 Metoda *přetížení* povoluje více metod ve stejné třídě, aby mají stejný název tak dlouho, dokud mají jedinečný podpis. Při kompilaci vyvolání přetěžované metody, kterou kompilátor používá *rozlišení přetěžování* určit konkrétní metodu chce volat. Řešení přetížení vyhledá jednu metodu, nejlépe odpovídá argumenty nebo hlásí chybu, pokud lze najít žádné jediné nejlepší shodu. Následující příklad ukazuje přetížení v platnosti. Komentář pro každé vyvolání v `UsageExample` metoda ukazuje, jakou metodu ve skutečnosti je vyvolána.
 
-[!code-csharp[OverloadUsage](../../../samples/snippets/csharp/tour/classes-and-objects/Overloading.cs#L3-L41)]
+[!code-csharp[OverloadUsage](~/samples/snippets/csharp/tour/classes-and-objects/Overloading.cs#L3-L41)]
 
 Jak je znázorněno v příkladu, konkrétní metody lze vybrat vždy explicitně použití argumentů na typy parametrů přesný nebo explicitně zadávání argumentů typu.
 
@@ -217,9 +217,12 @@ Jak je znázorněno v příkladu, konkrétní metody lze vybrat vždy explicitn�
 
 Členy, které obsahují spustitelného kódu jsou souhrnně označovány jako *funkce členy* třídy. Předchozí část popisuje metody, které jsou primární druh členy funkce. Tato část popisuje jiné druhy členů funkce nepodporuje C#: konstruktory, vlastnosti, indexery, události, operátory a finalizační metody.
 
-Následující příklad zobrazuje obecný třídu s názvem seznamu\<T >, která implementuje growable seznam objektů. Třída obsahuje několik příkladů nejběžnější druhy členů funkce.
+Následující příklad zobrazuje obecný třídu s názvem `MyList<T>`, který implementuje growable seznam objektů. Třída obsahuje několik příkladů nejběžnější druhy členů funkce.
 
-[!code-csharp[ListClass](../../../samples/snippets/csharp/tour/classes-and-objects/ListBasedExamples.cs#L4-L89)]
+> [!NOTE]
+> Tento příklad vytvoří `MyList` třídy, který není stejný jako .NET standard <xref:System.Collections.Generic.List%601?displayProperty=nameWithType>. Ukazuje koncepty jsou potřeba u této ukázky, ale není to náhrada pro danou třídu.
+
+[!code-csharp[ListClass](~/samples/snippets/csharp/tour/classes-and-objects/ListBasedExamples.cs#L4-L89)]
 
 ### <a name="constructors"></a>Konstruktory
 
@@ -227,9 +230,9 @@ C# podporuje instance a statické konstruktory. *Konstruktor instance* je člen,
 
 Konstruktor je deklarován jako metoda bez návratového typu a stejný název jako třídu obsahující. Pokud deklarace konstruktoru obsahuje statický modifikátor, deklaruje statický konstruktor. V opačném případě deklaruje konstruktor instance.
 
-Konstruktory instancí můžou být přetížené a může obsahovat volitelné parametry. Například `List<T>` třída deklaruje dva konstruktory instancí, jednu s žádné parametry a ten, který přebírá `int` parametru. Konstruktory instancí jsou vyvolány pomocí `new` operátor. Následující příkazy přidělit dvě `List<string>` instance pomocí konstruktoru `List` třídy a nemusíte nepovinný argument.
+Konstruktory instancí můžou být přetížené a může obsahovat volitelné parametry. Například `MyList<T>` třída deklaruje dva konstruktory instancí, jednu s žádné parametry a ten, který přebírá `int` parametru. Konstruktory instancí jsou vyvolány pomocí `new` operátor. Následující příkazy přidělit dvě `MyList<string>` instance pomocí konstruktoru `MyList` třídy a nemusíte nepovinný argument.
 
-[!code-csharp[ListExample1](../../../samples/snippets/csharp/tour/classes-and-objects/ListBasedExamples.cs#L95-L96)]
+[!code-csharp[ListExample1](~/samples/snippets/csharp/tour/classes-and-objects/ListBasedExamples.cs#L95-L96)]
 
 Na rozdíl od jiných členů nejsou zděděné konstruktory instancí a třída nemá žádné konstruktory instance než tyto skutečně deklarovaná ve třídě. Pokud žádný konstruktor instance není zadána pro třídu, pak prázdná bez parametrů je automaticky zadáno.
 
@@ -243,9 +246,9 @@ Přístupový objekt get odpovídající konstruktor bez parametrů metody s ná
 
 Přístupový objekt set odpovídající metodu s jedním parametrem s názvem hodnotu a bez návratového typu. Když je jako cíl přiřazení nebo jako operand odkazuje vlastnost ++ a--, přístupový objekt set je volána s argumentem, který obsahuje novou hodnotu.
 
-`List<T>` Třída deklaruje dvě vlastnosti, počet a kapacitu, které jsou jen pro čtení a čtení i zápis, v uvedeném pořadí. Následuje příklad použití těchto vlastností.
+`MyList<T>` Třída deklaruje dvě vlastnosti `Count` a `Capacity`, které jsou v uvedeném pořadí jen pro čtení a čtení i zápis. Následuje příklad použití těchto vlastností:
 
-[!code-csharp[ListExample2](../../../samples/snippets/csharp/tour/classes-and-objects/ListBasedExamples.cs#L101-L104)]
+[!code-csharp[ListExample2](~/samples/snippets/csharp/tour/classes-and-objects/ListBasedExamples.cs#L101-L104)]
 
 Podobně jako k polím a metodám, C# podporuje vlastnosti instance a statické vlastnosti. Statické vlastnosti jsou deklarovány s modifikátorem statické a vlastnosti instance jsou deklarovány bez něj.
 
@@ -255,9 +258,9 @@ Accessor(s) vlastnost může být virtuální. Pokud obsahuje deklaraci vlastnos
 
 *Indexer* je člen, který umožňuje objekty, které mají být indexovány v stejným způsobem jako pole. Indexer je deklarován jako vlastnost, s tím rozdílem, že název člena je to za nímž následuje seznam parametrů napsané mezi oddělovači `[` a `]`. Parametry jsou k dispozici v accessor(s) indexeru. Podobně jako u vlastnosti, indexery mohou být pro čtení i zápis, jen pro čtení a jen pro zápis a accessor(s) indexer může být virtuální.
 
-`List` Třída deklaruje jednu indexeru pro čtení i zápis, která přebírá `int` parametru. Indexer umožňuje index `List` instance s `int` hodnoty. Příklad:
+`MyList<T>` Třída deklaruje jednu indexeru pro čtení i zápis, která přebírá `int` parametru. Indexer umožňuje index `MyList<T>` instance s `int` hodnoty. Příklad:
 
-[!code-csharp[ListExample3](../../../samples/snippets/csharp/tour/classes-and-objects/ListBasedExamples.cs#L109-L117)]
+[!code-csharp[ListExample3](~/samples/snippets/csharp/tour/classes-and-objects/ListBasedExamples.cs#L109-L117)]
 
 Indexery mohou být přetíženy, což znamená, že třídy lze deklarovat několik indexerů jako číslo nebo typů jejich parametrů se liší.
 
@@ -267,11 +270,11 @@ Indexery mohou být přetíženy, což znamená, že třídy lze deklarovat něk
 
 V rámci třídy, které deklaruje člen události události se chová stejně jako pole s typem delegáta (za předpokladu, události není abstraktní a nedeklaruje přistupující objekty). Toto pole obsahuje odkaz na delegáta, který představuje obslužné rutiny událostí, které byly přidány k této události. Pokud jsou k dispozici žádné obslužné rutiny událostí, je pole `null`.
 
-`List<T>` Třída deklaruje člen jedna událost s názvem `Changed`, což znamená, že se do seznamu přidá nová položka. Vyvolá událost změněné `OnChanged` virtuální metody, které nejprve zkontroluje, zda je událost `null` (to znamená, že jsou k dispozici žádné obslužné rutiny). Pojem vyvolání události je přesně ekvivalentní k vyvolání delegáta představované událostí – to znamená, nejsou žádné zvláštní jazykovým konstrukcím pro vyvolání události.
+`MyList<T>` Třída deklaruje člen jedna událost s názvem `Changed`, což znamená, že se do seznamu přidá nová položka. Vyvolá událost změněné `OnChanged` virtuální metody, které nejprve zkontroluje, zda je událost `null` (to znamená, že jsou k dispozici žádné obslužné rutiny). Pojem vyvolání události je přesně ekvivalentní k vyvolání delegáta představované událostí – to znamená, nejsou žádné zvláštní jazykovým konstrukcím pro vyvolání události.
 
-Klienti reagovat na události prostřednictvím *obslužné rutiny událostí*. Obslužné rutiny událostí se připojují pomocí `+=` operátor a odebrané pomocí `-=` operátor. Následující příklad připojí obslužnou rutinu události pro `Changed` události `List<string>`.
+Klienti reagovat na události prostřednictvím *obslužné rutiny událostí*. Obslužné rutiny událostí se připojují pomocí `+=` operátor a odebrané pomocí `-=` operátor. Následující příklad připojí obslužnou rutinu události pro `Changed` události `MyList<string>`.
 
-[!code-csharp[EventExample](../../../samples/snippets/csharp/tour/classes-and-objects/ListBasedExamples.cs#L132-L148)]
+[!code-csharp[EventExample](~/samples/snippets/csharp/tour/classes-and-objects/ListBasedExamples.cs#L132-L148)]
 
 Pro pokročilé scénáře, kde je žádoucí ovládací prvek pro použité úložiště událostí, můžete explicitně uvést deklaraci události `add` a `remove` přístupové objekty, které jsou poněkud podobně jako `set` přistupujícího objektu vlastnosti.
 
@@ -279,11 +282,11 @@ Pro pokročilé scénáře, kde je žádoucí ovládací prvek pro použité úl
 
 *Operátor* je člen, který definuje význam použití operátoru konkrétní výraz do instance třídy. Je možné definovat tři typy operátorů: unární operátory, binární operátory a operátory převodu. Všechny operátory musí být deklarována jako `public` a `static`.
 
-`List<T>` Třída deklaruje dva operátory `operator ==` a `operator !=`a proto poskytuje nový význam pro výrazy, které se vztahují na tyto operátory `List` instancí. Konkrétně definovat operátory rovnosti dvou `List<T>` instance vyjádřený jako porovnání všech obsažených objektů pomocí jejich metod Equals. V následujícím příkladu `==` operátor pro porovnání dvou `List<int>` instancí.
+`MyList<T>` Třída deklaruje dva operátory `operator ==` a `operator !=`a proto poskytuje nový význam pro výrazy, které se vztahují na tyto operátory `MyList` instancí. Konkrétně definovat operátory rovnosti dvou `MyList<T>` instance vyjádřený jako porovnání všech obsažených objektů pomocí jejich metod Equals. V následujícím příkladu `==` operátor pro porovnání dvou `MyList<int>` instancí.
 
-[!code-csharp[OperatorExample](../../../samples/snippets/csharp/tour/classes-and-objects/ListBasedExamples.cs#L121-L129)]
+[!code-csharp[OperatorExample](~/samples/snippets/csharp/tour/classes-and-objects/ListBasedExamples.cs#L121-L129)]
 
-První `Console.WriteLine` výstupy `True` vzhledem k tomu, že oba seznamy obsahují stejný počet objektů se stejnými hodnotami ve stejném pořadí. Měl `List<T>` není definována `operator ==`, první `Console.WriteLine` by mít výstup `False` protože `a` a `b` odkaz na jiný `List<int>` instancí.
+První `Console.WriteLine` výstupy `True` vzhledem k tomu, že oba seznamy obsahují stejný počet objektů se stejnými hodnotami ve stejném pořadí. Měl `MyList<T>` není definována `operator ==`, první `Console.WriteLine` by mít výstup `False` protože `a` a `b` odkaz na jiný `MyList<int>` instancí.
 
 ### <a name="finalizers"></a>Finalizační metody
 

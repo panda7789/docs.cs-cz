@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Ověřte, zda jsou řetězce ve formátu platné e-mailu'
+title: 'Postupy: Ověření platnosti e-mailového formátu řetězců'
 ms.date: 12/10/2018
 ms.technology: dotnet-standard
 dev_langs:
@@ -20,14 +20,14 @@ helpviewer_keywords:
 ms.assetid: 7536af08-4e86-4953-98a1-a8298623df92
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9ed0721f2bfa8e272822740cf26173c1592de428
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 78210f9f007060551130812fcb5a9cd5b4728adc
+ms.sourcegitcommit: 5c2176883dc3107445702724a7caa7ac2f6cb0d3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53236645"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58890498"
 ---
-# <a name="how-to-verify-that-strings-are-in-valid-email-format"></a>Postupy: Ověřte, zda jsou řetězce ve formátu platné e-mailu
+# <a name="how-to-verify-that-strings-are-in-valid-email-format"></a>Postupy: Ověření platnosti e-mailového formátu řetězců
 Následující příklad používá regulární výraz k ověření, že je řetězec ve formátu platné e-mailu.  
 
 ## <a name="example"></a>Příklad  
@@ -59,8 +59,8 @@ Následující příklad používá regulární výraz k ověření, že je řet
 |`(?("")("".+?(?<!\\)""@)`|Pokud je první znak uvozovky, porovná počáteční uvozovky následované alespoň jedním výskyt libovolný znak, následovaný koncovými uvozovkami. Koncovými uvozovkami nesmí být předchází znak zpětného lomítka (\\). `(?<!` je začátek kontrolní výraz negativního zpětného vyhledávání s nulovou šířkou. Řetězec by měl končit zavináčem zavináč (@).|  
 |<code>&#124;(([0-9a-z]</code>|Pokud prvním znakem není znak uvozovek, porovná libovolný znak abecedy od až z nebo A až Z (porovnání velká a malá písmena), nebo jakémukoli číselnému znaku od 0 do 9.|  
 |`(\.(?!\.))`|Pokud další znakem je tečka, spárujte ji. Pokud není období, hledejte další znak a pokračuje v porovnávání. `(?!\.)` je kontrolní výraz negativního dopředného vyhledávání s nulovou šířkou, který bránil zobrazení dvou po sobě jdoucí tečky v místní části e-mailovou adresu.|  
-|<code>&#124;[-!#\$%&'\*\+/=\?\^\`{}\&#124;~\w]</code>|Pokud následující znak není tečka, odpovídá jakémukoli znaku slova nebo některý z následujících znaků:-! #$% ' * +=? ^\`{}&#124;~.|  
-|<code>((\.(?!\.))&#124;[-!#\$%'\*\+/=\?\^\`{}\&#124;~\w])*</code>|Srovnejte vzor alternace (tečku následovanou bez období nebo jeden z počtu znaků) nulakrát nebo vícekrát.|  
+|<code>&#124;[-!#\$%&'\*\+/=\?\^\`{}&#124;~\w]</code>| Pokud následující znak není tečka, odpovídá jakémukoli znaku slova nebo některý z následujících znaků:-! #$% ' * +=? ^\`{}&#124;~.|  
+|<code>((\.(?!\.))&#124;[-!#\$%'\*\+/=\?\^\`{}&#124;~\w])*</code>| Srovnejte vzor alternace (tečku následovanou bez období nebo jeden z počtu znaků) nulakrát nebo vícekrát.|  
 |`@`|Shoda znak @.|  
 |`(?<=[0-9a-z])`|Pokračuje v porovnávání, pokud znak, který předchází znak @ je A až Z, a až z nebo 0 až 9. `(?<=[0-9a-z])` Konstrukce definuje kontrolní výraz pozitivního zpětného vyhledávání s nulovou šířkou.|  
 |`(?(\[)`|Zkontrolujte, zda znak, který následuje po @ je levá hranatá závorka.|  
@@ -105,4 +105,4 @@ vbc /t:library RegexUtilities.vb
   
 ## <a name="see-also"></a>Viz také:
 
-- [Regulárních výrazech .NET Frameworku](../../../docs/standard/base-types/regular-expressions.md)
+- [.NET Framework – regulární výrazy](../../../docs/standard/base-types/regular-expressions.md)
