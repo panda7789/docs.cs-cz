@@ -1,15 +1,15 @@
 ---
-title: Přehled zabezpečení SQL serveru
+title: Přehled zabezpečení SQL Serveru
 ms.date: 03/30/2017
 ms.assetid: ae66dd75-5c16-4cc0-9e12-774dd26d3fb9
-ms.openlocfilehash: 8000e88de70706c7bb8ec39a05beea4605208b76
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: de0c79a95a786f33b05c88ce4ed298837f2a6923
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54591708"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59148587"
 ---
-# <a name="overview-of-sql-server-security"></a>Přehled zabezpečení SQL serveru
+# <a name="overview-of-sql-server-security"></a>Přehled zabezpečení SQL Serveru
 Strategie defense-in-depth s překrývajícími se vrstvy zabezpečení, je nejlepší způsob, jak čítač bezpečnostní hrozby. SQL Server poskytuje zabezpečení architektura, která je navržena k umožnění správci databází a vývojářům vytvářet zabezpečené databázových aplikací a čelit hrozbám. Každá verze systému SQL Server se zvýšil na předchozích verzích systému SQL Server se zavedením nové funkce a funkce. V poli se však nedodává zabezpečení. Každá aplikace je jedinečný v jeho požadavky na zabezpečení. Vývojáři musí pochopit, jaké kombinace funkce a funkce jsou nejvhodnější pro čítače známými hrozbami a předvídat hrozeb, které mohou nastat v budoucnu.  
   
  Instance systému SQL Server obsahuje hierarchickou kolekci entit, spouští se serverem. Každý server obsahuje několik databází a každá databáze obsahuje kolekci zabezpečitelných objektů. Všechny zabezpečitelné SQL Server má přidruženou *oprávnění* , která lze udělit práva *hlavní*, což je jednotlivé, skupiny nebo proces udělen přístup k systému SQL Server. Zabezpečení systému SQL Server spravuje přístup k zabezpečenému entity prostřednictvím *ověřování* a *autorizace*.  
@@ -40,6 +40,7 @@ Strategie defense-in-depth s překrývajícími se vrstvy zabezpečení, je nejl
  Obsahuje odkazy na prostředky zabezpečení integrace CLR.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Zabezpečení aplikací ADO.NET](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)
 - [SQL Server – zabezpečení](../../../../../docs/framework/data/adonet/sql/sql-server-security.md)
 - [Scénáře zabezpečení aplikací na SQL Serveru](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)

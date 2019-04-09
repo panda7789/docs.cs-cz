@@ -4,12 +4,12 @@ ms.date: 05/10/2018
 helpviewer_keywords:
 - Protected Friend keyword [Visual Basic]
 - Protected Friend keyword [Visual Basic], syntax
-ms.openlocfilehash: 1858411e5543448e6d822c97b6e5c18da4a6c11e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 331c63dc290d4096e8158f265ee869b47743a273
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54639598"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59151772"
 ---
 # <a name="protected-friend-visual-basic"></a>Chráněné Friend (Visual Basic)
 
@@ -22,14 +22,13 @@ ms.locfileid: "54639598"
 
 - **Místní deklarace.** Můžete použít `Protected Friend` pouze na úrovni třídy. To znamená, že deklarace kontext `Protected` elementu musí být třída a nemůže být zdrojový soubor, obor názvů, rozhraní, modul, struktury nebo proceduru. 
 
-
 ## <a name="see-also"></a>Viz také:
 
 - [Public](../../../visual-basic/language-reference/modifiers/public.md)
-- [Protected](../../../visual-basic/language-reference/modifiers/protected.md)
+- [Chráněno](../../../visual-basic/language-reference/modifiers/protected.md)
 - [Friend](friend.md)
-- [Private](../../../visual-basic/language-reference/modifiers/private.md)
-- [Private Protected](./private-protected.md)
+- [Soukromé](../../../visual-basic/language-reference/modifiers/private.md)
+- [Privátní, chráněné](./private-protected.md)
 - [Úrovně přístupu v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)
 - [Procedury](../../../visual-basic/programming-guide/language-features/procedures/index.md)
 - [Struktury](../../../visual-basic/programming-guide/language-features/data-types/structures.md)

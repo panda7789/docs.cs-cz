@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 8c10fa02-1b9c-4be5-ab03-451d943ac1ee
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 1001777f00524f3a183e1641718b9d3121c94e66
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 9a70b8c3509b785d70b041b449c759e7994e5984
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54637934"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59148717"
 ---
 # <a name="loaderlock-mda"></a>loaderLock – pomocník spravovaného ladění (MDA)
 `loaderLock` Pomocníka spravovaného ladění (MDA) upozorní na pokusy pro spuštění spravovaného kódu na vlákno, které drží zámek zavaděče operační systém Microsoft Windows.  Takové spuštění je neplatný, protože to může vést k zablokování a použití knihoven DLL předtím, než se inicializují zavaděčem operačního systému.  
@@ -34,7 +34,7 @@ ms.locfileid: "54637934"
   
  Smíšená spravovaného a nespravovaného C++ sestavení vytvořené pro rozhraní .NET Framework verze 2.0 jsou méně náchylný k tyto problémy s stejné menší riziko jako aplikace pomocí nespravovaných knihoven DLL, které porušují pravidla operačního systému.  Například, pokud nespravovaná knihovna DLL pro `DllMain` vstupní bod volání `CoCreateInstance` získat spravovaný objekt, který byl zpřístupněn do modelu COM, výsledek je pokus o spuštění uvnitř zámku zaváděcího programu spravovaného kódu. Další informace o problémech zámek zavaděče v rozhraní .NET Framework verze 2.0 nebo novější, naleznete v tématu [inicializace smíšených sestavení](/cpp/dotnet/initialization-of-mixed-assemblies).  
   
-## <a name="resolution"></a>Rozlišení  
+## <a name="resolution"></a>Řešení  
  Ve Visual C++ .NET 2002 a Visual C++ .NET 2003, knihovny DLL zkompilovaná `/clr` – možnost kompilátoru může nedeterministicky vzájemné zablokování při načtení; tento problém se volala smíšené problém zámek DLL načítání nebo zavaděče. V aplikaci Visual C++ 2005 a novějších téměř všechny seznam se odebrala z procesu načítání smíšených knihoven DLL. Existují však některé zbývající scénáře, pro které zavaděč zámku může (deterministicky). Prováděcí účet příčiny a řešení pro zbývající problémy zámek zavaděče, naleznete v tématu [inicializace smíšených sestavení](/cpp/dotnet/initialization-of-mixed-assemblies). Toto téma neidentifikuje váš problém zámek zavaděče, máte k prozkoumání zásobníku vlákna, chcete-li zjistit, proč dochází k zámek zavaděče a pokyny k vyřešení problému. Podívejte se na trasování zásobníku pro vlákno, které se má toto MDA aktivováno.  Vlákno se pokouší o neoprávněně volat do spravovaného kódu při držení zámku zaváděcího programu operačního systému.  Zobrazí se pravděpodobně knihovnu DLL `DllMain` nebo ekvivalentní vstupní bod do zásobníku.  Pravidla operačního systému pro jak právně postupovat z uvnitř jako vstupní bod jsou poměrně omezené.  Tato pravidla bránit žádné spravované spuštění.  
   
 ## <a name="effect-on-the-runtime"></a>Vliv na modul Runtime  
@@ -56,4 +56,5 @@ ms.locfileid: "54637934"
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)

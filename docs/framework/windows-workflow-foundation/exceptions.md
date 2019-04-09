@@ -2,12 +2,12 @@
 title: Výjimky
 ms.date: 03/30/2017
 ms.assetid: 065205cc-52dd-4f30-9578-b17d8d113136
-ms.openlocfilehash: 94a0a2430ffe7db47152517c742aed1c18a39e64
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 64a8338133c265ee1b4c7acbd9b4d168318b66a5
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57717268"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59145987"
 ---
 # <a name="exceptions"></a>Výjimky
 Pracovní postupy můžete použít <xref:System.Activities.Statements.TryCatch> aktivity pro zpracování výjimek, které jsou aktivovány v průběhu provádění pracovního postupu. Tyto výjimky mohou být zpracovány nebo se může být znovu vyvolány při použití <xref:System.Activities.Statements.Rethrow> aktivity. Aktivity ve službě <xref:System.Activities.Statements.TryCatch.Finally%2A> oddílu jsou spuštěna při buď <xref:System.Activities.Statements.TryCatch.Try%2A> části nebo <xref:System.Activities.Statements.TryCatch.Catches%2A> části dokončí. Hostitelem pracovních postupů <xref:System.Activities.WorkflowApplication> instance můžete použít také <xref:System.Activities.WorkflowApplication.OnUnhandledException%2A> obslužnou rutinu události pro zpracování výjimek, které nejsou zpracovány <xref:System.Activities.Statements.TryCatch> aktivity.  
@@ -51,6 +51,7 @@ Pracovní postupy můžete použít <xref:System.Activities.Statements.TryCatch>
  Rozdíl mezi zpracování výjimek a kompenzace je, že zpracování výjimek dochází při provádění aktivity. Kompenzace vyvolá se po úspěšném dokončení aktivity. Zpracování výjimek představuje příležitost k vyčištění po aktivita vyvolá výjimku, zatímco poskytuje mechanismus, pomocí kterého lze vrátit zpět úspěšně dokončená práce dříve dokončené aktivity kompenzace. Další informace najdete v tématu [kompenzace](compensation.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Activities.Statements.TryCatch>
 - <xref:System.Activities.WorkflowApplication.OnUnhandledException%2A>
 - <xref:System.Activities.Statements.CompensableActivity>

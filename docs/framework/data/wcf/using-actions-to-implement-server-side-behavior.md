@@ -2,12 +2,12 @@
 title: Použití akcí k implementaci chování na straně serveru
 ms.date: 03/30/2017
 ms.assetid: 11a372db-7168-498b-80d2-9419ff557ba5
-ms.openlocfilehash: fdff4f87e0c22baeb92ee844e0dae1fa9bef8302
-ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
-ms.translationtype: MT
+ms.openlocfilehash: c21208b53745d0bf30d64ff827c1fb5e78a97cb4
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56092121"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59144115"
 ---
 # <a name="using-actions-to-implement-server-side-behavior"></a>Použití akcí k implementaci chování na straně serveru
 
@@ -81,6 +81,7 @@ context.Execute(new Uri("http://MyServer/MoviesService.svc/Movies(1)/Rate"), "PO
  Ve výše, fragmentu kódu `MoviesModel` třídy byl vytvořen pomocí Visual Studio a přidejte odkaz na službu WCF Data Service.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [WCF Data Services 4.5](../../../../docs/framework/data/wcf/index.md)
 - [Definování datových služeb WCF Data Services](../../../../docs/framework/data/wcf/defining-wcf-data-services.md)
 - [Vývoj a nasazení služeb WCF Data Services](../../../../docs/framework/data/wcf/developing-and-deploying-wcf-data-services.md)

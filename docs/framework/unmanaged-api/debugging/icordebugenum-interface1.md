@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 38aaa21b655136c63a45a7d36c097769882d8c37
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 9afaeebfdb98a404ea53b0b5ec147f8c8104e14d
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56969307"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59148808"
 ---
 # <a name="icordebugenum-interface"></a>ICorDebugEnum – rozhraní
 
@@ -53,7 +53,7 @@ Slouží jako abstraktní základní rozhraní pro enumerátory, které jsou pou
   
 -   Icordebugerrorinfoenum "–"  
   
--   [ICorDebugExceptionObjectCallStackEnum](../../../../docs/framework/unmanaged-api/debugging/icordebugexceptionobjectcallstackenum-interface.md)  
+-   [Icordebugexceptionobjectcallstackenum –](../../../../docs/framework/unmanaged-api/debugging/icordebugexceptionobjectcallstackenum-interface.md)  
   
 -   Icordebugframeenum "–"  
   
@@ -63,7 +63,7 @@ Slouží jako abstraktní základní rozhraní pro enumerátory, které jsou pou
   
 -   [Icordebugheapenum –](../../../../docs/framework/unmanaged-api/debugging/icordebugheapenum-interface.md)  
   
--   [Icordebugheapsegmentenum –](../../../../docs/framework/unmanaged-api/debugging/icordebugheapsegmentenum-interface.md)  
+-   [ICorDebugHeapSegmentEnum](../../../../docs/framework/unmanaged-api/debugging/icordebugheapsegmentenum-interface.md)  
   
 -   Icordebugmoduleenum "–"  
   
@@ -94,4 +94,5 @@ Slouží jako abstraktní základní rozhraní pro enumerátory, které jsou pou
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+
+- [Debugging – rozhraní](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

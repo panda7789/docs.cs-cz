@@ -2,12 +2,12 @@
 title: <callbackDebug>
 ms.date: 03/30/2017
 ms.assetid: 4073feda-1857-4be4-9947-227afb847ced
-ms.openlocfilehash: 62ce1bc179c7215d4988e4c6bda08025c3d3e5de
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: a1190eb1c015ba07488ff5a5952f2f5f1b10974c
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55286309"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59152266"
 ---
 # <a name="callbackdebug"></a>\<callbackDebug >
 Určuje ladění služby pro objekt zpětného volání Windows Communication Foundation (WCF).  
@@ -24,7 +24,7 @@ Určuje ladění služby pro objekt zpětného volání Windows Communication Fo
 <callbackDebug includeExceptionDetailInFaults="Boolean" />
 ```  
   
-## <a name="type"></a>Typ  
+## <a name="type"></a>Type  
  `Type`  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
@@ -43,8 +43,9 @@ Určuje ladění služby pro objekt zpětného volání Windows Communication Fo
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<behavior>](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|Určuje chování koncového bodu.|  
+|[\<chování >](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|Určuje chování koncového bodu.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Configuration.CallbackDebugElement>
 - <xref:System.ServiceModel.Description.CallbackDebugBehavior>

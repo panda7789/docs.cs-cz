@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: e60f542f-6271-495b-a9e4-48553481c2a3
-ms.openlocfilehash: 1b13d1e3e210964331a710512876bd1f8503069e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: beb5d2db898df1c98662d53190ac1432acc746e7
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54648073"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59141450"
 ---
 # <a name="performing-catalog-operations"></a>Provádění operací katalogu
 K provedení příkazu k úpravě databáze nebo katalog, jako například výkaz CREATE TABLE nebo CREATE PROCEDURE vytvořit **příkaz** pomocí odpovídající příkazy SQL a **připojení** objektu. Příkaz Spustit **metodu ExecuteNonQuery** metodu **příkaz** objektu.  
@@ -46,6 +46,7 @@ command.ExecuteNonQuery();
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Použití příkazů pro změny dat](../../../../docs/framework/data/adonet/using-commands-to-modify-data.md)
 - [Příkazy a parametry](../../../../docs/framework/data/adonet/commands-and-parameters.md)
 - [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

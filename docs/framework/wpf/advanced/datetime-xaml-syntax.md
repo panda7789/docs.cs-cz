@@ -9,17 +9,16 @@ helpviewer_keywords:
 - DateTime XAML text [WPF]
 - DateTime XAML syntax [WPF], format strings for
 ms.assetid: 5901710a-609b-40c8-9d65-f0016cd9090b
-ms.openlocfilehash: 8180064d1a500ea17568f6790e13398524eb5f36
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: d7fe5f15f79ab068e88c3fb6f7b7cac0986aa636
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57365682"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59146494"
 ---
 # <a name="datetime-xaml-syntax"></a>DateTime – syntaxe v jazyce XAML
 Některé ovládací prvky, jako například <xref:System.Windows.Controls.Calendar> a <xref:System.Windows.Controls.DatePicker>, mají vlastnosti, které používají <xref:System.DateTime> typu. I když obvykle zadat počáteční datum a čas pro tyto ovládací prvky v kódu v době běhu je zadat v XAML počáteční datum nebo čas. Analyzátor WPF XAML zpracovává analýzu <xref:System.DateTime> hodnoty pomocí předdefinovaných textová syntaxe XAML. Toto téma popisuje, jaké jsou specifikace <xref:System.DateTime> textová syntaxe XAML.  
-  
-  
+
 <a name="where_datetime_xaml_syntax_is_used"></a>   
 ## <a name="when-to-use-datetime-xaml-syntax"></a>Kdy použít syntaxe XAML data a času  
  Nastavení dat v XAML není vždy nutné a dokonce nemusí být žádoucí. Například můžete použít <xref:System.DateTime.Now%2A?displayProperty=nameWithType> vlastnost inicializovat data v době běhu, nebo můžete udělat všechny úpravy dat pro kalendáře v kódu na základě uživatelského zadání. Ale existují scénáře, kde můžete data pevně zakódovat do <xref:System.Windows.Controls.Calendar> a <xref:System.Windows.Controls.DatePicker> v šabloně ovládacího prvku. <xref:System.DateTime> Syntaxe XAML musí být použita pro tyto scénáře.  
@@ -75,4 +74,5 @@ Některé ovládací prvky, jako například <xref:System.Windows.Controls.Calen
  Jak bylo uvedeno dříve, <xref:System.DateTime> v XAML lze zadat jako libovolný řetězec, který je přijatelné pro jako vstupní <xref:System.DateTime.Parse%2A?displayProperty=nameWithType>. Jedná se o další oficiální formáty (třeba <xref:System.Globalization.DateTimeFormatInfo.UniversalSortableDateTimePattern%2A>) a formátů, které nejsou stanovení jako konkrétní <xref:System.Globalization.DateTimeFormatInfo> formuláře. Například formulář `YYYY/mm/dd` je přijatelné pro jako vstupní <xref:System.DateTime.Parse%2A?displayProperty=nameWithType>. Toto téma se nebude pokoušet popisují všechny možné formáty, které pracují a místo toho doporučuje vzor krátkého formátu data jako standardním postupem.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled XAML (WPF)](xaml-overview-wpf.md)

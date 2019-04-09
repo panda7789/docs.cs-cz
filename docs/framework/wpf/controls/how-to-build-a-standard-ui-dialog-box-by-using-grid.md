@@ -8,12 +8,12 @@ helpviewer_keywords:
 - dialog boxes [WPF], creating
 - Grid control [WPF], creating [WPF], dialog box
 ms.assetid: d6ac3d51-844b-4d29-96d8-81a696a7b960
-ms.openlocfilehash: 57edaa173b85bc06c6859b08d3edec281e1b8942
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 0ade908e92e552017acb9ba242ccba2c28c3c995
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57372853"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59149523"
 ---
 # <a name="how-to-build-a-standard-ui-dialog-box-by-using-grid"></a>Postupy: Sestavení standardního dialogového okna uživatelského rozhraní pomocí mřížky
 Tento příklad ukazuje, jak vytvořit standardní [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] dialogové okno s použitím <xref:System.Windows.Controls.Grid> elementu.  
@@ -33,7 +33,8 @@ Tento příklad ukazuje, jak vytvořit standardní [!INCLUDE[TLA#tla_ui](../../.
  [!code-vb[GridRunDialog#1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/GridRunDialog/VisualBasic/grid_vb.vb#1)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Controls.Grid>
 - <xref:System.Windows.GridUnitType>
-- [Přehled panelu](panels-overview.md)
-- [Témata s postupy](grid-how-to-topics.md)
+- [Přehled panelů](panels-overview.md)
+- [– postupy](grid-how-to-topics.md)

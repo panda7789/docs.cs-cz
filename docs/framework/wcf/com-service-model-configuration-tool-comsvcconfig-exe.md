@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Windows Communication Foundation, COM+ integration
 - WCF, COM+ integration
 ms.assetid: 7717c6c2-85fc-418b-a8ed-bad8e61cec5c
-ms.openlocfilehash: 7c536c9420e94e9b8f8bc2656df284d95a9744c7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 6d0967355e64640e0fd5c81f04a5bf4f33c7b3f7
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54568189"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59158655"
 ---
 # <a name="com-service-model-configuration-tool-comsvcconfigexe"></a>Nástroj COM+ Service Model Configuration (ComSvcConfig.exe)
 Nástroj příkazového řádku modelu COM + Service Model Configuration (ComSvcConfig.exe) můžete nakonfigurovat rozhraní COM +. Chcete-li být vystavena jako webové služby.  
@@ -47,7 +47,7 @@ ComSvcConfig.exe /install | /uninstall | /list [/application:<ApplicationID | Ap
 |`/application:` \<*ApplicationID* &#124; *ApplicationName*\>|Určuje aplikaci COM +. ke konfiguraci.<br /><br /> Krátký tvar `/a`.|  
 |`/contract:` \<*ID třídy* &#124; *ProgID* &#124; \*,*InterfaceID* &#124; *InterfaceName*    &#124; \*\>|Určuje komponenty modelu COM + a rozhraní, které budou nakonfigurované jako kontrakt služby.<br /><br /> Krátký tvar `/c`.<br /><br /> Zatímco zástupný znak (\*) lze použít při zadávání názvů součásti a rozhraní, doporučujeme vám, že je velmi riskantní používat, protože může vystavit rozhraní, které jste neměli v úmyslu.|  
 |`/hosting:` \<*ComPlus* &#124; *byl* \>|Určuje, zda určený hostující režim nebo režim hostování webu modelu COM +.<br /><br /> Krátký tvar `/h`.<br /><br /> Používání modelu COM + hostující režim vyžaduje explicitní aktivace aplikace modelu COM +. Použití webového hostingu režim umožňuje aplikace modelu COM + automaticky aktivaci jako povinné. Pokud je aplikace modelu COM + aplikace knihovny, běží v procesu Internetové informační služby (IIS). Pokud aplikace modelu COM + je serverová aplikace, spustí se v procesu Dllhost.exe.|  
-|`/webSite:` \<*Název webu*\>|Určuje, se používá na webu pro hostování při hostování režimu webu (najdete v článku `/hosting` příznak).<br /><br /> Krátký tvar `/w`.<br /><br /> Pokud není zadán žádný web, použije se výchozí webový server.|  
+|`/webSite:` \<*WebsiteName*\>|Určuje, se používá na webu pro hostování při hostování režimu webu (najdete v článku `/hosting` příznak).<br /><br /> Krátký tvar `/w`.<br /><br /> Pokud není zadán žádný web, použije se výchozí webový server.|  
 |`/webDirectory:` \<*WebDirectoryName*\>|Určuje virtuální adresář pro hostování při hostování webu se používá (viz `/hosting` příznak).<br /><br /> Krátký tvar `/d`.|  
 |`/mex`|Přidá do výchozí konfigurace služby pro podporu klientů, které chcete načíst definici kontraktu služby koncového bodu služby Metadata Exchange (MEX).<br /><br /> Krátký tvar `/x`.|  
 |`/id`|Zobrazí aplikace, komponenty a informace o rozhraní jako identifikátory.<br /><br /> Krátký tvar `/k`.|  
@@ -95,4 +95,5 @@ ComSvcConfig.exe /list /application:OnlineStore /hosting:complus
 ```  
   
 ## <a name="see-also"></a>Viz také:
-- [Postupy: Použijte nástroj pro konfiguraci modelu služby COM +](../../../docs/framework/wcf/feature-details/how-to-use-the-com-service-model-configuration-tool.md)
+
+- [Postupy: Použití nástroje pro konfiguraci modelu služby COM+](../../../docs/framework/wcf/feature-details/how-to-use-the-com-service-model-configuration-tool.md)

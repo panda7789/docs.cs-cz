@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - binding configuration [WCF]
 ms.assetid: 99a85fd8-f7eb-4a84-a93e-7721b37d415c
-ms.openlocfilehash: 52f93acacec434ce6f7ba93678615c104aa94b24
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 009011100af86e315aa41beb822b1448e2f21b25
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54704040"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59150446"
 ---
 # <a name="configuring-bindings-for-windows-communication-foundation-services"></a>Konfigurace vazeb pro služby Windows Communication Foundation
 Při vytváření aplikace, často chcete odložit rozhodnutí, která správci po nasazení aplikace. Například není často předem vědět, co adresu služby, nebo identifikátor URI (Uniform Resource), budou. Místo pevného kódování adresu, je vhodnější umožňují správcům udělat po vytvoření služby. Díky této flexibilitě se provádí prostřednictvím konfigurace.  
@@ -162,6 +162,7 @@ Při vytváření aplikace, často chcete odložit rozhodnutí, která správci 
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Zjednodušená konfigurace](../../../docs/framework/wcf/simplified-configuration.md)
 - [Vazby poskytované systémem](../../../docs/framework/wcf/system-provided-bindings.md)
 - [Přehled vytváření koncových bodů](../../../docs/framework/wcf/endpoint-creation-overview.md)

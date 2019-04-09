@@ -9,12 +9,12 @@ helpviewer_keywords:
 - multicast event delegates
 - Windows Forms controls, events
 ms.assetid: 814a6a43-a312-4791-88d8-f75f9a4f8c4c
-ms.openlocfilehash: d02705422b088800d9f2e081d6a28924d9b84078
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 57802cad0a75ed21bba02a11fec39f821835c5ea
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57710729"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59157750"
 ---
 # <a name="events-overview-windows-forms"></a>Přehled událostí (Windows Forms)
 Událost je akci, která můžete reagovat, nebo "handle" v kódu. Události mohou být generovány akci uživatele, jako je například kliknutí myší nebo stisknutí klávesy; pomocí programového kódu; nebo v systému.  
@@ -44,5 +44,6 @@ Událost je akci, která můžete reagovat, nebo "handle" v kódu. Události moh
  Mechanismus vazby, který se používá s delegáty je dynamický: delegát může být vázaný v době běhu na jakoukoli metodu, jejíž podpis odpovídá obslužné rutiny události. Pomocí této funkce můžete nastavit nebo změnit metodu vázané na podmínce a dynamicky připojit obslužnou rutinu události pro ovládací prvek.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Vytváření obslužných rutin událostí ve Windows Forms](creating-event-handlers-in-windows-forms.md)
 - [Přehled obslužných rutin událostí](event-handlers-overview-windows-forms.md)

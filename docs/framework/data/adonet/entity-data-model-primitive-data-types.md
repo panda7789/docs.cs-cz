@@ -1,15 +1,15 @@
 ---
-title: 'Model Entity Data Model: Primitivní datové typy'
+title: Model EDM (Entity Data Model) Primitivní datové typy
 ms.date: 03/30/2017
 ms.assetid: 7635168e-0566-4fdd-8391-7941b0d9f787
-ms.openlocfilehash: 2c2e1056c43f974ec38407372a8f447e52b4a630
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 044a0ed981bb9cda3550fb3a3a9f1cb9bff96f25
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54748009"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59142646"
 ---
-# <a name="entity-data-model-primitive-data-types"></a>Model Entity Data Model: Primitivní datové typy
+# <a name="entity-data-model-primitive-data-types"></a>Model EDM (Entity Data Model) Primitivní datové typy
 Entity Data Model (EDM) podporuje sadu abstraktní primitivní datové typy (například řetězce, Boolean, Int32 a tak dále), které se používají k definování [vlastnosti](../../../../docs/framework/data/adonet/property.md) v konceptuálním modelu. Tyto primitivní datové typy jsou proxy servery pro skutečné primitivní datové typy, které jsou podporovány ve službě storage nebo hostitelské prostředí, jako je například do databáze serveru SQL nebo common language runtime (CLR). Modelu EDM primitivní datové typy; nedefinuje sémantiku operací nebo převody Tyto sémantiku jsou definovány úložiště nebo hostitelského prostředí. V modelu EDM primitivní datové typy se obvykle mapují na odpovídající primitivní datové typy ve službě storage nebo hostitelského prostředí. Informace o způsobu, jakým rozhraní Entity Framework mapuje primitivní typy v modelu EDM na datové typy serveru SQL Server najdete v tématu [SqlClient pro typy Entity Framework](../../../../docs/framework/data/adonet/ef/sqlclient-for-ef-types.md).  
   
 > [!NOTE]
@@ -39,5 +39,6 @@ Entity Data Model (EDM) podporuje sadu abstraktní primitivní datové typy (nap
 |Čas|Obsahuje denní dobu.|Přesnost, s možnou hodnotou Null, výchozí|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Koncepty modelu EDM (Entity Data Model)](../../../../docs/framework/data/adonet/entity-data-model-key-concepts.md)
-- [Model EDM (Entity Data Model)](../../../../docs/framework/data/adonet/entity-data-model.md)
+- [Entity Data Model](../../../../docs/framework/data/adonet/entity-data-model.md)

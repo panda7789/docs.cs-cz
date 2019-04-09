@@ -11,18 +11,16 @@ helpviewer_keywords:
 - object performance considerations [WPF]
 - Freezable objects [WPF], performance
 ms.assetid: 73aa2f47-1d73-439a-be1f-78dc4ba2b5bd
-ms.openlocfilehash: 5548292480f07fa192985800931f9d0262f2b791
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 49318059435c5f5669510f7cf3fb7c93a4bc05e1
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57352682"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59137433"
 ---
 # <a name="optimizing-performance-object-behavior"></a>Optimalizace výkonu: Chování objektu
 Principy vnitřní chování [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] objekty se vám pomůže zajistit správné kompromisy mezi funkčnosti a výkonu.  
-  
 
-  
 <a name="Not_Removing_Event_Handlers"></a>   
 ## <a name="not-removing-event-handlers-on-objects-may-keep-objects-alive"></a>Může objekty zachování není odebírání obslužných rutin událostí na objekty  
  Delegát, který se předá objekt jeho událost je v podstatě odkaz na tento objekt. Proto obslužných rutin událostí můžete zachování objekty déle, než se očekávalo. Při provádění vyčištění objektu, který je zaregistrován k naslouchání události objektu, je nutné odebrat tento delegát před uvolněním objektu. Udržování nepotřebné objekty aktivní zvýší využití paměti vaší aplikace. To platí zejména při objektu je kořenem logického stromu nebo vizuálního stromu.  
@@ -111,6 +109,7 @@ Principy vnitřní chování [!INCLUDE[TLA2#tla_winclient](../../../../includes/
 |<xref:System.Windows.Controls.VirtualizingStackPanel>|46|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Optimalizace výkonu aplikace WPF](optimizing-wpf-application-performance.md)
 - [Plánování výkonu aplikace](planning-for-application-performance.md)
 - [Využití výhod hardwaru](optimizing-performance-taking-advantage-of-hardware.md)
@@ -119,4 +118,4 @@ Principy vnitřní chování [!INCLUDE[TLA2#tla_winclient](../../../../includes/
 - [Prostředky aplikace](optimizing-performance-application-resources.md)
 - [Text](optimizing-performance-text.md)
 - [Datová vazba](optimizing-performance-data-binding.md)
-- [Další výkonnostní doporučení](optimizing-performance-other-recommendations.md)
+- [Další doporučení k optimalizaci výkonu](optimizing-performance-other-recommendations.md)

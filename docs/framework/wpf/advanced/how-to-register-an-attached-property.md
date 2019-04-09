@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Registrace připojené vlastnosti'
+title: 'Postupy: Registrace přidružené vlastnosti'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - attached properties [WPF], registering
 - registering attached properties [WPF]
 ms.assetid: eb47bd94-0451-4f8d-8fb6-95f7812ac05b
-ms.openlocfilehash: 3cbbc8a1ea8419df408cda76de3459be9464a100
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 4c678a64b62b8f4db24cf39ffbafac52e56c9982
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57377713"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59137628"
 ---
-# <a name="how-to-register-an-attached-property"></a>Postupy: Registrace připojené vlastnosti
+# <a name="how-to-register-an-attached-property"></a>Postupy: Registrace přidružené vlastnosti
 Tento příklad ukazuje, jak registrace připojené vlastnosti a zadejte veřejnou přistupující objekty tak, aby vlastnost můžete použít v obou [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] a kódu. Připojené vlastnosti jsou koncept syntaxi definované [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]. Většina přidružené vlastnosti pro [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] typy jsou také implementovány jako vlastnosti závislosti. Vlastnosti závislostí lze použít na jakémkoli <xref:System.Windows.DependencyObject> typy.  
   
 ## <a name="example"></a>Příklad  
@@ -27,7 +27,8 @@ Tento příklad ukazuje, jak registrace připojené vlastnosti a zadejte veřejn
  [!code-vb[WPFAquariumSln#RegisterAttachedBubbler](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WPFAquariumSln/visualbasic/wpfaquariumobjects/class1.vb#registerattachedbubbler)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.DependencyProperty>
 - [Přehled vlastností závislosti](dependency-properties-overview.md)
 - [Vlastní vlastnosti závislosti](custom-dependency-properties.md)
-- [Témata s postupy](properties-how-to-topics.md)
+- [– postupy](properties-how-to-topics.md)

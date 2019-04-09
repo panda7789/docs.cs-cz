@@ -2,12 +2,12 @@
 title: Kontrakty pro směrování
 ms.date: 03/30/2017
 ms.assetid: 9ceea7ae-ea19-4cf9-ba4f-d071e236546d
-ms.openlocfilehash: 593c7a328aba82c35f5876e6e325844c829c08c7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 660652caa804b8c19f6dd18bcba51bf4abc3ba12
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54707710"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59145350"
 ---
 # <a name="routing-contracts"></a>Kontrakty pro směrování
 Kontrakty pro směrování definovat vzory zprávy, které směrovací služba může zpracovat.  Každá smlouva bez psaní a umožňuje službě a zobrazí se zpráva bez znalosti schématu zprávy nebo akce. To umožňuje službě Směrování a obecně směrování zpráv bez další konfigurace pro specifikace základní zprávy směruje.  
@@ -27,5 +27,6 @@ Kontrakty pro směrování definovat vzory zprávy, které směrovací služba m
 |<xref:System.ServiceModel.Routing.IDuplexSessionRouter>|SessionMode=SessionMode.Required<br /><br /> CallbackContract=typeof(ISimplexSession)<br /><br /> AsyncPattern = true<br /><br /> IsOneWay = true<br /><br /> TransactionFlow(TransactionFlowOption.Allowed)|IDuplexSessionChannel -> IDuplexSessionChannel|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Směrovací služba](../../../../docs/framework/wcf/feature-details/routing-service.md)
-- [Úvod do směrování](../../../../docs/framework/wcf/feature-details/routing-introduction.md)
+- [Směrování – úvod](../../../../docs/framework/wcf/feature-details/routing-introduction.md)

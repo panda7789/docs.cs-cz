@@ -2,12 +2,12 @@
 title: Metody System.Math
 ms.date: 03/30/2017
 ms.assetid: 0f299521-6f41-4720-bd70-67c93fc50948
-ms.openlocfilehash: 45a674c86fc2f19f3e273834b8cb9d6adee5b3ab
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1dae31b30962505c07c198f3bd35fceb8f400efb
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54576860"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59141710"
 ---
 # <a name="systemmath-methods"></a>Metody System.Math
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] nepodporuje následující <xref:System.Math> metody.  
@@ -26,4 +26,5 @@ ms.locfileid: "54576860"
  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] prochází na SQL `ROUND` sémantiku a nepokusí se implementovat bankovní zaokrouhlení.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Datové typy a funkce](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md)

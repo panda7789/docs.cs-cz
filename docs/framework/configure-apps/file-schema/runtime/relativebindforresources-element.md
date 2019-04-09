@@ -1,5 +1,5 @@
 ---
-title: Element <relativeBindForResources>
+title: <relativeBindForResources> Prvek
 ms.date: 03/30/2017
 helpviewer_keywords:
 - RelativeBindForResources element
@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 846ffa47-7257-4ce3-8cac-7ff627e0e34f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 51129f9bb3a278d32a5da723dcc339f5e918c0f4
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: c98914f57c24dc51625564e266157731ff173337
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55289806"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59157375"
 ---
 # <a name="relativebindforresources-element"></a>\<relativeBindForResources> Element
 Optimalizuje sondy pro satelitní sestavení.  
@@ -39,7 +39,7 @@ Optimalizuje sondy pro satelitní sestavení.
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |`false`|Modul runtime neoptimalizuje sondy pro satelitní sestavení. Jedná se o výchozí hodnotu.|  
 |`true`|Modul runtime optimalizuje sondy pro satelitní sestavení.|  
@@ -72,6 +72,7 @@ Optimalizuje sondy pro satelitní sestavení.
 -   Nevyvolával <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> událostí.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Zabalení a nasazení prostředků](../../../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)
 - [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
 - [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)

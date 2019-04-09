@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Procházení dat v modelu Windows Forms'
+title: 'Postupy: Procházení dat v rozhraní Windows Forms'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,14 +11,14 @@ helpviewer_keywords:
 - CurrencyManager class [Windows Forms], navigating Windows Forms data
 - data [Windows Forms], navigating
 ms.assetid: 97360f7b-b181-4084-966a-4c62518f735b
-ms.openlocfilehash: 920f6d6206a8f33a912d8a7d1b46a3047ed874bc
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: fb5747ec3c6b640821e4875d86273467eeb922df
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57725330"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59154593"
 ---
-# <a name="how-to-navigate-data-in-windows-forms"></a>Postupy: Procházení dat v modelu Windows Forms
+# <a name="how-to-navigate-data-in-windows-forms"></a>Postupy: Procházení dat v rozhraní Windows Forms
 V aplikaci Windows, je nejjednodušší způsob, jak procházet záznamy ve zdroji dat pro vazbu <xref:System.Windows.Forms.BindingSource> zdroj dat a vazby ovládacích prvků pro komponentu <xref:System.Windows.Forms.BindingSource>. Pak můžete použít metodu předdefinovanou navigaci na <xref:System.Windows.Forms.BindingSource> takové <xref:System.Windows.Forms.BindingSource.MoveNext%2A>, <xref:System.Windows.Forms.BindingSource.MoveLast%2A>, <xref:System.Windows.Forms.BindingSource.MovePrevious%2A> a <xref:System.Windows.Forms.BindingSource.MoveFirst%2A>. Použití těchto metod se upraví <xref:System.Windows.Forms.BindingSource.Position%2A> a <xref:System.Windows.Forms.BindingSource.Current%2A> vlastnosti <xref:System.Windows.Forms.BindingSource> odpovídajícím způsobem. Můžete také najít položku a nastavte ji jako aktuální položky tak, že nastavíte <xref:System.Windows.Forms.BindingSource.Position%2A> vlastnost.  
   
 ### <a name="to-increment-the-position-in-a-data-source"></a>Pro zvýšení pozice ve zdroji dat.  
@@ -51,7 +51,8 @@ V aplikaci Windows, je nejjednodušší způsob, jak procházet záznamy ve zdro
      [!code-vb[System.Windows.Forms.NavigatingData#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.NavigatingData/VB/Form1.vb#2)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Zdroje dat podporované rozhraním Windows Forms](data-sources-supported-by-windows-forms.md)
-- [Oznámení změn v datové vazbě Windows Forms](change-notification-in-windows-forms-data-binding.md)
-- [Datové vazby a Windows Forms](data-binding-and-windows-forms.md)
+- [Oznámení změn v datové vazbě rozhraní Windows Forms](change-notification-in-windows-forms-data-binding.md)
+- [Datové vazby a rozhraní Windows Forms](data-binding-and-windows-forms.md)
 - [Windows Forms – datová vazba](windows-forms-data-binding.md)

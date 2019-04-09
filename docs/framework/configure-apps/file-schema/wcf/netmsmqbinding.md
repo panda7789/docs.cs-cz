@@ -2,12 +2,12 @@
 title: <netMsmqBinding>
 ms.date: 03/30/2017
 ms.assetid: a68b44d7-7799-43a3-9e63-f07c782810a6
-ms.openlocfilehash: 22303a81d32369e77f745d32ff1f66e21a3c3156
-ms.sourcegitcommit: 01ea420eaa4bf76d5fc47673294c8881379b3369
+ms.openlocfilehash: 7a4bae0def6599ab577656e970abbe20dd10692f
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55759402"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59148314"
 ---
 # <a name="netmsmqbinding"></a>\<netMsmqBinding>
 Definuje vazbu s frontou vhodnou pro komunikaci mezi počítači.  
@@ -92,13 +92,13 @@ Definuje vazbu s frontou vhodnou pro komunikaci mezi počítači.
 |Prvek|Popis|  
 |-------------|-----------------|  
 |[\<readerQuotas>](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms731325(v=vs.100))|Definuje omezení složitosti zpráv SOAP, které mohou být zpracovány koncovými body nakonfigurovaným s touto vazbou. Tento prvek je typu <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement>.|  
-|[\<zabezpečení >](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-netmsmqbinding.md)|Definuje nastavení zabezpečení pro vazbu. Tento prvek je typu <xref:System.ServiceModel.Configuration.NetMsmqSecurityElement>.|  
+|[\<security>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-netmsmqbinding.md)|Definuje nastavení zabezpečení pro vazbu. Tento prvek je typu <xref:System.ServiceModel.Configuration.NetMsmqSecurityElement>.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<bindings>](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|Tento prvek obsahuje sadu standardních a vlastních vazeb.|  
+|[\<vazby >](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|Tento prvek obsahuje sadu standardních a vlastních vazeb.|  
   
 ## <a name="remarks"></a>Poznámky  
  `netMsmqBinding` Poskytuje podporu pro službu Řízení front s využitím Microsoft Message Queuing (MSMQ) jako přenosového mechanismu a umožňuje podporu pro vyrovnání a odpojených operace načítání volně propojených aplikací, izolaci selhání vazby. Informace o těchto funkcích naleznete v tématu [fronty ve WCF](../../../../../docs/framework/wcf/feature-details/queues-in-wcf.md).  
@@ -138,6 +138,7 @@ Definuje vazbu s frontou vhodnou pro komunikaci mezi počítači.
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.NetMsmqBinding>
 - <xref:System.ServiceModel.Configuration.NetMsmqBindingElement>
 - [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)

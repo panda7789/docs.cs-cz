@@ -25,12 +25,12 @@ helpviewer_keywords:
 ms.assetid: 8d5c6044-2919-41d2-8321-274706b295ac
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 719f71f42ac7b0c376525ab3a316a986af0b0f43
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: ff0e51ad0d0e12c944c996a4262541fb980efe05
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54678795"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59138005"
 ---
 # <a name="creating-satellite-assemblies-for-desktop-apps"></a>Vytváření satelitních sestavení pro aplikace klasické pracovní plochy
 Soubory prostředků přehrát hlavní roli v lokalizovaných aplikacích. Umožňují aplikaci zobrazíte řetězce, obrázky a další data v vlastněných uživateli jazyk a jazykovou verzi a poskytnout alternativní dat, pokud nejsou k dispozici prostředky pro uživatele vlastní jazyk nebo jazykovou verzi. Model střed a paprsek rozhraní .NET Framework používá k vyhledání a načtení lokalizovaných prostředků. Centrum je hlavní sestavení, která obsahuje spustitelný kód bez možnosti lokalizace a prostředky pro jediné jazykové verze, která se nazývá neutrální nebo výchozí jazykovou verzi. Výchozí jazykovou verzi je záložní jazykovou verzi pro aplikaci. používá se, když jsou k dispozici žádné lokalizované prostředky. Můžete použít <xref:System.Resources.NeutralResourcesLanguageAttribute> atribut k určení jazykovou verzi aplikace výchozí jazykovou verzi. Každého paprsku se připojí k satelitní sestavení, která obsahuje prostředky pro jeden lokalizovanou jazykovou verzi, ale neobsahuje žádný kód. Protože satelitní sestavení nejsou součástí hlavní sestavení, můžete snadno aktualizovat nebo nahradit prostředky, které odpovídají konkrétní jazykovou verzi, bez nutnosti vyměnit hlavní sestavení pro aplikaci.  
@@ -309,9 +309,10 @@ gacutil -i:StringLibrary.resources.dll
 14. Spusťte Example.exe.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Zabalení a nasazení prostředků](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)
 - [Zpoždění podepsání sestavení](../../../docs/framework/app-domains/delay-sign-assembly.md)
 - [Al.exe (linker sestavení)](../../../docs/framework/tools/al-exe-assembly-linker.md)
 - [Sn.exe (nástroj pro silný název)](../../../docs/framework/tools/sn-exe-strong-name-tool.md)
 - [Gacutil.exe (nástroj globální mezipaměti sestavení)](../../../docs/framework/tools/gacutil-exe-gac-tool.md)
-- [Prostředky v desktopových aplikacích](../../../docs/framework/resources/index.md)
+- [Prostředky v aplikacích klasické pracovní plochy](../../../docs/framework/resources/index.md)

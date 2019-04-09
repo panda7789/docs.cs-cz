@@ -2,12 +2,12 @@
 title: Zpracování škodlivých zpráv
 ms.date: 03/30/2017
 ms.assetid: 8d1c5e5a-7928-4a80-95ed-d8da211b8595
-ms.openlocfilehash: ec7603e547c065b4b86f2c81650c6e8a2ce09e6f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 704f1a837b7d70f401eaaf7d23847b08972cff50
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54745802"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59146520"
 ---
 # <a name="poison-message-handling"></a>Zpracování škodlivých zpráv
 A *nezpracovatelná zpráva byla* je zpráva, která byla překročena maximální počet pokusů o doručení do aplikace. Tato situace může nastat, když aplikace na základě fronty nemůže zpracovat zprávu z důvodu chyby. Abyste splnili požadavky na spolehlivost, frontové aplikace přijímá zprávy v rámci transakce. Zrušená transakce, ve kterém byla přijata zpráva ve frontě opustí zprávu ve frontě, tak, aby zprávy se zopakuje za novou transakci. Pokud není opraven problém, která způsobila zrušení, přijímající aplikace můžete uvízne ve smyčce přijímáním a přerušení stejné zprávy, dokud byl překročen maximální počet pokusů o doručení a výsledky nezpracovatelná zpráva byla.  
@@ -77,9 +77,7 @@ A *nezpracovatelná zpráva byla* je zpráva, která byla překročena maximáln
      [!code-csharp[S_UE_MSMQ_Poison#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_ue_msmq_poison/cs/poisonbehaviorattribute.cs#3)]  
   
 4.  Ujistěte se, že vaše služba je opatřen poznámkou atributu nezpracovatelných chování.  
-  
-  
-  
+
  Kromě toho pokud `ReceiveErrorHandling` je nastavena na `Fault`, `ServiceHost` chyb při zjištění nezpracovatelných zpráv. Můžete připojit k chybnou událost a vypnutí služby, provést opravné akce a restartovat. Například `LookupId` v <xref:System.ServiceModel.MsmqPoisonMessageException> rozšíří na `IErrorHandler` můžete třeba poznamenat, a když chyby hostitele služby, můžete použít `System.Messaging` přijímat zprávy z fronty pomocí rozhraní API `LookupId` odebrání zprávy z Fronta a zpráva v některé externí úložiště nebo jinou frontu úložiště. Potom můžete restartovat `ServiceHost` obnovit normální zpracování. [Zacházení s Nezpracovatelnými zpracování zpráv v MSMQ 4.0](../../../../docs/framework/wcf/samples/poison-message-handling-in-msmq-4-0.md) ukazuje toto chování.  
   
 ## <a name="transaction-time-out-and-poison-messages"></a>Časový limit transakce a Nezpracovatelných zpráv  
@@ -106,6 +104,7 @@ A *nezpracovatelná zpráva byla* je zpráva, která byla překročena maximáln
 -   Zprávy služby Řízení front zpráv v [!INCLUDE[wv](../../../../includes/wv-md.md)] podporuje dojde k pokusu o vlastnost zprávy, který udržuje počet určený počet pokusů o doručení zpráv. Tato vlastnost počet přerušení není k dispozici na [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] a [!INCLUDE[wxp](../../../../includes/wxp-md.md)]. WCF udržuje počet přerušení v paměti, takže je možné, že tato vlastnost nesmí obsahovat přesné hodnoty, když přečte stejné zprávy více než jedné služby WCF ve farmě.  
   
 ## <a name="see-also"></a>Viz také:
-- [Přehled front](../../../../docs/framework/wcf/feature-details/queues-overview.md)
-- [Rozdíly ve funkcích zařazování do front ve Windows Vista, Windows Serveru 2003 a Windows XP](../../../../docs/framework/wcf/feature-details/diff-in-queue-in-vista-server-2003-windows-xp.md)
+
+- [Fronty – přehled](../../../../docs/framework/wcf/feature-details/queues-overview.md)
+- [Rozdíly funkcí front zpráv v systémech Windows Vista, Windows Server 2003 a Windows XP](../../../../docs/framework/wcf/feature-details/diff-in-queue-in-vista-server-2003-windows-xp.md)
 - [Určování a zpracování chyb v kontraktech a službách](../../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md)

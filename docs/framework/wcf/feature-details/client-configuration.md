@@ -2,12 +2,12 @@
 title: Konfigurace klienta
 ms.date: 03/30/2017
 ms.assetid: 5da5bd3b-65d9-43b7-91b9-cc9e989b1350
-ms.openlocfilehash: 1cd7a066622c7d317b1a9c62658531521082c964
-ms.sourcegitcommit: af0a22a4eb11bbcd33baec49150d551955b50a16
+ms.openlocfilehash: b9975c6caeedc94bf4a7773e71a95eb0d8c7aed2
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56261801"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59144687"
 ---
 # <a name="client-configuration"></a>Konfigurace klienta
 Konfigurace klienta Windows Communication Foundation (WCF) můžete použít k určení adresy, vazby, chování a kontrakt, vlastnosti "ABC" koncový bod klienta, který klienti používají k připojení ke koncovým bodům služby. [ \<Klienta >](../../configure-apps/file-schema/wcf/client.md) element má [ \<koncový bod >](../../configure-apps/file-schema/wcf/endpoint-of-client.md) elementu, jejichž atributy se používají ke konfiguraci koncového bodu základních informací. Tyto atributy jsou popsány v [konfigurace koncových bodů](#configuring-endpoints) oddílu.  
@@ -94,5 +94,6 @@ Konfigurace klienta Windows Communication Foundation (WCF) můžete použít k u
  [ \<Metadat >](../../../../docs/framework/configure-apps/file-schema/wcf/metadata.md) element slouží k určení nastavení použije k registraci metadat import rozšíření. Další informace o rozšíření systému metadat najdete v tématu [rozšíření systému metadat](../../../../docs/framework/wcf/extending/extending-the-metadata-system.md).  
   
 ## <a name="see-also"></a>Viz také:
-- [Koncové body: Adresy, vazby a kontrakty](../../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)
-- [Konfigurace chování klienta](../../../../docs/framework/wcf/configuring-client-behaviors.md)
+
+- [Koncové body: adresy, vazby a kontrakty](../../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)
+- [Konfigurace chování klientů](../../../../docs/framework/wcf/configuring-client-behaviors.md)

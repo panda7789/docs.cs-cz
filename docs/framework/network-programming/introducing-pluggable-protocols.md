@@ -22,12 +22,12 @@ helpviewer_keywords:
 - server identifiers
 - scheme identifiers
 ms.assetid: 4b48e22d-e4e5-48f0-be80-d549bda97415
-ms.openlocfilehash: ebc238f6739f7db23d570688ea3c6e2031f9699f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 25d7b0e8b8b98d68a0fb4a3cadab3d9f3e8747bd
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54729129"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59146143"
 ---
 # <a name="introducing-pluggable-protocols"></a>Úvod k připojitelným protokolům
 Rozhraní Microsoft .NET Framework poskytuje vícevrstvou, rozšiřitelnou a spravovatelnou implementaci internetových služeb, které je možné integrovat se rychle a snadno do svých aplikací. Přístup k Internetu tříd v <xref:System.Net> a <xref:System.Net.Sockets> obory názvů slouží k implementaci založeného na webu i internetových aplikací.  
@@ -67,6 +67,7 @@ Rozhraní Microsoft .NET Framework poskytuje vícevrstvou, rozšiřitelnou a spr
  Vývojáři, kteří znají rozhraní Windows Sockets nebo uživatelům, kteří potřebují poskytnuté programování na úrovni soketu ovládací prvek, který najdete **System.Net.Sockets** třídy podle jejich potřeb. **System.Net.Sockets** třídy jsou bod přechod ze spravované do nativního kódu v rámci **System.Net** třídy. Ve většině případů **System.Net.Sockets** třídy zařazování dat do jejich protějšky Windows 32-bit, jakož i zpracování žádné nezbytná bezpečnostní kontroly.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Programování připojitelných protokolů](../../../docs/framework/network-programming/programming-pluggable-protocols.md)
 - [Síťové programování v rozhraní .NET Framework](../../../docs/framework/network-programming/index.md)
 - [Ukázky programování sítě](../../../docs/framework/network-programming/network-programming-samples.md)

@@ -2,12 +2,12 @@
 title: Transakce pracovního postupu
 ms.date: 03/30/2017
 ms.assetid: 6081fb02-c0f2-483d-97b8-f3b7dc03011d
-ms.openlocfilehash: cb2a72bb24640d214170c52b8b3bf0a328d3f775
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 17e4b712f5b6955ab777168d60d8a28e8b0ebd63
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57714616"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59153293"
 ---
 # <a name="workflow-transactions"></a>Transakce pracovního postupu
 
@@ -50,6 +50,7 @@ static Activity ScenarioOne()
 Další informace najdete v tématu o použití <xref:System.ServiceModel.Activities.TransactedReceiveScope>, naleznete v tématu [tok transakcí do a ze služby pracovních postupů](../wcf/feature-details/flowing-transactions-into-and-out-of-workflow-services.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Activities.Statements.TransactionScope>
 - <xref:System.Transactions.TransactionScope>
 - <xref:System.Transactions.Transaction.Current%2A?displayProperty=nameWithType>

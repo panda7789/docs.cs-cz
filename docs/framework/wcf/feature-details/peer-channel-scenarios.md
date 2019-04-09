@@ -2,12 +2,12 @@
 title: Scénáře rovnocenných kanálů
 ms.date: 03/30/2017
 ms.assetid: dae6e0f7-900c-45ee-8be9-3647698382fb
-ms.openlocfilehash: 05fe7f632b286876dfee36b7d5d22a77c0ae11e4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 610668e5f3625c638fc1e814e0116df87970773b
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54566204"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59147053"
 ---
 # <a name="peer-channel-scenarios"></a>Scénáře rovnocenných kanálů
 Rozhraní API kanálu Peer podporují následující scénáře vývoje.  
@@ -25,4 +25,5 @@ Rozhraní API kanálu Peer podporují následující scénáře vývoje.
  Pomocí protokolu Peer Channel, vývojáři aplikací můžete vytvořit bez serveru verze své hry, kde získat her přesune předávány společnosti a synchronizovat s jinými hráči mechanismem peer-to-peer, a nikoli prostřednictvím centrální server. Pro malé nezávislým výrobcům softwaru díky tomu odebrat provozní náklady spojené s nasazením, údržbu a obsluze centrální servery. Hry napsané s využitím architektury peer-to-peer možné přehrát, přes Internet, nebo pevné nebo bezdrátové místní sítě. Sekundární herní aktivity, například s informacemi a konverzace ve hře může být vyvinuto s použitím sítě peer-to-peer.  
   
 ## <a name="see-also"></a>Viz také:
-- [Koncepce protokolu Peer Channel](../../../../docs/framework/wcf/feature-details/peer-channel-concepts.md)
+
+- [Koncepty rovnocenného kanálu](../../../../docs/framework/wcf/feature-details/peer-channel-concepts.md)

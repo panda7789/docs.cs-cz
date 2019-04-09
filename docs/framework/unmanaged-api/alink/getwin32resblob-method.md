@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 295b150f6881a47b3816a93ac7a20382bc5c20c0
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: a4c77ade46d2401e2499a94504808efd94f79f93
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57500574"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59152149"
 ---
 # <a name="getwin32resblob-method"></a>GetWin32ResBlob – metoda
 Načte objekt blob prostředků Win32. Tuto metodu volejte po nastavení možností sestavení.  
@@ -65,6 +65,7 @@ HRESULT GetWin32ResBlob(
  Vyžaduje alink.h  
   
 ## <a name="see-also"></a>Viz také:
+
 - [IALink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
 - [IALink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
 - [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)

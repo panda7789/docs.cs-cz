@@ -2,12 +2,12 @@
 title: Přidání odkazu služby v přenosném dílčím projektu
 ms.date: 03/30/2017
 ms.assetid: 61ccfe0f-a34b-40ca-8f5e-725fa1b8095e
-ms.openlocfilehash: dd07ab5623a66f7ad4b666955027adcaea232db4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: e1d65df46c0ed6d9d271727ad04a661c5e34a1ef
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54681011"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59145428"
 ---
 # <a name="add-service-reference-in-a-portable-subset-project"></a>Přidání odkazu služby v přenosném dílčím projektu
 Přenosném dílčím projekty povolit programátorům sestavení .NET udržovat stromu jednoho zdrojového kódu a sestavovací systém. současně podporuje více implementací rozhraní .NET (desktop, Silverlight, Windows Phone a XBOX). Projekty v přenosném dílčím odkazovat pouze na přenosné knihovny .NET, které jsou sestavení rozhraní .NET framework, který lze použít v jakékoli implementaci rozhraní .NET.  
@@ -44,5 +44,6 @@ Přenosném dílčím projekty povolit programátorům sestavení .NET udržovat
 14. <xref:System.ServiceModel.MessageContractAttribute.IsWrapped%2A> v přenosném dílčím projektů nepodporuje.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přístup ke službám pomocí klienta WCF](../../../docs/framework/wcf/accessing-services-using-a-wcf-client.md)
 - [Přenosná knihovna tříd](../../standard/cross-platform/cross-platform-development-with-the-portable-class-library.md)

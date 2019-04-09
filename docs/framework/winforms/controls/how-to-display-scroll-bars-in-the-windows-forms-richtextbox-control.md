@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: Zobrazení posuvníků v Windows Forms RichTextBox – ovládací prvek'
+title: 'Postupy: Zobrazení posuvníků v ovládacím prvku Windows Forms RichTextBox'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - text boxes [Windows Forms], displaying scroll bars
 - scroll bars [Windows Forms], displaying in controls
 - RichTextBox control [Windows Forms], displaying scroll bars
 ms.assetid: cdeb42e1-86e8-410c-ba46-18aec264ef5f
-ms.openlocfilehash: 119cf736dfa7b8b8fce57b7e8fcb24dd09f01ce0
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: 52c33239524e76bc26b9b2375578aa46bff51bf6
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57716488"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59142555"
 ---
-# <a name="how-to-display-scroll-bars-in-the-windows-forms-richtextbox-control"></a>Postupy: Zobrazení posuvníků v Windows Forms RichTextBox – ovládací prvek
+# <a name="how-to-display-scroll-bars-in-the-windows-forms-richtextbox-control"></a>Postupy: Zobrazení posuvníků v ovládacím prvku Windows Forms RichTextBox
 Ve výchozím nastavení, Windows Forms <xref:System.Windows.Forms.RichTextBox> ovládací prvek zobrazí vodorovný a svislý posuvník podle potřeby. Existuje sedm možných hodnot <xref:System.Windows.Forms.RichTextBox.ScrollBars%2A> vlastnost <xref:System.Windows.Forms.RichTextBox> ovládacího prvku, které jsou popsány v následující tabulce.  
   
 ### <a name="to-display-scroll-bars-in-a-richtextbox-control"></a>Zobrazení posuvníků v ovládacím prvku RichTextBox  
@@ -22,7 +22,7 @@ Ve výchozím nastavení, Windows Forms <xref:System.Windows.Forms.RichTextBox> 
   
 2.  Nastavit <xref:System.Windows.Forms.RichTextBox.ScrollBars%2A> vlastnost na příslušnou hodnotu <xref:System.Windows.Forms.RichTextBoxScrollBars> výčtu.  
   
-    |Hodnota|Popis|  
+    |Value|Popis|  
     |-----------|-----------------|  
     |<xref:System.Windows.Forms.RichTextBoxScrollBars.Both> (výchozí)|Zobrazí vodorovný nebo svislý posuvník nebo obojí, jenom v případě, že text přesahuje šířky nebo délky ovládacího prvku.|  
     |<xref:System.Windows.Forms.RichTextBoxScrollBars.None>|Nikdy nezobrazí libovolného typu posuvník.|  
@@ -40,6 +40,7 @@ Ve výchozím nastavení, Windows Forms <xref:System.Windows.Forms.RichTextBox> 
     |`true` (výchozí)|Text v ovládacím prvku se automaticky upraví na šířku ovládacího prvku. Vodorovný posuvník nezobrazí. Tuto hodnotu použijte, pokud jste zvolili svislé posuvníky nebo none, výše, chcete-li zobrazit jeden nebo více odstavců.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.RichTextBoxScrollBars>
 - <xref:System.Windows.Forms.RichTextBox>
 - [Ovládací prvek RichTextBox](richtextbox-control-windows-forms.md)

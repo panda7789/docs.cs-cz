@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: e42a65f7-1e61-411f-b09a-aca1bbce24c6
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2d90b3c23af39125d888824dbfabf798a3e73985
-ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
-ms.translationtype: MT
+ms.openlocfilehash: 70189fad6d979d0e0ff6ad5d936d8a5b6142eea4
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56218733"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59149263"
 ---
 # <a name="exposing-net-framework-components-to-com"></a>Vystavení komponent architektury .NET Framework pro COM
 Zápis typ formátu .NET a použití typu z nespravovaného kódu jsou různé aktivity pro vývojáře. Tato část popisuje několik tipů pro vytváření spravovaného kódu, který spolupracuje s klienty modelu COM:  
@@ -51,5 +51,6 @@ Zápis typ formátu .NET a použití typu z nespravovaného kódu jsou různé a
      Sestavení se silným názvem může být nainstalována v globální mezipaměti sestavení a vyžaduje podpis od vydavatele. Sestavení, která nejsou silný název musí být nainstalována v adresáři aplikace klienta.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Spolupráce s nespravovaným kódem](../../../docs/framework/interop/index.md)
-- [Ukázka zprostředkovatele s objekty COM: Klient COM a .NET Server](../../../docs/framework/interop/com-interop-sample-com-client-and-net-server.md)
+- [Ukázka zprostředkovatele s objekty COM: klient COM a server .NET](../../../docs/framework/interop/com-interop-sample-com-client-and-net-server.md)

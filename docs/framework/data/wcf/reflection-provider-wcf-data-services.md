@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - WCF Data Services, providers
 ms.assetid: ef5ba300-6d7c-455e-a7bd-d0cc6d211ad4
-ms.openlocfilehash: 12a23970b059e338df05a2f0b58ca67ad6fae6d8
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e36f9124ec9979dac69b596c6d87491581ae9ec6
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54582562"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59159520"
 ---
 # <a name="reflection-provider-wcf-data-services"></a>Zprostředkovatel reflexe (WCF Data Services)
 Kromě úniku dat z datového modelu pomocí Entity Framework [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] můžete zpřístupnit data, která není striktně definované v modelu na základě entity. Zprostředkovatel reflexe zveřejňuje data v třídách, které vrací typy, které implementují <xref:System.Linq.IQueryable%601> rozhraní. [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] používá reflexi k odvození datový model pro tyto třídy a jsou dobře převeditelné na základě adres dotazy na prostředky do jazyka integrované dotazu (LINQ) – na základě dotazů vystavené <xref:System.Linq.IQueryable%601> typy.  
@@ -51,7 +51,7 @@ Kromě úniku dat z datového modelu pomocí Entity Framework [!INCLUDE[ssAstori
   
 |Datový typ rozhraní .NET framework|Typ datového modelu|  
 |------------------------------|---------------------|  
-|<xref:System.Byte>`[]`|`Edm.Binary`|  
+|<xref:System.Byte> `[]`|`Edm.Binary`|  
 |<xref:System.Boolean>|`Edm.Boolean`|  
 |<xref:System.Byte>|`Edm.Byte`|  
 |<xref:System.DateTime>|`Edm.DateTime`|  
@@ -95,4 +95,5 @@ Kromě úniku dat z datového modelu pomocí Entity Framework [!INCLUDE[ssAstori
  Vzhledem k tomu, že ve výchozím nastavení je nativně podporuje rozhraní Entity Framework, je poskytovatel dat doporučené pro použití s relačními daty [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]. Můžete však použít zprostředkovatel reflexe použití LINQ na třídy SQL se službou data. <xref:System.Data.Linq.Table%601> Sady, které jsou vráceny pomocí jiných metod na výsledků <xref:System.Data.Linq.DataContext> vygenerován pomocí LINQ to SQL Návrhář relací objektů (O/R Designer) implementace <xref:System.Linq.IQueryable%601> rozhraní. To umožňuje zprostředkovatel reflexe pro přístup k tyto metody a vrátí entity data z SQL serveru pomocí generovaného LINQ na třídy SQL. Ale protože technologie LINQ to SQL neimplementuje <xref:System.Data.Services.IUpdatable> rozhraní, je třeba přidat dílčí třídy, které rozšiřuje existující <xref:System.Data.Linq.DataContext> částečné třídy pro přidání <xref:System.Data.Services.IUpdatable> implementace. Další informace najdete v tématu [jak: Vytvoření datové služby pomocí LINQ ke zdroji dat SQL](../../../../docs/framework/data/wcf/create-a-data-service-using-linq-to-sql-wcf.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Zprostředkovatelé datových služeb](../../../../docs/framework/data/wcf/data-services-providers-wcf-data-services.md)

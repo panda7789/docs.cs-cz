@@ -24,12 +24,12 @@ helpviewer_keywords:
 - configuration files [.NET Framework], machine
 - configuration files [.NET Framework], format
 ms.assetid: 86bd26d3-737e-4484-9782-19b17f34cd1f
-ms.openlocfilehash: 184be04c963116906c1dc2c0a5803814402ea8e0
-ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
+ms.openlocfilehash: 97dadfa8b7d32d4f0f981e50d6eb90ca74ecdaa3
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55826431"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59147105"
 ---
 # <a name="configuring-apps-by-using-configuration-files"></a>Konfigurace aplikací pomocí konfiguračních souborů
 Rozhraní .NET Framework, prostřednictvím konfiguračních souborů, poskytuje vývojářům a správcům kontrolu a flexibilitu nad způsobem aplikace spouštět. Konfigurační soubory jsou soubory XML, které lze změnit podle potřeby. Správce může ovládat, můžete přístup k aplikaci, která chránila prostředky, které verze sestavení může aplikace používat a kde jsou umístěny objekty a vzdálené aplikace. Vývojáři mohou umístit nastavení konfiguračních souborů, takže odpadá potřeba znovu zkompilovat aplikaci pokaždé, když se změní nastavení. Tato část popisuje, co lze konfigurovat a proč konfigurace aplikace může být užitečné.  
@@ -120,6 +120,7 @@ Rozhraní .NET Framework, prostřednictvím konfiguračních souborů, poskytuje
  Popisuje hierarchii schématu pro spuštění, runtime, síť a další typy nastavení konfigurace.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Schéma konfiguračního souboru](../../../docs/framework/configure-apps/file-schema/index.md)
 - [Určení umístění sestavení](../../../docs/framework/configure-apps/specify-assembly-location.md)
 - [Přesměrování verzí sestavení](../../../docs/framework/configure-apps/redirect-assembly-versions.md)

@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b9f6bf0dc0fb92d8b5bb7e3f4d017eed85d85338
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: fcdcb8d70e04430ac09c78f0ef0ce1d95358db53
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54531200"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59148873"
 ---
 # <a name="iobjecthandle-interface"></a>IObjectHandle – rozhraní
 Poskytuje metodu pro rozbalení objekty zařazování podle hodnot z dereference.  
@@ -42,4 +42,5 @@ Poskytuje metodu pro rozbalení objekty zařazování podle hodnot z dereference
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
-- [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+
+- [Rozhraní hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)

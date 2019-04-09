@@ -1,15 +1,15 @@
 ---
-title: Skládání dotazů vnořené Entity SQL
+title: Sestavování dotazů s vnořeným jazykem Entity SQL
 ms.date: 03/30/2017
 ms.assetid: 685d4cd3-2c1f-419f-bb46-c9d97a351eeb
-ms.openlocfilehash: b5fc39a25b5b8592117348b150da9d82454a1562
-ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
+ms.openlocfilehash: 4d6892e96cfbc9c5ba9d389aa03588c5133c7943
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55827315"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59137979"
 ---
-# <a name="composing-nested-entity-sql-queries"></a>Skládání dotazů vnořené Entity SQL
+# <a name="composing-nested-entity-sql-queries"></a>Sestavování dotazů s vnořeným jazykem Entity SQL
 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] je bohatou jazykovou funkční. Základním pilířem pracovního [!INCLUDE[esql](../../../../../../includes/esql-md.md)] je výraz. Na rozdíl od běžných SQL [!INCLUDE[esql](../../../../../../includes/esql-md.md)] není omezena pouze na sadu tabulkovém výsledku: [!INCLUDE[esql](../../../../../../includes/esql-md.md)] podporuje vytváření složitých výrazů, které můžou mít literály, parametry nebo vnořené výrazy. Hodnotu ve výrazu můžete s parametry nebo vytvořit další výrazu.  
   
 ## <a name="nested-expressions"></a>Vnořené výrazy  
@@ -76,4 +76,5 @@ SELECT C2.FirstName, C2.LastName
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-overview.md)

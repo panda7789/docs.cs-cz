@@ -1,6 +1,6 @@
 ---
 title: klíčové slovo oboru názvů - C# odkaz
-ms.custom: seodec18
+ms.custom: seoapril2019
 ms.date: 07/20/2015
 f1_keywords:
 - namespace_CSharpKeyword
@@ -9,12 +9,12 @@ helpviewer_keywords:
 - namespace keyword [C#]
 - scope [C#]
 ms.assetid: 0a788423-9110-42e0-97d9-bda41ca4870f
-ms.openlocfilehash: b5c6b8081c188d5b184930222d54ad8f4b5d7a71
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 4859c361b3321c1144204f63896152694f6ac5c9
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53242760"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59148756"
 ---
 # <a name="namespace-c-reference"></a>namespace (Referenční dokumentace jazyka C#)
 
@@ -28,15 +28,15 @@ V rámci oboru názvů můžete deklarovat nula nebo více z následujících ty
 
 - jiný obor názvů
 
-- [class](class.md)
+- [třída](class.md)
 
-- [interface](interface.md)
+- [rozhraní](interface.md)
 
-- [struct](struct.md)
+- [struct ](struct.md)
 
 - [enum](enum.md)
 
-- [delegate](delegate.md)
+- [delegát](delegate.md)
 
 Zda explicitně deklarovat oboru názvů do zdrojového souboru jazyka C#, kompilátor přidá výchozí obor názvů. Tato nepojmenovaného oboru názvů, někdy označovány jako globální obor názvů, je k dispozici v každém souboru. Žádný identifikátor v globálním oboru názvů je k dispozici pro použití s názvem oboru názvů.
 
@@ -56,11 +56,11 @@ Následující příklad ukazuje, jak zavolat statickou metodu ve vnořené obor
 
 Další informace o použití oboru názvů naleznete v následujících tématech:
 
-- [Obory názvů](../../programming-guide/namespaces/index.md)
+- [Jmenné prostory](../../programming-guide/namespaces/index.md)
 
 - [Použití oboru názvů](../../programming-guide/namespaces/using-namespaces.md)
 
-- [Postupy: Použití aliasu globálního Namespace](../../programming-guide/namespaces/how-to-use-the-global-namespace-alias.md)
+- [Postupy: Použití aliasu globálního oboru názvů](../../programming-guide/namespaces/how-to-use-the-global-namespace-alias.md)
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
@@ -69,7 +69,8 @@ Další informace o použití oboru názvů naleznete v následujících témate
 ## <a name="see-also"></a>Viz také:
 
 - [Referenční dokumentace jazyka C#](../../language-reference/index.md)
-- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
+- [Průvodce programováním v C#](../../programming-guide/index.md)
 - [Klíčová slova jazyka C#](index.md)
 - [Klíčová slova oboru názvů](namespace-keywords.md)
-- [using](using.md)
+- [používání](using-directive.md)
+- [Pomocí statické](using-static.md)

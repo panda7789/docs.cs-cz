@@ -1,18 +1,18 @@
 ---
-title: Sledování účastníci
+title: Účastníci sledování
 ms.date: 03/30/2017
 ms.assetid: f13e360c-eeb7-4a49-98a0-8f6a52d64f68
-ms.openlocfilehash: 343c2eea5d8e4cb7e90f2e2344cce9f3418c25dd
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
-ms.translationtype: MT
+ms.openlocfilehash: 334815c3c928790569846d02d87e9d1dbba889ef
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58462991"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59138824"
 ---
-# <a name="tracking-participants"></a>Sledování účastníci
+# <a name="tracking-participants"></a>Účastníci sledování
 Sledování účastníci jsou body rozšiřitelnosti, které umožňují vývojář pracovního postupu pro přístup k <xref:System.Activities.Tracking.InteropTrackingRecord.TrackingRecord%2A> objektů a jejich zpracování. [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] zahrnuje účastník standardní sledování, který zapíše záznamy sledování jako události trasování událostí pro Windows (ETW). Je-li který nesplňuje vaše požadavky, můžete také napsat vlastní sledování účastník.  
   
-## <a name="tracking-participants"></a>Sledování účastníci  
+## <a name="tracking-participants"></a>Účastníci sledování  
  Sledování infrastruktury umožňuje aplikaci filtru na odchozí záznamy sledování, tak, aby účastníka se přihlásit k odběru podmnožinu záznamů. Mechanismus, který chcete použít filtr je prostřednictvím profilu sledování.  
   
  Windows Workflow Foundation (WF) v [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] poskytuje sledování účastník, který zapíše záznamy sledování k relaci ETW. Účastník není konfigurována služba pracovního postupu přidáním specifické pro sledování chování v konfiguračním souboru. Povolení ETW umožňuje sledování účastník sledování záznamů, které mají být zobrazeny v události prohlížeč. Ukázka sady SDK pro sledování na základě trasování událostí pro Windows je dobrým způsobem, jak Seznamte se s pomocí trasování událostí pro Windows na základě sledování účastník sledování WF.  
@@ -141,5 +141,6 @@ instance.Extensions.Add(new ConsoleTrackingParticipant());
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Windows Server App Fabric monitorování](https://go.microsoft.com/fwlink/?LinkId=201273)
 - [Monitorování aplikací pomocí App Fabric](https://go.microsoft.com/fwlink/?LinkId=201275)

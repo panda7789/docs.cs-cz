@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - ListView controls [WPF], MouseDoubleClick event
 ms.assetid: 81b39369-655a-4585-ac58-4640e5bb8fed
-ms.openlocfilehash: a4a93ffdf7c9cf2737c41a7fd196d8cfff716ea1
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 443e5c620ef5bf240d3e317f0234aac0b29b456f
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57377195"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59145077"
 ---
 # <a name="how-to-handle-the-mousedoubleclick-event-for-each-item-in-a-listview"></a>Postupy: Zpracování události MouseDoubleClick pro jednotlivé položky v objektu ListView
 Zpracování události pro položky v <xref:System.Windows.Controls.ListView>, budete muset přidat obslužnou rutinu události u každého <xref:System.Windows.Controls.ListViewItem>. Při <xref:System.Windows.Controls.ListView> je vázán ke zdroji dat nevytvoříte explicitně <xref:System.Windows.Controls.ListViewItem>, ale můžete zpracovat událost pro každou položku tak, že přidáte <xref:System.Windows.EventSetter> na styl <xref:System.Windows.Controls.ListViewItem>.  
@@ -33,6 +33,7 @@ Zpracování události pro položky v <xref:System.Windows.Controls.ListView>, b
 >  I když se nejčastěji k vytvoření vazby <xref:System.Windows.Controls.ListView> ke zdroji dat, můžete použít styl pro přidání obslužné rutiny události u každého <xref:System.Windows.Controls.ListViewItem> v jiných vázaný na data <xref:System.Windows.Controls.ListView> bez ohledu na to, zda explicitně nevytvoříte <xref:System.Windows.Controls.ListViewItem>.  Další informace o explicitně a implicitně vytvoří <xref:System.Windows.Controls.ListViewItem> ovládacích prvků, naleznete v tématu <xref:System.Windows.Controls.ItemsControl>.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Xml.XmlElement>
 - [Přehled datových vazeb](../data/data-binding-overview.md)
 - [Styly a šablony](styling-and-templating.md)

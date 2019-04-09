@@ -5,12 +5,12 @@ helpviewer_keywords:
 - style design for controls [WPF]
 - controls [WPF], style design
 ms.assetid: c52dde45-a311-4531-af4c-853371c4d5f4
-ms.openlocfilehash: 88f03b8084b0160e5c61bfdc4dc6984fbd1cddde
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 756cc821b1a9fe20741e390a1fe6e84d12cc6363
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57352981"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59148158"
 ---
 # <a name="guidelines-for-designing-stylable-controls"></a>Pokyny pro návrh ovládacích prvků s podporou stylů
 Tento dokument shrnuje sadu osvědčených postupů, které je třeba zvážit při návrhu ovládací prvek, který máte v úmyslu být snadno s podporou stylů a templatable. Jsme obdrželi na tuto sadu osvědčených postupů prostřednictvím spoustu omyl a při práci na – styly ovládacích prvků motivu pro předdefinované [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] sada ovládacích prvků. Jsme zjistili, že úspěšné stylů je co nejvíce funkcí dobře navržené objektový model je styl samotného. Jeho zamýšlenou cílovou skupinou pro tento dokument je ovládací prvek autora, ne Autor stylu.  
@@ -56,7 +56,7 @@ Tento dokument shrnuje sadu osvědčených postupů, které je třeba zvážit p
   
      Následující tabulka uvádí prvky pomocné rutiny náhradník – styly ovládacích prvků ještě dnes (Tento seznam není vyčerpávající):  
   
-    |Prvek|Typ|Používá|  
+    |Prvek|Type|Používá|  
     |-------------|----------|-------------|  
     |<xref:System.Windows.Controls.ContentPresenter>|Na základě typu|<xref:System.Windows.Controls.Button>, <xref:System.Windows.Controls.CheckBox>, <xref:System.Windows.Controls.RadioButton>, <xref:System.Windows.Controls.Frame>, a tak dále (všechny <xref:System.Windows.Controls.ContentControl> typy)|  
     |<xref:System.Windows.Controls.ItemsPresenter>|Na základě typu|<xref:System.Windows.Controls.ListBox>, <xref:System.Windows.Controls.ComboBox>, <xref:System.Windows.Controls.Menu>, a tak dále (všechny <xref:System.Windows.Controls.ItemsControl> typy)|  
@@ -119,5 +119,6 @@ Tento dokument shrnuje sadu osvědčených postupů, které je třeba zvážit p
 -   **Styly motivů není nutné mít sémantiku konzistentní "layout" přes všechny motivy**. Například výchozí styl není potřeba zajistit, že se ovládací prvek zabírají stejné množství velikost ve všech motivy nebo zaručit, že ovládací prvek bude mít stejný obsah rozpětí / odsazení mezi všechny motivy.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Styly a šablony](styling-and-templating.md)
-- [Přehled vytváření ovládacích prvků](control-authoring-overview.md)
+- [Přehled řízeného vytváření](control-authoring-overview.md)

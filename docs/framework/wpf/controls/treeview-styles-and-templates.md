@@ -9,12 +9,12 @@ helpviewer_keywords:
 - styles [WPF], TreeView
 - TreeView [WPF], styles and templates
 ms.assetid: a49adb77-0202-4caa-b94a-8bb110d7fa9a
-ms.openlocfilehash: 300fd8d6c6bc8a73257d71280bbb0b5565c275ec
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 01841bb828594dd4cac0c179d70495fe392c8de5
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57375555"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59142699"
 ---
 # <a name="treeview-styles-and-templates"></a>TreeView – styly a šablony
 Toto téma popisuje styly a šablony pro <xref:System.Windows.Controls.TreeView> ovládacího prvku. Můžete upravit výchozí <xref:System.Windows.Controls.ControlTemplate> poskytnout jedinečný vzhled ovládacího prvku. Další informace najdete v tématu [přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením ControlTemplate](customizing-the-appearance-of-an-existing-control.md).  
@@ -36,7 +36,7 @@ Toto téma popisuje styly a šablony pro <xref:System.Windows.Controls.TreeView>
 ## <a name="treeviewitem-parts"></a>Části položky TreeViewItem  
  V následující tabulce jsou uvedeny pojmenované části pro <xref:System.Windows.Controls.TreeViewItem> ovládacího prvku.  
   
-|Část|Typ|Popis|  
+|Část|Type|Popis|  
 |----------|----------|-----------------|  
 |PART_Header|<xref:System.Windows.FrameworkElement>|Vizuální prvek, který obsahuje tento obsah záhlaví <xref:System.Windows.Controls.TreeView> ovládacího prvku.|  
   
@@ -73,9 +73,10 @@ Toto téma popisuje styly a šablony pro <xref:System.Windows.Controls.TreeView>
  Úplnou ukázku najdete v tématu [stylu s ukázkou ControlTemplates](https://github.com/Microsoft/WPF-Samples/tree/master/Styles%20&%20Templates/IntroToStylingAndTemplating).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.FrameworkElement.Style%2A>
 - <xref:System.Windows.Controls.ControlTemplate>
 - [Styly a šablony ovládacích prvků](control-styles-and-templates.md)
 - [Přizpůsobení ovládacího prvku](control-customization.md)
 - [Styly a šablony](styling-and-templating.md)
-- [Přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením šablony ControlTemplate](customizing-the-appearance-of-an-existing-control.md)
+- [Přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením ControlTemplate](customizing-the-appearance-of-an-existing-control.md)

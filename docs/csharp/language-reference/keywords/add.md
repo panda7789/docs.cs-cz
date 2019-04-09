@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - add event accessor [C#]
 ms.assetid: faf30b99-10e8-45cd-ab9a-57585d4d1d8d
-ms.openlocfilehash: d0eb05b5f7cb2e9ad51fe8787299a51f77ea276e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1f699e5729354d13bfbe29810bf2c4baf91d2382
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54736900"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59147911"
 ---
 # <a name="add-c-reference"></a>add (Referenční dokumentace jazyka C#)
 `add` Kontextové klíčové slovo se používá k definování přístupový objekt vlastní událost, která je volána, když se přihlásí k odběru kód klienta vašeho [události](../../../csharp/language-reference/keywords/event.md). Pokud zadáte vlastní `add` přístupový objekt, je třeba zadat také [odebrat](../../../csharp/language-reference/keywords/remove.md) přistupujícího objektu.  
@@ -25,4 +25,5 @@ ms.locfileid: "54736900"
  Obvykle není potřeba poskytovat vlastní vlastních přístupových objektů událostí. Přístupové objekty, které jsou automaticky generovány v kompilátoru při deklaraci události postačí pro většinu scénářů.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Události](../../../csharp/programming-guide/events/index.md)

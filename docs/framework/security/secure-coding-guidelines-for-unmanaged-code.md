@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: a8d15139-d368-4c9c-a747-ba757781117c
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: cf9071f8b5c4569ace53b13f7b9b7282bf8e87c8
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 138713c4a1397369ea18792a3b2742389b107a6b
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54711970"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59143764"
 ---
 # <a name="secure-coding-guidelines-for-unmanaged-code"></a>Pokyny pro zabezpečení nespravovaného kódu
 Kód knihovny je potřeba volat nespravovaný kód (například nativního kódu rozhraní API, jako například Win32). Protože to znamená, že přejdete mimo zónu zabezpečení pro spravovaný kód, kvůli upozornění je povinný. Pokud váš kód je nezávislá na zabezpečení, kódu a jakýkoli kód, který volá musí mít povolení pro nespravovaný kód (<xref:System.Security.Permissions.SecurityPermission> s <xref:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode> příznak zadán).  
@@ -45,11 +45,12 @@ Kód knihovny je potřeba volat nespravovaný kód (například nativního kódu
 ## <a name="naming-convention-for-unmanaged-code-methods"></a>Zásady vytváření názvů pro metody nespravovaného kódu  
  Vytvořilo se použitelné a vysoce doporučené konvence pro pojmenovávání metody nespravovaného kódu. Všechny metody nespravovaného kódu jsou rozdělené do tří kategorií: **bezpečné**, **nativní**, a **nebezpečné**. Tato klíčová slova můžete použít jako názvy tříd, ve kterém jsou definovány různé typy vstupních bodů nespravovaného kódu. Ve zdrojovém kódu by tato klíčová slova přidat k názvu třídy jako v `Safe.GetTimeOfDay`, `Native.Xyz`, nebo `Unsafe.DangerousAPI`, např. Každá z těchto klíčových slov poskytuje zabezpečení užitečné informace pro vývojáře, kteří používají tuto třídu, jak je popsáno v následující tabulce.  
   
-|Klíčové slovo|Aspekty zabezpečení|  
+|Klíčové slovo|Důležité informace o zabezpečení|  
 |-------------|-----------------------------|  
-|**safe**|Zcela neškodný pro libovolný kód, dokonce i škodlivý kód pro volání. Můžete použít stejně jako ostatní spravovaného kódu. Například funkce, která získá denní dobu, je obvykle bezpečné.|  
-|**Nativní**|Zabezpečení – neutrální; To znamená nespravovaný kód, který vyžaduje nespravovaný kód oprávnění k volání. Zabezpečení je zaškrtnuto, které zastaví neoprávněného volajícího.|  
+|**Bezpečné**|Zcela neškodný pro libovolný kód, dokonce i škodlivý kód pro volání. Můžete použít stejně jako ostatní spravovaného kódu. Například funkce, která získá denní dobu, je obvykle bezpečné.|  
+|**nativní**|Zabezpečení – neutrální; To znamená nespravovaný kód, který vyžaduje nespravovaný kód oprávnění k volání. Zabezpečení je zaškrtnuto, které zastaví neoprávněného volajícího.|  
 |**unsafe**|Vstupní bod nespravovaného kódu potenciálně nebezpečné se zabezpečením potlačena. Vývojáři by měl použít nejvyšší opatrností při použití těchto nespravovaného kódu, ujistěte se, že dalších způsobů ochrany jsou na místě, aby se zabránilo ohrožení zabezpečení. Vývojáři musí být zodpovědná, jak toto klíčové slovo přepíše zabezpečení systému.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Pokyny pro zabezpečené kódování](../../../docs/standard/security/secure-coding-guidelines.md)

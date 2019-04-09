@@ -1,28 +1,27 @@
 ---
 title: Souhrn stromů výrazů
-description: Recaps použití stromů výrazů k vytvoření dynamických programy, které interpretovat kód jako data a vytvářet nové funkce založené na tento kód.
+description: Rekapitulace použití stromů výrazů k vytvoření dynamické programy, které interpretovat kód jako data a vytvářet nové funkce založené na tento kód.
 ms.date: 06/20/2016
 ms.assetid: eb687ebd-1149-4453-9fc1-12a084495a66
-ms.openlocfilehash: e0d46aa67b61fd4e1d2bcc20b4a567524bb00301
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 99b9463df096d3aada19ed7995b04ef4bd41c179
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33213507"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59148626"
 ---
 # <a name="expression-trees-summary"></a>Souhrn stromů výrazů
 
-[Předchozí – Překladu výrazy](expression-trees-translating.md)
+[Předchozí – Překlad výrazů](expression-trees-translating.md)
 
-Z této série jste viděli, jak můžete použít *stromů výrazů* vytvořit dynamické programy, které interpretovat kód jako data a vytvářet nové funkce založené na tento kód.
+V této sérii, jste viděli, jak můžete *stromů výrazů* k vytvoření dynamické programy, které interpretovat kód jako data a vytvářet nové funkce založené na tento kód.
 
-Stromy výrazů pochopit záměr algoritmus můžete zkontrolovat. Nelze pouze prozkoumat tento kód. Můžete vytvořit nové stromů výrazů, které představují upravené verze původní kód.
+Můžete prozkoumat stromů výrazů k porozumění záměru algoritmus. Nelze jenom zkontrolujte, že kód. Můžete vytvářet nové stromů výrazů, které představují upravené verze původního kódu.
 
-Můžete taky použití stromů výrazů k podívejte se na algoritmus a převede tento algoritmus na jiný jazyk nebo prostředí. 
+Můžete také použití stromů výrazů se podívat na algoritmus a převede tento algoritmus na jiný jazyk nebo prostředí. 
 
 ## <a name="limitations"></a>Omezení
 
-Existují některé novější C# jazyka prvky, které nejsou převede i na stromů výrazů. Stromy výrazů nesmí obsahovat `await` výrazy, nebo `async` výrazy lambda. Mnoho funkcí přidaných do verze jazyka C# 6 tak, jak je napsaný v stromů výrazů nezobrazí. Místo toho novější funkce zveřejní ve stromech výrazy v syntaxi ekvivalentní, dřívější. Toto nemusí být tolik omezeními může si myslíte. Ve skutečnosti znamená, že váš kód, který interpretuje stromů výrazů bude stále pravděpodobně fungovat stejně při byly zavedeny nové jazykové funkce.
+Existují některé novější C# prvky jazyka, které není převedou kontejneru stromů výrazů. Stromy výrazů nesmí obsahovat `await` výrazy, nebo `async` výrazů lambda. Mnoho z funkcí přidaných do C# verze 6, nejsou zobrazeny přesně napsané ve stromu výrazu. Místo toho novější funkce se zveřejní ve stromech výrazů v ekvivalentní, starší syntaxi. Toto video asi co nejvíce z omezení jak si možná myslíte. Ve skutečnosti znamená, že váš kód, který stromů výrazů interpretuje bude pravděpodobně stále fungovat stejně při zavedení nových funkcí jazyka.
 
-I když tato omezení stromů výrazů umožňují vytvářet dynamické algoritmy, které závisí na interpretace a úpravy kódu, který je reprezentován jako datové struktury. Je výkonný nástroj a je jedna z funkcí ekosystému .NET, která umožňuje bohaté knihovny, například rozhraní Entity Framework dosáhnout toho, co dělají.
-
+I přes tato omezení stromů výrazů umožňují vytvářet dynamické algoritmy, které využívají interpretace a upravovat kód, který je reprezentován jako datová struktura. Je výkonný nástroj, a je jednou z funkcí ekosystému .NET, která umožňuje rozsáhlé knihovny, jako je například rozhraní Entity Framework provedete, co dělají.

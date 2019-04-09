@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - metadata [WCF], retrieving
 ms.assetid: 18d8ba4c-af0f-4827-a50b-4202d767bacc
-ms.openlocfilehash: 72a9b8445a83af3cbda15c5f4580a1c1df859339
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: bb415d88c2bae75cb16aa137bdf867eb463afa63
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54533231"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59152396"
 ---
 # <a name="retrieving-metadata"></a>Načítání metadat
 Načtení metadat je proces vyžádání a načítání metadat z koncových bodů metadat, jako je například metadata koncový bod WS-MetadataExchange (MEX) nebo koncový bod metadat HTTP/GET.  
@@ -23,7 +23,7 @@ Načtení metadat je proces vyžádání a načítání metadat z koncových bod
  Ve výchozím nastavení <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> instance je vázán na jediné <xref:System.ServiceModel.ChannelFactory> instance. Můžete změnit nebo nahradit <xref:System.ServiceModel.ChannelFactory?displayProperty=nameWithType> instanci použitou <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> tak, že přepíšete <xref:System.ServiceModel.Description.MetadataExchangeClient.GetChannelFactory%2A> virtuální metody. Podobně můžete změnit nebo nahradit <xref:System.Net.HttpWebRequest> instanci použitou <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> provádět požadavky HTTP/GET tak, že přepíšete <xref:System.ServiceModel.Description.MetadataExchangeClient.GetWebRequest%2A?displayProperty=nameWithType> virtuální metody.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Postupy: Stažení dokumentů metadat pomocí Svcutil.exe](../../../../docs/framework/wcf/feature-details/how-to-use-svcutil-exe-to-download-metadata-documents.md)  
+ [Postupy: Stažení dokumentů metadat pomocí nástroje Svcutil.exe](../../../../docs/framework/wcf/feature-details/how-to-use-svcutil-exe-to-download-metadata-documents.md)  
  Popisuje způsob použití Svcutil.exe stažení dokumentů metadat.  
   
  [Postupy: Použití třídy MetadataResolver k dynamickému získání metadat vazby](../../../../docs/framework/wcf/feature-details/how-to-use-metadataresolver-to-obtain-binding-metadata-dynamically.md)  
@@ -33,4 +33,5 @@ Načtení metadat je proces vyžádání a načítání metadat z koncových bod
  Popisuje způsob použití <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> třídy ke stahování souborů metadat do <xref:System.ServiceModel.Description.MetadataSet?displayProperty=nameWithType> objekt, který obsahuje <xref:System.ServiceModel.Description.MetadataSection?displayProperty=nameWithType> objekty pro zápis do souborů nebo pro jiné účely.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Description.MetadataExchangeClient>

@@ -5,12 +5,12 @@ helpviewer_keywords:
 - accumulating animation values across repeating cycles [WPF]
 - animation [WPF], accumulating values across repeating cycles
 ms.assetid: 548df369-c7cc-4dab-b569-08b95ced2e7e
-ms.openlocfilehash: e38e1601e2f4eeab2b53918924bc21e05163d948
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 4b739883322751e2df86e13bfd07249abdb10a08
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57357258"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59146013"
 ---
 # <a name="how-to-accumulate-animation-values-during-repeat-cycles"></a>Postupy: Kumulování hodnot animace při opakujících se cyklech
 Tento příklad ukazuje způsob použití <xref:System.Windows.Media.Animation.DoubleAnimation.IsCumulative%2A> vlastnost kumulování hodnot animace přes opakující se cykly.  
@@ -33,8 +33,9 @@ Tento příklad ukazuje způsob použití <xref:System.Windows.Media.Animation.D
  [!code-xaml[timingbehaviors_snip#IsCumulativeWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/timingbehaviors_snip/CSharp/IsCumulativeExample.xaml#iscumulativewholepage)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přidání výstupní hodnoty animace do počáteční hodnoty animace](how-to-add-an-animation-output-value-to-an-animation-starting-value.md)
 - [Opakování animace](how-to-repeat-an-animation.md)
 - [Přehled animace](animation-overview.md)
 - [Přehled animací klíčových snímků](key-frame-animations-overview.md)
-- [Témata s postupy](animation-and-timing-how-to-topics.md)
+- [– postupy](animation-and-timing-how-to-topics.md)

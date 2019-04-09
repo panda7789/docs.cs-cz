@@ -10,12 +10,12 @@ helpviewer_keywords:
 - user controls [Windows Forms], painting
 - visual styles [Windows Forms], rendering Windows Forms controls
 ms.assetid: a5b178ba-610e-46c4-a6c0-509c0886a744
-ms.openlocfilehash: caef9590e57503171ab295f6e99b62d860bc0a81
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: b0b301bca33842dfb68de9143b665bed73f17b74
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57708051"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59146767"
 ---
 # <a name="rendering-controls-with-visual-styles"></a>Vykreslování ovládacích prvků s vizuálními styly
 [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Poskytuje podporu pro vykreslení ovládacích prvků a jiných uživatelů Windows pomocí vizuálních stylů v operačních systémech, které je podporují prvky rozhraní (UI). Toto téma popisuje několik úrovní podpory v [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] pro vykreslování a další prvky uživatelského rozhraní s aktuálním vizuálním stylem operačního systému.  
@@ -79,4 +79,5 @@ ms.locfileid: "57708051"
 >  Pokud chcete použít <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer> k vykreslení ovládacího prvku nebo prvku uživatelského rozhraní, když uživatel povolí nebo přepne vizuální styly, ujistěte se, abyste to udělali při zpracování <xref:Microsoft.Win32.SystemEvents.UserPreferenceChanged> události místo <xref:Microsoft.Win32.SystemEvents.UserPreferenceChanging> událostí. Bude vyvolána výjimka, pokud použijete <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer> třídy při zpracování <xref:Microsoft.Win32.SystemEvents.UserPreferenceChanging>.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Malování a vykreslování vlastního ovládacího prvku](custom-control-painting-and-rendering.md)

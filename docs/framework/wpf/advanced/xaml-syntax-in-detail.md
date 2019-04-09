@@ -29,18 +29,16 @@ helpviewer_keywords:
 - attribute syntax [XAML]
 - XAML [WPF], property element syntax
 ms.assetid: 67cce290-ca26-4c41-a797-b68aabc45479
-ms.openlocfilehash: ecea2575503ad8fe4ff8a190a417bae75a7b31f7
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
-ms.translationtype: MT
+ms.openlocfilehash: 98ca530da28591fec23a5036b421d02b393e83b5
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57367957"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59149302"
 ---
 # <a name="xaml-syntax-in-detail"></a>Podrobná syntaxe XAML
 Toto téma definuje podmínky, které se používají k popisu prvky syntaxe XAML. Tyto podmínky se často používají v celé zbývající části této dokumentace, i pro WPF dokumentaci, konkrétně a pro jiná rozhraní, které využívají XAML nebo o základních konceptech XAML povolená podpora jazyka XAML na úrovni oboru názvů System.Xaml. Toto téma rozšiřuje základní terminologii zavedené v tématu [přehled XAML (WPF)](xaml-overview-wpf.md).  
-  
 
-  
 <a name="the_xaml_language_specification"></a>   
 ## <a name="the-xaml-language-specification"></a>Specifikace jazyka XAML  
  Terminologie syntaxe XAML lze tam definovat také je definována nebo odkazována v rámci specifikace jazyka XAML. XAML je jazyk založený na formát XML a následuje nebo rozšiřují strukturální pravidla jazyka XML. Terminologii sdílené z nebo podle terminologie běžně používají při popisu jazyka XML nebo modelu objektu dokumentu XML.  
@@ -316,8 +314,9 @@ Toto téma definuje podmínky, které se používají k popisu prvky syntaxe XAM
  Ale stejně jako *typeName*. *memberName* formuláře pro atributy, *baseTypeName*. *memberName* je nízký styl v kódu a neměli byste ho.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled XAML (WPF)](xaml-overview-wpf.md)
-- [Namespace XAML (x:) Jazykové funkce](../../xaml-services/xaml-namespace-x-language-features.md)
+- [Jazykové funkce kompatibility značek (mc:)](../../xaml-services/xaml-namespace-x-language-features.md)
 - [Rozšíření WPF XAML](wpf-xaml-extensions.md)
 - [Přehled vlastností závislosti](dependency-properties-overview.md)
 - [TypeConverters a XAML](typeconverters-and-xaml.md)

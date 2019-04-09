@@ -2,12 +2,12 @@
 title: Podrobnosti implementace protokolu služeb WCF Data Services
 ms.date: 03/30/2017
 ms.assetid: 712d689b-fada-4cbb-bcdb-d65a3ef83b4c
-ms.openlocfilehash: fdaaa95bdcffa3ae053cc856753faa1a224eebc7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 3fcef8778707f2bac68755762143f4a7528f0bf1
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54728749"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59152851"
 ---
 # <a name="wcf-data-services-protocol-implementation-details"></a>Podrobnosti implementace protokolu služeb WCF Data Services
 ## <a name="odata-protocol-implementation-details"></a>Podrobnosti implementace protokolu OData  
@@ -23,5 +23,6 @@ ms.locfileid: "54728749"
  Pokud dotaz odeslaný do služby data obsahuje `$top` nebo `$skip` systému možnosti dotazu a nezahrnuje `$orderby` možností dotazu systému, vrácené informační kanál je seřazený podle klíčové vlastnosti ve vzestupném pořadí. Je to proto, že pořadí je potřeba zajistit správné stránkování výsledků. K tomuto účelu data service přidá výraz řazení v dotazu. K tomuto chování dochází také při zapnutém stránkování řízené serverem ve službě data. Další informace najdete v tématu [konfigurace datové služby](../../../../docs/framework/data/wcf/configuring-the-data-service-wcf-data-services.md). Pro ovládání řazení vrácené informačního kanálu, měli byste zahrnout `$orderby` v dotazu identifikátoru URI.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Definování datových služeb WCF Data Services](../../../../docs/framework/data/wcf/defining-wcf-data-services.md)
 - [Klientská knihovna pro WCF Data Services](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)

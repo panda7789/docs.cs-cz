@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - data contracts [WCF], surrogates
 ms.assetid: 8c31134c-46c5-4ed7-94af-bab0ac0dfce5
-ms.openlocfilehash: b9349291979e76650f07db5e433620554928eb4b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 684ce075155d3da9bae3f7828e84d34399928875
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54614591"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59158623"
 ---
 # <a name="data-contract-surrogates"></a>Náhrady kontraktů dat
 Kontrakt dat *náhradní* je pokročilá funkce postavené na kontraktu dat modelu. Tato funkce je určena pro použití pro nahrazení v situacích, ve kterém chcete změnit, jak je typ serializován, deserializované nebo předpokládaných do metadat uživatelů a přizpůsobení typu. Při některých scénářích, kde mohou být použity náhradní kontraktu dat. není určeno pro typ, polí a vlastností nejsou označené <xref:System.Runtime.Serialization.DataMemberAttribute> atribut nebo uživatelům, aby dynamicky se vytvářejí odchylky schématu.  
@@ -192,6 +192,7 @@ Kontrakt dat *náhradní* je pokročilá funkce postavené na kontraktu dat mode
      [!code-csharp[C_IDataContractSurrogate#10](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_idatacontractsurrogate/cs/source.cs#10)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Runtime.Serialization.DataContractSerializer>
 - <xref:System.Runtime.Serialization.IDataContractSurrogate>
 - <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior>

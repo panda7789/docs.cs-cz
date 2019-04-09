@@ -1,17 +1,17 @@
 ---
-title: 'Postupy: Nastavení stylu vybraných položek v zobrazení ListView použitím aktivačních procedur'
+title: 'Postupy: Nastavení stylu vybraných položek v zobrazení ListView použitím triggerů'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - ListView controls [WPF], styling
 ms.assetid: 1e2bdce0-afe8-4507-9b18-f33de43de25a
-ms.openlocfilehash: 8c2d4adb2471c0f1891288573ce6b6460b20151d
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: ad64382b871bae9114a1e63257de3f8595376923
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57367918"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59145402"
 ---
-# <a name="how-to-use-triggers-to-style-selected-items-in-a-listview"></a>Postupy: Nastavení stylu vybraných položek v zobrazení ListView použitím aktivačních procedur
+# <a name="how-to-use-triggers-to-style-selected-items-in-a-listview"></a>Postupy: Nastavení stylu vybraných položek v zobrazení ListView použitím triggerů
 Tento příklad ukazuje, jak definovat <xref:System.Windows.Style.Triggers%2A> pro <xref:System.Windows.Controls.ListViewItem> ovládacího prvku tak, aby při hodnotou vlastnosti <xref:System.Windows.Controls.ListViewItem> změny, <xref:System.Windows.Style> z <xref:System.Windows.Controls.ListViewItem> změnách v reakci.  
   
 ## <a name="example"></a>Příklad  
@@ -30,9 +30,10 @@ Tento příklad ukazuje, jak definovat <xref:System.Windows.Style.Triggers%2A> p
 [!code-xaml[ListViewChkBox#ListViewItemTriggersEnd](~/samples/snippets/csharp/VS_Snippets_Wpf/ListViewChkBox/CS/window1.xaml#listviewitemtriggersend)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Controls.Control>
 - <xref:System.Windows.Controls.ListView>
 - <xref:System.Windows.Controls.GridView>
-- [Témata s postupy](listview-how-to-topics.md)
+- [– postupy](listview-how-to-topics.md)
 - [ListView – přehled](listview-overview.md)
 - [GridView – přehled](gridview-overview.md)

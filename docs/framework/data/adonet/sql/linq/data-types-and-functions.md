@@ -2,12 +2,12 @@
 title: Datové typy a funkce
 ms.date: 03/30/2017
 ms.assetid: 683413c5-0312-4e60-8619-9a97bdc6e62a
-ms.openlocfilehash: deb8df0d64b4e8db24e5d611332e512781ef01b4
-ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
+ms.openlocfilehash: c17c02900ea6ebda1ee4bbf6e6534310f125a0a6
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56091432"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59151941"
 ---
 # <a name="data-types-and-functions"></a>Datové typy a funkce
 Témata uvedená v následující tabulce popisují LINQ pro podporu SQL pro členy, konstrukce a přetypování modulu common language runtime (CLR). Podporované členy a objektů, které jsou k dispozici pro použití ve vašich dotazech LINQ to SQL.  
@@ -32,5 +32,6 @@ Témata uvedená v následující tabulce popisují LINQ pro podporu SQL pro čl
 |[Nepodporované funkce](../../../../../../docs/framework/data/adonet/sql/linq/unsupported-functionality.md)|Popisuje funkce, která není podporována v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Neshody typů SQL a CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mismatches.md)
-- [Referenční informace](../../../../../../docs/framework/data/adonet/sql/linq/reference.md)
+- [Odkaz](../../../../../../docs/framework/data/adonet/sql/linq/reference.md)

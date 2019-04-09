@@ -1,18 +1,18 @@
 ---
 title: Prohlídku C# - C# Průvodce
 description: Teprve se C#? Naučte se základy jazyka.
-ms.date: 08/10/2016
-ms.assetid: ebc727cd-8112-42e7-b59c-3c2873ad661c
-ms.openlocfilehash: 4a59d08cc60b94308fce06efc46f683779ff1468
-ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
+ms.date: 04/05/2019
+ms.custom: seoapril2019
+ms.openlocfilehash: d1373b65d6cb821871c68574662360c1431d79cd
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57843426"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59152058"
 ---
 # <a name="a-tour-of-the-c-language"></a>Připravuje C# jazyka
 
-C# (čteno "v tématu Sharp") je jednoduchý, moderní, objektově orientované a bezpečnost typů programovací jazyk. C#má jeho kořeny řady jazyků C a bude okamžitě znát programátory C, C++, Javy a JavaScriptu.
+C# (čteno "v tématu Sharp") je jednoduchý, moderní, objektově orientované a bezpečnost typů programovací jazyk. C#má jeho kořeny řady jazyků C a bude okamžitě znát programátory C, C++, Javy a JavaScriptu. Tato ukázka poskytuje přehled o součástech jazyka. Pokud chcete prozkoumat jazyka pomocí interaktivního příklady, vyzkoušejte naše [Úvod do C# ](../tutorials/intro-to-csharp/index.md) kurzy.
 
 C# je objektově orientovaný jazyk, ale jazyka C# dále zahrnuje podporu pro ***komponenty objektově orientovaný*** programování. Návrh moderní softwaru stále spoléhá na softwarové komponenty v podobě samostatné a popisující samy sebe balíčky funkcí. Klíčem k takové součásti je, že představují programovací model s vlastnosti, metody a události; mají atributy, které poskytují deklarativní informace o komponentě; a zahrnují vlastní dokumentace. C#poskytuje pro podporu těchto konceptů, což přímo vytvoří jazyk C# velmi přirozeného jazyka, ve kterém chcete vytvořit a používat softwarové součásti.
 
@@ -43,7 +43,6 @@ Hello, World
 > [!IMPORTANT]
 > `csc` Příkaz kompiluje pro úplné rozhraní framework a možná není k dispozici na všech platformách.
 
-
 Program "Hello, World" začíná `using` direktiva, která odkazuje `System` oboru názvů. Obory názvů umožňují hierarchické uspořádání programy jazyka C# a knihovny. Obory názvů obsahují typy a jiných oborech názvů – například `System` obor názvů obsahuje několik typů, například `Console` třída odkazovaná v programu a několik jiných oborech názvů, jako například `IO` a `Collections`. A `using` umožňuje direktiva, která odkazuje na daný obor názvů nekvalifikované použití typů, které jsou členy tohoto oboru názvů. Z důvodu `using` direktiv, můžete použít program `Console.WriteLine` jako zkratka pro `System.Console.WriteLine`.
 
 `Hello` Třídy deklarované jako programem "Hello, World" obsahuje jeden člen metodu s názvem `Main`. `Main` Metoda je deklarována s modifikátorem statické. Zatímco instanční metody může odkazovat na konkrétní nadřazeného objektu instanci pomocí klíčového slova `this`, statické metody fungovat bez ohledu na konkrétní objekt. Podle konvence statickou metodu s názvem `Main` slouží jako vstupní bod programu.
@@ -70,7 +69,7 @@ Další informace o mnohem víc C#.  V následujících tématech přehledu elem
     - ***Rozhraní*** definuje kontrakt, který může být implementována třídy a struktury. Rozhraní může obsahovat metody, vlastnosti, události a indexery. Rozhraní neposkytuje implementace členů definuje – pouze Určuje členy, které je třeba dodat ze třídy nebo struktury, které implementují rozhraní.
 * [Výčty](enums.md)
     - ***Typ výčtu*** je typ odlišné hodnoty se sadou pojmenovaných konstant.
-* [Delegáti](delegates.md)
+* [Delegáty](delegates.md)
     - A ***typ delegáta*** seznamu představuje odkazy na metody pomocí konkrétních parametrů a návratový typ. Delegáty umožňují považovat za entity, které může být přiřazena k proměnné a předány jako parametry metod. Delegáti jsou podobný koncept ukazatelů na funkce v některých jiných jazycích, ale na rozdíl od ukazatelů na funkce, Delegáti jsou objektově orientované a typově bezpečné.
 * [Atributy](attributes.md)
      * ***Atributy*** programu povolit programy k určení dalších deklarativní informace o typy, členy a dalších entit.

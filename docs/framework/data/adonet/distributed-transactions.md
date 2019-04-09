@@ -2,12 +2,12 @@
 title: Distribuované transakce
 ms.date: 03/30/2017
 ms.assetid: 718b257c-bcb2-408e-b004-a7b0adb1c176
-ms.openlocfilehash: 002ed52b0f760376e813b15d0344a349da669f4b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 89d94e94ea74c73a7f68f6052291c95a7c96f0d6
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54660330"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59150199"
 ---
 # <a name="distributed-transactions"></a>Distribuované transakce
 Transakce je sadu související úlohy, která buď (potvrzení) úspěšná nebo neúspěšná (přerušit) jako celek, mimo jiné. A *distribuované transakce* je transakce, která ovlivňuje několik prostředků. Pro distribuovanou transakci potvrdit musí všichni účastníci zaručit, že změny dat bude trvalé. Změny musíte zachovat navzdory zhroucení systému nebo jiné nepředvídatelné události. Pokud ještě jeden účastník neprovede této záruky, celá transakce nezdaří a všechny změny dat v rámci oboru transakce jsou vrácena zpět.  
@@ -48,6 +48,7 @@ Transakce je sadu související úlohy, která buď (potvrzení) úspěšná neb
  Budete muset povolit MS DTC v síti, abyste mohli používat distribuované transakce. Pokud jste Windows povolena brána Firewall, musíte také povolit službě MS DTC a používat síť a neotevírejte port MS DTC.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Transakce a souběžnost](../../../../docs/framework/data/adonet/transactions-and-concurrency.md)
 - [Integrace System.Transactions s SQL Serverem](../../../../docs/framework/data/adonet/system-transactions-integration-with-sql-server.md)
 - [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

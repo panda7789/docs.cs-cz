@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 4d05610a-0da6-4f08-acea-d54c9d6143c0
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 8425b294328d4fc7546a372b329d8fa834a088d6
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 62c25b14fa7b3867bbdbcb2f1e08cc16ce349e72
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54567019"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59156075"
 ---
 # <a name="security-transparent-code-level-2"></a>Transparentní kód pro zabezpečení, úroveň 2
 <a name="top"></a>
@@ -86,7 +86,7 @@ ms.locfileid: "54567019"
 |Žádný atribut pro částečně důvěryhodná sestavení|Typy a členy jsou ve výchozím nastavení transparentní, ale může být kritické pro zabezpečení nebo bezpečný a kritický pro zabezpečení.|Všechny typy a členy jsou transparentní.|  
 |Žádný atribut|Určení žádný atribut způsobí, že modul common language runtime k určení pravidla transparentnosti za vás. Všechny typy a členy jsou kritické pro zabezpečení, s výjimkou případů, kde jsou kritické pro zabezpečení porušuje pravidlo dědičnosti.|Pro plně důvěryhodná sestavení (v globální mezipaměti sestavení nebo označen jako úplný vztah důvěryhodnosti v `AppDomain`) jsou všechny typy transparentní a všichni členové jsou bezpečné a kritické pro zabezpečení.|  
 |`SecurityTransparent`|Všechny typy a členy jsou transparentní.|Všechny typy a členy jsou transparentní.|  
-|`SecurityCritical(SecurityCriticalScope.Everything)`|Nelze použít.|Všechny typy a členy jsou kritické pro zabezpečení.|  
+|`SecurityCritical(SecurityCriticalScope.Everything)`|Není k dispozici.|Všechny typy a členy jsou kritické pro zabezpečení.|  
 |`SecurityCritical`|Veškerý kód, který je zavedený typy v tomto sestavení je velmi důležité; všechny ostatní kód je transparentní. Je-li přepsat virtuální nebo abstraktní metody nebo implementovat metodu rozhraní, musíte explicitně označit metody jako `SecurityCritical` nebo `SecuritySafeCritical`.|Všechny výchozí hodnoty pro transparentní kód. Nicméně jednotlivé typy a členy mohou mít jiné atributy.|  
   
 ### <a name="type-and-member-annotation"></a>Typ a člen poznámek  
@@ -192,5 +192,6 @@ ms.locfileid: "54567019"
  <xref:System.Security.SecurityRulesAttribute.SkipVerificationInFullTrust%2A> Vlastnost `false` ve výchozím nastavení, tak vlastnost musí být nastavena na `true` pro přeskočení ověření. To by mělo být provedeno za účelem optimalizace pouze. Měli byste zajistit, že transparentní kód v sestavení je ověřit pomocí `transparent` možnost [Nástroj PEVerify](../../../docs/framework/tools/peverify-exe-peverify-tool.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Kód transparentní pro zabezpečení, úroveň 1](../../../docs/framework/misc/security-transparent-code-level-1.md)
 - [Změny zabezpečení](../../../docs/framework/security/security-changes.md)

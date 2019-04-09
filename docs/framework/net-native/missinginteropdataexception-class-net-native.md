@@ -7,12 +7,12 @@ dev_langs:
 ms.assetid: eab4bcf8-9f5f-4731-87d8-842748a6062a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1a6d5755507ca00de612677235912d86caf98553
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 31208a63caaf9158f12742f1547b0e1e2781de4c
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54698060"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59137953"
 ---
 # <a name="missinginteropdataexception-class-net-native"></a>Třída MissingInteropDataException (.NET Native)
 **.NET pro aplikace pro Windows pro Windows 10, [!INCLUDE[net_native](../../../includes/net-native-md.md)] pouze**  
@@ -80,6 +80,7 @@ ms.locfileid: "54698060"
  `MissingInteropDataException` Třída obsahuje jeden člen jedinečné, `MissingType` vlastnost, která určuje typ, jehož metadat je potřebná pro volání metody úspěšné. Všechny zbývající členy se dědí ze základní třídy <xref:System.Exception?displayProperty=nameWithType>.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Exception?displayProperty=nameWithType>
 - [Třída MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md)
 - [Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)

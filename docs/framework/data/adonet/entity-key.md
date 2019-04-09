@@ -1,15 +1,15 @@
 ---
-title: klíč entity
+title: entity key
 ms.date: 03/30/2017
 ms.assetid: 0d447a6d-fa7a-4db0-8e7a-fd45e385fca0
-ms.openlocfilehash: 0c3a809884fc7b7c1f188af9881f784527fa87ba
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
+ms.openlocfilehash: 1484a73450d5a435f795f18f122c7fe8494cf197
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58408961"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59140111"
 ---
-# <a name="entity-key"></a>klíč entity
+# <a name="entity-key"></a>entity key
 *Klíč entity* je [vlastnost](../../../../docs/framework/data/adonet/property.md) nebo sada vlastností [typ entity](../../../../docs/framework/data/adonet/entity-type.md) , který slouží k určení identity. Vlastnosti, které tvoří klíč entity jsou vybrán v době návrhu. Hodnoty vlastnosti klíče entity musí jednoznačně identifikovat instanci entity typu v rámci [sadu entit](../../../../docs/framework/data/adonet/entity-set.md) v době běhu. Vlastnosti, které tvoří klíč entity, je třeba zvolit pro zajištění jedinečnosti instancí v sadu entit.  
   
  Následují požadavky na sadu vlastností pro být klíč entity:  
@@ -40,5 +40,6 @@ ms.locfileid: "58408961"
  Pomocí `Name` a `Address` entity klíč je vhodná volba, protože je nepravděpodobné, že za provozu na stejné adrese dvě autoři se stejným názvem. Nicméně tato volba pro klíč entity naprosto nezaručuje klíče jedinečné entity v sadě entit. Přidání vlastnosti, jako například `AuthorId`, který může použít k jednoznačné identifikaci Autor by v tomto případě doporučujeme.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Koncepty modelu EDM (Entity Data Model)](../../../../docs/framework/data/adonet/entity-data-model-key-concepts.md)
-- [Model EDM (Entity Data Model)](../../../../docs/framework/data/adonet/entity-data-model.md)
+- [Entity Data Model](../../../../docs/framework/data/adonet/entity-data-model.md)

@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Podmíněná kompilace pomocí trasování a ladění'
+title: 'Postupy: Podmíněná kompilace pomocí atributu Trace a Debug'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - trace compiler options
@@ -12,14 +12,14 @@ helpviewer_keywords:
 ms.assetid: 56d051c3-012c-42c1-9a58-7270edc624aa
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 1738d73cf99c8b5a8131bd5e018a799c3a7780c4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 76e442536e4c863031072adfb4d8716ca7a19aff
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54523555"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59158642"
 ---
-# <a name="how-to-compile-conditionally-with-trace-and-debug"></a>Postupy: Podmíněná kompilace pomocí trasování a ladění
+# <a name="how-to-compile-conditionally-with-trace-and-debug"></a>Postupy: Podmíněná kompilace pomocí atributu Trace a Debug
 Při ladění aplikace během vývoje, přejděte do okna výstup v sadě Visual Studio vaší trasování a ladění výstupu. Ale musíte zahrnout funkce sledování nasazených aplikací, zkompilovat instrumentované aplikace s využitím **trasování** direktivy kompilátoru povolena. To umožňuje trasování kódu se zkompiluje do verze vaší aplikace. Pokud nepovolíte **trasování** direktiv, všechna trasování kódu je ignorována během kompilace a není součástí spustitelný kód, který nasadíte.  
   
  Trasování a ladění metody mají přiřazeny podmíněné atributy. Například pokud podmíněný atribut pro trasování je **true**, všechny příkazy trasování jsou zahrnuty v rámci sestavení (soubor zkompilovaný .exe nebo .dll); Pokud **trasování** atribut conditional je **false**, příkazů trasování nejsou zahrnuty.  
@@ -96,10 +96,11 @@ Okomentujte direktivy kompilátoru.
 >  Až budete připravení ke kompilaci, můžete buď zvolit **sestavení** z **sestavení** nabídce nebo pomocí příkazového řádku, ale bez zadání **d:** k definování podmíněné symboly kompilace.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Trasování a instrumentace aplikací](../../../docs/framework/debug-trace-profile/tracing-and-instrumenting-applications.md)
 - [Postupy: Vytváření, inicializace a konfigurace přepínačů trasování](../../../docs/framework/debug-trace-profile/how-to-create-initialize-and-configure-trace-switches.md)
 - [Přepínače trasování](../../../docs/framework/debug-trace-profile/trace-switches.md)
-- [Moduly naslouchání trasování](../../../docs/framework/debug-trace-profile/trace-listeners.md)
+- [Naslouchací procesy trasování](../../../docs/framework/debug-trace-profile/trace-listeners.md)
 - [Postupy: Přidání příkazů trasování do kódu aplikace](../../../docs/framework/debug-trace-profile/how-to-add-trace-statements-to-application-code.md)
-- [Postupy: Nastavení proměnných prostředí pro příkazový řádek sady Visual Studio](~/docs/csharp/language-reference/compiler-options/how-to-set-environment-variables-for-the-visual-studio-command-line.md)
+- [Postupy: Nastavení proměnných prostředí pro příkazový řádek Visual Studia](~/docs/csharp/language-reference/compiler-options/how-to-set-environment-variables-for-the-visual-studio-command-line.md)
 - [Postupy: Volání kompilátoru příkazového řádku](~/docs/visual-basic/reference/command-line-compiler/how-to-invoke-the-command-line-compiler.md)

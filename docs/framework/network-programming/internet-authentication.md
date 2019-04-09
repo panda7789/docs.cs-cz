@@ -1,5 +1,5 @@
 ---
-title: Ověřování v Internetu
+title: Ověřování v internetu
 ms.date: 03/30/2017
 helpviewer_keywords:
 - authentication [.NET Framework], classes
@@ -15,14 +15,14 @@ helpviewer_keywords:
 - NetworkCredential class, about NetworkCredential class
 - client authentication, classes for authentication
 ms.assetid: d342e87c-f672-4660-a513-41a2f2b80c4a
-ms.openlocfilehash: 9ec1a003d981db99bec20778790fa4a3507ad0b7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 10d9c976a9294bffd85791b222dfededd0fc9256
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54587957"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59155919"
 ---
-# <a name="internet-authentication"></a>Ověřování v Internetu
+# <a name="internet-authentication"></a>Ověřování v internetu
 <xref:System.Net> Třídy podporu různých mechanismů ověřování klienta, včetně standardní Internet metody ověřování basic, digest, negotiate, NTLM a ověřování protokolu Kerberos, jakož i vlastních metod, které můžete vytvořit.  
   
  Přihlašovací údaje pro ověření jsou uloženy v <xref:System.Net.NetworkCredential> a <xref:System.Net.CredentialCache> třídy, které implementují <xref:System.Net.ICredentials> rozhraní. Při jedné z těchto tříd je dotazován na přihlašovací údaje, vrátí instanci **NetworkCredential** třídy. Spravuje proces ověřování <xref:System.Net.AuthenticationManager> třídy a procesu skutečné ověřování se provádí pomocí třídy modulu ověřování, který implementuje <xref:System.Net.IAuthenticationModule> rozhraní. Je nutné zaregistrovat vlastní ověřovací modul s **správce AuthenticationManager** předtím, než je možné ho; moduly pro úroveň basic, digest, negotiate, NTLM, a ve výchozím nastavení jsou registrované metody ověřování protokolu Kerberos.  
@@ -40,6 +40,7 @@ ms.locfileid: "54587957"
  Některá schémata ověřování můžete ověřovat uživatele bez provedení první požadavek pro prostředek. Aplikace můžete ušetřit čas tím preauthenticating uživatele s prostředkem, čímž se zmenšuje alespoň jednu výměnu zpráv pro server. Nebo, aby bylo možné později se více přizpůsobovat uživateli může provést ověření při spuštění programu. Schémata ověřování, které můžete použít sadu předběžné ověření <xref:System.Net.IAuthenticationModule.PreAuthenticate%2A> vlastnost **true**.  
   
 ## <a name="see-also"></a>Viz také:
-- [Základní ověřování a ověřování algoritmem Digest](../../../docs/framework/network-programming/basic-and-digest-authentication.md)
+
+- [Základní ověřování a ověřování hodnotou hash](../../../docs/framework/network-programming/basic-and-digest-authentication.md)
 - [Ověřování NTLM a Kerberos](../../../docs/framework/network-programming/ntlm-and-kerberos-authentication.md)
 - [Zabezpečení v síťovém programování](../../../docs/framework/network-programming/security-in-network-programming.md)

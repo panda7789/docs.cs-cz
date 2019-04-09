@@ -13,12 +13,12 @@ helpviewer_keywords:
 - threading [Windows Forms], background operations
 - background operations
 ms.assetid: 1b9a4e0a-f134-48ff-a1be-c461446a31ba
-ms.openlocfilehash: 0ba4ca2589a61a9331308a816da6ddb5276adbc9
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: cb06aa6bfa960a493090b67c8baa4d7b3b46756a
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57703657"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59149081"
 ---
 # <a name="walkthrough-running-an-operation-in-the-background"></a>Návod: Spuštění operace na pozadí
 Pokud máte operace, která bude trvat dlouhou dobu pro dokončení, a nechcete způsobit prodlevy v uživatelském rozhraní, můžete použít <xref:System.ComponentModel.BackgroundWorker> má třída spustit operaci v jiném vlákně.  
@@ -32,10 +32,10 @@ Pokud máte operace, která bude trvat dlouhou dobu pro dokončení, a nechcete 
   
 1.  S formuláři aktivní v Návrháři formulářů Windows, přetáhněte dva <xref:System.Windows.Forms.Button> ovládacích prvků z **nástrojů** formulář a pak nastavte `Name` a <xref:System.Windows.Forms.Control.Text%2A> vlastnosti tlačítka podle následující tabulky.  
   
-    |Tlačítko|Název|Text|  
+    |Tlačítko|Name|Text|  
     |------------|----------|----------|  
-    |`button1`|`startBtn`|**Start**|  
-    |`button2`|`cancelBtn`|**Zrušení**|  
+    |`button1`|`startBtn`|**Spustit**|  
+    |`button2`|`cancelBtn`|**Zrušit**|  
   
 2.  Otevřít **nástrojů**, klikněte na tlačítko **součásti** kartu a potom přetáhněte <xref:System.ComponentModel.BackgroundWorker> komponentu do formuláře.  
   
@@ -101,8 +101,9 @@ Pokud máte operace, která bude trvat dlouhou dobu pro dokončení, a nechcete 
 -   Implementace třídy, která podporuje asynchronní vzor pro komponenty. Další informace najdete v tématu [implementace asynchronního vzoru založeného na událostech](../../../standard/asynchronous-programming-patterns/implementing-the-event-based-asynchronous-pattern.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ComponentModel.BackgroundWorker>
 - <xref:System.ComponentModel.DoWorkEventArgs>
 - [Postupy: Implementace formuláře, který používá operaci na pozadí](how-to-implement-a-form-that-uses-a-background-operation.md)
 - [Postupy: Spuštění operace na pozadí](how-to-run-an-operation-in-the-background.md)
-- [Komponenta BackgroundWorker](backgroundworker-component.md)
+- [BackgroundWorker – komponenta](backgroundworker-component.md)

@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: cfe629eb-1106-4113-86e1-052f402d8d8b
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0eeaf0bd347b7aa6fe47387282a5237cf91a5f59
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: c0788c05edace2142d348c679c73aa1b4404ce75
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55281967"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59137849"
 ---
 # <a name="assembly-element-net-native"></a>\<Sestavení > – Element (.NET Native)
 Zásady reflexe modulu runtime se vztahuje na všechny typy v zadané sestavení.  
@@ -51,13 +51,13 @@ Zásady reflexe modulu runtime se vztahuje na všechny typy v zadané sestavení
   
 ## <a name="name-attribute"></a>Název atributu  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
-|*assembly_name*|Jednoduchý název sestavení, bez jeho přípona souboru. Tento atribut odpovídá <xref:System.Reflection.AssemblyName.Name%2A?displayProperty=nameWithType> vlastnost. Název sestavení s názvem Extensions.dll je například "Rozšíření".<br /><br /> Můžete také určit řetězcového literálu `*Application*` uplatňovat zásady na všechna sestavení v balíčku aplikace, zda tato sestavení jsou načteny, nebo ne. `*Application*` nikdy použije zásady na sestavení rozhraní .NET Framework.|  
+|*název_sestavení*|Jednoduchý název sestavení, bez jeho přípona souboru. Tento atribut odpovídá <xref:System.Reflection.AssemblyName.Name%2A?displayProperty=nameWithType> vlastnost. Název sestavení s názvem Extensions.dll je například "Rozšíření".<br /><br /> Můžete také určit řetězcového literálu `*Application*` uplatňovat zásady na všechna sestavení v balíčku aplikace, zda tato sestavení jsou načteny, nebo ne. `*Application*` nikdy použije zásady na sestavení rozhraní .NET Framework.|  
   
 ## <a name="all-other-attributes"></a>Všechny ostatní atributy  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |*policy_setting*|Toto nastavení platí pro tento typ zásad pro všechny typy v sestavení. Možné hodnoty jsou `All`, `Auto`, `Excluded`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal`, a `Required All`. Další informace najdete v tématu [nastavení zásad direktivy modulu Runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md).|  
   
@@ -65,8 +65,8 @@ Zásady reflexe modulu runtime se vztahuje na všechny typy v zadané sestavení
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Namespace>](../../../docs/framework/net-native/namespace-element-net-native.md)|Použije zásady reflexe pro všechny typy z podřízených oborů názvů.|  
-|[\<Type>](../../../docs/framework/net-native/type-element-net-native.md)|Použije zásady reflexe typu.|  
+|[\<Namespace >](../../../docs/framework/net-native/namespace-element-net-native.md)|Použije zásady reflexe pro všechny typy z podřízených oborů názvů.|  
+|[\<Typ >](../../../docs/framework/net-native/type-element-net-native.md)|Použije zásady reflexe typu.|  
 |[\<TypeInstantiation>](../../../docs/framework/net-native/typeinstantiation-element-net-native.md)|Použije zásady reflexe pro Konstruovaný obecný typ.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
@@ -92,6 +92,7 @@ Zásady reflexe modulu runtime se vztahuje na všechny typy v zadané sestavení
  `Activate`, `Browse`, `Dynamic`, A `Serialize` atributy jsou nepovinné. Ale `<Assembly>` element musí obsahovat alespoň jeden z těchto atributů.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Nastavení zásad direktivy modulu runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md)
 - [Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)
 - [Elementy direktivy modulu runtime](../../../docs/framework/net-native/runtime-directive-elements.md)

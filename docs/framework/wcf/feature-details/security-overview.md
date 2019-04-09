@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Windows Communication Foundation, security
 - WCF, security
 ms.assetid: f478c80d-792d-4e7a-96bd-a2ff0b6f65f9
-ms.openlocfilehash: 12eafa006e65527a70245c4332a34eb55f7d8af0
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 94f1284e864bc63c321e004ac4a20843b191711d
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54525258"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59136952"
 ---
 # <a name="security-overview"></a>Přehled zabezpečení
 Windows Communication Foundation (WCF) je protokol SOAP založenou na zprávách programovací platforma pro distribuované a zabezpečení zpráv mezi klienty a službami je nezbytné pro ochranu dat. WCF poskytuje všestranné a interoperabilní platformu pro výměnu zabezpečených zpráv na základě existující infrastruktura zabezpečení a standardům hlediska zabezpečení pro zprávy protokolu SOAP.  
@@ -89,7 +89,7 @@ Windows Communication Foundation (WCF) je protokol SOAP založenou na zprávách
   
  Třetí režim zabezpečení používá obou předchozích režimech a přináší výhody obou. Tento režim se nazývá `TransportWithMessageCredential`. V tomto režimu se zabezpečení zprávy se používá k ověření klienta a zabezpečení přenosu se používá k ověření tohoto serveru a poskytují zprávu důvěrnost a integrita. Díky tomu `TransportWithMessageCredential` režim zabezpečení je téměř stejně rychlé jako režim zabezpečení transport a poskytuje klienta možnosti rozšíření ověřování stejným způsobem jako zabezpečení zpráv. Ale na rozdíl od režim zabezpečených zpráv, neposkytuje kompletní zabezpečení začátku do konce.  
   
-### <a name="access-control"></a>Access Control  
+### <a name="access-control"></a>Řízení přístupu  
  *Řízení přístupu* se také nazývá autorizace. *Autorizace* umožňuje různým uživatelům mají různá oprávnění zobrazit data. Například protože vaší společnosti lidských zdrojů soubory obsahují zaměstnance citlivých dat, jsou povoleny pouze správci zobrazíte data zaměstnanců. Správci dál, můžete zobrazit pouze data pro své přímé podřízené. V takovém případě řízení přístupu podle role (dále jen "správce") i konkrétní identity Manageru (aby se zabránilo jeden správce z pohledu záznamy zaměstnanců jiného správce).  
   
  Ve službě WCF, funkce řízení přístupu jsou k dispozici díky integraci se službou common language runtime (CLR) <xref:System.Security.Permissions.PrincipalPermissionAttribute> a prostřednictvím sady rozhraní API, nazývá *modelem identity*. Podrobnosti o řízení přístupu a autorizace na základě rolí najdete v tématu [rozšíření zabezpečení](../../../../docs/framework/wcf/extending/extending-security.md).  
@@ -98,6 +98,7 @@ Windows Communication Foundation (WCF) je protokol SOAP založenou na zprávách
  *Auditování* je protokolování událostí zabezpečení do protokolu událostí Windows. Můžete protokolovat události související se zabezpečením, jako je například selhání ověřování (nebo úspěšné). Další informace najdete v tématu [auditování](../../../../docs/framework/wcf/feature-details/auditing-security-events.md). Programování podrobnosti najdete v tématu [jak: Auditování událostí zabezpečení](../../../../docs/framework/wcf/feature-details/how-to-audit-wcf-security-events.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Security.Permissions.PrincipalPermissionAttribute>
 - [Zabezpečení služeb](../../../../docs/framework/wcf/securing-services.md)
 - [Běžné scénáře zabezpečení](../../../../docs/framework/wcf/feature-details/common-security-scenarios.md)
@@ -107,7 +108,7 @@ Windows Communication Foundation (WCF) je protokol SOAP založenou na zprávách
 - [Autorizace](../../../../docs/framework/wcf/feature-details/authorization-in-wcf.md)
 - [Federace a vystavené tokeny](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)
 - [Auditování](../../../../docs/framework/wcf/feature-details/auditing-security-events.md)
-- [Informace o zabezpečení a osvědčené postupy](../../../../docs/framework/wcf/feature-details/security-guidance-and-best-practices.md)
+- [Informace o zabezpečení a doporučené postupy](../../../../docs/framework/wcf/feature-details/security-guidance-and-best-practices.md)
 - [Konfigurace služeb pomocí konfiguračních souborů](../../../../docs/framework/wcf/configuring-services-using-configuration-files.md)
 - [Vazby poskytované systémem](../../../../docs/framework/wcf/system-provided-bindings.md)
 - [Přehled vytváření koncových bodů](../../../../docs/framework/wcf/endpoint-creation-overview.md)

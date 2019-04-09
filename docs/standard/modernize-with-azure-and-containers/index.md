@@ -4,12 +4,12 @@ description: Zjistěte, jak přenést a podržte klávesu shift a modernizace st
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 04/28/2018
-ms.openlocfilehash: 68d5ce7ad71fae5ed3e1460c56581dd69c3925f3
-ms.sourcegitcommit: 0aca6c5d166d7961a1e354c248495645b97a1dc5
-ms.translationtype: MT
+ms.openlocfilehash: ed291309d04e3e5bfed6c73cdf8a67b79431a363
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/30/2019
-ms.locfileid: "58675923"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59156387"
 ---
 # <a name="modernize-existing-net-applications-with-azure-cloud-and-windows-containers-2nd-edition"></a>Modernizace stávajících aplikací .NET pomocí cloudu Azure a kontejnery Windows (verze 2.)
 
@@ -154,7 +154,6 @@ Další, jako by v ideálním případě mnoho existujících aplikací rozhran�
 > **Obrázek 1 – 6.** Příklad scénáře aplikací optimalizovaných pro Cloud, s kontejnery Windows a spravované služby
 
 Když se ještě dál, můžete rozšířit existující aplikace optimalizované pro Cloud tak, že přidáte několik mikroslužeb pro konkrétní scénáře. To by posunula je částečně na úrovni modelu nativní pro Cloud, který není hlavním účelem k dispozici pokyny.
-
 
 ## <a name="what-this-guide-does-not-cover"></a>Co tato příručka nepopisuje
 

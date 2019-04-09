@@ -12,17 +12,16 @@ helpviewer_keywords:
 - drag-and-drop [WPF], events
 - drop targets [WPF], drag-and-drop
 ms.assetid: 1a5b27b0-0ac5-4cdf-86c0-86ac0271fa64
-ms.openlocfilehash: 67c332b4fd4d2937f3a455353f3a5353dde10ef5
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
-ms.translationtype: MT
+ms.openlocfilehash: 4fb80f749e203c5763f0aa56af4cbf066c7ffa37
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57356478"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59139214"
 ---
 # <a name="drag-and-drop-overview"></a>Přehled přetažení
 Toto téma poskytuje přehled podpory přetažení myší v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikací. Přetáhněte myší obvykle odkazuje na metodu přenosu dat, která zahrnuje pomocí myši (nebo jiné polohovací zařízení) a vyberte jeden nebo více objektů, tyto objekty přetáhnete přes některé požadovaný cíl v [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]a jejich vyřazení.  
-  
-  
+
 <a name="Drag_and_Drop_Support"></a>   
 ## <a name="drag-and-drop-support-in-wpf"></a>Podpora přetažení myší v subsystému WPF  
  Operace přetažení myší obvykle zahrnuje obě strany: přetáhněte zdroj, ze které pochází přetažený objekt a cíl přetažení, která přijímá přetažený objekt.  Cíl přetažení zdroje a drop může být prvky uživatelského rozhraní ve stejné aplikaci nebo jiné aplikaci.  
@@ -186,7 +185,7 @@ Toto téma poskytuje přehled podpory přetažení myší v [!INCLUDE[TLA#tla_wi
   
 2.  <xref:System.Windows.DragDrop.DragOver>  
   
-3.  <xref:System.Windows.DragDrop.DragLeave> Nebo <xref:System.Windows.DragDrop.Drop>  
+3.  <xref:System.Windows.DragDrop.DragLeave> or <xref:System.Windows.DragDrop.Drop>  
   
  <xref:System.Windows.DragDrop.DragEnter> Události dojde, když data kvůli usnadnění použití vypsány hranici cíl přetažení. Tato událost ve verzi preview účinky operace přetažení myší, můžete obvykle zpracovávat ve v případě potřeby pro vaši aplikaci. Nenastavujte <xref:System.Windows.DragEventArgs.Effects%2A?displayProperty=nameWithType> vlastnost <xref:System.Windows.DragDrop.DragEnter> událost, protože se přepíše v <xref:System.Windows.DragDrop.DragOver> událostí.  
   
@@ -217,7 +216,8 @@ Toto téma poskytuje přehled podpory přetažení myší v [!INCLUDE[TLA#tla_wi
  [!code-vb[DragDropSnippets#Drop](~/samples/snippets/visualbasic/VS_Snippets_Wpf/dragdropsnippets/vb/mainwindow.xaml.vb#drop)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Clipboard>
-- [Návod: Povolení přetahování na uživatelský ovládací prvek](walkthrough-enabling-drag-and-drop-on-a-user-control.md)
-- [Témata s postupy](drag-and-drop-how-to-topics.md)
+- [Návod: Povolení přetahování pomocí myši na uživatelském ovládacím prvku](walkthrough-enabling-drag-and-drop-on-a-user-control.md)
+- [– postupy](drag-and-drop-how-to-topics.md)
 - [Přetažení](drag-and-drop.md)

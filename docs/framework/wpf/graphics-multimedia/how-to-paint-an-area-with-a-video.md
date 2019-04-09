@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Vykreslení videa v oblasti'
+title: 'Postupy: Vykreslení oblasti videem'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - video [WPF], painting with
 - brushes [WPF], painting with a video
 ms.assetid: 04dd6600-4a6e-4b43-a93e-21cce7dfbcb8
-ms.openlocfilehash: 0756a9e87840648b55ecad4b3f1ce6e0e5452eb7
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: be09d1310847cd7214ea795a704c25d994f07b7a
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57363290"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59151174"
 ---
-# <a name="how-to-paint-an-area-with-a-video"></a>Postupy: Vykreslení videa v oblasti
+# <a name="how-to-paint-an-area-with-a-video"></a>Postupy: Vykreslení oblasti videem
 Tento příklad ukazuje způsob vykreslení oblasti s médii. Vykreslení oblasti media jedním ze způsobů je použít <xref:System.Windows.Controls.MediaElement> spolu s <xref:System.Windows.Media.VisualBrush>. Použít <xref:System.Windows.Controls.MediaElement> načíst přehrání média a použít ji k nastavení <xref:System.Windows.Media.VisualBrush.Visual%2A> vlastnost <xref:System.Windows.Media.VisualBrush>. Pak můžete použít <xref:System.Windows.Media.VisualBrush> k vykreslení oblasti vložená média.  
   
 ## <a name="example"></a>Příklad  
@@ -38,7 +38,8 @@ Tento příklad ukazuje způsob vykreslení oblasti s médii. Vykreslení oblast
  Informace o tom, jak přidat soubor s obsahem, jako je například mediální soubor, do vaší aplikace, najdete v části [prostředek aplikace WPF, obsah a datové soubory](../app-development/wpf-application-resource-content-and-data-files.md). Když přidáte soubor média, je třeba přidat ji jako soubor s obsahem, nikoli jako soubor prostředků.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Media.VisualBrush>
-- [Malování pomocí obrázků, kreseb a vizuálních objektů](painting-with-images-drawings-and-visuals.md)
+- [Kreslení pomocí obrázků, kreseb a vizuálních objektů](painting-with-images-drawings-and-visuals.md)
 - [TileBrush – přehled](tilebrush-overview.md)
 - [Přehled multimédií](multimedia-overview.md)

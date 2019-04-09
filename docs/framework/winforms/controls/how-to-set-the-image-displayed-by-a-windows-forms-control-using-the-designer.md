@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Nastavení obrázku zobrazovaného podle Windows Forms pomocí návrháře ovládací prvek'
+title: 'Postupy: Nastavení obrázku zobrazovaného ovládacím prvkem Windows Forms pomocí Návrháře'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Button control [Windows Forms], images
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - examples [Windows Forms], controls
 - setting images [Windows Forms], Windows Forms controls
 ms.assetid: ae80d07a-e469-4251-90ca-df71f5852454
-ms.openlocfilehash: 265fc88fb2bb9aef0696ea0d7e707ae07084df1d
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: 2e0837e4a3058db7f1086d6a8ed53136ec86c7ac
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57702254"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59153488"
 ---
-# <a name="how-to-set-the-image-displayed-by-a-windows-forms-control-using-the-designer"></a>Postupy: Nastavení obrázku zobrazovaného podle Windows Forms pomocí návrháře ovládací prvek
+# <a name="how-to-set-the-image-displayed-by-a-windows-forms-control-using-the-designer"></a>Postupy: Nastavení obrázku zobrazovaného ovládacím prvkem Windows Forms pomocí Návrháře
 Několik ovládacích prvků Windows Forms nemohl zobrazit obrázky. Obrázek může být ikonu, která vysvětluje účel ovládacího prvku, třeba ikony disku na tlačítko, které označuje **Uložit** příkazu. Případně může být ikonu poskytnout požadovaný vzhled ovládacího prvku obrázku na pozadí.  
   
 > [!NOTE]
@@ -33,6 +33,7 @@ Několik ovládacích prvků Windows Forms nemohl zobrazit obrázky. Obrázek m�
 2.  Vyberte bitovou kopii, kterou chcete zobrazit.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Drawing.Image.FromFile%2A>
 - <xref:System.Drawing.Image>
 - <xref:System.Windows.Forms.Control.BackgroundImage%2A>

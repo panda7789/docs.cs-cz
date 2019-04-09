@@ -1,15 +1,15 @@
 ---
-title: SQL-CLR Type Mapping
+title: Mapování typů SQL a CLR
 ms.date: 07/23/2018
 ms.assetid: 4ed76327-54a7-414b-82a9-7579bfcec04b
-ms.openlocfilehash: 5c8c6456d108975ec927e28ac80c8dcca1567b46
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a2c70f5243dc3506a26824c83beb3ff454482f10
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54617340"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59152487"
 ---
-# <a name="sql-clr-type-mapping"></a>SQL-CLR Type Mapping
+# <a name="sql-clr-type-mapping"></a>Mapování typů SQL a CLR
 V technologii LINQ to SQL datový model relační databáze mapuje na objektový model vyjádřený v programovacím jazyce podle vašeho výběru. Při spuštění aplikace, technologie LINQ to SQL integrovaný jazyk dotazů v objektovém modelu převádí na SQL a odesílá je do databáze pro spuštění. Když databázi vrátí výsledky, LINQ to SQL přeloží výsledky zpět na objekty, které můžete pracovat s vlastními programovací jazyk.  
   
  Aby bylo možné přeložit data mezi objektový model a databáze, *mapování typu* musí být definovaný. Technologie LINQ to SQL využívá mapování typu tak, aby odpovídaly každý společný typ language runtime (CLR) s určitým typem systému SQL Server. Můžete definovat mapování typů a dalších informací o mapování jako je například databáze strukturu a tabulka vztahů uvnitř objektový model založený na atributu mapování. Alternativně můžete zadat informace o mapování mimo objektový model se souborem externích mapování. Další informace najdete v tématu [založených na atributech mapování](../../../../../../docs/framework/data/adonet/sql/linq/attribute-based-mapping.md) a [externí mapování](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md).  
@@ -257,6 +257,7 @@ V technologii LINQ to SQL datový model relační databáze mapuje na objektový
  Technologie LINQ to SQL nepodporuje žádné jiné mapování typů pro tyto různé typy.  Další informace najdete v tématu [typ mapování spustit čas chování matice](#BehaviorMatrix).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Mapování na základě atributů](../../../../../../docs/framework/data/adonet/sql/linq/attribute-based-mapping.md)
 - [Externí mapování](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md)
 - [Datové typy a funkce](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md)

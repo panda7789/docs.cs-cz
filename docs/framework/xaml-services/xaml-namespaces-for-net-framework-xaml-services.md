@@ -2,12 +2,12 @@
 title: Obory názvů jazyka XAML pro technologii .NET Framework XAML Services
 ms.date: 03/30/2017
 ms.assetid: e4f15f13-c420-4c1e-aeab-9b6f50212047
-ms.openlocfilehash: e9d644f4f62d70a1feec0030a680067412baa5e6
-ms.sourcegitcommit: 5c1abeec15fbddcc7dbaa729fabc1f1f29f12045
+ms.openlocfilehash: dc2c424306b9ebd705f2541266e4b1e3afe94547
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58030522"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59153553"
 ---
 # <a name="xaml-namespaces-for-net-framework-xaml-services"></a>Obory názvů jazyka XAML pro technologii .NET Framework XAML Services
 Obor názvů XAML je pojem, který rozšiřuje definici oboru názvů XML. Podobně jako obor názvů XML, můžete definovat obor názvů XAML pomocí `xmlns` atribut v kódu. Obory názvů XAML jsou také reprezentované v datovém proudu uzlu XAML a jiných rozhraní API služeb XAML. Toto téma definuje pojem oboru názvů XAML a popisuje, jak lze definovat obory názvů XAML a jsou používány kontext schématu XAML a další aspekty rozhraní .NET Framework XAML Services.  
@@ -64,4 +64,5 @@ Obor názvů XAML je pojem, který rozšiřuje definici oboru názvů XML. Podob
  Dva další rozhraní API, které jsou relevantní pro obor názvů XAML v rozhraní .NET Framework XAML Services jsou atributy <xref:System.Windows.Markup.XmlnsDefinitionAttribute> a <xref:System.Windows.Markup.XmlnsPrefixAttribute>. Tyto atributy se vztahují na sestavení. <xref:System.Windows.Markup.XmlnsDefinitionAttribute> používá kontext schématu XAML pro interpretaci všechny deklarace oboru názvů XAML, která obsahuje identifikátor URI. <xref:System.Windows.Markup.XmlnsPrefixAttribute> používá nástroje, které generují XAML tak, aby konkrétní obor názvů XAML lze serializovat s příznakem předponu předvídatelné. Další informace najdete v tématu [XAML-Related CLR atributy pro vlastní typy a knihovny](xaml-related-clr-attributes-for-custom-types-and-libraries.md).  
   
 ## <a name="see-also"></a>Viz také:
-- [Principy struktur a koncepcí streamu uzlů XAML](understanding-xaml-node-stream-structures-and-concepts.md)
+
+- [Principy struktur a koncepcí datových proudů uzlů XAML](understanding-xaml-node-stream-structures-and-concepts.md)

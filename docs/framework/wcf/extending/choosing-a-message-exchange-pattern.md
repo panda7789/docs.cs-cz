@@ -2,12 +2,12 @@
 title: Výběr vzorce výměny zpráv
 ms.date: 03/30/2017
 ms.assetid: 0f502ca1-6a8e-4607-ba15-59198c0e6146
-ms.openlocfilehash: 927324e0f707284e31baefa261d4d90b147e4e24
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 98788fb89fc68dc1220d9bf8d9ad89df5ca69e6e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54594756"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59157737"
 ---
 # <a name="choosing-a-message-exchange-pattern"></a>Výběr vzorce výměny zpráv
 Prvním krokem při psaní vlastních přenosu je rozhodnout, které *zpráv exchange vzory* (nebo MEPs) jsou požadovány pro kanál, kterou vyvíjíte. Toto téma popisuje dostupné možnosti a tento článek popisuje různé požadavky. Toto je první úkol v seznamu úkolů vývoj kanálu je popsáno v [vývoj kanálů](../../../../docs/framework/wcf/extending/developing-channels.md).  
@@ -93,4 +93,5 @@ Tři vzory základní zprávy exchange. Shora dolů: datagram, typu žádost odp
 -   Když <xref:System.ServiceModel.ICommunicationObject.Abort%2A> je volána na kanál, ukončení relace náhle bez provádění vstupně-výstupních operací. To znovu, může to znamenat nicneděláním nebo může zahrnovat přerušení připojení k síti nebo jiný prostředek.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled modelu kanálu](../../../../docs/framework/wcf/extending/channel-model-overview.md)

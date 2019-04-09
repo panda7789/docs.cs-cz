@@ -1,15 +1,15 @@
 ---
-title: Ověření integrované Windows s rozšířenou ochranou
+title: Integrované ověřování systému Windows s rozšířenou ochranou
 ms.date: 03/30/2017
 ms.assetid: 81731998-d5e7-49e4-ad38-c8e6d01689d0
-ms.openlocfilehash: 93156ab346d97259030b001d3a4d8ca4612f48c8
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 71e4359686ea2a6b1ae3e8ec840bf25af644a369
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54591614"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59146819"
 ---
-# <a name="integrated-windows-authentication-with-extended-protection"></a>Ověření integrované Windows s rozšířenou ochranou
+# <a name="integrated-windows-authentication-with-extended-protection"></a>Integrované ověřování systému Windows s rozšířenou ochranou
 Vylepšení, které ovlivňují způsob integrované ověřování zařizuje služba Windows byly provedeny <xref:System.Net.HttpWebRequest>, <xref:System.Net.HttpListener>, <xref:System.Net.Mail.SmtpClient>, <xref:System.Net.Security.SslStream>, <xref:System.Net.Security.NegotiateStream>, a související třídy v <xref:System.Net> a souvisejících oborech názvů. Byla přidána podpora pro rozšířené ochrany pro zvýšení zabezpečení.  
   
  Tyto změny mohou ovlivnit aplikace, které používají tyto třídy pro vytvoření webových požadavků a přijímání odpovědí, kde se používá integrované ověřování Windows. Tato změna může ovlivnit také webové servery a klientské aplikace, které jsou nakonfigurovány pro použití integrovaného ověřování Windows.  
@@ -128,7 +128,7 @@ Vylepšení, které ovlivňují způsob integrované ověřování zařizuje slu
   
 3.  Klient určuje vazbu správném kanálu nebo se může připojit bez zadání vazby kanálů od zásady rozšířené ochrany na serveru se nakonfigurují <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.WhenSupported> požadavek se vrátil do aplikace pro zpracování. Kontrola názvu služby neproběhne probíhá automaticky. Aplikace můžete provádět vlastní název ověření pomocí <xref:System.Net.HttpListenerRequest.ServiceName%2A> vlastností, ale za těchto okolností je redundantní.  
   
- Pokud aplikace zavolá vlastní SSPI pro ověřování na základě vzájemně předané v textu požadavku HTTP objektů BLOB a chce vazby kanálu, potřebuje načíst vazby očekávané kanálu z vnějšího zabezpečený kanál pomocí <xref:System.Net.HttpListener> Chcete-li předat do nativní Win32 [Funkce AcceptSecurityContext](https://go.microsoft.com/fwlink/?LinkId=147021) funkce. Chcete-li to provést, použijte <xref:System.Net.HttpListenerRequest.TransportContext%2A> vlastnosti a volání <xref:System.Net.TransportContext.GetChannelBinding%2A> metodu pro načtení CBT. Jsou podporovány pouze vazby koncového bodu. Pokud nic dalšího <xref:System.Security.Authentication.ExtendedProtection.ChannelBindingKind.Endpoint> není zadán, <xref:System.NotSupportedException> bude vyvolána výjimka. Pokud je základní operační systém nepodporuje vazby kanálu <xref:System.Net.TransportContext.GetChannelBinding%2A> metoda vrátí <xref:System.Security.Authentication.ExtendedProtection.ChannelBinding> <xref:System.Runtime.InteropServices.SafeHandle> obtékání ukazatele na vazby vhodné k předání do kanálu [Funkce AcceptSecurityContext](https://go.microsoft.com/fwlink/?LinkId=147021) – funkce jako pvBuffer člena struktury SecBuffer předaný `pInput` parametru. <xref:System.Security.Authentication.ExtendedProtection.ChannelBinding.Size%2A> Vlastnost obsahuje délku v bajtech, vazba kanálu. Pokud příslušný operační systém nepodporuje vazby kanálů, funkce vrátí `null`.  
+ Pokud aplikace zavolá vlastní SSPI pro ověřování na základě vzájemně předané v textu požadavku HTTP objektů BLOB a chce vazby kanálu, potřebuje načíst vazby očekávané kanálu z vnějšího zabezpečený kanál pomocí <xref:System.Net.HttpListener> Chcete-li předat do nativní Win32 [Funkce AcceptSecurityContext](https://go.microsoft.com/fwlink/?LinkId=147021) funkce. Chcete-li to provést, použijte <xref:System.Net.HttpListenerRequest.TransportContext%2A> vlastnosti a volání <xref:System.Net.TransportContext.GetChannelBinding%2A> metodu pro načtení CBT. Jsou podporovány pouze vazby koncového bodu. Pokud nic dalšího <xref:System.Security.Authentication.ExtendedProtection.ChannelBindingKind.Endpoint> není zadán, <xref:System.NotSupportedException> bude vyvolána výjimka. Pokud je základní operační systém nepodporuje vazby kanálu <xref:System.Net.TransportContext.GetChannelBinding%2A> metoda vrátí <xref:System.Security.Authentication.ExtendedProtection.ChannelBinding><xref:System.Runtime.InteropServices.SafeHandle> obtékání ukazatele na vazby vhodné k předání do kanálu [Funkce AcceptSecurityContext](https://go.microsoft.com/fwlink/?LinkId=147021) funkci, jako pvBuffer Člen struktury SecBuffer předaný `pInput` parametru. <xref:System.Security.Authentication.ExtendedProtection.ChannelBinding.Size%2A> Vlastnost obsahuje délku v bajtech, vazba kanálu. Pokud příslušný operační systém nepodporuje vazby kanálů, funkce vrátí `null`.  
   
  Další možností je to možné je povolit rozšířenou ochranu u předpony HTTP://, pokud nejsou použity proxy servery. V takovém případě nastavte <xref:System.Net.HttpListener.ExtendedProtectionPolicy%2A?displayProperty=nameWithType> do <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy> s <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement> nastavena na <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.WhenSupported> nebo <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.Always>, a <xref:System.Security.Authentication.ExtendedProtection.ProtectionScenario> nastavena na <xref:System.Security.Authentication.ExtendedProtection.ProtectionScenario.TransportSelected> hodnotu <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.WhenSupported> vloží <xref:System.Net.HttpListener> v částečně odolný režim chráněno. současně <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.Always> odpovídá plně zesíleném režimu.  
   
@@ -149,5 +149,6 @@ Vylepšení, které ovlivňují způsob integrované ověřování zařizuje slu
  Tyto funkce rozšířené ochrany lze použít také aplikace serveru ověřování s jinými typy požadavků a jsou používány Důvěryhodné servery proxy.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Security.Authentication.ExtendedProtection>
 - <xref:System.Security.Authentication.ExtendedProtection.Configuration>

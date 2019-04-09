@@ -5,12 +5,12 @@ helpviewer_keywords:
 - COM [WCF], configure service monikers
 - COM [WCF], register service monikers
 ms.assetid: e5e16c80-8a8e-4eef-af53-564933b651ef
-ms.openlocfilehash: 2f8f19e70b3345b61f1f5caba2fc6f764b58cc9b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 364329954591199c4b0d3123c662c4e124c242fc
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54593794"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59141918"
 ---
 # <a name="how-to-register-and-configure-a-service-moniker"></a>Postupy: Registrace a konfigurace monikeru služby
 Před použitím monikeru služby Windows Communication Foundation (WCF) v rámci aplikace modelu COM s typem kontraktu, musí zaregistrovat požadované typy s atributy s modelem COM a konfigurace aplikace modelu COM a zástupný název požadované vazby konfigurace.  
@@ -89,7 +89,7 @@ Před použitím monikeru služby Windows Communication Foundation (WCF) v rámc
     > [!NOTE]
     >  : Pokud je moniker je poškozený nebo pokud služba není dostupná, volání `GetObject` vrátí chybu "Neplatná syntaxe". Pokud se zobrazí tato chyba, ujistěte se, že zástupný název, který používáte, je správná a služba není k dispozici.  
   
-     I když toto téma se zaměřuje na použití monikeru služby z kódu jazyka Visual Basic 6.0, je použití monikeru služby z jiných jazyků. Při použití monikeru z jazyka C++ code Svcutil.exe vygenerované sestavení by měl je importovat s "no_namespace named_guids – raw_interfaces_only" jak je znázorněno v následujícím kódu.  
+     I když toto téma se zaměřuje na použití monikeru služby z kódu jazyka Visual Basic 6.0, je použití monikeru služby z jiných jazyků. Při použití monikeru z C++ kódu Svcutil.exe generovaného sestavení by měly být naimportovány s "no_namespace named_guids – raw_interfaces_only", jak je znázorněno v následujícím kódu.  
   
     ```  
     #import "ComTestProxy.tlb" no_namespace named_guids  
@@ -98,4 +98,5 @@ Před použitím monikeru služby Windows Communication Foundation (WCF) v rámc
      To definice importované rozhraní upraví tak, aby všechny metody vrátit `HResult`. Všechny ostatní vrácené hodnoty se převedou na výstupní parametry. Celkové provádění metody zůstává stejná. To umožňuje určit, proč výjimku při volání metody na proxy serveru. Tato funkce je dostupná pouze z kódu jazyka C++.  
   
 ## <a name="see-also"></a>Viz také:
-- [Nástroj metadat modelu služby (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)
+
+- [Nástroj ServiceModel Metadata Utility (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)

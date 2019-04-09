@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Zpřístupnění dat pro připojení v jazyku XAML'
+title: 'Postupy: Zpřístupnění dat pro vazbu v jazyku XAML'
 ms.date: 01/29/2018
 dev_langs:
 - csharp
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - data binding [WPF], making data available for binding
 - binding data [WPF], making data available for
 ms.assetid: 7103c2e8-0e31-4a13-bf12-ca382221a8d5
-ms.openlocfilehash: 1f024ddd0be023f77408e3106bc0a4465d068074
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 2d51f06da31482c46b04d1eb86172c3eda246c20
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57358285"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59145363"
 ---
-# <a name="how-to-make-data-available-for-binding-in-xaml"></a>Postupy: Zpřístupnění dat pro připojení v jazyku XAML
+# <a name="how-to-make-data-available-for-binding-in-xaml"></a>Postupy: Zpřístupnění dat pro vazbu v jazyku XAML
 Toto téma popisuje různé způsoby, jak můžete zpřístupnit data pro vazbu v [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], v závislosti na potřebách vaší aplikace.  
   
 ## <a name="example"></a>Příklad  
@@ -43,5 +43,6 @@ Toto téma popisuje různé způsoby, jak můžete zpřístupnit data pro vazbu 
  Informace o mnoha způsoby, jak je možné určit data, vytváříte vazbu s najdete v tématu [určení zdroje připojení](how-to-specify-the-binding-source.md). Informace o tom, jaké typy dat lze svázat nebo jak implementovat vlastní [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] objekty pro vazbu, naleznete v tématu [Přehled zdrojů vazby](binding-sources-overview.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled datových vazeb](data-binding-overview.md)
-- [Témata s postupy](data-binding-how-to-topics.md)
+- [– postupy](data-binding-how-to-topics.md)

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - WCF security
 - WCF, security
 ms.assetid: f0ecc6f7-f4b5-42a4-9cb1-b02e28e26620
-ms.openlocfilehash: 6e5ede5141d2edb24a688bf700c22870c8886906
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 65d4f2858c2be4c2a6872f96ef3739bb16253d74
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54524881"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59157667"
 ---
 # <a name="securing-services"></a>Zabezpečení služeb
 Zabezpečení služby Windows Communication Foundation (WCF) se skládá ze dvou primárních požadavků: přenos zabezpečení a autorizace. (Třetí požadavek auditování událostí zabezpečení, je popsaná v [auditování](../../../docs/framework/wcf/feature-details/auditing-security-events.md).) Stručně řečeno přenos zabezpečení zahrnuje ověření (ověření identity klienta a služby), důvěrnosti (šifrování zpráv) a integritu (digitální podpis umožňuje zjistit případnou manipulaci). Autorizace je řízení přístupu k prostředkům, například povolení pouze uživatelé s oprávněním ke čtení souboru. Pomocí funkce služby WCF, dva primární požadavky se snadno implementují.  
@@ -99,6 +99,7 @@ Zabezpečení služby Windows Communication Foundation (WCF) se skládá ze dvou
  `ProtectionLevel` Vlastnost probíhá na několika třídy atributů (jako <xref:System.ServiceModel.ServiceContractAttribute> a <xref:System.ServiceModel.OperationContractAttribute> třídy). Úroveň ochrany je hodnota, která určuje, zda zprávy (nebo částí zprávy), které podporují službu jsou podepsané, podepsaný a zašifrovaný nebo odeslán bez informace o podpisy nebo šifrování. Další informace o vlastnosti najdete v tématu [úroveň ochrany Principy](../../../docs/framework/wcf/understanding-protection-level.md)a programovací příklady najdete v tématu [jak: Nastavení vlastnosti ProtectionLevel](../../../docs/framework/wcf/how-to-set-the-protectionlevel-property.md). Další informace o navrhování kontrakt služby s `ProtectionLevel` v kontextu, najdete v článku [navrhování kontraktů služby](../../../docs/framework/wcf/designing-service-contracts.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel>
 - <xref:System.ServiceModel.Description.ServiceCredentials>
 - <xref:System.ServiceModel.ServiceContractAttribute>
@@ -112,7 +113,7 @@ Zabezpečení služby Windows Communication Foundation (WCF) se skládá ze dvou
 - [Postupy: Nastavení vlastnosti ProtectionLevel](../../../docs/framework/wcf/how-to-set-the-protectionlevel-property.md)
 - [Postupy: Zabezpečení služby pomocí přihlašovacích údajů Windows](../../../docs/framework/wcf/how-to-secure-a-service-with-windows-credentials.md)
 - [Postupy: Nastavení režimu zabezpečení](../../../docs/framework/wcf/how-to-set-the-security-mode.md)
-- [Postupy: Určení typu pověření klienta](../../../docs/framework/wcf/how-to-specify-the-client-credential-type.md)
+- [Postupy: Určení typu přihlašovacích údajů klienta](../../../docs/framework/wcf/how-to-specify-the-client-credential-type.md)
 - [Postupy: Omezení přístupu pomocí třídy PrincipalPermissionAttribute](../../../docs/framework/wcf/how-to-restrict-access-with-the-principalpermissionattribute-class.md)
 - [Postupy: Zosobnění klienta ve službě](../../../docs/framework/wcf/how-to-impersonate-a-client-on-a-service.md)
 - [Postupy: Prozkoumání kontextu zabezpečení](../../../docs/framework/wcf/how-to-examine-the-security-context.md)

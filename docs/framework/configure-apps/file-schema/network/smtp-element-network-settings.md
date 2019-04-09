@@ -1,5 +1,5 @@
 ---
-title: <smtp> – element (nastavení sítě)
+title: <smtp> – Element (nastavení sítě)
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/mailSettings/smtp
@@ -8,12 +8,12 @@ helpviewer_keywords:
 - <smtp> element
 - smtp element
 ms.assetid: 220b0329-e384-4e0c-86b4-0945ad17efd9
-ms.openlocfilehash: ecd780da7224389685b61c39c796c7a80587709c
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 1b5f7406f995a86f0a192dbf3249c067dff570ea
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55273579"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59140371"
 ---
 # <a name="smtp-element-network-settings"></a>\<SMTP > – Element (nastavení sítě)
 Nastaví formát dodání, způsob dodání a adresu odesílatele pro zasílání e-mailů.  
@@ -55,7 +55,7 @@ Nastaví formát dodání, způsob dodání a adresu odesílatele pro zasílán�
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|**Element**|**Popis**|  
+|**Prvek**|**Popis**|  
 |-----------------|---------------------|  
 |[\<mailSettings – > – Element (nastavení sítě)](../../../../../docs/framework/configure-apps/file-schema/network/mailsettings-element-network-settings.md)|Konfiguruje možnosti pro odesílání pošty.|  
   
@@ -79,6 +79,7 @@ Nastaví formát dodání, způsob dodání a adresu odesílatele pro zasílán�
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Net.Configuration.SmtpSection?displayProperty=nameWithType>
 - <xref:System.Net.Mail.SmtpClient?displayProperty=nameWithType>
 - <xref:System.Net.Mail.SmtpDeliveryFormat>

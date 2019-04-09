@@ -1,5 +1,5 @@
 ---
-title: 'Optimalizace výkonu: Zdroje aplikace'
+title: 'Optimalizace výkonu: Prostředky aplikace'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - application resources [WPF], performance
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - brushes [WPF], performance
 - sharing brushes without copying [WPF]
 ms.assetid: 62b88488-c08e-4804-b7de-a1c34fbe929c
-ms.openlocfilehash: 921a67a24464ff5ac782045ae022f7766f32d579
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 362d0f0fd3282365e5e05dcd43c49a9fd2ddc9a7
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57352396"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59139422"
 ---
-# <a name="optimizing-performance-application-resources"></a>Optimalizace výkonu: Zdroje aplikace
+# <a name="optimizing-performance-application-resources"></a>Optimalizace výkonu: Prostředky aplikace
 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] umožňuje sdílení prostředků aplikace tak, aby mezi elementy podobné typy může podporovat konzistentního vzhledu a chování. Toto téma obsahuje několik doporučení v této oblasti, které vám můžou pomoci zvýšit výkon vašich aplikací.  
   
  Další informace o prostředcích naleznete v tématu [prostředky XAML](xaml-resources.md).  
@@ -43,6 +43,7 @@ ms.locfileid: "57352396"
  [!code-xaml[Performance#PerformanceSnippet8](~/samples/snippets/csharp/VS_Snippets_Wpf/Performance/CSharp/DynamicResource.xaml#performancesnippet8)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Optimalizace výkonu aplikace WPF](optimizing-wpf-application-performance.md)
 - [Plánování výkonu aplikace](planning-for-application-performance.md)
 - [Využití výhod hardwaru](optimizing-performance-taking-advantage-of-hardware.md)
@@ -51,4 +52,4 @@ ms.locfileid: "57352396"
 - [Chování objektu](optimizing-performance-object-behavior.md)
 - [Text](optimizing-performance-text.md)
 - [Datová vazba](optimizing-performance-data-binding.md)
-- [Další výkonnostní doporučení](optimizing-performance-other-recommendations.md)
+- [Další doporučení k optimalizaci výkonu](optimizing-performance-other-recommendations.md)

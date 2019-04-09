@@ -1,15 +1,15 @@
 ---
-title: SQL-CLR Custom Type Mappings
+title: Mapování vlastních typů SQL a CLR
 ms.date: 03/30/2017
 ms.assetid: d916c7fb-4b56-4214-acbe-5e23365047b2
-ms.openlocfilehash: 36763be3cd4845fbbd027b448098d0dafb9e448a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: bc92d54cad6a977268ef3f000c684d5f195a933d
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54622507"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59140410"
 ---
-# <a name="sql-clr-custom-type-mappings"></a>SQL-CLR Custom Type Mappings
+# <a name="sql-clr-custom-type-mappings"></a>Mapování vlastních typů SQL a CLR
 Typ mapování mezi systému SQL Server a common language runtime (CLR) bylo automaticky zadáno při použití SQLMetal nástroj příkazového řádku, Návrhář relací objektů (O/R Designer).  
   
  Pokud žádné vlastní mapování se provádí, tyto nástroje přiřadit výchozí mapování typů jak je popsáno v [mapování typů SQL a CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mapping.md). Pokud chcete zadat mapování odlišně od tyto výchozí hodnoty, je potřeba některé přizpůsobení mapování typů.  
@@ -32,5 +32,6 @@ Typ mapování mezi systému SQL Server a common language runtime (CLR) bylo aut
  Když změny databáze, je potřeba v souboru DBML odrážet provedené změny. Jeden ze způsobů, jak provést toto je pro automatické vytvoření nového souboru DBML a pak znovu proveďte vlastní typ mapování. Alternativně může porovnat rozdíly mezi nového souboru DBML a vaše přizpůsobené souboru DBML a aktualizace vašeho vlastního souboru DBML ručně tak, aby odrážely změny databáze.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Mapování typů SQL a CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mapping.md)
 - [Generování kódu v LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md)

@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - authentication [WCF], specifying the identity of a service
 ms.assetid: a4c8f52c-5b30-45c4-a545-63244aba82be
-ms.openlocfilehash: 5d168cbecf4f6a0c075a66ff1dd4b50b154d985c
-ms.sourcegitcommit: 79066169e93d9d65203028b21983574ad9dcf6b4
+ms.openlocfilehash: f33144c320b3648f9e201505a34ed8f1ecd5965b
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57212518"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59145623"
 ---
 # <a name="service-identity-and-authentication"></a>Identita a ověřování služby
 Služby *identitě koncového bodu* je hodnota vygenerovaná ze služby webové služby WSDL (Description Language). Tato hodnota, rozšíří na všechny klienty, se používá k ověřování. Poté, co klient inicializuje komunikaci na koncový bod a služby se ověří na klienta, klient porovná hodnotu identity koncový bod s skutečná hodnota vrácená v procesu ověřování koncového bodu. Pokud se shodují, klient jistotu, že kontaktoval koncový bod služby očekávané. Tato operace funguje jako ochranu proti *phishing* zabraňuje klient se přesměrovává na koncový bod hostitelem škodlivé služby.  
@@ -54,13 +54,9 @@ Služby *identitě koncového bodu* je hodnota vygenerovaná ze služby webové 
   
 ## <a name="using-the-identity-element-in-configuration"></a>Použití \<identity > v elementu konfigurace  
  Pokud změníte typ přihlašovacích údajů klienta ve vazbě bylo dříve uvedeno na `Certificate,` generovaného WSDL obsahuje Base64 serializovat certifikátů X.509 pro hodnotu identity, jak je znázorněno v následujícím kódu. Toto je výchozí pro všechny typy přihlašovacích údajů klienta jiné než Windows.  
-  
-  
-  
+
  Můžete změnit hodnotu výchozí identitu služby nebo změňte typ identity pomocí `<identity>` element v konfiguraci nebo nastavením identita v kódu. Následující kód konfigurace nastaví identitou system (DNS) název domény s hodnotou `contoso.com`.  
-  
-  
-  
+
 ## <a name="setting-identity-programmatically"></a>Nastavení Identity prostřednictvím kódu programu  
  Vaše služba není nutné explicitně určit identitu, protože WCF automaticky určuje. Ale WCF umožňuje určit identitu, která v koncovém bodě, podle potřeby. Následující kód přidá nový koncový bod služby s konkrétní identitu DNS.  
   
@@ -69,16 +65,12 @@ Služby *identitě koncového bodu* je hodnota vygenerovaná ze služby webové 
   
 ## <a name="specifying-identity-at-the-client"></a>Určení Identity klienta  
  V době návrhu, vývojáři klientského programu obvykle používá [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) ke generování konfigurace klienta. Vygenerovaný konfigurační soubor (určené pro použití klientem) obsahuje identitu serveru. Například následující kód je generován ze služby, která určuje identitu DNS, jak je znázorněno v předchozím příkladu. Všimněte si, že hodnota identity klienta koncový bod odpovídá služby. V tomto případě, když klient obdrží pověření Windows (Kerberos) pro službu, očekává hodnota, která má být `contoso.com`.  
-  
-  
-  
+
  Pokud, místo Windows, tato služba Určuje certifikát jako typ pověření klienta, pak vlastnost DNS tento certifikát má být hodnota `contoso.com`. (Nebo pokud je vlastnost DNS `null`, musí být název subjektu certifikátu `contoso.com`.)  
   
 #### <a name="using-a-specific-value-for-identity"></a>Pomocí konkrétní hodnoty pro identitu  
  Následující konfigurační soubor klienta ukazuje, jak služby identita má být konkrétní hodnotu. V následujícím příkladu klient může komunikovat s dva koncové body. První je označena kryptografický otisk certifikátu a druhý s klíčem RSA certifikátu. To znamená, že certifikát, který obsahuje pouze veřejný klíč nebo privátní pár klíčů, ale není vydán důvěryhodnou autoritou.  
-  
-  
-  
+
 ## <a name="identity-checking-at-run-time"></a>Identita kontrolu za běhu  
  V době návrhu vývojáře klienta určuje identitu serveru pomocí jeho metadata. V době běhu je provedena kontrola identity před voláním žádné koncové body služby.  
   
@@ -113,11 +105,12 @@ Služby *identitě koncového bodu* je hodnota vygenerovaná ze služby webové 
  Další informace o tom, jak zásobníku vazby prvky správně pro vlastní vazbu, naleznete v tématu [Creating User-Defined vazby](../../../../docs/framework/wcf/extending/creating-user-defined-bindings.md). Další informace o vytvoření vlastní vazby s <xref:System.ServiceModel.Channels.SecurityBindingElement>, naleznete v tématu [jak: Vytvoření elementu SecurityBindingElement pro zadaný režim ověřování](../../../../docs/framework/wcf/feature-details/how-to-create-a-securitybindingelement-for-a-specified-authentication-mode.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Postupy: Vytvoření vlastní vazby pomocí elementu SecurityBindingElement](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)
 - [Postupy: Vytvoření elementu SecurityBindingElement pro zadaný režim ověřování](../../../../docs/framework/wcf/feature-details/how-to-create-a-securitybindingelement-for-a-specified-authentication-mode.md)
-- [Postupy: Vytvoření vlastního ověřovatele Identity](../../../../docs/framework/wcf/extending/how-to-create-a-custom-client-identity-verifier.md)
-- [Výběr typu přihlašovacích údajů](../../../../docs/framework/wcf/feature-details/selecting-a-credential-type.md)
+- [Postupy: Vytvoření vlastního ověřovatele identity klientů](../../../../docs/framework/wcf/extending/how-to-create-a-custom-client-identity-verifier.md)
+- [Výběr typu pověření](../../../../docs/framework/wcf/feature-details/selecting-a-credential-type.md)
 - [Práce s certifikáty](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)
-- [Nástroj metadat modelu služby (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)
+- [Nástroj ServiceModel Metadata Utility (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)
 - [Vytváření uživatelem definovaných vazeb](../../../../docs/framework/wcf/extending/creating-user-defined-bindings.md)
 - [Postupy: Načtení kryptografického otisku certifikátu](../../../../docs/framework/wcf/feature-details/how-to-retrieve-the-thumbprint-of-a-certificate.md)

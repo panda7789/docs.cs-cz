@@ -1,18 +1,18 @@
 ---
-title: 'Postupy: Použití klíčů systémových parametrů'
+title: 'Postupy: Používání klíčů systémových parametrů'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - resource keys [WPF], SystemParameters class
 - classes [WPF], SystemParameters
 ms.assetid: 77571283-d16c-45bb-9f69-cafbbf72b21e
-ms.openlocfilehash: a71551c5d539d7009fb9a052c81928a009fc4c35
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 147f65b4bb214c12317309081c345251d7426cd6
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57357193"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59147328"
 ---
-# <a name="how-to-use-system-parameters-keys"></a>Postupy: Použití klíčů systémových parametrů
+# <a name="how-to-use-system-parameters-keys"></a>Postupy: Používání klíčů systémových parametrů
 Systémové prostředky vystavit řadu systémových metrik jako prostředky, které usnadní vývojářům vytvářet vizuály, které jsou konzistentní s nastavení systému. <xref:System.Windows.SystemParameters> je třída, která obsahuje hodnoty parametrů systému a klíče prostředku, kteří jsou navázáni na hodnoty – například <xref:System.Windows.SystemParameters.FullPrimaryScreenHeight%2A> a <xref:System.Windows.SystemParameters.FullPrimaryScreenHeightKey%2A>. Metriky parametr systému může sloužit jako statickou nebo dynamickou prostředky. Použijte dynamický prostředek, pokud chcete, aby parametr metrika automaticky aktualizovat při aplikaci spustí; Jinak použijte statických prostředků.  
   
 > [!NOTE]
@@ -24,6 +24,7 @@ Systémové prostředky vystavit řadu systémových metrik jako prostředky, kt
  [!code-xaml[SystemRes_snip#ParameterDynamicResources](~/samples/snippets/csharp/VS_Snippets_Wpf/SystemRes_snip/CSharp/MyApp.xaml#parameterdynamicresources)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Vykreslení oblasti systémovým štětcem](../graphics-multimedia/how-to-paint-an-area-with-a-system-brush.md)
 - [Používání třídy SystemFonts](how-to-use-systemfonts.md)
 - [Používání třídy SystemParameters](how-to-use-systemparameters.md)

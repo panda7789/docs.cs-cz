@@ -11,12 +11,12 @@ helpviewer_keywords:
 - converting [WPF], BitmapSource objects to palettized pixel format
 - BitmapSource objects [WPF], converting to palettized pixel format
 ms.assetid: cd9df1e4-d5dc-4f57-b67b-4ec67e086b33
-ms.openlocfilehash: 9d918285cd3b0c133865193897808b7701d66e3d
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: ea042599369da8435198e4206f89f3fa356a80c2
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57356556"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59153280"
 ---
 # <a name="how-to-convert-a-bitmapsource-to-a-different-pixelformat"></a>Postupy: Převod BitmapSource do jiného formátu PixelFormat
 Tento příklad ukazuje, jak převést <xref:System.Windows.Media.Imaging.BitmapSource> objektu (<xref:System.Windows.Media.Imaging.BitmapImage>) na jiný <xref:System.Windows.Media.PixelFormat> pomocí <xref:System.Windows.Media.Imaging.FormatConvertedBitmap>.  
@@ -26,4 +26,5 @@ Tento příklad ukazuje, jak převést <xref:System.Windows.Media.Imaging.Bitmap
  [!code-vb[ImagingSnippetGallery_procedural_snip#PixelFormatConversion](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ImagingSnippetGallery_procedural_snip/VB/PixelFormatsExample.vb#pixelformatconversion)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled obrázků](imaging-overview.md)

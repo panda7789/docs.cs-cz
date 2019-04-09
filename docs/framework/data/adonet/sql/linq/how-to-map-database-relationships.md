@@ -1,18 +1,18 @@
 ---
-title: 'Postupy: Mapování databázových relace'
+title: 'Postupy: Mapování databázových relací'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 538def39-8399-46fb-b02d-60ede4e050af
-ms.openlocfilehash: 907ed58e9828921585135f2319d0db9559b606d3
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 40e376f2c2584490273ec27b78fe5315cbb0315e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54556378"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59152877"
 ---
-# <a name="how-to-map-database-relationships"></a>Postupy: Mapování databázových relace
+# <a name="how-to-map-database-relationships"></a>Postupy: Mapování databázových relací
 Můžete kódovat jako vlastnost odkazuje ve své třídě entity žádné relace mezi daty, které budou vždy stejné. V ukázkové databázi Northwind třeba protože zákazníkům obvykle zadávat objednávky, není vždy relace v modelu mezi zákazníky a jejich objednávky.  
   
  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] definuje <xref:System.Data.Linq.Mapping.AssociationAttribute> atribut nápovědy, představují tyto vztahy. Tento atribut se používá spolu s <xref:System.Data.Linq.EntitySet%601> a <xref:System.Data.Linq.EntityRef%601> typů k vyjádření, co by se vztahu cizího klíče v databázi. Další informace najdete v části atribut přidružení v [založených na atributech mapování](../../../../../../docs/framework/data/adonet/sql/linq/attribute-based-mapping.md).  
@@ -54,5 +54,6 @@ Můžete kódovat jako vlastnost odkazuje ve své třídě entity žádné relac
  [!code-vb[DLinqCustomize#5](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqCustomize/vb/Module1.vb#5)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Postupy: Přizpůsobení tříd entit pomocí editoru kódu](../../../../../../docs/framework/data/adonet/sql/linq/how-to-customize-entity-classes-by-using-the-code-editor.md)
 - [Objektový model LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/the-linq-to-sql-object-model.md)

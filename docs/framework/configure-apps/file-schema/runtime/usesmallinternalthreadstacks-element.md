@@ -1,5 +1,5 @@
 ---
-title: Element <UseSmallInternalThreadStacks>
+title: <UseSmallInternalThreadStacks> Prvek
 ms.date: 03/30/2017
 helpviewer_keywords:
 - UseSmallInternalThreadStacks element
@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 1e3f6ec0-1cac-4e1c-9c81-17d948ae5874
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d78d03956db3f50b4d01f06c9a6438afd62fac5d
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: b9833d768b84faaf6e1dcf8c9cb8b00b92adc3d1
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55289793"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59144820"
 ---
 # <a name="usesmallinternalthreadstacks-element"></a>\<Usesmallinternalthreadstacks – > – Element
 Požadavky, že modul CLR (CLR) snížit velikost paměti, používat tak, že zadáte zásobníku explicitní velikost při vytváření příslušná vlákna, které se používá interně, místo použití výchozí velikost zásobníku pro tato vlákna.  
@@ -38,7 +38,7 @@ Požadavky, že modul CLR (CLR) snížit velikost paměti, používat tak, že z
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |true|Žádost o velikosti explicitní zásobníku.|  
 |false|Použijte výchozí velikost zásobníku. Toto je výchozí nastavení pro [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)].|  
@@ -73,5 +73,6 @@ Požadavky, že modul CLR (CLR) snížit velikost paměti, používat tak, že z
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
 - [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)

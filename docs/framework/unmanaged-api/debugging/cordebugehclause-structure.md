@@ -14,12 +14,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: be5d580c28a15a58cad6c5a2231d3a87e25c0e7a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 839e698c8921f916fad174bae4f4cc8bb4d02994
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54495342"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59157323"
 ---
 # <a name="cordebugehclause-structure"></a>Struktura CorDebugEHClause
 [Podporované v rozhraní .NET Framework 4.5.2 a novějších verzích]  
@@ -59,7 +59,7 @@ typedef struct _CorDebugEHClause {
   
  `flags` Pole může obsahovat následující příznaky. Všimněte si, že nejsou definovány v CorDebug.idl nebo CorDebug.h.  
   
-|Příznak|Hodnota|Popis|  
+|Příznak|Value|Popis|  
 |----------|-----------|-----------------|  
 |`COR_ILEXCEPTION_CLAUSE_EXCEPTION`|0x00000000|Klauzule typovou výjimku.|  
 |`COR_ILEXCEPTION_CLAUSE_FILTER`|0x00000001|Výjimka filtr a obslužné rutiny klauzuli.|  
@@ -76,5 +76,6 @@ typedef struct _CorDebugEHClause {
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v452plus](../../../../includes/net-current-v452plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [GetEHClauses – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugilcode-getehclauses-method.md)
 - [Struktury pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)

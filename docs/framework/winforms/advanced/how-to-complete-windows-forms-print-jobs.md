@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Kompletní Windows Forms tiskové úlohy'
+title: 'Postupy: Dokončení tiskových úloh v modelu Windows Forms'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - print jobs [Windows Forms], completing in Windows Forms
 - printing [Windows Forms], print jobs
 ms.assetid: 23ec74f7-34c5-4710-82a0-ee2914518548
-ms.openlocfilehash: 1ae20e4fdc3a4fc3de8c462c355bcc700eddf22e
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: f8d0f1f067efbae6e2b667328e75996179b91737
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57711730"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59159819"
 ---
-# <a name="how-to-complete-windows-forms-print-jobs"></a>Postupy: Kompletní Windows Forms tiskové úlohy
+# <a name="how-to-complete-windows-forms-print-jobs"></a>Postupy: Dokončení tiskových úloh v modelu Windows Forms
 Často textových editorů a další aplikace, které se týkají tisku bude poskytovat možnost pro zobrazení zprávy pro uživatele, tisková úloha je dokončena. Tuto funkci můžete zadat do svých formulářů Windows pomocí manipulace <xref:System.Drawing.Printing.PrintDocument.EndPrint> událost <xref:System.Drawing.Printing.PrintDocument> komponenty.  
   
  Následující postup vyžaduje, že jste vytvořili aplikaci založené na Windows s <xref:System.Drawing.Printing.PrintDocument> komponentu v něm, což je standardní způsob povolení tisku z aplikací se systémem Windows. Další informace o tisk pomocí Windows Forms <xref:System.Drawing.Printing.PrintDocument> komponenty, naleznete v tématu [jak: Vytvoření tiskových úloh standardní Windows Forms](how-to-create-standard-windows-forms-print-jobs.md).  
@@ -81,5 +81,6 @@ ms.locfileid: "57711730"
     ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Drawing.Printing.PrintDocument>
-- [Podpora tisku v modelu Windows Forms](windows-forms-print-support.md)
+- [Podpora tisku ve Windows Forms](windows-forms-print-support.md)

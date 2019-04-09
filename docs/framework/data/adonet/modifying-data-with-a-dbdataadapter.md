@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: e35c7f9e-648b-4fcc-9361-d365c3e42c9a
-ms.openlocfilehash: 3bd4cbeffcf320d6415b3a3d4aa907280d71a598
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 3038e35947cd8f97266d374a367a77380df440dd
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54725178"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59158870"
 ---
 # <a name="modifying-data-with-a-dbdataadapter"></a>Úpravy dat přes DbDataAdapter
 <xref:System.Data.Common.DbProviderFactory.CreateDataAdapter%2A> Metodu <xref:System.Data.Common.DbProviderFactory> objekt získáte <xref:System.Data.Common.DbDataAdapter> objekt, který je silně typováno do podkladového zprostředkovatele dat zadané v době vytváření továrny. Pak můžete použít <xref:System.Data.Common.DbCommandBuilder> vytvořit příkazy pro vložení, aktualizace a odstranění dat z <xref:System.Data.DataSet> ke zdroji dat.  
@@ -43,6 +43,7 @@ ms.locfileid: "54725178"
 >  Jak se vyhnout parametry specifické pro zprostředkovatele úplně pomocí zřetězení řetězců k sestavení kompletních přímých příkazů jazyka SQL se nedoporučuje z bezpečnostních důvodů. Pomocí zřetězení řetězců místo parametry opustí vaši aplikaci ohrožen útoky prostřednictvím injektáže SQL.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [DbProviderFactories](../../../../docs/framework/data/adonet/dbproviderfactories.md)
 - [Získání DbProviderFactory](../../../../docs/framework/data/adonet/obtaining-a-dbproviderfactory.md)
 - [DbConnection, DbCommand a DbException](../../../../docs/framework/data/adonet/dbconnection-dbcommand-and-dbexception.md)

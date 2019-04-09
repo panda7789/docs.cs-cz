@@ -17,12 +17,12 @@ helpviewer_keywords:
 ms.assetid: d1898229-cd40-426e-a275-f3eb65fbc79f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 043fe74f66635c30f12555efb9ccc9415e200ec3
-ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
+ms.openlocfilehash: 4104ddba1942f9cb9bd860d53dc54968de5af891
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56835236"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59151265"
 ---
 # <a name="importing-a-type-library-as-an-assembly"></a>Import knihovny typů ve formě sestavení
 Definice typů modelu COM jsou obvykle umístěny v knihovně typů. Naproti tomu kompatibilní se Specifikací CLS kompilátory vytvářejí metadat typu v sestavení. Dva zdroje informací o typu se značně liší. Toto téma popisuje postupy pro generování metadat z knihovny typů. Výsledné sestavení se nazývá definiční sestavení a, které obsahuje informace o typu umožňuje používat typy modelu COM aplikacemi rozhraní .NET Framework.  
@@ -50,7 +50,7 @@ Definice typů modelu COM jsou obvykle umístěny v knihovně typů. Naproti tom
   
      Type Library Importer nabízí možnosti příkazového řádku, chcete-li upravit metadata ve výsledném souboru spolupráce, importuje typy z existující knihovnu typů a vygeneruje definiční sestavení a oboru názvů. Pokyny najdete v tématu [jak: Generování sestavení vzájemné spolupráce z knihoven typů](../../../docs/framework/interop/how-to-generate-interop-assemblies-from-type-libraries.md).  
   
--   <xref:System.Runtime.InteropServices.TypeLibConverter?displayProperty=nameWithType> Třída  
+-   <xref:System.Runtime.InteropServices.TypeLibConverter?displayProperty=nameWithType> třída  
   
      Tato třída poskytuje metody pro převod třídy typu coclass a rozhraní v knihovně typů na metadata v rámci sestavení. Vytvoří stejný výstup metadat jako Tlbimp.exe. Ale na rozdíl od Tlbimp.exe <xref:System.Runtime.InteropServices.TypeLibConverter> třídy lze převést knihovnu typů v paměti k metadatům.  
   
@@ -71,13 +71,14 @@ Definice typů modelu COM jsou obvykle umístěny v knihovně typů. Naproti tom
  Další informace o importu vzájemné spolupráce COM, naleznete v tématu [sestavení souhrn převodu knihovny typů na](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/k83zzh38(v=vs.100)).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Runtime.InteropServices.TypeLibConverter>
 - [Vystavení komponent COM pro rozhraní .NET Framework](../../../docs/framework/interop/exposing-com-components.md)
-- [Souhrn převodu sestavení knihovny typů na](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/k83zzh38(v=vs.100))
+- [Souhrn převodu knihovny typů na sestavení](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/k83zzh38(v=vs.100))
 - [Tlbimp.exe (importér knihovny typů)](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md)
 - [Přizpůsobení standardních obálek](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/h7hx9abd(v=vs.100))
 - [Používání typů modelu COM ve spravovaném kódu](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/3y76b69k(v=vs.100))
 - [Kompilace projektu interoperability](../../../docs/framework/interop/compiling-an-interop-project.md)
 - [Nasazení aplikace spolupráce](../../../docs/framework/interop/deploying-an-interop-application.md)
-- [Postupy: Přidání odkazů do knihoven typů](../../../docs/framework/interop/how-to-add-references-to-type-libraries.md)
+- [Postupy: Přidávání odkazů do knihoven typů](../../../docs/framework/interop/how-to-add-references-to-type-libraries.md)
 - [Postupy: Generování sestavení vzájemné spolupráce z knihoven typů](../../../docs/framework/interop/how-to-generate-interop-assemblies-from-type-libraries.md)

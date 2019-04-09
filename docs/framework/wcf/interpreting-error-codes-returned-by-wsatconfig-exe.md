@@ -2,12 +2,12 @@
 title: Interpretace kódů chyb vrácených nástrojem wsatConfig.exe
 ms.date: 03/30/2017
 ms.assetid: ab65f22b-0d69-4c21-9aaf-74acef0ca102
-ms.openlocfilehash: 70a917446415794f8d500818bdeff5b945834598
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 47db39f2b350c2fa8c655a041ec0239e5d297644
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54510023"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59151629"
 ---
 # <a name="interpreting-error-codes-returned-by-wsatconfigexe"></a>Interpretace kódů chyb vrácených nástrojem wsatConfig.exe
 Toto téma obsahuje seznam všech kódů chyb generovaných WS-AtomicTransaction Configuration Utility (wsatConfig.exe) a doporučené akce, jež mají být provedeny.  
@@ -16,7 +16,7 @@ Toto téma obsahuje seznam všech kódů chyb generovaných WS-AtomicTransaction
   
 |Kód chyby|Popis|Provést doporučenou akci|  
 |----------------|-----------------|------------------------------------|  
-|0|Operace byla úspěšná|Žádná|  
+|0|Operace byla úspěšná|Žádné|  
 |1|Došlo k neočekávané chybě|Kontaktujte Microsoft|  
 |2|Při pokusu o kontaktování služby MSDTC k načtení nastavení zabezpečení došlo k neočekávané chybě.|Ujistěte se, že není zakázaná služba MSDTC a vyřešit všechny problémy uvedené ve vrácené výjimce.|  
 |3|Účet, pod kterým byl spuštěn WsatConfig.exe nemá dostatečná oprávnění ke čtení nastavení zabezpečení sítě.|Spusťte WsatConfig.exe uživatelského účtu správce.|  
@@ -68,4 +68,5 @@ Toto téma obsahuje seznam všech kódů chyb generovaných WS-AtomicTransaction
 |56|Při pokusu o spuštění relace trasování událostí pro Windows trasování došlo k neočekávané chybě.|Získáte od Microsoftu.|  
   
 ## <a name="see-also"></a>Viz také:
-- [Nástroj pro konfiguraci WS-AtomicTransaction (wsatConfig.exe)](../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md)
+
+- [Nástroj WS-AtomicTransaction Configuration Utility (wsatConfig.exe)](../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md)

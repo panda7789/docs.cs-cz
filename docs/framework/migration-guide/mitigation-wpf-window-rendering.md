@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 28ed6bf8-141b-4b73-a4e3-44a99fae5084
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 71e1829716e0a9d5fc63692ca84c8bfefe4cefef
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d54751ae0492e25f824eee6362e0f3bca446d75e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54663463"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59147625"
 ---
 # <a name="mitigation-wpf-window-rendering"></a>Omezení rizik: Vykreslování oken ve WPF
 V [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] běžící na Windows 8 a novějším, celé okno je vykreslen bez oříznutí, pokud přesahuje hranice jedné zobrazovaný v případě více monitorů.  
@@ -39,4 +39,5 @@ V [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] běžící na Windows 8 a
 -   Tím, že nastavíte <xref:System.Windows.CoreCompatibilityPreferences.EnableMultiMonitorDisplayClipping%2A> vlastnost `true` při spuštění aplikace.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Změny v modulu runtime](../../../docs/framework/migration-guide/runtime-changes-in-the-net-framework-4-6.md)

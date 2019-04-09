@@ -4,12 +4,12 @@ description: Podporované verze macOS a .NET Core závislosti pro vývoj, nasazo
 author: guardrex
 ms.author: adegeo
 ms.date: 12/14/2018
-ms.openlocfilehash: e895306164b93cb94dab2161971f99eae3138be9
-ms.sourcegitcommit: 90775b20343b6ad831af6f5380f8ab7553abb16b
-ms.translationtype: MT
+ms.openlocfilehash: 937c9b88bb60fa22942cf9db0c41bec3f1cfecd5
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54186173"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59139448"
 ---
 # <a name="prerequisites-for-net-core-on-macos"></a>Předpoklady pro .NET Core v macOS
 
@@ -17,7 +17,7 @@ Tento článek popisuje podporované macOS verze a závislosti .NET Core, které
 
 ## <a name="supported-macos-versions"></a>Podporované macOS verze
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET core 2.x](#tab/netcore2x)
+# [<a name="net-core-2x"></a>.NET Core 2.x](#tab/netcore2x)
 
 .NET core 2.x je podporována v následujících verzích systému macOS:
 
@@ -27,8 +27,7 @@ Zobrazit [podporované verze operačního systému .NET Core 2.1](https://github
 
 Odkazy ke stažení a další informace najdete v tématu [soubory ke stažení rozhraní .NET Core 2.2](https://www.microsoft.com/net/download/dotnet-core/2.2) nebo [soubory ke stažení rozhraní .NET Core 2.1](https://www.microsoft.com/net/download/dotnet-core/2.1).
 
-
-# <a name="net-core-1xtabnetcore1x"></a>[.NET core 1.x](#tab/netcore1x)
+# [<a name="net-core-1x"></a>.NET Core 1.x](#tab/netcore1x)
 
 .NET core 1.x podporuje následující verze systému macOS:
 
@@ -39,7 +38,7 @@ Zobrazit [podporované verze operačního systému .NET Core 1.1](https://github
 
 Odkazy ke stažení a další informace najdete v tématu [soubory ke stažení rozhraní .NET Core 1.1](https://www.microsoft.com/net/download/dotnet-core/1.1) nebo [.NET Core 1.0 stáhne](https://www.microsoft.com/net/download/dotnet-core/1.0).
 
-# <a name="net-core-30-preview-1tabnetcore30"></a>[.NET core 3.0 ve verzi Preview 1](#tab/netcore30)
+# [<a name="net-core-30-preview-1"></a>.NET core 3.0 ve verzi Preview 1](#tab/netcore30)
 
 .NET core 3.0 ve verzi Preview 1 se podporuje v následujících verzích systému macOS:
 
@@ -53,11 +52,11 @@ Odkazy ke stažení a další informace najdete v tématu [soubory ke stažení 
 
 ## <a name="net-core-dependencies"></a>.NET core závislosti
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET core 2.x](#tab/netcore2x)
+# [<a name="net-core-2x"></a>.NET Core 2.x](#tab/netcore2x)
 
 Stáhněte a nainstalujte .NET Core SDK z [.NET stáhne](https://www.microsoft.com/net/download/core). Pokud máte problémy při instalaci v systému macOS, projděte si [známé problémy](https://github.com/dotnet/core/tree/master/release-notes/2.1) tématu pro nainstalovanou verzi.
 
-# <a name="net-core-1xtabnetcore1x"></a>[.NET core 1.x](#tab/netcore1x)
+# [<a name="net-core-1x"></a>.NET Core 1.x](#tab/netcore1x)
 
 .NET core 1.x vyžaduje OpenSSL při spouštění v systému macOS. Snadný způsob, jak získat OpenSSL je použít [Homebrew ("brew")](https://brew.sh/) Správce balíčků pro macOS. Po instalaci *brew*, nainstalovat OpenSSL, spuštěním následujících příkazů v terminálu (příkaz) řádku:
 
@@ -71,7 +70,7 @@ ln -s /usr/local/opt/openssl/lib/libssl.1.0.0.dylib /usr/local/lib/
 
 Stáhněte a nainstalujte .NET Core SDK z [.NET stáhne](https://www.microsoft.com/net/download/core). Pokud máte problémy při instalaci v systému macOS, projděte si [1.0.0 známé problémy v sadě](https://github.com/dotnet/core/blob/master/release-notes/1.0/1.0.0-known-issues.md) a [1.0.1 známé problémy v sadě](https://github.com/dotnet/core/blob/master/release-notes/1.0/1.0.1-known-issues.md) témata.
 
-# <a name="net-core-30-preview-1tabnetcore30"></a>[.NET core 3.0 ve verzi Preview 1](#tab/netcore30)
+# [<a name="net-core-30-preview-1"></a>.NET core 3.0 ve verzi Preview 1](#tab/netcore30)
 
 Stáhněte a nainstalujte .NET Core SDK z [.NET stáhne](https://www.microsoft.com/net/download/core). Pokud máte problémy při instalaci v systému macOS, projděte si [poznámky k verzi](https://github.com/dotnet/core/blob/master/release-notes/3.0/3.0-supported-os.md) tématu pro nainstalovanou verzi.
 

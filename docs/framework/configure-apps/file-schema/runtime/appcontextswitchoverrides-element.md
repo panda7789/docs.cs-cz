@@ -1,5 +1,5 @@
 ---
-title: Element <AppContextSwitchOverrides>
+title: <AppContextSwitchOverrides> Prvek
 ms.custom: updateeachrelease
 ms.date: 03/07/2019
 helpviewer_keywords:
@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 4ce07f47-7ddb-4d91-b067-501bd8b88752
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a8593dbc8a419048950a852a02057f40f80d992a
-ms.sourcegitcommit: 5c1abeec15fbddcc7dbaa729fabc1f1f29f12045
+ms.openlocfilehash: 1bc4cd94d3acd37244e1d5b882612e4b1da91b90
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58024566"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59136458"
 ---
 # <a name="appcontextswitchoverrides-element"></a>\<AppContextSwitchOverrides> Element
 Definuje jeden nebo více přepínačů používané <xref:System.AppContext> třídě poskytnout mechanismus výslovného nesouhlasu pro nové funkce.  
@@ -41,7 +41,7 @@ Definuje jeden nebo více přepínačů používané <xref:System.AppContext> t�
   
 ### <a name="value-attribute"></a>Hodnota atributu  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |"název = hodnota"|Název předdefinované přepínače spolu s hodnotou (`true` nebo `false`). Více dvojice název/hodnota přepínače jsou odděleny středníky (";"). Seznam názvů předdefinované přepínač podporuje rozhraní .NET Framework naleznete v části poznámky.|  
   
@@ -175,6 +175,7 @@ V následujícím příkladu `<add>` prvek a přidat dvě nastavení `<appSettin
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.AppContext?displayProperty=nameWithType>
 - [\<modul runtime > – Element](runtime-element.md)
 - [\<Konfigurace > – Element](../configuration-element.md)

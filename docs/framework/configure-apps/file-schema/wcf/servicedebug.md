@@ -2,12 +2,12 @@
 title: <serviceDebug>
 ms.date: 03/30/2017
 ms.assetid: 6d7ea986-f232-49fe-842c-f934d9966889
-ms.openlocfilehash: 1ab7058d8667344197e8bc1ddc59cc7200f22270
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 7b7526dbcbd1948d3d8a27d146efd0462fefaca5
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55268558"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59142841"
 ---
 # <a name="servicedebug"></a>\<serviceDebug>
 Určuje funkce informace nápovědy a ladění pro službu Windows Communication Foundation (WCF).  
@@ -56,7 +56,7 @@ Určuje funkce informace nápovědy a ladění pro službu Windows Communication
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<behavior>](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|Určuje chování element.|  
+|[\<chování >](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|Určuje chování element.|  
   
 ## <a name="remarks"></a>Poznámky  
  Nastavení `includeExceptionDetailInFaults` k `true` umožňuje vrátit jakoukoliv výjimku, která je vyvolána kódem aplikace, i v případě, že výjimka není deklarován pomocí služby <xref:System.ServiceModel.FaultContractAttribute>. Toto nastavení je užitečné při ladění v případech, kde je serveru vyvolání neočekávané výjimky. Pomocí tohoto atributu je vrácena serializovanou formu neznámá výjimka a můžete prozkoumat další podrobnosti o výjimce.  
@@ -71,8 +71,9 @@ Určuje funkce informace nápovědy a ladění pro službu Windows Communication
  Volitelný `httpHelpPageBinding` a `httpHelpPageBinding` atributy umožňují konfigurovat vazby používá pro přístup k webové stránce služby. Pokud zadané není, výchozí vazby (`HttpTransportBindingElement`, v případě protokolu HTTP a `HttpsTransportBindingElement`, v případě protokolu HTTPS) se používají pro přístup k stránce nápovědy služby podle potřeby. Všimněte si, že tyto atributy nelze použít s integrovanou vazeb WCF. Pouze vazby s vnitřní elementy vazby, které podporují xref:System.ServiceModel.Channels.IReplyChannel > bude podporovat. Kromě toho <xref:System.ServiceModel.Channels.MessageVersion?displayProperty=nameWithType> musí být vlastnost vazby <xref:System.ServiceModel.Channels.MessageVersion.None?displayProperty=nameWithType>.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Configuration.ServiceDebugElement>
 - <xref:System.ServiceModel.Description.ServiceDebugBehavior>
 - [Určování a zpracování chyb v kontraktech a službách](../../../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md)
 - [Zpracování výjimek a chyb](../../../../../docs/framework/wcf/extending/handling-exceptions-and-faults.md)
-- [Chování při ladění služby](../../../../../docs/framework/wcf/samples/service-debug-behavior.md)
+- [Chování ladění služby](../../../../../docs/framework/wcf/samples/service-debug-behavior.md)

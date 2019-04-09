@@ -10,12 +10,12 @@ helpviewer_keywords:
 - pens [Windows Forms], creating
 - Pen object
 ms.assetid: 7fbea8b7-7ac1-4413-9c17-733a850381e3
-ms.openlocfilehash: 3d88824845bf357dd9ee5f1ee8fd02f095aee605
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 69fe6157c710ae63df9dbf391a5d355d1c3f9765
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57716917"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59148106"
 ---
 # <a name="how-to-create-a-pen"></a>Postupy: Vytvoření pera
 Tento příklad vytvoří <xref:System.Drawing.Pen> objektu.  
@@ -29,6 +29,7 @@ Tento příklad vytvoří <xref:System.Drawing.Pen> objektu.
  Po dokončení používání objektů, které využívají systémové prostředky, jako například <xref:System.Drawing.Pen> objektů, měli byste zavolat <xref:System.Drawing.Pen.Dispose%2A> na ně.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Drawing.Pen>
 - [Začínáme s programováním grafiky](getting-started-with-graphics-programming.md)
 - [Pera, čáry a obdélníky v GDI+](pens-lines-and-rectangles-in-gdi.md)

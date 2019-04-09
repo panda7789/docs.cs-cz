@@ -2,12 +2,12 @@
 title: Důležité informace o zabezpečení pro zabezpečené relace
 ms.date: 03/30/2017
 ms.assetid: 0d5be591-9a7b-4a6f-a906-95d3abafe8db
-ms.openlocfilehash: 85b0f95606e1ca3d52d8c79dbe0042c51ce3f36e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d2244ba42b1cf95f77424d32a19ebe11dd3a2a45
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54735792"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59148704"
 ---
 # <a name="security-considerations-for-secure-sessions"></a>Důležité informace o zabezpečení pro zabezpečené relace
 Měli byste zvážit následující položky, které mají vliv na zabezpečení při provádění zabezpečených relací. Další informace o aspektech týkajících se zabezpečení najdete v tématu [aspekty zabezpečení](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md) a [osvědčené postupy pro zabezpečení](../../../../docs/framework/wcf/feature-details/best-practices-for-security-in-wcf.md).  
@@ -21,6 +21,7 @@ Měli byste zvážit následující položky, které mají vliv na zabezpečení
  To znamená, že pokud chcete vlastní token nelze odvodit, měly sbalit její typ klauzuli v `SecurityTokenReference` elementu. Možnost vypnout odvození, ale výchozí hodnota je pro odvození klíče. Pokud převezmete služby při zabalení klíče, serializaci token odvozeného klíče proběhne úspěšně, ale pokus o deserializaci ji vyvolá výjimku.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Postupy: Zakázání zabezpečených relací u třídy WSFederationHttpBinding](../../../../docs/framework/wcf/feature-details/how-to-disable-secure-sessions-on-a-wsfederationhttpbinding.md)
 - [Důležité informace o zabezpečení](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)
 - [Osvědčené postupy pro zabezpečení](../../../../docs/framework/wcf/feature-details/best-practices-for-security-in-wcf.md)

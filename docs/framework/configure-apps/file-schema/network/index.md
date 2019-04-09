@@ -12,12 +12,12 @@ helpviewer_keywords:
 - connections [.NET Framework], network configuration elements
 - network resources, network configuration elements
 ms.assetid: f1de5a0f-76c5-4833-819f-5222b8146340
-ms.openlocfilehash: 3752a7a42cb8fb5831858c9239f97a6801b64fe5
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 71d945e6046a8648a812de939f197429bc695808
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54583347"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59148288"
 ---
 # <a name="network-settings-schema"></a>Schéma nastavení sítě
 Nastavení sítě určete, jak rozhraní .NET Framework připojí k Internetu. Následující tabulka popisuje funkce každý podřízený element konfigurace v rámci [ \<system.Net > – Element (nastavení sítě)](../../../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md).  
@@ -40,5 +40,6 @@ Nastavení sítě určete, jak rozhraní .NET Framework připojí k Internetu. N
 |[\<schemeSettings > – Element (nastavení Uri)](../../../../../docs/framework/configure-apps/file-schema/network/schemesettings-element-uri-settings.md)|Určuje, jak <xref:System.Uri> pro konkrétní schémata, bude analyzována.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Konfigurace internetových aplikací](../../../../../docs/framework/network-programming/configuring-internet-applications.md)
 - [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)

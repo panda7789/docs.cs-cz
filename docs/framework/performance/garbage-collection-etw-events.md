@@ -1,5 +1,5 @@
 ---
-title: Události Trasování událostí pro Windows kolekci paměti
+title: Události Trasování událostí pro Windows uvolnění paměti
 ms.date: 03/30/2017
 helpviewer_keywords:
 - GC events
@@ -8,14 +8,14 @@ helpviewer_keywords:
 ms.assetid: f14b6fd7-0966-4d87-bc89-54ef3a44a94a
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 95762cbda4a1a251dd64fd33b2815d474f1fe2b9
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 7f9bf0e309ec8c77d4b1d6afbf111e7eeae629ac
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54685214"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59149731"
 ---
-# <a name="garbage-collection-etw-events"></a>Události Trasování událostí pro Windows kolekci paměti
+# <a name="garbage-collection-etw-events"></a>Události Trasování událostí pro Windows uvolnění paměti
 <a name="top"></a> Tyto události shromažďovat informace týkající se uvolňování paměti. Pomáhají v Diagnostika a ladění, včetně určení, kolikrát uvolňování paměti byla provedena, kolik paměti byl uvolněn při uvolňování paměti a tak dále.  
   
  Tato kategorie se skládá z následujících událostí:  
@@ -46,7 +46,7 @@ ms.locfileid: "54685214"
   
 -   [GCCreateConcurrentThread_V1 Event](#gccreateconcurrentthread_v1_event)  
   
--   [GCTerminateConcurrentThread_V1 Event](#gcterminateconcurrentthread_v1_event)  
+-   [GCTerminateConcurrentThread_V1 události](#gcterminateconcurrentthread_v1_event)  
   
 <a name="gcstart_v1_event"></a>   
 ## <a name="gcstartv1-event"></a>GCStart_V1 Event  
@@ -69,7 +69,7 @@ ms.locfileid: "54685214"
 |Počet|win:UInt32|*n*th uvolňování paměti.|  
 |Hloubka|win:UInt32|Generování, jež jsou shromažďována.|  
 |Důvod|win:UInt32|Proč byla aktivována. uvolnění:<br /><br /> 0x0 - přidělení haldy malých objektů.<br /><br /> 0x1 - vyvolaných.<br /><br /> 0x2 - nedostatek paměti.<br /><br /> 0x3 - prázdný.<br /><br /> 0x4 - přidělení haldy velkých objektů.<br /><br /> 0x5 - nedostatek místa (pro haldu malých objektů).<br /><br /> 0x6 - nedostatek místa (pro haldu velkých objektů).<br /><br /> 0x7 - vyvolané, ale nejsou vynucené jako blokování.|  
-|Typ|win:UInt32|0x0 - mimo uvolňování paměti na pozadí došlo k blokování uvolnění paměti.<br /><br /> 0x1 – uvolňování paměti na pozadí.<br /><br /> 0x2 - blokující uvolňování paměti došlo k chybě během uvolňování paměti na pozadí.|  
+|Type|win:UInt32|0x0 - mimo uvolňování paměti na pozadí došlo k blokování uvolnění paměti.<br /><br /> 0x1 – uvolňování paměti na pozadí.<br /><br /> 0x2 - blokující uvolňování paměti došlo k chybě během uvolňování paměti na pozadí.|  
 |ClrInstanceID|win:UInt16|Jedinečné ID instance CLR nebo CoreCLR.|  
   
  [Zpět na začátek](#top)  
@@ -153,7 +153,7 @@ ms.locfileid: "54685214"
 |----------------|---------------|-----------------|  
 |Adresa|win:UInt64|Adresa segmentu.|  
 |Velikost|win:UInt64|Velikost segmentu.|  
-|Typ|win:UInt32|0x0 - haldy malých objektů.<br /><br /> 0x1 - velkých objektových haldách.<br /><br /> 0x2 - haldy jen pro čtení.|  
+|Type|win:UInt32|0x0 - haldy malých objektů.<br /><br /> 0x1 - velkých objektových haldách.<br /><br /> 0x2 - haldy jen pro čtení.|  
 |ClrInstanceID|win:UInt16|Jedinečné ID instance CLR nebo CoreCLR.|  
   
  Mějte na paměti, že velikost segmentů přidělaná systému uvolňování paměti je specifický pro implementaci a může se změnit kdykoli, včetně v pravidelné aktualizace. Vaše aplikace by nikdy vytvořit předpoklady o nebo závisí na velikosti konkrétního segmentu, ani snažit konfigurace množství paměti k přidělení segmentu.  
@@ -367,4 +367,5 @@ ms.locfileid: "54685214"
  Žádná data.  
   
 ## <a name="see-also"></a>Viz také:
-- [Události Trasování událostí pro Windows v CLR](../../../docs/framework/performance/clr-etw-events.md)
+
+- [Události ETW CLR](../../../docs/framework/performance/clr-etw-events.md)

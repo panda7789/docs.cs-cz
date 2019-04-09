@@ -9,12 +9,12 @@ helpviewer_keywords:
 - toolbars [Windows Forms]
 - what's new [Windows Forms], toolbars
 ms.assetid: 81d067ed-297c-4dad-90de-1bcac15336ec
-ms.openlocfilehash: c701ed6ff155ca507f827874a955b2361a3b2359
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 3e532b040d3c7859220b7f73958b63e7208b988c
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57719375"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59144570"
 ---
 # <a name="toolstrip-control-overview-windows-forms"></a>ToolStrip – přehled ovládacího prvku (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.ToolStrip> ovládacího prvku a jeho přidružené třídy poskytují běžné rámec pro kombinování prvky uživatelského rozhraní na panely nástrojů, stavovém řádku a nabídky. <xref:System.Windows.Forms.ToolStrip> ovládací prvky nabízejí celou řadu možností návrhu, který zahrnuje aktivace na místě a úpravy, vlastní rozložení a rafting, což je schopnost panely nástrojů sdílet místa na vodorovný nebo svislý.  
@@ -46,7 +46,7 @@ Windows Forms <xref:System.Windows.Forms.ToolStrip> ovládacího prvku a jeho p�
   
 ### <a name="important-toolstrip-members"></a>Ovládací prvek ToolStrip důležité členy  
   
-|Název|Popis|  
+|Name|Popis|  
 |----------|-----------------|  
 |<xref:System.Windows.Forms.ToolStrip.Dock%2A>|Získá nebo nastaví které okrajem nadřazeného kontejneru <xref:System.Windows.Forms.ToolStrip> ukotven.|  
 |<xref:System.Windows.Forms.ToolStrip.AllowItemReorder%2A>|Získá nebo nastaví hodnotu určující, zda jsou soukromě podle zpracovány přetahování myší a také přeuspořádání položek <xref:System.Windows.Forms.ToolStrip> třídy.|  
@@ -62,7 +62,7 @@ Windows Forms <xref:System.Windows.Forms.ToolStrip> ovládacího prvku a jeho p�
   
 ### <a name="important-toolstrip-companion-classes"></a>Třídy důležitého pomocníka ovládací prvek ToolStrip  
   
-|Název|Popis|  
+|Name|Popis|  
 |----------|-----------------|  
 |<xref:System.Windows.Forms.MenuStrip>|Nahradí a přidá funkce, které <xref:System.Windows.Forms.MainMenu> třídy.|  
 |<xref:System.Windows.Forms.StatusStrip>|Nahradí a přidá funkce, které <xref:System.Windows.Forms.StatusBar> třídy.|  
@@ -80,6 +80,7 @@ Windows Forms <xref:System.Windows.Forms.ToolStrip> ovládacího prvku a jeho p�
  Další informace najdete v tématu [souhrn technologie ToolStrip](toolstrip-technology-summary.md) a [architektura ovládacího prvku ToolStrip](toolstrip-control-architecture.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.ToolStrip>
 - <xref:System.Windows.Forms.MenuStrip>
 - <xref:System.Windows.Forms.ContextMenuStrip>

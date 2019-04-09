@@ -2,12 +2,12 @@
 title: Použití zosobnění se zabezpečením přenosu
 ms.date: 03/30/2017
 ms.assetid: 426df8cb-6337-4262-b2c0-b96c2edf21a9
-ms.openlocfilehash: 803edee3e051c40a65ad63db620c65bcdbdcae50
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 6209007b60effe5403caf3db8855f029d0c47a0e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54532705"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59151434"
 ---
 # <a name="using-impersonation-with-transport-security"></a>Použití zosobnění se zabezpečením přenosu
 *Zosobnění* je schopnost serveru aplikace, abyste mohli na identity klienta. Je běžné, že služby pro použití zosobnění při ověření přístupu k prostředkům. Serverová aplikace běží, pomocí účtu služby, ale pokud server přijme připojení klienta, klient zosobní tak, aby kontroly přístupu se provádí pomocí přihlašovacích údajů klienta. Zabezpečení přenosu sítí je mechanismus pro předávání přihlašovacích údajů a zabezpečení komunikace pomocí těchto přihlašovacích údajů. Toto téma popisuje pomocí zabezpečení přenosu pomocí zosobnění funkce ve Windows Communication Foundation (WCF). Další informace o zosobnění pomocí zabezpečení zpráv, najdete v části [delegace a zosobnění](../../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md).  
@@ -17,7 +17,7 @@ ms.locfileid: "54532705"
   
 |Úroveň zosobnění|Popis|  
 |-------------------------|-----------------|  
-|Žádná|Serverová aplikace nebude pokoušet o zosobnit klienta.|  
+|Žádné|Serverová aplikace nebude pokoušet o zosobnit klienta.|  
 |Anonymní|Serverová aplikace může provádět kontroly přístupu na pověření klienta, ale nepřijímá žádné informace o identitu klienta. Tato úroveň zosobnění má smysl pouze pro komunikaci na počítači, jako jsou pojmenované kanály. Pomocí `Anonymous` pomocí připojení vzdálené povýší úroveň zosobnění k identifikovat.|  
 |Identifikace|Serverová aplikace zná identitu klienta a můžete provádět ověření přístupu na základě přihlašovacích údajů klienta, ale nelze zosobnit klienta. Identifikujte je výchozí úroveň zosobnění použít s přihlašovacími údaji SSPI ve službě WCF, pokud poskytovatel tokenu poskytuje úroveň zosobnění jiný.|  
 |Impersonate|Serverová aplikace může přistupovat k prostředkům počítače serveru jako klienta kromě provádění kontroly přístupu. Serverová aplikace nemá přístup k prostředkům na vzdálených počítačích pomocí identity klienta, protože zosobněného token nemá žádné přihlašovací údaje k síti|  
@@ -55,6 +55,7 @@ ms.locfileid: "54532705"
  Další informace o přenos pomocí protokolu HTTP, naleznete v tématu [volba přenosu](../../../../docs/framework/wcf/feature-details/choosing-a-transport.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Delegace a zosobnění](../../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md)
 - [Autorizace](../../../../docs/framework/wcf/feature-details/authorization-in-wcf.md)
 - [Postupy: Zosobnění klienta ve službě](../../../../docs/framework/wcf/how-to-impersonate-a-client-on-a-service.md)

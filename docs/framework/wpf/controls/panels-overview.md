@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Panel control [WPF], about Panel control
 - controls [WPF], Panel
 ms.assetid: f73644af-9941-4611-8754-6d4cef03fc44
-ms.openlocfilehash: 2648296d01f0e237847fc16535b01dbd8e9c5b62
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 946e0f5ee90235498b8089732ae526ab6f35665c
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57377127"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59157869"
 ---
 # <a name="panels-overview"></a>Přehled panelů
 <xref:System.Windows.Controls.Panel> prvky jsou komponenty, které řídí vykreslování elementů, jejich velikost a rozměry, jejich pozice a uspořádání jejich podřízený obsah. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] Poskytuje řadu předdefinovaných <xref:System.Windows.Controls.Panel> elementy jakož i možnost vytvořit vlastní <xref:System.Windows.Controls.Panel> elementy.  
@@ -81,7 +81,7 @@ ms.locfileid: "57377127"
   
  Každý odvozené <xref:System.Windows.Controls.Panel> element zpracovává omezení velikosti odlišně. Vysvětlení jak <xref:System.Windows.Controls.Panel> omezení obslužné rutiny ve vodorovném nebo svislém směru mohli rozložení předvídatelnější.  
   
-|**Název panelu**|**x-Dimension**|**Dimenze y**|  
+|**Název panelu**|**x dimenze**|**Dimenze y**|  
 |--------------------|----------------------|----------------------|  
 |<xref:System.Windows.Controls.Canvas>|Omezené na obsah|Omezené na obsah|  
 |<xref:System.Windows.Controls.DockPanel>|Omezené|Omezené|  
@@ -253,12 +253,13 @@ ms.locfileid: "57377127"
  Další informace o vytváření [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikací s lokalizovatelné [!INCLUDE[TLA#tla_ui#plural](../../../../includes/tlasharptla-uisharpplural-md.md)]s, najdete v článku [přehled automatického rozložení pomocí](../advanced/use-automatic-layout-overview.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Návod: Moje první desktopová aplikace WPF](../getting-started/walkthrough-my-first-wpf-desktop-application.md)
 - [Ukázky WPF rozložení galerie](https://go.microsoft.com/fwlink/?LinkID=160054)
 - [Rozložení](../advanced/layout.md)
 - [Ukázková galerie ovládacích prvků WPF](https://go.microsoft.com/fwlink/?LinkID=160053)
 - [Přehled zarovnání, okrajů a odsazení](../advanced/alignment-margins-and-padding-overview.md)
 - [Vytvoření vlastního panelu ukázky zabalení obsahu](https://go.microsoft.com/fwlink/?LinkID=159979)
-- [Přehled přidružených vlastností](../advanced/attached-properties-overview.md)
+- [Přehled připojených vlastností](../advanced/attached-properties-overview.md)
 - [Přehled automatického rozložení](../advanced/use-automatic-layout-overview.md)
 - [Rozložení a návrh](../advanced/optimizing-performance-layout-and-design.md)

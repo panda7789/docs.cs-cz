@@ -13,12 +13,12 @@ helpviewer_keywords:
 - decoding image formats [WPF]
 - encoding WDP images [WPF]
 ms.assetid: 911777d1-516b-49db-a87b-b54e31b18532
-ms.openlocfilehash: a9a65c0505b5fd6ad4aac31108a01d5f83f8fe91
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: b143106092235b42044d264189c135d2cd65426c
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57356920"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59153358"
 ---
 # <a name="how-to-encode-and-decode-a-wdp-image"></a>Postupy: Kódování a dekódování obrázku WDP
 Následující příklady ukazují, jak kódovat a dekódovat [!INCLUDE[TLA#tla_wdp](../../../../includes/tlasharptla-wdp-md.md)] image pomocí konkrétní <xref:System.Windows.Media.Imaging.WmpBitmapDecoder> a <xref:System.Windows.Media.Imaging.WmpBitmapEncoder> objekty.  
@@ -38,4 +38,5 @@ Následující příklady ukazují, jak kódovat a dekódovat [!INCLUDE[TLA#tla_
  [!code-vb[WdpBitmapDecoderEncoder#4](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WdpBitmapDecoderEncoder/VB/WDPEncoderDecoder.vb#4)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled obrázků](imaging-overview.md)

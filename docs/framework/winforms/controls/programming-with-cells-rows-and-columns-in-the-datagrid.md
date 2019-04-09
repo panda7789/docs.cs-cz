@@ -8,18 +8,18 @@ helpviewer_keywords:
 - DataGridView control [Windows Forms], programming with grid elements
 - rows [Windows Forms], data grids
 ms.assetid: 0d76f7e4-4149-42c6-9118-bb37d6669dc5
-ms.openlocfilehash: a32b42a63225dbd94233258a5d61c8dd4a0b728f
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 085fcd0114742e787c8cbcaabf89a354b0e3e830
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57715407"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59144622"
 ---
 # <a name="programming-with-cells-rows-and-columns-in-the-windows-forms-datagridview-control"></a>Programování s buňkami, řádky a sloupci v ovládacím prvku Windows Forms DataGridView
 Tato část obsahuje témata, které ukazují různé programovací úkoly zahrnující buňky, řádku a sloupci objekty.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Postupy: Přidání ToolTips do jednotlivých buněk v ovládacím prvku Windows Forms DataGridView](add-tooltips-to-individual-cells-in-a-wf-datagridview-control.md)  
+ [Postupy: Přidání popisů jednotlivých buněk v ovládacím prvku Windows Forms DataGridView](add-tooltips-to-individual-cells-in-a-wf-datagridview-control.md)  
  Popisuje způsob zpracování <xref:System.Windows.Forms.DataGridView.CellFormatting> událost různé popisy pro jednotlivé buňky.  
   
  [Postupy: Provedení vlastní akce na základě změn v buňce ovládacího prvku Windows Forms DataGridView](perform-a-custom-action-based-on-changes-in-a-cell-of-a-datagrid.md)  
@@ -55,5 +55,6 @@ Tato část obsahuje témata, které ukazují různé programovací úkoly zahrn
  Obsahuje témata, která popisují běžně používané vlastnosti buněk, řádků a sloupců.  
   
 ## <a name="see-also"></a>Viz také:
-- [Ovládací prvek DataGridView](datagridview-control-windows-forms.md)
+
+- [DataGridView – ovládací prvek](datagridview-control-windows-forms.md)
 - [Typy sloupců v ovládacím prvku Windows Forms DataGridView](column-types-in-the-windows-forms-datagridview-control.md)

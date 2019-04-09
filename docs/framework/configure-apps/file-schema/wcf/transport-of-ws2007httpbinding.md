@@ -1,13 +1,13 @@
 ---
-title: <transport> z <ws2007HttpBinding>
+title: <transport> of <ws2007HttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 692befa3-8b0b-4ec5-b601-755874e98eb0
-ms.openlocfilehash: b8f84d0ed6c6248e72e3353675c9da96a0678ae6
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: a1540b53d4af76141c1daee60a6bddbbecd9d6da
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55273303"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59153865"
 ---
 # <a name="transport-of-ws2007httpbinding"></a>\<přenos > z \<ws2007HttpBinding >
 Definuje nastavení ověřování pro přenos pomocí protokolu HTTP.  
@@ -27,7 +27,7 @@ Definuje nastavení ověřování pro přenos pomocí protokolu HTTP.
            realm="string" />
 ```  
   
-## <a name="type"></a>Typ  
+## <a name="type"></a>Type  
  <xref:System.ServiceModel.HttpTransportSecurity>  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
@@ -45,7 +45,7 @@ Definuje nastavení ověřování pro přenos pomocí protokolu HTTP.
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|Žádná|Zabezpečení je zakázaná.|  
+|Žádné|Zabezpečení je zakázaná.|  
 |Základní|Používá základní ověřování.|  
 |ověřování algoritmem Digest|Použití ověřování algoritmem digest.|  
 |Ntlm|Ověřování protokolem NTLM se používá jako nouzové řešení pomocí domény Windows.|  
@@ -54,9 +54,9 @@ Definuje nastavení ověřování pro přenos pomocí protokolu HTTP.
   
 ## <a name="proxycredentialtype-attribute"></a>proxyCredentialType Attribute  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
-|Žádná|Zabezpečení je zakázaná.|  
+|Žádné|Zabezpečení je zakázaná.|  
 |Základní|Používá základní ověřování.|  
 |ověřování algoritmem Digest|Použití ověřování algoritmem digest.|  
 |Ntlm|Používá NTLM jako nouzové řešení pomocí domény Windows.|  
@@ -64,15 +64,16 @@ Definuje nastavení ověřování pro přenos pomocí protokolu HTTP.
 |Certifikát|Certifikáty X.509 používá k ověření klienta.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádná  
+ Žádné  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<zabezpečení >](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-ws2007httpbinding.md)|Představuje možnosti zabezpečení [ \<ws2007HttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/ws2007httpbinding.md) elementu.|  
+|[\<security>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-ws2007httpbinding.md)|Představuje možnosti zabezpečení [ \<ws2007HttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/ws2007httpbinding.md) elementu.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.HttpTransportSecurity>
 - <xref:System.ServiceModel.Configuration.BasicHttpSecurityElement.Transport%2A>
 - <xref:System.ServiceModel.WSHttpSecurity.Transport%2A>

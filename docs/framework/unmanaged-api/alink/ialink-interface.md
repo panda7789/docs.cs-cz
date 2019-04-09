@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 50abd02d-6488-4815-999b-4fb89af4d568
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 3c970e14bfb3f8f8afcc97568e221d2e1cc15198
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: ab7cbac98af24e89ec4da3cc9737b0cadf5cc394
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56978238"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59146572"
 ---
 # <a name="ialink-interface"></a>IALink – rozhraní
 Pomáhá při konstrukci sestavení rozhraní .NET Framework. Mimo jiné rozhraní obsahuje metody, které pomáhají při psaní manifesty sestavení pro sestavení s víc moduly, podepisování sestavení se silnými názvy a vytváření netmodules.  
@@ -21,7 +21,7 @@ Pomáhá při konstrukci sestavení rozhraní .NET Framework. Mimo jiné rozhran
 ## <a name="in-this-section"></a>V tomto oddílu  
  [AddFile – metoda](../../../../docs/framework/unmanaged-api/alink/addfile-method.md)  
   
- [Addimport – metoda](../../../../docs/framework/unmanaged-api/alink/addimport-method.md)  
+ [AddImport – metoda](../../../../docs/framework/unmanaged-api/alink/addimport-method.md)  
   
  [CloseAssembly – metoda](../../../../docs/framework/unmanaged-api/alink/closeassembly-method.md)  
   
@@ -53,7 +53,7 @@ Pomáhá při konstrukci sestavení rozhraní .NET Framework. Mimo jiné rozhran
   
  [GetResolutionScope – metoda](../../../../docs/framework/unmanaged-api/alink/getresolutionscope-method.md)  
   
- [Getscope – metoda](../../../../docs/framework/unmanaged-api/alink/getscope-method.md)  
+ [GetScope – metoda](../../../../docs/framework/unmanaged-api/alink/getscope-method.md)  
   
  [GetWin32ResBlob – metoda](../../../../docs/framework/unmanaged-api/alink/getwin32resblob-method.md)  
   
@@ -76,6 +76,7 @@ Pomáhá při konstrukci sestavení rozhraní .NET Framework. Mimo jiné rozhran
  [SetNonAssemblyFlags – metoda](../../../../docs/framework/unmanaged-api/alink/setnonassemblyflags-method.md)  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)
 - [IALink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
 - [Al.exe (linker sestavení)](../../../../docs/framework/tools/al-exe-assembly-linker.md)

@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: c4a942bb-2651-4b65-8718-809f892a0659
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 78d9d769deefedef0c72b847c86e7b9fc175288c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 380334dbe9b91ea369de6cbe58686a9a74254c2c
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54732671"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59148223"
 ---
 # <a name="datetimeinvalidlocalformat-mda"></a>dateTimeInvalidLocalFormat – pomocník spravovaného ladění (MDA)
 `dateTimeInvalidLocalFormat` MDA aktivováno, když <xref:System.DateTime> instanci, která je uloženo jako koordinovaný světový čas (UTC), je naformátována pomocí formátu, který je určen pro použití pouze pro místní <xref:System.DateTime> instancí. Toto MDA aktivováno pro tento parametr zadán, nebo výchozí <xref:System.DateTime> instancí.  
@@ -35,7 +35,7 @@ Serialize(myDateTime.ToString("yyyy-MM-dd'T'HH:mm:ss.fffffffzzz"));
 ### <a name="cause"></a>Příčina  
  "z" formát pro <xref:System.DateTime.ToString%2A?displayProperty=nameWithType> metoda obsahuje posunu místního časového pásma, například "+ 10:00" Sydney dobu. V důsledku toho se jen vytvoří smysluplný výsledek Pokud hodnota <xref:System.DateTime> je místní. Pokud je hodnota času UTC, <xref:System.DateTime.ToString%2A?displayProperty=nameWithType> místní čas zahrnuje posun zóny, ale ne zobrazit nebo upravit specifikátor časové pásmo.  
   
-### <a name="resolution"></a>Rozlišení  
+### <a name="resolution"></a>Řešení  
  Čas UTC <xref:System.DateTime> instance by měly být formátovány způsobem, který označuje, že jsou UTC. Doporučený formát UTC časy na použití "Z" k označení čas UTC:  
   
 ```csharp
@@ -87,5 +87,6 @@ String serialized = XmlConvert.ToString(myDateTime,
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Globalization.DateTimeFormatInfo>
 - [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)

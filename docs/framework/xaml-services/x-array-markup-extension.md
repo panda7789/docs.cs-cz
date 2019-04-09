@@ -8,12 +8,12 @@ helpviewer_keywords:
 - x:Array [XAML Services]
 - XAML [XAML Services], x:Array markup extension
 ms.assetid: c5358e14-d24c-44c7-b5eb-6062a4fd981c
-ms.openlocfilehash: 4d528039245e2720f78e8817e1752d88ca94e6e0
-ms.sourcegitcommit: 5c1abeec15fbddcc7dbaa729fabc1f1f29f12045
+ms.openlocfilehash: 4f4e26eb3e5ccaf66b2173c7fc9952375c5f2a58
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58047879"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59139136"
 ---
 # <a name="xarray-markup-extension"></a>x:Array – rozšíření značek
 Poskytuje obecné podporu pro pole objektů v XAML pomocí rozšíření kódu. To odpovídá `x:ArrayExtension` typ XAML v [MS-XAML].  
@@ -70,5 +70,6 @@ Poskytuje obecné podporu pro pole objektů v XAML pomocí rozšíření kódu. 
  Pro vlastní typy, které se používají jako prvky pole musí podporovat třídu také požadavky pro instance v XAML jako elementů objektu. Další informace najdete v tématu [XAML a vlastní třídy pro WPF](../wpf/advanced/xaml-and-custom-classes-for-wpf.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Rozšíření značek a WPF XAML](../wpf/advanced/markup-extensions-and-wpf-xaml.md)
 - [Typy migrované z prostředí WPF do oboru názvů System.Xaml](types-migrated-from-wpf-to-system-xaml.md)

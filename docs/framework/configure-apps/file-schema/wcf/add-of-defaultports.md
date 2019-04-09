@@ -1,13 +1,13 @@
 ---
-title: <add> z <defaultPorts>
+title: <add> of <defaultPorts>
 ms.date: 03/30/2017
 ms.assetid: f162ce42-963b-4779-96a7-d6d8b4ea0d2f
-ms.openlocfilehash: 799715ef008274ead6b745e8ab97e769cb59e6b5
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 5200c8893a89488b72c2c71d1a3703bf2aad1235
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55261592"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59136744"
 ---
 # <a name="add-of-defaultports"></a>\<Přidat > z \<defaultPorts >
 Výchozí koncový bod komunikace, na kterém naslouchá klientská aplikace.  
@@ -51,4 +51,5 @@ Výchozí koncový bod komunikace, na kterém naslouchá klientská aplikace.
 |[\<defaultPorts>](../../../../../docs/framework/configure-apps/file-schema/wcf/defaultports.md)|Kolekce výchozích portů obsahující seznam výchozích komunikačních koncových bodů, které naslouchá klientská aplikace.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Configuration.DefaultPortElement>

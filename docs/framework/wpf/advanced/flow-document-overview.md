@@ -9,18 +9,16 @@ helpviewer_keywords:
 - ', '
 - flow documents [WPF]
 ms.assetid: ef236a50-d44f-43c8-ba7c-82b0c733c0b7
-ms.openlocfilehash: 9f61de9bf528690e6057ec445ea7f1b77b3be0b9
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
-ms.translationtype: MT
+ms.openlocfilehash: 14402bde39ec90d8ef17ed5ee07f9eefb8151939
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58828469"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59139604"
 ---
 # <a name="flow-document-overview"></a>Přehled toku dokumentů
 Dokumenty toku jsou určená k optimalizaci pro zobrazení a čitelnost. Dokumenty toku místo nastavování jedno předdefinované rozložení dynamicky upravit a přeformátování jejich obsah na základě proměnných za běhu, jako je například velikost okna, rozlišení zařízení a volitelné uživatelských předvoleb. Kromě toho nabízejí dokumenty toku dokumentu pokročilé funkce, jako je stránkování a sloupce. Toto téma obsahuje přehled toku dokumentů a postupy jejich vytvoření.  
-  
 
-  
 <a name="what_is_a_flow_document"></a>   
 ## <a name="what-is-a-flow-document"></a>Co je dokument Flow  
  Plovoucí dokument je určen k "přeformátování obsah" v závislosti na velikosti okna, rozlišení zařízení i ostatním proměnným prostředí. Kromě toho mají dokumenty toku počet integrované funkce, včetně vyhledávání, zobrazování režimy, které optimalizují čitelnost a umožňuje změnit velikost a vzhled písma. Dokumenty toku se co nejlépe využít v případě snadné čtení je scénář využití primární dokumentu. Naproti tomu pevné dokumenty by mít statické prezentace. Oprava dokumentů jsou užitečné, pokud je základní přesné zdrojový obsah. Zobrazit [dokumenty v platformě WPF](documents-in-wpf.md) Další informace o různých typů dokumentů.  
@@ -109,7 +107,7 @@ Dokumenty toku jsou určená k optimalizaci pro zobrazení a čitelnost. Dokumen
   
  Jak vidíte níže, ale může obsahovat také další elementy odvozené vložené. 
   
- **Oddíl**  
+ **Sekce**  
   
  <xref:System.Windows.Documents.Section> slouží jenom k obsahovat jiné <xref:System.Windows.Documents.Block>-odvozené elementy. Se nevztahují žádné výchozí formátování prvků, které obsahuje. Však hodnoty nastavené na žádné vlastnosti <xref:System.Windows.Documents.Section> se vztahuje na jeho podřízené prvky. Oddíl také umožňuje programově iteraci v rámci její podřízená kolekce. <xref:System.Windows.Documents.Section> se používá podobným způsobem jako do \<DIV > značku ve formátu HTML.  
   
@@ -148,7 +146,7 @@ Dokumenty toku jsou určená k optimalizaci pro zobrazení a čitelnost. Dokumen
  <xref:System.Windows.Documents.Table> slouží k vytvoření tabulky. <xref:System.Windows.Documents.Table> se podobá <xref:System.Windows.Controls.Grid> element, ale je k dispozici další možnosti a proto vyžaduje větší režijní náklady na prostředek. Protože <xref:System.Windows.Controls.Grid> je <xref:System.Windows.UIElement>, tok obsahu jej nelze použít, pokud je obsažen v <xref:System.Windows.Documents.BlockUIContainer> nebo <xref:System.Windows.Documents.InlineUIContainer>. Další informace o <xref:System.Windows.Documents.Table>, naleznete v tématu [Přehled tabulek](table-overview.md).  
   
 ### <a name="inline-derived-classes"></a>Vložené odvozené třídy  
- **Spuštění**  
+ **Spustit**  
   
  <xref:System.Windows.Documents.Run> slouží jako neformátovaný text. Očekáváte <xref:System.Windows.Documents.Run> objekty pro rozsáhlé v toku obsahu. Ale v kódu <xref:System.Windows.Documents.Run> prvky nejsou musí být použito explicitně. <xref:System.Windows.Documents.Run> je potřeba použít při vytváření nebo manipulace s dokumenty toku pomocí kódu. Například v kódu níže, první <xref:System.Windows.Documents.Paragraph> Určuje <xref:System.Windows.Documents.Run> element explicitně při druhém nikoli. Oba odstavce generovat výstup identické.  
   
@@ -349,9 +347,10 @@ Dokumenty toku jsou určená k optimalizaci pro zobrazení a čitelnost. Dokumen
  Zobrazit [Typografie v rozhraní WPF](typography-in-wpf.md) Další informace o typografii.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Text](optimizing-performance-text.md)
 - [Typografie v rozhraní WPF](typography-in-wpf.md)
-- [Témata s postupy](flow-content-elements-how-to-topics.md)
+- [– postupy](flow-content-elements-how-to-topics.md)
 - [Přehled modelu obsahu TextElement](textelement-content-model-overview.md)
 - [RichTextBox – přehled](../controls/richtextbox-overview.md)
 - [Dokumenty v platformě WPF](documents-in-wpf.md)

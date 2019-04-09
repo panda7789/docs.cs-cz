@@ -10,12 +10,12 @@ api_type:
 - COM
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 170d0b20069724a4e1845be0250b2897daa10dee
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: c4b8bffeb71497a7dd8e2ed25b833f9216d8017e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57501237"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59142243"
 ---
 # <a name="icorprofilercallback8dynamicmethodjitcompilationstarted-method"></a>ICorProfilerCallback8::DynamicMethodJITCompilationStarted Method
 [Podporované v rozhraní .NET Framework 4.7 a novějších verzích]  
@@ -65,5 +65,6 @@ Toto zpětné volání se aktivuje vždy, když je dynamická metoda kompilován
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [DynamicMethodJITCompilationFinished – metoda](icorprofilercallback8-dynamicmethodjitcompilationfinished-method.md)
 - [ICorProfilerCallback8 – rozhraní](icorprofilercallback8-interface.md)

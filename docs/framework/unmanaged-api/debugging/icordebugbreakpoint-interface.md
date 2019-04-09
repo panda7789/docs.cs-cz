@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a7e454c15ddfa977a6d06921a5d80a6c05dca92f
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: a68e061c6def61746ee65f8a25818f8dbcd785b5
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56973571"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59159728"
 ---
 # <a name="icordebugbreakpoint-interface"></a>ICorDebugBreakpoint – rozhraní
 
@@ -52,4 +52,5 @@ Představuje zarážku ve funkci nebo bod sledování na hodnotě.
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+
+- [Debugging – rozhraní](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

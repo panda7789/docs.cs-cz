@@ -6,12 +6,12 @@ helpviewer_keywords:
 - columns [Windows Forms], resizing in grids
 - data grids [Windows Forms], resizing columns and rows
 ms.assetid: 7532764d-e5c1-4943-a08b-6377a722d3b6
-ms.openlocfilehash: 8eae5dafa314bb293f55a780f6be67d06f376004
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: e1fa2d57cfb2cd374d691fe03a0e0bdbd3ad7141
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57709650"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59138109"
 ---
 # <a name="resizing-columns-and-rows-in-the-windows-forms-datagridview-control"></a>Změna velikosti sloupců a řádků v ovládacím prvku Windows Forms DataGridView
 `DataGridView` Řízení poskytuje mnoho možností pro přizpůsobení chování nastavení velikosti řádků a sloupců. Obvykle `DataGridView` buněk nelze změnit velikost na základě jejich obsahu. Místo toho galerie zobrazit hodnotu, která je větší než buňku. Pokud obsah může být zobrazena jako řetězec, zobrazí se buňku v popisku.  
@@ -41,4 +41,5 @@ ms.locfileid: "57709650"
  Poskytuje referenční dokumentaci pro <xref:System.Windows.Forms.DataGridView> ovládacího prvku.  
   
 ## <a name="see-also"></a>Viz také:
-- [Ovládací prvek DataGridView](datagridview-control-windows-forms.md)
+
+- [DataGridView – ovládací prvek](datagridview-control-windows-forms.md)

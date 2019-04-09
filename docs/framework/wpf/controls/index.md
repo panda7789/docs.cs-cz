@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - controls [WPF], about WPF controls
 ms.assetid: 3f255a8a-35a8-4712-9065-472ff7d75599
-ms.openlocfilehash: f4aeb3dd60186a4060f7825257c7adb274fc8b24
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 5abafe1edfdbac1966a98d5eef28265e6504c868
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57363147"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59154411"
 ---
 # <a name="controls"></a>Ovládací prvky
 <a name="introduction"></a>
@@ -95,12 +95,12 @@ ms.locfileid: "57363147"
   
 -   <xref:System.Windows.Controls.HeaderedItemsControl>– Příklady tříd, které z této třídy dědit <xref:System.Windows.Controls.MenuItem>, <xref:System.Windows.Controls.TreeViewItem>, a <xref:System.Windows.Controls.ToolBar>.  
 
-  
  Další informace o těchto základních třídách naleznete v tématu [Model obsahu WPF](wpf-content-model.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Styly a šablony](styling-and-templating.md)
-- [Ovládací prvky podle kategorie](controls-by-category.md)
+- [Řízení podle kategorie](controls-by-category.md)
 - [Knihovna ovládacích prvků](control-library.md)
 - [Přehled datových šablon](../data/data-templating-overview.md)
 - [Přehled datových vazeb](../data/data-binding-overview.md)

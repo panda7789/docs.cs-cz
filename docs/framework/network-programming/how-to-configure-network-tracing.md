@@ -11,12 +11,12 @@ helpviewer_keywords:
 - application configuration files, network tracing
 - sockets, trace output
 ms.assetid: 5ef9fe4b-8d3d-490e-9259-1d014b2181af
-ms.openlocfilehash: 3930453e2ba3594e19d8eb7c3dfbceb49c3a1e80
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: cc08faba7edede3dd527b7c05fe47f6408e18a04
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54540530"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59151551"
 ---
 # <a name="how-to-configure-network-tracing"></a>Postupy: Konfigurace trasování sítě
 Konfigurační soubor aplikace nebo počítače obsahuje nastavení, která určují formát a obsah trasování sítě. Před provedením tohoto postupu zkontrolujte, zda je povoleno trasování. Informace o povolení trasování najdete v tématu [Enabling Network Tracing](../../../docs/framework/network-programming/enabling-network-tracing.md).  
@@ -80,7 +80,7 @@ Konfigurační soubor aplikace nebo počítače obsahuje nastavení, která urč
   
  Když přidáte název, který `<switches>` bloku, výstup trasování obsahovat informace z některé metody s tímto názvem souvisejí. Výstup popisuje následující tabulka.  
   
-|Název|Výstup z|  
+|Name|Výstup z|  
 |----------|-----------------|  
 |`System.Net.Sockets`|Některé veřejné metody <xref:System.Net.Sockets.Socket>, <xref:System.Net.Sockets.TcpListener>, <xref:System.Net.Sockets.TcpClient>, a <xref:System.Net.Dns> třídy|  
 |`System.Net`|Některé veřejné metody <xref:System.Net.HttpWebRequest>, <xref:System.Net.HttpWebResponse>, <xref:System.Net.FtpWebRequest>, a <xref:System.Net.FtpWebResponse> třídy a ladicí informace (neplatné certifikáty, seznam chybějících vydavatelů a chyby klientských certifikátů.) protokolu SSL|  
@@ -98,6 +98,7 @@ Konfigurační soubor aplikace nebo počítače obsahuje nastavení, která urč
 |`Tracemode`|Volitelné <xref:System.String> atribut. Nastavte na `includehex` chcete protokol trasování zobrazit v šestnáctkovém a textovém formátu. Nastavte na `protocolonly` chcete zobrazit pouze text. Výchozí hodnota je `includehex`.<br /><br /> Tento atribut musí být nastaven na \<přepínače > element, jak je znázorněno v příkladu. Výjimka je vyvolána, pokud tento atribut je nastaven pro element v rámci \<zdroj > element.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Interpretace trasování sítě](../../../docs/framework/network-programming/interpreting-network-tracing.md)
 - [Trasování sítě v rozhraní .NET Framework](../../../docs/framework/network-programming/network-tracing.md)
 - [Povolení trasování sítě](../../../docs/framework/network-programming/enabling-network-tracing.md)

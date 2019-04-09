@@ -10,12 +10,12 @@ helpviewer_keywords:
 - XAML [XAML Services], x:Subclass attribute
 - Subclass attribute in XAML [XAML Services]
 ms.assetid: 99f66072-8107-4362-ab99-8171dc83b469
-ms.openlocfilehash: c348d8fa2bd66a9abbb64c9363bb4dae0933ba34
-ms.sourcegitcommit: 5c1abeec15fbddcc7dbaa729fabc1f1f29f12045
+ms.openlocfilehash: 850fe8acf9e47149bd385e78b30e04ba77d7a8b2
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58047997"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59140787"
 ---
 # <a name="xsubclass-directive"></a>x:Subclass – direktiva
 Upravuje chování kompilace kódu XAML při `x:Class` je také k dispozici. Místo vytváření částečnou třídu, která je založena na `x:Class`, poskytnutého `x:Class` je vytvořen jako zprostředkující třída, a pak se očekává na základě zadané odvozené třídy `x:Class`.  
@@ -57,5 +57,6 @@ Upravuje chování kompilace kódu XAML při `x:Class` je také k dispozici. Mí
  Při definování obě `x:Class` a `x:Subclass`, není potřeba poskytovat žádné implementace třídy, který je odkazován `x:Class`. Je potřeba jenom s názvem prostřednictvím `x:Class` atribut tak, aby kompilátor má některé pokyny pro třídu, která vytvoří v mezilehlé soubory (kompilátor není vyberte výchozí název v tomto případě). Můžete poskytnout `x:Class` třídy implementace, ale to není Typický scénář použití obou `x:Class` a `x:Subclass`.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [x:Class – direktiva](x-class-directive.md)
 - [XAML a vlastní třídy pro WPF](../wpf/advanced/xaml-and-custom-classes-for-wpf.md)

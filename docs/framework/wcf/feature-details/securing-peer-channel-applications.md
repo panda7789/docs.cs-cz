@@ -2,12 +2,12 @@
 title: Zabezpečení aplikací rovnocenného kanálu
 ms.date: 03/30/2017
 ms.assetid: d4a0311d-3f78-4525-9c4b-5c93c4492f28
-ms.openlocfilehash: d6dd6d95fb151a4f06dc4f632465b38b07720a27
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a747923f81f4773eb58a4b7500cf4fc1c006f889
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54586680"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59146238"
 ---
 # <a name="securing-peer-channel-applications"></a>Zabezpečení aplikací rovnocenného kanálu
 Jako v jiných vazbách [!INCLUDE[vstecwinfx](../../../../includes/vstecwinfx-md.md)], `NetPeerTcpBinding` má povolené ve výchozím nastavení zabezpečení a nabízí i zabezpečení na základě přenosu a zprávy (nebo obojí). Toto téma popisuje tyto dva typy zabezpečení. Typ zabezpečení je určen podle klíčových slov režim zabezpečení ve specifikaci vazby (<xref:System.ServiceModel.NetPeerTcpBinding.Security%2A>`Mode`).  
@@ -39,8 +39,9 @@ Jako v jiných vazbách [!INCLUDE[vstecwinfx](../../../../includes/vstecwinfx-md
  Ověřte, že zpráva pochází z důvěryhodného zdroje a že nikdo nemanipuloval s touto zprávou během přenosu pomocí ověřování zpráv. Bez ověřování zpráv je to jednoduché škodlivého klienta zfalšovat nebo manipulovat se zprávy v mřížce.  
   
 ## <a name="peer-channel-code-examples"></a>Příklady kódu pro protokolu peer Channel  
- [Scénáře protokolu Peer Channel](../../../../docs/framework/wcf/feature-details/peer-channel-scenarios.md)  
+ [Scénáře rovnocenných kanálů](../../../../docs/framework/wcf/feature-details/peer-channel-scenarios.md)  
   
 ## <a name="see-also"></a>Viz také:
-- [Zabezpečení protokolem Peer Channel](../../../../docs/framework/wcf/feature-details/peer-channel-security.md)
-- [Vytvoření aplikace protokolu Peer Channel](../../../../docs/framework/wcf/feature-details/building-a-peer-channel-application.md)
+
+- [Zabezpečení rovnocenného kanálu](../../../../docs/framework/wcf/feature-details/peer-channel-security.md)
+- [Vytvoření aplikace rovnocenného kanálu](../../../../docs/framework/wcf/feature-details/building-a-peer-channel-application.md)

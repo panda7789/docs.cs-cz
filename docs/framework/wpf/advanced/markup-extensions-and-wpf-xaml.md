@@ -15,17 +15,16 @@ helpviewer_keywords:
 - characters [WPF], curly brace
 - DynamicResource markup extensions [WPF]
 ms.assetid: 618dc745-8b14-4886-833f-486d2254bb78
-ms.openlocfilehash: e678dcf9606c3ad545e93a4389bccb3d49423dec
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 46539f0cfdcc478e2f5e4cd7aecf16ac059e6332
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57355230"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59148093"
 ---
 # <a name="markup-extensions-and-wpf-xaml"></a>Rozšíření značek a WPF XAML
 Toto téma zavádí koncepci rozšíření značek pro XAML, včetně jejich syntaxe pravidla, účelu a model objektu třídy, které je základem je. Rozšíření značek jsou obecné funkce jazyka XAML a implementace .NET XAML služeb. Toto téma podrobně popisuje konkrétně – rozšíření značek pro použití v WPF XAML.  
-  
-  
+
 <a name="XAML_Processors_and_Markup_Extensions"></a>   
 ## <a name="xaml-processors-and-markup-extensions"></a>XAML procesory a rozšíření značek  
  Obecně řečeno analyzátoru XAML může buď interpretovat hodnotu atributu jako řetězcový literál, který lze převést na primitivní nebo převeďte jej na objekt některé prostředky. Jedním z těchto prostředků je odkazem konvertor typu; je to popsané v tématu [TypeConverters a XAML](typeconverters-and-xaml.md). Existují ale scénáře, ve kterém jsou vyžadována různé chování. Například může být nastavena procesoru XAML, že hodnota atributu by se neměly zobrazit nový objekt v grafu objektů. Místo toho atribut by měl mít za následek grafu objektu, který odkazuje na objekt už vytvořeného v jiné části grafu nebo statický objekt. Další možností je, že procesor XAML můžete nastaven na použití syntaxe, která obsahuje jiné než výchozí argumenty pro konstruktor objektu. Toto jsou typy scénáře, ve kterém rozšíření značek můžete zadat toto řešení.  
@@ -118,10 +117,11 @@ Toto téma zavádí koncepci rozšíření značek pro XAML, včetně jejich syn
  Většina rozšíření značek při použití v syntaxi elementu objektu tak, aby vyplnil prvek vlastnosti nemusí syntax prvku vlastnosti obsahu nebo dalších v rámci. Proto by zavření značky elementu objektu a poskytovat žádné podřízené prvky. Pokaždé, když procesorem XAML nalezen element libovolný objekt, se nazývá konstruktor pro danou třídu, která vytvoří instanci objektu vytvořeného z analyzovaného elementu. Třída rozšíření značek se nijak neliší: Pokud chcete být použitelné v syntaxi elementu objektu rozšíření značek, je nutné zadat výchozí konstruktor. Některá existující rozšíření značek mají alespoň jednu hodnotu požadovanou vlastnost, musí být zadané pro platné inicializace. Pokud ano, tuto hodnotu vlastnosti obvykle uvedeny jako vlastnost atributu na elementu objektu. V [Namespace XAML (x:) Funkce jazyka](../../xaml-services/xaml-namespace-x-language-features.md) a [rozšíření WPF XAML](wpf-xaml-extensions.md) odkazují na stránky, značky, bude zaznamenán rozšíření, které mají požadované vlastnosti (a názvy požadovaných vlastností). Stránky s referenčními informacemi bude Všimněte si také, pokud rozšíření konkrétní značek není povolena syntaxe elementu objektu nebo syntaxe atributu. Je důležité případ [x: Array – rozšíření značek](../../xaml-services/x-array-markup-extension.md), který nepodporuje syntaxe atributu, protože obsah pole musí být určeny označování jako obsah. Obsah pole jsou zpracovány jako obecné objekty, proto je vhodná žádný výchozí převaděč typu atributu. Navíc [x: Array – rozšíření značek](../../xaml-services/x-array-markup-extension.md) vyžaduje `type` parametru.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled XAML (WPF)](xaml-overview-wpf.md)
-- [Namespace XAML (x:) Jazykové funkce](../../xaml-services/xaml-namespace-x-language-features.md)
+- [Jazykové funkce kompatibility značek (mc:)](../../xaml-services/xaml-namespace-x-language-features.md)
 - [Rozšíření WPF XAML](wpf-xaml-extensions.md)
-- [Rozšíření značek StaticResource](staticresource-markup-extension.md)
-- [Rozšíření značek datové vazby](binding-markup-extension.md)
-- [Rozšíření značek DynamicResource](dynamicresource-markup-extension.md)
+- [StaticResource – rozšíření značek](staticresource-markup-extension.md)
+- [Rozšíření značek připojení](binding-markup-extension.md)
+- [DynamicResource – rozšíření značek](dynamicresource-markup-extension.md)
 - [x:Type – rozšíření značek](../../xaml-services/x-type-markup-extension.md)

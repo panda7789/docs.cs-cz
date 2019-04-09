@@ -6,12 +6,12 @@ helpviewer_keywords:
 - Windows Communication Foundation [WCF], extensibility
 - extensibility [WCF]
 ms.assetid: ef56c251-d63c-4b3f-944f-b0c67bfb0f68
-ms.openlocfilehash: 78a0410876016ef2d5249fe3b6a667cacc432320
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 8d7b9c811c557b10160c2581a59f5ebf72882bfd
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54654851"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59147040"
 ---
 # <a name="introduction-to-extensibility"></a>Úvod do rozšíření
 Model aplikace Windows Communication Foundation (WCF) je navržená k řešení větší část požadavky na komunikaci všechny distribuované aplikace. Ale vždy existují scénáře, které výchozí aplikační model a implementace poskytované systémem nepodporují. Model rozšiřitelnosti WCF je určený pro podporu vlastní scénáře tím, že abyste upravili chování systému na všech úrovních, dokonce i do bodu nahrazení modelu celé aplikace. Toto téma popisuje různé oblasti rozšíření a odkazuje na další informace o jednotlivých.  
@@ -53,4 +53,5 @@ Model aplikace Windows Communication Foundation (WCF) je navržená k řešení 
  Pokud chcete upravit vztah hostování domény aplikace a hostitel služby, je třeba rozšířit <xref:System.ServiceModel.Activation.ServiceHostFactory?displayProperty=nameWithType> třídy. Další informace najdete v tématu [rozšíření hostování pomocí ServiceHostFactory](../../../docs/framework/wcf/extending/extending-hosting-using-servicehostfactory.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Rozšíření WCF](../../../docs/framework/wcf/extending/index.md)
