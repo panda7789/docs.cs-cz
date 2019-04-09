@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 8a014a4e06464f461af25103037b349b2f18a2a5
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: 44595229eaefa0d8fc8ca7bf15a88d0fbf1ee0d7
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57488705"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59104309"
 ---
-# <a name="icorprofilerthreadenumnext-method"></a><span data-ttu-id="92c7f-102">ICorProfilerThreadEnum::Next – metoda</span><span class="sxs-lookup"><span data-stu-id="92c7f-102">ICorProfilerThreadEnum::Next Method</span></span>
-<span data-ttu-id="92c7f-103">Získá zadaný počet souvislých vlákna z kolekce sekvenčních vláken, od aktuální pozice čítače výčtu v sekvenci.</span><span class="sxs-lookup"><span data-stu-id="92c7f-103">Gets the specified number of contiguous threads from a sequential collection of threads, starting at the enumerator's current position in the sequence.</span></span>  
+# <a name="icorprofilerthreadenumnext-method"></a><span data-ttu-id="8dc24-102">ICorProfilerThreadEnum::Next – metoda</span><span class="sxs-lookup"><span data-stu-id="8dc24-102">ICorProfilerThreadEnum::Next Method</span></span>
+<span data-ttu-id="8dc24-103">Získá zadaný počet souvislých vlákna z kolekce sekvenčních vláken, od aktuální pozice čítače výčtu v sekvenci.</span><span class="sxs-lookup"><span data-stu-id="8dc24-103">Gets the specified number of contiguous threads from a sequential collection of threads, starting at the enumerator's current position in the sequence.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="92c7f-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="92c7f-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="8dc24-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="8dc24-104">Syntax</span></span>  
   
 ```  
 HRESULT Next (    [in]  ULONG      celt,  
@@ -37,33 +37,34 @@ HRESULT Next (    [in]  ULONG      celt,
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="92c7f-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="92c7f-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="8dc24-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="8dc24-105">Parameters</span></span>  
  `celt`  
- <span data-ttu-id="92c7f-106">[in] Počet vláken pro načtení.</span><span class="sxs-lookup"><span data-stu-id="92c7f-106">[in] The number of threads to retrieve.</span></span>  
+ <span data-ttu-id="8dc24-106">[in] Počet vláken pro načtení.</span><span class="sxs-lookup"><span data-stu-id="8dc24-106">[in] The number of threads to retrieve.</span></span>  
   
  `ids`  
- <span data-ttu-id="92c7f-107">[out] Pole `ThreadID` hodnot, z nichž každý představuje načtený vlákna.</span><span class="sxs-lookup"><span data-stu-id="92c7f-107">[out] An array of `ThreadID` values, each of which represents a retrieved thread.</span></span>  
+ <span data-ttu-id="8dc24-107">[out] Pole `ThreadID` hodnot, z nichž každý představuje načtený vlákna.</span><span class="sxs-lookup"><span data-stu-id="8dc24-107">[out] An array of `ThreadID` values, each of which represents a retrieved thread.</span></span>  
   
  `pceltFetched`  
- <span data-ttu-id="92c7f-108">[out] Ukazatel na počet skutečně vrácených v vláken `ids` pole.</span><span class="sxs-lookup"><span data-stu-id="92c7f-108">[out] A pointer to the number of threads actually returned in the `ids` array.</span></span>  
+ <span data-ttu-id="8dc24-108">[out] Ukazatel na počet skutečně vrácených v vláken `ids` pole.</span><span class="sxs-lookup"><span data-stu-id="8dc24-108">[out] A pointer to the number of threads actually returned in the `ids` array.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="92c7f-109">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="92c7f-109">Return Value</span></span>  
- <span data-ttu-id="92c7f-110">Tato metoda vrátí následující konkrétní HRESULT, stejně jako hodnota HRESULT chyby, které označují selhání metoda.</span><span class="sxs-lookup"><span data-stu-id="92c7f-110">This method returns the following specific HRESULTs as well as HRESULT errors that indicate method failure.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="8dc24-109">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="8dc24-109">Return Value</span></span>  
+ <span data-ttu-id="8dc24-110">Tato metoda vrátí následující konkrétní HRESULT, stejně jako hodnota HRESULT chyby, které označují selhání metoda.</span><span class="sxs-lookup"><span data-stu-id="8dc24-110">This method returns the following specific HRESULTs as well as HRESULT errors that indicate method failure.</span></span>  
   
-|<span data-ttu-id="92c7f-111">HRESULT</span><span class="sxs-lookup"><span data-stu-id="92c7f-111">HRESULT</span></span>|<span data-ttu-id="92c7f-112">Popis</span><span class="sxs-lookup"><span data-stu-id="92c7f-112">Description</span></span>|  
+|<span data-ttu-id="8dc24-111">HRESULT</span><span class="sxs-lookup"><span data-stu-id="8dc24-111">HRESULT</span></span>|<span data-ttu-id="8dc24-112">Popis</span><span class="sxs-lookup"><span data-stu-id="8dc24-112">Description</span></span>|  
 |-------------|-----------------|  
-|<span data-ttu-id="92c7f-113">S_OK</span><span class="sxs-lookup"><span data-stu-id="92c7f-113">S_OK</span></span>|<span data-ttu-id="92c7f-114">`celt` elementy byly vráceny.</span><span class="sxs-lookup"><span data-stu-id="92c7f-114">`celt` elements were returned.</span></span>|  
-|<span data-ttu-id="92c7f-115">S_FALSE</span><span class="sxs-lookup"><span data-stu-id="92c7f-115">S_FALSE</span></span>|<span data-ttu-id="92c7f-116">Méně než `celt` prvky byly vráceny, což znamená, že dokončení výčtu.</span><span class="sxs-lookup"><span data-stu-id="92c7f-116">Fewer than `celt` elements were returned, which indicates that the enumeration is complete.</span></span>|  
+|<span data-ttu-id="8dc24-113">S_OK</span><span class="sxs-lookup"><span data-stu-id="8dc24-113">S_OK</span></span>|`celt` <span data-ttu-id="8dc24-114">elementy byly vráceny.</span><span class="sxs-lookup"><span data-stu-id="8dc24-114">elements were returned.</span></span>|  
+|<span data-ttu-id="8dc24-115">S_FALSE</span><span class="sxs-lookup"><span data-stu-id="8dc24-115">S_FALSE</span></span>|<span data-ttu-id="8dc24-116">Méně než `celt` prvky byly vráceny, což znamená, že dokončení výčtu.</span><span class="sxs-lookup"><span data-stu-id="8dc24-116">Fewer than `celt` elements were returned, which indicates that the enumeration is complete.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="92c7f-117">Požadavky</span><span class="sxs-lookup"><span data-stu-id="92c7f-117">Requirements</span></span>  
- <span data-ttu-id="92c7f-118">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="92c7f-118">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="8dc24-117">Požadavky</span><span class="sxs-lookup"><span data-stu-id="8dc24-117">Requirements</span></span>  
+ <span data-ttu-id="8dc24-118">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="8dc24-118">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="92c7f-119">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="92c7f-119">**Header:** CorProf.idl, CorProf.h</span></span>  
+ <span data-ttu-id="8dc24-119">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="8dc24-119">**Header:** CorProf.idl, CorProf.h</span></span>  
   
- <span data-ttu-id="92c7f-120">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="92c7f-120">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="8dc24-120">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="8dc24-120">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="92c7f-121">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="92c7f-121">**.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span></span>  
+ **<span data-ttu-id="8dc24-121">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="8dc24-121">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a><span data-ttu-id="92c7f-122">Viz také:</span><span class="sxs-lookup"><span data-stu-id="92c7f-122">See also</span></span>
-- [<span data-ttu-id="92c7f-123">ICorProfilerThreadEnum – rozhraní</span><span class="sxs-lookup"><span data-stu-id="92c7f-123">ICorProfilerThreadEnum Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerthreadenum-interface.md)
-- [<span data-ttu-id="92c7f-124">Rozhraní pro profilaci</span><span class="sxs-lookup"><span data-stu-id="92c7f-124">Profiling Interfaces</span></span>](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
+## <a name="see-also"></a><span data-ttu-id="8dc24-122">Viz také:</span><span class="sxs-lookup"><span data-stu-id="8dc24-122">See also</span></span>
+
+- [<span data-ttu-id="8dc24-123">ICorProfilerThreadEnum – rozhraní</span><span class="sxs-lookup"><span data-stu-id="8dc24-123">ICorProfilerThreadEnum Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerthreadenum-interface.md)
+- [<span data-ttu-id="8dc24-124">Rozhraní pro profilaci</span><span class="sxs-lookup"><span data-stu-id="8dc24-124">Profiling Interfaces</span></span>](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)

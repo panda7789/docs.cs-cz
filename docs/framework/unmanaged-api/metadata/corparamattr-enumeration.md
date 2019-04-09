@@ -16,17 +16,17 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 7d07c6de47038d5c52d76ad8ca8e0a5684551d59
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 97f62b082db11a5f0bb930e33cb47acef76e7a04
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54491464"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59092055"
 ---
-# <a name="corparamattr-enumeration"></a><span data-ttu-id="66a74-102">CorParamAttr – výčet</span><span class="sxs-lookup"><span data-stu-id="66a74-102">CorParamAttr Enumeration</span></span>
-<span data-ttu-id="66a74-103">Obsahuje hodnoty, které popisují metadata parametru metody.</span><span class="sxs-lookup"><span data-stu-id="66a74-103">Contains values that describe the metadata of a method parameter.</span></span>  
+# <a name="corparamattr-enumeration"></a><span data-ttu-id="3a990-102">CorParamAttr – výčet</span><span class="sxs-lookup"><span data-stu-id="3a990-102">CorParamAttr Enumeration</span></span>
+<span data-ttu-id="3a990-103">Obsahuje hodnoty, které popisují metadata parametru metody.</span><span class="sxs-lookup"><span data-stu-id="3a990-103">Contains values that describe the metadata of a method parameter.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="66a74-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="66a74-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="3a990-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="3a990-104">Syntax</span></span>  
   
 ```  
 typedef enum CorParamAttr {  
@@ -44,24 +44,25 @@ typedef enum CorParamAttr {
 } CorParamAttr;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="66a74-105">Členové</span><span class="sxs-lookup"><span data-stu-id="66a74-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="3a990-105">Členové</span><span class="sxs-lookup"><span data-stu-id="3a990-105">Members</span></span>  
   
-|<span data-ttu-id="66a74-106">Člen</span><span class="sxs-lookup"><span data-stu-id="66a74-106">Member</span></span>|<span data-ttu-id="66a74-107">Popis</span><span class="sxs-lookup"><span data-stu-id="66a74-107">Description</span></span>|  
+|<span data-ttu-id="3a990-106">Člen</span><span class="sxs-lookup"><span data-stu-id="3a990-106">Member</span></span>|<span data-ttu-id="3a990-107">Popis</span><span class="sxs-lookup"><span data-stu-id="3a990-107">Description</span></span>|  
 |------------|-----------------|  
-|`pdIn`|<span data-ttu-id="66a74-108">Určuje, že parametr se předává do volání metody.</span><span class="sxs-lookup"><span data-stu-id="66a74-108">Specifies that the parameter is passed into the method call.</span></span>|  
-|`pdOut`|<span data-ttu-id="66a74-109">Určuje, že parametr je předán z metody návratovou.</span><span class="sxs-lookup"><span data-stu-id="66a74-109">Specifies that the parameter is passed from the method return.</span></span>|  
-|`pdOptional`|<span data-ttu-id="66a74-110">Určuje, že se jedná o volitelný parametr.</span><span class="sxs-lookup"><span data-stu-id="66a74-110">Specifies that the parameter is optional.</span></span>|  
-|`pdReservedMask`|<span data-ttu-id="66a74-111">Modul common language runtime vyhrazené pro interní použití.</span><span class="sxs-lookup"><span data-stu-id="66a74-111">Reserved for internal use by the common language runtime.</span></span>|  
-|`pdHasDefault`|<span data-ttu-id="66a74-112">Určuje, že parametr má výchozí hodnotu.</span><span class="sxs-lookup"><span data-stu-id="66a74-112">Specifies that the parameter has a default value.</span></span>|  
-|`pdHasFieldMarshal`|<span data-ttu-id="66a74-113">Určuje, že parametr obsahuje zařazovací informace.</span><span class="sxs-lookup"><span data-stu-id="66a74-113">Specifies that the parameter has marshaling information.</span></span>|  
-|`pdUnused`|<span data-ttu-id="66a74-114">Nevyužité.</span><span class="sxs-lookup"><span data-stu-id="66a74-114">Unused.</span></span>|  
+|`pdIn`|<span data-ttu-id="3a990-108">Určuje, že parametr se předává do volání metody.</span><span class="sxs-lookup"><span data-stu-id="3a990-108">Specifies that the parameter is passed into the method call.</span></span>|  
+|`pdOut`|<span data-ttu-id="3a990-109">Určuje, že parametr je předán z metody návratovou.</span><span class="sxs-lookup"><span data-stu-id="3a990-109">Specifies that the parameter is passed from the method return.</span></span>|  
+|`pdOptional`|<span data-ttu-id="3a990-110">Určuje, že se jedná o volitelný parametr.</span><span class="sxs-lookup"><span data-stu-id="3a990-110">Specifies that the parameter is optional.</span></span>|  
+|`pdReservedMask`|<span data-ttu-id="3a990-111">Modul common language runtime vyhrazené pro interní použití.</span><span class="sxs-lookup"><span data-stu-id="3a990-111">Reserved for internal use by the common language runtime.</span></span>|  
+|`pdHasDefault`|<span data-ttu-id="3a990-112">Určuje, že parametr má výchozí hodnotu.</span><span class="sxs-lookup"><span data-stu-id="3a990-112">Specifies that the parameter has a default value.</span></span>|  
+|`pdHasFieldMarshal`|<span data-ttu-id="3a990-113">Určuje, že parametr obsahuje zařazovací informace.</span><span class="sxs-lookup"><span data-stu-id="3a990-113">Specifies that the parameter has marshaling information.</span></span>|  
+|`pdUnused`|<span data-ttu-id="3a990-114">Nevyužité.</span><span class="sxs-lookup"><span data-stu-id="3a990-114">Unused.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="66a74-115">Požadavky</span><span class="sxs-lookup"><span data-stu-id="66a74-115">Requirements</span></span>  
- <span data-ttu-id="66a74-116">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="66a74-116">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="3a990-115">Požadavky</span><span class="sxs-lookup"><span data-stu-id="3a990-115">Requirements</span></span>  
+ <span data-ttu-id="3a990-116">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="3a990-116">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="66a74-117">**Záhlaví:** CorHdr.h</span><span class="sxs-lookup"><span data-stu-id="66a74-117">**Header:** CorHdr.h</span></span>  
+ <span data-ttu-id="3a990-117">**Záhlaví:** CorHdr.h</span><span class="sxs-lookup"><span data-stu-id="3a990-117">**Header:** CorHdr.h</span></span>  
   
- <span data-ttu-id="66a74-118">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="66a74-118">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ **<span data-ttu-id="3a990-118">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="3a990-118">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a><span data-ttu-id="66a74-119">Viz také:</span><span class="sxs-lookup"><span data-stu-id="66a74-119">See also</span></span>
-- [<span data-ttu-id="66a74-120">Výčty pro metadata</span><span class="sxs-lookup"><span data-stu-id="66a74-120">Metadata Enumerations</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+## <a name="see-also"></a><span data-ttu-id="3a990-119">Viz také:</span><span class="sxs-lookup"><span data-stu-id="3a990-119">See also</span></span>
+
+- [<span data-ttu-id="3a990-120">Výčty metadat</span><span class="sxs-lookup"><span data-stu-id="3a990-120">Metadata Enumerations</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

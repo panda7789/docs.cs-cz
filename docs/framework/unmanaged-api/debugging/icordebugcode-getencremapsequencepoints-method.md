@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: bea6b11437367d5ba14167d9800f6c43e117d548
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 785defaa69609fc30852be9996531e6063586ceb
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54533322"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59092380"
 ---
-# <a name="icordebugcodegetencremapsequencepoints-method"></a><span data-ttu-id="7ba79-102">ICorDebugCode::GetEnCRemapSequencePoints – metoda</span><span class="sxs-lookup"><span data-stu-id="7ba79-102">ICorDebugCode::GetEnCRemapSequencePoints Method</span></span>
-<span data-ttu-id="7ba79-103">Tato metoda není implementována v aktuální verzi rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="7ba79-103">This method is not implemented in the current version of the .NET Framework.</span></span>  
+# <a name="icordebugcodegetencremapsequencepoints-method"></a><span data-ttu-id="c6e1c-102">ICorDebugCode::GetEnCRemapSequencePoints – metoda</span><span class="sxs-lookup"><span data-stu-id="c6e1c-102">ICorDebugCode::GetEnCRemapSequencePoints Method</span></span>
+<span data-ttu-id="c6e1c-103">Tato metoda není implementována v aktuální verzi rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="c6e1c-103">This method is not implemented in the current version of the .NET Framework.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="7ba79-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="7ba79-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="c6e1c-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c6e1c-104">Syntax</span></span>  
   
 ```  
 HRESULT GetEnCRemapSequencePoints(  
@@ -38,5 +38,4 @@ HRESULT GetEnCRemapSequencePoints(
 );  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="7ba79-105">Viz také:</span><span class="sxs-lookup"><span data-stu-id="7ba79-105">See also</span></span>
-
+## <a name="see-also"></a><span data-ttu-id="c6e1c-105">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c6e1c-105">See also</span></span>

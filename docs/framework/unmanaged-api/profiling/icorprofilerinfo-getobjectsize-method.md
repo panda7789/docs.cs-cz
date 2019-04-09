@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 42e86b1eac788b709432d39e320ebea49c696c14
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: d366a0093ca82d2e5b3c40729777a1b6c0766bda
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57481700"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59092198"
 ---
-# <a name="icorprofilerinfogetobjectsize-method"></a><span data-ttu-id="51631-102">ICorProfilerInfo::GetObjectSize – metoda</span><span class="sxs-lookup"><span data-stu-id="51631-102">ICorProfilerInfo::GetObjectSize Method</span></span>
-<span data-ttu-id="51631-103">Získá velikost zadaného objektu.</span><span class="sxs-lookup"><span data-stu-id="51631-103">Gets the size of a specified object.</span></span>  
+# <a name="icorprofilerinfogetobjectsize-method"></a><span data-ttu-id="2d019-102">ICorProfilerInfo::GetObjectSize – metoda</span><span class="sxs-lookup"><span data-stu-id="2d019-102">ICorProfilerInfo::GetObjectSize Method</span></span>
+<span data-ttu-id="2d019-103">Získá velikost zadaného objektu.</span><span class="sxs-lookup"><span data-stu-id="2d019-103">Gets the size of a specified object.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="51631-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="51631-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="2d019-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="2d019-104">Syntax</span></span>  
   
 ```  
 HRESULT GetObjectSize(  
@@ -35,34 +35,35 @@ HRESULT GetObjectSize(
     [out] ULONG  *pcSize);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="51631-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="51631-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="2d019-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="2d019-105">Parameters</span></span>  
  `objectId`  
- <span data-ttu-id="51631-106">[in] ID objektu.</span><span class="sxs-lookup"><span data-stu-id="51631-106">[in] The ID of the object.</span></span>  
+ <span data-ttu-id="2d019-106">[in] ID objektu.</span><span class="sxs-lookup"><span data-stu-id="2d019-106">[in] The ID of the object.</span></span>  
   
  `pcSize`  
- <span data-ttu-id="51631-107">[out] Ukazatel objekt velikost v bajtech.</span><span class="sxs-lookup"><span data-stu-id="51631-107">[out] A pointer to the object's size, in bytes.</span></span>  
+ <span data-ttu-id="2d019-107">[out] Ukazatel objekt velikost v bajtech.</span><span class="sxs-lookup"><span data-stu-id="2d019-107">[out] A pointer to the object's size, in bytes.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="51631-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="51631-108">Remarks</span></span>  
+## <a name="remarks"></a><span data-ttu-id="2d019-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="2d019-108">Remarks</span></span>  
   
 > [!IMPORTANT]
->  <span data-ttu-id="51631-109">Tato metoda je zastaralá.</span><span class="sxs-lookup"><span data-stu-id="51631-109">This method is obsolete.</span></span> <span data-ttu-id="51631-110">Vrátí COR_E_OVERFLOW pro objekty větší než 4GB na 64bitových platformách.</span><span class="sxs-lookup"><span data-stu-id="51631-110">It returns COR_E_OVERFLOW for objects greater than 4GB on 64-bit platforms.</span></span> <span data-ttu-id="51631-111">Použití [icorprofilerinfo4::getobjectsize2 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo4-getobjectsize2-method.md) metoda místo.</span><span class="sxs-lookup"><span data-stu-id="51631-111">Use the  [ICorProfilerInfo4::GetObjectSize2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo4-getobjectsize2-method.md) method instead.</span></span>  
+>  <span data-ttu-id="2d019-109">Tato metoda je zastaralá.</span><span class="sxs-lookup"><span data-stu-id="2d019-109">This method is obsolete.</span></span> <span data-ttu-id="2d019-110">Vrátí COR_E_OVERFLOW pro objekty větší než 4GB na 64bitových platformách.</span><span class="sxs-lookup"><span data-stu-id="2d019-110">It returns COR_E_OVERFLOW for objects greater than 4GB on 64-bit platforms.</span></span> <span data-ttu-id="2d019-111">Použití [icorprofilerinfo4::getobjectsize2 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo4-getobjectsize2-method.md) metoda místo.</span><span class="sxs-lookup"><span data-stu-id="2d019-111">Use the  [ICorProfilerInfo4::GetObjectSize2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo4-getobjectsize2-method.md) method instead.</span></span>  
   
- <span data-ttu-id="51631-112">Různé objekty stejné typy často mají stejnou velikost.</span><span class="sxs-lookup"><span data-stu-id="51631-112">Different objects of the same types often have the same size.</span></span> <span data-ttu-id="51631-113">Některé typy, například pole nebo řetězce, ale může mít jinou velikost pro každý objekt.</span><span class="sxs-lookup"><span data-stu-id="51631-113">However, some types, such as arrays or strings, may have a different size for each object.</span></span>  
+ <span data-ttu-id="2d019-112">Různé objekty stejné typy často mají stejnou velikost.</span><span class="sxs-lookup"><span data-stu-id="2d019-112">Different objects of the same types often have the same size.</span></span> <span data-ttu-id="2d019-113">Některé typy, například pole nebo řetězce, ale může mít jinou velikost pro každý objekt.</span><span class="sxs-lookup"><span data-stu-id="2d019-113">However, some types, such as arrays or strings, may have a different size for each object.</span></span>  
   
- <span data-ttu-id="51631-114">Velikost vrácené `GetObjectSize` způsob neobsahuje žádné zarovnání odsazení, který se může zdát, jakmile je objekt na haldě uvolňování paměti.</span><span class="sxs-lookup"><span data-stu-id="51631-114">The size returned by the `GetObjectSize` method does not include any alignment padding that may appear after the object is on the garbage collection heap.</span></span> <span data-ttu-id="51631-115">Pokud používáte `GetObjectSize` metoda pro přechod z objektu na haldě uvolňování paměti kolekce přidat zarovnání odsazení ručně, podle potřeby.</span><span class="sxs-lookup"><span data-stu-id="51631-115">If you use the `GetObjectSize` method to advance from object to object on the garbage collection heap, add alignment padding manually, as necessary.</span></span>  
+ <span data-ttu-id="2d019-114">Velikost vrácené `GetObjectSize` způsob neobsahuje žádné zarovnání odsazení, který se může zdát, jakmile je objekt na haldě uvolňování paměti.</span><span class="sxs-lookup"><span data-stu-id="2d019-114">The size returned by the `GetObjectSize` method does not include any alignment padding that may appear after the object is on the garbage collection heap.</span></span> <span data-ttu-id="2d019-115">Pokud používáte `GetObjectSize` metoda pro přechod z objektu na haldě uvolňování paměti kolekce přidat zarovnání odsazení ručně, podle potřeby.</span><span class="sxs-lookup"><span data-stu-id="2d019-115">If you use the `GetObjectSize` method to advance from object to object on the garbage collection heap, add alignment padding manually, as necessary.</span></span>  
   
--   <span data-ttu-id="51631-116">Na Windows 32-bit COR_PRF_GC_GEN_0, COR_PRF_GC_GEN_1 a COR_PRF_GC_GEN_2 používat 4bajtové zarovnání a COR_PRF_GC_LARGE_OBJECT_HEAP používá zarovnání 8 bajtů.</span><span class="sxs-lookup"><span data-stu-id="51631-116">On 32-bit Windows, COR_PRF_GC_GEN_0, COR_PRF_GC_GEN_1, and COR_PRF_GC_GEN_2 use 4-byte alignment, and COR_PRF_GC_LARGE_OBJECT_HEAP uses 8-byte alignment.</span></span>  
+-   <span data-ttu-id="2d019-116">Na Windows 32-bit COR_PRF_GC_GEN_0, COR_PRF_GC_GEN_1 a COR_PRF_GC_GEN_2 používat 4bajtové zarovnání a COR_PRF_GC_LARGE_OBJECT_HEAP používá zarovnání 8 bajtů.</span><span class="sxs-lookup"><span data-stu-id="2d019-116">On 32-bit Windows, COR_PRF_GC_GEN_0, COR_PRF_GC_GEN_1, and COR_PRF_GC_GEN_2 use 4-byte alignment, and COR_PRF_GC_LARGE_OBJECT_HEAP uses 8-byte alignment.</span></span>  
   
--   <span data-ttu-id="51631-117">Na Windows 64-bit zarovnání je vždy 8 bajtů.</span><span class="sxs-lookup"><span data-stu-id="51631-117">On 64-bit Windows, the alignment is always 8 bytes.</span></span>  
+-   <span data-ttu-id="2d019-117">Na Windows 64-bit zarovnání je vždy 8 bajtů.</span><span class="sxs-lookup"><span data-stu-id="2d019-117">On 64-bit Windows, the alignment is always 8 bytes.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="51631-118">Požadavky</span><span class="sxs-lookup"><span data-stu-id="51631-118">Requirements</span></span>  
- <span data-ttu-id="51631-119">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="51631-119">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="2d019-118">Požadavky</span><span class="sxs-lookup"><span data-stu-id="2d019-118">Requirements</span></span>  
+ <span data-ttu-id="2d019-119">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="2d019-119">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="51631-120">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="51631-120">**Header:** CorProf.idl, CorProf.h</span></span>  
+ <span data-ttu-id="2d019-120">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="2d019-120">**Header:** CorProf.idl, CorProf.h</span></span>  
   
- <span data-ttu-id="51631-121">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="51631-121">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="2d019-121">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="2d019-121">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="51631-122">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="51631-122">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ **<span data-ttu-id="2d019-122">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="2d019-122">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a><span data-ttu-id="51631-123">Viz také:</span><span class="sxs-lookup"><span data-stu-id="51631-123">See also</span></span>
-- [<span data-ttu-id="51631-124">ICorProfilerInfo – rozhraní</span><span class="sxs-lookup"><span data-stu-id="51631-124">ICorProfilerInfo Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+## <a name="see-also"></a><span data-ttu-id="2d019-123">Viz také:</span><span class="sxs-lookup"><span data-stu-id="2d019-123">See also</span></span>
+
+- [<span data-ttu-id="2d019-124">ICorProfilerInfo – rozhraní</span><span class="sxs-lookup"><span data-stu-id="2d019-124">ICorProfilerInfo Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)

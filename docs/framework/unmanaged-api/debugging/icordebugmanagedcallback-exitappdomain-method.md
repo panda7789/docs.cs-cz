@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d1b6d23ab5d773f6f25becefd45895c365271e6a
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: aed6ccd938761385aafd21802829bd741847b4ba
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57476188"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59110237"
 ---
-# <a name="icordebugmanagedcallbackexitappdomain-method"></a><span data-ttu-id="08bca-102">ICorDebugManagedCallback::ExitAppDomain – metoda</span><span class="sxs-lookup"><span data-stu-id="08bca-102">ICorDebugManagedCallback::ExitAppDomain Method</span></span>
-<span data-ttu-id="08bca-103">Upozorní ladicího programu, že byl ukončen domény aplikace.</span><span class="sxs-lookup"><span data-stu-id="08bca-103">Notifies the debugger that an application domain has exited.</span></span>  
+# <a name="icordebugmanagedcallbackexitappdomain-method"></a><span data-ttu-id="a988f-102">ICorDebugManagedCallback::ExitAppDomain – metoda</span><span class="sxs-lookup"><span data-stu-id="a988f-102">ICorDebugManagedCallback::ExitAppDomain Method</span></span>
+<span data-ttu-id="a988f-103">Upozorní ladicího programu, že byl ukončen domény aplikace.</span><span class="sxs-lookup"><span data-stu-id="a988f-103">Notifies the debugger that an application domain has exited.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="08bca-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="08bca-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="a988f-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="a988f-104">Syntax</span></span>  
   
 ```  
 HRESULT ExitAppDomain (  
@@ -36,21 +36,22 @@ HRESULT ExitAppDomain (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="08bca-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="08bca-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="a988f-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="a988f-105">Parameters</span></span>  
  `pProcess`  
- <span data-ttu-id="08bca-106">[in] Ukazatel na objekt ICorDebugProcess, který představuje proces, který obsahuje doménu dané aplikace.</span><span class="sxs-lookup"><span data-stu-id="08bca-106">[in] A pointer to an ICorDebugProcess object that represents the process that contains the given application domain.</span></span>  
+ <span data-ttu-id="a988f-106">[in] Ukazatel na objekt ICorDebugProcess, který představuje proces, který obsahuje doménu dané aplikace.</span><span class="sxs-lookup"><span data-stu-id="a988f-106">[in] A pointer to an ICorDebugProcess object that represents the process that contains the given application domain.</span></span>  
   
  `pAppDomain`  
- <span data-ttu-id="08bca-107">[in] Ukazatel na objekt ICorDebugAppDomain, který představuje doménu aplikace, který byl ukončen.</span><span class="sxs-lookup"><span data-stu-id="08bca-107">[in] A pointer to an ICorDebugAppDomain object that represents the application domain that has exited.</span></span>  
+ <span data-ttu-id="a988f-107">[in] Ukazatel na objekt ICorDebugAppDomain, který představuje doménu aplikace, který byl ukončen.</span><span class="sxs-lookup"><span data-stu-id="a988f-107">[in] A pointer to an ICorDebugAppDomain object that represents the application domain that has exited.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="08bca-108">Požadavky</span><span class="sxs-lookup"><span data-stu-id="08bca-108">Requirements</span></span>  
- <span data-ttu-id="08bca-109">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="08bca-109">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="a988f-108">Požadavky</span><span class="sxs-lookup"><span data-stu-id="a988f-108">Requirements</span></span>  
+ <span data-ttu-id="a988f-109">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="a988f-109">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="08bca-110">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="08bca-110">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="a988f-110">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="a988f-110">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="08bca-111">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="08bca-111">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="a988f-111">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="a988f-111">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="08bca-112">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="08bca-112">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ **<span data-ttu-id="a988f-112">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="a988f-112">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a><span data-ttu-id="08bca-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="08bca-113">See also</span></span>
-- [<span data-ttu-id="08bca-114">ICorDebugManagedCallback – rozhraní</span><span class="sxs-lookup"><span data-stu-id="08bca-114">ICorDebugManagedCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+## <a name="see-also"></a><span data-ttu-id="a988f-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="a988f-113">See also</span></span>
+
+- [<span data-ttu-id="a988f-114">ICorDebugManagedCallback – rozhraní</span><span class="sxs-lookup"><span data-stu-id="a988f-114">ICorDebugManagedCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
