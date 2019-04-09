@@ -9,12 +9,12 @@ helpviewer_keywords:
 - text change [WPF], detecting
 - detecting text change [WPF]
 ms.assetid: 1c39ee14-e37f-49fb-a0d1-a9824ca13584
-ms.openlocfilehash: 72441e53d21df47d34a0600dafdf0b4b04c11cad
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 1adadb0f071815930d34f40ddf244ffc8c19131b
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57352370"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59091145"
 ---
 # <a name="how-to-detect-when-text-in-a-textbox-has-changed"></a>Postupy: Zjištění, kdy došlo ke změně textu v prvku TextBox
 Tento příklad ukazuje jeden ze způsobů použití <xref:System.Windows.Controls.Primitives.TextBoxBase.TextChanged> události a metody pokaždé, když se text v <xref:System.Windows.Controls.TextBox> ovládacího prvku se změnil.  
@@ -43,6 +43,7 @@ Tento příklad ukazuje jeden ze způsobů použití <xref:System.Windows.Contro
  Komentáře  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Controls.TextChangedEventArgs>
 - [TextBox – přehled](textbox-overview.md)
 - [RichTextBox – přehled](richtextbox-overview.md)

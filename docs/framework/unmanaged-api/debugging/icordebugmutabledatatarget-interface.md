@@ -1,17 +1,17 @@
 ---
-title: ICorDebugMutableDataTarget Interface
+title: ICorDebugMutableDataTarget – rozhraní
 ms.date: 03/30/2017
 ms.assetid: 14aad5b3-84ab-4bbc-94e3-1eb92e258d10
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f63343b43481d1d91d1db30cd2ace3214c5590a9
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a8b33b07e7c9f83f5874dea1455cd70dcc3206de
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54492296"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59105934"
 ---
-# <a name="icordebugmutabledatatarget-interface"></a>ICorDebugMutableDataTarget Interface
+# <a name="icordebugmutabledatatarget-interface"></a>ICorDebugMutableDataTarget – rozhraní
 Rozšiřuje [icordebugdatatarget –](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget-interface.md) rozhraní pro podporu proměnlivé datové cíle.  
   
 ## <a name="methods"></a>Metody  
@@ -39,5 +39,6 @@ Rozšiřuje [icordebugdatatarget –](../../../../docs/framework/unmanaged-api/d
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v46plus](../../../../includes/net-current-v46plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+
+- [Debugging – rozhraní](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
 - [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)

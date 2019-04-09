@@ -2,12 +2,12 @@
 title: DeliveryRequirementsAttribute
 ms.date: 03/30/2017
 ms.assetid: 40c5435c-a325-4cf8-9dd0-d6e24b4a56a3
-ms.openlocfilehash: 809e9d809bce456c831aab83c7ac19a882b2959b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c81e4b27969d879a70806082f48879cbf1b32ccc
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54571321"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59101774"
 ---
 # <a name="deliveryrequirementsattribute"></a>DeliveryRequirementsAttribute
 DeliveryRequirementsAttribute  
@@ -57,4 +57,5 @@ class DeliveryRequirementsAttribute : Behavior
 |Obor názvů|Definované v root\ServiceModel|  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.DeliveryRequirementsAttribute>

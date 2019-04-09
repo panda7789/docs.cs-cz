@@ -5,12 +5,12 @@ author: BillWagner
 ms.author: wiwagn
 ms.date: 10/05/2017
 ms.custom: vs-dotnet, seodec18
-ms.openlocfilehash: ae202d8102d470e4260394f427e861750d4f0ee6
-ms.sourcegitcommit: 542aa405b295955eb055765f33723cb8b588d0d0
+ms.openlocfilehash: 0322d44ca37ab8e7faa3188887069c2e04ec755b
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54362467"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59110263"
 ---
 # <a name="publish-your-net-core-hello-world-application-with-visual-studio-2017"></a>Publikování aplikace .NET Core Hello World pomocí sady Visual Studio 2017
 
@@ -25,7 +25,6 @@ K publikování a spuštění aplikace:
 1. Klikněte pravým tlačítkem na **HelloWorld** projektu (nikoli řešení HelloWorld) a vyberte **publikovat** z nabídky. Můžete také vybrat **publikovat HelloWorld** z hlavní aplikace Visual Studio **sestavení** nabídky.
 
    ![Visual Studio Publish context menu](media/publishing-with-visual-studio/publish-context-menu.png)
-
 
    ![Visual Studio publikovat okna](media/publishing-with-visual-studio/publish-settings-window.png)
 

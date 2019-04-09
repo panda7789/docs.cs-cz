@@ -5,12 +5,12 @@ helpviewer_keywords:
 - data serialization [WCF]
 - data transfer [WCF]
 ms.assetid: 0f03c635-f3e7-4c5c-9463-3cb0135e221e
-ms.openlocfilehash: 5192030fa2eda45431dd8a3765603d3081b93fa3
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1eefd82a149d0bc215ca441e92c7d737a744b1e0
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54595315"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59088402"
 ---
 # <a name="data-transfer-and-serialization"></a>Přenos a serializace dat
 V připojené systému služeb a klientů závisí na výměny dat k provedení jakékoli úlohy. Jako vývojář službu nebo klienta musíte pochopit, jak Windows Communication Foundation (WCF) zpracovává data a serializace dat k vytvoření aplikace, které jsou efektivní a snadno udržovat.  
@@ -37,10 +37,10 @@ V připojené systému služeb a klientů závisí na výměny dat k provedení 
  [Filtrování](../../../../docs/framework/wcf/feature-details/filtering.md)  
  Popisuje, filtrování, která umožňuje předběžné zpracování zprávy na základě různých kritérií.  
   
- [Objemná data a streamování](../../../../docs/framework/wcf/feature-details/large-data-and-streaming.md)  
+ [Objemná data a vysílání datových proudů](../../../../docs/framework/wcf/feature-details/large-data-and-streaming.md)  
  Popisuje postup odesílání velkých blok dat, jako je například binární soubor.  
   
- [Důležité informace o zabezpečení dat](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md)  
+ [Důležité informace o zabezpečení pro data](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md)  
  Popisuje položky, které chcete mít na paměti při programování přenos a serializace dat.  
   
  [Strukturální přehled přenosu dat](../../../../docs/framework/wcf/feature-details/data-transfer-architectural-overview.md)  
@@ -61,5 +61,6 @@ V připojené systému služeb a klientů závisí na výměny dat k provedení 
  [Rozšiřování kodérů a serializátorů](../../../../docs/framework/wcf/extending/extending-encoders-and-serializers.md)  
   
 ## <a name="see-also"></a>Viz také:
-- [Osvědčené postupy: Správa verzí kontraktů dat](../../../../docs/framework/wcf/best-practices-data-contract-versioning.md)
-- [Správa verzí služby](../../../../docs/framework/wcf/service-versioning.md)
+
+- [Doporučené postupy: Správa verzí kontraktů dat](../../../../docs/framework/wcf/best-practices-data-contract-versioning.md)
+- [Verze služby](../../../../docs/framework/wcf/service-versioning.md)

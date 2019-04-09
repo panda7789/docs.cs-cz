@@ -8,12 +8,12 @@ helpviewer_keywords:
 - changing selections in a text box [WPF]
 - changing selections in a RichTextBox [WPF]
 ms.assetid: f1213205-1ad7-4cd2-b115-460173cc5aa3
-ms.openlocfilehash: a85dc4baa8a59d25f577996c541a422bbe2af24e
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: b8acfe7cde1fe5dae96cd6324f75c5b146be9ec9
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57367073"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59096222"
 ---
 # <a name="change-selection-in-a-richtextbox-programmatically"></a>Programová změna výběru v poli RichTextBox
 Tento příklad ukazuje, jak programově změnit v aktuálním výběru <xref:System.Windows.Controls.RichTextBox>. Tento výběr je stejný, jako by uživatel měl vybraný obsah pomocí uživatelského rozhraní.  
@@ -30,5 +30,6 @@ Tento příklad ukazuje, jak programově změnit v aktuálním výběru <xref:Sy
  [!code-vb[RichTextBoxMiscSnippets_snip#ChangeSelectionProgrammaticalyCodeExampleWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/RichTextBoxMiscSnippets_snip/VisualBasic/ChangeSelectionProgrammaticaly.xaml.vb#changeselectionprogrammaticalycodeexamplewholepage)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [RichTextBox – přehled](richtextbox-overview.md)
 - [TextBox – přehled](textbox-overview.md)

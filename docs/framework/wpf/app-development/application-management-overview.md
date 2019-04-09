@@ -7,17 +7,16 @@ dev_langs:
 helpviewer_keywords:
 - application management [WPF]
 ms.assetid: 32b1c054-5aca-423b-b4b5-ed8dc4dc637d
-ms.openlocfilehash: 395077b7c82ee54a51b8086df0c59f731e3a2b70
-ms.sourcegitcommit: d938c39afb9216db377d0f0ecdaa53936a851059
+ms.openlocfilehash: 687037d4299c8a53a2dcd644fd778081b5e7a0a2
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58634216"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59100077"
 ---
 # <a name="application-management-overview"></a>Přehled správy aplikací
 Všechny aplikace mají tendenci sdílejí společnou sadu funkcí, které se vztahuje na aplikace implementaci a správu. Toto téma obsahuje přehled funkcí v <xref:System.Windows.Application> třídy pro vytváření a správu aplikací.  
-   
-  
+
 ## <a name="the-application-class"></a>Třída aplikace  
  V WPF, běžné funkce s rozsahem aplikace zapouzdřena v <xref:System.Windows.Application> třídy. <xref:System.Windows.Application> Třída zahrnuje následující funkce:  
   
@@ -106,7 +105,7 @@ Všechny aplikace mají tendenci sdílejí společnou sadu funkcí, které se vz
   
 <a name="Getting_the_Current_Application"></a>   
 ## <a name="getting-the-current-application"></a>Získávání aktuální aplikace  
- Protože funkce <xref:System.Windows.Application> třídy jsou sdíleny napříč aplikace, může existovat pouze jedna instance <xref:System.Windows.Application> třídy za <xref:System.AppDomain>. Pokud to chcete vynutit <xref:System.Windows.Application> třídy je implementován jako třída singleton (naleznete v tématu [implementace jednotlivý prvek v jazyce C#](https://go.microsoft.com/fwlink/?LinkId=100567)), vytvoří jednu instanci sebe sama a poskytuje sdílený přístup přes `static` <xref:System.Windows.Application.Current%2A> Vlastnost.  
+ Protože funkce <xref:System.Windows.Application> třídy jsou sdíleny napříč aplikace, může existovat pouze jedna instance <xref:System.Windows.Application> třídy za <xref:System.AppDomain>. Pokud to chcete vynutit <xref:System.Windows.Application> třídy je implementován jako třída singleton (naleznete v tématu [implementace jednotlivý prvek v C# ](https://go.microsoft.com/fwlink/?LinkId=100567)), vytvoří jednu instanci sebe sama a poskytuje sdílený přístup přes `static`<xref:System.Windows.Application.Current%2A> vlastnost.  
   
  Následující kód ukazuje, jak získat odkaz na <xref:System.Windows.Application> pro aktuální objekt <xref:System.AppDomain>.  
   
@@ -125,8 +124,7 @@ Všechny aplikace mají tendenci sdílejí společnou sadu funkcí, které se vz
 <a name="Application_Lifetime"></a>   
 ## <a name="application-lifetime"></a>Doba života aplikace  
  Životnost aplikace WPF je označen několika událostem, které jsou generovány <xref:System.Windows.Application> dali vám vědět, kdy byla spuštěna aplikace, má se aktivovat a deaktivovat a vypnul.  
-  
-  
+
 <a name="Splash_Screen"></a>   
 ### <a name="splash-screen"></a>Úvodní obrazovka  
  Počínaje [!INCLUDE[net_v35SP1_short](../../../../includes/net-v35sp1-short-md.md)], zadáte image, který se má použít v okně spuštění nebo *úvodní obrazovka*. <xref:System.Windows.SplashScreen> Třída usnadňuje zobrazení úvodní okno při načítání vaší aplikace. <xref:System.Windows.SplashScreen> Okno se vytvoří a zobrazí před <xref:System.Windows.Application.Run%2A> je volána. Další informace najdete v tématu [dobu spuštění aplikace](../advanced/application-startup-time.md) a [přidání úvodní obrazovky do aplikace WPF](how-to-add-a-splash-screen-to-a-wpf-application.md).  
@@ -357,10 +355,11 @@ Všechny aplikace mají tendenci sdílejí společnou sadu funkcí, které se vz
  ![XBAP &#45; události aplikačního objektu](./media/applicationmodeloverview-applicationobjectevents-xbap.png "ApplicationModelOverview_ApplicationObjectEvents_xbap")  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Application>
-- [Přehled Windows ve WPF](wpf-windows-overview.md)
+- [Přehled WPF Windows](wpf-windows-overview.md)
 - [Přehled navigace](navigation-overview.md)
-- [Prostředek, obsah a datové soubory aplikace WPF](wpf-application-resource-content-and-data-files.md)
+- [Zdroj, obsah a datové soubory zdroje aplikací WPF](wpf-application-resource-content-and-data-files.md)
 - [Sbalení URI v technologii WPF](pack-uris-in-wpf.md)
-- [Aplikační Model: Postupy: témata](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms749013(v=vs.100))
+- [Aplikační Model: – postupy](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms749013(v=vs.100))
 - [Vývoj aplikací](index.md)

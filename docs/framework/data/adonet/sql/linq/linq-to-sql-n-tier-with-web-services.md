@@ -1,15 +1,15 @@
 ---
-title: Technologie LINQ to SQL. N-vrstvá s webovými službami
+title: N-vrstvé nastavení LINQ to SQL s webovými službami
 ms.date: 03/30/2017
 ms.assetid: 9cb10eb8-957f-4beb-a271-5f682016fed2
-ms.openlocfilehash: e621063a2bd38b8ed473b8092c65a2aa9a645511
-ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
+ms.openlocfilehash: 7b13a0cd77925423a12c093b1b5ac9b63ad7e019
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56092719"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59107403"
 ---
-# <a name="linq-to-sql-n-tier-with-web-services"></a>Technologie LINQ to SQL. N-vrstvá s webovými službami
+# <a name="linq-to-sql-n-tier-with-web-services"></a>N-vrstvé nastavení LINQ to SQL s webovými službami
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] je navržená speciálně pro použití ve střední vrstvě. v vrstvy přístupu k datům volně spárované (DAL), jako jsou webové služby. Pokud prezentační vrstvy je webová stránka ASP.NET, pak můžete použít <xref:System.Web.UI.WebControls.LinqDataSource> ovládacího prvku webového serveru pro správu přenosu dat mezi uživatelského rozhraní a [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] na střední vrstvě. Pokud prezentační vrstva není stránky ASP.NET, pak střední vrstvy a prezentační vrstvou musí provést další úkony ke správě serializace a deserializace dat.  
   
 ## <a name="setting-up-linq-to-sql-on-the-middle-tier"></a>Nastavení technologie LINQ to SQL ve střední vrstvě.  
@@ -37,5 +37,6 @@ ms.locfileid: "56092719"
  Další informace najdete v tématu [CUD operace v N-vrstvé aplikace (LINQ to SQL) a načítání dat](../../../../../../docs/framework/data/adonet/sql/linq/data-retrieval-and-cud-operations-in-n-tier-applications.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [N-vrstvé a vzdálené aplikace s LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/n-tier-and-remote-applications-with-linq-to-sql.md)
 - [Přehled ovládacího prvku zdroje dat LinqDataSource webového serveru](https://docs.microsoft.com/previous-versions/aspnet/bb547113(v=vs.100))

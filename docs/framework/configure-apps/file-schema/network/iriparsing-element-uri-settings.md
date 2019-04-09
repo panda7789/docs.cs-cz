@@ -1,13 +1,13 @@
 ---
-title: <iriParsing> – element (nastavení URI)
+title: <iriParsing> – Element (nastavení Uri)
 ms.date: 03/30/2017
 ms.assetid: 953d0b53-445e-41f9-b302-77c4030852ce
-ms.openlocfilehash: a4d4df8c214efb955f8f9d6678aaf8d56de71ebc
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
-ms.translationtype: MT
+ms.openlocfilehash: 710d82b70eb16e88404d4d8bbf38d2d030693103
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55256653"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59092497"
 ---
 # <a name="iriparsing-element-uri-settings"></a>\<iriParsing > – Element (nastavení Uri)
 Určuje, pokud analýze International Resource Identifier (IRI) se použije k <xref:System.Uri> a určuje, zda by měl použít IRI pravidel pro analýzu.  
@@ -32,18 +32,18 @@ Určuje, pokud analýze International Resource Identifier (IRI) se použije k <x
   
 ### <a name="attributes"></a>Atributy  
   
-|**Element**|**Popis**|  
+|**Prvek**|**Popis**|  
 |-----------------|---------------------|  
 |`enabled`|Určuje, zda je povolena analýza IRI. Výchozí hodnota je `false`.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádná  
+ Žádné  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|**Element**|**Popis**|  
+|**Prvek**|**Popis**|  
 |-----------------|---------------------|  
-|[uri](../../../../../docs/framework/configure-apps/file-schema/network/uri-element-uri-settings.md)|Obsahuje nastavení, které určují způsob, jakým rozhraní .NET Framework zpracovává webové adresy vyjádřena pomocí uniform resource Identifier (identifikátory URI).|  
+|[identifikátor URI](../../../../../docs/framework/configure-apps/file-schema/network/uri-element-uri-settings.md)|Obsahuje nastavení, které určují způsob, jakým rozhraní .NET Framework zpracovává webové adresy vyjádřena pomocí uniform resource Identifier (identifikátory URI).|  
   
 ## <a name="remarks"></a>Poznámky  
  Existující <xref:System.Uri> bylo rozšířeno třídy v rozhraní .NET Framework 3.5. 3.0 SP1 a 2.0 SP1 pro poskytnutí podpory pro mezinárodní prostředků identifikátory (IRI) a mezinárodní názvy domén (IDN). Aktuální uživatelé neuvidí žádné změny v chování rozhraní .NET Framework 2.0, pokud výslovně povolit IRI a IDN podporovat. Tím se zajistí kompatibilitu aplikací se staršími verzemi rozhraní .NET Framework.  
@@ -80,6 +80,7 @@ Určuje, pokud analýze International Resource Identifier (IRI) se použije k <x
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Configuration.IriParsingElement?displayProperty=nameWithType>
 - <xref:System.Configuration.UriSection?displayProperty=nameWithType>
 - [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

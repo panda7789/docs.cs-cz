@@ -1,15 +1,15 @@
 ---
-title: SQL Workflow Instance Store
+title: Úložiště instancí pracovních postupů SQL
 ms.date: 03/30/2017
 ms.assetid: 8cd2f8a5-4bf8-46ea-8909-c7fdb314fabc
-ms.openlocfilehash: 926b50ee00743f6a84f48c6ccae976daf49b3d9a
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 8314781f46d9cd4eddd06f6be95f8e952feef1b9
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57715669"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59086569"
 ---
-# <a name="sql-workflow-instance-store"></a>SQL Workflow Instance Store
+# <a name="sql-workflow-instance-store"></a>Úložiště instancí pracovních postupů SQL
 [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] Se dodává s SQL Store Instance pracovního postupu, který umožňuje pracovní postupy pro zachování informací o stavu instance pracovního postupu v databázi serveru SQL Server 2005 nebo SQL Server 2008. Tato funkce jsou primárně implementované ve formě <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> třída, která je odvozena z abstraktní <xref:System.Runtime.DurableInstancing.InstanceStore> třídy rozhraní trvalosti. Funkce SQL Store Instance pracovního postupu se považuje za SQL poskytovatele trvalého chování, které je konkrétní implementace rozhraní API, které hostitel používá k odesílání příkazů trvalost do úložiště trvalosti.  
   
  Store Instance pracovního postupu SQL podporuje pracovních postupů v místním prostředí nebo služeb pracovních postupů, které používají <xref:System.Activities.WorkflowApplication> nebo <xref:System.ServiceModel.WorkflowServiceHost> a také služeb hostovaných v používal <xref:System.ServiceModel.WorkflowServiceHost>. Funkce SQL Store Instance pracovního postupu služby v místním prostředí můžete nakonfigurovat prostřednictvím kódu programu pomocí objektového modelu vystavené funkci. Můžete nakonfigurovat tuto funkci pro služby hostované <xref:System.ServiceModel.WorkflowServiceHost> jak prostřednictvím kódu programu pomocí objektového modelu a taky pomocí konfiguračního souboru XML.  
@@ -37,4 +37,5 @@ ms.locfileid: "57715669"
 -   [Databáze trvalosti SQL Serveru](sql-server-persistence-database.md)  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Ukázky trvalosti](https://go.microsoft.com/fwlink/?LinkID=177735)

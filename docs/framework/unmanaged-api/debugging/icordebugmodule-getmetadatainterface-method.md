@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e5d28118ea1cc26f80ecc67ccedd160447aa69a4
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: 37710fbb7acc50b80d7acebe4194b019c0b64660
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57479031"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59102593"
 ---
 # <a name="icordebugmodulegetmetadatainterface-method"></a>ICorDebugModule::GetMetaDataInterface – metoda
 Získá objekt rozhraní metadat, který slouží k přezkoumání metadat pro modul.  
@@ -56,4 +56,5 @@ HRESULT GetMetaDataInterface (
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Metadata](../../../../docs/framework/unmanaged-api/metadata/index.md)

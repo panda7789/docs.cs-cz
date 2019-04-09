@@ -10,20 +10,19 @@ helpviewer_keywords:
 ms.assetid: 8e40fab9-549d-4731-aec2-ffa47a382de0
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8422c0b22f2286df98acbed874344f7664cb8903
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5cce67b36330714a821012082457e0297395a09c
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54529759"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59087531"
 ---
 # <a name="assembly-manifest"></a>Manifest sestavení
 Všechna sestavení, zda statickou nebo dynamickou, obsahuje kolekci dat, která popisuje, jak prvky v sestavení vzájemně souvisí. Manifest sestavení obsahuje metadata toto sestavení. Manifest sestavení obsahuje všechna metadata potřebná k určení požadavky na verzi sestavení a zabezpečení identity a všechna metadata potřebná k určení oboru sestavení a odkazy na prostředky a třídy. Manifest sestavení mohou být uloženy v obou přenositelném Spustitelném souboru (příponou .exe nebo .dll) s kód Microsoft intermediate language (MSIL) nebo v samostatné přenositelného Spustitelného souboru, který obsahuje jenom informace o manifestu sestavení.  
   
  Následující obrázek znázorňuje, že mohou být uloženy různé způsoby, jak v manifestu.  
   
- ![Jediný&#45;souboru sestavení](../../../docs/framework/app-domains/media/assemblytypes.gif "assemblytypes")  
-Typy sestavení  
+ ![Diagram, který obsahuje manifest v jednosouborového sestavení a konfigurace vícesouborové sestavení.](./media/assembly-manifest/assembly-types-diagram.gif)  
   
  V případě sestavení s jeden přidružený soubor manifestu součástí přenositelného Spustitelného souboru k vytvoření jednosouborového sestavení. Vícesouborová sestavení můžete vytvořit samostatný soubor manifestu nebo manifest do jednoho ze souborů PE v sestavení.  
   
@@ -55,6 +54,7 @@ Typy sestavení
  Můžete přidat nebo změnit některé informace v manifestu sestavení s použitím atributů sestavení ve vašem kódu. Můžete změnit informační atributy, včetně ochranné známky, autorská práva, produktu, společnosti a informační verze a informace o verzi. Úplný seznam atributů sestavení, naleznete v tématu [nastavení atributů sestavení](../../../docs/framework/app-domains/set-assembly-attributes.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Obsah sestavení](../../../docs/framework/app-domains/assembly-contents.md)
 - [Správa verzí sestavení](../../../docs/framework/app-domains/assembly-versioning.md)
 - [Vytváření satelitních sestavení](../../../docs/framework/resources/creating-satellite-assemblies-for-desktop-apps.md)

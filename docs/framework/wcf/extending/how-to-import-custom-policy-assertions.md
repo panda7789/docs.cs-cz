@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 1f41d787-accb-4a10-bfc6-a807671d1581
-ms.openlocfilehash: ff727922aeee7aeaea801dabd842f913ce75c220
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: e27c6ed6508544180d8659717b700e604b0f3d3c
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54674778"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59073621"
 ---
 # <a name="how-to-import-custom-policy-assertions"></a>Postupy: Import kontrolních výrazů vlastních zásad
 Kontrolní výrazy zásad popisují funkce a požadavky koncového bodu služby.  Klientské aplikace můžou použít kontrolní výrazy zásad v metadata služby, abyste mohli nakonfigurovat klienta vazby nebo přizpůsobit kontraktu služby koncového bodu služby.  
@@ -64,6 +64,7 @@ Kontrolní výrazy zásad popisují funkce a požadavky koncového bodu služby.
 1.  Přidat import do <xref:System.ServiceModel.Description.MetadataImporter.PolicyImportExtensions%2A?displayProperty=nameWithType> vlastnosti (například pokud použijete <xref:System.ServiceModel.Description.WsdlImporter?displayProperty=nameWithType>) před importem metadata.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Description.MetadataResolver?displayProperty=nameWithType>
 - <xref:System.ServiceModel.Description.WsdlImporter?displayProperty=nameWithType>
 - <xref:System.ServiceModel.Description.MetadataResolver?displayProperty=nameWithType>

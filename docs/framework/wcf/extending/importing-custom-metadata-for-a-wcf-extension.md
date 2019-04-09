@@ -2,12 +2,12 @@
 title: Import vlastních metadat pro rozšíření WCF
 ms.date: 03/30/2017
 ms.assetid: 78beb28f-408a-4c75-9c3c-caefe9595b1a
-ms.openlocfilehash: b99d7fbab08c5edabe3a08baf89dd267c3f9fa25
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 021790a256448d9c81e7a53a2845edf839ff3534
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54562099"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59090066"
 ---
 # <a name="importing-custom-metadata-for-a-wcf-extension"></a>Import vlastních metadat pro rozšíření WCF
 Ve Windows Communication Foundation (WCF), import metadat je proces generování abstraktní reprezentace služby nebo jeho součásti z jeho metadata. Například můžete importovat WCF <xref:System.ServiceModel.Description.ServiceEndpoint> instancí, <xref:System.ServiceModel.Channels.Binding> instance nebo <xref:System.ServiceModel.Description.ContractDescription> instancí ze souboru WSDL dokumentů pro službu. Při importu metadat služby ve službě WCF použijte implementace <xref:System.ServiceModel.Description.MetadataImporter?displayProperty=nameWithType> abstraktní třídy. Typy, které jsou odvozeny z <xref:System.ServiceModel.Description.MetadataImporter> třída implementovat podporu pro import formáty metadat, které budou využívat WS-Policy importovat logiky ve službě WCF.  
@@ -49,6 +49,7 @@ Ve Windows Communication Foundation (WCF), import metadat je proces generování
 >  Neplatná nebo nesprávná data může být předán tabulkách. Zajistěte, aby byly vlastní importers robustní pro všechny formy XML.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Postupy: Import vlastního WSDL](../../../../docs/framework/wcf/extending/how-to-import-custom-wsdl.md)
 - [Postupy: Import kontrolních výrazů vlastních zásad](../../../../docs/framework/wcf/extending/how-to-import-custom-policy-assertions.md)
 - [Postupy: Vytvoření rozšíření pro třídu ServiceContractGenerator](../../../../docs/framework/wcf/extending/how-to-write-an-extension-for-the-servicecontractgenerator.md)

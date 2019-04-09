@@ -1,15 +1,15 @@
 ---
-title: Šifrování dat v systému SQL Server
+title: Šifrování dat na SQL Serveru
 ms.date: 03/30/2017
 ms.assetid: 83b992f7-b351-4678-b4b9-f4ffd58134cc
-ms.openlocfilehash: 4b421d2cb5a44ee164a73ea1367a79d81fb37c31
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1acb720b8a4f8beb27bb1a5236efdb6f2bb44383
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54591926"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59102164"
 ---
-# <a name="data-encryption-in-sql-server"></a>Šifrování dat v systému SQL Server
+# <a name="data-encryption-in-sql-server"></a>Šifrování dat na SQL Serveru
 SQL Server poskytuje funkce pro šifrování a dešifrování dat pomocí certifikátu, asymetrického klíče nebo symetrický klíč. Spravuje všechny z nich najdete v úložišti vnitřní certifikát. Úložiště používá k šifrování hierarchii, která chrání vaše certifikáty a klíče na jedné úrovni vrstvy nad ním v hierarchii. Tato oblast funkce systému SQL Server se nazývá tajný klíč úložiště.  
   
  O nejrychlejší režim šifrování functions podporuje šifrování je šifrování se symetrickým klíčem. Tento režim je vhodný pro zpracování velkých objemů dat. Symetrické klíče mohou být šifrována pomocí certifikátů, hesla nebo dalších symetrické klíče.  
@@ -30,6 +30,7 @@ SQL Server poskytuje funkce pro šifrování a dešifrování dat pomocí certif
 |[Šifrování hierarchie](/sql/relational-databases/security/encryption/encryption-hierarchy)|Přehled šifrování v systému SQL Server. Toto téma obsahuje odkazy na další články.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Zabezpečení aplikací ADO.NET](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)
 - [Scénáře zabezpečení aplikací na SQL Serveru](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)
 - [Ověřování v SQL Serveru](../../../../../docs/framework/data/adonet/sql/authentication-in-sql-server.md)

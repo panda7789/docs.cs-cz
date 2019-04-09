@@ -2,12 +2,12 @@
 title: Poradce při potížích
 ms.date: 03/30/2017
 ms.assetid: 8cd4401c-b12c-4116-a421-f3dcffa65670
-ms.openlocfilehash: 62cc7a0567b9eb82c24c329a7ae8fb3e52f0f0c8
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 27b7eef345dd8ec6c4f5e319818b6b002717f049
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54586407"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59105479"
 ---
 # <a name="troubleshooting"></a>Poradce při potížích
 Následující informace uvádí některé problémy, může dojít v vaše [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] aplikací a nabízí návrhy k zamezení nebo jinak snižují dopad těchto problémů.  
@@ -70,5 +70,6 @@ Následující informace uvádí některé problémy, může dojít v vaše [!IN
  Vytvořena metoda `OnCreated()` je volána pokaždé, když je volána konstruktor objektu, včetně scénář, ve kterém [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] volá konstruktor k vytvoření kopie pro původní hodnoty. Toto chování vzít v úvahu, pokud se rozhodnete implementovat `OnCreated()` metoda ve vlastním částečné třídy.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Podpora ladění](../../../../../../docs/framework/data/adonet/sql/linq/debugging-support.md)
 - [Nejčastější dotazy](../../../../../../docs/framework/data/adonet/sql/linq/frequently-asked-questions.md)

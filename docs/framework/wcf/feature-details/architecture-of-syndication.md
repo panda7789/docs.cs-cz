@@ -2,12 +2,12 @@
 title: Architektura syndikace
 ms.date: 03/30/2017
 ms.assetid: ed4ca86e-e3d8-4acb-87aa-1921fbc353be
-ms.openlocfilehash: b07fc03fd11c794d804b6bcd1813010965365e43
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 4083f7f7ef3fc986e9a7c430b8ed8cfe451c9d86
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54623440"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59075909"
 ---
 # <a name="architecture-of-syndication"></a>Architektura syndikace
 Rozhraní API syndikace je navržené pro poskytování formátu neutrální programovací model, který umožňuje syndikovaný obsah má být proveden zápis k přenosu v různých formátech. Abstraktní datový model obsahuje následující třídy:  
@@ -78,6 +78,7 @@ Rozhraní API syndikace je navržené pro poskytování formátu neutrální pro
 -   Klíčovou funkcí služby syndikace protokolů je rozšíření. Atom 1.0 i RSS 2.0 umožňují přidat atributy a elementy pro informační kanály syndikace, které nejsou definované specifikací. Programovací model syndikace WCF nabízí dva způsoby práce s vlastní atributy a rozšíření: odvození nové třídy a volného typu přístup. Další informace najdete v tématu [rozšiřitelnost syndikace](../../../../docs/framework/wcf/feature-details/syndication-extensibility.md).  
   
 ## <a name="see-also"></a>Viz také:
-- [Přehled syndikace WCF](../../../../docs/framework/wcf/feature-details/wcf-syndication-overview.md)
-- [Mapování objektového modelu syndikace WCF na Atom a RSS](../../../../docs/framework/wcf/feature-details/how-the-wcf-syndication-object-model-maps-to-atom-and-rss.md)
-- [Programovací model webových služeb HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)
+
+- [Syndikace WCF – přehled](../../../../docs/framework/wcf/feature-details/wcf-syndication-overview.md)
+- [Mapování modelu objektu syndikace WCF na Atom a RSS](../../../../docs/framework/wcf/feature-details/how-the-wcf-syndication-object-model-maps-to-atom-and-rss.md)
+- [Model programování webových služeb HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)

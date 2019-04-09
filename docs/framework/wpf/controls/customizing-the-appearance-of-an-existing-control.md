@@ -12,12 +12,12 @@ helpviewer_keywords:
 - controls [WPF], appearance specified by state
 - templates [WPF], custom for existing controls
 ms.assetid: 678dd116-43a2-4b8c-82b5-6b826f126e31
-ms.openlocfilehash: 5d4b16721dd8cabc5d662538274dcb82ab734cca
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: b52a63a0531d71c784ef12f29049754f4a9efddb
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57375100"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59098959"
 ---
 # <a name="customizing-the-appearance-of-an-existing-control-by-creating-a-controltemplate"></a>Přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením ControlTemplate
 <a name="introduction"></a> A <xref:System.Windows.Controls.ControlTemplate> určuje vizuální struktury a chování ovládacího prvku visual. Můžete přizpůsobit vzhled ovládacího prvku tak, že udělíte it nový <xref:System.Windows.Controls.ControlTemplate>. Když vytvoříte <xref:System.Windows.Controls.ControlTemplate>, nahraďte vzhledu stávajícího ovládacího prvku beze změny jeho funkce. Například měli tlačítka ve vaší aplikaci round místo výchozí Čtvereček tvar, ale stále na tlačítko vyvolá <xref:System.Windows.Controls.Primitives.ButtonBase.Click> událostí.  
@@ -31,8 +31,7 @@ Tlačítko, které používá šablonu vlastního ovládacího prvku
   
  ![Tlačítko se červené ohraničení. ](./media/ndp-buttonmouseover.png "NDP_ButtonMouseOver")  
 Tlačítko, které používá šablonu vlastního ovládacího prvku a má ukazatel myši nad ním  
-  
-  
+
 <a name="prerequisites"></a>   
 ## <a name="prerequisites"></a>Požadavky  
  Toto téma předpokládá, že vám pochopit, jak vytvořit a používat ovládací prvky a stylů, jak je popsáno v [ovládací prvky](index.md). Principy probírané v tomto tématu platí pro prvky, které dědí <xref:System.Windows.Controls.Control> třídy, s výjimkou <xref:System.Windows.Controls.UserControl>. Nelze použít <xref:System.Windows.Controls.ControlTemplate> k <xref:System.Windows.Controls.UserControl>.  
@@ -257,9 +256,10 @@ Který používá šablonu vlastního ovládacího prvku ve stavu při stisknut�
   
 <a name="complete_example"></a>   
 ## <a name="complete-example"></a>Kompletní příklad  
- Následující příklad ukazuje kompletní <xref:System.Windows.Controls.Button> <xref:System.Windows.Controls.ControlTemplate> , která je popsána v tomto tématu.  
+ Následující příklad ukazuje kompletní <xref:System.Windows.Controls.Button><xref:System.Windows.Controls.ControlTemplate> , která je popsána v tomto tématu.  
   
  [!code-xaml[VSMButtonTemplate#3](~/samples/snippets/csharp/VS_Snippets_Wpf/vsmbuttontemplate/csharp/skinnedbutton.xaml#3)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Styly a šablony](styling-and-templating.md)

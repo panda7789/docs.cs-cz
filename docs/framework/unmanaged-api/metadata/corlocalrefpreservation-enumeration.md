@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: e9ed3cdac726fbdbf9ee2b33f42565d8594bc36e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 845994b96445d8ec2a0e37affc5164b432894a91
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54669676"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59102190"
 ---
 # <a name="corlocalrefpreservation-enumeration"></a>CorLocalRefPreservation – výčet
 Obsahuje příznak hodnoty pro zacházení s místní odkazy.  
@@ -53,4 +53,5 @@ typedef enum CorLocalRefPreservation
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
-- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+
+- [Výčty metadat](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

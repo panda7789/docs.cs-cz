@@ -2,12 +2,12 @@
 title: <channelPoolSettings>
 ms.date: 03/30/2017
 ms.assetid: 4755f3d3-4213-4c68-ae7f-45b67d744459
-ms.openlocfilehash: dd6cf74560694e7e16103c624b33a4c590ce5d50
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: ca1f680e2de67984dfcec49b3d262799000a2625
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55266920"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59102580"
 ---
 # <a name="channelpoolsettings"></a>\<channelPoolSettings>
 Určuje nastavení fondu kanálu pro vlastní vazbu.  
@@ -59,6 +59,7 @@ Určuje nastavení fondu kanálu pro vlastní vazbu.
 -   `maxOutboundChannelsPerEndpoint` Kvóta nastavuje omezení mezipaměti na serveru a klienta a slouží ke zlepšení spolehlivosti. Výchozí hodnota je založena na konzervativní zvýšení přidělení prostředků, která je vhodná pro malé instalace scénáře a vývojové prostředí. Správci služeb by měl zkontrolujte hodnotu, pokud instalace může být nedostatek prostředků, nebo pokud připojení jsou omezeno bez ohledu na dostupnost další prostředky.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Channels.OneWayBindingElement.ChannelPoolSettings%2A>
 - <xref:System.ServiceModel.Channels.ChannelPoolSettings>
 - <xref:System.ServiceModel.Configuration.OneWayElement.ChannelPoolSettings%2A>
@@ -66,6 +67,6 @@ Určuje nastavení fondu kanálu pro vlastní vazbu.
 - <xref:System.ServiceModel.Channels.CustomBinding>
 - [\<oneWay>](../../../../../docs/framework/configure-apps/file-schema/wcf/oneway.md)
 - [Vazby](../../../../../docs/framework/wcf/bindings.md)
-- [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)
+- [Rozšiřování vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)
 - [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)
 - [\<customBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)

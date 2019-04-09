@@ -12,12 +12,12 @@ helpviewer_keywords:
 - installutil.exe tool
 ms.assetid: c89c5169-f567-4305-9d62-db31a1de5481
 author: ghogen
-ms.openlocfilehash: 43b5ad2f346406897e8bcbcce5660a6c9524f9af
-ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
-ms.translationtype: MT
+ms.openlocfilehash: c4eb1e5fd0c0b06f332b1eba7d3445963699415c
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55826254"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59100366"
 ---
 # <a name="how-to-install-and-uninstall-windows-services"></a>Postupy: Instalace a odinstalace služeb Windows
 Pokud vytváříte službu Windows s použitím rozhraní .NET Framework, můžete rychle nainstalovat aplikaci služby pomocí [ *InstallUtil.exe* ](../tools/installutil-exe-installer-tool.md) nástroj příkazového řádku. Vývojáři, kteří chtějí vydání služby Windows, které mohou uživatelé nainstalovat a odinstalovat používali InstallShield. Další informace najdete v tématu [vytvoření instalačního balíčku (Windows klient)](https://docs.microsoft.com/visualstudio/deployment/deploying-applications-services-and-components#create-an-installer-package-windows-client).
@@ -67,6 +67,7 @@ Pokud vytváříte službu Windows s použitím rozhraní .NET Framework, může
 3. Služba může být v registru po odstranění spustitelný soubor pro službu. Pokud je to tento případ, použijte příkaz [sc delete](/windows-server/administration/windows-commands/sc-delete) pro odebrání položky služby z registru.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Úvod do aplikace služby Windows](../windows-services/introduction-to-windows-service-applications.md)
 - [Postupy: Vytvoření služeb Windows](../windows-services/how-to-create-windows-services.md)
 - [Postupy: Přidání instalačních programů do aplikace služby](../windows-services/how-to-add-installers-to-your-service-application.md)

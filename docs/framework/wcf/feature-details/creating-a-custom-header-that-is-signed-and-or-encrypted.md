@@ -1,15 +1,15 @@
 ---
-title: Vytvoření vlastní hlavičky, která je podepsaná a- nebo šifrovaná
+title: Vytvoření vlastní hlavičky, která je podepsaná a/nebo šifrovaná
 ms.date: 03/30/2017
 ms.assetid: e8668b37-c79f-4714-9de5-afcb88b9ff02
-ms.openlocfilehash: 0f8f86bcb5494cd502d14aff1cf3c4cdf4f8dd33
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 76bfb6040f6b78765ed42ce7fbf86cdbd62c1e48
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54494818"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59075625"
 ---
-# <a name="creating-a-custom-header-that-is-signed-and-or-encrypted"></a>Vytvoření vlastní hlavičky, která je podepsaná a- nebo šifrovaná
+# <a name="creating-a-custom-header-that-is-signed-and-or-encrypted"></a>Vytvoření vlastní hlavičky, která je podepsaná a/nebo šifrovaná
 Při volání služby typu bez WCF pomocí klienta WCF je někdy potřeba použít vlastní hlavičky SOAP. Ve službě WCF, který brání vlastní hlavičky, které jsou podepsány a šifrovány práci se službou bez WCF je Chyba převodu do kanonického tvaru. Problém je způsoben nesprávnou interpretaci výchozí obory názvů XML. Toto je pouze problematické při volání služby bez WCF s vlastní hlavičky, které jsou podepsané a/nebo šifrovaná.  Když služba přijímá zprávy obsahující podepsaný a/nebo šifrovaná vlastní hlavičky nelze ověřit podpis. Toto řešení se vyhnete chyby převodu do kanonického tvaru, umožňuje spolupráci se službami jiných WCF, ale nezabrání interoperabilita se službami WCF.  
   
 ## <a name="defining-the-custom-header"></a>Definování vlastní hlavičky  
@@ -57,6 +57,7 @@ public  class MyMessageContract
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Výchozí kontrakt zprávy](../../../../docs/framework/wcf/samples/default-message-contract.md)
 - [Kontrakty zpráv](../../../../docs/framework/wcf/samples/message-contracts.md)
 - [Použití kontraktů zpráv](../../../../docs/framework/wcf/feature-details/using-message-contracts.md)

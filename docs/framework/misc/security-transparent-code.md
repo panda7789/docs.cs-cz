@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 4f3dd841-82f7-4659-aab0-6d2db2166c65
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: dc39e4ee47041e70060465a7e220ae1d861d9053
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 01427e8f90cebca5297e21d54d29c08cf1eab75c
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54510114"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59075935"
 ---
 # <a name="security-transparent-code"></a>Kód transparentní pro zabezpečení
 <a name="top"></a>
@@ -107,5 +107,6 @@ ms.locfileid: "54510114"
  Pravidla transparentnosti nejsou vynucena, dokud se transparentnost nevypočítá. V tu chvíli <xref:System.InvalidOperationException> je vyvolána, pokud je pravidlo transparentnosti porušeno. Čas, který je transparentnost vypočítána, závisí na několika faktorech a nemůže být předpovězen. Je vypočten tak pozdě nejvíce. V [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], dříve, než v rozhraní .NET Framework 2.0 dojde k výpočtu transparentnosti úrovně sestavení. Jediná záruka je, že výpočtu transparentnosti dojde v době, kdy je to potřeba. To se podobá jak kompilátor just-in-time (JIT) může měnit bod, když je metoda kompilována a zjištěny nějaké chyby v této metodě. Výpočet transparentnosti je neviditelný, pokud váš kód nemá nějaké chyby transparentnosti.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Kód transparentní pro zabezpečení, úroveň 1](../../../docs/framework/misc/security-transparent-code-level-1.md)
-- [Kód transparentní pro zabezpečení, úroveň 2](../../../docs/framework/misc/security-transparent-code-level-2.md)
+- [Transparentní kód pro zabezpečení, úroveň 2](../../../docs/framework/misc/security-transparent-code-level-2.md)

@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 9cf47c5b-0bb2-45df-9437-61cd7e7c2f4d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c0567ce61a57d5e1575f42ccea332236e3cde987
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ebb3283d089f4e823db051cd7ee450a1df6b866e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54552863"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59096937"
 ---
 # <a name="mitigation-custom-imessagefilterprefiltermessage-implementations"></a>Omezení rizik: Custom IMessageFilter.PreFilterMessage Implementations
 V aplikacích Windows Forms, které se zaměřují rozhraní .NET Framework počínaje verzí [!INCLUDE[net_v461](../../../includes/net-v461-md.md)], vlastní <xref:System.Windows.Forms.IMessageFilter.PreFilterMessage%2A?displayProperty=nameWithType> implementace může bezpečně filtru zprávy, když <xref:System.Windows.Forms.Application.FilterMessage%2A?displayProperty=nameWithType> metoda je volána, pokud <xref:System.Windows.Forms.IMessageFilter.PreFilterMessage%2A?displayProperty=nameWithType> implementace:  
@@ -45,4 +45,5 @@ V aplikacích Windows Forms, které se zaměřují rozhraní .NET Framework poč
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Odlišnosti ve změnách cílení](../../../docs/framework/migration-guide/retargeting-changes-in-the-net-framework-4-6-1.md)

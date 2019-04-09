@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 50fd730876f43be5da45f38fa2d4694cbb2b2d1a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 7efb2c3e8033b8bd8fa736a29b2ab9b3bedebeaa
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54502569"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59109639"
 ---
 # <a name="cortypelayout-structure"></a>COR_TYPE_LAYOUT – struktura
 Poskytuje informace o rozložení objektu v paměti.  
@@ -61,5 +61,6 @@ typedef struct COR_TYPE_LAYOUT {
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Struktury pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)
 - [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)

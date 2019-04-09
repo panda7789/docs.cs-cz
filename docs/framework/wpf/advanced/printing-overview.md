@@ -15,12 +15,12 @@ helpviewer_keywords:
 - XPSDrv-based printers
 - GDI print path [WPF]
 ms.assetid: 0de8ac41-9aa6-413d-a121-7aa6f41539b1
-ms.openlocfilehash: c009d86deada690f673736e0e35eb710e25f7781
-ms.sourcegitcommit: 15ab532fd5e1f8073a4b678922d93b68b521bfa0
+ms.openlocfilehash: 2aeafa7065b587497fb6f3b23605c21dca291cd1
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58654377"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59075857"
 ---
 # <a name="printing-overview"></a>Přehled tisku
 Rozhraní Microsoft .NET Framework aplikace vývojářům, kteří používají Windows Presentation Foundation (WPF) mají nové bohatou Správa systému tisku a tisk [!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)]. S [!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)], některé z těchto vylepšení tiskovém systému jsou také k dispozici pro vývojáře vytvářející [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] aplikace a vývojáře, kteří používají nespravovaný kód. V jádru služby tato nová funkce je nový [!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)] formát souboru a [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] cesta tisku.  
@@ -43,7 +43,7 @@ Rozhraní Microsoft .NET Framework aplikace vývojářům, kteří používají 
   
  Výhody [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] cesta tisku jsou významné a zahrnují:  
   
--   [!INCLUDE[TLA2#tla_wys](../../../../includes/tla2sharptla-wys-md.md)] Podpora tisku  
+-   [!INCLUDE[TLA2#tla_wys](../../../../includes/tla2sharptla-wys-md.md)] podpora tisku  
   
 -   Nativní podpora profilů pokročilé barev, mezi které patří 32 bitů na kanál, CMYK, pojmenované barvy, barvy n a nativní podporu transparentnosti a přechody.  
   
@@ -135,6 +135,7 @@ Pro aplikace, které nevyžadují [!INCLUDE[TLA2#tla_metro](../../../../includes
 -   **Komprese ZIP**. Všechny [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] dokumenty pomocí komprese formátu ZIP.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Controls.PrintDialog>
 - <xref:System.Windows.Xps.XpsDocumentWriter>
 - <xref:System.Windows.Xps.Packaging.XpsDocument>
@@ -142,8 +143,8 @@ Pro aplikace, které nevyžadují [!INCLUDE[TLA2#tla_metro](../../../../includes
 - <xref:System.Printing.PrintCapabilities>
 - <xref:System.Printing.PrintServer>
 - <xref:System.Printing.PrintQueue>
-- [Témata s postupy](printing-how-to-topics.md)
+- [– postupy](printing-how-to-topics.md)
 - [Dokumenty v platformě WPF](documents-in-wpf.md)
 - [XPS – dokumenty](/windows/desktop/printdocs/documents)
-- [Serializace a úložiště dokumentů](document-serialization-and-storage.md)
+- [Serializace a úložiště dokumentu](document-serialization-and-storage.md)
 - [Převaděč (MXDC) dokumentů Microsoft XPS](/windows/desktop/printdocs/microsoft-xps-document-converter--mxdc-)

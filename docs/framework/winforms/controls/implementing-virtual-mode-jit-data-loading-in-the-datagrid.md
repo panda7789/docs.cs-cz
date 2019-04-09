@@ -12,12 +12,12 @@ helpviewer_keywords:
 - DataGridView control [Windows Forms], large data sets
 - virtual mode [Windows Forms], just-in-time data loading
 ms.assetid: c2a052b9-423c-4ff7-91dc-d8c7c79345f6
-ms.openlocfilehash: 44c985cef035e33e88ba246584efcb30fe0e9b97
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 641db19cc6493a20c9f9a34622f466e3623c32ad
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57705555"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59088649"
 ---
 # <a name="implementing-virtual-mode-with-just-in-time-data-loading-in-the-windows-forms-datagridview-control"></a>Implementace virtuálního režimu s načítáním dat za běhu v ovládacím prvku Windows Forms DataGridView
 Jedním z důvodů implementace virtuálního režimu v <xref:System.Windows.Forms.DataGridView> je ovládací prvek k načtení dat pouze dle potřeby. Tento postup se nazývá *načítání dat just-in-time*.  
@@ -71,10 +71,11 @@ Jedním z důvodů implementace virtuálního režimu v <xref:System.Windows.For
  Kvůli zvýšení výkonu posunování prvku vaše aplikace se může zvýšit množství dat uložených místně. K vylepšení doby spouštění, ale je třeba se vyvarovat načítání příliš mnoho dat původně. Můžete chtít změnit `Cache` třídy zvýšit počet stránek data můžete ukládat. Použití více stránek data může zlepšit efektivitu posouvání, ale budete muset zjistit ideální počet řádků na stránce dat, v závislosti na dostupnou šířku pásma a latence serveru. S menší stránky serveru budete přistupovat častěji, ale bude trvat kratší dobu vrací požadovaná data. Pokud je latence větší potíže než šířka pásma, můžete chtít použít větší data stránky.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.DataGridView.VirtualMode%2A>
 - [Ladění výkonu v ovládacím prvku Windows Forms DataGridView](performance-tuning-in-the-windows-forms-datagridview-control.md)
-- [Doporučené postupy pro změnu velikosti ovládacího prvku Windows Forms DataGridView](best-practices-for-scaling-the-windows-forms-datagridview-control.md)
+- [Doporučené postupy pro změnu velikosti v ovládacím prvku Windows Forms DataGridView](best-practices-for-scaling-the-windows-forms-datagridview-control.md)
 - [Virtuální režim v ovládacím prvku Windows Forms DataGridView](virtual-mode-in-the-windows-forms-datagridview-control.md)
 - [Návod: Implementace virtuálního režimu v ovládacím prvku Windows Forms DataGridView](implementing-virtual-mode-wf-datagridview-control.md)
 - [Postupy: Implementace virtuálního režimu s načítáním dat za běhu v ovládacím prvku Windows Forms DataGridView](virtual-mode-with-just-in-time-data-loading-in-the-datagrid.md)

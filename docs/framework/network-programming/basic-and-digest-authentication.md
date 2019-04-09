@@ -1,5 +1,5 @@
 ---
-title: Základní a ověřování algoritmem Digest
+title: Základní ověřování a ověřování hodnotou hash
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -19,14 +19,14 @@ helpviewer_keywords:
 - network resources, authentication
 - user authentication, digest
 ms.assetid: 8cce2742-8d52-4643-9dd2-64ddf38aa878
-ms.openlocfilehash: 2c764909514eac74cb930df055cdb846bab7b249
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 4f70d2aef3bb064a3df9db9c87671040776332a7
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54502922"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59089819"
 ---
-# <a name="basic-and-digest-authentication"></a>Základní a ověřování algoritmem Digest
+# <a name="basic-and-digest-authentication"></a>Základní ověřování a ověřování hodnotou hash
 <xref:System.Net> Provádění basic a ověřování algoritmem digest splňuje RFC2617 – ověřování pomocí protokolu HTTP: Základní a ověřování algoritmem Digest (k dispozici na [World Wide Web Consortium](https://www.w3.org) webu).  
   
  Použijte základní a ověřování algoritmem digest, aplikace musíte zadat uživatelské jméno a heslo <xref:System.Net.WebRequest.Credentials%2A> vlastnost <xref:System.Net.WebRequest> objekt, který se použije k vyžádání dat z Internetu, jak je znázorněno v následujícím příkladu.  
@@ -47,5 +47,6 @@ WReq.Credentials = new NetworkCredential(UserName, SecurelyStoredPassword);
 >  Data odesílaná s Basic a ověřování algoritmem Digest se nešifrují, takže data můžete vidět nežádoucí osoba. Kromě toho pověření základního ověřování (uživatelské jméno a heslo) se odesílají v nešifrované podobě a může být zachycena.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Ověřování NTLM a Kerberos](../../../docs/framework/network-programming/ntlm-and-kerberos-authentication.md)
 - [Ověřování v internetu](../../../docs/framework/network-programming/internet-authentication.md)

@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Spuštění testu použitím kontejneru hostitele Win32'
+title: 'Postupy: Ověřování pozice pomocí kontejneru hostitele Win32'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - visual objects [WPF], hit tests on
 - Win32 host containers [WPF], hit tests using
 ms.assetid: 9491f7f3-d8ba-4573-a888-2f064d1349dc
-ms.openlocfilehash: 19526c064efefd80c17fdb4f544b65fcda872bf7
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: ac5cae5bcd94dc8bf80ff95b8971914e1fa5ba2c
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57360755"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59081460"
 ---
-# <a name="how-to-hit-test-using-a-win32-host-container"></a>Postupy: Spuštění testu použitím kontejneru hostitele Win32
+# <a name="how-to-hit-test-using-a-win32-host-container"></a>Postupy: Ověřování pozice pomocí kontejneru hostitele Win32
 Můžete vytvořit vizuální objekty v rámci [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] okno tím, že hostitel poskytuje okno kontejneru pro vizuální objekty. Kvůli omezením vizuální objekty zpracování událostí zpracování zpráv předávaných do smyčky filtru zprávy okna kontejneru hostitele. Odkazovat na [kurzu: Hostování vizuální objektů v aplikaci Win32](tutorial-hosting-visual-objects-in-a-win32-application.md) Další informace o tom, k hostování vizuální objektů v [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] okna.  
   
 ## <a name="example"></a>Příklad  
@@ -35,6 +35,7 @@ Můžete vytvořit vizuální objekty v rámci [!INCLUDE[TLA#tla_win32](../../..
  Úplnou ukázku na přístupů testování objektů pomocí kontejneru hostitele Win32, najdete v části [spuštění testu s ukázkou vzájemná spolupráce grafického subsystému Win32](https://go.microsoft.com/fwlink/?LinkID=159995).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Interop.HwndSource>
-- [Ověřování pozice ve vizuální vrstvě](hit-testing-in-the-visual-layer.md)
-- [Kurz: Hostování vizuální objektů v aplikaci Win32](tutorial-hosting-visual-objects-in-a-win32-application.md)
+- [Spuštění testování ve vizuální vrstvě](hit-testing-in-the-visual-layer.md)
+- [Kurz: Hostování vizuálních objektů v aplikaci Win32](tutorial-hosting-visual-objects-in-a-win32-application.md)

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - visual objects [WPF], retrieving offset values from
 - retrieving offset values from visual objects [WPF]
 ms.assetid: 889a1dd6-1b11-445a-b351-fbb04c53ee34
-ms.openlocfilehash: ea03f7b9c3fefde0efa3fa0daaa07a537618f37a
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 4787b771c7e59a8b033b9267079c068a5845a1e6
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57374320"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59093407"
 ---
 # <a name="how-to-get-the-offset-of-a-visual"></a>Postupy: Získání posunu vizuálního objektu
 Tyto příklady znázorňují postup načtení hodnoty posunu vizuální objekt, který je relativní vůči nadřazeného objektu, nebo všechny nadřazený sobě samé.  
@@ -66,6 +66,7 @@ Vnořené dvě StackPanels TextBlock
  Posun bere v úvahu <xref:System.Windows.FrameworkElement.Margin%2A> hodnoty pro všechny objekty. V takovém případě <xref:System.Windows.Vector.X%2A> se -4, a <xref:System.Windows.Vector.Y%2A> se -4. Hodnoty posunutí jsou záporné hodnoty, protože nadřazený objekt je negativní posun vzhledem k jeho podřízený objekt.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Media.Visual>
 - <xref:System.Windows.Media.VisualTreeHelper>
 - [Přehled vykreslování grafiky WPF](wpf-graphics-rendering-overview.md)

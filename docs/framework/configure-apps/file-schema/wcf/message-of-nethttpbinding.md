@@ -1,13 +1,13 @@
 ---
-title: <message> z <netHttpBinding>
+title: <message> of <netHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 9def5a35-475d-40d6-b716-ccdbd93863c7
-ms.openlocfilehash: 66e854ca9dd33b608b93dae08376caaf590bd97f
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 5bc953b4a1fad90aec5db507469368e7b21bb7e4
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55277131"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59105453"
 ---
 # <a name="message-of-nethttpbinding"></a>\<Zpráva > z \<netHttpBinding >
 Definuje nastavení pro zabezpečení na úrovni zprávy z [ \<basicHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md).  
@@ -44,7 +44,7 @@ Definuje nastavení pro zabezpečení na úrovni zprávy z [ \<basicHttpBinding 
 |Certifikát|Vyžaduje se k serveru, používá certifikát ověření klienta. Pověření klienta nejsou v tomto případě musí být zadaná pomocí <`clientCredentials`> a <`clientCertificate`>. Kromě toho-když používají režim zabezpečených zpráv, klient musí být zřízená s certifikátem služby. Přihlašovací údaje služby v tomto případě musí být zadaná pomocí <xref:System.ServiceModel.Description.ClientCredentials> třídy nebo `ClientCredentials` prvek chování a zadáním služby certifikátu pomocí \<serviceCertificate > elementu serviceCredentials.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádná  
+ Žádné  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -120,6 +120,7 @@ Definuje nastavení pro zabezpečení na úrovni zprávy z [ \<basicHttpBinding 
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
 - [Vazby](../../../../../docs/framework/wcf/bindings.md)
 - [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)

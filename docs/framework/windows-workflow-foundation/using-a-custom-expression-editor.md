@@ -1,15 +1,15 @@
 ---
-title: Pomocí Editoru vlastních výrazů
+title: Použití editoru vlastních výrazů
 ms.date: 03/30/2017
 ms.assetid: 0901b58b-e037-44a8-8281-f6f54361cfca
-ms.openlocfilehash: 3bbad843c5e4d409627c255be7341d364a3d36d6
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: 2a390dd57d31994e8a2ba6a424d74bf7ee44fc10
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57716527"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59101273"
 ---
-# <a name="using-a-custom-expression-editor"></a>Pomocí Editoru vlastních výrazů
+# <a name="using-a-custom-expression-editor"></a>Použití editoru vlastních výrazů
 Chcete-li zadat výraz bohatší nebo jednodušší prostředí pro úpravy je možné implementovat editoru vlastních výrazů. Existuje několik scénářů, ve kterých můžete chtít pomocí Editoru vlastních výrazů:  
   
 -   Zajištění podpory technologie IntelliSense a další bohaté funkce v Návrháři postupu provádění se změněným hostováním úprav. Tato funkce musí být zadaná, protože výchozí editor sady Visual Studio výrazu nelze použít v provádění se změněným hostováním aplikací.  
@@ -279,6 +279,7 @@ namespace WpfApplication1
  Pokud používáte **ExpressionTextBox** ovládací prvek v Návrháři vlastní aktivity, není nutné vytvořit a zničit pomocí editorů výraz <xref:System.Activities.Presentation.View.IExpressionEditorService.CreateExpressionEditor%2A> a <xref:System.Activities.Presentation.View.IExpressionEditorService.CloseExpressionEditors%2A> metody <xref:System.Activities.Presentation.View.IExpressionEditorService> rozhraní. <xref:System.Activities.Presentation.View.ExpressionTextBox> Třída spravuje za vás.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Activities.Presentation.View.IExpressionEditorService>
 - <xref:System.Activities.Presentation.View.IExpressionEditorInstance>
 - [Použití ExpressionTextBox v návrháři vlastní aktivity](./samples/using-the-expressiontextbox-in-a-custom-activity-designer.md)

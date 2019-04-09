@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 45ad3f8b-1c26-4c9f-91a9-3bb0759a47a4
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5dc5c3425672dd71359edf61c5f8625d96ad09ce
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: 34c1843873e2f6a9a4ad78ed860a0115e0f02e7b
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57716943"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59102424"
 ---
 # <a name="how-to-create-a-windows-forms-application-from-the-command-line"></a>Postupy: Vytvoření aplikace Windows Forms z příkazového řádku
 Následující postupy popisují základní kroky, které je třeba provést k vytvoření a spuštění aplikace modelu Windows Forms z příkazového řádku. Není k dispozici rozsáhlou podporu pro tyto postupy v sadě Visual Studio.  Viz také [názorný postup: Ovládací prvek hostování Windows Forms v subsystému WPF](../wpf/advanced/walkthrough-hosting-a-windows-forms-control-in-wpf.md).  
@@ -65,7 +65,7 @@ Následující postupy popisují základní kroky, které je třeba provést k v
   
     -   Pokud používáte Visual Basic, zadejte: `vbc form1.vb`  
   
-3.  Na příkazovém řádku zadejte: `Form1.exe`  
+3.  V příkazovém řádku zadejte příkaz: `Form1.exe`  
   
 ## <a name="adding-a-control-and-handling-an-event"></a>Přidání ovládacího prvku a zpracování událostí  
  Předchozí kroky postupu jsme vám ukázali jen vytvoření základního formuláře Windows, který zkompiluje a spustí. Následující postup obsahuje pokyny k vytvoření a přidání ovládacího prvku na formuláři a zpracovat události pro ovládací prvek. Další informace o ovládacích prvků můžete přidat do formulářů Windows, naleznete v tématu [ovládacích prvků Windows Forms](./controls/index.md).  
@@ -114,8 +114,9 @@ Následující postupy popisují základní kroky, které je třeba provést k v
 -   Chcete-li kód zkompilovat, postupujte podle pokynů v postupu budete pokračovat, které popisují, jak kompilace a spuštění aplikace.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.Form>
 - <xref:System.Windows.Forms.Control>
-- [Změna vzhledu Windows Forms](changing-the-appearance-of-windows-forms.md)
-- [Rozšiřování aplikací Windows Forms](./advanced/index.md)
+- [Změna vzhledu Windows Forms ](changing-the-appearance-of-windows-forms.md)
+- [Rozšiřování formulářových aplikací Windows](./advanced/index.md)
 - [Začínáme s Windows Forms](getting-started-with-windows-forms.md)

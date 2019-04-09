@@ -1,5 +1,5 @@
 ---
-title: Element <disableCommitThreadStack>
+title: <disableCommitThreadStack> Prvek
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/runtime/disableCommitThreadStack
@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 3559d46a-7640-4c72-9a11-7e980768929e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5071b2c23b25d6368c84582b76c1f8d18e2a3dff
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 08ffd6ffcb9a8fa356d486f6d2ae1113de0fa682
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55257509"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59106507"
 ---
 # <a name="disablecommitthreadstack-element"></a>\<disableCommitThreadStack> Element
 Určuje, zda je zásobníku úplného vlákna potvrzeny při spuštění vlákna.  
@@ -41,7 +41,7 @@ Určuje, zda je zásobníku úplného vlákna potvrzeny při spuštění vlákna
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |0|Nezakazujte výchozí chování modulu common language runtime, který je pro potvrzení zásobníku úplného vlákna při spuštění vlákna.|  
 |1|Zakážete výchozí chování modulu common language runtime, který je pro potvrzení zásobníku úplného vlákna při spuštění vlákna.|  
@@ -74,5 +74,6 @@ Určuje, zda je zásobníku úplného vlákna potvrzeny při spuštění vlákna
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
 - [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)

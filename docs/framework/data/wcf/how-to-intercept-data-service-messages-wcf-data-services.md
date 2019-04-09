@@ -8,12 +8,12 @@ helpviewer_keywords:
 - WCF Data Services, customizing
 - query interceptors [WCF Data Services]
 ms.assetid: 24b9df1b-b54b-4795-a033-edf333675de6
-ms.openlocfilehash: b5fdbaa25f55caf3de2f0591b7258d4a7dcb1b7e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 56e4a3f95c7449ae5693172728c9d777113679bf
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54586394"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59101290"
 ---
 # <a name="how-to-intercept-data-service-messages-wcf-data-services"></a>Postupy: Zachycování zpráv datové služby (WCF Data Services)
 S [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], tak, že můžete přidat vlastní logiku na operaci je možné zachytit zprávy s požadavkem. Aby se zachytily zprávu, použijte metody speciálně s atributy v datové služby. Další informace najdete v tématu [sběrače](../../../../docs/framework/data/wcf/interceptors-wcf-data-services.md).  
@@ -56,5 +56,6 @@ S [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], tak, že můžete
  [!code-vb[Astoria Northwind Service#ChangeInterceptor](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind service/vb/northwind2.svc.vb#changeinterceptor)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Postupy: Definování operace služby](../../../../docs/framework/data/wcf/how-to-define-a-service-operation-wcf-data-services.md)
 - [Definování datových služeb WCF Data Services](../../../../docs/framework/data/wcf/defining-wcf-data-services.md)

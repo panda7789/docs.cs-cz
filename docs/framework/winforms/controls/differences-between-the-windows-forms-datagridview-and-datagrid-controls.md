@@ -6,12 +6,12 @@ helpviewer_keywords:
 - DataGrid control [Windows Forms], DataGridView control compared
 - DataGridView control [Windows Forms], DataGrid control compared
 ms.assetid: d412c786-140e-4210-8a56-a68467530a55
-ms.openlocfilehash: b7d97431bfdbdafd5e87bfbfb9c5badd9ba273ea
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 6802ef375d8d15826725e68f5065317192523178
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57720485"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59095669"
 ---
 # <a name="differences-between-the-windows-forms-datagridview-and-datagrid-controls"></a>Rozdíly mezi ovládacími prvky Windows Forms DataGridView a DataGrid
 <xref:System.Windows.Forms.DataGridView> Je nový ovládací prvek, který nahrazuje <xref:System.Windows.Forms.DataGrid> ovládacího prvku. <xref:System.Windows.Forms.DataGridView> Řízení poskytuje mnoho základních a pokročilých funkcí, které nebyly nalezeny v <xref:System.Windows.Forms.DataGrid> ovládacího prvku. Kromě toho architektuře <xref:System.Windows.Forms.DataGridView> ovládací prvek je mnohem jednodušší rozšířit a přizpůsobit než <xref:System.Windows.Forms.DataGrid> ovládacího prvku.  
@@ -33,17 +33,18 @@ ms.locfileid: "57720485"
  Protože <xref:System.Windows.Forms.DataGridView> ovládací prvek má úplně nové architektury, neexistuje jednoduchý převod cesta, která vám umožní použít <xref:System.Windows.Forms.DataGrid> přizpůsobení <xref:System.Windows.Forms.DataGridView> ovládacího prvku. Mnoho <xref:System.Windows.Forms.DataGrid> přizpůsobení nejsou potřeba se <xref:System.Windows.Forms.DataGridView> řídit, ale kvůli integrované funkce dostupné v nový ovládací prvek. Pokud jste si vytvořili vlastní sloupec typy pro <xref:System.Windows.Forms.DataGrid> ovládací prvek, který chcete použít s <xref:System.Windows.Forms.DataGridView> ovládacího prvku, je nutné je znovu pomocí nové architektury implementovat. Další informace najdete v tématu [přizpůsobení ovládacího prvku Windows Forms DataGridView](customizing-the-windows-forms-datagridview-control.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.DataGrid>
 - <xref:System.Windows.Forms.BindingSource>
-- [Ovládací prvek DataGridView](datagridview-control-windows-forms.md)
+- [DataGridView – ovládací prvek](datagridview-control-windows-forms.md)
 - [Ovládací prvek DataGrid](datagrid-control-windows-forms.md)
-- [Komponenta BindingSource](bindingsource-component.md)
+- [BindingSource – komponenta](bindingsource-component.md)
 - [Typy sloupců v ovládacím prvku Windows Forms DataGridView](column-types-in-the-windows-forms-datagridview-control.md)
 - [Styly buňky v ovládacím prvku Windows Forms DataGridView](cell-styles-in-the-windows-forms-datagridview-control.md)
 - [Režimy zobrazení dat v ovládacím prvku Windows Forms DataGridView](data-display-modes-in-the-windows-forms-datagridview-control.md)
 - [Formátování dat v ovládacím prvku Windows Forms DataGridView](data-formatting-in-the-windows-forms-datagridview-control.md)
 - [Možnosti změny velikosti v ovládacím prvku Windows Forms DataGridView](sizing-options-in-the-windows-forms-datagridview-control.md)
-- [Režimy řazení sloupce v ovládacím prvku Windows Forms DataGridView](column-sort-modes-in-the-windows-forms-datagridview-control.md)
+- [Režimy třídění sloupce v ovládacím prvku Windows Forms DataGridView](column-sort-modes-in-the-windows-forms-datagridview-control.md)
 - [Režimy výběru v ovládacím prvku Windows Forms DataGridView](selection-modes-in-the-windows-forms-datagridview-control.md)
 - [Přizpůsobení ovládacího prvku Windows Forms DataGridView](customizing-the-windows-forms-datagridview-control.md)

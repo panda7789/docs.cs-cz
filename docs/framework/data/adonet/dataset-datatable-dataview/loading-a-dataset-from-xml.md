@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 49c083b7-a5ed-41cf-aabc-5aaba96f00e6
-ms.openlocfilehash: 8dea23bac122f1f135b4695995d79191d5cd5f04
-ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
+ms.openlocfilehash: 0c53e3a15bcbe61db7da1edb31ecd3fd562603f5
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55827601"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59099893"
 ---
 # <a name="loading-a-dataset-from-xml"></a>Načtení datové sady z XML
 Obsah technologie ADO.NET <xref:System.Data.DataSet> lze vytvořit z datový proud XML nebo dokumentu. Kromě toho, s použitím rozhraní .NET Framework máte velkou flexibilitu nad načtení informací ze souboru XML a jak schématu nebo relační struktura <xref:System.Data.DataSet> se vytvoří.  
@@ -116,6 +116,7 @@ foreach (DataTable dataTable in dataSet.Tables)
  Pokud <xref:System.Data.DataSet> již obsahuje data, budou přidána nová data z XML do datového již v <xref:System.Data.DataSet>. **ReadXml** nesloučí ze souboru XML do <xref:System.Data.DataSet> žádný řádek informace s odpovídajícími primárních klíčů. Chcete-li přepsat existující řádek informace novými informacemi ze souboru XML, použijte **ReadXml** k vytvoření nového <xref:System.Data.DataSet>a potom <xref:System.Data.DataSet.Merge%2A> nové <xref:System.Data.DataSet> do existujících <xref:System.Data.DataSet>. Všimněte si, že načtení formát DiffGram pomocí **ReadXML** s **XmlReadMode** z **formát DiffGram** sloučí řádky, které mají stejný jedinečný identifikátor.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Data.DataSet.Merge%2A?displayProperty=nameWithType>
 - [Použití XML v datové sadě](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)
 - [DiffGrams](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/diffgrams.md)

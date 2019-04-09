@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: b1cc02d1-23b1-4439-a998-0da1899f3442
-ms.openlocfilehash: 0625d1005e6519b395ffd7ff0fb0c35583117875
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 05122f7c980c4b7dfdb27eec73464a4f0556ba99
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54623050"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59096677"
 ---
 # <a name="creating-a-dataview"></a>Vytvoření zobrazení dat
 Existují dva způsoby, jak vytvořit <xref:System.Data.DataView>. Můžete použít **DataView** konstruktoru, nebo můžete vytvořit odkaz na <xref:System.Data.DataTable.DefaultView%2A> vlastnost <xref:System.Data.DataTable>. **DataView** konstruktor může být prázdný, nebo může trvat buď **DataTable** jako jediný argument, nebo **DataTable** spolu s kritéria filtru, kritéria řazení a řádek Filtr stavu. Další informace o další argumenty nejsou k dispozici pro použití se službou **DataView**, naleznete v tématu [řazení a filtrování dat](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/sorting-and-filtering-data.md).  
@@ -46,6 +46,7 @@ DataView custDV = custDS.Tables["Customers"].DefaultView;
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Data.DataTable>
 - <xref:System.Data.DataView>
 - [Zobrazení dat](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataviews.md)

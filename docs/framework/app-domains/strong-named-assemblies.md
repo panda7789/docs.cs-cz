@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: d4a80263-f3e0-4d81-9b61-f0cbeae3797b
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 681938b4893e9fe68caa142898db9b867b481bf0
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 72e9e698e510153073515aa891f1ed3b4d7b9886
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54657295"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59081434"
 ---
 # <a name="strong-named-assemblies"></a>Sestavení se silným názvem
 Silné názvy sestavení vytvoří jedinečnou identitu pro sestavení a může zabránit konfliktům při sestavení.  
@@ -43,6 +43,7 @@ Silné názvy sestavení vytvoří jedinečnou identitu pro sestavení a může 
  Pokud jsou open source vývojářů a chcete využít výhod Identita sestavení se silným názvem, je vhodné zkontrolovat v privátní klíč přidružený k sestavení do systému správy zdrojů.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Globální mezipaměť sestavení](../../../docs/framework/app-domains/gac.md)
 - [Postupy: Podepsání sestavení silným názvem](../../../docs/framework/app-domains/how-to-sign-an-assembly-with-a-strong-name.md)
 - [Sn.exe (nástroj pro silný název)](../../../docs/framework/tools/sn-exe-strong-name-tool.md)

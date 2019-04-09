@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: e491b9bf-741a-4296-9f51-76c25ddf6a82
-ms.openlocfilehash: 1caf81df5998e5aaef4ad011a399d70aff43ca9b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 6423959ed5036cc8ab2a88bb7273ef7aa95c8958
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54634451"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59101533"
 ---
 # <a name="how-to-directly-execute-sql-queries"></a>Postupy: Přímé spuštění dotazů SQL
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] překládá dotazy, který napíšete do parametrizované dotazy jazyka SQL (ve formě textu) a odesílá je do serveru SQL server pro zpracování.  
@@ -36,5 +36,6 @@ ms.locfileid: "54634451"
  Parametry jsou vyjádřeny v textu dotazu pomocí stejné složených zápisu používají `Console.WriteLine()` a `String.Format()`. Ve skutečnosti `String.Format()` ve skutečnosti je volán na řetězec dotazu, který zadáte, nahraďte složených závorkách parametry s generované názvy parametrů, jako @p0, @p1 ..., @p(n).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Základní informace](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)
-- [Dotazování na databázi](../../../../../../docs/framework/data/adonet/sql/linq/querying-the-database.md)
+- [Dotazy do databáze](../../../../../../docs/framework/data/adonet/sql/linq/querying-the-database.md)

@@ -3,12 +3,12 @@ title: <channelSettings>
 ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: 94a4457f-f43f-458d-a47e-2d11103ee75e
-ms.openlocfilehash: 38b2ddc0134ea8c0e0f75db093b440788c5409aa
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: f70e30c903fa9bfc3f5d6054ef2ec34bf1b3cba1
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55272835"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59083010"
 ---
 # <a name="channelsettings"></a>\<channelSettings>
 Určuje nastavení mezipaměti kanálu.  
@@ -89,6 +89,7 @@ Určuje nastavení mezipaměti kanálu.
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Activities.SendMessageChannelCache>
 - <xref:System.ServiceModel.Activities.Configuration.SendMessageChannelCacheElement>
 - <xref:System.ServiceModel.Activities.Send>

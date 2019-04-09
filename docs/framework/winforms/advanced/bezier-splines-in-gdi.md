@@ -9,12 +9,12 @@ helpviewer_keywords:
 - splines [Windows Forms], Bezier
 - GDI+, Bezier splines
 ms.assetid: 5774ce1e-87d4-4bc7-88c4-4862052781b8
-ms.openlocfilehash: 7648f7f9da72abea4bfc87603eea290614294eff
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: ff4e9eb18610b70c88e057d3d44020321bbb9f4f
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57707258"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59107325"
 ---
 # <a name="b233zier-splines-in-gdi"></a>B&#233;zier křivky v GDI +
 Bézierovy křivky je křivka určené čtyři body: dva koncové body (p1 a p2) a dva kontrolních bodů (c1 a c2). Křivky začíná p1 a p2 končí. Křivka neprochází přes kontrolních bodů, ale kontrolní body fungují jako magnets stahování křivky v některých směrech a vliv na způsob, jakým zatáčkách křivky. Následující obrázek znázorňuje Bézierovy křivky spolu s jeho koncových bodů a kontrolní body.  
@@ -38,6 +38,7 @@ Bézierovy křivky je křivka určené čtyři body: dva koncové body (p1 a p2)
  ![Paths](./media/aboutgdip02-art13.gif "Aboutgdip02_art13")  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Drawing.Graphics?displayProperty=nameWithType>
 - <xref:System.Drawing.Pen?displayProperty=nameWithType>
 - [Čáry, křivky a obrazce](lines-curves-and-shapes.md)

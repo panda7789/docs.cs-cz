@@ -5,12 +5,12 @@ helpviewer_keywords:
 - selection [Windows Forms], modes in DataGridView control
 - DataGridView control [Windows Forms], selection mode
 ms.assetid: a3ebfd3d-0525-479d-9d96-d9e017289b36
-ms.openlocfilehash: 931df04bbe6b8448030e26cd2cc2c904865ac0d3
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 79e13e65938252015e43b59a962d40f20963a5df
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57717294"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59097275"
 ---
 # <a name="selection-modes-in-the-windows-forms-datagridview-control"></a>Režimy výběru v ovládacím prvku Windows Forms DataGridView
 Občas můžete chtít vaše aplikace k provádění akcí na základě výběrů uživatele v rámci <xref:System.Windows.Forms.DataGridView> ovládacího prvku. V závislosti na akce můžete omezit, které jsou možné druhy výběru. Předpokládejme například, že aplikace můžete vytisknout sestavu pro aktuálně vybraný záznam. V takovém případě můžete chtít konfigurovat <xref:System.Windows.Forms.DataGridView> ovládacího prvku tak, aby kliknutím kamkoli na řádku vždy vybere celý řádek, a proto je možné vybrat tuto pouze jeden řádek v čase.  
@@ -45,6 +45,7 @@ Občas můžete chtít vaše aplikace k provádění akcí na základě výběr�
 >  Příklad kódu, který ukazuje programová použití vybraných buněk najdete v <xref:System.Windows.Forms.DataGridView> přehledu třídy.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.DataGridView.MultiSelect%2A>
 - <xref:System.Windows.Forms.DataGridView.SelectionMode%2A>

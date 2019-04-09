@@ -2,12 +2,12 @@
 title: Stažení ukázkových databází (LINQ to DataSet)
 ms.date: 03/30/2017
 ms.assetid: eb42a7af-d410-4b7f-b4a8-13c72ce6fd09
-ms.openlocfilehash: f0fc3e8d447f82c89b3b558d95b45120db0a876d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: a022380bf266997c82de43e103e7d56348447cfc
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54573331"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59104907"
 ---
 # <a name="downloading-sample-databases-linq-to-dataset"></a>Stažení ukázkových databází (LINQ to DataSet)
 Ukázky a návody v [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] dokumentaci použít ukázkovou databází AdventureWorks. Tento produkt zdarma si můžete stáhnout z webu společnosti Microsoft ke stažení. Ukázky a návody v [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] dokumentace ke službě použít jako úložiště dat serveru SQL Server. SQL Server Express Edition, která je k dispozici bez poplatků, může také sloužit jako úložiště dat místo SQL serveru.  
@@ -74,4 +74,5 @@ Ukázky a návody v [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md
 3.  Postupujte podle pokynů k instalaci na webové stránce.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Začínáme](../../../../docs/framework/data/adonet/getting-started-linq-to-dataset.md)

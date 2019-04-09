@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c1a9df30ae11b13c052c75b05b0850d9f4754620
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: e17a6846ba0276ec7ba423ab25e3f11baf278d03
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57470091"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59098751"
 ---
 # <a name="imetadataemitsetrva-method"></a>IMetaDataEmit::SetRVA – metoda
 Nastaví relativní virtuální adresu určenou metodu.  
@@ -53,5 +53,6 @@ HRESULT SetRVA (
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
 - [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

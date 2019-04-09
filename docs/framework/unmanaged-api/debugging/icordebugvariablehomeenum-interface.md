@@ -1,5 +1,5 @@
 ---
-title: Icordebugvariablehomeenum – rozhraní
+title: ICorDebugVariableHomeEnum – rozhraní
 ms.date: 03/30/2017
 api_name:
 - ICorDebugVariableHomeEnum
@@ -16,14 +16,14 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 43f63e09c654c7aab9f1da0db7587a92bee4fb79
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 4e67e4685320f56a4a6a8be2e3eb2e6c8065ce59
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54632033"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59080381"
 ---
-# <a name="icordebugvariablehomeenum-interface"></a>Icordebugvariablehomeenum – rozhraní
+# <a name="icordebugvariablehomeenum-interface"></a>ICorDebugVariableHomeEnum – rozhraní
 Poskytuje enumerátor pro místní proměnné a argumenty ve funkci.  
   
 ## <a name="methods"></a>Metody  
@@ -47,5 +47,6 @@ Poskytuje enumerátor pro místní proměnné a argumenty ve funkci.
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v462plus](../../../../includes/net-current-v462plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [ICorDebugVariableHome – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md)
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Debugging – rozhraní](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

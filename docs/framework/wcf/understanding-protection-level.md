@@ -8,12 +8,12 @@ helpviewer_keywords:
 - WCF, security
 - ProtectionLevel property
 ms.assetid: 0c034608-a1ac-4007-8287-b1382eaa8bf2
-ms.openlocfilehash: 8ca003257f9e16075262a715aec4941d9aa4073b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 90fb844931c3af54367d0e7c14a766636cdcc71a
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54564627"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59096046"
 ---
 # <a name="understanding-protection-level"></a>Princip úrovně ochrany
 `ProtectionLevel` Vlastnosti se nachází na mnoha různých tříd, jako <xref:System.ServiceModel.ServiceContractAttribute> a <xref:System.ServiceModel.OperationContractAttribute> třídy. Vlastnost určuje, jak je chráněné části (nebo celé) zprávy. Toto téma popisuje funkci Windows Communication Foundation (WCF) a jak to funguje.  
@@ -95,6 +95,7 @@ ms.locfileid: "54564627"
  Když klient volá `Price` metody se vyvolá výjimku, když obdrží odpověď ze služby. K tomu dochází, klient neurčuje `ProtectionLevel` na `ServiceContractAttribute`, a proto klient použije výchozí (<xref:System.Net.Security.ProtectionLevel.EncryptAndSign>) pro všechny metody, včetně `Price` – metoda. Ale služba vrátí hodnotu používanou <xref:System.Net.Security.ProtectionLevel.Sign> protože kontrakt služby definuje jedinou metodu, která se má nastavit na úrovni ochrany <xref:System.Net.Security.ProtectionLevel.Sign>. V tomto případě klient vyvolá chybu při ověřování odpověď ze služby.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.ServiceContractAttribute>
 - <xref:System.ServiceModel.OperationContractAttribute>
 - <xref:System.ServiceModel.FaultContractAttribute>

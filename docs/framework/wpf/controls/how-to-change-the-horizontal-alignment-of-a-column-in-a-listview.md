@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - ListView controls [WPF], horizontal alignment [WPF]
 ms.assetid: b9573e44-9dad-4d14-939c-7859ca372758
-ms.openlocfilehash: 616eae9d72517124b6757260e68e8745d12632ff
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 528a711c1cf7992bb32c0aa4d6e81d71744c9f80
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57355139"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59102658"
 ---
 # <a name="how-to-change-the-horizontal-alignment-of-a-column-in-a-listview"></a>Postupy: Změna vodorovného zarovnání sloupce v objektu ListView
 Ve výchozím nastavení obsahu každého sloupce v <xref:System.Windows.Controls.ListViewItem> zarovnané vlevo. Zarovnání jednotlivých sloupců můžete změnit zadáním <xref:System.Windows.DataTemplate> a nastavení <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A> vlastnosti prvku v rámci <xref:System.Windows.DataTemplate>. Toto téma ukazuje, jak <xref:System.Windows.Controls.ListView> Zarovná obsah ve výchozím nastavení a změna zarovnání jeden sloupec <xref:System.Windows.Controls.ListView>.  
@@ -28,6 +28,7 @@ Ve výchozím nastavení obsahu každého sloupce v <xref:System.Windows.Control
 [!code-xaml[ListViewHowTos#4](~/samples/snippets/csharp/VS_Snippets_Wpf/ListViewHowTos/CSharp/Window1.xaml#4)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled datových vazeb](../data/data-binding-overview.md)
 - [Přehled datových šablon](../data/data-templating-overview.md)
 - [Vytvoření vazby k datům XML pomocí objektu XMLDataProvider a dotazů XPath](../data/how-to-bind-to-xml-data-using-an-xmldataprovider-and-xpath-queries.md)

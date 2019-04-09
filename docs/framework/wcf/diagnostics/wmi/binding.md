@@ -2,12 +2,12 @@
 title: Binding2
 ms.date: 03/30/2017
 ms.assetid: 09511c6c-5749-4bb0-874e-0f0be36bfe04
-ms.openlocfilehash: aaf0dd9d6918f2c248942cee3773eee8332adda9
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a040cc6e12833d2c737eb14c591300e5873ddce7
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54552837"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59106512"
 ---
 # <a name="binding"></a>Vazba
 rozhraní WMI vazby  
@@ -48,7 +48,7 @@ class Binding
   
  Časový interval poskytnutý pro dokončení operace uzavření.  
   
-### <a name="name"></a>Název  
+### <a name="name"></a>Name  
  Datový typ: řetězec  
   
  Typ přístupu: jen pro čtení  
@@ -97,4 +97,5 @@ class Binding
 |Obor názvů|Definované v root\ServiceModel|  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Channels.Binding>

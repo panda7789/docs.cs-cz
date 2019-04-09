@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: a8347eb1-295f-46b9-8a78-63331f9ecc50
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0146d3617f5a4aff2a76d2b2f4777b18a0e9c2ab
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
+ms.openlocfilehash: 798fcacab5bd74dbd6569a68a3b598c0bb63a0a7
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58410808"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59087739"
 ---
 # <a name="specifying-a-character-set"></a>Určení sady znaků
 <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=nameWithType> Pole řídí zařazování řetězce a určuje, jak vyvolání platformy najde názvy funkcí v knihovně DLL. Toto téma popisuje, jak chování.  
@@ -26,11 +26,11 @@ ms.locfileid: "58410808"
   
 -   **MessageBoxA**  
   
-     Poskytuje 1bajtový ANSI formátování, odlišené "A" připojenou k názvu vstupního bodu. Volání **MessageBoxA** vždy zařazování řetězců v ANSI formátování, což je běžné na platformách Windows 95 a Windows 98.  
+     Poskytuje 1bajtový ANSI formátování, odlišené "A" připojenou k názvu vstupního bodu. Volání **MessageBoxA** vždy zařazovat řetězce ve formátu ANSI.  
   
 -   **MessageBoxW**  
   
-     Obsahuje formátování 2bajtových znaků Unicode, odlišené "W" připojenou k názvu vstupního bodu. Volání **funkce** vždy zařazovat řetězce ve formátu Unicode, což je běžné na platformách Windows NT, Windows 2000 a Windows XP.  
+     Obsahuje formátování 2bajtových znaků Unicode, odlišené "W" připojenou k názvu vstupního bodu. Volání **funkce** vždy zařazovat řetězce ve formátu Unicode.  
   
 ## <a name="string-marshaling-and-name-matching"></a>Zařazování řetězců a shoda názvu  
  `CharSet` Pole přijímá následující hodnoty:  
@@ -149,6 +149,7 @@ extern "C" int MessageBox(
 ```
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Runtime.InteropServices.DllImportAttribute>
 - [Vytváření prototypů ve spravovaném kódu](../../../docs/framework/interop/creating-prototypes-in-managed-code.md)
 - [Příklady vyvolání platformy](../../../docs/framework/interop/platform-invoke-examples.md)

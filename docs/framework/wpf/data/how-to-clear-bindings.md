@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Vymazání připojení'
+title: 'Postupy: Vymazání vazeb'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - clearing bindings [WPF]
 - data binding [WPF], clearing bindings
 ms.assetid: 73962a93-32a9-4bcd-9240-bcfbb239093a
-ms.openlocfilehash: 8bffc34864a2bf929bcbed09f16eac282e1ba2a5
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 8140928d44555e399ddf4ebd73407a251ad3cffe
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57360216"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59101416"
 ---
-# <a name="how-to-clear-bindings"></a>Postupy: Vymazání připojení
+# <a name="how-to-clear-bindings"></a>Postupy: Vymazání vazeb
 Tento příklad ukazuje, jak vymazání připojení z objektu.  
   
 ## <a name="example"></a>Příklad  
@@ -30,6 +30,7 @@ Tento příklad ukazuje, jak vymazání připojení z objektu.
  Chcete-li vymazání připojení ze všech možných vlastností pro objekt, použijte <xref:System.Windows.Data.BindingOperations.ClearAllBindings%2A>.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Data.BindingOperations>
 - [Přehled datových vazeb](data-binding-overview.md)
-- [Témata s postupy](data-binding-how-to-topics.md)
+- [– postupy](data-binding-how-to-topics.md)

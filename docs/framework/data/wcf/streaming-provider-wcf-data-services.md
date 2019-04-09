@@ -10,12 +10,12 @@ helpviewer_keywords:
 - streaming data provider [WCF Data Services]
 - WCF Data Services, streams
 ms.assetid: f0978fe4-5f9f-42aa-a5c2-df395d7c9495
-ms.openlocfilehash: 1107fe12f5efa2b812f723568f5cb4fea1eddc8a
-ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
-ms.translationtype: MT
+ms.openlocfilehash: afe33835c8d29c4fe0e16ab4c7e00808336d0752
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56093837"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59087895"
 ---
 # <a name="streaming-provider-wcf-data-services"></a>Zprostředkovatel streamování (WCF Data Services)
 Datové služby může vystavit data binárního rozsáhlého objektu. Tento binární data mohou představovat video a audiostreamů, obrázky, soubory dokumentů nebo jiných typů médií binární. Pokud entita v datovém modelu obsahuje jeden nebo více binárních vlastností, datové služby vrátí tato binární data kódováním base-64 uvnitř položky v odpovědi informačního kanálu. Protože načítání a serializaci velkému objemu binárních dat tímto způsobem může ovlivnit výkon, [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] definuje mechanismus pro načítání binárních dat, které jsou nezávislé na entitu, do které patří. Toho dosahuje oddělením binární data z entity do jednoho nebo více datových proudů.  
@@ -81,18 +81,14 @@ Datové služby může vystavit data binárního rozsáhlého objektu. Tento bin
   
 ## <a name="enabling-large-binary-streams-in-the-hosting-environment"></a>Povolení velké binární datové proudy v hostitelském prostředí  
  Při vytváření datové služby v [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webové aplikace, Windows Communication Foundation (WCF) slouží k poskytování implementace protokolu HTTP. Ve výchozím nastavení WCF omezení velikosti zpráv HTTP na pouze 65 kB. Aby bylo možné do datového proudu velkému objemu binárních dat do a z datové služby, musíte také nakonfigurovat webovou aplikaci povolit velkých binárních souborů a použití datových proudů pro přenos. Chcete-li to provést, přidejte následující kód do `<configuration />` prvek souboru Web.config aplikace:  
-  
-  
-  
+
 > [!NOTE]
 >  Je nutné použít <xref:System.ServiceModel.TransferMode.Streamed?displayProperty=nameWithType> přenosový režim na binární data ve zprávách žádost a odpověď streamování a nejsou ukládány do vyrovnávací paměti ve WCF.  
   
  Další informace najdete v tématu [streamování přenosu zpráv](../../../../docs/framework/wcf/feature-details/streaming-message-transfer.md) a [přenosové kvóty](../../../../docs/framework/wcf/feature-details/transport-quotas.md).  
   
  Ve výchozím nastavení Internetové informační služby (IIS) také omezuje množství požadavků na 4MB. Pokud chcete povolit datové služby přijímat datové proudy, které jsou větší než 4MB, když ve službě IIS, musíte taky nastavit `maxRequestLength` atribut [httpRuntime – Element (schéma nastavení technologie ASP.NET)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/e1f13641(v=vs.100)) v `<system.web />` konfiguračního oddílu jako můžete vidět v následujícím příkladu:  
-  
-  
-  
+
 ## <a name="using-data-streams-in-a-client-application"></a>Použití datových proudů v klientské aplikaci  
  [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] Klientská knihovna umožňuje načíst i aktualizovat tyto materiály vystavené jako binární datové proudy na straně klienta. Další informace najdete v tématu [práce s binárními daty](../../../../docs/framework/data/wcf/working-with-binary-data-wcf-data-services.md).  
   
@@ -130,6 +126,7 @@ Datové služby může vystavit data binárního rozsáhlého objektu. Tento bin
  Další informace najdete v tématu [Správa verzí datové služby](../../../../docs/framework/data/wcf/data-service-versioning-wcf-data-services.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Zprostředkovatelé datových služeb](../../../../docs/framework/data/wcf/data-services-providers-wcf-data-services.md)
 - [Vlastní zprostředkovatelé datových služeb](../../../../docs/framework/data/wcf/custom-data-service-providers-wcf-data-services.md)
 - [Práce s binárními daty](../../../../docs/framework/data/wcf/working-with-binary-data-wcf-data-services.md)

@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 626492c0-5ee3-4675-88e8-8c40379510b6
-ms.openlocfilehash: 9c293757b642f0a945097c4ea4299d97cadddbcc
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 8a69b3ae83d7f701428b3183f2b80e0d44a06537
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54725685"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59103620"
 ---
 # <a name="how-to-display-generated-sql"></a>Postupy: Zobrazení generovaného SQL
 Můžete zobrazit SQL kód generovaný pro dotazy a zpracování pomocí změny <xref:System.Data.Linq.DataContext.Log%2A> vlastnost. Tento přístup může být užitečné pro porozumění [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] funkce a pro specifické problémy ladění.  
@@ -43,4 +43,5 @@ SEVES
  [!code-vb[DLinqDebuggingSupport#1](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqDebuggingSupport/vb/Module1.vb#1)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Podpora ladění](../../../../../../docs/framework/data/adonet/sql/linq/debugging-support.md)

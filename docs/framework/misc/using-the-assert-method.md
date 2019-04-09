@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: 1e40f4d3-fb7d-4f19-b334-b6076d469ea9
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 5799ab8e827305fca565064a0ae7290c6c19eb01
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.openlocfilehash: 08b46d96f9fb950602766639559a375a25747010
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58463004"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59073725"
 ---
 # <a name="using-the-assert-method"></a>Použití metody Assert
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
@@ -168,6 +168,7 @@ namespace LogUtil
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Security.PermissionSet>
 - <xref:System.Security.Permissions.SecurityPermission>
 - <xref:System.Security.Permissions.FileIOPermission>

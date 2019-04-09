@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: 39dc55aa-f2a1-4093-87bb-f1c0edb6e761
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d51fcbdeeaa1fe30bbdeff5eb85a1c15fa9b4847
-ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
+ms.openlocfilehash: dc02178223e48c7c578d10ba92123d9436d4f439
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56221079"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59097262"
 ---
 # <a name="packaging-an-assembly-for-com"></a>Zabalení sestavení pro model COM
 Následující informace o spravované typy, že chtějí začlenit ve svých aplikacích využívat vývojáři COM:  
@@ -50,13 +50,13 @@ Následující informace o spravované typy, že chtějí začlenit ve svých ap
   
      Většina typů vyžadují knihovny typů při používané aplikace modelu COM. Můžete generovat knihovnu typů nebo mají vývojáři COM provedení této úlohy. [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)] Poskytuje následující možnosti pro vytváření knihovny typů:  
   
-    -   [Exportér knihovny typů](#cpconpackagingassemblyforcomanchor1)  
+    -   [knihovna typů – exportér](#cpconpackagingassemblyforcomanchor1)  
   
     -   [Typelibconverter – třída](#cpconpackagingassemblyforcomanchor2)  
   
     -   [Nástroj registrace sestavení](#cpconpackagingassemblyforcomanchor3)  
   
-    -   [Nástroj pro instalaci služeb .NET](#cpconpackagingassemblyforcomanchor4)  
+    -   [.NET Services Installation Tool](#cpconpackagingassemblyforcomanchor4)  
   
      Bez ohledu na to mechanismus, který zvolíte jsou pouze veřejné typy definované v sestavení, ve kterém zadáte součástí vygenerovanou knihovnu typů.  
   
@@ -81,6 +81,7 @@ Následující informace o spravované typy, že chtějí začlenit ve svých ap
  [Nástroj pro instalaci služeb .NET (Regsvcs.exe)](../tools/regsvcs-exe-net-services-installation-tool.md) přidá spravované třídy Služba komponent Windows 2000 a kombinuje několik úkolů v rámci jediného nástroje. Kromě načítá a registruje sestavení, Regsvcs.exe generovat, registrace a instalace do existující aplikace modelu COM + 1.0 knihovny typů.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Runtime.InteropServices.TypeLibConverter>
 - <xref:System.Runtime.InteropServices.ITypeLibConverter>
 - [Vystavení komponent architektury .NET Framework pro COM](exposing-dotnet-components-to-com.md)

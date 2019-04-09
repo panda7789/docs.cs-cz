@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: Připojení k datům data XML použitím objektu XMLDataProvider a dotazů XPath'
+title: 'Postupy: Vytvoření vazby k datům XML pomocí objektu XMLDataProvider a dotazů XPath'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - XmlDataProvider [WPF], binding to XML data
 - data binding [WPF], binding to XML data using XmlDataProvider queries
 - binding [WPF], to XML data using XmlDataProvider queries
 ms.assetid: 7dcd018f-16aa-4870-8e47-c1b4ea31e574
-ms.openlocfilehash: 9a6869b84746081df7917aca32042002b8b044c5
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: f6cd09279cf23d3273e7a4083950a5f42714c8bf
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57371343"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59097223"
 ---
-# <a name="how-to-bind-to-xml-data-using-an-xmldataprovider-and-xpath-queries"></a>Postupy: Připojení k datům data XML použitím objektu XMLDataProvider a dotazů XPath
+# <a name="how-to-bind-to-xml-data-using-an-xmldataprovider-and-xpath-queries"></a>Postupy: Vytvoření vazby k datům XML pomocí objektu XMLDataProvider a dotazů XPath
 Tento příklad ukazuje, jak vytvořit vazbu na [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] data s využitím <xref:System.Windows.Data.XmlDataProvider>.  
   
  Pomocí <xref:System.Windows.Data.XmlDataProvider>, podkladová data, která je přístupná prostřednictvím datové vazby v aplikaci může být jakékoli stromu [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] uzly. Jinými slovy <xref:System.Windows.Data.XmlDataProvider> poskytuje pohodlný způsob, jak používat jakékoli stromu [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] uzlů jako zdroj vazby.  
@@ -59,9 +59,10 @@ Tento příklad ukazuje, jak vytvořit vazbu na [!INCLUDE[TLA#tla_xml](../../../
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Data.ObjectDataProvider>
 - [Vytvoření vazby k XDocument, XElement nebo LINQ pro výsledky XQuery](how-to-bind-to-xdocument-xelement-or-linq-for-xml-query-results.md)
 - [Použití vzoru seznam-podrobnosti s hierarchickými daty XML](how-to-use-the-master-detail-pattern-with-hierarchical-xml-data.md)
-- [Přehled zdrojů vazby](binding-sources-overview.md)
+- [Přehled zdrojů připojení](binding-sources-overview.md)
 - [Přehled datových vazeb](data-binding-overview.md)
-- [Témata s postupy](data-binding-how-to-topics.md)
+- [– postupy](data-binding-how-to-topics.md)

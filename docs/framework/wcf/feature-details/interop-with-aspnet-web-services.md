@@ -2,12 +2,12 @@
 title: Interoperabilita s webovými službami ASP.NET
 ms.date: 03/30/2017
 ms.assetid: 622422f8-6651-442f-b8be-e654a4aabcac
-ms.openlocfilehash: 3d4416a67d467f60fa381abc648c3a7ea0b9ada1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c6fec1d520cd251473d8840b7b1afe879002a04c
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54713322"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59108573"
 ---
 # <a name="interoperability-with-aspnet-web-services"></a>Interoperabilita s webovými službami ASP.NET
 Vzájemná funkční spolupráce mezi [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webových služeb a služeb Windows Communication Foundation (WCF) Web můžete dosáhnout tím, že zajišťuje, že služby implementované pomocí obou technologií odpovídají WS-I Basic Profile 1.1 specifikace. [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Webové služby, které odpovídají WS-I Basic Profile 1.1 se vzájemná spolupráce s klienty WCF pomocí WCF vazeb poskytovaných systémem, <xref:System.ServiceModel.BasicHttpBinding>.  
@@ -56,4 +56,5 @@ public class Service : IEcho
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Postupy: Konfigurace služby WCF pro spolupráci s klienty webové služby ASP.NET](../../../../docs/framework/wcf/feature-details/config-wcf-service-with-aspnet-web-service.md)

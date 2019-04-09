@@ -2,12 +2,12 @@
 title: 'Postupy: Načítání metadat a implementace kompatibilní služby'
 ms.date: 03/30/2017
 ms.assetid: f6f3a2b9-c8aa-4b0b-832c-ec2927bf1163
-ms.openlocfilehash: a043672ad564341209bc179f9d1596c228fe19cd
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 2ddc50e2851217002c825163761855d649b56db1
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54608492"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59095968"
 ---
 # <a name="how-to-retrieve-metadata-and-implement-a-compliant-service"></a>Postupy: Načítání metadat a implementace kompatibilní služby
 Stejné osobě často není navrhování a implementaci služby. V prostředích, kde jsou důležitá spolupráce aplikací smlouvy můžete určená nebo je popsáno v webové služby WSDL (Description Language) a vývojář musí implementovat službu, která splňuje zadaný kontraktu. Můžete také migrovat existující službu pro Windows Communication Foundation (WCF), ale zachovat přenosový formát. Kromě toho duplexní kontrakty vyžadovat volající implementovat kontrakt zpětného volání.  
@@ -60,4 +60,5 @@ Stejné osobě často není navrhování a implementaci služby. V prostředích
 [!code-xml[ClientProxyCodeSample#20](../../../../samples/snippets/csharp/VS_Snippets_CFX/clientproxycodesample/cs/hostapplication.exe.config#20)]    
   
 ## <a name="see-also"></a>Viz také:
-- [Nástroj metadat modelu služby (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)
+
+- [Nástroj ServiceModel Metadata Utility (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)

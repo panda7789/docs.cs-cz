@@ -2,12 +2,12 @@
 title: Používání více schémat ověřování u WCF
 ms.date: 03/30/2017
 ms.assetid: f32a56a0-e2b2-46bf-a302-29e1275917f9
-ms.openlocfilehash: 9f2c9944b424ba527fb20562706d5ad7fc3f8359
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.openlocfilehash: b0f5da9a4c6fdfede9a86434f49f9e9821778176
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58465487"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59102307"
 ---
 # <a name="using-multiple-authentication-schemes-with-wcf"></a>Používání více schémat ověřování u WCF
 WCF umožňuje zadat více schémat ověřování v jednom koncovém bodu. Kromě toho hostovaná na webu služby může dědit jejich nastavení ověřování přímo ze služby IIS. V místním prostředí služby můžete zadat ověření je možné schémata. Další informace o nastavení ověřování ve službě IIS najdete v tématu [ověřování služby IIS](https://go.microsoft.com/fwlink/?LinkId=232458)  
@@ -120,8 +120,9 @@ else
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Vazby a zabezpečení](../../../../docs/framework/wcf/feature-details/bindings-and-security.md)
-- [Koncové body: Adresy, vazby a kontrakty](../../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)
+- [Koncové body: adresy, vazby a kontrakty](../../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)
 - [Konfigurace vazeb poskytovaných systémem](../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)
 - [Možnosti zabezpečení u vlastních vazeb](../../../../docs/framework/wcf/feature-details/security-capabilities-with-custom-bindings.md)
 - [Vazby](../../../../docs/framework/wcf/feature-details/bindings.md)

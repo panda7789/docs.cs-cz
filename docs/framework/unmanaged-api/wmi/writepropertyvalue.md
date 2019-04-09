@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e5a2588023309867694f344041f62be53cab9c37
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a98103367f497b18f9b8fbd61a37abf9816b8356
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54590117"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59107936"
 ---
 # <a name="writepropertyvalue-function"></a>WritePropertyValue – funkce
 Zapíše zadaný počet bajtů na vlastnost identifikovaný popisovač vlastnosti.
@@ -61,7 +61,7 @@ HRESULT WritePropertyValue (
 
 Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
 
-|Konstanta  |Hodnota  |Popis  |
+|Konstanta  |Value  |Popis  |
 |---------|---------|---------|
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | Parametr není platný. |
 |`WBEM_E_TYPE_MISMATCH` | 0x80041005 | Došlo k neshodě typů. |
@@ -83,4 +83,5 @@ Neřetězcový hodnoty vlastností `lNumBytes` musí mít velikost správného d
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

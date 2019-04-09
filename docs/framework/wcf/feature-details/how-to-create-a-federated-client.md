@@ -8,12 +8,12 @@ helpviewer_keywords:
 - WCF, federation
 - federation
 ms.assetid: 56ece47e-98bf-4346-b92b-fda1fc3b4d9c
-ms.openlocfilehash: 18c01c8ea6ada24a551b92fc571b68b336e10f64
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 457c09ec381db97bc757b9288c9d6ebc0890a305
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54614326"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59104322"
 ---
 # <a name="how-to-create-a-federated-client"></a>Postupy: Vytvoření federovaného klienta
 Ve Windows Communication Foundation (WCF), vytvoření klienta pro *Federovaná služba* zahrnuje tři hlavní kroky:  
@@ -161,10 +161,11 @@ Ve Windows Communication Foundation (WCF), vytvoření klienta pro *Federovaná 
 >  Nápad klientských certifikátů, která jsou omezená na daný identifikátor URI se vztahuje jenom na aplikace, které jsou odchozích volání služeb, které zpřístupňují koncové body na tyto identifikátory URI. Nevztahuje se na certifikáty, které se používají k podepisování vydaných tokenů, například nakonfigurovaným na serveru v kolekci vrácené poskytovatelem <xref:System.ServiceModel.Security.IssuedTokenServiceCredential.KnownCertificates%2A> z <xref:System.ServiceModel.Security.IssuedTokenServiceCredential> třídy. Další informace najdete v tématu [jak: Konfigurace pověření ve službě Federation Service](../../../../docs/framework/wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Ukázka federace](../../../../docs/framework/wcf/samples/federation-sample.md)
 - [Postupy: Zakázání zabezpečených relací u třídy WSFederationHttpBinding](../../../../docs/framework/wcf/feature-details/how-to-disable-secure-sessions-on-a-wsfederationhttpbinding.md)
 - [Postupy: Vytvoření instance WSFederationHttpBinding](../../../../docs/framework/wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md)
 - [Postupy: Konfigurace pověření ve službě Federation Service](../../../../docs/framework/wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md)
 - [Postupy: Konfigurace místního vystavitele](../../../../docs/framework/wcf/feature-details/how-to-configure-a-local-issuer.md)
-- [Informace o zabezpečení metadat](../../../../docs/framework/wcf/feature-details/security-considerations-with-metadata.md)
+- [Informace o zabezpečení pro metadata](../../../../docs/framework/wcf/feature-details/security-considerations-with-metadata.md)
 - [Postupy: Zabezpečené koncové body metadat](../../../../docs/framework/wcf/feature-details/how-to-secure-metadata-endpoints.md)

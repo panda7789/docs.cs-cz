@@ -20,12 +20,12 @@ helpviewer_keywords:
 - bitmaps [Windows Forms], file format
 - Exchangeable Image File
 ms.assetid: 6be085a2-2c13-47c8-b80a-c18b32777d8d
-ms.openlocfilehash: a78c84e82ac8507ad40cf3a9fdb44d58858a38d2
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: f41585ba8816e0b1894a9f01163191848ae391e3
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57713212"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59089157"
 ---
 # <a name="types-of-bitmaps"></a>Typy rastrových obrázků
 Rastrový obrázek je pole bitů, které určují barvu každého obrazového bodu obdélníkové pole v pixelech. Počet bitů věnovaný jednotlivých obrazových bodů určuje počet barev, které lze přiřadit k obrazového bodu. Například pokud každý pixel, je reprezentována 4 bitů, daný pixelů může se mu přiřadit jednu z 16 různé barvy (2 ^ 4 = 16). Následující tabulka ukazuje několik příkladů počet barev, které lze přiřadit k pixelu vyjádřena daný počet bitů.  
@@ -86,6 +86,7 @@ Rastrový obrázek je pole bitů, které určují barvu každého obrazového bo
  TIFF je flexibilní a rozšiřitelná formát, který podporuje širokou škálu platformy a zpracování obrazu aplikace. Soubory TIFF můžete ukládání imagí s využitím libovolného počtu bitů na pixel a můžete použít různé algoritmy komprese. Několik imagí mohou být uloženy v souboru ve formátu TIFF jeden, více stránek. Informace související s bitovou kopii (Zkontrolujte skener, hostitelského počítače, typ komprese, orientace, ukázky každý pixel a tak dále) lze uložené v souboru a uspořádat pomocí značek. Formát TIFF je možné rozšířit podle potřeby tak, že schválení a přidání nové značky.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Drawing.Image?displayProperty=nameWithType>
 - <xref:System.Drawing.Bitmap?displayProperty=nameWithType>
 - <xref:System.Drawing.Imaging.PixelFormat?displayProperty=nameWithType>

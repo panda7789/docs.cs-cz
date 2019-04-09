@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 416c7787e7e68ea0c6864091e92d92fed1a60bf4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 49784a0eba0458a7b9ddbcd58cbe1a187c3c779a
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54650116"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59101187"
 ---
 # <a name="corattributetargets-enumeration"></a>CorAttributeTargets – výčet
 Určuje prvky aplikace, na kterých je platný pro použití atributu.  
@@ -94,4 +94,5 @@ typedef enum CorAttributeTargets
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
-- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+
+- [Výčty metadat](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

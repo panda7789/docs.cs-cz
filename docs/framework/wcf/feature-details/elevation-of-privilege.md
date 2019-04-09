@@ -5,12 +5,12 @@ helpviewer_keywords:
 - elevation of privilege [WCF]
 - security [WCF], elevation of privilege
 ms.assetid: 146e1c66-2a76-4ed3-98a5-fd77851a06d9
-ms.openlocfilehash: cf67f3c68acc4cd8838be56d7c814f9e287ce62c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: fd5829d2dbb1853bf65f1f6e402b918137bd59e3
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54658041"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59099986"
 ---
 # <a name="elevation-of-privilege"></a>Zvýšení oprávnění
 *Zvýšení úrovně oprávnění* výsledkem udělení povolení útočník nad rámec těchto zpočátku udělená oprávnění. Například útočník se sadou oprávnění "jen pro čtení" oprávnění nějakým způsobem zvýší oprávnění set "pro čtení a zápisu."  
@@ -83,6 +83,7 @@ ms.locfileid: "54658041"
  Chcete-li tento problém zmírnit, odkaz X.509 certifikátu dalším způsobem, jako je třeba použití <xref:System.ServiceModel.Security.Tokens.X509KeyIdentifierClauseType.IssuerSerial>.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Důležité informace o zabezpečení](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)
 - [Zpřístupnění informací](../../../../docs/framework/wcf/feature-details/information-disclosure.md)
 - [Útok DoS](../../../../docs/framework/wcf/feature-details/denial-of-service.md)

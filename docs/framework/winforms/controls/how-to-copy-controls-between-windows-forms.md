@@ -1,18 +1,18 @@
 ---
-title: 'Postupy: Kopírování ovládacích prvků mezi formuláři Windows'
+title: 'Postupy: Kopírování ovládacích prvků mezi formuláři Windows Forms'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Windows Forms controls, copying
 - controls [Windows Forms], copying
 ms.assetid: 106c1eb2-1fba-4f69-b2ec-9ea3fa182f1e
-ms.openlocfilehash: cb6211df594ad6dbc69450499266d219bf741c6a
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: 7aa858e7c7215c589d9e39412ef20ec81a1a4239
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57703608"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59075780"
 ---
-# <a name="how-to-copy-controls-between-windows-forms"></a>Postupy: Kopírování ovládacích prvků mezi formuláři Windows
+# <a name="how-to-copy-controls-between-windows-forms"></a>Postupy: Kopírování ovládacích prvků mezi formuláři Windows Forms
 Ovládací prvek nelze zkopírovat na stejného formuláře, do jiného formuláře v rámci projektu nebo do schránky pro použití v jiných řešení.  
   
 ### <a name="to-copy-a-control"></a>Zkopírujte ovládací prvek  
@@ -22,13 +22,14 @@ Ovládací prvek nelze zkopírovat na stejného formuláře, do jiného formulá
  Tento ovládací prvek můžete teď vložit do libovolného formuláře, který přijímá tento typ ovládacího prvku. Kromě toho ovládací prvek se přidala do schránky.  
   
 ## <a name="see-also"></a>Viz také:
-- [Windows Forms – ovládací prvky](index.md)
-- [Postupy: Přidání ovládacích prvků do formulářů Windows](how-to-add-controls-to-windows-forms.md)
-- [Postupy: Přidávání ovládacích prvků ActiveX do formulářů Windows](how-to-add-activex-controls-to-windows-forms.md)
-- [Postupy: Přidání ovládacích prvků bez uživatelského rozhraní do formulářů Windows](how-to-add-controls-without-a-user-interface-to-windows-forms.md)
+
+- [Ovládací prvky Windows Forms](index.md)
+- [Postupy: Přidávání ovládacích prvků do Windows Forms](how-to-add-controls-to-windows-forms.md)
+- [Postupy: Přidávání ovládacích prvků ActiveX do Windows Forms](how-to-add-activex-controls-to-windows-forms.md)
+- [Postupy: Přidávání ovládacích prvků bez uživatelského rozhraní do Windows Forms](how-to-add-controls-without-a-user-interface-to-windows-forms.md)
 - [Uspořádávání ovládacích prvků ve Windows Forms](arranging-controls-on-windows-forms.md)
-- [Postupy: Nastavit Text, zobrazený ovládacím prvkem Windows Forms](how-to-set-the-text-displayed-by-a-windows-forms-control.md)
-- [Vkládání ovládacích prvků do Windows Forms](putting-controls-on-windows-forms.md)
+- [Postupy: Nastavení textu zobrazovaného ovládacím prvkem Windows Forms](how-to-set-the-text-displayed-by-a-windows-forms-control.md)
+- [Vkládání ovládacích prvků do formulářů Windows](putting-controls-on-windows-forms.md)
 - [Popisování jednotlivých ovládacích prvků Windows Forms a zajišťování zástupců pro tyto prvky](labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them.md)
 - [Ovládací prvky používané ve Windows Forms](controls-to-use-on-windows-forms.md)
 - [Ovládací prvky Windows Forms podle funkce](windows-forms-controls-by-function.md)

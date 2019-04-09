@@ -1,13 +1,13 @@
 ---
-title: Element <peerAuthentication>
+title: <peerAuthentication> Prvek
 ms.date: 03/30/2017
 ms.assetid: 09a8a9ff-e395-42f6-8ceb-9d44bdc1cbe1
-ms.openlocfilehash: 7607f5bab6083c190303fd0a9121ffab55c620c3
-ms.sourcegitcommit: 01ea420eaa4bf76d5fc47673294c8881379b3369
+ms.openlocfilehash: 1e99f6d117604f9ba2672972a4b09e7fe9f96792
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55759441"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59092965"
 ---
 # <a name="peerauthentication-element"></a>\<peerAuthentication > – Element
 Určuje možnosti ověřování klientů peer-to-peer.  
@@ -45,7 +45,7 @@ Určuje možnosti ověřování klientů peer-to-peer.
   
 ## <a name="customcertificatevalidatortype-attribute"></a>customCertificateValidatorType Attribute  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |String|Určuje název typu a sestavení a další data použít k vyhledání typu. Minimálně název oboru názvů a typ jsou požadovány. Volitelné informace zahrnují: název sestavení, číslo verze, jazykovou verzi a token veřejného klíče.|  
   
@@ -63,7 +63,7 @@ Určuje možnosti ověřování klientů peer-to-peer.
   
 ## <a name="trustedstorelocation-attribute"></a>trustedStoreLocation atribut  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |Výčet|Jeden z následujících hodnot: `LocalMachine` nebo `CurrentUser`. Výchozí hodnota je `CurrentUser`. Pokud klientská aplikace běží pod účtem systému, certifikátu je obvykle pod `LocalMachine`. Pokud klientská aplikace běží pod účtem uživatele, že certifikát je obvykle v `CurrentUser`.|  
   
@@ -101,6 +101,7 @@ Určuje možnosti ověřování klientů peer-to-peer.
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Configuration.PeerCredentialElement>
 - <xref:System.ServiceModel.Security.X509PeerCertificateAuthentication>
 - <xref:System.ServiceModel.Security.PeerCredential.PeerAuthentication%2A>
@@ -110,4 +111,4 @@ Určuje možnosti ověřování klientů peer-to-peer.
 - [Síť rovnocenných počítačů](../../../../../docs/framework/wcf/feature-details/peer-to-peer-networking.md)
 - [Ověřování zpráv protokolu peer Channel](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/aa967730(v=vs.90))
 - [Vlastní ověřování protokolu peer Channel](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751447(v=vs.90))
-- [Zabezpečení aplikací protokolu Peer Channel](../../../../../docs/framework/wcf/feature-details/securing-peer-channel-applications.md)
+- [Zabezpečení aplikací rovnocenného kanálu](../../../../../docs/framework/wcf/feature-details/securing-peer-channel-applications.md)

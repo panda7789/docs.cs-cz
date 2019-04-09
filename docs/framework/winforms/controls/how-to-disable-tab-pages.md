@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Zákaz stránek karet'
+title: 'Postupy: Zakázání karet'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - tab pages [Windows Forms], hiding in forms
 - TabControl control [Windows Forms], disabling pages
 ms.assetid: adcc6618-8a34-4ee1-bbe3-47e732de6a59
-ms.openlocfilehash: a2a0f4084529b1dd2618c1cd6171ee45b8f569d3
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: ace713a635b5d9c4b73f85cd3d378c0f1ff3dba1
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57704996"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59107572"
 ---
-# <a name="how-to-disable-tab-pages"></a>Postupy: Zákaz stránek karet
+# <a name="how-to-disable-tab-pages"></a>Postupy: Zakázání karet
 V některých případech budete chtít omezit přístup k datům, která je k dispozici v rámci vaší aplikace Windows Forms. Jedním z příkladů může být, pokud máte data zobrazí na stránkách kartu ovládacího prvku karta; Správce může mít informace na stránce kartu, kterou chcete omezit z hosta nebo uživatelé na nižší úrovni.  
   
 ### <a name="to-disable-tab-pages-programmatically"></a>Chcete-li zákaz stránek karet prostřednictvím kódu programu  
@@ -102,7 +102,8 @@ V některých případech budete chtít omezit přístup k datům, která je k d
     ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled ovládacího prvku TabControl](tabcontrol-control-overview-windows-forms.md)
-- [Postupy: Přidání ovládacího prvku do stránky karty](how-to-add-a-control-to-a-tab-page.md)
+- [Postupy: Přidání ovládacího prvku na kartu](how-to-add-a-control-to-a-tab-page.md)
 - [Postupy: Přidání a odebrání karet pomocí ovládacího prvku Windows Forms TabControl](how-to-add-and-remove-tabs-with-the-windows-forms-tabcontrol.md)
 - [Postupy: Změna vzhledu ovládacího prvku Windows Forms TabControl](how-to-change-the-appearance-of-the-windows-forms-tabcontrol.md)

@@ -5,12 +5,12 @@ helpviewer_keywords:
 - merged resource dictionaries [WPF]
 - dictionaries [WPF], merged resources
 ms.assetid: d159531f-05d4-49fd-b951-c332de51e5bc
-ms.openlocfilehash: ae6c8dc3669ed46165f3d78e78735187ebbc3776
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 17dd8e0c02d71fc7e72800fc578866188d03060e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57377015"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59097236"
 ---
 # <a name="merged-resource-dictionaries"></a>Slovníky sloučených prostředků
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] prostředků podporují funkci slovníku prostředků. Tato funkce poskytuje způsob, jak definovat části prostředky [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace mimo zkompilovaný [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] aplikace. Prostředky pak můžete sdílet mezi aplikací a také více pohodlně izolaci pro lokalizaci.  
@@ -52,7 +52,8 @@ ms.locfileid: "57377015"
  Pokud jsou izolované slovníky, které jsou sloučena s primární slovníky a uchovávat jako volné prostředky, které potřebují k lokalizování [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], tyto soubory mohou být lokalizována samostatně. Tento postup je jednoduchý alternativou k lokalizování sestavení satelitních prostředků. Podrobnosti najdete v tématu [přehled WPF globalizace a lokalizace](wpf-globalization-and-localization-overview.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.ResourceDictionary>
-- [Prostředky XAML](xaml-resources.md)
-- [Prostředky a kód](resources-and-code.md)
-- [Prostředek, obsah a datové soubory aplikace WPF](../app-development/wpf-application-resource-content-and-data-files.md)
+- [Zdroje XAML](xaml-resources.md)
+- [Zdroje a kód](resources-and-code.md)
+- [Zdroj, obsah a datové soubory zdroje aplikací WPF](../app-development/wpf-application-resource-content-and-data-files.md)

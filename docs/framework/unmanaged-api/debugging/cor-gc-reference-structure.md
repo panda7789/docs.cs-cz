@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0375fdd6f86ae89171545cfdcb44ac37074084e9
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e1e31e95473136bf7e7c196eacc278fa8a1caab2
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54718712"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59093654"
 ---
 # <a name="corgcreference-structure"></a>COR_GC_REFERENCE – struktura
 Obsahuje informace o objektu, který má být uvolněna.  
@@ -73,5 +73,6 @@ typedef struct _COR_GC_REFERENCE {
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Struktury pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)
 - [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)

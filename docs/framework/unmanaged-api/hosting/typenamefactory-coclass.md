@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: abdfdd4393609bb7821cfc44c0e46574d8724cfb
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a915ed72350f278a5df01191e69c95a4917f1230
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54730059"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59094161"
 ---
 # <a name="typenamefactory-coclass"></a>TypeNameFactory – třída typu coclass
 Poskytuje rozhraní pro správu dekonstrukce název typu.  
@@ -50,4 +50,5 @@ coclass TypeNameFactory {
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
-- [Třídy typu coclass pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-coclasses.md)
+
+- [Třídy typu coclass hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-coclasses.md)

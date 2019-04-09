@@ -10,12 +10,12 @@ api_type:
 ms.assetid: fb626b41-b888-4625-84c3-2c02b5e3866f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 252a3153a49867faf67051be01eeb141fa3ab681
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: 448712561f1531a055ac141db9825581525c779c
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57490343"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59106701"
 ---
 # <a name="axlgetissuerpublickeyhash-function"></a>Funkce _AxlGetIssuerPublicKeyHash
 Načte hodnotu hash SHA-1 veřejný klíč přidružený privátní klíč, který se používá k podepsání zadaný certifikát.  
@@ -40,4 +40,5 @@ HRESULT _AxlGetIssuerPublicKeyHash (
  `S_OK` Pokud je funkce úspěšná; v opačném případě `S_FALSE`.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Authenticode](../../../../docs/framework/unmanaged-api/authenticode/index.md)

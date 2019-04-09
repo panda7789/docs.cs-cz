@@ -10,12 +10,12 @@ helpviewer_keywords:
 - professional appearance [Windows Forms], applying to elements of Windows Forms applications
 - visual styles [Windows Forms], rendering Windows Forms controls
 ms.assetid: a207781b-1baa-4ce9-b788-1e951bd4b5df
-ms.openlocfilehash: 33c73bf8faa9dfafe5f4889875887dc3aef5985c
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: 44218ee1f3879a3f9ac5a1e1b049c28a5463820e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57714109"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59099830"
 ---
 # <a name="how-to-render-a-visual-style-element"></a>Postupy: Vykreslení elementu vizuálního stylu
 <xref:System.Windows.Forms.VisualStyles?displayProperty=nameWithType> Obor názvů poskytuje <xref:System.Windows.Forms.VisualStyles.VisualStyleElement> prvky (UI) podporuje vizuální styly rozhraní objektů, které představují uživatele Windows. Toto téma popisuje způsob použití <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer> třídy k vykreslení <xref:System.Windows.Forms.VisualStyles.VisualStyleElement> , která představuje **Odhlásit** a **vypnout** tlačítka v nabídce Start.  
@@ -44,4 +44,5 @@ ms.locfileid: "57714109"
 -   Odkazy <xref:System?displayProperty=nameWithType>, <xref:System.Drawing?displayProperty=nameWithType>, <xref:System.Windows.Forms?displayProperty=nameWithType>, a <xref:System.Windows.Forms.VisualStyles?displayProperty=nameWithType> obory názvů.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Vykreslování ovládacích prvků s vizuálními styly](rendering-controls-with-visual-styles.md)

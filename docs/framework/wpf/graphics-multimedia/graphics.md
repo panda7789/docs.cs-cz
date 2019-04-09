@@ -7,12 +7,12 @@ helpviewer_keywords:
 - visual effects [WPF]
 - graphics [WPF], effects
 ms.assetid: 3bfc652e-91b7-4697-a4f4-83ff0e98327e
-ms.openlocfilehash: 20051b176be4372643855441ee5f6c3b62a27780
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: c59d19c925d99ac8f5dd07da84295ee002c956de
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57361158"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59102346"
 ---
 # <a name="graphics"></a>Grafika
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] nabídky integrovaná podpora pro multimédia, vektorovou grafiku, animace a obsahu složení, a usnadňuje vývojářům umožní tvořit zajímavou uživatelská rozhraní a obsah.  
@@ -20,15 +20,16 @@ ms.locfileid: "57361158"
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Bitmapové efekty](bitmap-effects.md)  
  [Štětce](brushes.md)  
- [Kresby](drawings.md)  
+ [Kreslení](drawings.md)  
  [Geometrie](geometries.md)  
  [Obrázky](images.md)  
- [Tvary](shapes.md)  
+ [Obrazce](shapes.md)  
  [Transformace](transformations.md)  
  [Nastavení registru pro vykreslení grafiky](graphics-rendering-registry-settings.md)  
- [Témata s postupy](graphics-how-to-topics.md)  
+ [– postupy](graphics-how-to-topics.md)  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Shapes.Shape>
 - <xref:System.Windows.Media.Transform>
 - <xref:System.Windows.Media.Imaging.BitmapImage>

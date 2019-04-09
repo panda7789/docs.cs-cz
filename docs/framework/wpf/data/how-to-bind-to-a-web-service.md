@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Připojení k webové službě'
+title: 'Postupy: Vytvoření vazby k webové službě'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - Web service binding [WPF]
 - data binding [WPF], Web service
 ms.assetid: 77e2d373-69ba-4cbd-b6f5-2c83c38fc98b
-ms.openlocfilehash: b2ef0cce293913fc7bd9d59baa91bd875823cbe2
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
-ms.translationtype: MT
+ms.openlocfilehash: 66e91190e68d9610dd95d677edb276e117ec6abb
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57353930"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59098570"
 ---
-# <a name="how-to-bind-to-a-web-service"></a>Postupy: Připojení k webové službě
+# <a name="how-to-bind-to-a-web-service"></a>Postupy: Vytvoření vazby k webové službě
 Tento příklad ukazuje, jak svázat objekty vrácené z volání metody webové služby.  
   
 ## <a name="example"></a>Příklad  
@@ -46,6 +46,7 @@ Tento příklad ukazuje, jak svázat objekty vrácené z volání metody webové
  Informace o struktuře **getContentResponse**, naleznete v tématu [dokumentace ke službě Content](https://services.msdn.microsoft.com/ContentServices/ContentService.asmx).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled datových vazeb](data-binding-overview.md)
-- [Přehled zdrojů vazby](binding-sources-overview.md)
+- [Přehled zdrojů připojení](binding-sources-overview.md)
 - [Zpřístupnění dat pro vazbu v jazyku XAML](how-to-make-data-available-for-binding-in-xaml.md)

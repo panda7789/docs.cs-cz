@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Definování obecného typu pomocí reflexe generování'
+title: 'Postupy: Definování obecného typu pomocí generování reflexe'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -12,14 +12,14 @@ helpviewer_keywords:
 ms.assetid: 07d5f01a-7b5b-40ea-9b15-f21561098fe4
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 74ddda813d756fb5cb54cb600e3cbf1cf68b3f38
-ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
-ms.translationtype: MT
+ms.openlocfilehash: 54eb0bf5c364faa4f6c0f2a8d14490137e4ea442
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56221144"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59101192"
 ---
-# <a name="how-to-define-a-generic-type-with-reflection-emit"></a>Postupy: Definování obecného typu pomocí reflexe generování
+# <a name="how-to-define-a-generic-type-with-reflection-emit"></a>Postupy: Definování obecného typu pomocí generování reflexe
 Toto téma ukazuje, jak vytvořit jednoduchý obecný typ s dvěma parametry typu, jak použít omezení třídy, omezení rozhraní a zvláštní omezení pro parametry typu a jak vytvořit členy, které používají parametry typu třídy jako typy parametrů a návratové typy.  
   
 > [!IMPORTANT]
@@ -136,6 +136,7 @@ Toto téma ukazuje, jak vytvořit jednoduchý obecný typ s dvěma parametry typ
 -   Kompilace kódu do příkazového řádku pomocí csc.exe a vbc.exe, cl.exe. Ke kompilaci kódu v sadě Visual Studio, umístěte ho do šablony projektu konzolové aplikace.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Reflection.Emit.GenericTypeParameterBuilder>
 - [Použití generování reflexe](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/3y322t50(v=vs.100))
 - [Scénáře dynamických sestavení generování reflexe](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/tt9483fk(v=vs.100))

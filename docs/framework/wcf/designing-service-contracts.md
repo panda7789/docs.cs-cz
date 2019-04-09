@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - service contracts [WCF]
 ms.assetid: 8e89cbb9-ac84-4f0d-85ef-0eb6be0022fd
-ms.openlocfilehash: 37639bfc71918dd92a2334f4076dc2b4d6ff9698
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 68ea866b736350b8a393d1f4788e4b08754e5ab4
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54583191"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59102736"
 ---
 # <a name="designing-service-contracts"></a>Navrhování kontraktů služby
 Toto téma popisuje, jakou servisní smlouvy se, jak jsou definovány, jaké operace jsou k dispozici (a důsledky pro základní výměny zpráv), jaké typy dat jsou používané a dalších problémů, které vám pomůžou navrhnout operace, které splňují požadavky na váš scénář.  
@@ -270,6 +270,7 @@ End Interface
  Jeden výsledek tohoto je, že pokud nejsou explicitně nastavit názvy a obory názvů, použití IL obfuskace sestavení mění názvy typů kontraktu a obory názvů a upravené WSDL a výměny při přenosu, které obvykle za následek. Pokud není nastaveno smlouvy názvy a obory názvů explicitně, ale v úmyslu použít obfuskace, použijte <xref:System.Reflection.ObfuscationAttribute> a <xref:System.Reflection.ObfuscateAssemblyAttribute> atributů, které mají-li zabránit úpravy kontrakt zadejte názvy a obory názvů.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Postupy: Vytvoření kontraktu požadavku a odpovědi](../../../docs/framework/wcf/feature-details/how-to-create-a-request-reply-contract.md)
 - [Postupy: Vytvoření jednosměrného kontraktu](../../../docs/framework/wcf/feature-details/how-to-create-a-one-way-contract.md)
 - [Postupy: Vytvoření duplexního kontraktu](../../../docs/framework/wcf/feature-details/how-to-create-a-duplex-contract.md)

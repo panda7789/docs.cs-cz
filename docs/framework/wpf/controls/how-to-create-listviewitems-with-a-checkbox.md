@@ -7,12 +7,12 @@ helpviewer_keywords:
 - ListView controls [WPF], CheckBox controls
 - CheckBox control [WPF], ListView control
 ms.assetid: f6d66c7f-906c-4f65-a55a-0ede9d00e26a
-ms.openlocfilehash: 31a500c3a592ff8d1dd839543171991e908c23c9
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: b09d5ad11b0961febf524cec1e19cb1e59832e44
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57368529"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59083100"
 ---
 # <a name="how-to-create-listviewitems-with-a-checkbox"></a>Postupy: Vytvoření ListViewItems pomocí CheckBox
 Tento příklad ukazuje, jak zobrazit sloupec <xref:System.Windows.Controls.CheckBox> ovládacích prvků v <xref:System.Windows.Controls.ListView> ovládací prvek, který se používá <xref:System.Windows.Controls.GridView>.  
@@ -29,9 +29,10 @@ Tento příklad ukazuje, jak zobrazit sloupec <xref:System.Windows.Controls.Chec
  [!code-xaml[ListViewChkBox#GridViewColumnCheckBox](~/samples/snippets/csharp/VS_Snippets_Wpf/ListViewChkBox/CS/window1.xaml#gridviewcolumncheckbox)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Controls.Control>
 - <xref:System.Windows.Controls.ListView>
 - <xref:System.Windows.Controls.GridView>
 - [ListView – přehled](listview-overview.md)
-- [Témata s postupy](listview-how-to-topics.md)
+- [– postupy](listview-how-to-topics.md)
 - [GridView – přehled](gridview-overview.md)

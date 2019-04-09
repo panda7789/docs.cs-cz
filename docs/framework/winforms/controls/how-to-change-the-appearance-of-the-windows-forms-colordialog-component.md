@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Změna vzhledu Windows Forms ColorDialog – komponenta'
+title: 'Postupy: Změna vzhledu komponenty Windows Forms ColorDialog'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,14 +10,14 @@ helpviewer_keywords:
 - ColorDialog component [Windows Forms], formatting appearance
 - color dialog box [Windows Forms], configuring appearance
 ms.assetid: bba4e262-1cd7-4f63-89cf-330a36f7b539
-ms.openlocfilehash: 6bc59f08d811ef542206b5788f251f30f89af301
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: d79139ac3d11d3cd9a7d1bbe1f12e14df83530e0
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57702786"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59094642"
 ---
-# <a name="how-to-change-the-appearance-of-the-windows-forms-colordialog-component"></a>Postupy: Změna vzhledu Windows Forms ColorDialog – komponenta
+# <a name="how-to-change-the-appearance-of-the-windows-forms-colordialog-component"></a>Postupy: Změna vzhledu komponenty Windows Forms ColorDialog
 Můžete nakonfigurovat vzhledu Windows Forms <xref:System.Windows.Forms.ColorDialog> komponentu s celou řadou její vlastnosti. Dialogové okno obsahuje dvě části – ten, který zobrazuje základní barvy a ten, který umožňuje uživateli definovat vlastní barvy.  
   
  Většina vlastností omezení jaké barev, může uživatel vybrat z dialogového okna. Pokud <xref:System.Windows.Forms.ColorDialog.AllowFullOpen%2A> je nastavena na `true`, uživatel může definovat vlastní barvy. <xref:System.Windows.Forms.ColorDialog.FullOpen%2A> Vlastnost `true` Pokud dialogovém rozbalen a definovat vlastní barvy; jinak uživatel musí kliknout na tlačítko "Definovat vlastní barvy". Když <xref:System.Windows.Forms.ColorDialog.AnyColor%2A> je nastavena na `true`, zobrazí dialogové okno v sadě základních barev všechny barvy k dispozici. Pokud <xref:System.Windows.Forms.ColorDialog.SolidColorOnly%2A> je nastavena na `true`, uživatel nemůže vybrat dithered pro bitové barvy, jsou k dispozici k výběru pouze plné barvy.  
@@ -50,6 +50,7 @@ Můžete nakonfigurovat vzhledu Windows Forms <xref:System.Windows.Forms.ColorDi
     ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.ColorDialog>
 - [Komponenta ColorDialog](colordialog-component-windows-forms.md)
 - [Přehled komponenty ColorDialog](colordialog-component-overview-windows-forms.md)

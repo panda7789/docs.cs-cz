@@ -2,12 +2,12 @@
 title: Metody System.DateTime
 ms.date: 03/30/2017
 ms.assetid: 4f80700c-e83f-4ab6-af0f-1c9a606e1133
-ms.openlocfilehash: edc1631536e1e30a324a0fdf0e7690b13639d7e9
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 85af6f252362b811356d68a3ae220df2bb813882
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54712717"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59106324"
 ---
 # <a name="systemdatetime-methods"></a>Metody System.DateTime
 Následující technologie LINQ to SQL podporované metody, operátory a vlastnosti jsou k dispozici pro použití v technologii LINQ dotazy SQL. Pokud metoda, operátor nebo vlastnost není podporována, LINQ to SQL: nelze převést člena pro spuštění systému SQL Server. Můžete použít tyto členy ve vašem kódu, ale musí být vyhodnocují před dotazu je přeložen příkazů jazyka Transact-SQL nebo po výsledky byly načteny z databáze.  
@@ -65,6 +65,7 @@ Následující technologie LINQ to SQL podporované metody, operátory a vlastno
 |<xref:System.Data.Linq.SqlClient.SqlMethods.DateDiffMicrosecond%2A>|<xref:System.Data.Linq.SqlClient.SqlMethods.DateDiffMonth%2A>|<xref:System.Data.Linq.SqlClient.SqlMethods.DateDiffYear%2A>|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Koncepty dotazů](../../../../../../docs/framework/data/adonet/sql/linq/query-concepts.md)
 - [Vytvoření objektového modelu](../../../../../../docs/framework/data/adonet/sql/linq/creating-the-object-model.md)
 - [Mapování typů SQL a CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mapping.md)

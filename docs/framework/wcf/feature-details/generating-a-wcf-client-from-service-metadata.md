@@ -2,12 +2,12 @@
 title: Generování klienta WCF z metadat služby
 ms.date: 03/30/2017
 ms.assetid: 27f8f545-cc44-412a-b104-617e0781b803
-ms.openlocfilehash: 3bdb283e461076ffd5c1e77963933de0e5b4bb02
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5cfbfc1e4be0003b3699f818212fbcd959f3ad91
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54570954"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59078249"
 ---
 # <a name="generating-a-wcf-client-from-service-metadata"></a>Generování klienta WCF z metadat služby
 Toto téma popisuje, jak používat různé přepínače v Svcutil.exe ke generování klientů z dokumentů metadat.  
@@ -70,5 +70,6 @@ svcutil.exe [/t:code]  <metadataDocumentPath>* | <url>* | <epr>
 |**/noConfig**|Konfigurační soubory nejsou generovány.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Používání metadat](../../../../docs/framework/wcf/feature-details/using-metadata.md)
 - [Přehled architektury metadat](../../../../docs/framework/wcf/feature-details/metadata-architecture-overview.md)

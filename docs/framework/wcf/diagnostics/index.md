@@ -2,13 +2,19 @@
 title: Správa a diagnostika
 ms.date: 03/30/2017
 helpviewer_keywords:
-  - 'Windows Communication Foundation, diagnostics'
-  - 'Windows Communication Foundation, administration'
-  - 'diagnostics [WCF]'
-  - 'WCF, diagnostics'
-  - 'administration [WCF]'
-  - 'WCF, administration'
+- Windows Communication Foundation, diagnostics
+- Windows Communication Foundation, administration
+- diagnostics [WCF]
+- WCF, diagnostics
+- administration [WCF]
+- WCF, administration
 ms.assetid: 34c81c08-0e0f-4fbc-9ae8-91948640ee43
+ms.openlocfilehash: 351d133215343e07e849ad1045eba601dd8cce56
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59092277"
 ---
 # <a name="administration-and-diagnostics"></a>Správa a diagnostika
 Windows Communication Foundation (WCF) poskytuje bohatou sadu funkcí, které vám pomohou sledovat různých fázích životního aplikace. Například můžete použít konfiguraci nastavení služeb a klientů v nasazení. WCF obsahuje velké sady čítače výkonu umožňují měřit výkon vaší aplikace. WCF také poskytuje dat kontroly služby za běhu pomocí zprostředkovatele WCF Windows Management Instrumentation (WMI). Při aplikaci dojde k selhání nebo spuštění funguje správně, můžete použít v protokolu událostí zobrazíte, pokud žádné významné došlo k chybě. Pokud chcete zjistit, jaké události jsou děje začátku do konce ve vaší aplikaci můžete také použít protokolování zpráv a trasování. Tyto funkce pomůžou vývojářům a IT profesionály řešení aplikaci WCF při nepracuje správně.  
@@ -34,15 +40,16 @@ Windows Communication Foundation (WCF) poskytuje bohatou sadu funkcí, které v�
  WCF také poskytuje několik nástrojů pro grafické uživatelské rozhraní a příkazový řádek, aby bylo snazší pro vás k vytvoření, nasazení a správě aplikací služby WCF. Další informace najdete v tématu [nástroje Windows Communication Foundation](../../../../docs/framework/wcf/tools.md). Například můžete použít [nástroj Configuration Editor (SvcConfigEditor.exe)](../../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md) můžete vytvářet a upravovat nastavení konfigurace WCF pomocí průvodce, místo pro úpravy XML přímo. Můžete také použít [nástroj Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md) k zobrazení, seskupit a filtrovat zprávy trasování, aby můžete diagnostikovat, opravit a ověřte problémy se službami WCF.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Konfigurace vaší aplikace](../../../../docs/framework/wcf/diagnostics/configuring-your-application.md)
 - [Nasazení služeb](../../../../docs/framework/wcf/diagnostics/deploying-services.md)
 - [Přehled výjimek](../../../../docs/framework/wcf/diagnostics/exceptions-reference/index.md)
 - [Protokolování událostí](../../../../docs/framework/wcf/diagnostics/event-logging/index.md)
 - [Protokolování zpráv](../../../../docs/framework/wcf/diagnostics/message-logging.md)
-- [Editor konfigurace (SvcConfigEditor.exe)](../../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md)
+- [Nástroj Configuration Editor (SvcConfigEditor.exe)](../../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md)
 - [Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md)
 - [Nástroj ServiceModelReg.exe](../../../../docs/framework/wcf/diagnostics/servicemodel-registration-tool.md)
 - [Trasování](../../../../docs/framework/wcf/diagnostics/tracing/index.md)
 - [Diagnostika prostřednictvím rozhraní WMI (Windows Management Instrumentation)](../../../../docs/framework/wcf/diagnostics/wmi/index.md)
 - [Čítače výkonu](../../../../docs/framework/wcf/diagnostics/performance-counters/index.md)
-- [Nástroje Windows Communication Foundation](../../../../docs/framework/wcf/tools.md)
+- [Nástroje služby Windows Communication Foundation](../../../../docs/framework/wcf/tools.md)

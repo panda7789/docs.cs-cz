@@ -8,12 +8,12 @@ helpviewer_keywords:
 - custom controls [Windows Forms], property changes (using code)
 - properties [Windows Forms], changes
 ms.assetid: 268039ec-5aaa-4d76-b902-acccb036c850
-ms.openlocfilehash: 0ff5b3874d9de169f4a9f1040d601173af352c06
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: cabfd9e799288a332a0b2f96140f5f1cc328508b
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57703228"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59105765"
 ---
 # <a name="property-changed-events"></a>Události změny vlastnosti
 Pokud chcete, aby ovládací prvek k odesílání oznámení, když vlastnost s názvem *PropertyName* změny, definovat událost s názvem *PropertyName* `Changed` a metodu s názvem `On` *PropertyName* `Changed` , která vyvolává událost. Zásady vytváření názvů v modelu Windows Forms je připojit slovo *změněné* k názvu vlastnosti. Typ delegáta přidružené události pro události změny vlastnosti je <xref:System.EventHandler>, a datový typ události je <xref:System.EventArgs>. Základní třída <xref:System.Windows.Forms.Control> definuje mnoho události změny vlastnosti, jako například <xref:System.Windows.Forms.Control.BackColorChanged>, <xref:System.Windows.Forms.Control.BackgroundImageChanged>, <xref:System.Windows.Forms.Control.FontChanged>, <xref:System.Windows.Forms.Control.LocationChanged>a další. Základní informace o událostech, naleznete v tématu [události](../../../standard/events/index.md) a [události v ovládacích prvcích Windows Forms](events-in-windows-forms-controls.md).  
@@ -26,6 +26,7 @@ Pokud chcete, aby ovládací prvek k odesílání oznámení, když vlastnost s 
  [!code-vb[System.Windows.Forms.FlashTrackBar#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.FlashTrackBar/VB/FlashTrackBar.vb#2)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Události](../../../standard/events/index.md)
 - [Události v ovládacích prvcích Windows Forms](events-in-windows-forms-controls.md)
 - [Vlastnosti v ovládacích prvcích Windows Forms](properties-in-windows-forms-controls.md)

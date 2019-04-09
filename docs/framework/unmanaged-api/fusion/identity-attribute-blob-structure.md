@@ -18,12 +18,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: eb2c560f8f906f20de752e5dfad995e2082caaea
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: cda9f6c71361d3865b40669c7ba09f2c2fb0c253
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54654669"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59102983"
 ---
 # <a name="identityattributeblob-structure"></a>IDENTITY_ATTRIBUTE_BLOB – struktura
 Obsahuje informace o jediný atribut v sestavení a se skládá ze tří `DWORD`s. Každý `DWORD` je posun do vyrovnávací paměti znak vytvářených `CurrentIntoBuffer` metodu [ienumidentity_attribute –](../../../../docs/framework/unmanaged-api/fusion/ienumidentity-attribute-interface.md) rozhraní  
@@ -243,7 +243,8 @@ Exit:
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [IReferenceIdentity – rozhraní](../../../../docs/framework/unmanaged-api/fusion/ireferenceidentity-interface.md)
 - [IEnumIDENTITY_ATTRIBUTE – rozhraní](../../../../docs/framework/unmanaged-api/fusion/ienumidentity-attribute-interface.md)
 - [IDENTITY_ATTRIBUTE – struktura](../../../../docs/framework/unmanaged-api/fusion/identity-attribute-structure.md)
-- [Struktury pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-structures.md)
+- [Struktury fúzí](../../../../docs/framework/unmanaged-api/fusion/fusion-structures.md)

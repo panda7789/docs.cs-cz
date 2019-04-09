@@ -5,12 +5,12 @@ helpviewer_keywords:
 - layout [WPF], automatic
 - automatic layout [WPF]
 ms.assetid: 6fed9264-18bb-4d05-8867-1fe356c6f687
-ms.openlocfilehash: 74c4e10e8f28fb00a5528c1ab860b88d0caa4303
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
+ms.openlocfilehash: 5df6d39bef137bd4005316eac252ca0952df5e7f
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58408753"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59098777"
 ---
 # <a name="use-automatic-layout-overview"></a>Přehled automatického rozložení
 Toto téma popisuje pokyny pro vývojáře na tom, jak psát [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikací s lokalizovatelné [!INCLUDE[TLA#tla_ui#plural](../../../../includes/tlasharptla-uisharpplural-md.md)]. Lokalizace uživatelského rozhraní v minulosti bylo časově náročný proces. Každý jazyk, který byl přizpůsobit uživatelské rozhraní pro požadované úpravy podle pixelů. Dnes s správný návrh a pravá standardy kódování, [!INCLUDE[TLA2#tla_ui#plural](../../../../includes/tla2sharptla-uisharpplural-md.md)] lze sestavit tak, aby Lokalizátoři menší změny velikosti a přemístění provést. Přístup k vytváření aplikací, které se dají snadno změněnou velikostí a přemístěných nazývá Automatické rozložení a lze dosáhnout pomocí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] návrhu aplikace.  
@@ -81,7 +81,7 @@ Informace o různých typech panelů najdete v článku [přehled panelů](../co
    - Global San Serif
    - Globální Serif
 
-**XML: lang – přidat**
+**Add xml:lang**
 
 - Přidat `xml:lang` atribut v kořenovém prvku uživatelského rozhraní, jako například `xml:lang="en-US"` anglické aplikace.
 
@@ -107,6 +107,7 @@ Mřížka
  **Poznámka:** kompletní vzorek kódu, naleznete v tématu [sdílené složky velikosti vlastnosti mezi mřížkami](../controls/how-to-share-sizing-properties-between-grids.md)  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Globalizace pro WPF](globalization-for-wpf.md)
 - [Vytvoření tlačítka pomocí automatického rozložení](how-to-use-automatic-layout-to-create-a-button.md)
-- [Automatické rozložení použitím mřížky](how-to-use-a-grid-for-automatic-layout.md)
+- [Automatické rozložení pomocí mřížky](how-to-use-a-grid-for-automatic-layout.md)

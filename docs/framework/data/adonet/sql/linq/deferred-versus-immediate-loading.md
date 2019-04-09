@@ -1,18 +1,18 @@
 ---
-title: Odložené versus okamžité načítání
+title: Odložené vs. okamžité načítání
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: d1d7247f-a3b7-460b-b342-5c1a2365aa1a
-ms.openlocfilehash: c78f608225d64a428b768fbc8d03f71a393d980d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ae20dbe557c3cf56a273556c24578056843e9af6
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54516964"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59096989"
 ---
-# <a name="deferred-versus-immediate-loading"></a>Odložené versus okamžité načítání
+# <a name="deferred-versus-immediate-loading"></a>Odložené vs. okamžité načítání
 Když odešlete dotaz na objekt, ve skutečnosti načíst pouze na objekt, který jste požádali. *Související* objekty nejsou vyvolány automaticky ve stejnou dobu. (Další informace najdete v tématu [dotazování napříč vztahy](../../../../../../docs/framework/data/adonet/sql/linq/querying-across-relationships.md).) Skutečnost, že souvisejících objektů, které ještě nejsou načtená, nejde zobrazit, protože pokus o přístup k těmto vytvoří požadavek, který je obnovuje.  
   
  Například můžete dotazovat na konkrétní sadu objednávky a jenom občas odeslat e-mailové oznámení pro konkrétní zákazníky. Můžete nemusí nutně zpočátku načíst všechna data zákazníků se každých pořadí. Odložené načítání můžete odložit načítání dodatečné informace, dokud je nezbytně nutné. Vezměte v úvahu v následujícím příkladu:  
@@ -34,4 +34,5 @@ Když odešlete dotaz na objekt, ve skutečnosti načíst pouze na objekt, kter�
 -   <xref:System.Data.Linq.DataLoadOptions.AssociateWith%2A> Metoda chcete filtrovat objekty načíst pro konkrétní vztah.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Koncepty dotazů](../../../../../../docs/framework/data/adonet/sql/linq/query-concepts.md)

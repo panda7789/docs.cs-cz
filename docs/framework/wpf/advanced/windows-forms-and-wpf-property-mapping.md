@@ -8,12 +8,12 @@ helpviewer_keywords:
 - interoperability [WPF], Windows Forms
 - WindowsFormsHost element property mapping [WPF]
 ms.assetid: 999d8298-9c04-467d-a453-86e41002057d
-ms.openlocfilehash: 1274724e1cd93f5788840978b583e4bf05c06bb2
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: a7d78837a141ed322da42629501cee6dcc9143e1
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57358558"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59088818"
 ---
 # <a name="windows-forms-and-wpf-property-mapping"></a>Mapování vlastnosti Windows Forms a WPF
 [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] technologie mají dva modely podobné, ale jiné vlastnosti. *Mapování vlastností* podporuje interoperabilitu mezi dvěma architektury a poskytuje následující možnosti:  
@@ -135,6 +135,7 @@ ms.locfileid: "57358558"
 |<xref:System.Windows.Forms.Control.Visible%2A>|<xref:System.Windows.UIElement.Visibility%2A>|<xref:System.Windows.Forms.Integration.ElementHost> Řídit sad <xref:System.Windows.UIElement.Visibility%2A> vlastnosti hostované elementu s použitím následujících pravidel:<br /><br /> -   <xref:System.Windows.Forms.Control.Visible%2A> = `true` mapuje <xref:System.Windows.Visibility.Visible>.<br />-   <xref:System.Windows.Forms.Control.Visible%2A> = `false` mapuje <xref:System.Windows.Visibility.Hidden>.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.Integration.ElementHost>
 - <xref:System.Windows.Forms.Integration.WindowsFormsHost>
 - [Vzájemná spolupráce grafického subsystému WPF a systému Win32](wpf-and-win32-interoperation.md)

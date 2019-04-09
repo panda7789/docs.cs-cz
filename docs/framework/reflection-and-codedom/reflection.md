@@ -23,12 +23,12 @@ helpviewer_keywords:
 ms.assetid: d1a58e7f-fb39-4d50-bf84-e3b8f9bf9775
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ab4a31195a202929c8485349cbf43235faea8e2d
-ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
+ms.openlocfilehash: 20dd6f9ab601277161079230effdaeeabd1bb13a
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56221235"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59101572"
 ---
 # <a name="reflection-in-the-net-framework"></a>Reflexe v rozhraní .NET Framework
 Třídy v <xref:System.Reflection> obor názvů, společně s <xref:System.Type?displayProperty=nameWithType>, vám umožní získat informace o načtených [sestavení](../app-domains/assemblies-in-the-common-language-runtime.md) a typy definované v nich, jako například [třídy](../../standard/base-types/common-type-system.md#classes), [rozhraní](../../standard/base-types/common-type-system.md#interfaces), a [typů hodnot](../../csharp/language-reference/keywords/value-types.md). Reflexe můžete také použít k vytvoření instance typu v době běhu a k vyvolání a přistupovat k nim. Témata týkající se konkrétní aspekty reflexe, naleznete v tématu [související témata](#related_topics) na konci tohoto přehledu.
@@ -89,4 +89,3 @@ Třídy v <xref:System.Reflection> obor názvů, společně s <xref:System.Type?
  <xref:System.Reflection>  
   
  <xref:System.Reflection.Emit>  
-  

@@ -1,18 +1,18 @@
 ---
-title: Zadávání poznámek k typové datové sady
+title: Zadávání poznámek k typovým datovým sadám
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: f82aaa62-321e-4c8a-b51b-9d1114700170
-ms.openlocfilehash: 115960c076e8bf1692bcd4bd158407e719608740
-ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
+ms.openlocfilehash: d8a1a12a4d8ab5e6f4b0fe6ad6c2a3759aa65aa9
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55825729"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59085126"
 ---
-# <a name="annotating-typed-datasets"></a>Zadávání poznámek k typové datové sady
+# <a name="annotating-typed-datasets"></a>Zadávání poznámek k typovým datovým sadám
 Anotace umožňují změnit názvy prvků v váš zadaný <xref:System.Data.DataSet> beze změny podkladového schématu. Úprava názvy prvků v podkladové schéma by způsobilo zadaného **datovou sadu** k odkazování na objekty, které nejsou existují ve zdroji dat, jakož i odkazovaly, ztratily odkaz na objekty, které existují ve zdroji dat.  
   
  Použití poznámek, můžete přizpůsobit názvy objektů v váš zadaný **datovou sadu** s více smysluplné názvy, takže kód lépe čitelný a váš zadaný **datovou sadu** usnadňuje klientům používat při opuštění základní schéma beze změn. Například následující element schématu pro **zákazníkům** tabulku **Northwind** výsledkem by byla databáze **DataRow** název objektu  **CustomersRow** a <xref:System.Data.DataRowCollection> s názvem **zákazníkům**.  
@@ -68,7 +68,7 @@ Anotace umožňují změnit názvy prvků v váš zadaný <xref:System.Data.Data
 |**Objekt DataTable** metody|NewTableNameRow<br /><br /> AddTableNameRow<br /><br /> DeleteTableNameRow|TypedName služby Active Directory|  
 |**DataRowCollection**|TableName|typedPlural|  
 |**DataRow**|TableNameRow|TypedName služby Active Directory|  
-|**DataColumn**|DataTable.ColumnNameColumn<br /><br /> DataRow.ColumnName|TypedName služby Active Directory|  
+|**Objekt DataColumn**|DataTable.ColumnNameColumn<br /><br /> DataRow.ColumnName|TypedName služby Active Directory|  
 |**Vlastnost**|Vlastnost PropertyName|TypedName služby Active Directory|  
 |**Podřízené** přístupového objektu|GetChildTableNameRows|typedChildren|  
 |**Nadřazené** přístupového objektu|TableNameRow|typedParent|  
@@ -223,6 +223,7 @@ protected static void OnCustomerChanged(object sender, CustomerDataSet.CustomerC
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Data.DataColumnCollection>
 - <xref:System.Data.DataSet>
 - [Typové datové sady](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/typed-datasets.md)

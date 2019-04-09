@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 186f4a939cb3e01a527cf6ef06029232e7f5c22a
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: b819f1f02870a8a85a531d7d341cbaf488a1ccd6
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57489353"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59093745"
 ---
 # <a name="icordebugvariablehomegetslotindex-method"></a>ICorDebugVariableHome::GetSlotIndex – metoda
 Získá spravované slotu index lokální proměnné.  
@@ -42,7 +42,7 @@ HRESULT GetSlotIndex(
 ## <a name="return-value"></a>Návratová hodnota  
  Metoda vrátí následující hodnoty.  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |`S_OK`|Volání metody, které vrátil hodnotu index pozice v `pSlotIndex`.|  
 |`E_FAIL`|Aktuální [icordebugvariablehome –](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md) představuje instanci jako argument funkce.|  
@@ -60,4 +60,5 @@ HRESULT GetSlotIndex(
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v462plus](../../../../includes/net-current-v462plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [ICorDebugVariableHome – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md)

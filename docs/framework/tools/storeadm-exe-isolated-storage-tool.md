@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: b81202b8-d91d-4b23-9c53-4a112f74a44a
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 13640e508dafe28b53f4254656afe744b90a2eb2
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: 906d9d4dfd1c1082a4b49b7143f590967dcc7fd0
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57491474"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59092263"
 ---
 # <a name="storeadmexe-isolated-storage-tool"></a>Storeadm.exe (nástroj izolovaného úložiště)
 Nástroj izolované úložiště vypíše seznam všech existujících úložišť pro aktuálního uživatele nebo všechna existující úložiště odebere.  
@@ -36,10 +36,10 @@ storeadm [/list][/machine][/remove][/roaming][/quiet]
 |------------|-----------------|  
 |**/h**[**elp**]|Zobrazí syntaxi příkazu a možnosti nástroje.|  
 |**/list**|Zobrazí všechna existující úložiště pro aktuálního uživatele. Jedná se o úložiště pro všechny aplikace nebo sestavení spuštěná tímto uživatelem.|  
-|**/machine**|Vybere úložiště počítače. Tuto možnost použijte spolu s **/list** nebo **/remove** možnost určit, že akce se má použít na úložiště počítače.<br /><br /> Novinky v rozhraní .NET Framework 2.0|  
+|**/ Machine**|Vybere úložiště počítače. Tuto možnost použijte spolu s **/list** nebo **/remove** možnost určit, že akce se má použít na úložiště počítače.<br /><br /> Novinky v rozhraní .NET Framework 2.0|  
 |**/quiet**|Nastaví tichý režim; potlačí informační výstup tak, aby se zobrazovaly pouze chybové zprávy.|  
 |**/remove**|Permanentně odstraní všechna existující úložiště pro aktuálního uživatele.|  
-|**/ roaming**|Vybere roamingové úložiště. Tuto možnost použijte spolu s **/list** nebo **/remove** možností, které určují, akce se má použít na roamingové úložiště.|  
+|**/roaming**|Vybere roamingové úložiště. Tuto možnost použijte spolu s **/list** nebo **/remove** možností, které určují, akce se má použít na roamingové úložiště.|  
 |**/?**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
   
 ## <a name="remarks"></a>Poznámky  
@@ -61,6 +61,7 @@ storeadm [/list][/machine][/remove][/roaming][/quiet]
  To, zda je roaming skutečně povolen pro určitého uživatele, nemá vliv na správu nástroje Storeadm.exe. Při spuštění nástroje bez jakýchkoli možností se použijí všechny akce na místní úložiště. Spuštění nástroje s **/ roaming** možnost použijí všechny akce na úložiště, které lze přesouvat. Spuštění nástroje s **/machine** možnost použijí všechny akce na úložiště počítače.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Nástroje](../../../docs/framework/tools/index.md)
 - [Izolované úložiště](../../../docs/standard/io/isolated-storage.md)
 - [Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

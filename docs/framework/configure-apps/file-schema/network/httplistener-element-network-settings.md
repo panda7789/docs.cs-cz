@@ -1,13 +1,13 @@
 ---
-title: <httpListener> – element (nastavení sítě)
+title: <httpListener> – Element (nastavení sítě)
 ms.date: 03/30/2017
 ms.assetid: 62f121fd-3f2e-4033-bb39-48ae996bfbd9
-ms.openlocfilehash: ff5e4ad2788ab3df621beb52b1703647df068a7f
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: b3a6d527bc1bf8210bb85424fa218fda495a2a2d
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55257990"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59099739"
 ---
 # <a name="httplistener-element-network-settings"></a>\<httpListener > – Element (nastavení sítě)
 Přizpůsobí parametrů používaných <xref:System.Net.HttpListener> třídy.  
@@ -25,7 +25,7 @@ Přizpůsobí parametrů používaných <xref:System.Net.HttpListener> třídy.
 />  
 ```  
   
-## <a name="type"></a>Typ  
+## <a name="type"></a>Type  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
  Následující části popisují atributy, podřízené prvky a nadřazené prvky.  
@@ -41,9 +41,9 @@ Přizpůsobí parametrů používaných <xref:System.Net.HttpListener> třídy.
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|**Element**|**Popis**|  
+|**Prvek**|**Popis**|  
 |-----------------|---------------------|  
-|[settings](../../../../../docs/framework/configure-apps/file-schema/network/settings-element-network-settings.md)|Nakonfiguruje možnosti základní sítě pro <xref:System.Net> oboru názvů.|  
+|[nastavení](../../../../../docs/framework/configure-apps/file-schema/network/settings-element-network-settings.md)|Nakonfiguruje možnosti základní sítě pro <xref:System.Net> oboru názvů.|  
   
 ## <a name="remarks"></a>Poznámky  
  **UnescapeRequestUrl** atribut označuje, zda <xref:System.Net.HttpListener> používá nezpracovaná neuvozené identifikátor URI namísto převedený identifikátor URI, kde všechny procentuálně zakódovaný hodnoty se převedou a ostatní kroky normalizace pocházejí.  
@@ -138,6 +138,7 @@ Přizpůsobí parametrů používaných <xref:System.Net.HttpListener> třídy.
 |Může být prázdné.||  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Net.Configuration.HttpListenerElement>
 - <xref:System.Net.HttpListener>
 - <xref:System.Net.HttpListenerRequest.Url%2A>

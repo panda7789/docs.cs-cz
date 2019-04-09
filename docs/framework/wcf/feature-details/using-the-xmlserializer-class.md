@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - XmlSerializer [WCF], using
 ms.assetid: c680602d-39d3-44f1-bf22-8e6654ad5069
-ms.openlocfilehash: 084a31ec008d1651bb66f7d59731a21d4ef0ece7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 29ce9b165c3823d7d06008431294f67716ccf8e1
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54732853"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59105440"
 ---
 # <a name="using-the-xmlserializer-class"></a>Používání třídy XmlSerializer
 Windows Communication Foundation (WCF) můžete použít dva různé serializace technologií Chcete-li data ve vaší aplikaci do souboru XML, která se přenášejí mezi klienty a služeb, proces s názvem serializace.  
@@ -206,10 +206,11 @@ Windows Communication Foundation (WCF) můžete použít dva různé serializace
 >  `<xmlSerializer useLegacySerializerGeneration="true"/>` Přepínač funguje jenom na počítači se systémem rozhraní .NET Framework 4.5 nebo vyšší verze. Výše uvedené `appSettings` přístup funguje ve všech verzích rozhraní .NET Framework.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.DataContractFormatAttribute>
 - <xref:System.Runtime.Serialization.DataContractSerializer>
 - <xref:System.Xml.Serialization.XmlSerializer>
 - <xref:System.ServiceModel.MessageHeaderArrayAttribute>
 - [Určování přenosu dat v kontraktech služby](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md)
 - [Použití kontraktů dat](../../../../docs/framework/wcf/feature-details/using-data-contracts.md)
-- [Postupy: Vylepšení spuštění čas z klientských aplikací WCF pomocí třídy XmlSerializer](../../../../docs/framework/wcf/feature-details/startup-time-of-wcf-client-applications-using-the-xmlserializer.md)
+- [Postupy: Vylepšení doby spouštění klientských aplikací WCF pomocí třídy XmlSerializer](../../../../docs/framework/wcf/feature-details/startup-time-of-wcf-client-applications-using-the-xmlserializer.md)

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - data contracts [WCF], collection types
 - collection types [WCF]
 ms.assetid: 9b45b28e-0a82-4ea3-8c33-ec0094aff9d5
-ms.openlocfilehash: c0e65a6286ef4756bba305d41dce6ef2a85401dd
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e7c7dd72c733036031fcf28d0dd2c1bc023d6552
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54516128"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59106740"
 ---
 # <a name="collection-types-in-data-contracts"></a>Typy kolekcí v kontraktech dat
 A *kolekce* je seznam položek určitého typu. V [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], tyto seznamy můžou být vyjádřeny pomocí pole nebo celou řadu dalších typů (obecný seznam, obecný <xref:System.ComponentModel.BindingList%601>, <xref:System.Collections.Specialized.StringCollection>, nebo <xref:System.Collections.ArrayList>). Například kolekce může obsahovat seznam adres pro daného zákazníka. Těchto kolekcí se nazývají *seznamu kolekcí*, bez ohledu na jejich skutečné typu.  
@@ -321,8 +321,8 @@ svcutil.exe MyService.wsdl MyServiceSchema.xsd /r:C:\full_path_to_system_dll\Sys
   
 |Implementuje typ kolekce|Volat metody pro serializaci|Volá metody k deserializaci|  
 |--------------------------------|-----------------------------------------|-------------------------------------------|  
-|Obecné <xref:System.Collections.Generic.IDictionary%602>|`get_Keys`, `get_Values`|Přidání obecného|  
-|<xref:System.Collections.IDictionary>|`get_Keys`, `get_Values`|`Add`|  
+|Obecné <xref:System.Collections.Generic.IDictionary%602>|`get_Keys`,  `get_Values`|Přidání obecného|  
+|<xref:System.Collections.IDictionary>|`get_Keys`,  `get_Values`|`Add`|  
 |Obecné <xref:System.Collections.Generic.IList%601>|Obecný <xref:System.Collections.Generic.IList%601> indexeru|Přidání obecného|  
 |Obecné <xref:System.Collections.Generic.ICollection%601>|Enumerátor|Přidání obecného|  
 |<xref:System.Collections.IList>|<xref:System.Collections.IList> Indexer|`Add`|  
@@ -396,4 +396,5 @@ svcutil.exe MyService.wsdl MyServiceSchema.xsd /r:C:\full_path_to_system_dll\Sys
  Serializátor functions v režimu, ve kterém zachová odkazy na objekty, při zachování odkaz na objekt platí také pro kolekce. Konkrétně identity objektu je zachována kvůli celé kolekce a jednotlivé položky obsažené v kolekcích. Pro slovníky se zachovají identity objektu pro objekty dvojice klíč/hodnota a jednotlivé objekty, klíč a hodnotu.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Runtime.Serialization.CollectionDataContractAttribute>

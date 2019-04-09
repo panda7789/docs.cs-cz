@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 7240c3f3-7df8-4b03-bbf1-17cdce142d45
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 18189ace97238bede9ed18d1dcbae2490956fad8
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 7de0a869925816da6df8f17e14ab92964aec8d11
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54498593"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59094213"
 ---
 # <a name="reentrancy-mda"></a>vícenásobný přístup MDA
 `reentrancy` Pomocníka spravovaného ladění (MDA) se aktivuje, když je proveden pokus o přechod z nativní do spravovaného kódu v případech, kdy se neprovedla předchozí přepínač ze spravovaného do nativního kódu prostřednictvím uspořádání přechodu.  
@@ -35,7 +35,7 @@ ms.locfileid: "54498593"
   
  Tento problém je způsoben vždy kódem aplikace.  
   
-## <a name="resolution"></a>Rozlišení  
+## <a name="resolution"></a>Řešení  
  Prozkoumejte trasování zásobníku pro vlákno, které se má toto MDA aktivováno.  Vlákno se pokouší o neoprávněně volat do spravovaného kódu.  Trasování zásobníku by měl odhalit kódu aplikace pomocí tohoto bodu rozšiřitelnost, kód operačního systému, který poskytuje tento bod rozšiřitelnost a spravovaný kód, který bylo přerušeno bodu rozšiřitelnosti.  
   
  Uvidíte MDA aktivováno při pokusu o volání spravovaného kódu z uvnitř vektorové obslužné rutiny výjimek.  V zásobníku uvidíte zpracování kódu a spravovaného kódu aktivuje výjimku, jako výjimek operačního systému <xref:System.DivideByZeroException> nebo <xref:System.AccessViolationException>.  
@@ -105,4 +105,5 @@ public class Reenter
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)

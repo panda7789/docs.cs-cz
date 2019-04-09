@@ -1,15 +1,15 @@
 ---
-title: SQL Server Common Language Runtime integrace
+title: Integrace CLR (Common Language Runtime) na SQL Serveru
 ms.date: 03/30/2017
 ms.assetid: c7a324c4-160d-44c2-b593-641af06eca61
-ms.openlocfilehash: 6f8e16ecec1f99a0d7df6224f542eb03506528e3
-ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
-ms.translationtype: MT
+ms.openlocfilehash: d87f2b89583747b80ef103f419bd9bd2e3b1e0da
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56092875"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59089832"
 ---
-# <a name="sql-server-common-language-runtime-integration"></a>SQL Server Common Language Runtime integrace
+# <a name="sql-server-common-language-runtime-integration"></a>Integrace CLR (Common Language Runtime) na SQL Serveru
 SQL Server 2005 zavedené integraci běžné součásti modulu runtime (CLR) jazyk rozhraní .NET Framework pro Microsoft Windows. To znamená, že můžete napsat uložené procedury, aktivační události, uživatelem definovaných typů, uživatelem definované funkce, uživatelem definovaných agregacích a datových proudů funkce vracející tabulku pomocí libovolného jazyka, rozhraní .NET Framework, včetně Microsoft Visual Basic .NET a Microsoft Visual C#. <xref:Microsoft.SqlServer.Server> Obor názvů obsahuje sadu nových aplikačních programovacích rozhraní (API) tak, aby spravovaný kód může spolupracovat s prostředím Microsoft SQL Server.  
   
  Tato část popisuje funkce a chování, které jsou specifické pro integrace systému SQL Server common language runtime (CLR) a konkrétní rozšíření v procesu serveru SQL Server pro technologii ADO.NET.  
@@ -43,5 +43,6 @@ SQL Server 2005 zavedené integraci běžné součásti modulu runtime (CLR) jaz
  Popisuje rozšíření konkrétní v procesu systému SQL Server, ADO.NET a připojení kontextu. Obsahuje odkazy na další témata.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [SQL Server a ADO.NET](../../../../../docs/framework/data/adonet/sql/index.md)
 - [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

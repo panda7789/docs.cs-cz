@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f81b671721e1416ab9717442d4d7fc727b938ee2
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 7628aa0ad10398f92d475c4c776810e13fac22b7
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56980487"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59107546"
 ---
 # <a name="icordebugcontroller-interface"></a>ICorDebugController – rozhraní
 
@@ -58,4 +58,5 @@ Představuje rozsah buď <xref:System.Diagnostics.Process> nebo <xref:System.App
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+
+- [Debugging – rozhraní](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

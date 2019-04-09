@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Vytvoření doplňku tvořící uživatelské rozhraní'
+title: 'Postupy: Vytvoření doplňku, který je uživatelským rozhraním'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - creating an add-in that is a UI [WPF]
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - implementing UI add-ins [WPF]
 - pipeline segments [WPF], creating add-ins
 ms.assetid: 86375525-282b-4039-8352-8680051a10ea
-ms.openlocfilehash: f81812b766242311ac29c43de68906d65ae52b32
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 9b7fa33d9af8d364491d1c72813cb62f34378557
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57366384"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59100298"
 ---
-# <a name="how-to-create-an-add-in-that-is-a-ui"></a>Postupy: Vytvoření doplňku tvořící uživatelské rozhraní
+# <a name="how-to-create-an-add-in-that-is-a-ui"></a>Postupy: Vytvoření doplňku, který je uživatelským rozhraním
 Tento příklad ukazuje, jak vytvořit doplněk, který je Windows Presentation Foundation (WPF) pomocí samostatné aplikace WPF hostované.  
   
  Doplněk je uživatelské rozhraní, která je uživatelský ovládací prvek WPF. Obsah uživatelský ovládací prvek je jediné tlačítko, které, při kliknutí zobrazí okno se zprávou. Samostatná aplikace WPF hostitelem uživatelského rozhraní doplňku jako obsah hlavního okna aplikace.  
@@ -31,8 +31,7 @@ Tento příklad ukazuje, jak vytvořit doplněk, který je Windows Presentation 
   
 ## <a name="example"></a>Příklad  
  K vytvoření doplňku tvořící uživatelské rozhraní WPF vyžaduje konkrétní kód pro každý segment kanálu doplňku a hostitelskou aplikaci.  
-    
-  
+
 <a name="Contract"></a>   
 ## <a name="implementing-the-contract-pipeline-segment"></a>Implementace kontraktu Segment kanálu  
  Když doplňkem uživatelského rozhraní, musí implementovat kontrakt pro doplněk <xref:System.AddIn.Contract.INativeHandleContract>. V tomto příkladu `IWPFAddInContract` implementuje <xref:System.AddIn.Contract.INativeHandleContract>, jak je znázorněno v následujícím kódu.  
@@ -63,17 +62,13 @@ Tento příklad ukazuje, jak vytvořit doplněk, který je Windows Presentation 
 <a name="HostViewPipeline"></a>   
 ## <a name="implementing-the-host-view-pipeline-segment"></a>Implementace segmentu hostitele zobrazení kanálu  
  V tomto modelu hostitelská aplikace obvykle očekává, že zobrazení hostitele bude <xref:System.Windows.FrameworkElement> podtřídy. Adaptér na straně hostitele, musíte převést <xref:System.AddIn.Contract.INativeHandleContract> k <xref:System.Windows.FrameworkElement> po <xref:System.AddIn.Contract.INativeHandleContract> překročí hranice izolace. Protože metoda není volána hostitele aplikací zobrazíte <xref:System.Windows.FrameworkElement>, zobrazení hostitele musí "vrátit" <xref:System.Windows.FrameworkElement> podle který ji obsahuje. V důsledku toho zobrazení hostitele musí být odvozen od podtřída <xref:System.Windows.FrameworkElement> , která mohou obsahovat jiné [!INCLUDE[TLA2#tla_ui#plural](../../../../includes/tla2sharptla-uisharpplural-md.md)], jako například <xref:System.Windows.Controls.UserControl>. Následující kód ukazuje zobrazení hostitele smlouvy, které jsou implementovány jako `WPFAddInHostView` třídy.  
-  
-  
-  
+
 <a name="HostSideAdapter"></a>   
 ## <a name="implementing-the-host-side-adapter-pipeline-segment"></a>Implementace segmentu kanálu adaptér na straně hostitele  
  Když je kontrakt <xref:System.AddIn.Contract.INativeHandleContract>, hostitelská aplikace očekává, že <xref:System.Windows.Controls.UserControl> (jak je uvedeno v hostitelském zobrazení). V důsledku toho <xref:System.AddIn.Contract.INativeHandleContract> musí být převeden do <xref:System.Windows.FrameworkElement> po překročení hranice izolace, před nastavením jako obsah zobrazení hostitele (která je odvozena z <xref:System.Windows.Controls.UserControl>).  
   
  Tuto práci provádí adaptér na straně hostitele, jak je znázorněno v následujícím kódu.  
-  
-  
-  
+
  Jak je vidět, získá adaptér na straně hostitele <xref:System.AddIn.Contract.INativeHandleContract> voláním adaptér přidat v na straně <xref:System.AddIn.Pipeline.ContractBase.QueryContract%2A> – metoda (Toto je bod kam <xref:System.AddIn.Contract.INativeHandleContract> překročí hranice izolace).  
   
  Adaptér na straně hostitele převede <xref:System.AddIn.Contract.INativeHandleContract> k <xref:System.Windows.FrameworkElement> voláním <xref:System.AddIn.Pipeline.FrameworkElementAdapters.ContractToViewAdapter%2A>. Nakonec <xref:System.Windows.FrameworkElement> je nastaven jako obsah zobrazení hostitele.  
@@ -81,29 +76,24 @@ Tento příklad ukazuje, jak vytvořit doplněk, který je Windows Presentation 
 <a name="AddIn"></a>   
 ## <a name="implementing-the-add-in"></a>Implementace doplňku pro  
  Adaptér přidat v na straně a zobrazení doplňku na místě doplněk může být implementována vyplývající z doplňku zobrazení, jak je znázorněno v následujícím kódu.  
-  
-  
-  
-  
-  
+
  V tomto příkladu můžete zobrazit zajímavé výhodou tohoto modelu: add-in vývojáři potřebují pouze k implementaci doplněk (protože je také uživatelské rozhraní), spíše než o třídu i uživatelského rozhraní doplňku.  
   
 <a name="HostApp"></a>   
 ## <a name="implementing-the-host-application"></a>Implementace hostitele aplikace  
  Adaptér na straně hostitele a hostitele zobrazení vytvořené, můžete použít hostitelskou aplikaci [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] modelu doplňku otevřete kanál a získat zobrazení hostitele doplňku. Tyto kroky jsou uvedeny v následujícím kódu.  
-  
-  
-  
+
  Hostitelská aplikace používá typické kódu v modelu doplňku rozhraní .NET Framework aktivovat doplněk, který implicitně vrátí zobrazení hostitele do hostitelské aplikace. Hostitelská aplikace následně zobrazí zobrazení hostitele (což je <xref:System.Windows.Controls.UserControl>) z <xref:System.Windows.Controls.Grid>.  
   
  Spuštění kódu pro zpracování interakce s uživatelským rozhraním doplňku v doplňku na aplikační domény. Tyto akce patří:  
   
--   Zpracování <xref:System.Windows.Controls.Button> <xref:System.Windows.Controls.Primitives.ButtonBase.Click> událostí.  
+-   Zpracování <xref:System.Windows.Controls.Button><xref:System.Windows.Controls.Primitives.ButtonBase.Click> událostí.  
   
 -   Zobrazuje <xref:System.Windows.MessageBox>.  
   
  Tato aktivita je zcela izolována od hostitelskou aplikaci.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Doplňky a rozšíření](/previous-versions/dotnet/netframework-4.0/bb384200(v%3dvs.100))
 - [Přehled doplňků WPF](wpf-add-ins-overview.md)

@@ -1,5 +1,5 @@
 ---
-title: <add> – element pro element authenticationModules (nastavení sítě)
+title: <add> – Element pro authenticationModules (nastavení sítě)
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#add
@@ -10,12 +10,12 @@ helpviewer_keywords:
 - <authenticationModules>, add element
 - <add> element, authenticationModules
 ms.assetid: 333c5fb0-a2ab-4db8-8531-a7fe37bb9b5b
-ms.openlocfilehash: 12dc8be762e1158ddaabbd67e7165d7bdaca6461
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: a46e6af97f37974805812fb0d19801d618eee4d4
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55276325"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59105869"
 ---
 # <a name="add-element-for-authenticationmodules-network-settings"></a>\<Přidat > – Element pro authenticationModules (nastavení sítě)
 Přidá modul ověřování do aplikace.  
@@ -47,7 +47,7 @@ Přidá modul ověřování do aplikace.
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|**Element**|**Popis**|  
+|**Prvek**|**Popis**|  
 |-----------------|---------------------|  
 |[authenticationModules](../../../../../docs/framework/configure-apps/file-schema/network/authenticationmodules-element-network-settings.md)|Určuje moduly používané k ověření síťové požadavky.|  
   
@@ -82,6 +82,7 @@ Přidá modul ověřování do aplikace.
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Net.IAuthenticationModule>
 - <xref:System.Net.AuthenticationManager>
 - [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: Skrývání ToolStripMenuItems pomocí návrháře'
+title: 'Postupy: Skrytí ToolStripMenuItems pomocí Návrháře'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - ToolStripMenuItems [Windows Forms], hiding menu items in designer
 - MenuStrip control [Windows Forms], hiding menu items in designer
 - menu items [Windows Forms], hiding
 ms.assetid: 8f1b057e-3d8a-4f11-88df-935f7b29a836
-ms.openlocfilehash: 2af9f31360f667662d4d640b5e449ff6ee8ce381
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: ddfbcbe78cdf8e5b0d126e82189589edef2be58a
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57721538"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59085685"
 ---
-# <a name="how-to-hide-toolstripmenuitems-using-the-designer"></a>Postupy: Skrývání ToolStripMenuItems pomocí návrháře
+# <a name="how-to-hide-toolstripmenuitems-using-the-designer"></a>Postupy: Skrytí ToolStripMenuItems pomocí Návrháře
 Skrytí položek nabídky je způsob, jak ovládací prvek uživatelského rozhraní (UI) aplikace a omezit uživatelských příkazů. Často můžete skrýt celou nabídku, když jsou všechny položky nabídky na něm není k dispozici. To představuje méně rozptýlení pro daného uživatele. Kromě toho můžete chtít skrýt i zakázat nabídky nebo položku nabídky, protože skrytí samostatně nebrání uživateli přístup k příkazu nabídky pomocí klávesové zkratky. Další informace o deaktivace položek nabídky, naleznete v tématu [jak: Zákaz ToolStripMenuItems pomocí návrháře](how-to-disable-toolstripmenuitems-using-the-designer.md).  
   
 > [!NOTE]
@@ -35,10 +35,11 @@ Skrytí položek nabídky je způsob, jak ovládací prvek uživatelského rozhr
      Při skrytí položky podnabídky zůstává viditelná ve formuláři v době návrhu tak, aby ji snadno vybrat pro další práci. Ve skutečnosti to bude skrytá za běhu.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.ToolStripItem.Visible%2A>
 - <xref:System.Windows.Forms.MenuStrip>
 - <xref:System.Windows.Forms.ToolStripMenuItem.Enabled%2A>
 - <xref:System.Windows.Forms.ToolStripItem.Available%2A>
 - <xref:System.Windows.Forms.ToolStripMenuItem.Overflow%2A>
 - [Přehled ovládacího prvku MenuStrip](menustrip-control-overview-windows-forms.md)
-- [Postupy: Zákaz ToolStripMenuItems pomocí návrháře](how-to-disable-toolstripmenuitems-using-the-designer.md)
+- [Postupy: Zakázání ToolStripMenuItems pomocí Návrháře](how-to-disable-toolstripmenuitems-using-the-designer.md)

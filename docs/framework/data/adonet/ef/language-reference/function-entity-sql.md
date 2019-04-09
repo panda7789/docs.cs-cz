@@ -2,12 +2,12 @@
 title: – FUNKCE (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 0bb88992-37ed-4991-ace5-55be612a2c4d
-ms.openlocfilehash: b0ace658de0cc6d1ee2d50c9e86d66dea1ac649a
-ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
+ms.openlocfilehash: efab5f1abbc5e0c22e404c37dc80dd5aafa09ce1
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55827536"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59106363"
 ---
 # <a name="function-entity-sql"></a>– FUNKCE (Entity SQL)
 Definuje funkci v rozsahu příkazu dotazu Entity SQL.  
@@ -76,5 +76,6 @@ FUNCTION function-name
  [!code-csharp[DP EntityServices Concepts 2#FUNCTION2](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#function2)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Reference k Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
 - [Jazyk Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-language.md)

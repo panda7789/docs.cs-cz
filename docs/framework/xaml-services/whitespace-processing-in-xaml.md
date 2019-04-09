@@ -1,5 +1,5 @@
 ---
-title: Zpracování mezerových znaků v XAML
+title: Zpracování prázdných znaků v jazyku XAML
 ms.date: 03/30/2017
 helpviewer_keywords:
 - East Asian characters [XAML Services]
@@ -7,14 +7,14 @@ helpviewer_keywords:
 - white-space processing in XAML [XAML Services]
 - characters [XAML Services], East Asian
 ms.assetid: cc9cc377-7544-4fd0-b65b-117b90bb0b23
-ms.openlocfilehash: da559a7e009861faaba16484276eb97be537482b
-ms.sourcegitcommit: 5c1abeec15fbddcc7dbaa729fabc1f1f29f12045
-ms.translationtype: MT
+ms.openlocfilehash: ca628a366b000b23a2abe38b1c8b7272299bff16
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58048044"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59102229"
 ---
-# <a name="white-space-processing-in-xaml"></a>Zpracování mezerových znaků v XAML
+# <a name="white-space-processing-in-xaml"></a>Zpracování prázdných znaků v jazyku XAML
 Stav jazykových pravidel pro XAML, že významné mezery, musí být zpracovány [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] implementace procesoru. Toto téma popisuje tato pravidla jazyka XAML. Také dokumenty prázdných další zpracování, který je definován [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] provádění procesoru XAML a XAML zapisovače pro serializaci.  
   
 <a name="whitespace_definition"></a>   
@@ -75,6 +75,7 @@ Stav jazykových pravidel pro XAML, že významné mezery, musí být zpracován
  Navíc některé vložené prvky, které connote linebreak v modelu dokument toku by měl záměrně kritickému mezeru i v kolekci významné prázdné znaky. Například <xref:System.Windows.Documents.LineBreak> element má ke stejnému účelu jako \<BR / > značku [!INCLUDE[TLA2#tla_html](../../../includes/tla2sharptla-html-md.md)]a pro lepší čitelnost v kódu, obvykle <xref:System.Windows.Documents.LineBreak> je oddělen od všechny následující text vytvořené znak odřádkování. Tento znak odřádkování by neměl být normalizovány na stát přední místa na následujícím řádku. Povolit chování, definice třídy pro <xref:System.Windows.Documents.LineBreak> element se vztahuje <xref:System.Windows.Markup.TrimSurroundingWhitespaceAttribute>, který je pak interpretována [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] procesoru k označení tohoto mezery kolem <xref:System.Windows.Documents.LineBreak> vždy oříznut.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled XAML (WPF)](../wpf/advanced/xaml-overview-wpf.md)
 - [Znakové entity XML a XAML](xml-character-entities-and-xaml.md)
 - [XML: space v XAML](xml-space-handling-in-xaml.md)

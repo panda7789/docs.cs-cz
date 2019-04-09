@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Vývoj ovládacího prvku jednoduchého Windows Forms'
+title: 'Postupy: Vývoj jednoduchého ovládacího prvku Windows Forms'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - custom controls [Windows Forms], creating simple controls using code
 - Control class [Windows Forms], Windows Forms
 ms.assetid: 86cbe435-45b7-4cb4-9b5a-47418369758d
-ms.openlocfilehash: 398ba4961f9f803ea12e4ddda16fee65ac99d1d8
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: 845e550d0e784568723acbe098fabb2a555ce9b5
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57723280"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59089357"
 ---
-# <a name="how-to-develop-a-simple-windows-forms-control"></a>Postupy: Vývoj ovládacího prvku jednoduchého Windows Forms
+# <a name="how-to-develop-a-simple-windows-forms-control"></a>Postupy: Vývoj jednoduchého ovládacího prvku Windows Forms
 Tato část vás provede základní kroky pro vytváření vlastního ovládacího prvku Windows Forms. Jednoduché ovládací prvek vytvořili v tomto návodu umožňuje zarovnání jeho <xref:System.Windows.Forms.Control.Text%2A> vlastnost změnit. Nelze vyvolat nebo zpracování událostí.  
   
 ### <a name="to-create-a-simple-custom-control"></a>Chcete-li vytvořit jednoduché vlastního ovládacího prvku  
@@ -103,5 +103,6 @@ Tato část vás provede základní kroky pro vytváření vlastního ovládací
  [!code-vb[System.Windows.Forms.FirstControl#10](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.FirstControl/VB/SimpleForm.vb#10)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Vlastnosti v ovládacích prvcích Windows Forms](properties-in-windows-forms-controls.md)
 - [Události v ovládacích prvcích Windows Forms](events-in-windows-forms-controls.md)

@@ -1,117 +1,116 @@
 ---
-title: Obecné vzory pro delegáti
-description: Další informace o obecné vzory pro použití delegátů ve vašem kódu předejdete silné párování mezi vaší součásti.
+title: Obecné vzory pro delegáty
+description: Další informace o běžných vzorů pro použití delegátů v kódu, aby silné párování mezi komponentami vaší.
 ms.date: 06/20/2016
 ms.assetid: 0ff8fdfd-6a11-4327-b061-0f2526f35b43
-ms.openlocfilehash: 20d55a1aba345b962c506bbc3f82248a817923ea
-ms.sourcegitcommit: d955cb4c681d68cf301d410925d83f25172ece86
+ms.openlocfilehash: ea0e0b7af361b76c4b46b0a180e07b44c1fa07e1
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34827017"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59095695"
 ---
-# <a name="common-patterns-for-delegates"></a>Obecné vzory pro delegáti
+# <a name="common-patterns-for-delegates"></a>Obecné vzory pro delegáty
 
 [Předchozí](delegates-strongly-typed.md)
 
-Delegáti poskytují mechanismus, který umožňuje návrhy softwaru zahrnující minimální párování mezi součástmi.
+Delegáti poskytují mechanismus, který umožňuje software návrhů týkajících se minimální párování mezi komponentami.
 
-Příkladem vynikající pro tento typ návrhu je LINQ. Vzor výrazu dotazu LINQ spoléhá na delegáty pro všechny její funkce. Vezměte v úvahu tomto jednoduchém příkladu:
+Jedním z příkladů vynikající pro tento druh návrhu je LINQ. Vzor výrazu dotazu LINQ spoléhá na delegáty pro všechny jeho funkce. Vezměte v úvahu tomto jednoduchém příkladu:
 
 ```csharp
 var smallNumbers = numbers.Where(n => n < 10);
 ```
 
-Tím se odfiltrují pořadí čísel a pouze ty menší než hodnota 10.
-`Where` Metoda používá delegáta, který určuje, které prvky pořadí předat filtru. Když vytvoříte dotaz LINQ, je třeba zadat implementace delegáta pro tento konkrétní účel.
+Tím se vyfiltrují posloupnost čísel pouze ty menší než hodnota 10.
+`Where` Metoda používá delegáta, který určuje, které prvky pořadí předání filtru. Když vytvoříte dotaz LINQ, je třeba zadat implementace delegáta pro tento konkrétní účel.
 
-Prototyp Where je metoda:
+Prototyp, kde Metoda je:
 
 ```csharp
 public static IEnumerable<TSource> Where<TSource> (this IEnumerable<TSource> source, Func<TSource, bool> predicate);
 ```
 
-V tomto příkladu se opakuje se všechny metody, které jsou součástí LINQ. Všechny spoléhají na delegáty pro kód, který spravuje specifického dotazu. Tento vzor návrhu rozhraní API je velice mocný zjišťovat a pochopit.
+V tomto příkladu se opakuje se všechny metody, které jsou součástí LINQ. Všechny spoléhají na delegáty pro kód, který spravuje konkrétní dotaz. Tento vzor návrhu rozhraní API je velmi efektivní informace a pochopení.
 
-Tento jednoduchý příklad ukazuje, jak delegáti vyžadují velmi malé párování mezi součástmi. Nemusíte vytvořte třídu, která je odvozena z určité základní třídy. Nemusíte implementovat určité rozhraní.
-Jediným požadavkem je poskytnout implementaci jednu metodu, je nezbytné, aby na prováděné úloze.
+Tento jednoduchý příklad ukazuje, jak delegáti vyžadovat velmi málo párování mezi komponentami. Není nutné vytvořit třídu, která je odvozena z určité základní třídy. Není nutné provádět konkrétní rozhraní.
+Jediným požadavkem je k dispozici implementace metod, které je zásadní pro daný úkol.
 
-## <a name="building-your-own-components-with-delegates"></a>Vytváření vlastních součástí s delegáti
+## <a name="building-your-own-components-with-delegates"></a>Vytváření vlastních komponent pomocí delegátů
 
-Umožňuje vytvořit v tomto příkladu vytvořením součást pomocí návrhu, které jsou závislé na delegáti.
+Vytvořme v tomto příkladu tak, že vytvoříte komponenty pomocí návrh, který závisí na delegáty.
 
-Umožňuje definovat komponenty, která by mohly být použity zprávy protokolu ve velkých systému. Součásti knihovny může v mnoha různých prostředích, na více různých platformách. Existuje mnoho běžných funkcí v součásti, která spravuje protokoly. Může se stát, ji budou muset přijmout zprávy z libovolné součásti v systému. Tyto zprávy budou mít různé priority, které můžou spravovat součást základních. Zprávy musí mít časová razítka v jejich poslední archivovaný formuláře. Pro pokročilejší scénáře můžete vyfiltrovat zprávy zdrojovou součástí.
+Umožňuje definovat komponentu, která se dá použít pro zprávy protokolu v rozsáhlém systému. Knihovna komponent lze použít v mnoha různých prostředích na více různých platformách. Existuje mnoho běžných funkcí v komponentě, která spravuje protokoly. Bude je nutné přijmout zprávy z libovolné součásti v systému. Tyto zprávy budou mít různé priority, které můžete spravovat součásti core. Zprávy by měl mít časové razítko v jejich poslední archivované formuláře. Pro pokročilejší scénáře může filtrovat zprávy zdrojovou součástí.
 
-Neexistuje jeden aspekt funkce, která se často změní: zápis zpráv. V některých prostředích může být zapsána do konzoly chyby. V jiných případech soubor. Ostatní možnosti patří úložiště databáze, protokoly událostí operačního systému nebo jiného dokumentu úložiště.
+Existuje jeden aspekt funkce, která se často změní: kde zprávy prošly. V některých prostředích může být zapsána do konzoly chyby. V jiných případech souboru. Další možnosti zahrnují úložiště databáze, protokoly událostí operačního systému nebo jiné úložiště dokumentů.
 
-Existují také kombinací výstupu, které lze použít v různých scénářích. Můžete pro zápis zpráv do konzoly a do souboru.
+Existují také kombinace různých typů výstup, který může použít v různých scénářích. Můžete chtít zápis zpráv do konzoly a do souboru.
 
-Návrh podle delegáti bude poskytovat značnou flexibilitu a usnadňují podporu úložiště mechanismy, které lze přidat v budoucnu.
+Architekturu založenou na delegáty se poskytují velkou flexibilitu a usnadňují Podpora úložiště mechanismy, které lze přidat v budoucnosti.
 
-V tomto návrhu může být primární protokolu součásti nevirtuálních, i zapečetěné třídy. Můžete zařadit v žádné sadě delegátů k zápisu zprávy do jiného úložiště média. Integrované podporu vícesměrového vysílání delegáti usnadňuje podporu scénáře, kde musí být zprávy zapisovány do víc umístění (soubor a konzole).
+U tohoto návrhu může být primární protokolu součásti nevirtuální, dokonce i zapečetěné třídy. Můžete připojit v žádné sadě delegátů k zápisu zprávy do různých úložných médií. Integrované podpory pro vícesměroví delegáti usnadňuje podporu scénáře, ve kterém musí být zprávy zapisovány do víc umístění (soubor a konzoly).
 
-## <a name="a-first-implementation"></a>První implementace
+## <a name="a-first-implementation"></a>První provedení
 
-Začněme malé: počáteční implementace přijmout nové zprávy a zapsat je pomocí všechny připojené delegáta. Můžete začít s jeden delegáta, který zapíše zpráv do konzoly.
+Pojďme začít v malém: počáteční implementace bude přijímat nové zprávy a zapíše je použití žádné připojené delegáta. Můžete začít s jeden delegáta, který zapisuje zprávy do konzoly.
 
 [!code-csharp[LoggerImplementation](../../samples/csharp/delegates-and-events/Logger.cs#FirstImplementation "A first Logger implementation.")]
 
-Statická třída výše je nejjednodušší věcí, které může fungovat. Je potřeba zapsat jediná implementace pro metody, která zapisuje zpráv do konzoly: 
+Statická třída výše je nejjednodušší věcí, které může fungovat. Musíme napsat jednu implementaci pro metodu, která zapisuje zprávy do konzoly: 
 
 [!code-csharp[LogToConsole](../../samples/csharp/delegates-and-events/Program.cs#LogToConsole "A Console logger.")]
 
-Nakonec můžete spojit delegát připojením k WriteMessage delegáta deklarovat v protokolovacího nástroje:
+Nakonec je třeba připojení delegáta pomocí připojení k WriteMessage delegáta deklarovaného v protokolovacího nástroje:
 
 [!code-csharp[ConnectDelegate](../../samples/csharp/delegates-and-events/Program.cs#ConnectDelegate "Connect to the delegate")]
 
 ## <a name="practices"></a>Postupy
 
-Naše ukázka, pokud je docela jednoduchá, ale stále ukazuje některé důležité pokyny pro návrhy zahrnující delegáti.
+Naše ukázka zatím je docela jednoduché, ale stále ukazuje některé důležité pokyny pro návrhů týkajících se delegátů.
 
-Použití delegáta typů front definovaných v rámci základní usnadňuje uživatelům pracovat s delegáty. Nemusíte definovat nové typy a vývojáře, kteří používají vaše knihovna není potřeba další typy nové, specializované delegáta.
+Použití delegáta typy definované v rámci jádra usnadňuje uživatelům pracovat s delegáty. Není nutné definovat nové typy a není potřeba další typy delegátů nové, specializované vývojářům, kteří používají knihovny.
 
-Rozhraní používá se jako minimální a co nejpružnější: Pokud chcete vytvořit nové protokoly výstup, musíte vytvořit jednu metodu. Tato metoda může být statickou metodu nebo metody instance. Může mít žádné přístup.
+Rozhraní používá se jako minimální a je to možné nejpružnější: Pokud chcete vytvořit nový protokolovací nástroj výstupu, musíte vytvořit jednu metodu. Tato metoda může být statickou metodu nebo metodu instance. Může mít přístup.
 
-## <a name="formatting-output"></a>Výstupní formátování
+## <a name="formatting-output"></a>Formátování výstupu
 
-Můžeme zpřístupnit tento první verzi bit robustnější a poté spusťte vytváření jiným mechanismem protokolování.
+Vytvoříme tato první verze bit robustnější a poté spusťte vytváření jiných mechanismů protokolování.
 
-V dalším kroku přidejme několik argumenty, které mají `LogMessage()` metoda tak, aby třídě protokolu vytváří více strukturovaných zprávy:
+V dalším kroku přidáme několik argumentů `LogMessage()` metodu tak, aby vaše třída protokolu vytváří více strukturovaných zprávy:
 
 [!code-csharp[Severity](../../samples/csharp/delegates-and-events/Logger.cs#Severity "Define severities")]
 [!code-csharp[NextLogger](../../samples/csharp/delegates-and-events/Logger.cs#LoggerTwo "Refine the Logger")]
 
-V dalším kroku provedeme pomocí této `Severity` výstupu argument k filtrování zprávy, které se odesílají do protokolu. 
+V dalším kroku vytvoříme využívání, která `Severity` výstupní argument pro filtrování zpráv, které se odesílají do protokolu. 
 
 [!code-csharp[FinalLogger](../../samples/csharp/delegates-and-events/Logger.cs#LoggerFinal "Finish the Logger")]
 
 ## <a name="practices"></a>Postupy
 
-Přidali jste nové funkce protokolování infrastruktury. Vzhledem k tomu, že komponenta protokolovacího nástroje je velmi volně vázány do jakéhokoli výstupu mechanismu, mohou být přidány tyto nové funkce bez dopadu na kód implementace delegáta protokolovacího nástroje.
+Protokolování infrastruktury jsme přidali nové funkce. Protože komponenta protokolovacího nástroje je velmi volně propojené na každý použitý mechanizmus výstupu a je možné přidat tyto nové funkce bez jakéhokoli dopadu na kód implementace delegáta protokolovacího nástroje.
 
-Jak zachovat sestavování to, zobrazí se další příklady jak tato volné párování umožňuje větší flexibilitu při aktualizaci části webu bez uložení změn do jiných umístění. Ve skutečnosti ve větší aplikaci třídy výstupu protokolovacího nástroje může být v jiném sestavení a ani je třeba znovu sestavit.
+Jak vám pokračujte v sestavování to, uvidíte Další příklady, jak tento volné párování umožňuje větší flexibilitu při aktualizaci části webu bez uložení změn do jiných umístění. Ve skutečnosti ve větší aplikace, třídy výstupu protokolovacího nástroje může být v jiném sestavení a dokonce ani je třeba znovu sestavit.
 
-## <a name="building-a-second-output-engine"></a>Druhý modul výstup sestavení
+## <a name="building-a-second-output-engine"></a>Druhý modul výstupu sestavení
 
-Součásti protokolu pochází podél také. Umožňuje přidat jeden další modul výstup, který zaznamenává zprávy do souboru. Bude jím modul výstupní zapojí o něco víc. Je třída, který zapouzdřuje operací se soubory a zajišťuje, že soubor je vždy zavřel po každém zápisu. Který zajišťuje, že všechna data vyprazdňuje na disk po vygenerování každé zprávě.
+Součást protokolu pochází spolu dobře. Přidejme jeden další modul výstupu, který zaznamenává zprávy do souboru. Bude jím zapojí o něco víc modul výstupu. Je třída, která zapouzdřuje operací se soubory a zajišťuje, že soubor je vždy uzavřen, po každém zápisu. Který zajistí, že všechna data vyprazdňuje na disk po vygenerování každé zprávy.
 
-Tady je tento soubor na základě protokoly:
+Tady je tento soubor na základě protokolovacího nástroje:
 
 [!code-csharp[FileLogger](../../samples/csharp/delegates-and-events/FileLogger.cs#FileLogger "Log to files")]
 
-
-Po vytvoření této třídy, můžete vytvořit jeho instanci a jeho LogMessage – metoda přiloží k komponenta protokolovacího nástroje:
+Po vytvoření této třídy, můžete vytvořit jeho instanci a připojování jeho LogMessage – metoda komponenta protokolovacího nástroje:
 
 [!code-csharp[FileLogger](../../samples/csharp/delegates-and-events/Program.cs#FileLogger "Log to files")]
 
-Tyto dva se vzájemně nevylučují. Můžete připojit obě metody protokolu a generovat zpráv do konzoly a soubor:
+Tyto dvě se vzájemně nevylučují. Můžete připojit obě metody protokolu a vygenerování zprávy do konzoly a do souboru:
 
 ```csharp
 var fileOutput = new FileLogger("log.txt");
 Logger.WriteMessage += LogToConsole;
 ```
 
-Později i ve stejné aplikaci, můžete odebrat jedním z delegáty bez dalších problémů v systému:
+Později dokonce i ve stejné aplikaci, můžete odebrat jeden delegátů bez problémů v systému:
 
 ```csharp
 Logger.WriteMessage -= LogToConsole;
@@ -119,23 +118,23 @@ Logger.WriteMessage -= LogToConsole;
 
 ## <a name="practices"></a>Postupy
 
-Nyní jste přidali Druhá obslužná rutina výstup pro dílčí systém protokolování.
-Tato potřebuje trochu další infrastrukturu pro správně podporu systému souborů. Delegát je metoda instance. Je také soukromá metoda.
-Není nutné pro větší usnadnění, protože delegáta infrastruktury můžete připojit delegáty.
+Nyní že jste přidali Druhá obslužná rutina výstup pro protokolování subsystémů.
+Tohle vyžaduje trochu další infrastrukturu pro podporu správně systému souborů. Delegát je metoda instance. Je také privátní metodu.
+Není nutné většího usnadnění, protože infrastruktura delegáta se můžete připojit delegáty.
 
-Druhý návrhu na základě delegáta umožňuje více metod výstupu bez jakékoli další kód. Nemusíte vytvářet žádné další infrastrukturu pro podporu více metod výstup. Jednoduše budou jinou metodu na seznamu vyvolání.
+Za druhé návrh delegáta umožňuje více metod výstupu bez nějaký zvláštní kód. Není nutné žádnou další infrastrukturu pro podporu více metod výstupu sestavení. Jednoduše stanou jinou metodu na seznamu vyvolání.
 
-Věnujte zvláštní pozornost kód v souboru protokolování způsob výstupu. Je zakódované Ujistěte se, že nevyvolá jakékoli výjimky. Když to není vždy nezbytně nutné, je vhodné. Pokud některou z metod delegát vyvolá výjimku, nebude volána zbývající delegáti, které jsou pro vyvolání.
+Věnujte zvláštní pozornost kód v souboru protokolování metoda výstupu. Ujistěte se, že nevyvolá žádné výjimky je kódován. Když to není vždy nezbytně nutné, je vhodné. Pokud některou z metod delegáta vyvolá výjimku, nebude vyvolána zbývající delegáty, které jsou pro vyvolání.
 
-Jako poslední Poznámka protokolovacího nástroje souboru musí spravovat její prostředky otvírání a zavírání souborů v každé zprávě protokolu. Mohli byste nechat otevřený soubor a implementovat rozhraní IDisposable po dokončení zavřete soubor.
-Některé z metod má své výhody a nevýhody. Jak vytvořit trochu další párování mezi třídami.
+Jako poslední Poznámka protokolovacího nástroje souboru musí spravovat její prostředky otevírání a zavírání souboru v každé zprávě protokolu. Můžete se rozhodnout ho nechat otevřené a implementovat rozhraní IDisposable a zavřete soubor, když se dokončí.
+Některé z metod má své výhody a nevýhody. Obě vytváří o trochu výkonnější párování mezi třídami.
 
-Žádný kód ve třídě protokolovacího nástroje by musela být aktualizované kvůli podpoře buď scénář.
+Žádný kód ve třídě protokolovací nástroj se musel být aktualizované kvůli podpoře obou scénářích.
 
-## <a name="handling-null-delegates"></a>Zpracování Null delegáti
+## <a name="handling-null-delegates"></a>Zpracování Null delegátů
 
-Nakonec umožňuje aktualizovat metodu LogMessage tak, aby se robustní pro případy, pokud je vybrána mechanismus žádný výstup. Aktuální implementace vyvolá výjimku `NullReferenceException` při `WriteMessage` delegáta nemá seznam vyvolání připojen.
-Dáváte přednost tomu návrh, který pokračuje bez upozornění při byly připojeny žádné metody. Toto je snadný při použití null podmíněný operátor v kombinaci s `Delegate.Invoke()` metoda:
+A konečně můžeme aktualizovat LogMessage – metoda tak, aby je robustní pro případy, pokud žádný výstup mechanismus, který je vybrána. Aktuální implementace vyvolá výjimku `NullReferenceException` při `WriteMessage` delegát nemá seznam vyvolání připojen.
+Návrh, který při byly připojeny žádné metody tiše pokračovat možná dáte přednost. Je to snadné použití null podmíněného operátoru v kombinaci s `Delegate.Invoke()` metody:
 
 ```csharp
 public static void LogMessage(string msg)
@@ -144,14 +143,14 @@ public static void LogMessage(string msg)
 }
 ```
 
-Podmíněný operátor s hodnotou null (`?.`) při zkratům levý operand (`WriteMessage` v tomto případě) je null, což znamená žádné pokusu o zprávu protokolu.
+Podmíněný operátor s hodnotou null (`?.`) při zkratům levý operand (`WriteMessage` v tomto případě) má hodnotu null, což znamená, že k zaznamenání zprávy nejsou provedeny žádné pokusy.
 
-Nebude možné najít `Invoke()` metoda uvedeny v dokumentaci k `System.Delegate` nebo `System.MulticastDelegate`. Kompilátor generuje bezpečnost typů `Invoke` delegovat metoda pro libovolný typ deklarovaný. V tomto příkladu to znamená `Invoke` přebírá jediný `string` argument, a má typ vrácené hodnoty void.
+Nebude `Invoke()` metody uvedené v dokumentaci k `System.Delegate` nebo `System.MulticastDelegate`. Kompilátor generuje bezpečnost typů `Invoke` typ deklarovat delegáta metodu pro všechny. V tomto příkladu to znamená, že `Invoke` přebírá jediný `string` argument, a má typ vrácené hodnoty void.
 
-## <a name="summary-of-practices"></a>Souhrn postupů
+## <a name="summary-of-practices"></a>Přehled postupů
 
-Seznámili jste se začátku protokolu součásti, která by mohla být rozšířena s další zapisovače a další funkce. Pomocí delegátů v návrhu jsou velmi volně vázány tyto různé součásti. To poskytuje několik výhod. Je velmi snadné vytvořit nový výstupní mechanismy a jejich připojení k systému. Tyto další mechanismy, stačí jeden metoda: metody, která zapisuje zprávy protokolu. Je k návrhu, který je velmi odolné, když se přidají nové funkce. Kontrakt potřebné pro všechny zapisovače je implementovat jednu metodu. Tato metoda může být statické nebo metodu instance. To může být veřejné, privátní nebo jiné právní přístup.
+Už víte, začátku protokolu komponentu, která by mohla být rozšířena s další uživatelé vytvářející obsah a další funkce. Pomocí delegátů v návrhu jsou velmi volně propojené těchto různých komponent. To poskytuje několik výhod. Je velmi snadné vytvořit nový výstup mechanismy a připojte je k systému. Tyto mechanismy stačí jenom jedna metoda: metoda, která zapíše zprávu protokolu. Je návrh, který je velmi odolné, když se přidají nové funkce. Smlouva vyžaduje se pro všechny zapisovače je implementovat jednu metodu. Tato metoda může být statickou metodu nebo metodu instance. To může být veřejný, privátní nebo jiné právní přístup.
 
-Třída protokolovacího nástroje můžete nastavit libovolný počet vylepšení nebo změny bez zavedení nejnovější změny. Podobně jako všechny třídy nelze změnit veřejné rozhraní API bez riziko nejnovější změny. Ale protože párování mezi protokolovacího nástroje a všechny moduly výstupu je pouze prostřednictvím delegáta, se podílejí žádné jiné typy (například rozhraní nebo základní třídy). Vazba je co nejmenší.
+Třída protokolovacího nástroje mohli libovolný počet rozšíření nebo změny bez vnášení nejnovější změny. Stejně jako všechny třídy nelze upravit veřejné rozhraní API bez riziko rozbíjející změny. Ale protože párování mezi protokolovací nástroj a všechny moduly pro výstup je pouze prostřednictvím delegáta, necháváte žádné jiné typy (jako je rozhraní nebo základní třídy). Vazba je co nejmenší.
 
 [Next](events-overview.md)

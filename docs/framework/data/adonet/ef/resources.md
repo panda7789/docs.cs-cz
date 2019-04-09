@@ -2,12 +2,12 @@
 title: Prostředky Entity Framework
 ms.date: 03/30/2017
 ms.assetid: 0bb04c18-4a14-42a4-baa9-a63d556c9f49
-ms.openlocfilehash: 2579a3b7108a6a0a4b5f86cfa02a25a825a160de
-ms.sourcegitcommit: c6f69b0cf149f6b54483a6d5c2ece222913f43ce
+ms.openlocfilehash: c1e93896bbbaf7be68f53e4cfb45ba7465a423bd
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55903651"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59078847"
 ---
 # <a name="entity-framework-resources"></a>Prostředky Entity Framework
 Tyto externí prostředky poskytují informace a podpora pro vytváření aplikací využívajících rozhraní Entity Framework.  
@@ -28,7 +28,8 @@ Tyto externí prostředky poskytují informace a podpora pro vytváření aplika
  Wiki oddíl obsahuje nejčastější dotazy ohledně rozhraní Entity Framework.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled Entity Framework](../../../../../docs/framework/data/adonet/ef/overview.md)
 - [Začínáme](../../../../../docs/framework/data/adonet/ef/getting-started.md)
 - [Terminologie Entity Framework](../../../../../docs/framework/data/adonet/ef/terminology.md)
-- [Datový Model Entity ADO.NET nástroje](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399249(v=vs.100))
+- [Nástroje modelu Entity Data Model ADO.NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399249(v=vs.100))

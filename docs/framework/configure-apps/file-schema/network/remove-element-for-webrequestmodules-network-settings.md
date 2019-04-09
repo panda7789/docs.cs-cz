@@ -1,5 +1,5 @@
 ---
-title: <remove> – element pro element webRequestModules (nastavení sítě)
+title: <remove> – Element pro webRequestModules (nastavení sítě)
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/webRequestModules/remove
@@ -10,12 +10,12 @@ helpviewer_keywords:
 - <remove> element, webRequestModules
 - <webRequestModules>, remove element
 ms.assetid: dd84d2fe-2f4f-457a-9d3c-441d0d21cc10
-ms.openlocfilehash: af30fe15eab899f7a083e0feb1350fb67b1c32cd
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: c57e2849d608b1706c41beca91ff8026ebd9ca45
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55267258"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59085392"
 ---
 # <a name="remove-element-for-webrequestmodules-network-settings"></a>\<Odebrat > – Element pro webRequestModules (nastavení sítě)
 Vlastní modul požadavku webového odstraní z aplikace.  
@@ -47,7 +47,7 @@ Vlastní modul požadavku webového odstraní z aplikace.
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|**Element**|**Popis**|  
+|**Prvek**|**Popis**|  
 |-----------------|---------------------|  
 |[webRequestModules](../../../../../docs/framework/configure-apps/file-schema/network/webrequestmodules-element-network-settings.md)|Určuje moduly, které použijte k vyžádání informace z hostitelů v síti.|  
   
@@ -78,5 +78,6 @@ Následující příklad odebere existující webový modul požadavku pro proto
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Net.WebRequest>
 - [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

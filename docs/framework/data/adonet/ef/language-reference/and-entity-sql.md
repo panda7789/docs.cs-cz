@@ -2,12 +2,12 @@
 title: '&amp;&amp; (AND) (Entity SQL)'
 ms.date: 03/30/2017
 ms.assetid: e7d24213-471d-4807-b85e-570375df89b5
-ms.openlocfilehash: 6ee7987f2801a35fb9669472ce7b237e684f64e1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: f0b20a8c1960bd6191a35c426dbea45c30ccc1c0
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54579664"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59084061"
 ---
 # <a name="ampamp-and-entity-sql"></a>&amp;&amp; (AND) (Entity SQL)
 Vrátí `true` Pokud jsou oba výrazy `true`; v opačném případě `false` nebo `NULL`.  
@@ -45,4 +45,5 @@ boolean_expression && boolean_expression
  [!code-csharp[DP EntityServices Concepts 2#AND](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#and)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Reference k Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)

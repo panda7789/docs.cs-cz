@@ -9,12 +9,12 @@ helpviewer_keywords:
 - data grids [Windows Forms], selecting cells
 - DataGridView control [Windows Forms], selecting cells
 ms.assetid: 82cffcad-8b30-4897-bddb-c3a79d751b83
-ms.openlocfilehash: 61f3eee6f4690e9bd9141f2eeb6de330bac87550
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 1836fbc1887082ca685c49bef2bc42bdb167578f
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57715370"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59105846"
 ---
 # <a name="selection-and-clipboard-use-with-the-windows-forms-datagridview-control"></a>Výběr a používání schránky s ovládacím prvkem Windows Forms DataGridView
 `DataGridView` Ovládacího prvku poskytuje širokou škálu možnosti konfigurace, jak mohou uživatelé vybrat buněk, řádků a sloupců. Například můžete povolit jeden nebo více výběrů, výběr celého řádku nebo sloupce, když uživatelé kliknou na buňky nebo výběr celého řádku nebo sloupce pouze, když uživatelé kliknou na jeho záhlaví, umožňující výběr buněk také. Pokud chcete poskytnout vlastní uživatelské rozhraní pro výběr, můžete zakázat běžné výběru a výběr zpracovávat prostřednictvím kódu programu. Kromě toho můžete povolit kopírování vybraných hodnot do schránky.  
@@ -29,7 +29,7 @@ ms.locfileid: "57715370"
  [Postupy: Získání vybraných buněk, řádků a sloupců v ovládacím prvku Windows Forms DataGridView](selected-cells-rows-and-columns-datagridview.md)  
  Popisuje, jak pracovat s kolekcí vybraných buněk, řádků a sloupců.  
   
- [Postupy: Povolit uživatelům kopírování více buněk do schránky z ovládacího prvku Windows Forms DataGridView](enable-users-to-copy-multiple-cells-to-the-clipboard-datagridview.md)  
+ [Postupy: Povolení kopírování více buněk do schránky z ovládacího prvku Windows Forms DataGridView](enable-users-to-copy-multiple-cells-to-the-clipboard-datagridview.md)  
  Popisuje, jak povolit podporu schránky v ovládacím prvku.  
   
 ## <a name="reference"></a>Odkaz  
@@ -52,5 +52,6 @@ ms.locfileid: "57715370"
  Poskytuje referenční dokumentaci pro <xref:System.Windows.Forms.DataGridViewSelectedColumnCollection> třídy.  
   
 ## <a name="see-also"></a>Viz také:
-- [Ovládací prvek DataGridView](datagridview-control-windows-forms.md)
+
+- [DataGridView – ovládací prvek](datagridview-control-windows-forms.md)
 - [Výchozí zpracování klávesnice a myši v ovládacím prvku Windows Forms DataGridView](default-keyboard-and-mouse-handling-in-the-windows-forms-datagridview-control.md)

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - applications [WPF], focus
 - focus in applications [WPF]
 ms.assetid: 0230c4eb-0c8a-462b-ac4b-ae3e511659f4
-ms.openlocfilehash: 5853c48ad77131d33cd0ab767c4a58ba56aaa39f
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 72b866d714e6a77020bdb74843c3aaa0ba0c3278
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57369913"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59073881"
 ---
 # <a name="focus-overview"></a>Přehled fokusu
 V [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] existují dva hlavní koncepty, které se týkají fokus: klávesnice fokus a logický fokus.  Fokus klávesnice odkazují na elementu, který přijímá vstup z klávesnice a logický fokus na prvek fokus obor, který má právě fokus.  Tyto koncepty jsou podrobně popsány v tomto přehledu.  Vysvětlení rozdílu v těchto konceptů je důležité vytvářet komplexní aplikace, které mají více oblastí, kde lze získat fokus.  
@@ -21,9 +21,7 @@ V [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.m
  Hlavní třídy, které jsou součástí správy fokus <xref:System.Windows.Input.Keyboard> třídy, <xref:System.Windows.Input.FocusManager> třídy a element základní třídy, jako <xref:System.Windows.UIElement> a <xref:System.Windows.ContentElement>.  Další informace o základní prvky, najdete v článku [přehled základních elementů](base-elements-overview.md).  
   
  <xref:System.Windows.Input.Keyboard> Třídy se týká především fokus klávesnice a <xref:System.Windows.Input.FocusManager> jedná hlavně s logický fokus, ale nejedná se o absolutní odlišení.  Element, který má právě fokus klávesnice, bude také mít logický fokus, ale element, který má logický fokus nutně nemá fokus klávesnice.  Tím je zřejmé, pokud použijete <xref:System.Windows.Input.Keyboard> třída elementu, který má fokus klávesnice pro ni nastavit také nastaví logický fokus na prvku.  
-  
 
-  
 <a name="Keyboard_Focus"></a>   
 ## <a name="keyboard-focus"></a>Fokus klávesnice  
  Fokus klávesnice odkazuje na element, který přijímá vstup z klávesnice.  Může existovat na celém klasické pracovní plochy pouze jeden element, který má fokus klávesnice.  V [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], bude mít element, který má fokus klávesnice <xref:System.Windows.IInputElement.IsKeyboardFocused%2A> nastavena na `true`.  Statická vlastnost <xref:System.Windows.Input.Keyboard.FocusedElement%2A> na <xref:System.Windows.Input.Keyboard> třídy získá prvek, který má právě fokus klávesnice.  
@@ -70,7 +68,7 @@ V [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.m
  [!code-vb[FocusSnippets#FocusGetSetFocusedElement](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FocusSnippets/visualbasic/window1.xaml.vb#focusgetsetfocusedelement)]  
   
 <a name="Keyboard_Navigation"></a>   
-## <a name="keyboard-navigation"></a>Procházení pomocí klávesnice  
+## <a name="keyboard-navigation"></a>Navigace s použitím klávesnice  
  <xref:System.Windows.Input.KeyboardNavigation> Třídy je zodpovědná za implementace navigaci výběru aktivního elementu výchozí klávesnice, při stisknutí první jednu navigační klávesy.  Navigační klávesy jsou: Kláves TAB, SHIFT + TAB, CTRL + TAB, CTRL + SHIFT + TAB, UPARROW, šipka dolů, šipka vlevo a šipka vpravo.  
   
  Chování navigace kontejneru navigace lze změnit nastavením připojeného <xref:System.Windows.Input.KeyboardNavigation> vlastnosti <xref:System.Windows.Input.KeyboardNavigation.TabNavigation%2A>, <xref:System.Windows.Input.KeyboardNavigation.ControlTabNavigation%2A>, a <xref:System.Windows.Input.KeyboardNavigation.DirectionalNavigation%2A>.  Tyto vlastnosti jsou typu <xref:System.Windows.Input.KeyboardNavigationMode> a možné hodnoty jsou <xref:System.Windows.Input.KeyboardNavigationMode.Continue>, <xref:System.Windows.Input.KeyboardNavigationMode.Local>, <xref:System.Windows.Input.KeyboardNavigationMode.Contained>, <xref:System.Windows.Input.KeyboardNavigationMode.Cycle>, <xref:System.Windows.Input.KeyboardNavigationMode.Once>, a <xref:System.Windows.Input.KeyboardNavigationMode.None>.  Výchozí hodnota je <xref:System.Windows.Input.KeyboardNavigationMode.Continue>, což znamená, že element není kontejner navigace.  
@@ -118,6 +116,7 @@ V [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.m
  Události související s logický fokus se <xref:System.Windows.UIElement.GotFocus> a <xref:System.Windows.UIElement.LostFocus>.  Tyto události jsou definovány na <xref:System.Windows.Input.FocusManager> jako připojené události, ale <xref:System.Windows.Input.FocusManager> nevystavuje obálky události CLR.  <xref:System.Windows.UIElement> a <xref:System.Windows.ContentElement> snadněji vystavit tyto události.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Input.FocusManager>
 - <xref:System.Windows.UIElement>
 - <xref:System.Windows.ContentElement>

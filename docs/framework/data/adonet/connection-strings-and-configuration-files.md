@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 37df2641-661e-407a-a3fb-7bf9540f01e8
-ms.openlocfilehash: 5e83d13d24a0b17fd886995e552dd0a7e2cf8ff4
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
+ms.openlocfilehash: 786094bc426066b45fd1a214950ec1e030f0b731
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58409949"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59088831"
 ---
 # <a name="connection-strings-and-configuration-files"></a>Připojovací řetězce a konfigurační soubory
 Vkládání připojovacích řetězců v kódu vaší aplikace může vést k ohrožení zabezpečení a problémy s údržbou. Nešifrované připojovací řetězce, které jsou kompilovány do zdrojového kódu aplikace lze zobrazit pomocí [Ildasm.exe (IL Disassembler)](../../../../docs/framework/tools/ildasm-exe-il-disassembler.md) nástroj. Kromě toho pokud připojovací řetězec neustále mění, musí aplikace zopakovat. Z těchto důvodů doporučujeme ukládání připojovacích řetězců do konfiguračního souboru aplikace.  
@@ -170,6 +170,7 @@ Vkládání připojovacích řetězců v kódu vaší aplikace může vést k oh
  Další informace o zabezpečení aplikace ASP.NET najdete v tématu [webů ASP.NET zabezpečení](https://docs.microsoft.com/previous-versions/aspnet/91f66yxt(v=vs.100)).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Tvůrci připojovacích řetězců](../../../../docs/framework/data/adonet/connection-string-builders.md)
 - [Ochrana informací o připojení](../../../../docs/framework/data/adonet/protecting-connection-information.md)
 - [Použití tříd konfigurace](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ms228063(v=vs.90))

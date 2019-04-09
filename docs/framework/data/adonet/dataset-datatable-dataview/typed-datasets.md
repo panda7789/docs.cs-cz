@@ -2,12 +2,12 @@
 title: Typové datové sady
 ms.date: 03/30/2017
 ms.assetid: 033d2548-cf24-4c05-8179-67d8b009c048
-ms.openlocfilehash: 3a61005f0064ec9ba0bbe70b759394d3691018de
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 92ed3f8fd392238785fd2d205668f14fe477f2b8
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54680358"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59098647"
 ---
 # <a name="typed-datasets"></a>Typové datové sady
 Spolu s pozdní vazbou přístup k hodnotám prostřednictvím slabě typované proměnné <xref:System.Data.DataSet> poskytuje přístup k datům prostřednictvím metafora silného typu. Tabulky a sloupce, které jsou součástí **datovou sadu** lze přistupovat pomocí uživatelsky přívětivých názvů a silně typované proměnné.  
@@ -24,5 +24,6 @@ Spolu s pozdní vazbou přístup k hodnotám prostřednictvím slabě typované 
  Popisuje postup přidání poznámek ke jazyk (XSD) schématu definice schématu XML sloužící ke generování silného typu **datovou sadu**, abyste **datovou sadu** popisné názvy prvků beze změny podkladového schématu.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Datové sady, datové tabulky a datová zobrazení](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)
 - [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

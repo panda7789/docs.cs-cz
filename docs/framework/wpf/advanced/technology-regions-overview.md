@@ -9,12 +9,12 @@ helpviewer_keywords:
 - interoperability [WPF], airspace
 - Win32 code [WPF], window regions
 ms.assetid: b7cc350f-b9e2-48b1-be14-60f3d853222e
-ms.openlocfilehash: 3fc325f1b4bb4eca73e051732810c9d9853ff4d7
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 911ba1474677f26a773ff63e958ba0ceedbefd0d
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57352483"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59100974"
 ---
 # <a name="technology-regions-overview"></a>Přehled technologie oblastí
 Pokud více technologií prezentace se používají v aplikaci, například WPF, Win32 či DirectX, sdílejí musí vykreslování oblastí v rámci běžných okno nejvyšší úrovně. Toto téma popisuje problémy, které by mohly ovlivnit prezentace a vstup pro součinnost aplikaci WPF.  
@@ -61,6 +61,7 @@ Pokud více technologií prezentace se používají v aplikaci, například WPF,
 -   Pokud vaše aplikace běží na [!INCLUDE[TLA2#tla_winxp](../../../../includes/tla2sharptla-winxp-md.md)], vrstvený windows nad [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] barvou přepínal povrchy při [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] vykresluje aplikace.  (Pořadí vykreslování skutečné je, že [!INCLUDE[TLA#tla_gdi](../../../../includes/tlasharptla-gdi-md.md)] potom skryje okno vrstvami [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] kreslení a potom [!INCLUDE[TLA#tla_gdi](../../../../includes/tlasharptla-gdi-md.md)] vrátí zpět vrstvami okno).  Jinou hodnotu než[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vrstvami windows také mít toto omezení.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Vzájemná spolupráce grafického subsystému WPF a systému Win32](wpf-and-win32-interoperation.md)
-- [Návod: Hostování hodin WPF v Win32](walkthrough-hosting-a-wpf-clock-in-win32.md)
-- [Hostování obsahu Win32 v subsystému WPF](hosting-win32-content-in-wpf.md)
+- [Návod: Hostování hodin WPF ve Win32](walkthrough-hosting-a-wpf-clock-in-win32.md)
+- [Hostování obsahu Win32 v platformě WPF](hosting-win32-content-in-wpf.md)

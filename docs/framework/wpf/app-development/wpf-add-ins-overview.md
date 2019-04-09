@@ -12,18 +12,16 @@ helpviewer_keywords:
 - add-ins [WPF], architecture
 - add-ins [WPF], limitations
 ms.assetid: 00b4c776-29a8-4dba-b603-280a0cdc2ade
-ms.openlocfilehash: 859e586d6cb0b334a7ad766de5d3aabb0e1864ac
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
-ms.translationtype: MT
+ms.openlocfilehash: 36cfcaca5ae49c87916f6d7c769c878c4321247f
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57365838"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59091613"
 ---
 # <a name="wpf-add-ins-overview"></a>Přehled doplňků WPF
 <a name="Introduction"></a> Rozhraní .NET Framework obsahuje doplněk model, pomocí kterých mohou vývojáři vytvářet aplikace, které podporují rozšiřitelnosti doplňku. Tento model doplňku umožňuje vytvářet doplňky, které integrovat a rozšířit funkce aplikace. V některých případech také potřeba aplikace zobrazit uživatelské rozhraní, které jsou k dispozici v doplňcích. Toto téma ukazuje, jak argumentech WPF rozhraní .NET Framework – model doplňku povolit tyto scénáře a architektura stojí za to, jeho výhody a omezení.  
-  
 
-  
 <a name="Requirements"></a>   
 ## <a name="prerequisites"></a>Požadavky  
  Znalost modelu doplňku rozhraní .NET Framework je povinný. Další informace najdete v tématu [doplňků a rozšíření](/previous-versions/dotnet/netframework-4.0/bb384200(v%3dvs.100)).  
@@ -283,9 +281,10 @@ ms.locfileid: "57365838"
  Ve výchozím nastavení Pokud se používá více domén aplikace, různé sestavení rozhraní .NET Framework vyžaduje každá aplikace všechny načtou do domény vaší aplikace. Čas potřebný k vytvoření nové domény aplikace a spouštění aplikací v nich v důsledku toho může ovlivnit výkon. Rozhraní .NET Framework však nabízí způsob, jak můžete snížit dobu spuštění tím, že aplikace pro sdílení sestavení napříč doménami aplikace, pokud jsou už načteny. Můžete to provést pomocí <xref:System.LoaderOptimizationAttribute> atribut, který je nutné použít na metodu vstupního bodu (`Main`). V takovém případě je nutné použít pouze kód pro implementaci definice aplikace (viz [přehled správy aplikací](application-management-overview.md)).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.LoaderOptimizationAttribute>
 - [Doplňky a rozšíření](/previous-versions/dotnet/netframework-4.0/bb384200(v%3dvs.100))
 - [Aplikační domény](../../app-domains/application-domains.md)
 - [Vzdálené komunikace .NET framework – přehled](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/kwdt6w2k(v=vs.100))
 - [Vytváření objektů lze používat vzdáleně](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/wcf3swha(v=vs.100))
-- [Témata s postupy](how-to-topics.md)
+- [– postupy](how-to-topics.md)

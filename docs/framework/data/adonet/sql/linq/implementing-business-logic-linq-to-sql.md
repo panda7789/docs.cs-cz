@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c4577590-7b12-42e1-84a6-95aa2562727e
-ms.openlocfilehash: 9ea8960b74cd44734eb68a07c6959727bf1ac797
-ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
+ms.openlocfilehash: 3dcc6f763acfff076bb03076a17e3a8f8916267c
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56093967"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59097249"
 ---
 # <a name="implementing-business-logic-linq-to-sql"></a>Provádění obchodní logiky (LINQ to SQL)
 Termín "obchodní logiky" v tomto tématu se odkazuje na všechny vlastní pravidla nebo ověřovací testy, které můžete použít pro data předtím, než je vložena, aktualizována nebo odstraněna z databáze. Obchodní logiky se také někdy označuje jako "obchodní pravidla" nebo "logiku domény." V n vrstvá aplikace obvykle slouží jako logické vrstvy tak, aby jej můžete upravit nezávisle na prezentační vrstva a vrstva přístupu k datům. Obchodní logika může vyvolávat vrstvy přístupu k datům před nebo za všechny aktualizace, vložení nebo odstranění dat v databázi.  
@@ -179,11 +179,12 @@ partial class Customer
   
  [Postupy: Přidání ověřování do tříd entit](/visualstudio/data-tools/how-to-add-validation-to-entity-classes)  
   
- [Návod: Přizpůsobení chování tříd entit při vložení, aktualizaci a odstranění](/visualstudio/data-tools/walkthrough-customizing-the-insert-update-and-delete-behavior-of-entity-classes)  
+ [Návod: Přizpůsobení vložit, aktualizovat a odstraňovat chování tříd entit](/visualstudio/data-tools/walkthrough-customizing-the-insert-update-and-delete-behavior-of-entity-classes)  
   
  [Návod: Přidání ověřování do tříd entit](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/bb629301(v=vs.120))  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Částečné třídy a metody](../../../../../csharp/programming-guide/classes-and-structs/partial-classes-and-methods.md)
 - [Částečné metody](~/docs/visual-basic/programming-guide/language-features/procedures/partial-methods.md)
 - [Nástroje LINQ to SQL v sadě Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2)

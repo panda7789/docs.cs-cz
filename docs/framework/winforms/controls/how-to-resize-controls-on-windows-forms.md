@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Změna velikosti ovládacích prvků ve formulářích Windows'
+title: 'Postupy: Změna velikosti ovládacích prvků ve Windows Forms'
 ms.date: 03/30/2017
 f1_keywords:
 - Size.Height
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - size [Windows Forms], controls
 - Windows Forms controls, size
 ms.assetid: d2dba441-a8c0-4705-b8e8-2e5d86d6e7ec
-ms.openlocfilehash: 486564f8092733ad253aac4ad9ee60ff0f83dce7
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: 598d3a6ea7f7cf6dc19cae5f55f49243d5d3ba31
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57719764"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59091743"
 ---
-# <a name="how-to-resize-controls-on-windows-forms"></a>Postupy: Změna velikosti ovládacích prvků ve formulářích Windows
+# <a name="how-to-resize-controls-on-windows-forms"></a>Postupy: Změna velikosti ovládacích prvků ve Windows Forms
 Můžete změnit velikost jednotlivých ovládacích prvků a můžete změnit velikost více ovládacích prvků stejného nebo jiného druhu, jako například <xref:System.Windows.Forms.Button> a <xref:System.Windows.Forms.GroupBox> ovládací prvky.  
   
 ### <a name="to-resize-a-control"></a>Pro změnu velikosti ovládacího prvku  
@@ -33,7 +33,8 @@ Můžete změnit velikost jednotlivých ovládacích prvků a můžete změnit v
 2.  Na **formátu** nabídce zvolte **nastavit stejnou velikost**a vyberte jednu ze čtyř možností. První tři příkazy Změna velikosti ovládacích prvků tak, aby odpovídaly prvního vybraného ovládacího prvku.  
   
 ## <a name="see-also"></a>Viz také:
-- [Windows Forms – ovládací prvky](index.md)
+
+- [Ovládací prvky Windows Forms](index.md)
 - [Uspořádávání ovládacích prvků ve Windows Forms](arranging-controls-on-windows-forms.md)
 - [Popisování jednotlivých ovládacích prvků Windows Forms a zajišťování zástupců pro tyto prvky](labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them.md)
 - [Ovládací prvky používané ve Windows Forms](controls-to-use-on-windows-forms.md)

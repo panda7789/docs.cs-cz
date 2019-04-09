@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: fc9e04e8-2d05-4870-8cd6-5bd276814afc
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 576c7c10b5ce36092dae7ab9cd7d973568168260
-ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
-ms.translationtype: MT
+ms.openlocfilehash: 1ff4db5216cf984af764176fef636bb586f97c2a
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56220949"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59081486"
 ---
 # <a name="getting-started-with-net-native"></a>Začínáme s .NET Native
 Ať už vytváříte nové aplikace Windows pro Windows 10 nebo migrujete stávající aplikace pro Windows Store, můžete použít stejnou sadu postupy. Chcete-li vytvořit [!INCLUDE[net_native](../../../includes/net-native-md.md)] aplikace, postupujte podle těchto kroků:  
@@ -113,8 +113,9 @@ Ať už vytváříte nové aplikace Windows pro Windows 10 nebo migrujete stáva
 -   [Výjimky za běhu v nativních aplikací .NET](../../../docs/framework/net-native/runtime-exceptions-in-net-native-apps.md)  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)
-- [.NET native instalací a konfigurací](https://docs.microsoft.com/previous-versions/dn600164(v=vs.110))
+- [Nastavení a konfigurace .NET Native](https://docs.microsoft.com/previous-versions/dn600164(v=vs.110))
 - [.NET Native a kompilace](../../../docs/framework/net-native/net-native-and-compilation.md)
 - [Reflexe a .NET Native](../../../docs/framework/net-native/reflection-and-net-native.md)
 - [Rozhraní API, která závisí na reflexi](../../../docs/framework/net-native/apis-that-rely-on-reflection.md)

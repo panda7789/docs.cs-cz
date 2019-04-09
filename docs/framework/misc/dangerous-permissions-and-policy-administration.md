@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 1929e854-23a0-4bb1-94be-e8aa3b609e32
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 281582b04aabd8a18af8bf17091979385d009ee8
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ae24cdcb97e30da0bd4aec6569ef3dcda11488c6
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54536539"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59078939"
 ---
 # <a name="dangerous-permissions-and-policy-administration"></a>Správa nebezpečných oprávnění a zásad
 Některé z chráněné operace, pro které rozhraní .NET Framework poskytuje oprávnění potenciálně může mít systém zabezpečení obcházení. Tato nebezpečných oprávnění by se měly provádět jenom pro důvěryhodného kódu a pouze v případě potřeby. Je obvykle žádnou obranu proti škodlivým kódem Pokud jsou udělena tato oprávnění.  
@@ -39,4 +39,5 @@ Některé z chráněné operace, pro které rozhraní .NET Framework poskytuje o
 |<xref:System.MemberAccessException>|Můžete použít soukromé členy k překonání mechanismů usnadnění.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Pokyny pro zabezpečené kódování](../../../docs/standard/security/secure-coding-guidelines.md)

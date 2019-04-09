@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: f612fa5b-4b62-4593-a19e-85c9b1018dce
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b0cb166f2753b910465aabb8abd68c31c6f56ff8
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a7cba2bd1dd5b83e29c7a6c192a1a7e5e2d33ecc
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54497535"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59076469"
 ---
 # <a name="stack-etw-event"></a>Událost Trasování událostí pro Windows zásobníku
 Událost zásobníku by měl použít ve spojení s jinými událostmi ke generování trasování zásobníku, poté, co je vyvolána událost. Je zaznamenána, pokud je povolen zprostředkovatel běhového prostředí. To je velmi vysoká frekvence událostí, vzhledem k tomu, že je vyvolána pokaždé, když se jiný modul runtime událost se vyvolá. Z tohoto důvodu doporučujeme použít tuto událost opatrně.  
@@ -40,4 +40,5 @@ Událost zásobníku by měl použít ve spojení s jinými událostmi ke genero
 |Rámec|win:Pointer|Sloupce ukazatele na instrukce.|  
   
 ## <a name="see-also"></a>Viz také:
-- [Události Trasování událostí pro Windows v CLR](../../../docs/framework/performance/clr-etw-events.md)
+
+- [Události ETW CLR](../../../docs/framework/performance/clr-etw-events.md)

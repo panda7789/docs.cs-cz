@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - endpoints [WCF], addressing
 ms.assetid: ac24f5ad-9558-4298-b168-c473c68e819b
-ms.openlocfilehash: 0d74e94aed00d480459aec3c63d961c82af42ef1
-ms.sourcegitcommit: acd8ed14fe94e9d4e3a7fb685fe83d05e941073c
+ms.openlocfilehash: 4fe21bb5b91143dff4d0a9f24bbc39be5e529985
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56442997"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59097523"
 ---
 # <a name="specifying-an-endpoint-address"></a>Zadání adresy koncového bodu
 Veškerá komunikace se službou Windows Communication Foundation (WCF) nastane prostřednictvím jeho koncových bodů. Každý <xref:System.ServiceModel.Description.ServiceEndpoint> obsahuje <xref:System.ServiceModel.Description.ServiceEndpoint.Address%2A>, <xref:System.ServiceModel.Description.ServiceEndpoint.Binding%2A>a <xref:System.ServiceModel.Description.ServiceEndpoint.Contract%2A>. Kontrakt určuje operace, které jsou k dispozici. Určuje vazbu, jak komunikovat se službou a určuje adresu, kde najít službu. Každý koncový bod musí mít jedinečnou adresu. Adresa koncového bodu je reprezentována <xref:System.ServiceModel.EndpointAddress> třídu, která obsahuje identifikátor URI (Uniform Resource), který představuje adresu služby, <xref:System.ServiceModel.EndpointAddress.Identity%2A>, která představuje zabezpečení identity služby a kolekce volitelné <xref:System.ServiceModel.EndpointAddress.Headers%2A>. Volitelná záhlaví poskytují podrobnější informace o adresování k identifikaci a k interakci s koncovým bodem. Záhlaví může například signalizovat zpracování příchozí zprávy, kde koncový bod má odeslat zpráva s odpovědí nebo které instanci služby pro použití ke zpracování příchozí zprávy z konkrétního uživatele, když jsou k dispozici více instancí.  
@@ -56,9 +56,7 @@ Veškerá komunikace se službou Windows Communication Foundation (WCF) nastane 
   
 ## <a name="endpoint-address-in-metadata"></a>Adresa koncového bodu v metadatech  
  Adresy koncového bodu je reprezentován v webové služby WSDL (Description Language) jako WS-Addressing `EndpointReference` – element (EPR) uvnitř odpovídající koncový bod `wsdl:port` elementu. EPR obsahuje adresu koncového bodu, jakož i všechny vlastnosti adresy. Všimněte si, že EPR uvnitř `wsdl:port` nahradí `soap:Address` jak je znázorněno v následujícím příkladu.  
-  
-  
-  
+
 ## <a name="defining-endpoint-addresses-in-code"></a>Definování adresy koncových bodů v kódu  
  Adresy koncového bodu je možné vytvořit v kódu pomocí <xref:System.ServiceModel.EndpointAddress> třídy. Identifikátor URI zadaný pro adresu koncového bodu může být plně kvalifikovanou cestu nebo cestu, která je relativní vzhledem k základní adresu služby. Následující kód ukazuje, jak vytvořit instanci <xref:System.ServiceModel.EndpointAddress> třídu a přidejte ho do <xref:System.ServiceModel.ServiceHost> instanci, která je hostitelem služby.  
   
@@ -83,6 +81,7 @@ Veškerá komunikace se službou Windows Communication Foundation (WCF) nastane 
  Pokud koncové body jsou explicitně zadán, výchozí koncové body může být přidána voláním <xref:System.ServiceModel.ServiceHostBase.AddDefaultEndpoints%2A> na <xref:System.ServiceModel.ServiceHost> před voláním <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A>. Další informace o výchozí koncové body, vazby a chování najdete v tématu [zjednodušená konfigurace](../../../docs/framework/wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.EndpointAddress>
 - [Identita a ověřování služby](../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)
 - [Přehled vytváření koncových bodů](../../../docs/framework/wcf/endpoint-creation-overview.md)

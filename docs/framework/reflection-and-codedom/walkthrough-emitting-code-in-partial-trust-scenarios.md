@@ -1,5 +1,5 @@
 ---
-title: 'Průvodce: Vytváření kódu ve scénářích s částečnou důvěryhodností'
+title: 'Návod: Vytváření kódu ve scénářích s částečnou důvěryhodností'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -16,14 +16,14 @@ helpviewer_keywords:
 ms.assetid: c45be261-2a9d-4c4e-9bd6-27f0931b7d25
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c2c5acf5cad41dba46b9f711ee842200ae86cc9b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 0e9e4aaef8e5f9ece88f56350065b2b688ba2a93
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54712571"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59101559"
 ---
-# <a name="walkthrough-emitting-code-in-partial-trust-scenarios"></a>Průvodce: Vytváření kódu ve scénářích s částečnou důvěryhodností
+# <a name="walkthrough-emitting-code-in-partial-trust-scenarios"></a>Návod: Vytváření kódu ve scénářích s částečnou důvěryhodností
 Reflection emit používá stejné rozhraní API v plné nebo částečné důvěryhodnosti, ale některé funkce vyžadují zvláštní oprávnění v částečně důvěryhodným kódem. Navíc reflexe obsahuje funkci, anonymně hostované dynamické metody, který je určen pro použití s částečnou důvěryhodností a sestaveními transparentní pro zabezpečení.  
   
 > [!NOTE]
@@ -212,5 +212,6 @@ Reflection emit používá stejné rozhraní API v plné nebo částečné dův�
 -   Pokud vytvoříte tento příklad kódu v sadě Visual Studio, musíte změnit název třídy, aby obsahoval obor názvů při předání do <xref:System.AppDomain.CreateInstanceAndUnwrap%2A> metody. Výchozí obor názvů je název projektu. Například pokud je projekt "PartialTrust", název třídy musí být "PartialTrust.Worker".  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Bezpečnostní problémy v generování reflexe](../../../docs/framework/reflection-and-codedom/security-issues-in-reflection-emit.md)
 - [Postupy: Spuštění částečně důvěryhodného kódu v izolovaném prostoru](../../../docs/framework/misc/how-to-run-partially-trusted-code-in-a-sandbox.md)

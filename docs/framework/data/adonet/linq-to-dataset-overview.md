@@ -2,12 +2,12 @@
 title: Přehled LINQ to DataSet
 ms.date: 03/30/2017
 ms.assetid: dc20a8fb-03f6-4b68-9c2b-7f7299e3070b
-ms.openlocfilehash: b0f95e4118ec688ade628152b28537433d24d5d2
-ms.sourcegitcommit: c6f69b0cf149f6b54483a6d5c2ece222913f43ce
+ms.openlocfilehash: 635f1c17da40095990c238912f9e09ad398e6637
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55903639"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59073673"
 ---
 # <a name="linq-to-dataset-overview"></a>Přehled LINQ to DataSet
 <xref:System.Data.DataSet> Je jedním z více široce používané komponenty [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)]. Je klíčovým prvkem odpojeném programovací model, který [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] vychází z, a umožňuje explicitně mezipaměti dat z různých datových zdrojů. Pro prezentační vrstvy <xref:System.Data.DataSet> je úzce integrovaná s ovládacími prvky grafického uživatelského rozhraní pro datovou vazbu. Poskytuje mezipaměť, která zachová tvar relační data a zahrnuje rychle jednoduchý dotaz a služby navigační hierarchie pro střední vrstvy. Běžná technika umožňuje snížit počet požadavků na databázi, které se má používat <xref:System.Data.DataSet> pro ukládání do mezipaměti ve střední vrstvě. Představte si třeba řízené daty [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webovou aplikaci. Podstatnou část dat aplikace často nemění příliš často a je společná pro relace nebo uživatelů. Tato data může být uložený v paměti na webovém serveru, která omezuje počet požadavků na databázi a zrychluje interakcí uživatele. Dalším užitečným aspektem <xref:System.Data.DataSet> patří povolení aplikace tak, aby podmnožiny dat z jednoho nebo více zdroje dat do prostoru aplikace. Aplikace pak můžete pracovat s na data v paměti, a přitom zachovat jeho tvar relační.  
@@ -29,7 +29,8 @@ ms.locfileid: "55903639"
  V N-vrstvé aplikace <xref:System.Data.DataSet> se často používá ve střední vrstvě pro informace o mezipaměti pro webové aplikace. [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] Funkcích pro dotazování se implementuje pomocí metod rozšíření a rozšiřuje stávající 2.0 ADO.NET <xref:System.Data.DataSet>.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Dotazy na datové sady](../../../../docs/framework/data/adonet/querying-datasets-linq-to-dataset.md)
 - [Language-Integrated Query (LINQ) –C#](../../../csharp/programming-guide/concepts/linq/index.md)
 - [Language-Integrated Query (LINQ) – Visual Basic](../../../visual-basic/programming-guide/concepts/linq/index.md)
-- [LINQ to SQL](../../../../docs/framework/data/adonet/sql/linq/index.md)
+- [Technologie LINQ to SQL](../../../../docs/framework/data/adonet/sql/linq/index.md)

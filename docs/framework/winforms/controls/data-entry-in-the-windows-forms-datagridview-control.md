@@ -6,12 +6,12 @@ helpviewer_keywords:
 - data entry [Windows Forms], dataGridView control
 - data grids [Windows Forms], data entry
 ms.assetid: 4a6d4676-d4e7-4b0e-9c22-50ce65ffe0d6
-ms.openlocfilehash: e3022ceddd9fab5610a0856b5e3273d8c046a5fa
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 3ebfcaaf22ca632e5784dc1f01a351583e78e865
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57719734"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59090703"
 ---
 # <a name="data-entry-in-the-windows-forms-datagridview-control"></a>Zadávání dat v ovládacím prvku Windows Forms DataGridView
 `DataGridView` Ovládacího prvku poskytuje několik funkcí, které umožňují změnit jak uživatelé přidávat nebo upravovat data v ovládacím prvku. Například můžete provést zadávání dat efektivnější tím, že poskytuje výchozí hodnoty pro nové řádky a upozorňování uživatelů, když dojde k chybám.  
@@ -29,7 +29,7 @@ ms.locfileid: "57719734"
  [Návod: Ověřování dat v ovládacím prvku Windows Forms DataGridView](walkthrough-validating-data-in-the-windows-forms-datagridview-control.md)  
  Popisuje způsob ověření vstupu uživatele, aby se zabránilo chyby formátování zadávání dat.  
   
- [Návod: Zpracování chyb vzniklých při zadávání dat v ovládacím prvku Windows Forms DataGridView](handling-errors-that-occur-during-data-entry-in-the-datagrid.md)  
+ [Návod: Zpracování chyb, k nimž došlo při zadávání dat v ovládacím prvku Windows Forms DataGridView](handling-errors-that-occur-during-data-entry-in-the-datagrid.md)  
  Popisuje způsob zpracování chyb zadávání dat, které pocházejí ze zdroje dat, když se uživatel pokusí o potvrzení novou hodnotu.  
   
 ## <a name="reference"></a>Odkaz  
@@ -53,5 +53,6 @@ ms.locfileid: "57719734"
  Obsahuje témata, které popisují, jak ručně nebo z externího zdroje dat naplnění ovládacího prvku s daty.  
   
 ## <a name="see-also"></a>Viz také:
-- [Ovládací prvek DataGridView](datagridview-control-windows-forms.md)
+
+- [DataGridView – ovládací prvek](datagridview-control-windows-forms.md)
 - [Typy sloupců v ovládacím prvku Windows Forms DataGridView](column-types-in-the-windows-forms-datagridview-control.md)

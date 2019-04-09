@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: ee13c0a8-ab02-49f7-b8fb-9eab16c6c4f0
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: dca1ddd1c7f13dd1ed00d06c30aa7e91acfc43ef
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e8731e90a66c20f06e8afcd7458349cbc0b93484
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54554527"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59084099"
 ---
 # <a name="running-intranet-applications-in-full-trust"></a>Spouštění internetových aplikací v režimu plné důvěryhodnosti
 Od verze rozhraní .NET Framework verze 3.5 Service Pack 1 (SP1), aplikací a jejich sestavení knihovny může běžet jako sestavení úplného vztahu důvěryhodnosti ze sdílené síťové složky. <xref:System.Security.SecurityZone.MyComputer> legitimace zóny se automaticky přidá do sestavení, která jsou načtena ze sdílené složky v síti intranet. Tato legitimace poskytuje tato sestavení, které stejná sada udělení oprávnění (což je obvykle úplný vztah důvěryhodnosti) jako sestavení, které jsou umístěny v počítači. Tato funkce se nedá použít pro aplikace ClickOnce nebo k aplikacím, které jsou navrženy pro spouštění na hostiteli.  
@@ -35,4 +35,5 @@ Od verze rozhraní .NET Framework verze 3.5 Service Pack 1 (SP1), aplikací a je
 -   Na 64bitových počítačích, vytvořte podklíč HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\\. NETFramework klíče v registru systému. Použijte název klíče LegacyMyComputerZone s hodnotou DWORD 1. Vytvořit podklíč stejné pod HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\\. NETFramework klíč.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Programování se sestaveními](../../../docs/framework/app-domains/programming-with-assemblies.md)

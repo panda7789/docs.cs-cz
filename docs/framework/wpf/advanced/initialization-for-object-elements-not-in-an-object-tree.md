@@ -10,18 +10,16 @@ helpviewer_keywords:
 - elements [WPF], initializing
 - initializing elements [WPF]
 ms.assetid: 7b8dfc9b-46ac-4ce8-b7bb-035734d688b7
-ms.openlocfilehash: f1d31a5916f0c2a1763d8f24076ae7c1000a8296
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 6f3c8611b83977431038573eb1c5c880acbefdc4
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57376365"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59108963"
 ---
 # <a name="initialization-for-object-elements-not-in-an-object-tree"></a>Inicializace elementů objektu, které nejsou obsaženy ve stromu objektů
 Některé aspekty [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] inicializace odkládat procesů, které se zpravidla spoléhají na tento prvek připojení logického stromu nebo vizuálního stromu. Toto téma popisuje kroky, které mohou být nezbytné, aby se inicializovat element, který není připojený k buď stromu.  
-  
- 
-  
+
 ## <a name="elements-and-the-logical-tree"></a>Elementy a logického stromu  
  Při vytváření instance [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] třídy v kódu, je třeba si uvědomit, že několik aspektů objektu inicializace [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] třídy nejsou záměrně část kódu, který se spouští při volání konstruktoru třídy. Zejména pro třídu ovládacího prvku není definován většinu bude obsahovat vizuální reprezentaci tohoto ovládacího prvku pomocí konstruktoru. Místo toho bude obsahovat vizuální reprezentaci definované šablony ovládacího prvku. Šablona potenciálně pochází z nejrůznějších zdrojů, ale nejčastěji se šablona získá ze stylů motivů. Šablony jsou účinně pozdní vazby; nezbytné šablony není připojen na ovládací prvek, dokud nebude připravené pro rozložení ovládacího prvku. A ovládací prvek není připravený na rozložení, dokud je připojen k logické stromové struktury, která se připojuje k vykreslovací plochu v kořenovém adresáři. Je tento prvek úrovni kořenového adresáře, který iniciuje vykreslování všechny jeho podřízené prvky definované v logickém stromu.  
   
@@ -43,6 +41,7 @@ Některé aspekty [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-
  [!code-vb[InitializeElements#Main](~/samples/snippets/visualbasic/VS_Snippets_Wpf/InitializeElements/VisualBasic/initializeelements.vb#main)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Stromy v subsystému WPF](trees-in-wpf.md)
 - [Přehled vykreslování grafiky WPF](../graphics-multimedia/wpf-graphics-rendering-overview.md)
 - [Přehled XAML (WPF)](xaml-overview-wpf.md)

@@ -1,15 +1,15 @@
 ---
-title: Podepisování uložených procedur na SQL serveru
+title: Podepisování uložených procedur na SQL Serveru
 ms.date: 01/05/2018
 ms.assetid: eeed752c-0084-48e5-9dca-381353007a0d
-ms.openlocfilehash: da7b21d725d301006288245c940e4367c3ce8568
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 1caf3de06a03d4eab97e68ac1ecdc00dacdd5dc8
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54606819"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59094616"
 ---
-# <a name="signing-stored-procedures-in-sql-server"></a>Podepisování uložených procedur na SQL serveru
+# <a name="signing-stored-procedures-in-sql-server"></a>Podepisování uložených procedur na SQL Serveru
  Digitální podpis je algoritmu digest data zašifrovaná pomocí soukromého klíče podpisu. Privátní klíč zajistí, že digitální podpis je jedinečné pro jeho nosiče nebo vlastníka. Uložené procedury, funkce (s výjimkou vložené funkce vracející tabulku), aktivační události a sestavení se můžete přihlásit.  
   
  Uložená procedura s certifikátem nebo asymetrickým klíčem se můžete přihlásit. To je určen pro scénáře, když nelze dědit oprávnění prostřednictvím řetězení vlastnictví nebo když řetězce vlastnictví bylo přerušeno, jako je například dynamické SQL. Pak vytvoříte uživatele mapovat na certifikát, udělení uživatelských oprávnění na objekty, které uloženou proceduru potřebuje přístup k certifikátu.  
@@ -55,6 +55,7 @@ Pokud je nutné modul další oprávnění na úrovni serveru:
 |[Podepisování uložených procedur s certifikátem](/sql/relational-databases/tutorial-signing-stored-procedures-with-a-certificate) v Online knihách serveru SQL|Poskytuje návod pro podepisování certifikátem uloženou proceduru.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Zabezpečení aplikací ADO.NET](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)
 - [Přehled zabezpečení SQL Serveru](../../../../../docs/framework/data/adonet/sql/overview-of-sql-server-security.md)
 - [Scénáře zabezpečení aplikací na SQL Serveru](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)

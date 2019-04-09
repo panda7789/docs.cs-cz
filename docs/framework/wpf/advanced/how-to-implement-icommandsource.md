@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - ICommandSource interfaces [WPF], implementing
 ms.assetid: 7452dd39-6e11-44bf-806a-31d87f3772ac
-ms.openlocfilehash: 42395d2916d58b2119cfe41ca154f258c3b0ec58
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 218a17f221598ac29213bd28a0f04adb16bc933b
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57361457"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59107364"
 ---
 # <a name="how-to-implement-icommandsource"></a>Postupy: Implementace rozhraní ICommandSource
 Tento příklad ukazuje, jak vytvořit příkaz zdroj implementací <xref:System.Windows.Input.ICommandSource>.  Příkaz zdroj je objekt, který umí spuštění příkazu.  <xref:System.Windows.Input.ICommandSource> Rozhraní poskytuje tři členy: <xref:System.Windows.Input.ICommandSource.Command%2A>, <xref:System.Windows.Input.ICommandSource.CommandParameter%2A>, a <xref:System.Windows.Input.ICommandSource.CommandTarget%2A>.  <xref:System.Windows.Input.ICommandSource.Command%2A> je příkaz, který bude vyvolán. <xref:System.Windows.Input.ICommandSource.CommandParameter%2A> Je uživatelsky definovaný datový typ, který je předán ze zdroje příkaz metodu, která zpracovává příkaz. <xref:System.Windows.Input.ICommandSource.CommandTarget%2A> Je objekt, který se na spuštění příkazu.  
@@ -59,6 +59,7 @@ Tento příklad ukazuje, jak vytvořit příkaz zdroj implementací <xref:System
  [!code-vb[ImplementICommandSource#ImplementICommandExecute](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ImplementICommandSource/visualbasic/commandslider.vb#implementicommandexecute)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Input.ICommandSource>
 - <xref:System.Windows.Input.ICommand>
 - <xref:System.Windows.Input.RoutedCommand>

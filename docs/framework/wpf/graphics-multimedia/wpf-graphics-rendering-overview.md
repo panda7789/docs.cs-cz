@@ -8,17 +8,16 @@ helpviewer_keywords:
 - graphics [WPF], rendering
 - rendering graphics [WPF]
 ms.assetid: 6dec9657-4d8c-4e46-8c54-40fb80008265
-ms.openlocfilehash: da455adb23dd70a915e81217c6c30f2d523e001c
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
+ms.openlocfilehash: a0400ce32dc6dab2585a8d5e76ff8d416fae24c8
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58409650"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59101364"
 ---
 # <a name="wpf-graphics-rendering-overview"></a>Přehled vykreslování grafiky WPF
 Toto téma obsahuje přehled [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vizuální vrstvy. Zaměřuje se na roli <xref:System.Windows.Media.Visual> třídy pro vykreslování podpora v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] modelu.  
-  
-  
+
 <a name="role_of_visual_object"></a>   
 ## <a name="role-of-the-visual-object"></a>Role vizuální objekty  
  <xref:System.Windows.Media.Visual> Třída je základní abstrakce, ze kterých každý <xref:System.Windows.FrameworkElement> objekt je odvozen. Slouží také jako vstupní bod pro vytváření nových ovládacích prvků [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]a v mnoha způsoby, jak si lze představit jako popisovač okna (HWND) v modelu aplikací Win32.  
@@ -249,11 +248,12 @@ Grafika a textu v jiné nastavení DPI
  [!code-vb[VisualsOverview#102](~/samples/snippets/visualbasic/VS_Snippets_Wpf/VisualsOverview/visualbasic/window1.xaml.vb#102)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Media.Visual>
 - <xref:System.Windows.Media.VisualTreeHelper>
 - <xref:System.Windows.Media.DrawingVisual>
 - [2D grafika a obrázky](../advanced/optimizing-performance-2d-graphics-and-imaging.md)
-- [Ověřování pozice ve vizuální vrstvě](hit-testing-in-the-visual-layer.md)
+- [Spuštění testování ve vizuální vrstvě](hit-testing-in-the-visual-layer.md)
 - [Použití objektů DrawingVisual](using-drawingvisual-objects.md)
-- [Kurz: Hostování vizuální objektů v aplikaci Win32](tutorial-hosting-visual-objects-in-a-win32-application.md)
+- [Kurz: Hostování vizuálních objektů v aplikaci Win32](tutorial-hosting-visual-objects-in-a-win32-application.md)
 - [Optimalizace výkonu aplikace WPF](../advanced/optimizing-wpf-application-performance.md)

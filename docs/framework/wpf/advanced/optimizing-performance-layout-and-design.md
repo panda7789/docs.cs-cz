@@ -9,12 +9,12 @@ helpviewer_keywords:
 - design considerations [WPF]
 - layout pass [WPF]
 ms.assetid: 005f4cda-a849-448b-916b-38d14d9a96fe
-ms.openlocfilehash: e62b439926465aa1a61abd39c7c942acf26732c4
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 8a76dd5de9f374d77345eeab3d259624546fed7c
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57367940"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59107065"
 ---
 # <a name="optimizing-performance-layout-and-design"></a>Optimalizace výkonu: Rozložení a návrh
 Návrh vašich [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikaci může ovlivnit její výkon tak, že vytvoříte zbytečnou režii v Výpočet rozložení a ověření odkazy na objekty. Konstrukce objektů, zejména v době běhu, mohou ovlivnit charakteristiky výkonu vaší aplikace.  
@@ -70,6 +70,7 @@ Návrh vašich [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-w
  Další informace o logickém stromu, naleznete v tématu [stromy v subsystému WPF](trees-in-wpf.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Optimalizace výkonu aplikace WPF](optimizing-wpf-application-performance.md)
 - [Plánování výkonu aplikace](planning-for-application-performance.md)
 - [Využití výhod hardwaru](optimizing-performance-taking-advantage-of-hardware.md)
@@ -78,5 +79,5 @@ Návrh vašich [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-w
 - [Prostředky aplikace](optimizing-performance-application-resources.md)
 - [Text](optimizing-performance-text.md)
 - [Datová vazba](optimizing-performance-data-binding.md)
-- [Další výkonnostní doporučení](optimizing-performance-other-recommendations.md)
+- [Další doporučení k optimalizaci výkonu](optimizing-performance-other-recommendations.md)
 - [Rozložení](layout.md)

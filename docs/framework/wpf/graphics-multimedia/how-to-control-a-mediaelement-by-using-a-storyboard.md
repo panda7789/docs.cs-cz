@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Řízení MediaElement pomocí scénáře'
+title: 'Postupy: Řízení elementu MediaElement pomocí scénáře'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,14 +11,14 @@ helpviewer_keywords:
 - media [WPF], controlling playback with Storyboards
 - playback of media [WPF], controlling with Storyboards
 ms.assetid: 6128ca77-b826-4e36-b968-6f237157c543
-ms.openlocfilehash: 51d567101ee49095e27e9d440016a81cd49fa876
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: ae785e11b1da0f2c408b24021ad46ab071419378
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57369107"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59100311"
 ---
-# <a name="how-to-control-a-mediaelement-by-using-a-storyboard"></a>Postupy: Řízení MediaElement pomocí scénáře
+# <a name="how-to-control-a-mediaelement-by-using-a-storyboard"></a>Postupy: Řízení elementu MediaElement pomocí scénáře
 Tento příklad ukazuje, jak řídit <xref:System.Windows.Controls.MediaElement> pomocí <xref:System.Windows.Media.MediaTimeline> v <xref:System.Windows.Media.Animation.Storyboard>.  
   
 ## <a name="example"></a>Příklad  
@@ -36,6 +36,7 @@ Tento příklad ukazuje, jak řídit <xref:System.Windows.Controls.MediaElement>
  [!code-vb[MediaGallery_snip#CodeBehindMediaTimelineExampleWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/MediaGallery_snip/VB/MediaTimelineExample.xaml.vb#codebehindmediatimelineexamplewholepage)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Controls.MediaElement>
 - <xref:System.Windows.Media.MediaTimeline>
 - <xref:System.Windows.Media.Animation.Storyboard>
@@ -43,5 +44,5 @@ Tento příklad ukazuje, jak řídit <xref:System.Windows.Controls.MediaElement>
 - [Přehled scénářů](storyboards-overview.md)
 - [Přehled animací klíčových snímků](key-frame-animations-overview.md)
 - [Přehled animace](animation-overview.md)
-- [Témata s postupy](audio-and-video-how-to-topics.md)
+- [– postupy](audio-and-video-how-to-topics.md)
 - [Grafika a multimédia](index.md)

@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 56c5a9e3-31f1-482f-bce0-ff1c41a658d0
-ms.openlocfilehash: 7b0cfb9273603850d2451245b81f1bb651f16d56
-ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
+ms.openlocfilehash: 068b84e8704b54e6aea148ec5fc5bf9f0c4cb958
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56094058"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59085971"
 ---
 # <a name="retrieving-binary-data"></a>Načítání binárních dat
 Ve výchozím nastavení **DataReader** načte příchozích dat jako řádek, jakmile celý řádek dat je k dispozici. Binární rozsáhlé objekty (objekty BLOB) potřebovat odlišnému způsobu zacházení však, protože mohou obsahovat GB dat, která nemůže být obsažena v jediném řádku. **Command.ExecuteReader** metoda má přetížení, které bude trvat <xref:System.Data.CommandBehavior> argument, chcete-li změnit výchozí chování **DataReader**. Můžete předat <xref:System.Data.CommandBehavior.SequentialAccess> k **ExecuteReader** metody, chcete-li změnit výchozí chování **DataReader** tak, aby místo načítání řádky dat, bude načítat data postupně po přijetí. To je ideální pro načtení objektů BLOB nebo další velké datové struktury. Všimněte si, že toto chování může záviset na datovém zdroji. Například vrácení objektu BLOB z aplikace Microsoft Access načte celý objekt BLOB se načtena do paměti, spíše než postupně po přijetí.  
@@ -154,5 +154,6 @@ connection.Close();
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Binární a vysoké hodnoty na SQL Serveru](../../../../docs/framework/data/adonet/sql/sql-server-binary-and-large-value-data.md)
 - [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

@@ -1,13 +1,13 @@
 ---
-title: <remove> – element pro schemeSettings (nastavení URI)
+title: <remove> – Element pro schemeSettings (nastavení Uri)
 ms.date: 03/30/2017
 ms.assetid: 4095ba51-de20-4f87-b562-018abe422c91
-ms.openlocfilehash: fd137c86d7373947f57364c13eb3875cba46b269
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: f29ee86deaa150324b40f4fac12ead152553e50d
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55262622"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59104972"
 ---
 # <a name="remove-element-for-schemesettings-uri-settings"></a>\<Odebrat > – Element pro schemeSettings (nastavení Uri)
 Odstraní schéma nastavení pro název schématu.  
@@ -75,6 +75,7 @@ Odstraní schéma nastavení pro název schématu.
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Configuration.SchemeSettingElement?displayProperty=nameWithType>
 - <xref:System.Configuration.SchemeSettingElementCollection?displayProperty=nameWithType>
 - <xref:System.Configuration.UriSection?displayProperty=nameWithType>

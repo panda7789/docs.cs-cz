@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: a16e4a4d-6a5b-45db-8635-19570e4572ae
-ms.openlocfilehash: 1099d8ec8e9d516b2269232857c695f9ff04d99c
-ms.sourcegitcommit: c6f69b0cf149f6b54483a6d5c2ece222913f43ce
+ms.openlocfilehash: c84229dc1c32217099eb7ed8b90accc04cc66148
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55904598"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59097405"
 ---
 # <a name="obtaining-a-dbproviderfactory"></a>Získání DbProviderFactory
 Proces získání <xref:System.Data.Common.DbProviderFactory> zahrnuje předávání informací o zprostředkovateli dat k <xref:System.Data.Common.DbProviderFactories> třídy. Na základě těchto informací, <xref:System.Data.Common.DbProviderFactories.GetFactory%2A> metoda vytvoří objekt pro vytváření zprostředkovatele silného typu. Například, chcete-li vytvořit <xref:System.Data.SqlClient.SqlClientFactory>, můžete předat `GetFactory` řetězec s názvem zprostředkovatele zadán jako "System.Data.SqlClient". Další přetížení `GetFactory` přijímá <xref:System.Data.DataRow>. Jakmile vytvoříte objekt pro vytváření zprostředkovatele, pak můžete jeho metody vytvářet další objekty. Některé z metod `SqlClientFactory` zahrnují <xref:System.Data.SqlClient.SqlClientFactory.CreateConnection%2A>, <xref:System.Data.SqlClient.SqlClientFactory.CreateCommand%2A>, a <xref:System.Data.SqlClient.SqlClientFactory.CreateDataAdapter%2A>.  
@@ -41,7 +41,7 @@ Proces získání <xref:System.Data.Common.DbProviderFactory> zahrnuje předáv�
   
 |Pořadí sloupce|Název sloupce|Příklad výstupu|Popis|  
 |--------------------|-----------------|--------------------|-----------------|  
-|0|**Název**|Zprostředkovatel dat SqlClient|Čitelný název pro poskytovatele dat.|  
+|0|**Name**|Zprostředkovatel dat SqlClient|Čitelný název pro poskytovatele dat.|  
 |1|**Popis**|.NET framework Data Provider pro SqlServer|Čitelný Popis zprostředkovatele dat|  
 |2|**InvariantName**|System.Data.SqlClient|Název, který je možné prostřednictvím kódu programu k odkazování na poskytovatele dat|  
 |3|**AssemblyQualifiedName**|System.Data.SqlClient.SqlClientFactory, System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Plně kvalifikovaný název třídy factory, který obsahuje dostatek informací pro vytvoření instance objektu|  
@@ -96,6 +96,7 @@ Proces získání <xref:System.Data.Common.DbProviderFactory> zahrnuje předáv�
  [!code-vb[DataWorks DbProviderFactories.GetFactory#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DbProviderFactories.GetFactory/VB/source.vb#1)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [DbProviderFactories](../../../../docs/framework/data/adonet/dbproviderfactories.md)
 - [Připojovací řetězce](../../../../docs/framework/data/adonet/connection-strings.md)
 - [Použití tříd konfigurace](https://docs.microsoft.com/previous-versions/aspnet/ms228063(v=vs.100))

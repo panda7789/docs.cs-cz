@@ -1,15 +1,15 @@
 ---
-title: Zápis zabezpečené dynamické SQL na serveru SQL Server
+title: Zápis zabezpečené dynamické SQL na SQL Serveru
 ms.date: 03/30/2017
 ms.assetid: df5512b0-c249-40d2-82f9-f9a2ce6665bc
-ms.openlocfilehash: 446a9f6a49b376f04d1c82d45463d567d89116d8
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 236fd925740d37c2cccabfcebfb7fcb46361489d
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54745607"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59107351"
 ---
-# <a name="writing-secure-dynamic-sql-in-sql-server"></a>Zápis zabezpečené dynamické SQL na serveru SQL Server
+# <a name="writing-secure-dynamic-sql-in-sql-server"></a>Zápis zabezpečené dynamické SQL na SQL Serveru
 Útok prostřednictvím injektáže SQL je proces, pomocí kterého uživatel se zlými úmysly zadá příkazů jazyka Transact-SQL místo platný vstup. Pokud vstup je předána přímo na server bez ověřování, a pokud aplikace provádí neúmyslně vloženého kódu, útoku hrozí riziko poškození nebo zničení data.  
   
  Vkládání chyb zabezpečení byste měli zkontrolovat všechny procedury, které sestavují SQL příkazy, protože SQL Server spustí všechny syntakticky platné dotazy, které obdrží. Útočník zkušený a vzhledem k lze ovládat i parametrizované data. Pokud používáte dynamic SQL, nezapomeňte parametrizovat příkazům a nikdy Nezahrnovat hodnoty parametrů přímo do řetězce dotazu.  
@@ -67,6 +67,7 @@ ms.locfileid: "54745607"
 |[Uložené procedury](/sql/relational-databases/stored-procedures/stored-procedures-database-engine) a [útok prostřednictvím injektáže SQL](/sql/relational-databases/security/sql-injection) v Online knihách serveru SQL|Témata popisují postup vytvoření uložených procedur a jak funguje útok prostřednictvím injektáže SQL.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Zabezpečení aplikací ADO.NET](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)
 - [Přehled zabezpečení SQL Serveru](../../../../../docs/framework/data/adonet/sql/overview-of-sql-server-security.md)
 - [Scénáře zabezpečení aplikací na SQL Serveru](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)

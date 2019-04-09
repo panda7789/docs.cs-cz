@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - application settings [Windows Forms], architecture
 ms.assetid: c8eb2ad0-fac6-4ea2-9140-675a4a44d562
-ms.openlocfilehash: dd527234b90e94b5883d15b336f5e5abc9709880
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: f686fa00662ad29323c1883c45ed0e790b133f2c
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57710677"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59099778"
 ---
 # <a name="application-settings-architecture"></a>Architektura nastavení aplikace
 Toto téma popisuje, jak funguje nastavení aplikace architektury a zkoumá možnosti pokročilých funkcích sady architektury, jako jsou seskupené nastavení a nastavení klíče.  
@@ -147,6 +147,7 @@ Toto téma popisuje, jak funguje nastavení aplikace architektury a zkoumá mož
  Váš poskytovatel nemusí podporovat všechny atributy definované v nastavení <xref:System.Configuration?displayProperty=nameWithType> obor názvů, ale musí být minimální podpory <xref:System.Configuration.ApplicationScopedSettingAttribute> a <xref:System.Configuration.UserScopedSettingAttribute>a také podporovat <xref:System.Configuration.DefaultSettingValueAttribute>. Pro tyto atributy, které nepodporuje váš poskytovatel by měl pouze selhat a oznámení; ji by neměla vyvolávat výjimky. Pokud třída nastavení používá neplatnou kombinaci atributů, ale – například při použití <xref:System.Configuration.ApplicationScopedSettingAttribute> a <xref:System.Configuration.UserScopedSettingAttribute> stejné nastavení, váš poskytovatel by měl vyvolat výjimku a zastavit provádění operací.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Configuration.ApplicationSettingsBase>
 - <xref:System.Configuration.SettingsProvider>
 - <xref:System.Configuration.LocalFileSettingsProvider>

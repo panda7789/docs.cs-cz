@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Animace barev použitím klíčových snímků'
+title: 'Postupy: Animace barev pomocí klíčových snímků'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - animation [WPF], colors with key frames
 - key frames [WPF], animating colors with
 ms.assetid: ab04ffa6-4de9-4d5b-a3b4-4e35d5b2ef35
-ms.openlocfilehash: ca669cee0fa978ca45efc57b4807b83df5c9086c
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
-ms.translationtype: MT
+ms.openlocfilehash: d911b1f14cf71aebf95b566eb710fec8ec9e2a29
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57354333"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59095164"
 ---
-# <a name="how-to-animate-color-by-using-key-frames"></a>Postupy: Animace barev použitím klíčových snímků
+# <a name="how-to-animate-color-by-using-key-frames"></a>Postupy: Animace barev pomocí klíčových snímků
 Tento příklad ukazuje, jak animovat <xref:System.Windows.Media.SolidColorBrush.Color%2A> z <xref:System.Windows.Media.SolidColorBrush> použitím klíčových snímků.  
   
 ## <a name="example"></a>Příklad  
@@ -35,6 +35,7 @@ Tento příklad ukazuje, jak animovat <xref:System.Windows.Media.SolidColorBrush
  Úplnou ukázku najdete v tématu [klíčový snímek animace ukázka](https://go.microsoft.com/fwlink/?LinkID=160012).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Media.SolidColorBrush.Color%2A>
 - <xref:System.Windows.Media.SolidColorBrush>
 - <xref:System.Windows.Media.Animation.ColorAnimationUsingKeyFrames>

@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: a487d61b-d166-467b-a7ca-d8b52fbff42d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 805d35ddb74fca847d47298cf283913031af67c4
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: 6bcf1773cfe839d9a4ac197d701d155b68cdb949
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57482831"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59109419"
 ---
 # <a name="tlbexpexe-type-library-exporter"></a>Tlbexp.exe (exportér knihovny typů)
 Exportér knihovny typů generuje knihovny typů, které popisují typy definované v sestavení Common Language Runtime.  
@@ -39,13 +39,13 @@ tlbexp assemblyName [options]
 |Možnost|Popis|  
 |------------|-----------------|  
 |**/asmpath:** *adresáře*|Určuje umístění, ve kterém se mají hledat sestavení. Pokud použijete tuto možnost, musíte explicitně zadat umístění, ve kterém se mají hledat odkazovaná sestavení, včetně aktuálního adresáře.<br /><br /> Při použití **asmpath** možnost, Exportér knihovny typů nebude hledat sestavení v globální mezipaměti sestavení (GAC).|  
-|**/ Help**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
+|**/help**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
 |**/ názvy:** *název souboru*|Určuje velikost písmen názvů v knihovně typů. *Filename* argument je textový soubor. Každý řádek v souboru určuje velikost písmen jednoho názvu v knihovně typů.|  
 |**/nologo**|Potlačí zobrazení úvodního nápisu společnosti Microsoft.|  
 |**/oldnames**|Donutí Tlbexp.exe exportovat upravené názvy typů, jestliže dojde ke konfliktu názvu typů. Toto bylo výchozí chování ve verzích rozhraní .NET Framework nižších než 2.0.|  
 |**/ out:** *souboru*|Určuje název souboru knihovny typů, který má být vytvořen. Pokud tento parametr vynecháte, Tlbexp.exe vygeneruje knihovnu typů se stejným názvem, jako je název sestavení (skutečný název sestavení, který nemusí být nutně stejný jako název souboru obsahujícího sestavení), a s příponou .tlb.|  
 |**/silence:** `warningnumber`|Potlačí zobrazení konkrétního upozornění. Tento parametr nelze použít s **/silent**.|  
-|**/ silent**|Potlačí zobrazování zpráv o úspěšném dokončení. Tento parametr nelze použít s **/nečinnosti**.|  
+|**/silent**|Potlačí zobrazování zpráv o úspěšném dokončení. Tento parametr nelze použít s **/nečinnosti**.|  
 |**/tlbreference:** *typelibraryname*|Donutí Tlbexp.exe explicitně vyřešit odkazy typu knihovny bez konzultace s registrem. Například, pokud sestavení B odkazuje na sestavení A, můžete použít tuto možnost k poskytnutí explicitního odkazu na knihovnu typů a nespoléhat se na knihovnu typů zadanou v registru. Tlbexp.exe provádí kontroly verze pro zajištění, že verze knihovny typů bude odpovídat verzi sestavení; pokud verze knihovny neodpovídá, dojde k chybě.<br /><br /> Všimněte si, že **tlbreference** možnost stále konzultaci s registrem v případech, kde <xref:System.Runtime.InteropServices.ComImportAttribute> atribut se aplikuje na rozhraní následně implementované jiným typem.|  
 |**/tlbrefpath:** *cesta*|Plně kvalifikovaná cesta na odkazovanou knihovnu typů.|  
 |**/win32**|Při kompilaci na 64bitovém počítači tato možnost určuje, že Tlbexp.exe vygeneruje 32bitovou knihovnu typů.|  
@@ -130,9 +130,10 @@ tlbexp Sample.dll
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Runtime.InteropServices.TypeLibExporterFlags>
 - [Nástroje](../../../docs/framework/tools/index.md)
 - [Regasm.exe (nástroj registrace sestavení)](../../../docs/framework/tools/regasm-exe-assembly-registration-tool.md)
-- [Sestavení zadejte souhrn převodu knihovny](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/xk1120c3(v=vs.100))
+- [Souhrn převodu sestavení na knihovnu typů](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/xk1120c3(v=vs.100))
 - [Tlbimp.exe (importér knihovny typů)](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md)
 - [Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

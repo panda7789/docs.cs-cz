@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: ef900f8f-71ca-4dde-9b8c-95ddb0d7d89c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9a97ba44cfadc27582b2ae9119c01b392f14a19f
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: 7ee801a5af214e2306e6f1667b5e4ee067683fdb
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57496492"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59093108"
 ---
 # <a name="corflagsexe-corflags-conversion-tool"></a>CorFlags.exe (CorFlags – převodní nástroj)
 Nástroj CorFlags Conversion umožňuje konfigurovat CorFlags oddíl hlavičky bitové kopie přenosného spustitelného souboru.  
@@ -42,7 +42,7 @@ CorFlags.exe assembly [options]
 |**/32BITPREF-**|Odstraní příznak 32BITPREFERRED.<br /><br /> Novinkou [!INCLUDE[net_v45](../../../includes/net-v45-md.md)].|  
 |**/?**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
 |**/ Force**|Vynutí aktualizaci i v případě sestavení se silným názvem. **Důležité:**  Při aktualizaci sestavení se silným názvem je nutné toto sestavení před spuštěním jeho kódu znovu podepsat.|  
-|**/ Help**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
+|**/help**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
 |**/ILONLY+**|Nastaví příznak ILONLY.|  
 |**/ILONLY-**|Odstraní příznak ILONLY.|  
 |**/nologo**|Potlačí zobrazení úvodního nápisu společnosti Microsoft.|  
@@ -53,6 +53,7 @@ CorFlags.exe assembly [options]
  Pokud nejsou zadány žádné parametry, zobrazí nástroj CorFlags Conversion příznaky pro zadané sestavení.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Nástroje](../../../docs/framework/tools/index.md)
 - [64bitové aplikace](../../../docs/framework/64-bit-apps.md)
 - [Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

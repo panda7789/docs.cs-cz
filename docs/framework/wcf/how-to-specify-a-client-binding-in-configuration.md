@@ -1,15 +1,15 @@
 ---
-title: 'Postupy: Zadání klientské vazby v konfiguraci'
+title: 'Postupy: Určení klientské vazby v konfiguraci'
 ms.date: 03/30/2017
 ms.assetid: 4a7c79aa-50ee-4991-891e-adc0599323a7
-ms.openlocfilehash: 2441b307961079c28e114b4fed69c252ff42e0d4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 81e9b4b5949d3a89749911a30ad199c4f0da300f
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54606384"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59091561"
 ---
-# <a name="how-to-specify-a-client-binding-in-configuration"></a>Postupy: Zadání klientské vazby v konfiguraci
+# <a name="how-to-specify-a-client-binding-in-configuration"></a>Postupy: Určení klientské vazby v konfiguraci
 V tomto příkladu se vytvoří konzolovou aplikaci klienta pro použití kalkulačky služby a vazby pro tohoto klienta je deklarativně zadaný v konfiguraci. Klient přistupuje k `CalculatorService`, která implementuje `ICalculator` rozhraní a službě i klientovi použít <xref:System.ServiceModel.BasicHttpBinding> třídy.  
   
  Podle uvedeného postupu se předpokládá, že je spuštěna služba kalkulačku. Informace o tom, jak sestavit službu, naleznete v tématu [jak: Zadání vazby služby v konfiguraci](../../../docs/framework/wcf/how-to-specify-a-service-binding-in-configuration.md). Využívá také [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) , Windows Communication Foundation (WCF) poskytuje klientské součásti budou automaticky generovány. Nástroj vygeneruje kód klienta a konfigurace přístupu ke službě.  
@@ -51,4 +51,5 @@ V tomto příkladu se vytvoří konzolovou aplikaci klienta pro použití kalkul
 6.  Kompilace a spuštění klienta.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Používání vazeb ke konfiguraci služeb a klientů](../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)

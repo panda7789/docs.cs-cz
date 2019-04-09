@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - COM [WCF], integration overview
 ms.assetid: 02c5697f-6e2e-47d6-b715-f3a28aebfbd5
-ms.openlocfilehash: bd031b0f7464da2f1e251abfa1fe314ee2fa763d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 182e5f41498d8f5e3fcbc4b84aa7e86b67ce3ccc
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54710218"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59087622"
 ---
 # <a name="integrating-with-com-applications-overview"></a>Přehled integrace s aplikacemi modelu COM
 Windows Communication Foundation (WCF) poskytuje vývojářům spravovaného kódu s bohaté prostředí pro vytváření propojených aplikací. Nicméně pokud máte značné investice v nespravovaném kódu na základě modelu COM a nechcete, aby k migraci, můžete stále integrovat webových služeb WCF přímo do vašeho existujícího kódu pomocí monikeru služby WCF. Moniker služby je možné z široký rozsah COM vývoj prostředí, jako je například Office VBA, Visual Basic 6.0 nebo Visual C++ 6.0.  
@@ -66,4 +66,5 @@ Windows Communication Foundation (WCF) poskytuje vývojářům spravovaného kó
 >  `</configuration>`  
   
 ## <a name="see-also"></a>Viz také:
-- [Postupy: Registrace a konfigurace Monikeru služby](../../../../docs/framework/wcf/feature-details/how-to-register-and-configure-a-service-moniker.md)
+
+- [Postupy: Registrace a konfigurace monikeru služby](../../../../docs/framework/wcf/feature-details/how-to-register-and-configure-a-service-moniker.md)

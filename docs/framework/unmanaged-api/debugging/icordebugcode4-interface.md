@@ -1,5 +1,5 @@
 ---
-title: ICorDebugCode4 Interface
+title: ICorDebugCode4 – rozhraní
 ms.date: 03/30/2017
 api_name:
 - ICorDebugCode4
@@ -16,14 +16,14 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c38ce53ca1c02ead03ab9d1ff1e53cda772333f1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d23f588b46eb452b7670085249938f7d10cea1ba
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54739716"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59108162"
 ---
-# <a name="icordebugcode4-interface"></a>ICorDebugCode4 Interface
+# <a name="icordebugcode4-interface"></a>ICorDebugCode4 – rozhraní
 Poskytuje metodu, která umožňuje ladicí program, který výčet lokálních proměnných a argumentů funkce.  
   
 ## <a name="methods"></a>Metody  
@@ -48,6 +48,5 @@ Poskytuje metodu, která umožňuje ladicí program, který výčet lokálních 
   
 ## <a name="see-also"></a>Viz také:
 
-
 - [ICorDebugCode3 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugcode3-interface.md)
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Debugging – rozhraní](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - transformations [Windows Forms], for scaling colors
 - colors [Windows Forms], scaling
 ms.assetid: df23c887-7fd6-4b15-ad94-e30b5bd4b849
-ms.openlocfilehash: 9255dd4adba19bfef1332e5e3dfa463ee96f43f0
-ms.sourcegitcommit: 15ab532fd5e1f8073a4b678922d93b68b521bfa0
+ms.openlocfilehash: 9c8f2392137d04f56096120cec64b60c42c47419
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58653987"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59107977"
 ---
 # <a name="using-transformations-to-scale-colors"></a>Použití transformací pro škálování barev
 Transformace měřítka vynásobí jeden nebo více součástí čtyři barvy podle čísla. V následující tabulce jsou uvedeny položek matice barev, které představují škálování.  
@@ -64,7 +64,8 @@ Transformace měřítka vynásobí jeden nebo více součástí čtyři barvy po
 |(1, 0, 1, 1)|(0.75, 0, 0.5, 1)|  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Drawing.Imaging.ColorMatrix>
 - <xref:System.Drawing.Imaging.ImageAttributes>
-- [Grafika a kreslení v modelu Windows Forms](graphics-and-drawing-in-windows-forms.md)
+- [Grafika a kreslení v rozhraní Windows Forms](graphics-and-drawing-in-windows-forms.md)
 - [Přebarvení obrázků](recoloring-images.md)

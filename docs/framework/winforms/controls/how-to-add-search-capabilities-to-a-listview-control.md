@@ -11,12 +11,12 @@ helpviewer_keywords:
 - ListView control [Windows Forms], adding search capabilities
 - searching [Windows Forms], adding search capabilities to ListView control
 ms.assetid: 557782d9-b705-4bab-b496-9938afddac82
-ms.openlocfilehash: c25349d4ab981d422ade93944f709c3068a7aba9
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: c1c59c3d4bb5d0d35103371575ebdd49d3559bbe
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57722359"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59108547"
 ---
 # <a name="how-to-add-search-capabilities-to-a-listview-control"></a>Postupy: Přidání schopností vyhledávání do ovládacího prvku ListView
 Často při práci s velké seznam položek v <xref:System.Windows.Forms.ListView> ovládacího prvku, chcete nabízet možnosti vyhledávání pro uživatele. <xref:System.Windows.Forms.ListView> Ovládací prvek tato funkce nabízí dvěma různými způsoby: text párování a vyhledávání umístění.  
@@ -48,9 +48,10 @@ ms.locfileid: "57722359"
  [!code-vb[System.Windows.Forms.ListViewFindItems#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ListViewFindItems/VB/form1.vb#2)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.ListView>
 - <xref:System.Windows.Forms.ListView.FindItemWithText%2A>
 - <xref:System.Windows.Forms.ListView.FindNearestItem%2A>
-- [Ovládací prvek ListView](listview-control-windows-forms.md)
+- [ListView – ovládací prvek](listview-control-windows-forms.md)
 - [Přehled ovládacího prvku ListView](listview-control-overview-windows-forms.md)
 - [Postupy: Přidání a odebrání položek pomocí ovládacího prvku Windows Forms ListView](how-to-add-and-remove-items-with-the-windows-forms-listview-control.md)

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - XAML [XAML Services], TypeConverter
 - type conversion for XAML [XAML Services]
 ms.assetid: 51a65860-efcb-4fe0-95a0-1c679cde66b7
-ms.openlocfilehash: 62e92a0bf537bd5a15b71751b3d62755c6b12dfa
-ms.sourcegitcommit: 5c1abeec15fbddcc7dbaa729fabc1f1f29f12045
+ms.openlocfilehash: 7a5ec731eacda8017c307a0ffa8ec282da78c40f
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58049501"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59095721"
 ---
 # <a name="type-converters-for-xaml-overview"></a>Přehled převaděčů typů pro jazyk XAML
 Typ převaděče dodavatelského logiku pro objekt zapisovače, který převede z řetězce v kódu XAML na konkrétní objekty v grafu objektů. V rozhraní .NET Framework XAML Services musí být převaděč typu třída, která je odvozena z <xref:System.ComponentModel.TypeConverter>. Některé převaděče také podporují XAML cesta pro uložení a je možné serializovat objekt do formátu řetězce v kódu serializace. Toto téma popisuje, jak a kdy jsou vyvolány převaděče typů v XAML a obsahuje implementace doporučení pro metody přepsání <xref:System.ComponentModel.TypeConverter>.  
@@ -108,6 +108,7 @@ Typ převaděče dodavatelského logiku pro objekt zapisovače, který převede 
  Pokud pracujete s datový proud uzlu XAML, není dosud spuštění akce nebo konečný výsledek konvertor typu. V cestě zatížení zůstane atribut řetězec, který nakonec musí být typ převést, aby bylo možné načíst jako textové hodnoty uvnitř člen start a end – člen. Převaděč typu, který se nakonec potřebná pro tuto operaci můžete určit pomocí <xref:System.Xaml.XamlMember.TypeConverter%2A?displayProperty=nameWithType> vlastnost. Však získat platnou hodnotu z <xref:System.Xaml.XamlMember.TypeConverter%2A?displayProperty=nameWithType> spoléhá na s kontext schématu XAML, který má přístup k takové informace prostřednictvím základní člen nebo typ objektu hodnoty, který používá člen. Vyvolání chování převodu typu také vyžaduje kontext schématu XAML, protože, která vyžaduje mapování typu a vytvoření instance převaděče.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ComponentModel.TypeConverterAttribute>
 - [Převaděče typů a rozšíření značek pro jazyk XAML](type-converters-and-markup-extensions-for-xaml.md)
 - [Přehled XAML (WPF)](../wpf/advanced/xaml-overview-wpf.md)

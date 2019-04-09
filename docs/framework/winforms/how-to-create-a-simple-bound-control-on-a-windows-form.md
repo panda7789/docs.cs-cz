@@ -1,18 +1,18 @@
 ---
-title: 'Postupy: Vytvoření jednoduše vázaného ovládacího prvku ve formuláři Windows'
+title: 'Postupy: Vytvoření jednoduše vázaného ovládacího prvku na formuláři Windows Forms'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - data binding [Windows Forms], simple data binding
 - Windows Forms controls, data binding
 ms.assetid: 3bcaded8-0f1a-4cc0-8830-f59be253bf4e
-ms.openlocfilehash: f481b85c07a107b10d88d47c4873b555191bac7f
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: 85b19c43441650789eed6b92a771d2f2433c6a10
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57708337"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59094066"
 ---
-# <a name="how-to-create-a-simple-bound-control-on-a-windows-form"></a>Postupy: Vytvoření jednoduše vázaného ovládacího prvku ve formuláři Windows
+# <a name="how-to-create-a-simple-bound-control-on-a-windows-form"></a>Postupy: Vytvoření jednoduše vázaného ovládacího prvku na formuláři Windows Forms
 S *jednoduchá vazba*, jeden datový prvek, jako je například hodnota sloupce z tabulky datovou sadu, můžete zobrazit v ovládacím prvku. Vám může jednoduché bind nějaká vlastnost ovládacího prvku na hodnotu data.  
   
 > [!NOTE]
@@ -46,6 +46,7 @@ S *jednoduchá vazba*, jeden datový prvek, jako je například hodnota sloupce 
     >  Protože ovládacích prvků vázaných na jednoduchý zobrazit pouze jeden datový prvek, je velmi obvykle obsahují logiku navigace ve formuláři Windows pomocí ovládacích prvků vázaných na jednoduché.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.Binding>
 - [Windows Forms – datová vazba](windows-forms-data-binding.md)
-- [Datové vazby a Windows Forms](data-binding-and-windows-forms.md)
+- [Datové vazby a rozhraní Windows Forms](data-binding-and-windows-forms.md)

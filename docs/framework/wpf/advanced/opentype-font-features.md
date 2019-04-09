@@ -9,12 +9,12 @@ helpviewer_keywords:
 - typography [WPF], OpenType font technology
 - OpenType font technology [WPF]
 ms.assetid: 4061a9d1-fe8b-4921-9e17-18ec7d2e3ea2
-ms.openlocfilehash: a3bcca1e7d031a9351881a5192370bead18aa7bb
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: 86921b610b4b42cfc0393af2966b70870bc650f9
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57467152"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59104478"
 ---
 # <a name="opentype-font-features"></a>Funkce písma OpenType
 
@@ -161,8 +161,7 @@ Toto téma obsahuje základní informace o některé klíčové funkce [!INCLUDE
  Ozdobná písmena jsou dekorativní glyfy, které používají propracované dekoru často přidružený Kaligrafie. Následující text zobrazí standardní a swash glyfy Pescadero písma.  
   
  ![Textu použitím piktogramů standard a swash OpenType](./media/opentype-font-features/opentype-standard-swash-glyphs.gif "textu použitím piktogramů standard a swash OpenType")  
-  
-  
+
  Ozdobná písmena jsou často používá jako dekorativní prvků v krátkých frází například oznámení události. Následující text používá ozdobná písmena zdůraznit písmeny názvu události.  
   
  ![Textu s použitím ozdobná OpenType písmena](./media/opentype-font-features/opentype-swashes.gif "textu s použitím ozdobná písmena OpenType")  
@@ -185,8 +184,7 @@ Toto téma obsahuje základní informace o některé klíčové funkce [!INCLUDE
  Alternativy jsou glyfy, které mohou být nahrazeny pro standardní glyf. [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písma, jako je například Pericles písmo použité v následujících příkladech, může obsahovat alternativních glyfů, které můžete použít k vytvoření rozdílný vzhled dosažený textu. Následující text zobrazí standardní glyfy Pericles písma.  
   
  ![Textu použitím piktogramů standardní OpenType](./media/opentype-font-features/opentype-standard-glyphs.gif "textu použitím piktogramů standardní OpenType")  
-  
-  
+
  Pericles [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písmo obsahuje další glyfy, které poskytují stylových alternativ na standardní sadu glyphs. Zobrazí se následující text stylistické alternativních glyfů.  
   
  ![Textu s použitím stylových alternativních glyfů OpenType](./media/opentype-font-features/opentype-stylistic-alternate-glyphs.gif "textu s použitím stylových alternativních glyfů OpenType")  
@@ -338,6 +336,7 @@ Toto téma obsahuje základní informace o některé klíčové funkce [!INCLUDE
 |<xref:System.Windows.Documents.Typography.Variants%2A>|<xref:System.Windows.FontVariants.Inferior> &#124; <xref:System.Windows.FontVariants.Normal> &#124; <xref:System.Windows.FontVariants.Ordinal> &#124; <xref:System.Windows.FontVariants.Ruby> &#124; <xref:System.Windows.FontVariants.Subscript> &#124; <xref:System.Windows.FontVariants.Superscript>|<xref:System.Windows.FontVariants.Normal?displayProperty=nameWithType>|  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Documents.Typography>
 - [Specifikace OpenType](https://go.microsoft.com/fwlink/?LinkId=96731)
 - [Typografie v rozhraní WPF](typography-in-wpf.md)

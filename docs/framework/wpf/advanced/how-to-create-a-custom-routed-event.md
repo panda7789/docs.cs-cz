@@ -8,12 +8,12 @@ helpviewer_keywords:
 - routed events [WPF], creating
 - events [WPF], routing
 ms.assetid: b79f459a-1c3f-4045-b2d4-1659cc8eaa3c
-ms.openlocfilehash: c351bec05fa8ad8438cb8521f6ab1e6277a40b1d
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: a3850875c8ca747f8709b55f8fe721d25be24304
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57373397"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59091470"
 ---
 # <a name="how-to-create-a-custom-routed-event"></a>Postupy: Vytvoření vlastní směrované události
 Pro vaše vlastní událost, podporu směrování událostí, budete muset zaregistrovat <xref:System.Windows.RoutedEvent> pomocí <xref:System.Windows.EventManager.RegisterRoutedEvent%2A> metody. Tento příklad ukazuje základní informace o vytvoření vlastní směrované události.  
@@ -35,6 +35,7 @@ Pro vaše vlastní událost, podporu směrování událostí, budete muset zareg
  Příkladem práce jak šíření událostí najdete v tématu [zpracování události směrovat](how-to-handle-a-routed-event.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled směrovaných událostí](routed-events-overview.md)
 - [Přehled vstupu](input-overview.md)
-- [Přehled vytváření ovládacích prvků](../controls/control-authoring-overview.md)
+- [Přehled řízeného vytváření](../controls/control-authoring-overview.md)

@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Visual Basic [WPF], event handlers
 - event handlers [WPF], Visual Basic
 ms.assetid: ad4eb9aa-3afc-4a71-8cf6-add3fbea54a1
-ms.openlocfilehash: 736542a4d12f96c40e836f84066dbeb8e66b9436
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: c6e1863850ebf04408c7ffc7b784e9ca3ca12cf5
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57358948"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59078015"
 ---
 # <a name="visual-basic-and-wpf-event-handling"></a>Zpracování událostí v jazyku Visual Basic a WPF
 Pro jazyk Microsoft Visual Basic .NET, můžete použít konkrétní jazyk `Handles` – klíčové slovo k přidružení obslužné rutiny události instance, místo připojování obslužné rutiny události s atributy nebo použití <xref:System.Windows.UIElement.AddHandler%2A> metody. Ale `Handles` techniku pro připojení k instancím obslužných rutin mají určitá omezení, protože `Handles` syntaxe nemůže zajišťovat podporu pro některé funkce konkrétní směrované události [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] systém událostí.  
@@ -43,6 +43,7 @@ Pro jazyk Microsoft Visual Basic .NET, můžete použít konkrétní jazyk `Hand
 >  V rámci [!INCLUDE[TLA#tla_visualstu](../../../../includes/tlasharptla-visualstu-md.md)], [!INCLUDE[TLA2#tla_intellisense](../../../../includes/tla2sharptla-intellisense-md.md)] zobrazit dokončení pro které jsou k dispozici pro prvky `Handles` odkazu na stránce. Ale může to trvat kompilace najednou tak, aby všechny zprostředkující soubor můžete zadat `Friends` odkazy.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.UIElement.AddHandler%2A>
 - [Označení směrovaných událostí jako zpracovaných a zpracování tříd](marking-routed-events-as-handled-and-class-handling.md)
 - [Přehled směrovaných událostí](routed-events-overview.md)

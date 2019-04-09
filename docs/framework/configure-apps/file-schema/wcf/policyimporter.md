@@ -2,12 +2,12 @@
 title: <policyImporter>
 ms.date: 03/30/2017
 ms.assetid: b0d03456-546f-44bb-ab12-1b2ce7f98fca
-ms.openlocfilehash: ab9193d5974ccffcbfa3e741ac4d32ff357ed372
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 81f38d2a163163ca7255ca546bbddbbb58fa3a1b
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55269234"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59094174"
 ---
 # <a name="policyimporter"></a>\<policyImporter>
 Určuje programu pro import zásady, které řídí import kontrolních výrazů vlastních zásad o vazbách.  
@@ -38,7 +38,7 @@ Určuje programu pro import zásady, které řídí import kontrolních výrazů
 |`type`|Typ tohoto prvku.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádná  
+ Žádné  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -50,6 +50,7 @@ Určuje programu pro import zásady, které řídí import kontrolních výrazů
  Import zásady se používá k hledání kontrolních výrazů vlastních zásad o vazbách funkce, jakož i připojit vlastní prvek vazby, který implementuje funkce, které vyžaduje kontrolního výrazu.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Configuration.PolicyImporterElementCollection>
 - <xref:System.ServiceModel.Configuration.PolicyImporterElement>
 - <xref:System.ServiceModel.Configuration.MetadataElement>

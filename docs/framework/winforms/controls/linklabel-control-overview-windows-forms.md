@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Label control [Windows Forms], about Label control
 - LinkLabel control [Windows Forms], about LinkLabel control
 ms.assetid: 9e248549-10ca-43a3-bb5e-60f583d369f1
-ms.openlocfilehash: 81edab0d44ae0bb9dcabe77ad568f281e6f5fffb
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 541467b0f1285d372e5f6d502d9d8f28c8c6333e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57722355"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59083124"
 ---
 # <a name="linklabel-control-overview-windows-forms"></a>LinkLabel – přehled ovládacího prvku (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.LinkLabel> ovládací prvek slouží k přidání webových odkazů do aplikace Windows Forms. Můžete použít <xref:System.Windows.Forms.LinkLabel> ovládací prvek pro všechno, co se vám <xref:System.Windows.Forms.Label> ovládací prvek pro; můžete také nastavit část textu jako odkaz na souboru, složky nebo webové stránky.  
@@ -24,7 +24,8 @@ Windows Forms <xref:System.Windows.Forms.LinkLabel> ovládací prvek slouží k 
  Nejjednodušší použití <xref:System.Windows.Forms.LinkLabel> je ovládací prvek pro zobrazení jedno propojení pomocí <xref:System.Windows.Forms.LinkLabel.LinkArea%2A> vlastnost, ale můžete také zobrazit více hypertextové odkazy pomocí <xref:System.Windows.Forms.LinkLabel.Links%2A> vlastnost. <xref:System.Windows.Forms.LinkLabel.Links%2A> Vlastnost umožňuje přístup ke kolekci odkazů. Můžete také zadat data <xref:System.Windows.Forms.LinkLabel.Link.LinkData%2A> vlastnost jednotlivých <xref:System.Windows.Forms.LinkLabel.Link> objektu. Hodnota <xref:System.Windows.Forms.LinkLabel.Link.LinkData%2A> vlastnost lze použít k uložení umístění souboru k zobrazení nebo adresu webu.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.LinkLabel>
 - [Přehled ovládacího prvku Label](label-control-overview-windows-forms.md)
-- [Postupy: Odkaz na objekt nebo webovou stránku pomocí ovládacího prvku Windows Forms LinkLabel](link-to-an-object-or-web-page-with-wf-linklabel-control.md)
+- [Postupy: Odkázání na objekt nebo webovou stránku pomocí ovládacího prvku Windows Forms LinkLabel](link-to-an-object-or-web-page-with-wf-linklabel-control.md)
 - [Postupy: Změna vzhledu ovládacího prvku Windows Forms LinkLabel](how-to-change-the-appearance-of-the-windows-forms-linklabel-control.md)

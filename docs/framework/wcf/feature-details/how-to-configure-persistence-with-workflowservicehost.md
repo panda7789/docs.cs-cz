@@ -2,12 +2,12 @@
 title: 'Postupy: Konfigurace trvalosti pomocí třídy WorkflowServiceHost'
 ms.date: 03/30/2017
 ms.assetid: e31cd4df-13a3-4a9a-9be8-5243e0055356
-ms.openlocfilehash: 2b340a46d10ef517d46a6e85fdb2f8e332cd0b46
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 8485cfdfb3a8f62f04fc488ad28df86e609e17ad
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54530321"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59086660"
 ---
 # <a name="how-to-configure-persistence-with-workflowservicehost"></a>Postupy: Konfigurace trvalosti pomocí třídy WorkflowServiceHost
 Toto téma popisuje postup konfigurace funkce SQL Store Instance pracovního postupu pro povolení trvalosti pro pracovní postupy hostované v <xref:System.ServiceModel.Activities.WorkflowServiceHost> pomocí konfiguračního souboru. Před použitím funkce SQL Store Instance pracovního postupu musíte vytvořit databázi SQL, který se používá k uchování instance pracovního postupu. Další informace najdete v tématu [jak: Povolení trvalosti SQL pro pracovní postupy a služby pracovních postupů](../../../../docs/framework/windows-workflow-foundation/how-to-enable-sql-persistence-for-workflows-and-workflow-services.md).  
@@ -60,6 +60,7 @@ Toto téma popisuje postup konfigurace funkce SQL Store Instance pracovního pos
      Příklad toho, jak prostřednictvím kódu programu Konfigurace trvalosti najdete v části [jak: Povolení trvalosti pro pracovní postupy a služby pracovních postupů](../../../../docs/framework/windows-workflow-foundation/how-to-enable-persistence-for-workflows-and-workflow-services.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Služby pracovních postupů](../../../../docs/framework/wcf/feature-details/workflow-services.md)
 - [Trvalost pracovního postupu](../../../../docs/framework/windows-workflow-foundation/workflow-persistence.md)
 - [Windows Server App Fabric trvalosti](https://go.microsoft.com/fwlink/?LinkId=193121)

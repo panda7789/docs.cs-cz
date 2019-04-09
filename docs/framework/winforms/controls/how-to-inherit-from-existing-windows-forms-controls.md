@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Dědění z existujících Windows Forms ovládacích prvků'
+title: 'Postupy: Dědění ze stávajících ovládacích prvků Windows Forms'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - inheritance [Windows Forms], Windows Forms custom controls
 - custom controls [Windows Forms], inheritance
 ms.assetid: 1e1fc8ea-c615-4cf0-a356-16d6df7444ab
-ms.openlocfilehash: 9b3b5b2420a1121be81bc299dea645051f941cd8
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: 90008b00c95906ba43364c5a4ae3f85d9fdf0e22
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57707973"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59087869"
 ---
-# <a name="how-to-inherit-from-existing-windows-forms-controls"></a>Postupy: Dědění z existujících Windows Forms ovládacích prvků
+# <a name="how-to-inherit-from-existing-windows-forms-controls"></a>Postupy: Dědění ze stávajících ovládacích prvků Windows Forms
 Pokud chcete rozšířit funkce pro existující ovládací prvek, můžete vytvořit ovládací prvek odvozený z existujícího ovládacího prvku prostřednictvím dědičnosti. Při dědění z existujícího ovládacího prvku, zdědí všechny funkce a vlastností ovládacího prvku visual. Například, pokud vytváříte ovládací prvek, který dědí z <xref:System.Windows.Forms.Button>, by vypadalo nového ovládacího prvku a act stejně jako standardní <xref:System.Windows.Forms.Button> ovládacího prvku. Pak můžete rozšířit nebo upravit funkce nasazovaných nového ovládacího prvku prostřednictvím implementace vlastních metod a vlastností. V některých ovládacích prvků, můžete také změnit vzhled zděděný ovládací prvek tak, že přepíšete její <xref:System.Windows.Forms.Control.OnPaint%2A> metody.  
   
 > [!NOTE]
@@ -84,10 +84,11 @@ Pokud chcete rozšířit funkce pro existující ovládací prvek, můžete vytv
 11. Uložit a testování ovládacího prvku.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Typy vlastních ovládacích prvků](varieties-of-custom-controls.md)
-- [Postupy: Dědit ze třídy Control](how-to-inherit-from-the-control-class.md)
-- [Postupy: Dědit ze třídy UserControl](how-to-inherit-from-the-usercontrol-class.md)
-- [Postupy: Autor ovládacích prvků Windows Forms](how-to-author-controls-for-windows-forms.md)
+- [Postupy: Dědění ze třídy Control](how-to-inherit-from-the-control-class.md)
+- [Postupy: Dědění ze třídy UserControl](how-to-inherit-from-the-usercontrol-class.md)
+- [Postupy: Vytváření ovládacích prvků pro Windows Forms](how-to-author-controls-for-windows-forms.md)
 - [Řešení potíží s obslužnými rutinami zděděných událostí v jazyce Visual Basic](~/docs/visual-basic/programming-guide/language-features/events/troubleshooting-inherited-event-handlers.md)
-- [Návod: Dědění z ovládacího prvku Windows Forms pomocí Visual Basic](walkthrough-inheriting-from-a-windows-forms-control-with-visual-basic.md)
+- [Návod: Dědění z ovládacího prvku Windows Forms pomocí Visual Basicu](walkthrough-inheriting-from-a-windows-forms-control-with-visual-basic.md)
 - [Návod: Dědění z ovládacího prvku Windows Forms pomocí Visual C#](walkthrough-inheriting-from-a-windows-forms-control-with-visual-csharp.md)

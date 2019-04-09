@@ -12,12 +12,12 @@ helpviewer_keywords:
 - check boxes [Windows Forms], using to set options
 - CheckBox control [Windows Forms], using to set options
 ms.assetid: 2ac70498-7e3e-4e07-8901-ccabaeb5fd3e
-ms.openlocfilehash: 3eb68d76d936f13e78d13629455c6ac7fb537b40
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: 926e89272e9ebedb0668b26b96b1614e85e637ea
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57714785"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59095916"
 ---
 # <a name="how-to-set-options-with-windows-forms-checkbox-controls"></a>Postupy: Nastavení možností pomocí ovládacích prvků Windows Forms CheckBox
 Windows Forms <xref:System.Windows.Forms.CheckBox> ovládacího prvku se používá k uživatelům True/False nebo možnosti Ano nebo ne. Ovládací prvek zobrazí zaškrtávací políčko, pokud je vybrána.  
@@ -66,7 +66,8 @@ Windows Forms <xref:System.Windows.Forms.CheckBox> ovládacího prvku se použí
     ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.CheckBox>
 - [Přehled ovládacího prvku CheckBox](checkbox-control-overview-windows-forms.md)
-- [Postupy: Reakce na Windows Forms kliknutí na zaškrtávací políčko](how-to-respond-to-windows-forms-checkbox-clicks.md)
+- [Postupy: Reakce na kliknutí na prvek Windows Forms CheckBox](how-to-respond-to-windows-forms-checkbox-clicks.md)
 - [Ovládací prvek CheckBox](checkbox-control-windows-forms.md)

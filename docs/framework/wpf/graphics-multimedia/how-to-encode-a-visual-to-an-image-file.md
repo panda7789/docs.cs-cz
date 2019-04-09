@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Kódování vizuálního souboru na obrázek'
+title: 'Postupy: Kódování vizuálního objektu na soubor obrázku'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - encoding image formats [WPF]
 - visuals [WPF], encoding to an image file
 ms.assetid: 2036385b-ea47-4d54-8027-5797f52c8149
-ms.openlocfilehash: 2d5da0bde243128bc0d7aa29bf865ca9bfbd1d9a
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 872c19af0cfcf4fc980643c37e9a6028457c03b3
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57355988"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59096781"
 ---
-# <a name="how-to-encode-a-visual-to-an-image-file"></a>Postupy: Kódování vizuálního souboru na obrázek
+# <a name="how-to-encode-a-visual-to-an-image-file"></a>Postupy: Kódování vizuálního objektu na soubor obrázku
 Tento příklad ukazuje, jak kódovat <xref:System.Windows.Media.Visual> do souboru image pomocí objektu <xref:System.Windows.Media.Imaging.RenderTargetBitmap> a <xref:System.Windows.Media.Imaging.PngBitmapEncoder>.  
   
 ## <a name="example"></a>Příklad  
@@ -28,7 +28,8 @@ Tento příklad ukazuje, jak kódovat <xref:System.Windows.Media.Visual> do soub
  A <xref:System.Windows.Media.Imaging.PngBitmapEncoder> byl použit v tomto příkladu, ale všechny odvozené <xref:System.Windows.Media.Imaging.BitmapEncoder> objektů by byla použita k vytvoření souboru obrázku.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Media.DrawingContext>
 - [Přehled obrázků](imaging-overview.md)
-- [Přehled nakreslených objektů](drawing-objects-overview.md)
+- [Přehled vykreslovaných objektů](drawing-objects-overview.md)
 - [Použití objektů DrawingVisual](using-drawingvisual-objects.md)

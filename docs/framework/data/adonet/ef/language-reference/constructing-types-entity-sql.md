@@ -2,12 +2,12 @@
 title: Vytváření typů (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 41fa7bde-8d20-4a3f-a3d2-fb791e128010
-ms.openlocfilehash: 917c59a6602ce0313b91ba78fd59d11596f86e9f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 53aa7fcc82a476c8b8bd87b059e08bee6741c0d9
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54718582"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59073777"
 ---
 # <a name="constructing-types-entity-sql"></a>Vytváření typů (Entity SQL)
 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] nabízí tři druhy konstruktory: řádek konstruktory, konstruktory s názvem typu a kolekce konstruktory.  
@@ -64,6 +64,7 @@ ms.locfileid: "54718582"
  Další informace najdete v tématu [konstruktor typu s názvem](../../../../../../docs/framework/data/adonet/ef/language-reference/named-type-constructor-entity-sql.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Reference k Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
 - [Přehled Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-overview.md)
 - [Systém typů](../../../../../../docs/framework/data/adonet/ef/language-reference/type-system-entity-sql.md)

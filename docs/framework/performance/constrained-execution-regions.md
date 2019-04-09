@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 99354547-39c1-4b0b-8553-938e8f8d1808
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b5854abd97c05cf0d57bfdd9a19826fea2fd7502
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d4c1d07e2469a36c4b8e1ef7b8d90a80a3530ae3
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54566941"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59097171"
 ---
 # <a name="constrained-execution-regions"></a>Oblasti omezeného provádění
 Oblasti omezeného provádění (CER) je mechanismus pro vytváření spolehlivých spravovaného kódu. CER vymezuje oblast, ve kterém je omezená common language runtime (CLR) z vyvolávání výjimek out-of-band, které by jinak znemožňovaly kód v oblasti spuštění v celém rozsahu. V rámci oblasti je omezen uživatelský kód z provádění kódu, který způsobí vyvolání výjimky out-of-band. <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A> Metoda musí bezprostředně předcházet `try` bloku a značky `catch`, `finally`, a `fault` bloky jako oblasti omezeného provádění. Jakmile označen jako omezené oblasti kódu musí volat pouze jiný kód s kontrakty spolehlivosti a kód by neměl přidělit nebo volání virtuální metody neupravený nebo nespolehlivé Pokud kód je připravena ke zpracování chyb. Zpoždění vlákna CLR zruší pro kód, který je spouštěn v CER.  
@@ -102,7 +102,7 @@ Oblasti omezeného provádění (CER) je mechanismus pro vytváření spolehliv�
   
 -   Volání metody prostřednictvím reflexe.  
   
--   <xref:System.Threading.Monitor.Enter%2A> nebo <xref:System.IO.FileStream.Lock%2A>.  
+-   <xref:System.Threading.Monitor.Enter%2A> or <xref:System.IO.FileStream.Lock%2A>.  
   
 -   Kontroly zabezpečení. Není provádět požadavky, pouze požadavky na propojení.  
   
@@ -115,4 +115,5 @@ Oblasti omezeného provádění (CER) je mechanismus pro vytváření spolehliv�
 -   Ukazatele na funkce a delegáti.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Spolehlivost – doporučené postupy](../../../docs/framework/performance/reliability-best-practices.md)

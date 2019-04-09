@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Windows Forms, data binding
 - Windows Forms, adding change notification for data binding
 ms.assetid: b5b10f90-0585-41d9-a377-409835262a92
-ms.openlocfilehash: cea6cab76a12d6dbfdc741b426b67859e0e5141e
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 559cdee1cce84df1c4b838e249d11ba235a0c636
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57713414"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59097574"
 ---
 # <a name="change-notification-in-windows-forms-data-binding"></a>Oznámení změn v datové vazbě rozhraní Windows Forms
 Jednou z nejdůležitějších pojmů Windows Forms – datová vazba je *oznámení o změně*. Pokud chcete mít jistotu, že zdroj dat a ovládací prvky vázané vždy mít nejnovější data, je nutné přidat oznámení o změně pro datovou vazbu. Konkrétně chcete mít jistotu, že vázané ovládací prvky se zobrazí oznámení o změnách, které byly provedeny na jejich zdroj dat a zdroj dat je oznámení o změnách, které byly provedeny vázané vlastnosti ovládacího prvku.  
@@ -33,9 +33,10 @@ Jednou z nejdůležitějších pojmů Windows Forms – datová vazba je *oznám
  Nakonec na straně ovládacího prvku musí vystavit *PropertyName*změněné události pro každou vlastnost navržené tak, aby vázán na data. Změny vlastnosti ovládacího prvku se pak rozšíří ke zdroji dat vázaná. Další informace najdete v tématu [jak: Použití vzoru PropertyNameChanged](how-to-apply-the-propertynamechanged-pattern.md)  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.BindingSource>
 - <xref:System.ComponentModel.INotifyPropertyChanged>
 - <xref:System.ComponentModel.BindingList%601>
 - [Windows Forms – datová vazba](windows-forms-data-binding.md)
 - [Zdroje dat podporované rozhraním Windows Forms](data-sources-supported-by-windows-forms.md)
-- [Datové vazby a Windows Forms](data-binding-and-windows-forms.md)
+- [Datové vazby a rozhraní Windows Forms](data-binding-and-windows-forms.md)

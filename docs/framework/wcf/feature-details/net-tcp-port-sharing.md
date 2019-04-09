@@ -5,12 +5,12 @@ helpviewer_keywords:
 - port activation [WCF]
 - port sharing [WCF]
 ms.assetid: f13692ee-a179-4439-ae72-50db9534eded
-ms.openlocfilehash: e191dc62368fc9c16bd58efd30dd1a3769d2bb88
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: b04266b15f786e3a5a93ac1e9fff1754c397ccd4
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54540309"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59073686"
 ---
 # <a name="nettcp-port-sharing"></a>Sdílení portů Net.TCP
 Windows Communication Foundation (WCF) poskytuje nové založené na TCP síťový protokol (net.tcp://) pro vysoce výkonné komunikaci. WCF také zavádí nové součásti systému, služba Net.TCP Port Sharing umožňující portů net.tcp sdílet mezi více procesy uživatele.  
@@ -49,7 +49,8 @@ Windows Communication Foundation (WCF) poskytuje nové založené na TCP síťov
  I když služba Sdílení portů Net.TCP poskytuje vrstvu zpracování mezi aplikacemi a síti, by měl být aplikace, které používají sdílení portů stále zabezpečen, jako kdyby byly přímo naslouchat na síti. Konkrétně aplikace, které používají sdílení portu by se měl vyhodnotit oprávnění procesu, za kterých spuštění. Zvažte spuštění aplikace pomocí předdefinovaným účtem Network Service, který se spouští s minimální sadou procesu oprávnění požadovaná pro síťovou komunikaci.  
   
 ## <a name="see-also"></a>Viz také:
-- [Konfigurace služby sdílení portů Net.TCP](../../../../docs/framework/wcf/feature-details/configuring-the-net-tcp-port-sharing-service.md)
+
+- [Konfigurace Služby sdílení portů Net.TCP](../../../../docs/framework/wcf/feature-details/configuring-the-net-tcp-port-sharing-service.md)
 - [Hostování](../../../../docs/framework/wcf/feature-details/hosting.md)
 - [Postupy: Konfigurace používání sdílení portů ve službě WCF](../../../../docs/framework/wcf/feature-details/how-to-configure-a-wcf-service-to-use-port-sharing.md)
-- [Postupy: Povolení služby Sdílení portů Net.TCP](../../../../docs/framework/wcf/feature-details/how-to-enable-the-net-tcp-port-sharing-service.md)
+- [Postupy: Povolení Služby sdílení portů Net.TCP](../../../../docs/framework/wcf/feature-details/how-to-enable-the-net-tcp-port-sharing-service.md)

@@ -15,12 +15,12 @@ helpviewer_keywords:
 - listening with sockets
 - Internet, sockets
 ms.assetid: 40e426cc-13db-4371-95eb-f7388bd23ebf
-ms.openlocfilehash: 763d1106a289e4aa6530eb07971d6ffb7e6095b9
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c3d5a7d6040038eb6d768815b1ae9e8ad45c5810
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54527845"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59109951"
 ---
 # <a name="listening-with-sockets"></a>Naslouchání pomocí soketů
 Naslouchací proces nebo server sockets otevření portu v síti a potom počkejte klienta pro připojení k tomuto portu. I když existují jiné rodiny adres sítě a protokoly, tento příklad ukazuje, jak vytvořit vzdálené služby pro sítě TCP/IP.  
@@ -60,6 +60,7 @@ listener.Listen(100);
  **Naslouchání** metoda přijímá jeden parametr, který určuje, kolik čeká na připojení k **soketu** jsou povoleny před chybu zaneprázdněný server se vrátí do připojujícího se klienta. V takovém případě až 100 klientů jsou umístěné ve frontě připojení předtím, než je server zaneprázdněný odpověď se vrátí do klienta číslem 101.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Použití synchronního serverového soketu](../../../docs/framework/network-programming/using-a-synchronous-server-socket.md)
 - [Použití asynchronního serverového soketu](../../../docs/framework/network-programming/using-an-asynchronous-server-socket.md)
 - [Použití klientských soketů](../../../docs/framework/network-programming/using-client-sockets.md)

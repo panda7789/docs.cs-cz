@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Tisk ve Windows Forms pomocí náhledu tisku'
+title: 'Postupy: Tisk v modelu Windows Forms pomocí náhledu tisku'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - printing [Windows Forms], with print preview
 - print preview
 ms.assetid: 4a16f7e2-ae10-4485-b0ae-3d558334d0fe
-ms.openlocfilehash: 11f5583cc181904b17c378ac7ead4f35c539aeed
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: 48391465bf199f8a212a575c64227958385eeae8
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57711483"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59073608"
 ---
-# <a name="how-to-print-in-windows-forms-using-print-preview"></a>Postupy: Tisk ve Windows Forms pomocí náhledu tisku
+# <a name="how-to-print-in-windows-forms-using-print-preview"></a>Postupy: Tisk v modelu Windows Forms pomocí náhledu tisku
 Je velmi běžné ve Windows Forms programování nabízí náhled tisku kromě tiskové služby. Snadný způsob, jak přidat do svojí aplikace náhledu služby, je použít <xref:System.Windows.Forms.PrintPreviewDialog> ovládacího prvku v kombinaci s <xref:System.Drawing.Printing.PrintDocument.PrintPage> logiku zpracování událostí pro tisk souboru.  
   
 ### <a name="to-preview-a-text-document-with-a-printpreviewdialog-control"></a>Náhled textový dokument s printpreviewdialog – ovládací prvek  
@@ -65,6 +65,7 @@ Je velmi běžné ve Windows Forms programování nabízí náhled tisku kromě 
 -   Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  
   
 ## <a name="see-also"></a>Viz také:
-- [Postupy: Tisk vícestránkového textového souboru ve Windows Forms](how-to-print-a-multi-page-text-file-in-windows-forms.md)
-- [Podpora tisku v modelu Windows Forms](windows-forms-print-support.md)
-- [Zabezpečenější tisk ve Windows Forms](../more-secure-printing-in-windows-forms.md)
+
+- [Postupy: Tisk vícestránkového textového souboru v modelu Windows Forms](how-to-print-a-multi-page-text-file-in-windows-forms.md)
+- [Podpora tisku ve Windows Forms](windows-forms-print-support.md)
+- [Bezpečnější tisk ve Windows Forms](../more-secure-printing-in-windows-forms.md)

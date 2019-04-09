@@ -10,12 +10,12 @@ helpviewer_keywords:
 - custom controls [Windows Forms], exposing properties
 - constituent controls
 ms.assetid: 5c1ec98b-aa48-4823-986e-4712551cfdf1
-ms.openlocfilehash: 75ee93b7a601b4fc1480dca708d78740664c9a85
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: 750caa1f45f870e63a5b7ccbe0c309e6fb0b3178
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57704514"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59106350"
 ---
 # <a name="how-to-expose-properties-of-constituent-controls"></a>Postupy: Vystavení vlastností základních ovládacích prvků
 Ovládací prvky, které tvoří složeného ovládacího prvku se nazývají *základní ovládací prvky*. Tyto ovládací prvky jsou obvykle deklarována jako soukromá a proto není přístupná vývojářem. Pokud chcete zpřístupnit vlastnosti těchto ovládacích prvků pro budoucí uživatele, musí zveřejnit uživatele. Vlastnost základní ovládacího prvku je zveřejněný prostřednictvím vytváření vlastnost do uživatelského ovládacího prvku a používání `get` a `set` přistupující objekty vlastnosti provést změnu v hodnotě privátní vlastnost základní ovládacího prvku.  
@@ -58,6 +58,7 @@ public Color ButtonColor
 3.  V `set` část vlastnosti, psaní kódu, který se předá hodnotu vlastnosti na vlastnost vystavené základní ovládacího prvku.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.UserControl>
 - [Vlastnosti v ovládacích prvcích Windows Forms](properties-in-windows-forms-controls.md)
 - [Typy vlastních ovládacích prvků](varieties-of-custom-controls.md)

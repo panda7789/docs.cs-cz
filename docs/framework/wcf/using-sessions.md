@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - sessions [WCF]
 ms.assetid: 864ba12f-3331-4359-a359-6d6d387f1035
-ms.openlocfilehash: 6ef3ff671175182bdd3b1eab2b17ec0298ff15e1
-ms.sourcegitcommit: acd8ed14fe94e9d4e3a7fb685fe83d05e941073c
-ms.translationtype: MT
+ms.openlocfilehash: 433efade37d9aa07f99a212b631a571dfbc766dd
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56442721"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59095864"
 ---
 # <a name="using-sessions"></a>Použití relací
 V aplikacích Windows Communication Foundation (WCF) *relace* koreluje skupinu zpráv do konverzace. Relace WCF se liší od objekt relace, která je k dispozici v [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] aplikace podporují různé chování a se řídí různými způsoby. Toto téma popisuje funkce, které umožňují relace ve službě WCF aplikací a jejich použití.  
@@ -146,5 +146,6 @@ V aplikacích Windows Communication Foundation (WCF) *relace* koreluje skupinu z
 >  MaxConcurrentSessions nemají žádný vliv v tomto případě, protože není k dispozici pouze jeden "relace".  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.OperationContractAttribute.IsInitiating%2A>
 - <xref:System.ServiceModel.OperationContractAttribute.IsTerminating%2A>

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - triggering animation [WPF]
 - Storyboards [WPF], starting when property values change
 ms.assetid: 12399c21-0300-4f4f-9e3a-d92d9907e5f5
-ms.openlocfilehash: 87f7525755556301fec3f00da612fc5262f1f533
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 7e3eecedf7d464eeb8e4f60f2f05fa06d2e23e09
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57356140"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59080706"
 ---
 # <a name="how-to-trigger-an-animation-when-a-property-value-changes"></a>Postupy: Spuštění animace při změně hodnoty vlastnosti
 Tento příklad ukazuje způsob použití <xref:System.Windows.Trigger> spustit <xref:System.Windows.Media.Animation.Storyboard> při změně hodnoty vlastnosti. Můžete použít <xref:System.Windows.Trigger> uvnitř <xref:System.Windows.Style>, <xref:System.Windows.Controls.ControlTemplate>, nebo <xref:System.Windows.DataTemplate>.  
@@ -24,6 +24,7 @@ Tento příklad ukazuje způsob použití <xref:System.Windows.Trigger> spustit 
  Animace použít vlastností <xref:System.Windows.Trigger> objekty se chovají způsobem složitější než <xref:System.Windows.EventTrigger> animace nebo animace spuštěna pomocí <xref:System.Windows.Media.Animation.Storyboard> metody.  Jsou "předání" s použitím animací definované jinými <xref:System.Windows.Trigger> objekty, ale compose s <xref:System.Windows.EventTrigger> a aktivaci metody animace.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Trigger>
 - [Přehled způsobů animace vlastností](property-animation-techniques-overview.md)
 - [Přehled scénářů](storyboards-overview.md)

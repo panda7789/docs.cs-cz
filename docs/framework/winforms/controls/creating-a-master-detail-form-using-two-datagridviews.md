@@ -10,14 +10,14 @@ helpviewer_keywords:
 - master-details lists [Windows Forms], displaying on Windows Forms
 - walkthroughs [Windows Forms], DataGridView control
 ms.assetid: c5fa29e8-47f7-4691-829b-0e697a691f36
-ms.openlocfilehash: 80ec480b5d45a338c1f15796ae82015d6da24fc9
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: 66807287dcaffae4bd310040312e0f56e8fda5d0
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57705529"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59078873"
 ---
-# <a name="walkthrough-creating-a-masterdetail-form-using-two-windows-forms-datagridview-controls"></a>Návod: Vytvoření hlavního/podrobného formuláře pomocí dvou prvkům Windows Forms DataGridView
+# <a name="walkthrough-creating-a-masterdetail-form-using-two-windows-forms-datagridview-controls"></a>Návod: Vytvoření hlavního/podrobného formuláře pomocí dvou ovládacích prvků Windows Forms DataGridView
 Jeden z nejběžnějších scénářů pro použití <xref:System.Windows.Forms.DataGridView> je ovládací prvek *záznamů master/detail* formuláře, ve kterém se zobrazí nadřazené a podřízené vztah mezi dvěma tabulkami databáze. Výběr řádků v tabulce hlavní způsobí, že aktualizace pomocí odpovídající data podřízené tabulky.  
   
  Implementace hlavního/podrobného formuláře je snadný při použití interakce mezi <xref:System.Windows.Forms.DataGridView> ovládacího prvku a <xref:System.Windows.Forms.BindingSource> komponenty. V tomto návodu vytvoříte formuláře pomocí dvou <xref:System.Windows.Forms.DataGridView> ovládací prvky a dva <xref:System.Windows.Forms.BindingSource> komponenty. Na formuláři se zobrazí dvě související tabulky v ukázkové databázi Northwind SQL serveru: `Customers` a `Orders`. Až budete hotovi, budete mít formulář obsahující všechny zákazníky v databázi v hlavní <xref:System.Windows.Forms.DataGridView> a všech objednávek pro vybraného zákazníka do podrobností <xref:System.Windows.Forms.DataGridView>.  
@@ -76,8 +76,9 @@ Jeden z nejběžnějších scénářů pro použití <xref:System.Windows.Forms.
 -   Přizpůsobení vzhledu buněk. Další informace najdete v tématu [jak: Přizpůsobení vzhledu buněk v ovládacím prvku Windows Forms DataGridView](customize-the-appearance-of-cells-in-the-datagrid.md) a [jak: Nastavení výchozích stylů buňky pro Windows Forms DataGridView – ovládací prvek](how-to-set-default-cell-styles-for-the-windows-forms-datagridview-control.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.BindingSource>
 - [Zobrazení dat v ovládacím prvku Windows Forms DataGridView](displaying-data-in-the-windows-forms-datagridview-control.md)
-- [Postupy: Vytvoření hlavního/podrobného formuláře pomocí dvou prvkům Windows Forms DataGridView](create-a-master-detail-form-using-two-datagridviews.md)
+- [Postupy: Vytvoření hlavního/podrobného formuláře pomocí dvou ovládacích prvků Windows Forms DataGridView](create-a-master-detail-form-using-two-datagridviews.md)
 - [Ochrana informací o připojení](../../data/adonet/protecting-connection-information.md)

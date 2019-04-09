@@ -2,12 +2,12 @@
 title: 'Uvnitř CustomPeerResolverService: Registrace klienta'
 ms.date: 03/30/2017
 ms.assetid: 40236953-a916-4236-84a6-928859e1331a
-ms.openlocfilehash: 90d40eb11dbfebf4a19ba4c42e0fd4b45a2b1e7a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: b3b5e22ad29f465d82e3d925f7168745fc5d04a4
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54541778"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59095786"
 ---
 # <a name="inside-the-custompeerresolverservice-client-registrations"></a>Uvnitř CustomPeerResolverService: Registrace klienta
 Každý uzel v mřížce publikuje jeho informace o koncovém bodu k službě překládání prostřednictvím `Register` funkce. Tyto informace službě překládání ukládá jako registrační záznam. Tento záznam obsahuje jedinečný identifikátor (RegistrationID) a informace o koncovém bodu (PeerNodeAddress) pro uzel.  
@@ -34,4 +34,5 @@ Každý uzel v mřížce publikuje jeho informace o koncovém bodu k službě p�
  Jakmile se uzel zaregistruje překladač služby, začne přijímat <xref:System.ServiceModel.PeerResolvers.RegisterResponseInfo> objekt ze služby. Zda má tento objekt `RegistrationLifetime` vlastnost, která označuje k uzlu, jak dlouho má před registraci platnost a odebere ve službě překládání. Pokud například `RegistrationLifetime` činí 2 minuty, uzlu je potřeba volat `Refresh` v záznamu zůstává čerstvé a není odstraněn, v části 2 minuty. Když se obdrží službě překládání `Refresh` vyhledá záznam a obnoví čas vypršení platnosti požadavku. Aktualizovat vrátí <xref:System.ServiceModel.PeerResolvers.RefreshResponseInfo> objektu `RegistrationLifetime` vlastnost.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Překladače partnerských uzlů](../../../../docs/framework/wcf/feature-details/peer-resolvers.md)

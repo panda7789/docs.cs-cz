@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 8a3cca8b-dd94-4e3d-ad9a-9ee7590654bc
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c2b5646a1a556c57814602790d5f17104d2148e5
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
+ms.openlocfilehash: e3eb5c9686f54bcaacef8d593f0ace4804d4ae60
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58410742"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59098218"
 ---
 # <a name="default-marshaling-for-arrays"></a>Výchozí zařazování pro pole
 V případě aplikace tvořené zcela spravovaný kód modul common language runtime předá typy polí jako vstup a výstup parametry. Naproti tomu interoperační zařazovač předá pole jako parametry in ve výchozím nastavení.  
@@ -34,7 +34,7 @@ V případě aplikace tvořené zcela spravovaný kód modul common language run
 |Spravovaná pole|Typ elementu|pořadí|Dolní mez|Zápis podpis|  
 |------------------------|------------------|----------|-----------------|------------------------|  
 |**ELEMENT_TYPE_ARRAY**|Určený typem.|Určené pořadí.|Volitelně můžete zadat pomocí hranice.|*typ* **[** *n*,*m* **]**|  
-|**ELEMENT_TYPE_CLASS**|Neznámé|Neznámé|Neznámé|**System.Array** |  
+|**ELEMENT_TYPE_CLASS**|Neznámé|Neznámé|Neznámé|**System.Array**|  
 |**ELEMENT_TYPE_SZARRAY**|Určený typem.|1|0|*typ* **[** *n* **]**|  
   
 ## <a name="unmanaged-arrays"></a>Nespravované pole  
@@ -361,6 +361,7 @@ public struct MyStruct {
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Výchozí chování zařazování](default-marshaling-behavior.md)
 - [Přenositelné a nepřenositelné typy](blittable-and-non-blittable-types.md)
 - [Směrové atributy](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/77e6taeh(v=vs.100))

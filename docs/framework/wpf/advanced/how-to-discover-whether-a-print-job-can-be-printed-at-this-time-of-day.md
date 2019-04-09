@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Zjištění, zda lze vytisknout tiskovou úlohu v této denní době'
+title: 'Postupy: Zjištění, jestli jde vytisknout tiskovou úlohu v této denní době'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,14 +10,14 @@ helpviewer_keywords:
 - printers [WPF], availability
 - print jobs [WPF], timing
 ms.assetid: 7e9c8ec1-abf6-4b3d-b1c6-33b35d3c4063
-ms.openlocfilehash: 2e93fe23a6084fec4e2a251b0361c29a4207e621
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
-ms.translationtype: MT
+ms.openlocfilehash: dab836af8ba3d177719d910142cd93f8f6de0002
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57352734"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59099856"
 ---
-# <a name="how-to-discover-whether-a-print-job-can-be-printed-at-this-time-of-day"></a>Postupy: Zjištění, zda lze vytisknout tiskovou úlohu v této denní době
+# <a name="how-to-discover-whether-a-print-job-can-be-printed-at-this-time-of-day"></a>Postupy: Zjištění, jestli jde vytisknout tiskovou úlohu v této denní době
 Tiskové fronty nejsou vždycky k dispozici po dobu 24 hodin denně. Mají počáteční a koncový čas vlastnosti, které je možné nastavit, aby byly k dispozici v určitých časech den. Tato funkce je možné, například pro rezervaci tiskárny pro výhradní použití určitých oddělení po 17: 00. Toto oddělení by měla mít jinou frontu tiskárny, než jiných oddělení údržby použít. Fronta jiných oddělení se nastavuje nedostupnost po 17: 00, zatímco fronty pro dána oddělení může být nastaven na být vždy k dispozici.  
   
  Navíc je možné nastavit tiskové úlohy, sami bude tisknutelný pouze v rámci dané rozpětí času.  
@@ -75,6 +75,7 @@ Tiskové fronty nejsou vždycky k dispozici po dobu 24 hodin denně. Mají poč�
  [!code-vb[DiagnoseProblematicPrintJob#TimeConverter](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/visualbasic/program.vb#timeconverter)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.DateTime>
 - <xref:System.Printing.PrintSystemJobInfo>
 - <xref:System.Printing.PrintQueue>

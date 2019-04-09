@@ -5,20 +5,18 @@ helpviewer_keywords:
 - binding data [WPF], performance
 - data binding [WPF], performance
 ms.assetid: 1506a35d-c009-43db-9f1e-4e230ad5be73
-ms.openlocfilehash: dfc58036bc39879009b31d29dc41247a914bcd59
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: ac7ca815bedf180c8a680840f585d08f7018d6ab
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57352019"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59087830"
 ---
 # <a name="optimizing-performance-data-binding"></a>Optimalizace výkonu: Datová vazba
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] vytváření datových vazeb nabízí jednoduchý a konzistentní způsob pro aplikace k zobrazení a interakci s daty. Elementy mohou být vázány na data z různých zdrojů dat ve formě [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] objekty a [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)].  
   
  Toto téma obsahuje doporučení ohledně výkonu pro datové vazby.  
-  
 
-  
 <a name="HowDataBindingReferencesAreResolved"></a>   
 ## <a name="how-data-binding-references-are-resolved"></a>Jak vyřešit odkazy vazby dat  
  Před diskuze o datové vazbě problémy s výkonem, je vhodné prozkoumat jak [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] modul vazby překládá odkazy na objekty pro vazbu.  
@@ -74,6 +72,7 @@ ms.locfileid: "57352019"
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Umožňuje vám data svázat [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] obsahu; však vazba dat na [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] obsah je pomalejší než datové vazby k [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] objekty. Nelze převést [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] objekt dat do formátu XML, pokud jediným účelem je určený pro vytváření datových vazeb.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Optimalizace výkonu aplikace WPF](optimizing-wpf-application-performance.md)
 - [Plánování výkonu aplikace](planning-for-application-performance.md)
 - [Využití výhod hardwaru](optimizing-performance-taking-advantage-of-hardware.md)
@@ -82,6 +81,6 @@ ms.locfileid: "57352019"
 - [Chování objektu](optimizing-performance-object-behavior.md)
 - [Prostředky aplikace](optimizing-performance-application-resources.md)
 - [Text](optimizing-performance-text.md)
-- [Další výkonnostní doporučení](optimizing-performance-other-recommendations.md)
+- [Další doporučení k optimalizaci výkonu](optimizing-performance-other-recommendations.md)
 - [Přehled datových vazeb](../data/data-binding-overview.md)
-- [Návod: Ukládání dat aplikací v aplikaci WPF](walkthrough-caching-application-data-in-a-wpf-application.md)
+- [Návod: Ukládání aplikačních dat do mezipaměti v aplikaci WPF](walkthrough-caching-application-data-in-a-wpf-application.md)

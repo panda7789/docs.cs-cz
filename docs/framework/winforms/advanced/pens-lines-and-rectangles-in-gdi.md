@@ -17,12 +17,12 @@ helpviewer_keywords:
 - examples [Windows Forms], GDI+
 - lines [Windows Forms], dashed
 ms.assetid: 30b25aae-e3eb-4479-bdb8-187cf651fc84
-ms.openlocfilehash: 91f41fb4acf5ec174bd76498a70aed3dcda076f9
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 84752773c0b56d9684dc31620d463d4ddccf9dad
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57705737"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59078223"
 ---
 # <a name="pens-lines-and-rectangles-in-gdi"></a>Pera, čáry a obdélníky v GDI+
 Kreslení čar pomocí [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] je potřeba vytvořit <xref:System.Drawing.Graphics> objektu a <xref:System.Drawing.Pen> objektu. <xref:System.Drawing.Graphics> Objekt, který poskytuje metody, které se dělají kreslení, a <xref:System.Drawing.Pen> ukládá atributy, jako je barva čáry, šířku a stylu.  
@@ -68,9 +68,10 @@ Kreslení čar pomocí [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdipl
  A <xref:System.Drawing.Rectangle> objekt má metody a vlastnosti zpracování a shromažďují se informace o obdélníku. Například <xref:System.Drawing.Rectangle.Inflate%2A> a <xref:System.Drawing.Rectangle.Offset%2A> metody měnit velikost a umístění obdélníku. <xref:System.Drawing.Rectangle.IntersectsWith%2A> Metoda zjistíte, zda obdélník protíná jiné zadané obdélníku a <xref:System.Drawing.Rectangle.Contains%2A> metoda zjistíte, jestli je daný bod v obdélníku.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Drawing.Graphics?displayProperty=nameWithType>
 - <xref:System.Drawing.Pen?displayProperty=nameWithType>
 - <xref:System.Drawing.Rectangle?displayProperty=nameWithType>
 - [Postupy: Vytvoření pera](how-to-create-a-pen.md)
-- [Postupy: Nakreslit čáru na formuláři Windows](how-to-draw-a-line-on-a-windows-form.md)
+- [Postupy: Kreslení čáry na formuláři Windows](how-to-draw-a-line-on-a-windows-form.md)
 - [Postupy: Kreslení obrazce s obrysem](how-to-draw-an-outlined-shape.md)

@@ -11,12 +11,12 @@ helpviewer_keywords:
 - ScrollBar control [Windows Forms], about ScrollBar control
 - scroll bars [Windows Forms], about scroll bars
 ms.assetid: 8b307679-1cae-41d8-99aa-3d1efd207cd6
-ms.openlocfilehash: cba28acf7e8594cd8eef88436ddde86efacada36
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: d4a7912a5781fc583357affa728f7d81059b5cf9
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57714096"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59097314"
 ---
 # <a name="hscrollbar-and-vscrollbar-controls-overview-windows-forms"></a>Přehled ovládacích prvků HScrollBar a VScrollBar (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.ScrollBar> ovládací prvky se používají k zajištění snadnou navigaci prostřednictvím dlouhý seznam položek nebo velké množství informací posunutím buď vodorovně nebo svisle v rámci aplikace nebo ovládacího prvku. Posuvníky jsou běžné prvek rozhraní Windows proto <xref:System.Windows.Forms.ScrollBar> ovládací prvek se často používá s ovládacími prvky, které nejsou odvozeny od <xref:System.Windows.Forms.ScrollableControl> třídy. Podobně, zvolte mnoho vývojářů začlenit <xref:System.Windows.Forms.ScrollBar> řízení při vytváření vlastních uživatelských ovládacích prvků.  
@@ -36,6 +36,7 @@ Windows Forms <xref:System.Windows.Forms.ScrollBar> ovládací prvky se použív
  Když uživatel stiskne jeden šipky klíče nebo kliknutí na jedno z tlačítek posuvníku panelu, <xref:System.Windows.Forms.ScrollBar.Value%2A> změny vlastností podle hodnoty nastavené <xref:System.Windows.Forms.ScrollBar.SmallChange%2A> vlastnost.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.HScrollBar>
 - <xref:System.Windows.Forms.VScrollBar>
 - [Ovládací prvky používané ve Windows Forms](controls-to-use-on-windows-forms.md)

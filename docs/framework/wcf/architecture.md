@@ -6,12 +6,12 @@ helpviewer_keywords:
 - WCF [WCF], architecture
 - architecture [WCF]
 ms.assetid: a3bcb0a1-56ea-4ba6-9736-d260d90dade5
-ms.openlocfilehash: f152ac48c2897259d07222fafd33d17d5287a870
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: b0e4f9af0ff84a8d560b332d227b1ba9ae18bd4b
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54745377"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59099700"
 ---
 # <a name="windows-communication-foundation-architecture"></a>Architektura Windows Communication Foundation
 Následující obrázek znázorňuje hlavní vrstvy architektury Windows Communication Foundation (WCF).  
@@ -46,5 +46,6 @@ Následující obrázek znázorňuje hlavní vrstvy architektury Windows Communi
  Služby mohou také být *hostované*, nebo spustit v externí agenta, například IIS nebo aktivace služby Windows (WAS) spravuje spustitelný soubor. BYLA, byla aplikací WCF umožňuje automaticky aktivovat, když jsou nasazená v počítači se systémem. Služby můžete také ručně spustit jako spustitelné soubory (soubory .exe). Služby můžete také spustit automaticky jako služba Windows. Komponenty modelu COM + je rovněž možné hostovat jako služba WCF.  
   
 ## <a name="see-also"></a>Viz také:
-- [Co je Windows Communication Foundation](../../../docs/framework/wcf/whats-wcf.md)
-- [Základní koncepty Windows Communication Foundation](../../../docs/framework/wcf/fundamental-concepts.md)
+
+- [Co je to Windows Communication Foundation](../../../docs/framework/wcf/whats-wcf.md)
+- [Základní koncepty služby Windows Communication Foundation](../../../docs/framework/wcf/fundamental-concepts.md)

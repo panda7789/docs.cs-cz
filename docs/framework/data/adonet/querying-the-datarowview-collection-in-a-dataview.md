@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: b9070a12-1094-44d6-bb87-a23b50bcb0af
-ms.openlocfilehash: 1890ab2fcc7e1427d9c74f6c981e232802b0eb1d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 8b6b6c5b9d7157b1279f23770b1d223635252685
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54643738"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59092952"
 ---
 # <a name="querying-the-datarowview-collection-in-a-dataview"></a>Dotazování na kolekci DataRowView v zobrazení dat
 <xref:System.Data.DataView> Zpřístupňuje vyčíslitelné kolekce <xref:System.Data.DataRowView> objekty. <xref:System.Data.DataRowView> představuje vlastní zobrazení <xref:System.Data.DataRow> a zobrazí konkrétní verzi, která <xref:System.Data.DataRow> v ovládacím prvku. Pouze jednu verzi <xref:System.Data.DataRow> lze zobrazit pomocí ovládacího prvku, například <xref:System.Windows.Forms.DataGridView>. Můžete přistupovat <xref:System.Data.DataRow> , který je zveřejněný prostřednictvím <xref:System.Data.DataRowView> prostřednictvím <xref:System.Data.DataRowView.Row%2A> vlastnost <xref:System.Data.DataRowView>. Při zobrazení hodnoty pomocí <xref:System.Data.DataRowView>, <xref:System.Data.DataView.RowStateFilter%2A> vlastnost rozhodne, kterou verzi řádku základního <xref:System.Data.DataRow> je přístupný. Informace o přístupu k pomocí verze odlišný řádek <xref:System.Data.DataRow>, naleznete v tématu [stavy řádků a verze řádků](../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-states-and-row-versions.md). Protože kolekce <xref:System.Data.DataRowView> objekty, které jsou vystavené <xref:System.Data.DataView> je vyčíslitelná, můžete použít [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] k dotazu nad ním.  
@@ -26,4 +26,5 @@ ms.locfileid: "54643738"
  [!code-vb[DP DataView Samples#QueryDataView1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP DataView Samples/VB/Form1.vb#querydataview1)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Datová vazba a LINQ to DataSet](../../../../docs/framework/data/adonet/data-binding-and-linq-to-dataset.md)

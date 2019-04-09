@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: fb58040394d99ae0c5a10672946fa5a6ead5e751
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e33e9be112a6a10f89b88005496ce2e63dff2d54
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54533413"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59080680"
 ---
 # <a name="icordebugstackwalk-interface"></a>ICorDebugStackWalk – rozhraní
 Poskytuje metody pro získání spravovaných metod nebo rámců v zásobníku vlákna.  
@@ -50,5 +50,6 @@ Poskytuje metody pro získání spravovaných metod nebo rámců v zásobníku v
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+
+- [Debugging – rozhraní](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
 - [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)

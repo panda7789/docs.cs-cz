@@ -1,15 +1,15 @@
 ---
-title: Vytváření rolí aplikací na SQL serveru
+title: Vytváření rolí aplikací na SQL Serveru
 ms.date: 03/30/2017
 ms.assetid: 27442435-dfb2-4062-8c59-e2960833a638
-ms.openlocfilehash: 4d3ee759a11417d5f4d36a295f20c7f7886d30d9
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f836fd239eca30d0a1f4a667cddc844446d1d951
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54638129"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59100367"
 ---
-# <a name="creating-application-roles-in-sql-server"></a>Vytváření rolí aplikací na SQL serveru
+# <a name="creating-application-roles-in-sql-server"></a>Vytváření rolí aplikací na SQL Serveru
 Aplikační role poskytují způsob, jak přiřadit oprávnění k aplikaci místo na uživatele nebo role databáze. Uživatelům můžete připojit k databázi, aktivace aplikační role a předpokládají oprávnění udělených aplikaci. Oprávnění udělená aplikaci role jsou platné po dobu trvání připojení.  
   
 > [!IMPORTANT]
@@ -59,6 +59,7 @@ Aplikační role poskytují způsob, jak přiřadit oprávnění k aplikaci mís
 |[Aplikační role](/sql/relational-databases/security/authentication-access/application-roles)|Popisuje, jak vytvořit a používat aplikačních rolí v systému SQL Server 2008.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Zabezpečení aplikací ADO.NET](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)
 - [Přehled zabezpečení SQL Serveru](../../../../../docs/framework/data/adonet/sql/overview-of-sql-server-security.md)
 - [Scénáře zabezpečení aplikací na SQL Serveru](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)

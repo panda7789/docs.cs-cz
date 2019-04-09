@@ -17,12 +17,12 @@ helpviewer_keywords:
 - Internet, streams
 - streams
 ms.assetid: 02b05fba-7235-45ce-94e5-060436ee0875
-ms.openlocfilehash: 9849c64b30ed1021c12f34a7920104537292197a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a593ea324d39d8161ad87c4df6d6010970f3e1c5
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54628458"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59109054"
 ---
 # <a name="using-streams-on-the-network"></a>Použití streamů v síti
 Síťové prostředky jsou reprezentovány v rozhraní .NET Framework jako datové proudy. Rozhraní .NET Framework pomocí zpracování datových proudů obecně, nabízí následující možnosti:  
@@ -103,5 +103,6 @@ sr.Close()
 ```  
   
 ## <a name="see-also"></a>Viz také:
-- [Postupy: Žádost o Data pomocí třídy WebRequest](../../../docs/framework/network-programming/how-to-request-data-using-the-webrequest-class.md)
+
+- [Postupy: Vyžádání dat pomocí třídy WebRequest](../../../docs/framework/network-programming/how-to-request-data-using-the-webrequest-class.md)
 - [Žádosti o data](../../../docs/framework/network-programming/requesting-data.md)

@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Zpracování události uživatelského vstupu v ovládacích prvcích Windows Forms'
+title: 'Postupy: Obsluha událostí uživatelského vstupu v ovládacích prvcích Windows Forms'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - Windows Forms controls, user input
 - user input [Windows Forms], Windows Forms controls
 ms.assetid: 3de74dcf-fae3-42d0-92b5-bc04a61a6888
-ms.openlocfilehash: 886558eb33ffbbec65917f15f4da16673518dce9
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 5dc1997dffc53632ce8b36bc5fe89e768871fd0f
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57723952"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59108664"
 ---
-# <a name="how-to-handle-user-input-events-in-windows-forms-controls"></a>Postupy: Zpracování události uživatelského vstupu v ovládacích prvcích Windows Forms
+# <a name="how-to-handle-user-input-events-in-windows-forms-controls"></a>Postupy: Obsluha událostí uživatelského vstupu v ovládacích prvcích Windows Forms
 Tento příklad ukazuje, jak zpracovat většinu klávesnice, myši, fokus a ověřovací události, které mohou nastat v ovládacím prvku Windows Forms. Textové pole s názvem `TextBoxInput` přijímá události, když má fokus, a informace o každé události je zapsaný do textového pole s názvem `TextBoxOutput` v pořadí, ve kterém jsou vyvolány události. Aplikace také obsahuje sadu políčka, která umožňuje filtrovat události do sestavy.  
   
 ## <a name="example"></a>Příklad  
@@ -32,4 +32,5 @@ Tento příklad ukazuje, jak zpracovat většinu klávesnice, myši, fokus a ov�
  Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Uživatelský vstup ve Windows Forms](user-input-in-windows-forms.md)

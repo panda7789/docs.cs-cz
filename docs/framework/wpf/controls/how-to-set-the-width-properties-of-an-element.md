@@ -8,12 +8,12 @@ helpviewer_keywords:
 - width properties [WPF]
 - Panel control [WPF], width properties of elements
 ms.assetid: 6ee04a9d-63f0-4f5b-a406-0a8cd4c35729
-ms.openlocfilehash: a8fdc7c6659eb33f948741145c0b2e100bb133e4
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: a5ed67ba20176398a863a1e9826b1eab71b182f2
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57376842"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59096872"
 ---
 # <a name="how-to-set-the-width-properties-of-an-element"></a>Postupy: Nastavení vlastností šířky elementu
 ## <a name="example"></a>Příklad  
@@ -34,12 +34,13 @@ ms.locfileid: "57376842"
  Úplnou ukázku najdete v tématu [ukázkové porovnání vlastnosti Šířka](https://go.microsoft.com/fwlink/?LinkID=160050).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Controls.ListBox>
 - <xref:System.Windows.FrameworkElement>
 - <xref:System.Windows.FrameworkElement.ActualWidth%2A>
 - <xref:System.Windows.FrameworkElement.MaxWidth%2A>
 - <xref:System.Windows.FrameworkElement.MinWidth%2A>
 - <xref:System.Windows.FrameworkElement.Width%2A>
-- [Přehled panelu](panels-overview.md)
+- [Přehled panelů](panels-overview.md)
 - [Nastavení vlastností výšky elementu](how-to-set-the-height-properties-of-an-element.md)
 - [Ukázkové porovnání vlastnosti šířky](https://go.microsoft.com/fwlink/?LinkID=160050)

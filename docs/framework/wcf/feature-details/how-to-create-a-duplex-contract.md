@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - duplex contracts [WCF]
 ms.assetid: 500a75b6-998a-47d5-8e3b-24e3aba2a434
-ms.openlocfilehash: 8cc53f6842d55892ae178e22e2835555a132778b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 002c94f2cb69e330e8d2796a9f93d977b10f53f9
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54693633"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59078164"
 ---
 # <a name="how-to-create-a-duplex-contract"></a>Postupy: Vytvoření duplexního kontraktu
 Toto téma popisuje základní kroky k vytvoření metody, které používají duplexního kontraktu (obousměrné). Duplexní kontrakt umožňuje klientům a serverům komunikovat mezi sebou nezávisle tak, aby buď inicializaci volání do jiné. Duplexní kontrakt je jedním ze tří vzorů zprávy k dispozici pro služby Windows Communication Foundation (WCF). Další dvě zprávy vzory jsou jednosměrná a požadavek odpověď. Duplexní kontrakt se skládá ze dvou jednosměrné kontrakty mezi klientem a serverem a nevyžaduje korelaci volání metody. Tento typ kontraktu použijte, pokud vaše služba musí dotazování klienta pro další informace nebo explicitně vyvolat události na straně klienta. Další informace o vytváření klientské aplikace pro duplexní kontrakt, naleznete v tématu [jak: Přístup ke službám pomocí duplexního kontraktu](../../../../docs/framework/wcf/feature-details/how-to-access-services-with-a-duplex-contract.md). Pracovní ukázku najdete v tématu [duplexní](../../../../docs/framework/wcf/samples/duplex.md) vzorku.  
@@ -68,6 +68,7 @@ Toto téma popisuje základní kroky k vytvoření metody, které používají d
 -   Koncové body vystavení duplexní služby musí být zabezpečená. Služba přijme zprávu duplexní, dohlíží na ReplyTo v této příchozí zprávy k určení, kam chcete odeslat odpověď. Pokud není zabezpečený kanál, může nedůvěryhodného klienta odeslat škodlivý zprávu s ReplyTo cílový počítač, což vede k odepření služby cílového počítače. Zprávy regulární požadavek odpověď to není problém, protože ReplyTo je ignorována a odpověď je odeslána na kanál, který byl původní zprávu v na.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.ServiceContractAttribute>
 - <xref:System.ServiceModel.OperationContractAttribute>
 - [Postupy: Přístup ke službám pomocí duplexního kontraktu](../../../../docs/framework/wcf/feature-details/how-to-access-services-with-a-duplex-contract.md)

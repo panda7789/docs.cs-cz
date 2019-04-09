@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Přidání ovládacích prvků do formulářů Windows'
+title: 'Postupy: Přidávání ovládacích prvků do Windows Forms'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - Windows Forms controls, adding to form
 - controls [Windows Forms], adding
 ms.assetid: 2af86001-9d62-4154-87fb-66db2c3cd9fd
-ms.openlocfilehash: 31820775d4f7fb981599e806aa5e27655039e6ac
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: 72b5931a79284a93a4e0fdf3cb2cc3b03157f5f7
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57720771"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59106480"
 ---
-# <a name="how-to-add-controls-to-windows-forms"></a>Postupy: Přidání ovládacích prvků do formulářů Windows
+# <a name="how-to-add-controls-to-windows-forms"></a>Postupy: Přidávání ovládacích prvků do Windows Forms
 Většinou forem jsou navržené tak, že přidáte ovládací prvky na plochu formuláře k definování uživatelského rozhraní (UI). A *ovládací prvek* je součást na formulář pro zobrazení informací ani nebude přijímat uživatelský vstup. Další informace o ovládacích prvcích najdete v tématu [ovládacích prvků Windows Forms](index.md).  
   
 > [!NOTE]
@@ -90,8 +90,9 @@ Většinou forem jsou navržené tak, že přidáte ovládací prvky na plochu f
     >  Místního počítače k ohrožení zabezpečení prostřednictvím sítě může být odkazem škodlivý `UserControl`. To může být pouze v případě nežádoucí osoba vytváření škodlivé vlastního ovládacího prvku, za nímž následuje omylem přidání do projektu žádný problém.  
   
 ## <a name="see-also"></a>Viz také:
-- [Windows Forms – ovládací prvky](index.md)
+
+- [Ovládací prvky Windows Forms](index.md)
 - [Uspořádávání ovládacích prvků ve Windows Forms](arranging-controls-on-windows-forms.md)
-- [Postupy: Změna velikosti ovládacích prvků ve formulářích Windows](how-to-resize-controls-on-windows-forms.md)
-- [Postupy: Nastavit Text, zobrazený ovládacím prvkem Windows Forms](how-to-set-the-text-displayed-by-a-windows-forms-control.md)
+- [Postupy: Změna velikosti ovládacích prvků ve Windows Forms](how-to-resize-controls-on-windows-forms.md)
+- [Postupy: Nastavení textu zobrazovaného ovládacím prvkem Windows Forms](how-to-set-the-text-displayed-by-a-windows-forms-control.md)
 - [Ovládací prvky používané ve Windows Forms](controls-to-use-on-windows-forms.md)

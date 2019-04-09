@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 60cc581f-1db5-445b-ba04-a173396bf872
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: bed202d927cc026b903cb006220620210893056e
-ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
+ms.openlocfilehash: d6b9e3d3f5ebc122e2031dac5999a80445ee03a8
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56836146"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59083831"
 ---
 # <a name="collections-and-data-structures"></a>Kolekce a datové struktury
 Podobná data může často být zpracována efektivněji při uloženy a zpracovávány jako kolekce. Můžete použít <xref:System.Array?displayProperty=nameWithType> třídu nebo třídy v <xref:System.Collections>, <xref:System.Collections.Generic>, <xref:System.Collections.Concurrent>, System.Collections.Immutable oborů názvů pro přidání, odebrání a změnu jednotlivých prvků nebo rozsahu prvků v kolekci.  
@@ -25,8 +25,7 @@ Podobná data může často být zpracována efektivněji při uloženy a zpraco
  Existují dva hlavní typy kolekcí; Obecné kolekce a obecné kolekce. Obecné kolekce byly přidány v rozhraní .NET Framework 2.0 a poskytují kolekcí, které jsou typově bezpečné v době kompilace. Z tohoto důvodu obecné kolekce běžně nabízí lepší výkon. Obecné kolekce přijímá parametr typu, když jsou vytvořeny a nevyžadují, že je převeden do a z <xref:System.Object> zadejte při přidání nebo odebrání položek z kolekce.  Kromě toho většina obecné kolekce jsou podporovány v [!INCLUDE[win8_appstore_long](../../../includes/win8-appstore-long-md.md)] aplikace. Neobecnou kolekce ukládá položky jako <xref:System.Object>, vyžaduje přetypování a většina nejsou podporovány pro [!INCLUDE[win8_appstore_long](../../../includes/win8-appstore-long-md.md)] vývoj aplikací. Ale může se zobrazit obecné kolekce ve starším kódu.  
   
  Počínaje [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], kolekce v <xref:System.Collections.Concurrent> obor názvů poskytují efektivní operace bezpečné pro vlákna pro přístup položky kolekce z více vláken. Neměnné kolekce tříd v oboru názvů System.Collections.Immutable ([balíček NuGet](https://www.nuget.org/packages/System.Collections.Immutable)) jsou ze své podstaty bezpečné pro vlákna, protože operace se provádějí na kopii původní kolekci a původní kolekci nelze změnit.  
-  
-  
+
 <a name="BKMK_Commoncollectionfeatures"></a>   
 ## <a name="common-collection-features"></a>Běžné funkce kolekce  
  Všechny kolekce poskytují metody pro přidání, odebrání nebo hledání položek v kolekci. Kromě toho všechny kolekce, která přímo nebo nepřímo implementovat <xref:System.Collections.ICollection> rozhraní nebo <xref:System.Collections.Generic.ICollection%601> rozhraní sdílet tyto funkce:  

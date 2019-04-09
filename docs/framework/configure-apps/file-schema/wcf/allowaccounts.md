@@ -2,12 +2,12 @@
 title: <allowAccounts>
 ms.date: 03/30/2017
 ms.assetid: 166923a9-a8ac-478f-92f9-529d9667f3a6
-ms.openlocfilehash: fd3121146577122446ba82528fc6e46dadbf5033
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: f9def3004b116afdc629de136cdfe0b0eb6e75c2
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55255546"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59102619"
 ---
 # <a name="allowaccounts"></a>\<allowAccounts>
 Obsahuje kolekci prvků konfigurace, které určují uživatelské účty pro procesy, které hostují služby Windows Communication Foundation (WCF) a jímž je udělen přístup ke službě sdílení.  
@@ -41,6 +41,7 @@ Obsahuje kolekci prvků konfigurace, které určují uživatelské účty pro pr
 |[\<NET.pipe >](../../../../../docs/framework/configure-apps/file-schema/wcf/net-pipe.md) nebo [ \<net.tcp >](../../../../../docs/framework/configure-apps/file-schema/wcf/net-tcp.md)|Určuje nastavení konfigurace pro Net kanálu nebo služby Sdílení TCP.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Activation.Configuration.NetTcpSection.AllowAccounts%2A>
 - <xref:System.ServiceModel.Activation.Configuration.NetPipeSection.AllowAccounts%2A>
 - <xref:System.ServiceModel.Activation.Configuration.SecurityIdentifierElementCollection>

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - data binding [WPF], about data binding
 - conversion for data binding [WPF]
 ms.assetid: c707c95f-7811-401d-956e-2fffd019a211
-ms.openlocfilehash: 318473c146f5822259a3131192ce33b9d28a5461
-ms.sourcegitcommit: 68eb5c4928e2b082f178a42c16f73fedf52c2ab8
-ms.translationtype: MT
+ms.openlocfilehash: a11118f0fad98d7c719951b97d7ad2b431e7af6d
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/05/2019
-ms.locfileid: "59055349"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59081265"
 ---
 # <a name="data-binding-overview"></a>Přehled datových vazeb
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] vytváření datových vazeb nabízí jednoduchý a konzistentní způsob pro aplikace k zobrazení a interakci s daty. Elementy mohou být vázány na data z různých zdrojů dat ve formě [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] objekty a [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)]. <xref:System.Windows.Controls.ContentControl>s jako <xref:System.Windows.Controls.Button> a <xref:System.Windows.Controls.ItemsControl>s jako <xref:System.Windows.Controls.ListBox> a <xref:System.Windows.Controls.ListView> mají integrované funkce, které umožňují flexibilní styly jednotlivých datových položek nebo kolekce datových položek. Řazení, filtrování a zobrazení skupiny můžete generovat na data.  
@@ -23,8 +23,7 @@ ms.locfileid: "59055349"
  Funkci datové vazby v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] má několik výhod oproti tradičním modelů, včetně celou řadu vlastností, které ze své podstaty podporují flexibilní datová vazba [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] vyjádření data a obchodní oddělit logiku z [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)].  
   
  Toto téma popisuje první koncepty na základní [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] pak přejde do použití a datové vazby <xref:System.Windows.Data.Binding> třídy a další funkce datovou vazbu.  
-  
-  
+
 <a name="what_is_data_binding"></a>   
 ## <a name="what-is-data-binding"></a>Co je datové vazby?  
  Datová vazba je proces, který vytvoří připojení mezi aplikací [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] a obchodní logiky. Pokud data poskytuje správné oznámení vazbu se správným nastavením, potom, když se data změní jeho hodnotu prvky, které jsou vázány na data změny projeví automaticky. Datové vazby může také znamenat, že pokud se změní vnější znázornění dat v elementu, pak podkladová data mohly automaticky aktualizovat tak, aby odrážely změny. Například, pokud uživatel upravuje hodnotu v <xref:System.Windows.Controls.TextBox> element podkladové hodnoty dat se automaticky aktualizuje tak, aby odrážela tuto změnu.  
@@ -232,8 +231,7 @@ ms.locfileid: "59055349"
 <a name="collection_views"></a>   
 ### <a name="collection-views"></a>Zobrazení kolekcí  
  Jakmile vaše <xref:System.Windows.Controls.ItemsControl> je vázán na shromažďování dat, můžete chtít třídění, filtrování nebo skupiny data. K tomuto účelu použijte zobrazení kolekcí, které jsou třídy, které implementují <xref:System.ComponentModel.ICollectionView> rozhraní.  
-  
-  
+
 #### <a name="what-are-collection-views"></a>Jaké jsou zobrazení kolekcí?  
  Zobrazení kolekce je vrstva nad zdrojovou kolekci vazby, který umožňuje procházení a zobrazení zdrojové kolekce založené na řazení, filtrování a skupiny dotazů, aniž byste museli změnit základní zdrojové kolekce. Zobrazení kolekce také uchovává ukazatel na aktuální položku v kolekci. Pokud zdrojové kolekce implementuje <xref:System.Collections.Specialized.INotifyCollectionChanged> rozhraní, změny vyvolané <xref:System.Collections.Specialized.INotifyCollectionChanged.CollectionChanged> události se rozšíří na zobrazení.  
   
@@ -430,6 +428,7 @@ ms.locfileid: "59055349"
  Připojená vlastnost lze nastavit <xref:System.Diagnostics.PresentationTraceSources.TraceLevel%2A?displayProperty=nameWithType> související vazby objektu získat informace o stavu konkrétní vazby.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Controls.DataErrorValidationRule>
 - [Novinky ve verzi 4.5 grafického subsystému WPF](../getting-started/whats-new.md)
 - [Vytvoření vazby k výsledkům dotazu LINQ](how-to-bind-to-the-results-of-a-linq-query.md)

@@ -24,16 +24,15 @@ helpviewer_keywords:
 - focus [WPF]
 - mouse position [WPF]
 ms.assetid: ee5258b7-6567-415a-9b1c-c0cbe46e79ef
-ms.openlocfilehash: 810417529f71ec366f940c062a416a675bfecd2a
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
-ms.translationtype: MT
+ms.openlocfilehash: d8eb22c4de9dc28f332b220dd4703b0c681904f3
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57376816"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59090019"
 ---
 # <a name="input-overview"></a>Přehled vstupu
 <a name="introduction"></a> [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] Subsystému poskytuje výkonný [!INCLUDE[TLA#tla_api](../../../../includes/tlasharptla-api-md.md)] získávání vstupu z nejrůznějších zařízení, včetně myši, klávesnice, dotykové ovládání a stylus. Toto téma popisuje služby poskytované [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a vysvětlení architektury vstupní systémy.
-
 
 <a name="input_api"></a>
 ## <a name="input-api"></a>Vstupní rozhraní API
@@ -288,9 +287,9 @@ ms.locfileid: "57376816"
 
 |Událost, která se nazývá zrušit v|Události myši, ke kterým dochází pro vstup, který již došlo k chybě|
 |----------------------------------------|-----------------------------------------------------------------|
-|<xref:System.Windows.UIElement.ManipulationStarting> a <xref:System.Windows.UIElement.ManipulationStarted>|Myš dolů události.|
+|<xref:System.Windows.UIElement.ManipulationStarting> and <xref:System.Windows.UIElement.ManipulationStarted>|Myš dolů události.|
 |<xref:System.Windows.UIElement.ManipulationDelta>|Pohybu myší dolů a události pohybu myši.|
-|<xref:System.Windows.UIElement.ManipulationInertiaStarting> a <xref:System.Windows.UIElement.ManipulationCompleted>|Pohybu myší dolů, přesuňte myš a pohybu myší nahoru události.|
+|<xref:System.Windows.UIElement.ManipulationInertiaStarting> and <xref:System.Windows.UIElement.ManipulationCompleted>|Pohybu myší dolů, přesuňte myš a pohybu myší nahoru události.|
 
  Všimněte si, že pokud zavoláte <xref:System.Windows.Input.ManipulationStartingEventArgs.Cancel%2A> při manipulaci s je v nečinnosti, metoda vrátí `false` a vstup nevyvolává události myši.
 
@@ -391,6 +390,7 @@ ms.locfileid: "57376816"
  Jsou k dispozici další prostředky, které popisují [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] prvky rozhraní framework a směrování událostí podrobněji. Následující přehledy pro další informace najdete v tématu [přehled příkazů](commanding-overview.md), [detailní přehled](focus-overview.md), [základní prvky přehled](base-elements-overview.md), [stromy v subsystému WPF](trees-in-wpf.md), a [směrovat Přehled událostí](routed-events-overview.md).
 
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled fokusu](focus-overview.md)
 - [Přehled příkazů](commanding-overview.md)
 - [Přehled směrovaných událostí](routed-events-overview.md)

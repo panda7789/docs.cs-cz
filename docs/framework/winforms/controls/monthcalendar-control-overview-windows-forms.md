@@ -8,12 +8,12 @@ helpviewer_keywords:
 - calendar controls [Windows Forms], Windows Forms
 - MonthCalendar control [Windows Forms], setting the first day of the week
 ms.assetid: 788c5325-b721-44ec-95bf-9b680ba0f6a2
-ms.openlocfilehash: a081c4e6d8210a6bb65fa14b31d12d4295931d53
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 8928a78735392920d893661c70554bd35eba2886
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57718880"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59106233"
 ---
 # <a name="monthcalendar-control-overview-windows-forms"></a>MonthCalendar – přehled ovládacího prvku (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.MonthCalendar> ovládací prvek zobrazí intuitivní grafické rozhraní pro uživatele k zobrazení a nastavit informace o datu. Ovládací prvek zobrazuje kalendář: Mřížka obsahující číslované dny v měsíci, uspořádané do sloupce pod dny v týdnu, s vybraný rozsah kalendářních dat, zvýrazněn. Můžete vybrat jiného měsíce kliknutím na tlačítka se šipkami na obou stranách titulek měsíce. Na rozdíl od podobný <xref:System.Windows.Forms.DateTimePicker> ovládací prvek, vyberete více než jeden den s tímto ovládacím prvkem. Další informace o <xref:System.Windows.Forms.DateTimePicker> řídí, najdete v článku [DateTimePicker – ovládací prvek](datetimepicker-control-windows-forms.md).  
@@ -26,5 +26,6 @@ Windows Forms <xref:System.Windows.Forms.MonthCalendar> ovládací prvek zobraz�
  Klíčové vlastnosti <xref:System.Windows.Forms.MonthCalendar> je ovládací prvek <xref:System.Windows.Forms.MonthCalendar.SelectionRange%2A>, rozsahu dat vybraného v ovládacím prvku. <xref:System.Windows.Forms.MonthCalendar.SelectionRange%2A> Hodnota nemůže být delší než maximální počet dní, které lze vybrat, nastavte <xref:System.Windows.Forms.MonthCalendar.MaxSelectionCount%2A> vlastnost. Nejstarší a nejnovější data, může uživatel vybrat jsou určeny <xref:System.Windows.Forms.MonthCalendar.MaxDate%2A> a <xref:System.Windows.Forms.MonthCalendar.MinDate%2A> vlastnosti.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.MonthCalendar>
 - [Ovládací prvek MonthCalendar](monthcalendar-control-windows-forms.md)

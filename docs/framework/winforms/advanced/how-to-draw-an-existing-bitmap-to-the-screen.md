@@ -9,12 +9,12 @@ helpviewer_keywords:
 - bitmaps [Windows Forms], loading in Windows Forms applications
 - images [Windows Forms], displaying on Windows Forms
 ms.assetid: 5bc558d7-b326-4050-a834-b8600da0de95
-ms.openlocfilehash: d2e06aa382bc2b01a4308f99735ca533e7a9a3ea
-ms.sourcegitcommit: 15ab532fd5e1f8073a4b678922d93b68b521bfa0
+ms.openlocfilehash: 90511adf9caffe7952e270d6fe32dd85162a29d7
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58653818"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59089163"
 ---
 # <a name="how-to-draw-an-existing-bitmap-to-the-screen"></a>Postupy: Nakreslení existujícího rastrového obrázku na obrazovku
 Snadno můžete nakreslit stávající bitovou kopii na obrazovce. Nejdřív je potřeba vytvořit <xref:System.Drawing.Bitmap> objektu pomocí konstruktoru rastrový obrázek, který vezme název souboru, <xref:System.Drawing.Bitmap.%23ctor%28System.String%29>. Tento konstruktor přijímá imagí v několika různých formátech, včetně BMP, GIF, JPEG, PNG a TIFF. Po vytvoření <xref:System.Drawing.Bitmap> objektu, který předat <xref:System.Drawing.Bitmap> objektu <xref:System.Drawing.Graphics.DrawImage%2A> metodu <xref:System.Drawing.Graphics> objektu.  
@@ -33,5 +33,6 @@ Snadno můžete nakreslit stávající bitovou kopii na obrazovce. Nejdřív je 
  V předchozím příkladu je určený k použití pomocí Windows Forms a vyžaduje <xref:System.Windows.Forms.PaintEventArgs> `e`, což je parametr <xref:System.Windows.Forms.Control.Paint> obslužné rutiny události.  
   
 ## <a name="see-also"></a>Viz také:
-- [Grafika a kreslení v modelu Windows Forms](graphics-and-drawing-in-windows-forms.md)
+
+- [Grafika a kreslení v rozhraní Windows Forms](graphics-and-drawing-in-windows-forms.md)
 - [Práce s obrázky, rastrovými obrázky, ikonami a metasoubory](working-with-images-bitmaps-icons-and-metafiles.md)

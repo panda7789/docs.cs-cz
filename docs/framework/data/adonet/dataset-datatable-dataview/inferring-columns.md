@@ -2,12 +2,12 @@
 title: Odvozování sloupců
 ms.date: 03/30/2017
 ms.assetid: 0e022699-c922-454c-93e2-957dd7e7247a
-ms.openlocfilehash: f3edd09b1fb8169e8f609514de38b3c37574079b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 53e77f624c5af8f61a32d5b1399d2728f32011a7
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54655228"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59107201"
 ---
 # <a name="inferring-columns"></a>Odvozování sloupců
 Po ADO.NET bylo zjištěno z dokumentu XML, které prvky k odvození jako tabulka pro <xref:System.Data.DataSet>, pak odvodí sloupce pro tyto tabulky. ADO.NET 2.0 zavedl nový modul odvození schématu, která odvodí typ dat silného typu pro každou **simpleType** elementu. V předchozích verzích, datový typ vyvozeným **simpleType** element se vždy **XSD: String**.  
@@ -66,6 +66,7 @@ Po ADO.NET bylo zjištěno z dokumentu XML, které prvky k odvození jako tabulk
 |Text1|Text2|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Odvození relační struktury datové sady z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/inferring-dataset-relational-structure-from-xml.md)
 - [Načtení datové sady z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md)
 - [Načtení informací o schématu datové sady z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-dataset-schema-information-from-xml.md)

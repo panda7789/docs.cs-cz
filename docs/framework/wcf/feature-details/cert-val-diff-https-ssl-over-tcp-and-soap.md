@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - certificates [WCF], validation differences
 ms.assetid: 953a219f-4745-4019-9894-c70704f352e6
-ms.openlocfilehash: f85b45186c7cbc299e68f6f914f591f337aa3993
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 0ab343da821e8994ac3a652bfc55db261d5e48f6
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54517068"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59089481"
 ---
 # <a name="certificate-validation-differences-between-https-ssl-over-tcp-and-soap-security"></a>Rozdíly v ověřování certifikátů mezi zabezpečeními HTTPS, SSL přes TCP a SOAP
 Můžete certifikátů ve Windows Communication Foundation (WCF) se zabezpečením vrstvy zpráv (protokolu SOAP) kromě zabezpečení přenosové vrstvy (TLS) přes HTTP (HTTPS) nebo TCP. Toto téma popisuje rozdíly v způsob, jakým tyto certifikáty se ověřují.  
@@ -48,5 +48,6 @@ Můžete certifikátů ve Windows Communication Foundation (WCF) se zabezpečen�
  [!code-vb[c_CertificateValidationDifferences#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_certificatevalidationdifferences/vb/source.vb#4)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Net.Security.RemoteCertificateValidationCallback>
 - [Práce s certifikáty](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)

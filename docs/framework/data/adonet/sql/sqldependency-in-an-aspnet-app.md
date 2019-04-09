@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: ff226ce3-f6b5-47a1-8d22-dc78b67e07f5
-ms.openlocfilehash: 42eb0a417659776b2cd2fffa9d2fd62e58a4a176
-ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
-ms.translationtype: MT
+ms.openlocfilehash: c49d28f42dec311d4a0c35a7115b00d989411358
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56091978"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59073712"
 ---
 # <a name="sqldependency-in-an-aspnet-application"></a>SqlDependency v aplikaci ASP.NET
 Příklad v této části ukazuje, jak používat <xref:System.Data.SqlClient.SqlDependency> nepřímo s využitím technologie ASP.NET <xref:System.Web.Caching.SqlCacheDependency> objektu. <xref:System.Web.Caching.SqlCacheDependency> Objektu používá <xref:System.Data.SqlClient.SqlDependency> naslouchat oznámením a správně aktualizovat mezipaměť.  
@@ -58,5 +58,6 @@ Příklad v této části ukazuje, jak používat <xref:System.Data.SqlClient.Sq
  Nyní aktualizovat data v databázi, pomocí příkazu jazyka Transact-SQL, aktualizovat a aktualizujte stránku. Času zobrazeného teď označuje, že mezipaměť byl aktualizován novými daty z databáze. Všimněte si, že i když se aktualizuje mezipaměť, času zobrazeného na stránce se nezmění, dokud dojde k události postback.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Oznámení pro dotazy na SQL Serveru](../../../../../docs/framework/data/adonet/sql/query-notifications-in-sql-server.md)
 - [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

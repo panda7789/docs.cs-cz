@@ -7,12 +7,12 @@ helpviewer_keywords:
 - graphics [WPF], composite shapes
 - fill [WPF], controlling
 ms.assetid: c1c94575-9eca-48a5-a49a-2ec65259f229
-ms.openlocfilehash: 0b2e71e7db403857aa1a3b0dddcfe907150f9528
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
-ms.translationtype: MT
+ms.openlocfilehash: 9b3ab1f7b81c296aa1ee766136b6c95b82cab105
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57357284"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59084047"
 ---
 # <a name="how-to-control-the-fill-of-a-composite-shape"></a>Postupy: Řízení výplně složeného tvaru
 <xref:System.Windows.Media.GeometryGroup.FillRule%2A> Vlastnost <xref:System.Windows.Media.GeometryGroup> nebo <xref:System.Windows.Media.PathGeometry>, určuje "pravidlo" který složeného tvaru používá k určení, zda daný bod je součástí geometrii. Existují dva možné hodnoty pro <xref:System.Windows.Media.FillRule>: <xref:System.Windows.Media.FillRule.EvenOdd> a <xref:System.Windows.Media.FillRule.Nonzero>. V následujících částech se popisují, jak používat tyto dvě pravidla.  
@@ -62,5 +62,6 @@ ms.locfileid: "57357284"
 ## <a name="example"></a>Příklad  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Vytvoření složeného tvaru](how-to-create-a-composite-shape.md)
 - [Přehled geometrie](geometry-overview.md)

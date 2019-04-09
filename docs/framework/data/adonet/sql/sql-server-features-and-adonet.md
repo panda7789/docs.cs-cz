@@ -1,15 +1,15 @@
 ---
-title: Funkce SQL serveru a ADO.NET
+title: Funkce SQL Serveru a ADO.NET
 ms.date: 03/30/2017
 ms.assetid: 2839529b-a79b-4450-be5d-07a98dbc7a0f
-ms.openlocfilehash: 9e6f9d0404108428375aa859fa3f0b0939da6a24
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: b07f5e1e62744e4301acd64034481cf391100af8
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54705368"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59107520"
 ---
-# <a name="sql-server-features-and-adonet"></a>Funkce SQL serveru a ADO.NET
+# <a name="sql-server-features-and-adonet"></a>Funkce SQL Serveru a ADO.NET
 Témata v této části popisují funkce v systému SQL Server, které jsou zaměřeny na vývoj aplikací v databázi pomocí ADO.NET.  
   
  Další informace najdete v tématu knihy Online SQL Server pro verzi systému SQL Server používáte, jak je uvedeno v následující tabulce.  
@@ -47,8 +47,9 @@ Témata v této části popisují funkce v systému SQL Server, které jsou zam�
  Popisuje podpora klienta SqlClient pro LocalDB databáze.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Operace dat na SQL Serveru v ADO.NET](../../../../../docs/framework/data/adonet/sql/sql-server-data-operations.md)
 - [Načítání a úpravy dat v ADO.NET](../../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)
-- [LINQ to SQL](../../../../../docs/framework/data/adonet/sql/linq/index.md)
+- [Technologie LINQ to SQL](../../../../../docs/framework/data/adonet/sql/linq/index.md)
 - [SQL Server a ADO.NET](../../../../../docs/framework/data/adonet/sql/index.md)
 - [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

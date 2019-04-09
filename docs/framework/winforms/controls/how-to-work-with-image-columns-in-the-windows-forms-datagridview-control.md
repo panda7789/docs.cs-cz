@@ -10,12 +10,12 @@ helpviewer_keywords:
 - image columns [Windows Forms], Windows Forms
 - DataGridView control [Windows Forms], image columns
 ms.assetid: 8a37aa75-3c6e-4893-91d0-7a5f34bfe287
-ms.openlocfilehash: 7bb0a74355f9ca81279a2c43f689ddf4d7540e90
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 09af70cd00b4fc88b5cd76f7de920905c5b3a956
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57721837"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59101826"
 ---
 # <a name="how-to-work-with-image-columns-in-the-windows-forms-datagridview-control"></a>Postupy: Práce se sloupci obrázků v ovládacím prvku Windows Forms DataGridView
 Následující příklad kódu ukazuje, jak používat <xref:System.Windows.Forms.DataGridView> obrázek sloupce v interaktivní uživatelské rozhraní (UI). Příklad také ukazuje možnosti nastavení velikosti a rozložení image s <xref:System.Windows.Forms.DataGridViewImageColumn>.  
@@ -33,6 +33,7 @@ Následující příklad kódu ukazuje, jak používat <xref:System.Windows.Form
  Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.DataGridViewImageColumn>
 - [Programování s buňkami, řádky a sloupci v ovládacím prvku Windows Forms DataGridView](programming-with-cells-rows-and-columns-in-the-datagrid.md)

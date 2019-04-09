@@ -7,12 +7,12 @@ helpviewer_keywords:
 - graphics [WPF], rounding corners of RectangleGeometry objects [WPF]
 - rounding corners of RectangleGeometry objects [WPF]
 ms.assetid: 926644bc-1357-4c0b-ac81-694bd090ae87
-ms.openlocfilehash: f00d7a7cd6117318efb17645bbb9df279c97adff
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: eb2f173bedb903e12b2795264c684524cfa09825
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57378532"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59089130"
 ---
 # <a name="how-to-round-the-corners-of-a-rectanglegeometry"></a>Postupy: Zaoblení rohů RectangleGeometry
 K Zakulacení rohů <xref:System.Windows.Media.RectangleGeometry>, nastavte jeho <xref:System.Windows.Media.RectangleGeometry.RadiusX%2A> a <xref:System.Windows.Media.RectangleGeometry.RadiusY%2A> vlastnosti na hodnotu větší než nula. Čím větší hodnoty, rohů udává větší zaoblení obdélníku.  
@@ -26,6 +26,7 @@ K Zakulacení rohů <xref:System.Windows.Media.RectangleGeometry>, nastavte jeho
 Obdélníky zaoblené rohy  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled geometrie](geometry-overview.md)
 - [Vytvoření složeného tvaru](how-to-create-a-composite-shape.md)
 - [Vytvoření tvaru pomocí PathGeometry](how-to-create-a-shape-by-using-a-pathgeometry.md)

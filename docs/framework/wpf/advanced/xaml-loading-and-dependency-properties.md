@@ -9,17 +9,16 @@ helpviewer_keywords:
 - dependency properties [WPF], XAML loading and
 - loading XML data [WPF]
 ms.assetid: 6eea9f4e-45ce-413b-a266-f08238737bf2
-ms.openlocfilehash: ed608a658b5077a20ed56419c4ac731641610e3d
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 4db87c5f266a9eed136f0651f48d11720abede65
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57373072"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59083828"
 ---
 # <a name="xaml-loading-and-dependency-properties"></a>Vlastnost závislostí a načítání XAML
 Aktuální [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] provádění jeho [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] procesoru je ze své podstaty používající vlastnost závislosti. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] Procesor při načítání binární soubor používá metody vlastností systému pro vlastnosti závislosti [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] a při zpracovávání atributů, které jsou vlastnosti závislosti. To efektivně obchází vlastnost obálky. Pokud implementujete vlastní vlastnosti závislosti, musí odpovídat tomuto chování a by měl předejde jakýkoli jiný kód v vaši Obálka vlastnosti než metody vlastností systému <xref:System.Windows.DependencyObject.GetValue%2A> a <xref:System.Windows.DependencyObject.SetValue%2A>.  
-  
-  
+
 <a name="prerequisites"></a>   
 ## <a name="prerequisites"></a>Požadavky  
  Toto téma předpokládá, že pochopit vlastnosti závislostí i jako příjemce a Autor a přečetl [přehled vlastností závislosti](dependency-properties-overview.md) a [vlastní vlastnosti závislosti](custom-dependency-properties.md). Doporučujeme mít přečíst [přehled XAML (WPF)](xaml-overview-wpf.md) a [syntaxe XAML v podrobnosti o](xaml-syntax-in-detail.md).  
@@ -42,6 +41,7 @@ Aktuální [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-wincl
  [!code-vb[WPFAquariumSln#AGWithWrapper](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WPFAquariumSln/visualbasic/wpfaquariumobjects/class1.vb#agwithwrapper)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled vlastností závislosti](dependency-properties-overview.md)
 - [Přehled XAML (WPF)](xaml-overview-wpf.md)
 - [Metadata vlastností závislosti](dependency-property-metadata.md)

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 53758b39-bd9b-4640-bb04-cad5ed8d0abf
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ea1059f541d2449a1a2d5dca1644ce8d9a553e40
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
-ms.translationtype: MT
+ms.openlocfilehash: 645c4ea76509bf488b62669f65e03d3690fd5a05
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55283345"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59103828"
 ---
 # <a name="how-to-add-or-remove-access-control-list-entries-net-framework-only"></a>Postupy: Přidávání a odebírání položek seznamu řízení přístupu (pouze rozhraní .NET Framework)
 K přidávání a odebírání položek seznamu řízení přístupu (ACL) do nebo ze souboru nebo adresáře, získat <xref:System.Security.AccessControl.FileSecurity> nebo <xref:System.Security.AccessControl.DirectorySecurity> objektu souboru nebo adresáře. Úpravy objektu a použijte ji zpět do souboru nebo adresáře.  
@@ -46,4 +46,3 @@ K přidávání a odebírání položek seznamu řízení přístupu (ACL) do ne
 
  [!code-csharp[IO.File.GetAccessControl-SetAccessControl#1](../../../samples/snippets/csharp/VS_Snippets_CLR/IO.File.GetAccessControl-SetAccessControl/CS/sample.cs#1)]
  [!code-vb[IO.File.GetAccessControl-SetAccessControl#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/IO.File.GetAccessControl-SetAccessControl/VB/sample.vb#1)]  
-  

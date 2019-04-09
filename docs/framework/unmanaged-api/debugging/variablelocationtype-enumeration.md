@@ -1,5 +1,5 @@
 ---
-title: VariableLocationType Enumeration
+title: VariableLocationType – výčet
 ms.date: 03/30/2017
 api_name:
 - VariableLocationType
@@ -16,14 +16,14 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: dd1a622faa095836a3d5c22c7a18084482074c2c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 392254efcd099aca60e58b3cc0bc61ca85aa2c66
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54653213"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59099947"
 ---
-# <a name="variablelocationtype-enumeration"></a>VariableLocationType Enumeration
+# <a name="variablelocationtype-enumeration"></a>VariableLocationType – výčet
 Určuje umístění nativní typ proměnné.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -58,4 +58,5 @@ typedef enum VariableLocationType
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v462plus](../../../../includes/net-current-v462plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
-- [Výčty pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
+
+- [Ladění výčtů](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)

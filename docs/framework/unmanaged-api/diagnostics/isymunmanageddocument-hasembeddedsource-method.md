@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 620d303bcd33a4d04155850ec2c1b6293bf788d1
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: 1d6c79be95ff80c8de9b07cb33be46a5f5db22b1
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57493255"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59094265"
 ---
 # <a name="isymunmanageddocumenthasembeddedsource-method"></a>ISymUnmanagedDocument::HasEmbeddedSource – metoda
 Vrátí `true` Pokud dokument má zdroj součástí symboly ladění; v opačném případě vrátí `false`.  
@@ -42,4 +42,5 @@ HRESULT HasEmbeddedSource(
  S_OK, pokud metoda uspěje.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [ISymUnmanagedDocument – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocument-interface.md)

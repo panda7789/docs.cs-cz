@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 72c851858ab2f294601d2e7f97b43e21ca815857
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: 1cb5f9decbcdfb71f67a5132dc59773f1de8b0a9
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57474816"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59086426"
 ---
 # <a name="corimageunloading-function"></a>_CorImageUnloading – funkce
 Upozorní zavaděč na bitové kopie spravovaného modulu jsou uvolněna.  
@@ -50,4 +50,5 @@ STDAPI (VOID) _CorImageUnloading(
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
-- [Globální statické funkce pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-global-static-functions.md)
+
+- [Globální statické funkce metadat](../../../../docs/framework/unmanaged-api/metadata/metadata-global-static-functions.md)

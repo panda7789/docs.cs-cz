@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Převod připojených dat'
+title: 'Postupy: Převod vázaných dat'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - data binding [WPF], converting bound data
 - binding data [WPF], converting bound data
 ms.assetid: b00aaa19-c6df-4c3b-a9fd-88a0b488df2b
-ms.openlocfilehash: c98f8e4e5c837e6fbbe836a9eb2f228d2d689542
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 40699bec1c6cd775f7f8495b7a49eda15fb2ed83
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57352293"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59093797"
 ---
-# <a name="how-to-convert-bound-data"></a>Postupy: Převod připojených dat
+# <a name="how-to-convert-bound-data"></a>Postupy: Převod vázaných dat
 Tento příklad ukazuje, jak použít převod na data, která se používá ve vazbách.  
   
  K převodu dat při vytváření vazby, musíte vytvořit třídu, která implementuje <xref:System.Windows.Data.IValueConverter> rozhraní, která zahrnuje <xref:System.Windows.Data.IValueConverter.Convert%2A> a <xref:System.Windows.Data.IValueConverter.ConvertBack%2A> metody.  
@@ -38,6 +38,7 @@ Tento příklad ukazuje, jak použít převod na data, která se používá ve v
  Prostředků stylu odkazuje v předchozím příkladu jsou definovány v oddílu prostředků není zobrazené v tomto tématu.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Implementace ověření vazby](how-to-implement-binding-validation.md)
 - [Přehled datových vazeb](data-binding-overview.md)
-- [Témata s postupy](data-binding-how-to-topics.md)
+- [– postupy](data-binding-how-to-topics.md)

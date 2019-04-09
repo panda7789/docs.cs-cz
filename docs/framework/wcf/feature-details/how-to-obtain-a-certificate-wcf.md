@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - certificates [WCF], obtaining
 ms.assetid: d53762fd-15ea-42dc-b0ea-6a6597aa23f7
-ms.openlocfilehash: cefea47d77fef9a59234584b02b03dca4cd99ebe
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 03ee861f7eba8b2ecee6b4697c5b475eacf78c89
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54709439"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59093901"
 ---
 # <a name="how-to-obtain-a-certificate-wcf"></a>Postupy: Získání certifikátu (WCF)
 K používání některé Windows Communication Foundation (WCF) funkce, která používají certifikáty X.509, stačí nejprve získat certifikáty.  
@@ -28,5 +28,6 @@ K používání některé Windows Communication Foundation (WCF) funkce, která 
     >  Podle toho, která přístup, příjemce, který obsahuje certifikát X.509 žádosti SOAP musí důvěřovat certifikátu X.509. To znamená, že certifikát X.509 nebo vystavitele v řetězu certifikátů je v úložišti certifikátů důvěryhodných osob a že certifikát X.509 není v úložišti nedůvěryhodné certifikáty.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Práce s certifikáty](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)
-- [Postupy: Vytváření dočasných certifikátů pro použití během vývoje.](../../../../docs/framework/wcf/feature-details/how-to-create-temporary-certificates-for-use-during-development.md)
+- [Postupy: Vytváření dočasných certifikátů pro použití během vývoje](../../../../docs/framework/wcf/feature-details/how-to-create-temporary-certificates-for-use-during-development.md)

@@ -1,5 +1,5 @@
 ---
-title: Element <trace>
+title: <trace> Prvek
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/trace
@@ -10,12 +10,12 @@ helpviewer_keywords:
 - trace element
 - trace listener, <trace> element
 ms.assetid: 7931c942-63c1-47c3-a045-9d9de3cacdbf
-ms.openlocfilehash: d930e1fe9a9a4012e363bbbffe83e1ea7cc1c595
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 5faf352dce2a459a999b3cf54209f6bd9793bde0
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55257795"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59073790"
 ---
 # <a name="trace-element"></a>\<trasování > – Element
 Obsahuje moduly pro naslouchání, které shromažďování, ukládání a směrovat trasovací zprávy.  
@@ -45,14 +45,14 @@ Obsahuje moduly pro naslouchání, které shromažďování, ukládání a směr
   
 ## <a name="autoflush-attribute"></a>autoflush atribut  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |`false`|Není vyprázdnění automaticky výstupní vyrovnávací paměť. Toto nastavení je výchozí.|  
 |`true`|Automaticky vyprázdní vyrovnávací paměť pro výstup.|  
   
 ## <a name="usegloballock-attribute"></a>useGlobalLock atribut  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |`false`|Nepoužívá globální uzamčení, pokud je bezpečná; pro naslouchací proces v opačném případě používá globální zámku.|  
 |`true`|Používá globální zámek bez ohledu na to, jestli je bezpečná pro naslouchací proces. Toto nastavení je výchozí.|  
@@ -61,7 +61,7 @@ Obsahuje moduly pro naslouchání, které shromažďování, ukládání a směr
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<listeners>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/listeners-element-for-trace.md)|Určuje naslouchací proces, který shromažďuje, ukládá a provádí směrování zpráv.|  
+|[\<naslouchací procesy >](../../../../../docs/framework/configure-apps/file-schema/trace-debug/listeners-element-for-trace.md)|Určuje naslouchací proces, který shromažďuje, ukládá a provádí směrování zpráv.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -86,6 +86,7 @@ Obsahuje moduly pro naslouchání, které shromažďování, ukládání a směr
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Diagnostics.TraceListener>
 - <xref:System.Diagnostics.DefaultTraceListener>
 - <xref:System.Diagnostics.TextWriterTraceListener>

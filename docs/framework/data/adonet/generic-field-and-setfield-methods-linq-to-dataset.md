@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 1883365f-9d6c-4ccb-9187-df309f47706d
-ms.openlocfilehash: 0dfc21264353ac3aa1e20c7fa7b6b8381d47480d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 7c7f1fef5d1fa575cd6d3bfdb7e6cbbea79ade28
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54562151"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59086010"
 ---
 # <a name="generic-field-and-setfield-methods-linq-to-dataset"></a>Obecné pole a metody SetField (LINQ to DataSet)
 [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] poskytuje rozšiřující metody, které <xref:System.Data.DataRow> třídy pro přístup k hodnoty ve sloupcích: <xref:System.Data.DataRowExtensions.Field%2A> – metoda a <xref:System.Data.DataRowExtensions.SetField%2A> metoda. Tyto metody poskytují jednodušší přístup k hodnotám sloupce pro vývojáře, zejména pokud jde o hodnoty null. <xref:System.Data.DataSet> Používá <xref:System.DBNull.Value> k reprezentaci hodnoty null, zatímco [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] využívá podporu typ připouštějící hodnotu Null, počínaje [!INCLUDE[dnprdnlong](../../../../includes/dnprdnlong-md.md)]. Použití existující přistupující objekt sloupce v <xref:System.Data.DataRow> vyžaduje, abyste přetypovat vrácený objekt do příslušného typu. Pokud konkrétní pole v <xref:System.Data.DataRow> může mít hodnotu null, musí explicitně kontrola hodnot null protože vrací <xref:System.DBNull.Value> a implicitně přetypování na jiný typ vyvolá <xref:System.InvalidCastException>. V následujícím příkladu Pokud <xref:System.Data.DataRow.IsNull%2A> metoda nebyl použit ke kontrole hodnot null, bude vyvolána výjimka, pokud indexer vrátil <xref:System.DBNull.Value> a pokusili přetypovat na <xref:System.String>.  
@@ -30,4 +30,5 @@ ms.locfileid: "54562151"
  <xref:System.Data.DataRowExtensions.SetField%2A> Metoda sám neprovádí žádné převody typů. To neznamená, ale, že nedojde k převodu typu. <xref:System.Data.DataRowExtensions.SetField%2A> Zpřístupňuje metodu [!INCLUDE[ado_whidbey_long](../../../../includes/ado-whidbey-long-md.md)] chování <xref:System.Data.DataRow> třídy. Může provádět převod typu <xref:System.Data.DataRow> objektu a převedená hodnota by pak se uložila <xref:System.Data.DataRow> objektu.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Data.DataRowExtensions>
