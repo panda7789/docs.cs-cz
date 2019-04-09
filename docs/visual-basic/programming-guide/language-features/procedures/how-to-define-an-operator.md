@@ -13,37 +13,36 @@ helpviewer_keywords:
 - return values [Visual Basic], Operator procedures
 - operator overloading
 ms.assetid: d4b0e253-092a-4e6e-9fe2-01f562140a29
-ms.openlocfilehash: 3a09657ee7a79b7f590adba0e4fb0c04a8e89043
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 14aa25de78eb357f8474d3828aa45e48e7a4f9c7
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58843640"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59126110"
 ---
-# <a name="how-to-define-an-operator-visual-basic"></a><span data-ttu-id="44c5d-102">Postupy: Definice operátora (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="44c5d-102">How to: Define an Operator (Visual Basic)</span></span>
-<span data-ttu-id="44c5d-103">Pokud jste definovali třídy nebo struktury, můžete definovat chování standardní – operátor (například `*`, `<>`, nebo `And`) Pokud je jeden nebo oba operandy typu třídy nebo struktury.</span><span class="sxs-lookup"><span data-stu-id="44c5d-103">If you have defined a class or structure, you can define the behavior of a standard operator (such as `*`, `<>`, or `And`) when one or both of the operands is of the type of your class or structure.</span></span>  
+# <a name="how-to-define-an-operator-visual-basic"></a><span data-ttu-id="83c6a-102">Postupy: Definice operátora (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="83c6a-102">How to: Define an Operator (Visual Basic)</span></span>
+<span data-ttu-id="83c6a-103">Pokud jste definovali třídy nebo struktury, můžete definovat chování standardní – operátor (například `*`, `<>`, nebo `And`) Pokud je jeden nebo oba operandy typu třídy nebo struktury.</span><span class="sxs-lookup"><span data-stu-id="83c6a-103">If you have defined a class or structure, you can define the behavior of a standard operator (such as `*`, `<>`, or `And`) when one or both of the operands is of the type of your class or structure.</span></span>  
   
- <span data-ttu-id="44c5d-104">Standardní operátor definujte jako procedury operátora v rámci třídy nebo struktury.</span><span class="sxs-lookup"><span data-stu-id="44c5d-104">Define the standard operator as an operator procedure within the class or structure.</span></span> <span data-ttu-id="44c5d-105">Musí být všechny procedury operátoru `Public` `Shared`.</span><span class="sxs-lookup"><span data-stu-id="44c5d-105">All operator procedures must be `Public` `Shared`.</span></span>  
+ <span data-ttu-id="83c6a-104">Standardní operátor definujte jako procedury operátora v rámci třídy nebo struktury.</span><span class="sxs-lookup"><span data-stu-id="83c6a-104">Define the standard operator as an operator procedure within the class or structure.</span></span> <span data-ttu-id="83c6a-105">Musí být všechny procedury operátoru `Public` `Shared`.</span><span class="sxs-lookup"><span data-stu-id="83c6a-105">All operator procedures must be `Public` `Shared`.</span></span>  
   
- <span data-ttu-id="44c5d-106">Definování v třídě nebo struktuře operátor se také nazývá *přetížení* operátor.</span><span class="sxs-lookup"><span data-stu-id="44c5d-106">Defining an operator on a class or structure is also called *overloading* the operator.</span></span>  
+ <span data-ttu-id="83c6a-106">Definování v třídě nebo struktuře operátor se také nazývá *přetížení* operátor.</span><span class="sxs-lookup"><span data-stu-id="83c6a-106">Defining an operator on a class or structure is also called *overloading* the operator.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="44c5d-107">Příklad</span><span class="sxs-lookup"><span data-stu-id="44c5d-107">Example</span></span>  
- <span data-ttu-id="44c5d-108">Následující příklad definuje `+` volat operátor pro strukturu `height`.</span><span class="sxs-lookup"><span data-stu-id="44c5d-108">The following example defines the `+` operator for a structure called `height`.</span></span> <span data-ttu-id="44c5d-109">Struktura používá měřené v stopy a palce výšky.</span><span class="sxs-lookup"><span data-stu-id="44c5d-109">The structure uses heights measured in feet and inches.</span></span> <span data-ttu-id="44c5d-110">Jeden *palec* je 2,54 cm a jedno *zápatí* 12 palců.</span><span class="sxs-lookup"><span data-stu-id="44c5d-110">One *inch* is 2.54 centimeters, and one *foot* is 12 inches.</span></span> <span data-ttu-id="44c5d-111">Aby bylo zajištěno normalizované hodnoty (palce < 12.0), konstruktor provádí *modulo* aritmetické 12.</span><span class="sxs-lookup"><span data-stu-id="44c5d-111">To ensure normalized values (inches < 12.0), the constructor performs *modulo* 12 arithmetic.</span></span> <span data-ttu-id="44c5d-112">`+` Operátor používá konstruktor k vygenerování normalizované hodnoty.</span><span class="sxs-lookup"><span data-stu-id="44c5d-112">The `+` operator uses the constructor to generate normalized values.</span></span>  
+## <a name="example"></a><span data-ttu-id="83c6a-107">Příklad</span><span class="sxs-lookup"><span data-stu-id="83c6a-107">Example</span></span>  
+ <span data-ttu-id="83c6a-108">Následující příklad definuje `+` volat operátor pro strukturu `height`.</span><span class="sxs-lookup"><span data-stu-id="83c6a-108">The following example defines the `+` operator for a structure called `height`.</span></span> <span data-ttu-id="83c6a-109">Struktura používá měřené v stopy a palce výšky.</span><span class="sxs-lookup"><span data-stu-id="83c6a-109">The structure uses heights measured in feet and inches.</span></span> <span data-ttu-id="83c6a-110">Jeden *palec* je 2,54 cm a jedno *zápatí* 12 palců.</span><span class="sxs-lookup"><span data-stu-id="83c6a-110">One *inch* is 2.54 centimeters, and one *foot* is 12 inches.</span></span> <span data-ttu-id="83c6a-111">Aby bylo zajištěno normalizované hodnoty (palce < 12.0), konstruktor provádí *modulo* aritmetické 12.</span><span class="sxs-lookup"><span data-stu-id="83c6a-111">To ensure normalized values (inches < 12.0), the constructor performs *modulo* 12 arithmetic.</span></span> <span data-ttu-id="83c6a-112">`+` Operátor používá konstruktor k vygenerování normalizované hodnoty.</span><span class="sxs-lookup"><span data-stu-id="83c6a-112">The `+` operator uses the constructor to generate normalized values.</span></span>  
   
  [!code-vb[VbVbcnProcedures#25](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#25)]  
   
- <span data-ttu-id="44c5d-113">Můžete otestovat strukturu `height` následujícím kódem.</span><span class="sxs-lookup"><span data-stu-id="44c5d-113">You can test the structure `height` with the following code.</span></span>  
+ <span data-ttu-id="83c6a-113">Můžete otestovat strukturu `height` následujícím kódem.</span><span class="sxs-lookup"><span data-stu-id="83c6a-113">You can test the structure `height` with the following code.</span></span>  
   
  [!code-vb[VbVbcnProcedures#26](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#26)]  
-  
-  
-## <a name="see-also"></a><span data-ttu-id="44c5d-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="44c5d-114">See also</span></span>
 
-- [<span data-ttu-id="44c5d-115">Procedury operátoru</span><span class="sxs-lookup"><span data-stu-id="44c5d-115">Operator Procedures</span></span>](./operator-procedures.md)
-- [<span data-ttu-id="44c5d-116">Postupy: Definice operátora převodu</span><span class="sxs-lookup"><span data-stu-id="44c5d-116">How to: Define a Conversion Operator</span></span>](./how-to-define-a-conversion-operator.md)
-- [<span data-ttu-id="44c5d-117">Postupy: Volání procedury operátora</span><span class="sxs-lookup"><span data-stu-id="44c5d-117">How to: Call an Operator Procedure</span></span>](./how-to-call-an-operator-procedure.md)
-- [<span data-ttu-id="44c5d-118">Postupy: Použití třídy, která definuje operátory</span><span class="sxs-lookup"><span data-stu-id="44c5d-118">How to: Use a Class that Defines Operators</span></span>](./how-to-use-a-class-that-defines-operators.md)
-- [<span data-ttu-id="44c5d-119">Příkaz Operator</span><span class="sxs-lookup"><span data-stu-id="44c5d-119">Operator Statement</span></span>](../../../../visual-basic/language-reference/statements/operator-statement.md)
-- [<span data-ttu-id="44c5d-120">Příkaz Structure</span><span class="sxs-lookup"><span data-stu-id="44c5d-120">Structure Statement</span></span>](../../../../visual-basic/language-reference/statements/structure-statement.md)
-- [<span data-ttu-id="44c5d-121">Postupy: Deklarace struktury</span><span class="sxs-lookup"><span data-stu-id="44c5d-121">How to: Declare a Structure</span></span>](../../../../visual-basic/programming-guide/language-features/data-types/how-to-declare-a-structure.md)
-- [<span data-ttu-id="44c5d-122">Operátor Mod</span><span class="sxs-lookup"><span data-stu-id="44c5d-122">Mod Operator</span></span>](../../../../visual-basic/language-reference/operators/mod-operator.md)
+## <a name="see-also"></a><span data-ttu-id="83c6a-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="83c6a-114">See also</span></span>
+
+- [<span data-ttu-id="83c6a-115">Procedury operátoru</span><span class="sxs-lookup"><span data-stu-id="83c6a-115">Operator Procedures</span></span>](./operator-procedures.md)
+- [<span data-ttu-id="83c6a-116">Postupy: Definování operátoru převodu</span><span class="sxs-lookup"><span data-stu-id="83c6a-116">How to: Define a Conversion Operator</span></span>](./how-to-define-a-conversion-operator.md)
+- [<span data-ttu-id="83c6a-117">Postupy: Volání procedury operátoru</span><span class="sxs-lookup"><span data-stu-id="83c6a-117">How to: Call an Operator Procedure</span></span>](./how-to-call-an-operator-procedure.md)
+- [<span data-ttu-id="83c6a-118">Postupy: Použití třídy, která definuje operátory</span><span class="sxs-lookup"><span data-stu-id="83c6a-118">How to: Use a Class that Defines Operators</span></span>](./how-to-use-a-class-that-defines-operators.md)
+- [<span data-ttu-id="83c6a-119">Operator – příkaz</span><span class="sxs-lookup"><span data-stu-id="83c6a-119">Operator Statement</span></span>](../../../../visual-basic/language-reference/statements/operator-statement.md)
+- [<span data-ttu-id="83c6a-120">Structure – příkaz</span><span class="sxs-lookup"><span data-stu-id="83c6a-120">Structure Statement</span></span>](../../../../visual-basic/language-reference/statements/structure-statement.md)
+- [<span data-ttu-id="83c6a-121">Postupy: Definice struktury</span><span class="sxs-lookup"><span data-stu-id="83c6a-121">How to: Declare a Structure</span></span>](../../../../visual-basic/programming-guide/language-features/data-types/how-to-declare-a-structure.md)
+- [<span data-ttu-id="83c6a-122">Mod – operátor</span><span class="sxs-lookup"><span data-stu-id="83c6a-122">Mod Operator</span></span>](../../../../visual-basic/language-reference/operators/mod-operator.md)

@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 80cda4c31ca78e0350639df809ec1e9f1dcbbaea
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: a60bf279c143559e7410d8dfd8213d3da1d05a6d
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57498247"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59127554"
 ---
-# <a name="isymunmanageddocumentgetchecksum-method"></a><span data-ttu-id="85c33-102">ISymUnmanagedDocument::GetCheckSum – metoda</span><span class="sxs-lookup"><span data-stu-id="85c33-102">ISymUnmanagedDocument::GetCheckSum Method</span></span>
-<span data-ttu-id="85c33-103">Získá kontrolní součet.</span><span class="sxs-lookup"><span data-stu-id="85c33-103">Gets the checksum.</span></span>  
+# <a name="isymunmanageddocumentgetchecksum-method"></a><span data-ttu-id="ae264-102">ISymUnmanagedDocument::GetCheckSum – metoda</span><span class="sxs-lookup"><span data-stu-id="ae264-102">ISymUnmanagedDocument::GetCheckSum Method</span></span>
+<span data-ttu-id="ae264-103">Získá kontrolní součet.</span><span class="sxs-lookup"><span data-stu-id="ae264-103">Gets the checksum.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="85c33-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="85c33-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="ae264-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="ae264-104">Syntax</span></span>  
   
 ```  
 HRESULT GetCheckSum(  
@@ -36,18 +36,19 @@ HRESULT GetCheckSum(
     [out, size_is(cData), length_is(*pcData)] BYTE data[]);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="85c33-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="85c33-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="ae264-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="ae264-105">Parameters</span></span>  
  `cData`  
- <span data-ttu-id="85c33-106">[in] Délka vyrovnávací paměti poskytované `data` parametr</span><span class="sxs-lookup"><span data-stu-id="85c33-106">[in] The length of the buffer provided by the `data` parameter</span></span>  
+ <span data-ttu-id="ae264-106">[in] Délka vyrovnávací paměti poskytované `data` parametr</span><span class="sxs-lookup"><span data-stu-id="ae264-106">[in] The length of the buffer provided by the `data` parameter</span></span>  
   
  `pcData`  
- <span data-ttu-id="85c33-107">[out] Velikost a délce kontrolní součet v bajtech.</span><span class="sxs-lookup"><span data-stu-id="85c33-107">[out] The size and length of the checksum, in bytes.</span></span>  
+ <span data-ttu-id="ae264-107">[out] Velikost a délce kontrolní součet v bajtech.</span><span class="sxs-lookup"><span data-stu-id="ae264-107">[out] The size and length of the checksum, in bytes.</span></span>  
   
  `data`  
- <span data-ttu-id="85c33-108">[out] Vyrovnávací paměť, která přijímá kontrolního součtu.</span><span class="sxs-lookup"><span data-stu-id="85c33-108">[out] The buffer that receives the checksum.</span></span>  
+ <span data-ttu-id="ae264-108">[out] Vyrovnávací paměť, která přijímá kontrolního součtu.</span><span class="sxs-lookup"><span data-stu-id="ae264-108">[out] The buffer that receives the checksum.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="85c33-109">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="85c33-109">Return Value</span></span>  
- <span data-ttu-id="85c33-110">Pokud metoda uspěje; S_OK v opačném případě chybový kód.</span><span class="sxs-lookup"><span data-stu-id="85c33-110">S_OK if the method succeeds; otherwise, an error code.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="ae264-109">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="ae264-109">Return Value</span></span>  
+ <span data-ttu-id="ae264-110">Pokud metoda uspěje; S_OK v opačném případě chybový kód.</span><span class="sxs-lookup"><span data-stu-id="ae264-110">S_OK if the method succeeds; otherwise, an error code.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="85c33-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="85c33-111">See also</span></span>
-- [<span data-ttu-id="85c33-112">ISymUnmanagedDocument – rozhraní</span><span class="sxs-lookup"><span data-stu-id="85c33-112">ISymUnmanagedDocument Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocument-interface.md)
+## <a name="see-also"></a><span data-ttu-id="ae264-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="ae264-111">See also</span></span>
+
+- [<span data-ttu-id="ae264-112">ISymUnmanagedDocument – rozhraní</span><span class="sxs-lookup"><span data-stu-id="ae264-112">ISymUnmanagedDocument Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocument-interface.md)

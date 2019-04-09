@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5e3ab185f1ca5571656ed9b4aa4352a007da4151
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: 602bcd12d1fd4c5806de6db81252731baa447b7b
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57484534"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59120013"
 ---
-# <a name="icordebugmanagedcallbackevalexception-method"></a><span data-ttu-id="d0504-102">ICorDebugManagedCallback::EvalException – metoda</span><span class="sxs-lookup"><span data-stu-id="d0504-102">ICorDebugManagedCallback::EvalException Method</span></span>
-<span data-ttu-id="d0504-103">Upozorní ladicího programu, že byl ukončen zkušební verzi s neošetřenou výjimkou.</span><span class="sxs-lookup"><span data-stu-id="d0504-103">Notifies the debugger that an evaluation has terminated with an unhandled exception.</span></span>  
+# <a name="icordebugmanagedcallbackevalexception-method"></a><span data-ttu-id="fb336-102">ICorDebugManagedCallback::EvalException – metoda</span><span class="sxs-lookup"><span data-stu-id="fb336-102">ICorDebugManagedCallback::EvalException Method</span></span>
+<span data-ttu-id="fb336-103">Upozorní ladicího programu, že byl ukončen zkušební verzi s neošetřenou výjimkou.</span><span class="sxs-lookup"><span data-stu-id="fb336-103">Notifies the debugger that an evaluation has terminated with an unhandled exception.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="d0504-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="d0504-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="fb336-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="fb336-104">Syntax</span></span>  
   
 ```  
 HRESULT EvalException (  
@@ -37,24 +37,25 @@ HRESULT EvalException (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="d0504-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="d0504-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="fb336-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="fb336-105">Parameters</span></span>  
  `pAppDomain`  
- <span data-ttu-id="d0504-106">[in] Ukazatel na objekt ICorDebugAppDomain, který představuje doménu aplikace, ve kterém byl ukončen hodnocení.</span><span class="sxs-lookup"><span data-stu-id="d0504-106">[in] A pointer to an ICorDebugAppDomain object that represents the application domain in which the evaluation terminated.</span></span>  
+ <span data-ttu-id="fb336-106">[in] Ukazatel na objekt ICorDebugAppDomain, který představuje doménu aplikace, ve kterém byl ukončen hodnocení.</span><span class="sxs-lookup"><span data-stu-id="fb336-106">[in] A pointer to an ICorDebugAppDomain object that represents the application domain in which the evaluation terminated.</span></span>  
   
  `pThread`  
- <span data-ttu-id="d0504-107">[in] Ukazatel na objekt icordebugthread –, který představuje vlákno, ve kterém byl ukončen hodnocení.</span><span class="sxs-lookup"><span data-stu-id="d0504-107">[in] A pointer to an ICorDebugThread object that represents the thread in which the evaluation terminated.</span></span>  
+ <span data-ttu-id="fb336-107">[in] Ukazatel na objekt icordebugthread –, který představuje vlákno, ve kterém byl ukončen hodnocení.</span><span class="sxs-lookup"><span data-stu-id="fb336-107">[in] A pointer to an ICorDebugThread object that represents the thread in which the evaluation terminated.</span></span>  
   
  `pEval`  
- <span data-ttu-id="d0504-108">[in] Ukazatel na objekt icordebugeval –, který představuje kód, který provádí hodnocení.</span><span class="sxs-lookup"><span data-stu-id="d0504-108">[in] A pointer to an ICorDebugEval object that represents the code that performed the evaluation.</span></span>  
+ <span data-ttu-id="fb336-108">[in] Ukazatel na objekt icordebugeval –, který představuje kód, který provádí hodnocení.</span><span class="sxs-lookup"><span data-stu-id="fb336-108">[in] A pointer to an ICorDebugEval object that represents the code that performed the evaluation.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="d0504-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="d0504-109">Requirements</span></span>  
- <span data-ttu-id="d0504-110">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="d0504-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="fb336-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="fb336-109">Requirements</span></span>  
+ <span data-ttu-id="fb336-110">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="fb336-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="d0504-111">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="d0504-111">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="fb336-111">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="fb336-111">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="d0504-112">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="d0504-112">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="fb336-112">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="fb336-112">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="d0504-113">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="d0504-113">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ **<span data-ttu-id="fb336-113">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="fb336-113">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a><span data-ttu-id="d0504-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="d0504-114">See also</span></span>
-- [<span data-ttu-id="d0504-115">ICorDebugManagedCallback – rozhraní</span><span class="sxs-lookup"><span data-stu-id="d0504-115">ICorDebugManagedCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+## <a name="see-also"></a><span data-ttu-id="fb336-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="fb336-114">See also</span></span>
+
+- [<span data-ttu-id="fb336-115">ICorDebugManagedCallback – rozhraní</span><span class="sxs-lookup"><span data-stu-id="fb336-115">ICorDebugManagedCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)

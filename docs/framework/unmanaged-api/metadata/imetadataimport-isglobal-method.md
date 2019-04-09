@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 7032e55d52804d559d1faed810ca7cccd6a9e628
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: b956ac1717ffcb73e819e985450249754f80af2a
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57475637"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59136159"
 ---
-# <a name="imetadataimportisglobal-method"></a><span data-ttu-id="21dc1-102">IMetaDataImport::IsGlobal – metoda</span><span class="sxs-lookup"><span data-stu-id="21dc1-102">IMetaDataImport::IsGlobal Method</span></span>
-<span data-ttu-id="21dc1-103">Získá hodnotu označující, zda pole, metodu nebo typ zastoupený token metadat zadaného má globální obor.</span><span class="sxs-lookup"><span data-stu-id="21dc1-103">Gets a value indicating whether the field, method, or type represented by the specified metadata token has global scope.</span></span>  
+# <a name="imetadataimportisglobal-method"></a><span data-ttu-id="2c2a3-102">IMetaDataImport::IsGlobal – metoda</span><span class="sxs-lookup"><span data-stu-id="2c2a3-102">IMetaDataImport::IsGlobal Method</span></span>
+<span data-ttu-id="2c2a3-103">Získá hodnotu označující, zda pole, metodu nebo typ zastoupený token metadat zadaného má globální obor.</span><span class="sxs-lookup"><span data-stu-id="2c2a3-103">Gets a value indicating whether the field, method, or type represented by the specified metadata token has global scope.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="21dc1-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="21dc1-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="2c2a3-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="2c2a3-104">Syntax</span></span>  
   
 ```  
 HRESULT IsGlobal (  
@@ -36,22 +36,23 @@ HRESULT IsGlobal (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="21dc1-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="21dc1-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="2c2a3-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="2c2a3-105">Parameters</span></span>  
  `pd`  
- <span data-ttu-id="21dc1-106">[in] Token metadat, který představuje typ, pole nebo metoda.</span><span class="sxs-lookup"><span data-stu-id="21dc1-106">[in] A metadata token that represents a type, field, or method.</span></span>  
+ <span data-ttu-id="2c2a3-106">[in] Token metadat, který představuje typ, pole nebo metoda.</span><span class="sxs-lookup"><span data-stu-id="2c2a3-106">[in] A metadata token that represents a type, field, or method.</span></span>  
   
  `pbGlobal`  
- <span data-ttu-id="21dc1-107">[out] 1, pokud objekt má globální obor; jinak 0 (nula).</span><span class="sxs-lookup"><span data-stu-id="21dc1-107">[out] 1 if the object has global scope; otherwise, 0 (zero).</span></span>  
+ <span data-ttu-id="2c2a3-107">[out] 1, pokud objekt má globální obor; jinak 0 (nula).</span><span class="sxs-lookup"><span data-stu-id="2c2a3-107">[out] 1 if the object has global scope; otherwise, 0 (zero).</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="21dc1-108">Požadavky</span><span class="sxs-lookup"><span data-stu-id="21dc1-108">Requirements</span></span>  
- <span data-ttu-id="21dc1-109">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="21dc1-109">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="2c2a3-108">Požadavky</span><span class="sxs-lookup"><span data-stu-id="2c2a3-108">Requirements</span></span>  
+ <span data-ttu-id="2c2a3-109">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="2c2a3-109">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="21dc1-110">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="21dc1-110">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="2c2a3-110">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="2c2a3-110">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="21dc1-111">**Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="21dc1-111">**Library:** Included as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="2c2a3-111">**Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="2c2a3-111">**Library:** Included as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="21dc1-112">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="21dc1-112">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ **<span data-ttu-id="2c2a3-112">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="2c2a3-112">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a><span data-ttu-id="21dc1-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="21dc1-113">See also</span></span>
-- [<span data-ttu-id="21dc1-114">IMetaDataImport – rozhraní</span><span class="sxs-lookup"><span data-stu-id="21dc1-114">IMetaDataImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [<span data-ttu-id="21dc1-115">IMetaDataImport2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="21dc1-115">IMetaDataImport2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+## <a name="see-also"></a><span data-ttu-id="2c2a3-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="2c2a3-113">See also</span></span>
+
+- [<span data-ttu-id="2c2a3-114">IMetaDataImport – rozhraní</span><span class="sxs-lookup"><span data-stu-id="2c2a3-114">IMetaDataImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [<span data-ttu-id="2c2a3-115">IMetaDataImport2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="2c2a3-115">IMetaDataImport2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

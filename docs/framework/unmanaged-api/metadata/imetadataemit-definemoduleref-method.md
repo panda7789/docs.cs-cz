@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: a87d18b15f858b608d99a511ed9bdad73fd2b251
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: f52f102102cb654035d49eea0f4b0a9061475a3a
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57493677"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59128814"
 ---
-# <a name="imetadataemitdefinemoduleref-method"></a><span data-ttu-id="7f7bb-102">IMetaDataEmit::DefineModuleRef – metoda</span><span class="sxs-lookup"><span data-stu-id="7f7bb-102">IMetaDataEmit::DefineModuleRef Method</span></span>
-<span data-ttu-id="7f7bb-103">Vytvoří podpis metadat pro modul se zadaným názvem.</span><span class="sxs-lookup"><span data-stu-id="7f7bb-103">Creates the metadata signature for a module with the specified name.</span></span>  
+# <a name="imetadataemitdefinemoduleref-method"></a><span data-ttu-id="639d6-102">IMetaDataEmit::DefineModuleRef – metoda</span><span class="sxs-lookup"><span data-stu-id="639d6-102">IMetaDataEmit::DefineModuleRef Method</span></span>
+<span data-ttu-id="639d6-103">Vytvoří podpis metadat pro modul se zadaným názvem.</span><span class="sxs-lookup"><span data-stu-id="639d6-103">Creates the metadata signature for a module with the specified name.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="7f7bb-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="7f7bb-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="639d6-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="639d6-104">Syntax</span></span>  
   
 ```  
 HRESULT DefineModuleRef (     
@@ -36,22 +36,23 @@ HRESULT DefineModuleRef (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="7f7bb-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="7f7bb-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="639d6-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="639d6-105">Parameters</span></span>  
  `szName`  
- <span data-ttu-id="7f7bb-106">[in] Název další metadata souboru obvykle knihovny DLL.</span><span class="sxs-lookup"><span data-stu-id="7f7bb-106">[in] The name of the other metadata file, typically a DLL.</span></span> <span data-ttu-id="7f7bb-107">Toto je pouze název souboru.</span><span class="sxs-lookup"><span data-stu-id="7f7bb-107">This is the file name only.</span></span> <span data-ttu-id="7f7bb-108">Nepoužívejte úplné cesty.</span><span class="sxs-lookup"><span data-stu-id="7f7bb-108">Do not use a full path name.</span></span>  
+ <span data-ttu-id="639d6-106">[in] Název další metadata souboru obvykle knihovny DLL.</span><span class="sxs-lookup"><span data-stu-id="639d6-106">[in] The name of the other metadata file, typically a DLL.</span></span> <span data-ttu-id="639d6-107">Toto je pouze název souboru.</span><span class="sxs-lookup"><span data-stu-id="639d6-107">This is the file name only.</span></span> <span data-ttu-id="639d6-108">Nepoužívejte úplné cesty.</span><span class="sxs-lookup"><span data-stu-id="639d6-108">Do not use a full path name.</span></span>  
   
  `pmur`  
- <span data-ttu-id="7f7bb-109">[out] Přiřazená `mdModuleRef` token.</span><span class="sxs-lookup"><span data-stu-id="7f7bb-109">[out] The assigned `mdModuleRef` token.</span></span>  
+ <span data-ttu-id="639d6-109">[out] Přiřazená `mdModuleRef` token.</span><span class="sxs-lookup"><span data-stu-id="639d6-109">[out] The assigned `mdModuleRef` token.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="7f7bb-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="7f7bb-110">Requirements</span></span>  
- <span data-ttu-id="7f7bb-111">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="7f7bb-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="639d6-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="639d6-110">Requirements</span></span>  
+ <span data-ttu-id="639d6-111">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="639d6-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="7f7bb-112">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="7f7bb-112">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="639d6-112">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="639d6-112">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="7f7bb-113">**Knihovna:** Použít jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="7f7bb-113">**Library:** Used as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="639d6-113">**Knihovna:** Použít jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="639d6-113">**Library:** Used as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="7f7bb-114">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="7f7bb-114">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ **<span data-ttu-id="639d6-114">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="639d6-114">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a><span data-ttu-id="7f7bb-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="7f7bb-115">See also</span></span>
-- [<span data-ttu-id="7f7bb-116">IMetaDataEmit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="7f7bb-116">IMetaDataEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
-- [<span data-ttu-id="7f7bb-117">IMetaDataEmit2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="7f7bb-117">IMetaDataEmit2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+## <a name="see-also"></a><span data-ttu-id="639d6-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="639d6-115">See also</span></span>
+
+- [<span data-ttu-id="639d6-116">IMetaDataEmit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="639d6-116">IMetaDataEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
+- [<span data-ttu-id="639d6-117">IMetaDataEmit2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="639d6-117">IMetaDataEmit2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

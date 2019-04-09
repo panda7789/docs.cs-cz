@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: de4bf2cf647682062fbacb4484ffae905d1b7995
-ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
+ms.openlocfilehash: e8d871f2ecbd96d5bda781b2ae11b94efd409442
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56835366"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59128398"
 ---
-# <a name="imetadataimportenummembers-method"></a><span data-ttu-id="e1f8f-102">IMetaDataImport::EnumMembers – metoda</span><span class="sxs-lookup"><span data-stu-id="e1f8f-102">IMetaDataImport::EnumMembers Method</span></span>
-<span data-ttu-id="e1f8f-103">Vytvoří výčet MemberDef tokeny představující členů zadaného typu.</span><span class="sxs-lookup"><span data-stu-id="e1f8f-103">Enumerates MemberDef tokens representing members of the specified type.</span></span>  
+# <a name="imetadataimportenummembers-method"></a><span data-ttu-id="0337d-102">IMetaDataImport::EnumMembers – metoda</span><span class="sxs-lookup"><span data-stu-id="0337d-102">IMetaDataImport::EnumMembers Method</span></span>
+<span data-ttu-id="0337d-103">Vytvoří výčet MemberDef tokeny představující členů zadaného typu.</span><span class="sxs-lookup"><span data-stu-id="0337d-103">Enumerates MemberDef tokens representing members of the specified type.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="e1f8f-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="e1f8f-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="0337d-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="0337d-104">Syntax</span></span>  
   
 ```  
 HRESULT EnumMembers (   
@@ -39,43 +39,44 @@ HRESULT EnumMembers (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="e1f8f-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="e1f8f-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="0337d-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="0337d-105">Parameters</span></span>  
  `phEnum`  
- <span data-ttu-id="e1f8f-106">[out v] Ukazatel na enumerátor.</span><span class="sxs-lookup"><span data-stu-id="e1f8f-106">[in, out] A pointer to the enumerator.</span></span>  
+ <span data-ttu-id="0337d-106">[out v] Ukazatel na enumerátor.</span><span class="sxs-lookup"><span data-stu-id="0337d-106">[in, out] A pointer to the enumerator.</span></span>  
   
  `cl`  
- <span data-ttu-id="e1f8f-107">[in] Token TypeDef představující typ, jejíž členové jsou pro provedení výčtu.</span><span class="sxs-lookup"><span data-stu-id="e1f8f-107">[in] A TypeDef token representing the type whose members are to be enumerated.</span></span>  
+ <span data-ttu-id="0337d-107">[in] Token TypeDef představující typ, jejíž členové jsou pro provedení výčtu.</span><span class="sxs-lookup"><span data-stu-id="0337d-107">[in] A TypeDef token representing the type whose members are to be enumerated.</span></span>  
   
  `rMembers`  
- <span data-ttu-id="e1f8f-108">[out] Pole sloužící k uchování MemberDef tokeny.</span><span class="sxs-lookup"><span data-stu-id="e1f8f-108">[out] The array used to hold the MemberDef tokens.</span></span>  
+ <span data-ttu-id="0337d-108">[out] Pole sloužící k uchování MemberDef tokeny.</span><span class="sxs-lookup"><span data-stu-id="0337d-108">[out] The array used to hold the MemberDef tokens.</span></span>  
   
  `cMax`  
- <span data-ttu-id="e1f8f-109">[in] Maximální velikost `rMembers` pole.</span><span class="sxs-lookup"><span data-stu-id="e1f8f-109">[in] The maximum size of the `rMembers` array.</span></span>  
+ <span data-ttu-id="0337d-109">[in] Maximální velikost `rMembers` pole.</span><span class="sxs-lookup"><span data-stu-id="0337d-109">[in] The maximum size of the `rMembers` array.</span></span>  
   
  `pcTokens`  
- <span data-ttu-id="e1f8f-110">[out] Skutečný počet tokenů MemberDef vrácené v `rMembers`.</span><span class="sxs-lookup"><span data-stu-id="e1f8f-110">[out] The actual number of MemberDef tokens returned in `rMembers`.</span></span>  
+ <span data-ttu-id="0337d-110">[out] Skutečný počet tokenů MemberDef vrácené v `rMembers`.</span><span class="sxs-lookup"><span data-stu-id="0337d-110">[out] The actual number of MemberDef tokens returned in `rMembers`.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="e1f8f-111">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="e1f8f-111">Return Value</span></span>  
+## <a name="return-value"></a><span data-ttu-id="0337d-111">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="0337d-111">Return Value</span></span>  
   
-|<span data-ttu-id="e1f8f-112">HRESULT</span><span class="sxs-lookup"><span data-stu-id="e1f8f-112">HRESULT</span></span>|<span data-ttu-id="e1f8f-113">Popis</span><span class="sxs-lookup"><span data-stu-id="e1f8f-113">Description</span></span>|  
+|<span data-ttu-id="0337d-112">HRESULT</span><span class="sxs-lookup"><span data-stu-id="0337d-112">HRESULT</span></span>|<span data-ttu-id="0337d-113">Popis</span><span class="sxs-lookup"><span data-stu-id="0337d-113">Description</span></span>|  
 |-------------|-----------------|  
-|`S_OK`|<span data-ttu-id="e1f8f-114">`EnumMembers` bylo úspěšně vráceno.</span><span class="sxs-lookup"><span data-stu-id="e1f8f-114">`EnumMembers` returned successfully.</span></span>|  
-|`S_FALSE`|<span data-ttu-id="e1f8f-115">Neexistují žádné tokeny MemberDef výčet.</span><span class="sxs-lookup"><span data-stu-id="e1f8f-115">There are no MemberDef tokens to enumerate.</span></span> <span data-ttu-id="e1f8f-116">V takovém případě `pcTokens` je nula.</span><span class="sxs-lookup"><span data-stu-id="e1f8f-116">In that case, `pcTokens` is zero.</span></span>|  
+|`S_OK`|`EnumMembers` <span data-ttu-id="0337d-114">bylo úspěšně vráceno.</span><span class="sxs-lookup"><span data-stu-id="0337d-114">returned successfully.</span></span>|  
+|`S_FALSE`|<span data-ttu-id="0337d-115">Neexistují žádné tokeny MemberDef výčet.</span><span class="sxs-lookup"><span data-stu-id="0337d-115">There are no MemberDef tokens to enumerate.</span></span> <span data-ttu-id="0337d-116">V takovém případě `pcTokens` je nula.</span><span class="sxs-lookup"><span data-stu-id="0337d-116">In that case, `pcTokens` is zero.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="e1f8f-117">Poznámky</span><span class="sxs-lookup"><span data-stu-id="e1f8f-117">Remarks</span></span>  
- <span data-ttu-id="e1f8f-118">Při vytváření výčtů kolekcí členů v případě třídy `EnumMembers` vrací pouze členy (polím a metodám, ale **není** vlastnosti nebo události) definované přímo ve třídě.</span><span class="sxs-lookup"><span data-stu-id="e1f8f-118">When enumerating collections of members for a class, `EnumMembers` returns only members (fields and methods, but **not** properties or events) defined directly on the class.</span></span> <span data-ttu-id="e1f8f-119">I v případě, že třída poskytuje implementaci pro členy zděděné nevrací žádné členy, které dědí třídu.</span><span class="sxs-lookup"><span data-stu-id="e1f8f-119">It does not return any members that the class inherits, even if the class provides an implementation for those inherited members.</span></span> <span data-ttu-id="e1f8f-120">Výčet zděděné členy, volající musí explicitně provedou řetězu dědičnosti.</span><span class="sxs-lookup"><span data-stu-id="e1f8f-120">To enumerate inherited members, the caller must explicitly walk the inheritance chain.</span></span> <span data-ttu-id="e1f8f-121">Všimněte si, že pravidla pro řetězec dědičnosti mohou lišit v závislosti na jazyk nebo kompilátor, který původní metadata, protože ho.</span><span class="sxs-lookup"><span data-stu-id="e1f8f-121">Note that the rules for the inheritance chain may vary depending on the language or compiler that emitted the original metadata.</span></span>
+## <a name="remarks"></a><span data-ttu-id="0337d-117">Poznámky</span><span class="sxs-lookup"><span data-stu-id="0337d-117">Remarks</span></span>  
+ <span data-ttu-id="0337d-118">Při vytváření výčtů kolekcí členů v případě třídy `EnumMembers` vrací pouze členy (polím a metodám, ale **není** vlastnosti nebo události) definované přímo ve třídě.</span><span class="sxs-lookup"><span data-stu-id="0337d-118">When enumerating collections of members for a class, `EnumMembers` returns only members (fields and methods, but **not** properties or events) defined directly on the class.</span></span> <span data-ttu-id="0337d-119">I v případě, že třída poskytuje implementaci pro členy zděděné nevrací žádné členy, které dědí třídu.</span><span class="sxs-lookup"><span data-stu-id="0337d-119">It does not return any members that the class inherits, even if the class provides an implementation for those inherited members.</span></span> <span data-ttu-id="0337d-120">Výčet zděděné členy, volající musí explicitně provedou řetězu dědičnosti.</span><span class="sxs-lookup"><span data-stu-id="0337d-120">To enumerate inherited members, the caller must explicitly walk the inheritance chain.</span></span> <span data-ttu-id="0337d-121">Všimněte si, že pravidla pro řetězec dědičnosti mohou lišit v závislosti na jazyk nebo kompilátor, který původní metadata, protože ho.</span><span class="sxs-lookup"><span data-stu-id="0337d-121">Note that the rules for the inheritance chain may vary depending on the language or compiler that emitted the original metadata.</span></span>
  
- <span data-ttu-id="e1f8f-122">Vlastnosti a události, které nejsou ve výčtu `EnumMembers`.</span><span class="sxs-lookup"><span data-stu-id="e1f8f-122">Properties and events are not enumerated by `EnumMembers`.</span></span> <span data-ttu-id="e1f8f-123">Chcete-li vytvořit výčet ty, použijte [enumproperties –](imetadataimport-enumproperties-method.md) nebo [enumevents –](imetadataimport-enumevents-method.md).</span><span class="sxs-lookup"><span data-stu-id="e1f8f-123">To enumerate those, use [EnumProperties](imetadataimport-enumproperties-method.md) or [EnumEvents](imetadataimport-enumevents-method.md).</span></span>
+ <span data-ttu-id="0337d-122">Vlastnosti a události, které nejsou ve výčtu `EnumMembers`.</span><span class="sxs-lookup"><span data-stu-id="0337d-122">Properties and events are not enumerated by `EnumMembers`.</span></span> <span data-ttu-id="0337d-123">Chcete-li vytvořit výčet ty, použijte [enumproperties –](imetadataimport-enumproperties-method.md) nebo [enumevents –](imetadataimport-enumevents-method.md).</span><span class="sxs-lookup"><span data-stu-id="0337d-123">To enumerate those, use [EnumProperties](imetadataimport-enumproperties-method.md) or [EnumEvents](imetadataimport-enumevents-method.md).</span></span>
   
-## <a name="requirements"></a><span data-ttu-id="e1f8f-124">Požadavky</span><span class="sxs-lookup"><span data-stu-id="e1f8f-124">Requirements</span></span>  
- <span data-ttu-id="e1f8f-125">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="e1f8f-125">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="0337d-124">Požadavky</span><span class="sxs-lookup"><span data-stu-id="0337d-124">Requirements</span></span>  
+ <span data-ttu-id="0337d-125">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="0337d-125">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="e1f8f-126">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="e1f8f-126">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="0337d-126">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="0337d-126">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="e1f8f-127">**Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="e1f8f-127">**Library:** Included as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="0337d-127">**Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="0337d-127">**Library:** Included as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="e1f8f-128">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="e1f8f-128">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ **<span data-ttu-id="0337d-128">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="0337d-128">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a><span data-ttu-id="e1f8f-129">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e1f8f-129">See also</span></span>
-- [<span data-ttu-id="e1f8f-130">IMetaDataImport – rozhraní</span><span class="sxs-lookup"><span data-stu-id="e1f8f-130">IMetaDataImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [<span data-ttu-id="e1f8f-131">IMetaDataImport2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="e1f8f-131">IMetaDataImport2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+## <a name="see-also"></a><span data-ttu-id="0337d-129">Viz také:</span><span class="sxs-lookup"><span data-stu-id="0337d-129">See also</span></span>
+
+- [<span data-ttu-id="0337d-130">IMetaDataImport – rozhraní</span><span class="sxs-lookup"><span data-stu-id="0337d-130">IMetaDataImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [<span data-ttu-id="0337d-131">IMetaDataImport2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="0337d-131">IMetaDataImport2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

@@ -1,25 +1,25 @@
 ---
-title: 'Postupy: Vytvoření objektu StackPanel'
+title: 'Postupy: Vytvoření elementu StackPanel'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - StackPanel control [WPF], creating
 ms.assetid: e7ce65cb-720a-4bb6-95b6-286b74488a58
-ms.openlocfilehash: 46b037e3f1626e77a61dca787b705a63ccd28ba0
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: bcf6decff2fbc012b5f8b62794f0d7b2cd9f29fc
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57360436"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59121807"
 ---
-# <a name="how-to-create-a-stackpanel"></a><span data-ttu-id="437eb-102">Postupy: Vytvoření objektu StackPanel</span><span class="sxs-lookup"><span data-stu-id="437eb-102">How to: Create a StackPanel</span></span>
-<span data-ttu-id="437eb-103">Tento příklad ukazuje, jak vytvořit <xref:System.Windows.Controls.StackPanel>.</span><span class="sxs-lookup"><span data-stu-id="437eb-103">This example shows how to create a <xref:System.Windows.Controls.StackPanel>.</span></span>  
+# <a name="how-to-create-a-stackpanel"></a><span data-ttu-id="088f0-102">Postupy: Vytvoření elementu StackPanel</span><span class="sxs-lookup"><span data-stu-id="088f0-102">How to: Create a StackPanel</span></span>
+<span data-ttu-id="088f0-103">Tento příklad ukazuje, jak vytvořit <xref:System.Windows.Controls.StackPanel>.</span><span class="sxs-lookup"><span data-stu-id="088f0-103">This example shows how to create a <xref:System.Windows.Controls.StackPanel>.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="437eb-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="437eb-104">Example</span></span>  
- <span data-ttu-id="437eb-105">A <xref:System.Windows.Controls.StackPanel> umožňuje zásobníku prvky v zadaném směru.</span><span class="sxs-lookup"><span data-stu-id="437eb-105">A <xref:System.Windows.Controls.StackPanel> allows you to stack elements in a specified direction.</span></span> <span data-ttu-id="437eb-106">Pomocí vlastností, které jsou definovány na <xref:System.Windows.Controls.StackPanel>, obsah byl zajištěn tok obě svisle, což je výchozí nastavení, nebo vodorovně.</span><span class="sxs-lookup"><span data-stu-id="437eb-106">By using properties that are defined on <xref:System.Windows.Controls.StackPanel>, content can flow both vertically, which is the default setting, or horizontally.</span></span>  
+## <a name="example"></a><span data-ttu-id="088f0-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="088f0-104">Example</span></span>  
+ <span data-ttu-id="088f0-105">A <xref:System.Windows.Controls.StackPanel> umožňuje zásobníku prvky v zadaném směru.</span><span class="sxs-lookup"><span data-stu-id="088f0-105">A <xref:System.Windows.Controls.StackPanel> allows you to stack elements in a specified direction.</span></span> <span data-ttu-id="088f0-106">Pomocí vlastností, které jsou definovány na <xref:System.Windows.Controls.StackPanel>, obsah byl zajištěn tok obě svisle, což je výchozí nastavení, nebo vodorovně.</span><span class="sxs-lookup"><span data-stu-id="088f0-106">By using properties that are defined on <xref:System.Windows.Controls.StackPanel>, content can flow both vertically, which is the default setting, or horizontally.</span></span>  
   
- <span data-ttu-id="437eb-107">Následující příklad svisle zásobníků pět <xref:System.Windows.Controls.TextBlock> ovládací prvky, každý s jiným <xref:System.Windows.Controls.Border> a <xref:System.Windows.Controls.Border.Background%2A>, s použitím <xref:System.Windows.Controls.StackPanel>.</span><span class="sxs-lookup"><span data-stu-id="437eb-107">The following example vertically stacks five <xref:System.Windows.Controls.TextBlock> controls, each with a different <xref:System.Windows.Controls.Border> and <xref:System.Windows.Controls.Border.Background%2A>, by using <xref:System.Windows.Controls.StackPanel>.</span></span> <span data-ttu-id="437eb-108">Podřízené prvky, které nemají zadán <xref:System.Windows.FrameworkElement.Width%2A> roztáhnout tak, aby vyplnil nadřazené okno; nicméně jsou podřízené prvky, které mají zadanou <xref:System.Windows.FrameworkElement.Width%2A>, je umístěn okna na střed.</span><span class="sxs-lookup"><span data-stu-id="437eb-108">The child elements that have no specified <xref:System.Windows.FrameworkElement.Width%2A> stretch to fill the parent window; however, the child elements that have a specified <xref:System.Windows.FrameworkElement.Width%2A>, are centered within the window.</span></span>  
+ <span data-ttu-id="088f0-107">Následující příklad svisle zásobníků pět <xref:System.Windows.Controls.TextBlock> ovládací prvky, každý s jiným <xref:System.Windows.Controls.Border> a <xref:System.Windows.Controls.Border.Background%2A>, s použitím <xref:System.Windows.Controls.StackPanel>.</span><span class="sxs-lookup"><span data-stu-id="088f0-107">The following example vertically stacks five <xref:System.Windows.Controls.TextBlock> controls, each with a different <xref:System.Windows.Controls.Border> and <xref:System.Windows.Controls.Border.Background%2A>, by using <xref:System.Windows.Controls.StackPanel>.</span></span> <span data-ttu-id="088f0-108">Podřízené prvky, které nemají zadán <xref:System.Windows.FrameworkElement.Width%2A> roztáhnout tak, aby vyplnil nadřazené okno; nicméně jsou podřízené prvky, které mají zadanou <xref:System.Windows.FrameworkElement.Width%2A>, je umístěn okna na střed.</span><span class="sxs-lookup"><span data-stu-id="088f0-108">The child elements that have no specified <xref:System.Windows.FrameworkElement.Width%2A> stretch to fill the parent window; however, the child elements that have a specified <xref:System.Windows.FrameworkElement.Width%2A>, are centered within the window.</span></span>  
   
- <span data-ttu-id="437eb-109">Výchozí směr zásobníku <xref:System.Windows.Controls.StackPanel> je svislý.</span><span class="sxs-lookup"><span data-stu-id="437eb-109">The default stack direction in a <xref:System.Windows.Controls.StackPanel> is vertical.</span></span> <span data-ttu-id="437eb-110">K řízení toku obsahu v <xref:System.Windows.Controls.StackPanel>, použijte <xref:System.Windows.Controls.StackPanel.Orientation%2A> vlastnost.</span><span class="sxs-lookup"><span data-stu-id="437eb-110">To control content flow in a <xref:System.Windows.Controls.StackPanel>, use the <xref:System.Windows.Controls.StackPanel.Orientation%2A> property.</span></span> <span data-ttu-id="437eb-111">Vodorovné zarovnání můžete řídit pomocí <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A> vlastnost.</span><span class="sxs-lookup"><span data-stu-id="437eb-111">You can control horizontal alignment by using the <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A> property.</span></span>  
+ <span data-ttu-id="088f0-109">Výchozí směr zásobníku <xref:System.Windows.Controls.StackPanel> je svislý.</span><span class="sxs-lookup"><span data-stu-id="088f0-109">The default stack direction in a <xref:System.Windows.Controls.StackPanel> is vertical.</span></span> <span data-ttu-id="088f0-110">K řízení toku obsahu v <xref:System.Windows.Controls.StackPanel>, použijte <xref:System.Windows.Controls.StackPanel.Orientation%2A> vlastnost.</span><span class="sxs-lookup"><span data-stu-id="088f0-110">To control content flow in a <xref:System.Windows.Controls.StackPanel>, use the <xref:System.Windows.Controls.StackPanel.Orientation%2A> property.</span></span> <span data-ttu-id="088f0-111">Vodorovné zarovnání můžete řídit pomocí <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A> vlastnost.</span><span class="sxs-lookup"><span data-stu-id="088f0-111">You can control horizontal alignment by using the <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A> property.</span></span>  
   
 ```xaml  
 <Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" WindowTitle="StackPanel Sample">  
@@ -43,7 +43,8 @@ ms.locfileid: "57360436"
 </Page>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="437eb-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="437eb-112">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="088f0-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="088f0-112">See also</span></span>
+
 - <xref:System.Windows.Controls.StackPanel>
-- [<span data-ttu-id="437eb-113">Přehled panelu</span><span class="sxs-lookup"><span data-stu-id="437eb-113">Panels Overview</span></span>](panels-overview.md)
-- [<span data-ttu-id="437eb-114">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="437eb-114">How-to Topics</span></span>](stackpanel-how-to-topics.md)
+- [<span data-ttu-id="088f0-113">Přehled panelů</span><span class="sxs-lookup"><span data-stu-id="088f0-113">Panels Overview</span></span>](panels-overview.md)
+- [<span data-ttu-id="088f0-114">– postupy</span><span class="sxs-lookup"><span data-stu-id="088f0-114">How-to Topics</span></span>](stackpanel-how-to-topics.md)

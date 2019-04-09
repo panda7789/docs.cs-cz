@@ -7,30 +7,31 @@ helpviewer_keywords:
 - toolbars [Windows Forms], adding items
 - ToolStrip control [Windows Forms], adding standard items
 ms.assetid: 028deb1a-acf8-4911-979a-ba8431cd9d82
-ms.openlocfilehash: 4c93db7b333f231bc328b3a16d51cfb5243ba098
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: 9f0224a9360d7ce31a85883902c9668b4a1158b6
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57714031"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59119285"
 ---
-# <a name="how-to-create-a-basic-windows-forms-toolstrip-with-standard-items-using-the-designer"></a><span data-ttu-id="f80cc-102">Postupy: Vytvoření základní Windows Forms ToolStrip se standardními položkami pomocí návrháře</span><span class="sxs-lookup"><span data-stu-id="f80cc-102">How to: Create a Basic Windows Forms ToolStrip with Standard Items Using the Designer</span></span>
-<span data-ttu-id="f80cc-103">Následující postup ukazuje, jak vytvořit <xref:System.Windows.Forms.ToolStrip> a přidejte sedm <xref:System.Windows.Forms.ToolStripButton> ovládací prvky, které představují typické úlohy.</span><span class="sxs-lookup"><span data-stu-id="f80cc-103">The following procedure demonstrates how to create a <xref:System.Windows.Forms.ToolStrip> and add seven <xref:System.Windows.Forms.ToolStripButton> controls that represent typical tasks.</span></span>  
+# <a name="how-to-create-a-basic-windows-forms-toolstrip-with-standard-items-using-the-designer"></a><span data-ttu-id="4f926-102">Postupy: Vytvoření základní Windows Forms ToolStrip se standardními položkami pomocí návrháře</span><span class="sxs-lookup"><span data-stu-id="4f926-102">How to: Create a Basic Windows Forms ToolStrip with Standard Items Using the Designer</span></span>
+<span data-ttu-id="4f926-103">Následující postup ukazuje, jak vytvořit <xref:System.Windows.Forms.ToolStrip> a přidejte sedm <xref:System.Windows.Forms.ToolStripButton> ovládací prvky, které představují typické úlohy.</span><span class="sxs-lookup"><span data-stu-id="4f926-103">The following procedure demonstrates how to create a <xref:System.Windows.Forms.ToolStrip> and add seven <xref:System.Windows.Forms.ToolStripButton> controls that represent typical tasks.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="f80cc-104">Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici.</span><span class="sxs-lookup"><span data-stu-id="f80cc-104">The dialog boxes and menu commands you see might differ from those described in Help depending on your active settings or edition.</span></span> <span data-ttu-id="f80cc-105">Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky.</span><span class="sxs-lookup"><span data-stu-id="f80cc-105">To change your settings, choose **Import and Export Settings** on the **Tools** menu.</span></span> <span data-ttu-id="f80cc-106">Další informace najdete v tématu [přizpůsobení integrovaného vývojového prostředí sady Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).</span><span class="sxs-lookup"><span data-stu-id="f80cc-106">For more information, see [Personalize the Visual Studio IDE](/visualstudio/ide/personalizing-the-visual-studio-ide).</span></span>  
+>  <span data-ttu-id="4f926-104">Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici.</span><span class="sxs-lookup"><span data-stu-id="4f926-104">The dialog boxes and menu commands you see might differ from those described in Help depending on your active settings or edition.</span></span> <span data-ttu-id="4f926-105">Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky.</span><span class="sxs-lookup"><span data-stu-id="4f926-105">To change your settings, choose **Import and Export Settings** on the **Tools** menu.</span></span> <span data-ttu-id="4f926-106">Další informace najdete v tématu [přizpůsobení integrovaného vývojového prostředí sady Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).</span><span class="sxs-lookup"><span data-stu-id="4f926-106">For more information, see [Personalize the Visual Studio IDE](/visualstudio/ide/personalizing-the-visual-studio-ide).</span></span>  
   
-### <a name="to-add-standard-items-in-the-designer"></a><span data-ttu-id="f80cc-107">Chcete-li přidat standardní položky v Návrháři</span><span class="sxs-lookup"><span data-stu-id="f80cc-107">To add standard items in the designer</span></span>  
+### <a name="to-add-standard-items-in-the-designer"></a><span data-ttu-id="4f926-107">Chcete-li přidat standardní položky v Návrháři</span><span class="sxs-lookup"><span data-stu-id="4f926-107">To add standard items in the designer</span></span>  
   
-1.  <span data-ttu-id="f80cc-108">vytvoření <xref:System.Windows.Forms.ToolStrip> ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="f80cc-108">Create a <xref:System.Windows.Forms.ToolStrip> control.</span></span>  
+1.  <span data-ttu-id="4f926-108">vytvoření <xref:System.Windows.Forms.ToolStrip> ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="4f926-108">Create a <xref:System.Windows.Forms.ToolStrip> control.</span></span>  
   
-2.  <span data-ttu-id="f80cc-109">V pravém horním rohu <xref:System.Windows.Forms.ToolStrip>, klikněte na šipku inteligentního úlohy zobrazíte **ToolStrip – úlohy** podokně.</span><span class="sxs-lookup"><span data-stu-id="f80cc-109">In the upper right corner of the <xref:System.Windows.Forms.ToolStrip>, click the smart task arrow to display the **ToolStrip Tasks** pane.</span></span>  
+2.  <span data-ttu-id="4f926-109">V pravém horním rohu <xref:System.Windows.Forms.ToolStrip>, klikněte na šipku inteligentního úlohy zobrazíte **ToolStrip – úlohy** podokně.</span><span class="sxs-lookup"><span data-stu-id="4f926-109">In the upper right corner of the <xref:System.Windows.Forms.ToolStrip>, click the smart task arrow to display the **ToolStrip Tasks** pane.</span></span>  
   
-3.  <span data-ttu-id="f80cc-110">V **ToolStrip – úlohy** podokně zvolte **vložit standardní položky**.</span><span class="sxs-lookup"><span data-stu-id="f80cc-110">In the **ToolStrip Tasks** pane, choose **Insert Standard Items**.</span></span>  
+3.  <span data-ttu-id="4f926-110">V **ToolStrip – úlohy** podokně zvolte **vložit standardní položky**.</span><span class="sxs-lookup"><span data-stu-id="4f926-110">In the **ToolStrip Tasks** pane, choose **Insert Standard Items**.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="f80cc-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="f80cc-111">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="4f926-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="4f926-111">See also</span></span>
+
 - <xref:System.Windows.Forms.ToolStrip>
-- [<span data-ttu-id="f80cc-112">Přehled ovládacího prvku ToolStrip</span><span class="sxs-lookup"><span data-stu-id="f80cc-112">ToolStrip Control Overview</span></span>](toolstrip-control-overview-windows-forms.md)
-- [<span data-ttu-id="f80cc-113">Ovládací prvek ToolStrip</span><span class="sxs-lookup"><span data-stu-id="f80cc-113">ToolStrip Control</span></span>](toolstrip-control-windows-forms.md)
-- [<span data-ttu-id="f80cc-114">Architektura ovládacího prvku ToolStrip</span><span class="sxs-lookup"><span data-stu-id="f80cc-114">ToolStrip Control Architecture</span></span>](toolstrip-control-architecture.md)
-- [<span data-ttu-id="f80cc-115">Shrnutí technologie ToolStrip</span><span class="sxs-lookup"><span data-stu-id="f80cc-115">ToolStrip Technology Summary</span></span>](toolstrip-technology-summary.md)
+- [<span data-ttu-id="4f926-112">Přehled ovládacího prvku ToolStrip</span><span class="sxs-lookup"><span data-stu-id="4f926-112">ToolStrip Control Overview</span></span>](toolstrip-control-overview-windows-forms.md)
+- [<span data-ttu-id="4f926-113">ToolStrip – ovládací prvek</span><span class="sxs-lookup"><span data-stu-id="4f926-113">ToolStrip Control</span></span>](toolstrip-control-windows-forms.md)
+- [<span data-ttu-id="4f926-114">Architektura ovládacího prvku ToolStrip</span><span class="sxs-lookup"><span data-stu-id="4f926-114">ToolStrip Control Architecture</span></span>](toolstrip-control-architecture.md)
+- [<span data-ttu-id="4f926-115">Souhrn technologie ToolStrip</span><span class="sxs-lookup"><span data-stu-id="4f926-115">ToolStrip Technology Summary</span></span>](toolstrip-technology-summary.md)
