@@ -17,12 +17,12 @@ helpviewer_keywords:
 - keyboard shortcuts [Windows Forms], creating for controls
 - access keys [Windows Forms], Windows Forms
 ms.assetid: 5ee8f823-80be-4a4f-96a4-412671e2e306
-ms.openlocfilehash: 227880ad15e452df3f05807c41f3923cccb6fe3a
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: ff603ee784978a8b2bab2cccd4610fc50b45d477
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57708298"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59171714"
 ---
 # <a name="how-to-create-access-keys-with-windows-forms-label-controls"></a>Postupy: Vytváření přístupových klíčů pomocí ovládacích prvků Windows Forms Label
 Windows Forms <xref:System.Windows.Forms.Label> ovládací prvky lze použít k definování přístupové klíče pro ostatní ovládací prvky. Při definování přístupový klíč v ovládacím prvku popisek, může uživatel stisknout klávesy ALT a znak, který určíte přesunout fokus na ovládací prvek, který následuje v pořadí. Protože popisků nemůže být vybrán, automaticky aktivuje další ovládací prvek v pořadí karet. Tento postup použijte k přiřazení přístupových klíčů a textová pole, pole se seznamem, pole se seznamem datových mřížkách.  
@@ -64,6 +64,7 @@ Windows Forms <xref:System.Windows.Forms.Label> ovládací prvky lze použít k 
     ```  
   
 ## <a name="see-also"></a>Viz také:
-- [Postupy: Velikost ovládacího prvku Windows Forms Label k zobrazení jeho obsahu](how-to-size-a-windows-forms-label-control-to-fit-its-contents.md)
+
+- [Postupy: Určení velikosti ovládacího prvku Windows Forms Label k zobrazení jeho obsahu](how-to-size-a-windows-forms-label-control-to-fit-its-contents.md)
 - [Přehled ovládacího prvku Label](label-control-overview-windows-forms.md)
 - [Ovládací prvek Label](label-control-windows-forms.md)

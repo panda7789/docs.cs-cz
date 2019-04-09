@@ -1,5 +1,5 @@
 ---
-title: <requestCaching> – element (nastavení sítě)
+title: <requestCaching> – Element (nastavení sítě)
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#requestCaching
@@ -8,12 +8,12 @@ helpviewer_keywords:
 - requestCaching element
 - <requestCaching> element
 ms.assetid: 9962a2fe-cbda-41a6-9377-571811eaea84
-ms.openlocfilehash: d78325438ba158c0c1d0e322d0b02d0a0a2a57f0
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: af290e4b9258a08425a15e297ff538502edea916
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55277703"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59164850"
 ---
 # <a name="requestcaching-element-network-settings"></a>\<requestCaching – > – Element (nastavení sítě)
 Určuje mechanismus ukládání do mezipaměti pro síťové požadavky.  
@@ -49,7 +49,7 @@ Určuje mechanismus ukládání do mezipaměti pro síťové požadavky.
   
 ## <a name="policylevel-attribute"></a>PolicyLevel, který atribut  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |`Default`|Vrátí uložený v mezipaměti prostředků, pokud je prostředek čerstvé, délka obsahu je správná, a vypršení platnosti, úpravu a délka obsahu atributy jsou k dispozici.|  
 |`BypassCache`|Vrátí prostředek ze serveru.|  
@@ -65,7 +65,7 @@ Určuje mechanismus ukládání do mezipaměti pro síťové požadavky.
 |Prvek|Popis|  
 |-------------|-----------------|  
 |[defaultHttpCachePolicy](../../../../../docs/framework/configure-apps/file-schema/network/defaulthttpcachepolicy-element-network-settings.md)|Volitelný element.<br /><br /> Popisuje, zda HTTP, ukládání do mezipaměti je aktivní a popisuje výchozí zásady ukládání do mezipaměti.|  
-|[\<defaultFtpCachePolicy> Element (Network Settings)](../../../../../docs/framework/configure-apps/file-schema/network/defaultftpcachepolicy-element-network-settings.md)|Volitelný element.<br /><br /> Popisuje, zda ukládání do mezipaměti serveru FTP je aktivní a popisuje výchozí zásady ukládání do mezipaměti.|  
+|[\<defaultftpcachepolicy – > – Element (nastavení sítě)](../../../../../docs/framework/configure-apps/file-schema/network/defaultftpcachepolicy-element-network-settings.md)|Volitelný element.<br /><br /> Popisuje, zda ukládání do mezipaměti serveru FTP je aktivní a popisuje výchozí zásady ukládání do mezipaměti.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -87,5 +87,6 @@ Určuje mechanismus ukládání do mezipaměti pro síťové požadavky.
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Net.Cache?displayProperty=nameWithType>
 - [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

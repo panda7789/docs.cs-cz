@@ -7,12 +7,12 @@ helpviewer_keywords:
 - controls [WPF], DocumentViewer
 - DocumentViewer control [WPF]
 ms.assetid: c21eb322-d6b3-474b-ab05-94527bd1b0fa
-ms.openlocfilehash: dd87b81dbfc412168566f5b58bb2040c0e05b080
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: cc9031a19cb49736cf039d53d02ff2bc571ff978
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57365422"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59167853"
 ---
 # <a name="documentviewer"></a>DocumentViewer
 <xref:System.Windows.Controls.DocumentViewer> Ovládacího prvku se používá k zobrazení <xref:System.Windows.Documents.FixedDocument> obsah (například [!INCLUDE[TLA#tla_metro](../../../../includes/tlasharptla-metro-md.md)] dokumenty) ve formátu stránkované.  
@@ -23,6 +23,7 @@ ms.locfileid: "57365422"
  <xref:System.Windows.Documents.FixedDocument>  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Dokumenty](../advanced/documents.md)
-- [Serializace a úložiště dokumentů](../advanced/document-serialization-and-storage.md)
+- [Serializace a úložiště dokumentu](../advanced/document-serialization-and-storage.md)
 - [Přehled tisku](../advanced/printing-overview.md)

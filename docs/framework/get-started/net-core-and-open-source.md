@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: e6bd4655-ce37-4003-8462-468a6fe2c40f
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: a3c48182ab5a864228fd1d2ccf32d714ebccf60a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5eeef28f9a1d81ffa6328bfa5f2a8ed5295b47aa
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54494558"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59163420"
 ---
 # <a name="net-core-and-open-source"></a>.NET Core a open source
 Toto téma nabízí stručný přehled o co .NET Core se a ukazuje, jak můžete najít další informace. Úplný seznam témat pro .NET Core, najdete v tématu [Průvodce platformou .NET Core](../../core/index.md).
@@ -46,6 +46,7 @@ Toto téma nabízí stručný přehled o co .NET Core se a ukazuje, jak můžete
 -   [ASP.NET Core](https://github.com/aspnet/home)  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Domovská stránka .NET core](https://www.microsoft.com/net/core)
 - [Průvodce platformou .NET Core](../../core/index.md)
 - [Dokumentace k ASP.NET Core](/aspnet/core/)

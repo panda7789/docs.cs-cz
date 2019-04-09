@@ -2,12 +2,12 @@
 title: Informace o zabezpečení pro metadata
 ms.date: 03/30/2017
 ms.assetid: e78ef8ab-4f63-4656-ab93-b1deab2666d5
-ms.openlocfilehash: 2e1ad9f3c7d2a77ec6237bf1fc12c0d1a67181ad
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
+ms.openlocfilehash: 0dc060475f868923e8c7e4c87ef43ef5912c7ac5
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58411910"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59172962"
 ---
 # <a name="security-considerations-with-metadata"></a>Informace o zabezpečení pro metadata
 Při použití funkce metadat Windows Communication Foundation (WCF), vezměte v úvahu bezpečnostních důsledcích publikování, načítání a používání metadat služby.  
@@ -39,5 +39,6 @@ Při použití funkce metadat Windows Communication Foundation (WCF), vezměte v
  Konfigurační soubor aplikace služby mohou řídit jak a v případě publikování metadat. Je vhodné pro ochranu pomocí seznamů řízení odpovídající přístupu (ACL) se ujistěte se, že útočník nelze změnit tato nastavení konfiguračního souboru aplikace.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Postupy: Zabezpečené koncové body metadat](../../../../docs/framework/wcf/feature-details/how-to-secure-metadata-endpoints.md)
 - [Zabezpečení](../../../../docs/framework/wcf/feature-details/security.md)

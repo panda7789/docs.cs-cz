@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 87925795-a3ae-4833-b138-125413478551
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3e5d6c063fedf14559b20d1de49c1855d0fe1304
-ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
+ms.openlocfilehash: 834652318d4cb1cbcebe27a922d210ef87026ed5
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56219318"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59169023"
 ---
 # <a name="registering-assemblies-with-com"></a>Registrování sestav pomocí modelu COM
 Spustíte nástroj příkazového řádku, volá se, [nástroj registrace sestavení (Regasm.exe)](../tools/regasm-exe-assembly-registration-tool.md) k registraci nebo zrušení registrace sestavení pro použití v modelu COM. Abyste klientům modelu COM použít třídy rozhraní .NET Framework transparentně RegAsm.exe přidá informace o třídě do systémového registru. <xref:System.Runtime.InteropServices.RegistrationServices> Třída poskytuje ekvivalentní funkce.  
@@ -44,7 +44,8 @@ Spustíte nástroj příkazového řádku, volá se, [nástroj registrace sestav
  Pro `InprocServer32` podklíč, zobrazí se místo tradiční knihovně typů modelu COM k označení, zda modul common language runtime vytvoří spravovaný objekt odkaz na knihovny Mscoree.dll.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Vystavení komponent architektury .NET Framework pro COM](exposing-dotnet-components-to-com.md)
-- [Postupy: Referenční typy .NET z modelu COM](how-to-reference-net-types-from-com.md)
+- [Postupy: Odkazování na typy .NET z modelu COM](how-to-reference-net-types-from-com.md)
 - [Volání objektu .NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/8hw8h46b(v=vs.100))
-- [Nasazení aplikace pro přístup k modelu COM](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/c2850st8(v=vs.100))
+- [Nasazení aplikace pro přístup COM](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/c2850st8(v=vs.100))

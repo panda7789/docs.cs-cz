@@ -10,12 +10,12 @@ helpviewer_keywords:
 - message boxes [WPF]
 - modal dialog boxes [WPF]
 ms.assetid: 0d23d544-a393-4a02-a3aa-d8cd5d3d6511
-ms.openlocfilehash: 14ed5655f31c8c73e6d7b8e987d1856fc869c9de
-ms.sourcegitcommit: d938c39afb9216db377d0f0ecdaa53936a851059
+ms.openlocfilehash: 162414dbd4b0f5e15eceaf73c87c122701fefc4e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58634450"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59177408"
 ---
 # <a name="dialog-boxes-overview"></a>Přehled dialogových oken
 Samostatné aplikace mají obvykle hlavní okno, že oba zobrazuje hlavní data nad tím, které aplikace funguje a zpřístupňuje funkci ke zpracování dat prostřednictvím [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] mechanismy, jako je panel nabídek, panelů nástrojů a stavové řádky. Aplikace nejsou v netriviálních může také zobrazit další okna provést následující kroky:  
@@ -33,9 +33,7 @@ Samostatné aplikace mají obvykle hlavní okno, že oba zobrazuje hlavní data 
  A *nemodální* dialogovém okně na druhé straně nebrání uživatele aktivace ostatní okna, zatímco je otevřen. Například pokud chce uživatel vyhledat výskyty určité slovo v dokumentu, hlavní okno se často otevře dialogové okno pro požádat uživatele, na jaké slovo, které potřebují. Od hledání slovo nezabrání uživatele úpravy dokumentu, ale dialogové okno nemusí být modální. Nemodální dialogové okno obsahuje alespoň **zavřete** tlačítka zavřete dialogové okno a smíte uvést další tlačítka provádět konkrétní funkce, jako například **najít další** tlačítko Najít další aplikace word, který odpovídá kritériím hledání slovo hledání.  
   
  Windows Presentation Foundation (WPF) umožňuje vytvořit několik typů dialogových oknech, včetně okna se zprávou, společná dialogová okna a dialogová okna Vlastní. Toto téma popisuje a [dialogové okno pole ukázka](https://go.microsoft.com/fwlink/?LinkID=159984) obsahuje odpovídající příklady.  
-  
- 
-  
+
 <a name="Message_Boxes"></a>   
 ## <a name="message-boxes"></a>Okna se zprávou  
  A *okno se zprávou* je dialogové okno, které lze použít k zobrazení textové informace a umožňují uživatelům rozhodování využívat tlačítka. Následující obrázek znázorňuje okno se zprávou, která zobrazí textové informace, zeptá na otázku a poskytuje tři tlačítka odpověď na otázku uživatele.  
@@ -47,7 +45,7 @@ Samostatné aplikace mají obvykle hlavní okno, že oba zobrazuje hlavní data 
  [!code-csharp[DialogBoxesOverviewSnippets#MsgBoxConfigureCODEBEHIND](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxesOverviewSnippets/CSharp/Window1.xaml.cs#msgboxconfigurecodebehind)]
  [!code-vb[DialogBoxesOverviewSnippets#MsgBoxConfigureCODEBEHIND](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxesOverviewSnippets/VisualBasic/window1.xaml.vb#msgboxconfigurecodebehind)]  
   
- Chcete-li zobrazit okno se zprávou, zavolejte `static` <xref:System.Windows.MessageBox.Show%2A> způsob, jak je ukázáno v následujícím kódu.  
+ Chcete-li zobrazit okno se zprávou, zavolejte `static`<xref:System.Windows.MessageBox.Show%2A> způsob, jak je ukázáno v následujícím kódu.  
   
  [!code-csharp[DialogBoxesOverviewSnippets#MsgBoxShowCODEBEHIND](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxesOverviewSnippets/CSharp/Window1.xaml.cs#msgboxshowcodebehind)]
  [!code-vb[DialogBoxesOverviewSnippets#MsgBoxShowCODEBEHIND](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxesOverviewSnippets/VisualBasic/window1.xaml.vb#msgboxshowcodebehind)]  
@@ -345,6 +343,7 @@ Samostatné aplikace mají obvykle hlavní okno, že oba zobrazuje hlavní data 
 [!code-vb[DialogBoxSample#FindDialogCloseCODEBEHIND2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/FindDialogBox.xaml.vb#finddialogclosecodebehind2)]  
   
 ## <a name="see-also"></a>Viz také:
-- [Přehled prvku Popup](../controls/popup-overview.md)
+
+- [Přehled překryvných objektů](../controls/popup-overview.md)
 - [Dialogové okno pole vzorku](https://go.microsoft.com/fwlink/?LinkID=159984)
 - [Ukázka ovládacího prvku ColorPicker vlastní](https://go.microsoft.com/fwlink/?LinkID=159977)

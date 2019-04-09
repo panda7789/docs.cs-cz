@@ -3,12 +3,12 @@ title: Migrace z DNX až po .NET Core CLI
 description: Migrace z DNX nástroje, nástroje rozhraní příkazového řádku .NET Core pomocí.
 ms.date: 06/20/2016
 ms.custom: seodec18
-ms.openlocfilehash: 006e909be03ec3d090135f32f7ba13311201f81e
-ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
+ms.openlocfilehash: 0f00ee6c05a47d976028c3cd4eade2b2b399260b
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57845719"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59160833"
 ---
 # <a name="migrating-from-dnx-to-net-core-cli-projectjson"></a>Migrace z DNX až po .NET Core CLI (project.json)
 
@@ -46,7 +46,6 @@ Odkazovat runtime ve vaší `project.json` tak, že přidáte balíček určitou
 Pokud jste používali DNX, můžete použít některé příkazy z jednoho z jeho tří částí (DNX, dnů nebo DNVM). Pomocí rozhraní příkazového řádku, některé z těchto příkazů změnit, některé nejsou k dispozici a některé jsou stejné, ale mají mírně odlišnou sémantiku.
 
 Následující tabulka uvádí mapování mezi příkazy DNX/dnů a jejich protějšky v rozhraní příkazového řádku.
-
 
 | Příkaz DNX                    | Rozhraní příkazového řádku    | Popis                                                                                                     |
 |--------------------------------|----------------|-----------------------------------------------------------------------------------------------------------------|

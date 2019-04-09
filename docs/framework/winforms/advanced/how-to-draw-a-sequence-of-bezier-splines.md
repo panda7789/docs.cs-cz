@@ -8,12 +8,12 @@ helpviewer_keywords:
 - splines [Windows Forms], drawing Bezier
 - Bezier splines [Windows Forms], drawing sequence of
 ms.assetid: 37a0bedb-20c2-4cf0-91fa-a5509e826b30
-ms.openlocfilehash: 2b74b03137d5a450fb1e436a514877d1a17229ad
-ms.sourcegitcommit: 15ab532fd5e1f8073a4b678922d93b68b521bfa0
+ms.openlocfilehash: 976787f5830282a581d05a9c24d1f83dceca4b25
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58654247"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59168152"
 ---
 # <a name="how-to-draw-a-sequence-of-b233zier-splines"></a>Postupy: Kreslení sekvence B&#233;zier křivek
 Můžete použít <xref:System.Drawing.Graphics.DrawBeziers%2A> metodu <xref:System.Drawing.Graphics> připojené třídy kreslení sekvence Bézierových křivek.  
@@ -32,6 +32,7 @@ Můžete použít <xref:System.Drawing.Graphics.DrawBeziers%2A> metodu <xref:Sys
  V předchozím příkladu je určený k použití pomocí Windows Forms a vyžaduje <xref:System.Windows.Forms.PaintEventArgs> `e`, což je parametr <xref:System.Windows.Forms.Control.Paint> obslužné rutiny události.  
   
 ## <a name="see-also"></a>Viz také:
-- [Grafika a kreslení v modelu Windows Forms](graphics-and-drawing-in-windows-forms.md)
+
+- [Grafika a kreslení v rozhraní Windows Forms](graphics-and-drawing-in-windows-forms.md)
 - [Bézierovy křivky v GDI+](bezier-splines-in-gdi.md)
 - [Sestavování a kreslení křivek](constructing-and-drawing-curves.md)

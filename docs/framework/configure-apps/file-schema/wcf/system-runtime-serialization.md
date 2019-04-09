@@ -2,12 +2,12 @@
 title: <system.runtime.serialization>
 ms.date: 03/30/2017
 ms.assetid: a8cebf4c-06d2-4667-8f5b-c3e1fc90df6f
-ms.openlocfilehash: 5aa5d75e12852fe6a0e4e9a2eb4ae57d25d1022c
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: c34eba2614a354f1753d8da077f8653f2c260a97
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55272676"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59165890"
 ---
 # <a name="systemruntimeserialization"></a>\<system.runtime.serialization>
 Představuje kořenový element <xref:System.Runtime.Serialization> části obor názvů a obsahuje prvky pro nastavení voleb <xref:System.Runtime.Serialization.DataContractSerializer>.  
@@ -52,6 +52,7 @@ Představuje kořenový element <xref:System.Runtime.Serialization> části obor
 |[\<Konfigurace > – Element](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)|Element nejvyšší úrovně pro konfiguraci.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Runtime.Serialization>
 - [Použití kontraktů dat](../../../../../docs/framework/wcf/feature-details/using-data-contracts.md)
 - [Známé typy kontraktů dat](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)

@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - behaviors [WCF], system-provided client
 ms.assetid: d16d3405-be70-4edb-8f62-b5f614ddeca5
-ms.openlocfilehash: 2f6879f5e46e62db29e482444d55680d39dd8ccc
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f750978eaa617a5505bb27a1535797320a76b0d4
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54587174"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59164369"
 ---
 # <a name="specifying-client-run-time-behavior"></a>Nastavení běhového chování klienta
 Klienti Windows Communication Foundation (WCF), jako jsou služby Windows Communication Foundation (WCF), lze nastavit k úpravě chování za běhu tak, aby odpovídala klientské aplikace. Tři atributy jsou k dispozici pro určení chování klienta za běhu. Můžete použít objekty zpětného volání klienta duplexní <xref:System.ServiceModel.CallbackBehaviorAttribute> a <xref:System.ServiceModel.Description.CallbackDebugBehavior> atributů, které mají změna jejich chování za běhu. Ostatní atributy <xref:System.ServiceModel.Description.ClientViaBehavior>, můžete použít k oddělení logické cíl z cílového okamžitou síť. Kromě toho můžete použít typy zpětného volání klienta duplexní některá chování straně služby. Další informace najdete v tématu [určení chování za běhu služby](../../../docs/framework/wcf/specifying-service-run-time-behavior.md).  
@@ -44,4 +44,5 @@ Klienti Windows Communication Foundation (WCF), jako jsou služby Windows Commun
  Můžete použít <xref:System.ServiceModel.Description.ClientViaBehavior> chování k určení Uniform Resource Identifier, pro který by měl být vytvořen přenosový kanál. Použijte toto chování, pokud cíl okamžitou síť není zamýšlený procesoru zprávy. To umožňuje vícenásobným směrováním konverzace, pokud volající aplikace neví nutně ultimate cíl nebo pokud cíl `Via` záhlaví není adresa.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Určování chování služby za běhu](../../../docs/framework/wcf/specifying-service-run-time-behavior.md)

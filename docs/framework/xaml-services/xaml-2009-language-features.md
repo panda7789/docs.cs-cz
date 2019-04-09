@@ -5,12 +5,12 @@ helpviewer_keywords:
 - XAML 2009 [XAML Services]
 - XAML [XAML Services], XAML 2009
 ms.assetid: f6bb18d8-c86a-4549-8862-323e6b32a8dd
-ms.openlocfilehash: 6de103d9b5b59ec1a47098e44e07ee95a3db166e
-ms.sourcegitcommit: 5c1abeec15fbddcc7dbaa729fabc1f1f29f12045
+ms.openlocfilehash: 05f811cd0d95f7605963dae851430fb6bf0e9f7a
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58039568"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59162277"
 ---
 # <a name="xaml-2009-language-features"></a>Jazykové funkce jazyka XAML 2009
 XAML 2009 je zkrácený tvar vlastností termín pro nové funkce jazyka XAML, které rozšiřují existující specifikace jazyka XAML. XAML 2009 zavádí několik nových direktivách a konstrukce. Patří mezi ně [x: Arguments – direktiva](x-arguments-directive.md); [x: FactoryMethod – direktiva](x-factorymethod-directive.md); [x: Reference – rozšíření značek](x-reference-markup-extension.md); [x: TypeArguments – direktiva ](x-typearguments-directive.md); a předdefinované typy obecných primitiv jazyka (například `x:Char`).  
@@ -33,4 +33,5 @@ XAML 2009 je zkrácený tvar vlastností termín pro nové funkce jazyka XAML, k
  Pro atributy, které se zálohují na události XAML 2006 předpokládá, že značky kompilace se tak zapojí a odesílá události do kompilace označení. XAML 2009 podporuje značky formuláře, který vypadá podobně jako rozšíření značek, které odloží propojování událostí až do běhu analýzy a načítání XAML. Ale aplikace WPF a scénáře rozhraní WPF XAML obecně nepoužívejte tuto funkci. WPF a implementaci XAML 2006 používá kombinaci její obslužná rutina události pro směrované události definované na <xref:System.Windows.UIElement> úroveň a jeho značky kompilátoru krok pro velkou část jeho atribut zpracování událostí. Kompilátor kód také upraví atributy události v XAML, kde akce sestavení deklarovat, že kompilátor kód používá.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled XAML (WPF)](../wpf/advanced/xaml-overview-wpf.md)

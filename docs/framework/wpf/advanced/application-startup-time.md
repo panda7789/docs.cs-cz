@@ -8,12 +8,12 @@ helpviewer_keywords:
 - application startup [WPF]
 - performance [WPF], startup time
 ms.assetid: f0ec58d8-626f-4d8a-9873-c20f95e08b96
-ms.openlocfilehash: 0bd7875f1e819497ea3a4d846a2876084a54ab80
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 72207861850875f08786401aacf7b911b2a5b1f6
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57379104"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59173027"
 ---
 # <a name="application-startup-time"></a>Rychlejší spuštění aplikace
 Množství času, který je požadován pro spuštění aplikace WPF může značně lišit. Toto téma popisuje různé postupy pro zkrácení doby spuštění vnímaná, ve skutečnosti pro aplikace Windows Presentation Foundation (WPF).  
@@ -123,6 +123,7 @@ Množství času, který je požadován pro spuštění aplikace WPF může zna�
  Namísto použití XAML nastavit <xref:System.Windows.FrameworkElement.DataContext%2A> deklarativně pro hlavní okno, zvažte nastavení prostřednictvím kódu programu v <xref:System.Windows.Application.OnActivated%2A> metody.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.SplashScreen>
 - <xref:System.AppDomain>
 - <xref:System.Resources.NeutralResourcesLanguageAttribute>

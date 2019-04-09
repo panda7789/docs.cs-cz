@@ -7,12 +7,12 @@ helpviewer_keywords:
 - DateTimePicker control [Windows Forms], about
 - date and time picker controls
 ms.assetid: 501af106-e9fc-4efc-b9b3-c9d8dcaf8c5c
-ms.openlocfilehash: 1d2e286e3ce91c722be24f059a874b9db5f2ba82
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 451172b51427e4932470c53737c7bc276920271c
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57703172"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59173589"
 ---
 # <a name="datetimepicker-control-overview-windows-forms"></a>DateTimePicker – přehled ovládacího prvku (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.DateTimePicker> ovládací prvek umožňuje uživateli vybrat jednu položku ze seznamu data nebo časy. Při použití představující datum, zobrazí se ve dvou částech: rozevírací seznam datum v textu a mřížka, která se zobrazí, když kliknete na šipku dolů vedle seznamu. Mřížka vypadá jako <xref:System.Windows.Forms.MonthCalendar> ovládací prvek, který slouží k výběru několika kalendářních datech. Další informace o <xref:System.Windows.Forms.MonthCalendar> řídí, najdete v článku [MonthCalendar – Přehled ovládacího prvku](monthcalendar-control-overview-windows-forms.md).  
@@ -25,5 +25,6 @@ Windows Forms <xref:System.Windows.Forms.DateTimePicker> ovládací prvek umož�
  Ovládací prvek <xref:System.Windows.Forms.DateTimePicker.MaxDate%2A> a <xref:System.Windows.Forms.DateTimePicker.MinDate%2A> vlastnosti určit rozsah kalendářních dat a časů. <xref:System.Windows.Forms.DateTimePicker.Value%2A> Vlastnost obsahuje aktuální datum a čas ovládacího prvku nastavená na. Podrobnosti najdete v tématu [jak: Nastavení a vracení kalendářních dat pomocí Windows Forms DateTimePicker – ovládací prvek](how-to-set-and-return-dates-with-the-windows-forms-datetimepicker-control.md). Hodnoty lze zobrazit čtyři formátů, které určil institut NIST <xref:System.Windows.Forms.DateTimePicker.Format%2A> vlastnost: <xref:System.Windows.Forms.DateTimePickerFormat.Long>, <xref:System.Windows.Forms.DateTimePickerFormat.Short>, <xref:System.Windows.Forms.DateTimePickerFormat.Time>, nebo <xref:System.Windows.Forms.DateTimePickerFormat.Custom>. Pokud je vybraný vlastní formát, je nutné nastavit <xref:System.Windows.Forms.DateTimePicker.CustomFormat%2A> vlastnosti odpovídající řetězci. Podrobnosti najdete v tématu [jak: Zobrazení data ve vlastním formátu pomocí ovládacího prvku Windows Forms DateTimePicker](display-a-date-in-a-custom-format-with-wf-datetimepicker-control.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Postupy: Zobrazení data ve vlastním formátu pomocí ovládacího prvku Windows Forms DateTimePicker](display-a-date-in-a-custom-format-with-wf-datetimepicker-control.md)
-- [Postupy: Nastavení a vrácení kalendářních dat pomocí ovládacího prvku Windows Forms DateTimePicker](how-to-set-and-return-dates-with-the-windows-forms-datetimepicker-control.md)
+- [Postupy: Nastavení a vracení kalendářních dat pomocí ovládacího prvku Windows Forms DateTimePicker](how-to-set-and-return-dates-with-the-windows-forms-datetimepicker-control.md)

@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 613ad742-3c11-401d-a6b3-893ceb8de4f8
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 3908663a12f0e4edd8024c7f53f21b2e82bb8dbd
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 876f0fe3c40cb6754b4ba714833dd160dc4de3a8
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54665393"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59176953"
 ---
 # <a name="invalidgchandlecookie-mda"></a>invalidGCHandleCookie – pomocník spravovaného ladění (MDA)
 `invalidGCHandleCookie` Pomocníka spravovaného ladění (MDA) se aktivuje při převodu z neplatný <xref:System.IntPtr> soubor cookie <xref:System.Runtime.InteropServices.GCHandle> dojde k pokusu o.  
@@ -26,7 +26,7 @@ ms.locfileid: "54665393"
 ## <a name="cause"></a>Příčina  
  Soubor cookie je pravděpodobně neplatný, protože nebyl původně vytvořen z <xref:System.Runtime.InteropServices.GCHandle>, představuje <xref:System.Runtime.InteropServices.GCHandle> , který již byl uvolněn, soubor cookie k <xref:System.Runtime.InteropServices.GCHandle> v různých aplikační domény, nebo byl zařazen do nativního kódu jako <xref:System.Runtime.InteropServices.GCHandle>ale předaný zpět do modulu CLR jako <xref:System.IntPtr>, kde došlo k pokusu přetypování.  
   
-## <a name="resolution"></a>Rozlišení  
+## <a name="resolution"></a>Řešení  
  Zadejte platný <xref:System.IntPtr> soubor cookie pro <xref:System.Runtime.InteropServices.GCHandle>.  
   
 ## <a name="effect-on-the-runtime"></a>Vliv na modul Runtime  
@@ -46,6 +46,7 @@ ms.locfileid: "54665393"
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Runtime.InteropServices.GCHandle.FromIntPtr%2A>
 - <xref:System.Runtime.InteropServices.GCHandle>
 - [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)

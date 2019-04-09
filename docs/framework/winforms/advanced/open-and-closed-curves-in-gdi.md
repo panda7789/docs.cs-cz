@@ -10,12 +10,12 @@ helpviewer_keywords:
 - curves [Windows Forms], drawing
 - curves
 ms.assetid: 08d2cc9a-dc9d-4eed-bcbb-2c8e2ca5d3ae
-ms.openlocfilehash: bc78077be45f22826eaa23a746dcf272601d51b4
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 33a8954296a7e63637ad5e210fb30fba1a3fdd53
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57711457"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59165110"
 ---
 # <a name="open-and-closed-curves-in-gdi"></a>Otevřené a uzavřené křivky v GDI+
 Následující obrázek znázorňuje dvě křivek: jeden otevřít a jeden zavřené.  
@@ -49,6 +49,7 @@ Následující obrázek znázorňuje dvě křivek: jeden otevřít a jeden zavř
  ![Řetězec v cestě](./media/aboutgdip02-art26.gif "Aboutgdip02_art26")  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Drawing.Drawing2D.GraphicsPath?displayProperty=nameWithType>
 - <xref:System.Drawing.Pen?displayProperty=nameWithType>
 - <xref:System.Drawing.Point?displayProperty=nameWithType>

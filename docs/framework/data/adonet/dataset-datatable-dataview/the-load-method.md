@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 dev_langs:
 - vb
 ms.assetid: e22e5812-89c6-41f0-9302-bb899a46dbff
-ms.openlocfilehash: 06666e069f20bc06f303c4e829d1c69c185a8a84
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 82f840ab7dd26a4888ebf024d696f2c70701eb18
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54602478"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59173287"
 ---
 # <a name="the-load-method"></a>Metoda Load
 Můžete použít <xref:System.Data.DataTable.Load%2A> metodu pro načtení <xref:System.Data.DataTable> s řádky ze zdroje dat. Toto je přetěžované metody, které ve své nejjednodušší podobě přijímá jeden parametr, **DataReader**. V tomto formuláři jednoduše načte **DataTable** s řádky. Volitelně můžete zadat **LoadOption** parametr řídit, jak data je přidána do **DataTable**.  
@@ -69,5 +69,6 @@ End Sub
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Manipulace s daty v datové tabulce](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/manipulating-data-in-a-datatable.md)
 - [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

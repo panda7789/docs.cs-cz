@@ -2,12 +2,12 @@
 title: <netNamedPipeBinding>
 ms.date: 03/30/2017
 ms.assetid: 00a8580b-face-47a4-838d-b9fed48e72df
-ms.openlocfilehash: 6dcbc7842e7e5012075309d2679df238ad33a3c2
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
+ms.openlocfilehash: dc1af462222920c7b3c6b66c3822e7b2b326b244
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58410677"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59169816"
 ---
 # <a name="netnamedpipebinding"></a>\<netNamedPipeBinding>
 Definuje vazbu, která je zabezpečená, spolehlivá, optimalizovaná pro komunikaci mezi procesy dané stanice. Ve výchozím nastavení vygeneruje zásobník modulu runtime komunikace s WS-ReliableMessaging spolehlivosti, zabezpečení přenosu pro zabezpečení přenosu, pojmenované kanály pro doručování zpráv a kódování binární zprávy.  
@@ -70,14 +70,14 @@ Definuje vazbu, která je zabezpečená, spolehlivá, optimalizovaná pro komuni
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<zabezpečení >](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-netnamedpipebinding.md)|Definuje nastavení zabezpečení pro vazbu. Tento prvek je typu <xref:System.ServiceModel.Configuration.NetNamedPipeBindingElement>.|  
+|[\<security>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-netnamedpipebinding.md)|Definuje nastavení zabezpečení pro vazbu. Tento prvek je typu <xref:System.ServiceModel.Configuration.NetNamedPipeBindingElement>.|  
 |[\<readerQuotas>](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms731325(v=vs.100))|Definuje omezení složitosti zpráv SOAP, které mohou být zpracovány koncovými body nakonfigurovaným s touto vazbou. Tento prvek je typu <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement>.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<bindings>](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|Tento prvek obsahuje sadu standardních a vlastních vazeb.|  
+|[\<vazby >](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|Tento prvek obsahuje sadu standardních a vlastních vazeb.|  
   
 ## <a name="remarks"></a>Poznámky  
  `NetNamedPipeBinding` Generuje runtime komunikačního balíku ve výchozím nastavení, která používá zabezpečení přenosu pojmenované kanály pro doručování zpráv a zprávy v binární kódování. Tato vazba je vhodné Windows Communication Foundation (WCF) poskytované systémem volbou pro komunikaci na počítači. Také podporuje transakce.  
@@ -144,6 +144,7 @@ Definuje vazbu, která je zabezpečená, spolehlivá, optimalizovaná pro komuni
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Configuration.NetNamedPipeBindingElement>
 - <xref:System.ServiceModel.NetNamedPipeBinding>
 - [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)

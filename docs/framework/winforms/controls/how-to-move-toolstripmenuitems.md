@@ -11,12 +11,12 @@ helpviewer_keywords:
 - MenuStrip control [Windows Forms], arranging items
 - ToolStripMenuItems [Windows Forms], cutting and pasting
 ms.assetid: cab9e03e-4edd-4c25-b3e3-bd1edc602bd9
-ms.openlocfilehash: 50b5fd16780147ad7592035a901d993495dcb878
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: 70387a4c43b78f93a46f601eb35b7dca2083b01f
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57708948"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59168334"
 ---
 # <a name="how-to-move-toolstripmenuitems"></a>Postupy: Přesouvání ToolStripMenuItems
 V době návrhu, můžete přesunout celou nabídek nejvyšší úrovně a jejich položky nabídky na jiné místo <xref:System.Windows.Forms.MenuStrip>. Můžete také přesunout jednotlivé položky nabídky mezi nabídek nejvyšší úrovně nebo změní pozici položky nabídky v nabídce.  
@@ -71,6 +71,7 @@ V době návrhu, můžete přesunout celou nabídek nejvyšší úrovně a jejic
      Položka nabídky, která můžete vyjmout vkládá vybranou položku nabídky.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.MenuStrip>
 - <xref:System.Windows.Forms.ToolStripMenuItem>
 - [Přehled ovládacího prvku MenuStrip](menustrip-control-overview-windows-forms.md)

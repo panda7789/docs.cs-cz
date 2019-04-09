@@ -7,18 +7,16 @@ helpviewer_keywords:
 - metadata [WPF], for dependency properties
 - overriding metadata [WPF]
 ms.assetid: d01ed009-b722-41bf-b82f-fe1a8cdc50dd
-ms.openlocfilehash: 7a9f4c2c8c9ff6c315b9d7189d5e859a902c3e4d
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 98f8c6611340c89409697918ff8a16eaabe3c7a3
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57352929"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59170362"
 ---
 # <a name="dependency-property-metadata"></a>Metadata vlastností závislosti
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] Vlastnost systém zahrnuje metadata vytváření sestav systém, který jde nad rámec co může být nahlášené o vlastnosti prostřednictvím reflexe a Obecné [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] charakteristiky. Metadata pro vlastnost závislosti lze také přiřadit jednoznačně podle třídy, která definuje vlastnost závislosti, můžete změnit, pokud vlastnost závislosti je přidána do jiné třídy a může být explicitně přepsáno všechny odvozené třídy, které dědí Vlastnost závislosti z definující základní třídy.  
-  
- 
-  
+
 <a name="prerequisites"></a>   
 ## <a name="prerequisites"></a>Požadavky  
  Toto téma předpokládá, že rozumíte vlastnosti závislosti z pohledu příjemce vlastnosti existujícího závislosti na [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] třídy a čtení [přehled vlastností závislosti](dependency-properties-overview.md). Pokud chcete postupovat podle příkladů v tomto tématu, měli byste také znát [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] a vědět, jak psát [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikací.  
@@ -92,9 +90,10 @@ ms.locfileid: "57352929"
  Můžete volat <xref:System.Windows.DependencyProperty.AddOwner%2A> pro vlastnost závislosti, který je definován jako připojené vlastnosti třídy vlastníka. Důvod pro to je obvykle zveřejnit předtím připojená vlastnost jako vlastnost závislosti nepřipojené. Pak bude vystavovat <xref:System.Windows.DependencyProperty.AddOwner%2A> vrátí hodnotu jako `public static readonly` pole pro použití jako identifikátor vlastnosti závislostí a definovat vlastnosti příslušné "obálky" tak, aby vlastnost se zobrazí v tabulce členů a podporuje nepřipojené vlastnosti využití ve své třídě.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.PropertyMetadata>
 - <xref:System.Windows.DependencyObject>
 - <xref:System.Windows.DependencyProperty>
 - <xref:System.Windows.DependencyProperty.GetMetadata%2A>
 - [Přehled vlastností závislosti](dependency-properties-overview.md)
-- [Metadata vlastnosti architektury](framework-property-metadata.md)
+- [Metadata vlastnosti rozhraní .NET Framework](framework-property-metadata.md)

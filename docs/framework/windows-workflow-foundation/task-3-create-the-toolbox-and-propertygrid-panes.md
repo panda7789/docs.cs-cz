@@ -1,15 +1,15 @@
 ---
-title: 'Úloha 3: Vytvořit panel nástrojů a PropertyGrid podokna'
+title: 'Úkol 3: Vytvoření podoken pro sady nástrojů a mřížku vlastností'
 ms.date: 03/30/2017
 ms.assetid: 72c1546a-eed5-4f0f-a616-719a163414f4
-ms.openlocfilehash: 45819577c39185a5d95da81521cd541087a64efc
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: a03a4204d6f112d8a94b48dd5a295dc4ff8354a7
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57721216"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59175042"
 ---
-# <a name="task-3-create-the-toolbox-and-propertygrid-panes"></a>Úloha 3: Vytvořit panel nástrojů a PropertyGrid podokna
+# <a name="task-3-create-the-toolbox-and-propertygrid-panes"></a>Úkol 3: Vytvoření podoken pro sady nástrojů a mřížku vlastností
 V této úloze vytvoříte **nástrojů** a **PropertyGrid** podokna a přidat je do změněným hostováním [!INCLUDE[wfd1](../../../includes/wfd1-md.md)].  
   
  Pro srovnání kód, který by měl být v souboru MainWindow.xaml.cs po dokončení tři úkoly v [změna hostování návrháře postupu provádění](rehosting-the-workflow-designer.md) řady témat najdete na konci tohoto tématu.  
@@ -213,6 +213,7 @@ namespace HostingApplication
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Změna hostování Návrháře postupu provádění](rehosting-the-workflow-designer.md)
-- [Úloha 1: Vytvoření nové aplikace Windows Presentation Foundation](task-1-create-a-new-wpf-app.md)
-- [Úloha 2: Hostování návrháře postupu provádění](task-2-host-the-workflow-designer.md)
+- [Úkol 1: Vytvoření nové aplikace Windows Presentation Foundation](task-1-create-a-new-wpf-app.md)
+- [Úkol 2: Hostování Návrháře postupu provádění](task-2-host-the-workflow-designer.md)

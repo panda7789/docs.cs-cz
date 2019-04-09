@@ -1,15 +1,15 @@
 ---
-title: Generování kódu v technologii LINQ to SQL
+title: Generování kódu v LINQ to SQL
 ms.date: 03/30/2017
 ms.assetid: ddcbdaa1-e7fa-4d85-a379-313b49965c07
-ms.openlocfilehash: 01ba89f2161430b046eb6f3151bc33dbd659b0d8
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 48035b0f7b4a8c9a37fade5dfc2e2c45ea779dba
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54627964"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59174886"
 ---
-# <a name="code-generation-in-linq-to-sql"></a>Generování kódu v technologii LINQ to SQL
+# <a name="code-generation-in-linq-to-sql"></a>Generování kódu v LINQ to SQL
 Můžete generovat kód pro reprezentaci databáze pomocí [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] nebo nástroj příkazového řádku SQLMetal. V obou případech se generování kódu začátku do konce dochází ve třech fázích:  
   
 1.  *Extraktor* extrahuje informace o schématu z databáze a znovu sestaví informace do souboru DBML ve formátu XML.  
@@ -270,8 +270,9 @@ elementFormDefault="qualified" >
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Základní informace](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)
 - [Externí mapování](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md)
 - [Postupy: Generování objektového modelu jako externího souboru](../../../../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-as-an-external-file.md)
 - [Stažení ukázkových databází](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)
-- [Referenční informace](../../../../../../docs/framework/data/adonet/sql/linq/reference.md)
+- [Odkaz](../../../../../../docs/framework/data/adonet/sql/linq/reference.md)

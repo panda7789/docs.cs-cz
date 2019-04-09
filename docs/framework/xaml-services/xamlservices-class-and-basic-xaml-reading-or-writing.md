@@ -5,12 +5,12 @@ helpviewer_keywords:
 - XAML [XAML Services], XamlServices class
 - XamlServices class [XAML Services], how to use
 ms.assetid: 6ac27fad-3687-4d7a-add1-3e90675fdfde
-ms.openlocfilehash: 68211babbce2e9512689fa329dcf33be0afa4a0c
-ms.sourcegitcommit: 5c1abeec15fbddcc7dbaa729fabc1f1f29f12045
+ms.openlocfilehash: c9ef6a215587750f66d2cf8b5b54cbc51f89037e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58027130"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59162260"
 ---
 # <a name="xamlservices-class-and-basic-xaml-reading-or-writing"></a>Třída XAMLServices a základní čtení a zápis v jazyku XAML
 <xref:System.Xaml.XamlServices> je třída poskytuje rozhraní .NET Framework XAML Services, který slouží k řešení scénářů XAML, které nevyžadují žádná zvláštní přístup k datový proud uzlu XAML nebo XAML typu systémové informace získané z těchto uzlů. <xref:System.Xaml.XamlServices> Rozhraní API jde vyhodnotit takto: `Load` nebo `Parse` pro podporu zatížení cestu XAML `Save` k podpoře XAML cestu, uložení a `Transform` k poskytování technika, která připojí načíst cestu a uložit cestu. `Transform` je možné změnit z jednoho schématu XAML do jiného. Toto téma shrnuje každého z těchto klasifikací rozhraní API a popisuje rozdíly mezi konkrétní metody přetížení.  
@@ -62,6 +62,7 @@ ms.locfileid: "58027130"
  Pro operace, které spoléhají na každý uzel v datovém proudu uzlu XAML zkoumání, obvykle použijete <xref:System.Xaml.XamlServices.Transform%2A>. Místo toho budete muset definovat vlastní zatížení cesta Uložit cestu operace řady a interject vlastní logiku. Jedním z cest použijte pár XAML čtečky/XAML zapisovače kolem uzlů smyčku. Například načtení počáteční XAML pomocí <xref:System.Xaml.XamlXmlReader> a krokování s vnořením do uzlů s po sobě jdoucích <xref:System.Xaml.XamlXmlReader.Read%2A> volání. Provozování na úrovni datový proud uzlu XAML teď můžete upravit jednotlivé uzly (typy, členy, ostatní uzly) Chcete-li použít transformace, nebo ponechejte uzel jako-je. Pak odešlete uzlu a vyšší příslušné `Write` rozhraní API <xref:System.Xaml.XamlObjectWriter> a vypsat objektu. Další informace najdete v tématu [Principy XAML Stream struktur a koncepcí uzlů](understanding-xaml-node-stream-structures-and-concepts.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Xaml.XamlObjectWriter>
 - <xref:System.Xaml.XamlServices>
 - [XAML Services](index.md)

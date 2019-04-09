@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: efbcd6f9eca426cd230653e38d527e184b378fa0
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: b39467c067e50f2d553b35a41b0f783e0fc82156
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57503148"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59176641"
 ---
 # <a name="icordebugmodulegetname-method"></a>ICorDebugModule::GetName – metoda
 Získá název souboru modulu.  
@@ -60,5 +60,3 @@ HRESULT GetName(
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
-
-

@@ -19,12 +19,12 @@ helpviewer_keywords:
 ms.assetid: ecdcf25d-cae3-4f07-a2b6-8397ac6dc42d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c65634a1046b193d500e505d945784504285f93a
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
+ms.openlocfilehash: e642f6507016dd1d62b4889f8a8dbcf0470a2202
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58412328"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59168165"
 ---
 # <a name="creating-prototypes-in-managed-code"></a>Vytváření prototypů ve spravovaném kódu
 Toto téma popisuje, jak získat přístup k nespravovaným funkcím a zavádí několik polí atributů, které opatřit poznámkami definici metody ve spravovaném kódu. Příklady, které ukazují, jak vytvořit. Na základě NET deklarace pro použití s platformu vyvolání, naleznete v tématu [zařazování dat pomocí vyvolání platformy](marshaling-data-with-platform-invoke.md).  
@@ -111,7 +111,7 @@ extern "C" int MessageBox(
 ### <a name="platform-invoke-examples"></a>Příklady vyvolání platformy  
  Nespravovaného vzorků v této části ilustrují použití `RegistryPermission` atribut modifikátory procházení zásobníku.  
   
- V následujícím příkladu kódu <xref:System.Security.Permissions.SecurityAction> `Assert`, `Deny`, a `PermitOnly` modifikátory jsou ignorovány.  
+ V následujícím příkladu kódu <xref:System.Security.Permissions.SecurityAction>`Assert`, `Deny`, a `PermitOnly` modifikátory jsou ignorovány.  
   
 ```  
 [DllImport("MyClass.dll", EntryPoint = "CallRegistryPermission")]  
@@ -235,9 +235,10 @@ interface IDemandStubsItf
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Používání nespravovaných funkcí DLL](consuming-unmanaged-dll-functions.md)
 - [Určení vstupního bodu](specifying-an-entry-point.md)
-- [Určení znakové sady](specifying-a-character-set.md)
+- [Určení sady znaků](specifying-a-character-set.md)
 - [Příklady vyvolání platformy](platform-invoke-examples.md)
 - [Důležité informace o zabezpečení vyvolání platformy](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb397754(v=vs.100))
 - [Identifikace funkcí ve knihovnách DLL](identifying-functions-in-dlls.md)

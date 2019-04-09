@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Připojení příkazu k ovládacímu prvku pomocí podpory příkazů'
+title: 'Postupy: Propojení příkazu s ovládacím prvkem s podporou příkazů'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,14 +10,14 @@ helpviewer_keywords:
 - RoutedCommand class [WPF], attaching to a Control
 - classes [WPF], RoutedCommand [WPF], attaching to a Control
 ms.assetid: 8d8592ae-0c91-469e-a1cd-d179c4544548
-ms.openlocfilehash: 2bb3e00cad1a629a405fa75ef32a289c4006f324
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 981fecf33b60c76ecab760185db7dab4bbb254d7
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57364434"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59165201"
 ---
-# <a name="how-to-hook-up-a-command-to-a-control-with-command-support"></a>Postupy: Připojení příkazu k ovládacímu prvku pomocí podpory příkazů
+# <a name="how-to-hook-up-a-command-to-a-control-with-command-support"></a>Postupy: Propojení příkazu s ovládacím prvkem s podporou příkazů
 Následující příklad ukazuje, jak k připojení <xref:System.Windows.Input.RoutedCommand> k <xref:System.Windows.Controls.Control> které má integrované v podpoře pro příkaz.  Kompletní příklad, který zachytí příkazy do více zdrojů, najdete v článku [vytvořením ukázkového routedcommand – vlastní](https://github.com/Microsoft/WPF-Samples/tree/master/Input%20and%20Commands/CustomRoutedCommand) vzorku.  
   
 ## <a name="example"></a>Příklad  
@@ -37,5 +37,6 @@ Následující příklad ukazuje, jak k připojení <xref:System.Windows.Input.R
  [!code-vb[MenuItemCommandTask#MenuItemCommandingCodeBehind](~/samples/snippets/visualbasic/VS_Snippets_Wpf/MenuItemCommandTask/VisualBasic/Window1.xaml.vb#menuitemcommandingcodebehind)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled příkazů](commanding-overview.md)
 - [Propojení příkazu s ovládacím prvkem bez podpory příkazů](how-to-hook-up-a-command-to-a-control-with-no-command-support.md)

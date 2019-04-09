@@ -15,12 +15,12 @@ helpviewer_keywords:
 - button set [WPF], grouped
 - bubbling [WPF]
 ms.assetid: 1a2189ae-13b4-45b0-b12c-8de2e49c29d2
-ms.openlocfilehash: b0db690bfd1a0cabf3060067ea23cf01acf3251d
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
-ms.translationtype: MT
+ms.openlocfilehash: a8ebb0259c1b5f73a2e0329cd1767b0431ba63a6
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57379208"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59171155"
 ---
 # <a name="routed-events-overview"></a>Přehled směrovaných událostí
 Toto téma popisuje koncept směrovaných událostí v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]. Téma definuje terminologie směrovaných událostí, popisuje, jak směrované události jsou směrovány stromové struktuře prvků, shrnuje, jak zpracování směrované události a seznámíte s vytvořením vlastní směrované události.
@@ -245,6 +245,7 @@ Vstupní události šíření a tunelové propojení
  Toto téma popisuje hlavně směrovaných událostí z hlediska popisující o základních konceptech a doprovodné materiály o tom, a reagovat na směrovaných událostí, které jsou už k dispozici v různých základních elementů a ovládacích prvků. Můžete však vytvořit vlastní směrované události na vaše vlastní třídy a všechny nezbytné podporu, jako je například datových tříd událostí specializované a delegáti. Vlastník směrované události může být libovolná třída, ale musí být směrované události vyvolané službou a zpracovány <xref:System.Windows.UIElement> nebo <xref:System.Windows.ContentElement> odvozené třídy, aby byla užitečná. Další informace o vlastních událostech najdete v tématu [vytvoření vlastní události směrovat](how-to-create-a-custom-routed-event.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.EventManager>
 - <xref:System.Windows.RoutedEvent>
 - <xref:System.Windows.RoutedEventArgs>
@@ -253,4 +254,4 @@ Vstupní události šíření a tunelové propojení
 - [Přehled příkazů](commanding-overview.md)
 - [Vlastní vlastnosti závislosti](custom-dependency-properties.md)
 - [Stromy v subsystému WPF](trees-in-wpf.md)
-- [Slabé vzory událostí](weak-event-patterns.md)
+- [Slabý vzor událostí](weak-event-patterns.md)

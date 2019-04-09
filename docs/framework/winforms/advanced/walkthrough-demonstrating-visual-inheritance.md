@@ -11,12 +11,12 @@ helpviewer_keywords:
 - walkthroughs [Windows Forms], visual inheritance
 - Windows Forms, inheritance
 ms.assetid: 01966086-3142-450e-8210-3fd4cb33f591
-ms.openlocfilehash: fa6da3248f315ad1916e6a7fdc6b0b24ca9e98a3
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
-ms.translationtype: MT
+ms.openlocfilehash: 932df915ab55d8141e64836961dd636d3d5da241
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58816314"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59174600"
 ---
 # <a name="walkthrough-demonstrating-visual-inheritance"></a>Návod: Demonstrace vizuálního dědění
 Vizuální dědění vám umožní zobrazit ovládací prvky ve formuláři základní a přidání nových ovládacích prvků. V tomto návodu vytvoříte základní formulář a zkompilovat ji do knihovny tříd. Bude import této knihovně tříd do jiného projektu a vytvoření nového formuláře, která dědí ze základního formuláře. V tomto návodu se dozvíte, jak:  
@@ -164,6 +164,7 @@ Vizuální dědění vám umožní zobrazit ovládací prvky ve formuláři zák
  V podstatě stejným způsobem pracuje dědičnost u uživatelských ovládacích prvků. Otevřete nový projekt knihovny tříd a přidat uživatelský ovládací prvek. Základní ovládací prvky na něj umístit a kompilaci projektu. Otevřete jinou nový projekt knihovny tříd a přidejte odkaz na knihovnu zkompilované třídy. Také se pokuste přidat zděděný ovládací prvek (prostřednictvím **přidat nové položky** dialogové okno) do projektu a použití **výběr dědičnosti**. Přidat uživatelský ovládací prvek a změnit `Inherits` (`:` v jazyce Visual C#) příkaz. Další informace najdete v tématu [jak: Dědění formulářů Windows](how-to-inherit-windows-forms.md).  
   
 ## <a name="see-also"></a>Viz také:
-- [Postupy: Dědění formulářů Windows](how-to-inherit-windows-forms.md)
-- [Vizuální dědění modelu Windows Forms](windows-forms-visual-inheritance.md)
+
+- [Postupy: Dědění v modelu Windows Forms](how-to-inherit-windows-forms.md)
+- [Vizuální dědění Windows Forms](windows-forms-visual-inheritance.md)
 - [Windows Forms](../index.md)

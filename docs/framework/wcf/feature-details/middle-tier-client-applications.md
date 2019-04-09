@@ -2,12 +2,12 @@
 title: Klientské aplikace střední vrstvy
 ms.date: 03/30/2017
 ms.assetid: f9714a64-d0ae-4a98-bca0-5d370fdbd631
-ms.openlocfilehash: 457a215274c4804ac38958d8f840e8f4100a7be0
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 667cc98f46b131fe91e17f3b1b16af429dc597ee
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54718894"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59174080"
 ---
 # <a name="middle-tier-client-applications"></a>Klientské aplikace střední vrstvy
 Toto téma popisuje různé problémy, které jsou specifické pro střední vrstvě klientské aplikace, které používají Windows Communication Foundation (WCF).  
@@ -36,4 +36,5 @@ Toto téma popisuje různé problémy, které jsou specifické pro střední vrs
  Kromě toho můžete zvýšit výkon při spouštění pro tyto klienty, kteří používají datové typy, které jsou serializovatelné pomocí <xref:System.Xml.Serialization.XmlSerializer> generování a kompilaci kódu serializace pro typy dat za běhu, což může vést k pomalé spouštění výkonu. [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) výkon lze zvýšit objem požadovaný při spuštění pro tyto aplikace generování kódu serializace nezbytné ze zkompilovaných sestavení pro aplikaci. Další informace najdete v tématu [jak: Vylepšení spuštění čas z klientských aplikací WCF pomocí třídy XmlSerializer](../../../../docs/framework/wcf/feature-details/startup-time-of-wcf-client-applications-using-the-xmlserializer.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přístup ke službám pomocí klienta WCF](../../../../docs/framework/wcf/feature-details/accessing-services-using-a-client.md)

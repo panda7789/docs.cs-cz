@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 9e891c6a-d960-45ea-904f-1a00e202d61a
-ms.openlocfilehash: b8dae094655e7bf2a52848d449a5f604f846e052
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2f15bf569da6127d6c9d27be255590ce3784d7a5
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54497089"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59174613"
 ---
 # <a name="using-dead-letter-queues-to-handle-message-transfer-failures"></a>Zpracování chyb přenosu zpráv pomocí front nedoručených zpráv
 Zprávy ve frontě může selhat doručování. Tyto zprávy se nezdařilo se zaznamenávají do fronty nedoručených zpráv. Selhání doručení může být způsobeno důvodů, jako je například selhání sítě, frontu odstranil, plné frontě, ověřování se nezdařilo nebo selhání na včasném poskytnutí výsledků.  
@@ -61,19 +61,16 @@ Zprávy ve frontě může selhat doručování. Tyto zprávy se nezdařilo se za
  [!code-vb[S_DeadLetter#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_deadletter/vb/client.vb#1)]  
   
  Níže je kód pro soubor konfigurace klienta.  
-  
-  
-  
+
  Níže je kód služby zpracování zprávy z fronty nedoručených zpráv.  
   
  [!code-csharp[S_DeadLetter#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_deadletter/cs/dlservice.cs#3)]
  [!code-vb[S_DeadLetter#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_deadletter/vb/dlservice.vb#3)]  
   
  Níže je kód pro konfigurační soubor služby fronty nedoručených zpráv.  
-  
-  
-  
+
 ## <a name="see-also"></a>Viz také:
-- [Přehled front](../../../../docs/framework/wcf/feature-details/queues-overview.md)
+
+- [Fronty – přehled](../../../../docs/framework/wcf/feature-details/queues-overview.md)
 - [Postupy: Výměna zpráv zařazených do fronty pomocí koncových bodů WCF](../../../../docs/framework/wcf/feature-details/how-to-exchange-queued-messages-with-wcf-endpoints.md)
 - [Zpracování škodlivých zpráv](../../../../docs/framework/wcf/feature-details/poison-message-handling.md)

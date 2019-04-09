@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: Použití aktivačních procedur událostí pro řízení scénáře po spuštění'
+title: 'Postupy: Použití aktivačních událostí pro řízení scénáře po spuštění'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - triggers [WPF], controlling Storyboards
 - event triggers [WPF], controlling Storyboards
 - Storyboards [WPF], controlling after start
 ms.assetid: 3b115594-6a93-4972-b24d-61aa16f1c15f
-ms.openlocfilehash: d0b25f56caf3f25b6e649c05ecf1cbe50046dd93
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: d444349f8bc9236e1d15f484f35b1326c77e2425
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57362367"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59170648"
 ---
-# <a name="how-to-use-event-triggers-to-control-a-storyboard-after-it-starts"></a>Postupy: Použití aktivačních procedur událostí pro řízení scénáře po spuštění
+# <a name="how-to-use-event-triggers-to-control-a-storyboard-after-it-starts"></a>Postupy: Použití aktivačních událostí pro řízení scénáře po spuštění
 Tento příklad ukazuje, jak řídit <xref:System.Windows.Media.Animation.Storyboard> po jeho spuštění. Spustit <xref:System.Windows.Media.Animation.Storyboard> pomocí [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], použijte <xref:System.Windows.Media.Animation.BeginStoryboard>, který distribuuje animace objektů a vlastností animace a pak spustí scénáři. Pokud dáte <xref:System.Windows.Media.Animation.BeginStoryboard> název tak, že zadáte jeho <xref:System.Windows.Media.Animation.BeginStoryboard.Name%2A> vlastnost, provedete to může ovládat scénáře. Pak můžete interaktivně ovládat scénáře po jeho spuštění.  
   
  Použijte následující scénáře akce spolu s <xref:System.Windows.EventTrigger> objekty pro řízení scénáře.  
@@ -40,6 +40,7 @@ Tento příklad ukazuje, jak řídit <xref:System.Windows.Media.Animation.Storyb
  Další příklady najdete v článku [animace příkladu Galerie](https://go.microsoft.com/fwlink/?LinkID=159969).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Media.Animation.ResumeStoryboard>
 - <xref:System.Windows.Media.Animation.SetStoryboardSpeedRatio>
 - <xref:System.Windows.Media.Animation.SkipStoryboardToFill>

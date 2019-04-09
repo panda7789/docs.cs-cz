@@ -8,18 +8,16 @@ helpviewer_keywords:
 - controls [WPF], authoring overview
 - authoring overview for controls [WPF]
 ms.assetid: 3d864748-cff0-4e63-9b23-d8e5a635b28f
-ms.openlocfilehash: 2007ee7680707cd1cc9628cc3900ca1068db8678
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
-ms.translationtype: MT
+ms.openlocfilehash: 4b0a37814e22260eaaa655dddca278a1f30af09e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57368724"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59171857"
 ---
 # <a name="control-authoring-overview"></a>Přehled řízeného vytváření
 Rozšiřitelnost [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] model řízení výrazně snižuje potřebu vytvářet nový ovládací prvek. Ale v některých případech budete stále muset vytvořit vlastní ovládací prvek. Toto téma popisuje funkce, které minimalizují potřeba k vytvoření vlastního ovládacího prvku a jiného ovládacího prvku pro vytváření modelů v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]. Toto téma ukazuje, jak vytvořit nový ovládací prvek.  
-  
- 
-  
+
 <a name="when_to_write_a_new_control"></a>   
 ## <a name="alternatives-to-writing-a-new-control"></a>Alternativy k zápisu nového ovládacího prvku  
  V minulosti Pokud chcete získat vlastní zkušenosti z existujícího ovládacího prvku, jste byli omezeni na měnící se standardní vlastnosti ovládacího prvku, jako je například velikost písma, barvu pozadí a šířku ohraničení. Pokud jste si přáli rozšířit vzhled a chování ovládacího prvku nad rámec těchto předdefinovaných parametrů, musíte vytvořit nový ovládací prvek, obvykle dědění z existujícího ovládacího prvku a přepsání metody, které jsou zodpovědné za vykreslování ovládacího prvku.  I když se pořád možnost, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vám umožňuje přizpůsobit existující ovládací prvky s využitím bohaté obsahu modelu, styly, šablony a aktivačních událostí. Následující seznam obsahuje příklady, jak tyto funkce lze vytvořit vlastní a konzistentní prostředí bez nutnosti vytvářet nový ovládací prvek.  
@@ -184,7 +182,7 @@ Rozšiřitelnost [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-w
   
 -   Implementovat pár `public` `static` CLR metody s názvem `Set` *PropertyName* a `Get` *PropertyName*. Obě metody by měla přijímat třídy odvozené od <xref:System.Windows.DependencyProperty> jako jejich první argument. `Set` *PropertyName* metoda také přijímá argument, jehož typ odpovídá typu registrované datové vlastnosti. `Get` *PropertyName* metoda by měla vracet hodnotu stejného typu. Pokud `Set` *PropertyName* chybí metoda, vlastnost je označena jako jen pro čtení.  
   
--   `Set` *Vlastnost PropertyName* a `Get` *PropertyName* musí směrovat přímo <xref:System.Windows.DependencyObject.GetValue%2A> a <xref:System.Windows.DependencyObject.SetValue%2A> metody na závislost cílové objektů. Návrháři může přístup k připojené vlastnosti volání prostřednictvím metody obálky nebo přímé volání cílový objekt závislosti.  
+-   `Set` **Vlastnost PropertyName* a `Get` *PropertyName* musí směrovat přímo <xref:System.Windows.DependencyObject.GetValue%2A> a <xref:System.Windows.DependencyObject.SetValue%2A> metody na závislost cílové objektů.DNávrháři může přístup k připojené vlastnosti volání prostřednictvím metody obálky nebo přímé volání cílový objekt závislosti.  
   
  Další informace o přidružené vlastnosti najdete v tématu [přehled připojených vlastností](../advanced/attached-properties-overview.md).  
   
@@ -269,6 +267,7 @@ Rozšiřitelnost [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-w
  [!code-vb[CustomControlNumericUpDown#ThemesSection](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CustomControlNumericUpDown/visualbasic/customcontrollibrary/my project/assemblyinfo.vb#themessection)]  
   
 ## <a name="see-also"></a>Viz také:
-- [Návrh kódu XAML v sadě Visual Studio](/visualstudio/designers/designing-xaml-in-visual-studio)
+
+- [Návrh XAML v sadě Visual Studio](/visualstudio/designers/designing-xaml-in-visual-studio)
 - [Sbalení URI v technologii WPF](../app-development/pack-uris-in-wpf.md)
 - [Přizpůsobení ovládacího prvku](control-customization.md)

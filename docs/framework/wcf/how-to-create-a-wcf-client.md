@@ -5,12 +5,12 @@ helpviewer_keywords:
 - clients [WCF], running
 - WCF clients [WCF], running
 ms.assetid: a67884cc-1c4b-416b-8c96-5c954099f19f
-ms.openlocfilehash: 0f7f622221e6612ecdb0ea04084d81e923218a5c
-ms.sourcegitcommit: d938c39afb9216db377d0f0ecdaa53936a851059
+ms.openlocfilehash: a16a0ccabfd0f9fbe69db1ea88d4613185f3c1da
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58634060"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59174366"
 ---
 # <a name="tutorial-create-a-windows-communication-foundation-client"></a>Kurz: Vytvoření klienta Windows Communication Foundation
 
@@ -30,7 +30,6 @@ V tomto kurzu se naučíte:
 > [!div class="checklist"]
 > - Vytvořte a nakonfigurujte projekt konzolové aplikace pro klienta WCF.
 > - Přidání odkazu na službu ve službě WCF pro vygenerování souborů třídy a konfiguraci proxy serveru.
-
 
 ## <a name="create-a-windows-communication-foundation-client"></a>Vytvoření klienta Windows Communication Foundation
 
@@ -67,7 +66,6 @@ V tomto kurzu se naučíte:
    3. Vyberte **CalculatorService** se rozbalí a zobrazí služba kontraktů implementovaných službou. Ponechte výchozí nastavení **Namespace** a zvolte **OK**.
 
       Přidá novou položku v sadě Visual Studio **připojené služby** složky **GettingStartedClient** projektu. 
-
 
 ### <a name="servicemodel-metadata-utility-tool"></a>Nástroj ServiceModel Metadata Utility
 
@@ -129,5 +127,3 @@ Přejděte k dalšímu kurzu, kde se naučíte, jak pomocí generovaného klient
 
 > [!div class="nextstepaction"]
 > [Kurz: Pomocí klienta WCF](how-to-use-a-wcf-client.md)
-
-

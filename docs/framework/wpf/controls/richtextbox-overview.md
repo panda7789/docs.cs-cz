@@ -8,17 +8,16 @@ helpviewer_keywords:
 - controls [WPF], RichTextBox
 - RichTextBox control [WPF], about RichTextBox control
 ms.assetid: c94548b2-c1e9-4b62-b10c-dd8740eb23d8
-ms.openlocfilehash: 689094bda355f095c30d6cc2a462e6d0e630753b
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 9aa0d33b3cb2c15ba9c1cb7e7d7be9a3125f66d3
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57378194"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59162708"
 ---
 # <a name="richtextbox-overview"></a>RichTextBox – přehled
 <xref:System.Windows.Controls.RichTextBox> Řízení umožňuje zobrazit nebo upravit obsah toku včetně odstavce, obrázky, tabulky a dalších. Toto téma představuje <xref:System.Windows.Controls.TextBox> třídy a poskytuje příklady toho, jak ho použít v obou [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] a C#.  
-  
-  
+
 <a name="textbox_or_richtextbox"></a>   
 ## <a name="textbox-or-richtextbox"></a>TextBox nebo RichTextBox?  
  Obě <xref:System.Windows.Controls.RichTextBox> a <xref:System.Windows.Controls.TextBox> povolit uživatelům upravit text, ale dvou ovládacích prvků se používají v různých scénářích. A <xref:System.Windows.Controls.RichTextBox> je lepší volbou, když je to nutné pro uživatele k úpravě formátovaný text, obrázky, tabulky nebo jiné formátovaný obsah. Například úpravy dokumentu, článek nebo blogu, který vyžaduje formátování, obrázky, etc se nejlépe provádí pomocí <xref:System.Windows.Controls.RichTextBox>. A <xref:System.Windows.Controls.TextBox> vyžaduje míň systémových prostředků o <xref:System.Windows.Controls.RichTextBox> a je ideální v případě jenom prostý text musí být upraven (tj. využití ve formulářích). Zobrazit [TextBox – přehled](textbox-overview.md) Další informace o <xref:System.Windows.Controls.TextBox>. Následující tabulka shrnuje hlavní funkce <xref:System.Windows.Controls.TextBox> a <xref:System.Windows.Controls.RichTextBox>.  
@@ -95,5 +94,6 @@ ms.locfileid: "57378194"
  [!code-vb[RichTextBoxMiscSnippets_snip#SaveLoadPrintRTBCodeExampleWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/RichTextBoxMiscSnippets_snip/VisualBasic/SaveLoadPrintRTB.xaml.vb#saveloadprintrtbcodeexamplewholepage)]  
   
 ## <a name="see-also"></a>Viz také:
-- [Témata s postupy](richtextbox-how-to-topics.md)
+
+- [– postupy](richtextbox-how-to-topics.md)
 - [TextBox – přehled](textbox-overview.md)

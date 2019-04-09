@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Změna pořadí sloupců v ovládacím prvku Windows Forms DataGridView pomocí návrháře'
+title: 'Postupy: Změna pořadí sloupců v ovládacím prvku Windows Forms DataGridView pomocí Návrháře'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - columns [Windows Forms], order of
@@ -7,14 +7,14 @@ helpviewer_keywords:
 - Windows Forms, columns
 - data [Windows Forms], displaying
 ms.assetid: 7fe52a98-75d6-448c-97a5-65ca2c568c1a
-ms.openlocfilehash: 58a92b4f5f604bba0da4b5a42ff25b0122b6f01e
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: 131ef2a04caa17aa268c0e8d229a1070061c4373
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57702942"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59175302"
 ---
-# <a name="how-to-change-the-order-of-columns-in-the-windows-forms-datagridview-control-using-the-designer"></a>Postupy: Změna pořadí sloupců v ovládacím prvku Windows Forms DataGridView pomocí návrháře
+# <a name="how-to-change-the-order-of-columns-in-the-windows-forms-datagridview-control-using-the-designer"></a>Postupy: Změna pořadí sloupců v ovládacím prvku Windows Forms DataGridView pomocí Návrháře
 Po vytvoření vazby Windows Forms <xref:System.Windows.Forms.DataGridView> zdroji dat závisí ovládacího prvku na zdroj dat, pořadí zobrazení automaticky generovaného sloupců. Pokud je toto pořadí není dáváte přednost, můžete změnit pořadí sloupců pomocí návrháře. Můžete také přidat nevázaných sloupců do ovládacího prvku a změňte jejich pořadí zobrazení. Informace o tom, jak programově změnit pořadí sloupců, naleznete v tématu [jak: Změna pořadí sloupců v ovládacím prvku Windows Forms DataGridView](how-to-change-the-order-of-columns-in-the-windows-forms-datagridview-control.md).  
   
  Následující postup vyžaduje, **aplikace Windows** projektu s formulář obsahující <xref:System.Windows.Forms.DataGridView> ovládacího prvku. Informace o nastavení takový projekt, naleznete v tématu [jak: Vytvoření projektu aplikace Windows Forms](/visualstudio/ide/step-1-create-a-windows-forms-application-project) a [jak: Přidání ovládacích prvků Windows Forms](how-to-add-controls-to-windows-forms.md).  
@@ -31,7 +31,8 @@ Po vytvoření vazby Windows Forms <xref:System.Windows.Forms.DataGridView> zdro
 3.  Klikněte na tlačítko nahoru nebo dolů šipku napravo od **vybrané sloupce** seznamu, dokud nebude vybraný sloupec se nachází na pozici chcete.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.DataGridView>
-- [Postupy: Přidávání a odebírání sloupců v ovládacím prvku Windows Forms DataGridView pomocí návrháře](add-and-remove-columns-in-the-datagrid-using-the-designer.md)
+- [Postupy: Přidávání a odebírání sloupců v ovládacím prvku Windows Forms DataGridView pomocí Návrháře](add-and-remove-columns-in-the-datagrid-using-the-designer.md)
 - [Postupy: Vytvoření projektu aplikace Windows Forms](/visualstudio/ide/step-1-create-a-windows-forms-application-project)
-- [Postupy: Přidání ovládacích prvků do formulářů Windows](how-to-add-controls-to-windows-forms.md)
+- [Postupy: Přidávání ovládacích prvků do Windows Forms](how-to-add-controls-to-windows-forms.md)

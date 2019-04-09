@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Automatické generování sloupců v ovládacím prvku DataGridView vázaných na Data Windows Forms'
+title: 'Postupy: Automatické generování sloupců v ovládacím prvku Windows Forms DataGridView s datovou vazbou'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - columns [Windows Forms], autogenerating
 - DataGridView control [Windows Forms], data-bound columns
 ms.assetid: 699f6f9e-6aa5-4811-902b-6a2c57dec7d6
-ms.openlocfilehash: a788504862c61c56ba68c13cc70668200fbb7d18
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 4490a24047f5cce1328d68c529783a1d7692ff32
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57703110"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59165994"
 ---
-# <a name="how-to-autogenerate-columns-in-a-data-bound-windows-forms-datagridview-control"></a>Postupy: Automatické generování sloupců v ovládacím prvku DataGridView vázaných na Data Windows Forms
+# <a name="how-to-autogenerate-columns-in-a-data-bound-windows-forms-datagridview-control"></a>Postupy: Automatické generování sloupců v ovládacím prvku Windows Forms DataGridView s datovou vazbou
 Následující příklad kódu ukazuje, jak zobrazit sloupce ze zdroje vázaných dat v <xref:System.Windows.Forms.DataGridView> ovládacího prvku. Když <xref:System.Windows.Forms.DataGridView.AutoGenerateColumns%2A> hodnota vlastnosti je `true` (výchozí), <xref:System.Windows.Forms.DataGridViewColumn> se vytvoří pro každý sloupec v tabulce zdroje dat.  
   
  Pokud <xref:System.Windows.Forms.DataGridView> ovládací prvek již má sloupce při nastavení <xref:System.Windows.Forms.DataGridViewComboBoxColumn.DataSource%2A> vlastnost, je mez existující sloupce jsou ve srovnání s sloupce ve zdroji dat a zachovají pokaždé, když je nalezena shoda. Nevázaných sloupců se vždy zachovají. Svázané sloupce, pro které není nalezena žádná shoda ve zdroji dat, se odeberou. Sloupce ve zdroji dat, pro který není nalezena žádná shoda v ovládacím prvku generovat nový <xref:System.Windows.Forms.DataGridViewColumn> objekty, které jsou přidány na konec objektu <xref:System.Windows.Forms.DataGridView.Columns%2A> kolekce.  
@@ -35,6 +35,7 @@ Následující příklad kódu ukazuje, jak zobrazit sloupce ze zdroje vázanýc
 -   Odkazy <xref:System?displayProperty=nameWithType>, <xref:System.Windows.Forms?displayProperty=nameWithType>, <xref:System.Data?displayProperty=nameWithType>, a <xref:System.Xml?displayProperty=nameWithType> sestavení.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.DataGridView.AutoGenerateColumns%2A?displayProperty=nameWithType>
 - [Zobrazení dat v ovládacím prvku Windows Forms DataGridView](displaying-data-in-the-windows-forms-datagridview-control.md)

@@ -1,17 +1,17 @@
 ---
-title: 'Průvodce: Jednoduchý objektový Model a dotaz (Visual Basic)'
+title: 'Návod: Jednoduchý objektový model a dotaz (Visual Basic)'
 ms.date: 03/30/2017
 dev_langs:
 - vb
 ms.assetid: c878e457-f715-46e4-a136-ff14d6c86018
-ms.openlocfilehash: c6d00271f412829cb8e030c2b9a338f73327977b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: ccbb979ae7cf67dd54eb80e1d30e74078960b43d
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54724171"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59169101"
 ---
-# <a name="walkthrough-simple-object-model-and-query-visual-basic"></a>Průvodce: Jednoduchý objektový Model a dotaz (Visual Basic)
+# <a name="walkthrough-simple-object-model-and-query-visual-basic"></a>Návod: Jednoduchý objektový model a dotaz (Visual Basic)
 Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] scénář s minimálními složitosti. Vytvořte třídu entity, která modeluje tabulku Customers v ukázkové databázi Northwind. Pak vytvoříte jednoduchý dotaz do seznamu zákazníků, kteří jsou umístěny v Londýně.  
   
  Tento názorný postup je kód objektově orientovaný záměrné pomohou zobrazit [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] koncepty. Obvykle vzato můžete využít [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] vytvoření objektového modelu.  
@@ -153,4 +153,5 @@ Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdli
  Pokud chcete provést dotazování napříč vztahy návodu, ujistěte se, že se uložit řešení pro návod, který právě jste dokončili, což je předpoklad.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Učení podle návodů](../../../../../../docs/framework/data/adonet/sql/linq/learning-by-walkthroughs.md)

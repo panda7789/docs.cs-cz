@@ -9,12 +9,12 @@ helpviewer_keywords:
 - LocBaml tool [WPF]
 - applications [WPF], localizing
 ms.assetid: 5001227e-9326-48a4-9dcd-ba1b89ee6653
-ms.openlocfilehash: 777d0fa9217b647b9ee9bd952addaa83b5f825fc
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
-ms.translationtype: MT
+ms.openlocfilehash: 6bc2d5c45ef6f8626e51f9f760ec299db19627d9
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57374112"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59171571"
 ---
 # <a name="how-to-localize-an-application"></a>Postupy: Lokalizace aplikace
 Tento kurz vysvětluje vytvoření lokalizované aplikace s použitím locbaml – nástroj.  
@@ -152,8 +152,8 @@ Tento kurz vysvětluje vytvoření lokalizované aplikace s použitím locbaml �
    |Název BAML|Klíč prostředku|Kategorie|Lepší čitelnost|Modifiability|Komentáře|Hodnota|  
    |---------------|------------------|--------------|-----------------|-------------------|--------------|-----------|
    |HelloApp.g.en-US.resources:window1.baml|Stack1:System.Windows.Controls.StackPanel.$Content|Ignorovat|FALSE|FALSE||#Text1;#Text2|
-   |HelloApp.g.en-US.resources:window1.baml|Text1:System.Windows.Controls.TextBlock.$Content|Žádná|HODNOTA TRUE|HODNOTA TRUE||Hello World|
-   |HelloApp.g.en-US.resources:window1.baml|Text2:System.Windows.Controls.TextBlock.$Content|Žádná|HODNOTA TRUE|HODNOTA TRUE||Goodbye World|
+   |HelloApp.g.en-US.resources:window1.baml|Text1:System.Windows.Controls.TextBlock.$Content|Žádné|HODNOTA TRUE|HODNOTA TRUE||Hello World|
+   |HelloApp.g.en-US.resources:window1.baml|Text2:System.Windows.Controls.TextBlock.$Content|Žádné|HODNOTA TRUE|HODNOTA TRUE||Goodbye World|
   
    Všimněte si, že všechny hodnoty **komentáře** pole neobsahují žádné hodnoty; Pokud pole nemá hodnotu, je prázdný. Všimněte si také, že položka v prvním řádku není ani čitelná ani měnit a má "Ignorovat" jako jeho **kategorie** hodnoty, které označuje, že hodnota není lokalizovatelné.  
   
@@ -210,5 +210,6 @@ Tento kurz vysvětluje vytvoření lokalizované aplikace s použitím locbaml �
  Nyní byste měli mít základní znalosti o tom, jak používat locbaml – nástroj.  Můžete by měl být schopen provést soubor obsahující identifikátory UID. S použitím locbaml – nástroj, byste měli analyzovat soubor, který chcete extrahovat lokalizovatelné obsah a po obsahu se kombinují, by měla být schopna generovat. resources.dll soubor, který sloučí přeloženého obsahu. Toto téma neobsahuje všechny možné podrobnosti, ale Teď máte znalosti, které jsou nezbytné pro účely locbaml – lokalizace vašich aplikací.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Globalizace pro WPF](globalization-for-wpf.md)
 - [Přehled automatického rozložení](use-automatic-layout-overview.md)

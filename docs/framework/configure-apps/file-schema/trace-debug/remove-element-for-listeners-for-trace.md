@@ -1,5 +1,5 @@
 ---
-title: <remove> – element pro element <listeners> pro element <trace>
+title: <remove> – Element pro <listeners> pro <trace>
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/trace/listeners/remove
@@ -7,12 +7,12 @@ helpviewer_keywords:
 - remove element
 - <remove> element
 ms.assetid: 9a5cd1b5-be1a-485f-8f0c-2890ad3ef3e0
-ms.openlocfilehash: 5a6b94756cb1b451d40229674dd887dd9f84676b
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: adf00394bc0bfe808836e74214003cd2078204e4
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55267063"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59164252"
 ---
 # <a name="remove-element-for-listeners-for-trace"></a>\<Odebrat > – Element pro \<naslouchacích procesů > pro \<trasování >
 Odebere z naslouchacího procesu **naslouchacích procesů** kolekce.  
@@ -36,7 +36,7 @@ Odebere z naslouchacího procesu **naslouchacích procesů** kolekce.
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|**Jméno**|Požadovaný atribut.<br /><br /> Název naslouchacího procesu odebrání **naslouchacích procesů** kolekce.|  
+|**name**|Požadovaný atribut.<br /><br /> Název naslouchacího procesu odebrání **naslouchacích procesů** kolekce.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -71,6 +71,7 @@ Odebere z naslouchacího procesu **naslouchacích procesů** kolekce.
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Diagnostics.TraceListener>
 - <xref:System.Diagnostics.DefaultTraceListener>
 - <xref:System.Diagnostics.TextWriterTraceListener>

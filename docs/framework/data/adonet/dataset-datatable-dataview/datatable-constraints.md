@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 27c9f2fd-f64d-4b4e-bbf6-1d24f47067cb
-ms.openlocfilehash: d0b3bd649da301c563a19450d7d9b42e9d0b29e9
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 254f486fa19d8af30759d9a9fd6642a1a40e82a2
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54611758"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59165175"
 ---
 # <a name="datatable-constraints"></a>Omezení datových tabulek
 Můžete vynutit omezení na datech z tohoto omezení <xref:System.Data.DataTable>, aby bylo možné udržovat tak integritu dat. Omezení je automatické pravidlo použít na sloupec nebo souvisejících sloupců, která určuje kurz akce při hodnota řádku je nějakým způsobem změněna. Jsou vynucena omezení při `System.Data.DataSet.EnforceConstraints` vlastnost <xref:System.Data.DataSet> je **true**. Příklad kódu, který ukazuje, jak nastavit `EnforceConstraints` vlastnost, najdete v článku <xref:System.Data.DataSet.EnforceConstraints%2A> téma referenčních informací.  
@@ -24,7 +24,7 @@ Můžete vynutit omezení na datech z tohoto omezení <xref:System.Data.DataTabl
   
 |Nastavení pravidla|Popis|  
 |------------------|-----------------|  
-|**Cascade**|Odstranit nebo aktualizovat související řádky.|  
+|**Kaskádové**|Odstranit nebo aktualizovat související řádky.|  
 |**SetNull**|Nastavení hodnot v související řádky **DBNull**.|  
 |**SetDefault**|Nastavení hodnot v související řádky na výchozí hodnotu.|  
 |**Žádné**|Neprovádět žádnou akci na související řádky. Toto nastavení je výchozí.|  
@@ -60,8 +60,8 @@ custDS.Tables["OrdersTable"].Constraints.Add(custOrderFK);
   
 |Nastavení pravidla|Popis|  
 |------------------|-----------------|  
-|**Cascade**|Přijmout nebo odmítnout změny podřízených řádků.|  
-|**Žádné**|Neprovádět žádnou akci na podřízených řádků. Toto nastavení je výchozí.|  
+|**Kaskádové**|Přijmout nebo odmítnout změny podřízených řádků.|  
+|**Žádný**|Neprovádět žádnou akci na podřízených řádků. Toto nastavení je výchozí.|  
   
 ### <a name="example"></a>Příklad  
  Následující příklad vytvoří <xref:System.Data.ForeignKeyConstraint>, nastaví některé jeho vlastnosti, včetně <xref:System.Data.ForeignKeyConstraint.AcceptRejectRule%2A>a přidá jej do <xref:System.Data.ConstraintCollection> z <xref:System.Data.DataTable> objektu.  
@@ -93,6 +93,7 @@ custDS.Tables["Customers"].Constraints.Add(custUnique);
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Data.DataRelation>
 - <xref:System.Data.DataTable>
 - <xref:System.Data.ForeignKeyConstraint>

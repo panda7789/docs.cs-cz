@@ -10,12 +10,12 @@ helpviewer_keywords:
 - images [Windows Forms], using without automatic scaling
 - performance [Windows Forms], improving image
 ms.assetid: 5fe2c95d-8653-4d55-bf0d-e5afa28f223b
-ms.openlocfilehash: 8580bd2212a025edddada9e47b0dc2b6195b53c7
-ms.sourcegitcommit: 15ab532fd5e1f8073a4b678922d93b68b521bfa0
+ms.openlocfilehash: 49ec491308cc6a9fd81e74bff213029389137b88
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58653792"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59163589"
 ---
 # <a name="how-to-improve-performance-by-avoiding-automatic-scaling"></a>Postupy: Zvýšení výkonu zabráněním automatické změně měřítka
 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] může automaticky škálovat bitovou kopii, při kreslení, které by snížení výkonu. Alternativně můžete řídit škálování image předáním rozměry cílového obdélníku do <xref:System.Drawing.Graphics.DrawImage%2A> metody.  
@@ -41,5 +41,6 @@ ms.locfileid: "58653792"
  V předchozím příkladu je určený k použití pomocí Windows Forms a vyžaduje <xref:System.Windows.Forms.PaintEventArgs> `e`, což je parametr <xref:System.Windows.Forms.Control.Paint> obslužné rutiny události. Nahraďte Texture.jpg název image a cestu, která jsou platné ve vašem systému.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Obrázky, rastrové obrázky a metasoubory](images-bitmaps-and-metafiles.md)
 - [Práce s obrázky, rastrovými obrázky, ikonami a metasoubory](working-with-images-bitmaps-icons-and-metafiles.md)

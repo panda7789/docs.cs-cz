@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - WS-AT protocol [WCF]
 ms.assetid: 04a4c200-0af0-4c5d-a3d9-87cb7339e054
-ms.openlocfilehash: a06d441ad1a48b0ddc8631c362d14a52ae882c3b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 8a8265873e4287e1455659aa4d9fae7e1d570a00
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54584867"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59165465"
 ---
 # <a name="using-ws-atomictransaction"></a>Používání protokolu WS-AtomicTransaction
 WS-AtomicTransaction (WS-AT) je protokol interoperabilní transakce. Umožňuje vám tok distribuovaných transakcí pomocí webové služby zpráv a koordinovat interoperabilní způsobem mezi transakce heterogenní infrastruktury. WS-AT používá protokol dvoufázového potvrzení Centrum umožňující prosazovat atomic výsledek mezi distribuovaných aplikací, transakce správci a správci prostředků.  
@@ -27,4 +27,5 @@ WS-AtomicTransaction (WS-AT) je protokol interoperabilní transakce. Umožňuje 
  Pokud server a klienta jsou zapsány pomocí WCF, není potřeba použít WS-AT. Místo toho můžete použít výchozí nastavení pro položky `NetTcpBinding` s `TransactionFlow` atribut povolena, pomocí něhož `OleTransactions` místo protokolu. Další informace najdete v tématu [ \<netTcpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/nettcpbinding.md). V opačném případě pokud se tok transakcí do webovými službami postavenými na technologiemi třetích stran, musíte použít WS-AT.  
   
 ## <a name="see-also"></a>Viz také:
-- [Konfigurace podpory protokolu WS-AtomicTransaction](../../../../docs/framework/wcf/feature-details/configuring-ws-atomic-transaction-support.md)
+
+- [Konfigurace podpory protokolu WS-AT (WS-Atomic Transactions)](../../../../docs/framework/wcf/feature-details/configuring-ws-atomic-transaction-support.md)

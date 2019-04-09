@@ -2,12 +2,12 @@
 title: PrivacyNoticeBindingElement
 ms.date: 03/30/2017
 ms.assetid: 0cf110b1-e25b-4d67-986b-10cb04dc4826
-ms.openlocfilehash: 4bdd860304c73771933d0f8500c6003ac7692aa1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 04c65d0aa589d99766b4ffc8f1550036d2880718
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54639507"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59165968"
 ---
 # <a name="privacynoticebindingelement"></a>PrivacyNoticeBindingElement
 PrivacyNoticeBindingElement  
@@ -49,4 +49,5 @@ class PrivacyNoticeBindingElement : BindingElement
 |Obor názvů|Definované v root\ServiceModel|  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Channels.PrivacyNoticeBindingElement>

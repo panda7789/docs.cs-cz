@@ -2,12 +2,12 @@
 title: 'Postupy: Načítání metadat pomocí vlastnosti MetadataExchangeClient'
 ms.date: 03/30/2017
 ms.assetid: 0754e9dc-13c5-45c2-81b5-f3da466e5a87
-ms.openlocfilehash: 8f99fcf8a355001908c31c383201da8db78c6d24
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: ec4177e71c7d46dc5c908f01a051dc5a0df6baa4
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54708763"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59168613"
 ---
 # <a name="how-to-use-metadataexchangeclient-to-retrieve-metadata"></a>Postupy: Načítání metadat pomocí vlastnosti MetadataExchangeClient
 Použití <xref:System.ServiceModel.Description.MetadataExchangeClient> třídy ke stažení metadat pomocí protokolu WS-MetadataExchange (MEX). Soubory načtených metadat se vrátí jako <xref:System.ServiceModel.Description.MetadataSet> objektu. Vrácený <xref:System.ServiceModel.Description.MetadataSet> objekt obsahuje kolekci <xref:System.ServiceModel.Description.MetadataSection> objektů, z nichž každý obsahuje metadata specifická dialekt a identifikátor. Můžete napsat vrácených metadat pro soubory, nebo pokud vrácených metadat obsahuje dokumenty služby popis jazyka WSDL (Web), můžete importovat pomocí metadat <xref:System.ServiceModel.Description.WsdlImporter>.  
@@ -36,6 +36,7 @@ Použití <xref:System.ServiceModel.Description.MetadataExchangeClient> třídy 
  Chcete-li tento příklad kódu zkompilovat, musí odkazovat na sestavení System.ServiceModel.dll a importovat <xref:System.ServiceModel.Description> oboru názvů.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Description.MetadataResolver>
 - <xref:System.ServiceModel.Description.MetadataExchangeClient>
 - <xref:System.ServiceModel.Description.WsdlImporter>

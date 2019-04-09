@@ -1,18 +1,18 @@
 ---
-title: SQL-CLR Type Mismatches
+title: Neshody typů SQL a CLR
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 0a90c33f-7ed7-4501-ad5f-6224c5da8e9b
-ms.openlocfilehash: 0abb1bd25c40ba55806fe80b39db1ac418f3f308
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 77090a9f22dcf3d55739aa03535bee863793d858
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54700946"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59172884"
 ---
-# <a name="sql-clr-type-mismatches"></a>SQL-CLR Type Mismatches
+# <a name="sql-clr-type-mismatches"></a>Neshody typů SQL a CLR
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] automatizuje většinu překlad mezi objektový model a systému SQL Server. Nicméně některé situace zabránit přesné překladu. Tyto klíče neshody mezi běžné typy language runtime (CLR) a typy databáze systému SQL Server jsou shrnuté v následujících částech. Můžete najít další podrobnosti o mapování určitého typu a funkce překladu na [mapování typů SQL a CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mapping.md) a [datové typy a funkce](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md).  
   
 ## <a name="data-types"></a>Datové typy  
@@ -59,7 +59,7 @@ Select DateOfBirth From Customer Where CustomerId = @id
   
  Následující témata ukazují neshody mezi zjevně podobné výrazy. Je možné generovat SQL výrazy, které jsou sémanticky ekvivalentní daného výrazu CLR. Ale není jasné, jestli jsou menší významové rozdíly mezi zjevně podobné výrazy CLR uživateli zřejmé, a proto určuje, zda jsou určeny změny, které jsou požadovány pro sémantické ekvivalence nebo ne. To je zvlášť zásadní potíže při vyhodnocování výrazu pro sadu hodnot. Viditelnost rozdíl může záviset na data – a být obtížné určit během psaní kódu a ladění.  
   
-### <a name="null-semantics"></a>Sémantika s hodnotou Null  
+### <a name="null-semantics"></a>Sémantika s hodnotou null  
  Výrazy SQL poskytují tři vracející logiku pro logické výrazy. Výsledkem může být true, false nebo null. Naopak CLR určuje dvěma hodnotami výsledek logickou hodnotu pro porovnání s hodnotami null. Vezměte v úvahu následující kód:  
   
  [!code-csharp[DLinqMismatch#2](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqMismatch/cs/Program.cs#2)]
@@ -294,4 +294,5 @@ Where Col1 + Col2 > 4
  Kromě menší významové rozdíly je důležité vzít v úvahu dopad na výkon při přecházení mezi mezi SQL serverem a systémy typ CLR. Pro velké datové sady můžete tyto problémy s výkonem zjistit, zda je aplikace nasadit.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Základní informace](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)

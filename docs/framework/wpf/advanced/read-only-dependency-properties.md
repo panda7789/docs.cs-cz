@@ -5,18 +5,16 @@ helpviewer_keywords:
 - dependency properties [WPF], read-only
 - read-only dependency properties [WPF]
 ms.assetid: f23d6ec9-3780-4c09-a2ff-b2f0a2deddf1
-ms.openlocfilehash: 9aeeab95342bce94c53e89229003f55009118f96
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 45385e3e3eb8e756008a0d9ef560e061f9a31964
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57379001"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59162420"
 ---
 # <a name="read-only-dependency-properties"></a>Vlastnosti závislosti jen pro čtení
 Toto téma popisuje vlastnosti závislosti jen pro čtení, včetně existující vlastnosti závislosti jen pro čtení a scénáře a postupy pro vytvoření vlastnosti vlastní závislosti jen pro čtení.  
-  
 
-  
 <a name="prerequisites"></a>   
 ## <a name="prerequisites"></a>Požadavky  
  Toto téma předpokládá, že chápete základní scénáře implementace vlastnosti závislosti a jak je použito metadat pro vlastnost vlastní závislosti. Zobrazit [vlastní vlastnosti závislosti](custom-dependency-properties.md) a [Metadata vlastností závislosti](dependency-property-metadata.md) pro kontext.  
@@ -44,6 +42,7 @@ Toto téma popisuje vlastnosti závislosti jen pro čtení, včetně existujíc�
  Protože <xref:System.Windows.DependencyPropertyKey> je privátní a se nerozšíří vlastnost systému mimo váš kód, vlastnosti závislosti jen pro čtení má lepší než vlastnost závislosti pro čtení a zápis nastavení zabezpečení. Pro vlastnost závislosti pro čtení i zápis je explicitně nebo implicitně veřejné pole identifikační a proto je široce nastavitelnou vlastnost. Další podrobnosti najdete v části [zabezpečení vlastností závislosti](dependency-property-security.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled vlastností závislosti](dependency-properties-overview.md)
 - [Vlastní vlastnosti závislosti](custom-dependency-properties.md)
 - [Styly a šablony](../controls/styling-and-templating.md)

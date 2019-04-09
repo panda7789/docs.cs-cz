@@ -1,15 +1,15 @@
 ---
-title: SQL Server Data typy a ADO.NET
+title: Datové typy SQL Serveru a ADO.NET
 ms.date: 03/30/2017
 ms.assetid: 81b43550-23e8-43bb-b460-7eb8ac825c33
-ms.openlocfilehash: 14a3c8b2f520efce96667b2028405ca36ed17a28
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 90589f54728ad5e887b96f37f96ff31928c680ce
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54741506"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59168412"
 ---
-# <a name="sql-server-data-types-and-adonet"></a>SQL Server Data typy a ADO.NET
+# <a name="sql-server-data-types-and-adonet"></a>Datové typy SQL Serveru a ADO.NET
 SQL Server a rozhraní .NET Framework jsou založeny na jiný typ systémy, které může způsobit ztrátu dat. K zachování integrity dat, zprostředkovatele dat .NET Framework pro SQL Server (<xref:System.Data.SqlClient>) poskytuje typy přístupové metody pro práci s daty formátu SQL Server. Výčty v můžete použít <xref:System.Data.SqlDbType> třídy k určení <xref:System.Data.SqlClient.SqlParameter> datové typy.  
   
  Další informace a tabulku, která popisuje mapování datového typu mezi SQL serverem a datové typy rozhraní .NET Framework najdete v tématu [mapování datového typu SQL Server](../../../../../docs/framework/data/adonet/sql-server-data-type-mappings.md).  
@@ -55,6 +55,7 @@ SQL Server a rozhraní .NET Framework jsou založeny na jiný typ systémy, kter
  Popisuje `DbType` výčet a všechny její členy.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Mapování datových typů SQL Serveru](../../../../../docs/framework/data/adonet/sql-server-data-type-mappings.md)
 - [Konfigurace parametrů a datové typy parametrů](../../../../../docs/framework/data/adonet/configuring-parameters-and-parameter-data-types.md)
 - [Parametry s hodnotami v tabulkách](../../../../../docs/framework/data/adonet/sql/table-valued-parameters.md)

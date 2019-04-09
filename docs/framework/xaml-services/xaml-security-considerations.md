@@ -5,12 +5,12 @@ helpviewer_keywords:
 - security [XAML Services], .NET XAML services
 - XAML security [XAML Services]
 ms.assetid: 544296d4-f38e-4498-af49-c9f4dad28964
-ms.openlocfilehash: 6cd09295f9dac26011652d6b0a33318841b04072
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 124310497cc2a8e8a816ba90b2c68a16ed342ae6
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54648359"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59162669"
 ---
 # <a name="xaml-security-considerations"></a>Důležité informace o zabezpečení pro jazyk XAML
 Toto téma popisuje doporučené postupy pro zabezpečení v aplikacích při použití XAML a rozhraní .NET Framework XAML Services API.  
@@ -42,4 +42,5 @@ Toto téma popisuje doporučené postupy pro zabezpečení v aplikacích při po
  XAML podporuje svůj vlastní typ systém, který se ve spoustě ohledů je partnera, který způsob implementace CLR systému základní typ CLR. Však pro některé aspekty typ povědomí, kde provádíte rozhodnutí o důvěryhodnosti o typu na základě jeho typu informací, by měl odložit na informace o typu v prostředí CLR typy zálohování. Je to proto, že některé konkrétní možnosti vytváření sestav typu systému XAML jsou ponechány otevřené jako virtuální metody a nejsou proto plně pod kontrolou původní implementace rozhraní .NET Framework XAML Services. Těmto rozšiřujícím bodům existovat, protože systém typů XAML je možné rozšířit tak, aby odpovídaly rozšiřitelnosti XAML samotného a možná alternativní strategii mapování typů a výchozí implementace podporou modulu CLR a výchozí kontext schématu XAML. Další informace najdete v tématu poznámky ke konkrétní na některé z vlastností <xref:System.Xaml.XamlType> a <xref:System.Xaml.XamlMember>.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Xaml.Permissions.XamlAccessLevel>

@@ -2,12 +2,12 @@
 title: Transakce a souběžnost
 ms.date: 03/30/2017
 ms.assetid: f46570de-9e50-4fe6-8710-a8c31fa8569b
-ms.openlocfilehash: f5efa8f25e3cd4dedec9e5a9c99db28320a4d93e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ba857031a54374ee295c2bfd724e7fb8651b7c1f
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54494051"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59174691"
 ---
 # <a name="transactions-and-concurrency"></a>Transakce a souběžnost
 Transakce se skládá z jediného příkazu nebo skupině příkazů, které jsou spouštěny jako balíček. Transakce umožňují kombinovat více operací do jedné jednotky práce. V případě selhání v jednom bodě v transakci všechny aktualizace může být vrácena zpět do stavu před transakce.  
@@ -35,6 +35,7 @@ Transakce se skládá z jediného příkazu nebo skupině příkazů, které jso
  Popisuje optimistické a Pesimistická souběžnost a jak otestovat pro porušení souběžnosti.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Principy transakcí](../../../../docs/framework/data/transactions/transaction-fundamentals.md)
 - [Připojení ke zdroji dat](../../../../docs/framework/data/adonet/connecting-to-a-data-source.md)
 - [Příkazy a parametry](../../../../docs/framework/data/adonet/commands-and-parameters.md)

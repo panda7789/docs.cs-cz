@@ -1,5 +1,5 @@
 ---
-title: 'Návod: Hostování ovládacího prvku Win32 v subsystému WPF'
+title: 'Návod: Hostování ovládacího prvku Win32 ve WPF'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,19 +8,18 @@ helpviewer_keywords:
 - hosting Win32 control in WPF [WPF]
 - Win32 code [WPF], WPF interoperation
 ms.assetid: a676b1eb-fc55-4355-93ab-df840c41cea0
-ms.openlocfilehash: 13845eb662064e0ac1db913bedc0b21214292db5
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
-ms.translationtype: MT
+ms.openlocfilehash: 1ba060fcefb2d8be24d597c7b1ccb7a79d6d5ceb
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58412315"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59160690"
 ---
-# <a name="walkthrough-hosting-a-win32-control-in-wpf"></a>Návod: Hostování ovládacího prvku Win32 v subsystému WPF
+# <a name="walkthrough-hosting-a-win32-control-in-wpf"></a>Návod: Hostování ovládacího prvku Win32 ve WPF
 Windows Presentation Foundation (WPF) poskytuje bohaté prostředí pro vytváření aplikací. Ale pokud máte značné investice v kódu Win32, může být efektivnější opakovaně používat alespoň některé tohoto kódu v aplikaci WPF spíše než přepíše zcela. WPF poskytuje jednoduchý mechanismus pro hostování okně Win32, na stránce WPF.  
   
  Toto téma vás provede aplikace, [hostování ovládacím prvku Win32 v ukázce WPF](https://github.com/Microsoft/WPF-Samples/tree/master/Migration%20and%20Interoperability/WPFHostingWin32Control), že ovládací prvek pole se seznamem Win32 hostitele. Tento obecný postup je možné rozšířit na hostování jakékoli okno Win32.  
-  
-  
+
 <a name="requirements"></a>   
 ## <a name="requirements"></a>Požadavky  
  Toto téma předpokládá základní znalost WPF a Windows API programování. Základní informace o programování WPF, naleznete v tématu [Začínáme](../getting-started/index.md). Úvod k programování v rozhraní Windows API, naleznete v některém z mnoha knihy k tomuto tématu, zejména *programování Windows* podle Charles Petzold.  
@@ -154,6 +153,7 @@ Windows Presentation Foundation (WPF) poskytuje bohaté prostředí pro vytvář
  Nakonec nastavte `handled` k `true` k označení, že zpráva byla zpracována.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Interop.HwndHost>
 - [Vzájemná spolupráce grafického subsystému WPF a systému Win32](wpf-and-win32-interoperation.md)
 - [Návod: Moje první desktopová aplikace WPF](../getting-started/walkthrough-my-first-wpf-desktop-application.md)

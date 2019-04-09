@@ -8,12 +8,12 @@ helpviewer_keywords:
 - open figures [Windows Forms], filling
 - figures [Windows Forms], filling
 ms.assetid: 5a36b0e4-f1f4-46c0-a85a-22ae98491950
-ms.openlocfilehash: c7d193fdad554048ecd0f2cca5a83cfccbc2a403
-ms.sourcegitcommit: 15ab532fd5e1f8073a4b678922d93b68b521bfa0
+ms.openlocfilehash: addcf959e429974b9306353abb743bb2bb3114e4
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58654078"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59174561"
 ---
 # <a name="how-to-fill-open-figures"></a>Postupy: Vyplňování otevřených obrázků
 Můžete přejít k vyplnění cestu předáním <xref:System.Drawing.Drawing2D.GraphicsPath> objektu <xref:System.Drawing.Graphics.FillPath%2A> metoda. <xref:System.Drawing.Graphics.FillPath%2A> Metoda vyplní cestu podle režim vyplnění (alternativní nebo vinutí) aktuálně nastavený pro danou cestu. Pokud cesta obsahuje všechny otevřených obrázků, cesta je vyplněné, jakoby nebyly uzavřeny tyto údaje. [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] Zavře elementu figure podle Kreslení rovné čáry z koncového bodu pro výchozí bod.  
@@ -32,5 +32,6 @@ Můžete přejít k vyplnění cestu předáním <xref:System.Drawing.Drawing2D.
  V předchozím příkladu je určený k použití pomocí Windows Forms a vyžaduje <xref:System.Windows.Forms.PaintEventArgs> `e`, což je parametr <xref:System.Windows.Forms.Control.Paint> obslužné rutiny události.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Drawing.Drawing2D.GraphicsPath>
-- [Grafické cesty v GDI+](graphics-paths-in-gdi.md)
+- [Cesty grafiky v GDI+](graphics-paths-in-gdi.md)

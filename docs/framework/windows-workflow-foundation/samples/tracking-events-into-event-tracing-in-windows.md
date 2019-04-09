@@ -1,15 +1,15 @@
 ---
-title: Sledování událostí v trasování událostí ve Windows
+title: Sledování událostí ve službě Event Tracking ve Windows
 ms.date: 03/30/2017
 ms.assetid: f812659b-0943-45ff-9430-4defa733182b
-ms.openlocfilehash: ceb981f4fac70155f740ac482bf9d49a51ed7970
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 6384c74aa245db490d04fa95f37bd860dfb9bad9
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54592858"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59166527"
 ---
-# <a name="tracking-events-into-event-tracing-in-windows"></a>Sledování událostí v trasování událostí ve Windows
+# <a name="tracking-events-into-event-tracing-in-windows"></a>Sledování událostí ve službě Event Tracking ve Windows
 Tento příklad ukazuje, jak povolit sledování služby pracovních postupů Windows Workflow Foundation (WF) a generovat sledování událostí v trasování událostí pro Windows (ETW). Vygenerovat pracovní postup do ETW sledování záznamů, ukázka používá účastník sledování ETW (<xref:System.Activities.Tracking.EtwTrackingParticipant>).
 
  Pracovní postup v ukázce obdrží žádost, přiřadí je vstupní proměnná převrácenou hodnotu druhé vstupní data a vrátí vzájemné zpět klientovi. Když jsou vstupní data 0, dělení nulovou výjimkou výskytu, která je neošetřená, který způsobí, že pracovní postup pro přerušení. S povoleným sledováním, je k trasování událostí pro Windows, které může pomoct vyřešit chybu později vyzařovaného záznamem sledování chyb. Účastník sledování ETW konfigurován pomocí sledování profil přihlásit k odběru sledování záznamů. Profil sledování je definované v souboru Web.config a zadat jako parametr konfigurace pro sledování účastníka trasování událostí pro Windows. Účastník sledování ETW konfigurován v souboru Web.config služby pracovního postupu a platí pro službu jako chování služby. V této ukázce zobrazit události sledování do protokolu událostí v prohlížeči událostí.
@@ -150,4 +150,5 @@ Tento příklad ukazuje, jak povolit sledování služby pracovních postupů Wi
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Tracking\EtwTracking`  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Ukázky AppFabric monitorování](https://go.microsoft.com/fwlink/?LinkId=193959)

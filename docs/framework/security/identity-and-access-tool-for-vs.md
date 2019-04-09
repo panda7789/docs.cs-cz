@@ -1,16 +1,16 @@
 ---
-title: Identity and Access Tool for Visual Studio 2012
+title: Nástroj Identita a přístup pro Visual Studio 2012
 ms.date: 03/30/2017
 ms.assetid: 87b8f8f2-4074-44fd-9fd6-08278e877390
 author: BrucePerlerMS
-ms.openlocfilehash: a1b5456f9081d807a3c9e29e1010cbfbf91e637f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 9216298889637780e79d1bfc7ac060458c745968
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54678548"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59170115"
 ---
-# <a name="identity-and-access-tool-for-visual-studio-2012"></a>Identity and Access Tool for Visual Studio 2012
+# <a name="identity-and-access-tool-for-visual-studio-2012"></a>Nástroj Identita a přístup pro Visual Studio 2012
 Toto téma popisuje nový nástroj Identity and Access Tool for Visual Studio 11. Tento nástroj si můžete stáhnout z následující adresy URL: [ https://go.microsoft.com/fwlink/?LinkID=245849 ](https://go.microsoft.com/fwlink/?LinkID=245849) nebo přímo v rámci sady Visual Studio 11 tak, že "identity" ve Správci rozšíření.  
   
  Nástroj Identity and Access Tool for Visual Studio 11 přináší výrazně jednodušší možnosti vývoje díky následujícím hlavním funkcím:  
@@ -28,4 +28,5 @@ Toto téma popisuje nový nástroj Identity and Access Tool for Visual Studio 11
 -   Nástroj využívá funkce sady Windows Azure Access Control Service (ACS) prostřednictvím jednoduchého seznamu zaškrtávacích políček pro všechny poskytovatele identit, které chcete použít: Facebook, Google, Live ID, Yahoo!, jakýkoli poskytovatel OpenID a jakýkoli poskytovatel WS-Federation. Vyberte poskytovatele identity, klikněte na tlačítko OK a poté stiskněte klávesu F5. Vaše aplikace i služba ACS budou automaticky nakonfigurovány a vaše testovaná aplikace bude pracovat se službou ACS.  
   
 ## <a name="see-also"></a>Viz také:
-- [Funkce technologie WIF](../../../docs/framework/security/wif-features.md)
+
+- [Funkce WIF](../../../docs/framework/security/wif-features.md)

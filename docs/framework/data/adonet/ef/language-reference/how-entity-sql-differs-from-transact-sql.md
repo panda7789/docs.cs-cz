@@ -2,12 +2,12 @@
 title: Jak se Entity SQL liší od Transact-SQL
 ms.date: 03/30/2017
 ms.assetid: 9c9ee36d-f294-4c8b-a196-f0114c94f559
-ms.openlocfilehash: f193a3f7441a8bf7efacf07d8a9eb18362d7f91d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 75ce0b00962526b76ea9f4b9fdfb0d1e1e564cdc
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54635959"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59162734"
 ---
 # <a name="how-entity-sql-differs-from-transact-sql"></a>Jak se Entity SQL liší od Transact-SQL
 Toto téma popisuje rozdíly mezi [!INCLUDE[esql](../../../../../../includes/esql-md.md)] a [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)].  
@@ -179,7 +179,7 @@ SELECT C2.FirstName, C2.LastName
  DDL  
  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] nepodporuje DDL v aktuální verzi.  
   
- Imperativní programování  
+ imperativní programování  
  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] nepodporuje imperativní programování, na rozdíl od [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)]. Místo toho použijte programovací jazyk.  
   
  Funkce seskupování  
@@ -212,5 +212,6 @@ Select value c from Categories as c;
  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] podporuje pouze jeden příkaz dotazu výsledek ze kterého vznikne jeden příkaz.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-overview.md)
 - [Nepodporované výrazy](../../../../../../docs/framework/data/adonet/ef/language-reference/unsupported-expressions-entity-sql.md)

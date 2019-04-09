@@ -2,12 +2,12 @@
 title: Microsoft.Transactions.TransactionBridge.RegisterParticipantFailure
 ms.date: 03/30/2017
 ms.assetid: 3a4ead79-8550-4037-84e3-fd70ff56e001
-ms.openlocfilehash: b94c017f6ed3a76a6bc5ed2cb970877ad18ef9ea
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e56a9ed1d837af27d481282e0e106d537ec41ee3
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54610419"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59164291"
 ---
 # <a name="microsofttransactionstransactionbridgeregisterparticipantfailure"></a>Microsoft.Transactions.TransactionBridge.RegisterParticipantFailure
 Službě protokolu WS-AT se nepodařilo zaregistrovat účastníka pro kontrolní protokol.  
@@ -19,6 +19,7 @@ Službě protokolu WS-AT se nepodařilo zaregistrovat účastníka pro kontroln�
  Nepokoušejte se zaregistrovat se na dokončení více než jednou.  Také kontrolovat stav řetězce v rámci zpráva trasování, má-li zjistit, jestli existuje jakoukoli užitečné.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Trasování](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
-- [Řešení problémů s aplikací pomocí trasování](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
+- [Řešení potíží s aplikací pomocí trasování](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
 - [Správa a diagnostika](../../../../../docs/framework/wcf/diagnostics/index.md)

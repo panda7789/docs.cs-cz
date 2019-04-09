@@ -1,15 +1,15 @@
 ---
-title: ADO.NET Overview
+title: Přehled ADO.NET
 ms.date: 03/30/2017
 ms.assetid: ee3bc1d8-11db-4be4-89eb-c708cf04117d
-ms.openlocfilehash: 6769370396fc263f237a2884435630a2930b882b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 7ec3b5f4dd08a39f96ed28e6666fd4b00bced903
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54714383"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59170052"
 ---
-# <a name="adonet-overview"></a>ADO.NET Overview
+# <a name="adonet-overview"></a>Přehled ADO.NET
 ADO.NET poskytuje konzistentní vzhledem k aplikacím přístup ke zdrojům dat jako SQL Server a XML a ke zdrojům dat prostřednictvím OLE DB a ODBC. Sdílení dat aplikace pro koncové uživatele slouží k připojení k těmto zdrojům dat a načtení, zpracování a aktualizace dat, které obsahují ADO.NET.  
   
  ADO.NET odděluje přístup k datům z manipulace s daty do samostatné součásti, které lze použít samostatně nebo v kombinaci. ADO.NET obsahuje zprostředkovatele dat .NET Framework pro připojení k databázi, provádění příkazů a načíst výsledky. Tyto výsledky se buď zpracovávají přímo, umístí do technologie ADO.NET <xref:System.Data.DataSet> objektu, aby bylo možné vystavit uživatele ad hoc způsobem, v kombinaci s daty z více zdrojů nebo předány mezi vrstvami. `DataSet` Objekt také lze použít bez ohledu na jejich zprostředkovatele dat .NET Framework ke správě dat místní aplikace nebo zdroj XML.  
@@ -58,6 +58,7 @@ ADO.NET poskytuje konzistentní vzhledem k aplikacím přístup ke zdrojům dat 
  Popisuje, jak se připojit ke zdroji dat, načtení dat a upravovat data. Jedná se o `DataReaders` a `DataAdapters`.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [ADO.NET](../../../../docs/framework/data/adonet/index.md)
 - [Přístup k datům v sadě Visual Studio](/visualstudio/data-tools/accessing-data-in-visual-studio)
 - [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 0bb92f9ba8ff0aed1c6eb1fa44fb4d7c9abc186a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 293ad30ebf47ca8684d158b1ae1772ab245d7981
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54714228"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59163108"
 ---
 # <a name="corprffunctionargumentinfo-structure"></a>COR_PRF_FUNCTION_ARGUMENT_INFO – struktura
 Představuje argumenty funkce, v pořadí zleva doprava.  
@@ -61,4 +61,5 @@ typedef struct _COR_PRF_FUNCTION_ARGUMENT_INFO {
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Struktury pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-structures.md)

@@ -2,12 +2,12 @@
 title: Aktivita
 ms.date: 03/30/2017
 ms.assetid: 70471705-f55f-4da1-919f-4b580f172665
-ms.openlocfilehash: 970f2978f65b2c1a2585a207d66e4b97fbe4af1a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: b93960d4006499c935c27ee18e066d091632d3d9
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54505585"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59170206"
 ---
 # <a name="activity"></a>Aktivita
 Toto téma popisuje trasování aktivit v modelu trasování Windows Communication Foundation (WCF). Aktivity představují zpracování jednotek, které uživatel zúžit rozsah selhání. Chyby, ke kterým dochází ve stejné aktivitě přímo souvisí. Například operace selže, protože zpráva dešifrování se nezdařilo. Zobrazí trasování pro operace a selhání dešifrování zprávy do stejné aktivity zobrazující přímá korelace mezi dešifrování chyba a Chyba žádosti.  
@@ -98,6 +98,7 @@ traceSource.TraceEvent(TraceEventType.Warning, eventId, "Information");
 -   Aktivity představují aktivity, ne tedy nutně objekty. Aktivita by měl být interpretován jako "k této situaci docházelo při. . . (emisí smysluplné trasování došlo k chybě)."  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Konfigurace trasování](../../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)
 - [Použití prohlížeče trasování služeb k zobrazení korelovaných tras a řešení problémů](../../../../../docs/framework/wcf/diagnostics/tracing/using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md)
 - [Scénáře komplexního trasování](../../../../../docs/framework/wcf/diagnostics/tracing/end-to-end-tracing-scenarios.md)

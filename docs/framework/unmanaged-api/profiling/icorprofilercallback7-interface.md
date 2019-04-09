@@ -11,12 +11,12 @@ api_type:
 ms.assetid: a0be019e-aaa1-4036-990f-565f114d4b5c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3c49a5f782ea105ce57b5fbc2c6bd9bd89f708d9
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 81477010b22edee71098edfc1b8557db08b6038f
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54629578"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59178630"
 ---
 # <a name="icorprofilercallback7-interface"></a>ICorProfilerCallback7 Interface
 [Podporované v rozhraní .NET Framework 4.6.1 a novějších verzích]  
@@ -37,4 +37,5 @@ ms.locfileid: "54629578"
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v461plus](../../../../includes/net-current-v461plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Rozhraní pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)

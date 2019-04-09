@@ -2,12 +2,12 @@
 title: 'Postupy: Test proxy zjišťování'
 ms.date: 03/30/2017
 ms.assetid: d96e3fa2-3c42-4e5d-8244-2694081bdc32
-ms.openlocfilehash: 3c159481813266386706b34d172bbf9614a8253d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 13d2e8ca46e634e3b27c8eb967d89d860df1c72d
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54590510"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59176277"
 ---
 # <a name="how-to-test-the-discovery-proxy"></a>Postupy: Test proxy zjišťování
 Toto je čtvrtý čtyři témat, která ukazuje, jak implementace zjišťování proxy. V předchozím tématu [jak: Implementace klientské aplikace používající zjišťování Proxy k vyhledání služby](../../../../docs/framework/wcf/feature-details/client-app-discovery-proxy-to-find-a-service.md), jste implementovali WCF klientská aplikace, která používá proxy zjišťování k vyhledání služby a pak zavolá služba. Toto téma popisuje postup pro ověření proxy zjišťování, služby a pracovní aplikace klienta podle očekávání.  
@@ -51,7 +51,8 @@ Toto je čtvrtý čtyři témat, která ukazuje, jak implementace zjišťování
 3.  Vypněte proxy zjišťování.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled zjišťování WCF](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md)
-- [Postupy: Implementace Proxy zjišťování](../../../../docs/framework/wcf/feature-details/how-to-implement-a-discovery-proxy.md)
-- [Postupy: Implementace zjistitelné služby, která se registruje pomocí Proxy zjišťování](../../../../docs/framework/wcf/feature-details/discoverable-service-that-registers-with-the-discovery-proxy.md)
-- [Postupy: Implementace klientské aplikace používající zjišťování Proxy k vyhledání služby](../../../../docs/framework/wcf/feature-details/client-app-discovery-proxy-to-find-a-service.md)
+- [Postupy: Implementace zjišťování proxy](../../../../docs/framework/wcf/feature-details/how-to-implement-a-discovery-proxy.md)
+- [Postupy: Implementace zjistitelné služby, která se registruje pomocí proxy zjišťování](../../../../docs/framework/wcf/feature-details/discoverable-service-that-registers-with-the-discovery-proxy.md)
+- [Postupy: Implementace klientské aplikace používající zjišťování proxy k vyhledání služby](../../../../docs/framework/wcf/feature-details/client-app-discovery-proxy-to-find-a-service.md)

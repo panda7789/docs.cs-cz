@@ -7,12 +7,12 @@ helpviewer_keywords:
 - automatic sizing
 - AutoSizeMode property
 ms.assetid: 62fd82a2-9565-4f65-925b-9d1e66dc4e7d
-ms.openlocfilehash: 2fc06bef2434e87b7fbd3ec79e7671c4e32b7b3b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 6d5c4a22f186ddc5811c4a4d5e79776decea9e50
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54649827"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59173625"
 ---
 # <a name="autosize-property-overview"></a>Přehled vlastnosti AutoSize
 <xref:System.Windows.Forms.Control.AutoSize%2A> Vlastnost na ovládací prvek umožňuje změnit jeho velikost, pokud je to nezbytné, aby bylo možné hodnoty určené <xref:System.Windows.Forms.Control.PreferredSize%2A> vlastnost. Upravit chování nastavení velikosti pro konkrétní ovládací prvky tak, že nastavíte `AutoSizeMode` vlastnost.  
@@ -67,6 +67,7 @@ ms.locfileid: "54649827"
 >  Maximalizovat produktivitu, stíny Návrháře formulářů Windows <xref:System.Windows.Forms.Control.AutoSize%2A> vlastnost <xref:System.Windows.Forms.Form> třídy. V době návrhu, se bude formulář chovat jako by <xref:System.Windows.Forms.Control.AutoSize%2A> je nastavena na `false`, bez ohledu na jeho skutečná nastavení. V době běhu je provedena žádné speciální ubytování a <xref:System.Windows.Forms.Control.AutoSize%2A> použita vlastnost podle nastavení vlastnosti.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.Control.AutoSize%2A>
 - <xref:System.Windows.Forms.Control.PreferredSize%2A>
 - <xref:System.Windows.Forms.Control.GetPreferredSize%2A>

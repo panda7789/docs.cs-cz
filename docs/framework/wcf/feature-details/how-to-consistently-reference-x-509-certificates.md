@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - certificates [WCF], referencing X.509 certificates
 ms.assetid: a6de1c63-e450-4640-ad08-ad7302dbfbfc
-ms.openlocfilehash: 2468faabfbca57e7d905a592b6743c43cb2ccd56
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: bd911b1586f7f4a4816efa32480ef99ca12404f4
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54731969"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59176199"
 ---
 # <a name="how-to-consistently-reference-x509-certificates"></a>Postupy: Konzistentní odkazy na certifikáty X.509
 Můžete určit certifikát v několika ohledech: hodnota hash certifikátu, vystavitele a sériovým číslem nebo identifikátor klíče subjektu (identifikátor klíče subjektu). Identifikátor klíče subjektu poskytuje jedinečnou identifikaci veřejného klíče subjektu certifikátu a často se používá při práci s XML – digitální podpis. Identifikátor klíče subjektu hodnota je obvykle součástí certifikátu X.509 jako *rozšíření certifikátu X.509*. Windows Communication Foundation (WCF) má výchozí *odkazující na styl* , která používá vystavitele a sériovým číslem, pokud chybí rozšíření identifikátor klíče subjektu z certifikátu. Pokud certifikát obsahuje vlastnost extension identifikátor klíče subjektu, používá výchozí odkazující na styl identifikátor klíče subjektu tak, aby odkazoval na certifikát. Pokud uprostřed způsob prostřednictvím vývoji aplikace přepnou od používání certifikátů, které nepoužívají identifikátor klíče subjektu rozšíření na certifikátech, které používají rozšíření identifikátor klíče subjektu, odkazující styl použitý v zprávy WCF vygenerované také změní.  
@@ -37,4 +37,5 @@ Můžete určit certifikát v několika ohledech: hodnota hash certifikátu, vys
 -   <xref:System.ServiceModel.Security.Tokens>  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Práce s certifikáty](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)

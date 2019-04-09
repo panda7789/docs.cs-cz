@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - structured navigation [WPF]
 ms.assetid: 025d30ef-fec5-436d-ad7a-5d5483331c26
-ms.openlocfilehash: 7c8c1697ff18e919711e84e724b5b8698dfe088e
-ms.sourcegitcommit: 16aefeb2d265e69c0d80967580365fabf0c5d39a
-ms.translationtype: MT
+ms.openlocfilehash: 0544e3584e25e9f892a4df095a5c41f0f5352a17
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58125600"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59161509"
 ---
 # <a name="structured-navigation-overview"></a>Přehled strukturované navigace
 Obsah, který může být hostován [!INCLUDE[TLA#tla_xbap](../../../../includes/tlasharptla-xbap-md.md)], <xref:System.Windows.Controls.Frame>, nebo <xref:System.Windows.Navigation.NavigationWindow> se skládá z stránky, které lze identifikovat podle pack [!INCLUDE[TLA#tla_uri#plural](../../../../includes/tlasharptla-urisharpplural-md.md)] a kterou se odkazuje hypertextové odkazy. Struktura stránek a způsoby, ve kterém se dá Navigovat, tak jak je definoval hypertextové odkazy, se označuje jako topologie navigace. Tato topologie vyhovuje širokou škálu typů aplikací, zejména těch, které procházejí dokumenty. Pro takové aplikace uživatele můžete přejít z jedné stránky na jinou stránku bez buď stránky museli cokoliv vědět o nich.  
@@ -20,9 +20,7 @@ Obsah, který může být hostován [!INCLUDE[TLA#tla_xbap](../../../../includes
  Jiné druhy aplikací však mít stránek, které je potřeba vědět, kdy byla přešli mezi. Zvažte například aplikaci lidských zdrojů, která má jednu stránku, chcete-li vypsat všechny zaměstnance v organizaci – na stránce "Seznamu zaměstnanci". Tato stránka může také umožňují uživatelům přidat nového zaměstnance kliknutím na hypertextový odkaz. Po kliknutí na stránce přejde na stránku "Přidat Employee" shromažďování podrobnosti nového zaměstnance a vrátit na stránku "Seznamu zaměstnanci" k vytvoření nového zaměstnance a aktualizaci seznamu. Tento styl navigace je podobný voláním metody k nějakým způsobem zpracovat a vrátí hodnotu, která se nazývá strukturované programování. V důsledku toho se nazývá tento styl navigace *strukturovaná navigace*.  
   
  <xref:System.Windows.Controls.Page> Třída neimplementuje podporu pro strukturované navigace. Místo toho <xref:System.Windows.Navigation.PageFunction%601> třída odvozena z <xref:System.Windows.Controls.Page> a rozšiřuje základní konstrukcí, vyžaduje se pro strukturované navigace. Toto téma ukazuje, jak vytvořit strukturované navigace pomocí <xref:System.Windows.Navigation.PageFunction%601>.  
-  
- 
-  
+
 <a name="Structured_Navigation"></a>   
 ## <a name="structured-navigation"></a>Strukturované navigace  
  Při jedné stránce volá jiné stránky v strukturované navigace, se vyžadují některé nebo všechny z následujících chování:  
@@ -170,6 +168,7 @@ Obsah, který může být hostován [!INCLUDE[TLA#tla_xbap](../../../../includes
  V ostatních případech aplikace mohou mít topologie komplexních navigace, které jsou závislé na strukturované navigace efektivně pracovat. Další informace najdete v tématu [přehled topologií navigace](navigation-topologies-overview.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Navigation.PageFunction%601>
 - <xref:System.Windows.Navigation.NavigationService>
 - [Přehled topologií navigace](navigation-topologies-overview.md)

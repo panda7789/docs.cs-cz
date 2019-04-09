@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - service creation [WCF]
 ms.assetid: 7cf21bfe-23bd-46aa-8033-609f851dbf76
-ms.openlocfilehash: d5322dfca1aa006ba2fc85b5dedebd09941f9c0e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 32586ad3ec62630e6abafd33b385788c20155b28
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54499220"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59178487"
 ---
 # <a name="basic-programming-lifecycle"></a>Základní programovací životní cyklus
 Windows Communication Foundation (WCF) umožňuje aplikacím komunikovat, jestli jsou na stejném počítači, na Internetu, nebo na různých aplikačních platformách. Toto téma popisuje úlohy, které jsou nutné k vytvoření aplikace WCF. Ukázkové aplikace práci, naleznete v tématu [kurz Začínáme](../../../docs/framework/wcf/getting-started-tutorial.md).  
@@ -32,4 +32,5 @@ Windows Communication Foundation (WCF) umožňuje aplikacím komunikovat, jestli
  Jakmile máte zkušenosti s vývojem kontrakty služeb, můžete si také přečíst [Úvod do rozšíření](../../../docs/framework/wcf/introduction-to-extensibility.md). Pokud máte problémy s vaší službou, zkontrolujte [rychlý start řešení potíží s WCF](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md) abyste zjistili, jestli ostatní jsou stejné nebo podobné problémy.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Implementace kontraktů služeb](../../../docs/framework/wcf/implementing-service-contracts.md)

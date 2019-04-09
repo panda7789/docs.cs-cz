@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - dispatcher extensions [WCF]
 ms.assetid: d0ad15ac-fa12-4f27-80e8-7ac2271e5985
-ms.openlocfilehash: c34a923d70c9079a3736732d6815df0329dfd557
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: df726d71880d135adb883f834acfa9839641eae3
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54715893"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59162721"
 ---
 # <a name="extending-dispatchers"></a>Rozšíření dispečerů
 Dispečerů zodpovídají za přesun příchozí zprávy z podkladové kanály, překládá na volání metod v kódu aplikace a odesílá výsledky zpět volajícímu. Rozšíření dispečerů umožňují upravit toto zpracování.  Můžete implementovat zpráv nebo parametr kontroly, které zkontrolovat nebo změnit obsah zprávy nebo parametry.  Můžete změnit tak, jak zprávy jsou směrovány na operace nebo poskytuje některé další funkce.  
@@ -128,6 +128,7 @@ Dispečerů zodpovídají za přesun příchozí zprávy z podkladové kanály, 
 -   <xref:System.ServiceModel.Dispatcher.DispatchOperation.ParameterInspectors%2A> Vlastnost umožňuje vložit vlastní parametr inspector, můžete použít ke kontrole nebo úprava parametrů a návratové hodnoty.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Dispatcher.DispatchRuntime>
 - <xref:System.ServiceModel.Dispatcher.DispatchOperation>
 - [Postupy: Kontrola a změny zpráv ve službě](../../../../docs/framework/wcf/extending/how-to-inspect-and-modify-messages-on-the-service.md)

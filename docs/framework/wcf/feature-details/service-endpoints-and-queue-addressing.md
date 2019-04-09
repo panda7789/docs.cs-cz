@@ -2,12 +2,12 @@
 title: Koncové body služby a adresování front
 ms.date: 03/30/2017
 ms.assetid: 7d2d59d7-f08b-44ed-bd31-913908b83d97
-ms.openlocfilehash: 7b4eca1519eeb1ed6357b625a3253105ece2b8ad
-ms.sourcegitcommit: 0069cb3de8eed4e92b2195d29e5769a76111acdd
+ms.openlocfilehash: 4064b13b00d44f90a372df5364406fb16c1da9fd
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "56332517"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59172520"
 ---
 # <a name="service-endpoints-and-queue-addressing"></a>Koncové body služby a adresování front
 Toto téma popisuje, jak klienti adres služby, které načítají z fronty a mapování koncových bodů služby do fronty. Následující obrázek znázorňuje Připomínáme, classic, že nasazení aplikace Windows Communication Foundation (WCF) zařazených do fronty.  
@@ -105,4 +105,5 @@ Toto téma popisuje, jak klienti adres služby, které načítají z fronty a ma
  Všimněte si, že nemůžete použít net.msmq:// adresování s `MsmqIntegrationBinding`. Protože `MsmqIntegrationBinding` podporuje volného tvaru MSMQ formát názvu adresování, můžete použít službu WCF používající tuto vazbu použít vícesměrové vysílání a distribuční seznam funkcí ve službě MSMQ. Jedinou výjimkou je určení `CustomDeadLetterQueue` při použití `MsmqIntegrationBinding`. Musí být formulář net.msmq://, podobně jako na to, jak je určen pomocí `NetMsmqBinding`.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Webhosting frontové aplikace](../../../../docs/framework/wcf/feature-details/web-hosting-a-queued-application.md)

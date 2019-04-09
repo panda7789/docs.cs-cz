@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Net profile TCP
 ms.assetid: e8475fe6-0ecd-407a-8e7e-45860561bb74
-ms.openlocfilehash: ad76a06815be61c883d083d1f794831725665c03
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
-ms.translationtype: MT
+ms.openlocfilehash: 89564c87c38b9b32a851ff77a76cdaadf5eae1c5
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58840962"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59174522"
 ---
 # <a name="default-nettcpbinding"></a>Výchozí NetTcpBinding
 Tato ukázka demonstruje použití <xref:System.ServiceModel.NetTcpBinding> vazby. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) službu kalkulačky, která implementuje. V této ukázce je služba v místním prostředí. Klient a služba se konzolové aplikace.  
@@ -121,4 +121,3 @@ Press ENTER to terminate client.
       </endpoint>  
     </client>  
     ```  
-  

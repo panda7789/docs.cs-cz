@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d619976b-eda3-475e-ac23-c7988a2dceb0
-ms.openlocfilehash: bb7b4c06b87c8c214a6f3ed99a89707ccd0d626e
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
-ms.translationtype: MT
+ms.openlocfilehash: fa04b883e37cc287e6bd52ce9f206b2b24fe905f
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58464304"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59167424"
 ---
 # <a name="how-to-create-a-custom-claim"></a>Postupy: Vytvoření vlastní deklarace
 Infrastruktura modelu Identity ve Windows Communication Foundation (WCF) poskytuje sadu předdefinovaných deklarací typů a práva s pomocné funkce pro vytváření <xref:System.IdentityModel.Claims.Claim> instance s těmito typy a přístupových práv. Tyto předdefinované deklarace jsou navrženy pro informace o modelu, které jsou součástí typy přihlašovacích údajů klienta, které podporuje WCF, ve výchozím nastavení. V mnoha případech jsou dostatečné; integrované deklarací identity Některé aplikace ale můžou vyžadovat vlastní deklarace identity. Deklarace identity se skládá z typ deklarace identity, prostředek, pro kterou platí deklarace identity pro a práv, která jsou s potvrzením přes tento prostředek. Toto téma popisuje, jak vytvořit vlastní deklarace identity.  
@@ -75,9 +75,10 @@ Infrastruktura modelu Identity ve Windows Communication Foundation (WCF) poskytu
  [!code-vb[c_CustomClaim#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customclaim/vb/c_customclaim.vb#0)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.IdentityModel.Claims.Claim>
 - <xref:System.IdentityModel.Claims.Rights>
 - <xref:System.IdentityModel.Claims.ClaimTypes>
 - <xref:System.Runtime.Serialization.DataContractAttribute>
 - <xref:System.Runtime.Serialization.DataMemberAttribute>
-- [Správa deklarací identity a autorizace pomocí modelu identit](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md)
+- [Správa deklarací a autorizace s modelem identity](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md)

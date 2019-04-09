@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 05c95d47d57525aa2aebe16d536b771042600000
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 193232ce1006a9cf209db9330343386404948440
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54509724"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59168282"
 ---
 # <a name="icordebug-interface"></a>ICorDebug – rozhraní
 Poskytuje metody, které umožňují vývojářům ladit aplikace v prostředí common language runtime (CLR).  
@@ -61,4 +61,5 @@ Poskytuje metody, které umožňují vývojářům ladit aplikace v prostředí 
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+
+- [Debugging – rozhraní](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

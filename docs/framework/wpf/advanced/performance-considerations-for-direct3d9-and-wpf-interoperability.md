@@ -5,12 +5,12 @@ helpviewer_keywords:
 - WPF [WPF], Direct3D9 interop performance
 - Direct3D9 [WPF interoperability], performance
 ms.assetid: ea8baf91-12fe-4b44-ac4d-477110ab14dd
-ms.openlocfilehash: fd3c99f22a1d097c82494ba6eff344820162ed87
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 1371fa901bebc503a0091f3229a8fd7e6ccc2c86
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57356712"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59162630"
 ---
 # <a name="performance-considerations-for-direct3d9-and-wpf-interoperability"></a>Předpokládaný výkon pro Direct3D9 a interoperabilitu WPF
 Můžete hostovat pomocí obsahu Direct3D9 <xref:System.Windows.Interop.D3DImage> třídy. Hostování obsahu Direct3D9 může ovlivnit výkon vaší aplikace. Toto téma popisuje osvědčené postupy a optimalizovat výkon při hostování obsahu Direct3D9 v aplikaci Windows Presentation Foundation (WPF). Zahrnout tyto osvědčené postupy použití <xref:System.Windows.Interop.D3DImage> a osvědčené postupy při použití Windows Vista, Windows XP a zobrazí více monitorů.  
@@ -60,7 +60,8 @@ Můžete hostovat pomocí obsahu Direct3D9 <xref:System.Windows.Interop.D3DImage
 |D3DFMT_A8R8G8B8 (lockable)|**Aktualizace hardwaru**|Aktualizace softwaru|**Aktualizace hardwaru**|Aktualizace softwaru|  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Interop.D3DImage>
 - [Vzájemná spolupráce grafického subsystému WPF a systému Direct3D9](wpf-and-direct3d9-interoperation.md)
-- [Návod: Vytvoření obsahu Direct3D9 pro hostování v subsystému WPF](walkthrough-creating-direct3d9-content-for-hosting-in-wpf.md)
-- [Návod: Hostování obsahu Direct3D9 v subsystému WPF](walkthrough-hosting-direct3d9-content-in-wpf.md)
+- [Návod: Vytvoření obsahu Direct3D9 pro hostování ve WPF](walkthrough-creating-direct3d9-content-for-hosting-in-wpf.md)
+- [Návod: Hostování obsahu Direct3D9 ve WPF](walkthrough-hosting-direct3d9-content-in-wpf.md)

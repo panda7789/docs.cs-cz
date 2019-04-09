@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Zajištění více ovládacích prvků vázaných ke stejnému zdroji dat zůstalo synchronizovaných'
+title: 'Postupy: Zajištění, aby více ovládacích prvků vázaných ke stejnému zdroji dat zůstalo synchronizovaných'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - controls [Windows Forms], binding multiple
 - controls [Windows Forms], synchronizing with data source
 ms.assetid: c2f0ecc6-11e6-4c2c-a1ca-0759630c451e
-ms.openlocfilehash: 01cec80c85beb64975648b2250c914fe04d3ac95
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 8f7e59720420a845fa195b8c0fb078a8699a9bc3
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57721382"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59170336"
 ---
-# <a name="how-to-ensure-multiple-controls-bound-to-the-same-data-source-remain-synchronized"></a>Postupy: Zajištění více ovládacích prvků vázaných ke stejnému zdroji dat zůstalo synchronizovaných
+# <a name="how-to-ensure-multiple-controls-bound-to-the-same-data-source-remain-synchronized"></a>Postupy: Zajištění, aby více ovládacích prvků vázaných ke stejnému zdroji dat zůstalo synchronizovaných
 Často při práci s datovou vazbu v modelu Windows Forms, více ovládacích prvků jsou vázány na stejného datového zdroje. V některých případech může být potřeba provést další kroky a ujistěte se, že budou synchronizovány s mezi sebou a zdrojem dat vázané vlastnosti ovládacích prvků. Tyto kroky jsou nezbytné ve dvou situacích:  
   
 -   Pokud zdroj dat neimplementuje <xref:System.ComponentModel.IBindingList>a proto generovat <xref:System.ComponentModel.IBindingList.ListChanged> události typu <xref:System.ComponentModel.ListChangedType.ItemChanged>.  
@@ -41,7 +41,8 @@ ms.locfileid: "57721382"
 -   Formulář s <xref:System.Windows.Forms.Form.Load> zpracovává události a volání `InitializeControlsAndDataSource` metoda v příkladu ve formuláři <xref:System.Windows.Forms.Form.Load> obslužné rutiny události.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Postupy: Sdílení vázaných dat mezi formuláři pomocí komponenty BindingSource](./controls/how-to-share-bound-data-across-forms-using-the-bindingsource-component.md)
-- [Oznámení změn v datové vazbě Windows Forms](change-notification-in-windows-forms-data-binding.md)
+- [Oznámení změn v datové vazbě rozhraní Windows Forms](change-notification-in-windows-forms-data-binding.md)
 - [Rozhraní související s datovou vazbou](interfaces-related-to-data-binding.md)
 - [Windows Forms – datová vazba](windows-forms-data-binding.md)

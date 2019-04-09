@@ -8,12 +8,12 @@ helpviewer_keywords:
 - user controls [C#]
 - custom controls [Windows Forms], creating
 ms.assetid: f88481a8-c746-4a36-9479-374ce5f2e91f
-ms.openlocfilehash: 48d29c12407f7364794040f4fccd351156244a69
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: 2f8c295e961fdf62a14b7e63ab990e8f99379cfd
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57723631"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59177372"
 ---
 # <a name="walkthrough-authoring-a-composite-control-with-visual-c"></a>Návod: Vytvoření složeného ovládacího prvku pomocí Visual C\#
 Složené ovládací prvky poskytují způsob, kterým lze vytvořit vlastní grafické rozhraní a znovu použít. Složený ovládací prvek je v podstatě komponent pomocí vizuální reprezentace. V důsledku toho může obsahovat jeden nebo více Windows Forms ovládací prvky, komponenty nebo bloky kódu, který můžete rozšířit funkce ověřování uživatelského vstupu, změnou zobrazení vlastností nebo provádění jiných úloh vyžaduje autorem. Složené ovládací prvky mohou být umístěny ve Windows Forms stejným způsobem jako ostatní ovládací prvky. V první části tohoto návodu vytvoříte jednoduchou složeného ovládacího prvku volá `ctlClock`. V druhé části tohoto průvodce, které rozšiřují funkce nástroje `ctlClock` prostřednictvím dědičnosti.  
@@ -54,7 +54,7 @@ Složené ovládací prvky poskytují způsob, kterým lze vytvořit vlastní gr
   
     |Vlastnost|Změňte na|  
     |--------------|---------------|  
-    |**Název**|`lblDisplay`|  
+    |**Name**|`lblDisplay`|  
     |**Text**|`(blank space)`|  
     |**TextAlign**|`MiddleCenter`|  
     |**Font.Size**|`14`|  
@@ -247,8 +247,8 @@ Složené ovládací prvky poskytují způsob, kterým lze vytvořit vlastní gr
   
     |Vlastnost|Nastavení|  
     |--------------|-------------|  
-    |**Název**|`lblAlarm`|  
-    |**Text**|**Alarm!**|  
+    |**Name**|`lblAlarm`|  
+    |**Text**|**Upozornění!**|  
     |**TextAlign**|`MiddleCenter`|  
     |**Viditelné**|`false`|  
   
@@ -317,9 +317,9 @@ Složené ovládací prvky poskytují způsob, kterým lze vytvořit vlastní gr
   
 2.  Přidání tlačítka pro ovládací prvek. Vlastnosti tlačítka nastavte následujícím způsobem.  
   
-    |Vlastnost|Hodnota|  
+    |Vlastnost|Value|  
     |--------------|-----------|  
-    |**Název**|`btnAlarmOff`|  
+    |**Name**|`btnAlarmOff`|  
     |**Text**|**Zakázat upozornění**|  
   
 3.  V Návrháři dvakrát klikněte na panel **btnAlarmOff**.  
@@ -368,8 +368,8 @@ Složené ovládací prvky poskytují způsob, kterým lze vytvořit vlastní gr
     |Control|Vlastnost|Hodnota|  
     |-------------|--------------|-----------|  
     |`label1`|**Text**|`(blank space)`|  
-    ||**Název**|`lblTest`|  
-    |`dateTimePicker1`|**Název**|`dtpTest`|  
+    ||**Name**|`lblTest`|  
+    |`dateTimePicker1`|**Name**|`dtpTest`|  
     ||**Formát**|<xref:System.Windows.Forms.DateTimePickerFormat.Time>|  
   
 10. V Návrháři dvakrát klikněte na panel **dtpTest**.  
@@ -405,6 +405,7 @@ Složené ovládací prvky poskytují způsob, kterým lze vytvořit vlastní gr
      Tento názorný postup zahrnují několik klíčových konceptů. Naučili jste se vytvoření složeného ovládacího prvku kombinací ovládacích prvků a komponent do složeného ovládacího prvku kontejneru. Jste se naučili přidání vlastnosti do ovládacího prvku a napsat kód k implementaci vlastních funkcí. V předchozí části jste se dozvěděli k rozšíření funkčnosti dané složeného ovládacího prvku prostřednictvím dědičnosti a změnit funkci metody hostitele tak, že přepíšete tyto metody.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Typy vlastních ovládacích prvků](varieties-of-custom-controls.md)
-- [Postupy: Zobrazení ovládacího prvku v zvolit položky panelu nástrojů – dialogové okno](how-to-display-a-control-in-the-choose-toolbox-items-dialog-box.md)
+- [Postupy: Zobrazení ovládacího prvku v dialogovém okně Zvolit položky nástrojů](how-to-display-a-control-in-the-choose-toolbox-items-dialog-box.md)
 - [Návod: Dědění z ovládacího prvku Windows Forms pomocí Visual C#](walkthrough-inheriting-from-a-windows-forms-control-with-visual-csharp.md)

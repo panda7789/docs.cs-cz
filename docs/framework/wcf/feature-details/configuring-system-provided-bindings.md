@@ -6,12 +6,12 @@ helpviewer_keywords:
 - WCF [WCF], system-provided bindings
 - bindings [WCF], system-provided
 ms.assetid: 443f8d65-f1f2-4311-83b3-4d8fdf7ccf16
-ms.openlocfilehash: 0e3dd33e740d7e9f0b59b8568b35a83303e8b592
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 0dc213c2d25558dc447b49d2b2378f9aa72f80a2
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54517692"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59172806"
 ---
 # <a name="configuring-system-provided-bindings"></a>Konfigurace vazeb poskytovaných systémem
 Vazby zadejte komunikační mechanizmus použít při komunikaci se koncový bod a určují, jak se připojit do koncového bodu. Vazby obsahovat prvky, které definují, jak kanálů Windows Communication Foundation (WCF) jsou rozloženy do vrstev nahoru a zajistit tak funkce požadovanou komunikaci. Vazba obsahuje tři typy prvků:  
@@ -78,6 +78,7 @@ Vazby zadejte komunikační mechanizmus použít při komunikaci se koncový bod
 |Streamování|Určuje, zda je podporováno datové proudy zpráv.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled vytváření koncových bodů](../../../../docs/framework/wcf/endpoint-creation-overview.md)
 - [Používání vazeb ke konfiguraci služeb a klientů](../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)
 - [Základní programování WCF](../../../../docs/framework/wcf/basic-wcf-programming.md)

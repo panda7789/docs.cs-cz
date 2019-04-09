@@ -2,12 +2,12 @@
 title: Názvy partnerských uzlů a ID PNRP
 ms.date: 03/30/2017
 ms.assetid: afa538e8-948f-4a98-aa9f-305134004115
-ms.openlocfilehash: 3f82d472e1f8913e2f518abbefa2bb6407d6f54c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e7e92519bede478a5e26a88a56236f987c93c441
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54690785"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59173105"
 ---
 # <a name="peer-names-and-pnrp-ids"></a>Názvy partnerských uzlů a ID PNRP
 Název partnerského zařízení představuje koncový bod pro komunikaci, která může být počítač, uživatele, skupinu, služby nebo něco přidružené partnera, který lze převést na IPv6 adresu. Řešení protokolu PNRP (Peer Name) trvá statisticky jedinečný. název partnerského zařízení pro zřízení ID PNRP, který slouží k určení členů cloudu.  
@@ -31,5 +31,6 @@ Název partnerského zařízení představuje koncový bod pro komunikaci, kter�
  Tato kombinace P2P ID a umístění služby umožňuje víc ID PNRP k registraci z jednoho počítače.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Net.PeerToPeer.PeerName>
 - <xref:System.Net.PeerToPeer>

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - impersonation
 - WCF, security
 ms.assetid: 431db851-a75b-4009-9fe2-247243d810d3
-ms.openlocfilehash: 260ff8b2131e1ee3c42197187f7067ab9c1328d6
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 0c414d0af033d9d703fcf947d008aeefcef5b876
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54497501"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59169114"
 ---
 # <a name="how-to-impersonate-a-client-on-a-service"></a>Postupy: Zosobnění klienta ve službě
 Zosobnění klienta ve službě Windows Communication Foundation (WCF) umožňuje službě a provádět akce jménem klienta. Pro akce v souladu s přístup ovládacího prvku seznam (ACL) kontroly, jako je například přístup k adresářů a souborů na počítači nebo přístup k databázi serveru SQL Server že je kontrola seznamu ACL pro uživatelský účet klienta. Toto téma popisuje základní kroky potřebné k povolení klientům v doméně Windows nastavte úroveň zosobnění klienta. Funkční příklad tohoto objektu, najdete v části [zosobnění klienta](../../../docs/framework/wcf/samples/impersonating-the-client.md). Další informace o zosobnění klienta najdete v tématu [delegace a zosobnění](../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md).  
@@ -46,6 +46,7 @@ Zosobnění klienta ve službě Windows Communication Foundation (WCF) umožňuj
      [!code-vb[c_SimpleImpersonation#1](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_simpleimpersonation/vb/source.vb#1)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.OperationBehaviorAttribute>
 - <xref:System.Security.Principal.TokenImpersonationLevel>
 - [Zosobnění klienta](../../../docs/framework/wcf/samples/impersonating-the-client.md)

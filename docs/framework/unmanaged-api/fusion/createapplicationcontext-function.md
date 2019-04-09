@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a6b5aa78efcc19f1fc50c8e9bfc5105f9afd7d50
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: d98829b29100824e5d606e23aaf287c9f6e81d69
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57495205"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59170960"
 ---
 # <a name="createapplicationcontext-function"></a>CreateApplicationContext – funkce
 Tato funkce podporuje infrastrukturu rozhraní .NET Framework a není určena pro použití přímo v kódu.  
@@ -52,6 +52,7 @@ HRESULT CreateApplicationContext (
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [IAssemblyCache – rozhraní](../../../../docs/framework/unmanaged-api/fusion/iassemblycache-interface.md)
-- [Globální statické funkce pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-global-static-functions.md)
+- [Fúze globálních statických funkcí](../../../../docs/framework/unmanaged-api/fusion/fusion-global-static-functions.md)
 - [Globální mezipaměť sestavení](../../../../docs/framework/app-domains/gac.md)

@@ -14,17 +14,16 @@ helpviewer_keywords:
 - classes [WPF], mapping namespaces to
 - namespaces [WPF]
 ms.assetid: 5c0854e3-7470-435d-9fe2-93eec9d3634e
-ms.openlocfilehash: 5921824ddbd52c264affd4822ed626d5d38b80a1
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
-ms.translationtype: MT
+ms.openlocfilehash: cf09415e9203c82d26bccf4e84db5607047b6f35
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57366601"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59176914"
 ---
 # <a name="xaml-namespaces-and-namespace-mapping-for-wpf-xaml"></a>Obor názvů XAML mapování oboru názvů pro WPF XAML
 Dále toto téma vysvětluje přítomnost a účel dvě tak často, nenašla v kořenovém tagu souboru WPF XAML mapování oboru názvů XAML. Také popisuje, jak vytvořit podobná mapování pro elementy, které jsou definovány ve svém vlastním kódu a/nebo v rámci samostatné sestavení pomocí.  
-  
-  
+
 ## <a name="what-is-a-xaml-namespace"></a>Co je Namespace XAML?  
  Obor názvů XAML je ve skutečnosti rozšíření konceptu oboru názvů XML. Techniky pro určení oboru názvů XAML využívají syntaxi XML obor názvů, konvenci pomocí identifikátorů URI jako identifikátory oboru názvů pomocí předpony poskytují způsob odkazovat více oborů názvů z jednoho zdroje značek a tak dále. Primární pojem, který je přidán do XAML definici oboru názvů XML je, že obor názvů XAML zahrnuje obě obor jedinečnosti pro použití značek a také ovlivňuje, jak jsou značek entit potenciálně se opírá o konkrétních oborů názvů CLR a odkazované sestavení. Tento druhý faktor je také ovlivněno koncept kontext schématu XAML. Ale pro účely fungování WPF s obory názvů XAML, můžete obvykle představit obory názvů XAML z hlediska výchozí obor názvů XAML, oboru názvů jazyka XAML a všech dalších XAML názvových prostorů namapována ve vašem kódu XAML přímo na konkrétní základní typ CLR obory názvů a odkazovaných sestavení.  
   
@@ -137,5 +136,6 @@ End Namespace
  Kompilované BAML (vygenerovali přes PresentationBuildTask) používá všechny kroky, i když BAML také by neměly obsahovat názvy nekvalifikované sestavení.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Obory názvů XML](https://go.microsoft.com/fwlink/?LinkId=98069)
 - [Přehled XAML (WPF)](xaml-overview-wpf.md)

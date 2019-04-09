@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - tracing [WCF]
 ms.assetid: 82922010-e8b3-40eb-98c4-10fc05c6d65d
-ms.openlocfilehash: f80d89d66253df310395cdfa3139e8765da24edb
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 8702091c185ba3d4956d3bd5d13ca191c12fce82
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54584909"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59162878"
 ---
 # <a name="configuring-tracing"></a>Konfigurace trasování
 Toto téma popisuje, jak můžete povolit trasování, konfigurovat zdroje trasování generoval trasování a úrovně trasování sady, trasování sady aktivit a šíření pro podporu korelace trasování začátku do konce a nastavit naslouchacích procesů trasování pro přístup k trasování.  
@@ -181,7 +181,8 @@ Toto téma popisuje, jak můžete povolit trasování, konfigurovat zdroje traso
  Nelze použít `propagateActivity` atribut s uživatelem definované trasování zdrojů. Pro šíření ID aktivity uživatele kódu, ujistěte se, že nenastavíte ServiceModel `ActivityTracing`, přitom stále má ServiceModel `propagateActivity` atribut nastaven na `true`.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Trasování](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
 - [Správa a diagnostika](../../../../../docs/framework/wcf/diagnostics/index.md)
-- [Postupy: Vytvoření a inicializace naslouchacích procesů trasování](https://go.microsoft.com/fwlink/?LinkId=94648)
+- [Postupy: Vytváření a inicializace naslouchacích procesů trasování](https://go.microsoft.com/fwlink/?LinkId=94648)
 - [Vytváření vlastních TraceListener](https://go.microsoft.com/fwlink/?LinkId=96239)

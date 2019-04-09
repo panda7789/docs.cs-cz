@@ -8,12 +8,12 @@ helpviewer_keywords:
 - WebRequest class, sending data to a host
 - Sending data to a host, using WebRequest class
 ms.assetid: 66686878-38ac-4aa6-bf42-ffb568ffc459
-ms.openlocfilehash: 6d7a2e52177c05ead6300e775021572f3a64340a
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
-ms.translationtype: MT
+ms.openlocfilehash: 456dbdab3070e88fe0bc6572c998ce54e3c19c00
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58822251"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59166945"
 ---
 # <a name="how-to-send-data-by-using-the-webrequest-class"></a>Postupy: Odesílání dat pomocí třídy WebRequest
 Následující postup popisuje kroky k odesílání dat na server. Tento postup se běžně používá k odesílání dat na webovou stránku. 
@@ -153,8 +153,8 @@ Následující příklad kódu ukazuje, jak odesílat data do webového serveru 
 [!code-csharp[SendDataUsingWebRequest](../../../samples/snippets/csharp/VS_Snippets_Network/SendDataUsingWebRequest/cs/WebRequestPostExample.cs)]
 [!code-vb[SendDataUsingWebRequest](../../../samples/snippets/visualbasic/VS_Snippets_Network/SendDataUsingWebRequest/vb/WebRequestPostExample.vb)]
 
-  
 ## <a name="see-also"></a>Viz také:
+
 - [Vytváření internetových žádostí](creating-internet-requests.md)
 - [Použití streamů v síti](using-streams-on-the-network.md)
 - [Přístup k Internetu prostřednictvím proxy serveru](accessing-the-internet-through-a-proxy.md)

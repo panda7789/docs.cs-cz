@@ -1,13 +1,13 @@
 ---
-title: <add> z <entries>
+title: <add> of <entries>
 ms.date: 03/30/2017
 ms.assetid: 3af4805b-dc72-4f68-b168-da4fba8c6170
-ms.openlocfilehash: 7267b8719987ecd25bcca78a7897a0d4172a42ef
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 1324803d7c0f127cfee9eadebff2672955780eda
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55264567"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59165409"
 ---
 # <a name="add-of-entries"></a>\<Přidat > z \<položky >
 Představuje položku směrování, která se mapuje na koncový bod klienta, který byl předtím definovaný filtr. Tomuto filtru odpovídá zprávy se odešlou do tohoto cílového místa.  
@@ -61,5 +61,6 @@ Představuje položku směrování, která se mapuje na koncový bod klienta, kt
 |[\<směrování >](../../../../../docs/framework/configure-apps/file-schema/wcf/routing.md)|Konfigurační oddíl, který obsahuje položky směrování mapování.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Routing.Configuration.RoutingSection?displayProperty=nameWithType>
 - <xref:System.ServiceModel.Routing.Configuration.FilterTableEntryElement?displayProperty=nameWithType>

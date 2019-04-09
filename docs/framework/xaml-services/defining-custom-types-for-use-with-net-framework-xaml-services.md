@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - defining custom types [XAML Services]
 ms.assetid: c2667cbd-2f46-4a7f-9dfc-53696e35e8e4
-ms.openlocfilehash: fa341b7df32823c653df25ddb0dabcb4658b72b5
-ms.sourcegitcommit: 5c1abeec15fbddcc7dbaa729fabc1f1f29f12045
+ms.openlocfilehash: be9c0e26574a15279ce89af2c7862abaa8713360
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58042625"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59164434"
 ---
 # <a name="defining-custom-types-for-use-with-net-framework-xaml-services"></a>Definování vlastních typů pro práci s technologií .NET Framework XAML Services
 Při definování vlastních typů, které jsou pro obchodní objekty nebo jsou typy, které nemají závislost na určité rozhraní, jsou některé osvědčené postupy pro XAML, můžete postupovat podle. Pokud budete postupovat podle těchto postupů, můžete zjistit vlastnosti XAML stejného typu a přiřaďte jí vhodné vyjádření v datovém proudu uzlu XAML pomocí typu systému XAML rozhraní .NET Framework XAML Services a jeho XAML čtečky a zapisovače XAML. Toto téma popisuje osvědčené postupy pro definice typu, definice členů a zapisujících CLR typy nebo členy.  
@@ -70,7 +70,7 @@ Při definování vlastních typů, které jsou pro obchodní objekty nebo jsou 
 #### <a name="the-getpropertyname-accessor"></a>Přístupový objekt GetPropertyName  
  Podpis pro `Get` *PropertyName* přístupový objekt musí být:  
   
- `public static object Get` *PropertyName* `(object`  `target` `)`  
+ `public static object Get` *Vlastnost PropertyName* `(object`  `target` `)`  
   
 -   `target` Objektu lze zadat jako konkrétnější typ ve vaší implementaci. Může být využit k určení oboru využití připojitelný člen; použití mimo určený rozsah vyvolají výjimky neplatné přetypování, které jsou pak prezentované podle Chyba analýzy XAML. Název parametru `target` není povinné, ale má název `target` konvencí ve většině implementací.  
   
@@ -81,7 +81,7 @@ Při definování vlastních typů, které jsou pro obchodní objekty nebo jsou 
 #### <a name="the-setpropertyname-accessor"></a>Přístupový objekt SetPropertyName  
  Podpis pro sadu*PropertyName* přístupový objekt musí být:  
   
- `public static void Set` *PropertyName* `(object`  `target` `, object`  `value` `)`  
+ `public static void Set` *Vlastnost PropertyName* `(object`  `target` `, object`  `value` `)`  
   
 -   `target` Objektu lze zadat jako konkrétnější typ v implementaci, se stejnými logiky a důsledky, jak je popsáno v předchozí části.  
   
@@ -115,5 +115,6 @@ Při definování vlastních typů, které jsou pro obchodní objekty nebo jsou 
  V terminologii WPF XAML *vnitřní typ* je typ, který je definován ve stejném sestavení, která zahrnuje i odkazující XAML. Takový typ lze mapovat pomocí oboru názvů XAML, která záměrně vynechá sestavení = část mapování, například `xmlns:local="clr-namespace:WPFApplication1"`.  Pokud BAML odkazuje na vnitřní typ a zda má typ `internal` přístup k úrovni, tím se vygeneruje `GeneratedInternalTypeHelper` třídy pro sestavení. Pokud chcete, aby se zabránilo `GeneratedInternalTypeHelper`, buď musíte použít `public` přístup k úrovni, nebo musí zohlednit příslušné třídě do samostatných sestavení a ujistěte se, že sestavení závislé.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Atributy CLR související s jazykem XAML pro vlastní typy a knihovny](xaml-related-clr-attributes-for-custom-types-and-libraries.md)
 - [XAML Services](index.md)

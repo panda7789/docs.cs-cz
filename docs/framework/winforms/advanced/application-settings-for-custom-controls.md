@@ -5,12 +5,12 @@ helpviewer_keywords:
 - custom controls [Windows Forms], application settings
 - application settings [Windows Forms], custom controls
 ms.assetid: f44afb74-76cc-44f2-890a-44b7cdc211a1
-ms.openlocfilehash: d12caf9ed2cb80d837080badab436b2e9b0b3728
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: b036167c2e1a4dff557d2ef90eaa964710533410
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57714343"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59169738"
 ---
 # <a name="application-settings-for-custom-controls"></a>Nastavení aplikace pro vlastní ovládací prvky
 Je třeba provést určité úlohy poskytnout vlastní ovládací prvky umožňuje zachovat nastavení aplikace, když jsou ovládací prvky jsou hostované v aplikacích třetích stran.  
@@ -46,6 +46,7 @@ Je třeba provést určité úlohy poskytnout vlastní ovládací prvky umožňu
  Všechny instance ovládacího prvku, který nelze zadat hodnotu <xref:System.Configuration.ApplicationSettingsBase.SettingsKey%2A> budou sdílet stejné nastavení.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Configuration.ApplicationSettingsBase>
 - <xref:System.Configuration.IPersistComponentSettings>
 - [Architektura nastavení aplikace](application-settings-architecture.md)

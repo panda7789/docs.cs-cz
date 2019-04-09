@@ -9,12 +9,12 @@ helpviewer_keywords:
 - properties, returned by UI Automation providers
 - UI Automation, providers returning properties
 ms.assetid: 5eba950e-b9e1-48eb-ab8e-b69db76bf589
-ms.openlocfilehash: 80f1dba9cd99caa2d9ebf059d80479e2fd701fd3
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.openlocfilehash: f3d5776441f1d4848adbb0a5f9435274f118a0da
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57678303"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59167671"
 ---
 # <a name="return-properties-from-a-ui-automation-provider"></a>Vrácení vlastností ze zprostředkovatele automatizace uživatelského rozhraní
 > [!NOTE]
@@ -29,5 +29,6 @@ ms.locfileid: "57678303"
  [!code-vb[UIAFragmentProvider_snip#117](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/UIAFragmentProvider_snip/VisualBasic/ListFragment.vb#117)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled zprostředkovatelů automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-providers-overview.md)
 - [Implementace zprostředkovatele automatizace uživatelského rozhraní na straně serveru](../../../docs/framework/ui-automation/server-side-ui-automation-provider-implementation.md)

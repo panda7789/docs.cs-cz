@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: Přidávání a odebírání obrázků ImageList pomocí návrháře'
+title: 'Postupy: Přidávání a odebírání obrázků ImageList pomocí Návrháře'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - ImageList component [Windows Forms], adding images
 - ImageList component [Windows Forms], removing images
 - images [Windows Forms], adding to ImageList component
 ms.assetid: 5699b244-e37c-4d20-bc35-7441e55c1e3a
-ms.openlocfilehash: 370bd05ac014b625d9581cc285daf6724f459b73
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: b85b4d39235d49966b5f3c108986c8dd04bed5fe
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57723742"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59161522"
 ---
-# <a name="how-to-add-or-remove-imagelist-images-with-the-designer"></a>Postupy: Přidávání a odebírání obrázků ImageList pomocí návrháře
+# <a name="how-to-add-or-remove-imagelist-images-with-the-designer"></a>Postupy: Přidávání a odebírání obrázků ImageList pomocí Návrháře
 Můžete přidat Image do <xref:System.Windows.Forms.ImageList> součástí několika různými způsoby. Lze také přidat obrázky velmi rychle s využitím inteligentních značek přidružené <xref:System.Windows.Forms.ImageList>, nebo pokud nastavujete na několik dalších vlastností <xref:System.Windows.Forms.ImageList>, pravděpodobně pro vás bude pohodlnější přidání imagí pomocí okna Vlastnosti. Můžete také přidat obrázky pomocí kódu. Další informace o tom, jak přidat obrázky s kódem, najdete v části [jak: Přidání a odebrání obrázků se Windows Forms ImageList – komponenta](how-to-add-or-remove-images-with-the-windows-forms-imagelist-component.md). Obvykle naplnit <xref:System.Windows.Forms.ImageList> komponentu s obrázky předtím, než je přidružena k ovládacímu prvku, ale tento krok není povinný.  
   
 > [!NOTE]
@@ -38,6 +38,7 @@ Můžete přidat Image do <xref:System.Windows.Forms.ImageList> součástí něk
 4.  V **Editor kolekce Images** klikněte na tlačítko **přidat** nebo **odebrat** k přidávání a odebírání obrázků ze seznamu.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Obrázky, rastrové obrázky a metasoubory](../advanced/images-bitmaps-and-metafiles.md)
-- [Návod: Provádění obecných úloh pomocí inteligentních značek na Windows Forms ovládací prvky](performing-common-tasks-using-smart-tags-on-wf-controls.md)
+- [Návod: Provádění obecných úloh pomocí inteligentních značek v ovládacích prvcích Windows Forms](performing-common-tasks-using-smart-tags-on-wf-controls.md)
 - [Komponenta ImageList](imagelist-component-windows-forms.md)

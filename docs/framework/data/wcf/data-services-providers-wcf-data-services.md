@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - WCF Data Services, providers
 ms.assetid: a0160b1b-3d9c-4cc8-8391-cb0986a60a41
-ms.openlocfilehash: 3344088aeb948edac3d3f439d729dc9d45b8b79b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 7a870eb0c85fa6ed208341a3ac10dce8bb0724bc
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54537917"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59164421"
 ---
 # <a name="data-services-providers-wcf-data-services"></a>Data Services – zprostředkovatelé (WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] podporuje několik modelů zprostředkovatele pro vystavení dat jako [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] informačního kanálu. Toto téma obsahuje informace, které vám umožní vybrat nejlepší [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] pro zdroj dat poskytovatele.  
@@ -31,6 +31,7 @@ ms.locfileid: "54537917"
 |Zprostředkovatel streamování|Tento zprostředkovatel umožňuje vystavit binární rozsáhlý objekt datové typy s použitím [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]. Zprostředkovatel streamování je vytvořen pomocí implementace <xref:System.Data.Services.Providers.IDataServiceStreamProvider> rozhraní. Spolu s jakékoli Zprostředkovatel zdroje dat je možné implementovat tohoto zprostředkovatele. Další informace najdete v tématu [streamování poskytovatele](../../../../docs/framework/data/wcf/streaming-provider-wcf-data-services.md).|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Definování datových služeb WCF Data Services](../../../../docs/framework/data/wcf/defining-wcf-data-services.md)
 - [Konfigurace datové služby](../../../../docs/framework/data/wcf/configuring-the-data-service-wcf-data-services.md)
 - [Hostování datové služby](../../../../docs/framework/data/wcf/hosting-the-data-service-wcf-data-services.md)

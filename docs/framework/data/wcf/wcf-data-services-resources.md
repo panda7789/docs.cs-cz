@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - WCF Data Services, learn more
 ms.assetid: e63a9baf-699c-42e2-b11f-fba57bcc14df
-ms.openlocfilehash: f6f0e51319da8c2edcb914170aa14837229163c1
-ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
+ms.openlocfilehash: d3562122ab578f5f622d439c17d86cdb64a1e573
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56093668"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59172117"
 ---
 # <a name="wcf-data-services-resources"></a>Zdroje služeb WCF Data Services
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] úvodní témata najdete v následujících umístěních. Mnohé z těchto témat také obsahují odkazy na související témata, které obsahují podrobnější informace.  
@@ -23,7 +23,7 @@ ms.locfileid: "56093668"
  [Scénáře aplikací](../../../../docs/framework/data/wcf/application-scenarios-wcf-data-services.md)  
  Poskytuje přístup založený na úlohách vytvoření [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] a aplikace přistupující k [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] informační kanály.  
   
- [Slovníček k technologii .NET](../../../standard/glossary.md)  
+ [.NET – Glosář](../../../standard/glossary.md)  
  Zahrnuje termínů používaných v [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] a [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] dokumentaci.  
   
 ## <a name="external-resources"></a>Externí zdroje  
@@ -38,7 +38,7 @@ ms.locfileid: "56093668"
  [OData webové stránky](https://go.microsoft.com/fwlink/?LinkID=184554)  
  Primární zdroj informací o [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)].  
   
- [OData SDK](https://go.microsoft.com/fwlink/?LinkID=185248)  
+ [Sada SDK OData](https://go.microsoft.com/fwlink/?LinkID=185248)  
  Obsahuje ukázky služby, ukázky a programovací knihovny, které umožňují pracovat s [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informační kanály.  
   
  [OData Blog](https://go.microsoft.com/fwlink/?LinkId=185868)  
@@ -60,4 +60,5 @@ ms.locfileid: "56093668"
  Popisuje základ pro entity relační model, který je implementováno [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]. Napsané v 1976, toto je jeden z nejčastěji zmiňovanou dokumentů do pole počítače.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Začínáme](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md)

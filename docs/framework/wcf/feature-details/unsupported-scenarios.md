@@ -2,12 +2,12 @@
 title: Nepodporované scénáře
 ms.date: 03/30/2017
 ms.assetid: 72027d0f-146d-40c5-9d72-e94392c8bb40
-ms.openlocfilehash: 381175a95b696145df8a1e19b9a40f2e697eef1e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 12012f3e0c0c3b0d10c5faebfb2de881f5de3917
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54631257"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59178773"
 ---
 # <a name="unsupported-scenarios"></a>Nepodporované scénáře
 Z různých důvodů Windows Communication Foundation (WCF) nepodporuje některé konkrétní bezpečnostní scénáře. Například [!INCLUDE[wxp](../../../../includes/wxp-md.md)] Home Edition neimplementuje ověřovací protokoly SSPI nebo protokolu Kerberos, a proto WCF nepodporuje spouštění služby s ověřováním Windows na této platformě. Jiné ověřovací mechanismy, jako je například uživatelské jméno a heslo a integrované ověřování protokolu HTTP/HTTPS se nepodporuje při spuštění WCF v části Windows XP Home Edition.  
@@ -109,6 +109,7 @@ Z různých důvodů Windows Communication Foundation (WCF) nepodporuje někter�
  Oprava je upravte vazbu přímo v klientovi po provedení importu.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Důležité informace o zabezpečení](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)
 - [Zpřístupnění informací](../../../../docs/framework/wcf/feature-details/information-disclosure.md)
 - [Zvýšení oprávnění](../../../../docs/framework/wcf/feature-details/elevation-of-privilege.md)

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - animation [WPF], properties [WPF], methods for
 - properties [WPF], methods for animating
 ms.assetid: 74f61413-f8c0-4e75-bf04-951886426c8b
-ms.openlocfilehash: b03c450b84a376de5c5c7d3582c01a31bc417a11
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
-ms.translationtype: MT
+ms.openlocfilehash: 5ec401aea139a868b3633afce4c74558aafcaa1e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57366774"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59165435"
 ---
 # <a name="property-animation-techniques-overview"></a>Přehled způsobů animace vlastností
 Toto téma popisuje různé přístupy k animace vlastností: scénáře, místní animace, hodiny a za snímků animace.  
@@ -59,7 +59,7 @@ Toto téma popisuje různé přístupy k animace vlastností: scénáře, místn
 |<xref:System.Windows.Media.Animation.BeginStoryboard> a <xref:System.Windows.EventTrigger>|Ano|Ano|Ano|Ano|[Animace vlastnosti pomocí scénáře](how-to-animate-a-property-by-using-a-storyboard.md)|  
 |<xref:System.Windows.Media.Animation.BeginStoryboard> a vlastnosti <xref:System.Windows.Trigger>|Ne|Ano|Ano|Ano|[Spuštění animace při změně hodnoty vlastnosti](how-to-trigger-an-animation-when-a-property-value-changes.md)|  
 |<xref:System.Windows.Media.Animation.BeginStoryboard> a <xref:System.Windows.DataTrigger>|Ne|Ano|Ano|Ano|[Postupy: Spuštění animace při změně dat](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/aa970679(v=vs.90))|  
-|<xref:System.Windows.Media.Animation.Storyboard.Begin%2A> – Metoda|Ano|Ne|Ne|Ne|[Animace vlastnosti pomocí scénáře](how-to-animate-a-property-by-using-a-storyboard.md)|  
+|<xref:System.Windows.Media.Animation.Storyboard.Begin%2A> – metoda|Ano|Ne|Ne|Ne|[Animace vlastnosti pomocí scénáře](how-to-animate-a-property-by-using-a-storyboard.md)|  
   
  Další informace o <xref:System.Windows.Media.Animation.Storyboard> objekty, najdete [přehled scénářů](storyboards-overview.md).  
   
@@ -122,7 +122,8 @@ Toto téma popisuje různé přístupy k animace vlastností: scénáře, místn
  Další informace najdete v tématu <xref:System.Windows.Media.CompositionTarget.Rendering> stránky.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled animace](animation-overview.md)
 - [Přehled scénářů](storyboards-overview.md)
-- [Přehled animace a systému časování](animation-and-timing-system-overview.md)
+- [Animace a časování přehledu systému](animation-and-timing-system-overview.md)
 - [Přehled vlastností závislosti](../advanced/dependency-properties-overview.md)

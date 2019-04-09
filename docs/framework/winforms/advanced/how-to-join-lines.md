@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Spojení čar'
+title: 'Postupy: Propojení čar'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -14,14 +14,14 @@ helpviewer_keywords:
 - lines [Windows Forms], joining
 - graphics [Windows Forms], joining lines
 ms.assetid: 9fc480c2-3c75-4fd1-8ab5-296a99e820e2
-ms.openlocfilehash: a43cfb8a51435aa0c5c3f7aae673d38d3f7792ab
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
+ms.openlocfilehash: 445d7f12f57137c6b06a074eeaf0574eb027a723
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58410872"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59174912"
 ---
-# <a name="how-to-join-lines"></a>Postupy: Spojení čar
+# <a name="how-to-join-lines"></a>Postupy: Propojení čar
 Spojení čar je běžné oblasti, která je tvořen dvěma řádky, jejichž končí splňovat nebo překrývat. [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] poskytuje tři styly čar spojení: ostrý zkosení a zaokrouhlit. Čára – styl propojení je vlastnost <xref:System.Drawing.Pen> třídy. Při zadání styl spojení řádku <xref:System.Drawing.Pen> objektu, styl, se použijí pro všechny spojené čáry v libovolném <xref:System.Drawing.Drawing2D.GraphicsPath> objekt vykreslen pomocí pera.  
   
  Následující obrázek znázorňuje výsledky v příkladu spojení zkosený řádku.  
@@ -38,4 +38,5 @@ Spojení čar je běžné oblasti, která je tvořen dvěma řádky, jejichž ko
  V předchozím příkladu je určený k použití pomocí Windows Forms a vyžaduje <xref:System.Windows.Forms.PaintEventArgs> `e`, což je parametr <xref:System.Windows.Forms.Control.Paint> obslužné rutiny události.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Kreslení čar a obrazců pomocí pera](using-a-pen-to-draw-lines-and-shapes.md)

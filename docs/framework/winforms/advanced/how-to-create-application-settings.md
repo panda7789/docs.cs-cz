@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Vytvořit nastavení aplikace'
+title: 'Postupy: Vytváření nastavení aplikace'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - application settings [Windows Forms], Windows Forms
 - application settings [Windows Forms], creating
 ms.assetid: 1e7aa347-af75-41e5-89ca-f53cab704f72
-ms.openlocfilehash: d540715c0b4c69b2981cc65f55b0fa950c5a4eaf
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: a6b63e5e48e64491e5f33e7aec4abf92ccf48708
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57721239"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59166397"
 ---
-# <a name="how-to-create-application-settings"></a>Postupy: Vytvořit nastavení aplikace
+# <a name="how-to-create-application-settings"></a>Postupy: Vytváření nastavení aplikace
 Pomocí spravovaného kódu, můžete vytvořit nové nastavení aplikace a svázat ho s vlastnostmi na formulář nebo ovládací prvky do formuláře, takže tato nastavení jsou načtena a za běhu automaticky uloženy.  
   
  V následujícím postupu vytvoříte ručně obálkovou třídu, která je odvozena z <xref:System.Configuration.ApplicationSettingsBase>. Do této třídy přidat vlastnost veřejně přístupné pro každé nastavení aplikace, kterou chcete zveřejnit.  
@@ -47,6 +47,7 @@ Pomocí spravovaného kódu, můžete vytvořit nové nastavení aplikace a svá
  Ve výchozím nastavení <xref:System.Configuration.LocalFileSettingsProvider>, opakuje informace ke konfiguračním souborům jako prostý text. Toto omezení zabezpečení k zabezpečení přístupu k souboru v operačním systému k dispozici pro aktuálního uživatele. Z tohoto důvodu musíte věnovat pozornost s informacemi uloženými v konfiguračních souborech. Jeden běžně používá pro nastavení aplikace je například ukládání připojovacích řetězců, které odkazují na úložiště dat aplikace. Kvůli zajištění zabezpečení, ale tyto řetězce by neměl obsahovat hesla. Další informace o připojovacích řetězcích najdete v tématu <xref:System.Configuration.SpecialSetting>.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Configuration.SpecialSettingAttribute>
 - <xref:System.Configuration.LocalFileSettingsProvider>
 - [Přehled nastavení aplikace](application-settings-overview.md)

@@ -2,12 +2,12 @@
 title: <tcpTransport>
 ms.date: 03/30/2017
 ms.assetid: 8fcd18c1-9958-42e7-b442-7903f7bdb563
-ms.openlocfilehash: 683c28d626f32971e7e1fa5f50343b3e7ea125be
-ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
+ms.openlocfilehash: 6c5bb61f234c8d5b8ffc5e16195a2cb50022d142
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57845957"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59166163"
 ---
 # <a name="tcptransport"></a>\<tcpTransport>
 Definuje přenos TCP, který mohou využívat pro vlastní vazbu kanálu pro přenos zpráv.  
@@ -66,7 +66,7 @@ Definuje přenos TCP, který mohou využívat pro vlastní vazbu kanálu pro př
 |connectionPoolSettings|Určuje další nastavení fondu připojení pro vazbu pojmenovaného kanálu.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádná  
+ Žádné  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -80,6 +80,7 @@ Definuje přenos TCP, který mohou využívat pro vlastní vazbu kanálu pro př
  `tcpTransport` Element je výchozí bod pro vytvoření vlastní vazby, který implementuje přenosový protokol TCP. Tento přenos je optimalizovaná pro komunikaci WCF WCF.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Configuration.TcpTransportElement>
 - <xref:System.ServiceModel.Channels.TcpTransportBindingElement>
 - <xref:System.ServiceModel.Channels.TransportBindingElement>
@@ -87,6 +88,6 @@ Definuje přenos TCP, který mohou využívat pro vlastní vazbu kanálu pro př
 - [Přenosy](../../../../../docs/framework/wcf/feature-details/transports.md)
 - [Volba přenosu](../../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)
 - [Vazby](../../../../../docs/framework/wcf/bindings.md)
-- [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)
+- [Rozšiřování vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)
 - [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)
 - [\<customBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)

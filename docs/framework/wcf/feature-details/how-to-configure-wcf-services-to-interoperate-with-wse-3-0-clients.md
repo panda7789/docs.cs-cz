@@ -2,12 +2,12 @@
 title: 'Postupy: Konfigurace služeb WCF pro spolupráci s klienty WSE 3.0'
 ms.date: 03/30/2017
 ms.assetid: 0f38c4a0-49a6-437c-bdde-ad1d138d3c4a
-ms.openlocfilehash: d42e2d4c0bf4c708f2dbb27d14d1adddc3fead41
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 24c44f415eff8518bcd73696c5cd9302371ad0c0
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54635790"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59177291"
 ---
 # <a name="how-to-configure-wcf-services-to-interoperate-with-wse-30-clients"></a>Postupy: Konfigurace služeb WCF pro spolupráci s klienty WSE 3.0
 Služby Windows Communication Foundation (WCF) jsou přenosový kompatibilní s 3.0 rozšíření webové služby pro klienty Microsoft .NET (Najít), když služby WCF, které jsou nakonfigurovány pro použití verzi specifikace WS-Addressing ze srpna 2004.  
@@ -91,4 +91,5 @@ Služby Windows Communication Foundation (WCF) jsou přenosový kompatibilní s 
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Postupy: Přizpůsobení vazeb poskytovaných systémem](../../../../docs/framework/wcf/extending/how-to-customize-a-system-provided-binding.md)

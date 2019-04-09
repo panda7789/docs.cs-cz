@@ -16,12 +16,12 @@ helpviewer_keywords:
 - requesting data from Internet, TCP/UDP
 - Internet, TCP/UDP
 ms.assetid: df29b4b0-49e8-4923-82b9-13150dfc40f5
-ms.openlocfilehash: 261350349497168e3f41b2f6887838d167c3e977
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e074a487c39dfaf1c4704f9dadf7ed8e430fb630
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54692542"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59172546"
 ---
 # <a name="tcp-udp"></a>TCP-UDP
 Protokolu TCP (Transmission Control) a protokolu UDP (User Datagram) služby se může používat aplikace <xref:System.Net.Sockets.TcpClient>, <xref:System.Net.Sockets.TcpListener>, a <xref:System.Net.Sockets.UdpClient> třídy. Tyto třídy protokolu jsou zabudovány nad <xref:System.Net.Sockets.Socket?displayProperty=nameWithType> třídy a aby se postaral o podrobnosti přenosu dat.  
@@ -33,6 +33,7 @@ Protokolu TCP (Transmission Control) a protokolu UDP (User Datagram) služby se 
  **UdpClient** třída používá pole bajtů pro uložení datagramů UDP. Můžete použít <xref:System.Net.Sockets.UdpClient.Send%2A> metoda k odesílání dat do sítě a <xref:System.Net.Sockets.UdpClient.Receive%2A> metoda přijímat příchozí datagram.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Použití služeb TCP](../../../docs/framework/network-programming/using-tcp-services.md)
 - [Použití služeb UDP](../../../docs/framework/network-programming/using-udp-services.md)
 - [Použití streamů v síti](../../../docs/framework/network-programming/using-streams-on-the-network.md)

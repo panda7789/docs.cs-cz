@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Kreslení plné elipsy ve formuláři Windows'
+title: 'Postupy: Kreslení vyplněné elipsy na formuláři Windows'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -15,14 +15,14 @@ helpviewer_keywords:
 - shapes [Windows Forms], drawing
 - forms [Windows Forms], drawing ellipses
 ms.assetid: 781db806-950d-4c5b-b022-493f7fd0c4a8
-ms.openlocfilehash: 42316cd0d55b5154b21b4462157e044b30674ebd
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 2e7be3f2c4c710bb24568dd2e70f6f5cc4706c63
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57716277"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59170998"
 ---
-# <a name="how-to-draw-a-filled-ellipse-on-a-windows-form"></a>Postupy: Kreslení plné elipsy ve formuláři Windows
+# <a name="how-to-draw-a-filled-ellipse-on-a-windows-form"></a>Postupy: Kreslení vyplněné elipsy na formuláři Windows
 V tomto příkladu kreslení plné elipsy ve formuláři.  
   
 ## <a name="example"></a>Příklad  
@@ -37,7 +37,8 @@ V tomto příkladu kreslení plné elipsy ve formuláři.
  Vždy byste měli zavolat <xref:System.IDisposable.Dispose%2A> na všechny objekty, které využívají systémové prostředky, jako například <xref:System.Drawing.Brush> a <xref:System.Drawing.Graphics> objekty.  
   
 ## <a name="see-also"></a>Viz také:
-- [Grafika a kreslení v modelu Windows Forms](graphics-and-drawing-in-windows-forms.md)
+
+- [Grafika a kreslení v rozhraní Windows Forms](graphics-and-drawing-in-windows-forms.md)
 - [Začínáme s programováním grafiky](getting-started-with-graphics-programming.md)
 - [Alfa míchání čar a výplní](alpha-blending-lines-and-fills.md)
 - [Použití štětce k vyplnění obrazců](using-a-brush-to-fill-shapes.md)

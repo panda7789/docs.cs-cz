@@ -4,12 +4,12 @@ ms.date: 02/25/2019
 helpviewer_keywords:
 - certificates [WCF], viewing with the MMC snap-in
 ms.assetid: 2b8782aa-ebb4-4ee7-974b-90299e356dc5
-ms.openlocfilehash: 6ec86ffca9ae84a9c3276a3dd6de676919dcd2e0
-ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
+ms.openlocfilehash: 69f79b64250ff46524e7b4720d13351774875a3f
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57200283"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59167502"
 ---
 # <a name="how-to-view-certificates-with-the-mmc-snap-in"></a>Postupy: Zobrazení certifikátů pomocí modulu snap-in konzoly MMC
 Při vytváření zabezpečeného klienta nebo služby, můžete použít [certifikát](working-with-certificates.md) jako přihlašovací údaje. Například běžný typ přihlašovacích údajů je certifikát X.509, který vytvoříte pomocí <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A?displayProperty=nameWithType> metody. 
@@ -22,7 +22,6 @@ Existují tři různé typy úložišť certifikátů, které můžete zkontrolo
 
 - Účet služby: Úložiště je místní pro konkrétní službu na zařízení.
 
-  
 ## <a name="view-certificates-in-the-mmc-snap-in"></a>Zobrazit certifikáty modulu snap-in konzoly MMC 
 
 Následující postup ukazuje, jak prozkoumat úložišť na vaše místní zařízení najít odpovídající certifikát: 
@@ -57,7 +56,6 @@ Následující postup ukazuje, jak prozkoumat úložišť na vaše místní zař
 8. Chcete-li zobrazit vaše certifikáty modulu snap-in konzoly MMC, vyberte **kořenový adresář konzoly** v levém podokně, potom rozbalte **certifikáty (místní počítač)**.
 
     Zobrazí se seznam adresářů pro každý typ certifikátu. Každý certifikát adresáře můžete zobrazit, export, import a odstranit certifikáty pro jeho.
-  
 
 ## <a name="view-certificates-with-the-certificate-manager-tool"></a>Zobrazení certifikátů pomocí nástroje Správce certifikátů
 
@@ -79,8 +77,8 @@ Můžete také zobrazit, export, import a odstranit certifikáty pomocí nástro
   
 2. Chcete-li zobrazit certifikáty, v části **certifikáty – aktuální uživatel** v levém podokně rozbalte adresář pro typ certifikátu, kterou chcete zobrazit.
 
-  
 ## <a name="see-also"></a>Viz také:
+
 - [Práce s certifikáty](working-with-certificates.md)
 - [Postupy: Vytváření dočasných certifikátů pro použití během vývoje.](how-to-create-temporary-certificates-for-use-during-development.md)
 - [Postupy: Načtení kryptografického otisku certifikátu](how-to-retrieve-the-thumbprint-of-a-certificate.md)

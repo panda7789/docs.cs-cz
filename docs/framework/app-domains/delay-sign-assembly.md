@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 9d300e17-5bf1-4360-97da-2aa55efd9070
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a833bb0f412407d1f18793c356d4c207716eb101
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: fc1ce9d5b9c8a3784d03207ff1b5a6ead26815c1
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54632618"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59168191"
 ---
 # <a name="delay-signing-an-assembly"></a>Zpoždění podepsání sestavení
 Organizace může mít úzce strážených pár klíčů, že vývojáři nebudou mít přístup k každý den. Veřejný klíč je často k dispozici, ale přístup k privátnímu klíči je omezen pouze několika jednotlivcům. Při vývoji podepisují sestavení silnými názvy, každé sestavení této cílové sestavení silným názvem odkazy obsahuje token veřejný klíč slouží k pojmenování cílové sestavení silným názvem. To vyžaduje veřejný klíč k dispozici během procesu vývoje.  
@@ -73,6 +73,7 @@ Organizace může mít úzce strážených pár klíčů, že vývojáři nebudo
     ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Vytváření sestavení](../../../docs/framework/app-domains/create-assemblies.md)
 - [Postupy: Vytvoření páru veřejného a privátního klíče](../../../docs/framework/app-domains/how-to-create-a-public-private-key-pair.md)
 - [Sn.exe (nástroj pro silný název)](../../../docs/framework/tools/sn-exe-strong-name-tool.md)

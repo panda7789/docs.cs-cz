@@ -2,12 +2,12 @@
 title: <httpsTransport>
 ms.date: 03/30/2017
 ms.assetid: f6ed4bc0-7e38-4348-9259-30bf61eb9435
-ms.openlocfilehash: dc95b1a31d582f255740152a235b9ca5e67cf5c6
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
+ms.openlocfilehash: c7e4dc540458bbfb69318d2f14cfa9776f444c55
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58411314"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59172819"
 ---
 # <a name="httpstransport"></a>\<httpsTransport>
 Určuje přenos pomocí protokolu HTTP při odesílání zpráv SOAP pro vlastní vazbu.  
@@ -74,6 +74,7 @@ Určuje přenos pomocí protokolu HTTP při odesílání zpráv SOAP pro vlastn�
  `httpsTransport` Element je výchozí bod pro vytvoření vlastní vazby, který implementuje přenosový protokol HTTPS. HTTPS je primární přenosu používá pro účely zabezpečenou spolupráci. HTTPS je podporována v Windows Communication Foundation (WCF) k zajištění interoperability s zásobníky jiné webové služby.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Configuration.HttpsTransportElement>
 - <xref:System.ServiceModel.Channels.HttpsTransportBindingElement>
 - <xref:System.ServiceModel.Channels.TransportBindingElement>
@@ -81,6 +82,6 @@ Určuje přenos pomocí protokolu HTTP při odesílání zpráv SOAP pro vlastn�
 - [Přenosy](../../../../../docs/framework/wcf/feature-details/transports.md)
 - [Volba přenosu](../../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)
 - [Vazby](../../../../../docs/framework/wcf/bindings.md)
-- [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)
+- [Rozšiřování vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)
 - [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)
 - [\<customBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)

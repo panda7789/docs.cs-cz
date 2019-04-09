@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Nastavení pořadí karet ve Windows Forms'
+title: 'Postupy: Nastavení pořadí ovládacích prvků ve Windows Forms'
 ms.date: 03/30/2017
 f1_keywords:
 - TabStop
@@ -10,14 +10,14 @@ helpviewer_keywords:
 - controls [Windows Forms], setting tab order
 - Windows Forms, setting tab order
 ms.assetid: 71fa8e76-0472-414b-ad3c-0f90166e0ad7
-ms.openlocfilehash: 3f566dfb5dbc118c5a6be7f874b5b4857756075a
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: cd86757d43d7d57dc7777422086a7b7a96b6611e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57705874"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59162121"
 ---
-# <a name="how-to-set-the-tab-order-on-windows-forms"></a>Postupy: Nastavení pořadí karet ve Windows Forms
+# <a name="how-to-set-the-tab-order-on-windows-forms"></a>Postupy: Nastavení pořadí ovládacích prvků ve Windows Forms
 Pořadí je v tom pořadí, ve kterém uživatel přesune fokus z jednoho ovládacího prvku na jiný stisknutím klávesy TAB. Každý formulář má svůj vlastní pořadí. Výchozí pořadí je stejné jako pořadí, ve které jste vytvořili ovládací prvky. Pořadí karet číslování začíná nulou.  
   
 > [!NOTE]
@@ -55,7 +55,8 @@ Pořadí je v tom pořadí, ve kterém uživatel přesune fokus z jednoho ovlád
     >  Skupina přepínacích tlačítek je do jedné karty zastavit v době běhu. Vybraného tlačítka (tj. tlačítko s jeho <xref:System.Windows.Forms.RadioButton.Checked%2A> vlastnost nastavena na hodnotu `true`) má jeho <xref:System.Windows.Forms.Control.TabStop%2A> automaticky nastavena na `true`, i když má další tlačítka jejich <xref:System.Windows.Forms.Control.TabStop%2A> nastavenou na `false`. Další informace o seskupování <xref:System.Windows.Forms.RadioButton> ovládacích prvků, naleznete v tématu [seskupení Windows Forms ovládací prvky RadioButton do funkce v podobě sady](how-to-group-windows-forms-radiobutton-controls-to-function-as-a-set.md).  
   
 ## <a name="see-also"></a>Viz také:
-- [Windows Forms – ovládací prvky](index.md)
+
+- [Ovládací prvky Windows Forms](index.md)
 - [Uspořádávání ovládacích prvků ve Windows Forms](arranging-controls-on-windows-forms.md)
 - [Ovládací prvky používané ve Windows Forms](controls-to-use-on-windows-forms.md)
 - [Ovládací prvky Windows Forms podle funkce](windows-forms-controls-by-function.md)

@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 9ec1af27-604b-477e-9ee2-e833eb10d3ce
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: a26863f2a1880cffba5eb3ea51573f45323be72d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: eb0810a9e0ffce825abecc87eb2698920209d86f
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54700855"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59171805"
 ---
 # <a name="noncomvisiblebaseclass-mda"></a>nonComVisibleBaseClass – pomocník spravovaného ladění (MDA)
 `nonComVisibleBaseClass` Pomocníka spravovaného ladění (MDA) se aktivuje při `QueryInterface` je provedeno volání pomocí nativní nebo nespravovaného kódu na obálka volatelná aplikacemi COM (CCW) COM – viditelné spravované třídy, která je odvozena ze základní třídy, které nejsou viditelné modelu COM.  `QueryInterface` Volání způsobí, že MDA aktivovat pouze v případech, kde požadavky na třídy rozhraní nebo výchozí volání `IDispatch` COM-viditelných spravované třídy.  MDA není aktivuje se, když `QueryInterface` je pro explicitní rozhraní, který má <xref:System.Runtime.InteropServices.ClassInterfaceAttribute> použít atribut a je explicitně implementované COM – viditelné třídy.  
@@ -27,7 +27,7 @@ ms.locfileid: "54700855"
 ## <a name="cause"></a>Příčina  
  Modul runtime nemůže povolit `QueryInterface` volání pro rozhraní třídy nebo výchozí `IDispatch` rozhraní COM – viditelné třídy, která je odvozena z třídy, který není viditelný modulem COM z důvodu potenciální problémy se správou verzí.  Například, pokud žádné veřejné členy byly přidány na základní třídu, která není viditelný modulem COM, existující klienti modelu COM pomocí odvozené třídy může potenciálně narušit vzhledem k tomu tabulku vtable, který obsahuje členy základní třídy odvozené třídy by změněny, Změňte.  Explicitní rozhraní vystavit rozhraní COM nemají tento problém, protože v tabulce vtable neobsahují základních členů rozhraní.  
   
-## <a name="resolution"></a>Rozlišení  
+## <a name="resolution"></a>Řešení  
  Nezveřejňujte třídy rozhraní. Definujte explicitní rozhraní a použít <xref:System.Runtime.InteropServices.ClassInterfaceAttribute> atribut k němu.  
   
 ## <a name="effect-on-the-runtime"></a>Vliv na modul Runtime  
@@ -55,6 +55,7 @@ constrained by the COM versioning rules.
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
 - [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
 - [Zařazování spolupráce](../../../docs/framework/interop/interop-marshaling.md)

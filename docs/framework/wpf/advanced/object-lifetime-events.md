@@ -24,18 +24,16 @@ helpviewer_keywords:
 - startup events [WPF]
 - lifetime events of objects [WPF]
 ms.assetid: face6fc7-465b-4502-bfe5-e88d2e729a78
-ms.openlocfilehash: b5f38492fff9aa87094542b174becc54ee324a78
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 8ecc3f716061dfd08ac95652d1a9d8e06e26d949
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57371486"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59175788"
 ---
 # <a name="object-lifetime-events"></a>Události doby života objektu
 Toto téma popisuje konkrétní [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] události, které místo fází v doba života objektu vytvoření, použití a zničení.  
-  
 
-  
 <a name="prerequisites"></a>   
 ## <a name="prerequisites"></a>Požadavky  
  Toto téma předpokládá, že rozumíte vlastnosti závislosti z pohledu příjemce vlastnosti existujícího závislosti na [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] třídy a čtení [přehled vlastností závislosti](dependency-properties-overview.md) tématu. Pokud chcete postupovat podle příkladů v tomto tématu, měli byste také znát [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] (naleznete v tématu [přehled XAML (WPF)](xaml-overview-wpf.md)) a vědět, jak psát [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikací.  
@@ -75,5 +73,6 @@ Toto téma popisuje konkrétní [!INCLUDE[TLA2#tla_winclient](../../../../includ
 -   <xref:System.Windows.Controls.Page>, <xref:System.Windows.Navigation.NavigationWindow>, a <xref:System.Windows.Controls.Frame>: [Přehled navigace](../app-development/navigation-overview.md).  
   
 ## <a name="see-also"></a>Viz také:
-- [Priorita hodnot vlastností závislosti](dependency-property-value-precedence.md)
+
+- [Priorita hodnot závislých vlastností](dependency-property-value-precedence.md)
 - [Přehled směrovaných událostí](routed-events-overview.md)

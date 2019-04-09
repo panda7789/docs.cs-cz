@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Konfigurace Bezregistrační aktivace komponent COM založené na platformě .NET'
+title: 'Postupy: Konfigurace komponent COM využívajících rozhraní .NET Framework pro aktivaci bez registrace'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - components [.NET Framework], manifest
@@ -10,14 +10,14 @@ helpviewer_keywords:
 ms.assetid: 32f8b7c6-3f73-455d-8e13-9846895bd43b
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8b66265a58dcbb6f795e1d207e0bb6f75252161e
-ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
-ms.translationtype: MT
+ms.openlocfilehash: 03098126985abc898b8911f98013662632d56e35
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56093538"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59176511"
 ---
-# <a name="how-to-configure-net-framework-based-com-components-for-registration-free-activation"></a>Postupy: Konfigurace Bezregistrační aktivace komponent COM založené na platformě .NET
+# <a name="how-to-configure-net-framework-based-com-components-for-registration-free-activation"></a>Postupy: Konfigurace komponent COM využívajících rozhraní .NET Framework pro aktivaci bez registrace
 Bezregistrační aktivace komponent využívajících rozhraní .NET Framework je jenom o něco složitější než pro komponenty modelu COM. Instalace vyžaduje dva manifesty:  
   
 -   Aplikace modelu COM musí mít aplikace manifest Win32 – vizuální styl k identifikaci spravované součásti.  
@@ -173,7 +173,8 @@ Bezregistrační aktivace komponent využívajících rozhraní .NET Framework j
      Opět `myresource.res` je název souboru prostředku, který obsahuje integrovaný prostředek.  
   
 ## <a name="see-also"></a>Viz také:
-- [Bezregistrační zprostředkovatel komunikace s objekty COM](registration-free-com-interop.md)
-- [Požadavky pro zprostředkovatele komunikace s objekty COM bez registrace](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/f8h7012w(v=vs.100))
+
+- [Zprostředkovatel komunikace s objekty COM bez registrace](registration-free-com-interop.md)
+- [Požadavky na spolupráci COM bez registrace](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/f8h7012w(v=vs.100))
 - [Konfigurace komponent COM pro aktivaci bez registrace](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/x65a421a(v=vs.100))
 - [Bezregistrační aktivace. Na základě NET součásti: Názorný postup](https://docs.microsoft.com/previous-versions/dotnet/articles/ms973915(v=msdn.10))

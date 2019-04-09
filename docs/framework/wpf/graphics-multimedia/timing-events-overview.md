@@ -8,12 +8,12 @@ helpviewer_keywords:
 - timelines [WPF]
 - timing events [WPF]
 ms.assetid: 597e3280-0867-4359-a97b-5b2f4149e350
-ms.openlocfilehash: 2ce4794c5f0abfc31ae9d6f813bcfd7a9d375611
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 91e335f4d5adaa5279fb16805604f2e2848eeb8b
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57379572"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59167164"
 ---
 # <a name="timing-events-overview"></a>Přehled událostí časování
 Toto téma popisuje, jak používat k dispozici na pěti události časování <xref:System.Windows.Media.Animation.Timeline> a <xref:System.Windows.Media.Animation.Clock> objekty.  
@@ -56,7 +56,7 @@ Toto téma popisuje, jak používat k dispozici na pěti události časování <
   
 |Událost|Aktivace interaktivní operace|Jiné triggery|  
 |-----------|--------------------------------------|--------------------|  
-|**Dokončeno**|Přejít k vyplnění|Hodiny se dokončí.|  
+|**Byla dokončena**|Přejít k vyplnění|Hodiny se dokončí.|  
 |**CurrentGlobalSpeedInvalidated**|Pozastavit, obnovit, hledání, nastavit poměr rychlost, přejděte k vyplnění, zastavit|Hodiny obrátí, zrychluje doručování, spuštění nebo zastavení.|  
 |**CurrentStateInvalidated**|Začněte tím, že přeskočit na to, zastavit|Hodiny spustí, zastaví, nebo vyplní.|  
 |**CurrentTimeInvalidated**|Začít, hledání, přejděte k vyplnění, zastavit|Postupuje hodiny.|  
@@ -77,6 +77,7 @@ Toto téma popisuje, jak používat k dispozici na pěti události časování <
  Když si zaregistrujete <xref:System.Windows.Media.Animation.Timeline.Completed> událostí na časové ose, například je skutečně tím rozdílem, systém a zaregistrujte se <xref:System.Windows.Media.Animation.Clock.Completed> události každé hodiny, který je vytvořen pro časovou osu. V kódu, musíte zaregistrovat pro tuto událost před <xref:System.Windows.Media.Animation.Clock> se vytvoří pro tento osu; v opačném případě nebude přijímat oznámení. K tomu dojde automaticky v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]; analyzátor automaticky zaregistruje událost před <xref:System.Windows.Media.Animation.Clock> se vytvoří.  
   
 ## <a name="see-also"></a>Viz také:
-- [Přehled animace a systému časování](animation-and-timing-system-overview.md)
+
+- [Animace a časování přehledu systému](animation-and-timing-system-overview.md)
 - [Přehled animace](animation-overview.md)
 - [Přehled chování časování](timing-behaviors-overview.md)

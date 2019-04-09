@@ -2,12 +2,12 @@
 title: Interaktivní referenční dokumentace F# (fsi.exe)
 description: Zjistěte, jak F# Interactive (fsi.exe) se používá ke spouštění F# kódu interaktivní konzoly nebo k provádění F# skripty.
 ms.date: 05/16/2016
-ms.openlocfilehash: dde65a4fa4bd41895716344fc67823366c73c5d4
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 9ec780ca51eaa5ae0aa791eb509d8ad0865dc26f
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56979876"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59172260"
 ---
 # <a name="interactive-programming-with-f"></a>Interaktivní programování s F\#
 
@@ -43,10 +43,8 @@ Pokud máte-li otevřen projekt, který odkazuje na některé knihovny, můžete
 
 Argumenty příkazového řádku (možnosti) jazyka F# Interactive lze řídit úpravou nastavení. Na **nástroje** příkaz **možnosti...** a potom rozbalte  **F# nástroje**. Jsou dvě nastavení, které můžete změnit F# interaktivní možnosti a **64-bit F# interaktivní** nastavení, která je relevantní pouze v případě, že používáte F# Interactive v 64bitovém počítači. Toto nastavení určuje, zda chcete spustit vyhrazenou 64bitovou verzi programu fsi.exe nebo fsianycpu.exe, který pomocí architektury počítače určí, zda se má spustit jako 32bitový nebo 64bitový proces.
 
-
 ## <a name="scripting-with-f"></a>Skriptování s F\#
 Skripty používají příponu souboru **.fsx** nebo **.fsscript**. Namísto zkompilování zdrojového kódu a následného spuštění zkompilovaného sestavení, lze pouze spustit **fsi.exe** a zadejte název souboru skriptu F# zdrojový kód, a F# interactive tento kód načte a spustí v reálném čas.
-
 
 ## <a name="differences-between-the-interactive-scripting-and-compiled-environments"></a>Rozdíly mezi interaktivním, skriptovacím a kompilovaným prostředím
 Při kompilaci kódu v F# interaktivní, zda jsou spustíte interaktivně nebo spustíte skript, symbol **interaktivní** je definována. Při kompilaci kódu v kompilátoru, symbol **ZKOMPILOVANÉ** je definována. Pokud tedy kód potřebujete v kompilovaném a interaktivním režimu odlišit, lze pomocí direktivy preprocesoru podmíněné kompilace určit, který kód chcete použít.
@@ -99,5 +97,5 @@ test
 
 |Název|Popis|
 |-----|-----------|
-|[Možnosti F# Interactive](../../language-reference/fsharp-interactive-options.md)|Popisuje syntaxi příkazového řádku a možnosti F# Interactive, fsi.exe.|
-|[F#Interaktivní referenční dokumentace knihovny](https://msdn.microsoft.com/visualfsharpdocs/conceptual/fsharp-interactive-library-reference)|Popisuje funkce knihovny, které jsou k dispozici při spuštění kódu v jazyce F# Interactive.|
+|[Interaktivní možnosti F#](../../language-reference/fsharp-interactive-options.md)|Popisuje syntaxi příkazového řádku a možnosti F# Interactive, fsi.exe.|
+|[Interaktivní referenční dokumentace knihovny F#](https://msdn.microsoft.com/visualfsharpdocs/conceptual/fsharp-interactive-library-reference)|Popisuje funkce knihovny, které jsou k dispozici při spuštění kódu v jazyce F# Interactive.|

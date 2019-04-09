@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 50c38c5a9e1799a460c5be1f7234b36968dc3da2
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 712eca7f3f9fec9c81e638802f5a664ec6469d53
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54706888"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59164343"
 ---
 # <a name="isymunmanagedvariable-interface"></a>ISymUnmanagedVariable – rozhraní
 Představuje proměnnou, jako je například parametr, místní proměnné nebo pole.  
@@ -44,4 +44,5 @@ Představuje proměnnou, jako je například parametr, místní proměnné nebo 
  **Záhlaví:** CorSym.idl, CorSym.h  
   
 ## <a name="see-also"></a>Viz také:
-- [Rozhraní pro úložiště symbolů diagnostiky](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)
+
+- [Rozhraní úložiště symbolů diagnostiky](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)

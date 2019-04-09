@@ -1,15 +1,15 @@
 ---
-title: Přecházení NAT používající protokoly IPv6 a Teredo
+title: Přechod přes překlad síťových adres (NAT) využívající protokoly IPv6 a Teredo
 ms.date: 03/30/2017
 ms.assetid: 568cd245-3300-49ef-a995-d81bf845d961
-ms.openlocfilehash: 896c3f9036e76c37f5f6bf2950d3d2d2864b3f37
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f617dc8912091576727b90da1e9efb9ebd5f9bda
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54724360"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59170756"
 ---
-# <a name="nat-traversal-using-ipv6-and-teredo"></a>Přecházení NAT používající protokoly IPv6 a Teredo
+# <a name="nat-traversal-using-ipv6-and-teredo"></a>Přechod přes překlad síťových adres (NAT) využívající protokoly IPv6 a Teredo
 Vylepšení byly provedeny, který zajišťuje podporu pro procházení překladu adres (NAT). Tyto změny jsou určeny k použití s IPv6 a Teredo, ale navíc se vztahuje na jiné IP tunelování technologie. Tato vylepšení ovlivnit třídy v <xref:System.Net> a souvisejících oborech názvů.  
   
  Tyto změny mohou ovlivnit klientské a serverové aplikace, které plánujete používat IP tunelování technologie.  
@@ -45,6 +45,7 @@ Vylepšení byly provedeny, který zajišťuje podporu pro procházení překlad
  Pro aplikace, které používají <xref:System.Net.Sockets.Socket?displayProperty=nameWithType> a související třídy <xref:System.Net.Sockets.Socket.GetSocketOption%2A> a <xref:System.Net.Sockets.Socket.SetSocketOption%2A> můžete použít u metody <xref:System.Net.Sockets.SocketOptionName.IPProtectionLevel?displayProperty=nameWithType> možnost k dotazování, povolení nebo zakázání procházení překladu adres soketu.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Net.IPAddress.IsIPv6Teredo%2A?displayProperty=nameWithType>
 - <xref:System.Net.NetworkInformation.IPGlobalProperties.BeginGetUnicastAddresses%2A?displayProperty=nameWithType>
 - <xref:System.Net.NetworkInformation.IPGlobalProperties.EndGetUnicastAddresses%2A?displayProperty=nameWithType>

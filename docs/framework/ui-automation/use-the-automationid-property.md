@@ -9,12 +9,12 @@ helpviewer_keywords:
 - UI Automation, AutomationId property
 - properties, AutomationId
 ms.assetid: a24e807b-d7c3-4e93-ac48-80094c4e1c90
-ms.openlocfilehash: 88e703d6cee608676be541961614403cf34a53c7
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.openlocfilehash: 1f487e9d686ab82adb40cdc31aad68390fbdff3f
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57674832"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59173092"
 ---
 # <a name="use-the-automationid-property"></a>Používání vlastnosti AutomationID
 > [!NOTE]
@@ -57,6 +57,7 @@ ms.locfileid: "57674832"
 -   V některých případech se vzhledem AutomationID je pouze musí být jedinečný mezi na stejné úrovni, může více prvků ve stromu automatizace uživatelského rozhraní mají stejné hodnoty vlastnosti AutomationID. V těchto situacích prvky lze jedinečně identifikovat podle nadřazenou položku a v případě potřeby, výše nadřazených. Například vývojář může poskytnout panel nabídek několik položek nabídky každý s více podřízených položek nabídky, ve kterém jsou podřízené objekty označeny sekvenční AutomationID například "Item1", "Item2 –" a tak dále. Každá položka nabídky může pak být jednoznačně identifikují pomocí jeho AutomationID spolu s AutomationID svého nadřazeného objektu a v případě potřeby jeho výše nadřazených.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Automation.AutomationElement.AutomationIdProperty>
 - [Přehled stromu automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)
 - [Hledání prvku automatizace uživatelského rozhraní na základě podmínky pro vlastnost](../../../docs/framework/ui-automation/find-a-ui-automation-element-based-on-a-property-condition.md)

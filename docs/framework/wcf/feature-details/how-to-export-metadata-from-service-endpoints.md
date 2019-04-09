@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: b6c4dfd0-f270-43ec-961a-e16eb6af2f2c
-ms.openlocfilehash: 86ad062f7b7ee3dd2927f8b5b103adfd719a963d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: bd6543e1e22b7a2cb0b870fe2fdb34011f0d2a4f
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54529986"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59162780"
 ---
 # <a name="how-to-export-metadata-from-service-endpoints"></a>Postupy: Export metadat z koncových bodů služeb
 Toto téma vysvětluje, jak pro export metadat z koncových bodů služby.  
@@ -56,6 +56,7 @@ Toto téma vysvětluje, jak pro export metadat z koncových bodů služby.
  Při kompilaci souboru Program.cs odkaz System.ServiceModel.dll.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled architektury metadat](../../../../docs/framework/wcf/feature-details/metadata-architecture-overview.md)
 - [Používání metadat](../../../../docs/framework/wcf/feature-details/using-metadata.md)
-- [Koncové body: Adresy, vazby a kontrakty](../../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)
+- [Koncové body: adresy, vazby a kontrakty](../../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)

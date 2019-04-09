@@ -12,17 +12,16 @@ helpviewer_keywords:
 - Transforms [WPF], about Transforms
 - FrameworkElement objects [WPF], scaling
 ms.assetid: 8f153d5e-ed61-4aa5-a7cd-286f0c427a13
-ms.openlocfilehash: e3169a34f676d65a3af50bfc9177095c9996c1a2
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 6f7cbd91be83c96b25248f87ddc377159ba39b64
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57355646"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59162196"
 ---
 # <a name="transforms-overview"></a>Přehled transformace
 Toto téma popisuje způsob použití [!INCLUDE[TLA#tla_2d](../../../../includes/tlasharptla-2d-md.md)] <xref:System.Windows.Media.Transform> třídy otočit, škálování, přesuňte (přeložit) a zkosení <xref:System.Windows.FrameworkElement> objekty.  
-  
-  
+
 <a name="whatIsATransformSection"></a>   
 ## <a name="what-is-a-transform"></a>Co je transformace?  
  A <xref:System.Windows.Media.Transform> definuje, jak mapovat nebo transformace, body z jedné souřadnicového prostoru do jiného souřadnicového prostoru. Toto mapování je popsán transformace <xref:System.Windows.Media.Matrix>, což je kolekce tři řádky se třemi sloupci <xref:System.Double> hodnoty.  
@@ -68,12 +67,12 @@ Toto téma popisuje způsob použití [!INCLUDE[TLA#tla_2d](../../../../includes
 ## <a name="common-transformation-properties"></a>Společné vlastnosti transformace  
  Jedním ze způsobů transformace objektu je deklarovat odpovídající <xref:System.Windows.Media.Transform> typ a použijte ji pro vlastnost transformace objektu. Různé typy objektů mají různé typy vlastnosti transformace. Následující tabulka uvádí několik běžně používané typy Windows Presentation Foundation (WPF) a jejich vlastnosti transformace.  
   
-|Typ|Vlastnosti transformace|  
+|Type|Vlastnosti transformace|  
 |----------|-------------------------------|  
-|<xref:System.Windows.Media.Brush>|<xref:System.Windows.Media.Brush.Transform%2A>, <xref:System.Windows.Media.Brush.RelativeTransform%2A>|  
+|<xref:System.Windows.Media.Brush>|<xref:System.Windows.Media.Brush.Transform%2A>,  <xref:System.Windows.Media.Brush.RelativeTransform%2A>|  
 |<xref:System.Windows.Media.ContainerVisual>|<xref:System.Windows.Media.ContainerVisual.Transform%2A>|  
 |<xref:System.Windows.Media.DrawingGroup>|<xref:System.Windows.Media.DrawingGroup.Transform%2A>|  
-|<xref:System.Windows.FrameworkElement>|<xref:System.Windows.UIElement.RenderTransform%2A>, <xref:System.Windows.FrameworkElement.LayoutTransform%2A>|  
+|<xref:System.Windows.FrameworkElement>|<xref:System.Windows.UIElement.RenderTransform%2A>,  <xref:System.Windows.FrameworkElement.LayoutTransform%2A>|  
 |<xref:System.Windows.Media.Geometry>|<xref:System.Windows.Media.Geometry.Transform%2A>|  
 |<xref:System.Windows.Media.TextEffect>|<xref:System.Windows.Media.TextEffect.Transform%2A>|  
 |<xref:System.Windows.UIElement>|<xref:System.Windows.UIElement.RenderTransform%2A>|  
@@ -150,7 +149,8 @@ LayoutTransform – používá k otočení tlačítka
  Protože dědí sám od <xref:System.Windows.Freezable> třídy, <xref:System.Windows.Media.Transform> třídy poskytují několik speciálních funkcí: <xref:System.Windows.Media.Transform> objekty mohou být deklarovány jako [prostředky](../advanced/xaml-resources.md), sdíleny mezi více objektů, jen pro čtení ke zlepšení výkon, klonování a provedli bezpečné pro vlákna. Další informace o různých funkcí, které jsou poskytovány <xref:System.Windows.Freezable> objekty, najdete [přehled Zablokovatelných objektů](../advanced/freezable-objects-overview.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Media.Transform>
 - <xref:System.Windows.Media.Matrix>
-- [Témata s postupy](transformations-how-to-topics.md)
+- [– postupy](transformations-how-to-topics.md)
 - [Ukázka 2D transformace](https://go.microsoft.com/fwlink/?LinkID=158252)

@@ -17,18 +17,16 @@ helpviewer_keywords:
 - events [WPF], suppressing
 - bubbling events [WPF]
 ms.assetid: 5e745508-4861-4b48-b5f6-5fc7ce5289d2
-ms.openlocfilehash: 34bb8c1cde71f6280ae2924a82ddb2efb0efbdf2
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 8a21b5e69e8fb3f9781d862bd62b0db92073b1dc
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57378829"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59172104"
 ---
 # <a name="marking-routed-events-as-handled-and-class-handling"></a>Označení směrovaných událostí jako zpracovaných a zpracování tříd
 Obslužné rutiny pro směrovanou událost můžete označit události zpracovávají v rámci data události. Zpracování události zkrátí efektivní trasy. Třídy zpracování je programovací koncept, který podporuje směrovaných událostí. Třída obslužné rutiny má možnost zpracování konkrétní směrované události na úrovni třída s obslužnou rutinou, která je volána před všechny instance obslužné rutiny na jakoukoli instanci třídy.  
-  
 
-  
 <a name="prerequisites"></a>   
 ## <a name="prerequisites"></a>Požadavky  
  Toto téma popisuje na koncepty představenými v [směrovat Přehled událostí](routed-events-overview.md).  
@@ -99,6 +97,7 @@ Obslužné rutiny pro směrovanou událost můžete označit události zpracová
  Druhý postup funguje pouze pro vstupní události, kde spárované tunelového propojení a šíření verze směrované události. Pro tyto směrovaných událostí můžete přidat obslužné rutiny pro verze preview/tunelového propojení ekvivalentní směrování událostí. Tento směrované události se tunelového propojení prostřednictvím trasy od kořene, takže třída tlačítek kód pro zpracování nebude zachytávat, za předpokladu, že jste připojili obslužné rutiny náhledu na určité úrovni nadřazeného elementu ve stromu aplikace. Pokud tuto metodu použijte, buďte opatrní označení zpracovat událost ve verzi Preview. Například zadaný s <xref:System.Windows.UIElement.PreviewMouseLeftButtonDown> zpracovávanou kořenový element, pokud jste označili jako událost <xref:System.Windows.RoutedEventArgs.Handled%2A> v implementaci obslužné rutiny by ve skutečnosti potlačit <xref:System.Windows.Controls.Primitives.ButtonBase.Click> událostí. Který není obvykle žádoucí chování.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.EventManager>
 - [Události náhledu](preview-events.md)
 - [Vytvoření vlastní směrované události](how-to-create-a-custom-routed-event.md)

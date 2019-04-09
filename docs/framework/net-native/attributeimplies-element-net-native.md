@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 82db7193-a860-418b-84fc-fff2fdf2e025
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: be5412e323b1c4930d7e17d09faa174885611884
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: d59f1f48be19a21ccc7ee5bb73cebfffc387fec2
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55254974"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59165058"
 ---
 # <a name="attributeimplies-element-net-native"></a>\<AttributeImplies > – Element (.NET Native)
 Definuje zásady pro prvky kódu, nadřazený atribut se používá k.  
@@ -49,7 +49,7 @@ Definuje zásady pro prvky kódu, nadřazený atribut se používá k.
   
 ## <a name="all-attributes"></a>Všechny atributy  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |*policy_setting*|Toto nastavení platí pro tento typ zásad. Možné hodnoty jsou `All`, `Auto`, `Excluded`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal`, a `Required All`. Další informace najdete v tématu [nastavení zásad direktivy modulu Runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md).|  
   
@@ -60,7 +60,7 @@ Definuje zásady pro prvky kódu, nadřazený atribut se používá k.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Type>](../../../docs/framework/net-native/type-element-net-native.md)|Použije zásady reflexe pro typ a všechny její členy.|  
+|[\<Typ >](../../../docs/framework/net-native/type-element-net-native.md)|Použije zásady reflexe pro typ a všechny její členy.|  
   
 ## <a name="remarks"></a>Poznámky  
  `<AttributeImplies>` Elementu je použita, pokud jeho nadřazený typ je atribut (to znamená, že třída odvozená z <xref:System.Attribute?displayProperty=nameWithType>). Pokud je atribut použit na konkrétní aplikaci prvku, zásady definované `<AttributeImplies>` element platí pro tento prvek programu.  
@@ -68,6 +68,7 @@ Definuje zásady pro prvky kódu, nadřazený atribut se používá k.
  Reflexe, serializace a atributů spolupráce jsou nepovinné, ale alespoň jeden by měl být k dispozici.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [\<Typ > – Element](../../../docs/framework/net-native/type-element-net-native.md)
 - [Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)
 - [Elementy direktivy modulu runtime](../../../docs/framework/net-native/runtime-directive-elements.md)

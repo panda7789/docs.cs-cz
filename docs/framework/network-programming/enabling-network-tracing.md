@@ -11,12 +11,12 @@ helpviewer_keywords:
 - logs, trace
 - destination for tracing output
 ms.assetid: 5fff458c-51a6-4134-ba47-8a6137ddc41e
-ms.openlocfilehash: 29d0f33960534e8a5521b36eb6cc11655ab89c6d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 50ad01376f3de9cda26f6b00e2d32fc8d3dabdcd
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54540248"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59169707"
 ---
 # <a name="enabling-network-tracing"></a>Povolení trasování sítě
 Trasování sítě poskytuje přístup k informacím o vyvoláních metody a přenosech v síti generovaných spravovanou aplikací. Je nutné dokončit následující úlohy, jak povolit trasování sítě ve vaší aplikaci:  
@@ -46,6 +46,7 @@ Trasování sítě poskytuje přístup k informacím o vyvoláních metody a př
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Interpretace trasování sítě](../../../docs/framework/network-programming/interpreting-network-tracing.md)
 - [Trasování sítě v rozhraní .NET Framework](../../../docs/framework/network-programming/network-tracing.md)
 - [Trasování a instrumentace aplikací](../../../docs/framework/debug-trace-profile/tracing-and-instrumenting-applications.md)

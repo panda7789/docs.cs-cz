@@ -2,12 +2,12 @@
 title: Formáty metadat
 ms.date: 03/30/2017
 ms.assetid: baad1e68-28fc-4a6a-8a43-75e47e7fa871
-ms.openlocfilehash: 44ea084287561e13a8db217e49212ee878a26bb7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 55f68f4b56e50b19da19ecc941e9ec537b846006
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54513517"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59173820"
 ---
 # <a name="metadata-formats"></a>Formáty metadat
 Windows Communication Foundation (WCF) podporuje formáty metadat v následující tabulce.  
@@ -24,5 +24,6 @@ Windows Communication Foundation (WCF) podporuje formáty metadat v následujíc
 |Vazby pro WSDL adresování WS|[Webové služby adresování 1.0 - Vazba WSDL](https://go.microsoft.com/fwlink/?LinkId=94869)<br /><br /> WCF implementuje WS-Addressing vazby pro WSDL připojit adresování informace v jazyce WSDL.|  
   
 ## <a name="see-also"></a>Viz také:
-- [Protokoly webových služeb podporované vazbami interoperability poskytnutými systémem](../../../../docs/framework/wcf/feature-details/web-services-protocols-supported-by-system-provided-interoperability-bindings.md)
+
+- [Protokoly webových služeb podporované vazbami vzájemné spolupráce poskytnutými systémem](../../../../docs/framework/wcf/feature-details/web-services-protocols-supported-by-system-provided-interoperability-bindings.md)
 - [WSDL a zásady](../../../../docs/framework/wcf/feature-details/wsdl-and-policy.md)

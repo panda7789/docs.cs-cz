@@ -12,18 +12,16 @@ helpviewer_keywords:
 - syntax [WPF], object elements
 - binding declarations [WPF]
 ms.assetid: b97fd626-4c0d-4761-872a-2bca5820da2c
-ms.openlocfilehash: 2ef632ee1335d1ee0e94eaa1a7f25cbe34ed4e6f
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: c0fcbc8054272356c39ba7925041ecef05a0322c
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57363407"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59165266"
 ---
 # <a name="binding-declarations-overview"></a>Přehled deklarací připojení
 Toto téma popisuje různé způsoby, jak je možné deklarovat vazbu.  
-  
- 
-  
+
 <a name="Prereq"></a>   
 ## <a name="prerequisites"></a>Požadavky  
  Před čtením tohoto tématu, je důležité, že máte zkušenosti s koncept a používání rozšíření značek. Další informace o rozšíření značek, naleznete v tématu [– rozšíření značek a WPF XAML](../advanced/markup-extensions-and-wpf-xaml.md).  
@@ -126,7 +124,8 @@ Toto téma popisuje různé způsoby, jak je možné deklarovat vazbu.
 -   Výchozí hodnota <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A> hodnota se liší mezi <xref:System.Windows.Data.UpdateSourceTrigger.PropertyChanged> a <xref:System.Windows.Data.UpdateSourceTrigger.LostFocus> v závislosti na vlastnost vázané závislosti. Výchozí hodnota pro většinu vlastností závislostí je <xref:System.Windows.Data.UpdateSourceTrigger.PropertyChanged>, zatímco <xref:System.Windows.Controls.TextBox.Text%2A?displayProperty=nameWithType> vlastnost má výchozí hodnotu <xref:System.Windows.Data.UpdateSourceTrigger.LostFocus>.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled datových vazeb](data-binding-overview.md)
-- [Témata s postupy](data-binding-how-to-topics.md)
+- [– postupy](data-binding-how-to-topics.md)
 - [Datová vazba](../advanced/optimizing-performance-data-binding.md)
 - [PropertyPath – syntaxe v jazyce XAML](../advanced/propertypath-xaml-syntax.md)

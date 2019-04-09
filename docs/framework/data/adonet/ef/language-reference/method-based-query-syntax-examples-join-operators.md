@@ -1,18 +1,18 @@
 ---
-title: 'Příklady syntaxe dotazů založených na volání metody: Join Operators'
+title: 'Příklady syntaxe dotazů založených na volání metody: Operátory spojení'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: d00f0efa-9084-4c17-843f-54904fcb4204
-ms.openlocfilehash: 2251279fb5b07d64925c245f537fe040ec78679e
-ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
+ms.openlocfilehash: 700c29222d10177774e118e53fb51f177b723679
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55826285"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59176901"
 ---
-# <a name="method-based-query-syntax-examples-join-operators"></a>Příklady syntaxe dotazů založených na volání metody: Join Operators
+# <a name="method-based-query-syntax-examples-join-operators"></a>Příklady syntaxe dotazů založených na volání metody: Operátory spojení
 Příklady v tomto tématu ukazují, jak používat <xref:System.Linq.Enumerable.Join%2A> a <xref:System.Linq.Enumerable.GroupJoin%2A> metody k dotazování [AdventureWorks Sales Model](https://archive.codeplex.com/?p=msftdbprodsamples) pomocí syntaxe dotazů založených na volání metody. Model prodeje AdventureWorks používá v těchto příkladech je sestaven z tabulky kontaktu, adresa, produktu, SalesOrderHeader a podrobnosti prodejní objednávky v ukázkové databázi AdventureWorks.  
   
  V příkladech v tomto tématu se používá následující `using` / `Imports` příkazy:  
@@ -49,4 +49,5 @@ Příklady v tomto tématu ukazují, jak používat <xref:System.Linq.Enumerable
  [!code-vb[DP L2E Examples#JoinWithGroupedResults_MQ](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#joinwithgroupedresults_mq)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Dotazy v technologii LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/queries-in-linq-to-entities.md)

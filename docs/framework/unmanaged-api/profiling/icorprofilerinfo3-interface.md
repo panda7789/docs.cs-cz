@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 57caee7a0da019fc45bd35b7b81f8d066991081b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 7b523c5819994e6da0332188311b4b631e3f9072
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54557978"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59178760"
 ---
 # <a name="icorprofilerinfo3-interface"></a>ICorProfilerInfo3 – rozhraní
 Poskytuje metody, které profilery kódu se používají ke komunikaci s common language runtime (CLR), řídit sledování událostí a požádat o informace. `ICorProfilerInfo3` Rozhraní je rozšířením [ICorProfilerInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md) rozhraní. Poskytuje nové metody, které jsou podporovány v [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)] a novějších verzích.  
@@ -60,5 +60,6 @@ Poskytuje metody, které profilery kódu se používají ke komunikaci s common 
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Rozhraní pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
 - [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)

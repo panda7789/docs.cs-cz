@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Vytvoření tiskových úloh standardní Windows Forms'
+title: 'Postupy: Vytváření standardních tiskových úloh v modelu Windows Forms'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,14 +10,14 @@ helpviewer_keywords:
 - printing [Windows Forms], creating print jobs
 - printing [Visual Basic], in Windows applications
 ms.assetid: 03342b90-9cfe-40b2-838b-b479a13c5dea
-ms.openlocfilehash: b0568472dadceb46257a8d35211034a718aef74c
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: 7ccebf128d533a0e0cf0a17e5702807371e1bea7
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57705218"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59170973"
 ---
-# <a name="how-to-create-standard-windows-forms-print-jobs"></a>Postupy: Vytvoření tiskových úloh standardní Windows Forms
+# <a name="how-to-create-standard-windows-forms-print-jobs"></a>Postupy: Vytváření standardních tiskových úloh v modelu Windows Forms
 Je základem pro tisk ve Windows Forms <xref:System.Drawing.Printing.PrintDocument> komponenty – přesněji řečeno <xref:System.Drawing.Printing.PrintDocument.PrintPage> událostí. Napsáním kódu pro zpracování <xref:System.Drawing.Printing.PrintDocument.PrintPage> událostí, můžete určit, co se má tisknout a jak ho vytisknout.  
   
 ### <a name="to-create-a-print-job"></a>Chcete-li vytvořit tiskové úlohy  
@@ -77,5 +77,6 @@ Je základem pro tisk ve Windows Forms <xref:System.Drawing.Printing.PrintDocume
      Další informace o podrobnosti Windows Forms tiskové úlohy, včetně vytvoření tiskovou úlohu prostřednictvím kódu programu, najdete v části <xref:System.Drawing.Printing.PrintPageEventArgs>.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Drawing.Printing.PrintDocument>
-- [Podpora tisku v modelu Windows Forms](windows-forms-print-support.md)
+- [Podpora tisku ve Windows Forms](windows-forms-print-support.md)

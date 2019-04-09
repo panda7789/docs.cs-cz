@@ -4,18 +4,16 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - XAML [WPF], TypeConverter class
 ms.assetid: f6313e4d-e89d-497d-ac87-b43511a1ae4b
-ms.openlocfilehash: 7f42bb6e4333fcb5e83ee4b95e404230424b317f
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: ec6eaadae1dd7a7db84538c24e396a14db1a65a4
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57352708"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59164983"
 ---
 # <a name="typeconverters-and-xaml"></a>TypeConverters a XAML
 Toto téma popisuje účel typu Převod z řetězce jako obecnou funkcí jazyka XAML. V rozhraní .NET Framework <xref:System.ComponentModel.TypeConverter> třída slouží jako součást implementace pro spravovaný vlastní třídu, která lze použít jako hodnotu vlastnosti v použití atributu XAML konkrétní účel. Pokud napíšete vlastní třída a chcete, aby instance třídy má být použitelná jako hodnoty atributů nastavitelné XAML, může být potřeba použít <xref:System.ComponentModel.TypeConverterAttribute> do vaší třídy napsat vlastní <xref:System.ComponentModel.TypeConverter> třídy, nebo obojí.  
-  
 
-  
 ## <a name="type-conversion-concepts"></a>Typ převodu koncepty  
   
 ### <a name="xaml-and-string-values"></a>XAML a hodnotami řetězců  
@@ -110,6 +108,7 @@ Toto téma popisuje účel typu Převod z řetězce jako obecnou funkcí jazyka 
  Můžete také zadat konvertor typu na jednotlivých vlastností. Místo použití [!INCLUDE[TLA#tla_netframewkattr](../../../../includes/tlasharptla-netframewkattr-md.md)] <xref:System.ComponentModel.TypeConverterAttribute> do definice třídy, použijte ji pro definici vlastnosti (hlavní definice není `get` / `set` implementace v rámci něj). Typ vlastnosti musí odpovídat typ, který zpracovává vaše vlastní konvertor typu. Pomocí tohoto atributu se použije když XAMLprocessor zpracovává hodnoty této vlastnosti, se můžou zpracovávat vstupního řetězce a vrátí instance objektů. Na vlastnost typ převaděče technika je zvlášť užitečné, pokud se rozhodnete použít typ vlastnosti z rozhraní Microsoft .NET Framework nebo z některé jiné knihovny, kde nemůžeme mít pod kontrolou definice třídy a nejde použít <xref:System.ComponentModel.TypeConverterAttribute> existuje.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ComponentModel.TypeConverter>
 - [Přehled XAML (WPF)](xaml-overview-wpf.md)
 - [Rozšíření značek a WPF XAML](markup-extensions-and-wpf-xaml.md)

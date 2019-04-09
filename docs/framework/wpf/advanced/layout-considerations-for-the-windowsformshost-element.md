@@ -9,12 +9,12 @@ helpviewer_keywords:
 - dynamic layout [WPF interoperability]
 - device-independent pixels
 ms.assetid: 3c574597-bbde-440f-95cc-01371f1a5d9d
-ms.openlocfilehash: 891254ff44926a719bb0c124e5dc098fd3f3e82e
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
-ms.translationtype: MT
+ms.openlocfilehash: ff52d3bbf7bf5d9d85f7a6fd5f73d9730dde8fad
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57366540"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59168984"
 ---
 # <a name="layout-considerations-for-the-windowsformshost-element"></a>Předpoklady rozložení pro element WindowsFormsHost
 Toto téma popisuje, jak <xref:System.Windows.Forms.Integration.WindowsFormsHost> element komunikuje [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] systém rozložení.  
@@ -99,9 +99,10 @@ Toto téma popisuje, jak <xref:System.Windows.Forms.Integration.WindowsFormsHost
 -   Pokud <xref:System.Windows.Forms.Control.Size%2A> vlastnost vrací menší než zadaná omezení <xref:System.Windows.Forms.Integration.WindowsFormsHost> přijme tuto hodnotu velikosti a vrátí hodnotu, která [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] systém rozložení.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.Integration.ElementHost>
 - <xref:System.Windows.Forms.Integration.WindowsFormsHost>
-- [Návod: Ovládací prvky uspořádání Windows Forms v subsystému WPF](walkthrough-arranging-windows-forms-controls-in-wpf.md)
+- [Návod: Uspořádání ovládacích prvků Windows Forms ve WPF](walkthrough-arranging-windows-forms-controls-in-wpf.md)
 - [Uspořádání Windows Forms ovládací prvky v ukázce WPF](https://go.microsoft.com/fwlink/?LinkID=159971)
 - [Mapování vlastnosti Windows Forms a WPF](windows-forms-and-wpf-property-mapping.md)
 - [Migrace a interoperabilita](migration-and-interoperability.md)

@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Dědit ze třídy UserControl'
+title: 'Postupy: Dědění ze třídy UserControl'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - inheritance [Windows Forms], Windows Forms custom controls
@@ -7,14 +7,14 @@ helpviewer_keywords:
 - user controls [Windows Forms], creating
 - composite controls [Windows Forms], creating
 ms.assetid: 67713625-e2e4-4f6a-bce7-0855ee5043d9
-ms.openlocfilehash: b761c6eefcf7c951a19b77966b87b13b1fc0456e
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: 1b5d69bda08b94ae00ce022d0d323ad4561ff6b9
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57712017"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59174795"
 ---
-# <a name="how-to-inherit-from-the-usercontrol-class"></a>Postupy: Dědit ze třídy UserControl
+# <a name="how-to-inherit-from-the-usercontrol-class"></a>Postupy: Dědění ze třídy UserControl
 Kombinování funkcí jeden nebo více ovládacích prvků Windows Forms s vlastní kód, můžete vytvořit *uživatelský ovládací prvek*. Uživatelské ovládací prvky zkombinovat vývoj rychlé ovládacích prvků, funkce a všestrannost vlastní vlastnosti a metody ovládacího prvku standardní formulářů Windows. Když začnete vytvoření uživatelského ovládacího prvku, zobrazí se viditelné designer, na kterém můžete umístit standardní ovládací prvky Windows Forms. Tyto ovládací prvky zachovat všechny své vlastní funkce, jakož i vzhled a chování (vzhled a chování) standardní ovládací prvky. Jakmile tyto ovládací prvky jsou integrované do uživatelského ovládacího prvku, ale už nejsou k dispozici prostřednictvím kódu. Uživatelský ovládací prvek provede vlastní vykreslovací a také zpracovává všechny základní funkce související s ovládacími prvky.  
   
 > [!NOTE]
@@ -35,9 +35,10 @@ Kombinování funkcí jeden nebo více ovládacích prvků Windows Forms s vlast
 5.  Stisknutím klávesy F5 sestavte projekt a spusťte váš ovládací prvek **UserControl – kontejner testů**. Další informace najdete v tématu [jak: Testování běhového chování UserControl](how-to-test-the-run-time-behavior-of-a-usercontrol.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Typy vlastních ovládacích prvků](varieties-of-custom-controls.md)
-- [Postupy: Dědit ze třídy Control](how-to-inherit-from-the-control-class.md)
-- [Postupy: Dědění z existujících Windows Forms ovládacích prvků](how-to-inherit-from-existing-windows-forms-controls.md)
-- [Postupy: Autor ovládacích prvků Windows Forms](how-to-author-controls-for-windows-forms.md)
+- [Postupy: Dědění ze třídy Control](how-to-inherit-from-the-control-class.md)
+- [Postupy: Dědění ze stávajících ovládacích prvků Windows Forms](how-to-inherit-from-existing-windows-forms-controls.md)
+- [Postupy: Vytváření ovládacích prvků pro Windows Forms](how-to-author-controls-for-windows-forms.md)
 - [Řešení potíží s obslužnými rutinami zděděných událostí v jazyce Visual Basic](~/docs/visual-basic/programming-guide/language-features/events/troubleshooting-inherited-event-handlers.md)
-- [Postupy: Testování běhového chování UserControl](how-to-test-the-run-time-behavior-of-a-usercontrol.md)
+- [Postupy: Otestování běhového chování UserControl](how-to-test-the-run-time-behavior-of-a-usercontrol.md)

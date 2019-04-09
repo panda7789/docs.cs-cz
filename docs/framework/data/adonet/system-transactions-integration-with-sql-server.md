@@ -1,18 +1,18 @@
 ---
-title: Integrace System.Transactions s SQL serverem
+title: Integrace System.Transactions s SQL Serverem
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: b555544e-7abb-4814-859b-ab9cdd7d8716
-ms.openlocfilehash: 12b81d02e5db613c96d19a4aa3730b95e3477b7c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 4ff415adf57bf72cb4da6d405f652a4a50c19041
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54558615"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59166949"
 ---
-# <a name="systemtransactions-integration-with-sql-server"></a>Integrace System.Transactions s SQL serverem
+# <a name="systemtransactions-integration-with-sql-server"></a>Integrace System.Transactions s SQL Serverem
 [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Zavedená verze 2.0, který je přístupný prostřednictvím rozhraní transakce <xref:System.Transactions> oboru názvů. Toto rozhraní poskytuje transakce způsobem, který je plně integrovaná v [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], včetně [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)].  
   
  Kromě vylepšení programovatelnosti <xref:System.Transactions> a [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] můžou spolupracovat a koordinovat optimalizace při práci s transakcí. Možné zařazení transakce je zjednodušené transakce (místní), která bude automaticky povýšen na plně distribuované transakce podle potřeby.  
@@ -229,5 +229,6 @@ End Function
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Transakce a souběžnost](../../../../docs/framework/data/adonet/transactions-and-concurrency.md)
 - [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c8de6c745b1d32c3d98f1b54e822ab084f0574b2
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: 571612796d4e66be9dd8469d748c2380c839ddfa
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57486196"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59165777"
 ---
 # <a name="getscope-method"></a>GetScope – metoda
 Získá obor importu.  
@@ -57,6 +57,7 @@ HRESULT GetScope(
  Vyžaduje alink.h  
   
 ## <a name="see-also"></a>Viz také:
+
 - [IALink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
 - [IALink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
 - [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)

@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: c4ba3ff2-fe59-4c5d-9e0b-86bba3cd865c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1939666b3dd271959c418e3d714b177e170fcd04
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: dcbcced47cfb2031e4a35a7437ec875a20354eed
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54595978"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59176251"
 ---
 # <a name="application-compatibility-in-the-net-framework"></a>Kompatibilita aplikací v rozhraní .NET Framework
 
@@ -32,7 +32,7 @@ Při spuštění na novější verzi, než jaké byla cílem rozhraní .NET Fram
 
 Problémy za běhu jsou ty, které vznikají při nový modul runtime je umístěn na počítači a jsou spouštěny stejné binární soubory, ale zobrazuje různé chování. Pokud byl zkompilován do binárního souboru pro rozhraní .NET Framework 4.0, poběží v rozhraní .NET Framework 4.0 režimu kompatibility na verze 4.5 nebo novější. Mnoho změn, které ovlivňují 4.5 nebude mít vliv na binární soubor pro 4.0. To je specifická pro domény aplikace a závisí na nastavení vstupní sestavení.
 
-## <a name="retargeting-changes"></a>Změny cíle
+## <a name="retargeting-changes"></a>Odlišnosti ve změnách cílení
 
 Změna cílení problémy jsou ty, které vznikají při sestavení, které se cílí na 4.0 je nyní nastaveno na cíl 4.5. Teď do nové funkce, jakož i potenciální problémy s kompatibilitou na staré funkce požádá o sestavení. Znovu, to závisí na vstupní sestavení tak, která používá sestavení aplikace konzoly nebo web, na který odkazuje na sestavení.
 
@@ -73,7 +73,6 @@ Pokud chcete začít, vyberte typ kompatibility změny níže:
 
 * [Odlišnosti ve změnách cílení](./retargeting/index.md)
 * [Změny v modulu runtime](./runtime/index.md)
-
 
 ## <a name="see-also"></a>Viz také:
 

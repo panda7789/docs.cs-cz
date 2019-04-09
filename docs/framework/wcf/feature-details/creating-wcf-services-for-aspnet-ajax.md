@@ -2,12 +2,12 @@
 title: Vytváření služeb WCF pro ASP.NET AJAX
 ms.date: 03/30/2017
 ms.assetid: 04c0402c-e617-4ba5-aedf-d17692234776
-ms.openlocfilehash: d6d00b5b8839d519ffa3609eafffd4b086689449
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1f98a27197115c56686d593105f438fee633f34a
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54613514"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59174145"
 ---
 # <a name="creating-wcf-services-for-aspnet-ajax"></a>Vytváření služeb WCF pro ASP.NET AJAX
 Microsoft ASP.NET AJAX umožňuje rychle vytvářet webové stránky, které zahrnují bohaté uživatelské prostředí s rychlou odezvou a zkušenosti prvky uživatelského rozhraní. ASP.NET AJAX obsahuje klientského skriptu knihovny, které zahrnují prohlížečů ECMAScript (JavaScript) a technologie dynamického HTML (DHTML) a se integruje s ASP.NET 2.0 na serveru vývojovou platformu. Pomocí prvku ASP.NET AJAX, můžete zlepšit uživatelské prostředí a efektivitu vaší webové aplikace.  
@@ -58,7 +58,8 @@ Microsoft ASP.NET AJAX umožňuje rychle vytvářet webové stránky, které zah
  Koncových bodů WCF AJAX mohou být využívány i bez rozhraní ASP.NET AJAX framework. Tím jsou nutné znalosti architektury podporu AJAX podpory ve službě WCF. Informace o této architektuře, najdete v části [WCF Web HTTP programovací objektový Model](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-object-model.md). Ukázku kódu demonstrace tento přístup, najdete v článku [služba AJAX s JSON a XML](../../../../docs/framework/wcf/samples/ajax-service-with-json-and-xml-sample.md).  
   
 ## <a name="see-also"></a>Viz také:
-- [Programovací model webových služeb HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)
-- [Postupy: Přidání koncového bodu ASP.NET AJAX bez použití konfigurace](../../../../docs/framework/wcf/feature-details/how-to-add-an-aspnet-ajax-endpoint-without-using-configuration.md)
+
+- [Model programování webových služeb HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)
+- [Postupy: Přidání koncového bodu ASP.NET AJAX bez použití konfiguračního souboru](../../../../docs/framework/wcf/feature-details/how-to-add-an-aspnet-ajax-endpoint-without-using-configuration.md)
 - [Postupy: Použití konfigurace k přidání koncového bodu ASP.NET AJAX](../../../../docs/framework/wcf/feature-details/how-to-use-configuration-to-add-an-aspnet-ajax-endpoint.md)
-- [Postupy: Volba mezi HTTP POST a HTTP GET požadavky u koncových bodů ASP.NET AJAX](../../../../docs/framework/wcf/feature-details/http-post-and-http-get-requests-for-aspnet-ajax-endpoints.md)
+- [Postupy: Volba mezi žádostmi HTTP POST a HTTP GET u koncových bodů ASP.NET AJAX](../../../../docs/framework/wcf/feature-details/http-post-and-http-get-requests-for-aspnet-ajax-endpoints.md)

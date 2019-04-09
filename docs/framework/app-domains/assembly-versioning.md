@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 775ad4fb-914f-453c-98ef-ce1089b6f903
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: cbb681567090cb26d20a31e8645c0b651bef9244
-ms.sourcegitcommit: 0aca6c5d166d7961a1e354c248495645b97a1dc5
-ms.translationtype: MT
+ms.openlocfilehash: 841420e609ece83d77bb82f0493d625231d86ec7
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/30/2019
-ms.locfileid: "58675949"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59170921"
 ---
 # <a name="assembly-versioning"></a>Správa verzí sestavení
 Všechny verze sestavení, které používají modul common language runtime se provádí na úrovni sestavení. Konkrétní verzi sestavení a verze závislých sestavení jsou zaznamenány v manifestu sestavení. Výchozí zásada verze modulu runtime je, že aplikace spuštěny pouze verze by byly vytvořené a testovány, pokud není přepsán explicitní verze zásad v konfiguračních souborech (konfigurační soubor aplikace, soubor zásad vydavatele a Správce konfigurační soubor počítače).  
@@ -70,6 +70,7 @@ Všechny verze sestavení, které používají modul common language runtime se 
  Informační verze je reprezentována pomocí vlastního atributu <xref:System.Reflection.AssemblyInformationalVersionAttribute?displayProperty=nameWithType>. Další informace o atributu informační verze najdete v tématu [nastavení atributů sestavení](../../../docs/framework/app-domains/set-assembly-attributes.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Jak běhové prostředí vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)
 - [Konfigurace aplikací](../../../docs/framework/configure-apps/index.md)
 - [Nastavování atributů sestavení](../../../docs/framework/app-domains/set-assembly-attributes.md)

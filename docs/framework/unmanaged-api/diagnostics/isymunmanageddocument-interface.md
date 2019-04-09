@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b14333235882efb6da1ce011c109c67a1d149bf3
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 33213aced635549dd439cf679d89367a71baa7c7
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54584516"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59168802"
 ---
 # <a name="isymunmanageddocument-interface"></a>ISymUnmanagedDocument – rozhraní
 Reprezentuje dokument odkazuje úložiště symbolů. Dokument je definována uniform resource locator (URL) a typu dokumentu identifikátor GUID. Můžete vyhledat dokumentu bez ohledu na to, jak se uloží s použitím adresy URL a identifikátor GUID typu dokumentu. Můžete ukládat zdrojový dokument v úložišti symbolů a načíst pomocí tohoto rozhraní.  
@@ -42,4 +42,5 @@ Reprezentuje dokument odkazuje úložiště symbolů. Dokument je definována un
 |[HasEmbeddedSource – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocument-hasembeddedsource-method.md)|Vrátí `true` Pokud dokument má zdroj součástí symboly ladění; v opačném případě vrátí `false`.|  
   
 ## <a name="see-also"></a>Viz také:
-- [Rozhraní pro úložiště symbolů diagnostiky](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)
+
+- [Rozhraní úložiště symbolů diagnostiky](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)

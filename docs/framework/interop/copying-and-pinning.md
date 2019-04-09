@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 0059f576-e460-4e70-b257-668870e420b8
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 45ac26442adc78c5d1e6a2efe94fc2cefff86562
-ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
-ms.translationtype: MT
+ms.openlocfilehash: fcc5d3a561eea1e38d0b8a4790af13143cad92d1
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56219617"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59166143"
 ---
 # <a name="copying-and-pinning"></a>Kopírování a přichycování
 Při zařazování dat, interoperační zařazovač můžete kopírovat nebo připnout dat se zařadit. Kopírování dat umístí kopii dat z jednoho umístění v paměti do jiného umístění v paměti. Následující obrázek znázorňuje rozdíly mezi kopírování typu hodnoty a kopírování typu předány podle odkazu ze spravované na nespravované paměti.  
@@ -78,6 +78,7 @@ Typy odkazů, předán podle hodnoty a podle reference
  Když <xref:System.Text.StringBuilder?displayProperty=nameWithType> je předán podle hodnoty, předá zařazování odkaz na vnitřní vyrovnávací paměť **StringBuilder** přímo k volajícímu. Volajícím a volaným musí shodnout na velikost vyrovnávací paměti. Volající zodpovídá za vytvoření **StringBuilder** odpovídající délky. Volaný musí přijmout nezbytná opatření pro zajištění, že není přetečení vyrovnávací paměti. **StringBuilder** je výjimkou z pravidla, odkazující na typy, předán podle hodnoty jsou předány jako parametry in ve výchozím nastavení. Vždy je předána jako vstup a výstup.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Výchozí chování zařazování](default-marshaling-behavior.md)
 - [Směrové atributy](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/77e6taeh(v=vs.100))
 - [Zařazování spolupráce](interop-marshaling.md)

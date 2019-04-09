@@ -11,12 +11,12 @@ helpviewer_keywords:
 - automatic sizing
 - AutoSizeMode property
 ms.assetid: 9233e0c3-2fa6-405e-8701-959479b1250e
-ms.openlocfilehash: 46061108226feb83e821edb21dfce2a57bdd3ac7
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 466edeee5f45ec72ef265ef4855049c7852641b0
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57708064"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59164967"
 ---
 # <a name="autosize-behavior-in-the-tablelayoutpanel-control"></a>Chování AutoSize v ovládacím prvku TableLayoutPanel
 ## <a name="distinct-autosize-behaviors"></a>Chování DISTINCT AutoSize  
@@ -35,5 +35,6 @@ ms.locfileid: "57708064"
 |`true`|Podobně jako na předchozí interakci s výjimkou, která <xref:System.Windows.Forms.SizeType.Percent> sloupců nebo řádků získat aspekty automatické velikosti.<br /><br /> <xref:System.Windows.Forms.TableLayoutPanel> Rozšíří ovládací prvek sloupec nebo řádek, který má dostatek volného místa, vytvořit tak, aby žádný sloupec nebo řádek s <xref:System.Windows.Forms.SizeType.Percent> stylů klipy jeho obsah. <xref:System.Windows.Forms.TableLayoutPanel> Ovládací prvek přiděluje nové místo proporcionálně souladu s <xref:System.Windows.Forms.ColumnStyle.Width%2A> nebo <xref:System.Windows.Forms.RowStyle.Height%2A> vlastnost.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.TableLayoutPanel>
-- [Přehled ovládacího prvku TableLayoutPanel](tablelayoutpanel-control-overview.md)
+- [TableLayoutPanel – přehled ovládacího prvku](tablelayoutpanel-control-overview.md)

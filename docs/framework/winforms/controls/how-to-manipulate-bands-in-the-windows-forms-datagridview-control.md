@@ -10,12 +10,12 @@ helpviewer_keywords:
 - bands [Windows Forms], manipulating in Windows Forms
 - DataGridView control [Windows Forms], manipulating bands
 ms.assetid: 1ea3470e-480f-4edc-bcbd-51373eca3856
-ms.openlocfilehash: abea52361577c97e806b4621e781c2c22ee0f018
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 848ae7c88e2531806bf97b05cc0fe6d2388977fc
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57703514"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59162368"
 ---
 # <a name="how-to-manipulate-bands-in-the-windows-forms-datagridview-control"></a>Postupy: Manipulace s pruhy v ovládacím prvku Windows Forms DataGridView
 Následující příklad kódu ukazuje různé způsoby, jak pracovat s <xref:System.Windows.Forms.DataGridView> řádků a sloupců pomocí vlastnosti <xref:System.Windows.Forms.DataGridViewBand> třídu, ze které <xref:System.Windows.Forms.DataGridViewRow> a <xref:System.Windows.Forms.DataGridViewColumn> odvození třídy.  
@@ -33,6 +33,7 @@ Následující příklad kódu ukazuje různé způsoby, jak pracovat s <xref:Sy
  Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.DataGridViewBand>
 - <xref:System.Windows.Forms.DataGridViewRow>

@@ -1,15 +1,15 @@
 ---
-title: SQL Server Express Security
+title: Zabezpečení SQL Serveru Express
 ms.date: 03/30/2017
 ms.assetid: cf9cf6d9-4b05-43e9-ac7b-6cefbfcd6d4e
-ms.openlocfilehash: 73f94d25e90197ade5e27ab6d9ff13602a5c854f
-ms.sourcegitcommit: 2b986afe4ce9e13bbeec929c9737757eb61de60e
+ms.openlocfilehash: f4291de89b397f60aedd35b89d6aa3130d348be5
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56664247"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59174548"
 ---
-# <a name="sql-server-express-security"></a>SQL Server Express Security
+# <a name="sql-server-express-security"></a>Zabezpečení SQL Serveru Express
 Microsoft SQL Server Express Edition (SQL Server Express) je založena na systému Microsoft SQL Server a podporuje většinu funkcí databázového stroje. Je navržen tak, aby nepotřebných funkcí a připojení k síti je vypnuto ve výchozím nastavení. To snižuje styčné plochy, které je k dispozici pro uživatele se zlými úmysly útoku.  
   
  SQL Server Express je obvykle nainstalován jako pojmenovanou instanci. Výchozí název instance je `SQLExpress`. Pojmenovaná instance je identifikován síťový název počítače a název instance, který zadáte během instalace.  
@@ -36,6 +36,7 @@ Microsoft SQL Server Express Edition (SQL Server Express) je založena na systé
 |[Uživatelské instance SQL Serveru Express](../../../../../docs/framework/data/adonet/sql/sql-server-express-user-instances.md)|Popisuje možnosti uživatele instance v aplikaci ADO.NET. Poskytuje informace o tom, jak povolit uživatelskou instanci, připojení k uživatelské instanci pomocí <xref:System.Data.SqlClient.SqlConnection>, dobu života instance uživatele a scénáře instance pro uživatele.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [SQL Server – zabezpečení](../../../../../docs/framework/data/adonet/sql/sql-server-security.md)
 - [Uživatelské instance SQL Serveru Express](../../../../../docs/framework/data/adonet/sql/sql-server-express-user-instances.md)
 - [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

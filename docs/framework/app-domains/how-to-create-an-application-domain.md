@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: ba1fa43e-49f5-47d9-bd7f-3024af16f4ba
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 39cc38f56b6f9fb1735bcca64bf0f77ec29a1c43
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ff85f5737babb73d87f4918ca0f4981263f7dadc
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54597824"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59166748"
 ---
 # <a name="how-to-create-an-application-domain"></a>Postupy: Vytvoření domény aplikace
 Hostitel common language runtime automaticky vytvoří aplikační domény v případě potřeby. Můžete však vytvořit vlastní domény aplikace a načíst do nich tato sestavení, které chcete spravovat sami. Můžete také vytvořit aplikační domény, ze kterých je kód spuštěn.  
@@ -30,5 +30,6 @@ Hostitel common language runtime automaticky vytvoří aplikační domény v př
  [!code-vb[ADCreateDomain#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/ADCreateDomain/VB/source2.vb#2)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Programování pomocí domén aplikace](application-domains.md#programming-with-application-domains)
 - [Používání domén aplikací](../../../docs/framework/app-domains/use.md)

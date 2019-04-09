@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: b45366ff-2a7a-4b8e-ab01-537b72e9de68
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 0a53f433d1b6caca98b2b0d564774820239320f3
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 6d8f6975d117d9920d2199c3996246822d1fdb6c
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54739664"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59170765"
 ---
 # <a name="moduloobjecthashcode-mda"></a>moduloObjectHashcode – pomocník spravovaného ladění (MDA)
 `moduloObjectHashcode` Pomocníka spravovaného ladění (MDA) změní chování <xref:System.Object> pro provádění modulo operace na vrátil kód hash <xref:System.Object.GetHashCode%2A> metoda. Výchozí modul pro toto MDA je 1, což způsobí, že <xref:System.Object.GetHashCode%2A> vrátit 0 pro všechny objekty.  
@@ -38,7 +38,7 @@ ms.locfileid: "54739664"
   
  Pořadí výčtu ze <xref:System.Collections.Hashtable> může změnit z jedné verze modulu runtime, pokud jiný algoritmus používaný k výpočtu hodnoty hash kódy pro změnu klíče. K otestování, jestli váš program přijal závislost na pořadí výčtu klíče nebo hodnoty z tabulky hash, můžete povolit toto MDA.  
   
-## <a name="resolution"></a>Rozlišení  
+## <a name="resolution"></a>Řešení  
  Nikdy nepoužívejte kódů hash jako náhradu identity objektu. Implementace přepsané <xref:System.Object.Equals%2A?displayProperty=nameWithType> metoda není výsledkem porovnání kódů hash.  
   
  Nevytvářejte závislosti v řádu výčty klíče nebo hodnoty ve zatřiďovacích tabulek.  
@@ -61,6 +61,7 @@ ms.locfileid: "54739664"
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Object.GetHashCode%2A?displayProperty=nameWithType>
 - <xref:System.Object.Equals%2A?displayProperty=nameWithType>
 - [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - visual themes [Windows Forms], applying to Windows Forms controls
 - visual styles [Windows Forms], rendering Windows Forms controls
 ms.assetid: c0125e34-cd74-4c35-818c-3e40f462b0a3
-ms.openlocfilehash: d9da43b1686f416cf2149cef07665b0a726c3b0c
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 7115c227cb24cf12a50073d0dc587524abf0cbb9
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57723150"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59163569"
 ---
 # <a name="how-to-use-a-control-rendering-class"></a>Postupy: Použití třídy vykreslující ovládací prvek
 Tento příklad ukazuje, jak používat <xref:System.Windows.Forms.ComboBoxRenderer> třídy k vykreslení na šipku rozevíracího seznamu pole se seznamem ovládací prvek pole. V příkladu se skládá z <xref:System.Windows.Forms.Control.OnPaint%2A> metoda jednoduché vlastního ovládacího prvku. <xref:System.Windows.Forms.ComboBoxRenderer.IsSupported%2A?displayProperty=nameWithType> Vlastnost se používá k určení, zda jsou vizuální styly povoleny v klientské oblasti okna aplikace. Pokud vizuální styly jsou aktivní, pak bude <xref:System.Windows.Forms.ComboBoxRenderer.DrawDropDownButton%2A?displayProperty=nameWithType> metoda vykreslí na šipku rozevíracího seznamu s vizuálními styly; v opačném případě <xref:System.Windows.Forms.ControlPaint.DrawComboButton%2A?displayProperty=nameWithType> metoda vykreslí na šipku rozevíracího seznamu v klasické Windows.  
@@ -35,4 +35,5 @@ Tento příklad ukazuje, jak používat <xref:System.Windows.Forms.ComboBoxRende
 -   Odkazy <xref:System?displayProperty=nameWithType>, <xref:System.Drawing?displayProperty=nameWithType>, <xref:System.Windows.Forms?displayProperty=nameWithType>, a <xref:System.Windows.Forms.VisualStyles?displayProperty=nameWithType> obory názvů.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Vykreslování ovládacích prvků s vizuálními styly](rendering-controls-with-visual-styles.md)

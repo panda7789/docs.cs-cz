@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Použití zářivého materiálu na 3D objekt'
+title: 'Postupy: Použití vyzařujícího materiálu na 3D objekt'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - EmissiveMaterial [WPF], applying to 3-D objects
 - 3-D objects [WPF], applying EmissiveMaterial
 ms.assetid: fd442cc2-5adc-487a-ba70-e45ed54bb3b4
-ms.openlocfilehash: 7f4158d59334c2f80775541ea1b0f944e048b081
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: b898148fa07950e3ad1eddcaf9206f7d6a837241
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57362497"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59163114"
 ---
-# <a name="how-to-apply-emissive-material-to-a-3-d-object"></a>Postupy: Použití zářivého materiálu na 3D objekt
+# <a name="how-to-apply-emissive-material-to-a-3-d-object"></a>Postupy: Použití vyzařujícího materiálu na 3D objekt
 Následující příklad ukazuje, jak používat <xref:System.Windows.Media.Media3D.EmissiveMaterial> přidat barvu existující rovna barvy štětce EmissiveMaterial materiálu. Níže uvedený kód ukazuje <xref:System.Windows.Media.Media3D.DiffuseMaterial> a <xref:System.Windows.Media.Media3D.EmissiveMaterial> použít v kombinaci přidat modrá DiffuseMaterial vzhled.  
   
  [!code-xaml[3DGallery_snip#EmmisiveMaterialAnimationExampleInline1](~/samples/snippets/csharp/VS_Snippets_Wpf/3DGallery_snip/CS/EmissiveMaterialExample.xaml#emmisivematerialanimationexampleinline1)]  
@@ -37,6 +37,7 @@ Následující příklad ukazuje, jak používat <xref:System.Windows.Media.Medi
  [!code-vb[3DGallery_procedural_snip#EmissiveMaterialCodeExampleWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/3DGallery_procedural_snip/visualbasic/emissivematerialexample.vb#emissivematerialcodeexamplewholepage)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Vytvoření 3D scény](how-to-create-a-3-d-scene.md)
 - [Přehled 3D grafiky](3-d-graphics-overview.md)
 - [Animace vlastností materiálu ve 3D scéně](how-to-animate-material-properties-in-a-3-d-scene.md)

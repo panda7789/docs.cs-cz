@@ -4,21 +4,19 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - bitmap effects [WPF]
 ms.assetid: 23cb338e-4b59-4b52-b294-96431f9c9568
-ms.openlocfilehash: e82a9596778a3c71aca6bdb8efcb9b3aa227cadb
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 1866ba7a5419ea435a56daa63f94122d3b83473e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57368217"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59166891"
 ---
 # <a name="bitmap-effects-overview"></a>Přehled efektů bitmap
 Bitmapové efekty povolit návrháři a vývojáři použít vizuální efekty k vykreslení obsahu Windows Presentation Foundation (WPF). Například bitmapových efektů umožňují snadno použít <xref:System.Windows.Media.Effects.DropShadowBitmapEffect> vliv nebo rozostření mohou mít vliv na bitovou kopii nebo tlačítko.  
   
 > [!IMPORTANT]
 >  V [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)] nebo novější, <xref:System.Windows.Media.Effects.BitmapEffect> třída je zastaralá. Pokud se pokusíte použít <xref:System.Windows.Media.Effects.BitmapEffect> třídy, obdržíte výjimku zastaralé. Nezastaralou alternativou k <xref:System.Windows.Media.Effects.BitmapEffect> třída je <xref:System.Windows.Media.Effects.Effect> třídy. Ve většině případů <xref:System.Windows.Media.Effects.Effect> třída je výrazně rychlejší.  
-  
-  
-  
+
 <a name="wpf_effects"></a>   
 ## <a name="wpf-bitmap-effects"></a>Bitmapové efekty WPF  
  Bitmapové efekty (<xref:System.Windows.Media.Effects.BitmapEffect> objekt) jsou jednoduché pixel operace zpracování. Bitmapový efekt přijímá <xref:System.Windows.Media.Imaging.BitmapSource> jako vstup a vytvoří novou <xref:System.Windows.Media.Imaging.BitmapSource> po použití účinek, jako je například stínem rozostření nebo drop. Každý rastrový efekt zpřístupní vlastnosti, které můžete řídit filtrování vlastností, jako například <xref:System.Windows.Media.Effects.BlurBitmapEffect.Radius%2A> z <xref:System.Windows.Media.Effects.BlurBitmapEffect>.  
@@ -61,6 +59,7 @@ Bitmapové efekty povolit návrháři a vývojáři použít vizuální efekty k
  [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] také poskytuje nespravovaná rozhraní k vytvoření vlastních efektů, které lze použít ve spravované [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikací. Další referenční materiál pro vytvoření vlastní bitmapových efektů, naleznete v tématu [nespravované WPF rastrový efekt](https://docs.microsoft.com/previous-versions/windows/desktop/wibe/-wibe-lh) dokumentaci.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Media.Effects.BitmapEffectGroup>
 - <xref:System.Windows.Media.Effects.BitmapEffectInput>
 - <xref:System.Windows.Media.Effects.BitmapEffectCollection>

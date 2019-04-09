@@ -5,12 +5,12 @@ ms.technology: dotnet-standard
 ms.assetid: e695047f-3c0f-4045-8708-5baea91cc380
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 1edd267ed388f630cc332caa278d5c47a40d77d5
-ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
+ms.openlocfilehash: 2e96515240cdbc1cb05c4d58aee6eb2500e0e313
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56835119"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59171168"
 ---
 # <a name="xml-documents-and-data"></a>Dokumenty a data XML
 Rozhraní .NET Framework poskytuje komplexního a integrovaného sadu tříd, které vám umožní snadno vytvářet aplikace pracující s XML. Třídy v následující obory názvů podporují analýzu a zápis dat XML v paměti, ověřování dat a transformace XSLT pro úpravy XML.  
@@ -85,4 +85,3 @@ Rozhraní .NET Framework poskytuje komplexního a integrovaného sadu tříd, kt
   
  [Zabezpečení](../../../../docs/standard/security/index.md)  
  Poskytuje přehled o systém zabezpečení rozhraní .NET Framework.  
-  

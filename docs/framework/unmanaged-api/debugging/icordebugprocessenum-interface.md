@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e190c045a70daa04e58604b25ac398fb5a1648d0
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 3651a4be94fa624d0dd6ab64b8c3f8169945de0d
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56979564"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59175315"
 ---
 # <a name="icordebugprocessenum-interface"></a>ICorDebugProcessEnum – rozhraní
 Implementuje metody ICorDebugEnum a vytváří výčet polí ICorDebugProcess.  
@@ -47,4 +47,5 @@ Implementuje metody ICorDebugEnum a vytváří výčet polí ICorDebugProcess.
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+
+- [Debugging – rozhraní](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

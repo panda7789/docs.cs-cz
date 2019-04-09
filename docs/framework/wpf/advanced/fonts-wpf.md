@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - fonts [WPF]
 ms.assetid: 6c766a95-ad03-475e-a36f-2243e9495941
-ms.openlocfilehash: fd3c815b3acd857b193aa02d632a33c96e324885
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: eb8a02445511935d64ebaa6d78d4b05c0b75167e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57360976"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59169244"
 ---
 # <a name="fonts-wpf"></a>Písma (WPF)
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] zahrnuje podporu pro bohatou prezentaci z textu s využitím [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písma. Balík ukázek z [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písma je součástí [!INCLUDE[TLA2#tla_lhsdk](../../../../includes/tla2sharptla-lhsdk-md.md)].  
@@ -20,9 +20,10 @@ ms.locfileid: "57360976"
  [Funkce písma OpenType](opentype-font-features.md)  
  [Balení písem s aplikacemi](packaging-fonts-with-applications.md)  
  [Ukázková sada písem OpenType](sample-opentype-font-pack.md)  
- [Témata s postupy](fonts-how-to-topics.md)  
+ [– postupy](fonts-how-to-topics.md)  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.FontStyle>
 - <xref:System.Windows.SystemFonts>
 - [Dokumenty v platformě WPF](documents-in-wpf.md)

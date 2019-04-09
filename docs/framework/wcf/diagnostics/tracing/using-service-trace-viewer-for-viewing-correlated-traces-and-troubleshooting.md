@@ -2,12 +2,12 @@
 title: Použití prohlížeče trasování služeb k zobrazení korelovaných tras a řešení problémů
 ms.date: 03/30/2017
 ms.assetid: 05d2321c-8acb-49d7-a6cd-8ef2220c6775
-ms.openlocfilehash: fc1b75d7f2d97103f99b9dbf0fa8cbbfbe2270cd
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
-ms.translationtype: MT
+ms.openlocfilehash: 80a19bf1e433ffcb0dcf29a4636fb79bedaeeb61
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58465058"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59160664"
 ---
 # <a name="using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting"></a>Použití prohlížeče trasování služeb k zobrazení korelovaných tras a řešení problémů
 Toto téma popisuje formátu trace dat, jak zobrazit a přístupů, které použití prohlížeče trasování služeb k řešení problémů s aplikací.  
@@ -169,8 +169,7 @@ Uvedený čas vytvoření (levý panel) a jejich vnořené aktivity a trasován�
  Zobrazení grafu aktivit služby WCF na následujícím obrázku:   
 
  ![Snímek obrazovky trasování prohlížeč zobrazující seznam aktivit služby WCF](./media/using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting/wcf-service-activities.gif)  
-  
-  
+
  Na následujícím snímku obrazovky činnosti klienta a služby se zobrazí a zvýrazní zpracovat akci Přidání aktivity napříč procesy (oranžová). Šipky se týkají požadavků a odpovědí zpráv odesílaných i přijímaných klienta a služby. Trasování procesu akce jsou odděleny napříč procesy v grafu, ale zobrazí jako součást do stejné aktivity v pravém horním panelu. V tomto panelu vidět trasování klienta pro odeslané zprávy, za nímž následuje trasování služby pro přijatá a zpracovaná zprávy.  
   
  Následující obrázky ukazují zobrazení grafu obě aktivity klienta a služby WCF  
@@ -189,8 +188,7 @@ Chyba korelací napříč klienta a služby
   
   Následující obrázek ukazuje, jak vybrat aktivitu žluté nebo červené zjistit příčinu problému.   
  ![Snímek obrazovky s červenou nebo žlutou aktivit pro vyhledání příčinu problému.](./media/using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting/service-trace-viewer.gif)  
- 
-  
+
  V pravém horním rohu panelu můžete zkontrolovat trasování aktivity, které jste vybrali na levé straně. Potom můžete zkontrolovat žluté nebo červené trasování v panelu a zobrazit, jak se korelují. V předchozím grafu vidíme trasování upozornění pro klienta a služby do procesu akce aktivity.  
   
  Pokud toto trasování není poskytnout hlavní příčinu chyby, můžete využít graf dvojitým kliknutím na vybranou aktivitou na levém panelu (zde akce proces). Zobrazí graf s souvisejících aktivit. Můžete rozbalit souvisejících aktivit (kliknutím symboly "+") k vyhledání prvního emitovaný trasování v red nebo žlutá v souvisejících aktivit. Zachovejte rozbalení aktivity, ke kterým došlo před žluté nebo červené trasování zájmu následující převody souvisejících činností nebo zprávy toků napříč koncovými body, dokud sledování hlavní příčinu problému.  
@@ -207,6 +205,7 @@ Rozbalení aktivity pro sledování hlavní příčinu problému
 Proces řešení potíží, můžete také vybrat žluté nebo červené zprávy trasování a dvojím kliknutím ho sledujte hlavní příčinu.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Scénáře komplexního trasování](../../../../../docs/framework/wcf/diagnostics/tracing/end-to-end-tracing-scenarios.md)
 - [Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md)
 - [Trasování](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)

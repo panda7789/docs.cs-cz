@@ -1,13 +1,13 @@
 ---
-title: <security> z <wsDualHttpBinding>
+title: <security> of <wsDualHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 869c05e7-4ebe-467d-95ab-c8f8de4e6b9e
-ms.openlocfilehash: 8bc35b3bc8f0cbe1a51ceab63d876d5859d6b325
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: c6f9e34724ccc3a0d05da3e1886b4f0bcbaae064
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55270846"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59171506"
 ---
 # <a name="security-of-wsdualhttpbinding"></a>\<zabezpečení > z \<wsDualHttpBinding >
 Definuje možnosti zabezpečení [ \<wsDualHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wsdualhttpbinding.md).  
@@ -41,14 +41,14 @@ Definuje možnosti zabezpečení [ \<wsDualHttpBinding >](../../../../../docs/fr
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|Žádná|Zabezpečení je zakázaná.|  
+|Žádné|Zabezpečení je zakázaná.|  
 |Zpráva|Poskytuje zabezpečení pomocí zabezpečení zprávy protokolu SOAP.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<message>](../../../../../docs/framework/configure-apps/file-schema/wcf/message-of-wsdualhttpbinding.md)|Definuje nastavení založená na úrovni zpráv zabezpečení. Tento prvek je typu <xref:System.ServiceModel.MessageSecurityOverHttp>.|  
+|[\<Zpráva >](../../../../../docs/framework/configure-apps/file-schema/wcf/message-of-wsdualhttpbinding.md)|Definuje nastavení založená na úrovni zpráv zabezpečení. Tento prvek je typu <xref:System.ServiceModel.MessageSecurityOverHttp>.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -60,6 +60,7 @@ Definuje možnosti zabezpečení [ \<wsDualHttpBinding >](../../../../../docs/fr
  Duální vazby poskytuje IP adresu klienta do služby. Klient musí použít zabezpečení zajistit, že pouze připojení ke službám ho vztahy důvěryhodnosti.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.WSDualHttpSecurity>
 - <xref:System.ServiceModel.BasicHttpSecurity>
 - [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)

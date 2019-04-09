@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 49ac6da0-f2e1-46fa-963e-1b6dcb63fef7
-ms.openlocfilehash: bbcdd544e79197c9cb35d13bd09cffde9962030d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 10e60ebd71c4615354c25d3a61a04e9d12d7c800
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54553669"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59167190"
 ---
 # <a name="adonet-and-linq-to-sql"></a>ADO.NET a LINQ to SQL
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] je součástí [!INCLUDE[vstecado](../../../../../../includes/vstecado-md.md)] řady technologií. Je založen na služby poskytované [!INCLUDE[vstecado](../../../../../../includes/vstecado-md.md)] modelu poskytovatele. Proto můžete kombinovat [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] kódu s existujícím [!INCLUDE[vstecado](../../../../../../includes/vstecado-md.md)] aplikací a migrovat aktuální [!INCLUDE[vstecado](../../../../../../includes/vstecado-md.md)] řešení [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]. Následující obrázek poskytuje podrobný pohled vztahu.  
@@ -58,5 +58,6 @@ ms.locfileid: "54553669"
 >  Parametry jsou vyjádřeny v textu dotazu pomocí stejné složených zápisu používají `Console.WriteLine()` a `String.Format()`. `String.Format()` řetězec dotazu, zadejte a nahradí složených braced parametry s generované názvy parametrů, jako `@p0`, `@p1` ..., `@p(n)`.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Základní informace](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)
-- [Postupy: Opakované použití připojení mezi příkazem ADO.NET a položkou DataContext](../../../../../../docs/framework/data/adonet/sql/linq/how-to-reuse-a-connection-between-an-ado-net-command-and-a-datacontext.md)
+- [Postupy: Opakované použití propojení mezi příkazem ADO.NET a položkou DataContext](../../../../../../docs/framework/data/adonet/sql/linq/how-to-reuse-a-connection-between-an-ado-net-command-and-a-datacontext.md)

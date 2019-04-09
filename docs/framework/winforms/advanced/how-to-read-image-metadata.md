@@ -8,12 +8,12 @@ helpviewer_keywords:
 - metadata [Windows Forms], property item
 - metadata [Windows Forms], reading image
 ms.assetid: 72ec0b31-0be7-444a-9575-1dbcb864e0be
-ms.openlocfilehash: eba21519e6ea6cf4a2a412750fd305d7af620c1b
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 0a53e9b9d23c03715bf3088a4ae8577a39527995
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57720786"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59173612"
 ---
 # <a name="how-to-read-image-metadata"></a>Postupy: Čtení metadat obrázku
 Některé soubory obrázku obsahují metadata, která si můžete přečíst určit funkce bitové kopie. Digitální fotografie může například obsahovat metadata, která si můžete přečíst k určení značku a model fotoaparátu/kamery, používá k zachycení bitové kopie. S [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]existující metadata mohou číst a můžete je zapsat také nová metadata do souborů obrázků.  
@@ -35,12 +35,12 @@ Některé soubory obrázku obsahují metadata, která si můžete přečíst ur�
 ## <a name="len"></a>Délka  
  Délka (v bajtech) pole hodnot, na které odkazují <xref:System.Drawing.Imaging.PropertyItem.Value%2A> vlastnost.  
   
-## <a name="type"></a>Typ  
+## <a name="type"></a>Type  
  Datový typ hodnoty v poli na které odkazují `Value` vlastnost. Formáty indikován `Type` v následující tabulce jsou uvedeny hodnoty vlastností  
   
 |Číselná hodnota|Popis|  
 |-------------------|-----------------|  
-|1|A `Byte`|  
+|1|OBJEKT `Byte`|  
 |2|Pole `Byte` objekty kódováním ASCII|  
 |3|16bitové celé číslo|  
 |4|32bitové celé číslo|  
@@ -124,5 +124,6 @@ Některé soubory obrázku obsahují metadata, která si můžete přečíst ur�
  V předchozím příkladu je určený k použití pomocí Windows Forms a vyžaduje <xref:System.Windows.Forms.PaintEventArgs> `e`, což je parametr <xref:System.Windows.Forms.Control.Paint> obslužné rutiny události. Zpracování formuláře <xref:System.Windows.Forms.Control.Paint> událostí a vložte tento kód do obslužné rutiny události Malování. Je třeba nahradit `FakePhoto.jpg` název image a cesta platné na systém a import `System.Drawing.Imaging` oboru názvů.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Obrázky, rastrové obrázky a metasoubory](images-bitmaps-and-metafiles.md)
 - [Práce s obrázky, rastrovými obrázky, ikonami a metasoubory](working-with-images-bitmaps-icons-and-metafiles.md)

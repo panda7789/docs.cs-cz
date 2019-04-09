@@ -13,12 +13,12 @@ helpviewer_keywords:
 - identifying changed property events [WPF]
 - property triggers [WPF], definition of
 ms.assetid: 0a7989df-9674-4cc1-bc50-5d8ef5d9c055
-ms.openlocfilehash: 2997696a6617bb9c17bb98bba0b352cb27c07896
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: b6f625f76e230b7d6bf0488bfa75c227de31a5d0
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57351993"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59166202"
 ---
 # <a name="property-change-events"></a>Události změny vlastnosti
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] definuje několik událostí, které jsou vyvolány v reakci na změnu v hodnotě vlastnosti. Vlastnost je často vlastnost závislosti. Samotné události je někdy směrované události a v některých případech je standard [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] událostí. Definice události se liší v závislosti na scénáři, protože některé změny vlastností se více odpovídajícím způsobem směrovaná přes stromu, zatímco jiné změny vlastností jsou obecně jen zájmu změnou vlastnosti objektu.  
@@ -62,5 +62,6 @@ ms.locfileid: "57351993"
  Další informace o aktivační procedury vlastností najdete v tématu [styly a šablony](../controls/styling-and-templating.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled směrovaných událostí](routed-events-overview.md)
 - [Přehled vlastností závislosti](dependency-properties-overview.md)

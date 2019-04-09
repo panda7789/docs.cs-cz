@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: a0bb52de-d279-419d-8f23-4b12d1a3f36e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 741bb73280d9e81fc1865867152ab1243e9dd53c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 342c3ce59ad80c9a60f2a2b69b30f77ff0549415
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54494675"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59176758"
 ---
 # <a name="mitigation-path-colon-checks"></a>Omezení rizik: Path Colon Checks
 Počínaje aplikací, které se zaměřují [!INCLUDE[net_v462](../../../includes/net-v462-md.md)], počet změn byly provedeny na podporu dříve nepodporované cesty (jak z hlediska délku a formátu). Konkrétně kontroly syntaxe správná jednotka oddělovač (dvojtečka) byly provedeny více správné.  
@@ -24,7 +24,7 @@ Počínaje aplikací, které se zaměřují [!INCLUDE[net_v462](../../../include
   
 -   Předat identifikátor URI <xref:System.Uri> konstruktoru a načtení hodnoty <xref:System.Uri.LocalPath%2A?displayProperty=nameWithType> vlastnost.  
   
--   Vyjádřit výslovný nesouhlas nové normalizace cestu tak, že nastavíte `Switch.System.IO.UseLegacyPathHandling` <xref:System.AppContext> přepnout na `true`.  
+-   Vyjádřit výslovný nesouhlas nové normalizace cestu tak, že nastavíte `Switch.System.IO.UseLegacyPathHandling`<xref:System.AppContext> přepnout na `true`.  
   
     ```xml  
     <runtime>  
@@ -33,4 +33,5 @@ Počínaje aplikací, které se zaměřují [!INCLUDE[net_v462](../../../include
     ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Odlišnosti ve změnách cílení](../../../docs/framework/migration-guide/retargeting-changes-in-the-net-framework-4-6-2.md)

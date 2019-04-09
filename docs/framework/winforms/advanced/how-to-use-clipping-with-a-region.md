@@ -8,12 +8,12 @@ helpviewer_keywords:
 - regions [Windows Forms], clipping
 - regions [Windows Forms], restricting drawing surface
 ms.assetid: 43d121b4-e14c-4901-b25c-2d6c25ba4e29
-ms.openlocfilehash: 2ae9a99ef25c7ee5e52f5995a2d057e42e7d3127
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: cf60b32df805a49f8da2760332dc32e34209f6dc
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57715877"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59163732"
 ---
 # <a name="how-to-use-clipping-with-a-region"></a>Postupy: Použití oříznutí s oblastí
 Jedna z vlastností objektu <xref:System.Drawing.Graphics> třída je oblast ústřižku. Všechny kreslení provádí daný <xref:System.Drawing.Graphics> je omezen na oblast ústřižku tohoto objektu <xref:System.Drawing.Graphics> objektu. Můžete nastavit oblast ústřižku voláním <xref:System.Drawing.Graphics.SetClip%2A> metody.  
@@ -32,5 +32,6 @@ Jedna z vlastností objektu <xref:System.Drawing.Graphics> třída je oblast ús
  V předchozím příkladu je určený k použití pomocí Windows Forms a vyžaduje <xref:System.Windows.Forms.PaintEventArgs> `e`, což je parametr <xref:System.Windows.Forms.PaintEventHandler>.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Oblasti v rozhraní GDI+](regions-in-gdi.md)
 - [Použití oblastí](using-regions.md)

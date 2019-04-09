@@ -6,12 +6,12 @@ helpviewer_keywords:
 - UI Automation, Value control pattern
 - Value control pattern
 ms.assetid: b0fcdd87-3add-4345-bca9-e891205e02ba
-ms.openlocfilehash: 8a306fe648c42e1e94126f10b0d4c92f9dfc8831
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.openlocfilehash: cccaf1afa55d786e43863e094a9745a0a1d00870
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57678070"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59174951"
 ---
 # <a name="implementing-the-ui-automation-value-control-pattern"></a>Implementace vzoru ovládacích prvků hodnota pro automatizaci uživatelského rozhraní
 > [!NOTE]
@@ -49,9 +49,9 @@ Příklad mapování řetězec vzorníku barev
   
 |Požadované členy|Typ člena|Poznámky|  
 |----------------------|-----------------|-----------|  
-|<xref:System.Windows.Automation.ValuePattern.IsReadOnlyProperty>|Vlastnost|Žádná|  
-|<xref:System.Windows.Automation.ValuePattern.ValueProperty>|Vlastnost|Žádná|  
-|<xref:System.Windows.Automation.ValuePattern.SetValue%2A>|Metoda|Žádná|  
+|<xref:System.Windows.Automation.ValuePattern.IsReadOnlyProperty>|Vlastnost|Žádné|  
+|<xref:System.Windows.Automation.ValuePattern.ValueProperty>|Vlastnost|Žádné|  
+|<xref:System.Windows.Automation.ValuePattern.SetValue%2A>|Metoda|Žádné|  
   
 <a name="Exceptions"></a>   
 ## <a name="exceptions"></a>Výjimky  
@@ -64,6 +64,7 @@ Příklad mapování řetězec vzorníku barev
 |<xref:System.Windows.Automation.ElementNotEnabledException>|<xref:System.Windows.Automation.ValuePattern.SetValue%2A><br /><br /> – Když je proveden pokus o k manipulaci s ovládací prvek, který není povolen.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled vzorů ovládacích prvků pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)
 - [Podpora vzorů ovládacích prvků u zprostředkovatele automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/support-control-patterns-in-a-ui-automation-provider.md)
 - [Vzory ovládacích prvků automatizace uživatelského rozhraní pro klienty](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - base forms
 - inheritance [Windows Forms], forms
 ms.assetid: 1c3f2b29-a05c-4c6f-aa1a-4e66b94f343a
-ms.openlocfilehash: a253fef2bc7220d13c0ca373a38a5bf2f5842415
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 6c87b3d29a1c55b2a7517da78a1951d94676dd68
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57715552"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59164486"
 ---
 # <a name="effects-of-modifying-a-base-forms-appearance"></a>Účinky úpravy vzhledu základního formuláře
 Během vývoje aplikace může často potřeba změnit vzhledu základního formuláře, ze kterého se dědí jiné formuláře v projektu (nebo v jiných projektech).  
@@ -26,6 +26,7 @@ Během vývoje aplikace může často potřeba změnit vzhledu základního form
  Změny základního formuláře v době běhu mít žádný vliv na zděděné formuláře, které jsou již vytvořeny.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [base](~/docs/csharp/language-reference/keywords/base.md)
-- [Postupy: Dědění formulářů Windows](how-to-inherit-windows-forms.md)
-- [Vizuální dědění modelu Windows Forms](windows-forms-visual-inheritance.md)
+- [Postupy: Dědění v modelu Windows Forms](how-to-inherit-windows-forms.md)
+- [Vizuální dědění Windows Forms](windows-forms-visual-inheritance.md)

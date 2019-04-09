@@ -7,21 +7,19 @@ helpviewer_keywords:
 - placing popups [WPF]
 - positioning popups [WPF]
 ms.assetid: fbf642e9-f670-4efd-a7af-a67468a1c8e1
-ms.openlocfilehash: 449ec3ff30bb4650c32d3f6b9743b5d1a31ad0de
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.openlocfilehash: 911c2064e34ed8d0a341ffd9a52f852eab677e0a
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57679512"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59161496"
 ---
 # <a name="popup-placement-behavior"></a>Chování při umístění překryvného objektu
 A <xref:System.Windows.Controls.Primitives.Popup> ovládací prvek zobrazí obsah v samostatném okně, které čísel s plovoucí čárkou selhání aplikace. Můžete zadat umístění <xref:System.Windows.Controls.Primitives.Popup> vzhledem k ovládacího prvku, myši nebo na obrazovce s použitím <xref:System.Windows.Controls.Primitives.Popup.PlacementTarget%2A>, <xref:System.Windows.Controls.Primitives.Popup.Placement%2A>, <xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A>, <xref:System.Windows.Controls.Primitives.Popup.HorizontalOffset%2A>, a <xref:System.Windows.Controls.Primitives.Popup.VerticalOffset%2A> vlastnosti.  Tyto vlastnosti spolupracují a poskytují flexibilitu v určeném umístění <xref:System.Windows.Controls.Primitives.Popup>.  
   
 > [!NOTE]
 >  <xref:System.Windows.Controls.ToolTip> a <xref:System.Windows.Controls.ContextMenu> třídy také definovat těchto pět vlastností a chovají se podobně.  
-  
 
-  
 <a name="Positioning"></a>   
 ## <a name="positioning-the-popup"></a>Umístění automaticky otevíraného okna  
  Umístění <xref:System.Windows.Controls.Primitives.Popup> může být vzhledem k <xref:System.Windows.UIElement> nebo na celou obrazovku.  Následující příklad vytvoří čtyři <xref:System.Windows.Controls.Primitives.Popup> ovládací prvky, které jsou relativně k <xref:System.Windows.UIElement>– v tomto případě bitovou kopii. Všechny <xref:System.Windows.Controls.Primitives.Popup> ovládací prvky mají <xref:System.Windows.Controls.Primitives.Popup.PlacementTarget%2A> vlastnost nastavena na hodnotu `image1`, ale každý <xref:System.Windows.Controls.Primitives.Popup> má jinou hodnotu pro vlastnost umístění.  
@@ -58,8 +56,7 @@ A <xref:System.Windows.Controls.Primitives.Popup> ovládací prvek zobrazí obsa
  Následující obrázek ukazuje, že <xref:System.Windows.Controls.Primitives.Popup> relativně k umisťovanému <xref:System.Windows.Controls.Canvas>.  
   
  ![Ovládací prvek popup PlacementTarget](./media/popup-placement-behavior/popup-placement-no-placement-target.png "automaticky otevírané okno PlacementTarget.")  
-  
-  
+
  Následující příklad vytvoří <xref:System.Windows.Controls.Primitives.Popup> , který je podřízený <xref:System.Windows.Controls.Canvas>, tentokrát ale <xref:System.Windows.Controls.Primitives.Popup.PlacementTarget%2A> je nastavena na `ellipse1`, takže se automaticky otevírané okno se zobrazí pod <xref:System.Windows.Shapes.Ellipse>.  
   
  [!code-xaml[PopupPositionSnippet#2](~/samples/snippets/csharp/VS_Snippets_Wpf/PopupPositionSnippet/CS/Window1.xaml#2)]  
@@ -81,8 +78,7 @@ A <xref:System.Windows.Controls.Primitives.Popup> ovládací prvek zobrazí obsa
  Následující obrázek ukazuje výsledek v předchozím příkladu.  
   
  ![Automaticky otevírané okno a nemusíte PlacementRectangle](./media/popup-placement-behavior/popup-placement-placement-rectangle.png "automaticky otevírané okno a nemusíte PlacementRectangle.")  
-  
-  
+
 ### <a name="target-origin-and-popup-alignment-point"></a>Cílové umístění a bod zarovnání automaticky otevíraného okna  
  *Cílit na počátku* a *bod zarovnání automaticky otevíraného okna* jsou referenční body v cílové oblasti a automaticky otevírané okno, v uvedeném pořadí, které se používají pro umístění. Můžete použít <xref:System.Windows.Controls.Primitives.Popup.HorizontalOffset%2A> a <xref:System.Windows.Controls.Primitives.Popup.VerticalOffset%2A> vlastnosti pozici automaticky otevíraného okna v cílové oblasti.  <xref:System.Windows.Controls.Primitives.Popup.HorizontalOffset%2A> a <xref:System.Windows.Controls.Primitives.Popup.VerticalOffset%2A> jsou relativní vzhledem k cílové umístění a bod zarovnání automaticky otevíraného okna. Hodnota <xref:System.Windows.Controls.Primitives.Popup.Placement%2A> vlastnost určuje, kde se nachází cílový bod zarovnání původu a automaticky otevírané okno.  
   
@@ -102,14 +98,14 @@ A <xref:System.Windows.Controls.Primitives.Popup> ovládací prvek zobrazí obsa
   
 |PlacementMode|Cílový objekt|Cílovou oblast|Cíl původu|Bod zarovnání automaticky otevíraného okna|  
 |-------------------|-------------------|-----------------|-------------------|---------------------------|  
-|<xref:System.Windows.Controls.Primitives.PlacementMode.Absolute>|Nelze použít. <xref:System.Windows.Controls.Primitives.Popup.PlacementTarget%2A> se ignoruje.|Na obrazovce nebo <xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A> Pokud je nastavena.  <xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A> Je relativní vzhledem k obrazovce.|Levém horním rohu v cílové oblasti.|Levého horního rohu <xref:System.Windows.Controls.Primitives.Popup>.|  
-|<xref:System.Windows.Controls.Primitives.PlacementMode.AbsolutePoint>|Nelze použít. <xref:System.Windows.Controls.Primitives.Popup.PlacementTarget%2A> se ignoruje.|Na obrazovce nebo <xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A> Pokud je nastavena.  <xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A> Je relativní vzhledem k obrazovce.|Levém horním rohu v cílové oblasti.|Levého horního rohu <xref:System.Windows.Controls.Primitives.Popup>.|  
+|<xref:System.Windows.Controls.Primitives.PlacementMode.Absolute>|Není k dispozici. <xref:System.Windows.Controls.Primitives.Popup.PlacementTarget%2A> se ignoruje.|Na obrazovce nebo <xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A> Pokud je nastavena.  <xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A> Je relativní vzhledem k obrazovce.|Levém horním rohu v cílové oblasti.|Levého horního rohu <xref:System.Windows.Controls.Primitives.Popup>.|  
+|<xref:System.Windows.Controls.Primitives.PlacementMode.AbsolutePoint>|Není k dispozici. <xref:System.Windows.Controls.Primitives.Popup.PlacementTarget%2A> se ignoruje.|Na obrazovce nebo <xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A> Pokud je nastavena.  <xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A> Je relativní vzhledem k obrazovce.|Levém horním rohu v cílové oblasti.|Levého horního rohu <xref:System.Windows.Controls.Primitives.Popup>.|  
 |<xref:System.Windows.Controls.Primitives.PlacementMode.Bottom>|<xref:System.Windows.Controls.Primitives.Popup.PlacementTarget%2A> nebo nadřazený.|Cílový objekt nebo <xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A> Pokud je nastavena.  <xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A> Je relativní vzhledem k cílového objektu.|Levého dolního rohu cílovou oblast.|Levého horního rohu <xref:System.Windows.Controls.Primitives.Popup>.|  
 |<xref:System.Windows.Controls.Primitives.PlacementMode.Center>|<xref:System.Windows.Controls.Primitives.Popup.PlacementTarget%2A> nebo nadřazený.|Cílový objekt nebo <xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A> Pokud je nastavena.  <xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A> Je relativní vzhledem k cílového objektu.|Center cílovou oblast.|Střed <xref:System.Windows.Controls.Primitives.Popup>.|  
 |<xref:System.Windows.Controls.Primitives.PlacementMode.Custom>|<xref:System.Windows.Controls.Primitives.Popup.PlacementTarget%2A> nebo nadřazený.|Cílový objekt nebo <xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A> Pokud je nastavena.  <xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A> Je relativní vzhledem k cílového objektu.|Určené <xref:System.Windows.Controls.Primitives.CustomPopupPlacementCallback>.|Určené <xref:System.Windows.Controls.Primitives.CustomPopupPlacementCallback>.|  
 |<xref:System.Windows.Controls.Primitives.PlacementMode.Left>|<xref:System.Windows.Controls.Primitives.Popup.PlacementTarget%2A> nebo nadřazený.|Cílový objekt nebo <xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A> Pokud je nastavena.  <xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A> Je relativní vzhledem k cílového objektu.|Levém horním rohu v cílové oblasti.|Pravém horním rohu <xref:System.Windows.Controls.Primitives.Popup>.|  
-|<xref:System.Windows.Controls.Primitives.PlacementMode.Mouse>|Nelze použít. <xref:System.Windows.Controls.Primitives.Popup.PlacementTarget%2A> se ignoruje.|Hranice ukazatel myši. <xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A> se ignoruje.|Levého dolního rohu cílovou oblast.|Levého horního rohu <xref:System.Windows.Controls.Primitives.Popup>.|  
-|<xref:System.Windows.Controls.Primitives.PlacementMode.MousePoint>|Nelze použít. <xref:System.Windows.Controls.Primitives.Popup.PlacementTarget%2A> se ignoruje.|Hranice ukazatel myši. <xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A> se ignoruje.|Levém horním rohu v cílové oblasti.|Levého horního rohu <xref:System.Windows.Controls.Primitives.Popup>.|  
+|<xref:System.Windows.Controls.Primitives.PlacementMode.Mouse>|Není k dispozici. <xref:System.Windows.Controls.Primitives.Popup.PlacementTarget%2A> se ignoruje.|Hranice ukazatel myši. <xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A> se ignoruje.|Levého dolního rohu cílovou oblast.|Levého horního rohu <xref:System.Windows.Controls.Primitives.Popup>.|  
+|<xref:System.Windows.Controls.Primitives.PlacementMode.MousePoint>|Není k dispozici. <xref:System.Windows.Controls.Primitives.Popup.PlacementTarget%2A> se ignoruje.|Hranice ukazatel myši. <xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A> se ignoruje.|Levém horním rohu v cílové oblasti.|Levého horního rohu <xref:System.Windows.Controls.Primitives.Popup>.|  
 |<xref:System.Windows.Controls.Primitives.PlacementMode.Relative>|<xref:System.Windows.Controls.Primitives.Popup.PlacementTarget%2A> nebo nadřazený.|Cílový objekt nebo <xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A> Pokud je nastavena.  <xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A> Je relativní vzhledem k cílového objektu.|Levém horním rohu v cílové oblasti.|Levého horního rohu <xref:System.Windows.Controls.Primitives.Popup>.|  
 |<xref:System.Windows.Controls.Primitives.PlacementMode.RelativePoint>|<xref:System.Windows.Controls.Primitives.Popup.PlacementTarget%2A> nebo nadřazený.|Cílový objekt nebo <xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A> Pokud je nastavena.  <xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A> Je relativní vzhledem k cílového objektu.|Levém horním rohu v cílové oblasti.|Levého horního rohu <xref:System.Windows.Controls.Primitives.Popup>.|  
 |<xref:System.Windows.Controls.Primitives.PlacementMode.Right>|<xref:System.Windows.Controls.Primitives.Popup.PlacementTarget%2A> nebo nadřazený.|Cílový objekt nebo <xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A> Pokud je nastavena.  <xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A> Je relativní vzhledem k cílového objektu.|Pravém horním rohu v cílové oblasti.|Levého horního rohu <xref:System.Windows.Controls.Primitives.Popup>.|  
@@ -174,8 +170,7 @@ A <xref:System.Windows.Controls.Primitives.Popup> ovládací prvek zobrazí obsa
  Následující obrázek ukazuje, že když dolnímu okraji obrazovky skryje všechny nebo část <xref:System.Windows.Controls.Primitives.Popup>, bod zarovnání automaticky otevíraného okna je dolní části levého horního rohu <xref:System.Windows.Controls.Primitives.Popup>.  
   
  ![Nový bod zarovnání z důvodu dolnímu okraji obrazovky](./media/popup-placement-behavior/popup-placement-relative-point-screen-edge.png "automaticky otevírané okno, zaznamená dolního okraje obrazovky a změní bod zarovnání automaticky otevíraného okna.")  
- 
-  
+
  Následující obrázek ukazuje, že <xref:System.Windows.Controls.Primitives.Popup> je skrytý okraje pravé obrazovky bod zarovnání automaticky otevíraného okna je pravém horním rohu <xref:System.Windows.Controls.Primitives.Popup>.  
   
  ![Nový bod zarovnání automaticky otevíraného okna z důvodu okraji obrazovky](./media/popup-placement-behavior/popup-placement-relative-point-right-screen-edge.png "automaticky otevírané okno, zaznamená pravého okraje obrazovky a změní bod zarovnání automaticky otevíraného okna.")    
@@ -196,8 +191,7 @@ A <xref:System.Windows.Controls.Primitives.Popup> ovládací prvek zobrazí obsa
  Následující obrázek ukazuje, že <xref:System.Windows.Controls.Primitives.Popup.Placement%2A> je <xref:System.Windows.Controls.Primitives.PlacementMode.Right> a <xref:System.Windows.Controls.Primitives.Popup> narazí pravému okraji obrazovky, je cíl zdrojem levého horního rohu cílovou oblast a bod zarovnání automaticky otevíraného okna je pravém horním rohu <xref:System.Windows.Controls.Primitives.Popup>.  
   
  ![Nový bod zarovnání z důvodu pravému okraji obrazovky](./media/popup-placement-behavior/popup-placement-right-screen-edge.png "umístění je vpravo a automaticky otevírané okno, zaznamená pravého okraje obrazovky.")  
-  
-  
+
  Následující obrázek ukazuje, že <xref:System.Windows.Controls.Primitives.Popup.Placement%2A> je <xref:System.Windows.Controls.Primitives.PlacementMode.Top> a <xref:System.Windows.Controls.Primitives.Popup> narazí hornímu okraji obrazovky, je cíl zdrojem levého dolního rohu cílovou oblast a bod zarovnání automaticky otevíraného okna je levého horního rohu <xref:System.Windows.Controls.Primitives.Popup>.  
   
  ![Nový bod zarovnání z důvodu hornímu okraji obrazovky](./media/popup-placement-behavior/popup-placement-top-screen-edge.png "umístění je na nejvyšší úrovni a horním okrajem obrazovky, zaznamená automaticky otevíraného okna.")  
@@ -210,4 +204,5 @@ A <xref:System.Windows.Controls.Primitives.Popup> ovládací prvek zobrazí obsa
  Cílový bod zarovnání původu a automaticky otevíraného okna můžete přizpůsobit tak, že nastavíte <xref:System.Windows.Controls.Primitives.Popup.Placement%2A> vlastnost <xref:System.Windows.Controls.Primitives.PlacementMode.Custom>. Potom definujte <xref:System.Windows.Controls.Primitives.CustomPopupPlacementCallback> delegáta, který vrátí sadu bodů možná umístění a primární osy (v upřednostňovaném pořadí) pro <xref:System.Windows.Controls.Primitives.Popup>. Bod, který zobrazuje největší část <xref:System.Windows.Controls.Primitives.Popup> zaškrtnuto.  Pozice <xref:System.Windows.Controls.Primitives.Popup> se automaticky upraví, pokud <xref:System.Windows.Controls.Primitives.Popup> je skryt okraji obrazovky. Příklad najdete v tématu [určení vlastního překryvného umístění](how-to-specify-a-custom-popup-position.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Ukázka umístění automaticky otevíraného okna](https://github.com/dotnet/samples/tree/master/snippets/csharp/VS_Snippets_Wpf/PopupPositionSnippet/CS)

@@ -10,17 +10,16 @@ helpviewer_keywords:
 - documents [WPF], types of
 - documents [WPF], browser-viewable
 ms.assetid: 6e8db7bc-050a-4070-aa72-bb8c46e87ff8
-ms.openlocfilehash: 20d90f96647989be35bf2c9cdf6243e8e868cd1e
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
-ms.translationtype: MT
+ms.openlocfilehash: 9f948b6723d73dac6104439dcd6a42dce573c438
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57361366"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59169608"
 ---
 # <a name="documents-in-wpf"></a>Dokumenty v platformě WPF
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] nabízí širokou škálu funkce dokumentu, které umožňují vytvářet a věrného obsah, který je navržena jako snadno používaná a čtení než v předchozích generací [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)]. Kromě poznat široké možnosti a kvality [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] také poskytuje integrované služby pro zobrazení dokumentu, balení a zabezpečení. Toto téma obsahuje úvod do [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] typů dokumentů a balení dokumentů.  
-  
-  
+
 <a name="types_of_documents"></a>   
 ## <a name="types-of-documents"></a>Typy dokumentů  
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] dokumenty rozdělí do dvou rozsáhlých kategorií podle zamýšleného použití; Tyto kategorie dokumentu jsou označovány jako "oprava dokumentů" a "dokumenty toku."  
@@ -135,6 +134,7 @@ ms.locfileid: "57361366"
 -   Směrování přímo na dokumenty [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)]-kompatibilní tiskárny.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Documents.FixedDocument>
 - <xref:System.Windows.Documents.FlowDocument>
 - <xref:System.Windows.Xps.Packaging.XpsDocument>
@@ -145,4 +145,4 @@ ms.locfileid: "57361366"
 - [Text](optimizing-performance-text.md)
 - [Přehled toku dokumentů](flow-document-overview.md)
 - [Přehled tisku](printing-overview.md)
-- [Serializace a úložiště dokumentů](document-serialization-and-storage.md)
+- [Serializace a úložiště dokumentu](document-serialization-and-storage.md)

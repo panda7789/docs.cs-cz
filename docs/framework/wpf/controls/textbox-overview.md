@@ -5,18 +5,16 @@ helpviewer_keywords:
 - controls [WPF], TextBox
 - TextBox control [WPF], about TextBox control
 ms.assetid: 1ba6dc5b-11a7-4247-9213-36c6729ee35f
-ms.openlocfilehash: 5ddd6600493cd127f8024f23594c628476cac19e
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 577a12a0c04e5e3bfbfecb2c45263b684f0ffc17
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57361067"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59162643"
 ---
 # <a name="textbox-overview"></a>TextBox – přehled
 <xref:System.Windows.Controls.TextBox> Třída umožňuje zobrazení nebo úpravě neformátovaného textu. Běžně se používají <xref:System.Windows.Controls.TextBox> upravuje neformátovaného textu ve formuláři. Například byste použili atd formuláře s žádostí o uživatelské jméno, telefonní číslo, <xref:System.Windows.Controls.TextBox> ovládací prvky pro zadávání textu. Toto téma představuje <xref:System.Windows.Controls.TextBox> třídy a poskytuje příklady toho, jak ho použít v obou [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] a C#.  
-  
- 
-  
+
 <a name="textbox_or_richtextbox"></a>   
 ## <a name="textbox-or-richtextbox"></a>TextBox nebo RichTextBox?  
  Obě <xref:System.Windows.Controls.TextBox> a <xref:System.Windows.Controls.RichTextBox> umožňují uživatelům se vstupním textem, ale pro různé scénáře se používají dva ovládací prvky. A <xref:System.Windows.Controls.TextBox> vyžaduje míň systémových prostředků o <xref:System.Windows.Controls.RichTextBox> tak, aby byl ideální, pokud musí upravit pouze prostý text (tj. využívání ve formě). A <xref:System.Windows.Controls.RichTextBox> je lepší volbou, když je nutné pro uživatele k úpravě formátovaný text, obrázky, tabulky nebo jiné podporované obsahu. Například úpravy dokumentu, článek nebo blogu, který vyžaduje formátování, obrázky, etc se nejlépe provádí pomocí <xref:System.Windows.Controls.RichTextBox>. Následující tabulka shrnuje primární funkce <xref:System.Windows.Controls.TextBox> a <xref:System.Windows.Controls.TextBox>.  
@@ -68,5 +66,6 @@ ms.locfileid: "57361067"
  Obvykle <xref:System.Windows.Controls.Primitives.TextBoxBase.TextChanged> událost má použít k detekci vždy, když text v <xref:System.Windows.Controls.TextBox> nebo <xref:System.Windows.Controls.RichTextBox> změní, nikoli <xref:System.Windows.UIElement.KeyDown> podle očekávání. Zobrazit [rozpoznat při Text ve textového pole došlo ke změně](how-to-detect-when-text-in-a-textbox-has-changed.md) příklad.  
   
 ## <a name="see-also"></a>Viz také:
-- [Témata s postupy](textbox-how-to-topics.md)
+
+- [– postupy](textbox-how-to-topics.md)
 - [RichTextBox – přehled](richtextbox-overview.md)

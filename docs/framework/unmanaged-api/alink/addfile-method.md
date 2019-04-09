@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ec16776550765924e17de35674c5774212427e1a
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: 056d1ac0ffd3ad7fa7cb1f86ae13331ac38b3eff
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57498455"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59162212"
 ---
 # <a name="addfile-method"></a>AddFile – metoda
 Přidá soubory do sestavení. Lze použít také k vytvoření nevázaného moduly.  
@@ -62,6 +62,7 @@ HRESULT AddFile(
  Vyžaduje alink.h.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [IALink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
 - [IALink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
 - [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)

@@ -1,18 +1,18 @@
 ---
-title: Zabezpečení přístupu kódu a ADO.NET
+title: Zabezpečení přístupu ke kódu a ADO.NET
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 93e099eb-daa1-4f1e-b031-c1e10a996f88
-ms.openlocfilehash: af3fe9a233972e939dc14117fc08343bca9d5fd6
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
+ms.openlocfilehash: 6c26ae82939a3d011ecb7ecd97e162ab2f45cd48
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58411561"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59174106"
 ---
-# <a name="code-access-security-and-adonet"></a>Zabezpečení přístupu kódu a ADO.NET
+# <a name="code-access-security-and-adonet"></a>Zabezpečení přístupu ke kódu a ADO.NET
 Rozhraní .NET Framework poskytuje zabezpečení na základě rolí stejně jako zabezpečení přístupu kódu (CAS), které jsou implementovány pomocí společnou infrastrukturu pro zadaný modulem common language runtime (CLR). Většina aplikace na světě nespravovaného kódu jsou spouštěny s oprávnění uživatele nebo instanční objekt. V důsledku toho počítačových systémů může být poškozený a privátních dat dojde k ohrožení bezpečnosti při škodlivý nebo plný chyb softwaru je spuštěna uživatelem, se zvýšenými oprávněními.  
   
  Naopak spuštění spravovaného kódu v rozhraní .NET Framework zahrnuje zabezpečení přístupu kódu, která se vztahuje na samotný kód. Určuje, zda kód je moct spouštět, nebo není závisí na původu kódu nebo další aspekty identity kódu, nikoli jen identity objektu zabezpečení. Tím se snižuje pravděpodobnost, že spravovaná může potenciálně nebezpečného kódu.  
@@ -195,6 +195,7 @@ Failed, as expected: Request failed.
  Rozhraní .NET Framework podporuje také zpětnou kompatibilitu pro existující komponenty modelu COM s přístupem prostřednictvím zprostředkovatele komunikace s objekty COM. Komponenty modelu COM můžete začlenit do aplikace rozhraní .NET Framework pomocí nástroje vzájemné spolupráce COM k importování odpovídajících typů modelu COM. Po importu, typy modelu COM jsou připravené k použití. Komunikace s objekty COM také umožňuje klientům modelu COM pro export metadat sestavení na knihovnu typů a registraci spravované komponenty jako součást COM přístup k spravovaného kódu. Další informace najdete v tématu [rozšířená interoperabilita modelů COM](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bd9cdfyx).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Zabezpečení aplikací ADO.NET](../../../../docs/framework/data/adonet/securing-ado-net-applications.md)
 - [Zabezpečení v nativním kódu a kódu rozhraní .NET Framework](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/1787tk12(v=vs.100))
 - [Zabezpečení na základě rolí](../../../../docs/standard/security/role-based-security.md)

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - documents [WPF], tables
 - tables [WPF]
 ms.assetid: 5e1105f4-8fc4-473a-ba55-88c8e71386e6
-ms.openlocfilehash: 4abb6368946f9dac5fdefd6ca44f3adeed55f78f
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
-ms.translationtype: MT
+ms.openlocfilehash: eb16f633f78e9d345d20c93847e2c22173267960
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58410814"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59161431"
 ---
 # <a name="table-overview"></a>Přehled tabulky
 <xref:System.Windows.Documents.Table> je element úrovni bloku, který podporuje předložení mřížky plovoucího obsahu dokumentu. Flexibilita tohoto elementu je velmi užitečné, ale také umožňuje složitější pochopitelný a správně.  
@@ -176,7 +176,8 @@ ms.locfileid: "58410814"
  [!code-vb[TableSnippets#_TableAddFooterRow](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TableSnippets/VisualBasic/Table.vb#_tableaddfooterrow)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled toku dokumentů](flow-document-overview.md)
-- [Definice tabulky pomocí XAML](how-to-define-a-table-with-xaml.md)
+- [Definování tabulky pomocí jazyka XAML](how-to-define-a-table-with-xaml.md)
 - [Dokumenty v platformě WPF](documents-in-wpf.md)
 - [Použití elementů obsahu toku](how-to-use-flow-content-elements.md)

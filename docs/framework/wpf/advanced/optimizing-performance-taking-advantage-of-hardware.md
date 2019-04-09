@@ -9,12 +9,12 @@ helpviewer_keywords:
 - graphics [WPF], rendering tiers
 - software rendering pipeline [WPF]
 ms.assetid: bfb89bae-7aab-4cac-a26c-a956eda8fce2
-ms.openlocfilehash: 1e0050dbf6ec5ade22e3f09ceee66f69826e56df
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 683804acf43065543fa5d4ffb1a5ecf7e5b4c49a
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57374255"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59163173"
 ---
 # <a name="optimizing-performance-taking-advantage-of-hardware"></a>Optimalizace výkonu: Využití výhod hardwaru
 Interní architektury portálu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] má dvě vykreslování kanály, hardware a software. Toto téma obsahuje informace o těchto kanálech vykreslování můžete rozhodovat o optimalizaci výkonu vašich aplikací.  
@@ -55,6 +55,7 @@ Interní architektury portálu [!INCLUDE[TLA2#tla_winclient](../../../../include
  Další informace o [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vykreslování úrovně, naleznete v tématu [vrstvy vykreslování grafiky](graphics-rendering-tiers.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Optimalizace výkonu aplikace WPF](optimizing-wpf-application-performance.md)
 - [Plánování výkonu aplikace](planning-for-application-performance.md)
 - [Rozložení a návrh](optimizing-performance-layout-and-design.md)
@@ -63,4 +64,4 @@ Interní architektury portálu [!INCLUDE[TLA2#tla_winclient](../../../../include
 - [Prostředky aplikace](optimizing-performance-application-resources.md)
 - [Text](optimizing-performance-text.md)
 - [Datová vazba](optimizing-performance-data-binding.md)
-- [Další výkonnostní doporučení](optimizing-performance-other-recommendations.md)
+- [Další doporučení k optimalizaci výkonu](optimizing-performance-other-recommendations.md)

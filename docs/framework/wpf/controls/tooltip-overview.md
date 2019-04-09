@@ -8,18 +8,16 @@ helpviewer_keywords:
 - ToolTip control [WPF], about ToolTip control
 - controls [WPF], ToolTip
 ms.assetid: f06c1603-e9cb-4809-8a62-234607fc52f7
-ms.openlocfilehash: 745ac23d65248302940eed6db3b8b19748dfc00d
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 08b30d8be83ef9d814d17c5d4ec0c95a26bacdad
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57376322"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59170102"
 ---
 # <a name="tooltip-overview"></a>ToolTip – přehled
 Malého vyskakovacího okna, který se zobrazí, když uživatel pozastavení ukazatele myši nad prvkem, například jako více než je ovládací prvek tooltip <xref:System.Windows.Controls.Button>. Toto téma představuje popisek a popisuje, jak vytvořit a přizpůsobit obsah popisku.  
-  
- 
-  
+
 <a name="what_is_a_tooltip"></a>   
 ## <a name="what-is-a-tooltip"></a>Co je popisek?  
  Když uživatel přesune ukazatel myši nad prvkem, který má popisek, zobrazí se okno, které obsahuje popis obsah (například text, který popisuje funkce ovládacího prvku) pro určenou dobu. Pokud se uživatel přesune ukazatel myši mimo ovládací prvek, v okně zmizí, protože popisek obsah nemůže získat fokus.  
@@ -76,8 +74,9 @@ Malého vyskakovacího okna, který se zobrazí, když uživatel pozastavení uk
  [!code-xaml[ToolTipService#ToolTip](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml#tooltip)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Controls.ToolTipService>
 - <xref:System.Windows.Controls.ToolTip>
 - <xref:System.Windows.Controls.ToolTipEventArgs>
 - <xref:System.Windows.Controls.ToolTipEventHandler>
-- [Témata s postupy](tooltip-how-to-topics.md)
+- [– postupy](tooltip-how-to-topics.md)

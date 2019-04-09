@@ -11,12 +11,12 @@ helpviewer_keywords:
 - receiving data, using WebRequest class
 - Internet, requesting data
 ms.assetid: 368b8d0f-dc5e-4469-a8b8-b2adbf5dd800
-ms.openlocfilehash: df61b533801abc4c826d3e711228305c9452498a
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
-ms.translationtype: MT
+ms.openlocfilehash: 0a2d60a31b1875d948e07615e1613e2b163c15b5
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58819535"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59171051"
 ---
 # <a name="how-to-request-data-by-using-the-webrequest-class"></a>Postupy: Data žádosti pomocí třídy WebRequest
 Následující postup popisuje kroky pro žádost o prostředek, například webovou stránku nebo soubor, ze serveru. Prostředek musí být označeny identifikátorem URI.  
@@ -96,8 +96,8 @@ Následující příklad kódu ukazuje, jak vytvořit požadavek na webový serv
 [!code-csharp[RequestDataUsingWebRequest](../../../samples/snippets/csharp/VS_Snippets_Network/RequestDataUsingWebRequest/cs/WebRequestGetExample.cs)]
 [!code-vb[RequestDataUsingWebRequest](../../../samples/snippets/visualbasic/VS_Snippets_Network/RequestDataUsingWebRequest/vb/WebRequestGetExample.vb)]
 
-  
 ## <a name="see-also"></a>Viz také:
+
 - [Vytváření internetových žádostí](creating-internet-requests.md)
 - [Použití streamů v síti](using-streams-on-the-network.md)
 - [Přístup k Internetu prostřednictvím proxy serveru](accessing-the-internet-through-a-proxy.md)

@@ -2,12 +2,12 @@
 title: Kolekce schémat OLE DB
 ms.date: 03/30/2017
 ms.assetid: 6380c36b-658e-4d67-91e8-7131ef4a7c2c
-ms.openlocfilehash: f753f35aab0a0200da5de463a73abb9813253d11
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 6dc187b0a876d9e167a74f2381db156dde2764fe
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54658452"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59164681"
 ---
 # <a name="ole-db-schema-collections"></a>Kolekce schémat OLE DB
 Tato část popisuje kolekci podpora schématu pro zprostředkovatele OLE DB pro Microsoft SQL Server, Oracle a Microsoft Jet.  
@@ -76,7 +76,7 @@ Tato část popisuje kolekci podpora schématu pro zprostředkovatele OLE DB pro
 |COLUMN_LCID|Int32|  
 |COLUMN_COMPFLAGS|Int32|  
 |COLUMN_SORTID|Int32|  
-|COLUMN_TDSCOLLATION|Byte]|  
+|COLUMN_TDSCOLLATION|Byte[]|  
 |IS_COMPUTED|Boolean|  
   
 ### <a name="procedures"></a>Procedury  
@@ -412,4 +412,5 @@ Tato část popisuje kolekci podpora schématu pro zprostředkovatele OLE DB pro
 |INTEGROVANÉ|Boolean|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

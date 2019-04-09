@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 40a67826-e4df-4f59-a651-d9eb0fdc755d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 570cbd49fd8a8ea42d1c43ebe067a0d2d3f9dc27
-ms.sourcegitcommit: 68eb5c4928e2b082f178a42c16f73fedf52c2ab8
+ms.openlocfilehash: 364d28d5df8e284445d825fbbeb963c54b7b9e27
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/05/2019
-ms.locfileid: "59055232"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59176303"
 ---
 # <a name="how-to-determine-which-net-framework-versions-are-installed"></a>Postupy: Zjištění nainstalovaných verzí rozhraní .NET Framework
 
@@ -37,7 +37,6 @@ Rozhraní .NET Framework obsahuje dvě hlavní součásti, které mají samostat
 >
 > Další informace o verzích, najdete v části [rozhraní .NET Framework verze a závislosti](versions-and-dependencies.md).
 
-
 Pokud chcete získat seznam verzí rozhraní .NET Framework nainstalované na počítači, máte přístup k registru. Editor registru můžete použít buď k zobrazení registru nebo ji dotazovat s pomocí kódu:
  
 - Najdete novější verze rozhraní .NET Framework (4.5 a novější): 
@@ -54,7 +53,6 @@ Pokud chcete získat seznam verzí modulu CLR nainstalované v počítači, pomo
 - [Dotaz na třídu prostředí pomocí kódu](#clr_b)  
 
 Informace o zjišťování nainstalovaných aktualizací pro každou verzi rozhraní .NET Framework najdete v tématu [jak: Zjištění nainstalovaných aktualizací rozhraní .NET Framework](how-to-determine-which-net-framework-updates-are-installed.md). 
-  
 
 ## <a name="find-newer-net-framework-versions-45-and-later"></a>Najít novější verze rozhraní .NET Framework (4.5 a novější)
 
@@ -171,7 +169,6 @@ Následující příklad vyhledá rozhraní .NET Framework 1&#8211;4 verze, kter
 [!code-csharp[ListVersions](../../../samples/snippets/csharp/framework/migration-guide/versions-installed1.cs)]
 [!code-vb[ListVersions](../../../samples/snippets/visualbasic/framework/migration-guide/versions-installed1.vb)]
 
-
 ## <a name="find-clr-versions"></a>Najít verze CLR
   
 <a name="clr_a"></a> 
@@ -208,8 +205,6 @@ Použití [nástroj CLR Version (Clrver.exe)](../tools/clrver-exe-clr-version-to
    - Nezletilý release identifikátor (například *0* pro verzi 4.0), použijte <xref:System.Version.Minor%2A?displayProperty=nameWithType> vlastnost.
 
    - Pro celého řetězci verze (například *4.0.30319.18010*), použijte <xref:System.Version.ToString%2A?displayProperty=nameWithType> metody. Tato metoda vrátí jednu hodnotu, která odpovídá verzi modulu runtime, který se spouští kód. Nevrací se verze sestavení ani jiné verze modulu runtime, které mohou být nainstalovány v počítači.
-
-
 
 V následujícím příkladu <xref:System.Environment.Version%2A?displayProperty=nameWithType> vlastnost pro načtení informací o verzi modulu CLR:
 

@@ -5,12 +5,12 @@ helpviewer_keywords:
 - controls [WPF], DatePicker
 - DatePicker control [WPF]
 ms.assetid: 619765c8-8d25-4315-aec2-79aea08fed9f
-ms.openlocfilehash: a135188b2c573a578aa5b6be4910e6d02471aee1
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 555bf31b27ba233ffa54438077984b02b5e3084a
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57362250"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59161331"
 ---
 # <a name="datepicker"></a>DatePicker
 <xref:System.Windows.Controls.DatePicker> Ovládací prvek umožňuje uživateli vybrat datum zadáním buď do textového pole, nebo pomocí rozevíracího seznamu <xref:System.Windows.Controls.Calendar> ovládacího prvku.  
@@ -25,5 +25,6 @@ Ovládací prvek DatePicker
  Uživatelé mohou zadat data přímo do textové pole, které nastaví <xref:System.Windows.Controls.DatePicker.Text%2A> vlastnost. Pokud <xref:System.Windows.Controls.DatePicker> zadaný řetězec nelze převést na platné datum <xref:System.Windows.Controls.DatePicker.DateValidationError> událost se vyvolá. Ve výchozím nastavení, to způsobí výjimku, ale obslužnou rutinu události pro <xref:System.Windows.Controls.DatePicker.DateValidationError> můžete nastavit <xref:System.Windows.Controls.DatePickerDateValidationErrorEventArgs.ThrowException%2A> vlastnost `false` a zakázat výjimku vyvolána.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Ovládací prvky](index.md)
 - [Styly a šablony](styling-and-templating.md)
