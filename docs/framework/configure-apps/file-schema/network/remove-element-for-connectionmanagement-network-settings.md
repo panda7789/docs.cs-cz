@@ -1,5 +1,5 @@
 ---
-title: <remove> – element pro element connectionManagement (nastavení sítě)
+title: <remove> – Element pro connectionManagement (nastavení sítě)
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/connectionManagement/remove
@@ -10,22 +10,22 @@ helpviewer_keywords:
 - <connectionManagement>, remove element
 - remove element, connectionManagement
 ms.assetid: 94b81775-5a22-4975-8c47-8620c40c3f35
-ms.openlocfilehash: 62f7793c8f25f4803e881e2f183c99c62000ca23
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: d9c584fb2faa971e7ce1ca287a94c8c6129820fd
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55270507"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59158857"
 ---
-# <a name="remove-element-for-connectionmanagement-network-settings"></a><span data-ttu-id="93fc5-102">\<Odebrat > – Element pro connectionManagement (nastavení sítě)</span><span class="sxs-lookup"><span data-stu-id="93fc5-102">\<remove> Element for connectionManagement (Network Settings)</span></span>
-<span data-ttu-id="93fc5-103">Odebere ze seznamu pro správu připojení IP adresu nebo název DNS.</span><span class="sxs-lookup"><span data-stu-id="93fc5-103">Removes an IP address or DNS name from the connection management list.</span></span>  
+# <a name="remove-element-for-connectionmanagement-network-settings"></a><span data-ttu-id="fb313-102">\<Odebrat > – Element pro connectionManagement (nastavení sítě)</span><span class="sxs-lookup"><span data-stu-id="fb313-102">\<remove> Element for connectionManagement (Network Settings)</span></span>
+<span data-ttu-id="fb313-103">Odebere ze seznamu pro správu připojení IP adresu nebo název DNS.</span><span class="sxs-lookup"><span data-stu-id="fb313-103">Removes an IP address or DNS name from the connection management list.</span></span>  
   
- <span data-ttu-id="93fc5-104">\<Konfigurace ></span><span class="sxs-lookup"><span data-stu-id="93fc5-104">\<configuration></span></span>  
-<span data-ttu-id="93fc5-105">\<system.net></span><span class="sxs-lookup"><span data-stu-id="93fc5-105">\<system.net></span></span>  
-<span data-ttu-id="93fc5-106">\<connectionManagement></span><span class="sxs-lookup"><span data-stu-id="93fc5-106">\<connectionManagement></span></span>  
-<span data-ttu-id="93fc5-107">\<remove></span><span class="sxs-lookup"><span data-stu-id="93fc5-107">\<remove></span></span>  
+ <span data-ttu-id="fb313-104">\<Konfigurace ></span><span class="sxs-lookup"><span data-stu-id="fb313-104">\<configuration></span></span>  
+<span data-ttu-id="fb313-105">\<system.net></span><span class="sxs-lookup"><span data-stu-id="fb313-105">\<system.net></span></span>  
+<span data-ttu-id="fb313-106">\<connectionManagement></span><span class="sxs-lookup"><span data-stu-id="fb313-106">\<connectionManagement></span></span>  
+<span data-ttu-id="fb313-107">\<remove></span><span class="sxs-lookup"><span data-stu-id="fb313-107">\<remove></span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="93fc5-108">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="93fc5-108">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="fb313-108">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="fb313-108">Syntax</span></span>  
   
 ```xml  
 <remove   
@@ -33,34 +33,34 @@ ms.locfileid: "55270507"
 />  
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="93fc5-109">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="93fc5-109">Attributes and Elements</span></span>  
- <span data-ttu-id="93fc5-110">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="93fc5-110">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="fb313-109">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="fb313-109">Attributes and Elements</span></span>  
+ <span data-ttu-id="fb313-110">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="fb313-110">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="93fc5-111">Atributy</span><span class="sxs-lookup"><span data-stu-id="93fc5-111">Attributes</span></span>  
+### <a name="attributes"></a><span data-ttu-id="fb313-111">Atributy</span><span class="sxs-lookup"><span data-stu-id="fb313-111">Attributes</span></span>  
   
-|<span data-ttu-id="93fc5-112">**Atribut**</span><span class="sxs-lookup"><span data-stu-id="93fc5-112">**Attribute**</span></span>|<span data-ttu-id="93fc5-113">**Popis**</span><span class="sxs-lookup"><span data-stu-id="93fc5-113">**Description**</span></span>|  
+|**<span data-ttu-id="fb313-112">Atribut</span><span class="sxs-lookup"><span data-stu-id="fb313-112">Attribute</span></span>**|**<span data-ttu-id="fb313-113">Popis</span><span class="sxs-lookup"><span data-stu-id="fb313-113">Description</span></span>**|  
 |-------------------|---------------------|  
-|`address`|<span data-ttu-id="93fc5-114">IP adresa nebo název DNS.</span><span class="sxs-lookup"><span data-stu-id="93fc5-114">An IP address or DNS name.</span></span>|  
+|`address`|<span data-ttu-id="fb313-114">IP adresa nebo název DNS.</span><span class="sxs-lookup"><span data-stu-id="fb313-114">An IP address or DNS name.</span></span>|  
   
-### <a name="child-elements"></a><span data-ttu-id="93fc5-115">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="93fc5-115">Child Elements</span></span>  
- <span data-ttu-id="93fc5-116">Žádné</span><span class="sxs-lookup"><span data-stu-id="93fc5-116">None.</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="fb313-115">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="fb313-115">Child Elements</span></span>  
+ <span data-ttu-id="fb313-116">Žádné</span><span class="sxs-lookup"><span data-stu-id="fb313-116">None.</span></span>  
   
-### <a name="parent-elements"></a><span data-ttu-id="93fc5-117">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="93fc5-117">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="fb313-117">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="fb313-117">Parent Elements</span></span>  
   
-|<span data-ttu-id="93fc5-118">**Element**</span><span class="sxs-lookup"><span data-stu-id="93fc5-118">**Element**</span></span>|<span data-ttu-id="93fc5-119">**Popis**</span><span class="sxs-lookup"><span data-stu-id="93fc5-119">**Description**</span></span>|  
+|**<span data-ttu-id="fb313-118">Prvek</span><span class="sxs-lookup"><span data-stu-id="fb313-118">Element</span></span>**|**<span data-ttu-id="fb313-119">Popis</span><span class="sxs-lookup"><span data-stu-id="fb313-119">Description</span></span>**|  
 |-----------------|---------------------|  
-|[<span data-ttu-id="93fc5-120">connectionManagement</span><span class="sxs-lookup"><span data-stu-id="93fc5-120">connectionManagement</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/connectionmanagement-element-network-settings.md)|<span data-ttu-id="93fc5-121">Určuje maximální počet připojení k síti hostitele.</span><span class="sxs-lookup"><span data-stu-id="93fc5-121">Specifies the maximum number of connections to a network host.</span></span>|  
+|[<span data-ttu-id="fb313-120">connectionManagement</span><span class="sxs-lookup"><span data-stu-id="fb313-120">connectionManagement</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/connectionmanagement-element-network-settings.md)|<span data-ttu-id="fb313-121">Určuje maximální počet připojení k síti hostitele.</span><span class="sxs-lookup"><span data-stu-id="fb313-121">Specifies the maximum number of connections to a network host.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="93fc5-122">Poznámky</span><span class="sxs-lookup"><span data-stu-id="93fc5-122">Remarks</span></span>  
- <span data-ttu-id="93fc5-123">`remove` Element odstraní položku seznamu správy připojení na určeném serveru.</span><span class="sxs-lookup"><span data-stu-id="93fc5-123">The `remove` element removes the connection management list entry for the specified server.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="fb313-122">Poznámky</span><span class="sxs-lookup"><span data-stu-id="fb313-122">Remarks</span></span>  
+ <span data-ttu-id="fb313-123">`remove` Element odstraní položku seznamu správy připojení na určeném serveru.</span><span class="sxs-lookup"><span data-stu-id="fb313-123">The `remove` element removes the connection management list entry for the specified server.</span></span>  
   
- <span data-ttu-id="93fc5-124">Hodnota `address` atribut by měl mít platnou IP adresu nebo název hostitele.</span><span class="sxs-lookup"><span data-stu-id="93fc5-124">The value of the `address` attribute should be a valid IP address or host name.</span></span>  
+ <span data-ttu-id="fb313-124">Hodnota `address` atribut by měl mít platnou IP adresu nebo název hostitele.</span><span class="sxs-lookup"><span data-stu-id="fb313-124">The value of the `address` attribute should be a valid IP address or host name.</span></span>  
   
-## <a name="configuration-files"></a><span data-ttu-id="93fc5-125">Konfigurační soubory</span><span class="sxs-lookup"><span data-stu-id="93fc5-125">Configuration Files</span></span>  
- <span data-ttu-id="93fc5-126">Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).</span><span class="sxs-lookup"><span data-stu-id="93fc5-126">This element can be used in the application configuration file or the machine configuration file (Machine.config).</span></span>  
+## <a name="configuration-files"></a><span data-ttu-id="fb313-125">Konfigurační soubory</span><span class="sxs-lookup"><span data-stu-id="fb313-125">Configuration Files</span></span>  
+ <span data-ttu-id="fb313-126">Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).</span><span class="sxs-lookup"><span data-stu-id="fb313-126">This element can be used in the application configuration file or the machine configuration file (Machine.config).</span></span>  
   
-## <a name="example"></a><span data-ttu-id="93fc5-127">Příklad</span><span class="sxs-lookup"><span data-stu-id="93fc5-127">Example</span></span>  
- <span data-ttu-id="93fc5-128">Následující příklad odebere všechny položky seznamu správu připojení pro server `www.adventure-works.com` a pak nakonfiguruje aplikaci pro použití čtyř připojení k serveru `www.contoso.com` a dvě spojení na všechny ostatní servery.</span><span class="sxs-lookup"><span data-stu-id="93fc5-128">The following example removes any connection management list entries for the server `www.adventure-works.com` and then configures an application to use four connections to the server `www.contoso.com` and two connections to all other servers.</span></span>  
+## <a name="example"></a><span data-ttu-id="fb313-127">Příklad</span><span class="sxs-lookup"><span data-stu-id="fb313-127">Example</span></span>  
+ <span data-ttu-id="fb313-128">Následující příklad odebere všechny položky seznamu správu připojení pro server `www.adventure-works.com` a pak nakonfiguruje aplikaci pro použití čtyř připojení k serveru `www.contoso.com` a dvě spojení na všechny ostatní servery.</span><span class="sxs-lookup"><span data-stu-id="fb313-128">The following example removes any connection management list entries for the server `www.adventure-works.com` and then configures an application to use four connections to the server `www.contoso.com` and two connections to all other servers.</span></span>  
   
 ```xml  
 <configuration>  
@@ -74,7 +74,8 @@ ms.locfileid: "55270507"
 </configuration>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="93fc5-129">Viz také:</span><span class="sxs-lookup"><span data-stu-id="93fc5-129">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="fb313-129">Viz také:</span><span class="sxs-lookup"><span data-stu-id="fb313-129">See also</span></span>
+
 - <xref:System.Net.ServicePoint>
 - <xref:System.Net.ServicePointManager>
-- [<span data-ttu-id="93fc5-130">Schéma nastavení sítě</span><span class="sxs-lookup"><span data-stu-id="93fc5-130">Network Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+- [<span data-ttu-id="fb313-130">Schéma nastavení sítě</span><span class="sxs-lookup"><span data-stu-id="fb313-130">Network Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

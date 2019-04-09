@@ -9,19 +9,19 @@ helpviewer_keywords:
 - customizing time-based cache policies
 - cache [.NET Framework], time-based policies
 ms.assetid: 8d84f936-2376-4356-9264-03162e0f9279
-ms.openlocfilehash: 9d1eef073588f45e70170fcf46766b53f99bed8a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d4a35882d99a87ca5bf22fb386a87158e3c2d664
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54505803"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59154567"
 ---
-# <a name="how-to-customize-a-time-based-cache-policy"></a><span data-ttu-id="a18b8-102">Postupy: Přizpůsobení zásad mezipaměti na základě času</span><span class="sxs-lookup"><span data-stu-id="a18b8-102">How to: Customize a Time-Based Cache Policy</span></span>
-<span data-ttu-id="a18b8-103">Při vytváření zásad mezipaměti na základě času, můžete přizpůsobit chování ukládání do mezipaměti tak, že zadáte hodnoty pro maximální stáří, minimální novost, maximální neaktuálnost nebo datum synchronizace mezipaměti.</span><span class="sxs-lookup"><span data-stu-id="a18b8-103">When creating a time-based cache policy, you can customize caching behavior by specifying values for maximum age, minimum freshness, maximum staleness, or cache synchronization date.</span></span> <span data-ttu-id="a18b8-104"><xref:System.Net.Cache.HttpRequestCachePolicy> Objekt, který poskytuje několik konstruktorů, které vám umožňují určit platné kombinace těchto hodnot.</span><span class="sxs-lookup"><span data-stu-id="a18b8-104">The <xref:System.Net.Cache.HttpRequestCachePolicy> object provides several constructors that allow you to specify valid combinations of these values.</span></span>  
+# <a name="how-to-customize-a-time-based-cache-policy"></a><span data-ttu-id="badc5-102">Postupy: Přizpůsobení zásad mezipaměti na základě času</span><span class="sxs-lookup"><span data-stu-id="badc5-102">How to: Customize a Time-Based Cache Policy</span></span>
+<span data-ttu-id="badc5-103">Při vytváření zásad mezipaměti na základě času, můžete přizpůsobit chování ukládání do mezipaměti tak, že zadáte hodnoty pro maximální stáří, minimální novost, maximální neaktuálnost nebo datum synchronizace mezipaměti.</span><span class="sxs-lookup"><span data-stu-id="badc5-103">When creating a time-based cache policy, you can customize caching behavior by specifying values for maximum age, minimum freshness, maximum staleness, or cache synchronization date.</span></span> <span data-ttu-id="badc5-104"><xref:System.Net.Cache.HttpRequestCachePolicy> Objekt, který poskytuje několik konstruktorů, které vám umožňují určit platné kombinace těchto hodnot.</span><span class="sxs-lookup"><span data-stu-id="badc5-104">The <xref:System.Net.Cache.HttpRequestCachePolicy> object provides several constructors that allow you to specify valid combinations of these values.</span></span>  
   
-### <a name="to-create-a-time-based-cache-policy-that-uses-a-cache-synchronization-date"></a><span data-ttu-id="a18b8-105">Vytvoření zásad mezipaměti na základě času, který používá data synchronizaci mezipaměti</span><span class="sxs-lookup"><span data-stu-id="a18b8-105">To create a time-based cache policy that uses a cache synchronization date</span></span>  
+### <a name="to-create-a-time-based-cache-policy-that-uses-a-cache-synchronization-date"></a><span data-ttu-id="badc5-105">Vytvoření zásad mezipaměti na základě času, který používá data synchronizaci mezipaměti</span><span class="sxs-lookup"><span data-stu-id="badc5-105">To create a time-based cache policy that uses a cache synchronization date</span></span>  
   
--   <span data-ttu-id="a18b8-106">Vytvoření zásady mezipaměti na základě času, který používá data synchronizaci mezipaměti předáním <xref:System.DateTime> objektu <xref:System.Net.Cache.HttpRequestCachePolicy> konstruktoru.</span><span class="sxs-lookup"><span data-stu-id="a18b8-106">Create a time-based cache policy that uses a cache synchronization date by passing a <xref:System.DateTime> object to the <xref:System.Net.Cache.HttpRequestCachePolicy> constructor.</span></span>  
+-   <span data-ttu-id="badc5-106">Vytvoření zásady mezipaměti na základě času, který používá data synchronizaci mezipaměti předáním <xref:System.DateTime> objektu <xref:System.Net.Cache.HttpRequestCachePolicy> konstruktoru.</span><span class="sxs-lookup"><span data-stu-id="badc5-106">Create a time-based cache policy that uses a cache synchronization date by passing a <xref:System.DateTime> object to the <xref:System.Net.Cache.HttpRequestCachePolicy> constructor.</span></span>  
   
     ```csharp  
     public static HttpRequestCachePolicy CreateLastSyncPolicy(DateTime when)  
@@ -43,16 +43,16 @@ ms.locfileid: "54505803"
     End Function  
     ```  
   
- <span data-ttu-id="a18b8-107">Výstup je podobný následujícímu:</span><span class="sxs-lookup"><span data-stu-id="a18b8-107">The output is similar to the following:</span></span>  
+ <span data-ttu-id="badc5-107">Výstup je podobný následujícímu:</span><span class="sxs-lookup"><span data-stu-id="badc5-107">The output is similar to the following:</span></span>  
   
 ```  
 When: 1/14/2004 8:07:30 AM  
 Level:Default CacheSyncDate:1/14/2004 8:07:30 AM  
 ```  
   
-### <a name="to-create-a-time-based-cache-policy-that-is-based-on-minimum-freshness"></a><span data-ttu-id="a18b8-108">Vytvoření zásad mezipaměti na základě času, který je založen na minimální novost</span><span class="sxs-lookup"><span data-stu-id="a18b8-108">To create a time-based cache policy that is based on minimum freshness</span></span>  
+### <a name="to-create-a-time-based-cache-policy-that-is-based-on-minimum-freshness"></a><span data-ttu-id="badc5-108">Vytvoření zásad mezipaměti na základě času, který je založen na minimální novost</span><span class="sxs-lookup"><span data-stu-id="badc5-108">To create a time-based cache policy that is based on minimum freshness</span></span>  
   
--   <span data-ttu-id="a18b8-109">Vytvoření zásady mezipaměti na základě času, který je založen na minimální novost zadáním <xref:System.Net.Cache.HttpCacheAgeControl.MinFresh> jako `cacheAgeControl` hodnotu parametru a předávání <xref:System.TimeSpan> objektu <xref:System.Net.Cache.HttpRequestCachePolicy> konstruktoru.</span><span class="sxs-lookup"><span data-stu-id="a18b8-109">Create a time-based cache policy that is based on minimum freshness by specifying <xref:System.Net.Cache.HttpCacheAgeControl.MinFresh> as the `cacheAgeControl` parameter value and passing a <xref:System.TimeSpan> object to the <xref:System.Net.Cache.HttpRequestCachePolicy> constructor.</span></span>  
+-   <span data-ttu-id="badc5-109">Vytvoření zásady mezipaměti na základě času, který je založen na minimální novost zadáním <xref:System.Net.Cache.HttpCacheAgeControl.MinFresh> jako `cacheAgeControl` hodnotu parametru a předávání <xref:System.TimeSpan> objektu <xref:System.Net.Cache.HttpRequestCachePolicy> konstruktoru.</span><span class="sxs-lookup"><span data-stu-id="badc5-109">Create a time-based cache policy that is based on minimum freshness by specifying <xref:System.Net.Cache.HttpCacheAgeControl.MinFresh> as the `cacheAgeControl` parameter value and passing a <xref:System.TimeSpan> object to the <xref:System.Net.Cache.HttpRequestCachePolicy> constructor.</span></span>  
   
     ```csharp  
     public static HttpRequestCachePolicy CreateMinFreshPolicy(TimeSpan span)  
@@ -72,7 +72,7 @@ Level:Default CacheSyncDate:1/14/2004 8:07:30 AM
     End Function  
     ```  
   
- <span data-ttu-id="a18b8-110">Následující volání:</span><span class="sxs-lookup"><span data-stu-id="a18b8-110">For the following invocation:</span></span>  
+ <span data-ttu-id="badc5-110">Následující volání:</span><span class="sxs-lookup"><span data-stu-id="badc5-110">For the following invocation:</span></span>  
   
 ```  
 CreateMinFreshPolicy(new TimeSpan(1,0,0));  
@@ -82,9 +82,9 @@ CreateMinFreshPolicy(new TimeSpan(1,0,0));
 Level:Default MinFresh:3600  
 ```  
   
-### <a name="to-create-a-time-based-cache-policy-that-is-based-on-minimum-freshness-and-maximum-age"></a><span data-ttu-id="a18b8-111">Vytvoření zásad mezipaměti na základě času, který je založen na aktuálnosti minimální a maximální stáří</span><span class="sxs-lookup"><span data-stu-id="a18b8-111">To create a time-based cache policy that is based on minimum freshness and maximum age</span></span>  
+### <a name="to-create-a-time-based-cache-policy-that-is-based-on-minimum-freshness-and-maximum-age"></a><span data-ttu-id="badc5-111">Vytvoření zásad mezipaměti na základě času, který je založen na aktuálnosti minimální a maximální stáří</span><span class="sxs-lookup"><span data-stu-id="badc5-111">To create a time-based cache policy that is based on minimum freshness and maximum age</span></span>  
   
--   <span data-ttu-id="a18b8-112">Vytvoření zásady mezipaměti na základě času, který je založen na aktuálnosti minimální a maximální stáří zadáním <xref:System.Net.Cache.HttpCacheAgeControl.MaxAgeAndMinFresh> jako `cacheAgeControl` hodnotu parametru a předání dvou <xref:System.TimeSpan> objektů <xref:System.Net.Cache.HttpRequestCachePolicy> konstruktor, chcete-li určit maximální stáří prostředky a druhý k určení minimální novost povolené pro objekt vrácený z mezipaměti.</span><span class="sxs-lookup"><span data-stu-id="a18b8-112">Create a time-based cache policy that is based on minimum freshness and maximum age by specifying <xref:System.Net.Cache.HttpCacheAgeControl.MaxAgeAndMinFresh> as the `cacheAgeControl` parameter value and passing two <xref:System.TimeSpan> objects to the <xref:System.Net.Cache.HttpRequestCachePolicy> constructor, one to specify the maximum age for resources and a second to specify the minimum freshness permitted for an object returned from the cache.</span></span>  
+-   <span data-ttu-id="badc5-112">Vytvoření zásady mezipaměti na základě času, který je založen na aktuálnosti minimální a maximální stáří zadáním <xref:System.Net.Cache.HttpCacheAgeControl.MaxAgeAndMinFresh> jako `cacheAgeControl` hodnotu parametru a předání dvou <xref:System.TimeSpan> objektů <xref:System.Net.Cache.HttpRequestCachePolicy> konstruktor, chcete-li určit maximální stáří prostředky a druhý k určení minimální novost povolené pro objekt vrácený z mezipaměti.</span><span class="sxs-lookup"><span data-stu-id="badc5-112">Create a time-based cache policy that is based on minimum freshness and maximum age by specifying <xref:System.Net.Cache.HttpCacheAgeControl.MaxAgeAndMinFresh> as the `cacheAgeControl` parameter value and passing two <xref:System.TimeSpan> objects to the <xref:System.Net.Cache.HttpRequestCachePolicy> constructor, one to specify the maximum age for resources and a second to specify the minimum freshness permitted for an object returned from the cache.</span></span>  
   
     ```csharp  
     public static HttpRequestCachePolicy CreateFreshAndAgePolicy(TimeSpan freshMinimum, TimeSpan ageMaximum)  
@@ -104,7 +104,7 @@ Level:Default MinFresh:3600
     End Function  
     ```  
   
- <span data-ttu-id="a18b8-113">Následující volání:</span><span class="sxs-lookup"><span data-stu-id="a18b8-113">For the following invocation:</span></span>  
+ <span data-ttu-id="badc5-113">Následující volání:</span><span class="sxs-lookup"><span data-stu-id="badc5-113">For the following invocation:</span></span>  
   
 ```  
 CreateFreshAndAgePolicy(new TimeSpan(5,0,0), new TimeSpan(10,0,0));  
@@ -114,9 +114,10 @@ CreateFreshAndAgePolicy(new TimeSpan(5,0,0), new TimeSpan(10,0,0));
 Level:Default MaxAge:36000 MinFresh:18000  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="a18b8-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="a18b8-114">See also</span></span>
-- [<span data-ttu-id="a18b8-115">Správa mezipaměti pro síťové aplikace</span><span class="sxs-lookup"><span data-stu-id="a18b8-115">Cache Management for Network Applications</span></span>](../../../docs/framework/network-programming/cache-management-for-network-applications.md)
-- [<span data-ttu-id="a18b8-116">Zásady mezipaměti</span><span class="sxs-lookup"><span data-stu-id="a18b8-116">Cache Policy</span></span>](../../../docs/framework/network-programming/cache-policy.md)
-- [<span data-ttu-id="a18b8-117">Zásady mezipaměti na základě místa</span><span class="sxs-lookup"><span data-stu-id="a18b8-117">Location-Based Cache Policies</span></span>](../../../docs/framework/network-programming/location-based-cache-policies.md)
-- [<span data-ttu-id="a18b8-118">Zásady mezipaměti na základě času</span><span class="sxs-lookup"><span data-stu-id="a18b8-118">Time-Based Cache Policies</span></span>](../../../docs/framework/network-programming/time-based-cache-policies.md)
-- [<span data-ttu-id="a18b8-119">\<requestCaching – > – Element (nastavení sítě)</span><span class="sxs-lookup"><span data-stu-id="a18b8-119">\<requestCaching> Element (Network Settings)</span></span>](../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)
+## <a name="see-also"></a><span data-ttu-id="badc5-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="badc5-114">See also</span></span>
+
+- [<span data-ttu-id="badc5-115">Správa mezipaměti pro síťové aplikace</span><span class="sxs-lookup"><span data-stu-id="badc5-115">Cache Management for Network Applications</span></span>](../../../docs/framework/network-programming/cache-management-for-network-applications.md)
+- [<span data-ttu-id="badc5-116">Zásady mezipaměti</span><span class="sxs-lookup"><span data-stu-id="badc5-116">Cache Policy</span></span>](../../../docs/framework/network-programming/cache-policy.md)
+- [<span data-ttu-id="badc5-117">Zásady mezipaměti na základě umístění</span><span class="sxs-lookup"><span data-stu-id="badc5-117">Location-Based Cache Policies</span></span>](../../../docs/framework/network-programming/location-based-cache-policies.md)
+- [<span data-ttu-id="badc5-118">Zásady mezipaměti na základě času</span><span class="sxs-lookup"><span data-stu-id="badc5-118">Time-Based Cache Policies</span></span>](../../../docs/framework/network-programming/time-based-cache-policies.md)
+- [<span data-ttu-id="badc5-119">\<requestCaching – > – Element (nastavení sítě)</span><span class="sxs-lookup"><span data-stu-id="badc5-119">\<requestCaching> Element (Network Settings)</span></span>](../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)

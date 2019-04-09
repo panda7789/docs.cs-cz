@@ -16,16 +16,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9fed280e4192e900b02e7abe2b0550817645c1ba
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 88f3c270d2ab0adc0b683fda0e0f4bc1d474fb09
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56964923"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59144141"
 ---
-# <a name="icordebugerrorinfoenum-interface"></a><span data-ttu-id="3f4c1-102">ICorDebugErrorInfoEnum – rozhraní</span><span class="sxs-lookup"><span data-stu-id="3f4c1-102">ICorDebugErrorInfoEnum Interface</span></span>
+# <a name="icordebugerrorinfoenum-interface"></a><span data-ttu-id="e1831-102">ICorDebugErrorInfoEnum – rozhraní</span><span class="sxs-lookup"><span data-stu-id="e1831-102">ICorDebugErrorInfoEnum Interface</span></span>
 
-<span data-ttu-id="3f4c1-103">`ICorDebugErrorInfoEnum` je zastaralý.</span><span class="sxs-lookup"><span data-stu-id="3f4c1-103">`ICorDebugErrorInfoEnum` is obsolete.</span></span> <span data-ttu-id="3f4c1-104">Toto rozhraní nepoužívejte.</span><span class="sxs-lookup"><span data-stu-id="3f4c1-104">Do not use this interface.</span></span>  
+`ICorDebugErrorInfoEnum` <span data-ttu-id="e1831-103">je zastaralý.</span><span class="sxs-lookup"><span data-stu-id="e1831-103">is obsolete.</span></span> <span data-ttu-id="e1831-104">Toto rozhraní nepoužívejte.</span><span class="sxs-lookup"><span data-stu-id="e1831-104">Do not use this interface.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="3f4c1-105">Viz také:</span><span class="sxs-lookup"><span data-stu-id="3f4c1-105">See also</span></span>
-- [<span data-ttu-id="3f4c1-106">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="3f4c1-106">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+## <a name="see-also"></a><span data-ttu-id="e1831-105">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e1831-105">See also</span></span>
+
+- [<span data-ttu-id="e1831-106">Debugging – rozhraní</span><span class="sxs-lookup"><span data-stu-id="e1831-106">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

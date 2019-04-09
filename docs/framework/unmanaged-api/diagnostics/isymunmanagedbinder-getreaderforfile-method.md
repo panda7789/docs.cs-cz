@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 53558e1b76d5bb22ff2af3b8d7d9e4006072775b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 0414cadca910f3290f96a841e3f807f0de469606
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54734281"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59145961"
 ---
-# <a name="isymunmanagedbindergetreaderforfile-method"></a><span data-ttu-id="fdbd3-102">ISymUnmanagedBinder::GetReaderForFile – metoda</span><span class="sxs-lookup"><span data-stu-id="fdbd3-102">ISymUnmanagedBinder::GetReaderForFile Method</span></span>
-<span data-ttu-id="fdbd3-103">Rozhraní metadat a název souboru, vrátí správné [isymunmanagedreader –](isymunmanagedreader-interface.md) rozhraní, které budou číst symboly ladění, které jsou spojené s modulem.</span><span class="sxs-lookup"><span data-stu-id="fdbd3-103">Given a metadata interface and a file name, returns the correct [ISymUnmanagedReader](isymunmanagedreader-interface.md) interface that will read the debugging symbols associated with the module.</span></span>  
+# <a name="isymunmanagedbindergetreaderforfile-method"></a><span data-ttu-id="9d69e-102">ISymUnmanagedBinder::GetReaderForFile – metoda</span><span class="sxs-lookup"><span data-stu-id="9d69e-102">ISymUnmanagedBinder::GetReaderForFile Method</span></span>
+<span data-ttu-id="9d69e-103">Rozhraní metadat a název souboru, vrátí správné [isymunmanagedreader –](isymunmanagedreader-interface.md) rozhraní, které budou číst symboly ladění, které jsou spojené s modulem.</span><span class="sxs-lookup"><span data-stu-id="9d69e-103">Given a metadata interface and a file name, returns the correct [ISymUnmanagedReader](isymunmanagedreader-interface.md) interface that will read the debugging symbols associated with the module.</span></span>  
   
- <span data-ttu-id="fdbd3-104">Tato metoda se otevře soubor databáze (PDB) programu, pouze v případě, že je vedle spustitelný soubor.</span><span class="sxs-lookup"><span data-stu-id="fdbd3-104">This method will open the program database (PDB) file only if it is next to the executable file.</span></span> <span data-ttu-id="fdbd3-105">Tato změna byla provedena z bezpečnostních důvodů.</span><span class="sxs-lookup"><span data-stu-id="fdbd3-105">This change has been made for security purposes.</span></span> <span data-ttu-id="fdbd3-106">Pokud potřebujete širší vyhledejte soubor PDB, použijte [isymunmanagedbinder2::getreaderforfile2 –](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder2-getreaderforfile2-method.md) metody.</span><span class="sxs-lookup"><span data-stu-id="fdbd3-106">If you need a more extensive search for the PDB file, use the [ISymUnmanagedBinder2::GetReaderForFile2](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder2-getreaderforfile2-method.md) method.</span></span>  
+ <span data-ttu-id="9d69e-104">Tato metoda se otevře soubor databáze (PDB) programu, pouze v případě, že je vedle spustitelný soubor.</span><span class="sxs-lookup"><span data-stu-id="9d69e-104">This method will open the program database (PDB) file only if it is next to the executable file.</span></span> <span data-ttu-id="9d69e-105">Tato změna byla provedena z bezpečnostních důvodů.</span><span class="sxs-lookup"><span data-stu-id="9d69e-105">This change has been made for security purposes.</span></span> <span data-ttu-id="9d69e-106">Pokud potřebujete širší vyhledejte soubor PDB, použijte [isymunmanagedbinder2::getreaderforfile2 –](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder2-getreaderforfile2-method.md) metody.</span><span class="sxs-lookup"><span data-stu-id="9d69e-106">If you need a more extensive search for the PDB file, use the [ISymUnmanagedBinder2::GetReaderForFile2](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder2-getreaderforfile2-method.md) method.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="fdbd3-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="fdbd3-107">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="9d69e-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="9d69e-107">Syntax</span></span>  
   
 ```  
 HRESULT GetReaderForFile(  
@@ -39,25 +39,26 @@ HRESULT GetReaderForFile(
     [out, retval] ISymUnmanagedReader  **pRetVal);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="fdbd3-108">Parametry</span><span class="sxs-lookup"><span data-stu-id="fdbd3-108">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="9d69e-108">Parametry</span><span class="sxs-lookup"><span data-stu-id="9d69e-108">Parameters</span></span>  
  `importer`  
- <span data-ttu-id="fdbd3-109">[in] Ukazatel na rozhraní import metadat.</span><span class="sxs-lookup"><span data-stu-id="fdbd3-109">[in] A pointer to the metadata import interface.</span></span>  
+ <span data-ttu-id="9d69e-109">[in] Ukazatel na rozhraní import metadat.</span><span class="sxs-lookup"><span data-stu-id="9d69e-109">[in] A pointer to the metadata import interface.</span></span>  
   
  `fileName`  
- <span data-ttu-id="fdbd3-110">[in] Ukazatel na název souboru.</span><span class="sxs-lookup"><span data-stu-id="fdbd3-110">[in] A pointer to the file name.</span></span>  
+ <span data-ttu-id="9d69e-110">[in] Ukazatel na název souboru.</span><span class="sxs-lookup"><span data-stu-id="9d69e-110">[in] A pointer to the file name.</span></span>  
   
  `searchPath`  
- <span data-ttu-id="fdbd3-111">[in] Ukazatel do cesty pro hledání.</span><span class="sxs-lookup"><span data-stu-id="fdbd3-111">[in] A pointer to the search path.</span></span>  
+ <span data-ttu-id="9d69e-111">[in] Ukazatel do cesty pro hledání.</span><span class="sxs-lookup"><span data-stu-id="9d69e-111">[in] A pointer to the search path.</span></span>  
   
  `pRetVal`  
- <span data-ttu-id="fdbd3-112">[out] Ukazatel, který je nastaven na vrácenou [isymunmanagedreader –](isymunmanagedreader-interface.md) rozhraní.</span><span class="sxs-lookup"><span data-stu-id="fdbd3-112">[out] A pointer that is set to the returned [ISymUnmanagedReader](isymunmanagedreader-interface.md) interface.</span></span>  
+ <span data-ttu-id="9d69e-112">[out] Ukazatel, který je nastaven na vrácenou [isymunmanagedreader –](isymunmanagedreader-interface.md) rozhraní.</span><span class="sxs-lookup"><span data-stu-id="9d69e-112">[out] A pointer that is set to the returned [ISymUnmanagedReader](isymunmanagedreader-interface.md) interface.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="fdbd3-113">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="fdbd3-113">Return Value</span></span>  
- <span data-ttu-id="fdbd3-114">Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.</span><span class="sxs-lookup"><span data-stu-id="fdbd3-114">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="9d69e-113">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="9d69e-113">Return Value</span></span>  
+ <span data-ttu-id="9d69e-114">Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.</span><span class="sxs-lookup"><span data-stu-id="9d69e-114">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="fdbd3-115">Požadavky</span><span class="sxs-lookup"><span data-stu-id="fdbd3-115">Requirements</span></span>  
- <span data-ttu-id="fdbd3-116">**Záhlaví:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="fdbd3-116">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="9d69e-115">Požadavky</span><span class="sxs-lookup"><span data-stu-id="9d69e-115">Requirements</span></span>  
+ <span data-ttu-id="9d69e-116">**Záhlaví:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="9d69e-116">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="fdbd3-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="fdbd3-117">See also</span></span>
-- [<span data-ttu-id="fdbd3-118">ISymUnmanagedBinder – rozhraní</span><span class="sxs-lookup"><span data-stu-id="fdbd3-118">ISymUnmanagedBinder Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder-interface.md)
-- [<span data-ttu-id="fdbd3-119">GetReaderForFile2 – metoda</span><span class="sxs-lookup"><span data-stu-id="fdbd3-119">GetReaderForFile2 Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder2-getreaderforfile2-method.md)
+## <a name="see-also"></a><span data-ttu-id="9d69e-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="9d69e-117">See also</span></span>
+
+- [<span data-ttu-id="9d69e-118">ISymUnmanagedBinder – rozhraní</span><span class="sxs-lookup"><span data-stu-id="9d69e-118">ISymUnmanagedBinder Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder-interface.md)
+- [<span data-ttu-id="9d69e-119">GetReaderForFile2 – metoda</span><span class="sxs-lookup"><span data-stu-id="9d69e-119">GetReaderForFile2 Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder2-getreaderforfile2-method.md)

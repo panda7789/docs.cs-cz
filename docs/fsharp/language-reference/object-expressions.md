@@ -2,18 +2,18 @@
 title: Objektové výrazy
 description: Další informace o použití F# objektové výrazy, když chcete se vyhnout zvláštní kód a režijní náklady na potřebné k vytvoření nového, s názvem typu.
 ms.date: 02/08/2019
-ms.openlocfilehash: c00b2e329a97b86ec2c8c84c143d2aa199875442
-ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
+ms.openlocfilehash: 63f2c1d7128721b7b8c744e4cf02d73c2a8b4a07
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56091666"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59157844"
 ---
-# <a name="object-expressions"></a><span data-ttu-id="bcf6b-103">Objektové výrazy</span><span class="sxs-lookup"><span data-stu-id="bcf6b-103">Object Expressions</span></span>
+# <a name="object-expressions"></a><span data-ttu-id="fff94-103">Objektové výrazy</span><span class="sxs-lookup"><span data-stu-id="fff94-103">Object Expressions</span></span>
 
-<span data-ttu-id="bcf6b-104">*Objektu výraz* je výraz, který vytvoří novou instanci typu dynamicky generovaný anonymní objekt, který je založen na existující základní typ, rozhraní nebo sady rozhraní.</span><span class="sxs-lookup"><span data-stu-id="bcf6b-104">An *object expression* is an expression that creates a new instance of a dynamically created, anonymous object type that is based on an existing base type, interface, or set of interfaces.</span></span>
+<span data-ttu-id="fff94-104">*Objektu výraz* je výraz, který vytvoří novou instanci typu dynamicky generovaný anonymní objekt, který je založen na existující základní typ, rozhraní nebo sady rozhraní.</span><span class="sxs-lookup"><span data-stu-id="fff94-104">An *object expression* is an expression that creates a new instance of a dynamically created, anonymous object type that is based on an existing base type, interface, or set of interfaces.</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="bcf6b-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="bcf6b-105">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="fff94-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="fff94-105">Syntax</span></span>
 
 ```fsharp
 // When typename is a class:
@@ -28,11 +28,11 @@ ms.locfileid: "56091666"
 }
 ```
 
-## <a name="remarks"></a><span data-ttu-id="bcf6b-106">Poznámky</span><span class="sxs-lookup"><span data-stu-id="bcf6b-106">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="fff94-106">Poznámky</span><span class="sxs-lookup"><span data-stu-id="fff94-106">Remarks</span></span>
 
-<span data-ttu-id="bcf6b-107">V předchozí syntaxi *typename* představuje existující typu třídy nebo rozhraní.</span><span class="sxs-lookup"><span data-stu-id="bcf6b-107">In the previous syntax, the *typename* represents an existing class type or interface type.</span></span> <span data-ttu-id="bcf6b-108">*parametry typu* obsahuje popis parametrů, volitelné obecného typu.</span><span class="sxs-lookup"><span data-stu-id="bcf6b-108">*type-params* describes the optional generic type parameters.</span></span> <span data-ttu-id="bcf6b-109">*Argumenty* se používají pouze pro typy tříd, které vyžadují parametry konstruktoru.</span><span class="sxs-lookup"><span data-stu-id="bcf6b-109">The *arguments* are used only for class types, which require constructor parameters.</span></span> <span data-ttu-id="bcf6b-110">*Definice členů* přepsání metody základní třídy nebo implementace abstraktní metody ze základní třídy nebo rozhraní.</span><span class="sxs-lookup"><span data-stu-id="bcf6b-110">The *member-definitions* are overrides of base class methods, or implementations of abstract methods from either a base class or an interface.</span></span>
+<span data-ttu-id="fff94-107">V předchozí syntaxi *typename* představuje existující typu třídy nebo rozhraní.</span><span class="sxs-lookup"><span data-stu-id="fff94-107">In the previous syntax, the *typename* represents an existing class type or interface type.</span></span> <span data-ttu-id="fff94-108">*parametry typu* obsahuje popis parametrů, volitelné obecného typu.</span><span class="sxs-lookup"><span data-stu-id="fff94-108">*type-params* describes the optional generic type parameters.</span></span> <span data-ttu-id="fff94-109">*Argumenty* se používají pouze pro typy tříd, které vyžadují parametry konstruktoru.</span><span class="sxs-lookup"><span data-stu-id="fff94-109">The *arguments* are used only for class types, which require constructor parameters.</span></span> <span data-ttu-id="fff94-110">*Definice členů* přepsání metody základní třídy nebo implementace abstraktní metody ze základní třídy nebo rozhraní.</span><span class="sxs-lookup"><span data-stu-id="fff94-110">The *member-definitions* are overrides of base class methods, or implementations of abstract methods from either a base class or an interface.</span></span>
 
-<span data-ttu-id="bcf6b-111">Následující příklad ukazuje několik různých typů objektové výrazy.</span><span class="sxs-lookup"><span data-stu-id="bcf6b-111">The following example illustrates several different types of object expressions.</span></span>
+<span data-ttu-id="fff94-111">Následující příklad ukazuje několik různých typů objektové výrazy.</span><span class="sxs-lookup"><span data-stu-id="fff94-111">The following example illustrates several different types of object expressions.</span></span>
 
 ```fsharp
 // This object expression specifies a System.Object but overrides the
@@ -53,7 +53,7 @@ let obj2 = delimiter("{","}", "Bananas!");
 
 printfn "%A" (System.String.Format("{0:D}", obj2))
 
-// This object expression implements multiple interfaces.
+// Define two interfaces
 type IFirst =
   abstract F : unit -> unit
   abstract G : unit -> unit
@@ -63,7 +63,7 @@ type ISecond =
   abstract H : unit -> unit
   abstract J : unit -> unit
 
-// This object expression implements an interface chain.
+// This object expression implements both interfaces.
 let implementer() =
     { new ISecond with
         member this.H() = ()
@@ -73,10 +73,10 @@ let implementer() =
         member this.G() = () }
 ```
 
-## <a name="using-object-expressions"></a><span data-ttu-id="bcf6b-112">Použitím objektových výrazů</span><span class="sxs-lookup"><span data-stu-id="bcf6b-112">Using Object Expressions</span></span>
+## <a name="using-object-expressions"></a><span data-ttu-id="fff94-112">Použitím objektových výrazů</span><span class="sxs-lookup"><span data-stu-id="fff94-112">Using Object Expressions</span></span>
 
-<span data-ttu-id="bcf6b-113">Objektové výrazy používají, když chcete se vyhnout zvláštní kód a režijní náklady, který je potřeba vytvořit nový s názvem typu.</span><span class="sxs-lookup"><span data-stu-id="bcf6b-113">You use object expressions when you want to avoid the extra code and overhead that is required to create a new, named type.</span></span> <span data-ttu-id="bcf6b-114">Používáte-li minimalizovat počet typů, které jsou vytvořené v programu objektové výrazy, můžete snížit počet řádků kódu a zabránit zbytečným růst počtu typů.</span><span class="sxs-lookup"><span data-stu-id="bcf6b-114">If you use object expressions to minimize the number of types created in a program, you can reduce the number of lines of code and prevent the unnecessary proliferation of types.</span></span> <span data-ttu-id="bcf6b-115">Místo vytváření mnoho typů pouze pro zpracování konkrétních situacích, můžete použít objektový výraz, který přizpůsobí existujícího typu nebo poskytuje ve vhodné implementaci rozhraní pro tento konkrétní případ po ruce.</span><span class="sxs-lookup"><span data-stu-id="bcf6b-115">Instead of creating many types just to handle specific situations, you can use an object expression that customizes an existing type or provides an appropriate implementation of an interface for the specific case at hand.</span></span>
+<span data-ttu-id="fff94-113">Objektové výrazy používají, když chcete se vyhnout zvláštní kód a režijní náklady, který je potřeba vytvořit nový s názvem typu.</span><span class="sxs-lookup"><span data-stu-id="fff94-113">You use object expressions when you want to avoid the extra code and overhead that is required to create a new, named type.</span></span> <span data-ttu-id="fff94-114">Používáte-li minimalizovat počet typů, které jsou vytvořené v programu objektové výrazy, můžete snížit počet řádků kódu a zabránit zbytečným růst počtu typů.</span><span class="sxs-lookup"><span data-stu-id="fff94-114">If you use object expressions to minimize the number of types created in a program, you can reduce the number of lines of code and prevent the unnecessary proliferation of types.</span></span> <span data-ttu-id="fff94-115">Místo vytváření mnoho typů pouze pro zpracování konkrétních situacích, můžete použít objektový výraz, který přizpůsobí existujícího typu nebo poskytuje ve vhodné implementaci rozhraní pro tento konkrétní případ po ruce.</span><span class="sxs-lookup"><span data-stu-id="fff94-115">Instead of creating many types just to handle specific situations, you can use an object expression that customizes an existing type or provides an appropriate implementation of an interface for the specific case at hand.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="bcf6b-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="bcf6b-116">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="fff94-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="fff94-116">See also</span></span>
 
-- [<span data-ttu-id="bcf6b-117">Referenční dokumentace jazyka F#</span><span class="sxs-lookup"><span data-stu-id="bcf6b-117">F# Language Reference</span></span>](index.md)
+- [<span data-ttu-id="fff94-117">Referenční dokumentace jazyka F#</span><span class="sxs-lookup"><span data-stu-id="fff94-117">F# Language Reference</span></span>](index.md)

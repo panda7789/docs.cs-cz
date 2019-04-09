@@ -16,19 +16,19 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a9d3f8966f6333487631a0e155c7be49075a6992
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: be2dfd6bb521dee14afd3728bdd9c446cb779e85
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54734672"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59149224"
 ---
-# <a name="qualifiersetendenumeration-function"></a><span data-ttu-id="168c2-103">QualifierSet_EndEnumeration – funkce</span><span class="sxs-lookup"><span data-stu-id="168c2-103">QualifierSet_EndEnumeration function</span></span>
-<span data-ttu-id="168c2-104">Ukončí výčet začal s voláním [QualifierSet_BeginEnumeration](qualifierset-beginenumeration.md) funkce.</span><span class="sxs-lookup"><span data-stu-id="168c2-104">Terminates the enumeration begun with a call to the [QualifierSet_BeginEnumeration](qualifierset-beginenumeration.md) function.</span></span>  
+# <a name="qualifiersetendenumeration-function"></a><span data-ttu-id="68018-103">QualifierSet_EndEnumeration – funkce</span><span class="sxs-lookup"><span data-stu-id="68018-103">QualifierSet_EndEnumeration function</span></span>
+<span data-ttu-id="68018-104">Ukončí výčet začal s voláním [QualifierSet_BeginEnumeration](qualifierset-beginenumeration.md) funkce.</span><span class="sxs-lookup"><span data-stu-id="68018-104">Terminates the enumeration begun with a call to the [QualifierSet_BeginEnumeration](qualifierset-beginenumeration.md) function.</span></span>  
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
   
-## <a name="syntax"></a><span data-ttu-id="168c2-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="168c2-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="68018-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="68018-105">Syntax</span></span>  
   
 ```  
 HRESULT QualifierSet_EndEnumeration (
@@ -37,35 +37,36 @@ HRESULT QualifierSet_EndEnumeration (
 ); 
 ```  
 
-## <a name="parameters"></a><span data-ttu-id="168c2-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="168c2-106">Parameters</span></span>
+## <a name="parameters"></a><span data-ttu-id="68018-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="68018-106">Parameters</span></span>
 
 `vFunc`  
-<span data-ttu-id="168c2-107">[in] Tento parametr se nepoužívá.</span><span class="sxs-lookup"><span data-stu-id="168c2-107">[in] This parameter is unused.</span></span>
+<span data-ttu-id="68018-107">[in] Tento parametr se nepoužívá.</span><span class="sxs-lookup"><span data-stu-id="68018-107">[in] This parameter is unused.</span></span>
 
 `ptr`   
-<span data-ttu-id="168c2-108">[in] Ukazatel [IWbemQualifierSet](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemqualifierset) instance.</span><span class="sxs-lookup"><span data-stu-id="168c2-108">[in] A pointer to an [IWbemQualifierSet](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemqualifierset) instance.</span></span>
+<span data-ttu-id="68018-108">[in] Ukazatel [IWbemQualifierSet](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemqualifierset) instance.</span><span class="sxs-lookup"><span data-stu-id="68018-108">[in] A pointer to an [IWbemQualifierSet](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemqualifierset) instance.</span></span>
 
-## <a name="return-value"></a><span data-ttu-id="168c2-109">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="168c2-109">Return value</span></span>
+## <a name="return-value"></a><span data-ttu-id="68018-109">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="68018-109">Return value</span></span>
 
-<span data-ttu-id="168c2-110">Následující hodnota vrácená touto funkcí je definována v *WbemCli.h* hlavičkový soubor, nebo můžete definovat ji jako konstantu. ve vašem kódu:</span><span class="sxs-lookup"><span data-stu-id="168c2-110">The following value returned by this function is defined in the *WbemCli.h* header file, or you can define it as a constant in your code:</span></span>
+<span data-ttu-id="68018-110">Následující hodnota vrácená touto funkcí je definována v *WbemCli.h* hlavičkový soubor, nebo můžete definovat ji jako konstantu. ve vašem kódu:</span><span class="sxs-lookup"><span data-stu-id="68018-110">The following value returned by this function is defined in the *WbemCli.h* header file, or you can define it as a constant in your code:</span></span>
 
-|<span data-ttu-id="168c2-111">Konstanta</span><span class="sxs-lookup"><span data-stu-id="168c2-111">Constant</span></span>  |<span data-ttu-id="168c2-112">Hodnota</span><span class="sxs-lookup"><span data-stu-id="168c2-112">Value</span></span>  |<span data-ttu-id="168c2-113">Popis</span><span class="sxs-lookup"><span data-stu-id="168c2-113">Description</span></span>  |
+|<span data-ttu-id="68018-111">Konstanta</span><span class="sxs-lookup"><span data-stu-id="68018-111">Constant</span></span>  |<span data-ttu-id="68018-112">Value</span><span class="sxs-lookup"><span data-stu-id="68018-112">Value</span></span>  |<span data-ttu-id="68018-113">Popis</span><span class="sxs-lookup"><span data-stu-id="68018-113">Description</span></span>  |
 |---------|---------|---------|
-|`WBEM_S_NO_ERROR` | <span data-ttu-id="168c2-114">0</span><span class="sxs-lookup"><span data-stu-id="168c2-114">0</span></span> | <span data-ttu-id="168c2-115">Volání funkce byla úspěšná.</span><span class="sxs-lookup"><span data-stu-id="168c2-115">The function call was successful.</span></span>  |
+|`WBEM_S_NO_ERROR` | <span data-ttu-id="68018-114">0</span><span class="sxs-lookup"><span data-stu-id="68018-114">0</span></span> | <span data-ttu-id="68018-115">Volání funkce byla úspěšná.</span><span class="sxs-lookup"><span data-stu-id="68018-115">The function call was successful.</span></span>  |
   
-## <a name="remarks"></a><span data-ttu-id="168c2-116">Poznámky</span><span class="sxs-lookup"><span data-stu-id="168c2-116">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="68018-116">Poznámky</span><span class="sxs-lookup"><span data-stu-id="68018-116">Remarks</span></span>
 
-<span data-ttu-id="168c2-117">Tato funkce zalamuje volání na [IWbemQualifierSet::EndEnumeration](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemqualifierset-endenumeration) metody.</span><span class="sxs-lookup"><span data-stu-id="168c2-117">This function wraps a call to the [IWbemQualifierSet::EndEnumeration](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemqualifierset-endenumeration) method.</span></span>
+<span data-ttu-id="68018-117">Tato funkce zalamuje volání na [IWbemQualifierSet::EndEnumeration](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemqualifierset-endenumeration) metody.</span><span class="sxs-lookup"><span data-stu-id="68018-117">This function wraps a call to the [IWbemQualifierSet::EndEnumeration](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemqualifierset-endenumeration) method.</span></span>
 
-<span data-ttu-id="168c2-118">Toto volání je doporučené, ale nevyžaduje.</span><span class="sxs-lookup"><span data-stu-id="168c2-118">This call is recommended, but not required.</span></span> <span data-ttu-id="168c2-119">Okamžitě uvolní prostředky přidružené k výčtu.</span><span class="sxs-lookup"><span data-stu-id="168c2-119">It immediately releases resources associated with the enumeration.</span></span>
+<span data-ttu-id="68018-118">Toto volání je doporučené, ale nevyžaduje.</span><span class="sxs-lookup"><span data-stu-id="68018-118">This call is recommended, but not required.</span></span> <span data-ttu-id="68018-119">Okamžitě uvolní prostředky přidružené k výčtu.</span><span class="sxs-lookup"><span data-stu-id="68018-119">It immediately releases resources associated with the enumeration.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="168c2-120">Požadavky</span><span class="sxs-lookup"><span data-stu-id="168c2-120">Requirements</span></span>  
+## <a name="requirements"></a><span data-ttu-id="68018-120">Požadavky</span><span class="sxs-lookup"><span data-stu-id="68018-120">Requirements</span></span>  
 
-<span data-ttu-id="168c2-121">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="168c2-121">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+<span data-ttu-id="68018-121">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="68018-121">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
-<span data-ttu-id="168c2-122">**Záhlaví:** WMINet_Utils.idl</span><span class="sxs-lookup"><span data-stu-id="168c2-122">**Header:** WMINet_Utils.idl</span></span>  
+<span data-ttu-id="68018-122">**Záhlaví:** WMINet_Utils.idl</span><span class="sxs-lookup"><span data-stu-id="68018-122">**Header:** WMINet_Utils.idl</span></span>  
   
-<span data-ttu-id="168c2-123">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]</span><span class="sxs-lookup"><span data-stu-id="168c2-123">**.NET Framework Versions:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]</span></span>  
+**<span data-ttu-id="68018-123">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="68018-123">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
-## <a name="see-also"></a><span data-ttu-id="168c2-124">Viz také:</span><span class="sxs-lookup"><span data-stu-id="168c2-124">See also</span></span>
-- [<span data-ttu-id="168c2-125">WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)</span><span class="sxs-lookup"><span data-stu-id="168c2-125">WMI and Performance Counters (Unmanaged API Reference)</span></span>](index.md)
+## <a name="see-also"></a><span data-ttu-id="68018-124">Viz také:</span><span class="sxs-lookup"><span data-stu-id="68018-124">See also</span></span>
+
+- [<span data-ttu-id="68018-125">WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)</span><span class="sxs-lookup"><span data-stu-id="68018-125">WMI and Performance Counters (Unmanaged API Reference)</span></span>](index.md)

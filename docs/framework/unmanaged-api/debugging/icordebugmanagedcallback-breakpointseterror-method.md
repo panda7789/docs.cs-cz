@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0baecc56df18a8ce346f5c4a9f52dd4006583867
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: 27d5b8e0127971cc3a46560590fd9d95f0ffd1f0
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57476396"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59151018"
 ---
-# <a name="icordebugmanagedcallbackbreakpointseterror-method"></a><span data-ttu-id="4951d-102">ICorDebugManagedCallback::BreakpointSetError – metoda</span><span class="sxs-lookup"><span data-stu-id="4951d-102">ICorDebugManagedCallback::BreakpointSetError Method</span></span>
-<span data-ttu-id="4951d-103">Upozorní ladicí program nemohl modul common language runtime přesně svázat zarážku, která byla nastavena před funkci just-in-time (JIT) zkompilována.</span><span class="sxs-lookup"><span data-stu-id="4951d-103">Notifies the debugger that the common language runtime was unable to accurately bind a breakpoint that was set before a function was just-in-time (JIT) compiled.</span></span>  
+# <a name="icordebugmanagedcallbackbreakpointseterror-method"></a><span data-ttu-id="915ba-102">ICorDebugManagedCallback::BreakpointSetError – metoda</span><span class="sxs-lookup"><span data-stu-id="915ba-102">ICorDebugManagedCallback::BreakpointSetError Method</span></span>
+<span data-ttu-id="915ba-103">Upozorní ladicí program nemohl modul common language runtime přesně svázat zarážku, která byla nastavena před funkci just-in-time (JIT) zkompilována.</span><span class="sxs-lookup"><span data-stu-id="915ba-103">Notifies the debugger that the common language runtime was unable to accurately bind a breakpoint that was set before a function was just-in-time (JIT) compiled.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="4951d-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="4951d-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="915ba-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="915ba-104">Syntax</span></span>  
   
 ```  
 HRESULT BreakpointSetError (  
@@ -38,30 +38,31 @@ HRESULT BreakpointSetError (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="4951d-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="4951d-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="915ba-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="915ba-105">Parameters</span></span>  
  `pAppDomain`  
- <span data-ttu-id="4951d-106">[in] Ukazatel na objekt ICorDebugAppDomain, který představuje doménu aplikace, který obsahuje nevázaného zarážku.</span><span class="sxs-lookup"><span data-stu-id="4951d-106">[in] A pointer to an ICorDebugAppDomain object that represents the application domain that contains the unbound breakpoint.</span></span>  
+ <span data-ttu-id="915ba-106">[in] Ukazatel na objekt ICorDebugAppDomain, který představuje doménu aplikace, který obsahuje nevázaného zarážku.</span><span class="sxs-lookup"><span data-stu-id="915ba-106">[in] A pointer to an ICorDebugAppDomain object that represents the application domain that contains the unbound breakpoint.</span></span>  
   
  `pThread`  
- <span data-ttu-id="4951d-107">[in] Ukazatel na objekt icordebugthread –, který představuje vlákno, které obsahuje nevázaného zarážku.</span><span class="sxs-lookup"><span data-stu-id="4951d-107">[in] A pointer to an ICorDebugThread object that represents the thread that contains the unbound breakpoint.</span></span>  
+ <span data-ttu-id="915ba-107">[in] Ukazatel na objekt icordebugthread –, který představuje vlákno, které obsahuje nevázaného zarážku.</span><span class="sxs-lookup"><span data-stu-id="915ba-107">[in] A pointer to an ICorDebugThread object that represents the thread that contains the unbound breakpoint.</span></span>  
   
  `pBreakpoint`  
- <span data-ttu-id="4951d-108">[in] Ukazatel na objekt ICorDebugBreakpoint představující odvázat zarážku.</span><span class="sxs-lookup"><span data-stu-id="4951d-108">[in] A pointer to an ICorDebugBreakpoint object that represents the unbound breakpoint.</span></span>  
+ <span data-ttu-id="915ba-108">[in] Ukazatel na objekt ICorDebugBreakpoint představující odvázat zarážku.</span><span class="sxs-lookup"><span data-stu-id="915ba-108">[in] A pointer to an ICorDebugBreakpoint object that represents the unbound breakpoint.</span></span>  
   
  `dwError`  
- <span data-ttu-id="4951d-109">[in] Celé číslo, které označuje chybu.</span><span class="sxs-lookup"><span data-stu-id="4951d-109">[in] An integer that indicates the error.</span></span>  
+ <span data-ttu-id="915ba-109">[in] Celé číslo, které označuje chybu.</span><span class="sxs-lookup"><span data-stu-id="915ba-109">[in] An integer that indicates the error.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="4951d-110">Poznámky</span><span class="sxs-lookup"><span data-stu-id="4951d-110">Remarks</span></span>  
- <span data-ttu-id="4951d-111">Daném bude nikdy dosaženo zarážkou.</span><span class="sxs-lookup"><span data-stu-id="4951d-111">The given breakpoint will never be hit.</span></span> <span data-ttu-id="4951d-112">Ladicí program by měl deaktivovat a znovu se připojit.</span><span class="sxs-lookup"><span data-stu-id="4951d-112">The debugger should deactivate and rebind it.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="915ba-110">Poznámky</span><span class="sxs-lookup"><span data-stu-id="915ba-110">Remarks</span></span>  
+ <span data-ttu-id="915ba-111">Daném bude nikdy dosaženo zarážkou.</span><span class="sxs-lookup"><span data-stu-id="915ba-111">The given breakpoint will never be hit.</span></span> <span data-ttu-id="915ba-112">Ladicí program by měl deaktivovat a znovu se připojit.</span><span class="sxs-lookup"><span data-stu-id="915ba-112">The debugger should deactivate and rebind it.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="4951d-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="4951d-113">Requirements</span></span>  
- <span data-ttu-id="4951d-114">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="4951d-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="915ba-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="915ba-113">Requirements</span></span>  
+ <span data-ttu-id="915ba-114">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="915ba-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="4951d-115">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="4951d-115">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="915ba-115">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="915ba-115">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="4951d-116">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="4951d-116">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="915ba-116">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="915ba-116">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="4951d-117">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="4951d-117">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ **<span data-ttu-id="915ba-117">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="915ba-117">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a><span data-ttu-id="4951d-118">Viz také:</span><span class="sxs-lookup"><span data-stu-id="4951d-118">See also</span></span>
-- [<span data-ttu-id="4951d-119">ICorDebugManagedCallback – rozhraní</span><span class="sxs-lookup"><span data-stu-id="4951d-119">ICorDebugManagedCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+## <a name="see-also"></a><span data-ttu-id="915ba-118">Viz také:</span><span class="sxs-lookup"><span data-stu-id="915ba-118">See also</span></span>
+
+- [<span data-ttu-id="915ba-119">ICorDebugManagedCallback – rozhraní</span><span class="sxs-lookup"><span data-stu-id="915ba-119">ICorDebugManagedCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)

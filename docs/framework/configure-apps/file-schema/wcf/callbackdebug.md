@@ -2,49 +2,50 @@
 title: <callbackDebug>
 ms.date: 03/30/2017
 ms.assetid: 4073feda-1857-4be4-9947-227afb847ced
-ms.openlocfilehash: 62ce1bc179c7215d4988e4c6bda08025c3d3e5de
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: a1190eb1c015ba07488ff5a5952f2f5f1b10974c
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55286309"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59152266"
 ---
-# <a name="callbackdebug"></a><span data-ttu-id="1371e-101">\<callbackDebug ></span><span class="sxs-lookup"><span data-stu-id="1371e-101">\<callbackDebug></span></span>
-<span data-ttu-id="1371e-102">Určuje ladění služby pro objekt zpětného volání Windows Communication Foundation (WCF).</span><span class="sxs-lookup"><span data-stu-id="1371e-102">Specifies service debugging for a Windows Communication Foundation (WCF) callback object.</span></span>  
+# <a name="callbackdebug"></a><span data-ttu-id="22eff-101">\<callbackDebug ></span><span class="sxs-lookup"><span data-stu-id="22eff-101">\<callbackDebug></span></span>
+<span data-ttu-id="22eff-102">Určuje ladění služby pro objekt zpětného volání Windows Communication Foundation (WCF).</span><span class="sxs-lookup"><span data-stu-id="22eff-102">Specifies service debugging for a Windows Communication Foundation (WCF) callback object.</span></span>  
   
- <span data-ttu-id="1371e-103">\<system.ServiceModel></span><span class="sxs-lookup"><span data-stu-id="1371e-103">\<system.ServiceModel></span></span>  
-<span data-ttu-id="1371e-104">\<chování ></span><span class="sxs-lookup"><span data-stu-id="1371e-104">\<behaviors></span></span>  
-<span data-ttu-id="1371e-105">\<endpointBehaviors></span><span class="sxs-lookup"><span data-stu-id="1371e-105">\<endpointBehaviors></span></span>  
-<span data-ttu-id="1371e-106">\<chování ></span><span class="sxs-lookup"><span data-stu-id="1371e-106">\<behavior></span></span>  
-<span data-ttu-id="1371e-107">\<callbackDebug ></span><span class="sxs-lookup"><span data-stu-id="1371e-107">\<callbackDebug></span></span>  
+ <span data-ttu-id="22eff-103">\<system.ServiceModel></span><span class="sxs-lookup"><span data-stu-id="22eff-103">\<system.ServiceModel></span></span>  
+<span data-ttu-id="22eff-104">\<chování ></span><span class="sxs-lookup"><span data-stu-id="22eff-104">\<behaviors></span></span>  
+<span data-ttu-id="22eff-105">\<endpointBehaviors></span><span class="sxs-lookup"><span data-stu-id="22eff-105">\<endpointBehaviors></span></span>  
+<span data-ttu-id="22eff-106">\<chování ></span><span class="sxs-lookup"><span data-stu-id="22eff-106">\<behavior></span></span>  
+<span data-ttu-id="22eff-107">\<callbackDebug ></span><span class="sxs-lookup"><span data-stu-id="22eff-107">\<callbackDebug></span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="1371e-108">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="1371e-108">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="22eff-108">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="22eff-108">Syntax</span></span>  
   
 ```xml  
 <callbackDebug includeExceptionDetailInFaults="Boolean" />
 ```  
   
-## <a name="type"></a><span data-ttu-id="1371e-109">Typ</span><span class="sxs-lookup"><span data-stu-id="1371e-109">Type</span></span>  
+## <a name="type"></a><span data-ttu-id="22eff-109">Type</span><span class="sxs-lookup"><span data-stu-id="22eff-109">Type</span></span>  
  `Type`  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="1371e-110">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="1371e-110">Attributes and Elements</span></span>  
- <span data-ttu-id="1371e-111">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="1371e-111">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="22eff-110">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="22eff-110">Attributes and Elements</span></span>  
+ <span data-ttu-id="22eff-111">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="22eff-111">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="1371e-112">Atributy</span><span class="sxs-lookup"><span data-stu-id="1371e-112">Attributes</span></span>  
+### <a name="attributes"></a><span data-ttu-id="22eff-112">Atributy</span><span class="sxs-lookup"><span data-stu-id="22eff-112">Attributes</span></span>  
   
-|<span data-ttu-id="1371e-113">Atribut</span><span class="sxs-lookup"><span data-stu-id="1371e-113">Attribute</span></span>|<span data-ttu-id="1371e-114">Popis</span><span class="sxs-lookup"><span data-stu-id="1371e-114">Description</span></span>|  
+|<span data-ttu-id="22eff-113">Atribut</span><span class="sxs-lookup"><span data-stu-id="22eff-113">Attribute</span></span>|<span data-ttu-id="22eff-114">Popis</span><span class="sxs-lookup"><span data-stu-id="22eff-114">Description</span></span>|  
 |---------------|-----------------|  
-|`includeExceptionDetailInFaults`|<span data-ttu-id="1371e-115">Hodnota, která určuje, zda objekty zpětného volání klienta vrátí informace o spravované výjimce v chyb SOAP zpět do služby.</span><span class="sxs-lookup"><span data-stu-id="1371e-115">A value that specifies whether client callback objects return managed exception information in SOAP faults back to the service.</span></span><br /><br /> <span data-ttu-id="1371e-116">Pokud tento atribut nastavíte na `true` můžete prostřednictvím kódu programu, může být povolen tok informací o řízené výjimce do objektu zpětného volání klienta zpět do služby pro účely ladění.</span><span class="sxs-lookup"><span data-stu-id="1371e-116">If you set this attribute to `true` programmatically, you can enable the flow of managed exception information in a client callback object back to the service for debugging purposes.</span></span> <span data-ttu-id="1371e-117">**Upozornění:**  Vracející informace o spravované výjimce klientům může představovat bezpečnostní riziko.</span><span class="sxs-lookup"><span data-stu-id="1371e-117">**Caution:**  Returning managed exception information to clients can be a security risk.</span></span> <span data-ttu-id="1371e-118">Je to proto, že podrobnosti o výjimce zveřejnit informace o implementaci vnitřní chybě služby, které by mohly používat neoprávněným klientů.</span><span class="sxs-lookup"><span data-stu-id="1371e-118">This is because exception details expose information about the internal service implementation that could be used by unauthorized clients.</span></span>|  
+|`includeExceptionDetailInFaults`|<span data-ttu-id="22eff-115">Hodnota, která určuje, zda objekty zpětného volání klienta vrátí informace o spravované výjimce v chyb SOAP zpět do služby.</span><span class="sxs-lookup"><span data-stu-id="22eff-115">A value that specifies whether client callback objects return managed exception information in SOAP faults back to the service.</span></span><br /><br /> <span data-ttu-id="22eff-116">Pokud tento atribut nastavíte na `true` můžete prostřednictvím kódu programu, může být povolen tok informací o řízené výjimce do objektu zpětného volání klienta zpět do služby pro účely ladění.</span><span class="sxs-lookup"><span data-stu-id="22eff-116">If you set this attribute to `true` programmatically, you can enable the flow of managed exception information in a client callback object back to the service for debugging purposes.</span></span> <span data-ttu-id="22eff-117">**Upozornění:**  Vracející informace o spravované výjimce klientům může představovat bezpečnostní riziko.</span><span class="sxs-lookup"><span data-stu-id="22eff-117">**Caution:**  Returning managed exception information to clients can be a security risk.</span></span> <span data-ttu-id="22eff-118">Je to proto, že podrobnosti o výjimce zveřejnit informace o implementaci vnitřní chybě služby, které by mohly používat neoprávněným klientů.</span><span class="sxs-lookup"><span data-stu-id="22eff-118">This is because exception details expose information about the internal service implementation that could be used by unauthorized clients.</span></span>|  
   
-### <a name="child-elements"></a><span data-ttu-id="1371e-119">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="1371e-119">Child Elements</span></span>  
- <span data-ttu-id="1371e-120">Žádné</span><span class="sxs-lookup"><span data-stu-id="1371e-120">None.</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="22eff-119">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="22eff-119">Child Elements</span></span>  
+ <span data-ttu-id="22eff-120">Žádné</span><span class="sxs-lookup"><span data-stu-id="22eff-120">None.</span></span>  
   
-### <a name="parent-elements"></a><span data-ttu-id="1371e-121">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="1371e-121">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="22eff-121">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="22eff-121">Parent Elements</span></span>  
   
-|<span data-ttu-id="1371e-122">Prvek</span><span class="sxs-lookup"><span data-stu-id="1371e-122">Element</span></span>|<span data-ttu-id="1371e-123">Popis</span><span class="sxs-lookup"><span data-stu-id="1371e-123">Description</span></span>|  
+|<span data-ttu-id="22eff-122">Prvek</span><span class="sxs-lookup"><span data-stu-id="22eff-122">Element</span></span>|<span data-ttu-id="22eff-123">Popis</span><span class="sxs-lookup"><span data-stu-id="22eff-123">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="1371e-124">\<behavior></span><span class="sxs-lookup"><span data-stu-id="1371e-124">\<behavior></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|<span data-ttu-id="1371e-125">Určuje chování koncového bodu.</span><span class="sxs-lookup"><span data-stu-id="1371e-125">Specifies an endpoint behavior.</span></span>|  
+|[<span data-ttu-id="22eff-124">\<chování ></span><span class="sxs-lookup"><span data-stu-id="22eff-124">\<behavior></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|<span data-ttu-id="22eff-125">Určuje chování koncového bodu.</span><span class="sxs-lookup"><span data-stu-id="22eff-125">Specifies an endpoint behavior.</span></span>|  
   
-## <a name="see-also"></a><span data-ttu-id="1371e-126">Viz také:</span><span class="sxs-lookup"><span data-stu-id="1371e-126">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="22eff-126">Viz také:</span><span class="sxs-lookup"><span data-stu-id="22eff-126">See also</span></span>
+
 - <xref:System.ServiceModel.Configuration.CallbackDebugElement>
 - <xref:System.ServiceModel.Description.CallbackDebugBehavior>

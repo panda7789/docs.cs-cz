@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5727142f55e143cf144dae842f95a36effb33c68
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: ff9c88d534e0bfe51075a76581af37aba791a3da
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57482233"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59148470"
 ---
-# <a name="iclrdatatargetgetmachinetype-method"></a><span data-ttu-id="df6df-102">ICLRDataTarget::GetMachineType – metoda</span><span class="sxs-lookup"><span data-stu-id="df6df-102">ICLRDataTarget::GetMachineType Method</span></span>
-<span data-ttu-id="df6df-103">Získá identifikátor pro typ instrukční sadu, která používá cílového procesu.</span><span class="sxs-lookup"><span data-stu-id="df6df-103">Gets the identifier for the kind of instruction set that the target process is using.</span></span>  
+# <a name="iclrdatatargetgetmachinetype-method"></a><span data-ttu-id="8edf8-102">ICLRDataTarget::GetMachineType – metoda</span><span class="sxs-lookup"><span data-stu-id="8edf8-102">ICLRDataTarget::GetMachineType Method</span></span>
+<span data-ttu-id="8edf8-103">Získá identifikátor pro typ instrukční sadu, která používá cílového procesu.</span><span class="sxs-lookup"><span data-stu-id="8edf8-103">Gets the identifier for the kind of instruction set that the target process is using.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="df6df-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="df6df-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="8edf8-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="8edf8-104">Syntax</span></span>  
   
 ```  
 HRESULT GetMachineType (  
@@ -35,18 +35,19 @@ HRESULT GetMachineType (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="df6df-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="df6df-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="8edf8-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="8edf8-105">Parameters</span></span>  
  `machineType`  
- <span data-ttu-id="df6df-106">[out] Ukazatel na hodnotu, která indikuje, že podle pokynů nastavte Cílový proces používá.</span><span class="sxs-lookup"><span data-stu-id="df6df-106">[out] A pointer to a value that indicates the instruction set that the target process is using.</span></span> <span data-ttu-id="df6df-107">Vrácený `machineType` je jednou z konstant IMAGE_FILE_MACHINE, které jsou definovány v souboru WinNT.h hlavičkový soubor.</span><span class="sxs-lookup"><span data-stu-id="df6df-107">The returned `machineType` is one of the IMAGE_FILE_MACHINE constants, which are defined in the WinNT.h header file.</span></span>  
+ <span data-ttu-id="8edf8-106">[out] Ukazatel na hodnotu, která indikuje, že podle pokynů nastavte Cílový proces používá.</span><span class="sxs-lookup"><span data-stu-id="8edf8-106">[out] A pointer to a value that indicates the instruction set that the target process is using.</span></span> <span data-ttu-id="8edf8-107">Vrácený `machineType` je jednou z konstant IMAGE_FILE_MACHINE, které jsou definovány v souboru WinNT.h hlavičkový soubor.</span><span class="sxs-lookup"><span data-stu-id="8edf8-107">The returned `machineType` is one of the IMAGE_FILE_MACHINE constants, which are defined in the WinNT.h header file.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="df6df-108">Požadavky</span><span class="sxs-lookup"><span data-stu-id="df6df-108">Requirements</span></span>  
- <span data-ttu-id="df6df-109">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="df6df-109">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="8edf8-108">Požadavky</span><span class="sxs-lookup"><span data-stu-id="8edf8-108">Requirements</span></span>  
+ <span data-ttu-id="8edf8-109">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="8edf8-109">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="df6df-110">**Záhlaví:** ClrData.idl, ClrData.h</span><span class="sxs-lookup"><span data-stu-id="df6df-110">**Header:** ClrData.idl, ClrData.h</span></span>  
+ <span data-ttu-id="8edf8-110">**Záhlaví:** ClrData.idl, ClrData.h</span><span class="sxs-lookup"><span data-stu-id="8edf8-110">**Header:** ClrData.idl, ClrData.h</span></span>  
   
- <span data-ttu-id="df6df-111">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="df6df-111">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="8edf8-111">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="8edf8-111">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="df6df-112">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="df6df-112">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ **<span data-ttu-id="8edf8-112">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="8edf8-112">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a><span data-ttu-id="df6df-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="df6df-113">See also</span></span>
-- [<span data-ttu-id="df6df-114">ICLRDataTarget – rozhraní</span><span class="sxs-lookup"><span data-stu-id="df6df-114">ICLRDataTarget Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget-interface.md)
+## <a name="see-also"></a><span data-ttu-id="8edf8-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="8edf8-113">See also</span></span>
+
+- [<span data-ttu-id="8edf8-114">ICLRDataTarget – rozhraní</span><span class="sxs-lookup"><span data-stu-id="8edf8-114">ICLRDataTarget Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget-interface.md)

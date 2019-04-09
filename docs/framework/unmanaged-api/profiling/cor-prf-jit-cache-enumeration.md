@@ -16,20 +16,20 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 6aaa334c83aff18886c0c2db4462d6baaa4cd70f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 0cdbe36403f830926d611ffdc655d82ea25ddeef
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54687411"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59144791"
 ---
-# <a name="corprfjitcache-enumeration"></a><span data-ttu-id="2219e-102">COR_PRF_JIT_CACHE – výčet</span><span class="sxs-lookup"><span data-stu-id="2219e-102">COR_PRF_JIT_CACHE Enumeration</span></span>
-<span data-ttu-id="2219e-103">Určuje výsledky hledání funkce uložené v mezipaměti.</span><span class="sxs-lookup"><span data-stu-id="2219e-103">Indicates the result of a cached function search.</span></span>  
+# <a name="corprfjitcache-enumeration"></a><span data-ttu-id="d3b36-102">COR_PRF_JIT_CACHE – výčet</span><span class="sxs-lookup"><span data-stu-id="d3b36-102">COR_PRF_JIT_CACHE Enumeration</span></span>
+<span data-ttu-id="d3b36-103">Určuje výsledky hledání funkce uložené v mezipaměti.</span><span class="sxs-lookup"><span data-stu-id="d3b36-103">Indicates the result of a cached function search.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="2219e-104">`COR_PRF_CACHED_FUNCTION_FOUND` má hodnotu nula, takže `COR_PRF_JIT_CACHE` nelze použít jako logická náhrady.</span><span class="sxs-lookup"><span data-stu-id="2219e-104">`COR_PRF_CACHED_FUNCTION_FOUND` has a value of zero, so `COR_PRF_JIT_CACHE` cannot be used as a Boolean surrogate.</span></span>  
+>  `COR_PRF_CACHED_FUNCTION_FOUND` <span data-ttu-id="d3b36-104">má hodnotu nula, takže `COR_PRF_JIT_CACHE` nelze použít jako logická náhrady.</span><span class="sxs-lookup"><span data-stu-id="d3b36-104">has a value of zero, so `COR_PRF_JIT_CACHE` cannot be used as a Boolean surrogate.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="2219e-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="2219e-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="d3b36-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="d3b36-105">Syntax</span></span>  
   
 ```  
 typedef enum {  
@@ -38,21 +38,22 @@ typedef enum {
 } COR_PRF_JIT_CACHE;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="2219e-106">Členové</span><span class="sxs-lookup"><span data-stu-id="2219e-106">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="d3b36-106">Členové</span><span class="sxs-lookup"><span data-stu-id="d3b36-106">Members</span></span>  
   
-|<span data-ttu-id="2219e-107">Člen</span><span class="sxs-lookup"><span data-stu-id="2219e-107">Member</span></span>|<span data-ttu-id="2219e-108">Popis</span><span class="sxs-lookup"><span data-stu-id="2219e-108">Description</span></span>|  
+|<span data-ttu-id="d3b36-107">Člen</span><span class="sxs-lookup"><span data-stu-id="d3b36-107">Member</span></span>|<span data-ttu-id="d3b36-108">Popis</span><span class="sxs-lookup"><span data-stu-id="d3b36-108">Description</span></span>|  
 |------------|-----------------|  
-|`COR_PRF_FUNCTION_FOUND`|<span data-ttu-id="2219e-109">Při hledání nebyly nalezeny funkce.</span><span class="sxs-lookup"><span data-stu-id="2219e-109">The search found the function.</span></span>|  
-|`COR_PRF_FUNCTION_NOT_FOUND`|<span data-ttu-id="2219e-110">Hledání nebyly nalezeny funkce.</span><span class="sxs-lookup"><span data-stu-id="2219e-110">The search did not find the function.</span></span>|  
+|`COR_PRF_FUNCTION_FOUND`|<span data-ttu-id="d3b36-109">Při hledání nebyly nalezeny funkce.</span><span class="sxs-lookup"><span data-stu-id="d3b36-109">The search found the function.</span></span>|  
+|`COR_PRF_FUNCTION_NOT_FOUND`|<span data-ttu-id="d3b36-110">Hledání nebyly nalezeny funkce.</span><span class="sxs-lookup"><span data-stu-id="d3b36-110">The search did not find the function.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="2219e-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="2219e-111">Requirements</span></span>  
- <span data-ttu-id="2219e-112">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="2219e-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="d3b36-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="d3b36-111">Requirements</span></span>  
+ <span data-ttu-id="d3b36-112">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="d3b36-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="2219e-113">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="2219e-113">**Header:** CorProf.idl, CorProf.h</span></span>  
+ <span data-ttu-id="d3b36-113">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="d3b36-113">**Header:** CorProf.idl, CorProf.h</span></span>  
   
- <span data-ttu-id="2219e-114">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="2219e-114">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="d3b36-114">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="d3b36-114">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="2219e-115">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="2219e-115">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ **<span data-ttu-id="d3b36-115">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="d3b36-115">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a><span data-ttu-id="2219e-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="2219e-116">See also</span></span>
-- [<span data-ttu-id="2219e-117">Výčty pro profilaci</span><span class="sxs-lookup"><span data-stu-id="2219e-117">Profiling Enumerations</span></span>](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)
+## <a name="see-also"></a><span data-ttu-id="d3b36-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="d3b36-116">See also</span></span>
+
+- [<span data-ttu-id="d3b36-117">Profilace výčtů</span><span class="sxs-lookup"><span data-stu-id="d3b36-117">Profiling Enumerations</span></span>](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)

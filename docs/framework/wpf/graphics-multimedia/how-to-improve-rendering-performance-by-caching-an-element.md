@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Zvýšení výkonu vykreslování zachycením elementu'
+title: 'Postupy: Zvýšení výkonu vykreslování uložením elementu do mezipaměti'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - rendering performance [WPF], caching an element
@@ -8,23 +8,24 @@ helpviewer_keywords:
 - performance [WPF], caching an element
 - UIElement [WPF], caching
 ms.assetid: 4739c1fc-60ba-4c46-aba6-f6c1a2688f19
-ms.openlocfilehash: b5e39541fdf031b19e9e74483c0de94295e788d7
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 118e8b0cca52c44788c9d5b291d710f765e7af2a
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57375216"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59153371"
 ---
-# <a name="how-to-improve-rendering-performance-by-caching-an-element"></a><span data-ttu-id="593f7-102">Postupy: Zvýšení výkonu vykreslování zachycením elementu</span><span class="sxs-lookup"><span data-stu-id="593f7-102">How to: Improve Rendering Performance by Caching an Element</span></span>
-<span data-ttu-id="593f7-103">Použití <xref:System.Windows.Media.BitmapCache> třídy ke zvýšení výkonu vykreslování komplexní <xref:System.Windows.UIElement>.</span><span class="sxs-lookup"><span data-stu-id="593f7-103">Use the <xref:System.Windows.Media.BitmapCache> class to improve rendering performance of a complex <xref:System.Windows.UIElement>.</span></span> <span data-ttu-id="593f7-104">Pro ukládání do mezipaměti elementu, vytvořte novou instanci třídy <xref:System.Windows.Media.BitmapCache> třídy a přiřadit k elementu <xref:System.Windows.UIElement.CacheMode%2A> vlastnost.</span><span class="sxs-lookup"><span data-stu-id="593f7-104">To cache an element, create a new instance of the <xref:System.Windows.Media.BitmapCache> class and assign it to the element's <xref:System.Windows.UIElement.CacheMode%2A> property.</span></span> <span data-ttu-id="593f7-105">Můžete opakovaně použít <xref:System.Windows.Media.BitmapCache> efektivně v <xref:System.Windows.Media.BitmapCacheBrush>.</span><span class="sxs-lookup"><span data-stu-id="593f7-105">You can reuse a <xref:System.Windows.Media.BitmapCache> efficiently in a <xref:System.Windows.Media.BitmapCacheBrush>.</span></span>  
+# <a name="how-to-improve-rendering-performance-by-caching-an-element"></a><span data-ttu-id="4d64f-102">Postupy: Zvýšení výkonu vykreslování uložením elementu do mezipaměti</span><span class="sxs-lookup"><span data-stu-id="4d64f-102">How to: Improve Rendering Performance by Caching an Element</span></span>
+<span data-ttu-id="4d64f-103">Použití <xref:System.Windows.Media.BitmapCache> třídy ke zvýšení výkonu vykreslování komplexní <xref:System.Windows.UIElement>.</span><span class="sxs-lookup"><span data-stu-id="4d64f-103">Use the <xref:System.Windows.Media.BitmapCache> class to improve rendering performance of a complex <xref:System.Windows.UIElement>.</span></span> <span data-ttu-id="4d64f-104">Pro ukládání do mezipaměti elementu, vytvořte novou instanci třídy <xref:System.Windows.Media.BitmapCache> třídy a přiřadit k elementu <xref:System.Windows.UIElement.CacheMode%2A> vlastnost.</span><span class="sxs-lookup"><span data-stu-id="4d64f-104">To cache an element, create a new instance of the <xref:System.Windows.Media.BitmapCache> class and assign it to the element's <xref:System.Windows.UIElement.CacheMode%2A> property.</span></span> <span data-ttu-id="4d64f-105">Můžete opakovaně použít <xref:System.Windows.Media.BitmapCache> efektivně v <xref:System.Windows.Media.BitmapCacheBrush>.</span><span class="sxs-lookup"><span data-stu-id="4d64f-105">You can reuse a <xref:System.Windows.Media.BitmapCache> efficiently in a <xref:System.Windows.Media.BitmapCacheBrush>.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="593f7-106">Příklad</span><span class="sxs-lookup"><span data-stu-id="593f7-106">Example</span></span>  
- <span data-ttu-id="593f7-107">Následující příklad kódu ukazuje, jak vytvořit komplexních prvků a uložení do mezipaměti jako rastrový obrázek, což zvyšuje výkon, když je animovaný elementu.</span><span class="sxs-lookup"><span data-stu-id="593f7-107">The following code example shows how to create a complex element and cache it as a bitmap, which improves performance when the element is animated.</span></span> <span data-ttu-id="593f7-108">Element je plátno, která obsahuje obrazec geometrie s mnoha vrcholy.</span><span class="sxs-lookup"><span data-stu-id="593f7-108">The element is a canvas that holds shape geometries with many vertices.</span></span> <span data-ttu-id="593f7-109">A <xref:System.Windows.Media.BitmapCache> s výchozí hodnoty přiřazeny k <xref:System.Windows.UIElement.CacheMode%2A> plátna, a zobrazí animace smooth škálování v mezipaměti rastrový obrázek.</span><span class="sxs-lookup"><span data-stu-id="593f7-109">A <xref:System.Windows.Media.BitmapCache> with default values is assigned to the <xref:System.Windows.UIElement.CacheMode%2A> of the canvas, and an animation shows the smooth scaling of the cached bitmap.</span></span>  
+## <a name="example"></a><span data-ttu-id="4d64f-106">Příklad</span><span class="sxs-lookup"><span data-stu-id="4d64f-106">Example</span></span>  
+ <span data-ttu-id="4d64f-107">Následující příklad kódu ukazuje, jak vytvořit komplexních prvků a uložení do mezipaměti jako rastrový obrázek, což zvyšuje výkon, když je animovaný elementu.</span><span class="sxs-lookup"><span data-stu-id="4d64f-107">The following code example shows how to create a complex element and cache it as a bitmap, which improves performance when the element is animated.</span></span> <span data-ttu-id="4d64f-108">Element je plátno, která obsahuje obrazec geometrie s mnoha vrcholy.</span><span class="sxs-lookup"><span data-stu-id="4d64f-108">The element is a canvas that holds shape geometries with many vertices.</span></span> <span data-ttu-id="4d64f-109">A <xref:System.Windows.Media.BitmapCache> s výchozí hodnoty přiřazeny k <xref:System.Windows.UIElement.CacheMode%2A> plátna, a zobrazí animace smooth škálování v mezipaměti rastrový obrázek.</span><span class="sxs-lookup"><span data-stu-id="4d64f-109">A <xref:System.Windows.Media.BitmapCache> with default values is assigned to the <xref:System.Windows.UIElement.CacheMode%2A> of the canvas, and an animation shows the smooth scaling of the cached bitmap.</span></span>  
   
  [!code-xaml[System.Windows.Media.BitmapCache#_BitmapCacheXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/system.windows.media.bitmapcache/cs/window1.xaml#_bitmapcachexaml)]  
   
-## <a name="see-also"></a><span data-ttu-id="593f7-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="593f7-110">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="4d64f-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="4d64f-110">See also</span></span>
+
 - <xref:System.Windows.Media.BitmapCache>
 - <xref:System.Windows.Media.BitmapCacheBrush>
 - <xref:System.Windows.UIElement.CacheMode%2A>
-- [<span data-ttu-id="593f7-111">Postupy: Použití elementu uloženého v mezipaměti jako štětce</span><span class="sxs-lookup"><span data-stu-id="593f7-111">How to: Use a Cached Element as a Brush</span></span>](how-to-use-a-cached-element-as-a-brush.md)
+- [<span data-ttu-id="4d64f-111">Postupy: Použití elementu uloženého v mezipaměti jako štětce</span><span class="sxs-lookup"><span data-stu-id="4d64f-111">How to: Use a Cached Element as a Brush</span></span>](how-to-use-a-cached-element-as-a-brush.md)
