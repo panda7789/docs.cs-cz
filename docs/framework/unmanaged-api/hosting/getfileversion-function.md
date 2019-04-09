@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 214f16f970cfb2c319f3a26afc882e6102c1be71
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: d25a3ccdd66ff7acb70f1f5e6c60157b53cc97c5
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57498260"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59123722"
 ---
 # <a name="getfileversion-function"></a>GetFileVersion – funkce
 Získá common language runtime (CLR) informace o verzi zadaného souboru pomocí zadané vyrovnávací paměti.  
@@ -60,4 +60,5 @@ HRESULT GetFileVersion (
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
-- [Zastaralé funkce pro hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+
+- [Zastaralé funkce hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)

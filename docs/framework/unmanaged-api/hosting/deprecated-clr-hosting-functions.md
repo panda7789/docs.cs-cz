@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 91fbbb35-e543-4814-b806-371cebae8c5a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 576b60293ed53448f3829fdcc9f89ad8508599af
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: aa84ca0defd173563817673aad183a8b64226d41
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54580900"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59135799"
 ---
 # <a name="deprecated-clr-hosting-functions"></a>Zastaralé funkce hostování CLR
 Tato část popisuje nespravované globální statické funkce, které používají starší verze hostujícího rozhraní API.  
@@ -159,4 +159,5 @@ Tato část popisuje nespravované globální statické funkce, které používa
  Ověřuje bitové kopie spravovaného modulu a upozorní zavaděč operačního systému po jejich načtení.  
   
 ## <a name="see-also"></a>Viz také:
-- [Globální statické funkce .NET Framework 4 pro hostování](../../../../docs/framework/unmanaged-api/hosting/net-framework-4-hosting-global-static-functions.md)
+
+- [.NET Framework 4 – hostování globálních statických funkcí](../../../../docs/framework/unmanaged-api/hosting/net-framework-4-hosting-global-static-functions.md)

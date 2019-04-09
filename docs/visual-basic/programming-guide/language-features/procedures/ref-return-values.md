@@ -6,12 +6,12 @@ helpviewer_keywords:
 - ref return values [Visual Basic]
 - ref returns [Visual Basic]
 ms.assetid: 5ef0cc69-eb3a-4a67-92a2-78585f223cb5
-ms.openlocfilehash: f3543d93bb2d313aa000cdee38bc713a9bb02b1d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d0600f7d9030324160343e800c37e0f5e68bff61
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54634399"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59133975"
 ---
 # <a name="support-for-reference-return-values-visual-basic"></a>Podpora pro referenční návratové hodnoty (Visual Basic)
 
@@ -49,5 +49,3 @@ Nejlepší způsob, jak postupovat v těchto případech je předat vrácenou ho
 
 - [Předávání argumentů podle hodnoty a podle reference](passing-arguments-by-value-and-by-reference.md)
 - [Procedury v jazyce Visual Basic](index.md)
-
-

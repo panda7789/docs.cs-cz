@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Testování běhového chování UserControl'
+title: 'Postupy: Otestování běhového chování UserControl'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - UserControl class [Windows Forms], testing
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - UserControl Test Container
 - UserControl class [Windows Forms], run-time behavior
 ms.assetid: 4e4d5c49-1346-40ac-9d96-40211b573583
-ms.openlocfilehash: 0b87034487ef0f2cabed786354682f394500cafc
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: 1719d0461fbb582a1486dcc0726253ec97a07ac6
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57707882"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59116490"
 ---
-# <a name="how-to-test-the-run-time-behavior-of-a-usercontrol"></a>Postupy: Testování běhového chování UserControl
+# <a name="how-to-test-the-run-time-behavior-of-a-usercontrol"></a>Postupy: Otestování běhového chování UserControl
 Při vývoji <xref:System.Windows.Forms.UserControl>, je potřeba testovat jeho chování za běhu. Můžete vytvořit projekt samostatné aplikace pro systém Windows a umístit ovládací prvek na formuláři testu, ale tento postup je praktické. Jednodušší a rychlejší způsob je použít **UserControl – kontejner testů** poskytovaný sadou Visual Studio. Tento kontejner testu spustí přímo z vašeho projektu knihovny ovládacích prvků Windows.  
   
 > [!IMPORTANT]
@@ -67,8 +67,9 @@ Při vývoji <xref:System.Windows.Forms.UserControl>, je potřeba testovat jeho 
 6.  Použití **vyberte uživatelský ovládací prvek** <xref:System.Windows.Forms.ComboBox> přepínat mezi dvěma uživatelské ovládací prvky z **TestContainerExample** projektu.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.UserControl>
 - [Postupy: Vytváření složených ovládacích prvků](how-to-author-composite-controls.md)
-- [Návod: Vytvoření složeného ovládacího prvku s jazykem Visual Basic](walkthrough-authoring-a-composite-control-with-visual-basic.md)
+- [Návod: Vytvoření složeného ovládacího prvku pomocí Visual Basicu](walkthrough-authoring-a-composite-control-with-visual-basic.md)
 - [Návod: Vytvoření složeného ovládacího prvku pomocí Visual C#](walkthrough-authoring-a-composite-control-with-visual-csharp.md)
 - [Návrhář uživatelského ovládacího prvku](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/183c3hth(v=vs.100))

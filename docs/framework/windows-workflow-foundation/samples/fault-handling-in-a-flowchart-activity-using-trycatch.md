@@ -1,15 +1,15 @@
 ---
-title: Zpracování chyb v aktivitě Flowchart pomocí TryCatch
+title: Zpracování chyb v aktivitě FlowChart pomocí TryCatch
 ms.date: 03/30/2017
 ms.assetid: 50922964-bfe0-4ba8-9422-0e7220d514fd
-ms.openlocfilehash: 3f45d4a60de3201a3100fba3af6cc15484a1fbf0
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: e515248594088f9888c3488d83d8079ce5d13089
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57708831"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59119805"
 ---
-# <a name="fault-handling-in-a-flowchart-activity-using-trycatch"></a>Zpracování chyb v aktivitě Flowchart pomocí TryCatch
+# <a name="fault-handling-in-a-flowchart-activity-using-trycatch"></a>Zpracování chyb v aktivitě FlowChart pomocí TryCatch
 Tato ukázka předvádí, jak <xref:System.Activities.Statements.TryCatch> aktivita se dá použít v rámci aktivity toku řízení komplexní.
 
  V této ukázce propagační kód, který a počet podřízených jsou předány jako proměnné <xref:System.Activities.Statements.Flowchart> aktivitu, která vypočítá a uplatnit tak slevu podle vzorce, které odpovídají propagační kód. Ukázka zahrnuje imperativního kódu pracovního postupu návrháře verze a ukázky.
@@ -47,5 +47,6 @@ Tato ukázka předvádí, jak <xref:System.Activities.Statements.TryCatch> aktiv
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Built-InActivities\FlowChartWithFaultHandling`  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Pracovní postupy vývojového diagramu](../flowchart-workflows.md)
 - [Výjimky](../exceptions.md)

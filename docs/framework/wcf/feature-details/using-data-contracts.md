@@ -9,12 +9,12 @@ helpviewer_keywords:
 - WCF, data
 - data contracts [WCF]
 ms.assetid: a3ae7b21-c15c-4c05-abd8-f483bcbf31af
-ms.openlocfilehash: a93fb708ed6b1790027b1e3a2fc74ca8c5ff2024
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 28033e3e90c5010eee63f35791b0c3c77e64d1ec
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54571680"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59129932"
 ---
 # <a name="using-data-contracts"></a>Použití kontraktů dat
 A *kontraktu dat* je oficiální smlouvu mezi službou a klienta, který abstraktně popisuje data, jenž bude vyměněn. To znamená ke komunikaci, klienta a služby nemusíte sdílejí stejné typy stejné kontraktů dat. Přesně definuje kontrakt dat, pro každý parametr nebo návratový typ, jaká data se serializovat (převedena na XML) mají vyměnit.  
@@ -67,16 +67,17 @@ A *kontraktu dat* je oficiální smlouvu mezi službou a klienta, který abstrak
  Ukázka kompletní kód služby WCF, který definuje kontrakt dat najdete v článku [základní kontrakt dat](../../../../docs/framework/wcf/samples/basic-data-contract.md) vzorku.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Runtime.Serialization.DataMemberAttribute>
 - <xref:System.Runtime.Serialization.DataContractAttribute>
 - [Serializovatelné typy](../../../../docs/framework/wcf/feature-details/serializable-types.md)
-- [Názvy kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-names.md)
+- [Názvy kontraktu dat](../../../../docs/framework/wcf/feature-details/data-contract-names.md)
 - [Ekvivalence kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-equivalence.md)
 - [Pořadí datových členů](../../../../docs/framework/wcf/feature-details/data-member-order.md)
 - [Známé typy kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)
 - [Kontrakty dat s dopřednou kompatibilitou](../../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md)
 - [Správa verzí kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-versioning.md)
 - [Zpětná volání serializace tolerantní k verzím](../../../../docs/framework/wcf/feature-details/version-tolerant-serialization-callbacks.md)
-- [Výchozí hodnoty datových členů](../../../../docs/framework/wcf/feature-details/data-member-default-values.md)
+- [Vychozí hodnoty datových členů](../../../../docs/framework/wcf/feature-details/data-member-default-values.md)
 - [Typy podporované serializátorem kontraktu dat](../../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md)
 - [Postupy: Vytvoření základního kontraktu dat pro třídu nebo strukturu](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-data-contract-for-a-class-or-structure.md)

@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: e8da98e7-d22f-4f60-ac82-3fb0928a353f
-ms.openlocfilehash: 145e9d7551e59a246d2540c2a7106e1a16686099
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 90abb29550ce7e027244b220f30e9fe46e282ff3
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54727947"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59129490"
 ---
 # <a name="how-to-declare-faults-in-service-contracts"></a>Postupy: Deklarace chyb v kontraktech služeb
 Ve spravovaném kódu jsou výjimky vyvolány, když dojde k chybě podmínek. V aplikacích Windows Communication Foundation (WCF) nicméně kontrakty služeb určit, jaké informace o chybě je vrácena klientům deklarováním chyb SOAP v kontraktu služby. Přehled o vztah mezi výjimek a chyb, naleznete v tématu [zadání a zpracování chyb v kontraktech a službách](../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md).  
@@ -45,5 +45,6 @@ Ve spravovaném kódu jsou výjimky vyvolány, když dojde k chybě podmínek. V
  [!code-vb[FaultContractAttribute#1](../../../samples/snippets/visualbasic/VS_Snippets_CFX/faultcontractattribute/vb/services.vb#1)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.FaultContractAttribute?displayProperty=nameWithType>
 - <xref:System.ServiceModel.FaultException%601?displayProperty=nameWithType>

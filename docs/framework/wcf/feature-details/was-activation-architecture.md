@@ -2,12 +2,12 @@
 title: Architektura aktivace WAS
 ms.date: 03/30/2017
 ms.assetid: 58aeffb0-8f3f-4b40-80c8-15f3f1652fd3
-ms.openlocfilehash: 71546bf6fb13c9d2fecf09b79460a953f60e4e3b
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.openlocfilehash: 9c1af21782b377a9fb01cbd05e4fe61f6a69f3ac
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58465756"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59134053"
 ---
 # <a name="was-activation-architecture"></a>Architektura aktivace WAS
 V tomto tématu najdete výčet a tento článek popisuje komponenty služby Aktivace procesu Windows (WAS).  
@@ -86,5 +86,6 @@ V tomto tématu najdete výčet a tento článek popisuje komponenty služby Akt
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Konfigurace WAS pro použití s WCF](../../../../docs/framework/wcf/feature-details/configuring-the-wpa--service-for-use-with-wcf.md)
 - [Hostování funkcí systému Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkId=201276)

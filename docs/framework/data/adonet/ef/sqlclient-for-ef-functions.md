@@ -2,12 +2,12 @@
 title: SqlClient pro funkce Entity Framework
 ms.date: 03/30/2017
 ms.assetid: 71a3613c-b94e-494c-8ad8-90cf86ae0b87
-ms.openlocfilehash: dc111d3f8321170a02c70f168bf8ae5c2a3521e8
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 54072576b73b933277d33839fdbb575d420f2286
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54730630"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59117776"
 ---
 # <a name="sqlclient-for-entity-framework-functions"></a>SqlClient pro funkce Entity Framework
 Zprostředkovatel dat .NET Framework pro SQL Server (SqlClient) pro Entity Framework obsahuje sadu funkce pro provádění matematických výpočtů agregace, i funkce k provedení `System.DateTime` a `string` operace. Tyto funkce jsou v `SQLServer` oboru názvů.  
@@ -25,10 +25,11 @@ Zprostředkovatel dat .NET Framework pro SQL Server (SqlClient) pro Entity Frame
   
  [Matematické funkce](../../../../../docs/framework/data/adonet/ef/mathematical-functions.md)  
   
- [Řetězcové funkce](../../../../../docs/framework/data/adonet/ef/string-functions.md)  
+ [Funkce řetězce](../../../../../docs/framework/data/adonet/ef/string-functions.md)  
   
  [Systémové funkce](../../../../../docs/framework/data/adonet/ef/system-functions.md)  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Reference k Entity SQL](../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
 - [Přehled Entity SQL](../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-overview.md)

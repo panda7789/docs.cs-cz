@@ -1,19 +1,19 @@
 ---
-title: 'Návod: Provádění obecných úloh pomocí inteligentních značek na Windows Forms ovládací prvky'
+title: 'Návod: Provádění obecných úloh pomocí inteligentních značek v ovládacích prvcích Windows Forms'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - DesignerAction object model
 - smart tags
 - designer actions
 ms.assetid: cac337e6-00f6-4584-80f4-75728f5ea113
-ms.openlocfilehash: 2805ebc66be5908c333e9a5db41076518ad77c1a
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: 3b20e903ce7eef7c69f55328f459d52537a1e85d
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57705854"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59132057"
 ---
-# <a name="walkthrough-performing-common-tasks-using-smart-tags-on-windows-forms-controls"></a>Návod: Provádění obecných úloh pomocí inteligentních značek na Windows Forms ovládací prvky
+# <a name="walkthrough-performing-common-tasks-using-smart-tags-on-windows-forms-controls"></a>Návod: Provádění obecných úloh pomocí inteligentních značek v ovládacích prvcích Windows Forms
 Jak vytvořit formuláře a ovládací prvky pro aplikace Windows Forms, existují mnoho úloh, které budete opakovaně provádět. Toto jsou některé běžně prováděné úlohy, které se zobrazí:  
   
 -   Přidání nebo odebrání kartu na <xref:System.Windows.Forms.TabControl>.  
@@ -66,6 +66,7 @@ Jak vytvořit formuláře a ovládací prvky pro aplikace Windows Forms, existuj
 6.  Klikněte na tlačítko smart piktogram. V místní nabídce, která se zobrazí vedle šifra, vyberte **orientace vodorovné příčky** položky. Zda se zobrazila zpráva <xref:System.Windows.Forms.SplitContainer> ovládacího prvku rozdělovač je nyní orientovaný vodorovně.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.TextBox>
 - <xref:System.Windows.Forms.TabControl>
 - <xref:System.Windows.Forms.SplitContainer>

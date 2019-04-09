@@ -2,12 +2,12 @@
 title: Webhosting frontové aplikace
 ms.date: 03/30/2017
 ms.assetid: c7a539fa-e442-4c08-a7f1-17b7f5a03e88
-ms.openlocfilehash: 957a97c263f44302b66b6fb57b8330f63a178fa1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c44a6b5059f5294646d95b4281dcf7845b369929
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54700205"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59126019"
 ---
 # <a name="web-hosting-a-queued-application"></a>Webhosting frontové aplikace
 Služby Aktivace procesu Windows (WAS) spravuje aktivace a dobu života pracovních procesů, které obsahují tento hostitel služby Windows Communication Foundation (WCF) aplikace. Model zpracování služby WAS zobecňuje [!INCLUDE[iis601](../../../../includes/iis601-md.md)] model procesu pro server HTTP odebráním závislosti na protokolu HTTP. To umožňuje službám WCF pomocí protokolu HTTP a jiných protokolů než HTTP, jako je například net.msmq a msmq.formatname v hostitelském prostředí, který podporuje aktivaci založenou na zprávách a nabízí schopnost hostovat velký počet aplikací v daném počítači.  
@@ -42,5 +42,6 @@ Služby Aktivace procesu Windows (WAS) spravuje aktivace a dobu života pracovn�
  Aplikace hostovaná služba WAS nejde aktivovat na základě zpráv ve frontě systému, jako jsou fronty nedoručených zpráv pro celý systém nebo dílčí fronty, jako jsou poškozené dílčí fronty. Jedná se o omezení pro tuto verzi produktu.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Zpracování škodlivých zpráv](../../../../docs/framework/wcf/feature-details/poison-message-handling.md)
 - [Koncové body služby a adresování front](../../../../docs/framework/wcf/feature-details/service-endpoints-and-queue-addressing.md)

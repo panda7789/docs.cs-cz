@@ -15,12 +15,12 @@ helpviewer_keywords:
 - examples [Windows Forms], controls
 - Click event [Windows Forms], responding to
 ms.assetid: 7a4951bd-369c-4662-b246-28ad83eda484
-ms.openlocfilehash: e6e6d041422a79171ec4b6159f0789b8aa6a50d5
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: a10eaa3ea62df9301a53f5609b503bfabcb50a46
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57724983"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59110068"
 ---
 # <a name="how-to-respond-to-windows-forms-button-clicks"></a>Postupy: Reakce na kliknutí na tlačítko Windows Forms
 Základní použití prvku Windows Forms <xref:System.Windows.Forms.Button> ovládací prvek je ke spuštění kódu po kliknutí na tlačítko.  
@@ -56,6 +56,7 @@ Základní použití prvku Windows Forms <xref:System.Windows.Forms.Button> ovl�
     ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled ovládacího prvku Button](button-control-overview-windows-forms.md)
 - [Metody výběru ovládacího prvku Windows Forms Button](ways-to-select-a-windows-forms-button-control.md)
 - [Ovládací prvek Button](button-control-windows-forms.md)

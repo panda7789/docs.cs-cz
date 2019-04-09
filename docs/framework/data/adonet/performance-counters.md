@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 0b121b71-78f8-4ae2-9aa1-0b2e15778e57
-ms.openlocfilehash: e60df2b576980ecd1ff92af78cef36f025b71417
-ms.sourcegitcommit: c6f69b0cf149f6b54483a6d5c2ece222913f43ce
+ms.openlocfilehash: e7e7ba379f6f92f3ba8fba55f22c8eaec81ab1cf
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55903793"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59133884"
 ---
 # <a name="performance-counters-in-adonet"></a>Čítače výkonu v ADO.NET
 ADO.NET 2.0 zavedené rozšířenou podporu pro čítače výkonu, která zahrnuje podporu pro obě <xref:System.Data.SqlClient> a <xref:System.Data.OracleClient>. <xref:System.Data.SqlClient> Čítačů výkonu k dispozici v předchozích verzích technologie ADO.NET byly zastaralé a nahradí nové čítače výkonu, které jsou popsané v tomto tématu. Čítače výkonu technologie ADO.NET můžete použít k monitorování stavu vaší aplikace a prostředky připojení, které používá. Čítače výkonu můžete monitorovat pomocí nástroje Sledování výkonu Windows nebo lze přistupovat programově pomocí <xref:System.Diagnostics.PerformanceCounter> třídy v <xref:System.Diagnostics> oboru názvů.  
@@ -395,6 +395,7 @@ class Program
 ```  
 
 ## <a name="see-also"></a>Viz také:
+
 - [Připojení ke zdroji dat](../../../../docs/framework/data/adonet/connecting-to-a-data-source.md)
 - [Sdružování připojení OLE DB, ODBC a Oracle](../../../../docs/framework/data/adonet/ole-db-odbc-and-oracle-connection-pooling.md)
 - [Čítače výkonu pro technologii ASP.NET](https://docs.microsoft.com/previous-versions/aspnet/fxk122b4(v=vs.100))

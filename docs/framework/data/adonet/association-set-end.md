@@ -1,15 +1,15 @@
 ---
-title: Nastavit konec asociace
+title: association set end
 ms.date: 03/30/2017
 ms.assetid: fe4bf1d3-047a-4a37-98c5-a66e70811346
-ms.openlocfilehash: 61dc00e6c349a25767f6221bed56ef8b65f823d9
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
+ms.openlocfilehash: 7b6c646592c1878ea30396d98b4976dc8fa0be12
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58412003"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59134625"
 ---
-# <a name="association-set-end"></a>Nastavit konec asociace
+# <a name="association-set-end"></a>association set end
 *Přidružení nastavit konec* identifikuje [typ entity](../../../../docs/framework/data/adonet/entity-type.md) a [sadu entit](../../../../docs/framework/data/adonet/entity-set.md) na konci [sada přidružení](../../../../docs/framework/data/adonet/association-set.md). Zakončení sady jsou definované jako součást sady přidružení; skupinu přidružení musí mít přesně dva zakončení sady.  
   
  Definici sady end přidružení obsahuje následující informace:  
@@ -32,5 +32,6 @@ ms.locfileid: "58412003"
  [!code-xml[EDM_Example_Model#EntityContainerExample](../../../../samples/snippets/xml/VS_Snippets_Data/edm_example_model/xml/books.edmx#entitycontainerexample)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Koncepty modelu EDM (Entity Data Model)](../../../../docs/framework/data/adonet/entity-data-model-key-concepts.md)
-- [Model EDM (Entity Data Model)](../../../../docs/framework/data/adonet/entity-data-model.md)
+- [Entity Data Model](../../../../docs/framework/data/adonet/entity-data-model.md)

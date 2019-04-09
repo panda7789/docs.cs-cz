@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Windows Forms, handling keyboard input
 - keyboards [Windows Forms], form-level input
 ms.assetid: d7f8b390-dc91-42d2-ae0f-2ffa388127ad
-ms.openlocfilehash: 1b458287e5becf7f8da7cab676efdb2af1ab92b5
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: fbb6587dde53592a94887c1ea19562e06c15afe3
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57712406"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59135158"
 ---
 # <a name="how-to-handle-keyboard-input-at-the-form-level"></a>Postupy: Obsluha vstupu klávesnice na úrovni formuláře
 Windows Forms poskytuje možnost zpracovávat zprávy týkající se klávesnice na úrovni formuláře před mailů ovládacího prvku. Toto téma ukazuje, jak tento úkol provést.  
@@ -43,4 +43,5 @@ Windows Forms poskytuje možnost zpracovávat zprávy týkající se klávesnice
  Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  
 
 ## <a name="see-also"></a>Viz také:
-- [Vstup z klávesnice v aplikaci Windows Forms](keyboard-input-in-a-windows-forms-application.md)
+
+- [Vstup z klávesnice ve formulářové aplikaci Windows](keyboard-input-in-a-windows-forms-application.md)

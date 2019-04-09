@@ -9,12 +9,12 @@ helpviewer_keywords:
 - ink [WPF], custom-rendering
 - classes [WPF], InkCanvas
 ms.assetid: 65c978a7-0ee0-454f-ac7f-b1bd2efecac5
-ms.openlocfilehash: ce4c2bd48e819541d942c795307df36629ec05b9
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
-ms.translationtype: MT
+ms.openlocfilehash: fead6e28949726bef46fe2be46e976fb47c3e9a3
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57362627"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59125655"
 ---
 # <a name="custom-rendering-ink"></a>Inkoust vlastního vykreslení
 <xref:System.Windows.Ink.Stroke.DrawingAttributes%2A> Vlastností tahu vám umožní určit vzhled tah, jako je například její velikost, barvu a tvar, ale může nastat situace, které chcete přizpůsobit vzhled nad rámec co <xref:System.Windows.Ink.Stroke.DrawingAttributes%2A> povolit. Můžete chtít přizpůsobit vzhled inkoustu vykreslování v vzhled vzduchová pistole, energetika Malování a mnoho dalších účinky. Windows Presentation Foundation (WPF), umožňuje vám vlastní vykreslení inkoustu pomocí implementace vlastní <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> a <xref:System.Windows.Ink.Stroke> objektu.  
@@ -92,4 +92,5 @@ ms.locfileid: "57362627"
  Můžete přizpůsobit vzhled ink odvozením vlastních <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>, <xref:System.Windows.Ink.Stroke>, a <xref:System.Windows.Controls.InkCanvas> třídy. Společně tyto třídy zkontrolujte, že vzhled objektu stroke konzistentní uživatel nakreslí tahu až po shromáždění zpracovat.  
   
 ## <a name="see-also"></a>Viz také:
-- [Pokročilé zpracování rukopisu](advanced-ink-handling.md)
+
+- [Upřesnění zpracování inkoustu](advanced-ink-handling.md)

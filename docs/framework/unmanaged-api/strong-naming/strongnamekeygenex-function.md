@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f8623c69390600380d80b0292d6a75fa395f9ae7
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: af75a645b11325b96740807f9a3df65f5a676026
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57479128"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59120844"
 ---
 # <a name="strongnamekeygenex-function"></a>StrongNameKeyGenEx – funkce
 Generuje nový pár veřejného a privátního klíče se zadanou velikost klíče pro použití silným názvem.  
@@ -80,6 +80,7 @@ BOOLEAN StrongNameKeyGenEx (
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [StrongNameKeyGenEx – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamekeygenex-method.md)
 - [StrongNameKeyGen – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamekeygen-method.md)
 - [ICLRStrongName – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)

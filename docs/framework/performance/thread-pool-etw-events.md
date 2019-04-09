@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: f2a21e3a-3b6c-4433-97f3-47ff16855ecc
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 309570fb5a159d24f5b423d96fd9987ee3bb886f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: caacee591c4df8389cea241916618f50da56b22b
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54503310"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59119129"
 ---
 # <a name="thread-pool-etw-events"></a>Události Trasování událostí pro Windows fondu vláken
 <a name="top"></a> Tyto události shromažďovat informace o pracovních procesů a vláken vstupně-výstupních operací.  
@@ -216,4 +216,5 @@ ms.locfileid: "54503310"
 |ClrInstanceID|Windows: UInt16|Jedinečné ID instance CLR nebo CoreCLR.|  
   
 ## <a name="see-also"></a>Viz také:
-- [Události Trasování událostí pro Windows v CLR](../../../docs/framework/performance/clr-etw-events.md)
+
+- [Události ETW CLR](../../../docs/framework/performance/clr-etw-events.md)

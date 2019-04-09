@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: d03b050e-2916-49a0-99ba-f19316e5c1b3
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 726e82e3ce5f8d8924617ac7c7d38468ae279e71
-ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
+ms.openlocfilehash: 37b226cad9a34f1629d2972dacf8019adad54d7a
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56093031"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59115372"
 ---
 # <a name="blittable-and-non-blittable-types"></a>Přenositelné a nepřenositelné typy
 Většina datových typů mají společné reprezentaci ve spravované i nespravované paměti a nevyžadují žádná zvláštní zacházení podle interoperační zařazovač. Tyto typy jsou označovány jako *přenositelné typy* vzhledem k tomu, že když jsou předávány mezi nevyžadují převod spravovaného a nespravovaného kódu.  
@@ -68,10 +68,11 @@ Většina datových typů mají společné reprezentaci ve spravované i nesprav
 |[System.Object](../../../docs/framework/interop/default-marshaling-for-objects.md)|Převede hodnotu typu variant nebo rozhraní.|  
 |[System.Mdarray](../../../docs/framework/interop/default-marshaling-for-arrays.md)|Převede pole stylu C nebo `SAFEARRAY`.|  
 |[System.String](../../../docs/framework/interop/default-marshaling-for-strings.md)|Převede řetězec ukončení v odkaz s hodnotou null nebo BSTR.|  
-|[Typ System.Valuetype](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/0t2cwe11(v=vs.100))|Převede na strukturu s rozložením pevné paměti.|  
+|[System.Valuetype](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/0t2cwe11(v=vs.100))|Převede na strukturu s rozložením pevné paměti.|  
 |[System.Szarray](../../../docs/framework/interop/default-marshaling-for-arrays.md)|Převede pole stylu C nebo `SAFEARRAY`.|  
   
  Typy tříd a objektů jsou podporovány pouze komunikace s objekty COM. Pro odpovídající typy v [!INCLUDE[vbprvblong](../../../includes/vbprvblong-md.md)], C#a C++, naleznete v tématu [– přehled knihovny tříd](../../../docs/standard/class-library-overview.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Výchozí chování zařazování](../../../docs/framework/interop/default-marshaling-behavior.md)

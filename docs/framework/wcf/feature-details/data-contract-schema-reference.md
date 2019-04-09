@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - data contracts [WCF], schema reference
 ms.assetid: 9ebb0ebe-8166-4c93-980a-7c8f1f38f7c0
-ms.openlocfilehash: decde09c2225da0af420813b477b86f4564d42f7
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
+ms.openlocfilehash: a4ddaaea2133a8adf5271628f442644194a7f453
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58411795"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59131934"
 ---
 # <a name="data-contract-schema-reference"></a>Schéma kontraktů dat – referenční informace
 Toto téma popisuje dílčí sady schématu XML (XSD) používá <xref:System.Runtime.Serialization.DataContractSerializer> k popisu common language runtime (CLR) typy pro serializaci kódu XML.  
@@ -682,6 +682,7 @@ new XmlQualifiedName("Person","http://Microsoft.ServiceModel.Samples");
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Runtime.Serialization.DataContractSerializer>
 - <xref:System.Runtime.Serialization.DataContractAttribute>
 - <xref:System.Runtime.Serialization.DataMemberAttribute>

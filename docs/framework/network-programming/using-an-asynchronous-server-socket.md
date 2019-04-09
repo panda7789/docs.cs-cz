@@ -17,12 +17,12 @@ helpviewer_keywords:
 - protocols, sockets
 - Internet, sockets
 ms.assetid: 813489a9-3efd-41b6-a33f-371d55397676
-ms.openlocfilehash: 5bc4e6e43d346c1543cf43d9782fd22718b4fef4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 32a2a99d5f71cb500dca467433f138a893d01e5b
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54701895"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59119922"
 ---
 # <a name="using-an-asynchronous-server-socket"></a>Použití asynchronního serverového soketu
 Asynchronního serverového sokety používají asynchronní programovací model rozhraní .NET Framework pro zpracování žádostí o služby sítě. <xref:System.Net.Sockets.Socket> Třídy vyplývá ze standardních rozhraní .NET Framework asynchronní vzor pro pojmenování; například synchronní <xref:System.Net.Sockets.Socket.Accept%2A> metoda odpovídá asynchronní <xref:System.Net.Sockets.Socket.BeginAccept%2A> a <xref:System.Net.Sockets.Socket.EndAccept%2A> metody.  
@@ -269,6 +269,7 @@ public static void ReadCallback(IAsyncResult ar)
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Použití synchronního serverového soketu](../../../docs/framework/network-programming/using-a-synchronous-server-socket.md)
 - [Příklad asynchronního serverového soketu](../../../docs/framework/network-programming/asynchronous-server-socket-example.md)
 - [Dělení na vlákna](../../../docs/standard/threading/index.md)

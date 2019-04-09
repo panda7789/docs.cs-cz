@@ -8,12 +8,12 @@ helpviewer_keywords:
 - cryptographic provider [WCF], changing
 - cryptographic provider [WCF]
 ms.assetid: b4254406-272e-4774-bd61-27e39bbb6c12
-ms.openlocfilehash: 4e11dd90d1cc57f3f2f559c22e1548b8fbcedaea
-ms.sourcegitcommit: af0a22a4eb11bbcd33baec49150d551955b50a16
-ms.translationtype: MT
+ms.openlocfilehash: 90e26154b4a0a006a4cbb114ec5ddd74a33fc762
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56261909"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59115190"
 ---
 # <a name="how-to-change-the-cryptographic-provider-for-an-x509-certificates-private-key"></a>Postupy: Změna zprostředkovatele kryptografických služeb pro privátní klíč certifikátu X.509
 Toto téma ukazuje, jak změnit zprostředkovatele kryptografických služeb používají k zajištění privátní klíč certifikátu X.509 a jak integrovat zprostředkovatele do architektury zabezpečení Windows Communication Foundation (WCF). Další informace o používání certifikátů najdete v tématu [Working with Certificates](../../../../docs/framework/wcf/feature-details/working-with-certificates.md).  
@@ -77,6 +77,7 @@ Toto téma ukazuje, jak změnit zprostředkovatele kryptografických služeb pou
      [!code-vb[c_CustomX509Token#7](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customx509token/vb/source.vb#7)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.IdentityModel.Tokens.X509AsymmetricSecurityKey>
 - <xref:System.IdentityModel.Tokens.AsymmetricSecurityKey>
 - <xref:System.IdentityModel.Tokens.SecurityKey>
@@ -84,6 +85,6 @@ Toto téma ukazuje, jak změnit zprostředkovatele kryptografických služeb pou
 - <xref:System.Security.Cryptography.HashAlgorithm>
 - <xref:System.Security.Cryptography.AsymmetricSignatureFormatter>
 - [Návod: Vytvoření vlastního klienta a pověření služby](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md)
-- [Postupy: Vytvořit vlastní bezpečnostní ověřovací data tokenu](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-authenticator.md)
+- [Postupy: Vytvoření vlastního ověřovacího modulu tokenu zabezpečení](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-authenticator.md)
 - [Postupy: Vytvoření vlastního zprostředkovatele tokenů zabezpečení](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-provider.md)
 - [Postupy: Vytvoření vlastního tokenu](../../../../docs/framework/wcf/extending/how-to-create-a-custom-token.md)

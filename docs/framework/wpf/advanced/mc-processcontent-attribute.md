@@ -5,12 +5,12 @@ helpviewer_keywords:
 - mc:ProcessContent attribute
 - XAML [WPF], mc:ProcessContent attribute
 ms.assetid: 2689b2c8-b4dc-4b71-b9bd-f95e619122d7
-ms.openlocfilehash: a9af18d1fac9101a75ac16918adf8e86ef7d2ba4
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 865b1a3ccc30ff5efab4b08956bf7ba2bba4769c
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57357375"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59110583"
 ---
 # <a name="mcprocesscontent-attribute"></a>mc:ProcessContent – atribut
 Určuje, které [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] prvky by měl mít pořád obsahu zpracovaných příslušné nadřazené elementy i v případě, že bezprostřední nadřazený element může ignorovat. [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] procesoru kvůli určení [mc: ignorable – atribut](mc-ignorable-attribute.md) . `mc:ProcessContent` Atribut podporuje kompatibility značek pro vlastní obor názvů mapování a pro [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] správy verzí.  
@@ -47,5 +47,6 @@ Určuje, které [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-
  [!INCLUDE[TLA#tla_mcxmlnsv1](../../../../includes/tlasharptla-mcxmlnsv1-md.md)] Obor názvů definuje další prvky a atributy, které nejsou uvedené v této oblasti [!INCLUDE[TLA#tla_sdk](../../../../includes/tlasharptla-sdk-md.md)]. Další informace najdete v tématu [specifikace kompatibility značek XML](https://go.microsoft.com/fwlink/?LinkId=73824).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [mc:Ignorable – atribut](mc-ignorable-attribute.md)
 - [Přehled XAML (WPF)](xaml-overview-wpf.md)

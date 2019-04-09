@@ -2,12 +2,12 @@
 title: HttpCookieSession
 ms.date: 03/30/2017
 ms.assetid: 101cb624-8303-448a-a3af-933247c1e109
-ms.openlocfilehash: ab6efa726b9a7eaf8106ff8752cdc4ecdfb0112f
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
-ms.translationtype: MT
+ms.openlocfilehash: 001f509e08780ec2d9776bcd6aed109ca0ff36a5
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58816717"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59113747"
 ---
 # <a name="httpcookiesession"></a>HttpCookieSession
 Tento příklad ukazuje, jak vytvořit vlastní protokol kanál používat soubory cookie protokolu HTTP pro správu relací. Tento kanál umožňuje komunikaci mezi službami Windows Communication Foundation (WCF) a klienti ASMX nebo mezi klienty v WCF a službami ASMX.  
@@ -169,4 +169,3 @@ Press <ENTER> to terminate client.
 3.  Abyste mohli sestavit řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
 4.  Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
-  

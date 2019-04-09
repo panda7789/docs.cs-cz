@@ -10,12 +10,12 @@ helpviewer_keywords:
 - XData in XAML [XAML Services]
 - x:XData XAML directive element [XAML Services]
 ms.assetid: 7ce209c2-621b-4977-b643-565f7e663534
-ms.openlocfilehash: 68468c3c10fd884cf5fb92160e3cde41dbf7d529
-ms.sourcegitcommit: 5c1abeec15fbddcc7dbaa729fabc1f1f29f12045
+ms.openlocfilehash: c8044bc341ded6ef7b03bbdf701e724654460d54
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58030261"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59125156"
 ---
 # <a name="xxdata-intrinsic-xaml-type"></a>x:XData – vnitřní typ jazyka XAML
 Umožňuje umístění datové ostrůvky XML v rámci výrobní XAML. Elementy XML v rámci `x:XData` by neměla být zpracována XAML procesorů, jako by šlo část funguje výchozí obor názvů XAML nebo libovolný jiný obor názvů XAML. `x:XData` může obsahovat libovolný XML ve správném formátu.  
@@ -50,6 +50,7 @@ Umožňuje umístění datové ostrůvky XML v rámci výrobní XAML. Elementy X
  Technicky vzato `x:XData` může sloužit jako obsah libovolnou vlastnost typu <xref:System.Xml.Serialization.IXmlSerializable>. Ale <xref:System.Windows.Data.XmlDataProvider.XmlSerializer%2A?displayProperty=nameWithType> pouze viditelného implementaci.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Data.XmlDataProvider>
 - [Přehled datových vazeb](../wpf/data/data-binding-overview.md)
-- [Rozšíření značek datové vazby](../wpf/advanced/binding-markup-extension.md)
+- [Rozšíření značek připojení](../wpf/advanced/binding-markup-extension.md)

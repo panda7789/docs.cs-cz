@@ -1,13 +1,13 @@
 ---
-title: <add> z <transportConfigurationType>
+title: <add> of <transportConfigurationType>
 ms.date: 03/30/2017
 ms.assetid: 03d79db9-571d-4534-acef-d05e5467b257
-ms.openlocfilehash: 84ad745e7789fc2de8dcc23f3607b63702af05a1
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: c71a58b13e89bedb5eed24d784c82fb1525f7625
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55263446"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59126721"
 ---
 # <a name="add-of-transportconfigurationtype"></a>\<add> of \<transportConfigurationType>
 Tento element je dvojice klíč/hodnota, která identifikuje typ konkrétní přenos.  
@@ -39,7 +39,7 @@ Tento element je dvojice klíč/hodnota, která identifikuje typ konkrétní př
 |transportConfigurationType|Řetězec, který obsahuje typ, který implementuje konkrétní přenos.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádná  
+ Žádné  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -59,6 +59,7 @@ Tento element je dvojice klíč/hodnota, která identifikuje typ konkrétní př
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Configuration.TransportConfigurationTypeElement>
 - <xref:System.ServiceModel.Configuration.ServiceHostingEnvironmentSection>
 - <xref:System.ServiceModel.ServiceHostingEnvironment>

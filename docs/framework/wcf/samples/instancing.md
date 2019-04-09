@@ -5,12 +5,12 @@ helpviewer_keywords:
 - service behaviors, instancing sample
 - Instancing Sample [Windows Communication Foundation]
 ms.assetid: c290fa54-f6ae-45a1-9186-d9504ebc6ee6
-ms.openlocfilehash: 25c29afce4890dcb9cc5f9000ec3d46a91d3e846
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
-ms.translationtype: MT
+ms.openlocfilehash: 046bb61b50540b2c58bd8ed9971620662f308823
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58836191"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59133585"
 ---
 # <a name="instancing"></a>Vytváření instancí
 Instancing ukázce vytvoření instance nastavení chování, které řídí, jak se vytvářejí instance třídy služby v reakci na požadavky klientů. Vzorek je založen na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md), která implementuje `ICalculator` kontrakt služby. Tato ukázka definuje kontrakt nové `ICalculatorInstance`, který dědí z `ICalculator`. Kontrakt určený `ICalculatorInstance` poskytuje tři další operace, kontroly stavu instance služby. Změnou nastavení vytvoření instance můžete sledovat změny v chování pomocí klienta.  
@@ -138,4 +138,3 @@ static void Main()
 >  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Behaviors\Instancing`  
-  

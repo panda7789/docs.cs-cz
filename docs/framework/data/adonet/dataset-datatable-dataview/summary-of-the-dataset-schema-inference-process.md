@@ -2,12 +2,12 @@
 title: Souhrn procesu odvození schématu datové sady
 ms.date: 03/30/2017
 ms.assetid: fd0891c8-d068-4e30-a76f-7c375f078bf7
-ms.openlocfilehash: 1eb12fd9c983bc0013b5dc528e0b3389250bdbe2
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 272e5762b7afd9f3ab24cbdec5f31bb120364815
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54527650"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59116061"
 ---
 # <a name="summary-of-the-dataset-schema-inference-process"></a>Souhrn procesu odvození schématu datové sady
 Procesu odvození nejdřív zjistí, z dokumentu XML, prvky, které se odvodit jako tabulka. Ze zbývajících XML určuje proces odvození sloupce pro tyto tabulky. Pro vnořené tabulky procesu odvození generuje vnořené <xref:System.Data.DataRelation> a <xref:System.Data.ForeignKeyConstraint> objekty.  
@@ -31,6 +31,7 @@ Procesu odvození nejdřív zjistí, z dokumentu XML, prvky, které se odvodit j
 -   Pro prvky, které jsou odvozeny jako tabulky a které obsahují text, ale mít žádné podřízené prvky, nový sloupec s názvem **TableName_Text** je vytvořená pro text jednotlivých prvků. Pokud element je odvozen jako tabulku a obsahuje text, ale má také podřízené prvky, text se ignoruje.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Odvození relační struktury datové sady z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/inferring-dataset-relational-structure-from-xml.md)
 - [Načtení datové sady z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md)
 - [Načtení informací o schématu datové sady z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-dataset-schema-information-from-xml.md)

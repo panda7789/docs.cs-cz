@@ -1,5 +1,5 @@
 ---
-title: Pomocí zabezpečeného Sockets Layer
+title: Použití protokolu SSL (Secure Sockets Layer)
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -15,14 +15,14 @@ helpviewer_keywords:
 - receiving data, Secure Sockets Layer
 - Internet, Secure Sockets Layer
 ms.assetid: 6e4289e6-d1b7-4e82-ab0d-e83e3b6063ed
-ms.openlocfilehash: 5d095d4cd6d8ee204b6d05a7674dee67c35e46c9
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a0af2fa8bbe2efb2dc4fb3d1177c4950dcec87cf
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54694917"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59135798"
 ---
-# <a name="using-secure-sockets-layer"></a>Pomocí zabezpečeného Sockets Layer
+# <a name="using-secure-sockets-layer"></a>Použití protokolu SSL (Secure Sockets Layer)
 <xref:System.Net> Třídy použít k šifrování připojení pro několik síťových protokolů vrstvy SSL (Secure Sockets).  
   
  Pro připojení prostřednictvím protokolu http <xref:System.Net.WebRequest> a <xref:System.Net.WebResponse> třídy používat protokol SSL ke komunikaci s weboví hostitelé, které podporují protokol SSL. Provádí rozhodnutí pro použití protokolu SSL <xref:System.Net.WebRequest> třídy založené na identifikátor URI se klíči přiřadí. Pokud identifikátor URI začíná řetězcem "https:", se používá protokol SSL; Pokud identifikátor URI začíná řetězcem "http:", se používá s nešifrovaným připojením.  
@@ -63,6 +63,7 @@ FtpWebResponse response = (FtpWebResponse)request.GetResponse();
 -   Odkazy **System.Net** oboru názvů.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Zabezpečení v síťovém programování](../../../docs/framework/network-programming/security-in-network-programming.md)
 - [Síťové programování v rozhraní .NET Framework](../../../docs/framework/network-programming/index.md)
 - [Výběr a ověření certifikátu](../../../docs/framework/network-programming/certificate-selection-and-validation.md)

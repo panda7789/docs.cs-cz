@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 21ee3c073358cc6101634815747615415705395c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 509d75e1e94a82e6a91cd235ab079603c267c70f
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54500548"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59113331"
 ---
 # <a name="inotifysource2-interface"></a>INotifySource2 – rozhraní
 Deklaruje metodu pro nastavení oznámení filtrů.  
@@ -36,6 +36,7 @@ Deklaruje metodu pro nastavení oznámení filtrů.
  **Záhlaví:** ProtocolNotify2.idl  
   
 ## <a name="see-also"></a>Viz také:
+
 - [INotifyConnection2 – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/inotifyconnection2-interface.md)
 - [INotifySink2 – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-interface.md)
-- [Rozhraní pro úložiště symbolů diagnostiky](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)
+- [Rozhraní úložiště symbolů diagnostiky](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)

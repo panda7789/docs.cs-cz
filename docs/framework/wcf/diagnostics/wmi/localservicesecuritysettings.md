@@ -2,12 +2,12 @@
 title: LocalServiceSecuritySettings
 ms.date: 03/30/2017
 ms.assetid: 490aa0e5-5242-4f8d-b505-5ec6287633b4
-ms.openlocfilehash: 5c68706c5dcec3a5b0ec62bb9cfbea4e1496b4f6
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 15304630eb8a14e01d4815ddddc84cd32796fdcf
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54574596"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59133478"
 ---
 # <a name="localservicesecuritysettings"></a>LocalServiceSecuritySettings
 LocalServiceSecuritySettings  
@@ -145,4 +145,5 @@ class LocalServiceSecuritySettings
 |Obor názvů|Definované v root\ServiceModel|  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings>

@@ -12,12 +12,12 @@ helpviewer_keywords:
 - ellipses
 - drawing [Windows Forms], arcs
 ms.assetid: 34f35133-a835-4ca4-81f6-0dfedee8b683
-ms.openlocfilehash: 9f6969f9ad838ae913f049c4fc65d987e1aff9fa
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 8bbc2eda6450128eac55576259880e83f07099ab
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57718477"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59117453"
 ---
 # <a name="ellipses-and-arcs-in-gdi"></a>Elipsy a oblouky v rozhraní GDI+
 Můžete snadno kreslení elipsy a oblouky pomocí <xref:System.Drawing.Graphics.DrawEllipse%2A> a <xref:System.Drawing.Graphics.DrawArc%2A> metody <xref:System.Drawing.Graphics> třídy.  
@@ -48,6 +48,7 @@ Můžete snadno kreslení elipsy a oblouky pomocí <xref:System.Drawing.Graphics
  ![Elipsy a oblouky](./media/aboutgdip02-art06.gif "Aboutgdip02_art06")  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Drawing.Graphics?displayProperty=nameWithType>
 - <xref:System.Drawing.Pen?displayProperty=nameWithType>
 - [Čáry, křivky a obrazce](lines-curves-and-shapes.md)

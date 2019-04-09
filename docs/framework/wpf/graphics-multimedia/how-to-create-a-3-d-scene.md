@@ -8,12 +8,12 @@ helpviewer_keywords:
 - scenes [WPF], 3-D
 - 3-D scenes
 ms.assetid: adb4a598-71a2-4dd5-b677-ea3fc11b78b2
-ms.openlocfilehash: 8c9aec78bdda4f9f122b6dbefe0956ba649adf22
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 8e176cb437055787da86d56770dd71323134fa33
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57370745"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59126227"
 ---
 # <a name="how-to-create-a-3-d-scene"></a>Postupy: Vytvoření 3D scény
 Tento příklad ukazuje postup vytvoření 3D objekt, který vypadá jako seznam bez stromové struktury papíru, které byly otočen. A <xref:System.Windows.Controls.Viewport3D> spolu s následující součásti, které se používají k vytvoření tohoto jednoduchého 3D scény:  
@@ -38,4 +38,5 @@ Tento příklad ukazuje postup vytvoření 3D objekt, který vypadá jako seznam
  [!code-vb[3DGallery_procedural_snip#Basic3DShapeCodeExampleWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/3DGallery_procedural_snip/visualbasic/basic3dshapeexample.vb#basic3dshapecodeexamplewholepage)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled 3D grafiky](3-d-graphics-overview.md)

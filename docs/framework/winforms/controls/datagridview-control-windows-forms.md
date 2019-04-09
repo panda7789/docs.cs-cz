@@ -13,12 +13,12 @@ helpviewer_keywords:
 - datasets [Windows Forms], displaying in DataGridView control
 - DataGridView control [Windows Forms]
 ms.assetid: dbee73f2-bba6-4874-9389-cd21d44309be
-ms.openlocfilehash: 52ff12df7de7dc43c9cea2f36d3780fd0dd6ae3e
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 86e96045b7de580b7cefd0262369ce860d00e234
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57722321"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59124316"
 ---
 # <a name="datagridview-control-windows-forms"></a>DataGridView – ovládací prvek (Windows Forms)
 `DataGridView` Ovládacího prvku poskytuje výkonný a flexibilní způsob, jak zobrazit data ve formátu tabulky. Můžete použít `DataGridView` ovládací prvek zobrazení jen pro čtení malých objemů dat, nebo je možné škálovat zobrazit upravitelných zobrazeních velmi rozsáhlých datových sad.  
@@ -83,4 +83,5 @@ ms.locfileid: "57722321"
  Poskytuje referenční dokumentaci pro <xref:System.Windows.Forms.BindingSource> komponenty. <xref:System.Windows.Forms.DataGridView> Ovládacího prvku a <xref:System.Windows.Forms.BindingSource> komponenty jsou navrženy pro práci úzce spolupracují.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Ovládací prvky používané ve Windows Forms](controls-to-use-on-windows-forms.md)

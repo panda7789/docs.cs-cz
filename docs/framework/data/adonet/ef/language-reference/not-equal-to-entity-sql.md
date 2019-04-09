@@ -2,12 +2,12 @@
 title: '! = (Nerovná se) (Entity SQL)'
 ms.date: 03/30/2017
 ms.assetid: 3b4a02ad-ddfc-4c42-8dfa-676234461312
-ms.openlocfilehash: d5e59fe61dbc05a48e98f5720dca446482b9968e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 3d6e391e708b81c45af82280f200aebdaef41421
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54568128"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59130963"
 ---
 # <a name="-not-equal-to-entity-sql"></a>! = (Nerovná se) (Entity SQL)
 Porovná dva výrazy k určení, zda levý výraz není roven pravý výraz. ! = – Operátor (není rovno) je funkčně srovnatelný s <> operátor.  
@@ -37,4 +37,5 @@ expression <> expression
  [!code-csharp[DP EntityServices Concepts 2#NOT_EQUALS](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#not_equals)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Reference k Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)

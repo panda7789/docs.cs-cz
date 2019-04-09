@@ -8,12 +8,12 @@ helpviewer_keywords:
 - images [Windows Forms], changing encoder parameters
 - JPEG images [Windows Forms], setting quality level
 ms.assetid: 4b9a74e3-9504-43c1-9f28-ace651d0772e
-ms.openlocfilehash: 678e89eaa240cbe3a396c1ee3d6c18e7ceca17ee
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: de9dce1b3c15070fda268c430ce5da641efef6f4
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57722283"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59130673"
 ---
 # <a name="how-to-set-jpeg-compression-level"></a>Postupy: Nastavení úrovně komprese JPEG
 Můžete chtít upravit parametry bitovou kopii při uložení image na disk na minimální velikost souboru nebo zlepšení jeho kvality. Kvalita obrázku JPEG můžete upravit tak, že upravíte jejich úroveň komprese. Chcete-li určit úroveň komprese při ukládání ve formátu JPEG, musíte vytvořit <xref:System.Drawing.Imaging.EncoderParameters> objektu a předejte ji do <xref:System.Drawing.Image.Save%2A> metodu <xref:System.Drawing.Image> třídy. Inicializovat <xref:System.Drawing.Imaging.EncoderParameters> objektu tak, že je pole, které se skládá z jednoho <xref:System.Drawing.Imaging.EncoderParameter>. Při vytváření <xref:System.Drawing.Imaging.EncoderParameter>, zadejte <xref:System.Drawing.Imaging.Encoder.Quality> kodér a úroveň požadované komprese.  
@@ -130,6 +130,7 @@ End Function
 -   Soubor obrázku, který je pojmenován `TestPhoto.jpg` a umístění **c:\\**.  
   
 ## <a name="see-also"></a>Viz také:
-- [Postupy: Určuje parametry podporuje kodéru](how-to-determine-the-parameters-supported-by-an-encoder.md)
+
+- [Postupy: Určení parametrů podporovaných kodérem](how-to-determine-the-parameters-supported-by-an-encoder.md)
 - [Typy rastrových obrázků](types-of-bitmaps.md)
 - [Použití kodérů a dekodérů ve spravovaném GDI+](using-image-encoders-and-decoders-in-managed-gdi.md)

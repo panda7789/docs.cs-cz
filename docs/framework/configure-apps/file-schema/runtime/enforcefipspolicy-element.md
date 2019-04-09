@@ -1,5 +1,5 @@
 ---
-title: Element <enforceFIPSPolicy>
+title: <enforceFIPSPolicy> Prvek
 ms.date: 03/30/2017
 helpviewer_keywords:
 - enforceFIPSPolicy element
@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: c35509c4-35cf-43c0-bb47-75e4208aa24e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1a4e5ba5ac1a5a3c08c351531efc84291925ba4b
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: b1aa958e15449949a1b7ca740198fff71295b2ad
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55267466"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59114830"
 ---
 # <a name="enforcefipspolicy-element"></a>\<enforcefipspolicy – > – Element
 Určuje, jestli chcete vynutit požadavek konfigurace počítače, že kryptografické algoritmy musí být v souladu se informace o zpracování normy FIPS (Federal).  
@@ -40,7 +40,7 @@ Určuje, jestli chcete vynutit požadavek konfigurace počítače, že kryptogra
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |`true`|V případě, že váš počítač je nakonfigurován tak, aby vyžadovala kryptografické algoritmy pro rozpoznávání kompatibilní se standardem FIPS, tento požadavek se nevynutí. Pokud třída implementuje algoritmus, který není kompatibilní se standardem FIPS, konstruktory nebo `Create` metody pro danou třídu vyvolat výjimky při jejich spuštění na tomto počítači. Toto nastavení je výchozí.|  
 |`false`|Kryptografické algoritmy, které používají aplikace nejsou musí být v souladu se standardem FIPS, bez ohledu na konfigurace počítače.|  
@@ -72,6 +72,7 @@ Určuje, jestli chcete vynutit požadavek konfigurace počítače, že kryptogra
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
 - [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)
 - [Kryptografický model](../../../../../docs/standard/security/cryptography-model.md)

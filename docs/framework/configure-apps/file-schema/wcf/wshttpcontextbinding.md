@@ -2,12 +2,12 @@
 title: <wsHttpContextBinding>
 ms.date: 03/30/2017
 ms.assetid: 1e40b5c9-0df2-4d66-afc5-a99d0e4ae7a4
-ms.openlocfilehash: efd15b5fd7c7c5f9362999e51a5509a0f190cc48
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 20d931dfd1805dd4b56aabbab778e6587caa003a
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57359442"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59112460"
 ---
 # <a name="wshttpcontextbinding"></a>\<wsHttpContextBinding>
 Poskytuje kontext pro <xref:System.ServiceModel.WSHttpBinding> , která vyžaduje, aby úroveň ochrany byla podepsána.  
@@ -88,7 +88,7 @@ Poskytuje kontext pro <xref:System.ServiceModel.WSHttpBinding> , která vyžaduj
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<zabezpečení >](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-wshttpbinding.md)|Definuje nastavení zabezpečení pro vazbu. Tento prvek je typu <xref:System.ServiceModel.Configuration.WSHttpSecurityElement>.|  
+|[\<security>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-wshttpbinding.md)|Definuje nastavení zabezpečení pro vazbu. Tento prvek je typu <xref:System.ServiceModel.Configuration.WSHttpSecurityElement>.|  
 |[\<readerQuotas>](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms731325(v=vs.100))|Definuje omezení složitosti zpráv SOAP, které mohou být zpracovány koncovými body nakonfigurovaným s touto vazbou. Tento prvek je typu <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement>.|  
 |[\<reliableSession>](https://docs.microsoft.com/previous-versions/ms731375(v=vs.90))|Určuje, pokud jsou mezi koncovými body kanál navázat spolehlivé relace.|  
   
@@ -96,9 +96,10 @@ Poskytuje kontext pro <xref:System.ServiceModel.WSHttpBinding> , která vyžaduj
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<bindings>](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|Tento prvek obsahuje sadu standardních a vlastních vazeb.|  
+|[\<vazby >](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|Tento prvek obsahuje sadu standardních a vlastních vazeb.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.WSHttpBinding>
 - <xref:System.ServiceModel.WSHttpContextBinding>
 - <xref:System.ServiceModel.Configuration.WSHttpContextBindingElement>

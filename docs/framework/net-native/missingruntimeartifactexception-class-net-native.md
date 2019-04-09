@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: d5b3d13e-689f-4584-8ba6-44f5167a8590
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e4dd7ef41cb935bf2b9808f730c288c29198720b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 4ba528f8545f0781f15e4479cbef0b80feeab46d
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54687268"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59116841"
 ---
 # <a name="missingruntimeartifactexception-class-net-native"></a>Třída MissingRuntimeArtifactException (.NET Native)
 **.NET pro aplikace pro Windows pro Windows 10, [!INCLUDE[net_native](../../../includes/net-native-md.md)] pouze**  
@@ -81,5 +81,6 @@ ms.locfileid: "54687268"
  `MissingRuntimeArtifactException` Třída neobsahuje žádné členy jedinečných; všichni její členové jsou zděděny ze své základní třídy <xref:System.MemberAccessException>.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)
 - [Nastavení zásad direktivy modulu runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md)

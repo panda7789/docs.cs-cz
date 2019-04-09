@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: fc9633f7518aee233634bb7fbfac74c24b306eac
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 499ba1887846cc670dc763ec998ef335c17a9ae5
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54515599"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59125993"
 ---
 # <a name="icatalogservicesnotautodone-method"></a>ICatalogServices::NotAutodone – metoda
 Tato metoda podporuje infrastrukturu rozhraní .NET Framework a není určena pro použití přímo v kódu.  
@@ -34,4 +34,5 @@ HRESULT NotAutodone ( );
 ```  
   
 ## <a name="see-also"></a>Viz také:
-- [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+
+- [Rozhraní hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)

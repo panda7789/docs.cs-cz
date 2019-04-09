@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e07487f536454d9d2dcfff15eb871124112d250e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 00e58d83c19c3cb6a2e1eb38942500d7f5dc5cf9
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54634953"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59118921"
 ---
 # <a name="corversion-structure"></a>COR_VERSION – struktura
 Ukládá číslo standardní sestávající ze čtyř částí verze modulu common language runtime.  
@@ -59,5 +59,6 @@ typedef struct _COR_VERSION {
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Struktury pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)
 - [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)

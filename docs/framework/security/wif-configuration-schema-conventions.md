@@ -1,16 +1,16 @@
 ---
-title: Převody schématu konfigurace WIF
+title: Konvence schématu konfigurace WIF
 ms.date: 03/30/2017
 ms.assetid: f7864356-f72f-4cae-995c-18e0431f8a58
 author: BrucePerlerMS
-ms.openlocfilehash: acdce1f0ae35713dd4955e1353e0a83000898408
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 39ed32bb7e926f275e996b09e746c879c6d3fe9e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54711392"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59120871"
 ---
-# <a name="wif-configuration-schema-conventions"></a>Převody schématu konfigurace WIF
+# <a name="wif-configuration-schema-conventions"></a>Konvence schématu konfigurace WIF
 Toto téma popisuje konvence používaný v celém témata týkající se konfigurace technologie Windows Identity Foundation (WIF) a popisuje některé běžné funkce a atributy se používají v [ \<system.identityModel >](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/system-identitymodel.md) a [ \<system.identityModel.services >](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/system-identitymodel-services.md) oddíly.  
   
 <a name="BKMK_Modes"></a>   
@@ -45,5 +45,6 @@ Toto téma popisuje konvence používaný v celém témata týkající se konfig
  Vlastní typy musí být odvozen od typu určeného a musí zadat `public` výchozího konstruktoru (0 argumentů).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [\<system.identityModel>](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/system-identitymodel.md)
 - [\<system.identityModel.services>](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/system-identitymodel-services.md)

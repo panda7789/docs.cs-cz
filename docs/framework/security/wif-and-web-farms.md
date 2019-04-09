@@ -1,16 +1,16 @@
 ---
-title: Technologie WIF a webové farmy
+title: WIF a webové farmy
 ms.date: 03/30/2017
 ms.assetid: fc3cd7fa-2b45-4614-a44f-8fa9b9d15284
 author: BrucePerlerMS
-ms.openlocfilehash: 85fbebcd210e7df17212d39b8e3aca9bf76bfb67
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2f95213390187648c9f58b9b2bf2d5e3f49fb860
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54543052"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59135353"
 ---
-# <a name="wif-and-web-farms"></a>Technologie WIF a webové farmy
+# <a name="wif-and-web-farms"></a>WIF a webové farmy
 Při použití technologie Windows Identity Foundation (WIF) k zabezpečení prostředků aplikace předávající stranu, která je nasazená ve webové farmě, musíte provést určité kroky k zajištění, že technologie WIF zpracovávat tokeny z instancí aplikace předávající strany, který běží na různých počítače ve farmě. Dané zpracování zahrnuje ověřování podpisů tokenu relace, šifrování a dešifrování tokenů relace, ukládání do mezipaměti relace tokeny a zjišťování, odesílal tokeny zabezpečení.  
   
  V typické případy Pokud technologie WIF slouží k zabezpečení prostředků aplikace předávající strany – zda RP běží na jednom počítači nebo ve webové farmě--relaci pokládáme stav, pomocí klienta na základě tokenu zabezpečení, který byl získán od služby tokenů zabezpečení (STS). To je vyhnout se vynutí, aby měl k ověření na službu tokenů zabezpečení pro každý prostředek aplikace, která je zabezpečena pomocí technologie WIF klient. Další informace o zpracování relací WIF najdete v tématu [Správa relací WIF](../../../docs/framework/security/wif-session-management.md).  
@@ -251,6 +251,7 @@ namespace CacheLibrary
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache>
 - <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler>
 - <xref:System.IdentityModel.Services.Tokens.MachineKeySessionSecurityTokenHandler>

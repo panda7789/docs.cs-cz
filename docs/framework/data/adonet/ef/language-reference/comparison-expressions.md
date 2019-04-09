@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: ec7637a9-01d5-4a95-8bb0-478311cd263b
-ms.openlocfilehash: cca909e67464d08c0bb4ff8a0d0186d9d600ce18
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a37e7e3d0759cb3cf17d2b4cbd3dd2e4877ff6c9
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54596342"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59125642"
 ---
 # <a name="comparison-expressions"></a>Výrazy porovnání
 Výrazu porovnání kontroluje, zda je konstantní hodnota, hodnota vlastnosti nebo výsledek metody stejné, není rovno, větší než nebo menší než jiná hodnota. Pokud je konkrétní porovnání není platný pro [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)], bude vyvolána výjimka. Všechny porovnání implicitní a explicitní, vyžadují, že jsou všechny součásti ve zdroji dat srovnatelné. Porovnání výrazů jsou často používána ve `Where` klauzule pro omezení výsledků dotazu.  
@@ -54,4 +54,5 @@ Výrazu porovnání kontroluje, zda je konstantní hodnota, hodnota vlastnosti n
  [!code-vb[DP L2E Conceptual Examples#MethodAsConstantFails](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Conceptual Examples/VB/Module1.vb#methodasconstantfails)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Výrazy v dotazech LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/expressions-in-linq-to-entities-queries.md)

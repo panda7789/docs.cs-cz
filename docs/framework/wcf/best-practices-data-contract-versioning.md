@@ -7,12 +7,12 @@ helpviewer_keywords:
 - best practices [WCF], data contract versioning
 - Windows Communication Foundation, data contracts
 ms.assetid: bf0ab338-4d36-4e12-8002-8ebfdeb346cb
-ms.openlocfilehash: 544ecc3827a698f92ec29855f1e000fce1907386
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
-ms.translationtype: MT
+ms.openlocfilehash: 9f92e731132eb564b893e3d34ccd322fbcd66ea7
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58409468"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59118999"
 ---
 # <a name="best-practices-data-contract-versioning"></a>Doporučené postupy: Správa verzí kontraktů dat
 Toto téma obsahuje osvědčené postupy pro vytváření dat smlouvy, které v průběhu času můžete snadno vyvíjejí. Další informace o kontraktech dat, najdete v tématech v [kontraktů dat pomocí](../../../docs/framework/wcf/feature-details/using-data-contracts.md).  
@@ -91,6 +91,7 @@ Toto téma obsahuje osvědčené postupy pro vytváření dat smlouvy, které v 
  Některé zde uvedené pokyny můžete bezpečně ignorovat při použití zvláštní okolnosti. Ujistěte se, že plně chápete serializace, deserializace a schéma mechanismy upozorněni před odchýlení od pokynů.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Runtime.Serialization.DataContractAttribute.Name%2A>
 - <xref:System.Runtime.Serialization.DataContractAttribute>
 - <xref:System.Runtime.Serialization.DataMemberAttribute.Order%2A>
@@ -102,6 +103,6 @@ Toto téma obsahuje osvědčené postupy pro vytváření dat smlouvy, které v 
 - <xref:System.Runtime.Serialization.OnDeserializingAttribute>
 - [Použití kontraktů dat](../../../docs/framework/wcf/feature-details/using-data-contracts.md)
 - [Správa verzí kontraktů dat](../../../docs/framework/wcf/feature-details/data-contract-versioning.md)
-- [Názvy kontraktů dat](../../../docs/framework/wcf/feature-details/data-contract-names.md)
+- [Názvy kontraktu dat](../../../docs/framework/wcf/feature-details/data-contract-names.md)
 - [Kontrakty dat s dopřednou kompatibilitou](../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md)
 - [Zpětná volání serializace tolerantní k verzím](../../../docs/framework/wcf/feature-details/version-tolerant-serialization-callbacks.md)

@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - WCF Data Services, customizing requests
 ms.assetid: 1632f9af-e45f-4363-9222-03823daa8e28
-ms.openlocfilehash: 786d4deaa1b2e4dfacab6c89c7d3d5e734bd3ffd
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 3c97e943d5516f879dda973bc008800032df5eb5
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54718127"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59134845"
 ---
 # <a name="how-to-specify-client-credentials-for-a-data-service-request-wcf-data-services"></a>Postupy: Zadejte přihlašovací údaje klienta datové služby žádosti (WCF Data Services)
 Ve výchozím nastavení, klientské knihovny neposkytuje přihlašovací údaje při odesílání požadavku do [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] služby. Však můžete určit, že přihlašovací údaje se odešlou k ověření požadavků ve službě data zadáním <xref:System.Net.NetworkCredential> pro <xref:System.Data.Services.Client.DataServiceContext.Credentials%2A> vlastnost <xref:System.Data.Services.Client.DataServiceContext>. Další informace najdete v tématu [zabezpečení služeb WCF Data Services](../../../../docs/framework/data/wcf/securing-wcf-data-services.md). V příkladu v tomto tématu ukazuje, jak explicitně zadat přihlašovací údaje, které jsou používány [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] klienta při vyžádání dat z datové služby.  
@@ -53,5 +53,6 @@ Ve výchozím nastavení, klientské knihovny neposkytuje přihlašovací údaje
  Další informace najdete v tématu [zabezpečení služeb WCF Data Services](../../../../docs/framework/data/wcf/securing-wcf-data-services.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Zabezpečení datových služeb WCF Data Services](../../../../docs/framework/data/wcf/securing-wcf-data-services.md)
 - [Klientská knihovna pro WCF Data Services](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)

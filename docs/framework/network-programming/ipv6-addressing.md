@@ -26,12 +26,12 @@ helpviewer_keywords:
 - IPv6, addresses in
 - IPv6, disabling
 ms.assetid: 20a104ae-1649-4649-a005-531a5cf74c93
-ms.openlocfilehash: 2da6622fbb15e7214f928d2471d32283b87bb2f7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 50df0e0710c1f722d4e769ad89b653f6a8d5e394
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54633849"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59121950"
 ---
 # <a name="ipv6-addressing"></a>Adresování IPv6
 V Internet Protocol verze 6 (IPv6) jsou adresy 128 bitů. Jedním z důvodů rozsáhlý adresní prostor je rozdělit do hierarchie směrování domén, které odpovídají Internetu topologie dostupných adres. Dalším důvodem je mapovat adresy síťových adaptérů (nebo rozhraní), které se zařízení připojují k síti. IPv6 obsahuje schopnost přeložit adresy na nejnižší úrovni, na úrovni síťových rozhraní, a také funkce automatické konfigurace.  
@@ -73,5 +73,6 @@ V Internet Protocol verze 6 (IPv6) jsou adresy 128 bitů. Jedním z důvodů roz
  Obecně platí uzel má vždy Adresa specifická pro připojení. Adresa specifická pro server a jednu nebo více globálních adres může mít.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Protokol IP (Internet Protocol) verze 6](../../../docs/framework/network-programming/internet-protocol-version-6.md)
 - [Sokety](../../../docs/framework/network-programming/sockets.md)

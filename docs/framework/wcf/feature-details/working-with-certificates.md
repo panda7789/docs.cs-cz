@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - certificates [WCF]
 ms.assetid: 6ffb8682-8f07-4a45-afbb-8d2487e9dbc3
-ms.openlocfilehash: d9bf6bd6b142fadbf8326c96f7220c9b74fbc1d0
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 3b7fa5d22283f6f69e1f13ecd32e34a6700f32c4
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54693607"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59115697"
 ---
 # <a name="working-with-certificates"></a>Práce s certifikáty
 Programování zabezpečení Windows Communication Foundation (WCF), digitální certifikáty X.509 běžně slouží k ověřování klientů a serverů, šifrování a digitálnímu podepisování zpráv. V tomto tématu stručně popisuje funkce digitální certifikát X.509 a jak je používat v WCF a obsahuje odkazy na témata, která popisují tyto koncepty další nebo, která ukazují, jak provádět běžné úlohy pomocí WCF a certifikáty.  
@@ -74,7 +74,7 @@ Programování zabezpečení Windows Communication Foundation (WCF), digitální
   
  Můžete také nastavit vlastnost pomocí konfigurace. Tyto prvky se používají k určení režimu ověřování:  
   
--   [\<authentication>](../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-servicecertificate-element.md)  
+-   [\<ověřování >](../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-servicecertificate-element.md)  
   
 -   [\<peerAuthentication>](../../../../docs/framework/configure-apps/file-schema/wcf/peerauthentication-element.md)  
   
@@ -171,6 +171,7 @@ Programování zabezpečení Windows Communication Foundation (WCF), digitální
  V první verzi WCF mapování se provádí bez konzultace zásada domény. Proto je možné, že starší aplikace, které používají k práci při spuštění v prvním vydání se nepovede, pokud je povoleno mapování a certifikát X.509 nesplňuje zásady domény.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Channels>
 - <xref:System.ServiceModel.Security>
 - <xref:System.ServiceModel>

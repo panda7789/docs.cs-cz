@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Nakonfigurovat zaškrtnutí MenuStrip okrajů a okrajů obrázků'
+title: 'Postupy: Konfigurace okrajů pro zaškrtnutí a okrajů pro obrázek ovládacího prvku MenuStrip'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - menus [Windows Forms], setting margins
 - MenuStrip control [Windows Forms], configuring check and image margins
 ms.assetid: 45a9075d-4bea-4ce2-9b2c-7619aa39f8ce
-ms.openlocfilehash: f75cce1a9c155174178a55213d6a21ad5ba99772
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 09de1a9ca4be1c4ebfb0e13e800c09753bd04f11
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57707843"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59134989"
 ---
-# <a name="how-to-configure-menustrip-check-margins-and-image-margins"></a>Postupy: Nakonfigurovat zaškrtnutí MenuStrip okrajů a okrajů obrázků
+# <a name="how-to-configure-menustrip-check-margins-and-image-margins"></a>Postupy: Konfigurace okrajů pro zaškrtnutí a okrajů pro obrázek ovládacího prvku MenuStrip
 Můžete přizpůsobit <xref:System.Windows.Forms.MenuStrip> nastavením <xref:System.Windows.Forms.ToolStripDropDownMenu.ShowImageMargin%2A> a <xref:System.Windows.Forms.ToolStripDropDownMenu.ShowCheckMargin%2A> vlastnosti v různých kombinacích.  
   
 ## <a name="example"></a>Příklad  
@@ -33,8 +33,9 @@ Můžete přizpůsobit <xref:System.Windows.Forms.MenuStrip> nastavením <xref:S
  Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.MenuStrip>
 - <xref:System.Windows.Forms.ContextMenuStrip>
 - <xref:System.Windows.Forms.ToolStripDropDown>
-- [Ovládací prvek ToolStrip](toolstrip-control-windows-forms.md)
+- [ToolStrip – ovládací prvek](toolstrip-control-windows-forms.md)
 - [Postupy: Povolení okrajů pro zaškrtnutí a okrajů obrázků v ovládacích prvcích ContextMenuStrip](how-to-enable-check-margins-and-image-margins-in-contextmenustrip-controls.md)

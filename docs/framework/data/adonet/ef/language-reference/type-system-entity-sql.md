@@ -2,12 +2,12 @@
 title: Systém typů (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 818a505b-a196-41dd-aaac-2ccd5f7a2f1a
-ms.openlocfilehash: a2748407703b90c60d3082b0e6c0b6aa2d3fb365
-ms.sourcegitcommit: c6f69b0cf149f6b54483a6d5c2ece222913f43ce
+ms.openlocfilehash: 0afeffd3ad180d6cc6175010140754e279988b38
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55904683"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59134560"
 ---
 # <a name="type-system-entity-sql"></a>Systém typů (Entity SQL)
 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] podporuje několik typů:  
@@ -49,7 +49,8 @@ from (select ref(o) as r from LOB.Orders as o) as o2
  Pokud je hodnota odkaz null nebo cílem odkazu ještě neexistuje, výsledek je null.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-overview.md)
 - [Reference k Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
 - [CAST](../../../../../../docs/framework/data/adonet/ef/language-reference/cast-entity-sql.md)
-- [Specifikace CSDL, SSDL a MSL](../../../../../../docs/framework/data/adonet/ef/language-reference/csdl-ssdl-and-msl-specifications.md)
+- [Soubor CSDL, SSDL a MSL specifikace](../../../../../../docs/framework/data/adonet/ef/language-reference/csdl-ssdl-and-msl-specifications.md)

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - visual layer [WPF], DrawingVisual objects
 - DrawingVisual objects in visual layer [WPF]
 ms.assetid: 0b4e711d-e640-40cb-81c3-8f5c59909b7d
-ms.openlocfilehash: d15662958c6967d8bbb157c1af99b4666cebecc2
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 01e10a4b0f0bf4959850caf3951ad4ea915edb4e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57375048"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59121716"
 ---
 # <a name="using-drawingvisual-objects"></a>Použití objektů DrawingVisual
 Toto téma obsahuje přehled o tom, jak používat <xref:System.Windows.Media.DrawingVisual> objekty v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vizuální vrstvy.  
@@ -70,7 +70,8 @@ Toto téma obsahuje přehled o tom, jak používat <xref:System.Windows.Media.Dr
  [!code-vb[DrawingVisualSample#103](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DrawingVisualSample/visualbasic/window1.xaml.vb#103)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Media.DrawingVisual>
 - <xref:System.Windows.Media.VisualTreeHelper.HitTest%2A>
 - [Přehled vykreslování grafiky WPF](wpf-graphics-rendering-overview.md)
-- [Ověřování pozice ve vizuální vrstvě](hit-testing-in-the-visual-layer.md)
+- [Spuštění testování ve vizuální vrstvě](hit-testing-in-the-visual-layer.md)

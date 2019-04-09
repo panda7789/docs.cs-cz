@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Message Contract
 ms.assetid: 5a200b78-1a46-4104-b7fb-da6dbab33893
-ms.openlocfilehash: c65004189c43e4838c9131f61aaa09a41191b702
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
-ms.translationtype: MT
+ms.openlocfilehash: 219e96555a7b9a6ae82b3cea8bd112ddf6e27602
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58817289"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59116451"
 ---
 # <a name="default-message-contract"></a>Výchozí kontrakt zprávy
 Výchozí kontrakt zprávy ukázce služby, kde je předán vlastní uživatelsky definovanou zprávu do a z operací služby. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) , který implementuje rozhraní kalkulačku jako služba typu. Místo operace jednotlivé služby pro sčítání, odčítání, násobení a dělení používané [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md), tento příklad předává vlastní zprávu, která obsahuje operandy a operátor a vrátí výsledek aritmetické výpočtu.  
@@ -184,4 +184,3 @@ Press <ENTER> to terminate client.
 >  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Message\Default`  
-  

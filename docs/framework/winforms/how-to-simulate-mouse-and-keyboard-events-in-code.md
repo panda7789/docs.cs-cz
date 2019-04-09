@@ -12,12 +12,12 @@ helpviewer_keywords:
 - mouse clicks [Windows Forms], simulating
 - mouse [Windows Forms], event simulation
 ms.assetid: 6abcb67e-3766-4af2-9590-bf5dabd17e41
-ms.openlocfilehash: bb51cd5ac3c4961381ceff89054d79dc52531627
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: aa0139c4b51bf33f9156eeb9dab6b9b6093524d8
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57713758"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59123445"
 ---
 # <a name="how-to-simulate-mouse-and-keyboard-events-in-code"></a>Postupy: Simulace událostí myši a klávesnice v kódu
 Windows Forms poskytuje několik možností pro simulaci programově myši a klávesnice. Toto téma obsahuje přehled těchto možností.  
@@ -90,4 +90,5 @@ Windows Forms poskytuje několik možností pro simulaci programově myši a kl�
  Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Uživatelský vstup ve Windows Forms](user-input-in-windows-forms.md)

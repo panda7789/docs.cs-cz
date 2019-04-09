@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: b6ab2d48-6eee-4bab-97a3-046b3b0a5470
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 675e2e4d5022f0260450f9f0b2025f215b3ead7e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: defd7f90fcac8d1e98104796682058638c9bd799
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54708283"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59127072"
 ---
 # <a name="overlappedfreeerror-mda"></a>overlappedFreeError – pomocník spravovaného ladění (MDA)
 `overlappedFreeError` Pomocníka spravovaného ladění (MDA) se aktivuje při <xref:System.Threading.Overlapped.Free%28System.Threading.NativeOverlapped%2A%29?displayProperty=nameWithType> metoda je volána před dokončením překrytá operace.  
@@ -29,7 +29,7 @@ ms.locfileid: "54708283"
   
  Toto MDA nemusí reprezentovat chybu, pokud překrytá operace nebyla úspěšně spuštěna.  
   
-## <a name="resolution"></a>Rozlišení  
+## <a name="resolution"></a>Řešení  
  Ujistěte se, že dokončení vstupně-výstupní operace pomocí překryté struktury před voláním <xref:System.Threading.Overlapped.Free%28System.Threading.NativeOverlapped%2A%29> metody.  
   
 ## <a name="effect-on-the-runtime"></a>Vliv na modul Runtime  
@@ -51,6 +51,7 @@ ms.locfileid: "54708283"
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
 - [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
 - [Zařazování spolupráce](../../../docs/framework/interop/interop-marshaling.md)

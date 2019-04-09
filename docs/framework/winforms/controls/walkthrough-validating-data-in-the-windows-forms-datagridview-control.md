@@ -12,12 +12,12 @@ helpviewer_keywords:
 - data validation [Windows Forms], Windows Forms
 - walkthroughs [Windows Forms], DataGridView control
 ms.assetid: a4f1d015-2969-430c-8ea2-b612d179c290
-ms.openlocfilehash: 6bb46a9bc54652d781d3421051b7d6e09fc91772
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: a9572bf469f539fdf52f414b2e0b6aa10f7ea288
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57710027"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59127345"
 ---
 # <a name="walkthrough-validating-data-in-the-windows-forms-datagridview-control"></a>Návod: Ověřování dat v ovládacím prvku Windows Forms DataGridView
 Při zobrazení funkce vstupní data pro uživatele máte často ověřit data do svého formuláře. <xref:System.Windows.Forms.DataGridView> Třída poskytuje pohodlný způsob, jak provádět ověřování předtím, než se zaměřuje na úložiště dat data. Data můžete ověřit pomocí manipulace <xref:System.Windows.Forms.DataGridView.CellValidating> událost, která je vyvolána <xref:System.Windows.Forms.DataGridView> při změně aktuální buňky.  
@@ -89,9 +89,10 @@ Při zobrazení funkce vstupní data pro uživatele máte často ověřit data d
 -   Přizpůsobení vzhledu buněk. Další informace najdete v tématu [jak: Přizpůsobení vzhledu buněk v ovládacím prvku Windows Forms DataGridView](customize-the-appearance-of-cells-in-the-datagrid.md) a [jak: Nastavení písma a barevných stylů v ovládacím prvku Windows Forms DataGridView](how-to-set-font-and-color-styles-in-the-windows-forms-datagridview-control.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.BindingSource>
 - [Zadávání dat v ovládacím prvku Windows Forms DataGridView](data-entry-in-the-windows-forms-datagridview-control.md)
 - [Postupy: Ověřování dat v ovládacím prvku Windows Forms DataGridView](how-to-validate-data-in-the-windows-forms-datagridview-control.md)
-- [Návod: Zpracování chyb vzniklých při zadávání dat v ovládacím prvku Windows Forms DataGridView](handling-errors-that-occur-during-data-entry-in-the-datagrid.md)
+- [Návod: Zpracování chyb, k nimž došlo při zadávání dat v ovládacím prvku Windows Forms DataGridView](handling-errors-that-occur-during-data-entry-in-the-datagrid.md)
 - [Ochrana informací o připojení](../../data/adonet/protecting-connection-information.md)

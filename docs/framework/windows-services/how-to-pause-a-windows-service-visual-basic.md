@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Pozastavení služby Windows (Visual Basic)'
+title: 'Postupy: Pozastavení služby systému Windows (Visual Basic)'
 ms.date: 03/30/2017
 dev_langs:
 - vb
@@ -10,14 +10,14 @@ helpviewer_keywords:
 - pausing Windows Service applications
 ms.assetid: eddb9409-942b-46b6-a2ce-fbd4c65f2790
 author: ghogen
-ms.openlocfilehash: 8d378aba5ad09a38d24359fda8b50de072c58035
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f0b0ad1b18a57ca9a2c069ab172966730b62e84e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54612720"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59136178"
 ---
-# <a name="how-to-pause-a-windows-service-visual-basic"></a>Postupy: Pozastavení služby Windows (Visual Basic)
+# <a name="how-to-pause-a-windows-service-visual-basic"></a>Postupy: Pozastavení služby systému Windows (Visual Basic)
 V tomto příkladu <xref:System.ServiceProcess.ServiceController> součásti pozastavit služba správy služby IIS v místním počítači.  
   
 ## <a name="example"></a>Příklad  
@@ -48,7 +48,8 @@ V tomto příkladu <xref:System.ServiceProcess.ServiceController> součásti poz
  Přístup k informacím o služby může být omezena pomocí <xref:System.Security.Permissions.PermissionState> nastavení oprávnění ve <xref:System.Security.Permissions.SecurityPermission>.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceProcess.ServiceController>
 - <xref:System.ServiceProcess.ServiceControllerStatus>
 - <xref:System.ServiceProcess.ServiceController.WaitForStatus%2A>
-- [Postupy: Pokračování služby Windows (Visual Basic)](../../../docs/framework/windows-services/how-to-continue-a-windows-service-visual-basic.md)
+- [Postupy: Pokračování služby systému Windows (Visual Basic)](../../../docs/framework/windows-services/how-to-continue-a-windows-service-visual-basic.md)

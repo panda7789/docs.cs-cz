@@ -8,18 +8,16 @@ helpviewer_keywords:
 - troubleshooting graphics rendering [WPF]
 - graphics [WPF], rendering
 ms.assetid: f4b41b42-327d-407c-b398-3ed5f505df8b
-ms.openlocfilehash: 4b02a5ef1fb28e83ecdfc257dd81d9a890b77121
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 616c74ccd787d9acdcb2a3bbe281c2f43bb49c2e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57375347"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59135535"
 ---
 # <a name="graphics-rendering-registry-settings"></a>Nastavení registru pro vykreslení grafiky
 Toto téma obsahuje přehled [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] nastavení registru, které ovlivňují vykreslování grafiky [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikací.  
-  
 
-  
 <a name="overview"></a>   
 ## <a name="when-to-use-graphics-rendering-registry-settings"></a>Kdy použít nastavení registru pro vykreslení grafiky  
  Tato nastavení registru jsou k dispozici pro řešení potíží, ladění a účely podpory produktu. Protože změny do registru ovlivní všechny [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace, aplikace by mělo nikdy změnit tyto klíče registru, automaticky, nebo v průběhu instalace.  
@@ -98,5 +96,6 @@ Toto téma obsahuje přehled [!INCLUDE[TLA2#tla_winclient](../../../../includes/
  **Pomocí možnosti odkaz rasterizéru** přebírá hodnotu DWORD. Hodnota 0 znamená, že se nepoužívá rasterizéru referenčního. Další vynutí nenulové hodnoty [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] rasterizéru referenčního používat.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Vrstvy vykreslování grafiky](../advanced/graphics-rendering-tiers.md)
 - [Přehled vykreslování grafiky WPF](wpf-graphics-rendering-overview.md)

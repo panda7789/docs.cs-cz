@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - DataGridView control [Windows Forms], architecture
 ms.assetid: 1c6cabf0-02ee-4bbc-9574-b54bb7f5b19e
-ms.openlocfilehash: 81ac17c9f78baa71d005883c9dd928e398b10a33
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 892168ec282fbf168c43515e0718fe5486a345a8
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58842340"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59130257"
 ---
 # <a name="datagridview-control-architecture-windows-forms"></a>Architektura ovládacího prvku DataGridView (Windows Forms)
 <xref:System.Windows.Forms.DataGridView> Ovládacího prvku a jeho souvisejícími třídami jsou navržené tak flexibilní a rozšiřitelný systém pro zobrazení a úpravy tabulková data. Tyto třídy jsou obsaženy v <xref:System.Windows.Forms?displayProperty=nameWithType> obor názvů a že jsou všechny pojmenované s předponou "DataGridView".  
@@ -137,6 +137,7 @@ ms.locfileid: "58842340"
  Pokud povolíte <xref:System.Windows.Forms.DataGridView> ovládacího prvku <xref:System.Windows.Forms.DataGridView.AllowUserToAddRows%2A> , zvláštní řádek pro přidání nových řádků se zobrazí jako poslední řádek. Tento řádek je součástí <xref:System.Windows.Forms.DataGridView.Rows%2A> kolekce, ale má speciální funkce, které můžou vyžadovat vaši pozornost. Další informace najdete v tématu [použití řádku pro nové záznamy v ovládacím prvku Windows Forms DataGridView](using-the-row-for-new-records-in-the-windows-forms-datagridview-control.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled ovládacího prvku DataGridView](datagridview-control-overview-windows-forms.md)
 - [Přizpůsobení ovládacího prvku Windows Forms DataGridView](customizing-the-windows-forms-datagridview-control.md)
 - [Použití řádku pro nové záznamy v ovládacím prvku Windows Forms DataGridView](using-the-row-for-new-records-in-the-windows-forms-datagridview-control.md)

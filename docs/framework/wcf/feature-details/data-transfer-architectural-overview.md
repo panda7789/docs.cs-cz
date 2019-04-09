@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - data transfer [WCF], architectural overview
 ms.assetid: 343c2ca2-af53-4936-a28c-c186b3524ee9
-ms.openlocfilehash: 217da219dc49c588a7f6bc8d32048553f179d67f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: bb903f6d182c7a8be915daf67a4df30475cfae62
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54528023"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59127451"
 ---
 # <a name="data-transfer-architectural-overview"></a>Strukturální přehled přenosu dat
 Windows Communication Foundation (WCF) můžete představit jako infrastruktura zasílání zpráv. Může přijímat zprávy, zpracovat je a jejich vypravování do uživatelského kódu pro další akce, nebo můžete vytvořit zprávy z dat zadané v uživatelském kódu a doručujte je na cíli. Toto téma, které je určené pro pokročilé vývojáře, popisuje architekturu zpracování zpráv a omezením data. Jednodušší, orientovaných zobrazení toho, jak odesílat a přijímat data, najdete v části [zadání přenosu dat v kontraktech služeb](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md).  
@@ -273,4 +273,5 @@ Windows Communication Foundation (WCF) můžete představit jako infrastruktura 
  <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior> a <xref:System.ServiceModel.Description.XmlSerializerOperationBehavior> zodpovídají chování operace pro formátování zpráv pro zapojení `DataContractSerializer` a `XmlSerializer`v uvedeném pořadí. <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior> Chování ve skutečnosti můžete pracovat s jakékoli serializátoru, který je odvozen z <xref:System.Runtime.Serialization.XmlObjectSerializer>, včetně <xref:System.Runtime.Serialization.NetDataContractSerializer> (podrobně popsány v pomocí samostatného serializace). Chování volá jedno ze `CreateSerializer` přetížení virtuální metody pro získání serializátoru. Chcete-li zařadit jiný serializátor, vytvořte nový <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior> podtřídy a přepsání `CreateSerializer` přetížení.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Určování přenosu dat v kontraktech služby](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md)

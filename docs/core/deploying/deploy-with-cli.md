@@ -8,12 +8,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: seodec18
-ms.openlocfilehash: efb42d773669b949aeafa52fdcc445f18b469a5e
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
-ms.translationtype: MT
+ms.openlocfilehash: c71ab84cfd97e65f5e30bd5e1ff651f8e0c2d700
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58410261"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59132077"
 ---
 # <a name="publish-net-core-apps-with-the-cli"></a>Publikování .NET Core aplikací pomocí rozhraní příkazového řádku
 
@@ -129,7 +129,8 @@ Publikování FDE vytvoří aplikaci, která automaticky zobrazí souhrn po dop�
 
 Je nutné (s výjimkou .NET Core 3.x, pokud cílíte na platformu aktuální) použijte následující přepínače s `dotnet publish` příkaz pro publikování FDE:
 
-- `-r <RID>` Tento přepínač identifikátor (RID) používá k určení cílové platformy. Seznam identifikátorů modulů runtime, naleznete v tématu [identifikátor modulu Runtime (RID) katalogu](../rid-catalog.md).
+- `-r <RID>`
+  Tento přepínač identifikátor (RID) používá k určení cílové platformy. Seznam identifikátorů modulů runtime, naleznete v tématu [identifikátor modulu Runtime (RID) katalogu](../rid-catalog.md).
 
 - `--self-contained false` Tento přepínač říká .NET Core SDK k vytvoření spustitelného souboru jako FDE.
 
@@ -148,13 +149,13 @@ Publikování SCD vytvoří aplikaci, která není vpřed na nejnovější dostu
 
 Je nutné použít následující přepínače s `dotnet publish` příkaz pro publikování SCD:
 
-- `-r <RID>` Tento přepínač identifikátor (RID) používá k určení cílové platformy. Seznam identifikátorů modulů runtime, naleznete v tématu [identifikátor modulu Runtime (RID) katalogu](../rid-catalog.md).
+- `-r <RID>`
+  Tento přepínač identifikátor (RID) používá k určení cílové platformy. Seznam identifikátorů modulů runtime, naleznete v tématu [identifikátor modulu Runtime (RID) katalogu](../rid-catalog.md).
 
 - `--self-contained true` Tento přepínač říká .NET Core SDK k vytvoření spustitelného souboru jako SCD.
 
 > [!NOTE]
 > Můžete snížit celkovou velikost vašeho nasazení tím, že **invariantní režimu globalizace**. Tento režim je užitečný pro aplikace, které nejsou globální a které používají konvence formátování, konvence malých a velkých písmen a řetězec porovnání a řazení pořadí [invariantní jazyková verze](xref:System.Globalization.CultureInfo.InvariantCulture). Další informace o **invariantní režimu globalizace** a jak ho chcete povolit, najdete v článku [invariantní režimu globalizace rozhraní .NET Core](https://github.com/dotnet/corefx/blob/master/Documentation/architecture/globalization-invariant-mode.md)
-
 
 ## <a name="see-also"></a>Viz také:
 

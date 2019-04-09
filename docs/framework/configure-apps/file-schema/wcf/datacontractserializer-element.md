@@ -7,12 +7,12 @@ helpviewer_keywords:
 - DataContractSerializer
 - KnownTypes
 ms.assetid: f41fb4d5-24e7-4059-8010-286a30bfea93
-ms.openlocfilehash: 1b4fd959d5e522150751d2e9b8be8c5b2252bf27
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: b635f03d1e4a6628a76d678f7366482717276376
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55254948"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59116386"
 ---
 # <a name="datacontractserializer"></a>\<dataContractSerializer>
 Obsahuje konfigurační data pro <xref:System.Runtime.Serialization.DataContractSerializer>. Tento element vyskytuje ve dvou různých hierarchií. Jeden je uvedena v následující části hierarchie schémat a druhý je uveden v oddílu Poznámky.  
@@ -47,7 +47,7 @@ Obsahuje konfigurační data pro <xref:System.Runtime.Serialization.DataContract
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<behavior>](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-servicebehaviors.md)|Kolekce nastavení pro chování služby.|  
+|[\<chování >](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-servicebehaviors.md)|Kolekce nastavení pro chování služby.|  
 |[\<system.runtime.serialization>](../../../../../docs/framework/configure-apps/file-schema/wcf/system-runtime-serialization.md)|Představuje kořenový element <xref:System.Runtime.Serialization> části obor názvů a obsahuje prvky pro nastavení voleb <xref:System.Runtime.Serialization.DataContractSerializer>.|  
   
 ## <a name="remarks"></a>Poznámky  
@@ -60,6 +60,7 @@ Obsahuje konfigurační data pro <xref:System.Runtime.Serialization.DataContract
  Další informace o známých typů najdete v tématu <xref:System.Runtime.Serialization.DataContractSerializer>.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Runtime.Serialization.DataContractSerializer>
 - <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior>
 - <xref:System.ServiceModel.Configuration.DataContractSerializerElement>

@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2a053dba8f5fb8f4144968e08b6c65412f510193
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5c00f401bedc1a2810c4e9b3046a45e53a79f1ea
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54727492"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59134261"
 ---
 # <a name="igcthreadcontrol-interface"></a>IGCThreadControl – rozhraní
 Poskytuje metody pro účast při plánování vláken, která by se jinak zablokovaly pro uvolnění paměti.  
@@ -44,4 +44,5 @@ Poskytuje metody pro účast při plánování vláken, která by se jinak zablo
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
-- [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+
+- [Rozhraní hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)

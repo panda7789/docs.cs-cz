@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5a44e85d0f697b8388b45373340e1691892ea499
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: 8b63b283a28ed27a70698c45bdc87d63fef0daf8
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57503265"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59117938"
 ---
 # <a name="ihostsyncmanagercreatecrst-method"></a>IHostSyncManager::CreateCrst – metoda
 Vytvoří objekt kritický oddíl pro synchronizaci.  
@@ -64,9 +64,10 @@ HRESULT CreateCrst (
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [ICLRSyncManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-interface.md)
 - [IHostCrst – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostcrst-interface.md)
 - [IHostSyncManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostsyncmanager-interface.md)
 - [IHostSemaphore – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostsemaphore-interface.md)
 - [Mutex – třídy](../../../../docs/standard/threading/mutexes.md)
-- [Semaphore a SemaphoreSlim](../../../../docs/standard/threading/semaphore-and-semaphoreslim.md)
+- [Semafor a SemaphoreSlim](../../../../docs/standard/threading/semaphore-and-semaphoreslim.md)

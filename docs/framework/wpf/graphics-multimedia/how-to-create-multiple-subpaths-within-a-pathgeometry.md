@@ -6,12 +6,12 @@ helpviewer_keywords:
 - graphics [WPF], subpaths
 - subpaths [WPF]
 ms.assetid: 104a862c-dde2-4e62-ac87-80660dd1681c
-ms.openlocfilehash: 0b57d0441c1aa9d5972af1f1c6b989aacba7f87f
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 286075448cd6a343f8a7b15b2b5005f840f68e1d
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57353362"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59111745"
 ---
 # <a name="how-to-create-multiple-subpaths-within-a-pathgeometry"></a>Postupy: Vytvoření několika dílčích cest v rámci PathGeometry
 Tento příklad ukazuje postup vytvoření několika dílčích cest v <xref:System.Windows.Media.PathGeometry>. K vytvoření několika dílčích cest, můžete vytvořit <xref:System.Windows.Media.PathFigure> pro každý dílčí cestou.  
@@ -28,4 +28,5 @@ Tento příklad ukazuje postup vytvoření několika dílčích cest v <xref:Sys
  (Všimněte si, že tato syntaxe atributu ve skutečnosti vytváří <xref:System.Windows.Media.StreamGeometry>, nenáročný verzi <xref:System.Windows.Media.PathGeometry>. Další informace najdete v tématu [syntaxe značek cesty](path-markup-syntax.md) stránky.)  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled geometrie](geometry-overview.md)

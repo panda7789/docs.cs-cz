@@ -9,12 +9,12 @@ helpviewer_keywords:
 - toolbars [Windows Forms], adding items dynamically
 - ToolStrip control [Windows Forms]
 ms.assetid: 0e8dea56-5f46-408b-914d-7e360341a234
-ms.openlocfilehash: 557d1c11c93a4ebedd7098568eeda4be86951647
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: d84b62005554479d227778f513e72594322791a3
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57702695"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59124927"
 ---
 # <a name="how-to-add-toolstrip-items-dynamically"></a>Postupy: Dynamické přidávání položek ToolStrip
 Můžete dynamicky naplnění kolekce položek nabídky <xref:System.Windows.Forms.ToolStrip> řídit, kdy se otevře v nabídce.  
@@ -37,10 +37,11 @@ Můžete dynamicky naplnění kolekce položek nabídky <xref:System.Windows.For
  Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.ContextMenuStrip>
 - <xref:System.Windows.Forms.MenuStrip>
 - <xref:System.Windows.Forms.ToolStrip>
 - <xref:System.Windows.Forms.ToolStripItem>
 - <xref:System.Windows.Forms.ToolStripMenuItem>
 - <xref:System.Windows.Forms.ToolStripDropDownButton>
-- [Ovládací prvek ToolStrip](toolstrip-control-windows-forms.md)
+- [ToolStrip – ovládací prvek](toolstrip-control-windows-forms.md)

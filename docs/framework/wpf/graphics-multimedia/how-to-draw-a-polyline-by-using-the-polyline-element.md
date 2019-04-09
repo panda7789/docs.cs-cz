@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Vykreslení lomené čáry použitím elementu lomené čáry'
+title: 'Postupy: Vykreslení lomené čáry pomocí elementu lomené čáry'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - connected lines [WPF]
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - lines [WPF], connected (see polylines)
 - drawing [WPF], polylines
 ms.assetid: 65db8935-d047-4295-87c4-b427ff3ad293
-ms.openlocfilehash: 35981f6d5a47ea5d5e024efe714b52103938eddf
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 4f55ecc206be0ef4947923047e796c36131c70ec
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57378175"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59114843"
 ---
-# <a name="how-to-draw-a-polyline-by-using-the-polyline-element"></a>Postupy: Vykreslení lomené čáry použitím elementu lomené čáry
+# <a name="how-to-draw-a-polyline-by-using-the-polyline-element"></a>Postupy: Vykreslení lomené čáry pomocí elementu lomené čáry
 Tento příklad ukazuje způsob vykreslení lomené čáry, která je řada spojené čáry pomocí <xref:System.Windows.Shapes.Polyline> elementu.  
   
  Vykreslení lomené čáry, vytvořit <xref:System.Windows.Shapes.Polyline> elementu a použijte jeho <xref:System.Windows.Shapes.Polyline.Points%2A> vlastnosti a určit tak vrcholů obrazce. Nakonec použijte <xref:System.Windows.Shapes.Shape.Stroke%2A> a <xref:System.Windows.Shapes.Shape.StrokeThickness%2A> vlastností, které popisují lomenou čáru popisují, protože je neviditelný řádek bez tah.  
@@ -35,8 +35,9 @@ Tento příklad ukazuje způsob vykreslení lomené čáry, která je řada spoj
  V tomto příkladu je součástí větší ukázky; úplnou ukázku najdete v tématu [ukázka prvky tvar](https://go.microsoft.com/fwlink/?LinkID=160037).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Shapes.Polyline>
 - <xref:System.Windows.Shapes.Polygon>
 - <xref:System.Windows.Shapes.Shape>
 - [Ukázka elementy obrazce](https://go.microsoft.com/fwlink/?LinkID=160037)
-- [Přehled objektů Shape a základního kreslení ve WPF](shapes-and-basic-drawing-in-wpf-overview.md)
+- [Tvary a základní kresby v přehledu WPF](shapes-and-basic-drawing-in-wpf-overview.md)

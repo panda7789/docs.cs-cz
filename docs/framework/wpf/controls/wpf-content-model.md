@@ -11,20 +11,18 @@ helpviewer_keywords:
 - arbitrary content classes [WPF], content model
 - ContentControl class [WPF], displaying content
 ms.assetid: 214da5ef-547a-4cf8-9b07-4aa8a0e52cdd
-ms.openlocfilehash: 6cbb13fdcba2cf014c4c31a5dc5b21fe2721b214
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 4f866e0366a7781c287b3ebae7b668c2b296a5cc
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58816912"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59134587"
 ---
 # <a name="wpf-content-model"></a>Model obsahu WPF
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] je prezentační platforma, která nabízí mnoho ovládacích prvků a typů ovládacího prvku, jejichž primárním účelem je zobrazit různé typy obsahu. Pokud chcete zjistit, který ovládací prvek použít nebo který ovládací prvek k odvození z, měli byste porozumět typy objektů, které nejlépe můžete zobrazit konkrétní ovládací prvek.  
   
  Toto téma obsahuje souhrn obsahu modelu pro [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ovládacího prvku a typů ovládacího prvku. Model obsahu popisuje, jaký obsah je možné v ovládacím prvku. Toto téma obsahuje také seznam obsahu vlastnosti pro každý model obsahu. Vlastnost obsahu má vlastnost, která se používá k ukládání obsahu objektu.  
-  
- 
-  
+
 <a name="classes_that_contain_arbitrary_content"></a>   
 ## <a name="classes-that-contain-arbitrary-content"></a>Třídy, které obsahují libovolný obsah  
  Některé ovládací prvky mohou obsahovat objekt typu, jako je řetězec, <xref:System.DateTime> objektu, nebo <xref:System.Windows.UIElement> , který je kontejnerem pro další položky. Například <xref:System.Windows.Controls.Button> může obsahovat obrázek a text; nebo <xref:System.Windows.Controls.CheckBox> může obsahovat hodnotu <xref:System.DateTime.Now%2A?displayProperty=nameWithType>.  
@@ -250,4 +248,5 @@ TextBlock –, který má ohraničení
  <xref:System.Windows.Documents.TextElement> a její související třídy umožňují formátování textu. <xref:System.Windows.Documents.TextElement> objekty obsahují a formátování textu v <xref:System.Windows.Controls.TextBlock> a <xref:System.Windows.Documents.FlowDocument> objekty. Dva hlavní typy <xref:System.Windows.Documents.TextElement> objekty jsou <xref:System.Windows.Documents.Block> elementy a <xref:System.Windows.Documents.Inline> elementy. A <xref:System.Windows.Documents.Block> element reprezentuje blok textu, jako jsou odstavce nebo seznamu. <xref:System.Windows.Documents.Inline> Element reprezentuje část textu v bloku. Mnoho <xref:System.Windows.Documents.Inline> třídy určit formátování textu, do které se použijí. Každý <xref:System.Windows.Documents.TextElement> má svůj vlastní model obsahu. Další informace najdete v tématu [přehled modelu obsahu TextElement](../advanced/textelement-content-model-overview.md).  
   
 ## <a name="see-also"></a>Viz také:
-- [Pokročilé](../advanced/index.md)
+
+- [Upřesnit](../advanced/index.md)

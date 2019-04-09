@@ -1,5 +1,5 @@
 ---
-title: 'Návod: Vytváření rozhraní ve stylu Průzkumníku s ListView a ovládacích prvků TreeView pomocí návrháře'
+title: 'Návod: Vytváření rozhraní ve stylu Průzkumníka s ovládacími prvky ListView a TreeView pomocí Návrháře'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -13,14 +13,14 @@ helpviewer_keywords:
 - ListView control [Windows Forms], explorer style interface
 - ListView control [Windows Forms], explorer-style interface
 ms.assetid: 9e5e7721-19e2-4890-b273-a43589fe99ff
-ms.openlocfilehash: a849eae086c3507bbaf7050afd2e0496ab5a970e
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: 21a3f7f687f72fe6e73b5d2420675634ff834d2d
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57716978"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59117985"
 ---
-# <a name="walkthrough-creating-an-explorer-style-interface-with-the-listview-and-treeview-controls-using-the-designer"></a>Návod: Vytváření rozhraní ve stylu Průzkumníku s ListView a ovládacích prvků TreeView pomocí návrháře
+# <a name="walkthrough-creating-an-explorer-style-interface-with-the-listview-and-treeview-controls-using-the-designer"></a>Návod: Vytváření rozhraní ve stylu Průzkumníka s ovládacími prvky ListView a TreeView pomocí Návrháře
 Jednou z výhod sady Visual Studio je schopnost vytvářet profesionálně vypadajících aplikací Windows Forms v krátké množství času. Běžný scénář, kdy je vytváření uživatelského rozhraní (UI) s <xref:System.Windows.Forms.ListView> a <xref:System.Windows.Forms.TreeView> ovládací prvky, které se podobá funkci Windows Explorer operačních systémů Windows. Průzkumník Windows zobrazí hierarchickou strukturu souborů a složek v počítači uživatele.  
   
 > [!NOTE]
@@ -94,16 +94,17 @@ Jednou z výhod sady Visual Studio je schopnost vytvářet profesionálně vypad
 ## <a name="next-steps"></a>Další kroky  
  Tato aplikace poskytuje příklad ukazuje, jak můžete použít <xref:System.Windows.Forms.TreeView> a <xref:System.Windows.Forms.ListView> řídí společně. Další informace o těchto ovládacích prvků naleznete v následujících tématech:  
   
--   [Postupy: Přidání vlastních informací do prvku TreeView nebo ListView – ovládací prvek (Windows Forms)](add-custom-information-to-a-treeview-or-listview-control-wf.md)  
+-   [Postupy: Přidání vlastních informací do ovládacího prvku TreeView nebo ListView (Windows Forms)](add-custom-information-to-a-treeview-or-listview-control-wf.md)  
   
 -   [Postupy: Přidání schopností vyhledávání do ovládacího prvku ListView](how-to-add-search-capabilities-to-a-listview-control.md)  
   
 -   [Postupy: Připojení místní nabídky k uzlu TreeView](how-to-attach-a-shortcut-menu-to-a-treeview-node.md)  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.ListView>
 - <xref:System.Windows.Forms.TreeView>
-- [Ovládací prvek ListView](listview-control-windows-forms.md)
-- [Postupy: Přidání a odebrání uzlů s ovládacím prvku Windows Forms TreeView](how-to-add-and-remove-nodes-with-the-windows-forms-treeview-control.md)
+- [ListView – ovládací prvek](listview-control-windows-forms.md)
+- [Postupy: Přidání a odebrání uzlů s ovládacím prvkem Windows Forms TreeView](how-to-add-and-remove-nodes-with-the-windows-forms-treeview-control.md)
 - [Postupy: Přidání a odebrání položek pomocí ovládacího prvku Windows Forms ListView](how-to-add-and-remove-items-with-the-windows-forms-listview-control.md)
 - [Postupy: Přidání sloupců do ovládacího prvku Windows Forms ListView](how-to-add-columns-to-the-windows-forms-listview-control.md)

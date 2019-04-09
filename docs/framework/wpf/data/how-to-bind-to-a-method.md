@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: Připojení k metodě'
+title: 'Postupy: Vytvoření vazby k metodě'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - data binding [WPF], binding to methods using ObjectDataProvider
 - binding [WPF], to methods
 - methods [WPF], binding to
 ms.assetid: 5f55e71e-2182-42a0-88d1-700cc1427a7a
-ms.openlocfilehash: 8ccba42c3e16fdda73c087afde99e9864dc4ab0e
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 6cdad46fd6d9ef3bc4ce1a13fedb6ff1d639d93e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57351928"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59123237"
 ---
-# <a name="how-to-bind-to-a-method"></a>Postupy: Připojení k metodě
+# <a name="how-to-bind-to-a-method"></a>Postupy: Vytvoření vazby k metodě
 Následující příklad ukazuje, jak vytvořit vazbu na metodu pomocí <xref:System.Windows.Data.ObjectDataProvider>.  
   
 ## <a name="example"></a>Příklad  
@@ -32,5 +32,6 @@ Následující příklad ukazuje, jak vytvořit vazbu na metodu pomocí <xref:Sy
  `InvalidationCharacterRule` Je <xref:System.Windows.Controls.ValidationRule> , která zkontroluje neobsahuje neplatné znaky. Chyba šablony výchozí, což je červené ohraničení kolem <xref:System.Windows.Controls.TextBox>, zobrazí se oznámení uživatelům, pokud vstupní hodnota není hodnotu double.  
   
 ## <a name="see-also"></a>Viz také:
-- [Témata s postupy](data-binding-how-to-topics.md)
-- [Vytvoření vazby k vyčíslení](how-to-bind-to-an-enumeration.md)
+
+- [– postupy](data-binding-how-to-topics.md)
+- [Vytvoření vazby k výčtu](how-to-bind-to-an-enumeration.md)

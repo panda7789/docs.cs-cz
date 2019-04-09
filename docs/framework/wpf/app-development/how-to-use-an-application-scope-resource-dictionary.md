@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Použití slovníku zdrojů rozsahu aplikace'
+title: 'Postupy: Použití slovníku prostředků v rozsahu aplikace'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - resource dictionaries [WPF], application-scope
 - application-scope resource dictionaries
 ms.assetid: 53857682-bd2c-4f2c-8f25-1307d0b451a2
-ms.openlocfilehash: a2453ae7fad56205ae06835d8710ca126bba17c7
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 589e28b3c05496e3fc17055b98240e389faed068
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57369731"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59125372"
 ---
-# <a name="how-to-use-an-application-scope-resource-dictionary"></a>Postupy: Použití slovníku zdrojů rozsahu aplikace
+# <a name="how-to-use-an-application-scope-resource-dictionary"></a>Postupy: Použití slovníku prostředků v rozsahu aplikace
 Tento příklad ukazuje, jak definovat a použití slovníku zdrojů rozsahu aplikace vlastní.  
   
 ## <a name="example"></a>Příklad  
@@ -42,7 +42,8 @@ Tento příklad ukazuje, jak definovat a použití slovníku zdrojů rozsahu apl
  Existují dva aspekty při používání <xref:System.Windows.Application.Resources%2A>. První, slovníku *klíč* je objekt, takže je nutné použít přesně stejnou instanci objektu při i nastavení a získání hodnoty vlastnosti. (Všimněte si, že klíč je při použití řetězce malá a velká písmena.) Druhý, slovníku *hodnotu* je objekt, takže budete muset převést hodnotu na požadovaný typ. při získávání hodnoty vlastnosti.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.ResourceDictionary>
 - <xref:System.Windows.Application.Resources%2A>
-- [Prostředky XAML](../advanced/xaml-resources.md)
+- [Zdroje XAML](../advanced/xaml-resources.md)
 - [Slovníky sloučených prostředků](../advanced/merged-resource-dictionaries.md)

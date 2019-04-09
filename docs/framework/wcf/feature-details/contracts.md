@@ -6,12 +6,12 @@ helpviewer_keywords:
 - contracts [WCF]
 - Windows Communication Foundation [WCF], contracts
 ms.assetid: c8364183-4ac1-480b-804a-c5e6c59a5d7d
-ms.openlocfilehash: ce9b03b1eae2a88a9e09449719b3a8e522409418
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 0443e5b37e637351d6491c37ec443c93636460a3
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54499298"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59134885"
 ---
 # <a name="contracts"></a>Kontrakty
 Tato část ukazuje, jak definovat a implementovat kontrakty Windows Communication Foundation (WCF). Kontrakt služby specifikuje, koncový bod komunikuje s vnějším světem. Konkrétnější úrovni je příkaz o sadě určitých zpráv, které jsou uspořádány do základní zprávy exchange vzory (MEPs), jako je například požadavek/odpověď jednosměrného a duplexní. Pokud kontrakt služby je sada logicky spojených výměny zpráv, je operace služby exchange jedné zprávy. Například `Hello` operace musíte samozřejmě přijmout jednu zprávu (aby volající může oznamujeme pozdrav) a může nebo nemusí vrátit zprávu (v závislosti na provedla operaci).  
@@ -66,6 +66,7 @@ Tato část ukazuje, jak definovat a implementovat kontrakty Windows Communicati
  Tento proces sčítání požadavek je potřeba vzít v úvahu při navrhování, implementaci, konfiguraci a hostování aplikace služby Windows Communication Foundation (WCF). Kontrakt například můžete určit, že je nutné podporují relace. Pokud ano, musíte nakonfigurovat vazby ke splnění tohoto požadavku smluvní nebo implementace služby nebudou fungovat. Nebo pokud vaše služba vyžaduje ověření integrované Windows a je hostovaná v Internetové informační služby (IIS), webové aplikace, ve kterém se služba nachází musí mít ověření integrované Windows zapnutý a anonymní podporu vypnuté. Další informace o funkcích a vliv těchto typů hostitele jinou službu, naleznete v tématu [Hosting](../../../../docs/framework/wcf/feature-details/hosting.md).  
   
 ## <a name="see-also"></a>Viz také:
-- [Koncové body: Adresy, vazby a kontrakty](../../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)
+
+- [Koncové body: adresy, vazby a kontrakty](../../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)
 - [Navrhování kontraktů služby](../../../../docs/framework/wcf/designing-service-contracts.md)
 - [Implementace kontraktů služeb](../../../../docs/framework/wcf/implementing-service-contracts.md)

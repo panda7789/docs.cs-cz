@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Animace umístění objektu použitím PointAnimation'
+title: 'Postupy: Animace umístění objektu pomocí PointAnimation'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - graphics [WPF], animation
 - animation [WPF], PointAnimation
 ms.assetid: 42310977-cc90-438a-8a47-0345898e01be
-ms.openlocfilehash: 04dbcfdb64525e6231ecf33c8ac5ecf2a2d2cb7e
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 1ef3f77e551affaa7e61d2aabf95f10c29275417
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57357924"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59111303"
 ---
-# <a name="how-to-animate-the-position-of-an-object-by-using-pointanimation"></a>Postupy: Animace umístění objektu použitím PointAnimation
+# <a name="how-to-animate-the-position-of-an-object-by-using-pointanimation"></a>Postupy: Animace umístění objektu pomocí PointAnimation
 Tento příklad ukazuje způsob použití <xref:System.Windows.Media.Animation.PointAnimation> třídy animace objektu podél <xref:System.Windows.Shapes.Path>.  
   
 ## <a name="example"></a>Příklad  
@@ -25,11 +25,12 @@ Tento příklad ukazuje způsob použití <xref:System.Windows.Media.Animation.P
  [!code-vb[BasicAnimations_snip#PointAnimationWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BasicAnimations_snip/VisualBasic/PointAnimationExample.vb#pointanimationwholepage)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Media.Animation.PointAnimation>
 - <xref:System.Windows.Shapes.Path>
 - <xref:System.Windows.Media.EllipseGeometry>
 - <xref:System.Windows.Media.EllipseGeometry.Center%2A>
 - [Přehled animace](animation-overview.md)
 - [Grafika a multimédia](index.md)
-- [Postupy: témata grafiky](graphics-how-to-topics.md)
-- [Animace a časování témata s postupy](animation-and-timing-how-to-topics.md)
+- [Postupy: Témata grafiky](graphics-how-to-topics.md)
+- [Postupy: Témata animace a časování](animation-and-timing-how-to-topics.md)

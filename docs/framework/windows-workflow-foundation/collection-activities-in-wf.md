@@ -2,12 +2,12 @@
 title: Kolekce aktivit v WF
 ms.date: 03/30/2017
 ms.assetid: 2680c3e2-9902-4968-b98d-cab776103dbe
-ms.openlocfilehash: 6ce7dd348a19608d35bf448bda2e1380e5af1130
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 6e4b9ce6f967ba9405f55dbf5fd4708d3319b458
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57705245"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59133778"
 ---
 # <a name="collection-activities-in-wf"></a>Kolekce aktivit v WF
 Kolekce aktivity se používají pro práci s objekty kolekcí v pracovním postupu. [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] má poskytované systémem aktivity pro přidávání a odebírání položek z kolekce, testování existence položku v kolekci a vymazání kolekce. `ExistsInCollection` a `RemoveFromCollection` mají <xref:System.Activities.OutArgument%601> typu <xref:System.Boolean>, který určuje výsledek.  
@@ -426,4 +426,5 @@ Activity wf = new Sequence
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Vytváření pracovních postupů, aktivit a výrazů pomocí imperativního kódu](authoring-workflows-activities-and-expressions-using-imperative-code.md)

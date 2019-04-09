@@ -1,18 +1,18 @@
 ---
-title: LINQ to SQL objektový Model
+title: Objektový model LINQ to SQL
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 81dd0c37-e2a4-4694-83b0-f2e49e693810
-ms.openlocfilehash: 7a424f289bb4ffba102d1023909b139ac2a70c33
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 7ce759de004d479f5162d2ce3a965f5c40afa450
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54503739"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59110790"
 ---
-# <a name="the-linq-to-sql-object-model"></a>LINQ to SQL objektový Model
+# <a name="the-linq-to-sql-object-model"></a>Objektový model LINQ to SQL
 V [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], objektový model vyjádřený v programovacím jazyce vývojáře je namapována na datový model relační databáze. Operace s daty jsou pak provedeny podle modelu objektu.  
   
  V tomto scénáři není vydávat příkazy databáze (například `INSERT`) do databáze. Místo toho změnit hodnoty a spouštět metody v rámci objektu modelu. Pokud chcete zadat dotaz na databázi nebo odeslat změní, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] převádí vašich požadavků na správné příkazy SQL a odesílá tyto příkazy do databáze.  
@@ -81,5 +81,6 @@ V [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], objektov�
  Další informace najdete v částech funkce atribut, uložené procedury atribut a atribut parametru [založených na atributech mapování](../../../../../../docs/framework/data/adonet/sql/linq/attribute-based-mapping.md) a [uložené procedury](../../../../../../docs/framework/data/adonet/sql/linq/stored-procedures.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Mapování na základě atributů](../../../../../../docs/framework/data/adonet/sql/linq/attribute-based-mapping.md)
 - [Základní informace](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)

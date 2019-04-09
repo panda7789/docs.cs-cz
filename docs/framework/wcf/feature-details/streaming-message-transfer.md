@@ -2,12 +2,12 @@
 title: Streamování přenosu zpráv
 ms.date: 03/30/2017
 ms.assetid: 72a47a51-e5e7-4b76-b24a-299d51e0ae5a
-ms.openlocfilehash: 5a146b9f0bd2eb74b5ef4b5877e6cb925d386abc
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e58b0ce698df310a5e18bcd24201fb2e27a9c1aa
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54643816"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59136874"
 ---
 # <a name="streaming-message-transfer"></a>Streamování přenosu zpráv
 Přenosy Windows Communication Foundation (WCF) podporují dva režimy pro přenos zpráv:  
@@ -47,4 +47,5 @@ Přenosy Windows Communication Foundation (WCF) podporují dva režimy pro přen
  Změna režimu přenosu z uložených do vyrovnávací paměti datovým proudem, změní se také tvar nativní kanálu TCP a přenosy pojmenovaného kanálu. Ve vyrovnávací paměti při přenosech, obrazce nativní kanálu je <xref:System.ServiceModel.Channels.IDuplexSessionChannel>. Pro přenosy datovým proudem, nativní kanály jsou <xref:System.ServiceModel.Channels.IRequestChannel> a <xref:System.ServiceModel.Channels.IReplyChannel>. Změna režimu přenosu v existující aplikaci, která používá tyto přenosy přímo (to znamená, ne prostřednictvím smlouvy o poskytování služeb) vyžaduje změnu tvar očekávané kanálu pro vytváření kanálů a naslouchací procesy.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Postupy: Povolení streamování](../../../../docs/framework/wcf/feature-details/how-to-enable-streaming.md)

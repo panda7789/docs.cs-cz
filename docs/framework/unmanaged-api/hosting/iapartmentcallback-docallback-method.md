@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 80aa64a8867a84100996ae88c5e65233d6b15782
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: 77a2ccaf6f972fadd8396378dc7777ec4c85120d
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57481058"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59110224"
 ---
 # <a name="iapartmentcallbackdocallback-method"></a>IApartmentCallback::DoCallback – metoda
 Provede zadanou funkci v rámci typu apartment.  
@@ -53,4 +53,5 @@ HRESULT _stdcall DoCallback(
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [IApartmentCallback – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iapartmentcallback-interface.md)

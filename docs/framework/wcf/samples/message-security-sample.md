@@ -2,12 +2,12 @@
 title: Ukázka zabezpečení zpráv
 ms.date: 03/30/2017
 ms.assetid: 82444166-6288-493a-85d4-85f43f134d19
-ms.openlocfilehash: 23304ba3be88e327f84943daf0dcd751d564d5f7
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
-ms.translationtype: MT
+ms.openlocfilehash: a4835f8f276786aa87506bc2be2a2bba534f4166
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58825583"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59112473"
 ---
 # <a name="message-security-sample"></a>Ukázka zabezpečení zpráv
 Tato ukázka předvádí, jak implementovat aplikaci, která se používá `basicHttpBinding` a zabezpečení zpráv. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) službu kalkulačky, která implementuje.  
@@ -178,4 +178,3 @@ Press <ENTER> to terminate client.
 >  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Basic\MessageSecurity`  
-  

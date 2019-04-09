@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 3e3f6780-6d90-4413-bad7-ba641220364d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: cfe2be8784fd4baf6ce9e603da1c6e2388126b5a
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
+ms.openlocfilehash: 0ca01234bf7adaca1337053bbc2bbba0731be3cd
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58409325"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59132025"
 ---
 # <a name="identifying-functions-in-dlls"></a>Identifikace funkcí ve knihovnách DLL
 Identita funkce knihovny DLL se skládá z následujících elementů:  
@@ -46,6 +46,7 @@ Identita funkce knihovny DLL se skládá z následujících elementů:
  Úplnou dokumentaci k rozhraní API pro Windows naleznete v tématu Platform SDK. Příklady, které ukazují, jak vytvořit. Na základě NET deklarace pro použití s platformu vyvolání, naleznete v tématu [zařazování dat pomocí vyvolání platformy](../../../docs/framework/interop/marshaling-data-with-platform-invoke.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Používání nespravovaných funkcí DLL](../../../docs/framework/interop/consuming-unmanaged-dll-functions.md)
 - [Určení vstupního bodu](../../../docs/framework/interop/specifying-an-entry-point.md)
 - [Vytvoření třídy k umístění funkcí DLL](../../../docs/framework/interop/creating-a-class-to-hold-dll-functions.md)

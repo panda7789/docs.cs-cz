@@ -9,12 +9,12 @@ helpviewer_keywords:
 - file name extension icons [Windows Forms], displaying in a ListView
 - extracting icons associated with a file type [Windows Forms]
 ms.assetid: 88e2ad8b-c34f-415a-84f2-dad756b5c928
-ms.openlocfilehash: 5cbce48643d21418d580a6db44f86b00cf50fb9d
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: d754dc5e8a57b3c4e2e5439bb2524a22d44813c6
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57714187"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59112551"
 ---
 # <a name="how-to-extract-the-icon-associated-with-a-file-in-windows-forms"></a>Postupy: Extrahování ikony přidružené k souboru v modelu Windows Forms
 Mnoho souborů s vloženými ikony, které poskytují vizuální znázornění přidružený soubor typu. Například Microsoft Word dokumenty obsahují ikonu, která je identifikuje jako dokumentů aplikace Word. Při zobrazování souborů do ovládacího prvku seznamu nebo ovládacího prvku tabulky, můžete zobrazit ikonu představující typ souboru vedle názvu každého souboru. Můžete to provést jednoduše pomocí <xref:System.Drawing.Icon.ExtractAssociatedIcon%2A> metody.  
@@ -33,5 +33,6 @@ Mnoho souborů s vloženými ikony, které poskytují vizuální znázornění p
      Budete muset Ujistěte se, že váš formulář importuje <xref:System.IO> oboru názvů.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Obrázky, rastrové obrázky a metasoubory](images-bitmaps-and-metafiles.md)
-- [Ovládací prvek ListView](../controls/listview-control-windows-forms.md)
+- [ListView – ovládací prvek](../controls/listview-control-windows-forms.md)

@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: Vytvoření služeb Windows'
+title: 'Postupy: Vytváření služeb systému Windows'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Windows Service applications, creating
 - templates, Windows Service
 ms.assetid: 0f5e2cbb-d95d-477c-b2b5-4b990e6b86ff
 author: ghogen
-ms.openlocfilehash: d0a450483c05a272fe799c7ee04e691cefbd2085
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 26c903379afcab3d2d534272912c046cdffb6fed
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54533751"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59132493"
 ---
-# <a name="how-to-create-windows-services"></a>Postupy: Vytvoření služeb Windows
+# <a name="how-to-create-windows-services"></a>Postupy: Vytváření služeb systému Windows
 Při vytváření služby můžete použít šablonu projektu sady Visual Studio volá **Windows Service**. Tato šablona automaticky provádí velkou část práce za vás odkazováním na příslušné třídy a obory názvů, nastavením dědičnosti ze základní třídy pro služby, a přepisováním několika metod, které budete pravděpodobně chtít přepsat.  
   
 > [!WARNING]
@@ -68,11 +68,12 @@ Při vytváření služby můžete použít šablonu projektu sady Visual Studio
 8.  Nainstalujte službu. Další informace najdete v tématu [jak: Instalace a odinstalace služeb](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md).  
   
 ## <a name="see-also"></a>Viz také:
-- [Úvod do aplikací služby systému Windows](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)
+
+- [Představení aplikací spouštěných jako služby systému Windows](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)
 - [Postupy: Zápis služeb prostřednictvím kódu programu](../../../docs/framework/windows-services/how-to-write-services-programmatically.md)
 - [Postupy: Přidání instalačních programů do aplikace služby](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md)
-- [Postupy: Protokolu informace o službách](../../../docs/framework/windows-services/how-to-log-information-about-services.md)
-- [Postupy: Spuštění služeb](../../../docs/framework/windows-services/how-to-start-services.md)
+- [Postupy: Zaznamenávání informací o službách](../../../docs/framework/windows-services/how-to-log-information-about-services.md)
+- [Postupy: Spuštění služby](../../../docs/framework/windows-services/how-to-start-services.md)
 - [Postupy: Určení kontextu zabezpečení pro služby](../../../docs/framework/windows-services/how-to-specify-the-security-context-for-services.md)
 - [Postupy: Instalace a odinstalace služeb](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md)
 - [Návod: Vytvoření aplikace služby Windows v Návrháři součástí](../../../docs/framework/windows-services/walkthrough-creating-a-windows-service-application-in-the-component-designer.md)

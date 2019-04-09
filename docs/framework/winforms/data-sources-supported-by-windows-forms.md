@@ -15,12 +15,12 @@ helpviewer_keywords:
 - DataSet class [Windows Forms], binding and Windows Forms
 - data [Windows Forms], data providers
 ms.assetid: 3d2c43f6-462b-4d35-9c86-13e9afe012e1
-ms.openlocfilehash: 145e14f4a6e11209e46e8761f8a0551c1400a605
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: b648d62c9128f0864d60ace1ca56700f594b78c5
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57711297"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59124615"
 ---
 # <a name="data-sources-supported-by-windows-forms"></a>Zdroje dat podporované rozhraním Windows Forms
 Tradičně datové vazby používá v rámci aplikací využít data uložená v databázích. Pomocí Windows Forms – datová vazba, můžou k datům z databází, stejně jako data v jiných strukturách, jako jsou pole a kolekce, tak dlouho, dokud jsou splněné určité minimální požadavky.  
@@ -58,6 +58,7 @@ Tradičně datové vazby používá v rámci aplikací využít data uložená v
 -   <xref:System.Data.DataViewManager>. A <xref:System.Data.DataViewManager> je přizpůsobené zobrazení celého <xref:System.Data.DataSet>, obdobná <xref:System.Data.DataView>, ale s vztahy zahrnuté. S <xref:System.Data.DataViewManager.DataViewSettings%2A> kolekci, můžete nastavit výchozí filtry a možnosti řazení pro všechna zobrazení, která <xref:System.Data.DataViewManager> má pro danou tabulku.  
   
 ## <a name="see-also"></a>Viz také:
-- [Oznámení změn v datové vazbě Windows Forms](change-notification-in-windows-forms-data-binding.md)
-- [Datové vazby a Windows Forms](data-binding-and-windows-forms.md)
+
+- [Oznámení změn v datové vazbě rozhraní Windows Forms](change-notification-in-windows-forms-data-binding.md)
+- [Datové vazby a rozhraní Windows Forms](data-binding-and-windows-forms.md)
 - [Windows Forms – datová vazba](windows-forms-data-binding.md)

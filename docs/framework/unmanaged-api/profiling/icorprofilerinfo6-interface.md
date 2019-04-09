@@ -10,12 +10,12 @@ api_type:
 ms.assetid: 6f2bb148-1e2b-4e45-a5a5-0ceddc40064b
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 53120508c4810270747f749f1adfbae6ba800404
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: febe130b4d61b6179aeab3bfcd63891c38b13fbe
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54567890"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59128931"
 ---
 # <a name="icorprofilerinfo6-interface"></a>ICorProfilerInfo6 Interface
 [Podporované v rozhraní .NET Framework 4.6 a novějších verzích]  
@@ -36,4 +36,5 @@ ms.locfileid: "54567890"
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v46plus](../../../../includes/net-current-v46plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Rozhraní pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)

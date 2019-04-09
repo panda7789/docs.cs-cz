@@ -1,15 +1,15 @@
 ---
-title: Úvod do integrace modulu CLR SQL serveru
+title: Úvod k integraci modulu CLR na SQL Serveru
 ms.date: 03/30/2017
 ms.assetid: 551d2290-ed80-49be-b377-44b32444da1c
-ms.openlocfilehash: dcfc43a68fb8bcacd4a14d6b94a932d656635d55
-ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
-ms.translationtype: MT
+ms.openlocfilehash: 2f65e8690aa52f0442b4bee3b98bb1ea86e064a5
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56092576"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59110700"
 ---
-# <a name="introduction-to-sql-server-clr-integration"></a>Úvod do integrace modulu CLR SQL serveru
+# <a name="introduction-to-sql-server-clr-integration"></a>Úvod k integraci modulu CLR na SQL Serveru
 Common language runtime (CLR) je základem rozhraní Microsoft .NET Framework a poskytuje prostředí pro spuštění pro veškerý kód rozhraní .NET Framework. Kód, který běží v rámci modulu CLR se označuje jako spravovaný kód. CLR poskytuje různé funkce a služby potřebné pro spuštění programu, včetně kompilace just-in-time (JIT), přidělování a správu paměti a vynucuje bezpečnost typů, zpracování výjimek, správa vláken a zabezpečení.  
   
  S modulem CLR hostované v systému Microsoft SQL Server (označované jako integrace modulu CLR) můžete vytvořit uložené procedury, aktivační události, uživatelem definovaných funkcích, uživatelem definované typy a uživatelem definovaných agregacích ve spravovaném kódu. Protože spravovaný kód se zkompiluje do nativního kódu před provedením, můžete dosáhnout zvýšení výkonu v některých scénářích.  
@@ -66,5 +66,6 @@ GO
 -   [Ladění CLR databázové objekty](https://go.microsoft.com/fwlink/?LinkId=115236)  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Zabezpečení přístupu ke kódu a ADO.NET](../../../../../docs/framework/data/adonet/code-access-security.md)
 - [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

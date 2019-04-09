@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 05b0549b-882d-4660-b6f0-5678543e5475
-ms.openlocfilehash: ba5d8d02d0c8d5993e1b072298aadcaa5fe0fe35
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 78cc77a5491e50d718a53efff1c6f99acf23cf27
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54705901"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59115385"
 ---
 # <a name="how-to-create-a-custom-authorization-policy"></a>Postupy: Vytvoření vlastní zásady autorizace
 Infrastruktura modelu Identity ve Windows Communication Foundation (WCF) podporuje model založený na deklaraci identity autorizace. Extrahuje z tokenů, volitelně zpracovává vlastní zásady autorizace a pak umístit do deklarace identity <xref:System.IdentityModel.Policy.AuthorizationContext> , pak se dají prozkoumat pro autorizační rozhodnutí. Vlastní zásady je možné získat deklarace identity z příchozí tokeny deklarací, aplikací. Tímto způsobem může být izolované aplikační vrstvu z podrobností na různé deklarace obsluhuje různé typy tokenů, které podporuje WCF. Toto téma ukazuje, jak implementovat vlastní zásady autorizace a tom, jak přidat tuto zásadu do kolekce zásady používané službou.  
@@ -76,7 +76,8 @@ Infrastruktura modelu Identity ve Windows Communication Foundation (WCF) podporu
  [!code-vb[c_CustomAuthPol#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customauthpol/vb/source.vb#5)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.ServiceAuthorizationManager>
 - [Postupy: Porovnání deklarací](../../../../docs/framework/wcf/extending/how-to-compare-claims.md)
-- [Postupy: Vytvoření vlastního Správce autorizací pro službu](../../../../docs/framework/wcf/extending/how-to-create-a-custom-authorization-manager-for-a-service.md)
-- [Zásady autorizace](../../../../docs/framework/wcf/samples/authorization-policy.md)
+- [Postupy: Vytvoření vlastního správce autorizací pro službu](../../../../docs/framework/wcf/extending/how-to-create-a-custom-authorization-manager-for-a-service.md)
+- [Zásada autorizace](../../../../docs/framework/wcf/samples/authorization-policy.md)

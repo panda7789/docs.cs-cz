@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 7c3a3581d2a9a1cb79f4ffe1d0a37269c18789a6
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e57c622780f0bc92061fd2928ea861f904d9eb37
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54652176"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59122106"
 ---
 # <a name="corprfruntimetype-enumeration"></a>COR_PRF_RUNTIME_TYPE – výčet
 Obsahuje hodnoty, které označují verzi modulu common language runtime (CLR): plochy nebo CoreCLR, který se používá v programu Silverlight.  
@@ -55,4 +55,5 @@ typedef enum
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
-- [Výčty pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)
+
+- [Profilace výčtů](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)

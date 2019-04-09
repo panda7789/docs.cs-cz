@@ -1,17 +1,17 @@
 ---
-title: <memoryCache> – element (nastavení vyrovnávací paměti)
+title: <memoryCache> – Element (nastavení mezipaměti)
 ms.date: 03/30/2017
 helpviewer_keywords:
 - <memoryCache> element
 - caching [.NET Framework], configuration
 - memoryCache element
 ms.assetid: 182a622f-f7cf-472d-9d0b-451d2fd94525
-ms.openlocfilehash: 25e87aa9fa4e56c5042eb25c41f6cfe1b65aea24
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: dbb46e7cf2580635add9d3100c8177c99cbae6bd
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55266374"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59126812"
 ---
 # <a name="memorycache-element-cache-settings"></a>\<memoryCache > – Element (nastavení mezipaměti)
 Definuje element, který se používá ke konfiguraci, která je založená na mezipaměti <xref:System.Runtime.Caching.MemoryCache> třídy. <xref:System.Runtime.Caching.Configuration.MemoryCacheElement> Definuje třídu [memoryCache](../../../../../docs/framework/configure-apps/file-schema/runtime/memorycache-element-cache-settings.md) element, který můžete použít ke konfiguraci mezipaměti. Více instancí <xref:System.Runtime.Caching.MemoryCache> třídy lze v jedné aplikaci. Každý `memoryCache` element v konfiguračním souboru může obsahovat nastavení pro pojmenovaná <xref:System.Runtime.Caching.MemoryCache> instance.  
@@ -30,7 +30,7 @@ Definuje element, který se používá ke konfiguraci, která je založená na m
 </memoryCache>  
 ```  
   
-## <a name="type"></a>Typ  
+## <a name="type"></a>Type  
  <xref:System.Runtime.Caching.MemoryCache> Třída.  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
@@ -91,6 +91,7 @@ Definuje element, který se používá ke konfiguraci, která je založená na m
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Runtime.Caching.MemoryCache>
 - [\<System.Runtime.Caching > – Element (nastavení mezipaměti)](../../../../../docs/framework/configure-apps/file-schema/runtime/system-runtime-caching-element-cache-settings.md)
 - [\<namedcaches – > – Element (nastavení mezipaměti)](../../../../../docs/framework/configure-apps/file-schema/runtime/namedcaches-element-cache-settings.md)

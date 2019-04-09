@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - DataGridView control [Windows Forms], virtual mode
 ms.assetid: feae5d43-2848-4b1a-8ea7-77085dc415b5
-ms.openlocfilehash: 92b45f026470f312fe788ed30e4ff8d172735a98
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: f284835578221ad1fe859f260e37bb829cd64b2d
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57709481"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59124719"
 ---
 # <a name="virtual-mode-in-the-windows-forms-datagridview-control"></a>Virtuální režim v ovládacím prvku Windows Forms DataGridView
 Virtuální režim, můžete spravovat interakce mezi <xref:System.Windows.Forms.DataGridView> ovládacího prvku a vlastní datové mezipaměti. Implementace virtuálního režimu, nastavte <xref:System.Windows.Forms.DataGridView.VirtualMode%2A> vlastnost `true` a zpracovat jeden nebo více událostí, které jsou popsané v tomto tématu. Obvykle budete zpracovávat alespoň `CellValueNeeded` událost, která umožňuje vyhledat ovládací prvek hodnoty v datové mezipaměti.  
@@ -63,9 +63,10 @@ Virtuální režim, můžete spravovat interakce mezi <xref:System.Windows.Forms
  Pokud chcete-li efektivně pracovat s velkými objemy dat jsou implementace virtuálního režimu, bude také chcete zajistit, že pracujete efektivně <xref:System.Windows.Forms.DataGridView> samotného ovládacího prvku. Další informace o efektivní využití stylů buňky, automatické velikosti, výběr a řádků pro sdílení obsahu najdete v tématu [osvědčené postupy pro změnu velikosti ovládacího prvku Windows Forms DataGridView](best-practices-for-scaling-the-windows-forms-datagridview-control.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.DataGridView.VirtualMode%2A>
 - [Ladění výkonu v ovládacím prvku Windows Forms DataGridView](performance-tuning-in-the-windows-forms-datagridview-control.md)
-- [Doporučené postupy pro změnu velikosti ovládacího prvku Windows Forms DataGridView](best-practices-for-scaling-the-windows-forms-datagridview-control.md)
+- [Doporučené postupy pro změnu velikosti v ovládacím prvku Windows Forms DataGridView](best-practices-for-scaling-the-windows-forms-datagridview-control.md)
 - [Návod: Implementace virtuálního režimu v ovládacím prvku Windows Forms DataGridView](implementing-virtual-mode-wf-datagridview-control.md)
 - [Implementace virtuálního režimu s načítáním dat za běhu v ovládacím prvku Windows Forms DataGridView](implementing-virtual-mode-jit-data-loading-in-the-datagrid.md)

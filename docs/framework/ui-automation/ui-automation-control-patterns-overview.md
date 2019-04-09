@@ -5,12 +5,12 @@ helpviewer_keywords:
 - control patterns
 - UI Automation, control patterns
 ms.assetid: cc229b33-234b-469b-ad60-f0254f32d45d
-ms.openlocfilehash: 12bfe994e02e1a330cc543ca1afd21ddf32dac66
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.openlocfilehash: fc07cc23498b2079aba41dfa57c26b88944d6a8d
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57673675"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59126357"
 ---
 # <a name="ui-automation-control-patterns-overview"></a>Přehled vzorů ovládacích prvků pro automatizaci uživatelského rozhraní
 > [!NOTE]
@@ -73,6 +73,7 @@ ms.locfileid: "57673675"
 |<xref:System.Windows.Automation.WindowPattern>|<xref:System.Windows.Automation.Provider.IWindowProvider>|Poskytuje informace specifické pro systém windows, základní koncept pro [!INCLUDE[TLA#tla_win](../../../includes/tlasharptla-win-md.md)] operačního systému. Příklady ovládacích prvků, které jsou okna nejvyšší úrovně aplikace pro windows ([!INCLUDE[TLA#tla_word](../../../includes/tlasharptla-word-md.md)], [!INCLUDE[TLA#tla_winexpl](../../../includes/tlasharptla-winexpl-md.md)], a tak dále), [!INCLUDE[TLA#tla_mdi](../../../includes/tlasharptla-mdi-md.md)] podřízená okna a dialogová okna.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Vzory ovládacích prvků automatizace uživatelského rozhraní pro klienty](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)
 - [Mapování vzorů ovládacích prvků pro klienty automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md)
 - [Přehled automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-overview.md)

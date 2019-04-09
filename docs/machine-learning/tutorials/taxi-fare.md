@@ -6,12 +6,12 @@ ms.author: johalex
 ms.date: 03/20/2019
 ms.topic: tutorial
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 811de96748fcc095e289905e73845c8cfdd8eea7
-ms.sourcegitcommit: a3db1a9eafca89f95ccf361bc1833b47fbb2bb30
-ms.translationtype: MT
+ms.openlocfilehash: b97ea433b36aa52682e5e86ab493cfabf8f86193
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58921075"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59122080"
 ---
 # <a name="tutorial-predict-prices-using-a-regression-learner-with-mlnet"></a>Kurz: Předvídání cen pomocí learner regrese ML.NET
 
@@ -272,7 +272,6 @@ Console.WriteLine($"*------------------------------------------------");
 [!code-csharp[DisplayRMS](~/samples/machine-learning/tutorials/TaxiFarePrediction/Program.cs#19 "Display the RMS metric.")]
 
 ## <a name="use-the-model-for-predictions"></a>Použít model pro předpovědi
-
 
 ## <a name="predict-the-test-data-outcome-with-the-model-and-a-single-comment"></a>Předpověď data výsledek testu s modelem a jednoho komentáře
 

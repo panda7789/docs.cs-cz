@@ -13,12 +13,12 @@ helpviewer_keywords:
 - gradient brushes
 - brushes [Windows Forms], gradient
 ms.assetid: e863e2a7-0294-4130-99b6-f1ea3201e7cd
-ms.openlocfilehash: fc6d6857e912ba14fca382eb49373655004534d5
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 683b5966f993ac3a69c8bf7c1233b6df3d65e19a
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57720940"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59115307"
 ---
 # <a name="brushes-and-filled-shapes-in-gdi"></a>Štětce a vyplněné obrazce v GDI+
 Zavřeného tvaru, jako je například obdélník nebo elipsy, se skládá z přehledu a vnitřním. Přehled je vykreslen pomocí pera a vnitřní je vyplněna štětce. [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] poskytuje několik tříd štětce k vyplnění vnitřek uzavřené obrazce: <xref:System.Drawing.SolidBrush>, <xref:System.Drawing.Drawing2D.HatchBrush>, <xref:System.Drawing.TextureBrush>, <xref:System.Drawing.Drawing2D.LinearGradientBrush>, a <xref:System.Drawing.Drawing2D.PathGradientBrush>. Všechny tyto třídy dědí <xref:System.Drawing.Brush> třídy. Následující obrázek znázorňuje obdélník vyplněny plného štětce a elipsa se štětce šrafování.  
@@ -77,10 +77,11 @@ Zavřeného tvaru, jako je například obdélník nebo elipsy, se skládá z př
  ![Vyplněné obrazce](./media/aboutgdip02-art23.gif "AboutGdip02_Art23")  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Drawing.SolidBrush?displayProperty=nameWithType>
 - <xref:System.Drawing.Drawing2D.HatchBrush?displayProperty=nameWithType>
 - <xref:System.Drawing.TextureBrush?displayProperty=nameWithType>
 - <xref:System.Drawing.Drawing2D.LinearGradientBrush?displayProperty=nameWithType>
 - [Čáry, křivky a obrazce](lines-curves-and-shapes.md)
-- [Postupy: Kreslení plného obdélníku ve formuláři Windows](how-to-draw-a-filled-rectangle-on-a-windows-form.md)
-- [Postupy: Kreslení plné elipsy ve formuláři Windows](how-to-draw-a-filled-ellipse-on-a-windows-form.md)
+- [Postupy: Kreslení vyplněného obdélníku na formuláři Windows](how-to-draw-a-filled-rectangle-on-a-windows-form.md)
+- [Postupy: Kreslení vyplněné elipsy na formuláři Windows](how-to-draw-a-filled-ellipse-on-a-windows-form.md)

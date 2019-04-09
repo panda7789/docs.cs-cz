@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 9c5b1cc7-84f3-45f8-9226-d59c278e8c42
-ms.openlocfilehash: 19487d3f401260a7a32e9aab63b8c2a75feccbd1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: d4589f02bb046d52e48daf5c7c89f21a45d41bbc
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54599631"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59133221"
 ---
 # <a name="how-to-inspect-and-modify-messages-on-the-service"></a>Postupy: Kontrola a změny zpráv ve službě
 Může kontrola nebo úprava příchozí a odchozí zprávy přes klienta Windows Communication Foundation (WCF) implementací <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector?displayProperty=nameWithType> a jejich vložení do modulu runtime služby. Další informace najdete v tématu [rozšíření dispečerů](../../../../docs/framework/wcf/extending/extending-dispatchers.md). Je ekvivalentní funkce ve službě <xref:System.ServiceModel.Dispatcher.IClientMessageInspector?displayProperty=nameWithType>.  
@@ -41,6 +41,7 @@ Může kontrola nebo úprava příchozí a odchozí zprávy přes klienta Window
  [!code-xml[Interceptors#9](../../../../samples/snippets/csharp/VS_Snippets_CFX/interceptors/cs/hostapplication.exe.config#9)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Dispatcher.IClientMessageInspector?displayProperty=nameWithType>
 - <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector?displayProperty=nameWithType>
-- [Konfigurace a rozšíření modulu runtime pomocí chování](../../../../docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md)
+- [Konfigurace a rozšíření modulu runtime s chováním](../../../../docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md)

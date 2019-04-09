@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Skrytí sloupců v ovládacím prvku Windows Forms DataGridView pomocí návrháře'
+title: 'Postupy: Skrytí sloupců v ovládacím prvku Windows Forms DataGridView pomocí Návrháře'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Windows Forms, columns
@@ -7,14 +7,14 @@ helpviewer_keywords:
 - DataGridView control [Windows Forms], column hiding
 - data [Windows Forms], displaying
 ms.assetid: a81c38e6-2527-426a-bcb1-be691403be04
-ms.openlocfilehash: b65c83592334c84c7790da5877efdc9af84380f0
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: e0255cca5c614f07bbc4a7dfc9a908612e8867a6
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57708389"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59122379"
 ---
-# <a name="how-to-hide-columns-in-the-windows-forms-datagridview-control-using-the-designer"></a>Postupy: Skrytí sloupců v ovládacím prvku Windows Forms DataGridView pomocí návrháře
+# <a name="how-to-hide-columns-in-the-windows-forms-datagridview-control-using-the-designer"></a>Postupy: Skrytí sloupců v ovládacím prvku Windows Forms DataGridView pomocí Návrháře
 Někdy budete chtít zobrazit jenom některé sloupce, které jsou k dispozici ve Windows Forms <xref:System.Windows.Forms.DataGridView> ovládacího prvku. Například můžete chtít zobrazit zaměstnanec salary sloupec uživatelů pomocí přihlašovacích údajů pro správu při skrytí od jiných uživatelů. Alternativně můžete chtít vazbu ovládacího prvku do zdroje dat, který obsahuje mnoho sloupců, jenom některé z nich, které chcete zobrazit. V takovém případě bude obvykle odebrat sloupce, které vás nezajímají v zobrazení, spíše než jejich skrytí. Další informace najdete v tématu [jak: Přidat a odebrat sloupce v Windows Forms DataGridView pomocí návrháře](add-and-remove-columns-in-the-datagrid-using-the-designer.md).  
   
  Následující postup vyžaduje, **aplikace Windows** projektu s formulář obsahující <xref:System.Windows.Forms.DataGridView> ovládacího prvku. Informace o nastavení takový projekt, naleznete v tématu [jak: Vytvoření projektu aplikace Windows Forms](/visualstudio/ide/step-1-create-a-windows-forms-application-project) a [jak: Přidání ovládacích prvků Windows Forms](how-to-add-controls-to-windows-forms.md).  
@@ -34,8 +34,9 @@ Někdy budete chtít zobrazit jenom některé sloupce, které jsou k dispozici v
     >  Při přidávání zrušením může také skrýt sloupec **Visible** zaškrtávací políčko **přidat sloupec** dialogové okno.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.DataGridViewColumn.Visible%2A?displayProperty=nameWithType>
-- [Postupy: Přidávání a odebírání sloupců v ovládacím prvku Windows Forms DataGridView pomocí návrháře](add-and-remove-columns-in-the-datagrid-using-the-designer.md)
+- [Postupy: Přidávání a odebírání sloupců v ovládacím prvku Windows Forms DataGridView pomocí Návrháře](add-and-remove-columns-in-the-datagrid-using-the-designer.md)
 - [Postupy: Vytvoření projektu aplikace Windows Forms](/visualstudio/ide/step-1-create-a-windows-forms-application-project)
-- [Postupy: Přidání ovládacích prvků do formulářů Windows](how-to-add-controls-to-windows-forms.md)
+- [Postupy: Přidávání ovládacích prvků do Windows Forms](how-to-add-controls-to-windows-forms.md)

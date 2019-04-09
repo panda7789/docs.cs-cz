@@ -9,12 +9,12 @@ helpviewer_keywords:
 - WCF, security mode
 - WCF, security
 ms.assetid: 6e01dd9f-b5dd-4474-b24c-06e124de4ff7
-ms.openlocfilehash: c5e6d26fd665fa750b5608002d7abc938075a6ca
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 652fcef75f8d5a8dee824bb89bf4695f1629fed8
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54663034"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59116399"
 ---
 # <a name="how-to-set-the-security-mode"></a>Postupy: Nastavení režimu zabezpečení
 Zabezpečení Windows Communication Foundation (WCF) má tři běžné režimy zabezpečení, které se nacházejí na nejvíce předdefinovaných vazeb: přenos zpráv a "přenos s přihlašovacími údaji zprávy." Další dva režimy jsou specifické pro dvě vazby: v režimu "pouze přenosu credential" nalezen <xref:System.ServiceModel.BasicHttpBinding>a "I" režim na <xref:System.ServiceModel.NetMsmqBinding>. Ale v tomto tématu se soustřeďuje na tři běžných režimů zabezpečení: <xref:System.ServiceModel.SecurityMode.Transport>, <xref:System.ServiceModel.SecurityMode.Message>, a <xref:System.ServiceModel.SecurityMode.TransportWithMessageCredential>.  
@@ -114,12 +114,13 @@ Zabezpečení Windows Communication Foundation (WCF) má tři běžné režimy z
  Další informace najdete v tématu [jak: Zabezpečení přenosu pomocí přihlašovacích údajů a zpráv](../../../docs/framework/wcf/feature-details/how-to-use-transport-security-and-message-credentials.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Postupy: Konfigurace portu s certifikátem SSL](../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md)
-- [Postupy: Zabezpečení přenosu pomocí přihlašovacích údajů a zpráv](../../../docs/framework/wcf/feature-details/how-to-use-transport-security-and-message-credentials.md)
+- [Postupy: Použití přihlašovacích údajů k zabezpečení přenosů a zpráv](../../../docs/framework/wcf/feature-details/how-to-use-transport-security-and-message-credentials.md)
 - [Zabezpečení přenosu](../../../docs/framework/wcf/feature-details/transport-security.md)
 - [Zabezpečení zpráv](../../../docs/framework/wcf/feature-details/message-security-in-wcf.md)
 - [Přehled zabezpečení](../../../docs/framework/wcf/feature-details/security-overview.md)
 - [Vazby poskytované systémem](../../../docs/framework/wcf/system-provided-bindings.md)
-- [\<zabezpečení >](../../../docs/framework/configure-apps/file-schema/wcf/security-of-wshttpbinding.md)
-- [\<zabezpečení >](../../../docs/framework/configure-apps/file-schema/wcf/security-of-basichttpbinding.md)
-- [\<zabezpečení >](../../../docs/framework/configure-apps/file-schema/wcf/security-of-nettcpbinding.md)
+- [\<security>](../../../docs/framework/configure-apps/file-schema/wcf/security-of-wshttpbinding.md)
+- [\<security>](../../../docs/framework/configure-apps/file-schema/wcf/security-of-basichttpbinding.md)
+- [\<security>](../../../docs/framework/configure-apps/file-schema/wcf/security-of-nettcpbinding.md)

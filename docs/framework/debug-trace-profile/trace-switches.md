@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 8ab913aa-f400-4406-9436-f45bc6e54fbe
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 27f0d35dbe459ce53e6e10905a0a86a3f2bd3762
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 85a1a017197826717280f53995ed98f26f1d80bb
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54702623"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59132662"
 ---
 # <a name="trace-switches"></a>Přepínače trasování
 Přepínače trasování umožňují povolit, zakázat a filtrovat výstup trasování. Jsou objekty, které existují ve vašem kódu a je možné nakonfigurovat externě pomocí souboru .config. Existují tři typy přepínačů trasování, které jsou k dispozici v rozhraní .NET Framework: <xref:System.Diagnostics.BooleanSwitch> třídy, <xref:System.Diagnostics.TraceSwitch> třídy a <xref:System.Diagnostics.SourceSwitch> třídy. <xref:System.Diagnostics.BooleanSwitch> Třída slouží jako přepínač, povolení nebo zakázání různých příkazů trasování. <xref:System.Diagnostics.TraceSwitch> a <xref:System.Diagnostics.SourceSwitch> tříd bylo možné povolit přepínač trasování pro trasování konkrétní úroveň tak, aby <xref:System.Diagnostics.Trace> nebo <xref:System.Diagnostics.TraceSource> zobrazí zprávy zadané pro tuto úroveň a všechny úrovně pod ním. Pokud zakážete přepínač, zprávy trasování se nezobrazí. Všechny tyto třídy jsou odvozeny od abstraktní (**MustInherit**) třídy **přepínač**, jako by všechny přepínače vyvinutou v Unity uživatele.  
@@ -49,7 +49,7 @@ Přepínače trasování umožňují povolit, zakázat a filtrovat výstup traso
   
 |Výčtová hodnota|Celočíselná hodnota|Typ zprávy zobrazí (nebo zapsat do zadaného výstupního cíle)|  
 |----------------------|-------------------|---------------------------------------------------------------------------|  
-|Off|0|Žádná|  
+|Off|0|Žádný|  
 |Chyba|1|Pouze chybové zprávy|  
 |Upozornění|2|Zprávy upozornění a chybové zprávy|  
 |Informace o|3|Informační zprávy, upozornění a chybové zprávy|  
@@ -84,6 +84,7 @@ MessageBox.Show(myTraceSwitch.TraceVerbose.ToString());
  Kromě toho, že **BooleanSwitch** a **TraceSwitch**, můžete definovat vlastní přepínače děděním z **přepínač** třídy a přepsáním metody třídy base pomocí vlastní metody. Další informace o vytváření definované pro vývojáře přepínače najdete v článku <xref:System.Diagnostics.Switch> třídy v referenční dokumentaci rozhraní .NET Framework.  
   
 ## <a name="see-also"></a>Viz také:
-- [Moduly naslouchání trasování](../../../docs/framework/debug-trace-profile/trace-listeners.md)
+
+- [Naslouchací procesy trasování](../../../docs/framework/debug-trace-profile/trace-listeners.md)
 - [Postupy: Přidání příkazů trasování do kódu aplikace](../../../docs/framework/debug-trace-profile/how-to-add-trace-statements-to-application-code.md)
 - [Trasování a instrumentace aplikací](../../../docs/framework/debug-trace-profile/tracing-and-instrumenting-applications.md)

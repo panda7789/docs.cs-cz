@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c1541c6fa2b1d307fc8e854a67b7cc3068b7bb4d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 882242da493c49a2e6aa09888e9503dcf2933589
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54580717"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59119584"
 ---
 # <a name="ceesectionreloctype-enumeration"></a>CeeSectionRelocType – výčet
 Poskytuje hodnoty k ovlivnění typu `reloc` instrukci, protože ho ve volání [iceegen::addsectionreloc –](../../../../docs/framework/unmanaged-api/metadata/iceegen-addsectionreloc-method.md).  
@@ -80,6 +80,7 @@ typedef enum  {
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
-- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+
+- [Výčty metadat](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
 - [ICeeGen – rozhraní](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)
 - [AddSectionReloc – metoda](../../../../docs/framework/unmanaged-api/metadata/iceegen-addsectionreloc-method.md)

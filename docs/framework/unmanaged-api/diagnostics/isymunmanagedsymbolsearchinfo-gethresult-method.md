@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: dd24289f7e670684effa553f930af9aec92e5730
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: 1534955c1f7cfd37732a08b0b33cda5bff8a8aab
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57469597"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59113019"
 ---
 # <a name="isymunmanagedsymbolsearchinfogethresult-method"></a>ISymUnmanagedSymbolSearchInfo::GetHRESULT – metoda
 Získá hodnota HRESULT.  
@@ -45,4 +45,5 @@ HRESULT GetHRESULT(
  **Záhlaví:** CorSym.idl, CorSym.h  
   
 ## <a name="see-also"></a>Viz také:
+
 - [ISymUnmanagedSymbolSearchInfo – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedsymbolsearchinfo-interface.md)

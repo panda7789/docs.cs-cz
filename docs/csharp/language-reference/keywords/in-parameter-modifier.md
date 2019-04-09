@@ -1,34 +1,33 @@
 ---
 title: v modifikátor parametru - C# odkaz
 ms.custom: seodec18
-ms.date: 02/12/2019
+ms.date: 03/26/2019
 helpviewer_keywords:
 - parameters [C#], in
 - in parameters [C#]
-ms.openlocfilehash: 5a765a330e4d9efe22943538503c0822e1c9dfdb
-ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
+ms.openlocfilehash: e39d470308ed5a2b2ed82ade0faf8ba925228c2c
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56219552"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59112642"
 ---
 # <a name="in-parameter-modifier-c-reference"></a>v parametru modifikátor (referenční dokumentace jazyka C#)
 
-`in` – Klíčové slovo způsobí, že argumenty, které mají být předány podle odkazu. Je třeba [ref](ref.md) nebo [si](out-parameter-modifier.md) klíčová slova, kromě toho, že `in` nemůže upravit argumentů volané metody. Vzhledem k tomu `ref` argumenty se dají měnit, `out` argumenty musí být upravena klíčovým volané metody a jsou tyto změny pozorovat ve volání kontextu.
+`in` – Klíčové slovo způsobí, že argumenty, které mají být předány podle odkazu. Formální parametr je alias pro argument, který musí být proměnná. Jinými slovy všechny operace na parametr se provádí na argumentu. Je třeba [ref](ref.md) nebo [si](out-parameter-modifier.md) klíčová slova, kromě toho, že `in` nemůže upravit argumentů volané metody. Vzhledem k tomu `ref` argumenty se dají měnit, `out` argumenty musí být upravena klíčovým volané metody a jsou tyto změny pozorovat ve volání kontextu.
 
 [!code-csharp-interactive[cs-in-keyword](../../../../samples/snippets/csharp/language-reference/keywords/in-ref-out-modifier/InParameterModifier.cs#1)]  
 
 Předchozí příklad ukazuje, že `in` Modifikátor je obvykle zbytečné na lokalitu volání. Je potřeba jenom v deklaraci metody.
 
-
 > [!NOTE] 
 > `in` – Klíčové slovo je také možné pomocí parametru obecného typu k určení, že parametr typu je kontravariant, jako součást `foreach` příkazu, nebo jako součást `join` klauzule v dotazu LINQ. Další informace týkající se použití `in` – klíčové slovo v těchto kontextech najdete v článku [v](in.md), který obsahuje odkazy na tato použití.
   
- Proměnné se předaly jako `in` argumenty musí být inicializován před předáním ve volání metody. Volané metody však nelze přiřadit hodnotu nebo upravujete argument.  
+Proměnné se předaly jako `in` argumenty musí být inicializován před předáním ve volání metody. Volané metody však nelze přiřadit hodnotu nebo upravujete argument.  
 
 `in` Modifikátor parametru je k dispozici v C# 7.2 nebo novější. Chyba kompilátoru generovat předchozí verze `CS8107` ("funkce"odkazů jen pro čtení"není k dispozici v C# 7.0. Použijte prosím jazyk verze 7.2 nebo novější.") Verze jazyka kompilátoru nakonfigurovat, najdete v části [vyberte C# jazykovou verzi](../configure-language-version.md).
 
- I když `in`, `ref`, a `out` klíčová slova způsobit různé chování za běhu, nejsou považovány za součást podpisu metody v době kompilace. Proto metody nemohou být přetíženy, pokud je jediným rozdílem je, že jedna metoda má `ref` nebo `in` argument a druhý bere `out` argument. Například následující kód, nebude kompilovat:  
+`in`, `ref`, A `out` klíčová slova nejsou považované za součást podpisu metody za účelem řešení přetížení. Proto metody nemohou být přetíženy, pokud je jediným rozdílem je, že jedna metoda má `ref` nebo `in` argument a druhý bere `out` argument. Například následující kód, nebude kompilovat:  
   
 ```csharp
 class CS0663_Example
@@ -125,7 +124,7 @@ Nelze použít `in`, `ref`, a `out` klíčová slova pro následující druhy me
 ## <a name="see-also"></a>Viz také:
 
 - [Referenční dokumentace jazyka C#](../index.md)
-- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
+- [Průvodce programováním v C#](../../programming-guide/index.md)
 - [Klíčová slova jazyka C#](index.md)
 - [Parametry metody](method-parameters.md)
 - [Psát bezpečný kód efektivní](../../write-safe-efficient-code.md)

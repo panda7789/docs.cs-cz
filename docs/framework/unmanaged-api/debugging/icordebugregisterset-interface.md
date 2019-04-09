@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8db70faf418bc89a4543845890f65e4859d507e0
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 7b0a5d80d984a3c696b178c4d8c936bd47354945
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54592598"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59135236"
 ---
 # <a name="icordebugregisterset-interface"></a>ICorDebugRegisterSet – rozhraní
 Představuje sadu registrů, které jsou k dispozici v počítači, který aktuálně spouští kód.  
@@ -52,5 +52,6 @@ Představuje sadu registrů, které jsou k dispozici v počítači, který aktu�
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+
+- [Debugging – rozhraní](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
 - [ICorDebugRegisterSet2 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset2-interface.md)

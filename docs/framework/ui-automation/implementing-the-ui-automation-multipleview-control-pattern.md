@@ -6,12 +6,12 @@ helpviewer_keywords:
 - MultipleView control pattern
 - control patterns, MultipleView
 ms.assetid: 5bf1b248-ffee-48c8-9613-0b134bbe9f6a
-ms.openlocfilehash: 5c875794a3d6fb0325bf282bc0f4b903aa29de07
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.openlocfilehash: 74e5908dfcd42d031464ffccedb530be4a71a3f2
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57674286"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59125195"
 ---
 # <a name="implementing-the-ui-automation-multipleview-control-pattern"></a>Implementace vzoru ovládacích prvků MultipleView pro automatizaci uživatelského rozhraní
 > [!NOTE]
@@ -41,10 +41,10 @@ ms.locfileid: "57674286"
   
 |Požadované členy|Typ člena|Poznámky|  
 |----------------------|-----------------|-----------|  
-|<xref:System.Windows.Automation.Provider.IMultipleViewProvider.CurrentView%2A>|Vlastnost|Žádná|  
-|<xref:System.Windows.Automation.Provider.IMultipleViewProvider.GetSupportedViews%2A>|Metoda|Žádná|  
-|<xref:System.Windows.Automation.Provider.IMultipleViewProvider.GetViewName%2A>|Metoda|Žádná|  
-|<xref:System.Windows.Automation.Provider.IMultipleViewProvider.SetCurrentView%2A>|Metoda|Žádná|  
+|<xref:System.Windows.Automation.Provider.IMultipleViewProvider.CurrentView%2A>|Vlastnost|Žádné|  
+|<xref:System.Windows.Automation.Provider.IMultipleViewProvider.GetSupportedViews%2A>|Metoda|Žádné|  
+|<xref:System.Windows.Automation.Provider.IMultipleViewProvider.GetViewName%2A>|Metoda|Žádné|  
+|<xref:System.Windows.Automation.Provider.IMultipleViewProvider.SetCurrentView%2A>|Metoda|Žádný|  
   
  Nejsou žádné akce přidružené k této – vzor ovládacích prvků.  
   
@@ -57,6 +57,7 @@ ms.locfileid: "57674286"
 |<xref:System.ArgumentException>|Když buď <xref:System.Windows.Automation.Provider.IMultipleViewProvider.SetCurrentView%2A> nebo <xref:System.Windows.Automation.Provider.IMultipleViewProvider.GetViewName%2A> je volána s parametrem, který není členem kolekce podporované zobrazení.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled vzorů ovládacích prvků pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)
 - [Podpora vzorů ovládacích prvků u zprostředkovatele automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/support-control-patterns-in-a-ui-automation-provider.md)
 - [Vzory ovládacích prvků automatizace uživatelského rozhraní pro klienty](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)

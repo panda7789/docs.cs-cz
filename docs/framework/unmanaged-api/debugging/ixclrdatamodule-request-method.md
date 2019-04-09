@@ -15,12 +15,12 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: ac7ab7bf207cc1474090bab19818ca17fc068d3a
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: a02a60668ae6caaad1940395822758331b93f550
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57479217"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59119792"
 ---
 # <a name="ixclrdatamodulerequest-method"></a>IXCLRDataModule::Request – metoda
 
@@ -61,10 +61,11 @@ Zadaná metoda je součástí `IXCLRDataModule` rozhraní a odpovídá 36 pozice
 ## <a name="requirements"></a>Požadavky
 
 **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
-**Záhlaví:** Žádná   
-**Knihovna:** Žádná  
+**Záhlaví:** Žádné   
+**Knihovna:** Žádné  
 **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 
 ## <a name="see-also"></a>Viz také:
+
 - [Ladění](index.md)
-- [IXCLRDataModule Interface](ixclrdatamodule-interface.md)
+- [IXCLRDataModule – rozhraní](ixclrdatamodule-interface.md)

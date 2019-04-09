@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: de4bf2cf647682062fbacb4484ffae905d1b7995
-ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
+ms.openlocfilehash: e8d871f2ecbd96d5bda781b2ae11b94efd409442
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56835366"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59128398"
 ---
 # <a name="imetadataimportenummembers-method"></a>IMetaDataImport::EnumMembers – metoda
 Vytvoří výčet MemberDef tokeny představující členů zadaného typu.  
@@ -77,5 +77,6 @@ HRESULT EnumMembers (
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
 - [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

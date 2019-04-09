@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ea250cd413836796e8e6a3438ac7d6933035091e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2b2298e2d67e8a50e11d53d864f0e78f3b549e45
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54714279"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59131414"
 ---
 # <a name="imetadatatables-interface"></a>IMetaDataTables – rozhraní
 Poskytuje metody pro ukládání a načítání informací o metadatech v tabulkách.  
@@ -60,5 +60,6 @@ Poskytuje metody pro ukládání a načítání informací o metadatech v tabulk
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
-- [Rozhraní pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md)
+
+- [Rozhraní metadat](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md)
 - [IMetaDataTables2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatatables2-interface.md)

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - XAML [WPF], StaticResource markup extension
 - StaticResource markup extensions [WPF]
 ms.assetid: 97af044c-71f1-4617-9a94-9064b68185d2
-ms.openlocfilehash: f3fb2559510d85f6e55a4784f2b528f16737a2ab
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 8319e451268152e95326c02027157db72df631b8
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57371109"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59125143"
 ---
 # <a name="staticresource-markup-extension"></a>StaticResource – rozšíření značek
 Poskytuje hodnotu pro všechny [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] vlastnost atributu vyhledáním odkaz na prostředek už definované. Chování při vyhledávání pro daný prostředek je obdobou během načítání vyhledávání, která bude hledat prostředky, které byly dříve načteny z kódu aktuálního [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránek a jiných zdrojů aplikace a vygeneruje tuto hodnotu prostředků jako Hodnota vlastnosti objektů za běhu.  
@@ -68,8 +68,9 @@ Poskytuje hodnotu pro všechny [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla
  `StaticResource` je rozšíření značek. Rozšíření značek jsou obvykle implementována v případě požadavku, aby díky použití řídicí sekvence mohly být hodnoty atributů něčím jiným než literálními hodnotami nebo názvy obslužných rutin, a tento požadavek má tak rozsáhlou platnost, že nestačí jednoduše použít převaděče typů pro určité typy nebo vlastnosti. Všechna rozšíření značek v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] použít {a} znaků v syntaxi atributu, což je konvence, podle kterého [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] procesoru rozpozná, že rozšíření značek musí zpracovat atribut. Další informace najdete v tématu [– rozšíření značek a WPF XAML](markup-extensions-and-wpf-xaml.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Styly a šablony](../controls/styling-and-templating.md)
 - [Přehled XAML (WPF)](xaml-overview-wpf.md)
 - [Rozšíření značek a WPF XAML](markup-extensions-and-wpf-xaml.md)
-- [Prostředky XAML](xaml-resources.md)
-- [Prostředky a kód](resources-and-code.md)
+- [Zdroje XAML](xaml-resources.md)
+- [Zdroje a kód](resources-and-code.md)

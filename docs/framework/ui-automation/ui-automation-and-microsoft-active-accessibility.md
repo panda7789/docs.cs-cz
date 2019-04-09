@@ -7,12 +7,12 @@ helpviewer_keywords:
 - UI Automation, Microsoft Active Accessibility
 - Active Accessibility, UI Automation compared to
 ms.assetid: 87bee662-0a3e-4232-a421-20e7a5968321
-ms.openlocfilehash: 67382c0383726d2c2caabde1e80bfb37a1a9c27c
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.openlocfilehash: 29a6b897115c5f2f3ae8d7e4ec708be59dc0d85b
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57679265"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59115333"
 ---
 # <a name="ui-automation-and-microsoft-active-accessibility"></a>Automatizace uživatelského rozhraní a technologie Microsoft Active Accessibility
 > [!NOTE]
@@ -68,7 +68,7 @@ ms.locfileid: "57679265"
   
  V následující tabulce jsou uvedeny mapování [!INCLUDE[TLA2#tla_aa](../../../includes/tla2sharptla-aa-md.md)] role [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] řídit typy.  
   
-|[!INCLUDE[TLA2#tla_aa](../../../includes/tla2sharptla-aa-md.md)] Role|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Typ ovládacího prvku|  
+|[!INCLUDE[TLA2#tla_aa](../../../includes/tla2sharptla-aa-md.md)] role|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Typ ovládacího prvku|  
 |----------------------------------------------------------------------|----------------------------------------------------------------------------------------|  
 |ROLE_SYSTEM_PUSHBUTTON|Tlačítko|  
 |ROLE_SYSTEM_CLIENT|Kalendář|  
@@ -126,7 +126,7 @@ ms.locfileid: "57679265"
   
 |[!INCLUDE[TLA2#tla_aa](../../../includes/tla2sharptla-aa-md.md)] přistupující objekt vlastnosti|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ID vlastnosti|Poznámky|  
 |-----------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|-------------|  
-|`get_accKeyboardShortcut`|<xref:System.Windows.Automation.AutomationElement.AccessKeyProperty> Nebo <xref:System.Windows.Automation.AutomationElement.AcceleratorKeyProperty>|`AccessKeyProperty` Pokud jsou obě přítomny, má přednost.|  
+|`get_accKeyboardShortcut`|<xref:System.Windows.Automation.AutomationElement.AccessKeyProperty> or <xref:System.Windows.Automation.AutomationElement.AcceleratorKeyProperty>|`AccessKeyProperty` Pokud jsou obě přítomny, má přednost.|  
 |`get_accName`|<xref:System.Windows.Automation.AutomationElement.NameProperty>||  
 |`get_accRole`|<xref:System.Windows.Automation.AutomationElement.ControlTypeProperty>|Najdete v předchozí tabulce mapování role, které typy ovládacích prvků.|  
 |`get_accValue`|<xref:System.Windows.Automation.ValuePattern.ValueProperty?displayProperty=nameWithType><br /><br /> <xref:System.Windows.Automation.RangeValuePattern.ValueProperty?displayProperty=nameWithType>|Platí jenom pro typy ovládacích prvků, které podporují ValuePattern nebo RangeValuePattern. Hodnoty prvků RangeValue jsou normalizovány na 0 – 100, aby byla konzistentní s MSAA chování. Hodnota položky pomocí řetězce.|  
@@ -137,7 +137,7 @@ ms.locfileid: "57679265"
   
  Následující tabulka uvádí, které [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] vlastnosti odpovídají [!INCLUDE[TLA2#tla_aa](../../../includes/tla2sharptla-aa-md.md)] stavu konstanty.  
   
-|[!INCLUDE[TLA2#tla_aa](../../../includes/tla2sharptla-aa-md.md)] Stav|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Vlastnost|Změna stavu aktivace?|  
+|[!INCLUDE[TLA2#tla_aa](../../../includes/tla2sharptla-aa-md.md)] state|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] property|Změna stavu aktivace?|  
 |-----------------------------------------------------------------------|------------------------------------------------------------------------------------|----------------------------|  
 |STATE_SYSTEM_CHECKED|Pro zaškrtávací políčko <xref:System.Windows.Automation.TogglePattern.ToggleStateProperty><br /><br /> Pro přepínací tlačítko <xref:System.Windows.Automation.SelectionItemPattern.IsSelectedProperty>|Ano|  
 |STATE_SYSTEM_COLLAPSED|<xref:System.Windows.Automation.ExpandCollapsePattern.ExpandCollapsePatternInformation.ExpandCollapseState%2A> = <xref:System.Windows.Automation.ExpandCollapseState.Collapsed>|Ano|  
@@ -152,7 +152,7 @@ ms.locfileid: "57679265"
 |STATE_SYSTEM_MUTLISELECTABLE|<xref:System.Windows.Automation.SelectionPattern.CanSelectMultipleProperty>|N|  
 |STATE_SYSTEM_OFFSCREEN|<xref:System.Windows.Automation.AutomationElement.IsOffscreenProperty> = True|N|  
 |STATE_SYSTEM_PROTECTED|<xref:System.Windows.Automation.AutomationElement.IsPasswordProperty>|N|  
-|STATE_SYSTEM_READONLY|<xref:System.Windows.Automation.RangeValuePattern.IsReadOnlyProperty?displayProperty=nameWithType> a <xref:System.Windows.Automation.ValuePattern.IsReadOnlyProperty?displayProperty=nameWithType>|N|  
+|STATE_SYSTEM_READONLY|<xref:System.Windows.Automation.RangeValuePattern.IsReadOnlyProperty?displayProperty=nameWithType> and <xref:System.Windows.Automation.ValuePattern.IsReadOnlyProperty?displayProperty=nameWithType>|N|  
 |STATE_SYSTEM_SELECTABLE|<xref:System.Windows.Automation.SelectionItemPattern> je podporováno|N|  
 |STATE_SYSTEM_SELECTED|<xref:System.Windows.Automation.SelectionItemPattern.IsSelectedProperty>|N|  
 |STATE_SYSTEM_SIZEABLE|<xref:System.Windows.Automation.TransformPattern.TransformPatternInformation.CanResize%2A>|N|  
@@ -160,7 +160,7 @@ ms.locfileid: "57679265"
   
  Následující stavy buď nebyly prováděny většinu [!INCLUDE[TLA2#tla_aa](../../../includes/tla2sharptla-aa-md.md)] řídit servery nebo nemají žádný ekvivalent v [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)].  
   
-|[!INCLUDE[TLA2#tla_aa](../../../includes/tla2sharptla-aa-md.md)] Stav|Poznámky|  
+|[!INCLUDE[TLA2#tla_aa](../../../includes/tla2sharptla-aa-md.md)] state|Poznámky|  
 |-----------------------------------------------------------------------|-------------|  
 |STATE_SYSTEM_BUSY|Není k dispozici v [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|  
 |STATE_SYSTEM_DEFAULT|Není k dispozici v [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|  
@@ -195,7 +195,7 @@ ms.locfileid: "57679265"
 |EVENT_OBJECT_DESCRIPTIONCHANGE|Žádné naprosto stejný; možná <xref:System.Windows.Automation.AutomationElement.HelpTextProperty> nebo <xref:System.Windows.Automation.AutomationElement.LocalizedControlTypeProperty> Změna vlastnosti|  
 |EVENT_OBJECT_DESTROY|<xref:System.Windows.Automation.AutomationElement.StructureChangedEvent>|  
 |EVENT_OBJECT_FOCUS|<xref:System.Windows.Automation.AutomationElement.AutomationFocusChangedEvent>|  
-|EVENT_OBJECT_HELPCHANGE|<xref:System.Windows.Automation.AutomationElement.HelpTextProperty> Změna|  
+|EVENT_OBJECT_HELPCHANGE|<xref:System.Windows.Automation.AutomationElement.HelpTextProperty> změna|  
 |EVENT_OBJECT_HIDE|<xref:System.Windows.Automation.AutomationElement.StructureChangedEvent>|  
 |EVENT_OBJECT_LOCATIONCHANGE|<xref:System.Windows.Automation.AutomationElement.BoundingRectangleProperty> Změna vlastnosti|  
 |EVENT_OBJECT_NAMECHANGE|<xref:System.Windows.Automation.AutomationElement.NameProperty> Změna vlastnosti|  
@@ -240,7 +240,7 @@ ms.locfileid: "57679265"
 |Žádný ekvivalent|<xref:System.Windows.Automation.ScrollPattern.VerticalViewSizeProperty> Změna vlastnosti|  
 |Žádný ekvivalent|<xref:System.Windows.Automation.TogglePattern.ToggleStateProperty> Změna vlastnosti|  
 |Žádný ekvivalent|<xref:System.Windows.Automation.WindowPattern.WindowVisualStateProperty> Změna vlastnosti|  
-|Žádný ekvivalent|<xref:System.Windows.Automation.AutomationElement.AsyncContentLoadedEvent> Události|  
+|Žádný ekvivalent|<xref:System.Windows.Automation.AutomationElement.AsyncContentLoadedEvent> event|  
 |Žádný ekvivalent|<xref:System.Windows.Automation.AutomationElement.ToolTipOpenedEvent>|  
   
 <a name="Security_compare"></a>   
@@ -250,4 +250,5 @@ ms.locfileid: "57679265"
  [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Modelu eliminuje potřebu poskytovatelé volání prostřednictvím jiného poskytovatele kódu. [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Základní služba nemá potřebné agregace.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Principy automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/index.md)

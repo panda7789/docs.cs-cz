@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 35900aa2-5615-4174-8212-ba184c6b82fb
-ms.openlocfilehash: 8df63cb425f8e113a73fee1b0a6bd61683ed27ef
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f2bc67b4130633fba3a6e42e2b6925fc09f835c3
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54578839"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59116227"
 ---
 # <a name="inserting-an-image-from-a-file"></a>Vložení obrázku ze souboru
 Binární velkých objektů (BLOB) může zapisovat do databáze jako binární nebo znaková data, v závislosti na typu pole ve zdroji dat. Objekt BLOB je obecný termín, který odkazuje `text`, `ntext`, a `image` datové typy, které obvykle obsahují dokumenty a obrázky.  
@@ -131,6 +131,7 @@ public static byte[] GetPhoto(string filePath)
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Použití příkazů pro změny dat](../../../../../docs/framework/data/adonet/using-commands-to-modify-data.md)
 - [Načítání binárních dat](../../../../../docs/framework/data/adonet/retrieving-binary-data.md)
 - [Binární a vysoké hodnoty na SQL Serveru](../../../../../docs/framework/data/adonet/sql/sql-server-binary-and-large-value-data.md)

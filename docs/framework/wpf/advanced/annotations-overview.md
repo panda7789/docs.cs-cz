@@ -9,19 +9,18 @@ helpviewer_keywords:
 - documents [WPF], annotations
 - sticky notes [WPF]
 ms.assetid: 716bf474-29bd-4c74-84a4-8e0744bdad62
-ms.openlocfilehash: a0c6260eee10487034655b5e4abbfa1f1a7bce71
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: faf2e9bbe23acfd46ee98e1f0fca01b7563ede73
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57355178"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59122444"
 ---
 # <a name="annotations-overview"></a>Přehled poznámek
 Zápis poznámky nebo komentáře k dokumentu dokumentů je takový běžnou aktivitu, že jsme téměř jít samozřejmost. Tyto poznámky nebo komentáře jsou "Poznámky" přidáme do dokumentu označit, že informace nebo chcete zvýraznit položky relevantní pro pozdější použití. I když zápis poznámky na dokumenty tištěné je snadné a běžné, možnost přidávat vlastní komentář elektronických dokumentů je obvykle velmi omezená, pokud je k dispozici ve všech.  
   
  Toto téma kontroluje několik běžných typů poznámek, konkrétně rychlé poznámky a zvýraznění a ukazuje, jak [!INCLUDE[TLA#tla_caf](../../../../includes/tlasharptla-caf-md.md)] usnadňuje tyto typy poznámek v aplikacích v dokumentu Windows Presentation Foundation (WPF) zobrazení ovládacích prvků.  [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] zobrazení ovládacích prvků dokumentu, které podporují poznámky zahrnují <xref:System.Windows.Controls.FlowDocumentReader> a <xref:System.Windows.Controls.FlowDocumentScrollViewer>, stejně jako ovládací prvky je odvozena z <xref:System.Windows.Controls.Primitives.DocumentViewerBase> například <xref:System.Windows.Controls.DocumentViewer> a <xref:System.Windows.Controls.FlowDocumentPageViewer>.  
-  
-  
+
 <a name="caf1_type_stickynotes"></a>   
 ## <a name="sticky-notes"></a>Rychlé poznámky  
  Typické poznámku obsahuje informace napsané na malou část barevného papíru, který se potom "zasekla" na dokument. Digitální rychlých poznámek poskytuje podobné funkce pro elektronických dokumentů, ale s vyšší flexibilitu zahrnout mnoho jiných typů obsahu, jako zadaný text, ručně psaných poznámek (například [!INCLUDE[TLA#tla_tpc](../../../../includes/tlasharptla-tpc-md.md)] "inkoustu" tahy), nebo webové odkazy.  
@@ -65,6 +64,7 @@ Zápis poznámky nebo komentáře k dokumentu dokumentů je takový běžnou akt
  Jiný ukázkový scénář zahrnuje aplikace, které umožňují výměny poznámky a rychlých poznámek čtenářů dokumentu e-mailem. Tato funkce umožňuje tyto aplikace pro navigaci čtenáře na stránce, která obsahuje poznámky, které se vyměňují.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Controls.Primitives.DocumentViewerBase>
 - <xref:System.Windows.Controls.DocumentViewer>
 - <xref:System.Windows.Controls.FlowDocumentPageViewer>

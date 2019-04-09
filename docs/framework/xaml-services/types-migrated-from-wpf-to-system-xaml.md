@@ -6,12 +6,12 @@ helpviewer_keywords:
 - XAML [XAML Services], System.Xaml and WPF
 - System.Xaml [XAML Services], types migrated from WPF
 ms.assetid: d79dabf5-a2ec-4e8d-a37a-67c4ba8a2b91
-ms.openlocfilehash: 4fc9d1b2666db05fc4fb902cf8db03d9d876001b
-ms.sourcegitcommit: 5c1abeec15fbddcc7dbaa729fabc1f1f29f12045
+ms.openlocfilehash: dcfad1c2b2f95783e2b348a3a1111501f958143f
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58031467"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59116477"
 ---
 # <a name="types-migrated-from-wpf-to-systemxaml"></a>Typy migrované z prostředí WPF do oboru názvů System.Xaml
 V [!INCLUDE[net_v35_long](../../../includes/net-v35-long-md.md)] a [!INCLUDE[net_v30_long](../../../includes/net-v30-long-md.md)], obě [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] Windows Workflow Foundation součástí implementace jazyka XAML. V sestavení WindowsBase PresentationCore a PresentationFramework existuje mnoho veřejných typů, které rozšíření k dispozici pro implementaci WPF XAML. Obdobně veřejných typů, které poskytuje rozšíření pro Windows Workflow Foundation XAML existoval v System.Workflow.ComponentModel sestavení. V [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], některé typy související s XAML se migrují do oboru názvů System.Xaml sestavení. Běžnou implementaci rozhraní .NET Framework jazykových služeb XAML umožňuje mnoho scénářů XAML rozšíření, které byly původně definované implementací konkrétního rozhraní XAML, ale jsou teď součástí celkového [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] podpora jazyka XAML. Toto téma obsahuje seznam typů, které se migrují a popisuje problémy související s migrací.  
@@ -126,4 +126,5 @@ V [!INCLUDE[net_v35_long](../../../includes/net-v35-long-md.md)] a [!INCLUDE[net
  Pokud jsou včetně odkazů na sestavení WPF a oboru názvů System.Xaml a také používáte `include` příkazy pro obě <xref:System.Windows.Markup> a <xref:System.Xaml> obory názvů, musíte k plnému určení volání těchto rozhraní API pro překlad typů bez nejednoznačnost.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [XAML Services](index.md)

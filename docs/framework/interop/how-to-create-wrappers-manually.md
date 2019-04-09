@@ -6,12 +6,12 @@ helpviewer_keywords:
 ms.assetid: cc2a70d8-6a58-4071-a8cf-ce28c018c09b
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 62d11c5f098887bf26ab71c0d8d072972437210d
-ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
-ms.translationtype: MT
+ms.openlocfilehash: 2d6959ac8b2315d928ab2ac362bb3b2c4081d46e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56220059"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59117102"
 ---
 # <a name="how-to-create-wrappers-manually"></a>Postupy: Ruční vytváření obálek
 Rozhodnete-li se deklarovat typy modelu COM ve spravovaném zdrojovém kódu ručně, bude nejlépe, když začnete se stávajícím souborem IDL (Interface Definition Language) nebo knihovnou typů. Nemáte-li k dispozici soubor IDL nebo nelze vygenerovat soubor knihovny typů, můžete typy modelu COM nasimulovat pomocí spravovaných deklarací a exportováním výsledného sestavení do knihovny typů.  
@@ -37,7 +37,7 @@ Rozhodnete-li se deklarovat typy modelu COM ve spravovaném zdrojovém kódu ru�
 ## <a name="example"></a>Příklad  
  Následující kód znázorňuje příklad rozhraní `ISATest` a třídy `SATest` v souboru IDL a odpovídající typy ve zdrojovém kódu jazyka C#.  
   
- **Soubor IDL nebo typ knihovny**  
+ **Soubor IDL nebo soubor knihovny typů**  
   
 ```  
  [  
@@ -100,9 +100,10 @@ namespace SAServer
 ```  
   
 ## <a name="see-also"></a>Viz také:
-- [Přizpůsobení obálek Volatelných za běhu](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/e753eftz(v=vs.100))
+
+- [Přizpůsobení obálek volatelných za běhu](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/e753eftz(v=vs.100))
 - [Datové typy COM](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/sak564ww(v=vs.100))
 - [Postupy: Úprava sestavení vzájemné spolupráce](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/8zbc969t(v=vs.100))
-- [Souhrn převodu sestavení knihovny typů na](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/k83zzh38(v=vs.100))
+- [Souhrn převodu knihovny typů na sestavení](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/k83zzh38(v=vs.100))
 - [Tlbimp.exe (importér knihovny typů)](../tools/tlbimp-exe-type-library-importer.md)
 - [Tlbexp.exe (exportér knihovny typů)](../tools/tlbexp-exe-type-library-exporter.md)

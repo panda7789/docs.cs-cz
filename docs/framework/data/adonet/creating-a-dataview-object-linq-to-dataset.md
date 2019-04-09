@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 76057508-e12d-4779-a707-06a4c2568acf
-ms.openlocfilehash: 3f53c9889e1fdae6c582e8d4a17f640e425e6594
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 95bc9beed9965bad32118dfafa4a5aa76902ca10
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54734432"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59121651"
 ---
 # <a name="creating-a-dataview-object-linq-to-dataset"></a>Vytvoření objektu DataView (LINQ to DataSet)
 Existují dva způsoby, jak vytvořit <xref:System.Data.DataView> v [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] kontextu. Můžete vytvořit <xref:System.Data.DataView> z [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] dotaz nad <xref:System.Data.DataTable>, nebo si můžete vytvořit z typovaného nebo netypové <xref:System.Data.DataTable>. V obou případech můžete vytvořit <xref:System.Data.DataView> pomocí jedné z <xref:System.Data.DataTableExtensions.AsDataView%2A> rozšiřující metody; <xref:System.Data.DataView> není přímo constructible v [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] kontextu.  
@@ -71,6 +71,7 @@ Existují dva způsoby, jak vytvořit <xref:System.Data.DataView> v [!INCLUDE[li
  Však dojde ke ztrátě výkonu, která se dodává s nastavením <xref:System.Data.DataView.RowFilter%2A> nebo <xref:System.Data.DataView.Sort%2A> vlastnost po <xref:System.Data.DataView> byla vytvořena z dotazu, protože <xref:System.Data.DataView> vytvoří index pro podporu operace filtrování a řazení. Nastavení <xref:System.Data.DataView.RowFilter%2A> nebo <xref:System.Data.DataView.Sort%2A> vlastnost znovu sestaví index pro data, přidání režie pro vaši aplikaci a snížit výkon. Pokud je to možné, je lepší zadejte filtrování a řazení informace při prvním vytvoření <xref:System.Data.DataView> a neměli upravovat později.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Datová vazba a LINQ to DataSet](../../../../docs/framework/data/adonet/data-binding-and-linq-to-dataset.md)
 - [Filtrování se zobrazením dat](../../../../docs/framework/data/adonet/filtering-with-dataview-linq-to-dataset.md)
 - [Řazení se zobrazením dat](../../../../docs/framework/data/adonet/sorting-with-dataview-linq-to-dataset.md)

@@ -6,18 +6,16 @@ helpviewer_keywords:
 - XAML [WPF], custom classes
 - classes [WPF], custom classes in XAML
 ms.assetid: e7313137-581e-4a64-8453-d44e15a6164a
-ms.openlocfilehash: a1de1ee80d1f88b0c0a7adfb75b96353b6861d97
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: e71946ec06eb1b4c75f30084dfdb863d8e3b093e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57371889"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59122353"
 ---
 # <a name="xaml-and-custom-classes-for-wpf"></a>XAML a vlastní třídy pro WPF
 Jak je implementován v XAML [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] architektur podporuje schopnost definovat vlastní třídy nebo struktury v libovolném [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] jazyk a pak přístupu, které třídy pomocí kódu XAML. Můžete použít kombinaci [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]-definované typy a vlastních typů ve stejném souboru kódu, obvykle na předponu oboru názvů XAML mapování vlastních typů. Toto téma popisuje požadavky, které má být použitelná jako prvek XAML musí splňovat vlastní třídy.  
-  
- 
-  
+
 <a name="Custom_Classes_in_Applications_vs__in_Assemblies"></a>   
 ## <a name="custom-classes-in-applications-or-assemblies"></a>Vlastní třídy v aplikacích nebo sestavení  
  Dvě různé možnosti, jak lze definovat vlastní třídy, které se používají v XAML: v rámci modelu code-behind nebo jiný kód, který vytvoří primární [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikace, nebo jako třída v samostatné sestavení, jako je spustitelný soubor nebo knihovnu DLL používá jako knihovny tříd. Každá z těchto přístupů má určité výhody a nevýhody.  
@@ -113,8 +111,9 @@ Jak je implementován v XAML [!INCLUDE[TLA#tla_clr](../../../../includes/tlashar
  Pro určité scénáře, jako třeba když se ovládací prvek Autor, můžete chtít také zajistit, že všechny reprezentaci objektu, který se dá vytvořit instance v XAML lze také serializovat zpět na odpovídající kód XAML. Serializace požadavky nejsou popsané v tomto tématu. Zobrazit [řídit vytvoření přehledu](../controls/control-authoring-overview.md) a [strom prvku a serializace](element-tree-and-serialization.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled XAML (WPF)](xaml-overview-wpf.md)
 - [Vlastní vlastnosti závislosti](custom-dependency-properties.md)
-- [Přehled vytváření ovládacích prvků](../controls/control-authoring-overview.md)
+- [Přehled řízeného vytváření](../controls/control-authoring-overview.md)
 - [Přehled základních elementů](base-elements-overview.md)
-- [Vlastnosti závislostí a načítání XAML](xaml-loading-and-dependency-properties.md)
+- [Vlastnost závislostí a načítání XAML](xaml-loading-and-dependency-properties.md)

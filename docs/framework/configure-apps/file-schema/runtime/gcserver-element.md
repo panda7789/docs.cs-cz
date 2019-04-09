@@ -1,5 +1,5 @@
 ---
-title: Element <gcServer>
+title: <gcServer> Prvek
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/runtime/gcServer
@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 8d25b80e-2581-4803-bd87-a59528e3cb03
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9125ee35b081a1723f379bd3fbdec808d085c675
-ms.sourcegitcommit: b8ace47d839f943f785b89e2fff8092b0bf8f565
+ms.openlocfilehash: fd91cf0179ef9731c456b41fdc865e3eacdb33eb
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55674448"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59132805"
 ---
 # <a name="gcserver-element"></a>\<gcServer> Element
 Určuje, zda modul common language runtime spustí uvolnění paměti serveru.  
@@ -42,7 +42,7 @@ Určuje, zda modul common language runtime spustí uvolnění paměti serveru.
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |`false`|Nejde spustit uvolňování paměti serveru. Toto nastavení je výchozí.|  
 |`true`|Spustí uvolnění paměti serveru.|  
@@ -79,6 +79,7 @@ Určuje, zda modul common language runtime spustí uvolnění paměti serveru.
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Runtime.GCSettings.IsServerGC%2A?displayProperty=nameWithType>
 - [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
 - [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)

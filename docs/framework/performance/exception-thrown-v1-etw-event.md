@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 0d3da389-6b7b-40f6-a877-fac546d6019c
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 07932a12916138dd7cbee2576e4fc747898b8063
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: dd322d25d91bb277a4c817594c968c28a6d61d68
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54610838"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59136133"
 ---
 # <a name="exception-thrownv1-etw-event"></a>Událost Trasování událostí pro Windows výjimky Thrown_V1
 Tato událost zaznamená informace o výjimkách, které jsou vyvolány.  
@@ -41,4 +41,5 @@ Tato událost zaznamená informace o výjimkách, které jsou vyvolány.
 |ClrInstanceID|win:UInt16|Jedinečné ID instance CLR nebo CoreCLR.|  
   
 ## <a name="see-also"></a>Viz také:
-- [Události Trasování událostí pro Windows v CLR](../../../docs/framework/performance/clr-etw-events.md)
+
+- [Události ETW CLR](../../../docs/framework/performance/clr-etw-events.md)

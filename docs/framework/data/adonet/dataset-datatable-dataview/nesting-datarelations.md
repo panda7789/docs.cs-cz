@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 9530f9c9-dd98-4b93-8cdb-40d7f1e8d0ab
-ms.openlocfilehash: 5fc987e37d9b33cd1640bb32423f62a7e74937f8
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 7975e17bd957a822bf3d60d487eb928cee84bd28
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54723495"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59117206"
 ---
 # <a name="nesting-datarelations"></a>Vnoření datových relací
 Jednotlivé tabulky v relační znázornění dat, obsahovat řádky, které se vztahují k navzájem pomocí sloupec nebo sadu sloupců. V ADO.NET <xref:System.Data.DataSet>, relace mezi tabulkami se implementuje pomocí <xref:System.Data.DataRelation>. Když vytvoříte **DataRelation**, vztahy nadřazenosti a podřízenosti sloupce, které se spravují jenom do relace. Tabulky a sloupce jsou samostatné entity. V Hierarchická reprezentace dat, které obsahuje XML nadřazené a podřízené vztahy jsou reprezentovány nadřazené elementy, které obsahují vnořené podřízené prvky.  
@@ -132,6 +132,7 @@ customerOrders.Nested = true;
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Použití XML v datové sadě](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)
 - [Přidání datových relací](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/adding-datarelations.md)
 - [Datové sady, datové tabulky a datová zobrazení](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)

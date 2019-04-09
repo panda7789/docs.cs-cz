@@ -1,18 +1,18 @@
 ---
-title: Parametry Table-Valued
+title: Parametry s hodnotami v tabulkách
 ms.date: 10/12/2018
 dev_langs:
 - csharp
 - vb
 ms.assetid: 370c16d5-db7b-43e3-945b-ccaab35b739b
-ms.openlocfilehash: 130b5338b14bc7c1f36feb620d549295867ef64e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d1d52e048ee54ce967215ad134d5bcff2983103e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54527767"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59113617"
 ---
-# <a name="table-valued-parameters"></a>Parametry Table-Valued
+# <a name="table-valued-parameters"></a>Parametry s hodnotami v tabulkách
 Parametry s hodnotou tabulky poskytují snadný způsob, jak zařadit více řádků dat z klientské aplikace k SQL serveru bez nutnosti více výměn nebo zvláštní logiku na straně serveru pro zpracování dat. Parametry table-valued můžete použít k zapouzdření řádky dat v aplikaci klienta a odesílání dat na server v jedné parametrizovaného příkazu. Řádky příchozích dat jsou uložené v proměnné tabulky, který může pak být provozována pomocí [!INCLUDE[tsql](../../../../../includes/tsql-md.md)].  
   
  Hodnoty sloupců v parametrů table-valued lze přistupovat pomocí standardní [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] příkazů SELECT. Parametry Table-valued jsou silného typu a jejich strukturu se automaticky ověří. Velikost parametrů table-valued je omezena pouze paměť serveru.  
@@ -273,6 +273,7 @@ insertCommand.ExecuteNonQuery()
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Konfigurace parametrů a datové typy parametrů](../../../../../docs/framework/data/adonet/configuring-parameters-and-parameter-data-types.md)
 - [Příkazy a parametry](../../../../../docs/framework/data/adonet/commands-and-parameters.md)
 - [Parametry adaptéru dat](../../../../../docs/framework/data/adonet/dataadapter-parameters.md)

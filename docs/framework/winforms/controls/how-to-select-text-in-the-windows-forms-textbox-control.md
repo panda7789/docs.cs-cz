@@ -10,12 +10,12 @@ helpviewer_keywords:
 - text boxes [Windows Forms], selecting text programmatically
 - text [Windows Forms], selecting in text boxes programmatically
 ms.assetid: 8c591546-6a01-45c7-8e03-f78431f903b1
-ms.openlocfilehash: acb5434911b569b0a663f47ec5de04db13b436d3
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: f96ac69f16eefb5bf4a0625ff83e207c289a105b
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57722282"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59111433"
 ---
 # <a name="how-to-select-text-in-the-windows-forms-textbox-control"></a>Postupy: Výběr textu v ovládacím prvku Windows Forms TextBox
 Text můžete vybrat programově v rozhraní Windows Forms <xref:System.Windows.Forms.TextBox> ovládacího prvku. Pokud vytvoříte funkci, která hledá text pro určitý řetězec, můžete vybrat text, který má vizuální upozornění čtečky nalezený řetězec pozici.  
@@ -68,11 +68,12 @@ Text můžete vybrat programově v rozhraní Windows Forms <xref:System.Windows.
     ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.TextBox>
 - [Přehled ovládacího prvku TextBox](textbox-control-overview-windows-forms.md)
 - [Postupy: Řízení místa vložení v ovládacím prvku Windows Forms TextBox](how-to-control-the-insertion-point-in-a-windows-forms-textbox-control.md)
 - [Postupy: Vytvoření textového pole hesla pomocí ovládacího prvku Windows Forms TextBox](how-to-create-a-password-text-box-with-the-windows-forms-textbox-control.md)
-- [Postupy: Vytvoření pole jen pro čtení textu](how-to-create-a-read-only-text-box-windows-forms.md)
+- [Postupy: Vytvoření textového pole určeného jen pro čtení](how-to-create-a-read-only-text-box-windows-forms.md)
 - [Postupy: Vkládání uvozovek do řetězce](how-to-put-quotation-marks-in-a-string-windows-forms.md)
-- [Postupy: Zobrazit více řádků v ovládacím prvku Windows Forms TextBox](how-to-view-multiple-lines-in-the-windows-forms-textbox-control.md)
+- [Postupy: Zobrazování více řádků v ovládacím prvku Windows Forms TextBox](how-to-view-multiple-lines-in-the-windows-forms-textbox-control.md)
 - [Ovládací prvek TextBox](textbox-control-windows-forms.md)

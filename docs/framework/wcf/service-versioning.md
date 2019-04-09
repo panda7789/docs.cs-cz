@@ -2,12 +2,12 @@
 title: Verze služby
 ms.date: 03/30/2017
 ms.assetid: 37575ead-d820-4a67-8059-da11a2ab48e2
-ms.openlocfilehash: 62c8641e69ea461c3bf56b911c25b4894f63abe9
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 27d54cdf6f49bd9433f43290c97706af81d98b6b
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54649242"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59122405"
 ---
 # <a name="service-versioning"></a>Verze služby
 Po počátečním nasazení a potenciálně několikrát během jejich životního cyklu služeb (a koncové body, které, která zpřístupňují) potřebovat změnit pro celou řadu důvodů, jako je například změna obchodních potřeb, požadavků informačních technologií, nebo jiné řešení problémy. Každá změna zavádí novou verzi služby. Toto téma vysvětluje, jak vzít v úvahu správy verzí Windows Communication Foundation (WCF).  
@@ -176,6 +176,7 @@ public class PurchaseOrderV2 : IPurchaseOrderV1, IPurchaseOrderV2
  Kontrakt služby bude aktualizováno, aby zahrnovalo nové operace, které jsou napsány z hlediska `PurchaseOrderV2`. Stávající obchodní logiky zapisovat z hlediska `IPurchaseOrderV1` by pokračovat v práci pro `PurchaseOrderV2` a nové obchodní logiky, které potřebuje `OrderDate` vlastnost by byla zapsána z hlediska `IPurchaseOrderV2`.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Runtime.Serialization.DataContractSerializer>
 - <xref:System.Runtime.Serialization.DataContractAttribute>
 - <xref:System.Runtime.Serialization.DataContractAttribute.Name%2A>

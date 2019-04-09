@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 0365eb37-98cc-4b13-80fb-f1e78847a748
-ms.openlocfilehash: 7619dbfcdb0a3a219c9245d30518ffec8b586360
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: b5a7f68edc49a02bb99ca05765d4582b798e72ef
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54671418"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59127384"
 ---
 # <a name="how-the-wcf-syndication-object-model-maps-to-atom-and-rss"></a>Mapování modelu objektu syndikace WCF na Atom a RSS
 Při vývoji syndikace služby Windows Communication Foundation (WCF), můžete vytvořit kanály a položky pomocí následující třídy:  
@@ -398,7 +398,8 @@ Při vývoji syndikace služby Windows Communication Foundation (WCF), můžete 
  `</content>`  
   
 ## <a name="see-also"></a>Viz také:
-- [Přehled syndikace WCF](../../../../docs/framework/wcf/feature-details/wcf-syndication-overview.md)
+
+- [Syndikace WCF – přehled](../../../../docs/framework/wcf/feature-details/wcf-syndication-overview.md)
 - [Architektura syndikace](../../../../docs/framework/wcf/feature-details/architecture-of-syndication.md)
 - [Postupy: Vytvoření základního kanálu RSS](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-rss-feed.md)
 - [Postupy: Vytvoření základního informačního kanálu Atom](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-atom-feed.md)

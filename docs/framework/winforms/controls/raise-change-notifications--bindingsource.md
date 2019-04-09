@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Vytváření oznámení o změnách pomocí BindingSource a INotifyPropertyChanged – rozhraní'
+title: 'Postupy: Vytváření oznámení o změnách pomocí rozhraní BindingSource a INotifyPropertyChanged'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -13,14 +13,14 @@ helpviewer_keywords:
 - INotifyPropertyChanged interface [Windows Forms], using with BindingSource
 - BindingSource component [Windows Forms], examples
 ms.assetid: 7fa2cf51-c09f-4375-adf0-e36c5617f099
-ms.openlocfilehash: b637d69556cd96b0cc2ec427527c511d1db2f326
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 71fb0a09387c77dbc792180dac1b8594d11b3642
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57707245"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59119506"
 ---
-# <a name="how-to-raise-change-notifications-using-a-bindingsource-and-the-inotifypropertychanged-interface"></a>Postupy: Vytváření oznámení o změnách pomocí BindingSource a INotifyPropertyChanged – rozhraní
+# <a name="how-to-raise-change-notifications-using-a-bindingsource-and-the-inotifypropertychanged-interface"></a>Postupy: Vytváření oznámení o změnách pomocí rozhraní BindingSource a INotifyPropertyChanged
 <xref:System.Windows.Forms.BindingSource> Komponenty automaticky zjistí změny ve zdroji dat. Pokud je typ obsažený v implementuje zdroj dat <xref:System.ComponentModel.INotifyPropertyChanged> rozhraní a vyvolá <xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged> události při změně hodnoty vlastnosti. To je užitečné, protože ovládací prvky vázané <xref:System.Windows.Forms.BindingSource> pak automaticky aktualizuje jako změn dat zdrojové hodnoty.  
   
 > [!NOTE]
@@ -42,6 +42,7 @@ ms.locfileid: "57707245"
  Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu. Viz také [jak: Kompilace a spuštění příkladu kódu dokončení Windows Forms pomocí sady Visual Studio](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/bb129228(v=vs.100)).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ComponentModel.INotifyPropertyChanged>
-- [Komponenta BindingSource](bindingsource-component.md)
-- [Postupy: Vytváření oznámení o změnách pomocí metody BindingSource Resetitem](how-to-raise-change-notifications-using-the-bindingsource-resetitem-method.md)
+- [BindingSource – komponenta](bindingsource-component.md)
+- [Postupy: Vytváření oznámení o změnách pomocí metody BindingSource ResetItem](how-to-raise-change-notifications-using-the-bindingsource-resetitem-method.md)

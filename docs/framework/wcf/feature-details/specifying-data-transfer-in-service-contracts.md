@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - service contracts [WCF], data transfer
 ms.assetid: 7c5a26c8-89c9-4bcb-a4bc-7131e6d01f0c
-ms.openlocfilehash: a9066054c82fdb2e25dace0b7611df4cbbf4ec93
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: a3ac0f321a20624deea1fe382d04a8d4e1b6c510
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54617262"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59135197"
 ---
 # <a name="specifying-data-transfer-in-service-contracts"></a>Určování přenosu dat v kontraktech služby
 Windows Communication Foundation (WCF) můžete představit jako infrastruktura zasílání zpráv. Operace služby může přijímat zprávy, jejich zpracování a posílali zprávy. Zprávy jsou popsány pomocí operace smluv. Představte si třeba následující smlouvy.  
@@ -575,6 +575,7 @@ Dim serviceHost As ServiceHost = New ServiceHost(GetType(IDataService))
  Další informace o konceptech pokročilé serializace naleznete v tématu [serializace a deserializace](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Používání třídy XmlSerializer](../../../../docs/framework/wcf/feature-details/using-the-xmlserializer-class.md)
 - [Postupy: Povolení streamování](../../../../docs/framework/wcf/feature-details/how-to-enable-streaming.md)
 - [Postupy: Vytvoření základního kontraktu dat pro třídu nebo strukturu](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-data-contract-for-a-class-or-structure.md)

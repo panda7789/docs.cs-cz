@@ -8,17 +8,16 @@ helpviewer_keywords:
 - TileBrush [WPF]
 - brushes [WPF], TileBrush
 ms.assetid: aa4a7b7e-d09d-44c2-8d61-310c50e08d68
-ms.openlocfilehash: 8013bacf6c4d33ce89fc287e625ce8c8fb6c3ef0
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: a610acfef416a978ab8ecd9a561a135ecf3611cc
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57369939"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59125295"
 ---
 # <a name="tilebrush-overview"></a>TileBrush – přehled
 <xref:System.Windows.Media.TileBrush> objekty poskytují vám s velkou kontrolu nad jak Vymalování oblasti s obrázkem, <xref:System.Windows.Media.Drawing>, nebo <xref:System.Windows.Media.Visual>. Toto téma popisuje způsob použití <xref:System.Windows.Media.TileBrush> funkce, které chcete získat větší kontrolu nad jak <xref:System.Windows.Media.ImageBrush>, <xref:System.Windows.Media.DrawingBrush>, nebo <xref:System.Windows.Media.VisualBrush> jsou vykreslovány oblasti.  
-  
-  
+
 <a name="prerequisite"></a>   
 ## <a name="prerequisites"></a>Požadavky  
  Informace o tom v tomto tématu, je vhodné pochopit, jak používat základní funkce <xref:System.Windows.Media.ImageBrush>, <xref:System.Windows.Media.DrawingBrush>, nebo <xref:System.Windows.Media.VisualBrush> třídy. Úvod do těchto typů, najdete v článku [Malování pomocí obrázků, kreseb a vizuálních](painting-with-images-drawings-and-visuals.md).  
@@ -122,12 +121,13 @@ Součástí TileBrush pomocí vlastnosti TileMode objektu dlaždice
  [!code-vb[BrushOverviewExamples_procedural_snip#GraphicsMMFlipXYExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BrushOverviewExamples_procedural_snip/visualbasic/tilingexample.vb#graphicsmmflipxyexample)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Media.ImageBrush>
 - <xref:System.Windows.Media.DrawingBrush>
 - <xref:System.Windows.Media.VisualBrush>
 - <xref:System.Windows.Media.TileBrush>
-- [Malování pomocí obrázků, kreseb a vizuálních objektů](painting-with-images-drawings-and-visuals.md)
-- [Témata s postupy](brushes-how-to-topics.md)
+- [Kreslení pomocí obrázků, kreseb a vizuálních objektů](painting-with-images-drawings-and-visuals.md)
+- [– postupy](brushes-how-to-topics.md)
 - [Přehled zablokovatelných objektů](../advanced/freezable-objects-overview.md)
 - [Ukázka ImageBrush](https://go.microsoft.com/fwlink/?LinkID=160005)
 - [Ukázka VisualBrush](https://go.microsoft.com/fwlink/?LinkID=160049)

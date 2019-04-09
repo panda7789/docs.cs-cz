@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Windows Communication Foundation, security
 - bindings [WCF]
 ms.assetid: 4de03dd3-968a-4e65-af43-516e903d7f95
-ms.openlocfilehash: 5ec801e1e20fdb495537505a71ddaef6218ad5fb
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: bdefc543e90db708ae6c8be29b69381d66235154
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54521371"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59122145"
 ---
 # <a name="bindings-and-security"></a>Vazby a zabezpečení
 Vazby poskytované systémem zahrnuté Windows Communication Foundation (WCF) nabízí rychlý způsob, jak programovat aplikace WCF. S jednou výjimkou mají všechny vazby výchozí schéma zabezpečení povoleno. Toto téma vám pomůže vybrat správné vazba pro vaše požadavky na zabezpečení.  
@@ -202,9 +202,9 @@ Vazby poskytované systémem zahrnuté Windows Communication Foundation (WCF) na
 ## <a name="transport-credentials-in-bindings"></a>Přihlašovací údaje přenosu ve vazbách  
  V následující tabulce jsou uvedeny typy přihlašovacích údajů klienta, která je k dispozici při použití buď `BasicHttpBinding` nebo `WSHttpBinding` v režimu zabezpečení přenosu.  
   
-|Typ|Popis|  
+|Type|Popis|  
 |----------|-----------------|  
-|Žádná|Určuje, že klient není potřeba k dispozici žádné přihlašovací údaje. Výsledkem je k anonymní klienta.|  
+|Žádný|Určuje, že klient není potřeba k dispozici žádné přihlašovací údaje. Výsledkem je k anonymní klienta.|  
 |Základní|Základní ověřování. Další informace najdete v tématu RFC 2617 – ověřování pomocí protokolu HTTP: Základní a ověřování algoritmem Digest, k dispozici na [ https://go.microsoft.com/fwlink/?LinkId=84023 ](https://go.microsoft.com/fwlink/?LinkId=84023).|  
 |ověřování algoritmem Digest|Ověřování algoritmem Digest. Další informace najdete v tématu RFC 2617 – ověřování pomocí protokolu HTTP: Základní a ověřování algoritmem Digest, k dispozici na [ https://go.microsoft.com/fwlink/?LinkId=84023 ](https://go.microsoft.com/fwlink/?LinkId=84023).|  
 |NTLM|NT LAN Manager (NTLM) authentication.|  
@@ -215,18 +215,19 @@ Vazby poskytované systémem zahrnuté Windows Communication Foundation (WCF) na
 ### <a name="message-client-credentials-in-bindings"></a>Přihlašovací údaje klienta zprávy ve vazbách  
  Následující tabulka uvádí typy přihlašovacích údajů klienta, která je k dispozici při použití vazby v režimu zabezpečení zpráv.  
   
-|Typ|Popis|  
+|Type|Popis|  
 |----------|-----------------|  
-|Žádná|Umožňuje službě komunikovat s anonymní klienty.|  
+|Žádné|Umožňuje službě komunikovat s anonymní klienty.|  
 |Windows|Umožňuje výměny zpráv SOAP podle ověřený kontext přihlašovacích údajů Windows.|  
 |UserName|Umožňuje službě tak, aby vyžadovala, která klient ověřena pomocí pověření uživatelského jména. Všimněte si, že pokud režim zabezpečení je nastavený na `TransportWithMessageCredential`, WCF nepodporuje odeslání hesla hodnotou hash nebo odvození klíče pomocí hesla a pomocí těchto klíčů pro režim zabezpečení zpráv. V důsledku toho WCF vynutí, že při použití uživatelských přihlašovacích údajů název je zabezpečený přenos.|  
 |Certifikát|Umožňuje službě tak, aby vyžadovala, ověření klienta pomocí certifikátu.|  
 |Třídy IssuedToken|Umožňuje službě můžete zadat vlastní token služby tokenů zabezpečení.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)
 - [Zabezpečení služeb a klientů](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
-- [Výběr typu přihlašovacích údajů](../../../../docs/framework/wcf/feature-details/selecting-a-credential-type.md)
+- [Výběr typu pověření](../../../../docs/framework/wcf/feature-details/selecting-a-credential-type.md)
 - [Možnosti zabezpečení u vlastních vazeb](../../../../docs/framework/wcf/feature-details/security-capabilities-with-custom-bindings.md)
 - [Chování zabezpečení](../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)
 - [Model zabezpečení pro Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)

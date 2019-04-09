@@ -2,12 +2,12 @@
 title: Bezpečnostní uzamčení PII
 ms.date: 03/30/2017
 ms.assetid: c44fb338-9527-4dd0-8607-b8787d15acb4
-ms.openlocfilehash: 3537f50c8695838b69d1920cfd953c8b1196d830
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 38ca91ab969624ab2128e3cfad1d8151cb8d1f88
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54699776"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59122054"
 ---
 # <a name="pii-security-lockdown"></a>Bezpečnostní uzamčení PII
 Tento příklad ukazuje, jak řídit několik funkcí souvisejících se zabezpečením pomocí služby Windows Communication Foundation (WCF):  
@@ -143,4 +143,5 @@ Tento příklad ukazuje, jak řídit několik funkcí souvisejících se zabezpe
 1.  Upravit soubor Machine.config nastavit `enableLoggingKnownPii` atribut `false`.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Ukázky AppFabric monitorování](https://go.microsoft.com/fwlink/?LinkId=193959)

@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: a3f752bb-8945-4e1b-8163-71def6e9f137
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0c7e2f0f239ffded3d9f16a32b1f8e6601e27d06
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ddbb7581ab254b428af621bc4412f60aa70bfb08
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54685852"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59134521"
 ---
 # <a name="com-interop-sample-net-client-and-com-server"></a>Ukázka zprostředkovatele s objekty COM: klient .NET a server COM
 Tato ukázka předvádí, jak [klienta .NET](#cpconcominteropsamplenetclientcomserveranchor1)připravené k přístupu [serveru COM](#cpconcominteropsamplenetclientcomserveranchor2), vytvoří instanci třídy typu COM coclass a volá členy třídy k provádění výpočtů na dům.  
@@ -300,4 +300,5 @@ static double Round(double value, short digits)
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Vystavení komponent COM pro rozhraní .NET Framework](../../../docs/framework/interop/exposing-com-components.md)

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - accessing embedded objects
 - UI Automation, accessing embedded objects
 ms.assetid: a5b513ec-7fa6-4460-869f-c18ff04f7cf2
-ms.openlocfilehash: df4925fc534d8c601060f1218be75a0a674579c0
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.openlocfilehash: 07223b9e48905b0952e37a6acdb703f584d166d8
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57680197"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59131245"
 ---
 # <a name="access-embedded-objects-using-ui-automation"></a>Přístup k vloženým objektům s použitím automatizace uživatelského rozhraní
 > [!NOTE]
@@ -53,6 +53,7 @@ Ukázkový dokument s textový obsah ("Věděli jste?" ...) a dvě vložené obj
  [!code-vb[UIATextPattern_snip#GetRangeFromChild](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/UIATextPattern_snip/VisualBasic/SearchWindow.vb#getrangefromchild)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled prvku TextPattern automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-textpattern-overview.md)
 - [Přehled vzorů ovládacích prvků pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)
 - [Vzory ovládacích prvků automatizace uživatelského rozhraní pro klienty](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)

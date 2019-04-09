@@ -2,12 +2,12 @@
 title: 'Postupy: Použití EdmGen.exe pro generování modelu a souborů mapování'
 ms.date: 03/30/2017
 ms.assetid: 40db462d-2fd2-4cc1-ad86-d280403e63fa
-ms.openlocfilehash: 49890eb8bdb9f956cc36b3adde2f11db1e1e07bc
-ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
-ms.translationtype: MT
+ms.openlocfilehash: 72f4f84fc8651f3117eae637eb75300801e5000f
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55826951"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59125328"
 ---
 # <a name="how-to-use-edmgenexe-to-generate-the-model-and-mapping-files"></a>Postupy: Použití EdmGen.exe pro generování modelu a souborů mapování
 Toto téma ukazuje, jak používat nástroj Generátor EDM (EdmGen.exe) můžete vygenerovat následující soubory podle databáze školy:  
@@ -54,8 +54,9 @@ Toto téma ukazuje, jak používat nástroj Generátor EDM (EdmGen.exe) můžete
     ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Modelování a mapování](../../../../../docs/framework/data/adonet/ef/modeling-and-mapping.md)
 - [Postupy: Ruční konfigurace projektu v Entity Framework](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738546(v=vs.100))
 - [Postupy: Předběžně generovat zobrazení pro zlepšení výkonu dotazů](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896240(v=vs.100))
-- [Datový Model Entity ADO.NET nástroje](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399249(v=vs.100))
+- [Nástroje modelu Entity Data Model ADO.NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399249(v=vs.100))
 - [Postupy: Použití EdmGen.exe pro ověření modelu a souborů mapování](../../../../../docs/framework/data/adonet/ef/how-to-use-edmgen-exe-to-validate-model-and-mapping-files.md)

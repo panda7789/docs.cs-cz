@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 85dafa07-e102-46e7-ab78-37bf06f257a6
-ms.openlocfilehash: 5dbe00686d44d5861f4334cdc2cbc996934a3e57
-ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
+ms.openlocfilehash: e7151fd85c7e3988051ed87a60acc2b53a8af646
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56091984"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59122769"
 ---
 # <a name="query-expression-syntax-examples-aggregate-operators-linq-to-dataset"></a>Příklady syntaxe výrazů dotazů: Agregační operátory (LINQ to DataSet)
 Příklady v tomto tématu ukazují, jak používat <xref:System.Linq.Enumerable.Average%2A>, <xref:System.Linq.Enumerable.Count%2A>, <xref:System.Linq.Enumerable.Max%2A>, <xref:System.Linq.Enumerable.Min%2A>, a <xref:System.Linq.Enumerable.Sum%2A> metody pro dotazování <xref:System.Data.DataSet> a agregace dat pomocí syntaxe výrazu dotazu.  
@@ -97,6 +97,7 @@ Příklady v tomto tématu ukazují, jak používat <xref:System.Linq.Enumerable
  [!code-vb[DP LINQ to DataSet Examples#SumGrouped_MQ](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/VB/Module1.vb#sumgrouped_mq)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Načtení dat do datové sady](../../../../docs/framework/data/adonet/loading-data-into-a-dataset.md)
 - [Příklady LINQ to DataSet](../../../../docs/framework/data/adonet/linq-to-dataset-examples.md)
 - [Přehled standardních operátorů dotazu (C#)](../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)

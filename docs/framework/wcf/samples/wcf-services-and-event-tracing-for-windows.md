@@ -2,12 +2,12 @@
 title: Služby WCF a Trasování událostí pro Windows
 ms.date: 03/30/2017
 ms.assetid: eda4355d-0bd0-4dc9-80a2-d2c832152272
-ms.openlocfilehash: d45e83919dae52ee3719fe52463711999ba48dd3
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 945daa305db9fe6785e1624e2dbb2e975cd8e94b
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54555541"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59119571"
 ---
 # <a name="wcf-services-and-event-tracing-for-windows"></a>Služby WCF a Trasování událostí pro Windows
 Tento příklad ukazuje, jak pomocí analytického trasování ve Windows Communication Foundation (WCF) vysílat události do Event Tracing for Windows (ETW). Analytické trasování jsou události, protože ho na klíčových místech v zásobníku WCF, které umožňují Poradce při potížích pro služby WCF v produkčním prostředí.
@@ -88,4 +88,5 @@ Tento příklad ukazuje, jak pomocí analytického trasování ve Windows Commun
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Management\ETWTracing`  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Ukázky AppFabric monitorování](https://go.microsoft.com/fwlink/?LinkId=193959)

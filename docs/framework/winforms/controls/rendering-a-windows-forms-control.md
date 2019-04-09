@@ -10,12 +10,12 @@ helpviewer_keywords:
 - custom controls [Windows Forms], graphics resources
 - custom controls [Windows Forms], invalidation and painting
 ms.assetid: aae8e1e6-4786-432b-a15e-f4c44760d302
-ms.openlocfilehash: c32d6bff7171bb43d1f288500c9b24e8b288340b
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 8de87e17d1baedccfe18bfded3ccab7ab59f0a09
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57712159"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59125681"
 ---
 # <a name="rendering-a-windows-forms-control"></a>Vykreslení ovládacího prvku Windows Forms
 Vykreslování se vztahuje k procesu vytváření vizuální reprezentace na obrazovce uživatele. Windows Forms používá [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)] (nové Windows grafické knihovny) pro vykreslování. Spravované třídy, které poskytují přístup k [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)] v <xref:System.Drawing?displayProperty=nameWithType> obor názvů a jeho podobory.  
@@ -118,4 +118,5 @@ protected virtual void OnPaintBackground(PaintEventArgs pevent);
  [!code-vb[System.Windows.Forms.FlashTrackBar#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.FlashTrackBar/VB/FlashTrackBar.vb#3)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Postupy: Vytvoření ovládacího prvku Windows Forms zobrazujícího průběh](how-to-create-a-windows-forms-control-that-shows-progress.md)

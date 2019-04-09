@@ -1,5 +1,5 @@
 ---
-title: <clear> – element pro element connectionManagement (nastavení sítě)
+title: <clear> – Element pro connectionManagement (nastavení sítě)
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/connectionManagement/clear
@@ -10,12 +10,12 @@ helpviewer_keywords:
 - clear element, connectionManagement
 - <connectionManagement>, clear element
 ms.assetid: fb259282-84c4-4dc4-a226-78d904a6edc3
-ms.openlocfilehash: b90bdacc962eba1cd449f347f958f04cd72225d4
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 733c70b0575de7e2635afaab58ad48591f035fc0
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55273920"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59124992"
 ---
 # <a name="clear-element-for-connectionmanagement-network-settings"></a>\<Vymazat > – Element pro connectionManagement (nastavení sítě)
 Zruší připojení seznamu pro správu.  
@@ -42,7 +42,7 @@ Zruší připojení seznamu pro správu.
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|**Element**|**Popis**|  
+|**Prvek**|**Popis**|  
 |-----------------|---------------------|  
 |[connectionManagement](../../../../../docs/framework/configure-apps/file-schema/network/connectionmanagement-element-network-settings.md)|Určuje maximální počet připojení k síti hostitele.|  
   
@@ -68,6 +68,7 @@ Zruší připojení seznamu pro správu.
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Net.ServicePoint>
 - <xref:System.Net.ServicePointManager>
 - [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

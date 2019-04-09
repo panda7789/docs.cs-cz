@@ -8,12 +8,12 @@ helpviewer_keywords:
 - WCF, federation
 - federation
 ms.assetid: 149ab165-0ef3-490a-83a9-4322a07bd98a
-ms.openlocfilehash: 983504993a1252e4345c3c50130a25e25e99446d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 43347e3afdf55277ee8969954626d02192a10ec5
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54509279"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59112564"
 ---
 # <a name="how-to-configure-credentials-on-a-federation-service"></a>Postupy: Konfigurace pověření ve službě Federation Service
 Ve Windows Communication Foundation (WCF), vytvoření federovaného služby se skládá z následujících hlavních kroků:  
@@ -72,6 +72,7 @@ Ve Windows Communication Foundation (WCF), vytvoření federovaného služby se 
  Například nastavení <xref:System.ServiceModel.Security.IssuedTokenServiceCredential.CertificateValidationMode%2A> k <xref:System.ServiceModel.Security.X509CertificateValidationMode.PeerTrust> by ověřit jakékoli vydaný token, jehož podpisový certifikát se nachází ve `TrustedPeople` úložiště certifikátů. V takovém případě nastavte <xref:System.ServiceModel.Security.IssuedTokenServiceCredential.TrustedStoreLocation%2A> vlastnost buď <xref:System.Security.Cryptography.X509Certificates.StoreLocation.CurrentUser> nebo <xref:System.Security.Cryptography.X509Certificates.StoreLocation.LocalMachine>. Můžete vybrat jiné režimy, včetně <xref:System.ServiceModel.Security.X509CertificateValidationMode.Custom>. Když `Custom` je vybrali, je nutné přiřadit instanci <xref:System.IdentityModel.Selectors.X509CertificateValidator> třídu <xref:System.ServiceModel.Security.IssuedTokenServiceCredential.CustomCertificateValidator%2A> vlastnost. Vlastní validátor můžete ověřit certifikáty pomocí všechna kritéria, která vlastní stavový objekt. Další informace najdete v tématu [jak: Vytvoření služby, která používá vlastní validátor certifikátů](../../../../docs/framework/wcf/extending/how-to-create-a-service-that-employs-a-custom-certificate-validator.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Federace](../../../../docs/framework/wcf/feature-details/federation.md)
 - [Federace a důvěryhodnost](../../../../docs/framework/wcf/feature-details/federation-and-trust.md)
 - [Ukázka federace](../../../../docs/framework/wcf/samples/federation-sample.md)

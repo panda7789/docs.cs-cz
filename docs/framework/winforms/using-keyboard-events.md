@@ -9,12 +9,12 @@ helpviewer_keywords:
 - keyboard events
 - events [Windows Forms], keyboard
 ms.assetid: d3f3e14b-a459-4ee6-9875-8957e34f8ee9
-ms.openlocfilehash: 6afa68295c0119cd77b91185abcf2fb9cb407590
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 9aefe6be17e5d72c86c2c47bf0d373d0a081ca76
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57719335"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59114267"
 ---
 # <a name="using-keyboard-events"></a>Použití událostí klávesnice
 Většina aplikací Windows Forms zpracovávat vstup z klávesnice ve zpracování událostí klávesnice. Toto téma obsahuje základní informace o události klávesnice, včetně podrobností o použití každé události a data, která je zadána pro každou jednotlivou událost.  Viz také [Přehled obslužných rutin událostí (Windows Forms)](event-handlers-overview-windows-forms.md) a [Přehled událostí (Windows Forms)](events-overview-windows-forms.md).  
@@ -39,6 +39,7 @@ Většina aplikací Windows Forms zpracovávat vstup z klávesnice ve zpracován
 |<xref:System.Windows.Forms.Control.KeyUp>|Tato událost je aktivována, když uživatel uvolní klávesu fyzické.|Obslužná rutina pro <xref:System.Windows.Forms.Control.KeyUp> přijímá:<br /><br /> <ul><li>A <xref:System.Windows.Forms.KeyEventArgs> parametr:<br /><br /> <ul><li>Která zajišťuje <xref:System.Windows.Forms.KeyEventArgs.KeyCode%2A> (který určuje tlačítko fyzické klávesnice).</li><li><xref:System.Windows.Forms.KeyEventArgs.Modifiers%2A> Vlastnosti (SHIFT, CTRL nebo ALT).</li><li><xref:System.Globalization.SortKey.KeyData%2A> Vlastnosti (která kombinuje kód klávesy a modifikátoru).</li></ul></li></ul>|  
   
 ## <a name="see-also"></a>Viz také:
-- [Vstup z klávesnice v aplikaci Windows Forms](keyboard-input-in-a-windows-forms-application.md)
+
+- [Vstup z klávesnice ve formulářové aplikaci Windows](keyboard-input-in-a-windows-forms-application.md)
 - [Jak funguje vstup z klávesnice](how-keyboard-input-works.md)
 - [Vstup z myši v aplikaci Windows Forms](mouse-input-in-a-windows-forms-application.md)

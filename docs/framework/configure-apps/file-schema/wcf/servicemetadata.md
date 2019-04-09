@@ -2,12 +2,12 @@
 title: <serviceMetadata>
 ms.date: 03/30/2017
 ms.assetid: 2b4c3b4c-31d4-4908-a9b7-5bb411c221f2
-ms.openlocfilehash: 04bc29e8e842f5bb0252685fc3088a86535f4668
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 0b06d61a33cd6a704a5ab0f75d29bde3f72d77fa
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57379494"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59115853"
 ---
 # <a name="servicemetadata"></a>\<serviceMetadata>
 Určuje zveřejnění metadat služby a související informace.  
@@ -52,13 +52,13 @@ Určuje zveřejnění metadat služby a související informace.
 |policyVersion|Řetězec, který určuje verzi používané specifikace WS-Policy. Tento atribut je typu <xref:System.ServiceModel.Description.PolicyVersion>.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádná  
+ Žádné  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<behavior>](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|Určuje chování element.|  
+|[\<chování >](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|Určuje chování element.|  
   
 ## <a name="remarks"></a>Poznámky  
  Tento prvek konfigurace umožňuje ovládat funkce publikování metadat služby. Pokud chcete zabránit neúmyslnému zveřejnění metadat služby potenciálně citlivých, výchozí konfigurace pro služby Windows Communication Foundation (WCF) zakáže publikování metadat. Toto chování je ve výchozím nastavení zabezpečený, ale také znamená, že nemůžete použít metadat importovat nástroj (například Svcutil.exe) ke generování kódu klienta, který je potřeba volat službu, není-li v konfiguraci není explicitně povoleno chování publikování metadat služby. Pomocí tento prvek konfigurace, můžete povolit toto chování publikování pro vaši službu.  
@@ -117,7 +117,8 @@ Určuje zveřejnění metadat služby a související informace.
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Configuration.ServiceMetadataPublishingElement>
 - <xref:System.ServiceModel.Description.ServiceMetadataBehavior>
 - [Chování zabezpečení](../../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)
-- [Chování při publikování metadat](../../../../../docs/framework/wcf/samples/metadata-publishing-behavior.md)
+- [Chování publikování metadat](../../../../../docs/framework/wcf/samples/metadata-publishing-behavior.md)

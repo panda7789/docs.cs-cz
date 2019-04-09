@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 5ff8e2767f8bba618539ecd12c5034ae67d24d0a
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: bcd200b7fa431f193dd202c3c2a690aa22ec8e32
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57466724"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59135175"
 ---
 # <a name="isymunmanagedreader2getmethodbyversionpreremap-method"></a>ISymUnmanagedReader2::GetMethodByVersionPreRemap – metoda
 Získá metodu čtečky symbolů daný token metody a číslo verze edit-and-continue. Čísla verzí začínají znakem 1 a jsou zvětšeny pokaždé, když metoda se změnilo v důsledku operace edit-and-continue.  
@@ -53,4 +53,5 @@ HRESULT GetMethodByVersionPreRemap(
  **Záhlaví:** CorSym.idl. CorSym.h  
   
 ## <a name="see-also"></a>Viz také:
+
 - [ISymUnmanagedReader2 – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader2-interface.md)

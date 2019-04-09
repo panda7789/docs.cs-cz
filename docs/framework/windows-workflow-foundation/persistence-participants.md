@@ -2,12 +2,12 @@
 title: Účastníci trvalosti
 ms.date: 03/30/2017
 ms.assetid: f84d2d5d-1c1b-4f19-be45-65b552d3e9e3
-ms.openlocfilehash: a8392bd756d8315a72d9df131476414f8982cf03
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: f9a1f2142a2aef617c3337bf1bc384a51c8ed049
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57723761"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59115892"
 ---
 # <a name="persistence-participants"></a>Účastníci trvalosti
 Trvalého účastníka mohou účastnit aktivuje hostitele aplikace operace trvalosti (Uložit nebo načíst). [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] Se dodává se dvěma abstraktní třídy **PersistenceParticipant** a **PersistenceIOParticipant**, který můžete použít k vytvoření trvalého účastníka. Trvalého účastníka je odvozena z jedné z těchto tříd, implementuje metody, které vás zajímají a pak přidá instanci třídy, která se <xref:System.ServiceModel.Activities.WorkflowServiceHost.WorkflowExtensions%2A> kolekce na <xref:System.ServiceModel.Activities.WorkflowServiceHost> . Hostitel aplikace může vyhledat taková rozšíření pracovního postupu při trvalém ukládání instance pracovního postupu a volat metody odpovídající na účastníci trvalosti ve vhodných chvílích.  
@@ -61,4 +61,5 @@ Trvalého účastníka mohou účastnit aktivuje hostitele aplikace operace trva
 -   [Postupy: Vytvoření vlastního účastníka trvalosti](how-to-create-a-custom-persistence-participant.md)  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Rozšiřitelnost úložiště](store-extensibility.md)

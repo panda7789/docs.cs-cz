@@ -1,13 +1,13 @@
 ---
-title: <transport> z <webHttpBinding>
+title: <transport> of <webHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: f150fb19-7de1-44af-81f4-86cad881cd05
-ms.openlocfilehash: d2c7ee3512ddeefae6e5551a58b3bab76742ed30
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 8dcd51cd248dbba3ccf60295cb1712167684328e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57363410"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59116279"
 ---
 # <a name="transport-of-webhttpbinding"></a>\<přenos > z \<webHttpBinding >
 Definuje nastavení zabezpečení na úrovni přenosu pro koncový bod služby nakonfigurovaný tak, aby přijímal požadavky HTTP.  
@@ -39,7 +39,7 @@ Definuje nastavení zabezpečení na úrovni přenosu pro koncový bod služby n
 </webHttpBinding>
 ```  
   
-## <a name="type"></a>Typ  
+## <a name="type"></a>Type  
  <xref:System.ServiceModel.HttpTransportSecurity>  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
@@ -56,7 +56,7 @@ Definuje nastavení zabezpečení na úrovni přenosu pro koncový bod služby n
   
 ## <a name="clientcredentialtype-attribute"></a>clientCredentialType Attribute  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |`None`|Zabezpečení je zakázaná.|  
 |`Basic`|Používá základní ověřování.|  
@@ -67,7 +67,7 @@ Definuje nastavení zabezpečení na úrovni přenosu pro koncový bod služby n
   
 ## <a name="proxycredentialtype-attribute"></a>proxyCredentialType Attribute  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |`None`|Zabezpečení je zakázaná.|  
 |`Basic`|Používá základní ověřování.|  
@@ -82,9 +82,10 @@ Definuje nastavení zabezpečení na úrovni přenosu pro koncový bod služby n
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<zabezpečení >](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-webhttpbinding.md)|Představuje možnosti zabezpečení [ \<wsHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) elementu.|  
+|[\<security>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-webhttpbinding.md)|Představuje možnosti zabezpečení [ \<wsHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) elementu.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.HttpTransportSecurity>
 - <xref:System.ServiceModel.Configuration.WebHttpSecurityElement.Transport%2A>
 - <xref:System.ServiceModel.WebHttpSecurity.Transport%2A>
@@ -94,4 +95,4 @@ Definuje nastavení zabezpečení na úrovni přenosu pro koncový bod služby n
 - [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)
 - [Používání vazeb ke konfiguraci služeb a klientů](../../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)
 - [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)
-- [Programovací model webových služeb HTTP WCF](../../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)
+- [Model programování webových služeb HTTP WCF](../../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)

@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: a927e0ac-f110-426d-bbec-9377a29c8f17
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3b60bad75cb6286bda026e5b67e0a4fa8e2347dd
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: 44a891e6d65d159875f5607ac33b0668414cb380
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57487155"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59137212"
 ---
 # <a name="icordebugprocess6getexportstepinfo-method"></a>ICorDebugProcess6::GetExportStepInfo – metoda
 Obsahuje informace o modulu runtime exportované funkce, které umožňují krokovat spravovaného kódu.  
@@ -57,5 +57,6 @@ HRESULT GetExportStepInfo(
  **Verze rozhraní .NET framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
-- [ICorDebugProcess6 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess6-interface.md)
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+
+- [Rozhraní ICorDebugProcess6](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess6-interface.md)
+- [Debugging – rozhraní](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

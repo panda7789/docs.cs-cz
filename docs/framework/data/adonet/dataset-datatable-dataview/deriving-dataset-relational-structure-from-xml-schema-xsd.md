@@ -2,12 +2,12 @@
 title: Odvozování relační struktury datové sady ze schématu XML (XSD)
 ms.date: 03/30/2017
 ms.assetid: 8f6cd04d-6197-4bc4-9096-8c51c7e4acae
-ms.openlocfilehash: 8d11fdbcb973eb3e4b7487eb6aacb28374c4c654
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 549579fca0179994191987097c12b6085ee91756
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54717935"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59119688"
 ---
 # <a name="deriving-dataset-relational-structure-from-xml-schema-xsd"></a>Odvozování relační struktury datové sady ze schématu XML (XSD)
 Tato část obsahuje přehled toho, jak relační schéma `DataSet` je sestaven z dokument schématu XML definice jazyk (XSD) schématu. Obecně platí, pro každou `complexType` podřízený prvek element schématu tabulky se vygeneruje v `DataSet`. Struktura tabulky se určuje podle definice komplexního typu. Tabulky vytvářejí `DataSet` pro nejvyšší úrovně elementy ve schématu. Ale tabulku je vytvořen pouze pro nejvyšší úroveň `complexType` element při `complexType` element je vnořit do jiného `complexType` element, ve kterém malá a velká ve vnořeném `complexType` element je namapována na `DataTable` v rámci `DataSet`.  
@@ -97,4 +97,5 @@ OutOfStateCustomers (CustomerID , CompanyName, Phone)
  Popisuje, jak načíst a zachováte data v a relační struktury `DataSet` jako XML data.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

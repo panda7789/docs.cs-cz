@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: eecf9d78-60e3-4fdc-8de0-e56c13a89414
-ms.openlocfilehash: f40a04156bee5ceee7490cf7bd941dc11a99b880
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 272976d3c581d3e8a5860ba5cf3f9695ca370d8c
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54608309"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59112382"
 ---
 # <a name="creating-a-datatable"></a>Vytvoření datové tabulky
 A <xref:System.Data.DataTable>, která představuje jednu tabulku relační data v paměti, lze vytvořit a používat samostatně nebo mohou využívat jiné objekty rozhraní .NET Framework nejčastěji jako člen <xref:System.Data.DataSet>.  
@@ -50,6 +50,7 @@ DataTable customersTable = customers.Tables.Add("CustomersTable");
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Data.DataTable>
 - <xref:System.Data.DataTableCollection>
 - [Datové tabulky](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatables.md)

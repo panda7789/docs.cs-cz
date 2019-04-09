@@ -1,5 +1,5 @@
 ---
-title: Element <compilers>
+title: <compilers> Prvek
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#compilers
@@ -9,12 +9,12 @@ helpviewer_keywords:
 - <compilers> element
 - compilers element
 ms.assetid: d40fba59-98f9-4783-ae0c-2ebea27ce77b
-ms.openlocfilehash: 15beb15d7927d616cc09c7e318ef26a6627926af
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 744ef0d9bc58e6a0152dce53c40c24eb5283dc0f
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55260603"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59130517"
 ---
 # <a name="compilers-element"></a>\<Kompilátory > – Element
 Kontejner pro kompilátor – elementy konfigurace; obsahuje nulu nebo více [ \<kompilátoru >](../../../../../docs/framework/configure-apps/file-schema/compiler/compiler-element.md) elementy.  
@@ -78,6 +78,7 @@ Kontejner pro kompilátor – elementy konfigurace; obsahuje nulu nebo více [ \
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.CodeDom.Compiler.CompilerInfo>
 - <xref:System.CodeDom.Compiler.CodeDomProvider>
 - [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)

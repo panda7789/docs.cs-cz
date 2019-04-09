@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 98af4c0d2e5f5930c179b4b96ffccd7ef0703211
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d282f6d37a2be8a41f4fbda579b3b467b9bfc8ca
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54562398"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59120065"
 ---
 # <a name="ihostsecuritymanagerreverttoself-method"></a>IHostSecurityManager::RevertToSelf – metoda
 Zosobnění aktuální identitu uživatele se ukončí a vrátí původní token vlákna.  
@@ -57,6 +57,7 @@ HRESULT RevertToSelf ();
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [IHostSecurityContext – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritycontext-interface.md)
 - [IHostSecurityManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritymanager-interface.md)
 - [ImpersonateLoggedOnUser – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritymanager-impersonateloggedonuser-method.md)

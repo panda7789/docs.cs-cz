@@ -2,12 +2,12 @@
 title: Režim kompatibility ASP.NET
 ms.date: 03/30/2017
 ms.assetid: c8b51f1e-c096-4c42-ad99-0519887bbbc5
-ms.openlocfilehash: 1128183e990567d15b133bf8aa4ff5d32f10c663
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 521ab07d2a747927a7b26c38221f59de736990b5
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54541089"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59112525"
 ---
 # <a name="aspnet-compatibility"></a>Režim kompatibility ASP.NET
 Tato ukázka předvádí, jak povolit režim kompatibility ASP.NET ve Windows Communication Foundation (WCF). Služby spuštěné v režimu plně účastnit kanálu aplikace ASP.NET a mohl provádět režim kompatibility ASP.NET používat funkce technologie ASP.NET, jako je soubor nebo adresa URL autorizační, stav relace a <xref:System.Web.HttpContext> třídy. <xref:System.Web.HttpContext> Třída umožňuje přístup k souborů cookie, relace a další funkce technologie ASP.NET. Tento režim vyžaduje, že vazby pomocí přenos pomocí protokolu HTTP a samotné služby musí být hostovaný ve službě IIS.  
@@ -128,4 +128,5 @@ Press <ENTER> to terminate client.
 4.  Spusťte ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Hostování AppFabric a ukázky trvalosti](https://go.microsoft.com/fwlink/?LinkId=193961)

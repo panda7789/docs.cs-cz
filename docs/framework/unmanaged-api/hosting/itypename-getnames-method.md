@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c6dc2897eb5fe5f4df116dda8be9d4fccab9722e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 28076a36880febad20d457ff5a6b290de3d6f173
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54623726"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59121547"
 ---
 # <a name="itypenamegetnames-method"></a>ITypeName::GetNames – metoda
 Tato metoda podporuje infrastrukturu rozhraní .NET Framework a není určena pro použití přímo v kódu.  
@@ -47,4 +47,5 @@ HRESULT GetNames (
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
-- [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+
+- [Rozhraní hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)

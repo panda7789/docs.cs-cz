@@ -2,12 +2,12 @@
 title: Typické postupy použití LINQ to SQL
 ms.date: 03/30/2017
 ms.assetid: 9a88bd51-bd74-48f7-a9b1-f650e8d55a3e
-ms.openlocfilehash: 32e81d08010f67b8eac19777a40826b18c440f83
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a7c6257bc27728d101d64d07ffedb1e38bc994eb
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54548008"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59132844"
 ---
 # <a name="typical-steps-for-using-linq-to-sql"></a>Typické postupy použití LINQ to SQL
 K implementaci [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] aplikace, podle postupu popsaného dále v tomto tématu. Všimněte si, že mnoho kroků jsou volitelné. Je velmi je to možné, že můžete použít objektový model ve svém výchozím stavu.  
@@ -20,7 +20,7 @@ K implementaci [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md
 ### <a name="1-select-a-tool-to-create-the-model"></a>1. Vyberte nástroj k vytváření modelu.  
  Tři nástroje jsou k dispozici pro vytváření modelu.  
   
--   Na [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)]  
+-   Rozhraní [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)]  
   
      Tento návrhář poskytuje bohaté možnosti uživatelského rozhraní pro vytvoření modelu objektu z existující databáze. Tento nástroj je součástí rozhraní IDE sady Visual Studio a je nejvhodnější pro malé a střední databáze.  
   
@@ -82,6 +82,7 @@ K implementaci [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md
  Další informace najdete v tématu [podporu ladění](../../../../../../docs/framework/data/adonet/sql/linq/debugging-support.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Začínáme](../../../../../../docs/framework/data/adonet/sql/linq/getting-started.md)
 - [Vytvoření objektového modelu](../../../../../../docs/framework/data/adonet/sql/linq/creating-the-object-model.md)
 - [Uložené procedury](../../../../../../docs/framework/data/adonet/sql/linq/stored-procedures.md)

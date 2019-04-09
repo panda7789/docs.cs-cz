@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: e636d024-0fac-45eb-b721-25a8c0ceca8f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1a8c6046d05dc706074a732d9ba2a9c1ec73c56f
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
+ms.openlocfilehash: b4b10ff681f7300412fd2f6a1e310989fcc3b31c
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58412341"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59114687"
 ---
 # <a name="obsolete-types-in-the-net-framework"></a>Zastaralé typy v rozhraní .NET Framework
 <a name="introduction"></a> V tabulkách v tomto článku jsou uvedeny typy, které jsou zastaralé v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] a [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]uspořádaných podle sestavení. Pokud chcete zobrazit seznam zastaralých typů a doporučené alternativy v každé sestavení pomocí následujících odkazů. Protože tyto typy jsou zastaralé, jsou zastaralé také jejich členy. Seznam dalších zastaralé členy v knihovně tříd rozhraní .NET Framework najdete v tématu [zastaralé členy](obsolete-members.md).
@@ -779,5 +779,6 @@ Informace o migraci z jazyka Visual Basic 6 najdete v tématu [jazyka Visual Bas
 |<xref:Microsoft.VisualC.NoSignSpecifiedModifier?displayProperty=nameWithType>|Microsoft.VisualC.dll je sestavení zastaralé a existuje pouze pro zpětnou kompatibilitu.|
 
 ## <a name="see-also"></a>Viz také:
+
 - [Zastaralé položky v knihovně tříd](whats-obsolete.md)
 - [Zastaralé členy](obsolete-members.md)

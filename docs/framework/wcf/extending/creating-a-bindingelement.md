@@ -2,12 +2,12 @@
 title: Vytvoření BindingElement
 ms.date: 03/30/2017
 ms.assetid: 01a35307-a41f-4ef6-a3db-322af40afc99
-ms.openlocfilehash: 8c4f3b4b3f9a3e4694ece814de691c07ef88ec5b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 600bf9b394078ffc1b1bc97390bd0de406d64338
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54684876"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59115164"
 ---
 # <a name="creating-a-bindingelement"></a>Vytvoření BindingElement
 Vazby a prvky vazeb (objekty, které rozšiřují <xref:System.ServiceModel.Channels.Binding?displayProperty=nameWithType> a <xref:System.ServiceModel.Channels.BindingElement?displayProperty=nameWithType>v uvedeném pořadí) jsou místo, kde se spojená s objekty pro vytváření kanálů a moduly pro naslouchání kanálů model aplikace Windows Communication Foundation (WCF). Bez vazby, použití vlastních kanálů vyžaduje programování na úrovni kanálu jak je popsáno v [programování na úrovni kanálu služby](../../../../docs/framework/wcf/extending/service-channel-level-programming.md) a [programování na úrovni kanálu klienta](../../../../docs/framework/wcf/extending/client-channel-level-programming.md). Toto téma popisuje minimální požadavky na povolení s využitím kanálu ve službě WCF, vývoj <xref:System.ServiceModel.Channels.BindingElement> pro kanál a povolit používání instrukcí z aplikace, jak je popsáno v kroku 4 [vývoj kanálů](../../../../docs/framework/wcf/extending/developing-channels.md).  
@@ -72,6 +72,7 @@ public IChannelListener<TChannel> BuildChannelListener<TChannel>(BindingContext 
  Po vytvoření element vazby kanálu vrátit [vývoj kanálů](../../../../docs/framework/wcf/extending/developing-channels.md) tématu Určuje, zda chcete přidat konfigurační soubor podporu prvek vazby, pokud a jak přidat podporu publikování metadat, a zda a jak vytvořit vazbu definovaný uživatelem, který používá vaše element vazby.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Channels.BindingElement>
 - [Vývoj kanálů](../../../../docs/framework/wcf/extending/developing-channels.md)
 - [Přenos: UDP](../../../../docs/framework/wcf/samples/transport-udp.md)

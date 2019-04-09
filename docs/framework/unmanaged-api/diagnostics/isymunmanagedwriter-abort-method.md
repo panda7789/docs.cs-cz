@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b4c79cb3df37a9ed10e46567be63aad29fee37c4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 090183cad17aff6faf5e79639eadff086c1a26ce
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54550185"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59119532"
 ---
 # <a name="isymunmanagedwriterabort-method"></a>ISymUnmanagedWriter::Abort – metoda
 Zavře zapisovač symbol bez potvrzení symbolů do úložiště symbolů. Po tomto volání zapisovač symbol stává neplatným další aktualizace. Chcete-li potvrdit symboly a zavřít zapisovač symbol, použijte [isymunmanagedwriter::Close –](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-close-method.md) metoda místo toho.  
@@ -40,4 +40,5 @@ HRESULT Abort();
  **Záhlaví:** CorSym.idl, CorSym.h  
   
 ## <a name="see-also"></a>Viz také:
+
 - [ISymUnmanagedWriter – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)

@@ -2,12 +2,12 @@
 title: <add> z <scopedCertificates> – Element
 ms.date: 03/30/2017
 ms.assetid: e21c1ef8-d6d6-4bca-ac5a-6fbf4bd77412
-ms.openlocfilehash: 34dc51c27a5e16b1a8411112fb9afdfe617ed582
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 06a624d0146745581dfe907d044d1f7d3b857902
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55262314"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59119675"
 ---
 # <a name="add-of-scopedcertificates-element"></a>\<Přidat > z \<scopedCertificates > – Element
 Přidá certifikát X.509 do kolekce vymezených certifikátů.  
@@ -46,19 +46,19 @@ Přidá certifikát X.509 do kolekce vymezených certifikátů.
   
 ## <a name="findvalue-attribute"></a>findValue atribut  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |String|Hodnota závisí na poli (určenému atributem X509FindType) být vyhledán. Například pokud hledání kryptografickým otiskem, hodnota musí být řetězec šestnáctkových čísel.|  
   
 ## <a name="x509findtype-attribute"></a>Atribut x509FindType  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |Výčet|Mezi hodnoty patří: FindByThumbprint FindBySubjectName, FindBySubjectDistinguishedName, FindByIssuerName, FindByIssuerDistinguishedName, FindBySerialNumber, FindByTimeValid, FindByTimeNotYetValid, FindBySerialNumber, FindByTimeExpired, FindByTemplateName , FindByApplicationPolicy FindByCertificatePolicy, FindByExtension, FindByKeyUsage, FindBySubjectKeyIdentifier.|  
   
 ## <a name="storelocation-attribute"></a>storeLocation atribut  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |Výčet|CurrentUser nebo LocalMachine.|  
   
@@ -108,6 +108,7 @@ Přidá certifikát X.509 do kolekce vymezených certifikátů.
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Configuration.X509RecipientCertificateClientElement.ScopedCertificates%2A>
 - <xref:System.ServiceModel.Configuration.X509ScopedServiceCertificateElementCollection>
 - <xref:System.ServiceModel.Configuration.X509ScopedServiceCertificateElement>

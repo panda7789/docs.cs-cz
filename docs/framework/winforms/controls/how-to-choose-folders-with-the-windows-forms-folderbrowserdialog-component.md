@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Zvolte složky s komponentou Windows Forms FolderBrowserDialog'
+title: 'Postupy: Výběr složek pomocí komponenty Windows Forms FolderBrowserDialog'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -12,14 +12,14 @@ helpviewer_keywords:
 - folders [Windows Forms], choosing
 - directories [Windows Forms], selecting
 ms.assetid: 4593670e-7c7d-4661-b46b-4ffb63258adb
-ms.openlocfilehash: ea5fdc9708d8e896eb66fa42f64cac672baff08b
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: 2bff105d5c97a8b98d094a1ce3a4f033aa5971be
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57724554"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59116074"
 ---
-# <a name="how-to-choose-folders-with-the-windows-forms-folderbrowserdialog-component"></a>Postupy: Zvolte složky s komponentou Windows Forms FolderBrowserDialog
+# <a name="how-to-choose-folders-with-the-windows-forms-folderbrowserdialog-component"></a>Postupy: Výběr složek pomocí komponenty Windows Forms FolderBrowserDialog
 Často v rámci aplikace Windows, které vytvoříte, budete muset vyzvat uživatele, vyberte složku, většina často budou sadu souborů. Windows Forms <xref:System.Windows.Forms.FolderBrowserDialog> komponenta umožňuje snadno provést tuto úlohu.  
   
 ### <a name="to-choose-folders-with-the-folderbrowserdialog-component"></a>Chcete-li zvolit složky s FolderBrowserDialog – komponenta  
@@ -67,6 +67,7 @@ ms.locfileid: "57724554"
  Informace o tom, jak uložit soubory, naleznete v tématu [jak: Ukládání souborů pomocí součásti SaveFileDialog](how-to-save-files-using-the-savefiledialog-component.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.FolderBrowserDialog>
-- [Přehled komponenty FolderBrowserDialog (Windows Forms)](folderbrowserdialog-component-overview-windows-forms.md)
+- [FolderBrowserDialog – přehled komponenty (Windows Forms)](folderbrowserdialog-component-overview-windows-forms.md)
 - [Komponenta FolderBrowserDialog](folderbrowserdialog-component-windows-forms.md)

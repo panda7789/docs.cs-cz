@@ -8,12 +8,12 @@ helpviewer_keywords:
 - control patterns, supporting in UI Automation provider
 - UI Automation, supporting control patterns in provider
 ms.assetid: 0d635c35-ffa8-4dc8-bbc9-12fcd5445776
-ms.openlocfilehash: b3fda706f4f2a4aa44b3627a6e6339ef0e3acb03
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
-ms.translationtype: MT
+ms.openlocfilehash: dd8bc880126cd6fa82f7f3a775edf47f0725b6d9
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57673155"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59123926"
 ---
 # <a name="support-control-patterns-in-a-ui-automation-provider"></a>Podpora vzorů ovládacích prvků u zprostředkovatele automatizace uživatelského rozhraní
 > [!NOTE]
@@ -40,5 +40,6 @@ ms.locfileid: "57673155"
  [!code-vb[UIAFragmentProvider_snip#120](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/UIAFragmentProvider_snip/VisualBasic/ListFragment.vb#120)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled zprostředkovatelů automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-providers-overview.md)
 - [Implementace zprostředkovatele automatizace uživatelského rozhraní na straně serveru](../../../docs/framework/ui-automation/server-side-ui-automation-provider-implementation.md)

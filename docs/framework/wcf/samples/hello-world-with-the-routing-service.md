@@ -2,12 +2,12 @@
 title: Hello World se směrovací službou
 ms.date: 03/30/2017
 ms.assetid: 0f4b0d5b-6522-4ad5-9f3a-baa78316d7d1
-ms.openlocfilehash: d560a8e871846f608cc90ec2f4f298c0db710e2a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: b84d4dc17db5bb422ba86fbab9c25d3348be7488
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54691772"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59120156"
 ---
 # <a name="hello-world-with-the-routing-service"></a>Hello World se směrovací službou
 Tato ukázka předvádí, směrovací služba Windows Communication Foundation (WCF). Směrovací služba je komponenta WCF, která umožňuje snadno do aplikace zahrnout směrovač založené na obsahu. Tato ukázka se přizpůsobí standardní kalkulačky Ukázky WCF na komunikaci pomocí služby směrování. V této ukázce je Kalkulačka klient nakonfigurovaný pro odesílání zpráv do koncového bodu určeného směrovače. Směrovací služba je nakonfigurována tak, aby přijímal všechny zprávy odeslané do ní a předávají do koncového bodu, který odpovídá službu kalkulačky. Proto jsou zpráv odeslaných z klienta přijatých směrovač a přesměrovala do aktuální Kalkulačka služby. Zprávy ze služby Kalkulačka odesílají zpět do směrovač, který je zase předá zpět do klienta kalkulačky.
@@ -58,4 +58,5 @@ Tato ukázka předvádí, směrovací služba Windows Communication Foundation (
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\RoutingServices\HelloRoutingService`  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Hostování AppFabric a ukázky trvalosti](https://go.microsoft.com/fwlink/?LinkId=193961)

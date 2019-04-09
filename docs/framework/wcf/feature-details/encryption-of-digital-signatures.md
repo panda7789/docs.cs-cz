@@ -6,12 +6,12 @@ helpviewer_keywords:
 - digital signatures [WCF], encryption
 - digital signatures [WCF]
 ms.assetid: 0868866d-40b4-4341-8e42-eee3b7f15b69
-ms.openlocfilehash: c3d780ce823c42874f001b0adcfc36b018e32a2c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: ac3df9c08462b6421a0549c5927512586abf303a
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54529779"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59134577"
 ---
 # <a name="encryption-of-digital-signatures"></a>Šifrování digitálních podpisů
 Ve výchozím nastavení zprávy je podepsaný a zašifrovaný a digitálně podpis zašifrují. To můžete řídit tak, že vytvoříte vlastní vazby s instancí <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement> nebo <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> a nastavení `MessageProtectionOrder` vlastnost buď třídy <xref:System.ServiceModel.Security.MessageProtectionOrder> hodnota výčtu. Výchozí hodnota je <xref:System.ServiceModel.Security.MessageProtectionOrder.SignBeforeEncryptAndEncryptSignature>. Tento proces trvá déle, než jednoduše podepisování a šifrování 10 až 40 procent. Zakázáním šifrování podpisu, ale může umožnit útočníkovi možnost uhádnout obsah zprávy. Je to možné, proto prvek podpisu obsahuje kód hash ve formátu prostého textu každý podepsaný části ve zprávě. Například i když obsah zprávy se šifrují ve výchozím nastavení, nešifrované podpis obsahuje kód hash těla zprávy. Pokud má zpráva malé, může útočník moct odvodit obsah. Šifrování podpis snižuje nebo eliminuje tuto možnost.  
@@ -29,6 +29,7 @@ Ve výchozím nastavení zprávy je podepsaný a zašifrovaný a digitálně pod
  Další informace o vytváření vlastních vazeb naleznete v tématu [Creating User-Defined vazby](../../../../docs/framework/wcf/extending/creating-user-defined-bindings.md). Další informace o vytvoření vlastní vazby pro režim konkrétní ověřování najdete v části [jak: Vytvoření elementu SecurityBindingElement pro zadaný režim ověřování](../../../../docs/framework/wcf/feature-details/how-to-create-a-securitybindingelement-for-a-specified-authentication-mode.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Security.MessageProtectionOrder>
 - <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement>
 - <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>

@@ -2,12 +2,12 @@
 title: <findCriteria>
 ms.date: 03/30/2017
 ms.assetid: 5454cd19-6bf5-4ba8-94d1-f58d10dc1917
-ms.openlocfilehash: e82312cb17fbd3f76f781ea37f761e946319a0a0
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: eaa3998d3d0b1642c0c92380ec1228eea69d4da8
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57351851"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59129548"
 ---
 # <a name="findcriteria"></a>\<kritéria hledání >
 Konfigurace element, který dodává sadu kritérií pro službu zjišťování používá klientská aplikace pro hledání. Kritéria mohou být seskupeny do kritéria vyhledávání (určení služby, kterou hledáte) a nalézt ukončení kritéria (jak dlouho vyhledávání by měl trvat).  
@@ -59,7 +59,7 @@ Konfigurace element, který dodává sadu kritérií pro službu zjišťování 
 |-------------|-----------------|  
 |[\<contractTypeNames>](../../../../../docs/framework/configure-apps/file-schema/wcf/contracttypenames.md)|Kolekci elementů konfigurace, které obsahují názvy typů kontraktu služby pracovního postupu.|  
 |\<Rozšíření > z \<kritéria hledání >|Kolekce objektů – element XML, které poskytují rozšíření.|  
-|[\<scopes>](../../../../../docs/framework/configure-apps/file-schema/wcf/scopes.md)|Kolekce objektů, které obsahují absolutní URI, které se používají během operace find k nalezení konkrétní služby nebo služeb.<br /><br /> Pokud konkrétní služba nalezena, byl proveden úspěšná shoda mezi identifikátor URI služby a identifikátor URI oboru, někdy pomocí pravidel oboru, které zpracovávají komplikace párování.|  
+|[\<obory >](../../../../../docs/framework/configure-apps/file-schema/wcf/scopes.md)|Kolekce objektů, které obsahují absolutní URI, které se používají během operace find k nalezení konkrétní služby nebo služeb.<br /><br /> Pokud konkrétní služba nalezena, byl proveden úspěšná shoda mezi identifikátor URI služby a identifikátor URI oboru, někdy pomocí pravidel oboru, které zpracovávají komplikace párování.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -68,5 +68,6 @@ Konfigurace element, který dodává sadu kritérií pro službu zjišťování 
 |[\<standardEndpoints>](../../../../../docs/framework/configure-apps/file-schema/wcf/standardendpoints.md)|Obsahuje nastavení potřeby aplikací a součástí procesu zjišťování služby jako klient.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Discovery.FindCriteria>
 - <xref:System.ServiceModel.Discovery.Configuration.FindCriteriaElement>

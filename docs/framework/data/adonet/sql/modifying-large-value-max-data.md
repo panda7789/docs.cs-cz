@@ -1,18 +1,18 @@
 ---
-title: Úpravy velké hodnotu (maximální) dat v ADO.NET
+title: Úprava vysokých (maximálních) hodnot v ADO.NET
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 8aca5f00-d80e-4320-81b3-016d0466f7ee
-ms.openlocfilehash: c77d688afa19caf1d54adf93b9fb6cf8b1c4701d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 417afd5f614aee8db0aeec2377973ad894e04384
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54493895"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59119298"
 ---
-# <a name="modifying-large-value-max-data-in-adonet"></a>Úpravy velké hodnotu (maximální) dat v ADO.NET
+# <a name="modifying-large-value-max-data-in-adonet"></a>Úprava vysokých (maximálních) hodnot v ADO.NET
 Rozsáhlého objektu (LOB) datové typy jsou ty, které překračují maximální velikost řádku 8 kilobajtů (KB). SQL Server poskytuje `max` specifikátor pro `varchar`, `nvarchar`, a `varbinary` datové typy, aby umožňovala ukládání hodnoty větší než 2 ^ 32 bajtů. Zadat sloupce tabulky a proměnných jazyka Transact-SQL `varchar(max)`, `nvarchar(max)`, nebo `varbinary(max)` datové typy. V ADO.NET `max` datové typy lze načíst pomocí `DataReader`a je taky možné specifikovat jako obě hodnoty vstupní a výstupní parametr bez žádným zvláštním způsobem. Pro velké `varchar` datové typy dat, dají se načíst a přírůstkově aktualizovat.  
   
  `max` Datových typů lze použít pro porovnání, jako proměnné jazyka Transact-SQL a pro zřetězení. Také je možné použít v DISTINCT, ORDER BY, klauzule GROUP BY příkazu SELECT, stejně jako v agregace, spojení a poddotazy.  
@@ -59,7 +59,7 @@ FROM OPENROWSET
   
  {  *\<objektu >* }  
   
- NASTAVIT  
+ SET  
   
  { *column_name* = {. ZÁPIS ( *výraz* , @Offset , @Length )}  
   
@@ -250,6 +250,7 @@ WHERE   DocumentID=@DocumentID
  [!code-vb[DataWorks LargeValueType.Param#1](../../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks LargeValueType.Param/VB/source.vb#1)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Binární a vysoké hodnoty na SQL Serveru](../../../../../docs/framework/data/adonet/sql/sql-server-binary-and-large-value-data.md)
 - [Mapování datových typů SQL Serveru](../../../../../docs/framework/data/adonet/sql-server-data-type-mappings.md)
 - [Operace dat na SQL Serveru v ADO.NET](../../../../../docs/framework/data/adonet/sql/sql-server-data-operations.md)

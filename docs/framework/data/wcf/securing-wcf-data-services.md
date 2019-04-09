@@ -8,12 +8,12 @@ helpviewer_keywords:
 - securing application [WCF Data Services]
 - WCF Data Services, security
 ms.assetid: 99fc2baa-a040-4549-bc4d-f683d60298af
-ms.openlocfilehash: bc5fe149050ad0a4784d90d370dfcd3f99663b38
-ms.sourcegitcommit: a3db1a9eafca89f95ccf361bc1833b47fbb2bb30
+ms.openlocfilehash: 1e134d877c45af00e2a2fb7e7ef0882ffd7ddc48
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58920880"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59119116"
 ---
 # <a name="securing-wcf-data-services"></a>Zabezpečení datových služeb WCF Data Services
 Toto téma popisuje důležité informace o zabezpečení, které jsou specifické pro vývoj, nasazování a spouštění datové služby WCF a aplikací tento přístup ke službám, které podporují Open Data Protocol (OData). Také postupujte podle doporučení pro vytváření zabezpečených aplikací rozhraní .NET Framework.  
@@ -111,5 +111,6 @@ OData je založené na protokolu HTTP. Hlavička zprávy HTTP může v závislo
 -   Doporučujeme, aby klientské aplikace vždy ověřovaly uživatelské vstupy i údaje přijímané z nedůvěryhodných služeb.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Definování datových služeb WCF Data Services](../../../../docs/framework/data/wcf/defining-wcf-data-services.md)
 - [Klientská knihovna pro WCF Data Services](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)

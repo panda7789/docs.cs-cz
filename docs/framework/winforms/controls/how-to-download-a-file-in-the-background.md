@@ -14,12 +14,12 @@ helpviewer_keywords:
 - threading [Windows Forms], background operations
 - background operations
 ms.assetid: 9b7bc5ae-051c-4904-9720-18f6667388bd
-ms.openlocfilehash: 57a904c5d54b0c3f68efaf017a3405786600ace7
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: af5a607b4800635d096e83b55a5bd5a912c8538d
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57715812"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59128775"
 ---
 # <a name="how-to-download-a-file-in-the-background"></a>Postupy: Stahování souboru na pozadí
 Stažení souboru je běžný úkol a často je užitečné k provedení této operace může trvat delší dobu na samostatném vlákně. Použití <xref:System.ComponentModel.BackgroundWorker> komponenty, které chcete provést tuto úlohu s velmi malým množstvím kódu.  
@@ -66,6 +66,7 @@ Stažení souboru je běžný úkol a často je užitečné k provedení této o
  Vždy zkontrolujte <xref:System.ComponentModel.AsyncCompletedEventArgs.Error%2A?displayProperty=nameWithType> vlastnost v vaše <xref:System.ComponentModel.BackgroundWorker.RunWorkerCompleted> obslužná rutina události, než se pokusíte o přístup k <xref:System.ComponentModel.RunWorkerCompletedEventArgs.Result%2A?displayProperty=nameWithType> vlastnost nebo jakýkoli jiný objekt, který může mít byl ovlivněn <xref:System.ComponentModel.BackgroundWorker.DoWork> obslužné rutiny události.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ComponentModel.BackgroundWorker>
 - [Postupy: Spuštění operace na pozadí](how-to-run-an-operation-in-the-background.md)
 - [Postupy: Implementace formuláře, který používá operaci na pozadí](how-to-implement-a-form-that-uses-a-background-operation.md)

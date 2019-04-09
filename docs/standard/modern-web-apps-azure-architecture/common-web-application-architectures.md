@@ -4,12 +4,12 @@ description: Navrhování moderních webových aplikací pomocí ASP.NET Core a 
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: 68f88d29a6c88f4ce261a0a2794035d43db1fc0c
-ms.sourcegitcommit: a3db1a9eafca89f95ccf361bc1833b47fbb2bb30
+ms.openlocfilehash: 22cb673f09faf7b0eabcfa5b3f6700d33242d84b
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58921101"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59122691"
 ---
 # <a name="common-web-application-architectures"></a>Běžné architektury webových aplikací
 
@@ -48,7 +48,7 @@ Pomocí vrstev architektury můžete aplikace vynucovat omezení, na které vrst
 
 Vrstvy (a zapouzdření) to značně zjednodušují nahrazují funkce v rámci aplikace. Aplikace například může zpočátku používat vlastní databázi systému SQL Server pro trvalost, ale později může zvolit strategii trvalost založené na cloudu, nebo jeden za webového rozhraní API. Pokud aplikace nemá správně zapouzdřené jeho implementace trvalého v rámci logické vrstvy, mohla být, že systém SQL Server zvláštní vrstva nahrazena novou implementaci stejné veřejné rozhraní.
 
-Kromě potenciál záměnu implementace v reakci na budoucí změny v požadavcích aplikace může také usnadňují vyměnit implementace pro účely testování. Namísto nutnosti psát testy, které pracují na skutečné datové vrstvy nebo vrstvě uživatelského rozhraní aplikace, lze tyto vrstvy nahradit v době testu s falešnou implementace, které poskytují známé odpovědí na požadavky. Testy díky obvykle mnohem jednodušší zápis a mnohem rychlejší spouštění ve srovnání s spuštění testů znovu aplikace skutečný infrastruktury.
+Kromě potenciál záměnu implementace v reakci na budoucí změny v požadavcích aplikace může také usnadňují vyměnit implementace pro účely testování. Namísto nutnosti psát testy, které pracují na skutečné datové vrstvy nebo vrstvě uživatelského rozhraní aplikace, lze tyto vrstvy nahradit v době testu s falešnou implementace, které poskytují známé odpovědí na požadavky. Obvykle díky testy mnohem snazší psát a spustit porovnání se spouštěním testů proti aplikace skutečný infrastruktury mnohem rychlejší.
 
 Logické vrstvení je běžná technika pro zlepšení organizaci kódu v oddílu podnikové aplikace softwaru a existuje několik způsobů, jimiž kódu je možné uspořádat do vrstvy.
 

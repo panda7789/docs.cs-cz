@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Animace bodu použitím klíčových snímků'
+title: 'Postupy: Animace bodu pomocí klíčových snímků'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - Points [WPF], animating with key frames
 - animation [WPF], Points with key frames
 ms.assetid: d2e2ef10-0773-4133-856e-d41c09f60ded
-ms.openlocfilehash: 4eeb7aa271883e1c76d5cac77f49accbdff39aea
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
-ms.translationtype: MT
+ms.openlocfilehash: 2e34ba035c8d7f9132915a9269d545f32033cbed
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57357232"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59132584"
 ---
-# <a name="how-to-animate-a-point-by-using-key-frames"></a>Postupy: Animace bodu použitím klíčových snímků
+# <a name="how-to-animate-a-point-by-using-key-frames"></a>Postupy: Animace bodu pomocí klíčových snímků
 Tento příklad ukazuje způsob použití <xref:System.Windows.Media.Animation.PointAnimationUsingKeyFrames> třídy animace <xref:System.Windows.Point>.  
   
 ## <a name="example"></a>Příklad  
@@ -37,6 +37,7 @@ Tento příklad ukazuje způsob použití <xref:System.Windows.Media.Animation.P
  Pro zajištění konzistence s další příklady animace, kód verze tohoto příkladu použijte <xref:System.Windows.Media.Animation.Storyboard> objektu, který chcete použít <xref:System.Windows.Media.Animation.PointAnimationUsingKeyFrames>. Při použití jedné animace v kódu, je ale jednodušší použít <xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A> metoda namísto použití <xref:System.Windows.Media.Animation.Storyboard>. Příklad najdete v tématu [animace vlastnosti bez pomoci scénáře](how-to-animate-a-property-without-using-a-storyboard.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Media.Animation.PointAnimationUsingKeyFrames>
 - <xref:System.Windows.Media.EllipseGeometry.Center%2A?displayProperty=nameWithType>
 - <xref:System.Windows.Media.EllipseGeometry>

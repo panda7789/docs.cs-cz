@@ -16,12 +16,12 @@ helpviewer_keywords:
 - protocols, TCP
 - Internet, TCP
 ms.assetid: d2811830-3bcb-495c-b82d-cda9cf919aad
-ms.openlocfilehash: 552fb69910d7186321d834e4bc36abc867a31658
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 6c792c8d819d17d1fc32fedeeacdacbbb1624d95
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54602907"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59125616"
 ---
 # <a name="using-tcp-services"></a>Použití služeb TCP
 <xref:System.Net.Sockets.TcpClient> Třídy vyžaduje data z internetových prostředků pomocí protokolu TCP. Metody a vlastnosti **TcpClient** abstraktní podrobnosti o vytváření <xref:System.Net.Sockets.Socket> pro podávání žádostí a příjmu dat pomocí protokolu TCP. Protože připojení ke vzdálenému zařízení je reprezentován jako datový proud, můžete data čtení a zápis s techniky zpracování datového proudu rozhraní .NET Framework.  
@@ -195,4 +195,3 @@ public class TcpTimeServer {
 ```  
   
 ## <a name="see-also"></a>Viz také:
-

@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 03972ac38a5259443f43a4f91002bf8dc717509f
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
-ms.translationtype: MT
+ms.openlocfilehash: 5ed383f616770fa8bab8e7a8944fa0f922017d87
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57466294"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59122951"
 ---
 # <a name="corbindtoruntimeex-function"></a>CorBindToRuntimeEx – funkce
 Umožní nespravovaným hostitelům načíst modul CLR (CLR) do procesu. [Corbindtoruntime –](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntime-function.md) a `CorBindToRuntimeEx` funkce provádět stejnou operaci, ale `CorBindToRuntimeEx` funkce umožňuje nastavení příznaků, které určují chování modulu CLR.  
@@ -140,9 +140,10 @@ HRESULT CorBindToRuntimeEx (
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [CorBindToCurrentRuntime – funkce](../../../../docs/framework/unmanaged-api/hosting/corbindtocurrentruntime-function.md)
 - [CorBindToRuntime – funkce](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntime-function.md)
 - [CorBindToRuntimeByCfg – funkce](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimebycfg-function.md)
 - [CorBindToRuntimeHost – funkce](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimehost-function.md)
 - [ICorRuntimeHost – rozhraní](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md)
-- [Zastaralé funkce pro hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+- [Zastaralé funkce hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)

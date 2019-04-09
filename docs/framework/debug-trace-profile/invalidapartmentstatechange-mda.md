@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: e56fb9df-5286-4be7-b313-540c4d876cd7
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: f0540b10f2480c173dde1f72759e7f30a65bc382
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c201ab51c1af8a86fc1c2c4f80738007152b3bd9
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54626573"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59122847"
 ---
 # <a name="invalidapartmentstatechange-mda"></a>invalidApartmentStateChange – pomocník spravovaného ladění (MDA)
 `invalidApartmentStateChange` Pomocníka spravovaného ladění (MDS) je aktivován některý z dva problémy:  
@@ -39,7 +39,7 @@ ms.locfileid: "54626573"
   
 -   `CoUninitialize` – Metoda (nebo `CoInitializeEx` metoda) s jinou souběžnosti se nazývá modelu ve vlákně.  
   
-## <a name="resolution"></a>Rozlišení  
+## <a name="resolution"></a>Řešení  
  Před zahájením provádění se nastavit stav objektu apartment vlákna, nebo použít buď <xref:System.STAThreadAttribute> atribut nebo <xref:System.MTAThreadAttribute> atribut do metody main aplikace.  
   
  Pro druhý příčinu v ideálním případě by kód, který volá `CoUninitialize` metoda by měla upravit tak, aby zpoždění volání, dokud vlákno se chystá ukončit a neexistují žádné RCW a jejich základní komponenty modelu COM stále používá v vlákna. Ale pokud to není možné upravovat kód, který volá `CoUninitialize` metoda pak žádné RCW by měla sloužit z vláken, které jsou neinicializované tímto způsobem.  
@@ -78,6 +78,7 @@ namespace ApartmentStateMDA
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
 - [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
 - [Zařazování spolupráce](../../../docs/framework/interop/interop-marshaling.md)

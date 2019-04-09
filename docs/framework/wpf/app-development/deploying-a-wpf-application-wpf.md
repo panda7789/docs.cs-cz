@@ -5,17 +5,16 @@ helpviewer_keywords:
 - WPF applications [WPF], deployment
 - deployment [WPF], applications
 ms.assetid: 12cadca0-b32c-4064-9a56-e6a306dcc76d
-ms.openlocfilehash: f0d01dffe0f8dad2b1e9af75d6642c68be3ee0f2
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
-ms.translationtype: MT
+ms.openlocfilehash: 35515d37756c46d7d38ca272d76da3126fde385f
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57379091"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59132352"
 ---
 # <a name="deploying-a-wpf-application-wpf"></a>Nasazení aplikace WPF (WPF)
 Po aplikace Windows Presentation Foundation (WPF) se vytvářejí, musí být nasazeny. [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] a rozhraní .NET Framework zahrnují několik technologie nasazení. Technologie nasazení, která se používá k nasazení [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace závisí na typu aplikace. Toto téma nabízí stručný přehled této technologie každého nasazení, a jak se používají ve spojení s požadavky na nasazení každého [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] typu aplikace.  
-  
-   
+
 <a name="Deployment_Technologies"></a>   
 ## <a name="deployment-technologies"></a>Technologie nasazení  
  [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] a rozhraní .NET Framework zahrnují několik nasazení technologií, včetně:  
@@ -124,5 +123,6 @@ Po aplikace Windows Presentation Foundation (WPF) se vytvářejí, musí být na
  Další informace najdete v tématu [nasazení rozhraní .NET Framework a aplikace](../../deployment/index.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Sestavení aplikace WPF](building-a-wpf-application-wpf.md)
 - [Zabezpečení](../security-wpf.md)

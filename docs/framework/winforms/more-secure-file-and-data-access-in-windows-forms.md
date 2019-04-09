@@ -13,12 +13,12 @@ helpviewer_keywords:
 - file access [Windows Forms]
 - security [Windows Forms], data access
 ms.assetid: 3cd3e55b-2f5e-40dd-835d-f50f7ce08967
-ms.openlocfilehash: 60a9ffa8061f5bc576aa919aa742f1c5e6b07124
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 557c3296310a7eb3922a6c18b7b3de19ffac953c
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57724541"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59115762"
 ---
 # <a name="more-secure-file-and-data-access-in-windows-forms"></a>Více zabezpečený přístup k souborům a datům ve Windows Forms
 [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] Používá oprávnění k ochraně prostředkům a datům. Pokud vaše aplikace může číst nebo zapisovat data závisí na oprávněních udělených aplikaci. Když aplikace běží v prostředí částečným vztahem důvěryhodnosti, možná nebudete mít přístup k datům nebo budete muset změnit způsob, jak přistupovat k datům.  
@@ -359,9 +359,10 @@ public void Write()
  Protože nelze získat přístup k registru v částečném vztahu důvěryhodnosti, budete muset najít jiné metody ukládání dat. Při ukládání nastavení aplikace používání izolovaného úložiště namísto registru. Izolované úložiště lze také ukládat další soubory specifické pro aplikaci. Můžete také ukládat informace o globální aplikace o server nebo server původu, protože ve výchozím nastavení aplikace jsou udělena oprávnění k přístupu k původnímu serveru.  
   
 ## <a name="see-also"></a>Viz také:
-- [Zabezpečenější tisk ve Windows Forms](more-secure-printing-in-windows-forms.md)
+
+- [Bezpečnější tisk ve Windows Forms](more-secure-printing-in-windows-forms.md)
 - [Dodatečné informace o zabezpečení ve Windows Forms](additional-security-considerations-in-windows-forms.md)
 - [Přehled zabezpečení ve Windows Forms](security-in-windows-forms-overview.md)
 - [Windows Forms – zabezpečení](windows-forms-security.md)
-- [Mage.exe (Manifest Generation and Editing Tool)](../tools/mage-exe-manifest-generation-and-editing-tool.md)
-- [MageUI.exe (Manifest Generation and Editing Tool, grafický klient)](../tools/mageui-exe-manifest-generation-and-editing-tool-graphical-client.md)
+- [Mage.exe (generování manifestu a nástroj pro úpravy)](../tools/mage-exe-manifest-generation-and-editing-tool.md)
+- [MageUI.exe (generování manifestu a nástroj pro úpravy, grafický klient)](../tools/mageui-exe-manifest-generation-and-editing-tool-graphical-client.md)

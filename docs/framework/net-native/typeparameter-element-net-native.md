@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: d37bb1b7-1ddc-4c6d-8ecf-583f804a2479
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b478f963156a2c8f189bbbdbc027927df8974dc2
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: b03c87c70fa1bfcd331f468d369632f4164300bb
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55263560"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59110211"
 ---
 # <a name="typeparameter-element-net-native"></a>\<TypeParameter > – Element (.NET Native)
 Použije zásady na typ zastoupený argument typu předaný metodě.  
@@ -51,13 +51,13 @@ Použije zásady na typ zastoupený argument typu předaný metodě.
   
 ## <a name="name-attribute"></a>Název atributu  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |*parameter_name*|Název parametru typu <xref:System.Type>. Například pro podpis metody `Type.GetInterfaceMap(Type interfaceType)`, hodnota `Name` atribut je "interfaceType".|  
   
 ## <a name="all-other-attributes"></a>Všechny ostatní atributy  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |*policy_setting*|Toto nastavení platí pro tento typ zásad. Možné hodnoty jsou `All`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal`, a `Required All`. Další informace najdete v tématu [nastavení zásad direktivy modulu Runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md).|  
   
@@ -68,7 +68,7 @@ Použije zásady na typ zastoupený argument typu předaný metodě.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Method>](../../../docs/framework/net-native/method-element-net-native.md)|Použije zásady reflexe runtime konstruktoru nebo metody.|  
+|[\<Metoda >](../../../docs/framework/net-native/method-element-net-native.md)|Použije zásady reflexe runtime konstruktoru nebo metody.|  
   
 ## <a name="remarks"></a>Poznámky  
  `<TypeParameter>` Element je podobný [ \<parametr >](../../../docs/framework/net-native/parameter-element-net-native.md) elementu, s tím rozdílem, že lze použít pouze u parametrů typu <xref:System.Type>. Platí zásady pro jakýkoli typ v době běhu reprezentována argument typu určeného `Name` atribut.  
@@ -95,6 +95,7 @@ Object obj = JsonConvert.DeserializeObject(data, t);
  direktivy reflection usnadňují metadat `StockQuote` typu, které jsou k dispozici pro serializátor NewtonSoft JSON v době běhu.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [\<Metoda > – Element](../../../docs/framework/net-native/method-element-net-native.md)
 - [Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)
 - [Nastavení zásad direktivy modulu runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md)

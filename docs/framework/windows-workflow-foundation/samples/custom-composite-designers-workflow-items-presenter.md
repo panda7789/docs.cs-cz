@@ -1,18 +1,18 @@
 ---
-title: Návrháři vlastního - skládání položky pracovního postupu
+title: Návrháři vlastního skládání – místo pro položky pracovních postupů
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 70055c4b-1173-47a3-be80-b5bce6f59e9a
-ms.openlocfilehash: 13d1a76779877bc2ab6d1cbd9c892bf14781e788
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: f4db3325081a820a37a8791849d2ad9697d15151
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54705940"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59118102"
 ---
-# <a name="custom-composite-designers---workflow-items-presenter"></a>Návrháři vlastního - skládání položky pracovního postupu
+# <a name="custom-composite-designers---workflow-items-presenter"></a>Návrháři vlastního skládání – místo pro položky pracovních postupů
 <xref:System.Activities.Presentation.WorkflowItemsPresenter?displayProperty=nameWithType> Je typ klíče v WF návrháře programovací model, který umožňuje úpravy kolekci elementů obsažených. Tato ukázka předvádí, jak vytvářet návrháře aktivit, který poskytuje informace o upravitelné kolekce.
 
  V této ukázce:
@@ -158,5 +158,6 @@ End Sub
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\CustomActivities\CustomActivityDesigners\WorkflowItemsPresenter`  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Activities.Presentation.WorkflowItemsPresenter>
 - [Vývoj aplikací pomocí návrháře postupu provádění](/visualstudio/workflow-designer/developing-applications-with-the-workflow-designer)

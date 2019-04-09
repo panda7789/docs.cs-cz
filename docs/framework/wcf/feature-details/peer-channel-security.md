@@ -2,12 +2,12 @@
 title: Zabezpečení rovnocenného kanálu
 ms.date: 03/30/2017
 ms.assetid: 2c59b164-3729-44f0-a967-f247c42de662
-ms.openlocfilehash: 09979cee48522355631c79e0bdf4c0fba6be782e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: bc17c35bf088472cfbf36b2c6d7c868c8cc85f20
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54541752"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59129451"
 ---
 # <a name="peer-channel-security"></a>Zabezpečení rovnocenného kanálu
 Rovnocenný kanál umožňuje různé typy distribuovaných aplikací, které jsou závislé na éře zasílání zpráv. Mezi příklady patří distribuce obsahu internetovém měřítku, kde důvěryhodným zdrojem slouží k distribuci obsahu (jako jsou média nebo aktualizací softwaru), skupinou přátel vyměnit music a fotografie nebo tým vaši kolegové spolupracovat úpravy dokumentu. Každý z těchto scénářů vyžaduje jedinečnou model. Model zabezpečení rovnocenného kanálu je navržená k řešení těchto scénářů a poskytuje model zabezpečení pro příslušné potřebám různých modelů identity, ověřování a autorizace.  
@@ -34,6 +34,7 @@ Rovnocenný kanál umožňuje různé typy distribuovaných aplikací, které js
  Protokolu peer Channel nevyžaduje konkrétní identitu modelu, tak dlouho, dokud aplikace vybere jeden z podporovaných typů tokenu. Aplikace zcela vlastní životní cyklus těchto identit a ověřování rozhodnutí.  
   
 ## <a name="see-also"></a>Viz také:
-- [Zabezpečení aplikací protokolu Peer Channel](../../../../docs/framework/wcf/feature-details/securing-peer-channel-applications.md)
-- [Koncepce protokolu Peer Channel](../../../../docs/framework/wcf/feature-details/peer-channel-concepts.md)
-- [Vytvoření aplikace protokolu Peer Channel](../../../../docs/framework/wcf/feature-details/building-a-peer-channel-application.md)
+
+- [Zabezpečení aplikací rovnocenného kanálu](../../../../docs/framework/wcf/feature-details/securing-peer-channel-applications.md)
+- [Koncepty rovnocenného kanálu](../../../../docs/framework/wcf/feature-details/peer-channel-concepts.md)
+- [Vytvoření aplikace rovnocenného kanálu](../../../../docs/framework/wcf/feature-details/building-a-peer-channel-application.md)

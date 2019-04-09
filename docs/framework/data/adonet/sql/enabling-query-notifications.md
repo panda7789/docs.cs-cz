@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: a5333e19-8e55-4aa9-82dc-ca8745e516ed
-ms.openlocfilehash: 2a711ad4779b8c932436ce1886b1a93dda849a94
-ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
+ms.openlocfilehash: a2227b33c7caacdd04c7bf50082bb0cfab7f3302
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56093954"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59113942"
 ---
 # <a name="enabling-query-notifications"></a>Povolení oznámení dotazů
 Aplikace, které využívají oznámení dotazů mají společnou sadu požadavků. Zdroj dat musí být správně nakonfigurované pro podporu oznámení dotazů SQL a uživatel musí mít správná oprávnění na straně klienta i stranu serveru.  
@@ -85,5 +85,6 @@ CREATE SERVICE ContactChangeNotifications
  Naproti tomu <xref:System.Data.Sql.SqlNotificationRequest> vyžaduje, abyste implementovat celou infrastrukturu naslouchání sami. Kromě toho musí být definovány všechny podpůrné objekty služby Service Broker například fronty, služby a typy podporovaných fronty zpráv. Tento manuální přístup je užitečný, pokud vaše aplikace vyžaduje speciální oznámení zpráv nebo oznámení chování, nebo pokud vaše aplikace je součástí větší aplikace, které služba Service Broker.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Oznámení pro dotazy na SQL Serveru](../../../../../docs/framework/data/adonet/sql/query-notifications-in-sql-server.md)
 - [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

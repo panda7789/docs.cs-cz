@@ -1,5 +1,5 @@
 ---
-title: Element <legacyCorruptedStateExceptionsPolicy>
+title: <legacyCorruptedStateExceptionsPolicy> Prvek
 ms.date: 03/30/2017
 helpviewer_keywords:
 - <legacyCorruptedStateExceptionsPolicy> element
@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: e0a55ddc-bfa8-4f3e-ac14-d1fc3330e4bb
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5a787315ff8b016beff8fb8457619a462e5f3180
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 777d496614435106b84b47b9aa3d35d964bc3e07
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55264620"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59115099"
 ---
 # <a name="legacycorruptedstateexceptionspolicy-element"></a>\<legacyCorruptedStateExceptionsPolicy> Element
 Určuje, zda modul common language runtime umožňuje spravovanému kódu zachytit narušení přístupu a ostatní výjimky v poškozeném stavu.  
@@ -38,7 +38,7 @@ Určuje, zda modul common language runtime umožňuje spravovanému kódu zachyt
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |`false`|Aplikace nezachytí poškozující stav výjimky selhání, jako je například porušení přístupu. Toto nastavení je výchozí.|  
 |`true`|Aplikace zachytí poškozující stav výjimky selhání, jako je například porušení přístupu.|  
@@ -78,6 +78,7 @@ Určuje, zda modul common language runtime umožňuje spravovanému kódu zachyt
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Runtime.ExceptionServices.HandleProcessCorruptedStateExceptionsAttribute>
 - [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
 - [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)

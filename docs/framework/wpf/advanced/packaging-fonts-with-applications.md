@@ -10,21 +10,19 @@ helpviewer_keywords:
 - typography [WPF], packaging fonts with applications
 - packaging fonts with applications [WPF]
 ms.assetid: db15ee48-4d24-49f5-8b9d-a64460865286
-ms.openlocfilehash: e66841fe72281bf0562b2ce50925a5c3a6bb9b54
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: fb91d4b413db512021b90f0d4ba3049fe7333601
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57378866"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59123786"
 ---
 # <a name="packaging-fonts-with-applications"></a>Balení písem s aplikacemi
 Toto téma poskytuje přehled o tom balení písem za použití vaší [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikace.  
   
 > [!NOTE]
 >  Stejně jako u většiny typů softwaru, soubory písma jsou licencované, spíše než prodává. Licence, které se vztahují na používání služeb písma se liší od dodavatele dodavatele, ale obecně většina licence, včetně těch, které pokrývají písma [!INCLUDE[TLA#tla_ms#initcap](../../../../includes/tlasharptla-mssharpinitcap-md.md)] dodává s aplikacemi a [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)], nejsou povoleny jako vložený v rámci aplikace nebo jinak písma znovu distribuovat. Proto se jako vývojář, který je na vás, abyste měli jistotu, že máte potřebná licenční oprávnění pro všechny písmo, které můžete vložit do aplikace nebo jinak redistribute.  
-  
 
-  
 <a name="introduction_to_packaging_fonts"></a>   
 ## <a name="introduction-to-packaging-fonts"></a>Úvod k balení písem  
  Můžete jednoduše zabalit písma jako prostředky v rámci vaší [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace, chcete-li zobrazit text uživatelského rozhraní a dalších typů text na základě obsahu. Písma může být oddělené od nebo vložené v souborech sestavení aplikace. Můžete také vytvořit písmo pouze prostředky knihovny, která vaše aplikace může odkazovat.  
@@ -173,9 +171,10 @@ Toto téma poskytuje přehled o tom balení písem za použití vaší [!INCLUDE
 -   V případech, kde je nesprávný odkaz, aplikace přejde k použití dostupné písmo.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Documents.Typography>
 - <xref:System.Windows.Media.FontFamily>
-- [Typografie společnosti Microsoft: Odkazy, zprávy a kontaktů](https://docs.microsoft.com/typography/)
+- [Microsoft Typography: Odkazy, zprávy a kontaktů](https://docs.microsoft.com/typography/)
 - [Specifikace OpenType](https://www.microsoft.com/typography/otspec/)
 - [Funkce písma OpenType](opentype-font-features.md)
 - [Ukázková sada písem OpenType](sample-opentype-font-pack.md)

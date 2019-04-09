@@ -2,12 +2,12 @@
 title: Operátory sekvence
 ms.date: 03/30/2017
 ms.assetid: 4d332d32-3806-4451-b7af-25af269194ae
-ms.openlocfilehash: b4a6e01eeb70015899cbbbfe8ecd748bd9936b2c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 62cb654922af9df65b0ec9abb67bdc33fda09339
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54666160"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59113682"
 ---
 # <a name="sequence-operators"></a>Operátory sekvence
 Obecně řečeno [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] nepodporuje operátory sekvence, které mají jednu nebo více následujících vlastností:  
@@ -46,4 +46,5 @@ Obecně řečeno [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.
  Všechny podporované pracovní operátory sekvence podle očekávání v modulu common language runtime (CLR) s výjimkou `Average`. `Average` Vrátí hodnotu stejného typu jako typ se byla, že v modulu CLR `Average` vždy vrátí buď <xref:System.Double> nebo <xref:System.Decimal>. Pokud source argument není explicitně přetypování na double nebo decimal nebo modulu pro výběr přetypování na double nebo decimal, výsledný SQL budou také mít takový převod a výsledkem bude podle očekávání.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Datové typy a funkce](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md)

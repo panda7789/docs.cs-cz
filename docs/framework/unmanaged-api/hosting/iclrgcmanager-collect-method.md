@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2da0b3b7a8a7ae46050345aaf5fcfa65fa349ae5
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: 1746527a2667676dfeab89e72874204460bcd33c
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57477982"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59126669"
 ---
 # <a name="iclrgcmanagercollect-method"></a>ICLRGCManager::Collect – metoda
 Vynutí uvolnění pro zadané generace.  
@@ -63,10 +63,11 @@ HRESULT Collect (
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Automatická správa paměti](../../../../docs/standard/automatic-memory-management.md)
-- [Uvolňování paměti](../../../../docs/standard/garbage-collection/index.md)
+- [Kolekce paměti](../../../../docs/standard/garbage-collection/index.md)
 - [ICLRControl – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-interface.md)
 - [ICLRGCManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrgcmanager-interface.md)
-- [Rozhraní pro hostování CLR](../../../../docs/framework/unmanaged-api/hosting/clr-hosting-interfaces.md)
-- [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+- [Rozhraní hostování CLR](../../../../docs/framework/unmanaged-api/hosting/clr-hosting-interfaces.md)
+- [Rozhraní hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
 - [Hostování](../../../../docs/framework/unmanaged-api/hosting/index.md)

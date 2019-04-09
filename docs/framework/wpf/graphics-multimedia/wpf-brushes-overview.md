@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - brushes [WPF], about brushes
 ms.assetid: ecea1955-420b-45c6-bf43-c1404c072c41
-ms.openlocfilehash: 12671c62a887f863bfb423cf67d7a25eed4118b2
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 14e3d095d50f41e5b20a79d76c464bcf28c99327
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57362601"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59132207"
 ---
 # <a name="wpf-brushes-overview"></a>Přehled štětců WPF
 Všechno, co viditelný na obrazovce je viditelné, protože byl kresleno štětce. Například štětce slouží k popisu tlačítka, text popředí a vyplnění obrazce na pozadí. Toto téma představuje koncepty Malování [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] stopy a příklady. Štětce umožňují vykreslení [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] objekty se vše od jednoduchých, plné barvy pro komplexní sady vzorce a Image.  
@@ -28,11 +28,11 @@ Příklady štětce
   
 |Třída|Vlastnosti štětce|  
 |-----------|----------------------|  
-|<xref:System.Windows.Controls.Border>|<xref:System.Windows.Controls.Border.BorderBrush%2A>, <xref:System.Windows.Controls.Border.Background%2A>|  
-|<xref:System.Windows.Controls.Control>|<xref:System.Windows.Controls.Control.Background%2A>, <xref:System.Windows.Controls.Control.Foreground%2A>|  
+|<xref:System.Windows.Controls.Border>|<xref:System.Windows.Controls.Border.BorderBrush%2A>,  <xref:System.Windows.Controls.Border.Background%2A>|  
+|<xref:System.Windows.Controls.Control>|<xref:System.Windows.Controls.Control.Background%2A>,  <xref:System.Windows.Controls.Control.Foreground%2A>|  
 |<xref:System.Windows.Controls.Panel>|<xref:System.Windows.Controls.Panel.Background%2A>|  
 |<xref:System.Windows.Media.Pen>|<xref:System.Windows.Media.Pen.Brush%2A>|  
-|<xref:System.Windows.Shapes.Shape>|<xref:System.Windows.Shapes.Shape.Fill%2A>, <xref:System.Windows.Shapes.Shape.Stroke%2A>|  
+|<xref:System.Windows.Shapes.Shape>|<xref:System.Windows.Shapes.Shape.Fill%2A>,  <xref:System.Windows.Shapes.Shape.Stroke%2A>|  
 |<xref:System.Windows.Controls.TextBlock>|<xref:System.Windows.Controls.TextBlock.Background%2A>|  
   
  Následující části popisují různé <xref:System.Windows.Media.Brush> typů a uveďte příklad každého.  
@@ -161,13 +161,14 @@ Obdélník překreslit pomocí VisualBrush
  Další informace o důvod, proč <xref:System.Windows.Media.VisualBrush> objekty nelze zmrazené, najdete v článku <xref:System.Windows.Media.VisualBrush> typ stránky.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Media.Brush>
 - <xref:System.Windows.Media.Brushes>
 - [Přehled malování plnými barvami a přechody](painting-with-solid-colors-and-gradients-overview.md)
-- [Malování pomocí obrázků, kreseb a vizuálních objektů](painting-with-images-drawings-and-visuals.md)
+- [Kreslení pomocí obrázků, kreseb a vizuálních objektů](painting-with-images-drawings-and-visuals.md)
 - [Přehled zablokovatelných objektů](../advanced/freezable-objects-overview.md)
 - [Ukázka štětců](https://go.microsoft.com/fwlink/?LinkID=159973)
 - [Ukázka ImageBrush](https://go.microsoft.com/fwlink/?LinkID=160005)
 - [Ukázka VisualBrush](https://go.microsoft.com/fwlink/?LinkID=160049)
-- [Témata s postupy](brushes-how-to-topics.md)
-- [Další výkonnostní doporučení](../advanced/optimizing-performance-other-recommendations.md)
+- [– postupy](brushes-how-to-topics.md)
+- [Další doporučení k optimalizaci výkonu](../advanced/optimizing-performance-other-recommendations.md)

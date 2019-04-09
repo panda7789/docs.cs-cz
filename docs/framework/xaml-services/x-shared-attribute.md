@@ -6,12 +6,12 @@ helpviewer_keywords:
 - x:Shared attribute [XAML Services]
 - Shared attribute in XAML [XAML Services]
 ms.assetid: c8cff434-2785-405f-9f95-16deb34c9e64
-ms.openlocfilehash: 42de341d59e3e70103db765faf3160b5fe3250d3
-ms.sourcegitcommit: 5c1abeec15fbddcc7dbaa729fabc1f1f29f12045
+ms.openlocfilehash: da35f209b632bdf9e4ab2298239a505df69d6048
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58039402"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59125734"
 ---
 # <a name="xshared-attribute"></a>x:Shared – atribut
 Pokud je nastavena na `false`, upravuje chování načtení prostředku WPF, takže požadavky s atributy prostředku vytvoření nové instance pro každý požadavek místo sdílení stejné instanci pro všechny požadavky.  
@@ -50,6 +50,7 @@ Pokud je nastavena na `false`, upravuje chování načtení prostředku WPF, tak
 -   <xref:System.Windows.ResourceDictionary> , Který obsahuje položky nesmí být vnořen v rámci jiného <xref:System.Windows.ResourceDictionary>. Například nemůžete použít `x:Shared` pro položky v <xref:System.Windows.ResourceDictionary> , který je v rámci <xref:System.Windows.Style> , který je již <xref:System.Windows.ResourceDictionary> položky.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.ResourceDictionary>
-- [Prostředky XAML](../wpf/advanced/xaml-resources.md)
+- [Zdroje XAML](../wpf/advanced/xaml-resources.md)
 - [Základní elementy](../wpf/advanced/base-elements.md)

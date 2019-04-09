@@ -2,12 +2,12 @@
 title: Stream
 ms.date: 03/30/2017
 ms.assetid: 58a3db81-20ab-4627-bf31-39d30b70b4fe
-ms.openlocfilehash: ca6c4a2f8bfd87982bc1b8574c65c5d5a2282a93
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
-ms.translationtype: MT
+ms.openlocfilehash: e4e70a3bf4137169afa94a122225f27c25909713
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58828092"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59127306"
 ---
 # <a name="stream"></a>Stream
 Stream ukázce použití streamování komunikace režim přenosu. Služba zpřístupňuje několik operací, které odesílání a příjem streamů. Tato ukázka je v místním prostředí. Klient a služba se o programy konzoly.  
@@ -66,7 +66,7 @@ public interface IStreamingSample
 ## <a name="processing-data-as-it-is-streamed"></a>Zpracování dat, jako je streamování  
  Operace `GetStream`, `UploadStream` a `EchoStream` všechna řešení odesílat data přímo ze souboru nebo uložení přijatá data přímo do souboru. Ale v některých případech je požadavek na odeslání nebo příjem velkých objemů dat a provádět některé zpracování na bloky dat se ještě odeslány nebo přijaty. Jedním ze způsobů takových situacích je napsat vlastní datový proud (třída, která je odvozena z <xref:System.IO.Stream>), který zpracovává data, jako je číst nebo zapisovat. `GetReversedStream` Operace a `ReverseStream` třídy jsou příkladem.  
   
- `GetReversedStream` vytvoří a vrátí novou instanci třídy `ReverseStream`. Vlastní zpracování se stane, jak systém přečte od `ReverseStream` objektu. `ReverseStream.Read` Implementace čte blok bajtů ze základního souboru, obrátí je a potom vrátí obrácený bajtů. Toto zpětné celý soubor obsahu; jeden blok bajtů se obrátí najednou. Toto je příklad, chcete-li zobrazit, jak můžete provádět zpracování datového proudu jako obsah se číst nebo zapisovat z a do datového proudu.  
+ `GetReversedStream` Vytvoří a vrátí novou instanci třídy `ReverseStream`. Vlastní zpracování se stane, jak systém přečte od `ReverseStream` objektu. `ReverseStream.Read` Implementace čte blok bajtů ze základního souboru, obrátí je a potom vrátí obrácený bajtů. Toto zpětné celý soubor obsahu; jeden blok bajtů se obrátí najednou. Toto je příklad, chcete-li zobrazit, jak můžete provádět zpracování datového proudu jako obsah se číst nebo zapisovat z a do datového proudu.  
   
 ```csharp
 class ReverseStream : Stream  
@@ -184,4 +184,3 @@ Press <ENTER> to terminate client.
 >  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Service\Stream`  
-  

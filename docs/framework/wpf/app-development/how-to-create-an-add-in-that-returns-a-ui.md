@@ -9,12 +9,12 @@ helpviewer_keywords:
 - implementing add-in pipeline segments [WPF]
 - add-in [WPF], returns a UI
 ms.assetid: 57f274b7-4c66-4b72-92eb-81939a393776
-ms.openlocfilehash: bf69a22f60724513122b5f17c5dd55bffc1fe561
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: faed11bb02037ea42b31402d431e1bcdd8b70339
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57364876"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59115746"
 ---
 # <a name="how-to-create-an-add-in-that-returns-a-ui"></a>Postupy: Vytvoření doplňku, který vrací uživatelské rozhraní
 Tento příklad ukazuje, jak vytvořit doplněk, který vrací Windows Presentation Foundation (WPF) do hostitele samostatnou aplikaci WPF.  
@@ -31,8 +31,7 @@ Tento příklad ukazuje, jak vytvořit doplněk, který vrací Windows Presentat
   
 ## <a name="example"></a>Příklad  
  K vytvoření doplňku, který vrací uživatelské rozhraní WPF vyžaduje konkrétní kód pro každý segment kanálu doplňku a hostitelskou aplikaci.  
-    
-  
+
 <a name="Contract"></a>   
 ## <a name="implementing-the-contract-pipeline-segment"></a>Implementace kontraktu Segment kanálu  
  Metoda musí být definován ve smlouvě vrací uživatelské rozhraní a vrácená hodnota musí být typu <xref:System.AddIn.Contract.INativeHandleContract>. To je patrné podle `GetAddInUI` metodu `IWPFAddInContract` smlouvy v následujícím kódu.  
@@ -90,5 +89,6 @@ Tento příklad ukazuje, jak vytvořit doplněk, který vrací Windows Presentat
  [!code-vb[SimpleAddInReturnsAUISample#GetUICode](~/samples/snippets/visualbasic/VS_Snippets_Wpf/SimpleAddInReturnsAUISample/VisualBasic/Host/MainWindow.xaml.vb#getuicode)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Doplňky a rozšíření](/previous-versions/dotnet/netframework-4.0/bb384200(v%3dvs.100))
 - [Přehled doplňků WPF](wpf-add-ins-overview.md)

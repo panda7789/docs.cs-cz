@@ -6,12 +6,12 @@ helpviewer_keywords:
 - user interface, see UI
 - accessibility, UI automation
 ms.assetid: 65847654-9994-4a9e-b36d-2dd5d998770b
-ms.openlocfilehash: 32f1940db7e2e77b2d878a71c9e1aa4e394b349f
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.openlocfilehash: 06cbc82f3636c4063b445a0ccbe871e0be1dd847
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57677198"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59134658"
 ---
 # <a name="ui-automation-overview"></a>Přehled automatizace uživatelského rozhraní
 > [!NOTE]
@@ -75,6 +75,7 @@ ms.locfileid: "57677198"
  [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] také obsahuje informace, které klientské aplikace prostřednictvím událostí. Na rozdíl od [!INCLUDE[TLA2#tla_winevents](../../../includes/tla2sharptla-winevents-md.md)], [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] události nejsou založené na mechanismus všesměrového vysílání. [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Klienti registrace k oznámením určité události a můžete požádat o tuto konkrétní [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] vlastností a ovládacího prvku vzor předávat do jejich obslužné rutiny událostí. Kromě toho [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] událost obsahuje odkaz na prvek, která ji vyvolala. Vyvolávání událostí selektivně, v závislosti na tom, zda všech klientů, kteří naslouchají výkon lze zvýšit poskytovatelů.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled stromu automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)
 - [Přehled vzorů ovládacích prvků pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)
 - [Přehled vlastností automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-properties-overview.md)

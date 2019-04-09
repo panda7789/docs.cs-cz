@@ -2,12 +2,12 @@
 title: <localIssuer>
 ms.date: 03/30/2017
 ms.assetid: 26bdd0df-0e7d-4b9e-bbeb-f28c53769385
-ms.openlocfilehash: 2ab90ec8982580a0a1efe1ed042ae7deff53819a
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 9a51387cd75d57a6828ecde1dcd788b056f7e27a
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55256508"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59122873"
 ---
 # <a name="localissuer"></a>\<localIssuer>
 Určuje adresu a vazbu lokálního vystavitele, který se má použít k získání tokenu zabezpečení.  
@@ -78,6 +78,7 @@ Určuje adresu a vazbu lokálního vystavitele, který se má použít k získá
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Configuration.IssuedTokenClientElement.LocalIssuer%2A>
 - <xref:System.ServiceModel.Configuration.IssuedTokenParametersEndpointAddressElement>
 - <xref:System.ServiceModel.Security.IssuedTokenClientCredential>

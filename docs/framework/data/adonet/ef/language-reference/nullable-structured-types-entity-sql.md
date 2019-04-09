@@ -2,12 +2,12 @@
 title: Strukturované typy s možnou hodnotou Null (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: ae006fa9-997e-45bb-8a04-a7f62026171e
-ms.openlocfilehash: c4b0584283e179be2661e518d5bb350b536b058f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 632b092e1d0d99a2a40cc3cd4b323e234de6232b
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54731761"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59127852"
 ---
 # <a name="nullable-structured-types-entity-sql"></a>Strukturované typy s možnou hodnotou Null (Entity SQL)
 A `null` instance strukturovaný typ je instanci, která neexistuje. Tím se liší od existující instanci, ve kterém mají všechny vlastnosti `null` hodnoty.  
@@ -89,4 +89,5 @@ A `null` instance strukturovaný typ je instanci, která neexistuje. Tím se li�
     ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-overview.md)

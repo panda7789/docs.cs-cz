@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 9818b660-52f5-423d-a9af-e75163aa7068
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7eeef33745ebc8209fc7f69a9337af4093c1e8a1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: f61640687447550ee853e0c233c2dfc615ba3c9a
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54567045"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59122197"
 ---
 # <a name="how-to-load-assemblies-into-the-reflection-only-context"></a>Postupy: Načtení sestavení do kontextu pouze pro reflexi
 Kontext načítání pouze pro reflexi umožňuje zkoumat sestavení zkompilován pro jiné platformy nebo u jiných verzí rozhraní .NET Framework. Jenom se dají prozkoumat kód načtený do tohoto kontextu; nelze provést. To znamená, že nelze vytvořit objekty, protože konstruktory nemůže být proveden. Protože kód nelze provést, nejsou automaticky nahrány závislosti. Pokud je potřeba je prozkoumat, je nutné načíst je sami.  
@@ -53,6 +53,7 @@ Kontext načítání pouze pro reflexi umožňuje zkoumat sestavení zkompilová
  [!code-vb[CustomAttributeData#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CustomAttributeData/VB/source.vb#1)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Reflection.Assembly.ReflectionOnlyLoad%2A>
 - <xref:System.Reflection.Assembly.ReflectionOnly%2A>
 - <xref:System.Reflection.CustomAttributeData>

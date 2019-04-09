@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 70d7c058-0280-4815-a008-6f290093591a
-ms.openlocfilehash: 26b7fe7448b9338802f8b8f5e2e91486d1883bbd
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: b7a2588b9e5082915dff4d371adff2ad3d232d74
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54570236"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59122756"
 ---
 # <a name="find-the-maximum-value-in-a-numeric-sequence"></a>Nalezení maximální hodnoty v číselné posloupnosti
 Použití <xref:System.Linq.Enumerable.Max%2A> operátor vyhledá nejvyšší hodnotu v pořadí číselných hodnot.  
@@ -72,5 +72,6 @@ Použití <xref:System.Linq.Enumerable.Max%2A> operátor vyhledá nejvyšší ho
  `Carnarvon Tigers`  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Agregační dotazy](../../../../../../docs/framework/data/adonet/sql/linq/aggregate-queries.md)
 - [Stažení ukázkových databází](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)

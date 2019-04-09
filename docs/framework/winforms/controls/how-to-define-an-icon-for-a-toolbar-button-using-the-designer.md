@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Definování ikony pro tlačítko ToolBar pomocí návrháře'
+title: 'Postupy: Definování ikony pro tlačítko ToolBar pomocí Návrháře'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - toolbars [Windows Forms], adding icons to buttons
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - icons [Windows Forms], toolbar buttons
 - ToolBar control [Windows Forms], adding icons to buttons
 ms.assetid: d848f38e-67f2-49d4-8e88-01c845c06c02
-ms.openlocfilehash: 2099738d5b666aa305d678c962c0b203d3ab67b2
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: 6657a9bbb850a24ae47be11854d6affd2a02f9b7
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57717736"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59118271"
 ---
-# <a name="how-to-define-an-icon-for-a-toolbar-button-using-the-designer"></a>Postupy: Definování ikony pro tlačítko ToolBar pomocí návrháře
+# <a name="how-to-define-an-icon-for-a-toolbar-button-using-the-designer"></a>Postupy: Definování ikony pro tlačítko ToolBar pomocí Návrháře
 > [!NOTE]
 >  <xref:System.Windows.Forms.ToolStrip> Ovládací prvek nahradí a přidá funkce, které <xref:System.Windows.Forms.ToolBar> řízení; však <xref:System.Windows.Forms.ToolBar> ovládací prvek se zachovává kvůli zpětné kompatibilitě a budoucí použití, pokud se rozhodnete.  
   
@@ -42,7 +42,8 @@ ms.locfileid: "57717736"
 6.  V **vlastnosti** okno, které se zobrazí v podokně na pravé straně **Editor kolekce ToolBarButton**, nastavte <xref:System.Windows.Forms.ToolBarButton.ImageIndex%2A> vlastnost tlačítko panelu nástrojů na jednu z hodnot v seznamu, který přenesou z imagí, které jste přidali do <xref:System.Windows.Forms.ImageList> komponenty.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.ToolBar>
-- [Postupy: Aktivační události nabídky pro tlačítka panelu nástrojů](how-to-trigger-menu-events-for-toolbar-buttons.md)
-- [Ovládací prvek ToolBar](toolbar-control-windows-forms.md)
+- [Postupy: Spouštění událostí nabídky pro tlačítka ToolBar](how-to-trigger-menu-events-for-toolbar-buttons.md)
+- [ToolBar – ovládací prvek](toolbar-control-windows-forms.md)
 - [Komponenta ImageList](imagelist-component-windows-forms.md)

@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d729120c-4c1b-4f34-bbe9-33694fca2dde
-ms.openlocfilehash: bc3a6de1101b3e7626312197bc2d1ba37f7e04a4
-ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
+ms.openlocfilehash: d9d53e91f5252a0ac44822ac6252ce02e9697d33
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55825794"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59130582"
 ---
 # <a name="query-expression-syntax-examples-aggregate-operators"></a>Příklady syntaxe výrazů dotazů: Agregační operátory
 Příklady v tomto tématu ukazují, jak používat <xref:System.Linq.Enumerable.Average%2A>, <xref:System.Linq.Enumerable.Count%2A>, <xref:System.Linq.Enumerable.Max%2A>, <xref:System.Linq.Enumerable.Min%2A>, a <xref:System.Linq.Enumerable.Sum%2A> metody k dotazování [AdventureWorks Sales Model](https://archive.codeplex.com/?p=msftdbprodsamples) pomocí syntaxe výrazu dotazu. Model prodeje AdventureWorks používá v těchto příkladech je sestaven z tabulky kontaktu, adresa, produktu, SalesOrderHeader a podrobnosti prodejní objednávky v ukázkové databázi AdventureWorks.  
@@ -91,4 +91,5 @@ Příklady v tomto tématu ukazují, jak používat <xref:System.Linq.Enumerable
  [!code-vb[DP L2E Examples#SumGrouped_MQ](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#sumgrouped_mq)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Dotazy v technologii LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/queries-in-linq-to-entities.md)

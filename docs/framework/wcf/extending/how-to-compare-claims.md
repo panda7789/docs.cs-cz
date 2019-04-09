@@ -8,12 +8,12 @@ helpviewer_keywords:
 - claims [WCF], comparing
 - claims [WCF]
 ms.assetid: 0c4ec84d-53df-408f-8953-9bc437f56c28
-ms.openlocfilehash: b375251e1ff083a527249da51dfe12ae9165dd55
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: c6230d7618b7885d72ddfebc67157bb48ff9cb38
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54720246"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59122015"
 ---
 # <a name="how-to-compare-claims"></a>Postupy: Porovnání deklarací
 Infrastruktura modelu Identity ve Windows Communication Foundation (WCF) se používá k provedení kontroly autorizace. V důsledku toho běžných úloh je porovnávání deklarací identity v kontextu autorizace deklarací identity potřebný k provedení požadované akce nebo přístup k požadovanému prostředku. Toto téma popisuje, jak porovnat deklarace identity, včetně typů předdefinované a vlastní deklarace identity. Další informace o infrastruktuře identit modelu najdete v tématu [správa deklarací identity a autorizace s modelem Identity](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md).  
@@ -71,5 +71,6 @@ Infrastruktura modelu Identity ve Windows Communication Foundation (WCF) se pou�
  [!code-vb[c_CustomClaimComparison#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customclaimcomparison/vb/source.vb#0)]  
   
 ## <a name="see-also"></a>Viz také:
-- [Správa deklarací identity a autorizace pomocí modelu identit](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md)
+
+- [Správa deklarací a autorizace s modelem identity](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md)
 - [Postupy: Vytvoření vlastní deklarace](../../../../docs/framework/wcf/extending/how-to-create-a-custom-claim.md)

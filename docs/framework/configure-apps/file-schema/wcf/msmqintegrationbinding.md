@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - msmqIntegrationBinding Element
 ms.assetid: edf277f3-e3bf-4ed8-9f55-83b5788430a7
-ms.openlocfilehash: eaa08ae1d708f2498f459519683b4ffa05be9e49
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 4960740af9637a1743dc86965d7831b76828e58a
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57355031"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59130036"
 ---
 # <a name="msmqintegrationbinding"></a>\<msmqIntegrationBinding>
 Definuje vazbu, která podporuje řazení do fronty pomocí směrování zpráv prostřednictvím služby MSMQ.  
@@ -74,7 +74,7 @@ msmqIntegrationBinding
   
 ## <a name="serializationformat-attribute"></a>{serializationFormat} Atribut  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |XML|Formát XML|  
 |binární|Binární formát|  
@@ -86,13 +86,13 @@ msmqIntegrationBinding
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<zabezpečení >](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-msmqintegrationbinding.md)|Definuje nastavení zabezpečení pro vazbu. Tento prvek je typu <xref:System.ServiceModel.Configuration.MsmqIntegrationSecurityElement>.|  
+|[\<security>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-msmqintegrationbinding.md)|Definuje nastavení zabezpečení pro vazbu. Tento prvek je typu <xref:System.ServiceModel.Configuration.MsmqIntegrationSecurityElement>.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<bindings>](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|Tento prvek obsahuje sadu standardních a vlastních vazeb.|  
+|[\<vazby >](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|Tento prvek obsahuje sadu standardních a vlastních vazeb.|  
   
 ## <a name="remarks"></a>Poznámky  
  Tento element vazby slouží k povolení aplikace Windows Communication Foundation (WCF) k odesílání a příjem zpráv z existujících aplikací služby MSMQ, které používají modelu COM, nativní rozhraní API služby MSMQ nebo typy definované v <xref:System.Messaging?displayProperty=nameWithType> obor názvů je můžete použít tento prvek konfigurace k určení způsoby, jak vyřešit fronty přenosu záruky, zda zprávy musí být trvale uložen a jak by měl chráněný a ověření zprávy. Další informace najdete v tématu [jak: Výměna zpráv pomocí koncových bodů WCF a aplikací služby Řízení front zpráv](../../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md).  
@@ -130,6 +130,7 @@ msmqIntegrationBinding
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Configuration.MsmqIntegrationBindingElement>
 - <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding>
 - <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBindingElement>

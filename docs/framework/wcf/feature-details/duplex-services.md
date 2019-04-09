@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 396b875a-d203-4ebe-a3a1-6a330d962e95
-ms.openlocfilehash: 9adbb4166d713cea0344c9fa58ce85e5afce086d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 3f8e13c6983b6c3a88bc1d9f559f7fac3d6342d9
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54717907"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59110081"
 ---
 # <a name="duplex-services"></a>Duplexní služby
 Duplexní kontrakt služeb je vzoru výměny zpráv, ve kterém oba koncové body můžete odesílat zprávy do jiné nezávisle na sobě. Duplexní služby proto může odesílat zprávy zpět do koncový bod klienta, poskytování podobně jako události. Duplexní komunikaci nastane, pokud se klient připojí ke službě a poskytuje službu s kanálem, na kterém služba odesílat zprávy o zpět do klienta. Všimněte si, že události podobně duplexní služby funguje jenom v rámci relace.  
@@ -40,9 +40,7 @@ Duplexní kontrakt služeb je vzoru výměny zpráv, ve kterém oba koncové bod
  Konfigurace pro službu, musíte nastavit má být poskytnuta vazba, která podporuje komunikace relace a duplexní komunikaci. `wsDualHttpBinding` Element podporuje komunikaci relace a umožňuje duplexní komunikaci poskytnutím duální připojení pomocí protokolu HTTP, jeden pro každý směr.  
   
  Na straně klienta je nutné nakonfigurovat adresu serveru můžete použít pro připojení ke klientovi, jak je znázorněno v následující ukázková konfigurace.  
-  
-  
-  
+
 > [!NOTE]
 >  Throw bez duplexní klienty, kteří neumožňuje ověřovat, obvykle pomocí zabezpečené konverzace <xref:System.ServiceModel.Security.MessageSecurityException>. Ale pokud se ověření nezdaří duplexní klienta, který využívá zabezpečené konverzace, klient přijme <xref:System.TimeoutException> místo.  
   
@@ -90,6 +88,7 @@ binding.ClientBaseAddress = New Uri("http://localhost:8000/DuplexTestUsingCode/C
 >  Když služba nebo klient ukončí její kanál duplexní modelu nerozpozná automaticky. Takže pokud klient neočekávaně ukončí, ve výchozím nastavení službu nedostanou nebo pokud klient neočekávaně skončí, nebudete nijak upozorněni služby. Služby a klienti můžou implementovat vlastní protokol na sebe navzájem upozornit, pokud se tedy rozhodne.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Duplex](../../../../docs/framework/wcf/samples/duplex.md)
-- [Nastavení chování klienta za běhu](../../../../docs/framework/wcf/specifying-client-run-time-behavior.md)
-- [Postupy: Vytvoření objektu pro vytváření kanálů a jeho použití k vytvoření a správě kanálů](../../../../docs/framework/wcf/feature-details/how-to-create-a-channel-factory-and-use-it-to-create-and-manage-channels.md)
+- [Nastavení běhového chování klienta](../../../../docs/framework/wcf/specifying-client-run-time-behavior.md)
+- [Postupy: Vytvoření postupu kanálu a jeho použití k vytvoření a správě kanálů](../../../../docs/framework/wcf/feature-details/how-to-create-a-channel-factory-and-use-it-to-create-and-manage-channels.md)

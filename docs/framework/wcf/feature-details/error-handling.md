@@ -2,12 +2,12 @@
 title: Zpracování chyb
 ms.date: 03/30/2017
 ms.assetid: c948841a-7db9-40ae-9b78-587d216cbcaf
-ms.openlocfilehash: ddc3921fbb6b453db43ed3939134650395ade670
-ms.sourcegitcommit: af0a22a4eb11bbcd33baec49150d551955b50a16
-ms.translationtype: MT
+ms.openlocfilehash: da2ae3db0ff0432a49fcbf6de674bfb730be1286
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56261149"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59136432"
 ---
 # <a name="error-handling"></a>Zpracování chyb
 ## <a name="error-handling-in-windows-communication-foundation"></a>Zpracování chyb v Windows Communication Foundation  
@@ -68,4 +68,5 @@ ms.locfileid: "56261149"
  Chyba odeslání převodu typu může být stejně jako mnoho dalších typů zpracování chyb zkontroloval nainstalováním obslužná rutina chyby. Bod rozšiřitelnosti IErrorHandler je volána pro zpracování výjimek na úrovni služby. Odtud odpověď k odeslání zpět do volajícího – a také jako provádět jakékoli vlastní úlohy vytváření sestav – je možné zvolit.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Základní programování WCF](../basic-wcf-programming.md)

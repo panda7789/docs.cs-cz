@@ -13,12 +13,12 @@ helpviewer_keywords:
 - PanelClick event [Windows Forms], determining panel clicked
 - Panel control [Windows Forms], determining click
 ms.assetid: d14c6092-04b2-4a07-8ddf-0dd11277ff5f
-ms.openlocfilehash: adc54ace6ea7511f1f92945b9e0c8f44b5d8f4fe
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: 7900b010c460fd112acbe0ef35e6945939377e1b
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57712718"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59116581"
 ---
 # <a name="how-to-determine-which-panel-in-the-windows-forms-statusbar-control-was-clicked"></a>Postupy: Určení panelu v ovládacím prvku Windows Forms StatusBar označeného kliknutím
 > [!IMPORTANT]
@@ -94,6 +94,7 @@ ms.locfileid: "57712718"
     ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.StatusBar>
 - <xref:System.Windows.Forms.ToolStripStatusLabel>
 - [Postupy: Nastavení velikosti panelů stavového řádku](how-to-set-the-size-of-status-bar-panels.md)

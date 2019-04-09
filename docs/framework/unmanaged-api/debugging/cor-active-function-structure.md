@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5adf43bd68db449e465ffe3517c9eb9d41a5c18a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c0400da0cd29d642a1be42be7e2b22213ae54b94
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54502049"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59121768"
 ---
 # <a name="coractivefunction-structure"></a>COR_ACTIVE_FUNCTION – struktura
 Obsahuje informace o funkcích, které jsou aktuálně aktivní vlákna snímků. Tato struktura je používán [icordebugthread2::getactivefunctions –](../../../../docs/framework/unmanaged-api/debugging/icordebugthread2-getactivefunctions-method.md) metody.  
@@ -58,5 +58,6 @@ typedef struct  _COR_ACTIVE_FUNCTION {
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Struktury pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)
 - [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - backgrounds [WPF], drawing text to
 - typography [WPF], drawing text to control backgrounds
 ms.assetid: 686d8fba-f61c-4974-a871-c635d67a7f69
-ms.openlocfilehash: 025b13d83aeb668fa3a9f8af35d7213ae677eefc
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 76449c88f9a720741c8ed61255e04a40e6a8613f
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57378740"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59128450"
 ---
 # <a name="how-to-draw-text-to-a-controls-background"></a>Postupy: Vykreslení textu na pozadí ovládacího prvku
 Text můžete nakreslit přímo na pozadí ovládacího prvku převedením textový řetězec <xref:System.Windows.Media.FormattedText> objektu a nakreslením objektu na ovládací prvek <xref:System.Windows.Media.DrawingContext>. Tento postup můžete použít také pro kreslení na pozadí objekty odvozené z <xref:System.Windows.Controls.Panel>, jako například <xref:System.Windows.Controls.Canvas> a <xref:System.Windows.Controls.StackPanel>.  
@@ -29,5 +29,6 @@ Příklad ovládacích prvků s vlastním textem pozadí
  [!code-csharp[DrawTextToControlBackground#DrawTextToControlBackground1](~/samples/snippets/csharp/VS_Snippets_Wpf/DrawTextToControlBackground/CSHARP/Window1.xaml.cs#drawtexttocontrolbackground1)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Media.FormattedText>
 - [Kreslení formátovaného textu](drawing-formatted-text.md)

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - states [WPF], Frame
 - styles [WPF], Frame
 ms.assetid: a01c32e2-c951-46a0-a82f-2614ca241f0b
-ms.openlocfilehash: 0d6860af587da89094663779c894689e8a911af8
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 6b084cfa31efebe2456871a99cd810741aa26609
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57357388"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59131015"
 ---
 # <a name="frame-styles-and-templates"></a>Styly a šablony rámců
 Toto téma popisuje styly a šablony pro <xref:System.Windows.Controls.Frame> ovládacího prvku. Můžete upravit výchozí <xref:System.Windows.Controls.ControlTemplate> poskytnout jedinečný vzhled ovládacího prvku. Další informace najdete v tématu [přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením ControlTemplate](customizing-the-appearance-of-an-existing-control.md).  
@@ -22,7 +22,7 @@ Toto téma popisuje styly a šablony pro <xref:System.Windows.Controls.Frame> ov
 ## <a name="frame-parts"></a>Části rámce  
  V následující tabulce jsou uvedeny pojmenované části pro <xref:System.Windows.Controls.Frame> ovládacího prvku.  
   
-|Část|Typ|Popis|  
+|Část|Type|Popis|  
 |-|-|-|  
 |PART_FrameCP|<xref:System.Windows.Controls.ContentPresenter>|Oblast obsahu.|  
   
@@ -47,9 +47,10 @@ Toto téma popisuje styly a šablony pro <xref:System.Windows.Controls.Frame> ov
  Úplnou ukázku najdete v tématu [stylu s ukázkou ControlTemplates](https://github.com/Microsoft/WPF-Samples/tree/master/Styles%20&%20Templates/IntroToStylingAndTemplating).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.FrameworkElement.Style%2A>
 - <xref:System.Windows.Controls.ControlTemplate>
 - [Styly a šablony ovládacích prvků](control-styles-and-templates.md)
 - [Přizpůsobení ovládacího prvku](control-customization.md)
 - [Styly a šablony](styling-and-templating.md)
-- [Přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením šablony ControlTemplate](customizing-the-appearance-of-an-existing-control.md)
+- [Přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením ControlTemplate](customizing-the-appearance-of-an-existing-control.md)

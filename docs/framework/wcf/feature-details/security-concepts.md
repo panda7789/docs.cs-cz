@@ -2,12 +2,12 @@
 title: Koncepty zabezpečení
 ms.date: 03/30/2017
 ms.assetid: 944fa5ca-2c34-4268-8897-e005a61b470d
-ms.openlocfilehash: 61e993e8491a380410ffe772baa4d9f817f8cb23
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d23ef86c2ccf315300a9290c3055388469df2e0a
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54610809"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59135145"
 ---
 # <a name="security-concepts"></a>Koncepty zabezpečení
 V této části stručně popisuje pojmy související se zabezpečením Windows Communication Foundation (WCF).  
@@ -37,6 +37,7 @@ V této části stručně popisuje pojmy související se zabezpečením Windows
  [Rozšíření zabezpečení](../../../../docs/framework/wcf/extending/extending-security.md)  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Zabezpečení](../../../../docs/framework/wcf/feature-details/security.md)
 - [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)
 - [Model zabezpečení pro Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)

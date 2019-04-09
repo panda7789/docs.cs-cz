@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - security [WCF], auditing events
 ms.assetid: e71e9587-3336-46a2-9a9e-d72a1743ecec
-ms.openlocfilehash: f3d4ed8ea9a3c0f45185cd0f631cd983b0e364c5
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 0dd025b8b7adc97420699eb2f5099ab1ee75b820
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54566824"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59125754"
 ---
 # <a name="how-to-audit-windows-communication-foundation-security-events"></a>Postupy: Auditování událostí zabezpečení služby Windows Communication Foundation
 Windows Communication Foundation (WCF) umožňuje protokolovat události zabezpečení do protokolu událostí Windows, který lze zobrazit pomocí prohlížeče událostí Windows. Toto téma vysvětluje, jak nastavit aplikaci tak, aby protokoly událostí zabezpečení. Další informace o auditování WCF najdete v tématu [auditování](../../../../docs/framework/wcf/feature-details/auditing-security-events.md).  
@@ -88,6 +88,7 @@ Windows Communication Foundation (WCF) umožňuje protokolovat události zabezpe
  Pokud <xref:System.ServiceModel.AuditLogLocation> je nastavena na <xref:System.ServiceModel.AuditLogLocation.Security> a **auditování přístupu k objektům** kódu není nastavený **místní zásady zabezpečení**, události auditu se zapisují do protokolu zabezpečení. Všimněte si, že se vrátí bez chyby, ale položky auditu se zapisují do protokolu zabezpečení.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.AuditLogLocation%2A>
 - <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior>
 - <xref:System.ServiceModel.AuditLogLocation>

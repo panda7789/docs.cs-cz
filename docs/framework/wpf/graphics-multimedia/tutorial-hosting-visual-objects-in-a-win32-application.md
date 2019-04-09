@@ -1,5 +1,5 @@
 ---
-title: 'Kurz: Hostování vizuální objektů v aplikaci Win32'
+title: 'Kurz: Hostování vizuálních objektů v aplikaci Win32'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,20 +9,18 @@ helpviewer_keywords:
 - Win32 code [WPF], visual objects in
 - hosting [WPF], visual objects in Win32 code
 ms.assetid: f0e1600c-3217-43d5-875d-1864fa7fe628
-ms.openlocfilehash: 68241d679b0f788423b09badfa549a660da0d106
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: b260f96246f0d9e5447b74a05e1396bfef176197
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57377253"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59111459"
 ---
-# <a name="tutorial-hosting-visual-objects-in-a-win32-application"></a>Kurz: Hostování vizuální objektů v aplikaci Win32
+# <a name="tutorial-hosting-visual-objects-in-a-win32-application"></a>Kurz: Hostování vizuálních objektů v aplikaci Win32
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje bohaté prostředí pro vytváření aplikací. Pokud však máte značné investice [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] kódu, může být mnohem efektivnější přidat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] funkce, které vaše aplikace místo revize kódu. K zajištění podpory pro [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] subsystémy grafiky v aplikaci používat současně [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje mechanismus pro hostování objektů v [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] okna.  
   
  Tento kurz popisuje, jak psát ukázkovou aplikaci, [spuštění testu s ukázkou Win32 vzájemná spolupráce grafického subsystému](https://go.microsoft.com/fwlink/?LinkID=159995), že hostitelé [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] visual objekty v [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] okno.  
-  
 
-  
 <a name="requirements"></a>   
 ## <a name="requirements"></a>Požadavky  
  V tomto kurzu se předpokládá základní znalost obou [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] programování. Pro základní informace o [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] programování, naleznete v tématu [názorný postup: Moje první desktopová aplikace WPF](../getting-started/walkthrough-my-first-wpf-desktop-application.md). Úvod do [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] programování, naleznete v některém z mnoha knihy k tomuto tématu, zejména *programování Windows* podle Charles Petzold.  
@@ -78,6 +76,7 @@ ms.locfileid: "57377253"
  Další informace o volání testování proti vizuálních objektů najdete v tématu [spuštění testování ve vizuální vrstvě](hit-testing-in-the-visual-layer.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Interop.HwndSource>
 - [Spuštění testu s ukázkou Win32 vzájemné spolupráce](https://go.microsoft.com/fwlink/?LinkID=159995)
-- [Ověřování pozice ve vizuální vrstvě](hit-testing-in-the-visual-layer.md)
+- [Spuštění testování ve vizuální vrstvě](hit-testing-in-the-visual-layer.md)

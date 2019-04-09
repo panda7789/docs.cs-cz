@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Tisk souborů XPS z programu'
+title: 'Postupy: Tisk souborů XPS pomocí programu'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - printing XPS files programmatically [WPF]
 - XPS files [WPF], printing programmatically
 ms.assetid: 0b1c0a3f-b19e-43d6-bcc9-eb3ec4e555ad
-ms.openlocfilehash: c00a12000dd10ba32bd550186377547b3ef72d25
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
-ms.translationtype: MT
+ms.openlocfilehash: f113516fd96b88ea04b5ee155f808200dd2c893d
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57372721"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59114293"
 ---
-# <a name="how-to-programmatically-print-xps-files"></a>Postupy: Tisk souborů XPS z programu
+# <a name="how-to-programmatically-print-xps-files"></a>Postupy: Tisk souborů XPS pomocí programu
 Můžete použít jednu přetížení <xref:System.Printing.PrintQueue.AddJob%2A> metoda tisknout [!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)] soubory bez zahájení <xref:System.Windows.Controls.PrintDialog> nebo v zásadě, všechny [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] vůbec.  
   
  Můžete také vytisknout [!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)] soubory použijte všechny různé <xref:System.Windows.Xps.XpsDocumentWriter.Write%2A> a <xref:System.Windows.Xps.XpsDocumentWriter.WriteAsync%2A> metody <xref:System.Windows.Xps.XpsDocumentWriter>. Další informace o tom [tisk dokumentu XPS](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms771525(v=vs.90)).  
@@ -59,6 +59,7 @@ Můžete použít jednu přetížení <xref:System.Printing.PrintQueue.AddJob%2A
  **Poznámka:** pro zjednodušení výše uvedený příklad používá přítomnost \*XPS rozšíření jako jeho test, který je soubor [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)]. Ale [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] soubory nemusí mít toto rozšíření. [IsXPS.exe (isxps pro kontrolu shody nástroj)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aa348104(v=vs.100)) je jeden ze způsobů, jak soubor pro testování [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] platnosti.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Printing.PrintQueue>
 - <xref:System.Printing.PrintQueue.AddJob%2A>
 - <xref:System.Threading.ApartmentState>
@@ -66,6 +67,6 @@ Můžete použít jednu přetížení <xref:System.Printing.PrintQueue.AddJob%2A
 - [XPS – dokumenty](/windows/desktop/printdocs/documents)
 - [Tisk dokumentu XPS](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms771525(v=vs.90))
 - [Spravovaná a nespravovaná vlákna](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/5s8ee185(v=vs.100))
-- [isXPS.exe (isxps pro kontrolu shody nástroj)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aa348104(v=vs.100))
+- [isXPS.exe (nástroj isXPS pro kontrolu shody)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aa348104(v=vs.100))
 - [Dokumenty v platformě WPF](documents-in-wpf.md)
 - [Přehled tisku](printing-overview.md)

@@ -5,12 +5,12 @@ helpviewer_keywords:
 - ListView controls [WPF], displaying contents with GridView
 - GridView [WPF], displaying ListView contents
 ms.assetid: 5bc1e767-ab46-4f14-bd41-3d5d39e1d000
-ms.openlocfilehash: 1066869c80bf5bd87d656bcb4994c188ee0e8efc
-ms.sourcegitcommit: 462dc41a13942e467984e48f4018d1f79ae67346
+ms.openlocfilehash: 9b467c95d541c326a41d1ed4bd9eb5c87e25bd5c
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58185607"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59112785"
 ---
 # <a name="how-to-display-listview-contents-by-using-a-gridview"></a>Postupy: Zobrazení obsahu ListView použitím GridView
 Tento příklad ukazuje, jak definovat <xref:System.Windows.Controls.GridView> režimu zobrazení pro <xref:System.Windows.Controls.ListView> ovládacího prvku.  
@@ -25,8 +25,9 @@ Tento příklad ukazuje, jak definovat <xref:System.Windows.Controls.GridView> r
  ![Snímek obrazovky zobrazující ListView s výstupem ovládacího prvku GridView.](./media/gridview-overview/listview-gridview-output.jpg)  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Controls.ListView>
 - <xref:System.Windows.Controls.GridView>
 - [ListView – přehled](listview-overview.md)
 - [GridView – přehled](gridview-overview.md)
-- [Témata s postupy](listview-how-to-topics.md)
+- [– postupy](listview-how-to-topics.md)

@@ -1,18 +1,18 @@
 ---
-title: SQL Server Express User Instances
+title: Uživatelské instance SQL Serveru Express
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 00c12376-cb26-4317-86ad-e6e9c089be57
-ms.openlocfilehash: 4546ce2a08fc2ac20717bbaa55d4688b43d34b47
-ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
+ms.openlocfilehash: b456549daefa0fdf67524b0b039a091652cf41ff
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56093811"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59111147"
 ---
-# <a name="sql-server-express-user-instances"></a>SQL Server Express User Instances
+# <a name="sql-server-express-user-instances"></a>Uživatelské instance SQL Serveru Express
 Microsoft SQL Server Express Edition (SQL Server Express) podporuje funkci instance uživatele, která je dostupná jenom při použití zprostředkovatele dat .NET Framework pro SQL Server (`SqlClient`). Uživatelské instance se samostatnou instanci SQL serveru Express databázového stroje, který je generován nadřazená instance. Uživatelské instance povolit uživatelům, kteří nejsou správci na svých místních počítačích k připojení a připojení k databázím SQL Server Express. Každá instance spouští v kontextu zabezpečení jednotlivých uživatelů, na jednu instanci každého uživatele zvlášť.  
   
 ## <a name="user-instance-capabilities"></a>Možnosti uživatele Instance  
@@ -37,7 +37,7 @@ sp_configure 'user instances enabled','0'
  Síťový protokol pro uživatelské instance musí být místní pojmenovaných kanálů. Uživatelské instance nelze spustit ve vzdálené instanci systému SQL Server a SQL serveru přihlašovací jména nejsou povoleny.  
   
 ## <a name="connecting-to-a-user-instance"></a>Připojování k uživatelské instanci  
- `User Instance` a `AttachDBFilename` <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A> povolit klíčová slova <xref:System.Data.SqlClient.SqlConnection> pro připojení k uživatelské instanci. Uživatelské instance jsou také podporovány <xref:System.Data.SqlClient.SqlConnectionStringBuilder> `UserInstance` a `AttachDBFilename` vlastnosti.  
+ `User Instance` a `AttachDBFilename`<xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A> povolit klíčová slova <xref:System.Data.SqlClient.SqlConnection> pro připojení k uživatelské instanci. Uživatelské instance jsou také podporovány <xref:System.Data.SqlClient.SqlConnectionStringBuilder>`UserInstance` a `AttachDBFilename` vlastnosti.  
   
  Mějte na paměti následující skutečnosti související ukázkové připojovací řetězec je uvedeno níže:  
   
@@ -58,7 +58,7 @@ Initial Catalog=InstanceDB;
 ```  
   
 > [!NOTE]
->  Můžete také použít <xref:System.Data.SqlClient.SqlConnectionStringBuilder> <xref:System.Data.SqlClient.SqlConnectionStringBuilder.UserInstance%2A> a <xref:System.Data.SqlClient.SqlConnectionStringBuilder.AttachDBFilename%2A> vlastnosti, které chcete vytvořit připojovací řetězec při běhu.  
+>  Můžete také použít <xref:System.Data.SqlClient.SqlConnectionStringBuilder><xref:System.Data.SqlClient.SqlConnectionStringBuilder.UserInstance%2A> a <xref:System.Data.SqlClient.SqlConnectionStringBuilder.AttachDBFilename%2A> vlastnosti, které chcete vytvořit připojovací řetězec při běhu.  
   
 ### <a name="using-the-124datadirectory124-substitution-string"></a>Použití &#124;DataDirectory&#124; náhradní řetězec  
  `AttachDbFileName` rozšířila po zavedení služby ve verzi 2.0 rozhraní ADO.NET `|DataDirectory|` (ohraničen symboly kanálu) náhradní řetězec. `DataDirectory` používá se společně s `AttachDbFileName` označující relativní cesta k souboru dat, umožňuje vývojářům vytvářet připojovací řetězce, které jsou založeny na relativní cestu ke zdroji dat namísto zapotřebí zadat úplnou cestu.  
@@ -151,6 +151,7 @@ private static void OpenSqlConnection()
 -   Vyhrazené hostování v technologii ASP.NET pomocí ověřování Windows. Jedna instance systému SQL Server Express je možné hostovat na intranetu. Aplikace se připojí pomocí účtu Windows ASPNET, nikoli pomocí zosobnění. Uživatelské instance není vhodné používat pro třetí strany nebo sdílené hostování situacích, kdy všechny aplikace bude sdílet stejnou instanci uživatele a by už zůstat izolované od sebe navzájem.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [SQL Server a ADO.NET](../../../../../docs/framework/data/adonet/sql/index.md)
 - [Připojovací řetězce](../../../../../docs/framework/data/adonet/connection-strings.md)
 - [Připojení ke zdroji dat](../../../../../docs/framework/data/adonet/connecting-to-a-data-source.md)

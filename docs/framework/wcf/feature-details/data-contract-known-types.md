@@ -9,12 +9,12 @@ helpviewer_keywords:
 - KnownTypeAttribute [WCF]
 - KnownTypes [WCF]
 ms.assetid: 1a0baea1-27b7-470d-9136-5bbad86c4337
-ms.openlocfilehash: d215d4b8adcf3e4892c00be1629f92b657496780
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: bedf35544454a32ff13856a072779cd70723e989
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54705307"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59129620"
 ---
 # <a name="data-contract-known-types"></a>Známé typy kontraktů dat
 <xref:System.Runtime.Serialization.KnownTypeAttribute> Třídy můžete zadat v předstihu, typy, které by měly být zahrnuty k posouzení vlastní během deserializace. Funkční příklad najdete v článku [známé typy](../../../../docs/framework/wcf/samples/known-types.md) příklad.  
@@ -168,6 +168,7 @@ ms.locfileid: "54705307"
  V předchozí konfiguraci souboru typ kontraktu dat s názvem `MyCompany.Library.Shape` je deklarován mít `MyCompany.Library.Circle` jako známý typ.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Runtime.Serialization.KnownTypeAttribute>
 - <xref:System.Collections.Hashtable>
 - <xref:System.Object>

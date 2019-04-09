@@ -13,12 +13,12 @@ helpviewer_keywords:
 - Timer component [Windows Forms], initializing
 - procedures [Windows Forms], specific time intervals
 ms.assetid: 8025247a-2de4-4d86-b8ab-a8cb8aeab2ea
-ms.openlocfilehash: 03f386917e554cfdf9d65778474ae809d81d1939
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: ed433ee03bc82931e9b640f45ebd798e0ef73204
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57705568"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59127033"
 ---
 # <a name="how-to-run-procedures-at-set-intervals-with-the-windows-forms-timer-component"></a>Postupy: Spouštění procedur v nastavených intervalech pomocí komponenty Windows Forms Timer
 Někdy můžete chtít vytvořit proceduru, která běží v určitých časových intervalech, dokud dokončení smyčku nebo, který spustí po nastaveném časovém intervalu. <xref:System.Windows.Forms.Timer> Komponenta odešle takový postup je to možné.  
@@ -243,6 +243,7 @@ private:
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.Timer>
 - [Komponenta Timer](timer-component-windows-forms.md)
 - [Přehled komponenty Timer](timer-component-overview-windows-forms.md)

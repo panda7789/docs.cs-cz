@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Paint event [Windows Forms], handling in Windows Forms custom control
 - OnPaint method [Windows Forms], overriding in Windows Forms custom controls
 ms.assetid: e9ca2723-0107-4540-bb21-4f5ffb4a9906
-ms.openlocfilehash: 93afd0d463ed3f52ec6425c9de19a6c147860ed9
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: baf4e6cb3b2a40b1b792ae12e78cb9f878a738ff
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57713226"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59124303"
 ---
 # <a name="overriding-the-onpaint-method"></a>Přepsání metody OnPaint
 Základní kroky pro přepsání jakékoli události definované v [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] jsou shodné a jsou shrnuty v následujícím seznamu.  
@@ -87,6 +87,7 @@ public class PaintEventArgs : EventArgs {
  Ovládací prvek vyvolá jeho <xref:System.Windows.Forms.Control.OnPaint%2A> metoda pokaždé, když je potřeba změnit jeho vizuální zobrazení. Tato metoda vyvolá zase <xref:System.Windows.Forms.Control.Paint> událostí.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Události](../../../standard/events/index.md)
 - [Vykreslení ovládacího prvku Windows Forms](rendering-a-windows-forms-control.md)
 - [Definování události](defining-an-event-in-windows-forms-controls.md)

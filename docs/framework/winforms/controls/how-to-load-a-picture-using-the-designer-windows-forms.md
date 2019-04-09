@@ -8,17 +8,17 @@ helpviewer_keywords:
 - forms [Windows Forms], displaying images
 - PictureBox control [Windows Forms], adding pictures
 ms.assetid: 4dc7b973-afb1-4276-8322-20825af96655
-ms.openlocfilehash: febe1fc616bd1405e699c03fa673814a45976769
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: 5aa8ff1efa045d52382cc5c24a0cae1f0f1bb510
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57723068"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59127137"
 ---
 # <a name="how-to-load-a-picture-using-the-designer-windows-forms"></a>Postupy: Načtení obrázku pomocí návrháře (Windows Forms)
 Pomocí Windows Forms <xref:System.Windows.Forms.PictureBox> ovládacího prvku, lze načíst a zobrazit obrázek na formulář v době návrhu tak, že nastavíte <xref:System.Windows.Forms.PictureBox.Image%2A> vlastnost platný obrázek. Následující tabulka uvádí typy souborů přijatelné.  
   
-|Typ|Přípona názvu souboru|  
+|Type|Přípona názvu souboru|  
 |----------|-------------------------|  
 |Rastrový obrázek|BMP|  
 |Ikona|.ico|  
@@ -44,6 +44,7 @@ Pomocí Windows Forms <xref:System.Windows.Forms.PictureBox> ovládacího prvku,
 1.  Na **vlastnosti** okna, vyberte <xref:System.Windows.Forms.PictureBox.Image%2A> vlastnosti a kliknutím pravým tlačítkem na malé miniaturu, která se zobrazí nalevo od názvu objektu bitové kopie. Zvolte **resetování**.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.PictureBox>
 - [Přehled ovládacího prvku PictureBox](picturebox-control-overview-windows-forms.md)
 - [Postupy: Změna velikosti či umístění obrázku za běhu](how-to-modify-the-size-or-placement-of-a-picture-at-run-time-windows-forms.md)

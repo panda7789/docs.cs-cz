@@ -2,12 +2,12 @@
 title: Podpora formátu JSON a dalších formátů přenosu dat
 ms.date: 03/30/2017
 ms.assetid: a527f1be-4e37-4beb-9a95-291480d19627
-ms.openlocfilehash: 65db474ebfe2b9a07c0f940d0033011c7b44ed45
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 9bf27a853fff42c098446067fa6f0db6bf4dbc4a
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54691694"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59128476"
 ---
 # <a name="support-for-json-and-other-data-transfer-formats"></a>Podpora formátu JSON a dalších formátů přenosu dat
 JSON (JavaScript Object Notation) je formát kódování efektivní data, která umožňuje rychlé výměny malé množství dat mezi prohlížeči klientů a AJAX (asynchronní JavaScript a XML)-povolené webové služby.  
@@ -23,5 +23,6 @@ JSON (JavaScript Object Notation) je formát kódování efektivní data, která
  Popisuje souvztažnost mezi kódování zápis JSON (JavaScript Object) a informační sadu XML, který se používá interně ve Windows Communication Foundation (WCF) představující data zakódovaná ve formátu JSON a dokumenty.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>
 - <xref:System.Runtime.Serialization.Json.JsonReaderWriterFactory>

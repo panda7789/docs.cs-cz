@@ -2,12 +2,12 @@
 title: Sdružování
 ms.date: 03/30/2017
 ms.assetid: 688dfb30-b79a-4cad-a687-8302f8a9ad6a
-ms.openlocfilehash: 91fdb34a82446aab1528835132efd31e2858191c
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
-ms.translationtype: MT
+ms.openlocfilehash: 63363df6d5af2f9f160b0cec5d209c2fc2cc1e10
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58832434"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59114306"
 ---
 # <a name="pooling"></a>Sdružování
 Tato ukázka předvádí, jak rozšířit Windows Communication Foundation (WCF) pro podporu sdružování objektů. Vzorek ukazuje, jak vytvořit atribut, který je syntakticky a sémanticky podobné `ObjectPoolingAttribute` atribut funkce podnikové služby. Sdružování objektů umožňují výrazné zvýšení výkonu aplikace. Pokud se nepoužívá správně však může mít opačný efekt. Sdružování objektů pomáhá snižovat režijní náklady na opětovné vytvoření často používané objekty, které vyžadují rozsáhlé inicializace. Nicméně pokud volání metody na objektu ve fondu trvá značné množství času k dokončení, sdružování objektů zařadí do fronty dalších žádostí ihned poté, co je dosaženo maximální velikosti fondu. Proto může dojít k selhání obsluhovat požadavky na vytvoření některý objekt vyvoláním výjimka časového limitu.  
@@ -254,4 +254,3 @@ Press <ENTER> to exit.
 >  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Instancing\Pooling`  
-  

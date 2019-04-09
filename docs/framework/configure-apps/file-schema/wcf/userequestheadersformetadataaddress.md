@@ -2,12 +2,12 @@
 title: <useRequestHeadersForMetadataAddress>
 ms.date: 03/30/2017
 ms.assetid: 679f0eae-f353-44d1-b42d-a9e247509774
-ms.openlocfilehash: 842f989ab1f2f0b9e8fe08e8fd729f983e846ffc
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 969461d0e5bdc9f8c49b7a019a6000af5af77eec
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55261565"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59121183"
 ---
 # <a name="userequestheadersformetadataaddress"></a>\<useRequestHeadersForMetadataAddress>
 Umožňuje načítání informací o adrese metadat ze záhlaví zpráv požadavku.  
@@ -45,7 +45,8 @@ Umožňuje načítání informací o adrese metadat ze záhlaví zpráv požadav
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<behavior>](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|Určuje chování element.|  
+|[\<chování >](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|Určuje chování element.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Configuration.UseRequestHeadersForMetadataAddressElement>

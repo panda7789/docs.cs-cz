@@ -3,12 +3,12 @@ title: <sqlWorkflowInstanceStore>
 ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: 8a4e4214-fc51-4f4d-b968-0427c37a9520
-ms.openlocfilehash: 9808d5f1f5053f8b68603e03d44b502aee6f5f0c
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
+ms.openlocfilehash: 8601f1c7f4e1dbf911020c328652c371bf039124
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58412016"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59119077"
 ---
 # <a name="sqlworkflowinstancestore"></a>\<sqlWorkflowInstanceStore>
 Chování služby, která můžete nakonfigurovat <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> funkci, která podporuje zachovává informace o stavu pro instance služby pracovního postupu do databáze serveru SQL Server 2005 nebo SQL Server 2008. Další informace o této funkci najdete v tématu [Store Instance pracovního postupu SQL](../../../../../docs/framework/windows-workflow-foundation/sql-workflow-instance-store.md).  
@@ -61,6 +61,7 @@ Chování služby, která můžete nakonfigurovat <xref:System.Activities.Durabl
 |[\<chování > z \<serviceBehaviors >](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/behavior-of-servicebehaviors-of-workflow.md)|Určuje chování element.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Activities.Description.SqlWorkflowInstanceStoreBehavior>
 - <xref:System.ServiceModel.Activities.Configuration.SqlWorkflowInstanceStoreElement>
 - <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore>

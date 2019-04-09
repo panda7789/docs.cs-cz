@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 49d1706a-1e0c-4c85-9704-75c908372eb9
-ms.openlocfilehash: fccfa5b0ef531ac8ecc869d7a248bb4f43a55d2c
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: d05e071b97c9a1f3043949a6619a187dd418f9b7
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57375243"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59120975"
 ---
 # <a name="implementing-an-implicit-transaction-using-transaction-scope"></a>Implementace implicitní transakce s využitím oboru transakcí
 <xref:System.Transactions.TransactionScope> Třída poskytuje jednoduchý způsob, jak označit bloku kódu jako účasti na transakci, aniž by bylo nutné k interakci se vlastní transakce. Obor transakce můžete vybrat a spravovat okolí transakce automaticky. Z důvodu jeho snadno použitelných a efektivitu, je doporučeno používat <xref:System.Transactions.TransactionScope> třídy při vývoji aplikace transakce.  
@@ -169,5 +169,6 @@ using(TransactionScope scope1 = new TransactionScope())
  Když vytvoříte nový <xref:System.Transactions.TransactionScope> instance, můžete použít <xref:System.Transactions.EnterpriseServicesInteropOption> výčet v jednom z konstruktorů k určení, jak pracovat s modelu COM +. Další informace najdete v části [interoperabilita se službami Enterprise Services a transakcemi COM +](../../../../docs/framework/data/transactions/interoperability-with-enterprise-services-and-com-transactions.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Transactions.Transaction.Clone%2A>
 - <xref:System.Transactions.TransactionScope>

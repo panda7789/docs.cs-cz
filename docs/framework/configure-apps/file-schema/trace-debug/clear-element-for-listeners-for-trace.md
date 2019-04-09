@@ -1,5 +1,5 @@
 ---
-title: <clear> – element pro element <listeners> pro element <trace>
+title: <clear> – Element pro <listeners> pro <trace>
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/trace/listeners/clear
@@ -7,12 +7,12 @@ helpviewer_keywords:
 - clear element for <listeners> for <trace>
 - <clear> element for <listeners> for <trace>
 ms.assetid: b44732a8-271f-4a06-ba9e-fe3298d6f192
-ms.openlocfilehash: b199f24a2c1e1c8154c0ec22bef6367e5ba0ec26
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 97b18f9d6baa618b0f535955b232e2119c758b11
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55262602"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59124888"
 ---
 # <a name="clear-element-for-listeners-for-trace"></a>\<Vymazat > – Element pro \<naslouchacích procesů > pro \<trasování >
 Vymaže `Listeners` kolekce pro trasování.  
@@ -78,10 +78,11 @@ Vymaže `Listeners` kolekce pro trasování.
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Diagnostics.Trace.Listeners%2A>
 - <xref:System.Diagnostics.Trace>
 - <xref:System.Diagnostics.Debug>
 - <xref:System.Diagnostics.TraceSource>
 - [Trasování a ladění schématu nastavení](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)
 - [\<remove>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/remove-element-for-listeners-for-trace.md)
-- [Moduly naslouchání trasování](../../../../../docs/framework/debug-trace-profile/trace-listeners.md)
+- [Naslouchací procesy trasování](../../../../../docs/framework/debug-trace-profile/trace-listeners.md)

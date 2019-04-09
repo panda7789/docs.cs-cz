@@ -17,12 +17,12 @@ helpviewer_keywords:
 - minimum freshness policy
 - age of cached resources
 ms.assetid: 74f0bcaf-5c95-40c1-9967-f3bbf1d2360a
-ms.openlocfilehash: fa99806510bac8102478cc21e0782067f7bdff86
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 0fb9b50fdbc0a1e11992baac684c5e2e8c081f5f
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54497413"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59129308"
 ---
 # <a name="time-based-cache-policies"></a>Zásady mezipaměti na základě času
 Zásady mezipaměti na základě času definuje aktuálnosti položek v mezipaměti pomocí čas, kdy byla načtena prostředek, vrátí hlavičky prostředku a aktuální čas. Při nastavování zásad mezipaměti na základě času, můžete použít <xref:System.Net.Cache.HttpRequestCacheLevel.Default> podle času zásady nebo vytvořte vlastní zásadu podle času. Při použití výchozí zásady na základě času pro prostředky získané s použitím protokolu HTTP (Hypertext Transfer), chování přesné mezipaměti se určuje podle záhlaví zahrnutá v odpovědi v mezipaměti a chování zadané v části 13 a 14 dokumentu RFC 2616 k dispozici na [Engineering Task Force IETF (Internet)](https://www.ietf.org/) webu. Příklad kódu, který ukazuje nastavení výchozí zásady podle času pro HTTP prostředky, najdete v části [jak: Nastavení výchozích zásad mezipaměti na základě času pro aplikaci](../../../docs/framework/network-programming/how-to-set-the-default-time-based-cache-policy-for-an-application.md). Příklady kódu, které ukazují, vytváření a používání mezipaměti zásad, najdete v části [konfiguraci ukládání do mezipaměti v síťových aplikacích](../../../docs/framework/network-programming/configuring-caching-in-network-applications.md).  
@@ -62,8 +62,9 @@ Zásady mezipaměti na základě času definuje aktuálnosti položek v mezipam�
 -   [Interakce zásad mezipaměti – minimální stáří a minimální novost](../../../docs/framework/network-programming/cache-policy-interaction-maximum-age-and-minimum-freshness.md)  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Správa mezipaměti pro síťové aplikace](../../../docs/framework/network-programming/cache-management-for-network-applications.md)
 - [Zásady mezipaměti](../../../docs/framework/network-programming/cache-policy.md)
-- [Zásady mezipaměti na základě místa](../../../docs/framework/network-programming/location-based-cache-policies.md)
-- [Konfigurace mezipaměti v síťových aplikacích](../../../docs/framework/network-programming/configuring-caching-in-network-applications.md)
+- [Zásady mezipaměti na základě umístění](../../../docs/framework/network-programming/location-based-cache-policies.md)
+- [Konfigurace ukládání do mezipaměti v síťových aplikacích](../../../docs/framework/network-programming/configuring-caching-in-network-applications.md)
 - [\<requestCaching – > – Element (nastavení sítě)](../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)

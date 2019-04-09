@@ -12,12 +12,12 @@ helpviewer_keywords:
 - Windows Forms, control licenses
 - licensed controls [Windows Forms]
 ms.assetid: 2de803b8-495e-4982-b209-19a72aba0460
-ms.openlocfilehash: 527a0bc6591dc4146ec94b2a46777d6ca533ec74
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 87d8ac8384fd491b92b59ea8f014b3a521707825
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54601689"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59130738"
 ---
 # <a name="lcexe-license-compiler"></a>Lc.exe (kompilátor licencí)
 License Compiler čte textové soubory, které obsahují licenční informace a vytváří binární soubor, který může být integrován jako prostředek do spustitelného souboru modulu CLR (Common Language Runtime).  
@@ -93,6 +93,7 @@ lc @response.rsp
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Nástroje](../../../docs/framework/tools/index.md)
 - [Al.exe (linker sestavení)](../../../docs/framework/tools/al-exe-assembly-linker.md)
 - [Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

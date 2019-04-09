@@ -2,12 +2,12 @@
 title: Používání vazeb NetHttpBinding
 ms.date: 03/30/2017
 ms.assetid: fe134acf-ceca-49de-84a9-05a37e3841f1
-ms.openlocfilehash: 47a4da6dd709c300b62a7380e6e0754e31782dd8
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
+ms.openlocfilehash: 5090cfdfeb068acda1e1092e408f3cd747c574c2
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58411067"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59121014"
 ---
 # <a name="using-the-nethttpbinding"></a>Používání vazeb NetHttpBinding
 <xref:System.ServiceModel.NetHttpBinding> Vazba určená pro použití protokolu HTTP nebo objektu websocket na straně služby a používá binární kódování ve výchozím nastavení. <xref:System.ServiceModel.NetHttpBinding> zjistí, jestli se používá s kontraktů požadavek odpověď nebo duplexní kontrakt a změnit její chování tak, aby odpovídaly – použije HTTP pro kontraktů požadavek odpověď a protokoly Websocket pro duplexní kontrakty. Toto chování lze přepsat pomocí <xref:System.ServiceModel.Channels.WebSocketTransportUsage> nastavení:  
@@ -59,6 +59,7 @@ ServiceHost svchost = new ServiceHost(typeof(Service1), baseAddress);
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Konfigurace vazeb pro služby](../../../../docs/framework/wcf/configuring-bindings-for-wcf-services.md)
 - [Vazby](../../../../docs/framework/wcf/feature-details/bindings.md)
 - [Vazby poskytované systémem](../../../../docs/framework/wcf/system-provided-bindings.md)

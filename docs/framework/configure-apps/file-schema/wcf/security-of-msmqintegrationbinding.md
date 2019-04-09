@@ -1,13 +1,13 @@
 ---
-title: <security> z <msmqIntegrationBinding>
+title: <security> of <msmqIntegrationBinding>
 ms.date: 03/30/2017
 ms.assetid: ae5c68a8-14a2-4c6e-b9e0-3e94e3e9135e
-ms.openlocfilehash: ceda00615ae579edb0360006bb70acd11716ce6a
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 8d79523db2a1567283b934abbd3de1adbbe6b0b5
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55275168"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59125785"
 ---
 # <a name="security-of-msmqintegrationbinding"></a>\<security> of \<msmqIntegrationBinding>
 Definuje nastavení zabezpečení přenosu pro kanál integrace služby Řízení front zpráv (MSMQ).  
@@ -49,7 +49,7 @@ msmqIntegrationBinding
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<transport>](../../../../../docs/framework/configure-apps/file-schema/wcf/transport-of-msmqintegrationbinding.md)|Definuje nastavení zabezpečení pro přenos integrace služby Řízení front zpráv. Tento prvek je typu <xref:System.ServiceModel.Configuration.MsmqTransportSecurityElement>.|  
+|[\<přenos >](../../../../../docs/framework/configure-apps/file-schema/wcf/transport-of-msmqintegrationbinding.md)|Definuje nastavení zabezpečení pro přenos integrace služby Řízení front zpráv. Tento prvek je typu <xref:System.ServiceModel.Configuration.MsmqTransportSecurityElement>.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -58,6 +58,7 @@ msmqIntegrationBinding
 |[\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)|Prvek vazby [ \<msmqIntegrationBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/msmqintegrationbinding.md).|  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Configuration.MsmqIntegrationSecurityElement>
 - <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding.Security%2A>
 - <xref:System.ServiceModel.Configuration.MsmqIntegrationBindingElement.Security%2A>

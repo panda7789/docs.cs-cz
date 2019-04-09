@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: f0219919-1f02-4588-8704-327a62fd91f1
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 06db09ac66164886b1dc99a37129201543c5ce4c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 8373ed288ff3e8e3f7992729e57b366a4c0043a4
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54514319"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59126747"
 ---
 # <a name="net-framework-client-profile"></a>Profil klienta rozhraní .NET Framework
 .NET Client Profile je podmnožinou rozhraní .NET Framework, která byla součástí [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] a starších verzí a byla optimalizována pro klientské aplikace. Rozhraní .NET Framework je vývojovou platformu pro Windows, Windows Phone a Microsoft Azure a poskytuje prostředí pro spouštění spravovaných aplikací a knihovny tříd rozhraní .NET Framework. [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] a dřívější verze poskytují dvě možnosti nasazení: úplné rozhraní .NET Framework a profil klienta. Profil klienta podporuje rychlejší nasazení a menší instalační balíčky aplikace než plná verze rozhraní .NET Framework.  
@@ -28,6 +28,7 @@ ms.locfileid: "54514319"
  Při instalaci [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], je rozhraní .NET Framework 4 Client Profile aktualizována na plnou verzi rozhraní .NET Framework. Informace o instalaci [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], naleznete v tématu [nainstalovat rozhraní .NET Framework pro vývojáře](../../../docs/framework/install/guide-for-developers.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [.NET framework Client Profile (.NET Framework 4)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cc656912%28v=vs.100%29)
 - [Přehled cílení na více verzí sady Visual Studio](/visualstudio/ide/visual-studio-multi-targeting-overview)
 - [Řešení potíží s cílením na rozhraní .NET Framework](/visualstudio/msbuild/troubleshooting-dotnet-framework-targeting-errors)

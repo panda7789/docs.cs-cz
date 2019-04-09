@@ -5,12 +5,12 @@ helpviewer_keywords:
 - controls [WPF], Calendar
 - Calendar control [WPF]
 ms.assetid: ee844e4a-eefe-48e2-bd0d-1d82cc5e960b
-ms.openlocfilehash: d2332f5d11e60a45e4da5d62ef7beed7aa14dfa7
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 9a64c6cd6fc1cc53383f2617f7a7a78959e87c4e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57359403"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59124784"
 ---
 # <a name="calendar"></a>Kalendář
 Kalendář umožňuje uživateli vybrat datum pomocí vizuálního zobrazení kalendáře.  
@@ -49,8 +49,9 @@ Ovládací prvky kalendáře
 |END|<xref:System.Windows.Controls.CalendarMode.Decade>|Rok se změní <xref:System.Windows.Controls.Calendar.DisplayDate%2A> s tím loňským desetiletí. <xref:System.Windows.Controls.Calendar.SelectedDate%2A> Nezmění.|  
 |CTRL + ŠIPKA NAHORU|Jakýkoli|Přepne na další větší <xref:System.Windows.Controls.Calendar.DisplayMode%2A>. Pokud <xref:System.Windows.Controls.Calendar.DisplayMode%2A> již <xref:System.Windows.Controls.CalendarMode.Decade>, žádná akce.|  
 |CTRL + ŠIPKA DOLŮ|Jakýkoli|Přepne na další menší <xref:System.Windows.Controls.Calendar.DisplayMode%2A>. Pokud <xref:System.Windows.Controls.Calendar.DisplayMode%2A> již <xref:System.Windows.Controls.CalendarMode.Month>, žádná akce.|  
-|MEZERNÍK nebo ENTER|<xref:System.Windows.Controls.CalendarMode.Year> Nebo <xref:System.Windows.Controls.CalendarMode.Decade>|Přepínače <xref:System.Windows.Controls.Calendar.DisplayMode%2A> k <xref:System.Windows.Controls.CalendarMode.Month> nebo <xref:System.Windows.Controls.CalendarMode.Year> reprezentována cílených položky.|  
+|MEZERNÍK nebo ENTER|<xref:System.Windows.Controls.CalendarMode.Year> or <xref:System.Windows.Controls.CalendarMode.Decade>|Přepínače <xref:System.Windows.Controls.Calendar.DisplayMode%2A> k <xref:System.Windows.Controls.CalendarMode.Month> nebo <xref:System.Windows.Controls.CalendarMode.Year> reprezentována cílených položky.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Ovládací prvky](index.md)
 - [Styly a šablony](styling-and-templating.md)

@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Multiple EndPoints
 ms.assetid: 8f0c2e1f-9aee-41c2-8301-c72b7f664412
-ms.openlocfilehash: 4a9793b6598712265d47af1d31f2455436dfd855
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
-ms.translationtype: MT
+ms.openlocfilehash: 438c321e44f04060a733b90ccdbf02caba9406c2
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58817693"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59112707"
 ---
 # <a name="multiple-endpoints"></a>Víc koncových bodů
 Více koncových bodů Ukázka předvádí, jak konfigurovat několik koncových bodů ve službě a komunikovat s každého koncového bodu z klienta. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md). Chcete-li definovat dva koncové body, které podporují byla změněna konfigurace služby `ICalculator` smlouvy, ale každý na jinou adresu pomocí jinou vazbou. Konfigurace klienta a kód se upravila tak komunikovat s oběma koncových bodů služby.  
@@ -118,4 +118,3 @@ Press <ENTER> to terminate client.
 >  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\MultipleEndpoints`  
-  

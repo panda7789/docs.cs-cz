@@ -2,12 +2,12 @@
 title: TcpTransportBindingElement
 ms.date: 03/30/2017
 ms.assetid: 33bbc1e5-44e4-4ee3-b7b5-801dc78956e4
-ms.openlocfilehash: 0d5dc5c9b9bf2313d18c9fadb1a2adb87c1b11b1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 6d2717bc2d1d14e369af2b9c5a8c0affb67501d9
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54610783"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59124225"
 ---
 # <a name="tcptransportbindingelement"></a>TcpTransportBindingElement
 TcpTransportBindingElement  
@@ -65,4 +65,5 @@ class TcpTransportBindingElement : ConnectionOrientedTransportBindingElement
 |Obor názvů|Definované v root\ServiceModel|  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Channels.TcpTransportBindingElement>

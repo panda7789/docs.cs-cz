@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: a2b86b63-08b2-4943-b344-3c2cf46ccd31
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c70c70f251fca9312019d4c63304e8354bf87fd1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f0ecb05dba70dc9c8aba7f04928fd0ab49c900c8
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54729155"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59125577"
 ---
 # <a name="reportavoncomrelease-mda"></a>reportAvOnComRelease – pomocník spravovaného ladění (MDA)
 `reportAvOnComRelease` Pomocníka spravovaného ladění (MDA) se aktivuje, pokud jsou výjimky vyvolány z důvodu chyby při provádění COM interop a používá počítání uživatelských referencí <xref:System.Runtime.InteropServices.Marshal.Release%2A> nebo <xref:System.Runtime.InteropServices.Marshal.ReleaseComObject%2A> metoda v kombinaci s nezpracovaná volání COM.  
@@ -29,7 +29,7 @@ ms.locfileid: "54729155"
 ## <a name="cause"></a>Příčina  
  V některých případech je vyvolána výjimka z důvodu chyby při provádění COM interop a používá počítání uživatelských referencí <xref:System.Runtime.InteropServices.Marshal.Release%2A> nebo <xref:System.Runtime.InteropServices.Marshal.ReleaseComObject%2A> metoda v kombinaci s nezpracovaná volání COM. Za normálních okolností se tato výjimka je zahozena, protože pokud to neuděláte by způsobila porušení přístupu v prostředí CLR, Probíhá ukončování. Pokud tohoto Pomocníka s nastavením je povoleno, možné takové výjimky zjištěna a předávat místo jednoduše zahozeny.  
   
-## <a name="resolution"></a>Rozlišení  
+## <a name="resolution"></a>Řešení  
  Zkontrolujte vaši informaci, počítací kódu a vyhledejte chyby, stejně jako zkoumání nativní klienty objektu pro chyby při počítání referencí.  
   
 ## <a name="effect-on-the-runtime"></a>Vliv na modul Runtime  
@@ -49,6 +49,7 @@ ms.locfileid: "54729155"
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
 - [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
 - [Zařazování spolupráce](../../../docs/framework/interop/interop-marshaling.md)

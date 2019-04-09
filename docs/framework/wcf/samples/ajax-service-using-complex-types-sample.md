@@ -2,12 +2,12 @@
 title: Ukázka služby AJAX využívající komplexní typy
 ms.date: 03/30/2017
 ms.assetid: 88242b99-4811-4cbe-8201-52ddf48fb174
-ms.openlocfilehash: 17c760c8276799fed7e7a8366c17ef9f5cf7081c
-ms.sourcegitcommit: 0069cb3de8eed4e92b2195d29e5769a76111acdd
-ms.translationtype: MT
+ms.openlocfilehash: 54d8c90f8317b69195401eda64e8a482aaf8460a
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "56333479"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59128502"
 ---
 # <a name="ajax-service-using-complex-types-sample"></a>Ukázka služby AJAX využívající komplexní typy
 Tato ukázka demonstruje použití Windows Communication Foundation (WCF) k vytvoření služby ASP.NET asynchronní JavaScript a XML (AJAX), který vytváří instance komplexních typů a odešle je mezi službou a klienta jako JSON JavaScript Object Notation (). Služby AJAX můžete přistupovat pomocí kódu jazyka JavaScript z webového prohlížeče klienta. Tato ukázka je založena na [základní služba AJAX](../../../../docs/framework/wcf/samples/basic-ajax-service.md) vzorku.  
@@ -67,4 +67,5 @@ function onSuccess(mathResult){
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Ajax\ComplexTypeAjaxService`  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Základní služba AJAX](../../../../docs/framework/wcf/samples/basic-ajax-service.md)

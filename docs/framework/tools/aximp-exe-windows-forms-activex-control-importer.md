@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 482c0d83-7144-4497-b626-87d2351b78d0
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 5b7a2725b340c4ecb43861e1b8855fcae425a4b4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 4b7e9401cbd26c62f88ccb4a4b8c2caeb78768d9
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54521878"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59119194"
 ---
 # <a name="aximpexe-windows-forms-activex-control-importer"></a>Aximp.exe (importér ovládacích prvků ActiveX Windows Forms)
 Importér ovládacích prvků ActiveX převede definice typů v knihovně typů modelu COM pro ovládací prvek ActiveX na ovládací prvek Windows Forms.  
@@ -38,18 +38,18 @@ aximp [options]{file.dll | file.ocx}
   
 |Argument|Popis|  
 |--------------|-----------------|  
-|*Soubor*|Název zdrojového souboru obsahujícího ovládací prvek ActiveX, který má být převeden. Argument souboru musí mít příponu .dll nebo .ocx.|  
+|*soubor*|Název zdrojového souboru obsahujícího ovládací prvek ActiveX, který má být převeden. Argument souboru musí mít příponu .dll nebo .ocx.|  
   
 |Možnost|Popis|  
 |------------|-----------------|  
 |`/delaysign`|Určuje, že Aximp.exe podepíše výsledný ovládací prvek pomocí zpožděného podepisování. Tuto možnost musíte zadat buď `/keycontainer:`, `/keyfile:`, nebo `/publickey:` možnost. Další informace o procesu zpožděného podepisování naleznete v tématu [zpožděné podepisování sestavení](../../../docs/framework/app-domains/delay-sign-assembly.md).|  
 |`/help`|Zobrazí syntaxi příkazu a možnosti nástroje.|  
 |`/keycontainer:` *containerName*|Podepisuje výsledný ovládací prvek se silným názvem pomocí dvojice veřejného/soukromého klíče nacházející v kontejneru klíčů určeném parametrem *containerName*.|  
-|`/keyfile:` *Název souboru*|Podepisuje výsledný ovládací prvek se silným názvem pomocí vydavatele dvojice oficiálního veřejného/soukromého klíče v *filename*.|  
+|`/keyfile:` *filename*|Podepisuje výsledný ovládací prvek se silným názvem pomocí vydavatele dvojice oficiálního veřejného/soukromého klíče v *filename*.|  
 |`/nologo`|Potlačí zobrazení úvodního nápisu společnosti Microsoft.|  
-|`/out:` *Název souboru*|Určuje název sestavení, které se má vytvořit.|  
-|`/publickey:` *Název souboru*|Podepisuje výsledný ovládací prvek se silným názvem pomocí veřejného klíče nacházejícího se v souboru určeném *filename*.|  
-|`/rcw:` *Název souboru*|Používá určenou obálku volatelnou modulem runtime namísto generování nové. Můžete zadat více instancí. Aktuální adresář se používá pro relativní cesty. Další informace najdete v tématu [obálka volatelná za běhu](../../../docs/framework/interop/runtime-callable-wrapper.md).|  
+|`/out:` *filename*|Určuje název sestavení, které se má vytvořit.|  
+|`/publickey:` *filename*|Podepisuje výsledný ovládací prvek se silným názvem pomocí veřejného klíče nacházejícího se v souboru určeném *filename*.|  
+|`/rcw:` *filename*|Používá určenou obálku volatelnou modulem runtime namísto generování nové. Můžete zadat více instancí. Aktuální adresář se používá pro relativní cesty. Další informace najdete v tématu [obálka volatelná za běhu](../../../docs/framework/interop/runtime-callable-wrapper.md).|  
 |`/silent`|Potlačí zobrazování zpráv o úspěšném dokončení.|  
 |`/source`|Generuje zdrojový kód jazyka C# pro obálku Windows Forms.|  
 |`/verbose`|Určuje režim podrobného vypisování; zobrazuje dodatečné informace o průběhu.|  
@@ -80,5 +80,6 @@ aximp c:\systemroot\system32\msdxm.ocx
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Nástroje](../../../docs/framework/tools/index.md)
 - [Ildasm.exe (IL Disassembler)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md)

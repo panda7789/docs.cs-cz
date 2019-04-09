@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: a582c53f-f203-44ae-a797-d7f169a4fbb5
-ms.openlocfilehash: 05ca7defa3e070933d4c24f105fdb6fec423dc71
-ms.sourcegitcommit: c6f69b0cf149f6b54483a6d5c2ece222913f43ce
+ms.openlocfilehash: bfc26835258606ff20dd066ecb6e4c874d0be2f2
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55904198"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59116711"
 ---
 # <a name="method-based-query-syntax-examples-partitioning-linq"></a>Příklady syntaxe dotazů založených na volání metody: Partitioning (LINQ
 Příklady v tomto tématu ukazují, jak používat <xref:System.Linq.Enumerable.Skip%2A>, <xref:System.Linq.Enumerable.SkipWhile%2A>, <xref:System.Linq.Enumerable.Take%2A>, a <xref:System.Linq.Enumerable.TakeWhile%2A> metody pro dotazování <xref:System.Data.DataSet> pomocí syntaxe výrazu dotazu.  
@@ -71,6 +71,7 @@ Příklady v tomto tématu ukazují, jak používat <xref:System.Linq.Enumerable
  [!code-vb[DP LINQ to DataSet Examples#TakeWhileSimple_MQ](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/VB/Module1.vb#takewhilesimple_mq)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Načtení dat do datové sady](../../../../docs/framework/data/adonet/loading-data-into-a-dataset.md)
 - [Příklady LINQ to DataSet](../../../../docs/framework/data/adonet/linq-to-dataset-examples.md)
 - [Přehled standardních operátorů dotazu (C#)](../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)

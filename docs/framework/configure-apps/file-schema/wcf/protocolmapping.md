@@ -2,12 +2,12 @@
 title: <protocolMapping>
 ms.date: 03/30/2017
 ms.assetid: 5076644b-1f33-4f26-9488-87de9fcda04c
-ms.openlocfilehash: 6ec17457c8742fdf17208c6588e0ab70ece7c42a
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: e26044340bda84fe38b7e286edf833affa94b86c
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55268666"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59118208"
 ---
 # <a name="protocolmapping"></a>\<protocolMapping>
 Představuje konfigurační oddíl pro definování sady výchozích mapování protokolů mezi schématy přenosových protokolů (např. http, net.tcp, net.pipe atd.) a vazbami WCF. Při vytváření výchozí koncové body za běhu, Windows Communication Foundation (WCF) zabývá nakonfigurované mapování a určuje, na které vazby pro konkrétní základě adresu.  
@@ -35,7 +35,7 @@ Představuje konfigurační oddíl pro definování sady výchozích mapování 
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Filtry>](filters-of-routing.md)|Obsahuje výchozí mapování protokolů mezi schématem přenosového protokolu (např. http, net.tcp, net.pipe atd.) a vazeb WCF.|  
+|[\<Filtry >](filters-of-routing.md)|Obsahuje výchozí mapování protokolů mezi schématem přenosového protokolu (např. http, net.tcp, net.pipe atd.) a vazeb WCF.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -60,5 +60,6 @@ Představuje konfigurační oddíl pro definování sady výchozích mapování 
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Configuration.ProtocolMappingSection?displayProperty=nameWithType>
 - <xref:System.ServiceModel.Configuration.ProtocolMappingElement?displayProperty=nameWithType>

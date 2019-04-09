@@ -6,12 +6,12 @@ helpviewer_keywords:
 - MenuStrip control [Windows Forms], arranging items
 - ToolStripMenuItems [Windows Forms], copying and pasting
 ms.assetid: 17ef4207-e92e-4db2-b648-27246e6517ad
-ms.openlocfilehash: 18077f542b1b49f8e81e68fc1e7a5d3e1e417a21
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: 94dc1271468661801d07b341214b03bc31bb3099
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57713875"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59116347"
 ---
 # <a name="how-to-copy-toolstripmenuitems"></a>Postupy: Kopírování ToolStripMenuItems
 V době návrhu, můžete zkopírovat celý nabídek nejvyšší úrovně a jejich položky podnabídky na jiné místo na <xref:System.Windows.Forms.MenuStrip>. Můžete také zkopírovat jednotlivé položky nabídky mezi nabídek nejvyšší úrovně nebo změní pozici položky nabídky v nabídce.  
@@ -43,6 +43,7 @@ V době návrhu, můžete zkopírovat celý nabídek nejvyšší úrovně a jeji
      Položku dílčí nabídky, který jste zkopírovali se vloží před podnabídky vybrané položky.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.MenuStrip>
 - <xref:System.Windows.Forms.ToolStripMenuItem>
 - [Přehled ovládacího prvku MenuStrip](menustrip-control-overview-windows-forms.md)

@@ -1,5 +1,5 @@
 ---
-title: < System.Runtime.Caching > – Element (nastavení mezipaměti)
+title: <system.runtime.caching> – element (nastavení mezipaměti)
 ms.date: 03/30/2017
 helpviewer_keywords:
 - <system.runtime.caching> element
@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 9b44daee-874a-4bd1-954e-83bf53565590
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a68af0727e6f2fc92f9c6875ec6566dc969bd65d
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: da059e1be7c685eba7792045abf4ffa691525d2e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55275792"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59131355"
 ---
 # <a name="systemruntimecaching-element-cache-settings"></a>\<System.Runtime.Caching > – Element (nastavení mezipaměti)
 Poskytuje konfiguraci pro výchozí v paměťově <xref:System.Runtime.Caching.ObjectCache> implementaci prostřednictvím `memoryCache` záznam v konfiguračním souboru.  
@@ -45,7 +45,7 @@ Poskytuje konfiguraci pro výchozí v paměťově <xref:System.Runtime.Caching.O
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<configuration>](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)|Určuje kořenový element v každém konfiguračním souboru, který je používán common language runtime a [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] aplikací.|  
+|[\<Konfigurace >](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)|Určuje kořenový element v každém konfiguračním souboru, který je používán common language runtime a [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] aplikací.|  
   
 ## <a name="remarks"></a>Poznámky  
  Třídy v tomto oboru názvů poskytují způsob, jak používat ukládání do mezipaměti zařízení podobné těm v technologii ASP.NET, ale bez závislosti na `System.Web` sestavení. Další informace najdete v tématu [ukládání do mezipaměti v aplikacích .NET Framework](../../../../../docs/framework/performance/caching-in-net-framework-applications.md).  
@@ -74,4 +74,5 @@ Poskytuje konfiguraci pro výchozí v paměťově <xref:System.Runtime.Caching.O
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [\<memoryCache > – Element (nastavení mezipaměti)](../../../../../docs/framework/configure-apps/file-schema/runtime/memorycache-element-cache-settings.md)

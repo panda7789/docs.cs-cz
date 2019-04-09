@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ed2c818ce9e11ff6eca26ac1c6f13b19668551b7
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: b838a83a160707e546b05ef334eb17d0c6e6cc27
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57485327"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59133559"
 ---
 # <a name="imetadataemitsetpinvokemap-method"></a>IMetaDataEmit::SetPinvokeMap – metoda
 Nastavuje nebo mění určené předchozím volání funkce PInvoke signatury metody, [imetadataemit::definepinvokemap –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definepinvokemap-method.md).  
@@ -61,5 +61,6 @@ HRESULT SetPinvokeMap (
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
 - [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

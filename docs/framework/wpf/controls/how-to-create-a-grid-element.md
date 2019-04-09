@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - Grid control [WPF], creating [WPF], grid instance
 ms.assetid: b2f07626-9df8-43b8-8d36-492f3cb42837
-ms.openlocfilehash: 5aa0e5b617d952fd5df1f80ae0ff146a6899aa32
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: ebb9369da73bd595338e5b6ef42bda639bde6ed4
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57379507"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59134534"
 ---
 # <a name="how-to-create-a-grid-element"></a>Postupy: Vytvoření elementu mřížky
 ## <a name="example"></a>Příklad  
@@ -26,5 +26,6 @@ ms.locfileid: "57379507"
 
   ![snímek obrazovky znázorňuje uživatelské rozhraní WPF, které obsahuje dělí na tři sloupce mřížky.  Nese záhlaví "2018 produkty dodáno" pokrývající všechny sloupce do horního řádku a má tři sloupce, každý s prodeji pro určité čtvrtletí.  Dolní řádek obsahuje text pokrývání uzlů dva sloupce se zprávou ' celkový počet jednotek: 300,000'](././media/how-to-create-a-grid-element/how-to-create-a-grid-element.png)
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Controls.Grid>
-- [Přehled panelu](panels-overview.md)
+- [Přehled panelů](panels-overview.md)

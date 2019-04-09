@@ -5,12 +5,12 @@ helpviewer_keywords:
 - WPF Host application [WPF]
 - PresentationHost.exe
 ms.assetid: 3215bfa1-722c-4ac8-a7c5-bdd02d30afbd
-ms.openlocfilehash: 8275777c58363c31d981f46172ad2f3f18e34861
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 586d306d0f375241c9382e1e24cf1af75b990ba9
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57369692"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59122860"
 ---
 # <a name="wpf-host-presentationhostexe"></a>Hostitel WPF (PresentationHost.exe)
 Hostitel Windows Presentation Foundation (WPF) (PresentationHost.exe) je aplikace, která umožňuje [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace zajistit také jejich hostování v kompatibilní prohlížečů (včetně [!INCLUDE[TLA#tla_ie6](../../../../includes/tlasharptla-ie6-md.md)] a novější). Ve výchozím nastavení, je Windows Presentation Foundation (WPF) hostitele zaregistrovaný jako prostředí a [!INCLUDE[TLA2#tla_mime](../../../../includes/tla2sharptla-mime-md.md)] obslužné rutiny pro hostované v prohlížeči [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] obsah, který obsahuje:  
@@ -58,4 +58,5 @@ Hostitel Windows Presentation Foundation (WPF) (PresentationHost.exe) je aplikac
  `PresentationHost.exe -debug -debugSecurityZoneURL http://www.example.com c:\folderpath\example.xbap`  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Zabezpečení](../security-wpf.md)

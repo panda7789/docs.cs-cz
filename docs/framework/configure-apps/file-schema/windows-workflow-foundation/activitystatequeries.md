@@ -3,12 +3,12 @@ title: <activityStateQueries>
 ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: bdd3c8ae-a13f-4df1-9b3c-a9d6c4bb1b5f
-ms.openlocfilehash: ad41c1afec0b46a404f8f24882587c1dfeb68a80
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 90acda7277fd276f43a619a014fbce103261aa1e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55267804"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59112226"
 ---
 # <a name="activitystatequeries"></a>\<activityStateQueries>
 Představuje kolekci dotazů, které se používají ke sledování změn životního cyklu aktivit, které tvoří instance pracovního postupu. Můžete například sledovat, pokaždé, když dokončí "Odeslat E-Mail" aktivity v rámci instance pracovního postupu. Tento dotaz je nezbytné pro sledování účastníka přihlásit k odběru objekty záznam stavu aktivity. Dostupné stavy přihlásit k odběru jsou uvedeny v ActivityStates.  
@@ -60,9 +60,10 @@ Představuje kolekci dotazů, které se používají ke sledování změn život
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<workflow>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/workflow.md)|Konfigurace element, který obsahuje všechny dotazy týkající se konkrétního pracovního postupu identifikovaný **ID definice aktivity** vlastnost.|  
+|[\<pracovní postup >](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/workflow.md)|Konfigurace element, který obsahuje všechny dotazy týkající se konkrétního pracovního postupu identifikovaný **ID definice aktivity** vlastnost.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Activities.Tracking.Configuration.ActivityStateQueryElementCollection?displayProperty=nameWithType>
 - <xref:System.Activities.Tracking.ActivityStateQuery?displayProperty=nameWithType>
 - [Sledování a trasování pracovních postupů](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)

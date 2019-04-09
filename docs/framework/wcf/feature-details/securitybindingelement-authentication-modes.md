@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 12300bf4-c730-4405-9f65-d286f68b5a43
-ms.openlocfilehash: b09b50d2db277d6aec325fb9305890f8e5be581c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 9c8b2cb0417db6481ce0171d85b225ef3a784c1b
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54658897"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59119753"
 ---
 # <a name="securitybindingelement-authentication-modes"></a>Režimy ověřování SecurityBindingElement
 Windows Communication Foundation (WCF) poskytuje několik režimů, které služby a klienti ověřování mezi sebou. Můžete vytvořit bezpečnostní prvky vazeb pro tyto režimy ověřování pomocí statické metody na <xref:System.ServiceModel.Channels.SecurityBindingElement> třídy nebo prostřednictvím konfigurace. Tento článek stručně popisuje režimy ověřování 18.  
@@ -121,5 +121,6 @@ Windows Communication Foundation (WCF) poskytuje několik režimů, které služ
  S tímto režimem ověřování klient se ověří pomocí uživatelského jména Token, který se zobrazí jako podepsaný podpůrný token; ve vrstvě protokolu SOAP To znamená, že token, který je podepsaný podpis zprávy. Služba je ověřený pomocí certifikátu X.509 na transportní vrstvě. Element vazby zabezpečení je `TransportSecurityBindingElement` vrácených <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateUserNameOverTransportBindingElement%2A> metoda. Můžete také nastavit `authenticationMode` atribut `UserNameOverTransport`.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Channels.SecurityBindingElement>
 - [Postupy: Vytvoření elementu SecurityBindingElement pro zadaný režim ověřování](../../../../docs/framework/wcf/feature-details/how-to-create-a-securitybindingelement-for-a-specified-authentication-mode.md)

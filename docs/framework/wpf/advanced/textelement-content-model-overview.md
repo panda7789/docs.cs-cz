@@ -9,17 +9,16 @@ helpviewer_keywords:
 - TextElement content model [WPF]
 - flow content elements [WPF], TextElement content model
 ms.assetid: d0a7791c-b090-438c-812f-b9d009d83ee9
-ms.openlocfilehash: 935d86195acaca94b0115a8cdcf7289c23613f7f
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
-ms.translationtype: MT
+ms.openlocfilehash: ecb9441bc63eae41cfbbadf3bf81b0e5392bd0cb
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57369757"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59125117"
 ---
 # <a name="textelement-content-model-overview"></a>Přehled modelu obsahu TextElement
 Tento přehled modelu obsahu popisuje podporované obsah <xref:System.Windows.Documents.TextElement>. <xref:System.Windows.Documents.Paragraph> Třída je typem <xref:System.Windows.Documents.TextElement>. Model obsahu popisuje objekty/prvky mohou být obsaženy v jiné. Tento přehled obsahuje souhrn modelu obsahu použít u objektů odvozené z <xref:System.Windows.Documents.TextElement>. Další informace najdete v tématu [přehled toku dokumentů](flow-document-overview.md).  
-  
-  
+
 <a name="text_element_classes"></a>   
 ## <a name="content-model-diagram"></a>Diagram modelu obsahu  
  Následující diagram obsahuje souhrn obsahu modelu pro třídy odvozené z <xref:System.Windows.Documents.TextElement> a také jak ostatní jinou hodnotu než `TextElement` třídy, aby se vešel do tohoto modelu.  
@@ -102,8 +101,9 @@ Tento přehled modelu obsahu popisuje podporované obsah <xref:System.Windows.Do
  Zobrazit [Model obsahu WPF](../controls/wpf-content-model.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Zpracování objektu FlowDocument prostřednictvím vlastnosti Blocks](how-to-manipulate-a-flowdocument-through-the-blocks-property.md)
 - [Zpracování elementů obsahu toku prostřednictvím vlastnosti Blocks](how-to-manipulate-flow-content-elements-through-the-blocks-property.md)
 - [Zpracování objektu FlowDocument prostřednictvím vlastnosti Blocks](how-to-manipulate-a-flowdocument-through-the-blocks-property.md)
 - [Zpracování sloupců tabulky prostřednictvím vlastnosti Columns](how-to-manipulate-table-columns-through-the-columns-property.md)
-- [Zpracování skupin řádků tabulky pomocí vlastnosti RowGroups](how-to-manipulate-table-row-groups-through-the-rowgroups-property.md)
+- [Zpracování skupin řádků tabulky prostřednictvím vlastnosti RowGroups](how-to-manipulate-table-row-groups-through-the-rowgroups-property.md)

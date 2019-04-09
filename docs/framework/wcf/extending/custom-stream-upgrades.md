@@ -2,12 +2,12 @@
 title: Vlastní upgrady streamů
 ms.date: 03/30/2017
 ms.assetid: e3da85c8-57f3-4e32-a4cb-50123f30fea6
-ms.openlocfilehash: 12c2b56d65b2ff41d6919e978dfad7560d05782c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: cd8385194e1f24d246e6fc398462b45bacbe15d6
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54611316"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59127358"
 ---
 # <a name="custom-stream-upgrades"></a>Vlastní upgrady streamů
 Orientovaný na Stream přenosy, jako je například TCP a pojmenované kanály pracovat nepřetržitý datový proud bajtů mezi klientem a serverem. Tento datový proud se provádí <xref:System.IO.Stream> objektu. Při upgradu datového proudu klient chce přidat volitelné protokolové vrstvě kanálu zásobníku a zeptá druhém konci komunikační kanál k tomu. Se skládá z upgradu datového proudu nahrazení původní <xref:System.IO.Stream> objekt upgradovaný sadou.  
@@ -93,6 +93,7 @@ Orientovaný na Stream přenosy, jako je například TCP a pojmenované kanály 
 4.  Datový proud se upgraduje za každé volání <xref:System.ServiceModel.Channels.StreamUpgradeInitiator.GetNextUpgrade%2A> a <xref:System.ServiceModel.Channels.StreamUpgradeAcceptor.CanUpgrade%2A>.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Channels.StreamUpgradeInitiator>
 - <xref:System.ServiceModel.Channels.StreamSecurityUpgradeInitiator>
 - <xref:System.ServiceModel.Channels.StreamUpgradeAcceptor>

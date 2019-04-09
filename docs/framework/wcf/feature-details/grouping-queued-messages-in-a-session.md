@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - queues [WCF]. grouping messages
 ms.assetid: 63b23b36-261f-4c37-99a2-cc323cd72a1a
-ms.openlocfilehash: 260e8b38f110ffc2c2fdc5e2768db8c95fb01860
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 0246f059079b2024dd1bd16ae6afc4950d08e0a9
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54564120"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59115268"
 ---
 # <a name="grouping-queued-messages-in-a-session"></a>Seskupování zpráv zařazených do fronty v relaci
 Windows Communication Foundation (WCF) poskytuje relaci, která umožňuje seskupit sadu souvisejících zpráv pro zpracování jedné přijímající aplikace. Zprávy, které jsou součástí relace musí být součástí stejné transakce. Protože všechny zprávy jsou součástí stejné transakce, pokud se nepodaří zpracovat celou relaci jednu zprávu se vrátí zpět. Relace mají podobné chování s ohledem na fronty nedoručených zpráv a nezpracovatelných fronty. Time to Live (TTL) nastavenou na vazbu s frontou nakonfigurované pro relace se použijí pro relaci jako celek. Pokud jen některé zprávy v relaci odeslány předtím, než hodnota TTL nevyprší, je umístěn celou relaci ve frontě nedoručených zpráv. Podobně když dojde k selhání zprávy v relaci k odeslání do aplikace z fronty aplikace, celá relace nachází ve nezpracovatelných frontu (Pokud je k dispozici).  
@@ -76,15 +76,12 @@ Windows Communication Foundation (WCF) poskytuje relaci, která umožňuje sesku
 ### <a name="code-for-the-service"></a>Kód služby  
  [!code-csharp[S_Msmq_Session#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_msmq_session/cs/service.cs#1)]
  [!code-vb[S_Msmq_Session#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_msmq_session/vb/service.vb#1)]  
-  
-  
-  
+
 ### <a name="code-for-the-client"></a>Kód pro klienta  
  [!code-csharp[S_Msmq_Session#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_msmq_session/cs/client.cs#3)]
  [!code-vb[S_Msmq_Session#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_msmq_session/vb/client.vb#3)]  
-  
-  
-  
+
 ## <a name="see-also"></a>Viz také:
+
 - [Relace a fronty](../../../../docs/framework/wcf/samples/sessions-and-queues.md)
-- [Přehled front](../../../../docs/framework/wcf/feature-details/queues-overview.md)
+- [Fronty – přehled](../../../../docs/framework/wcf/feature-details/queues-overview.md)

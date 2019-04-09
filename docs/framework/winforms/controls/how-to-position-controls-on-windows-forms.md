@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Poziční ovládací prvky v modelu Windows Forms'
+title: 'Postupy: Umístění ovládacích prvků ve Windows Forms'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -15,14 +15,14 @@ helpviewer_keywords:
 - snaplines
 - controls [Windows Forms], positioning
 ms.assetid: 4693977e-34a4-4f19-8221-68c3120c2b2b
-ms.openlocfilehash: 0503deb3fbb6dc157d8796580ece847bbfb8edfb
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: 22225c97ec082022cb609e47d3cafcdcc052143d
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57723098"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59132792"
 ---
-# <a name="how-to-position-controls-on-windows-forms"></a>Postupy: Poziční ovládací prvky v modelu Windows Forms
+# <a name="how-to-position-controls-on-windows-forms"></a>Postupy: Umístění ovládacích prvků ve Windows Forms
 Umístit ovládací prvky, použijte Návrhář formulářů Windows nebo zadat <xref:System.Windows.Forms.Control.Location%2A> vlastnost.  
   
 > [!NOTE]
@@ -96,10 +96,11 @@ Umístit ovládací prvky, použijte Návrhář formulářů Windows nebo zadat 
     >  Použití <xref:System.Windows.Forms.Control.Location%2A> vlastnosti chcete nastavit ovládací prvek X a Y pozice současně. Chcete-li nastavení pozice jednotlivě, použijte ovládací prvek <xref:System.Windows.Forms.Control.Left%2A> (**X**) nebo <xref:System.Windows.Forms.Control.Top%2A> (**Y**) podvlastností. Nepokoušejte se implicitně nastavena souřadnice X a Y <xref:System.Drawing.Point> strukturu, která představuje tlačítka umístění, protože tato struktura obsahuje kopii souřadnice na tlačítko.  
   
 ## <a name="see-also"></a>Viz také:
-- [Windows Forms – ovládací prvky](index.md)
+
+- [Ovládací prvky Windows Forms](index.md)
 - [Návod: Uspořádání ovládacích prvků ve Windows Forms pomocí zarovnávacích čar](walkthrough-arranging-controls-on-windows-forms-using-snaplines.md)
-- [Návod: Uspořádání ovládacích prvků na formuláři Windows s použitím ovládacího prvku TableLayoutPanel](walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md)
-- [Návod: Uspořádání ovládacích prvků na formuláři Windows s použitím ovládacího prvku FlowLayoutPanel](walkthrough-arranging-controls-on-windows-forms-using-a-flowlayoutpanel.md)
+- [Návod: Uspořádání ovládacích prvků ve Windows Forms s použitím ovládacího prvku TableLayoutPanel](walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md)
+- [Návod: Uspořádání ovládacích prvků na formuláři Windows Forms s použitím ovládacího prvku FlowLayoutPanel](walkthrough-arranging-controls-on-windows-forms-using-a-flowlayoutpanel.md)
 - [Uspořádávání ovládacích prvků ve Windows Forms](arranging-controls-on-windows-forms.md)
 - [Popisování jednotlivých ovládacích prvků Windows Forms a zajišťování zástupců pro tyto prvky](labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them.md)
 - [Ovládací prvky používané ve Windows Forms](controls-to-use-on-windows-forms.md)

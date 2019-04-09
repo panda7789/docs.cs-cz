@@ -9,12 +9,12 @@ helpviewer_keywords:
 - cursors [Windows Forms], setting
 - mouse [Windows Forms], cursors
 ms.assetid: c3400d85-de5b-42e8-abc3-d6088d69ee53
-ms.openlocfilehash: c018986498bfbd7e492c3e7a26c94e0baa0576d5
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: e9b572ba40618a72b8db58917008ebd61a23de79
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57712731"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59122782"
 ---
 # <a name="mouse-pointers-in-windows-forms"></a>Ukazatele myši ve Windows Forms
 Myši *ukazatel*, které se někdy označuje jako ukazatel, je rastrový obrázek, který určuje zaměření na obrazovce pro uživatelský vstup pomocí myši. Toto téma obsahuje základní informace o umístění ukazatele myši ve Windows Forms a popisuje některé ze způsobů, jak upravit a řízení umístění ukazatele myši.  
@@ -31,6 +31,7 @@ Myši *ukazatel*, které se někdy označuje jako ukazatel, je rastrový obráze
  Primárním způsob, jak změnit ukazatel myši je tak, že nastavíte <xref:System.Windows.Forms.Control.Cursor%2A?displayProperty=nameWithType> nebo <xref:System.Windows.Forms.Control.DefaultCursor%2A> vlastnost ovládacího prvku do nového <xref:System.Windows.Forms.Cursor>. Příklady změnu ukazatele myši, naleznete v příkladu kódu v <xref:System.Windows.Forms.Cursor> třídy. Kromě toho <xref:System.Windows.Forms.Cursors> třída zveřejňuje sadu <xref:System.Windows.Forms.Cursor> objekty pro mnoho různých typů ukazatelů, jako je ukazatel, který vypadá podobně jako na tvar ruky. Chcete-li zobrazení ukazatele čekání, který se podobá přesýpací hodiny, pokaždé, když je ukazatel myši na ovládací prvek, použijte <xref:System.Windows.Forms.Control.UseWaitCursor%2A> vlastnost <xref:System.Windows.Forms.Control> třídy.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.Cursor>
 - [Vstup z myši v aplikaci Windows Forms](mouse-input-in-a-windows-forms-application.md)
-- [Funkce přetažení ve Windows Forms](drag-and-drop-functionality-in-windows-forms.md)
+- [Přetažení funkce ve Windows Forms ](drag-and-drop-functionality-in-windows-forms.md)

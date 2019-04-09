@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 77526f65-b71c-4483-9d19-3a3751fd8a45
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3c537e4967c284df899a131b44d96dbdb6e1af29
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 8c76db644ffee478003d834460c155c4ec6d0070
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54587671"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59133949"
 ---
 # <a name="constants-unmanaged-api-reference"></a>Konstanty (referenční dokumentace nespravovaného rozhraní API)
 Toto téma popisuje typ jazyka, jazyk dodavatele a konstanty typu dokumentu, které jsou definovány v CorSym.idl.  
@@ -51,4 +51,5 @@ Toto téma popisuje typ jazyka, jazyk dodavatele a konstanty typu dokumentu, kte
 |CorSym_DocumentType_MC|Označuje než textovém dokumentu.|  
   
 ## <a name="see-also"></a>Viz také:
-- [Referenční informace o nespravovaném rozhraní API](../../../docs/framework/unmanaged-api/index.md)
+
+- [Nespravované rozhraní API](../../../docs/framework/unmanaged-api/index.md)

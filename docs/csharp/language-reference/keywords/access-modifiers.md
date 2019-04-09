@@ -5,12 +5,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - access modifiers [C#]
 ms.assetid: 61c3fa51-c00f-48cb-9b49-c805dedd62d7
-ms.openlocfilehash: b70a4ac99b90e5112c64d25ab517ae6ba819542f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d87ea1ff18c4697a2c04f22cbf67720f21cbf459
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54709753"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59118128"
 ---
 # <a name="access-modifiers-c-reference"></a>Modifikátory přístupu (Referenční dokumentace jazyka C#)
 Modifikátory přístupu jsou klíčová slova používaná k určení je deklarovaná přístupnost člena nebo typu. Tato část představuje čtyři přístupu modifikátory přístupu:  
@@ -43,8 +43,9 @@ Modifikátory přístupu jsou klíčová slova používaná k určení je deklar
 -   [Omezení používání úrovní přístupu](../../../csharp/language-reference/keywords/restrictions-on-using-accessibility-levels.md): Souhrn omezení týkající se použití deklaraci úrovní přístupu.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)
 - [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)
 - [Modifikátory přístupu](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)
 - [Klíčová slova přístupu](../../../csharp/language-reference/keywords/access-keywords.md)

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - impersonation [WCF]
 - delegation [WCF]
 ms.assetid: 110e60f7-5b03-4b69-b667-31721b8e3152
-ms.openlocfilehash: 86f7f485c289d1641605ab538f8500418b77cfd8
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: ab3f1dd633193dcf88401d097d6835e6894aaa5a
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54663307"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59122236"
 ---
 # <a name="delegation-and-impersonation-with-wcf"></a>Delegace a zosobnění se službou WCF
 *Zosobnění* je běžná technika, služby slouží k omezení klientský přístup k prostředkům služby domény. Prostředky služby domény může být buď počítač prostředky, jako jsou místní soubory (zosobnění), nebo prostředek na jiném počítači, jako jsou sdílené složky (delegování). Ukázková aplikace, najdete v části [zosobnění klienta](../../../../docs/framework/wcf/samples/impersonating-the-client.md). Příklad použití zosobnění, naleznete v tématu [jak: Zosobnění klienta ve službě](../../../../docs/framework/wcf/how-to-impersonate-a-client-on-a-service.md).  
@@ -111,7 +111,7 @@ ms.locfileid: "54663307"
   
  Následující tabulka určuje úroveň zosobnění, které služba získává při zosobňování z tokenu v mezipaměti.  
   
-|`AllowedImpersonationLevel` Hodnota|Služba má `SeImpersonatePrivilege`|Klienta a služby podporují delegování|Token v mezipaměti `ImpersonationLevel`|  
+|`AllowedImpersonationLevel` value|Služba má `SeImpersonatePrivilege`|Klienta a služby podporují delegování|Token v mezipaměti `ImpersonationLevel`|  
 |---------------------------------------|------------------------------------------|--------------------------------------------------|---------------------------------------|  
 |Anonymní|Ano|není k dispozici|Zosobnění|  
 |Anonymní|Ne|není k dispozici|Identifikace|  
@@ -206,6 +206,7 @@ sh.Credentials.ClientCertificate.Authentication.MapClientCertificateToWindowsAcc
 -   [Přechod protokolu Kerberos a omezeného delegování](https://go.microsoft.com/fwlink/?LinkId=36725)  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.OperationBehaviorAttribute>
 - <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A>
 - <xref:System.ServiceModel.ImpersonationOption>
@@ -222,4 +223,4 @@ sh.Credentials.ClientCertificate.Authentication.MapClientCertificateToWindowsAcc
 - [Použití zosobnění se zabezpečením přenosu](../../../../docs/framework/wcf/feature-details/using-impersonation-with-transport-security.md)
 - [Zosobnění klienta](../../../../docs/framework/wcf/samples/impersonating-the-client.md)
 - [Postupy: Zosobnění klienta ve službě](../../../../docs/framework/wcf/how-to-impersonate-a-client-on-a-service.md)
-- [Nástroj metadat modelu služby (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)
+- [Nástroj ServiceModel Metadata Utility (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)

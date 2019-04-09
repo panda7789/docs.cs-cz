@@ -1,5 +1,5 @@
 ---
-title: < System.web > – Element (nastavení webu)
+title: Element <system.web> (nastavení webu)
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Web.config configuration file [ASP.NET]
@@ -8,12 +8,12 @@ helpviewer_keywords:
 - ASP.NET configuration system
 - configuration files [ASP.NET]
 ms.assetid: 24c4cf4f-ad32-42b2-b040-8e4549e2855e
-ms.openlocfilehash: a8d0905dc64ae3e3c4977639ccf881a677de73a9
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 50566422c5e28585e93171c991144cf12a6866eb
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55272809"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59131947"
 ---
 # <a name="systemweb-element-web-settings"></a>\<System.Web > – Element (nastavení webu)
 Obsahuje informace o jak spravuje chování v celém procesu vrstvy hostování technologie ASP.NET.  
@@ -44,7 +44,7 @@ Obsahuje informace o jak spravuje chování v celém procesu vrstvy hostování 
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<configuration>](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)|Určuje kořenový element v každém konfiguračním souboru, který je používán common language runtime a [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] aplikací.|  
+|[\<Konfigurace >](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)|Určuje kořenový element v každém konfiguračním souboru, který je používán common language runtime a [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] aplikací.|  
   
 ## <a name="remarks"></a>Poznámky  
  `system.web` Elementu a jeho podřízené `applicationPool` element byly přidány do [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] od [!INCLUDE[net_v35SP1_short](../../../../../includes/net-v35sp1-short-md.md)]. Při spuštění [!INCLUDE[iisver](../../../../../includes/iisver-md.md)] nebo novější verze v integrovaném režimu, tato kombinace elementu vám umožní nakonfigurovat jak spravuje vláken ASP.NET a jak se zařadí do fronty žádostí při technologie ASP.NET je hostovaná ve fondu aplikací služby IIS. Pokud spustíte [!INCLUDE[iisver](../../../../../includes/iisver-md.md)] nebo novější verze v režimu Classic nebo rozhraní ISAPI, tato nastavení ignorují.  
@@ -73,4 +73,5 @@ Obsahuje informace o jak spravuje chování v celém procesu vrstvy hostování 
 |Může být prázdné.||  
   
 ## <a name="see-also"></a>Viz také:
+
 - [\<applicationPool > – Element (nastavení webu)](../../../../../docs/framework/configure-apps/file-schema/web/applicationpool-element-web-settings.md)

@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 6c0b353d-79ee-4e61-b348-be49ad0e9a16
-ms.openlocfilehash: 09941ce5fcf33380cbf3455866e63918edd2ea20
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
-ms.translationtype: MT
+ms.openlocfilehash: 7ec407209a94f96700773884aa3645b313c6c6ea
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58842197"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59132220"
 ---
 # <a name="custom-binding-transport-and-encoding"></a>Kódování a přenos vlastní vazby
 Seřazený seznam elementů diskrétní vazby je definován vlastní vazby. Tento příklad ukazuje, jak nakonfigurovat vlastní vazby s různými přenos a kódování prvků zprávy.  
@@ -85,4 +85,3 @@ client.Close()
 >  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Custom\Transport`  
-  

@@ -5,12 +5,12 @@ helpviewer_keywords:
 - port sharing [WCF]
 - activation services [WCF]
 ms.assetid: c9175af4-c27c-4765-bf45-b8f7528a7282
-ms.openlocfilehash: 490c0d8c4c95eeb2b1cd9b43134720c9e44467ac
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 77d1d983da87b37c6267cc38a16db446782797f1
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54619594"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59130647"
 ---
 # <a name="how-to-enable-the-nettcp-port-sharing-service"></a>Postupy: Povolení Služby sdílení portů Net.TCP
 Windows Communication Foundation (WCF) používá službu Windows volá služba Sdílení portů Net.TCP k usnadnění sdílení portů TCP napříč více procesy. Tato služba je nainstalován jako součást služby WCF, ale služba není povolená ve výchozím nastavení jako bezpečnostní opatření a proto musíte ručně povolit před prvním použitím. Toto téma popisuje, jak nakonfigurovat službu Net TCP Port Sharing pomocí modulu snap-In konzoly Microsoft Management Console (MMC).  
@@ -34,5 +34,6 @@ Windows Communication Foundation (WCF) používá službu Windows volá služba 
 ## <a name="example"></a>Příklad  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Sdílení portů Net.TCP](../../../../docs/framework/wcf/feature-details/net-tcp-port-sharing.md)
-- [Konfigurace služby sdílení portů Net.TCP](../../../../docs/framework/wcf/feature-details/configuring-the-net-tcp-port-sharing-service.md)
+- [Konfigurace Služby sdílení portů Net.TCP](../../../../docs/framework/wcf/feature-details/configuring-the-net-tcp-port-sharing-service.md)

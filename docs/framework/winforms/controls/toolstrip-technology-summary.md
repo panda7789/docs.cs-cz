@@ -7,12 +7,12 @@ helpviewer_keywords:
 - toolbars [Windows Forms], technology summary
 - menus [Windows Forms], technology summary
 ms.assetid: e8d61973-7af9-429f-9df5-05a899c15a7b
-ms.openlocfilehash: c32b14e1394004b68247d4d7bf2d0fcc8870b730
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: b6537faa3be7ee28a934927fc95100a34a64e176
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57703270"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59120952"
 ---
 # <a name="toolstrip-technology-summary"></a>Souhrn technologie ToolStrip
 Toto téma shrnuje informace o `ToolStrip` ovládacího prvku a tříd, které podporují jeho použití.  
@@ -76,13 +76,13 @@ Toto téma shrnuje informace o `ToolStrip` ovládacího prvku a tříd, které p
 ### <a name="items-collection-editors"></a>Editory kolekce položek  
  V sadě Visual Studio, po kliknutí na **upravit položky** úlohy seznamu nebo klikněte pravým tlačítkem na ovládací prvek a vyberte **upravit položky** v místní nabídce, zobrazí se editor kolekce pro ovládací prvek. Editory kolekce umožňují přidat, odebrat a změnit pořadí položek, které obsahuje ovládací prvek. Můžete také zobrazit a změnit vlastnosti ovládacího prvku a ovládacího prvku položek.  
   
--   [MenuStrip – Editor kolekce položek](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/ms233625(v=vs.100))  
+-   [MenuStrip – editor kolekce položek](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/ms233625(v=vs.100))  
   
--   [StatusStrip – Editor kolekce položek](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/ms233631(v=vs.100))  
+-   [StatusStrip – editor kolekce položek](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/ms233631(v=vs.100))  
   
--   [ContextMenuStrip – Editor kolekce položek](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/ms233641(v=vs.100))  
+-   [ContextMenuStrip – editor kolekce položek](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/ms233641(v=vs.100))  
   
--   [Editor kolekce položek ovládacího prvku ToolStrip](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/ms233643(v=vs.100))  
+-   [ToolStrip – editor kolekce položek](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/ms233643(v=vs.100))  
   
 ## <a name="hosting-controls"></a>Hostování ovládacích prvků  
  <xref:System.Windows.Forms.ToolStripControlHost> Třída poskytuje integrované obálky pro <xref:System.Windows.Forms.ToolStripComboBox>, <xref:System.Windows.Forms.ToolStripTextBox>, a <xref:System.Windows.Forms.ToolStripProgressBar> ovládací prvky. Můžete také uložit žádné další existující nebo ovládacího prvku COM v <xref:System.Windows.Forms.ToolStripControlHost>.  
@@ -119,5 +119,6 @@ Toto téma shrnuje informace o `ToolStrip` ovládacího prvku a tříd, které p
  <xref:System.Windows.Forms.ToolStrip>, <xref:System.Windows.Forms.MenuStrip>, A <xref:System.Windows.Forms.StatusStrip> nechat položky přetečení. To se podobá způsobu, jakým tyto položky se chovají na panely nástrojů Microsoft Office.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled ovládacího prvku ToolStrip](toolstrip-control-overview-windows-forms.md)
 - [Architektura ovládacího prvku ToolStrip](toolstrip-control-architecture.md)

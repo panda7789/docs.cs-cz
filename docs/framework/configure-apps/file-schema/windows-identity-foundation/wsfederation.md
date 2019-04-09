@@ -3,12 +3,12 @@ title: <wsFederation>
 ms.date: 03/30/2017
 ms.assetid: c537f770-68bd-4f82-96ad-6424ad91369f
 author: BrucePerlerMS
-ms.openlocfilehash: de79ad6447fe67afc596783eff3fa3e6a02b600c
-ms.sourcegitcommit: 15ab532fd5e1f8073a4b678922d93b68b521bfa0
+ms.openlocfilehash: 276f552767897729bf58c6a803669f39c96f09e3
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58654585"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59135132"
 ---
 # <a name="wsfederation"></a>\<wsFederation>
 Poskytuje konfiguraci pro <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> (WSFAM).  
@@ -99,5 +99,6 @@ Poskytuje konfiguraci pro <xref:System.IdentityModel.Services.WSFederationAuthen
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.IdentityModel.Services.WSFederationAuthenticationModule>
 - <xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfiguration%2A?displayProperty=nameWithType>

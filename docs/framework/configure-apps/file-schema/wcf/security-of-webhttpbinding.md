@@ -1,13 +1,13 @@
 ---
-title: <security> z <webHttpBinding>
+title: <security> of <webHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 727cf3d2-6f56-48ad-a59f-ba423edb9c83
-ms.openlocfilehash: 7f714ffb89d5ff990239bd1a02ffaeead4ad7d91
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: b6375a64ea157df01f903901e0414a2989287aee
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57360771"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59132288"
 ---
 # <a name="security-of-webhttpbinding"></a>\<security> of \<webHttpBinding>
 Určuje koncový bod nakonfigurovaný s požadavky na zabezpečení [ \<wsHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md).  
@@ -49,7 +49,7 @@ Určuje koncový bod nakonfigurovaný s požadavky na zabezpečení [ \<wsHttpBi
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|Žádná|Zabezpečení je zakázaná.|  
+|Žádné|Zabezpečení je zakázaná.|  
 |Přenos|Zabezpečení je k dispozici pomocí protokolu HTTPS. Služba je potřeba nakonfigurovat s využitím certifikátů SSL. Zprávu je zcela zabezpečené pomocí protokolu HTTPS a služba je ověřený pomocí klienta pomocí certifikátu SSL služby. Ověření klienta je řízen pomocí `ClientCredentialType` atribut [ \<přenosu >](../../../../../docs/framework/configure-apps/file-schema/wcf/transport-of-webhttpbinding.md).|  
 |TransportCredentialOnly|Tento režim neposkytuje integrity a důvěrnosti zpráv. Poskytuje ověření klienta založené na protokolu HTTP. Tento režim je třeba používat opatrně. Byste měli použít ve prostředích, kde zabezpečení přenosu se neposkytujeme jiným způsobem (jako je protokol IPSec) a infrastruktura WCF se poskytuje pouze ověření klienta.|  
   
@@ -57,7 +57,7 @@ Určuje koncový bod nakonfigurovaný s požadavky na zabezpečení [ \<wsHttpBi
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<transport>](../../../../../docs/framework/configure-apps/file-schema/wcf/transport-of-webhttpbinding.md)|Definuje nastavení zabezpečení přenosu. Tento element odpovídá <xref:System.ServiceModel.Configuration.HttpTransportSecurityElement> typu.|  
+|[\<přenos >](../../../../../docs/framework/configure-apps/file-schema/wcf/transport-of-webhttpbinding.md)|Definuje nastavení zabezpečení přenosu. Tento element odpovídá <xref:System.ServiceModel.Configuration.HttpTransportSecurityElement> typu.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -66,15 +66,16 @@ Určuje koncový bod nakonfigurovaný s požadavky na zabezpečení [ \<wsHttpBi
 |[\<webHttpBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/webhttpbinding.md)|Prvek vazby, který se používá ke konfiguraci koncových bodů pro Windows Communication Foundation (WCF) Web services tuto odpověď na požadavky HTTP namísto zpráv SOAP.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Configuration.WebHttpBindingElement>
 - <xref:System.ServiceModel.Configuration.WSHttpSecurityElement>
 - <xref:System.ServiceModel.WebHttpBinding.Security%2A>
 - <xref:System.ServiceModel.Configuration.WebHttpBindingElement.Security%2A>
 - <xref:System.ServiceModel.WebHttpSecurity>
 - [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
-- [Výběr typu přihlašovacích údajů](../../../../../docs/framework/wcf/feature-details/selecting-a-credential-type.md)
+- [Výběr typu pověření](../../../../../docs/framework/wcf/feature-details/selecting-a-credential-type.md)
 - [Vazby](../../../../../docs/framework/wcf/bindings.md)
 - [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)
 - [Používání vazeb ke konfiguraci služeb a klientů](../../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)
 - [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)
-- [Programovací model webových služeb HTTP WCF](../../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)
+- [Model programování webových služeb HTTP WCF](../../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)

@@ -10,20 +10,18 @@ helpviewer_keywords:
 - custom controls [WPF], improving accessibility
 - UI Automation [WPF], using with custom controls
 ms.assetid: 47b310fc-fbd5-4ce2-a606-22d04c6d4911
-ms.openlocfilehash: 2587a3b4e38aed507688cc86f0e179b3acbb1672
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 0d663acc195b36fdc95c196f2233ae997fbd9195
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57358320"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59132766"
 ---
 # <a name="ui-automation-of-a-wpf-custom-control"></a>Automatizace uživatelského rozhraní vlastního ovládacího prvku WPF
 [!INCLUDE[TLA#tla_uiautomation](../../../../includes/tlasharptla-uiautomation-md.md)] poskytuje jednotné rozhraní zobecněný této služby automation, který můžou klienti použít k prozkoumání a fungovat uživatelských rozhraní z různých platforem a rozhraní. [!INCLUDE[TLA2#tla_uiautomation](../../../../includes/tla2sharptla-uiautomation-md.md)] Umožňuje (testovací) kontroly kvality kódu a dostupnost aplikace, jako je čtení obrazovky použít k prozkoumání prvky uživatelského rozhraní a simulaci interakce uživatele s nimi z jiného kódu. Informace o [!INCLUDE[TLA2#tla_uiautomation](../../../../includes/tla2sharptla-uiautomation-md.md)] na všech platformách, najdete v článku usnadnění přístupu.  
   
  Toto téma popisuje, jak pro implementaci zprostředkovatele automatizace uživatelského rozhraní na straně serveru pro vlastní ovládací prvek, na kterém běží v aplikaci WPF. WPF podporuje [!INCLUDE[TLA2#tla_uiautomation](../../../../includes/tla2sharptla-uiautomation-md.md)] prostřednictvím stromu objektů automatizace peer parallels stromu prvků uživatelského rozhraní. Testovací kód a aplikace, které poskytují funkce usnadnění můžete použít sdílené objekty automatizace přímo (pro kód v procesu) nebo přes rozhraní zobecněný poskytované [!INCLUDE[TLA2#tla_uiautomation](../../../../includes/tla2sharptla-uiautomation-md.md)].  
-  
- 
-  
+
 <a name="AutomationPeerClasses"></a>   
 ## <a name="automation-peer-classes"></a>Sdílené třídy automatizace  
  Řídí podporu WPF [!INCLUDE[TLA2#tla_uiautomation](../../../../includes/tla2sharptla-uiautomation-md.md)] prostřednictvím stromu, které jsou odvozeny z třídy peer <xref:System.Windows.Automation.Peers.AutomationPeer>. Podle úmluvy názvy tříd peer začínat název třídy ovládacího prvku a končit "AutomationPeer". Například <xref:System.Windows.Automation.Peers.ButtonAutomationPeer> je třída partnera pro <xref:System.Windows.Controls.Button> třídu ovládacího prvku. Sdílené třídy jsou zhruba odpovídá [!INCLUDE[TLA2#tla_uiautomation](../../../../includes/tla2sharptla-uiautomation-md.md)] řídit typy, ale jsou specifické pro [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] elementy. Automatizace kód, který přistupuje k aplikace WPF pomocí [!INCLUDE[TLA2#tla_uiautomation](../../../../includes/tla2sharptla-uiautomation-md.md)] rozhraní nepoužívá automationpeer přímo, ale automationpeer kódu automatizace ve stejném prostoru procesu můžete použít přímo.  
@@ -155,6 +153,7 @@ End Class
  [!code-vb[CustomControlNumericUpDown#RaiseEventFromControl](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CustomControlNumericUpDown/visualbasic/customcontrollibrary/numericupdown.vb#raiseeventfromcontrol)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled automatizace uživatelského rozhraní](../../ui-automation/ui-automation-overview.md)
 - [Ovládací prvek NumericUpDown vlastní motiv a ukázka podpora automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=160025)
 - [Implementace zprostředkovatele automatizace uživatelského rozhraní na straně serveru](../../ui-automation/server-side-ui-automation-provider-implementation.md)

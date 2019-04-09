@@ -2,12 +2,12 @@
 title: <authentication> z <serviceCertificate> – Element
 ms.date: 03/30/2017
 ms.assetid: 733b67b4-08a1-4d25-9741-10046f9357ef
-ms.openlocfilehash: 8288e530d0164b41a6cf53cc39385a2d29fdb091
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: b96d53312d672eebd67de82f69cd9a0a2b5bd22e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55255169"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59117756"
 ---
 # <a name="authentication-of-servicecertificate-element"></a>\<ověřování > z \<serviceCertificate > – Element
 Určuje nastavení klientského serveru proxy k ověření certifikátů služby, které jsou získány pomocí vyjednávání protokolu SSL/TLS.  
@@ -43,7 +43,7 @@ Určuje nastavení klientského serveru proxy k ověření certifikátů služby
   
 ## <a name="customcertificatevalidator-attribute"></a>customCertificateValidator atribut  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |String|Určuje název typu a sestavení a další data použít k vyhledání typu.|  
   
@@ -55,7 +55,7 @@ Určuje nastavení klientského serveru proxy k ověření certifikátů služby
   
 ## <a name="revocationmode-attribute"></a>revocationMode atribut  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |Výčet|Jeden z následujících hodnot: NoCheck, Online, Offline.<br /><br /> Další informace najdete v tématu [Working with Certificates](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md).|  
   
@@ -101,6 +101,7 @@ Určuje nastavení klientského serveru proxy k ověření certifikátů služby
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Configuration.X509RecipientCertificateClientElement>
 - <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential>
 - <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential.Authentication%2A>
@@ -108,6 +109,6 @@ Určuje nastavení klientského serveru proxy k ověření certifikátů služby
 - [Chování zabezpečení](../../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)
 - [Práce s certifikáty](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)
 - [Postupy: Vytvoření služby, která používá vlastní validátor certifikátů](../../../../../docs/framework/wcf/extending/how-to-create-a-service-that-employs-a-custom-certificate-validator.md)
-- [\<authentication>](../../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-clientcertificate-element.md)
+- [\<ověřování >](../../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-clientcertificate-element.md)
 - [Zabezpečení klientů](../../../../../docs/framework/wcf/securing-clients.md)
 - [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)

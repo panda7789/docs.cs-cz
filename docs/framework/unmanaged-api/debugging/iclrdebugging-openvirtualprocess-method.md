@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b4ed9526dc38d72b01798215bc602fb8298c2bc3
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: a313ea62455067fb36b94d942b0ce21589677e3b
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57478021"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59122574"
 ---
 # <a name="iclrdebuggingopenvirtualprocess-method"></a>ICLRDebugging::OpenVirtualProcess – metoda
 Získá icordebugprocess – rozhraní, která odpovídá common language runtime (CLR) modulu načtené v procesu.  
@@ -74,7 +74,7 @@ HRESULT OpenVirtualProcess(
 |HRESULT|Popis|  
 |-------------|-----------------|  
 |S_OK|Metoda byla úspěšně dokončena.|  
-|E_POINTER|`pDataTarget` je `null`.|  
+|E_POINTER|`pDataTarget` is `null`.|  
 |CORDBG_E_LIBRARY_PROVIDER_ERROR|[Iclrdebugginglibraryprovider –](../../../../docs/framework/unmanaged-api/debugging/iclrdebugginglibraryprovider-interface.md) zpětného volání vrátí chybu nebo neposkytuje platný popisovač.|  
 |CORDBG_E_MISSING_DATA_TARGET_INTERFACE|`pDataTarget` neimplementuje rozhraní target požadovaná data pro tuto verzi modulu runtime.|  
 |CORDBG_E_NOT_CLR|Zadaný modul není modul CLR. Hodnota HRESULT je také vrácen, když modul CLR nelze zjistit, že paměť byla poškozena, modul není k dispozici nebo verze CLR je novější než verze překrytí.|  
@@ -97,5 +97,6 @@ HRESULT OpenVirtualProcess(
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+
+- [Debugging – rozhraní](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
 - [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)

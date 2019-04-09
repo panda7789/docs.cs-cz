@@ -5,12 +5,12 @@ helpviewer_keywords:
 - properties [WPF], FocusVisualStyle
 - FocusVisualStyle property [WPF]
 ms.assetid: 363de99e-8ecc-438c-ac4a-f9147432ebd6
-ms.openlocfilehash: c4b379d3c57b6d0ae29952c23a35d7cc2cdf7f96
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 53d4984946143c15c4a2b71095529fb5ee7de4b1
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57366592"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59133546"
 ---
 # <a name="how-to-apply-a-focusvisualstyle-to-a-control"></a>Postupy: Použití FocusVisualStyle na ovládací prvek
 Tento příklad ukazuje, jak vytvořit vizuální styl fokusu na prostředcích a použít styl na ovládací prvek, pomocí <xref:System.Windows.FrameworkElement.FocusVisualStyle%2A> vlastnost.  
@@ -27,6 +27,7 @@ Tento příklad ukazuje, jak vytvořit vizuální styl fokusu na prostředcích 
  Fokus vizuální styly by měly být používány konzistentně napříč motiv nebo uživatelské rozhraní, místo použití jinou používat pro každý prvek může získat fokus. Podrobnosti najdete v tématu [stylů pro fokus v ovládacích prvcích a FocusVisualStyle](styling-for-focus-in-controls-and-focusvisualstyle.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.FrameworkElement.FocusVisualStyle%2A>
 - [Styly a šablony](../controls/styling-and-templating.md)
 - [Nastavení stylů pro fokus v ovládacích prvcích a FocusVisualStyle](styling-for-focus-in-controls-and-focusvisualstyle.md)

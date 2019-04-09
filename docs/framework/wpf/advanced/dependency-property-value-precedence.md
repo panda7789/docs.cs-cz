@@ -7,17 +7,16 @@ helpviewer_keywords:
 - classes [WPF], owners of dependency properties
 - metadata [WPF], dependency properties
 ms.assetid: 1fbada8e-4867-4ed1-8d97-62c07dad7ebc
-ms.openlocfilehash: 22ac109c06659741c673681ad9bfcf3e1dcc5b2e
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
-ms.translationtype: MT
+ms.openlocfilehash: 03ac9c59495d5eb95851df98f85eadc3d1a329ba
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57367934"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59117745"
 ---
 # <a name="dependency-property-value-precedence"></a>Priorita hodnot závislých vlastností
 <a name="introduction"></a> Toto téma vysvětluje, jak fungování [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] vlastnost systému může mít vliv na hodnotu vlastnosti závislosti a popisuje prioritu, ve které aspekty vlastnost systému použít na platnou hodnotu vlastnosti.  
-    
-  
+
 <a name="prerequisites"></a>   
 ## <a name="prerequisites"></a>Požadavky  
  Toto téma předpokládá, že rozumíte vlastnosti závislosti z pohledu příjemce vlastnosti existujícího závislosti na [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] třídy a přečetl [přehled vlastností závislosti](dependency-properties-overview.md). Následují příklady v tomto tématu, měli byste taky seznámit [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] a vědět, jak psát [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikací.  
@@ -127,6 +126,7 @@ ms.locfileid: "57367934"
  <xref:System.Windows.DependencyObject.ClearValue%2A> Metoda poskytuje účelné znamená, že chcete vymazat všechny místně použité hodnoty z vlastnosti závislosti, který je nastaven pro element. Však voláním <xref:System.Windows.DependencyObject.ClearValue%2A> nezaručuje, že je výchozí, jak je stanoveno v metadatech během registrace vlastnost novou platnou hodnotu. Všechny ostatní účastníci Priorita hodnot jsou stále aktivní. Pouze místně nastavené hodnota byla odebrána z pořadí priority. Například, pokud zavoláte <xref:System.Windows.DependencyObject.ClearValue%2A> u vlastnosti, kde tato vlastnost nastavena také ve stylu motivu, pak hodnota motiv se použije jako novou hodnotu než výchozí na základě metadat. Pokud chcete využít všichni účastníci hodnotu vlastnosti mimo proces a nastavte hodnotu na výchozí registrované metadata, můžete získat, výchozí hodnota platností pomocí dotazu na metadata vlastností závislosti a pak můžete použít výchozí hodnotu místně Nastavte vlastnost voláním <xref:System.Windows.DependencyObject.SetValue%2A>.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.DependencyObject>
 - <xref:System.Windows.DependencyProperty>
 - [Přehled vlastností závislosti](dependency-properties-overview.md)

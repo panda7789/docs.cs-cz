@@ -1,19 +1,19 @@
 ---
 title: REF – klíčové slovo - C# odkaz
 ms.custom: seodec18
-ms.date: 10/24/2018
+ms.date: 03/26/2019
 f1_keywords:
 - ref_CSharpKeyword
 - ref
 helpviewer_keywords:
 - parameters [C#], ref
 - ref keyword [C#]
-ms.openlocfilehash: dc19638dc3753132be01235466a98f87bdce4569
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1faebe2ce1a59798621888e3a518900234720be5
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54726647"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59116253"
 ---
 # <a name="ref-c-reference"></a>ref (Referenční dokumentace jazyka C#)
 
@@ -24,10 +24,9 @@ ms.locfileid: "54726647"
 - V těle členské k označení, že návratová hodnota odkazu uložená místně jako odkaz, který si klade za cíl volajícího k úpravě nebo obecně platí, místní proměnná přistupuje ke jiná hodnota podle odkazu. Další informace najdete v tématu [místních](#ref-locals).
 - V `struct` deklarace deklarovat `ref struct` nebo `ref readonly struct`. Další informace najdete v tématu [typy struktury ref](#ref-struct-types).
 
-
 ## <a name="passing-an-argument-by-reference"></a>Předání argumentu podle odkazu
 
-Při použití v seznamu parametrů metod, `ref` – klíčové slovo určuje, že argument se předá odkazem, ne podle hodnoty. Předávání odkazem efekt je, že všechny změny argumentů volané metody se projeví ve volání metody. Například pokud volající předává místní proměnnou výraz nebo výraz přístupu k elementu pole a volané metody nahradí objekt, na které odkazuje parametr ref a pak volajícího uživatele místní proměnné nebo element pole nyní odkazuje na nový objekt při Metoda vrátí.
+Při použití v seznamu parametrů metod, `ref` – klíčové slovo určuje, že argument se předá odkazem, ne podle hodnoty. `ref` – Klíčové slovo je formální parametr alias pro argument, který musí být proměnná. Jinými slovy všechny operace na parametr se provádí na argumentu. Například pokud volající předává místní proměnnou výraz nebo výraz přístupu k elementu pole a volané metody nahradí objekt, na které odkazuje parametr ref a pak volajícího uživatele místní proměnné nebo element pole nyní odkazuje na nový objekt při Metoda vrátí.
 
 > [!NOTE]
 > Nezaměňujte koncept předávání odkazem s konceptem odkazových typů. Dvě koncepce nejsou stejné. Parametr metody. je možné upravovat prostřednictvím `ref` bez ohledu na to, zda je typ hodnoty nebo typ odkazu. Pokud je předána odkazem. neexistuje žádná zabalení typu hodnoty.  
@@ -155,11 +154,11 @@ Můžete kombinovat modifikátory pro deklaraci struktury jako `readonly ref`. A
 ## <a name="see-also"></a>Viz také:
 
 - [Psát bezpečný kód efektivní](../../write-safe-efficient-code.md)
-- [Návratové a místní referenční hodnoty](../../programming-guide/classes-and-structs/ref-returns.md)
+- [Návratové hodnoty podle odkazu a lokální proměnné podle odkazu](../../programming-guide/classes-and-structs/ref-returns.md)
 - [Ref podmíněný výraz](../operators/conditional-operator.md#conditional-ref-expression)
 - [operátoru přiřazení odkazu](../operators/assignment-operator.md#ref-assignment-operator)
 - [Předávání parametrů](../../programming-guide/classes-and-structs/passing-parameters.md)
 - [Parametry metody](method-parameters.md)
 - [Referenční dokumentace jazyka C#](../index.md)
-- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
+- [Průvodce programováním v C#](../../programming-guide/index.md)
 - [Klíčová slova jazyka C#](index.md)

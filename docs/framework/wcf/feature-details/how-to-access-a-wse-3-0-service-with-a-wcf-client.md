@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 1f9bcd9b-8f8f-47fa-8f1e-0d47236eb800
-ms.openlocfilehash: d9824d4fdb7ffe78da8a8abaf3bac53d5c2e7ec2
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 1b8b344c713fdd27c67cf98c51c8c69198fd508f
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54580141"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59127455"
 ---
 # <a name="how-to-access-a-wse-30-service-with-a-wcf-client"></a>Postupy: Přístup ke službě WSE 3.0 pomocí klienta WCF
 Klienti Windows Communication Foundation (WCF) jsou přenosový kompatibilní s Web Services vylepšení (WSE) 3.0 pro služby rozhraní Microsoft .NET, když klienti WCF umožňují použít verzi ze srpna 2004 specifikace WS-Addressing. Ale WSE 3.0 services nepodporuje metadata exchange (MEX) protokol, tak při použití [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) pro vytvoření třídy klienta WCF, se nepoužijí nastavení zabezpečení pro generované Klient WCF. Proto je nutné zadat nastavení zabezpečení, že WSE 3.0 služba vyžaduje, aby po vygenerování klienta WCF.  
@@ -59,9 +59,8 @@ Klienti Windows Communication Foundation (WCF) jsou přenosový kompatibilní s 
   
 ## <a name="example"></a>Příklad  
  Následující příklad kódu definuje vlastní vazby, které zpřístupní vlastnosti, které odpovídají vlastnosti kontrolní výraz WSE 3.0 na klíč zabezpečení. Tento vlastní vazby, který se nazývá `WseHttpBinding`, se pak použije k určení vlastností vazby pro klienta WCF, který komunikuje s ukázkou WSSecurityAnonymous WSE 3.0 rychlý start.  
-  
-  
-  
+
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Channels.Binding>
 - [Spolupráce s WSE](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms752257%28v=vs.90%29)

@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 26ada5af-175c-4576-931a-9f07fa1723e9
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 663ceda1c0621e1152e795db79c3953be0090d5d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 88f23c2e03966bffccc9153e18e1b54e6847987d
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54681791"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59127605"
 ---
 # <a name="bindingfailure-mda"></a>bindingFailure – pomocník spravovaného ladění (MDA)
 `bindingFailure` Pomocníka spravovaného ladění (MDA) se aktivuje, když sestavení se nepodaří načíst.  
@@ -37,7 +37,7 @@ ms.locfileid: "54681791"
   
 -   Přihlašovací údaje uživatele nemají potřebná oprávnění ke čtení souboru.  
   
-## <a name="resolution"></a>Rozlišení  
+## <a name="resolution"></a>Řešení  
  Prvním krokem je určit, proč nebylo možné vytvořit vazbu CLR na požadovaná sestavení. Existuje mnoho důvodů, proč nemusí mít modul runtime nalezen nebo je možné načíst požadovaná sestavení, jako je například scénáře uvedené v části Příčina. Tyto akce se doporučuje, aby eliminovat příčinou selhání vazby:  
   
 -   Zjistit příčinu pomocí dat poskytované `bindingFailure` MDA:  
@@ -99,4 +99,5 @@ namespace ConsoleApplication1
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)

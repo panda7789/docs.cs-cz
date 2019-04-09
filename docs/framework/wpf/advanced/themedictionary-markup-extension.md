@@ -8,12 +8,12 @@ helpviewer_keywords:
 - ThemeDictionary markup extension [WPF]
 - XAML [WPF], ThemeDictionary markup extension
 ms.assetid: aa75e10b-13dd-4989-972d-51bab63a05e2
-ms.openlocfilehash: 0bc4b2a11927bd2551dc322c5a856ade9a85c8b7
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: ad2248c791fadc5363d90ff496d5e040f6036ab3
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57364798"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59132090"
 ---
 # <a name="themedictionary-markup-extension"></a>ThemeDictionary – rozšíření značek
 Poskytuje způsob, jak pro vlastní ovládací prvek autorů nebo aplikace, které se integrují ovládací prvky třetích stran pro načtení konkrétní motivu zdrojových slovnících pro použití v používání stylů pro ovládací prvek.  
@@ -64,7 +64,8 @@ Poskytuje způsob, jak pro vlastní ovládací prvek autorů nebo aplikace, kter
  `ThemeDictionary` je rozšíření značek. Rozšíření značek jsou obvykle implementována v případě požadavku, aby díky použití řídicí sekvence mohly být hodnoty atributů něčím jiným než literálními hodnotami nebo názvy obslužných rutin, a tento požadavek má tak rozsáhlou platnost, že nestačí jednoduše použít převaděče typů pro určité typy nebo vlastnosti. Všechna rozšíření značek v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] použít {a} znaků v syntaxi atributu, což je konvence, podle kterého [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] procesoru rozpozná, že rozšíření značek musí zpracovat atribut. Další informace najdete v tématu [– rozšíření značek a WPF XAML](markup-extensions-and-wpf-xaml.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Styly a šablony](../controls/styling-and-templating.md)
 - [Přehled XAML (WPF)](xaml-overview-wpf.md)
 - [Rozšíření značek a WPF XAML](markup-extensions-and-wpf-xaml.md)
-- [Prostředek, obsah a datové soubory aplikace WPF](../app-development/wpf-application-resource-content-and-data-files.md)
+- [Zdroj, obsah a datové soubory zdroje aplikací WPF](../app-development/wpf-application-resource-content-and-data-files.md)

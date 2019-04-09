@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Windows Forms, user input
 ms.assetid: 9d61fa96-70f7-4754-885a-49a4a6316bdb
-ms.openlocfilehash: 351c1e42bb775331cbe0e2005b6bea284716de75
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 0eb39f0ecd8fcd12918b38bd77fed2ff32cac1d8
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57711925"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59124147"
 ---
 # <a name="user-input-in-a-windows-forms-application"></a>Uživatelský vstup v aplikaci Windows Forms
 Ve Windows Forms uživatelský vstup přijde na aplikace ve formě zpráv Windows. Řadu přepisovatelné metody zpracování těchto zpráv na úrovni aplikace, formuláře a řídit. Tyto metody přijímat zprávy myši a klávesnice, vyvolají události, které může být zpracována pro získání informací o myši nebo klávesnice vstup. V mnoha případech bude schopná zpracovat veškerý vstup uživatele jednoduše tak, že zpracování těchto událostí aplikace Windows Forms. V jiných případech může aplikace potřebovat k přepsání metod, které zpracovávají zprávy, aby se zachytily určité zprávy předtím, než je přijatých aplikací, formulář nebo ovládací prvek.  
@@ -31,6 +31,7 @@ Ve Windows Forms uživatelský vstup přijde na aplikace ve formě zpráv Window
  Klávesnice a myši zprávy jsou zpracovány také další sadu přepisovatelné metody, které jsou specifické pro tyto typy zpráv. Další informace najdete v tématu [jak funguje vstup klávesnice](how-keyboard-input-works.md) a [jak funguje myši vstup ve Windows Forms](how-mouse-input-works-in-windows-forms.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Uživatelský vstup ve Windows Forms](user-input-in-windows-forms.md)
-- [Vstup z klávesnice v aplikaci Windows Forms](keyboard-input-in-a-windows-forms-application.md)
+- [Vstup z klávesnice ve formulářové aplikaci Windows](keyboard-input-in-a-windows-forms-application.md)
 - [Vstup z myši v aplikaci Windows Forms](mouse-input-in-a-windows-forms-application.md)

@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: Vytváření hlavních podrobných seznamů pomocí ovládacího prvku Windows Forms DataGrid pomocí návrháře'
+title: 'Postupy: Vytváření hlavních-podrobných seznamů s ovládacím prvkem Windows Forms DataGrid pomocí Návrháře'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - master-details lists
 - DataGrid control [Windows Forms], master-details lists
 - related tables [Windows Forms], displaying in DataGrid control
 ms.assetid: 19438ba2-f687-4417-a2fb-ab1cd69d4ded
-ms.openlocfilehash: 0bf967ed364447782c8e8df4c86ac32371ac880f
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: 1d9e01ab1fbabeb7b20fb5d2449ca7bba5f1853a
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57705152"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59125961"
 ---
-# <a name="how-to-create-master-details-lists-with-the-windows-forms-datagrid-control-using-the-designer"></a>Postupy: Vytváření hlavních podrobných seznamů pomocí ovládacího prvku Windows Forms DataGrid pomocí návrháře
+# <a name="how-to-create-master-details-lists-with-the-windows-forms-datagrid-control-using-the-designer"></a>Postupy: Vytváření hlavních-podrobných seznamů s ovládacím prvkem Windows Forms DataGrid pomocí Návrháře
 
 > [!NOTE]
 >  <xref:System.Windows.Forms.DataGridView> Ovládací prvek nahradí a přidá funkce, které <xref:System.Windows.Forms.DataGrid> řízení; však <xref:System.Windows.Forms.DataGrid> ovládací prvek se zachovává kvůli zpětné kompatibilitě a budoucí použití, pokud se rozhodnete. Další informace najdete v tématu [rozdíly mezi Windows Forms DataGridView a DataGrid – ovládací prvky](differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).  
@@ -53,6 +53,7 @@ ms.locfileid: "57705152"
     2.  Vyberte relaci (například "Customers.CustOrd") mezi tabulkami a podrobností z rozevíracího seznamu v <xref:System.Windows.Forms.DataGrid.DataMember%2A> vlastnost. Chcete-li zobrazit relace, rozbalte uzel kliknutím na symbol plus (**+**) znaménko vedle hlavní tabulku v rozevíracím seznamu.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Ovládací prvek DataGrid](datagrid-control-windows-forms.md)
 - [Přehled ovládacího prvku DataGrid](datagrid-control-overview-windows-forms.md)
 - [Postupy: Vytvoření vazby ovládacího prvku Windows Forms DataGrid ke zdroji dat](how-to-bind-the-windows-forms-datagrid-control-to-a-data-source.md)

@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: a60c30fa-1e68-45fe-b984-f6abb9ede40e
-ms.openlocfilehash: 0b962df58092dc0d410bff4559180a5d77580545
-ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
+ms.openlocfilehash: 48c95411d08aefc3ecb7d8a7041ac47d44e6b9ae
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56093928"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59127943"
 ---
 # <a name="standard-query-operator-translation"></a>Převod standardních operátorů dotazů
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Standardní operátory dotazu se přeloží na příkazy jazyka SQL. Procesor dotazů databáze určuje sémantika provádění SQL překladu.  
@@ -71,10 +71,10 @@ ORDER BY [t0].[CustomerID]
   
 |Operátory|Důvody|  
 |---------------|---------------|  
-|<xref:System.Linq.Enumerable.TakeWhile%2A>, <xref:System.Linq.Enumerable.SkipWhile%2A>|Dotazy SQL pracují s multisets, ne podle pořadí. `ORDER BY` je nutné poslední klauzule použít na výsledky. Z tohoto důvodu neexistuje žádný překlad pro obecné účely pro tyto dvě metody.|  
+|<xref:System.Linq.Enumerable.TakeWhile%2A>,  <xref:System.Linq.Enumerable.SkipWhile%2A>|Dotazy SQL pracují s multisets, ne podle pořadí. `ORDER BY` je nutné poslední klauzule použít na výsledky. Z tohoto důvodu neexistuje žádný překlad pro obecné účely pro tyto dvě metody.|  
 |<xref:System.Linq.Enumerable.Reverse%2A>|Překlad tuto metodu je možné seřazené sady, ale není aktuálně přeložit modulem [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].|  
-|<xref:System.Linq.Enumerable.Last%2A>, <xref:System.Linq.Enumerable.LastOrDefault%2A>|Převod z těchto metod je možné seřazené sady, ale není aktuálně přeložit modulem [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].|  
-|<xref:System.Linq.Enumerable.ElementAt%2A>, <xref:System.Linq.Enumerable.ElementAtOrDefault%2A>|Dotazy SQL pracují s multisets, ne na indexovanou pořadí.|  
+|<xref:System.Linq.Enumerable.Last%2A>,  <xref:System.Linq.Enumerable.LastOrDefault%2A>|Převod z těchto metod je možné seřazené sady, ale není aktuálně přeložit modulem [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].|  
+|<xref:System.Linq.Enumerable.ElementAt%2A>,  <xref:System.Linq.Enumerable.ElementAtOrDefault%2A>|Dotazy SQL pracují s multisets, ne na indexovanou pořadí.|  
 |<xref:System.Linq.Enumerable.DefaultIfEmpty%2A> (přetížení s výchozí argument)|Obecně platí nelze zadat výchozí hodnotu pro libovolný záznam. Hodnoty Null pro řazené kolekce členů je možné v některých případech prostřednictvím vnější spojení.|  
   
 ## <a name="expression-translation"></a>Výraz posunutí  
@@ -226,9 +226,10 @@ ORDER BY [t0].[CustomerID]
     -   <xref:System.Linq.Enumerable.ToArray%2A>  
   
 ## <a name="see-also"></a>Viz také:
-- [Referenční informace](../../../../../../docs/framework/data/adonet/sql/linq/reference.md)
+
+- [Odkaz](../../../../../../docs/framework/data/adonet/sql/linq/reference.md)
 - [Vrácení nebo přeskočení prvků v posloupnosti](../../../../../../docs/framework/data/adonet/sql/linq/return-or-skip-elements-in-a-sequence.md)
 - [Zřetězení dvou sekvencí](../../../../../../docs/framework/data/adonet/sql/linq/concatenate-two-sequences.md)
-- [Vrácení rozdílů množin mezi dvěma sekvencemi](../../../../../../docs/framework/data/adonet/sql/linq/return-the-set-difference-between-two-sequences.md)
+- [Vrácení rozdílu množin mezi dvěma sekvencemi](../../../../../../docs/framework/data/adonet/sql/linq/return-the-set-difference-between-two-sequences.md)
 - [Vrácení průniku množin mezi dvěma sekvencemi](../../../../../../docs/framework/data/adonet/sql/linq/return-the-set-intersection-of-two-sequences.md)
 - [Vrácení sjednocení množin mezi dvěma sekvencemi](../../../../../../docs/framework/data/adonet/sql/linq/return-the-set-union-of-two-sequences.md)

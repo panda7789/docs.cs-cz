@@ -2,12 +2,12 @@
 title: Jednosměrný
 ms.date: 03/30/2017
 ms.assetid: 74e3e03d-cd15-4191-a6a5-1efa2dcb9e73
-ms.openlocfilehash: e4b8a805fdbe4f330496233d5234abc0169b8c6e
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
-ms.translationtype: MT
+ms.openlocfilehash: 53718b6523bb76e30233540323d5f4f87d466fed
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58826688"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59131323"
 ---
 # <a name="one-way"></a>Jednosměrný
 Tato ukázka předvádí, služba kontaktovat s operací jednosměrné služby. Klient nečeká servisní operace dokončit, protože v případě obousměrné servisní operace. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) a používá `wsHttpBinding` vazby. Služby v této ukázce je aplikace v místním prostředí konzoly, která vám umožní sledovat službu, která přijímá a zpracovává požadavky. Klient je také konzolovou aplikaci.  
@@ -105,4 +105,3 @@ Processing Divide(22,7) - result: 3.14285714285714
 >  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Service\Oneway`  
-  

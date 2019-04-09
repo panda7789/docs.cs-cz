@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Přidání ToolTips do jednotlivých buněk v ovládacím prvku Windows Forms DataGridView'
+title: 'Postupy: Přidání popisů jednotlivých buněk v ovládacím prvku Windows Forms DataGridView'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,14 +10,14 @@ helpviewer_keywords:
 - DataGridView control [Windows Forms], adding tooltips
 - data grids [Windows Forms], adding tooltips
 ms.assetid: 2a81f9de-d58b-4ea8-bc0b-8d93c2f4cf78
-ms.openlocfilehash: 5198bec11142e31d60f9127ecebc4ffc8ee8b8ec
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 3307c92a13e5730de6dce0fe45b924e44b7af554
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57717411"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59119636"
 ---
-# <a name="how-to-add-tooltips-to-individual-cells-in-a-windows-forms-datagridview-control"></a>Postupy: Přidání ToolTips do jednotlivých buněk v ovládacím prvku Windows Forms DataGridView
+# <a name="how-to-add-tooltips-to-individual-cells-in-a-windows-forms-datagridview-control"></a>Postupy: Přidání popisů jednotlivých buněk v ovládacím prvku Windows Forms DataGridView
 Ve výchozím nastavení, popisy slouží k zobrazení hodnoty <xref:System.Windows.Forms.DataGridView> buňky, které jsou příliš malé a zobrazit jejich celý obsah. Toto chování můžete přepsat však můžete nastavit text popisku hodnoty jednotlivých buněk. To je užitečné, chcete-li zobrazit uživatelům další informace o buňku nebo můžete uživatelům poskytnout alternativní popis obsah buňky. Například pokud máte řádek, který zobrazuje ikony stavu, můžete zadat text vysvětlení použití popisů tlačítek.  
   
  Zobrazit popisky na úrovni buněk můžete také zakázat nastavením <xref:System.Windows.Forms.DataGridView.ShowCellToolTips%2A?displayProperty=nameWithType> vlastnost `false`.  
@@ -42,6 +42,7 @@ Ve výchozím nastavení, popisy slouží k zobrazení hodnoty <xref:System.Wind
  Po vytvoření vazby <xref:System.Windows.Forms.DataGridView> řízení k externímu zdroji dat nebo poskytnutí zdroje dat tak, že implementace virtuálního režimu, může dojít problémům s výkonem. Aby se zabránilo snížení výkonu při práci s velkými objemy dat, zpracovat <xref:System.Windows.Forms.DataGridView.CellToolTipTextNeeded> události spíše než nastavení <xref:System.Windows.Forms.DataGridViewCell.ToolTipText%2A> vlastnost více buněk. Při zpracování této události, získání vyšší hodnoty buňky <xref:System.Windows.Forms.DataGridViewCell.ToolTipText%2A> vlastnost vyvolá událost a vrátí hodnotu <xref:System.Windows.Forms.DataGridViewCellToolTipTextNeededEventArgs.ToolTipText%2A?displayProperty=nameWithType> vlastnost jako uvedené v události obslužné rutiny.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.DataGridView.ShowCellToolTips%2A?displayProperty=nameWithType>
 - <xref:System.Windows.Forms.DataGridView.CellToolTipTextNeeded?displayProperty=nameWithType>

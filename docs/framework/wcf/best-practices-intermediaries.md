@@ -2,12 +2,12 @@
 title: 'Doporučené postupy: Prostředníci'
 ms.date: 03/30/2017
 ms.assetid: 2d41b337-8132-4ac2-bea2-6e9ae2f00f8d
-ms.openlocfilehash: 8a95bd555e6c1acf896daa77e93d7c735d1f091c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 0bd553486bfb89a0ec14c42a1bb7d2ed9c4c540d
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54663619"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59131726"
 ---
 # <a name="best-practices-intermediaries"></a>Doporučené postupy: Prostředníci
 Chcete-li správně zpracovávaly chyby při volání metody zprostředkovatele, abyste měli jistotu, že jsou správně uzavřeny kanály na straně služby na zprostředkovatele musí věnovat pozornost.  
@@ -33,5 +33,6 @@ catch (Exception e)
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Zpracování chyb WCF](../../../docs/framework/wcf/wcf-error-handling.md)
 - [Určování a zpracování chyb v kontraktech a službách](../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md)

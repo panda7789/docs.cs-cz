@@ -9,12 +9,12 @@ helpviewer_keywords:
 - columns [Windows Forms], customizing in DataGridView control
 - cells [Windows Forms], customizing in DataGridView control
 ms.assetid: 9b7dc7b6-5ce6-4566-9949-902f74f17a81
-ms.openlocfilehash: 7ea684fd0a3f23005e70594bf1870851a3708a8c
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: c68327bb0fb747cdf38d61e944401db9f3af22a8
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57721265"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59130686"
 ---
 # <a name="how-to-customize-cells-and-columns-in-the-windows-forms-datagridview-control-by-extending-their-behavior-and-appearance"></a>Postupy: Přizpůsobení buněk a sloupců v ovládacím prvku Windows Forms DataGridView rozšířením jejich chování a vzhledu
 <xref:System.Windows.Forms.DataGridView> Ovládacího prvku poskytuje několik způsobů, jak přizpůsobit její vzhled a chování pomocí vlastnosti, události a doprovodné třídy. V některých případech můžete mít požadavky pro vaše buňky, která přesahují co může poskytnout tyto funkce. Můžete vytvořit vlastní <xref:System.Windows.Forms.DataGridViewCell> třídy k zajištění rozšířené funkce.  
@@ -71,10 +71,11 @@ ms.locfileid: "57721265"
  Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.DataGridViewCell>
 - <xref:System.Windows.Forms.DataGridViewColumn>
 - [Přizpůsobení ovládacího prvku Windows Forms DataGridView](customizing-the-windows-forms-datagridview-control.md)
 - [Architektura ovládacího prvku DataGridView](datagridview-control-architecture-windows-forms.md)
 - [Typy sloupců v ovládacím prvku Windows Forms DataGridView](column-types-in-the-windows-forms-datagridview-control.md)
-- [Doporučené postupy pro změnu velikosti ovládacího prvku Windows Forms DataGridView](best-practices-for-scaling-the-windows-forms-datagridview-control.md)
+- [Doporučené postupy pro změnu velikosti v ovládacím prvku Windows Forms DataGridView](best-practices-for-scaling-the-windows-forms-datagridview-control.md)

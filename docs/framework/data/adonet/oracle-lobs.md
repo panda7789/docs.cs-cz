@@ -2,12 +2,12 @@
 title: Soubory Oracle LOB
 ms.date: 03/30/2017
 ms.assetid: 272e8e1e-a31f-475a-8c2a-ae8e1286bdab
-ms.openlocfilehash: faf7ec75334f20742ff9d27f029d88bfaca9efd4
-ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
+ms.openlocfilehash: 3f4550344ee09620ae17de5bfcba36b3075a0f47
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57845840"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59135665"
 ---
 # <a name="oracle-lobs"></a>Soubory Oracle LOB
 Zprostředkovatel dat .NET Framework pro Oracle se zahrnuje <xref:System.Data.OracleClient.OracleLob> třídu, která se používá pro práci se společností Oracle **LOB** datové typy.  
@@ -248,5 +248,6 @@ tx.Commit();
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Oracle a ADO.NET](../../../../docs/framework/data/adonet/oracle-and-adonet.md)
 - [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

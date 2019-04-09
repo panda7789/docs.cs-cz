@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Translate Image Colors'
+title: 'Postupy: Překlad barev obrázků'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - images [Windows Forms], changing colors
 - image colors [Windows Forms]
 ms.assetid: 2106fb9a-4d60-4dcf-9220-9f189a6c4d19
-ms.openlocfilehash: 8b2e28cab2d2d04f7c99880f2b35a02ebe80dcd8
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.openlocfilehash: 04e61383ef79b17ea6e1523588cd9593ec9b082c
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58464460"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59132636"
 ---
-# <a name="how-to-translate-image-colors"></a>Postupy: Translate Image Colors
+# <a name="how-to-translate-image-colors"></a>Postupy: Překlad barev obrázků
 Překlad přidá hodnotu na jeden nebo více součástí čtyři barvy. Matice položek barev, které představují překlady jsou uvedeny v následující tabulce.  
   
 |Součást, kterou přeložit|Přehled vstupu|  
@@ -46,10 +46,11 @@ Překlad přidá hodnotu na jeden nebo více součástí čtyři barvy. Matice p
  [!code-vb[System.Drawing.RecoloringImages#11](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.RecoloringImages/VB/Class1.vb#11)]  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- V předchozím příkladu je určený k použití pomocí Windows Forms a vyžaduje <xref:System.Windows.Forms.PaintEventArgs> `e`, což je parametr <xref:System.Windows.Forms.Control.Paint> obslužné rutiny události. Nahraďte `ColorBars.bmp` název souboru bitové kopie a cestu, která jsou platné ve vašem systému.  
+ V předchozím příkladu je určený k použití pomocí Windows Forms a vyžaduje <xref:System.Windows.Forms.PaintEventArgs>`e`, což je parametr <xref:System.Windows.Forms.Control.Paint> obslužné rutiny události. Nahraďte `ColorBars.bmp` název souboru bitové kopie a cestu, která jsou platné ve vašem systému.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Drawing.Imaging.ColorMatrix>
 - <xref:System.Drawing.Imaging.ImageAttributes>
-- [Grafika a kreslení v modelu Windows Forms](graphics-and-drawing-in-windows-forms.md)
+- [Grafika a kreslení v rozhraní Windows Forms](graphics-and-drawing-in-windows-forms.md)
 - [Přebarvení obrázků](recoloring-images.md)

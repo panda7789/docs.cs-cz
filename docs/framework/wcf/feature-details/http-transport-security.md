@@ -2,12 +2,12 @@
 title: Zabezpečení přenosu HTTP
 ms.date: 03/30/2017
 ms.assetid: d3439262-c58e-4d30-9f2b-a160170582bb
-ms.openlocfilehash: 26d72bf234e66ccbf60305d7681f181077589ed0
-ms.sourcegitcommit: facefcacd7ae2e5645e463bc841df213c505ffd4
+ms.openlocfilehash: b7415dcc1e6c4a5d47d9e7b6e70a86ab1b898783
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55739511"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59113799"
 ---
 # <a name="http-transport-security"></a>Zabezpečení přenosu HTTP
 Pokud přenos pomocí protokolu HTTP, je zabezpečení poskytovaný implementace vrstvy SSL (Secure Sockets). SSL se často používá na Internetu k ověření služby ke klientovi a potom k zajištění důvěrnosti (šifrování) do kanálu. Toto téma vysvětluje, jak funguje připojení SSL a jak je implementován ve Windows Communication Foundation (WCF).  
@@ -53,5 +53,6 @@ Pokud přenos pomocí protokolu HTTP, je zabezpečení poskytovaný implementace
  Další informace o použití nástroje HttpCfg.exe nastavení portu s certifikátem X.509, naleznete v tématu [jak: Konfigurace portu s certifikátem SSL](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Zabezpečení přenosu](../../../../docs/framework/wcf/feature-details/transport-security.md)
 - [Zabezpečení zpráv](../../../../docs/framework/wcf/feature-details/message-security-in-wcf.md)

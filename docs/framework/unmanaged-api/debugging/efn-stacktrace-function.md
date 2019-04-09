@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3187809fadb275ed54a450f456d98d140d1100c9
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: dfbdbb389f9945ffeea649bcddd45bee8caf2496
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57485884"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59119987"
 ---
 # <a name="efnstacktrace-function"></a>_EFN_StackTrace – funkce
 Poskytuje textové vyjádření spravovaného zásobníku a pole `CONTEXT` záznamy, jeden pro každý přechod mezi nespravované a spravovaného kódu.  
@@ -102,4 +102,5 @@ HRESULT CALLBACK _EFN_StackTrace(
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
-- [Globální statické funkce pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-global-static-functions.md)
+
+- [Globální statické funkce ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-global-static-functions.md)

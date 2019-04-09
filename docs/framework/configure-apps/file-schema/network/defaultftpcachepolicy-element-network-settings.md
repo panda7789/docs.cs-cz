@@ -1,5 +1,5 @@
 ---
-title: <defaultFtpCachePolicy> – element (nastavení sítě)
+title: <defaultFtpCachePolicy> – Element (nastavení sítě)
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#defaultFtpCachePolicy
@@ -8,12 +8,12 @@ helpviewer_keywords:
 - <defaultFtpCachePolicy> element
 - defaultFtpCachePolicy element
 ms.assetid: 0eb0c5cb-dd97-484d-8614-785e88877abb
-ms.openlocfilehash: eda246c93660c1a37f7db3a6a38144a44a0ae1d3
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 36d174beea58ff96674bd873bfbcb8be89591669
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55279705"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59132532"
 ---
 # <a name="defaultftpcachepolicy-element-network-settings"></a>\<defaultftpcachepolicy – > – Element (nastavení sítě)
 Popisuje, zda ukládání do mezipaměti serveru FTP je aktivní a popisuje výchozí zásady ukládání do mezipaměti.  
@@ -42,7 +42,7 @@ Popisuje, zda ukládání do mezipaměti serveru FTP je aktivní a popisuje výc
   
 ## <a name="policylevel-attribute"></a>PolicyLevel, který atribut  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |`Default`|Vrátí uložený v mezipaměti prostředků, pokud je prostředek čerstvé, délka obsahu je správná, a vypršení platnosti, úpravu a délka obsahu atributy jsou k dispozici.|  
 |`BypassCache`|Vrátí prostředek ze serveru.|  
@@ -80,6 +80,7 @@ Popisuje, zda ukládání do mezipaměti serveru FTP je aktivní a popisuje výc
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Net.Cache>
 - <xref:System.Net.WebRequest>
 - <xref:System.Net.Cache.RequestCacheLevel>

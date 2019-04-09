@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 348b49e5-589d-4eb2-a597-d6ff60ab52d1
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 008a61a75aa96faad801e6da8bb0f8a86f65829c
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 9fdc4441a8a11df5427badfaea95edb0abe52bde
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55288077"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59131713"
 ---
 # <a name="method-element-net-native"></a>\<Metoda > – Element (.NET Native)
 Použije zásady reflexe runtime konstruktoru nebo metody.  
@@ -37,7 +37,7 @@ Použije zásady reflexe runtime konstruktoru nebo metody.
   
 ## <a name="name-attribute"></a>Název atributu  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |*method_name*|Název metody. Typ metody je definován nadřazený [ \<typ >](../../../docs/framework/net-native/type-element-net-native.md) nebo [ \<TypeInstantiation >](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) elementu.|  
   
@@ -49,7 +49,7 @@ Použije zásady reflexe runtime konstruktoru nebo metody.
   
 ## <a name="all-other-attributes"></a>Všechny ostatní atributy  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |*policy_setting*|Toto nastavení platí pro tento typ zásad. Možné hodnoty jsou `Auto`, `Excluded`, `Included`, a `Required`. Další informace najdete v tématu [nastavení zásad direktivy modulu Runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md).|  
   
@@ -60,13 +60,13 @@ Použije zásady reflexe runtime konstruktoru nebo metody.
 |[\<Parametr >](../../../docs/framework/net-native/parameter-element-net-native.md)|Použije zásady na typ argument předaný metodě.|  
 |[\<GenericParameter >](../../../docs/framework/net-native/genericparameter-element-net-native.md)|Použije zásady na typ parametru obecného typu nebo metody.|  
 |[\<ImpliesType>](../../../docs/framework/net-native/impliestype-element-net-native.md)|Použije zásady na typ, pokud tyto zásady se nastavily pro metodu reprezentovanou obsahující `<Method>` elementu.|  
-|[\<TypeParameter>](../../../docs/framework/net-native/typeparameter-element-net-native.md)|Použije zásady na typ zastoupený <xref:System.Type> argument předaný metodě.|  
+|[\<TypeParameter >](../../../docs/framework/net-native/typeparameter-element-net-native.md)|Použije zásady na typ zastoupený <xref:System.Type> argument předaný metodě.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Type>](../../../docs/framework/net-native/type-element-net-native.md)|Použije zásady reflexe pro typ a všechny její členy.|  
+|[\<Typ >](../../../docs/framework/net-native/type-element-net-native.md)|Použije zásady reflexe pro typ a všechny její členy.|  
 |[\<TypeInstantiation>](../../../docs/framework/net-native/typeinstantiation-element-net-native.md)|Použije zásady reflexe pro Konstruovaný obecný typ a všechny její členy.|  
   
 ## <a name="remarks"></a>Poznámky  
@@ -146,7 +146,8 @@ Použije zásady reflexe runtime konstruktoru nebo metody.
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)
 - [Elementy direktivy modulu runtime](../../../docs/framework/net-native/runtime-directive-elements.md)
 - [Nastavení zásad direktivy modulu runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md)
-- [\<MethodInstantiation> Element](../../../docs/framework/net-native/methodinstantiation-element-net-native.md)
+- [\<MethodInstantiation > – Element](../../../docs/framework/net-native/methodinstantiation-element-net-native.md)

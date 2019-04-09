@@ -3,12 +3,12 @@ title: <workflowInstanceQueries>
 ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: 4fe7ce85-cf9a-4dbf-a8f7-bc9b1fc2fe35
-ms.openlocfilehash: 6db5b2c821037b81f293daeed78cd4767ab48688
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: e54f98c980f60d02377e38d53d9d0eb48581eec0
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55290027"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59132480"
 ---
 # <a name="workflowinstancequeries"></a>\<workflowInstanceQueries>
 Představuje kolekci elementů konfigurace, které sledovat změny životního cyklu instance pracovního postupu, jako je spuštěna nebo dokončené události.  
@@ -55,7 +55,7 @@ Představuje kolekci elementů konfigurace, které sledovat změny životního c
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<workflow>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/workflow.md)|Konfigurace element, který obsahuje všechny dotazy týkající se konkrétního pracovního postupu identifikovaný **ID definice aktivity** vlastnost.|  
+|[\<pracovní postup >](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/workflow.md)|Konfigurace element, který obsahuje všechny dotazy týkající se konkrétního pracovního postupu identifikovaný **ID definice aktivity** vlastnost.|  
   
 ## <a name="remarks"></a>Poznámky  
  <xref:System.Activities.Tracking.WorkflowInstanceQuery> Se používá k přihlášení k odběru následující <xref:System.Activities.Tracking.TrackingRecord> objekty:  
@@ -84,6 +84,7 @@ Představuje kolekci elementů konfigurace, které sledovat změny životního c
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Activities.Tracking.Configuration.WorkflowInstanceQueryElementCollection?displayProperty=nameWithType>
 - <xref:System.Activities.Tracking.WorkflowInstanceQuery?displayProperty=nameWithType>
 - [Sledování a trasování pracovních postupů](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)

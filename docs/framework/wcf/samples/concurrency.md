@@ -5,12 +5,12 @@ helpviewer_keywords:
 - service behaviors, concurency sample
 - Concurrency Sample [Windows Communication Foundation]
 ms.assetid: f8dbdfb3-6858-4f95-abe3-3a1db7878926
-ms.openlocfilehash: 81abc4cd3d9f5be3ca461754f9f84287ffe2f752
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
-ms.translationtype: MT
+ms.openlocfilehash: f0d4996a7ea8ab49df780635127f39064b1050c9
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58835403"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59119142"
 ---
 # <a name="concurrency"></a>Souběžnost
 Ukázka souběžnosti znázorňuje použití <xref:System.ServiceModel.ServiceBehaviorAttribute> s <xref:System.ServiceModel.ConcurrencyMode> výčet, který řídí, zda instance služby zpracovává zprávy postupně sekvenčně nebo současně. Vzorek je založen na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md), která implementuje `ICalculator` kontrakt služby. Tato ukázka definuje kontrakt nové `ICalculatorConcurrency`, který dědí z `ICalculator`, poskytuje dvě další operace Kontrola stavu služby souběžnosti. Změnou nastavení souběžnosti můžete sledovat změny v chování pomocí klienta.  
@@ -111,4 +111,3 @@ public class CalculatorService : ICalculatorConcurrency
 >  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Behaviors\Concurrency`  
-  

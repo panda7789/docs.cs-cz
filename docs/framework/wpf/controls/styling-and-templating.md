@@ -15,12 +15,12 @@ helpviewer_keywords:
 - styles [WPF], triggers
 - styles [WPF], event triggers
 ms.assetid: 481765e5-5467-4a75-9f7b-e10e2ac410d9
-ms.openlocfilehash: bc77d6e32588f48d3a4e0dd841b98b8bc65ea4f5
-ms.sourcegitcommit: 68eb5c4928e2b082f178a42c16f73fedf52c2ab8
+ms.openlocfilehash: 3fae4993a13b02ad998668f644a80ba7c07196fa
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/05/2019
-ms.locfileid: "59055323"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59132289"
 ---
 # <a name="styling-and-templating"></a>Styly a šablony
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] styly a šablony najdete suite funkcí (styly, šablony, aktivační události a scénáře), které umožňují vývojářům a návrhářům vytvářet vizuálně působivé efekty a vytvořte konzistentní vzhled pro svůj produkt. I když vývojáři a návrháři můžete přizpůsobit vzhled náročným na základě aplikace aplikace, silné styly a šablony modelu je potřeba povolit sdílení výskytu v rámci a mezi aplikacemi a údržby. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] Tento model poskytuje.  
@@ -197,6 +197,7 @@ ms.locfileid: "59055323"
  Pokud vytváříte motiv pro vás vlastního ovládacího prvku, naleznete v části externí knihovna ovládacích prvků [Přehled vytváření ovládacího prvku](control-authoring-overview.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Sbalení URI v technologii WPF](../app-development/pack-uris-in-wpf.md)
 - [Postupy: Vyhledávání elementů generovaných objektem ControlTemplate](how-to-find-controltemplate-generated-elements.md)
 - [Hledání elementů generovaných šablonou DataTemplate](../data/how-to-find-datatemplate-generated-elements.md)

@@ -2,12 +2,12 @@
 title: 'Postupy: Implementace klientské aplikace používající zjišťování proxy k vyhledání služby'
 ms.date: 03/30/2017
 ms.assetid: 62b41a75-cf40-4c52-a842-a5f1c70e247f
-ms.openlocfilehash: 3f78ad8436ae1132eb48057f027d10ef191a6ad9
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 42dc2e8269e36161904f69880712924d4789333e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54745291"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59115970"
 ---
 # <a name="how-to-implement-a-client-application-that-uses-the-discovery-proxy-to-find-a-service"></a>Postupy: Implementace klientské aplikace používající zjišťování proxy k vyhledání služby
 Toto téma je třetí webinář tři témat, která popisuje, jak implementace zjišťování proxy. V předchozím tématu [jak: Implementace zjistitelné služby, která se registruje pomocí Proxy zjišťování](../../../../docs/framework/wcf/feature-details/discoverable-service-that-registers-with-the-discovery-proxy.md), implementovat službu WCF, která se zaregistruje pomocí proxy zjišťování. V tomto tématu vytvořte klienta WCF používající zjišťování proxy k vyhledání služeb WCF.  
@@ -282,6 +282,7 @@ namespace Microsoft.Samples.Discovery
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled zjišťování WCF](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md)
-- [Postupy: Implementace Proxy zjišťování](../../../../docs/framework/wcf/feature-details/how-to-implement-a-discovery-proxy.md)
-- [Postupy: Implementace zjistitelné služby, která se registruje pomocí Proxy zjišťování](../../../../docs/framework/wcf/feature-details/discoverable-service-that-registers-with-the-discovery-proxy.md)
+- [Postupy: Implementace zjišťování proxy](../../../../docs/framework/wcf/feature-details/how-to-implement-a-discovery-proxy.md)
+- [Postupy: Implementace zjistitelné služby, která se registruje pomocí proxy zjišťování](../../../../docs/framework/wcf/feature-details/discoverable-service-that-registers-with-the-discovery-proxy.md)

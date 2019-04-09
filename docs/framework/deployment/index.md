@@ -2,15 +2,21 @@
 title: Nasazení .NET Framework a aplikací
 ms.date: 03/30/2017
 helpviewer_keywords:
-  - 'deploying applications [.NET Framework], packaging'
-  - 'deploying applications [.NET Framework]'
-  - 'deploying applications [.NET Framework], features'
-  - 'deploying applications [.NET Framework], distribution'
-  - '.NET Framework, deploying'
-  - .NET Framework application deployment
+- deploying applications [.NET Framework], packaging
+- deploying applications [.NET Framework]
+- deploying applications [.NET Framework], features
+- deploying applications [.NET Framework], distribution
+- .NET Framework, deploying
+- .NET Framework application deployment
 ms.assetid: 238d8284-6042-4a38-a7f6-1ee8efd719da
 author: mairaw
 ms.author: mairaw
+ms.openlocfilehash: 0ff426f051b37830b0161cd0e0e4368a5750c664
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59124764"
 ---
 # <a name="deploying-the-net-framework-and-applications"></a>Nasazení .NET Framework a aplikací
 Tento článek pomůže začít nasazení rozhraní .NET Framework s vaší aplikací. Většina informací je určená pro vývojáře, výrobci OEM a enterprise administrators. Uživatelé, kteří chtějí nainstalovat rozhraní .NET Framework na svých počítačích byste si přečíst [instalace rozhraní .NET Framework](~/docs/framework/install/index.md).  
@@ -161,4 +167,5 @@ Tento článek pomůže začít nasazení rozhraní .NET Framework s vaší apli
 |[Postupy: Získání procesu z instalačního programu .NET Framework 4.5](../../../docs/framework/deployment/how-to-get-progress-from-the-dotnet-installer.md)|Popisuje, jak spustit bez upozornění a sledovat proces instalace rozhraní .NET Framework při vlastním zobrazením průběhu instalace.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Průvodce vývojem](../../../docs/framework/development-guide.md)

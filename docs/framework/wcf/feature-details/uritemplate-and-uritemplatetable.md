@@ -2,12 +2,12 @@
 title: UriTemplate a UriTemplateTable
 ms.date: 03/30/2017
 ms.assetid: 5cbbe03f-4a9e-4d44-9e02-c5773239cf52
-ms.openlocfilehash: 3fd60325d2264a2ddeaabef7b0998844ca8c8cd6
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: b0dc3b2b747bc08da239490db7db3ba77d1e7ed8
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54722605"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59130244"
 ---
 # <a name="uritemplate-and-uritemplatetable"></a>UriTemplate a UriTemplateTable
 Weboví vývojáři potřebují popisují tvaru a rozložení identifikátorů URI, která odpovídají jejich služby. Windows Communication Foundation (WCF) přidali dvě nové třídy poskytovat vývojářům kontrolu nad jejich identifikátorů URI. <xref:System.UriTemplate> a <xref:System.UriTemplateTable> představují základ pro modul na základě identifikátoru URI odeslání ve službě WCF. Tyto třídy lze také na své vlastní, umožňuje vývojářům využívat šablon a identifikátor URI mechanismu mapování bez implementace služby WCF.  
@@ -329,8 +329,9 @@ Když je proměnné předána výchozí hodnotu `null` existují některé dalš
 > Á znaků a Á považují za různých znaků, když se zobrazí jako součást cesty identifikátoru URI nebo <xref:System.UriTemplate> segment cesty literálu (ale a znaků a A jsou považovány za stejný). Á znaků a Á považují za stejné znaky, pokud se zobrazují jako součást <xref:System.UriTemplate> {variableName} nebo řetězec dotazu (a a a A také považují za stejné znaky).  
   
 ## <a name="see-also"></a>Viz také:
-- [Přehled programovacího modelu webových služeb HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model-overview.md)
-- [Programovací objektový model webových služeb HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-object-model.md)
+
+- [Přehled modelu webového programování HTTP služby WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model-overview.md)
+- [Programovací objektový model WCF Web HTTP](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-object-model.md)
 - [UriTemplate](../../../../docs/framework/wcf/samples/uritemplate-sample.md)
 - [Tabulka UriTemplate](../../../../docs/framework/wcf/samples/uritemplate-table-sample.md)
 - [Dispečer tabulky UriTemplate](../../../../docs/framework/wcf/samples/uritemplate-table-dispatcher-sample.md)

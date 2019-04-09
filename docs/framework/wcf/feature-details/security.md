@@ -6,12 +6,12 @@ helpviewer_keywords:
 - security [WCF]
 - Windows Communication Foundation, security
 ms.assetid: 7ea87fcb-dcfb-4a4a-8b03-6b954575d45b
-ms.openlocfilehash: 9827d14a1e64b6111c6c3c9cf53a49170f1a9077
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 58bec40f197dd1f2b104607a65c3ad456b95f69d
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54592819"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59118193"
 ---
 # <a name="windows-communication-foundation-security"></a>Zabezpečení WCF
 Témata v této části popisují funkce zabezpečení Windows Communication Foundation (WCF) a pomocí nich můžete pomoct zabezpečených zpráv.  
@@ -52,7 +52,7 @@ Témata v této části popisují funkce zabezpečení Windows Communication Fou
  [Auditování](../../../../docs/framework/wcf/feature-details/auditing-security-events.md)  
  Popisuje, jak auditování událostí zabezpečení.  
   
- [Informace o zabezpečení a osvědčené postupy](../../../../docs/framework/wcf/feature-details/security-guidance-and-best-practices.md)  
+ [Informace o zabezpečení a doporučené postupy](../../../../docs/framework/wcf/feature-details/security-guidance-and-best-practices.md)  
  Pokyny pro vytváření zabezpečených aplikací WCF.  
   
 ## <a name="reference"></a>Odkaz  
@@ -70,4 +70,5 @@ Témata v této části popisují funkce zabezpečení Windows Communication Fou
  [Koncepční přehled](../../../../docs/framework/wcf/conceptual-overview.md)  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Konfigurace vaší aplikace](../../../../docs/framework/wcf/diagnostics/configuring-your-application.md)

@@ -1,15 +1,15 @@
 ---
-title: Ladění dotazech LINQ to DataSet
+title: Ladění dotazů v LINQ to DataSet
 ms.date: 03/30/2017
 ms.assetid: f4c54015-8ce2-4c5c-8d18-7038144cc66d
-ms.openlocfilehash: 636d42566275f042f82f939e160c7fec5f180e96
-ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
+ms.openlocfilehash: 0e015cc6042a21bf6d35915c3e19bfeb9b0dbb2a
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55825506"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59133326"
 ---
-# <a name="debugging-linq-to-dataset-queries"></a>Ladění dotazech LINQ to DataSet
+# <a name="debugging-linq-to-dataset-queries"></a>Ladění dotazů v LINQ to DataSet
 
 Visual Studio podporuje ladění [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] kódu. Existují však určité rozdíly mezi ladění [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] kódu a jiné-[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] spravovaného kódu. Většina funkcí ladění pracuje s [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] příkazy, včetně posílení, nastavení zarážek a zobrazení výsledků, které jsou zobrazeny v oknech ladicího programu. Však odložené dotazu provádění ve službě má některé vedlejší účinky, které byste měli zvážit během ladění [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] kódu a narazíte na určitá omezení pomocí funkce upravit a pokračovat. Toto téma popisuje aspekty ladění, které jsou jedinečné pro [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] ve srovnání s jinou hodnotu než[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] spravovaného kódu.  
   
@@ -28,5 +28,6 @@ Visual Studio podporuje ladění [!INCLUDE[linq_dataset](../../../../includes/li
  V jazyce Visual Basic v sadě Visual Studio, můžete použít funkce upravit a pokračovat na jinou hodnotu než[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] kód v metodě, která obsahuje i [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] dotazu. Můžete přidat nebo odebrat kód před [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] prohlášení, i v případě, že změny ovlivní počet řádků [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] dotazu. V jazyce Visual Basic prostředí ladění pro jinou hodnotu než[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] kód zůstane stejné, jako byl před [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] byla zavedena. Nejde změnit, přidat nebo odebrat [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] dotazování, ale pokud zastavíte ladění, aby se změny projevily.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Ladění spravovaného kódu](/visualstudio/debugger/debugging-managed-code)
 - [Průvodce programováním](../../../../docs/framework/data/adonet/programming-guide-linq-to-dataset.md)

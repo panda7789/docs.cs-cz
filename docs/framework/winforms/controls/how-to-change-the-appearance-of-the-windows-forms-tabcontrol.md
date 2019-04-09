@@ -11,12 +11,12 @@ helpviewer_keywords:
 - tabs [Windows Forms], controlling appearance
 - buttons [Windows Forms], displaying tabs as
 ms.assetid: 7c6cc443-ed62-4d26-b94d-b8913b44f773
-ms.openlocfilehash: 642115eeb61649eb369058947e5347d4389182a0
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: c84ce67225b70933e65b8f88da1eaef6b1f3de99
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57702409"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59133130"
 ---
 # <a name="how-to-change-the-appearance-of-the-windows-forms-tabcontrol"></a>Postupy: Změna vzhledu ovládacího prvku Windows Forms TabControl
 Můžete změnit vzhled karty ve Windows Forms pomocí vlastnosti <xref:System.Windows.Forms.TabControl> a <xref:System.Windows.Forms.TabPage> objekty, které tvoří jednotlivé karty na ovládacím prvku. Nastavením těchto vlastností můžete zobrazit obrázky na karty, zobrazení karet svisle namísto vodorovně, zobrazit více řádků karet a povolit nebo zakázat karty prostřednictvím kódu programu.  
@@ -66,8 +66,9 @@ Můžete změnit vzhled karty ve Windows Forms pomocí vlastnosti <xref:System.W
 -   Nastavte <xref:System.Windows.Forms.TabControl.Appearance%2A> vlastnost <xref:System.Windows.Forms.TabControl> k <xref:System.Windows.Forms.TabAppearance.Buttons> nebo <xref:System.Windows.Forms.TabAppearance.FlatButtons>.  
   
 ## <a name="see-also"></a>Viz také:
-- [Ovládací prvek TabControl](tabcontrol-control-windows-forms.md)
+
+- [TabControl – ovládací prvek](tabcontrol-control-windows-forms.md)
 - [Přehled ovládacího prvku TabControl](tabcontrol-control-overview-windows-forms.md)
-- [Postupy: Přidání ovládacího prvku do stránky karty](how-to-add-a-control-to-a-tab-page.md)
-- [Postupy: Zákaz stránek karet](how-to-disable-tab-pages.md)
+- [Postupy: Přidání ovládacího prvku na kartu](how-to-add-a-control-to-a-tab-page.md)
+- [Postupy: Zakázání karet](how-to-disable-tab-pages.md)
 - [Postupy: Přidání a odebrání karet pomocí ovládacího prvku Windows Forms TabControl](how-to-add-and-remove-tabs-with-the-windows-forms-tabcontrol.md)

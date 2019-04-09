@@ -10,12 +10,12 @@ helpviewer_keywords:
 - printing a form
 - printing [Windows Forms], printing a form
 ms.assetid: c8dff5f8-f56a-4c07-ae31-64643b31f8fc
-ms.openlocfilehash: 80bf88ad048e55a381d034d2a796de6f77f8691c
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 85fb12028687578b76e0f16061deb9b9a4de70e3
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57714148"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59121963"
 ---
 # <a name="how-to-print-a-windows-form"></a>Postupy: Tisk formuláře Windows
 Jako součást procesu vývoje obvykle chcete vytisknout kopii formuláře Windows. Následující příklad kódu ukazuje, jak vytisknout kopii aktuálního formuláře pomocí <xref:System.Drawing.Graphics.CopyFromScreen%2A> metody.  
@@ -38,6 +38,7 @@ Jako součást procesu vývoje obvykle chcete vytisknout kopii formuláře Windo
  Chcete-li spustit tento příklad kódu, musíte mít oprávnění k přístupu k tiskárně, které používáte s počítačem.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Drawing.Printing.PrintDocument>
-- [Postupy: Vykreslení obrázků pomocí GDI +](how-to-render-images-with-gdi.md)
-- [Postupy: Tisk grafiky ve Windows Forms](how-to-print-graphics-in-windows-forms.md)
+- [Postupy: Vykreslení obrázků pomocí GDI+](how-to-render-images-with-gdi.md)
+- [Postupy: Tisk grafiky v modelu Windows Forms](how-to-print-graphics-in-windows-forms.md)

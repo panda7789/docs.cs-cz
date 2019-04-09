@@ -1,15 +1,15 @@
 ---
-title: Mapování omezení XML schématu (XSD) k omezením datové sady
+title: Mapování omezení schématu XML (XSD) k omezením datové sady
 ms.date: 03/30/2017
 ms.assetid: 3d0d1a4b-9104-434f-ac04-6c01ab5716b5
-ms.openlocfilehash: 8addcf564bda969d404694171a2af3dd277ff22b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a1690e99aeaeb7ed9c85fd28697ae22d34bb2018
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54657334"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59115645"
 ---
-# <a name="mapping-xml-schema-xsd-constraints-to-dataset-constraints"></a>Mapování omezení XML schématu (XSD) k omezením datové sady
+# <a name="mapping-xml-schema-xsd-constraints-to-dataset-constraints"></a>Mapování omezení schématu XML (XSD) k omezením datové sady
 Schéma XML definice jazyk (XSD) umožňuje zadat pro prvky a atributy, které definuje omezení. Při mapování schématu XML na relační schéma v <xref:System.Data.DataSet>, omezení schématu XML se mapují na odpovídající omezení relačních tabulek a sloupců v rámci **datovou sadu**.  
   
  Tato část pojednává o mapování následující omezení schématu XML:  
@@ -44,4 +44,5 @@ Schéma XML definice jazyk (XSD) umožňuje zadat pro prvky a atributy, které d
  Popisuje prvky schématu XML použitý k vytvoření relace mezi sloupci tabulky v **datovou sadu**.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

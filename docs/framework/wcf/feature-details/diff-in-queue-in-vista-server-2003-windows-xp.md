@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - queues [WCF], differences in operating systems
 ms.assetid: aa809d93-d0a3-4ae6-a726-d015cca37c04
-ms.openlocfilehash: 5bbae7e54160923e973ff6a8adb655587adf1002
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d13cb3e732d0276902def5de6ca7c007f61b0ec9
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54708828"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59115983"
 ---
 # <a name="differences-in-queuing-features-in-windows-vista-windows-server-2003-and-windows-xp"></a>Rozdíly funkcí front zpráv v systémech Windows Vista, Windows Server 2003 a Windows XP
 Toto téma shrnuje rozdíly ve funkci Windows Communication Foundation (WCF) fronty mezi [!INCLUDE[wv](../../../../includes/wv-md.md)], [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)], a [!INCLUDE[wxp](../../../../includes/wxp-md.md)].  
@@ -36,5 +36,6 @@ Toto téma shrnuje rozdíly ve funkci Windows Communication Foundation (WCF) fro
  MSMQ na [!INCLUDE[wv](../../../../includes/wv-md.md)] podporuje vzdálené transakční operace čtení. To umožňuje aplikaci, která čte z fronty zajistit také jejich hostování v počítači, který se liší od počítače, který je hostitelem fronty. Tím se zajistí možnost používat farmu služby čtení z centrální fronty, který zlepšuje celkovou propustnost systému. Je také zajišťuje, že pokud dojde k chybě při čtení a zpracování zprávy, transakce se vrátí zpět a zpráva zůstane ve frontě pro pozdější zpracování.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Zpracování chyb přenosu zpráv pomocí front nedoručených zpráv](../../../../docs/framework/wcf/feature-details/using-dead-letter-queues-to-handle-message-transfer-failures.md)
 - [Zpracování škodlivých zpráv](../../../../docs/framework/wcf/feature-details/poison-message-handling.md)

@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Ladění aplikace služby Windows'
+title: 'Postupy: Ladění aplikací spouštěných jako služby systému Windows'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - debugging Windows Service applications
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - services, debugging
 ms.assetid: 63ab0800-0f05-4f1e-88e6-94c73fd920a2
 author: ghogen
-ms.openlocfilehash: 15b790f4a4d3348e2bef3e7e929d72c09da8690c
-ms.sourcegitcommit: acd8ed14fe94e9d4e3a7fb685fe83d05e941073c
-ms.translationtype: MT
+ms.openlocfilehash: 7782c60832be487a258b51eab0b050e0a850d20d
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56441876"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59124576"
 ---
-# <a name="how-to-debug-windows-service-applications"></a>Postupy: Ladění aplikace služby Windows
+# <a name="how-to-debug-windows-service-applications"></a>Postupy: Ladění aplikací spouštěných jako služby systému Windows
 Služba musí být spuštěna v rámci kontextu správce řízení služeb spíše než v rámci sady Visual Studio. Z tohoto důvodu ladění služby není tak přímočaré jako ladění jiných typů aplikací Visual Studio. Chcete-li ladit službu, musíte spustit službu a potom připojit ladicí program k procesu, ve kterém je spuštěná. Potom můžete ladit svoji aplikaci pomocí všech standardních funkcí ladění sady Visual Studio.  
   
 > [!CAUTION]
@@ -114,7 +114,8 @@ Služba musí být spuštěna v rámci kontextu správce řízení služeb spí�
  V některých případech, například pokud chcete ladit problém, který nastane pouze při spuštění systému budete muset použít ladicí program Windows. [Stáhněte si Windows Driver Kit (WDK)](/windows-hardware/drivers/download-the-wdk) uvidíme [jak ladit služby Windows](https://support.microsoft.com/kb/824344).  
   
 ## <a name="see-also"></a>Viz také:
-- [Úvod do aplikací služby systému Windows](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)
+
+- [Představení aplikací spouštěných jako služby systému Windows](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)
 - [Postupy: Instalace a odinstalace služeb](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md)
-- [Postupy: Spuštění služeb](../../../docs/framework/windows-services/how-to-start-services.md)
+- [Postupy: Spuštění služby](../../../docs/framework/windows-services/how-to-start-services.md)
 - [Ladění služby](/windows/desktop/Services/debugging-a-service)

@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: b044b1c9-c1e5-4c9f-84d8-0f02f4537f8b
-ms.openlocfilehash: 44c1b489897a25d293644c5a3ef7d446dd8d4a3b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 8b2ebc108bf3eef60e8877e617acec782da38fa4
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54651120"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59124550"
 ---
 # <a name="how-to-host-a-wcf-service-in-iis"></a>Postupy: Hostování služby WCF v IIS
 Toto téma popisuje základní kroky potřebné k vytvoření služby Windows Communication Foundation (WCF), které je hostované v Internetové informační služby (IIS). Toto téma předpokládá se seznámíte se službou IIS a pochopit, jak vytvářet a spravovat aplikace služby IIS pomocí nástroje pro správu služby IIS. Další informace o službě IIS najdete v části [Internetová informační služba](https://go.microsoft.com/fwlink/?LinkId=132449). Služba WCF, která se spustí v prostředí služby IIS plně využívá funkce služby IIS, jako je například recyklace procesů, nečinnosti vypnutí, monitorování stavu procesu a aktivaci založenou na zprávách. Tato možnost hostování vyžaduje, aby byly správně konfigurovány služby IIS, ale nevyžaduje, že libovolný kód hostování se zapisují jako součást aplikace. Můžete použít hostování IIS pouze s přenos pomocí protokolu HTTP.  
@@ -76,6 +76,7 @@ Toto téma popisuje základní kroky potřebné k vytvoření služby Windows Co
  [!code-xml[c_HowTo_HostInIIS#100](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_hostiniis/common/web.config#100)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Hostování v Internetové informační službě](../../../../docs/framework/wcf/feature-details/hosting-in-internet-information-services.md)
 - [Služby hostování](../../../../docs/framework/wcf/hosting-services.md)
 - [Služby WCF a ASP.NET](../../../../docs/framework/wcf/feature-details/wcf-services-and-aspnet.md)

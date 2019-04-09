@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: e40e314c-eb30-4f44-a054-41e511e35832
-ms.openlocfilehash: 8c8b7822d051ff905623a0c537f6523f151d312d
-ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
+ms.openlocfilehash: 1064e4f8d4fce16d0505eb79b5e862be7c2e4ce6
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55827107"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59111361"
 ---
 # <a name="method-based-query-syntax-examples-filtering"></a>Příklady syntaxe dotazů založených na volání metody: Filtrování
 Příklady v tomto tématu ukazují, jak používat `Where` a `Where…Contains` metody k dotazování [AdventureWorks Sales Model](https://archive.codeplex.com/?p=msftdbprodsamples) pomocí syntaxe dotazů založených na volání metody. Všimněte si, kde...`Contains` nelze použít jako součást [zkompilován dotaz](../../../../../../docs/framework/data/adonet/ef/language-reference/compiled-queries-linq-to-entities.md).  
@@ -66,4 +66,5 @@ Příklady v tomto tématu ukazují, jak používat `Where` a `Where…Contains`
  [!code-vb[DP L2E ArraysAndListsInQueries#4](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/dp l2e arraysandlistsinqueries/vb/module1.vb#4)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Dotazy v technologii LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/queries-in-linq-to-entities.md)

@@ -1,5 +1,5 @@
 ---
-title: 'Návod: Vytvoření ovládacího prvku ToolStrip s profesionálním'
+title: 'Návod: Vytvoření ovládacího prvku ToolStrip s profesionálním vzhledem'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,14 +10,14 @@ helpviewer_keywords:
 - toolbars [Windows Forms], walkthroughs
 - ToolStrip control [Windows Forms], creating professionally styled controls
 ms.assetid: b52339ae-f1d3-494e-996e-eb455614098a
-ms.openlocfilehash: 64624508a50eb6e28337baa1a3600298e2c83fd7
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: 22ec7b85973d606d329fe1c58f8cef7036fc1a8f
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57710742"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59115788"
 ---
-# <a name="walkthrough-creating-a-professionally-styled-toolstrip-control"></a>Návod: Vytvoření ovládacího prvku ToolStrip s profesionálním
+# <a name="walkthrough-creating-a-professionally-styled-toolstrip-control"></a>Návod: Vytvoření ovládacího prvku ToolStrip s profesionálním vzhledem
 Aplikace můžete udělit <xref:System.Windows.Forms.ToolStrip> řídí profesionální vzhled a chování napsáním vlastní třídy odvozené od <xref:System.Windows.Forms.ToolStripProfessionalRenderer> typu.  
   
  Tento návod ukazuje, jak používat <xref:System.Windows.Forms.ToolStrip> ovládací prvky pro vytvoření složeného ovládacího prvku, který se podobá **navigačním podokně** poskytované Microsoft Outlook®. Tyto úlohy jsou uvedené v tomto návodu:  
@@ -62,9 +62,9 @@ Aplikace můžete udělit <xref:System.Windows.Forms.ToolStrip> řídí profesio
   
 2.  V **vlastnosti** okno, nastaveno <xref:System.Windows.Forms.ToolStrip> ovládacího prvku vlastnosti podle následující tabulky.  
   
-    |Vlastnost|Hodnota|  
+    |Vlastnost|Value|  
     |--------------|-----------|  
-    |Název|`stackStrip`|  
+    |Name|`stackStrip`|  
     |CanOverflow.|`false`|  
     |Ukotvení|<xref:System.Windows.Forms.DockStyle.Bottom>|  
     |Písma|`Tahoma, 10pt, style=Bold`|  
@@ -77,9 +77,9 @@ Aplikace můžete udělit <xref:System.Windows.Forms.ToolStrip> řídí profesio
   
 4.  V **vlastnosti** okno, nastaveno <xref:System.Windows.Forms.ToolStripButton> ovládacího prvku vlastnosti podle následující tabulky.  
   
-    |Vlastnost|Hodnota|  
+    |Vlastnost|Value|  
     |--------------|-----------|  
-    |Název|`mailStackButton`|  
+    |Name|`mailStackButton`|  
     |CheckOnClick|true|  
     |– CheckState|<xref:System.Windows.Forms.CheckState.Checked>|  
     |DisplayStyle|<xref:System.Windows.Forms.ToolStripItemDisplayStyle.ImageAndText>|  
@@ -185,8 +185,9 @@ Aplikace můžete udělit <xref:System.Windows.Forms.ToolStrip> řídí profesio
 -   Vytvoření více formuláře (MDI interface) dokumentu s ukotvení <xref:System.Windows.Forms.ToolStrip> ovládacích prvků. Další informace najdete v tématu [jak: Vytvoření formuláře MDI s ovládacími prvky ToolStrip a slučování nabídek](how-to-create-an-mdi-form-with-menu-merging-and-toolstrip-controls.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.MenuStrip>
 - <xref:System.Windows.Forms.ToolStrip>
 - <xref:System.Windows.Forms.StatusStrip>
-- [Ovládací prvek ToolStrip](toolstrip-control-windows-forms.md)
+- [ToolStrip – ovládací prvek](toolstrip-control-windows-forms.md)
 - [Postupy: Zajištění standardních položek nabídky pro formulář](how-to-provide-standard-menu-items-to-a-form.md)

@@ -16,14 +16,14 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b027d26292b5d810d91932bac4ec8dee4b77661d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: bf9cca10a580af7991889de6993e931347fc27ea
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54643283"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59120953"
 ---
-# <a name="clone-function"></a>Funkce clone
+# <a name="clone-function"></a>Funkce Clone
 Vrátí nový objekt, který je kompletní klon aktuálního objektu.   
   
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
@@ -53,7 +53,7 @@ HRESULT Clone (
 
 Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
 
-|Konstanta  |Hodnota  |Popis  |
+|Konstanta  |Value  |Popis  |
 |---------|---------|---------|
 | `WBEM_E_FAILED` | 0x80041001 | Obecné selhání došlo. |
 | `WBEM_E_INVALID_PARAMETER` | 0x80041008 | `null` byl zadán jako parametr, a není povoleno v použití těchto. |
@@ -74,4 +74,5 @@ Klonovaný objekt je objekt modelu COM, který obsahuje počet odkazů hodnotu 1
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

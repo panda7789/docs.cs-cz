@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: b38526cd-a62a-48cb-822a-e91dfa68e02d
-ms.openlocfilehash: e362a71f902739663961099cf2f43dff90b4743c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5eb81fd2a64f06f1252f71e251e58df568e7407c
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54711457"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59120676"
 ---
 # <a name="obtaining-a-single-value-from-a-database"></a>Získání jedné hodnoty z databáze
 Možná bude nutné k vrácení databáze informace, které jsou pouze jednu hodnotu, nikoli ve formě tabulky nebo datový proud. Například můžete chtít vrátit výsledek agregační funkce, jako je počet (\*), výraz SUM(Price) nebo AVG(Quantity). **Příkaz** objekt, který poskytuje schopnost vrátit jednu hodnotu pomocí **ExecuteScalar** metody. **ExecuteScalar** metoda vrátí hodnotu jako skalární hodnota, hodnota první sloupec prvního řádku sady výsledků dotazu.  
@@ -21,6 +21,7 @@ Možná bude nutné k vrácení databáze informace, které jsou pouze jednu hod
  [!code-vb[DataWorks SqlCommand.ExecuteScalar#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlCommand.ExecuteScalar/VB/source.vb#1)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Příkazy a parametry](../../../../docs/framework/data/adonet/commands-and-parameters.md)
 - [Spuštění příkazu](../../../../docs/framework/data/adonet/executing-a-command.md)
 - [DbConnection, DbCommand a DbException](../../../../docs/framework/data/adonet/dbconnection-dbcommand-and-dbexception.md)

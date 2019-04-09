@@ -1,18 +1,18 @@
 ---
-title: Pokud některé nebo všechny elementy v sekvenci vyhovují podmínce
+title: Určení, jestli některé nebo všechny prvky v posloupnosti vyhovují podmínce
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 339ec145-826c-46d2-8cf2-3acd252cd072
-ms.openlocfilehash: d3c343d3cf5068e473efbd62de019a25cf19dc10
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c1bc8e18f2e3b0c67b98713e67fc261649a6a0e2
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54702571"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59128333"
 ---
-# <a name="determine-if-any-or-all-elements-in-a-sequence-satisfy-a-condition"></a>Pokud některé nebo všechny elementy v sekvenci vyhovují podmínce
+# <a name="determine-if-any-or-all-elements-in-a-sequence-satisfy-a-condition"></a>Určení, jestli některé nebo všechny prvky v posloupnosti vyhovují podmínce
 <xref:System.Linq.Enumerable.All%2A> Operátor vrátí `true` Pokud všechny prvky v sekvenci splňují podmínku.  
   
  <xref:System.Linq.Queryable.Any%2A> Operátor vrátí `true` Pokud libovolný prvek v sekvenci splňuje podmínku.  
@@ -34,4 +34,5 @@ ms.locfileid: "54702571"
  [!code-csharp[DLinqQueryExamples#38](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#38)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Příklady dotazů](../../../../../../docs/framework/data/adonet/sql/linq/query-examples.md)

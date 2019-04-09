@@ -1,5 +1,5 @@
 ---
-title: <add> – element pro element <switches>
+title: <add> – element pro <switches>
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/switches/add
@@ -7,12 +7,12 @@ helpviewer_keywords:
 - <add> element for <switches>
 - add element for <switches>
 ms.assetid: 712ac3a7-7abf-4a9e-8db4-acd241c2f369
-ms.openlocfilehash: 88cd8c9ba7244256ca9ddd3b2957f86d9485933c
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: d7500620aed1165ff365fee8529230ba252dbc4b
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55273290"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59120091"
 ---
 # <a name="add-element-for-switches"></a>\<Přidat > – Element pro \<přepínače >
 Určuje úroveň, kde je nastaven přepínač trasování.  
@@ -36,7 +36,7 @@ Určuje úroveň, kde je nastaven přepínač trasování.
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|**Jméno**|Požadovaný atribut.<br /><br /> Určuje název přepínače. Hodnota tohoto atributu odpovídá *displayName* parametr, který je předán konstruktoru přepínat.|  
+|**name**|Požadovaný atribut.<br /><br /> Určuje název přepínače. Hodnota tohoto atributu odpovídá *displayName* parametr, který je předán konstruktoru přepínat.|  
 |**value**|Požadovaný atribut.<br /><br /> Určuje úroveň přepínače.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
@@ -68,6 +68,7 @@ Určuje úroveň, kde je nastaven přepínač trasování.
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Diagnostics.Switch>
 - <xref:System.Diagnostics.TraceSwitch>
 - <xref:System.Diagnostics.BooleanSwitch>

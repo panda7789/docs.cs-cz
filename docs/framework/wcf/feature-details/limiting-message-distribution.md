@@ -2,12 +2,12 @@
 title: Omezení distribuce zpráv
 ms.date: 03/30/2017
 ms.assetid: 8b5ec4b8-1ce9-45ef-bb90-2c840456bcc1
-ms.openlocfilehash: 3f660294bf9acea3ac5df7e0b4250885645a0835
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d09a2be4a59a08a4bddbb1e0f4d038cd2c5ff3e2
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54686761"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59130218"
 ---
 # <a name="limiting-message-distribution"></a>Omezení distribuce zpráv
 Rovnocenný kanál chování je záměrné všesměrového vysílání sítě. Svůj základní flooding model zahrnuje distribuce odeslaná službou členem sítě u všech členů této sítě. To je ideální v situacích, kde každé zprávy vygenerované metodou člen je důležité a užitečné pro všechny ostatní členy (například chatovací místnosti). Mnoho aplikací však mít občasné potřebu omezení distribuce zpráv. Například pokud se nový člen připojí sítě a chce, aby se k načtení poslední zprávou odeslanou přes síť, tento požadavek nemusí být zahlcenou pro každého člena síť. Požadavek může být omezena na téměř okolí nebo můžete místně vygenerovanou zprávy odfiltrovány. Zprávy mohou rovněž odeslány do jednotlivých uzlů na síť. Toto téma popisuje použití počet směrování, filtr šíření zpráv, filtr místní nebo přímé připojení k řízení, jak se předávají zprávy v průběhu síť a obsahuje obecné pokyny pro výběr přístupu.  
@@ -44,7 +44,7 @@ Rovnocenný kanál chování je záměrné všesměrového vysílání sítě. S
   
  Odpovědi na tyto otázky vám umožňují určit, jestli se má použít počet směrování, filtr šíření zpráv, filtr místní nebo přímé připojení. Vezměte v úvahu následující obecné pokyny:  
   
--   **Who**  
+-   **Kdo**  
   
     -   *Jednotlivých uzlů*:  Filtr místní nebo přímé připojení.  
   
@@ -65,4 +65,5 @@ Rovnocenný kanál chování je záměrné všesměrového vysílání sítě. S
     -   *Nízká*:  Pravděpodobně nejsou potřeba žádné, přímé připojení.  
   
 ## <a name="see-also"></a>Viz také:
-- [Vytvoření aplikace protokolu Peer Channel](../../../../docs/framework/wcf/feature-details/building-a-peer-channel-application.md)
+
+- [Vytvoření aplikace rovnocenného kanálu](../../../../docs/framework/wcf/feature-details/building-a-peer-channel-application.md)

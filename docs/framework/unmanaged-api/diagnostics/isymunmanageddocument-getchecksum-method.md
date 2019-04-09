@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 80cda4c31ca78e0350639df809ec1e9f1dcbbaea
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: a60bf279c143559e7410d8dfd8213d3da1d05a6d
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57498247"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59127554"
 ---
 # <a name="isymunmanageddocumentgetchecksum-method"></a>ISymUnmanagedDocument::GetCheckSum – metoda
 Získá kontrolní součet.  
@@ -50,4 +50,5 @@ HRESULT GetCheckSum(
  Pokud metoda uspěje; S_OK v opačném případě chybový kód.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [ISymUnmanagedDocument – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocument-interface.md)

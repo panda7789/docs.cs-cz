@@ -2,12 +2,12 @@
 title: 'Postupy: Vytvoření pracovního postupu'
 ms.date: 03/30/2017
 ms.assetid: 87234108-8e21-4cb3-9340-4a1a13f3f98c
-ms.openlocfilehash: aaaac74d26421f96a3170b3e5a788145f8ea09fc
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 4b24e57cce4d42645fc1750ac932e5f24cf24913
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57704944"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59134794"
 ---
 # <a name="how-to-create-a-workflow"></a>Postupy: Vytvoření pracovního postupu
 Pracovní postupy lze zkonstruovat z předdefinovaných aktivit a také z vlastních aktivit. Témata v této části kroku vytvořením pracovního postupu, který používá obě integrované aktivity, jako <xref:System.Activities.Statements.Flowchart> aktivity a vlastní aktivity z předchozího [jak: Vytvořit aktivitu](how-to-create-an-activity.md) tématu. Pracovní postup modely číslo rozluštění hru. Pouze jeden z témata v této části se vyžaduje k dokončení tohoto kurzu; měli byste vybrat styl, který vás zajímá a postupujte podle tohoto kroku. V případě potřeby je ale může všechna témata dokončit.  
@@ -29,4 +29,5 @@ Pracovní postupy lze zkonstruovat z předdefinovaných aktivit a také z vlastn
  Popisuje, jak vytvořit pomocí pracovního postupu stav počítače <xref:System.Activities.Statements.StateMachine> aktivity.  
   
 ## <a name="see-also"></a>Viz také:
-- [Programování Windows Workflow Foundation](programming.md)
+
+- [Programování ve Windows Workflow Foundation](programming.md)

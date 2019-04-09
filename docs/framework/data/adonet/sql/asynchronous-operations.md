@@ -2,12 +2,12 @@
 title: Asynchronní operace
 ms.date: 03/30/2017
 ms.assetid: e7d32c3c-bf78-4bfc-a357-c9e82e4a4b3c
-ms.openlocfilehash: b1c6646f666ca1d931ab8caa8cd0a2e0c6a6722f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 72c2cc33185cb7fba5b8c8ce8d3805a6bb76f8d7
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54538658"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59116035"
 ---
 # <a name="asynchronous-operations"></a>Asynchronní operace
 Některé databázové operace, jako je například spuštění příkazu může trvat spoustu času k dokončení. V takovém případě musí aplikace s jedním vláknem blokování jiných operace a počkejte na dokončení předtím, než může i dál své vlastní operace příkazu. Naproti tomu nebudou moct přiřadit dlouho běžící operace ve vlákně na pozadí umožňuje vláknu popředí zůstanou aktivní v průběhu operace. V aplikaci Windows například delegování dlouho běžící operace ve vlákně na pozadí umožňuje vlákně uživatelského rozhraní nadále reagovat při provádění operace.  
@@ -30,6 +30,7 @@ Některé databázové operace, jako je například spuštění příkazu může
  Obsahuje příklad používání dotazování čekání na dokončení provádění asynchronního příkazu z konzolové aplikace. Tento postup platí také na knihovny tříd nebo v jiné aplikaci bez uživatelského rozhraní.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [SQL Server a ADO.NET](../../../../../docs/framework/data/adonet/sql/index.md)
 - [Asynchronní volání synchronních metod](../../../../../docs/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md)
 - [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

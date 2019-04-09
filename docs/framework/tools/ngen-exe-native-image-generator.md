@@ -20,12 +20,12 @@ helpviewer_keywords:
 ms.assetid: 44bf97aa-a9a4-4eba-9a0d-cfaa6fc53a66
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8451cecc204e8795b7a073422b34c623bce172c2
-ms.sourcegitcommit: 0069cb3de8eed4e92b2195d29e5769a76111acdd
+ms.openlocfilehash: 34fc8fb78a1dcd2637ff9ce0d0de8e7c1509bd3c
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "56333089"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59116266"
 ---
 # <a name="ngenexe-native-image-generator"></a>Ngen.exe (generátor nativních obrázků)
 Generátor nativních bitových kopií (Ngen.exe) je nástroj zvyšující výkon spravovaných aplikací. Nástroj Ngen.exe vytváří nativní bitové kopie, což jsou soubory obsahující zkompilovaný strojový kód specifický pro procesor, a instaluje je do mezipaměti nativních bitových kopií v místním počítači. Modul runtime může ke kompilaci původního sestavení použít nativní bitové kopie z mezipaměti namísto kompilátoru JIT (just-in-time).  
@@ -112,8 +112,8 @@ ngen /? | /help
   
 |Konfigurace|Popis|  
 |-------------------|-----------------|  
-|`/ExeConfig:``exePath`|Použije konfiguraci zadaného spustitelného sestavení.<br /><br /> Při vytváření vazeb na závislosti musí nástroj Ngen.exe učinit stejná rozhodnutí jako zavaděč. Pokud sdílená komponenta načtena za běhu, pomocí <xref:System.Reflection.Assembly.Load%2A> metoda, konfigurační soubor aplikace určí závislosti, která jsou načtena pro sdílenou komponentu – například verzi načtené závislosti. `/ExeConfig` Přepínač poskytuje Ngen.exe pokyny, na které závislosti budou načteny za běhu.|  
-|`/AppBase:``directoryPath`|Při hledání závislostí aplikace použije jako základ cesty zadaný adresář.|  
+|`/ExeConfig:` `exePath`|Použije konfiguraci zadaného spustitelného sestavení.<br /><br /> Při vytváření vazeb na závislosti musí nástroj Ngen.exe učinit stejná rozhodnutí jako zavaděč. Pokud sdílená komponenta načtena za běhu, pomocí <xref:System.Reflection.Assembly.Load%2A> metoda, konfigurační soubor aplikace určí závislosti, která jsou načtena pro sdílenou komponentu – například verzi načtené závislosti. `/ExeConfig` Přepínač poskytuje Ngen.exe pokyny, na které závislosti budou načteny za běhu.|  
+|`/AppBase:` `directoryPath`|Při hledání závislostí aplikace použije jako základ cesty zadaný adresář.|  
   
 <a name="OptionTable"></a>   
 ## <a name="options"></a>Možnosti  
@@ -123,7 +123,7 @@ ngen /? | /help
 |`/nologo`|Potlačí zobrazení úvodního nápisu společnosti Microsoft.|  
 |`/silent`|Potlačí zobrazování zpráv o úspěchu.|  
 |`/verbose`|Zobrazí podrobné informace o ladění. **Poznámka:**  Vzhledem k omezením operačního systému tato možnost nezobrazí dodatečných informací o Windows 98 a Windows Millennium Edition.|  
-|`/help`, `/?`|Zobrazí syntaxi příkazu a možnosti aktuální verze.|  
+|`/help`,  `/?`|Zobrazí syntaxi příkazu a možnosti aktuální verze.|  
   
 ## <a name="remarks"></a>Poznámky  
  Chcete-li spustit nástroj Ngen.exe, je zapotřebí mít oprávnění správce.  
@@ -179,9 +179,9 @@ ngen /? | /help
   
     -   [Neplatné bitové kopie](#InvalidImages)  
   
--   [Odstraňování potíží](#Troubleshooting)  
+-   [Poradce při potížích](#Troubleshooting)  
   
-    -   [Assembly Binding Log Viewer](#Fusion)  
+    -   [vazba sestavení – prohlížeč protokolu](#Fusion)  
   
     -   [JITCompilationStart Pomocník spravovaného ladění](#MDA)  
   
@@ -585,7 +585,8 @@ ngen executeQueuedItems
  V rozhraní .NET Framework verze 2.0 je pouze interakci se službou nativních bitových kopií pomocí příkazového řádku nástroje Ngen.exe. Pomocí nástroje příkazového řádku ve skriptů instalace pro akce fronty pro službu nativních bitových kopií a k interakci se službou.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Nástroje](../../../docs/framework/tools/index.md)
-- [Proces spravovaného spuštění](../../../docs/standard/managed-execution-process.md)
+- [Proces spravovaného spouštění](../../../docs/standard/managed-execution-process.md)
 - [Jak běhové prostředí vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)
 - [Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

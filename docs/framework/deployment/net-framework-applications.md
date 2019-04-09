@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 139d4cb1-5972-40f4-bdd8-1ce68e4dfb80
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 3b0bfbc3ad274ba9cb2176ed8a8fd8dac513bfbb
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 7876e21286ee16f16fa51939b09ffd0583b134d0
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54689624"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59132610"
 ---
 # <a name="deploying-net-framework-applications"></a>Nasazení aplikací .NET Framework
 Tato část dokumentace rozhraní .NET Framework obsahuje základní informace o nasazení aplikace rozhraní .NET Framework, včetně pokynů pro načtení sestavení, vyřešte odkazy na sestavení a zvýšení výkonu vaší aplikace prostřednictvím generování nativních bitových kopií.  
@@ -25,4 +25,5 @@ Tato část dokumentace rozhraní .NET Framework obsahuje základní informace o
  Tento článek popisuje způsoby, jak se vyhnout problémům identity typu, který může mít za následek <xref:System.InvalidCastException>, <xref:System.MissingMethodException>a další chyby.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Průvodce vývojem](../../../docs/framework/development-guide.md)

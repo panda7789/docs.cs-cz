@@ -10,12 +10,12 @@ helpviewer_keywords:
 - content cache policies
 - expired content
 ms.assetid: 1a7e04ec-7872-41c2-96c6-52566dcb412b
-ms.openlocfilehash: fd0321debc4aeee782c782b7e31fb8518aae2e96
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 33043652e11beb374843d43c9683ff4b7928eb3d
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54740889"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59112798"
 ---
 # <a name="cache-policy"></a>Zásady mezipaměti
 Zásady mezipaměti definuje pravidla, která se používají k určení, zda požadavek, je možné splnit pomocí kopie v mezipaměti požadovaný prostředek. Aplikace určit požadavky klienta mezipaměti na aktuálnosti, ale efektivní mezipaměti zásad se určuje podle požadavků mezipaměti klienta, požadavky na vypršení platnosti obsahu serveru a požadavky na opětovné ověření serveru. Interakce požadavky na zásady a server mezipaměti klienta vždy výsledkem nejrestriktivnější zásady ukládání do mezipaměti, abyste zajistili, že nejčerstvější obsah se vrátí do klientské aplikace.  
@@ -39,7 +39,8 @@ Zásady mezipaměti definuje pravidla, která se používají k určení, zda po
  Příklady kódu, které ukazují, vytváření a používání mezipaměti zásad, najdete v části [konfiguraci ukládání do mezipaměti v síťových aplikacích](../../../docs/framework/network-programming/configuring-caching-in-network-applications.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Správa mezipaměti pro síťové aplikace](../../../docs/framework/network-programming/cache-management-for-network-applications.md)
-- [Zásady mezipaměti na základě místa](../../../docs/framework/network-programming/location-based-cache-policies.md)
+- [Zásady mezipaměti na základě umístění](../../../docs/framework/network-programming/location-based-cache-policies.md)
 - [Zásady mezipaměti na základě času](../../../docs/framework/network-programming/time-based-cache-policies.md)
-- [Konfigurace mezipaměti v síťových aplikacích](../../../docs/framework/network-programming/configuring-caching-in-network-applications.md)
+- [Konfigurace ukládání do mezipaměti v síťových aplikacích](../../../docs/framework/network-programming/configuring-caching-in-network-applications.md)

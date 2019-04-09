@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Zabezpečení služby pomocí pověření systému Windows'
+title: 'Postupy: Zabezpečení služby pomocí přihlašovacích údajů Windows'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,14 +7,14 @@ dev_langs:
 helpviewer_keywords:
 - WCF, security
 ms.assetid: d171b5ca-96ef-47ff-800c-c138023cf76e
-ms.openlocfilehash: b5fece86dca524cb3f94f64dcb98361a93bf84a3
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
-ms.translationtype: MT
+ms.openlocfilehash: 70b8e2f28559d5fc54736db1319d2309aa5b86a7
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58410924"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59111329"
 ---
-# <a name="how-to-secure-a-service-with-windows-credentials"></a>Postupy: Zabezpečení služby pomocí pověření systému Windows
+# <a name="how-to-secure-a-service-with-windows-credentials"></a>Postupy: Zabezpečení služby pomocí přihlašovacích údajů Windows
 Toto téma ukazuje, jak povolit zabezpečení přenosu pro službu Windows Communication Foundation (WCF), která se nachází v doméně Windows a je volán klienty ve stejné doméně. Další informace o tomto scénáři najdete v tématu [zabezpečení přenosu pomocí ověřování Windows](../../../docs/framework/wcf/feature-details/transport-security-with-windows-authentication.md). Ukázková aplikace, najdete v článku [WSHttpBinding](../../../docs/framework/wcf/samples/wshttpbinding.md) vzorku.  
   
  Toto téma předpokládá máte existující rozhraní kontrakt a implementaci již definována a přidává ke, který. Můžete také upravit existující služby a služby klienta.  
@@ -148,8 +148,9 @@ Toto téma ukazuje, jak povolit zabezpečení přenosu pro službu Windows Commu
  [!code-vb[c_SecureWindowsClient#0](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securewindowsclient/vb/secureclient.vb#0)]      
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.WSHttpBinding>
-- [Nástroj metadat modelu služby (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)
+- [Nástroj ServiceModel Metadata Utility (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)
 - [Postupy: Vytvoření klienta](../../../docs/framework/wcf/how-to-create-a-wcf-client.md)
 - [Zabezpečení služeb](../../../docs/framework/wcf/securing-services.md)
 - [Přehled zabezpečení](../../../docs/framework/wcf/feature-details/security-overview.md)

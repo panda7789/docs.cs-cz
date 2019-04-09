@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 428c68b6-a7b4-44be-b280-75905f46612c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 230a5e3e3231ad6675d214d370f74eb37405c89c
-ms.sourcegitcommit: bef803e2025642df39f2f1e046767d89031e0304
+ms.openlocfilehash: 32e74a76b6b1bedee4efc5715d0710c8efce2455
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56305636"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59120754"
 ---
 # <a name="strong-naming-unmanaged-api-reference"></a>Silné názvy (referenční dokumentace nespravovaného rozhraní API)
 Rozhraní API pro silné pojmenovávání umožňuje klientovi spravovat podepisování sestavení silným názvem.  
@@ -107,5 +107,6 @@ Rozhraní API pro silné pojmenovávání umožňuje klientovi spravovat podepis
  Představuje veřejného klíče dvojice veřejného/soukromého klíče v binárním formátu.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [ICLRStrongName – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)
-- [Referenční informace o nespravovaném rozhraní API](../../../../docs/framework/unmanaged-api/index.md)
+- [Nespravované rozhraní API](../../../../docs/framework/unmanaged-api/index.md)

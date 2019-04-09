@@ -9,12 +9,12 @@ helpviewer_keywords:
 - displaying option buttons [Windows Forms], MenuStrip [Windows Forms]
 - option buttons [Windows Forms], displaying in MenuStrip
 ms.assetid: 8b596af2-9ff8-4f7b-93d7-cba830e167f4
-ms.openlocfilehash: c64dd88915fdd17deee415b4d6c3fd088fbcfbfd
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: 61feda3f49c9a9e03a606c0284629f809d6876b7
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57718867"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59115528"
 ---
 # <a name="how-to-display-option-buttons-in-a-menustrip-windows-forms"></a>Postupy: Zobrazení tlačítek možností v MenuStrip (Windows Forms)
 Přepínače, označované také jako přepínačů, jsou podobné zaškrtněte políčka s tím rozdílem, že uživatelé mohou vybrat pouze jeden po druhém. I když se ve výchozím nastavení <xref:System.Windows.Forms.ToolStripMenuItem> třída neposkytuje přepínač chování, třída poskytuje chování zaškrtávací políčko, které si můžete přizpůsobit pro implementaci přepínač chování pro položky nabídky v <xref:System.Windows.Forms.MenuStrip> ovládacího prvku.  
@@ -81,6 +81,7 @@ Přepínače, označované také jako přepínačů, jsou podobné zaškrtněte 
 -   Odkazy na sestavení systému, System.Drawing a System.Windows.Forms.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.MenuStrip>
 - <xref:System.Windows.Forms.ToolStripMenuItem>
 - <xref:System.Windows.Forms.ToolStripMenuItem.CheckOnClick%2A?displayProperty=nameWithType>

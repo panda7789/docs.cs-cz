@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 8a85936eb12d0b6123469a63a14a3ae58cb1bb5b
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: a19762cbec91871d7af617957896e4ee34944fba
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57484482"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59132705"
 ---
 # <a name="setassemblyfile-method"></a>SetAssemblyFile – metoda
 Přiřadí název sestavení, které má být sestaven. Není pro použití při vytváření nevázaných moduly.  
@@ -57,6 +57,7 @@ HRESULT SetAssemblyFile(
  Vyžaduje alink.h.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [IALink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
 - [IALink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
 - [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)

@@ -12,12 +12,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9c87578c3a5e2bec9bbd754929308645f7862ee5
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: b46c74ec0bfc1fc44bcaca07439c472b0fd8393f
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54701674"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59113760"
 ---
 # <a name="icordebugilframe3-interface"></a>ICorDebugILFrame3 – rozhraní
 Poskytuje metodu, která zapouzdřuje vrácenou hodnotu funkce. `ICorDebugILFrame3` je logickým rozšířením rozhraní ICorDebugILFrame a ICorDebugILFrame2.  
@@ -43,5 +43,6 @@ Poskytuje metodu, která zapouzdřuje vrácenou hodnotu funkce. `ICorDebugILFram
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v451plus](../../../../includes/net-current-v451plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [ICorDebugCode3 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugcode3-interface.md)
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Debugging – rozhraní](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

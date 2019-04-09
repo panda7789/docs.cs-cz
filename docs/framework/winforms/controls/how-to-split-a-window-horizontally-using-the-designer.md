@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: Rozdělit okno vodorovně pomocí návrháře'
+title: 'Postupy: Vodorovné rozdělení okna pomocí Návrháře'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - SplitContainer control [Windows Forms], horizontal splitting
 - split windows [Windows Forms], horizontal
 - windows [Windows Forms], splitting horizontally
 ms.assetid: 3872a176-891f-4c70-9779-b2ce85b0b102
-ms.openlocfilehash: 06d20a34b01cac71e234e98cea1ede7361cac6a3
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: bf36718600ac1e77be91c4c6eb87ceb44fd5a15f
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57721915"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59111381"
 ---
-# <a name="how-to-split-a-window-horizontally-using-the-designer"></a>Postupy: Rozdělit okno vodorovně pomocí návrháře
+# <a name="how-to-split-a-window-horizontally-using-the-designer"></a>Postupy: Vodorovné rozdělení okna pomocí Návrháře
 Tento příklad vytvoří rozdělovače, který rozděluje <xref:System.Windows.Forms.SplitContainer> vodorovné ovládací prvek.  
   
 > [!NOTE]
@@ -24,5 +24,6 @@ Tento příklad vytvoří rozdělovače, který rozděluje <xref:System.Windows.
 1.  V **vlastnosti** okno, nastaveno <xref:System.Windows.Forms.SplitContainer.Orientation%2A> vlastnost <xref:System.Windows.Forms.SplitContainer> mít pod kontrolou <xref:System.Windows.Forms.Orientation.Horizontal>.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.SplitContainer>
 - [Ovládací prvek SplitContainer](splitcontainer-control-windows-forms.md)

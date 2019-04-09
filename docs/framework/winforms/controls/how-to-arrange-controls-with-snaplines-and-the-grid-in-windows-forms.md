@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Windows Forms, grid options in designer
 - controls [Windows Forms], aligning
 ms.assetid: bb54bce5-880f-4a36-af68-8cf92058dc1c
-ms.openlocfilehash: 23a1c850133982c5f0136e4c21e6b73fcb94e887
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 122c20e7c3e48eaa4b4986ce2cb45411dae00723
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57716358"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59115730"
 ---
 # <a name="how-to-arrange-controls-with-snaplines-and-the-grid-in-windows-forms"></a>Postupy: Uspořádání ovládacích prvků pomocí zarovnávacích čar a mřížky ve Windows Forms
 Použití funkcí rozložení sady Visual Studio, můžete přesně nastavit umístění ovládacích prvků ve formuláři. Ovládací prvky do formuláře přidán nebo přesunout na formuláři mohou být automaticky zarovnány řádků a sloupců mřížky v Návrháři formulářů Windows, nebo je možné zarovnat ovládacích prvků pomocí zarovnávacích čar funkce.  
@@ -36,10 +36,11 @@ Použití funkcí rozložení sady Visual Studio, můžete přesně nastavit um�
      Další informace najdete v tématu [názorný postup: Uspořádání ovládacích prvků ve Windows Forms pomocí zarovnávacích čar](walkthrough-arranging-controls-on-windows-forms-using-snaplines.md). Nyní můžete zarovnávacích čar na zarovnání a uspořádání ovládacích prvků na formuláři.  
   
 ## <a name="see-also"></a>Viz také:
-- [Obecné, Návrhář formulářů Windows, dialogové okno Možnosti](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/5aazxs78(v=vs.100))
+
+- [Dialogové okno Obecné, Návrhář formulářů Windows, Možnosti](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/5aazxs78(v=vs.100))
 - [Návod: Uspořádání ovládacích prvků ve Windows Forms pomocí zarovnávacích čar](walkthrough-arranging-controls-on-windows-forms-using-snaplines.md)
-- [Windows Forms – ovládací prvky](index.md)
-- [Postupy: Přidání ovládacích prvků do formulářů Windows](how-to-add-controls-to-windows-forms.md)
+- [Ovládací prvky Windows Forms](index.md)
+- [Postupy: Přidávání ovládacích prvků do Windows Forms](how-to-add-controls-to-windows-forms.md)
 - [Uspořádávání ovládacích prvků ve Windows Forms](arranging-controls-on-windows-forms.md)
 - [Popisování jednotlivých ovládacích prvků Windows Forms a zajišťování zástupců pro tyto prvky](labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them.md)
 - [Ovládací prvky používané ve Windows Forms](controls-to-use-on-windows-forms.md)

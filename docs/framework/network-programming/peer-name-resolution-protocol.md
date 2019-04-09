@@ -1,15 +1,15 @@
 ---
-title: Protokol PNRP
+title: Protokol PNRP (Peer Name Resolution Protocol)
 ms.date: 03/30/2017
 ms.assetid: 11940511-c124-4d91-ae31-d4ed6e81ee58
-ms.openlocfilehash: 9f1850ff3a42526de988df032c39aaa916987d25
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 4473ccb01349d2697ba512861aa505d5e363ab19
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54662657"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59119064"
 ---
-# <a name="peer-name-resolution-protocol"></a>Protokol PNRP
+# <a name="peer-name-resolution-protocol"></a>Protokol PNRP (Peer Name Resolution Protocol)
 V prostředích peer-to-peer partnerské uzly použít konkrétní název řešení systémy druhé strany umístění v síti (adresy, protokoly a porty) z názvů nebo jiných typů identifikátorů. V minulosti má bylo složité peer name resolution Protocol ze své podstaty přechodné připojení, stejně jako ostatní nedostatky v v systému DNS (Domain Name).  
   
  Microsoft® Windows® sítě Peer-to-Peer platforma řeší tento problém se řešení protokolu PNRP (Peer Name), zabezpečené, škálovatelné a dynamické registraci a protokol nejdřív vyvinutý pro systém Windows XP a pak upgradovat v Windows Vista™. PNRP funguje nějak významně odlišně, než tradiční název řešení systémy, otevírá zajímavé nové možnosti pro vývojáře aplikací.  
@@ -47,6 +47,7 @@ Protokol Peer Name Resolution demonstruje následující vlastnosti:
 -   <xref:System.Net.PeerToPeer.PeerNameResolver>: Definuje proces pro vyřešení název partnerského zařízení do jeho koncových bodů sítě, včetně synchronní a asynchronní metody pro překlad.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.PeerResolvers>
 - <xref:System.Net.PeerToPeer>
 - [Ukázky programování sítě](../../../docs/framework/network-programming/network-programming-samples.md)

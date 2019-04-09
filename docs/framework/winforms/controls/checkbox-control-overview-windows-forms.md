@@ -8,12 +8,12 @@ helpviewer_keywords:
 - data binding [Windows Forms], checkbox controls
 - check boxes [Windows Forms], about check boxes
 ms.assetid: 085a4e0b-9046-473f-b141-d0edddfb2ebb
-ms.openlocfilehash: 003e57db16c35b519d3948fc24e82a94a5c3744d
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 2a18327d9836d1dbbcd5d5d6e73f217637736d20
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57713442"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59121785"
 ---
 # <a name="checkbox-control-overview-windows-forms"></a>CheckBox – přehled ovládacího prvku (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.CheckBox> ovládací prvek označuje, zda je určitá podmínka zapnutí nebo vypnutí. Se běžně používá k prezentaci Ano/Ne nebo výběr True/False pro uživatele. Ovládací prvky zaškrtávacích políček ve skupinách slouží k zobrazení více možností, ze kterého může uživatel vybrat jeden nebo více.  
@@ -25,7 +25,8 @@ Windows Forms <xref:System.Windows.Forms.CheckBox> ovládací prvek označuje, z
  <xref:System.Windows.Forms.CheckBox> Ovládací prvek má dvě důležité vlastnosti <xref:System.Windows.Forms.CheckBox.Checked%2A> a <xref:System.Windows.Forms.CheckBox.CheckState%2A>. <xref:System.Windows.Forms.CheckBox.Checked%2A> Vlastnost vrací buď `true` nebo `false`. <xref:System.Windows.Forms.CheckBox.CheckState%2A> Vlastnost vrací buď <xref:System.Windows.Forms.CheckState.Checked> nebo <xref:System.Windows.Forms.CheckState.Unchecked>; nebo, pokud <xref:System.Windows.Forms.CheckBox.ThreeState%2A> je nastavena na `true`, <xref:System.Windows.Forms.CheckBox.CheckState%2A> může také vracet <xref:System.Windows.Forms.CheckState.Indeterminate>. V neurčitém stavu bude zobrazeno šedě vzhledu označující, že není k dispozici.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.CheckBox>
 - [Postupy: Nastavení možností pomocí ovládacích prvků Windows Forms CheckBox](how-to-set-options-with-windows-forms-checkbox-controls.md)
-- [Postupy: Reakce na Windows Forms kliknutí na zaškrtávací políčko](how-to-respond-to-windows-forms-checkbox-clicks.md)
+- [Postupy: Reakce na kliknutí na prvek Windows Forms CheckBox](how-to-respond-to-windows-forms-checkbox-clicks.md)
 - [Ovládací prvek CheckBox](checkbox-control-windows-forms.md)

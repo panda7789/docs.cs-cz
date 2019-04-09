@@ -2,12 +2,12 @@
 title: Zabezpečené klientské aplikace
 ms.date: 03/30/2017
 ms.assetid: 6239592e-fa7d-4dea-9f00-d296d0048b01
-ms.openlocfilehash: c8efdf4c4baceb22ee60bdcf333ad1fec9ebd2d0
-ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
+ms.openlocfilehash: 0c14089247e916b91cb385c7d715cce54acee57c
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56092706"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59119610"
 ---
 # <a name="secure-client-applications"></a>Zabezpečené klientské aplikace
 Aplikace se obvykle skládají z mnoho částí, které musí ochránit před chybami zabezpečení, které by mohly způsobit ztrátu dat nebo jinak ohrozit zabezpečení systému. Vytváření zabezpečených uživatelské rozhraní může zabránit mnoho problémů zákonné zodpovědnosti organizací blokováním útočníci před získáním přístupu dat nebo dostatek systémových prostředků.  
@@ -27,7 +27,7 @@ Aplikace se obvykle skládají z mnoho částí, které musí ochránit před ch
  [Uživatelský vstup ve Windows Forms](../../../../docs/framework/winforms/user-input-in-windows-forms.md)  
  Poskytuje odkazy a informace pro ověřování myši a klávesnice v aplikaci Windows Forms.  
   
- [Regulárních výrazech .NET Frameworku](../../../../docs/standard/base-types/regular-expressions.md)  
+ [.NET Framework – regulární výrazy](../../../../docs/standard/base-types/regular-expressions.md)  
  Popisuje způsob použití <xref:System.Text.RegularExpressions.Regex> třídy ověření vstupu uživatele.  
   
 ## <a name="windows-applications"></a>Aplikace Windows  
@@ -36,7 +36,7 @@ Aplikace se obvykle skládají z mnoho částí, které musí ochránit před ch
  [Windows Forms – zabezpečení](../../../../docs/framework/winforms/windows-forms-security.md)  
  Popisuje, jak zabezpečit aplikace Windows Forms a obsahuje odkazy na související témata.  
   
- [Model Windows Forms a nespravované aplikace](../../../../docs/framework/winforms/advanced/windows-forms-and-unmanaged-applications.md)  
+ [Windows Forms a nespravované aplikace](../../../../docs/framework/winforms/advanced/windows-forms-and-unmanaged-applications.md)  
  Popisuje, jak pracovat s nespravovanými aplikacemi v aplikaci Windows Forms.  
   
  [ClickOnce – nasazení pro Windows Forms](../../winforms/clickonce-deployment-for-windows-forms.md)  
@@ -63,9 +63,10 @@ Aplikace se obvykle skládají z mnoho částí, které musí ochránit před ch
 |--------------|-----------------|  
 |[Konfigurace vzdálené aplikace](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/b8tysty8(v=vs.100))|Tento článek popisuje postup konfigurace aplikací vzdálené komunikace, aby se zabránilo běžné problémy.|  
 |[Zabezpečení vzdálené komunikace](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/9hwst9th(v=vs.100))|Popisuje, ověřování a šifrování, jakož i další bezpečnostní témata, které jsou relevantní pro vzdálenou komunikaci.|  
-|[Zabezpečení a důležité informace o vzdálené komunikace](../../../../docs/framework/misc/security-and-remoting-considerations.md)|Popisuje problémy se zabezpečením pomocí chráněných objektů a křížení domén aplikace.|  
+|[Důležité informace o zabezpečení a vzdálené komunikaci](../../../../docs/framework/misc/security-and-remoting-considerations.md)|Popisuje problémy se zabezpečením pomocí chráněných objektů a křížení domén aplikace.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Zabezpečení aplikací ADO.NET](../../../../docs/framework/data/adonet/securing-ado-net-applications.md)
 - [Doporučení pro strategií přístupu dat](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/8fxztkff(v=vs.90))
 - [Zabezpečování aplikací](/visualstudio/ide/securing-applications)

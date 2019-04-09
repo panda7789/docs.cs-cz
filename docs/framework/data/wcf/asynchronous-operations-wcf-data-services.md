@@ -6,12 +6,12 @@ helpviewer_keywords:
 - asynchronous operations [WCF Data Services]
 - WCF Data Services, client library
 ms.assetid: 679644c7-e3fc-422c-b14a-b44b683900d0
-ms.openlocfilehash: 1aa51d07be6073a75ef40ade83eba13371db3a69
-ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
+ms.openlocfilehash: ef41b458a3f5b977eaaff523413c1a8d3b1982a3
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56094149"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59126634"
 ---
 # <a name="asynchronous-operations-wcf-data-services"></a>Asynchronní operace (WCF Data Services)
 Webové aplikace musí zohlednit vyšší latence mezi klientem a serverem než aplikace, které běží uvnitř interní sítě. Pokud chcete optimalizovat výkon a uživatelské prostředí aplikace, doporučujeme používat asynchronní metody <xref:System.Data.Services.Client.DataServiceContext> a <xref:System.Data.Services.Client.DataServiceQuery%601> třídy při přístupu k [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] servery prostřednictvím webu.  
@@ -37,4 +37,5 @@ Webové aplikace musí zohlednit vyšší latence mezi klientem a serverem než 
  Vícevláknové aplikace, není nutně vyvolán delegát, který je registrovaný jako zpětné volání pro asynchronní operaci ve stejném vlákně, která byla použita k volání *začít* metodu, která vytvoří počáteční požadavek. V aplikaci, ve kterém musí být zpětné volání vyvolat na konkrétním vlákně, musí explicitně zařazování provádění *End* metodu, která zpracuje odpověď do požadovaného vlákna. Například aplikace pro systém Windows Presentation Foundation WPF a aplikací založených na technologii Silverlight, odpověď musí zařadit zpět do vlákna uživatelského rozhraní pomocí <xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A> metodu <xref:System.Windows.Threading.Dispatcher> objektu. Další informace najdete v tématu [dotazování v datové službě (WCF Data Services/Silverlight)](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc903932(v=vs.95)).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Klientská knihovna pro WCF Data Services](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)

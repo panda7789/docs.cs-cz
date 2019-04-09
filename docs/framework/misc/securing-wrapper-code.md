@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 1df6c516-5bba-48bd-b450-1070e04b7389
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c74a130c078077d9f692fbf6107e9d5aefc16b9a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e4d8497d17e1a82791f4dd6ca8f91c9a012db167
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54505936"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59132779"
 ---
 # <a name="securing-wrapper-code"></a>Zabezpečení kódu obálky
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
@@ -102,4 +102,5 @@ ms.locfileid: "54505936"
 -   Typy a rozhraní, které implementují. Ty by měly použít požadavky propojení konzistentně.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Pokyny pro zabezpečené kódování](../../../docs/standard/security/secure-coding-guidelines.md)

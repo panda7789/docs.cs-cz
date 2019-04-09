@@ -9,12 +9,12 @@ helpviewer_keywords:
 - XsdDataContractExporter class
 - XsdDataContractImporter class
 ms.assetid: 0da32b50-ccd9-463a-844c-7fe803d3bf44
-ms.openlocfilehash: 0529f112192fa64746d8c6dc7a49433b33bafbf5
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 9f13f9d95c40b964c5eb416c590a5d603d714bac
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54527715"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59133775"
 ---
 # <a name="schema-import-and-export"></a>Import a export schémat
 Windows Communication Foundation (WCF) zahrnuje Serializační stroj, <xref:System.Runtime.Serialization.DataContractSerializer>. `DataContractSerializer` Překládá [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] objekty a data XML (v obou směrech). Kromě samotného serializátor zahrnuje WCF přidružené schéma importu a exportu mechanismy schématu. *Schéma* je formální, přesné a který je strojově čitelný popis tvar XML, který vytvoří serializátor nebo, který deserializátor může získat přístup. WCF používá World Wide Web Consortium (W3C) schématu XML definice jazyk (XSD) jako její znázornění schématu je široce vzájemná spolupráce s mnoha platforem třetích stran.  
@@ -60,6 +60,7 @@ Windows Communication Foundation (WCF) zahrnuje Serializační stroj, <xref:Syst
  Další informace o používání <xref:System.Runtime.Serialization.XsdDataContractExporter>, naleznete v tématu [export schémat ze tříd](../../../../docs/framework/wcf/feature-details/exporting-schemas-from-classes.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Runtime.Serialization.DataContractSerializer>
 - <xref:System.Runtime.Serialization.XsdDataContractImporter>
 - <xref:System.Runtime.Serialization.XsdDataContractExporter>

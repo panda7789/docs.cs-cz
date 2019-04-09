@@ -2,12 +2,12 @@
 title: Formátování informačního kanálu (JSON)
 ms.date: 03/30/2017
 ms.assetid: f9c0b295-55e7-48ea-b308-ba51c7d31143
-ms.openlocfilehash: 46328034c3867cd2af598b41bd71f23d7594e0e9
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
-ms.translationtype: MT
+ms.openlocfilehash: 322e6e120dd37c572e0ea98cb27cde50329ae365
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58814650"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59131466"
 ---
 # <a name="feed-formatter-json"></a>Formátování informačního kanálu (JSON)
 Tento příklad ukazuje, jak k serializaci instancí <xref:System.ServiceModel.Syndication.SyndicationFeed> ve formátu JavaScript Object Notation (JSON) pomocí vlastní třídy <xref:System.ServiceModel.Syndication.SyndicationFeedFormatter> a <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>.  
@@ -60,4 +60,3 @@ writeSerializer.WriteObject(stream, new JsonFeedFormatter(feed));
 >  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Syndication\JsonFeeds`  
-  

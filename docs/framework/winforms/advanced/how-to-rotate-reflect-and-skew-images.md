@@ -9,12 +9,12 @@ helpviewer_keywords:
 - images [Windows Forms], rotating
 - images [Windows Forms], skewing
 ms.assetid: a3bf97eb-63ed-425a-ba07-dcc65efb567c
-ms.openlocfilehash: dda03c9c1e1390ca6a5250471f047d3747e989e2
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 505028c491228ffdf9c11d0c71dcd5e1afdc5103
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58839909"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59114039"
 ---
 # <a name="how-to-rotate-reflect-and-skew-images"></a>Postupy: Otáčení, převrácení a zkosení obrázků
 Můžete otáčení, převrácení a zkosení obrázku tak, že určíte cílové body pro levého horního, pravého horního a levého dolního rohu původní bitové kopie. Tři cílovými body určit afinní transformace, která mapuje původní obrázek obdélníkové se z něj rovnoběžník.  
@@ -46,7 +46,8 @@ Můžete otáčení, převrácení a zkosení obrázku tak, že určíte cílov�
  [!code-vb[System.Drawing.WorkingWithImages#61](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.WorkingWithImages/VB/Class1.vb#61)]  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- V předchozím příkladu je určený k použití pomocí Windows Forms a vyžaduje <xref:System.Windows.Forms.PaintEventArgs> `e`, což je parametr <xref:System.Windows.Forms.Control.Paint> obslužné rutiny události. Nezapomeňte nahradit `Stripes.bmp` cestou k obrázku, který je platný v systému.  
+ V předchozím příkladu je určený k použití pomocí Windows Forms a vyžaduje <xref:System.Windows.Forms.PaintEventArgs>`e`, což je parametr <xref:System.Windows.Forms.Control.Paint> obslužné rutiny události. Nezapomeňte nahradit `Stripes.bmp` cestou k obrázku, který je platný v systému.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Práce s obrázky, rastrovými obrázky, ikonami a metasoubory](working-with-images-bitmaps-icons-and-metafiles.md)

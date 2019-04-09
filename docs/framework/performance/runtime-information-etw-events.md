@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 68b4edbc-7f3b-45f6-ab75-4fd066d6af9a
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: cb213ef4a335cf6784c2889cd9cf0214a1411da2
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: af27ddaa69d34976929f40055bc2cc668f877e87
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54735711"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59117401"
 ---
 # <a name="runtime-information-etw-events"></a>Události Trasování událostí pro Windows běhových informací
 Informace o modulu runtime, včetně SKU, číslo verze, způsobem, ve kterém se aktivovala modul runtime, parametry příkazového řádku, který byl spuštěn s GUID (Pokud je k dispozici) a další relevantní informace protokolu tyto události trasování událostí pro Windows. Pokud různými moduly runtime jsou spuštěny v rámci procesu, tyto události (ClrInstanceID) na základě informací poskytnutých pomáhá rozlišit modulů runtime.  
@@ -45,4 +45,5 @@ Informace o modulu runtime, včetně SKU, číslo verze, způsobem, ve kterém s
 |RuntimeDLLPath|win:UnicodeString|Cesta k souboru DLL modulu CLR, který byl načten do procesu.|  
   
 ## <a name="see-also"></a>Viz také:
-- [Události Trasování událostí pro Windows v CLR](../../../docs/framework/performance/clr-etw-events.md)
+
+- [Události ETW CLR](../../../docs/framework/performance/clr-etw-events.md)

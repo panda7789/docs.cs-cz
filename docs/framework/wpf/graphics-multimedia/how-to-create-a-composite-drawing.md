@@ -6,12 +6,12 @@ helpviewer_keywords:
 - composite drawings [WPF]
 - graphics [WPF], composite drawings
 ms.assetid: 066eb0ab-5f0e-439d-85c6-dca60af269fc
-ms.openlocfilehash: ec71fb3e2f92444d33e15da38f0c88acc715c46d
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 0af7fbca593627ebe8cd102a02617a27eac50aa5
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57374138"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59132467"
 ---
 # <a name="how-to-create-a-composite-drawing"></a>Postupy: Vytvoření kompozitní kresby
 Tento příklad ukazuje způsob použití <xref:System.Windows.Media.DrawingGroup> k vytvoření složitých drawings kombinací několika <xref:System.Windows.Media.Drawing> objekty do jednoho kompozitní kresby.  
@@ -42,10 +42,11 @@ Složené výkresu, který má více DrawingGroup – objekty
  Další informace o <xref:System.Windows.Media.Drawing> objekty, najdete [kreslení objekty – přehled](drawing-objects-overview.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Media.DrawingGroup.BitmapEffect%2A>
 - <xref:System.Windows.Media.DrawingGroup.Transform%2A>
 - <xref:System.Windows.Media.DrawingGroup.OpacityMask%2A>
 - <xref:System.Windows.Media.DrawingGroup.Opacity%2A>
 - <xref:System.Windows.Media.DrawingGroup.ClipGeometry%2A>
 - <xref:System.Windows.Media.DrawingGroup.GuidelineSet%2A>
-- [Přehled nakreslených objektů](drawing-objects-overview.md)
+- [Přehled vykreslovaných objektů](drawing-objects-overview.md)

@@ -2,12 +2,12 @@
 title: Požadavky na systém pro zprostředkovatele dat .NET Framework pro Oracle
 ms.date: 03/30/2017
 ms.assetid: 054f76b9-1737-43f0-8160-84a00a387217
-ms.openlocfilehash: cc3fc61c5adebf67b1203897579b2f959cbc0546
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 61f8509cce248f6cc0a56900227f9758eb27c4e0
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54670867"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59111044"
 ---
 # <a name="system-requirements-for-the-net-framework-data-provider-for-oracle"></a>Požadavky na systém pro zprostředkovatele dat .NET Framework pro Oracle
 Zprostředkovatel dat .NET Framework pro Oracle vyžaduje Microsoft Data Access Components (MDAC) verze 2.6 nebo novější. Doporučuje se MDAC 2.8 SP1.  
@@ -38,5 +38,6 @@ Unicode=True
  Z důvodů použitelnosti <xref:System.Data.OracleClient.OracleLob> objekt dědí z třídy rozhraní .NET Framework Stream a poskytuje **ReadByte** a **Metoda WriteByte** metody. Také implementuje metody, jako například **CopyTo** a **vymazat**, který pracovat na oddíly Oracle **LOB** objekty. Naproti tomu klientský software Oracle poskytuje několik rozhraní API pro práci s znak **LOB**s (**datový typ CLOB** a **NCLOB**). Tato rozhraní API by ale fungovat pouze úplné znaků. Vzhledem k tomuto rozdílu Data Provider pro Oracle implementuje podporu pro **čtení** a **ReadByte** pro práci s daty UTF-16 byte-wise způsobem. Ale jiné metody **OracleLob** objektu povolit pouze znak celé operace.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Oracle a ADO.NET](../../../../docs/framework/data/adonet/oracle-and-adonet.md)
 - [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

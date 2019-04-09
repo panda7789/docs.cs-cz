@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 635c232f2f6721e734f4fe6a74088fe9b82c6166
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 3f3643bf4880532a46fe7f9f57b8077032013728
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54639468"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59118076"
 ---
 # <a name="econtexttype-enumeration"></a>EContextType – výčet
 Popisuje kontextu zabezpečení aktuálně spuštěné vlákno.  
@@ -55,6 +55,7 @@ typedef enum {
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [IHostSecurityContext – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritycontext-interface.md)
 - [IHostSecurityManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritymanager-interface.md)
-- [Výčty pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)
+- [Výčty hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)

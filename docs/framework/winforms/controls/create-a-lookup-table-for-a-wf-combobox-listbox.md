@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Vytvoření vyhledávací tabulky pro Windows Forms ComboBox, ListBox nebo CheckedListBox – ovládací prvek'
+title: 'Postupy: Vytvoření vyhledávací tabulky pro ovládací prvek Windows Forms ComboBox, ListBox nebo CheckedListBox'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -14,14 +14,14 @@ helpviewer_keywords:
 - combo boxes [Windows Forms], lookup tables
 - ListBox control [Windows Forms], creating lookup tables
 ms.assetid: 4ce35f12-1f4e-4317-92d1-af8686a8cfaa
-ms.openlocfilehash: eaa92c2b95d8dd8578b46e44a948127e201bb351
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: 95b1962b83a44a99ebc466e27c732917d63dc3c2
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57724607"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59125966"
 ---
-# <a name="how-to-create-a-lookup-table-for-a-windows-forms-combobox-listbox-or-checkedlistbox-control"></a>Postupy: Vytvoření vyhledávací tabulky pro Windows Forms ComboBox, ListBox nebo CheckedListBox – ovládací prvek
+# <a name="how-to-create-a-lookup-table-for-a-windows-forms-combobox-listbox-or-checkedlistbox-control"></a>Postupy: Vytvoření vyhledávací tabulky pro ovládací prvek Windows Forms ComboBox, ListBox nebo CheckedListBox
 Někdy je užitečné zobrazit data ve formátu uživatelsky přívětivé ve formuláři Windows Forms, ale ukládat data ve formátu, který má více smysl pro váš program. Například může zobrazit formulář objednávky pro potravin položky nabídky podle názvu v seznamu. Tabulka dat záznam pořadí by ale obsahovat jedinečné identifikační čísla představující potravinovém. Příklad toho, jak ukládat a zobrazovat data formulář objednávky potravin naleznete v následujících tabulkách.  
   
 ### <a name="orderdetailstable"></a>OrderDetailsTable  
@@ -33,7 +33,7 @@ Někdy je užitečné zobrazit data ve formátu uživatelsky přívětivé ve fo
   
 ### <a name="itemtable"></a>ItemTable  
   
-|ID|Název|  
+|ID|Name|  
 |--------|----------|  
 |12|Potato|  
 |13|Kuřecí|  
@@ -71,7 +71,8 @@ Někdy je užitečné zobrazit data ve formátu uživatelsky přívětivé ve fo
     ```  
   
 ## <a name="see-also"></a>Viz také:
-- [Datové vazby a Windows Forms](../data-binding-and-windows-forms.md)
+
+- [Datové vazby a rozhraní Windows Forms](../data-binding-and-windows-forms.md)
 - [Přehled ovládacího prvku ListBox](listbox-control-overview-windows-forms.md)
 - [Přehled ovládacího prvku ComboBox](combobox-control-overview-windows-forms.md)
 - [Přehled ovládacího prvku CheckedListBox](checkedlistbox-control-overview-windows-forms.md)

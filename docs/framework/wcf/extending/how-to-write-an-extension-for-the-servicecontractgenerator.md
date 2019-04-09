@@ -2,12 +2,12 @@
 title: 'Postupy: Vytvoření rozšíření pro třídu ServiceContractGenerator'
 ms.date: 03/30/2017
 ms.assetid: 876ca823-bd16-4bdf-9e0f-02092df90e51
-ms.openlocfilehash: cd0566f358b313ea96f1c9b2d5fd7fc447f4d2ef
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 104f65f76429701dbf02c1c7a5d737e50b080394
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54629697"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59111589"
 ---
 # <a name="how-to-write-an-extension-for-the-servicecontractgenerator"></a>Postupy: Vytvoření rozšíření pro třídu ServiceContractGenerator
 Toto téma popisuje postup vytvoření rozšíření pro <xref:System.ServiceModel.Description.ServiceContractGenerator>. To můžete udělat pomocí implementace <xref:System.ServiceModel.Description.IOperationContractGenerationExtension> rozhraní na na chování operace nebo implementaci <xref:System.ServiceModel.Description.IServiceContractGenerationExtension> rozhraní kontraktu chování. Toto téma ukazuje, jak implementovat <xref:System.ServiceModel.Description.IServiceContractGenerationExtension> rozhraní kontraktu chování.  
@@ -99,5 +99,6 @@ Toto téma popisuje postup vytvoření rozšíření pro <xref:System.ServiceMod
 7.  <xref:System.ServiceModel.Description.IServiceContractGenerationExtension.GenerateContract%28System.ServiceModel.Description.ServiceContractGenerationContext%29> je volána automaticky pro každý smlouvy chování pro daný kontrakt, který implementuje <xref:System.ServiceModel.Description.IServiceContractGenerationExtension>. Tato metoda poté můžete upravit <xref:System.ServiceModel.Description.ServiceContractGenerationContext> předán. V tomto příkladu jsou přidány poznámky.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Metadata](../../../../docs/framework/wcf/feature-details/metadata.md)
 - [Postupy: Import vlastního WSDL](../../../../docs/framework/wcf/extending/how-to-import-custom-wsdl.md)

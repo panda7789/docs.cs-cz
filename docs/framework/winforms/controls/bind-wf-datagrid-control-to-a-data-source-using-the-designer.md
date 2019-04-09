@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Vytvoření vazby ovládacího prvku Windows Forms DataGrid ke zdroji dat pomocí návrháře'
+title: 'Postupy: Vytvoření vazby ovládacího prvku Windows Forms DataGrid ke zdroji dat pomocí Návrháře'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -12,14 +12,14 @@ helpviewer_keywords:
 - Windows Forms controls, data binding
 - bound controls [Windows Forms]
 ms.assetid: 4e96e3d0-b1cc-4de1-8774-bc9970ec4554
-ms.openlocfilehash: 9386ca229894cff61da32289f2d78a7016ea00e0
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: a7b03ab5417eacf7962f2a05b674ceb45c7d558c
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57720460"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59115723"
 ---
-# <a name="how-to-bind-the-windows-forms-datagrid-control-to-a-data-source-using-the-designer"></a>Postupy: Vytvoření vazby ovládacího prvku Windows Forms DataGrid ke zdroji dat pomocí návrháře
+# <a name="how-to-bind-the-windows-forms-datagrid-control-to-a-data-source-using-the-designer"></a>Postupy: Vytvoření vazby ovládacího prvku Windows Forms DataGrid ke zdroji dat pomocí Návrháře
 
 > [!NOTE]
 >  <xref:System.Windows.Forms.DataGridView> Ovládací prvek nahradí a přidá funkce, které <xref:System.Windows.Forms.DataGrid> řízení; však <xref:System.Windows.Forms.DataGrid> ovládací prvek se zachovává kvůli zpětné kompatibilitě a budoucí použití, pokud se rozhodnete. Další informace najdete v tématu [rozdíly mezi Windows Forms DataGridView a DataGrid – ovládací prvky](differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).  
@@ -70,8 +70,9 @@ ms.locfileid: "57720460"
 3.  Napište kód pro naplnění dataset.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled ovládacího prvku DataGrid](datagrid-control-overview-windows-forms.md)
-- [Postupy: Přidávání tabulek a sloupců do ovládacího prvku Windows Forms DataGrid](how-to-add-tables-and-columns-to-the-windows-forms-datagrid-control.md)
+- [Postupy: Přidání tabulek a sloupců do ovládacího prvku Windows Forms DataGrid](how-to-add-tables-and-columns-to-the-windows-forms-datagrid-control.md)
 - [Ovládací prvek DataGrid](datagrid-control-windows-forms.md)
 - [Windows Forms – datová vazba](../windows-forms-data-binding.md)
 - [Přístup k datům v sadě Visual Studio](/visualstudio/data-tools/accessing-data-in-visual-studio)

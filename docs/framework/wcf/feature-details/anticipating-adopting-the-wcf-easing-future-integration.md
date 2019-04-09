@@ -2,12 +2,12 @@
 title: 'Očekávání přechodu na Windows Communication Foundation: usnadnění budoucí integrace'
 ms.date: 03/30/2017
 ms.assetid: 3028bba8-6355-4ee0-9ecd-c56e614cb474
-ms.openlocfilehash: c20011c6cf7a31d8c45769b6995bb6754088bba6
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 2f733f9cc33846913539fee4afdd95efa9224058
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54731280"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59124797"
 ---
 # <a name="anticipating-adopting-the-windows-communication-foundation-easing-future-integration"></a>Očekávání přechodu na Windows Communication Foundation: usnadnění budoucí integrace
 Pokud používáte ASP.NET a předvídat pomocí technologie WCF v budoucnu, toto téma obsahuje pokyny pro zajištění, že nové technologie ASP.NET webové služby bude fungovat dobře spolu s aplikací služby WCF.  
@@ -44,4 +44,5 @@ public interface IEcho
  Vyhněte se použití možnosti ověřování, které jsou k dispozici Internetové informační služby (IIS). Klienti WCF je nepodporují. Pokud služba musí být zabezpečené, pomocí možností poskytnutých WCF, protože tyto možnosti jsou bohatší a jsou založeny na standardních protokolů.  
   
 ## <a name="see-also"></a>Viz také:
-- [Očekávání přechodu na Windows Communication Foundation: Usnadnění budoucí migrace](../../../../docs/framework/wcf/feature-details/anticipating-adopting-wcf-migration.md)
+
+- [Očekávání přechodu na Windows Communication Foundation: usnadnění budoucí migrace](../../../../docs/framework/wcf/feature-details/anticipating-adopting-wcf-migration.md)

@@ -5,12 +5,12 @@ helpviewer_keywords:
 - distributed application security [WCF]
 - security [WCF], transfer
 ms.assetid: 53928a10-e474-46d0-ab90-5f98f8d7b668
-ms.openlocfilehash: 15663b4acc78f89a40fbbc364debfc6de45d8e6c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e447cd5ccf84e49ff384bd3591884404736d04f8
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54709426"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59132052"
 ---
 # <a name="distributed-application-security"></a>Zabezpečení distribuované aplikace
 Zabezpečení Windows Communication Foundation (WCF) se dělí na tři hlavní oblasti funkčnosti: přenos zabezpečení, řízení přístupu a auditování. Zabezpečení přenosu poskytuje integritu, šifrování a ověřování. Zabezpečení přenosu poskytuje jednu z následujících: zabezpečení, zabezpečení zprávy přenosu nebo `TransportWithMessageCredential`.  
@@ -40,7 +40,7 @@ Zabezpečení Windows Communication Foundation (WCF) se dělí na tři hlavní o
   
 |Režim|Popis|  
 |----------|-----------------|  
-|Žádná|Žádné zabezpečení je poskytnut na přenosové vrstvě nebo ve vrstvě zprávy. Žádná z předdefinovaných vazeb tento režim používejte ve výchozím nastavení s výjimkou [ \<basicHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md) element nebo při použití kódu, <xref:System.ServiceModel.BasicHttpBinding> třídy.|  
+|Žádné|Žádné zabezpečení je poskytnut na přenosové vrstvě nebo ve vrstvě zprávy. Žádná z předdefinovaných vazeb tento režim používejte ve výchozím nastavení s výjimkou [ \<basicHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md) element nebo při použití kódu, <xref:System.ServiceModel.BasicHttpBinding> třídy.|  
 |Přenos|Používá zabezpečeného přenosu, jako je například HTTPS pro integritu, utajení a vzájemné ověřování.|  
 |Zpráva|Používá zabezpečení zprávu protokolu SOAP pro integritu, utajení a vzájemné ověřování. Podle specifikace WS-Security standardy, které jsou zabezpečené zprávy protokolu SOAP.|  
 |Ve smíšeném režimu|Zabezpečení pro ověřování integrity, utajení a server přenosu používá. Používá zprávy zabezpečení (WS-Security a dalších standardů) pro ověřování klientů.<br /><br /> (Tento výčet pro tento režim je `TransportWithMessageCredential`.)|  
@@ -64,7 +64,7 @@ Zabezpečení Windows Communication Foundation (WCF) se dělí na tři hlavní o
   
 |Nastavení|Popis|  
 |-------------|-----------------|  
-|Žádná|Určuje, že klient není potřeba k dispozici žádné přihlašovací údaje. Výsledkem je k anonymní klienta.|  
+|Žádný|Určuje, že klient není potřeba k dispozici žádné přihlašovací údaje. Výsledkem je k anonymní klienta.|  
 |Základní|Určuje základní ověřování.  Další informace najdete v tématu RFC2617, "[ověřování pomocí protokolu HTTP: Základní a ověřování algoritmem Digest](https://go.microsoft.com/fwlink/?LinkId=88313). "|  
 |ověřování algoritmem Digest|Určuje, ověřování hodnotou hash.  Další informace najdete v tématu RFC2617, "[ověřování pomocí protokolu HTTP: Základní a ověřování algoritmem Digest](https://go.microsoft.com/fwlink/?LinkId=88313). "|  
 |Ntlm|Určuje ověřování Windows pomocí vyjednávání SSPI v doméně Windows.<br /><br /> Vyjednávání SSPI je výsledkem použití protokolu Kerberos nebo NT LanMan (NTLM).|  
@@ -76,7 +76,7 @@ Zabezpečení Windows Communication Foundation (WCF) se dělí na tři hlavní o
   
 |Nastavení|Popis|  
 |-------------|-----------------|  
-|Žádná|Umožňuje službě komunikovat s anonymní klienty.|  
+|Žádné|Umožňuje službě komunikovat s anonymní klienty.|  
 |Windows|Umožňuje výměny zpráv SOAP dojde za ověřený kontext přihlašovacích údajů Windows. Vybrat si z protokolu Kerberos nebo NTLM jako ověřovací služba používá mechanismus vyjednávání SSPI.|  
 |Uživatelské jméno|Umožňuje službě tak, aby vyžadovala ověření klienta s pověření uživatelského jména. Všimněte si, že WCF nepovoluje žádné kryptografické operace s uživatelským jménem, například generování podpis nebo šifrovat data. V důsledku toho WCF vynutí, že při použití uživatelských přihlašovacích údajů název je zabezpečený přenos.|  
 |Certifikát|Umožňuje službě tak, aby vyžadovala, ověření klienta pomocí certifikátu.|  
@@ -95,6 +95,7 @@ Zabezpečení Windows Communication Foundation (WCF) se dělí na tři hlavní o
  Režim zabezpečených zpráv také umožňuje provádět přenos zabezpečení tak, aby přihlašovacích údajů služby se vyměňují pomocí klienta jako součást počáteční vyjednávání. Chcete-li povolit vyjednávání, nastavte <xref:System.ServiceModel.MessageSecurityOverHttp.NegotiateServiceCredential%2A> vlastnost `true`.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled vytváření koncových bodů](../../../../docs/framework/wcf/endpoint-creation-overview.md)
 - [Vazby poskytované systémem](../../../../docs/framework/wcf/system-provided-bindings.md)
 - [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)

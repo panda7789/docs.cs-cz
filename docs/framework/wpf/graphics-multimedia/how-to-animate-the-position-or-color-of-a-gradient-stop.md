@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Animace umístění a barvy ukončení přechodu'
+title: 'Postupy: Animace umístění nebo barvy přechodové zarážky'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -12,14 +12,14 @@ helpviewer_keywords:
 - animation [WPF], color of GradientStop objects
 - GradientStop objects [WPF], animating position of
 ms.assetid: 6f5b8b47-6c32-4b8e-98ee-fdf6515ec843
-ms.openlocfilehash: 6d8c1bb5cd133b2ee9d50a7e851d2ca3b4fff023
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: eeaea4732855155bf711912644f2f5b3f5a4f8d0
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57368883"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59134807"
 ---
-# <a name="how-to-animate-the-position-or-color-of-a-gradient-stop"></a>Postupy: Animace umístění a barvy ukončení přechodu
+# <a name="how-to-animate-the-position-or-color-of-a-gradient-stop"></a>Postupy: Animace umístění nebo barvy přechodové zarážky
 Tento příklad ukazuje, jak animovat <xref:System.Windows.Media.GradientStop.Color%2A> a <xref:System.Windows.Media.GradientStop.Offset%2A> z <xref:System.Windows.Media.GradientStop> objekty.  
   
 ## <a name="example"></a>Příklad  
@@ -40,6 +40,7 @@ Tento příklad ukazuje, jak animovat <xref:System.Windows.Media.GradientStop.Co
  Další příklady najdete v článku [Ukázka štětců](https://go.microsoft.com/fwlink/?LinkID=159973).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Media.GradientStop>
 - [Přehled animace](animation-overview.md)
 - [Přehled scénářů](storyboards-overview.md)

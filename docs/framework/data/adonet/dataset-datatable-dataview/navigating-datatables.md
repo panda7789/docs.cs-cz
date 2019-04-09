@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 202026a1-ec79-435e-b507-12a77f5011b2
-ms.openlocfilehash: 710e4bdaeafc483510c4102dc9ac0f6ffaaafce9
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 91db42acb0e09b8fc99b0ee710a60800d40938ce
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54528079"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59112850"
 ---
 # <a name="navigating-datatables"></a>Navigace v datových tabulkách
 <xref:System.Data.DataTableReader> Získá obsah jednoho nebo více <xref:System.Data.DataTable> objekty ve formě jednoho nebo více sad výsledků dotazu jen pro čtení, pouze vpřed.  
@@ -24,5 +24,6 @@ ms.locfileid: "54528079"
  [!code-vb[DataWorks DataTableReader.NextResult#1](../../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DataTableReader.NextResult/VB/source.vb#1)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Čtečky datových tabulek](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatablereaders.md)
 - [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

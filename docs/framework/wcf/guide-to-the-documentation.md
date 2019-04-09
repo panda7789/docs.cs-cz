@@ -5,12 +5,12 @@ helpviewer_keywords:
 - WCF [WCF], documentation
 - Windows Communication Foundation [WCF], documentation
 ms.assetid: 2aa18c85-a4fd-4bb9-986a-a8249e4f8e0e
-ms.openlocfilehash: b6c509bd150ec2443762134079427ebd2de8ba09
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a3d7ca994b185c39ac43cb6643098de602692842
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54552618"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59119597"
 ---
 # <a name="guide-to-the-documentation"></a>Průvodce dokumentací
 Pokud je zde pokyny týkající se dokumentace ke službě Windows Communication Foundation (WCF). Odkazované dokumenty se doporučuje počáteční body seskupený podle konkrétní zájmech a úrovně odborných znalostí.  
@@ -62,7 +62,8 @@ Pokud je zde pokyny týkající se dokumentace ke službě Windows Communication
  Seznam podporované v vazeb poskytovaných systémem protokoly najdete v tématu [webové služby protokoly podporované vazbami Interoperability System-Provided](../../../docs/framework/wcf/feature-details/web-services-protocols-supported-by-system-provided-interoperability-bindings.md). V seznamu vazeb poskytovaných systémem najdete v tématu [System-Provided vazby](../../../docs/framework/wcf/system-provided-bindings.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Ukázky Windows Communication Foundation](../../../docs/framework/wcf/samples/index.md)
 - [Koncepční přehled](../../../docs/framework/wcf/conceptual-overview.md)
-- [Pokyny a osvědčené postupy](../../../docs/framework/wcf/guidelines-and-best-practices.md)
+- [Směrnice a doporučené postupy](../../../docs/framework/wcf/guidelines-and-best-practices.md)
 - [Sestavování klientů](../../../docs/framework/wcf/building-clients.md)

@@ -1,5 +1,5 @@
 ---
-title: Zásady mezipaměti na základě polohy
+title: Zásady mezipaměti na základě umístění
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Cache If Available policy
@@ -15,14 +15,14 @@ helpviewer_keywords:
 - Cache Or Next Cache Only policy
 - Refresh policy
 ms.assetid: e41d7f1a-0a6a-4dee-97d1-c6a8b6a07fc2
-ms.openlocfilehash: 594aef9feee81d026abd6313f1e75cb518479688
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 04efb24dd9e48d7e33fa3ea3c41a51c2dc96ac77
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54499827"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59129893"
 ---
-# <a name="location-based-cache-policies"></a>Zásady mezipaměti na základě polohy
+# <a name="location-based-cache-policies"></a>Zásady mezipaměti na základě umístění
 Zásady mezipaměti na základě umístění definují aktuálnosti platné položky uložené v mezipaměti založené na požadovaný prostředek mohou být odkud. Prostředek v mezipaměti je platný pokud jeho použití není porušovat požadavky na zadaný server opětovné ověření. Zásady mezipaměti na základě umístění je vytvořená prostřednictvím kódu programu pomocí <xref:System.Net.Cache.RequestCachePolicy> nebo <xref:System.Net.Cache.HttpRequestCachePolicy> konstruktoru třídy. Je předán typ zásady založená na poloze pomocí konstruktoru <xref:System.Net.Cache.RequestCacheLevel> nebo <xref:System.Net.Cache.HttpRequestCacheLevel> hodnota výčtu. Příklady kódu, které vytvářejí zásady mezipaměti na základě polohy, naleznete v tématu [jak: Nastavení zásad mezipaměti na základě polohy pro aplikaci](../../../docs/framework/network-programming/how-to-set-a-location-based-cache-policy-for-an-application.md). Následující části popisují jednotlivé typy zásad mezipaměti na základě umístění pro prostředky protokol HTTP (http a https).  
   
 ## <a name="cache-if-available-policy"></a>Pokud je k dispozici do mezipaměti zásad  
@@ -47,8 +47,9 @@ Zásady mezipaměti na základě umístění definují aktuálnosti platné polo
  Porovná kopie prostředku v mezipaměti s kopií na serveru. Pokud je novější kopie na serveru, se používá ke zpracování požadavku a nahradí kopii v mezipaměti. Pokud je kopie v mezipaměti je stejný jako kopii na serveru, použije se kopie v mezipaměti. Ukládání do mezipaměti protokolu HTTP toho můžete dosáhnout použitím Podmíněný požadavek.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Správa mezipaměti pro síťové aplikace](../../../docs/framework/network-programming/cache-management-for-network-applications.md)
 - [Zásady mezipaměti](../../../docs/framework/network-programming/cache-policy.md)
 - [Zásady mezipaměti na základě času](../../../docs/framework/network-programming/time-based-cache-policies.md)
-- [Konfigurace mezipaměti v síťových aplikacích](../../../docs/framework/network-programming/configuring-caching-in-network-applications.md)
+- [Konfigurace ukládání do mezipaměti v síťových aplikacích](../../../docs/framework/network-programming/configuring-caching-in-network-applications.md)
 - [\<requestCaching – > – Element (nastavení sítě)](../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)

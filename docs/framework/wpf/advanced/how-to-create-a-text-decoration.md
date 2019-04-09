@@ -16,12 +16,12 @@ helpviewer_keywords:
 - typography [WPF], text decorations
 - baseline type [WPF]
 ms.assetid: cf3cb4e7-782a-4be7-b2d4-e0935e21e4e0
-ms.openlocfilehash: 22ff91770786e39e019de307167007548396ab33
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
+ms.openlocfilehash: d586eef8d1308070da38a0a54c63c3ba64d30c8b
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58411327"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59133832"
 ---
 # <a name="how-to-create-a-text-decoration"></a>Postupy: Vytvoření dekorace textu
 A <xref:System.Windows.TextDecoration> objekt je vizuální dekoru můžete přidat do textu. Existují čtyři druhy dekorace textu: podtržení, Směrný plán, přeškrtnutí a přeškrtnutí. Následující příklad ukazuje umístění dekorace textu vzhledem k textu.  
@@ -62,6 +62,7 @@ A <xref:System.Windows.TextDecoration> objekt je vizuální dekoru můžete při
  [!code-xaml[TextDecorationSnippets#TextDecorationSnippets3](~/samples/snippets/csharp/VS_Snippets_Wpf/TextDecorationSnippets/CSharp/Window1.xaml#textdecorationsnippets3)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.TextDecoration>
 - <xref:System.Windows.Documents.Hyperlink>
 - [Určení podtržení hypertextového odkazu](how-to-specify-whether-a-hyperlink-is-underlined.md)

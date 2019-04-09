@@ -2,12 +2,12 @@
 title: Nerozbalené zprávy
 ms.date: 03/30/2017
 ms.assetid: 019657bd-1f9b-4315-ad74-eaa4e7551ff6
-ms.openlocfilehash: fa3e9e02d2cb7bfb815eb107d29a0c84204ddcdf
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
-ms.translationtype: MT
+ms.openlocfilehash: 30c25bf6bb8b4ffe621007c03a7e913bba4379fe
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58841196"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59125376"
 ---
 # <a name="unwrapped-messages"></a>Nerozbalené zprávy
 V této ukázce nerozbalené zprávy. Ve výchozím nastavení text zprávy je formátováno tak, že jsou zabaleny parametry pro operaci služby. Následující ukázka znázorňuje `Add` zprávy s požadavkem na `ICalculator` služby v režimu zabalené.  
@@ -111,4 +111,3 @@ public class ResponseMessage
 >  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Message\Unwrapped`  
-  

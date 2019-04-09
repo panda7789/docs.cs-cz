@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - clients [WCF], security considerations
 ms.assetid: 44c8578c-9a5b-4acd-8168-1c30a027c4c5
-ms.openlocfilehash: fb8d2161800b336cd7f605dda79f28dbb5b91848
-ms.sourcegitcommit: 0069cb3de8eed4e92b2195d29e5769a76111acdd
-ms.translationtype: MT
+ms.openlocfilehash: 42c87f7b427af775784f8bf1c49ecabde2572823
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "56333466"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59135775"
 ---
 # <a name="securing-clients"></a>Zabezpečení klientů
 Ve Windows Communication Foundation (WCF), služba určuje požadavky na zabezpečení pro klienty. To znamená služba určuje, jaké režim zabezpečení, a určuje, jestli klient musí poskytnout přihlašovací údaje. Zabezpečení klienta, proto se tento proces je prostý: pomocí metadat získaných ze služby (je-li publikován) a vytvořit klienta. Metadata Určuje, jak nakonfigurovat klienta. Pokud služba vyžaduje, aby, že klient zadat přihlašovací údaje, je nutné získat pověření, která odpovídá požadavku. Toto téma popisuje proces podrobněji. Další informace o vytváření zabezpečených služeb, naleznete v tématu [zabezpečení služby](../../../docs/framework/wcf/securing-services.md).  
@@ -145,15 +145,16 @@ Ve Windows Communication Foundation (WCF), služba určuje požadavky na zabezpe
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.ClientBase%601.ClientCredentials%2A>
 - <xref:System.ServiceModel.ClientBase%601>
 - <xref:System.ServiceModel.Description.ClientCredentials>
 - <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetEnabled%2A>
 - <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetUrl%2A>
-- [\<bindings>](../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)
-- [Editor konfigurace (SvcConfigEditor.exe)](../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md)
+- [\<vazby >](../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)
+- [Nástroj Configuration Editor (SvcConfigEditor.exe)](../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md)
 - [Zabezpečení služeb](../../../docs/framework/wcf/securing-services.md)
 - [Přístup ke službám pomocí klienta WCF](../../../docs/framework/wcf/accessing-services-using-a-wcf-client.md)
-- [Postupy: Zadání hodnot přihlašovacích údajů klienta](../../../docs/framework/wcf/how-to-specify-client-credential-values.md)
-- [Nástroj metadat modelu služby (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)
-- [Postupy: Určení typu pověření klienta](../../../docs/framework/wcf/how-to-specify-the-client-credential-type.md)
+- [Postupy: Určení hodnot přihlašovacích údajů klienta](../../../docs/framework/wcf/how-to-specify-client-credential-values.md)
+- [Nástroj ServiceModel Metadata Utility (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)
+- [Postupy: Určení typu přihlašovacích údajů klienta](../../../docs/framework/wcf/how-to-specify-the-client-credential-type.md)

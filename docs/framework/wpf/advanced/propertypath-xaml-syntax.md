@@ -5,17 +5,16 @@ helpviewer_keywords:
 - PropertyPath object [WPF]
 - XAML [WPF], PropertyPath object
 ms.assetid: 0e3cdf07-abe6-460a-a9af-3764b4fd707f
-ms.openlocfilehash: 25214a3c177975505713a444b69a7006c0fd523f
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 7db435e45ddc55346af5ea5fdbcce611173c774b
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57363511"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59122912"
 ---
 # <a name="propertypath-xaml-syntax"></a>PropertyPath – syntaxe v jazyce XAML
 <xref:System.Windows.PropertyPath> Objekt podporuje komplexní vložené [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] syntaxi pro různé vlastnosti, které provést nastavení <xref:System.Windows.PropertyPath> typu jako jeho hodnotu. Toto téma dokumenty <xref:System.Windows.PropertyPath> syntaxe jako použitý pro vazbu a animace syntaxe.  
-    
-  
+
 <a name="where"></a>   
 ## <a name="where-propertypath-is-used"></a>Kde se používá PropertyPath  
  <xref:System.Windows.PropertyPath> je běžné objekt, který se používá v několika [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] funkce. Bez ohledu na použití společné <xref:System.Windows.PropertyPath> k předání informací o cestě vlastnost využití pro jednotlivé oblasti funkce kde <xref:System.Windows.PropertyPath> se používá jako typ se liší. Je tedy praktičtější dokumentu syntaxe na základě podle funkcí.  
@@ -197,6 +196,7 @@ or
  Obecně platí <xref:System.Windows.PropertyPath> je navržen pro použití dva různé konstruktory, jeden pro použití vazby a nejjednodušší použití animace a jeden pro použití komplexní animace. Použití <xref:System.Windows.PropertyPath.%23ctor%28System.Object%29> podpis pro vazby použití, kde je objekt na řetězec. Použití <xref:System.Windows.PropertyPath.%23ctor%28System.Object%29> podpis pro jednoduchý animace cesty, kde je objekt <xref:System.Windows.DependencyProperty>. Použití <xref:System.Windows.PropertyPath.%23ctor%28System.String%2CSystem.Object%5B%5D%29> podpis pro komplexní animace. Tento druhý konstruktor používá řetězec tokenu pro první parametr a pole objektů, které vyplnění pozic v řetězec tokenu k definování relace vlastnost cesty.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.PropertyPath>
 - [Přehled datových vazeb](../data/data-binding-overview.md)
 - [Přehled scénářů](../graphics-multimedia/storyboards-overview.md)

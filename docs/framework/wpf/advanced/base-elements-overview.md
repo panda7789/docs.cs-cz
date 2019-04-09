@@ -4,17 +4,16 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - base elements [WPF]
 ms.assetid: 2c997092-72c6-4767-bc84-74267f4eee72
-ms.openlocfilehash: a7ed16690172f2720424807325150ea3db5d5caa
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 0cd69a4d2d6087c1ebf93bb5931511f32a4c9c5f
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57372825"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59110055"
 ---
 # <a name="base-elements-overview"></a>Přehled základních elementů
 Vysoké procento třídy v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] jsou odvozeny z čtyři třídy, které se běžně označují v [!INCLUDE[TLA2#tla_sdk](../../../../includes/tla2sharptla-sdk-md.md)] dokumentaci jako základní prvek třídy. Tyto třídy jsou <xref:System.Windows.UIElement>, <xref:System.Windows.FrameworkElement>, <xref:System.Windows.ContentElement>, a <xref:System.Windows.FrameworkContentElement>. <xref:System.Windows.DependencyObject> Třídy se také vztahuje, protože je obecná základní třída obou <xref:System.Windows.UIElement> a <xref:System.Windows.ContentElement>  
- 
-  
+
 <a name="base_apis"></a>   
 ## <a name="base-element-apis-in-wpf-classes"></a>Base Element rozhraní API ve třídách WPF  
  Obě <xref:System.Windows.UIElement> a <xref:System.Windows.ContentElement> jsou odvozeny z <xref:System.Windows.DependencyObject>, pomocí nich do jisté míry různé přístupy. Jak se zabývá rozděleného na této úrovni <xref:System.Windows.UIElement> nebo <xref:System.Windows.ContentElement> se používají v uživatelském rozhraní a co účel slouží v aplikaci. <xref:System.Windows.UIElement> má také <xref:System.Windows.Media.Visual> v její hierarchii tříd, což je třída, která poskytuje základní podpory nižší úrovně grafiky [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]. <xref:System.Windows.Media.Visual> poskytuje rozhraní vykreslování definováním oblasti obdélníkový nezávislé obrazovky. V praxi <xref:System.Windows.UIElement> je pro prvky, které budou podporovat větší objektový model, jsou určené k vykreslení a rozložení do oblastí, které lze popsat jako oblasti obdélníkový obrazovky a kde obsahový model je záměrně otevřenější, aby jiný kombinace prvků. <xref:System.Windows.ContentElement> není odvozen od <xref:System.Windows.Media.Visual>; svůj model, který je <xref:System.Windows.ContentElement> by být využívány službou něco jiného, jako je Čtenář nebo prohlížeče, který by pak interpretovat elementy a vytvářet kompletní <xref:System.Windows.Media.Visual> pro [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] využívat. Některé <xref:System.Windows.UIElement> třídy mají být obsahu hostitelů: poskytují hostování a vykreslování pro jeden nebo více <xref:System.Windows.ContentElement> třídy (<xref:System.Windows.Controls.DocumentViewer> je příkladem takové třídy). <xref:System.Windows.ContentElement> slouží jako základní třídu pro prvky se o něco menší objektové modely a více adres textové informace, nebo dokument obsah, který může být hostovaná v rámci <xref:System.Windows.UIElement>.  
@@ -84,7 +83,7 @@ Vysoké procento třídy v [!INCLUDE[TLA#tla_winclient](../../../../includes/tla
 ### <a name="dispatcherobject"></a>Dispatcherobject –  
  <xref:System.Windows.Threading.DispatcherObject> poskytuje podporu pro [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] dělení na vlákna modelu a umožňuje všechny objekty vytvořené pro [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace má být spojen s <xref:System.Windows.Threading.Dispatcher>. I v případě, že není odvozen od <xref:System.Windows.UIElement>, <xref:System.Windows.DependencyObject>, nebo <xref:System.Windows.Media.Visual>, měli byste zvážit odvozený od <xref:System.Windows.Threading.DispatcherObject> zajistí tato podpora vláken modelu. Další informace najdete v tématu [Model vláken](threading-model.md).  
   
-### <a name="visual"></a>Visual  
+### <a name="visual"></a>Vizuál  
  <xref:System.Windows.Media.Visual> implementuje koncept 2D objekt, který obvykle vyžaduje vizuální prezentace v přibližně obdélníková oblast. Skutečné vykreslování <xref:System.Windows.Media.Visual> dochází v jiných třídách (není samostatná), ale <xref:System.Windows.Media.Visual> třída poskytuje známý typ, který se používá vykreslování procesy na různých úrovních. <xref:System.Windows.Media.Visual> implementuje testování průchodu, ale nezpřístupňuje události, které podléhají pozitivní výsledky spuštění testu (jsou v <xref:System.Windows.UIElement>). Další informace najdete v tématu [programování vizuální vrstvy](../graphics-multimedia/visual-layer-programming.md).  
   
 ### <a name="freezable"></a>Freezable  
@@ -98,7 +97,8 @@ Vysoké procento třídy v [!INCLUDE[TLA#tla_winclient](../../../../includes/tla
  <xref:System.Windows.Controls.Control> je základní třídy určené pro typ objektu, který se nazývá různě ovládacího prvku nebo komponenty, v závislosti na technologie. Obecně platí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] třídy ovládacích prvků jsou třídy, které přímo představují ovládacího prvku uživatelského rozhraní nebo úzce součástí kompozice ovládacích prvků. Primární funkce, která <xref:System.Windows.Controls.Control> umožňuje je ukázka ovládacího prvku.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Controls.Control>
 - [Přehled vlastností závislosti](dependency-properties-overview.md)
-- [Přehled vytváření ovládacích prvků](../controls/control-authoring-overview.md)
+- [Přehled řízeného vytváření](../controls/control-authoring-overview.md)
 - [Architektura WPF](wpf-architecture.md)

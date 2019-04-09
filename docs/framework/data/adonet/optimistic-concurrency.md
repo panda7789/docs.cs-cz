@@ -1,18 +1,18 @@
 ---
-title: Optimistická souběžnost
+title: Optimistická metoda souběžného zpracování
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: e380edac-da67-4276-80a5-b64decae4947
-ms.openlocfilehash: cd8aeeb1ed56acfca0d57cb3c2c56cabab184683
-ms.sourcegitcommit: c6f69b0cf149f6b54483a6d5c2ece222913f43ce
+ms.openlocfilehash: f2fc69867ae1659a342161b00dfd91852441fa5b
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55904091"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59126214"
 ---
-# <a name="optimistic-concurrency"></a>Optimistická souběžnost
+# <a name="optimistic-concurrency"></a>Optimistická metoda souběžného zpracování
 V prostředí, existují dva modely pro aktualizaci dat v databázi: optimistického řízení souběžnosti a Pesimistická souběžnost. <xref:System.Data.DataSet> Objektu je účelem je podporovat používání optimistického řízení souběžnosti pro dlouho běžící aktivity, jako jsou data vzdálenou komunikaci a interakci s daty.  
   
  Pesimistická souběžnost zahrnuje uzamčení řádků ve zdroji dat k ostatním uživatelům zabránit ve změně data způsobem, který má vliv aktuálního uživatele. Pesimistické modelu když uživatel provede akci, která způsobí, že zámek, který má být použita, nemůže ostatním uživatelům provádět akce, které by byla v konfliktu s uzamčením dokud ho vlastník zámku uvolní. Tento model se používá především v prostředích, kde je těžké kolizí pro data, aby náklady na ochranu dat pomocí zámků je nižší než náklady na transakce vrácení zpět, jestliže se vyskytnou konflikty souběžnosti.  
@@ -207,6 +207,7 @@ protected static void OnRowUpdated(object sender, SqlRowUpdatedEventArgs args)
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Načítání a úpravy dat v ADO.NET](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)
 - [Aktualizace zdrojů dat pomocí adaptérů dat](../../../../docs/framework/data/adonet/updating-data-sources-with-dataadapters.md)
 - [Informace o chybě na řádku](../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-error-information.md)
