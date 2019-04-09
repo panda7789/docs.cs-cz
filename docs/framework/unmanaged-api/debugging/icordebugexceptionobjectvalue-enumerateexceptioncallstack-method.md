@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e168c1a520ca0159ab273dcf9b56b41b4f32b4e4
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: db0e794953578fccd08428b730b3d7951e13bee3
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57497142"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59074076"
 ---
-# <a name="icordebugexceptionobjectvalueenumerateexceptioncallstack-method"></a><span data-ttu-id="1cfdc-102">ICorDebugExceptionObjectValue::EnumerateExceptionCallStack – metoda</span><span class="sxs-lookup"><span data-stu-id="1cfdc-102">ICorDebugExceptionObjectValue::EnumerateExceptionCallStack Method</span></span>
-<span data-ttu-id="1cfdc-103">Získá enumerátor pro zásobník volání, které jsou součástí objektu výjimky.</span><span class="sxs-lookup"><span data-stu-id="1cfdc-103">Gets an enumerator to the call stack embedded in an exception object.</span></span>  
+# <a name="icordebugexceptionobjectvalueenumerateexceptioncallstack-method"></a><span data-ttu-id="aa366-102">ICorDebugExceptionObjectValue::EnumerateExceptionCallStack – metoda</span><span class="sxs-lookup"><span data-stu-id="aa366-102">ICorDebugExceptionObjectValue::EnumerateExceptionCallStack Method</span></span>
+<span data-ttu-id="aa366-103">Získá enumerátor pro zásobník volání, které jsou součástí objektu výjimky.</span><span class="sxs-lookup"><span data-stu-id="aa366-103">Gets an enumerator to the call stack embedded in an exception object.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="1cfdc-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="1cfdc-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="aa366-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="aa366-104">Syntax</span></span>  
   
 ```  
 HRESULT EnumerateExceptionCallStack(  
@@ -35,24 +35,25 @@ HRESULT EnumerateExceptionCallStack(
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="1cfdc-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="1cfdc-105">Parameters</span></span>  
- <span data-ttu-id="1cfdc-106">ppCallStackEnum</span><span class="sxs-lookup"><span data-stu-id="1cfdc-106">ppCallStackEnum</span></span>  
- <span data-ttu-id="1cfdc-107">[out] Ukazatel na adresu [icordebugexceptionobjectcallstackenum –](../../../../docs/framework/unmanaged-api/debugging/icordebugexceptionobjectcallstackenum-interface.md) rozhraní objektu, který je výčet trasování zásobníku objektu spravované výjimky.</span><span class="sxs-lookup"><span data-stu-id="1cfdc-107">[out] A pointer to the address of an [ICorDebugExceptionObjectCallStackEnum](../../../../docs/framework/unmanaged-api/debugging/icordebugexceptionobjectcallstackenum-interface.md) interface object that is a stack trace enumerator for a managed exception object.</span></span>  
+## <a name="parameters"></a><span data-ttu-id="aa366-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="aa366-105">Parameters</span></span>  
+ <span data-ttu-id="aa366-106">ppCallStackEnum</span><span class="sxs-lookup"><span data-stu-id="aa366-106">ppCallStackEnum</span></span>  
+ <span data-ttu-id="aa366-107">[out] Ukazatel na adresu [icordebugexceptionobjectcallstackenum –](../../../../docs/framework/unmanaged-api/debugging/icordebugexceptionobjectcallstackenum-interface.md) rozhraní objektu, který je výčet trasování zásobníku objektu spravované výjimky.</span><span class="sxs-lookup"><span data-stu-id="aa366-107">[out] A pointer to the address of an [ICorDebugExceptionObjectCallStackEnum](../../../../docs/framework/unmanaged-api/debugging/icordebugexceptionobjectcallstackenum-interface.md) interface object that is a stack trace enumerator for a managed exception object.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="1cfdc-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="1cfdc-108">Remarks</span></span>  
- <span data-ttu-id="1cfdc-109">Pokud je k dispozici žádné informace o zásobníku volání, metoda vrátí `S_OK`, a [icordebugexceptionobjectcallstackenum –](../../../../docs/framework/unmanaged-api/debugging/icordebugexceptionobjectcallstackenum-interface.md) je platným enumerátorem o délce 0.</span><span class="sxs-lookup"><span data-stu-id="1cfdc-109">If no call stack information is available, the method returns `S_OK`, and [ICorDebugExceptionObjectCallStackEnum](../../../../docs/framework/unmanaged-api/debugging/icordebugexceptionobjectcallstackenum-interface.md) is a valid enumerator with a length of 0.</span></span> <span data-ttu-id="1cfdc-110">Pokud je metoda nelze načíst informace o trasování zásobníku, vrácená hodnota je `E_FAIL` a je vrácena žádná enumerátor.</span><span class="sxs-lookup"><span data-stu-id="1cfdc-110">If the method is unable to retrieve stack trace information, the return value is `E_FAIL` and no enumerator is returned.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="aa366-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="aa366-108">Remarks</span></span>  
+ <span data-ttu-id="aa366-109">Pokud je k dispozici žádné informace o zásobníku volání, metoda vrátí `S_OK`, a [icordebugexceptionobjectcallstackenum –](../../../../docs/framework/unmanaged-api/debugging/icordebugexceptionobjectcallstackenum-interface.md) je platným enumerátorem o délce 0.</span><span class="sxs-lookup"><span data-stu-id="aa366-109">If no call stack information is available, the method returns `S_OK`, and [ICorDebugExceptionObjectCallStackEnum](../../../../docs/framework/unmanaged-api/debugging/icordebugexceptionobjectcallstackenum-interface.md) is a valid enumerator with a length of 0.</span></span> <span data-ttu-id="aa366-110">Pokud je metoda nelze načíst informace o trasování zásobníku, vrácená hodnota je `E_FAIL` a je vrácena žádná enumerátor.</span><span class="sxs-lookup"><span data-stu-id="aa366-110">If the method is unable to retrieve stack trace information, the return value is `E_FAIL` and no enumerator is returned.</span></span>  
   
- <span data-ttu-id="1cfdc-111">[Icordebugexceptionobjectcallstackenum –](../../../../docs/framework/unmanaged-api/debugging/icordebugexceptionobjectcallstackenum-interface.md) je zodpovědná za dekódování dat trasování zásobníku z objektu `_stackTrace` pole objektu výjimky.</span><span class="sxs-lookup"><span data-stu-id="1cfdc-111">The [ICorDebugExceptionObjectCallStackEnum](../../../../docs/framework/unmanaged-api/debugging/icordebugexceptionobjectcallstackenum-interface.md) object is responsible for decoding the stack trace data from the `_stackTrace` field of the exception object.</span></span>  
+ <span data-ttu-id="aa366-111">[Icordebugexceptionobjectcallstackenum –](../../../../docs/framework/unmanaged-api/debugging/icordebugexceptionobjectcallstackenum-interface.md) je zodpovědná za dekódování dat trasování zásobníku z objektu `_stackTrace` pole objektu výjimky.</span><span class="sxs-lookup"><span data-stu-id="aa366-111">The [ICorDebugExceptionObjectCallStackEnum](../../../../docs/framework/unmanaged-api/debugging/icordebugexceptionobjectcallstackenum-interface.md) object is responsible for decoding the stack trace data from the `_stackTrace` field of the exception object.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="1cfdc-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="1cfdc-112">Requirements</span></span>  
- <span data-ttu-id="1cfdc-113">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="1cfdc-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="aa366-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="aa366-112">Requirements</span></span>  
+ <span data-ttu-id="aa366-113">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="aa366-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="1cfdc-114">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="1cfdc-114">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="aa366-114">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="aa366-114">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="1cfdc-115">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="1cfdc-115">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="aa366-115">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="aa366-115">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="1cfdc-116">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="1cfdc-116">**.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span></span>  
+ **<span data-ttu-id="aa366-116">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="aa366-116">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a><span data-ttu-id="1cfdc-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="1cfdc-117">See also</span></span>
-- [<span data-ttu-id="1cfdc-118">ICorDebugExceptionObjectValue – rozhraní</span><span class="sxs-lookup"><span data-stu-id="1cfdc-118">ICorDebugExceptionObjectValue Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugexceptionobjectvalue-interface.md)
-- [<span data-ttu-id="1cfdc-119">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="1cfdc-119">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+## <a name="see-also"></a><span data-ttu-id="aa366-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="aa366-117">See also</span></span>
+
+- [<span data-ttu-id="aa366-118">ICorDebugExceptionObjectValue – rozhraní</span><span class="sxs-lookup"><span data-stu-id="aa366-118">ICorDebugExceptionObjectValue Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugexceptionobjectvalue-interface.md)
+- [<span data-ttu-id="aa366-119">Debugging – rozhraní</span><span class="sxs-lookup"><span data-stu-id="aa366-119">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

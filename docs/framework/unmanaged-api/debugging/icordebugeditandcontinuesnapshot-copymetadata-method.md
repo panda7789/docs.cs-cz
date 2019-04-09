@@ -17,15 +17,16 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5ba1133d44218406948ab0fd6e0b82ae404d0931
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5dafaef05305a8f4ab4a196690d98486be96d51e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54576834"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59082136"
 ---
-# <a name="icordebugeditandcontinuesnapshotcopymetadata-method"></a><span data-ttu-id="24dd5-102">ICorDebugEditAndContinueSnapshot::CopyMetaData – metoda</span><span class="sxs-lookup"><span data-stu-id="24dd5-102">ICorDebugEditAndContinueSnapshot::CopyMetaData Method</span></span>
-<span data-ttu-id="24dd5-103">`CopyMetaData` je zastaralý.</span><span class="sxs-lookup"><span data-stu-id="24dd5-103">`CopyMetaData` is obsolete.</span></span> <span data-ttu-id="24dd5-104">Nevolejte tuto metodu.</span><span class="sxs-lookup"><span data-stu-id="24dd5-104">Do not call this method.</span></span>  
+# <a name="icordebugeditandcontinuesnapshotcopymetadata-method"></a><span data-ttu-id="63fcb-102">ICorDebugEditAndContinueSnapshot::CopyMetaData – metoda</span><span class="sxs-lookup"><span data-stu-id="63fcb-102">ICorDebugEditAndContinueSnapshot::CopyMetaData Method</span></span>
+`CopyMetaData` <span data-ttu-id="63fcb-103">je zastaralý.</span><span class="sxs-lookup"><span data-stu-id="63fcb-103">is obsolete.</span></span> <span data-ttu-id="63fcb-104">Nevolejte tuto metodu.</span><span class="sxs-lookup"><span data-stu-id="63fcb-104">Do not call this method.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="24dd5-105">Viz také:</span><span class="sxs-lookup"><span data-stu-id="24dd5-105">See also</span></span>
-- [<span data-ttu-id="24dd5-106">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="24dd5-106">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+## <a name="see-also"></a><span data-ttu-id="63fcb-105">Viz také:</span><span class="sxs-lookup"><span data-stu-id="63fcb-105">See also</span></span>
+
+- [<span data-ttu-id="63fcb-106">Debugging – rozhraní</span><span class="sxs-lookup"><span data-stu-id="63fcb-106">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

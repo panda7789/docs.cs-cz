@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: d73607fc600bf6fbcc2cf831d57a5b4aa740bb09
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: a08577f15a6fab0e630d40032a23c273ee935faa
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57498065"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59072987"
 ---
-# <a name="imetadataimportenummemberrefs-method"></a><span data-ttu-id="f0f38-102">IMetaDataImport::EnumMemberRefs – metoda</span><span class="sxs-lookup"><span data-stu-id="f0f38-102">IMetaDataImport::EnumMemberRefs Method</span></span>
-<span data-ttu-id="f0f38-103">Vytvoří výčet MemberRef tokeny představující členů zadaného typu.</span><span class="sxs-lookup"><span data-stu-id="f0f38-103">Enumerates MemberRef tokens representing members of the specified type.</span></span>  
+# <a name="imetadataimportenummemberrefs-method"></a><span data-ttu-id="43311-102">IMetaDataImport::EnumMemberRefs – metoda</span><span class="sxs-lookup"><span data-stu-id="43311-102">IMetaDataImport::EnumMemberRefs Method</span></span>
+<span data-ttu-id="43311-103">Vytvoří výčet MemberRef tokeny představující členů zadaného typu.</span><span class="sxs-lookup"><span data-stu-id="43311-103">Enumerates MemberRef tokens representing members of the specified type.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="f0f38-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="f0f38-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="43311-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="43311-104">Syntax</span></span>  
   
 ```  
 HRESULT EnumMemberRefs (  
@@ -39,38 +39,39 @@ HRESULT EnumMemberRefs (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="f0f38-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="f0f38-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="43311-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="43311-105">Parameters</span></span>  
  `phEnum`  
- <span data-ttu-id="f0f38-106">[out v] Ukazatel na enumerátor.</span><span class="sxs-lookup"><span data-stu-id="f0f38-106">[in, out] A pointer to the enumerator.</span></span>  
+ <span data-ttu-id="43311-106">[out v] Ukazatel na enumerátor.</span><span class="sxs-lookup"><span data-stu-id="43311-106">[in, out] A pointer to the enumerator.</span></span>  
   
  `tkParent`  
- <span data-ttu-id="f0f38-107">[in] Token TypeDef, Odkaz TypeRef, MethodDef nebo Odkaz ModuleRef pro typ, jejíž členové jsou pro provedení výčtu.</span><span class="sxs-lookup"><span data-stu-id="f0f38-107">[in] A TypeDef, TypeRef, MethodDef, or ModuleRef token for the type whose members are to be enumerated.</span></span>  
+ <span data-ttu-id="43311-107">[in] Token TypeDef, Odkaz TypeRef, MethodDef nebo Odkaz ModuleRef pro typ, jejíž členové jsou pro provedení výčtu.</span><span class="sxs-lookup"><span data-stu-id="43311-107">[in] A TypeDef, TypeRef, MethodDef, or ModuleRef token for the type whose members are to be enumerated.</span></span>  
   
  `rMemberRefs`  
- <span data-ttu-id="f0f38-108">[out] Pole pro ukládání tokenů MemberRef.</span><span class="sxs-lookup"><span data-stu-id="f0f38-108">[out] The array used to store MemberRef tokens.</span></span>  
+ <span data-ttu-id="43311-108">[out] Pole pro ukládání tokenů MemberRef.</span><span class="sxs-lookup"><span data-stu-id="43311-108">[out] The array used to store MemberRef tokens.</span></span>  
   
  `cMax`  
- <span data-ttu-id="f0f38-109">[in] Maximální velikost `rMemberRefs` pole.</span><span class="sxs-lookup"><span data-stu-id="f0f38-109">[in] The maximum size of the `rMemberRefs` array.</span></span>  
+ <span data-ttu-id="43311-109">[in] Maximální velikost `rMemberRefs` pole.</span><span class="sxs-lookup"><span data-stu-id="43311-109">[in] The maximum size of the `rMemberRefs` array.</span></span>  
   
  `pcTokens`  
- <span data-ttu-id="f0f38-110">[out] Skutečný počet tokenů MemberRef vrácené v `rMemberRefs`.</span><span class="sxs-lookup"><span data-stu-id="f0f38-110">[out] The actual number of MemberRef tokens returned in `rMemberRefs`.</span></span>  
+ <span data-ttu-id="43311-110">[out] Skutečný počet tokenů MemberRef vrácené v `rMemberRefs`.</span><span class="sxs-lookup"><span data-stu-id="43311-110">[out] The actual number of MemberRef tokens returned in `rMemberRefs`.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="f0f38-111">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="f0f38-111">Return Value</span></span>  
+## <a name="return-value"></a><span data-ttu-id="43311-111">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="43311-111">Return Value</span></span>  
   
-|<span data-ttu-id="f0f38-112">HRESULT</span><span class="sxs-lookup"><span data-stu-id="f0f38-112">HRESULT</span></span>|<span data-ttu-id="f0f38-113">Popis</span><span class="sxs-lookup"><span data-stu-id="f0f38-113">Description</span></span>|  
+|<span data-ttu-id="43311-112">HRESULT</span><span class="sxs-lookup"><span data-stu-id="43311-112">HRESULT</span></span>|<span data-ttu-id="43311-113">Popis</span><span class="sxs-lookup"><span data-stu-id="43311-113">Description</span></span>|  
 |-------------|-----------------|  
-|`S_OK`|<span data-ttu-id="f0f38-114">`EnumMemberRefs` bylo úspěšně vráceno.</span><span class="sxs-lookup"><span data-stu-id="f0f38-114">`EnumMemberRefs` returned successfully.</span></span>|  
-|`S_FALSE`|<span data-ttu-id="f0f38-115">Neexistují žádné tokeny MemberRef se vytvořit výčet.</span><span class="sxs-lookup"><span data-stu-id="f0f38-115">There are no MemberRef tokens to enumerate.</span></span> <span data-ttu-id="f0f38-116">V takovém případě `pcTokens` je na nulu.</span><span class="sxs-lookup"><span data-stu-id="f0f38-116">In that case, `pcTokens` is to zero.</span></span>|  
+|`S_OK`|`EnumMemberRefs` <span data-ttu-id="43311-114">bylo úspěšně vráceno.</span><span class="sxs-lookup"><span data-stu-id="43311-114">returned successfully.</span></span>|  
+|`S_FALSE`|<span data-ttu-id="43311-115">Neexistují žádné tokeny MemberRef se vytvořit výčet.</span><span class="sxs-lookup"><span data-stu-id="43311-115">There are no MemberRef tokens to enumerate.</span></span> <span data-ttu-id="43311-116">V takovém případě `pcTokens` je na nulu.</span><span class="sxs-lookup"><span data-stu-id="43311-116">In that case, `pcTokens` is to zero.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="f0f38-117">Požadavky</span><span class="sxs-lookup"><span data-stu-id="f0f38-117">Requirements</span></span>  
- <span data-ttu-id="f0f38-118">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="f0f38-118">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="43311-117">Požadavky</span><span class="sxs-lookup"><span data-stu-id="43311-117">Requirements</span></span>  
+ <span data-ttu-id="43311-118">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="43311-118">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="f0f38-119">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="f0f38-119">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="43311-119">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="43311-119">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="f0f38-120">**Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="f0f38-120">**Library:** Included as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="43311-120">**Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="43311-120">**Library:** Included as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="f0f38-121">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="f0f38-121">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ **<span data-ttu-id="43311-121">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="43311-121">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a><span data-ttu-id="f0f38-122">Viz také:</span><span class="sxs-lookup"><span data-stu-id="f0f38-122">See also</span></span>
-- [<span data-ttu-id="f0f38-123">IMetaDataImport – rozhraní</span><span class="sxs-lookup"><span data-stu-id="f0f38-123">IMetaDataImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [<span data-ttu-id="f0f38-124">IMetaDataImport2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="f0f38-124">IMetaDataImport2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+## <a name="see-also"></a><span data-ttu-id="43311-122">Viz také:</span><span class="sxs-lookup"><span data-stu-id="43311-122">See also</span></span>
+
+- [<span data-ttu-id="43311-123">IMetaDataImport – rozhraní</span><span class="sxs-lookup"><span data-stu-id="43311-123">IMetaDataImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [<span data-ttu-id="43311-124">IMetaDataImport2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="43311-124">IMetaDataImport2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

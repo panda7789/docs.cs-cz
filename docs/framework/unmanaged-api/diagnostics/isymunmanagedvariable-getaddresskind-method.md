@@ -17,32 +17,33 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 8b45cda05a386efef320d2caad0ed241a4767b9c
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: eae5b21af3bcdca911ec13067a61bb957d4ae6ab
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57484846"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59092939"
 ---
-# <a name="isymunmanagedvariablegetaddresskind-method"></a><span data-ttu-id="f8bcc-102">ISymUnmanagedVariable::GetAddressKind – metoda</span><span class="sxs-lookup"><span data-stu-id="f8bcc-102">ISymUnmanagedVariable::GetAddressKind Method</span></span>
-<span data-ttu-id="f8bcc-103">Získá druh adresu této proměnné.</span><span class="sxs-lookup"><span data-stu-id="f8bcc-103">Gets the kind of address of this variable.</span></span>  
+# <a name="isymunmanagedvariablegetaddresskind-method"></a><span data-ttu-id="21ace-102">ISymUnmanagedVariable::GetAddressKind – metoda</span><span class="sxs-lookup"><span data-stu-id="21ace-102">ISymUnmanagedVariable::GetAddressKind Method</span></span>
+<span data-ttu-id="21ace-103">Získá druh adresu této proměnné.</span><span class="sxs-lookup"><span data-stu-id="21ace-103">Gets the kind of address of this variable.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="f8bcc-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="f8bcc-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="21ace-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="21ace-104">Syntax</span></span>  
   
 ```  
 HRESULT GetAddressKind(  
     [out, retval] ULONG32* pRetVal);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="f8bcc-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="f8bcc-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="21ace-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="21ace-105">Parameters</span></span>  
  `pRetVal`  
- <span data-ttu-id="f8bcc-106">[out] Ukazatel `ULONG32` , který přijímá hodnotu.</span><span class="sxs-lookup"><span data-stu-id="f8bcc-106">[out] A pointer to a `ULONG32` that receives the value.</span></span> <span data-ttu-id="f8bcc-107">Možné hodnoty jsou definovány v [corsymaddrkind –](../../../../docs/framework/unmanaged-api/diagnostics/corsymaddrkind-enumeration.md) výčtu.</span><span class="sxs-lookup"><span data-stu-id="f8bcc-107">The possible values are defined in the [CorSymAddrKind](../../../../docs/framework/unmanaged-api/diagnostics/corsymaddrkind-enumeration.md) enumeration.</span></span>  
+ <span data-ttu-id="21ace-106">[out] Ukazatel `ULONG32` , který přijímá hodnotu.</span><span class="sxs-lookup"><span data-stu-id="21ace-106">[out] A pointer to a `ULONG32` that receives the value.</span></span> <span data-ttu-id="21ace-107">Možné hodnoty jsou definovány v [corsymaddrkind –](../../../../docs/framework/unmanaged-api/diagnostics/corsymaddrkind-enumeration.md) výčtu.</span><span class="sxs-lookup"><span data-stu-id="21ace-107">The possible values are defined in the [CorSymAddrKind](../../../../docs/framework/unmanaged-api/diagnostics/corsymaddrkind-enumeration.md) enumeration.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="f8bcc-108">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="f8bcc-108">Return Value</span></span>  
- <span data-ttu-id="f8bcc-109">Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.</span><span class="sxs-lookup"><span data-stu-id="f8bcc-109">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="21ace-108">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="21ace-108">Return Value</span></span>  
+ <span data-ttu-id="21ace-109">Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.</span><span class="sxs-lookup"><span data-stu-id="21ace-109">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="f8bcc-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="f8bcc-110">Requirements</span></span>  
- <span data-ttu-id="f8bcc-111">**Záhlaví:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="f8bcc-111">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="21ace-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="21ace-110">Requirements</span></span>  
+ <span data-ttu-id="21ace-111">**Záhlaví:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="21ace-111">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="f8bcc-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="f8bcc-112">See also</span></span>
-- [<span data-ttu-id="f8bcc-113">ISymUnmanagedVariable – rozhraní</span><span class="sxs-lookup"><span data-stu-id="f8bcc-113">ISymUnmanagedVariable Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedvariable-interface.md)
+## <a name="see-also"></a><span data-ttu-id="21ace-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="21ace-112">See also</span></span>
+
+- [<span data-ttu-id="21ace-113">ISymUnmanagedVariable – rozhraní</span><span class="sxs-lookup"><span data-stu-id="21ace-113">ISymUnmanagedVariable Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedvariable-interface.md)

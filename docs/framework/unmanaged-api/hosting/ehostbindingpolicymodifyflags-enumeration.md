@@ -16,17 +16,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b3aba84f1ae451ee943028d063e91ca7a6d63548
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 0e8357d20edba993f5a7682f31c04afea4362afd
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54504691"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59080212"
 ---
-# <a name="ehostbindingpolicymodifyflags-enumeration"></a><span data-ttu-id="464a7-102">EHostBindingPolicyModifyFlags – výčet</span><span class="sxs-lookup"><span data-stu-id="464a7-102">EHostBindingPolicyModifyFlags Enumeration</span></span>
-<span data-ttu-id="464a7-103">Umožňuje hostiteli, chcete-li určit typ přesměrování, které modul CLR (CLR) má provést při použití změny zásad ze zdrojové sestavení do cílového sestavení.</span><span class="sxs-lookup"><span data-stu-id="464a7-103">Allows the host to specify the type of redirection the common language runtime (CLR) should perform when applying policy modifications from a source assembly to a target assembly.</span></span>  
+# <a name="ehostbindingpolicymodifyflags-enumeration"></a><span data-ttu-id="f2f1e-102">EHostBindingPolicyModifyFlags – výčet</span><span class="sxs-lookup"><span data-stu-id="f2f1e-102">EHostBindingPolicyModifyFlags Enumeration</span></span>
+<span data-ttu-id="f2f1e-103">Umožňuje hostiteli, chcete-li určit typ přesměrování, které modul CLR (CLR) má provést při použití změny zásad ze zdrojové sestavení do cílového sestavení.</span><span class="sxs-lookup"><span data-stu-id="f2f1e-103">Allows the host to specify the type of redirection the common language runtime (CLR) should perform when applying policy modifications from a source assembly to a target assembly.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="464a7-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="464a7-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="f2f1e-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="f2f1e-104">Syntax</span></span>  
   
 ```  
 typedef enum _hostBindingPolicyModifyFlags {  
@@ -37,27 +37,28 @@ typedef enum _hostBindingPolicyModifyFlags {
 } EHostBindingPolicyModifyFlags;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="464a7-105">Členové</span><span class="sxs-lookup"><span data-stu-id="464a7-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="f2f1e-105">Členové</span><span class="sxs-lookup"><span data-stu-id="f2f1e-105">Members</span></span>  
   
-|<span data-ttu-id="464a7-106">Člen</span><span class="sxs-lookup"><span data-stu-id="464a7-106">Member</span></span>|<span data-ttu-id="464a7-107">Popis</span><span class="sxs-lookup"><span data-stu-id="464a7-107">Description</span></span>|  
+|<span data-ttu-id="f2f1e-106">Člen</span><span class="sxs-lookup"><span data-stu-id="f2f1e-106">Member</span></span>|<span data-ttu-id="f2f1e-107">Popis</span><span class="sxs-lookup"><span data-stu-id="f2f1e-107">Description</span></span>|  
 |------------|-----------------|  
-|`HOST_BINDING_POLICY_MODIFY_CHAIN`|<span data-ttu-id="464a7-108">Určuje, že modul CLR bude zřetězit hodnoty zásad zdroje sestavení na ty z cílového sestavení.</span><span class="sxs-lookup"><span data-stu-id="464a7-108">Specifies that the CLR will chain policy values of the source assembly onto those of the target assembly.</span></span>|  
-|`HOST_BINDING_POLICY_MODIFY_DEFAULT`|<span data-ttu-id="464a7-109">Určuje, že modul CLR provede výchozí akci.</span><span class="sxs-lookup"><span data-stu-id="464a7-109">Specifies that the CLR will perform the default action.</span></span>|  
-|`HOST_BINDING_POLICY_MODIFY_MAX`|<span data-ttu-id="464a7-110">Určuje, že modul CLR bude nastavena zásada má tyto hodnoty z cílového sestavení na maximální hodnoty.</span><span class="sxs-lookup"><span data-stu-id="464a7-110">Specifies that the CLR will set the policy values of the target assembly to the maximum values.</span></span>|  
-|`HOST_BINDING_POLICY_MODIFY_REMOVE`|<span data-ttu-id="464a7-111">Určuje, že modul CLR bude nahraďte hodnoty zásad z cílového sestavení u zdrojové sestavení.</span><span class="sxs-lookup"><span data-stu-id="464a7-111">Specifies that the CLR will replace policy values of the target assembly with those of the source assembly.</span></span>|  
+|`HOST_BINDING_POLICY_MODIFY_CHAIN`|<span data-ttu-id="f2f1e-108">Určuje, že modul CLR bude zřetězit hodnoty zásad zdroje sestavení na ty z cílového sestavení.</span><span class="sxs-lookup"><span data-stu-id="f2f1e-108">Specifies that the CLR will chain policy values of the source assembly onto those of the target assembly.</span></span>|  
+|`HOST_BINDING_POLICY_MODIFY_DEFAULT`|<span data-ttu-id="f2f1e-109">Určuje, že modul CLR provede výchozí akci.</span><span class="sxs-lookup"><span data-stu-id="f2f1e-109">Specifies that the CLR will perform the default action.</span></span>|  
+|`HOST_BINDING_POLICY_MODIFY_MAX`|<span data-ttu-id="f2f1e-110">Určuje, že modul CLR bude nastavena zásada má tyto hodnoty z cílového sestavení na maximální hodnoty.</span><span class="sxs-lookup"><span data-stu-id="f2f1e-110">Specifies that the CLR will set the policy values of the target assembly to the maximum values.</span></span>|  
+|`HOST_BINDING_POLICY_MODIFY_REMOVE`|<span data-ttu-id="f2f1e-111">Určuje, že modul CLR bude nahraďte hodnoty zásad z cílového sestavení u zdrojové sestavení.</span><span class="sxs-lookup"><span data-stu-id="f2f1e-111">Specifies that the CLR will replace policy values of the target assembly with those of the source assembly.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="464a7-112">Poznámky</span><span class="sxs-lookup"><span data-stu-id="464a7-112">Remarks</span></span>  
- <span data-ttu-id="464a7-113">[Iclrhostbindingpolicymanager::modifyapplicationpolicy –](../../../../docs/framework/unmanaged-api/hosting/iclrhostbindingpolicymanager-modifyapplicationpolicy-method.md) metoda přijímá parametr typu `EHostBindingPolicyModifyFlags`.</span><span class="sxs-lookup"><span data-stu-id="464a7-113">The [ICLRHostBindingPolicyManager::ModifyApplicationPolicy](../../../../docs/framework/unmanaged-api/hosting/iclrhostbindingpolicymanager-modifyapplicationpolicy-method.md) method takes a parameter of type `EHostBindingPolicyModifyFlags`.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="f2f1e-112">Poznámky</span><span class="sxs-lookup"><span data-stu-id="f2f1e-112">Remarks</span></span>  
+ <span data-ttu-id="f2f1e-113">[Iclrhostbindingpolicymanager::modifyapplicationpolicy –](../../../../docs/framework/unmanaged-api/hosting/iclrhostbindingpolicymanager-modifyapplicationpolicy-method.md) metoda přijímá parametr typu `EHostBindingPolicyModifyFlags`.</span><span class="sxs-lookup"><span data-stu-id="f2f1e-113">The [ICLRHostBindingPolicyManager::ModifyApplicationPolicy](../../../../docs/framework/unmanaged-api/hosting/iclrhostbindingpolicymanager-modifyapplicationpolicy-method.md) method takes a parameter of type `EHostBindingPolicyModifyFlags`.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="464a7-114">Požadavky</span><span class="sxs-lookup"><span data-stu-id="464a7-114">Requirements</span></span>  
- <span data-ttu-id="464a7-115">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="464a7-115">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="f2f1e-114">Požadavky</span><span class="sxs-lookup"><span data-stu-id="f2f1e-114">Requirements</span></span>  
+ <span data-ttu-id="f2f1e-115">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="f2f1e-115">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="464a7-116">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="464a7-116">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="f2f1e-116">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="f2f1e-116">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="464a7-117">**Knihovna:** MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="464a7-117">**Library:** MSCorEE.dll</span></span>  
+ <span data-ttu-id="f2f1e-117">**Knihovna:** MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="f2f1e-117">**Library:** MSCorEE.dll</span></span>  
   
- <span data-ttu-id="464a7-118">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="464a7-118">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ **<span data-ttu-id="f2f1e-118">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="f2f1e-118">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a><span data-ttu-id="464a7-119">Viz také:</span><span class="sxs-lookup"><span data-stu-id="464a7-119">See also</span></span>
-- [<span data-ttu-id="464a7-120">ICLRHostBindingPolicyManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="464a7-120">ICLRHostBindingPolicyManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrhostbindingpolicymanager-interface.md)
-- [<span data-ttu-id="464a7-121">Výčty pro hostování</span><span class="sxs-lookup"><span data-stu-id="464a7-121">Hosting Enumerations</span></span>](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)
+## <a name="see-also"></a><span data-ttu-id="f2f1e-119">Viz také:</span><span class="sxs-lookup"><span data-stu-id="f2f1e-119">See also</span></span>
+
+- [<span data-ttu-id="f2f1e-120">ICLRHostBindingPolicyManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="f2f1e-120">ICLRHostBindingPolicyManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrhostbindingpolicymanager-interface.md)
+- [<span data-ttu-id="f2f1e-121">Výčty hostování</span><span class="sxs-lookup"><span data-stu-id="f2f1e-121">Hosting Enumerations</span></span>](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)

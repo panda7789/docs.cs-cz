@@ -6,23 +6,24 @@ f1_keywords:
 helpviewer_keywords:
 - drag-and-drop [WPF], how-to topics
 ms.assetid: 559c0804-c62a-4640-b6b9-cbd2aa9fb99c
-ms.openlocfilehash: dd7bccdd28f433893a988f95c5e1d804f6e138de
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 87c1425e6eaf03b900e07cfd9fc489ef01b1607a
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57358805"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59100168"
 ---
-# <a name="drag-and-drop-how-to-topics"></a><span data-ttu-id="74170-102">Postupy: Témata přetažení</span><span class="sxs-lookup"><span data-stu-id="74170-102">Drag and Drop How-to Topics</span></span>
-<span data-ttu-id="74170-103">Následující příklady ukazují, jak provádět běžné úlohy pomocí [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] framework přetahování myší.</span><span class="sxs-lookup"><span data-stu-id="74170-103">The following examples demonstrate how to accomplish common tasks using the [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] drag-and-drop framework.</span></span>  
+# <a name="drag-and-drop-how-to-topics"></a><span data-ttu-id="4b35a-102">Postupy: Témata přetažení</span><span class="sxs-lookup"><span data-stu-id="4b35a-102">Drag and Drop How-to Topics</span></span>
+<span data-ttu-id="4b35a-103">Následující příklady ukazují, jak provádět běžné úlohy pomocí [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] framework přetahování myší.</span><span class="sxs-lookup"><span data-stu-id="4b35a-103">The following examples demonstrate how to accomplish common tasks using the [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] drag-and-drop framework.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="74170-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="74170-104">In This Section</span></span>  
- [<span data-ttu-id="74170-105">Otevření souboru přetaženého na ovládací prvek RichTextBox</span><span class="sxs-lookup"><span data-stu-id="74170-105">Open a File That is Dropped on a RichTextBox Control</span></span>](how-to-open-a-file-that-is-dropped-on-a-richtextbox-control.md)  
- [<span data-ttu-id="74170-106">Vytvoření datového objektu</span><span class="sxs-lookup"><span data-stu-id="74170-106">Create a Data Object</span></span>](how-to-create-a-data-object.md)  
- [<span data-ttu-id="74170-107">Určení, jestli datový objekt obsahuje formát dat</span><span class="sxs-lookup"><span data-stu-id="74170-107">Determine if a Data Format is Present in a Data Object</span></span>](how-to-determine-if-a-data-format-is-present-in-a-data-object.md)  
- [<span data-ttu-id="74170-108">Seznam datových formátů v datovém objektu</span><span class="sxs-lookup"><span data-stu-id="74170-108">List the Data Formats in a Data Object</span></span>](how-to-list-the-data-formats-in-a-data-object.md)  
- [<span data-ttu-id="74170-109">Načtení dat v konkrétním datovém formátu</span><span class="sxs-lookup"><span data-stu-id="74170-109">Retrieve Data in a Particular Data Format</span></span>](how-to-retrieve-data-in-a-particular-data-format.md)  
- [<span data-ttu-id="74170-110">Uložení několika datových formátů do datového objektu</span><span class="sxs-lookup"><span data-stu-id="74170-110">Store Multiple Data Formats in a Data Object</span></span>](how-to-store-multiple-data-formats-in-a-data-object.md)  
+## <a name="in-this-section"></a><span data-ttu-id="4b35a-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="4b35a-104">In This Section</span></span>  
+ [<span data-ttu-id="4b35a-105">Otevření souboru přetaženého na ovládací prvek RichTextBox</span><span class="sxs-lookup"><span data-stu-id="4b35a-105">Open a File That is Dropped on a RichTextBox Control</span></span>](how-to-open-a-file-that-is-dropped-on-a-richtextbox-control.md)  
+ [<span data-ttu-id="4b35a-106">Vytvoření datového objektu</span><span class="sxs-lookup"><span data-stu-id="4b35a-106">Create a Data Object</span></span>](how-to-create-a-data-object.md)  
+ [<span data-ttu-id="4b35a-107">Určení, jestli datový objekt obsahuje formát dat</span><span class="sxs-lookup"><span data-stu-id="4b35a-107">Determine if a Data Format is Present in a Data Object</span></span>](how-to-determine-if-a-data-format-is-present-in-a-data-object.md)  
+ [<span data-ttu-id="4b35a-108">Seznam datových formátů v datovém objektu</span><span class="sxs-lookup"><span data-stu-id="4b35a-108">List the Data Formats in a Data Object</span></span>](how-to-list-the-data-formats-in-a-data-object.md)  
+ [<span data-ttu-id="4b35a-109">Načtení dat v konkrétním datovém formátu</span><span class="sxs-lookup"><span data-stu-id="4b35a-109">Retrieve Data in a Particular Data Format</span></span>](how-to-retrieve-data-in-a-particular-data-format.md)  
+ [<span data-ttu-id="4b35a-110">Uložení několika datových formátů do datového objektu</span><span class="sxs-lookup"><span data-stu-id="4b35a-110">Store Multiple Data Formats in a Data Object</span></span>](how-to-store-multiple-data-formats-in-a-data-object.md)  
   
-## <a name="see-also"></a><span data-ttu-id="74170-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="74170-111">See also</span></span>
-- [<span data-ttu-id="74170-112">Přehled přetažení</span><span class="sxs-lookup"><span data-stu-id="74170-112">Drag and Drop Overview</span></span>](drag-and-drop-overview.md)
+## <a name="see-also"></a><span data-ttu-id="4b35a-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="4b35a-111">See also</span></span>
+
+- [<span data-ttu-id="4b35a-112">Přehled přetažení</span><span class="sxs-lookup"><span data-stu-id="4b35a-112">Drag and Drop Overview</span></span>](drag-and-drop-overview.md)
