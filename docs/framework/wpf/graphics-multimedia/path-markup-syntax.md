@@ -7,12 +7,12 @@ helpviewer_keywords:
 - graphics [WPF], PathGeometry class
 - XAML [WPF], object element usage
 ms.assetid: b8586241-a02d-486e-9223-e1e98e047f41
-ms.openlocfilehash: 65a86b82af9269d1af7198b8106ad478e88f3691
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 32eefba26b5e04370599e4c97767b6662cfd1c13
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57379156"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59082487"
 ---
 # <a name="path-markup-syntax"></a>Syntaxe značek cesty
 Cesty jsou popsány v [tvary a základní kresby v přehledu WPF](shapes-and-basic-drawing-in-wpf-overview.md) a [přehled geometrie](geometry-overview.md), ale toto téma popisuje podrobně výkonná a komplexní zkrácené jazyk, slouží k určení cesty geometrie více kompaktně pomocí [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)].  
@@ -53,11 +53,11 @@ Cesty jsou popsány v [tvary a základní kresby v přehledu WPF](shapes-and-bas
   
 |Použití atributu XAML PathFigureCollection|  
 |-----------------------------------------------|  
-|`<` *object* *property* `="` `figureDescription`[ `figureDescription`]* `" ... />`|  
+|`<` *objekt* *vlastnost* `="` `figureDescription`[ `figureDescription`] * `" ... />`|  
   
 |Termín|Popis|  
 |----------|-----------------|  
-|*fillRule*|<xref:System.Windows.Media.FillRule?displayProperty=nameWithType><br /><br /> Určuje, zda <xref:System.Windows.Media.StreamGeometry> používá <xref:System.Windows.Media.FillRule.EvenOdd> nebo <xref:System.Windows.Media.FillRule.Nonzero> <xref:System.Windows.Media.PathGeometry.FillRule%2A>.<br /><br /> -   `F0` Určuje, <xref:System.Windows.Media.FillRule.EvenOdd> výplně pravidlo.<br />-   `F1` Určuje, <xref:System.Windows.Media.FillRule.Nonzero> výplně pravidlo.<br /><br /> Vynecháte-li tento příkaz, podřízená cesta v použije výchozí chování, což je <xref:System.Windows.Media.FillRule.EvenOdd>. Pokud zadáte tento příkaz, musíte ji nejprve umístit.|  
+|*fillRule*|<xref:System.Windows.Media.FillRule?displayProperty=nameWithType><br /><br /> Určuje, zda <xref:System.Windows.Media.StreamGeometry> používá <xref:System.Windows.Media.FillRule.EvenOdd> nebo <xref:System.Windows.Media.FillRule.Nonzero><xref:System.Windows.Media.PathGeometry.FillRule%2A>.<br /><br /> -   `F0` Určuje, <xref:System.Windows.Media.FillRule.EvenOdd> výplně pravidlo.<br />-   `F1` Určuje, <xref:System.Windows.Media.FillRule.Nonzero> výplně pravidlo.<br /><br /> Vynecháte-li tento příkaz, podřízená cesta v použije výchozí chování, což je <xref:System.Windows.Media.FillRule.EvenOdd>. Pokud zadáte tento příkaz, musíte ji nejprve umístit.|  
 |*figureDescription*|Obrázek skládá move příkazu, nakreslete příkazy a volitelný příkaz Zavřít.<br /><br /> `moveCommand` `drawCommands`  `[` `closeCommand` `]`|  
 |*moveCommand*|Přesunout příkaz, který určuje počáteční bod na obrázku. Zobrazit [příkaz přesunout](#themovecommand) části.|  
 |*drawCommands*|Jeden nebo více výkresu příkazů, které popisují obsah na obrázku. Najdete v článku [vykreslení příkazů](#drawcommands) oddílu.|  
@@ -99,7 +99,6 @@ Velké `L` znamená, že `endPoint` je absolutní hodnota; malé `l` znamená, �
 ### <a name="horizontal-line-command"></a>Příkaz Vodorovná čára  
  Vytvoří vodorovnou horizontální čáru mezi aktuálním bodem a zadaným souřadnici x. `H 90` je příklad příkazu platná vodorovnou horizontální čáru.
 
-  
 |Syntaxe|  
 |------------|  
 |`H`  *x*<br /><br /> - nebo -<br /><br /> `h`  *x*|  
@@ -113,7 +112,6 @@ Velké `H` znamená, že `x` je absolutní hodnota; malé `h` znamená, že `x` 
 ### <a name="vertical-line-command"></a>Příkaz svislá čára  
  Vytvoří svislé čáry mezi aktuálním bodem a zadaným souřadnice na ose y. `v 90` je příklad příkazu platná svislé čáry.
 
-  
 |Syntaxe|  
 |------------|  
 |`V`  *y*<br /><br /> - nebo -<br /><br /> `v`  *y*|  
@@ -202,7 +200,7 @@ Velké `V` znamená, že `y` je absolutní hodnota; malé `v` znamená, že `y` 
   
 |Syntaxe|  
 |------------|  
-|`x` `,` `y`<br /><br /> - nebo -<br /><br /> `x``y`|  
+|`x` `,` `y`<br /><br /> - nebo -<br /><br /> `x` `y`|  
   
 |Termín|Popis|  
 |----------|-----------------|  
@@ -225,10 +223,11 @@ Velké `V` znamená, že `y` je absolutní hodnota; malé `v` znamená, že `y` 
  Můžete také použít vědecký zápis. Například `+1.e17` platná hodnota.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Shapes.Path>
 - <xref:System.Windows.Media.StreamGeometry>
 - <xref:System.Windows.Media.PathGeometry>
 - <xref:System.Windows.Media.PathFigureCollection>
-- [Přehled objektů Shape a základního kreslení ve WPF](shapes-and-basic-drawing-in-wpf-overview.md)
+- [Tvary a základní kresby v přehledu WPF](shapes-and-basic-drawing-in-wpf-overview.md)
 - [Přehled geometrie](geometry-overview.md)
-- [Témata s postupy](geometries-how-to-topics.md)
+- [– postupy](geometries-how-to-topics.md)

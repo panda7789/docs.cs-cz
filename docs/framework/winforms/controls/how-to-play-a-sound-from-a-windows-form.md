@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Přehrávání zvuku z formuláře Windows'
+title: 'Postupy: Přehrávání zvuku z formuláře Windows Forms'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,14 +11,14 @@ helpviewer_keywords:
 - My.Computer.Audio object [Windows Forms], playing sounds
 - examples [Windows Forms], sounds
 ms.assetid: 3d3350b7-1ebd-4e05-a738-48ca1160a19d
-ms.openlocfilehash: 7d8c723fc995e8b9987681e3db343c43d3bc2682
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 3b9eb6f902d0d2193f0099f8e868e4ead347ce26
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57714707"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59078678"
 ---
-# <a name="how-to-play-a-sound-from-a-windows-form"></a>Postupy: Přehrávání zvuku z formuláře Windows
+# <a name="how-to-play-a-sound-from-a-windows-form"></a>Postupy: Přehrávání zvuku z formuláře Windows Forms
 V tomto příkladu přehraje zvuk v dané cestě v době běhu.  
   
 ## <a name="example"></a>Příklad  
@@ -65,6 +65,6 @@ private void playSimpleSound()
  Nečiňte rozhodnutí o obsahu souboru na základě jeho názvu. Například soubor `Form1.vb` nemusí být zdrojový soubor jazyka Visual Basic. Před použitím dat ve své aplikaci ověřte všechny vstupy.  
   
 ## <a name="see-also"></a>Viz také:
-- <xref:System.Media.SoundPlayer>
-- [Postupy: Načítání zvuku ve formuláři Windows asynchronně](how-to-load-a-sound-asynchronously-within-a-windows-form.md)
 
+- <xref:System.Media.SoundPlayer>
+- [Postupy: Asynchronní načítání zvuku ve formuláři Windows Forms](how-to-load-a-sound-asynchronously-within-a-windows-form.md)

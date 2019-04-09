@@ -5,22 +5,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d613a22b-07d7-41a4-bada-1adc653b9b5d
-ms.openlocfilehash: 8c0807a7b811cf2cb3a13576018373d135e3e5cd
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a5a32220ad1f638bf2e93051e9b436d8270aec2f
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54554462"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59082188"
 ---
 # <a name="overriding-the-identity-of-a-service-for-authentication"></a>Přepsání identity služby kvůli ověřování
 Standardně nastavit identitu ve službě, protože výběr typu pověření klienta Určuje typ identity v metadatech služby není nutné. Například následující kód konfigurace používá [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) elementu a nastaví `clientCredentialType` atribut pro Windows.  
-  
-  
-  
+
  Následující fragment webové služby WSDL (Description Language) ukazuje identitu pro koncový bod definovaný dříve. V tomto příkladu je služba spuštěna jako služba v místním prostředí v rámci určitého uživatelského účtu (username@contoso.com), a proto hlavní název (UPN) identity uživatele obsahuje název účtu. Hlavní název uživatele je také označovaný jako přihlašovací jméno uživatele v doméně Windows.  
-  
-  
-  
+
  Ukázková aplikace, který ukazuje nastavení identity, najdete v části [ukázka Identity služby](../../../../docs/framework/wcf/samples/service-identity-sample.md). Další informace o identitě služby najdete v tématu [identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).  
   
 ## <a name="kerberos-authentication-and-identity"></a>Ověřování protokolem Kerberos a Identity  
@@ -52,13 +48,9 @@ Standardně nastavit identitu ve službě, protože výběr typu pověření kli
   
 ### <a name="using-the-identity-element-in-configuration"></a>Použití \<identity > v elementu konfigurace  
  Pokud změníte typ přihlašovacích údajů klienta ve vazbě bylo dříve uvedeno na certifikát`,` generovaného WSDL obsahuje Base64 serializovat certifikátů X.509 pro hodnotu identity, jak je znázorněno v následujícím kódu. Toto je výchozí pro všechny typy přihlašovacích údajů klienta jiné než Windows.  
-  
-  
-  
+
  Můžete změnit hodnotu výchozí identitu služby nebo změňte typ identity pomocí <`identity`> element v konfiguraci nebo nastavením identita v kódu. Následující kód konfigurace nastaví identitou system (DNS) název domény s hodnotou `contoso.com`.  
-  
-  
-  
+
 ### <a name="setting-identity-programmatically"></a>Nastavení Identity prostřednictvím kódu programu  
  Vaše služba není nutné explicitně určit identitu, protože WCF automaticky určuje. Ale WCF umožňuje určit identitu, která v koncovém bodě, podle potřeby. Následující kód přidá nový koncový bod služby s konkrétní identitu DNS.  
   
@@ -66,5 +58,6 @@ Standardně nastavit identitu ve službě, protože výběr typu pověření kli
  [!code-vb[C_Identity#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_identity/vb/source.vb#5)]  
   
 ## <a name="see-also"></a>Viz také:
-- [Postupy: Vytvoření vlastního ověřovatele Identity](../../../../docs/framework/wcf/extending/how-to-create-a-custom-client-identity-verifier.md)
+
+- [Postupy: Vytvoření vlastního ověřovatele identity klientů](../../../../docs/framework/wcf/extending/how-to-create-a-custom-client-identity-verifier.md)
 - [Identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)

@@ -5,17 +5,16 @@ helpviewer_keywords:
 - controls [WPF], ToolBar
 - ToolBar control [WPF]
 ms.assetid: a8edb32c-118d-4f31-b6e6-8899082b504b
-ms.openlocfilehash: 6bd44e4b8406e945ea8f0913563d2f2f6e0b3822
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.openlocfilehash: 711d55e46fb548787976a1f966c9fbf6dc7f12d8
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58464954"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59105323"
 ---
 # <a name="toolbar-overview"></a>ToolBar – přehled
 <xref:System.Windows.Controls.ToolBar> ovládací prvky jsou kontejnery pro skupinu příkazů nebo ovládacích prvků, které jsou obvykle související funkce. A <xref:System.Windows.Controls.ToolBar> obvykle obsahuje tlačítka, pomocí kterých vyvolat příkazy.  
-  
-  
+
 <a name="ToolBarControl"></a>   
 ## <a name="toolbar-control"></a>ToolBar – ovládací prvek  
  <xref:System.Windows.Controls.ToolBar> Ovládací prvek získá jeho název z panelu jako uspořádání tlačítek nebo jiných ovládacích prvků do jednoho řádku nebo sloupce. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Controls.ToolBar> ovládací prvky poskytují přetečení mechanismus, který nahradí všechny položky, které se přirozeně nevejdou do velikosti omezen <xref:System.Windows.Controls.ToolBar> do oblasti speciální přetečení. Navíc [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Controls.ToolBar> se obvykle používají ovládací prvky s související <xref:System.Windows.Controls.ToolBarTray> ovládací prvek, který poskytuje chování zvláštní rozložení, jakož i podporu pro uživatelem iniciované velikost a uspořádání panelů nástrojů.  
@@ -41,6 +40,7 @@ ms.locfileid: "58464954"
  [ToolBar – styly a šablony](toolbar-styles-and-templates.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Controls.Primitives.ToolBarPanel>
 - <xref:System.Windows.Controls.Primitives.ToolBarOverflowPanel>
 - [Ovládací prvky stylu na prvku ToolBar](how-to-style-controls-on-a-toolbar.md)

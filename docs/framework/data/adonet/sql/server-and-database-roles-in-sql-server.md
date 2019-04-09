@@ -1,15 +1,15 @@
 ---
-title: Serverové a databázové role v systému SQL Server
+title: Serverové a databázové role na SQL Serveru
 ms.date: 03/30/2017
 ms.assetid: 5482dfdb-e498-4614-8652-b174829eed13
-ms.openlocfilehash: c7fdac92c2d980669a3cc3bf67119bdbb42509a4
-ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
+ms.openlocfilehash: e2d0de08f23bc3767e11de31c4ded4a326d060a9
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56091809"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59087973"
 ---
-# <a name="server-and-database-roles-in-sql-server"></a>Serverové a databázové role v systému SQL Server
+# <a name="server-and-database-roles-in-sql-server"></a>Serverové a databázové role na SQL Serveru
 Všechny verze SQL serveru použít zabezpečení na základě rolí, které vám umožní přiřadit oprávnění pro roli nebo skupinu uživatelů, nikoli pro jednotlivé uživatele. Pevného serveru a pevné databázové role mají pevnou sadu oprávnění, které jsou jim přiřazeny.  
   
 ## <a name="fixed-server-roles"></a>Role pevného serveru  
@@ -62,6 +62,7 @@ Všechny verze SQL serveru použít zabezpečení na základě rolí, které vá
 |[Objekty zabezpečení](/sql/relational-databases/security/authentication-access/principals-database-engine)|Popisuje objekty zabezpečení a obsahuje odkazy na témata popisující role serveru a databáze.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Zabezpečení aplikací ADO.NET](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)
 - [Scénáře zabezpečení aplikací na SQL Serveru](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)
 - [Ověřování v SQL Serveru](../../../../../docs/framework/data/adonet/sql/authentication-in-sql-server.md)

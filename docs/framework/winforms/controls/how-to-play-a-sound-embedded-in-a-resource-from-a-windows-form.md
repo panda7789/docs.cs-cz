@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Přehrávání zvuku vestavěného v prostředku z formuláře Windows'
+title: 'Postupy: Přehrávání zvuku vestavěného v prostředku z formuláře Windows Forms'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,14 +10,14 @@ helpviewer_keywords:
 - playing sounds [Windows Forms], from resources
 - SoundPlayer class [Windows Forms], playing sounds from resources
 ms.assetid: 7d148bb6-8a1e-47d7-a08d-35828d2e688f
-ms.openlocfilehash: f52cac4ca16adee232fae6fe2c1540bf5d3cb8cf
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 49235f9cb035c5a09c26b427f855fc00e818fe1c
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57708181"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59078574"
 ---
-# <a name="how-to-play-a-sound-embedded-in-a-resource-from-a-windows-form"></a>Postupy: Přehrávání zvuku vestavěného v prostředku z formuláře Windows
+# <a name="how-to-play-a-sound-embedded-in-a-resource-from-a-windows-form"></a>Postupy: Přehrávání zvuku vestavěného v prostředku z formuláře Windows Forms
 Můžete použít <xref:System.Media.SoundPlayer> třídy přehraje zvuk ze vloženého prostředku.  
   
 ## <a name="example"></a>Příklad  
@@ -34,6 +34,7 @@ Můžete použít <xref:System.Media.SoundPlayer> třídy přehraje zvuk ze vlo�
  Nahraďte "\<AssemblyName >" s názvem sestavení, ve kterém se vloží zvukový soubor. Tuto službu nezahrnuje příponu ".dll".  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Media.SoundPlayer>
-- [Postupy: Přehrávání zvuku z formuláře Windows](how-to-play-a-sound-from-a-windows-form.md)
-- [Postupy: Smyčka přehrávání zvuku ve formuláři Windows](how-to-loop-a-sound-playing-on-a-windows-form.md)
+- [Postupy: Přehrávání zvuku z formuláře Windows Forms](how-to-play-a-sound-from-a-windows-form.md)
+- [Postupy: Opakované přehrávání zvuku ve formuláři Windows Forms](how-to-loop-a-sound-playing-on-a-windows-form.md)

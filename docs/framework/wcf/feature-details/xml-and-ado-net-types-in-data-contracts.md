@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c2ce8461-3c15-4c41-8c81-1cb78f5b59a6
-ms.openlocfilehash: b5d9c3362ebd69e587d58104e7ebc9d9e96a9020
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1053a543a23ed36a5c06c45044c8fdbe25a60538
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54603675"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59073959"
 ---
 # <a name="xml-and-adonet-types-in-data-contracts"></a>Typy XML a ADO.NET v kontraktech dat
 Datový model kontraktu Windows Communication Foundation (WCF) podporuje určité typy, které představují XML přímo. Pokud tyto typy jsou serializován do formátu XML, serializátoru, který zapíše obsah XML z těchto typů bez dalšího zpracování. Podporované typy jsou <xref:System.Xml.XmlElement>, pole <xref:System.Xml.XmlNode> (ale ne `XmlNode` zadejte vlastní), stejně jako typy, které implementují <xref:System.Xml.Serialization.IXmlSerializable>. <xref:System.Data.DataSet> a <xref:System.Data.DataTable> typ, jakož i typové datové sady, se běžně používají při programování pro databázi. Tyto typy implementace `IXmlSerializable` rozhraní a jsou proto serializovatelný v datech smlouvy modelu. Některé speciální aspekty pro tyto typy jsou uvedené na konci tohoto tématu.  
@@ -203,6 +203,7 @@ Datový model kontraktu Windows Communication Foundation (WCF) podporuje určit�
  Podpora pro typové datové sady v datovém modelu smlouvy je omezená. Typové datové sady lze serializovat a deserializovat a můžete exportovat jejich schématu. Ale kontraktu dat. není schopna generovat nový import schématu zadané typy datové sady ze schématu, jako je jenom znovu použít existující. Může odkazovat na existující typové datové sady s použitím `/r` zapnout Svcutil.exe. Při pokusu o použití Svcutil.exe bez `/r` přepněte se na službu, která používá typové datové sady, alternativní serializátor (objekt XmlSerializer) je automaticky vybrána. Pokud musíte použít objektu DataContractSerializer a musí generovat datové sady ze schématu, můžete použít následující postup: generování typů typové datové sady (s použitím nástroje Xsd.exe s `/d` přepnout na službu), zkompilujte typy a pak přejděte na jejich použití `/r` zapnout Svcutil.exe.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Runtime.Serialization.DataContractSerializer>
 - <xref:System.Xml.Serialization.IXmlSerializable>
 - [Použití kontraktů dat](../../../../docs/framework/wcf/feature-details/using-data-contracts.md)

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - user input [Windows Forms], validating in Windows Forms
 - validating user input [Windows Forms], Windows Forms
 ms.assetid: 4ec07681-1dee-4bf9-be5e-718f635a33a1
-ms.openlocfilehash: fb804e6596de14d93ec6f0405480b60c03c7cbf9
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: c8a40706df4274728b438cff2539173a0e94b767
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57711314"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59076676"
 ---
 # <a name="user-input-validation-in-windows-forms"></a>Ověřování uživatelského vstupu ve Windows Forms
 Pokud uživatel zadá data do vaší aplikace, můžete chtít ověřit, že data nejsou platná předtím, než je vaše aplikace používá. Může vyžadovat určité textová pole nesmí být nulové délky, naformátovat pole jako telefonní číslo nebo jiný typ dat ve správném formátu, nebo zda řetězec neobsahuje všechny problematické znaky, které může ohrozit zabezpečení databáze. Windows Forms poskytuje několik způsobů, jak si můžete ověřit vstup ve vaší aplikaci.  
@@ -91,6 +91,7 @@ Pokud uživatel zadá data do vaší aplikace, můžete chtít ověřit, že dat
 >  Pokud vynutíte formulář zavřete tímto způsobem, dojde ke ztrátě dat v ovládacích prvcích ve formuláři, která dosud nebyla uložena. Modální formuláře navíc neověřují obsah ovládacích prvků, když jsou uzavřeny. Ovládací prvek ověření můžete stále použít k uzamčení fokus na ovládací prvek, ale nemusíte mít obavy o chování asociovaných s zavřením formuláře.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.Control.Validating?displayProperty=nameWithType>
 - <xref:System.Windows.Forms.Form.Closing?displayProperty=nameWithType>
 - <xref:System.ComponentModel.CancelEventArgs?displayProperty=nameWithType>

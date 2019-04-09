@@ -8,12 +8,12 @@ helpviewer_keywords:
 - WCF Data Services, getting started
 - WCF Data Services, accessing data
 ms.assetid: 9665ff5b-3e3a-495d-bf83-d531d5d060ed
-ms.openlocfilehash: 9589656c00573f7b3bba07aee1f89902a34d61ce
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 6d4b0af7f20cbf932773df3ae226729a0a6c2500
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54740837"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59085867"
 ---
 # <a name="accessing-data-service-resources-wcf-data-services"></a>Přístup k prostředkům datové služby (WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] podporuje [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] k vystavení dat jako informační kanál s prostředky, které jsou adresovat pomocí identifikátorů URI. Tyto prostředky jsou reprezentovány podle konvencí relace entity [modelu Entity Data Model](../../../../docs/framework/data/adonet/entity-data-model.md). V tomto modelu entity představují provozní jednotek dat, které jsou datové typy v aplikační doméně, jako je například zákazníky, objednávky, položky a produkty. Entity data je přístupné a změnit pomocí sémantiky representational state Transfer (REST), konkrétně standardní HTTP příkazy GET, PUT, POST a DELETE.  
@@ -97,4 +97,5 @@ http://services.odata.org/Northwind/Northwind.svc/Orders(10643)/$links/Shipper
  Identifikátor URI [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] prostředků umožňuje data entity adresu určeného službou. Pokud zadáte identifikátor URI do pole Adresa webového prohlížeče [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informačního kanálu reprezentace požadovaný prostředek se vrátí. Další informace najdete v tématu [WCF Data Services – úvodní příručka](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md). I když může být užitečné pro testování, prostředek služby data vrací očekávaná data, produkční data služby, které můžete také vytvářet, aktualizovat a odstranit data jsou obecně přístupné kódem aplikace nebo skriptovacích jazyků na webové stránce webový prohlížeč. Další informace najdete v tématu [použití datové služby v klientské aplikaci](../../../../docs/framework/data/wcf/using-a-data-service-in-a-client-application-wcf-data-services.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Otevřít web Data protokolu](https://go.microsoft.com/fwlink/?LinkID=182204)

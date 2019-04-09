@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - drag-and-drop [WPF], how-to topics
 ms.assetid: 559c0804-c62a-4640-b6b9-cbd2aa9fb99c
-ms.openlocfilehash: dd7bccdd28f433893a988f95c5e1d804f6e138de
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 87c1425e6eaf03b900e07cfd9fc489ef01b1607a
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57358805"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59100168"
 ---
 # <a name="drag-and-drop-how-to-topics"></a>Postupy: Témata přetažení
 Následující příklady ukazují, jak provádět běžné úlohy pomocí [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] framework přetahování myší.  
@@ -25,4 +25,5 @@ Následující příklady ukazují, jak provádět běžné úlohy pomocí [!INC
  [Uložení několika datových formátů do datového objektu](how-to-store-multiple-data-formats-in-a-data-object.md)  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled přetažení](drag-and-drop-overview.md)

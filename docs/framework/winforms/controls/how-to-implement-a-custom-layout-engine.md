@@ -11,12 +11,12 @@ helpviewer_keywords:
 - layout engines [Windows Forms], implementing
 - FlowLayoutPanel control [Windows Forms], layout engine
 ms.assetid: f91aa91c-29f4-4089-95ca-5d48b774b00e
-ms.openlocfilehash: 2b5bdab243039014b42d2f57f4037833f2137d67
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 8e5043e2b42b1e7449c6dab51691b6d57e28cd53
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57702630"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59083371"
 ---
 # <a name="how-to-implement-a-custom-layout-engine"></a>Postupy: Implementace vlastního modulu pro rozložení
 Následující příklad kódu ukazuje, jak vytvořit vlastního modulu pro rozložení, který provádí jednoduché plovoucí rozložení. Implementuje ovládací prvek panel s názvem `DemoFlowPanel`, která přepisuje <xref:System.Windows.Forms.Control.LayoutEngine%2A> vlastnosti instance `DemoFlowLayout` třídy.  
@@ -27,5 +27,6 @@ Následující příklad kódu ukazuje, jak vytvořit vlastního modulu pro rozl
  [!code-vb[System.Windows.Forms.Layout.LayoutEngine#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Layout.LayoutEngine/VB/DemoFlowLayout.vb#1)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.Layout.LayoutEngine>
 - <xref:System.Windows.Forms.Control.LayoutEngine%2A?displayProperty=nameWithType>

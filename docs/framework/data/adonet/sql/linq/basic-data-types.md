@@ -2,12 +2,12 @@
 title: Základní datové typy
 ms.date: 03/30/2017
 ms.assetid: eca2c472-9548-4800-bd31-5d8d9f11752b
-ms.openlocfilehash: b05bc69bdd6eea15806b8d928487da2c3f6503b5
-ms.sourcegitcommit: 4a8c2b8d0df44142728b68ebc842575840476f6d
+ms.openlocfilehash: 00d5c6d866453fe9ece7f2e22a579aa43c09c23e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/28/2019
-ms.locfileid: "58545699"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59072880"
 ---
 # <a name="basic-data-types"></a>Základní datové typy
 Protože dotazech LINQ to SQL přeložit do jazyka Transact-SQL před jsou prováděna na serveru Microsoft SQL Server. Technologie LINQ to SQL podporuje velkou část stejné vestavěné funkce systému SQL Server nemá pro základní datové typy.  
@@ -23,5 +23,6 @@ Protože dotazech LINQ to SQL přeložit do jazyka Transact-SQL před jsou prov�
 -   Je operátor: `IS` Při mapování dědičnosti má operátor podporovaných překladů. Lze použít místo přímo testování sloupec diskriminátoru a určí, zda objekt typu konkrétní entity, je přeložen na kontrolu sloupec diskriminátoru. Další informace o jazyce Visual Basic a C# je operátory, naleznete v tématu [je operátor](~/docs/visual-basic/language-reference/operators/is-operator.md) a [je](~/docs/csharp/language-reference/keywords/is.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Mapování typů SQL a CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mapping.md)
 - [Datové typy a funkce](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md)

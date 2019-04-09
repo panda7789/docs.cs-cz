@@ -2,12 +2,12 @@
 title: 'Postupy: Použití monikeru služby u kontraktů WSDL'
 ms.date: 03/30/2017
 ms.assetid: a88d9650-bb50-4f48-8c85-12f5ce98a83a
-ms.openlocfilehash: 9e9d4b49904f555d790c4b5fde760c004eb1820a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: b8729055c82e3ce1273e8a0cfae53a1f6d3c14e3
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54726569"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59081662"
 ---
 # <a name="how-to-use-a-service-moniker-with-wsdl-contracts"></a>Postupy: Použití monikeru služby u kontraktů WSDL
 Pokud chcete úplně nezávislý klient komunikace s objekty COM, existují situace. Na službu, kterou chcete volat nesmí zveřejnit koncový bod MEX a klientský WCF pro spolupráci s COM nelze registrovat knihovnu DLL. V těchto případech můžete vytvořit soubor WSDL, který popisuje službu a předejte ho do monikeru služby WCF. Toto téma popisuje, jak volat získávání WCF spustit ukázku pomocí monikeru WCF WSDL.  
@@ -23,9 +23,7 @@ Pokud chcete úplně nezávislý klient komunikace s objekty COM, existují situ
      [!code-csharp[S_WSDL_Client#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_wsdl_client/cs/service.cs#0)]  
   
 4.  Přidáte obor názvů vazby ve službě App.config:  
-  
-  
-  
+
 5.  Vytvoření souboru WSDL pro aplikace pro čtení. Protože obory názvů byly přidány v krocích 3 a 4, můžete použít Internet Exploreru se dotázat na celý popis WSDL služby tak, že přejdete do `http://localhost/ServiceModelSamples/Service.svc?wsdl`. Potom můžete uložit soubor z aplikace Internet Explorer jako serviceWSDL.xml. Pokud nezadáte obory názvů v krocích 3 a 4, nebudou dokumentu WSDL vrácená z dotazu výše zobrazenou adresu URL dokončení WSDL. Dokument WSDL vrátil bude obsahovat několik příkazy pro import, které importují jiné dokumenty WSDL. Budete muset projít každý příkaz import a sestavit kompletní dokumentu WSDL, kombinování WSDL vrácený službou WSDL importovat.  
   
 6.  Otevřete Visual Basic 6.0 a vytvořte nový soubor standardní .exe. Přidání tlačítka do formuláře a dvakrát klikněte na tlačítko Přidat následující kód do obslužné rutiny kliknutí:  
@@ -57,5 +55,6 @@ Pokud chcete úplně nezávislý klient komunikace s objekty COM, existují situ
 7.  Spuštění aplikace Visual Basic. Zobrazí se okno se zprávou s výsledky volání odečíst (145, 76.54).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md)
 - [Přehled integrace s aplikacemi modelu COM](../../../../docs/framework/wcf/feature-details/integrating-with-com-applications-overview.md)

@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Vytvoření formuláře Windows tvaru'
+title: 'Postupy: Vytváření tvarovaných formulářů Windows'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -18,14 +18,14 @@ helpviewer_keywords:
 - Windows Forms, circular
 - forms [Windows Forms], custom shapes
 ms.assetid: 6e6041e0-8e67-4487-b1e9-e410dbd1ef6c
-ms.openlocfilehash: a130614b0977aab6191f195c93454c527e6be9b8
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 03fcbb97db180e71283810e2daeab9be272b9d5d
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57710066"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59087246"
 ---
-# <a name="how-to-create-a-shaped-windows-form"></a>Postupy: Vytvoření formuláře Windows tvaru
+# <a name="how-to-create-a-shaped-windows-form"></a>Postupy: Vytváření tvarovaných formulářů Windows
 V tomto příkladu obsahuje formulář elipsy tvar, který mění svou velikost formuláře.  
   
 ## <a name="example"></a>Příklad  
@@ -41,6 +41,7 @@ V tomto příkladu obsahuje formulář elipsy tvar, který mění svou velikost 
  Tento příklad přepíše <xref:System.Windows.Forms.Control.OnPaint%2A> metoda ke změně tvaru formě. Chcete-li tento kód použít, zkopírujte deklarace metody, stejně jako kód výkresu uvnitř metody.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.Control.OnPaint%2A>
 - <xref:System.Drawing.Region>
 - <xref:System.Drawing>

@@ -19,18 +19,16 @@ helpviewer_keywords:
 - Extensible Application Markup Language (see XAML)
 - attribute syntax [XAML]
 ms.assetid: a80db4cd-dd0f-479f-a45f-3740017c22e4
-ms.openlocfilehash: cc5e60b1a8059e58ce6d23801eb51d8b2eb414d6
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 56b97170884ef31004b06b0eb50a8d79ad1d041c
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57379234"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59102827"
 ---
 # <a name="xaml-overview-wpf"></a>Přehled XAML (WPF)
 Toto téma popisuje funkce jazyka XAML a ukazuje, jak můžete použít XAML pro zápis [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikací. Toto téma popisuje XAML konkrétně, jak je implementované [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. XAML samotného je větší než konceptu jazyka [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
-  
-  
-  
+
 <a name="what_is_xaml"></a>   
 ## <a name="what-is-xaml"></a>Co je XAML?  
  XAML je deklarativní značkovací jazyk. Jak použít pro programovací model rozhraní .NET Framework, XAML zjednodušuje vytváření [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] pro aplikace rozhraní .NET Framework. Můžete vytvořit viditelné [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] prvky v deklarativní značce XAML a poté samostatné [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] definice od logiky běhu pomocí souborů použití modelu code-behind, připojeny ke značce prostřednictvím definicí částečné třídy. XAML přímo představuje instance objektů v konkrétní sadu zálohování typy definované v sestavení. To je rozdíl oproti většina ostatních značek jazyků, které jsou obvykle interpretovaný jazyk bez přímé stejného systému typ základní. XAML umožňuje pracovní místo, kde může pracovat samostatný strany na [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] a logika aplikace, pomocí potenciálně různých nástrojů.  
@@ -328,9 +326,10 @@ Toto téma popisuje funkce jazyka XAML a ukazuje, jak můžete použít XAML pro
  [Přehled vlastností závislosti](dependency-properties-overview.md) obsahuje bližší informace o všestrannost vlastností v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]a zavádí koncepci vlastnosti závislosti.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Podrobná syntaxe XAML](xaml-syntax-in-detail.md)
 - [XAML a vlastní třídy pro WPF](xaml-and-custom-classes-for-wpf.md)
-- [Namespace XAML (x:) Jazykové funkce](../../xaml-services/xaml-namespace-x-language-features.md)
+- [Jazykové funkce kompatibility značek (mc:)](../../xaml-services/xaml-namespace-x-language-features.md)
 - [Rozšíření WPF XAML](wpf-xaml-extensions.md)
 - [Přehled základních elementů](base-elements-overview.md)
 - [Stromy v subsystému WPF](trees-in-wpf.md)

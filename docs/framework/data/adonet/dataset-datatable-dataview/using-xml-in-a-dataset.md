@@ -2,12 +2,12 @@
 title: Použití XML v datové sadě
 ms.date: 03/30/2017
 ms.assetid: 35138159-e199-49ec-baf7-1ec6777e171e
-ms.openlocfilehash: 245e893d052a67e79396fb3d9fc7062eea426215
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 9e586ff0c6f28dd5919bc8b1bc640389a5cad610
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54667047"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59087416"
 ---
 # <a name="using-xml-in-a-dataset"></a>Použití XML v datové sadě
 Pomocí ADO.NET můžete přejít k vyplnění <xref:System.Data.DataSet> z datový proud XML nebo dokumentu. Můžete použít na datový proud XML nebo dokument, předejte <xref:System.Data.DataSet> data, informace o schématu nebo obojí. Dodané z datový proud XML nebo dokumentu je možné kombinovat s existující data nebo informace o schématu již v <xref:System.Data.DataSet>.  
@@ -47,5 +47,6 @@ Pomocí ADO.NET můžete přejít k vyplnění <xref:System.Data.DataSet> z dato
  Popisuje ADO.NET architektura a komponenty a jejich použití pro přístup k stávajících zdrojů dat stejně jako ke správě dat aplikací.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Datové sady, datové tabulky a datová zobrazení](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)
 - [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

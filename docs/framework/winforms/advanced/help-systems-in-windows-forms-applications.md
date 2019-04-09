@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Help [Windows Forms], Windows Forms
 - HelpProvider component [Windows Forms], providing Help in Windows applications
 ms.assetid: 2a96a278-432c-41fc-9e3c-5bfedf5e1267
-ms.openlocfilehash: 22c07490d0d3b54be96f32d67c9b4aee70306c1d
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 1a02271d59a59f0a6e06a652a34922ba5dcdf1f3
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57718308"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59087269"
 ---
 # <a name="help-systems-in-windows-forms-applications"></a>Systémy nápovědy ve formulářových aplikacích Windows
 Jeden z vašich nejdůležitějších courtesies, jak pro vývojáře aplikací, můžete poskytnout uživatelům s je příslušný systém nápovědy. Je to, kde se změní při stát zaměňovat nebo disoriented. Poskytuje systém nápovědy v aplikaci založené na Windows se snadno provádí pomocí [HelpProvider – komponenta](../controls/helpprovider-component-windows-forms.md).  
@@ -24,8 +24,9 @@ Jeden z vašich nejdůležitějších courtesies, jak pro vývojáře aplikací,
  Můžete generovat soubory nápovědy HTML 1.x s HTML Help Workshop. Další informace o Nápověda jazyka HTML naleznete v tématu "HTML Help Workshop" nebo v jiných tématech "HTML Help" na webu MSDN.  
   
 ## <a name="see-also"></a>Viz také:
-- [Integrace uživatelské nápovědy v modelu Windows Forms](integrating-user-help-in-windows-forms.md)
+
+- [Integrace uživatelské nápovědy do formulářů Windows](integrating-user-help-in-windows-forms.md)
 - [Komponenta HelpProvider](../controls/helpprovider-component-windows-forms.md)
-- [Komponenta ToolTip](../controls/tooltip-component-windows-forms.md)
+- [ToolTip – komponenta](../controls/tooltip-component-windows-forms.md)
 - [Přehled produktu Windows Forms](../windows-forms-overview.md)
 - [Windows Forms](../index.md)

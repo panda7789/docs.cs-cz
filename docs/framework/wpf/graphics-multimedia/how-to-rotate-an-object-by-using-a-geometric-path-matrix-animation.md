@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Otočení objektu použitím geometrické cesty (animace matice)'
+title: 'Postupy: Otočení objektu pomocí geometrické cesty (animace matice)'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - rotating objects by geometric paths [WPF]
 - matrix animation [WPF]
 ms.assetid: 877dc9aa-6bdc-4beb-8772-3efaec32c0f0
-ms.openlocfilehash: 57402ba24e8dc75f3563e71329b54db9cb96aaab
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 8f1b0ac42ea7509f8bc22b0bd2f50e2f96b5bee5
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57369081"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59087882"
 ---
-# <a name="how-to-rotate-an-object-by-using-a-geometric-path-matrix-animation"></a>Postupy: Otočení objektu použitím geometrické cesty (animace matice)
+# <a name="how-to-rotate-an-object-by-using-a-geometric-path-matrix-animation"></a>Postupy: Otočení objektu pomocí geometrické cesty (animace matice)
 Tento příklad ukazuje způsob použití <xref:System.Windows.Media.Animation.MatrixAnimationUsingPath> a <xref:System.Windows.Media.MatrixTransform> obměna (pivot) objektu podél geometrické cesty určené <xref:System.Windows.Media.PathGeometry> objektu.  
   
 ## <a name="example"></a>Příklad  
@@ -32,6 +32,7 @@ Tento příklad ukazuje způsob použití <xref:System.Windows.Media.Animation.M
  Verze kódu v předchozím příkladu používá <xref:System.Windows.Media.Animation.Storyboard> pro animaci <xref:System.Windows.Media.EllipseGeometry>, přestože byl nastaven pouze jedné animace. Jednodušší způsob použití jedné animace vlastností v kódu je použít <xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A> metody. Příklad najdete v tématu [animace vlastnosti bez pomoci scénáře](how-to-animate-a-property-without-using-a-storyboard.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled animace](animation-overview.md)
 - [Postupy: Témata animace cesty](path-animation-how-to-topics.md)
 - [Ukázka animace cesty](https://go.microsoft.com/fwlink/?LinkID=160028)

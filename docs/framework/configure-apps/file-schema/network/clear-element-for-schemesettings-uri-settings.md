@@ -1,13 +1,13 @@
 ---
-title: <clear> – element pro schemeSettings (nastavení URI)
+title: <clear> – Element pro schemeSettings (nastavení Uri)
 ms.date: 03/30/2017
 ms.assetid: 65098332-ce61-4542-ab8d-e7dc0257d31f
-ms.openlocfilehash: 5bb97fbe04cbd3bba85113200abe6495639bab87
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 132506dc15335b738fcdb026f4d31429bc45a228
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55287102"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59082682"
 ---
 # <a name="clear-element-for-schemesettings-uri-settings"></a>\<Vymazat > – Element pro schemeSettings (nastavení Uri)
 Vymaže všechna existující nastavení schéma.  
@@ -71,6 +71,7 @@ Vymaže všechna existující nastavení schéma.
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Configuration.SchemeSettingElement?displayProperty=nameWithType>
 - <xref:System.Configuration.SchemeSettingElementCollection?displayProperty=nameWithType>
 - <xref:System.Configuration.UriSection?displayProperty=nameWithType>

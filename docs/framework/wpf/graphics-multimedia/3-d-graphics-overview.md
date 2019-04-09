@@ -8,17 +8,16 @@ helpviewer_keywords:
 - 3-D graphics [WPF]
 - graphics [WPF], 3-D
 ms.assetid: 67f31ed4-e36b-4b02-9889-dcce245d7afc
-ms.openlocfilehash: 7f9f3d21d14a8eac862186a41bd8771cffb7375c
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 79dc7a3578c395ae8cdf5933e1249441f97071a2
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57352864"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59087986"
 ---
 # <a name="3-d-graphics-overview"></a>Přehled 3D grafiky
 <a name="introduction"></a> [!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] Funkce v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] vývojářům umožňuje nakreslit, transformaci a animace 3D grafiky v kódu a procedurální kódu. Vývojáři můžou kombinovat [!INCLUDE[TLA#tla_2d](../../../../includes/tlasharptla-2d-md.md)] a [!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] grafiku, vytvořit bohaté ovládací prvky, poskytují komplexní ilustrace znázorňující data nebo vylepšit uživatel činnost rozhraní aplikace. [!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] podpora v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] není určená k poskytování hru Vývojová platforma plně funkční. Toto téma obsahuje přehled [!INCLUDE[TLA#tla_3d](../../../../includes/tlasharptla-3d-md.md)] funkce [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] grafiky systému.  
- 
-  
+
 <a name="threed_in_2d"></a>   
 ## <a name="3-d-in-a-2-d-container"></a>3D v kontejneru 2D  
  [!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] Grafika obsahu v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] zapouzdřena v elementu, <xref:System.Windows.Controls.Viewport3D>, který mohl podílet na struktuře dvojrozměrné elementu. Grafika systém zpracovává <xref:System.Windows.Controls.Viewport3D> jako dvojrozměrné vizuální prvky jako řada dalších v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. <xref:System.Windows.Controls.Viewport3D> funguje jako okno – oblast zobrazení – do 3D scény. Přesněji, surface, na kterém je [!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] plánovaných scény.  
@@ -118,7 +117,7 @@ Perspektivy a pravoúhle projekce
   
 -   <xref:System.Windows.Media.Media3D.PointLight>: Osvětluje jako blízké světelného zdroje. PointLights polohy a přetypovat světla z této pozici. V závislosti na jejich umístění a vzdálenost s ohledem na světla jsou osvětlená objekty na scéně. <xref:System.Windows.Media.Media3D.PointLightBase> Zpřístupňuje <xref:System.Windows.Media.Media3D.PointLightBase.Range%2A> vlastnost, která určuje vzdálenost, jejichž překročení nebudou modely osvětlení světla. PointLight také poskytuje zeslabení vlastnosti, které určují, jak světla intenzita snižuje vzdálenost. Můžete určit konstantní lineární či kvadratické interpolace pro útlum světla.  
   
--   <xref:System.Windows.Media.Media3D.SpotLight>: dědí z <xref:System.Windows.Media.Media3D.PointLight>. Světelné kužele osvětlení jako PointLight a mít umístění a směrování. Microsoft Office project světla v oblasti ve tvaru kužel nastavil <xref:System.Windows.Media.Media3D.SpotLight.InnerConeAngle%2A> a <xref:System.Windows.Media.Media3D.SpotLight.OuterConeAngle%2A> vlastnosti, které jsou zadány ve stupních.  
+-   <xref:System.Windows.Media.Media3D.SpotLight>: Dědí z <xref:System.Windows.Media.Media3D.PointLight>. Světelné kužele osvětlení jako PointLight a mít umístění a směrování. Microsoft Office project světla v oblasti ve tvaru kužel nastavil <xref:System.Windows.Media.Media3D.SpotLight.InnerConeAngle%2A> a <xref:System.Windows.Media.Media3D.SpotLight.OuterConeAngle%2A> vlastnosti, které jsou zadány ve stupních.  
   
  Světla jsou <xref:System.Windows.Media.Media3D.Model3D> objekty, dají se transformovat a animovat vlastnosti světla, včetně umístění, barvy, směr a rozsah.  
   
@@ -170,12 +169,13 @@ Perspektivy a pravoúhle projekce
  [!code-xaml[hostingwpfusercontrolinwf#1](~/samples/snippets/csharp/VS_Snippets_Wpf/HostingWpfUserControlInWf/CSharp/HostingWpfUserControlInWf/ConeControl.xaml#1)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Controls.Viewport3D>
 - <xref:System.Windows.Media.Media3D.PerspectiveCamera>
 - <xref:System.Windows.Media.Media3D.DirectionalLight>
 - <xref:System.Windows.Media.Media3D.Material>
 - [Přehled 3D transformací](3-d-transformations-overview.md)
 - [Maximalizace výkonu WPF 3D](maximize-wpf-3d-performance.md)
-- [Témata s postupy](3-d-graphics-how-to-topics.md)
-- [Přehled objektů Shape a základního kreslení ve WPF](shapes-and-basic-drawing-in-wpf-overview.md)
-- [Malování pomocí obrázků, kreseb a vizuálních objektů](painting-with-images-drawings-and-visuals.md)
+- [– postupy](3-d-graphics-how-to-topics.md)
+- [Tvary a základní kresby v přehledu WPF](shapes-and-basic-drawing-in-wpf-overview.md)
+- [Kreslení pomocí obrázků, kreseb a vizuálních objektů](painting-with-images-drawings-and-visuals.md)

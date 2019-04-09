@@ -9,18 +9,16 @@ helpviewer_keywords:
 - hybrid applications [WPF interoperability]
 - message loops [WPF]
 ms.assetid: f440c23f-fa5d-4d5a-852f-ba61150e6405
-ms.openlocfilehash: dbc70f58fddfad6e7e7271802b8b01d2b52ab25a
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 707e77ac69878c1c7fb8e975c1f90ad657228d1a
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57370095"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59079667"
 ---
 # <a name="troubleshooting-hybrid-applications"></a>Řešení potíží s hybridními aplikacemi
 <a name="introduction"></a> Toto téma uvádí některé běžné problémy, které se mohou vyskytnout při vytváření hybridních aplikací, které obě používají [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] technologie.  
-  
 
-  
 <a name="overlapping_controls"></a>   
 ## <a name="overlapping-controls"></a>Překrývání ovládacích prvků  
  Ovládací prvky se nemohou překrývat dle očekávání. [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] používá samostatné HWND pro každý ovládací prvek. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] používá jednu HWND pro veškerý obsah na stránce. Tento rozdíl implementace způsobí, že překrývající se neočekávané chování.  
@@ -115,6 +113,7 @@ ms.locfileid: "57370095"
  Ovládací prvky WPF hostované v <xref:System.Windows.Forms.Integration.ElementHost> aktuálně nepodporují <xref:System.Windows.Forms.Control.ImeMode%2A> vlastnost. Změny <xref:System.Windows.Forms.Control.ImeMode%2A> hostované ovládací prvky se bude ignorovat.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.Integration.ElementHost>
 - <xref:System.Windows.Forms.Integration.WindowsFormsHost>
 - [Vzájemná funkční spolupráce v návrháři pro WPF](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/bb628658(v=vs.100))
@@ -122,5 +121,5 @@ ms.locfileid: "57370095"
 - [Postupy: Povolení vizuálních stylů v hybridní aplikaci](how-to-enable-visual-styles-in-a-hybrid-application.md)
 - [Předpoklady rozložení pro element WindowsFormsHost](layout-considerations-for-the-windowsformshost-element.md)
 - [Mapování vlastnosti Windows Forms a WPF](windows-forms-and-wpf-property-mapping.md)
-- [Chyby v rámci doby návrhu v Návrháři formulářů](../../winforms/controls/design-time-errors-in-the-windows-forms-designer.md)
+- [Chyby při návrhu v Návrháři formulářů Windows](../../winforms/controls/design-time-errors-in-the-windows-forms-designer.md)
 - [Migrace a interoperabilita](migration-and-interoperability.md)

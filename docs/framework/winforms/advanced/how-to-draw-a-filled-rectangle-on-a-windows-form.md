@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Kreslení plného obdélníku ve formuláři Windows'
+title: 'Postupy: Kreslení vyplněného obdélníku na formuláři Windows'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -12,14 +12,14 @@ helpviewer_keywords:
 - rectangles [Windows Forms], drawing
 - drawing rectangles
 ms.assetid: d656a93c-987d-4809-aafd-493fe17450f0
-ms.openlocfilehash: 53fab93f47c16257b5ab2e336b43c6133a31d509
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: e551eacf0924c9bffa802fb5d2ba8bae7c1c3a98
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57716891"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59072024"
 ---
-# <a name="how-to-draw-a-filled-rectangle-on-a-windows-form"></a>Postupy: Kreslení plného obdélníku ve formuláři Windows
+# <a name="how-to-draw-a-filled-rectangle-on-a-windows-form"></a>Postupy: Kreslení vyplněného obdélníku na formuláři Windows
 V tomto příkladu Kreslení plného obdélníku ve formuláři.  
   
 ## <a name="example"></a>Příklad  
@@ -34,9 +34,10 @@ V tomto příkladu Kreslení plného obdélníku ve formuláři.
  Vždy byste měli zavolat <xref:System.IDisposable.Dispose%2A> na všechny objekty, které využívají systémové prostředky, jako například <xref:System.Drawing.Brush> a <xref:System.Drawing.Graphics> objekty.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Drawing.Graphics.FillRectangle%2A>
 - <xref:System.Windows.Forms.Control.OnPaint%2A>
 - [Začínáme s programováním grafiky](getting-started-with-graphics-programming.md)
-- [Grafika a kreslení v modelu Windows Forms](graphics-and-drawing-in-windows-forms.md)
+- [Grafika a kreslení v rozhraní Windows Forms](graphics-and-drawing-in-windows-forms.md)
 - [Kreslení čar a obrazců pomocí pera](using-a-pen-to-draw-lines-and-shapes.md)
 - [Štětce a vyplněné obrazce v GDI+](brushes-and-filled-shapes-in-gdi.md)

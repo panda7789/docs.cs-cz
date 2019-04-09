@@ -6,12 +6,12 @@ helpviewer_keywords:
 - issued tokens [WCF]
 - federation [WCF], issued tokens
 ms.assetid: 4c31ee7d-a820-4067-8b84-a83049021bb6
-ms.openlocfilehash: 513d68f49e4182979b492fa67e65860aee96e09a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5ea30c2e9593f289c91a47cc082becf47dedc450
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54699412"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59072777"
 ---
 # <a name="federation-and-issued-tokens"></a>Federace a vystavené tokeny
 S Windows Communication Foundation (WCF), můžete vytvořit klienty, kteří zabezpečeně komunikují se službami, které implementují specifikace WS-Federation a WS-Trust. Specifikace poskytují mechanismy, které umožňují ověřování a autorizace ve sférách různých důvěryhodnosti pomocí XML a SOAP, webové služby WSDL (Description Language).  
@@ -62,6 +62,7 @@ S Windows Communication Foundation (WCF), můžete vytvořit klienty, kteří za
  <xref:System.ServiceModel.WSFederationHttpBinding>  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Autorizace](../../../../docs/framework/wcf/feature-details/authorization-in-wcf.md)
 - [Vlastní tokeny](../../../../docs/framework/wcf/extending/custom-tokens.md)
 - [Model zabezpečení pro Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)

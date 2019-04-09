@@ -6,12 +6,12 @@ helpviewer_keywords:
 - ToolStripContainer control [Windows Forms]
 - ToolStrip control [Windows Forms], ToolStripContainer
 ms.assetid: 378fa5b4-38e1-46f4-8e5c-d0c19dcd0200
-ms.openlocfilehash: d0b8d812fd13be090f42bf4fb3ea84cedd1c07a7
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 5a962b30771414e4b20711b001dc38ff8dc69823
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57716848"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59082565"
 ---
 # <a name="toolstripcontainer-control"></a>ToolStripContainer – ovládací prvek
 <xref:System.Windows.Forms.ToolStrip> ovládací prvky funkce vestavěný rafting (sdílení vodorovný nebo svislý prostor v rámci oblasti nástroje, pokud je ukotven) s použitím <xref:System.Windows.Forms.ToolStripContainer>.  
@@ -19,7 +19,7 @@ ms.locfileid: "57716848"
  Témata v této části popisují, koncepty a techniky, které můžete použít k sestavení <xref:System.Windows.Forms.ToolStripContainer> funkce do svých aplikací.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Přehled ovládacího prvku ToolStripContainer](toolstripcontainer-control-overview.md)  
+ [ToolStripContainer – přehled ovládacího prvku](toolstripcontainer-control-overview.md)  
  Obsahuje témata, které popisují účel a hlavní koncepty formulářů Windows <xref:System.Windows.Forms.ToolStripContainer> ovládacího prvku.  
   
  [Postupy: Přidání ToolStripContainer do formuláře](how-to-add-a-toolstripcontainer-to-a-form.md)  
@@ -42,4 +42,5 @@ ms.locfileid: "57716848"
  Poskytuje referenční dokumentaci pro <xref:System.Windows.Forms.ToolStripPanel> ovládacího prvku.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Ovládací prvky používané ve Windows Forms](controls-to-use-on-windows-forms.md)

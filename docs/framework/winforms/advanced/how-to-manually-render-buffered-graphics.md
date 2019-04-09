@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Ruční zobrazení grafiky uložené do vyrovnávací paměti'
+title: 'Postupy: Ruční vykreslení grafiky uložené do vyrovnávací paměti'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - flicker [Windows Forms], reducing by manually rendering graphics
 - graphics [Windows Forms], rendering
 ms.assetid: 5192295e-bd8e-45f7-8bd6-5c4f6bd21e61
-ms.openlocfilehash: f9763620d5fe56a0720d5d5f4ad53ec2ef18531c
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: b01e10ff0f65b3abfe1e60d84d66447968a310c8
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57705802"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59097948"
 ---
-# <a name="how-to-manually-render-buffered-graphics"></a>Postupy: Ruční zobrazení grafiky uložené do vyrovnávací paměti
+# <a name="how-to-manually-render-buffered-graphics"></a>Postupy: Ruční vykreslení grafiky uložené do vyrovnávací paměti
 Pokud spravujete ve vyrovnávací paměti grafiky, musíte být schopni vytvořit a vykreslit grafické vyrovnávací paměti. Můžete vytvořit instance <xref:System.Drawing.BufferedGraphics> třídu, která je přidružený k vykreslení plochy na obrazovce voláním <xref:System.Drawing.BufferedGraphicsContext.Allocate%2A> metody. Tato metoda vytvoří <xref:System.Drawing.BufferedGraphics> instanci, která souvisí s konkrétním vykreslovací plochu, jako je například formulář nebo ovládací prvek. Po vytvoření <xref:System.Drawing.BufferedGraphics> instance, můžete nakreslit grafiky do vyrovnávací paměti představuje prostřednictvím <xref:System.Drawing.BufferedGraphics.Graphics%2A> vlastnost. Po provedení všech operací grafiky, můžete zkopírovat obsah vyrovnávací paměti na obrazovku voláním <xref:System.Drawing.BufferedGraphics.Render%2A> metody.  
   
 > [!NOTE]
@@ -46,6 +46,7 @@ Pokud spravujete ve vyrovnávací paměti grafiky, musíte být schopni vytvoři
      [!code-vb[System.Windows.Forms.LegacyBufferedGraphics#24](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.LegacyBufferedGraphics/VB/Class1.vb#24)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Drawing.BufferedGraphicsContext>
 - <xref:System.Drawing.BufferedGraphics>
 - [Grafiky s dvojitou vyrovnávací pamětí](double-buffered-graphics.md)

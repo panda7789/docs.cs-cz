@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 297878d0-685b-4c01-b2e0-9d731b7322bc
-ms.openlocfilehash: 783ecb35408f63c7f3e7299e503c3f0fda3f36ba
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2e1cf9efcf47fc70421c64541aead5fb36d8c9d1
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54666433"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59083144"
 ---
 # <a name="querying-across-relationships"></a>Dotazování napříč relacemi
 Odkazy na jiné objekty nebo kolekce jiných objektů ve svých definicích třídy přímo odpovídají vztahy cizího klíče v databázi. Tyto vztahy můžete použít při dotazování pomocí zápisu s tečkou pro přístup k vlastnosti relace a přejít z jednoho objektu na jiný. Tyto operace přístupu přeložit více komplexním spojením nebo korelační poddotazy v ekvivalentní SQL.  
@@ -53,4 +53,5 @@ WHERE  (t0.City = @p0)
  [!code-vb[DLinqQueryConcepts#6](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryConcepts/vb/Module1.vb#6)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Koncepty dotazů](../../../../../../docs/framework/data/adonet/sql/linq/query-concepts.md)

@@ -10,18 +10,16 @@ helpviewer_keywords:
 - dependency properties [WPF]
 - collection-type properties [WPF]
 ms.assetid: 99f96a42-3ab7-4f64-a16b-2e10d654e97c
-ms.openlocfilehash: a2a664f0672f4585649cebad6e62635125db0983
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 9ce0b70bfdd70b47857167ff14e62ed2bbda569d
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57354892"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59077456"
 ---
 # <a name="collection-type-dependency-properties"></a>Vlastnosti závislostí typu kolekce
 Toto téma obsahuje pokyny a doporučené způsoby pro implementace vlastnosti závislosti, kde je typ vlastnosti typu kolekce.  
-  
- 
-  
+
 <a name="implementing"></a>   
 ## <a name="implementing-a-collection-type-dependency-property"></a>Implementace vlastnosti závislostí typu kolekce  
  Pro vlastnost závislosti obecně implementaci vzoru, který sledujete je, že definujete [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] vlastnost obálku, ve kterém je zajištěná tuto vlastnost <xref:System.Windows.DependencyProperty> identifikátor spíše než pole nebo jiné konstrukce. Můžete sledovat tento stejný vzor při implementaci vlastnosti typu kolekce. Však vlastnost typ kolekce zavádí některé složitost se vzorem pokaždé, když je typ, který je součástí kolekce <xref:System.Windows.DependencyObject> nebo <xref:System.Windows.Freezable> odvozené třídy.  
@@ -57,6 +55,7 @@ Toto téma obsahuje pokyny a doporučené způsoby pro implementace vlastnosti z
  Povolit dílčí vlastnosti vazba v objektu kolekce závislost, vytvořit vlastnost kolekce jako typ <xref:System.Windows.FreezableCollection%601>, s omezením typu pro tuto kolekci na jakýkoli <xref:System.Windows.DependencyObject> odvozené třídy.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.FreezableCollection%601>
 - [XAML a vlastní třídy pro WPF](xaml-and-custom-classes-for-wpf.md)
 - [Přehled datových vazeb](../data/data-binding-overview.md)

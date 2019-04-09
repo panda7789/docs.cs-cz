@@ -3,12 +3,12 @@ title: Návrh s typy s možnou hodnotou Null odkazů
 description: V tomto kurzu pokročilé obsahuje úvod do typy s možnou hodnotou Null odkazů. Se dozvíte, jak vyjádřit svůj návrh úmyslem při může mít hodnotu null referenční hodnoty a nechat kompilátor vynucovat, když nemohou být null.
 ms.date: 02/19/2019
 ms.custom: mvc
-ms.openlocfilehash: 7f071dedd2e7a611b08a3fd37a7c0b3182be049b
-ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
-ms.translationtype: MT
+ms.openlocfilehash: 12fb4d0cc3cad8600906610c262f3a745472c064
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57846581"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59077508"
 ---
 # <a name="tutorial-express-your-design-intent-more-clearly-with-nullable-and-non-nullable-reference-types"></a>Kurz: Máte v úmyslu návrhu Express jasněji s typy s možnou hodnotou Null a Null reference
 
@@ -45,7 +45,6 @@ Vytvořte novou konzolovou aplikaci v sadě Visual Studio nebo z příkazového 
 
 > [!NOTE]
 > Když C# (ne v režimu náhledu), se uvolní 8 `NullableContextOptions` element přidá nové šablony projektu. Dokud to neuděláte budete muset přidat ručně.
-
 
 ### <a name="design-the-types-for-the-application"></a>Navrhování typů pro aplikaci
 

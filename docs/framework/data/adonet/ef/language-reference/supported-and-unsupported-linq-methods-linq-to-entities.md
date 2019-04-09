@@ -2,12 +2,12 @@
 title: Podporované a nepodporované metody LINQ (LINQ to Entities)
 ms.date: 03/30/2017
 ms.assetid: 7f3ffa5f-f819-4730-bcdb-09b23de3b6d0
-ms.openlocfilehash: e805eba7cc14b322b4d3dafe9036691b51ecec02
-ms.sourcegitcommit: c6f69b0cf149f6b54483a6d5c2ece222913f43ce
+ms.openlocfilehash: 74b3973f931fa6f0d1f5b380833b8d5e5566563b
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55904277"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59077067"
 ---
 # <a name="supported-and-unsupported-linq-methods-linq-to-entities"></a>Podporované a nepodporované metody LINQ (LINQ to Entities)
 Tato část obsahuje informace o standardních dotazovacích operátorů Language-Integrated Query (LINQ), které jsou podporované nebo nepodporované v [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] dotazy. Řada operátorů standardního dotazu LINQ má přetížené verze, která přebírá celočíselný argument. Argument typu celé číslo odpovídá index založený na nule v sekvenci, která je provozována, <xref:System.Collections.Generic.IEqualityComparer%601>, nebo <xref:System.Collections.Generic.IComparer%601>. Pokud není uvedeno jinak, tyto přetížené verze operátory standardního dotazu LINQ nejsou podporovány a pokus o jejich použití vyvolá výjimku.  
@@ -179,4 +179,5 @@ Tato část obsahuje informace o standardních dotazovacích operátorů Languag
 |<xref:System.Linq.Queryable.TakeWhile%2A>|Není podporováno|`Function TakeWhile(Of TSource) ( _ source As IQueryable(Of TSource), _ predicate As Expression(Of Func(Of TSource, Integer, Boolean)) _ ) As IQueryable(Of TSource)`|`IQueryable<TSource> TakeWhile<TSource>( this IQueryable<TSource> source, Expression<Func\<TSource, int, bool>> predicate )`|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Standardní operátory dotazů LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/standard-query-operators-in-linq-to-entities-queries.md)

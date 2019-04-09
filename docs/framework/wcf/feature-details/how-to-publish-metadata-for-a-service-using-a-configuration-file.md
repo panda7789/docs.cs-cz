@@ -2,12 +2,12 @@
 title: 'Postupy: Publikování metadat služby promocí konfiguračního souboru'
 ms.date: 03/30/2017
 ms.assetid: f061443f-92df-4824-b36a-609c4cd14a17
-ms.openlocfilehash: 81bf7db9ec25ae112127712dcd0443d3e045bc10
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 2aa85aa9682f1f5f4b6c13465034000bb01f0e62
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54552798"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59075200"
 ---
 # <a name="how-to-publish-metadata-for-a-service-using-a-configuration-file"></a>Postupy: Publikování metadat služby promocí konfiguračního souboru
 Toto je jedna z dva postupy: témata, které ukazují publikování metadat služby Windows Communication Foundation (WCF). Existují dva způsoby, jak určit, jak by měla služba publikování metadat, je používán konfigurační soubor a pomocí kódu. Toto téma ukazuje, jak publikování metadat služby promocí konfiguračního souboru.  
@@ -93,21 +93,13 @@ namespace Metadata.Samples
 ### <a name="to-publish-metadata-for-a-wcf-service-using-an-application-configuration-file"></a>Chcete-li být zveřejněna metadata pro služby WCF pomocí konfiguračního souboru aplikace  
   
 1.  V souboru App.config, za uzavírací `</services>` elementu, vytvořit `<behaviors>` elementu.  
-  
-  
-  
+
 2.  V rámci `<behaviors>` elementu, přidejte `<serviceBehaviors>` elementu.  
-  
-  
-  
+
 3.  Přidat `<behavior>` elementu `<serviceBehaviors>` element a zadat hodnotu `name` atribut `<behavior>` element.  
-  
-  
-  
+
 4.  Přidat `<serviceMetadata>` elementu `<behavior>` elementu. Nastavte `httpGetEnabled` atribut `true` a `policyVersion` atribut Policy15. `httpGetEnabled` umožňuje službě reagovat na požadavky metadat provedené požadavek HTTP GET. `policyVersion` říká službě a při generování metadat v souladu s 1.5 WS-Policy.  
-  
-  
-  
+
 5.  Přidat `behaviorConfiguration` atribut `<service>` elementu a zadejte `name` atribut `<behavior>` element přidali v kroku 1, jak je znázorněno v následujícím příkladu kódu.  
   
     ```xml  
@@ -262,6 +254,7 @@ namespace Metadata.Samples
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Description.ServiceMetadataBehavior>
 - [Postupy: Hostování služby WCF ve spravované aplikaci](../../../../docs/framework/wcf/how-to-host-a-wcf-service-in-a-managed-application.md)
 - [Vlastní hostování](../../../../docs/framework/wcf/samples/self-host.md)

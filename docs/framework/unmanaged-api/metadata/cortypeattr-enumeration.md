@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: af90055c0a51e61d4032e45d6fa4a4914ddd045f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 43e7c973ee22350f26b4f86bcc8b4c4c727291ef
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54667934"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59087284"
 ---
 # <a name="cortypeattr-enumeration"></a>CorTypeAttr – výčet
 Obsahuje hodnoty, které označují typ metadat.  
@@ -121,4 +121,5 @@ typedef enum CorTypeAttr {
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
-- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+
+- [Výčty metadat](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

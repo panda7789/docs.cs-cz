@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: d186276f-6afb-4dfd-bf3c-4251edc2c299
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 3ebb95b6131ae28dd453ab79c1c0b7b13fccb8e3
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: fa36399320a8c396a222619172264a32f3eb3505
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54745932"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59072724"
 ---
 # <a name="etw-events-in-the-net-framework"></a>Události Trasování událostí pro Windows v rozhraní .NET Framework
 Trasování událostí pro Windows (ETW) je vysoce výkonné, s nízkou režií, škálovatelné trasování systému k dispozici v operačních systémech Windows. Doplňuje poskytované rozhraním .NET Framework podpoře profilování a ladění a slouží k řešení potíží s širokou škálu scénářů.  
@@ -27,6 +27,7 @@ Trasování událostí pro Windows (ETW) je vysoce výkonné, s nízkou režií,
  Popisuje, jak událostí CLR ETW doplňují poskytované modulem common language runtime podpoře profilování a ladění.  
   
 ## <a name="see-also"></a>Viz také:
-- [Události Trasování událostí pro Windows v CLR](../../../docs/framework/performance/clr-etw-events.md)
+
+- [Události ETW CLR](../../../docs/framework/performance/clr-etw-events.md)
 - [Task Parallel Library (TPL)](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md)
 - [Paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)

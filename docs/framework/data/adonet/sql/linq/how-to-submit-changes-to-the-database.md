@@ -1,18 +1,18 @@
 ---
-title: 'Postupy: Odešlete změny do databáze'
+title: 'Postupy: Odeslání změn do databáze'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: c7cba174-9d40-491d-b32c-f2d73b7e9eab
-ms.openlocfilehash: 455e4e3296a9136b2b9bf24278bb034e4a94fc7a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 572c4427ada06701c5982770ae476bd1c6c2b13a
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54562814"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59082539"
 ---
-# <a name="how-to-submit-changes-to-the-database"></a>Postupy: Odešlete změny do databáze
+# <a name="how-to-submit-changes-to-the-database"></a>Postupy: Odeslání změn do databáze
 Bez ohledu na to, kolik změny, které provedete do objektů dojde ke změně pouze do replik v paměti. Žádné změny provedené na skutečná data v databázi. Změny nejsou přenášeny do serveru, dokud explicitně volat <xref:System.Data.Linq.DataContext.SubmitChanges%2A> na <xref:System.Data.Linq.DataContext>.  
   
  Když provedete toto volání <xref:System.Data.Linq.DataContext> pokusí přeložit změny na ekvivalentní příkazy jazyka SQL. Přepsat tyto akce můžete použít vlastní logiku, ale pořadí odeslání je orchestrovaných službou z <xref:System.Data.Linq.DataContext> označované jako *změnit procesoru*. Posloupnost událostí je následující:  
@@ -34,6 +34,7 @@ Bez ohledu na to, kolik změny, které provedete do objektů dojde ke změně po
  [!code-vb[DLinqSubmittingChanges#1](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqSubmittingChanges/vb/Module1.vb#1)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Postupy: Zjištění a vyřešení konfliktních odeslání](../../../../../../docs/framework/data/adonet/sql/linq/how-to-detect-and-resolve-conflicting-submissions.md)
 - [Postupy: Správa konfliktů změn](../../../../../../docs/framework/data/adonet/sql/linq/how-to-manage-change-conflicts.md)
 - [Stažení ukázkových databází](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)

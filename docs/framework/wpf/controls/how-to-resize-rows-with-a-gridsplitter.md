@@ -6,12 +6,12 @@ helpviewer_keywords:
 - grid rows [WPF], resizing
 - GridSplitter control [WPF], resizing grid rows
 ms.assetid: 2413a9f2-1d81-46ed-95cb-95ec8233eea2
-ms.openlocfilehash: b05bda6cd33d3cdd0dda6288f30821d290c60cfc
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 6760a7a691af4f666294556cae3bc95a4299730a
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57370043"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59074271"
 ---
 # <a name="how-to-resize-rows-with-a-gridsplitter"></a>Postupy: Změna velikosti řádků pomocí prvku GridSplitter
 Tento příklad ukazuje způsob použití vodorovnou <xref:System.Windows.Controls.GridSplitter> distribuovat mezeru mezi dvěma řádky <xref:System.Windows.Controls.Grid> beze změny velikosti <xref:System.Windows.Controls.Grid>.  
@@ -37,5 +37,6 @@ Tento příklad ukazuje způsob použití vodorovnou <xref:System.Windows.Contro
 [!code-xaml[GridSplitterRowColumn#GridSplitterEntireRowPart2](~/samples/snippets/csharp/VS_Snippets_Wpf/GridSplitterRowColumn/CS/Window1.xaml#gridsplitterentirerowpart2)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Controls.GridSplitter>
-- [Témata s postupy](gridsplitter-how-to-topics.md)
+- [– postupy](gridsplitter-how-to-topics.md)

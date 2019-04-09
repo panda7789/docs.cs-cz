@@ -7,12 +7,12 @@ helpviewer_keywords:
 - animation [WPF], paths
 - path animations [WPF]
 ms.assetid: e9b71017-bac4-40d7-858b-326939442cb1
-ms.openlocfilehash: 6004dad448b965d51be6543478cbd059fb7f4d87
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 714303569111f30d4cc03ab0ab7cb2acec4276c2
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57373475"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59072503"
 ---
 # <a name="path-animation-how-to-topics"></a>Postupy: Témata animace cesty
 Témata v této části ukazují, jak animace objektu podél cesty.  
@@ -31,6 +31,7 @@ Témata v této části ukazují, jak animace objektu podél cesty.
  <xref:System.Windows.Media.Animation.Storyboard>  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Grafika a multimédia](index.md)
 - [Přehled animace](animation-overview.md)
 - [Přehled animací klíčových snímků](key-frame-animations-overview.md)

@@ -1,15 +1,15 @@
 ---
-title: Pokyny k migraci
+title: Pokyny pro migraci
 ms.date: 03/30/2017
 ms.assetid: cb65c132-58c9-4028-b3d4-1efc71d5e60e
-ms.openlocfilehash: 405ed0dcbd730f08b84ad0b40008c4d77b02e26f
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: a36108e8c711b9e5d5253b19a9122373fc513855
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57719673"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59083163"
 ---
-# <a name="migration-guidance"></a>Pokyny k migraci
+# <a name="migration-guidance"></a>Pokyny pro migraci
 V [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], společnost Microsoft vydává druhý hlavní verze Windows Workflow Foundation (WF). [!INCLUDE[wf1](../../../includes/wf1-md.md)] byla vydána v [!INCLUDE[vstecwinfx](../../../includes/vstecwinfx-md.md)] (to zahrnuté typy v oborech názvů System.Workflow.* barvy; dnes označovány jako WF3) a vylepšení v [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)]. WF3 je také součástí [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], ale existuje souběžně s novou technologií pracovního postupu (typy v System.Activities.\* oborů názvů; označuje jako WF4). Při zvažování, kdy se má přijmout WF4, je potřeba nejprve uznávají řídit načasování.  
   
 -   WF3 je plně podporován součástí [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)].  
@@ -32,7 +32,7 @@ V [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], společnost 
  [WF pokyny: pravidla](https://go.microsoft.com/fwlink/?LinkId=153854)  
  Popisuje, jak přenést související pravidla investice vpřed do [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] řešení.  
   
- [WF pokyny: Stavového stroje](https://go.microsoft.com/fwlink/?LinkId=153855)  
+ [WF pokyny: Stavový stroj](https://go.microsoft.com/fwlink/?LinkId=153855)  
  Tento článek popisuje tok řízení WF4 modelování chybí aktivit stavového stroje.  
   
  Všimněte si, že tyto pokyny platí jenom pro projekty pracovního postupu, které jsou cíleny na rozhraní .NET Framework 4. Pracovní postupy stavového stroje byly přidány ve verzi Update 1 platformy .NET 4.0.1 a byly součástí rozhraní .NET Framework 4.5. Další informace o pracovní postupy stavu počítače v prostředí .NET 4.0.1 - 4.0.3 a rozhraní .NET Framework 4.5, naleznete v tématu [aktualizace 4.0.1 pro funkce rozhraní Microsoft .NET Framework 4](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/hh290669(v=vs.100)) a [pracovní postupy stavu počítače](state-machine-workflows.md).  
@@ -56,4 +56,5 @@ V [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], společnost 
  Obsahuje příklad objektově orientovaný podrobné pokyny pro změnu návrhu pracovních postupů, které implementují Windows Communication Foundation (WCF) webové služby (obvykle označuje jako služeb pracovních postupů) vytvořené v WF3 WF4, použít pro běžné scénáře pro out-of-box aktivity.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Activities.Statements.Interop>

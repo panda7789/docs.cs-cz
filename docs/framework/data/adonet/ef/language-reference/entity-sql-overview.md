@@ -2,12 +2,12 @@
 title: Přehled Entity SQL
 ms.date: 03/30/2017
 ms.assetid: f0bb8120-e709-40a3-ac1e-5520dc47477d
-ms.openlocfilehash: 54a3832cffbf3376e6b3ab0826b280b676ccc1a0
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 100d616462cd76e1dde8fc855787ec3118842fc8
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54534641"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59073467"
 ---
 # <a name="entity-sql-overview"></a>Přehled Entity SQL
 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] je, která umožňuje dotazování konceptuálních modelů v jazyce podobném SQL [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)]. Konceptuální modely představují data jako entit a vztahů, a [!INCLUDE[esql](../../../../../../includes/esql-md.md)] umožňuje dotazování těchto entit a relací ve formátu, který je obeznámen všem uživatelům, kteří používají SQL.  
@@ -31,7 +31,7 @@ ms.locfileid: "54534641"
   
  [Ukládání do mezipaměti plánu dotazu](../../../../../../docs/framework/data/adonet/ef/language-reference/query-plan-caching-entity-sql.md)  
   
- [Obory názvů](../../../../../../docs/framework/data/adonet/ef/language-reference/namespaces-entity-sql.md)  
+ [Jmenné prostory](../../../../../../docs/framework/data/adonet/ef/language-reference/namespaces-entity-sql.md)  
   
  [Identifikátory](../../../../../../docs/framework/data/adonet/ef/language-reference/identifiers-entity-sql.md)  
   
@@ -62,6 +62,7 @@ ms.locfileid: "54534641"
  [Strukturované typy s možnou hodnotou Null](../../../../../../docs/framework/data/adonet/ef/language-reference/nullable-structured-types-entity-sql.md)  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Reference k Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
 - [Jazyk Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-language.md)
-- [Specifikace CSDL, SSDL a MSL](../../../../../../docs/framework/data/adonet/ef/language-reference/csdl-ssdl-and-msl-specifications.md)
+- [Soubor CSDL, SSDL a MSL specifikace](../../../../../../docs/framework/data/adonet/ef/language-reference/csdl-ssdl-and-msl-specifications.md)

@@ -5,18 +5,16 @@ helpviewer_keywords:
 - localization [WPF], attributes
 - localization [WPF], comments
 ms.assetid: ead2d9ac-b709-4ec1-a924-39927a29d02f
-ms.openlocfilehash: 214d2cf369a62f5565ef4b89fd658f6bec4b2fdc
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
-ms.translationtype: MT
+ms.openlocfilehash: 4e4c4891a905a5e4458ad5fc21a512c1dfe6f74e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57377097"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59092913"
 ---
 # <a name="localization-attributes-and-comments"></a>Atributy a komentáře lokalizace
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] komentáře lokalizace jsou vlastnosti, uvnitř [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)] zdrojový kód, získáte ho od vývojářům poskytuje pravidla a pokyny pro lokalizaci. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] lokalizace komentáře obsahují dvě sady informace: lokalizovatelnosti atributy a komentáře lokalizace volného tvaru. Lokalizovatelnost atributy jsou používány [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] lokalizace rozhraní API k označení prostředků, které mají být lokalizována. Komentáře volného tvaru jsou veškeré informace, které autor aplikace chce zahrnovat.  
-  
 
-  
 <a name="Localizer_Comments_"></a>   
 ## <a name="localization-comments"></a>Komentáře lokalizace  
  Pokud kód aplikace Autoři mají požadavky na konkrétní prvky v [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)], jako je například omezení na délku textu rodinu písem a velikost písma sdělují Lokalizátoři s komentáři v těchto informací [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)] kódu. Proces pro přidávání komentářů ke zdrojovému kódu vypadá takto:  
@@ -25,7 +23,7 @@ ms.locfileid: "57377097"
   
 2.  Během procesu sestavení můžete určit v souboru souborů .proj, jestli se má zanechávat komentáře lokalizace volného tvaru v sestavení, pásků si část poznámky nebo pruhu si všechny komentáře. Komentáře odebrána navýšením kapacity jsou umístěné v samostatném souboru. Zadejte vaše možnost použití `LocalizationDirectivesToLocFile` značku, třeba:  
   
-     `<LocalizationDirectivesToLocFile>` *Hodnota* `</LocalizationDirectivesToLocFile>`  
+     `<LocalizationDirectivesToLocFile>` *value* `</LocalizationDirectivesToLocFile>`  
   
 3.  Je možné přiřadit hodnoty jsou:  
   
@@ -90,7 +88,7 @@ ms.locfileid: "57377097"
   
 |Kategorie|Význam|  
 |--------------|-------------|  
-|Žádná|Cílová hodnota nemá žádné definované kategorie.|  
+|Žádný|Cílová hodnota nemá žádné definované kategorie.|  
 |Dědění|Cílová hodnota dědí z nadřazeného jeho kategorie.|  
 |Ignorovat|Cílová hodnota je ignorována v proces lokalizace. Ignorovat ovlivní pouze aktuální hodnotu. To nebude mít vliv na podřízené uzly.|  
 |NeverLocalize|Aktuální hodnota nemůže být lokalizována. Tato kategorie dědí podřízené objekty daného elementu.|  
@@ -100,7 +98,8 @@ ms.locfileid: "57377097"
  Localization.Comments obsahuje týkající se cílová hodnota řetězce volného tvaru. Vývojáři aplikací mohou přidat informace, které poskytují Lokalizátoři nápovědu, jak by měl přeložit text žádosti. Formát komentářů může být libovolný řetězec ohraničený "()". Použití "\\" řídicí znaky.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Globalizace pro WPF](globalization-for-wpf.md)
 - [Vytvoření tlačítka pomocí automatického rozložení](how-to-use-automatic-layout-to-create-a-button.md)
-- [Automatické rozložení použitím mřížky](how-to-use-a-grid-for-automatic-layout.md)
+- [Automatické rozložení pomocí mřížky](how-to-use-a-grid-for-automatic-layout.md)
 - [Lokalizace aplikace](how-to-localize-an-application.md)

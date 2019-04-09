@@ -2,12 +2,12 @@
 title: Dodatky k formátu csproj pro .NET Core
 description: Další informace o rozdílech mezi stávající a soubory csproj .NET Core
 ms.date: 09/22/2017
-ms.openlocfilehash: e196be28f622873359153f32c5dd9b0b5a514c0f
-ms.sourcegitcommit: 15ab532fd5e1f8073a4b678922d93b68b521bfa0
+ms.openlocfilehash: f6b57164086efa357c70f55a9b9ac16b680c8f46
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58654650"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59085789"
 ---
 # <a name="additions-to-the-csproj-format-for-net-core"></a>Dodatky k formátu csproj pro .NET Core
 
@@ -282,7 +282,6 @@ Budete muset zajistit, že soubor s licencí je zabalena tak, že explicitně p�
 ### <a name="packagelicenseurl"></a>PackageLicenseUrl
 
 Adresu URL licence, která se vztahuje na balíček. (_zastaralé od verze Visual Studio 15.9.4, sady .NET SDK 2.1.502 a 2.2.101_)
-
 
 ### <a name="packageiconurl"></a>PackageIconUrl
 

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - handling faults [WCF], specifying
 - handling faults [WCF], defining
 ms.assetid: c00c84f1-962d-46a7-b07f-ebc4f80fbfc1
-ms.openlocfilehash: e2217cdac8edcab2f4b9e28484fb0758a149b72c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 337d0a60543aa4ebf42bb2ca0c147607a2548301
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54590588"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59079328"
 ---
 # <a name="defining-and-specifying-faults"></a>Definice a určení chyb
 Chyb SOAP předání chybová podmínka informací ze služby do klienta a v případě duplexní z klienta ke službě interoperabilní způsobem. Toto téma popisuje, kdy a jak definovat vlastní chyby obsah a určit, které operace vrátit. Další informace o jak služby nebo duplexní klient může odesílat tyto chyby a způsob, jakým aplikace klienta nebo služby zpracovává tyto chyby najdete v tématu [odesílání a příjem chyb](../../../docs/framework/wcf/sending-and-receiving-faults.md). Přehled v aplikacích Windows Communication Foundation (WCF) pro zpracování chyb, naleznete v tématu [zadání a zpracování chyb v kontraktech a službách](../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md).  
@@ -88,11 +88,12 @@ End Class
  Při přístupu k jiné služby, které generují chyby, existují určitá omezení. WCF podporuje pouze chyby s typy podrobností, která popisuje schéma a, které jsou kompatibilní s kontrakty dat. Například jak je uvedeno výše, WCF nepodporuje chyb, použijte atributy XML v jejich podrobných typy nebo chyb s více než jeden element nejvyšší úrovně v sekci podrobností.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.FaultContractAttribute>
 - <xref:System.Runtime.Serialization.DataContractAttribute>
 - <xref:System.Runtime.Serialization.DataMemberAttribute>
 - [Určování a zpracování chyb v kontraktech a službách](../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md)
-- [Chyby při odesílání a příjmu](../../../docs/framework/wcf/sending-and-receiving-faults.md)
+- [Chyby odesílání a přijímání](../../../docs/framework/wcf/sending-and-receiving-faults.md)
 - [Postupy: Deklarace chyb v kontraktech služeb](../../../docs/framework/wcf/how-to-declare-faults-in-service-contracts.md)
 - [Princip úrovně ochrany](../../../docs/framework/wcf/understanding-protection-level.md)
 - [Postupy: Nastavení vlastnosti ProtectionLevel](../../../docs/framework/wcf/how-to-set-the-protectionlevel-property.md)

@@ -4,14 +4,14 @@ description: Zjistěte, jak definovat a používat ref návratové a místní ho
 author: rpetrusha
 ms.author: ronpet
 ms.date: 04/04/2018
-ms.openlocfilehash: dd5094789114f7ad620dd681877318ad49b78997
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: fcac162f63438b6cbe54908383467d4b0f227c39
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54514412"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59081829"
 ---
-# <a name="ref-returns-and-ref-locals"></a>Návratové a místní referenční hodnoty
+# <a name="ref-returns-and-ref-locals"></a>Návratové hodnoty podle odkazu a lokální proměnné podle odkazu
 
 Od verze C# 7.0, C# podporuje referenční návratové hodnoty (ref vrátí). Odkaz na návratové hodnoty umožňuje metody, která vrátí odkaz na proměnnou, nikoli hodnotu, zpět do volajícího. Volající pak můžete přistupovat ke všem vrácené proměnnou, jako by byly vráceny hodnotou nebo odkazem. Volající může vytvořit odkaz na vrácené hodnoty ref volá místní novou proměnnou, která sama o sobě.
 
@@ -59,7 +59,6 @@ Ref návratové hodnoty je alias pro jiné proměnné v oboru volané metody. Lz
 - Je-li se vrátit *odkazem*, alias se vrátí na tuto proměnnou stejné.
 - Pokud předáte jiný způsob *odkazem*, jsou předáním odkazu na proměnnou je aliasy.
 - Je-li [lokální proměnná podle odkazu](#ref-locals) alias, můžete vytvořit nový alias u stejné proměnné.
-
 
 ## <a name="ref-locals"></a>Místní referenční hodnoty
 
@@ -124,5 +123,5 @@ Tento druhý verze je mnohem efektivnější s delší pořadí ve scénářích
 
 ## <a name="see-also"></a>Viz také:
 
-- [ref keyword](../../language-reference/keywords/ref.md)
+- [REF – klíčové slovo](../../language-reference/keywords/ref.md)
 - [Psát bezpečný kód efektivní](../../write-safe-efficient-code.md)

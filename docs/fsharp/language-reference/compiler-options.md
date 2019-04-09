@@ -2,22 +2,19 @@
 title: Možnosti kompilátoru
 description: Použití F# možnosti příkazového řádku kompilátoru pro řízení sestavování vašich F# aplikací a knihoven.
 ms.date: 12/10/2018
-ms.openlocfilehash: d8e4331bcacd7082d7560ddc6fcadb4ce2b61cf8
-ms.sourcegitcommit: dcc8feeff4718664087747529638ec9b47e65234
+ms.openlocfilehash: fa639fe37ed336ad9f990e01bf2645c5a86498e6
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "53614490"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59089754"
 ---
 # <a name="compiler-options"></a>Možnosti kompilátoru
 
 Toto téma popisuje možnosti příkazového řádku kompilátoru pro F# kompilátor, fsc.exe. Prostředí kompilace je možné řídit také nastavením vlastností projektu.
 
-
 ## <a name="compiler-options-listed-alphabetically"></a>Možnosti kompilátoru (abecední pořadí)
 V následující tabulce jsou uvedeny možnosti kompilátoru uvedené podle abecedy. Některé F# jsou podobné možnosti kompilátoru C# – možnosti kompilátoru. Pokud je to tento případ, odkaz C# téma možností kompilátoru je k dispozici.
-
-
 
 |– Možnost kompilátoru|Popis|
 |---------------|-----------|
@@ -73,5 +70,5 @@ V následující tabulce jsou uvedeny možnosti kompilátoru uvedené podle abec
 
 |Název|Popis|
 |-----|-----------|
-|[Možnosti F# Interactive](fsharp-interactive-options.md)|Popisuje možnosti příkazového řádku podporované F# interpret, fsi.exe.|
+|[Interaktivní možnosti F#](fsharp-interactive-options.md)|Popisuje možnosti příkazového řádku podporované F# interpret, fsi.exe.|
 |[Referenční dokumentace k vlastnostem projektu](/visualstudio/ide/reference/project-properties-reference)|Popisuje uživatelské rozhraní pro projekty, včetně stránek vlastností, které poskytují možnosti sestavení.|

@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 610b364b-2761-429d-9c4a-afbc3e66f1b9
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c680c1a4671b38c9b2c35945ddecaf9d92d0f477
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 609f7f6e5460bf315b87725405496e95abbfdd95
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54729233"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59102762"
 ---
 # <a name="how-to-map-hresults-and-exceptions"></a>Postupy: Mapování výsledků HRESULT a výjimek
 Metody modelu COM zprávy o chybách tak, že vrací výsledky HRESULT; metod rozhraní .NET dejte nám o nich vyvoláním výjimky. Modul runtime zpracovává přechod mezi nimi. Každá třída výjimky v rozhraní .NET Framework se mapuje na HRESULT.  
@@ -86,32 +86,32 @@ CMyClass::MethodThatThrows
 |**COR_E_INVALIDFILTERCRITERIA**|**InvalidFilterCriteriaException**|  
 |**COR_E_INVALIDOLEVARIANTTYPE**|**InvalidOleVariantTypeException**|  
 |**COR_E_INVALIDOPERATION**|**InvalidOperationException**|  
-|**COR_E_IO**|**IOException**|  
+|**COR_E_IO**|**IOException –**|  
 |**COR_E_MEMBERACCESS**|**AccessException**|  
 |**COR_E_METHODACCESS**|**MethodAccessException**|  
-|**COR_E_MISSINGFIELD**|**Missingfieldexception –**|  
+|**COR_E_MISSINGFIELD**|**MissingFieldException**|  
 |**COR_E_MISSINGMANIFESTRESOURCE**|**MissingManifestResourceException**|  
 |**COR_E_MISSINGMEMBER**|**MissingMemberException**|  
 |**COR_E_MISSINGMETHOD**|**MissingMethodException**|  
 |**COR_E_MULTICASTNOTSUPPORTED**|**MulticastNotSupportedException**|  
 |**COR_E_NOTFINITENUMBER**|**NotFiniteNumberException**|  
 |**E_NOTIMPL**|**NotImplementedException**|  
-|**COR_E_NOTSUPPORTED**|**NotSupportedException –**|  
+|**COR_E_NOTSUPPORTED**|**NotSupportedException**|  
 |**COR_E_NULLREFERENCE orE_POINTER**|**NullReferenceException**|  
 |**COR_E_OUTOFMEMORY nebo**<br /><br /> **E_OUTOFMEMORY**|**OutOfMemoryException**|  
 |**COR_E_OVERFLOW**|**OverflowException**|  
 |**COR_E_PATHTOOLONG nebo ERROR_FILENAME_EXCED_RANGE**|**PathTooLongException**|  
-|**COR_E_RANK**|**RankException**|  
+|**COR_E_RANK**|**Rankexception –**|  
 |**COR_E_REFLECTIONTYPELOAD**|**ReflectionTypeLoadException**|  
 |**COR_E_REMOTING**|**Remotingexception –**|  
 |**COR_E_SAFEARRAYTYPEMISMATCH**|**SafeArrayTypeMismatchException**|  
-|**COR_E_SECURITY**|**SecurityException**|  
+|**COR_E_SECURITY**|**SecurityException –**|  
 |**COR_E_SERIALIZATION**|**SerializationException**|  
 |**COR_E_STACKOVERFLOW orERROR_STACK_OVERFLOW**|**StackOverflowException**|  
 |**COR_E_SYNCHRONIZATIONLOCK**|**SynchronizationLockException**|  
 |**COR_E_SYSTEM**|**SystemException**|  
 |**COR_E_TARGET**|**TargetException**|  
-|**COR_E_TARGETINVOCATION**|**TargetInvocationException**|  
+|**COR_E_TARGETINVOCATION**|**Targetinvocationexception –**|  
 |**COR_E_TARGETPARAMCOUNT**|**TargetParameterCountException**|  
 |**COR_E_THREADABORTED**|**ThreadAbortException**|  
 |**COR_E_THREADINTERRUPTED**|**ThreadInterruptedException**|  
@@ -137,11 +137,12 @@ CMyClass::MethodThatThrows
 |**InnerException**|Vždy odkaz s hodnotou null (**nic** v jazyce Visual Basic).|  
 |**Zpráva**|Řetězec vrácený z **IErrorInfo -> GetDescription**.|  
 |**Zdroj**|Řetězec vrácený z **IErrorInfo -> GetSource**.|  
-|**StackTrace**|Trasování zásobníku.|  
+|**Trasování zásobníku**|Trasování zásobníku.|  
 |**TargetSite**|Název metody, která vrátí selhání HRESULT.|  
   
  Výjimka pole, jako například **zpráva**, **zdroj**, a **trasování zásobníku** nejsou k dispozici pro **StackOverflowException –**.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Rozšířená interoperabilita modelu COM](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bd9cdfyx(v=vs.100))
 - [Výjimky](../../standard/exceptions/index.md)

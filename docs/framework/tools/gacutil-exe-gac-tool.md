@@ -19,12 +19,12 @@ helpviewer_keywords:
 ms.assetid: 4c7be9c8-72ae-481f-a01c-1a4716806e99
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f3b1f1d153c0ba8c9ae44243adc4672eee872085
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: 367bf566d63a81336daed8a4c1bfea3a184bcdf7
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57492488"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59081772"
 ---
 # <a name="gacutilexe-global-assembly-cache-tool"></a>Gacutil.exe (nástroj globální mezipaměti sestavení)
 Nástroj Global Assembly Cache umožňuje zobrazit a měnit obsah globální mezipaměti sestavení (GAC) a mezipaměti pro stahování.  
@@ -61,7 +61,7 @@ gacutil [options] [assemblyName | assemblyPath | assemblyListFile]
 |**/lr** [*assemblyName*]|Vypíše všechna sestavení a jim odpovídající počty odkazů. Pokud zadáte *assemblyName* parametr, nástroj vypíše pouze sestavení daného názvu a jim odpovídající počty odkazů.|  
 |**/nologo**|Potlačí zobrazení úvodního nápisu společnosti Microsoft.|  
 |**/r** [*assemblyName &#124; assemblyPath*]<br /><br /> *scheme*<br /><br /> *id*<br /><br /> *description*|Určuje trasovaný odkaz na sestavení, která mají být nainstalována nebo odinstalována. Tato možnost se **/i**, **/il**, **/u**, nebo **/ul** možnosti.<br /><br /> Chcete-li nainstalovat sestavení, zadejte *assemblyPath*, *schéma*, *id*, a *popis* s touto možností parametry. Chcete-li odinstalovat sestavení, zadejte *assemblyName*, *schéma*, *id*, a *popis* parametry.<br /><br /> Chcete-li odebrat odkaz na sestavení, je nutné zadat stejný *schéma*, *id*, a *popis* parametry, které byly zadány s **/i** a **/r** (nebo **/ir**) možnosti při instalaci sestavení. Provádíte-li odinstalování sestavení, nástroj odstraní sestavení také z globální mezipaměti sestavení (GAC) za předpokladu, že jde o poslední odstraňovaný odkaz a že Instalační služba systému Windows nemá na sestavení žádné zbývající odkazy.<br /><br /> *Schéma* parametr určuje typ instalačního schématu. Můžete určit jednu z následujících hodnot:<br /><br /> -UNINSTALL_KEY: Tuto hodnotu zadejte, pokud instalační program přidá aplikaci do panelu Přidat nebo odebrat programy v Microsoft Windows. Aplikace se přidávají do ovládacího panelu Přidat nebo odebrat programy přidáním klíče registru HKLM\Software\Microsoft\Windows\CurrentVersion.<br />– CESTA K SOUBORU: Tuto hodnotu zadejte, pokud instalační program nepřidá aplikaci do panelu Přidat nebo odebrat programy.<br />-NEPRŮHLEDNÉ: Zadejte tuto hodnotu, pokud dodání klíče registru nebo cesta k souboru se nedá použít u instalačního scénáře. Tato hodnota umožňuje určit vlastní informace pro *id* parametru.<br /><br /> Hodnotu pro *id* parametr závisí na hodnotě zadané pro *schéma* parametr:<br /><br /> – Pokud zadáte hodnotu UNINSTALL_KEY *schéma* parametr, zadejte název aplikace nastavený v klíči registru HKLM\Software\Microsoft\Windows\CurrentVersion. Například pokud je klíč registru HKLM\Software\Microsoft\Windows\CurrentVersion\MyApp, zadejte MyApp *id* parametru.<br />– Pokud zadáte cestu k souboru pro *schéma* parametr, zadejte úplnou cestu ke spustitelnému souboru, který sestavení nainstaluje *id* parametru.<br />– Pokud zadáte OPAQUE *schéma* parametr, můžete zadat nějakou část dat, jako *id* parametru. Zadaná data musí být uzavřena do uvozovek ("").<br /><br /> *Popis* parametrů můžete zadat popisný text o aplikaci pro instalaci. Tyto informace se zobrazují při výčtu odkazů.|  
-|**/ silent**|Potlačí zobrazování všech výstupů.|  
+|**/silent**|Potlačí zobrazování všech výstupů.|  
 |**/u** *assemblyName*|Odinstaluje sestavení z globální mezipaměti sestavení (GAC).|  
 |**/UF** *assemblyName*|Vynutí odinstalování zadaného sestavení odstraněním všech odkazů na něj.<br /><br /> Zadání této možnosti je ekvivalentní se zadáním **/u** a **/f** najednou. **Poznámka:**  Tuto možnost nelze použít k odstranění sestavení nainstalovaného pomocí Instalační služby systému Windows společnosti Microsoft. Pokud se o tuto operaci pokusíte, nástroj zobrazí chybovou zprávu.|  
 |**/UL** *assemblyListFile*|Odinstaluje jeden nebo více sestavení zadaných v *assemblyListFile* z globální mezipaměti sestavení.|  
@@ -166,6 +166,7 @@ gacutil /l
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Nástroje](../../../docs/framework/tools/index.md)
 - [Globální mezipaměť sestavení](../../../docs/framework/app-domains/gac.md)
 - [Regasm.exe (nástroj registrace sestavení)](../../../docs/framework/tools/regasm-exe-assembly-registration-tool.md)

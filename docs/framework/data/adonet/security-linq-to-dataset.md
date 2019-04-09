@@ -2,12 +2,12 @@
 title: Zabezpečení (LINQ to DataSet)
 ms.date: 03/30/2017
 ms.assetid: 6116b2b8-75f4-4d8b-aea6-c13e55cda50b
-ms.openlocfilehash: e0b71dd3628e0bbc4c11e7b9f62a4833ce6fa811
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: aa281cb4d6019ca2df85137eb505724e55b8060a
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54604118"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59087329"
 ---
 # <a name="security-linq-to-dataset"></a>Zabezpečení (LINQ to DataSet)
 Toto téma popisuje problémy se zabezpečením v [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)].  
@@ -23,4 +23,5 @@ Toto téma popisuje problémy se zabezpečením v [!INCLUDE[linq_dataset](../../
  Všechny vstupní přímo nebo nepřímo odvozený od uživatele nebo externí agenta může být obsah, který využívá syntaxe cílový jazyk, aby bylo možné provést neoprávněným akcím. To se označuje jako útok prostřednictvím injektáže SQL, pojmenované po vzorce útoku, ve kterém je cílový jazyk Transact-SQL. Uživatelský vstup vloží přímo do dotazu se používá k vyřadit tabulku databáze, způsobit odepření služby nebo jinak změnit druh operace právě probíhá. I když sestavení dotazu je možné v [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)], se provádí prostřednictvím rozhraní API objektu modelu. [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] dotazy se skládá pomocí zacházení s řetězci nebo zřetězení, jako jsou v jazyce Transact-SQL a nejsou náchylný na útoky prostřednictvím injektáže SQL v tradičním smyslu.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Průvodce programováním](../../../../docs/framework/data/adonet/programming-guide-linq-to-dataset.md)

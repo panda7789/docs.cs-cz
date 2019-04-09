@@ -5,20 +5,18 @@ helpviewer_keywords:
 - Span elements [WPF]
 - bidirectional features [WPF]
 ms.assetid: fd850e25-7dba-408c-b521-8873e51dc968
-ms.openlocfilehash: 12ca85132ca063471092078c6f54e23a57f574ae
-ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
+ms.openlocfilehash: 575598f48b3cfdf636be78a9de6e0c9a7fd9c208
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57846438"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59079822"
 ---
 # <a name="bidirectional-features-in-wpf-overview"></a>Obousměrné funkce v přehledu WPF
 Na rozdíl od jiných vývojovou platformu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahuje mnoho funkcí, které podporují rychlý vývoj obousměrné obsah, například smíšené zleva doprava a klikněte pravým tlačítkem myši na zbývající data ve stejném dokumentu. Ve stejnou dobu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vytvoří skvělé prostředí pro uživatele, kteří vyžadují obousměrné funkce, jako je arabština nebo hebrejština mluvený uživatelů.  
   
  Následující části popisují mnoho obousměrné funkce spolu s příklady znázorňující způsob k dosažení nejlepšího zobrazení obsahu obousměrné. Většina ukázek používá [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)], i když můžete snadno použít koncepty C# nebo kódu jazyka Visual Basic.  
-  
 
-  
 <a name="FlowDirection"></a>   
 ## <a name="flowdirection"></a>FlowDirection  
  Základní vlastnost, která definuje směr tok obsahu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace je <xref:System.Windows.FrameworkElement.FlowDirection%2A>. Tuto vlastnost lze nastavit na jednu ze dvou hodnot výčtu, <xref:System.Windows.FlowDirection.LeftToRight> nebo <xref:System.Windows.FlowDirection.RightToLeft>. Vlastnost je k dispozici všem [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] prvky, které dědí <xref:System.Windows.FrameworkElement>.  
@@ -43,7 +41,7 @@ Na rozdíl od jiných vývojovou platformu [!INCLUDE[TLA2#tla_winclient](../../.
   
  [!code-xaml[FlowDirection#FlowDirection](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDirection/CS/Window1.xaml#flowdirection)]  
   
- Na nejvyšší úrovni <xref:System.Windows.Window> má <xref:System.Windows.FlowDirection.RightToLeft> <xref:System.Windows.FlowDirection>, takže všechny prvky, které jsou v něm obsažena také dědí stejné <xref:System.Windows.FrameworkElement.FlowDirection%2A>. Pro element, který má zadané přepsání <xref:System.Windows.FrameworkElement.FlowDirection%2A> ho musí přidat explicitní směr změnu, jako je například druhý <xref:System.Windows.Controls.TextBlock> v předchozím příkladem, kdy se změní na <xref:System.Windows.FlowDirection.LeftToRight>. Pokud ne <xref:System.Windows.FrameworkElement.FlowDirection%2A> je definován výchozí <xref:System.Windows.FlowDirection.LeftToRight> platí.  
+ Na nejvyšší úrovni <xref:System.Windows.Window> má <xref:System.Windows.FlowDirection.RightToLeft><xref:System.Windows.FlowDirection>, takže všechny prvky, které jsou v něm obsažena také dědí stejné <xref:System.Windows.FrameworkElement.FlowDirection%2A>. Pro element, který má zadané přepsání <xref:System.Windows.FrameworkElement.FlowDirection%2A> ho musí přidat explicitní směr změnu, jako je například druhý <xref:System.Windows.Controls.TextBlock> v předchozím příkladem, kdy se změní na <xref:System.Windows.FlowDirection.LeftToRight>. Pokud ne <xref:System.Windows.FrameworkElement.FlowDirection%2A> je definován výchozí <xref:System.Windows.FlowDirection.LeftToRight> platí.  
   
  Následující obrázek znázorňuje výstup z předchozího příkladu:
 
@@ -116,7 +114,7 @@ Na rozdíl od jiných vývojovou platformu [!INCLUDE[TLA2#tla_winclient](../../.
     
  ![Obrázek znázorňující, panel nástrojů s právo na levém přechodu.](./media/bidirectional-features-in-wpf-overview/toolbar-right-left-gradient.png)  
   
- Kreslení v následujícím příkladu <xref:System.Windows.FlowDirection.RightToLeft> <xref:System.Windows.Controls.ToolBar>. (Nakreslete vlevo doprava, odeberte <xref:System.Windows.FlowDirection> atribut na <xref:System.Windows.Controls.ToolBar>.  
+ Kreslení v následujícím příkladu <xref:System.Windows.FlowDirection.RightToLeft><xref:System.Windows.Controls.ToolBar>. (Nakreslete vlevo doprava, odeberte <xref:System.Windows.FlowDirection> atribut na <xref:System.Windows.Controls.ToolBar>.  
   
  [!code-xaml[Gradient#Gradient](~/samples/snippets/csharp/VS_Snippets_Wpf/Gradient/CS/Window1.xaml#gradient)]  
   
@@ -124,7 +122,7 @@ Na rozdíl od jiných vývojovou platformu [!INCLUDE[TLA2#tla_winclient](../../.
 ### <a name="flowdirection-exceptions"></a>FlowDirection výjimky  
  Existuje několik případů kde <xref:System.Windows.FlowDirection> nechová podle očekávání. Tato část popisuje dva z těchto výjimek.  
   
- **Obrázek**  
+ **Image**  
   
  <xref:System.Windows.Controls.Image> Představuje ovládací prvek, který zobrazí obrázek. V [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)] jde použít s <xref:System.Windows.Controls.Image.Source%2A> vlastnost, která definuje [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)] z <xref:System.Windows.Controls.Image> k zobrazení.  
   
@@ -142,9 +140,9 @@ Na rozdíl od jiných vývojovou platformu [!INCLUDE[TLA2#tla_winclient](../../.
   
  **Cesty**  
   
- Kromě <xref:System.Windows.Controls.Image>, je jiný element zajímavé <xref:System.Windows.Shapes.Path>. Cesta je objekt, který lze nakreslit řadu připojené čar a křivek. Se chová způsobem, který je podobný <xref:System.Windows.Controls.Image> týkající se jeho <xref:System.Windows.FlowDirection>, třeba jeho <xref:System.Windows.FlowDirection.RightToLeft> <xref:System.Windows.FlowDirection> vodorovné odráží její <xref:System.Windows.FlowDirection.LeftToRight> jeden. Ale na rozdíl od <xref:System.Windows.Controls.Image>, <xref:System.Windows.Shapes.Path> dědí její <xref:System.Windows.FlowDirection> z kontejneru a ten není potřeba explicitně zadat.  
+ Kromě <xref:System.Windows.Controls.Image>, je jiný element zajímavé <xref:System.Windows.Shapes.Path>. Cesta je objekt, který lze nakreslit řadu připojené čar a křivek. Se chová způsobem, který je podobný <xref:System.Windows.Controls.Image> týkající se jeho <xref:System.Windows.FlowDirection>, třeba jeho <xref:System.Windows.FlowDirection.RightToLeft><xref:System.Windows.FlowDirection> vodorovné odráží její <xref:System.Windows.FlowDirection.LeftToRight> jeden. Ale na rozdíl od <xref:System.Windows.Controls.Image>, <xref:System.Windows.Shapes.Path> dědí její <xref:System.Windows.FlowDirection> z kontejneru a ten není potřeba explicitně zadat.  
   
- Následující příklad nakreslí jednoduchý šipku pomocí 3 řádky. Na první šipku dědí <xref:System.Windows.FlowDirection.RightToLeft> směr z toku <xref:System.Windows.Controls.StackPanel> tak, aby jeho počátečního a koncového bodu se měří z kořenového adresáře na pravé straně. Druhá šipka, který má explicitní <xref:System.Windows.FlowDirection.RightToLeft> <xref:System.Windows.FlowDirection> také začne na pravé straně. Třetí šipka má ale jeho výchozí kořenové složky na levé straně. Další informace o vykreslování viz <xref:System.Windows.Media.LineGeometry> a <xref:System.Windows.Media.GeometryGroup>.  
+ Následující příklad nakreslí jednoduchý šipku pomocí 3 řádky. Na první šipku dědí <xref:System.Windows.FlowDirection.RightToLeft> směr z toku <xref:System.Windows.Controls.StackPanel> tak, aby jeho počátečního a koncového bodu se měří z kořenového adresáře na pravé straně. Druhá šipka, který má explicitní <xref:System.Windows.FlowDirection.RightToLeft><xref:System.Windows.FlowDirection> také začne na pravé straně. Třetí šipka má ale jeho výchozí kořenové složky na levé straně. Další informace o vykreslování viz <xref:System.Windows.Media.LineGeometry> a <xref:System.Windows.Media.GeometryGroup>.  
   
  [!code-xaml[Paths#Paths](~/samples/snippets/csharp/VS_Snippets_Wpf/Paths/CS/Window1.xaml#paths)]  
   

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - UI Automation, server-side provider implementation
 - provider implementation, UI Automation
 ms.assetid: 6acc6d08-bd67-4e2e-915c-9c1d34eb86fe
-ms.openlocfilehash: df2c1fcd6c84b7670c53a8f06f97c2ea46b8b33d
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
-ms.translationtype: MT
+ms.openlocfilehash: ca8471f6a25c9ef5295af0edaabcefe58114aac6
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57679408"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59077287"
 ---
 # <a name="server-side-ui-automation-provider-implementation"></a>Implementace zprostředkovatele automatizace uživatelského rozhraní na straně serveru
 > [!NOTE]
@@ -42,8 +42,7 @@ ms.locfileid: "57679408"
 -   UIAutomationTypes.dll  
   
 -   WindowsBase.dll  
-  
-  
+
 <a name="Provider_Interfaces"></a>   
 ### <a name="provider-interfaces"></a>Rozhraní poskytovatele  
  Každý [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] poskytovatel musí implementovat jedno z následujících rozhraní.  
@@ -170,6 +169,7 @@ ms.locfileid: "57679408"
  K tomu zpřístupňuje poskytovateli kořenové fragment matrice sadu podřízené prvky představující pásma. Každé pásmo má jednoho poskytovatele, který může zveřejnit vlastnosti a vzory. Ve své implementaci <xref:System.Windows.Automation.Provider.IRawElementProviderSimple.HostRawElementProvider%2A>, poskytovatel vzdálené vrátí výchozí zprostředkovatel okna pro ovládací prvek HWND, která se získá voláním <xref:System.Windows.Automation.Provider.AutomationInteropProvider.HostProviderFromHandle%2A>a předejte popisovač okna ovládacího prvku. Nakonec implementuje poskytovatele kořenové fragment matrice <xref:System.Windows.Automation.Provider.IRawElementProviderHwndOverride> rozhraní a v jeho provádění <xref:System.Windows.Automation.Provider.IRawElementProviderHwndOverride.GetOverrideProviderForHwnd%2A> vrátí odpovídající obsluhy vzdálené správy zprostředkovatele pro ovládací prvek obsažený v zadané HWND.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled zprostředkovatelů automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-providers-overview.md)
 - [Vystavení zprostředkovatele automatizace uživatelského rozhraní na straně serveru](../../../docs/framework/ui-automation/expose-a-server-side-ui-automation-provider.md)
 - [Vrácení vlastností ze zprostředkovatele automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/return-properties-from-a-ui-automation-provider.md)

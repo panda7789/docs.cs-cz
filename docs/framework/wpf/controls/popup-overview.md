@@ -5,18 +5,16 @@ helpviewer_keywords:
 - controls [WPF], Popup
 - Popup control [WPF], about Popup control
 ms.assetid: 774f53ca-bff8-470e-9ce9-3928b4cf3d4c
-ms.openlocfilehash: 4d480adbbd35084b30e2ca1c74d7392814b87783
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 370970c80221e371db5a97303ef2650d14300b14
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57358467"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59102775"
 ---
 # <a name="popup-overview"></a>Přehled překryvných objektů
 <xref:System.Windows.Controls.Primitives.Popup> Ovládacího prvku poskytuje způsob, jak zobrazit obsah v samostatném okně umístěný za aktuální období aplikace vzhledem k určené souřadnice prvek nebo obrazovka. Toto téma představuje <xref:System.Windows.Controls.Primitives.Popup> řízení a poskytuje informace o jeho použití.  
-  
- 
-  
+
 <a name="What_Is_a_Popup_"></a>   
 ## <a name="what-is-a-popup"></a>Co je automaticky otevíraného okna?  
  A <xref:System.Windows.Controls.Primitives.Popup> ovládací prvek zobrazí obsah v samostatném okně vzhledem k elementu nebo bodě na obrazovce. Když <xref:System.Windows.Controls.Primitives.Popup> viditelnost <xref:System.Windows.Controls.Primitives.Popup.IsOpen%2A> je nastavena na `true`.  
@@ -89,6 +87,7 @@ ms.locfileid: "57358467"
  <xref:System.Windows.Controls.Primitives.Popup> Ovládací prvek udržuje odkaz na jeho <xref:System.Windows.Controls.Primitives.Popup.Child%2A> obsah jako logické podřízené. Nové okno Vytvoření, obsah <xref:System.Windows.Controls.Primitives.Popup> stane visual podřízená položka okna a zůstane logickým podřízeným <xref:System.Windows.Controls.Primitives.Popup>. Naopak <xref:System.Windows.Controls.Primitives.Popup> zůstává logický nadřazený prvek jeho <xref:System.Windows.Controls.Primitives.Popup.Child%2A> obsah.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Controls.Primitives.Popup>
 - <xref:System.Windows.Controls.Primitives.PopupPrimaryAxis>
 - <xref:System.Windows.Controls.Primitives.PlacementMode>
@@ -96,5 +95,5 @@ ms.locfileid: "57358467"
 - <xref:System.Windows.Controls.Primitives.CustomPopupPlacementCallback>
 - <xref:System.Windows.Controls.ToolTip>
 - <xref:System.Windows.Controls.ToolTipService>
-- [Témata s postupy](popup-how-to-topics.md)
-- [Témata s postupy](tooltip-how-to-topics.md)
+- [– postupy](popup-how-to-topics.md)
+- [– postupy](tooltip-how-to-topics.md)

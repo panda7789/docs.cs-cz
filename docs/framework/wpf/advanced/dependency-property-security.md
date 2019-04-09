@@ -10,17 +10,16 @@ helpviewer_keywords:
 - dependency properties [WPF], access
 - security [WPF], dependency properties
 ms.assetid: d10150ec-90c5-4571-8d35-84bafa2429a4
-ms.openlocfilehash: d51f8f5fd704b0c95b8e6f841b9b0ff8567899cb
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 85806ee9fb01cd2ca07697230c46a8847fdf8c6a
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57364811"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59077469"
 ---
 # <a name="dependency-property-security"></a>Zabezpečení vlastností závislosti
 Vlastnosti závislosti by měla být obecně považují za veřejné vlastnosti. Povaha [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] vlastnost brání nemůže provádět záruky zabezpečení o hodnotu vlastnosti závislosti.  
-  
-  
+
 <a name="AccessSecurity"></a>   
 ## <a name="access-and-security-of-wrappers-and-dependency-properties"></a>Přístup a zabezpečení obálky a vlastnosti závislosti  
  Obvykle jsou implementované vlastnosti závislosti spolu s zabezpečenou "obálku" [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] vlastnosti, které usnadňují získání nebo nastavení vlastnosti z instance. Ale obálkami jsou ve skutečnosti jenom vhodné metody, které implementují základní <xref:System.Windows.DependencyObject.GetValue%2A> a <xref:System.Windows.DependencyObject.SetValue%2A> statické volání, které se používají při interakci s vlastnosti závislosti. Uvažujete o ho jiným způsobem, vlastnosti jsou vystaveny jako [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] vlastnosti, ke kterým dochází pro vlastnost závislosti spíše než soukromé pole zálohování. Mechanismy zabezpečení u obálkami není paralelní vlastnost chování systému a přístup k základní vlastnost závislosti. Uvedení požadavku zabezpečení na obálku pouze brání použití metody pohodlí, ale nezabrání volání <xref:System.Windows.DependencyObject.GetValue%2A> nebo <xref:System.Windows.DependencyObject.SetValue%2A>. Podobně uvedení chráněné nebo soukromý přístup na obálkami neposkytuje žádné efektivní zabezpečení.  
@@ -40,4 +39,5 @@ Vlastnosti závislosti by měla být obecně považují za veřejné vlastnosti.
  Použití požadavku na <xref:System.Windows.DependencyProperty.ValidateValueCallback%2A> a očekává neúspěšné ověření na vyžádání selhání zabránit nastavena vlastnost není adekvátní bezpečnostní mechanismus. Nastavit hodnotu zneplatnění vynutit prostřednictvím <xref:System.Windows.DependencyProperty.ValidateValueCallback%2A> může také potlačit škodlivý volajícím, pokud tyto volajícím jsou zpracovávána v rámci domény aplikace.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Vlastní vlastnosti závislosti](custom-dependency-properties.md)

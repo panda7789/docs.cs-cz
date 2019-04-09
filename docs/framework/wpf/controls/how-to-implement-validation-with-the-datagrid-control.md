@@ -8,12 +8,12 @@ helpviewer_keywords:
 - DataGrid [WPF], validation
 - validation [WPF], DataGrid
 ms.assetid: ec6078a8-1e42-4648-b414-f4348e81bda1
-ms.openlocfilehash: e3be25fecc58ba41dbb5b2e904eddcb9c2b3c98a
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
-ms.translationtype: MT
+ms.openlocfilehash: aead8cbd500262a4cba535fd023dd9701d50257a
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57371083"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59086803"
 ---
 # <a name="how-to-implement-validation-with-the-datagrid-control"></a>Postupy: Implementace ověření pomocí ovládacího prvku DataGrid
 <xref:System.Windows.Controls.DataGrid> Ovládací prvek umožňuje provádět ověření na úrovni buněk a řádek. S ověřováním na úrovni buněk ověřit jednotlivé vlastnosti vázaný datový objekt když uživatel aktualizuje hodnotu. S ověřováním na úrovni řádků ověřit celé datové objekty Pokud uživatel potvrdí změny do řádku. Můžete také poskytovat přizpůsobená vizuální zpětnou vazbu pro chyby ověření, nebo použít výchozí vizuální zpětnou vazbu, která <xref:System.Windows.Controls.DataGrid> poskytuje ovládací prvek.  
@@ -91,8 +91,9 @@ ms.locfileid: "57371083"
  [!code-xaml[DataGrid_Validation#FullXaml](~/samples/snippets/csharp/VS_Snippets_Wpf/datagrid_validation/cs/mainwindow.xaml#fullxaml)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Controls.DataGrid>
 - [DataGrid](datagrid.md)
 - [Datová vazba](../data/data-binding-wpf.md)
 - [Implementace ověření vazby](../data/how-to-implement-binding-validation.md)
-- [Implementace logiky ověření na vlastních objektech](../data/how-to-implement-validation-logic-on-custom-objects.md)
+- [Implementace logiky ověření ve vlastních objektech](../data/how-to-implement-validation-logic-on-custom-objects.md)

@@ -12,12 +12,12 @@ helpviewer_keywords:
 - Windows Forms controls, data binding
 - data-bound controls [Windows Forms], Windows Forms
 ms.assetid: 419aac5e-819b-4aad-88b0-73a2f8c0bd27
-ms.openlocfilehash: 3c96275f3e5db24446b030ec007f23e9035242c8
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 3d420e5cb4d9e7f2ad6f8136b8dd33f5901326d2
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57703683"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59095487"
 ---
 # <a name="data-binding-and-windows-forms"></a>Datové vazby a rozhraní Windows Forms
 Ve Windows Forms lze svázat jenom tradičních datových zdrojů, ale také pro téměř jakoukoli strukturu, která obsahuje data. Můžete vytvořit vazbu na pole hodnot, které vypočítat v době běhu, čtení ze souboru nebo jsou odvozeny z hodnot jiných ovládacích prvků.  
@@ -54,7 +54,8 @@ Ve Windows Forms lze svázat jenom tradičních datových zdrojů, ale také pro
 |Vyhledávací tabulky|Další z typických data prezentace a manipulaci s možností je prohledávání tabulky. Jako součást větší zobrazení dat, často <xref:System.Windows.Forms.ComboBox> ovládací prvek se používá k zobrazení a manipulaci s daty. Klíč je, že se data zobrazí v <xref:System.Windows.Forms.ComboBox> ovládací prvek se liší od data zapsaná do databáze. Pokud máte například <xref:System.Windows.Forms.ComboBox> ovládací prvek položky zobrazení je k dispozici z úložiště blízkým, pravděpodobně chcete zobrazit názvy produktů (chléb, mléka, vajíčka). Ale usnadnění načítání informací v databázi a databázi normalizace, pravděpodobně ukládání informací pro konkrétní položky daného pořadí jako čísla položky (#501, #603 a tak dále). Proto je implicitní propojení "popisný název" blízkým položky v <xref:System.Windows.Forms.ComboBox> ovládací prvek na formuláři a číslo související položky, která je k dispozici v pořadí. Toto je podstata prohledávání tabulky. Další informace najdete v tématu [jak: Vytvoření vyhledávací tabulky s komponentou Windows Forms BindingSource](./controls/how-to-create-a-lookup-table-with-the-windows-forms-bindingsource-component.md).|  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.Binding>
 - [Windows Forms – datová vazba](windows-forms-data-binding.md)
 - [Postupy: Vytvoření vazby ovládacího prvku Windows Forms DataGrid ke zdroji dat](./controls/how-to-bind-the-windows-forms-datagrid-control-to-a-data-source.md)
-- [Komponenta BindingSource](./controls/bindingsource-component.md)
+- [BindingSource – komponenta](./controls/bindingsource-component.md)

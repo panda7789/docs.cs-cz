@@ -8,12 +8,12 @@ helpviewer_keywords:
 - ControlTemplates [WPF], finding elements
 - finding ControlTemplate elements [WPF]
 ms.assetid: d7b25447-ceff-4bb4-9be5-fd7c40ef00af
-ms.openlocfilehash: 9a6609d70a6b863f16533aac81ffce4daf171bcf
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 426f6c93433711ac72fe67eff2ee3006aa4d9166
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57364499"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59092106"
 ---
 # <a name="how-to-find-controltemplate-generated-elements"></a>Postupy: Vyhledávání elementů generovaných objektem ControlTemplate
 Tento příklad ukazuje, jak najít prvky, které jsou generovány <xref:System.Windows.Controls.ControlTemplate>.  
@@ -29,6 +29,7 @@ Tento příklad ukazuje, jak najít prvky, které jsou generovány <xref:System.
  [!code-vb[FindGeneratedItems#CTFindElement](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FindGeneratedItems/VisualBasic/Window1.xaml.vb#ctfindelement)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Hledání elementů generovaných šablonou DataTemplate](../data/how-to-find-datatemplate-generated-elements.md)
 - [Styly a šablony](styling-and-templating.md)
 - [Obory názvů WPF XAML](../advanced/wpf-xaml-namescopes.md)

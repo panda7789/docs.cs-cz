@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: edbd48c910c89c9dd5feea33d9598933fd63befa
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 59225677671388b4ed31f7fa440b6e502b604c63
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54729778"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59073011"
 ---
 # <a name="icorprofilercallbackexceptionclrcatcherfound-method"></a>ICorProfilerCallback::ExceptionCLRCatcherFound – metoda
 Voláno, když `catch` block pro výjimku se nachází uvnitř common language runtime (CLR), samotného. Tato metoda je zastaralé v rozhraní .NET Framework verze 2.0.  
@@ -43,5 +43,6 @@ HRESULT ExceptionCLRCatcherFound();
  **Verze rozhraní .NET framework:** 1.0  
   
 ## <a name="see-also"></a>Viz také:
+
 - [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
 - [ExceptionCLRCatcherExecute – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptionclrcatcherexecute-method.md)

@@ -2,12 +2,12 @@
 title: Ochrana osobních údajů a zabezpečení dat
 ms.date: 03/30/2017
 ms.assetid: 46fa5839-adf7-4c7c-bce3-71e941fa7de9
-ms.openlocfilehash: ed408cedbd686efd29472f6f7d19ec03390164f9
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 3852e6034ff78b362bd67a05bd828d3033731a85
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54662137"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59081824"
 ---
 # <a name="privacy-and-data-security"></a>Ochrana osobních údajů a zabezpečení dat
 Zabezpečení a správa citlivých informací v aplikaci ADO.NET je závislá na základní produkty a technologie používané k jeho vytvoření. ADO.NET neposkytuje služby pro zabezpečení nebo šifrování dat přímo.  
@@ -28,6 +28,7 @@ Zabezpečení a správa citlivých informací v aplikaci ADO.NET je závislá na
  <xref:System.Security.SecureString> Třída poskytuje metody pro šifrování textu s použitím Data Protection API (DPAPI) v paměti. Řetězec je pak odstraněn z paměti, pokud už je nepotřebujete. Neexistuje žádná `ToString` metoda rychle přečíst obsah <xref:System.Security.SecureString>. Můžete inicializovat novou instanci třídy `SecureString` bez hodnot nebo předání ukazatele na pole <xref:System.Char> objekty. Můžete pak použít různé metody třídy pro práci s řetězci. Další informace, stáhněte si [SecureString ukázkovou aplikaci](https://go.microsoft.com/fwlink/?LinkId=120418), které ukazuje, jak používat `SecureString` třídy z.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Zabezpečení aplikací ADO.NET](../../../../docs/framework/data/adonet/securing-ado-net-applications.md)
 - [SQL Server – zabezpečení](../../../../docs/framework/data/adonet/sql/sql-server-security.md)
 - [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

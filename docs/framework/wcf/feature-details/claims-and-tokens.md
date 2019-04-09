@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - claims [WCF], and tokens
 ms.assetid: eff167f3-33f8-483d-a950-aa3e9f97a189
-ms.openlocfilehash: 21172ccda5f5f8070d81726d5f4dc6f9d80ab071
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 223b86310d90c877df15a99c90a0a72ea780734a
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54568998"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59076260"
 ---
 # <a name="claims-and-tokens"></a>Deklarace a tokeny
 Toto téma popisuje různé typy deklarací identity, které Windows Communication Foundation (WCF) vytvoří z výchozí tokeny, které podporuje.  
@@ -65,8 +65,9 @@ Toto téma popisuje různé typy deklarací identity, které Windows Communicati
  Pokud žádná z `ClaimSet` objekty vyplývající z přihlašovacích údajů klienta obsahují deklaraci identity `Right` z `Identity,` pak bude <xref:System.ServiceModel.ServiceSecurityContext.IsAnonymous%2A> vrátí vlastnost `true`. Pokud takové deklarace jsou k dispozici, `IsAnonymous` vrátí vlastnost `false`.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.IdentityModel.Claims.ClaimSet>
 - <xref:System.IdentityModel.Claims.Claim>
 - <xref:System.IdentityModel.Claims.Rights>
 - <xref:System.IdentityModel.Claims.ClaimTypes>
-- [Správa deklarací identity a autorizace pomocí modelu identit](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md)
+- [Správa deklarací a autorizace s modelem identity](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md)

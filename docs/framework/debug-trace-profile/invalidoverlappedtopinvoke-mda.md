@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 28876047-58bd-4fed-9452-c7da346d67c0
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 4dc09f3e8cb926d31b21f0cc2a6442c7a6b8dec9
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 4bdb2035906b9383342201017b58d1d0050113b5
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54714776"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59084554"
 ---
 # <a name="invalidoverlappedtopinvoke-mda"></a>invalidOverlappedToPinvoke – pomocník spravovaného ladění (MDA)
 `invalidOverlappedToPinvoke` Pomocníka spravovaného ladění (MDA) se aktivuje, když překrytý ukazatel, který nebyl vytvořen na haldě uvolňování paměti je předán konkrétním funkcím Win32.  
@@ -51,7 +51,7 @@ ms.locfileid: "54714776"
   
  Potenciál pro poškození haldy je vysoký pro tuto podmínku, protože <xref:System.AppDomain> provádění volání se může uvolnit. Pokud <xref:System.AppDomain> uvolní, kód aplikace uvolní paměť pro překrývající ukazatel, což způsobí poškození při dokončení operace nebo kód způsobí přetečení paměti, což povede k potížím později.  
   
-## <a name="resolution"></a>Rozlišení  
+## <a name="resolution"></a>Řešení  
  Použití <xref:System.Threading.Overlapped> objektu, volání <xref:System.Threading.Overlapped.Pack%2A> metodu k získání <xref:System.Threading.NativeOverlapped> struktura, která může být předán funkci. Pokud <xref:System.AppDomain> uvolní, CLR čeká na dokončení asynchronní operace před uvolněním ukazatele.  
   
 ## <a name="effect-on-the-runtime"></a>Vliv na modul Runtime  
@@ -73,6 +73,7 @@ ms.locfileid: "54714776"
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
 - [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
 - [Zařazování spolupráce](../../../docs/framework/interop/interop-marshaling.md)

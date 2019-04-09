@@ -4,12 +4,12 @@ description: Přečtěte si terminologie pro balíčky, metabalíčky a architek
 author: richlander
 ms.date: 06/20/2016
 ms.custom: seodec18
-ms.openlocfilehash: 25247972346fb181279414a762d73d2f3218f0e0
-ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
+ms.openlocfilehash: a03a4961b116b05468ac6c6ce5e648c07a77b7f6
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53168816"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59090495"
 ---
 # <a name="packages-metapackages-and-frameworks"></a>Balíčky, metabalíčky a architektury
 
@@ -82,7 +82,7 @@ Klíče metabalíčky .NET Core jsou:
 
 Například [System.IO.FileSystem](https://www.nuget.org/packages/System.IO.FileSystem) podporuje následující architektury:
 
-- . NETFramework, verze = 4.6
+- .NETFramework,Version=4.6
 - . NETStandard, verze = 1,3
 - 6 Xamarin platformy (například xamarinios10)
 
@@ -97,7 +97,6 @@ Je užitečné porovnání první dva z těchto platforem, protože jsou příkl
 Existuje obousměrný vztah mezi rozhraní a balíčků. První část jedná o definici rozhraní API dostupná pro danou platformu, například `netstandard1.3`. Balíčky, které se zaměřují `netstandard1.3` (nebo kompatibilní architektur, jako `netstandard1.0`) definice rozhraní API dostupná pro `netstandard1.3`. Který může připadat jako cyklickou definici, ale není. Tím, že přináší "balíček", definice rozhraní API pro architekturu pochází z balíčků. Samotného rozhraní nedefinuje žádné rozhraní API.
 
 Druhá část relace je výběr majetku. Balíčky mohou obsahovat prostředky pro více platforem. Zadaný odkaz na sadu balíčků a/nebo metabalíčky, rozhraní, je potřeba určit, který prostředek by měla být zaškrtnutá, například `net46` nebo `netstandard1.3`. Je důležité vybrat správný prostředek. Například `net46` asset není pravděpodobné, aby byl kompatibilní s .NET Framework 4.0 nebo .NET Core 1.0.
-
 
 Zobrazí se tento vztah na následujícím obrázku. *API* cílí a definuje *framework*. *Framework* se používá pro *výběr majetku*. *Asset* poskytuje rozhraní API.
 

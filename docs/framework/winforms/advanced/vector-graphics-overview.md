@@ -9,12 +9,12 @@ helpviewer_keywords:
 - coordinate systems
 - graphics [Windows Forms], vector graphics
 ms.assetid: 0195df81-66be-452d-bb53-5a582ebfdc09
-ms.openlocfilehash: a78030dd53f526e7d4403f4696ea54e881b60022
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: d424254839db6c403bafe779f475c0e344918a5e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57720407"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59087960"
 ---
 # <a name="vector-graphics-overview"></a>Přehled vektorové grafiky
 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] Nakreslí na systém souřadnic řádky, obdélníky a ostatním tvarům. Můžete si vybrat z celé řady souřadnicových systémů, ale výchozí souřadnicový systém má původ v levém horním rohu se osy x, přejdete na pravé straně a osy y směřující dolů. Je pixel je jednotka měření ve výchozím nastavení systém souřadnic.  
@@ -57,6 +57,7 @@ ms.locfileid: "57720407"
  [!code-vb[LinesCurvesAndShapes#11](~/samples/snippets/visualbasic/VS_Snippets_Winforms/LinesCurvesAndShapes/VB/Class1.vb#11)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Drawing.Graphics?displayProperty=nameWithType>
 - <xref:System.Drawing.Pen?displayProperty=nameWithType>
 - [Čáry, křivky a obrazce](lines-curves-and-shapes.md)
