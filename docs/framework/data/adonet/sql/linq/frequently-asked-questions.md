@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 252ed666-0679-4eea-b71b-2f14117ef443
-ms.openlocfilehash: 009115d985c51961bffddaaa3149e15ba9a5502b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 20c5ee3667bf57328a3b6dda6e55dce4ddbbec72
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54679758"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59223976"
 ---
 # <a name="frequently-asked-questions"></a>Nejčastější dotazy
 V dalších částech odpovědět některé běžné problémy, které se mohou vyskytnout při implementaci [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)].  
@@ -200,6 +200,7 @@ dlo.LoadWith<Order>(o => o.OrderDetails);
  A. Režim jen pro čtení vypne možnost kontext sledování změn.  
   
 ## <a name="see-also"></a>Viz také:
-- [Referenční informace](../../../../../../docs/framework/data/adonet/sql/linq/reference.md)
-- [Odstraňování potíží](../../../../../../docs/framework/data/adonet/sql/linq/troubleshooting.md)
+
+- [Odkaz](../../../../../../docs/framework/data/adonet/sql/linq/reference.md)
+- [Poradce při potížích](../../../../../../docs/framework/data/adonet/sql/linq/troubleshooting.md)
 - [Zabezpečení v LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/security-in-linq-to-sql.md)

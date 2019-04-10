@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Definování obecné metody pomocí reflexe generování'
+title: 'Postupy: Definování obecné metody pomocí generování reflexe'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,14 +11,14 @@ helpviewer_keywords:
 ms.assetid: 93892fa4-90b3-4ec4-b147-4bec9880de2b
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9c0b6ee6fc789b2586d76b5ec8f10815e543e1d3
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 8f1281d0b9fecba52f85e31dbdd570a1c8dec63c
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54596852"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59221844"
 ---
-# <a name="how-to-define-a-generic-method-with-reflection-emit"></a>Postupy: Definování obecné metody pomocí reflexe generování
+# <a name="how-to-define-a-generic-method-with-reflection-emit"></a>Postupy: Definování obecné metody pomocí generování reflexe
 První procedura ukazuje, jak vytvořit jednoduchou obecnou metodu se dvěma parametry typu a jak použít omezení třídy, omezení rozhraní a zvláštní omezení pro parametry typu.  
   
  Druhý postup ukazuje, jak vygenerovat tělo metody, jak používat parametry typu obecné metody k vytvoření instance obecných typů a jak volat jejich metody.  
@@ -78,7 +78,7 @@ První procedura ukazuje, jak vytvořit jednoduchou obecnou metodu se dvěma par
 10. Vygenerujte tělo metody pomocí typu <xref:System.Reflection.Emit.ILGenerator>. Podrobnosti naleznete v souvisejícím postupu pro vygenerování těla metody.  
   
     > [!IMPORTANT]
-    >  Při generování volání metod obecných typů v případě, že typy argumentů těchto typů jsou parametry typu obecné metody, je nutné pomocí přetížení metod `static`, <xref:System.Reflection.Emit.TypeBuilder.GetConstructor%28System.Type%2CSystem.Reflection.ConstructorInfo%29> a <xref:System.Reflection.Emit.TypeBuilder.GetMethod%28System.Type%2CSystem.Reflection.MethodInfo%29> deklarovaných jako <xref:System.Reflection.Emit.TypeBuilder.GetField%28System.Type%2CSystem.Reflection.FieldInfo%29> třídy <xref:System.Reflection.Emit.TypeBuilder> získat zkonstruované formy této metody. Tento fakt ukazuje související postup vygenerování těla metody.  
+    >  Při generování volání metod obecných typů a typ argumentů těchto typů jsou parametry typu Obecné metody, je nutné použít `static`<xref:System.Reflection.Emit.TypeBuilder.GetConstructor%28System.Type%2CSystem.Reflection.ConstructorInfo%29>, <xref:System.Reflection.Emit.TypeBuilder.GetMethod%28System.Type%2CSystem.Reflection.MethodInfo%29>, a <xref:System.Reflection.Emit.TypeBuilder.GetField%28System.Type%2CSystem.Reflection.FieldInfo%29> přetížení metody <xref:System.Reflection.Emit.TypeBuilder> třídy získat vytvořen formy této metody. Tento fakt ukazuje související postup vygenerování těla metody.  
   
 11. Dokončete typ obsahující tuto metodu a sestavení uložte. Související postup volání obecné metody ukazuje dva způsoby volání dokončené metody.  
   
@@ -95,7 +95,7 @@ První procedura ukazuje, jak vytvořit jednoduchou obecnou metodu se dvěma par
      [!code-csharp[GenericMethodHowTo#10](../../../samples/snippets/csharp/VS_Snippets_CLR/GenericMethodHowTo/CS/source.cs#10)]
      [!code-vb[GenericMethodHowTo#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/GenericMethodHowTo/VB/source.vb#10)]  
   
-2.  Vygenerujte kód pro vytvoření instance objektu `TOutput` pomocí obecného přetížení metody <xref:System.Activator.CreateInstance%2A?displayProperty=nameWithType>. Toto přetížení vyžaduje, aby zadaný typ měl konstruktor bez parametrů, což je důvodem pro přidání tohoto omezení parametru `TOutput`. Vytvořte konstruovanou obecnou metodu předáním parametru `TOutput` metodě <xref:System.Reflection.MethodInfo.MakeGenericMethod%2A>. Po vygenerování kódu pro volání této metody vygenerujte kód pro uložení do místní proměnné `retVal` pomocí operačního kódu <xref:System.Reflection.Emit.OpCodes.Stloc_S>  
+2.  Vygenerujte kód pro vytvoření instance objektu `TOutput` pomocí obecného přetížení metody <xref:System.Activator.CreateInstance%2A?displayProperty=nameWithType>. Toto přetížení vyžaduje, aby zadaný typ měl konstruktor bez parametrů, což je důvodem pro přidání tohoto omezení parametru `TOutput`. Vytvořte konstruovanou obecnou metodu předáním parametru `TOutput` metodě <xref:System.Reflection.MethodInfo.MakeGenericMethod%2A>. Za generování kódu pro volání metody vygenerujte kód pro uložení do místní proměnné `retVal` pomocí <xref:System.Reflection.Emit.OpCodes.Stloc_S>  
   
      [!code-csharp[GenericMethodHowTo#11](../../../samples/snippets/csharp/VS_Snippets_CLR/GenericMethodHowTo/CS/source.cs#11)]
      [!code-vb[GenericMethodHowTo#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR/GenericMethodHowTo/VB/source.vb#11)]  
@@ -105,7 +105,7 @@ První procedura ukazuje, jak vytvořit jednoduchou obecnou metodu se dvěma par
      [!code-csharp[GenericMethodHowTo#31](../../../samples/snippets/csharp/VS_Snippets_CLR/GenericMethodHowTo/CS/source.cs#31)]
      [!code-vb[GenericMethodHowTo#31](../../../samples/snippets/visualbasic/VS_Snippets_CLR/GenericMethodHowTo/VB/source.vb#31)]  
   
-4.  Získejte objekt <xref:System.Reflection.MethodInfo> představující metodu <xref:System.Collections.Generic.ICollection%601.Add%2A?displayProperty=nameWithType>. Tato metoda pracuje s rozhraním `ICollection(Of TInput)` (`ICollection<TInput>` v jazyce C#), takže je nezbytné získat metodu `Add` specifickou pro konstruovaný typ. Nelze použít metodu <xref:System.Type.GetMethod%2A> pro získání objektu <xref:System.Reflection.MethodInfo> přímo z proměnné `icollOfTInput`, protože metoda <xref:System.Type.GetMethod%2A> není podporována typem, který byl zkonstruován pomocí typu <xref:System.Reflection.Emit.GenericTypeParameterBuilder>. Namísto toho zavolejte metodu <xref:System.Type.GetMethod%2A> proměnné `icoll`, která obsahuje definici obecného typu obecného rozhraní <xref:System.Collections.Generic.ICollection%601>. Poté použijte metodu <xref:System.Reflection.Emit.TypeBuilder.GetMethod%28System.Type%2CSystem.Reflection.MethodInfo%29> deklarovanou jako `static` pro vytvoření typu <xref:System.Reflection.MethodInfo> pro konstruovaný typ. Tento fakt ukazuje následující kód.  
+4.  Získejte objekt <xref:System.Reflection.MethodInfo> představující metodu <xref:System.Collections.Generic.ICollection%601.Add%2A?displayProperty=nameWithType>. Tato metoda pracuje s rozhraním `ICollection(Of TInput)` (`ICollection<TInput>` v jazyce C#), takže je nezbytné získat metodu `Add` specifickou pro konstruovaný typ. Nelze použít metodu <xref:System.Type.GetMethod%2A> pro získání objektu <xref:System.Reflection.MethodInfo> přímo z proměnné `icollOfTInput`, protože metoda <xref:System.Type.GetMethod%2A> není podporována typem, který byl zkonstruován pomocí typu <xref:System.Reflection.Emit.GenericTypeParameterBuilder>. Namísto toho zavolejte metodu <xref:System.Type.GetMethod%2A> proměnné `icoll`, která obsahuje definici obecného typu obecného rozhraní <xref:System.Collections.Generic.ICollection%601>. Potom použijte <xref:System.Reflection.Emit.TypeBuilder.GetMethod%28System.Type%2CSystem.Reflection.MethodInfo%29>`static` metodu za účelem vytvoření <xref:System.Reflection.MethodInfo> pro konstruovaný typ. Tento fakt ukazuje následující kód.  
   
      [!code-csharp[GenericMethodHowTo#12](../../../samples/snippets/csharp/VS_Snippets_CLR/GenericMethodHowTo/CS/source.cs#12)]
      [!code-vb[GenericMethodHowTo#12](../../../samples/snippets/visualbasic/VS_Snippets_CLR/GenericMethodHowTo/VB/source.vb#12)]  
@@ -117,7 +117,7 @@ První procedura ukazuje, jak vytvořit jednoduchou obecnou metodu se dvěma par
   
 6.  Vygenerujte kód smyčky. Prvním krokem je označit začátek smyčky voláním metody <xref:System.Reflection.Emit.ILGenerator.MarkLabel%2A> s popiskem `loopAgain`. Příkazy větvení, které používají tento popisek, se budou nyní větvit do tohoto bodu kódu. Dalším krokem je vložení objektu `TOutput`, přetypovaného na rozhraní `ICollection(Of TInput)`, do zásobníku. To není nutné provádět okamžitě, ale objekt musí být vložen pro volání metody `Add`. Příště, když je vstupní pole vloženo do zásobníku, bude proměnná `index` obsahovat aktuální index pole. Operační kód <xref:System.Reflection.Emit.OpCodes.Ldelem> vyjme index a pole ze zásobníku a vloží indexovaný prvek pole do zásobníku. Zásobník je nyní připraven pro volání metody <xref:System.Collections.Generic.ICollection%601.Add%2A?displayProperty=nameWithType>, která vyjme kolekci a nový prvek ze zásobníku a přidá prvek do kolekce.  
   
-     Zbytek kódu ve smyčce zvýší index a otestuje, zda je smyčka dokončena: Index a 32bitové celé číslo 1 jsou vloženy do zásobníku a jsou přičteny, zanechá součet. v zásobníku; Součet je uložen v `index`. Voláním metody <xref:System.Reflection.Emit.ILGenerator.MarkLabel%2A> je tento bod nastaven jako vstupní bod smyčky. Index je znovu načten. Vstupní pole je vloženo do zásobníku a operační kód <xref:System.Reflection.Emit.OpCodes.Ldlen> je vygenerován pro získání jeho délky. Index a délka jsou nyní v zásobníku a operační kód <xref:System.Reflection.Emit.OpCodes.Clt> je vygenerován pro jejich porovnání. Pokud je index menší než délka, operační kód <xref:System.Reflection.Emit.OpCodes.Brtrue_S> provede větvení zpět na začátek smyčky.  
+     Zbytek kódu ve smyčce zvýší index a otestuje, zda je smyčka dokončena: Index a 32bitové celé číslo 1 jsou vloženy do zásobníku a jsou přičteny, zanechá součet. v zásobníku; Součet je uložen v `index`. <xref:System.Reflection.Emit.ILGenerator.MarkLabel%2A> je volána pro tento bod nastaven jako vstupní bod smyčky. Index je znovu načten. Vstupní pole je vloženo do zásobníku a operační kód <xref:System.Reflection.Emit.OpCodes.Ldlen> je vygenerován pro získání jeho délky. Index a délka jsou nyní v zásobníku a operační kód <xref:System.Reflection.Emit.OpCodes.Clt> je vygenerován pro jejich porovnání. Pokud je index menší než délka, operační kód <xref:System.Reflection.Emit.OpCodes.Brtrue_S> provede větvení zpět na začátek smyčky.  
   
      [!code-csharp[GenericMethodHowTo#13](../../../samples/snippets/csharp/VS_Snippets_CLR/GenericMethodHowTo/CS/source.cs#13)]
      [!code-vb[GenericMethodHowTo#13](../../../samples/snippets/visualbasic/VS_Snippets_CLR/GenericMethodHowTo/VB/source.vb#13)]  
@@ -150,7 +150,7 @@ První procedura ukazuje, jak vytvořit jednoduchou obecnou metodu se dvěma par
 ## <a name="example"></a>Příklad  
  Následující příklad kódu vytvoří neobecný typ `DemoType` s obecnou metodou `Factory`. Tato metoda má dva parametry obecného typu, `TInput` určující vstupní typ a `TOutput` určující výstupní typ. Parametr typu `TOutput` je omezen na implementaci rozhraní `ICollection<TInput>` (`ICollection(Of TInput)` v jazyce Visual Basic), musí být odkazovým typem a mít konstruktor bez parametrů.  
   
- Tato metoda má jeden formální parametr, což je pole `TInput`. Metoda vrací instanci typu `TOutput`, která obsahuje všechny prvky vstupního pole. Parametr `TOutput` může být libovolný typ obecné kolekce, která implementuje obecné rozhraní <xref:System.Collections.Generic.ICollection%601>.  
+ Tato metoda má jeden formální parametr, což je pole `TInput`. Metoda vrací instanci typu `TOutput`, která obsahuje všechny prvky vstupního pole. `TOutput` může být libovolný typ obecné kolekce, která implementuje <xref:System.Collections.Generic.ICollection%601> obecného rozhraní.  
   
  Když je kód spuštěn, dynamické sestavení uloženo jako DemoGenericMethod1.dll a lze jej prozkoumat pomocí [Ildasm.exe (IL Disassembler)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md).  
   
@@ -171,5 +171,6 @@ První procedura ukazuje, jak vytvořit jednoduchou obecnou metodu se dvěma par
 -   Kompilace kódu do příkazového řádku pomocí csc.exe a vbc.exe, cl.exe. Ke kompilaci kódu v sadě Visual Studio, umístěte ho do šablony projektu konzolové aplikace.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Reflection.Emit.MethodBuilder>
-- [Postupy: Definování obecného typu pomocí reflexe generování](../../../docs/framework/reflection-and-codedom/how-to-define-a-generic-type-with-reflection-emit.md)
+- [Postupy: Definování obecného typu pomocí generování reflexe](../../../docs/framework/reflection-and-codedom/how-to-define-a-generic-type-with-reflection-emit.md)

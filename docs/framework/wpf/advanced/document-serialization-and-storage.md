@@ -6,18 +6,16 @@ helpviewer_keywords:
 - documents [WPF], storage
 - documents [WPF], serialization
 ms.assetid: 4839cd87-e206-4571-803f-0200098ad37b
-ms.openlocfilehash: fbdd04f40c1d4a29ff1807b8a2760802b0338cb3
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
-ms.translationtype: MT
+ms.openlocfilehash: 519d3aa218fca734a9159503b4107bdbcfc31652
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57379689"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59215947"
 ---
 # <a name="document-serialization-and-storage"></a>Serializace a úložiště dokumentu
 Microsoft .NET Framework poskytuje výkonné prostředí pro vytváření a zobrazování vysoce kvalitní dokumenty.  Rozšířené funkce, které podporují – dokumenty a tok dokumenty, rozšířené zobrazení ovládacích prvků, v kombinaci s výkonné 2D a 3D grafické možnosti trvat aplikace rozhraní .NET Framework na zcela novou úroveň kvality a činnost koncového uživatele.  Dokáže flexibilně spravovat v paměti reprezentace dokumentu je klíčovou funkcí rozhraní .NET Framework a nebudou moct efektivně ukládat a načítat dokumenty z úložiště dat je potřeba téměř všechny aplikace.  Proces převodu dokumentu z interního vyjádření v paměti k externím úložišti, se nazývá serializace.  Proces zpětné čtení úložiště dat a znovu vytvořit původní instance v paměti je označován deserializace.  
-  
- 
-  
+
 <a name="AboutSerialization"></a>   
 ## <a name="about-document-serialization"></a>Informace o serializaci dokumentu  
  V ideálním případě je proces serializaci a deserializaci dokumentu z a potom zpět do paměti pro aplikace transparentní.  Aplikace volá serializátor "write" metody uložte dokument, zatímco deserializátor "číst" metoda přistupuje k úložišti dat a obnoví původní instance v paměti.  Určitý formát, který jsou data uložená v nehrají důležitou obecně aplikace, stejně jako jako serializace a deserializace proces znovu vytvoří dokument zpět na původní podobě.  
@@ -74,6 +72,7 @@ Microsoft .NET Framework poskytuje výkonné prostředí pro vytváření a zobr
 3.  Po vytvoření modulu plug-in serializátor instalačního skriptu je implementován pro distribuci a instalaci (a odinstalaci) modulu plug-in (viz výše, "[instalace modulu Plug-in Serializátory](#InstallingPluginSerializers)").  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Documents.Serialization>
 - <xref:System.Windows.Xps.XpsDocumentWriter>
 - <xref:System.Windows.Xps.Packaging.XpsDocument>

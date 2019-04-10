@@ -6,12 +6,12 @@ helpviewer_keywords:
 - keyboards [Windows Forms], keyboard input
 - Windows Forms, keyboard input
 ms.assetid: 9a29433c-a180-49bb-b74c-d187786584c8
-ms.openlocfilehash: a7965c1dcf36e956abd7930b8ff0154b13173b76
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: 4335798395a3b73dbcb2546a6fadac3d8efedb64
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57718022"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59204741"
 ---
 # <a name="how-keyboard-input-works"></a>Jak funguje vstup z klávesnice
 Windows Forms zpracovává vstup z klávesnice vyvoláním události klávesnice v reakci na Windows zprávy. Většina aplikací Windows Forms zpracovávat vstup z klávesnice výhradně ve zpracování událostí klávesnice. Ale budete muset porozumět fungování zprávy týkající se klávesnice, abyste mohli implementovat pokročilejší scénáře vstup z klávesnice, jako je například zachycení klíče, než dosáhnou ovládacího prvku. Toto téma popisuje typy klíče dat, formulářů Windows rozpoznává a poskytuje přehled o tom, jak se směrují zprávy týkající se klávesnice. Informace o události klávesnice, naleznete v tématu [použití událostí klávesnice](using-keyboard-events.md).  
@@ -69,9 +69,10 @@ Windows Forms zpracovává vstup z klávesnice vyvoláním události klávesnice
 |Provést vlastní symbol manipulace; například chcete zpracovávat klávesových zkratek vykreslovaných vlastníkem tlačítek obsažených v panelu nástrojů.|Přepsat <xref:System.Windows.Forms.Control.ProcessMnemonic%2A>.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.Keys>
 - <xref:System.Windows.Forms.Control.WndProc%2A>
 - <xref:System.Windows.Forms.Control.PreProcessMessage%2A>
-- [Objekt My.Computer.Keyboard](~/docs/visual-basic/language-reference/objects/my-computer-keyboard-object.md)
+- [My.Computer.Keyboard – objekt](~/docs/visual-basic/language-reference/objects/my-computer-keyboard-object.md)
 - [Přístup ke klávesnici](~/docs/visual-basic/developing-apps/programming/computer-resources/accessing-the-keyboard.md)
 - [Použití událostí klávesnice](using-keyboard-events.md)

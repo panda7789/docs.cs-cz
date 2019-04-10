@@ -24,12 +24,12 @@ helpviewer_keywords:
 - programmatic navigation [WPF]
 - hyperlinks [WPF]
 ms.assetid: 86ad2143-606a-4e34-bf7e-51a2594248b8
-ms.openlocfilehash: 7636a7d9a100d0df95f7d5462672819624ba52a4
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
-ms.translationtype: MT
+ms.openlocfilehash: feccd6978d0a3cf8db60bbd505826433c93e3276
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57679967"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59227194"
 ---
 # <a name="navigation-overview"></a>Přehled navigace
 Windows Presentation Foundation (WPF) podporuje stylu prohlížeče navigace, který je možné do dvou typů aplikací: samostatné aplikace a [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)]. K balíčku obsahu pro navigaci [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] poskytuje <xref:System.Windows.Controls.Page> třídy. Můžete přejít z jednoho <xref:System.Windows.Controls.Page> do jiného deklarativně pomocí <xref:System.Windows.Documents.Hyperlink>, nebo prostřednictvím kódu programu, s použitím <xref:System.Windows.Navigation.NavigationService>. [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] používá deník pamatovat stránky, které přešli z a chcete přejít zpátky k sobě.  
@@ -38,8 +38,7 @@ Windows Presentation Foundation (WPF) podporuje stylu prohlížeče navigace, kt
   
 > [!NOTE]
 >  V tomto tématu se pojem "prohlížeče" představuje pouze do prohlížečů, které můžete hostovat [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace, které aktuálně obsahuje [!INCLUDE[TLA#tla_ie](../../../../includes/tlasharptla-ie-md.md)] a Firefox. Pokud konkrétní [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] funkce jsou podporovány pouze určitého prohlížeče, se označuje verzi prohlížeče.  
-   
-     
+
 ## <a name="navigation-in-wpf-applications"></a>Navigace v aplikacích WPF  
  Toto téma obsahuje přehled možností klíče navigace v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]. Tyto možnosti jsou k dispozici pro samostatné aplikace a [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)], i když je toto téma představuje v rámci [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)].  
   
@@ -82,7 +81,7 @@ Windows Presentation Foundation (WPF) podporuje stylu prohlížeče navigace, kt
   
  [!code-xaml[NavigationOverviewSnippets#Page1XAML](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationOverviewSnippets/CSharp/Page1.xaml#page1xaml)]  
   
- A <xref:System.Windows.Controls.Page> , která je implementovaná v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] značek má `Page` jako jeho kořenový element a vyžaduje [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] deklarace oboru názvů. `Page` Prvek obsahuje obsah, který chcete k procházení a zobrazení. Přidat obsah tak, že nastavíte `Page.Content` vlastnost elementu, jak je znázorněno v následujícím kódu.  
+ A <xref:System.Windows.Controls.Page> , která je implementovaná v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] značek má `Page` jako jeho kořenový element a vyžaduje [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)][!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] deklarace oboru názvů. `Page` Prvek obsahuje obsah, který chcete k procházení a zobrazení. Přidat obsah tak, že nastavíte `Page.Content` vlastnost elementu, jak je znázorněno v následujícím kódu.  
   
  [!code-xaml[NavigationOverviewSnippets#Page2XAML](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationOverviewSnippets/CSharp/Page2.xaml#page2xaml)]  
   
@@ -118,7 +117,7 @@ Windows Presentation Foundation (WPF) podporuje stylu prohlížeče navigace, kt
 ### <a name="configuring-a-start-page"></a>Konfigurace úvodní stránky  
  [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] vyžadovat určité množství aplikací infrastruktury hostované v prohlížeči. V [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], <xref:System.Windows.Application> třídy je součástí definice aplikace, která vytvoří infrastrukturu požadovanou aplikaci (viz [přehled správy aplikací](application-management-overview.md)).  
   
- Definice aplikace je obvykle implementovány pomocí značek a kódu, s označovacího souboru, který je nakonfigurovaný jako [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] `ApplicationDefinition` položky. Tady je pro definici aplikace [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)].  
+ Definice aplikace je obvykle implementovány pomocí značek a kódu, s označovacího souboru, který je nakonfigurovaný jako [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)]`ApplicationDefinition` položky. Tady je pro definici aplikace [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)].  
   
  [!code-xaml[XBAPAppDefSnippets#XBAPApplicationDefinitionMARKUP](~/samples/snippets/csharp/VS_Snippets_Wpf/XBAPAppDefSnippets/CSharp/App.xaml#xbapapplicationdefinitionmarkup)]  
   
@@ -235,7 +234,7 @@ Windows Presentation Foundation (WPF) podporuje stylu prohlížeče navigace, kt
  V těchto situacích, budete muset psát kód chcete programově zahájit navigace pomocí volání <xref:System.Windows.Navigation.NavigationService.Navigate%2A> metodu <xref:System.Windows.Navigation.NavigationService> objektu. Která vyžaduje odkaz na získávání <xref:System.Windows.Navigation.NavigationService>.  
   
 #### <a name="getting-a-reference-to-the-navigationservice"></a>Získání odkazu na Stoploading  
- Z důvodů, které jsou popsané v [hostitel pro navigaci](#Navigation_Hosts) části, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace může mít více než jeden <xref:System.Windows.Navigation.NavigationService>. To znamená, že váš kód potřebuje způsob, jak vyhledat <xref:System.Windows.Navigation.NavigationService>, což je obvykle <xref:System.Windows.Navigation.NavigationService> , která přejde do aktuální <xref:System.Windows.Controls.Page>. Můžete získat odkaz na <xref:System.Windows.Navigation.NavigationService> voláním `static` <xref:System.Windows.Navigation.NavigationService.GetNavigationService%2A?displayProperty=nameWithType> metody. Chcete-li získat <xref:System.Windows.Navigation.NavigationService> , která přejde na konkrétní <xref:System.Windows.Controls.Page>, předáte odkaz na <xref:System.Windows.Controls.Page> jako argument <xref:System.Windows.Navigation.NavigationService.GetNavigationService%2A> – metoda. Následující kód ukazuje, jak získat <xref:System.Windows.Navigation.NavigationService> pro aktuální <xref:System.Windows.Controls.Page>.  
+ Z důvodů, které jsou popsané v [hostitel pro navigaci](#Navigation_Hosts) části, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace může mít více než jeden <xref:System.Windows.Navigation.NavigationService>. To znamená, že váš kód potřebuje způsob, jak vyhledat <xref:System.Windows.Navigation.NavigationService>, což je obvykle <xref:System.Windows.Navigation.NavigationService> , která přejde do aktuální <xref:System.Windows.Controls.Page>. Můžete získat odkaz na <xref:System.Windows.Navigation.NavigationService> voláním `static`<xref:System.Windows.Navigation.NavigationService.GetNavigationService%2A?displayProperty=nameWithType> metody. Chcete-li získat <xref:System.Windows.Navigation.NavigationService> , která přejde na konkrétní <xref:System.Windows.Controls.Page>, předáte odkaz na <xref:System.Windows.Controls.Page> jako argument <xref:System.Windows.Navigation.NavigationService.GetNavigationService%2A> – metoda. Následující kód ukazuje, jak získat <xref:System.Windows.Navigation.NavigationService> pro aktuální <xref:System.Windows.Controls.Page>.  
   
  [!code-csharp[NavigationOverviewSnippets#GetNSCODEBEHIND1](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationOverviewSnippets/CSharp/GetNSPage.xaml.cs#getnscodebehind1)]  
 [!code-csharp[NavigationOverviewSnippets#GetNSCODEBEHIND2](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationOverviewSnippets/CSharp/GetNSPage.xaml.cs#getnscodebehind2)]
@@ -730,11 +729,12 @@ Windows Presentation Foundation (WPF) podporuje stylu prohlížeče navigace, kt
  [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] umožňuje podporu navigace [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] k přejde přes Internet a umožňuje aplikacím, aby hostitel obsahu třetí strany. K ochraně aplikací a uživatelů ze škodlivé chování, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] poskytuje širokou škálu funkcí zabezpečení, které jsou popsány v [zabezpečení](../security-wpf.md) a [částečné zabezpečení důvěryhodnosti WPF](../wpf-partial-trust-security.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Application.SetCookie%2A>
 - <xref:System.Windows.Application.GetCookie%2A>
 - [Přehled správy aplikací](application-management-overview.md)
 - [Sbalení URI v technologii WPF](pack-uris-in-wpf.md)
 - [Přehled strukturované navigace](structured-navigation-overview.md)
 - [Přehled topologií navigace](navigation-topologies-overview.md)
-- [Témata s postupy](navigation-how-to-topics.md)
+- [– postupy](navigation-how-to-topics.md)
 - [Nasazení aplikace WPF](deploying-a-wpf-application-wpf.md)
