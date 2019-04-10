@@ -9,12 +9,12 @@ helpviewer_keywords:
 - frames [Windows Forms], accessing
 - DOM [Windows Forms], accessing frames in managed HTML
 ms.assetid: cdeeaa22-0be4-4bbf-9a75-4ddc79199f8d
-ms.openlocfilehash: 32f4df947926a0c69963d5f4c6872dc38ceeed1b
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 9b2719ca000ab86b9ca40f9e78af46cbf598d16e
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59173495"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59337627"
 ---
 # <a name="accessing-frames-in-the-managed-html-document-object-model"></a>Přístup k rámcům v modelu spravovaného objektu dokumentu HTML
 Některé dokumenty HTML se skládají z celkového počtu *snímků*, nebo windows, které může obsahovat vlastní odlišné dokumentů HTML. Pomocí snímků usnadňuje vytvoření stránky HTML, ve kterých zůstat statický, jako je například navigační panel, jeden nebo více kusů stránky, zatímco jiné rámce neustále měnit jejich obsah.  
@@ -27,11 +27,11 @@ Některé dokumenty HTML se skládají z celkového počtu *snímků*, nebo wind
   
 -   Použití `IFRAME` značky, který vytvoří okno s plovoucí desetinnou čárkou, které lze přesunout za běhu.  
   
-1.  Protože snímky obsahují dokumentů HTML, jsou reprezentovány v modelu Document Object Model (DOM) jako prvků a elementů rámce.  
+1. Protože snímky obsahují dokumentů HTML, jsou reprezentovány v modelu Document Object Model (DOM) jako prvků a elementů rámce.  
   
-2.  Při přístupu `FRAME` nebo `IFRAME` značky pomocí shromažďování snímků <xref:System.Windows.Forms.HtmlWindow>, načítají okno prvek odpovídající rámce. Reprezentuje všechny rámce dynamických vlastností, jako je například aktuální adresy URL, dokumentů a velikost.  
+2. Při přístupu `FRAME` nebo `IFRAME` značky pomocí shromažďování snímků <xref:System.Windows.Forms.HtmlWindow>, načítají okno prvek odpovídající rámce. Reprezentuje všechny rámce dynamických vlastností, jako je například aktuální adresy URL, dokumentů a velikost.  
   
-3.  Při přístupu `FRAME` nebo `IFRAME` značky pomocí <xref:System.Windows.Forms.HtmlWindow.WindowFrameElement%2A> vlastnost <xref:System.Windows.Forms.HtmlWindow>, <xref:System.Windows.Forms.HtmlElement.Children%2A> kolekce nebo metod, jako <xref:System.Windows.Forms.HtmlElementCollection.GetElementsByName%2A> nebo <xref:System.Windows.Forms.HtmlDocument.GetElementById%2A>, načítají elementu rámce. Reprezentuje statické vlastnosti rámce, včetně adresy URL zadané v původním souboru HTML.  
+3. Při přístupu `FRAME` nebo `IFRAME` značky pomocí <xref:System.Windows.Forms.HtmlWindow.WindowFrameElement%2A> vlastnost <xref:System.Windows.Forms.HtmlWindow>, <xref:System.Windows.Forms.HtmlElement.Children%2A> kolekce nebo metod, jako <xref:System.Windows.Forms.HtmlElementCollection.GetElementsByName%2A> nebo <xref:System.Windows.Forms.HtmlDocument.GetElementById%2A>, načítají elementu rámce. Reprezentuje statické vlastnosti rámce, včetně adresy URL zadané v původním souboru HTML.  
   
 ## <a name="frames-and-security"></a>Rámce a zabezpečení  
  Přístup k snímků je složité fakt, že spravovaný model HTML DOM implementuje bezpečnostní opatření, označované jako *mezi rámci skriptovací zabezpečení*. Pokud dokument obsahuje `FRAMESET` s dvěma nebo více `FRAME`s v různých doménách, tyto `FRAME`s nemůžou komunikovat mezi sebou. Jinými slovy `FRAME` , zobrazí obsah z webu nelze přístup k informacím o `FRAME` , který je hostitelem lokality třetích stran, jako `http://www.adatum.com/`. Se implementuje toto zabezpečení na úrovni <xref:System.Windows.Forms.HtmlWindow> třídy. Obecné informace můžete získat informace o `FRAME` hostování jiný web, jako je například její adresu URL, ale nelze získat přístup k jeho <xref:System.Windows.Forms.HtmlWindow.Document%2A> nebo změna velikosti či umístění jeho hostování `FRAME` nebo `IFRAME`.  

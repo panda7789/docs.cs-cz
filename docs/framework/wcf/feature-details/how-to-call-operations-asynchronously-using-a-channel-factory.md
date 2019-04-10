@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: cc17dd47-b9ad-451c-a362-e36e0aac7ba0
-ms.openlocfilehash: 0662b82661e4fb3cde85930c2c4544f541d3a2a8
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 17b6dd979f7554cd433cc1abcf2a4da8dd9b83cb
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59202726"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59338914"
 ---
 # <a name="how-to-call-operations-asynchronously-using-a-channel-factory"></a>Postupy: Asynchronní volání operací pomocí ChannelFactory
 Toto téma popisuje, jak má přístup klient operace služby asynchronně při použití <xref:System.ServiceModel.ChannelFactory%601>– klientské aplikace. (Při použití <xref:System.ServiceModel.ClientBase%601?displayProperty=nameWithType> objektu, abyste mohli vyvolat službu, můžete použít založený na událostech asynchronní volání model. Další informace najdete v tématu [jak: Asynchronní volání operací služby](../../../../docs/framework/wcf/feature-details/how-to-call-wcf-service-operations-asynchronously.md). Další informace o založený na událostech asynchronní volání modelu najdete v tématu [události asynchronní vzor založený (EAP)](../../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md).)  
@@ -21,7 +21,7 @@ Toto téma popisuje, jak má přístup klient operace služby asynchronně při 
   
 #### <a name="to-call-wcf-service-operations-asynchronously"></a>Pro asynchronní volání operací služby WCF  
   
-1.  Spustit [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) nástroj s `/async` možnosti, jak je znázorněno v následujícím příkazu.  
+1. Spustit [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) nástroj s `/async` možnosti, jak je znázorněno v následujícím příkazu.  
   
     ```  
     svcutil /n:http://Microsoft.ServiceModel.Samples,Microsoft.ServiceModel.Samples http://localhost:8000/servicemodelsamples/service/mex /a  
@@ -29,12 +29,12 @@ Toto téma popisuje, jak má přístup klient operace služby asynchronně při 
   
      Tím se vygeneruje asynchronního klientského verzi kontrakt služby pro tuto operaci.  
   
-2.  Vytvořte zpětné volání funkce se volá, když asynchronní operace nebude dokončena, jak je znázorněno v následujícím ukázkovém kódu.  
+2. Vytvořte zpětné volání funkce se volá, když asynchronní operace nebude dokončena, jak je znázorněno v následujícím ukázkovém kódu.  
   
      [!code-csharp[C_How_To_CF_Async#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_how_to_cf_async/cs/client.cs#2)]
      [!code-vb[C_How_To_CF_Async#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_how_to_cf_async/vb/client.vb#2)]  
   
-3.  Pro přístup k asynchronní operaci služby, vytvoření klienta a volání `Begin[Operation]` (například `BeginAdd`) a zadejte funkci zpětného volání, jak je znázorněno v následujícím ukázkovém kódu.  
+3. Pro přístup k asynchronní operaci služby, vytvoření klienta a volání `Begin[Operation]` (například `BeginAdd`) a zadejte funkci zpětného volání, jak je znázorněno v následujícím ukázkovém kódu.  
   
      [!code-csharp[C_How_To_CF_Async#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_how_to_cf_async/cs/client.cs#3)]
      [!code-vb[C_How_To_CF_Async#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_how_to_cf_async/vb/client.vb#3)]  

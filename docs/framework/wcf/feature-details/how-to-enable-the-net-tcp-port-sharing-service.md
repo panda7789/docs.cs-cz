@@ -5,12 +5,12 @@ helpviewer_keywords:
 - port sharing [WCF]
 - activation services [WCF]
 ms.assetid: c9175af4-c27c-4765-bf45-b8f7528a7282
-ms.openlocfilehash: 77d1d983da87b37c6267cc38a16db446782797f1
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 20db0ef427a5e791bd6b8dcef90bf7911ae0d4a9
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59130647"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59343477"
 ---
 # <a name="how-to-enable-the-nettcp-port-sharing-service"></a>Postupy: Povolení Služby sdílení portů Net.TCP
 Windows Communication Foundation (WCF) používá službu Windows volá služba Sdílení portů Net.TCP k usnadnění sdílení portů TCP napříč více procesy. Tato služba je nainstalován jako součást služby WCF, ale služba není povolená ve výchozím nastavení jako bezpečnostní opatření a proto musíte ručně povolit před prvním použitím. Toto téma popisuje, jak nakonfigurovat službu Net TCP Port Sharing pomocí modulu snap-In konzoly Microsoft Management Console (MMC).  
@@ -21,15 +21,15 @@ Windows Communication Foundation (WCF) používá službu Windows volá služba 
   
 ### <a name="to-enable-the-nettcp-port-sharing-service-using-mmc"></a>Chcete-li povolit službu Net.TCP Port Sharing pomocí konzoly MMC  
   
-1.  Z nabídky Start otevřete konzolu pro správu služeb tak, že otevřete okno příkazového řádku a zadáte `services.msc` nebo otevřením spustit a zadáním `services.msc` do pole.  
+1. Z nabídky Start otevřete konzolu pro správu služeb tak, že otevřete okno příkazového řádku a zadáte `services.msc` nebo otevřením spustit a zadáním `services.msc` do pole.  
   
-2.  V **název** klikněte pravým tlačítkem na sloupec v seznamu služeb, **služba Sdílení portů Net.Tcp**a vyberte **vlastnosti** z nabídky.  
+2. V **název** klikněte pravým tlačítkem na sloupec v seznamu služeb, **služba Sdílení portů Net.Tcp**a vyberte **vlastnosti** z nabídky.  
   
-3.  Povolit ruční spuštění služby, v **vlastnosti** vyberte okno **Obecné** kartu a v **typ spouštění** vyberte ručně a klepněte na tlačítko **Použít**.  
+3. Povolit ruční spuštění služby, v **vlastnosti** vyberte okno **Obecné** kartu a v **typ spouštění** vyberte ručně a klepněte na tlačítko **Použít**.  
   
-4.  Chcete-li spustit službu, v oblasti stavu služby, klikněte na tlačítko **Start** tlačítko. Stav služby nyní zobrazeno "Začínáme".  
+4. Chcete-li spustit službu, v oblasti stavu služby, klikněte na tlačítko **Start** tlačítko. Stav služby nyní zobrazeno "Začínáme".  
   
-5.  Chcete-li vrátit do seznamu služeb, klikněte na tlačítko **OK**a ukončete konzolu MMC.  
+5. Chcete-li vrátit do seznamu služeb, klikněte na tlačítko **OK**a ukončete konzolu MMC.  
   
 ## <a name="example"></a>Příklad  
   

@@ -2,26 +2,26 @@
 title: Konfigurace hodnot časových limitů u vazby
 ms.date: 03/30/2017
 ms.assetid: b5c825a2-b48f-444a-8659-61751ff11d34
-ms.openlocfilehash: 21d99ad2ce092db738469f93e80c39380acabd00
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f323dfff338f8a3ba24caab6df3b3916d3ae0d13
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33489606"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59339759"
 ---
 # <a name="configuring-timeout-values-on-a-binding"></a>Konfigurace hodnot časových limitů u vazby
-Nejsou k dispozici v vazby WCF několik nastavení časového limitu. Nastavení těchto časový limit nastavení správně může zlepšit pouze vaší služby výkon, ale také play roli v použitelnost a zabezpečení vaší služby. Následující časové limity jsou k dispozici na vazby WCF:  
+Nejsou k dispozici v vazby WCF několik nastavení časového limitu. Nastavení těchto časový limit nastavení správně může zlepšit nejen vaše služba výkon, ale také play roli v oblasti použitelnosti a zabezpečení vaší služby. Následující časové limity jsou k dispozici na vazby WCF:  
   
-1.  openTimeout  
+1. openTimeout  
   
-2.  Intervalu  
+2. closeTimeout  
   
-3.  sendTimeout  
+3. SendTimeout  
   
-4.  receiveTimeout  
+4. receiveTimeout  
   
-## <a name="wcf-binding-timeouts"></a>Časové limity vazby WCF  
- Každé nastavení popsané v tomto tématu jsou probíhají vazby samostatně, buď v kódu nebo konfigurace. Následující kód ukazuje, jak programového nastavení časových limitů u vazby WCF v kontextu služba s vlastním hostováním.  
+## <a name="wcf-binding-timeouts"></a>Vypršení časového limitu pro vazby WCF  
+ Každé nastavení popsané v tomto tématu jsou provedeny ve vazbě, buď v kódu nebo konfigurace. Následující kód ukazuje, jak prostřednictvím kódu programu nastavit vypršení časových limitů u vazby WCF v kontextu služby v místním prostředí.  
   
 ```csharp  
 public static void Main()
@@ -72,22 +72,22 @@ public static void Main()
 </configuration>
 ```  
   
- Další informace o těchto nastaveních naleznete v dokumentaci k <xref:System.ServiceModel.Channels.Binding> třídy.  
+ Další informace o těchto nastaveních najdete v dokumentaci k <xref:System.ServiceModel.Channels.Binding> třídy.  
   
-### <a name="client-side-timeouts"></a>Časové limity straně klienta  
+### <a name="client-side-timeouts"></a>Vypršení časového limitu na straně klienta  
  Na straně klienta:  
   
-1.  SendTimeout – použitý k inicializaci OperationTimeout, jimiž se řídí celý proces odesílání zprávy, včetně přijímání zprávy odpovědi pro požadavek nebo odpověď operace služby. Tento časový limit platí také při odesílání zprávy odpovědi z kontrakt metody zpětného volání.  
+1. SendTimeout – použitý k inicializaci OperationTimeout, jimiž se řídí celý proces odesílání zprávy, včetně příjem zprávy odpovědi pro operaci služby požadavku/odpovědi. Tento časový limit platí i při odesílání zprávy odpovědi z metody zpětného volání kontraktu.  
   
-2.  OpenTimeout – použít při otevírání kanály, když není zadaná žádná hodnota explicitní časový limit.  
+2. OpenTimeout – při otevírání kanály, pokud není zadána žádná hodnota explicitní vypršení časového limitu.  
   
-3.  Intervalu – použít při zavření kanály, když není zadaná žádná hodnota explicitní časový limit.  
+3. CloseTimeout – při zavírání kanály, pokud není zadána žádná hodnota explicitní vypršení časového limitu.  
   
-4.  ReceiveTimeout – se nepoužije.  
+4. ReceiveTimeout – se nepoužívá.  
   
-### <a name="service-side-timeouts"></a>Časové limity straně služby  
+### <a name="service-side-timeouts"></a>Vypršení časových limitů straně služby  
  Na straně služby:  
   
-1.  SendTimeout, OpenTimeout, intervalu jsou stejné jako na straně klienta.  
+1. SendTimeout, OpenTimeout, CloseTimeout jsou stejné jako na straně klienta.  
   
-2.  ReceiveTimeout – vrstvou Framework služby použitý k inicializaci časový limit nečinnosti relace, který řídí, jak dlouho může být relace před vypršením časového limitu nečinnosti.
+2. ReceiveTimeout – vrstva služby rozhraní Framework použitý k inicializaci časového limitu nečinnosti relace, které řídí, jak dlouho může být relace nečinná, než vyprší časový limit.

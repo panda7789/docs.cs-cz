@@ -2,12 +2,12 @@
 title: Aktivace UDP
 ms.date: 03/30/2017
 ms.assetid: 4b0ccd10-0dfb-4603-93f9-f0857c581cb7
-ms.openlocfilehash: 21599990aff1209729a151b4c5a8829e305a1e90
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 6e19e92872c9b9344db7e787f0cd77e0a315f1a0
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59088597"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59337653"
 ---
 # <a name="udp-activation"></a>Aktivace UDP
 Tato ukázka je založena na [přenosu: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) vzorku. Rozšiřuje [přenosu: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) vzorku pro podporu proces aktivace pomocí služby Aktivace procesu Windows (WAS).  
@@ -75,13 +75,13 @@ Tato ukázka je založena na [přenosu: UDP](../../../../docs/framework/wcf/samp
   
 #### <a name="to-set-up-this-sample"></a>Nastavit tuto ukázku  
   
-1.  Nainstalujte [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] 4.0 pomocí následujícího příkazu.  
+1. Nainstalujte [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] 4.0 pomocí následujícího příkazu.  
   
     ```  
     %windir%\Microsoft.NET\Framework\v4.0.XXXXX\aspnet_regiis.exe /i /enable  
     ```  
   
-2.  Sestavení projektu v systému Windows Vista. Po kompilaci toho provádí následující operace ve fázi po sestavení:  
+2. Sestavení projektu v systému Windows Vista. Po kompilaci toho provádí následující operace ve fázi po sestavení:  
   
     -   Nainstaluje UDP vazba k webu "výchozí webový server".  
   
@@ -89,13 +89,13 @@ Tato ukázka je založena na [přenosu: UDP](../../../../docs/framework/wcf/samp
   
     -   Umožňuje také protokol "net.udp" pro tuto virtuální aplikaci.  
   
-3.  Spuštění aplikace v uživatelském rozhraní "WasNetActivator.exe". Klikněte na tlačítko **nastavení** kartu, zaškrtněte následující políčka a klikněte na **nainstalovat** k instalaci:  
+3. Spuštění aplikace v uživatelském rozhraní "WasNetActivator.exe". Klikněte na tlačítko **nastavení** kartu, zaškrtněte následující políčka a klikněte na **nainstalovat** k instalaci:  
   
     -   Adaptér naslouchání UDP  
   
     -   Obslužné rutiny protokolu UDP  
   
-4.  Klikněte na tlačítko **aktivace** kartě aplikaci uživatelského rozhraní "WasNetActivator.exe". Klikněte na tlačítko **Start** tlačítko spustit adaptér naslouchací proces. Nyní jste připraveni ke spuštění programu.  
+4. Klikněte na tlačítko **aktivace** kartě aplikaci uživatelského rozhraní "WasNetActivator.exe". Klikněte na tlačítko **Start** tlačítko spustit adaptér naslouchací proces. Nyní jste připraveni ke spuštění programu.  
   
     > [!NOTE]
     >  Po skončení této ukázce, je nutné spustit Cleanup.bat Odstranit vazbu net.udp z "výchozí web".  
@@ -113,15 +113,15 @@ Tato ukázka je založena na [přenosu: UDP](../../../../docs/framework/wcf/samp
   
 -   Ujistěte se, že všechny požadované údaje jsou správně nainstalovány. Následující kroky ukazují, jak ke spuštění ukázky:  
   
-1.  Ujistěte se, že byly spuštěné tyto služby Windows:  
+1. Ujistěte se, že byly spuštěné tyto služby Windows:  
   
     -   Aktivační služba procesů Windows (WAS).  
   
     -   Internetová informační služba (IIS): W3SVC.  
   
-2.  Potom spusťte Aktivátor WasNetActivator.exe. V části **aktivace** kartu, pouze protokol **UDP**, je vybrali v rozevíracím seznamu. Klikněte na tlačítko **Start** tlačítko Zahájit aktivátor.  
+2. Potom spusťte Aktivátor WasNetActivator.exe. V části **aktivace** kartu, pouze protokol **UDP**, je vybrali v rozevíracím seznamu. Klikněte na tlačítko **Start** tlačítko Zahájit aktivátor.  
   
-3.  Po zahájení Aktivátor můžete spustit kód klienta pomocí příkazu Client.exe z příkazového okna. Následuje ukázkový výstup:  
+3. Po zahájení Aktivátor můžete spustit kód klienta pomocí příkazu Client.exe z příkazového okna. Následuje ukázkový výstup:  
   
     ```  
     Testing Udp Activation.  

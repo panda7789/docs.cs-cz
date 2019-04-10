@@ -11,12 +11,12 @@ helpviewer_keywords:
 - user input [Windows Forms], controlling
 - text [Windows Forms], controls for input
 ms.assetid: df60565e-5447-4110-92a6-be1f6ff5faa3
-ms.openlocfilehash: ca505b062be8c60c1dd9b08fead4855eb1eb4cd6
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: ff9a0edb44a95f5853edf711e0a1559e3b2e3b15
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59103841"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59342447"
 ---
 # <a name="walkthrough-working-with-the-maskedtextbox-control"></a>Návod: Práce s ovládacím prvkem MaskedTextBox
 Úlohy v tomto návodu zahrnují:  
@@ -31,15 +31,15 @@ ms.locfileid: "59103841"
   
 #### <a name="to-add-a-maskedtextbox-control-to-your-form"></a>Chcete-li přidat MaskedTextBox – ovládací prvek do formuláře  
   
-1.  Otevřete formulář, na kterém chcete umístit <xref:System.Windows.Forms.MaskedTextBox> ovládacího prvku.  
+1. Otevřete formulář, na kterém chcete umístit <xref:System.Windows.Forms.MaskedTextBox> ovládacího prvku.  
   
-2.  Přetáhněte <xref:System.Windows.Forms.MaskedTextBox> ovládacího prvku **nástrojů** do formuláře.  
+2. Přetáhněte <xref:System.Windows.Forms.MaskedTextBox> ovládacího prvku **nástrojů** do formuláře.  
   
-3.  Klikněte pravým tlačítkem na ovládací prvek a vyberte **vlastnosti**. V **vlastnosti** okna, vyberte **maska** vlastnosti a klikněte na tlačítko **...**  tlačítko (tři tečky) vedle názvu vlastnosti.  
+3. Klikněte pravým tlačítkem na ovládací prvek a vyberte **vlastnosti**. V **vlastnosti** okna, vyberte **maska** vlastnosti a klikněte na tlačítko **...**  tlačítko (tři tečky) vedle názvu vlastnosti.  
   
-4.  V **vstupní maska** dialogové okno, vyberte **krátkého formátu data** masku a klikněte na tlačítko **OK**.  
+4. V **vstupní maska** dialogové okno, vyberte **krátkého formátu data** masku a klikněte na tlačítko **OK**.  
   
-5.  V **vlastnosti** okno sady <xref:System.Windows.Forms.MaskedTextBox.BeepOnError%2A> vlastnost `true`. Tato vlastnost způsobí, že pípnutí krátké zvukové pokaždé, když se uživatel pokusí o vstupní znak, který je v rozporu s definicí masky.  
+5. V **vlastnosti** okno sady <xref:System.Windows.Forms.MaskedTextBox.BeepOnError%2A> vlastnost `true`. Tato vlastnost způsobí, že pípnutí krátké zvukové pokaždé, když se uživatel pokusí o vstupní znak, který je v rozporu s definicí masky.  
   
  Přehled znaky, které podporuje vlastnost maska, naleznete v části poznámky <xref:System.Windows.Forms.MaskedTextBox.Mask%2A> vlastnost.  
   
@@ -47,9 +47,9 @@ ms.locfileid: "59103841"
   
 #### <a name="add-a-balloon-tip-for-rejected-mask-input"></a>Přidat zobrazení tipu v bublině pro vstup odmítnuté masky  
   
-1.  Vraťte se na **nástrojů** a přidejte <xref:System.Windows.Forms.ToolTip> do formuláře.  
+1. Vraťte se na **nástrojů** a přidejte <xref:System.Windows.Forms.ToolTip> do formuláře.  
   
-2.  Vytvořte obslužnou rutinu události pro <xref:System.Windows.Forms.MaskedTextBox.MaskInputRejected> událost, která vyvolá <xref:System.Windows.Forms.ToolTip> , když dojde k chybě vstupu. Zobrazení tipu v bublině zůstává viditelná pro pět sekund, nebo dokud na něj uživatel klikne.  
+2. Vytvořte obslužnou rutinu události pro <xref:System.Windows.Forms.MaskedTextBox.MaskInputRejected> událost, která vyvolá <xref:System.Windows.Forms.ToolTip> , když dojde k chybě vstupu. Zobrazení tipu v bublině zůstává viditelná pro pět sekund, nebo dokud na něj uživatel klikne.  
   
     ```csharp  
     public void Form1_Load(Object sender, EventArgs e)   
@@ -82,7 +82,7 @@ ms.locfileid: "59103841"
   
 #### <a name="add-a-balloon-tip-for-invalid-data-types"></a>Přidat zobrazení tipu v bublině pro neplatné datové typy  
   
-1.  Do formuláře <xref:System.Windows.Forms.Form.Load> obslužná rutina události, přiřadit <xref:System.Type> objekt představující <xref:System.DateTime> typ, který <xref:System.Windows.Forms.MaskedTextBox> ovládacího prvku <xref:System.Windows.Forms.MaskedTextBox.ValidatingType%2A> vlastnost:  
+1. Do formuláře <xref:System.Windows.Forms.Form.Load> obslužná rutina události, přiřadit <xref:System.Type> objekt představující <xref:System.DateTime> typ, který <xref:System.Windows.Forms.MaskedTextBox> ovládacího prvku <xref:System.Windows.Forms.MaskedTextBox.ValidatingType%2A> vlastnost:  
   
     ```csharp  
     private void Form1_Load(Object sender, EventArgs e)  
@@ -100,7 +100,7 @@ ms.locfileid: "59103841"
     End Sub  
     ```  
   
-2.  Přidat obslužnou rutinu události pro <xref:System.Windows.Forms.MaskedTextBox.TypeValidationCompleted> události:  
+2. Přidat obslužnou rutinu události pro <xref:System.Windows.Forms.MaskedTextBox.TypeValidationCompleted> události:  
   
     ```csharp  
     public void maskedTextBox1_TypeValidationCompleted(object sender, TypeValidationEventArgs e)  

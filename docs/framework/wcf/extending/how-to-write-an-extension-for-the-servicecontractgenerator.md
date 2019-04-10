@@ -2,12 +2,12 @@
 title: 'Postupy: Vytvoření rozšíření pro třídu ServiceContractGenerator'
 ms.date: 03/30/2017
 ms.assetid: 876ca823-bd16-4bdf-9e0f-02092df90e51
-ms.openlocfilehash: 104f65f76429701dbf02c1c7a5d737e50b080394
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: c9e10efccf0d51e6b78aace1296d227a78a9f91d
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59111589"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59340617"
 ---
 # <a name="how-to-write-an-extension-for-the-servicecontractgenerator"></a>Postupy: Vytvoření rozšíření pro třídu ServiceContractGenerator
 Toto téma popisuje postup vytvoření rozšíření pro <xref:System.ServiceModel.Description.ServiceContractGenerator>. To můžete udělat pomocí implementace <xref:System.ServiceModel.Description.IOperationContractGenerationExtension> rozhraní na na chování operace nebo implementaci <xref:System.ServiceModel.Description.IServiceContractGenerationExtension> rozhraní kontraktu chování. Toto téma ukazuje, jak implementovat <xref:System.ServiceModel.Description.IServiceContractGenerationExtension> rozhraní kontraktu chování.  
@@ -16,7 +16,7 @@ Toto téma popisuje postup vytvoření rozšíření pro <xref:System.ServiceMod
   
 ### <a name="to-write-an-extension-for-the-servicecontractgenerator"></a>Pro vytvoření rozšíření pro třídu ServiceContractGenerator  
   
-1.  Implementace <xref:System.ServiceModel.Description.IServiceContractGenerationExtension>. Chcete-li upravit kontrakt generovaný služby, použijte <xref:System.ServiceModel.Description.ServiceContractGenerationContext> instance předána do <xref:System.ServiceModel.Description.IServiceContractGenerationExtension.GenerateContract%28System.ServiceModel.Description.ServiceContractGenerationContext%29> metody.  
+1. Implementace <xref:System.ServiceModel.Description.IServiceContractGenerationExtension>. Chcete-li upravit kontrakt generovaný služby, použijte <xref:System.ServiceModel.Description.ServiceContractGenerationContext> instance předána do <xref:System.ServiceModel.Description.IServiceContractGenerationExtension.GenerateContract%28System.ServiceModel.Description.ServiceContractGenerationContext%29> metody.  
   
     ```  
     public void GenerateContract(ServiceContractGenerationContext context)  
@@ -26,7 +26,7 @@ Toto téma popisuje postup vytvoření rozšíření pro <xref:System.ServiceMod
     }  
     ```  
   
-2.  Implementace <xref:System.ServiceModel.Description.IWsdlImportExtension> ve stejné třídě. <xref:System.ServiceModel.Description.IWsdlImportExtension.ImportContract%28System.ServiceModel.Description.WsdlImporter%2CSystem.ServiceModel.Description.WsdlContractConversionContext%29> Metoda může zpracovat konkrétní rozšíření WSDL (WSDL poznámky v tomto případě) tak, že přidáte rozšíření generování kódu pro importované <xref:System.ServiceModel.Description.ContractDescription> instance.  
+2. Implementace <xref:System.ServiceModel.Description.IWsdlImportExtension> ve stejné třídě. <xref:System.ServiceModel.Description.IWsdlImportExtension.ImportContract%28System.ServiceModel.Description.WsdlImporter%2CSystem.ServiceModel.Description.WsdlContractConversionContext%29> Metoda může zpracovat konkrétní rozšíření WSDL (WSDL poznámky v tomto případě) tak, že přidáte rozšíření generování kódu pro importované <xref:System.ServiceModel.Description.ContractDescription> instance.  
   
     ```  
     public void ImportContract(WsdlImporter importer, WsdlContractConversionContext context)  
@@ -60,7 +60,7 @@ Toto téma popisuje postup vytvoření rozšíření pro <xref:System.ServiceMod
             }  
     ```  
   
-3.  Přidáte do vaší konfigurace klienta programu pro import WSDL.  
+3. Přidáte do vaší konfigurace klienta programu pro import WSDL.  
   
     ```xml  
     <metadata>  
@@ -70,7 +70,7 @@ Toto téma popisuje postup vytvoření rozšíření pro <xref:System.ServiceMod
     </metadata>  
     ```  
   
-4.  Vytvořte v kódu klienta `MetadataExchangeClient` a volat `GetMetadata`.  
+4. Vytvořte v kódu klienta `MetadataExchangeClient` a volat `GetMetadata`.  
   
     ```  
     MetadataExchangeClient mexClient = new MetadataExchangeClient(metadataAddress);  
@@ -78,13 +78,13 @@ Toto téma popisuje postup vytvoření rozšíření pro <xref:System.ServiceMod
     MetadataSet metaDocs = mexClient.GetMetadata();  
     ```  
   
-5.  Vytvoření `WsdlImporter` a volat `ImportAllContracts`.  
+5. Vytvoření `WsdlImporter` a volat `ImportAllContracts`.  
   
     ```  
     WsdlImporter importer = new WsdlImporter(metaDocs);            System.Collections.ObjectModel.Collection<ContractDescription> contracts = importer.ImportAllContracts();  
     ```  
   
-6.  Vytvoření `ServiceContractGenerator` a volat `GenerateServiceContractType` pro každou smlouvu.  
+6. Vytvoření `ServiceContractGenerator` a volat `GenerateServiceContractType` pro každou smlouvu.  
   
     ```  
     ServiceContractGenerator generator = new ServiceContractGenerator();  
@@ -96,7 +96,7 @@ Toto téma popisuje postup vytvoření rozšíření pro <xref:System.ServiceMod
        throw new Exception("There were errors during code compilation.");  
     ```  
   
-7.  <xref:System.ServiceModel.Description.IServiceContractGenerationExtension.GenerateContract%28System.ServiceModel.Description.ServiceContractGenerationContext%29> je volána automaticky pro každý smlouvy chování pro daný kontrakt, který implementuje <xref:System.ServiceModel.Description.IServiceContractGenerationExtension>. Tato metoda poté můžete upravit <xref:System.ServiceModel.Description.ServiceContractGenerationContext> předán. V tomto příkladu jsou přidány poznámky.  
+7. <xref:System.ServiceModel.Description.IServiceContractGenerationExtension.GenerateContract%28System.ServiceModel.Description.ServiceContractGenerationContext%29> je volána automaticky pro každý smlouvy chování pro daný kontrakt, který implementuje <xref:System.ServiceModel.Description.IServiceContractGenerationExtension>. Tato metoda poté můžete upravit <xref:System.ServiceModel.Description.ServiceContractGenerationContext> předán. V tomto příkladu jsou přidány poznámky.  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -2,12 +2,12 @@
 title: 'Postupy: Migrace webových služeb ASP.NET s povolenou službou AJAX na WCF'
 ms.date: 03/30/2017
 ms.assetid: 1428df4d-b18f-4e6d-bd4d-79ab3dd5147c
-ms.openlocfilehash: dfbb32a751623fb1e3753cfd8bbbaf5910d571b2
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 6114fa90b10a5d0cacb60a7ad40f63fae776e174
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59142997"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59337419"
 ---
 # <a name="how-to-migrate-ajax-enabled-aspnet-web-services-to-wcf"></a>Postupy: Migrace webových služeb ASP.NET s povolenou službou AJAX na WCF
 Toto téma popisuje postupy migrace základní služby technologie ASP.NET AJAX do ekvivalentní služby s povoleným AJAX Windows Communication Foundation (WCF). Ukazuje, jak vytvořit funkčně ekvivalentní verzi WCF služby technologie ASP.NET AJAX. Tyto dvě služby je pak možné použít vedle sebe nebo službu WCF je možné nahradit služby technologie ASP.NET AJAX.
@@ -26,21 +26,21 @@ Toto téma popisuje postupy migrace základní služby technologie ASP.NET AJAX 
 
 ### <a name="to-create-and-test-the-aspnet-web-service-application"></a>Vytvořit a otestovat aplikaci technologie ASP.NET webové služby
 
-1.  Open Visual Studio 2012.
+1. Open Visual Studio 2012.
 
-2.  Z **souboru** nabídce vyberte možnost **nový**, pak **projektu**, pak **webové**a pak vyberte **aplikaci webové služby ASP.NET** .
+2. Z **souboru** nabídce vyberte možnost **nový**, pak **projektu**, pak **webové**a pak vyberte **aplikaci webové služby ASP.NET** .
 
-3.  Pojmenujte projekt `ASPHello` a klikněte na tlačítko **OK**.
+3. Pojmenujte projekt `ASPHello` a klikněte na tlačítko **OK**.
 
-4.  Zrušením komentáře u řádku v souboru Service1.asmx.cs, který obsahuje `System.Web.Script.Services.ScriptService]` umožňující AJAX pro tuto službu.
+4. Zrušením komentáře u řádku v souboru Service1.asmx.cs, který obsahuje `System.Web.Script.Services.ScriptService]` umožňující AJAX pro tuto službu.
 
-5.  Z **sestavení** nabídce vyberte možnost **sestavit řešení**.
+5. Z **sestavení** nabídce vyberte možnost **sestavit řešení**.
 
-6.  Z **ladění** nabídce vyberte možnost **spustit bez ladění**.
+6. Z **ladění** nabídce vyberte možnost **spustit bez ladění**.
 
-7.  Na webové stránce vygenerovat, vyberte `HelloWorld` operace.
+7. Na webové stránce vygenerovat, vyberte `HelloWorld` operace.
 
-8.  Klikněte na tlačítko **Invoke** tlačítko `HelloWorld` zkušební stránku. Měli byste obdržet odpověď na následující XML.
+8. Klikněte na tlačítko **Invoke** tlačítko `HelloWorld` zkušební stránku. Měli byste obdržet odpověď na následující XML.
 
     ```xml
     <?xml version="1.0" encoding="utf-8" ?>
@@ -53,13 +53,13 @@ Toto téma popisuje postupy migrace základní služby technologie ASP.NET AJAX 
 
 ### <a name="to-create-an-equivalent-wcf-ajax-service-application"></a>Chcete-li vytvořit rovnocenné aplikace služby WCF AJAX
 
-1.  Klikněte pravým tlačítkem myši **ASPHello** projektu a vyberte **přidat**, pak **nová položka**a potom **s povoleným AJAX služba WCF**.
+1. Klikněte pravým tlačítkem myši **ASPHello** projektu a vyberte **přidat**, pak **nová položka**a potom **s povoleným AJAX služba WCF**.
 
-2.  Pojmenujte službu `WCFHello` a klikněte na tlačítko **přidat**.
+2. Pojmenujte službu `WCFHello` a klikněte na tlačítko **přidat**.
 
-3.  Otevřete soubor WCFHello.svc.cs.
+3. Otevřete soubor WCFHello.svc.cs.
 
-4.  Z Service1.asmx.cs, zkopírujte následující provádění `HelloWorld` operace.
+4. Z Service1.asmx.cs, zkopírujte následující provádění `HelloWorld` operace.
 
     ```
     public string HelloWorld()
@@ -68,7 +68,7 @@ Toto téma popisuje postupy migrace základní služby technologie ASP.NET AJAX 
     }
     ```
 
-5.  Vložte zkopírovaný provádění `HelloWorld` operace do souboru WCFHello.svc.cs místo následující kód.
+5. Vložte zkopírovaný provádění `HelloWorld` operace do souboru WCFHello.svc.cs místo následující kód.
 
     ```
     public void DoWork()
@@ -78,7 +78,7 @@ Toto téma popisuje postupy migrace základní služby technologie ASP.NET AJAX 
     }
     ```
 
-6.  Zadejte `Namespace` atributu <xref:System.ServiceModel.ServiceContractAttribute> jako `WCFHello`.
+6. Zadejte `Namespace` atributu <xref:System.ServiceModel.ServiceContractAttribute> jako `WCFHello`.
 
     ```
     [ServiceContract(Namespace="WCFHello")]
@@ -87,7 +87,7 @@ Toto téma popisuje postupy migrace základní služby technologie ASP.NET AJAX 
     { … }
     ```
 
-7.  Přidat <xref:System.ServiceModel.Web.WebInvokeAttribute> k `HelloWorld` operace a sady <xref:System.ServiceModel.Web.WebInvokeAttribute.ResponseFormat%2A> vlastnost vrátit <xref:System.ServiceModel.Web.WebMessageFormat.Xml>. Všimněte si, že, pokud není nastavena, výchozí hodnota je návratový typ <xref:System.ServiceModel.Web.WebMessageFormat.Json>.
+7. Přidat <xref:System.ServiceModel.Web.WebInvokeAttribute> k `HelloWorld` operace a sady <xref:System.ServiceModel.Web.WebInvokeAttribute.ResponseFormat%2A> vlastnost vrátit <xref:System.ServiceModel.Web.WebMessageFormat.Xml>. Všimněte si, že, pokud není nastavena, výchozí hodnota je návratový typ <xref:System.ServiceModel.Web.WebMessageFormat.Json>.
 
     ```
     [OperationContract]
@@ -98,7 +98,7 @@ Toto téma popisuje postupy migrace základní služby technologie ASP.NET AJAX 
     }
     ```
 
-8.  Z **sestavení** nabídce vyberte možnost **sestavit řešení**.
+8. Z **sestavení** nabídce vyberte možnost **sestavit řešení**.
 
 9. Otevřete soubor WCFHello.svc z a **ladění** nabídce vyberte možnost **spustit bez ladění**.
 

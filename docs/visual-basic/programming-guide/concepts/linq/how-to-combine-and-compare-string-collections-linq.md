@@ -2,19 +2,19 @@
 title: 'Postupy: Kombinace a porovnávání kolekcí řetězců (LINQ) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 243cfafc-9eaa-4354-a9df-d329f1d39913
-ms.openlocfilehash: efd8ebdcc12c2941753b6811028d73655167c2f9
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: a0083c49c344a45a977793254d8062f2a6aa155a
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58828963"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59341267"
 ---
 # <a name="how-to-combine-and-compare-string-collections-linq-visual-basic"></a>Postupy: Kombinace a porovnávání kolekcí řetězců (LINQ) (Visual Basic)
 Tento příklad ukazuje, jak sloučit soubory, které obsahují řádků textu a pak výsledky seřaďte. Konkrétně ukazuje, jak provádět jednoduché zřetězení, sjednocení a průnik dvou sad řádků textu.  
   
 ### <a name="to-set-up-the-project-and-the-text-files"></a>Nastavení projektu a textové soubory  
   
-1.  Zkopírujte do textového souboru s názvem names1.txt tyto názvy a uložte ho do složky projektu:  
+1. Zkopírujte do textového souboru s názvem names1.txt tyto názvy a uložte ho do složky projektu:  
   
     ```  
     Bankov, Peter  
@@ -29,7 +29,7 @@ Tento příklad ukazuje, jak sloučit soubory, které obsahují řádků textu a
     Garcia, Debra  
     ```  
   
-2.  Zkopírujte do textového souboru s názvem names2.txt tyto názvy a uložte ho do složky projektu. Mějte na paměti, že dva soubory mají společnou některé názvy.  
+2. Zkopírujte do textového souboru s názvem names2.txt tyto názvy a uložte ho do složky projektu. Mějte na paměti, že dva soubory mají společnou některé názvy.  
   
     ```  
     Liu, Jinghao  

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - print jobs [WPF], troubleshooting
 - print jobs [WPF], diagnosing problems
 ms.assetid: b081a170-84c6-48f9-a487-5766a8d58a82
-ms.openlocfilehash: 3c21798527df15730a62c04422ecd9e57b74abe7
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: fc38d239720b5d5a8e159f91749b03512568cd9b
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59211034"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59338472"
 ---
 # <a name="how-to-diagnose-problematic-print-job"></a>Postupy: Diagnostika problematické tiskové úlohy
 Správci sítě často pole stížností od uživatelů o tiskové úlohy, které vytisknout nebo vytisknout pomalu. Bohaté sadě vlastností tiskovou úlohu v [!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)] Microsoft .NET Framework poskytují způsob pro provádění rychlé vzdálené diagnostiky tiskových úloh.  
@@ -23,7 +23,7 @@ Správci sítě často pole stížností od uživatelů o tiskové úlohy, kter�
 ## <a name="example"></a>Příklad  
  Hlavní kroky pro vytvoření tento druh nástroj jsou následující.  
   
-1.  Identifikujte tiskové úlohy, která je stěžovat uživatele. Uživatelé často nelze provést přesně. Názvy tiskáren nebo tiskových serverů, které nemusí znají. Může popisu umístění tiskárny v odlišnou terminologii, než se používá v nastavení jeho <xref:System.Printing.PrintQueue.Location%2A> vlastnost. Proto je vhodné vytvořit seznam uživatele aktuálně odeslaných úloh. Pokud existuje více než jeden, pak komunikace mezi uživatelem a správce tiskovém systému slouží ke kotvícímu bodu na úlohu, problémy. Dílčí kroky jsou následující.  
+1. Identifikujte tiskové úlohy, která je stěžovat uživatele. Uživatelé často nelze provést přesně. Názvy tiskáren nebo tiskových serverů, které nemusí znají. Může popisu umístění tiskárny v odlišnou terminologii, než se používá v nastavení jeho <xref:System.Printing.PrintQueue.Location%2A> vlastnost. Proto je vhodné vytvořit seznam uživatele aktuálně odeslaných úloh. Pokud existuje více než jeden, pak komunikace mezi uživatelem a správce tiskovém systému slouží ke kotvícímu bodu na úlohu, problémy. Dílčí kroky jsou následující.  
   
     1.  Získáte seznam všech tiskových serverů.  
   
@@ -33,7 +33,7 @@ Správci sítě často pole stížností od uživatelů o tiskové úlohy, kter�
   
     4.  V každém průchodu fronty smyčky projít jeho úlohy a shromážděte identifikační informace o těch, které byly předány žalující uživatelem.  
   
-2.  Pokud byla zjištěna problematické tiskové úlohy, podívejte se na relevantní vlastnosti chcete zobrazit, co může být problém. Například je úloha ve stavu chyby nebo nebyla Údržba tiskárny fronty přejít do režimu offline, než má úloha může vytisknout?  
+2. Pokud byla zjištěna problematické tiskové úlohy, podívejte se na relevantní vlastnosti chcete zobrazit, co může být problém. Například je úloha ve stavu chyby nebo nebyla Údržba tiskárny fronty přejít do režimu offline, než má úloha může vytisknout?  
   
  Následující kód je řada příklady kódu. První příklad kódu obsahuje projděte tiskové fronty. (Krok 1c výše). Proměnná `myPrintQueues` je <xref:System.Printing.PrintQueueCollection> objektů pro aktuální tiskový server.  
   

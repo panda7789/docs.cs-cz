@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: f2d34e43-fa8b-46d2-91cf-d2960e13e16b
-ms.openlocfilehash: c7aede448fa0a759035380c533f2a9457a534bd1
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: d8529929870b14611c136221f1eefe3eb4ba3d42
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59165825"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59338992"
 ---
 # <a name="how-to-create-a-custom-client-identity-verifier"></a>Postupy: Vytvoření vlastního ověřovatele identity klientů
 *Identity* funkce Windows Communication Foundation (WCF) umožňuje klientovi předem určit Očekávaná identita služby. Pokaždé, když se server ověří na klientovi, identita je porovnávána s Očekávaná identita. (Vysvětlení identity a jak to funguje, najdete v článku [identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).)  
@@ -19,23 +19,23 @@ ms.locfileid: "59165825"
   
 ### <a name="to-extend-the-endpointidentity-class"></a>Rozšíření třídy EndpointIdentity  
   
-1.  Definovat novou třídu, která je odvozena z <xref:System.ServiceModel.EndpointIdentity> třídy. V tomto příkladu názvy rozšíření `OrgEndpointIdentity`.  
+1. Definovat novou třídu, která je odvozena z <xref:System.ServiceModel.EndpointIdentity> třídy. V tomto příkladu názvy rozšíření `OrgEndpointIdentity`.  
   
-2.  Přidat soukromé členy spolu s vlastnostmi, které se použijí podle rozšířené <xref:System.ServiceModel.Security.IdentityVerifier> třídy provést kontrolu identity před deklarací identity v tokenu zabezpečení vráceného od služby. Tento příklad definuje jednu vlastnost: `OrganizationClaim` vlastnost.  
+2. Přidat soukromé členy spolu s vlastnostmi, které se použijí podle rozšířené <xref:System.ServiceModel.Security.IdentityVerifier> třídy provést kontrolu identity před deklarací identity v tokenu zabezpečení vráceného od služby. Tento příklad definuje jednu vlastnost: `OrganizationClaim` vlastnost.  
   
      [!code-csharp[c_HowToSetCustomClientIdentity#6](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howtosetcustomclientidentity/cs/source.cs#6)]
      [!code-vb[c_HowToSetCustomClientIdentity#6](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howtosetcustomclientidentity/vb/source.vb#6)]  
   
 ### <a name="to-extend-the-identityverifier-class"></a>Rozšíření třídy IdentityVerifier  
   
-1.  Definovat novou třídu, která je odvozena z <xref:System.ServiceModel.Security.IdentityVerifier>. V tomto příkladu názvy rozšíření `CustomIdentityVerifier`.  
+1. Definovat novou třídu, která je odvozena z <xref:System.ServiceModel.Security.IdentityVerifier>. V tomto příkladu názvy rozšíření `CustomIdentityVerifier`.  
   
      [!code-csharp[c_HowToSetCustomClientIdentity#7](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howtosetcustomclientidentity/cs/source.cs#7)]
      [!code-vb[c_HowToSetCustomClientIdentity#7](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howtosetcustomclientidentity/vb/source.vb#7)]  
   
-2.  Přepsat <xref:System.ServiceModel.Security.IdentityVerifier.CheckAccess%2A> metody. Metoda určuje, zda kontrola identity bylo úspěšné nebo neúspěšné.  
+2. Přepsat <xref:System.ServiceModel.Security.IdentityVerifier.CheckAccess%2A> metody. Metoda určuje, zda kontrola identity bylo úspěšné nebo neúspěšné.  
   
-3.  `CheckAccess` Metoda má dva parametry. První je instance <xref:System.ServiceModel.EndpointIdentity> třídy. Druhá je instance <xref:System.IdentityModel.Policy.AuthorizationContext> třídy.  
+3. `CheckAccess` Metoda má dva parametry. První je instance <xref:System.ServiceModel.EndpointIdentity> třídy. Druhá je instance <xref:System.IdentityModel.Policy.AuthorizationContext> třídy.  
   
      V implementaci metody, zkontrolujte sadu deklarací identity vrátí <xref:System.IdentityModel.Policy.AuthorizationContext.ClaimSets%2A> vlastnost <xref:System.IdentityModel.Policy.AuthorizationContext> třídy a provádět kontroly ověřování podle potřeby. Tento příklad začíná tím, že hledá všechny deklarace identity, která je typu "Rozlišující název" a pak porovná název, který má rozšíření <xref:System.ServiceModel.EndpointIdentity> (`OrgEndpointIdentity`).  
   
@@ -44,27 +44,27 @@ ms.locfileid: "59165825"
   
 ### <a name="to-implement-the-trygetidentity-method"></a>K implementaci TryGetIdentity – metoda  
   
-1.  Implementace <xref:System.ServiceModel.Security.IdentityVerifier.TryGetIdentity%2A> metoda, která určuje, zda instance <xref:System.ServiceModel.EndpointIdentity> třídy může být vrácen klienta. Infrastruktura WCF volá uplatňování `TryGetIdentity` metoda nejprve se načíst identitu služby ze zprávy. Dále volá infrastruktury `CheckAccess` implementaci vráceného `EndpointIdentity` a <xref:System.IdentityModel.Policy.AuthorizationContext>.  
+1. Implementace <xref:System.ServiceModel.Security.IdentityVerifier.TryGetIdentity%2A> metoda, která určuje, zda instance <xref:System.ServiceModel.EndpointIdentity> třídy může být vrácen klienta. Infrastruktura WCF volá uplatňování `TryGetIdentity` metoda nejprve se načíst identitu služby ze zprávy. Dále volá infrastruktury `CheckAccess` implementaci vráceného `EndpointIdentity` a <xref:System.IdentityModel.Policy.AuthorizationContext>.  
   
-2.  V `TryGetIdentity` metoda, vložte následující kód:  
+2. V `TryGetIdentity` metoda, vložte následující kód:  
   
      [!code-csharp[c_HowToSetCustomClientIdentity#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howtosetcustomclientidentity/cs/source.cs#2)]
      [!code-vb[c_HowToSetCustomClientIdentity#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howtosetcustomclientidentity/vb/source.vb#2)]  
   
 ### <a name="to-implement-a-custom-binding-and-set-the-custom-identityverifier"></a>Nastavit vlastní IdentityVerifier a implementovat vlastní vazby  
   
-1.  Vytvořit metodu, která se vrátí <xref:System.ServiceModel.Channels.Binding> objektu. Tento příklad začíná vytvoří instanci <xref:System.ServiceModel.WSHttpBinding> třídy a nastaví její režim zabezpečení na <xref:System.ServiceModel.SecurityMode.Message>a jeho <xref:System.ServiceModel.MessageSecurityOverHttp.ClientCredentialType%2A> k <xref:System.ServiceModel.MessageCredentialType.None>.  
+1. Vytvořit metodu, která se vrátí <xref:System.ServiceModel.Channels.Binding> objektu. Tento příklad začíná vytvoří instanci <xref:System.ServiceModel.WSHttpBinding> třídy a nastaví její režim zabezpečení na <xref:System.ServiceModel.SecurityMode.Message>a jeho <xref:System.ServiceModel.MessageSecurityOverHttp.ClientCredentialType%2A> k <xref:System.ServiceModel.MessageCredentialType.None>.  
   
-2.  Vytvoření <xref:System.ServiceModel.Channels.BindingElementCollection> pomocí <xref:System.ServiceModel.WSHttpBinding.CreateBindingElements%2A> metody.  
+2. Vytvoření <xref:System.ServiceModel.Channels.BindingElementCollection> pomocí <xref:System.ServiceModel.WSHttpBinding.CreateBindingElements%2A> metody.  
   
-3.  Vrátit <xref:System.ServiceModel.Channels.SecurityBindingElement> z kolekce a přetypovat ji na <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> proměnné.  
+3. Vrátit <xref:System.ServiceModel.Channels.SecurityBindingElement> z kolekce a přetypovat ji na <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> proměnné.  
   
-4.  Nastavte <xref:System.ServiceModel.Channels.LocalClientSecuritySettings.IdentityVerifier%2A> vlastnost <xref:System.ServiceModel.Channels.LocalClientSecuritySettings> novou instanci třídy `CustomIdentityVerifier` třídy, které jste předtím vytvořili.  
+4. Nastavte <xref:System.ServiceModel.Channels.LocalClientSecuritySettings.IdentityVerifier%2A> vlastnost <xref:System.ServiceModel.Channels.LocalClientSecuritySettings> novou instanci třídy `CustomIdentityVerifier` třídy, které jste předtím vytvořili.  
   
      [!code-csharp[c_HowToSetCustomClientIdentity#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howtosetcustomclientidentity/cs/source.cs#3)]
      [!code-vb[c_HowToSetCustomClientIdentity#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howtosetcustomclientidentity/vb/source.vb#3)]  
   
-5.  Vlastní vazby, který je vrácen se používá k vytvoření instance klienta a třídy. Klient pak můžete provádět kontrolu ověření a vlastní identitu služby, jak je znázorněno v následujícím kódu.  
+5. Vlastní vazby, který je vrácen se používá k vytvoření instance klienta a třídy. Klient pak můžete provádět kontrolu ověření a vlastní identitu služby, jak je znázorněno v následujícím kódu.  
   
      [!code-csharp[c_HowToSetCustomClientIdentity#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howtosetcustomclientidentity/cs/source.cs#4)]
      [!code-vb[c_HowToSetCustomClientIdentity#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howtosetcustomclientidentity/vb/source.vb#4)]  

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - menu items [Windows Forms], disabling
 - menus [Windows Forms], disabling items
 ms.assetid: 985e311e-7d67-4205-b5a3-d045b68a4a03
-ms.openlocfilehash: 38a366003a856adaf0840d0d8911263bc40dfe23
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 9965825458afcd50b29699c3b89ed506078e04d9
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59151408"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59338056"
 ---
 # <a name="how-to-disable-toolstripmenuitems-using-the-designer"></a>Postupy: Zakázání ToolStripMenuItems pomocí Návrháře
 Můžete omezit nebo rozšířit příkazy, které uživatel může díky povolování a zakazování položky nabídky v reakci na aktivity uživatelů. Položky nabídky jsou ve výchozím nastavení povolená, když se vytvoří, ale tuto možnost lze upravit pomocí <xref:System.Windows.Forms.ToolStripMenuItem.Enabled%2A> vlastnost. Tuto vlastnost můžete upravit v době návrhu **vlastnosti** okno nebo programově podle nastavení v kódu. Další informace najdete v tématu [jak: Zákaz ToolStripMenuItems](how-to-disable-toolstripmenuitems.md).  
@@ -22,7 +22,7 @@ Můžete omezit nebo rozšířit příkazy, které uživatel může díky povolo
   
 ### <a name="to-disable-a-menu-item-at-design-time"></a>Chcete-li zakázat položku nabídky v době návrhu  
   
-1.  Pomocí položky nabídky na formuláři, nastavit <xref:System.Windows.Forms.ToolStripMenuItem.Enabled%2A> vlastnost `false`.  
+1. Pomocí položky nabídky na formuláři, nastavit <xref:System.Windows.Forms.ToolStripMenuItem.Enabled%2A> vlastnost `false`.  
   
     > [!TIP]
     >  Zakázání nabídek nejvyšší úrovně nebo první položku v nabídce zakáže všechny položky nabídky obsažené v rámci nabídky. Obdobně zakázání položku nabídky, která má položky podnabídky zakáže položky podnabídky. Pokud všechny příkazy v dané nabídky jsou k dispozici pro uživatele, programovací vhodné skrýt i zakázat celou nabídku, bude považován, jak to představuje čisté uživatelské rozhraní. By měl jak skrýt a zakázat v nabídce skrytí samostatně nezabraňuje přístup k příkazu nabídky prostřednictvím klávesovou zkratku. Nastavte <xref:System.Windows.Forms.ToolStripItem.Visible%2A> vlastnosti položky nabídek nejvyšší úrovně na `false` skrýt celé nabídky.  

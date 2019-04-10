@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 85084cd9-31cc-4e95-b667-42ef01336622
-ms.openlocfilehash: a4996dc963c572e2aeb14b9b366af33b8f23d480
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: cc777da65ce1c0d425404b1cc8d47e8189684a7f
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59208654"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59337003"
 ---
 # <a name="how-to-create-a-one-way-contract"></a>Postupy: Vytvoření jednosměrného kontraktu
 Toto téma popisuje základní kroky k vytvoření metody, které používají jednosměrného kontraktu. Tyto metody vyvolání operací ve službě Windows Communication Foundation (WCF) od klienta ale Nečekejte odpověď. Tento typ smlouvy lze použít například k publikování oznámení pro mnoho předplatitele. Jednosměrné kontrakty můžete použít také při vytvoření duplexního kontraktu (obousměrné), která umožňuje klientům a serverům komunikovat mezi sebou nezávisle tak, aby buď inicializaci volání do jiné. Můžete to umožní zejména, server pro jednosměrnou volání klienta, který klient může považovat za události. Podrobné informace o zadávání jednosměrné metody, naleznete v tématu <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> vlastnost a <xref:System.ServiceModel.OperationContractAttribute> třídy.  
@@ -19,11 +19,11 @@ Toto téma popisuje základní kroky k vytvoření metody, které používají j
   
 ### <a name="to-create-a-one-way-contract"></a>K vytvoření jednosměrného kontraktu  
   
-1.  Vytvoření kontraktu služby s použitím <xref:System.ServiceModel.ServiceContractAttribute> třídy rozhraní, které definuje služba je pro implementaci metody.  
+1. Vytvoření kontraktu služby s použitím <xref:System.ServiceModel.ServiceContractAttribute> třídy rozhraní, které definuje služba je pro implementaci metody.  
   
-2.  Označuje, které metody v rozhraní klienta může vyvolávat použití <xref:System.ServiceModel.OperationContractAttribute> třídy k nim.  
+2. Označuje, které metody v rozhraní klienta může vyvolávat použití <xref:System.ServiceModel.OperationContractAttribute> třídy k nim.  
   
-3.  Určení operací, které musí mít žádný výstup (žádnou návratovou hodnotu a žádné na víc systémů nebo parametry předávané odkazem) jako jednosměrná tak, že nastavíte <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> vlastnost `true`. Všimněte si, že operace, která provádění <xref:System.ServiceModel.OperationContractAttribute> třída splňovat kontraktu požadavku a odpovědi ve výchozím nastavení, protože <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> vlastnost `false` ve výchozím nastavení. Proto je nutné explicitně zadat hodnotu atributu vlastnost, která má být `true` Pokud chcete, aby jednosměrného kontraktu metody.  
+3. Určení operací, které musí mít žádný výstup (žádnou návratovou hodnotu a žádné na víc systémů nebo parametry předávané odkazem) jako jednosměrná tak, že nastavíte <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> vlastnost `true`. Všimněte si, že operace, která provádění <xref:System.ServiceModel.OperationContractAttribute> třída splňovat kontraktu požadavku a odpovědi ve výchozím nastavení, protože <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> vlastnost `false` ve výchozím nastavení. Proto je nutné explicitně zadat hodnotu atributu vlastnost, která má být `true` Pokud chcete, aby jednosměrného kontraktu metody.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad kódu definuje kontrakt služby, který zahrnuje několik jednosměrné metody. Všechny metody mají jednosměrné kontrakty s výjimkou `Equals`, která výchozí hodnota je požadavek odpověď a vrátí výsledek.  

@@ -2,12 +2,12 @@
 title: 'Postupy: Změna pořadí polí v souboru s oddělovači (LINQ) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: c451c7db-663b-4daf-b8ba-a2093095d672
-ms.openlocfilehash: fbcd880d7bae9d6ad57f4769a5c4b6ef6f0141a9
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 6f41a8e38812cf9d3c652fa605febf2511f07a27
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54564562"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59339083"
 ---
 # <a name="how-to-reorder-the-fields-of-a-delimited-file-linq-visual-basic"></a>Postupy: Změna pořadí polí v souboru s oddělovači (LINQ) (Visual Basic)
 Soubor hodnot oddělených čárkami (CSV) je textový soubor, který se často používá k ukládání dat tabulky nebo jiné tabulková data, která je reprezentována řádků a sloupců. S použitím <xref:System.String.Split%2A> metoda oddělují pole, je velmi snadné dotazování a zpracování souborů CSV pomocí jazyka LINQ. Ve skutečnosti stejným způsobem umožňuje změnit uspořádání částí jakéhokoli strukturovaných řádku textu. není omezený na souborů CSV.  
@@ -16,7 +16,7 @@ Soubor hodnot oddělených čárkami (CSV) je textový soubor, který se často 
   
 ### <a name="to-create-the-data-file"></a>Vytvoření datového souboru  
   
-1.  Zkopírujte následující řádky do souboru ve formátu prostého textu, který je pojmenován spreadsheet1.csv. Uložte soubor do složky projektu.  
+1. Zkopírujte následující řádky do souboru ve formátu prostého textu, který je pojmenován spreadsheet1.csv. Uložte soubor do složky projektu.  
   
     ```  
     Adams,Terry,120  

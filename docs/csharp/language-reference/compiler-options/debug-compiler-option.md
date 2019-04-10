@@ -8,12 +8,12 @@ helpviewer_keywords:
 - -debug compiler option [C#]
 - /debug compiler option [C#]
 ms.assetid: e2b48c07-01bc-45cc-a52c-92e9085eb969
-ms.openlocfilehash: aa9e98e4ec805006c88188d1d19eb3e9781ad732
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 4828e1cdd8b830f10b134b613bc96e69490091fe
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54502969"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59338485"
 ---
 # <a name="-debug-c-compiler-options"></a>-debug (možnosti kompilátoru C#)
 **– Ladění** možnost způsobí, že kompilátor generovat ladicí informace a umístěte ho do výstupního souboru nebo souborů.  
@@ -46,13 +46,13 @@ ms.locfileid: "54502969"
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Nastavení tohoto parametru kompilátoru ve vývojovém prostředí Visual Studio  
   
-1.  Otevřete v projektu **vlastnosti** stránky.  
+1. Otevřete v projektu **vlastnosti** stránky.  
   
-2.  Klikněte na tlačítko **sestavení** stránku vlastností.  
+2. Klikněte na tlačítko **sestavení** stránku vlastností.  
   
-3.  Klikněte na tlačítko **Upřesnit** tlačítko.  
+3. Klikněte na tlačítko **Upřesnit** tlačítko.  
   
-4.  Upravit **ladicí informace** vlastnost.  
+4. Upravit **ladicí informace** vlastnost.  
   
  Informace o tom, jak prostřednictvím kódu programu nastavení tohoto parametru kompilátoru najdete v tématu <xref:VSLangProj80.CSharpProjectConfigurationProperties3.DebugSymbols%2A>.  
   
@@ -65,5 +65,5 @@ csc -debug -pdb:app.pdb test.cs
   
 ## <a name="see-also"></a>Viz také:
 
-- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)
+- [Možnosti kompilátoru C#](../../../csharp/language-reference/compiler-options/index.md)
 - [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

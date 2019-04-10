@@ -8,12 +8,12 @@ helpviewer_keywords:
 - hosting Windows Forms control in WPF [WPF]
 - composite controls [WPF], hosting in WPF
 ms.assetid: 96fcd78d-1c77-4206-8928-3a0579476ef4
-ms.openlocfilehash: f9e0477b2c186ea9b23886f460caf965a5db0244
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 90d0e2f3c6ebab070809a4813c87da3539fd14f1
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59174353"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59337848"
 ---
 # <a name="walkthrough-hosting-a-windows-forms-composite-control-in-wpf"></a>Návod: Hostování složeného ovládacího prvku Windows Forms ve WPF
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje bohaté prostředí pro vytváření aplikací. Pokud však máte značné investice [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] kódu, může být efektivnější opakovaně používat alespoň některé tohoto kódu v vaše [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace namísto jeho přepsání úplně od začátku. Nejběžnější scénář je, pokud máte existující ovládací prvky Windows Forms. V některých případech nemusí mít i přístup ke zdrojovému kódu pro tyto ovládací prvky. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje jednoduchý postup pro hostování těchto ovládacích prvků v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace. Například můžete použít [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] u většiny vašich programování při hostování vaší specializované <xref:System.Windows.Forms.DataGridView> ovládacích prvků.  
@@ -44,17 +44,17 @@ Visual Studio k dokončení tohoto návodu potřebujete.
 ### <a name="creating-the-project"></a>Vytvoření projektu  
  Ke spuštění projektu:  
   
-1.  Spuštění [!INCLUDE[TLA#tla_visualstu](../../../../includes/tlasharptla-visualstu-md.md)]a otevřete **nový projekt** dialogové okno.  
+1. Spuštění [!INCLUDE[TLA#tla_visualstu](../../../../includes/tlasharptla-visualstu-md.md)]a otevřete **nový projekt** dialogové okno.  
   
-2.  V okně kategorii, vyberte **Knihovna ovládacích prvků Windows Forms** šablony.  
+2. V okně kategorii, vyberte **Knihovna ovládacích prvků Windows Forms** šablony.  
   
-3.  Název nového projektu `MyControls`.  
+3. Název nového projektu `MyControls`.  
   
-4.  K umístění, zadejte jednoduše pojmenované složku nejvyšší úrovně, například `WpfHostingWindowsFormsControl`. Hostitelská aplikace později, budou umístili do této složky.  
+4. K umístění, zadejte jednoduše pojmenované složku nejvyšší úrovně, například `WpfHostingWindowsFormsControl`. Hostitelská aplikace později, budou umístili do této složky.  
   
-5.  Klikněte na tlačítko **OK** pro vytvoření projektu. Výchozí projekt obsahuje jeden ovládací prvek s názvem `UserControl1`.  
+5. Klikněte na tlačítko **OK** pro vytvoření projektu. Výchozí projekt obsahuje jeden ovládací prvek s názvem `UserControl1`.  
   
-6.  V Průzkumníku řešení, přejmenujte `UserControl1` k `MyControl1`.  
+6. V Průzkumníku řešení, přejmenujte `UserControl1` k `MyControl1`.  
   
  Váš projekt by měl zahrnovat odkazy na tyto systémové knihovny DLL. Pokud některý z těchto knihoven DLL nejsou zahrnuty ve výchozím nastavení, můžete je přidáte do projektu.  
   
@@ -112,19 +112,19 @@ Visual Studio k dokončení tohoto návodu potřebujete.
 ### <a name="giving-the-assembly-a-strong-name-and-building-the-assembly"></a>Poskytuje tak sestavení silným názvem a vytváření sestavení
  Pro toto sestavení může odkazovat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace, musí mít silný název. Chcete-li vytvořit silným názvem, vytvořit soubor klíče se Sn.exe a přidejte do projektu.
 
-1.  Otevřít [!INCLUDE[TLA2#tla_visualstu](../../../../includes/tla2sharptla-visualstu-md.md)] příkazového řádku. Chcete-li tak učinit, klikněte na tlačítko **spustit** nabídky a pak vyberte **všechny programy nebo Microsoft Studio 2010 a Visual Studio Tools/Visual příkazový řádek Visual Studio**. Otevře se okno konzoly s proměnnými přizpůsobené prostředí.
+1. Otevřít [!INCLUDE[TLA2#tla_visualstu](../../../../includes/tla2sharptla-visualstu-md.md)] příkazového řádku. Chcete-li tak učinit, klikněte na tlačítko **spustit** nabídky a pak vyberte **všechny programy nebo Microsoft Studio 2010 a Visual Studio Tools/Visual příkazový řádek Visual Studio**. Otevře se okno konzoly s proměnnými přizpůsobené prostředí.
 
-2.  Na příkazovém řádku, použijte `cd` příkazu přejděte do složky vašeho projektu.
+2. Na příkazovém řádku, použijte `cd` příkazu přejděte do složky vašeho projektu.
 
-3.  Generovat soubor s klíčem s názvem MyControls.snk spuštěním následujícího příkazu.
+3. Generovat soubor s klíčem s názvem MyControls.snk spuštěním následujícího příkazu.
 
     ```
     Sn.exe -k MyControls.snk
     ```
 
-4.  Zahrnout soubor klíče ve vašem projektu, klikněte pravým tlačítkem na název projektu v Průzkumníku řešení a potom klikněte na tlačítko **vlastnosti**. V Návrháři projektu, klikněte na tlačítko **podepisování** kartu, vyberte **podepsat sestavení** zaškrtněte políčko a potom přejděte k vašemu souboru s klíčem.
+4. Zahrnout soubor klíče ve vašem projektu, klikněte pravým tlačítkem na název projektu v Průzkumníku řešení a potom klikněte na tlačítko **vlastnosti**. V Návrháři projektu, klikněte na tlačítko **podepisování** kartu, vyberte **podepsat sestavení** zaškrtněte políčko a potom přejděte k vašemu souboru s klíčem.
 
-5.  Sestavte řešení. Sestavení vytvoří knihovnu DLL s názvem MyControls.dll.
+5. Sestavte řešení. Sestavení vytvoří knihovnu DLL s názvem MyControls.dll.
 
 ## <a name="implementing-the-wpf-host-application"></a>Implementace hostitele aplikace WPF
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Hostovat aplikace používá <xref:System.Windows.Forms.Integration.WindowsFormsHost> ovládacího prvku na hostitele `MyControl1`. Aplikace zpracovává `OnButtonClick` události přijímat data z ovládacího prvku. Má také kolekce, která vám umožní změnit některé vlastnosti ovládacího prvku z přepínačů [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace. Následující obrázek ukazuje dokončenou aplikaci.
@@ -136,25 +136,25 @@ Následující obrázek ukazuje hotové aplikace včetně ovládací prvek vlož
 ### <a name="creating-the-project"></a>Vytvoření projektu
  Ke spuštění projektu:
 
-1.  Otevřít [!INCLUDE[TLA2#tla_visualstu](../../../../includes/tla2sharptla-visualstu-md.md)]a vyberte **nový projekt**.
+1. Otevřít [!INCLUDE[TLA2#tla_visualstu](../../../../includes/tla2sharptla-visualstu-md.md)]a vyberte **nový projekt**.
 
-2.  V okně kategorii, vyberte **aplikace WPF** šablony.
+2. V okně kategorii, vyberte **aplikace WPF** šablony.
 
-3.  Název nového projektu `WpfHost`.
+3. Název nového projektu `WpfHost`.
 
-4.  Pro umístění zadejte stejnou složku nejvyšší úrovně, obsahující projekt MyControls.
+4. Pro umístění zadejte stejnou složku nejvyšší úrovně, obsahující projekt MyControls.
 
-5.  Klikněte na tlačítko **OK** pro vytvoření projektu.
+5. Klikněte na tlačítko **OK** pro vytvoření projektu.
 
  Musíte také přidat odkazy na knihovnu DLL, která obsahuje `MyControl1` a jiná sestavení.
 
-1.  Klikněte pravým tlačítkem na název projektu v Průzkumníku řešení a vyberte **přidat odkaz**.
+1. Klikněte pravým tlačítkem na název projektu v Průzkumníku řešení a vyberte **přidat odkaz**.
 
-2.  Klikněte na tlačítko **Procházet** kartu a přejděte do složky, která obsahuje MyControls.dll. V tomto návodu je této složky MyControls\bin\Debug.
+2. Klikněte na tlačítko **Procházet** kartu a přejděte do složky, která obsahuje MyControls.dll. V tomto návodu je této složky MyControls\bin\Debug.
 
-3.  Vyberte MyControls.dll a potom klikněte na tlačítko **OK**.
+3. Vyberte MyControls.dll a potom klikněte na tlačítko **OK**.
 
-4.  Přidáte odkaz na sestavení WindowsFormsIntegration, který se nazývá WindowsFormsIntegration.dll.
+4. Přidáte odkaz na sestavení WindowsFormsIntegration, který se nazývá WindowsFormsIntegration.dll.
 
 ### <a name="implementing-the-basic-layout"></a>Implementace základní rozložení
  [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] Hostitele je příslušná aplikace implementovaná v souboru MainWindow.xaml. Tento soubor obsahuje [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] kód, který definuje rozložení a hostuje ovládací prvek Windows Forms. Aplikaci je rozdělené do tří oblastí:

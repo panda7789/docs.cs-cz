@@ -2,12 +2,12 @@
 title: Účastníci sledování
 ms.date: 03/30/2017
 ms.assetid: f13e360c-eeb7-4a49-98a0-8f6a52d64f68
-ms.openlocfilehash: 334815c3c928790569846d02d87e9d1dbba889ef
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 6c42712300baa6d7e12b9a29d94c925caaad5141
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59138824"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59340175"
 ---
 # <a name="tracking-participants"></a>Účastníci sledování
 Sledování účastníci jsou body rozšiřitelnosti, které umožňují vývojář pracovního postupu pro přístup k <xref:System.Activities.Tracking.InteropTrackingRecord.TrackingRecord%2A> objektů a jejich zpracování. [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] zahrnuje účastník standardní sledování, který zapíše záznamy sledování jako události trasování událostí pro Windows (ETW). Je-li který nesplňuje vaše požadavky, můžete také napsat vlastní sledování účastník.  
@@ -81,13 +81,13 @@ Sledování účastníci jsou body rozšiřitelnosti, které umožňují vývoj�
   
 #### <a name="to-enable-viewing-the-tracking-records-in-event-viewer"></a>Chcete-li povolit zobrazení záznamů sledování v prohlížeči událostí  
   
-1.  Spusťte Prohlížeč událostí (EVENTVWR. SOUBOR EXE)  
+1. Spusťte Prohlížeč událostí (EVENTVWR. SOUBOR EXE)  
   
-2.  Vyberte **Prohlížeč událostí, protokoly aplikací a služeb, Microsoft, Windows, aplikace Server-**.  
+2. Vyberte **Prohlížeč událostí, protokoly aplikací a služeb, Microsoft, Windows, aplikace Server-**.  
   
-3.  Klikněte pravým tlačítkem a ujistěte se, že **zobrazení, zobrazení a analýzu protokolů ladění** zaškrtnuto. Pokud tomu tak není, vyberte ho, aby se vedle něj zobrazí zaškrtávací políčko. Zobrazí se **analytické**, **výkonu**, a **ladění** protokoly.  
+3. Klikněte pravým tlačítkem a ujistěte se, že **zobrazení, zobrazení a analýzu protokolů ladění** zaškrtnuto. Pokud tomu tak není, vyberte ho, aby se vedle něj zobrazí zaškrtávací políčko. Zobrazí se **analytické**, **výkonu**, a **ladění** protokoly.  
   
-4.  Klikněte pravým tlačítkem myši **analytické** přihlaste a pak vyberte **povolit protokol**. V souboru Server-Applications%4Analytic.etl %SystemRoot%\System32\Winevt\Logs\Microsoft-Windows-Application bude existovat do protokolu.  
+4. Klikněte pravým tlačítkem myši **analytické** přihlaste a pak vyberte **povolit protokol**. V souboru Server-Applications%4Analytic.etl %SystemRoot%\System32\Winevt\Logs\Microsoft-Windows-Application bude existovat do protokolu.  
   
 ## <a name="custom-tracking-participant"></a>Vlastní sledování účastník  
  Účastník sledování rozhraní API umožňuje rozšíření modulu runtime sledování s uživatelem zadaný sledování účastník, který může obsahovat vlastní logiku ke zpracování záznamů sledování vyzařovaného modulu runtime pracovního postupu. Chcete-li napsat vlastní sledování účastník, musí implementovat Vývojář `Track` metodu <xref:System.Activities.Tracking.TrackingParticipant> třídy. Tato metoda je volána, když modul runtime pracovního postupu je vyzařovaného záznamem sledování.  

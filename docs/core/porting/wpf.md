@@ -5,12 +5,12 @@ author: Thraka
 ms.author: adegeo
 ms.date: 03/27/2019
 ms.custom: ''
-ms.openlocfilehash: 80c55b45067405b1204cad0435b46b376f783c57
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 5c7e3aca0a473abb831693244d1b194985f2ef7f
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59151486"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59342203"
 ---
 # <a name="how-to-port-a-wpf-desktop-app-to-net-core"></a>Postupy: Port desktopovou aplikaci WPF až po .NET Core
 
@@ -27,7 +27,7 @@ V tomto článku najdete různé názvy umožňují určit typy souborů se pou�
 
 ## <a name="prerequisites"></a>Požadavky
 
-- [Visual Studio 2019](https://visualstudio.microsoft.com/vs/preview/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=wpf+core) pro jakékoli návrháře práce, které chcete provést.
+- [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) pro jakékoli návrháře práce, které chcete provést.
 
   Instalace následujících úlohách sady Visual Studio:
   - Vývoj desktopových aplikací .NET
@@ -38,7 +38,7 @@ V tomto článku najdete různé názvy umožňují určit typy souborů se pou�
 - Nainstalujte nejnovější [.NET Core 3.0](https://aka.ms/netcore3download) ve verzi preview.
 
 >[!NOTE]
->**Visual Studio 2017** nepodporuje projekty .NET Core 3.0. **Visual Studio. 2019 ve verzi Preview nebo RC** podporuje projekty .NET Core 3.0, ale zatím nepodporuje vizuálního návrháře pro projekty .NET Core 3.0 WPF. Do vizuálního návrháře použít, musí mít projekt .NET WPF ve vašem řešení, která sdílí soubory s projektem .NET Core.
+>**Visual Studio 2017** nepodporuje projekty .NET Core 3.0. **Visual Studio 2019** podporuje projekty .NET Core 3.0, ale zatím nepodporuje vizuálního návrháře pro projekty .NET Core 3.0 WPF. Do vizuálního návrháře použít, musí mít projekt .NET WPF ve vašem řešení, která sdílí soubory s projektem .NET Core.
 
 ### <a name="consider"></a>Vezměte v úvahu
 
@@ -60,7 +60,7 @@ Při přenesení aplikace rozhraní .NET Framework WPF, existuje několik věcí
 
     Je vždy vhodné použít nejnovější verzi balíčků NuGet před nějaká migrace. Pokud aplikace odkazuje na všechny balíčky NuGet, můžete je aktualizujte na nejnovější verzi. Zajistěte, aby že vaše aplikace sestavena úspěšně. Po upgradu, pokud nejsou žádné chyby balíčku, provést downgrade balíčku na nejnovější verzi, která nedojde k narušení kódu.
 
-01. Visual Studio. 2019 ve verzi Preview nebo RC zatím nepodporuje WPF Designer pro .NET Core 3.0
+01. Visual Studio 2019 zatím nepodporuje WPF Designer pro .NET Core 3.0
 
     V současné době je potřeba nechat existující soubor projektu WPF rozhraní .NET Framework, pokud chcete použít Návrhář WPF v sadě Visual Studio.
 
@@ -215,7 +215,7 @@ Předchozí příkaz přidá následující **MyWPFCore.csproj** projektu:
 
 ## <a name="wpf-designer"></a>návrhář WPF
 
-Jak je uvedeno v tomto článku podporuje Visual Studio. 2019 ve verzi Preview nebo RC Návrhář WPF pouze v projektech .NET Framework. Tím, že vytvoříte projekt .NET Core vedle sebe, můžete otestovat projekt pomocí .NET Core při použití rozhraní .NET Framework projektu pro návrh formulářů. Soubor řešení obsahuje projekty rozhraní .NET Framework a .NET Core. Přidat a návrh formulářů a ovládacích prvků v rozhraní .NET Framework projektu a na základě na vzory souborů glob jsme přidali do projektů .NET Core, všechny nové nebo změněné soubory se automaticky zahrnou v projektech .NET Core.
+Jak je uvedeno v tomto článku podporuje Visual Studio 2019 Návrhář WPF pouze v projektech .NET Framework. Tím, že vytvoříte projekt .NET Core vedle sebe, můžete otestovat projekt pomocí .NET Core při použití rozhraní .NET Framework projektu pro návrh formulářů. Soubor řešení obsahuje projekty rozhraní .NET Framework a .NET Core. Přidat a návrh formulářů a ovládacích prvků v rozhraní .NET Framework projektu a na základě na vzory souborů glob jsme přidali do projektů .NET Core, všechny nové nebo změněné soubory se automaticky zahrnou v projektech .NET Core.
 
 Jakmile Visual Studio 2019 podporuje návrháře WPF, můžete zkopírovat a vložit obsah souboru projektu .NET Core do souboru projektu rozhraní .NET Framework. Odstraňte glob vzory souborů, přidá se `<Source>` a `<EmbeddedResource>` položky. Vyřešte cest pro všechny odkazy projektu používají ve vaší aplikaci. To efektivně provede upgrade rozhraní .NET Framework projektu do projektu .NET Core.
  

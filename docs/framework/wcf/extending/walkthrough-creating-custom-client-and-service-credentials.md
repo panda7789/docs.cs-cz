@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 2b5ba5c3-0c6c-48e9-9e46-54acaec443ba
-ms.openlocfilehash: 4a69cf01519ea21f61e0c142039e4d2fe9a3c0e1
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: db137eb84108c6adbbf04a380934bb6da6936d61
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59191689"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59343048"
 ---
 # <a name="walkthrough-creating-custom-client-and-service-credentials"></a>Návod: Vytvoření vlastního klienta a pověření služby
 Toto téma ukazuje, jak implementovat vlastní klienta a pověření služby a jak pomocí vlastních přihlašovacích údajů z kódu aplikace.  
@@ -50,40 +50,40 @@ Toto téma ukazuje, jak implementovat vlastní klienta a pověření služby a j
   
 #### <a name="to-implement-custom-client-credentials"></a>K implementaci vlastních klientských přihlašovacích údajů  
   
-1.  Definovat nové třídy odvozené od <xref:System.ServiceModel.Description.ClientCredentials> třídy.  
+1. Definovat nové třídy odvozené od <xref:System.ServiceModel.Description.ClientCredentials> třídy.  
   
-2.  Volitelné. Přidáte nové metody nebo vlastnosti pro nové typy přihlašovacích údajů. Pokud nepřidáte nové typy přihlašovacích údajů, tento krok přeskočte. Následující příklad přidá `CreditCardNumber` vlastnost.  
+2. Volitelné. Přidáte nové metody nebo vlastnosti pro nové typy přihlašovacích údajů. Pokud nepřidáte nové typy přihlašovacích údajů, tento krok přeskočte. Následující příklad přidá `CreditCardNumber` vlastnost.  
   
-3.  Přepsat <xref:System.ServiceModel.Security.SecurityCredentialsManager.CreateSecurityTokenManager%2A> metody. Tato metoda je automaticky volána Infrastruktura zabezpečení WCF při použití vlastních klientských přihlašovacích údajů. Tato metoda je zodpovědný za vytváření a vrací instanci implementaci <xref:System.IdentityModel.Selectors.SecurityTokenManager> třídy.  
+3. Přepsat <xref:System.ServiceModel.Security.SecurityCredentialsManager.CreateSecurityTokenManager%2A> metody. Tato metoda je automaticky volána Infrastruktura zabezpečení WCF při použití vlastních klientských přihlašovacích údajů. Tato metoda je zodpovědný za vytváření a vrací instanci implementaci <xref:System.IdentityModel.Selectors.SecurityTokenManager> třídy.  
   
     > [!IMPORTANT]
     >  Je důležité si uvědomit, že <xref:System.ServiceModel.Security.SecurityCredentialsManager.CreateSecurityTokenManager%2A> je metoda potlačena za účelem vytvoření vlastní bezpečnostní správce tokenů. Správce tokenů zabezpečení, odvozený z <xref:System.ServiceModel.ClientCredentialsSecurityTokenManager>, musí vracet vlastního zprostředkovatele tokenů zabezpečení, odvozený z <xref:System.IdentityModel.Selectors.SecurityTokenProvider>, k vytvoření tohoto tokenu zabezpečení. Pokud nepostupujte podle tohoto vzoru pro vytváření tokenů zabezpečení, může vaše aplikace fungovat správně při <xref:System.ServiceModel.ChannelFactory> objekty jsou uložené v mezipaměti (což je výchozí chování pro proxy klienta WCF), potenciálně výsledkem zvýšení oprávnění. Objekt vlastní přihlašovací údaje se uloží do mezipaměti jako součást <xref:System.ServiceModel.ChannelFactory>. Nicméně vlastní <xref:System.IdentityModel.Selectors.SecurityTokenManager> se vytvoří v každé volání, což snižuje riziko zneužití ohrožení zabezpečení, tak dlouho, dokud token vytvoření logiky, nachází ve <xref:System.IdentityModel.Selectors.SecurityTokenManager>.  
   
-4.  Přepsat <xref:System.ServiceModel.Description.ClientCredentials.CloneCore%2A> metody.  
+4. Přepsat <xref:System.ServiceModel.Description.ClientCredentials.CloneCore%2A> metody.  
   
      [!code-csharp[c_CustomCredentials#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customcredentials/cs/source.cs#1)]
      [!code-vb[c_CustomCredentials#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customcredentials/vb/client/client.vb#1)]  
   
 #### <a name="to-implement-a-custom-client-security-token-manager"></a>K implementaci správce tokenů zabezpečení vlastního klienta  
   
-1.  Definovat nové třídy odvozené od <xref:System.ServiceModel.ClientCredentialsSecurityTokenManager>.  
+1. Definovat nové třídy odvozené od <xref:System.ServiceModel.ClientCredentialsSecurityTokenManager>.  
   
-2.  Volitelné. Přepsat <xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenProvider%28System.IdentityModel.Selectors.SecurityTokenRequirement%29> metodu, pokud vlastní <xref:System.IdentityModel.Selectors.SecurityTokenProvider> implementace se musí vytvořit. Další informace o poskytovatelích vlastní bezpečnostní token, naleznete v tématu [jak: Vytvoření vlastního zprostředkovatele tokenů zabezpečení](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-provider.md).  
+2. Volitelné. Přepsat <xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenProvider%28System.IdentityModel.Selectors.SecurityTokenRequirement%29> metodu, pokud vlastní <xref:System.IdentityModel.Selectors.SecurityTokenProvider> implementace se musí vytvořit. Další informace o poskytovatelích vlastní bezpečnostní token, naleznete v tématu [jak: Vytvoření vlastního zprostředkovatele tokenů zabezpečení](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-provider.md).  
   
-3.  Volitelné. Přepsat <xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenAuthenticator%28System.IdentityModel.Selectors.SecurityTokenRequirement%2CSystem.IdentityModel.Selectors.SecurityTokenResolver%40%29> metodu, pokud vlastní <xref:System.IdentityModel.Selectors.SecurityTokenAuthenticator> implementace se musí vytvořit. Další informace o ověřovací data tokenu zabezpečení vlastní najdete v tématu [jak: Vytvořit ověřovací data tokenu zabezpečení vlastní](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-authenticator.md).  
+3. Volitelné. Přepsat <xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenAuthenticator%28System.IdentityModel.Selectors.SecurityTokenRequirement%2CSystem.IdentityModel.Selectors.SecurityTokenResolver%40%29> metodu, pokud vlastní <xref:System.IdentityModel.Selectors.SecurityTokenAuthenticator> implementace se musí vytvořit. Další informace o ověřovací data tokenu zabezpečení vlastní najdete v tématu [jak: Vytvořit ověřovací data tokenu zabezpečení vlastní](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-authenticator.md).  
   
-4.  Volitelné. Přepsat <xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenSerializer%2A> metodu, pokud vlastní <xref:System.IdentityModel.Selectors.SecurityTokenSerializer> musí být vytvořeny. Další informace o zabezpečení vlastních tokenů a vlastní bezpečnostní token serializátory najdete v tématu [jak: Vytvoření vlastního tokenu](../../../../docs/framework/wcf/extending/how-to-create-a-custom-token.md).  
+4. Volitelné. Přepsat <xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenSerializer%2A> metodu, pokud vlastní <xref:System.IdentityModel.Selectors.SecurityTokenSerializer> musí být vytvořeny. Další informace o zabezpečení vlastních tokenů a vlastní bezpečnostní token serializátory najdete v tématu [jak: Vytvoření vlastního tokenu](../../../../docs/framework/wcf/extending/how-to-create-a-custom-token.md).  
   
      [!code-csharp[c_CustomCredentials#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customcredentials/cs/source.cs#2)]
      [!code-vb[c_CustomCredentials#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customcredentials/vb/client/client.vb#2)]  
   
 #### <a name="to-use-a-custom-client-credentials-from-application-code"></a>Použití vlastního klienta přihlašovacích údajů z kódu aplikace  
   
-1.  Vytvořte instanci generovaného klienta, který představuje rozhraní služby nebo vytvoření instance <xref:System.ServiceModel.ChannelFactory> odkazuje na službu chcete komunikovat.  
+1. Vytvořte instanci generovaného klienta, který představuje rozhraní služby nebo vytvoření instance <xref:System.ServiceModel.ChannelFactory> odkazuje na službu chcete komunikovat.  
   
-2.  Odebrat přihlašovací údaje chování klient poskytovaný systémem než <xref:System.ServiceModel.Description.ServiceEndpoint.Behaviors%2A> kolekce, která je přístupná prostřednictvím <xref:System.ServiceModel.ChannelFactory.Endpoint%2A> vlastnost.  
+2. Odebrat přihlašovací údaje chování klient poskytovaný systémem než <xref:System.ServiceModel.Description.ServiceEndpoint.Behaviors%2A> kolekce, která je přístupná prostřednictvím <xref:System.ServiceModel.ChannelFactory.Endpoint%2A> vlastnost.  
   
-3.  Vytvořit novou instanci třídy přihlašovací údaje vlastního klienta a přidat ji do <xref:System.ServiceModel.Description.ServiceEndpoint.Behaviors%2A> kolekce, která je přístupná prostřednictvím <xref:System.ServiceModel.ChannelFactory.Endpoint%2A> vlastnost.  
+3. Vytvořit novou instanci třídy přihlašovací údaje vlastního klienta a přidat ji do <xref:System.ServiceModel.Description.ServiceEndpoint.Behaviors%2A> kolekce, která je přístupná prostřednictvím <xref:System.ServiceModel.ChannelFactory.Endpoint%2A> vlastnost.  
   
      [!code-csharp[c_CustomCredentials#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customcredentials/cs/source.cs#3)]
      [!code-vb[c_CustomCredentials#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customcredentials/vb/client/client.vb#3)]  
@@ -94,15 +94,15 @@ Toto téma ukazuje, jak implementovat vlastní klienta a pověření služby a j
   
 #### <a name="creating-a-configuration-handler-for-custom-client-credentials"></a>Vytvoření obslužné rutiny konfiguračního pro přihlašovací údaje vlastního klienta  
   
-1.  Definovat nové třídy odvozené od <xref:System.ServiceModel.Configuration.ClientCredentialsElement>.  
+1. Definovat nové třídy odvozené od <xref:System.ServiceModel.Configuration.ClientCredentialsElement>.  
   
-2.  Volitelné. Přidání vlastnosti pro všechny další konfigurační parametry, které chcete zveřejnit prostřednictvím konfigurace aplikace. Následující příklad přidá jednu vlastnost s názvem `CreditCardNumber`.  
+2. Volitelné. Přidání vlastnosti pro všechny další konfigurační parametry, které chcete zveřejnit prostřednictvím konfigurace aplikace. Následující příklad přidá jednu vlastnost s názvem `CreditCardNumber`.  
   
-3.  Přepsat <xref:System.ServiceModel.Configuration.BehaviorExtensionElement.BehaviorType%2A> vlastnost má být vrácen typ vlastního klienta přihlašovacích údajů třídy vytvořené pomocí konfiguračního elementu.  
+3. Přepsat <xref:System.ServiceModel.Configuration.BehaviorExtensionElement.BehaviorType%2A> vlastnost má být vrácen typ vlastního klienta přihlašovacích údajů třídy vytvořené pomocí konfiguračního elementu.  
   
-4.  Přepsat <xref:System.ServiceModel.Configuration.BehaviorExtensionElement.CreateBehavior%2A> metody. Metoda je zodpovědný za vytváření a vrací instanci třídy vlastních přihlašovacích údajů na základě nastavení načíst z konfiguračního souboru. Volání základní <xref:System.ServiceModel.Configuration.ClientCredentialsElement.ApplyConfiguration%28System.ServiceModel.Description.ClientCredentials%29> z tuto metodu za účelem nastavení přihlašovacích údajů poskytované systémem načíst metodu načtení do vaší instance vlastního klienta přihlašovacích údajů.  
+4. Přepsat <xref:System.ServiceModel.Configuration.BehaviorExtensionElement.CreateBehavior%2A> metody. Metoda je zodpovědný za vytváření a vrací instanci třídy vlastních přihlašovacích údajů na základě nastavení načíst z konfiguračního souboru. Volání základní <xref:System.ServiceModel.Configuration.ClientCredentialsElement.ApplyConfiguration%28System.ServiceModel.Description.ClientCredentials%29> z tuto metodu za účelem nastavení přihlašovacích údajů poskytované systémem načíst metodu načtení do vaší instance vlastního klienta přihlašovacích údajů.  
   
-5.  Volitelné. Pokud jste přidali další vlastnosti v kroku 2, je nutné přepsat <xref:System.Configuration.ConfigurationElement.Properties%2A> vlastnost-li se zaregistrovat další konfigurační nastavení pro rozhraní konfigurace rozpoznány. Kombinovat vlastnosti s vlastnostmi základní třídy umožňující poskytované systémem nastavení, které se dá nakonfigurovat přes tento prvek konfigurace vlastních klientských přihlašovacích údajů.  
+5. Volitelné. Pokud jste přidali další vlastnosti v kroku 2, je nutné přepsat <xref:System.Configuration.ConfigurationElement.Properties%2A> vlastnost-li se zaregistrovat další konfigurační nastavení pro rozhraní konfigurace rozpoznány. Kombinovat vlastnosti s vlastnostmi základní třídy umožňující poskytované systémem nastavení, které se dá nakonfigurovat přes tento prvek konfigurace vlastních klientských přihlašovacích údajů.  
   
      [!code-csharp[c_CustomCredentials#7](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customcredentials/cs/source.cs#7)]
      [!code-vb[c_CustomCredentials#7](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customcredentials/vb/service/service.vb#7)]  
@@ -111,11 +111,11 @@ Toto téma ukazuje, jak implementovat vlastní klienta a pověření služby a j
   
 #### <a name="to-register-and-use-a-custom-client-credentials-configuration-handler-in-the-application-configuration"></a>K registraci a používání vlastního klienta přihlašovacích údajů obslužné rutiny konfiguračního v konfiguraci aplikace  
   
-1.  Přidat <`extensions`> element a <`behaviorExtensions`> element do konfiguračního souboru.  
+1. Přidat <`extensions`> element a <`behaviorExtensions`> element do konfiguračního souboru.  
   
-2.  Přidat <`add`> element <`behaviorExtensions`> element a nastavte `name` atribut na odpovídající hodnotu.  
+2. Přidat <`add`> element <`behaviorExtensions`> element a nastavte `name` atribut na odpovídající hodnotu.  
   
-3.  Nastavte `type` atribut plně kvalifikovaný název typu. Zahrnují také název sestavení a dalších atributů sestavení.  
+3. Nastavte `type` atribut plně kvalifikovaný název typu. Zahrnují také název sestavení a dalších atributů sestavení.  
   
     ```xml  
     <system.serviceModel>  
@@ -127,7 +127,7 @@ Toto téma ukazuje, jak implementovat vlastní klienta a pověření služby a j
     <system.serviceModel>  
     ```  
   
-4.  Po registraci vaší obslužné rutiny konfiguračního elementu vlastní přihlašovací údaje lze použít ve stejném konfiguračním souboru místo poskytnuté systémem <`clientCredentials`> element. Můžete použít vlastnosti poskytované systémem a všechny nové vlastnosti, které jste přidali do vaší konfigurace implementaci obslužné rutiny. Následující příklad nastaví hodnotu vlastní vlastnosti pomocí `creditCardNumber` atribut.  
+4. Po registraci vaší obslužné rutiny konfiguračního elementu vlastní přihlašovací údaje lze použít ve stejném konfiguračním souboru místo poskytnuté systémem <`clientCredentials`> element. Můžete použít vlastnosti poskytované systémem a všechny nové vlastnosti, které jste přidali do vaší konfigurace implementaci obslužné rutiny. Následující příklad nastaví hodnotu vlastní vlastnosti pomocí `creditCardNumber` atribut.  
   
     ```xml  
     <behaviors>  
@@ -141,37 +141,37 @@ Toto téma ukazuje, jak implementovat vlastní klienta a pověření služby a j
   
 #### <a name="to-implement-custom-service-credentials"></a>K implementaci vlastní službu pověření  
   
-1.  Definovat nové třídy odvozené od <xref:System.ServiceModel.Description.ServiceCredentials>.  
+1. Definovat nové třídy odvozené od <xref:System.ServiceModel.Description.ServiceCredentials>.  
   
-2.  Volitelné. Přidání nových vlastností k zadání nových hodnot přihlašovacích údajů, které se přidávají rozhraní API. Pokud nepřidáte nový přihlašovací údaj hodnoty, tento krok přeskočte. Následující příklad přidá `AdditionalCertificate` vlastnost.  
+2. Volitelné. Přidání nových vlastností k zadání nových hodnot přihlašovacích údajů, které se přidávají rozhraní API. Pokud nepřidáte nový přihlašovací údaj hodnoty, tento krok přeskočte. Následující příklad přidá `AdditionalCertificate` vlastnost.  
   
-3.  Přepsat <xref:System.ServiceModel.Security.SecurityCredentialsManager.CreateSecurityTokenManager%2A> metody. Tato metoda je automaticky volána infrastruktura WCF při použití vlastních klientských přihlašovacích údajů. Metoda je zodpovědný za vytváření a vrací instanci implementaci <xref:System.IdentityModel.Selectors.SecurityTokenManager> třídy (popsaný v dalším postupu).  
+3. Přepsat <xref:System.ServiceModel.Security.SecurityCredentialsManager.CreateSecurityTokenManager%2A> metody. Tato metoda je automaticky volána infrastruktura WCF při použití vlastních klientských přihlašovacích údajů. Metoda je zodpovědný za vytváření a vrací instanci implementaci <xref:System.IdentityModel.Selectors.SecurityTokenManager> třídy (popsaný v dalším postupu).  
   
-4.  Volitelné. Přepsat <xref:System.ServiceModel.Description.ServiceCredentials.CloneCore%2A> metody. To je potřeba, pouze pokud přidat nové vlastnosti nebo interní pole k implementaci vlastních klientských přihlašovacích údajů.  
+4. Volitelné. Přepsat <xref:System.ServiceModel.Description.ServiceCredentials.CloneCore%2A> metody. To je potřeba, pouze pokud přidat nové vlastnosti nebo interní pole k implementaci vlastních klientských přihlašovacích údajů.  
   
      [!code-csharp[c_CustomCredentials#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customcredentials/cs/source.cs#4)]
      [!code-vb[c_CustomCredentials#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customcredentials/vb/service/service.vb#4)]  
   
 #### <a name="to-implement-a-custom-service-security-token-manager"></a>K implementaci vlastní službu Správce tokenů zabezpečení  
   
-1.  Definovat nové třídy odvozené od <xref:System.ServiceModel.Security.ServiceCredentialsSecurityTokenManager> třídy.  
+1. Definovat nové třídy odvozené od <xref:System.ServiceModel.Security.ServiceCredentialsSecurityTokenManager> třídy.  
   
-2.  Volitelné. Přepsat <xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenProvider%2A> metodu, pokud vlastní <xref:System.IdentityModel.Selectors.SecurityTokenProvider> implementace se musí vytvořit. Další informace o poskytovatelích vlastní bezpečnostní token, naleznete v tématu [jak: Vytvoření vlastního zprostředkovatele tokenů zabezpečení](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-provider.md).  
+2. Volitelné. Přepsat <xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenProvider%2A> metodu, pokud vlastní <xref:System.IdentityModel.Selectors.SecurityTokenProvider> implementace se musí vytvořit. Další informace o poskytovatelích vlastní bezpečnostní token, naleznete v tématu [jak: Vytvoření vlastního zprostředkovatele tokenů zabezpečení](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-provider.md).  
   
-3.  Volitelné. Přepsat <xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenAuthenticator%2A> metodu, pokud vlastní <xref:System.IdentityModel.Selectors.SecurityTokenAuthenticator> implementace se musí vytvořit. Další informace o ověřovací data tokenu zabezpečení vlastní najdete v tématu [jak: Vytvořit vlastní ověřovací data tokenu zabezpečení](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-authenticator.md) tématu.  
+3. Volitelné. Přepsat <xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenAuthenticator%2A> metodu, pokud vlastní <xref:System.IdentityModel.Selectors.SecurityTokenAuthenticator> implementace se musí vytvořit. Další informace o ověřovací data tokenu zabezpečení vlastní najdete v tématu [jak: Vytvořit vlastní ověřovací data tokenu zabezpečení](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-authenticator.md) tématu.  
   
-4.  Volitelné. Přepsat <xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenSerializer%28System.IdentityModel.Selectors.SecurityTokenVersion%29> metodu, pokud vlastní <xref:System.IdentityModel.Selectors.SecurityTokenSerializer> musí být vytvořeny. Další informace o zabezpečení vlastních tokenů a vlastní bezpečnostní token serializátory najdete v tématu [jak: Vytvoření vlastního tokenu](../../../../docs/framework/wcf/extending/how-to-create-a-custom-token.md).  
+4. Volitelné. Přepsat <xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenSerializer%28System.IdentityModel.Selectors.SecurityTokenVersion%29> metodu, pokud vlastní <xref:System.IdentityModel.Selectors.SecurityTokenSerializer> musí být vytvořeny. Další informace o zabezpečení vlastních tokenů a vlastní bezpečnostní token serializátory najdete v tématu [jak: Vytvoření vlastního tokenu](../../../../docs/framework/wcf/extending/how-to-create-a-custom-token.md).  
   
      [!code-csharp[c_CustomCredentials#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customcredentials/cs/source.cs#5)]
      [!code-vb[c_CustomCredentials#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customcredentials/vb/service/service.vb#5)]  
   
 #### <a name="to-use-custom-service-credentials-from-application-code"></a>Pomocí přihlašovacích údajů vlastní službu od kódu aplikace  
   
-1.  Vytvoření instance <xref:System.ServiceModel.ServiceHost>.  
+1. Vytvoření instance <xref:System.ServiceModel.ServiceHost>.  
   
-2.  Odebrat chování přihlašovací údaje služby poskytované systémem od <xref:System.ServiceModel.Description.ServiceDescription.Behaviors%2A> kolekce.  
+2. Odebrat chování přihlašovací údaje služby poskytované systémem od <xref:System.ServiceModel.Description.ServiceDescription.Behaviors%2A> kolekce.  
   
-3.  Vytvořit novou instanci třídy pověření vlastní služby a přidejte ji tak <xref:System.ServiceModel.Description.ServiceDescription.Behaviors%2A> kolekce.  
+3. Vytvořit novou instanci třídy pověření vlastní služby a přidejte ji tak <xref:System.ServiceModel.Description.ServiceDescription.Behaviors%2A> kolekce.  
   
      [!code-csharp[c_CustomCredentials#6](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customcredentials/cs/source.cs#6)]
      [!code-vb[c_CustomCredentials#6](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customcredentials/vb/service/service.vb#6)]  

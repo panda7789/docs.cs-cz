@@ -7,12 +7,12 @@ helpviewer_keywords:
 - accessing embedded objects
 - embedded objects, UI Automation
 ms.assetid: 93fdfbb9-0025-4b72-8ca0-0714adbb70d5
-ms.openlocfilehash: 136073b3ef1c5463ff078efd7c173b7446f0ca48
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: c8dc4ba5a17ca6a950d7ef3e0835f31463979bd3
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59077911"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59342515"
 ---
 # <a name="textpattern-and-embedded-objects-overview"></a>TextPattern a vložené objekty – přehled
 > [!NOTE]
@@ -43,13 +43,13 @@ Příklad textového datového proudu s vložené objekty a jejich rozsah rozpě
   
  V případě potřeby procházet obsah rozsah textu sérii kroků se podílejí na pozadí, aby <xref:System.Windows.Automation.Text.TextPatternRange.Move%2A> metodu úspěšně provést.  
   
-1.  Rozsah textu je normalizovány; To znamená, je mimo rozsah textu sbaleny do na degenerovanou rozsah <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.Start> koncový bod, díky čemuž je <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.End> nadbytečný koncový bod. Tento krok je potřeba odstranit nejednoznačnost v situacích, kdy rozsah textu zahrnuje <xref:System.Windows.Automation.Text.TextUnit> hranice: například `{The URL https://www.microsoft.com is embedded in text` kde "{" a "}" jsou koncové body rozsah textu.  
+1. Rozsah textu je normalizovány; To znamená, je mimo rozsah textu sbaleny do na degenerovanou rozsah <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.Start> koncový bod, díky čemuž je <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.End> nadbytečný koncový bod. Tento krok je potřeba odstranit nejednoznačnost v situacích, kdy rozsah textu zahrnuje <xref:System.Windows.Automation.Text.TextUnit> hranice: například `{The URL https://www.microsoft.com is embedded in text` kde "{" a "}" jsou koncové body rozsah textu.  
   
-2.  Výsledná oblast bude přesunut dozadu <xref:System.Windows.Automation.TextPattern.DocumentRange%2A> začátek požadovanou <xref:System.Windows.Automation.Text.TextUnit> hranic.  
+2. Výsledná oblast bude přesunut dozadu <xref:System.Windows.Automation.TextPattern.DocumentRange%2A> začátek požadovanou <xref:System.Windows.Automation.Text.TextUnit> hranic.  
   
-3.  Rozsah je přesunut dopředu nebo dozadu v <xref:System.Windows.Automation.TextPattern.DocumentRange%2A> podle požadovaného počtu <xref:System.Windows.Automation.Text.TextUnit> hranice.  
+3. Rozsah je přesunut dopředu nebo dozadu v <xref:System.Windows.Automation.TextPattern.DocumentRange%2A> podle požadovaného počtu <xref:System.Windows.Automation.Text.TextUnit> hranice.  
   
-4.  Rozsah je pak rozšířen ze stavu degenerovanou rozsah přesunutím <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.End> koncový bod pomocí jedné požadovaný <xref:System.Windows.Automation.Text.TextUnit> hranic.  
+4. Rozsah je pak rozšířen ze stavu degenerovanou rozsah přesunutím <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.End> koncový bod pomocí jedné požadovaný <xref:System.Windows.Automation.Text.TextUnit> hranic.  
   
  ![Přesunout & ExpandToEnclosingUnit úpravy rozsahu](../../../docs/framework/ui-automation/media/uia-textpattern-moveandexpand-examples.png "UIA_TextPattern_MoveAndExpand_Examples")  
 Příklady, jak je upraveno rozsah textu pro Move() a ExpandToEnclosingUnit()  

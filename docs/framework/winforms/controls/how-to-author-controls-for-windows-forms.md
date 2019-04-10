@@ -6,12 +6,12 @@ helpviewer_keywords:
 - UserControl class [Windows Forms], Windows Forms
 - custom controls [Windows Forms], creating
 ms.assetid: 7570e982-545b-4c3a-a7c7-55581d313400
-ms.openlocfilehash: 5240b9aaaf4d73cb2899a9003f9658dbd8958f3c
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 844d165cef05e46d25960f113af3bf99dd35e14f
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59224335"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59340331"
 ---
 # <a name="how-to-author-controls-for-windows-forms"></a>Postupy: Vytváření ovládacích prvků pro Windows Forms
 Ovládací prvek představuje grafické propojení mezi uživateli a program. Ovládací prvek můžete zadat nebo zpracování dat, přijímají vstup uživatele, reagovat na události nebo provádět spoustu dalších funkcí, které se připojují uživatele a aplikace. Vzhledem k tomu, že ovládací prvek je v podstatě komponent pomocí grafického rozhraní, může sloužit všechny funkce, které nemá komponenty, a poskytnout interakce s uživatelem. Vytvoření ovládacích prvků pro obsluhu zvláštní účely a vytváření ovládacích prvků je jenom další úlohou programování. Následující kroky se na základě těchto skutečností představují Přehled ovládacího prvku proces tvorby. Další informace o odkazech na jednotlivé kroky.  
@@ -23,7 +23,7 @@ Ovládací prvek představuje grafické propojení mezi uživateli a program. Ov
   
 ### <a name="to-author-a-control"></a>Chcete-li vytvořit ovládací prvek  
   
-1.  Zjistěte, co chcete ovládací prvek k provedení, nebo jaké části bude přehrávat ve vaší aplikaci. Faktory vzít v úvahu, jsou:  
+1. Zjistěte, co chcete ovládací prvek k provedení, nebo jaké části bude přehrávat ve vaší aplikaci. Faktory vzít v úvahu, jsou:  
   
     -   Jaký druh grafického rozhraní je potřeba?  
   
@@ -33,19 +33,19 @@ Ovládací prvek představuje grafické propojení mezi uživateli a program. Ov
   
     -   Dosáhnete toho, funkce, které jsou kombinací několika ovládacích prvků Windows Forms potřebujete?  
   
-2.  Pokud potřebujete objektový model pro ovládací prvek, určíte, jak bude distribuované v rámci modelu objektu funkce a rozdělení funkcí mezi ovládacím prvkem a podobjektů. Objektový model může být užitečné, pokud plánujete komplexní ovládací prvek nebo chtít začlenit několika funkcí.  
+2. Pokud potřebujete objektový model pro ovládací prvek, určíte, jak bude distribuované v rámci modelu objektu funkce a rozdělení funkcí mezi ovládacím prvkem a podobjektů. Objektový model může být užitečné, pokud plánujete komplexní ovládací prvek nebo chtít začlenit několika funkcí.  
   
-3.  Určit typ ovládacího prvku (například uživatelský ovládací prvek, vlastní ovládací prvek, zděděný ovládací prvek Windows Forms) budete potřebovat. Podrobnosti najdete v tématu [doporučení ohledně typu ovládacího prvku](control-type-recommendations.md) a [typy Custom Controls](varieties-of-custom-controls.md).  
+3. Určit typ ovládacího prvku (například uživatelský ovládací prvek, vlastní ovládací prvek, zděděný ovládací prvek Windows Forms) budete potřebovat. Podrobnosti najdete v tématu [doporučení ohledně typu ovládacího prvku](control-type-recommendations.md) a [typy Custom Controls](varieties-of-custom-controls.md).  
   
-4.  Express funkce jako vlastnosti, metody a události ovládacího prvku a jeho podřízeným objektům nebo podpůrné struktury a přiřaďte úrovně přístupu odpovídající (například veřejné, chráněné a tak dále).  
+4. Express funkce jako vlastnosti, metody a události ovládacího prvku a jeho podřízeným objektům nebo podpůrné struktury a přiřaďte úrovně přístupu odpovídající (například veřejné, chráněné a tak dále).  
   
-5.  Pokud potřebujete vlastní vykreslování ovládacího prvku, přidejte kód pro něj. Podrobnosti najdete v tématu [vlastní ovládací prvek Malování a vykreslování](custom-control-painting-and-rendering.md).  
+5. Pokud potřebujete vlastní vykreslování ovládacího prvku, přidejte kód pro něj. Podrobnosti najdete v tématu [vlastní ovládací prvek Malování a vykreslování](custom-control-painting-and-rendering.md).  
   
-6.  Pokud váš ovládací prvek dědí z <xref:System.Windows.Forms.UserControl>, můžete otestovat jeho chování za běhu sestavení projektu ovládacího prvku a jeho spuštěním **kontejner testu UserControl**. Další informace najdete v tématu [jak: Testování běhového chování UserControl](how-to-test-the-run-time-behavior-of-a-usercontrol.md).  
+6. Pokud váš ovládací prvek dědí z <xref:System.Windows.Forms.UserControl>, můžete otestovat jeho chování za běhu sestavení projektu ovládacího prvku a jeho spuštěním **kontejner testu UserControl**. Další informace najdete v tématu [jak: Testování běhového chování UserControl](how-to-test-the-run-time-behavior-of-a-usercontrol.md).  
   
-7.  Můžete také testování a ladění ovládacího prvku vytvořením nového projektu, jako je například aplikace Windows a že ho umístíte do kontejneru. Tento proces je znázorněn v rámci [názorný postup: Vytvoření složeného ovládacího prvku s jazykem Visual Basic](walkthrough-authoring-a-composite-control-with-visual-basic.md).  
+7. Můžete také testování a ladění ovládacího prvku vytvořením nového projektu, jako je například aplikace Windows a že ho umístíte do kontejneru. Tento proces je znázorněn v rámci [názorný postup: Vytvoření složeného ovládacího prvku s jazykem Visual Basic](walkthrough-authoring-a-composite-control-with-visual-basic.md).  
   
-8.  Při přidávání jednotlivých funkcí, přidání funkcí do projektu testu vykonávat nové funkce.  
+8. Při přidávání jednotlivých funkcí, přidání funkcí do projektu testu vykonávat nové funkce.  
   
 9. Zopakujte rafinace návrhu.  
   

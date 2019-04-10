@@ -14,12 +14,12 @@ helpviewer_keywords:
 - comments
 - code comments
 ms.assetid: 90136fba-22eb-49f9-ba81-63db629b4a47
-ms.openlocfilehash: a81aa6ac0716b94625c0ce7868730d55d062e3e4
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: a8094397ff2a076cf474d735e65298b3d2f0a9cd
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58814637"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59343009"
 ---
 # <a name="comments-in-code-visual-basic"></a>Komentáře v kódu (Visual Basic)
 Při prohlížení příklady kódu, můžete často narazit na symbol komentáře (`'`). Tento symbol instruuje kompilátor jazyka Visual Basic, aby ignoroval text ním následuje nebo *komentář*. Komentáře jsou stručné vysvětlivky doplněné do kódu kvůli lepší orientaci těch, kteří si ho prohlížejí.  
@@ -54,7 +54,7 @@ Při prohlížení příklady kódu, můžete často narazit na symbol komentá�
   
 -   Komentáře nemohou následovat za posloupností pokračování řádku na stejném řádku.  
   
- Můžete přidat nebo odebrat symboly komentáře bloku kódu tak, že vyberete jeden nebo více řádků kódu a zvolíte **komentář** (![VisualBasicWinAppCodeEditorCommentButton](../../../visual-basic/programming-guide/program-structure/media/vacommentbutton.gif "vaCommentButton ")) a **zrušit komentář** (![VisualStudioWinAppProjectUncommentButton](../../../visual-basic/programming-guide/program-structure/media/vauncommentbutton.gif "vaUncommentButton")) tlačítka **upravit**  nástrojů.  
+ Můžete přidat nebo odebrat symboly komentáře bloku kódu tak, že vyberete jeden nebo více řádků kódu a zvolíte **komentář** (![tlačítko The komentář jazyka Visual Basic v sadě Visual Studio.](./media/comments-in-code/visual-basic-comment-button.gif)) a **zrušit komentář**  (![Tlačítko zrušte komentář jazyce Visual Basic v sadě Visual Studio.](./media/comments-in-code/visual-basic-uncomment-button.gif)) tlačítka **upravit** nástrojů.  
   
 > [!NOTE]
 >  Můžete také přidat komentáře do kódu tak, že text uvodíte `REM` – klíčové slovo. Ale `'` symbolů a **komentář**/**zrušit komentář** tlačítka jsou snadněji používají a vyžadují méně místa a paměti.  
@@ -64,5 +64,5 @@ Při prohlížení příklady kódu, můžete často narazit na symbol komentá�
 - [Základní Instinkty – dokumentace kódu pomocí komentářů XML](https://msdn.microsoft.com/magazine/dd722812.aspx)
 - [Postupy: Vytvoření dokumentace XML](../../../visual-basic/programming-guide/program-structure/how-to-create-xml-documentation.md)
 - [Značky pro komentáře XML](../../../visual-basic/language-reference/xmldoc/index.md)
-- [Struktura programu a zásady týkající se kódu](../../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)
-- [Příkaz REM](../../../visual-basic/language-reference/statements/rem-statement.md)
+- [Struktura programu a pravidla týkající se kódu](../../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)
+- [REM – příkaz](../../../visual-basic/language-reference/statements/rem-statement.md)

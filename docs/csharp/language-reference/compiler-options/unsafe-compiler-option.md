@@ -7,12 +7,12 @@ helpviewer_keywords:
 - -unsafe compiler option [C#]
 - unsafe compiler option [C#]
 - /unsafe compiler option [C#]
-ms.openlocfilehash: 4a8f7d099b2cd3c1b4331c87f853b617fef505ae
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 4cfd7c82bc2cbf816164b235642c0647eeb7e5b6
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54726530"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59337328"
 ---
 # <a name="-unsafe-c-compiler-options"></a>-unsafe (možnosti kompilátoru C#)
 **-Unsafe** – možnost kompilátoru umožňuje kód, který se používá [nebezpečné](../../../csharp/language-reference/keywords/unsafe.md) ke kompilaci klíčové slovo.  
@@ -28,11 +28,11 @@ ms.locfileid: "54726530"
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Nastavení tohoto parametru kompilátoru ve vývojovém prostředí Visual Studio  
   
-1.  Otevřete v projektu **vlastnosti** stránky.  
+1. Otevřete v projektu **vlastnosti** stránky.  
   
-2.  Klikněte na tlačítko **sestavení** stránku vlastností.  
+2. Klikněte na tlačítko **sestavení** stránku vlastností.  
   
-3.  Vyberte **povolit nezabezpečený kód** zaškrtávací políčko.  
+3. Vyberte **povolit nezabezpečený kód** zaškrtávací políčko.  
   
 ### <a name="to-add-this-option-in-a-csproj-file"></a>Chcete-li přidat tuto možnost v souboru csproj
 
@@ -55,5 +55,5 @@ csc -unsafe in.cs
   
 ## <a name="see-also"></a>Viz také:
 
-- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)
+- [Možnosti kompilátoru C#](../../../csharp/language-reference/compiler-options/index.md)
 - [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

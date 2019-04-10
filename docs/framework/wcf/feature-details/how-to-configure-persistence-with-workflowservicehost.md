@@ -2,19 +2,19 @@
 title: 'Postupy: Konfigurace trvalosti pomocí třídy WorkflowServiceHost'
 ms.date: 03/30/2017
 ms.assetid: e31cd4df-13a3-4a9a-9be8-5243e0055356
-ms.openlocfilehash: 8485cfdfb3a8f62f04fc488ad28df86e609e17ad
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: b8839f42a9b8b5f4da0a1a8364c7eac5a4c06d4e
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59086660"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59337159"
 ---
 # <a name="how-to-configure-persistence-with-workflowservicehost"></a>Postupy: Konfigurace trvalosti pomocí třídy WorkflowServiceHost
 Toto téma popisuje postup konfigurace funkce SQL Store Instance pracovního postupu pro povolení trvalosti pro pracovní postupy hostované v <xref:System.ServiceModel.Activities.WorkflowServiceHost> pomocí konfiguračního souboru. Před použitím funkce SQL Store Instance pracovního postupu musíte vytvořit databázi SQL, který se používá k uchování instance pracovního postupu. Další informace najdete v tématu [jak: Povolení trvalosti SQL pro pracovní postupy a služby pracovních postupů](../../../../docs/framework/windows-workflow-foundation/how-to-enable-sql-persistence-for-workflows-and-workflow-services.md).  
   
 ### <a name="to-configure-the-sql-workflow-instance-store-in-configuration"></a>Ke konfiguraci Store Instance pracovního postupu SQL v konfiguraci  
   
-1.  Vlastnosti úložiště instancí pracovních postupů SQL je možné nakonfigurovat pomocí <xref:System.ServiceModel.Activities.Description.SqlWorkflowInstanceStoreBehavior>, chování služby, který vám umožní změnit nastavení prostřednictvím konfigurace XML. Následující příklad konfigurace ukazuje postup při konfiguraci úložiště instancí pracovních postupů SQL s použitím <`sqlWorkflowInstanceStore`> prvek chování v konfiguračním souboru.  
+1. Vlastnosti úložiště instancí pracovních postupů SQL je možné nakonfigurovat pomocí <xref:System.ServiceModel.Activities.Description.SqlWorkflowInstanceStoreBehavior>, chování služby, který vám umožní změnit nastavení prostřednictvím konfigurace XML. Následující příklad konfigurace ukazuje postup při konfiguraci úložiště instancí pracovních postupů SQL s použitím <`sqlWorkflowInstanceStore`> prvek chování v konfiguračním souboru.  
   
     ```xml  
     <serviceBehaviors>  
@@ -38,7 +38,7 @@ Toto téma popisuje postup konfigurace funkce SQL Store Instance pracovního pos
   
 ### <a name="to-configure-the-sql-workflow-instance-store-in-code"></a>Ke konfiguraci Store Instance pracovního postupu SQL v kódu  
   
-1.  Vlastnosti úložiště instancí pracovních postupů SQL je možné nakonfigurovat pomocí <xref:System.ServiceModel.Activities.Description.SqlWorkflowInstanceStoreBehavior>, chování služby, který vám umožní změnit nastavení prostřednictvím kódu. Následující příklad ukazuje, jak nakonfigurovat úložiště instancí pracovních postupů SQL s použitím <xref:System.ServiceModel.Activities.Description.SqlWorkflowInstanceStoreBehavior> prvek chování v kódu  
+1. Vlastnosti úložiště instancí pracovních postupů SQL je možné nakonfigurovat pomocí <xref:System.ServiceModel.Activities.Description.SqlWorkflowInstanceStoreBehavior>, chování služby, který vám umožní změnit nastavení prostřednictvím kódu. Následující příklad ukazuje, jak nakonfigurovat úložiště instancí pracovních postupů SQL s použitím <xref:System.ServiceModel.Activities.Description.SqlWorkflowInstanceStoreBehavior> prvek chování v kódu  
   
     ```csharp  
     host.Description.Behaviors.Add(new SqlWorkflowInstanceStoreBehavior  

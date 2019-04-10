@@ -2,12 +2,12 @@
 title: Externalizovaná aktivita Policy v rozhraní .NET Framework 4.5
 ms.date: 03/30/2017
 ms.assetid: 92fd6f92-23a1-4adf-b96a-2754ea93ad3e
-ms.openlocfilehash: 2ec358dbe2ba2b60df707d1ce580bb88e4c4ba1b
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 622b0f14281d5b068700d9e4fe03485aa1a60fcb
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57706365"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59338277"
 ---
 # <a name="externalized-policy-activity-in-net-framework-45"></a>Externalizovaná aktivita Policy v rozhraní .NET Framework 4.5
 
@@ -66,21 +66,21 @@ Tato ukázka obsahuje dva klientské aplikace: ImperativeCodeClientSample a Desi
 
 ### <a name="run-the-imperativecodeclientsample-application"></a>Spusťte aplikaci ImperativeCodeClientSample
 
-1.  Pomocí sady Visual Studio, otevřete *Policy4sample.sln* soubor řešení.
+1. Pomocí sady Visual Studio, otevřete *Policy4sample.sln* soubor řešení.
 
-2.  V **Průzkumníka řešení**, klikněte pravým tlačítkem myši **ImperativeCodeClientSample** projektu a pak vyberte **nastavit jako spouštěný projekt**.
+2. V **Průzkumníka řešení**, klikněte pravým tlačítkem myši **ImperativeCodeClientSample** projektu a pak vyberte **nastavit jako spouštěný projekt**.
 
-3.  Chcete-li spustit projekt, stiskněte **Ctrl**+**F5**.
+3. Chcete-li spustit projekt, stiskněte **Ctrl**+**F5**.
 
 ### <a name="run-the-designerclientsample-application"></a>Spusťte aplikaci DesignerClientSample
 
-1.  Pomocí sady Visual Studio, otevřete *Policy4sample.sln* soubor řešení.
+1. Pomocí sady Visual Studio, otevřete *Policy4sample.sln* soubor řešení.
 
-2.  V **Průzkumníka řešení**, klikněte pravým tlačítkem myši **DesignerClientSample** projektu a pak vyberte **nastavit jako spouštěný projekt**.
+2. V **Průzkumníka řešení**, klikněte pravým tlačítkem myši **DesignerClientSample** projektu a pak vyberte **nastavit jako spouštěný projekt**.
 
-3.  Stisknutím klávesy **Ctrl**+**Shift**+**B** ke kompilaci projektu.
+3. Stisknutím klávesy **Ctrl**+**Shift**+**B** ke kompilaci projektu.
 
-4.  Stisknutím klávesy **Ctrl**+**F5** spusťte projekt.
+4. Stisknutím klávesy **Ctrl**+**F5** spusťte projekt.
 
 > [!IMPORTANT]
 > Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).

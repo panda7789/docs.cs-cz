@@ -7,12 +7,12 @@ dev_langs:
 author: thraka
 ms.author: adegeo
 ms.date: 12/31/2018
-ms.openlocfilehash: 3ce7bbc0dfccfda7a25dfecf32e93876ddde01f1
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: e9a69c61df574ea391622ebb709c14948c71014d
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59188289"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59341722"
 ---
 # <a name="whats-new-in-net-core-30-preview-2"></a>Co je nového v .NET Core 3.0 (ve verzi Preview 2)
 
@@ -70,8 +70,8 @@ async IAsyncEnumerable<int> GetBigResultsAsync()
 
 Kromě toho, že možnost `await foreach`, můžete také vytvořit asynchronní iterátory, například iterátoru, který vrátí `IAsyncEnumerable/IAsyncEnumerator` , můžete obě `await` a `yield` v. Pro objekty, které je potřeba se dá uvolnit, můžete použít `IAsyncDisposable`, které různé typy BCL implementovat jako `Stream` a `Timer`.
 
->[!NOTE]
->Je třeba .NET Core 3.0 ve verzi Preview 2 použít asynchronní datové proudy, pokud chcete vyvíjet pomocí sady Visual Studio. 2019 ve verzi Preview 2 nebo verzi preview [ C# rozšíření pro Visual Studio Code](https://github.com/OmniSharp/omnisharp-vscode/releases/tag/v1.18.0-beta5). Pokud používáte .NET Core 3.0 ve verzi Preview 2 na příkazovém řádku, pak vše, co bude fungovat podle očekávání.
+> [!NOTE]
+> Je třeba .NET Core 3.0 ve verzi Preview 2 použít asynchronní datové proudy, pokud chcete vyvíjet s buď Visual Studio 2019 nebo verzi preview [ C# rozšíření pro Visual Studio Code](https://github.com/OmniSharp/omnisharp-vscode/releases/tag/v1.18.0-beta5). Pokud používáte .NET Core 3.0 ve verzi Preview 2 na příkazovém řádku, pak vše, co bude fungovat podle očekávání.
 
 ### <a name="using-declarations"></a>Pomocí deklarace
 
@@ -267,7 +267,7 @@ dotnet new wpf
 dotnet new winforms
 ```
 
-Visual Studio. 2019 ve verzi Preview 2 přidá **nový projekt** šablon pro .NET Core 3.0 Windows Forms a WPF. Návrháři se stále ještě není podporována. A můžete otevřít, spuštění a ladění těchto projektů v aplikaci Visual Studio 2019.
+Visual Studio 2019 přidá **nový projekt** šablon pro .NET Core 3.0 Windows Forms a WPF. Návrháři se stále ještě není podporována. A můžete otevřít, spuštění a ladění těchto projektů v aplikaci Visual Studio 2019.
 
 Visual Studio 2017 15.9 přidává možnost [povolit náhledy .NET Core](https://devblogs.microsoft.com/dotnet/net-core-tooling-update-for-visual-studio-2017-version-15-9/), ale budete muset zapnout tuto funkci a není podporováno.
 
@@ -307,7 +307,7 @@ Podělte se prosím o svůj názor na [dotnet/winforms](https://github.com/dotne
 
 [MSIX](https://docs.microsoft.com/windows/msix/) je nový formát balíčku aplikace Windows. Slouží k nasazení rozhraní .NET Core 3.0 desktopové aplikace pro Windows 10.
 
-[Projekt Windows Application Packaging](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-packaging-dot-net), k dispozici v sadě Visual Studio. 2019 ve verzi Preview 2, vám umožní vytvořit MSIX balíčky s [samostatná](../deploying/index.md#self-contained-deployments-scd) aplikace .NET Core.
+[Projekt Windows Application Packaging](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-packaging-dot-net), k dispozici v aplikaci Visual Studio 2019, vám umožní vytvořit MSIX balíčky s [samostatná](../deploying/index.md#self-contained-deployments-scd) aplikace .NET Core.
 
 >Poznámka: Soubor projektu .NET Core, musíte zadat podporované moduly Runtime v `<RuntimeIdentifiers>` vlastnost:
 ```xml

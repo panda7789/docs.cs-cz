@@ -12,21 +12,21 @@ helpviewer_keywords:
 - examples [Windows Forms], event handling
 - Button control [Windows Forms], event handlers
 ms.assetid: 2e7c9e1a-61fe-444d-8113-3c5bacf1c8cb
-ms.openlocfilehash: 3c1dca420b9e63fe8a2cb93b2e7918d9dc35e84d
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 09f090c6267093e3ad59266d8c77ea13b13b63d3
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59158545"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59343259"
 ---
 # <a name="how-to-create-event-handlers-at-run-time-for-windows-forms"></a>Postupy: Vytváření obslužných rutin událostí v době běhu pro Windows Forms
 Kromě vytváření událostí pomocí Návrháře formulářů Windows, můžete také vytvořit obslužnou rutinu události v době běhu. Tato akce umožňuje připojit obslužné rutiny události na základě podmínek v kódu v době běhu na rozdíl od toho připojení při počátečním spuštění programu.  
   
 ### <a name="to-create-an-event-handler-at-run-time"></a>Chcete-li vytvořit obslužnou rutinu události v době běhu  
   
-1.  Otevřete v editoru kódu, který chcete přidat obslužnou rutinu události pro formulář.  
+1. Otevřete v editoru kódu, který chcete přidat obslužnou rutinu události pro formulář.  
   
-2.  Přidání metody do svého formuláře s podpis metody pro události, ke které chcete zpracovat.  
+2. Přidání metody do svého formuláře s podpis metody pro události, ke které chcete zpracovat.  
   
      Například, pokud byly zpracování <xref:System.Windows.Forms.Control.Click> události <xref:System.Windows.Forms.Button> ovládacího prvku, vytvořili byste metodu, jako je následující:  
   
@@ -52,11 +52,11 @@ Kromě vytváření událostí pomocí Návrháře formulářů Windows, můžet
        }  
     ```  
   
-3.  Přidejte kód do obslužné rutiny události jako vhodné pro vaši aplikaci.  
+3. Přidejte kód do obslužné rutiny události jako vhodné pro vaši aplikaci.  
   
-4.  Určete, které tvoří nebo chcete vytvořit obslužnou rutinu události pro ovládací prvek.  
+4. Určete, které tvoří nebo chcete vytvořit obslužnou rutinu události pro ovládací prvek.  
   
-5.  V metodě v rámci třídy formuláře přidejte kód, který určuje chcete zpracovat událost obslužné rutiny události. Například následující kód určuje obslužná rutina události `button1_Click` obslužné rutiny <xref:System.Windows.Forms.Control.Click> události <xref:System.Windows.Forms.Button> ovládacího prvku:  
+5. V metodě v rámci třídy formuláře přidejte kód, který určuje chcete zpracovat událost obslužné rutiny události. Například následující kód určuje obslužná rutina události `button1_Click` obslužné rutiny <xref:System.Windows.Forms.Control.Click> události <xref:System.Windows.Forms.Button> ovládacího prvku:  
   
     ```vb  
     AddHandler Button1.Click, AddressOf Button1_Click  

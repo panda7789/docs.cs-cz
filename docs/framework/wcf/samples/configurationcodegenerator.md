@@ -2,12 +2,12 @@
 title: ConfigurationCodeGenerator
 ms.date: 03/30/2017
 ms.assetid: 3913aae8-165f-4014-9262-7fe426f90cb2
-ms.openlocfilehash: 7625060cd0512bb7498a931d7b93a731e52c9f00
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 97197926db0b44f1ad36e2eba6ab6bec42eced33
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59195186"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59342008"
 ---
 # <a name="configurationcodegenerator"></a>ConfigurationCodeGenerator
 ConfigurationCodeGenerator je nástroj, který můžete použít ke zveřejnění vašeho vlastního kanálu implementace konfigurační systém. To umožňuje uživatelům vlastní kanál konfigurovat kanál pomocí souboru .config, stejně jako poskytnutými systémem vazby, jako by konfigurace `NetTcpBinding` nebo vlastní vazby pomocí `TcpTransportBindingElement`.  
@@ -16,13 +16,13 @@ ConfigurationCodeGenerator je nástroj, který můžete použít ke zveřejněn�
   
 ### <a name="to-build-the-tool"></a>K sestavení nástroj  
   
-1.  Abyste mohli sestavit řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+1. Abyste mohli sestavit řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-2.  Sestavování řešení se generuje jeden soubor: ConfigurationCodeGenerator.exe. Ukázka příkazového řádku, který ukazuje, jak tento nástroj používat ke generování třídy pro má soubor SampleRun.cmd [přenosu: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) vzorku.  
+2. Sestavování řešení se generuje jeden soubor: ConfigurationCodeGenerator.exe. Ukázka příkazového řádku, který ukazuje, jak tento nástroj používat ke generování třídy pro má soubor SampleRun.cmd [přenosu: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) vzorku.  
   
 ### <a name="to-run-the-tool"></a>Chcete-li spustit nástroj  
   
-1.  Na příkazovém řádku zadejte následující, pokud máte i vlastní `BindingElement` typu a vlastní `Binding` typu:  
+1. Na příkazovém řádku zadejte následující, pokud máte i vlastní `BindingElement` typu a vlastní `Binding` typu:  
   
     ```  
     ConfigurationCodeGenerator.exe /be:YourCustomBindingElementTypeName /sb:YourCustomStdBindingTypeName /dll:TheAssemblyWhereTheseTypesAreDefined  

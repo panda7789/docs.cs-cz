@@ -9,19 +9,19 @@ helpviewer_keywords:
 - images [Windows Forms], creating
 - GDI+, rendering existing images
 ms.assetid: c128b79a-3e31-47d8-9e66-3470f570a056
-ms.openlocfilehash: cb43536f941ea7a6e1a48e78046089636360eef5
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: e038da545bb3f56cc757710bcaa93aa2c86bfa67
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59079445"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59342542"
 ---
 # <a name="how-to-render-images-with-gdi"></a>Postupy: Vykreslení obrázků pomocí GDI+
 Můžete použít [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] k vykreslování obrázků, které existují jako soubory ve svých aplikacích. To provedete tak, že vytvoříte nový objekt <xref:System.Drawing.Image> třídy (například <xref:System.Drawing.Bitmap>), vytváření <xref:System.Drawing.Graphics> objekt, který odkazuje na návrhovém povrchu, který chcete použít a volání <xref:System.Drawing.Graphics.DrawImage%2A> metodu <xref:System.Drawing.Graphics> objektu. Image bude nutné překreslit na návrhovém povrchu reprezentovaný třídou grafiky. Můžete použít Editor obrázků můžete vytvářet a upravovat soubory obrázků v době návrhu a jejich vykreslení [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] v době běhu. Další informace najdete v tématu [Editor obrázků pro ikony](/cpp/windows/image-editor-for-icons).  
   
 ### <a name="to-render-an-image-with-gdi"></a>Aby se vykreslil obraz pomocí GDI +  
   
-1.  Vytvořte objekt představující obrázek, který chcete zobrazit. Tento objekt musí být členem třídy, která dědí z <xref:System.Drawing.Image>, jako například <xref:System.Drawing.Bitmap> nebo <xref:System.Drawing.Imaging.Metafile>. Příklad:  
+1. Vytvořte objekt představující obrázek, který chcete zobrazit. Tento objekt musí být členem třídy, která dědí z <xref:System.Drawing.Image>, jako například <xref:System.Drawing.Bitmap> nebo <xref:System.Drawing.Imaging.Metafile>. Příklad:  
   
     ```vb  
     ' Uses the System.Environment.GetFolderPath to get the path to the   
@@ -47,7 +47,7 @@ Můžete použít [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md
           (System::Environment::SpecialFolder::MyPictures));  
     ```  
   
-2.  Vytvoření <xref:System.Drawing.Graphics> objekt, který reprezentuje na návrhovém povrchu, který chcete použít. Další informace najdete v tématu [jak: Vytváření grafických objektů pro kreslení](how-to-create-graphics-objects-for-drawing.md).  
+2. Vytvoření <xref:System.Drawing.Graphics> objekt, který reprezentuje na návrhovém povrchu, který chcete použít. Další informace najdete v tématu [jak: Vytváření grafických objektů pro kreslení](how-to-create-graphics-objects-for-drawing.md).  
   
     ```vb  
     ' Creates a Graphics object that represents the drawing surface of   
@@ -67,7 +67,7 @@ Můžete použít [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md
     Graphics^ g = button1->CreateGraphics();  
     ```  
   
-3.  Volání <xref:System.Drawing.Graphics.DrawImage%2A> objektu grafiky k vykreslení obrázku. Musíte zadat obrázek, který se má a souřadnice, kde je potřeba vykreslit.  
+3. Volání <xref:System.Drawing.Graphics.DrawImage%2A> objektu grafiky k vykreslení obrázku. Musíte zadat obrázek, který se má a souřadnice, kde je potřeba vykreslit.  
   
     ```vb  
     g.DrawImage(myBitmap, 1, 1)  

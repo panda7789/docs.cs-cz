@@ -10,23 +10,23 @@ helpviewer_keywords:
 - Using statement [Visual Basic], Using...End Using
 - Using block
 ms.assetid: 8be2b239-8090-419b-8e7e-bcaa75b0ecc8
-ms.openlocfilehash: 2a399b92c66c8a88d10d661ff41aef58a82bbc2a
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: e3594db036edc3a6288b0373737c1ee26a691a57
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58829912"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59341904"
 ---
 # <a name="how-to-dispose-of-a-system-resource-visual-basic"></a>Postupy: Odstranění systémového prostředku (Visual Basic)
 Můžete použít `Using` bloku zaručí, že systém odstraňuje prostředku při opuštění bloku kódu. To je užitečné, pokud používáte systémového prostředku, která spotřebovává velké množství paměti, nebo jiné komponenty také chcete použít.  
   
 ### <a name="to-dispose-of-a-database-connection-when-your-code-is-finished-with-it"></a>K uvolnění připojení databáze. Po dokončení se s ním kódu  
   
-1.  Nezapomeňte zadat odpovídající [příkaz Imports (Namespace .NET a typ)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md) pro připojení k databázi na začátku zdrojového souboru (v tomto případě <xref:System.Data.SqlClient>).  
+1. Nezapomeňte zadat odpovídající [příkaz Imports (Namespace .NET a typ)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md) pro připojení k databázi na začátku zdrojového souboru (v tomto případě <xref:System.Data.SqlClient>).  
   
-2.  Vytvoření `Using` blokovat s `Using` a `End Using` příkazy. Uvnitř bloku vložte kód, který se zabývá připojení k databázi.  
+2. Vytvoření `Using` blokovat s `Using` a `End Using` příkazy. Uvnitř bloku vložte kód, který se zabývá připojení k databázi.  
   
-3.  Deklarace připojení a vytvořte její instanci v rámci `Using` příkazu.  
+3. Deklarace připojení a vytvořte její instanci v rámci `Using` příkazu.  
   
     ```  
     ' Insert the following line at the beginning of your source file.  
@@ -52,4 +52,4 @@ Můžete použít `Using` bloku zaručí, že systém odstraňuje prostředku p�
 - [Struktury smyčky](../../../../visual-basic/programming-guide/language-features/control-flow/loop-structures.md)
 - [Ostatní řídicí struktury](../../../../visual-basic/programming-guide/language-features/control-flow/other-control-structures.md)
 - [Vnořené řídicí struktury](../../../../visual-basic/programming-guide/language-features/control-flow/nested-control-structures.md)
-- [Příkaz Using](../../../../visual-basic/language-reference/statements/using-statement.md)
+- [Using – příkaz](../../../../visual-basic/language-reference/statements/using-statement.md)

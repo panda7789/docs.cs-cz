@@ -2,12 +2,12 @@
 title: Kontextové připojení
 ms.date: 03/30/2017
 ms.assetid: e443ca86-9243-4234-a822-ed10a53a9de0
-ms.openlocfilehash: f942bf6a8df034ee96b595a791a07e64bc2ec179
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 83e9f4a9672d2703514c0a86ad8d41b968c255fd
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59195355"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59343438"
 ---
 # <a name="the-context-connection"></a>Kontextové připojení
 Problém interní datové je poměrně běžný scénář. To znamená, že budete chtít na stejný server, na kterém common language runtime (CLR) uložená procedura nebo funkce provádí přistupuje. Jednou z možností je vytvořit připojení pomocí <xref:System.Data.SqlClient.SqlConnection>, zadejte připojovací řetězec, který odkazuje na místním serveru a otevřete připojení. To vyžaduje, když zadáváte přihlašovací údaje pro přihlášení. Připojení je v relaci jiné databáze než uloženou proceduru nebo funkci, mohou mít různé `SET` možnosti, je v samostatných transakcích, nezobrazí dočasné tabulky, a tak dále. Pokud vaše spravované uložené procedury nebo funkce kódu je spouštěn v procesu serveru SQL Server, bude to, že někdo připojené k tomuto serveru a provedený SQL příkaz jej lze vyvolat. Budete zřejmě chtít uložená procedura nebo funkce pro spuštění v kontextu tohoto připojení, spolu s jeho transakce `SET` možnosti a tak dále. Tomu se říká připojení kontextu.  
@@ -16,7 +16,7 @@ Problém interní datové je poměrně běžný scénář. To znamená, že bude
   
  **SQL Server Books Online**  
   
-1.  [Kontextové připojení](https://go.microsoft.com/fwlink/?LinkId=115395)  
+1. [Kontextové připojení](https://go.microsoft.com/fwlink/?LinkId=115395)  
   
 ## <a name="see-also"></a>Viz také:
 

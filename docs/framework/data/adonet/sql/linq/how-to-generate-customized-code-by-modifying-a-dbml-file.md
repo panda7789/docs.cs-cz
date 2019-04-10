@@ -2,23 +2,23 @@
 title: 'Postupy: Generování přizpůsobeného kódu úpravou souboru DBML'
 ms.date: 03/30/2017
 ms.assetid: 50ad597a-8598-42d3-82dd-fc7d702ebc37
-ms.openlocfilehash: f64d323abf124f3bd8aeb684563a08289fa47f7d
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: c3fa4d9db4076309ab7d6066cc7072797eaead54
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59084066"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59338420"
 ---
 # <a name="how-to-generate-customized-code-by-modifying-a-dbml-file"></a>Postupy: Generování přizpůsobeného kódu úpravou souboru DBML
 Můžete generovat jazyka Visual Basic nebo C# zdrojového kódu ze souboru metadat databáze markup language (dbml). Tento přístup vám dává příležitost k přizpůsobení výchozího souboru .dbml před generováním mapování kódu aplikace. Jde o pokročilou funkci.  
   
  Kroky v tomto procesu jsou následující:  
   
-1.  Vygenerování souboru .dbml.  
+1. Vygenerování souboru .dbml.  
   
-2.  Použijte editor k úpravě souboru .dbml. Všimněte si, že souboru .dbml musí ověřovat proti souboru (XSD) definice schématu pro [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] soubory dbml. Další informace najdete v tématu [generování kódu v technologii LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md).  
+2. Použijte editor k úpravě souboru .dbml. Všimněte si, že souboru .dbml musí ověřovat proti souboru (XSD) definice schématu pro [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] soubory dbml. Další informace najdete v tématu [generování kódu v technologii LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md).  
   
-3.  Generovat jazyka Visual Basic nebo C# zdrojový kód.  
+3. Generovat jazyka Visual Basic nebo C# zdrojový kód.  
   
  Následující příklady používají nástroj příkazového řádku SQLMetal. Další informace najdete v tématu [SqlMetal.exe (nástroj pro generování kódu)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md).  
   

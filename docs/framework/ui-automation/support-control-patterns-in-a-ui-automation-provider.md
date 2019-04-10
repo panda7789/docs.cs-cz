@@ -8,12 +8,12 @@ helpviewer_keywords:
 - control patterns, supporting in UI Automation provider
 - UI Automation, supporting control patterns in provider
 ms.assetid: 0d635c35-ffa8-4dc8-bbc9-12fcd5445776
-ms.openlocfilehash: dd8bc880126cd6fa82f7f3a775edf47f0725b6d9
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 65ec0f85bf0a63d0051ff9491623a65abee7a05c
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59123926"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59336678"
 ---
 # <a name="support-control-patterns-in-a-ui-automation-provider"></a>Podpora vzorů ovládacích prvků u zprostředkovatele automatizace uživatelského rozhraní
 > [!NOTE]
@@ -23,9 +23,9 @@ ms.locfileid: "59123926"
   
 ### <a name="support-control-patterns"></a>Podpora vzorů ovládacích prvků  
   
-1.  Implementovat vhodné rozhraní pro vzorů ovládacích prvků, které by měly podporovat element, jako například <xref:System.Windows.Automation.Provider.IInvokeProvider> pro <xref:System.Windows.Automation.InvokePattern>.  
+1. Implementovat vhodné rozhraní pro vzorů ovládacích prvků, které by měly podporovat element, jako například <xref:System.Windows.Automation.Provider.IInvokeProvider> pro <xref:System.Windows.Automation.InvokePattern>.  
   
-2.  Vrátí objekt obsahující vaši implementaci rozhraní každý ovládací prvek ve vaší implementaci <xref:System.Windows.Automation.Provider.IRawElementProviderSimple.GetPatternProvider%2A?displayProperty=nameWithType>  
+2. Vrátí objekt obsahující vaši implementaci rozhraní každý ovládací prvek ve vaší implementaci <xref:System.Windows.Automation.Provider.IRawElementProviderSimple.GetPatternProvider%2A?displayProperty=nameWithType>  
   
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje implementaci <xref:System.Windows.Automation.Provider.ISelectionProvider> pro pole s jedním výběrem vlastního seznamu. Vrátí tři vlastnosti a získá aktuálně vybrané položky.  

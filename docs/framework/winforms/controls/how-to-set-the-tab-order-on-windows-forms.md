@@ -10,12 +10,12 @@ helpviewer_keywords:
 - controls [Windows Forms], setting tab order
 - Windows Forms, setting tab order
 ms.assetid: 71fa8e76-0472-414b-ad3c-0f90166e0ad7
-ms.openlocfilehash: cd86757d43d7d57dc7777422086a7b7a96b6611e
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 50f5f91a946aeebc4d82630b25d18d8f8d2ea4be
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59162121"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59339902"
 ---
 # <a name="how-to-set-the-tab-order-on-windows-forms"></a>Postupy: Nastavení pořadí ovládacích prvků ve Windows Forms
 Pořadí je v tom pořadí, ve kterém uživatel přesune fokus z jednoho ovládacího prvku na jiný stisknutím klávesy TAB. Každý formulář má svůj vlastní pořadí. Výchozí pořadí je stejné jako pořadí, ve které jste vytvořili ovládací prvky. Pořadí karet číslování začíná nulou.  
@@ -25,16 +25,16 @@ Pořadí je v tom pořadí, ve kterém uživatel přesune fokus z jednoho ovlád
   
 ### <a name="to-set-the-tab-order-of-a-control"></a>Chcete-li nastavit pořadí ovládacího prvku  
   
-1.  Na **zobrazení** nabídky, klikněte na tlačítko **pořadí**.  
+1. Na **zobrazení** nabídky, klikněte na tlačítko **pořadí**.  
   
      Tím se aktivuje režim výběru pořadí prvků ve formuláři. Číslo (představující <xref:System.Windows.Forms.Control.TabIndex%2A> vlastnost) se zobrazí v levém horním rohu každého ovládacího prvku.  
   
-2.  Klepněte na ovládací prvky nasazují postupně, aby pořadí prvků, které chcete vytvořit.  
+2. Klepněte na ovládací prvky nasazují postupně, aby pořadí prvků, které chcete vytvořit.  
   
     > [!NOTE]
     >  Místo ovládacího prvku v rámci pořadí karet lze nastavit na libovolnou hodnotu větší než nebo rovna 0. Pokud dojde k duplicity, je vyhodnocen pořadí vykreslování dvou ovládacích prvků a ovládací prvek v horní části na kartách první. (Pořadí vykreslování je vizuální rozvržení ovládací prvky ve formuláři podél osy z formuláře [hloubka]. Pořadí vykreslování určuje, jaké ovládací prvky jsou před další ovládací prvky.) Další informace o pořadí vykreslování, naleznete v tématu [vrstvení objektů ve formulářích Windows](how-to-layer-objects-on-windows-forms.md).  
   
-3.  Jakmile budete hotovi, klikněte na tlačítko **pořadí** na **zobrazení** nabídku ukončit režim pořadí karty.  
+3. Jakmile budete hotovi, klikněte na tlačítko **pořadí** na **zobrazení** nabídku ukončit režim pořadí karty.  
   
     > [!NOTE]
     >  Ovládací prvky, které nelze získat fokus, stejně jako ovládací prvky zakázané a neviditelná, nemají <xref:System.Windows.Forms.Control.TabIndex%2A> vlastnost a jsou není zahrnuta v pořadí karet. Jako uživatel stiskne klávesu TAB, tyto ovládací prvky se přeskočí.  
@@ -47,7 +47,7 @@ Pořadí je v tom pořadí, ve kterém uživatel přesune fokus z jednoho ovlád
   
 #### <a name="to-remove-a-control-from-the-tab-order"></a>Odebrat ovládací prvek v pořadí karet  
   
-1.  Nastavit u tohoto prvku <xref:System.Windows.Forms.Control.TabStop%2A> vlastnost `false` v okně Vlastnosti.  
+1. Nastavit u tohoto prvku <xref:System.Windows.Forms.Control.TabStop%2A> vlastnost `false` v okně Vlastnosti.  
   
      A ovládací prvek, jehož <xref:System.Windows.Forms.Control.TabStop%2A> je nastavená vlastnost `false` stále udržuje jeho pozice v pořadí, i v případě, že ovládací prvek bude přeskočena při přepínání mezi ovládací prvky pomocí klávesy TAB.  
   

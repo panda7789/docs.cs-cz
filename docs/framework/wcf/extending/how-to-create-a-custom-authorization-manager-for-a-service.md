@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Windows Communication Foundation, extending
 - OperationRequirement class
 ms.assetid: 6214afde-44c1-4bf5-ba07-5ad6493620ea
-ms.openlocfilehash: 6a168902b79bd27345c9d9e2371947cc9d64233c
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: e3d0143cd68bc94c6ff07e65ca5a3c8971b45f23
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59156491"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59337835"
 ---
 # <a name="how-to-create-a-custom-authorization-manager-for-a-service"></a>Postupy: Vytvoření vlastního správce autorizací pro službu
 Infrastruktura modelu identit ve Windows Communication Foundation (WCF) podporuje model extensible autorizace na základě rolí. Extrahuje z tokenů a volitelně zpracování pomocí zásad autorizace a pak umístit do deklarace identity <xref:System.IdentityModel.Policy.AuthorizationContext>. Správce autorizací prozkoumá deklarace identity v <xref:System.IdentityModel.Policy.AuthorizationContext> pro autorizační rozhodnutí.  
@@ -28,12 +28,12 @@ Infrastruktura modelu identit ve Windows Communication Foundation (WCF) podporuj
   
 ### <a name="to-create-a-custom-authorization-manager"></a>Chcete-li vytvořit vlastní autorizace správce  
   
-1.  Odvodit třídu z <xref:System.ServiceModel.ServiceAuthorizationManager> třídy.  
+1. Odvodit třídu z <xref:System.ServiceModel.ServiceAuthorizationManager> třídy.  
   
      [!code-csharp[c_CustomAuthMgr#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customauthmgr/cs/c_customauthmgr.cs#5)]
      [!code-vb[c_CustomAuthMgr#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customauthmgr/vb/c_customauthmgr.vb#5)]  
   
-2.  Přepsat <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%28System.ServiceModel.OperationContext%29> metody.  
+2. Přepsat <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%28System.ServiceModel.OperationContext%29> metody.  
   
      Použití <xref:System.ServiceModel.OperationContext> , který je předán <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%28System.ServiceModel.OperationContext%29> metodu pro autorizační rozhodnutí.  
   
@@ -44,7 +44,7 @@ Infrastruktura modelu identit ve Windows Communication Foundation (WCF) podporuj
   
 ### <a name="to-register-a-custom-authorization-manager-using-code"></a>Zaregistrovat vlastní autorizace Manageru pomocí kódu  
   
-1.  Vytvoření instance vlastní autorizace správce a přiřaďte ho k <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior.ServiceAuthorizationManager%2A> vlastnost.  
+1. Vytvoření instance vlastní autorizace správce a přiřaďte ho k <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior.ServiceAuthorizationManager%2A> vlastnost.  
   
      <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior> Lze přistupovat pomocí <xref:System.ServiceModel.ServiceHostBase.Authorization%2A> vlastnost.  
   
@@ -55,17 +55,17 @@ Infrastruktura modelu identit ve Windows Communication Foundation (WCF) podporuj
   
 ### <a name="to-register-a-custom-authorization-manager-using-configuration"></a>Zaregistrovat vlastní autorizace Manageru pomocí konfigurace  
   
-1.  Otevřete konfigurační soubor služby.  
+1. Otevřete konfigurační soubor služby.  
   
-2.  Přidat [ \<serviceAuthorization >](../../../../docs/framework/configure-apps/file-schema/wcf/serviceauthorization-element.md) k [ \<chování >](../../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md).  
+2. Přidat [ \<serviceAuthorization >](../../../../docs/framework/configure-apps/file-schema/wcf/serviceauthorization-element.md) k [ \<chování >](../../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md).  
   
      K [ \<serviceAuthorization >](../../../../docs/framework/configure-apps/file-schema/wcf/serviceauthorization-element.md), přidejte `serviceAuthorizationManagerType` atribut a nastavte její hodnotu na typ, který představuje správce autorizace.  
   
-3.  Přidáte vazbu, která zajišťuje zabezpečení komunikace mezi klientem a službou.  
+3. Přidáte vazbu, která zajišťuje zabezpečení komunikace mezi klientem a službou.  
   
      Vazby, který je vybrán pro tuto komunikaci určuje deklarace identity, které jsou přidány do <xref:System.IdentityModel.Policy.AuthorizationContext>, který používá správce autorizace pro autorizační rozhodnutí. Další podrobnosti o vazeb poskytovaných systémem najdete v tématu [System-Provided vazby](../../../../docs/framework/wcf/system-provided-bindings.md).  
   
-4.  Přidružit chování koncového bodu služby, tak, že přidáte [ \<služby >](../../../../docs/framework/configure-apps/file-schema/wcf/service.md) element a nastavte hodnotu `behaviorConfiguration` atributu na hodnotu atributu název [ \<chování >](../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-servicebehaviors.md) elementu.  
+4. Přidružit chování koncového bodu služby, tak, že přidáte [ \<služby >](../../../../docs/framework/configure-apps/file-schema/wcf/service.md) element a nastavte hodnotu `behaviorConfiguration` atributu na hodnotu atributu název [ \<chování >](../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-servicebehaviors.md) elementu.  
   
      Další informace o konfiguraci koncového bodu služby, najdete v části [jak: Vytvoření koncového bodu služby v konfiguraci](../../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-configuration.md).  
   

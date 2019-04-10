@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: d356a43a-73df-4ae2-a457-b9628074c7cd
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5f59c6ea6f39ecba49bd8aa18ee3abab750891c7
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 9c84afced8c98530e6d6b02c1cde69e93bd8d7e9
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59203714"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59337276"
 ---
 # <a name="whats-obsolete-in-the-net-framework-class-library"></a>Zastaralé položky v knihovně tříd rozhraní .NET Framework
 Rozhraní .NET Framework mění v průběhu času. Každá nová verze přidá nové typy a členy typů, které přinášejí nové funkce. Existující typy a členové také v průběhu času měnit. Například některé typy se stanou méně důležité technologie, které podporují je nahrazena novou technologii a některé metody jsou nahrazena novější metody, které jsou vhodnější nebo více plně funkční.  
@@ -42,9 +42,9 @@ Rozhraní .NET Framework mění v průběhu času. Každá nová verze přidá n
   
  Můžete se znovu zkompilovat existující kód na novější verzi rozhraní .NET Framework. Místo toho můžete určit verzi rozhraní .NET Framework, proti kterému stávajících zkompilovaný kód běží. Předpokládejme například, že máte aplikaci s názvem app1.exe, která byla zkompilována proti [!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)], ale má aplikace spouštět [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]. To vyžaduje následující kroky:  
   
-1.  Vytvoření konfiguračního souboru pro hlavní spustitelný soubor a pojmenujte ho *appName*. exe.config, kde *appName* je název spustitelného souboru aplikace. Aplikace s názvem app1.exe v našem příkladu by vytvořit konfigurační soubor s názvem app1.exe.config.  
+1. Vytvoření konfiguračního souboru pro hlavní spustitelný soubor a pojmenujte ho *appName*. exe.config, kde *appName* je název spustitelného souboru aplikace. Aplikace s názvem app1.exe v našem příkladu by vytvořit konfigurační soubor s názvem app1.exe.config.  
   
-2.  Přidejte následující konfigurační soubor.  
+2. Přidejte následující konfigurační soubor.  
   
     ```xml  
     <configuration>  

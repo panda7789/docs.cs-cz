@@ -6,12 +6,12 @@ helpviewer_keywords:
 - Toolbox [Windows Forms], populating
 - custom components [Windows Forms], adding to Toolbox
 ms.assetid: 2fa1e3e8-6b9f-42b2-97c0-2be57444dba4
-ms.openlocfilehash: a1d138bcdc2c4637cd6aa035360ff258d3fe7100
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 6ecf69350b8337dc6049b73251809192b47dc2fb
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59178786"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59338095"
 ---
 # <a name="walkthrough-automatically-populating-the-toolbox-with-custom-components"></a>Návod: Automatické vyplnění sady nástrojů vlastními komponentami
 Pokud vaše komponenty jsou definovány projektu v aktuálně otevřené řešení, se automaticky zobrazí v **nástrojů**, třeba akce. Můžete také ručně naplnit **nástrojů** pomocí vlastních součástí s použitím [tlačítko panelu nástrojů položky dialogové okno (Visual Studio)](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/dyca0t6t(v=vs.100)), ale **nástrojů** bere v úvahu položky ve vašem řešení sestavení výstupy s následujícími charakteristikami:  
@@ -45,31 +45,31 @@ Pokud vaše komponenty jsou definovány projektu v aktuálně otevřené řešen
   
 #### <a name="to-create-the-project"></a>Vytvoření projektu  
   
-1.  Vytvořte projekt aplikace pro systém Windows s názvem `ToolboxExample` (**souboru** > **nový** > **projektu**  >  **Visual C#** nebo **jazyka Visual Basic** > **klasický desktopový** > **aplikaci Windows Forms**).  
+1. Vytvořte projekt aplikace pro systém Windows s názvem `ToolboxExample` (**souboru** > **nový** > **projektu**  >  **Visual C#** nebo **jazyka Visual Basic** > **klasický desktopový** > **aplikaci Windows Forms**).  
   
-2.  Přidáte novou součást do projektu. Pojmenujte ji `DemoComponent`.  
+2. Přidáte novou součást do projektu. Pojmenujte ji `DemoComponent`.  
   
      Další informace najdete v tématu [jak: Přidání nových položek projektu](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/w0572c5b(v=vs.100)).  
   
-3.  Sestavte projekt.  
+3. Sestavte projekt.  
   
-4.  Z **nástroje** nabídky, klikněte na tlačítko **možnosti** položky. Klikněte na tlačítko **Obecné** pod **Návrháře formulářů Windows** položku a ověřte, že **AutoToolboxPopulate** je možnost nastavená na **True**.  
+4. Z **nástroje** nabídky, klikněte na tlačítko **možnosti** položky. Klikněte na tlačítko **Obecné** pod **Návrháře formulářů Windows** položku a ověřte, že **AutoToolboxPopulate** je možnost nastavená na **True**.  
   
 ## <a name="creating-an-instance-of-a-custom-component"></a>Vytvoření Instance vlastní komponenty  
  Dalším krokem je vytvoření instance vlastní komponenty ve formuláři. Vzhledem k tomu, **nástrojů** automaticky účty pro novou komponentu, to je stejně jednoduché jako vytvoření jakékoli součást nebo ovládací prvek.  
   
 #### <a name="to-create-an-instance-of-a-custom-component"></a>K vytvoření instance vlastní komponenty  
   
-1.  Otevřete formulář v projektu v **Návrháře formulářů**.  
+1. Otevřete formulář v projektu v **Návrháře formulářů**.  
   
-2.  V **nástrojů**, klikněte na novou kartu **ToolboxExample komponenty**.  
+2. V **nástrojů**, klikněte na novou kartu **ToolboxExample komponenty**.  
   
      Po kliknutí na kartě, zobrazí se **DemoComponent**.  
   
     > [!NOTE]
     >  Z důvodů výkonu komponenty v oblasti vyplní automaticky **nástrojů** vlastních rastrových obrázků, se nezobrazí a <xref:System.Drawing.ToolboxBitmapAttribute> se nepodporuje. Zobrazit ikonu pro vlastní komponenty v **nástrojů**, použijte **zvolit položky nástrojů** dialogové okno načíst vaše komponenta.  
   
-3.  Přetáhněte komponenty do formuláře.  
+3. Přetáhněte komponenty do formuláře.  
   
      Je vytvořen a přidán do instance komponenty **komponent**.  
   
@@ -78,15 +78,15 @@ Pokud vaše komponenty jsou definovány projektu v aktuálně otevřené řešen
   
 #### <a name="to-experiment-with-the-effect-on-the-toolbox-of-unloading-and-reloading-components"></a>Můžete experimentovat s vliv na panelu nástrojů uvolnění a opětovné načítání komponent  
   
-1.  Uvolněte projekt z řešení.  
+1. Uvolněte projekt z řešení.  
   
      Další informace o uvolnění projektů, naleznete v tématu [jak: Odebrat a znovu načíst projekty](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/tt479x1t(v=vs.100)). Pokud se zobrazí výzva k uložení, zvolte **Ano**.  
   
-2.  Přidat nový **aplikace Windows** projektu do řešení. Otevřete formulář v nástrojích pro **návrháře**.  
+2. Přidat nový **aplikace Windows** projektu do řešení. Otevřete formulář v nástrojích pro **návrháře**.  
   
      **ToolboxExample součásti** kartu z předchozí projektu je teď pryč.  
   
-3.  Znovu načíst `ToolboxExample` projektu.  
+3. Znovu načíst `ToolboxExample` projektu.  
   
      **ToolboxExample součásti** kartě nyní zobrazí znovu.  
   

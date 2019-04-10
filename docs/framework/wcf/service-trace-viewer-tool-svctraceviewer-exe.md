@@ -2,12 +2,12 @@
 title: Prohlížeč trasování služeb (SvcTraceViewer.exe)
 ms.date: 03/30/2017
 ms.assetid: 9027efd3-df8d-47ed-8bcd-f53d55ed803c
-ms.openlocfilehash: 4697e43ee1ae08d5eec02b042aea0ec69d6eeac4
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: dd00b72396fe40a7577fabd5704a240f91d1e268
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59213386"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59341098"
 ---
 # <a name="service-trace-viewer-tool-svctraceviewerexe"></a>Prohlížeč trasování služeb (SvcTraceViewer.exe)
 Nástroj Prohlížeč trasování služeb Windows Communication Foundation (WCF) pomáhá analyzovat diagnostické trasování, které se vygenerovaly WCF. Prohlížeče trasování služeb poskytuje způsob, jak snadno sloučení, zobrazení a filtrování trasovací zprávy v protokolu, takže můžete diagnostikovat, opravit a ověřit problémy se službou WCF.  
@@ -72,7 +72,7 @@ Počínaje verzí .NET Framework 4.8, se zobrazí ovládací prvky pole se sezna
   
 ##### <a name="to-open-a-trace-file"></a>Pro otevření souboru trasování  
   
-1.  Spuštění prohlížeče trasování služeb pomocí okno příkazového řádku a přejděte do umístění instalace WCF (C:\Program Files\Microsoft SDKs\Windows\v6.0\Bin) a pak zadejte `SvcTraceViewer.exe`.  
+1. Spuštění prohlížeče trasování služeb pomocí okno příkazového řádku a přejděte do umístění instalace WCF (C:\Program Files\Microsoft SDKs\Windows\v6.0\Bin) a pak zadejte `SvcTraceViewer.exe`.  
   
 > [!NOTE]
 >  Nástroj prohlížeče trasování služeb můžete přidružit dva typy souborů: .svclog a .stvproj. Dva parametry příkazového řádku můžete vytvářet a rušit registraci přípony souborů.  
@@ -81,14 +81,14 @@ Počínaje verzí .NET Framework 4.8, se zobrazí ovládací prvky pole se sezna
 >   
 >  / unregister: zrušit registraci přidružení přípony souboru ".svclog" a ".stvproj" SvcTraceViewer.exe  
   
-1.  Při spuštění prohlížeče trasování služeb, klikněte na tlačítko **souboru** a přejděte na **otevřít**. Přejděte do umístění, kde jsou uloženy soubory trasování.  
+1. Při spuštění prohlížeče trasování služeb, klikněte na tlačítko **souboru** a přejděte na **otevřít**. Přejděte do umístění, kde jsou uloženy soubory trasování.  
   
-2.  Poklepejte na soubor trasování, který chcete otevřít.  
+2. Poklepejte na soubor trasování, který chcete otevřít.  
   
     > [!NOTE]
     >  Stiskněte klávesu SHIFT a klepnutím na více souborů trasování vyberte a otevřete je současně. Prohlížeče trasování služeb sloučí obsah všech souborů a představuje jedno zobrazení. Můžete například otevřít trasovací soubory klienta a služby. To je užitečné, když jste povolili protokolování a aktivita šíření zpráv v konfiguraci. Tímto způsobem můžete prozkoumat výměnu zpráv mezi klientem a službou. Můžete také přetáhnout více souborů do prohlížeče, nebo použít **projektu** kartu. Další podrobnosti v části Správa projektu.  
   
-3.  Chcete-li přidat další trasovací soubory do kolekce, která je otevřená, klikněte na tlačítko **souboru** a přejděte na **přidat**. V okně, které se otevře přejděte do umístění souborů trasování a poklikejte na soubor, který chcete přidat.  
+3. Chcete-li přidat další trasovací soubory do kolekce, která je otevřená, klikněte na tlačítko **souboru** a přejděte na **přidat**. V okně, které se otevře přejděte do umístění souborů trasování a poklikejte na soubor, který chcete přidat.  
   
 > [!CAUTION]
 >  Nedoporučuje se, že můžete načíst soubor protokolu trasování, která je větší než 200 MB. Při pokusu načíst soubor větší než tento limit, proces načítání může trvat dlouhou dobu, v závislosti na vašich prostředků počítače. Nástroj prohlížeče trasování služeb pravděpodobně responzivní dlouhou dobu, nebo ji může vyčerpat paměti v počítači. Doporučujeme, abyste nakonfigurovali částečné načtení se tomu chcete vyhnout. Další informace o tom, jak to udělat, najdete v části "Trasování načítání velkých souborů".  
@@ -154,24 +154,24 @@ Počínaje verzí .NET Framework 4.8, se zobrazí ovládací prvky pole se sezna
   
 ###### <a name="selecting-traces-in-the-graph"></a>Výběr trasování v grafu  
   
-1.  Klikněte na tlačítko blok v grafu.  
+1. Klikněte na tlačítko blok v grafu.  
   
-2.  Nahoru a dolů klíče a vyberte jeho sousedním trasování.  
+2. Nahoru a dolů klíče a vyberte jeho sousedním trasování.  
   
-3.  Podívejte se na informace o trasování v trasování podokně a v podokně podrobností.  
+3. Podívejte se na informace o trasování v trasování podokně a v podokně podrobností.  
   
 ###### <a name="expanding-or-collapsing-activity-transfers"></a>Rozbalení a sbalení přenosy aktivit  
  Můžete rozbalit aktivity přenosy při přenosech aktivity ve výběru navýšení kapacity na jinou aktivitu. Umožňuje sledovat přenosy.  
   
  Chcete-li rozbalit nebo sbalit přenosy aktivit  
   
-1.  Na levé straně na ikonu přenosu najděte přenos trasování symbolem "+".  
+1. Na levé straně na ikonu přenosu najděte přenos trasování symbolem "+".  
   
-2.  Klikněte "+", nebo stiskněte klávesu **Ctrl** a "+" pomocí klávesnice.  
+2. Klikněte "+", nebo stiskněte klávesu **Ctrl** a "+" pomocí klávesnice.  
   
-3.  Další aktivity se zobrazí v grafu.  
+3. Další aktivity se zobrazí v grafu.  
   
-4.  A "-" se zobrazí na levé straně na ikonu převodu. Klikněte na tlačítko "-" přihlásit nebo stiskněte klávesu Ctrl a "-", sbalí přenos aktivity.  
+4. A "-" se zobrazí na levé straně na ikonu převodu. Klikněte na tlačítko "-" přihlásit nebo stiskněte klávesu Ctrl a "-", sbalí přenos aktivity.  
   
 > [!NOTE]
 >  Když aktivity obsahuje několik přenosů do ní a rozbalte jednu z přenosy, zobrazí se aktivity, které vedou novou aktivitu z kořenové aktivity. Tyto nové aktivity se zobrazí ve formuláři sbalený. Pokud chcete zobrazit podrobnosti o těchto činností, svisle rozbalit kliknutím na ikonu rozbalení v záhlaví grafu.  
@@ -181,13 +181,13 @@ Počínaje verzí .NET Framework 4.8, se zobrazí ovládací prvky pole se sezna
   
  Chcete-li rozbalit nebo sbalit aktivity svisle,  
   
-1.  Klikněte na ikonu "+" v záhlaví činnosti rozbalte aktivity svisle.  
+1. Klikněte na ikonu "+" v záhlaví činnosti rozbalte aktivity svisle.  
   
-2.  Všimněte si, že v grafu se zobrazují všechna trasování.  
+2. Všimněte si, že v grafu se zobrazují všechna trasování.  
   
-3.  Klikněte "-" ikona v záhlaví činnosti sbalte aktivity svisle.  
+3. Klikněte "-" ikona v záhlaví činnosti sbalte aktivity svisle.  
   
-4.  Všimněte si, že zprávy pouze důležité přenosy, zaprotokoluje upozornění a trasování výjimky jsou uvedeny v rámci aktivity.  
+4. Všimněte si, že zprávy pouze důležité přenosy, zaprotokoluje upozornění a trasování výjimky jsou uvedeny v rámci aktivity.  
   
 ###### <a name="options"></a>Možnosti  
  Můžete vybrat ze dvou možností **možnost** nabídky v zobrazení grafu.  
@@ -259,17 +259,17 @@ Počínaje verzí .NET Framework 4.8, se zobrazí ovládací prvky pole se sezna
 ###### <a name="creating-a-custom-filter-using-the-template-wizard"></a>Vytváří se vlastní filtr pomocí Průvodce šablony  
  Můžete kliknout stávající trasování a vytvořit filtr na základě struktury trasování. Tento příklad vytvoří vlastní filtr na základě ID vlákna.  
   
-1.  V podokně trasování v horní pravé části prohlížeče vyberte trasování, který obsahuje element, který chcete filtrovat.  
+1. V podokně trasování v horní pravé části prohlížeče vyberte trasování, který obsahuje element, který chcete filtrovat.  
   
-2.  Klikněte na tlačítko **vytvořit vlastní filtr** tlačítko umístěné v horní části podokna trasování.  
+2. Klikněte na tlačítko **vytvořit vlastní filtr** tlačítko umístěné v horní části podokna trasování.  
   
-3.  V dialogovém okně, které se zobrazí zadejte název filtru. V tomto příkladu zadejte `Thread ID`. Můžete také zadat popis filtru.  
+3. V dialogovém okně, které se zobrazí zadejte název filtru. V tomto příkladu zadejte `Thread ID`. Můžete také zadat popis filtru.  
   
-4.  Zobrazení stromu na levé straně zobrazí strukturu záznam trasování, který jste vybrali v kroku 1. Přejděte k elementu chcete vytvořit podmínku. V tomto příkladu, přejděte na Idvlákna nacházely ve jazyka XPath: /E2ETraceEvent/System/Execution/@ThreadID uzlu. Dvakrát klikněte na atribut Idvlákna ve stromovém zobrazení. Tím se vytvoří výraz atributu na pravé straně dialogového okna.  
+4. Zobrazení stromu na levé straně zobrazí strukturu záznam trasování, který jste vybrali v kroku 1. Přejděte k elementu chcete vytvořit podmínku. V tomto příkladu, přejděte na Idvlákna nacházely ve jazyka XPath: /E2ETraceEvent/System/Execution/@ThreadID uzlu. Dvakrát klikněte na atribut Idvlákna ve stromovém zobrazení. Tím se vytvoří výraz atributu na pravé straně dialogového okna.  
   
-5.  Změňte pole parametru pro podmínku Idvlákna z žádný "{0}". Tento krok povoluje Idvlákna hodnota, která má být nakonfigurováno v případě použití filtru. (Zjistit, jak použít filtr část) Můžete definovat až čtyři parametry. Podmínky jsou kombinované pomocí operátoru OR.  
+5. Změňte pole parametru pro podmínku Idvlákna z žádný "{0}". Tento krok povoluje Idvlákna hodnota, která má být nakonfigurováno v případě použití filtru. (Zjistit, jak použít filtr část) Můžete definovat až čtyři parametry. Podmínky jsou kombinované pomocí operátoru OR.  
   
-6.  Klikněte na tlačítko **Ok** pro vytvoření filtru.  
+6. Klikněte na tlačítko **Ok** pro vytvoření filtru.  
   
 > [!NOTE]
 >  Po vytvoření filtru pomocí Průvodce šablonou, je lze upravovat pouze ručně. Není možné aktivovat Průvodce pro filtr, který byl vytvořen dříve. Kromě toho podmínky filtru XPath vytvořené v Průvodci vytvořením šablony jsou kombinované pomocí operátoru OR. Pokud budete potřebovat a operace, můžete upravit výraz filtru, po jejím vytvoření.  
@@ -277,20 +277,20 @@ Počínaje verzí .NET Framework 4.8, se zobrazí ovládací prvky pole se sezna
 ###### <a name="creating-a-custom-filter-manually"></a>Ruční vytvoření vlastního filtru  
  Vlastní filtry nabídka umožňuje zadat filtrech XPath ručně.  
   
-1.  V nabídce Zobrazit, klikněte **vlastní filtry** položky nabídky.  
+1. V nabídce Zobrazit, klikněte **vlastní filtry** položky nabídky.  
   
-2.  V zobrazeném dialogovém okně klikněte na tlačítko **nový.**  
+2. V zobrazeném dialogovém okně klikněte na tlačítko **nový.**  
   
-3.  Na minimum a zadejte název filtru a výraz XPath výrazů.  
+3. Na minimum a zadejte název filtru a výraz XPath výrazů.  
   
-4.  Klikněte na **OK**.  
+4. Klikněte na **OK**.  
   
 ###### <a name="applying-a-custom-filter"></a>Použití vlastního filtru  
  Po vytvoření vlastního filtru, i když byl přístupný panelu filtru. Vyberte filtr, který má být použita v **prohledávat** pole panelu filtru. V předchozím příkladu vyberte "ID vlákna.  
   
-1.  Zadejte hodnotu v hledáte **najít** pole. V našem příkladu zadejte ID vlákna, které chcete vyhledat.  
+1. Zadejte hodnotu v hledáte **najít** pole. V našem příkladu zadejte ID vlákna, které chcete vyhledat.  
   
-2.  Klikněte na tlačítko **filtr nyní**a podívejte se na výsledek operace.  
+2. Klikněte na tlačítko **filtr nyní**a podívejte se na výsledek operace.  
   
  Je-li filtr používá více parametry, zadejte je pomocí ";" jako oddělovač v **najít** pole. Například následující řetězec definuje 3 parametry: "1; findValue text". V prohlížeči se vztahuje na '1' {0} parametr filtru. 'findValue' a 'text' se použijí u {1} a {2} v uvedeném pořadí.  
   
@@ -299,21 +299,21 @@ Počínaje verzí .NET Framework 4.8, se zobrazí ovládací prvky pole se sezna
   
  Import vlastního filtru:  
   
-1.  V **zobrazení** nabídky, klikněte na tlačítko **vlastní filtry**.  
+1. V **zobrazení** nabídky, klikněte na tlačítko **vlastní filtry**.  
   
-2.  V dialogovém okně, které se otevře, klikněte na tlačítko **Import** tlačítko.  
+2. V dialogovém okně, které se otevře, klikněte na tlačítko **Import** tlačítko.  
   
-3.  Přejděte k souboru vlastního filtru (.stvcf), klikněte na soubor a klikněte na tlačítko **otevřít** tlačítko.  
+3. Přejděte k souboru vlastního filtru (.stvcf), klikněte na soubor a klikněte na tlačítko **otevřít** tlačítko.  
   
  Export vlastního filtru:  
   
-1.  V nabídce Zobrazit, klikněte na tlačítko **vlastní filtry**.  
+1. V nabídce Zobrazit, klikněte na tlačítko **vlastní filtry**.  
   
-2.  V dialogovém okně, které se otevře vyberte filtr, který chcete exportovat.  
+2. V dialogovém okně, které se otevře vyberte filtr, který chcete exportovat.  
   
-3.  Klikněte na tlačítko **exportovat** tlačítko.  
+3. Klikněte na tlačítko **exportovat** tlačítko.  
   
-4.  Zadejte název a umístění souboru definice vlastního filtru (.stvcf) a klikněte na tlačítko **Uložit** tlačítko.  
+4. Zadejte název a umístění souboru definice vlastního filtru (.stvcf) a klikněte na tlačítko **Uložit** tlačítko.  
   
 > [!NOTE]
 >  Tyto vlastní filtry lze pouze importovat a exportovat z prohlížeče trasování služeb. Nemůže být přečteny další nástroje.  
@@ -396,9 +396,9 @@ Počínaje verzí .NET Framework 4.8, se zobrazí ovládací prvky pole se sezna
 #### <a name="adjusting-partial-loading"></a>Úprava částečné načtení.  
  Po částečně načtení souboru trasování můžete změnit sadu dat načítán. Můžete provést úpravou částečné načtení nástrojů v horní části okna.  
   
-1.  Přesunutí panelu nástrojů pomocí myši nebo zadat počáteční a koncový čas.  
+1. Přesunutí panelu nástrojů pomocí myši nebo zadat počáteční a koncový čas.  
   
-2.  Klikněte na tlačítko **upravit** tlačítko.  
+2. Klikněte na tlačítko **upravit** tlačítko.  
   
 ## <a name="understanding-trace-icons"></a>Principy trasování ikony  
  Tady je seznam ikon, které používá nástroj prohlížeče trasování služeb v **aktivity** zobrazení **grafu** zobrazení a **trasování** podokně představují různé položky.  

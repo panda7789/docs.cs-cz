@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrID98
 ms.assetid: 059b43e1-202d-4fa2-806b-7bad63c1e7ca
-ms.openlocfilehash: 0a8d6603bf5c97b966d29f000b21435cec8040d8
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 04124ca044ad8dbff58f85230d7e10ea336d41e7
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58840949"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59341471"
 ---
 # <a name="a-property-or-method-call-cannot-include-a-reference-to-a-private-object-either-as-an-argument-or-as-a-return-value"></a>Volání vlastnosti nebo metody nemůže obsahovat odkaz na soukromý objekt, a to ani jako argument, ani jako typ návratové hodnoty.
 Mezi možné příčiny této chyby patří:  
@@ -24,8 +24,8 @@ Mezi možné příčiny této chyby patří:
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1.  Odeberte odkaz.  
+1. Odeberte odkaz.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Private](../../../visual-basic/language-reference/modifiers/private.md)
+- [Soukromé](../../../visual-basic/language-reference/modifiers/private.md)

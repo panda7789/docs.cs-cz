@@ -2,12 +2,12 @@
 title: Filtrování
 ms.date: 03/30/2017
 ms.assetid: 4002946c-e34a-4356-8cfb-e25912a4be63
-ms.openlocfilehash: 667cc1cc95208c5c653ec4088d69ae105a2f8889
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 7051e69f6a38d536251c26365a634d4ffbc46f1b
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59214595"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59339590"
 ---
 # <a name="filtering"></a>Filtrování
 Windows Communication Foundation (WCF) filtrování systému můžete použít filtry deklarativní podle zpráv a provozní rozhodování. Filtry můžete použít k určení, co dělat, a zobrazí se zpráva prozkoumáním část zprávy. Proces řazení do fronty, například můžete použít k dotazu XPath 1.0 ke kontrole element priority známé hlavičky. Chcete-li zjistit, jestli se má přesunout na začátek fronty zprávu.  
@@ -42,7 +42,7 @@ Windows Communication Foundation (WCF) filtrování systému můžete použít f
   
 ### <a name="prefix-endpoint-address-filters"></a>Předpony adres filtrech koncového bodu  
   
-1.  <xref:System.ServiceModel.Dispatcher.PrefixEndpointAddressMessageFilter> Funguje stejně jako <xref:System.ServiceModel.Dispatcher.EndpointAddressMessageFilter> filtrovat, s tím rozdílem, že shody může být na předponě zprávy s identifikátorem URI. Například filtr určení adresy `http://www.adatum.com` odpovídá zprávy adresované do `http://www.adatum.com/userA`.  
+1. <xref:System.ServiceModel.Dispatcher.PrefixEndpointAddressMessageFilter> Funguje stejně jako <xref:System.ServiceModel.Dispatcher.EndpointAddressMessageFilter> filtrovat, s tím rozdílem, že shody může být na předponě zprávy s identifikátorem URI. Například filtr určení adresy `http://www.adatum.com` odpovídá zprávy adresované do `http://www.adatum.com/userA`.  
   
 ### <a name="xpath-message-filters"></a>Filtry zpráv XPath  
  <xref:System.ServiceModel.Dispatcher.XPathMessageFilter> Výraz XPath používá k určení, jestli dokument XML obsahuje konkrétní prvky, atributy, text nebo jiné XML syntaktické konstrukce. Tento filtr je optimalizována pro být velice efektivní pro striktní podmnožinou XPath. Jazyk XML Path je popsána v [W3C XML Path Language 1.0 – specifikace](https://go.microsoft.com/fwlink/?LinkId=94779).  

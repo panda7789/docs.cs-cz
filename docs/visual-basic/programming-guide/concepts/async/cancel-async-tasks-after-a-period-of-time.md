@@ -2,12 +2,12 @@
 title: Zrušení asynchronních úloh po určitou dobu (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: a48045a3-6a99-42af-b824-af340f0b9a5d
-ms.openlocfilehash: 2b5634165493ff1aa5e07f5240a3db15741d57a1
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 2f3fee4909338155ed4b8917fd1de46984614908
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58831550"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59341696"
 ---
 # <a name="cancel-async-tasks-after-a-period-of-time-visual-basic"></a>Zrušení asynchronních úloh po určitou dobu (Visual Basic)
 Můžete zrušit asynchronní operaci po určité době pomocí <xref:System.Threading.CancellationTokenSource.CancelAfter%2A?displayProperty=nameWithType> metody, pokud nechcete čekat na dokončení operace. Tato metoda plánuje zrušení všech přidružených úkolů, které nejsou dokončeny v časovém období, které je určeno `CancelAfter` výrazu.  
@@ -20,19 +20,19 @@ Můžete zrušit asynchronní operaci po určité době pomocí <xref:System.Thr
 ## <a name="downloading-the-example"></a>Stažení příkladu  
  Můžete si stáhnout kompletní projekt Windows Presentation Foundation (WPF) z [asynchronní vzorek: Jemné ladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea) a pak postupujte podle těchto kroků.  
   
-1.  Dekomprimujte soubor, který jste stáhli a poté spusťte Visual Studio.  
+1. Dekomprimujte soubor, který jste stáhli a poté spusťte Visual Studio.  
   
-2.  V panelu nabídky zvolte **souboru**, **otevřít**, **projekt či řešení**.  
+2. V panelu nabídky zvolte **souboru**, **otevřít**, **projekt či řešení**.  
   
-3.  V **otevřít projekt** dialogové okno, otevřete složku, která obsahuje ukázkový kód, který jste dekomprimovali a potom otevřete soubor řešení (.sln) pro AsyncFineTuningVB.  
+3. V **otevřít projekt** dialogové okno, otevřete složku, která obsahuje ukázkový kód, který jste dekomprimovali a potom otevřete soubor řešení (.sln) pro AsyncFineTuningVB.  
   
-4.  V **Průzkumníka řešení**, otevřete místní nabídku **CancelAfterTime** projektu a klikněte na tlačítko **nastavit jako spouštěný projekt**.  
+4. V **Průzkumníka řešení**, otevřete místní nabídku **CancelAfterTime** projektu a klikněte na tlačítko **nastavit jako spouštěný projekt**.  
   
-5.  Stiskněte klávesu F5 ke spuštění projektu.  
+5. Stiskněte klávesu F5 ke spuštění projektu.  
   
      Stiskněte klávesy Ctrl + F5 ke spuštění projektu bez ladění.  
   
-6.  Chcete-li ověřit, zda výstup může zobrazit výstup pro všechny weby, žádné weby nebo některé webové servery spusťte program několikrát.  
+6. Chcete-li ověřit, zda výstup může zobrazit výstup pro všechny weby, žádné weby nebo některé webové servery spusťte program několikrát.  
   
  Pokud nechcete stáhnout projekt, můžete zkontrolovat soubor MainWindow.xaml.vb na konci tohoto tématu.  
   

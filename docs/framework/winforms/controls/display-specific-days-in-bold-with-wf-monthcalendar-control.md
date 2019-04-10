@@ -11,12 +11,12 @@ helpviewer_keywords:
 - GetDayBold event
 - MonthCalendar control [Windows Forms], dates displayed in bold
 ms.assetid: 8b20db5b-8118-4825-90e8-2c45c186ac7d
-ms.openlocfilehash: cf3ec21aa0272f60599f5659d78214120bcfcaf8
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 27b19e47d108b9af43a6d8882264d62c726ffe56
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59073695"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59343260"
 ---
 # <a name="how-to-display-specific-days-in-bold-with-the-windows-forms-monthcalendar-control"></a>Postupy: Tučné zobrazení konkrétních dnů pomocí ovládacího prvku Windows Forms MonthCalendar
 Windows Forms <xref:System.Windows.Forms.MonthCalendar> ovládací prvek mohl zobrazit dnů tučně, jako jednotný data nebo na základě s opakováním. Můžete tak učinit k přitažení pozornosti ke speciální kalendářních dat, jako je například svátků a o víkendech.  
@@ -25,7 +25,7 @@ Windows Forms <xref:System.Windows.Forms.MonthCalendar> ovládací prvek mohl zo
   
 ### <a name="to-make-a-date-appear-in-bold-type"></a>K tomu jsou zobrazeny tučným písmem  
   
-1.  Vytvořte <xref:System.DateTime> objekty.  
+1. Vytvořte <xref:System.DateTime> objekty.  
   
     ```vb  
     Dim myVacation1 As Date = New DateTime(2001, 6, 10)  
@@ -42,7 +42,7 @@ Windows Forms <xref:System.Windows.Forms.MonthCalendar> ovládací prvek mohl zo
     DateTime myVacation2 = DateTime(2001, 6, 17);  
     ```  
   
-2.  Tučné jedním datumovým voláním <xref:System.Windows.Forms.MonthCalendar.AddBoldedDate%2A>, <xref:System.Windows.Forms.MonthCalendar.AddAnnuallyBoldedDate%2A>, nebo <xref:System.Windows.Forms.MonthCalendar.AddMonthlyBoldedDate%2A> metodu <xref:System.Windows.Forms.MonthCalendar> ovládacího prvku.  
+2. Tučné jedním datumovým voláním <xref:System.Windows.Forms.MonthCalendar.AddBoldedDate%2A>, <xref:System.Windows.Forms.MonthCalendar.AddAnnuallyBoldedDate%2A>, nebo <xref:System.Windows.Forms.MonthCalendar.AddMonthlyBoldedDate%2A> metodu <xref:System.Windows.Forms.MonthCalendar> ovládacího prvku.  
   
     ```vb  
     MonthCalendar1.AddBoldedDate(myVacation1)  
@@ -80,7 +80,7 @@ Windows Forms <xref:System.Windows.Forms.MonthCalendar> ovládací prvek mohl zo
   
 ### <a name="to-make-a-date-appear-in-the-regular-font"></a>Aby se data zobrazí v pravidelných písma  
   
-1.  Ujistěte se, jeden tučné datum zobrazí v pravidelných písma voláním <xref:System.Windows.Forms.MonthCalendar.RemoveBoldedDate%2A>, <xref:System.Windows.Forms.MonthCalendar.RemoveAnnuallyBoldedDate%2A>, nebo <xref:System.Windows.Forms.MonthCalendar.RemoveMonthlyBoldedDate%2A> metody.  
+1. Ujistěte se, jeden tučné datum zobrazí v pravidelných písma voláním <xref:System.Windows.Forms.MonthCalendar.RemoveBoldedDate%2A>, <xref:System.Windows.Forms.MonthCalendar.RemoveAnnuallyBoldedDate%2A>, nebo <xref:System.Windows.Forms.MonthCalendar.RemoveMonthlyBoldedDate%2A> metody.  
   
     ```vb  
     MonthCalendar1.RemoveBoldedDate(myVacation1)  
@@ -113,7 +113,7 @@ Windows Forms <xref:System.Windows.Forms.MonthCalendar> ovládací prvek mohl zo
     monthCalendar1->RemoveAllBoldedDates();  
     ```  
   
-2.  Aktualizovat vzhled písma tak, že volání <xref:System.Windows.Forms.MonthCalendar.UpdateBoldedDates%2A> metody.  
+2. Aktualizovat vzhled písma tak, že volání <xref:System.Windows.Forms.MonthCalendar.UpdateBoldedDates%2A> metody.  
   
     ```vb  
     MonthCalendar1.UpdateBoldedDates()  

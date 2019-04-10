@@ -5,12 +5,12 @@ helpviewer_keywords:
 - custom log listeners
 - My.Application.Log object, custom log listeners
 ms.assetid: 0e019115-4b25-4820-afb1-af8c6e391698
-ms.openlocfilehash: c38b6d227859a962c320a0fb2f059294ccacfcfb
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 07c13d22235f1198188d26122c137db1d91e64e8
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58831918"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59342441"
 ---
 # <a name="walkthrough-creating-custom-log-listeners-visual-basic"></a>Návod: Vytváření vlastních součástí naslouchajících protokolům (Visual Basic)
 Tento návod ukazuje, jak vytvořit vlastní protokol naslouchací proces a nakonfigurujte ho tak, aby naslouchala na výstupu `My.Application.Log` objektu.  
@@ -37,23 +37,23 @@ Tento návod ukazuje, jak vytvořit vlastní protokol naslouchací proces a nako
   
 #### <a name="to-strongly-name-the-log-listener-assembly"></a>Důrazně název naslouchacího procesu protokolu sestavení  
   
-1.  Mají projekt vybraný v **Průzkumníka řešení**. Na **projektu** nabídce zvolte **vlastnosti**.   
+1. Mají projekt vybraný v **Průzkumníka řešení**. Na **projektu** nabídce zvolte **vlastnosti**.   
   
-2.  Klikněte na tlačítko **podepisování** kartu.  
+2. Klikněte na tlačítko **podepisování** kartu.  
   
-3.  Vyberte **podepsat sestavení** pole.  
+3. Vyberte **podepsat sestavení** pole.  
   
-4.  Vyberte  **\<nový >** z **vyberte soubor klíče se silným názvem** rozevíracího seznamu.  
+4. Vyberte  **\<nový >** z **vyberte soubor klíče se silným názvem** rozevíracího seznamu.  
   
      **Vytvořit klíč se silným názvem** zobrazí se dialogové okno.  
   
-5.  Zadejte název souboru klíče **název souboru klíče** pole.  
+5. Zadejte název souboru klíče **název souboru klíče** pole.  
   
-6.  Zadejte heslo **zadejte heslo** a **potvrzení hesla** polí.  
+6. Zadejte heslo **zadejte heslo** a **potvrzení hesla** polí.  
   
-7.  Klikněte na **OK**.  
+7. Klikněte na **OK**.  
   
-8.  Znovu sestavte aplikaci.  
+8. Znovu sestavte aplikaci.  
   
 ## <a name="adding-the-listener"></a>Přidání posluchače  
  Teď, když sestavení se silným názvem, budete muset určit silný název naslouchacího procesu tak, aby `My.Application.Log` používá vašemu naslouchacímu procesu protokolu.  
@@ -74,7 +74,7 @@ Tento návod ukazuje, jak vytvořit vlastní protokol naslouchací proces a nako
   
 #### <a name="to-add-the-listener-to-myapplicationlog"></a>Chcete-li přidat naslouchací proces pro My.Application.Log  
   
-1.  Klikněte pravým tlačítkem na app.config **Průzkumníka řešení** a zvolte **otevřít**.  
+1. Klikněte pravým tlačítkem na app.config **Průzkumníka řešení** a zvolte **otevřít**.  
   
      -nebo-  
   
@@ -86,17 +86,17 @@ Tento návod ukazuje, jak vytvořit vlastní protokol naslouchací proces a nako
   
     3.  Klikněte na **Přidat**.  
   
-2.  Vyhledejte `<listeners>` sekci `<source>` části s `name` atribut "DefaultSource" v `<sources>` oddílu. `<sources>` Je umístěna v `<system.diagnostics>` části na nejvyšší úrovni `<configuration>` oddílu.  
+2. Vyhledejte `<listeners>` sekci `<source>` části s `name` atribut "DefaultSource" v `<sources>` oddílu. `<sources>` Je umístěna v `<system.diagnostics>` části na nejvyšší úrovni `<configuration>` oddílu.  
   
-3.  Přidání tohoto elementu `<listeners>` části:  
+3. Přidání tohoto elementu `<listeners>` části:  
   
     ```xml  
     <add name="SimpleLog" />  
     ```  
   
-4.  Vyhledejte `<sharedListeners>` sekci `<system.diagnostics>` části na nejvyšší úrovni `<configuration>` oddílu.  
+4. Vyhledejte `<sharedListeners>` sekci `<system.diagnostics>` části na nejvyšší úrovni `<configuration>` oddílu.  
   
-5.  Přidejte tento element, který `<sharedListeners>` části:  
+5. Přidejte tento element, který `<sharedListeners>` části:  
   
     ```xml  
     <add name="SimpleLog" type="SimpleLogStrongName" />  
@@ -107,7 +107,7 @@ Tento návod ukazuje, jak vytvořit vlastní protokol naslouchací proces a nako
 ## <a name="see-also"></a>Viz také:
 
 - <xref:Microsoft.VisualBasic.Logging.Log?displayProperty=nameWithType>
-- [Práce s protokoly aplikací](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)
-- [Postupy: Výjimky protokolu](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md)
+- [Práce s protokoly aplikací](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)
+- [Postupy: Protokolování výjimek](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md)
 - [Postupy: Zápis zpráv protokolu](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md)
-- [Návod: Změna, kam objekt My.Application.Log zapisuje informace](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md)
+- [Návod: Změna místa, kam objekt My.Application.Log zapisuje informace](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md)

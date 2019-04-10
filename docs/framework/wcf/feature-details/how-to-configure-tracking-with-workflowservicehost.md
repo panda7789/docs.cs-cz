@@ -2,19 +2,19 @@
 title: 'Postupy: Konfigurace sledování pomocí třídy WorkflowServiceHost'
 ms.date: 03/30/2017
 ms.assetid: ed1485fe-7529-4351-bca3-8bb915260b17
-ms.openlocfilehash: dc6a89505c788183ed5d53df986c0f545c0d5533
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: e0631cdb47bc88f7f588f4dfe6c44ea3d44f4e60
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59226544"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59336561"
 ---
 # <a name="how-to-configure-tracking-with-workflowservicehost"></a>Postupy: Konfigurace sledování pomocí třídy WorkflowServiceHost
 Toto téma vysvětluje postup konfigurace sledování [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] pracovního postupu hostované v <xref:System.ServiceModel.Activities.WorkflowServiceHost>. Prostřednictvím souboru Web.config je nakonfigurován tak, že zadáte chování služby.  
   
 ### <a name="configure-tracking-in-configuration"></a>Konfigurace sledování v konfiguraci  
   
-1.  Přidat <xref:System.Activities.Tracking.EtwTrackingParticipant> pomocí <`behavior`> element v konfiguračním souboru, jak je znázorněno v následujícím příkladu.  
+1. Přidat <xref:System.Activities.Tracking.EtwTrackingParticipant> pomocí <`behavior`> element v konfiguračním souboru, jak je znázorněno v následujícím příkladu.  
   
     ```xml  
     <behaviors>  
@@ -56,7 +56,7 @@ Toto téma vysvětluje postup konfigurace sledování [!INCLUDE[netfx_current_lo
   
 ### <a name="configure-tracking-in-code"></a>Konfigurace sledování v kódu  
   
-1.  Přidat <xref:System.Activities.Tracking.EtwTrackingParticipant> pomocí <xref:System.ServiceModel.Activities.Description.EtwTrackingBehavior> chování v kódu, jak je znázorněno v následujícím příkladu.  
+1. Přidat <xref:System.Activities.Tracking.EtwTrackingParticipant> pomocí <xref:System.ServiceModel.Activities.Description.EtwTrackingBehavior> chování v kódu, jak je znázorněno v následujícím příkladu.  
   
     ```csharp  
     host.Description.Behaviors.Add(new EtwTrackingBehavior { ProfileName = "Sample Tracking Profile" });  

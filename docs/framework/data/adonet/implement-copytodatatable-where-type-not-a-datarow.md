@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: b27b52cf-6172-485f-a75c-70ff9c5a2bd4
-ms.openlocfilehash: 4ec609ac38b3fa91a4b11b93e24b465f48696a9e
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 120b4bf22e310bee73ba006cfe5a060d0ecd9d65
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59159224"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59338940"
 ---
 # <a name="how-to-implement-copytodatatablet-where-the-generic-type-t-is-not-a-datarow"></a>Postupy: Implementace CopyToDataTable\<T > kde obecný typ není DataRow
 <xref:System.Data.DataTable> Objektu se často používá k vytváření datových vazeb. <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> Metoda přijímá výsledky dotazu a zkopíruje data do <xref:System.Data.DataTable>, který potom slouží pro vytváření datových vazeb. <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> Metody, ale pracovat pouze s <xref:System.Collections.Generic.IEnumerable%601> zdroje kde obecný parametr `T` je typu <xref:System.Data.DataRow>. I když to je užitečné, neumožňuje tabulky, který se má vytvořit ze sekvence Skalární typy, dotazy, které anonymní typy projektů nebo dotazy, které provádějí spoje tabulky platná.  
@@ -21,7 +21,7 @@ ms.locfileid: "59159224"
   
 ### <a name="to-implement-the-custom-copytodatatablet-methods-in-your-application"></a>K implementaci vlastních CopyToDataTable\<T > metodami v aplikaci  
   
-1.  Implementace `ObjectShredder<T>` třídy za účelem vytvoření <xref:System.Data.DataTable> ze <xref:System.Collections.Generic.IEnumerable%601> zdroje:  
+1. Implementace `ObjectShredder<T>` třídy za účelem vytvoření <xref:System.Data.DataTable> ze <xref:System.Collections.Generic.IEnumerable%601> zdroje:  
   
      [!code-csharp[DP Custom CopyToDataTable Examples#ObjectShredderClass](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP Custom CopyToDataTable Examples/CS/Program.cs#objectshredderclass)]
      [!code-vb[DP Custom CopyToDataTable Examples#ObjectShredderClass](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP Custom CopyToDataTable Examples/VB/Module1.vb#objectshredderclass)]  
@@ -32,12 +32,12 @@ ms.locfileid: "59159224"
     DataColumn dc = table.Columns.Contains(p.Name) ? table.Columns[p.Name] : table.Columns.Add(p.Name, Nullable.GetUnderlyingType(p.PropertyType) ?? p.PropertyType);
     ```
 
-2.  Implementovat vlastní `CopyToDataTable<T>` rozšiřující metody ve třídě:  
+2. Implementovat vlastní `CopyToDataTable<T>` rozšiřující metody ve třídě:  
   
      [!code-csharp[DP Custom CopyToDataTable Examples#CustomCopyToDataTableMethods](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP Custom CopyToDataTable Examples/CS/Program.cs#customcopytodatatablemethods)]
      [!code-vb[DP Custom CopyToDataTable Examples#CustomCopyToDataTableMethods](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP Custom CopyToDataTable Examples/VB/Module1.vb#customcopytodatatablemethods)]  
   
-3.  Přidat `ObjectShredder<T>` třídy a `CopyToDataTable<T>` rozšiřující metody pro vaši aplikaci.  
+3. Přidat `ObjectShredder<T>` třídy a `CopyToDataTable<T>` rozšiřující metody pro vaši aplikaci.  
   
 ```vb  
 Module Module1  

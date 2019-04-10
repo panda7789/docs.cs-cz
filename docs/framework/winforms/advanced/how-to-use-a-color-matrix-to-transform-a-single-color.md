@@ -8,12 +8,12 @@ helpviewer_keywords:
 - image colors [Windows Forms], transforming
 - color matrices [Windows Forms], using
 ms.assetid: 44df4556-a433-49c0-ac0f-9a12063a5860
-ms.openlocfilehash: 66ddd85d4f841edf9cabf338fbb66a8e2dda491a
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 78fc498b0689026fb74ec0c422948c1879495560
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59075159"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59342853"
 ---
 # <a name="how-to-use-a-color-matrix-to-transform-a-single-color"></a>Postupy: Použití matice barev k transformaci jedné barvy
 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] poskytuje <xref:System.Drawing.Image> a <xref:System.Drawing.Bitmap> třídy pro ukládání a manipulaci s obrázky. <xref:System.Drawing.Image> a <xref:System.Drawing.Bitmap> objekty ukládání barvu každého obrazového bodu jako 32bitová čísla: 8 bity pro červená, zelená, modrá a alfa. Každý ze čtyř komponent je číslo od 0 do 255, kde 0 představuje žádné intenzity a 255 představující plné intenzity. Hodnota alfa Určuje průhlednost barvy: 0 je zcela transparentní, a je úplně neprůhledná 255.  
@@ -26,9 +26,9 @@ ms.locfileid: "59075159"
   
  Předpokládejme například, že chcete začít s barvou (0.2, 0.0, 0.4, 1.0) a platí následující transformace:  
   
-1.  Double hodnota červené  
+1. Double hodnota červené  
   
-2.  Přidání do komponenty červené, zelené a modré 0.2  
+2. Přidání do komponenty červené, zelené a modré 0.2  
   
  Následující násobení matic provede pár transformace v uvedeném pořadí.  
   
@@ -51,11 +51,11 @@ ms.locfileid: "59075159"
   
  Kód v následujícím příkladu používá následující kroky provést přebarvení:  
   
-1.  Inicializace <xref:System.Drawing.Imaging.ColorMatrix> objektu.  
+1. Inicializace <xref:System.Drawing.Imaging.ColorMatrix> objektu.  
   
-2.  Vytvoření <xref:System.Drawing.Imaging.ImageAttributes> objektu a předejte <xref:System.Drawing.Imaging.ColorMatrix> objektu <xref:System.Drawing.Imaging.ImageAttributes.SetColorMatrix%2A> metodu <xref:System.Drawing.Imaging.ImageAttributes> objektu.  
+2. Vytvoření <xref:System.Drawing.Imaging.ImageAttributes> objektu a předejte <xref:System.Drawing.Imaging.ColorMatrix> objektu <xref:System.Drawing.Imaging.ImageAttributes.SetColorMatrix%2A> metodu <xref:System.Drawing.Imaging.ImageAttributes> objektu.  
   
-3.  Předání <xref:System.Drawing.Imaging.ImageAttributes> objektu <xref:System.Drawing.Graphics.DrawImage%2A> metodu <xref:System.Drawing.Graphics> objektu.  
+3. Předání <xref:System.Drawing.Imaging.ImageAttributes> objektu <xref:System.Drawing.Graphics.DrawImage%2A> metodu <xref:System.Drawing.Graphics> objektu.  
   
  [!code-csharp[System.Drawing.RecoloringImages#21](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.RecoloringImages/CS/Class1.cs#21)]
  [!code-vb[System.Drawing.RecoloringImages#21](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.RecoloringImages/VB/Class1.vb#21)]  

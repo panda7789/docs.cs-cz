@@ -8,12 +8,12 @@ helpviewer_keywords:
 - XsdDataContractExporter class
 - XsdDataContractImporter class
 ms.assetid: bb57b962-70c1-45a9-93d5-e721e340a13f
-ms.openlocfilehash: f69fb25df4ed2af79cc5ffa59f0969a1616d38ca
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: dcbccbea279796fdaec1227b7575cf39e47f9e4f
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59185417"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59336873"
 ---
 # <a name="exporting-schemas-from-classes"></a>Export schémat ze tříd
 Ke generování schématu XML definice jazyk (XSD) schémat ze tříd, které se používají v datovém modelu smlouvy, použijte <xref:System.Runtime.Serialization.XsdDataContractExporter> třídy. Toto téma popisuje proces pro vytvoření schémat.  
@@ -25,20 +25,20 @@ Ke generování schématu XML definice jazyk (XSD) schémat ze tříd, které se
   
 #### <a name="to-export-schemas"></a>Export schémat  
   
-1.  Vytvoření instance <xref:System.Runtime.Serialization.XsdDataContractExporter>.  
+1. Vytvoření instance <xref:System.Runtime.Serialization.XsdDataContractExporter>.  
   
-2.  Volitelné. Předávání <xref:System.Xml.Schema.XmlSchemaSet> v konstruktoru. V takovém případě schématu generovaném během exportu schématu se přidá k tomuto <xref:System.Xml.Schema.XmlSchemaSet> instanci místo počínaje prázdnou hodnotu <xref:System.Xml.Schema.XmlSchemaSet>.  
+2. Volitelné. Předávání <xref:System.Xml.Schema.XmlSchemaSet> v konstruktoru. V takovém případě schématu generovaném během exportu schématu se přidá k tomuto <xref:System.Xml.Schema.XmlSchemaSet> instanci místo počínaje prázdnou hodnotu <xref:System.Xml.Schema.XmlSchemaSet>.  
   
-3.  Volitelné. Volání jednoho z <xref:System.Runtime.Serialization.XsdDataContractExporter.CanExport%2A> metody. Metoda určuje, zda zadaný typ je možné exportovat. Tato metoda má stejný přetížení, jako `Export` metoda v dalším kroku.  
+3. Volitelné. Volání jednoho z <xref:System.Runtime.Serialization.XsdDataContractExporter.CanExport%2A> metody. Metoda určuje, zda zadaný typ je možné exportovat. Tato metoda má stejný přetížení, jako `Export` metoda v dalším kroku.  
   
-4.  Volání jednoho z <xref:System.Runtime.Serialization.XsdDataContractExporter.Export%2A> metody. Existují tři přetížení s ohledem <xref:System.Type>, <xref:System.Collections.Generic.List%601> z `Type` objektů, nebo <xref:System.Collections.Generic.List%601> z <xref:System.Reflection.Assembly> objekty. V posledním případě jsou exportovány všechny typy v dané sestavení.  
+4. Volání jednoho z <xref:System.Runtime.Serialization.XsdDataContractExporter.Export%2A> metody. Existují tři přetížení s ohledem <xref:System.Type>, <xref:System.Collections.Generic.List%601> z `Type` objektů, nebo <xref:System.Collections.Generic.List%601> z <xref:System.Reflection.Assembly> objekty. V posledním případě jsou exportovány všechny typy v dané sestavení.  
   
      Více volání `Export` metody za následek více položek, které se přidávají do stejné `XmlSchemaSet`. Typ negeneruje do `XmlSchemaSet` Pokud již existuje. Proto volání `Export` více než jednou ve stejném `XsdDataContractExporter` je vhodnější než vytvoření více instancí `XsdDataContractExporter` třídy. Tím se vyhnete duplicitního schématu typy nefunkční.  
   
     > [!NOTE]
     >  Pokud dojde k selhání během exportu, `XmlSchemaSet` bude v nepředvídatelném stavu.  
   
-5.  Přístup <xref:System.Xml.Schema.XmlSchemaSet> prostřednictvím <xref:System.Runtime.Serialization.XsdDataContractExporter.Schemas%2A> vlastnost.  
+5. Přístup <xref:System.Xml.Schema.XmlSchemaSet> prostřednictvím <xref:System.Runtime.Serialization.XsdDataContractExporter.Schemas%2A> vlastnost.  
   
 ## <a name="export-options"></a>Možnosti exportu  
  Můžete nastavit <xref:System.Runtime.Serialization.XsdDataContractExporter.Options%2A> vlastnost <xref:System.Runtime.Serialization.XsdDataContractExporter> do instance <xref:System.Runtime.Serialization.ExportOptions> třídy ovládat různé aspekty procesu exportu. Konkrétně můžete nastavit následující možnosti:  

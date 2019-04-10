@@ -6,12 +6,12 @@ helpviewer_keywords:
 ms.assetid: 649f1342-766b-49e6-a90d-5b019a751e11
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 03600a7c7fbff30acab46f875fb8cd2516207457
-ms.sourcegitcommit: 15ab532fd5e1f8073a4b678922d93b68b521bfa0
+ms.openlocfilehash: 9ee17426e3ac8d5351490276a8c71cdfe996eb1a
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58654598"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59341072"
 ---
 # <a name="side-by-side-execution-in-the-net-framework"></a>Souběžné spouštění v .NET Framework
 Souběžné spouštění je možnost spuštění několika verzí aplikace nebo komponenty v jednom počítači. V jednom počítači lze nainstalovat více verzí modulu CLR (Common Language Runtime) a několik verzí aplikací a komponent, které využívají verzi modulu runtime ve stejnou dobu.  
@@ -75,11 +75,11 @@ Souběžné spouštění je možnost spuštění několika verzí aplikace nebo 
   
  Pokud se nachází konfigurační soubor aplikace, modul runtime určuje verzi odpovídající modul runtime k načtení závislosti na výsledcích následující proces:  
   
-1.  Modul runtime zkoumá [ \<supportedRuntime > Element](../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md) prvku v konfiguračním souboru aplikace. Pokud jeden nebo více následujících podporovaný modul runtime verze uvedené v  **\<supportedRuntime >** element jsou k dispozici, načte modul runtime verze modulu runtime, který je zadán prvním  **\< supportedRuntime >** elementu. Pokud tato verze není k dispozici, modul runtime zkoumá Další  **\<supportedRuntime >** elementu a pokusí se načíst modul runtime verze specifikovaná. Pokud tuto verzi modulu runtime není k dispozici, následné  **\<supportedRuntime >** jsou zkoumány elementy. Pokud nejsou k dispozici žádné podporované verze modulu runtime, modul runtime se nepodaří načíst verzi modulu runtime a zobrazí uživateli zprávu (viz krok 3).  
+1. Modul runtime zkoumá [ \<supportedRuntime > Element](../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md) prvku v konfiguračním souboru aplikace. Pokud jeden nebo více následujících podporovaný modul runtime verze uvedené v  **\<supportedRuntime >** element jsou k dispozici, načte modul runtime verze modulu runtime, který je zadán prvním  **\< supportedRuntime >** elementu. Pokud tato verze není k dispozici, modul runtime zkoumá Další  **\<supportedRuntime >** elementu a pokusí se načíst modul runtime verze specifikovaná. Pokud tuto verzi modulu runtime není k dispozici, následné  **\<supportedRuntime >** jsou zkoumány elementy. Pokud nejsou k dispozici žádné podporované verze modulu runtime, modul runtime se nepodaří načíst verzi modulu runtime a zobrazí uživateli zprávu (viz krok 3).  
   
-2.  Modul runtime přečte hlavičkách přenositelných Spustitelných souborů spustitelného souboru aplikace. Pokud je k dispozici modul runtime verze zadaná v hlavičce souboru PE, načte modul runtime tuto verzi. Pokud zadaná verze modulu runtime není k dispozici, modul runtime vyhledává verze modulu runtime určí společnost Microsoft na kompatibilitu s modulem runtime verze v záhlaví PE. Pokud není nalezena tato verze, proces pokračuje ke kroku 3.  
+2. Modul runtime přečte hlavičkách přenositelných Spustitelných souborů spustitelného souboru aplikace. Pokud je k dispozici modul runtime verze zadaná v hlavičce souboru PE, načte modul runtime tuto verzi. Pokud zadaná verze modulu runtime není k dispozici, modul runtime vyhledává verze modulu runtime určí společnost Microsoft na kompatibilitu s modulem runtime verze v záhlaví PE. Pokud není nalezena tato verze, proces pokračuje ke kroku 3.  
   
-3.  Modul runtime se zobrazí zpráva s informacemi o tom, že verze modulu runtime podporováno v aplikaci není k dispozici. Modul runtime není načten.  
+3. Modul runtime se zobrazí zpráva s informacemi o tom, že verze modulu runtime podporováno v aplikaci není k dispozici. Modul runtime není načten.  
   
     > [!NOTE]
     >  Zobrazení této zprávy můžete potlačit pomocí hodnoty NoGuiFromShim v klíči registru HKLM\Software\Microsoft\\. NETFramework nebo COMPLUS_NoGuiFromShim proměnné prostředí. Například můžete potlačit zprávu pro aplikace, které obvykle nekomunikují s uživatelem, například bezobslužné instalace nebo služby Windows. Při zobrazení této zprávy je potlačena, modul runtime zapíše zprávu do protokolu událostí.  Nastavte hodnotu registru NoGuiFromShim na 1 pro potlačení této zprávy pro všechny aplikace v počítači. Můžete také nastavte proměnnou prostředí COMPLUS_NoGuiFromShim 1 k potlačení zprávy pro aplikace běžící v rámci určitého uživatele.  

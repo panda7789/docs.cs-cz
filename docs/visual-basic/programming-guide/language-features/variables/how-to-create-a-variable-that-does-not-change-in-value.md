@@ -5,12 +5,12 @@ helpviewer_keywords:
 - variables [Visual Basic], read-only
 - variables [Visual Basic], constant value
 ms.assetid: 86b59266-25df-4635-ae15-9b59c411d036
-ms.openlocfilehash: 57792db826caa996e163bc0a51b01a6bbd6a4858
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 7180e5141572d219ed02c57103e9d4b80cde536e
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58823321"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59342931"
 ---
 # <a name="how-to-create-a-variable-that-does-not-change-in-value-visual-basic"></a>Postupy: Vytvoření proměnné, která se nezmění na hodnotu (Visual Basic)
 Může zobrazit odporuje pojem proměnné, která se nezmění jeho hodnotu. Ale existují situace, kdy konstanty není možné vydat je a je užitečné mít proměnná s pevnou hodnotu. V takovém případě můžete členské proměnné s definovat [jen pro čtení](../../../../visual-basic/language-reference/modifiers/readonly.md) – klíčové slovo.  
@@ -25,7 +25,7 @@ Může zobrazit odporuje pojem proměnné, která se nezmění jeho hodnotu. Ale
   
 ### <a name="to-create-a-variable-that-does-not-change-in-value"></a>K vytvoření proměnné, která se nezmění na hodnotu  
   
-1.  Na úrovni modulu deklarace členské proměnné s [příkazu Dim](../../../../visual-basic/language-reference/statements/dim-statement.md)a zahrnout [jen pro čtení](../../../../visual-basic/language-reference/modifiers/readonly.md) – klíčové slovo.  
+1. Na úrovni modulu deklarace členské proměnné s [příkazu Dim](../../../../visual-basic/language-reference/statements/dim-statement.md)a zahrnout [jen pro čtení](../../../../visual-basic/language-reference/modifiers/readonly.md) – klíčové slovo.  
   
     ```  
     Dim ReadOnly timeStarted  
@@ -33,7 +33,7 @@ Může zobrazit odporuje pojem proměnné, která se nezmění jeho hodnotu. Ale
   
      Můžete zadat `ReadOnly` pouze na členské proměnné. To znamená, že je nutné definovat proměnné na úrovni modulu mimo všechny procedury.  
   
-2.  Pokud můžete vypočítat hodnotu v jediném příkazu v době kompilace, použijte klauzule inicializace v `Dim` příkazu. Postupujte podle [jako](../../../../visual-basic/language-reference/statements/as-clause.md) klauzule znaménko rovná se (`=`) a potom pomocí výrazu. Ujistěte se, že kompilátor můžete vyhodnotit tento výraz s konstantní hodnotou.  
+2. Pokud můžete vypočítat hodnotu v jediném příkazu v době kompilace, použijte klauzule inicializace v `Dim` příkazu. Postupujte podle [jako](../../../../visual-basic/language-reference/statements/as-clause.md) klauzule znaménko rovná se (`=`) a potom pomocí výrazu. Ujistěte se, že kompilátor můžete vyhodnotit tento výraz s konstantní hodnotou.  
   
     ```  
     Dim ReadOnly timeStarted As Date = Now  
@@ -46,4 +46,4 @@ Může zobrazit odporuje pojem proměnné, která se nezmění jeho hodnotu. Ale
 ## <a name="see-also"></a>Viz také:
 
 - [WriteOnly](../../../../visual-basic/language-reference/modifiers/writeonly.md)
-- [Příkaz Const](../../../../visual-basic/language-reference/statements/const-statement.md)
+- [Const – příkaz](../../../../visual-basic/language-reference/statements/const-statement.md)

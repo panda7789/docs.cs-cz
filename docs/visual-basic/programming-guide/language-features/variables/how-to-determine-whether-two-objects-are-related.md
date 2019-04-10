@@ -6,23 +6,23 @@ helpviewer_keywords:
 - objects [Visual Basic], inheritance
 - object variables [Visual Basic], determining relation
 ms.assetid: da002e3f-6616-4bad-a229-f842d06652bb
-ms.openlocfilehash: c4ff7c8e616c9126eae11a23e001c219dcbc0907
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: f59e00d80d28fc4bf24874d25b5c12643649c834
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58819200"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59342095"
 ---
 # <a name="how-to-determine-whether-two-objects-are-related-visual-basic"></a>Postupy: Určení, zda dva objekty souvisejí (Visual Basic)
 Můžete porovnat dva objekty, určit vztah, pokud existuje mezi třídami, ze které se vytvářejí. <xref:System.Type.IsInstanceOfType%2A> Metodu <xref:System.Type?displayProperty=nameWithType> třídy vrátí `True` Pokud zadaná třída dědí ze třídy aktuální, nebo pokud aktuální typ je rozhraní nepodporuje zadanou třídu.  
   
 ### <a name="to-determine-if-one-object-inherits-from-another-objects-class-or-interface"></a>Chcete-li zjistit, pokud jeden objekt dědí z třídy nebo rozhraní jiného objektu.  
   
-1.  U objektu si myslíte, že může být základního typu, vyvolají <xref:System.Object.GetType%2A> metody.  
+1. U objektu si myslíte, že může být základního typu, vyvolají <xref:System.Object.GetType%2A> metody.  
   
-2.  Na <xref:System.Type?displayProperty=nameWithType> vrácený <xref:System.Object.GetType%2A>, vyvolat <xref:System.Type.IsInstanceOfType%2A> metody.  
+2. Na <xref:System.Type?displayProperty=nameWithType> vrácený <xref:System.Object.GetType%2A>, vyvolat <xref:System.Type.IsInstanceOfType%2A> metody.  
   
-3.  V seznamu argumentů pro <xref:System.Type.IsInstanceOfType%2A>, zadejte objekt si myslíte, že může být odvozeného typu.  
+3. V seznamu argumentů pro <xref:System.Type.IsInstanceOfType%2A>, zadejte objekt si myslíte, že může být odvozeného typu.  
   
      <xref:System.Type.IsInstanceOfType%2A> Vrátí `True` pokud její argument typ dědí z <xref:System.Type?displayProperty=nameWithType> typ objektu.  
   
@@ -52,7 +52,7 @@ End Class
 - <xref:System.Object.GetType%2A>
 - <xref:System.Type?displayProperty=nameWithType>
 - <xref:System.Type.IsInstanceOfType%2A>
-- [Datový typ Object](../../../../visual-basic/language-reference/data-types/object-data-type.md)
+- [Datový typ objektu](../../../../visual-basic/language-reference/data-types/object-data-type.md)
 - [Objektové proměnné](../../../../visual-basic/programming-guide/language-features/variables/object-variables.md)
 - [Hodnoty objektové proměnné](../../../../visual-basic/programming-guide/language-features/variables/object-variable-values.md)
-- [Postupy: Určení, zda dva objekty jsou identické](../../../../visual-basic/programming-guide/language-features/variables/how-to-determine-whether-two-objects-are-identical.md)
+- [Postupy: Zjištění, jestli jsou dva objekty identické](../../../../visual-basic/programming-guide/language-features/variables/how-to-determine-whether-two-objects-are-identical.md)

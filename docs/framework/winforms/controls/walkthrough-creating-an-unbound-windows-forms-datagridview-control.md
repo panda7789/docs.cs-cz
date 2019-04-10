@@ -11,12 +11,12 @@ helpviewer_keywords:
 - data [Windows Forms], unbound
 - walkthroughs [Windows Forms], DataGridView control
 ms.assetid: 5a8d6afa-1b4b-4b24-8db8-501086ffdebe
-ms.openlocfilehash: 375ac3bd3a178cc059239cf84209ebbf5d6aca11
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 99561490786f3f3569f272138001ea5ad8937410
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59220575"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59343465"
 ---
 # <a name="walkthrough-creating-an-unbound-windows-forms-datagridview-control"></a>Návod: Vytvoření nevázaného ovládacího prvku Windows Forms DataGridView
 Můžete často zobrazit tabulková data, která nepochází z databáze. Můžete například zobrazit obsah dvourozměrné pole řetězců. <xref:System.Windows.Forms.DataGridView> Třída poskytuje snadný a dobře přizpůsobitelných způsob zobrazení dat bez vazby ke zdroji dat. Tento návod ukazuje, jak naplnit <xref:System.Windows.Forms.DataGridView> řídit a spravovat přidávání a odstraňování řádků v režim "bez vazby". Ve výchozím nastavení může uživatel přidat nové řádky. Chcete-li zabránit přidání řádku, nastavte <xref:System.Windows.Forms.DataGridView.AllowUserToAddRows%2A> vlastnost `false`.  
@@ -27,19 +27,19 @@ Můžete často zobrazit tabulková data, která nepochází z databáze. Může
   
 #### <a name="to-use-an-unbound-datagridview-control"></a>Chcete-li použít nevázaného ovládacího prvku DataGridView  
   
-1.  Vytvořte třídu, která je odvozena z <xref:System.Windows.Forms.Form> a obsahuje následující deklarace proměnných a `Main` metoda.  
+1. Vytvořte třídu, která je odvozena z <xref:System.Windows.Forms.Form> a obsahuje následující deklarace proměnných a `Main` metoda.  
   
      [!code-csharp[System.Windows.Forms.DataGridViewSimpleUnbound#01](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewSimpleUnbound/CS/simpleunbound.cs#01)]
      [!code-vb[System.Windows.Forms.DataGridViewSimpleUnbound#01](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewSimpleUnbound/VB/simpleunbound.vb#01)]  
     [!code-csharp[System.Windows.Forms.DataGridViewSimpleUnbound#02](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewSimpleUnbound/CS/simpleunbound.cs#02)]
     [!code-vb[System.Windows.Forms.DataGridViewSimpleUnbound#02](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewSimpleUnbound/VB/simpleunbound.vb#02)]  
   
-2.  Implementace `SetupLayout` metoda v definici třídy formuláře k nastavení rozložení formuláře.  
+2. Implementace `SetupLayout` metoda v definici třídy formuláře k nastavení rozložení formuláře.  
   
      [!code-csharp[System.Windows.Forms.DataGridViewSimpleUnbound#20](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewSimpleUnbound/CS/simpleunbound.cs#20)]
      [!code-vb[System.Windows.Forms.DataGridViewSimpleUnbound#20](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewSimpleUnbound/VB/simpleunbound.vb#20)]  
   
-3.  Vytvoření `SetupDataGridView` metoda nastavit <xref:System.Windows.Forms.DataGridView> sloupců a vlastnosti.  
+3. Vytvoření `SetupDataGridView` metoda nastavit <xref:System.Windows.Forms.DataGridView> sloupců a vlastnosti.  
   
      Tato metoda nejprve přidá <xref:System.Windows.Forms.DataGridView> ovládací prvek do formuláře <xref:System.Windows.Forms.Control.Controls%2A> kolekce. Počet sloupců, který se má zobrazit v dalším kroku se nastavuje pomocí <xref:System.Windows.Forms.DataGridView.ColumnCount%2A> vlastnost. Výchozí styl záhlaví sloupců je nastavena tak, že nastavíte <xref:System.Windows.Forms.DataGridViewCellStyle.BackColor%2A>, <xref:System.Windows.Forms.DataGridViewCellStyle.ForeColor%2A>, a <xref:System.Windows.Forms.DataGridViewCellStyle.Font%2A> vlastnosti <xref:System.Windows.Forms.DataGridViewCellStyle> vrácených <xref:System.Windows.Forms.DataGridView.ColumnHeadersDefaultCellStyle%2A> vlastnost.  
   
@@ -48,14 +48,14 @@ Můžete často zobrazit tabulková data, která nepochází z databáze. Může
      [!code-csharp[System.Windows.Forms.DataGridViewSimpleUnbound#30](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewSimpleUnbound/CS/simpleunbound.cs#30)]
      [!code-vb[System.Windows.Forms.DataGridViewSimpleUnbound#30](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewSimpleUnbound/VB/simpleunbound.vb#30)]  
   
-4.  Vytvoření `PopulateDataGridView` metoda pro přidání řádků do <xref:System.Windows.Forms.DataGridView> ovládacího prvku.  
+4. Vytvoření `PopulateDataGridView` metoda pro přidání řádků do <xref:System.Windows.Forms.DataGridView> ovládacího prvku.  
   
      Každý řádek představuje určité skladby a přidružené informace.  
   
      [!code-csharp[System.Windows.Forms.DataGridViewSimpleUnbound#40](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewSimpleUnbound/CS/simpleunbound.cs#40)]
      [!code-vb[System.Windows.Forms.DataGridViewSimpleUnbound#40](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewSimpleUnbound/VB/simpleunbound.vb#40)]  
   
-5.  Pomocí pomocné metody na místě můžete připojit obslužných rutin událostí.  
+5. Pomocí pomocné metody na místě můžete připojit obslužných rutin událostí.  
   
      Bude zpracovávat **přidat** a **odstranit** tlačítka <xref:System.Windows.Forms.Control.Click> události, formuláře <xref:System.Windows.Forms.Form.Load> události a <xref:System.Windows.Forms.DataGridView> ovládacího prvku <xref:System.Windows.Forms.DataGridView.CellFormatting> událostí.  
   

@@ -2,12 +2,12 @@
 title: Vlastní hostitel služby
 ms.date: 03/30/2017
 ms.assetid: fe16ff50-7156-4499-9c32-13d8a79dc100
-ms.openlocfilehash: daa6645440a9988fc148757948d7d24615d5a9f9
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: d2eebd502fa02d01ac86cf88f336b72829a6116f
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59127789"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59340929"
 ---
 # <a name="custom-service-host"></a>Vlastní hostitel služby
 Tato ukázka předvádí, jak používat vlastní odvozený ze <xref:System.ServiceModel.ServiceHost> třídy pro úpravu chování za běhu služby. Tento přístup poskytuje opakovaně použitelné alternativu ke konfiguraci velkým množstvím služeb v běžným způsobem. Ukázka také ukazuje, jak používat <xref:System.ServiceModel.Activation.ServiceHostFactory> třídu použít vlastní hostitel služby v prostředí hostování internetové informační služby (IIS) nebo Windows Process Activation Service (WAS).  
@@ -158,21 +158,21 @@ public class SelfDescribingServiceHostFactory : ServiceHostFactory
   
 #### <a name="to-observe-the-effect-of-the-custom-host"></a>Chcete-li sledovat účinek vlastního hostitele  
   
-1.  Otevřete soubor Web.config služby a podívejte se, že neexistuje žádná konfigurace explicitně povolení metadat služby.  
+1. Otevřete soubor Web.config služby a podívejte se, že neexistuje žádná konfigurace explicitně povolení metadat služby.  
   
-2.  Otevřete soubor SVC služby a zda se zobrazila zpráva jeho @ServiceHost direktiva obsahuje atribut Factory, který určuje název vlastního ServiceHostFactory.  
+2. Otevřete soubor SVC služby a zda se zobrazila zpráva jeho @ServiceHost direktiva obsahuje atribut Factory, který určuje název vlastního ServiceHostFactory.  
   
 #### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
-1.  Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2.  Abyste mohli sestavit řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Abyste mohli sestavit řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3.  Po řešení je sestavený Build, spusťte Setup.bat nastavit aplikaci ServiceModelSamples [!INCLUDE[iisver](../../../../includes/iisver-md.md)]. Adresář ServiceModelSamples by se měla objevit jako [!INCLUDE[iisver](../../../../includes/iisver-md.md)] aplikace.  
+3. Po řešení je sestavený Build, spusťte Setup.bat nastavit aplikaci ServiceModelSamples [!INCLUDE[iisver](../../../../includes/iisver-md.md)]. Adresář ServiceModelSamples by se měla objevit jako [!INCLUDE[iisver](../../../../includes/iisver-md.md)] aplikace.  
   
-4.  Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+4. Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
-5.  Chcete-li odebrat [!INCLUDE[iisver](../../../../includes/iisver-md.md)] běhu Cleanup.bat aplikace.  
+5. Chcete-li odebrat [!INCLUDE[iisver](../../../../includes/iisver-md.md)] běhu Cleanup.bat aplikace.  
   
 ## <a name="see-also"></a>Viz také:
 

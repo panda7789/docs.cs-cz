@@ -6,12 +6,12 @@ helpviewer_keywords:
 - Impersonating the Client Sample [Windows Communication Foundation]
 - impersonation, Windows Communication Foundation sample
 ms.assetid: 8bd974e1-90db-4152-95a3-1d4b1a7734f8
-ms.openlocfilehash: bd03ddb2478d8f9938a8c89c04f536a81e9e24da
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: d79ce0d189fc88310594f356f1901d93b3e1e06f
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59202466"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59340916"
 ---
 # <a name="impersonating-the-client"></a>Zosobnění klienta
 Ukázka zosobnění ukazuje, jak zosobnit volající aplikace na službu tak, aby službě můžete získat přístup k systémovým prostředkům jménem volající.  
@@ -109,13 +109,13 @@ client.ClientCredentials.Windows.AllowedImpersonationLevel = TokenImpersonationL
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
-1.  Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2.  K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3.  Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3. Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
-4.  Abychom si předvedli, že služba zosobňuje volajícího, spustíte klienta pod jiným účtem než ten, který je služba spuštěná pod. Provedete to tak, že na příkazovém řádku zadejte:  
+4. Abychom si předvedli, že služba zosobňuje volajícího, spustíte klienta pod jiným účtem než ten, který je služba spuštěná pod. Provedete to tak, že na příkazovém řádku zadejte:  
   
     ```  
     runas /user:<machine-name>\<user-name> client.exe  
@@ -123,4 +123,4 @@ client.ClientCredentials.Windows.AllowedImpersonationLevel = TokenImpersonationL
   
      Zobrazí se výzva k zadání hesla. Zadejte heslo pro účet, který jste dříve zadali.  
   
-5.  Když spustíte klienta, si povšimněte identity před a po spuštění s jinými přihlašovacími údaji.  
+5. Když spustíte klienta, si povšimněte identity před a po spuštění s jinými přihlašovacími údaji.  

@@ -2,29 +2,29 @@
 title: 'Postupy: Určení, zda je soubor sestavení (C#)'
 ms.date: 07/20/2015
 ms.assetid: ea5186bb-5bff-4dcb-bde9-d6ba4e2edd00
-ms.openlocfilehash: 474cc4622e9444cab8e9d611dd9481d5358e10f0
-ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
+ms.openlocfilehash: e8026ab5fa44b7601e54b5e76ebf9eb434596a07
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56745247"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59340136"
 ---
 # <a name="how-to-determine-if-a-file-is-an-assembly-c"></a>Postupy: Určení, zda je soubor sestavení (C#)
 Pouze v případě ho spravuje a obsahuje neplatnou položku sestavení ve svých metadatech, je soubor sestavení. Další informace o sestavení a metadata, naleznete v tématu [Manifest sestavení](../../../../../docs/framework/app-domains/assembly-manifest.md).  
   
 ### <a name="how-to-manually-determine-if-a-file-is-an-assembly"></a>Jak ručně určit, zda je soubor sestavení  
   
-1.  Spustit [Ildasm.exe (IL Disassembler)](../../../../framework/tools/ildasm-exe-il-disassembler.md).  
+1. Spustit [Ildasm.exe (IL Disassembler)](../../../../framework/tools/ildasm-exe-il-disassembler.md).  
   
-2.  Načtěte soubor, který chcete testovat.  
+2. Načtěte soubor, který chcete testovat.  
   
-3.  Pokud **ILDASM** sestavy, že soubor není soubor (PE portable executable) a pak se nejedná o sestavení. Další informace naleznete v tématu [jak: Zobrazení obsahu sestavení](../../../../framework/app-domains/how-to-view-assembly-contents.md).  
+3. Pokud **ILDASM** sestavy, že soubor není soubor (PE portable executable) a pak se nejedná o sestavení. Další informace naleznete v tématu [jak: Zobrazení obsahu sestavení](../../../../framework/app-domains/how-to-view-assembly-contents.md).  
   
 ### <a name="how-to-programmatically-determine-if-a-file-is-an-assembly"></a>Jak prostřednictvím kódu programu určit, zda je soubor sestavení  
   
-1.  Volání <xref:System.Reflection.AssemblyName.GetAssemblyName%2A> předejte úplnou cestu k souboru a název souboru, které testujete.  
+1. Volání <xref:System.Reflection.AssemblyName.GetAssemblyName%2A> předejte úplnou cestu k souboru a název souboru, které testujete.  
   
-2.  Pokud <xref:System.BadImageFormatException> je vyvolána výjimka, soubor se nejedná o sestavení.  
+2. Pokud <xref:System.BadImageFormatException> je vyvolána výjimka, soubor se nejedná o sestavení.  
   
 ## <a name="example"></a>Příklad  
  V tomto příkladu ověřuje knihovnu DLL zjistěte, zda je sestavení.  
@@ -69,5 +69,5 @@ class TestAssembly
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Reflection.AssemblyName>
-- [Průvodce programováním v jazyce C#](../../../../csharp/programming-guide/index.md)
+- [Průvodce programováním v C#](../../../../csharp/programming-guide/index.md)
 - [Sestavení v rozhraní .NET](../../../../standard/assembly/index.md)

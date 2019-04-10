@@ -6,26 +6,26 @@ helpviewer_keywords:
 - variables [Visual Basic], object
 - object variables [Visual Basic], determining type
 ms.assetid: 6f6a138d-58a4-40d1-9f4e-0a3c598eaf81
-ms.openlocfilehash: dc6f54719d4f30be00b7b85f0ab18c4cb02b0d7c
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 6499dfce880cc9ce16e5d77887afc0598692f48e
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58816405"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59342866"
 ---
 # <a name="how-to-determine-what-type-an-object-variable-refers-to-visual-basic"></a>Postupy: Určit, jaký typ proměnná objektu odkazuje (Visual Basic)
 Objektová proměnná obsahuje ukazatel na data, která je uložená na jiném místě. Typ těchto dat můžete změnit za běhu. V daném okamžiku provádějí, můžete použít <xref:System.Type.GetTypeCode%2A> metodou ke zjištění aktuálního typu za běhu nebo [TypeOf – operátor](../../../../visual-basic/language-reference/operators/typeof-operator.md) zjistit, jestli aktuální run-time typu je kompatibilní s zadaného typu.  
   
 ### <a name="to-determine-the-exact-type-an-object-variable-currently-refers-to"></a>Chcete-li zjistit, konkrétní typ proměnná objektu aktuálně odkazuje na  
   
-1.  Proměnné objektu volat <xref:System.Object.GetType%2A> metodu pro načtení <xref:System.Type?displayProperty=nameWithType> objektu.  
+1. Proměnné objektu volat <xref:System.Object.GetType%2A> metodu pro načtení <xref:System.Type?displayProperty=nameWithType> objektu.  
   
     ```  
     Dim myObject As Object  
     myObject.GetType()  
     ```  
   
-2.  Na <xref:System.Type?displayProperty=nameWithType> třídy, zavolejte metodu sdílené <xref:System.Type.GetTypeCode%2A> načíst <xref:System.TypeCode> hodnotu výčtu pro typ objektu.  
+2. Na <xref:System.Type?displayProperty=nameWithType> třídy, zavolejte metodu sdílené <xref:System.Type.GetTypeCode%2A> načíst <xref:System.TypeCode> hodnotu výčtu pro typ objektu.  
   
     ```  
     Dim myObject As Object  
@@ -60,4 +60,4 @@ Objektová proměnná obsahuje ukazatel na data, která je uložená na jiném m
 - <xref:System.TypeCode>
 - [Objektové proměnné](../../../../visual-basic/programming-guide/language-features/variables/object-variables.md)
 - [Hodnoty objektové proměnné](../../../../visual-basic/programming-guide/language-features/variables/object-variable-values.md)
-- [Datový typ Object](../../../../visual-basic/language-reference/data-types/object-data-type.md)
+- [Datový typ objektu](../../../../visual-basic/language-reference/data-types/object-data-type.md)

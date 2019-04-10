@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8ae3712f-ef5e-41a1-9ea9-b3d0399439f1
-ms.openlocfilehash: 30dd3a54092c5b30cdd8dfd2917b6ea57edd7086
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: e139cafa168b0a6851e5d8474e6bb4db94f36e9a
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59153618"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59339148"
 ---
 # <a name="local-transactions"></a>Místní transakce
 Transakce v [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] se používají, když chcete vazby společně více úloh, takže se provést jako jednu jednotku práce. Představte si například, že aplikace provede dvě úlohy. Nejprve aktualizuje tabulku s informacemi o pořadí. Za druhé aktualizuje tabulku, která obsahuje informace o inventáři, připsáním na stranu MD položky seřazeny. Pokud buď úloha selže, pak obě aktualizace jsou vrácena zpět.  
@@ -34,13 +34,13 @@ Transakce v [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] se použí
 ## <a name="example"></a>Příklad  
  Použijte následující postup provedení transakce.  
   
-1.  Volání <xref:System.Data.SqlClient.SqlConnection.BeginTransaction%2A> metodu <xref:System.Data.SqlClient.SqlConnection> objektu k označení zahájení transakce. <xref:System.Data.SqlClient.SqlConnection.BeginTransaction%2A> Metoda vrátí odkaz na transakci. Je přiřazen tento odkaz <xref:System.Data.SqlClient.SqlCommand> objekty, které jsou v transakci zapsán.  
+1. Volání <xref:System.Data.SqlClient.SqlConnection.BeginTransaction%2A> metodu <xref:System.Data.SqlClient.SqlConnection> objektu k označení zahájení transakce. <xref:System.Data.SqlClient.SqlConnection.BeginTransaction%2A> Metoda vrátí odkaz na transakci. Je přiřazen tento odkaz <xref:System.Data.SqlClient.SqlCommand> objekty, které jsou v transakci zapsán.  
   
-2.  Přiřazení `Transaction` objektu <xref:System.Data.SqlClient.SqlCommand.Transaction%2A> vlastnost <xref:System.Data.SqlClient.SqlCommand> má být proveden. Pokud příkaz se provedl u připojení s aktivní transakce a `Transaction` nebyl přiřazen objekt `Transaction` vlastnost `Command` objektu, je vyvolána výjimka.  
+2. Přiřazení `Transaction` objektu <xref:System.Data.SqlClient.SqlCommand.Transaction%2A> vlastnost <xref:System.Data.SqlClient.SqlCommand> má být proveden. Pokud příkaz se provedl u připojení s aktivní transakce a `Transaction` nebyl přiřazen objekt `Transaction` vlastnost `Command` objektu, je vyvolána výjimka.  
   
-3.  Spusťte požadované příkazy.  
+3. Spusťte požadované příkazy.  
   
-4.  Volání <xref:System.Data.SqlClient.SqlTransaction.Commit%2A> metodu <xref:System.Data.SqlClient.SqlTransaction> objekt dala dokončit transakce, nebo volání <xref:System.Data.SqlClient.SqlTransaction.Rollback%2A> metoda k ukončení transakce. Pokud je připojení ukončen nebo odstraněn před buď <xref:System.Data.SqlClient.SqlTransaction.Commit%2A> nebo <xref:System.Data.SqlClient.SqlTransaction.Rollback%2A> metody spustily, transakce se zrušila.  
+4. Volání <xref:System.Data.SqlClient.SqlTransaction.Commit%2A> metodu <xref:System.Data.SqlClient.SqlTransaction> objekt dala dokončit transakce, nebo volání <xref:System.Data.SqlClient.SqlTransaction.Rollback%2A> metoda k ukončení transakce. Pokud je připojení ukončen nebo odstraněn před buď <xref:System.Data.SqlClient.SqlTransaction.Commit%2A> nebo <xref:System.Data.SqlClient.SqlTransaction.Rollback%2A> metody spustily, transakce se zrušila.  
   
  Následující příklad kódu ukazuje použití transakční logiky [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] s Microsoft SQL Server.  
   

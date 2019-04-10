@@ -9,12 +9,12 @@ helpviewer_keywords:
 - interoperability, about interoperability
 - platform invoke
 ms.assetid: c025b2e0-2357-4c27-8461-118f0090aeff
-ms.openlocfilehash: 160403b938a95ae5bb03703f73fa906de5fc3ded
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
+ms.openlocfilehash: cfe3b413506aa1383bbdaa9a89ffe42e3724a4a8
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58410755"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59337549"
 ---
 # <a name="interoperability-overview-c-programming-guide"></a>Přehled interoperability (Průvodce programováním v C#)
 Téma popisuje metody, a umožňuje interoperabilitu mezi kód jazyka C# spravovaného a nespravovaného kódu.  
@@ -33,26 +33,26 @@ Téma popisuje metody, a umožňuje interoperabilitu mezi kód jazyka C# spravov
 ## <a name="exposing-com-components-to-c"></a>Vystavení komponent COM pro C\#
  Můžete využívat komponenty modelu COM z projektu v jazyce C#. Obecné kroky jsou následující:  
   
-1.  Vyhledejte komponentu modelu COM použít a její registrace. Použijte regsvr32.exe k registraci nebo zrušení – registrace modelu COM DLL.  
+1. Vyhledejte komponentu modelu COM použít a její registrace. Použijte regsvr32.exe k registraci nebo zrušení – registrace modelu COM DLL.  
   
-2.  Přidejte do projektu odkaz na komponentu nebo typ knihovny modelu COM.  
+2. Přidejte do projektu odkaz na komponentu nebo typ knihovny modelu COM.  
   
      Když přidáte odkaz, použije sada Visual Studio [Tlbimp.exe (Importér knihovny typů)](../../../../docs/framework/tools/tlbimp-exe-type-library-importer.md), který by knihovnu typů jako vstup do výstupního sestavení vzájemné spolupráce rozhraní .NET Framework. Sestavení, také s názvem obálka volatelná aplikacemi běhu (RCW), obsahuje spravované třídy a rozhraní, které balí třídy modelu COM a rozhraní, která jsou v knihovně typů. Visual Studio přidá do projektu odkaz na vygenerované sestavení.  
   
-3.  Vytvoření instance třídy, která je definována v RCW. To, pak vytvoří instanci objektu COM.  
+3. Vytvoření instance třídy, která je definována v RCW. To, pak vytvoří instanci objektu COM.  
   
-4.  Pomocí objektu stejným způsobem, jako jiné spravované objekty. Pokud objekt je uvolněn systémem uvolňování paměti, instance objektu COM je také uvolněn z paměti.  
+4. Pomocí objektu stejným způsobem, jako jiné spravované objekty. Pokud objekt je uvolněn systémem uvolňování paměti, instance objektu COM je také uvolněn z paměti.  
   
  Další informace najdete v tématu [vystavení komponent COM pro rozhraní .NET Framework](../../../../docs/framework/interop/exposing-com-components.md).  
   
 ## <a name="exposing-c-to-com"></a>Vystavení C# do modelu COM  
  C# typy, které byly správně vystavit mohou používat klienti modelu COM. Základní kroky ke zveřejnění typů jazyka C# jsou následující:  
   
-1.  Přidáte atributů spolupráce v projektu C#.  
+1. Přidáte atributů spolupráce v projektu C#.  
   
      Sestavení modelu COM lze zviditelnit úpravou vlastností projektu Visual C#. Další informace najdete v tématu [dialogové okno informace o sestavení](/visualstudio/ide/reference/assembly-information-dialog-box).  
   
-2.  Generovat knihovnu typů modelu COM, zaregistrujte je pro použití modelu COM.  
+2. Generovat knihovnu typů modelu COM, zaregistrujte je pro použití modelu COM.  
   
      Visual C# vlastnosti projektu na automatickou registraci sestavení C# pro spolupráci s COM můžete upravit. Visual Studio používá [Regasm.exe (Nástroj registrace sestavení)](../../../../docs/framework/tools/regasm-exe-assembly-registration-tool.md), použije `/tlb` přepínač příkazového řádku, který přebírá spravované sestavení jako vstup, chcete-li generovat knihovnu typů. Popisuje tuto knihovnu typů `public` typy v sestavení a přidá položky registru tak, aby klienti modelu COM, můžete vytvořit spravované třídy.  
   
@@ -65,4 +65,4 @@ Téma popisuje metody, a umožňuje interoperabilitu mezi kód jazyka C# spravov
 - [Představení zprostředkovatele komunikace s objekty COM v jazyce Visual Basic](../../../../docs/visual-basic/programming-guide/com-interop/introduction-to-com-interop.md)
 - [Zařazování mezi spravovaným a nespravovaným kódem](../../../../docs/framework/interop/interop-marshaling.md)
 - [Spolupráce s nespravovaným kódem](../../../../docs/framework/interop/index.md)
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)

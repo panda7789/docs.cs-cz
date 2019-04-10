@@ -5,25 +5,25 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 1b97afeb-03f8-41e2-8eb3-58aff65f7d18
-ms.openlocfilehash: 0f750f2d23430691016fc2cf1e5e9d44d80da2a9
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: b25de14267bc31ad0ac5e3f51d4cd964b5a0535f
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59204078"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59342528"
 ---
 # <a name="creating-a-datatable-from-a-query-linq-to-dataset"></a>Vytvoření datové tabulky z dotazu (LINQ to DataSet)
 Datová vazba je běžně <xref:System.Data.DataTable> objektu. <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> Metoda přijímá výsledky dotazu a zkopíruje data do <xref:System.Data.DataTable>, který potom slouží pro vytváření datových vazeb. Když prováděly operace s daty, nové <xref:System.Data.DataTable> se sloučí zpět do zdroje <xref:System.Data.DataTable>.  
   
  <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> Metoda používá následující proces vytvoření <xref:System.Data.DataTable> z dotazu:  
   
-1.  <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> Metoda duplicity <xref:System.Data.DataTable> ze zdrojové tabulky ( <xref:System.Data.DataTable> objekt, který implementuje <xref:System.Linq.IQueryable%601> rozhraní). <xref:System.Collections.IEnumerable> Zdroj má obvykle pochází z [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] výraz nebo metodu dotazu.  
+1. <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> Metoda duplicity <xref:System.Data.DataTable> ze zdrojové tabulky ( <xref:System.Data.DataTable> objekt, který implementuje <xref:System.Linq.IQueryable%601> rozhraní). <xref:System.Collections.IEnumerable> Zdroj má obvykle pochází z [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] výraz nebo metodu dotazu.  
   
-2.  Schéma klonované <xref:System.Data.DataTable> je sestaven z prvního sloupce ve výčtu <xref:System.Data.DataRow> objektu ve zdrojové tabulce a název klonovaného tabulky je název zdrojové tabulky obsahující slovo "dotazování" připojenou k němu.  
+2. Schéma klonované <xref:System.Data.DataTable> je sestaven z prvního sloupce ve výčtu <xref:System.Data.DataRow> objektu ve zdrojové tabulce a název klonovaného tabulky je název zdrojové tabulky obsahující slovo "dotazování" připojenou k němu.  
   
-3.  Pro každý řádek v tabulce zdrojový obsah řádku, který zkopíruje do nového <xref:System.Data.DataRow> objektu, který se pak vloží do naklonovaného tabulky. <xref:System.Data.DataRow.RowState%2A> a <xref:System.Data.DataRow.RowError%2A> vlastnosti jsou zachovány v operaci kopírování. <xref:System.ArgumentException> Je vyvolána, pokud <xref:System.Data.DataRow> objekty ve zdroji pocházejí z různých tabulek.  
+3. Pro každý řádek v tabulce zdrojový obsah řádku, který zkopíruje do nového <xref:System.Data.DataRow> objektu, který se pak vloží do naklonovaného tabulky. <xref:System.Data.DataRow.RowState%2A> a <xref:System.Data.DataRow.RowError%2A> vlastnosti jsou zachovány v operaci kopírování. <xref:System.ArgumentException> Je vyvolána, pokud <xref:System.Data.DataRow> objekty ve zdroji pocházejí z různých tabulek.  
   
-4.  Klonované <xref:System.Data.DataTable> se vrátí po všech <xref:System.Data.DataRow> objekty ve vstupní tabulce dotazovatelné byly zkopírovány. Pokud zdrojové sekvence neobsahuje žádný <xref:System.Data.DataRow> objektů, metoda vrátí prázdnou <xref:System.Data.DataTable>.  
+4. Klonované <xref:System.Data.DataTable> se vrátí po všech <xref:System.Data.DataRow> objekty ve vstupní tabulce dotazovatelné byly zkopírovány. Pokud zdrojové sekvence neobsahuje žádný <xref:System.Data.DataRow> objektů, metoda vrátí prázdnou <xref:System.Data.DataTable>.  
   
  Všimněte si, že volání <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> způsobí, že metoda vázán na zdrojovou tabulku k provedení dotazu.  
   

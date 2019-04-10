@@ -1,19 +1,19 @@
 ---
-title: Pro obnovení WorkflowHostingEndpoint
+title: Záložka pro obnovení WorkflowHostingEndpoint
 ms.date: 03/30/2017
 ms.assetid: a708064f-50b0-4751-b44e-d5410d08d451
-ms.openlocfilehash: 8b435a50801e03ec6ed00bcfef3c7e9198a7e7e5
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 5c3c996a73d8f88e925d459fae3eb785996eada4
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43518987"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59340539"
 ---
-# <a name="workflowhostingendpoint-resume-bookmark"></a>Pro obnovení WorkflowHostingEndpoint
+# <a name="workflowhostingendpoint-resume-bookmark"></a>Záložka pro obnovení WorkflowHostingEndpoint
 Tato ukázka předvádí, jak <xref:System.ServiceModel.Activities.WorkflowHostingEndpoint> jde použít s <xref:System.ServiceModel.Activities.WorkflowServiceHost> k vytvoření instance pracovního postupu.  
   
 ## <a name="demonstrates"></a>Demonstruje  
- <xref:System.ServiceModel.Activities.WorkflowHostingEndpoint>, <xref:System.ServiceModel.Activities.WorkflowServiceHost>  
+ <xref:System.ServiceModel.Activities.WorkflowHostingEndpoint>,  <xref:System.ServiceModel.Activities.WorkflowServiceHost>  
   
 ## <a name="discussion"></a>Diskuse  
  Tento příklad používá <xref:System.ServiceModel.Activities.WorkflowHostingEndpoint> k vytvoření instance pracovního postupu hostované pomocí <xref:System.ServiceModel.Activities.WorkflowServiceHost>. <xref:System.ServiceModel.Activities.WorkflowHostingEndpoint> představuje rozšíření bod pro <xref:System.ServiceModel.Activities.WorkflowServiceHost> , který lze použít v následujících scénářích:  
@@ -26,9 +26,9 @@ Tato ukázka předvádí, jak <xref:System.ServiceModel.Activities.WorkflowHosti
   
 #### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
-1.  Sestavte řešení.  
+1. Sestavte řešení.  
   
-2.  Spusťte aplikaci. `CreationEndpoint` Konzoly zobrazuje zprávu, která obsahuje instance ID, když je vytvořena instance pracovního postupu. Zprávu "Hello World!" je vytištěna v pracovním postupu na úspěšné obnovení záložky.  
+2. Spusťte aplikaci. `CreationEndpoint` Konzoly zobrazuje zprávu, která obsahuje instance ID, když je vytvořena instance pracovního postupu. Zprávu "Hello World!" je vytištěna v pracovním postupu na úspěšné obnovení záložky.  
   
 > [!IMPORTANT]
 >  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - -platform compiler option [C#]
 - /platform compiler option [C#]
 ms.assetid: c290ff5e-47f4-4a85-9bb3-9c2525b0be04
-ms.openlocfilehash: 59b54cfd731c21982cae9a07fd1e37d97f3747db
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: ae2305e0f5d3ca4de386d8e7933a1107450e0be4
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57486979"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59341501"
 ---
 # <a name="-platform-c-compiler-options"></a>-platform (možnosti kompilátoru C#)
 Určuje, jaké verze Common Language Runtime (CLR) můžete spustit sestavení.  
@@ -60,11 +60,11 @@ Určuje, jaké verze Common Language Runtime (CLR) můžete spustit sestavení.
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Nastavení tohoto parametru kompilátoru ve vývojovém prostředí Visual Studio  
   
-1.  Otevřít **vlastnosti** stránky pro projekt.  
+1. Otevřít **vlastnosti** stránky pro projekt.  
   
-2.  Klikněte na tlačítko **sestavení** stránku vlastností.  
+2. Klikněte na tlačítko **sestavení** stránku vlastností.  
   
-3.  Upravit **Cílová platforma** vlastnost a pro projekty, které jsou cíleny na rozhraní .NET Framework 4.5, zaškrtněte nebo zrušte zaškrtnutí **preferovat 32bitovou verzi** zaškrtávací políčko.  
+3. Upravit **Cílová platforma** vlastnost a pro projekty, které jsou cíleny na rozhraní .NET Framework 4.5, zaškrtněte nebo zrušte zaškrtnutí **preferovat 32bitovou verzi** zaškrtávací políčko.  
   
  **Poznámka: - platform** není k dispozici ve vývojovém prostředí sady Visual C# Express.  
   
@@ -79,5 +79,5 @@ csc -platform:anycpu filename.cs
   
 ## <a name="see-also"></a>Viz také:
 
-- [Možnosti kompilátoru jazyka C#](index.md)
+- [Možnosti kompilátoru C#](index.md)
 - [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

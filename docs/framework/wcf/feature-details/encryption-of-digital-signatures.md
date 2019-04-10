@@ -6,12 +6,12 @@ helpviewer_keywords:
 - digital signatures [WCF], encryption
 - digital signatures [WCF]
 ms.assetid: 0868866d-40b4-4341-8e42-eee3b7f15b69
-ms.openlocfilehash: ac3df9c08462b6421a0549c5927512586abf303a
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: ea53a575802f1e7903a66c2eda466c8937fb02f9
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59134577"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59341592"
 ---
 # <a name="encryption-of-digital-signatures"></a>Šifrování digitálních podpisů
 Ve výchozím nastavení zprávy je podepsaný a zašifrovaný a digitálně podpis zašifrují. To můžete řídit tak, že vytvoříte vlastní vazby s instancí <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement> nebo <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> a nastavení `MessageProtectionOrder` vlastnost buď třídy <xref:System.ServiceModel.Security.MessageProtectionOrder> hodnota výčtu. Výchozí hodnota je <xref:System.ServiceModel.Security.MessageProtectionOrder.SignBeforeEncryptAndEncryptSignature>. Tento proces trvá déle, než jednoduše podepisování a šifrování 10 až 40 procent. Zakázáním šifrování podpisu, ale může umožnit útočníkovi možnost uhádnout obsah zprávy. Je to možné, proto prvek podpisu obsahuje kód hash ve formátu prostého textu každý podepsaný části ve zprávě. Například i když obsah zprávy se šifrují ve výchozím nastavení, nešifrované podpis obsahuje kód hash těla zprávy. Pokud má zpráva malé, může útočník moct odvodit obsah. Šifrování podpis snižuje nebo eliminuje tuto možnost.  
@@ -20,11 +20,11 @@ Ve výchozím nastavení zprávy je podepsaný a zašifrovaný a digitálně pod
   
 ### <a name="to-disable-digital-signing"></a>Chcete-li zakázat digitální podpis  
   
-1.  Vytvoření <xref:System.ServiceModel.Channels.CustomBinding>. Další informace najdete v tématu [jak: Vytvoření vlastní vazby pomocí elementu SecurityBindingElement](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md).  
+1. Vytvoření <xref:System.ServiceModel.Channels.CustomBinding>. Další informace najdete v tématu [jak: Vytvoření vlastní vazby pomocí elementu SecurityBindingElement](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md).  
   
-2.  Buď přidejte <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement> nebo <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> ke kolekci vazby.  
+2. Buď přidejte <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement> nebo <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> ke kolekci vazby.  
   
-3.  Nastavte <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement.MessageProtectionOrder%2A?displayProperty=nameWithType> vlastnost <xref:System.ServiceModel.Security.MessageProtectionOrder.SignBeforeEncrypt>, nebo nastavte <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement.MessageProtectionOrder%2A?displayProperty=nameWithType> vlastnost <xref:System.ServiceModel.Security.MessageProtectionOrder.SignBeforeEncrypt>.  
+3. Nastavte <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement.MessageProtectionOrder%2A?displayProperty=nameWithType> vlastnost <xref:System.ServiceModel.Security.MessageProtectionOrder.SignBeforeEncrypt>, nebo nastavte <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement.MessageProtectionOrder%2A?displayProperty=nameWithType> vlastnost <xref:System.ServiceModel.Security.MessageProtectionOrder.SignBeforeEncrypt>.  
   
  Další informace o vytváření vlastních vazeb naleznete v tématu [Creating User-Defined vazby](../../../../docs/framework/wcf/extending/creating-user-defined-bindings.md). Další informace o vytvoření vlastní vazby pro režim konkrétní ověřování najdete v části [jak: Vytvoření elementu SecurityBindingElement pro zadaný režim ověřování](../../../../docs/framework/wcf/feature-details/how-to-create-a-securitybindingelement-for-a-specified-authentication-mode.md).  
   

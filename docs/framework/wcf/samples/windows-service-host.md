@@ -5,12 +5,12 @@ helpviewer_keywords:
 - NT Service
 - NT Service Host Sample [Windows Communication Foundation]
 ms.assetid: 1b2f45c5-2bed-4979-b0ee-8f9efcfec028
-ms.openlocfilehash: 2ee7abb2fa709c6d49b049d69882b2fd6b7f3a0c
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 85d089813a455784fde679e9200a9b29b956af8e
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59088324"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59338693"
 ---
 # <a name="windows-service-host"></a>Hostitel služby Windows
 V této ukázce hostovaný ve spravované službě Windows služby Windows Communication Foundation (WCF). Windows Services jsou řízeny pomocí apletu služby v **ovládací panely** a dá se spustit automaticky po restartu systému. Ukázka se skládá z programu klienta a aplikace služby Windows. Služba je implementovaný jako .exe program a obsahuje vlastní kód hostování. V jiných prostředích hostingu, jako je například Windows procesu aktivační služby (WAS) nebo internetové informační služby (IIS), není nutné pro vás bude psaní hostování kódu.
@@ -55,13 +55,13 @@ V této ukázce hostovaný ve spravované službě Windows služby Windows Commu
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
-1.  Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2.  K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3.  Po řešení je sestavený Build, spusťte z příkazového řádku se zvýšenými oprávněními Visual Studio 2012 pro instalaci služby Windows pomocí Installutil.exe nástroje Setup.bat. Služba by se zobrazit v služeb.  
+3. Po řešení je sestavený Build, spusťte z příkazového řádku se zvýšenými oprávněními Visual Studio 2012 pro instalaci služby Windows pomocí Installutil.exe nástroje Setup.bat. Služba by se zobrazit v služeb.  
   
-4.  Spusťte ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+4. Spusťte ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 ## <a name="see-also"></a>Viz také:
 

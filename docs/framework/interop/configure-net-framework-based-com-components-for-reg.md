@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 32f8b7c6-3f73-455d-8e13-9846895bd43b
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 03098126985abc898b8911f98013662632d56e35
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: ea62f7dc5c47f52f94567857427e7add929b8b1c
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59176511"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59336574"
 ---
 # <a name="how-to-configure-net-framework-based-com-components-for-registration-free-activation"></a>Postupy: Konfigurace komponent COM využívajících rozhraní .NET Framework pro aktivaci bez registrace
 Bezregistrační aktivace komponent využívajících rozhraní .NET Framework je jenom o něco složitější než pro komponenty modelu COM. Instalace vyžaduje dva manifesty:  
@@ -28,9 +28,9 @@ Bezregistrační aktivace komponent využívajících rozhraní .NET Framework j
   
 ### <a name="to-create-an-application-manifest"></a>Chcete-li vytvořit manifest aplikace  
   
-1.  Pomocí editoru XML, vytvořit (nebo upravit) manifest aplikace vlastněné aplikací modelu COM, který je spolupráce s jedním nebo více spravovaných komponenty.  
+1. Pomocí editoru XML, vytvořit (nebo upravit) manifest aplikace vlastněné aplikací modelu COM, který je spolupráce s jedním nebo více spravovaných komponenty.  
   
-2.  Vložte následující standardní hlavičku na začátek souboru:  
+2. Vložte následující standardní hlavičku na začátek souboru:  
   
     ```xml  
     <?xml version="1.0" encoding="UTF-8" standalone="yes"?>  
@@ -39,7 +39,7 @@ Bezregistrační aktivace komponent využívajících rozhraní .NET Framework j
   
      Informace o manifestu prvky a jejich atributů najdete v tématu [manifesty aplikací](/windows/desktop/SbsCs/application-manifests).  
   
-3.  Určete vlastníka manifest. V následujícím příkladu `myComApp` verze 1 vlastníkem souboru manifestu.  
+3. Určete vlastníka manifest. V následujícím příkladu `myComApp` verze 1 vlastníkem souboru manifestu.  
   
     ```xml  
     <?xml version="1.0" encoding="UTF-8" standalone="yes"?>  
@@ -51,7 +51,7 @@ Bezregistrační aktivace komponent využívajících rozhraní .NET Framework j
       />  
     ```  
   
-4.  Identifikujte závislá sestavení. V následujícím příkladu `myComApp` závisí na `myManagedComp`.  
+4. Identifikujte závislá sestavení. V následujícím příkladu `myComApp` závisí na `myManagedComp`.  
   
     ```xml  
     <?xml version="1.0" encoding="UTF-8" standalone="yes"?>  
@@ -75,22 +75,22 @@ Bezregistrační aktivace komponent využívajících rozhraní .NET Framework j
     </assembly>  
     ```  
   
-5.  Uložit a název souboru manifestu. Název manifestu aplikace je název sestavení spustitelného souboru a příponu .manifest. Například je název souboru manifestu aplikace pro myComApp.exe myComApp.exe.manifest.  
+5. Uložit a název souboru manifestu. Název manifestu aplikace je název sestavení spustitelného souboru a příponu .manifest. Například je název souboru manifestu aplikace pro myComApp.exe myComApp.exe.manifest.  
   
  Manifest aplikace můžete nainstalovat ve stejném adresáři jako aplikace modelu COM. Alternativně můžete přidat ho jako prostředek do souboru .exe vaší aplikace. Další informace najdete další informace najdete v tématu [o sestavení vedle sebe](/windows/desktop/SbsCs/about-side-by-side-assemblies-).  
   
 #### <a name="to-create-a-component-manifest"></a>K vytvoření manifestu komponenty  
   
-1.  Pomocí editoru XML, vytvoření manifestu komponenty k popisu spravovaných sestavení.  
+1. Pomocí editoru XML, vytvoření manifestu komponenty k popisu spravovaných sestavení.  
   
-2.  Vložte následující standardní hlavičku na začátek souboru:  
+2. Vložte následující standardní hlavičku na začátek souboru:  
   
     ```xml  
     <?xml version="1.0" encoding="UTF-8" standalone="yes"?>  
     <assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">  
     ```  
   
-3.  Určete vlastníka souboru. `<assemblyIdentity>` Elementu `<dependentAssembly>` prvku v souboru manifestu aplikace musí odpovídat názvu v manifestu součásti. V následujícím příkladu `myManagedComp` verzi 1.2.3.4 je vlastníkem souboru manifestu.  
+3. Určete vlastníka souboru. `<assemblyIdentity>` Elementu `<dependentAssembly>` prvku v souboru manifestu aplikace musí odpovídat názvu v manifestu součásti. V následujícím příkladu `myManagedComp` verzi 1.2.3.4 je vlastníkem souboru manifestu.  
   
     ```xml  
     <?xml version="1.0" encoding="UTF-8" standalone="yes"?>  
@@ -103,7 +103,7 @@ Bezregistrační aktivace komponent využívajících rozhraní .NET Framework j
            />  
     ```  
   
-4.  Identifikujte jednotlivé třídy v sestavení. Použití `<clrClass>` element k jednoznačné identifikaci každé třídě spravované sestavení. Element, který je podřízený z `<assembly>` element, atributy jsou popsané v následující tabulce.  
+4. Identifikujte jednotlivé třídy v sestavení. Použití `<clrClass>` element k jednoznačné identifikaci každé třídě spravované sestavení. Element, který je podřízený z `<assembly>` element, atributy jsou popsané v následující tabulce.  
   
     |Atribut|Popis|Požadováno|  
     |---------------|-----------------|--------------|  
@@ -146,25 +146,25 @@ Bezregistrační aktivace komponent využívajících rozhraní .NET Framework j
     </assembly>  
     ```  
   
-5.  Uložit a název souboru manifestu. Název manifestu součásti je název sestavení knihovny následovaný příponou .manifest. Například myManagedComp.dll je myManagedComp.manifest.  
+5. Uložit a název souboru manifestu. Název manifestu součásti je název sestavení knihovny následovaný příponou .manifest. Například myManagedComp.dll je myManagedComp.manifest.  
   
  Manifest součásti musí vložen jako prostředek v sestavení.  
   
 #### <a name="to-embed-a-component-manifest-in-a-managed-assembly"></a>Pro vložení manifestu komponenty spravovaných sestavení  
   
-1.  Vytvořte skript prostředků, který obsahuje následující příkaz:  
+1. Vytvořte skript prostředků, který obsahuje následující příkaz:  
   
      `RT_MANIFEST 1 myManagedComp.manifest`  
   
      V tomto prohlášení `myManagedComp.manifest` je název manifestu komponenty jsou vložené. V tomto příkladu je název souboru skriptu `myresource.rc`.  
   
-2.  Kompilace skriptu s použitím Microsoft Windows Resource Compiler (Rc.exe). V příkazovém řádku zadejte následující příkaz:  
+2. Kompilace skriptu s použitím Microsoft Windows Resource Compiler (Rc.exe). V příkazovém řádku zadejte následující příkaz:  
   
      `rc myresource.rc`  
   
      Vytvoří RC.exe `myresource.res` souboru prostředků.  
   
-3.  Znovu zkompilovat sestavení zdrojového souboru a zadejte soubor prostředků pomocí **/win32res** možnost:  
+3. Znovu zkompilovat sestavení zdrojového souboru a zadejte soubor prostředků pomocí **/win32res** možnost:  
   
     ```  
     /win32res:myresource.res  

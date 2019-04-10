@@ -5,12 +5,12 @@ helpviewer_keywords:
 - multimedia [WPF]
 - media [WPF]
 ms.assetid: feb25b15-d741-4ac3-818f-1b19f63a3562
-ms.openlocfilehash: ffdcb58cdd332f9c730e7ed367e0f8bcc56da459
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 66cb28fce9485898711b9029baf8a17dd9b2c011
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59222091"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59340487"
 ---
 # <a name="multimedia-overview"></a>Přehled multimédií
 Multimédií funkce v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] vám umožní integrovat zvuku a videa do svých aplikací a zlepšit uživatelské prostředí. Toto téma představuje multimediální funkce [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
@@ -77,13 +77,13 @@ Multimédií funkce v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharp
   
  <xref:System.Windows.Controls.MediaElement.LoadedBehavior%2A> a <xref:System.Windows.Controls.MediaElement.UnloadedBehavior%2A> vlastnosti nejsou jediný způsob, jak ovládací prvek přehrávání médií. V režimu hodin, můžete řídit hodin <xref:System.Windows.Controls.MediaElement> a interaktivního ovládání metody mají řídí, kdy <xref:System.Windows.Controls.MediaElement.LoadedBehavior%2A> je <xref:System.Windows.Controls.MediaState.Manual>. <xref:System.Windows.Controls.MediaElement> Tato soutěž pro ovládací prvek zpracovává vyhodnocením následující priority.  
   
-1.  <xref:System.Windows.Controls.MediaElement.UnloadedBehavior%2A>. Na místě, pokud je uvolněna médií. Tím se zajistí, že všechny prostředky média se vydávají ve výchozím nastavení, i v případě <xref:System.Windows.Media.MediaClock> je přidružený <xref:System.Windows.Controls.MediaElement>.  
+1. <xref:System.Windows.Controls.MediaElement.UnloadedBehavior%2A>. Na místě, pokud je uvolněna médií. Tím se zajistí, že všechny prostředky média se vydávají ve výchozím nastavení, i v případě <xref:System.Windows.Media.MediaClock> je přidružený <xref:System.Windows.Controls.MediaElement>.  
   
-2.  <xref:System.Windows.Media.MediaClock>. Na místě, když má média <xref:System.Windows.Controls.MediaElement.Clock%2A>. Pokud je médium uvolněna, <xref:System.Windows.Media.MediaClock> se projeví až <xref:System.Windows.Controls.MediaElement.UnloadedBehavior%2A> je <xref:System.Windows.Controls.MediaState.Manual>. Hodiny režimu přepsání vždy načteno chování <xref:System.Windows.Controls.MediaElement>.  
+2. <xref:System.Windows.Media.MediaClock>. Na místě, když má média <xref:System.Windows.Controls.MediaElement.Clock%2A>. Pokud je médium uvolněna, <xref:System.Windows.Media.MediaClock> se projeví až <xref:System.Windows.Controls.MediaElement.UnloadedBehavior%2A> je <xref:System.Windows.Controls.MediaState.Manual>. Hodiny režimu přepsání vždy načteno chování <xref:System.Windows.Controls.MediaElement>.  
   
-3.  <xref:System.Windows.Controls.MediaElement.LoadedBehavior%2A>. Na místě při načítání média.  
+3. <xref:System.Windows.Controls.MediaElement.LoadedBehavior%2A>. Na místě při načítání média.  
   
-4.  Interaktivní řízení metody. V případě umístěte <xref:System.Windows.Controls.MediaElement.LoadedBehavior%2A> je <xref:System.Windows.Controls.MediaState.Manual>. Dostupné metody řízení <xref:System.Windows.Controls.MediaElement.Play%2A>, <xref:System.Windows.Controls.MediaElement.Pause%2A>, <xref:System.Windows.Controls.MediaElement.Close%2A>, a <xref:System.Windows.Controls.MediaElement.Stop%2A>.  
+4. Interaktivní řízení metody. V případě umístěte <xref:System.Windows.Controls.MediaElement.LoadedBehavior%2A> je <xref:System.Windows.Controls.MediaState.Manual>. Dostupné metody řízení <xref:System.Windows.Controls.MediaElement.Play%2A>, <xref:System.Windows.Controls.MediaElement.Pause%2A>, <xref:System.Windows.Controls.MediaElement.Close%2A>, a <xref:System.Windows.Controls.MediaElement.Stop%2A>.  
   
 ### <a name="displaying-a-mediaelement"></a>Zobrazení elementu MediaElement  
  Chcete-li zobrazit <xref:System.Windows.Controls.MediaElement> musí mít obsah k vykreslení a bude mít jeho <xref:System.Windows.FrameworkElement.ActualWidth%2A> a <xref:System.Windows.FrameworkElement.ActualHeight%2A> vlastnosti nastaven na hodnotu nula, dokud nebude vložen obsah. Pouze obsah, zvuk tyto vlastnosti jsou vždy nula. V případě video obsahu jednou <xref:System.Windows.Controls.MediaElement.MediaOpened> byla vyvolána událost <xref:System.Windows.FrameworkElement.ActualWidth%2A> a <xref:System.Windows.FrameworkElement.ActualHeight%2A> bude sestava velikost vložená média. To znamená, že dokud nebude vložen média, <xref:System.Windows.Controls.MediaElement> nebude trvat až všechny fyzického místa na disku v [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] není-li <xref:System.Windows.FrameworkElement.Width%2A> nebo <xref:System.Windows.FrameworkElement.Height%2A> jsou nastaveny vlastnosti.  
@@ -99,9 +99,9 @@ Multimédií funkce v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharp
 ### <a name="controlling-mediaplayer"></a>Řízení MediaPlayer  
  Protože <xref:System.Windows.Media.MediaPlayer> je bezstavové, existují jenom dva způsoby, jak ovládací prvek přehrávání médií.  
   
-1.  Interaktivní řízení metody. Na místě v nezávislých režimu (`null`<xref:System.Windows.Media.MediaPlayer.Clock%2A> vlastnost).  
+1. Interaktivní řízení metody. Na místě v nezávislých režimu (`null`<xref:System.Windows.Media.MediaPlayer.Clock%2A> vlastnost).  
   
-2.  <xref:System.Windows.Media.MediaClock>. Na místě, když má média <xref:System.Windows.Media.MediaPlayer.Clock%2A>.  
+2. <xref:System.Windows.Media.MediaClock>. Na místě, když má média <xref:System.Windows.Media.MediaPlayer.Clock%2A>.  
   
 ### <a name="displaying-a-mediaplayer"></a>Zobrazení MediaPlayer  
  Technicky vzato <xref:System.Windows.Media.MediaPlayer> nelze zobrazit, protože nemá žádné fyzické reprezentace. Nicméně je možné prezentovat média v <xref:System.Windows.Media.Drawing> pomocí <xref:System.Windows.Media.VideoDrawing> třídy. Následující příklad ukazuje použití <xref:System.Windows.Media.VideoDrawing> zobrazíte média.  

@@ -2,12 +2,12 @@
 title: Úvod k integraci modulu CLR na SQL Serveru
 ms.date: 03/30/2017
 ms.assetid: 551d2290-ed80-49be-b377-44b32444da1c
-ms.openlocfilehash: 2f65e8690aa52f0442b4bee3b98bb1ea86e064a5
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: dc7d19bf361ed5fcda1fd5edf64eeb5e4ce15a71
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59110700"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59336808"
 ---
 # <a name="introduction-to-sql-server-clr-integration"></a>Úvod k integraci modulu CLR na SQL Serveru
 Common language runtime (CLR) je základem rozhraní Microsoft .NET Framework a poskytuje prostředí pro spuštění pro veškerý kód rozhraní .NET Framework. Kód, který běží v rámci modulu CLR se označuje jako spravovaný kód. CLR poskytuje různé funkce a služby potřebné pro spuštění programu, včetně kompilace just-in-time (JIT), přidělování a správu paměti a vynucuje bezpečnost typů, zpracování výjimek, správa vláken a zabezpečení.  
@@ -45,7 +45,7 @@ GO
   
  **SQL Server Books Online**  
   
-1.  [Nasazení modulu CLR databázové objekty](https://go.microsoft.com/fwlink/?LinkId=115232)  
+1. [Nasazení modulu CLR databázové objekty](https://go.microsoft.com/fwlink/?LinkId=115232)  
   
 ## <a name="clr-integration-security"></a>Zabezpečení integrace CLR  
  Model zabezpečení integrace systému Microsoft SQL Server pomocí rozhraní Microsoft .NET Framework common language runtime (CLR) spravuje a chrání přístup mezi různými typy objektů CLR a modulu CLR v rámci serveru SQL Server. Tyto objekty mohou být volány příkazu jazyka Transact-SQL nebo jiný objekt CLR spuštěná na serveru.  

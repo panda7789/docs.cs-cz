@@ -11,12 +11,12 @@ helpviewer_keywords:
 - remotely surveying printer status [WPF]
 - status [WPF], printers [WPF], surveying remotely
 ms.assetid: d6324759-8292-4c23-9584-9c708887dc94
-ms.openlocfilehash: 4ebcb2e4f85d30ea1ce24584c69def5b0d1297c1
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: dc187a4ea120661e8118ce79a966d3d4a3b40711
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59143543"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59340786"
 ---
 # <a name="how-to-remotely-survey-the-status-of-printers"></a>Postupy: Vzdálený průzkum stavu tiskáren
 V každém okamžiku u středně velkých a velkých společností může být více tiskárny, které nejsou práce z důvodu zaseknutý papír nebo jsou mimo papír nebo jiné problematické situaci. Bohaté sadě vlastností tiskárny v [!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)] Microsoft .NET Framework poskytují způsob pro provádění rychlé zjišťování stavu tiskárny.  
@@ -24,11 +24,11 @@ V každém okamžiku u středně velkých a velkých společností může být v
 ## <a name="example"></a>Příklad  
  Hlavní kroky pro vytvoření tento druh nástroj jsou následující.  
   
-1.  Získáte seznam všech tiskových serverů.  
+1. Získáte seznam všech tiskových serverů.  
   
-2.  Projít servery, které chcete dotazovat jejich tiskové fronty.  
+2. Projít servery, které chcete dotazovat jejich tiskové fronty.  
   
-3.  V každém průchodu server smyčky projít všechny serveru front a čtení každou vlastnost, která můžou značit, že fronta není aktuálně funguje.  
+3. V každém průchodu server smyčky projít všechny serveru front a čtení každou vlastnost, která můžou značit, že fronta není aktuálně funguje.  
   
  Následující kód je posloupnost fragmenty kódu. Pro zjednodušení tento příklad předpokládá, že je seznam tiskových serverů oddělených znaky CRLF. Proměnná `fileOfPrintServers` je <xref:System.IO.StreamReader> objekt pro tento soubor. Každý název serveru je na samostatném řádku, některé volání <xref:System.IO.StreamReader.ReadLine%2A> získá název dalšího serveru a přesune <xref:System.IO.StreamReader>od kurzoru na začátek dalšího řádku.  
   

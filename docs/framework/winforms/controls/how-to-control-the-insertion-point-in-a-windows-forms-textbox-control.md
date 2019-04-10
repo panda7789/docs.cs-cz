@@ -10,12 +10,12 @@ helpviewer_keywords:
 - insertion points [Windows Forms], TextBox controls
 - text boxes [Windows Forms], controlling insertion point
 ms.assetid: 5bee7d34-5121-429e-ab1f-d8ff67bc74c1
-ms.openlocfilehash: 1fa6e8a3642086f81d0a62502d801ec6ade9b3d1
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 43fdb023f19aa988dfef3dcd68443d6f59808472
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59110713"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59341319"
 ---
 # <a name="how-to-control-the-insertion-point-in-a-windows-forms-textbox-control"></a>Postupy: Řízení místa vložení v ovládacím prvku Windows Forms TextBox
 Když prvku Windows Forms <xref:System.Windows.Forms.TextBox> ovládací prvek nejprve dostane fokus, je výchozí kurzor v textovém poli na levé straně jakýkoli existující text. Uživatel může přesunout kurzor pomocí klávesnice nebo myši. Pokud textové pole ztratí a potom získá fokus, kurzor se všude, kde uživatel naposledy vložili.  
@@ -24,9 +24,9 @@ Když prvku Windows Forms <xref:System.Windows.Forms.TextBox> ovládací prvek n
   
 ### <a name="to-control-the-insertion-point-in-a-textbox-control"></a>K řízení místa vložení v ovládacím prvku TextBox  
   
-1.  Nastavte <xref:System.Windows.Forms.TextBoxBase.SelectionStart%2A> vlastnost na odpovídající hodnotu. Nula umístí kurzor bezprostředně nalevo od prvního znaku.  
+1. Nastavte <xref:System.Windows.Forms.TextBoxBase.SelectionStart%2A> vlastnost na odpovídající hodnotu. Nula umístí kurzor bezprostředně nalevo od prvního znaku.  
   
-2.  (Volitelné) Nastavte <xref:System.Windows.Forms.TextBoxBase.SelectionLength%2A> vlastnost Délka textu, kterou chcete vybrat.  
+2. (Volitelné) Nastavte <xref:System.Windows.Forms.TextBoxBase.SelectionLength%2A> vlastnost Délka textu, kterou chcete vybrat.  
   
      Následující kód vždy vrátí kurzor na hodnotu 0. `TextBox1_Enter` Obslužné rutiny události musí být vázán na ovládací prvek; další informace naleznete v tématu [vytváření obslužných rutin událostí ve Windows Forms](../creating-event-handlers-in-windows-forms.md).  
   

@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: abf48c11-1e72-431d-9562-39cf23e1a8ff
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 873b6120929c8c7cf67d53d8f793964361ae88b8
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: f141f21f80275a592caf3f87a5cbe0def6869c0c
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45964702"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59341761"
 ---
 # <a name="walkthrough-creating-a-cryptographic-application"></a>Návod: Vytvoření šifrovací aplikace
 Tento návod ukazuje, jak šifrování a dešifrování obsahu. Příklady kódu jsou určeny pro aplikaci Windows Forms. Tato aplikace neukazuje reálných scénářů, jako je například používání čipových karet. Místo toho ukazuje základní informace o šifrování a dešifrování.  
@@ -53,7 +53,7 @@ Tento návod ukazuje, jak šifrování a dešifrování obsahu. Příklady kódu
 ## <a name="creating-a-windows-forms-application"></a>Vytvoření aplikace Windows Forms  
  Většina příkladů kódu v tomto názorném postupu jsou navržené tak, aby obslužné rutiny událostí pro ovládací prvky tlačítek. Následující tabulka uvádí prvky, které jsou vyžadovány pro ukázkovou aplikaci a požadovaná názvy v příkladech kódu.  
   
-|Ovládací prvek|Název|Vlastnost text (podle potřeby)|  
+|Control|Name|Vlastnost text (podle potřeby)|  
 |-------------|----------|---------------------------------|  
 |<xref:System.Windows.Forms.Button>|`buttonEncryptFile`|Šifrování souboru|  
 |<xref:System.Windows.Forms.Button>|`buttonDecryptFile`|Dešifrování souboru|  
@@ -88,15 +88,15 @@ Tento návod ukazuje, jak šifrování a dešifrování obsahu. Příklady kódu
   
  `EncryptFile` Metoda provede následující akce:  
   
-1.  Vytvoří <xref:System.Security.Cryptography.RijndaelManaged> symetrický algoritmus šifrování obsahu.  
+1. Vytvoří <xref:System.Security.Cryptography.RijndaelManaged> symetrický algoritmus šifrování obsahu.  
   
-2.  Vytvoří <xref:System.Security.Cryptography.RSACryptoServiceProvider> objektu k šifrování <xref:System.Security.Cryptography.RijndaelManaged> klíč.  
+2. Vytvoří <xref:System.Security.Cryptography.RSACryptoServiceProvider> objektu k šifrování <xref:System.Security.Cryptography.RijndaelManaged> klíč.  
   
-3.  Používá <xref:System.Security.Cryptography.CryptoStream> objekt ke čtení a šifrování <xref:System.IO.FileStream> zdrojového souboru, v blocích po bajtů do cílového <xref:System.IO.FileStream> objektu pro šifrovaný soubor.  
+3. Používá <xref:System.Security.Cryptography.CryptoStream> objekt ke čtení a šifrování <xref:System.IO.FileStream> zdrojového souboru, v blocích po bajtů do cílového <xref:System.IO.FileStream> objektu pro šifrovaný soubor.  
   
-4.  Určuje délky šifrovaný klíč a vektor IV a vytvoří jejich hodnoty pro délku pole bajtů.  
+4. Určuje délky šifrovaný klíč a vektor IV a vytvoří jejich hodnoty pro délku pole bajtů.  
   
-5.  Zapíše klíče, IV a jejich hodnoty pro délku zašifrovaný balíček.  
+5. Zapíše klíče, IV a jejich hodnoty pro délku zašifrovaný balíček.  
   
  Balíček šifrování používá následující formát:  
   
@@ -106,7 +106,7 @@ Tento návod ukazuje, jak šifrování a dešifrování obsahu. Příklady kódu
   
 -   Šifrovaný klíč  
   
--   VEKTOR IV  
+-   IV  
   
 -   Šifrovaného textu  
   
@@ -127,15 +127,15 @@ Tento návod ukazuje, jak šifrování a dešifrování obsahu. Příklady kódu
   
  `Decrypt` Metoda provede následující akce:  
   
-1.  Vytvoří <xref:System.Security.Cryptography.RijndaelManaged> symetrický algoritmus k dešifrování obsahu.  
+1. Vytvoří <xref:System.Security.Cryptography.RijndaelManaged> symetrický algoritmus k dešifrování obsahu.  
   
-2.  Načte prvních osm bajtů <xref:System.IO.FileStream> šifrované balíčku do pole bajtů k získání délky šifrovaný klíč a vektor IV.  
+2. Načte prvních osm bajtů <xref:System.IO.FileStream> šifrované balíčku do pole bajtů k získání délky šifrovaný klíč a vektor IV.  
   
-3.  Extrahuje klíč a vektor IV z balíčku šifrování bajtová pole.  
+3. Extrahuje klíč a vektor IV z balíčku šifrování bajtová pole.  
   
-4.  Vytvoří <xref:System.Security.Cryptography.RSACryptoServiceProvider> objektu k dešifrování <xref:System.Security.Cryptography.RijndaelManaged> klíč.  
+4. Vytvoří <xref:System.Security.Cryptography.RSACryptoServiceProvider> objektu k dešifrování <xref:System.Security.Cryptography.RijndaelManaged> klíč.  
   
-5.  Používá <xref:System.Security.Cryptography.CryptoStream> objekt ke čtení a dešifrování části textu šifer <xref:System.IO.FileStream> šifrování balíček, v blocích bajtů do <xref:System.IO.FileStream> objekt dešifrovaný souboru. Po jejím dokončení dešifrování je dokončeno.  
+5. Používá <xref:System.Security.Cryptography.CryptoStream> objekt ke čtení a dešifrování části textu šifer <xref:System.IO.FileStream> šifrování balíček, v blocích bajtů do <xref:System.IO.FileStream> objekt dešifrovaný souboru. Po jejím dokončení dešifrování je dokončeno.  
   
  Přidejte následující kód, jako `Click` obslužné rutiny události pro `Decrypt File` tlačítko.  
   
@@ -182,34 +182,34 @@ Tento návod ukazuje, jak šifrování a dešifrování obsahu. Příklady kódu
   
 #### <a name="to-create-keys-encrypt-and-decrypt"></a>K vytvoření klíčů, šifrování a dešifrování  
   
-1.  Klikněte na tlačítko `Create Keys` tlačítko. Popisek zobrazí název klíče a ukazuje, že je úplné klíčový pár.  
+1. Klikněte na tlačítko `Create Keys` tlačítko. Popisek zobrazí název klíče a ukazuje, že je úplné klíčový pár.  
   
-2.  Klikněte na tlačítko `Export Public Key` tlačítko. Všimněte si, že export veřejného klíče parametry nedojde ke změně aktuálního klíče.  
+2. Klikněte na tlačítko `Export Public Key` tlačítko. Všimněte si, že export veřejného klíče parametry nedojde ke změně aktuálního klíče.  
   
-3.  Klikněte na tlačítko `Encrypt File` tlačítko a vyberte soubor.  
+3. Klikněte na tlačítko `Encrypt File` tlačítko a vyberte soubor.  
   
-4.  Klikněte na tlačítko `Decrypt File` tlačítko a vyberte soubor jenom šifrovaná.  
+4. Klikněte na tlačítko `Decrypt File` tlačítko a vyberte soubor jenom šifrovaná.  
   
-5.  Zkontrolujte soubor jenom dešifrovat.  
+5. Zkontrolujte soubor jenom dešifrovat.  
   
-6.  Ukončete aplikaci a restartujte ji otestovat načítání trvalých kontejnerů klíčů obsahuje další scénář.  
+6. Ukončete aplikaci a restartujte ji otestovat načítání trvalých kontejnerů klíčů obsahuje další scénář.  
   
 #### <a name="to-encrypt-using-the-public-key"></a>K šifrování pomocí veřejného klíče  
   
-1.  Klikněte na tlačítko `Import Public Key` tlačítko. Popisek zobrazí název klíče a ukazuje, že je veřejný pouze.  
+1. Klikněte na tlačítko `Import Public Key` tlačítko. Popisek zobrazí název klíče a ukazuje, že je veřejný pouze.  
   
-2.  Klikněte na tlačítko `Encrypt File` tlačítko a vyberte soubor.  
+2. Klikněte na tlačítko `Encrypt File` tlačítko a vyberte soubor.  
   
-3.  Klikněte na tlačítko `Decrypt File` tlačítko a vyberte soubor jenom šifrovaná. To se nezdaří, protože musí mít privátní klíč pro dešifrování.  
+3. Klikněte na tlačítko `Decrypt File` tlačítko a vyberte soubor jenom šifrovaná. To se nezdaří, protože musí mít privátní klíč pro dešifrování.  
   
  Tento scénář předvádí s pouze veřejný klíč k šifrování souboru pro jinou osobu. Obvykle by tato osoba poskytnout pouze veřejný klíč a odepřít privátní klíč pro dešifrování.  
   
 #### <a name="to-decrypt-using-the-private-key"></a>Dešifrování pomocí privátního klíče  
   
-1.  Klikněte na tlačítko `Get Private Key` tlačítko. Popisek zobrazí název klíče a ukazuje, zda je úplný pár klíče.  
+1. Klikněte na tlačítko `Get Private Key` tlačítko. Popisek zobrazí název klíče a ukazuje, zda je úplný pár klíče.  
   
-2.  Klikněte na tlačítko `Decrypt File` tlačítko a vyberte soubor jenom šifrovaná. Toto bude úspěšné, protože budete mít úplný pár klíče k dešifrování.  
+2. Klikněte na tlačítko `Decrypt File` tlačítko a vyberte soubor jenom šifrovaná. Toto bude úspěšné, protože budete mít úplný pár klíče k dešifrování.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Kryptografické služby](../../../docs/standard/security/cryptographic-services.md)
+- [Šifrovací služby](../../../docs/standard/security/cryptographic-services.md)

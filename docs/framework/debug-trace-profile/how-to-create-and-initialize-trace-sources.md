@@ -11,26 +11,26 @@ helpviewer_keywords:
 ms.assetid: f88dda6f-5fda-45be-9b3c-745a9b708c4d
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 346fb3399993246eb8d90f7fa900ab382ae12c71
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 2d96de43d258e4a7ff925e0c5b1702727e67d737
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59194887"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59339434"
 ---
 # <a name="how-to-create-and-initialize-trace-sources"></a>Postupy: Vytváření a inicializace zdrojů trasování
 <xref:System.Diagnostics.TraceSource> Třídu aplikace používá k vytvoření trasování, které lze asociovat s aplikací. <xref:System.Diagnostics.TraceSource> poskytuje metody trasování, které vám umožní snadno trasovat události, trasovat data a vydávat informační trasování. Trasování výstupu z <xref:System.Diagnostics.TraceSource> může být vytvořeno a inicializováno s nebo bez použití konfiguračních souborů. Toto téma obsahuje pokyny pro obě možnosti. Doporučujeme však použít konfigurační soubory pro usnadnění opětovné konfigurace trasování vyprodukované zdroji trasování za běhu.  
   
 ### <a name="to-create-and-initialize-a-trace-source-using-a-configuration-file"></a>Vytvoření a Inicializace zdroje trasování pomocí konfiguračního souboru  
   
-1.  Vytvořte projekt konzolové aplikace Visual Studio a nahraďte zadaný kód následujícím kódem. Tento kód protokoluje chyby a upozornění a vypíše některé z nich do konzoly a některé z nich do souboru myListener, který je vytvořen pomocí položek v konfiguračním souboru.  
+1. Vytvořte projekt konzolové aplikace Visual Studio a nahraďte zadaný kód následujícím kódem. Tento kód protokoluje chyby a upozornění a vypíše některé z nich do konzoly a některé z nich do souboru myListener, který je vytvořen pomocí položek v konfiguračním souboru.  
   
      [!code-csharp[TraceSourceExample1#1](../../../samples/snippets/csharp/VS_Snippets_CLR/tracesourceexample1/cs/program.cs#1)]
      [!code-vb[TraceSourceExample1#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/tracesourceexample1/vb/program.vb#1)]  
   
-2.  Přidání konfiguračního souboru aplikace, pokud jeden není uveden do projektu pro inicializaci zdroje trasování s názvem `TraceSourceApp` v příkladu kódu v kroku 1.  
+2. Přidání konfiguračního souboru aplikace, pokud jeden není uveden do projektu pro inicializaci zdroje trasování s názvem `TraceSourceApp` v příkladu kódu v kroku 1.  
   
-3.  Nahraďte výchozí obsah souboru konfigurace následujícím nastavením pro inicializaci naslouchacího procesu trasování konzoly a naslouchacího procesu text zapisovač trasování pro zdroj trasování, který byl vytvořen v kroku 1.  
+3. Nahraďte výchozí obsah souboru konfigurace následujícím nastavením pro inicializaci naslouchacího procesu trasování konzoly a naslouchacího procesu text zapisovač trasování pro zdroj trasování, který byl vytvořen v kroku 1.  
   
     ```xml  
     <configuration>  

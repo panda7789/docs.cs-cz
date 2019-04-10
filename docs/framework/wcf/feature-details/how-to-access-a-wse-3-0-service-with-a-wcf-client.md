@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 1f9bcd9b-8f8f-47fa-8f1e-0d47236eb800
-ms.openlocfilehash: 1b8b344c713fdd27c67cf98c51c8c69198fd508f
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 83507a95dbc4bc7499b94a516f569703f21a2726
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59127455"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59341059"
 ---
 # <a name="how-to-access-a-wse-30-service-with-a-wcf-client"></a>Postupy: Přístup ke službě WSE 3.0 pomocí klienta WCF
 Klienti Windows Communication Foundation (WCF) jsou přenosový kompatibilní s Web Services vylepšení (WSE) 3.0 pro služby rozhraní Microsoft .NET, když klienti WCF umožňují použít verzi ze srpna 2004 specifikace WS-Addressing. Ale WSE 3.0 services nepodporuje metadata exchange (MEX) protokol, tak při použití [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) pro vytvoření třídy klienta WCF, se nepoužijí nastavení zabezpečení pro generované Klient WCF. Proto je nutné zadat nastavení zabezpečení, že WSE 3.0 služba vyžaduje, aby po vygenerování klienta WCF.  
@@ -19,13 +19,13 @@ Klienti Windows Communication Foundation (WCF) jsou přenosový kompatibilní s 
   
 ### <a name="to-access-a-wse-30-web-service-with-a-wcf-client"></a>Přístup ke službě WSE 3.0 Web pomocí klienta WCF  
   
-1.  Spustit [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) k vytvoření klienta WCF pro WSE 3.0 webovou službu.  
+1. Spustit [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) k vytvoření klienta WCF pro WSE 3.0 webovou službu.  
   
      WSE 3.0 webové služby vytvoří se klient WCF. Protože WSE 3.0 nepodporuje protokol MEX, nemůžete použít nástroj načíst požadavky na zabezpečení pro webovou službu. Vývojář aplikace musíte přidat nastavení zabezpečení pro klienta.  
   
      Další informace o vytvoření klienta WCF najdete v tématu [jak: Vytvoření klienta](../../../../docs/framework/wcf/how-to-create-a-wcf-client.md).  
   
-2.  Vytvořte třídu, která představuje vazbu, která může komunikovat s WSE 3.0 Web services.  
+2. Vytvořte třídu, která představuje vazbu, která může komunikovat s WSE 3.0 Web services.  
   
      Následující třídy je součástí [spolupráce s WSE](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms752257%28v=vs.90%29) vzorku:  
   
@@ -50,7 +50,7 @@ Klienti Windows Communication Foundation (WCF) jsou přenosový kompatibilní s 
          [!code-csharp[c_WCFClientToWSEService#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_wcfclienttowseservice/cs/wsehttpbinding.cs#2)]
          [!code-vb[c_WCFClientToWSEService#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_wcfclienttowseservice/vb/wsehttpbinding.vb#2)]  
   
-3.  V kódu aplikace klienta přidejte kód pro nastavení vlastnosti vazby.  
+3. V kódu aplikace klienta přidejte kód pro nastavení vlastnosti vazby.  
   
      Následující příklad kódu určuje, zda klient WCF musí používat zprávy ochrany a ověřování podle definice ve WSE 3.0 `AnonymousForCertificate` kontrolního výrazu zabezpečení na klíč. Navíc se vyžaduje zabezpečených relací a odvozených klíčů.  
   

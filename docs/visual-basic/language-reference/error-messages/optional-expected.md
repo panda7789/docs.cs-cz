@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC30202
 ms.assetid: 6f75060c-2db4-4a79-b5d1-5780c09a74cd
-ms.openlocfilehash: d70a71f8b5f72edbd7f3e50bc099360d02e95389
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 71a25784f357a7e596093b314ed5b3d721d6f92c
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58840546"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59341878"
 ---
 # <a name="optional-expected"></a>Bylo očekáváno klíčové slovo 'Optional'.
 Volitelný argument v deklaraci procedury následuje povinný argument. Každý argument volitelným argumentem musí být také volitelný.  
@@ -21,10 +21,10 @@ Volitelný argument v deklaraci procedury následuje povinný argument. Každý 
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1.  Pokud má být povinný argument, přesuňte ho před první nepovinný argument v seznamu argumentů.  
+1. Pokud má být povinný argument, přesuňte ho před první nepovinný argument v seznamu argumentů.  
   
-2.  Pokud má být volitelný argument, použijte `Optional` – klíčové slovo.  
+2. Pokud má být volitelný argument, použijte `Optional` – klíčové slovo.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Nepovinné parametry](../../../visual-basic/programming-guide/language-features/procedures/optional-parameters.md)
+- [Volitelné parametry](../../../visual-basic/programming-guide/language-features/procedures/optional-parameters.md)

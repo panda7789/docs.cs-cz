@@ -2,12 +2,12 @@
 title: Ukázka služby AJAX využívající komplexní typy
 ms.date: 03/30/2017
 ms.assetid: 88242b99-4811-4cbe-8201-52ddf48fb174
-ms.openlocfilehash: 54d8c90f8317b69195401eda64e8a482aaf8460a
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: cde7e48d0f0c44d68266d60399ac197d322a42cc
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59128502"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59342216"
 ---
 # <a name="ajax-service-using-complex-types-sample"></a>Ukázka služby AJAX využívající komplexní typy
 Tato ukázka demonstruje použití Windows Communication Foundation (WCF) k vytvoření služby ASP.NET asynchronní JavaScript a XML (AJAX), který vytváří instance komplexních typů a odešle je mezi službou a klienta jako JSON JavaScript Object Notation (). Služby AJAX můžete přistupovat pomocí kódu jazyka JavaScript z webového prohlížeče klienta. Tato ukázka je založena na [základní služba AJAX](../../../../docs/framework/wcf/samples/basic-ajax-service.md) vzorku.  
@@ -51,11 +51,11 @@ function onSuccess(mathResult){
 
 ### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
-1.  Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2.  Sestavte řešení ComplexTypeAjaxService.sln, jak je popsáno v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Sestavte řešení ComplexTypeAjaxService.sln, jak je popsáno v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3.  Přejděte na `http://localhost/ServiceModelSamples/ComplexTypeClientPage.aspx` (neotevírejte ComplexTypeClientPage.aspx v prohlížeči z adresáře projektu).  
+3. Přejděte na `http://localhost/ServiceModelSamples/ComplexTypeClientPage.aspx` (neotevírejte ComplexTypeClientPage.aspx v prohlížeči z adresáře projektu).  
   
 > [!IMPORTANT]
 >  Vzorky mohou již být nainstalováno ve vašem počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  

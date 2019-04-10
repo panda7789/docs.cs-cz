@@ -8,12 +8,12 @@ helpviewer_keywords:
 - claims [WCF], comparing
 - claims [WCF]
 ms.assetid: 0c4ec84d-53df-408f-8953-9bc437f56c28
-ms.openlocfilehash: c6230d7618b7885d72ddfebc67157bb48ff9cb38
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 932ad347730b35a936e040e116e5aa6af36cd3dc
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59122015"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59343308"
 ---
 # <a name="how-to-compare-claims"></a>Postupy: Porovnání deklarací
 Infrastruktura modelu Identity ve Windows Communication Foundation (WCF) se používá k provedení kontroly autorizace. V důsledku toho běžných úloh je porovnávání deklarací identity v kontextu autorizace deklarací identity potřebný k provedení požadované akce nebo přístup k požadovanému prostředku. Toto téma popisuje, jak porovnat deklarace identity, včetně typů předdefinované a vlastní deklarace identity. Další informace o infrastruktuře identit modelu najdete v tématu [správa deklarací identity a autorizace s modelem Identity](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md).  
@@ -36,33 +36,33 @@ Infrastruktura modelu Identity ve Windows Communication Foundation (WCF) se pou�
   
 ### <a name="comparing-built-in-claims"></a>Porovnání integrovaných deklarací identity  
   
-1.  Dvě instance s ohledem <xref:System.IdentityModel.Claims.Claim> třídy, použijte <xref:System.IdentityModel.Claims.Claim.Equals%2A> k porovnání, ujistěte se, jak je znázorněno v následujícím kódu.  
+1. Dvě instance s ohledem <xref:System.IdentityModel.Claims.Claim> třídy, použijte <xref:System.IdentityModel.Claims.Claim.Equals%2A> k porovnání, ujistěte se, jak je znázorněno v následujícím kódu.  
   
      [!code-csharp[c_CustomClaimComparison#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customclaimcomparison/cs/c_customclaimcomparison.cs#5)]
      [!code-vb[c_CustomClaimComparison#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customclaimcomparison/vb/source.vb#5)]  
   
 ### <a name="comparing-custom-claims-with-primitive-resource-types"></a>Porovnání vlastní deklarace identity s prostředků primitivní typy  
   
-1.  U vlastních deklarací identity s prostředků primitivní typy porovnání se dá udělat jako integrované deklarace identity, jak je znázorněno v následujícím kódu.  
+1. U vlastních deklarací identity s prostředků primitivní typy porovnání se dá udělat jako integrované deklarace identity, jak je znázorněno v následujícím kódu.  
   
      [!code-csharp[c_CustomClaimComparison#6](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customclaimcomparison/cs/c_customclaimcomparison.cs#6)]
      [!code-vb[c_CustomClaimComparison#6](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customclaimcomparison/vb/source.vb#6)]  
   
-2.  Pro vlastní deklarace identity s struktury nebo třídy, na základě typů prostředků, typ prostředku by měl přepsat <xref:System.IdentityModel.Claims.Claim.Equals%2A> metody.  
+2. Pro vlastní deklarace identity s struktury nebo třídy, na základě typů prostředků, typ prostředku by měl přepsat <xref:System.IdentityModel.Claims.Claim.Equals%2A> metody.  
   
-3.  Nejdřív zkontrolujte, zda `obj` parametr je `null`a pokud ano, vrátí `false`.  
+3. Nejdřív zkontrolujte, zda `obj` parametr je `null`a pokud ano, vrátí `false`.  
   
      [!code-csharp[c_CustomClaimComparison#7](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customclaimcomparison/cs/c_customclaimcomparison.cs#7)]
      [!code-vb[c_CustomClaimComparison#7](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customclaimcomparison/vb/source.vb#7)]  
   
-4.  Další volání <xref:System.Object.ReferenceEquals%2A> a předejte mu `this` a `obj` jako parametry. Vrátí-li `true`a pak se vrátit `true`.  
+4. Další volání <xref:System.Object.ReferenceEquals%2A> a předejte mu `this` a `obj` jako parametry. Vrátí-li `true`a pak se vrátit `true`.  
   
      [!code-csharp[c_CustomClaimComparison#8](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customclaimcomparison/cs/c_customclaimcomparison.cs#8)]
      [!code-vb[c_CustomClaimComparison#8](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customclaimcomparison/vb/source.vb#8)]  
   
-5.  Další pokus o přiřazení `obj` na místní proměnnou typu třídy. Když se to nepovede, odkaz je `null`. V takových případech vrátí `false`.  
+5. Další pokus o přiřazení `obj` na místní proměnnou typu třídy. Když se to nepovede, odkaz je `null`. V takových případech vrátí `false`.  
   
-6.  Proveďte vlastní porovnání nezbytné správně porovnat aktuální deklarace identity do zadané deklarací.  
+6. Proveďte vlastní porovnání nezbytné správně porovnat aktuální deklarace identity do zadané deklarací.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje porovnání vlastní deklarace identity, kde deklarace identity prostředku je jiného než primitivního typu.  

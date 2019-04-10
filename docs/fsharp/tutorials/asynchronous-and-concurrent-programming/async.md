@@ -2,12 +2,12 @@
 title: Asynchronní programování
 description: Zjistěte, jak F# asynchronního programování se provádí prostřednictvím programovací model na úrovni jazyka, který se snadno používá a je přirozený jazyk.
 ms.date: 06/20/2016
-ms.openlocfilehash: 18ba4873cd3dba6d9548a07c4487306d96adab61
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 6925a0132f9beed6be5f9dded3630b551072bea2
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56980084"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59343451"
 ---
 # <a name="async-programming-in-f"></a>Asynchronní programování v F\#
 
@@ -57,7 +57,7 @@ Kromě toho normální `let`, `use`, a `do` klíčová slova můžete používat
 
 Jak už bylo zmíněno dříve, asynchronní kód je specifikace práce udělat v jiném kontextu, který musí být explicitně spuštěna. Tady jsou dva základní způsoby, jak toho dosáhnout:
 
-1.  `Async.RunSynchronously` Asynchronní pracovní postup spustit v jiném vlákně, který se await jeho výsledek.
+1. `Async.RunSynchronously` Asynchronní pracovní postup spustit v jiném vlákně, který se await jeho výsledek.
 
 ```fsharp
 open System
@@ -78,7 +78,7 @@ let fetchHtmlAsync url =
  printfn "%s" html
  ```
 
-2.  `Async.Start` Asynchronní pracovní postup spustit v jiném vlákně a bude **není** await jeho výsledek.
+2. `Async.Start` Asynchronní pracovní postup spustit v jiném vlákně a bude **není** await jeho výsledek.
 
 ```fsharp
 open System
@@ -184,9 +184,9 @@ Existuje několik dalších podobnosti a rozdíly za zmínku.
 
 Naproti tomu F# asynchronními pracovními postupy jsou přirozeněji zrušit. Zrušení je jednoduchý proces třech krocích.
 
-1.  Vytvořte nový `CancellationTokenSource`.
-2.  Předejte ho do výchozí funkce.
-3.  Volání `Cancel` na tokenu.
+1. Vytvořte nový `CancellationTokenSource`.
+2. Předejte ho do výchozí funkce.
+3. Volání `Cancel` na tokenu.
 
 Příklad:
 

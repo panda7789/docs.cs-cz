@@ -11,12 +11,12 @@ helpviewer_keywords:
 - components [Windows Forms], troubleshooting
 - Windows Forms controls, debugging
 ms.assetid: e9c8c099-2271-4737-882f-50f336c7a55e
-ms.openlocfilehash: 988121bce1fd63c9560fb77fea6dedddd318c4ca
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 3ae8a889bf69913d234e31804335ddb08560c30c
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59168061"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59343412"
 ---
 # <a name="troubleshooting-control-and-component-authoring"></a>Řešení potíží s vytvářením ovládacích prvků a komponent
 Toto téma uvádí následující běžné problémy, které vznikají při vývoji komponent a ovládacích prvků. Další informace najdete v tématu [programování pomocí komponent](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/0ffkdtkf(v=vs.120)).  
@@ -38,9 +38,9 @@ Toto téma uvádí následující běžné problémy, které vznikají při výv
   
 #### <a name="to-add-a-control-to-the-toolbox"></a>Přidání ovládacího prvku na panelu nástrojů  
   
-1.  Klikněte pravým tlačítkem myši **nástrojů** a v místní nabídce vyberte **zvolit položky**.  
+1. Klikněte pravým tlačítkem myši **nástrojů** a v místní nabídce vyberte **zvolit položky**.  
   
-2.  V **zvolit položky nástrojů** dialogovém okně přidejte komponentu:  
+2. V **zvolit položky nástrojů** dialogovém okně přidejte komponentu:  
   
     -   Pokud chcete přidat do součásti rozhraní .NET Framework nebo ovládacího prvku, klikněte na tlačítko **součásti rozhraní .NET Framework** kartu.  
   
@@ -48,11 +48,11 @@ Toto téma uvádí následující běžné problémy, které vznikají při výv
   
     -   Pokud chcete přidat komponenty modelu COM nebo ovládacího prvku ActiveX, klikněte na tlačítko **komponenty modelu COM** kartu.  
   
-3.  Pokud váš ovládací prvek je uvedený v dialogovém okně, potvrďte je vybraná a potom klikněte na **OK**.  
+3. Pokud váš ovládací prvek je uvedený v dialogovém okně, potvrďte je vybraná a potom klikněte na **OK**.  
   
      Ovládací prvek je přidán do **nástrojů**.  
   
-4.  Pokud váš ovládací prvek není uveden v dialogovém okně, postupujte takto:  
+4. Pokud váš ovládací prvek není uveden v dialogovém okně, postupujte takto:  
   
     1.  Klikněte na tlačítko **Procházet** tlačítko.  
   
@@ -73,15 +73,15 @@ Toto téma uvádí následující běžné problémy, které vznikají při výv
   
 #### <a name="to-debug-a-control-or-component"></a>Chcete-li ladit ovládací prvek nebo komponenty  
   
-1.  Z **sestavení** nabídky, klikněte na tlačítko **sestavit řešení** sestavení potřebného řešení.  
+1. Z **sestavení** nabídky, klikněte na tlačítko **sestavit řešení** sestavení potřebného řešení.  
   
-2.  Z **souboru** nabídce zvolte **přidat**a potom **nový projekt** přidáte projekt testu do vaší aplikace.  
+2. Z **souboru** nabídce zvolte **přidat**a potom **nový projekt** přidáte projekt testu do vaší aplikace.  
   
-3.  V **přidat nový projekt** dialogové okno zvolit **aplikace Windows** pro typ projektu.  
+3. V **přidat nový projekt** dialogové okno zvolit **aplikace Windows** pro typ projektu.  
   
-4.  V **Průzkumníka řešení**, klikněte pravým tlačítkem myši **odkazy** uzlu pro nový projekt. V místní nabídce klikněte na tlačítko **přidat odkaz** přidáte odkaz na projekt, který obsahuje ovládací prvek nebo komponenty.  
+4. V **Průzkumníka řešení**, klikněte pravým tlačítkem myši **odkazy** uzlu pro nový projekt. V místní nabídce klikněte na tlačítko **přidat odkaz** přidáte odkaz na projekt, který obsahuje ovládací prvek nebo komponenty.  
   
-5.  Vytvořte instanci ovládacího prvku nebo komponenty v testovém projektu. Pokud vaše komponenta je v **nástrojů**, ji můžete přetáhnout do návrhové ploše, nebo můžete vytvořit instanci prostřednictvím kódu programu, jak je znázorněno v následujícím příkladu kódu.  
+5. Vytvořte instanci ovládacího prvku nebo komponenty v testovém projektu. Pokud vaše komponenta je v **nástrojů**, ji můžete přetáhnout do návrhové ploše, nebo můžete vytvořit instanci prostřednictvím kódu programu, jak je znázorněno v následujícím příkladu kódu.  
   
     ```vb  
     Dim Component1 As New MyNeatComponent()  

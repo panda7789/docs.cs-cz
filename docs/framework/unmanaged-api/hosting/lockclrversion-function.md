@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 571a676496683ba3251f13c41600bb017e1ced5d
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 91bb1a9416e577dbb5cc96e8be87033c53232811
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59156101"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59336691"
 ---
 # <a name="lockclrversion-function"></a>LockClrVersion – funkce
 Umožňuje hostiteli zjistit, která verze modulu common language runtime (CLR) se použije v rámci procesu před explicitní inicializací modulu CLR.  
@@ -66,11 +66,11 @@ typedef HRESULT ( __stdcall *FLockClrVersionCallback ) ();
   
  Při inicializaci modulu runtime dojde k následujícím krokům:  
   
-1.  Volání hostitele [CorBindToRuntimeEx –](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md) nebo jeden z jiné funkce inicializace modulu runtime. Alternativně může hostitele inicializovat modul runtime pomocí aktivace objektu COM.  
+1. Volání hostitele [CorBindToRuntimeEx –](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md) nebo jeden z jiné funkce inicializace modulu runtime. Alternativně může hostitele inicializovat modul runtime pomocí aktivace objektu COM.  
   
-2.  Modul runtime volá funkci určené `hostCallback` parametru.  
+2. Modul runtime volá funkci určené `hostCallback` parametru.  
   
-3.  Funkce určené `hostCallback` pak provede následující posloupnost volání:  
+3. Funkce určené `hostCallback` pak provede následující posloupnost volání:  
   
     -   Určené funkce `pBeginHostSetup` parametru.  
   

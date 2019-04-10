@@ -9,12 +9,12 @@ helpviewer_keywords:
 - MDI [Windows Forms], creating forms
 - child forms
 ms.assetid: 164b69bb-2eca-4339-ada3-0679eb2c6dda
-ms.openlocfilehash: 83f94830eec1d82112719a48e8ea98e2503f4542
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 73f2004470d5d1da04199af75832cefd6348ce18
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59124524"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59342456"
 ---
 # <a name="how-to-create-mdi-child-forms"></a>Postupy: Vytváření podřízených formulářů MDI
 Podřízené formuláře MDI jsou důležitou součástí [aplikace rozhraní více dokumentů (MDI)](multiple-document-interface-mdi-applications.md), jako jsou centra interakci s uživatelem.  
@@ -26,17 +26,17 @@ Podřízené formuláře MDI jsou důležitou součástí [aplikace rozhraní v�
   
 ### <a name="to-create-mdi-child-forms"></a>Chcete-li vytvořit podřízený formulář MDI formuláře  
   
-1.  Vytvoření nového projektu Windows Forms. V **Windows vlastnosti** formuláři, nastavit jeho <xref:System.Windows.Forms.Form.IsMdiContainer%2A> vlastnost `true`a jeho `WindowsState` vlastnost `Maximized`.  
+1. Vytvoření nového projektu Windows Forms. V **Windows vlastnosti** formuláři, nastavit jeho <xref:System.Windows.Forms.Form.IsMdiContainer%2A> vlastnost `true`a jeho `WindowsState` vlastnost `Maximized`.  
   
      Ta určuje formuláře jako kontejnerem MDI pro podřízená okna.  
   
-2.  Z `Toolbox`, přetáhněte <xref:System.Windows.Forms.MenuStrip> ovládacího prvku na formuláři. Nastavte jeho `Text` vlastnost **souboru**.  
+2. Z `Toolbox`, přetáhněte <xref:System.Windows.Forms.MenuStrip> ovládacího prvku na formuláři. Nastavte jeho `Text` vlastnost **souboru**.  
   
-3.  Klikněte na symbol tří teček (...) vedle položky **položky** vlastnost a klikněte na tlačítko **přidat** přidat dva podřízené položky nabídky pruhu pro nástroj. Nastavte `Text` vlastnost pro tyto položky **nový** a **okno**.  
+3. Klikněte na symbol tří teček (...) vedle položky **položky** vlastnost a klikněte na tlačítko **přidat** přidat dva podřízené položky nabídky pruhu pro nástroj. Nastavte `Text` vlastnost pro tyto položky **nový** a **okno**.  
   
-4.  V **Průzkumníka řešení**, klikněte pravým tlačítkem na projekt, přejděte na **přidat**a pak vyberte **přidat novou položku**.  
+4. V **Průzkumníka řešení**, klikněte pravým tlačítkem na projekt, přejděte na **přidat**a pak vyberte **přidat novou položku**.  
   
-5.  V **přidat novou položku** dialogu **formuláře Windows** (v jazyce Visual Basic nebo Visual C#) nebo **Windows Forms aplikace (.NET)** (v [!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)]) z  **Šablony** podokně. V **název** pole, pojmenujte formulář **Form2**. Klikněte na tlačítko **otevřít** tlačítko pro přidání formuláře do projektu.  
+5. V **přidat novou položku** dialogu **formuláře Windows** (v jazyce Visual Basic nebo Visual C#) nebo **Windows Forms aplikace (.NET)** (v [!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)]) z  **Šablony** podokně. V **název** pole, pojmenujte formulář **Form2**. Klikněte na tlačítko **otevřít** tlačítko pro přidání formuláře do projektu.  
   
     > [!NOTE]
     >  Podřízený formulář MDI, které jste vytvořili v tomto kroku je běžného formuláře Windows. V důsledku toho je <xref:System.Windows.Forms.Form.Opacity%2A> vlastnost, která vám umožňuje řídit průhlednost formuláře. Ale <xref:System.Windows.Forms.Form.Opacity%2A> vlastnost je navržená pro okna nejvyšší úrovně. Nepoužívejte ho s podřízených formulářů MDI, protože může dojít k problémům Malování.  
@@ -45,13 +45,13 @@ Podřízené formuláře MDI jsou důležitou součástí [aplikace rozhraní v�
   
      **Návrháře formulářů Windows** otevře zobrazení **Form2**.  
   
-6.  Z **nástrojů**, přetáhněte **RichTextBox** ovládacího prvku na formuláři.  
+6. Z **nástrojů**, přetáhněte **RichTextBox** ovládacího prvku na formuláři.  
   
-7.  V **vlastnosti** okno, nastaveno `Anchor` vlastnost **horní, levý** a `Dock` vlastnost **vyplnit**.  
+7. V **vlastnosti** okno, nastaveno `Anchor` vlastnost **horní, levý** a `Dock` vlastnost **vyplnit**.  
   
      To způsobí, že <xref:System.Windows.Forms.RichTextBox> ovládací prvek pro úplně naplnění oblasti podřízený formulář MDI, i když se změní velikost formuláře.  
   
-8.  Dvakrát klikněte **nový** vytvořit položku nabídky <xref:System.Windows.Forms.Control.Click> obslužnou rutinu události pro něj.  
+8. Dvakrát klikněte **nový** vytvořit položku nabídky <xref:System.Windows.Forms.Control.Click> obslužnou rutinu události pro něj.  
   
 9. Vložte kód podobný následujícímu vytvořit nový podřízený formulář MDI, když uživatel klikne **nový** položky nabídky.  
   

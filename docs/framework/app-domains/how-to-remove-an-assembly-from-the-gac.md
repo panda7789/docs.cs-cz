@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: acdcc588-b458-436d-876c-726de68244c1
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b9bece9e21a29e10f08d53c5e98f01cf02602e18
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: ff00e2f1d266243f0453f004564f2ed802d26c85
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59231009"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59338719"
 ---
 # <a name="how-to-remove-an-assembly-from-the-global-assembly-cache"></a>Postupy: Odebrání sestavení z globální mezipaměti sestavení
 Existují dva způsoby, jak odebrání sestavení z globální mezipaměti sestavení (GAC):  
@@ -29,7 +29,7 @@ Existují dva způsoby, jak odebrání sestavení z globální mezipaměti sesta
   
 ### <a name="removing-an-assembly-with-gacutilexe"></a>Odebrání sestavení s Gacutil.exe  
   
-1.  V příkazovém řádku zadejte následující příkaz:  
+1. V příkazovém řádku zadejte následující příkaz:  
   
      **Gacutil – u** \< *název sestavení*>  
   
@@ -46,7 +46,7 @@ gacutil -u hello
   
 ### <a name="removing-an-assembly-with-windows-installer"></a>Odebrání sestavení pomocí Instalační služby systému Windows  
   
-1.  Z **programy a funkce** aplikace v **ovládací panely**, vyberte aplikaci, kterou chcete odinstalovat. Pokud instalační balíček umístí sestavení v mezipaměti GAC, instalační služby systému Windows, budou odebrány Pokud nejsou použity v jiné aplikaci.  
+1. Z **programy a funkce** aplikace v **ovládací panely**, vyberte aplikaci, kterou chcete odinstalovat. Pokud instalační balíček umístí sestavení v mezipaměti GAC, instalační služby systému Windows, budou odebrány Pokud nejsou použity v jiné aplikaci.  
   
     > [!NOTE]
     >  Instalační program Windows udržuje počet odkazů pro sestavení nainstalovaná v GAC. Sestavení se odebere z mezipaměti GAC, pouze v případě, že jeho počet odkazů dosáhne nuly, což znamená, že není použit ve všech aplikacích nainstalovat balíček Instalační služby systému Windows.  

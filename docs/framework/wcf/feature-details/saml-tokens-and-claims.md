@@ -10,25 +10,25 @@ helpviewer_keywords:
 - issued tokens
 - SAML token
 ms.assetid: 930b6e34-9eab-4e95-826c-4e06659bb977
-ms.openlocfilehash: f1f7a15d1457390bf77f5e53c7fd657304725df6
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 04517e5089f55c2d2b08a492439026d33ed9069d
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59218209"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59339837"
 ---
 # <a name="saml-tokens-and-claims"></a>Tokeny a deklarace SAML
 Kontrolní výrazy jazyka SAML (Security Markup) *tokeny* jsou XML reprezentací deklarace identity. Ve výchozím nastavení, tokeny SAML Windows Communication Foundation (WCF) používá ve scénářích zabezpečení jsou *tokeny vydané*.  
   
  Tokeny SAML provádět příkazy, které jsou sady deklarací identity od jedné entitě o jiné entity. Například ve scénářích zabezpečení příkazy jsou prováděny služby tokenů zabezpečení o uživateli v systému. Služba tokenů zabezpečení přihlásí token SAML k označení pravdivosti příkazy obsažených v tokenu. Kromě toho SAML token je přidružen kryptografický materiál klíče, který uživatel tokenu SAML prokáže znalosti. Toto ověření splňuje předávající strany, který byl SAML token, ve skutečnosti vydán pro tohoto uživatele. Například v rámci typického scénáře:  
   
-1.  Klient požádá o SAML token od služby tokenů zabezpečení, ověřování pomocí přihlašovacích údajů Windows na tuto službu tokenů zabezpečení.  
+1. Klient požádá o SAML token od služby tokenů zabezpečení, ověřování pomocí přihlašovacích údajů Windows na tuto službu tokenů zabezpečení.  
   
-2.  Služba tokenů zabezpečení vydá SAML token do klienta. SAML token je podepsaný certifikátem související se službou tokenu zabezpečení a obsahuje klíč důkazu šifrována pro cílovou službu.  
+2. Služba tokenů zabezpečení vydá SAML token do klienta. SAML token je podepsaný certifikátem související se službou tokenu zabezpečení a obsahuje klíč důkazu šifrována pro cílovou službu.  
   
-3.  Klient také obdrží kopii *klíč důkazu*. Klient pak poskytne tokenu SAML pro aplikační služby ( *předávající straně*) a podepíše zprávy pomocí tohoto klíče důkazu.  
+3. Klient také obdrží kopii *klíč důkazu*. Klient pak poskytne tokenu SAML pro aplikační služby ( *předávající straně*) a podepíše zprávy pomocí tohoto klíče důkazu.  
   
-4.  Podpis v tokenu SAML říká předávající strany, služba tokenů zabezpečení token vydala. Podpis zprávy, vytvoří se klíč důkazu říká předávající strany, že byl vydán token do klienta.  
+4. Podpis v tokenu SAML říká předávající strany, služba tokenů zabezpečení token vydala. Podpis zprávy, vytvoří se klíč důkazu říká předávající strany, že byl vydán token do klienta.  
   
 ## <a name="from-claims-to-samlattributes"></a>Z deklarací identity k SamlAttributes  
  Ve službě WCF, jsou příkazy v tokenech SAML nemodelují jako <xref:System.IdentityModel.Tokens.SamlAttribute> objekty, které je možné importovat přímo z <xref:System.IdentityModel.Claims.Claim> objekty, které jsou k dispozici <xref:System.IdentityModel.Claims.Claim> má objekt <xref:System.IdentityModel.Claims.Claim.Right%2A> vlastnost <xref:System.IdentityModel.Claims.Rights.PossessProperty%2A> a <xref:System.IdentityModel.Claims.Claim.Resource%2A> vlastnost je typ <xref:System.String>. Příklad:  

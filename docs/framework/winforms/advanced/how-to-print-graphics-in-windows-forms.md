@@ -9,21 +9,21 @@ helpviewer_keywords:
 - graphics [Windows Forms], printing
 - printing [Windows Forms], graphics
 ms.assetid: 32b891e6-52ff-4fea-a9ff-2ce5db20a4c6
-ms.openlocfilehash: ab2a230b7c6e303d712df058f450334b50c8a676
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 55459482d0994c581164128b17c08a7ca90d0717
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59167203"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59339096"
 ---
 # <a name="how-to-print-graphics-in-windows-forms"></a>Postupy: Tisk grafiky v modelu Windows Forms
 Často bude chtít tisk grafiky v aplikaci založené na Windows. <xref:System.Drawing.Graphics> Třída poskytuje metody pro vykreslení objektů do zařízení, jako je obrazovka nebo tiskárny.  
   
 ### <a name="to-print-graphics"></a>Tisk grafiky  
   
-1.  Přidat <xref:System.Drawing.Printing.PrintDocument> komponentu do formuláře.  
+1. Přidat <xref:System.Drawing.Printing.PrintDocument> komponentu do formuláře.  
   
-2.  V <xref:System.Drawing.Printing.PrintDocument.PrintPage> obslužná rutina události, použijte <xref:System.Drawing.Printing.PrintPageEventArgs.Graphics%2A> vlastnost <xref:System.Drawing.Printing.PrintPageEventArgs> třídy dáte pokyn, aby tiskárny, na jaký typ grafiky k vytištění.  
+2. V <xref:System.Drawing.Printing.PrintDocument.PrintPage> obslužná rutina události, použijte <xref:System.Drawing.Printing.PrintPageEventArgs.Graphics%2A> vlastnost <xref:System.Drawing.Printing.PrintPageEventArgs> třídy dáte pokyn, aby tiskárny, na jaký typ grafiky k vytištění.  
   
      Následující příklad kódu ukazuje obslužné rutiny události použít k vytvoření modré tři tečky v rámci ohraničující obdélník. Obdélník má následující umístění a dimenze: začínající na 100, 150 šířka 250 a výška 250.  
   

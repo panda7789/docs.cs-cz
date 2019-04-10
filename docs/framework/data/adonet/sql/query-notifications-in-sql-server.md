@@ -2,23 +2,23 @@
 title: Oznámení pro dotazy na SQL Serveru
 ms.date: 03/30/2017
 ms.assetid: 0f0ba1a1-3180-4af8-87f7-c795dc8f8f55
-ms.openlocfilehash: 2a564ba1e06741523b9b3a005be86b13339889ec
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: e31a733635cf56a9c5e539dfb1d71d7d7037175a
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59203675"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59336665"
 ---
 # <a name="query-notifications-in-sql-server"></a>Oznámení pro dotazy na SQL Serveru
 Oznámení dotazů založené na řešení infrastruktury služby Service Broker, povolit aplikace, která vás upozorní, když se data změnila. Tato funkce je zvláště užitečná pro aplikace, které poskytují mezipaměť informací z databáze, jako je například v případě webové aplikace a nutné upozornit, když je změněna zdrojová data.  
   
  Oznámení dotazů pomocí ADO.NET můžete implementovat třemi způsoby:  
   
-1.  Nízké úrovně implementace je poskytován `SqlNotificationRequest` třídy, která poskytuje funkce na straně serveru, můžete k provedení příkazu se žádost o oznámení.  
+1. Nízké úrovně implementace je poskytován `SqlNotificationRequest` třídy, která poskytuje funkce na straně serveru, můžete k provedení příkazu se žádost o oznámení.  
   
-2.  Poskytuje základní implementaci `SqlDependency` třídu, která je třída, která poskytuje vysokou úroveň abstrakce oznámení funkcí mezi zdrojová aplikace a SQL Server, můžete použít k detekci změn v závislosti Server. Ve většině případů toto je nejjednodušší a nejúčinnější způsob využití možnosti oznámení systému SQL Server ve spravované klientským aplikacím pomocí zprostředkovatele dat .NET Framework pro SQL Server.  
+2. Poskytuje základní implementaci `SqlDependency` třídu, která je třída, která poskytuje vysokou úroveň abstrakce oznámení funkcí mezi zdrojová aplikace a SQL Server, můžete použít k detekci změn v závislosti Server. Ve většině případů toto je nejjednodušší a nejúčinnější způsob využití možnosti oznámení systému SQL Server ve spravované klientským aplikacím pomocí zprostředkovatele dat .NET Framework pro SQL Server.  
   
-3.  Kromě toho webových aplikací vytvořených pomocí technologie ASP.NET 2.0 nebo novější můžete použít `SqlCacheDependency` pomocné třídy.  
+3. Kromě toho webových aplikací vytvořených pomocí technologie ASP.NET 2.0 nebo novější můžete použít `SqlCacheDependency` pomocné třídy.  
   
  Oznámení dotazů se používají pro aplikace, které je potřeba aktualizovat zobrazí nebo ukládá do mezipaměti v reakci na změny v podkladových datech. Microsoft SQL Server umožňuje aplikacím rozhraní .NET Framework odeslat příkaz k systému SQL Server a žádost o oznámení, pokud spuštění stejného příkazu byste mohli vytvořit sad výsledků dotazu liší od původně načten. Vygenerovat na serveru oznámení se posílají do fronty mohly být zpracovány později.  
   

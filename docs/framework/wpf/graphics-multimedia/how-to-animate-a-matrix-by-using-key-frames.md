@@ -6,12 +6,12 @@ helpviewer_keywords:
 - Matrix properties [WPF], animating with key frames
 - key frames [WPF], animating Matrix properties with
 ms.assetid: b851a4c7-ecb1-420e-9203-83e7afd037fd
-ms.openlocfilehash: 8cc94117cc26f44288835fd85c6ded429124d3c6
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: ff5320fa5b4441ae3e0f414b274ab9118b77ec50
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59107923"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59336795"
 ---
 # <a name="how-to-animate-a-matrix-by-using-key-frames"></a>Postupy: Animace matice pomocí klíčových snímků
 Tento příklad ukazuje, jak animovat <xref:System.Windows.Media.MatrixTransform.Matrix%2A> vlastnost <xref:System.Windows.Media.MatrixTransform> použitím klíčových snímků.  
@@ -21,11 +21,11 @@ Tento příklad ukazuje, jak animovat <xref:System.Windows.Media.MatrixTransform
   
  Používá tato animace <xref:System.Windows.Media.Animation.DiscreteMatrixKeyFrame> třídy k vytvoření dvou klíčových snímků a provede následující s nimi:  
   
-1.  Animuje první <xref:System.Windows.Media.Matrix> během prvních 0,2 sekund. Příklad změn <xref:System.Windows.Media.Matrix.M11%2A> a <xref:System.Windows.Media.Matrix.M12%2A> vlastnosti <xref:System.Windows.Media.Matrix>. Tato změna způsobí, že tlačítko roztažení a stát zešikmená. V příkladu se také změní <xref:System.Windows.Media.Matrix.OffsetX%2A> a <xref:System.Windows.Media.Matrix.OffsetY%2A> vlastnosti tak, aby se tlačítko změní pozice.  
+1. Animuje první <xref:System.Windows.Media.Matrix> během prvních 0,2 sekund. Příklad změn <xref:System.Windows.Media.Matrix.M11%2A> a <xref:System.Windows.Media.Matrix.M12%2A> vlastnosti <xref:System.Windows.Media.Matrix>. Tato změna způsobí, že tlačítko roztažení a stát zešikmená. V příkladu se také změní <xref:System.Windows.Media.Matrix.OffsetX%2A> a <xref:System.Windows.Media.Matrix.OffsetY%2A> vlastnosti tak, aby se tlačítko změní pozice.  
   
-2.  Animuje druhý <xref:System.Windows.Media.Matrix> na 1.0 sekund. Tlačítko pohybuje na jinou pracovní pozici, zatímco na tlačítko se už zkosený, nebo roztažená.  
+2. Animuje druhý <xref:System.Windows.Media.Matrix> na 1.0 sekund. Tlačítko pohybuje na jinou pracovní pozici, zatímco na tlačítko se už zkosený, nebo roztažená.  
   
-3.  Opakuje se animace po neomezenou dobu.  
+3. Opakuje se animace po neomezenou dobu.  
   
 > [!NOTE]
 >  Klíčové snímky, které jsou odvozeny z <xref:System.Windows.Media.Animation.DiscreteMatrixKeyFrame> objekt vytvořit i s náhlými rozdíly mezi jednotlivými hodnotami, to znamená, je přehrávat nepravidelně přesun animace.  

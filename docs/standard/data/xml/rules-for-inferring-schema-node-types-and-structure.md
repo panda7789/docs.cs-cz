@@ -1,38 +1,38 @@
 ---
-title: Pravidla pro odvození schématu typů a struktury uzlů
+title: Pravidla pro odvození typů a struktury uzlů schémat
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: d74ce896-717d-4871-8fd9-b070e2f53cb0
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 4153638e570bfdb7fe65e5c9cd285f56644fea3f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1c2f28490203bcc4853bc6736ce7089f308bc275
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54683661"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59338706"
 ---
-# <a name="rules-for-inferring-schema-node-types-and-structure"></a>Pravidla pro odvození schématu typů a struktury uzlů
+# <a name="rules-for-inferring-schema-node-types-and-structure"></a>Pravidla pro odvození typů a struktury uzlů schémat
 Toto téma popisuje, jak procesu odvození schématu přeloží typy uzlů v dokumentu XML pro strukturu schématu XML definice jazyk (XSD).  
   
 ## <a name="element-inference-rules"></a>Element odvozených pravidel  
  Tato část popisuje odvozená pravidla pro deklarace prvků. Osm struktury deklarace prvků, které bude možné odvodit jsou:  
   
-1.  Element jednoduchý typ.  
+1. Element jednoduchý typ.  
   
-2.  Prázdný element  
+2. Prázdný element  
   
-3.  Prázdný element s atributy  
+3. Prázdný element s atributy  
   
-4.  Element s atributy a jednoduchý obsah  
+4. Element s atributy a jednoduchý obsah  
   
-5.  Element s pořadím podřízených elementů  
+5. Element s pořadím podřízených elementů  
   
-6.  Element s posloupnost podřízené prvky a atributy  
+6. Element s posloupnost podřízené prvky a atributy  
   
-7.  Element s pořadím voleb podřízených elementů  
+7. Element s pořadím voleb podřízených elementů  
   
-8.  Element s pořadím voleb podřízených elementů a atributů  
+8. Element s pořadím voleb podřízených elementů a atributů  
   
 > [!NOTE]
 >  Všechny `complexType` deklarace jsou odvozeny jako anonymní typy. Pouze globální element odvodit je kořenový element. všechny ostatní prvky jsou místní.  

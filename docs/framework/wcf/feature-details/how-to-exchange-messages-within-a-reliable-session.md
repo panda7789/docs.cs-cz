@@ -2,12 +2,12 @@
 title: 'Postupy: Výměna zpráv ve spolehlivých relacích'
 ms.date: 03/30/2017
 ms.assetid: 87cd0e75-dd2c-44c1-8da0-7b494bbdeaea
-ms.openlocfilehash: 145224655d1ec76c9deb5afc3c1a8ec9a1975f4f
-ms.sourcegitcommit: af0a22a4eb11bbcd33baec49150d551955b50a16
+ms.openlocfilehash: aad4eae870e3ba603c56a28a620fe8bc0e31ceb6
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56260683"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59342983"
 ---
 # <a name="how-to-exchange-messages-within-a-reliable-session"></a>Postupy: Výměna zpráv ve spolehlivých relacích
 
@@ -37,7 +37,7 @@ Pro zdrojovou kopii tohoto příkladu, naleznete v tématu [spolehlivá relace W
    <%@ServiceHost language=c# Service="CalculatorService" %>
    ```
 
-1.  Místo *Service.svc* souboru ve virtuální adresář Internetové informační služby (IIS).
+1. Místo *Service.svc* souboru ve virtuální adresář Internetové informační služby (IIS).
 
 ### <a name="configure-the-client-with-a-wshttpbinding-to-use-a-reliable-session"></a>Konfigurace klienta s WSHttpBinding používat spolehlivé relace
 

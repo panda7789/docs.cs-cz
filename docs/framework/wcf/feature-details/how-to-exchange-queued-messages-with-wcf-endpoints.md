@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 938e7825-f63a-4c3d-b603-63772fabfdb3
-ms.openlocfilehash: 98cb62c0d3f82a90ee96797a34600473dbe4dc11
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: dd59e7689fbca68d3e7b0b0008973e471d092fe0
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59179163"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59342970"
 ---
 # <a name="how-to-exchange-queued-messages-with-wcf-endpoints"></a>Postupy: Výměna zpráv zařazených do fronty pomocí koncových bodů WCF
 Fronty Ujistěte se, že může dojít spolehlivé zasílání zpráv, mezi klientem a službou Windows Communication Foundation (WCF), i v případě, že služba není k dispozici v době komunikace. Následující postupy ukazují, jak zajistit ve frontě trvalý komunikace mezi klientem a službou pomocí standardní připojení, při implementaci služby WCF.  
@@ -19,46 +19,46 @@ Fronty Ujistěte se, že může dojít spolehlivé zasílání zpráv, mezi klie
   
 ### <a name="to-use-queuing-in-a-wcf-service"></a>Použití služby Řízení front ve službě WCF  
   
-1.  Definování kontraktu služby pomocí rozhraní označené <xref:System.ServiceModel.ServiceContractAttribute>. Označit operace v rozhraní, které jsou součástí kontraktu služby se <xref:System.ServiceModel.OperationContractAttribute> a zadejte jako jednosměrná, protože není vrácena žádná odpověď na metodu. Následující kód obsahuje kontrakt služby příklad a jeho definice operace.  
+1. Definování kontraktu služby pomocí rozhraní označené <xref:System.ServiceModel.ServiceContractAttribute>. Označit operace v rozhraní, které jsou součástí kontraktu služby se <xref:System.ServiceModel.OperationContractAttribute> a zadejte jako jednosměrná, protože není vrácena žádná odpověď na metodu. Následující kód obsahuje kontrakt služby příklad a jeho definice operace.  
   
      [!code-csharp[S_Msmq_Transacted#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_msmq_transacted/cs/service.cs#1)]
      [!code-vb[S_Msmq_Transacted#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_msmq_transacted/vb/service.vb#1)]  
   
-2.  Když je kontrakt služby úspěšné uživatelem definovaných typů, je nutné definovat kontraktů dat pro tyto typy. Následující kód ukazuje dva kontrakty dat `PurchaseOrder` a `PurchaseOrderLineItem`. Tyto dva typy definují data, která se odesílají do služby. (Všimněte si, že třídy, které definují tento kontrakt dat také definovat několik metod. Tyto metody nejsou považované za součást kontraktu dat. Pouze ty členy, které jsou deklarovány pomocí <xref:System.Runtime.Serialization.DataMemberAttribute> atribut jsou součástí kontraktu dat.)  
+2. Když je kontrakt služby úspěšné uživatelem definovaných typů, je nutné definovat kontraktů dat pro tyto typy. Následující kód ukazuje dva kontrakty dat `PurchaseOrder` a `PurchaseOrderLineItem`. Tyto dva typy definují data, která se odesílají do služby. (Všimněte si, že třídy, které definují tento kontrakt dat také definovat několik metod. Tyto metody nejsou považované za součást kontraktu dat. Pouze ty členy, které jsou deklarovány pomocí <xref:System.Runtime.Serialization.DataMemberAttribute> atribut jsou součástí kontraktu dat.)  
   
      [!code-csharp[S_Msmq_Transacted#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_msmq_transacted/cs/service.cs#2)]
      [!code-vb[S_Msmq_Transacted#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_msmq_transacted/vb/service.vb#2)]  
   
-3.  Implementace metod definovaných v rozhraní ve třídě kontrakt služby.  
+3. Implementace metod definovaných v rozhraní ve třídě kontrakt služby.  
   
      [!code-csharp[S_Msmq_Transacted#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_msmq_transacted/cs/service.cs#3)]
      [!code-vb[S_Msmq_Transacted#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_msmq_transacted/vb/service.vb#3)]  
   
      Všimněte si, že <xref:System.ServiceModel.OperationBehaviorAttribute> umístit `SubmitPurchaseOrder` metody. Toto nastavení určuje, že tuto operaci musí být volána v rámci transakce a transakce automaticky dokončí při dokončení metody.  
   
-4.  Vytvoření transakční fronty pomocí <xref:System.Messaging>. Můžete vytvořit frontu, místo toho použít Microsoft Message Queuing (MSMQ) Microsoft Management Console (MMC). Pokud ano, ujistěte se, že vytvoříte transakční frontu.  
+4. Vytvoření transakční fronty pomocí <xref:System.Messaging>. Můžete vytvořit frontu, místo toho použít Microsoft Message Queuing (MSMQ) Microsoft Management Console (MMC). Pokud ano, ujistěte se, že vytvoříte transakční frontu.  
   
      [!code-csharp[S_Msmq_Transacted#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_msmq_transacted/cs/hostapp.cs#4)]
      [!code-vb[S_Msmq_Transacted#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_msmq_transacted/vb/hostapp.vb#4)]  
   
-5.  Definování <xref:System.ServiceModel.Description.ServiceEndpoint> v konfiguraci, která určuje adresu služby a využívá standardní <xref:System.ServiceModel.NetMsmqBinding> vazby. Další informace o použití konfigurace WCF najdete v tématu [konfigurace WCF services](../configuring-services.md).  
+5. Definování <xref:System.ServiceModel.Description.ServiceEndpoint> v konfiguraci, která určuje adresu služby a využívá standardní <xref:System.ServiceModel.NetMsmqBinding> vazby. Další informace o použití konfigurace WCF najdete v tématu [konfigurace WCF services](../configuring-services.md).  
 
-6.  Vytvoření hostitele pro `OrderProcessing` služby pomocí <xref:System.ServiceModel.ServiceHost> , která čte zprávy z fronty a zpracovává je. Otevření hostitele služby, aby tato služba k dispozici. Zobrazte zprávu, která uživateli říká, aby stisknutím libovolné klávesy ukončete službu. Volání `ReadLine` čekání na klávesu se aktivovala a potom zavřete okno služby.  
+6. Vytvoření hostitele pro `OrderProcessing` služby pomocí <xref:System.ServiceModel.ServiceHost> , která čte zprávy z fronty a zpracovává je. Otevření hostitele služby, aby tato služba k dispozici. Zobrazte zprávu, která uživateli říká, aby stisknutím libovolné klávesy ukončete službu. Volání `ReadLine` čekání na klávesu se aktivovala a potom zavřete okno služby.  
   
      [!code-csharp[S_Msmq_Transacted#6](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_msmq_transacted/cs/hostapp.cs#6)]
      [!code-vb[S_Msmq_Transacted#6](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_msmq_transacted/vb/hostapp.vb#6)]  
   
 ### <a name="to-create-a-client-for-the-queued-service"></a>K vytvoření klienta pro službu ve frontě  
   
-1.  Následující příklad ukazuje způsob použití nástroje Svcutil.exe k vytvoření klienta WCF a spouštění hostitelské aplikace.  
+1. Následující příklad ukazuje způsob použití nástroje Svcutil.exe k vytvoření klienta WCF a spouštění hostitelské aplikace.  
   
     ```  
     svcutil http://localhost:8000/ServiceModelSamples/service  
     ```  
   
-2.  Definování <xref:System.ServiceModel.Description.ServiceEndpoint> v konfiguraci, která určuje adresu a používá standardní <xref:System.ServiceModel.NetMsmqBinding> vazbu, jak je znázorněno v následujícím příkladu.  
+2. Definování <xref:System.ServiceModel.Description.ServiceEndpoint> v konfiguraci, která určuje adresu a používá standardní <xref:System.ServiceModel.NetMsmqBinding> vazbu, jak je znázorněno v následujícím příkladu.  
 
-3.  Vytvoření oboru transakce k zápisu transakční fronty, volání `SubmitPurchaseOrder` operace a zavřít klienta WCF, jak je znázorněno v následujícím příkladu.  
+3. Vytvoření oboru transakce k zápisu transakční fronty, volání `SubmitPurchaseOrder` operace a zavřít klienta WCF, jak je znázorněno v následujícím příkladu.  
   
      [!code-csharp[S_Msmq_Transacted#8](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_msmq_transacted/cs/client.cs#8)]
      [!code-vb[S_Msmq_Transacted#8](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_msmq_transacted/vb/client.vb#8)]  

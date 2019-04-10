@@ -2,12 +2,12 @@
 title: Import vlastních metadat pro rozšíření WCF
 ms.date: 03/30/2017
 ms.assetid: 78beb28f-408a-4c75-9c3c-caefe9595b1a
-ms.openlocfilehash: 021790a256448d9c81e7a53a2845edf839ff3534
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 830829be98202c97a9fc2b34e31da25967292efb
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59090066"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59339967"
 ---
 # <a name="importing-custom-metadata-for-a-wcf-extension"></a>Import vlastních metadat pro rozšíření WCF
 Ve Windows Communication Foundation (WCF), import metadat je proces generování abstraktní reprezentace služby nebo jeho součásti z jeho metadata. Například můžete importovat WCF <xref:System.ServiceModel.Description.ServiceEndpoint> instancí, <xref:System.ServiceModel.Channels.Binding> instance nebo <xref:System.ServiceModel.Description.ContractDescription> instancí ze souboru WSDL dokumentů pro službu. Při importu metadat služby ve službě WCF použijte implementace <xref:System.ServiceModel.Description.MetadataImporter?displayProperty=nameWithType> abstraktní třídy. Typy, které jsou odvozeny z <xref:System.ServiceModel.Description.MetadataImporter> třída implementovat podporu pro import formáty metadat, které budou využívat WS-Policy importovat logiky ve službě WCF.  
@@ -21,9 +21,9 @@ Ve Windows Communication Foundation (WCF), import metadat je proces generování
   
  Tato část popisuje:  
   
-1.  Jak implementovat a používat <xref:System.ServiceModel.Description.IWsdlImportExtension?displayProperty=nameWithType> rozhraní, které zveřejňuje data WSDL na vlastní importers před generováním popisy a generování kódu. Toto rozhraní můžete prozkoumat nebo upravit popis typů a kompilace kódu provádí pomocí dané sadě metadat.  
+1. Jak implementovat a používat <xref:System.ServiceModel.Description.IWsdlImportExtension?displayProperty=nameWithType> rozhraní, které zveřejňuje data WSDL na vlastní importers před generováním popisy a generování kódu. Toto rozhraní můžete prozkoumat nebo upravit popis typů a kompilace kódu provádí pomocí dané sadě metadat.  
   
-2.  Jak implementovat a používat <xref:System.ServiceModel.Description.IPolicyImportExtension?displayProperty=nameWithType> rozhraní, které zveřejňuje kontrolní výrazy zásad na importers před generování popis objekty. Toto rozhraní můžete zkontrolovat nebo změnit vazby nebo smlouvy, na základě zásad stažené.  
+2. Jak implementovat a používat <xref:System.ServiceModel.Description.IPolicyImportExtension?displayProperty=nameWithType> rozhraní, které zveřejňuje kontrolní výrazy zásad na importers před generování popis objekty. Toto rozhraní můžete zkontrolovat nebo změnit vazby nebo smlouvy, na základě zásad stažené.  
   
  Další informace o export vlastního WSDL a kontrolní výrazy zásad najdete v tématu [export vlastních metadat pro rozšíření WCF](../../../../docs/framework/wcf/extending/exporting-custom-metadata-for-a-wcf-extension.md).  
   

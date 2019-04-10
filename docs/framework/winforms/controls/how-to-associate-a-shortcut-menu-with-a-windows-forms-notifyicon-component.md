@@ -10,12 +10,12 @@ helpviewer_keywords:
 - NotifyIcon component [Windows Forms], associating shortcut menus
 - shortcut menus [Windows Forms], for background processes
 ms.assetid: d68f3926-08d3-4f7d-949f-1981b29cf188
-ms.openlocfilehash: 702a848631ce45c0efcb8eadfdf64074b454ac7d
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: f2a086cc25eb6996b2643742a887bccf481916d6
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59097987"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59337055"
 ---
 # <a name="how-to-associate-a-shortcut-menu-with-a-windows-forms-notifyicon-component"></a>Postupy: Přidružení místní nabídky ke komponentě Windows Forms NotifyIcon
 > [!NOTE]
@@ -28,23 +28,23 @@ ms.locfileid: "59097987"
   
 ### <a name="to-associate-a-shortcut-menu-with-the-notifyicon-component-at-design-time"></a>Chcete-li přidružení místní nabídky ke komponentě NotifyIcon v době návrhu  
   
-1.  Přidat <xref:System.Windows.Forms.NotifyIcon> komponentu do formuláře a nastavte důležité vlastnosti, jako je třeba <xref:System.Windows.Forms.NotifyIcon.Icon%2A> a <xref:System.Windows.Forms.NotifyIcon.Visible%2A> vlastnosti.  
+1. Přidat <xref:System.Windows.Forms.NotifyIcon> komponentu do formuláře a nastavte důležité vlastnosti, jako je třeba <xref:System.Windows.Forms.NotifyIcon.Icon%2A> a <xref:System.Windows.Forms.NotifyIcon.Visible%2A> vlastnosti.  
   
      Další informace najdete v tématu [jak: Přidání ikon aplikací do TaskBar se Windows Forms NotifyIcon – komponenta](app-icons-to-the-taskbar-with-wf-notifyicon.md).  
   
-2.  Přidat <xref:System.Windows.Forms.ContextMenu> komponentu do formuláře Windows.  
+2. Přidat <xref:System.Windows.Forms.ContextMenu> komponentu do formuláře Windows.  
   
      Přidání položek nabídky do místní nabídky představující příkazy, že které chcete zpřístupnit v době běhu. Toto je vhodná doba k přidání vylepšení nabídky do těchto položek nabídky, jako jsou přístupové klíče.  
   
-3.  Nastavte <xref:System.Windows.Forms.NotifyIcon.ContextMenu%2A> vlastnost <xref:System.Windows.Forms.NotifyIcon> komponentu do místní nabídky, kterou jste přidali.  
+3. Nastavte <xref:System.Windows.Forms.NotifyIcon.ContextMenu%2A> vlastnost <xref:System.Windows.Forms.NotifyIcon> komponentu do místní nabídky, kterou jste přidali.  
   
      S touto sadou vlastností v místní nabídce se zobrazí po kliknutí na ikonu na hlavním panelu.  
   
 ### <a name="to-associate-a-shortcut-menu-with-the-notifyicon-component-programmatically"></a>Chcete-li přidružení místní nabídky ke komponentě NotifyIcon prostřednictvím kódu programu  
   
-1.  Vytvoření instance <xref:System.Windows.Forms.NotifyIcon> třídy a <xref:System.Windows.Forms.ContextMenu> třídy s jakékoli nastavení vlastností jsou nezbytné pro aplikaci (<xref:System.Windows.Forms.NotifyIcon.Icon%2A> a <xref:System.Windows.Forms.NotifyIcon.Visible%2A> vlastnosti <xref:System.Windows.Forms.NotifyIcon> komponenty, položky nabídky pro <xref:System.Windows.Forms.ContextMenu> komponenta).  
+1. Vytvoření instance <xref:System.Windows.Forms.NotifyIcon> třídy a <xref:System.Windows.Forms.ContextMenu> třídy s jakékoli nastavení vlastností jsou nezbytné pro aplikaci (<xref:System.Windows.Forms.NotifyIcon.Icon%2A> a <xref:System.Windows.Forms.NotifyIcon.Visible%2A> vlastnosti <xref:System.Windows.Forms.NotifyIcon> komponenty, položky nabídky pro <xref:System.Windows.Forms.ContextMenu> komponenta).  
   
-2.  Nastavte <xref:System.Windows.Forms.NotifyIcon.ContextMenu%2A> vlastnost <xref:System.Windows.Forms.NotifyIcon> komponentu do místní nabídky, kterou jste přidali.  
+2. Nastavte <xref:System.Windows.Forms.NotifyIcon.ContextMenu%2A> vlastnost <xref:System.Windows.Forms.NotifyIcon> komponentu do místní nabídky, kterou jste přidali.  
   
      S touto sadou vlastností v místní nabídce se zobrazí po kliknutí na ikonu na hlavním panelu.  
   

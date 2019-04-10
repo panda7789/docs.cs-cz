@@ -11,21 +11,21 @@ helpviewer_keywords:
 - request cache policies
 - cache [.NET Framework], location-based policies
 ms.assetid: 683bb88e-3411-4f46-9686-3411b6ba511c
-ms.openlocfilehash: 9a69fd8415ff79cdaba544054f8b639f5e61fd16
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 06d458828c77f61e03d18f635ec00f6a7267bab8
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59079571"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59341865"
 ---
 # <a name="how-to-set-a-location-based-cache-policy-for-an-application"></a>Postupy: Nastavení zásad mezipaměti na základě umístění pro aplikaci
 Zásady mezipaměti na základě polohy umožnit aplikaci k explicitnímu definování chování ukládání do mezipaměti na základě umístění požadovaného prostředku. Toto téma popisuje nastavení zásad mezipaměti prostřednictvím kódu programu. Informace o nastavení zásad pro aplikace pomocí konfiguračních souborů naleznete v tématu [ \<requestCaching – > – Element (nastavení sítě)](../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md).  
   
 ### <a name="to-set-a-location-based-cache-policy-for-an-application"></a>Nastavení zásad mezipaměti na základě umístění pro aplikaci  
   
-1.  Vytvoření <xref:System.Net.Cache.RequestCachePolicy> nebo <xref:System.Net.Cache.HttpRequestCachePolicy> objektu.  
+1. Vytvoření <xref:System.Net.Cache.RequestCachePolicy> nebo <xref:System.Net.Cache.HttpRequestCachePolicy> objektu.  
   
-2.  Nastavte jako výchozí pro doménu aplikace objektu zásad.  
+2. Nastavte jako výchozí pro doménu aplikace objektu zásad.  
   
 ### <a name="to-set-a-policy-that-takes-requested-resources-from-a-cache"></a>Chcete-li nastavit zásadu, která má požadované prostředky z mezipaměti  
   

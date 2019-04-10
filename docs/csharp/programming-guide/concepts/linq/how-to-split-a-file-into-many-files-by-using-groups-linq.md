@@ -2,19 +2,19 @@
 title: 'Postupy: Rozdělení souboru na více souborů pomocí skupin (LINQ) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 8179b91c-d778-4e57-884f-77fe5a8e4e40
-ms.openlocfilehash: bba3cf5e1e6d4aa7b88ddbb7f3454be511982f74
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a78274a51bfec59147d97f88596a6ec60e40a997
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54626047"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59337367"
 ---
 # <a name="how-to-split-a-file-into-many-files-by-using-groups-linq-c"></a>Postupy: Rozdělení souboru na více souborů pomocí skupin (LINQ) (C#)
 Tento příklad ukazuje jeden způsob, jak sloučit obsah těchto dvou souborů a potom vytvořit nové soubory, které uspořádání dat novým způsobem.  
   
 ### <a name="to-create-the-data-files"></a>K vytvoření datových souborů  
   
-1.  Zkopírujte do textového souboru s názvem names1.txt tyto názvy a uložte ho do složky projektu:  
+1. Zkopírujte do textového souboru s názvem names1.txt tyto názvy a uložte ho do složky projektu:  
   
     ```  
     Bankov, Peter  
@@ -29,7 +29,7 @@ Tento příklad ukazuje jeden způsob, jak sloučit obsah těchto dvou souborů 
     Garcia, Debra  
     ```  
   
-2.  Zkopírujte do textového souboru s názvem names2.txt tyto názvy a uložte ho do složky projektu: Mějte na paměti, že dva soubory mají společnou některé názvy.  
+2. Zkopírujte do textového souboru s názvem names2.txt tyto názvy a uložte ho do složky projektu: Mějte na paměti, že dva soubory mají společnou některé názvy.  
   
     ```  
     Liu, Jinghao  

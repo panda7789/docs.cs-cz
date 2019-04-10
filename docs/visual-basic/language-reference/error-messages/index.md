@@ -7,32 +7,32 @@ helpviewer_keywords:
 - trappable errors
 - errors [Visual Basic], trappable
 ms.assetid: f2dda05b-baef-41f5-8bb1-598bd7cf239f
-ms.openlocfilehash: c326b781222429d68ec4385d95507a6ba99eafcb
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 822c0f266e7dd68f063043d98a9f4af308ae93fd
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33590131"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59338134"
 ---
 # <a name="error-messages-visual-basic"></a>Chybové zprávy (Visual Basic)
-Při zápisu, kompilaci nebo spuštění aplikace Visual Basic, se může objevit následující typy chyb:  
+Při zápisu, kompilaci či spuštění aplikace v jazyce Visual Basic, může dojít k následující typy chyb:  
   
-1.  Chyby při návrhu, ke kterým dochází při psaní aplikace v sadě Visual Studio.  
+1. Chyby v době návrhu, ke kterým dochází při psaní aplikace v sadě Visual Studio.  
   
-2.  Chyby při kompilaci, ke kterým dochází při kompilaci aplikace v sadě Visual Studio nebo na příkazovém řádku.  
+2. Chyby při kompilaci, ke kterým dochází při kompilaci aplikace v sadě Visual Studio nebo příkazového řádku.  
   
-3.  Běhové chyby, ke kterým dochází při spuštění aplikace v sadě Visual Studio nebo samostatný spustitelný soubor.  
+3. Běhové chyby, ke kterým dochází při spuštění aplikace v sadě Visual Studio nebo jako samostatný spustitelný soubor.  
   
- Informace o řešení potíží s konkrétní chyby najdete v tématu [další zdroje pro programátory v jazyce Visual Basic](../../../visual-basic/getting-started/additional-resources.md).  
+ Informace o tom, jak řešit konkrétní chyby naleznete v tématu [další zdroje informací pro programátory v jazyce Visual Basic](../../../visual-basic/getting-started/additional-resources.md).  
   
-## <a name="run-time-errors"></a>Chyby runtime  
- Pokud aplikace Visual Basic pokusu o provedení akce, která systém nemůže spustit, dojde k chybě spuštění a Visual Basic vyvolá `Exception` objektu. Visual Basic může generovat vlastní chyby žádná data typ, včetně `Exception` objekty, pomocí `Throw` příkaz. Aplikace můžete identifikovat chyba zobrazením číslo chyby a zprávy zachycení výjimky. Pokud není zachycena chybu, aplikace se ukončí.  
+## <a name="run-time-errors"></a>Chyby při spuštění  
+ Pokud aplikace v jazyce Visual Basic se pokusí provést akci, která systém nemůže spustit, dojde k chybě za běhu, a vyvolá výjimku jazyka Visual Basic `Exception` objektu. Visual Basic můžete vygenerovat vlastní chyby jakýchkoli dat zadejte, včetně `Exception` objektů pomocí `Throw` příkaz. Aplikace můžete identifikovat chyby tím, že zobrazuje počet chyb a zprávy zachycené výjimky. Pokud chyba není zachycena, aplikace se ukončí.  
   
- Kód můžete depeše a zkontrolujte chyby. Pokud je kód, který generuje chyby v uzavřít `Try` blok, můžete zachytit chyby výjimce dojde v rámci odpovídající `Catch` bloku. Informace o tom, jak depeše chyby za běhu a reagovat na ně ve vašem kódu najdete v tématu [zkuste... Catch... Finally – příkaz](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md).  
+ Kód můžete zachytit a zkontrolovat chyby za běhu. Pokud je kód, který generuje chybu v uzavřít `Try` bloku, můžete zachytit všechny vyvolané chyby v rámci odpovídající `Catch` bloku. Informace o tom, jak zachytávat chyby za běhu a reagovat na ně ve vašem kódu, naleznete v tématu [zkuste... Catch... Příkaz finally](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md).  
   
-## <a name="compile-time-errors"></a>Čas chyby kompilace  
- Pokud Visual Basic – kompilátor narazí na problém v kódu, dojde k chybě kompilace. V editoru kódu můžete snadno identifikovat které řádek kódu způsobil chybu, protože vlnovka se zobrazí v části tohoto řádku kódu. Pokud jste buď bodu vlnovkou nebo otevřené, zobrazí se chybová zpráva **seznam chyb**, který také ukazuje další zprávy.  
+## <a name="compile-time-errors"></a>Chyby při kompilaci  
+ Pokud kompilátor jazyka Visual Basic narazí na problém v kódu, dojde k chybě v době kompilace. V editoru kódu můžete snadno identifikovat který řádek kódu způsobil chybu, protože vlnovku se zobrazí pod tento řádek kódu. Pokud můžete buď odkazovat na podtržení vlnovkou nebo otevřené, zobrazí se chybová zpráva **seznam chyb**, které zároveň ukazuje další zprávy.  
   
- Pokud má identifikátor vlnovkou a posledního znaku podtržen krátký, můžete vygenerovat zástupnou proceduru pro třídu, konstruktor, metoda, vlastnost, pole nebo výčet. Další informace najdete v tématu [generování před využitím](/visualstudio/ide/visual-csharp-intellisense#generate-from-usage).
+ Pokud má identifikátor podtržení vlnovkou a krátký podtržení se zobrazí v části znaku zcela vpravo, můžete vygenerovat zástupnou proceduru pro třída, konstruktor, metody, vlastnosti, pole nebo výčtu. Další informace najdete v tématu [Generovat z využití](/visualstudio/ide/visual-csharp-intellisense#generate-from-usage).
   
- Vyřešte upozornění kompilátoru jazyka Visual Basic, je možné napsat kód, který běží rychleji a má méně chyby. Tato upozornění identifikovat kód, který může způsobit chyby, pokud je aplikace spuštěna. Například kompilátor varuje, můžete Pokud se pokusíte volají člena nepřiřazené objektové proměnné, vraťte zpět z funkce bez nastavení návratovou hodnotu nebo spuštění `Try` bloku s chybami v logika pro zachycení výjimky. Další informace o upozornění, včetně toho, jak je zapnout a vypnout, najdete v části [Konfigurace upozornění v jazyce Visual Basic](/visualstudio/ide/configuring-warnings-in-visual-basic).
+ Pomocí řešení upozornění z kompilátoru jazyka Visual Basic, je možné napsat kód, který běží rychleji a má méně chyb. Tato upozornění identifikovat kód, který může způsobit chyby při spuštění aplikace. Například kompilátor vás upozorní vás při pokusu o vyvolání členské proměnné nepřiřazený objekt vrácení z funkce, aniž byste museli nastavovat návratová hodnota nebo spusťte `Try` blok s chyby v logice jak zachytávat výjimky. Další informace o upozornění, jak je zapnout a vypnout, najdete v části [Konfigurace upozornění v jazyce Visual Basic](/visualstudio/ide/configuring-warnings-in-visual-basic).

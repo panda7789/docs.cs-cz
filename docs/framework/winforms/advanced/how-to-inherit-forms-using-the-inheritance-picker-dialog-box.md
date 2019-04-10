@@ -6,12 +6,12 @@ helpviewer_keywords:
 - Inheritance Picker dialog box
 - inherited forms [Windows Forms], creating
 ms.assetid: 969b4c04-12aa-4297-93a2-0ae747447823
-ms.openlocfilehash: 74dfd1bb2c47a8e377a2ed74934f742dff6cd64a
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 5ae1c236835141b10bc704cd39f55de6e3e974b0
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59212281"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59342086"
 ---
 # <a name="how-to-inherit-forms-using-the-inheritance-picker-dialog-box"></a>Postupy: Dědění formulářů pomocí dialogového okna Výběr dědičnosti
 Nejjednodušší způsob, jak dědit formuláře nebo jiný objekt je použít **výběr dědičnosti** dialogové okno. Pomocí něho můžete využít výhod kódu nebo uživatelské rozhraní (UI), již jste vytvořili v jiných řešení.  
@@ -23,23 +23,23 @@ Nejjednodušší způsob, jak dědit formuláře nebo jiný objekt je použít *
   
 ### <a name="to-create-a-windows-form-inherited-from-an-existing-form-by-using-the-inheritance-picker"></a>Vytvoření formuláře Windows dědí z existujícího formuláře pomocí dialogového okna Výběr dědičnosti  
   
-1.  Z **projektu** nabídce zvolte **přidat formulář Windows**.  
+1. Z **projektu** nabídce zvolte **přidat formulář Windows**.  
   
      **Přidat novou položku** zobrazí se dialogové okno.  
   
-2.  Hledání **zděděné formuláře** šablony z searchbox nebo kliknutím na **Windows Forms** kategorii, vyberte ho a pojmenujte ho v **název** pole. Klikněte na tlačítko **přidat** tlačítka budete pokračovat.  
+2. Hledání **zděděné formuláře** šablony z searchbox nebo kliknutím na **Windows Forms** kategorii, vyberte ho a pojmenujte ho v **název** pole. Klikněte na tlačítko **přidat** tlačítka budete pokračovat.  
   
      **Výběr dědičnosti** zobrazí se dialogové okno. Pokud projekt již obsahuje formuláře, jsou zobrazená v **výběr dědičnosti** dialogové okno.  
   
-3.  Chcete-li dědit z formuláře v jiném sestavení, klikněte na tlačítko **Procházet** tlačítko.  
+3. Chcete-li dědit z formuláře v jiném sestavení, klikněte na tlačítko **Procházet** tlačítko.  
   
-4.  V rámci **vyberte soubor, který obsahuje komponentu dědit z** dialogové okno, přejděte na projekt, který obsahuje formuláře nebo vyžadujete modulu.  
+4. V rámci **vyberte soubor, který obsahuje komponentu dědit z** dialogové okno, přejděte na projekt, který obsahuje formuláře nebo vyžadujete modulu.  
   
-5.  Klikněte na název souboru .exe nebo .dll, který se vyberte ho a klikněte **otevřít** tlačítko.  
+5. Klikněte na název souboru .exe nebo .dll, který se vyberte ho a klikněte **otevřít** tlačítko.  
   
      Tím se vrátíte do **výběr dědičnosti** dialogové okno, kde komponenta je teď uvedený spolu s projektu, ve kterém se nachází.  
   
-6.  Vyberte komponentu.  
+6. Vyberte komponentu.  
   
      V **Průzkumníka řešení**, součást je přidána do projektu. Pokud má uživatelské rozhraní, ovládací prvky, které jsou součástí Zděděný formulář, budou označeny piktogram (![snímek jazyka Visual Basic dědičnosti symbol.](./media/how-to-inherit-forms-using-the-inheritance-picker-dialog-box/visual-basic-inheritance-glyph.gif)) a pokud je vybráno, ohraničený označující úroveň zabezpečení, který má ovládací prvek na supertřídu formuláře. Chování, které odpovídají různé úrovně zabezpečení jsou uvedeny v následující tabulce.  
   

@@ -11,12 +11,12 @@ helpviewer_keywords:
 - declaring variables [Visual Basic], inferred
 - inferred variable declaration
 ms.assetid: 4ad3e6e9-8f5b-4209-a248-de22ef6e4652
-ms.openlocfilehash: a3846c952969a4814151757c5210d9df6f3c97b4
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 59766999c5b03aac7aec13b293feaa8c17f2ced0
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58823490"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59338563"
 ---
 # <a name="option-infer-statement"></a>Option Infer – příkaz
 Umožňuje použití odvození místního typu v deklarujících proměnných.  
@@ -63,11 +63,11 @@ Option Infer { On | Off }
   
 #### <a name="to-set-option-infer-in-the-ide"></a>Nastavení Option Infer v integrovaném vývojovém prostředí  
   
-1.  V **Průzkumníka řešení**, vyberte projekt. Na **projektu** nabídky, klikněte na tlačítko **vlastnosti**.  
+1. V **Průzkumníka řešení**, vyberte projekt. Na **projektu** nabídky, klikněte na tlačítko **vlastnosti**.  
   
-2.  Klikněte na tlačítko **kompilaci** kartu.  
+2. Klikněte na tlačítko **kompilaci** kartu.  
   
-3.  Nastavte hodnotu **Option infer** pole.  
+3. Nastavte hodnotu **Option infer** pole.  
   
  Když vytvoříte nový projekt **Option Infer** nastavení na **kompilaci** karty nastavená na **Option Infer** nastavení **VB výchozí** Dialogové okno. Pro přístup **VB výchozí** dialogovém okně **nástroje** nabídky, klikněte na tlačítko **možnosti**. V **možnosti** dialogového okna rozbalte **projekty a řešení**a potom klikněte na tlačítko **VB výchozí**. Počáteční výchozí nastavení v **výchozí hodnoty pro VB** je `On`.  
   
@@ -97,11 +97,11 @@ Option Infer { On | Off }
   
 ## <a name="see-also"></a>Viz také:
 
-- [Příkaz Dim](../../../visual-basic/language-reference/statements/dim-statement.md)
+- [Dim – příkaz](../../../visual-basic/language-reference/statements/dim-statement.md)
 - [Odvození místního typu](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)
-- [Příkaz Option Compare](../../../visual-basic/language-reference/statements/option-compare-statement.md)
-- [Příkaz Option Explicit](../../../visual-basic/language-reference/statements/option-explicit-statement.md)
-- [Příkaz Option Strict](../../../visual-basic/language-reference/statements/option-strict-statement.md)
-- [Výchozí hodnoty pro Visual Basic, Projekty, dialogové okno Možnosti](/visualstudio/ide/reference/visual-basic-defaults-projects-options-dialog-box)
+- [Option Compare – příkaz](../../../visual-basic/language-reference/statements/option-compare-statement.md)
+- [Option Explicit – příkaz](../../../visual-basic/language-reference/statements/option-explicit-statement.md)
+- [Option Strict – příkaz](../../../visual-basic/language-reference/statements/option-strict-statement.md)
+- [Výchozí možnosti jazyka Visual Basic, projekty, dialogové okno Možnosti](/visualstudio/ide/reference/visual-basic-defaults-projects-options-dialog-box)
 - [/optioninfer](../../../visual-basic/reference/command-line-compiler/optioninfer.md)
 - [Zabalení a rozbalení](../../../csharp/programming-guide/types/boxing-and-unboxing.md)

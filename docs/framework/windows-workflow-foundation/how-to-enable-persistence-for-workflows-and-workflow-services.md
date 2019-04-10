@@ -1,52 +1,52 @@
 ---
-title: 'Postupy: povolení trvalosti pro pracovní postupy a služeb pracovních postupů'
+title: 'Postupy: Povolení trvalosti pro pracovní postupy a služby pracovních postupů'
 ms.date: 03/30/2017
 ms.assetid: 2b1c8bf3-9866-45a4-b06d-ee562393e503
-ms.openlocfilehash: 35158c45217e764bc2e27dac26f8d680e5897fa9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6a2a8d73298e14f92f376b97b9637db91532e937
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33514415"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59340149"
 ---
-# <a name="how-to-enable-persistence-for-workflows-and-workflow-services"></a>Postupy: povolení trvalosti pro pracovní postupy a služeb pracovních postupů
-Toto téma popisuje, jak povolit trvalost pro pracovní postupy a služeb pracovních postupů.  
+# <a name="how-to-enable-persistence-for-workflows-and-workflow-services"></a>Postupy: Povolení trvalosti pro pracovní postupy a služby pracovních postupů
+Toto téma popisuje postup povolení trvalosti pro pracovní postupy a služby pracovních postupů.  
   
-## <a name="enable-persistence-for-workflows"></a>Zapnout stálost pro pracovní postupy  
- Můžete přidružit ukládání instance s **WorkflowApplication** pomocí <xref:System.Activities.WorkflowApplication.InstanceStore%2A> vlastnost <xref:System.Activities.WorkflowApplication> třídy. <xref:System.Activities.WorkflowApplication.Persist%2A> Metoda uloží nebo potrvají pracovního postupu do instance úložiště přidružené k aplikaci. <xref:System.Activities.WorkflowApplication.Unload%2A> Metoda potrvají pracovního postupu do úložiště instance a poté uvolní instanci z paměti. **Zatížení** metoda načte do paměti pomocí pracovního postupu data uložená v úložišti trvalost instance pracovního postupu.  
+## <a name="enable-persistence-for-workflows"></a>Povolení trvalosti pro pracovní postupy  
+ Můžete přidružit ukládání instance s **WorkflowApplication** pomocí <xref:System.Activities.WorkflowApplication.InstanceStore%2A> vlastnost <xref:System.Activities.WorkflowApplication> třídy. <xref:System.Activities.WorkflowApplication.Persist%2A> Metoda uloží nebo nevyřeší pracovního postupu do úložiště instancí přidružené k aplikaci. <xref:System.Activities.WorkflowApplication.Unload%2A> Metoda uchovává pracovního postupu do úložiště instancí a poté uvolní instanci z paměti. **Zatížení** metoda načte do paměti pomocí pracovního postupu data uložená v úložišti stálost instance pracovního postupu.  
   
- **Zachovat** metoda provede následující kroky:  
+ **Trvalého** metoda provede následující kroky:  
   
-1.  Pozastaví Plánovač pracovního postupu a čeká na pracovním postupu vstupuje do stavu nečinnosti.  
+1. Plánovač pracovní postup se pozastaví a počká, dokud pracovního postupu přejde do stavu nečinnosti.  
   
-2.  Potrvají nebo uloží do úložiště trvalosti pracovního postupu.  
+2. Opakuje nebo uloží pracovní postup do trvalého úložiště.  
   
-3.  Obnoví Plánovač pracovního postupu.  
+3. Obnoví Plánovač pracovního postupu.  
   
  **Uvolnění** metoda provede následující kroky:  
   
-1.  Pozastaví Plánovač pracovního postupu a čeká na pracovním postupu vstupuje do stavu nečinnosti.  
+1. Plánovač pracovní postup se pozastaví a počká, dokud pracovního postupu přejde do stavu nečinnosti.  
   
-2.  Potrvají nebo uloží do úložiště trvalosti pracovního postupu.  
+2. Opakuje nebo uloží pracovní postup do trvalého úložiště.  
   
-3.  Uvolní instanci pracovního postupu v paměti.  
+3. Uvolní instanci pracovního postupu v paměti.  
   
- Obě **zachovat** a **uvolnění** metody bude blokovat, když pracovní postup je v zóně no-persist až do konce zóny no-persist pracovního postupu. Metoda pokračuje v operaci zachovat nebo uvolnění po dokončení ne zachovat zóny. Pokud zóna no-persist nedokončí předtím, než uplyne časový limit, nebo pokud proces trvalost trvá příliš dlouho, bude vyvolána TimeoutException.  
+ Oba **trvalého** a **uvolnění** metody budou blokovat, zatímco pracovní postup je v zóně no-persist až do ukončení pracovního postupu no-persist zóny. Metoda pokračuje zachovat nebo uvolnit operaci po dokončení bez dočasného zóny. Zóna no-persist nedokončí předtím, než uplyne časový limit, nebo pokud proces trvalého trvá příliš dlouho, bude vyvolána výjimka TimeoutException.  
   
-## <a name="enable-persistence-for-workflow-services-in-code"></a>Zapnout stálost pro pracovní postup služby v kódu  
- **DurableInstancingOptions** členem <xref:System.ServiceModel.WorkflowServiceHost> třída má vlastnost s názvem **InstanceStore** používané pro přidružení ukládání instance s **hostitele služby pracovního postupu** .  
+## <a name="enable-persistence-for-workflow-services-in-code"></a>Povolení trvalosti pro pracovní postup služby v kódu  
+ **DurableInstancingOptions** člena <xref:System.ServiceModel.WorkflowServiceHost> třída nemá vlastnost s názvem **třídy InstanceStore** , můžete přidružit ukládání instance s **hostitele služby pracovního postupu** .  
   
 ```  
 // wsh is an instance of WorkflowServiceHost class  
 wsh.DurableInstancingOptions.InstanceStore = new SqlWorkflowInstanceStore();  
 ```  
   
- Když **hostitele služby pracovního postupu** je otevřené, je automaticky povolena trvalost Pokud **DurableInstancingOptions.InstanceStore** není null.  
+ Když **hostitele služby pracovního postupu** je otevřen, je automaticky povolena trvalost Pokud **DurableInstancingOptions.InstanceStore** nemá hodnotu null.  
   
- Obvykle chování služby poskytuje konkrétní instance úložiště pro použití s hostitele služby pracovního postupu pomocí **InstanceStore** vlastnost. Například SqlWorkflowInstanceStoreBehavior vytvoří instanci **SqlWorkflowInstanceStore**, nakonfiguruje jej a přiřadí ji k **DurableInstancingOptions.InstanceStore**.  
+ Obvykle, chování služby poskytuje úložiště konkrétní instance pro použití s hostitele služby pracovního postupu pomocí **třídy InstanceStore** vlastnost. Například, SqlWorkflowInstanceStoreBehavior vytvoří instanci **SqlWorkflowInstanceStore**, nakonfiguruje a přiřadí ji k **DurableInstancingOptions.InstanceStore**.  
   
-## <a name="enable-persistence-for-workflow-services-using-an-application-configuration-file"></a>Zapnout stálost pro pracovní postup služby pomocí konfiguračního souboru aplikace  
- Trvalost můžete povolit pomocí konfiguračního souboru aplikace přidáním následující kód do souboru app.config nebo web.config:  
+## <a name="enable-persistence-for-workflow-services-using-an-application-configuration-file"></a>Povolení trvalosti pro pracovní postup služby pomocí konfiguračního souboru aplikace  
+ Trvalost se dá nastavit pomocí konfiguračního souboru aplikace tak, že přidáte následující kód do souboru app.config nebo web.config:  
   
 ```xml  
 <configuration>  

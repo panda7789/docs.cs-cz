@@ -10,12 +10,12 @@ helpviewer_keywords:
 - data navigation
 - examples [Windows Forms], BindingNavigator control
 ms.assetid: 0e5d4f34-bc9b-47cf-9b8d-93acbb1f1dbb
-ms.openlocfilehash: fe1d037d7d72f41b602abe823a26655750338d85
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 0c2fdf820b9b42a592c422cf77362598c5e5eed7
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59202154"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59338888"
 ---
 # <a name="how-to-navigate-data-with-the-windows-forms-bindingnavigator-control"></a>Postupy: Navigace daty pomocí ovládacího prvku Windows Forms BindingNavigator
 Nástup <xref:System.Windows.Forms.BindingNavigator> ovládacího prvku Windows Forms vývojářům umožňuje poskytovat koncovým uživatelům s jednoduchou datovou navigaci a manipulaci s uživatelským rozhraním ve formulářích vytvářejí.  
@@ -26,16 +26,16 @@ Nástup <xref:System.Windows.Forms.BindingNavigator> ovládacího prvku Windows 
   
 ### <a name="to-set-up-the-bindingnavigator-control"></a>K nastavení ovládacího prvku BindingNavigator  
   
-1.  Přidat <xref:System.Windows.Forms.BindingSource> součást s názvem `bindingSource1` a dva <xref:System.Windows.Forms.TextBox> ovládací prvky s názvem `textBox1` a `textBox2`.  
+1. Přidat <xref:System.Windows.Forms.BindingSource> součást s názvem `bindingSource1` a dva <xref:System.Windows.Forms.TextBox> ovládací prvky s názvem `textBox1` a `textBox2`.  
   
-2.  Vytvoření vazby `bindingSource1` k datům a ovládací prvky textbox `bindingSource1`. Chcete-li to provést, vložte následující kód do formuláře a volání `LoadData` z konstruktoru formuláře nebo <xref:System.Windows.Forms.Form.Load> metody zpracování událostí.  
+2. Vytvoření vazby `bindingSource1` k datům a ovládací prvky textbox `bindingSource1`. Chcete-li to provést, vložte následující kód do formuláře a volání `LoadData` z konstruktoru formuláře nebo <xref:System.Windows.Forms.Form.Load> metody zpracování událostí.  
   
      [!code-csharp[System.Windows.Forms.BindingNavigatorNavigate#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.BindingNavigatorNavigate/CS/Form1.cs#2)]
      [!code-vb[System.Windows.Forms.BindingNavigatorNavigate#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.BindingNavigatorNavigate/VB/Form1.vb#2)]  
   
-3.  Přidat <xref:System.Windows.Forms.BindingNavigator> ovládací prvek s názvem `bindingNavigator1` do formuláře.  
+3. Přidat <xref:System.Windows.Forms.BindingNavigator> ovládací prvek s názvem `bindingNavigator1` do formuláře.  
   
-4.  Nastavte <xref:System.Windows.Forms.BindingNavigator.BindingSource%2A> vlastnost `bindingNavigator1` k `bindingSource1`. Můžete to provést pomocí návrháře nebo v kódu.  
+4. Nastavte <xref:System.Windows.Forms.BindingNavigator.BindingSource%2A> vlastnost `bindingNavigator1` k `bindingSource1`. Můžete to provést pomocí návrháře nebo v kódu.  
   
      [!code-csharp[System.Windows.Forms.BindingNavigatorNavigate#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.BindingNavigatorNavigate/CS/Form1.cs#3)]
      [!code-vb[System.Windows.Forms.BindingNavigatorNavigate#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.BindingNavigatorNavigate/VB/Form1.vb#3)]  

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - data binding [Windows Forms], MaskedTextBox control [Windows Forms]
 - MaskedTextBox control [Windows Forms], binding data
 ms.assetid: 34b29f07-e8df-48d4-b08b-53fcca524708
-ms.openlocfilehash: 0350d6e690d54d6176ede3b858f75829326b7556
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: ebc8eaf63c6b5280961a80ef11afb919810dbdb8
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59090599"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59342229"
 ---
 # <a name="how-to-bind-data-to-the-maskedtextbox-control"></a>Postupy: Vytvoření vazby dat k ovládacímu prvku MaskedTextBox
 Můžete svázat data <xref:System.Windows.Forms.MaskedTextBox> řídit stejně jako na jakýkoli jiný ovládací prvek Windows Forms. Ale pokud formátu vašich dat v databázi neodpovídá formátu očekávaném definicí maska, je potřeba změnit formát data. Následující postup ukazuje, jak to udělat <xref:System.Windows.Forms.Binding.Format> a <xref:System.Windows.Forms.Binding.Parse> události <xref:System.Windows.Forms.Binding> třídy k zobrazení samostatné telefonní číslo a Telefon rozšíření databázová pole jako jedno pole upravitelné.  
@@ -24,15 +24,15 @@ Můžete svázat data <xref:System.Windows.Forms.MaskedTextBox> řídit stejně 
   
 ### <a name="to-bind-data-to-a-maskedtextbox-control"></a>Vazba dat k ovládacímu prvku MaskedTextBox  
   
-1.  Vytvoření nového projektu Windows Forms.  
+1. Vytvoření nového projektu Windows Forms.  
   
-2.  Přetáhněte dva <xref:System.Windows.Forms.TextBox> ovládací prvky do formuláře; je název `FirstName` a `LastName`.  
+2. Přetáhněte dva <xref:System.Windows.Forms.TextBox> ovládací prvky do formuláře; je název `FirstName` a `LastName`.  
   
-3.  Přetáhněte <xref:System.Windows.Forms.MaskedTextBox> ovládací prvek do formuláře; pojmenujte ji `PhoneMask`.  
+3. Přetáhněte <xref:System.Windows.Forms.MaskedTextBox> ovládací prvek do formuláře; pojmenujte ji `PhoneMask`.  
   
-4.  Nastavte <xref:System.Windows.Forms.MaskedTextBox.Mask%2A> vlastnost `PhoneMask` k `(000) 000-0000 x9999`.  
+4. Nastavte <xref:System.Windows.Forms.MaskedTextBox.Mask%2A> vlastnost `PhoneMask` k `(000) 000-0000 x9999`.  
   
-5.  Přidáte že následující obor názvů naimportuje do formuláře.  
+5. Přidáte že následující obor názvů naimportuje do formuláře.  
   
     ```csharp  
     using System.Data.SqlClient;  
@@ -42,7 +42,7 @@ Můžete svázat data <xref:System.Windows.Forms.MaskedTextBox> řídit stejně 
     Imports System.Data.SqlClient  
     ```  
   
-6.  Klikněte pravým tlačítkem na formuláři a zvolte **zobrazit kód**. Tento kód umístíte kamkoli do vaší třídy formuláře.  
+6. Klikněte pravým tlačítkem na formuláři a zvolte **zobrazit kód**. Tento kód umístíte kamkoli do vaší třídy formuláře.  
   
     ```csharp  
     Binding currentBinding, phoneBinding;  
@@ -136,7 +136,7 @@ Můžete svázat data <xref:System.Windows.Forms.MaskedTextBox> řídit stejně 
     End Sub  
     ```  
   
-7.  Přidání obslužné rutiny událostí pro <xref:System.Windows.Forms.Binding.Format> a <xref:System.Windows.Forms.Binding.Parse> události zkombinovat a oddělit `PhoneNumber` a `Extension` pole z vázaného <xref:System.Data.DataSet>.  
+7. Přidání obslužné rutiny událostí pro <xref:System.Windows.Forms.Binding.Format> a <xref:System.Windows.Forms.Binding.Parse> události zkombinovat a oddělit `PhoneNumber` a `Extension` pole z vázaného <xref:System.Data.DataSet>.  
   
     ```csharp  
     private void phoneBinding_Format(Object sender, ConvertEventArgs e)  
@@ -204,7 +204,7 @@ Můžete svázat data <xref:System.Windows.Forms.MaskedTextBox> řídit stejně 
     End Sub  
     ```  
   
-8.  Přidejte dva <xref:System.Windows.Forms.Button> ovládací prvky do formuláře. Pojmenujte je `previousButton` a `nextButton`. Klikněte dvakrát na každé tlačítko pro přidání <xref:System.Windows.Forms.Control.Click> obslužné rutiny události a vyplňte obslužné rutiny událostí, jak je znázorněno v následujícím příkladu kódu.  
+8. Přidejte dva <xref:System.Windows.Forms.Button> ovládací prvky do formuláře. Pojmenujte je `previousButton` a `nextButton`. Klikněte dvakrát na každé tlačítko pro přidání <xref:System.Windows.Forms.Control.Click> obslužné rutiny události a vyplňte obslužné rutiny událostí, jak je znázorněno v následujícím příkladu kódu.  
   
     ```csharp  
     private void previousButton_Click(object sender, EventArgs e)  

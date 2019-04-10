@@ -12,23 +12,23 @@ helpviewer_keywords:
 ms.assetid: dd7604eb-9fa3-4b60-b2dd-b47739fa3148
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 83fe9180e222dd71c9d94810e4eedbac398acad4
-ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
+ms.openlocfilehash: 2a2e34d0544c8105b539d36a4231c6efb4df0ee5
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56836471"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59337692"
 ---
 # <a name="applying-attributes"></a>Použití atributů
 Na základě následujícího postupu použijte atribut na prvek kódu.  
   
-1.  Definujte nový atribut nebo použijte stávající atribut importováním oboru názvů z rozhraní .NET Framework.  
+1. Definujte nový atribut nebo použijte stávající atribut importováním oboru názvů z rozhraní .NET Framework.  
   
-2.  Použijte atribut na prvek kódu tak, že ho umístíte bezprostředně před prvek.  
+2. Použijte atribut na prvek kódu tak, že ho umístíte bezprostředně před prvek.  
   
      Jednotlivé jazyky mají vlastní syntaxi atributů. V jazyce C++ a jazyce C# je atribut ohraničen hranatými závorkami a oddělen od prvku prázdným znakem, který může obsahovat konec řádku. V jazyce Visual Basic je atribut ohraničen ostrými závorkami a musí být umístěn na stejném logickém řádku. Znak pro pokračování řádku lze použít v případě, že je vyžadován konec řádku.
   
-3.  Zadejte poziční parametry a pojmenované parametry atributu.  
+3. Zadejte poziční parametry a pojmenované parametry atributu.  
   
      Poziční parametry jsou povinné a musí předcházet jakýmkoli pojmenovaným parametrům – odpovídají parametrům jednoho z konstruktorů atributu. Pojmenované parametry jsou volitelné a odpovídají vlastnostem atributu pro čtení a zápis. V C++ a C#, zadejte `name` = `value` pro každý volitelný parametr, kde `name` je název vlastnosti. V jazyce Visual Basic zadejte `name`:=`value`.  
   

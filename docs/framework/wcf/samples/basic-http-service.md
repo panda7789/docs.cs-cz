@@ -2,12 +2,12 @@
 title: Základní služba HTTP
 ms.date: 03/30/2017
 ms.assetid: 27048b43-8a54-4f2a-9952-594bbfab10ad
-ms.openlocfilehash: 2e4aee93341404df5f06b096a9a7bf18a3c94f56
-ms.sourcegitcommit: 2eb5ca4956231c1a0efd34b6a9cab6153a5438af
+ms.openlocfilehash: 247fedac339ebb22a6ef3b3e84f557451ecaaf1a
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49087151"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59337107"
 ---
 # <a name="basic-http-service"></a>Základní služba HTTP
 Tento příklad ukazuje, jak implementovat služby založené na protokolu HTTP, na základě RPC - popularly označuje jako služba "POX" (Plain Old XML) – pomocí služby Windows Communication Foundation (WCF) REST programovacího modelu. Tato ukázka obsahuje dvě součásti: v místním prostředí služby WCF HTTP (Service.cs) a Konzolová aplikace (Program.cs), který vytvoří službu a provede volání do něj.  
@@ -27,11 +27,11 @@ Tento příklad ukazuje, jak implementovat služby založené na protokolu HTTP,
   
 #### <a name="to-use-this-sample"></a>Pro fungování této ukázky  
   
-1.  Otevřete řešení pro základní Ukázka služby Http. Při spuštění sady Visual Studio 2012, je nutné spustit jako správce pro ukázku proběhl úspěšně. To udělat tak, že kliknete pravým tlačítkem na ikonu sady Visual Studio 2012 a vyberete **spustit jako správce** v místní nabídce.  
+1. Otevřete řešení pro základní Ukázka služby Http. Při spuštění sady Visual Studio 2012, je nutné spustit jako správce pro ukázku proběhl úspěšně. To udělat tak, že kliknete pravým tlačítkem na ikonu sady Visual Studio 2012 a vyberete **spustit jako správce** v místní nabídce.  
   
-2.  Stiskněte kombinaci kláves CTRL + SHIFT + B, sestavte řešení a pak stisknutím kombinace kláves Ctrl + F5 spusťte konzolovou aplikaci bez ladění. V okně konzoly se zobrazí a poskytuje URI spuštěnou službu a stránku pro spuštěnou službu identifikátoru URI HTML s nápovědou. Na stránce nápovědy HTML v libovolném bodě v čase zobrazíte tak, že zadáte identifikátor URI na stránce nápovědy v prohlížeči. Při spuštění ukázky klienta zapíše stavu aktuální aktivity.  
+2. Stiskněte kombinaci kláves CTRL + SHIFT + B, sestavte řešení a pak stisknutím kombinace kláves Ctrl + F5 spusťte konzolovou aplikaci bez ladění. V okně konzoly se zobrazí a poskytuje URI spuštěnou službu a stránku pro spuštěnou službu identifikátoru URI HTML s nápovědou. Na stránce nápovědy HTML v libovolném bodě v čase zobrazíte tak, že zadáte identifikátor URI na stránce nápovědy v prohlížeči. Při spuštění ukázky klienta zapíše stavu aktuální aktivity.  
   
-3.  Stisknutím libovolné klávesy ukončete vzorovou.  
+3. Stisknutím libovolné klávesy ukončete vzorovou.  
   
 > [!IMPORTANT]
 >  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  

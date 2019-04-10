@@ -6,12 +6,12 @@ helpviewer_keywords:
 - Windows applications [Windows Forms], accessibility
 - applications [Windows Forms], accessibility
 ms.assetid: 654c7f2f-1586-480b-9f12-9d9b8f5cc32b
-ms.openlocfilehash: 6d246c56af191189fa775be3248d3099d2aa2544
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: e7bc996c3d64c0ea3ac8fca5fef759ad309f2967
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59203688"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59336652"
 ---
 # <a name="walkthrough-creating-an-accessible-windows-based-application"></a>Návod: Vytvoření aplikace systému Windows s usnadněním přístupu
 Vytvoření přístupné aplikace má vliv na důležitá obchodní. Mnoha vlád mají usnadnění předpisy pro nákup softwaru. Logo Certified pro Windows obsahuje požadavky na usnadnění přístupu. Odhadované pobytem 30 milionů amerických samostatně, mnoho z nich potenciálních zákazníků, jsou ovlivněny usnadnění softwaru.  
@@ -65,7 +65,7 @@ Vytvoření přístupné aplikace má vliv na důležitá obchodní. Mnoha vlád
   
 -   Přidat ovládací prvky do formuláře a nastavte vlastnosti, jak je popsáno níže. Podívejte se na obrázku na konec tabulky modelu o tom, jak uspořádat ovládací prvky ve formuláři.  
   
-    |Objekt|Vlastnost|Value|  
+    |Objekt|Vlastnost|Hodnota|  
     |------------|--------------|-----------|  
     |Form1|AccessibleDescription|Formulář objednávky|  
     ||AccessibleName|Formulář objednávky|  
@@ -158,7 +158,7 @@ Vytvoření přístupné aplikace má vliv na důležitá obchodní. Mnoha vlád
   
 #### <a name="to-enable-high-contrast-mode-in-an-effective-way"></a>Povolit režim s vysokým kontrastem účinným způsobem  
   
-1.  Vytvořte metodu pro nastavení barvy popisku na systémových barev.  
+1. Vytvořte metodu pro nastavení barvy popisku na systémových barev.  
   
     ```  
     ' Visual Basic  
@@ -188,7 +188,7 @@ Vytvoření přístupné aplikace má vliv na důležitá obchodní. Mnoha vlád
     }  
     ```  
   
-2.  Volání `SetColorScheme` postup v konstruktoru formuláře (`Public Sub New()` v jazyce Visual Basic a `public class Form1` ve Vizuálu C#). Pro přístup k konstruktoru v jazyce Visual Basic, budete muset rozbalit oblast s názvem **kód generovaný návrhářem formulářů Windows**.  
+2. Volání `SetColorScheme` postup v konstruktoru formuláře (`Public Sub New()` v jazyce Visual Basic a `public class Form1` ve Vizuálu C#). Pro přístup k konstruktoru v jazyce Visual Basic, budete muset rozbalit oblast s názvem **kód generovaný návrhářem formulářů Windows**.  
   
     ```  
     ' Visual Basic   
@@ -206,7 +206,7 @@ Vytvoření přístupné aplikace má vliv na důležitá obchodní. Mnoha vlád
     }  
     ```  
   
-3.  Vytvořit procedury události s odpovídajícím podpisem na <xref:Microsoft.Win32.SystemEvents.UserPreferenceChanged> událostí.  
+3. Vytvořit procedury události s odpovídajícím podpisem na <xref:Microsoft.Win32.SystemEvents.UserPreferenceChanged> událostí.  
   
     ```  
     ' Visual Basic  
@@ -223,7 +223,7 @@ Vytvoření přístupné aplikace má vliv na důležitá obchodní. Mnoha vlád
     }  
     ```  
   
-4.  Přidejte kód konstruktoru formuláře po volání `InitializeComponents`, k připojení události postup systémové události. Tato metoda volá `SetColorScheme` postup.  
+4. Přidejte kód konstruktoru formuláře po volání `InitializeComponents`, k připojení události postup systémové události. Tato metoda volá `SetColorScheme` postup.  
   
     ```  
     ' Visual Basic  
@@ -246,7 +246,7 @@ Vytvoření přístupné aplikace má vliv na důležitá obchodní. Mnoha vlád
     }  
     ```  
   
-5.  Přidejte kód do formuláře <xref:System.Windows.Forms.Control.Dispose%2A> metoda před voláním <xref:System.Windows.Forms.Control.Dispose%2A> metody základní třídy k uvolnění události po zavření aplikace. Pro přístup <xref:System.Windows.Forms.Control.Dispose%2A> metody v jazyce Visual Basic, budete muset rozbalit oblast s názvem kód generovaný návrhářem formulářů Windows.  
+5. Přidejte kód do formuláře <xref:System.Windows.Forms.Control.Dispose%2A> metoda před voláním <xref:System.Windows.Forms.Control.Dispose%2A> metody základní třídy k uvolnění události po zavření aplikace. Pro přístup <xref:System.Windows.Forms.Control.Dispose%2A> metody v jazyce Visual Basic, budete muset rozbalit oblast s názvem kód generovaný návrhářem formulářů Windows.  
   
     > [!NOTE]
     >  Kód události systému běží vlákno oddělená od hlavní aplikace. Pokud vydané události, spustí kód, který jste připojili k této události i po ukončení programu.  
@@ -281,38 +281,38 @@ Vytvoření přístupné aplikace má vliv na důležitá obchodní. Mnoha vlád
     }  
     ```  
   
-6.  Stisknutím klávesy F5 spusťte aplikaci.  
+6. Stisknutím klávesy F5 spusťte aplikaci.  
   
 ## <a name="conveying-important-information-by-means-other-than-sound"></a>Předávání důležitých informací prostředky než zvuku  
  V této aplikaci žádné informace předávají zvukovou samostatně. Pokud používáte zvuku ve vaší aplikaci, by měl jiným způsobem a zadejte informace.  
   
 #### <a name="to-supply-information-by-some-other-means-than-sound"></a>Slouží k poskytování informací jiným způsobem než zvuku  
   
-1.  Vytvoření záhlaví flash pomocí funkce rozhraní Windows API FlashWindow. Příklad toho, jak volat funkce rozhraní API Windows, naleznete v tématu [názorný postup: Volání rozhraní API Windows](~/docs/visual-basic/programming-guide/com-interop/walkthrough-calling-windows-apis.md).  
+1. Vytvoření záhlaví flash pomocí funkce rozhraní Windows API FlashWindow. Příklad toho, jak volat funkce rozhraní API Windows, naleznete v tématu [názorný postup: Volání rozhraní API Windows](~/docs/visual-basic/programming-guide/com-interop/walkthrough-calling-windows-apis.md).  
   
     > [!NOTE]
     >  Uživatel může mít povoleno, službu Windows Popis zvuku, která také způsobí, že v okně tak, aby při přehrávání zvuků systému prostřednictvím vestavěné reproduktorů počítače.  
   
-2.  Zobrazení důležitých informací v nemodálním okně tak, aby uživatel může odpovědět na ni.  
+2. Zobrazení důležitých informací v nemodálním okně tak, aby uživatel může odpovědět na ni.  
   
-3.  Zobrazí okno se zprávou, která získá fokus klávesnice. Tato metoda vyhněte, když uživatel může být psaní.  
+3. Zobrazí okno se zprávou, která získá fokus klávesnice. Tato metoda vyhněte, když uživatel může být psaní.  
   
-4.  Zobrazte indikátor stavu v oznamovací oblasti na hlavním panelu Stav. Podrobnosti najdete v tématu [přidání ikon aplikací do TaskBar s komponentou Windows Forms NotifyIcon](../controls/app-icons-to-the-taskbar-with-wf-notifyicon.md).  
+4. Zobrazte indikátor stavu v oznamovací oblasti na hlavním panelu Stav. Podrobnosti najdete v tématu [přidání ikon aplikací do TaskBar s komponentou Windows Forms NotifyIcon](../controls/app-icons-to-the-taskbar-with-wf-notifyicon.md).  
   
 ## <a name="testing-the-application"></a>Testování aplikace  
  Před nasazením aplikace, měli byste otestovat funkce pro usnadnění přístupu, které jste implementovali.  
   
 #### <a name="to-test-accessibility-features"></a>K otestování funkce pro usnadnění přístupu  
   
-1.  K otestování klávesnice, myš odpojte a Navigovat v uživatelském rozhraní pro každou funkci pouze pomocí klávesnice. Ujistěte se, že všechny úlohy lze provádět pomocí klávesnice pouze.  
+1. K otestování klávesnice, myš odpojte a Navigovat v uživatelském rozhraní pro každou funkci pouze pomocí klávesnice. Ujistěte se, že všechny úlohy lze provádět pomocí klávesnice pouze.  
   
-2.  K otestování podpory vysoký kontrast, zvolte ikonu možností usnadnění přístupu v Ovládacích panelech. Klikněte na kartu zobrazení a použití vysoký kontrast – zaškrtnutím políčka. Procházejte všechny prvky uživatelského rozhraní k zajištění, že se projeví změny barev a písma. Také se ujistěte, že jsou vynechány Image nebo vzorce vykreslit za text.  
+2. K otestování podpory vysoký kontrast, zvolte ikonu možností usnadnění přístupu v Ovládacích panelech. Klikněte na kartu zobrazení a použití vysoký kontrast – zaškrtnutím políčka. Procházejte všechny prvky uživatelského rozhraní k zajištění, že se projeví změny barev a písma. Také se ujistěte, že jsou vynechány Image nebo vzorce vykreslit za text.  
   
     > [!NOTE]
     >  Windows NT 4 nemá ikonu možností usnadnění přístupu v Ovládacích panelech. Tento postup pro změnu nastavení SystemInformation.HighContrast proto nebude fungovat v systému Windows NT 4.  
   
-3.  Další nástroje jsou snadno dostupné pro testování přístupnosti aplikace.  
+3. Další nástroje jsou snadno dostupné pro testování přístupnosti aplikace.  
   
-4.  Pokud chcete otestovat, vystavení fokus klávesnice, spusťte Lupa. (Pokud chcete soubor otevřít, klikněte na tlačítko **Start** nabídky, přejděte k **programy**, přejděte na **Příslušenství**, přejděte na **usnadnění**a potom klikněte na tlačítko  **Lupa**). Navigovat v uživatelském rozhraní pomocí tabulátor klávesnice a myši. Ujistěte se, že je správně v sledovat všechny navigační **Lupa**.  
+4. Pokud chcete otestovat, vystavení fokus klávesnice, spusťte Lupa. (Pokud chcete soubor otevřít, klikněte na tlačítko **Start** nabídky, přejděte k **programy**, přejděte na **Příslušenství**, přejděte na **usnadnění**a potom klikněte na tlačítko  **Lupa**). Navigovat v uživatelském rozhraní pomocí tabulátor klávesnice a myši. Ujistěte se, že je správně v sledovat všechny navigační **Lupa**.  
   
-5.  K otestování zpřístupňuje prvky na obrazovce, spusťte zkontrolujte, jestli se a pomocí myši a klávesu TAB k dosažení jednotlivých prvků. Ujistěte se, že informace uváděné v pole název, stav, Role, umístění a hodnota okna zkontrolujte, jestli se má smysl pro uživatele pro každý objekt v uživatelském rozhraní.
+5. K otestování zpřístupňuje prvky na obrazovce, spusťte zkontrolujte, jestli se a pomocí myši a klávesu TAB k dosažení jednotlivých prvků. Ujistěte se, že informace uváděné v pole název, stav, Role, umístění a hodnota okna zkontrolujte, jestli se má smysl pro uživatele pro každý objekt v uživatelském rozhraní.

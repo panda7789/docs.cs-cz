@@ -2,21 +2,21 @@
 title: Určení vlastního šifrovacího algoritmu
 ms.date: 03/30/2017
 ms.assetid: d662a305-8e09-451d-9a59-b0f12b012f1d
-ms.openlocfilehash: c92ce463f885e9784913b07eb11941ecd7d78d09
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: b365c3c8e74adcad03246a227d6593c49f8b3993
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59113708"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59342827"
 ---
 # <a name="specifying-a-custom-crypto-algorithm"></a>Určení vlastního šifrovacího algoritmu
 WCF umožňuje určení vlastního šifrovacího algoritmu, který chcete použít, pokud k šifrování dat nebo výpočetní digitální podpisy. Uděláte to pomocí následujících kroků:  
   
-1.  Odvodit třídu z <xref:System.ServiceModel.Security.SecurityAlgorithmSuite>  
+1. Odvodit třídu z <xref:System.ServiceModel.Security.SecurityAlgorithmSuite>  
   
-2.  Zaregistrujte algoritmus  
+2. Zaregistrujte algoritmus  
   
-3.  Konfigurace vazby s <xref:System.ServiceModel.Security.SecurityAlgorithmSuite>-odvozené třídy.  
+3. Konfigurace vazby s <xref:System.ServiceModel.Security.SecurityAlgorithmSuite>-odvozené třídy.  
   
 ## <a name="derive-a-class-from-securityalgorithmsuite"></a>Odvodit třídu z SecurityAlgorithmSuite  
  <xref:System.ServiceModel.Security.SecurityAlgorithmSuite> Je abstraktní základní třída, která vám umožní určit algoritmus pro použití při provádění zabezpečení různých operací souvisejících s. Například výpočtu hodnoty hash pro digitální podpis nebo šifrování zprávy. Následující kód ukazuje, jak odvodit třídu z <xref:System.ServiceModel.Security.SecurityAlgorithmSuite>:  

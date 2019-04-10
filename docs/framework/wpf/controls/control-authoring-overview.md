@@ -8,12 +8,12 @@ helpviewer_keywords:
 - controls [WPF], authoring overview
 - authoring overview for controls [WPF]
 ms.assetid: 3d864748-cff0-4e63-9b23-d8e5a635b28f
-ms.openlocfilehash: 4b0a37814e22260eaaa655dddca278a1f30af09e
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: bb35a4d47f583aad710e178bdb12cb9adf6321e0
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59171857"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59340019"
 ---
 # <a name="control-authoring-overview"></a>Přehled řízeného vytváření
 Rozšiřitelnost [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] model řízení výrazně snižuje potřebu vytvářet nový ovládací prvek. Ale v některých případech budete stále muset vytvořit vlastní ovládací prvek. Toto téma popisuje funkce, které minimalizují potřeba k vytvoření vlastního ovládacího prvku a jiného ovládacího prvku pro vytváření modelů v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]. Toto téma ukazuje, jak vytvořit nový ovládací prvek.  
@@ -191,15 +191,15 @@ Rozšiřitelnost [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-w
   
  Jakmile aplikace vypadá pro určitý prostředek, bude vypadat na třech úrovních v následujícím pořadí:  
   
-1.  Element úroveň.  
+1. Element úroveň.  
   
      Systém začíná u prvku, který odkazuje na prostředek a a tak dále vyhledává prostředky logické nadřazené, dokud nebude dosaženo kořenový element.  
   
-2.  Na úrovni aplikace.  
+2. Na úrovni aplikace.  
   
      Prostředky, které jsou definované <xref:System.Windows.Application> objektu.  
   
-3.  Úroveň motiv.  
+3. Úroveň motiv.  
   
      Slovníky motiv úrovni jsou uloženy v podsložce s názvem motivů.  Soubory ve složce motivů odpovídají motivů.  Například může mít Aero.NormalColor.xaml, Luna.NormalColor.xaml, Royale.NormalColor.xaml a tak dále.  Můžete také mít soubor generic.xaml.  Když systém hledá prostředek na úrovni motivy, nejprve vyhledá ho v souboru konkrétní motivu a pak hledá ho v generic.xaml.  
   

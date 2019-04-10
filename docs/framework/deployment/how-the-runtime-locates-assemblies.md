@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 772ac6f4-64d2-4cfb-92fd-58096dcd6c34
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b3bbe330e71c30e9e92fdd107a59f78fee31ecc3
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 250e1764084ba3f7750867f2eea89e87cc7239eb
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59111563"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59342335"
 ---
 # <a name="how-the-runtime-locates-assemblies"></a>Jak běhové prostředí vyhledává sestavení
 Pokud chcete úspěšně nasadit aplikaci rozhraní .NET Framework, musíte pochopit, jak modul common language runtime vyhledává a vazby k sestavením, které tvoří vaši aplikaci. Ve výchozím nastavení modul runtime pokusí vytvořit vazbu s přesnou verzi sestavení, na kterou byla aplikace vytvořena s. Toto výchozí chování můžete přepsat pomocí nastavení konfiguračního souboru.  
@@ -40,16 +40,16 @@ Pokud chcete úspěšně nasadit aplikaci rozhraní .NET Framework, musíte poch
   
  Modul runtime používá následující kroky pro odkaz na sestavení:  
   
-1.  [Určuje verzi sestavení správné](#step1) prozkoumáním použít konfigurační soubory, včetně konfiguračního souboru aplikace, soubor zásad vydavatele a konfigurační soubor počítače. Pokud konfigurační soubor se nachází na vzdáleném počítači, musíte modul runtime vyhledat a stáhnout konfigurační soubor aplikace nejprve.  
+1. [Určuje verzi sestavení správné](#step1) prozkoumáním použít konfigurační soubory, včetně konfiguračního souboru aplikace, soubor zásad vydavatele a konfigurační soubor počítače. Pokud konfigurační soubor se nachází na vzdáleném počítači, musíte modul runtime vyhledat a stáhnout konfigurační soubor aplikace nejprve.  
   
-2.  [Kontroluje, zda název sestavení bylo svázáno se před](#step2) a pokud ano, pomocí dříve načteného sestavení. Předchozí požadavek na načtení sestavení se nezdařilo, pokud je žádost úspěšná okamžitě bez pokusu o načtení sestavení.  
+2. [Kontroluje, zda název sestavení bylo svázáno se před](#step2) a pokud ano, pomocí dříve načteného sestavení. Předchozí požadavek na načtení sestavení se nezdařilo, pokud je žádost úspěšná okamžitě bez pokusu o načtení sestavení.  
   
     > [!NOTE]
     >  Ukládání do mezipaměti selhání vazby sestavení je v rozhraní .NET Framework verze 2.0 nová.  
   
-3.  [Zkontroluje globální mezipaměti sestavení](#step3). Pokud je sestavení nalezeno existuje, modul runtime používá toto sestavení.  
+3. [Zkontroluje globální mezipaměti sestavení](#step3). Pokud je sestavení nalezeno existuje, modul runtime používá toto sestavení.  
   
-4.  [Sondy pro sestavení](#step4) pomocí následujících kroků:  
+4. [Sondy pro sestavení](#step4) pomocí následujících kroků:  
   
     1.  Pokud zásady Konfigurace a vydavatel nemají vliv na původní odkaz a pokud vazba byla vytvořena pomocí <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType> metody, modul runtime vyhledává pomocné parametry umístění.  
   
@@ -154,9 +154,9 @@ Al.exe /link:asm6.exe.config /out:policy.3.0.asm6.dll /keyfile: compatkey.dat /v
 ## <a name="step-4-locating-the-assembly-through-codebases-or-probing"></a>Krok 4: Vyhledání sestavení prostřednictvím základů kódu nebo zjišťování  
  Po verzi správné sestavení podle informací uvedených v odkazu na volajícího sestavení a v konfiguračních souborech a po jeho kontrole v globální mezipaměti sestavení (pouze pro sestavení se silným názvem), CLR modul runtime pokusí se najít sestavení. Proces vyhledávání sestavení zahrnuje následující kroky:  
   
-1.  Pokud [ \<codeBase >](../../../docs/framework/configure-apps/file-schema/runtime/codebase-element.md) je nalezen element v konfiguračním souboru aplikace, modul runtime zkontroluje, zda zadané umístění. Pokud se najde shoda, toto sestavení se používá a bez testování dochází. Pokud sestavení není nalezen existuje, selže požadavek na vytvoření vazby.  
+1. Pokud [ \<codeBase >](../../../docs/framework/configure-apps/file-schema/runtime/codebase-element.md) je nalezen element v konfiguračním souboru aplikace, modul runtime zkontroluje, zda zadané umístění. Pokud se najde shoda, toto sestavení se používá a bez testování dochází. Pokud sestavení není nalezen existuje, selže požadavek na vytvoření vazby.  
   
-2.  Modul runtime se pak sondy pro odkazované sestavení pomocí pravidel specifikovaných později v této části.  
+2. Modul runtime se pak sondy pro odkazované sestavení pomocí pravidel specifikovaných později v této části.  
   
 > [!NOTE]
 >  Pokud máte více verzí sestavení v adresáři a chcete odkazovat na konkrétní verzi sestavení, je nutné použít [ \<codeBase >](../../../docs/framework/configure-apps/file-schema/runtime/codebase-element.md) elementu namísto `privatePath` atribut [ \<zjišťování >](../../../docs/framework/configure-apps/file-schema/runtime/probing-element.md) elementu. Pokud používáte [ \<zjišťování >](../../../docs/framework/configure-apps/file-schema/runtime/probing-element.md) elementu, modul runtime zastaví zjišťování poprvé vyhledá sestavení, která odpovídá názvu jednoduché sestavení odkazuje, ať už jde o správný shoda nebo ne. Pokud je správná shoda, použije se toto sestavení. Pokud není správná shoda, zjišťování zastaví a vazba se nezdaří.  
