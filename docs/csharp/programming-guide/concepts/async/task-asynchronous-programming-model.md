@@ -2,12 +2,12 @@
 title: Úkolu asynchronní programovací Model (TAP) pomocí modifikátoru async a operátoru await (C#)
 ms.date: 05/22/2017
 ms.assetid: 9bcf896a-5826-4189-8c1a-3e35fa08243a
-ms.openlocfilehash: 3e4fd21172c71d596dd2ec5d171c9230dc3c803e
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 2fde365acfab3342082e2ca286decc00ca73a19d
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59166683"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59295962"
 ---
 # <a name="task-asynchronous-programming-model"></a>Model asynchronního programování úloh
 Pomocí asynchronního programování se můžete vyhnout kritickým bodům a zlepšit celkovou rychlost reakce aplikace. Tradiční techniky pro psaní asynchronních aplikací však mohou být složité, takže je obtížné je napsat, ladit a udržovat.  
@@ -106,19 +106,19 @@ Následující charakteristiky představují shrnutí, co dělá předchozí př
   
  Čísla v diagramu odpovídají následujícím krokům, platit, když uživatel klikne na tlačítko "start".
   
-1.  Obslužná rutina události zavolá a očekává `AccessTheWebAsync` asynchronní metody.  
+1. Obslužná rutina události zavolá a očekává `AccessTheWebAsync` asynchronní metody.  
   
-2.  `AccessTheWebAsync` vytvoří <xref:System.Net.Http.HttpClient> instance a volání <xref:System.Net.Http.HttpClient.GetStringAsync%2A> asynchronní metody ke stahování obsahu webu jako řetězec.  
+2. `AccessTheWebAsync` vytvoří <xref:System.Net.Http.HttpClient> instance a volání <xref:System.Net.Http.HttpClient.GetStringAsync%2A> asynchronní metody ke stahování obsahu webu jako řetězec.  
   
-3.  Něco se stane v `GetStringAsync` , která způsobí zastavení průběhu. Možná je třeba vyčkat na dokončení stahování nebo jiné blokující aktivity na webu. Chcete-li zabránit zablokování, `GetStringAsync` vrací řízení volajícímu, `AccessTheWebAsync`.  
+3. Něco se stane v `GetStringAsync` , která způsobí zastavení průběhu. Možná je třeba vyčkat na dokončení stahování nebo jiné blokující aktivity na webu. Chcete-li zabránit zablokování, `GetStringAsync` vrací řízení volajícímu, `AccessTheWebAsync`.  
   
      `GetStringAsync` Vrátí <xref:System.Threading.Tasks.Task%601>, kde `TResult` je řetězec, a `AccessTheWebAsync` přiřadí úlohu `getStringTask` proměnné. Úloha představuje trvalý proces pro volání `GetStringAsync`, se závazkem vyrábět aktuální řetězcovou hodnotu po dokončení práce.  
   
-4.  Protože `getStringTask` ještě nebyla očekávána, metoda `AccessTheWebAsync` můžete pokračovat v další práci, která nezávisí na konečném výsledku `GetStringAsync`. Daná práce je reprezentována voláním synchronní metody `DoIndependentWork`.  
+4. Protože `getStringTask` ještě nebyla očekávána, metoda `AccessTheWebAsync` můžete pokračovat v další práci, která nezávisí na konečném výsledku `GetStringAsync`. Daná práce je reprezentována voláním synchronní metody `DoIndependentWork`.  
   
-5.  `DoIndependentWork` je synchronní metoda, která provede svou práci a vrátí výsledek volajícímu.  
+5. `DoIndependentWork` je synchronní metoda, která provede svou práci a vrátí výsledek volajícímu.  
   
-6.  `AccessTheWebAsync` nemá dostatek práce, kterou můžete provést bez výsledku z `getStringTask`. `AccessTheWebAsync` dále potřebuje vypočítat a vrátit délku staženého řetězce, ale metoda nemůže hodnotu vypočítat, dokud se tato metoda má řetězec.  
+6. `AccessTheWebAsync` nemá dostatek práce, kterou můžete provést bez výsledku z `getStringTask`. `AccessTheWebAsync` dále potřebuje vypočítat a vrátit délku staženého řetězce, ale metoda nemůže hodnotu vypočítat, dokud se tato metoda má řetězec.  
   
      Proto `AccessTheWebAsync` používá operátor await k pozastavení jeho průběhu a výnosu z ovládacího prvku v metodě, která volá `AccessTheWebAsync`. `AccessTheWebAsync` Vrátí `Task<int>` volajícímu. Úloha představuje slib vyrábět celé číslo výsledku, který má délku staženého řetězce.  
   
@@ -127,9 +127,9 @@ Následující charakteristiky představují shrnutí, co dělá předchozí př
   
      Uvnitř volajícího (v tomto případě obslužná rutina události) bude vzor zpracování pokračovat. Volající může provádět další operace, které nejsou závislé na výsledku `AccessTheWebAsync` před čeká na výsledek, nebo volající může použít funkci await okamžitě.   Obslužná rutina události čeká na všesměrově `AccessTheWebAsync`, a `AccessTheWebAsync` čeká `GetStringAsync`.  
   
-7.  `GetStringAsync` dokončí a vytvoří výsledek řetězce. Výsledek řetězce není vrácený voláním na `GetStringAsync` způsobem, který by se dalo očekávat. (Mějte na paměti, že metoda již vrátila úlohu v kroku 3.) Místo toho je výsledek řetězce uložen v úkolu, který představuje dokončení metody, `getStringTask`. Operátor await načítá výsledek z `getStringTask`. Přiřazovací příkaz přiřadí načtený výsledek do `urlContents`.  
+7. `GetStringAsync` dokončí a vytvoří výsledek řetězce. Výsledek řetězce není vrácený voláním na `GetStringAsync` způsobem, který by se dalo očekávat. (Mějte na paměti, že metoda již vrátila úlohu v kroku 3.) Místo toho je výsledek řetězce uložen v úkolu, který představuje dokončení metody, `getStringTask`. Operátor await načítá výsledek z `getStringTask`. Přiřazovací příkaz přiřadí načtený výsledek do `urlContents`.  
   
-8.  Když `AccessTheWebAsync` má řetězec výsledek, metoda může vypočítat délku řetězce. Pak je práce `AccessTheWebAsync` kompletní a můžete pokračovat v obslužné rutině události čekání. V úplném příkladu na konci tématu si můžete potvrdit, že obslužná rutina události načte a vytiskne hodnotu výsledné délky.    
+8. Když `AccessTheWebAsync` má řetězec výsledek, metoda může vypočítat délku řetězce. Pak je práce `AccessTheWebAsync` kompletní a můžete pokračovat v obslužné rutině události čekání. V úplném příkladu na konci tématu si můžete potvrdit, že obslužná rutina události načte a vytiskne hodnotu výsledné délky.    
 Pokud jste v oblasti asynchronního programování nováčky, zvažte rozdíl mezi synchronním a asynchronním chováním. Synchronní metoda je vrácena, jakmile je její práce dokončena (krok 5), ale asynchronní metoda vrátí hodnotu úlohy, když je její práce pozastavena (kroky 3 a 6). Když asynchronní metoda nakonec dokončí svou práci, je úloha označena jako dokončená a výsledek, pokud existuje, je uložen v úloze.  
   
 Další informace o toku řízení naleznete v tématu [tok řízení v asynchronních programech (C#)](../../../../csharp/programming-guide/concepts/async/control-flow-in-async-programs.md).  

@@ -5,19 +5,19 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d619976b-eda3-475e-ac23-c7988a2dceb0
-ms.openlocfilehash: fa04b883e37cc287e6bd52ce9f206b2b24fe905f
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 1892e910a86e01b7b2ee0f6a2403ad7af4688808
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59167424"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59295377"
 ---
 # <a name="how-to-create-a-custom-claim"></a>Postupy: Vytvoření vlastní deklarace
 Infrastruktura modelu Identity ve Windows Communication Foundation (WCF) poskytuje sadu předdefinovaných deklarací typů a práva s pomocné funkce pro vytváření <xref:System.IdentityModel.Claims.Claim> instance s těmito typy a přístupových práv. Tyto předdefinované deklarace jsou navrženy pro informace o modelu, které jsou součástí typy přihlašovacích údajů klienta, které podporuje WCF, ve výchozím nastavení. V mnoha případech jsou dostatečné; integrované deklarací identity Některé aplikace ale můžou vyžadovat vlastní deklarace identity. Deklarace identity se skládá z typ deklarace identity, prostředek, pro kterou platí deklarace identity pro a práv, která jsou s potvrzením přes tento prostředek. Toto téma popisuje, jak vytvořit vlastní deklarace identity.  
   
 ### <a name="to-create-a-custom-claim-that-is-based-on-a-primitive-data-type"></a>K vytvoření vlastní deklarace identity, která je založena na primitivní datový typ  
   
-1.  Vytvoření vlastních deklarací identity pomocí typu deklarace identity, hodnota prostředku a právo <xref:System.IdentityModel.Claims.Claim.%23ctor%28System.String%2CSystem.Object%2CSystem.String%29> konstruktoru.  
+1. Vytvoření vlastních deklarací identity pomocí typu deklarace identity, hodnota prostředku a právo <xref:System.IdentityModel.Claims.Claim.%23ctor%28System.String%2CSystem.Object%2CSystem.String%29> konstruktoru.  
   
     1.  Při rozhodování o jedinečnou hodnotu pro typ deklarace identity.  
   
@@ -40,7 +40,7 @@ Infrastruktura modelu Identity ve Windows Communication Foundation (WCF) poskytu
   
 ### <a name="to-create-a-custom-claim-that-is-based-on-a-non-primitive-data-type"></a>K vytvoření vlastní deklarace identity, který je založen na data jiného než primitivního typu  
   
-1.  Vytvoření vlastních deklarací identity pomocí typu deklarace identity, hodnota prostředku a právo <xref:System.IdentityModel.Claims.Claim.%23ctor%28System.String%2CSystem.Object%2CSystem.String%29> konstruktoru.  
+1. Vytvoření vlastních deklarací identity pomocí typu deklarace identity, hodnota prostředku a právo <xref:System.IdentityModel.Claims.Claim.%23ctor%28System.String%2CSystem.Object%2CSystem.String%29> konstruktoru.  
   
     1.  Při rozhodování o jedinečnou hodnotu pro typ deklarace identity.  
   

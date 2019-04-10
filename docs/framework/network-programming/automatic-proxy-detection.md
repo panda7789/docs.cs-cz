@@ -14,12 +14,12 @@ helpviewer_keywords:
 - network
 - WPAD (Web Proxy Auto-Discovery)
 ms.assetid: fcd9c3bd-93de-4c92-8ff3-837327ad18de
-ms.openlocfilehash: 3de9b67d687d23e9f31c3060f5af6ef90d45f217
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 656a21a7b8801a2c3b72b25531705576fcf047cd
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59164759"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59295754"
 ---
 # <a name="automatic-proxy-detection"></a>Automatické rozpoznávání proxy serveru
 Automatické rozpoznávání proxy serveru je proces, podle kterého je identifikován systému a použít má odesílat požadavky jménem klienta webového proxy serveru. Tato funkce je také označován jako Proxy Auto-Discovery WPAD (Web). Pokud je povoleno automatické rozpoznávání proxy serveru, systém se pokusí najít skript konfigurace proxy serveru, který je zodpovědný za vrácení sady proxy servery, které je možné pro daný požadavek. Pokud je nalezen skript konfigurace proxy serveru, skript stáhnout a spustit na místním počítači, když je získat informace o proxy serveru, datový proud požadavku nebo odpovědi pro žádosti, která používá zkompilován <xref:System.Net.WebProxy> instance.  
@@ -31,13 +31,13 @@ Automatické rozpoznávání proxy serveru je proces, podle kterého je identifi
   
  Pokud je povoleno automatické rozpoznávání proxy serveru, <xref:System.Net.WebProxy> třídy se pokusí najít skript konfigurace proxy serveru následujícím způsobem:  
   
-1.  WinINet `InternetQueryOption` funkce se používá k vyhledání naposledy zjištěných aplikací Internet Explorer konfigurační skript proxy serveru.  
+1. WinINet `InternetQueryOption` funkce se používá k vyhledání naposledy zjištěných aplikací Internet Explorer konfigurační skript proxy serveru.  
   
-2.  Pokud skript není umístěn, <xref:System.Net.WebProxy> třída používá hostiteli konfigurace protokolu DHCP (Dynamic) a vyhledejte skript. DHCP server může reagovat pomocí umístění (název hostitele) skriptu nebo s úplnou adresu URL pro skript.  
+2. Pokud skript není umístěn, <xref:System.Net.WebProxy> třída používá hostiteli konfigurace protokolu DHCP (Dynamic) a vyhledejte skript. DHCP server může reagovat pomocí umístění (název hostitele) skriptu nebo s úplnou adresu URL pro skript.  
   
-3.  Pokud DHCP neidentifikuje WPAD hostitele, dotaz DNS na hostitele s WPAD jako jeho název nebo alias.  
+3. Pokud DHCP neidentifikuje WPAD hostitele, dotaz DNS na hostitele s WPAD jako jeho název nebo alias.  
   
-4.  Pokud není označen hostitele a umístění skriptu konfigurace proxy serveru je určené nastavení místní sítě Internet Explorer nebo konfiguračního souboru, toto umístění se používá.  
+4. Pokud není označen hostitele a umístění skriptu konfigurace proxy serveru je určené nastavení místní sítě Internet Explorer nebo konfiguračního souboru, toto umístění se používá.  
   
 > [!NOTE]
 >  Aplikací spuštěných jako služby NT nebo v rámci technologie ASP.NET použijte nastavení aplikace Internet Explorer proxy serveru (Pokud je k dispozici) vyvolání uživatele. Tato nastavení nemusí být k dispozici pro všechny aplikace služby.  

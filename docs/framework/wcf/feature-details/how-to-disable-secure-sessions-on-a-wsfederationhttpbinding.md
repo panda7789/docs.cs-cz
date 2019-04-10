@@ -8,12 +8,12 @@ helpviewer_keywords:
 - WCF, federation
 - federation
 ms.assetid: 675fa143-6a4e-4be3-8afc-673334ab55ec
-ms.openlocfilehash: 809626d0d6d69d22f09b0f10210cfda7a033ac3d
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 38863cbfe457afd923c3c8238d8c12b4d451c67f
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59211800"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293950"
 ---
 # <a name="how-to-disable-secure-sessions-on-a-wsfederationhttpbinding"></a>Postupy: Zakázání zabezpečených relací u třídy WSFederationHttpBinding
 Některé služby může vyžadovat federované přihlašovací údaje, ale nepodporuje zabezpečených relací. V takovém případě je nutné zakázat funkci zabezpečenou relaci. Na rozdíl od <xref:System.ServiceModel.WSHttpBinding>, <xref:System.ServiceModel.WSFederationHttpBinding> třída neposkytuje způsob, jak zakázání zabezpečených relací při komunikaci se službou. Místo toho musíte vytvořit vlastní vazby, který nahradí nastavení zabezpečenou relaci bootstrap.  
@@ -22,15 +22,15 @@ Některé služby může vyžadovat federované přihlašovací údaje, ale nepo
   
 ### <a name="to-create-a-custom-federated-binding-without-secure-session"></a>Můžete vytvořit vlastní federované vazby bez zabezpečené relace  
   
-1.  Vytvoření instance <xref:System.ServiceModel.WSFederationHttpBinding> třídy imperativně v kódu nebo načtením jeden z konfiguračního souboru.  
+1. Vytvoření instance <xref:System.ServiceModel.WSFederationHttpBinding> třídy imperativně v kódu nebo načtením jeden z konfiguračního souboru.  
   
-2.  Klonování <xref:System.ServiceModel.WSFederationHttpBinding> do <xref:System.ServiceModel.Channels.CustomBinding>.  
+2. Klonování <xref:System.ServiceModel.WSFederationHttpBinding> do <xref:System.ServiceModel.Channels.CustomBinding>.  
   
-3.  Najít <xref:System.ServiceModel.Channels.SecurityBindingElement> v <xref:System.ServiceModel.Channels.CustomBinding>.  
+3. Najít <xref:System.ServiceModel.Channels.SecurityBindingElement> v <xref:System.ServiceModel.Channels.CustomBinding>.  
   
-4.  Najít <xref:System.ServiceModel.Security.Tokens.SecureConversationSecurityTokenParameters> v <xref:System.ServiceModel.Channels.SecurityBindingElement>.  
+4. Najít <xref:System.ServiceModel.Security.Tokens.SecureConversationSecurityTokenParameters> v <xref:System.ServiceModel.Channels.SecurityBindingElement>.  
   
-5.  Ten původní nahradí <xref:System.ServiceModel.Channels.SecurityBindingElement> s element vazby zabezpečení samozavádění z <xref:System.ServiceModel.Security.Tokens.SecureConversationSecurityTokenParameters>.  
+5. Ten původní nahradí <xref:System.ServiceModel.Channels.SecurityBindingElement> s element vazby zabezpečení samozavádění z <xref:System.ServiceModel.Security.Tokens.SecureConversationSecurityTokenParameters>.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad vytvoří vlastní federované vazby bez zabezpečenou relaci.  

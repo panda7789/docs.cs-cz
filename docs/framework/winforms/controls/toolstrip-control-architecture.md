@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - ToolStrip control [Windows Forms], architecture
 ms.assetid: 71df2d18-862e-4701-9ff9-c1fe606f94f2
-ms.openlocfilehash: 1032b282801db485253da18536b448e8d3b65ae7
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 91813928344f9210ce1383daa9ba7f765117833a
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59186664"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59296209"
 ---
 # <a name="toolstrip-control-architecture"></a>Architektura ovládacího prvku ToolStrip
 <xref:System.Windows.Forms.ToolStrip> a <xref:System.Windows.Forms.ToolStripItem> třídy poskytují flexibilní a rozšiřitelný systém pro zobrazení položek panelu nástrojů, nabídek a stav. Tyto třídy jsou obsaženy v <xref:System.Windows.Forms> obor názvů a že jsou všechny obvykle s názvem s předponou "Ovládací prvek ToolStrip" (například <xref:System.Windows.Forms.ToolStripOverflow>) nebo s příponou "Odstranit" (například <xref:System.Windows.Forms.MenuStrip>).  
@@ -121,19 +121,19 @@ ms.locfileid: "59186664"
 #### <a name="toolstripcontainer-support-of-inheritance"></a>ToolStripContainer – podpora dědičnosti  
  <xref:System.Windows.Forms.ToolStripContainer> Ovládací prvek podporuje omezenou zděděné scénářů, podobně jako v následujícím příkladu:  
   
-1.  Vytvoření nové aplikace Windows Forms.  
+1. Vytvoření nové aplikace Windows Forms.  
   
-2.  Přidat <xref:System.Windows.Forms.ToolStripContainer> do formuláře.  
+2. Přidat <xref:System.Windows.Forms.ToolStripContainer> do formuláře.  
   
-3.  Modifikátor přístupu nastaven <xref:System.Windows.Forms.ToolStripContainer> k `public` nebo `protected`.  
+3. Modifikátor přístupu nastaven <xref:System.Windows.Forms.ToolStripContainer> k `public` nebo `protected`.  
   
-4.  Přidat libovolnou kombinaci <xref:System.Windows.Forms.ToolStrip>, <xref:System.Windows.Forms.MenuStrip>, a <xref:System.Windows.Forms.ContextMenuStrip> ovládacích prvků <xref:System.Windows.Forms.ToolStripPanel> regionů <xref:System.Windows.Forms.ToolStripContainer>.  
+4. Přidat libovolnou kombinaci <xref:System.Windows.Forms.ToolStrip>, <xref:System.Windows.Forms.MenuStrip>, a <xref:System.Windows.Forms.ContextMenuStrip> ovládacích prvků <xref:System.Windows.Forms.ToolStripPanel> regionů <xref:System.Windows.Forms.ToolStripContainer>.  
   
-5.  Sestavte projekt.  
+5. Sestavte projekt.  
   
-6.  Přidání formuláře, která dědí z první formuláře.  
+6. Přidání formuláře, která dědí z první formuláře.  
   
-7.  Vyberte zděděnou <xref:System.Windows.Forms.ToolStripContainer> ve formuláři.  
+7. Vyberte zděděnou <xref:System.Windows.Forms.ToolStripContainer> ve formuláři.  
   
 #### <a name="inherited-behavior-of-child-controls"></a>Zděděné chování podřízených ovládacích prvků  
  Po dokončení předchozích kroků, očekávejte toto chování zděděného:  

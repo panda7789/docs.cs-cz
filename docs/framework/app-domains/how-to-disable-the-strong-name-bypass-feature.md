@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 234e088c-3b11-495a-8817-e0962be79d82
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5f96ba198a88b10d77509187d0dec9806a9e26b8
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 86fc35ae20211bd32a21d60b7313074361aef671
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59155687"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59296170"
 ---
 # <a name="how-to-disable-the-strong-name-bypass-feature"></a>Postupy: Zákaz funkce obejití silného názvu
 Počínaje verzí rozhraní .NET Framework 3.5 Service Pack 1 (SP1), podpisy se silným názvem nejsou ověřovány, pokud je sestavení načteno do plně důvěryhodné <xref:System.AppDomain> objektu, například výchozí <xref:System.AppDomain> pro `MyComputer` zóny. To se označuje jako silného názvu obejít funkce. V prostředí úplného vztahu důvěryhodnosti vyžaduje pro <xref:System.Security.Permissions.StrongNameIdentityPermission> vždy úspěšné pro podepsané sestavení úplného vztahu důvěryhodnosti, bez ohledu na jejich podpisu. Jediným omezením je, že sestavení musí být plně důvěryhodné, protože jeho zóna je plně důvěryhodné. Protože silný název není určujícím faktorem za těchto podmínek, neexistuje žádný důvod pro něj má být ověřen. Vynechání ověřování podpisy se silným názvem poskytuje výrazné zlepšení výkonu.  
@@ -34,11 +34,11 @@ Počínaje verzí rozhraní .NET Framework 3.5 Service Pack 1 (SP1), podpisy se 
   
 ### <a name="to-disable-the-strong-name-bypass-feature-for-a-single-application"></a>Zakázat obejití silného názvu funkce pro jednu aplikaci  
   
-1.  Otevřete nebo vytvořte konfigurační soubor aplikace.  
+1. Otevřete nebo vytvořte konfigurační soubor aplikace.  
   
      Další informace o tomto souboru najdete v části konfiguračních souborů aplikace v [konfigurace aplikace](../../../docs/framework/configure-apps/index.md).  
   
-2.  Přidejte následující položku:  
+2. Přidejte následující položku:  
   
     ```xml  
     <configuration>  

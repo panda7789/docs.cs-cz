@@ -2,12 +2,12 @@
 title: Přístup ke službám WCF pomocí klientské aplikace pro Windows Store
 ms.date: 03/30/2017
 ms.assetid: e2002ef4-5dee-4a54-9d87-03b33d35fc52
-ms.openlocfilehash: 6617a8cd207b68505396db7fdb4c9d08fd759d06
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: a7d87e6014f26842c35b0d1bf5028682a4cf69e5
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59167645"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59294857"
 ---
 # <a name="accessing-wcf-services-with-a-windows-store-client-app"></a>Přístup ke službám WCF pomocí klientské aplikace pro Windows Store
 Systém Windows 8 zavádí nový typ aplikace s názvem aplikace Windows Store. Tyto aplikace jsou navržené s ohledem dotykové obrazovce rozhraní. Rozhraní .NET framework 4.5 umožňuje aplikacím Windows Store pro volání služeb WCF.  
@@ -24,31 +24,31 @@ Systém Windows 8 zavádí nový typ aplikace s názvem aplikace Windows Store. 
 ### <a name="supported-bindings"></a>Podporované vazby  
  Podporují se následující vazby WCF v aplikacích Windows Store:  
   
-1.  <xref:System.ServiceModel.BasicHttpBinding>  
+1. <xref:System.ServiceModel.BasicHttpBinding>  
   
-2.  <xref:System.ServiceModel.NetTcpBinding>  
+2. <xref:System.ServiceModel.NetTcpBinding>  
   
-3.  <xref:System.ServiceModel.NetHttpBinding>  
+3. <xref:System.ServiceModel.NetHttpBinding>  
   
-4.  <xref:System.ServiceModel.Channels.CustomBinding>
+4. <xref:System.ServiceModel.Channels.CustomBinding>
   
  Jsou podporovány následující elementy vazby v aplikacích Windows Store  
   
-1.  <xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement>  
+1. <xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement>  
   
-2.  <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>  
+2. <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>  
   
-3.  <xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement>  
+3. <xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement>  
   
-4.  <xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement>  
+4. <xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement>  
   
-5.  <xref:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement>  
+5. <xref:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement>  
   
-6.  <xref:System.ServiceModel.Channels.TcpTransportBindingElement>  
+6. <xref:System.ServiceModel.Channels.TcpTransportBindingElement>  
   
-7.  <xref:System.ServiceModel.Channels.HttpTransportBindingElement>  
+7. <xref:System.ServiceModel.Channels.HttpTransportBindingElement>  
   
-8.  <xref:System.ServiceModel.Channels.HttpsTransportBindingElement>  
+8. <xref:System.ServiceModel.Channels.HttpsTransportBindingElement>  
   
 9. <xref:System.ServiceModel.Channels.TransportSecurityBindingElement>  
   
@@ -97,11 +97,11 @@ public partial class Service1Client : System.ServiceModel.ClientBase<MetroWcfCli
 ### <a name="serialization"></a>Serializace  
  Podporují se následující serializátory v aplikacích Windows Store:  
   
-1.  DataContractSerializer  
+1. DataContractSerializer  
   
-2.  DataContractJsonSerializer  
+2. DataContractJsonSerializer  
   
-3.  XmlSerializer  
+3. XmlSerializer  
   
 > [!WARNING]
 >  XmlDictionaryWriter.Write(DateTime) nyní zapíše objekt data a času jako řetězec.  
@@ -120,21 +120,21 @@ Podporují se následující režimy zabezpečení v aplikacích Windows Store:
   
 V aplikacích Windows Store jsou podporovány následující typy přihlašovacích údajů klienta:
   
-1.  Žádný  
+1. Žádné  
   
-2.  Základní  
+2. Základní  
   
-3.  ověřování algoritmem Digest  
+3. ověřování algoritmem Digest  
   
-4.  Vyjednávání  
+4. Vyjednávání  
   
-5.  NTLM  
+5. NTLM  
   
-6.  Windows  
+6. Windows  
   
-7.  Uživatelské jméno (zabezpečení zpráv)  
+7. Uživatelské jméno (zabezpečení zpráv)  
   
-8.  Windows (Transport Security)  
+8. Windows (Transport Security)  
   
  V pořadí pro aplikace Windows Store a přístup k odeslání výchozí přihlašovací údaje Windows je nutné povolit tuto funkci v rámci souboru Package.appmanifest. Otevřete tento soubor a vyberte kartu Možnosti a vyberte "Výchozí pověření Windows". To umožňuje aplikaci připojovat k intranetovým prostředkům, které vyžadují přihlašovací údaje domény.  
   
@@ -144,11 +144,11 @@ V aplikacích Windows Store jsou podporovány následující typy přihlašovac�
 ### <a name="misc"></a>Různé  
  Pro aplikace Windows Store je podporováno použití následující třídy:  
   
-1.  <xref:System.ServiceModel.ChannelFactory>  
+1. <xref:System.ServiceModel.ChannelFactory>  
   
-2.  <xref:System.ServiceModel.DuplexChannelFactory%601>
+2. <xref:System.ServiceModel.DuplexChannelFactory%601>
   
-3.  <xref:System.ServiceModel.CallbackBehaviorAttribute>  
+3. <xref:System.ServiceModel.CallbackBehaviorAttribute>  
   
 ### <a name="defining-service-contracts"></a>Definování kontraktů mezi službami  
  Doporučujeme pouze definování operace asynchronní služby pomocí úkolově orientovanou asynchronní vzorek. Tím se zajistí, že Windows Store aplikace nadále reagovat při volání operace služby.  

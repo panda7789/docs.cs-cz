@@ -12,12 +12,12 @@ helpviewer_keywords:
 - declared elements [Visual Basic], referencing
 - declared elements [Visual Basic], about declared elements
 ms.assetid: e39c0752-f19f-4d2e-a453-00df1b5fc7ee
-ms.openlocfilehash: a8a7eda2a636d7f89131d140c82ad4f3c4743211
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 744c7aed50690d5591d1e8248e121cb66ef39108
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58826675"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59296183"
 ---
 # <a name="how-to-hide-a-variable-with-the-same-name-as-your-variable-visual-basic"></a>Postupy: Skrytí proměnné se stejným názvem jako má vaše proměnná (Visual Basic)
 Můžete skrýt proměnné tak *stínováním* ho tedy předefinováním proměnnou se stejným názvem. Můžete stínové proměnné, které chcete skrýt dvěma způsoby:  
@@ -30,7 +30,7 @@ Můžete skrýt proměnné tak *stínováním* ho tedy předefinováním proměn
   
 #### <a name="to-hide-a-variable-by-shadowing-it-through-scope"></a>Chcete-li skrýt proměnné tak, že stínování prostřednictvím oboru  
   
-1.  Určit oblast definující proměnné, které chcete skrýt a určete podoblasti, ve kterém k předefinování se vaše proměnná.  
+1. Určit oblast definující proměnné, které chcete skrýt a určete podoblasti, ve kterém k předefinování se vaše proměnná.  
   
     |Proměnné oblasti|Pro předefinování ho povolený podoblast|  
     |-----------------------|-------------------------------------------|  
@@ -39,9 +39,9 @@ Můžete skrýt proměnné tak *stínováním* ho tedy předefinováním proměn
   
      Nelze předefinovat postupu proměnnou v bloku, v rámci tohoto postupu, například v `If`... `End If` konstrukce nebo `For` smyčky.  
   
-2.  Pokud ještě neexistuje, vytvořte podoblasti.  
+2. Pokud ještě neexistuje, vytvořte podoblasti.  
   
-3.  V rámci podoblasti, zápisu [příkazu Dim](../../../../visual-basic/language-reference/statements/dim-statement.md) deklarování proměnné stínového provozu.  
+3. V rámci podoblasti, zápisu [příkazu Dim](../../../../visual-basic/language-reference/statements/dim-statement.md) deklarování proměnné stínového provozu.  
   
      Když kód uvnitř podoblasti odkazuje na název proměnné, přeloží kompilátor odkaz na proměnnou stínového provozu.  
   
@@ -73,11 +73,11 @@ Můžete skrýt proměnné tak *stínováním* ho tedy předefinováním proměn
   
 #### <a name="to-hide-a-variable-by-shadowing-it-through-inheritance"></a>Chcete-li skrýt proměnné tak, že stínování prostřednictvím dědičnosti  
   
-1.  Ujistěte se, že proměnné, které chcete skrýt je deklarovaná ve třídě a na úrovni třídy (mimo všechny procedury). V opačném případě nemůže zastiňovat prostřednictvím dědičnosti.  
+1. Ujistěte se, že proměnné, které chcete skrýt je deklarovaná ve třídě a na úrovni třídy (mimo všechny procedury). V opačném případě nemůže zastiňovat prostřednictvím dědičnosti.  
   
-2.  Definujte třídu odvozenou z třídy proměnné, pokud ještě neexistuje.  
+2. Definujte třídu odvozenou z třídy proměnné, pokud ještě neexistuje.  
   
-3.  V odvozených třídách, zápisu `Dim` deklarace proměnné příkazu. Zahrnout [stíny](../../../../visual-basic/language-reference/modifiers/shadows.md) – klíčové slovo v deklaraci.  
+3. V odvozených třídách, zápisu `Dim` deklarace proměnné příkazu. Zahrnout [stíny](../../../../visual-basic/language-reference/modifiers/shadows.md) – klíčové slovo v deklaraci.  
   
      Když kód v odvozené třídě odkazuje na název proměnné, přeloží kompilátor odkaz na vaše proměnná.  
   

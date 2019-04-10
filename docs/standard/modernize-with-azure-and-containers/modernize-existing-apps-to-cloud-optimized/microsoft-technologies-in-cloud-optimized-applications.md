@@ -4,12 +4,12 @@ description: Modernizace stávajících aplikací .NET pomocí cloudu Azure a Wi
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 04/28/2018
-ms.openlocfilehash: 2f1d624365c168d14e98ed175d369f6aef18e42e
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 45eeee165a1dcbfc7b6dbc5146ce2c4b2be2e643
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53153875"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59296248"
 ---
 # <a name="microsoft-technologies-in-cloud-optimized-applications"></a>Technologie Microsoft v aplikace optimalizované pro cloud
 
@@ -25,9 +25,9 @@ Následující seznam popisuje nástroje, technologie a řešení, které jsou r
 
 -   **Monitorování telemetrických dat, protokolování a auditování**: Umožňuje sledovat a auditovat aplikací a kontejnerů, které běží v cloudu je zásadní pro všechny aplikace optimalizované pro Cloud. [Azure Application Insights](https://azure.microsoft.com/services/application-insights/) a [Microsoft Operations Management Suite](https://www.microsoft.com/cloud-platform/operations-management-suite) jsou hlavní nástroje Microsoft, které umožňují sledování a auditování pro Cloud optimalizovaný aplikací.
 
--   **Zřizování**: Automatizační nástroje vám pomůžou zřízení infrastruktury a nasadit aplikaci do více prostředí (výrobu, testovací, přípravné). Nástroje, jako je Chef nebo Puppet můžete použít ke správě prostředí a konfigurace aplikací. Tuto vrstvu můžete implementovat také pomocí jednodušeji a přístupy. Například můžete nasadit přímo pomocí rozhraní příkazového řádku Azure (Azure CLI) nástroje a pak použijte průběžné nasazování a vydávání kanálů správy v [Azure DevOps služby](https://visualstudio.microsoft.com/team-services/).
+-   **Zřizování**: Automatizační nástroje vám pomůžou zřízení infrastruktury a nasadit aplikaci do více prostředí (výrobu, testovací, přípravné). Nástroje, jako je Chef nebo Puppet můžete použít ke správě prostředí a konfigurace aplikací. Tuto vrstvu můžete implementovat také pomocí jednodušeji a přístupy. Například můžete nasadit přímo pomocí rozhraní příkazového řádku Azure (Azure CLI) nástroje a pak použijte průběžné nasazování a vydávání kanálů správy v [Azure DevOps služby](https://azure.microsoft.com/services/devops/).
 
--   **Životní cyklus aplikace**: [Služby Azure DevOps](https://visualstudio.microsoft.com/team-services/) a další nástroje, jako je Jenkins, jsou sestavené automatizační servery, které vám pomohou implementovat kanálů CI/CD, včetně produktu release management.
+-   **Životní cyklus aplikace**: [Služby Azure DevOps](https://azure.microsoft.com/services/devops/) a další nástroje, jako je Jenkins, jsou sestavené automatizační servery, které vám pomohou implementovat kanálů CI/CD, včetně produktu release management.
 
 Další části této kapitole a souvisejících návodů, konkrétně zaměřit podrobnosti o modulu runtime vrstvy (kontejnery Windows). Návod popisuje způsoby, kterými můžete nasadit kontejnery Windows ve Windows serveru 2016 (a novějších verzích) virtuálních počítačů a Azure Container Instances. Věnuje se také pokročilejší platformy PaaS, jako je Azure App Service a orchestrátor, jako je Azure Service Fabric a službě Azure Kubernetes.
 

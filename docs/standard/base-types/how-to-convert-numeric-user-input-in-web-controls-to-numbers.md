@@ -15,33 +15,33 @@ helpviewer_keywords:
 ms.assetid: f27ddfb8-7479-4b79-8879-02a3bd8402d4
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c66235d866bd7c276d049d9415015dd6f9aa9fb6
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 0f732f5bf61ed65fe7e62d110494d874262e30fd
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54722358"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59296157"
 ---
 # <a name="how-to-convert-numeric-user-input-in-web-controls-to-numbers"></a>Postupy: Převod číselného vstupu uživatele ve webových ovládacích prvcích na čísla
 Vzhledem k tomu, že na webové stránce můžete zobrazit kdekoli na světě, můžete uživatele zadat číselná data do <xref:System.Web.UI.WebControls.TextBox> ovládacího prvku v téměř neomezené množství formátů. V důsledku toho je velmi důležité určit národní prostředí a jazykovou verzi uživatele webové stránky. Při analýze uživatelský vstup, lze následně použít formátovací úmluvy určené národní prostředí a jazykovou verzi uživatele.  
   
 ### <a name="to-convert-numeric-input-from-a-web-textbox-control-to-a-number"></a>Pro převod číselného vstupu z ovládacího prvku TextBox webové na číslo  
   
-1.  Určení, zda pole řetězce vrácené <xref:System.Web.HttpRequest.UserLanguages%2A?displayProperty=nameWithType> vyplní vlastnost. Pokud není, pokračujte krokem 6.  
+1. Určení, zda pole řetězce vrácené <xref:System.Web.HttpRequest.UserLanguages%2A?displayProperty=nameWithType> vyplní vlastnost. Pokud není, pokračujte krokem 6.  
   
-2.  Pokud je pole řetězců vrácené <xref:System.Web.HttpRequest.UserLanguages%2A> vlastnost nastavena, získat její první prvek. První prvek určuje výchozí nebo oblíbeného jazyka a oblasti uživatele.  
+2. Pokud je pole řetězců vrácené <xref:System.Web.HttpRequest.UserLanguages%2A> vlastnost nastavena, získat její první prvek. První prvek určuje výchozí nebo oblíbeného jazyka a oblasti uživatele.  
   
-3.  Vytvořit instanci <xref:System.Globalization.CultureInfo> upřednostňované jazykové verze objekt, který reprezentuje uživatele voláním <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType> konstruktoru.  
+3. Vytvořit instanci <xref:System.Globalization.CultureInfo> upřednostňované jazykové verze objekt, který reprezentuje uživatele voláním <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType> konstruktoru.  
   
-4.  Volání na buď `TryParse` nebo `Parse` metoda číselného typu, který chcete převést uživatelský vstup. Použijte přetížení `TryParse` nebo `Parse` metodou `provider` parametr a předat jí některého z následujících:  
+4. Volání na buď `TryParse` nebo `Parse` metoda číselného typu, který chcete převést uživatelský vstup. Použijte přetížení `TryParse` nebo `Parse` metodou `provider` parametr a předat jí některého z následujících:  
   
     -   <xref:System.Globalization.CultureInfo> Objekt vytvořený v kroku 3.  
   
     -   <xref:System.Globalization.NumberFormatInfo> Objekt, který je vrácený <xref:System.Globalization.CultureInfo.NumberFormat%2A> vlastnost <xref:System.Globalization.CultureInfo> objekt vytvořený v kroku 3.  
   
-5.  Pokud převod selže, opakujte kroky 2 až 4 pro každý zbývající prvek v poli řetězců vrácených <xref:System.Web.HttpRequest.UserLanguages%2A> vlastnost.  
+5. Pokud převod selže, opakujte kroky 2 až 4 pro každý zbývající prvek v poli řetězců vrácených <xref:System.Web.HttpRequest.UserLanguages%2A> vlastnost.  
   
-6.  Pokud převod se nezdaří, nebo pokud řetězec pole vrácené metodou <xref:System.Web.HttpRequest.UserLanguages%2A> vlastnost nevyplněná, analýzu řetězce pomocí neutrální jazykové verze, která je vrácena <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> vlastnost.  
+6. Pokud převod se nezdaří, nebo pokud řetězec pole vrácené metodou <xref:System.Web.HttpRequest.UserLanguages%2A> vlastnost nevyplněná, analýzu řetězce pomocí neutrální jazykové verze, která je vrácena <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> vlastnost.  
   
 ## <a name="example"></a>Příklad  
  V následujícím příkladu je na stránce dokončení kódu pro webový formulář s dotazem, aby uživatel zadal číselnou hodnotu ve <xref:System.Web.UI.WebControls.TextBox> řídit a převede na číslo. Toto číslo potom Dvojitá a zobrazit pomocí stejných pravidel formátování jako původní vstup.  

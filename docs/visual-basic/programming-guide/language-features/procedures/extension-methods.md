@@ -7,12 +7,12 @@ helpviewer_keywords:
 - extending data types [Visual Basic]
 - extension methods [Visual Basic]
 ms.assetid: b8020aae-374d-46a9-bcb7-8cc2390b93b6
-ms.openlocfilehash: aca8f18c4bc53318792a119617b1ca0d6c4cc32e
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 9e005d0dc7da154fbaffbf7e02c55445a1213195
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58822073"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59296235"
 ---
 # <a name="extension-methods-visual-basic"></a>Metody rozšíření (Visual Basic)
 Rozšiřující metody umožňují vývojářům přidat vlastní funkce pro datové typy, které jsou již definovány, bez vytváření nového odvozeného typu. Rozšiřující metody umožňují napsat metodu, kterou lze volat jako by šlo metodu instance existujícího typu.  
@@ -160,17 +160,17 @@ End Module
 ## <a name="extension-method-precedence"></a>Priorita rozšiřující metody  
  Když dvě rozšiřující metody, které mají stejné podpisy jsou v oboru a přístupné, bude vyvolána ta s vyšší prioritou. Přednost metody rozšíření je založena na mechanismu použitém k uvedení metody do oboru. Následující seznam obsahuje hierarchii priority od nejvyšší po nejnižší.  
   
-1.  Rozšiřující metody definované uvnitř aktuálního modulu.  
+1. Rozšiřující metody definované uvnitř aktuálního modulu.  
   
-2.  Rozšiřující metody definované uvnitř datových typů v aktuálním oboru názvů, nebo v jednom z jeho rodičů s podřízenými obory názvů mají vyšší prioritu než nadřazené obory názvů.  
+2. Rozšiřující metody definované uvnitř datových typů v aktuálním oboru názvů, nebo v jednom z jeho rodičů s podřízenými obory názvů mají vyšší prioritu než nadřazené obory názvů.  
   
-3.  Rozšiřující metody definované uvnitř libovolných importů typu v aktuálním souboru.  
+3. Rozšiřující metody definované uvnitř libovolných importů typu v aktuálním souboru.  
   
-4.  Rozšiřující metody definované uvnitř libovolných importů oboru názvu v aktuálním souboru.  
+4. Rozšiřující metody definované uvnitř libovolných importů oboru názvu v aktuálním souboru.  
   
-5.  Rozšiřující metody definované uvnitř libovolných importů typu na úrovni projektu.  
+5. Rozšiřující metody definované uvnitř libovolných importů typu na úrovni projektu.  
   
-6.  Rozšiřující metody definované uvnitř libovolných importů oboru názvu na úrovni projektu.  
+6. Rozšiřující metody definované uvnitř libovolných importů oboru názvu na úrovni projektu.  
   
  Pokud přednost nevyřeší nejednoznačnosti, můžete určit metodu, kterou voláte plně kvalifikovaný název. Pokud `Print` metoda v předchozím příkladu je definována v modulu s názvem `StringExtensions`, je plně kvalifikovaný název `StringExtensions.Print(example)` místo `example.Print()`.  
   
@@ -178,10 +178,10 @@ End Module
 
 - <xref:System.Runtime.CompilerServices>
 - <xref:System.Runtime.CompilerServices.ExtensionAttribute>
-- [Rozšiřující metody](../../../../csharp/programming-guide/classes-and-structs/extension-methods.md)
-- [Příkaz Module](../../../../visual-basic/language-reference/statements/module-statement.md)
+- [Metody rozšíření](../../../../csharp/programming-guide/classes-and-structs/extension-methods.md)
+- [Module – příkaz](../../../../visual-basic/language-reference/statements/module-statement.md)
 - [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)
-- [Nepovinné parametry](./optional-parameters.md)
+- [Volitelné parametry](./optional-parameters.md)
 - [Pole parametrů](./parameter-arrays.md)
 - [Přehled atributy](../../../../visual-basic/programming-guide/concepts/attributes/index.md)
-- [Obor v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)
+- [Rozsah v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)

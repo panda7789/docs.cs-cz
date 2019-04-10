@@ -2,12 +2,12 @@
 title: 'Postupy: Používání filtrů'
 ms.date: 03/30/2017
 ms.assetid: f2c7255f-c376-460e-aa20-14071f1666e5
-ms.openlocfilehash: 6f145a9bc2842eaa5dad1a1c0ec6d77eb2b37552
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 5d3ed4a1d64edee274e60f5bf156b4294902df8c
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59216194"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59295520"
 ---
 # <a name="how-to-use-filters"></a>Postupy: Používání filtrů
 Toto téma popisuje základní kroky potřebné k vytvoření konfigurace směrování, která používá více filtrů. V tomto příkladu jsou směrovány dvě implementace službu kalkulačky, regularCalc a roundingCalc zprávy. Obou implementacích podporují stejné operace; jedna služba ale Zaokrouhlí všechny výpočty na nejbližší celočíselnou hodnotu před vrácením. Klientská aplikace musí být schopen určit, jestli se má použít zaokrouhlení verze služby; Pokud je vyjádřená žádná předvolba služby zpráva je mezi těmito dvěma službami s vyrovnáváním zatížení. Operace vystavené obě služby jsou:  
@@ -24,7 +24,7 @@ Toto téma popisuje základní kroky potřebné k vytvoření konfigurace směro
   
 ### <a name="determine-unique-data"></a>Určení jedinečných dat  
   
-1.  Protože obou implementacích služby zpracování stejné operace a jsou v podstatě totožné než data, která vrátí, základní data obsažená ve zprávách odesílaných z klientských aplikací není dostatečně jedinečných, aby bylo možné určit, jak se směrují požadavek. Ale pokud klientská aplikace přidá hodnotu záhlaví ke zprávě, pak můžete použít tuto hodnotu k určení, jak se mají směrovat zprávy.  
+1. Protože obou implementacích služby zpracování stejné operace a jsou v podstatě totožné než data, která vrátí, základní data obsažená ve zprávách odesílaných z klientských aplikací není dostatečně jedinečných, aby bylo možné určit, jak se směrují požadavek. Ale pokud klientská aplikace přidá hodnotu záhlaví ke zprávě, pak můžete použít tuto hodnotu k určení, jak se mají směrovat zprávy.  
   
      Například pokud klientská aplikace potřebuje zpráva, která má být zpracována zaokrouhlení kalkulačky, přidá vlastní hlavičku s použitím následujícího kódu:  
   
@@ -35,11 +35,11 @@ Toto téma popisuje základní kroky potřebné k vytvoření konfigurace směro
   
      Teď můžete použít filtr XPath ke kontrole zpráv pro toto záhlaví a směrovat zprávy obsahující hlavičku do roundCalc služby.  
   
-2.  Kromě toho služba Směrování poskytuje dva koncové body služby virtuální, které lze použít s Název_koncového_bodu EndpointAddress, nebo filtruje PrefixEndpointAddress jednoznačně směrovat příchozí zprávy pro konkrétní Kalkulačka implementaci založené na koncový bod do které klientská aplikace odešle požadavek.  
+2. Kromě toho služba Směrování poskytuje dva koncové body služby virtuální, které lze použít s Název_koncového_bodu EndpointAddress, nebo filtruje PrefixEndpointAddress jednoznačně směrovat příchozí zprávy pro konkrétní Kalkulačka implementaci založené na koncový bod do které klientská aplikace odešle požadavek.  
   
 ### <a name="define-endpoints"></a>Definujte koncové body  
   
-1.  Při definování koncových bodů použitých službou směrování, byste měli určit tvar kanálu používat klientů a služeb. V tomto scénáři cílové služby použít model požadavek odpověď, proto <xref:System.ServiceModel.Routing.IRequestReplyRouter> se používá. Následující příklad definuje koncové body služby, vystavený službou směrování.  
+1. Při definování koncových bodů použitých službou směrování, byste měli určit tvar kanálu používat klientů a služeb. V tomto scénáři cílové služby použít model požadavek odpověď, proto <xref:System.ServiceModel.Routing.IRequestReplyRouter> se používá. Následující příklad definuje koncové body služby, vystavený službou směrování.  
   
     ```xml  
     <services>  
@@ -73,7 +73,7 @@ Toto téma popisuje základní kroky potřebné k vytvoření konfigurace směro
   
      S touto konfigurací směrovací služba poskytuje tři samostatné koncové body. V závislosti na možnosti běhu klientská aplikace odešle zprávy do jedné z těchto adres. Zprávy odeslané na jednom z koncových bodů služby "virtuální" ("zaokrouhlení/Kalkulačka" nebo "normální/Kalkulačka") se předávají do odpovídající implementace kalkulačky. Pokud klientská aplikace nebude odeslat žádost o konkrétní koncový bod, zpráva zaslána obecné koncový bod. Bez ohledu na zvolené koncový bod klientská aplikace si také obsahovat vlastní hlavičky k označení, že mají zprávy předávat zaokrouhlení implementace kalkulačku.  
   
-2.  Následující příklad definuje, které směrovací služba provádí směrování zpráv do koncových bodů klienta (cíl).  
+2. Následující příklad definuje, které směrovací služba provádí směrování zpráv do koncových bodů klienta (cíl).  
   
     ```xml  
     <client>  
@@ -93,7 +93,7 @@ Toto téma popisuje základní kroky potřebné k vytvoření konfigurace směro
   
 ### <a name="define-filters"></a>Definování filtrů  
   
-1.  Chcete-li směrovat zprávy založené na vlastní hlavičky "RoundingCalculator", který klientská aplikace přidá do zprávy, definujte filtr, který se použije dotaz XPath ke kontrole přítomnosti této hlavičky. Protože tato hlavička se definuje pomocí vlastního oboru názvů, přidejte také zadání oboru názvů, který definuje předponu vlastního oboru názvů "vlastní", který se používá v dotazu XPath. Následující příklad definuje oddíl nezbytné směrování, obor názvů tabulku a filtr XPath.  
+1. Chcete-li směrovat zprávy založené na vlastní hlavičky "RoundingCalculator", který klientská aplikace přidá do zprávy, definujte filtr, který se použije dotaz XPath ke kontrole přítomnosti této hlavičky. Protože tato hlavička se definuje pomocí vlastního oboru názvů, přidejte také zadání oboru názvů, který definuje předponu vlastního oboru názvů "vlastní", který se používá v dotazu XPath. Následující příklad definuje oddíl nezbytné směrování, obor názvů tabulku a filtr XPath.  
   
     ```xml  
     <routing>  
@@ -115,7 +115,7 @@ Toto téma popisuje základní kroky potřebné k vytvoření konfigurace směro
     > [!NOTE]
     > Předpona oboru názvů S12 na úrovni Standard je definované ve výchozím nastavení v tabulce obor názvů a představuje obor názvů `http://www.w3.org/2003/05/soap-envelope`.
   
-2.  Musíte také definovat filtry, které vyhledávají zprávy přijaté na dva virtuální koncové body. První virtuální koncový bod je koncový bod "normální/Kalkulačka". K tomuto koncovému bodu k označení, že se mají směrovat zprávy do služby regularCalc může klient odeslat požadavky. Definuje filtr, který používá následující konfiguraci <xref:System.ServiceModel.Dispatcher.EndpointNameMessageFilter> k určení, pokud byla zpráva doručena prostřednictvím koncového bodu s názvem zadaným v fulltextových dat filtru.  
+2. Musíte také definovat filtry, které vyhledávají zprávy přijaté na dva virtuální koncové body. První virtuální koncový bod je koncový bod "normální/Kalkulačka". K tomuto koncovému bodu k označení, že se mají směrovat zprávy do služby regularCalc může klient odeslat požadavky. Definuje filtr, který používá následující konfiguraci <xref:System.ServiceModel.Dispatcher.EndpointNameMessageFilter> k určení, pokud byla zpráva doručena prostřednictvím koncového bodu s názvem zadaným v fulltextových dat filtru.  
   
     ```xml  
     <!--define an endpoint name filter looking for messages that show up on the virtual regular calculator endpoint-->  
@@ -124,7 +124,7 @@ Toto téma popisuje základní kroky potřebné k vytvoření konfigurace směro
   
      Pokud zprávu neobdrží koncový bod služby s názvem "calculatorEndpoint", tento filtr se vyhodnotí jako `true`.  
   
-3.  Dále definujte filtr, který hledá zprávy odeslané na adresu roundingEndpoint. K tomuto koncovému bodu k označení, že se mají směrovat zprávy do služby roundingCalc může klient odeslat požadavky. Definuje filtr, který používá následující konfiguraci <xref:System.ServiceModel.Dispatcher.PrefixEndpointAddressMessageFilter> k určení, pokud byly přijaty zprávy v koncovém bodě "zaokrouhlení/Kalkulačka".  
+3. Dále definujte filtr, který hledá zprávy odeslané na adresu roundingEndpoint. K tomuto koncovému bodu k označení, že se mají směrovat zprávy do služby roundingCalc může klient odeslat požadavky. Definuje filtr, který používá následující konfiguraci <xref:System.ServiceModel.Dispatcher.PrefixEndpointAddressMessageFilter> k určení, pokud byly přijaty zprávy v koncovém bodě "zaokrouhlení/Kalkulačka".  
   
     ```xml  
     <!--define a filter looking for messages that show up with the address prefix.  The corresponds to the rounding calc virtual endpoint-->  
@@ -142,7 +142,7 @@ Toto téma popisuje základní kroky potřebné k vytvoření konfigurace směro
     > -   `www.contoso.com`  
     > -   ContosoWeb01  
   
-4.  Konečné filtr musí podporovat směrování zpráv, které přicházejí na obecné koncový bod bez vlastní hlavičce. V tomto scénáři by měl alternativní zpráv mezi službami regularCalc a roundingCalc. Pro podporu "kruhové dotazování" směrování tyto zprávy, použijte vlastní filtr, který umožňuje jedna instance filtru tak, aby odpovídaly pro každou zprávu zpracovat.  Následující informace definují dvě instance RoundRobinMessageFilter, které jsou seskupeny k označení, že by měl alternativní mezi sebou.  
+4. Konečné filtr musí podporovat směrování zpráv, které přicházejí na obecné koncový bod bez vlastní hlavičce. V tomto scénáři by měl alternativní zpráv mezi službami regularCalc a roundingCalc. Pro podporu "kruhové dotazování" směrování tyto zprávy, použijte vlastní filtr, který umožňuje jedna instance filtru tak, aby odpovídaly pro každou zprávu zpracovat.  Následující informace definují dvě instance RoundRobinMessageFilter, které jsou seskupeny k označení, že by měl alternativní mezi sebou.  
   
     ```xml  
     <!-- Set up the custom message filters.  In this example,   
@@ -160,7 +160,7 @@ Toto téma popisuje základní kroky potřebné k vytvoření konfigurace směro
   
 ### <a name="define-filter-tables"></a>Definujte filtr tabulky  
   
-1.  Filtry přidružit s koncovými body konkrétního klienta, je nutné je umístit v tabulce filtrů. Tento ukázkový scénář také používá nastavení priority filtr, což je volitelné nastavení, která umožňuje určit pořadí, ve kterém jsou zpracovány filtry. Pokud není zadána žádná priorita filtru, všechny filtry jsou vyhodnocovány současně.  
+1. Filtry přidružit s koncovými body konkrétního klienta, je nutné je umístit v tabulce filtrů. Tento ukázkový scénář také používá nastavení priority filtr, což je volitelné nastavení, která umožňuje určit pořadí, ve kterém jsou zpracovány filtry. Pokud není zadána žádná priorita filtru, všechny filtry jsou vyhodnocovány současně.  
   
     > [!NOTE]
     >  Při zadávání prioritu filtr umožňuje řídit pořadí, ve které filtry se zpracovávají, může nepříznivě ovlivnit výkon služby směrování. Pokud je to možné, vytvořte filtr logiky tak, aby se nevyžaduje použití filtru priority.  
@@ -186,7 +186,7 @@ Toto téma popisuje základní kroky potřebné k vytvoření konfigurace směro
   
      Při určování priority filtr, filtry nejvyšší prioritou, je vyhodnocen jako první. Pokud jeden nebo více filtrů na úrovni s konkrétní prioritou shodují, se vyhodnotí na nižších úrovních priority se žádné filtry. V tomto scénáři 2 je nejvyšší pořadí podle priority a jde o jediný záznam filtr na této úrovni.  
   
-2.  Chcete-li zkontrolovat, pokud je přijata zpráva na určitý koncový bod zkontrolováním název koncového bodu nebo předpona adresy byly definovány položky filtru. Následující položky přidat obě tyto položky filtru tabulky filtru a přidružit je k cílové koncové body, které zprávy se budou směrovat do. Tyto filtry nastavené s prioritou 1 označuje, že jejich by měl spustí jenom v případě předchozího filtr XPath neodpovídá zprávu.  
+2. Chcete-li zkontrolovat, pokud je přijata zpráva na určitý koncový bod zkontrolováním název koncového bodu nebo předpona adresy byly definovány položky filtru. Následující položky přidat obě tyto položky filtru tabulky filtru a přidružit je k cílové koncové body, které zprávy se budou směrovat do. Tyto filtry nastavené s prioritou 1 označuje, že jejich by měl spustí jenom v případě předchozího filtr XPath neodpovídá zprávu.  
   
     ```xml  
     <!--if the header wasn't there, send the message based on which virtual endpoint it arrived at-->  
@@ -197,7 +197,7 @@ Toto téma popisuje základní kroky potřebné k vytvoření konfigurace směro
   
      Vzhledem k tomu, že tyto filtry filtr priority 1, že bude vyhodnocena pouze pokud filtr na úrovni priority 2 neodpovídá zprávu. Navíc vzhledem k tomu, že oba filtry mají stejnou prioritu, se vyhodnotí současně. Protože oba filtry se vzájemně vylučují, je možné pouze jeden z nich tak, aby odpovídaly zprávu.  
   
-3.  Pokud zpráva neodpovídá žádnému z předchozí filtrů, zpráva byla přijata prostřednictvím koncového bodu obecná služba a neobsahuje žádné informace hlavičky, která označuje, kde ho směrovat. Tyto zprávy jsou zpracovávat vlastní filtr vyrovnává které zatížení mezi dvěma Kalkulačka služby. Následující příklad ukazuje, jak přidat filtr položky do tabulce filtru. Každý filtr je přidružený nejméně k jednomu ze dvou cílové koncové body.  
+3. Pokud zpráva neodpovídá žádnému z předchozí filtrů, zpráva byla přijata prostřednictvím koncového bodu obecná služba a neobsahuje žádné informace hlavičky, která označuje, kde ho směrovat. Tyto zprávy jsou zpracovávat vlastní filtr vyrovnává které zatížení mezi dvěma Kalkulačka služby. Následující příklad ukazuje, jak přidat filtr položky do tabulce filtru. Každý filtr je přidružený nejméně k jednomu ze dvou cílové koncové body.  
   
     ```xml  
     <!--if none of the other filters have matched,   
@@ -212,7 +212,7 @@ Toto téma popisuje základní kroky potřebné k vytvoření konfigurace směro
   
      Jak už bylo zmíněno dříve, vlastní filtr používá tyto definice filtru vyhodnotí pouze jednu nebo jiných jako `true` u každé zprávy přijaté. Protože pouze dva filtry jsou definovány pomocí tohoto filtru, stejné nastavení zadané skupiny, efekt je, že směrovací služba střídá odesílání regularCalcEndpoint a RoundingCalcEndpoint.  
   
-4.  K vyhodnocení zpráv filtry, musí být filtr tabulky nejprve přidružené koncové body služby, které se použijí pro příjem zpráv.  Následující příklad ukazuje, jak přidružit směrovací tabulce koncových bodů služby pomocí směrování chování:  
+4. K vyhodnocení zpráv filtry, musí být filtr tabulky nejprve přidružené koncové body služby, které se použijí pro příjem zpráv.  Následující příklad ukazuje, jak přidružit směrovací tabulce koncových bodů služby pomocí směrování chování:  
   
     ```xml  
     <behaviors>  

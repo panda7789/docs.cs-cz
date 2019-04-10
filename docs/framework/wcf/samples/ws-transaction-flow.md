@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Transactions
 ms.assetid: f8eecbcf-990a-4dbb-b29b-c3f9e3b396bd
-ms.openlocfilehash: 35af3090c0f898578a5f8dfb81d02d22a0074ad2
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.openlocfilehash: cde5599734dbeb450e10b2b74cf035b41129d653
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47108491"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59296092"
 ---
 # <a name="ws-transaction-flow"></a>Tok transakcí webové služby
 Tato ukázka demonstruje použití transakce koordinovaný klienta a klient a server možnosti pro transakci tok pomocí protokolu WS-Atomic Transactions nebo OleTransactions. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) , který implementuje službu kalkulačky, ale operace mají atributy pro demonstraci použití `TransactionFlowAttribute` s **TransactionFlowOption** výčet, chcete-li zjistit, jaké úroveň transakce je povolen tok. V rámci oboru sdružení probíhajících transakcí, protokol požadované operace jsou zapsána do databáze a zůstává v platnosti do klienta koordinované transakce byla dokončena – Pokud klientská transakce nedokončí, transakce webové služby zajišťuje, že příslušné aktualizace do databáze nejsou potvrzeny.  
@@ -188,7 +188,7 @@ Console.WriteLine("Transaction committed");
   
 -   Druhá `Subtract` žádosti se provede v rámci nového oboru transakce deklarována s `TransactionScopeOption.Suppress` možnost. Toto potlačí počáteční vnější transakci klienta a požadavek nepostupuje transakci ke službě. Tento přístup umožňuje klientovi explicitně odhlásit a ochranu proti toku transakce služby, při které se nevyžaduje. V rámci oboru transakce nové a nepřipojené provedou služby akce.  
   
--   `Multiply` Žádost o nepostupuje transakce ve službě, protože klient vygenerovaný definice `ICalculator` zahrnuje rozhraní <xref:System.ServiceModel.TransactionFlowAttribute> nastavena na <xref:System.ServiceModel.TransactionFlowOption> `NotAllowed`.  
+-   `Multiply` Žádost o nepostupuje transakce ve službě, protože klient vygenerovaný definice `ICalculator` zahrnuje rozhraní <xref:System.ServiceModel.TransactionFlowAttribute> nastavena na <xref:System.ServiceModel.TransactionFlowOption>`NotAllowed`.  
   
 -   `Divide` Požadavek nepostupuje transakce ve službě, protože znovu klienta vygenerovaný definice `ICalculator` rozhraní nezahrnuje `TransactionFlowAttribute`. V rámci oboru jinou transakcí nové a nepřipojené dojde znovu k akcím služby.  
   
@@ -223,11 +223,11 @@ Press <ENTER> to terminate the service.
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
-1.  Chcete-li sestavení C# nebo Visual Basic .NET verze řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md)  
+1. Chcete-li sestavení C# nebo Visual Basic .NET verze řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md)  
   
-2.  Ujistěte se, že jste nainstalovali SQL Server Express Edition nebo SQL Server a že připojovací řetězec správně nastavena v konfiguračním souboru aplikace služby. Ke spuštění ukázky bez použití databáze, nastavte `usingSql` hodnoty v konfiguračním souboru aplikace služby k `false`  
+2. Ujistěte se, že jste nainstalovali SQL Server Express Edition nebo SQL Server a že připojovací řetězec správně nastavena v konfiguračním souboru aplikace služby. Ke spuštění ukázky bez použití databáze, nastavte `usingSql` hodnoty v konfiguračním souboru aplikace služby k `false`  
   
-3.  Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3. Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
     > [!NOTE]
     >  Pro konfigurace mezi počítači povolte koordinátor distribuovaných transakcí pomocí následujícího postupu a použít nástroj WsatConfig.exe ze sady Windows SDK k povolení podpory síťové transakce WCF. Zobrazit [konfigurace WS-Atomic podpora transakcí](https://go.microsoft.com/fwlink/?LinkId=190370) informace o nastavení WsatConfig.exe.  
@@ -236,7 +236,7 @@ Press <ENTER> to terminate the service.
   
 ### <a name="to-configure-the-microsoft-distributed-transaction-coordinator-msdtc-to-support-running-the-sample"></a>Konfigurace Microsoft distribuované transakce koordinátor (MSDTC) k podpoře spouštění vzorku  
   
-1.  V rámci služby počítače se systémem Windows Server 2003 nebo Windows XP nakonfigurujte MSDTC povolit příchozí síťové transakce podle těchto pokynů.  
+1. V rámci služby počítače se systémem Windows Server 2003 nebo Windows XP nakonfigurujte MSDTC povolit příchozí síťové transakce podle těchto pokynů.  
   
     1.  Z **Start** nabídky, přejděte na **ovládací panely**, pak **nástroje pro správu**a potom **služby Component Services**.  
   
@@ -250,9 +250,9 @@ Press <ENTER> to terminate the service.
   
     6.  Klikněte na tlačítko **OK**, pak klikněte na tlačítko **Ano** restartování služby MSDTC.  
   
-    7.  Klikněte na tlačítko **OK** zavřete dialogové okno.  
+    7.  Kliknutím na **OK** zavřete dialogové okno.  
   
-2.  V rámci služby počítače se systémem Windows Server 2008 nebo Windows Vista nakonfigurujte MSDTC povolit příchozí síťové transakce podle těchto pokynů.  
+2. V rámci služby počítače se systémem Windows Server 2008 nebo Windows Vista nakonfigurujte MSDTC povolit příchozí síťové transakce podle těchto pokynů.  
   
     1.  Z **Start** nabídky, přejděte na **ovládací panely**, pak **nástroje pro správu**a potom **služby Component Services**.  
   
@@ -264,9 +264,9 @@ Press <ENTER> to terminate the service.
   
     5.  Klikněte na tlačítko **OK**, pak klikněte na tlačítko **Ano** restartování služby MSDTC.  
   
-    6.  Klikněte na tlačítko **OK** zavřete dialogové okno.  
+    6.  Kliknutím na **OK** zavřete dialogové okno.  
   
-3.  V klientském počítači nakonfigurujte MSDTC povolit odchozí síťové transakce:  
+3. V klientském počítači nakonfigurujte MSDTC povolit odchozí síťové transakce:  
   
     1.  Z **Start** nabídky, přejděte na `Control Panel`, pak **nástroje pro správu**a potom **služby Component Services**.  
   
@@ -278,7 +278,7 @@ Press <ENTER> to terminate the service.
   
     5.  Klikněte na tlačítko **OK**, pak klikněte na tlačítko **Ano** restartování služby MSDTC.  
   
-    6.  Klikněte na tlačítko **OK** zavřete dialogové okno.  
+    6.  Kliknutím na **OK** zavřete dialogové okno.  
   
 > [!IMPORTANT]
 >  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  

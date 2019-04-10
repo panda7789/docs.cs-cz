@@ -2,12 +2,12 @@
 title: Migrace z .NET Remoting do WCF
 ms.date: 03/30/2017
 ms.assetid: 16902a42-ef80-40e9-8c4c-90e61ddfdfe5
-ms.openlocfilehash: 38ec11b529c7b0444d47971938fb711fe40bee3d
-ms.sourcegitcommit: 0069cb3de8eed4e92b2195d29e5769a76111acdd
+ms.openlocfilehash: c6bc16e97a87461be7b2c4877777329a0005a497
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "56333063"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59296196"
 ---
 # <a name="migrating-from-net-remoting-to-wcf"></a>Migrace z .NET Remoting do WCF
 Tento článek popisuje, jak migrovat aplikace, která používá vzdálené komunikace .NET na použití služby Windows Communication Foundation (WCF). Porovná podobné koncepty mezi tyto produkty a pak popisuje, jak provádět několik běžných scénářů vzdálené komunikace v WCF.  
@@ -142,18 +142,18 @@ Console.WriteLine($"  Customer {customer.FirstName} {customer.LastName} received
   
  Tento příklad ukazuje programování na úrovni kanálu, protože je nejvíce podobně jako v příkladu vzdálené komunikace. K dispozici je také **přidat odkaz na službu** přístup v sadě Visual Studio, který generuje kód pro zjednodušení programování klienta. Další informace naleznete v následujících tématech:  
   
--   [Programování klienta na úrovni kanálu](./extending/client-channel-level-programming.md)  
+-   [Programování na úrovni kanálu klienta](./extending/client-channel-level-programming.md)  
   
 -   [Postupy: Přidání, aktualizace nebo odebrání odkazu na službu](/visualstudio/data-tools/how-to-add-update-or-remove-a-wcf-data-service-reference)  
   
 ### <a name="serialization-usage"></a>Použití serializace  
  Vzdálené komunikace .NET a WCF používat k odesílání objektů mezi klientem a serverem serializace, ale liší se v těchto důležitých směrech –:  
   
-1.  Používají různé serializátory a konvence lze označit, jaký k serializaci.  
+1. Používají různé serializátory a konvence lze označit, jaký k serializaci.  
   
-2.  Vzdálené komunikace .NET podporuje "podle odkazu" serializace, která umožňuje přístup metody nebo vlastnosti na jednu vrstvu k provádění kódu na jiné úrovni, což je hranice zabezpečení. Tato funkce zpřístupňuje ohrožení zabezpečení a je jedním z hlavních důvodů, proč koncové body vzdálené komunikace by měly být vystaveny nikdy k nedůvěryhodné klienty.  
+2. Vzdálené komunikace .NET podporuje "podle odkazu" serializace, která umožňuje přístup metody nebo vlastnosti na jednu vrstvu k provádění kódu na jiné úrovni, což je hranice zabezpečení. Tato funkce zpřístupňuje ohrožení zabezpečení a je jedním z hlavních důvodů, proč koncové body vzdálené komunikace by měly být vystaveny nikdy k nedůvěryhodné klienty.  
   
-3.  Vzdálená komunikace používá serializace je odhlásit (explicitně vyloučit jaké není určená k serializaci) a WCF serializace je vyjádřit výslovný souhlas (explicitně označit členy k serializaci).  
+3. Vzdálená komunikace používá serializace je odhlásit (explicitně vyloučit jaké není určená k serializaci) a WCF serializace je vyjádřit výslovný souhlas (explicitně označit členy k serializaci).  
   
 #### <a name="serialization-in-net-remoting"></a>Serializace v .NET Remoting  
  Vzdálené komunikace .NET podporuje dva způsoby, jak k serializaci a deserializaci objektů mezi klientem a serverem:  
@@ -310,11 +310,11 @@ catch (FaultException<CustomerServiceFault> fault)
 ### <a name="migration-scenarios"></a>Scénáře migrace  
  Nyní Pojďme zjistit, jak provést následující běžné scénáře vzdálené komunikace v WCF:  
   
-1.  Server vrátí klientovi objektu podle hodnoty  
+1. Server vrátí klientovi objektu podle hodnoty  
   
-2.  Server vrátí klientovi pomocí – odkaz na objekt  
+2. Server vrátí klientovi pomocí – odkaz na objekt  
   
-3.  Klient odešle na server objektu podle hodnoty  
+3. Klient odešle na server objektu podle hodnoty  
   
 > [!NOTE]
 >  Odesílání pomocí – odkaz na objekt z klienta na server není povolena ve službě WCF.  
@@ -338,7 +338,7 @@ public class RemotingServer : MarshalByRefObject
 #### <a name="scenario-1-service-returns-an-object-by-value"></a>Scénář 1: Služba vrátí objekt podle hodnoty  
  Tento scénář předvádí server objektu podle hodnoty vrácením klientovi. WCF vždy vrátí objekty ze serveru podle hodnoty, takže takto jednoduše popisují, jak vytvářet běžné služby WCF.  
   
-1.  Začněte tím, že definování veřejného rozhraní pro službu WCF a označte ji pomocí atributu [ServiceContract]. K identifikaci metody na straně serveru, který bude volat naše klientské používáme [OperationContract].  
+1. Začněte tím, že definování veřejného rozhraní pro službu WCF a označte ji pomocí atributu [ServiceContract]. K identifikaci metody na straně serveru, který bude volat naše klientské používáme [OperationContract].  
   
    ```csharp
    [ServiceContract]  
@@ -352,7 +352,7 @@ public class RemotingServer : MarshalByRefObject
    }  
    ```  
   
-2.  Dalším krokem je vytvoření kontraktu dat pro tuto službu. To provedeme vytvořením tříd (nikoli rozhraní) označená pomocí atributu [kontraktu dat DataContract]. Jednotlivé vlastnosti nebo pole, která chceme, aby viditelné pro klienta a serveru jsou označené [DataMember]. Pokud se mají povolit odvozené typy, musíme použít atribut [Třída KnownType] jejich identifikaci. Pouze typy WCF umožní serializován nebo deserializován pro tuto službu jsou v rozhraní služby a tyto "známé typy". Pokus o výměně jakýkoli jiný typ není v tomto seznamu budou odmítnuty.  
+2. Dalším krokem je vytvoření kontraktu dat pro tuto službu. To provedeme vytvořením tříd (nikoli rozhraní) označená pomocí atributu [kontraktu dat DataContract]. Jednotlivé vlastnosti nebo pole, která chceme, aby viditelné pro klienta a serveru jsou označené [DataMember]. Pokud se mají povolit odvozené typy, musíme použít atribut [Třída KnownType] jejich identifikaci. Pouze typy WCF umožní serializován nebo deserializován pro tuto službu jsou v rozhraní služby a tyto "známé typy". Pokus o výměně jakýkoli jiný typ není v tomto seznamu budou odmítnuty.  
   
    ```csharp
    [DataContract]  
@@ -377,7 +377,7 @@ public class RemotingServer : MarshalByRefObject
    }  
    ```  
   
-3.  Dále poskytujeme implementace rozhraní služby.  
+3. Dále poskytujeme implementace rozhraní služby.  
   
    ```csharp  
    public class CustomerService : ICustomerService  
@@ -394,7 +394,7 @@ public class RemotingServer : MarshalByRefObject
    }  
    ```  
   
-4.  Ke spuštění služby WCF, musíme deklarovat koncový bod, který zpřístupňuje rozhraní služby na konkrétní adrese URL použití konkrétní vazeb WCF. To se obvykle provádí přidáním následující části souboru web.config a server project.  
+4. Ke spuštění služby WCF, musíme deklarovat koncový bod, který zpřístupňuje rozhraní služby na konkrétní adrese URL použití konkrétní vazeb WCF. To se obvykle provádí přidáním následující části souboru web.config a server project.  
   
     ```xml  
     <configuration>  
@@ -410,7 +410,7 @@ public class RemotingServer : MarshalByRefObject
     </configuration>  
     ```  
   
-5.  Služby WCF může být spuštěn s následujícím kódem:  
+5. Služby WCF může být spuštěn s následujícím kódem:  
   
    ```csharp
    ServiceHost customerServiceHost = new ServiceHost(typeof(CustomerService));  
@@ -419,7 +419,7 @@ public class RemotingServer : MarshalByRefObject
   
      Při spuštění tohoto hostitele ServiceHost pomocí souboru web.config zřizuje správné kontrakt, vazbu a koncový bod. Další informace o konfiguračních souborech najdete v tématu [konfigurace služeb pomocí konfiguračních souborů](./configuring-services-using-configuration-files.md). Tento styl spouštění na serveru se označuje jako s vlastním hostováním. Další informace o další možnosti hostování služby WCF, naleznete v tématu [hostování služeb](./hosting-services.md).  
   
-6.  Klientský projekt app.config musí deklarovat odpovídající informace o vazbě pro koncový bod služby. Nejjednodušší způsob, jak to provést v sadě Visual Studio je určený **přidat odkaz na službu**, která bude automaticky aktualizovat soubor app.config. Můžete také tyto stejné změny je možné přidat ručně.  
+6. Klientský projekt app.config musí deklarovat odpovídající informace o vazbě pro koncový bod služby. Nejjednodušší způsob, jak to provést v sadě Visual Studio je určený **přidat odkaz na službu**, která bude automaticky aktualizovat soubor app.config. Můžete také tyto stejné změny je možné přidat ručně.  
   
     ```xml  
     <configuration>  
@@ -436,7 +436,7 @@ public class RemotingServer : MarshalByRefObject
   
      Další informace o používání **přidat odkaz na službu**, naleznete v tématu [jak: Přidání, aktualizace nebo odebrání odkazu na službu](/visualstudio/data-tools/how-to-add-update-or-remove-a-wcf-data-service-reference).  
   
-7.  Nyní jsme volat službu WCF z klienta. Můžeme to udělat tak vytvoření objektu pro vytváření kanálů pro tuto službu požadujícího kanál a přímo volat metodu, kterou chceme, aby na tomto kanálu. Můžeme to udělat, protože kanál implementuje rozhraní služby a zpracuje požadavek nebo odpověď logiku pro nás. Návratová hodnota z volání této metody je deserializovat kopie odpověď serveru.  
+7. Nyní jsme volat službu WCF z klienta. Můžeme to udělat tak vytvoření objektu pro vytváření kanálů pro tuto službu požadujícího kanál a přímo volat metodu, kterou chceme, aby na tomto kanálu. Můžeme to udělat, protože kanál implementuje rozhraní služby a zpracuje požadavek nebo odpověď logiku pro nás. Návratová hodnota z volání této metody je deserializovat kopie odpověď serveru.  
   
    ```csharp
    ChannelFactory<ICustomerService> factory =  
@@ -451,7 +451,7 @@ public class RemotingServer : MarshalByRefObject
 #### <a name="scenario-2-server-returns-an-object-by-reference"></a>Scénář 2: Server vrací objekt odkazem.  
  Tento scénář předvádí serveru, který poskytuje objekt pro klienta podle odkazu. Ve vzdálené komunikace .NET, to je automaticky zpracována pro libovolného typu odvozeného od třídy MarshalByRefObject, což je serializován podle odkazu. Příkladem tohoto scénáře je povolení více klientům mají nezávislé objekty s relacemi na straně serveru. Jak už jsme zmínili, objektů vrácených službou WCF neustále podle hodnoty, takže není žádný přímý ekvivalent objektu podle odkazu, ale je možné dosáhnout něco podobného pomocí sémantiky odkazem <xref:System.ServiceModel.EndpointAddress10> objektu. Toto je objekt serializovatelný podle hodnoty, který je možné k získání objektu s relacemi odkazem na serveru klientem. To umožňuje scénáře s více klienty s nezávislé objekty s relacemi na straně serveru.  
   
-1.  Nejdřív potřebujeme definování kontraktu služby WCF, která odpovídá na samotný objekt s relacemi.  
+1. Nejdřív potřebujeme definování kontraktu služby WCF, která odpovídá na samotný objekt s relacemi.  
   
    ```csharp
    [ServiceContract(SessionMode = SessionMode.Allowed)]  
@@ -468,7 +468,7 @@ public class RemotingServer : MarshalByRefObject
     > [!TIP]
     >  Všimněte si, že objekt s relacemi je označená pomocí [ServiceContract], což normální rozhraní služby WCF. Nastavení režim SessionMode vlastnost určuje, že bude služba s relacemi. Relace ve službě WCF, je způsob, jak korelace více posílané mezi dva koncové body. To znamená, že Jakmile klient získá připojení pro tuto službu, relace navázat mezi klientem a serverem. Klient použije jeden jedinečný instance objektu na straně serveru pro všechny jeho interakce v rámci této jedné relace.  
   
-2.  V dalším kroku potřebujeme pro poskytování implementací rozhraní této služby. Označující s [ServiceBehavior] a nastavením režim InstanceContextMode, můžeme říct WCF, které že chceme pro každou relaci pomocí jedinečných instance tohoto typu.  
+2. V dalším kroku potřebujeme pro poskytování implementací rozhraní této služby. Označující s [ServiceBehavior] a nastavením režim InstanceContextMode, můžeme říct WCF, které že chceme pro každou relaci pomocí jedinečných instance tohoto typu.  
   
    ```csharp
    [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerSession)]  
@@ -489,7 +489,7 @@ public class RemotingServer : MarshalByRefObject
        }  
    ```  
   
-3.  Nyní potřebujeme způsob, jak získat instanci tohoto objektu s relacemi. Uděláme to tak, že vytvoříte jiného rozhraní služby WCF, která vrací objekt EndpointAddress10. Toto je serializovatelného tvaru koncového bodu, který může klient použít k vytvoření objektu s relacemi.  
+3. Nyní potřebujeme způsob, jak získat instanci tohoto objektu s relacemi. Uděláme to tak, že vytvoříte jiného rozhraní služby WCF, která vrací objekt EndpointAddress10. Toto je serializovatelného tvaru koncového bodu, který může klient použít k vytvoření objektu s relacemi.  
   
    ```csharp
    [ServiceContract]  
@@ -522,7 +522,7 @@ public class RemotingServer : MarshalByRefObject
   
      Tato implementace udržuje typu singleton objektu pro vytváření kanálů vytváření relací objektů. Při volání GetInstanceAddress() vytvoří kanál a vytvoří EndpointAddress10 objekt, který efektivně odkazuje na vzdálenou adresu spojený s tímto kanálem. EndpointAddress10 je jednoduše datový typ, který může být vrácen do klienta podle hodnota.  
   
-4.  Potřebujeme upravit konfigurační soubor serveru tímto způsobem následující dvě věci, jak je znázorněno v následujícím příkladu:  
+4. Potřebujeme upravit konfigurační soubor serveru tímto způsobem následující dvě věci, jak je znázorněno v následujícím příkladu:  
   
     1.  Deklarace \<klienta > část popisující koncový bod pro objekt s relacemi. To je nezbytné, protože server také funguje jako klient v této situaci.  
   
@@ -568,7 +568,7 @@ public class RemotingServer : MarshalByRefObject
    sessionHost.Open();  
    ```  
   
-5.  Nakonfigurujeme deklarováním tyto stejné koncové body v souboru app.config jeho projektu klienta.  
+5. Nakonfigurujeme deklarováním tyto stejné koncové body v souboru app.config jeho projektu klienta.  
   
     ```xml  
     <configuration>  
@@ -591,7 +591,7 @@ public class RemotingServer : MarshalByRefObject
     </configuration>  
     ```  
   
-6.  Pokud chcete vytvořit a použít tento objekt s relacemi, musí klient proveďte následující kroky:  
+6. Pokud chcete vytvořit a použít tento objekt s relacemi, musí klient proveďte následující kroky:  
   
     1.  Vytvořte kanál ke službě ISessionBoundFactory.  
   
@@ -634,9 +634,9 @@ public class RemotingServer : MarshalByRefObject
 #### <a name="scenario-3-client-sends-server-a-by-value-instance"></a>Scénář 3: Klient odešle serveru Instance podle hodnoty  
  Tento scénář předvádí klientů v odesílání instance objektu jiného než primitivního typu serveru podle hodnoty. Protože WCF odesílá pouze objekty podle hodnoty, tento scénář předvádí normálního využití WCF.  
   
-1.  Používaly stejnou službu WCF z scénář 1.  
+1. Používaly stejnou službu WCF z scénář 1.  
   
-2.  Klienta můžete použijte k vytvoření nového objektu podle hodnoty (zákazníka), vytvořit kanál ke komunikaci se službou ICustomerService a posílat objektu.  
+2. Klienta můžete použijte k vytvoření nového objektu podle hodnoty (zákazníka), vytvořit kanál ke komunikaci se službou ICustomerService a posílat objektu.  
   
    ```csharp
    ChannelFactory<ICustomerService> factory =  

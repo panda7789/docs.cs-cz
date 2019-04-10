@@ -14,12 +14,12 @@ helpviewer_keywords:
 - performance troubleshooting [WPF], animation
 - animations [WPF], use of system resources
 ms.assetid: e467796b-d5d4-45a6-a108-8c5d7ff69a0f
-ms.openlocfilehash: 1337dac083ad9d52a4cfd99bddee80baebf474de
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 3a22c83eb739a735d42fa0f670716a0e75bbd54c
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59202141"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59295949"
 ---
 # <a name="animation-tips-and-tricks"></a>Tipy a triky animace
 Při práci s animací v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], existuje několik tipů a triků, které můžete provést vašich animacích líp fungovat a uložit frustrace.  
@@ -71,9 +71,9 @@ Při práci s animací v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharpt
   
  Pokud kliknete na druhé tlačítko při prvním <xref:System.Windows.Media.Animation.Storyboard> je přehrávání, by se dalo očekávat následující chování:  
   
-1.  První scénář ukončí a odešle obdélník zpět do původní polohy, protože má animace <xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A> z <xref:System.Windows.Media.Animation.FillBehavior.Stop>.  
+1. První scénář ukončí a odešle obdélník zpět do původní polohy, protože má animace <xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A> z <xref:System.Windows.Media.Animation.FillBehavior.Stop>.  
   
-2.  Druhý scénář se projeví a animuje od aktuální pozice, který je nyní 0 na 500.  
+2. Druhý scénář se projeví a animuje od aktuální pozice, který je nyní 0 na 500.  
   
  **Ale to je, není co se stane.** Místo toho obdélník nepřejde; zpět pokračuje v přesuňte do pravé. Důvodem je skutečnost, že druhé animace používá aktuální hodnotu prvního animace jako svou výchozí hodnotu a animuje z této hodnoty na 500. Když druhé animace nahradí první, protože <xref:System.Windows.Media.Animation.HandoffBehavior.SnapshotAndReplace><xref:System.Windows.Media.Animation.HandoffBehavior> se používá, <xref:System.Windows.Media.Animation.FillBehavior> prvního animace není důležitá.  
   
