@@ -8,12 +8,12 @@ helpviewer_keywords:
 - /target compiler options [C#], /target:exe
 - -target compiler options [C#], /target:exe
 ms.assetid: bda5717d-1b91-4848-956b-fcf85c30e432
-ms.openlocfilehash: b9efa25870e11e0140cba2ad39c3bc4515056ce3
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 7d34a25fd614a209761714e1f4eff3042ca240c0
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54697878"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59331309"
 ---
 # <a name="-targetexe-c-compiler-options"></a>-target:exe (C# Compiler Options)
 **-Target: exe** možnost způsobí, že kompilátor vytvoří spustitelný soubor (EXE) konzolové aplikace.  
@@ -37,11 +37,11 @@ ms.locfileid: "54697878"
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Nastavení tohoto parametru kompilátoru ve vývojovém prostředí Visual Studio  
   
-1.  Otevřete v projektu **vlastnosti** stránky.  
+1. Otevřete v projektu **vlastnosti** stránky.  
   
-2.  Klikněte na tlačítko **aplikace** stránku vlastností.  
+2. Klikněte na tlačítko **aplikace** stránku vlastností.  
   
-3.  Upravit **typ výstupu** vlastnost.  
+3. Upravit **typ výstupu** vlastnost.  
   
  Informace o tom, jak prostřednictvím kódu programu nastavení tohoto parametru kompilátoru najdete v tématu <xref:VSLangProj80.ProjectProperties3.OutputType%2A>.  
   
@@ -56,4 +56,4 @@ csc in.cs
 ## <a name="see-also"></a>Viz také:
 
 - [-target (možnosti kompilátoru C#)](../../../csharp/language-reference/compiler-options/target-compiler-option.md)
-- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)
+- [Možnosti kompilátoru C#](../../../csharp/language-reference/compiler-options/index.md)

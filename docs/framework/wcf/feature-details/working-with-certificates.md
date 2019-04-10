@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - certificates [WCF]
 ms.assetid: 6ffb8682-8f07-4a45-afbb-8d2487e9dbc3
-ms.openlocfilehash: 3b7fa5d22283f6f69e1f13ecd32e34a6700f32c4
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 1b4451b11fed2fd138985824d5f139e192c51f45
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59115697"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59331712"
 ---
 # <a name="working-with-certificates"></a>Práce s certifikáty
 Programování zabezpečení Windows Communication Foundation (WCF), digitální certifikáty X.509 běžně slouží k ověřování klientů a serverů, šifrování a digitálnímu podepisování zpráv. V tomto tématu stručně popisuje funkce digitální certifikát X.509 a jak je používat v WCF a obsahuje odkazy na témata, která popisují tyto koncepty další nebo, která ukazují, jak provádět běžné úlohy pomocí WCF a certifikáty.  
@@ -90,13 +90,13 @@ Programování zabezpečení Windows Communication Foundation (WCF), digitální
   
 #### <a name="to-build-a-chain-of-trust-with-the-new-selfsignedcertificate-cmdlet"></a>Sestavit řetěz certifikátů pomocí rutiny New-SelfSignedCertificate  
   
-1.  Vytvořte dočasný kořenové autoritě (certifikát podepsaný svým držitelem) pomocí rutiny New-SelfSignedCertificate. Privátní klíč uložte na disk.  
+1. Vytvořte dočasný kořenové autoritě (certifikát podepsaný svým držitelem) pomocí rutiny New-SelfSignedCertificate. Privátní klíč uložte na disk.  
   
-2.  Použití nového certifikátu k vystavení dalšího certifikátu, který obsahuje veřejný klíč.  
+2. Použití nového certifikátu k vystavení dalšího certifikátu, který obsahuje veřejný klíč.  
   
-3.  Kořenový certifikát autority naimportujte do úložiště Důvěryhodné kořenové certifikační autority.  
+3. Kořenový certifikát autority naimportujte do úložiště Důvěryhodné kořenové certifikační autority.  
   
-4.  Podrobné pokyny najdete v tématu [jak: Vytváření dočasných certifikátů pro použití během vývoje](../../../../docs/framework/wcf/feature-details/how-to-create-temporary-certificates-for-use-during-development.md).  
+4. Podrobné pokyny najdete v tématu [jak: Vytváření dočasných certifikátů pro použití během vývoje](../../../../docs/framework/wcf/feature-details/how-to-create-temporary-certificates-for-use-during-development.md).  
   
 ## <a name="which-certificate-to-use"></a>Který certifikát se má použít?  
  Běžné dotazy týkající se certifikátů jsou který certifikát se má použít a proč. Odpověď závisí na tom, jestli jsou programování klienta nebo služby. Tyto informace obsahuje obecných pokynů a není vyčerpávající odpovědi na tyto otázky.  

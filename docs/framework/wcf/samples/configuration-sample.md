@@ -2,12 +2,12 @@
 title: Ukázka konfigurace
 ms.date: 03/30/2017
 ms.assetid: 75515b4a-8d70-44c8-99e0-7423df41380e
-ms.openlocfilehash: 6ceea71e4adc4e8c25ca624ca8adb6e08713a93b
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 48f66c4110d048f714dae0943f97f3f4aa7cd419
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59158701"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59332518"
 ---
 # <a name="configuration-sample"></a>Ukázka konfigurace
 Tento příklad ukazuje použití konfiguračního souboru služby zjistitelnost.  
@@ -261,10 +261,10 @@ behaviorConfiguration="endpointBehaviorConfiguration"
   
 #### <a name="to-use-this-sample"></a>Pro fungování této ukázky  
   
-1.  Tato ukázka používá koncové body HTTP a použít tuto ukázku, správné seznamy ACL adresy URL musí být přidán viz [konfigurace HTTP a HTTPS](https://go.microsoft.com/fwlink/?LinkId=70353) podrobnosti. Provádění se zvýšenými oprávněními následující příkaz by měl přidat příslušné seznamy ACL. Můžete nahradit doména a uživatelské jméno pro následující argumenty, pokud příkaz nefunguje, jak je. `netsh http add urlacl url=http://+:8000/ user=%DOMAIN%\%UserName%`  
+1. Tato ukázka používá koncové body HTTP a použít tuto ukázku, správné seznamy ACL adresy URL musí být přidán viz [konfigurace HTTP a HTTPS](https://go.microsoft.com/fwlink/?LinkId=70353) podrobnosti. Provádění se zvýšenými oprávněními následující příkaz by měl přidat příslušné seznamy ACL. Můžete nahradit doména a uživatelské jméno pro následující argumenty, pokud příkaz nefunguje, jak je. `netsh http add urlacl url=http://+:8000/ user=%DOMAIN%\%UserName%`  
   
-2.  Sestavte řešení.  
+2. Sestavte řešení.  
   
-3.  Spusťte spustitelný soubor služby z adresáře sestavení.  
+3. Spusťte spustitelný soubor služby z adresáře sestavení.  
   
-4.  Spusťte klientský spustitelný soubor. Všimněte si, že se najít službu klienta.  
+4. Spusťte klientský spustitelný soubor. Všimněte si, že se najít službu klienta.  

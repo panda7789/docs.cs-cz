@@ -2,12 +2,12 @@
 title: Korelace zprávy
 ms.date: 03/30/2017
 ms.assetid: 3f62babd-c991-421f-bcd8-391655c82a1f
-ms.openlocfilehash: 8db7793064cb94b21feee73353b9ab5e40290fb9
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: ed6fc8f5d16ae2d604cdbdf4659ecfaaa83bfa02
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59157758"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59333272"
 ---
 # <a name="message-correlation"></a>Korelace zprávy
 Tato ukázka předvádí, jak služby Řízení front zpráv (MSMQ) aplikace může odesílat zprávy MSMQ do služby Windows Communication Foundation (WCF) a korelace zpráv mezi aplikacemi odesílatele a příjemce v případě požadavku nebo odpovědi. Tato ukázka používá vazbu msmqIntegrationBinding. Služba není v tomto případě v místním prostředí konzolovou aplikaci, aby bylo možné sledovat, že služba, která bude přijímat zprávy zařazené do fronty. k  
@@ -271,9 +271,9 @@ static void DisplayOrderStatus()
 
 ### <a name="to-setup-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky
 
-1.  Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
+1. Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
 
-2.  Pokud je služba spuštěna první, zkontroluje se tak, aby byl do fronty k dispozici. Pokud fronta neexistuje, služba ho vytvoří. Můžete spustit služba nejdřív vytvořte frontu nebo můžete vytvořit prostřednictvím Správce fronty MSMQ. Postupujte podle těchto kroků můžete vytvořit frontu Windows 2008.
+2. Pokud je služba spuštěna první, zkontroluje se tak, aby byl do fronty k dispozici. Pokud fronta neexistuje, služba ho vytvoří. Můžete spustit služba nejdřív vytvořte frontu nebo můžete vytvořit prostřednictvím Správce fronty MSMQ. Postupujte podle těchto kroků můžete vytvořit frontu Windows 2008.
 
     1.  Otevřete správce serveru v sadě Visual Studio 2012.
 
@@ -285,23 +285,23 @@ static void DisplayOrderStatus()
 
     5.  Zadejte `ServiceModelSamplesTransacted` jako název nové fronty.
 
-3.  K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
+3. K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
 
-4.  Spusťte ukázku v jednom počítači konfiguraci, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).
+4. Spusťte ukázku v jednom počítači konfiguraci, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).
 
 ### <a name="to-run-the-sample-across-computers"></a>Ke spuštění ukázky v počítačích
 
-1.  Zkopírujte soubory programu služby ze složky \service\bin\ v rámci složky specifické pro jazyk, k počítači služby.
+1. Zkopírujte soubory programu služby ze složky \service\bin\ v rámci složky specifické pro jazyk, k počítači služby.
 
-2.  Zkopírujte soubory programu klienta ze složky \client\bin\ v rámci složky specifické pro jazyk do klientského počítače.
+2. Zkopírujte soubory programu klienta ze složky \client\bin\ v rámci složky specifické pro jazyk do klientského počítače.
 
-3.  V souboru Client.exe.config změnit orderQueueName k zadání názvu počítače služba namísto ".".
+3. V souboru Client.exe.config změnit orderQueueName k zadání názvu počítače služba namísto ".".
 
-4.  V souboru Service.exe.config, změňte adresu koncového bodu klienta k určení názvu klientského počítače namísto ".".
+4. V souboru Service.exe.config, změňte adresu koncového bodu klienta k určení názvu klientského počítače namísto ".".
 
-5.  Na počítači se službou spusťte z příkazového řádku Service.exe.
+5. Na počítači se službou spusťte z příkazového řádku Service.exe.
 
-6.  Na klientském počítači spusťte Client.exe z příkazového řádku.
+6. Na klientském počítači spusťte Client.exe z příkazového řádku.
 
 > [!IMPORTANT]
 >  Vzorky mohou již být nainstalováno ve vašem počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  

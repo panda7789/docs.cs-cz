@@ -6,19 +6,19 @@ helpviewer_keywords:
 - generic types [LINQ]
 - generics [LINQ]
 ms.assetid: 660e3799-25ca-462c-8c4a-8bce04fbb031
-ms.openlocfilehash: fe29bb14b85b74c249a5d9b7f8c2802ef991b13d
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: cd0fae0c7d99491f21e5e1fb265e4aabafaa63c4
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56977809"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59332679"
 ---
 # <a name="linq-and-generic-types-c"></a>LINQ a obecné typy (C#)
 [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazy jsou založeny na obecné typy, které jsou nově ve verzi 2.0 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]. Předtím, než můžete začít psát dotazy nepotřebujete hlubokou znalost obecných typů. Však může být vhodné pochopit dvě základní koncepty:  
   
-1.  Při vytváření instance třídy obecné kolekce, jako <xref:System.Collections.Generic.List%601>, je typ objektů, které bude obsahovat seznam nahradit "T". Například seznam řetězců je vyjádřena jako `List<string>`a seznam `Customer` objekty je vyjádřena jako `List<Customer>`. Obecný seznam silného typu a má spoustu výhod nad kolekcí, které ukládají jejich prvky jako <xref:System.Object>. Pokud se pokusíte přidat `Customer` k `List<string>`, obdržíte chybu v době kompilace. Je snadné použití obecných kolekcí, protože není nutné provádět za běhu přetypování.  
+1. Při vytváření instance třídy obecné kolekce, jako <xref:System.Collections.Generic.List%601>, je typ objektů, které bude obsahovat seznam nahradit "T". Například seznam řetězců je vyjádřena jako `List<string>`a seznam `Customer` objekty je vyjádřena jako `List<Customer>`. Obecný seznam silného typu a má spoustu výhod nad kolekcí, které ukládají jejich prvky jako <xref:System.Object>. Pokud se pokusíte přidat `Customer` k `List<string>`, obdržíte chybu v době kompilace. Je snadné použití obecných kolekcí, protože není nutné provádět za běhu přetypování.  
   
-2.  <xref:System.Collections.Generic.IEnumerable%601> je rozhraní, které umožňuje obecné kolekce tříd pro provedení výčtu pomocí `foreach` příkazu. Obecné kolekce tříd podporu <xref:System.Collections.Generic.IEnumerable%601> stejně jako negenerická kolekce tříd, například <xref:System.Collections.ArrayList> podporují <xref:System.Collections.IEnumerable>.  
+2. <xref:System.Collections.Generic.IEnumerable%601> je rozhraní, které umožňuje obecné kolekce tříd pro provedení výčtu pomocí `foreach` příkazu. Obecné kolekce tříd podporu <xref:System.Collections.Generic.IEnumerable%601> stejně jako negenerická kolekce tříd, například <xref:System.Collections.ArrayList> podporují <xref:System.Collections.IEnumerable>.  
   
  Další informace o obecných typech najdete v tématu [obecných typů](../../../../csharp/programming-guide/generics/index.md).  
   

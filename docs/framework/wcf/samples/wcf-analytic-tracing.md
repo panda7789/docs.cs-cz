@@ -2,12 +2,12 @@
 title: Analytické trasování WCF
 ms.date: 03/30/2017
 ms.assetid: 6029c7c7-3515-4d36-9d43-13e8f4971790
-ms.openlocfilehash: 3c9f878a22c928daa9c7dbc142efb3958b1657c8
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 9ed89bdbe2469a96f2a959c9fda8442e80b6f7ec
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59229170"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59332310"
 ---
 # <a name="wcf-analytic-tracing"></a>Analytické trasování WCF
 Tato ukázka předvádí, jak přidat vlastní události trasování do datového proudu analytického trasování, které Windows Communication Foundation (WCF) zapisuje do trasování událostí pro Windows v [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)]. Analytické trasování jsou určené k tomu, aby, získat přehled o vaší služby bez nutnosti platit penalizace vysoký výkon. Tento příklad ukazuje způsob použití <xref:System.Diagnostics.Eventing?displayProperty=nameWithType> rozhraní API pro zápis událostí, které integrace se službami WCF.  
@@ -43,31 +43,31 @@ Tato ukázka předvádí, jak přidat vlastní události trasování do datovéh
   
 #### <a name="to-use-this-sample"></a>Pro fungování této ukázky  
   
-1.  Pomocí sady Visual Studio 2012, otevřete soubor řešení WCFAnalyticTracingExtensibility.sln.  
+1. Pomocí sady Visual Studio 2012, otevřete soubor řešení WCFAnalyticTracingExtensibility.sln.  
   
-2.  Abyste mohli sestavit řešení, stiskněte kombinaci kláves CTRL + SHIFT + B.  
+2. Abyste mohli sestavit řešení, stiskněte kombinaci kláves CTRL + SHIFT + B.  
   
-3.  Abyste mohli spustit řešení, stiskněte CTRL + F5.  
+3. Abyste mohli spustit řešení, stiskněte CTRL + F5.  
   
      Ve webovém prohlížeči, klikněte na tlačítko **Calculator.svc**. Identifikátor URI dokumentu WSDL pro službu by se zobrazit v prohlížeči. Zkopírujte tento identifikátor URI.  
   
-4.  Spustíte klienta testu WCF (WcfTestClient.exe).  
+4. Spustíte klienta testu WCF (WcfTestClient.exe).  
   
      Testovací klient WCF (WcfTestClient.exe) se nachází na `\<Visual Studio 2012 Install Dir>\Common7\IDE\WcfTestClient.exe`. Je adresář instalace sady Visual Studio 2012 výchozí `C:\Program Files\Microsoft Visual Studio 10.0`.  
   
-5.  V rámci testovacího klienta WCF, přidání služby tak, že vyberete **souboru**a potom **přidat službu**.  
+5. V rámci testovacího klienta WCF, přidání služby tak, že vyberete **souboru**a potom **přidat službu**.  
   
      Přidáte adresu koncového bodu do vstupního pole.  
   
-6.  Klikněte na tlačítko **OK** zavřete dialogové okno.  
+6. Klikněte na tlačítko **OK** zavřete dialogové okno.  
   
      V levém podokně v části Přidání služby ICalculator **Moje projekty služeb**.  
   
-7.  Otevřete Prohlížeč událostí aplikace.  
+7. Otevřete Prohlížeč událostí aplikace.  
   
      Před vyvoláním služby, spusťte Prohlížeč událostí a ujistěte se, že je pro sledování události ze služby WCF, protože ho naslouchání v protokolu událostí.  
   
-8.  Z **Start** nabídce vyberte možnost **nástroje pro správu**a potom **Prohlížeč událostí**. Povolit **analytické** a **ladění** protokoly.  
+8. Z **Start** nabídce vyberte možnost **nástroje pro správu**a potom **Prohlížeč událostí**. Povolit **analytické** a **ladění** protokoly.  
   
 9. Ve stromovém zobrazení v prohlížeči událostí, přejděte na **Prohlížeč událostí**, **protokoly aplikací a služeb**, **Microsoft**, **Windows**a pak **Aplikace Server-**. Klikněte pravým tlačítkem na **aplikace Server-** vyberte **zobrazení**a potom **zobrazit protokoly ladění a analýzu**.  
   
@@ -97,13 +97,13 @@ Tato ukázka předvádí, jak přidat vlastní události trasování do datovéh
   
 #### <a name="to-clean-up-optional"></a>Chcete-li vyčistit (volitelné)  
   
-1.  Otevřít **Prohlížeč událostí**.  
+1. Otevřít **Prohlížeč událostí**.  
   
-2.  Přejděte do **Prohlížeč událostí**, **protokoly aplikací a služeb**, **Microsoft**, **Windows**a potom  **Aplikace serveru**. Klikněte pravým tlačítkem na **analytické** a vyberte **zakázat protokol**.  
+2. Přejděte do **Prohlížeč událostí**, **protokoly aplikací a služeb**, **Microsoft**, **Windows**a potom  **Aplikace serveru**. Klikněte pravým tlačítkem na **analytické** a vyberte **zakázat protokol**.  
   
-3.  Přejděte do **Prohlížeč událostí**, **protokoly aplikací a služeb**, **Microsoft**, **Windows**,  **Aplikace serveru**a potom **analytické**. Klikněte pravým tlačítkem na **analytické** a vyberte **vymazat protokol**.  
+3. Přejděte do **Prohlížeč událostí**, **protokoly aplikací a služeb**, **Microsoft**, **Windows**,  **Aplikace serveru**a potom **analytické**. Klikněte pravým tlačítkem na **analytické** a vyberte **vymazat protokol**.  
   
-4.  Klikněte na tlačítko **vymazat** vymazat události.  
+4. Klikněte na tlačítko **vymazat** vymazat události.  
   
 ## <a name="known-issue"></a>Známý problém  
  Existuje známý problém nástroje **Prohlížeč událostí** kde může dojít k selhání k dekódování událostí trasování událostí pro Windows. Může zobrazit chybová zpráva s upozorněním: "Popis objektu Event ID \<id > ze zdroje aplikace Microsoft Windows Server – aplikace nebyla nalezena. Součást, která vyvolá tuto událost není nainstalována na místním počítači nebo že je poškozená instalace. Můžete nainstalovat nebo opravit součásti v místním počítači." Pokud dojde k této chybě vyberte **aktualizovat** z **akce** nabídky. Události by pak správně dekódovat.  

@@ -5,23 +5,23 @@ helpviewer_keywords:
 - enumerations [Visual Basic], constants
 - constants [Visual Basic], grouping together
 ms.assetid: 09d61da5-c940-4126-a79f-ba93c36653dc
-ms.openlocfilehash: 9174bcd2385103cf7fa1daf3133e388f9b4998a4
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: a4f74e48cfdd5c0bc0f745d0f32eb39442f5bd83
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58843757"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59333324"
 ---
 # <a name="how-to-group-related-constant-values-together-visual-basic"></a>Postupy: Seskupení souvisejících hodnot konstant společně (Visual Basic)
 Výčet je nejlepší způsob, jak seskupit související s konstantami. Vytvořit výčet s `Enum` příkazu v části deklarace třídy nebo modulu. Další informace najdete v tématu [jak: Deklarace výčtů](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-declare-enumerations.md).  
   
 ### <a name="to-group-related-constant-values"></a>Ke skupině souvisejících hodnot konstant  
   
-1.  Zápis deklarace, která zahrnuje úroveň přístupu kódu, `Enum` – klíčové slovo a platný název. Tento příklad vytvoří `Private` výčet, `temperatureValues`.  
+1. Zápis deklarace, která zahrnuje úroveň přístupu kódu, `Enum` – klíčové slovo a platný název. Tento příklad vytvoří `Private` výčet, `temperatureValues`.  
   
      [!code-vb[VbEnumsTask#21](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class2.vb#21)]  
   
-2.  Definujte konstanty ve výčtu. Tento příklad vytvoří `Public` výčet `temperatureValues` a přiřazuje hodnoty.  
+2. Definujte konstanty ve výčtu. Tento příklad vytvoří `Public` výčet `temperatureValues` a přiřazuje hodnoty.  
   
      [!code-vb[VbEnumsTask#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class2.vb#1)]  
   

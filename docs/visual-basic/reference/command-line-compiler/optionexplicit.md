@@ -9,12 +9,12 @@ helpviewer_keywords:
 - optionexplicit compiler option [Visual Basic]
 - -optionexplicit compiler option [Visual Basic]
 ms.assetid: 5d296ab3-bafe-4c4d-9887-78f162ed86c7
-ms.openlocfilehash: 4aca6e9c20dbce7aa8a94067c96fcf44329a6fe4
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 54d438541e8840e4394b24b20b4f394ff8cdb820
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58814871"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59332388"
 ---
 # <a name="-optionexplicit"></a>-optionexplicit
 Pokud proměnné nejsou deklarovány před jejich použití způsobí, že kompilátor pro hlášení chyb.  
@@ -34,11 +34,11 @@ Pokud proměnné nejsou deklarovány před jejich použití způsobí, že kompi
   
 ### <a name="to-set--optionexplicit-in-the-visual-studio-ide"></a>Chcete-li nastavit - optionexplicit v integrovaném vývojovém prostředí sady Visual Studio  
   
-1.  Mají projekt vybraný v **Průzkumníka řešení**. Na **projektu** nabídky, klikněte na tlačítko **vlastnosti**.   
+1. Mají projekt vybraný v **Průzkumníka řešení**. Na **projektu** nabídky, klikněte na tlačítko **vlastnosti**.   
   
-2.  Klikněte na tlačítko **kompilaci** kartu.  
+2. Klikněte na tlačítko **kompilaci** kartu.  
   
-3.  Upravte hodnotu v **Option Explicit** pole.  
+3. Upravte hodnotu v **Option Explicit** pole.  
   
 ## <a name="example"></a>Příklad  
  Následující kód zkompiluje, kdy `-optionexplicit-` se používá.  
@@ -47,10 +47,10 @@ Pokud proměnné nejsou deklarovány před jejich použití způsobí, že kompi
   
 ## <a name="see-also"></a>Viz také:
 
-- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)
+- [Kompilátor příkazového řádku jazyka Visual Basic](../../../visual-basic/reference/command-line-compiler/index.md)
 - [-optioncompare](../../../visual-basic/reference/command-line-compiler/optioncompare.md)
 - [-optionstrict](../../../visual-basic/reference/command-line-compiler/optionstrict.md)
 - [-optioninfer](../../../visual-basic/reference/command-line-compiler/optioninfer.md)
 - [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
-- [Příkaz Option Explicit](../../../visual-basic/language-reference/statements/option-explicit-statement.md)
-- [Výchozí hodnoty pro Visual Basic, Projekty, dialogové okno Možnosti](/visualstudio/ide/reference/visual-basic-defaults-projects-options-dialog-box)
+- [Option Explicit – příkaz](../../../visual-basic/language-reference/statements/option-explicit-statement.md)
+- [Výchozí možnosti jazyka Visual Basic, projekty, dialogové okno Možnosti](/visualstudio/ide/reference/visual-basic-defaults-projects-options-dialog-box)

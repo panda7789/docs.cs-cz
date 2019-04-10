@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: f18b288f-b265-4bbe-957f-c6833c0645ef
-ms.openlocfilehash: fe48c8a2a7df74b1a9e28b514ba9258d2aa23ae9
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 0d200ad35d3ab56bf97114b51b4f7fcc898eecdf
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59191464"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59332141"
 ---
 # <a name="handling-null-values"></a>Zpracování hodnot null
 Hodnotu null v relační databázi se používá při neznámý nebo chybějící hodnota ve sloupci. Hodnota null není prázdný řetězec (pro datové typy znaků nebo datum a čas) ani nulovou hodnotu (pro číselné datové typy). Specifikace ANSI SQL-92 státy, s hodnotou null musí být stejný pro všechny typy dat, tak, aby všechny hodnoty Null se zpracovávají konzistentně. <xref:System.Data.SqlTypes> Obor názvů poskytuje sémantika s hodnotou null implementací <xref:System.Data.SqlTypes.INullable> rozhraní. Každý dat typy, které do <xref:System.Data.SqlTypes> má vlastní `IsNull` vlastnost a `Null` hodnotu, která je možné přiřadit do instance datového typu.  
@@ -87,15 +87,15 @@ WHERE TerritoryID IN (1, 2, 3)
   
  Kromě toho platí následující pravidla pro instanci `DataRow.["columnName"]` přiřazení s hodnotou null:  
   
-1.  Výchozí hodnota *výchozí* hodnotu `DbNull.Value` pro všechny s výjimkou silného typu null sloupce, ve kterém je příslušný silného typu hodnotu null.  
+1. Výchozí hodnota *výchozí* hodnotu `DbNull.Value` pro všechny s výjimkou silného typu null sloupce, ve kterém je příslušný silného typu hodnotu null.  
   
-2.  Hodnoty Null jsou zapsané nikdy během serializace za účelem soubory XML (jako "xsi: nil").  
+2. Hodnoty Null jsou zapsané nikdy během serializace za účelem soubory XML (jako "xsi: nil").  
   
-3.  Všechny nenulové hodnoty, včetně výchozích hodnot, jsou vždy zapsané při serializaci do formátu XML. To je rozdíl oproti sémantiku XSD/XML, kde je explicitní hodnotu null (xsi: nil) a výchozí hodnota je implicitní (Pokud není k dispozici ve formátu XML, ověřování analyzátoru můžete ho získat z přidružené schéma XSD). Opak platí pro `DataTable`: hodnota null je implicitní a výchozí hodnota je explicitní.  
+3. Všechny nenulové hodnoty, včetně výchozích hodnot, jsou vždy zapsané při serializaci do formátu XML. To je rozdíl oproti sémantiku XSD/XML, kde je explicitní hodnotu null (xsi: nil) a výchozí hodnota je implicitní (Pokud není k dispozici ve formátu XML, ověřování analyzátoru můžete ho získat z přidružené schéma XSD). Opak platí pro `DataTable`: hodnota null je implicitní a výchozí hodnota je explicitní.  
   
-4.  Všechny chybějící hodnoty sloupce pro čtení z XML vstupní řádky se přiřadit hodnotu NULL. Řádky, které jsou vytvořené pomocí <xref:System.Data.DataTable.NewRow%2A> nebo podobné metody jsou přiřazeny výchozí hodnota objekt DataColumn.  
+4. Všechny chybějící hodnoty sloupce pro čtení z XML vstupní řádky se přiřadit hodnotu NULL. Řádky, které jsou vytvořené pomocí <xref:System.Data.DataTable.NewRow%2A> nebo podobné metody jsou přiřazeny výchozí hodnota objekt DataColumn.  
   
-5.  <xref:System.Data.DataRow.IsNull%2A> Vrátí metoda `true` pro obě `DbNull.Value` a `INullable.Null`.  
+5. <xref:System.Data.DataRow.IsNull%2A> Vrátí metoda `true` pro obě `DbNull.Value` a `INullable.Null`.  
   
 ## <a name="assigning-null-values"></a>Přiřazení hodnoty Null  
  Výchozí hodnota pro všechny <xref:System.Data.SqlTypes> instance má hodnotu null.  

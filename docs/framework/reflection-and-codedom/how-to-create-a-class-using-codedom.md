@@ -13,27 +13,27 @@ helpviewer_keywords:
 ms.assetid: 0ceb70fe-36e1-49bb-922b-e9f615c20a14
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 99fa1fcb300d523d74a07da09e5a04848364607e
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 5d431fd472df329dd0a8421483eb36b573dce775
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59098829"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59333168"
 ---
 # <a name="how-to-create-a-class-using-codedom"></a>Postupy: Vytváření třídy pomocí modelu CodeDOM
 Následující postupy ukazují, jak vytvořit a zkompilujte grafu CodeDOM, který generuje třídy obsahující dvě pole, tři vlastnosti, metody, konstruktor a vstupní bod.  
   
-1.  Vytvořte konzolovou aplikaci, která se použije k vygenerování zdrojového kódu pro třídu kódu CodeDOM.  
+1. Vytvořte konzolovou aplikaci, která se použije k vygenerování zdrojového kódu pro třídu kódu CodeDOM.  
   
      V tomto příkladu je pojmenována generování třídy `Sample`, a třídu s názvem je generovaný kód `CodeDOMCreatedClass` do souboru s názvem SampleCode.  
   
-2.  V generování třídy, inicializovat grafu CodeDOM a použitím metody CodeDOM definovat členy, konstruktor a vstupního bodu (`Main` metoda) generované třídy.  
+2. V generování třídy, inicializovat grafu CodeDOM a použitím metody CodeDOM definovat členy, konstruktor a vstupního bodu (`Main` metoda) generované třídy.  
   
      V tomto příkladu má generované třídy, dvě pole, tři vlastnosti, konstruktor, metody a `Main` metoda.  
   
-3.  V generování třídy, vytvořit poskytovatele kódu specifické pro jazyk a volání jeho <xref:System.CodeDom.Compiler.CodeDomProvider.GenerateCodeFromCompileUnit%2A> metoda ke generování kódu z grafu.  
+3. V generování třídy, vytvořit poskytovatele kódu specifické pro jazyk a volání jeho <xref:System.CodeDom.Compiler.CodeDomProvider.GenerateCodeFromCompileUnit%2A> metoda ke generování kódu z grafu.  
   
-4.  Kompilace a spuštění aplikace pro generování kódu.  
+4. Kompilace a spuštění aplikace pro generování kódu.  
   
      V tomto příkladu je generovaný kód do souboru s názvem SampleCode. Kompilace a spuštění tohoto kódu zobrazíte ukázkový výstup.  
   
@@ -87,12 +87,12 @@ Následující postupy ukazují, jak vytvořit a zkompilujte grafu CodeDOM, kter
   
 ### <a name="to-create-the-graph-and-generate-the-code"></a>K vytvoření grafu a generování kódu  
   
-1.  Přidejte metody, které jsou vytvořené v předchozích kroků `Main` metody definované v prvním kroku.  
+1. Přidejte metody, které jsou vytvořené v předchozích kroků `Main` metody definované v prvním kroku.  
   
      [!code-csharp[CodeDOM Class Sample#9](../../../samples/snippets/csharp/VS_Snippets_CLR/CodeDOM Class Sample/CS/program.cs#9)]
      [!code-vb[CodeDOM Class Sample#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CodeDOM Class Sample/VB/program.vb#9)]  
   
-2.  Zkompilovat a spustit při generování třídy.  
+2. Zkompilovat a spustit při generování třídy.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad kódu ukazuje kód z předchozích kroků.  

@@ -14,12 +14,12 @@ helpviewer_keywords:
 - bound controls [Windows Forms]
 - data-bound controls [Windows Forms], DataGrid
 ms.assetid: 128cdb07-dfd3-4d60-9d6a-902847667c36
-ms.openlocfilehash: 80edd3718195fa3c47f7073136031cbddb13168b
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 920a93894cc126f85bc6b618efbe6e9cedea4881
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59176680"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59332570"
 ---
 # <a name="how-to-bind-the-windows-forms-datagrid-control-to-a-data-source"></a>Postupy: Vytvoření vazby ovládacího prvku Windows Forms DataGrid ke zdroji dat
 > [!NOTE]
@@ -29,7 +29,7 @@ ms.locfileid: "59176680"
   
 ### <a name="to-data-bind-the-datagrid-control-programmatically"></a>Vytvořit vazbu na data ovládacím prvku DataGrid prostřednictvím kódu programu  
   
-1.  Napište kód pro naplnění dataset.  
+1. Napište kód pro naplnění dataset.  
   
      Pokud je zdroj dat datové sady nebo zobrazení dat na základě tabulky datovou sadu, přidejte kód pro formulář k vyplnění datové sady.  
   
@@ -68,7 +68,7 @@ ms.locfileid: "59176680"
     dsCategories1->Merge(ws->GetCategories());  
     ```  
   
-2.  Volání <xref:System.Windows.Forms.DataGrid> ovládacího prvku <xref:System.Windows.Forms.DataGrid.SetDataBinding%2A> metodu předáním zdroje dat a datový člen. Pokud není potřeba explicitně předávat datový člen, zadat prázdný řetězec.  
+2. Volání <xref:System.Windows.Forms.DataGrid> ovládacího prvku <xref:System.Windows.Forms.DataGrid.SetDataBinding%2A> metodu předáním zdroje dat a datový člen. Pokud není potřeba explicitně předávat datový člen, zadat prázdný řetězec.  
   
     > [!NOTE]
     >  Pokud mřížky připojujete poprvé, můžete nastavit ovládací prvek <xref:System.Windows.Forms.DataGrid.DataSource%2A> a <xref:System.Windows.Forms.DataGrid.DataMember%2A> vlastnosti. Tyto vlastnosti však nelze obnovit, jakmile byla nastavena. Proto doporučujeme vždy používat <xref:System.Windows.Forms.DataGrid.SetDataBinding%2A> metody.  
@@ -101,7 +101,7 @@ ms.locfileid: "59176680"
     dataGrid1->SetDataBinding(dsCustomers1, "");  
     ```  
   
-3.  (Volitelné) Přidejte příslušné tabulky styly a styly sloupců do mřížky. Pokud neexistují žádné tabulky styly, zobrazí se v tabulce, ale s minimální formátování a všechny viditelné sloupce.  
+3. (Volitelné) Přidejte příslušné tabulky styly a styly sloupců do mřížky. Pokud neexistují žádné tabulky styly, zobrazí se v tabulce, ale s minimální formátování a všechny viditelné sloupce.  
   
 ## <a name="see-also"></a>Viz také:
 

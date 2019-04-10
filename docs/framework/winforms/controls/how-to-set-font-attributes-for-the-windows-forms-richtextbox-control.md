@@ -14,23 +14,23 @@ helpviewer_keywords:
 - text boxes [Windows Forms], formatting text
 - formatting [Windows Forms]
 ms.assetid: 2bc23ddb-0529-4489-a1a2-ad253cb43f9a
-ms.openlocfilehash: 50a65a6828968f7bd9f1b17f5b8c8b1e4f70d051
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: a6fe5b30c457fae2d53c946092b214f492fe5e9b
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59182907"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59331205"
 ---
 # <a name="how-to-set-font-attributes-for-the-windows-forms-richtextbox-control"></a>Postupy: Nastavení atributů písma pro ovládací prvek Windows Forms RichTextBox
 Windows Forms <xref:System.Windows.Forms.RichTextBox> ovládací prvek má mnoho možností pro formátování textu se zobrazí. Provedením vybrané znaky tučně nebo kurzívy, pomocí <xref:System.Windows.Forms.RichTextBox.SelectionFont%2A> vlastnost. Tuto vlastnost můžete také změnit velikost a písmo vybrané znaky. <xref:System.Windows.Forms.RichTextBox.SelectionColor%2A> Vlastnost umožňuje změnit barvu vybrané znaky.  
   
 ### <a name="to-change-the-appearance-of-characters"></a>Chcete-li změnit vzhled znaků  
   
-1.  Nastavte <xref:System.Windows.Forms.RichTextBox.SelectionFont%2A> vlastnosti k odpovídající písmo.  
+1. Nastavte <xref:System.Windows.Forms.RichTextBox.SelectionFont%2A> vlastnosti k odpovídající písmo.  
   
      Pokud chcete povolit uživatelům nastavit rodina písem, velikost a písmo v aplikaci, obvykle použijete <xref:System.Windows.Forms.FontDialog> komponenty. Přehled najdete v tématu [FontDialog – přehled komponenty](fontdialog-component-overview-windows-forms.md).  
   
-2.  Nastavte <xref:System.Windows.Forms.RichTextBox.SelectionColor%2A> vlastnost na požadovanou barvu.  
+2. Nastavte <xref:System.Windows.Forms.RichTextBox.SelectionColor%2A> vlastnost na požadovanou barvu.  
   
      Pokud chcete povolit uživatelům nastavit barvu v aplikaci, obvykle použijete <xref:System.Windows.Forms.ColorDialog> komponenty. Přehled najdete v tématu [ColorDialog – přehled komponenty](colordialog-component-overview-windows-forms.md).  
   

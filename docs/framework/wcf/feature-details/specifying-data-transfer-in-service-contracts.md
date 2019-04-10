@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - service contracts [WCF], data transfer
 ms.assetid: 7c5a26c8-89c9-4bcb-a4bc-7131e6d01f0c
-ms.openlocfilehash: a3ac0f321a20624deea1fe382d04a8d4e1b6c510
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 88bdfe6e659e6e83365b3d17c9067581f209d154
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59135197"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59331517"
 ---
 # <a name="specifying-data-transfer-in-service-contracts"></a>Určování přenosu dat v kontraktech služby
 Windows Communication Foundation (WCF) můžete představit jako infrastruktura zasílání zpráv. Operace služby může přijímat zprávy, jejich zpracování a posílali zprávy. Zprávy jsou popsány pomocí operace smluv. Představte si třeba následující smlouvy.  
@@ -566,11 +566,11 @@ Dim serviceHost As ServiceHost = New ServiceHost(GetType(IDataService))
   
  Předchozí tři případy (zachování typu .NET, objekt grafu a zachovávání s rozlišením a zcela vlastní `XmlObjectSerializer`– na základě serializace) všechny vyžadují vlastní serializátor být zapojené do elektrické zásuvky. Chcete-li to provést, postupujte následovně:  
   
-1.  Zapsat vlastní chování odvozený od <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior>.  
+1. Zapsat vlastní chování odvozený od <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior>.  
   
-2.  Přepsat dva `CreateSerializer` metody vracet vlastní serializátor (buď <xref:System.Runtime.Serialization.NetDataContractSerializer>, <xref:System.Runtime.Serialization.DataContractSerializer> s `preserveObjectReferences` nastavena na `true`, nebo vlastní <xref:System.Runtime.Serialization.XmlObjectSerializer>).  
+2. Přepsat dva `CreateSerializer` metody vracet vlastní serializátor (buď <xref:System.Runtime.Serialization.NetDataContractSerializer>, <xref:System.Runtime.Serialization.DataContractSerializer> s `preserveObjectReferences` nastavena na `true`, nebo vlastní <xref:System.Runtime.Serialization.XmlObjectSerializer>).  
   
-3.  Před otevřením hostitele služby nebo vytvořením kanálu klienta, odeberte existující <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior> chování a moduly ve vlastní odvozené třídy, které jste vytvořili v předchozích krocích.  
+3. Před otevřením hostitele služby nebo vytvořením kanálu klienta, odeberte existující <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior> chování a moduly ve vlastní odvozené třídy, které jste vytvořili v předchozích krocích.  
   
  Další informace o konceptech pokročilé serializace naleznete v tématu [serializace a deserializace](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md).  
   

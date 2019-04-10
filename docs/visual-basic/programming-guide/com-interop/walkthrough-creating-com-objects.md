@@ -8,12 +8,12 @@ helpviewer_keywords:
 - object creation [Visual Basic], COM objects
 - COM objects, walkthroughs
 ms.assetid: 7b07a463-bc72-4392-9ba0-9dfcb697a44f
-ms.openlocfilehash: 5fc0105cffb5606f9382aca7b55d6544d04f9fe7
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 97e917d568b31860979e54598350d1ae7a6fdb25
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58838154"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59331894"
 ---
 # <a name="walkthrough-creating-com-objects-with-visual-basic"></a>Návod: Vytváření objektů COM pomocí jazyka Visual Basic
 Při vytváření nové aplikace nebo komponenty, je nejlepší vytvořit sestavení rozhraní .NET Framework. Ale jazyka Visual Basic také umožňuje snadno vystavit součásti rozhraní .NET Framework do modelu COM. To umožňuje poskytovat nové součásti pro starší aplikace sad, které vyžadují komponenty modelu COM. Tento návod ukazuje, jak pomocí jazyka Visual Basic k vystavení [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] objekty jako objekty modelu COM, s i bez šablony třídy modelu COM.  
@@ -27,61 +27,61 @@ Při vytváření nové aplikace nebo komponenty, je nejlepší vytvořit sestav
   
 ### <a name="to-create-a-com-object-by-using-the-com-class-template"></a>Chcete-li vytvořit objekt modelu COM s použitím šablony třídy modelu COM  
   
-1.  Otevřete nový projekt aplikace Windows z **souboru** nabídky kliknutím **nový projekt**.  
+1. Otevřete nový projekt aplikace Windows z **souboru** nabídky kliknutím **nový projekt**.  
   
-2.  V **nový projekt** dialogového okna **typy projektů** pole, zkontrolujte, zda je vybrána Windows. Vyberte **knihovny tříd** z **šablony** seznamu a potom klikněte na tlačítko **OK**. Zobrazí se nový projekt.  
+2. V **nový projekt** dialogového okna **typy projektů** pole, zkontrolujte, zda je vybrána Windows. Vyberte **knihovny tříd** z **šablony** seznamu a potom klikněte na tlačítko **OK**. Zobrazí se nový projekt.  
   
-3.  Vyberte **přidat novou položku** z **projektu** nabídky. **Přidat novou položku** se zobrazí dialogové okno.  
+3. Vyberte **přidat novou položku** z **projektu** nabídky. **Přidat novou položku** se zobrazí dialogové okno.  
   
-4.  Vyberte **třídy COM** z **šablony** seznamu a potom klikněte na tlačítko **přidat**. Visual Basic přidá novou třídu a nakonfiguruje nový projekt pro spolupráci s COM.  
+4. Vyberte **třídy COM** z **šablony** seznamu a potom klikněte na tlačítko **přidat**. Visual Basic přidá novou třídu a nakonfiguruje nový projekt pro spolupráci s COM.  
   
-5.  Přidání kódu, jako jsou vlastnosti, metody a události do třídy modelu COM.  
+5. Přidání kódu, jako jsou vlastnosti, metody a události do třídy modelu COM.  
   
-6.  Vyberte **sestavení ClassLibrary1** z **sestavení** nabídky. Visual Basic vytvoří sestavení a registruje objekt modelu COM s operačním systémem.  
+6. Vyberte **sestavení ClassLibrary1** z **sestavení** nabídky. Visual Basic vytvoří sestavení a registruje objekt modelu COM s operačním systémem.  
   
 ## <a name="creating-com-objects-without-the-com-class-template"></a>Vytváření objektů COM bez šablony třídy modelu COM  
  Můžete také vytvořit třídu COM ručně místo pomocí šablony třídy modelu COM. Tento postup je užitečný při práci z příkazového řádku, nebo pokud potřebujete větší kontrolu nad jak objekty modelu COM jsou definovány.  
   
 #### <a name="to-set-up-your-project-to-generate-a-com-object"></a>Nastavení projektu pro generování objekt modelu COM  
   
-1.  Otevřete nový projekt aplikace Windows z **souboru** nabídky kliknutím **NewProject**.  
+1. Otevřete nový projekt aplikace Windows z **souboru** nabídky kliknutím **NewProject**.  
   
-2.  V **nový projekt** dialogového okna **typy projektů** pole, zkontrolujte, zda je vybrána Windows. Vyberte **knihovny tříd** z **šablony** seznamu a potom klikněte na tlačítko **OK**. Zobrazí se nový projekt.  
+2. V **nový projekt** dialogového okna **typy projektů** pole, zkontrolujte, zda je vybrána Windows. Vyberte **knihovny tříd** z **šablony** seznamu a potom klikněte na tlačítko **OK**. Zobrazí se nový projekt.  
   
-3.  V **Průzkumníka řešení**, klikněte pravým tlačítkem na projekt a potom klikněte na tlačítko **vlastnosti**. **Návrháře projektu** se zobrazí.  
+3. V **Průzkumníka řešení**, klikněte pravým tlačítkem na projekt a potom klikněte na tlačítko **vlastnosti**. **Návrháře projektu** se zobrazí.  
   
-4.  Klikněte na tlačítko **kompilaci** kartu.  
+4. Klikněte na tlačítko **kompilaci** kartu.  
   
-5.  Vyberte **zaregistrovat pro interoperabilitu COM** zaškrtávací políčko.  
+5. Vyberte **zaregistrovat pro interoperabilitu COM** zaškrtávací políčko.  
   
 #### <a name="to-set-up-the-code-in-your-class-to-create-a-com-object"></a>K nastavení kódu ve své třídě pro vytvoření objektu modelu COM  
   
-1.  V **Průzkumníka řešení**, dvakrát klikněte na panel **Class1.vb** zobrazíte jeho kód.  
+1. V **Průzkumníka řešení**, dvakrát klikněte na panel **Class1.vb** zobrazíte jeho kód.  
   
-2.  Přejmenujte třídu na `ComClass1`.  
+2. Přejmenujte třídu na `ComClass1`.  
   
-3.  Přidejte následující konstanty na `ComClass1`. Ukládají se konstanty globálně jedinečný identifikátor (GUID), které jsou objekty COM musí mít.  
+3. Přidejte následující konstanty na `ComClass1`. Ukládají se konstanty globálně jedinečný identifikátor (GUID), které jsou objekty COM musí mít.  
   
      [!code-vb[VbVbalrInterop#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrInterop/VB/Class1.vb#2)]  
   
-4.  Na **nástroje** nabídky, klikněte na tlačítko **Create Guid**. V **Create GUID** dialogové okno, klikněte na tlačítko **formát registru** a potom klikněte na tlačítko **kopírování**. Klikněte na tlačítko **ukončovací**.  
+4. Na **nástroje** nabídky, klikněte na tlačítko **Create Guid**. V **Create GUID** dialogové okno, klikněte na tlačítko **formát registru** a potom klikněte na tlačítko **kopírování**. Klikněte na tlačítko **ukončovací**.  
   
-5.  Prázdný řetězec pro nahrazení `ClassId` s identifikátorem GUID, odebírá se úvodní a koncové závorek. Například, pokud identifikátor GUID poskytl Guidgen – je `"{2C8B0AEE-02C9-486e-B809-C780A11530FE}"` a váš kód by měl vypadat následovně.  
+5. Prázdný řetězec pro nahrazení `ClassId` s identifikátorem GUID, odebírá se úvodní a koncové závorek. Například, pokud identifikátor GUID poskytl Guidgen – je `"{2C8B0AEE-02C9-486e-B809-C780A11530FE}"` a váš kód by měl vypadat následovně.  
   
      [!code-vb[VbVbalrInterop#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrInterop/VB/Class1.vb#3)]  
   
-6.  Opakujte předchozí kroky pro `InterfaceId` a `EventsId` konstant, jako v následujícím příkladu.  
+6. Opakujte předchozí kroky pro `InterfaceId` a `EventsId` konstant, jako v následujícím příkladu.  
   
      [!code-vb[VbVbalrInterop#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrInterop/VB/Class1.vb#4)]  
   
     > [!NOTE]
     >  Ujistěte se, že jsou identifikátory GUID nových a jedinečných; jinak vaše komponenty modelu COM může jsou v konfliktu s dalšími komponentami COM.  
   
-7.  Přidat `ComClass` atribut `ComClass1`, zadejte identifikátory GUID pro ID třídy, rozhraní ID a události ID jako v následujícím příkladu:  
+7. Přidat `ComClass` atribut `ComClass1`, zadejte identifikátory GUID pro ID třídy, rozhraní ID a události ID jako v následujícím příkladu:  
   
      [!code-vb[VbVbalrInterop#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrInterop/VB/Class1.vb#5)]  
   
-8.  Třídy COM musí mít bez parametrů `Public Sub New()` konstruktor nebo třídy nebude správně zaregistrována. Přidejte konstruktor pro třídu:  
+8. Třídy COM musí mít bez parametrů `Public Sub New()` konstruktor nebo třídy nebude správně zaregistrována. Přidejte konstruktor pro třídu:  
   
      [!code-vb[VbVbalrInterop#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrInterop/VB/Class1.vb#6)]  
   
@@ -94,7 +94,7 @@ Při vytváření nové aplikace nebo komponenty, je nejlepší vytvořit sestav
 
 - <xref:Microsoft.VisualBasic.ComClassAttribute>
 - [Zprostředkovatel komunikace s objekty COM](../../../visual-basic/programming-guide/com-interop/index.md)
-- [Návod: Implementace dědičnosti pomocí objektů COM](../../../visual-basic/programming-guide/com-interop/walkthrough-implementing-inheritance-with-com-objects.md)
-- [Direktiva #Region](../../../visual-basic/language-reference/directives/region-directive.md)
+- [Návod: Implementace dědičnosti s objekty COM](../../../visual-basic/programming-guide/com-interop/walkthrough-implementing-inheritance-with-com-objects.md)
+- [#Region – direktiva](../../../visual-basic/language-reference/directives/region-directive.md)
 - [Interoperabilita modelů COM v aplikacích .NET Framework](../../../visual-basic/programming-guide/com-interop/com-interoperability-in-net-framework-applications.md)
 - [Řešení potíží s interoperabilitou](../../../visual-basic/programming-guide/com-interop/troubleshooting-interoperability.md)

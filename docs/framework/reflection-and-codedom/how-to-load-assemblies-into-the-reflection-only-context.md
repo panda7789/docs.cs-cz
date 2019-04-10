@@ -14,28 +14,28 @@ helpviewer_keywords:
 ms.assetid: 9818b660-52f5-423d-a9af-e75163aa7068
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f61640687447550ee853e0c233c2dfc615ba3c9a
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 8dc05d27b0316c82c5314a766fcad929dc5f3698
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59122197"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59331049"
 ---
 # <a name="how-to-load-assemblies-into-the-reflection-only-context"></a>Postupy: Načtení sestavení do kontextu pouze pro reflexi
 Kontext načítání pouze pro reflexi umožňuje zkoumat sestavení zkompilován pro jiné platformy nebo u jiných verzí rozhraní .NET Framework. Jenom se dají prozkoumat kód načtený do tohoto kontextu; nelze provést. To znamená, že nelze vytvořit objekty, protože konstruktory nemůže být proveden. Protože kód nelze provést, nejsou automaticky nahrány závislosti. Pokud je potřeba je prozkoumat, je nutné načíst je sami.  
   
 ### <a name="to-load-an-assembly-into-the-reflection-only-load-context"></a>Načtení sestavení do kontextu pouze pro reflexi zatížení  
   
-1.  Použití <xref:System.Reflection.Assembly.ReflectionOnlyLoad%28System.String%29> přetížení metody se načíst sestavení zadané zobrazované jméno, nebo <xref:System.Reflection.Assembly.ReflectionOnlyLoadFrom%2A> metodu pro načtení sestavení zadané cestě. Pokud je sestavení binárního obrazu, použijte <xref:System.Reflection.Assembly.ReflectionOnlyLoad%28System.Byte%5B%5D%29> přetížení metody.  
+1. Použití <xref:System.Reflection.Assembly.ReflectionOnlyLoad%28System.String%29> přetížení metody se načíst sestavení zadané zobrazované jméno, nebo <xref:System.Reflection.Assembly.ReflectionOnlyLoadFrom%2A> metodu pro načtení sestavení zadané cestě. Pokud je sestavení binárního obrazu, použijte <xref:System.Reflection.Assembly.ReflectionOnlyLoad%28System.Byte%5B%5D%29> přetížení metody.  
   
     > [!NOTE]
     >  Načíst verzi souboru mscorlib.dll z verze rozhraní .NET Framework než verze v kontextu spuštění nelze použít kontext pouze pro reflexi.  
   
-2.  Pokud sestavení obsahuje závislosti, <xref:System.Reflection.Assembly.ReflectionOnlyLoad%2A> je metoda nenačte. Pokud je potřeba je prozkoumat, je nutné načíst je sami.  
+2. Pokud sestavení obsahuje závislosti, <xref:System.Reflection.Assembly.ReflectionOnlyLoad%2A> je metoda nenačte. Pokud je potřeba je prozkoumat, je nutné načíst je sami.  
   
-3.  Určení, zda je sestavení načteno do kontextu pouze pro reflexi pomocí sestavení <xref:System.Reflection.Assembly.ReflectionOnly%2A> vlastnost.  
+3. Určení, zda je sestavení načteno do kontextu pouze pro reflexi pomocí sestavení <xref:System.Reflection.Assembly.ReflectionOnly%2A> vlastnost.  
   
-4.  Pokud se atributy se použily k sestavení a typy v sestavení, prozkoumejte tyto atributy s použitím <xref:System.Reflection.CustomAttributeData> třídu zajistíte, že je proveden žádný pokus o spouštění kódu v kontextu pouze pro reflexi. Použijte odpovídající přetížení <xref:System.Reflection.CustomAttributeData.GetCustomAttributes%2A?displayProperty=nameWithType> metodu k získání <xref:System.Reflection.CustomAttributeData> reprezentují atributy použité na sestavení, člen, modul nebo parametr.  
+4. Pokud se atributy se použily k sestavení a typy v sestavení, prozkoumejte tyto atributy s použitím <xref:System.Reflection.CustomAttributeData> třídu zajistíte, že je proveden žádný pokus o spouštění kódu v kontextu pouze pro reflexi. Použijte odpovídající přetížení <xref:System.Reflection.CustomAttributeData.GetCustomAttributes%2A?displayProperty=nameWithType> metodu k získání <xref:System.Reflection.CustomAttributeData> reprezentují atributy použité na sestavení, člen, modul nebo parametr.  
   
     > [!NOTE]
     >  Atributy použité na sestavení nebo k jejímu obsahu může být definované v sestavení nebo mohou být definovány v jiném sestavení načtena do kontextu pouze pro reflexi. Neexistuje žádný způsob, jak předem říct, kde jsou definovány atributy.  

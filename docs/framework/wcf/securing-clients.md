@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - clients [WCF], security considerations
 ms.assetid: 44c8578c-9a5b-4acd-8168-1c30a027c4c5
-ms.openlocfilehash: 42c87f7b427af775784f8bf1c49ecabde2572823
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: b357ee12dce823e49e61171d21356ca36b74f7c5
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59135775"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59331803"
 ---
 # <a name="securing-clients"></a>Zabezpečení klientů
 Ve Windows Communication Foundation (WCF), služba určuje požadavky na zabezpečení pro klienty. To znamená služba určuje, jaké režim zabezpečení, a určuje, jestli klient musí poskytnout přihlašovací údaje. Zabezpečení klienta, proto se tento proces je prostý: pomocí metadat získaných ze služby (je-li publikován) a vytvořit klienta. Metadata Určuje, jak nakonfigurovat klienta. Pokud služba vyžaduje, aby, že klient zadat přihlašovací údaje, je nutné získat pověření, která odpovídá požadavku. Toto téma popisuje proces podrobněji. Další informace o vytváření zabezpečených služeb, naleznete v tématu [zabezpečení služby](../../../docs/framework/wcf/securing-services.md).  
@@ -33,9 +33,9 @@ Ve Windows Communication Foundation (WCF), služba určuje požadavky na zabezpe
 ## <a name="setting-a-client-credential"></a>Nastavení přihlašovacích údajů klienta  
  Nastavení přihlašovacích údajů klienta v klientském počítači se skládá ze dvou kroků:  
   
-1.  Určit, *typu pověření klienta* služba vyžaduje, aby. To lze provést jedním ze dvou způsobů. Nejprve, pokud máte dokumentace z Tvůrce služby, měla by obsahovat pověření klienta vyžaduje služba typu (pokud existuje). Za druhé Pokud máte pouze se vygenerovat pomocí nástroje Svcutil.exe konfigurační soubor, můžete zkoumat jednotlivé vazeb k určení, jaký typ přihlašovacích údajů se vyžaduje.  
+1. Určit, *typu pověření klienta* služba vyžaduje, aby. To lze provést jedním ze dvou způsobů. Nejprve, pokud máte dokumentace z Tvůrce služby, měla by obsahovat pověření klienta vyžaduje služba typu (pokud existuje). Za druhé Pokud máte pouze se vygenerovat pomocí nástroje Svcutil.exe konfigurační soubor, můžete zkoumat jednotlivé vazeb k určení, jaký typ přihlašovacích údajů se vyžaduje.  
   
-2.  Zadejte pověření skutečný klienta. Přihlašovací údaje, které skutečným klientem se volá *hodnoty přihlašovacích údajů klienta* ho odlišuje od typu. Například pokud typ přihlašovacích údajů klienta Určuje certifikát, je nutné zadat certifikát X.509, který je vydaný certifikační autoritou služby vztahy důvěryhodnosti.  
+2. Zadejte pověření skutečný klienta. Přihlašovací údaje, které skutečným klientem se volá *hodnoty přihlašovacích údajů klienta* ho odlišuje od typu. Například pokud typ přihlašovacích údajů klienta Určuje certifikát, je nutné zadat certifikát X.509, který je vydaný certifikační autoritou služby vztahy důvěryhodnosti.  
   
 ### <a name="determining-the-client-credential-type"></a>Určení typu pověření klienta  
  Pokud máte konfigurační soubor nástroje Svcutil.exe vygenerována, zkontrolujte [ \<vazby >](../../../docs/framework/configure-apps/file-schema/wcf/bindings.md) části a zjistěte, jaký typ pověření klienta je povinný. V rámci oddílu jsou elementy vazby, které určují požadavky na zabezpečení. Konkrétně zkontrolujte \<security > – Element pro každou vazbu. Tento prvek obsahuje `mode` atribut, který můžete nastavit na jedno ze tří možných hodnot (`Message`, `Transport`, nebo `TransportWithMessageCredential`). Hodnota atributu určuje režim a režim určuje, který z podřízených prvků je důležité.  

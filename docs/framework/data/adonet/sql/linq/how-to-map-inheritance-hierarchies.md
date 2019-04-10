@@ -5,12 +5,12 @@ ms.assetid: b27c779b-9355-4dc7-b95f-7dfd504b6e48
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: f75c7fe701c4a2fab1f993517828b38e5a26e2bd
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 6f437b7f7ae6a414971edb497bc2c84c03674fe8
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59138083"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59331829"
 ---
 # <a name="how-to-map-inheritance-hierarchies"></a>Postupy: Mapování hierarchií dědičnosti
 Implementace dědičnosti mapování v [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)], musíte zadat atributy a atribut vlastnosti ve třídě kořenové hierarchii dědičnosti jak je popsáno v následujících krocích. Pomocí sady Visual Studio mohou vývojáři [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] mapování hierarchií dědičnosti. Zobrazit [jak: Konfigurace dědičnosti pomocí Návrháře relací objektů](/visualstudio/data-tools/how-to-configure-inheritance-by-using-the-o-r-designer).  
@@ -20,23 +20,23 @@ Implementace dědičnosti mapování v [!INCLUDE[vbteclinq](../../../../../../in
   
 ### <a name="to-map-an-inheritance-hierarchy"></a>Mapování hierarchie dědičnosti  
   
-1.  Přidat <xref:System.Data.Linq.Mapping.TableAttribute> atribut kořenový třídy.  
+1. Přidat <xref:System.Data.Linq.Mapping.TableAttribute> atribut kořenový třídy.  
   
-2.  Také do kořenové třídy, přidejte <xref:System.Data.Linq.Mapping.InheritanceMappingAttribute> atribut pro každou třídu ve struktuře hierarchie.  
+2. Také do kořenové třídy, přidejte <xref:System.Data.Linq.Mapping.InheritanceMappingAttribute> atribut pro každou třídu ve struktuře hierarchie.  
   
-3.  Pro každou <xref:System.Data.Linq.Mapping.InheritanceMappingAttribute> atribut, definovat <xref:System.Data.Linq.Mapping.InheritanceMappingAttribute.Code%2A> vlastnost.  
+3. Pro každou <xref:System.Data.Linq.Mapping.InheritanceMappingAttribute> atribut, definovat <xref:System.Data.Linq.Mapping.InheritanceMappingAttribute.Code%2A> vlastnost.  
   
      Tato vlastnost obsahuje hodnotu, která se zobrazí v tabulce databáze <xref:System.Data.Linq.Mapping.ColumnAttribute.IsDiscriminator%2A> sloupec, aby označoval, které třída nebo podtřídou tento řádek dat patří do.  
   
-4.  Pro každou <xref:System.Data.Linq.Mapping.InheritanceMappingAttribute> atribut, také přidat <xref:System.Data.Linq.Mapping.InheritanceMappingAttribute.Type%2A> vlastnost.  
+4. Pro každou <xref:System.Data.Linq.Mapping.InheritanceMappingAttribute> atribut, také přidat <xref:System.Data.Linq.Mapping.InheritanceMappingAttribute.Type%2A> vlastnost.  
   
      Tato vlastnost obsahuje hodnotu, která určuje, které třída nebo podtřídou označuje hodnotu klíče.  
   
-5.  Pouze na jednom z <xref:System.Data.Linq.Mapping.InheritanceMappingAttribute> atributy, přidejte <xref:System.Data.Linq.Mapping.InheritanceMappingAttribute.IsDefault%2A> vlastnost.  
+5. Pouze na jednom z <xref:System.Data.Linq.Mapping.InheritanceMappingAttribute> atributy, přidejte <xref:System.Data.Linq.Mapping.InheritanceMappingAttribute.IsDefault%2A> vlastnost.  
   
      Tato vlastnost slouží k určení *záložní* mapování, když hodnota diskriminátoru z databázové tabulky neodpovídá žádnému <xref:System.Data.Linq.Mapping.InheritanceMappingAttribute.Code%2A> hodnotu v mapování dědičnosti.  
   
-6.  Přidat <xref:System.Data.Linq.Mapping.ColumnAttribute.IsDiscriminator%2A> vlastnost <xref:System.Data.Linq.Mapping.ColumnAttribute> atribut.  
+6. Přidat <xref:System.Data.Linq.Mapping.ColumnAttribute.IsDiscriminator%2A> vlastnost <xref:System.Data.Linq.Mapping.ColumnAttribute> atribut.  
   
      Tato vlastnost znamená, že se jedná o sloupec, který obsahuje <xref:System.Data.Linq.Mapping.InheritanceMappingAttribute.Code%2A> hodnotu.  
   

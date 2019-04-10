@@ -11,12 +11,12 @@ helpviewer_keywords:
 - query samples [Visual Basic]
 - filtering data [Visual Basic]
 ms.assetid: ef103092-9bed-4134-97f4-2db696e83c12
-ms.openlocfilehash: 4de6ed4436f6a1769d178508210ed20e0162f647
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: fc4d43ef9181f1a290d37c137b4fc6f7f16588b7
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58822879"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59332050"
 ---
 # <a name="how-to-filter-query-results-by-using-linq-visual-basic"></a>Postupy: Filtrování výsledků dotazu pomocí LINQ (Visual Basic)
 Language Integrated Query (LINQ) usnadňuje přístup k informacím o databázi a spouštění dotazů.  
@@ -29,41 +29,41 @@ Language Integrated Query (LINQ) usnadňuje přístup k informacím o databázi 
   
 ### <a name="to-create-a-connection-to-a-database"></a>Chcete-li vytvořit připojení k databázi  
   
-1.  V sadě Visual Studio, otevřete **Průzkumníka serveru**/**Průzkumník databáze** kliknutím **Průzkumníka serveru**/**databáze Průzkumník** na **zobrazení** nabídky.  
+1. V sadě Visual Studio, otevřete **Průzkumníka serveru**/**Průzkumník databáze** kliknutím **Průzkumníka serveru**/**databáze Průzkumník** na **zobrazení** nabídky.  
   
-2.  Klikněte pravým tlačítkem na **datová připojení** v **Průzkumníka serveru**/**Průzkumník databáze** a potom klikněte na tlačítko **přidat připojení**.  
+2. Klikněte pravým tlačítkem na **datová připojení** v **Průzkumníka serveru**/**Průzkumník databáze** a potom klikněte na tlačítko **přidat připojení**.  
   
-3.  Zadejte platné připojení k ukázkové databázi Northwind.  
+3. Zadejte platné připojení k ukázkové databázi Northwind.  
   
 ### <a name="to-add-a-project-that-contains-a-linq-to-sql-file"></a>Chcete-li přidat projekt, který obsahuje souboru LINQ to SQL  
   
-1.  V sadě Visual Studio na **souboru** nabídky, přejděte k **nový** a potom klikněte na tlačítko **projektu**. Výběr jazyka Visual Basic **formulářová aplikace Windows** jako typ projektu.  
+1. V sadě Visual Studio na **souboru** nabídky, přejděte k **nový** a potom klikněte na tlačítko **projektu**. Výběr jazyka Visual Basic **formulářová aplikace Windows** jako typ projektu.  
   
-2.  Na **projektu** nabídky, klikněte na tlačítko **přidat novou položku**. Vyberte **třídy LINQ to SQL** šablony položky.  
+2. Na **projektu** nabídky, klikněte na tlačítko **přidat novou položku**. Vyberte **třídy LINQ to SQL** šablony položky.  
   
-3.  Pojmenujte soubor `northwind.dbml`. Klikněte na **Přidat**. Pro soubor northwind.dbml otevře se Návrhář relací objektů (O/R Designer).  
+3. Pojmenujte soubor `northwind.dbml`. Klikněte na **Přidat**. Pro soubor northwind.dbml otevře se Návrhář relací objektů (O/R Designer).  
   
 ### <a name="to-add-tables-to-query-to-the-or-designer"></a>Přidání tabulek do dotazu do Návrháře relací objektů  
   
-1.  V **Průzkumníka serveru**/**Průzkumník databáze**, rozbalte možnost připojení k databázi Northwind. Rozbalte **tabulky** složky.  
+1. V **Průzkumníka serveru**/**Průzkumník databáze**, rozbalte možnost připojení k databázi Northwind. Rozbalte **tabulky** složky.  
   
      Pokud jste zavřeli O/R Designer, můžete ho znovu otevřít poklikáním northwind.dbml soubor, který jste přidali dříve.  
   
-2.  Klikněte na tabulce Zákazníci a přetáhněte ji do levého podokna v návrháři. Klikněte na tabulky objednávky a přetáhněte ji do levého podokna v návrháři.  
+2. Klikněte na tabulce Zákazníci a přetáhněte ji do levého podokna v návrháři. Klikněte na tabulky objednávky a přetáhněte ji do levého podokna v návrháři.  
   
      Návrhář vytvoří nové `Customer` a `Order` objekty pro váš projekt. Všimněte si, že návrhář automaticky zjišťuje vztahy mezi tabulkami a vytvoří podřízené vlastnosti pro objekty v relaci. Například technologie IntelliSense se zobrazí, který `Customer` objekt má `Orders` týkající se vlastností pro všechny objednávky daného zákazníka.  
   
-3.  Uložte změny a zavřete návrháře.  
+3. Uložte změny a zavřete návrháře.  
   
-4.  Uložte projekt.  
+4. Uložte projekt.  
   
 ### <a name="to-add-code-to-query-the-database-and-display-the-results"></a>Chcete-li přidat kód pro dotaz na databázi a zobrazení výsledků  
   
-1.  Z **nástrojů**, přetáhněte <xref:System.Windows.Forms.DataGridView> ovládacího prvku na výchozí formulář Windows pro váš projekt Form1.  
+1. Z **nástrojů**, přetáhněte <xref:System.Windows.Forms.DataGridView> ovládacího prvku na výchozí formulář Windows pro váš projekt Form1.  
   
-2.  Dvakrát klikněte na Přidat kód pro Form1 `Load` události formuláře.  
+2. Dvakrát klikněte na Přidat kód pro Form1 `Load` události formuláře.  
   
-3.  Při přidání tabulky do Návrháře relací objektů, přidá návrháře <xref:System.Data.Linq.DataContext> objektu pro váš projekt. Tento objekt obsahuje kód, který musí mít pro přístup k těmto tabulky, vedle jednotlivých objektů a kolekcí pro každou tabulku. <xref:System.Data.Linq.DataContext> Objektu pro váš projekt je s názvem podle názvu souboru .dbml. Pro tento projekt <xref:System.Data.Linq.DataContext> se nazývá `northwindDataContext`.  
+3. Při přidání tabulky do Návrháře relací objektů, přidá návrháře <xref:System.Data.Linq.DataContext> objektu pro váš projekt. Tento objekt obsahuje kód, který musí mít pro přístup k těmto tabulky, vedle jednotlivých objektů a kolekcí pro každou tabulku. <xref:System.Data.Linq.DataContext> Objektu pro váš projekt je s názvem podle názvu souboru .dbml. Pro tento projekt <xref:System.Data.Linq.DataContext> se nazývá `northwindDataContext`.  
   
      Můžete vytvořit instanci <xref:System.Data.Linq.DataContext> v kódu a dotazování tabulky určené Návrháře relací objektů.  
   
@@ -71,9 +71,9 @@ Language Integrated Query (LINQ) usnadňuje přístup k informacím o databázi 
   
      [!code-vb[VbLINQToSQLHowTos#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQtoSQLHowTos/VB/Form5.vb#11)]  
   
-4.  Stisknutím klávesy F5 spusťte váš projekt a prohlédněte si výsledky.  
+4. Stisknutím klávesy F5 spusťte váš projekt a prohlédněte si výsledky.  
   
-5.  Toto jsou některé filtry, které můžete vyzkoušet.  
+5. Toto jsou některé filtry, které můžete vyzkoušet.  
   
      [!code-vb[VbLINQToSQLHowTos#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQtoSQLHowTos/VB/Form5.vb#12)]  
   
@@ -81,5 +81,5 @@ Language Integrated Query (LINQ) usnadňuje přístup k informacím o databázi 
 
 - [LINQ](../../../../visual-basic/programming-guide/language-features/linq/index.md)
 - [Dotazy](../../../../visual-basic/language-reference/queries/index.md)
-- [LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md)
-- [Metody DataContext (Návrhář relací objektů)](/visualstudio/data-tools/datacontext-methods-o-r-designer)
+- [Technologie LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md)
+- [Metody DataContext (O/R Designer)](/visualstudio/data-tools/datacontext-methods-o-r-designer)

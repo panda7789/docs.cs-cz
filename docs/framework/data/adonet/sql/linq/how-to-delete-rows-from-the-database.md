@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 2144c99b-8055-4080-a5c6-1ea14335e2a3
-ms.openlocfilehash: 80340bcf25ec3299629af34f7fafe53877ad571c
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 401d445e49e3712b8c59fa9bc9a2e53500a5db16
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59213295"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59331673"
 ---
 # <a name="how-to-delete-rows-from-the-database"></a>Postupy: Odstranění řádků z databáze
 Můžete odstranit řádky v databázi tak, že odeberete odpovídající [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] objekty z kolekce související tabulky. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Přeloží provedené změny do příslušné SQL `DELETE` příkazy.  
@@ -32,11 +32,11 @@ Můžete odstranit řádky v databázi tak, že odeberete odpovídající [!INCL
   
 ### <a name="to-delete-a-row-in-the-database"></a>Odstranit řádek v databázi  
   
-1.  Dotaz na databázi pro řádku, který má být odstraněna.  
+1. Dotaz na databázi pro řádku, který má být odstraněna.  
   
-2.  Volání <xref:System.Data.Linq.Table%601.DeleteOnSubmit%2A> metody.  
+2. Volání <xref:System.Data.Linq.Table%601.DeleteOnSubmit%2A> metody.  
   
-3.  Odeslání změn do databáze.  
+3. Odeslání změn do databáze.  
   
 ## <a name="example"></a>Příklad  
  Tento první příklad kódu se dotazuje databáze pro podrobnosti objednávky, která patří #11000 pořadí, označí tato OrderDetails k odstranění a odešle tyto změny do databáze.  

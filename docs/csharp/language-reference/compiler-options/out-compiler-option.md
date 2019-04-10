@@ -8,12 +8,12 @@ helpviewer_keywords:
 - out compiler option [C#]
 - -out compiler option [C#]
 ms.assetid: 70d91d01-7bd2-4aea-ba8b-4e9807e9caa5
-ms.openlocfilehash: 6d1134367cbbe494f5ab882d88cc083110ffd5c7
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 459f83ee52d0ab6421fe7be4a597d8e5174b4fd9
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57362354"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59331296"
 ---
 # <a name="-out-c-compiler-options"></a>-out (možnosti kompilátoru C#)
 **-Out** parametr určuje název výstupního souboru.  
@@ -49,11 +49,11 @@ ms.locfileid: "57362354"
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Nastavení tohoto parametru kompilátoru ve vývojovém prostředí Visual Studio  
   
-1.  Otevřete v projektu **vlastnosti** stránky.  
+1. Otevřete v projektu **vlastnosti** stránky.  
   
-2.  Klikněte na tlačítko **aplikace** stránku vlastností.  
+2. Klikněte na tlačítko **aplikace** stránku vlastností.  
   
-3.  Upravit **název sestavení** vlastnost.  
+3. Upravit **název sestavení** vlastnost.  
   
      Programové nastavení tohoto parametru kompilátoru: <xref:VSLangProj80.ProjectProperties3.OutputFileName%2A> je vlastnost jen pro čtení, což je určeno ke kombinaci komponent typu projektu (exe, knihovny a tak dále) a název sestavení. Úprava jeden nebo oba z těchto vlastností bude nutné nastavit název výstupního souboru.  
   
@@ -66,6 +66,6 @@ csc t.cs -out:mymodule.netmodule -target:module t2.cs
   
 ## <a name="see-also"></a>Viz také:
 
-- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)
+- [Možnosti kompilátoru C#](../../../csharp/language-reference/compiler-options/index.md)
 - [Přátelská sestavení](../../../standard/assembly/friend-assemblies.md)
 - [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

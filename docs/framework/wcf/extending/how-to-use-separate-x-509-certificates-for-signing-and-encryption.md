@@ -9,12 +9,12 @@ helpviewer_keywords:
 - ClientCredentials class
 - ClientCredentialsSecurityTokenManager class
 ms.assetid: 0b06ce4e-7835-4d82-8baf-d525c71a0e49
-ms.openlocfilehash: 9a6b043420554e41d0804e32313b87f05cf54631
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: f95274861f58d1581e4c5439861ebf186b1b3489
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59160937"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59332557"
 ---
 # <a name="how-to-use-separate-x509-certificates-for-signing-and-encryption"></a>Postupy: Použití samostatných certifikátů X.509 pro přihlašování a šifrování
 Toto téma ukazuje, jak konfigurovat Windows Communication Foundation (WCF) používat různé certifikáty pro podepisování zpráv a šifrování na klienta a služby.  
@@ -47,34 +47,34 @@ Toto téma ukazuje, jak konfigurovat Windows Communication Foundation (WCF) pou�
   
 ### <a name="to-use-separate-certificates-for-signing-and-encryption"></a>Použití samostatných certifikátů pro podepisování a šifrování  
   
-1.  Definovat novou třídu přihlašovací údaje klienta, která dědí z <xref:System.ServiceModel.Description.ClientCredentials> třídy. Implementace čtyři nové vlastnosti umožňující specifikaci více certifikátů: `ClientSigningCertificate`, `ClientEncryptingCertificate`, `ServiceSigningCertificate`, a `ServiceEncryptingCertificate`. Také přepsat <xref:System.ServiceModel.Description.ClientCredentials.CreateSecurityTokenManager%2A> metoda vrátí instanci upravené <xref:System.ServiceModel.ClientCredentialsSecurityTokenManager> třídu, která je definována v dalším kroku.  
+1. Definovat novou třídu přihlašovací údaje klienta, která dědí z <xref:System.ServiceModel.Description.ClientCredentials> třídy. Implementace čtyři nové vlastnosti umožňující specifikaci více certifikátů: `ClientSigningCertificate`, `ClientEncryptingCertificate`, `ServiceSigningCertificate`, a `ServiceEncryptingCertificate`. Také přepsat <xref:System.ServiceModel.Description.ClientCredentials.CreateSecurityTokenManager%2A> metoda vrátí instanci upravené <xref:System.ServiceModel.ClientCredentialsSecurityTokenManager> třídu, která je definována v dalším kroku.  
   
      [!code-csharp[c_FourCerts#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_fourcerts/cs/source.cs#1)]
      [!code-vb[c_FourCerts#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_fourcerts/vb/source.vb#1)]  
   
-2.  Definování nového klienta Správce tokenů zabezpečení, která dědí z <xref:System.ServiceModel.ClientCredentialsSecurityTokenManager> třídy. Přepsat <xref:System.ServiceModel.ClientCredentialsSecurityTokenManager.CreateSecurityTokenProvider%2A> metodu pro vytvoření poskytovatele tokenu zabezpečení. `requirement` Parametr ( <xref:System.IdentityModel.Selectors.SecurityTokenRequirement>) poskytuje využití směr a klíč zprávy.  
+2. Definování nového klienta Správce tokenů zabezpečení, která dědí z <xref:System.ServiceModel.ClientCredentialsSecurityTokenManager> třídy. Přepsat <xref:System.ServiceModel.ClientCredentialsSecurityTokenManager.CreateSecurityTokenProvider%2A> metodu pro vytvoření poskytovatele tokenu zabezpečení. `requirement` Parametr ( <xref:System.IdentityModel.Selectors.SecurityTokenRequirement>) poskytuje využití směr a klíč zprávy.  
   
      [!code-csharp[c_FourCerts#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_fourcerts/cs/source.cs#2)]
      [!code-vb[c_FourCerts#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_fourcerts/vb/source.vb#2)]  
   
-3.  Definovat novou třídu přihlašovací údaje služby, která dědí z <xref:System.ServiceModel.Description.ServiceCredentials> třídy. Implementace čtyři nové vlastnosti umožňující specifikaci více certifikátů: `ClientSigningCertificate`, `ClientEncryptingCertificate`, `ServiceSigningCertificate`, a `ServiceEncryptingCertificate`. Také přepsat <xref:System.ServiceModel.Description.ServiceCredentials.CreateSecurityTokenManager%2A> metoda vrátí instanci upravené <xref:System.ServiceModel.Security.ServiceCredentialsSecurityTokenManager> třídu, která je definována v dalším kroku.  
+3. Definovat novou třídu přihlašovací údaje služby, která dědí z <xref:System.ServiceModel.Description.ServiceCredentials> třídy. Implementace čtyři nové vlastnosti umožňující specifikaci více certifikátů: `ClientSigningCertificate`, `ClientEncryptingCertificate`, `ServiceSigningCertificate`, a `ServiceEncryptingCertificate`. Také přepsat <xref:System.ServiceModel.Description.ServiceCredentials.CreateSecurityTokenManager%2A> metoda vrátí instanci upravené <xref:System.ServiceModel.Security.ServiceCredentialsSecurityTokenManager> třídu, která je definována v dalším kroku.  
   
      [!code-csharp[c_FourCerts#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_fourcerts/cs/source.cs#3)]
      [!code-vb[c_FourCerts#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_fourcerts/vb/source.vb#3)]  
   
-4.  Definování nové služby Správce tokenů zabezpečení, která dědí z <xref:System.ServiceModel.Security.ServiceCredentialsSecurityTokenManager> třídy. Přepsat <xref:System.ServiceModel.Security.ServiceCredentialsSecurityTokenManager.CreateSecurityTokenProvider%2A> metodu pro vytvoření poskytovatele tokenu zabezpečení zadaný směr a klíč využití předané zprávy.  
+4. Definování nové služby Správce tokenů zabezpečení, která dědí z <xref:System.ServiceModel.Security.ServiceCredentialsSecurityTokenManager> třídy. Přepsat <xref:System.ServiceModel.Security.ServiceCredentialsSecurityTokenManager.CreateSecurityTokenProvider%2A> metodu pro vytvoření poskytovatele tokenu zabezpečení zadaný směr a klíč využití předané zprávy.  
   
      [!code-csharp[c_FourCerts#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_fourcerts/cs/source.cs#4)]
      [!code-vb[c_FourCerts#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_fourcerts/vb/source.vb#4)]  
   
 ### <a name="to-use-multiple-certificates-on-the-client"></a>Použití více certifikátů na straně klienta  
   
-1.  Vytvoření vlastní vazby. Element vazby zabezpečení musí pracovat v duplexním režimu povolit zabezpečení poskytovatele tokenů bude k dispozici pro požadavky a odpovědi. Můžete provést například jde používat podporující duplexní režim přenosu ani pomocí <xref:System.ServiceModel.Channels.CompositeDuplexBindingElement> jak je znázorněno v následujícím kódu. Odkaz vlastní <xref:System.ServiceModel.Security.IdentityVerifier> který je definován v dalším kroku k prvku vazby zabezpečení. Nahraďte výchozí pověření klienta s přihlašovacími údaji přizpůsobené klientů předtím vytvořili.  
+1. Vytvoření vlastní vazby. Element vazby zabezpečení musí pracovat v duplexním režimu povolit zabezpečení poskytovatele tokenů bude k dispozici pro požadavky a odpovědi. Můžete provést například jde používat podporující duplexní režim přenosu ani pomocí <xref:System.ServiceModel.Channels.CompositeDuplexBindingElement> jak je znázorněno v následujícím kódu. Odkaz vlastní <xref:System.ServiceModel.Security.IdentityVerifier> který je definován v dalším kroku k prvku vazby zabezpečení. Nahraďte výchozí pověření klienta s přihlašovacími údaji přizpůsobené klientů předtím vytvořili.  
   
      [!code-csharp[c_FourCerts#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_fourcerts/cs/source.cs#5)]
      [!code-vb[c_FourCerts#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_fourcerts/vb/source.vb#5)]  
   
-2.  Definování vlastní <xref:System.ServiceModel.Security.IdentityVerifier>. Služba má více identit, protože různé certifikáty se používají k zašifrování žádosti a podepsat odpověď.  
+2. Definování vlastní <xref:System.ServiceModel.Security.IdentityVerifier>. Služba má více identit, protože různé certifikáty se používají k zašifrování žádosti a podepsat odpověď.  
   
     > [!NOTE]
     >  V následující ukázce ověřovatele zadaná vlastní identity neprovádí žádné identitě koncového bodu kontrolu pro demonstrační účely. Toto nastavení nedoporučujeme normy pro produkčního kódu.  
@@ -84,7 +84,7 @@ Toto téma ukazuje, jak konfigurovat Windows Communication Foundation (WCF) pou�
   
 ### <a name="to-use-multiple-certificates-on-the-service"></a>Použití více certifikátů ve službě  
   
-1.  Vytvoření vlastní vazby. Element vazby zabezpečení musí pracovat v duplexním režimu povolit zabezpečení poskytovatele tokenů bude k dispozici pro požadavky a odpovědi. S klientem, používejte podporující duplexní přenos nebo používáte <xref:System.ServiceModel.Channels.CompositeDuplexBindingElement> jak je znázorněno v následujícím kódu. Nahraďte výchozí pověření služby s přihlašovacími údaji služby předtím vytvořili.  
+1. Vytvoření vlastní vazby. Element vazby zabezpečení musí pracovat v duplexním režimu povolit zabezpečení poskytovatele tokenů bude k dispozici pro požadavky a odpovědi. S klientem, používejte podporující duplexní přenos nebo používáte <xref:System.ServiceModel.Channels.CompositeDuplexBindingElement> jak je znázorněno v následujícím kódu. Nahraďte výchozí pověření služby s přihlašovacími údaji služby předtím vytvořili.  
   
      [!code-csharp[c_FourCerts#7](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_fourcerts/cs/source.cs#7)]
      [!code-vb[c_FourCerts#7](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_fourcerts/vb/source.vb#7)]  

@@ -2,12 +2,12 @@
 title: 'Postupy: Zadání datových typů v databázi'
 ms.date: 03/30/2017
 ms.assetid: 2228fdad-7e6a-4b1b-b4d1-79d0198b7c28
-ms.openlocfilehash: bf53463be8c715fd1c599efac1b19d838be19f86
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 67f23ff06aefbcff4ba7e2eaab63d9b8493b9717
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59218040"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59333207"
 ---
 # <a name="how-to-specify-database-data-types"></a>Postupy: Zadání datových typů v databázi
 Použití [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] <xref:System.Data.Linq.Mapping.ColumnAttribute.DbType%2A> vlastnosti <xref:System.Data.Linq.Mapping.ColumnAttribute> atribut zadat přesný text, který definuje sloupce v tabulce deklaraci T-SQL.  
@@ -18,9 +18,9 @@ Použití [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] <x
   
 ### <a name="to-specify-text-to-define-a-data-type-in-a-t-sql-table"></a>Pokud chcete zadat text k definování typů dat v tabulce T-SQL  
   
-1.  Přidat <xref:System.Data.Linq.Mapping.ColumnAttribute.DbType%2A> vlastnost <xref:System.Data.Linq.Mapping.ColumnAttribute> atribut.  
+1. Přidat <xref:System.Data.Linq.Mapping.ColumnAttribute.DbType%2A> vlastnost <xref:System.Data.Linq.Mapping.ColumnAttribute> atribut.  
   
-2.  Nastavte hodnotu <xref:System.Data.Linq.Mapping.ColumnAttribute.DbType%2A> vlastnost přesný text, který používá T-SQL.  
+2. Nastavte hodnotu <xref:System.Data.Linq.Mapping.ColumnAttribute.DbType%2A> vlastnost přesný text, který používá T-SQL.  
   
 ## <a name="see-also"></a>Viz také:
 

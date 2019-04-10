@@ -8,12 +8,12 @@ helpviewer_keywords:
 - data binding, WCF Data Services
 - WCF Data Services, data binding
 ms.assetid: 2477af0a-676f-44f7-b73d-e66208785509
-ms.openlocfilehash: 465585d93d7bb20208720dc360b2cf8e6bb5f0e4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f02c551c4382c9db03be2f4a0adbb9061fd4fe65
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54540751"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59332505"
 ---
 # <a name="how-to-bind-data-using-a-project-data-source-wcf-data-services"></a>Postupy: Vytvoření vazby dat pomocí zdroje dat projektu (WCF Data Services)
 
@@ -23,11 +23,11 @@ Můžete vytvořit zdroje dat, které jsou založené na objektech generovaná d
 
 ## <a name="use-a-project-data-source-in-a-wpf-window"></a>Použijte zdroje dat projektu v okně WPF
 
-1.  V rámci projektu WPF v sadě Visual Studio, přidejte odkaz na datová služba Northwind. Další informace najdete v tématu [jak: Přidání odkazu na datovou službu](../../../../docs/framework/data/wcf/how-to-add-a-data-service-reference-wcf-data-services.md).
+1. V rámci projektu WPF v sadě Visual Studio, přidejte odkaz na datová služba Northwind. Další informace najdete v tématu [jak: Přidání odkazu na datovou službu](../../../../docs/framework/data/wcf/how-to-add-a-data-service-reference-wcf-data-services.md).
 
-2.  V **zdroje dat** okna, rozbalte `Customers` uzlu **NorthwindEntities** zdroje dat projektu.
+2. V **zdroje dat** okna, rozbalte `Customers` uzlu **NorthwindEntities** zdroje dat projektu.
 
-3.  Klikněte na tlačítko **CustomerID** položky, vyberte **– pole se seznamem** ze seznamu a přetáhněte **CustomerID** položky z **zákazníkům** uzlu Návrhář.
+3. Klikněte na tlačítko **CustomerID** položky, vyberte **– pole se seznamem** ze seznamu a přetáhněte **CustomerID** položky z **zákazníkům** uzlu Návrhář.
 
      Tím se vytvoří následující prvky objektu v souboru XAML pro okno:
 
@@ -37,7 +37,7 @@ Můžete vytvořit zdroje dat, které jsou založené na objektech generovaná d
 
     -   A <xref:System.Windows.Controls.Label>.
 
-4.  Přetáhněte **objednávky** navigační vlastnost do návrháře.
+4. Přetáhněte **objednávky** navigační vlastnost do návrháře.
 
      Tím se vytvoří následující prvky další objekt v souboru XAML pro okno:
 
@@ -45,18 +45,18 @@ Můžete vytvořit zdroje dat, které jsou založené na objektech generovaná d
 
     -   Vázaný na data <xref:System.Windows.Controls.DataGrid> ovládací prvek s názvem `ordersDataGrid`.
 
-5.  (Volitelné) Přetáhněte další položky z **zákazníkům** uzlu do návrháře.
+5. (Volitelné) Přetáhněte další položky z **zákazníkům** uzlu do návrháře.
 
-6.  Otevřete stránku kódu pro formulář a přidejte následující `using` příkazy (`Imports` v jazyce Visual Basic):
+6. Otevřete stránku kódu pro formulář a přidejte následující `using` příkazy (`Imports` v jazyce Visual Basic):
 
      [!code-csharp[Astoria Northwind Client#CustomersOrdersUsingWpf](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/customerorderswpf2.xaml.cs#customersordersusingwpf)]
 
-7.  V dílčí třídě, která definuje formuláře, přidejte následující kód, který vytváří <xref:System.Data.Objects.ObjectContext> instance a definuje `customerID` konstantní.
+7. V dílčí třídě, která definuje formuláře, přidejte následující kód, který vytváří <xref:System.Data.Objects.ObjectContext> instance a definuje `customerID` konstantní.
 
      [!code-csharp[Astoria Northwind Client#CustomersOrdersDefinitionWpf](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/customerorderswpf2.xaml.cs#customersordersdefinitionwpf)]
      [!code-vb[Astoria Northwind Client#CustomersOrdersDefinitionWpf](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/customerorderswpf2.xaml.vb#customersordersdefinitionwpf)]
 
-8.  V Návrháři vyberte v okně.
+8. V Návrháři vyberte v okně.
 
     > [!NOTE]
     > Ujistěte se, že samotné, namísto výběru obsah, který je v okně vyberte okno. Pokud je vybrán v okně, **název** textového pole v horní části **vlastnosti** okno by mělo obsahovat název okna.
@@ -76,9 +76,9 @@ Můžete vytvořit zdroje dat, které jsou založené na objektech generovaná d
 
 ## <a name="use-a-project-data-source-in-a-windows-form"></a>Použijte zdroje dat projektu ve formuláři Windows
 
-1.  V **zdroje dat** okna, rozbalte **zákazníkům** uzlu v **NorthwindEntities** zdroje dat projektu.
+1. V **zdroje dat** okna, rozbalte **zákazníkům** uzlu v **NorthwindEntities** zdroje dat projektu.
 
-2.  Klikněte na tlačítko **CustomerID** položky, vyberte **– pole se seznamem** ze seznamu a přetáhněte **CustomerID** položky z **zákazníkům** uzlu Návrhář.
+2. Klikněte na tlačítko **CustomerID** položky, vyberte **– pole se seznamem** ze seznamu a přetáhněte **CustomerID** položky z **zákazníkům** uzlu Návrhář.
 
      Tím se vytvoří následující ovládací prvky ve formuláři:
 
@@ -90,23 +90,23 @@ Můžete vytvořit zdroje dat, které jsou založené na objektech generovaná d
 
     -   A <xref:System.Windows.Forms.Label>.
 
-3.  Přetáhněte **objednávky** navigační vlastnost pro formulář.
+3. Přetáhněte **objednávky** navigační vlastnost pro formulář.
 
-4.  Tím se vytvoří `ordersBindingSource` ovládacím prvkem <xref:System.Windows.Forms.BindingSource.DataSource%2A> vlastnost ovládacího prvku nastavte na `customersBindingSource` a <xref:System.Windows.Forms.BindingSource.DataMember%2A> nastavenou na `Customers`. Také vytvoří `ordersDataGridView` ovládací prvek vázaný na data ve formuláři doplněny ovládací prvek popisek odpovídajícím způsobem s názvem.
+4. Tím se vytvoří `ordersBindingSource` ovládacím prvkem <xref:System.Windows.Forms.BindingSource.DataSource%2A> vlastnost ovládacího prvku nastavte na `customersBindingSource` a <xref:System.Windows.Forms.BindingSource.DataMember%2A> nastavenou na `Customers`. Také vytvoří `ordersDataGridView` ovládací prvek vázaný na data ve formuláři doplněny ovládací prvek popisek odpovídajícím způsobem s názvem.
 
-5.  (Volitelné) Přetáhněte další položky z **zákazníkům** uzlu do návrháře.
+5. (Volitelné) Přetáhněte další položky z **zákazníkům** uzlu do návrháře.
 
-6.  Otevřete stránku kódu pro formulář a přidejte následující `using` příkazy (`Imports` v jazyce Visual Basic):
+6. Otevřete stránku kódu pro formulář a přidejte následující `using` příkazy (`Imports` v jazyce Visual Basic):
 
      [!code-csharp[Astoria Northwind Client#CustomersOrdersUsing](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/customerorders.cs#customersordersusing)]
      [!code-vb[Astoria Northwind Client#CustomersOrdersUsing](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/customerorders.vb#customersordersusing)]
 
-7.  V dílčí třídě, která definuje formuláře, přidejte následující kód, který vytváří <xref:System.Data.Objects.ObjectContext> instance a definuje `customerID` konstantní.
+7. V dílčí třídě, která definuje formuláře, přidejte následující kód, který vytváří <xref:System.Data.Objects.ObjectContext> instance a definuje `customerID` konstantní.
 
      [!code-csharp[Astoria Northwind Client#CustomersOrdersDefinition](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/customerorders.cs#customersordersdefinition)]
      [!code-vb[Astoria Northwind Client#CustomersOrdersDefinition](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/customerorders.vb#customersordersdefinition)]
 
-8.  V návrháři formuláře dvakrát klikněte na formuláři.
+8. V návrháři formuláře dvakrát klikněte na formuláři.
 
      Tím se otevře na stránce kódu pro formulář a vytvoří metodu, která zpracovává `Load` událost pro daný formulář.
 

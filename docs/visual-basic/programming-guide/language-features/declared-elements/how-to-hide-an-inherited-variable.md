@@ -11,12 +11,12 @@ helpviewer_keywords:
 - declared elements [Visual Basic], about declared elements
 - variables [Visual Basic], hiding inherited
 ms.assetid: 765728d9-7351-4a30-999d-b5f34f024412
-ms.openlocfilehash: 2b052b44043deba85c8b142a2bf1a684c1159809
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: ee147ecd00b88b538ace32844c42ac9c5022b2ef
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58842509"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59331699"
 ---
 # <a name="how-to-hide-an-inherited-variable-visual-basic"></a>Postupy: Skrytí zděděné proměnné (Visual Basic)
 Odvozené třídy dědí všechny definice své základní třídy. Pokud chcete k definování proměnné pomocí stejného názvu jako prvek základní třídy, můžete skrýt, nebo *stínové*, základní třída prvku při definování proměnné v odvozené třídě. Pokud to uděláte, kód v odvozené třídě přistupuje ke vaše proměnná, pokud explicitně obchází mechanismu stínového provozu.  
@@ -25,11 +25,11 @@ Odvozené třídy dědí všechny definice své základní třídy. Pokud chcete
   
 ### <a name="to-hide-an-inherited-variable"></a>Chcete-li skrytí zděděné proměnné  
   
-1.  Ujistěte se, že je deklarována, které chcete skrýt proměnné na úrovni třídy (mimo všechny procedury). V opačném případě není potřeba skryli.  
+1. Ujistěte se, že je deklarována, které chcete skrýt proměnné na úrovni třídy (mimo všechny procedury). V opačném případě není potřeba skryli.  
   
-2.  Uvnitř vaší odvozené třídě, zápisu [příkazu Dim](../../../../visual-basic/language-reference/statements/dim-statement.md) deklarování proměnné. Použijte stejný název jako zděděné proměnné.  
+2. Uvnitř vaší odvozené třídě, zápisu [příkazu Dim](../../../../visual-basic/language-reference/statements/dim-statement.md) deklarování proměnné. Použijte stejný název jako zděděné proměnné.  
   
-3.  Zahrnout [stíny](../../../../visual-basic/language-reference/modifiers/shadows.md) – klíčové slovo v deklaraci.  
+3. Zahrnout [stíny](../../../../visual-basic/language-reference/modifiers/shadows.md) – klíčové slovo v deklaraci.  
   
      Když kód v odvozené třídě odkazuje na název proměnné, přeloží kompilátor odkaz na vaše proměnná.  
   

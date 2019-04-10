@@ -2,12 +2,12 @@
 title: Formátování WCF Web HTTP
 ms.date: 03/30/2017
 ms.assetid: e2414896-5463-41cd-b0a6-026a713eac2c
-ms.openlocfilehash: 37f0506822ca03aed3755ad42f9bf7ecdc962da7
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: f3d3a2d992f234c690f3fb87514b700a6596a5fe
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59094447"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59331036"
 ---
 # <a name="wcf-web-http-formatting"></a>Formátování WCF Web HTTP
 Model programování webových služeb HTTP WCF umožňuje dynamicky určovat nejlepší formát pro operaci služby vrátit v odpovědi. Dvě metody pro zjištění odpovídající formátu jsou podporovány: automatické a explicitní.  
@@ -15,13 +15,13 @@ Model programování webových služeb HTTP WCF umožňuje dynamicky určovat ne
 ## <a name="automatic-formatting"></a>Automatické formátování  
  Při povolení automatické formátování vybere nejlepší formát ke vrácení odpovědi. Určuje nejvhodnější formát kontrolou následujících akcí v pořadí:  
   
-1.  Typy médií v hlavičce Accept zprávy požadavku.  
+1. Typy médií v hlavičce Accept zprávy požadavku.  
   
-2.  Typ obsahu zprávy s požadavkem.  
+2. Typ obsahu zprávy s požadavkem.  
   
-3.  Výchozí formát nastavení v operaci.  
+3. Výchozí formát nastavení v operaci.  
   
-4.  Výchozí formát nastavení WebHttpBehavior.  
+4. Výchozí formát nastavení WebHttpBehavior.  
   
  Pokud zpráva žádosti obsahuje hlavičku Accept infrastrukturu Windows Communication Foundation (WCF) vyhledá pro typ, který podporuje. Pokud `Accept` hlavičky určuje priority pro jeho typy médií, jsou respektovat. Pokud se nenajde žádný vhodný formát v `Accept` hlavička content-type zprávy požadavku se používá. Pokud není zadán žádný vhodný typ obsahu, je používán formát výchozí nastavení pro tuto operaci. Výchozí formát nastavená `ResponseFormat` parametr <xref:System.ServiceModel.Web.WebGetAttribute> a <xref:System.ServiceModel.Web.WebInvokeAttribute> atributy. Pokud žádná výchozí formát je uveden pro operaci, hodnota <xref:System.ServiceModel.Description.WebHttpBehavior.DefaultOutgoingResponseFormat%2A> vlastnost se používá. Automatické formátování se může spolehnout <xref:System.ServiceModel.Description.WebHttpBehavior.AutomaticFormatSelectionEnabled%2A> vlastnost. Pokud je tato vlastnost nastavena na `true`, určuje nejvhodnější formát infrastruktura WCF. Automatický výběr formátu je zakázané ve výchozím nastavení pro zpětnou kompatibilitu. Automatický výběr formátu je možné povolit programově nebo prostřednictvím konfigurace. Následující příklad ukazuje, jak povolit automatický výběr formátu v kódu.  
   

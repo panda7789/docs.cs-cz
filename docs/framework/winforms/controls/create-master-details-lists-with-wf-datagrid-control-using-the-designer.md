@@ -6,12 +6,12 @@ helpviewer_keywords:
 - DataGrid control [Windows Forms], master-details lists
 - related tables [Windows Forms], displaying in DataGrid control
 ms.assetid: 19438ba2-f687-4417-a2fb-ab1cd69d4ded
-ms.openlocfilehash: 1d9e01ab1fbabeb7b20fb5d2449ca7bba5f1853a
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: f586572c850927ffe71566287986e6db6112c689
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59125961"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59332076"
 ---
 # <a name="how-to-create-master-details-lists-with-the-windows-forms-datagrid-control-using-the-designer"></a>Postupy: Vytváření hlavních-podrobných seznamů s ovládacím prvkem Windows Forms DataGrid pomocí Návrháře
 
@@ -27,26 +27,26 @@ ms.locfileid: "59125961"
   
 ### <a name="to-create-a-master-details-list-in-the-designer"></a>Chcete-li vytvořit seznam hlavních podrobných v Návrháři  
   
-1.  Přidejte dva <xref:System.Windows.Forms.DataGrid> ovládací prvky do formuláře. Další informace najdete v tématu [jak: Přidání ovládacích prvků Windows Forms](how-to-add-controls-to-windows-forms.md). V sadě Visual Studio 2005 <xref:System.Windows.Forms.DataGrid> ovládací prvek není v **nástrojů** ve výchozím nastavení. Další informace najdete v tématu [jak: Přidání položek do panelu nástrojů](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/ms165355(v=vs.100)).  
+1. Přidejte dva <xref:System.Windows.Forms.DataGrid> ovládací prvky do formuláře. Další informace najdete v tématu [jak: Přidání ovládacích prvků Windows Forms](how-to-add-controls-to-windows-forms.md). V sadě Visual Studio 2005 <xref:System.Windows.Forms.DataGrid> ovládací prvek není v **nástrojů** ve výchozím nastavení. Další informace najdete v tématu [jak: Přidání položek do panelu nástrojů](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/ms165355(v=vs.100)).  
   
     > [!NOTE]
     >  Následující kroky se nevztahují na Visual Studio 2005, který používá **zdroje dat** okno pro vytvoření vazby dat doby návrhu. Další informace najdete v tématu [vytvoření vazby ovládacích prvků k datům v sadě Visual Studio](/visualstudio/data-tools/bind-controls-to-data-in-visual-studio) a [jak: Zobrazení souvisejících dat v Windows Forms aplikace](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/57tx3hhe(v=vs.120)).  
   
-2.  Přetáhněte dvě nebo více tabulek z **Průzkumníka serveru** do formuláře.  
+2. Přetáhněte dvě nebo více tabulek z **Průzkumníka serveru** do formuláře.  
   
-3.  Z **Data** nabídce vyberte možnost **generovat datovou sadu**.  
+3. Z **Data** nabídce vyberte možnost **generovat datovou sadu**.  
   
-4.  Nastavte relace mezi tabulkami pomocí návrháře XML. Podrobnosti najdete v tématu "jak: Vytvoření vztahů 1 n v datových sadách a schématech XML"na webu MSDN.  
+4. Nastavte relace mezi tabulkami pomocí návrháře XML. Podrobnosti najdete v tématu "jak: Vytvoření vztahů 1 n v datových sadách a schématech XML"na webu MSDN.  
   
-5.  Uložení relace tak, že vyberete **Uložit vše** z **souboru** nabídky.  
+5. Uložení relace tak, že vyberete **Uložit vše** z **souboru** nabídky.  
   
-6.  Konfigurace <xref:System.Windows.Forms.DataGrid> ovládací prvek, který chcete nastavit hlavní mřížky, následujícím způsobem:  
+6. Konfigurace <xref:System.Windows.Forms.DataGrid> ovládací prvek, který chcete nastavit hlavní mřížky, následujícím způsobem:  
   
     1.  Vyberte <xref:System.Data.DataSet> z rozevíracího seznamu v <xref:System.Windows.Forms.DataGrid.DataSource%2A> vlastnost.  
   
     2.  Vyberte z rozevíracího seznamu v tabulce hlavní (například "zákazníci") <xref:System.Windows.Forms.DataGrid.DataMember%2A> vlastnost.  
   
-7.  Konfigurace <xref:System.Windows.Forms.DataGrid> ovládací prvek, který chcete určit podrobnosti mřížky, následujícím způsobem:  
+7. Konfigurace <xref:System.Windows.Forms.DataGrid> ovládací prvek, který chcete určit podrobnosti mřížky, následujícím způsobem:  
   
     1.  Vyberte <xref:System.Data.DataSet> z rozevíracího seznamu v <xref:System.Windows.Forms.DataGrid.DataSource%2A> vlastnost.  
   

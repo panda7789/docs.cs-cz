@@ -2,12 +2,12 @@
 title: Začínáme s F# v sadě Visual Studio pro Mac
 description: Další informace o použití F# pomocí sady Visual Studio pro Mac.
 ms.date: 07/03/2018
-ms.openlocfilehash: e37600b2ca8f845ec1068a55ff1f9964d2527742
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a6997f139d7e6c5fdf77878442db0b0b75b3d727
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54604160"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59331859"
 ---
 # <a name="get-started-with-f-in-visual-studio-for-mac"></a>Začínáme s F# v sadě Visual Studio pro Mac
 
@@ -19,7 +19,7 @@ Jeden z nejzákladnější projektů v sadě Visual Studio for Mac je konzolová
 
 1. Na **souboru** nabídky, přejděte k **nové řešení**.
 
-2.  V dialogovém okně Nový projekt existují 2 různé šablony služby pro konzolové aplikace.  V části Další existuje -> .NET, který cílí na .NET Framework.  Druhá šablona se v .NET Core -> aplikace, které cílí na .NET Core.  Buď šablona by měla fungovat pro účely tohoto článku.
+2. V dialogovém okně Nový projekt existují 2 různé šablony služby pro konzolové aplikace.  V části Další existuje -> .NET, který cílí na .NET Framework.  Druhá šablona se v .NET Core -> aplikace, které cílí na .NET Core.  Buď šablona by měla fungovat pro účely tohoto článku.
 
 3. V rámci konzolové aplikace, změnit C# k F# v případě potřeby.  Zvolte **Další** tlačítka vpřed!  
 

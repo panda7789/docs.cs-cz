@@ -5,12 +5,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - command-line arguments [C#]
 ms.assetid: 0e597e0d-ea7a-41ba-a38a-0198122f3c26
-ms.openlocfilehash: 2c1416566ca59a44b36457c710955de863013417
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 05978c5604e7aa359b016bd6e3f3196178f706ec
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56980713"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59332206"
 ---
 # <a name="command-line-arguments-c-programming-guide"></a>Argumenty příkazového řádku (Průvodce programováním v C#)
 Argumenty můžete poslat `Main` metoda definováním metody jedním z následujících způsobů:  
@@ -51,23 +51,23 @@ long num = Convert.ToInt64(s);
   
  Kompilace a spuštění aplikace z příkazového řádku, postupujte podle těchto kroků:  
   
-1.  Vložte následující kód do libovolného textového editoru a uložte soubor jako textový soubor s názvem `Factorial.cs`.  
+1. Vložte následující kód do libovolného textového editoru a uložte soubor jako textový soubor s názvem `Factorial.cs`.  
   
      [!code-csharp[csProgGuideMain#16](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideMain/CS/Class1.cs#16)]  
   
-2.  Z **Start** obrazovky nebo **Start** nabídky, otevřete sadu Visual Studio **Developer Command Prompt** okna a pak přejděte do složky, která obsahuje soubor, který jste právě vytvořit.  
+2. Z **Start** obrazovky nebo **Start** nabídky, otevřete sadu Visual Studio **Developer Command Prompt** okna a pak přejděte do složky, která obsahuje soubor, který jste právě vytvořit.  
   
-3.  Zadejte následující příkaz pro kompilaci aplikace.  
+3. Zadejte následující příkaz pro kompilaci aplikace.  
   
      `csc Factorial.cs`  
   
      Pokud vaše aplikace neobsahuje žádné chyby během kompilace, spustitelný soubor, který je pojmenován `Factorial.exe` se vytvoří.  
   
-4.  Zadejte následující příkaz pro výpočet faktoriálu 3:  
+4. Zadejte následující příkaz pro výpočet faktoriálu 3:  
   
      `Factorial 3`  
   
-5.  Tento příkaz vytvoří tento výstup: `The factorial of 3 is 6.`  
+5. Tento příkaz vytvoří tento výstup: `The factorial of 3 is 6.`  
   
 > [!NOTE]
 >  Při spuštění aplikace v sadě Visual Studio, můžete zadat argumenty příkazového řádku [stránka ladění, Návrhář projektu](/visualstudio/ide/reference/debug-page-project-designer).  
@@ -77,9 +77,9 @@ long num = Convert.ToInt64(s);
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Environment?displayProperty=nameWithType>
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
-- [Argumenty Main() a příkazového řádku](../../../csharp/programming-guide/main-and-command-args/index.md)
+- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)
+- [Main() a argumenty příkazového řádku](../../../csharp/programming-guide/main-and-command-args/index.md)
 - [Postupy: Zobrazení argumentů příkazového řádku](../../../csharp/programming-guide/main-and-command-args/how-to-display-command-line-arguments.md)
-- [Postupy: Přístup k argumentům příkazového řádku pomocí příkazu foreach](../../../csharp/programming-guide/main-and-command-args/how-to-access-command-line-arguments-using-foreach.md)
+- [Postupy: Přístup k argumentům příkazového řádku pomocí příkazu foreach](../../../csharp/programming-guide/main-and-command-args/how-to-access-command-line-arguments-using-foreach.md)
 - [Návratové hodnoty Main()](../../../csharp/programming-guide/main-and-command-args/main-return-values.md)
 - [Třídy](../../../csharp/programming-guide/classes-and-structs/classes.md)

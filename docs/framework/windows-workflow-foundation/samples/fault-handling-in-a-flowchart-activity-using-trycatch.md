@@ -2,12 +2,12 @@
 title: Zpracování chyb v aktivitě FlowChart pomocí TryCatch
 ms.date: 03/30/2017
 ms.assetid: 50922964-bfe0-4ba8-9422-0e7220d514fd
-ms.openlocfilehash: e515248594088f9888c3488d83d8079ce5d13089
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 81bfeb911658a6f363a9f0f95ecc7db68a02dbe2
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59119805"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59331257"
 ---
 # <a name="fault-handling-in-a-flowchart-activity-using-trycatch"></a>Zpracování chyb v aktivitě FlowChart pomocí TryCatch
 Tato ukázka předvádí, jak <xref:System.Activities.Statements.TryCatch> aktivita se dá použít v rámci aktivity toku řízení komplexní.
@@ -31,11 +31,11 @@ Tato ukázka předvádí, jak <xref:System.Activities.Statements.TryCatch> aktiv
 
 #### <a name="to-use-this-sample"></a>Pro fungování této ukázky
 
-1.  Pomocí sady Visual Studio 2010, otevřete soubor řešení FlowchartWithFaultHandling.sln.
+1. Pomocí sady Visual Studio 2010, otevřete soubor řešení FlowchartWithFaultHandling.sln.
 
-2.  Abyste mohli sestavit řešení, stiskněte kombinaci kláves CTRL + SHIFT + B.
+2. Abyste mohli sestavit řešení, stiskněte kombinaci kláves CTRL + SHIFT + B.
 
-3.  Abyste mohli spustit řešení, stiskněte klávesu F5.
+3. Abyste mohli spustit řešení, stiskněte klávesu F5.
 
 > [!IMPORTANT]
 >  Vzorky mohou již být nainstalováno ve vašem počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  

@@ -5,12 +5,12 @@ helpviewer_keywords:
 - custom controls [Windows Forms], docking using designer
 - Dock property [Windows Forms], aligning controls (using designer)
 ms.assetid: 51f08998-5e3b-4330-be58-a4edd0eb60f4
-ms.openlocfilehash: 8f74a6b56e99e016bfb27bbe1b271f6c71af8f87
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 8ca6fd64edbd73301fd298f42c3d4d97d021888a
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59140891"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59331858"
 ---
 # <a name="how-to-align-a-control-to-the-edges-of-forms-at-design-time"></a>Postupy: Zarovnání ovládacího prvku k okrajům formuláře během návrhu
 Můžete provést ovládacího prvku zarovná na hraničních zařízeních formulářů tím, že nastavíte <xref:System.Windows.Forms.Control.Dock%2A>. Tato vlastnost určuje, kde se nachází váš ovládací prvek ve formuláři. <xref:System.Windows.Forms.Control.Dock%2A> Vlastnost lze nastavit následující hodnoty:  
@@ -31,15 +31,15 @@ Můžete provést ovládacího prvku zarovná na hraničních zařízeních form
   
 ### <a name="to-set-the-dock-property-for-your-control-at-design-time"></a>Chcete-li nastavit vlastnosti Dock ovládacího prvku v době návrhu  
   
-1.  V Návrháři formulářů Windows vyberte ovládací prvek.  
+1. V Návrháři formulářů Windows vyberte ovládací prvek.  
   
-2.  V **vlastnosti** okna, klikněte na tlačítko Další pole rozevíracího seznamu <xref:System.Windows.Forms.Control.Dock%2A> vlastnost.  
+2. V **vlastnosti** okna, klikněte na tlačítko Další pole rozevíracího seznamu <xref:System.Windows.Forms.Control.Dock%2A> vlastnost.  
   
      Grafické rozhraní představující šest možných <xref:System.Windows.Forms.Control.Dock%2A> nastavení se zobrazí.  
   
-3.  Vyberte příslušné nastavení.  
+3. Vyberte příslušné nastavení.  
   
-4.  Ovládací prvek bude nyní ukotvit způsobem popsaným v nastavení.  
+4. Ovládací prvek bude nyní ukotvit způsobem popsaným v nastavení.  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -2,12 +2,12 @@
 title: 'Postupy: Znázornění sloupců jako povolujících hodnoty null'
 ms.date: 03/30/2017
 ms.assetid: ebb71a37-1f4c-4fa7-b2d2-d903f13c4af1
-ms.openlocfilehash: e3bab3f307bcba77e0d311b96fa79d5a0d01e937
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: ef8fa87963b91ef7140fbaefb657fc7904604b5b
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59169634"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59331153"
 ---
 # <a name="how-to-represent-columns-as-allowing-null-values"></a>Postupy: Znázornění sloupců jako povolujících hodnoty null
 Použití [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] <xref:System.Data.Linq.Mapping.ColumnAttribute.CanBeNull%2A> vlastnost <xref:System.Data.Linq.Mapping.ColumnAttribute> atribut k určení, že sloupec přidružená databáze může obsahovat hodnoty null.  
@@ -16,9 +16,9 @@ Použití [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] <x
   
 ### <a name="to-designate-a-column-as-allowing-null-values"></a>K označení sloupce jako povolujících hodnoty null  
   
-1.  Přidat <xref:System.Data.Linq.Mapping.ColumnAttribute.CanBeNull%2A> vlastnost <xref:System.Data.Linq.Mapping.ColumnAttribute> atribut.  
+1. Přidat <xref:System.Data.Linq.Mapping.ColumnAttribute.CanBeNull%2A> vlastnost <xref:System.Data.Linq.Mapping.ColumnAttribute> atribut.  
   
-2.  Nastavte <xref:System.Data.Linq.Mapping.ColumnAttribute.CanBeNull%2A> hodnoty vlastnosti `true`.  
+2. Nastavte <xref:System.Data.Linq.Mapping.ColumnAttribute.CanBeNull%2A> hodnoty vlastnosti `true`.  
   
 ## <a name="see-also"></a>Viz také:
 

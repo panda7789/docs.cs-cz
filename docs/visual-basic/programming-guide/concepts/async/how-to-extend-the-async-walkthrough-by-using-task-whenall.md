@@ -2,12 +2,12 @@
 title: 'Postupy: Rozšíření návodu asynchronních úloh pomocí metody Task.WhenAll (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: c06d386d-e996-4da9-bf3d-05a3b6c0a258
-ms.openlocfilehash: 80fbe824d62b439fe6f015704bc32194e104cd85
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 7ad2d9cdd85a7bdb67bbf091a38274fd20e5a66f
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54619302"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59331881"
 ---
 # <a name="how-to-extend-the-async-walkthrough-by-using-taskwhenall-visual-basic"></a>Postupy: Rozšíření návodu asynchronních úloh pomocí metody Task.WhenAll (Visual Basic)
 Můžete zvýšit výkon asynchronního řešení v [názorný postup: Přístup k webu pomocí Async a Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md) pomocí <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType> metody. Tato metoda asynchronně čeká na více asynchronních operací, které jsou reprezentovány ve formě kolekci úkolů.  
@@ -23,7 +23,7 @@ Můžete zvýšit výkon asynchronního řešení v [názorný postup: Přístup
   
 ### <a name="to-add-taskwhenall-to-your-geturlcontentsasync-solution"></a>Přidání metody Task.WhenAll do řešení GetURLContentsAsync  
   
-1.  Přidat `ProcessURLAsync` metoda k první aplikaci, která je napsán v jazyce [názorný postup: Přístup k webu pomocí modifikátoru Async a operátoru Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md).  
+1. Přidat `ProcessURLAsync` metoda k první aplikaci, která je napsán v jazyce [názorný postup: Přístup k webu pomocí modifikátoru Async a operátoru Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md).  
   
     -   Pokud jste stáhli kód z [ukázky kódu vývojáře](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f), otevřete projekt AsyncWalkthrough a přidejte `ProcessURLAsync` do souboru MainWindow.xaml.vb.  
   
@@ -40,7 +40,7 @@ Můžete zvýšit výkon asynchronního řešení v [názorný postup: Přístup
     End Function  
     ```  
   
-2.  Okomentujte nebo odstraňte `For Each` smyčky v `SumPageSizesAsync`, jak ukazuje následující kód.  
+2. Okomentujte nebo odstraňte `For Each` smyčky v `SumPageSizesAsync`, jak ukazuje následující kód.  
   
     ```vb  
     'Dim total = 0  
@@ -62,7 +62,7 @@ Můžete zvýšit výkon asynchronního řešení v [názorný postup: Přístup
     'Next  
     ```  
   
-3.  Vytvořte kolekci úkolů. Následující kód definuje [dotazu](../../../../visual-basic/programming-guide/concepts/linq/index.md) , při spuštění metodou <xref:System.Linq.Enumerable.ToArray%2A> vytvoří kolekci úkolů, které stáhnou obsah každého webu. Úkoly jsou spuštěny, když je vyhodnocen dotaz.  
+3. Vytvořte kolekci úkolů. Následující kód definuje [dotazu](../../../../visual-basic/programming-guide/concepts/linq/index.md) , při spuštění metodou <xref:System.Linq.Enumerable.ToArray%2A> vytvoří kolekci úkolů, které stáhnou obsah každého webu. Úkoly jsou spuštěny, když je vyhodnocen dotaz.  
   
      Přidejte následující kód do metody `SumPageSizesAsync` po deklaraci `urlList`.  
   
@@ -75,7 +75,7 @@ Můžete zvýšit výkon asynchronního řešení v [názorný postup: Přístup
     Dim downloadTasks As Task(Of Integer)() = downloadTasksQuery.ToArray()  
     ```  
   
-4.  Použít `Task.WhenAll` na kolekci úloh, `downloadTasks`. `Task.WhenAll` Vrátí jeden úkol, který je dokončen po dokončení všech úloh v kolekci úloh.  
+4. Použít `Task.WhenAll` na kolekci úloh, `downloadTasks`. `Task.WhenAll` Vrátí jeden úkol, který je dokončen po dokončení všech úloh v kolekci úloh.  
   
      V následujícím příkladu `Await` výraz čeká na dokončení jedné úlohy, které `WhenAll` vrátí. Výraz vyhodnocen jako pole celých čísel, kde každé celé číslo je délka stahování webu. Přidejte následující kód, který `SumPageSizesAsync`, za kód, který jste přidali v předchozím kroku.  
   
@@ -88,7 +88,7 @@ Můžete zvýšit výkon asynchronního řešení v [názorný postup: Přístup
     'Dim lengths As Integer() = Await whenAllTask  
     ```  
   
-5.  Nakonec použijte <xref:System.Linq.Enumerable.Sum%2A> metodu pro výpočet součtu délek všech webových stránek. Přidejte následující řádek, který `SumPageSizesAsync`.  
+5. Nakonec použijte <xref:System.Linq.Enumerable.Sum%2A> metodu pro výpočet součtu délek všech webových stránek. Přidejte následující řádek, který `SumPageSizesAsync`.  
   
     ```vb  
     Dim total = lengths.Sum()  
@@ -96,7 +96,7 @@ Můžete zvýšit výkon asynchronního řešení v [názorný postup: Přístup
   
 ### <a name="to-add-taskwhenall-to-the-httpclientgetbytearrayasync-solution"></a>Přidání metody Task.WhenAll do řešení HttpClient.GetByteArrayAsync  
   
-1.  Přidejte následující verzi `ProcessURLAsync` do druhé aplikace, který byl vyvinut v [názorný postup: Přístup k webu pomocí modifikátoru Async a operátoru Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md).  
+1. Přidejte následující verzi `ProcessURLAsync` do druhé aplikace, který byl vyvinut v [názorný postup: Přístup k webu pomocí modifikátoru Async a operátoru Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md).  
   
     -   Pokud jste stáhli kód z [ukázky kódu vývojáře](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f), otevřete projekt AsyncWalkthrough_HttpClient a přidejte `ProcessURLAsync` do souboru MainWindow.xaml.vb.  
   
@@ -115,7 +115,7 @@ Můžete zvýšit výkon asynchronního řešení v [názorný postup: Přístup
     End Function  
     ```  
   
-2.  Okomentujte nebo odstraňte `For Each` smyčky v `SumPageSizesAsync`, jak ukazuje následující kód.  
+2. Okomentujte nebo odstraňte `For Each` smyčky v `SumPageSizesAsync`, jak ukazuje následující kód.  
   
     ```vb  
     'Dim total = 0   
@@ -135,7 +135,7 @@ Můžete zvýšit výkon asynchronního řešení v [názorný postup: Přístup
     'Next  
     ```  
   
-3.  Definování [dotazu](../../../../visual-basic/programming-guide/concepts/linq/index.md) , při spuštění metodou <xref:System.Linq.Enumerable.ToArray%2A> vytvoří kolekci úkolů, které stáhnou obsah každého webu. Úkoly jsou spuštěny, když je vyhodnocen dotaz.  
+3. Definování [dotazu](../../../../visual-basic/programming-guide/concepts/linq/index.md) , při spuštění metodou <xref:System.Linq.Enumerable.ToArray%2A> vytvoří kolekci úkolů, které stáhnou obsah každého webu. Úkoly jsou spuštěny, když je vyhodnocen dotaz.  
   
      Přidejte následující kód do metody `SumPageSizesAsync` po deklaraci `client` a `urlList`.  
   
@@ -148,7 +148,7 @@ Můžete zvýšit výkon asynchronního řešení v [názorný postup: Přístup
     Dim downloadTasks As Task(Of Integer)() = downloadTasksQuery.ToArray()  
     ```  
   
-4.  Dále použijte `Task.WhenAll` na kolekci úloh, `downloadTasks`. `Task.WhenAll` Vrátí jeden úkol, který je dokončen po dokončení všech úloh v kolekci úloh.  
+4. Dále použijte `Task.WhenAll` na kolekci úloh, `downloadTasks`. `Task.WhenAll` Vrátí jeden úkol, který je dokončen po dokončení všech úloh v kolekci úloh.  
   
      V následujícím příkladu `Await` výraz čeká na dokončení jedné úlohy, které `WhenAll` vrátí. Jakmile budete hotovi, `Await` výraz vyhodnocen jako pole celých čísel, kde každé celé číslo je délka stahování webu. Přidejte následující kód, který `SumPageSizesAsync`, za kód, který jste přidali v předchozím kroku.  
   
@@ -161,7 +161,7 @@ Můžete zvýšit výkon asynchronního řešení v [názorný postup: Přístup
     'Dim lengths As Integer() = Await whenAllTask  
     ```  
   
-5.  Nakonec použijte <xref:System.Linq.Enumerable.Sum%2A> metodu k získání součtu délek všech webových stránek. Přidejte následující řádek, který `SumPageSizesAsync`.  
+5. Nakonec použijte <xref:System.Linq.Enumerable.Sum%2A> metodu k získání součtu délek všech webových stránek. Přidejte následující řádek, který `SumPageSizesAsync`.  
   
     ```vb  
     Dim total = lengths.Sum()  

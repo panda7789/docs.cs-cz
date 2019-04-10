@@ -12,29 +12,29 @@ helpviewer_keywords:
 - controls [Windows Forms], binding to Web service
 - BindingSource component [Windows Forms], examples
 ms.assetid: ee261207-4573-4cb9-a8cb-5185037e0fba
-ms.openlocfilehash: cf5352ff60aabe45473c3c9103e8369597db2e8d
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 2f97a8c9b0d3f29ada108afaea92f39af3ac6b3e
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59106753"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59330997"
 ---
 # <a name="how-to-bind-to-a-web-service-using-the-windows-forms-bindingsource"></a>Postupy: Vytvoření vazby k webové službě pomocí Windows Forms BindingSource
 Pokud chcete vytvořit vazbu ovládacího prvku Windows Form do výsledků získaných z volání webové služby XML, můžete použít <xref:System.Windows.Forms.BindingSource> komponenty. Tento postup je podobný vazby <xref:System.Windows.Forms.BindingSource> komponentu do typu. Je nutné vytvořit proxy server na straně klienta, který obsahuje metody a typy, které jsou vystavené webové služby. Generování proxy server na straně klienta z webové služby (.asmx) samotný nebo jeho soubor webové služby WSDL (Description Language). Váš proxy server na straně klienta navíc musí vystavit pole komplexní typy použité ve webové službě jako veřejné vlastnosti. Pak vytvoříte vazbu <xref:System.Windows.Forms.BindingSource> na jeden z typů v webové služby serveru proxy.  
   
 ### <a name="to-create-and-bind-to-a-client-side-proxy"></a>K vytvoření a připojení k proxy serveru na straně klienta  
   
-1.  Vytvoření formuláře Windows v adresáři podle vašeho výběru s odpovídající obor názvů.  
+1. Vytvoření formuláře Windows v adresáři podle vašeho výběru s odpovídající obor názvů.  
   
-2.  Přidat <xref:System.Windows.Forms.BindingSource> komponentu do formuláře.  
+2. Přidat <xref:System.Windows.Forms.BindingSource> komponentu do formuláře.  
   
-3.  Otevřít [!INCLUDE[winsdklong](../../../../includes/winsdklong-md.md)] příkazový řádek a přejděte do stejného adresáře, umístěný ve formuláři.  
+3. Otevřít [!INCLUDE[winsdklong](../../../../includes/winsdklong-md.md)] příkazový řádek a přejděte do stejného adresáře, umístěný ve formuláři.  
   
-4.  Pomocí nástroje WSDL zadat `wsdl` a adresa URL pro .asmx nebo souboru WSDL pro webovou službu, za nímž následuje obor názvů vaší aplikace a volitelně jazyk k práci používáte.  
+4. Pomocí nástroje WSDL zadat `wsdl` a adresa URL pro .asmx nebo souboru WSDL pro webovou službu, za nímž následuje obor názvů vaší aplikace a volitelně jazyk k práci používáte.  
   
      Následující příklad kódu používá webovou službu v `http://webservices.eraserver.net/zipcoderesolver/zipcoderesolver.asmx`. Například pro typ jazyka C# `wsdl http://webservices.eraserver.net.zipcoderesolver/zipcoderesolver.asmx /n:BindToWebService`, nebo pro typ jazyka Visual Basic `wsdl http://webservices.eraserver.net.zipcoderesolver/zipcoderesolver.asmx /n:BindToWebService /language:VB`. Předáním cesty do jazyka WSDL jako argument nástroj vygeneruje proxy server na straně klienta ve stejném adresáři a obor názvů jako vaši aplikaci v daném jazyce. Pokud používáte Visual Studio, přidejte soubor do projektu.  
   
-5.  Vyberte typ proxy serveru na straně klienta k vytvoření vazby.  
+5. Vyberte typ proxy serveru na straně klienta k vytvoření vazby.  
   
      Obvykle se jedná o typ vrácený metodou nabízené webové služby. Pole zvolený typ musí být vystavené jako veřejné vlastnosti pro účely vazby.  
   
@@ -42,7 +42,7 @@ Pokud chcete vytvořit vazbu ovládacího prvku Windows Form do výsledků získ
      [!code-csharp[System.Windows.Forms.DataConnectorWebService#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataConnectorWebService/CS/form1.cs#4)]
      [!code-vb[System.Windows.Forms.DataConnectorWebService#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataConnectorWebService/VB/form1.vb#4)]  
   
-6.  Nastavte <xref:System.Windows.Forms.BindingSource.DataSource%2A> vlastnost <xref:System.Windows.Forms.BindingSource> na požadovaný typ, který je obsažen v proxy serveru webové služby na straně klienta.  
+6. Nastavte <xref:System.Windows.Forms.BindingSource.DataSource%2A> vlastnost <xref:System.Windows.Forms.BindingSource> na požadovaný typ, který je obsažen v proxy serveru webové služby na straně klienta.  
   
      [!code-cpp[System.Windows.Forms.DataConnectorWebService#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataConnectorWebService/CPP/form1.cpp#2)]
      [!code-csharp[System.Windows.Forms.DataConnectorWebService#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataConnectorWebService/CS/form1.cs#2)]

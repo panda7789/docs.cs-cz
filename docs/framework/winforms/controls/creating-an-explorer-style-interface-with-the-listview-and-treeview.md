@@ -13,12 +13,12 @@ helpviewer_keywords:
 - ListView control [Windows Forms], explorer style interface
 - ListView control [Windows Forms], explorer-style interface
 ms.assetid: 9e5e7721-19e2-4890-b273-a43589fe99ff
-ms.openlocfilehash: 21a3f7f687f72fe6e73b5d2420675634ff834d2d
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 8192151aa7cd5eddd99d39adb485e460074fdb99
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59117985"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59332115"
 ---
 # <a name="walkthrough-creating-an-explorer-style-interface-with-the-listview-and-treeview-controls-using-the-designer"></a>Návod: Vytváření rozhraní ve stylu Průzkumníka s ovládacími prvky ListView a TreeView pomocí Návrháře
 Jednou z výhod sady Visual Studio je schopnost vytvářet profesionálně vypadajících aplikací Windows Forms v krátké množství času. Běžný scénář, kdy je vytváření uživatelského rozhraní (UI) s <xref:System.Windows.Forms.ListView> a <xref:System.Windows.Forms.TreeView> ovládací prvky, které se podobá funkci Windows Explorer operačních systémů Windows. Průzkumník Windows zobrazí hierarchickou strukturu souborů a složek v počítači uživatele.  
@@ -28,27 +28,27 @@ Jednou z výhod sady Visual Studio je schopnost vytvářet profesionálně vypad
   
 ### <a name="to-create-the-form-containing-a-listview-and-treeview-control"></a>Chcete-li vytvořit formulář obsahující ovládací prvek ListView a TreeView  
   
-1.  Na **souboru** nabídky, přejděte k **nový**a potom klikněte na tlačítko **projektu**.  
+1. Na **souboru** nabídky, přejděte k **nový**a potom klikněte na tlačítko **projektu**.  
   
-2.  V **nový projekt** dialogové okno pole, postupujte takto:  
+2. V **nový projekt** dialogové okno pole, postupujte takto:  
   
     1.  V kategoriích, zvolte buď **jazyka Visual Basic** nebo **Visual C#**.  
   
     2.  V seznamu šablon vyberte **formulářová aplikace Windows**.  
   
-3.  Klikněte na **OK**. Vytvoření nového projektu Windows Forms.  
+3. Klikněte na **OK**. Vytvoření nového projektu Windows Forms.  
   
-4.  Přidat <xref:System.Windows.Forms.SplitContainer> ovládací prvek do formuláře a nastavte jeho <xref:System.Windows.Forms.SplitContainer.Dock%2A> vlastnost <xref:System.Windows.Forms.DockStyle.Fill>.  
+4. Přidat <xref:System.Windows.Forms.SplitContainer> ovládací prvek do formuláře a nastavte jeho <xref:System.Windows.Forms.SplitContainer.Dock%2A> vlastnost <xref:System.Windows.Forms.DockStyle.Fill>.  
   
-5.  Přidat <xref:System.Windows.Forms.ImageList> s názvem `imageList1` chcete formulář opravdu zavřít a použít přidejte dvě bitové kopie v okně Vlastnosti: obrázek složky a bitovou kopii dokumentu, v uvedeném pořadí.  
+5. Přidat <xref:System.Windows.Forms.ImageList> s názvem `imageList1` chcete formulář opravdu zavřít a použít přidejte dvě bitové kopie v okně Vlastnosti: obrázek složky a bitovou kopii dokumentu, v uvedeném pořadí.  
   
-6.  Přidat <xref:System.Windows.Forms.TreeView> ovládací prvek s názvem `treeview1` do formuláře a umístěte ho na levé straně <xref:System.Windows.Forms.SplitContainer> ovládacího prvku. V okně Vlastnosti `treeView1` postupujte takto:  
+6. Přidat <xref:System.Windows.Forms.TreeView> ovládací prvek s názvem `treeview1` do formuláře a umístěte ho na levé straně <xref:System.Windows.Forms.SplitContainer> ovládacího prvku. V okně Vlastnosti `treeView1` postupujte takto:  
   
     1.  Nastavte <xref:System.Windows.Forms.Control.Dock%2A> vlastnost <xref:System.Windows.Forms.DockStyle.Fill>.  
   
     2.  Nastavte <xref:System.Windows.Forms.TreeView.ImageList%2A> vlastnost `imagelist1.`  
   
-7.  Přidat <xref:System.Windows.Forms.ListView> ovládací prvek s názvem `listView1` do formuláře a umístěte ho na pravé straně <xref:System.Windows.Forms.SplitContainer> ovládacího prvku. V okně Vlastnosti `listview1` postupujte takto:  
+7. Přidat <xref:System.Windows.Forms.ListView> ovládací prvek s názvem `listView1` do formuláře a umístěte ho na pravé straně <xref:System.Windows.Forms.SplitContainer> ovládacího prvku. V okně Vlastnosti `listview1` postupujte takto:  
   
     1.  Nastavte <xref:System.Windows.Forms.Control.Dock%2A> vlastnost <xref:System.Windows.Forms.DockStyle.Fill>.  
   
@@ -58,7 +58,7 @@ Jednou z výhod sady Visual Studio je schopnost vytvářet profesionálně vypad
   
     4.  Nastavte <xref:System.Windows.Forms.ListView.SmallImageList%2A> vlastnost `imageList1.`  
   
-8.  Implementujte kód pro naplnění <xref:System.Windows.Forms.TreeView> s uzly a podřízených uzlů. Přidejte tento kód `Form1` třídy.  
+8. Implementujte kód pro naplnění <xref:System.Windows.Forms.TreeView> s uzly a podřízených uzlů. Přidejte tento kód `Form1` třídy.  
   
      [!code-csharp[System.Windows.Forms.ExplorerStyleInterface#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ExplorerStyleInterface/CS/Form1.cs#1)]
      [!code-vb[System.Windows.Forms.ExplorerStyleInterface#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ExplorerStyleInterface/VB/Form1.vb#1)]  

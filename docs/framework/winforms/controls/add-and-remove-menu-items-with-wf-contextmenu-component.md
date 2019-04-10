@@ -16,12 +16,12 @@ helpviewer_keywords:
 - context menus [Windows Forms], examples
 - examples [Windows Forms], context menus
 ms.assetid: 426d1eaf-7fb8-4b0b-8a33-5e8721786ea4
-ms.openlocfilehash: e02a187edc1392f15fe98354bb2e5c43843e430c
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: cf70a5cc426b6c6075d1deb11aa2685c39a065c0
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59094460"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59332180"
 ---
 # <a name="how-to-add-and-remove-menu-items-with-the-windows-forms-contextmenu-component"></a>Postupy: Přidání a odebrání položek nabídky s komponentou Windows Forms ContextMenu
 Vysvětluje, jak přidávat a odebírat položky místní nabídky do formulářů Windows.  
@@ -35,7 +35,7 @@ Vysvětluje, jak přidávat a odebírat položky místní nabídky do formulář
   
 ### <a name="to-remove-items-from-a-shortcut-menu"></a>Odebrat položky z místní nabídky  
   
-1.  Použití <xref:System.Windows.Forms.Menu.MenuItemCollection.Remove%2A> nebo <xref:System.Windows.Forms.Menu.MenuItemCollection.RemoveAt%2A> metodu <xref:System.Windows.Forms.Menu.MenuItems%2A> kolekce <xref:System.Windows.Forms.ContextMenu> komponenty odebrat konkrétní položku.  
+1. Použití <xref:System.Windows.Forms.Menu.MenuItemCollection.Remove%2A> nebo <xref:System.Windows.Forms.Menu.MenuItemCollection.RemoveAt%2A> metodu <xref:System.Windows.Forms.Menu.MenuItems%2A> kolekce <xref:System.Windows.Forms.ContextMenu> komponenty odebrat konkrétní položku.  
   
     ```vb  
     ' Removes the first item in the shortcut menu.  
@@ -60,7 +60,7 @@ Vysvětluje, jak přidávat a odebírat položky místní nabídky do formulář
   
      -nebo-  
   
-2.  Použití `Clear` metodu `MenuItems` kolekce <xref:System.Windows.Forms.ContextMenu> komponenty odebrat všechny položky v nabídce.  
+2. Použití `Clear` metodu `MenuItems` kolekce <xref:System.Windows.Forms.ContextMenu> komponenty odebrat všechny položky v nabídce.  
   
     ```vb  
     ContextMenu1.MenuItems.Clear()  
