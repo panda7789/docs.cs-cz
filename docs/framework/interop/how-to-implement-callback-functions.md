@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: e55b3712-b9ea-4453-bd9a-ad5cfa2f6bfa
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1bf972455aa54a7fe45ffd7858ac9e5da5eee6e6
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 0936b1dc60bf6ca6dae3b5351b0717929c50876a
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54718673"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59214063"
 ---
 # <a name="how-to-implement-callback-functions"></a>Postupy: Implementace funkcí zpětného volání
 Následující příklad a postupu ukazují, jak používat platformu vyvolání spravované aplikace, můžete vytisknout hodnotu popisovač pro každé okno v místním počítači. Konkrétně postup a ukázkovým použitím **EnumWindows** funkce krokovat seznamu windows a spravovaný zpětné volání – funkce (pojmenované zpětného volání) k tisku hodnoty popisovač okna.  
@@ -130,5 +130,6 @@ int main()
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Funkce zpětného volání](../../../docs/framework/interop/callback-functions.md)
 - [Volání funkce DLL](../../../docs/framework/interop/calling-a-dll-function.md)

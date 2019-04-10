@@ -2,12 +2,12 @@
 title: <basicHttpContextBinding>
 ms.date: 03/30/2017
 ms.assetid: 39b16b82-4ec6-4eff-8031-67e026870961
-ms.openlocfilehash: f454a8b70441473991acffae9db86a09b0658bfb
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
+ms.openlocfilehash: b24b048cb1beae3ab515d9e49353fb1e0123a47f
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58410482"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59219171"
 ---
 # <a name="basichttpcontextbinding"></a>\<basicHttpContextBinding>
 Určení vazby, která poskytuje kontext pro <xref:System.ServiceModel.BasicHttpBinding> jenž bude vyměněn povolením souborů cookie protokolu HTTP, coby mechanismem výměny.  
@@ -84,19 +84,20 @@ Určení vazby, která poskytuje kontext pro <xref:System.ServiceModel.BasicHttp
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<zabezpečení >](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-basichttpbinding.md)|Definuje nastavení zabezpečení pro vazbu. Tento prvek je typu <xref:System.ServiceModel.Configuration.BasicHttpSecurityElement>.|  
+|[\<security>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-basichttpbinding.md)|Definuje nastavení zabezpečení pro vazbu. Tento prvek je typu <xref:System.ServiceModel.Configuration.BasicHttpSecurityElement>.|  
 |[\<readerQuotas>](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms731325(v=vs.100))|Definuje omezení složitosti zpráv SOAP, které mohou být zpracovány koncovými body nakonfigurovaným s touto vazbou. Tento prvek je typu <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement>.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<bindings>](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|Tento prvek obsahuje sadu standardních a vlastních vazeb.|  
+|[\<vazby >](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|Tento prvek obsahuje sadu standardních a vlastních vazeb.|  
   
 ## <a name="remarks"></a>Poznámky  
  Tento element vazby poskytuje úroveň ochrany a mechanismus exchange v rámci kontextu pro `BasicHttpBinding`.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.BasicHttpBinding>
 - <xref:System.ServiceModel.BasicHttpContextBinding>
 - <xref:System.ServiceModel.Configuration.BasicHttpContextBindingElement>

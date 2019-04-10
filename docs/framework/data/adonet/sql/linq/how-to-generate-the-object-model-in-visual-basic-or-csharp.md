@@ -1,13 +1,13 @@
 ---
-title: 'Postupy: Generování objektového modelu v jazyce Visual Basic neboC#'
+title: 'Postupy: Generování objektového modelu v jazyce Visual Basic nebo C#'
 ms.date: 03/30/2017
 ms.assetid: a0c73b33-5650-420c-b9dc-f49310c201ee
-ms.openlocfilehash: 2e60905cc7bf30421a48288378b136bad5f7ee83
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 8752a28b9bcfd068afcfc5d33c3097f26cf0f231
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56974599"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59225362"
 ---
 # <a name="how-to-generate-the-object-model-in-visual-basic-or-c"></a>Postupy: Generování objektového modelu v jazyce Visual Basic nebo C\#
 V [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], objektový model v programovacím jazyce se mapuje na relační databáze. Dva nástroje jsou k dispozici pro automatické generování jazyka Visual Basic nebo C# modelů z metadat existující databázi.  
@@ -36,6 +36,7 @@ sqlmetal /code:northwind.cs /language:csharp "c:\northwnd.mdf" /sprocs /function
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Průvodce programováním](../../../../../../docs/framework/data/adonet/sql/linq/programming-guide.md)
 - [Objektový model LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/the-linq-to-sql-object-model.md)
 - [Učení podle návodů](../../../../../../docs/framework/data/adonet/sql/linq/learning-by-walkthroughs.md)

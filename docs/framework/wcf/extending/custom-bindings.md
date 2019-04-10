@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Windows Communication Foundation, endpoints
 - Windows Communication Foundation, configuration
 ms.assetid: 58532b6d-4eea-4a4f-854f-a1c8c842564d
-ms.openlocfilehash: e3954e90ed091d03656f25ce1a9b1ff35ffaa9ea
-ms.sourcegitcommit: af0a22a4eb11bbcd33baec49150d551955b50a16
+ms.openlocfilehash: 314409f5ac4ecb4b18f3b8d3f2aeb08a507ec9e9
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56260722"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59207263"
 ---
 # <a name="custom-bindings"></a>Vlastní vazby
 Můžete použít <xref:System.ServiceModel.Channels.CustomBinding> třídy, pokud jedna z vazeb poskytovaných systémem nesplňuje požadavky na vaši službu. Všechny vazby jsou konstruovány ze seřazené sady elementů vazby. Vlastní vazby se dají ze sady prvků vazeb poskytovaných systémem nebo může obsahovat elementy uživatelem definované vlastní vazby. Můžete použít vlastní vazby prvky, například umožní použít nové přenosy nebo kodérů na koncový bod služby. Příklady práce, naleznete v tématu [vlastní vazby ukázky](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751479(v=vs.90)). Další informace najdete v tématu [ \<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md).  
@@ -73,6 +73,7 @@ Můžete použít <xref:System.ServiceModel.Channels.CustomBinding> třídy, pok
  Kromě toho můžete definovat vlastní elementy vazby a vložit mezi všechny předchozí definované vrstvy.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled vytváření koncových bodů](../../../../docs/framework/wcf/endpoint-creation-overview.md)
 - [Používání vazeb ke konfiguraci služeb a klientů](../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)
 - [Vazby poskytované systémem](../../../../docs/framework/wcf/system-provided-bindings.md)

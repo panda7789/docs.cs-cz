@@ -5,18 +5,16 @@ helpviewer_keywords:
 - multimedia [WPF]
 - media [WPF]
 ms.assetid: feb25b15-d741-4ac3-818f-1b19f63a3562
-ms.openlocfilehash: 09b830562444bd51e931a1b5013d2a803319e336
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
-ms.translationtype: MT
+ms.openlocfilehash: ffdcb58cdd332f9c730e7ed367e0f8bcc56da459
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57352762"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59222091"
 ---
 # <a name="multimedia-overview"></a>Přehled multimédií
 Multimédií funkce v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] vám umožní integrovat zvuku a videa do svých aplikací a zlepšit uživatelské prostředí. Toto téma představuje multimediální funkce [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
-  
- 
-  
+
 <a name="mediaapi"></a>   
 ## <a name="media-api"></a>Media API  
  <xref:System.Windows.Controls.MediaElement> a <xref:System.Windows.Media.MediaPlayer> třídy se používají k předkládání obsahu zvuku nebo videa. Tyto třídy je možné řídit interaktivně nebo hodin. Tyto třídy můžete použít na [!INCLUDE[TLA#tla_wmp](../../../../includes/tlasharptla-wmp-md.md)] 10 ovládací prvek přehrávání médií. Třídy, které použijete, závisí na scénáři.  
@@ -101,7 +99,7 @@ Multimédií funkce v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharp
 ### <a name="controlling-mediaplayer"></a>Řízení MediaPlayer  
  Protože <xref:System.Windows.Media.MediaPlayer> je bezstavové, existují jenom dva způsoby, jak ovládací prvek přehrávání médií.  
   
-1.  Interaktivní řízení metody. Na místě v nezávislých režimu (`null` <xref:System.Windows.Media.MediaPlayer.Clock%2A> vlastnost).  
+1.  Interaktivní řízení metody. Na místě v nezávislých režimu (`null`<xref:System.Windows.Media.MediaPlayer.Clock%2A> vlastnost).  
   
 2.  <xref:System.Windows.Media.MediaClock>. Na místě, když má média <xref:System.Windows.Media.MediaPlayer.Clock%2A>.  
   
@@ -113,6 +111,7 @@ Multimédií funkce v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharp
  Zobrazit [kreslení objekty – přehled](drawing-objects-overview.md) Další informace o <xref:System.Windows.Media.Drawing> objekty.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Media.DrawingGroup>
 - [Rozložení](../advanced/layout.md)
-- [Témata s postupy](audio-and-video-how-to-topics.md)
+- [– postupy](audio-and-video-how-to-topics.md)

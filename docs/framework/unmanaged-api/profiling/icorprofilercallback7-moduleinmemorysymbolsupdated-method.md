@@ -11,12 +11,12 @@ api_type:
 ms.assetid: f362a896-3247-4894-9727-e48dbbcd2c78
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f33eef5c405b98b9dbf88973a8b7cafad06308b6
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: 12414064bf0651eab443951bde2a50dcff7b2291
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57466450"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59226956"
 ---
 # <a name="icorprofilercallback7moduleinmemorysymbolsupdated-method"></a>ICorProfilerCallback7::ModuleInMemorySymbolsUpdated Method
 [Podporované v rozhraní .NET Framework 4.6.1 a novějších verzích]  
@@ -53,6 +53,7 @@ HRESULT ModuleInMemorySymbolsUpdated(
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v461plus](../../../../includes/net-current-v461plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [ModuleLoadFinished – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleloadfinished-method.md)
 - [SetEventMask2 – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo5-seteventmask2-method.md)
 - [ICorProfilerCallback7 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback7-interface.md)

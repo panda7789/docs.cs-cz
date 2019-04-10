@@ -1,18 +1,18 @@
 ---
-title: 'Postupy: Zadání hodnot přihlašovacích údajů klienta'
+title: 'Postupy: Určení hodnot přihlašovacích údajů klienta'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 82293d7f-471a-4549-8f19-0be890e7b074
-ms.openlocfilehash: 110b8ffe2fb3e00d7a6787e32d066f62126ebf9a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: a1b2627c8e9899a122f27dc652f8c91230fed0b3
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54617184"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59225128"
 ---
-# <a name="how-to-specify-client-credential-values"></a>Postupy: Zadání hodnot přihlašovacích údajů klienta
+# <a name="how-to-specify-client-credential-values"></a>Postupy: Určení hodnot přihlašovacích údajů klienta
 Pomocí služby Windows Communication Foundation (WCF), služby můžete zadat jak ověření klienta ke službě. Služba může například stanovit, ověření klienta pomocí certifikátu.  
   
 ### <a name="to-determine-the-client-credential-type"></a>K určení typu pověření klienta  
@@ -92,20 +92,21 @@ Pomocí služby Windows Communication Foundation (WCF), služby můžete zadat j
     ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.NetTcpBinding>
 - <xref:System.ServiceModel.Security.X509CertificateRecipientServiceCredential.SetCertificate%2A>
 - <xref:System.ServiceModel.Security.X509CertificateRecipientServiceCredential>
 - <xref:System.ServiceModel.ClientBase%601>
 - <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential>
 - [Programování zabezpečení WCF](../../../docs/framework/wcf/feature-details/programming-wcf-security.md)
-- [Výběr typu přihlašovacích údajů](../../../docs/framework/wcf/feature-details/selecting-a-credential-type.md)
-- [Nástroj metadat modelu služby (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)
+- [Výběr typu pověření](../../../docs/framework/wcf/feature-details/selecting-a-credential-type.md)
+- [Nástroj ServiceModel Metadata Utility (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)
 - [Práce s certifikáty](../../../docs/framework/wcf/feature-details/working-with-certificates.md)
 - [Postupy: Vytvoření klienta](../../../docs/framework/wcf/how-to-create-a-wcf-client.md)
 - [\<netTcpBinding>](../../../docs/framework/configure-apps/file-schema/wcf/nettcpbinding.md)
-- [\<zabezpečení >](../../../docs/framework/configure-apps/file-schema/wcf/security-of-nettcpbinding.md)
-- [\<message>](../../../docs/framework/configure-apps/file-schema/wcf/message-element-of-nettcpbinding.md)
-- [\<behavior>](../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)
-- [\<behaviors>](../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md)
+- [\<security>](../../../docs/framework/configure-apps/file-schema/wcf/security-of-nettcpbinding.md)
+- [\<Zpráva >](../../../docs/framework/configure-apps/file-schema/wcf/message-element-of-nettcpbinding.md)
+- [\<chování >](../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)
+- [\<chování >](../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md)
 - [\<clientCertificate>](../../../docs/framework/configure-apps/file-schema/wcf/clientcertificate-of-servicecredentials.md)
 - [\<clientCredentials>](../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md)

@@ -1,18 +1,18 @@
 ---
-title: 'Postupy: Spustit dotaz, který vrátí výsledky typu StructuralType'
+title: 'Postupy: Provedení dotazu, který vrátí výsledky typu StructuralType'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 2314f2a2-b1c3-40c4-95bb-cdf9b21a7b53
-ms.openlocfilehash: c860f7b1fac7d2101f883e949218bd25bf78c1a6
-ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
-ms.translationtype: MT
+ms.openlocfilehash: c40254627952e71abd259fe8d38b7fa5b60955a2
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55827484"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59207224"
 ---
-# <a name="how-to-execute-a-query-that-returns-structuraltype-results"></a>Postupy: Spustit dotaz, který vrátí výsledky typu StructuralType
+# <a name="how-to-execute-a-query-that-returns-structuraltype-results"></a>Postupy: Provedení dotazu, který vrátí výsledky typu StructuralType
 Toto téma ukazuje, jak provést příkaz pro koncepční model s použitím <xref:System.Data.EntityClient.EntityCommand> objekt a jak načíst <xref:System.Data.Metadata.Edm.StructuralType> výsledky s použitím <xref:System.Data.EntityClient.EntityDataReader>. <xref:System.Data.Metadata.Edm.EntityType>, <xref:System.Data.Metadata.Edm.RowType> a <xref:System.Data.Metadata.Edm.ComplexType> třídy odvozovat z <xref:System.Data.Metadata.Edm.StructuralType> třídy.  
   
 ### <a name="to-run-the-code-in-this-example"></a>Chcete-li spustit kód v tomto příkladu  
@@ -37,5 +37,6 @@ Toto téma ukazuje, jak provést příkaz pro koncepční model s použitím <xr
  [!code-vb[DP EntityServices Concepts#eSQLStructuralTypes](../../../../../samples/snippets/visualbasic/VS_Snippets_Data/dp entityservices concepts/vb/source.vb#esqlstructuraltypes)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Reference k Entity SQL](../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
 - [Zprostředkovatel EntityClient pro Entity Framework](../../../../../docs/framework/data/adonet/ef/entityclient-provider-for-the-entity-framework.md)

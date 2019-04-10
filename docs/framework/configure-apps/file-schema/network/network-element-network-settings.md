@@ -1,5 +1,5 @@
 ---
-title: <network> – element (nastavení sítě)
+title: <network> – Element (nastavení sítě)
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#network
@@ -8,12 +8,12 @@ helpviewer_keywords:
 - <network> element
 - network element
 ms.assetid: 2c2c6ad4-ed11-48ab-b28e-2bc0ba9b42c7
-ms.openlocfilehash: 67743ccf2fa14117814160aeb7624c2be4eea364
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: c411e00026f03fdb355664049f8db00f3c800352
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55257860"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59219964"
 ---
 # <a name="network-element-network-settings"></a>\<Síť > – Element (nastavení sítě)
 Konfiguruje možnosti sítě pro externí server Simple Mail Transport Protocol (SMTP).  
@@ -110,6 +110,7 @@ Konfiguruje možnosti sítě pro externí server Simple Mail Transport Protocol 
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Net.Configuration.SmtpNetworkElement?displayProperty=nameWithType>
 - <xref:System.Net.Configuration.SmtpSection?displayProperty=nameWithType>
 - <xref:System.Net.Mail.SmtpClient?displayProperty=nameWithType>

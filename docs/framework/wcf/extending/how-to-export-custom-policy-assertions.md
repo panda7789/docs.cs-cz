@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 99030386-43b0-4f7b-866d-17ea307f5cbd
-ms.openlocfilehash: 0fe97e381bea19458df50e1eb94f2027a6a95d4e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 4e3835b0d699d58eb55e06ed3ade1328ec30b2ef
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54721266"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59213606"
 ---
 # <a name="how-to-export-custom-policy-assertions"></a>Postupy: Export kontrolních výrazů vlastních zásad
 Kontrolní výrazy zásad popisují funkce a požadavky koncového bodu služby. Aplikace služby můžete použít kontrolních výrazů vlastních zásad v metadata služby pro komunikaci koncový bod, informace o přizpůsobení vazby nebo smlouvy do klientské aplikace. Export kontrolních výrazů ve výrazech zásad připojena v vazby WSDL na koncový bod, operace nebo zprávy témata, v závislosti na možnosti nebo požadavky, které komunikují se můžete použít Windows Communication Foundation (WCF).  
@@ -50,6 +50,7 @@ Kontrolní výrazy zásad popisují funkce a požadavky koncového bodu služby.
      [!code-vb[s_imperative#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_imperative/vb/service.vb#1)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Description.IPolicyImportExtension>
 - <xref:System.ServiceModel.Description.IPolicyExportExtension>
 - [Postupy: Import kontrolních výrazů vlastních zásad](../../../../docs/framework/wcf/extending/how-to-import-custom-policy-assertions.md)

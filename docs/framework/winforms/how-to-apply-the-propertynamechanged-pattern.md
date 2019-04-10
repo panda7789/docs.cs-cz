@@ -9,12 +9,12 @@ helpviewer_keywords:
 - data binding [Windows Forms], custom controls
 - PropertyNameChanged pattern [Windows Forms], applying
 ms.assetid: aa47ddf6-5223-40c4-833f-a78992194836
-ms.openlocfilehash: 889a7f5f7a84db378acaa88b717b6011f1a3dfdc
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 36670eee6235277a7fe98770192df9ae05d3dd03
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57703475"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59213022"
 ---
 # <a name="how-to-apply-the-propertynamechanged-pattern"></a>Postupy: Použití vzoru PropertyNameChanged
 Následující příklad kódu ukazuje, jak použít *PropertyName*změněné vzor, který má vlastní ovládací prvek. Tento model použijte při implementaci vlastní ovládací prvky, které se používají s modulem Windows Forms datové vazby.  
@@ -29,6 +29,7 @@ Následující příklad kódu ukazuje, jak použít *PropertyName*změněné vz
 -   Vložte kód do prázdný soubor kódu. Je nutné použít vlastní ovládací prvek na formuláři Windows, který obsahuje `Main` metoda.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Postupy: Implementace rozhraní INotifyPropertyChanged](how-to-implement-the-inotifypropertychanged-interface.md)
-- [Oznámení změn v datové vazbě Windows Forms](change-notification-in-windows-forms-data-binding.md)
+- [Oznámení změn v datové vazbě rozhraní Windows Forms](change-notification-in-windows-forms-data-binding.md)
 - [Windows Forms – datová vazba](windows-forms-data-binding.md)

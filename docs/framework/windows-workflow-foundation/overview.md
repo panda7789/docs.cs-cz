@@ -2,12 +2,12 @@
 title: Přehled Windows Workflow
 ms.date: 03/30/2017
 ms.assetid: fc44adbe-1412-49ae-81af-0298be44aae6
-ms.openlocfilehash: 049d955b191e14ac79702df3fe218e23a555e6d3
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.openlocfilehash: 57c394805d4aa07f8a137af259619bb1e65c43de
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58464681"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59217598"
 ---
 # <a name="windows-workflow-overview"></a>Přehled Windows Workflow
 Pracovní postup je sada elemental jednotky nazvané *aktivity* , které jsou uloženy jako model, který popisuje proces reálného světa. Pracovní postupy umožňují popsat pořadí spuštění a závislé vztahy mezi částmi krátkodobé nebo dlouho probíhající práce. Tato práce prochází modelu od začátku do konce a aktivity mohou být prováděny osobami nebo funkcemi systému.  
@@ -42,4 +42,5 @@ Komponenty pracovní postup v hostitelském procesu
 -   Vlastní aktivitu, která je odvozena z <xref:System.Activities.CodeActivity> abstraktní třídy. <xref:System.Activities.CodeActivity> Můžete přístup k funkcím za běhu (například sledování a vlastnosti) pomocí <xref:System.Activities.CodeActivityContext> , který je k dispozici jako parametr <xref:System.Activities.CodeActivity.Execute%2A> metoda. Další informace o těchto funkcích za běhu, naleznete v tématu [pracovního postupu pro sledování a trasování](workflow-tracking-and-tracing.md) a [běhové vlastnosti pracovního postupu](workflow-execution-properties.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [BizTalk Server 2006 nebo pracovního postupu? Volba správného pracovního postupu nástroje pro váš projekt](https://go.microsoft.com/fwlink/?LinkId=154901)

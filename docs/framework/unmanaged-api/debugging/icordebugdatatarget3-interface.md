@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: f477af85-994f-4df0-ae78-404ed252bf49
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8f97a6819c413c79eb8431c9a101249d459b0155
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c3b0d67d390931cc92c0b6a1320f66545517cde3
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54545248"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59223040"
 ---
 # <a name="icordebugdatatarget3-interface"></a>Rozhraní ICorDebugDataTarget3
 Logicky rozšiřuje [icordebugdatatarget –](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget-interface.md) rozhraní pro zadání informací o načtené moduly.  
@@ -35,5 +35,6 @@ Logicky rozšiřuje [icordebugdatatarget –](../../../../docs/framework/unmanag
  **Verze rozhraní .NET framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+
+- [Debugging – rozhraní](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
 - [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)

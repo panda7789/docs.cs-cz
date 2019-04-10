@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 48e1cd90-de80-4d6c-846e-631878955762
-ms.openlocfilehash: 8f7fe8c3dea700743def739de216633c8a26329b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 8955018124f4e60b0a7c74ad70210b4369676ef5
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54498136"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59214699"
 ---
 # <a name="how-to-configure-wcf-service-to-interoperate-with-aspnet-web-service-clients"></a>Postupy: Konfigurace služby WCF pro spolupráci s klienty webové služby ASP.NET
 Konfigurace koncového bodu služby Windows Communication Foundation (WCF), aby vzájemná spolupráce s [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webové služby klientů, použijte <xref:System.ServiceModel.BasicHttpBinding?displayProperty=nameWithType> typ jako typ vazby pro vaše koncové body služby.  
@@ -47,9 +47,10 @@ Konfigurace koncového bodu služby Windows Communication Foundation (WCF), aby 
  [!code-xml[C_HowTo-WCFServiceAndASMXClient#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto-wcfserviceandasmxclient/common/app.config#1)]     
   
 ## <a name="see-also"></a>Viz také:
+
 - [Postupy: Vytvoření koncového bodu služby v kódu](../../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-code.md)
 - [Postupy: Publikování metadat služby promocí kódu](../../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-code.md)
-- [Postupy: Zadání vazby služby v konfiguraci](../../../../docs/framework/wcf/how-to-specify-a-service-binding-in-configuration.md)
+- [Postupy: Určení vazby služby v konfiguraci](../../../../docs/framework/wcf/how-to-specify-a-service-binding-in-configuration.md)
 - [Postupy: Vytvoření koncového bodu služby v konfiguraci](../../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-configuration.md)
 - [Postupy: Publikování metadat služby promocí konfiguračního souboru](../../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-a-configuration-file.md)
 - [Zabezpečení přenosu](../../../../docs/framework/wcf/feature-details/transport-security.md)

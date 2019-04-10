@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: fb854070-248b-46cf-9dab-c322e2b4d624
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 712282153b79edc480ec387aa746e375ddd30d27
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 9e0ec1ed73148b319217a70cc3be99b486be2f8e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55273125"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59208290"
 ---
 # <a name="subtypes-element-net-native"></a>\<Subtypes > – Element (.NET Native)
 Zásady modulu runtime se vztahuje na všechny třídy dědí z nadřazeného typu.  
@@ -49,7 +49,7 @@ Zásady modulu runtime se vztahuje na všechny třídy dědí z nadřazeného ty
   
 ## <a name="all-attributes"></a>Všechny atributy  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |*policy_setting*|Toto nastavení platí pro tento typ zásad. Možné hodnoty jsou `All`, `Auto`, `Excluded`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal`, a `Required All`. Další informace najdete v tématu [nastavení zásad direktivy modulu Runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md).|  
   
@@ -60,7 +60,7 @@ Zásady modulu runtime se vztahuje na všechny třídy dědí z nadřazeného ty
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Type>](../../../docs/framework/net-native/type-element-net-native.md)|Použije zásady reflexe pro typ a všechny její členy.|  
+|[\<Typ >](../../../docs/framework/net-native/type-element-net-native.md)|Použije zásady reflexe pro typ a všechny její členy.|  
   
 ## <a name="remarks"></a>Poznámky  
  `<Subtypes>` Element použije zásady na všechny podtypy jeho nadřazeného typu. Použijete ji, pokud chcete použít jiné zásady pro odvozené typy a jejich základní třídy.  
@@ -90,6 +90,7 @@ Zásady modulu runtime se vztahuje na všechny třídy dědí z nadřazeného ty
  [!code-csharp[ProjectN_Reflection#5](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn_reflection/cs/subtypes.cs#5)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [\<Typ > – Element](../../../docs/framework/net-native/type-element-net-native.md)
 - [Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)
 - [Elementy direktivy modulu runtime](../../../docs/framework/net-native/runtime-directive-elements.md)

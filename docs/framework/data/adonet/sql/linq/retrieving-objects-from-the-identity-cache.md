@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 96c13903-ccb6-4a0e-ab6a-8ca955ca314d
-ms.openlocfilehash: dceda9dce794e0a08cc9cd7905cf3cd0685898d4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 702d88f844f00b86e64404bd100fd6b3d34971c6
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54569151"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59211228"
 ---
 # <a name="retrieving-objects-from-the-identity-cache"></a>Načítání objektů z mezipaměti identit
 Toto téma popisuje typy LINQ na SQL dotazy, které vracejí objekt z mezipaměti identit, které spravuje <xref:System.Data.Linq.DataContext>.  
@@ -65,6 +65,7 @@ Toto téma popisuje typy LINQ na SQL dotazy, které vracejí objekt z mezipamět
  [!code-vb[L2S_QueryCache#1](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/l2s_querycache/vb/module1.vb#1)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Koncepty dotazů](../../../../../../docs/framework/data/adonet/sql/linq/query-concepts.md)
 - [Identita objektu](../../../../../../docs/framework/data/adonet/sql/linq/object-identity.md)
 - [Základní informace](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)

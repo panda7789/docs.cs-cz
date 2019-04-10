@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: ef88af8c-8dfe-4556-8b56-81df960a900b
-ms.openlocfilehash: b5535343b5ac40b12aa06ffb5b587e114f5cd757
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a9e519fb8b2ca021d66adb23659d83efc571afae
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54521398"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59222663"
 ---
 # <a name="null-comparisons"></a>Porovnávání s hodnotou Null
 A `null` hodnota ve zdroji dat znamená, že hodnota neznámý. V [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] dotazy, můžete zkontrolovat hodnoty null, tak že určité výpočtů nebo porovnání se provádí pouze u řádků, které mají platný nebo není null, data. Sémantika s hodnotou null CLR, ale může lišit od sémantika s hodnotou null zdroj dat. Většina databází použijte verzi s hodnotou tři logiku ke zpracování porovnávání s hodnotou null. To znamená, že porovnání proti hodnota null není vyhodnocen na `true` nebo `false`, je vyhodnocen jako `unknown`. Často je jím implementace ANSI hodnoty Null, ale není to vždy.  
@@ -47,4 +47,5 @@ WHERE h.ShipDate IS Null
  V [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)], při předání kolekce, která podporuje `IQueryable` agregační funkce, jsou agregační operace prováděny v databázi. Mohou existovat rozdíly ve výsledcích dotazu, který se provádí v paměti a dotaz, který byl proveden v databázi. Pomocí dotazu v paměti Pokud neexistují žádné odpovídající položky, dotaz vrátí hodnotu 0. V databázi, stejný dotaz vrací `null`. Pokud `null` LINQ agregační funkce je předána hodnota, bude vyvolána výjimka. Tak, aby přijímal možné `null` hodnoty, přetypujte typy a vlastnosti typů, které se zobrazí výsledky dotazu na typy s možnou hodnotou Null.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Výrazy v dotazech LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/expressions-in-linq-to-entities-queries.md)

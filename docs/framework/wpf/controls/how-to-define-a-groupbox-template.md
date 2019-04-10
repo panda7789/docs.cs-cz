@@ -5,12 +5,12 @@ helpviewer_keywords:
 - controls [WPF], GroupBox
 - GroupBox control [WPF], creating templates
 ms.assetid: 85a4d1a7-4753-4f4a-b26d-14fa10c1ddb5
-ms.openlocfilehash: 6b4ad4a588aab93f5445cda962af890bfcd41c14
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: dd53af87ec2d12b2ed0dcf2b23374d76e8f631a9
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57377661"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59225713"
 ---
 # <a name="how-to-define-a-groupbox-template"></a>Postupy: Definice šablony GroupBox
 Tento příklad ukazuje, jak vytvořit šablonu pro <xref:System.Windows.Controls.GroupBox> ovládacího prvku.  
@@ -21,5 +21,6 @@ Tento příklad ukazuje, jak vytvořit šablonu pro <xref:System.Windows.Control
  [!code-xaml[GroupBoxSnippet#GroupBoxTemplate](~/samples/snippets/csharp/VS_Snippets_Wpf/GroupBoxSnippet/CS/Window1.xaml#groupboxtemplate)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Controls.GroupBox>
 - [Postupy: Vytvoření GroupBox](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms748321(v=vs.90))

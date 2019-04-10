@@ -6,12 +6,12 @@ helpviewer_keywords:
 - client-side UI Automation provider, implementation
 - provider implementation, UI Automation
 ms.assetid: 3584c0a1-9cd0-4968-8b63-b06390890ef6
-ms.openlocfilehash: dd795eae1ac4610c90c0decece3b19fcad2ca438
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.openlocfilehash: e68cf69830aef88f46ff2e288c5aad548db39bdc
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57678936"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59224457"
 ---
 # <a name="client-side-ui-automation-provider-implementation"></a>Implementace zprostředkovatele automatizace uživatelského rozhraní na straně klienta
 > [!NOTE]
@@ -50,5 +50,6 @@ ms.locfileid: "57678936"
  Poslední dva parametry jsou volitelné. Klient může zadejte název image cílové aplikace, když ji chce používat různé zprostředkovatele pro různé aplikace. Například může klient použít jednoho poskytovatele pro [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)] seznamu ovládací prvek zobrazení ve známých aplikaci, která podporuje model více zobrazení a druhý pro podobně jako ovládací prvek v jiné známé aplikaci, která neexistuje.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Vytvoření zprostředkovatele automatizace uživatelského rozhraní na straně klienta](../../../docs/framework/ui-automation/create-a-client-side-ui-automation-provider.md)
 - [Implementace zprostředkovatelů automatizace uživatelského rozhraní v klientských aplikacích](../../../docs/framework/ui-automation/implement-ui-automation-providers-in-a-client-application.md)

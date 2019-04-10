@@ -8,12 +8,12 @@ helpviewer_keywords:
 - text content [WPF], setting
 - TextBox control [WPF], setting text content
 ms.assetid: bcd25fc7-a52f-4453-b802-2c8d2b335ab8
-ms.openlocfilehash: 6c0e6e53518d382a2052efa43993d418e35fa0f2
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: da91e27b804d649f5b8010bc9d7c074425be26f6
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57364122"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59212190"
 ---
 # <a name="how-to-set-the-text-content-of-a-textbox-control"></a>Postupy: Nastavení obsahu textu ovládacího prvku TextBox
 Tento příklad ukazuje způsob použití <xref:System.Windows.Controls.TextBox.Text%2A> vlastnosti chcete nastavit počáteční textového obsahu <xref:System.Windows.Controls.TextBox> ovládacího prvku.  
@@ -28,5 +28,6 @@ Tento příklad ukazuje způsob použití <xref:System.Windows.Controls.TextBox.
  [!code-vb[TextBox_MiscCode#_TextBoxSetText](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextBox_MiscCode/VisualBasic/Window1.xaml.vb#_textboxsettext)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [TextBox – přehled](textbox-overview.md)
 - [RichTextBox – přehled](richtextbox-overview.md)

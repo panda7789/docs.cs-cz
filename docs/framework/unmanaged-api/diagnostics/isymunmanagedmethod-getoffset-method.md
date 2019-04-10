@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 4537d3098223ebfade6b0351aca4f889d6b2ae2a
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: a42dc624d4de9cddebad287f6d90590f96b30272
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57471664"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59223651"
 ---
 # <a name="isymunmanagedmethodgetoffset-method"></a>ISymUnmanagedMethod::GetOffset – metoda
 Vrátí posunutí v rámci této metody, které odpovídá na dané pozici v rámci dokumentu.  
@@ -57,4 +57,5 @@ HRESULT GetOffset(
  **Záhlaví:** CorSym.idl, CorSym.h  
   
 ## <a name="see-also"></a>Viz také:
+
 - [ISymUnmanagedMethod – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md)

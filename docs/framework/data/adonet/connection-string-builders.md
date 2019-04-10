@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8434b608-c4d3-43d3-8ae3-6d8c6b726759
-ms.openlocfilehash: ab72fe5a22ca88b33a93d94d4b5e16bbc470a4da
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 17ef057fccbea48da698e0ecfa5c789e125adbb0
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54733217"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59226882"
 ---
 # <a name="connection-string-builders"></a>Tvůrci připojovacích řetězců
 V dřívějších verzích [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)], kompilace kontrola připojovacích řetězců s spojený řetězec hodnoty nedošlo, tak, aby v době běhu, vygeneruje nesprávná klíčové slovo <xref:System.ArgumentException>. Každá z [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] zprostředkovatelé dat nepodporuje jinou syntaxi pro klíčová slova řetězec připojení, které vytváření obtížné platný připojovací řetězce, je-li provést ručně. Chcete-li vyřešit tento problém [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] 2.0 zavedeny nové tvůrci připojovacích řetězců pro každou [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] poskytovatele dat služeb. Každý poskytovatel dat zahrnuje třídu Tvůrce řetězec silného typu připojení, která dědí z <xref:System.Data.Common.DbConnectionStringBuilder>. Následující tabulce jsou uvedeny [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] poskytovatelé dat a jejich přidružený připojovací řetězec Tvůrce třídy.  
@@ -80,6 +80,7 @@ initial catalog="AdventureWorks;NewValue=Bad"
  [!code-vb[DataWorks SqlConnectionStringBuilder.UserNamePwd#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlConnectionStringBuilder.UserNamePwd/VB/source.vb#1)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Připojovací řetězce](../../../../docs/framework/data/adonet/connection-strings.md)
 - [Ochrana osobních údajů a zabezpečení dat](../../../../docs/framework/data/adonet/privacy-and-data-security.md)
 - [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

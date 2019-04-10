@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 18a2156b87fb4bf72e8de7c32c7e20d2a017c900
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: 61fce3e06b5245872f7061716e8d995dd5f5043c
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57479267"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59224874"
 ---
 # <a name="iclrmetahostrequestruntimeloadednotification-method"></a>ICLRMetaHost::RequestRuntimeLoadedNotification – metoda
 Poskytuje funkce zpětného volání, která je zaručeně volán při společné jazykové verzi modulu runtime (CLR) je prvním načtení, ale ještě nebyl spuštěn. Tato metoda nahrazuje [lockclrversion –](../../../../docs/framework/unmanaged-api/hosting/lockclrversion-function.md) funkce.  
@@ -99,5 +99,6 @@ typedef void (__stdcall *RuntimeLoadedCallbackFnPtr)(
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [ICLRMetaHost – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrmetahost-interface.md)
 - [Hostování](../../../../docs/framework/unmanaged-api/hosting/index.md)

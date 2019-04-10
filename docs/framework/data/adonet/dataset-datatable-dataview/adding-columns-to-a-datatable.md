@@ -1,18 +1,18 @@
 ---
-title: Přidávání sloupců do DataTable
+title: Přidání sloupců do datové tabulky
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: e85c4a0e-4f3f-458c-b58b-0ddbc06bf974
-ms.openlocfilehash: 892c0488588e9a5b59650f4a815ba9819493a610
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2e7008f6693d7d76520a7ff6ae9172e28e4990c2
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54538264"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59207003"
 ---
-# <a name="adding-columns-to-a-datatable"></a>Přidávání sloupců do DataTable
+# <a name="adding-columns-to-a-datatable"></a>Přidání sloupců do datové tabulky
 A <xref:System.Data.DataTable> obsahuje kolekci <xref:System.Data.DataColumn> objekty odkazují **sloupce** vlastnost tabulky. Tuto sadu sloupců, společně s omezeními, definuje schéma a struktura tabulky.  
   
  Vytvoříte **DataColumn** objektů v rámci tabulky pomocí **DataColumn** konstruktoru, nebo pomocí volání **přidat** metodu **sloupce**vlastnost tabulky, který je <xref:System.Data.DataColumnCollection>. **Přidat** metoda přijímá volitelný **Názevsloupce**, **datový typ**, a **výraz** argumenty a vytvoří novou  **Objekt DataColumn** jako člena kolekce. Také přijímá existující **DataColumn** objektu a přidá jej do kolekce a vrátí odkaz na přidaném **DataColumn** pokud o to požádá. Protože **DataTable** objekty nejsou specifické pro libovolný zdroj dat, typy rozhraní .NET Framework se používají při zadávání datového typu **DataColumn**.  
@@ -52,6 +52,7 @@ workTable.Columns.Add("Purchases", typeof(Double));
  Pokud používáte <xref:System.Xml.Linq.XElement> jako <xref:System.Data.DataColumn.DataType%2A> z <xref:System.Data.DataColumn> v <xref:System.Data.DataTable>, serializace XML nebude fungovat, pokud čtení v datech. Například, pokud je vypsat <xref:System.Xml.XmlDocument> pomocí `DataTable.WriteXml` metoda po serializace za účelem je do další nadřazeného uzlu v XML <xref:System.Xml.Linq.XElement>. Chcete-li tento problém obejít, použijte <xref:System.Data.SqlTypes.SqlXml> zadejte místo <xref:System.Xml.Linq.XElement>. `ReadXml` a `WriteXml` fungují správně s <xref:System.Data.SqlTypes.SqlXml>.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Data.DataColumn>
 - <xref:System.Data.DataColumnCollection>
 - <xref:System.Data.DataTable>

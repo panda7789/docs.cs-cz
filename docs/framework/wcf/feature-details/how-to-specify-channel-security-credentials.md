@@ -2,12 +2,12 @@
 title: 'Postupy: Určení zabezpečovacích pověření kanálu'
 ms.date: 03/30/2017
 ms.assetid: f8e03f47-9c4f-4dd5-8f85-429e6d876119
-ms.openlocfilehash: dac85a31a3194af3dff8a14461591d0f1a97399f
-ms.sourcegitcommit: d9a0071d0fd490ae006c816f78a563b9946e269a
-ms.translationtype: MT
+ms.openlocfilehash: 761f461c1c0cb24901729a717a41bfb1b599112b
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "55066192"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59222598"
 ---
 # <a name="how-to-specify-channel-security-credentials"></a>Postupy: Určení zabezpečovacích pověření kanálu
 Monikeru služby Windows Communication Foundation (WCF) umožňuje aplikace modelu COM pro volání služeb WCF. Většina služeb WCF vyžaduje klienta a zadejte přihlašovací údaje pro ověřování a autorizaci. Při volání služby WCF z klienta WCF, můžete zadat tyto přihlašovací údaje ve spravovaném kódu nebo konfiguračního souboru aplikace. Při volání služby WCF z aplikace COM, můžete použít <xref:System.ServiceModel.ComIntegration.IChannelCredentials> rozhraní a zadat přihlašovací údaje. Toto téma popisuje různé způsoby, jak zadat přihlašovací údaje pomocí <xref:System.ServiceModel.ComIntegration.IChannelCredentials> rozhraní.  
@@ -65,13 +65,9 @@ Monikeru služby Windows Communication Foundation (WCF) umožňuje aplikace mode
 ### <a name="to-specify-user-name-and-password"></a>K zadání uživatelského jména a hesla  
   
 1.  Upravte soubor App.config služba používat `wsHttpBinding`. To je potřeba pro ověřování uživatelského jména a hesla:  
-  
-  
-  
+
 2.  Nastavte `clientCredentialType` na uživatelské jméno:  
-  
-  
-  
+
 3.  Otevřete Visual Basic 6.0 a vytvořte nový soubor standardní .exe. Přidání tlačítka do formuláře a dvakrát klikněte na tlačítko Přidat následující kód do obslužné rutiny kliknutí:  
   
     ```  
@@ -96,9 +92,7 @@ Monikeru služby Windows Communication Foundation (WCF) umožňuje aplikace mode
 ### <a name="to-specify-windows-credentials"></a>K zadání přihlašovacích údajů Windows  
   
 1.  Nastavte `clientCredentialType` pro Windows v souboru App.config služby:  
-  
-  
-  
+
 2.  Otevřete Visual Basic 6.0 a vytvořte nový soubor standardní .exe. Přidání tlačítka do formuláře a dvakrát klikněte na tlačítko Přidat následující kód do obslužné rutiny kliknutí:  
   
     ```  
@@ -138,6 +132,7 @@ Monikeru služby Windows Communication Foundation (WCF) umožňuje aplikace mode
      Další informace o parametrech pro tuto metodu, najdete v části <xref:System.ServiceModel.ComIntegration.IChannelCredentials.SetIssuedToken%28System.String%2CSystem.String%2CSystem.String%29>.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Federace](../../../../docs/framework/wcf/feature-details/federation.md)
 - [Postupy: Konfigurace pověření ve službě Federation Service](../../../../docs/framework/wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md)
 - [Postupy: Vytvoření federovaného klienta](../../../../docs/framework/wcf/feature-details/how-to-create-a-federated-client.md)

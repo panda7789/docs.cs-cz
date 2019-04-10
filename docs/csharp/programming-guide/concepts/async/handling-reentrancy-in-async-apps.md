@@ -2,29 +2,29 @@
 title: Podpora vícenásobného přístupu v aplikacích s modifikátorem Async (C#)
 ms.date: 07/20/2015
 ms.assetid: 47c5075e-c448-45ce-9155-ed4e7e98c677
-ms.openlocfilehash: 4f5435dd482a20e1aa5a6e0b93d6222025b05518
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
-ms.translationtype: MT
+ms.openlocfilehash: 95004951a664c3c8271604938c5ce1d93a269304
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57359260"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59211501"
 ---
 # <a name="handling-reentrancy-in-async-apps-c"></a>Podpora vícenásobného přístupu v aplikacích s modifikátorem Async (C#)
 Pokud zahrnete asynchronní kód ve vaší aplikaci, by měl zvážit a případně zabránit vícenásobnému přístupu, který se vztahuje k nutnosti opětovného zadávání asynchronní operace ještě před dokončením. Pokud neidentifikujete a nemanipulujete vícenásobnému přístupu, může to způsobit neočekávané výsledky.  
   
- **V tomto tématu**  
+ **V tomto tématu**  
   
 -   [Rozpoznávání vícenásobného přístupu](#BKMK_RecognizingReentrancy)  
   
--   [Podpora vícenásobného přístupu](#BKMK_HandlingReentrancy)  
+-   [Vyřešení vícenásobného přístupu](#BKMK_HandlingReentrancy)  
   
     -   [Zakázání tlačítka Start](#BKMK_DisableTheStartButton)  
   
-    -   [Nerušte a nerestartujte operace](#BKMK_CancelAndRestart)  
+    -   [Zrušení a opětovné spuštění operace](#BKMK_CancelAndRestart)  
   
-    -   [Spustit více operací a zařazení výstupu do fronty](#BKMK_RunMultipleOperations)  
+    -   [Spuštění více operací a zařazení výstupu do fronty](#BKMK_RunMultipleOperations)  
   
--   [Prostudování a spuštění ukázkové aplikace](#BKMD_SettingUpTheExample)  
+-   [Prostudování a spuštění ukázkové aplikace](#BKMD_SettingUpTheExample)  
   
 > [!NOTE]
 >  Chcete-li spustit příklad, musíte mít Visual Studio 2012 nebo novější a rozhraní .NET Framework 4.5 nebo novější nainstalován v počítači.  
@@ -93,11 +93,11 @@ TOTAL bytes returned:  890591
   
      Zakažte **Start** tlačítko během operace tak, aby uživatel nemohl přerušit ho.  
   
--   [Nerušte a nerestartujte operace](#BKMK_CancelAndRestart)  
+-   [Zrušení a opětovné spuštění operace](#BKMK_CancelAndRestart)  
   
      Zrušit jakoukoli operaci, která je stále spuštěna, když uživatel klikne **Start** tlačítko znovu, a potom pokračujte umožňují nedávno požadované operace.  
   
--   [Spustit více operací a zařazení výstupu do fronty](#BKMK_RunMultipleOperations)  
+-   [Spuštění více operací a zařazení výstupu do fronty](#BKMK_RunMultipleOperations)  
   
      Povolit, že všechny požadované operace běžely asynchronně, ale koordinovat zobrazení výstupu tak, aby se výsledky z každé operace zobrazovaly společně a v pořadí.  
   
@@ -480,8 +480,7 @@ private async Task FinishOneGroupAsync(List<string> urls, Task<byte[]>[] content
         $"\r\n\r\nTOTAL bytes returned:  {total}\r\n";
 }  
 ```  
-  
-   
+
 #### <a name="points-of-interest"></a>Body zájmu  
  Informační řádky, které začínají znakem křížku (#) ve výstupu vysvětlení, jak tento příklad funguje.  
   

@@ -17,15 +17,16 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 56273146670dc2f4efde06a2f96e755f6fb86d99
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: af2512800b7903d3142a48ae17d22a2e19683e5d
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54712751"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59222234"
 ---
 # <a name="icordebugeditandcontinueerrorinfogetstring-method"></a>ICorDebugEditAndContinueErrorInfo::GetString – metoda
 `GetString` je zastaralý. Nevolejte tuto metodu.  
   
 ## <a name="see-also"></a>Viz také:
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+
+- [Debugging – rozhraní](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

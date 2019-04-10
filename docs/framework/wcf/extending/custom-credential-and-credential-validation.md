@@ -8,12 +8,12 @@ helpviewer_keywords:
 - credential validation [WCF]
 - credentials [WCF], validation
 ms.assetid: da831bec-e281-4d44-b343-437b5eef688e
-ms.openlocfilehash: 731131d4bc967aa3ae95eca1f9e9cbb2770f8f7c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 3b1ff700010f471a4d9be117f363083b6cbed493
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54746567"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59210630"
 ---
 # <a name="custom-credential-and-credential-validation"></a>Vlastní pověření a ověřování pověření
 Zabezpečení Windows Communication Foundation (WCF) je založeno na výměnou přihlašovacích údajů mezi služeb a klientů. Většina scénářů zabezpečení je možné splnit pomocí běžných typů přihlašovacích údajů, jako jsou Windows (Kerberos), uživatelského jména a hesla a certifikáty. Ale pokud se vyžaduje nový typ přihlašovacích údajů, témata v této části popisují, jak zpracovat a nové typy ověření.  
@@ -28,7 +28,7 @@ Zabezpečení Windows Communication Foundation (WCF) je založeno na výměnou p
  [Postupy: Vytvoření vlastního zprostředkovatele tokenů zabezpečení](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-provider.md)  
  Vysvětluje, jak vytvořit poskytovatele tokenu zabezpečení ke zpracování nových typů přihlašovacích údajů a vrátí nové tokeny pro přihlašovací údaje. Toto je druhá téma v řadě.  
   
- [Postupy: Vytvořit vlastní bezpečnostní ověřovací data tokenu](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-authenticator.md)  
+ [Postupy: Vytvoření vlastního ověřovacího modulu tokenu zabezpečení](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-authenticator.md)  
  Vysvětluje, jak vytvořit vlastní ověřovací data k ověření nový typ přihlašovacích údajů. Toto je třetí téma v řadě.  
   
 ## <a name="reference"></a>Odkaz  
@@ -56,4 +56,5 @@ Zabezpečení Windows Communication Foundation (WCF) je založeno na výměnou p
  [Autorizace](../../../../docs/framework/wcf/feature-details/authorization-in-wcf.md)  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Zabezpečení](../../../../docs/framework/wcf/feature-details/security.md)

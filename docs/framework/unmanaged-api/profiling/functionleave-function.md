@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 7b1414f01c942a02fe984bc39475bd1451171d79
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: 7b1fe219c4c852792390b48b0ea4d38adb702281
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57480686"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59218885"
 ---
 # <a name="functionleave-function"></a>FunctionLeave – funkce
 Oznámí profileru, že funkce se chystá vrácení volajícímu.  
@@ -64,8 +64,9 @@ void __stdcall FunctionLeave (
  **Verze rozhraní .NET framework:** 1.1, 1.0  
   
 ## <a name="see-also"></a>Viz také:
+
 - [FunctionEnter2 – funkce](../../../../docs/framework/unmanaged-api/profiling/functionenter2-function.md)
 - [FunctionLeave2 – funkce](../../../../docs/framework/unmanaged-api/profiling/functionleave2-function.md)
 - [FunctionTailcall2 – funkce](../../../../docs/framework/unmanaged-api/profiling/functiontailcall2-function.md)
 - [SetEnterLeaveFunctionHooks2 – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-setenterleavefunctionhooks2-method.md)
-- [Globální statické funkce pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-global-static-functions.md)
+- [Profilace globálních statických funkcí](../../../../docs/framework/unmanaged-api/profiling/profiling-global-static-functions.md)

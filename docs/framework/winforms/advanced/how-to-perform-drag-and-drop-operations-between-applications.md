@@ -1,17 +1,17 @@
 ---
-title: 'Postupy: Provádění operací přetažení myší mezi aplikacemi'
+title: 'Postupy: Provádění operací přetažení mezi aplikacemi'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - drag and drop [Windows Forms], between applications
 ms.assetid: fa347436-2b12-4dd6-8507-59d7241f6a06
-ms.openlocfilehash: 1e9556a69f3f5da4a47c5f5b1a6043a9a73dd8ff
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: f7fecf2f90c56e5ac10ea5929f1c23b25bf181bc
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57713433"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59221753"
 ---
-# <a name="how-to-perform-drag-and-drop-operations-between-applications"></a>Postupy: Provádění operací přetažení myší mezi aplikacemi
+# <a name="how-to-perform-drag-and-drop-operations-between-applications"></a>Postupy: Provádění operací přetažení mezi aplikacemi
 Provádění operací přetažení myší mezi aplikacemi se nijak neliší od povolení této akce v rámci aplikace, tak dlouho, dokud zahrnuté obě aplikace chovat podle "smlouva" mezi <xref:System.Windows.Forms.DragEventArgs.AllowedEffect%2A> a <xref:System.Windows.Forms.DragEventArgs.Effect%2A> Vlastnosti.  
   
  V následujícím postupu budete používat aplikace založené na Windows, které vytvoříte a WordPad textový procesor, který je součástí operačního systému Windows k provádění operací přetažení myší mezi aplikacemi. WordPad má určitou sadu povolené efekty text, který je přetáhnout; aplikace založené na Windows, které budete psát kód pro spolupráci s negativních dopadů tak, aby se může úspěšně dokončit operace přetažení myší.  
@@ -39,6 +39,7 @@ Provádění operací přetažení myší mezi aplikacemi se nijak neliší od p
      Kromě toho můžete nakonfigurovat váš <xref:System.Windows.Forms.TextBox> ovládací prvek umožňující textových řetězců, které se přetáhnout do WordPad. Další informace najdete v tématu [názorný postup: Operace a přetažení ve Windows Forms](walkthrough-performing-a-drag-and-drop-operation-in-windows-forms.md).  
   
 ## <a name="see-also"></a>Viz také:
-- [Postupy: Přidání dat do schránky.](how-to-add-data-to-the-clipboard.md)
+
+- [Postupy: Přidání dat do schránky](how-to-add-data-to-the-clipboard.md)
 - [Postupy: Načtení dat ze schránky](how-to-retrieve-data-from-the-clipboard.md)
 - [Operace přetažení a podpora schránky](drag-and-drop-operations-and-clipboard-support.md)

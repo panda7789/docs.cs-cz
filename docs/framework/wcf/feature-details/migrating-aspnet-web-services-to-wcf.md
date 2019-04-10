@@ -2,12 +2,12 @@
 title: Migrace webových služeb ASP.NET na WCF
 ms.date: 03/30/2017
 ms.assetid: 1adbb931-f0b1-47f3-9caf-169e4edc9907
-ms.openlocfilehash: 6fb96dc431008936658bb941f16373037e712f51
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 703088cdaae69d90d71fb950912538ea0662229b
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54736205"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59211085"
 ---
 # <a name="migrating-aspnet-web-services-to-wcf"></a>Migrace webových služeb ASP.NET na WCF
 Technologie ASP.NET poskytuje nástroje a knihovny tříd rozhraní .NET Framework pro vytváření webových služeb, stejně jako zařízení pro hostování služby v rámci Internetové informační služby (IIS). Windows Communication Foundation (WCF) poskytuje knihovny tříd rozhraní .NET Framework, nástroje a hostingové zařízení umožňující použití softwaru entity na komunikaci pomocí žádné protokoly, včetně těch, které používají webové služby.  Migrace webových služeb ASP.NET na WCF umožňuje vašim aplikacím, abyste mohli využívat nové funkce a vylepšení, které jsou jedinečné pro WCF.  
@@ -36,8 +36,9 @@ Technologie ASP.NET poskytuje nástroje a knihovny tříd rozhraní .NET Framewo
  Tato část popisuje tyto možnosti podrobně, porovná webových služeb ASP.NET na WCF a obsahuje pokyny, jak migrace kódu webové služby ASP.NET na WCF.  
   
 ## <a name="see-also"></a>Viz také:
-- [Očekávání přechodu na Windows Communication Foundation: Usnadnění budoucí migrace](../../../../docs/framework/wcf/feature-details/anticipating-adopting-wcf-migration.md)
-- [Očekávání přechodu na Windows Communication Foundation: Usnadnění budoucí integrace](../../../../docs/framework/wcf/feature-details/anticipating-adopting-the-wcf-easing-future-integration.md)
-- [Přijetí Windows Communication Foundation](../../../../docs/framework/wcf/feature-details/adopting-wcf.md)
+
+- [Očekávání přechodu na Windows Communication Foundation: usnadnění budoucí migrace](../../../../docs/framework/wcf/feature-details/anticipating-adopting-wcf-migration.md)
+- [Očekávání přechodu na Windows Communication Foundation: usnadnění budoucí integrace](../../../../docs/framework/wcf/feature-details/anticipating-adopting-the-wcf-easing-future-integration.md)
+- [Přijetí WCF](../../../../docs/framework/wcf/feature-details/adopting-wcf.md)
 - [Porovnání webových služeb ASP.NET se službou WCF na základě účelu a používaných standardů](../../../../docs/framework/wcf/feature-details/comparing-aspnet-web-services-to-wcf-based-on-purpose-and-standards-used.md)
-- [Porovnání webových služeb ASP.NET s technologií WCF z hlediska vývojových požadavků](../../../../docs/framework/wcf/feature-details/comparing-aspnet-web-services-to-wcf-based-on-development.md)
+- [Porovnání webových služeb ASP.NET Web Services s technologií WCF z hlediska vývojových požadavků](../../../../docs/framework/wcf/feature-details/comparing-aspnet-web-services-to-wcf-based-on-development.md)

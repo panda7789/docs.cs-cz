@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - TreeView control [WPF], binding to data of indeterminate depth
 ms.assetid: daddcd74-1b0f-4ffd-baeb-ec934c5e0f53
-ms.openlocfilehash: 6c0361674c4f6f740784a7657e018d5257c6edac
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 7da0a121cdb854c787c105c92cec70b7c4b3244e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57377233"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59214855"
 ---
 # <a name="how-to-bind-a-treeview-to-data-that-has-an-indeterminable-depth"></a>Postupy: Připojení TreeView k datům nezjistitelné hloubky
 Může nastat situace, kdy budete chtít vytvořit vazbu <xref:System.Windows.Controls.TreeView> ke zdroji dat, jejichž hloubky není znám.  Tato situace může nastat, když jsou data rekurzivní ze své podstaty, jako je například systém souborů, složek, ve kterém můžou obsahovat složky, nebo organizační struktury vaší společnosti, kde zaměstnanci mají ostatní zaměstnanci jako přímé podřízené.  
@@ -26,5 +26,6 @@ Může nastat situace, kdy budete chtít vytvořit vazbu <xref:System.Windows.Co
  [!code-xaml[TreeViewWithUnknownDepth#1](~/samples/snippets/csharp/VS_Snippets_Wpf/TreeViewWithUnknownDepth/CS/Window1.xaml#1)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled datových vazeb](../data/data-binding-overview.md)
 - [Přehled datových šablon](../data/data-templating-overview.md)

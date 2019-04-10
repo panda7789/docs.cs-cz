@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Změna ohraničení a mřížky styly v ovládacím prvku Windows Forms DataGridView'
+title: 'Postupy: Změna stylů ohraničení a mřížky v ovládacím prvku Windows Forms DataGridView'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,14 +11,14 @@ helpviewer_keywords:
 - data grids [Windows Forms], changing border styles
 - DataGridView control [Windows Forms], gridline styles
 ms.assetid: 2f413c7a-4025-4171-8e3a-66ef908ea583
-ms.openlocfilehash: b4984dca6fb7dc8575b00758f0d61d9ff011e1ca
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: d24adb98c339f911d6bea0312bce4d4b4f198a61
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57703361"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59224985"
 ---
-# <a name="how-to-change-the-border-and-gridline-styles-in-the-windows-forms-datagridview-control"></a>Postupy: Změna ohraničení a mřížky styly v ovládacím prvku Windows Forms DataGridView
+# <a name="how-to-change-the-border-and-gridline-styles-in-the-windows-forms-datagridview-control"></a>Postupy: Změna stylů ohraničení a mřížky v ovládacím prvku Windows Forms DataGridView
 S <xref:System.Windows.Forms.DataGridView> ovládacího prvku, lze přizpůsobit vzhled ohraničení a mřížky vylepšit uživatelské prostředí ovládacího prvku. Můžete změnit barvu mřížky a styl ohraničení ovládacího prvku kromě styly ohraničení buněk v ovládacím prvku. Můžete také použít jinou buňku styly ohraničení pro běžné buněk, buněk záhlaví řádku a buňky záhlaví sloupce.  
   
 > [!NOTE]
@@ -57,6 +57,7 @@ S <xref:System.Windows.Forms.DataGridView> ovládacího prvku, lze přizpůsobit
 -   Odkazy <xref:System?displayProperty=nameWithType>, <xref:System.Windows.Forms?displayProperty=nameWithType>, a <xref:System.Drawing?displayProperty=nameWithType> sestavení.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.BorderStyle>
 - <xref:System.Windows.Forms.DataGridView.BorderStyle%2A?displayProperty=nameWithType>
 - <xref:System.Windows.Forms.DataGridView.CellBorderStyle%2A?displayProperty=nameWithType>

@@ -1,15 +1,15 @@
 ---
-title: Stručná referenční příručka Entity SQL
+title: Stručné reference k Entity SQL
 ms.date: 03/30/2017
 ms.assetid: e53dad9e-5e83-426e-abb4-be3e78e3d6dc
-ms.openlocfilehash: 20d8d1cb1e4b5cbf37dffcce6a7e79c2a4c265d3
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: b4e3eaf8abd82b63fa2663b47f878ecfa9584897
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54539400"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59207068"
 ---
-# <a name="entity-sql-quick-reference"></a>Stručná referenční příručka Entity SQL
+# <a name="entity-sql-quick-reference"></a>Stručné reference k Entity SQL
 Toto téma poskytuje rychlý odkaz na [!INCLUDE[esql](../../../../../../includes/esql-md.md)] dotazy. Dotazy v tomto tématu jsou založeny na modelu AdventureWorks Sales.  
   
 ## <a name="literals"></a>Literály  
@@ -27,7 +27,7 @@ Toto téma poskytuje rychlý odkaz na [!INCLUDE[esql](../../../../../../includes
   
  Výstup:  
   
-|Hodnota|  
+|Value|  
 |-----------|  
 |Dobrý den|  
   
@@ -60,7 +60,7 @@ DATETIME '2006-12-25 01:01'
   
  Výstup:  
   
-|Hodnota|  
+|Value|  
 |-----------|  
 |1|  
 |2|  
@@ -71,7 +71,7 @@ DATETIME '2006-12-25 01:01'
   
 ## <a name="type-constructors"></a>Konstruktory typu  
   
-### <a name="row"></a>ŘÁDEK  
+### <a name="row"></a>ROW  
  [ŘÁDEK](../../../../../../docs/framework/data/adonet/ef/language-reference/row-entity-sql.md) vytvoří anonymní, typované strukturálně (záznamů) hodnotu jako v: `ROW(1 AS myNumber, ‘Name’ AS myName).`  
   
  Příklad:  
@@ -83,7 +83,7 @@ SELECT VALUE row (product.ProductID as ProductID, product.Name
   
  Výstup:  
   
-|ProductID|Název|  
+|ProductID|Name|  
 |---------------|----------|  
 |1|Měnitelné závodu|  
 |879|Univerzální kol samostatné|  
@@ -156,7 +156,7 @@ SELECT VALUE REF(p).Name FROM
   
  Výstup:  
   
-|Hodnota|  
+|Value|  
 |-----------|  
 |Měnitelné závodu|  
 |Univerzální kol samostatné|  
@@ -175,7 +175,7 @@ SELECT VALUE DEREF(REF(p)).Name FROM
   
  Výstup:  
   
-|Hodnota|  
+|Value|  
 |-----------|  
 |Měnitelné závodu|  
 |Univerzální kol samostatné|  
@@ -252,7 +252,7 @@ using SqlServer; LOWER('AA');
   
  Výstup:  
   
-|Hodnota|  
+|Value|  
 |-----------|  
 |aa|  
   
@@ -268,7 +268,7 @@ SELECT c.ContactID as ID, c.LastName as Name FROM
   
  Výstup:  
   
-|ID|Název|  
+|ID|Name|  
 |--------|----------|  
 |10|Adina|  
 |11|Agcaoili|  
@@ -326,7 +326,7 @@ SELECT VALUE p.Name FROM AdventureWorksEntities.Product as p
   
  Výstup:  
   
-|Název|  
+|Name|  
 |----------|  
 |Měnitelné závodu|  
 |Univerzální kol samostatné|  
@@ -340,7 +340,7 @@ SELECT VALUE p.Name FROM AdventureWorksEntities.Product as p
   
  Vyberte p.Name, p.ProductID z AdventureWorksEntities.Product jako p výstup:  
   
-|Název|ProductID|  
+|Name|ProductID|  
 |----------|---------------|  
 |Měnitelné závodu|1|  
 |Univerzální kol samostatné|879|  
@@ -358,10 +358,11 @@ CASE WHEN AVG({25,12,11}) < 100 THEN TRUE ELSE FALSE END
   
  Výstup:  
   
-|Hodnota|  
+|Value|  
 |-----------|  
 |HODNOTA TRUE|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Reference k Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
 - [Přehled Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-overview.md)

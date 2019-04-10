@@ -6,12 +6,12 @@ helpviewer_keywords:
 - Inheritance Picker dialog box
 - inherited forms [Windows Forms], creating
 ms.assetid: 969b4c04-12aa-4297-93a2-0ae747447823
-ms.openlocfilehash: 4b3e7a3994423c962866b643ffc5173669e3a2e5
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
-ms.translationtype: MT
+ms.openlocfilehash: 74dfd1bb2c47a8e377a2ed74934f742dff6cd64a
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58841158"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59212281"
 ---
 # <a name="how-to-inherit-forms-using-the-inheritance-picker-dialog-box"></a>Postupy: Dědění formulářů pomocí dialogového okna Výběr dědičnosti
 Nejjednodušší způsob, jak dědit formuláře nebo jiný objekt je použít **výběr dědičnosti** dialogové okno. Pomocí něho můžete využít výhod kódu nebo uživatelské rozhraní (UI), již jste vytvořili v jiných řešení.  
@@ -57,7 +57,8 @@ Nejjednodušší způsob, jak dědit formuláře nebo jiný objekt je použít *
     >  Když zkombinujete zděděný ovládací prvky a součásti se standardní ovládací prvky a komponenty v aplikaci Windows Forms, může dojít, je v konfliktu s pořadí vykreslování. Můžete tento problém můžete vyřešit tak, že upravíte pořadí vykreslování, které se provádí v klikněte na **formátu** nabídky, přejdete na **pořadí**a pak levým na **přenést dopředu** nebo  **Přenést do pozadí**. Další informace o pořadí vykreslování ovládacích prvků naleznete v tématu [jak: Vrstvení objektů ve Windows Forms](../controls/how-to-layer-objects-on-windows-forms.md).  
   
 ## <a name="see-also"></a>Viz také:
-- [Příkaz Inherits](~/docs/visual-basic/language-reference/statements/inherits-statement.md)
-- [using](~/docs/csharp/language-reference/keywords/using.md)
+
+- [Inherits – příkaz](~/docs/visual-basic/language-reference/statements/inherits-statement.md)
+- [používání](~/docs/csharp/language-reference/keywords/using.md)
 - [Účinky úpravy vzhledu základního formuláře](effects-of-modifying-base-form-appearance.md)
-- [Vizuální dědění modelu Windows Forms](windows-forms-visual-inheritance.md)
+- [Vizuální dědění Windows Forms](windows-forms-visual-inheritance.md)

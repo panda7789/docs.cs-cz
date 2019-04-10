@@ -9,12 +9,12 @@ helpviewer_keywords:
 - UI Automation, getting text attributes
 - text attributes, getting
 ms.assetid: fdefc6c3-b836-4cfe-8dec-1484bfdc5551
-ms.openlocfilehash: 70a4d5967601780e83116d94f86fb24720f06626
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.openlocfilehash: d4cb9d12e4e2d5a28744e3a238884616a6db8f68
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57676795"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59214894"
 ---
 # <a name="obtain-text-attributes-using-ui-automation"></a>Získání textových atributů s použitím automatizace uživatelského rozhraní
 > [!NOTE]
@@ -35,6 +35,7 @@ ms.locfileid: "57676795"
  <xref:System.Windows.Automation.TextPattern> – Vzor ovládacích prvků, v kombinaci s částí <xref:System.Windows.Automation.Text.TextPatternRange> třídy, podporuje základní text atributy, vlastnosti a metody. Pro konkrétní správu funkce, která není podporována produktem <xref:System.Windows.Automation.TextPattern> nebo <xref:System.Windows.Automation.Text.TextPatternRange> <xref:System.Windows.Automation.AutomationElement>, třída poskytuje metody pro klienty automatizace uživatelského rozhraní pro přístup k odpovídající nativní objekt modelu.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled prvku TextPattern automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-textpattern-overview.md)
 - [Přidání obsahu textového pole s použitím automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/add-content-to-a-text-box-using-ui-automation.md)
 - [Hledání a zvýrazňování textu s použitím automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/find-and-highlight-text-using-ui-automation.md)

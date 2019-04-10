@@ -1,17 +1,17 @@
 ---
-title: 'Postupy: Zabránit řádku přidání a odstranění v ovládacím prvku Windows Forms DataGridView pomocí návrháře'
+title: 'Postupy: Ochrana před přidáním a odstraněním řádku v ovládacím prvku Windows Forms DataGridView pomocí Návrháře'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - DataGridView control [Windows Forms], preventing row addition or deletion
 ms.assetid: a17722bd-9400-41e6-8dcc-c9c151f0a749
-ms.openlocfilehash: 52514c07313a60bac8e2c7142b66099dbcd779e5
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 9f78068597edb616017876c9c72b01d44111f6f0
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57714733"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59220549"
 ---
-# <a name="how-to-prevent-row-addition-and-deletion-in-the-windows-forms-datagridview-control-using-the-designer"></a>Postupy: Zabránit řádku přidání a odstranění v ovládacím prvku Windows Forms DataGridView pomocí návrháře
+# <a name="how-to-prevent-row-addition-and-deletion-in-the-windows-forms-datagridview-control-using-the-designer"></a>Postupy: Ochrana před přidáním a odstraněním řádku v ovládacím prvku Windows Forms DataGridView pomocí Návrháře
 Někdy budete chtít zabránit uživatelům v nové řádky dat zadávat nebo odstranění existující řádky v vaše <xref:System.Windows.Forms.DataGridView> ovládacího prvku. Nové řádky jsou zadány ve speciální řádku pro nové záznamy v dolní části ovládacího prvku. Pokud zakážete přidání řádku, řádku pro nové záznamy se nezobrazí. Poté provedete ovládací prvek zcela jen pro čtení zakázáním odstranění řádku a editaci buňky.  
   
  Následující postup vyžaduje, **aplikace Windows** projektu s formulář obsahující <xref:System.Windows.Forms.DataGridView> ovládacího prvku. Informace o nastavení takový projekt, naleznete v tématu [jak: Vytvoření projektu aplikace Windows Forms](/visualstudio/ide/step-1-create-a-windows-forms-application-project) a [jak: Přidání ovládacích prvků Windows Forms](how-to-add-controls-to-windows-forms.md).  
@@ -27,7 +27,8 @@ Někdy budete chtít zabránit uživatelům v nové řádky dat zadávat nebo od
     >  Chcete-li ovládací prvek zcela jen pro čtení, zrušte **povolit úpravy** také políčko.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.DataGridView.AllowUserToAddRows%2A?displayProperty=nameWithType>
 - [Postupy: Vytvoření projektu aplikace Windows Forms](/visualstudio/ide/step-1-create-a-windows-forms-application-project)
-- [Postupy: Přidání ovládacích prvků do formulářů Windows](how-to-add-controls-to-windows-forms.md)
+- [Postupy: Přidávání ovládacích prvků do Windows Forms](how-to-add-controls-to-windows-forms.md)

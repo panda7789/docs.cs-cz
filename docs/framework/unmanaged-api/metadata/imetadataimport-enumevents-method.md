@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 4771ed5578fe8f100c3d6a9476e5f2b15463fd8e
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: b2ba46c025c2d031f0526c6a9da5f6ab07023741
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57486417"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59208446"
 ---
 # <a name="imetadataimportenumevents-method"></a>IMetaDataImport::EnumEvents – metoda
 Vytvoří výčet tokeny definice události pro konkrétní token TypeDef.  
@@ -72,5 +72,6 @@ HRESULT EnumEvents (
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
 - [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

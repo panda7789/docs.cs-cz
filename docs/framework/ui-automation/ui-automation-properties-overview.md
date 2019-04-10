@@ -5,12 +5,12 @@ helpviewer_keywords:
 - UI Automation, properties
 - properties, UI Automation
 ms.assetid: a6c31d7b-b33e-49b3-b5c1-31a345f9b7c8
-ms.openlocfilehash: b38cc51cb7eaf0913ed821bb60f10cdde2430916
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.openlocfilehash: 9028f9f99ee22dd480d817bc8aa94c7113a15c9d
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57676054"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59223001"
 ---
 # <a name="ui-automation-properties-overview"></a>Přehled vlastností automatizace uživatelského rozhraní
 > [!NOTE]
@@ -30,7 +30,7 @@ ms.locfileid: "57676054"
   
  <xref:System.Windows.Automation.AutomationProperty> objektů představujících určité vlastnosti jsou k dispozici jako pole v různých tříd. Z bezpečnostních důvodů se zprostředkovateli automatizace uživatelského rozhraní od samostatnou sadu tříd, které jsou obsaženy v Uiautomationtypes.dll získat tyto objekty.  
   
- Následující tabulka rozděluje vlastnosti v rámci tříd, které obsahují <xref:System.Windows.Automation.AutomationProperty> [!INCLUDE[TLA2#tla_id#plural](../../../includes/tla2sharptla-idsharpplural-md.md)].  
+ Následující tabulka rozděluje vlastnosti v rámci tříd, které obsahují <xref:System.Windows.Automation.AutomationProperty>[!INCLUDE[TLA2#tla_id#plural](../../../includes/tla2sharptla-idsharpplural-md.md)].  
   
 |Typy vlastností|Klienti získat ID z|Poskytovatelé získat ID z|  
 |-------------------------|--------------------------|----------------------------|  
@@ -160,6 +160,7 @@ ms.locfileid: "57676054"
  Klienti naslouchat událostem se přihlásíte k jejich odběru. Přihlášení k odběru událostí znamená, že vytváření metod delegáta, které může zpracovávat události a následné předání metod na [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] spolu s konkrétní události, které se budou řešit v těchto metod. Události změny vlastnosti zejména, klienti musí implementovat <xref:System.Windows.Automation.AutomationPropertyChangedEventHandler>.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Práce s mezipamětí u klientů automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/caching-in-ui-automation-clients.md)
 - [Vlastnosti automatizace uživatelského rozhraní pro klienty](../../../docs/framework/ui-automation/ui-automation-properties-for-clients.md)
 - [Implementace zprostředkovatele automatizace uživatelského rozhraní na straně serveru](../../../docs/framework/ui-automation/server-side-ui-automation-provider-implementation.md)

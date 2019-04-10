@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 125d2ab8-55a4-4e5f-af36-a7d401a37ab0
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 39b7bcec1196a59c47717ec2b5622ca8e0d3cdfc
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 46e2e1c327a683782b68069ace2ad6c40bbc856e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54591974"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59225284"
 ---
 # <a name="security-and-remoting-considerations"></a>Důležité informace o zabezpečení a vzdálené komunikaci
 Vzdálená komunikace umožňuje nastavit transparentní volání mezi doménami aplikace, procesy nebo počítače. Procházení zásobníku zabezpečení přístupu kódu, ale nemůže překročit hranice procesu nebo počítače (platí mezi doménami aplikace stejného procesu).  
@@ -38,4 +38,5 @@ Vzdálená komunikace umožňuje nastavit transparentní volání mezi doménami
  Výchozí domény aplikace obvykle vytvoří podřízené domény aplikace s objekt ovládacího prvku v každém z nich. Objekt ovládacího prvku spravuje nové aplikační doméně a někdy trvá objednávky z výchozí domény aplikace, ale nemůže kontaktovat doménu přímo. V některých případech výchozí domény aplikace volá jeho proxy objekt ovládacího prvku. Mohou však existovat případy, ve které je nezbytné pro objekt ovládacího prvku pro zpětné volání do výchozí domény aplikace. V těchto případech výchozí domény aplikace předá objekt zpětného volání marshal-by-reference do konstruktoru objektu ovládacího prvku. Je odpovědností objekt ovládacího prvku k ochraně tohoto proxy serveru. Pokud objekt ovládacího prvku umístit proxy serveru na veřejné statické pole veřejné třídy nebo jinak veřejně zpřístupnit proxy server, to by otevřete nebezpečné mechanismus pro jiný kód zavolá zpět do výchozí domény aplikace. Z tohoto důvodu jsou vždy objekty ovládací prvek implicitně důvěryhodná udržovat privátní proxy serveru.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Pokyny pro zabezpečené kódování](../../../docs/standard/security/secure-coding-guidelines.md)

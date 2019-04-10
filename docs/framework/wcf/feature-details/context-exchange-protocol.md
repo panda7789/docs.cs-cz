@@ -2,12 +2,12 @@
 title: Protokol kontextové výměny
 ms.date: 03/30/2017
 ms.assetid: 3dfd38e0-ae52-491c-94f4-7a862b9843d4
-ms.openlocfilehash: b1c2b293f8e23f9bc43fba32551233d92666793e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a6bc0ac45282d94a6aea8dbbdb5a7d34163c692e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54494766"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59217000"
 ---
 # <a name="context-exchange-protocol"></a>Protokol kontextové výměny
 Tato část popisuje protokol kontextové výměny zavedená ve Windows Communication Foundation (WCF) verzi rozhraní .NET Framework verze 3.5. Tento protokol umožňuje kanálu klienta přijímat kontext získáte ho od služby a použít ji k této službě odesílá přes stejnou instanci kanálu klienta také všechny následné požadavky. Implementace protokol kontextové výměny můžete použít jednu z následujících dvou mechanismů rozšíření kontextu mezi serverem a klientem: Soubory cookie protokolu HTTP nebo záhlaví SOAP.  
@@ -68,4 +68,5 @@ Tato část popisuje protokol kontextové výměny zavedená ve Windows Communic
     ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Průvodce interoperabilitou protokolů webových služeb](../../../../docs/framework/wcf/feature-details/web-services-protocols-interoperability-guide.md)

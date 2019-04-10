@@ -8,12 +8,12 @@ helpviewer_keywords:
 - shortcut menus [Windows Forms], ContextMenuStrip control [Windows Forms]
 - ContextMenuStrip control [Windows Forms], about ContextMenuStrip control
 ms.assetid: 9787cdb3-88f1-4198-972f-eefd9524ce39
-ms.openlocfilehash: f26fcf259e9c56ffe17c7d7f5a80428ffbbb27c2
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 23699c67de616ba3f535d2527a315aebe7448d3f
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54712454"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59215817"
 ---
 # <a name="contextmenustrip-control-overview"></a>ContextMenuStrip – přehled ovládacího prvku
 > [!NOTE]
@@ -32,6 +32,7 @@ ms.locfileid: "54712454"
 |<xref:System.Windows.Forms.ToolStripDropDownItem>|Poskytuje základní funkce pro ovládací prvky je odvozena z <xref:System.Windows.Forms.ToolStripItem> , který zobrazí rozevírací seznam položek při kliknutí na.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.ToolStrip>
 - <xref:System.Windows.Forms.MenuStrip>
 - <xref:System.Windows.Forms.ContextMenuStrip>

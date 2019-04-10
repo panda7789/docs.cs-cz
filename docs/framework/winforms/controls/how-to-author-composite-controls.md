@@ -7,12 +7,12 @@ helpviewer_keywords:
 - user controls [Windows Forms], inheriting from
 - composite controls [Windows Forms], creating
 ms.assetid: 79c9cf05-5ab6-4a18-886d-88a64748b098
-ms.openlocfilehash: cd82200706c98df18b1b9f464ebd62d797eea960
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: 2157ef85cb26ad422a8ff3ff5149af373be1c055
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57724450"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59210240"
 ---
 # <a name="how-to-author-composite-controls"></a>Postupy: Vytváření složených ovládacích prvků
 Složené ovládací prvky mohou být použity v mnoha způsoby. Můžete vytvářet je v rámci projektu aplikace klasické pracovní plochy Windows a používat pouze u formulářů v projektu. Nebo můžete vytvářet v projektu knihovny ovládací prvků Windows, zkompilujte projekt do sestavení a pomocí ovládacích prvků v jiných projektech. Dokonce je možné zdědit z nich a můžete si je přizpůsobit rychle pro zvláštní účely vizuální dědění.  
@@ -79,10 +79,11 @@ Složené ovládací prvky mohou být použity v mnoha způsoby. Můžete vytvá
      Můžete zjistit základní ovládací prvky, které byly zděděny ze složeného ovládacího prvku v knihovně DLL, ale můžete změnit vlastnosti ovládacích prvků jehož **modifikátory** vlastnost **veřejné**. Nelze změnit vlastnosti ovládacího prvku jehož **modifikátory** vlastnost **privátní**.  
   
 ## <a name="see-also"></a>Viz také:
-- [Návod: Vytvoření složeného ovládacího prvku s jazykem Visual Basic](walkthrough-authoring-a-composite-control-with-visual-basic.md)
+
+- [Návod: Vytvoření složeného ovládacího prvku pomocí Visual Basicu](walkthrough-authoring-a-composite-control-with-visual-basic.md)
 - [Návod: Vytvoření složeného ovládacího prvku pomocí Visual C#](walkthrough-authoring-a-composite-control-with-visual-csharp.md)
-- [Návod: Dědění z ovládacího prvku Windows Forms pomocí Visual Basic](walkthrough-inheriting-from-a-windows-forms-control-with-visual-basic.md)
+- [Návod: Dědění z ovládacího prvku Windows Forms pomocí Visual Basicu](walkthrough-inheriting-from-a-windows-forms-control-with-visual-basic.md)
 - [Návod: Dědění z ovládacího prvku Windows Forms pomocí Visual C#](walkthrough-inheriting-from-a-windows-forms-control-with-visual-csharp.md)
 - [Doporučení ohledně typu ovládacího prvku](control-type-recommendations.md)
-- [Postupy: Autor ovládacích prvků Windows Forms](how-to-author-controls-for-windows-forms.md)
+- [Postupy: Vytváření ovládacích prvků pro Windows Forms](how-to-author-controls-for-windows-forms.md)
 - [Typy vlastních ovládacích prvků](varieties-of-custom-controls.md)

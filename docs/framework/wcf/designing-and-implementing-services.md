@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - defining service contracts [WCF]
 ms.assetid: 036fae20-7c55-4002-b71d-ac4466e167a3
-ms.openlocfilehash: 51cdcc4789ac553c2775c89d6124cf90624b8747
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: ccac3dd26ff03f235827c4bb3135dc2028f09032
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54716049"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59216408"
 ---
 # <a name="designing-and-implementing-services"></a>Navrhování a implementace služeb
 Tato část ukazuje, jak definovat a implementovat kontrakty WCF. Kontrakt služby specifikuje, koncový bod komunikuje s vnějším světem. Konkrétnější úrovni je příkaz o sadě určitých zpráv, které jsou uspořádány do základní zprávy exchange vzory (MEPs), jako je například požadavek/odpověď jednosměrného a duplexní. Pokud kontrakt služby je sada logicky spojených výměny zpráv, je operace služby exchange jedné zprávy. Například `Hello` operace musíte samozřejmě přijmout jednu zprávu (aby volající může oznamujeme pozdrav) a může nebo nemusí vrátit zprávu (v závislosti na provedla operaci).  
@@ -67,5 +67,6 @@ Tato část ukazuje, jak definovat a implementovat kontrakty WCF. Kontrakt služ
  Tento proces sčítání požadavek je potřeba vzít v úvahu při navrhování, implementaci, konfiguraci a hostování aplikace služby Windows Communication Foundation (WCF). Kontrakt například můžete určit, že je nutné podporují relace. Pokud ano, musíte nakonfigurovat vazby ke splnění tohoto požadavku smluvní nebo implementace služby nebudou fungovat. Nebo pokud vaše služba vyžaduje integrované ověřování Windows a je hostovaná v Internetové informační služby (IIS), webové aplikace, ve kterém se služba nachází musí mít povoleno integrované ověřování Windows a anonymní podporu vypnuté. Další informace o funkcích a vliv těchto typů hostitele jinou službu, naleznete v tématu [hostování služeb](../../../docs/framework/wcf/hosting-services.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Navrhování kontraktů služby](../../../docs/framework/wcf/designing-service-contracts.md)
 - [Implementace kontraktů služeb](../../../docs/framework/wcf/implementing-service-contracts.md)

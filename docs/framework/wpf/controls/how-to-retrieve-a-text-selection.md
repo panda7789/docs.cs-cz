@@ -9,12 +9,12 @@ helpviewer_keywords:
 - TextBox control [WPF], retrieving text
 - retrieving text [WPF]
 ms.assetid: d5793172-1e11-4a39-9be0-73f336ed858d
-ms.openlocfilehash: fdd0e3974964e141c4b65e1c8851f3c371a4d501
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: b7f0b9ee02a7ace717787fc8eeb6e15649829a49
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57357609"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59224582"
 ---
 # <a name="how-to-retrieve-a-text-selection"></a>Postupy: Načtení výběru textu
 Tento příklad ukazuje jeden ze způsobů použití <xref:System.Windows.Controls.TextBox.SelectedText%2A> vlastnost pro načtení textu, který uživatel vybral v <xref:System.Windows.Controls.TextBox> ovládacího prvku.  
@@ -33,5 +33,6 @@ Tento příklad ukazuje jeden ze způsobů použití <xref:System.Windows.Contro
  [!code-vb[TextBox_MiscCode#_SelectText](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextBox_MiscCode/VisualBasic/Window1.xaml.vb#_selecttext)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [TextBox – přehled](textbox-overview.md)
 - [RichTextBox – přehled](richtextbox-overview.md)

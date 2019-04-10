@@ -9,12 +9,12 @@ helpviewer_keywords:
 - ControlTemplate [WPF], ScrollViewer
 - ScrollViewer [WPF], styles and templates
 ms.assetid: dffdd822-ae69-4946-abaf-710860cd65b2
-ms.openlocfilehash: 5cd92a4cda40fd850824ae601821dab08c7389e6
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 9c0edfd7ab4772eb9a1f5ecdd3db611fa36bf8d3
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57370108"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59226830"
 ---
 # <a name="scrollviewer-styles-and-templates"></a>ScrollViewer – styly a šablony
 Toto téma popisuje styly a šablony pro <xref:System.Windows.Controls.ScrollViewer> ovládacího prvku. Můžete upravit výchozí <xref:System.Windows.Controls.ControlTemplate> poskytnout jedinečný vzhled ovládacího prvku. Další informace najdete v tématu [přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením ControlTemplate](customizing-the-appearance-of-an-existing-control.md).  
@@ -22,7 +22,7 @@ Toto téma popisuje styly a šablony pro <xref:System.Windows.Controls.ScrollVie
 ## <a name="scrollviewer-parts"></a>Scrollviewer – částí  
  V následující tabulce jsou uvedeny pojmenované části pro <xref:System.Windows.Controls.ScrollViewer> ovládacího prvku.  
   
-|Část|Typ|Popis|  
+|Část|Type|Popis|  
 |-|-|-|  
 |PART_ScrollContentPresenter|<xref:System.Windows.Controls.ScrollContentPresenter>|Zástupný symbol pro obsah <xref:System.Windows.Controls.ScrollViewer>.|  
 |PART_HorizontalScrollBar|<xref:System.Windows.Controls.Primitives.ScrollBar>|<xref:System.Windows.Controls.Primitives.ScrollBar> Umožňuje posouvat obsah vodorovně.|  
@@ -49,9 +49,10 @@ Toto téma popisuje styly a šablony pro <xref:System.Windows.Controls.ScrollVie
  Úplnou ukázku najdete v tématu [stylu s ukázkou ControlTemplates](https://github.com/Microsoft/WPF-Samples/tree/master/Styles%20&%20Templates/IntroToStylingAndTemplating).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.FrameworkElement.Style%2A>
 - <xref:System.Windows.Controls.ControlTemplate>
 - [Styly a šablony ovládacích prvků](control-styles-and-templates.md)
 - [Přizpůsobení ovládacího prvku](control-customization.md)
 - [Styly a šablony](styling-and-templating.md)
-- [Přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením šablony ControlTemplate](customizing-the-appearance-of-an-existing-control.md)
+- [Přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením ControlTemplate](customizing-the-appearance-of-an-existing-control.md)

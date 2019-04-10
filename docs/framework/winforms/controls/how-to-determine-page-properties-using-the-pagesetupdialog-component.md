@@ -10,12 +10,12 @@ helpviewer_keywords:
 - page setup
 - PageSetupDialog component
 ms.assetid: 6dae05bc-c0fd-4357-bb93-841a1631d98f
-ms.openlocfilehash: 482825c1e17811b31c3520a0280d7d0434489bf5
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: 6eefe7dd69d02712b650d95ddf14394c10792807
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57713199"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59213700"
 ---
 # <a name="how-to-determine-page-properties-using-the-pagesetupdialog-component"></a>Postupy: Určení vlastností stránky pomocí komponenty PageSetupDialog
 [PageSetupDialog](pagesetupdialog-component-windows-forms.md) součást se zobrazí rozložení, formát papíru a jiné možnosti rozložení stránky pro uživatele pro dokument.  
@@ -88,6 +88,7 @@ ms.locfileid: "57713199"
     ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.PageSetupDialog>
-- [Postupy: Vytvoření tiskových úloh standardní Windows Forms](../advanced/how-to-create-standard-windows-forms-print-jobs.md)
+- [Postupy: Vytváření standardních tiskových úloh v modelu Windows Forms](../advanced/how-to-create-standard-windows-forms-print-jobs.md)
 - [Komponenta PageSetupDialog](pagesetupdialog-component-windows-forms.md)

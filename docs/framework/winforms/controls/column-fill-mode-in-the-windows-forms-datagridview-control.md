@@ -9,12 +9,12 @@ helpviewer_keywords:
 - DataGridView control [Windows Forms], column fill mode
 - data grids [Windows Forms], column fill mode
 ms.assetid: b4ef7411-ebf4-4e26-bb33-aecec90de80c
-ms.openlocfilehash: bd6c27203284b392742b766b22f664b08a7b3a40
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: a85745d39903719ec1e44ccf70df72d472720b7c
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57722409"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59214725"
 ---
 # <a name="column-fill-mode-in-the-windows-forms-datagridview-control"></a>Režim vyplnění sloupce v ovládacím prvku Windows Forms DataGridView
 V režim vyplnění sloupce <xref:System.Windows.Forms.DataGridView> ovládací prvek změní její sloupce automaticky tak, aby Šířka oblasti k dispozici zobrazení. Ovládací prvek nezobrazí vodorovný posuvník, kromě případů, kdy je také k zachování konzistence každý sloupec, rovna nebo větší než jeho <xref:System.Windows.Forms.DataGridViewColumn.MinimumWidth%2A> hodnotu vlastnosti.  
@@ -63,6 +63,7 @@ V režim vyplnění sloupce <xref:System.Windows.Forms.DataGridView> ovládací 
 -   Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.DataGridView.AutoResizeColumns%2A?displayProperty=nameWithType>
 - <xref:System.Windows.Forms.DataGridView.AutoSizeColumnsMode%2A?displayProperty=nameWithType>

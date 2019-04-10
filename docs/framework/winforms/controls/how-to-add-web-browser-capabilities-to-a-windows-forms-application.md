@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Přidání schopností webového prohlížeče do formulářové aplikaci Windows'
+title: 'Postupy: Přidání schopností webového prohlížeče do aplikace Windows Forms'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -12,14 +12,14 @@ helpviewer_keywords:
 - examples [Windows Forms], WebBrowser control
 - Windows Forms, adding Web browser functionality
 ms.assetid: 3871f072-b57a-435b-9976-e5da28df04a7
-ms.openlocfilehash: bb1eb057814b44e2fd184c14e0c7e16ecb2fbb3c
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 29422ad384240b017b279795d07e3c8100fae493
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57721863"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59208797"
 ---
-# <a name="how-to-add-web-browser-capabilities-to-a-windows-forms-application"></a>Postupy: Přidání schopností webového prohlížeče do formulářové aplikaci Windows
+# <a name="how-to-add-web-browser-capabilities-to-a-windows-forms-application"></a>Postupy: Přidání schopností webového prohlížeče do aplikace Windows Forms
 S <xref:System.Windows.Forms.WebBrowser> ovládacího prvku, můžete přidat funkce webového prohlížeče do vaší aplikace. Ovládací prvek funguje jako webového prohlížeče ve výchozím nastavení. Po načtení počáteční adresu URL tak, že nastavíte <xref:System.Windows.Forms.WebBrowser.Url%2A> vlastností, můžete přejít klepnutím na hypertextové odkazy nebo pomocí klávesové zkratky přejít zpět a vpřed mezi historii navigace. Ve výchozím nastavení můžete přístup k funkcím Další prohlížeče prostřednictvím klikněte pravým tlačítkem na nabídku. Můžete také otevřít nové dokumenty přetažením na ovládací prvek. <xref:System.Windows.Forms.WebBrowser> Ovládací prvek má také několik vlastnosti, metody a události, které můžete použít k implementaci funkce uživatelského rozhraní, podobné těm v aplikaci Internet Explorer.  
   
  Následující příklad kódu se implementuje adresním řádku, typické prohlížeče tlačítka, **souboru** nabídka stavového řádku a záhlaví okna, která zobrazí aktuální název stránky.  
@@ -37,5 +37,6 @@ S <xref:System.Windows.Forms.WebBrowser> ovládacího prvku, můžete přidat fu
  Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.WebBrowser>
-- [Ovládací prvek WebBrowser](webbrowser-control-windows-forms.md)
+- [WebBrowser – ovládací prvek](webbrowser-control-windows-forms.md)

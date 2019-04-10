@@ -10,12 +10,12 @@ helpviewer_keywords:
 - data grids [Windows Forms], font styles
 - data grids [Windows Forms], color styles
 ms.assetid: 588f2c57-d963-41b1-9c1d-d02d71818113
-ms.openlocfilehash: 2476c7e972e5ba742c499c53ed689efca41cd148
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 737a4b943125245a2916bbf6b24b8abdffa8e371
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57723904"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59215338"
 ---
 # <a name="how-to-set-font-and-color-styles-in-the-windows-forms-datagridview-control"></a>Postupy: Nastavení písma a barevných stylů v ovládacím prvku Windows Forms DataGridView
 Můžete zadat vizuálního vzhledu buněk v rámci <xref:System.Windows.Forms.DataGridView> nastavením vlastnosti <xref:System.Windows.Forms.DataGridViewCellStyle> třídy. Instance této třídy můžete načíst z různých vlastností <xref:System.Windows.Forms.DataGridView> třídy a jejich doprovodné třídy nebo můžete vytvořit instanci <xref:System.Windows.Forms.DataGridViewCellStyle> objekty pro přiřazení těchto vlastností.  
@@ -60,6 +60,7 @@ Můžete zadat vizuálního vzhledu buněk v rámci <xref:System.Windows.Forms.D
  Pro maximální rozšiřitelnost, by měly sdílet <xref:System.Windows.Forms.DataGridViewCellStyle> objektů mezi více řádky, sloupce nebo buňky, které používají stejné styly, spíše než nastavení vlastnosti stylu pro každý prvek samostatně. Další informace najdete v tématu [osvědčené postupy pro změnu velikosti ovládacího prvku Windows Forms DataGridView](best-practices-for-scaling-the-windows-forms-datagridview-control.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.DataGridView.DefaultCellStyle%2A?displayProperty=nameWithType>
 - <xref:System.Windows.Forms.DataGridViewCellStyle>
 - [Základní formátování a práce se styly v ovládacím prvku Windows Forms DataGridView](basic-formatting-and-styling-in-the-windows-forms-datagridview-control.md)

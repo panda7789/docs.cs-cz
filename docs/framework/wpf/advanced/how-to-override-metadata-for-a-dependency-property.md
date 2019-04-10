@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Přetížení metadat pro vlastnost závislosti'
+title: 'Postupy: Přepsání metadat pro vlastnost závislosti'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - dependency properties [WPF], overriding metadata for
 - overriding metadata for dependency properties [WPF]
 ms.assetid: f90f026e-60d8-428a-933d-edf0dba4441f
-ms.openlocfilehash: 5d2d692984bef34569b2c4bb80c3fb072e4c3f79
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 7f20708722660aa4f86462efd50939935f840613
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57365877"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59209434"
 ---
-# <a name="how-to-override-metadata-for-a-dependency-property"></a>Postupy: Přetížení metadat pro vlastnost závislosti
+# <a name="how-to-override-metadata-for-a-dependency-property"></a>Postupy: Přepsání metadat pro vlastnost závislosti
 Tento příklad ukazuje, jak přepsat výchozí závislost vlastnost metadat, který přichází z děděné třídy, voláním <xref:System.Windows.DependencyProperty.OverrideMetadata%2A> metoda a poskytuje metadata pro konkrétní typ.  
   
 ## <a name="example"></a>Příklad  
@@ -32,7 +32,8 @@ Tento příklad ukazuje, jak přepsat výchozí závislost vlastnost metadat, kt
 [!code-vb[PropertySystemEsoterics#MyAdvancedStateControl](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertySystemEsoterics/visualbasic/sdksamplelibrary/class1.vb#myadvancedstatecontrol)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.DependencyProperty>
 - [Přehled vlastností závislosti](dependency-properties-overview.md)
 - [Vlastní vlastnosti závislosti](custom-dependency-properties.md)
-- [Témata s postupy](properties-how-to-topics.md)
+- [– postupy](properties-how-to-topics.md)

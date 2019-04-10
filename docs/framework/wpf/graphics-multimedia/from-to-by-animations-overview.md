@@ -8,12 +8,12 @@ helpviewer_keywords:
 - animation [WPF], From/to/by
 - From/to/by animation
 ms.assetid: 516fce0a-e7f8-49b8-b018-53b3d409a8a3
-ms.openlocfilehash: 40a37542d6151d05910bc033657d85c6a9f5483b
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 9708a4d06e8a2aa65fb4d3bb959f4699237a2bc6
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57362757"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59209148"
 ---
 # <a name="fromtoby-animations-overview"></a>Přehled animace od/komu/kým
 Toto téma popisuje způsob použití animace od/Komu/kým pro animaci vlastnosti závislosti. Od/Komu/kým animace vytvoří přechod mezi dvěma hodnotami.  
@@ -141,6 +141,7 @@ Toto téma popisuje způsob použití animace od/Komu/kým pro animaci vlastnost
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Můžete také vytvořit vlastní typy vlastní animace. Další informace najdete v tématu [Přehled vlastních animací](custom-animations-overview.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Media.Animation.Timeline>
 - <xref:System.Windows.Media.Animation.Storyboard>
 - [Přehled animace](animation-overview.md)

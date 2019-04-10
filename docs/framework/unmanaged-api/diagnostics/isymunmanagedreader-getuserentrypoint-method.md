@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ea0cba1f1b9154ccb14d75f7c377a8153c24f2b0
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: 0267ae8b57c837b097d496c8e119085d03417e36
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57499475"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59211267"
 ---
 # <a name="isymunmanagedreadergetuserentrypoint-method"></a>ISymUnmanagedReader::GetUserEntryPoint – metoda
 Vrátí metodu, která byla zadána jako uživatel vstupní bod pro modul, pokud existuje. Tato metoda může být například hlavní metoda uživatele spíše než vygenerovaný kompilátorem zástupné procedury před voláním hlavní metody.  
@@ -45,4 +45,5 @@ HRESULT GetUserEntryPoint (
  **Záhlaví:** CorSym.idl, CorSym.h  
   
 ## <a name="see-also"></a>Viz také:
+
 - [ISymUnmanagedReader – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md)

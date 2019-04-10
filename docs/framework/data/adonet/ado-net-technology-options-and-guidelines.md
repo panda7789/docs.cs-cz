@@ -1,15 +1,15 @@
 ---
-title: Možnosti technologie ADO.NET a pokyny
+title: Možnosti a pokyny pro ADO.NET
 ms.date: 03/30/2017
 ms.assetid: c8577281-38e6-4ce5-b036-572039a4c3d8
-ms.openlocfilehash: b24e06fef52397a550717893876e1e1cf33f371f
-ms.sourcegitcommit: 2b986afe4ce9e13bbeec929c9737757eb61de60e
+ms.openlocfilehash: 0d0e8f7bd779ce7a8290594887630dd192301fe1
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56664793"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59212528"
 ---
-# <a name="adonet-technology-options-and-guidelines"></a>Možnosti technologie ADO.NET a pokyny
+# <a name="adonet-technology-options-and-guidelines"></a>Možnosti a pokyny pro ADO.NET
 Datová Platforma ADO.NET je strategie více vydání ke snížení množství kódu a údržba vyžaduje pro vývojáře tak, že programovat proti koncepční entity data model. Tato platforma zahrnuje ADO.NET Entity Framework a souvisejících technologiích.  
   
 ## <a name="entity-framework"></a>Entity Framework  
@@ -40,6 +40,7 @@ Datová Platforma ADO.NET je strategie více vydání ke snížení množství k
  [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] nasadí datové služby na webu nebo intranetu. Strukturovaná data jako entitami a relacemi podle specifikace modelu Entity Data Model. Data nasazené na tento model je adresovat pomocí standardního protokolu HTTP. Další informace najdete v tématu [4.5 služby WCF Data](../../../../docs/framework/data/wcf/index.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled ADO.NET](../../../../docs/framework/data/adonet/ado-net-overview.md)
 - [Novinky v ADO.NET](../../../../docs/framework/data/adonet/whats-new.md)
 - [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

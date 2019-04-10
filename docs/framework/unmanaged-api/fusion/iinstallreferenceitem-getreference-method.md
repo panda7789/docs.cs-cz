@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 85c3fb601cd013eff889e794e71512533f1b12ec
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: cd0a554535122b81f5812102c7951f56b294796a
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57484677"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59213360"
 ---
 # <a name="iinstallreferenceitemgetreference-method"></a>IInstallReferenceItem::GetReference – metoda
 Získá ukazatel [fusion_install_reference –](../../../../docs/framework/unmanaged-api/fusion/fusion-install-reference-structure.md) struktura představovaného tímto rozhraním [iinstallreferenceitem –](../../../../docs/framework/unmanaged-api/fusion/iinstallreferenceitem-interface.md) objektu.  
@@ -55,5 +55,6 @@ HRESULT GetReference (
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [IInstallReferenceItem – rozhraní](../../../../docs/framework/unmanaged-api/fusion/iinstallreferenceitem-interface.md)
 - [FUSION_INSTALL_REFERENCE – struktura](../../../../docs/framework/unmanaged-api/fusion/fusion-install-reference-structure.md)

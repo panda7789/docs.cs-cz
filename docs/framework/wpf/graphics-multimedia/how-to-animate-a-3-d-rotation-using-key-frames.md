@@ -6,12 +6,12 @@ helpviewer_keywords:
 - key frames [WPF], Rotation3DAnimation
 - 3-D translations [WPF], animating [WPF], with key frames (Rotation3DAnimation)
 ms.assetid: 6f671b95-7f30-4836-9a4f-aeb7dc30121f
-ms.openlocfilehash: 90e982838cb5d5b4488185c041e946c15d1e61e8
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
-ms.translationtype: MT
+ms.openlocfilehash: 2316282a39190e86b0e2f0ec67ccc743a45d55e4
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57369133"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59213178"
 ---
 # <a name="how-to-animate-a-3-d-rotation-using-key-frames"></a>Postupy: Animace 3D otočení použitím klíčových snímků
 V následujícím příkladu <xref:System.Windows.Media.Animation.Rotation3DAnimationUsingKeyFrames> se využívá k Prognózování 3D objekt otočit při jeho osa otáčení animuje, což vede k "Němý". Tato animace používá následující klíčové snímky:  
@@ -26,6 +26,7 @@ V následujícím příkladu <xref:System.Windows.Media.Animation.Rotation3DAnim
  [!code-xaml[Animation3DGallery_snip#Rotation3DAnimationUsingKeyFramesExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/Animation3DGallery_snip/CS/Rotation3DAnimationUsingKeyFramesExample.xaml#rotation3danimationusingkeyframesexamplewholepage)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled 3D grafiky](3-d-graphics-overview.md)
 - [Přehled animací klíčových snímků](key-frame-animations-overview.md)
 - [Animace trojrozměrného otočení pomocí scénářů](how-to-animate-a-3-d-rotation-using-storyboards.md)

@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 78829d647e8d5467a628bc9ba5bb877a5f13b6de
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: b0c81b51deb6affb3dd39677184ea0a4b2e6ff61
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57474485"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59219977"
 ---
 # <a name="iclrstrongnamestrongnamesignaturesize-method"></a>ICLRStrongName::StrongNameSignatureSize – metoda
 Vrátí velikost položky podpis silného názvu. Tato metoda se obvykle používá kompilátory, chcete-li určit, kolik místa vyhradit v souboru při vytváření sestavení se zpožděným podpisem.  
@@ -60,4 +60,5 @@ HRESULT StrongNameSignatureSize (
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [ICLRStrongName – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)

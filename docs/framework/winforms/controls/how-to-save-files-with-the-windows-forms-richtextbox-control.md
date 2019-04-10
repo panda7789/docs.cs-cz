@@ -15,12 +15,12 @@ helpviewer_keywords:
 - .rtf files [Windows Forms], saving in RichTextBox control
 - text files [Windows Forms], saving from RichTextBox control
 ms.assetid: 4a58ec19-84d1-4383-9110-298c06adcfca
-ms.openlocfilehash: c9a5d471a58c646c786cf441ee7d7ec235788f10
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: a646d9b04bbe824d093b106f5cfcb0f1703c6e21
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57723020"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59213529"
 ---
 # <a name="how-to-save-files-with-the-windows-forms-richtextbox-control"></a>Postupy: Ukládání souborů pomocí ovládacího prvku Windows Forms RichTextBox
 Windows Forms <xref:System.Windows.Forms.RichTextBox> ovládací prvek lze zapsat informace se zobrazí v jednom z několika formátů:  
@@ -88,6 +88,7 @@ Windows Forms <xref:System.Windows.Forms.RichTextBox> ovládací prvek lze zapsa
     >  Tento příklad vytvoří nový soubor, pokud soubor již neexistuje. Pokud aplikace potřebuje k vytvoření souboru, aplikace potřebuje vytvořit přístup ke složce. Oprávnění se nastavují pomocí seznamů řízení přístupu. Pokud soubor již existuje, aplikace potřebuje pouze přístup pro zápis, a menší oprávnění. Kde je to možné, je bezpečnější vytvořit soubor při nasazení a jenom udělit přístup pro čtení do jednoho souboru, ne vytvořit přístup ke složce. Navíc je bezpečnější zapsat data do uživatelské složky než do kořenové složky nebo ve složce Program Files.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.RichTextBox.SaveFile%2A?displayProperty=nameWithType>
 - <xref:System.Windows.Forms.RichTextBox>
 - [Ovládací prvek RichTextBox](richtextbox-control-windows-forms.md)

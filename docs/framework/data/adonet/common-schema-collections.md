@@ -2,12 +2,12 @@
 title: Společné kolekce schémat
 ms.date: 03/30/2017
 ms.assetid: 50127ced-2ac8-4d7a-9cd1-5c98c655ff03
-ms.openlocfilehash: dfd1e28a117ca71cac6c792058c1aeb17a0c4f69
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f6307352cc2d976e4e9f47d1e111d40f96fc16c7
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54700959"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59209668"
 ---
 # <a name="common-schema-collections"></a>Společné kolekce schémat
 Společné kolekce schémat jsou kolekce schémat, které jsou implementovány ve všech zprostředkovatelů spravovaným rozhraním .NET Framework. Můžete dát dotaz na zprostředkovatele rozhraní .NET Framework spravované určit seznam kolekcí nepodporuje schéma voláním **GetSchema** metody bez argumentů nebo názvem kolekce schématu "MetaDataCollections". Vrátí <xref:System.Data.DataTable> seznam kolekcí nepodporuje schéma, počet omezení, které každá podporují a počet identifikátor částí, které používají. Tyto kolekce popisují všechny požadované sloupce. Poskytovatelé jsou zdarma Pokud chtějí přidat i další sloupce. Například `SqlClient` a `OracleClient` přidejte název parametru kolekce omezení.  
@@ -95,6 +95,7 @@ Společné kolekce schémat jsou kolekce schémat, které jsou implementovány v
 |ReservedWord|odkazy řetězců|Specifické pro zprostředkovatele vyhrazené slovo.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Načítání informací o databázovém schématu](../../../../docs/framework/data/adonet/retrieving-database-schema-information.md)
 - [Příkaz GetSchema a kolekce schémat](../../../../docs/framework/data/adonet/getschema-and-schema-collections.md)
 - [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: Seskupování ovládacích prvků pomocí ovládacího prvku Windows Forms Panel pomocí návrháře'
+title: 'Postupy: Seskupování ovládacích prvků pomocí ovládacího prvku Windows Forms Panel pomocí Návrháře'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Panel control [Windows Forms], grouping controls
 - controls [Windows Forms], grouping
 - Windows Forms controls, grouping
 ms.assetid: 7e1cd708-fdb1-49d8-9ca2-5640b276bf2e
-ms.openlocfilehash: f1aa3b54eb842bb92e4ae2cbb562a11464acac63
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: 1a3fcac56df1328c12d7a5dcb542138afdb486f5
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57717441"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59214829"
 ---
-# <a name="how-to-group-controls-with-the-windows-forms-panel-control-using-the-designer"></a>Postupy: Seskupování ovládacích prvků pomocí ovládacího prvku Windows Forms Panel pomocí návrháře
+# <a name="how-to-group-controls-with-the-windows-forms-panel-control-using-the-designer"></a>Postupy: Seskupování ovládacích prvků pomocí ovládacího prvku Windows Forms Panel pomocí Návrháře
 Windows Forms <xref:System.Windows.Forms.Panel> ovládací prvky se používají k seskupování další ovládací prvky. Existují tři hlavní důvody k seskupování ovládacích prvků. Jeden je vizuální seskupení elementů související formuláře pro jasné uživatelské rozhraní; Další je programový seskupování, přepínačů. poslední slouží k přesunutí ovládacích prvků jako jednotka v době návrhu.  
   
 > [!NOTE]
@@ -30,6 +30,7 @@ Windows Forms <xref:System.Windows.Forms.Panel> ovládací prvky se používají
 3.  (Volitelné) Pokud chcete doplnit o ohraničení panelu, nastavte jeho <xref:System.Windows.Forms.BorderStyle> vlastnost. Existují tři možnosti: <xref:System.Windows.Forms.BorderStyle.Fixed3D>, <xref:System.Windows.Forms.BorderStyle.FixedSingle>, a <xref:System.Windows.Forms.BorderStyle.None>.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Ovládací prvek Panel](panel-control-windows-forms.md)
 - [Přehled ovládacího prvku Panel](panel-control-overview-windows-forms.md)
 - [Postupy: Nastavení pozadí panelu](how-to-set-the-background-of-a-windows-forms-panel.md)

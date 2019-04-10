@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 96e7b2c1-843f-4d64-b519-740c3a18b50a
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: cec3fd0c3b20c70b6ddf3e875c481e829dd5eb28
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 30db07ddf935b5ce13b1fe4212f7f6a40270ae93
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54695488"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59226102"
 ---
 # <a name="notmarshalable-mda"></a>notMarshalable – pomocník spravovaného ladění (MDA)
 `notMarshalable` Pomocníka spravovaného ladění (MDA) se aktivuje, když modul CLR (CLR) setká ukazatele rozhraní modelu COM bez platné registrované proxy/zástupné procedury nebo nesprávné `IMarshal` při pokusu o implementace rozhraní zařazování rozhraní napříč kontexty.  
@@ -29,7 +29,7 @@ ms.locfileid: "54695488"
 ## <a name="cause"></a>Příčina  
  Žádný platný registrované proxy nebo zástupné procedury nebo nesprávné `IMarshal` při pokusu o zařazení rozhraní napříč kontexty.  
   
-## <a name="resolution"></a>Rozlišení  
+## <a name="resolution"></a>Řešení  
  Ujistěte se, že máte proxy zástupné procedury zaregistrované a že `IMarshal` implementace je platný.  
   
 ## <a name="effect-on-the-runtime"></a>Vliv na modul Runtime  
@@ -49,6 +49,7 @@ ms.locfileid: "54695488"
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
 - [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
 - [Zařazování spolupráce](../../../docs/framework/interop/interop-marshaling.md)

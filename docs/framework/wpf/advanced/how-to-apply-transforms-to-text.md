@@ -15,12 +15,12 @@ helpviewer_keywords:
 - scaled text [WPF]
 - typography [WPF], skewed text
 ms.assetid: 0d61678a-4185-4f2a-85c6-c1d020f96fa0
-ms.openlocfilehash: be0b6a0bbe927f248be434afd15dde6a66791fe6
-ms.sourcegitcommit: 16aefeb2d265e69c0d80967580365fabf0c5d39a
+ms.openlocfilehash: 46a57364e0c18cc4c9fe7884642cd0b718c20f31
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/17/2019
-ms.locfileid: "58126120"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59208667"
 ---
 # <a name="how-to-apply-transforms-to-text"></a>Postupy: Použití transformací na text
 Transformace můžete změnit zobrazení textu v aplikaci. Následující příklady používají různé druhy transformace vykreslování ovlivnit zobrazení textu v <xref:System.Windows.Controls.TextBlock> ovládacího prvku.  
@@ -65,4 +65,5 @@ Transformace můžete změnit zobrazení textu v aplikaci. Následující přík
 >  <xref:System.Windows.Media.Effects.DropShadowBitmapEffect> Poskytuje bohatou sadu funkcí pro zajištění efekty stínování. Další informace najdete v tématu [vytvoření textu se stínem](how-to-create-text-with-a-shadow.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Použití animací na text](how-to-apply-animations-to-text.md)

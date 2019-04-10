@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - hosting WPF content in Windows Forms [WPF]
 ms.assetid: 0ac41286-4c1b-4b17-9196-d985cb844ce1
-ms.openlocfilehash: d38a9c67edb5df89554e9e02274410a825b3384b
-ms.sourcegitcommit: 15ab532fd5e1f8073a4b678922d93b68b521bfa0
-ms.translationtype: MT
+ms.openlocfilehash: dfff99969943a99d30f4e00b75fb5320bb3c9ad2
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58654546"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59219600"
 ---
 # <a name="walkthrough-hosting-a-wpf-composite-control-in-windows-forms"></a>Návod: Hostování složeného ovládacího prvku WPF ve Windows Forms
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje bohaté prostředí pro vytváření aplikací. Pokud však máte značné investice [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] kódu, může být mnohem efektivnější Rozšiřte svoje stávající [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] aplikace s [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] namísto jeho přepsání úplně od začátku. Běžný scénář, kdy je, když chcete vložit jednu nebo více ovládacích prvků implementovaný pomocí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] v rámci vaší aplikace Windows Forms. Další informace o přizpůsobení ovládacích prvků WPF v tématu [přizpůsobení ovládacího prvku](../controls/control-customization.md).  
@@ -35,7 +35,6 @@ Visual Studio k dokončení tohoto návodu potřebujete.
 
  Následující obrázek ukazuje složeného ovládacího prvku WPF: 
 
-  
  ![Snímek obrazovky zobrazující jednoduchého ovládacího prvku WPF.](./media/walkthrough-hosting-a-wpf-composite-control-in-windows-forms/windows-presentation-foundation-composite-control.png)  
   
 ### <a name="creating-the-project"></a>Vytvoření projektu  
@@ -264,7 +263,7 @@ Následující obrázek ukazuje složeného ovládacího prvku WPF hostované v 
   
 6.  Přidejte následující <xref:System.Windows.Forms.Label?displayProperty=nameWithType> ovládací prvky na poslední <xref:System.Windows.Forms.GroupBox?displayProperty=nameWithType>. Tyto ovládací prvky zobrazení dat vrácených [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] složeného ovládacího prvku.  
   
-    |GroupBox|Název|Text|  
+    |GroupBox|Name|Text|  
     |--------------|----------|----------|  
     |groupBox7|lblName|Jméno:|  
     |groupBox7|lblAddress|Poštovní adresa:|  
@@ -324,8 +323,9 @@ Následující obrázek ukazuje složeného ovládacího prvku WPF hostované v 
  Sestavte a spusťte aplikaci. Klikněte na různé přepínače a vidět její účinek na složeného ovládacího prvku WPF.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.Integration.ElementHost>
 - <xref:System.Windows.Forms.Integration.WindowsFormsHost>
-- [Návrh kódu XAML v sadě Visual Studio](/visualstudio/designers/designing-xaml-in-visual-studio)
-- [Návod: Hostování složeného ovládacího Windows Forms v subsystému WPF](walkthrough-hosting-a-windows-forms-composite-control-in-wpf.md)
+- [Návrh XAML v sadě Visual Studio](/visualstudio/designers/designing-xaml-in-visual-studio)
+- [Návod: Hostování složeného ovládacího prvku Windows Forms ve WPF](walkthrough-hosting-a-windows-forms-composite-control-in-wpf.md)
 - [Návod: Hostování složeného ovládacího prvku 3D WPF ve Windows Forms](walkthrough-hosting-a-3-d-wpf-composite-control-in-windows-forms.md)

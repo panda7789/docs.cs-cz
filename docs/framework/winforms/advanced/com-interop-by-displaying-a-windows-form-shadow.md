@@ -8,12 +8,12 @@ helpviewer_keywords:
 - ActiveX controls [Windows Forms], COM interop
 - Windows Forms, interop
 ms.assetid: 87aac8ad-3c04-43b3-9b0c-d0b00df9ee74
-ms.openlocfilehash: 56ded3118d0961f38c77d3db4fc879eb241a7520
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 81220ad4c0bf00a38abfe7257d5fc61e92e8d885
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57715435"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59206444"
 ---
 # <a name="how-to-support-com-interop-by-displaying-a-windows-form-with-the-showdialog-method"></a>Postupy: Podpora zprostředkovatele komunikace s objekty COM zobrazením formuláře Windows pomocí metody ShowDialog
 Vyřešíte problémy vzájemná funkční spolupráce modelu COM (Component Object) zobrazením formuláře Windows na [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] smyčky zpráv, která je vytvořena pomocí <xref:System.Windows.Forms.Application.Run%2A?displayProperty=nameWithType> metody.  
@@ -38,6 +38,7 @@ Vyřešíte problémy vzájemná funkční spolupráce modelu COM (Component Obj
 -   Nahraďte všechna volání <xref:System.Windows.Forms.Form.Show%2A?displayProperty=nameWithType> pomocí volání metody <xref:System.Windows.Forms.Form.ShowDialog%2A?displayProperty=nameWithType> metoda ve vaší [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] komponenty.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Vystavení komponent architektury .NET Framework pro COM](../../interop/exposing-dotnet-components-to-com.md)
-- [Postupy: Podpora komunikace s objekty COM zobrazením jednotlivých formulářů Windows ve vlastním vlákně](how-to-support-com-interop-by-displaying-each-windows-form-on-its-own-thread.md)
-- [Model Windows Forms a nespravované aplikace](windows-forms-and-unmanaged-applications.md)
+- [Postupy: Podpora zprostředkovatele komunikace s objekty COM zobrazením jednotlivých formulářů Windows ve vlastním vlákně](how-to-support-com-interop-by-displaying-each-windows-form-on-its-own-thread.md)
+- [Windows Forms a nespravované aplikace](windows-forms-and-unmanaged-applications.md)

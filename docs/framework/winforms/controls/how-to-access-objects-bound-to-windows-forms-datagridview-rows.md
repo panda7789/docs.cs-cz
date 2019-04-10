@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Přístup k objektům Svázaným Windows Forms DataGridView řádků'
+title: 'Postupy: Přístup k objektům připojeným k řádkům Windows Forms DataGridView'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - data grids [Windows Forms], accessing bound objects
 - DataGridView control [Windows Forms], accessing objects bound to rows
 ms.assetid: 0e05748f-4403-4eb8-8b2f-b098108181b5
-ms.openlocfilehash: 5c66bc961d92a2ece1aea4986d0c23181c971b3e
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 50882ab9a1a498bf8f76381e3f4aac53876abbb8
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57720342"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59217403"
 ---
-# <a name="how-to-access-objects-bound-to-windows-forms-datagridview-rows"></a>Postupy: Přístup k objektům Svázaným Windows Forms DataGridView řádků
+# <a name="how-to-access-objects-bound-to-windows-forms-datagridview-rows"></a>Postupy: Přístup k objektům připojeným k řádkům Windows Forms DataGridView
 Někdy je užitečné zobrazit tabulku informací uložených v kolekci objektů firmy. Po vytvoření vazby <xref:System.Windows.Forms.DataGridView> ovládacího prvku na takové shromažďování každé veřejné vlastnosti se zobrazí v jeho vlastní sloupec, pokud vlastnost byl označen mimo-nelze procházet s <xref:System.ComponentModel.BrowsableAttribute>. Například kolekce `Customer` objekty, jako má sloupce **název** a **adresu**.  
   
  Pokud tyto objekty obsahují další informace a kód, který chcete získat přístup, můžete k němu přistoupit pomocí objektů řádek. Uživatelé v následujícím příkladu kódu, můžete vybrat více řádků a klikněte na tlačítko si pošlete faktury ke každému odpovídající zákazníků.  
@@ -42,6 +42,7 @@ Někdy je užitečné zobrazit tabulku informací uložených v kolekci objektů
  Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.DataGridViewRow>
 - <xref:System.Windows.Forms.DataGridViewRow.DataBoundItem%2A?displayProperty=nameWithType>

@@ -11,18 +11,16 @@ helpviewer_keywords:
 - dependency properties [WPF], callbacks
 - validation of dependency properties [WPF]
 ms.assetid: 48db5fb2-da7f-49a6-8e81-3540e7b25825
-ms.openlocfilehash: ff7cbd995ba52f3cea712cb02b72f91d40422c33
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 95a40b4a357b1a601eced6c8e5214871b95fcbd2
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57363927"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59219808"
 ---
 # <a name="dependency-property-callbacks-and-validation"></a>Zpětné volání a ověření vlastností závislostí
 Toto téma popisuje postup vytvoření vlastnosti závislosti pomocí alternativní vlastní implementace pro vlastnost související funkce, jako je ověření stanovení, zpětná volání, které jsou vyvolány při změně vlastnosti platnou hodnotu a přepsáním možné mimo vlivy na stanovení hodnotu. Toto téma také popisuje scénáře, kde jako rozšíření chování výchozí vlastnost systému s použitím těchto postupů je vhodné.  
-  
-  
-  
+
 <a name="prerequisites"></a>   
 ## <a name="prerequisites"></a>Požadavky  
  Toto téma předpokládá, že chápete základní scénáře implementace vlastnosti závislosti a jak je použito metadat pro vlastnost vlastní závislosti. Zobrazit [vlastní vlastnosti závislosti](custom-dependency-properties.md) a [Metadata vlastností závislosti](dependency-property-metadata.md) pro kontext.  
@@ -81,6 +79,7 @@ Toto téma popisuje postup vytvoření vlastnosti závislosti pomocí alternativ
  Vlastnost systém bude považovat všechny <xref:System.Windows.CoerceValueCallback> , která vrátí hodnotu <xref:System.Windows.DependencyProperty.UnsetValue> jako speciální případ. Tento zvláštní případ znamená, že změna vlastnost, jejímž výsledkem <xref:System.Windows.CoerceValueCallback> volání by měly být zamítnuty vlastnost systému, a v systému vlastností místo toho ohlaste jakékoli předchozí hodnota má vlastnost. Tento mechanismus, může být užitečné zkontrolujte, jestli jsou stále platné pro aktuální stav objektu změny vlastnosti, které byly zahájeny asynchronně a potlačit změny, pokud tomu tak není. Další možností je to možné je můžete selektivně potlačit hodnotu v závislosti na tom, jaká součást vlastnosti je odpovědný za hodnotu ohlašovaný stanovení hodnotu. K tomuto účelu můžete použít <xref:System.Windows.DependencyProperty> předaný zpětnému volání a identifikátor vlastnosti jako vstup pro <xref:System.Windows.DependencyPropertyHelper.GetValueSource%2A>a následně zpracovat <xref:System.Windows.ValueSource>.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled vlastností závislosti](dependency-properties-overview.md)
 - [Metadata vlastností závislosti](dependency-property-metadata.md)
 - [Vlastní vlastnosti závislosti](custom-dependency-properties.md)

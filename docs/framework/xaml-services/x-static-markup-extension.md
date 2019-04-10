@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Static markup extension in XAML [XAML Services]
 - XAML [XAML Services], x:Static markup extension
 ms.assetid: 056aee79-7cdd-434f-8174-dfc856cad343
-ms.openlocfilehash: 0956bb6daa60f947c1cd410ce4728da7d1bb707d
-ms.sourcegitcommit: 5c1abeec15fbddcc7dbaa729fabc1f1f29f12045
-ms.translationtype: MT
+ms.openlocfilehash: eb0c34f259220a0326238b27ab43efd3078b0bcc
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58037693"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59207081"
 ---
 # <a name="xstatic-markup-extension"></a>x:Static – rozšíření značek
 Odkazuje na entitu kód statickou hodnotou, která je definována v [!INCLUDE[TLA#tla_cls](../../../includes/tlasharptla-cls-md.md)]– kompatibilní způsobem. Statická vlastnost, která je popsána slouží k poskytnutí hodnoty vlastností v XAML.  
@@ -83,5 +83,6 @@ V implementaci rozhraní .NET Framework XAML Services zpracování tohoto rozš�
  Další informace o tom, jak používat předpony a obory názvů XAML pro WPF naleznete v tématu [obory názvů XAML a mapování Namespace pro WPF XAML](../wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [x:Type – rozšíření značek](x-type-markup-extension.md)
 - [Typy migrované z prostředí WPF do oboru názvů System.Xaml](types-migrated-from-wpf-to-system-xaml.md)

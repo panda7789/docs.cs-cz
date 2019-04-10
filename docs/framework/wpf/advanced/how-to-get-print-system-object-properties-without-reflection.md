@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Načtení vlastností systémového objektu tisku bez reflexe'
+title: 'Postupy: Získání vlastností systémového objektu tisku bez reflexe'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,14 +7,14 @@ dev_langs:
 helpviewer_keywords:
 - PrintSystemObject [WPF], getting properties
 ms.assetid: 43560f28-183d-41c1-b9d1-de7c2552273e
-ms.openlocfilehash: b03be30422a93980ecdbcdbd428600fd41abd824
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
-ms.translationtype: MT
+ms.openlocfilehash: b9ca7444b2c49f4563ff0d7baef8b2d250a7f331
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57367580"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59215271"
 ---
-# <a name="how-to-get-print-system-object-properties-without-reflection"></a>Postupy: Načtení vlastností systémového objektu tisku bez reflexe
+# <a name="how-to-get-print-system-object-properties-without-reflection"></a>Postupy: Získání vlastností systémového objektu tisku bez reflexe
 Chcete-li vytvořit seznam vlastností (a typy těchto vlastností) na objekt pomocí reflexe můžou způsobit snížení výkonu aplikace. <xref:System.Printing.IndexedProperties> Obor názvů poskytuje prostředky k načtení těchto informací s pomocí operace reflection.  
   
 ## <a name="example"></a>Příklad  
@@ -34,6 +34,7 @@ Chcete-li vytvořit seznam vlastností (a typy těchto vlastností) na objekt po
  [!code-vb[GetPrintObjectPropertyTypesWithoutReflection#ShowPropertyTypesWithoutReflection](~/samples/snippets/visualbasic/VS_Snippets_Wpf/GetPrintObjectPropertyTypesWithoutReflection/visualbasic/program.vb#showpropertytypeswithoutreflection)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Printing.IndexedProperties.PrintProperty>
 - <xref:System.Printing.PrintSystemObject>
 - <xref:System.Printing.IndexedProperties>

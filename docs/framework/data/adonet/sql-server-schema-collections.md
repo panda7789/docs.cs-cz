@@ -1,15 +1,15 @@
 ---
-title: SQL Server Schema Collections
+title: Kolekce schémat SQL Serveru
 ms.date: 03/30/2017
 ms.assetid: c6403cc3-d78b-4f85-bab1-ada7a3446ec5
-ms.openlocfilehash: 2445ab2ffbe30b647e256e223f712300bcf19931
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 79bf9f1253b64863d3eabddff8c33b6ffab70f41
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54635036"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59224554"
 ---
-# <a name="sql-server-schema-collections"></a>SQL Server Schema Collections
+# <a name="sql-server-schema-collections"></a>Kolekce schémat SQL Serveru
 Poskytovatel dat rozhraní Microsoft .NET Framework pro SQL Server podporuje další schéma kolekce kromě společné kolekce schémat. Kolekce schémat mírně lišit podle verze SQL serveru, který používáte. Pokud chcete určit seznam kolekcí nepodporuje schéma, zavolejte **GetSchema** metody bez argumentů nebo názvem kolekce schématu "MetaDataCollections". Vrátí <xref:System.Data.DataTable> seznam kolekcí nepodporuje schéma, počet omezení, které každá podporují a počet identifikátor částí, které používají.  
   
 ## <a name="databases"></a>Databáze  
@@ -256,5 +256,6 @@ Poskytovatel dat rozhraní Microsoft .NET Framework pro SQL Server podporuje dal
 |Permission_set_desc|String|Popisný název pro oprávnění set a – úroveň zabezpečení pro sestavení.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Načítání informací o databázovém schématu](../../../../docs/framework/data/adonet/retrieving-database-schema-information.md)
 - [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

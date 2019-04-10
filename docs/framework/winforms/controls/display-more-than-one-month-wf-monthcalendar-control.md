@@ -11,12 +11,12 @@ helpviewer_keywords:
 - calendars [Windows Forms], multiple months
 - MonthCalendar control [Windows Forms], formatting display
 ms.assetid: d197caa2-38a5-4cb4-acc3-562130c2ace3
-ms.openlocfilehash: febed820bae460f51bb19f08caa6027011abd55d
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 79100b52d8e0a5b651edb9d6555a4497287ed858
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57715344"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59209551"
 ---
 # <a name="how-to-display-more-than-one-month-in-the-windows-forms-monthcalendar-control"></a>Postupy: Zobrazení více než jednoho měsíce v ovládacím prvku Windows Forms MonthCalendar
 Windows Forms <xref:System.Windows.Forms.MonthCalendar> ovládací prvek mohl zobrazit až 12 měsíců po jednom. Ve výchozím nastavení ovládací prvek zobrazuje pouze jeden měsíc, ale můžete určit, kolik měsíců se zobrazí a jak jsou uspořádány v ovládacím prvku. Pokud změníte rozměry kalendáře, ovládací prvek svou velikost, proto ujistěte se, že je dostatek volného místa ve formuláři pro nové dimenze.  
@@ -38,6 +38,7 @@ Windows Forms <xref:System.Windows.Forms.MonthCalendar> ovládací prvek mohl zo
     ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Ovládací prvek MonthCalendar](monthcalendar-control-windows-forms.md)
-- [Postupy: Vyberte rozsah dat v ovládacím prvku Windows Forms MonthCalendar](how-to-select-a-range-of-dates-in-the-windows-forms-monthcalendar-control.md)
-- [Postupy: Změna vzhledu Windows Forms MonthCalendar ovládacího prvku](how-to-change-monthcalendar-control-appearance.md)
+- [Postupy: Výběr rozsahu dat v ovládacím prvku Windows Forms MonthCalendar](how-to-select-a-range-of-dates-in-the-windows-forms-monthcalendar-control.md)
+- [Postupy: Změna vzhledu ovládacího prvku Windows Forms MonthCalendar](how-to-change-monthcalendar-control-appearance.md)

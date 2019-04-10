@@ -20,12 +20,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6b095d999f1e7e37c068c800e66f56c293422127
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: fbfd3ae32f4d3033894fdaf6b1bcc880c324e928
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57490395"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59219795"
 ---
 # <a name="strongnametokenfrompublickey-function"></a>StrongNameTokenFromPublicKey – funkce
 Získá token představující veřejný klíč. Zkráceným tvarem veřejný klíč je token silného názvu.  
@@ -74,6 +74,7 @@ BOOLEANStrongNameTokenFromPublicKey (
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [StrongNameTokenFromPublicKey – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnametokenfrompublickey-method.md)
 - [StrongNameGetPublicKey – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamegetpublickey-method.md)
 - [PublicKeyBlob – struktura](../../../../docs/framework/unmanaged-api/strong-naming/publickeyblob-structure.md)

@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Přidání nepřipojeného sloupce do ovládacího prvku DataGridView vázaný na Data Windows Forms'
+title: 'Postupy: Přidání nepřipojeného sloupce do ovládacího prvku Windows Forms DataGridView s datovou vazbou'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - data grids [Windows Forms], adding unbound columns
 - DataGridView control [Windows Forms], unbound data
 ms.assetid: f7bdc4d8-ba8e-421b-ad62-82d936f01372
-ms.openlocfilehash: d7f96aa8d11cee9427a9e51f8e79fc55adc79355
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 40308f7e8cc12dcff5b7d4393645f6a9007cc2b7
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57711993"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59215830"
 ---
-# <a name="how-to-add-an-unbound-column-to-a-data-bound-windows-forms-datagridview-control"></a>Postupy: Přidání nepřipojeného sloupce do ovládacího prvku DataGridView vázaný na Data Windows Forms
+# <a name="how-to-add-an-unbound-column-to-a-data-bound-windows-forms-datagridview-control"></a>Postupy: Přidání nepřipojeného sloupce do ovládacího prvku Windows Forms DataGridView s datovou vazbou
 Data můžete zobrazit v <xref:System.Windows.Forms.DataGridView> ovládací prvek bude obvykle pocházejí ze zdroje dat určitého druhu, ale můžete chtít zobrazit sloupce dat, které nepochází ze zdroje dat. Tento typ sloupce se nazývá nepřipojeného sloupce. Nevázaného sloupce mohou mít mnoho forem. Často se používají k poskytnutí přístupu podrobné informace o datovém řádku.  
   
  Následující příklad kódu ukazuje, jak vytvořit nepřipojeného sloupce z **podrobnosti** tlačítka zobrazíte podřízené tabulky související s konkrétního řádku v nadřazené tabulce, Pokud implementujete scénář záznamů master/detail. Reakce na kliknutí na tlačítko, implementovat <xref:System.Windows.Forms.DataGridView.CellClick?displayProperty=nameWithType> obslužná rutina události, které zobrazí formulář obsahující podřízené tabulky.  
@@ -35,6 +35,7 @@ Data můžete zobrazit v <xref:System.Windows.Forms.DataGridView> ovládací prv
 -   Odkazy <xref:System?displayProperty=nameWithType> a <xref:System.Windows.Forms?displayProperty=nameWithType> sestavení.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.DataGridView>
 - [Zobrazení dat v ovládacím prvku Windows Forms DataGridView](displaying-data-in-the-windows-forms-datagridview-control.md)
 - [Režimy zobrazení dat v ovládacím prvku Windows Forms DataGridView](data-display-modes-in-the-windows-forms-datagridview-control.md)

@@ -1,5 +1,5 @@
 ---
-title: 'Návod: Ovládací prvky ladění vlastního Windows Forms v době návrhu'
+title: 'Návod: Ladění vlastních ovládacích prvků Windows Forms během návrhu'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -15,14 +15,14 @@ helpviewer_keywords:
 - walkthroughs [Windows Forms], debugging
 - design-time debugging
 ms.assetid: 1fd83ccd-3798-42fc-85a3-6cba99467387
-ms.openlocfilehash: 9bd3f822e5a1f8572ebb7f5991abccde904150b8
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: b5c54acc89317104eddc3b1f5b350edcb263d208
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57717827"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59213686"
 ---
-# <a name="walkthrough-debugging-custom-windows-forms-controls-at-design-time"></a>Návod: Ovládací prvky ladění vlastního Windows Forms v době návrhu
+# <a name="walkthrough-debugging-custom-windows-forms-controls-at-design-time"></a>Návod: Ladění vlastních ovládacích prvků Windows Forms během návrhu
 Při vytváření vlastního ovládacího prvku často zjistíte to potřebné k ladění jeho chování během návrhu. To platí zejména pokud vytváříte vlastní návrháře pro vlastní ovládací prvek. Podrobnosti najdete v tématu [názorný postup: Vytváření Windows Forms ovládací prvek, který využívá funkce sady Visual Studio Design-Time](creating-a-wf-control-design-time-features.md).  
   
  Vlastní ovládací prvky pomocí sady Visual Studio, můžete ladit stejně, jako by ladění jiných tříd rozhraní .NET Framework. Rozdíl spočívá v tom, že ladíte samostatnou instanci sady Visual Studio, na kterém běží vaše vlastní ovládací prvek kódu  
@@ -173,6 +173,7 @@ Při vytváření vlastního ovládacího prvku často zjistíte to potřebné k
 -   Můžete napsat vlastního návrháře pro vlastní ovládací prvek. To vám plnou kontrolu nad komfortem při návrhu extensible návrháře infrastruktury zpřístupněný nástrojem Visual Studio. Podrobnosti najdete v tématu [názorný postup: Vytváření Windows Forms ovládací prvek, který využívá funkce sady Visual Studio Design-Time](creating-a-wf-control-design-time-features.md).  
   
 ## <a name="see-also"></a>Viz také:
-- [Návod: Vytvoření ovládacího prvku Windows Forms, který využívá funkce sady Visual Studio Design-Time](creating-a-wf-control-design-time-features.md)
+
+- [Návod: Vytvoření ovládacího prvku Windows Forms, který využívá funkce sady Visual Studio pro dobu návrhu](creating-a-wf-control-design-time-features.md)
 - [Postupy: Přístup ke službám během návrhu](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/ms171822(v=vs.120))
 - [Postupy: Podpora návrhu přístupu ve Windows Forms](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/ms171827(v=vs.120))

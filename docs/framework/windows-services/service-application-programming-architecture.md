@@ -15,12 +15,12 @@ helpviewer_keywords:
 - Windows Service applications, states
 ms.assetid: 83230026-d068-4174-97ff-e264c896eb2f
 author: ghogen
-ms.openlocfilehash: 009d95089efdfb78680ca7e364093e5f2b65bc77
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 17e16cec34b381cdfe46e1066c3219a93c3780e3
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54714877"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59216389"
 ---
 # <a name="service-application-programming-architecture"></a>Architektura programování aplikace služby
 Aplikace služby Windows jsou založeny na třídu, která dědí z <xref:System.ServiceProcess.ServiceBase?displayProperty=nameWithType> třídy. Přepište metody z této třídy a definice funkcí pro ně k určení chování služby.  
@@ -67,5 +67,6 @@ Aplikace služby Windows jsou založeny na třídu, která dědí z <xref:System
  Můžete také použít komponenty s názvem <xref:System.ServiceProcess.ServiceController> a komunikovat s ním řídit chování existující služby.  
   
 ## <a name="see-also"></a>Viz také:
-- [Úvod do aplikací služby systému Windows](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)
-- [Postupy: Vytvoření služeb Windows](../../../docs/framework/windows-services/how-to-create-windows-services.md)
+
+- [Představení aplikací spouštěných jako služby systému Windows](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)
+- [Postupy: Vytváření služeb systému Windows](../../../docs/framework/windows-services/how-to-create-windows-services.md)

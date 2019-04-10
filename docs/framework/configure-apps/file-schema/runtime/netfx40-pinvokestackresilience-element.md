@@ -1,5 +1,5 @@
 ---
-title: < Netfx40_pinvokestackresilience > – Element
+title: Element <NetFx40_PInvokeStackResilience>
 ms.date: 03/30/2017
 helpviewer_keywords:
 - <NetFx40_PInvokeStackResilience> element
@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 39fb1588-72a4-4479-af74-0605233b68bd
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8bc0d7c9222c31900cad9a8be05c79f7f8a04719
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 725bd715f6e70dff08929e58d588a3d8561d5011
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55289338"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59224231"
 ---
 # <a name="netfx40pinvokestackresilience-element"></a>\<Netfx40_pinvokestackresilience – > – Element
 Určuje, zda modul runtime automaticky opravy nesprávné volání nespravovaného kódu deklarace v době běhu, za cenu pomalejší přechody mezi spravováno a nespravovaný kód.  
@@ -38,7 +38,7 @@ Určuje, zda modul runtime automaticky opravy nesprávné volání nespravované
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |`0`|Modul runtime používá rychlejší zprostředkovatele komunikace s objekty zařazování architektura zavedený [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)], které není možné zjistit a oprava nesprávné volání nespravovaného kódu deklarace. Toto nastavení je výchozí.|  
 |`1`|Modul runtime používá pomalejší přechody zjistit a opravit nesprávný platformu vyvolání deklarace.|  
@@ -77,6 +77,7 @@ Určuje, zda modul runtime automaticky opravy nesprávné volání nespravované
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
 - [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)
 - [pInvokeStackImbalance](../../../../../docs/framework/debug-trace-profile/pinvokestackimbalance-mda.md)

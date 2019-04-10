@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - bindings [WCF], overview
 ms.assetid: cfb5842f-e0f9-4c56-a015-f2b33f258232
-ms.openlocfilehash: 7d617400fe5c07e8c9754e322960f31a350f62e5
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: c450de0eb3eead3a2d3b21c3635caa71d92ce07f
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54657412"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59212801"
 ---
 # <a name="windows-communication-foundation-bindings-overview"></a>Vazby ve Windows Communication Foundation – přehled
 Vazby jsou objekty, které se používají k určení detaily komunikace, které jsou vyžadovány pro připojení ke koncovému bodu služby Windows Communication Foundation (WCF). Každý koncový bod služby WCF vyžaduje vazbu být správně zadaný. Toto téma popisuje typy komunikace – podrobnosti, které definují vazby elementy vazby, které vazby jsou součástí WCF a jak vazbu se dá nastavit pro koncový bod.  
@@ -58,4 +58,5 @@ Vazby jsou objekty, které se používají k určení detaily komunikace, které
  Můžete definovat vazby dvěma způsoby: prostřednictvím kódu nebo konfigurace. Tyto dva přístupy nebyly závislé na tom, jestli používáte vazeb poskytovaných systémem nebo vlastní vazby. Obecně platí pomocí kódu vám plnou kontrolu nad definice vazby v době návrhu. Použití konfigurace, umožňuje na druhé straně může správce systému nebo uživatele služby WCF nebo klienta můžete změnit parametry vazby bez nutnosti znovu kompilovat aplikace služby. Díky této flexibilitě je často žádoucí, protože neexistuje žádný způsob, jak předvídat požadavky na konkrétní počítač, na kterých aplikace WCF je k nasazení. Vazba (a adresování) informace z kódu umožňuje změnit bez nutnosti rekompilace nebo opětovného nasazení aplikace. Všimněte si, že se po vazby zadaný v konfiguraci, umožňuje kódu definované vazby pro přepsání jakékoli konfigurace definované vazby vytvoří vazeb definovaných v kódu.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Používání vazeb ke konfiguraci služeb a klientů](../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - controls [WPF], TextBox
 - TextBox control [WPF], how-to topics
 ms.assetid: 006aa461-fe37-4cd8-860a-d38d76e8b9f7
-ms.openlocfilehash: d99528dcfbf2229b57e81f9dedc5bc0aa50c5b75
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: d3d5116a2fa2198661050a1c1adbae9512cd078a
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57375208"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59211423"
 ---
 # <a name="textbox-how-to-topics"></a>TextBox – postupy
 Tato část obsahuje příklady, které ukazují, jak provádět běžné úlohy pomocí <xref:System.Windows.Controls.TextBox> ovládacího prvku.  
@@ -42,5 +42,6 @@ Tato část obsahuje příklady, které ukazují, jak provádět běžné úlohy
  <xref:System.Windows.Controls.PasswordBox>  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Ukázková galerie ovládacích prvků WPF](https://go.microsoft.com/fwlink/?LinkID=160053)
 - [TextBox – styly a šablony](textbox-styles-and-templates.md)

@@ -1,5 +1,5 @@
 ---
-title: Element <oidEntry>
+title: <oidEntry> Prvek
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/mscorlib/cryptographySettings/oidMap/oidEntry
@@ -8,12 +8,12 @@ helpviewer_keywords:
 - <oidEntry> element
 - oidEntry element
 ms.assetid: 22fb88b0-bf27-489c-9ca0-e65950ac136c
-ms.openlocfilehash: b1dc4c788576fd3cab55db5255617cc55e68594b
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: c686d2b99ad66aec753a356b09fa3c7151193808
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55259056"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59219340"
 ---
 # <a name="oidentry-element"></a>\<oidentry – > – Element
 Identifikátor objektu (OID) ASN.1 se mapuje na popisný název.  
@@ -38,7 +38,7 @@ Identifikátor objektu (OID) ASN.1 se mapuje na popisný název.
 |Atribut|Popis|  
 |---------------|-----------------|  
 |**OID**|Požadovaný atribut.<br /><br /> Určuje Identifikátor ASN.1 odpovídající algoritmus implementovaný pomocí vaší třídy.|  
-|**Jméno**|Požadovaný atribut.<br /><br /> Určuje hodnotu **název** atribut [ \<nameEntry >](../../../../../docs/framework/configure-apps/file-schema/cryptography/nameentry-element.md) značky.|  
+|**name**|Požadovaný atribut.<br /><br /> Určuje hodnotu **název** atribut [ \<nameEntry >](../../../../../docs/framework/configure-apps/file-schema/cryptography/nameentry-element.md) značky.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -79,8 +79,9 @@ Identifikátor objektu (OID) ASN.1 se mapuje na popisný název.
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)
 - [Schéma nastavení šifrování](../../../../../docs/framework/configure-apps/file-schema/cryptography/index.md)
-- [Kryptografické služby](../../../../../docs/standard/security/cryptographic-services.md)
+- [Šifrovací služby](../../../../../docs/standard/security/cryptographic-services.md)
 - [Konfigurace šifrovacích tříd](../../../../../docs/framework/configure-apps/configure-cryptography-classes.md)
 - [Mapování identifikátorů objektů na algoritmy šifrování](../../../../../docs/framework/configure-apps/map-object-identifiers-to-cryptography-algorithms.md)

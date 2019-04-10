@@ -7,12 +7,12 @@ helpviewer_keywords:
 - controls [WPF], Image
 - Image control [WPF]
 ms.assetid: e6e51cf9-8fa1-457e-856b-a5e513bc5caf
-ms.openlocfilehash: f55036d4fdf4576faab50be7b42cf7a4077e6a3b
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 5c300df2c63f4fa852c8cce318a5461f3be5f226
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57376270"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59227558"
 ---
 # <a name="image-how-to-topics"></a>Postupy: Témata obrázku
 Témata v této části popisují způsob použití <xref:System.Windows.Controls.Image> elementu.  
@@ -31,5 +31,6 @@ Témata v této části popisují způsob použití <xref:System.Windows.Control
  <xref:System.Windows.Media.Imaging.BitmapSource>  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled obrázků](../graphics-multimedia/imaging-overview.md)
-- [Témata s postupy](../graphics-multimedia/imaging-how-to-topics.md)
+- [– postupy](../graphics-multimedia/imaging-how-to-topics.md)

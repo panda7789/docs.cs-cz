@@ -11,12 +11,12 @@ helpviewer_keywords:
 - text [WPF], performance
 - glyphs [WPF]
 ms.assetid: 66b1b9a7-8618-48db-b616-c57ea4327b98
-ms.openlocfilehash: 14751d8241dabd0cf7c41f2920fab32e21dc43e2
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
-ms.translationtype: MT
+ms.openlocfilehash: e5dfa170d2744e634ed456de491d61c0e442eb45
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58409403"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59225960"
 ---
 # <a name="optimizing-performance-text"></a>Optimalizace výkonu: Text
 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] zahrnuje podporu pro prezentaci textový obsah prostřednictvím plně funkční [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] ovládacích prvků. Lze obecně rozdělit vykreslování textu ve třech vrstvách:  
@@ -28,8 +28,7 @@ ms.locfileid: "58409403"
 3.  Použití vysoké úrovně ovládacích prvků, jako <xref:System.Windows.Controls.TextBlock> a <xref:System.Windows.Documents.FlowDocument> objekty.  
   
  Toto téma obsahuje doporučení ohledně výkonu pro vykreslování textu.  
-  
-  
+
 <a name="Glyph_Level"></a>   
 ## <a name="rendering-text-at-the-glyph-level"></a>Vykreslení textu na úrovni glyfů  
  [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] podporuje rozšířené textové včetně úrovni piktogramu značky s přímým přístupem k <xref:System.Windows.Documents.Glyphs> pro zákazníky, kteří chtějí zachytit a zachovat po formátování textu. Tyto funkce umožňují podpory se zásadním jiným textovým požadavky na vykreslování v každém z těchto scénářů.  
@@ -162,6 +161,7 @@ ms.locfileid: "58409403"
  Funkci optimální odstavce <xref:System.Windows.Documents.FlowDocument> objekt rozložen odstavce tak, aby se jako rovnoměrně distribuuje prázdné znaky. Ve výchozím nastavení optimální odstavec je zakázaná. Tuto funkci lze povolit nastavením objektu <xref:System.Windows.Documents.FlowDocument.IsOptimalParagraphEnabled%2A> vlastnost `true`. Povolení této funkce však ovlivňuje výkon aplikace. Je doporučeno, je velmi riskantní používat funkci optimální odstavec pokud ho potřebujete.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Optimalizace výkonu aplikace WPF](optimizing-wpf-application-performance.md)
 - [Plánování výkonu aplikace](planning-for-application-performance.md)
 - [Využití výhod hardwaru](optimizing-performance-taking-advantage-of-hardware.md)
@@ -170,4 +170,4 @@ ms.locfileid: "58409403"
 - [Chování objektu](optimizing-performance-object-behavior.md)
 - [Prostředky aplikace](optimizing-performance-application-resources.md)
 - [Datová vazba](optimizing-performance-data-binding.md)
-- [Další výkonnostní doporučení](optimizing-performance-other-recommendations.md)
+- [Další doporučení k optimalizaci výkonu](optimizing-performance-other-recommendations.md)

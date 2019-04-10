@@ -20,12 +20,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d990d63a007240ab0bd0240f7b45fed52e2a2129
-ms.sourcegitcommit: 79066169e93d9d65203028b21983574ad9dcf6b4
+ms.openlocfilehash: 8ddef35b1b707cc5c962402e880923dca7d4d9d6
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57212245"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59208147"
 ---
 # <a name="coeeshutdowncom-function"></a>CoEEShutDownCOM – funkce
 Vynutí common language runtime (CLR) uvolnit všechny ukazatele rozhraní, které obsahuje uvnitř obálek volatelných za běhu (RCW). To má za následek uvolnění všech RCW mezipamětí. Tato globální funkce je zastaralá ve [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)]. Místo toho použijte vstupní bod pro konkrétní prostředí runtime.  
@@ -54,4 +54,5 @@ void CoEEShutDownCOM ();
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
-- [Globální statické funkce pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-global-static-functions.md)
+
+- [Globální statické funkce metadat](../../../../docs/framework/unmanaged-api/metadata/metadata-global-static-functions.md)

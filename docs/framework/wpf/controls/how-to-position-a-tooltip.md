@@ -8,12 +8,12 @@ helpviewer_keywords:
 - ToolTip control [WPF], positioning
 - positioning ToolTip controls [WPF]
 ms.assetid: cddf3757-9e5f-4ce3-a6eb-44489cf3804a
-ms.openlocfilehash: 64b3823be5203ffcb9dcea371495dbb6ead1605f
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 811818fe6e7c0d8ce9e2aa058b42bf592ada4b92
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58840494"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59212346"
 ---
 # <a name="how-to-position-a-tooltip"></a>Postupy: Umístění prvku ToolTip
 Tento příklad ukazuje, jak určit pozici popisku na obrazovce.  
@@ -62,7 +62,8 @@ Tento příklad ukazuje, jak určit pozici popisku na obrazovce.
  [!code-vb[ToolTipService#NoToolTipCode](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ToolTipService/visualbasic/pane1.xaml.vb#notooltipcode)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Controls.ToolTip>
 - <xref:System.Windows.Controls.ToolTipService>
-- [Témata s postupy](tooltip-how-to-topics.md)
+- [– postupy](tooltip-how-to-topics.md)
 - [ToolTip – přehled](tooltip-overview.md)

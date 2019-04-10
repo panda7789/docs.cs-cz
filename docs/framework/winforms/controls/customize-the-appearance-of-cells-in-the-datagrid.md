@@ -9,12 +9,12 @@ helpviewer_keywords:
 - DataGridView control [Windows Forms], customizing cells
 - cells [Windows Forms], customizing in DataGridView control
 ms.assetid: 478b20c9-625c-4116-9c5c-5a16e6f4ec67
-ms.openlocfilehash: add865eedc54253ad257e0e142e555da52f341dd
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 415cf18aa4cf01b151a414dbc26609af638a7af7
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57703345"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59213282"
 ---
 # <a name="how-to-customize-the-appearance-of-cells-in-the-windows-forms-datagridview-control"></a>Postupy: Přizpůsobení vzhledu buněk v ovládacím prvku Windows Forms DataGridView
 Můžete přizpůsobit vzhled libovolnou buňku ve zpracování <xref:System.Windows.Forms.DataGridView> ovládacího prvku <xref:System.Windows.Forms.DataGridView.CellPainting> událostí. Můžete rozbalit <xref:System.Windows.Forms.DataGridView> ovládacího prvku <xref:System.Drawing.Graphics> z <xref:System.Windows.Forms.DataGridViewCellPaintingEventArgs.Graphics%2A> vlastnost <xref:System.Windows.Forms.DataGridViewCellPaintingEventArgs>. S tímto <xref:System.Drawing.Graphics>, může mít vliv na vzhled celý <xref:System.Windows.Forms.DataGridView> ovládacího prvku, ale bude obvykle chcete ovlivnit pouze vzhled buňky, která je právě překreslit. <xref:System.Windows.Forms.DataGridViewCellPaintingEventArgs.ClipBounds%2A> Vlastnost <xref:System.Windows.Forms.DataGridViewCellPaintingEventArgs> umožňuje omezit vaše operace Malování na buňku, která je právě překreslit.  
@@ -33,6 +33,7 @@ Můžete přizpůsobit vzhled libovolnou buňku ve zpracování <xref:System.Win
 -   Odkazy na sestavení systému, System.Windows.Forms a System.Drawing.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.DataGridView.CellPainting>
 - [Přizpůsobení ovládacího prvku Windows Forms DataGridView](customizing-the-windows-forms-datagridview-control.md)

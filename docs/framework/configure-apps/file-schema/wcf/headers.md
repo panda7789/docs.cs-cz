@@ -2,12 +2,12 @@
 title: <headers>
 ms.date: 03/30/2017
 ms.assetid: c79b897d-8ea3-40b5-a8b6-2471941f7ed3
-ms.openlocfilehash: 3c3c3a3d747a1338e2db3afa92c735af4a588642
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 660497012dd057e4ecf95524833e2573fe03a8b0
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55288025"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59224548"
 ---
 # <a name="headers"></a>\<headers>
 Koncový bod vyřešíte tak, že jednu nebo víc hlaviček SOAP kromě svůj základní identifikátor URI. Jedna sada scénáře, kde je to užitečné je sada SOAP zprostředkující scénáře, kdy vyžaduje, aby koncový bod klientům tohoto koncového bodu zahrnout záhlaví SOAP určenou pro zprostředkovatele. Tento prvek konfigurace je možné definovat tyto hlavičky vlastní adresu. Položky v kolekci hlaviček koncového bodu jsou uživatelem definované elementy XML. Každý prvek musí být ve správném formátu XML.  
@@ -44,8 +44,9 @@ Koncový bod vyřešíte tak, že jednu nebo víc hlaviček SOAP kromě svůj z�
  Volitelná záhlaví poskytují podrobnější informace o adresování k identifikaci a k interakci s koncovým bodem. Záhlaví může například signalizovat zpracování příchozí zprávy, kde koncový bod má odeslat zpráva s odpovědí nebo které instanci služby pro použití ke zpracování příchozí zprávy z konkrétního uživatele, když jsou k dispozici více instancí.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Configuration.IdentityElement>
 - <xref:System.ServiceModel.EndpointAddress>
 - <xref:System.ServiceModel.EndpointAddress.Headers%2A>
 - <xref:System.ServiceModel.Channels.AddressHeaderCollection>
-- [Koncové body: Adresy, vazby a kontrakty](../../../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)
+- [Koncové body: adresy, vazby a kontrakty](../../../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)

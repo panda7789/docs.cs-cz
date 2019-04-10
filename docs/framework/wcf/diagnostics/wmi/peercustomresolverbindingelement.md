@@ -2,12 +2,12 @@
 title: PeerCustomResolverBindingElement
 ms.date: 03/30/2017
 ms.assetid: 9ccc2770-a20e-4dff-9970-f56ad8aec2b5
-ms.openlocfilehash: 37984fb51fd19eb1f6c249852f120cc59b99adc2
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 47a4d7a9e0c2b0f8a6fc3beb964bf4dd649f7c0f
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54613932"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59220757"
 ---
 # <a name="peercustomresolverbindingelement"></a>PeerCustomResolverBindingElement
 PeerCustomResolverBindingElement  
@@ -48,4 +48,5 @@ class PeerCustomResolverBindingElement : PeerResolverBindingElement
 |Obor názvů|Definované v root\ServiceModel|  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Channels.PeerCustomResolverBindingElement>

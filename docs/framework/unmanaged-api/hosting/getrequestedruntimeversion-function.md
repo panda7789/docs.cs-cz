@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 87728ea52bc257920041acc2e2ecfc040cdbbfb0
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: 1ee737f4c6d34e77996f5ba08ce4d84132a99238
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57471794"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59207328"
 ---
 # <a name="getrequestedruntimeversion-function"></a>GetRequestedRuntimeVersion – funkce
 Získá číslo verze common language runtime (CLR) požadované určenou aplikací. Pokud není nainstalována verze, získá nejnovější verzi, která je nainstalována před požadovanou verzí.  
@@ -72,6 +72,7 @@ HRESULT GetRequestedRuntimeVersion (
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [GetRequestedRuntimeInfo – funkce](../../../../docs/framework/unmanaged-api/hosting/getrequestedruntimeinfo-function.md)
 - [GetVersionFromProcess – funkce](../../../../docs/framework/unmanaged-api/hosting/getversionfromprocess-function.md)
-- [Zastaralé funkce pro hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+- [Zastaralé funkce hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)

@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 07d08a99-62c5-4254-bce2-2a75e55a18ab
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0f24d3e456285efe694e598aa3d435fc15341283
-ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
-ms.translationtype: MT
+ms.openlocfilehash: aa7d77509a80ce67ee97abf648036ebb26b6f4c5
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56221053"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59211488"
 ---
 # <a name="how-to-define-and-execute-dynamic-methods"></a>Postupy: Definování a provádění dynamických metod
 Následující postupy ukazují, jak definovat a spustí jednoduchou dynamickou metodu a dynamická metoda svázána s instancí třídy. Další informace o dynamické metody, naleznete v tématu <xref:System.Reflection.Emit.DynamicMethod> třídy a [emitování dynamické metody scénáře reflexe](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/sfk2s47t(v=vs.100)).  
@@ -123,6 +123,7 @@ Následující postupy ukazují, jak definovat a spustí jednoduchou dynamickou 
 -   Kompilace kódu do příkazového řádku pomocí csc.exe a vbc.exe, cl.exe. Ke kompilaci kódu v sadě Visual Studio, umístěte ho do šablony projektu konzolové aplikace.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Reflection.Emit.DynamicMethod>
 - [Použití generování reflexe](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/3y322t50(v=vs.100))
 - [Scénáře dynamických metod generování reflexe](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/sfk2s47t(v=vs.100))

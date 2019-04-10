@@ -11,12 +11,12 @@ helpviewer_keywords:
 - ScrollBarVisibility enumeration [WPF]
 - brushes [WPF], performance
 ms.assetid: d028cc65-7e97-4a4f-9859-929734eaf40d
-ms.openlocfilehash: 05fe4ba4e2125b01637bc9066d23b5738d81f98d
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 56d3e3cad09b46090a11b884f3ac590e8d4ba23a
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57358935"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59224283"
 ---
 # <a name="optimizing-performance-other-recommendations"></a>Optimalizace výkonu: Další doporučení
 <a name="introduction"></a> Toto téma obsahuje doporučení k výkonu kromě těch, které jsou předmětem témata v [optimalizace výkonu aplikace WPF](optimizing-wpf-application-performance.md) oddílu.  
@@ -73,6 +73,7 @@ ms.locfileid: "57358935"
  [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] Písmo Cache service sdílí data písma mezi [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikací. První [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] spustíte aplikaci spustí tuto službu, pokud služba není spuštěná. Pokud používáte [!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)], "Windows Presentation Foundation (WPF) písmo 3.0.0.0" Služba mezipaměti můžete nastavit od "Ruční" (výchozí) na "Automatické (zpoždění spuštění)" snížit čas spuštění počáteční [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikací.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Plánování výkonu aplikace](planning-for-application-performance.md)
 - [Využití výhod hardwaru](optimizing-performance-taking-advantage-of-hardware.md)
 - [Rozložení a návrh](optimizing-performance-layout-and-design.md)

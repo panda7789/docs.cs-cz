@@ -7,12 +7,12 @@ helpviewer_keywords:
 - events [WPF], Preview
 - events [WPF], suppressing
 ms.assetid: b5032308-aa9c-4d02-af11-630ecec8df7e
-ms.openlocfilehash: 95514cfce88764d92d690fb9c0a51c667a49683b
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 75165df94aa8b508ef85cf970933efb98b9d62ca
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57356335"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59211388"
 ---
 # <a name="preview-events"></a>Události náhledu
 Události náhledu, označované také jako tunelové propojení událostí, jsou směrované události kde směru trasy, která přenáší z kořenového adresáře aplikace směrem k elementu, který vyvolal událost a hlásí jako zdroj dat události. Ne všechny události scénáře podporovalo nebo vyžadovalo události ve verzi preview. Toto téma popisuje situace, kdy události náhledu existují, způsob, jakým aplikace nebo součásti pracovat, a případy, kdy vytváření událostí ve verzi preview ve vlastních součástech nebo třídy může být vhodné.  
@@ -30,5 +30,6 @@ Události náhledu, označované také jako tunelové propojení událostí, jso
  Každý z následujících postupů má vedlejší účinky nebo omezení. Vedlejším účinkem zpracování událostí ve verzi Preview je, že zpracování událostí v tomto okamžiku může zakázat obslužných rutin, které očekávají, že zpracování šíření události, a proto omezení je, že není obvykle vhodné k označení události zpracovány, i když je stále na Previ nové části trasy. Omezení `handledEventsToo` technikou je, že nelze zadat `handledEventsToo` obslužné rutiny v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] jako atribut, musíte zaregistrovat obslužnou rutinu události v kódu po získání odkaz na objekt na prvek, kde má být připojen obslužné rutiny.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Označení směrovaných událostí jako zpracovaných a zpracování tříd](marking-routed-events-as-handled-and-class-handling.md)
 - [Přehled směrovaných událostí](routed-events-overview.md)

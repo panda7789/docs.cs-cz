@@ -1,5 +1,5 @@
 ---
-title: Element <cryptoClasses>
+title: <cryptoClasses> Prvek
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/mscorlib/cryptographySettings/cryptoNameMapping/cryptoClasses
@@ -8,12 +8,12 @@ helpviewer_keywords:
 - <cryptoClasses> element
 - cryptoClasses element
 ms.assetid: 290d5f96-946d-4f02-babb-1d31ec0b8295
-ms.openlocfilehash: aa649a0ea83279a1b2bdb2dff33794002b8a6b7d
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 7a03729f075645a230c660ff4c6469e0f5f3a51e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55274064"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59220315"
 ---
 # <a name="cryptoclasses-element"></a>\<cryptoClasses> Element
 Obsahuje seznam šifrovacích tříd, které mají na popisný název v mapování [ \<nameEntry >](../../../../../docs/framework/configure-apps/file-schema/cryptography/nameentry-element.md) elementu.  
@@ -77,9 +77,10 @@ Obsahuje seznam šifrovacích tříd, které mají na popisný název v mapován
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Security.Cryptography>
 - [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)
 - [Schéma nastavení šifrování](../../../../../docs/framework/configure-apps/file-schema/cryptography/index.md)
-- [Kryptografické služby](../../../../../docs/standard/security/cryptographic-services.md)
+- [Šifrovací služby](../../../../../docs/standard/security/cryptographic-services.md)
 - [System.Security.Cryptography.CryptoConfig.CreateFromName](Overload:System.Security.Cryptography.CryptoConfig.CreateFromName)
 - [Konfigurace šifrovacích tříd](../../../../../docs/framework/configure-apps/configure-cryptography-classes.md)

@@ -2,12 +2,12 @@
 title: Pokyny pro instalaci virtuálního adresáře
 ms.date: 03/30/2017
 ms.assetid: 3c62cab5-81a4-48b6-ac8c-9ce33a85a157
-ms.openlocfilehash: 0f32fd6d65db529ba1015dedd98f99efd7f408c4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 7999a040dc14d75a34b75f320982dd3118eae670
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54588103"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59225583"
 ---
 # <a name="virtual-directory-setup-instructions"></a>Pokyny pro instalaci virtuálního adresáře
 Ukázky Windows Communication Foundation (WCF) jsou určené ke sdílení běžné virtuální adresář s názvem servicemodelsamples, která je namapována na složku %SystemDrive%\inetpub\wwwroot\servicemodelsamples.  
@@ -59,7 +59,7 @@ Ukázky Windows Communication Foundation (WCF) jsou určené ke sdílení běžn
   
 7.  Ve výchozím nastavení jsou vybrány následující políčka:  
   
-    -   **Read**  
+    -   **Číst**  
   
     -   **Spouštění skriptů (například ASP)**  
   
@@ -84,7 +84,7 @@ Ukázky Windows Communication Foundation (WCF) jsou určené ke sdílení běžn
   
 2.  Ve výchozím nastavení jsou vybrány následující políčka:  
   
-    -   **Read**  
+    -   **Číst**  
   
     -   **Navštíví protokolu**  
   
@@ -191,4 +191,5 @@ Ukázky Windows Communication Foundation (WCF) jsou určené ke sdílení běžn
     3.  V **skupiny** sloupce, zkontrolujte, že hodnota **ASPNET** "uživatelů."  
   
 ## <a name="see-also"></a>Viz také:
-- [Pokyny k hostování Internetové informační služby](../../../../docs/framework/wcf/samples/internet-information-service-hosting-instructions.md)
+
+- [Pokyny k hostování služby IIS](../../../../docs/framework/wcf/samples/internet-information-service-hosting-instructions.md)

@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 076ee62d-a964-449e-a447-c31b33518b81
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: fe90542d1ba106dd52e8995afab298b4b9f69899
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 1c95c22c6d4e4421e8a7681dfccabcc82e0ffd86
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54644388"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59219782"
 ---
 # <a name="how-to-hook-up-a-delegate-using-reflection"></a>Postupy: Připojení delegáta pomocí reflexe
 Při použití reflexe načtení a spuštění sestavení nelze použít jazykové funkce, jako C# `+=` operátor nebo Visual Basic [AddHandler – příkaz](~/docs/visual-basic/language-reference/statements/addhandler-statement.md) k připojení události. Následující postupy ukazují, jak připojit existující metodu na událost tím, že získáme všechny nezbytné typy prostřednictvím reflexe a vytvoření dynamickou metodu pomocí operace reflection emit a zapojit ji až událost.  
@@ -114,6 +114,7 @@ Při použití reflexe načtení a spuštění sestavení nelze použít jazykov
 -   Kompilace kódu do příkazového řádku pomocí csc.exe a vbc.exe, cl.exe. Ke kompilaci kódu v sadě Visual Studio, umístěte ho do šablony projektu konzolové aplikace.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType>
 - <xref:System.Reflection.Emit.DynamicMethod>
 - <xref:System.Activator.CreateInstance%2A>

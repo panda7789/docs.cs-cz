@@ -8,12 +8,12 @@ helpviewer_keywords:
 - dependency properties [WPF], backing properties with
 - properties [WPF], backing with dependency properties
 ms.assetid: 855fd6d7-19ac-493c-bf5e-2f40b57cdc92
-ms.openlocfilehash: 8ee944c521b7e4ec75394c821e8bd509dd4eca74
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: e2f18cb3941be2ebf4315a844c05b91ff49c6aa2
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57374411"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59223798"
 ---
 # <a name="how-to-implement-a-dependency-property"></a>Postupy: Implementace vlastnosti závislosti
 Tento příklad ukazuje, jak zálohovat [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] vlastnost s <xref:System.Windows.DependencyProperty> pole, proto definování vlastnost závislosti. Při definování vlastní vlastnosti a nechcete, aby podporují mnoho aspektů [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] funkce, včetně styly, vazby dat, dědičnost, animace a výchozí hodnoty, měli byste implementovat jako vlastnost závislosti.  
@@ -33,5 +33,6 @@ Tento příklad ukazuje, jak zálohovat [!INCLUDE[TLA#tla_clr](../../../../inclu
  Další informace o tom, a proto implementace vlastnosti závislosti, na rozdíl od jenom zálohování [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] vlastnost s privátní pole, naleznete v tématu [přehled vlastností závislosti](dependency-properties-overview.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled vlastností závislosti](dependency-properties-overview.md)
-- [Témata s postupy](properties-how-to-topics.md)
+- [– postupy](properties-how-to-topics.md)

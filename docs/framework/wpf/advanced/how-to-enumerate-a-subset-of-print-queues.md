@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Vyčíslení dílčí sady tiskové fronty'
+title: 'Postupy: Výčet podmnožiny tiskových front'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - enumerating [WPF], subset of print queues
 - print queues [WPF], enumerating subset of
 ms.assetid: cc4a1b5b-d46f-4c5e-bc26-22c226e4bee0
-ms.openlocfilehash: 7cdd0ebeb03d078a952dd9ffe4d2ed7590417054
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: adcfff0196bd0430ec1ae563fbd5489062de11f3
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57359481"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59217182"
 ---
-# <a name="how-to-enumerate-a-subset-of-print-queues"></a>Postupy: Vyčíslení dílčí sady tiskové fronty
+# <a name="how-to-enumerate-a-subset-of-print-queues"></a>Postupy: Výčet podmnožiny tiskových front
 Je běžné situace spojenou s rozšiřováním Odborníci v oblasti technologií (IT) informace o správě pořádaného microsoftem sadu tiskárny pro vygenerování seznamu tiskáren, které mají určité charakteristické vlastnosti. Tato funkce je poskytována <xref:System.Printing.PrintServer.GetPrintQueues%2A> metodu <xref:System.Printing.PrintServer> objektu a <xref:System.Printing.EnumeratedPrintQueueTypes> výčtu.  
   
 ## <a name="example"></a>Příklad  
@@ -35,6 +35,7 @@ Je běžné situace spojenou s rozšiřováním Odborníci v oblasti technologi�
  V tomto příkladu může rozšířit tak, že `foreach` smyčku, která vás provede každou tiskovou frontu, proveďte další blokování. Například jste mohli vyfiltroval tiskárny, které nepodporují oboustranný tisk tím, že volání smyčky každou tiskovou frontu <xref:System.Printing.PrintQueue.GetPrintCapabilities%2A> metoda a testování vrácené hodnoty přítomnost duplexní.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Printing.PrintServer.GetPrintQueues%2A>
 - <xref:System.Printing.PrintServer>
 - <xref:System.Printing.LocalPrintServer>

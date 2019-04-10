@@ -2,12 +2,12 @@
 title: Použití překladače kontraktů dat
 ms.date: 03/30/2017
 ms.assetid: 2e68a16c-36f0-4df4-b763-32021bff2b89
-ms.openlocfilehash: 844c4e0861c2cf4e6acb2b128ff1f5cefa0f7fa0
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: b1c545d84db68f4b13925dd9088cc9d81050b5e7
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55279146"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59222442"
 ---
 # <a name="using-a-data-contract-resolver"></a>Použití překladače kontraktů dat
 Překladače kontraktů dat umožňuje dynamicky konfigurovat známých typů. Známé typy jsou potřeba při serializaci nebo deserializaci typ není očekávaný datový kontrakt. Další informace o známých typů najdete v tématu [známé typy kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md). Známé typy jsou obvykle určeny staticky. To znamená, že budete muset zjistit všechny možné typy, operace se může zobrazit při provádění operace. Existují scénáře, ve kterých to neplatí a schopnost dynamicky určit známých typů není důležité.  
@@ -88,6 +88,7 @@ SerializerBehavior.DataContractResolver = new MyCustomerResolver();
  Překladače kontraktů dat deklarativně zadáte implementace atribut, který lze použít ke službě.  Další informace najdete v tématu [KnownAssemblyAttribute](../../../../docs/framework/wcf/samples/knownassemblyattribute.md) vzorku. Tato ukázka implementuje atribut s názvem "KnownAssembly", který přidá překladače kontraktů dat vlastní chování služby.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Známé typy kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)
-- [Ukázka DataContractSerializer](../../../../docs/framework/wcf/samples/datacontractserializer-sample.md)
+- [Ukázka třídy DataContractSerializer](../../../../docs/framework/wcf/samples/datacontractserializer-sample.md)
 - [KnownAssemblyAttribute](../../../../docs/framework/wcf/samples/knownassemblyattribute.md)

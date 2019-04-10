@@ -9,12 +9,12 @@ helpviewer_keywords:
 - painting [WPF], with images
 - brushes [WPF], painting with images
 ms.assetid: 3432c533-1fc7-492d-94ee-0b13d60125ae
-ms.openlocfilehash: c1db803aacad85ce90fec519b5eabdd8df7bb584
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 2b88982e7a8d196c31869dc74aac636d78f68386
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57369120"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59207809"
 ---
 # <a name="how-to-paint-an-area-with-an-image"></a>Postupy: Vykreslení obrázku v oblasti
 Tento příklad ukazuje způsob použití <xref:System.Windows.Media.ImageBrush> třídu pro vykreslení oblasti obrázkem. <xref:System.Windows.Media.ImageBrush> Zobrazí jedné image, která je určená jeho <xref:System.Windows.Media.ImageBrush.ImageSource%2A> vlastnost.  
@@ -36,4 +36,5 @@ Tento příklad ukazuje způsob použití <xref:System.Windows.Media.ImageBrush>
  Tento příklad kódu je součástí většího příkladu, která je k dispozici pro <xref:System.Windows.Media.ImageBrush> třídy. Úplnou ukázku najdete v tématu [ImageBrush ukázka](https://go.microsoft.com/fwlink/?LinkID=160005).  
   
 ## <a name="see-also"></a>Viz také:
-- [Malování pomocí obrázků, kreseb a vizuálních objektů](painting-with-images-drawings-and-visuals.md)
+
+- [Kreslení pomocí obrázků, kreseb a vizuálních objektů](painting-with-images-drawings-and-visuals.md)

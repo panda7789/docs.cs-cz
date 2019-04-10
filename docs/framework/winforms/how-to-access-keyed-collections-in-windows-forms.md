@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Přístup kolekcím s klíči ve Windows Forms'
+title: 'Postupy: Přístup ke kolekcím s klíči ve Windows Forms'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - keyed collections [Windows Forms]
 - collections [Windows Forms], accessing with keys
 ms.assetid: b9b79b8b-d9bf-4f8c-b9d6-9578bc3219d3
-ms.openlocfilehash: af398e8ac051bfc89c532fe5dc216e9cfbfdc4b9
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: fdd3a56ab9a267990bb0e832c0d4cc2af9334034
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57709612"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59214037"
 ---
-# <a name="how-to-access-keyed-collections-in-windows-forms"></a>Postupy: Přístup kolekcím s klíči ve Windows Forms
+# <a name="how-to-access-keyed-collections-in-windows-forms"></a>Postupy: Přístup ke kolekcím s klíči ve Windows Forms
 -   Jednotlivé kolekce položek můžete přistupovat pomocí klíče. Tato funkce byla přidána k mnoha třídy kolekcí, které jsou obvykle používány aplikací modelu Windows Forms. V následujícím seznamu jsou uvedeny některé třídy kolekcí, které mají přístupné kolekce s klíči:  
   
 -   <xref:System.Windows.Forms.ListView.ListViewItemCollection>  
@@ -52,5 +52,6 @@ ms.locfileid: "57709612"
      [!code-vb[System.Windows.Forms.KeyedCollectionsEx#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.KeyedCollectionsEx/VB/Form1.vb#3)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Začínáme s Windows Forms](getting-started-with-windows-forms.md)
-- [Postupy: Přidávání a odebírání obrázků pomocí komponenty Windows Forms ImageList](./controls/how-to-add-or-remove-images-with-the-windows-forms-imagelist-component.md)
+- [Postupy: Přidání a odebrání obrázků pomocí komponenty Windows Forms ImageList](./controls/how-to-add-or-remove-images-with-the-windows-forms-imagelist-component.md)

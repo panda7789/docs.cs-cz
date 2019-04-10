@@ -6,12 +6,12 @@ helpviewer_keywords:
 - size [WPF], DataGrid
 - automatically size DataGrid [WPF]
 ms.assetid: 96a0e47e-b010-4302-98ef-2daac446d8db
-ms.openlocfilehash: 38cd29720a885f10d093bdb4617c503c16402e6c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 6d100fb17b1ee3e652985a637d333d9f65e20d36
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54672185"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59219197"
 ---
 # <a name="sizing-options-in-the-datagrid-control"></a>Možnosti změny velikosti v ovládacím prvku DataGrid
 Různé možnosti jsou k dispozici pro ovládací prvek jak <xref:System.Windows.Controls.DataGrid> velikosti samotného. <xref:System.Windows.Controls.DataGrid>a jednotlivých řádků a sloupců v <xref:System.Windows.Controls.DataGrid>, můžete nastavit pro nastavení velikosti automaticky jejich obsah, nebo můžete nastavit na konkrétní hodnoty. Ve výchozím nastavení <xref:System.Windows.Controls.DataGrid> bude zvětšovat a zmenšovat podle velikosti jeho obsah.  
@@ -56,7 +56,7 @@ Různé možnosti jsou k dispozici pro ovládací prvek jak <xref:System.Windows
   
  V následující tabulce jsou uvedeny hodnoty poskytnuté <xref:System.Windows.Controls.DataGridLengthUnitType> struktury.  
   
-|Název|Popis|  
+|Name|Popis|  
 |----------|-----------------|  
 |<xref:System.Windows.Controls.DataGridLengthUnitType.Auto>|Automatická velikost velikosti režimu výchozí <xref:System.Windows.Controls.DataGrid> sloupce na základě obsahu buněk a záhlaví sloupců.|  
 |<xref:System.Windows.Controls.DataGridLengthUnitType.SizeToCells>|Automaticky na základě buňky velikosti režim změny velikosti <xref:System.Windows.Controls.DataGrid> sloupce na základě obsahu buněk ve sloupci bez zahrnutí záhlaví sloupců.|  
@@ -86,6 +86,7 @@ Různé možnosti jsou k dispozici pro ovládací prvek jak <xref:System.Windows
  Uživatelé mohou změnit výšku <xref:System.Windows.Controls.DataGrid> řádky a sloupce přetažením záhlaví oddělovačů řádků nebo sloupců. <xref:System.Windows.Controls.DataGrid> Také podporuje automatickou změnu velikosti řádků a sloupců dvojitým kliknutím na oddělovač záhlaví řádku nebo sloupce. Chcete-li zabránit Změna velikosti sloupců konkrétní uživatele, nastavte <xref:System.Windows.Controls.DataGridColumn.CanUserResize%2A?displayProperty=nameWithType> vlastnost `false` pro jednotlivé sloupce. Chcete-li uživatelům zabránit ve změně velikosti všechny sloupce, nastavte <xref:System.Windows.Controls.DataGrid.CanUserResizeColumns%2A?displayProperty=nameWithType> vlastnost `false`. Chcete-li uživatelům zabránit ve změně velikosti všechny řádky, nastavte <xref:System.Windows.Controls.DataGrid.CanUserResizeRows%2A?displayProperty=nameWithType> vlastnost `false`.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Controls.DataGrid>
 - <xref:System.Windows.Controls.DataGridColumn>
 - <xref:System.Windows.Controls.DataGridLength>

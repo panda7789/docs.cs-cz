@@ -2,12 +2,12 @@
 title: Hostování v aplikaci služby pro Windows
 ms.date: 03/30/2017
 ms.assetid: f4199998-27f3-4dd9-aee4-0a4addfa9f24
-ms.openlocfilehash: 52c62ef1be7dafc97c5cf958f30444e47f900e92
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 5cd5a8bd198fe4f2f8cc26a9937029b578eff2e4
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54621972"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59216753"
 ---
 # <a name="hosting-in-a-windows-service-application"></a>Hostování v aplikaci služby pro Windows
 Služby Windows (dříve označovaná jako služba systému Windows NT) najdete postup, model zvlášť vhodné pro aplikace, které musí být aktivní ve spustitelném souboru dlouho běžící a nezobrazují žádné formulář, uživatelského rozhraní. Životnosti procesu Windows service aplikaci spravuje správce řízení služeb (SCM), který umožňuje spuštění, zastavení a pozastavení aplikace služby Windows. Můžete nakonfigurovat procesů služeb Windows na automatické spuštění při spuštění počítače, takže vhodný hostitelské prostředí pro aplikace "always on". Další informace o aplikacích pro službu Windows najdete v tématu [aplikace služby Windows](https://go.microsoft.com/fwlink/?LinkId=89450).  
@@ -37,9 +37,10 @@ Služby Windows (dříve označovaná jako služba systému Windows NT) najdete 
      Aplikace služby Windows, které hostují služby WCF se nasazují a spravují stejným způsobem jako aplikace služby Windows, které Nedovolte, aby byly použijte služby WCF.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceProcess>
 - [Návod: Vytvoření aplikace služby Windows v Návrháři součástí](https://go.microsoft.com/fwlink/?LinkId=94875)
-- [Postupy: Hostování služby WCF ve spravované Windows Service](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-a-managed-windows-service.md)
+- [Postupy: Hostování služby WCF ve spravované službě Windows](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-a-managed-windows-service.md)
 - [Hostitel služby Windows](../../../../docs/framework/wcf/samples/windows-service-host.md)
 - [Architektura programování aplikace služby](https://go.microsoft.com/fwlink/?LinkId=94876)
 - [Hostování funkcí systému Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkId=201276)

@@ -2,12 +2,12 @@
 title: Zabezpečení přenosu
 ms.date: 03/30/2017
 ms.assetid: 86c94153-e48d-4539-b6cf-cd8060582e7f
-ms.openlocfilehash: f9cb184c1fae3088f6bc682e4e54c63f201ac8c7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 036c3db96a14b6e2be299380f495f54436b5c87d
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54559928"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59218963"
 ---
 # <a name="transport-security"></a>Zabezpečení přenosu
 Zabezpečení přenosu ve Windows Communication Foundation (WCF) závisí na vazbu vybrané. Přenos, který implementuje vazbu určuje skutečné zabezpečení. Témata v této části popisují, které jsou implementovány mechanismů a jejich možnosti.  
@@ -39,4 +39,5 @@ Zabezpečení přenosu ve Windows Communication Foundation (WCF) závisí na vaz
  [Zabezpečení služeb a klientů](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Programování zabezpečení WCF](../../../../docs/framework/wcf/feature-details/programming-wcf-security.md)

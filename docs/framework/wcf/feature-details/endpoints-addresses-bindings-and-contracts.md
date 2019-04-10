@@ -6,12 +6,12 @@ helpviewer_keywords:
 - Windows Communication Foundation [WCF], endpoints
 - WCF [WCF], endpoints
 ms.assetid: 9ddc46ee-1883-4291-9926-28848c57e858
-ms.openlocfilehash: a10d9ac5718bf6b88a3a00902f90045c705f8431
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 3e78e7cf0c5acde53d7ee23294fd52134414e860
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54721786"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59207523"
 ---
 # <a name="endpoints-addresses-bindings-and-contracts"></a>Koncové body: adresy, vazby a kontrakty
 Veškerá komunikace se službou Windows Communication Foundation (WCF) nastane prostřednictvím *koncové body* služby. Koncové body poskytují klientům přístup k funkcím, které nabízí služba WCF.  
@@ -84,9 +84,10 @@ Veškerá komunikace se službou Windows Communication Foundation (WCF) nastane 
  [Postupy: Vytvoření koncového bodu služby v kódu](../../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-code.md)  
  Popisuje postup vytvoření koncového bodu služby v kódu.  
   
- [Postupy: Pomocí Svcutil.exe k ověření zkompilovaného kódu služby](../../../../docs/framework/wcf/feature-details/how-to-use-svcutil-exe-to-validate-compiled-service-code.md)  
+ [Postupy: Ověření zkompilovaného kódu služby pomocí nástroje Svcutil.exe](../../../../docs/framework/wcf/feature-details/how-to-use-svcutil-exe-to-validate-compiled-service-code.md)  
  Popisuje, jak detekovat chyby v implementacemi služeb a konfigurace bez hostování pomocí služby [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Konfigurace služeb](../../../../docs/framework/wcf/configuring-services.md)
-- [Rozšíření vazeb](../../../../docs/framework/wcf/extending/extending-bindings.md)
+- [Rozšiřování vazeb](../../../../docs/framework/wcf/extending/extending-bindings.md)

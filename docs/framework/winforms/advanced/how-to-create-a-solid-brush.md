@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Vytvoření plného štětce'
+title: 'Postupy: Vytvoření štětce jednotné barvy'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,14 +10,14 @@ helpviewer_keywords:
 - brushes [Windows Forms], examples
 - brushes [Windows Forms], creating solid
 ms.assetid: 85c3fe7d-fb1d-4591-8a9f-d75b556b90af
-ms.openlocfilehash: d7fb7c11a69cae69210dd2eece3336bc40c505c7
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: ed9ec1f52b41c83b3cc6e36dedf97f1c00db42e6
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57711977"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59213438"
 ---
-# <a name="how-to-create-a-solid-brush"></a>Postupy: Vytvoření plného štětce
+# <a name="how-to-create-a-solid-brush"></a>Postupy: Vytvoření štětce jednotné barvy
 Tento příklad vytvoří <xref:System.Drawing.SolidBrush> objekt, který můžete používat <xref:System.Drawing.Graphics> objekt pro vyplnění tvarů.  
   
 ## <a name="example"></a>Příklad  
@@ -29,6 +29,7 @@ Tento příklad vytvoří <xref:System.Drawing.SolidBrush> objekt, který může
  Po dokončení jejich používání byste měli volat <xref:System.IDisposable.Dispose%2A> na objekty, které využívají systémové prostředky, jako jsou štětce objekty.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Drawing.SolidBrush>
 - <xref:System.Drawing.Brush>
 - [Začínáme s programováním grafiky](getting-started-with-graphics-programming.md)

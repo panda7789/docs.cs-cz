@@ -10,12 +10,12 @@ helpviewer_keywords:
 - toolbars [Windows Forms], rearranging controls
 - ToolStrip control [Windows Forms], reordering items
 ms.assetid: 8480b69a-379f-4dc2-8dcf-365ed93692b2
-ms.openlocfilehash: 0800acc955ff8cf9efa7bc183f10d2b5cc87aac6
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: daff9d6d351db514d552225853f977775f8e3204
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57713710"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59220397"
 ---
 # <a name="how-to-enable-reordering-of-toolstrip-items-at-run-time-in-windows-forms"></a>Postupy: Povolení změny pořadí položek ToolStrip za běhu ve Windows Forms
 Můžete povolit uživatelům změnit uspořádání <xref:System.Windows.Forms.ToolStripItem> ovládací prvky na <xref:System.Windows.Forms.ToolStrip>.  
@@ -35,8 +35,9 @@ Můžete povolit uživatelům změnit uspořádání <xref:System.Windows.Forms.
     ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.ToolStrip>
 - <xref:System.Windows.Forms.ToolStrip.AllowItemReorder%2A>
 - [Přehled ovládacího prvku ToolStrip](toolstrip-control-overview-windows-forms.md)
 - [Architektura ovládacího prvku ToolStrip](toolstrip-control-architecture.md)
-- [Shrnutí technologie ToolStrip](toolstrip-technology-summary.md)
+- [Souhrn technologie ToolStrip](toolstrip-technology-summary.md)

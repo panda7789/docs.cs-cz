@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 02ce6699-49b5-4a0b-b0d5-1003c491232e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 333bd8c1793e4982b11208aa1a547e78fe680bb3
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 061b5aa2208a73f6a53bc5eaee056410256ac6ac
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54628848"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59213126"
 ---
 # <a name="mgmtclassgenexe-management-strongly-typed-class-generator"></a>Mgmtclassgen.exe (spravovaný generátor tříd se silnými typy)
 Nástroj Management Strongly Typed Class Generator umožňuje rychle generovat spravovanou třídu s časnou vazbou pro zadanou třídu Windows Management Instrumentation (WMI). Vygenerovaná třída usnadňuje psaní kódu pro přístup k instanci třídy WMI.  
@@ -36,13 +36,13 @@ WMIClass [options]
   
 |Možnost|Popis|  
 |------------|-----------------|  
-|**/l***jazyka* |Určuje jazyk, ve kterém chcete vygenerovat spravovanou třídu s časnou vazbou. Můžete zadat **CS** (C#; výchozí), **VB** (Visual Basic), **MC** (C++), nebo **JS** (JScript) jako argument jazyku.|  
-|**/m***počítače* |Určuje počítač, na kterém je uložena třída WMI a ke kterému je třeba se připojit. Výchozí hodnotou je místní počítač.|  
-|**/n***cesta* |Určuje cestu k oboru názvů služby WMI, který obsahuje třídu WMI. Pokud tuto možnost nezadáte, nástroj vygeneruje kód pro *WMIClass* ve výchozím **Root\cimv2** oboru názvů.|  
-|**/o***classnamespace* |Určuje obor názvů .NET, ve kterém chcete vygenerovat spravovanou třídu kódů. Pokud tuto možnost nezadáte, nástroj vygeneruje obor názvů pomocí oboru názvů WMI a předpony schématu. Předpona schématu je část názvu třídy před podtržítkem. Třeba **Win32_OperatingSystem** třídy v **Root\cimv2** obor názvů, nástroj vygeneruje třídu v **ROOT. CIMV2. Win32**.|  
-|**/p***filepath* |Určuje cestu k souboru, do kterého chcete uložit vygenerovaný kód. Pokud tuto možnost nezadáte, nástroj vytvoří soubor v aktuálním adresáři. Názvy tříd a soubor, ve kterém generuje pomocí třídy *WMIClass* argument. Název třídy a souboru jsou stejné jako název *WMIClass.* Pokud *WMIClass* obsahuje podtržítko, nástroj použije část názvu třídy za podtržítkem. Například pokud *WMIClass* název je ve formátu **Win32_LogicalDisk**, vygenerovaná třída a soubor má název "logicaldisk". Pokud soubor již existuje, nástroj přepíše existující soubor.|  
-|**/pW***heslo* |Určuje heslo pro použití při přihlášení k počítači určenému **/m** možnost.|  
-|**/u***uživatelské jméno* |Určuje uživatelské jméno pro použití při přihlášení k počítači určenému **/m** možnost.|  
+|**/l***jazyka*|Určuje jazyk, ve kterém chcete vygenerovat spravovanou třídu s časnou vazbou. Můžete zadat **CS** (C#; výchozí), **VB** (Visual Basic), **MC** (C++), nebo **JS** (JScript) jako argument jazyku.|  
+|**/m***počítače*|Určuje počítač, na kterém je uložena třída WMI a ke kterému je třeba se připojit. Výchozí hodnotou je místní počítač.|  
+|**/n***cesta*|Určuje cestu k oboru názvů služby WMI, který obsahuje třídu WMI. Pokud tuto možnost nezadáte, nástroj vygeneruje kód pro *WMIClass* ve výchozím **Root\cimv2** oboru názvů.|  
+|**/o***classnamespace*|Určuje obor názvů .NET, ve kterém chcete vygenerovat spravovanou třídu kódů. Pokud tuto možnost nezadáte, nástroj vygeneruje obor názvů pomocí oboru názvů WMI a předpony schématu. Předpona schématu je část názvu třídy před podtržítkem. Třeba **Win32_OperatingSystem** třídy v **Root\cimv2** obor názvů, nástroj vygeneruje třídu v **ROOT. CIMV2. Win32**.|  
+|**/p***filepath*|Určuje cestu k souboru, do kterého chcete uložit vygenerovaný kód. Pokud tuto možnost nezadáte, nástroj vytvoří soubor v aktuálním adresáři. Názvy tříd a soubor, ve kterém generuje pomocí třídy *WMIClass* argument. Název třídy a souboru jsou stejné jako název *WMIClass.* Pokud *WMIClass* obsahuje podtržítko, nástroj použije část názvu třídy za podtržítkem. Například pokud *WMIClass* název je ve formátu **Win32_LogicalDisk**, vygenerovaná třída a soubor má název "logicaldisk". Pokud soubor již existuje, nástroj přepíše existující soubor.|  
+|**/pW***heslo*|Určuje heslo pro použití při přihlášení k počítači určenému **/m** možnost.|  
+|**/u***uživatelské jméno*|Určuje uživatelské jméno pro použití při přihlášení k počítači určenému **/m** možnost.|  
 |**/?**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
   
 ## <a name="remarks"></a>Poznámky  
@@ -54,23 +54,23 @@ WMIClass [options]
   
 |Typ CIM|Datový typ ve vygenerované třídě|  
 |--------------|--------------------------------------|  
-|CIM_SINT8|**SByte –**|  
-|CIM_UINT8|**Bajtů**|  
+|CIM_SINT8|**SByte**|  
+|CIM_UINT8|**Byte**|  
 |CIM_SINT16|**Int16**|  
 |CIM_UINT16|**UInt16**|  
 |CIM_SINT32|**Int32**|  
 |SIM_UINT32|**UInt32**|  
 |CIM_SINT64|**Int64**|  
 |CIM_UINT64|**UInt64**|  
-|CIM_REAL32|**Jeden**|  
+|CIM_REAL32|**Single**|  
 |CIM_REAL64|**Double**|  
-|CIM_BOOLEAN|**Datový typ Boolean**|  
-|CIM_String|**řetězec**|  
+|CIM_BOOLEAN|**Boolean**|  
+|CIM_String|**String**|  
 |CIM_DATETIME|**Datum a čas** nebo **časový interval**|  
 |CIM_REFERENCE|**ManagementPath**|  
 |CIM_CHAR16|**Char**|  
 |CIM_OBJECT|**ManagementBaseObject**|  
-|CIM_IUNKNOWN|**objekt**|  
+|CIM_IUNKNOWN|**Objekt**|  
 |CIM_ARRAY|Pole objektů uvedených výše|  
   
  Při generování třídy WMI si všimněte následujícího chování:  
@@ -151,6 +151,7 @@ public class App
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Management>
 - <xref:System.Management.ManagementClass.GetStronglyTypedClassCode%2A?displayProperty=nameWithType>
 - <xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=nameWithType>

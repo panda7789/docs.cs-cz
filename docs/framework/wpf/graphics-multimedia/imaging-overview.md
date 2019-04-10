@@ -21,17 +21,16 @@ helpviewer_keywords:
 - decoding image formats [WPF]
 - rotating images [WPF]
 ms.assetid: 72aad87a-e6f3-4937-94cd-a18b7766e990
-ms.openlocfilehash: 45214b5f0e6827c36f87a4d45592ff0989c9a877
-ms.sourcegitcommit: 5c2176883dc3107445702724a7caa7ac2f6cb0d3
+ms.openlocfilehash: dba2f8b07134560abd77832293ce2a81e55e4875
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58890807"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59209707"
 ---
 # <a name="imaging-overview"></a>Přehled obrázků
 Toto téma obsahuje úvod do [!INCLUDE[TLA#tla_wic](../../../../includes/tlasharptla-wic-md.md)]. [!INCLUDE[TLA2#tla_wic](../../../../includes/tla2sharptla-wic-md.md)] umožňuje vývojářům zobrazit, transformaci a formátu Image.  
-  
-  
+
 <a name="_wpfImaging"></a>   
 ## <a name="wpf-imaging-component"></a>Součást zpracování obrázků WPF  
  [!INCLUDE[TLA2#tla_wic](../../../../includes/tla2sharptla-wic-md.md)] poskytuje významná vylepšení imaging možnosti v rámci [!INCLUDE[TLA#tla_win](../../../../includes/tlasharptla-win-md.md)]. Byly dříve spolehlivé po Imaging možnosti, jako například zobrazení rastrový obrázek nebo pomocí image na běžný ovládací prvek [!INCLUDE[TLA#tla_gdi](../../../../includes/tlasharptla-gdi-md.md)] nebo [!INCLUDE[TLA#tla_gdiplus](../../../../includes/tlasharptla-gdiplus-md.md)] knihovny. Tyto [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] poskytuje základní funkce pro zpracování obrázků, ale chybějící funkce, jako je podpora kodek rozšíření a podporu image velmi přesné. [!INCLUDE[TLA2#tla_wic](../../../../includes/tla2sharptla-wic-md.md)] slouží k překonání nedostatky z [!INCLUDE[TLA2#tla_gdi](../../../../includes/tla2sharptla-gdi-md.md)] a [!INCLUDE[TLA2#tla_gdiplus](../../../../includes/tla2sharptla-gdiplus-md.md)] a zadejte novou sadu [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] k zobrazení a používání imagí v rámci vašich aplikací.  
@@ -190,6 +189,7 @@ Různá nastavení stretch
 >  Kodek musí být digitálně podepsané, systém ho.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Media.Imaging.BitmapSource>
 - <xref:System.Windows.Media.Imaging.BitmapImage>
 - <xref:System.Windows.Controls.Image>

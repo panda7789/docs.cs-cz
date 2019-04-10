@@ -9,12 +9,12 @@ helpviewer_keywords:
 - styles [WPF], NavigationWindow
 - templates [WPF], NavigationWindow
 ms.assetid: 3656055e-3222-43c8-b868-fd0c90cc31a3
-ms.openlocfilehash: 586af00dee64cdc9eae1a9c927d079502b0b009a
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 32d8aac99d40693e66c7b52a6c7d2c116d2f3baf
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57363478"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59225804"
 ---
 # <a name="navigationwindow-styles-and-templates"></a>NavigationWindow – styly a šablony
 Toto téma popisuje styly a šablony pro <xref:System.Windows.Navigation.NavigationWindow> ovládacího prvku. Můžete upravit výchozí <xref:System.Windows.Controls.ControlTemplate> poskytnout jedinečný vzhled ovládacího prvku. Další informace najdete v tématu [přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením ControlTemplate](customizing-the-appearance-of-an-existing-control.md).  
@@ -22,7 +22,7 @@ Toto téma popisuje styly a šablony pro <xref:System.Windows.Navigation.Navigat
 ## <a name="navigationwindow-parts"></a>NavigationWindow – částí  
  V následující tabulce jsou uvedeny pojmenované části pro <xref:System.Windows.Navigation.NavigationWindow> ovládacího prvku.  
   
-|Část|Typ|Popis|  
+|Část|Type|Popis|  
 |-|-|-|  
 |PART_NavWinCP|<xref:System.Windows.Controls.ContentPresenter>|Oblasti pro obsah.|  
   
@@ -48,9 +48,10 @@ Toto téma popisuje styly a šablony pro <xref:System.Windows.Navigation.Navigat
  Úplnou ukázku najdete v tématu [stylu s ukázkou ControlTemplates](https://github.com/Microsoft/WPF-Samples/tree/master/Styles%20&%20Templates/IntroToStylingAndTemplating).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.FrameworkElement.Style%2A>
 - <xref:System.Windows.Controls.ControlTemplate>
 - [Styly a šablony ovládacích prvků](control-styles-and-templates.md)
 - [Přizpůsobení ovládacího prvku](control-customization.md)
 - [Styly a šablony](styling-and-templating.md)
-- [Přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením šablony ControlTemplate](customizing-the-appearance-of-an-existing-control.md)
+- [Přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením ControlTemplate](customizing-the-appearance-of-an-existing-control.md)

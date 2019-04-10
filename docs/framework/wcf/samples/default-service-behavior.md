@@ -5,12 +5,12 @@ helpviewer_keywords:
 - service behaviors, defaults
 - Default Service Behavior Sample [Windows Communication Foundation]
 ms.assetid: 442d4f71-c64e-4c62-816a-a66c38e7d3ec
-ms.openlocfilehash: 18ef0758dad9abc0c30651806957c9bb2c852abc
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
-ms.translationtype: MT
+ms.openlocfilehash: 5bfaab536bdc4725a22f8451b18c000649ce8aeb
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58843055"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59226596"
 ---
 # <a name="default-service-behavior"></a>Výchozí chování služby
 Tato ukázka předvádí, jak lze konfigurovat nastavení chování služby. Vzorek je založen na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md), která implementuje `ICalculator` kontrakt služby. Tato ukázka explicitně definuje chování služby a operace chování pomocí <xref:System.ServiceModel.ServiceBehaviorAttribute> a <xref:System.ServiceModel.OperationBehaviorAttribute> atributy. Chování můžete nakonfigurovat v konfiguračních souborech nebo imperativně v kódu (jako v této ukázce).  
@@ -93,4 +93,3 @@ Press <ENTER> to terminate client.
 >  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Behaviors\Default`  
-  

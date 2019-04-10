@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Vytvoření a inicializace naslouchacích procesů trasování'
+title: 'Postupy: Vytváření a inicializace naslouchacích procesů trasování'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -13,14 +13,14 @@ helpviewer_keywords:
 ms.assetid: 21726de1-61ee-4fdc-9dd0-3be49324d066
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ee0ad6b34e30b03ec42ff793e37d0e13b448cbfe
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 58edf1c6f2dca5c2b269370139533f1f8da17813
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54583100"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59222715"
 ---
-# <a name="how-to-create-and-initialize-trace-listeners"></a>Postupy: Vytvoření a inicializace naslouchacích procesů trasování
+# <a name="how-to-create-and-initialize-trace-listeners"></a>Postupy: Vytváření a inicializace naslouchacích procesů trasování
 <xref:System.Diagnostics.Debug?displayProperty=nameWithType> a <xref:System.Diagnostics.Trace?displayProperty=nameWithType> třídy odesílání zpráv do objektů nazývaných naslouchacích procesů, které příjem a zpracování těchto zpráv. Jeden takový naslouchací proces <xref:System.Diagnostics.DefaultTraceListener?displayProperty=nameWithType>, je automaticky vytvořen a inicializován při zapnutém trasování a ladění. Chcete-li <xref:System.Diagnostics.Trace> nebo <xref:System.Diagnostics.Debug> výstup přesměrováni na jakékoli další zdroje, musíte vytvořit a inicializovat naslouchací procesy další trasování.  
   
  Naslouchací procesy, které vytvoříte by měly odrážet potřeby vaší aplikace. Například pokud chcete text záznam všech výstupu trasování, vytvořit <xref:System.Diagnostics.TextWriterTraceListener> naslouchací proces, který zapisuje veškerý výstup do nového textového souboru, je-li povolena. Na druhé straně, pokud chcete zobrazit výstup pouze při spuštění aplikace, vytvořte <xref:System.Diagnostics.ConsoleTraceListener> naslouchací proces, který směruje veškerý výstup do okna konzoly. <xref:System.Diagnostics.EventLogTraceListener> Může směrovat výstup trasování do protokolu událostí. Další informace najdete v tématu [naslouchacích procesů trasování](../../../docs/framework/debug-trace-profile/trace-listeners.md).  
@@ -95,7 +95,8 @@ ms.locfileid: "54583100"
     ```  
   
 ## <a name="see-also"></a>Viz také:
-- [Moduly naslouchání trasování](../../../docs/framework/debug-trace-profile/trace-listeners.md)
+
+- [Naslouchací procesy trasování](../../../docs/framework/debug-trace-profile/trace-listeners.md)
 - [Přepínače trasování](../../../docs/framework/debug-trace-profile/trace-switches.md)
 - [Postupy: Přidání příkazů trasování do kódu aplikace](../../../docs/framework/debug-trace-profile/how-to-add-trace-statements-to-application-code.md)
 - [Trasování a instrumentace aplikací](../../../docs/framework/debug-trace-profile/tracing-and-instrumenting-applications.md)

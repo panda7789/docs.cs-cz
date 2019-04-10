@@ -1,13 +1,13 @@
 ---
-title: <Uri> – element (nastavení URI)
+title: <Uri> – Element (nastavení Uri)
 ms.date: 03/30/2017
 ms.assetid: c22bab8b-477c-4ae4-8498-65ad409e0847
-ms.openlocfilehash: f432be7594b1659dfcae0c6eee706358230f2cbb
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 1f3573babd2e363a78f0ad454f0ba36c87ba6390
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55269247"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59212138"
 ---
 # <a name="uri-element-uri-settings"></a>\<Identifikátor URI > – Element (nastavení Uri)
 Obsahuje nastavení, které určují způsob, jakým rozhraní .NET Framework zpracovává webové adresy vyjádřena pomocí uniform resource Identifier (identifikátory URI).  
@@ -32,7 +32,7 @@ Obsahuje nastavení, které určují způsob, jakým rozhraní .NET Framework zp
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
-|**Element**|**Popis**|  
+|**Prvek**|**Popis**|  
 |-----------------|---------------------|  
 |[idn](../../../../../docs/framework/configure-apps/file-schema/network/idn-element-uri-settings.md)|Určuje, pokud analýza mezinárodních názvů domén (IDN) platí pro názvy domén.|  
 |[iriParsing](../../../../../docs/framework/configure-apps/file-schema/network/iriparsing-element-uri-settings.md)|Určuje, pokud analýze International Resource Identifier (IRI) se použije k <xref:System.Uri> a určuje, zda by měl použít IRI pravidel pro analýzu.|  
@@ -40,9 +40,9 @@ Obsahuje nastavení, které určují způsob, jakým rozhraní .NET Framework zp
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|**Element**|**Popis**|  
+|**Prvek**|**Popis**|  
 |-----------------|---------------------|  
-|[Konfigurace](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)|Obsahuje nastavení pro všechny obory názvů.|  
+|[konfigurace](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)|Obsahuje nastavení pro všechny obory názvů.|  
   
 ## <a name="remarks"></a>Poznámky  
  `uri` Element obsahuje nastavení pro členy programu <xref:System.Uri> třídy používané třídami oboru <xref:System.Net> oboru názvů. Nastavení konfigurace podpory pro IRI a IDN.  
@@ -68,4 +68,5 @@ Obsahuje nastavení, které určují způsob, jakým rozhraní .NET Framework zp
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

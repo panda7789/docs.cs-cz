@@ -12,12 +12,12 @@ helpviewer_keywords:
 - data sources [Windows Forms], updating
 - BindingSource component [Windows Forms], examples
 ms.assetid: bd8bd9b2-af8a-4f11-a3d5-54eecbe2400b
-ms.openlocfilehash: 06204c909987041ac6bf4e64e6f72a850910ca67
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 16dbe4da1efecd120d4da4d66c3d79ec907b92a6
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57710105"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59218642"
 ---
 # <a name="how-to-reflect-data-source-updates-in-a-windows-forms-control-with-the-bindingsource"></a>Postupy: Uplatňování aktualizací zdroje dat v ovládacím prvku Windows Forms pomocí BindingSource
 Pokud používáte ovládací prvky vázané na data, máte někdy reakce na změny ve zdroji dat, pokud zdroj dat události změny seznamu nevyvolá. Při použití <xref:System.Windows.Forms.BindingSource> součásti pro vytvoření vazby zdroje dat do ovládacího prvku Windows Forms, ovládací prvek, který se změnil zdroj dat voláním může upozornit <xref:System.Windows.Forms.BindingSource.ResetBindings%2A> – metoda.  
@@ -37,8 +37,9 @@ Pokud používáte ovládací prvky vázané na data, máte někdy reakce na zm�
  Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.BindingNavigator>
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.BindingSource>
-- [Komponenta BindingSource](bindingsource-component.md)
+- [BindingSource – komponenta](bindingsource-component.md)
 - [Postupy: Vytvoření vazby ovládacího prvku Windows Forms k typu](how-to-bind-a-windows-forms-control-to-a-type.md)

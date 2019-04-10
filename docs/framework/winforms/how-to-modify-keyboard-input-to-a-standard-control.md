@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Windows Forms, modifying keyboard input
 - keyboards [Windows Forms], keyboard input
 ms.assetid: 626d3712-d866-4988-bcda-a2d5b36ec0ba
-ms.openlocfilehash: 41071efad50d42c873410420c850a7800b41008d
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 81d33234670fb8ae5445cc86a79f5c3b6a647a03
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57705438"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59225778"
 ---
 # <a name="how-to-modify-keyboard-input-to-a-standard-control"></a>Postupy: Úprava vstupu klávesnice do standardního ovládacího prvku
 Windows Forms poskytuje možnost využívat a úprava vstupu klávesnice. Využívání klíč odkazuje na zpracování klíč v rámci obslužnou rutinu metody nebo události tak, aby jiné metody a události, které dolů fronty zpráv neobdrží hodnotu klíče. Úprava klíč odkazuje na úpravy hodnoty vlastnosti klíč tak, aby metody a obslužné rutiny událostí další dolů fronty zpráv dostávat na jinou hodnotu klíče. Toto téma ukazuje, jak provádět tyto úlohy.  
@@ -68,6 +68,7 @@ Windows Forms poskytuje možnost využívat a úprava vstupu klávesnice. Využ�
  Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  
   
 ## <a name="see-also"></a>Viz také:
-- [Vstup z klávesnice v aplikaci Windows Forms](keyboard-input-in-a-windows-forms-application.md)
+
+- [Vstup z klávesnice ve formulářové aplikaci Windows](keyboard-input-in-a-windows-forms-application.md)
 - [Uživatelský vstup v aplikaci Windows Forms](user-input-in-a-windows-forms-application.md)
 - [Jak funguje vstup z klávesnice](how-keyboard-input-works.md)

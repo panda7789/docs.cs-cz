@@ -1,5 +1,5 @@
 ---
-title: ICorDebugType2 Interface
+title: ICorDebugType2 – rozhraní
 ms.date: 03/30/2017
 api_name:
 - ICorDebugType2
@@ -16,14 +16,14 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f61efdecfb87ed598dd9675c0b8804259849e64c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 878941f7af71fa5e3de8e38c4a68a66cb964983d
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54706259"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59223157"
 ---
-# <a name="icordebugtype2-interface"></a>ICorDebugType2 Interface
+# <a name="icordebugtype2-interface"></a>ICorDebugType2 – rozhraní
 Rozšiřuje rozhraní ICorDebugType načtete identifikátor typu základního typu nebo komplexní typ (definovaný uživatelem).  
   
 ## <a name="methods"></a>Metody  
@@ -64,4 +64,5 @@ pType2->GetTypeID(&id);
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v462plus](../../../../includes/net-current-v462plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+
+- [Debugging – rozhraní](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

@@ -1,15 +1,15 @@
 ---
-title: DataTables
+title: Datové tabulky
 ms.date: 03/30/2017
 ms.assetid: 52ff0e32-3e5a-41de-9a3b-7b04ea52b83e
-ms.openlocfilehash: f0f429d7f28360fd76dfff0e7d4a4eba019e5acf
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f6509400d7f6633749155f778e3ba58ec6c27ec2
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54653243"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59207315"
 ---
-# <a name="datatables"></a>DataTables
+# <a name="datatables"></a>Datové tabulky
 A <xref:System.Data.DataSet> se skládá z kolekce tabulky, relace a omezení. V ADO.NET <xref:System.Data.DataTable> objekty se používají k vyjádření tabulky v **datovou sadu**. A **DataTable** představuje jedné tabulky v paměti relačních dat; je pro místní data. Aplikace založené na sítě, ve kterém se nachází, ale je možné importovat ze zdroje dat, jako je například Microsoft SQL serveru pomocí **DataAdapter** Další informace najdete v tématu [naplnění datové sady z adaptéru dat](../../../../../docs/framework/data/adonet/populating-a-dataset-from-a-dataadapter.md) .  
   
  **DataTable** třídy je členem skupiny **System.Data** oboru názvů v knihovně tříd rozhraní .NET Framework. Můžete vytvořit a použít **DataTable** samostatně nebo jako člen **datovou sadu**, a **DataTable** objektů lze také použít ve spojení s jinými objekty rozhraní .NET Framework včetně <xref:System.Data.DataView>. Přístup ke kolekci tabulek v **datovou sadu** prostřednictvím **tabulky** vlastnost **datovou sadu** objektu.  
@@ -56,4 +56,5 @@ A <xref:System.Data.DataSet> se skládá z kolekce tabulky, relace a omezení. V
  Najdete zde přehled knihovny tříd rozhraní .NET Framework, včetně **systému** obor názvů a také svůj obor názvů druhé úrovně **System.Data**.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

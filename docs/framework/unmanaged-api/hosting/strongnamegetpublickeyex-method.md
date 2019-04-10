@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5651415b9565f71e7c899996708c0b263bf0154a
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: 7cb1f55e1d8643feb2750e8ea468f608dc3d5d40
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57487990"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59212060"
 ---
 # <a name="strongnamegetpublickeyex-method"></a>StrongNameGetPublicKeyEx – metoda
 Získá veřejný klíč z dvojice veřejného/soukromého klíče a určuje algoritmus hash a algoritmus podpisu.  
@@ -76,9 +76,9 @@ HRESULT StrongNameGetPublicKey (
 ## <a name="remarks"></a>Poznámky  
  V následující tabulce jsou uvedeny sada platných hodnot pro `uHashAlgId` parametru.  
   
-|Název|Hodnota|  
+|Name|Value|  
 |----------|-----------|  
-|Žádná|0|  
+|Žádné|0|  
 |SHA-1|0x8004|  
 |SHA-256|0x800c|  
 |SHA-384|0x800d|  
@@ -94,6 +94,7 @@ HRESULT StrongNameGetPublicKey (
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [StrongNameTokenFromPublicKey – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnametokenfrompublickey-method.md)
 - [PublicKeyBlob – struktura](../../../../docs/framework/unmanaged-api/strong-naming/publickeyblob-structure.md)
 - [ICLRStrongName – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)

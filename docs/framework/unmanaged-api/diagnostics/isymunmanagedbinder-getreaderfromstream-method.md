@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 630895e131c2b3fd5a175a7a3c45140ad65d03aa
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: 21e147860c6859ea23409de31fed972c4f2bb432
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57503031"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59220913"
 ---
 # <a name="isymunmanagedbindergetreaderfromstream-method"></a>ISymUnmanagedBinder::GetReaderFromStream – metoda
 Rozhraní metadat a datový proud, který obsahuje úložiště symbolů, vrátí správné [isymunmanagedreader –](isymunmanagedreader-interface.md) struktura, která bude číst ladění symboly z úložiště daného symbolu.  
@@ -53,4 +53,5 @@ HRESULT GetReaderFromStream(
  **Záhlaví:** CorSym.idl, CorSym.h  
   
 ## <a name="see-also"></a>Viz také:
+
 - [ISymUnmanagedBinder – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder-interface.md)

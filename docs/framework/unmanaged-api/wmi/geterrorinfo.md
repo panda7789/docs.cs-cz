@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3b27dae07697943c696dc3419f2414701feb1220
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c2df4b87016394d1998ef90abe2e3eeb911886ef
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54577669"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59217495"
 ---
 # <a name="geterrorinfo-function"></a>GetErrorInfo – funkce
 Načte informace o chybě z předchozího volání funkce.  
@@ -50,4 +50,5 @@ Tato funkce zalamuje volání na [IComThreadingInfo::GetErrorInfo](/windows/desk
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

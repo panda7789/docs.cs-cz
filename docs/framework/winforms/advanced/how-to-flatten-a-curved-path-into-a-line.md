@@ -8,12 +8,12 @@ helpviewer_keywords:
 - paths [Windows Forms], flattening
 - drawing [Windows Forms], flattening curves
 ms.assetid: e654b8de-25f4-4735-9208-42e4514a589c
-ms.openlocfilehash: d4847124c7af2e0b35d6874f53b85be4891b22df
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: a151b4244e14d3704fd5fa1c55de92211981232f
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57711041"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59215154"
 ---
 # <a name="how-to-flatten-a-curved-path-into-a-line"></a>Postupy: Narovnání zakřivené cesty na čáru
 A <xref:System.Drawing.Drawing2D.GraphicsPath> ukládá posloupnost řádky a Bézierovy křivky. Několik typů křivky (symbol tří teček, elipsy, základní křivky vyhlazení) můžete přidat do cesty, ale každý křivka je převést na Bézierovy křivky před jejich uložením v cestě. Sloučení cesta se skládá z převodu jednotlivých Bézierovy křivky v cestě na řadu rovné čáry. Následující obrázek zobrazuje cestu, před a po sloučení.  
@@ -25,6 +25,7 @@ A <xref:System.Drawing.Drawing2D.GraphicsPath> ukládá posloupnost řádky a B�
 -   volání <xref:System.Drawing.Drawing2D.GraphicsPath.Flatten%2A> metodu <xref:System.Drawing.Drawing2D.GraphicsPath> objektu. <xref:System.Drawing.Drawing2D.GraphicsPath.Flatten%2A> Metoda obdrží plochosti argument, který určuje maximální vzdálenost mezi plochá cestu a původní cestu.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Drawing.Drawing2D.GraphicsPath?displayProperty=nameWithType>
 - [Čáry, křivky a obrazce](lines-curves-and-shapes.md)
 - [Sestavování a kreslení cest](constructing-and-drawing-paths.md)

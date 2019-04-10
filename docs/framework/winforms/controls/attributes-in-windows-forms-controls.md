@@ -7,12 +7,12 @@ helpviewer_keywords:
 - attributes [Windows Forms], control properties
 - attributes [Windows Forms], classes
 ms.assetid: 2c5640e9-6c6c-49d7-a5e4-a768f6be7853
-ms.openlocfilehash: 8e845df7eb83f01adb2086025cf47e7fdc896ba6
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 9dd4c2aabe1517b66d8e499de3cf2671bb94e0d6
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57724398"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59213598"
 ---
 # <a name="attributes-in-windows-forms-controls"></a>Atributy v ovládacích prvcích Windows Forms
 Rozhraní .NET Framework poskytuje širokou škálu atributy, které můžete provést u členů vlastní ovládací prvky a součásti. Některé z těchto atributů ovlivňují chování za běhu třídy a jiné ovlivňují chování během návrhu.  
@@ -61,6 +61,7 @@ Rozhraní .NET Framework poskytuje širokou škálu atributy, které můžete pr
 |<xref:System.ComponentModel.ToolboxItemFilterAttribute>|Určuje řetězec filtru a typ filtru určený pro položku sady nástrojů.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Attribute>
 - [Postupy: Použití atributů v ovládacích prvcích Windows Forms](how-to-apply-attributes-in-windows-forms-controls.md)
 - [Rozšíření podpory během návrhu](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/37899azc(v=vs.120))

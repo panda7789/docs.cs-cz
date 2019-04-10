@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 11002ac57a37b3c9ab0badfab49bb9049b0dfa79
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 4221dbea2b5ad98f889e04eb8a9b6d992b59066e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57369289"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59212294"
 ---
 # <a name="beginenumeration-function"></a>Funkce BeginEnumeration
 Obnoví enumerátor zpět na začátek výčtu.  
@@ -53,7 +53,7 @@ HRESULT BeginEnumeration (
 
 Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
 
-|Konstanta  |Hodnota  |Popis  |
+|Konstanta  |Value  |Popis  |
 |---------|---------|---------|
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | Kombinace příznaků v `lEnumFlags` není platný nebo neplatný argument byl zadán. |
 |`WBEM_E_UNEXPECTED` | 0x8004101d | Druhé volání `BeginEnumeration` proběhla bez opětovné volání [ `EndEnumeration` ](endenumeration.md). |
@@ -68,21 +68,21 @@ Příznaky, které mohou být předány jako `lEnumFlags` argument jsou definov�
 
 **Skupina 1**
 
-|Konstanta  |Hodnota  |Popis  |
+|Konstanta  |Value  |Popis  |
 |---------|---------|---------|
 |`WBEM_FLAG_KEYS_ONLY` | 0x4 | Obsahovat vlastnosti, které tvoří pouze klíč. |
 |`WBEM_FLAG_REFS_ONLY` | 0x8 | Zahrnují vlastnosti, které jsou pouze odkazy na objekty. |
 
 **Skupina 2**
 
-Konstanta  |Hodnota  |Popis  |
+Konstanta  |Value  |Popis  |
 |---------|---------|---------|
 |`WBEM_FLAG_SYSTEM_ONLY` | 0x30 | Omezte výčet pouze vlastnosti systému. |
 |`WBEM_FLAG_NONSYSTEM_ONLY` | 0x40 | Zahrnují vlastnosti místní a rozšíří ale vyloučit vlastnosti systému z výčtu. |
 
 Pro třídy:
 
-Konstanta  |Hodnota  |Popis  |
+Konstanta  |Value  |Popis  |
 |---------|---------|---------|
 |`WBEM_FLAG_CLASS_OVERRIDES_ONLY` | 0x100 | Omezte výčet vlastností přepsat v definici třídy. |
 |`WBEM_FLAG_CLASS_LOCAL_AND_OVERRIDES` | 0x100 | Omezte výčet vlastností přepsat v aktuální definici třídy a nové vlastnosti definované ve třídě. |
@@ -96,7 +96,6 @@ Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
 | `WBEM_FLAG_LOCAL_ONLY` | 0x10 | Omezte výčet vlastností, které jsou definovány nebo upraveny v samotné třídě. |
 | `WBEM_FLAG_PROPAGATED_ONLY` |  0x20 | Omezte výčet vlastností, které se dědí ze základní třídy. |
-
 
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  

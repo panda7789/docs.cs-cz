@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: a63a72eca636113ec5b339172a89441f3afdb092
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: 95ff27143453e7772b4a463fa66ca039bbb715fc
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57475746"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59226914"
 ---
 # <a name="exporttype-method"></a>ExportType – metoda
 Určuje, že je typem exportovatelné.  
@@ -65,6 +65,7 @@ HRESULT ExportType(
  Vyžaduje alink.h  
   
 ## <a name="see-also"></a>Viz také:
+
 - [IALink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
 - [IALink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
 - [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)

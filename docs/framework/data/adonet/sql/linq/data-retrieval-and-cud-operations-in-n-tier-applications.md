@@ -1,18 +1,18 @@
 ---
-title: Operace vytvoření v N-vrstvé aplikace (LINQ to SQL) a načítání dat
+title: Operace načítání dat a vytvoření, aktualizace a odstranění v N-úrovňových aplikacích (LINQ to SQL)
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: c3133d53-83ed-4a4d-af8b-82edcf3831db
-ms.openlocfilehash: ebbc53f2962c99bc31f998f1afcb4316f3ea81f5
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: c43935cd53d1b58ce695164e957b4b5376d52536
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54674700"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59209811"
 ---
-# <a name="data-retrieval-and-cud-operations-in-n-tier-applications-linq-to-sql"></a>Operace vytvoření v N-vrstvé aplikace (LINQ to SQL) a načítání dat
+# <a name="data-retrieval-and-cud-operations-in-n-tier-applications-linq-to-sql"></a>Operace načítání dat a vytvoření, aktualizace a odstranění v N-úrovňových aplikacích (LINQ to SQL)
 Při serializaci objektů entity jako je například Zákazníci a objednávky na klienta přes síť, tyto entity jsou odpojeny od jejich místní data. Datový kontext již sleduje jejich změny nebo jejich přidružení s jinými objekty. To není problém, tak dlouho, dokud klienti jsou jen ke čtení data. Také je poměrně jednoduchá, aby mohli klienti k přidání nových řádků do databáze. Nicméně pokud vaše aplikace vyžaduje, aby klienti mohli aktualizovat nebo odstranit data, pak je nutné připojit entity k nový kontext dat před voláním <xref:System.Data.Linq.DataContext.SubmitChanges%2A?displayProperty=nameWithType>. Navíc pokud použijete kontrolu optimistického řízení souběžnosti s původní hodnoty, pak musíte také poskytnout databázi původní entitu a entitu jako upravená. `Attach` Metody jsou k dispozici umožňuje entity přejde do nového kontextu dat byla odpojena.  
   
  I když je serializována objekty proxy místo [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] entity, stále musíte vytvořit entitu na vrstvy přístupu k datům (DAL) a připojit ho k nové <xref:System.Data.Linq.DataContext?displayProperty=nameWithType>, aby bylo možné odeslat data do databáze.  
@@ -407,5 +407,6 @@ public void UpdateProductInfo(Product newProd, Product originalProd)
  Jestliže se pokusíte připojit s `IEnumerable` sadu objektů, <xref:System.Data.Linq.DuplicateKeyException> je vyvolána, když je k dispozici již existujícího klíče. Zbývající objekty nejsou připojeny.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [N-vrstvé a vzdálené aplikace s LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/n-tier-and-remote-applications-with-linq-to-sql.md)
 - [Základní informace](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)

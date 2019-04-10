@@ -5,12 +5,12 @@ helpviewer_keywords:
 - markup extensions [XAML Services], custom
 - XAML [XAML Services], markup extensions
 ms.assetid: 261b2b11-2dc0-462f-8c66-55b8c9c6e436
-ms.openlocfilehash: 81e142a6989ad2c2c365def4ad43e1bad505c411
-ms.sourcegitcommit: 5c1abeec15fbddcc7dbaa729fabc1f1f29f12045
+ms.openlocfilehash: 41fe3cb368bed12ccb2dbe9bd31f95fd556e3968
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58019167"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59224920"
 ---
 # <a name="markup-extensions-for-xaml-overview"></a>Přehled rozšíření značek pro jazyk XAML
 Rozšíření značek jsou technika XAML pro získání hodnotu, která není na primitivní ani určitého typu XAML. Pro použití atributu rozšíření značek používat známé znak sekvence otevírající složenou závorku `{` k zadání oboru rozšíření značek a uzavírací složenou závorku `}` ukončíte. Při použití rozhraní .NET Framework XAML Services, můžete použít některé z předdefinovaných rozšíření značek jazyka XAML v oboru názvů System.Xaml sestavení. Můžete také jsou podtřídami tříd <xref:System.Windows.Markup.MarkupExtension> třídy definované v oboru názvů System.Xaml a definovat vlastní rozšíření značek. Nebo můžete použít rozšíření značek, které jsou definována v určité rozhraní, pokud se už odkazuje na dané rozhraní.  
@@ -155,6 +155,7 @@ public Collate(CollationMode collationMode, object collateThis) {...}
  Pokud pracujete s datový proud uzlu XAML Uložit cestu, obvykle není k dispozici v reprezentaci grafu objektů, který informuje, že objekt určený k serializaci byla původně poskytované použití rozšíření značky a `ProvideValue` výsledek. Scénáře, které je potřeba zachovat použití rozšíření značky u verzemi, zatímco také zaznamenání další změny v grafu objektů musí navrhnout svoje vlastní techniky pro zachování informací o použití rozšíření značky z původní vstup XAML. Například chcete-li obnovit použití rozšíření značky, budete muset pracovat s datovém proudu uzlu na Uložit cestu, aby bylo možné obnovit použití rozšíření značky nebo provádí nějaký typ sloučení mezi původní XAML a XAML odbavovaná. Některé implementace XAML architektury, jako jsou WPF reprezentují případy, kdy použití rozšíření značky zadané hodnoty pomocí vnitřní typy (výrazy).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Markup.MarkupExtension>
 - [Převaděče typů a rozšíření značek pro jazyk XAML](type-converters-and-markup-extensions-for-xaml.md)
 - [Rozšíření značek a WPF XAML](../wpf/advanced/markup-extensions-and-wpf-xaml.md)

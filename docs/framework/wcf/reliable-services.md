@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Windows Communication Foundation [WCF], reliable sessions
 - service contracts [WCF], reliable services
 ms.assetid: 07814ed0-0775-47f2-987b-d8134fdd5099
-ms.openlocfilehash: a3a53cb26ffb0e5934982c1c9f367115177b9b59
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a617100e46d4bcafb9325efa99c255f2f8ee5981
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54559395"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59216766"
 ---
 # <a name="reliable-services"></a>Spolehlivé služby
 Fronty a spolehlivé relace jsou funkce Windows Communication Foundation (WCF), které implementují spolehlivé zasílání zpráv. Toto téma popisuje funkce spolehlivé zasílání zpráv služby WCF.  
@@ -45,5 +45,6 @@ Fronty a spolehlivé relace jsou funkce Windows Communication Foundation (WCF), 
  Oddělení, spolu s přenosy spolehlivých zpráv mezi front, umožňuje aplikacím, které jsou volně vázány spolehlivě komunikovat. Na rozdíl od spolehlivé relace zdrojových a cílových nemusí běžet ve stejnou dobu. To umožňuje implicitně scénáře, kde fronty, v důsledku toho slouží jako mechanismus pro vyrovnávání zatížení při zdroje na počet zpráv produkční a míra cíle spotřeby zprávy se neshodují. Další informace o frontách najdete v tématu [fronty ve WCF](../../../docs/framework/wcf/feature-details/queues-in-wcf.md).  
   
 ## <a name="see-also"></a>Viz také:
-- [Přehled spolehlivých relací](../../../docs/framework/wcf/feature-details/reliable-sessions-overview.md)
-- [Zařazování do front ve WCF](../../../docs/framework/wcf/feature-details/queuing-in-wcf.md)
+
+- [Spolehlivé relace – přehled](../../../docs/framework/wcf/feature-details/reliable-sessions-overview.md)
+- [Fronty ve WCF](../../../docs/framework/wcf/feature-details/queuing-in-wcf.md)

@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Určení zdroje připojení'
+title: 'Postupy: Určení zdroje vazby'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - data binding [WPF], binding source
 - binding sources [WPF]
 ms.assetid: 55d47757-2648-4a52-987f-b767953f168c
-ms.openlocfilehash: 105924fec2956f2f74a2a574ee62f71a37df9366
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 8c866502300c50e00f1393b9e3fb64099f027c43
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57356718"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59222299"
 ---
-# <a name="how-to-specify-the-binding-source"></a>Postupy: Určení zdroje připojení
+# <a name="how-to-specify-the-binding-source"></a>Postupy: Určení zdroje vazby
 V datové vazbě objekt zdroj vazby odkazuje na objekt, který je získat data z. Toto téma popisuje různé způsoby určení zdroje připojení.  
   
 ## <a name="example"></a>Příklad  
@@ -44,9 +44,10 @@ V datové vazbě objekt zdroj vazby odkazuje na objekt, který je získat data z
 |<xref:System.Windows.Data.Binding.ElementName%2A>|Při zadání řetězce, který reprezentuje element, který chcete svázat. To je užitečné, pokud chcete vytvořit vazbu na vlastnost jiný element ve vaší aplikaci. Například, pokud chcete použít <xref:System.Windows.Controls.Slider> řídit výšku jiný ovládací prvek ve vaší aplikaci, nebo pokud chcete vytvořit vazbu <xref:System.Windows.Controls.ContentControl.Content%2A> ovládacího prvku na <xref:System.Windows.Controls.Primitives.Selector.SelectedValue%2A> vlastnost vaše <xref:System.Windows.Controls.ListBox> ovládacího prvku. Další informace naleznete v tématu <xref:System.Windows.Data.Binding.ElementName%2A>.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.FrameworkElement.DataContext%2A?displayProperty=nameWithType>
 - <xref:System.Windows.FrameworkContentElement.DataContext%2A?displayProperty=nameWithType>
 - [Dědičnost hodnoty vlastnosti](../advanced/property-value-inheritance.md)
 - [Přehled datových vazeb](data-binding-overview.md)
-- [Přehled deklarací vazeb](binding-declarations-overview.md)
-- [Témata s postupy](data-binding-how-to-topics.md)
+- [Přehled deklarací připojení](binding-declarations-overview.md)
+- [– postupy](data-binding-how-to-topics.md)

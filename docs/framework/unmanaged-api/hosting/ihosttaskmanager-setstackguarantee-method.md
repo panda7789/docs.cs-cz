@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e30ad0e71945325d3788387af055858034ded8c4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 3e12a2997468d02b1224f65064bf544495854eb3
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54730069"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59221225"
 ---
 # <a name="ihosttaskmanagersetstackguarantee-method"></a>IHostTaskManager::SetStackGuarantee – metoda
 Vyhrazeno pouze pro interní použití.  
@@ -45,5 +45,6 @@ HRESULT SetStackGuarantee(
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [GetStackGuarantee – metoda](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-getstackguarantee-method.md)
 - [IHostTaskManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-interface.md)

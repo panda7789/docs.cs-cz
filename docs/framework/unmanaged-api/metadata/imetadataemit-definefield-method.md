@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: f8553665ba64a1c8e1cb6398d94cd1f772a566ed
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: a8ba8a762c56a666c67b25b9ce0420099fce419a
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57466658"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59223521"
 ---
 # <a name="imetadataemitdefinefield-method"></a>IMetaDataEmit::DefineField – metoda
 Vytvoří definici pro pole s podpisem Zadaná metadata a získá token pro tuto definici pole.  
@@ -81,5 +81,6 @@ HRESULT DefineField (
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
 - [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

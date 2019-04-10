@@ -2,12 +2,12 @@
 title: Spouštění ukázek Windows Communication Foundation
 ms.date: 03/30/2017
 ms.assetid: db8a83da-95c1-4a21-a9d2-48caeb6398ea
-ms.openlocfilehash: aec7d7f9ce0a6db5d20bce47ab313f4248e86c88
-ms.sourcegitcommit: bef803e2025642df39f2f1e046767d89031e0304
-ms.translationtype: MT
+ms.openlocfilehash: 32925caccee08c27e023d7ffae992e38cb496868
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56304671"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59209213"
 ---
 # <a name="running-the-windows-communication-foundation-samples"></a>Spouštění ukázek Windows Communication Foundation
 Ukázky Windows Communication Foundation (WCF) můžete spustit v konfiguraci jednoho počítače nebo mezi počítači. Jako zadán, ukázky jsou připravené ke spuštění na jednom počítači. V konfiguraci mezi počítači je nutné upravit nastavení tohoto příkladu konfiguračního souboru. Následující postupy popisují, jak ve stejném počítači a mezi počítači konfiguracích spuštění ukázky. Všimněte si, že jsou změny v postupu pro služby hostované v Internetové informační služby (IIS) a ukázky v místním prostředí. Většina ukázek, které jsou hostované ve službě IIS; Podívejte se ukázkovými informacemi o souboru readme k určení, jak je hostovaná.  
@@ -80,5 +80,6 @@ Ukázky Windows Communication Foundation (WCF) můžete spustit v konfiguraci je
 -   Pokud služba je hostována ve službě IIS pro účely zabezpečení, odeberte definici virtuální adresář a oprávnění udělené v kroků instalace, až budete hotovi s ukázkami.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Ukázky vytváření Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md)
 - [Řešení potíží s tipy pro ukázky WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90))

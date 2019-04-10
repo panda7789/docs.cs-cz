@@ -5,12 +5,12 @@ helpviewer_keywords:
 - certificates [WCF], specifying the certificate authority certificate chain
 - certificates [WCF], verifying signatures
 ms.assetid: 7c719355-aa41-4567-80d0-5115a8cf73fd
-ms.openlocfilehash: 8d44e9f9278a212813fca5e77ebfca72734c60d6
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 43296fad9519a08db5facdd220492ac70dffeca2
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54648781"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59224464"
 ---
 # <a name="how-to-specify-the-certificate-authority-certificate-chain-used-to-verify-signatures-wcf"></a>Postupy: Zadání řetězu certifikátů certifikační autority používaného k ověřování podpisů (WCF)
 Přijetí Windows Communication Foundation (WCF) protokolu SOAP zprávy podepsány pomocí certifikátu X.509, ve výchozím nastavení ověřuje, že certifikát X.509 byl vydán důvěryhodnou certifikační autoritou. To se provádí vyhledávání v úložišti certifikátů a určení, pokud certifikát u této certifikační autoritě je určený jako důvěryhodné. Aby WCF za účelem určení musí být nainstalována řetěz certifikátů certifikační autority v úložišti certifikátů správné.  
@@ -34,4 +34,5 @@ Přijetí Windows Communication Foundation (WCF) protokolu SOAP zprávy podepsá
          Další informace o pomocí modulu snap-in Certifikáty konzoly MMC, naleznete v tématu [jak: Zobrazení certifikátů pomocí modulu Snap-in konzoly MMC](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Práce s certifikáty](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)

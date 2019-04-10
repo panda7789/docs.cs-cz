@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: ae275793-857d-4102-9095-b4c2a02d57f4
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: c2969551bef279e6b13d2b08ff7f0e4711a80794
-ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
+ms.openlocfilehash: c825ccc15ff7eeb736169f7ae120b4a3692ffe39
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56219240"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59216467"
 ---
 # <a name="net-performance-tips"></a>Tipy pro zvýšení výkonu rozhraní .NET
 Termín *výkonu* obecně označuje rychlost vykonávání programu. Někdy můžete zvýšit rychlost provádění dodržováním určitých základních pravidel ve zdrojovém kódu. V některých aplikacích je třeba pečlivě zkoumat kód a ujistěte se, že běží tak rychle za pomocí profilerů. V jiných programech není nutné provést takovou optimalizaci, protože je kód spuštěn přijatelně rychle při zápisu. Tento článek uvádí některé běžné oblasti, kde může být výkon negativně a tipy pro zlepšení ji taky odkazy na další témata výkonu. Další informace o plánování a měření výkonu najdete v tématu [výkonu](../../../docs/framework/performance/index.md)  
@@ -43,6 +43,7 @@ Termín *výkonu* obecně označuje rychlost vykonávání programu. Někdy mů�
 -   [Blog daňové Morrison](https://blogs.msdn.microsoft.com/vancem/)
   
 ## <a name="see-also"></a>Viz také:
+
 - [Výkon](../../../docs/framework/performance/index.md)
-- [Průvodce programováním v jazyce Visual Basic](../../visual-basic/programming-guide/index.md)
-- [Průvodce programováním v jazyce C#](../../csharp/programming-guide/index.md)
+- [Příručka k programování v jazyce Visual Basic](../../visual-basic/programming-guide/index.md)
+- [Průvodce programováním v C#](../../csharp/programming-guide/index.md)

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - WCF Data Services, client library
 - data binding, WCF Data Services
 ms.assetid: b32e1d49-c214-4cb1-867e-88fbb3d08c8d
-ms.openlocfilehash: 1207a25a6718fddf9d18206a4cc09089806edecc
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 8e6b0d9c9b5d2b473aebc00063bd0a343b8708c6
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54538528"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59226661"
 ---
 # <a name="binding-data-to-controls-wcf-data-services"></a>Vazba dat k ovládacím prvkům (WCF Data Services)
 S [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], můžete svázat ovládací prvky, jako `ComboBox` a `ListView` ovládacích prvků do instance <xref:System.Data.Services.Client.DataServiceCollection%601> třídy. Tuto kolekci, která dědí z <xref:System.Collections.ObjectModel.ObservableCollection%601> třídy, obsahuje data z [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] informačního kanálu. Tato třída reprezentuje kolekci dynamická data, která poskytuje oznámení, pokud získat přidávat nebo odebírat položky. Při použití instance <xref:System.Data.Services.Client.DataServiceCollection%601> pro datovou vazbu [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] klientské knihovny pro zpracování těchto událostí k zajištění, že objekty sledován pomocí funkce <xref:System.Data.Services.Client.DataServiceContext> zůstane synchronizovaná s daty v elementu vazby uživatelského rozhraní.  
@@ -114,5 +114,6 @@ S [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], můžete svázat 
  Další informace najdete v tématu [aktualizace datové služby](../../../../docs/framework/data/wcf/updating-the-data-service-wcf-data-services.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Postupy: Ruční generování tříd klientské datové služby](../../../../docs/framework/data/wcf/how-to-manually-generate-client-data-service-classes-wcf-data-services.md)
 - [Postupy: Přidání odkazu na datovou službu](../../../../docs/framework/data/wcf/how-to-add-a-data-service-reference-wcf-data-services.md)

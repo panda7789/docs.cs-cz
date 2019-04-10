@@ -6,12 +6,12 @@ helpviewer_keywords:
 - WCF, transactions
 - Windows Communication Foundation, transactions
 ms.assetid: c7757854-1207-4019-8b31-552578b7d570
-ms.openlocfilehash: c58a5ebc033f75413a975e6b1de4ed71d23a141b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 42276a9b450b6f0664901747239195ab13f7c44d
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54548479"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59223105"
 ---
 # <a name="windows-communication-foundation-transactions-overview"></a>Transakce ve Windows Communication Foundation – přehled
 Transakce poskytují způsob seskupení sady akcí nebo operací do jedné jednotky nedělitelných spuštění. Transakce je soubor operací s následujícími vlastnostmi:  
@@ -41,5 +41,6 @@ Transakce poskytují způsob seskupení sady akcí nebo operací do jedné jedno
  Další informace najdete v tématu [atributy transakce ServiceModel](../../../../docs/framework/wcf/feature-details/servicemodel-transaction-attributes.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Atributy transakce ServiceModel](../../../../docs/framework/wcf/feature-details/servicemodel-transaction-attributes.md)
 - [Povolení toku transakcí](../../../../docs/framework/wcf/feature-details/enabling-transaction-flow.md)

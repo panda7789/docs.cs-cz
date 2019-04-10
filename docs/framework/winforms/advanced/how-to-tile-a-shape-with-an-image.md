@@ -10,12 +10,12 @@ helpviewer_keywords:
 - shapes [Windows Forms], tiling with images
 - bitmaps [Windows Forms], filling shapes with
 ms.assetid: 6d407891-6e5c-4495-a546-3da5604e9fb8
-ms.openlocfilehash: d873ba717fa94852692ce395ef7da30c512aba59
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: ad7b8737a63028e533cadfa6db56b063eb943f22
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57719686"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59221535"
 ---
 # <a name="how-to-tile-a-shape-with-an-image"></a>Postupy: Dlaždicové vyplnění obrazce pomocí obrázku
 Stejně jako dlaždice mohou být umístěny vedle sebe k pokrytí a podlaží, obdélníkové imagí umístěny vedle sebe na hodnotu fill (dlaždice) tvaru. Na dlaždici vnitřní část obrazce pomocí textury štětce. Při sestavování <xref:System.Drawing.TextureBrush> objekt, jeden z argumentů předat konstruktoru je <xref:System.Drawing.Image> objektu. Když Vymalovat vnitřní část obrazce pomocí textury štětce, tvar je vyplněn opakovaného kopírování tohoto obrázku.  
@@ -61,4 +61,5 @@ Stejně jako dlaždice mohou být umístěny vedle sebe k pokrytí a podlaží, 
  [!code-vb[System.Drawing.UsingABrush#34](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.UsingABrush/VB/Class1.vb#34)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Použití štětce k vyplnění obrazců](using-a-brush-to-fill-shapes.md)

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - RoutedCommand class [WPF], attaching to a Control
 - classes [WPF], RoutedCommand [WPF], attaching to a Control
 ms.assetid: dad08f64-700b-46fb-ad3f-fbfee95f0dfe
-ms.openlocfilehash: 66b371f4d67c1102ddf341dd4b70aac66aa41605
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 3ae45c9a9e33a3cb53ada6e1e5430ae0f9e6c198
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57352669"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59216974"
 ---
 # <a name="how-to-hook-up-a-command-to-a-control-with-no-command-support"></a>Postupy: Propojení příkazu s ovládacím prvkem bez podpory příkazů
 Následující příklad ukazuje, jak k připojení <xref:System.Windows.Input.RoutedCommand> k <xref:System.Windows.Controls.Control> které není mít vestavěnou podporou pro příkaz.  Kompletní příklad, který zachytí příkazy do více zdrojů, najdete v článku [vytvořením ukázkového routedcommand – vlastní](https://github.com/Microsoft/WPF-Samples/tree/master/Input%20and%20Commands/CustomRoutedCommand) vzorku.  
@@ -47,5 +47,6 @@ Následující příklad ukazuje, jak k připojení <xref:System.Windows.Input.R
  [!code-vb[CommandHandlerProcedural#CommandHandlerBindingInit](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CommandHandlerProcedural/visualbasic/window1.xaml.vb#commandhandlerbindinginit)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled příkazů](commanding-overview.md)
 - [Propojení příkazu s ovládacím prvkem s podporou příkazů](how-to-hook-up-a-command-to-a-control-with-command-support.md)

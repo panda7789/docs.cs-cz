@@ -2,12 +2,12 @@
 title: 'Postupy: Používání filtrů'
 ms.date: 03/30/2017
 ms.assetid: f2c7255f-c376-460e-aa20-14071f1666e5
-ms.openlocfilehash: 1d521162f2878a00d4d8ff7515ca2aabf32db97e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 6f145a9bc2842eaa5dad1a1c0ec6d77eb2b37552
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54530986"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59216194"
 ---
 # <a name="how-to-use-filters"></a>Postupy: Používání filtrů
 Toto téma popisuje základní kroky potřebné k vytvoření konfigurace směrování, která používá více filtrů. V tomto příkladu jsou směrovány dvě implementace službu kalkulačky, regularCalc a roundingCalc zprávy. Obou implementacích podporují stejné operace; jedna služba ale Zaokrouhlí všechny výpočty na nejbližší celočíselnou hodnotu před vrácením. Klientská aplikace musí být schopen určit, jestli se má použít zaokrouhlení verze služby; Pokud je vyjádřená žádná předvolba služby zpráva je mezi těmito dvěma službami s vyrovnáváním zatížení. Operace vystavené obě služby jsou:  
@@ -326,4 +326,5 @@ Toto téma popisuje základní kroky potřebné k vytvoření konfigurace směro
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Směrovací služby](../../../../docs/framework/wcf/samples/routing-services.md)

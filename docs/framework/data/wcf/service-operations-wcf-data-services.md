@@ -8,12 +8,12 @@ helpviewer_keywords:
 - service operations [WCF Data Services]
 - WCF Data Services, service operations
 ms.assetid: 583a690a-e60f-4990-8991-d6efce069d76
-ms.openlocfilehash: 38e9553d77612635f0403a8dc34c368379116e8c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: b63c6d8f3a5a949299a925a321ca8f01c67b1d8f
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54497115"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59211969"
 ---
 # <a name="service-operations-wcf-data-services"></a>Operace služby (WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] slouží k definování operace služby ve službě data ke zveřejnění metody na serveru. Operace služby jako ostatní prostředky služby data jsou vyřešeny identifikátorů URI. Operace služby umožňují vám umožní vystavit obchodní logiku v datové služby, jako například do implementace logiky ověření na základě rolí zabezpečení, nebo k vystavení specializovaných možnostmi dotazování. Operace služeb se přidá k třídě datové služby, která je odvozena z metody <xref:System.Data.Services.DataService%601>. Stejně jako všechny ostatní prostředkům datové služby můžete zadat parametry pro metodu operaci služby. Například následující operace identifikátor URI služby (na základě [rychlý Start](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md) datové služby) předá hodnotu `London` k `city` parametr:  
@@ -105,4 +105,5 @@ http://localhost:12345/Northwind.svc/GetOrdersByCity?city='London'&$expand=Order
  [!code-vb[Astoria Northwind Service#HandleExceptions](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind service/vb/northwind2.svc.vb#handleexceptions)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Zachycovače](../../../../docs/framework/data/wcf/interceptors-wcf-data-services.md)

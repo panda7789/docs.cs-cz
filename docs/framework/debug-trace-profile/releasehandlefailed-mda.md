@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 44cd98ba-95e5-40a1-874d-e8e163612c51
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 69dea1adb2d751b44f6c8bc529353ff78cad60ad
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 3b149a9b8ee41f5e196fd69258044f9b6563cb99
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54673043"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59217871"
 ---
 # <a name="releasehandlefailed-mda"></a>releaseHandleFailed – pomocník spravovaného ladění (MDA)
 `releaseHandleFailed` Spravovaného ladění (MDA) pomocníka s nastavením je aktivován je upozornit vývojáře při <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> metodě třídy odvozené z <xref:System.Runtime.InteropServices.SafeHandle> nebo <xref:System.Runtime.InteropServices.CriticalHandle> vrátí `false`.  
@@ -34,7 +34,7 @@ ms.locfileid: "54673043"
   
 -   Jakékoli neúspěchy, ke kterým došlo během provádění <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A>Včerejší verze prostředku, je chyba v implementaci <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> metoda sama. Je odpovědností programátorovi, aby zajistěte, aby byl kontrakt, i v případě, že kód volá kód vytvořené někým jiným, aby fungoval.  
   
-## <a name="resolution"></a>Rozlišení  
+## <a name="resolution"></a>Řešení  
  Kód, který používá konkrétní <xref:System.Runtime.InteropServices.SafeHandle> (nebo <xref:System.Runtime.InteropServices.CriticalHandle>) typ, který vyvolá oznámení MDA byste měli zkontrolovat, hledá místa, kde je hodnota nezpracovanou popisovače extrahují z <xref:System.Runtime.InteropServices.SafeHandle> a zkopírovat jinde. Toto je obvyklou příčinou selhání v rámci <xref:System.Runtime.InteropServices.SafeHandle> nebo <xref:System.Runtime.InteropServices.CriticalHandle> implementace, protože využití hodnota nezpracovanou popisovače je potom už sledován pomocí funkce modulu runtime. Kopírování nezpracovaná popisovač je následně zavřená, může způsobit pozdější <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> volání se nezdařila, protože dojde k pokusu o uzavření na stejné popisovač, který je nyní neplatný.  
   
  Existuje mnoho způsobů, ve kterém může dojít, duplikace nesprávné popisovač:  
@@ -91,6 +91,7 @@ bool ReleaseHandle()
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
 - [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
 - [Zařazování spolupráce](../../../docs/framework/interop/interop-marshaling.md)

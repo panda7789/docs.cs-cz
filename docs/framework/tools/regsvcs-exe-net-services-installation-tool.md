@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 5220fe58-5aaf-4e8e-8bc3-b78c63025804
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b80df56c9f45f7dd195e1f7bbd03063fa30abb3a
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: 1b529ccd8c5e0cf0563adf556a7d316372ac4d0e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57466734"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59215037"
 ---
 # <a name="regsvcsexe-net-services-installation-tool"></a>Regsvcs.exe (nástroj pro instalaci služeb .NET)
 Instalační nástroj .NET Services vykonává tyto akce:  
@@ -50,11 +50,11 @@ Instalační nástroj .NET Services vykonává tyto akce:
 |**/appdir:** *cesta*|Určuje kořenový adresář aplikace.|  
 |**příkazy/appname:** *applicationName*|Určuje název aplikace modelu COM+, která se má vyhledat nebo vytvořit.|  
 |**/c**|Vytvoří cílovou aplikaci.|  
-|**RegSvcs**|Nakonfiguruje pouze součásti; ignoruje metody a rozhraní.|  
+|**/componly**|Nakonfiguruje pouze součásti; ignoruje metody a rozhraní.|  
 |**/exapp**|Určuje, že nástroj má očekávat existující aplikaci.|  
 |**/extlb**|Použije existující knihovnu typů.|  
 |**/fc**|Vyhledá nebo vytvoří cílovou aplikaci.|  
-|**/ Help**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
+|**/help**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
 |**/noreconfig**|Znovu nekonfiguruje existující cílovou aplikaci.|  
 |**/nologo**|Potlačí zobrazení úvodního nápisu společnosti Microsoft.|  
 |**/parname:** *název*|Určuje název nebo ID aplikace modelu COM+, která se má vyhledat nebo vytvořit.|  
@@ -87,6 +87,7 @@ regsvcs /appname:myTargetApp /tlb:newTest.tlb myTest.dll
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Nástroje](../../../docs/framework/tools/index.md)
 - [Postupy: Podepsání sestavení silným názvem](../../../docs/framework/app-domains/how-to-sign-an-assembly-with-a-strong-name.md)
 - [Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

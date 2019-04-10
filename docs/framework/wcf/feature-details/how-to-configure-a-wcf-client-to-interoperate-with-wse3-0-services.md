@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 3dadd7f1-d207-4ea5-a73b-3e8aa44407f8
-ms.openlocfilehash: 345677f992491022a12fb03981f644343e405dfe
-ms.sourcegitcommit: d9a0071d0fd490ae006c816f78a563b9946e269a
-ms.translationtype: MT
+ms.openlocfilehash: 0136fa7c3a51a7d64340c6251e9f5eb63017ffd4
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "55066451"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59220692"
 ---
 # <a name="how-to-configure-a-wcf-client-to-interoperate-with-wse30-services"></a>Postupy: Konfigurace klienta WCF na vzájemnou spolupráci se službami WSE3.0
 Klientů Windows Communication Foundation (WCF) jsou přenosový kompatibilní s Web Services vylepšení 3.0 služby rozhraní Microsoft .NET (Najít), když klienti WCF umožňují použít verzi specifikace WS-Addressing ze srpna 2004.  
@@ -57,11 +57,11 @@ Klientů Windows Communication Foundation (WCF) jsou přenosový kompatibilní s
   
 ## <a name="example"></a>Příklad  
  Následující příklad kódu definuje vlastní vazby, které zpřístupní vlastnosti, které odpovídají vlastnosti kontrolní výraz WSE 3.0 na klíč zabezpečení. Vlastní vazby, který se nazývá `WseHttpBinding`, se pak použije k určení vlastností vazby pro klienta WCF.  
-  
-  
+
 [!code-csharp[c_WCFClientToWSEService#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_wcfclienttowseservice/cs/client.cs#0)]
 [!code-vb[c_WCFClientToWSEService#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_wcfclienttowseservice/vb/client.vb#0)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Channels.Binding>
 - [Spolupráce s WSE](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms752257%28v=vs.90%29)

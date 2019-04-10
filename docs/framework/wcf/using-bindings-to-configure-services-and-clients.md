@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - bindings [WCF], using
 ms.assetid: c39479c3-0766-4a17-ba4c-97a74607f392
-ms.openlocfilehash: 45a904eb9e38b13fc3502264f4659bfd25465630
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
-ms.translationtype: MT
+ms.openlocfilehash: 8080451d64f74629451c6ca66fb27d93c9f29ed8
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58410417"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59209499"
 ---
 # <a name="using-bindings-to-configure-services-and-clients"></a>Používání vazeb ke konfiguraci služeb a klientů
 Vazby jsou objekty, které určují podrobnosti o komunikaci požadované pro připojení na koncový bod. Přesněji řečeno vazby obsahují informace o konfiguraci, která se používá k vytvoření modul runtime klienta nebo služby tak, že definujete, jaké jsou specifikace přenosy, formáty (kódování zpráv) a protokoly pro příslušného klienta nebo koncový bod kanálu. K vytvoření funkční služby Windows Communication Foundation (WCF), každý koncový bod služby vyžaduje vazbu. Toto téma vysvětluje, co jsou vazby, jak jsou definovány a jak je určeno konkrétní vazeb pro koncový bod.  
@@ -57,8 +57,9 @@ Vazby jsou objekty, které určují podrobnosti o komunikaci požadované pro p�
 -   [Kurz: Vytvoření klienta Windows Communication Foundation](../../../docs/framework/wcf/how-to-create-a-wcf-client.md) poskytuje příklad vytvoření klienta s použitím konfigurace.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled vytváření koncových bodů](../../../docs/framework/wcf/endpoint-creation-overview.md)
-- [Postupy: Zadání vazby služby v konfiguraci](../../../docs/framework/wcf/how-to-specify-a-service-binding-in-configuration.md)
-- [Postupy: Zadání vazby služby v kódu](../../../docs/framework/wcf/how-to-specify-a-service-binding-in-code.md)
-- [Postupy: Zadání klientské vazby v konfiguraci](../../../docs/framework/wcf/how-to-specify-a-client-binding-in-configuration.md)
-- [Postupy: Zadání klientské vazby v kódu](../../../docs/framework/wcf/how-to-specify-a-client-binding-in-code.md)
+- [Postupy: Určení vazby služby v konfiguraci](../../../docs/framework/wcf/how-to-specify-a-service-binding-in-configuration.md)
+- [Postupy: Určení vazby služby v kódu](../../../docs/framework/wcf/how-to-specify-a-service-binding-in-code.md)
+- [Postupy: Určení klientské vazby v konfiguraci](../../../docs/framework/wcf/how-to-specify-a-client-binding-in-configuration.md)
+- [Postupy: Určení klientské vazby v kódu](../../../docs/framework/wcf/how-to-specify-a-client-binding-in-code.md)

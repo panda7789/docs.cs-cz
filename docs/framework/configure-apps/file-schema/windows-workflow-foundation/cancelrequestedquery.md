@@ -3,12 +3,12 @@ title: <cancelRequestedQuery>
 ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: 8da9b1c4-338a-4f23-9830-6d257772d340
-ms.openlocfilehash: 049ca79355f13fd4ffacedbb7501d760361f0a81
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 5f2e46d5e4cdd64c37219476790b9ff92c606b6b
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55282019"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59215310"
 ---
 # <a name="cancelrequestedquery"></a>\<cancelRequestedQuery>
 Představuje dotaz, který se používá ke sledování požadavků pro zrušení podřízené aktivity Nadřazená aktivita. Dotaz, je nezbytné pro sledování účastníka přihlásit k odběru zrušit požadavek záznam objekty.  
@@ -57,6 +57,7 @@ Představuje dotaz, který se používá ke sledování požadavků pro zrušen�
 |[\<faultPropagationQuery>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/faultpropagationquery.md)|Představuje seznam konfigurační prvky, které se používají ke sledování požadavků pro zrušení podřízené aktivity Nadřazená aktivita. Dotaz, je nezbytné pro sledování účastníka přihlásit k odběru zrušit požadavek záznam objekty.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Activities.Tracking.Configuration.CancelRequestedQueryElement?displayProperty=nameWithType>
 - <xref:System.Activities.Tracking.CancelRequestedQuery?displayProperty=nameWithType>
 - [Sledování a trasování pracovních postupů](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)

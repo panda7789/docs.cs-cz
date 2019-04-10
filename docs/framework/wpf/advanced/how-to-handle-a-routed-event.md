@@ -8,12 +8,12 @@ helpviewer_keywords:
 - routed events [WPF], handling
 - bubbling events [WPF]
 ms.assetid: 157787b4-f469-4047-8777-5b034145f32e
-ms.openlocfilehash: 42f5f247e775fbf0bd323fc693a74d6149c87bb3
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: edb3d6724af89b7e85986c50b579084e3c4e5070
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57368191"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59211592"
 ---
 # <a name="how-to-handle-a-routed-event"></a>Postupy: Zpracování směrované události
 Tento příklad ukazuje, jak šíření pracovní událostí a jak napsat obslužnou rutinu, která dokáže zpracovávat data směrované události.  
@@ -35,8 +35,9 @@ Tento příklad ukazuje, jak šíření pracovní událostí a jak napsat obslu�
  [!code-vb[RoutedEventHandle#Handler](~/samples/snippets/visualbasic/VS_Snippets_Wpf/RoutedEventHandle/VisualBasic/MainWindow.xaml.vb#handler)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.RoutedEvent>
 - [Přehled vstupu](input-overview.md)
 - [Přehled směrovaných událostí](routed-events-overview.md)
-- [Témata s postupy](events-how-to-topics.md)
+- [– postupy](events-how-to-topics.md)
 - [Podrobná syntaxe XAML](xaml-syntax-in-detail.md)

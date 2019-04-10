@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: Určení směru připojení'
+title: 'Postupy: Určení směru vazby'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - direction of binding [WPF]
 - binding direction [WPF]
 - data binding [WPF], direction of binding
 ms.assetid: 37334478-028b-4514-86c9-1420709f4818
-ms.openlocfilehash: 265271cee16d203d7652281c5416b93759e66d4b
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 4334ed178e7f2ed90928db6b434eb8c9fee77bf7
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57378214"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59206431"
 ---
-# <a name="how-to-specify-the-direction-of-the-binding"></a>Postupy: Určení směru připojení
+# <a name="how-to-specify-the-direction-of-the-binding"></a>Postupy: Určení směru vazby
 Tento příklad ukazuje, jak určit, zda vazba aktualizuje pouze vazby pro vlastnost target (cíl), vlastnost vazby source (zdroj), nebo vlastnost target i vlastnost source.  
   
 ## <a name="example"></a>Příklad  
@@ -40,6 +40,7 @@ Tento příklad ukazuje, jak určit, zda vazba aktualizuje pouze vazby pro vlast
  Pro <xref:System.Windows.Data.BindingMode.TwoWay> nebo <xref:System.Windows.Data.BindingMode.OneWayToSource> vazby, časování aktualizací zdroje můžete řídit tak, že nastavíte <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A> vlastnost. Další informace naleznete v tématu <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A>.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Data.Binding>
 - [Přehled datových vazeb](data-binding-overview.md)
-- [Témata s postupy](data-binding-how-to-topics.md)
+- [– postupy](data-binding-how-to-topics.md)

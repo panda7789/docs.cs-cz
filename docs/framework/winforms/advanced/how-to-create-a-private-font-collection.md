@@ -8,12 +8,12 @@ helpviewer_keywords:
 - private font collections [Windows Forms], creating
 - fonts [Windows Forms], creating private collections
 ms.assetid: 6533d5e5-a8dc-4b76-9fc4-3bf75c8b9212
-ms.openlocfilehash: 7cfd2a1fd29b58019d49c8cd5df9adb5b0873302
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: f78d48c88b72388676f5e7ae963b98d8f1b4beac
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57723774"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59210684"
 ---
 # <a name="how-to-create-a-private-font-collection"></a>Postupy: Vytvoření soukromé kolekce písem
 <xref:System.Drawing.Text.PrivateFontCollection> Třída dědí z <xref:System.Drawing.Text.FontCollection> abstraktní základní třída. Můžete použít <xref:System.Drawing.Text.PrivateFontCollection> objekt udržovat sadu písem speciálně pro danou aplikaci. Privátní písma kolekce může obsahovat nainstalované systémových písem, jakož i písma, které nebyly nainstalované v počítači. Chcete-li přidat soubor písma pro kolekci privátní písma, zavolejte <xref:System.Drawing.Text.PrivateFontCollection.AddFontFile%2A> metodu <xref:System.Drawing.Text.PrivateFontCollection> objektu.  
@@ -37,9 +37,9 @@ ms.locfileid: "57723774"
   
  Pokud je k dispozici, kombinaci dané rodině a styl <xref:System.Drawing.Font> objekt je vytvořen pomocí této rodiny a stylu. První argument předaný do <xref:System.Drawing.Font.%23ctor%2A> konstruktor je název rodiny písem (ne <xref:System.Drawing.FontFamily> jak se v případě jiných variace <xref:System.Drawing.Font.%23ctor%2A> konstruktoru). Po <xref:System.Drawing.Font> objekt je vytvořen, je předána <xref:System.Drawing.Graphics.DrawString%2A> metodu <xref:System.Drawing.Graphics> třídy zobrazovaný název řady spolu s názvem daného stylu.  
   
- Následující kód výstup je podobný výstup je znázorněno na následujícím obrázku.  
+ Následující kód výstup je podobný výstup je znázorněno na následujícím obrázku:  
   
- ![Písma textu](./media/csfontstext7.png "csfontstext7")  
+ ![Snímek obrazovky, který zobrazuje text v různých písma.](./media/how-to-create-a-private-font-collection/various-fonts-text-output.png)  
   
  Arial.tff (který byl přidán do kolekce privátní písem v následujícím příkladu kódu) je písmo pro Arial regulární style. Upozorňujeme však, že program výstup ukazuje několik dostupných stylů než standardní řady Arial písmo. Důvodem je, že [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] můžete simulovat tučné, kurzíva a Tučná kurzíva styly ze standardního stylu. [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] Můžete také vytvářet vlnovkou a přeškrtnutí ze standardního stylu.  
   
@@ -52,5 +52,6 @@ ms.locfileid: "57723774"
  V předchozím příkladu je určený k použití pomocí Windows Forms a vyžaduje <xref:System.Windows.Forms.PaintEventArgs> `e`, což je parametr <xref:System.Windows.Forms.PaintEventHandler>.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Drawing.Text.PrivateFontCollection>
 - [Použití písem a textu](using-fonts-and-text.md)

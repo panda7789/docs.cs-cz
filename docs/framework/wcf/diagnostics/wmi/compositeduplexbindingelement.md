@@ -2,12 +2,12 @@
 title: CompositeDuplexBindingElement
 ms.date: 03/30/2017
 ms.assetid: 05e985aa-6462-431d-a831-0d601f3a3835
-ms.openlocfilehash: 76fe72ad1c13dfff2ea2b78e43153f55c29894b8
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: db3081e5523dc96862a1706d6366a32a3693e88e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54554085"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59221623"
 ---
 # <a name="compositeduplexbindingelement"></a>CompositeDuplexBindingElement
 CompositeDuplexBindingElement  
@@ -41,4 +41,5 @@ class CompositeDuplexBindingElement : BindingElement
 |Obor názvů|Definované v root\ServiceModel|  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Channels.CompositeDuplexBindingElement>

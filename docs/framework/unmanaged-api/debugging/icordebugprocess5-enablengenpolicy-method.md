@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1d8e848a7664e3573bd369addce2b2f5a8c91821
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: 154243e45a41ec2ba8b02937794b372a0705d458
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57481492"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59219119"
 ---
 # <a name="icordebugprocess5enablengenpolicy-method"></a>ICorDebugProcess5::EnableNGENPolicy – metoda
 Nastaví hodnotu, která určuje, jak aplikace načítá nativních bitových kopií při spuštění v rámci spravovaného ladicího programu.  
@@ -54,6 +54,7 @@ HRESULT EnableNGENPolicy(
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [ICorDebugProcess5 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-interface.md)
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Debugging – rozhraní](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
 - [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)

@@ -3,12 +3,12 @@ title: <activityStateQuery>
 ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: 9f8c3e4f-e2e3-4402-9760-03bf918ece7b
-ms.openlocfilehash: 9ddb3f1d070531d76201c0b9b5e71f14e2fac496
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 539ce0ba72ae7a8d568cdea3a1a3aab3eec1001b
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57377466"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59220731"
 ---
 # <a name="activitystatequery"></a>\<activityStateQuery>
 Představuje dotaz, který se používá ke sledování změn životního cyklu aktivit, které tvoří instance pracovního postupu. Můžete například sledovat, pokaždé, když dokončí "Odeslat E-Mail" aktivity v rámci instance pracovního postupu. Tento dotaz je nezbytné pro sledování účastníka přihlásit k odběru objekty záznam stavu aktivity. Dostupné stavy přihlásit k odběru jsou uvedeny v ActivityStates.  
@@ -86,6 +86,7 @@ Představuje dotaz, který se používá ke sledování změn životního cyklu 
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Activities.Tracking.Configuration.ActivityStateQueryElement?displayProperty=nameWithType>
 - <xref:System.Activities.Tracking.ActivityStateQuery?displayProperty=nameWithType>
 - [Sledování a trasování pracovních postupů](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)

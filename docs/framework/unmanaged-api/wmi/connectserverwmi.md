@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 548c6007d4ed685c521676de87c5a98f56a222a4
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 8786892d591a98ddcd7f51eddf86fdbcf50f2197
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57376985"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59214868"
 ---
 # <a name="connectserverwmi-function"></a>ConnectServerWmi – funkce
 Připojení přes DCOM k oboru názvů WMI vytvoří v zadaném počítači.
@@ -61,7 +61,7 @@ HRESULT ConnectServerWmi (
 `lSecurityFlags`\
 [in] Příznaky, které mají být předány `ConnectServerWmi` metody. Hodnotu nula (0) pro tento parametr je výsledkem volání `ConnectServerWmi` vrací pouze po navázání připojení k serveru. To může způsobit aplikace neodpovídá po neomezenou dobu Pokud na serveru se přeruší. Platné hodnoty jsou:
 
-| Konstanta  | Hodnota  | Popis  |
+| Konstanta  | Value  | Popis  |
 |---------|---------|---------|
 | `CONNECT_REPOSITORY_ONLY` | 0x40 | Vyhrazeno pro interní použití. Nepoužívejte. |
 | `WBEM_FLAG_CONNECT_USE_MAX_WAIT` | 0x80 | `ConnectServerWmi` vrátí do dvou minut nebo i rychleji. |
@@ -69,7 +69,7 @@ HRESULT ConnectServerWmi (
 `strAuthority`\
 [in] Název domény uživatele. Může mít následující hodnoty:
 
-| Hodnota | Popis |
+| Value | Popis |
 |---------|---------|
 | Prázdné | Bude použito ověřování NTLM a používá NTLM domény aktuálního uživatele. Pokud `strUser` Určuje doménu (doporučené umístění), nesmí být zadané tady. Funkce vrátí `WBEM_E_INVALID_PARAMETER` při zadání domény v obou parametrech. |
 | Pomocí protokolu Kerberos:*hlavní název* | Používáno ověřování protokolem Kerberos a tento parametr obsahuje hlavní název Kerberos. |
@@ -91,7 +91,7 @@ HRESULT ConnectServerWmi (
 
 Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
 
-|Konstanta  |Hodnota  |Popis  |
+|Konstanta  |Value  |Popis  |
 |---------|---------|---------|
 | `WBEM_E_FAILED` | 0x80041001 | Obecné selhání došlo. |
 | `WBEM_E_INVALID_PARAMETER` | 0x80041008 | Parametr není platný. |
@@ -105,7 +105,6 @@ Tato funkce zalamuje volání na [IWbemLocator::ConnectServer](/windows/desktop/
 Pro místní přístup k výchozí obor názvů `strNetworkResource` může být jednoduchý objekt cesta: "root\default" nebo "\\.\root\default". Pro přístup k výchozí obor názvů ve vzdáleném počítači pomocí modelu COM nebo Microsoft kompatibilní sítě, zahrnují název počítače: "\\myserver\root\default". Název počítače může také být, název DNS nebo IP adresu. `ConnectServerWmi` Funkce se také připojit pomocí počítače se systémem IPv6 pomocí adresy IPv6.
 
 `strUser` Nemůže být prázdný řetězec. Pokud je v zadané doméně `strAuthority`, se nesmí být i součástí `strUser`, nebo funkce vrátí `WBEM_E_INVALID_PARAMETER`.
-
 
 ## <a name="requirements"></a>Požadavky
 

@@ -2,12 +2,12 @@
 title: Soubory Oracle REF CURSOR
 ms.date: 03/30/2017
 ms.assetid: c6b25b8b-0bdd-41b2-9c7c-661f070c2247
-ms.openlocfilehash: 4dd0a78fafe63197987938021195723e3eed0885
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: b23b0f07d7755fed820481a3ad1fe831ae3f5224
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54740993"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59213165"
 ---
 # <a name="oracle-ref-cursors"></a>Soubory Oracle REF CURSOR
 Zprostředkovatel dat .NET Framework pro Oracle podporuje Oracle **REF CURSOR** datového typu. Při použití zprostředkovatele dat pro práci se soubory Oracle REF CURSOR, měli byste zvážit následující chování.  
@@ -43,5 +43,6 @@ Zprostředkovatel dat .NET Framework pro Oracle podporuje Oracle **REF CURSOR** 
  Ukazuje, jak provést PL/SQL uložené procedury, která vrací dva parametry REF CURSOR a doplní <xref:System.Data.DataSet> s řádky, které jsou vráceny.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Oracle a ADO.NET](../../../../docs/framework/data/adonet/oracle-and-adonet.md)
 - [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

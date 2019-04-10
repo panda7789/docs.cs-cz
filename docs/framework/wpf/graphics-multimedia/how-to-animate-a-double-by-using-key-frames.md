@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Animace dvojice použitím klíčových snímků'
+title: 'Postupy: Animace dvojice pomocí klíčových snímků'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - animation [WPF], Doubles with key frames
 - key frames [WPF], animating Doubles with
 ms.assetid: 3a1a7dba-7694-4907-8a2f-3408baebfa82
-ms.openlocfilehash: fe2efdada43e5dd6aced730ab59d9dd004899822
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
-ms.translationtype: MT
+ms.openlocfilehash: 33d567b1bb91060a5b0e1da67236a27815262474
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57353683"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59208774"
 ---
-# <a name="how-to-animate-a-double-by-using-key-frames"></a>Postupy: Animace dvojice použitím klíčových snímků
+# <a name="how-to-animate-a-double-by-using-key-frames"></a>Postupy: Animace dvojice pomocí klíčových snímků
 Tento příklad ukazuje, jak animovat hodnotu vlastnosti, která přijímá <xref:System.Double> použitím klíčových snímků.  
   
 ## <a name="example"></a>Příklad  
@@ -37,6 +37,7 @@ Tento příklad ukazuje, jak animovat hodnotu vlastnosti, která přijímá <xre
  Pro zajištění konzistence s další příklady animace, kód verze tohoto příkladu použijte <xref:System.Windows.Media.Animation.Storyboard> objektu, který chcete použít <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames>. Můžete také při použití jedné animace v kódu, je jednodušší použít <xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A> metoda namísto použití <xref:System.Windows.Media.Animation.Storyboard>. Příklad najdete v tématu [animace vlastnosti bez pomoci scénáře](how-to-animate-a-property-without-using-a-storyboard.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames>
 - <xref:System.Windows.Shapes.Rectangle>
 - <xref:System.Windows.Media.Animation.LinearDoubleKeyFrame>

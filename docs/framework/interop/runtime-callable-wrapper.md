@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 7e542583-1e31-4e10-b523-8cf2f29cb4a4
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1962815b8e294b1321320ce500554046d05f4c8f
-ms.sourcegitcommit: 15ab532fd5e1f8073a4b678922d93b68b521bfa0
+ms.openlocfilehash: 5a4a2f59ee81ac7884050f588d9bd437977490e9
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58654130"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59210129"
 ---
 # <a name="runtime-callable-wrapper"></a>Obálka volatelná za běhu
 Modul common language runtime poskytuje objekty modelu COM přes proxy server volá obálka volatelná za běhu (RCW). I když objekt RCW se zdá být běžný objekt pro klienty .NET, jeho primární funkce je zařadit volání mezi klient .NET a COM objekty.  
@@ -25,8 +25,7 @@ Modul common language runtime poskytuje objekty modelu COM přes proxy server vo
 Následující obrázek znázorňuje proces pro získání přístupu k objektům modelu COM pomocí obálka volatelná za běhu:
 
  ![Proces pro přístup k modelu COM objekty throug RCW.](./media/runtime-callable-wrapper/runtime-callable-wrapper.gif)  
-   
-  
+
  Používání metadat odvozený z knihovny typů, modul runtime vytvoří volaný objekt modelu COM a obálku pro daný objekt. Každý objekt RCW udržuje mezipaměť ukazatele rozhraní na objekt COM, se zabalí a uvolní svůj odkaz na objekt modelu COM, pokud objekt RCW je už nepotřebujete. Modul runtime provádí uvolňování paměti RCW.  
   
  Mezi ostatní aktivity zařadí RCW dat mezi spravovaným a nespravovaným kódem jménem zabaleného objektu. Konkrétně objekt RCW poskytuje zařazování pro argumenty metody a vrácené hodnoty metody pokaždé, když se klient a server mají odlišné reprezentace dat předávaných mezi nimi.  
@@ -60,7 +59,8 @@ Následující obrázek znázorňuje proces pro získání přístupu k objektů
 |**IEnumVARIANT**|Umožňuje typy modelu COM, které podporují výčty jsou považovány za kolekce.|  
   
 ## <a name="see-also"></a>Viz také:
-- [COM – obálky](com-wrappers.md)
+
+- [Obálky COM](com-wrappers.md)
 - [Obálka volatelná aplikacemi COM](com-callable-wrapper.md)
-- [Souhrn převodu sestavení knihovny typů na](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/k83zzh38(v=vs.100))
+- [Souhrn převodu knihovny typů na sestavení](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/k83zzh38(v=vs.100))
 - [Import knihovny typů ve formě sestavení](importing-a-type-library-as-an-assembly.md)

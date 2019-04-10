@@ -1,18 +1,18 @@
 ---
-title: 'Postupy: Ovládací prvek, kolik souvisejících dat'
+title: 'Postupy: Určení objemu načítaných souvisejících dat'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: efdc203e-3da9-4477-815e-54f10c3d7c6c
-ms.openlocfilehash: 3b52e2cdefefce011be7d729569b76f919f9bb33
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: dd59c09185eab003274614dcc30393b060e6b7c0
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54715605"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59215440"
 ---
-# <a name="how-to-control-how-much-related-data-is-retrieved"></a>Postupy: Ovládací prvek, kolik souvisejících dat
+# <a name="how-to-control-how-much-related-data-is-retrieved"></a>Postupy: Určení objemu načítaných souvisejících dat
 Použití <xref:System.Data.Linq.DataLoadOptions.LoadWith%2A> metody k určení, která data související s vaší hlavní cíl by měly být načteny současně. Například pokud víte, budete potřebovat informace o objednávek zákazníků, můžete použít <xref:System.Data.Linq.DataLoadOptions.LoadWith%2A> abyste měli jistotu, že je ve stejnou dobu jako informace o zákaznících načíst informace o objednávce. Tento přístup za následek jenom jednu cestu k databázi pro obě sady informace.  
   
 > [!NOTE]
@@ -25,4 +25,5 @@ Použití <xref:System.Data.Linq.DataLoadOptions.LoadWith%2A> metody k určení,
  [!code-vb[System.Data.Linq.DataLoadOptions#2](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/system.data.linq.dataloadoptions/vb/module1.vb#2)]  
   
 ## <a name="see-also"></a>Viz také:
-- [Dotazování na databázi](../../../../../../docs/framework/data/adonet/sql/linq/querying-the-database.md)
+
+- [Dotazy do databáze](../../../../../../docs/framework/data/adonet/sql/linq/querying-the-database.md)

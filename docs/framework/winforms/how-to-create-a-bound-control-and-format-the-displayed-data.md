@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: Vytvoření vazby ovládacího prvku a formátování zobrazených dat'
+title: 'Postupy: Vytvoření připojeného ovládacího prvku a formátování zobrazených dat'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - data [Windows Forms], formatting
 - bound controls [Windows Forms], creating
 - bound controls [Windows Forms], formatting data
 ms.assetid: d5a56228-899d-41d9-8af8-87b3f4ec2f94
-ms.openlocfilehash: 8b1256c1389c6a55f405f0be0d137a8ad170dbec
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: 0f56fc5fa345cbe4584b61ae2622dfb0dfb35be8
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57710495"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59225531"
 ---
-# <a name="how-to-create-a-bound-control-and-format-the-displayed-data"></a>Postupy: Vytvoření vazby ovládacího prvku a formátování zobrazených dat
+# <a name="how-to-create-a-bound-control-and-format-the-displayed-data"></a>Postupy: Vytvoření připojeného ovládacího prvku a formátování zobrazených dat
 Pomocí Windows Forms – datová vazba, lze formátovat data zobrazená v ovládací prvek vázaný na data pomocí **formátování a rozšířené vazby** dialogové okno.  
   
 > [!NOTE]
@@ -55,6 +55,7 @@ Pomocí Windows Forms – datová vazba, lze formátovat data zobrazená v ovlá
 8.  Klikněte na tlačítko **OK** zavřete **formátování a rozšířené vazby** dialogové okno a vraťte se do okna Vlastnosti.  
   
 ## <a name="see-also"></a>Viz také:
-- [Postupy: Vytvoření jednoduše vázaného ovládacího prvku ve formuláři Windows](how-to-create-a-simple-bound-control-on-a-windows-form.md)
+
+- [Postupy: Vytvoření jednoduše vázaného ovládacího prvku na formuláři Windows Forms](how-to-create-a-simple-bound-control-on-a-windows-form.md)
 - [Ověřování uživatelského vstupu ve Windows Forms](user-input-validation-in-windows-forms.md)
 - [Windows Forms – datová vazba](windows-forms-data-binding.md)

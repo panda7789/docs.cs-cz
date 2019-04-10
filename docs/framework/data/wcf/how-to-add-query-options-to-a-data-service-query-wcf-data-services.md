@@ -9,12 +9,12 @@ helpviewer_keywords:
 - WCF Data Services, querying
 - WCF Data Services, accessing data
 ms.assetid: e4258526-557e-4e96-91e1-2175400c7c8f
-ms.openlocfilehash: 2f02f28127650f316b954eaca182945e83fd418a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 07e327846e2fdda279e38b4f05ca0a2b3bbacb61
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54519031"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59211072"
 ---
 # <a name="how-to-add-query-options-to-a-data-service-query-wcf-data-services"></a>Postupy: Přidání možností do dotazu v datové službě (WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] umožňuje dotazování dat služby z klienta na základě rozhraní .NET Framework aplikace s použitím tříd generované klientské datové služby. Nejjednodušší k tomu je compose, který zahrnuje možnosti požadovaného dotazu výrazu dotazu Language Integrated Query (LINQ). Můžete také volat řadu metody LINQ dotazů k vytváření ekvivalentní dotazů. Nakonec můžete použít <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> metodu pro přidání možností do dotazu. Ve všech těchto případech obsahuje identifikátor URI, který je generován klienta sady požadovaná entita se vybraný dotaz možnosti použít. Další informace najdete v tématu [dotazování v datové službě](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md).  
@@ -46,5 +46,6 @@ ms.locfileid: "54519031"
  [!code-vb[Astoria Northwind Client#OrderWithFilter](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#orderwithfilter)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Dotazování v datové službě](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md)
-- [Postupy: Výsledky dotazu projektu](../../../../docs/framework/data/wcf/how-to-project-query-results-wcf-data-services.md)
+- [Postupy: Výsledky dotazů na projekt](../../../../docs/framework/data/wcf/how-to-project-query-results-wcf-data-services.md)

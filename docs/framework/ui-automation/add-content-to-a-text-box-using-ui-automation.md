@@ -9,12 +9,12 @@ helpviewer_keywords:
 - text boxes, adding content
 - UI Automation, adding content to text boxes
 ms.assetid: 8bdd1a73-1ecb-4a05-a891-a7827ebb767f
-ms.openlocfilehash: af9450685452bb25d54a5cd28295092addf6bb20
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.openlocfilehash: 9183aecdc47d54aef26d5cdca8ea11d8398be732
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57680235"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59226505"
 ---
 # <a name="add-content-to-a-text-box-using-ui-automation"></a>Přidání obsahu textového pole s použitím automatizace uživatelského rozhraní
 > [!NOTE]
@@ -29,4 +29,5 @@ ms.locfileid: "57680235"
  [!code-vb[InsertText#InsertText](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/InsertText/VisualBasic/Window1.xaml.vb#inserttext)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Ukázka vložení prvku TextPattern textu](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms771478(v=vs.90))

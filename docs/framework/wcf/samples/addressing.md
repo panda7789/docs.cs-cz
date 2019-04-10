@@ -2,12 +2,12 @@
 title: Adresování
 ms.date: 03/30/2017
 ms.assetid: d438e6f2-d0f3-43aa-b259-b51b5bda2e64
-ms.openlocfilehash: 3de6c3556ce2a11e1ebcfba179c08a45d87bea6b
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
-ms.translationtype: MT
+ms.openlocfilehash: 62d1d4206bd0595ac84cb5ec6942f914a89fbaae
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58835047"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59221323"
 ---
 # <a name="addressing"></a>Adresování
 Příklad adresování ukazuje různé aspekty a vlastnosti adresy koncového bodu. Vzorek je založen na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md). V této ukázce je služba v místním prostředí. Službu a klienta jsou konzolové aplikace. Služba definuje několik koncových bodů pomocí kombinace relativní a absolutní koncový bod adresy.  
@@ -135,4 +135,3 @@ Press <ENTER> to terminate client.
 >  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Addressing`  
-  

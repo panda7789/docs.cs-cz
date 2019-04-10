@@ -24,12 +24,12 @@ helpviewer_keywords:
 - Keys.Alt enumeration member
 - modifier keys
 ms.assetid: 1e184048-0ae3-4067-a200-d4ba31dbc2cb
-ms.openlocfilehash: de8af53bbf065047541e030de7a174987e5785df
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 571af49cdf82b876cfb72a7c7636874c8d155fb7
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57715981"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59213933"
 ---
 # <a name="how-to-determine-which-modifier-key-was-pressed"></a>Postupy: Určení modifikační klávesy, která byla stisknuta
 Když vytvoříte aplikaci, která přijímá stisknutí kláves uživatele, můžete také sledovat modifikační klávesy, jako je například klávesy SHIFT, ALT a CTRL. Při stisknutí modifikační klávesa v kombinaci s další klíče nebo pomocí kliknutí myší, může vaše aplikace reagovat odpovídajícím způsobem. Například pokud se stiskne písmeno S, to může způsobit jednoduše "s" se zobrazí na obrazovce, ale pokud stisknutí kláves CTRL + S, může být aktuální dokument uložen. Pokud zpracováváte <xref:System.Windows.Forms.Control.KeyDown> událostí, <xref:System.Windows.Forms.KeyEventArgs.Modifiers%2A> vlastnost <xref:System.Windows.Forms.KeyEventArgs> přijatá událost obslužné rutiny Určuje, která modifikátor stisknutí kláves. Další možností <xref:System.Windows.Forms.KeyEventArgs.KeyData%2A> vlastnost <xref:System.Windows.Forms.KeyEventArgs> Určuje znak, která byla stisknuta stejně jako jakékoli modifikační klávesy, v kombinaci s bitový operátor OR. Nicméně pokud obsluhujete <xref:System.Windows.Forms.Control.KeyPress> událost nebo událost myši, obslužná rutina události neobdrží tyto informace. V takovém případě musíte použít <xref:System.Windows.Forms.Control.ModifierKeys%2A> vlastnost <xref:System.Windows.Forms.Control> třídy. V obou případech je nutné provést bitový operátor AND příslušné <xref:System.Windows.Forms.Keys> hodnoty a hodnoty, které testujete. <xref:System.Windows.Forms.Keys> Výčet nabízí varianty každého modifikační klávesa, takže je důležité, abyste provedli bitový a správnou hodnotu. Například je reprezentována klávesu SHIFT <xref:System.Windows.Forms.Keys.Shift>, <xref:System.Windows.Forms.Keys.ShiftKey>, <xref:System.Windows.Forms.Keys.RShiftKey> a <xref:System.Windows.Forms.Keys.LShiftKey> správnou hodnotu pro testování SHIFT je modifikační klávesa <xref:System.Windows.Forms.Keys.Shift>. Obdobně test pro CTRL a ALT jako modifikátory jste měli by používat <xref:System.Windows.Forms.Keys.Control> a <xref:System.Windows.Forms.Keys.Alt> hodnoty v uvedeném pořadí.  
@@ -46,7 +46,8 @@ Když vytvoříte aplikaci, která přijímá stisknutí kláves uživatele, mů
      [!code-vb[System.Windows.Forms.DetermineModifierKey#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DetermineModifierKey/VB/form1.vb#5)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.Keys>
 - <xref:System.Windows.Forms.Control.ModifierKeys%2A>
-- [Vstup z klávesnice v aplikaci Windows Forms](keyboard-input-in-a-windows-forms-application.md)
+- [Vstup z klávesnice ve formulářové aplikaci Windows](keyboard-input-in-a-windows-forms-application.md)
 - [Postupy: Určení, že CapsLock – Pokud je v jazyce Visual Basic](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/9c9d1fz9(v=vs.100))

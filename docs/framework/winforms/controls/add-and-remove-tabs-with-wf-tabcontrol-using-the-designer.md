@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Přidání a odebrání karet pomocí ovládacího prvku Windows Forms TabControl pomocí návrháře'
+title: 'Postupy: Přidávání a odebírání karet pomocí ovládacího prvku Windows Forms TabControl pomocí Návrháře'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - tabs [Windows Forms], removing from pages
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - tabs [Windows Forms], adding to pages
 - tab pages
 ms.assetid: 480633db-413a-45d2-9c8f-0427cc13adbe
-ms.openlocfilehash: f58121455c346b2b615a5cf6e617e916618b4d6e
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 23fe9fa2b8405a6ebe66e8f0cee1d81d45f2395b
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57720316"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59219756"
 ---
-# <a name="how-to-add-and-remove-tabs-with-the-windows-forms-tabcontrol-using-the-designer"></a>Postupy: Přidání a odebrání karet pomocí ovládacího prvku Windows Forms TabControl pomocí návrháře
+# <a name="how-to-add-and-remove-tabs-with-the-windows-forms-tabcontrol-using-the-designer"></a>Postupy: Přidávání a odebírání karet pomocí ovládacího prvku Windows Forms TabControl pomocí Návrháře
 Když umístíte <xref:System.Windows.Forms.TabControl> ovládací prvek na formuláři, obsahuje dvě karty ve výchozím nastavení. Můžete přidat nebo odebrat karty pomocí návrháře.  
   
  Následující postup vyžaduje, **aplikace Windows** projektu s formulář obsahující <xref:System.Windows.Forms.TabControl> ovládacího prvku. Informace o nastavení takový projekt, naleznete v tématu [jak: Vytvoření projektu aplikace Windows Forms](/visualstudio/ide/step-1-create-a-windows-forms-application-project) a [jak: Přidání ovládacích prvků Windows Forms](how-to-add-controls-to-windows-forms.md).  
@@ -32,8 +32,9 @@ Když umístíte <xref:System.Windows.Forms.TabControl> ovládací prvek na form
      V **vlastnosti** okna, klikněte na tlačítko **tlačítko se třemi tečkami** tlačítko (![snímek obrazovky VisualStudioEllipsesButton](../media/vbellipsesbutton.png "vbEllipsesButton")) vedle položky <xref:System.Windows.Forms.TabControl.TabPages%2A> vlastnosti otevřít **TabPage – Editor kolekce**. Klikněte na tlačítko **přidat** nebo **odebrat** tlačítko.  
   
 ## <a name="see-also"></a>Viz také:
-- [Ovládací prvek TabControl](tabcontrol-control-windows-forms.md)
+
+- [TabControl – ovládací prvek](tabcontrol-control-windows-forms.md)
 - [Přehled ovládacího prvku TabControl](tabcontrol-control-overview-windows-forms.md)
-- [Postupy: Přidání ovládacího prvku do stránky karty](how-to-add-a-control-to-a-tab-page.md)
-- [Postupy: Zákaz stránek karet](how-to-disable-tab-pages.md)
+- [Postupy: Přidání ovládacího prvku na kartu](how-to-add-a-control-to-a-tab-page.md)
+- [Postupy: Zakázání karet](how-to-disable-tab-pages.md)
 - [Postupy: Změna vzhledu ovládacího prvku Windows Forms TabControl](how-to-change-the-appearance-of-the-windows-forms-tabcontrol.md)

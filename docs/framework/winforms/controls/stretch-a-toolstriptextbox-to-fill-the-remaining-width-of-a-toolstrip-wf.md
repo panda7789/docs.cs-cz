@@ -8,12 +8,12 @@ helpviewer_keywords:
 - text boxes [Windows Forms], stretching in ToolStrip control [Windows Forms]
 - ToolStrip control [Windows Forms], stretching a text box
 ms.assetid: 0e610fbf-85fe-414c-900c-9704a5dd5cc6
-ms.openlocfilehash: 7a557a3d278c2b6d8d083b2ebf8c8129bc498afa
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 707fd2e470a9be1d61d2878eeff845b3cad270db
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57702760"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59223573"
 ---
 # <a name="how-to-stretch-a-toolstriptextbox-to-fill-the-remaining-width-of-a-toolstrip-windows-forms"></a>Postupy: Roztažení prvku ToolStripTextBox k zaplnění zbývající šířky prvku ToolStrip (Windows Forms)
 Při nastavení <xref:System.Windows.Forms.ToolStrip.Stretch%2A> vlastnost <xref:System.Windows.Forms.ToolStrip> mít pod kontrolou `true`, ovládací prvek vyplní svého kontejneru od začátku do konce a velikost přizpůsobí svou velikost svého kontejneru. V této konfiguraci, možná bude užitečné k roztahování položku v ovládacím prvku, například <xref:System.Windows.Forms.ToolStripTextBox>, aby vyplnil dostupné místo a pro změnu velikosti při změní velikost ovládacího prvku. Tato roztažení je užitečné, například, pokud chcete dosáhnout vzhled a chování podobný panelu Adresa v aplikaci Microsoft® Internet Explorer.  
@@ -30,6 +30,7 @@ Při nastavení <xref:System.Windows.Forms.ToolStrip.Stretch%2A> vlastnost <xref
 -   Odkazy na sestavení systému, System.Drawing a System.Windows.Forms.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.ToolStrip>
 - <xref:System.Windows.Forms.ToolStrip.Stretch%2A?displayProperty=nameWithType>
 - <xref:System.Windows.Forms.ToolStripTextBox>

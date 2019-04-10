@@ -9,12 +9,12 @@ helpviewer_keywords:
 - mc:ProcessContent attribute
 - XAML [WPF], mc:ProcessContent attribute
 ms.assetid: acd9a6ef-b7ca-4146-abb6-60f3b366e9ec
-ms.openlocfilehash: 432df80fca58311d1c0931d9ba3b224fc9e271ff
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 03439a2c4a1a4de375e90d0e5121e690541e2f0f
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57375386"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59219327"
 ---
 # <a name="mcignorable-attribute"></a>mc:Ignorable – atribut
 Určuje, které [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] předpony oboru názvů v souboru označení může ignorovat. [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] procesoru. `mc:Ignorable` Atribut podporuje kompatibility značek pro vlastní obor názvů mapování a pro [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] správy verzí.  
@@ -66,6 +66,7 @@ Určuje, které [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md
  [!INCLUDE[TLA#tla_mcxmlnsv1](../../../../includes/tlasharptla-mcxmlnsv1-md.md)] Obor názvů definuje další prvky a atributy, které nejsou uvedené v této oblasti [!INCLUDE[TLA#tla_sdk](../../../../includes/tlasharptla-sdk-md.md)]. Další informace najdete v tématu [specifikace kompatibility značek XML](/office/open-xml/introduction-to-markup-compatibility#markup-compatibility-in-the-open-xml-file-formats-specification).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Markup.XamlReader>
 - [PresentationOptions:Freeze – atribut](presentationoptions-freeze-attribute.md)
 - [Přehled XAML (WPF)](xaml-overview-wpf.md)

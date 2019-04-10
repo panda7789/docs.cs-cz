@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Vytváření přístupových klíčů pro ovládací prvky Windows Forms pomocí návrháře'
+title: 'Postupy: Vytváření přístupových klíčů pro ovládací prvky Windows Forms pomocí Návrháře'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - controls [Windows Forms], access keys
@@ -15,14 +15,14 @@ helpviewer_keywords:
 - access keys [Windows Forms], Windows Forms
 - ALT key
 ms.assetid: 4c374c4c-4ca9-4a68-ac96-9dc3ab0f518a
-ms.openlocfilehash: 3d4112d87dbd448c7e34d2b84d11b49f56e1dc44
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: 900a955173c28c7b86fce73e418561ed437719c4
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57713342"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59216922"
 ---
-# <a name="how-to-create-access-keys-for-windows-forms-controls-using-the-designer"></a>Postupy: Vytváření přístupových klíčů pro ovládací prvky Windows Forms pomocí návrháře
+# <a name="how-to-create-access-keys-for-windows-forms-controls-using-the-designer"></a>Postupy: Vytváření přístupových klíčů pro ovládací prvky Windows Forms pomocí Návrháře
 *Přístupový klíč* je znak podtržený text nabídky, položka nabídky nebo popisek ovládacích prvcích jako tlačítko. Umožňuje uživateli "tlačítko" stisknutím klávesy ALT v kombinaci s předdefinovanou přístupový klíč. Například, pokud tlačítko spustí postup tisk formuláře a proto jeho `Text` je nastavena na "Tisk," "Přidání znak ampersand (&) před písmeno" P "způsobí, že písmeno"P", chcete-li být podtržená v textu tlačítka v době běhu. Uživatele můžete spustit příkaz přidružený k tlačítku stisknutím kombinace kláves ALT + P. Nemůžete mít přístupový klíč pro ovládací prvek, který nemůže získat fokus.  
   
 > [!NOTE]
@@ -33,7 +33,8 @@ ms.locfileid: "57713342"
 1.  V **vlastnosti** okno, nastaveno `Text` vlastnost na řetězec, který obsahuje znak ampersand (&) před písmenem, který bude přístupový klíč. Například nastavte na písmeno "P" jako přístupový klíč, zadejte **& Tisk** do mřížky.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.Button>
 - [Postupy: Reakce na kliknutí na tlačítko Windows Forms](how-to-respond-to-windows-forms-button-clicks.md)
-- [Postupy: Nastavit Text, zobrazený ovládacím prvkem Windows Forms](how-to-set-the-text-displayed-by-a-windows-forms-control.md)
+- [Postupy: Nastavení textu zobrazovaného ovládacím prvkem Windows Forms](how-to-set-the-text-displayed-by-a-windows-forms-control.md)
 - [Popisování jednotlivých ovládacích prvků Windows Forms a zajišťování zástupců pro tyto prvky](labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them.md)

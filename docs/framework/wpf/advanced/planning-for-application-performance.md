@@ -5,12 +5,12 @@ helpviewer_keywords:
 - applications [WPF], optimizing
 - WPF application [WPF], optimizing
 ms.assetid: c91bd0c5-a193-46ff-9da1-eb7a3a76a3b3
-ms.openlocfilehash: fda5330ff75c1744f3ed9d4394e51b5efb737071
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 70dda68112d47d3e5a0609a5df7696920477c698
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57374424"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59210201"
 ---
 # <a name="planning-for-application-performance"></a>Plánování výkonu aplikace
 Úspěch dosažení svých cílů výkonu závisí na tom, jak dobře při vývoji strategie výkonu. Plánování je první fázi při vývoji libovolný produkt. Toto téma popisuje několik velmi jednoduchých pravidel pro vývoj strategie dobrého výkonu.  
@@ -33,6 +33,7 @@ ms.locfileid: "57374424"
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ovládací prvky jsou ze své podstaty extensible tím, že pro přizpůsobení šíření celého jejich výskytu, při není změna jejich chování ovládacího prvku. S využitím styly, šablony a šablony ovládacích prvků, můžete vytvořit a postupně vyvíjí přizpůsobitelnou [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] , která se přizpůsobí vašim požadavkům na výkon.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Optimalizace výkonu aplikace WPF](optimizing-wpf-application-performance.md)
 - [Využití výhod hardwaru](optimizing-performance-taking-advantage-of-hardware.md)
 - [Rozložení a návrh](optimizing-performance-layout-and-design.md)
@@ -41,4 +42,4 @@ ms.locfileid: "57374424"
 - [Prostředky aplikace](optimizing-performance-application-resources.md)
 - [Text](optimizing-performance-text.md)
 - [Datová vazba](optimizing-performance-data-binding.md)
-- [Další výkonnostní doporučení](optimizing-performance-other-recommendations.md)
+- [Další doporučení k optimalizaci výkonu](optimizing-performance-other-recommendations.md)

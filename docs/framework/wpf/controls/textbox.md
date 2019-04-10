@@ -7,19 +7,19 @@ helpviewer_keywords:
 - controls [WPF], TextBox
 - TextBox control [WPF]
 ms.assetid: 2512a277-e9d8-4de8-a12f-2bd95e8e7b60
-ms.openlocfilehash: f2a261b72fe3205c9a03292f1f6bbcebdcf8649b
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 5be472d0d4f27c7a9acc966e4d6ffbcf9d7a1b0d
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57356972"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59226952"
 ---
 # <a name="textbox"></a>TextBox
 <xref:System.Windows.Controls.TextBox> Ovládacího prvku poskytuje podporu pro základní textové zadání v aplikaci WPF.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [TextBox – přehled](textbox-overview.md)  
- [Témata s postupy](textbox-how-to-topics.md)  
+ [– postupy](textbox-how-to-topics.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Controls.TextBox>  
@@ -31,5 +31,6 @@ ms.locfileid: "57356972"
  <xref:System.Windows.Controls.PasswordBox>  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Ukázková galerie ovládacích prvků WPF](https://go.microsoft.com/fwlink/?LinkID=160053)
 - [TextBox – styly a šablony](textbox-styles-and-templates.md)

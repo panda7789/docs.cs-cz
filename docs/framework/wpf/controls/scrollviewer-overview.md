@@ -9,12 +9,12 @@ helpviewer_keywords:
 - controls [WPF], ScrollViewer
 - ScrollViewer control [WPF], about ScrollViewer control
 ms.assetid: 94a13b94-cfdf-4b12-a1aa-90cb50c6e9b9
-ms.openlocfilehash: 2685be197d6b47cf174c5fbd062bd3c37a19f5eb
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: a3302d9c360b0918a1fce956af3e3aa14f29361b
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57356907"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59212424"
 ---
 # <a name="scrollviewer-overview"></a>ScrollViewer – přehled
 Obsah v rámci uživatelského rozhraní je často větší než oblasti zobrazení obrazovce počítače. <xref:System.Windows.Controls.ScrollViewer> Řízení poskytuje pohodlný způsob, jak povolit posouvání obsahu v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikací. Toto téma představuje <xref:System.Windows.Controls.ScrollViewer> elementu a obsahuje několik příkladů použití.  
@@ -61,6 +61,7 @@ Obsah v rámci uživatelského rozhraní je často větší než oblasti zobraze
  Další informace o formátech dokumentu a prezentace možnosti najdete v tématu [dokumenty v platformě WPF](../advanced/documents-in-wpf.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Controls.ScrollViewer>
 - <xref:System.Windows.Controls.Primitives.ScrollBar>
 - <xref:System.Windows.Controls.Primitives.IScrollInfo>

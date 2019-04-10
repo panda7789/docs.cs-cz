@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 745742df-0eda-479b-83f8-29bd8a80db96
-ms.openlocfilehash: 9b32ee4c7745fda482561311dc116e0e38b49ab7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e1f7a7da1ab2ce0ad7d7908ecd1f896d229b8e1a
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54599150"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59223300"
 ---
 # <a name="formulate-projections"></a>Formulování projekcí
 Následující příklady ukazují jak `select` výroky C# a `Select` v sadě Visual Studio je možné kombinovat s další funkce do formuláře projekce dotazů.  
@@ -76,4 +76,5 @@ Následující příklady ukazují jak `select` výroky C# a `Select` v sadě Vi
  [!code-vb[DLinqQueryExamples#65](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#65)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Příklady dotazů](../../../../../../docs/framework/data/adonet/sql/linq/query-examples.md)

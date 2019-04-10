@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - rounting [WCF], scenarios
 ms.assetid: ec22f308-665a-413e-9f94-7267cb665dab
-ms.openlocfilehash: 6803468c8814b229df752e3ed9bc48aa0e632dd6
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: fa5d588211cfe40cde9e9db3161a931e3287cd39
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54699594"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59223824"
 ---
 # <a name="routing-scenarios"></a>Scénáře směrování
 Směrovací služba je vysoce přizpůsobitelné, může být obtížné navrhnout efektivní logiku směrování při vytváření nové konfigurace od začátku.  Existují však několik běžných scénářů, které následují většina konfigurací směrovací služby. Zatímco tyto scénáře se nemusí vztahovat přímo na konkrétní konfiguraci, pochopení, jak lze konfigurovat směrovací služba pro zpracování těchto scénářů bude pomoc při Princip služby směrování.  
@@ -66,7 +66,7 @@ Směrovací služba je vysoce přizpůsobitelné, může být obtížné navrhno
  Postup slouží ke konfiguraci zpracování chyb najdete v tématu [How To: Zpracování chyb](../../../../docs/framework/wcf/feature-details/how-to-error-handling.md).
   
 ### <a name="in-this-section"></a>V tomto oddílu  
- [Postupy: Správa verzí služby](../../../../docs/framework/wcf/feature-details/how-to-service-versioning.md)  
+ [Postupy: Verze služby](../../../../docs/framework/wcf/feature-details/how-to-service-versioning.md)  
   
  [Postupy: Vytvoření oddílů dat služby](../../../../docs/framework/wcf/feature-details/how-to-service-data-partitioning.md)  
   
@@ -75,4 +75,5 @@ Směrovací služba je vysoce přizpůsobitelné, může být obtížné navrhno
  [Postupy: Zpracování chyb](../../../../docs/framework/wcf/feature-details/how-to-error-handling.md)  
   
 ## <a name="see-also"></a>Viz také:
-- [Úvod do směrování](../../../../docs/framework/wcf/feature-details/routing-introduction.md)
+
+- [Směrování – úvod](../../../../docs/framework/wcf/feature-details/routing-introduction.md)

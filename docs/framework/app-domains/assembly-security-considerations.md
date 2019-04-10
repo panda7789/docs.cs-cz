@@ -17,12 +17,12 @@ helpviewer_keywords:
 ms.assetid: 1b5439c1-f3d5-4529-bd69-01814703d067
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 862488a157c1030335c5f8e3d02f9f411be6d9a3
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e74d7a4a72b9595d6a280a16ad9bbc4118648404
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54589568"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59218067"
 ---
 # <a name="assembly-security-considerations"></a>Důležité informace o zabezpečení sestavení
 <a name="top"></a> Při sestavování sestavení, můžete zadat sadu oprávnění, která vyžaduje sestavení ke spuštění. Legitimace vychází, zda jsou určitá oprávnění udělit nebo nebyla udělena na sestavení.  
@@ -63,6 +63,7 @@ ms.locfileid: "54589568"
  Protože silné pojmenovávání a podepisování pomocí [SignTool.exe (nástroj Sign Tool)](../../../docs/framework/tools/signtool-exe.md) zaručit integritu, zásady zabezpečení přístupu kódu můžete založit na tyto dvě formy legitimaci sestavení. Silné názvy a podepisování pomocí [SignTool.exe (nástroj Sign Tool)](../../../docs/framework/tools/signtool-exe.md) zaručit integritu prostřednictvím digitálních podpisů a certifikáty. Všechny uvedené technologie – hodnoty hash ověřování, silné názvy a podepisování pomocí [SignTool.exe (nástroj Sign Tool)](../../../docs/framework/tools/signtool-exe.md)– spolupracují, aby se ujistěte, že sestavení nebyl změněn žádným způsobem.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Sestavení se silným názvem](../../../docs/framework/app-domains/strong-named-assemblies.md)
 - [Sestavení v modulu CLR (Common Language Runtime)](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)
 - [SignTool.exe (nástroj pro podpis)](../../../docs/framework/tools/signtool-exe.md)

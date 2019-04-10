@@ -10,17 +10,16 @@ helpviewer_keywords:
 - padding [WPF]
 - aligning [WPF]
 ms.assetid: 9c6a2009-9b86-4e40-8605-0a2664dc3973
-ms.openlocfilehash: eef28a178f11ea23ac23183c9ec7eb06b7f18a29
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 58af8848a6b8a5e4ded453831f5a7ef985548492
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57355402"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59209161"
 ---
 # <a name="alignment-margins-and-padding-overview"></a>Přehled zarovnání, okrajů a odsazení
 <xref:System.Windows.FrameworkElement> Třída zveřejňuje několik vlastností, které se používají k přesné umístění podřízených elementů. Toto téma popisuje čtyři z nejdůležitějších vlastností: <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A>, <xref:System.Windows.FrameworkElement.Margin%2A>, <xref:System.Windows.Controls.Border.Padding%2A>, a <xref:System.Windows.FrameworkElement.VerticalAlignment%2A>. Účinek z těchto vlastností je důležité pochopit, protože poskytují základ pro řízení umístění prvků v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikací.  
-  
-  
+
 <a name="wcpsdk_layout_amp_introduction"></a>   
 ## <a name="introduction-to-element-positioning"></a>Úvod do umístění elementu  
  Existuje mnoho způsobů, pokud chcete umístit prvky pomocí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Nicméně dosažení ideální rozložení přesahuje jednoduše Volba správného <xref:System.Windows.Controls.Panel> elementu. Přesné řízení umístění nutné znalosti toho, <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A>, <xref:System.Windows.FrameworkElement.Margin%2A>, <xref:System.Windows.Controls.Border.Padding%2A>, a <xref:System.Windows.FrameworkElement.VerticalAlignment%2A> vlastnosti.  
@@ -142,10 +141,11 @@ ms.locfileid: "57355402"
  Jsou k dispozici další prostředky, které popisují [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] rozložení podrobněji. [Přehled panelů](../controls/panels-overview.md) téma obsahuje další podrobnosti o jednotlivých <xref:System.Windows.Controls.Panel> elementy. Téma [názorný postup: Moje první desktopová aplikace WPF](../getting-started/walkthrough-my-first-wpf-desktop-application.md) přináší pokročilé techniky, které používají pro nastavení pozice komponenty a jejich akce svázat zdroje dat elementů rozložení.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.FrameworkElement>
 - <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A>
 - <xref:System.Windows.FrameworkElement.VerticalAlignment%2A>
 - <xref:System.Windows.FrameworkElement.Margin%2A>
-- [Přehled panelu](../controls/panels-overview.md)
+- [Přehled panelů](../controls/panels-overview.md)
 - [Rozložení](layout.md)
 - [Ukázky WPF rozložení galerie](https://go.microsoft.com/fwlink/?LinkID=160054)

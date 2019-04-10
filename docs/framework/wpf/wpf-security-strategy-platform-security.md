@@ -17,12 +17,12 @@ helpviewer_keywords:
 - Windows Presentation Foundation [WPF], about security model
 - security model [WPF], operating system
 ms.assetid: 2a39a054-3e2a-4659-bcb7-8bcea490ba31
-ms.openlocfilehash: 01d17b39e89b764871c1c70512eae6929cc98554
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 1415042110a074b270cf1afd286d487ec7369747
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57353059"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59212411"
 ---
 # <a name="wpf-security-strategy---platform-security"></a>Strategie zabezpečení WPF – zabezpečení platformy
 Windows Presentation Foundation (WPF) poskytuje širokou škálu služeb zabezpečení, také využívá podkladovou platformu, která obsahuje operační systém, funkce zabezpečení [!INCLUDE[TLA2#tla_clr](../../../includes/tla2sharptla-clr-md.md)], a [!INCLUDE[TLA2#tla_ie](../../../includes/tla2sharptla-ie-md.md)]. Tyto vrstvy se dá zajistit [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] silné zabezpečení obrany v modelu, který se pokouší vyhnout jakékoli jediným bodem selhání, jak je znázorněno na následujícím obrázku:  
@@ -30,9 +30,7 @@ Windows Presentation Foundation (WPF) poskytuje širokou škálu služeb zabezpe
  ![Zabezpečení WPF – ilustrace](./media/windowplatformsecurity.PNG "windowplatformsecurity")  
   
  Zbývající část tohoto tématu jsou popsané funkce v každém z těchto úrovní, které se týkají [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] zvlášť.  
-  
 
-  
 <a name="Operating_System_Security"></a>   
 ## <a name="operating-system-security"></a>Zabezpečení operačního systému  
  Minimální úroveň operačního systému, který vyžaduje [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] je [!INCLUDE[TLA2#tla_winxpsp2](../../../includes/tla2sharptla-winxpsp2-md.md)]. Jádro [!INCLUDE[TLA2#tla_winxpsp2](../../../includes/tla2sharptla-winxpsp2-md.md)] poskytuje několik funkcí zabezpečení, které tvoří základ zabezpečení pro všechny aplikace Windows, včetně těch vytvořených pomocí [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]. [!INCLUDE[TLA#tla_longhorn](../../../includes/tlasharptla-longhorn-md.md)] zahrnuje funkce zabezpečení [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] a jejich další rozšíření. Toto téma popisuje škálu tyto funkce zabezpečení, které jsou důležité pro [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)], také o tom [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] integruje do nich další defense-in-depth.  
@@ -209,6 +207,7 @@ Windows Presentation Foundation (WPF) poskytuje širokou škálu služeb zabezpe
  [!INCLUDE[TLA2#tla_ie7](../../../includes/tla2sharptla-ie7-md.md)] zahrnuje a přesahuje možnosti zabezpečení [!INCLUDE[TLA2#tla_ie6sp2](../../../includes/tla2sharptla-ie6sp2-md.md)] jako součást dlouhodobě zaměřuje na zabezpečení.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Principy zabezpečení v Microsoft Internet Explorer 6 ve Windows XP s aktualizací SP2](https://www.microsoft.com/downloads/details.aspx?FamilyId=E550F940-37A0-4541-B5E2-704AB386C3ED&displaylang=en)
 - [Zabezpečení přístupu kódu](../misc/code-access-security.md)
 - [Zabezpečení](security-wpf.md)

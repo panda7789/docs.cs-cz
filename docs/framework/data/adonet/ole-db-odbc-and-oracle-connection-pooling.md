@@ -1,15 +1,15 @@
 ---
-title: Připojení Oracle, ODBC a OLE DB sdružování
+title: Sdružování připojení OLE DB, ODBC a Oracle
 ms.date: 03/30/2017
 ms.assetid: 2bd83b1e-3ea9-43c4-bade-d9cdb9bbbb04
-ms.openlocfilehash: bc07d4d33f2a568ef0fb4dd9806832222a13ca6a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 7c17863facd962583e0da03e810c9a8150cda0a6
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54692740"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59208888"
 ---
-# <a name="ole-db-odbc-and-oracle-connection-pooling"></a>Připojení Oracle, ODBC a OLE DB sdružování
+# <a name="ole-db-odbc-and-oracle-connection-pooling"></a>Sdružování připojení OLE DB, ODBC a Oracle
 Sdružování připojení může výrazně zlepšit výkon a škálovatelnost aplikace. Tato část popisuje sdružování pro zprostředkovatele dat .NET Framework pro OLE DB, ODBC a Oracle.  
   
 ## <a name="connection-pooling-for-oledb"></a>Pro OleDb sdružování připojení  
@@ -60,7 +60,7 @@ Provider=SQLOLEDB;OLE DB Services=-4;Data Source=localhost;Integrated Security=S
   
  V následující tabulce jsou popsány <xref:System.Data.OracleClient.OracleConnection.ConnectionString%2A> hodnoty můžete použít k úpravě chování sdružování připojení.  
   
-|Název|Výchozí|Popis|  
+|Name|Výchozí|Popis|  
 |----------|-------------|-----------------|  
 |`Connection Lifetime`|0|Při připojení je vrácen do fondu, jeho čas vytvoření porovnán s aktuálním časem a připojení je zničen, pokud tohoto časového intervalu (v sekundách) překročí hodnotu zadanou pomocí `Connection Lifetime`. To je užitečné v clusterovaných konfiguracích vynutit rozložení zátěže mezi spuštěný server a server jenom do režimu online.<br /><br /> Hodnota nula (0) způsobí, že připojení ve fondu má maximální časový limit.|  
 |`Enlist`|"true"|Když `true`, pro sdružování připojení v aktuálním kontextu transakce vytvoření vlákna automaticky personálního pokud existuje kontextu transakce.|  
@@ -69,6 +69,7 @@ Provider=SQLOLEDB;OLE DB Services=-4;Data Source=localhost;Integrated Security=S
 |`Pooling`|"true"|Když `true`, připojení je vykreslen z příslušného fondu nebo v případě potřeby vytvořen a přidán do příslušného fondu.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Sdružování připojení](../../../../docs/framework/data/adonet/connection-pooling.md)
 - [Čítače výkonu](../../../../docs/framework/data/adonet/performance-counters.md)
 - [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

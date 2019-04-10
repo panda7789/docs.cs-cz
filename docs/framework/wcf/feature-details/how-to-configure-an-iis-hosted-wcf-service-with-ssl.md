@@ -2,12 +2,12 @@
 title: 'Postupy: Konfigurace služby WCF hostované v IIS se SSL'
 ms.date: 03/30/2017
 ms.assetid: df2fe31f-a4bb-4024-92ca-b74ba055e038
-ms.openlocfilehash: ca7343f14215d89b29636776437f5e4a6a8089a1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 336c3800fc033cc12bd9c3fe168ae219b72cab91
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54639975"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59214115"
 ---
 # <a name="how-to-configure-an-iis-hosted-wcf-service-with-ssl"></a>Postupy: Konfigurace služby WCF hostované v IIS se SSL
 Toto téma popisuje postup nastavení služby WCF hostované IIS pro použití zabezpečení přenosu HTTP. Zabezpečení přenosu HTTP vyžaduje certifikát SSL pro službu IIS zaregistrovat. Pokud není certifikát SSL služby IIS můžete vygenerovat zkušební certifikát. Dále musíte přidat vazbu SSL na webovou stránku a nakonfigurovat vlastnosti ověřování na webu. Nakonec musíte nakonfigurovat službu WCF pro použití protokolu HTTPS.  
@@ -145,7 +145,8 @@ Toto téma popisuje postup nastavení služby WCF hostované IIS pro použití z
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Hostování v Internetové informační službě](../../../../docs/framework/wcf/feature-details/hosting-in-internet-information-services.md)
-- [Pokyny k hostování Internetové informační služby](../../../../docs/framework/wcf/samples/internet-information-service-hosting-instructions.md)
-- [Osvědčené postupy hostování Internetové informační služby](../../../../docs/framework/wcf/feature-details/internet-information-services-hosting-best-practices.md)
+- [Pokyny k hostování služby IIS](../../../../docs/framework/wcf/samples/internet-information-service-hosting-instructions.md)
+- [Doporučené postupy hostování Internetové informační služby](../../../../docs/framework/wcf/feature-details/internet-information-services-hosting-best-practices.md)
 - [Hostování IIS pomocí vloženého kódu](../../../../docs/framework/wcf/samples/iis-hosting-using-inline-code.md)

@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 6f2eec9fce1909f6a83190f5ba3e99162461bbc4
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: 138be940c6a03fc58e488e344455946bdb832bab
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57492150"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59214517"
 ---
 # <a name="imetadataimportgeteventprops-method"></a>IMetaDataImport::GetEventProps – metoda
 Získá informace metadat pro událost reprezentována token zadané události, včetně deklarující typ, přidat a odebrat metody pro delegáty a všechny příznaky a další související data.  
@@ -94,5 +94,6 @@ HRESULT GetEventProps (
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
 - [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

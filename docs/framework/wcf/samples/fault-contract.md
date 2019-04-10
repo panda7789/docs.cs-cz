@@ -2,12 +2,12 @@
 title: Chyba – kontrakt
 ms.date: 03/30/2017
 ms.assetid: b31b140e-dc3b-408b-b3c7-10b6fe769725
-ms.openlocfilehash: 64d02ae6b45cd0e538509d2c7186ac63b9844c14
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
-ms.translationtype: MT
+ms.openlocfilehash: 0729bae4e8630687a0df10ed4be49261225cd663
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58840481"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59218261"
 ---
 # <a name="fault-contract"></a>Chyba – kontrakt
 Chyba – kontrakt ukázka ukazuje, jak komunikovat se informace o chybě ze služby klienta. Vzorek je založen na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md), s další kód přidat do služby k převodu výjimku interní chybu. Klient se pokusí provádět dělení nulou vynutit chybový stav služby.  
@@ -135,4 +135,3 @@ catch (FaultException<MathFault> e)
 >  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Service\Faults`  
-  

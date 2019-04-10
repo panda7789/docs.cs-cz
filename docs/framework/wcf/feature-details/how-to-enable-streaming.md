@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 6ca2cf4b-c7a1-49d8-a79b-843a90556ba4
-ms.openlocfilehash: 2521b6ac237a76cac64cebca91bbaa792bba2c67
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 5bc4bce984c4159949f840f395005ec9fe746e85
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54627652"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59227311"
 ---
 # <a name="how-to-enable-streaming"></a>Postupy: Povolení streamování
 Windows Communication Foundation (WCF) můžete odesílání zpráv s použitím přenosy ve vyrovnávací paměti nebo datovým proudem. Ve výchozím režimu přenosu ukládány do vyrovnávací paměti zprávy musí být zcela doručována předtím, než příjemce může číst. V režimu přenosu datového proudu, můžete začít příjemce zprávu zpracovat, než úplně doručení. Režim tvorby datového proudu je užitečné, když informace, které je předáno příliš dlouhý a může být zpracována sériově. Režim tvorby datového proudu je také užitečné, pokud zpráva je příliš velký, aby se zcela ukládány do vyrovnávací paměti.  
@@ -34,7 +34,7 @@ Windows Communication Foundation (WCF) můžete odesílání zpráv s použitím
   
 2.  Datový proud musí být povolené na vazbu. Můžete nastavit `TransferMode` vlastnost, která můžete provést jednu z následujících hodnot:  
   
-    1.  `Buffered`,  
+    1.  `Buffered`,   
   
     2.  `Streamed`, která umožňuje streamování komunikaci v obou směrech.  
   
@@ -69,11 +69,12 @@ Windows Communication Foundation (WCF) můžete odesílání zpráv s použitím
   
 1.  Speciální zpracování na každý blok datového proudu současně s odesíláním ho nebo přijme, odvoďte třídu vlastního datového proudu z <xref:System.IO.Stream>. Jako příklad vlastního datového proudu, obsahuje následující kód `GetReversedStream` metoda a `ReverseStream` třída-.  
   
-     `GetReversedStream` vytvoří a vrátí novou instanci třídy `ReverseStream`. Vlastní zpracování se stane, jak systém přečte z `ReverseStream` objektu. `ReverseStream.Read` Metoda čte blok bajtů ze základního souboru, obrátí je a potom vrátí obrácený bajtů. Tato metoda zpětné celý soubor obsahu; jeden blok bajtů se obrátí najednou. Tento příklad ukazuje, jak můžete provádět zpracování datového proudu jako obsah se ještě na číst nebo zapisovat z datového proudu.  
+     `GetReversedStream` Vytvoří a vrátí novou instanci třídy `ReverseStream`. Vlastní zpracování se stane, jak systém přečte z `ReverseStream` objektu. `ReverseStream.Read` Metoda čte blok bajtů ze základního souboru, obrátí je a potom vrátí obrácený bajtů. Tato metoda zpětné celý soubor obsahu; jeden blok bajtů se obrátí najednou. Tento příklad ukazuje, jak můžete provádět zpracování datového proudu jako obsah se ještě na číst nebo zapisovat z datového proudu.  
   
      [!code-csharp[c_HowTo_EnableStreaming#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_enablestreaming/cs/service.cs#2)]
      [!code-vb[c_HowTo_EnableStreaming#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto_enablestreaming/vb/service.vb#2)]  
   
 ## <a name="see-also"></a>Viz také:
-- [Objemná data a streamování](../../../../docs/framework/wcf/feature-details/large-data-and-streaming.md)
+
+- [Objemná data a vysílání datových proudů](../../../../docs/framework/wcf/feature-details/large-data-and-streaming.md)
 - [Stream](../../../../docs/framework/wcf/samples/stream.md)

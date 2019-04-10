@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Button control [Windows Forms], selecting
 ms.assetid: fe2fc058-5118-4f70-b264-6147d64a7a8d
-ms.openlocfilehash: 86ef0da37ec35b991557af97a97bc9ca3da2d68c
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: f2881646a05d257044c6461f822a4c35a225f8c8
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57717255"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59223287"
 ---
 # <a name="ways-to-select-a-windows-forms-button-control"></a>Metody výběru ovládacího prvku Windows Forms Button
 Tlačítka Windows Forms je vybrat následujícími způsoby:  
@@ -29,6 +29,7 @@ Tlačítka Windows Forms je vybrat následujícími způsoby:
 -   Volání <xref:System.Windows.Forms.Button.PerformClick%2A> metoda klikněte na tlačítko prostřednictvím kódu programu.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled ovládacího prvku Button](button-control-overview-windows-forms.md)
 - [Postupy: Reakce na kliknutí na tlačítko Windows Forms](how-to-respond-to-windows-forms-button-clicks.md)
 - [Ovládací prvek Button](button-control-windows-forms.md)

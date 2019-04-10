@@ -2,12 +2,12 @@
 title: Kurzy k jazyku C#
 description: Prozkoumejte tyto C# kurzů se naučíte sestavit C# programy a další C# jazykové funkce.
 ms.date: 10/25/2018
-ms.openlocfilehash: 54c05f2fcc80d21b10cbb6a2baee37014aa62d07
-ms.sourcegitcommit: a3db1a9eafca89f95ccf361bc1833b47fbb2bb30
+ms.openlocfilehash: a82bd8e5ff28e0e006025de96f7da66505c0aff7
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58920484"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59214439"
 ---
 # <a name="c-tutorials"></a>Kurzy k jazyku C#
 
@@ -61,5 +61,3 @@ V následujících kurzech umožňují vytvářet C# programy pomocí [.NET Core
 * [Práce s jazykem LINQ](working-with-linq.md): ukazuje mnoho funkcí LINQ a prvky jazyka, které ho podporují.
 * [Pomocí atributů](attributes.md): ukazuje, jak vytvořit a použít atributy v C#.
 * [Interpolace řetězců](exploration/interpolated-strings.yml) kurzu se dozvíte, jak vložit hodnot do řetězce. Dozvíte se víc o vytvoření interpolovaného řetězce s vloženými C# výrazy a tom, jak řídit vzhled textu výrazu výsledků ve výsledném řetězci. Tento kurz je také k dispozici [spouštět místně na svém počítači](exploration/interpolated-strings-local.md).
-
-

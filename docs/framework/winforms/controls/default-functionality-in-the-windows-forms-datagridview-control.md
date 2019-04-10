@@ -5,12 +5,12 @@ helpviewer_keywords:
 - data grids [Windows Forms], default functionality in DataGridView control
 - DataGridView control [Windows Forms], default functionality
 ms.assetid: 4405f697-cad1-4839-9bcd-8ddb09d9f00e
-ms.openlocfilehash: 0c0d24111a2fdf856ff1f4ce154ec85afbbd61ee
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 26633b0abaa8c1c2916153b2236ecf9e4982fd68
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57719660"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59208862"
 ---
 # <a name="default-functionality-in-the-windows-forms-datagridview-control"></a>Výchozí funkce v ovládacím prvku Windows Forms DataGridView
 Windows Forms <xref:System.Windows.Forms.DataGridView> řízení poskytuje uživatelům značné množství výchozí funkce.  
@@ -47,5 +47,6 @@ Windows Forms <xref:System.Windows.Forms.DataGridView> řízení poskytuje uživ
 -   Automaticky řadí řádky založené na podkladová data, když uživatel klikne na záhlaví sloupce.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.DataGridView>
-- [Ovládací prvek DataGridView](datagridview-control-windows-forms.md)
+- [DataGridView – ovládací prvek](datagridview-control-windows-forms.md)

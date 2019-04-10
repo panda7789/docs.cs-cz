@@ -1,18 +1,18 @@
 ---
-title: 'Postupy: Spustit dotaz, který vrátí výsledky typu RefType'
+title: 'Postupy: Provedení dotazu, který vrátí výsledky typu RefType'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 7dbbfbcd-93f5-4546-9dbf-e5fa290b69fa
-ms.openlocfilehash: 3005465b3c6b974dc06c4a40abf22ee2bbed47aa
-ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
-ms.translationtype: MT
+ms.openlocfilehash: 7a8f08717743971c0378d9130d4fcea0621dae97
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55825755"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59209685"
 ---
-# <a name="how-to-execute-a-query-that-returns-reftype-results"></a>Postupy: Spustit dotaz, který vrátí výsledky typu RefType
+# <a name="how-to-execute-a-query-that-returns-reftype-results"></a>Postupy: Provedení dotazu, který vrátí výsledky typu RefType
 Toto téma ukazuje, jak provést příkaz pro koncepční model s použitím <xref:System.Data.EntityClient.EntityCommand> objekt a jak načíst <xref:System.Data.Metadata.Edm.RefType> výsledky s použitím <xref:System.Data.EntityClient.EntityDataReader>.  
   
 ### <a name="to-run-the-code-in-this-example"></a>Chcete-li spustit kód v tomto příkladu  
@@ -37,5 +37,6 @@ Toto téma ukazuje, jak provést příkaz pro koncepční model s použitím <xr
  [!code-vb[DP EntityServices Concepts#eSQLRefTypes](../../../../../samples/snippets/visualbasic/VS_Snippets_Data/dp entityservices concepts/vb/source.vb#esqlreftypes)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Reference k Entity SQL](../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
 - [Zprostředkovatel EntityClient pro Entity Framework](../../../../../docs/framework/data/adonet/ef/entityclient-provider-for-the-entity-framework.md)

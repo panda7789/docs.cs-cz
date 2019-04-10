@@ -2,12 +2,12 @@
 title: <webSocketSettings>
 ms.date: 03/30/2017
 ms.assetid: bbf97e02-8dd1-4922-acac-3cd33397b249
-ms.openlocfilehash: 298bf27b171772bb039b11b5e5de70e7d45b061d
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 1101d021f3c7436c4f45a22a48e50f6d1553f753
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55258437"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59226869"
 ---
 # <a name="websocketsettings"></a>\<webSocketSettings>
 Prvek konfigurace určuje nastavení Websocket.  
@@ -58,7 +58,7 @@ Prvek konfigurace určuje nastavení Websocket.
 |Nikdy|Nikdy nepoužívejte protokolu Websocket.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádná  
+ Žádné  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -85,6 +85,7 @@ Prvek konfigurace určuje nastavení Websocket.
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Channels.Binding>
 - <xref:System.ServiceModel.Channels.BindingElement>
 - <xref:System.ServiceModel.BasicHttpBinding>

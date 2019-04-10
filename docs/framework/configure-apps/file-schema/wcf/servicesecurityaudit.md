@@ -2,12 +2,12 @@
 title: <serviceSecurityAudit>
 ms.date: 03/30/2017
 ms.assetid: ba517369-a034-4f8e-a2c4-66517716062b
-ms.openlocfilehash: 05579f1c2a0d0c0637530c524c37b141a9d37b5b
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 384a1cdb6d39f4d6ecd2353a15c0da7c6d2e82bd
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55287752"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59224071"
 ---
 # <a name="servicesecurityaudit"></a>\<serviceSecurityAudit>
 Určuje nastavení, které povoluje auditování událostí zabezpečení během operací služby.  
@@ -46,7 +46,7 @@ Určuje nastavení, které povoluje auditování událostí zabezpečení během
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<behavior>](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|Určuje chování element.|  
+|[\<chování >](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|Určuje chování element.|  
   
 ## <a name="remarks"></a>Poznámky  
  Tento prvek konfigurace umožňuje auditovat události ověřování Windows Communication Foundation (WCF). Když je povolené auditování, dají auditovat úspěšné nebo neúspěšné ověřování pokusů o zadání (nebo obojí). Události se zapisují do jedné ze tří protokolů událostí: aplikace, zabezpečení nebo v protokolu výchozí verze operačního systému. Protokoly událostí může vše zobrazit pomocí prohlížeče událostí Windows.  
@@ -79,9 +79,10 @@ Určuje nastavení, které povoluje auditování událostí zabezpečení během
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Configuration.ServiceSecurityAuditElement>
 - <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior>
 - [Chování zabezpečení](../../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)
 - [Auditování](../../../../../docs/framework/wcf/feature-details/auditing-security-events.md)
 - [Postupy: Auditování událostí zabezpečení](../../../../../docs/framework/wcf/feature-details/how-to-audit-wcf-security-events.md)
-- [Chování při auditování služby](../../../../../docs/framework/wcf/samples/service-auditing-behavior.md)
+- [Chování auditování služby](../../../../../docs/framework/wcf/samples/service-auditing-behavior.md)

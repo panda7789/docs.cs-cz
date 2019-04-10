@@ -5,12 +5,12 @@ helpviewer_keywords:
 - WCF security
 - access control [WCF]
 ms.assetid: 9d576122-3f55-4425-9acf-b23d0781e966
-ms.openlocfilehash: 78d2bb3e49ae971b54d521585184a9565c4ff105
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 53b20e7f11f5accd1436f29063817142681e4f74
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54512606"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59213256"
 ---
 # <a name="access-control-mechanisms"></a>Mechanismy řízení přístupu
 Můžete řídit přístup k několika způsobem Windows Communication Foundation (WCF). Toto téma stručně popisuje různé mechanismy a nabízí návrhy k tomu, kdy se má použít. jeho účelem je pomoct vybrat správný mechanismus. Technologie pro přístup k jsou uvedeny v pořadí podle složitosti. Nejjednodušší je <xref:System.Security.Permissions.PrincipalPermissionAttribute>; nejvíce komplex nachází modelem Identity.  
@@ -58,9 +58,10 @@ Můžete řídit přístup k několika způsobem Windows Communication Foundatio
  Další informace o modelem Identity najdete v tématu [správa deklarací identity a autorizace s modelem Identity](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Security.Permissions.PrincipalPermissionAttribute>
 - [Postupy: Omezení přístupu pomocí třídy PrincipalPermissionAttribute](../../../../docs/framework/wcf/how-to-restrict-access-with-the-principalpermissionattribute-class.md)
 - [Postupy: Použití zprostředkovatele rolí ASP.NET se službou](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-role-provider-with-a-service.md)
-- [Postupy: Použití zprostředkovatele Role Správce autorizací ASP.NET se službou](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-authorization-manager-role-provider-with-a-service.md)
-- [Správa deklarací identity a autorizace pomocí modelu identit](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md)
+- [Postupy: Použití zprostředkovatele role Správce autorizací ASP.NET se službou](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-authorization-manager-role-provider-with-a-service.md)
+- [Správa deklarací a autorizace s modelem identity](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md)
 - [Delegace a zosobnění](../../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md)

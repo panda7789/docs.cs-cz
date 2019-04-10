@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - ContextMenuOpening properties [WPF]
 ms.assetid: 789652fb-1951-4217-934a-7843e355adf4
-ms.openlocfilehash: 077a28f345b886fd9ec183b5828c0535ce688cb4
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
-ms.translationtype: MT
+ms.openlocfilehash: a6ac0158c4fb9d766fd56ee50d0b1b6cc91e5de3
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57364837"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59219626"
 ---
 # <a name="how-to-handle-the-contextmenuopening-event"></a>Postupy: Zpracování události ContextMenuOpening
 <xref:System.Windows.FrameworkElement.ContextMenuOpening> Události mohou být zpracovány v aplikaci buď upravit existující místní nabídku před zobrazit nebo potlačit v nabídce, která by jinak zobrazit tak, že nastavíte <xref:System.Windows.RoutedEventArgs.Handled%2A> vlastnost `true` v datech události. Typické důvod nastavení <xref:System.Windows.RoutedEventArgs.Handled%2A> k `true` události, data je nahraďte nabídku zcela nový <xref:System.Windows.Controls.ContextMenu> objekt, což v některých případech vyžaduje zrušení operace a spouští se nový otevřít. Při zápisu obslužných rutin pro <xref:System.Windows.FrameworkElement.ContextMenuOpening> události, byste měli vědět o problémy načasování mezi <xref:System.Windows.Controls.ContextMenu> ovládacího prvku a službu, která je zodpovědná za otevření a obecně umístění kontextové nabídky pro ovládací prvky. Toto téma popisuje některé techniky kód pro otevření scénáře různých kontextovou nabídku a ukazuje případ, kde jsou časové potíže vstupu do play.  
@@ -56,6 +56,7 @@ ms.locfileid: "57364837"
  [!code-csharp[ContextMenuOpeningHandlers#ReplaceReopen](~/samples/snippets/csharp/VS_Snippets_Wpf/ContextMenuOpeningHandlers/CSharp/Pane1.xaml.cs#replacereopen)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Controls.ContextMenu>
 - <xref:System.Windows.FrameworkElement.ContextMenu%2A?displayProperty=nameWithType>
 - [Přehled základních elementů](base-elements-overview.md)

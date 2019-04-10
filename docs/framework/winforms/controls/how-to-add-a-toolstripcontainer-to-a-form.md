@@ -9,12 +9,12 @@ helpviewer_keywords:
 - ToolStrip control [Windows Forms], built-in rafting
 - ToolStripContainer control [Windows Forms], adding to Windows Forms
 ms.assetid: d0f55095-a833-453e-be5a-644906d75d54
-ms.openlocfilehash: 35d35c9cf9bca2720cb6d02d602d2d7bc6740f25
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: d70c5b8f548cf325083782d6ea185c18fd2fa003
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57715318"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59216207"
 ---
 # <a name="how-to-add-a-toolstripcontainer-to-a-form"></a>Postupy: Přidání ToolStripContainer do formuláře
 Můžete programově přidat <xref:System.Windows.Forms.ToolStripContainer> do formuláře Windows a přidejte do ní ovládací prvky.  
@@ -33,6 +33,7 @@ Můžete programově přidat <xref:System.Windows.Forms.ToolStripContainer> do f
  Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.ToolStripContainer>
-- [Ovládací prvek ToolStripContainer](toolstripcontainer-control.md)
-- [Ovládací prvek ToolStrip](toolstrip-control-windows-forms.md)
+- [ToolStripContainer – ovládací prvek](toolstripcontainer-control.md)
+- [ToolStrip – ovládací prvek](toolstrip-control-windows-forms.md)

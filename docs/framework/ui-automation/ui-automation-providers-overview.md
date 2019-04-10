@@ -5,12 +5,12 @@ helpviewer_keywords:
 - UI Automation, providers
 - providers, UI Automation
 ms.assetid: 859557b8-51e1-4d15-92e8-318d2dcdb2f7
-ms.openlocfilehash: d1209580070c628b8756d01e940a956060223d16
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.openlocfilehash: 9312f386198459d0d2dac110827cc6c0029eb247
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57680143"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59222741"
 ---
 # <a name="ui-automation-providers-overview"></a>Přehled zprostředkovatelů automatizace uživatelského rozhraní
 > [!NOTE]
@@ -77,4 +77,5 @@ ms.locfileid: "57680143"
  Hostitele fragment hraje důležitou roli při poskytování [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] služby. Umožňuje navigace na fragment kořen a poskytuje některé výchozí vlastnosti tak, aby vlastního zprostředkovatele pro jejich implementaci.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Implementace zprostředkovatele automatizace uživatelského rozhraní na straně serveru](../../../docs/framework/ui-automation/server-side-ui-automation-provider-implementation.md)

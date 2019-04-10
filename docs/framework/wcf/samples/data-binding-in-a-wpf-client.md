@@ -2,12 +2,12 @@
 title: Datové vazby v klientovi Windows Presentation Foundation
 ms.date: 03/30/2017
 ms.assetid: bb8c8293-5973-4aef-9b07-afeff5d3293c
-ms.openlocfilehash: c8382df188c7a2e47394ec73741c1e583f46fba6
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
-ms.translationtype: MT
+ms.openlocfilehash: 2687e406743a8f503175a8775b25c76630aea9b7
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58838999"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59223170"
 ---
 # <a name="data-binding-in-a-windows-presentation-foundation-client"></a>Datové vazby v klientovi Windows Presentation Foundation
 Tento příklad ukazuje použití datové vazby v klientovi Windows Presentation Foundation (WPF). Ukázka používá služba Windows Communication Foundation (WCF), která náhodně generovat pole alb vrácena klientovi. Každé album má název, cenu a seznam alba stopy. Sleduje alba mají název a doba trvání. Informace, které je vrácena službou je automaticky vázán na uživatelské rozhraní (UI) poskytuje klientovi Windows Presentation Foundation (WPF).  
@@ -81,4 +81,3 @@ void client_GetAlbumListCompleted(object sender, GetAlbumListCompletedEventArgs 
 >  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Scenario\DataBinding\WPFDataBinding`  
-  

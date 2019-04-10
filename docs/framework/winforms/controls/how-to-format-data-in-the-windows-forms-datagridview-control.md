@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Formát dat v Windows Forms DataGridView'
+title: 'Postupy: Formátování dat v ovládacím prvku Windows Forms DataGridView'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -15,14 +15,14 @@ helpviewer_keywords:
 - data grids [Windows Forms], date values
 - cells [Windows Forms], text alignment
 ms.assetid: 8c33543c-9c08-4636-a65a-fdf714a529b7
-ms.openlocfilehash: 0699aec73c0a48efe88fc2901ef11c70d6f639d7
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 62701edfdb3cf2729cb401ad12a12ee4f524287b
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57721278"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59221297"
 ---
-# <a name="how-to-format-data-in-the-windows-forms-datagridview-control"></a>Postupy: Formát dat v Windows Forms DataGridView
+# <a name="how-to-format-data-in-the-windows-forms-datagridview-control"></a>Postupy: Formátování dat v ovládacím prvku Windows Forms DataGridView
 Následující postupy ukazují základní formátování pomocí hodnot v buňkách <xref:System.Windows.Forms.DataGridView.DefaultCellStyle%2A> vlastnost <xref:System.Windows.Forms.DataGridView> ovládacího prvku a konkrétní sloupců v ovládacím prvku. Informace o formátování pokročilé dat najdete v tématu [jak: Přizpůsobení formátování dat v ovládacím prvku Windows Forms DataGridView](how-to-customize-data-formatting-in-the-windows-forms-datagridview-control.md).  
   
 ### <a name="to-format-currency-and-date-values"></a>Hodnoty data a formát měny  
@@ -68,6 +68,7 @@ Následující postupy ukazují základní formátování pomocí hodnot v buňk
  Pro maximální rozšiřitelnost, by měly sdílet <xref:System.Windows.Forms.DataGridViewCellStyle> objektů mezi více řádky, sloupce nebo buňky, které používají stejné styly spíše než nastavení vlastnosti stylu pro každý prvek samostatně. Další informace najdete v tématu [osvědčené postupy pro změnu velikosti ovládacího prvku Windows Forms DataGridView](best-practices-for-scaling-the-windows-forms-datagridview-control.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.DataGridView.DefaultCellStyle%2A?displayProperty=nameWithType>
 - <xref:System.Windows.Forms.DataGridViewBand.DefaultCellStyle%2A?displayProperty=nameWithType>
 - <xref:System.Windows.Forms.DataGridViewCellStyle>

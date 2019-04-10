@@ -9,12 +9,12 @@ helpviewer_keywords:
 - task_core_add_class_handling_routed_properties [WPF]
 - class handlers [WPF], routed events
 ms.assetid: 15b7b06c-9112-4ee5-b30a-65d10c5c5df6
-ms.openlocfilehash: 8c973871336c3389161ce25ae52d2dfaef9c53a5
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 7b897954cbdab461dc0305c6290e67c1af5282c3
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57361769"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59224265"
 ---
 # <a name="how-to-add-class-handling-for-a-routed-event"></a>Postupy: Přidání zpracování třídy pro směrovanou událost
 Směrované události mohou být zpracovávány obslužné rutiny třídy nebo instance obslužné rutiny na libovolném daného uzlu v této trase. Obslužné rutiny třídy jsou vyvolány nejprve a je možné pomocí implementace třídy potlačení událostí z instance zpracování nebo zavést další události konkrétní chování na události, které jsou vlastněny základní třídy. Tento příklad ukazuje dva úzce související postupy pro implementaci obslužné rutiny třídy.  
@@ -33,6 +33,7 @@ Směrované události mohou být zpracovávány obslužné rutiny třídy nebo i
  [!code-vb[ClassHandling#StaticAndRegisterClassHandler](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ClassHandling/visualbasic/sdksamplelibrary/class1.vb#staticandregisterclasshandler)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.EventManager>
 - [Označení směrovaných událostí jako zpracovaných a zpracování tříd](marking-routed-events-as-handled-and-class-handling.md)
 - [Zpracování směrované události](how-to-handle-a-routed-event.md)

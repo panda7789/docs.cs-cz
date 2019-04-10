@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 55f1c0da651d786dfdcfda6a54ee1b29db35f3d4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: faf1be65d308b223490f3ae67eed3d8a2b1688b9
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54587736"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59223066"
 ---
 # <a name="corsegment-structure"></a>COR_SEGMENT – struktura
 Obsahuje informace o oblasti paměti spravované haldy.  
@@ -61,5 +61,6 @@ typedef struct _COR_SEGMENT {
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Struktury pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)
 - [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)

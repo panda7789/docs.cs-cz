@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 773b6fc4-9013-4322-b728-5dec7a72e743
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 5947f1e84bc5b1f35f0bd479a9fc879dbe63c9f2
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 4e97bc5f9846757e02f9e55de31bee96a9d24c2f
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54547813"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59219210"
 ---
 # <a name="tracing-and-instrumenting-applications"></a>Trasování a instrumentace aplikací
 Trasování je způsob, jak můžete monitorovat provádění aplikace během jejího běhu. Instrumentace trasování a ladění můžete přidat do vaší aplikace rozhraní .NET Framework při při vývoji a instrumentaci můžete použít při vývoji aplikace i po jeho nasazení. Můžete použít <xref:System.Diagnostics.Trace?displayProperty=nameWithType>, <xref:System.Diagnostics.Debug?displayProperty=nameWithType>, a <xref:System.Diagnostics.TraceSource?displayProperty=nameWithType> třídy k zaznamenání informací o chybách a spuštění aplikace v protokolech, textové soubory nebo jiná pro pozdější analýzu.  
@@ -122,9 +122,9 @@ System.Diagnostics.Debug.WriteLine("Hello World!");
   
 |Metoda|Výstup|  
 |------------|------------|  
-|**Kontrolní výraz**|Zadaný text; nebo, pokud není zadaný žádný zásobník volání. Výstup bude zapsán pouze pokud je podmínka zadaný jako argument v **Assert** příkaz je **false**.|  
+|**Assert**|Zadaný text; nebo, pokud není zadaný žádný zásobník volání. Výstup bude zapsán pouze pokud je podmínka zadaný jako argument v **Assert** příkaz je **false**.|  
 |**Selhání**|Zadaný text; nebo, pokud není zadaný žádný zásobník volání.|  
-|**Zápis**|Zadaný text.|  
+|**Write**|Zadaný text.|  
 |**Writeif –**|Zadaný text, pokud podmínka zadaný jako argument v **writeif –** příkazu není splněna.|  
 |**WriteLine**|Zadaný text a zalomení řádku.|  
 |**WriteLineIf**|Zadaný text a zalomení řádku vrátit, pokud podmínka zadaný jako argument v **writelineif –** příkazu není splněna.|  
@@ -142,14 +142,15 @@ System.Diagnostics.Debug.WriteLine("Hello World!");
  Pokud zakážete nikoli trasování a ladění před nasazením aplikace technologie ASP.NET, aplikace může zobrazit informace o sobě, který by mohl zneužít škodlivý program. Další informace najdete v tématu [jak: Kompilace podmíněně s Trace a Debug](../../../docs/framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md), [kompilování a sestavování](/visualstudio/ide/compiling-and-building-in-visual-studio), a [jak: Vytváření, inicializace a konfigurace přepínačů trasování](../../../docs/framework/debug-trace-profile/how-to-create-initialize-and-configure-trace-switches.md). Ladění je také možné konfigurovat pomocí Internetové informační služby (IIS).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Diagnostics.Trace>
 - <xref:System.Diagnostics.TraceSource>
 - [Kontrakty kódu](../../../docs/framework/debug-trace-profile/code-contracts.md)
 - [Typy projektů jazyka C#, F# a Visual Basic](/visualstudio/debugger/debugging-preparation-csharp-f-hash-and-visual-basic-project-types)
 - [Postupy: Přidání příkazů trasování do kódu aplikace](../../../docs/framework/debug-trace-profile/how-to-add-trace-statements-to-application-code.md)
-- [Postupy: Podmíněná kompilace pomocí trasování a ladění](../../../docs/framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md)
+- [Postupy: Podmíněná kompilace pomocí atributu Trace a Debug](../../../docs/framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md)
 - [Postupy: Vytváření, inicializace a konfigurace přepínačů trasování](../../../docs/framework/debug-trace-profile/how-to-create-initialize-and-configure-trace-switches.md)
 - [Postupy: Vytváření a inicializace zdrojů trasování](../../../docs/framework/debug-trace-profile/how-to-create-and-initialize-trace-sources.md)
 - [Postupy: Použití třídy TraceSource a filtrů s naslouchacími procesy trasování](../../../docs/framework/debug-trace-profile/how-to-use-tracesource-and-filters-with-trace-listeners.md)
-- [Moduly naslouchání trasování](../../../docs/framework/debug-trace-profile/trace-listeners.md)
+- [Naslouchací procesy trasování](../../../docs/framework/debug-trace-profile/trace-listeners.md)
 - [Přepínače trasování](../../../docs/framework/debug-trace-profile/trace-switches.md)

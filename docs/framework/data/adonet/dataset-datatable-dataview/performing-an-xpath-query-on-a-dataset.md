@@ -1,18 +1,18 @@
 ---
-title: Provádění dotazu XPath u datové sady
+title: Provedení dotazu XPath u datové sady
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 7e828566-fffe-4d38-abb2-4d68fd73f663
-ms.openlocfilehash: 357fad55c3c47a5697df7887f251074238a5ff4d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 29d1e5ae494b2fff4e13886159bb937041152382
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54498232"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59209473"
 ---
-# <a name="performing-an-xpath-query-on-a-dataset"></a>Provádění dotazu XPath u datové sady
+# <a name="performing-an-xpath-query-on-a-dataset"></a>Provedení dotazu XPath u datové sady
 Vztah mezi synchronizovaný <xref:System.Data.DataSet> a <xref:System.Xml.XmlDataDocument> umožňuje použití XML služby, jako je jazyk XML Path (XPath) dotazu, které přistupují k **XmlDataDocument** a mohou provádět určité funkce snadněji než přímý přístup k **datovou sadu** přímo. Například místo použití **vyberte** metodu <xref:System.Data.DataTable> k procházení vztahů s dalšími tabulkami v **datovou sadu**, provedením dotazu XPath na **XmlDataDocument**  , který se synchronizuje s **datovou sadu**, k získání seznamu elementů XML ve formě <xref:System.Xml.XmlNodeList>. Uzly v **XmlNodeList**, vícesměrového vysílání jako <xref:System.Xml.XmlElement> uzlů, může pak být předán **GetRowFromElement** metodu **XmlDataDocument**, který vrátí odpovídající <xref:System.Data.DataRow> odkazy na řádky tabulky synchronizovaných **datovou sadu**.  
   
  Například následující vzorový kód provede dotaz XPath "podřízený". **Datovou sadu** je vyplněna tři tabulky: **Zákazníci**, **objednávky**, a **OrderDetails**. V ukázce je prvním vytvoření vztah nadřízenosti a podřízenosti mezi **zákazníkům** a **objednávky** tabulky a mezi **objednávky** a **OrderDetails** tabulky. Dotaz XPath je pak provede se vraťte **XmlNodeList** z **zákazníkům** uzly tam, kde podřízený **OrderDetails** uzel nemá **ProductID**uzel s hodnotou 43. V podstatě vzorku dotazu XPath používá k určení, které zákazníci si objednali produktu, který má **ProductID** 43.  
@@ -102,5 +102,6 @@ foreach (XmlNode xmlNode in nodeList)
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Synchronizace datové sady a datového dokumentu XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataset-and-xmldatadocument-synchronization.md)
 - [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

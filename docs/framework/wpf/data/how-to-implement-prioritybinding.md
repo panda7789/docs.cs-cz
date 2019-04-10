@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - data binding [WPF], PriorityBinding class
 ms.assetid: d63b65ab-b3e9-4322-9aa8-1450f8d89532
-ms.openlocfilehash: cf21041a7f3d5b75803378cf05768ee6f1008fdd
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: aaf2caff1e2684e08c7eb65125536f1070203d70
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57354593"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59207562"
 ---
 # <a name="how-to-implement-prioritybinding"></a>Postupy: Implementace rozhraní PriorityBinding
 <xref:System.Windows.Data.PriorityBinding> v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] funguje tak, že zadáte seznam vazby. Seznam vazby je nejnižší priorita seřazené od nejvyšší prioritou. Vrátí-li nejvyšší prioritou vazby hodnotu úspěšně při zpracování nejsou nikdy potřeba zpracovat v seznamu vazeb. Může to být případ, který nejvyšší prioritou vazby trvá dlouhou dobu k vyhodnocení, další nejvyšší prioritu, která vrací hodnotu úspěšně bude používat, dokud vazbu s vyšší prioritou vrací hodnotu úspěšně.  
@@ -45,6 +45,7 @@ ms.locfileid: "57354593"
  Zobrazit <xref:System.Windows.Data.PriorityBinding> informace o tom, co se považuje za úspěšná návratová hodnota z vazby.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Data.Binding.IsAsync%2A?displayProperty=nameWithType>
 - [Přehled datových vazeb](data-binding-overview.md)
-- [Témata s postupy](data-binding-how-to-topics.md)
+- [– postupy](data-binding-how-to-topics.md)

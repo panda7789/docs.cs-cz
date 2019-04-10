@@ -10,12 +10,12 @@ helpviewer_keywords:
 - receiving data, pluggable protocols
 - protocols, pluggable
 ms.assetid: 9810c177-973e-43d7-823c-14960bd625ea
-ms.openlocfilehash: f840e042321b636443b6763e168abd144b05edae
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e8e7c1d2943dcbfa8d9faa0b2e53bae57c767101
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54717451"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59216480"
 ---
 # <a name="deriving-from-webrequest"></a>Odvození ze žádosti WebRequest
 <xref:System.Net.WebRequest> Třída je abstraktní základní třídu, která poskytuje základní metody a vlastnosti pro vytvoření konkrétní žádost o obslužnou rutinu, která vyhovuje připojitelných protokolů model rozhraní .NET Framework. Aplikace, které používají **WebRequest** třídy můžete žádost o data pomocí libovolného protokolu pro podporované bez nutnosti určit protokol použitý.  
@@ -89,6 +89,7 @@ ms.locfileid: "54717451"
  **GetResponse** metoda zodpovídá za vytvoření odpovídající **WebResponse** potomků tak, aby obsahovala příchozí odpovědi.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Net.WebRequest>
 - <xref:System.Net.HttpWebRequest>
 - <xref:System.Net.FileWebRequest>

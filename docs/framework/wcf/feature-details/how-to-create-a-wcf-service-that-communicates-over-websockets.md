@@ -2,12 +2,12 @@
 title: 'Postupy: Vytvoření služby WCF, která komunikuje přes WebSockets'
 ms.date: 03/30/2017
 ms.assetid: bafbbd89-eab8-4e9a-b4c3-b7b0178e12d8
-ms.openlocfilehash: d578b58f6613fb48f1bfceb8929ec51b8e025de1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 28a200b3e531f524e246c3d2fa1961573ec4e014
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54689149"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59223183"
 ---
 # <a name="how-to-create-a-wcf-service-that-communicates-over-websockets"></a>Postupy: Vytvoření služby WCF, která komunikuje přes WebSockets
 Služby WCF a klienti mohou používat <xref:System.ServiceModel.NetHttpBinding> vazby komunikovat přes WebSockets.  Protokoly Websocket se nepoužívá, pokud <xref:System.ServiceModel.NetHttpBinding> určuje kontrakt služby definuje kontrakt zpětného volání. Toto téma popisuje, jak implementovat službu WCF a klienta, který používá <xref:System.ServiceModel.NetHttpBinding> komunikovat přes WebSockets.  
@@ -319,5 +319,6 @@ namespace Client
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Synchronní a asynchronní operace](../../../../docs/framework/wcf/synchronous-and-asynchronous-operations.md)
-- [Používání NetHttpBinding](../../../../docs/framework/wcf/feature-details/using-the-nethttpbinding.md)
+- [Používání vazeb NetHttpBinding](../../../../docs/framework/wcf/feature-details/using-the-nethttpbinding.md)

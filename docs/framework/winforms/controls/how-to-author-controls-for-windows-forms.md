@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: Autor ovládacích prvků Windows Forms'
+title: 'Postupy: Vytváření ovládacích prvků pro Windows Forms'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - controls [Windows Forms], creating
 - UserControl class [Windows Forms], Windows Forms
 - custom controls [Windows Forms], creating
 ms.assetid: 7570e982-545b-4c3a-a7c7-55581d313400
-ms.openlocfilehash: 38416f28546f2aebc04d9ecf2c6995282b4720b8
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: 5240b9aaaf4d73cb2899a9003f9658dbd8958f3c
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57713408"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59224335"
 ---
-# <a name="how-to-author-controls-for-windows-forms"></a>Postupy: Autor ovládacích prvků Windows Forms
+# <a name="how-to-author-controls-for-windows-forms"></a>Postupy: Vytváření ovládacích prvků pro Windows Forms
 Ovládací prvek představuje grafické propojení mezi uživateli a program. Ovládací prvek můžete zadat nebo zpracování dat, přijímají vstup uživatele, reagovat na události nebo provádět spoustu dalších funkcí, které se připojují uživatele a aplikace. Vzhledem k tomu, že ovládací prvek je v podstatě komponent pomocí grafického rozhraní, může sloužit všechny funkce, které nemá komponenty, a poskytnout interakce s uživatelem. Vytvoření ovládacích prvků pro obsluhu zvláštní účely a vytváření ovládacích prvků je jenom další úlohou programování. Následující kroky se na základě těchto skutečností představují Přehled ovládacího prvku proces tvorby. Další informace o odkazech na jednotlivé kroky.  
   
 > [!NOTE]
@@ -52,10 +52,11 @@ Ovládací prvek představuje grafické propojení mezi uživateli a program. Ov
 10. Zabalení a nasazení ovládacího prvku. Podrobnosti najdete v tématu [nejdřív se podívejte na nasazení v sadě Visual Studio](/visualstudio/deployment/deploying-applications-services-and-components).  
   
 ## <a name="see-also"></a>Viz také:
-- [Návod: Vytvoření složeného ovládacího prvku s jazykem Visual Basic](walkthrough-authoring-a-composite-control-with-visual-basic.md)
-- [Návod: Dědění z ovládacího prvku Windows Forms pomocí Visual Basic](walkthrough-inheriting-from-a-windows-forms-control-with-visual-basic.md)
-- [Postupy: Dědit ze třídy UserControl](how-to-inherit-from-the-usercontrol-class.md)
-- [Postupy: Dědit ze třídy Control](how-to-inherit-from-the-control-class.md)
-- [Postupy: Dědění z existujících Windows Forms ovládacích prvků](how-to-inherit-from-existing-windows-forms-controls.md)
-- [Postupy: Testování běhového chování UserControl](how-to-test-the-run-time-behavior-of-a-usercontrol.md)
+
+- [Návod: Vytvoření složeného ovládacího prvku pomocí Visual Basicu](walkthrough-authoring-a-composite-control-with-visual-basic.md)
+- [Návod: Dědění z ovládacího prvku Windows Forms pomocí Visual Basicu](walkthrough-inheriting-from-a-windows-forms-control-with-visual-basic.md)
+- [Postupy: Dědění ze třídy UserControl](how-to-inherit-from-the-usercontrol-class.md)
+- [Postupy: Dědění ze třídy Control](how-to-inherit-from-the-control-class.md)
+- [Postupy: Dědění ze stávajících ovládacích prvků Windows Forms](how-to-inherit-from-existing-windows-forms-controls.md)
+- [Postupy: Otestování běhového chování UserControl](how-to-test-the-run-time-behavior-of-a-usercontrol.md)
 - [Typy vlastních ovládacích prvků](varieties-of-custom-controls.md)

@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 6a14125f-1a8d-41a1-8a32-659ca0ad12de
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f4a062e060e7b367f0d56b3633238de74ae8ed88
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: c58be27334bcb862367464475a4eade5e01bdbb2
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55281668"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59221610"
 ---
 # <a name="field-element-net-native"></a>\<Pole > – Element (.NET Native)
 Použije zásady reflexe runtime pole.  
@@ -37,7 +37,7 @@ Použije zásady reflexe runtime pole.
   
 ## <a name="name-attribute"></a>Název atributu  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |*method_name*|Název pole. Typ pole je definován nadřazený [ \<typ >](../../../docs/framework/net-native/type-element-net-native.md) nebo [ \<TypeInstantiation >](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) elementu.|  
   
@@ -54,13 +54,14 @@ Použije zásady reflexe runtime pole.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Type>](../../../docs/framework/net-native/type-element-net-native.md)|Použije zásady reflexe pro typ a všechny její členy.|  
+|[\<Typ >](../../../docs/framework/net-native/type-element-net-native.md)|Použije zásady reflexe pro typ a všechny její členy.|  
 |[\<TypeInstantiation>](../../../docs/framework/net-native/typeinstantiation-element-net-native.md)|Použije zásady reflexe pro Konstruovaný obecný typ a všechny její členy.|  
   
 ## <a name="remarks"></a>Poznámky  
  Pokud nejsou výslovně definované zásady polí, dědí zásady modulu runtime objektů svého nadřízeného elementu.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Elementy direktivy modulu runtime](../../../docs/framework/net-native/runtime-directive-elements.md)
 - [Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)
 - [Nastavení zásad direktivy modulu runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md)

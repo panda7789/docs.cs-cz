@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - federation [WCF], and trust
 ms.assetid: 4bdec4f2-f8a2-4512-bdcf-14ef54b5877a
-ms.openlocfilehash: 1f0872c9aea11a54860fe3075d2756691590e0d4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 4e1529db6cc52b6b8cc8881d2b2a35a754b4b311
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54532419"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59225336"
 ---
 # <a name="federation-and-trust"></a>Federace a důvěryhodnost
 Toto téma popisuje různé aspekty související s federovaným aplikacím, hranicemi vztahů důvěryhodnosti a konfigurace a použití vydané tokeny ve Windows Communication Foundation (WCF).  
@@ -38,6 +38,7 @@ Toto téma popisuje různé aspekty související s federovaným aplikacím, hra
  Určuje, zda je serializován ve zpráv odesílaných z klienta do federovaný koncový bod vydaný token, nebo není řízen pomocí nastavení <xref:System.ServiceModel.Security.Tokens.SecurityTokenParameters.InclusionMode%2A> vlastnost <xref:System.ServiceModel.Security.Tokens.SecurityTokenParameters> třídy. Tuto vlastnost lze nastavit na jednu z <xref:System.ServiceModel.Security.Tokens.SecurityTokenInclusionMode> hodnot výčtu, ale není užitečné v situacích, většina federované. `SecurityTokenInclusionMode.Never` a `SecurityTokenInclusionMode.AlwaysToInitiator` hodnoty způsobit klientovi umožní odeslat odkaz na tokenem vydaným službou tokenů zabezpečení k předávající straně. Pokud předávající strana má kopii vystavený ověřovací token, se nezdaří, protože není možné přeložit odkaz na token. Zpracovává WCF `SecurityTokenInclusionMode.Once` jako ekvivalentní `SecurityTokenInclusionMode.AlwaysToRecipient`.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Security.Tokens.SecurityTokenInclusionMode>
 - [Postupy: Vytvoření federovaného klienta](../../../../docs/framework/wcf/feature-details/how-to-create-a-federated-client.md)
 - [Postupy: Konfigurace pověření ve službě Federation Service](../../../../docs/framework/wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md)

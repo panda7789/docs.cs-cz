@@ -2,12 +2,12 @@
 title: 'Postupy: Programové přidání možností rozpoznání do klienta a služby WCF'
 ms.date: 03/30/2017
 ms.assetid: 4f7ae7ab-6fc8-4769-9730-c14d43f7b9b1
-ms.openlocfilehash: a0240d09c07a23c2c578008885e5bca00169acdd
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 821e45d41a1a91b6884a73abcbdf3ea04e938e25
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54643127"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59224205"
 ---
 # <a name="how-to-programmatically-add-discoverability-to-a-wcf-service-and-client"></a>Postupy: Programové přidání možností rozpoznání do klienta a služby WCF
 Toto téma vysvětluje, jak zjistitelnost služby Windows Communication Foundation (WCF). Je založen na [hostování na vlastním serveru](https://go.microsoft.com/fwlink/?LinkId=145523) vzorku.  
@@ -341,5 +341,6 @@ namespace DiscoveryClientApp
 ```  
 
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled zjišťování WCF](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md)
 - [Objektový model zjišťování WCF](../../../../docs/framework/wcf/feature-details/wcf-discovery-object-model.md)

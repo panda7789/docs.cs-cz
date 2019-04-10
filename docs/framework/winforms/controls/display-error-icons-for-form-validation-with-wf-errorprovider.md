@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Zobrazení ikon chyb pro ověřování formuláře pomocí součásti Windows Forms ErrorProvider'
+title: 'Postupy: Zobrazení ikon chyby pro ověřování formuláře pomocí komponenty Windows Forms ErrorProvider'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,14 +11,14 @@ helpviewer_keywords:
 - ErrorProvider component [Windows Forms], displaying error icons
 - error messages [Windows Forms], displaying icons
 ms.assetid: 3b681a32-9db4-497b-a34b-34980eabee46
-ms.openlocfilehash: f676454849c37da8c0a5f944be05c3f6c95887b4
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: 39dd77fee36b172f6c38746bfe970094ec9edb4e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57707635"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59223547"
 ---
-# <a name="how-to-display-error-icons-for-form-validation-with-the-windows-forms-errorprovider-component"></a>Postupy: Zobrazení ikon chyb pro ověřování formuláře pomocí součásti Windows Forms ErrorProvider
+# <a name="how-to-display-error-icons-for-form-validation-with-the-windows-forms-errorprovider-component"></a>Postupy: Zobrazení ikon chyby pro ověřování formuláře pomocí komponenty Windows Forms ErrorProvider
 Můžete použít Windows Forms <xref:System.Windows.Forms.ErrorProvider> komponenty mají zobrazovat ikona chyby, když uživatel zadá neplatná data. Musí mít aspoň dva ovládací prvky ve formuláři, aby bylo možné kartě mezi nimi a tím vyvolat kód pro ověření.  
   
 ### <a name="to-display-an-error-icon-when-a-controls-value-is-invalid"></a>Chcete-li zobrazit ikona chyby při hodnota ovládacího prvku není platná.  
@@ -93,6 +93,7 @@ Můžete použít Windows Forms <xref:System.Windows.Forms.ErrorProvider> kompon
 4.  Spusťte projekt. Zadejte (v tomto příkladu nečíselné) neplatná data na první ovládací prvek a potom karty na druhou. Pokud se zobrazuje ikona chyby, přejděte na něj s ukazatelem myši zobrazíte text chyby.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.ErrorProvider.SetError%2A>
 - [Přehled komponenty ErrorProvider](errorprovider-component-overview-windows-forms.md)
 - [Postupy: Zobrazování chyb v prvku DataSet pomocí komponenty Windows Forms ErrorProvider](view-errors-within-a-dataset-with-wf-errorprovider-component.md)

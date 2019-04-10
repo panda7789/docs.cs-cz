@@ -1,15 +1,15 @@
 ---
-title: DataViews
+title: Zobrazení dat
 ms.date: 03/30/2017
 ms.assetid: 0fe5dfa2-c1cd-435f-90b6-b4dd2e3ef34b
-ms.openlocfilehash: bcf370e30c50bf5d992279c7abe02bfc6262ea40
-ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
+ms.openlocfilehash: aff4d6f648fa091130bfd9951f2a5001947b09a1
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55825872"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59215908"
 ---
-# <a name="dataviews"></a>DataViews
+# <a name="dataviews"></a>Zobrazení dat
 A <xref:System.Data.DataView> vám umožní vytvářet různá zobrazení dat uložených v <xref:System.Data.DataTable>, funkce, která se často používá v aplikacích datové vazby. Použití **DataView**, můžete zpřístupnit data v tabulce s jiné pořadí řazení a data lze filtrovat podle stavu nebo podle výraz filtru řádků.  
   
  A **DataView** zajišťuje dynamické zobrazení dat v základním **DataTable**: obsah, řazení a členství odrážejí změny při jejich výskytu. Toto chování se liší od **vyberte** metodu **DataTable**, který vrátí hodnotu <xref:System.Data.DataRow> pole z tabulky podle určitého pořadí filtr nebo řazení: Tento obsah odráží změny Základní tabulka, ale jeho členství a pořadí zůstat statický. Dynamické schopnosti **DataView** ideální pro vázání dat aplikací.  
@@ -44,7 +44,7 @@ A <xref:System.Data.DataView> vám umožní vytvářet různá zobrazení dat ul
  Popisuje způsob použití **objekt DataViewManager** ke správě **DataView** nastavení pro každou tabulku v **datovou sadu**.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [ASP.NET – webové aplikace](https://docs.microsoft.com/previous-versions/655cec97(v=vs.100))  
+ [Webové aplikace technologie ASP.NET](https://docs.microsoft.com/previous-versions/655cec97(v=vs.100))  
  Poskytuje přehled a podrobné postupy pro vytváření aplikací ASP.NET, webových formulářů a webových služeb.  
   
  [Aplikace Windows](https://docs.microsoft.com/previous-versions/ms184421(v=vs.100))  
@@ -60,4 +60,5 @@ A <xref:System.Data.DataView> vám umožní vytvářet různá zobrazení dat ul
  Popisuje ADO.NET architektura a komponenty a jak pomocí ADO.NET pro přístup k existujícím zdrojům dat a spravovat data aplikací.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

@@ -1,5 +1,5 @@
 ---
-title: <performanceCounter> – element (nastavení sítě)
+title: <performanceCounter> – Element (nastavení sítě)
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/settings/performanceCounters
@@ -8,12 +8,12 @@ helpviewer_keywords:
 - performanceCounter element
 - <performanceCounter> element
 ms.assetid: 3afa1586-e1b8-473d-8985-c3fc90cf561b
-ms.openlocfilehash: 4603a942788d31a049196fb699d07a13551fa443
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 30c5cd07c92a8fc3c340cab0ff9ae74e940c0c12
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55279757"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59210929"
 ---
 # <a name="performancecounter-element-network-settings"></a>\<performanceCounter > – Element (nastavení sítě)
 Povolí nebo zakáže čítače výkonu sítě.  
@@ -47,7 +47,7 @@ Povolí nebo zakáže čítače výkonu sítě.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[settings](../../../../../docs/framework/configure-apps/file-schema/network/settings-element-network-settings.md)|Nakonfiguruje možnosti základní sítě pro <xref:System.Net> oboru názvů.|  
+|[nastavení](../../../../../docs/framework/configure-apps/file-schema/network/settings-element-network-settings.md)|Nakonfiguruje možnosti základní sítě pro <xref:System.Net> oboru názvů.|  
   
 ## <a name="remarks"></a>Poznámky  
  Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).  
@@ -74,7 +74,8 @@ Povolí nebo zakáže čítače výkonu sítě.
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Net.Configuration.PerformanceCountersElement?displayProperty=nameWithType>
 - <xref:System.Net.Configuration.PerformanceCountersElement.Enabled%2A?displayProperty=nameWithType>
 - [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
-- [Čítače výkonu sítě](../../../../../docs/framework/debug-trace-profile/performance-counters.md#networking)
+- [Čítače výkonu práce v síti](../../../../../docs/framework/debug-trace-profile/performance-counters.md#networking)

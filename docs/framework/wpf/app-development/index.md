@@ -5,12 +5,12 @@ helpviewer_keywords:
 - WPF [WPF], about application development
 - application development [WPF], about
 ms.assetid: 2996ce5e-81e9-49ae-881b-952db3dd1b7e
-ms.openlocfilehash: 979a5324fe9cb6c3469660e061d5df7f312ef2c4
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 3b7e1d04173741088935104e8d4225691927a27b
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57365123"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59211059"
 ---
 # <a name="application-development"></a>Vývoj aplikací
 <a name="introduction"></a> Windows Presentation Foundation (WPF) je prezentační architektura, která slouží k vytvoření následujících typů aplikací:  
@@ -27,9 +27,7 @@ ms.locfileid: "57365123"
 >  Použití typů WPF ve službě Windows se důrazně nedoporučuje. Při pokusu o použití těchto funkcí ve službě Windows, nemusí fungovat podle očekávání.  
   
  K vytvoření této sady aplikací, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] implementuje celou řadu služeb. Toto téma obsahuje přehled těchto služeb a kde najít další informace.  
-  
 
-  
 <a name="Application_Management"></a>   
 ## <a name="application-management"></a>Správa aplikací  
  Spustitelný soubor [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace obvykle vyžadují základní sadu funkcí, které zahrnují následující:  
@@ -124,7 +122,7 @@ ms.locfileid: "57365123"
 |Název|Popis|  
 |-----------|-----------------|  
 |[Přehled správy aplikací](application-management-overview.md)|Najdete zde přehled <xref:System.Windows.Application> třídy, včetně správy životního cyklu aplikací, windows, prostředků aplikace a navigace.|  
-|[Windows ve WPF](windows-in-wpf-applications.md)|Poskytuje podrobné informace o správě windows ve vaší aplikaci, včetně použití <xref:System.Windows.Window> třídy a v dialogových oknech.|  
+|[Okna ve WPF](windows-in-wpf-applications.md)|Poskytuje podrobné informace o správě windows ve vaší aplikaci, včetně použití <xref:System.Windows.Window> třídy a v dialogových oknech.|  
 |[Přehled navigace](navigation-overview.md)|Poskytuje přehled správy navigace mezi stránkami vaší aplikace.|  
 |[Hostování](hosting-wpf-applications.md)|Poskytuje přehled o [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)].|  
 |[Sestavení a nasazení](building-and-deploying-wpf-applications.md)|Popisuje, jak sestavit a nasadit aplikaci WPF.|  

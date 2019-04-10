@@ -2,12 +2,12 @@
 title: <add> z <claimTypeRequirements> – element
 ms.date: 03/30/2017
 ms.assetid: 3234cd45-1478-468e-8b19-5c50815c4786
-ms.openlocfilehash: 6971837ef2e68de54179daaf225394b9de769987
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 47eb9f95fd024b7df24a16781b3d89fe6deb0b8c
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55275584"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59222182"
 ---
 # <a name="add-of-claimtyperequirements-element"></a>\<add> of \<claimTypeRequirements> element
 Určuje typy požadovaných a volitelných deklarací, které se zobrazí ve federativním pověření. Například služby stavu požadavky na příchozí přihlašovací údaje, které musí obsahovat sadu typů deklarací identity.  
@@ -73,6 +73,7 @@ Určuje typy požadovaných a volitelných deklarací, které se zobrazí ve fed
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.ClaimTypeRequirements%2A>
 - <xref:System.ServiceModel.Security.Tokens.ClaimTypeRequirement>
 - <xref:System.ServiceModel.Configuration.FederatedMessageSecurityOverHttpElement.ClaimTypeRequirements%2A>

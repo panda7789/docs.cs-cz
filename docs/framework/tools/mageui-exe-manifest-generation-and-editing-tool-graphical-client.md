@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Manifest Generation and Editing tool
 - MageUI.exe
 ms.assetid: f9e130a6-8117-49c4-839c-c988f641dc14
-ms.openlocfilehash: 7b0135e4fc655b0efc3140e388f75ac8f45193cf
-ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
+ms.openlocfilehash: 029e4983ef270bb5272ad0bf541ee34febd9399c
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56219760"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59222338"
 ---
 # <a name="mageuiexe-manifest-generation-and-editing-tool-graphical-client"></a>MageUI.exe (generování manifestu a nástroj pro úpravy, grafický klient)
 
@@ -28,21 +28,21 @@ Nástroj MageUI.exe podporuje stejné funkce jako nástroj příkazového řádk
   
 |Příkaz|Nabídka|Zástupce|Popis|  
 |-------------|----------|--------------|-----------------|  
-|**Manifest aplikace**|**Soubor, nový**||Vytvoří nový manifest aplikace.|  
-|**Manifest nasazení**|**Soubor, nový**||Vytvoří nový manifest nasazení.|  
-|**Otevřít**|**File**|CTRL+O|Otevře existující manifest nasazení, manifest aplikace nebo důvěryhodnou licenci v režimu úprav.|  
-|**Zavřít**|**File**|CTRL+F4|Zavře otevřený soubor.<br /><br /> Upravíte-li soubor před jeho uzavřením, požádá nástroj MageUI.exe o opětovné podepsání souboru veřejným klíčem, párem klíčů nebo uloženým certifikátem.|  
-|**Uložit**|**File**|CTRL+S|Uloží soubor, na který je aktuálně zaměřen uživatelský vstup, na disk.|  
-|**Uložit jako**|**File**||Uloží soubor na disk a umožní zadat název souboru nebo jeho umístění.|  
-|**Uložit vše**|**File**||Uloží změny pro všechny soubory otevřené v rámci nástroje MageUI.exe.|  
-|**Předvolby**|**File**||Otevře **Předvolby** dialogové okno. Další informace naleznete v následující části.|  
-|**ukončení**|**File**|ALT+F4|Ukončí nástroj MageUI.exe.|  
+|**Manifest aplikace**|**Soubor, Nový**||Vytvoří nový manifest aplikace.|  
+|**Manifest nasazení**|**Soubor, Nový**||Vytvoří nový manifest nasazení.|  
+|**Otevřít**|**Soubor**|CTRL+O|Otevře existující manifest nasazení, manifest aplikace nebo důvěryhodnou licenci v režimu úprav.|  
+|**Zavřít**|**Soubor**|CTRL+F4|Zavře otevřený soubor.<br /><br /> Upravíte-li soubor před jeho uzavřením, požádá nástroj MageUI.exe o opětovné podepsání souboru veřejným klíčem, párem klíčů nebo uloženým certifikátem.|  
+|**Uložit**|**Soubor**|CTRL+S|Uloží soubor, na který je aktuálně zaměřen uživatelský vstup, na disk.|  
+|**Uložit jako**|**Soubor**||Uloží soubor na disk a umožní zadat název souboru nebo jeho umístění.|  
+|**Uložit vše**|**Soubor**||Uloží změny pro všechny soubory otevřené v rámci nástroje MageUI.exe.|  
+|**Předvolby**|**Soubor**||Otevře **Předvolby** dialogové okno. Další informace naleznete v následující části.|  
+|**Ukončit**|**Soubor**|ALT+F4|Ukončí nástroj MageUI.exe.|  
 |**Vyjmout**|**Upravit**|CTRL+X|Odstraní aktuálně vybraný text z aplikace a uloží jej do schránky.|  
-|**kopírování**|**Upravit**|CTRL+C|Zkopíruje aktuálně vybraný text do schránky.|  
+|**Kopírovat**|**Upravit**|CTRL+C|Zkopíruje aktuálně vybraný text do schránky.|  
 |**Vložit**|**Upravit**|CTRL+V|Vloží text ze schránky do aktuálního textového prvku.|  
-|**Delete**|**Upravit**||Odstraní aktuálně vybraným v seznamu, například důvěryhodnou licenci v elementu **Manifest nasazení** kartu.|  
-|**Zavřít vše**|**Window**||Zavře všechny soubory otevřené v nástroji MageUI.exe. Pokud je zapotřebí některé ze souborů uložit, vyzve nástroj MageUI.exe k jejich uložení. Nástroj MageUI.exe také vyžaduje výběr podepsaného klíče pro každý nepodepsaný nebo změněný soubor.|  
-|**o**|**Pomoc**||Zobrazuje verzi a informace o autorských právech nástroje MageUI.exe.|  
+|**Odstranit**|**Upravit**||Odstraní aktuálně vybraným v seznamu, například důvěryhodnou licenci v elementu **Manifest nasazení** kartu.|  
+|**Zavřít vše**|**Okno**||Zavře všechny soubory otevřené v nástroji MageUI.exe. Pokud je zapotřebí některé ze souborů uložit, vyzve nástroj MageUI.exe k jejich uložení. Nástroj MageUI.exe také vyžaduje výběr podepsaného klíče pro každý nepodepsaný nebo změněný soubor.|  
+|**O produktu**|**Nápověda**||Zobrazuje verzi a informace o autorských právech nástroje MageUI.exe.|  
   
 ## <a name="preferences-dialog-box"></a>Dialogové okno Předvolby  
  **Předvolby** dialogové okno obsahuje následující prvky.  
@@ -61,9 +61,9 @@ Nástroj MageUI.exe podporuje stejné funkce jako nástroj příkazového řádk
 |Prvek uživatelského rozhraní (UI)|Popis|  
 |----------------|-----------------|  
 |**Podepsat pomocí souboru certifikátu**|Podepíše manifest digitálním certifikátem uloženým v systému souborů.|  
-|**File**|Poskytuje prostor pro zadání cesty k souboru .pfx představujícímu certifikát.|  
+|**Soubor**|Poskytuje prostor pro zadání cesty k souboru .pfx představujícímu certifikát.|  
 |**...**|Otevře se **zvolit soubor** dialogové okno pro výběr existujícího souboru .pfx.|  
-|**Nové**|Vytvoří nový soubor .pfx, který nelze ověřit skrze certifikační autoritu (CA). Další informace o typech použitých certifikátů pro podepisování [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] nasazení, najdete v článku [Trusted Application Deployment Overview](/visualstudio/deployment/trusted-application-deployment-overview).|  
+|**Nový**|Vytvoří nový soubor .pfx, který nelze ověřit skrze certifikační autoritu (CA). Další informace o typech použitých certifikátů pro podepisování [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] nasazení, najdete v článku [Trusted Application Deployment Overview](/visualstudio/deployment/trusted-application-deployment-overview).|  
 |**Heslo**|Poskytuje prostor pro zadání hesla použitého k podepisování certifikátů. Pokud není použito, může být ponecháno prázdné.|  
 |**Podepsání pomocí uloženého certifikátu**|Zobrazí seznam s vlastním výběrem digitálních certifikátů uložených v úložišti certifikátů počítače.|  
 |**Identifikátor URI TimeStamping**|Zobrazí adresu Uniform Resource Locator (URI) služby digitálního časového razítka. Vytvoření časového razítka v manifestu umožňuje vyhnout se nutnosti znovu manifesty podepisovat v případě, že digitální certifikát vyprší ještě před nasazením další verze aplikace. Další informace najdete v tématu [Windows Členové programu kořenového certifikátu](https://go.microsoft.com/fwlink/?LinkId=159000) a [ClickOnce and Authenticode](/visualstudio/deployment/clickonce-and-authenticode).|  
@@ -79,19 +79,19 @@ Nástroj MageUI.exe podporuje stejné funkce jako nástroj příkazového řádk
   
 |Prvek uživatelského rozhraní (UI)|Popis|  
 |----------------|-----------------|  
-|**Název**|Určuje identifikační informace o tomto nasazení.|  
+|**Name**|Určuje identifikační informace o tomto nasazení.|  
 |**Popis**|Určuje vydavatele, produkt a podporu informace.|  
 |**Možnosti aplikace**|Určuje, zda je to aplikace prohlížeče a zda tomto manifestu se zdrojové informace o vztahu důvěryhodnosti.|  
 |**Soubory**|Určuje všechny soubory, které tvoří toto nasazení.|  
-|**Oprávnění vyžadovaná**|Určuje sadu minimální oprávnění vyžadované aplikací ke spuštění v klientském počítači.|  
+|**Požadovaná oprávnění**|Určuje sadu minimální oprávnění vyžadované aplikací ke spuštění v klientském počítači.|  
   
 ### <a name="name-tab"></a>Název karty  
  **Název** kartě se zobrazí při prvním vytvoření nebo otevření manifestu aplikace. Jednoznačně identifikuje nasazení a volitelně určuje platnou cílovou platformu.  
   
 |Prvek uživatelského rozhraní (UI)|Popis|  
 |----------------|-----------------|  
-|**Název**|Povinný parametr. Název manifestu aplikace. Obvykle stejný jako název souboru.|  
-|**Verze**|Povinný parametr. Číslo verze nasazení ve formě *N.N.N.N*. Pouze první hlavní číslo sestavení je povinný. Například pro verzi 1.0 rozhraní aplikace, bude obsahovat platné hodnoty `1`, `1.0`, `1.0.0`, a `1.0.0.0`.|  
+|**Name**|Povinný parametr. Název manifestu aplikace. Obvykle stejný jako název souboru.|  
+|**Version**|Povinný parametr. Číslo verze nasazení ve formě *N.N.N.N*. Pouze první hlavní číslo sestavení je povinný. Například pro verzi 1.0 rozhraní aplikace, bude obsahovat platné hodnoty `1`, `1.0`, `1.0.0`, a `1.0.0.0`.|  
 |**Procesor**|Volitelné. Architektura počítače, na kterém můžete spustit toto nasazení. Výchozí hodnota je `msil`, nebo Microsoft Intermediate Language, což je výchozí formát pro všechna spravovaná sestavení. Toto pole změňte, pokud jste zkompilovali sestavení předem v aplikaci pro konkrétní architekturu. Další informace o předkompilace najdete v tématu [Ngen.exe (Generátor nativních obrázků)](../../../docs/framework/tools/ngen-exe-native-image-generator.md).|  
 |**Jazyková verze**|Volitelné. Dvě části země a oblasti kód ISO ve kterém tato aplikace funguje. Výchozí hodnota je `neutral`.|  
 |**Token veřejného klíče**|Volitelné. Veřejný klíč, kterým byl podepsán tento manifest aplikace. Pokud je to manifestu do nové nebo bez znaménka, toto pole se zobrazí jako `Unsigned`.|  
@@ -101,7 +101,7 @@ Nástroj MageUI.exe podporuje stejné funkce jako nástroj příkazového řádk
   
 |Prvek uživatelského rozhraní (UI)|Popis|  
 |----------------|-----------------|  
-|**Publisher**|Název osoba nebo organizace odpovědná za aplikace. Tato hodnota se používá jako název složky nabídky Start.|  
+|**Vydavatel**|Název osoba nebo organizace odpovědná za aplikace. Tato hodnota se používá jako název složky nabídky Start.|  
 |**Produkt**|Úplný název produktu. Pokud jste vybrali **nainstalovat místně** pro **typ aplikace** elementu na **možnosti nasazení** kartě manifest nasazení, tento název bude, co se zobrazuje v **Start** odkaz nabídky a v **přidat nebo odebrat programy** pro tuto aplikaci.|  
 |**Podpora umístění**|Adresa URL, ze kterého můžou zákazníci získat pomoc a podpora pro aplikace.|  
   
@@ -120,7 +120,7 @@ Nástroj MageUI.exe podporuje stejné funkce jako nástroj příkazového řádk
 |**Naplnění**|Přidá všechny soubory v adresáři aplikace a jeho podadresářích do manifestu aplikace. Pokud MageUI.exe najde v adresáři jeden spustitelný soubor, automaticky označí to jako vstupní bod, což je soubor nejdřív nespustí při spuštění aplikace ClickOnce na straně klienta.|  
 |**Soubory aplikace**|Obsahuje seznam všech souborů v aplikaci. Každý soubor má tři upravitelné atributy, které jsou popsány níže.|  
 |**Typ souboru**|Typ souboru může být jednu ze čtyř hodnot:<br /><br /> -Žádný.<br />-Vstupní bod. Primární spustitelný soubor aplikace. Pouze jeden spustitelný soubor může být označený jako vstupní bod.<br />-Datový soubor. Soubor, jako je například soubor XML, poskytující data aplikaci.<br />-Soubor ikony. Aplikace, jako například se zobrazí ikona na ploše nebo v horním rohu okna aplikace.|  
-|**Optional**|Soubory označené volitelné se nestáhnou počáteční instalace nebo aktualizace, ale za běhu pomocí rozhraní API na vyžádání System.Deployment stáhnout. Další informace najdete v tématu [názorný postup: Stahování sestavení na vyžádání pomocí nasazení ClickOnce pomocí návrháře rozhraní API](/visualstudio/deployment/walkthrough-downloading-assemblies-on-demand-with-the-clickonce-deployment-api-using-the-designer).|  
+|**volitelná,**|Soubory označené volitelné se nestáhnou počáteční instalace nebo aktualizace, ale za běhu pomocí rozhraní API na vyžádání System.Deployment stáhnout. Další informace najdete v tématu [názorný postup: Stahování sestavení na vyžádání pomocí nasazení ClickOnce pomocí návrháře rozhraní API](/visualstudio/deployment/walkthrough-downloading-assemblies-on-demand-with-the-clickonce-deployment-api-using-the-designer).|  
 |**Skupina**|Popisek pro sadu volitelné soubory. Můžete použít popisek skupiny do sady souborů a stáhněte si batch souborů pomocí jediného volání rozhraní API pomocí rozhraní API na vyžádání.|  
   
 ### <a name="permissions-required-tab"></a>Karta požadovaná oprávnění  
@@ -136,7 +136,7 @@ Nástroj MageUI.exe podporuje stejné funkce jako nástroj příkazového řádk
   
 |Prvek uživatelského rozhraní (UI)|Popis|  
 |----------------|-----------------|  
-|**Název**|Určuje identifikační informace o tomto nasazení.|  
+|**Name**|Určuje identifikační informace o tomto nasazení.|  
 |**Popis**|Určuje vydavatele, produkt a podporu informace.|  
 |**Možnosti nasazení**|Určuje další informace o nasazení, jako je například typ aplikace a počáteční umístění.|  
 |**Možnosti aktualizace**|Určuje, jak často [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] by měla vyhledávat aktualizace aplikace.|  
@@ -147,8 +147,8 @@ Nástroj MageUI.exe podporuje stejné funkce jako nástroj příkazového řádk
   
 |Prvek uživatelského rozhraní (UI)|Popis|  
 |----------------|-----------------|  
-|**Název**|Povinný parametr. Název manifestu nasazení. Obvykle stejný jako název souboru.|  
-|**Verze**|Povinný parametr. Číslo verze nasazení ve formě *N.N.N.N*. Pouze první hlavní číslo sestavení je povinný. Například pro verzi 1.0 rozhraní aplikace, bude obsahovat platné hodnoty `1`, `1.0`, `1.0.0`, a `1.0.0.0`.|  
+|**Name**|Povinný parametr. Název manifestu nasazení. Obvykle stejný jako název souboru.|  
+|**Version**|Povinný parametr. Číslo verze nasazení ve formě *N.N.N.N*. Pouze první hlavní číslo sestavení je povinný. Například pro verzi 1.0 rozhraní aplikace, bude obsahovat platné hodnoty `1`, `1.0`, `1.0.0`, a `1.0.0.0`.|  
 |**Procesor**|Volitelné. Architektura počítače, na kterém můžete spustit toto nasazení. Výchozí hodnota je `msil`, nebo Microsoft Intermediate Language, výchozím formátu pro všechny spravované sestavení. Toto pole změňte, pokud kompilujete sestavení v aplikaci pro konkrétní architekturu.|  
 |**Jazyková verze**|Volitelné. Kód pro zemi/oblast ISO se dvě části, ve kterém tato aplikace funguje. Výchozí hodnota je `neutral`.|  
 |**Token veřejného klíče**|Volitelné. Veřejný klíč, kterým byl podepsán manifestu nasazení. Pokud je to manifestu do nové nebo bez znaménka, toto pole se zobrazí jako `Unsigned`.|  
@@ -157,7 +157,7 @@ Nástroj MageUI.exe podporuje stejné funkce jako nástroj příkazového řádk
   
 |Prvek uživatelského rozhraní (UI)|Popis|  
 |----------------|-----------------|  
-|**Publisher**|Povinný parametr. Název osoba nebo organizace odpovědná za aplikace. Tato hodnota se používá jako název složky nabídky Start.|  
+|**Vydavatel**|Povinný parametr. Název osoba nebo organizace odpovědná za aplikace. Tato hodnota se používá jako název složky nabídky Start.|  
 |**Produkt**|Povinný parametr. Úplný název produktu. Pokud jste vybrali **nainstalovat místně** pro **typ aplikace** elementu na **možnosti nasazení** kartu, tento název bude, co se zobrazuje v **Start** odkaz nabídky a v **přidat nebo odebrat programy** pro tuto aplikaci.|  
 |**Podpora umístění**|Volitelné. Adresa URL, ze kterého můžou zákazníci získat pomoc a podpora pro aplikace.|  
   
@@ -181,16 +181,17 @@ Nástroj MageUI.exe podporuje stejné funkce jako nástroj příkazového řádk
 |**Zvolte, pokud by měla aplikace vyhledávat aktualizace**|Poskytuje dvě možnosti pro kontroly aktualizací:<br /><br /> -   **Před spuštěním aplikace**. Kontrola aktualizací se provádí před spuštění aplikace.<br />-   **Po spuštění aplikace**. Kontrola aktualizací začíná, jakmile byla inicializována hlavního formuláře aplikace a spustí při příštím spuštění aplikace.|  
 |**Četnost kontroly aktualizací**|Určuje, jak často [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] by měla vyhledávat aktualizace:<br /><br /> -   **Zkontrolovat při každém spuštění aplikace**. [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] provede kontrolu aktualizace pokaždé, když uživatel otevře aplikaci.<br />-   **Zkontrolujte každé**: Vyberte časový interval a jednotka (hodiny, dny nebo týdny), která musí uplynout před vyhledávají se aktualizace.|  
 |**Zadejte minimální požadovanou verzi této aplikace**|Volitelné. Určuje, že konkrétní verzi aplikace požadovanou instalaci, bránit uživatelům v práci se starší verzí.|  
-|**Verze**|Požadováno pokud **zadat minimální požadovanou verzi této aplikace** zaškrtávací políčko je zaškrtnuto. Číslo verze musí být ve tvaru *N.N.N.N*. Pouze první hlavní číslo sestavení je povinný. Například pro verzi 1.0 rozhraní aplikace, bude obsahovat platné hodnoty `1`, `1.0`, `1.0.0`, a `1.0.0.0`.|  
+|**Version**|Požadováno pokud **zadat minimální požadovanou verzi této aplikace** zaškrtávací políčko je zaškrtnuto. Číslo verze musí být ve tvaru *N.N.N.N*. Pouze první hlavní číslo sestavení je povinný. Například pro verzi 1.0 rozhraní aplikace, bude obsahovat platné hodnoty `1`, `1.0`, `1.0.0`, a `1.0.0.0`.|  
   
 ### <a name="application-reference-tab"></a>Odkaz na kartě aplikace  
  **Odkaz na aplikaci** karta obsahuje stejné pole, jako **název** kartu popsané dříve v tomto tématu. Jedinou výjimkou jsou následující pole.  
   
 |Prvek uživatelského rozhraní (UI)|Popis|  
 |----------------|-----------------|  
-|**Select Manifest**|Umožňuje zvolit manifest aplikace. Všechna ostatní pole na této stránce se vyplní při výběru manifest aplikace.|  
+|**Vyberte manifestu**|Umožňuje zvolit manifest aplikace. Všechna ostatní pole na této stránce se vyplní při výběru manifest aplikace.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [ClickOnce – zabezpečení a nasazení](/visualstudio/deployment/clickonce-security-and-deployment)
 - [Návod: Ruční nasazení aplikace ClickOnce](/visualstudio/deployment/walkthrough-manually-deploying-a-clickonce-application)
-- [Mage.exe (Manifest Generation and Editing Tool)](../../../docs/framework/tools/mage-exe-manifest-generation-and-editing-tool.md)
+- [Mage.exe (generování manifestu a nástroj pro úpravy)](../../../docs/framework/tools/mage-exe-manifest-generation-and-editing-tool.md)

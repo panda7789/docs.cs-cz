@@ -9,12 +9,12 @@ helpviewer_keywords:
 - styles [WPF], DataGrid
 - parts [WPF], DataGrid
 ms.assetid: 9cb31d63-f148-4d25-b079-816e73f988c7
-ms.openlocfilehash: 582179d8469cabc3551e1bed53c87e045f26e7cf
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: dacc1222958ab05971c9681d33a0c431b72d0531
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57366072"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59218449"
 ---
 # <a name="datagrid-styles-and-templates"></a>DataGrid – styly a šablony
 Toto téma popisuje styly a šablony pro <xref:System.Windows.Controls.DataGrid> ovládacího prvku. Můžete upravit výchozí <xref:System.Windows.Controls.ControlTemplate> poskytnout jedinečný vzhled ovládacího prvku. Další informace najdete v tématu [přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením ControlTemplate](customizing-the-appearance-of-an-existing-control.md).  
@@ -22,7 +22,7 @@ Toto téma popisuje styly a šablony pro <xref:System.Windows.Controls.DataGrid>
 ## <a name="datagrid-parts"></a>Části ovládacího prvku DataGrid  
  V následující tabulce jsou uvedeny pojmenované části pro <xref:System.Windows.Controls.DataGrid> ovládacího prvku.  
   
-|Část|Typ|Popis|  
+|Část|Type|Popis|  
 |-|-|-|  
 |PART_ColumnHeadersPresenter|<xref:System.Windows.Controls.Primitives.DataGridColumnHeadersPresenter>|Řádek, který obsahuje záhlaví sloupců.|  
   
@@ -89,7 +89,7 @@ Toto téma popisuje styly a šablony pro <xref:System.Windows.Controls.DataGrid>
 ## <a name="datagridrowheader-parts"></a>DataGridRowHeader částí  
  V následující tabulce jsou uvedeny pojmenované části pro <xref:System.Windows.Controls.Primitives.DataGridRowHeader> elementu.  
   
-|Část|Typ|Popis|  
+|Část|Type|Popis|  
 |-|-|-|  
 |PART_TopHeaderGripper|<xref:System.Windows.Controls.Primitives.Thumb>|Prvek, který se používá ke změně velikosti záhlaví řádku v horní části.|  
 |PART_BottomHeaderGripper|<xref:System.Windows.Controls.Primitives.Thumb>|Prvek, který se používá ke změně velikosti záhlaví řádku v dolní části.|  
@@ -122,7 +122,7 @@ Toto téma popisuje styly a šablony pro <xref:System.Windows.Controls.DataGrid>
 ## <a name="datagridcolumnheaderspresenter-parts"></a>DataGridColumnHeadersPresenter částí  
  V následující tabulce jsou uvedeny pojmenované části pro <xref:System.Windows.Controls.Primitives.DataGridColumnHeadersPresenter> elementu.  
   
-|Část|Typ|Popis|  
+|Část|Type|Popis|  
 |-|-|-|  
 |PART_FillerColumnHeader|<xref:System.Windows.Controls.Primitives.DataGridColumnHeader>|Zástupný symbol pro záhlaví sloupců.|  
   
@@ -138,7 +138,7 @@ Toto téma popisuje styly a šablony pro <xref:System.Windows.Controls.DataGrid>
 ## <a name="datagridcolumnheader-parts"></a>DataGridColumnHeader částí  
  V následující tabulce jsou uvedeny pojmenované části pro <xref:System.Windows.Controls.Primitives.DataGridColumnHeader> elementu.  
   
-|Část|Typ|Popis|  
+|Část|Type|Popis|  
 |-|-|-|  
 |PART_LeftHeaderGripper|<xref:System.Windows.Controls.Primitives.Thumb>|Prvek, který se používá pro změnu velikosti na záhlaví sloupce z levé strany.|  
 |PART_RightHeaderGripper|<xref:System.Windows.Controls.Primitives.Thumb>|Prvek, který se používá pro změnu velikosti z pravé strany záhlaví sloupce.|  
@@ -170,9 +170,10 @@ Toto téma popisuje styly a šablony pro <xref:System.Windows.Controls.DataGrid>
  Úplnou ukázku najdete v tématu [stylu s ukázkou ControlTemplates](https://github.com/Microsoft/WPF-Samples/tree/master/Styles%20&%20Templates/IntroToStylingAndTemplating).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.FrameworkElement.Style%2A>
 - <xref:System.Windows.Controls.ControlTemplate>
 - [Styly a šablony ovládacích prvků](control-styles-and-templates.md)
 - [Přizpůsobení ovládacího prvku](control-customization.md)
 - [Styly a šablony](styling-and-templating.md)
-- [Přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením šablony ControlTemplate](customizing-the-appearance-of-an-existing-control.md)
+- [Přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením ControlTemplate](customizing-the-appearance-of-an-existing-control.md)

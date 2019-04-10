@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - handling faults [WCF]
 ms.assetid: a9696563-d404-4905-942d-1e0834c26dea
-ms.openlocfilehash: e0a81915d35bc382cb4f51ec6d26a429c8a759c1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 7c64bdb0cf60fff2dad49c3ffc48629c53abecad
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54594925"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59210669"
 ---
 # <a name="specifying-and-handling-faults-in-contracts-and-services"></a>Určování a zpracování chyb v kontraktech a službách
 Aplikace Windows Communication Foundation (WCF) zpracovávat chybové situace mapování objektů spravovaných výjimek na SOAP chyb a selhání objekty SOAP pro objekty spravované výjimky. Témata v této části popisují postup návrhu smlouvy ke zveřejnění chyba podmínek jako vlastní chyb SOAP, jak vracet tyto chyby jako součást implementace služby a jak klienti zachytit tyto chyby.  
@@ -56,6 +56,7 @@ Aplikace Windows Communication Foundation (WCF) zpracovávat chybové situace ma
  Při deserializaci kontrakt chyby, poprvé pokusí shodovat s názvem kontraktu selhání ve zprávě SOAP s typem odolnosti kontraktu WCF. Pokud nemůže najít přesnou shodu, kterou pak vyhledá seznam v abecedním pořadí pro kompatibilní typ smlouvy k dispozici selhání. Pokud dvě selhání kontrakty jsou nekompatibilní typy (je podtřídou třídy, například) nesprávného typu lze deserializovat chyby. K tomu dochází pouze pokud kontrakt chyby neurčuje název, obor názvů a akce. K tomuto problému zabránit, vždy plně kvalifikujte kontrakty selhání tak, že zadáte jméno, obor názvů a atributů akce. Kromě toho pokud jste definovali počet chybu související s kontrakty odvozen ze sdíleného základní třídy, ujistěte se, že pro všemi novými členy s označení `[DataMember(IsRequired=true)]`. Další informace o to `IsRequired` viz atribut <xref:System.Runtime.Serialization.DataMemberAttribute>. Se základní třídy brání kompatibilní typ a vynutit chyby a lze deserializovat do správné odvozeného typu.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.FaultException>
 - <xref:System.ServiceModel.FaultContractAttribute>
 - <xref:System.ServiceModel.FaultException>

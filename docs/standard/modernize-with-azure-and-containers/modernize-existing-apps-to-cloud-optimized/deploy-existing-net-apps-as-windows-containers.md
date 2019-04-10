@@ -4,12 +4,12 @@ description: Modernizace stávajících aplikací .NET pomocí cloudu Azure a Wi
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 04/29/2018
-ms.openlocfilehash: 646acc6fd14c1ff85593dbf6074f0d03d86f04bd
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 9d84924317e7c6e3dd4386f851ee902e2b5a7caf
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53143744"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59216662"
 ---
 # <a name="deploy-existing-net-apps-as-windows-containers"></a>Nasazení existujících aplikací .NET jako kontejnery Windows
 
@@ -134,7 +134,6 @@ Spouštění kontejneru na Windows s nebo bez izolace Hyper-V je za běhu rozhod
 -   **Infografika: Microsoft a kontejnery**
 
     [https://info.microsoft.com/rs/157-GQE-382/images/Container%20infographic%201.4.17.pdf](https://info.microsoft.com/rs/157-GQE-382/images/Container%20infographic%201.4.17.pdf)
-
 
 ## <a name="the-container-ecosystem-in-azure"></a>Ekosystém kontejneru v Azure
 

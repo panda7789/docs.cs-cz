@@ -8,12 +8,12 @@ helpviewer_keywords:
 - figures [Windows Forms], creating from shapes
 - figures [Windows Forms], creating from lines
 ms.assetid: 82fd56c7-b443-4765-9b7c-62ce030656ec
-ms.openlocfilehash: 1977f1c9efe2c379ef6039870aade300efca2bdd
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: eeaf478375e08734b20d83b6f3c8030732495013
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57709494"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59224907"
 ---
 # <a name="how-to-create-figures-from-lines-curves-and-shapes"></a>Postupy: Vytváření obrázků z čar, křivek a obrazců
 Vytvoření elementu figure, sestavit <xref:System.Drawing.Drawing2D.GraphicsPath>a pak volat metody, jako například <xref:System.Drawing.Drawing2D.GraphicsPath.AddLine%2A> a <xref:System.Drawing.Drawing2D.GraphicsPath.AddCurve%2A>, chcete-li přidat primitivních elementů do cesty.  
@@ -35,6 +35,7 @@ Vytvoření elementu figure, sestavit <xref:System.Drawing.Drawing2D.GraphicsPat
  V předchozích příkladech jsou určeny k použití pomocí Windows Forms a vyžadují <xref:System.Windows.Forms.PaintEventArgs> `e`, což je parametr <xref:System.Windows.Forms.Control.Paint> obslužné rutiny události.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Drawing.Drawing2D.GraphicsPath>
 - [Sestavování a kreslení cest](constructing-and-drawing-paths.md)
 - [Kreslení čar a obrazců pomocí pera](using-a-pen-to-draw-lines-and-shapes.md)

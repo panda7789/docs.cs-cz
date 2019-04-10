@@ -2,12 +2,12 @@
 title: Prohlížeč trasování služeb (SvcTraceViewer.exe)
 ms.date: 03/30/2017
 ms.assetid: 9027efd3-df8d-47ed-8bcd-f53d55ed803c
-ms.openlocfilehash: 723b1c6858f0c56d4834dc937b9f4883e22156e6
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
-ms.translationtype: MT
+ms.openlocfilehash: 4697e43ee1ae08d5eec02b042aea0ec69d6eeac4
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57680383"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59213386"
 ---
 # <a name="service-trace-viewer-tool-svctraceviewerexe"></a>Prohlížeč trasování služeb (SvcTraceViewer.exe)
 Nástroj Prohlížeč trasování služeb Windows Communication Foundation (WCF) pomáhá analyzovat diagnostické trasování, které se vygenerovaly WCF. Prohlížeče trasování služeb poskytuje způsob, jak snadno sloučení, zobrazení a filtrování trasovací zprávy v protokolu, takže můžete diagnostikovat, opravit a ověřit problémy se službou WCF.  
@@ -456,6 +456,7 @@ Počínaje verzí .NET Framework 4.8, se zobrazí ovládací prvky pole se sezna
  Pokud otevřete protokol trasování vytvořené pomocí arabském operačním systému, můžete si všimnout, který čas, kdy filtr nefunguje. Například roku 2005 odpovídá rok 1427 Arabské kalendáře. Časový rozsah podporovaný filtr nástroje prohlížeče trasování služeb však nepodporuje data starší než 1752. To může znamenat, že zatím nejste schopni vybrat správné datum ve filtru. Chcete-li vyřešit tento problém, můžete vytvořit vlastní filtr (**zobrazení/vlastní filtry**) pomocí výrazu XPath zahrnout konkrétní časové období.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Použití prohlížeče trasování služeb k zobrazení korelovaných tras a řešení problémů](../../../docs/framework/wcf/diagnostics/tracing/using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md)
 - [Konfigurace trasování](../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)
 - [Komplexní trasování](./diagnostics/tracing/end-to-end-tracing.md)

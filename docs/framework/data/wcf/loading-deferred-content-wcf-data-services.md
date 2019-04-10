@@ -9,12 +9,12 @@ helpviewer_keywords:
 - WCF Data Services, deferred content
 - WCF Data Services, loading data
 ms.assetid: 32f9b588-c832-44c4-a7e0-fcce635df59a
-ms.openlocfilehash: 3c522cd9f360430bde8a008c4c9702f01887d948
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 905cf9933b726ba570c16719c8d1883a8588254d
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54554995"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59227168"
 ---
 # <a name="loading-deferred-content-wcf-data-services"></a>Načtení odloženého obsahu (WCF Data Services)
 Ve výchozím nastavení [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] omezuje množství dat, které dotaz vrátí. Můžete však explicitně načíst další data, včetně souvisejících entit, data stránkované odpovědi a binární datové proudy z datové služby, když ho nepotřebují. Toto téma popisuje, jak načíst takového odloženého obsahu do vaší aplikace.  
@@ -58,5 +58,6 @@ Ve výchozím nastavení [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.
  [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] umožňuje přístup k datům binárních rozsáhlých objektů (BLOB) jako datový proud. Streamování odloží načítání binárních dat, dokud je to potřeba, a klient může zpracovávat efektivněji tato data. Aby bylo možné tuto funkci využít, musí implementovat datové služby <xref:System.Data.Services.Providers.IDataServiceStreamProvider> zprostředkovatele. Další informace najdete v tématu [streamování poskytovatele](../../../../docs/framework/data/wcf/streaming-provider-wcf-data-services.md). Pokud je povoleno vysílání datového proudu, typy entit jsou vráceny bez související binární data. V takovém případě musíte použít <xref:System.Data.Services.Client.DataServiceContext.GetReadStream%2A> metodu <xref:System.Data.Services.Client.DataServiceContext> pro přístup k datový proud pro binární data ze služby. Podobně lze použít <xref:System.Data.Services.Client.DataServiceContext.SetSaveStream%2A> metoda pro přidání nebo změnu binární data konkrétní entity jako datový proud. Další informace najdete v tématu [práce s binárními daty](../../../../docs/framework/data/wcf/working-with-binary-data-wcf-data-services.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Klientská knihovna pro WCF Data Services](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)
 - [Dotazování v datové službě](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md)

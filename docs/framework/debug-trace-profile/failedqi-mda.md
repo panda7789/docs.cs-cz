@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 902dc863-34b3-477c-b433-b8a6bb6133c6
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 9a3338595e8b541fcda93b091eeddf17919a483c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 0ac478644561d2aab13d10811987d8d02c8d7608
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54614390"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59217624"
 ---
 # <a name="failedqi-mda"></a>failedQI – pomocník spravovaného ladění (MDA)
 `failedQI` Pomocníka spravovaného ladění (MDA) se aktivuje, když modul runtime volá `QueryInterface` na ukazatele rozhraní modelu COM jménem obálka volatelná aplikacemi běhu (RCW) a `QueryInterface` volání selže.  
@@ -31,7 +31,7 @@ ms.locfileid: "54614390"
   
 -   Proxy služby vlastnictví OLE vrátí selhání hodnoty HRESULT.  
   
-## <a name="resolution"></a>Rozlišení  
+## <a name="resolution"></a>Řešení  
  Pravidla modelu COM naleznete v dokumentaci MSDN.  
   
 ## <a name="effect-on-the-runtime"></a>Vliv na modul Runtime  
@@ -51,6 +51,7 @@ ms.locfileid: "54614390"
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
 - [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
 - [Zařazování spolupráce](../../../docs/framework/interop/interop-marshaling.md)

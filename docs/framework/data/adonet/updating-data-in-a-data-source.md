@@ -1,18 +1,18 @@
 ---
-title: Aktualizace dat ve zdroji dat.
+title: Aktualizace dat ve zdroji dat
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 55c545e5-dcd5-4323-a5b9-3825c2157462
-ms.openlocfilehash: 088dc9507f073553f8a857bd11ecd016f0d94244
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a12fa587d5df0ed95dd0f15ccfbe2ef886185b9e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54730877"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59207474"
 ---
-# <a name="updating-data-in-a-data-source"></a>Aktualizace dat ve zdroji dat.
+# <a name="updating-data-in-a-data-source"></a>Aktualizace dat ve zdroji dat
 Příkazy SQL, které upravují data (například vložení, aktualizace nebo odstranění) nevracejí řádky. Podobně mnoho uložené procedury provést akci, ale nevracejí řádky. Ke spuštění příkazů, které nevracejí řádky, vytvořit **příkaz** objekt s příslušný příkaz SQL a **připojení**, včetně požadované **parametry**. Příkaz Spustit **metodu ExecuteNonQuery** metodu **příkaz** objektu.  
   
  **Metodu ExecuteNonQuery** metoda vrátí celé číslo představující počet řádků, které jsou ovlivněny příkazu nebo uložené procedury, která se spustil. Pokud více příkazy jsou spouštěny, vrácená hodnota je součtem záznamů ovlivněný všechny příkazy spuštění.  
@@ -92,6 +92,7 @@ Int32 rowCount = (Int32) command.Parameters["@RowCount"].Value;
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Použití příkazů pro změny dat](../../../../docs/framework/data/adonet/using-commands-to-modify-data.md)
 - [Aktualizace zdrojů dat pomocí adaptérů dat](../../../../docs/framework/data/adonet/updating-data-sources-with-dataadapters.md)
 - [Příkazy a parametry](../../../../docs/framework/data/adonet/commands-and-parameters.md)

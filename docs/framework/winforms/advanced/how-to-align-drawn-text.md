@@ -8,12 +8,12 @@ helpviewer_keywords:
 - text [Windows Forms], aligning
 - Windows Forms, aligning drawn text
 ms.assetid: 83c10a81-1a90-4b5c-98aa-2c6c4b280079
-ms.openlocfilehash: ab97ab713067af26455fa4261bbddaf900ec91b8
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: 5214ef2c69349514f05ba68cc023a7622e119e3a
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57725256"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59210448"
 ---
 # <a name="how-to-align-drawn-text"></a>Postupy: Zarovnání vykresleného textu
 Při provádění vlastní kreslení, můžete často center vykreslený text na formulář nebo ovládací prvek. Je možné snadno zarovnat text nakreslit <xref:System.Drawing.Graphics.DrawString%2A> nebo <xref:System.Windows.Forms.TextRenderer.DrawText%2A> metody vytvořením správný objekt formátování a nastavení příznaků příslušném formátu.  
@@ -33,9 +33,10 @@ Při provádění vlastní kreslení, můžete často center vykreslený text na
      [!code-vb[System.Drawing.AlignDrawnText#20](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.AlignDrawnText/VB/Form1.vb#20)]  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- V předchozích příkladech kódu jsou určeny k použití pomocí Windows Forms a vyžadují <xref:System.Windows.Forms.PaintEventArgs> `e`, což je parametr <xref:System.Windows.Forms.PaintEventHandler>.  
+ V předchozích příkladech kódu jsou určeny k použití pomocí Windows Forms a vyžadují <xref:System.Windows.Forms.PaintEventArgs>`e`, což je parametr <xref:System.Windows.Forms.PaintEventHandler>.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Postupy: Kreslení textu pomocí GDI](how-to-draw-text-with-gdi.md)
 - [Použití písem a textu](using-fonts-and-text.md)
 - [Postupy: Vytváření rodin písem a písem](how-to-construct-font-families-and-fonts.md)

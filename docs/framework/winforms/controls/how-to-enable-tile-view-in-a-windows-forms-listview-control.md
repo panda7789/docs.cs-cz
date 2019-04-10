@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Povolení zobrazení Tile v ovládacím prvku Windows Forms ListView'
+title: 'Postupy: Povolení zobrazení Vedle sebe v ovládacím prvku Windows Forms ListView'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,14 +11,14 @@ helpviewer_keywords:
 - Windows Forms, controls
 - ListView control [Windows Forms], tile view
 ms.assetid: c20e67a3-2d94-413d-9fcf-ecbd0fe251da
-ms.openlocfilehash: ad0a925601d3cfaebcd21a2082e3d208d82151bc
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: 0d47eddbc1d9a4efc7f1e4644136ac6621088396
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57722890"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59215024"
 ---
-# <a name="how-to-enable-tile-view-in-a-windows-forms-listview-control"></a>Postupy: Povolení zobrazení Tile v ovládacím prvku Windows Forms ListView
+# <a name="how-to-enable-tile-view-in-a-windows-forms-listview-control"></a>Postupy: Povolení zobrazení Vedle sebe v ovládacím prvku Windows Forms ListView
 S funkcí zobrazení dlaždice <xref:System.Windows.Forms.ListView> ovládacího prvku, můžete zadat vizuální rovnováhu mezi textové a grafické informace. Textové informace zobrazené položky v zobrazení tile je stejný jako sloupec informace definované pro zobrazení podrobností. Zobrazení Tile funguje v kombinaci s funkcemi označit seskupení nebo vložení ve <xref:System.Windows.Forms.ListView> ovládacího prvku.  
   
  Zobrazení tile používá ikony 32 x 32 pixelů a několik řádků textu, jak je znázorněno na následujících obrázcích.  
@@ -59,7 +59,8 @@ S funkcí zobrazení dlaždice <xref:System.Windows.Forms.ListView> ovládacího
  Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.ListView>
 - <xref:System.Windows.Forms.ListView.TileSize%2A>
-- [Ovládací prvek ListView](listview-control-windows-forms.md)
+- [ListView – ovládací prvek](listview-control-windows-forms.md)
 - [Přehled ovládacího prvku ListView](listview-control-overview-windows-forms.md)

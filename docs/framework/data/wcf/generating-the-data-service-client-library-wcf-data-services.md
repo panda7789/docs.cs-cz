@@ -6,12 +6,12 @@ helpviewer_keywords:
 - WCF Data Services, client library
 - Add Service Reference dialog box
 ms.assetid: 314077c1-ac10-47e1-bed4-940b5462359d
-ms.openlocfilehash: 41f4e7cd633cf6175b6b167937cf53ceb4d9ec59
-ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
+ms.openlocfilehash: 96b7bfabef589464e99e808d19f0dee6cfb23536
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56092095"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59225817"
 ---
 # <a name="generating-the-data-service-client-library-wcf-data-services"></a>Generování klientské knihovny datové služby (WCF Data Services)
 Datové služby, který implementuje [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] může vrátit metadata dokumentu služby, které popisují datový model vystavené [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informačního kanálu. Další informace najdete v tématu [OData: Dokument metadat služby](https://go.microsoft.com/fwlink/?LinkId=186070). Můžete použít **přidat odkaz na službu** dialogového okna v sadě Visual Studio se přidat odkaz na [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]– na základě služby. Při použití tohoto nástroje se přidat odkaz na metadata vrácený [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informačního kanálu klientský projekt, provede následující akce:  
@@ -36,7 +36,7 @@ Datové služby, který implementuje [!INCLUDE[ssODataFull](../../../../includes
   
 |Typ datového modelu|Datový typ rozhraní .NET framework|  
 |---------------------|------------------------------|  
-|`Edm.Binary`|<xref:System.Byte>`[]`|  
+|`Edm.Binary`|<xref:System.Byte> `[]`|  
 |`Edm.Boolean`|<xref:System.Boolean>|  
 |`Edm.Byte`|<xref:System.Byte>|  
 |`Edm.DateTime`|<xref:System.DateTime>|  
@@ -53,5 +53,6 @@ Datové služby, který implementuje [!INCLUDE[ssODataFull](../../../../includes
  Další informace najdete v tématu [OData: Primitivní datové typy](https://go.microsoft.com/fwlink/?LinkId=186072).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Klientská knihovna pro WCF Data Services](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)
 - [Rychlý start](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md)

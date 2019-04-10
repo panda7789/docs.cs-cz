@@ -2,12 +2,12 @@
 title: Principy problémů a výjimek WebRequest
 ms.date: 03/30/2017
 ms.assetid: 74a361a5-e912-42d3-8f2e-8e9a96880a2b
-ms.openlocfilehash: 55ef0b0f5260c986cad01d2854202dea3755ace7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 3a6dc06ed7abdbb6a28f9d6c09eda079157493d9
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54587525"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59215011"
 ---
 # <a name="understanding-webrequest-problems-and-exceptions"></a>Principy problémů a výjimek WebRequest
 <xref:System.Net.WebRequest> a odvozené třídy (<xref:System.Net.HttpWebRequest>, <xref:System.Net.FtpWebRequest>, a <xref:System.Net.FileWebRequest>) vyvolat výjimky pro signalizaci nestandardní podmínky. Někdy není zřejmé řešení těchto problémů.  
@@ -29,6 +29,7 @@ ms.locfileid: "54587525"
 |<xref:System.Net.WebExceptionStatus.ServerProtocolViolation>|Odpověď ze serveru není platná odpověď HTTP. Tento problém nastane, pokud rozhraní .NET Framework detekuje, že odpověď serveru není v souladu s HTTP 1.1 RFC. Tomuto problému může dojít, když odpověď obsahuje nesprávné hlavičky nebo nesprávným obsahem záhlaví oddělovače. RFC 2616 definuje HTTP 1.1 a platný formát pro odpověď ze serveru. Další informace najdete v tématu [RFC 2616 – protokol HTTP - HTTP/1.1](https://go.microsoft.com/fwlink/?LinkID=147388) na [Engineering Task Force IETF (Internet)](https://www.ietf.org/) webu.|Získání síťového trasování transakce a prověří hlavičky v odpovědi.<br /><br /> Pokud vaše aplikace vyžaduje odpověď serveru bez (může se jednat o problém zabezpečení) a sada `useUnsafeHeaderParsing` k `true` v konfiguračním souboru. Zobrazit [ \<httpWebRequest > – Element (nastavení sítě)](../../../docs/framework/configure-apps/file-schema/network/httpwebrequest-element-network-settings.md).|  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Net.HttpWebRequest>
 - <xref:System.Net.HttpWebResponse>
 - <xref:System.Net.Dns>

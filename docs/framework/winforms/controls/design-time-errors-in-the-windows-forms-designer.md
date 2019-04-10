@@ -8,12 +8,12 @@ helpviewer_keywords:
 - errors [Windows Forms Designer]
 - design-time errors [Windows Forms Designer]
 ms.assetid: ad408380-825a-46d8-9a4a-531b130b88ce
-ms.openlocfilehash: 64a0b8d0d0d9f0cc2bc2a841b999af58f29b4f75
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 7ee4ce1d6efdc4927fc2d20100f0b12f7405261f
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57718048"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59213139"
 ---
 # <a name="design-time-errors-in-the-windows-forms-designer"></a>Chyby při návrhu v Návrháři formulářů Windows
 Toto téma vysvětluje význam a použití seznamu chyb při návrhu, který se zobrazí v sadě Microsoft Visual Studio, když Návrhář formulářů Windows nepodaří načíst. Pokud se zobrazí tento seznam chyb, by neměla interpretovat jako chyba v návrháři, ale jako pomůcka pro opravu chyb v kódu.  
@@ -53,6 +53,7 @@ Toto téma vysvětluje význam a použití seznamu chyb při návrhu, který se 
  Můžete ignorovat chybovou podmínku a pokračovat v načítání návrháře. Výběrem této akce může způsobit neočekávané chování. Například ovládací prvky se nemusí zobrazit na návrhové ploše.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Řešení potíží s vývojem během návrhu](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/ms171843(v=vs.120))
 - [Řešení potíží s vytvářením ovládacích prvků a komponent](troubleshooting-control-and-component-authoring.md)
 - [Vývoj ovládacích prvků Windows Forms v době návrhu](developing-windows-forms-controls-at-design-time.md)

@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 8ad495d4-2941-40cf-bf64-e82e85825890
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 889158aebb70de20b4e64044b5fa61dc3494ed73
-ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
+ms.openlocfilehash: 86efc3a9d9eab5c1529804769af413dd88e71f1c
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57203360"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59220484"
 ---
 # <a name="resources-in-net-apps"></a>Prostředky v aplikacích .NET
 Téměř každá aplikace produkční kvality musí používat prostředky. Prostředek je jakákoli nespustitelná část dat, která je logicky nasazována s aplikací. Prostředek může zobrazit v aplikaci jako chybové zprávy nebo jako součást uživatelského rozhraní. Prostředky mohou obsahovat data v různých formách, včetně řetězců, obrázků a trvale uložených objektů. (K zápisu do souboru prostředků trvalé objekty, objekty musí být serializovatelné.) Ukládání dat do souboru prostředků vám umožní měnit data bez opětovné kompilace celou aplikaci. Také umožňuje ukládat data na jednom místě a eliminuje nutnost využívají pevně zakódované data, která je uložena v několika umístěních.  
@@ -62,6 +62,7 @@ Také je možné lokalizovat prostředky vaší aplikace pro specifické jazykov
 -   <xref:System.Resources.ResXResourceSet> Třídu, která vám umožňuje načíst všechny položky v souboru prostředků jazyka XML do paměti.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Globalization.CultureInfo>
 - <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType>
 - [Základy vytváření aplikací](../../../docs/standard/application-essentials.md)

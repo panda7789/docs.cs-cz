@@ -2,12 +2,12 @@
 title: <identity>
 ms.date: 03/30/2017
 ms.assetid: c1d2ae56-e231-4a07-9c3f-9f13381dc0d8
-ms.openlocfilehash: 5b5248f4cb8bdcd15b553fa14351013e78d422d9
-ms.sourcegitcommit: b8ace47d839f943f785b89e2fff8092b0bf8f565
+ms.openlocfilehash: 0f5eace346fd0ed2c0532fb602585c4593d97291
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55675397"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59220354"
 ---
 # <a name="identity"></a>\<identity>
 Prvek identita umožňuje vývojáři klientského programu zadat v době návrhu očekávané identity služby. V procesu metody handshake mezi klientem a službou Windows Communication Foundation (WCF) infrastruktura zajistí, aby identitu shod očekávanou službu hodnoty tohoto elementu a proto mohou být ověřeni. Další informace najdete v tématu [identita a ověřování služby](../../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).  
@@ -54,7 +54,7 @@ Prvek identita umožňuje vývojáři klientského programu zadat v době návrh
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<custom>](../../../../../docs/framework/configure-apps/file-schema/wcf/custom.md)|Určuje mechanismus rozpoznávání partnera vlastní pro netPeerTcpBinding.|  
+|[\<vlastní >](../../../../../docs/framework/configure-apps/file-schema/wcf/custom.md)|Určuje mechanismus rozpoznávání partnera vlastní pro netPeerTcpBinding.|  
 |[\<endpoint>](endpoint-element.md)|Nakonfiguruje koncových bodů služby.|  
 |[\<koncový bod > z \<klienta >](endpoint-of-client.md)|Nakonfiguruje kanál koncových bodů.|  
 |[\<issuer>](../../../../../docs/framework/configure-apps/file-schema/wcf/issuer.md)|Určuje Token služba zabezpečení (STS) pro federované služby.|  
@@ -63,8 +63,9 @@ Prvek identita umožňuje vývojáři klientského programu zadat v době návrh
 |[\<localIssuer>](../../../../../docs/framework/configure-apps/file-schema/wcf/localissuer.md)|Určuje místní tokenů zabezpečení služby (STS).|  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Configuration.IdentityElement>
 - <xref:System.ServiceModel.EndpointAddress>
 - <xref:System.ServiceModel.EndpointAddress.Identity%2A>
 - [Identita a ověřování služby](../../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)
-- [Koncové body: Adresy, vazby a kontrakty](../../../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)
+- [Koncové body: adresy, vazby a kontrakty](../../../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)

@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Určení tlačítka Windows Forms pro funkci tlačítka přijmout'
+title: 'Postupy: Určení tlačítka Windows Forms pro funkci tlačítka Přijmout'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,14 +11,14 @@ helpviewer_keywords:
 - Button control [Windows Forms], designating as default
 - Windows Forms controls, default button on form
 ms.assetid: 22cc9da6-b913-4e04-9554-dee443ac5c3a
-ms.openlocfilehash: 00d9f4acffb88b5047b40df91799cea1caaf2cf2
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: 1e24e410681b03a92c8c48b187dde569eccdc1c1
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57714694"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59222143"
 ---
-# <a name="how-to-designate-a-windows-forms-button-as-the-accept-button"></a>Postupy: Určení tlačítka Windows Forms pro funkci tlačítka přijmout
+# <a name="how-to-designate-a-windows-forms-button-as-the-accept-button"></a>Postupy: Určení tlačítka Windows Forms pro funkci tlačítka Přijmout
 Na formuláři Windows, můžete určit <xref:System.Windows.Forms.Button> ovládacího prvku tlačítko Přijmout, označované také jako výchozího tlačítka. Pokaždé, když uživatel stiskne klávesu ENTER, výchozí je stisknuto tlačítko bez ohledu na to, který má jiný ovládací prvek ve formuláři fokus.  
   
 > [!NOTE]
@@ -50,9 +50,10 @@ Na formuláři Windows, můžete určit <xref:System.Windows.Forms.Button> ovlá
     ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.Form.AcceptButton%2A>
 - [Přehled ovládacího prvku Button](button-control-overview-windows-forms.md)
 - [Metody výběru ovládacího prvku Windows Forms Button](ways-to-select-a-windows-forms-button-control.md)
 - [Postupy: Reakce na kliknutí na tlačítko Windows Forms](how-to-respond-to-windows-forms-button-clicks.md)
-- [Postupy: Určení tlačítka Windows Forms jako tlačítko Storno](how-to-designate-a-windows-forms-button-as-the-cancel-button.md)
+- [Postupy: Určení tlačítka Windows Forms pro funkci tlačítka Zrušit](how-to-designate-a-windows-forms-button-as-the-cancel-button.md)
 - [Ovládací prvek Button](button-control-windows-forms.md)

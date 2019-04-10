@@ -2,12 +2,12 @@
 title: Správa souběžnosti s DependentTransaction
 ms.date: 03/30/2017
 ms.assetid: b85a97d8-8e02-4555-95df-34c8af095148
-ms.openlocfilehash: 1943c8c8c03bb9598dc0c456d52fa962288d240c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: b06470ed76c15208f019874db8573d0ed4778d33
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54664457"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59216298"
 ---
 # <a name="managing-concurrency-with-dependenttransaction"></a>Správa souběžnosti s DependentTransaction
 <xref:System.Transactions.Transaction> Objekt je vytvořen pomocí <xref:System.Transactions.Transaction.DependentClone%2A> metody. Jejím jediným účelem je zajistit, že transakci nelze potvrdit při některých jiných částí kódu (například pracovní podproces) jsou stále provede práci na transakci. Při práci v rámci naklonované transakce je dokončena a připravena k potvrzené, jej můžete upozornit na transakci pomocí Tvůrce <xref:System.Transactions.DependentTransaction.Complete%2A> metody. Proto můžete zachovat konzistence a správností data.  
@@ -17,9 +17,9 @@ ms.locfileid: "54664457"
 ## <a name="creating-a-dependent-clone"></a>Vytváření závislá kopie  
  Chcete-li vytvořit závislé transakci, zavolejte <xref:System.Transactions.Transaction.DependentClone%2A> a předáte <xref:System.Transactions.DependentCloneOption> výčet jako parametr. Tento parametr definuje chování transakce, pokud `Commit` je volána v nadřazené transakce před závislá kopie udává, zda je připravena k potvrzení transakce (voláním <xref:System.Transactions.DependentTransaction.Complete%2A> metoda). Následující hodnoty jsou platné pro tento parametr:  
   
--   <xref:System.Transactions.DependentCloneOption.BlockCommitUntilComplete>Vytvoří závislé transakce, která blokuje procesu potvrzení nadřazené transakce až do nadřazeného časy transakcí limit, nebo až do <xref:System.Transactions.DependentTransaction.Complete%2A> je volán na všechny položky závislé na určující jejich dokončení. To je užitečné, když klient nechce nadřazené transakce se zapsat, dokud závislé transakce byl dokončen. Je-li nadřazené dokončí svou práci starších než závislé transakce a volání <xref:System.Transactions.CommittableTransaction.Commit%2A> na transakci, je blokován procesu potvrzení ve stavu, kde další práce lze provést v transakci a nelze vytvořit nové zařazení, dokud všechny položky závislé na volání <xref:System.Transactions.DependentTransaction.Complete%2A>. Jakmile je všechny dokončí jejich práce a volání <xref:System.Transactions.DependentTransaction.Complete%2A>, začne procesu potvrzení pro transakci.  
+-   <xref:System.Transactions.DependentCloneOption.BlockCommitUntilComplete> Vytvoří závislé transakce, která blokuje procesu potvrzení nadřazené transakce až do nadřazeného časy transakcí limit, nebo dokud <xref:System.Transactions.DependentTransaction.Complete%2A> je volán na všechny položky závislé na určující jejich dokončení. To je užitečné, když klient nechce nadřazené transakce se zapsat, dokud závislé transakce byl dokončen. Je-li nadřazené dokončí svou práci starších než závislé transakce a volání <xref:System.Transactions.CommittableTransaction.Commit%2A> na transakci, je blokován procesu potvrzení ve stavu, kde další práce lze provést v transakci a nelze vytvořit nové zařazení, dokud všechny položky závislé na volání <xref:System.Transactions.DependentTransaction.Complete%2A>. Jakmile je všechny dokončí jejich práce a volání <xref:System.Transactions.DependentTransaction.Complete%2A>, začne procesu potvrzení pro transakci.  
   
--   <xref:System.Transactions.DependentCloneOption.RollbackIfNotComplete>, na druhé straně vytvoří závislé transakcí, která automaticky zruší-li <xref:System.Transactions.CommittableTransaction.Commit%2A> je volána v nadřazené transakce před <xref:System.Transactions.DependentTransaction.Complete%2A> je volána. V takovém případě všechny práci v závislé transakce je beze změny v rámci jedné transakce životnost a nemá nikdo příležitost dobře se zapsat jen jejich část.  
+-   <xref:System.Transactions.DependentCloneOption.RollbackIfNotComplete>, na druhé straně vytvoří závislé transakce, která automaticky zruší-li <xref:System.Transactions.CommittableTransaction.Commit%2A> je volána v nadřazené transakce před <xref:System.Transactions.DependentTransaction.Complete%2A> je volána. V takovém případě všechny práci v závislé transakce je beze změny v rámci jedné transakce životnost a nemá nikdo příležitost dobře se zapsat jen jejich část.  
   
  <xref:System.Transactions.DependentTransaction.Complete%2A> Metoda musí být volána pouze jednou, pokud vaše aplikace dokončí svou práci na závislé transakce. v opačném <xref:System.InvalidOperationException> je vyvolána. Po zavolání toto volání nesmí provedením jakékoli další práce na transakci, nebo je vyvolána výjimka.  
   
@@ -82,4 +82,5 @@ using(TransactionScope scope = new TransactionScope())
 -   Pokud pracovní podproces založí nový pracovní podproces, ujistěte se, k vytvoření závislá kopie z závislá kopie a předejte jí nové vlákno.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Transactions.DependentTransaction>

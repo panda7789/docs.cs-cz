@@ -2,12 +2,12 @@
 title: 'Postupy: Přístup ke službám WCF pomocí jednosměrných kontraktů a kontraktů požadavek-odpověď'
 ms.date: 03/30/2017
 ms.assetid: 7e10d3a5-fcf4-4a4b-a8d6-92ee2c988b3b
-ms.openlocfilehash: f74f874d43698955cce0ae14791a9d6b748ef919
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 84b8f7c44c8124c1a150304dea0f08a0087752bd
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54639167"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59217026"
 ---
 # <a name="how-to-access-wcf-services-with-one-way-and-request-reply-contracts"></a>Postupy: Přístup ke službám WCF pomocí jednosměrných kontraktů a kontraktů požadavek-odpověď
 Následující postupy popisují, jak získat přístup ke službě Windows Communication Foundation (WCF), který definuje jednosměrného kontraktu a kontraktů požadavek odpověď a, který nepoužívá model duplexní komunikaci.  
@@ -401,4 +401,5 @@ namespace Microsoft.ServiceModel.Samples
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Jednosměrné služby](../../../../docs/framework/wcf/feature-details/one-way-services.md)

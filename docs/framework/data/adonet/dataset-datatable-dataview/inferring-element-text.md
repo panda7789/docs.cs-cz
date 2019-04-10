@@ -2,12 +2,12 @@
 title: Odvození textu elementu
 ms.date: 03/30/2017
 ms.assetid: 789799e5-716f-459f-a168-76c5cf22178b
-ms.openlocfilehash: d457985bfbec924748d1a418e318609b6837b9d2
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 6ffe8f2fbf01fbe8dfa9d78f3dfb9e39b6e80b16
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54745156"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59224959"
 ---
 # <a name="inferring-element-text"></a>Odvození textu elementu
 Pokud element obsahuje text a nemá žádný podřízený element odvození podle tabulky jako je například (elementy s atributy) nebo opakované prvků, nový sloupec s názvem **TableName_Text** se přidá do tabulky, kterou si odvozuje pro element. Text obsažen v elementu bude přidána na řádek v tabulce a uložená v novém sloupci. **ColumnMapping** vlastnost nového sloupce, který bude nastavena na **MappingType.SimpleContent**.  
@@ -51,6 +51,7 @@ Pokud element obsahuje text a nemá žádný podřízený element odvození podl
 |Text2|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Odvození relační struktury datové sady z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/inferring-dataset-relational-structure-from-xml.md)
 - [Načtení datové sady z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md)
 - [Načtení informací o schématu datové sady z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-dataset-schema-information-from-xml.md)

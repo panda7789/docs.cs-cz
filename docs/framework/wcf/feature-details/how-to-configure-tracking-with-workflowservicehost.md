@@ -2,12 +2,12 @@
 title: 'Postupy: Konfigurace sledování pomocí třídy WorkflowServiceHost'
 ms.date: 03/30/2017
 ms.assetid: ed1485fe-7529-4351-bca3-8bb915260b17
-ms.openlocfilehash: 8ed8775a8eb13a8e69566c1d413dcd2eba6d8b6c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: dc6a89505c788183ed5d53df986c0f545c0d5533
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54577566"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59226544"
 ---
 # <a name="how-to-configure-tracking-with-workflowservicehost"></a>Postupy: Konfigurace sledování pomocí třídy WorkflowServiceHost
 Toto téma vysvětluje postup konfigurace sledování [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] pracovního postupu hostované v <xref:System.ServiceModel.Activities.WorkflowServiceHost>. Prostřednictvím souboru Web.config je nakonfigurován tak, že zadáte chování služby.  
@@ -69,6 +69,7 @@ Toto téma vysvětluje postup konfigurace sledování [!INCLUDE[netfx_current_lo
      Další informace o sledování obecně naleznete v tématu [pracovního postupu pro sledování a trasování](../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md). Příklad konfigurace sledování prostřednictvím kódu programu najdete v části [konfigurace sledování pracovního postupu](../../../../docs/framework/windows-workflow-foundation/configuring-tracking-for-a-workflow.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Zjednodušená konfigurace pro služby WCF](../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md)
 - [Služby pracovních postupů](../../../../docs/framework/wcf/feature-details/workflow-services.md)
 - [Sledování profilů](../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)

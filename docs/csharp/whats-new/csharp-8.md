@@ -2,12 +2,12 @@
 title: Co je nového v C# 8.0 – C# Průvodce
 description: Získejte přehled o nových funkcí dostupných v C# 8.0. V tomto článku je aktuální verze Preview 2.
 ms.date: 02/12/2019
-ms.openlocfilehash: 07752d6d7784ff4aeb70900ef3bcd90cb29f7c22
-ms.sourcegitcommit: 4a8c2b8d0df44142728b68ebc842575840476f6d
-ms.translationtype: MT
+ms.openlocfilehash: 34db8df43f962272f21fc8bf3fa31be06b8fdaf3
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/28/2019
-ms.locfileid: "58545556"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59221238"
 ---
 # <a name="whats-new-in-c-80"></a>Co je nového v C# 8.0
 
@@ -24,7 +24,7 @@ Existuje mnoho vylepšení C# jazyk, který můžete vyzkoušet již s verzí pr
 
 Následující funkce jazyka poprvé objevil v C# 8.0 ve verzi preview 1:
 
-- [Odkazové typy s možnou hodnotou null](#nullable-reference-types)
+- [Typy s možnou hodnotou Null odkazů](#nullable-reference-types)
 - [Asynchronní datové proudy](#asynchronous-streams)
 - [Indexy a rozsahy](#indices-and-ranges)
 
@@ -219,7 +219,6 @@ static void WriteLinesToFile(IEnumerable<string> lines)
 ```
 
 V předchozím příkladu je soubor odstraněn po dosažení pravou složenou závorku v případě metody. Který je koncem objektu oboru, ve kterém `file` je deklarována. Předchozí kód je ekvivalentní následujícímu kódu pomocí klasického [příkazy using](../language-reference/keywords/using-statement.md) – příkaz:
-
 
 ```csharp
 static void WriteLinesToFile(IEnumerable<string> lines)

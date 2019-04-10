@@ -1,17 +1,17 @@
 ---
-title: 'Průvodce: Manipulace s daty (Visual Basic)'
+title: 'Návod: Manipulace s daty (Visual Basic)'
 ms.date: 03/30/2017
 dev_langs:
 - vb
 ms.assetid: 1f6a54f6-ec33-452a-a37d-48122207bf14
-ms.openlocfilehash: 0eab5fe5c9455badb7f538307cb827391b254a95
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 34049f113ce9da0ed1c4cc63fd53093a0775bbad
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54626924"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59208303"
 ---
-# <a name="walkthrough-manipulating-data-visual-basic"></a>Průvodce: Manipulace s daty (Visual Basic)
+# <a name="walkthrough-manipulating-data-visual-basic"></a>Návod: Manipulace s daty (Visual Basic)
 Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] scénář pro přidání, úpravy a odstraňování dat v databázi. Přidejte zákazníka, změňte název zákazníka a odstranit objednávky použijete kopii ukázkové databáze Northwind.  
   
  [!INCLUDE[note_settings_general](../../../../../../includes/note-settings-general-md.md)]  
@@ -187,4 +187,5 @@ Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdli
 >  Po přidání nového zákazníka, odešlete změny nelze provést toto řešení znovu, je-li tento parametr, vzhledem k tomu, že nemůžete přidat stejnou zákazníka znovu jako je. Pokud chcete znovu spustit řešení, změňte hodnotu ID zákazníka, které mají být přidány.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Učení podle návodů](../../../../../../docs/framework/data/adonet/sql/linq/learning-by-walkthroughs.md)

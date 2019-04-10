@@ -16,12 +16,12 @@ helpviewer_keywords:
 - time strings
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4c8aa10c25fd7459bebb1de6d71a54b6e361e20e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 413a04d6ccdfff4b9cbf937821683ab7f7b37361
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54560812"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59208121"
 ---
 # <a name="parsing-date-and-time-strings-in-net"></a>Analýza řetězců data a času v .NET
 
@@ -32,7 +32,6 @@ Analýza řetězců převést tak, aby <xref:System.DateTime> objekty je potřeb
 1. Můžete zadat jak chybějící součásti v textu reprezentace nastavené datum a čas.
 
 <xref:System.DateTime.Parse%2A> a <xref:System.DateTime.TryParse%2A> převádí mnoho běžných vyjádření data a času. <xref:System.DateTime.ParseExact%2A> a <xref:System.DateTime.TryParseExact%2A> metody převést řetězcovou reprezentaci, která odpovídají vzoru určenému řetězcem formátu data a času. (Naleznete v článcích na [řetězce formátu data a času](standard-date-and-time-format-strings.md) a [řetězce formátu vlastní data a času](custom-date-and-time-format-strings.md) podrobnosti.)
-
 
 Aktuální <xref:System.Globalization.DateTimeFormatInfo> objekt poskytuje větší kontrolu nad jak text by měl být interpretován jako datum a čas. Vlastnosti <xref:System.Globalization.DateTimeFormatInfo> popisují datum a čas oddělovače a názvy měsíců, dnů a větší počet období a formát pro označení "Dop." a "Odp.". Poskytuje aktuální jazykové verzi vlákna <xref:System.Globalization.DateTimeFormatInfo> , který představuje aktuální jazykovou verzi. Pokud chcete konkrétní jazykovou verzi nebo vlastní nastavení, zadejte <xref:System.IFormatProvider> parametr metody analýzy. Pro <xref:System.IFormatProvider> parametr, zadejte <xref:System.Globalization.CultureInfo> objektu, který představuje jazykovou verzi, nebo <xref:System.Globalization.DateTimeFormatInfo> objektu.
 

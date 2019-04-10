@@ -10,12 +10,12 @@ helpviewer_keywords:
 - issued tokens
 - SAML token
 ms.assetid: 930b6e34-9eab-4e95-826c-4e06659bb977
-ms.openlocfilehash: 2fbb1f520a1497ef5aa3227d038b3759b8327eda
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: f1f7a15d1457390bf77f5e53c7fd657304725df6
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54714994"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59218209"
 ---
 # <a name="saml-tokens-and-claims"></a>Tokeny a deklarace SAML
 Kontrolní výrazy jazyka SAML (Security Markup) *tokeny* jsou XML reprezentací deklarace identity. Ve výchozím nastavení, tokeny SAML Windows Communication Foundation (WCF) používá ve scénářích zabezpečení jsou *tokeny vydané*.  
@@ -43,13 +43,14 @@ Kontrolní výrazy jazyka SAML (Security Markup) *tokeny* jsou XML reprezentací
  Když tokeny SAML přijme ve zprávách, různé příkazy v tokenu SAML jsou převedena na <xref:System.IdentityModel.Policy.IAuthorizationPolicy> objekty, které se umístí do <xref:System.IdentityModel.Policy.AuthorizationContext>. Deklarace identity z každého příkazu SAML jsou vráceny pomocí <xref:System.IdentityModel.Policy.AuthorizationContext.ClaimSets%2A> vlastnost <xref:System.IdentityModel.Policy.AuthorizationContext> a můžete prověřit, abyste zjistili, jestli se má ověřovat a autorizovat uživatele.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.IdentityModel.Policy.AuthorizationContext>
 - <xref:System.IdentityModel.Policy.IAuthorizationPolicy>
 - <xref:System.IdentityModel.Claims.ClaimSet>
 - [Federace](../../../../docs/framework/wcf/feature-details/federation.md)
 - [Postupy: Vytvoření federovaného klienta](../../../../docs/framework/wcf/feature-details/how-to-create-a-federated-client.md)
 - [Postupy: Konfigurace pověření ve službě Federation Service](../../../../docs/framework/wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md)
-- [Správa deklarací identity a autorizace pomocí modelu identit](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md)
-- [Deklarace identity a tokeny](../../../../docs/framework/wcf/feature-details/claims-and-tokens.md)
-- [Vytvoření deklarace identity a hodnoty prostředků](../../../../docs/framework/wcf/feature-details/claim-creation-and-resource-values.md)
+- [Správa deklarací a autorizace s modelem identity](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md)
+- [Deklarace a tokeny](../../../../docs/framework/wcf/feature-details/claims-and-tokens.md)
+- [Vytvoření nároku a hodnoty prostředků](../../../../docs/framework/wcf/feature-details/claim-creation-and-resource-values.md)
 - [Postupy: Vytvoření vlastní deklarace](../../../../docs/framework/wcf/extending/how-to-create-a-custom-claim.md)

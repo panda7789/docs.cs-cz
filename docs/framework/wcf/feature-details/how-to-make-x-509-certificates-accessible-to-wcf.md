@@ -9,12 +9,12 @@ helpviewer_keywords:
 - certificates [WCF], making X.509 certificates accessible to WCF
 - X.509 certificates [WCF], making accessible to WCF
 ms.assetid: a54e407c-c2b5-4319-a648-60e43413664b
-ms.openlocfilehash: 7c90d5b0541edfc11145d9373c2554ee4595a7b1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 85f572f021f1613e0a2bb70cc090f58d2833182e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54741879"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59219912"
 ---
 # <a name="how-to-make-x509-certificates-accessible-to-wcf"></a>Postupy: Zpřístupnění certifikátů X.509 pro WCF
 Zpřístupnit certifikát X.509 do služby Windows Communication Foundation (WCF), musí kód aplikace zadejte název úložiště certifikátu a umístění. V některých případech se identita procesu, musí mít přístup k souboru, který obsahuje privátní klíč spojený s certifikátem X.509. K získání soukromého klíče přidružené k certifikátu v úložišti certifikátů X.509, WCF, musí mít oprávnění k tomuto. Ve výchozím nastavení můžete přístup pouze vlastník a účet System privátní klíč certifikátu.  
@@ -71,6 +71,7 @@ Zpřístupnit certifikát X.509 do služby Windows Communication Foundation (WCF
         ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [FindPrivateKey](../../../../docs/framework/wcf/samples/findprivatekey.md)
 - [Postupy: Načtení kryptografického otisku certifikátu](../../../../docs/framework/wcf/feature-details/how-to-retrieve-the-thumbprint-of-a-certificate.md)
 - [Práce s certifikáty](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)

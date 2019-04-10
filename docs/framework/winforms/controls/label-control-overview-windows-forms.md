@@ -8,12 +8,12 @@ helpviewer_keywords:
 - labels
 - Label control [Windows Forms], about Label control
 ms.assetid: dcad7f44-11b7-4c55-b0c0-d984ade43d7d
-ms.openlocfilehash: 13dcd6c63c30a5726a959c33f75c0c54e2810ef4
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: cc38b0f3ded9e3c2a5a4146eb6bb474921d1e19f
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57710586"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59210084"
 ---
 # <a name="label-control-overview-windows-forms"></a>Přehled ovládacího prvku Popisek (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.Label> ovládací prvky se používají k zobrazení textu nebo obrázků, které nemůže být upraven uživatelem. Slouží k identifikaci objektů ve formuláři – zadejte popis ovládacího prvku jaké určité doporučení dělají, když kliknutí, například nebo zobrazení informací v reakci na událost za běhu nebo procesu ve vaší aplikaci. Například můžete použít popisky přidat popisný popisků textových polí, pole se seznamem, pole se seznamem a tak dále. Můžete také napsat kód, který změní text, zobrazený popisek v reakci na události v době běhu. Například pokud vaše aplikace trvá několik minut zpracovávat změny, můžete zobrazit stav zpracování zpráv v popisku.  
@@ -24,6 +24,7 @@ Windows Forms <xref:System.Windows.Forms.Label> ovládací prvky se používají
  Titulek zobrazený v popisku je součástí <xref:System.Windows.Forms.Label.Text%2A> vlastnost. <xref:System.Windows.Forms.Label.TextAlign%2A> Vlastnost vám umožní nastavit zarovnání textu v rámci popisku. Další informace najdete v tématu [jak: Nastavit Text, zobrazený Windows Forms ovládací prvek](how-to-set-the-text-displayed-by-a-windows-forms-control.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.Label>
-- [Postupy: Velikost ovládacího prvku Windows Forms Label k zobrazení jeho obsahu](how-to-size-a-windows-forms-label-control-to-fit-its-contents.md)
+- [Postupy: Určení velikosti ovládacího prvku Windows Forms Label k zobrazení jeho obsahu](how-to-size-a-windows-forms-label-control-to-fit-its-contents.md)
 - [Postupy: Vytváření přístupových klíčů pomocí ovládacích prvků Windows Forms Label](how-to-create-access-keys-with-windows-forms-label-controls.md)

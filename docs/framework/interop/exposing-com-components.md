@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: e78b14f1-e487-43cd-9c6d-1a07483f1730
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6987dea6f122819b9f1c0d334440d87545368942
-ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
-ms.translationtype: MT
+ms.openlocfilehash: 44dcd118be62214b82a68efa77aecb4a605fdb71
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56220102"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59218391"
 ---
 # <a name="exposing-com-components-to-the-net-framework"></a>Vystavení komponent COM pro rozhraní .NET Framework
 Tento oddíl shrnuje procesu nutné vystavit existující komponenty modelu COM pro spravovaný kód. Podrobnosti o vytváření serverů modelu COM, který úzce integrace s rozhraním .NET Framework, naleznete v tématu [aspekty návrhu pro spolupráci](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/61aax4kh(v=vs.100)).
@@ -39,6 +39,7 @@ Tento oddíl shrnuje procesu nutné vystavit existující komponenty modelu COM 
      Spolupráce – aplikace se nejlépe nasadit jako [silným názvem](../app-domains/strong-named-assemblies.md), podepsaná sestavení v globální mezipaměti sestavení.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Spolupráce s nespravovaným kódem](index.md)
 - [Aspekty návrhu pro spolupráci](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/61aax4kh(v=vs.100))
 - [Ukázka zprostředkovatele s objekty COM: klient .NET a server COM](com-interop-sample-net-client-and-com-server.md)

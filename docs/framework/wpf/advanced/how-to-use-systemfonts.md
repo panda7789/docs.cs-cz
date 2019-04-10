@@ -9,12 +9,12 @@ helpviewer_keywords:
 - fonts [WPF], system fonts
 - classes [WPF], SystemFonts
 ms.assetid: 3f46a4ec-2225-408a-8123-8838a8f7057a
-ms.openlocfilehash: 5ed44da316ddee5ea3a83262f913da571bf75276
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 5976bc0cb8b34e68d5e89dd70a608d7e52ded332
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57378896"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59216779"
 ---
 # <a name="how-to-use-systemfonts"></a>Postupy: Používání třídy SystemFonts
 Tento příklad ukazuje způsob použití statické prostředky <xref:System.Windows.SystemFonts> třídy za účelem stylu nebo tlačítko Přizpůsobit.  
@@ -37,11 +37,12 @@ Tento příklad ukazuje způsob použití statické prostředky <xref:System.Win
  [!code-vb[SystemRes_snip#FontResourcesCode](~/samples/snippets/visualbasic/VS_Snippets_Wpf/SystemRes_snip/VisualBasic/Pane1.xaml.vb#fontresourcescode)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.SystemFonts>
 - [Vykreslení oblasti systémovým štětcem](../graphics-multimedia/how-to-paint-an-area-with-a-system-brush.md)
 - [Používání třídy SystemParameters](how-to-use-systemparameters.md)
-- [Použití klíčů systémových písem](how-to-use-system-fonts-keys.md)
-- [Témata s postupy](resources-how-to-topics.md)
+- [Používání klíčů systémových písem](how-to-use-system-fonts-keys.md)
+- [– postupy](resources-how-to-topics.md)
 - [x:Static – rozšíření značek](../../xaml-services/x-static-markup-extension.md)
-- [Prostředky XAML](xaml-resources.md)
-- [Rozšíření značek DynamicResource](dynamicresource-markup-extension.md)
+- [Zdroje XAML](xaml-resources.md)
+- [DynamicResource – rozšíření značek](dynamicresource-markup-extension.md)

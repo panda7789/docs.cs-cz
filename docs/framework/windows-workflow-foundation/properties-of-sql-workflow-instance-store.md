@@ -1,15 +1,15 @@
 ---
-title: Vlastnosti Store Instance pracovních postupů SQL
+title: Vlastnosti úložiště instancí pracovních postupů SQL
 ms.date: 03/30/2017
 ms.assetid: 5bf75f3c-8f33-450d-967f-6ee862c14c67
-ms.openlocfilehash: 7490528d31d76c62b15b32cc1f809ecfe9126eca
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: fae96b08b8b9bb620ae3e86376bb0be4691d4caa
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57704320"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59222117"
 ---
-# <a name="properties-of-sql-workflow-instance-store"></a>Vlastnosti Store Instance pracovních postupů SQL
+# <a name="properties-of-sql-workflow-instance-store"></a>Vlastnosti úložiště instancí pracovních postupů SQL
 Témata v této části obsahují podrobnosti o vlastnostech Store Instance pracovního postupu SQL.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
@@ -27,5 +27,6 @@ Témata v této části obsahují podrobnosti o vlastnostech Store Instance prac
 -   [Připojovací řetězec a název připojovacího řetězce](connection-string-and-connection-string-name.md)  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Windows Server App Fabric Instance Store](https://go.microsoft.com/fwlink/?LinkId=201201)
 - [Databáze trvalosti SQL serveru App Fabric](https://go.microsoft.com/fwlink/?LinkId=201202)
