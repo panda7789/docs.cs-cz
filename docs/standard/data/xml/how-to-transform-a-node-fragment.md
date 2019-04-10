@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: transformace fragmentu uzlu'
+title: 'Postupy: Transformace fragmentu uzlu'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -8,45 +8,45 @@ dev_langs:
 ms.assetid: 73a6c582-b9d7-4fa7-9a05-6d931e1f3de8
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: eb258b61664e1fdbf6604afdf69074c48cf5bda4
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: fabf7983a1887fb318bfb8d111b3911f4d90c545
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45597273"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59345167"
 ---
-# <a name="how-to-transform-a-node-fragment"></a><span data-ttu-id="8803e-102">Postupy: transformace fragmentu uzlu</span><span class="sxs-lookup"><span data-stu-id="8803e-102">How to: Transform a Node Fragment</span></span>
-<span data-ttu-id="8803e-103">Při transformaci dat obsažených v <xref:System.Xml.XmlDocument> nebo <xref:System.Xml.XPath.XPathDocument> objektu transformace XSLT se vztahují k dokumentu jako celek.</span><span class="sxs-lookup"><span data-stu-id="8803e-103">When you transform data contained in an <xref:System.Xml.XmlDocument> or <xref:System.Xml.XPath.XPathDocument> object the XSLT transformations apply to a document as a whole.</span></span> <span data-ttu-id="8803e-104">Jinými slovy Pokud předáte v uzlu, než je kořenový uzel dokumentu, toto nezabraňuje proces transformace přístup na všechny uzly v načtený dokument.</span><span class="sxs-lookup"><span data-stu-id="8803e-104">In other words, if you pass in a node other than the document root node, this does not prevent the transformation process from accessing all nodes in the loaded document.</span></span> <span data-ttu-id="8803e-105">Transformace fragmentu uzlu, musíte vytvořit samostatný objekt obsahující pouze fragmentu uzlu a předejte tento objekt <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> metody.</span><span class="sxs-lookup"><span data-stu-id="8803e-105">To transform a node fragment, you must create a separate object containing just the node fragment, and pass that object to the <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> method.</span></span>  
+# <a name="how-to-transform-a-node-fragment"></a><span data-ttu-id="81137-102">Postupy: Transformace fragmentu uzlu</span><span class="sxs-lookup"><span data-stu-id="81137-102">How to: Transform a Node Fragment</span></span>
+<span data-ttu-id="81137-103">Při transformaci dat obsažených v <xref:System.Xml.XmlDocument> nebo <xref:System.Xml.XPath.XPathDocument> objektu transformace XSLT se vztahují k dokumentu jako celek.</span><span class="sxs-lookup"><span data-stu-id="81137-103">When you transform data contained in an <xref:System.Xml.XmlDocument> or <xref:System.Xml.XPath.XPathDocument> object the XSLT transformations apply to a document as a whole.</span></span> <span data-ttu-id="81137-104">Jinými slovy Pokud předáte v uzlu, než je kořenový uzel dokumentu, toto nezabraňuje proces transformace přístup na všechny uzly v načtený dokument.</span><span class="sxs-lookup"><span data-stu-id="81137-104">In other words, if you pass in a node other than the document root node, this does not prevent the transformation process from accessing all nodes in the loaded document.</span></span> <span data-ttu-id="81137-105">Transformace fragmentu uzlu, musíte vytvořit samostatný objekt obsahující pouze fragmentu uzlu a předejte tento objekt <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> metody.</span><span class="sxs-lookup"><span data-stu-id="81137-105">To transform a node fragment, you must create a separate object containing just the node fragment, and pass that object to the <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> method.</span></span>  
   
-## <a name="procedures"></a><span data-ttu-id="8803e-106">Procedury</span><span class="sxs-lookup"><span data-stu-id="8803e-106">Procedures</span></span>  
+## <a name="procedures"></a><span data-ttu-id="81137-106">Procedury</span><span class="sxs-lookup"><span data-stu-id="81137-106">Procedures</span></span>  
   
-#### <a name="to-transform-a-node-fragment"></a><span data-ttu-id="8803e-107">Transformace fragmentu uzlu</span><span class="sxs-lookup"><span data-stu-id="8803e-107">To transform a node fragment</span></span>  
+#### <a name="to-transform-a-node-fragment"></a><span data-ttu-id="81137-107">Transformace fragmentu uzlu</span><span class="sxs-lookup"><span data-stu-id="81137-107">To transform a node fragment</span></span>  
   
-1.  <span data-ttu-id="8803e-108">Vytvořte objekt, který obsahuje zdrojový dokument.</span><span class="sxs-lookup"><span data-stu-id="8803e-108">Create an object containing the source document.</span></span>  
+1. <span data-ttu-id="81137-108">Vytvořte objekt, který obsahuje zdrojový dokument.</span><span class="sxs-lookup"><span data-stu-id="81137-108">Create an object containing the source document.</span></span>  
   
-2.  <span data-ttu-id="8803e-109">Vyhledání fragmentu uzlu, který chcete transformovat.</span><span class="sxs-lookup"><span data-stu-id="8803e-109">Locate the node fragment you wish to transform.</span></span>  
+2. <span data-ttu-id="81137-109">Vyhledání fragmentu uzlu, který chcete transformovat.</span><span class="sxs-lookup"><span data-stu-id="81137-109">Locate the node fragment you wish to transform.</span></span>  
   
-3.  <span data-ttu-id="8803e-110">Vytvořte samostatný objekt s právě fragmentu uzlu.</span><span class="sxs-lookup"><span data-stu-id="8803e-110">Create separate object with just the node fragment.</span></span>  
+3. <span data-ttu-id="81137-110">Vytvořte samostatný objekt s právě fragmentu uzlu.</span><span class="sxs-lookup"><span data-stu-id="81137-110">Create separate object with just the node fragment.</span></span>  
   
-4.  <span data-ttu-id="8803e-111">Předejte fragmentu uzlu na <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> metody.</span><span class="sxs-lookup"><span data-stu-id="8803e-111">Pass the node fragment to the <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> method.</span></span>  
+4. <span data-ttu-id="81137-111">Předejte fragmentu uzlu na <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> metody.</span><span class="sxs-lookup"><span data-stu-id="81137-111">Pass the node fragment to the <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> method.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="8803e-112">Příklad</span><span class="sxs-lookup"><span data-stu-id="8803e-112">Example</span></span>  
- <span data-ttu-id="8803e-113">V následujícím příkladu transformace fragmentu uzlu a vypíše výsledky do konzoly.</span><span class="sxs-lookup"><span data-stu-id="8803e-113">The following example transforms a node fragment and outputs the results to the console.</span></span>  
+## <a name="example"></a><span data-ttu-id="81137-112">Příklad</span><span class="sxs-lookup"><span data-stu-id="81137-112">Example</span></span>  
+ <span data-ttu-id="81137-113">V následujícím příkladu transformace fragmentu uzlu a vypíše výsledky do konzoly.</span><span class="sxs-lookup"><span data-stu-id="81137-113">The following example transforms a node fragment and outputs the results to the console.</span></span>  
   
  [!code-csharp[XSLT_NodeFrag#1](../../../../samples/snippets/csharp/VS_Snippets_Data/XSLT_NodeFrag/CS/xslt_frag.cs#1)]
  [!code-vb[XSLT_NodeFrag#1](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XSLT_NodeFrag/VB/xslt_frag.vb#1)]  
   
-### <a name="input"></a><span data-ttu-id="8803e-114">Vstup</span><span class="sxs-lookup"><span data-stu-id="8803e-114">Input</span></span>  
+### <a name="input"></a><span data-ttu-id="81137-114">Vstup</span><span class="sxs-lookup"><span data-stu-id="81137-114">Input</span></span>  
   
-##### <a name="booksxml"></a><span data-ttu-id="8803e-115">Books.XML</span><span class="sxs-lookup"><span data-stu-id="8803e-115">books.xml</span></span>  
+##### <a name="booksxml"></a><span data-ttu-id="81137-115">Books.XML</span><span class="sxs-lookup"><span data-stu-id="81137-115">books.xml</span></span>  
  [!code-xml[XML_Core_Files#1](../../../../samples/snippets/xml/VS_Snippets_Data/XML_Core_Files/XML/books.xml#1)]  
   
-##### <a name="singlexsl"></a><span data-ttu-id="8803e-116">Single.xsl</span><span class="sxs-lookup"><span data-stu-id="8803e-116">single.xsl</span></span>  
+##### <a name="singlexsl"></a><span data-ttu-id="81137-116">Single.xsl</span><span class="sxs-lookup"><span data-stu-id="81137-116">single.xsl</span></span>  
  [!code-xml[XSLT_NodeFrag#2](../../../../samples/snippets/xml/VS_Snippets_Data/XSLT_NodeFrag/XML/single.xsl#2)]  
   
-### <a name="output"></a><span data-ttu-id="8803e-117">Výstup</span><span class="sxs-lookup"><span data-stu-id="8803e-117">Output</span></span>  
- <span data-ttu-id="8803e-118">Název knihy se požadavek spolehlivosti</span><span class="sxs-lookup"><span data-stu-id="8803e-118">Book title is The Confidence Man.</span></span>  
+### <a name="output"></a><span data-ttu-id="81137-117">Výstup</span><span class="sxs-lookup"><span data-stu-id="81137-117">Output</span></span>  
+ <span data-ttu-id="81137-118">Název knihy se požadavek spolehlivosti</span><span class="sxs-lookup"><span data-stu-id="81137-118">Book title is The Confidence Man.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="8803e-119">Viz také:</span><span class="sxs-lookup"><span data-stu-id="8803e-119">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="81137-119">Viz také:</span><span class="sxs-lookup"><span data-stu-id="81137-119">See also</span></span>
 
-- [<span data-ttu-id="8803e-120">Používání třídy XslCompiledTransform</span><span class="sxs-lookup"><span data-stu-id="8803e-120">Using the XslCompiledTransform Class</span></span>](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md)
+- [<span data-ttu-id="81137-120">Používání třídy XslCompiledTransform</span><span class="sxs-lookup"><span data-stu-id="81137-120">Using the XslCompiledTransform Class</span></span>](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md)
