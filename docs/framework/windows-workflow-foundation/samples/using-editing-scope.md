@@ -2,12 +2,12 @@
 title: Použití oboru úprav
 ms.date: 03/30/2017
 ms.assetid: 79306f9e-318b-4687-9863-8b93d1841716
-ms.openlocfilehash: 268849c584c235a21a0818baa60f119cf8e49305
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 6417e51a29215ce2da22fa4c655642a5fe9b7d18
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43749045"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59308624"
 ---
 # <a name="using-editing-scope"></a>Použití oboru úprav
 Tento příklad ukazuje, jak batch sady změn, takže se můžete vrátit zpět v jednu atomickou jednotku. Ve výchozím nastavení jsou akce prováděné návrháře autorem aktivity automaticky integrované do systému zpět/znovu.  
@@ -24,15 +24,15 @@ Tento příklad ukazuje, jak batch sady změn, takže se můžete vrátit zpět 
   
 ## <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
-1.  Sestavení a spuštění ukázky a potom pomocí tlačítek na levé straně upravte pracovní postup.  
+1. Sestavení a spuštění ukázky a potom pomocí tlačítek na levé straně upravte pracovní postup.  
   
-2.  Klikněte na tlačítko **otevřete oboru úprav**.  
+2. Klikněte na tlačítko **otevřete oboru úprav**.  
   
     1.  Tento příkaz volá <xref:System.Activities.Presentation.Model.ModelItem.BeginEdit%2A> , který vytvoří úpravy rozsahu a nasdílí změny do úprav zásobníku.  
   
     2.  Tři aktivity se pak přidají do vybraného <xref:System.Activities.Presentation.Model.ModelItem>. Všimněte si, že pokud rozsahu úprav, kdyby byl otevřen s <xref:System.Activities.Presentation.Model.ModelItem.BeginEdit%2A>, by se zobrazí tři nové aktivity na plátně návrháře. Protože tato operace je stále čekají v rámci <xref:System.Activities.Presentation.Model.EditingScope>, Návrhář není ještě neaktualizovaly.  
   
-3.  Stisknutím klávesy **zavřít úpravy rozsahu** potvrdit rozsahu úprav. Tři aktivity se zobrazí v návrháři.  
+3. Stisknutím klávesy **zavřít úpravy rozsahu** potvrdit rozsahu úprav. Tři aktivity se zobrazí v návrháři.  
   
 > [!IMPORTANT]
 >  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  

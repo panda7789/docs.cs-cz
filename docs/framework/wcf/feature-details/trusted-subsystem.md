@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 1f5ce46b-e259-4bc9-a0b9-89d06fc9341c
-ms.openlocfilehash: 681312f4fcc76b275697024a45503f5c4cf89a4b
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: a0f845ad0d8ca461f8ab0b3188a72e87c589add2
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59208537"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59319362"
 ---
 # <a name="trusted-subsystem"></a>Důvěryhodný subsystém
 Klient přistupuje k jedné nebo více webových služeb, které jsou distribuovány napříč sítí. Webové služby jsou navržené tak, aby tento přístup k dalším prostředkům (například databáze nebo jiné webové služby), je zapouzdřena v obchodní logice webové služby. Tyto prostředky musí být chráněný před neoprávněným přístupem. Následující obrázek znázorňuje proces důvěryhodný subsystém.  
@@ -19,15 +19,15 @@ Klient přistupuje k jedné nebo více webových služeb, které jsou distribuov
   
  Následující kroky popisují proces důvěryhodný subsystém, jak je znázorněno:  
   
-1.  Klient odešle požadavek na důvěryhodný subsystém spolu s přihlašovací údaje.  
+1. Klient odešle požadavek na důvěryhodný subsystém spolu s přihlašovací údaje.  
   
-2.  Důvěryhodný subsystém ověřuje a autorizuje uživatele.  
+2. Důvěryhodný subsystém ověřuje a autorizuje uživatele.  
   
-3.  Důvěryhodný subsystém odešle zprávu požadavku vzdáleného prostředku. Této žádosti je přiložený přihlašovací údaje pro důvěryhodného subsystém (nebo účet služby, pod kterým je prováděný procesem důvěryhodný subsystém).  
+3. Důvěryhodný subsystém odešle zprávu požadavku vzdáleného prostředku. Této žádosti je přiložený přihlašovací údaje pro důvěryhodného subsystém (nebo účet služby, pod kterým je prováděný procesem důvěryhodný subsystém).  
   
-4.  Prostředek back-end se ověřuje a autorizuje důvěryhodný subsystém. Poté zpracuje požadavek a vydá odpověď na důvěryhodný subsystém.  
+4. Prostředek back-end se ověřuje a autorizuje důvěryhodný subsystém. Poté zpracuje požadavek a vydá odpověď na důvěryhodný subsystém.  
   
-5.  Důvěryhodný subsystém zpracuje odpověď a problémy s vlastním odpověď klientovi.  
+5. Důvěryhodný subsystém zpracuje odpověď a problémy s vlastním odpověď klientovi.  
   
 |Vlastnost|Popis|  
 |--------------------|-----------------|  

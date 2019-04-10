@@ -2,12 +2,12 @@
 title: Proměnné a argumenty
 ms.date: 03/30/2017
 ms.assetid: d03dbe34-5b2e-4f21-8b57-693ee49611b8
-ms.openlocfilehash: 6e534a54802228d6d001838008fc9d8f36fc0827
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 29ce5222435b68ed13cbc967e58e72a937625e8e
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57717814"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59320740"
 ---
 # <a name="variables-and-arguments"></a>Proměnné a argumenty
 Ve Windows Workflow Foundation (WF), proměnné představují úložiště dat a argumenty představují tok dat do a z aktivity. Aktivita má sadu argumentů a tvoří podpis aktivity. Kromě toho aktivita můžete udržovat seznam proměnných, do kterých Vývojář můžete přidávat nebo odebírat proměnné při návrhu pracovního postupu. Argument je vázán vlastnosti autorefresh pomocí výrazu, který vrací hodnotu.  
@@ -63,11 +63,11 @@ Variable<string> var = new Variable<string>
   
  Modul workflow runtime zaručuje následující skutečnosti o časování přesun dat do a z aktivity:  
   
-1.  Při spuštění aktivity spuštění se počítají hodnoty všech argumentů vstupu a vstupu a výstupu. Například, bez ohledu na to při <xref:System.Activities.Argument.Get%2A> je volána, vrácená hodnota se počítá ten modulem runtime před jeho vyvolání `Execute`.  
+1. Při spuštění aktivity spuštění se počítají hodnoty všech argumentů vstupu a vstupu a výstupu. Například, bez ohledu na to při <xref:System.Activities.Argument.Get%2A> je volána, vrácená hodnota se počítá ten modulem runtime před jeho vyvolání `Execute`.  
   
-2.  Když <xref:System.Activities.InOutArgument%601.Set%2A> je volána, modul runtime nastaví hodnotu okamžitě.  
+2. Když <xref:System.Activities.InOutArgument%601.Set%2A> je volána, modul runtime nastaví hodnotu okamžitě.  
   
-3.  Argumenty můžou mít svoje <xref:System.Activities.Argument.EvaluationOrder%2A> zadané. <xref:System.Activities.Argument.EvaluationOrder%2A> je založený na nule hodnotu, která určuje pořadí, ve kterém je vyhodnocen argument. Ve výchozím nastavení, pořadí vyhodnocení argumentu není zadána a je rovna <xref:System.Activities.Argument.UnspecifiedEvaluationOrder> hodnotu. Nastavte <xref:System.Activities.Argument.EvaluationOrder%2A> na hodnotu větší nebo rovna hodnotě nula. Chcete-li určit pořadí vyhodnocení pro tento argument. Windows Workflow Foundation vyhodnotí argumentů s pořadím vyhodnocení zadané ve vzestupném pořadí. Všimněte si, že před těmi, které mají zadanou evaluationorder jsou vyhodnoceny argumenty s objednávkou neurčené hodnocení.  
+3. Argumenty můžou mít svoje <xref:System.Activities.Argument.EvaluationOrder%2A> zadané. <xref:System.Activities.Argument.EvaluationOrder%2A> je založený na nule hodnotu, která určuje pořadí, ve kterém je vyhodnocen argument. Ve výchozím nastavení, pořadí vyhodnocení argumentu není zadána a je rovna <xref:System.Activities.Argument.UnspecifiedEvaluationOrder> hodnotu. Nastavte <xref:System.Activities.Argument.EvaluationOrder%2A> na hodnotu větší nebo rovna hodnotě nula. Chcete-li určit pořadí vyhodnocení pro tento argument. Windows Workflow Foundation vyhodnotí argumentů s pořadím vyhodnocení zadané ve vzestupném pořadí. Všimněte si, že před těmi, které mají zadanou evaluationorder jsou vyhodnoceny argumenty s objednávkou neurčené hodnocení.  
   
  Autor aktivity můžete použít mechanismus silného typu pro vystavení svých argumentů. Toho lze dosáhnout deklarování vlastností typu <xref:System.Activities.InArgument%601>, <xref:System.Activities.OutArgument%601>, a <xref:System.Activities.InOutArgument%601>. To umožňuje autorovi aktivity stanovit konkrétní smlouvy o data přicházející do proměnné a z aktivity.  
   

@@ -15,12 +15,12 @@ helpviewer_keywords:
 - .rtf files [Windows Forms], saving in RichTextBox control
 - text files [Windows Forms], saving from RichTextBox control
 ms.assetid: 4a58ec19-84d1-4383-9110-298c06adcfca
-ms.openlocfilehash: a646d9b04bbe824d093b106f5cfcb0f1703c6e21
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 4784ddd563ccec0f7e6271700781ee1b5d3ac105
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59213529"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59318413"
 ---
 # <a name="how-to-save-files-with-the-windows-forms-richtextbox-control"></a>Postupy: Ukládání souborů pomocí ovládacího prvku Windows Forms RichTextBox
 Windows Forms <xref:System.Windows.Forms.RichTextBox> ovládací prvek lze zapsat informace se zobrazí v jednom z několika formátů:  
@@ -39,11 +39,11 @@ Windows Forms <xref:System.Windows.Forms.RichTextBox> ovládací prvek lze zapsa
   
 ### <a name="to-save-the-contents-of-the-control-to-a-file"></a>Chcete uložit obsah ovládacího prvku do souboru  
   
-1.  Určete cestu k souboru, který se má uložit.  
+1. Určete cestu k souboru, který se má uložit.  
   
      K tomu v reálné aplikaci byste obvykle použili <xref:System.Windows.Forms.SaveFileDialog> komponenty. Přehled najdete v tématu [SaveFileDialog – přehled komponenty](savefiledialog-component-overview-windows-forms.md).  
   
-2.  Volání <xref:System.Windows.Forms.RichTextBox.SaveFile%2A> metodu <xref:System.Windows.Forms.RichTextBox> ovládací prvek, pro uložení souboru a volitelně typu souboru. Pokud jste volali metodu s názvem souboru jako její jediný argument, soubor se uloží ve formátu RTF. Chcete-li zadat jiný typ souboru, volejte metodu s hodnotou <xref:System.Windows.Forms.RichTextBoxStreamType> výčet jako druhý argument.  
+2. Volání <xref:System.Windows.Forms.RichTextBox.SaveFile%2A> metodu <xref:System.Windows.Forms.RichTextBox> ovládací prvek, pro uložení souboru a volitelně typu souboru. Pokud jste volali metodu s názvem souboru jako její jediný argument, soubor se uloží ve formátu RTF. Chcete-li zadat jiný typ souboru, volejte metodu s hodnotou <xref:System.Windows.Forms.RichTextBoxStreamType> výčet jako druhý argument.  
   
      V následujícím příkladu nastavena cesta pro umístění souboru formátovaného textu je **dokumenty** složky. Toto umístění se používá, protože můžete předpokládat, že většina počítačů s operačním systémem Windows bude obsahovat této složky. Výběrem tohoto umístění také umožňuje uživatelům s úrovní přístupu minimální systém bezpečně spusťte aplikaci. Následující příklad předpokládá formulář s <xref:System.Windows.Forms.RichTextBox> ovládací prvek již přidán.  
   

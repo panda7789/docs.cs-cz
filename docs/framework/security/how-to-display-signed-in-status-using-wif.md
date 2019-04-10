@@ -3,12 +3,12 @@ title: 'Postupy: Zobrazení stavu přihlášení pomocí WIF'
 ms.date: 03/30/2017
 ms.assetid: 4d1174e4-5397-4962-9a5f-3b1ad7b3fc14
 author: BrucePerlerMS
-ms.openlocfilehash: 7d3d23dc1f2e081c0a7c53fbdfaef749c9729fd4
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: b07a8930255786686fb1e587b2a29bbc708eff63
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48584386"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59311029"
 ---
 # <a name="how-to-display-signed-in-status-using-wif"></a>Postupy: Zobrazení stavu přihlášení pomocí WIF
 ## <a name="applies-to"></a>Platí pro  
@@ -56,48 +56,48 @@ ms.locfileid: "48584386"
   
 #### <a name="to-install-the-identity-and-access-extension"></a>Chcete-li nainstalovat rozšíření identit a přístupu  
   
-1.  Spusťte sadu Visual Studio jako správce v režimu se zvýšenými oprávněními.  
+1. Spusťte sadu Visual Studio jako správce v režimu se zvýšenými oprávněními.  
   
-2.  V sadě Visual Studio, klikněte na tlačítko **nástroje** a klikněte na tlačítko **Správce rozšíření**. **Správce rozšíření** zobrazí se okno.  
+2. V sadě Visual Studio, klikněte na tlačítko **nástroje** a klikněte na tlačítko **Správce rozšíření**. **Správce rozšíření** zobrazí se okno.  
   
-3.  V **Správce rozšíření**, klikněte na tlačítko **Online rozšíření** v levé nabídce vyberte **Galerie sady Visual Studio**.  
+3. V **Správce rozšíření**, klikněte na tlačítko **Online rozšíření** v levé nabídce vyberte **Galerie sady Visual Studio**.  
   
-4.  V pravém horním rohu **Správce rozšíření**, vyhledejte *identit a přístupu*.  
+4. V pravém horním rohu **Správce rozšíření**, vyhledejte *identit a přístupu*.  
   
-5.  **Identit a přístupu** položky se zobrazí ve výsledcích hledání. Klikněte na něj a potom klikněte na tlačítko **Stáhnout**.  
+5. **Identit a přístupu** položky se zobrazí ve výsledcích hledání. Klikněte na něj a potom klikněte na tlačítko **Stáhnout**.  
   
-6.  **Stáhnout a nainstalovat** se zobrazí dialogové okno. Pokud s licenčními podmínkami souhlasíte, klikněte na tlačítko **nainstalovat**.  
+6. **Stáhnout a nainstalovat** se zobrazí dialogové okno. Pokud s licenčními podmínkami souhlasíte, klikněte na tlačítko **nainstalovat**.  
   
-7.  Když **identit a přístupu** rozšíření dokončil instalaci, restartujte Visual Studio v režimu správce.  
+7. Když **identit a přístupu** rozšíření dokončil instalaci, restartujte Visual Studio v režimu správce.  
   
 ## <a name="step-2--create-a-relying-party-aspnet-application"></a>Krok 2 – Vytvoření aplikace předávající strany ASP.NET  
  Tento krok popisuje, jak vytvořit webovou aplikaci webových formulářů ASP.NET, které se integrují s WIF předávající stranu.  
   
 #### <a name="to-create-a-simple-aspnet-application"></a>Chcete-li vytvořit jednoduchou aplikaci ASP.NET  
   
-1.  Spusťte sadu Visual Studio a klikněte na tlačítko **souboru**, **nový**a potom **projektu**.  
+1. Spusťte sadu Visual Studio a klikněte na tlačítko **souboru**, **nový**a potom **projektu**.  
   
-2.  V **nový projekt** okna, klikněte na tlačítko **aplikace webových formulářů ASP.NET**.  
+2. V **nový projekt** okna, klikněte na tlačítko **aplikace webových formulářů ASP.NET**.  
   
-3.  V **název**, zadejte `TestApp` a stiskněte klávesu **OK**.  
+3. V **název**, zadejte `TestApp` a stiskněte klávesu **OK**.  
   
 ## <a name="step-3--enable-local-development-sts-to-authenticate-users"></a>Krok 3 – povolit místní služby STS pro vývoj k ověřování uživatelů  
  Tento krok popisuje, jak povolit místní službu STS pro vývoj ve vaší aplikaci. Místní službu STS je povolit pomocí rozšíření identit a přístupu pro sadu Visual Studio.  
   
 #### <a name="to-enable-local-development-sts-in-your-aspnet-application"></a>Povolit místní službu STS pro vývoj aplikace ASP.NET  
   
-1.  V sadě Visual Studio, klikněte pravým tlačítkem myši **TestApp** projektu v části **Průzkumníku řešení**a pak vyberte **identit a přístupu**.  
+1. V sadě Visual Studio, klikněte pravým tlačítkem myši **TestApp** projektu v části **Průzkumníku řešení**a pak vyberte **identit a přístupu**.  
   
-2.  **Identit a přístupu** zobrazí se okno. V části **poskytovatelé**vyberte **testování aplikace s místní službu STS pro vývoj**, pak klikněte na tlačítko **použít**.  
+2. **Identit a přístupu** zobrazí se okno. V části **poskytovatelé**vyberte **testování aplikace s místní službu STS pro vývoj**, pak klikněte na tlačítko **použít**.  
   
 ## <a name="step-4--modify-your-aspnet-application-to-display-sign-in-status"></a>Krok 4 – upravit svou aplikaci technologie ASP.NET pro zobrazení přihlašovací ve stavu  
  Tento krok popisuje, jak upravit svou aplikaci ASP.NET dynamicky uvedena informace, zda aktuální uživatel je přihlášený. Jakmile poskytovatel služby tokenů zabezpečení nakonfigurovaný, technologie WIF zpracovává příchozí deklarace identity. Teď musíte nakonfigurovat kódu vaší aplikace k zobrazení výsledku ověřování.  
   
 #### <a name="to-display-sign-in-status"></a>Chcete-li zobrazit přihlašování ve stavu  
   
-1.  V sadě Visual Studio, otevřete **Default.aspx** soubor **TestApp** projektu.  
+1. V sadě Visual Studio, otevřete **Default.aspx** soubor **TestApp** projektu.  
   
-2.  Nahraďte stávající značky **Default.aspx** souboru následujícím kódem:  
+2. Nahraďte stávající značky **Default.aspx** souboru následujícím kódem:  
   
     ```  
     <%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>  
@@ -114,12 +114,12 @@ ms.locfileid: "48584386"
     </html>  
     ```  
   
-3.  Uložit **Default.aspx**a pak otevřete soubor s názvem jeho kódu **Default.aspx.cs**.  
+3. Uložit **Default.aspx**a pak otevřete soubor s názvem jeho kódu **Default.aspx.cs**.  
   
     > [!NOTE]
     >  **Default.aspx.cs** může být skrytá pod **Default.aspx** v Průzkumníku řešení. Pokud **Default.aspx.cs** není viditelný, rozbalte **Default.aspx** klepnutím na trojúhelník vedle sebe.  
   
-4.  Nahraďte existující kód ve třídě **Default.aspx.cs** následujícím kódem:  
+4. Nahraďte existující kód ve třídě **Default.aspx.cs** následujícím kódem:  
   
     ```csharp  
     using System;  
@@ -144,13 +144,13 @@ ms.locfileid: "48584386"
     }  
     ```  
   
-5.  Uložit **Default.aspx.cs**a sestavte aplikaci.  
+5. Uložit **Default.aspx.cs**a sestavte aplikaci.  
   
 ## <a name="step-5--test-the-integration-between-wif-and-your-aspnet-application"></a>Krok 5 – otestovat integraci technologie WIF a vaše aplikace ASP.NET  
  Tento krok popisuje, jak otestovat integraci technologie WIF a vaše aplikace ASP.NET.  
   
 #### <a name="to-test-the-integration-between-wif-and-aspnet"></a>Chcete-li otestovat integraci technologie WIF a ASP.NET  
   
-1.  V sadě Visual Studio, stiskněte klávesu **F5** pro spuštění ladění vaší aplikace. Pokud se nenajdou žádné chyby, otevře se nové okno prohlížeče.  
+1. V sadě Visual Studio, stiskněte klávesu **F5** pro spuštění ladění vaší aplikace. Pokud se nenajdou žádné chyby, otevře se nové okno prohlížeče.  
   
-2.  Můžete si všimnout, že v prohlížeči tiše přesměruje požadavek na službu STS a pak otevře stránku Default.aspx. Pokud technologie WIF je správně nakonfigurovaná, měli byste vidět web zobrazit následující text: **"Přihlášení"**.
+2. Můžete si všimnout, že v prohlížeči tiše přesměruje požadavek na službu STS a pak otevře stránku Default.aspx. Pokud technologie WIF je správně nakonfigurovaná, měli byste vidět web zobrazit následující text: **"Přihlášení"**.

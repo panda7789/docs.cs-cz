@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - transport quotas [WCF]
 ms.assetid: 3e71dd3d-f981-4d9c-9c06-ff8abb61b717
-ms.openlocfilehash: 44bda0838689fcf8096017060be970f2291a86e0
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 12c266a473aa7c20ab35d6047fedafbfa04dac4a
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59174626"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59299303"
 ---
 # <a name="transport-quotas"></a>Přenosové kvóty
 Přenosové kvóty slouží jako mechanismus pro zásady pro rozhodování o tom, kdy připojení spotřebovává přemíru prostředků. Kvóta je pevný limit, který brání použití další zdroje informací po překročení hodnoty kvóty. Přenosové kvóty zabránit škodlivým nebo neúmyslným útoky s cílem odepření služby.  
@@ -100,9 +100,9 @@ Přenosové kvóty slouží jako mechanismus pro zásady pro rozhodování o tom
 |`ReceiveTimeout`|X|X|X|  
 |`SendTimeout`|X|X|X|  
   
-1.  `MaxBufferSize` Kvóty přenosu je dostupný jenom u `BasicHttp` vazby. `WSHttp` Vazby jsou určené pro scénáře, které nepodporují streamovaná dopravy.  
+1. `MaxBufferSize` Kvóty přenosu je dostupný jenom u `BasicHttp` vazby. `WSHttp` Vazby jsou určené pro scénáře, které nepodporují streamovaná dopravy.  
   
-2.  Přenosové kvóty `MaxPendingConnections` a `MaxOutboundConnectionsPerEndpoint` jsou sloučeny do jednoho přenosové kvóty s názvem `MaxConnections`.  
+2. Přenosové kvóty `MaxPendingConnections` a `MaxOutboundConnectionsPerEndpoint` jsou sloučeny do jednoho přenosové kvóty s názvem `MaxConnections`.  
   
 ### <a name="controlling-transport-quotas-from-configuration"></a>Přenosové kvóty z konfigurace řízení  
  Konfigurace aplikace můžete nastavit stejnou přenosové kvóty na přímo přístup k vlastnostem na vazbu. V konfiguračních souborech název kvóty přenosu vždy začíná malým písmenem. Například `CloseTimeout` odpovídá vlastnosti u vazby `closeTimeout` nastavení v konfiguraci a `MaxConnections` odpovídá vlastnosti u vazby `maxConnections` nastavení v konfiguraci.  

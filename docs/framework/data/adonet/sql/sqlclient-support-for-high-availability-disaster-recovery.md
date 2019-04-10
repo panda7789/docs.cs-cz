@@ -2,12 +2,12 @@
 title: Podpora klienta SqlClient pro vysokou dostupnost a zotavení po havárii
 ms.date: 03/30/2017
 ms.assetid: 61e0b396-09d7-4e13-9711-7dcbcbd103a0
-ms.openlocfilehash: 744b24f0a4826c52908141183875a8a7f8c22f2b
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 40054378319b81113dcb8f40cb82a8b1d02fc594
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59213789"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59307591"
 ---
 # <a name="sqlclient-support-for-high-availability-disaster-recovery"></a>Podpora klienta SqlClient pro vysokou dostupnost a zotavení po havárii
 Toto téma popisuje podpora klienta SqlClient (přidá [!INCLUDE[net_v45](../../../../../includes/net-v45-md.md)]) pro vysokou dostupnost, zotavení po havárii – skupin dostupnosti AlwaysOn.  Funkce dostupnosti skupin AlwaysOn byl přidán do systému SQL Server 2012. Další informace o skupinách dostupnosti AlwaysOn naleznete v tématu knihy Online SQL Server.  
@@ -27,9 +27,9 @@ Toto téma popisuje podpora klienta SqlClient (přidá [!INCLUDE[net_v45](../../
   
  Můžete programově upravit tato klíčová slova řetězec připojení s:  
   
-1.  <xref:System.Data.SqlClient.SqlConnectionStringBuilder.ApplicationIntent%2A>  
+1. <xref:System.Data.SqlClient.SqlConnectionStringBuilder.ApplicationIntent%2A>  
   
-2.  <xref:System.Data.SqlClient.SqlConnectionStringBuilder.MultiSubnetFailover%2A>  
+2. <xref:System.Data.SqlClient.SqlConnectionStringBuilder.MultiSubnetFailover%2A>  
 
 > [!NOTE]
 >  Nastavení `MultiSubnetFailover` k `true` není požadován spolu s [!INCLUDE[net_v461](../../../../../includes/net-v461-md.md)] nebo novější verze.
@@ -59,9 +59,9 @@ Toto téma popisuje podpora klienta SqlClient (přidá [!INCLUDE[net_v45](../../
   
  Pokud směrování jen pro čtení není platná, připojení k umístění sekundární repliky se nezdaří v následujících situacích:  
   
-1.  Pokud umístění sekundární replika není nakonfigurovaná tak, aby přijímal připojení.  
+1. Pokud umístění sekundární replika není nakonfigurovaná tak, aby přijímal připojení.  
   
-2.  Pokud aplikace používá `ApplicationIntent=ReadWrite` (viz následující popis) a sekundární replika umístění je nakonfigurovaná pro přístup jen pro čtení.  
+2. Pokud aplikace používá `ApplicationIntent=ReadWrite` (viz následující popis) a sekundární replika umístění je nakonfigurovaná pro přístup jen pro čtení.  
   
  <xref:System.Data.SqlClient.SqlDependency> na sekundárních replikách jen pro čtení se nepodporuje.  
   
@@ -86,11 +86,11 @@ Toto téma popisuje podpora klienta SqlClient (přidá [!INCLUDE[net_v45](../../
 ## <a name="read-only-routing"></a>Směrování jen pro čtení  
  Směrování jen pro čtení je funkce, která můžete zajistit dostupnost čtení jedinou replikou databáze. Pokud chcete povolit směrování jen pro čtení:  
   
-1.  Musíte se připojit k naslouchací proces skupiny dostupnosti skupiny dostupnosti Always On.  
+1. Musíte se připojit k naslouchací proces skupiny dostupnosti skupiny dostupnosti Always On.  
   
-2.  `ApplicationIntent` Klíčové slovo připojovacího řetězce musí být nastaveno na `ReadOnly`.  
+2. `ApplicationIntent` Klíčové slovo připojovacího řetězce musí být nastaveno na `ReadOnly`.  
   
-3.  Skupiny dostupnosti musí být nakonfigurované správcem databáze umožňující směrování jen pro čtení.  
+3. Skupiny dostupnosti musí být nakonfigurované správcem databáze umožňující směrování jen pro čtení.  
   
  Je možné, že více připojení pomocí směrování jen pro čtení se všechny připojit pro stejné repliky jen pro čtení. Změny v databázi synchronizace nebo změny konfigurace směrování na server může způsobit připojení klientů k jiné repliky jen pro čtení. Aby bylo zajištěno, že všechny požadavky jen pro čtení připojit pro stejné repliky jen pro čtení, nepředávejte naslouchací proces skupiny dostupnosti k `Data Source` klíčové slovo připojovacího řetězce. Místo toho zadejte název instance jen pro čtení.  
   

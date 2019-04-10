@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - sessions [WCF]
 ms.assetid: 864ba12f-3331-4359-a359-6d6d387f1035
-ms.openlocfilehash: 433efade37d9aa07f99a212b631a571dfbc766dd
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: fc7b86f3f2c2c6276681c324dbe9a390fdfdafd4
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59095864"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59320922"
 ---
 # <a name="using-sessions"></a>Použití relací
 V aplikacích Windows Communication Foundation (WCF) *relace* koreluje skupinu zpráv do konverzace. Relace WCF se liší od objekt relace, která je k dispozici v [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] aplikace podporují různé chování a se řídí různými způsoby. Toto téma popisuje funkce, které umožňují relace ve službě WCF aplikací a jejich použití.  
@@ -53,9 +53,9 @@ V aplikacích Windows Communication Foundation (WCF) *relace* koreluje skupinu z
   
  Když služba WCF přijímá klientské relace, jsou ve výchozím nastavení povoleny následující funkce:  
   
-1.  Všechna volání mezi objekt klienta WCF jsou zpracovávány stejné instance služby.  
+1. Všechna volání mezi objekt klienta WCF jsou zpracovávány stejné instance služby.  
   
-2.  Různé na základě relace vazby poskytují další funkce.  
+2. Různé na základě relace vazby poskytují další funkce.  
   
 ## <a name="system-provided-session-types"></a>Typy poskytované systémem relace  
  Vazba na základě relace podporuje výchozí přidružení instance služby s konkrétní relací. Různé na základě relace vazby však podporují různé funkce kromě povolení založeného na relacích vytvoření instance ovládacího prvku popsaných výše.  

@@ -3,12 +3,12 @@ title: Přehled modulu ověřování WSFederation
 ms.date: 03/30/2017
 ms.assetid: 02c4d5e8-f0a7-49ee-9cf5-3647578510ad
 author: BrucePerlerMS
-ms.openlocfilehash: 4b15952e2fdc050c5291bed6a58d2eecbf5ddbfd
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: b13536acf71018eb21b6930d7542a9911add8261
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59092462"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59310249"
 ---
 # <a name="wsfederation-authentication-module-overview"></a>Přehled modulu ověřování WSFederation
 Technologie Windows Identity Foundation (WIF) zahrnuje podpory federovaného ověřování v aplikacích ASP.NET prostřednictvím modulu ověřování WS-Federated (WS-FAM). Toto téma vám pomůže pochopit, jak federované ověřování funguje a jak ji používat.  
@@ -18,26 +18,26 @@ Technologie Windows Identity Foundation (WIF) zahrnuje podpory federovaného ov�
   
  ![Scénář ověřování federace](../../../docs/framework/security/media/federatedauthentication.gif "FederatedAuthentication")  
   
-1.  Klienta ve vztahu důvěryhodnosti domény Fabrikam odešle požadavek na aplikaci předávající strany (RP) v doméně Contoso vztah důvěryhodnosti.  
+1. Klienta ve vztahu důvěryhodnosti domény Fabrikam odešle požadavek na aplikaci předávající strany (RP) v doméně Contoso vztah důvěryhodnosti.  
   
-2.  RP přesměruje klienta do služby STS ve vztahu důvěryhodnosti domény Contoso. Tato služba tokenů zabezpečení je vůbec nezná klienta.  
+2. RP přesměruje klienta do služby STS ve vztahu důvěryhodnosti domény Contoso. Tato služba tokenů zabezpečení je vůbec nezná klienta.  
   
-3.  Služba tokenů zabezpečení Contoso přesměruje klienta do služby STS ve společnosti Fabrikam vztah důvěryhodnosti domény, pomocí kterého vztah důvěryhodnosti domény Contoso má vztah důvěryhodnosti.  
+3. Služba tokenů zabezpečení Contoso přesměruje klienta do služby STS ve společnosti Fabrikam vztah důvěryhodnosti domény, pomocí kterého vztah důvěryhodnosti domény Contoso má vztah důvěryhodnosti.  
   
-4.  Služba tokenů zabezpečení společnosti Fabrikam ověřuje identitu klienta a vydá token zabezpečení na službu STS Contoso.  
+4. Služba tokenů zabezpečení společnosti Fabrikam ověřuje identitu klienta a vydá token zabezpečení na službu STS Contoso.  
   
-5.  Služba tokenů zabezpečení Contoso použije Fabrikam token k vytvoření vlastní token, který je možné RP a odešle předávající straně.  
+5. Služba tokenů zabezpečení Contoso použije Fabrikam token k vytvoření vlastní token, který je možné RP a odešle předávající straně.  
   
-6.  RP extrahuje klienta deklarací z tokenu zabezpečení a udělá rozhodnutí o autorizaci.  
+6. RP extrahuje klienta deklarací z tokenu zabezpečení a udělá rozhodnutí o autorizaci.  
   
 ### <a name="using-the-federated-authentication-module-with-aspnet"></a>Modul federovaného ověřování pomocí technologie ASP.NET  
  <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> Modulu HTTP, která umožňuje přidat federovaného ověřování je (WS-FAM) [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] aplikace. Federované ověřování umožňuje zpracovat STS a umožňuje zaměřit se na psaní obchodní logiky logiku ověřování.  
   
  Konfiguraci WS-služba FAM k určení služby tokenů zabezpečení, ke kterým by měl být přesměrován neověřenými požadavky. Technologie WIF umožňuje ověření uživatele dvěma způsoby:  
   
-1.  Pasivní přesměrování: Když neověřený uživatel pokusí o přístup k chráněnému prostředku a chcete jednoduše přesměruje je to služby tokenů zabezpečení bez nutnosti přihlašovací stránku, to je ten správný přístup. Služba tokenů zabezpečení ověří identitu uživatele a vydá token zabezpečení, která obsahuje odpovídající deklarace identity pro tohoto uživatele. Tato možnost vyžaduje FAM WS k přidání do kanálu z modulů HTTP. Můžete upravit konfigurační soubor vaší aplikace k používání WS-FAM a provést federaci se službou STS Identity and Access Tool for Visual Studio 2012. Další informace najdete v tématu [Identity and Access Tool for Visual Studio 2012](../../../docs/framework/security/identity-and-access-tool-for-vs.md).  
+1. Pasivní přesměrování: Když neověřený uživatel pokusí o přístup k chráněnému prostředku a chcete jednoduše přesměruje je to služby tokenů zabezpečení bez nutnosti přihlašovací stránku, to je ten správný přístup. Služba tokenů zabezpečení ověří identitu uživatele a vydá token zabezpečení, která obsahuje odpovídající deklarace identity pro tohoto uživatele. Tato možnost vyžaduje FAM WS k přidání do kanálu z modulů HTTP. Můžete upravit konfigurační soubor vaší aplikace k používání WS-FAM a provést federaci se službou STS Identity and Access Tool for Visual Studio 2012. Další informace najdete v tématu [Identity and Access Tool for Visual Studio 2012](../../../docs/framework/security/identity-and-access-tool-for-vs.md).  
   
-2.  Můžete volat <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignIn%2A?displayProperty=nameWithType> metoda nebo <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectToIdentityProvider%2A> metodu z modelu code-behind přihlašovací stránku ve vaší aplikaci předávající strany.  
+2. Můžete volat <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignIn%2A?displayProperty=nameWithType> metoda nebo <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectToIdentityProvider%2A> metodu z modelu code-behind přihlašovací stránku ve vaší aplikaci předávající strany.  
   
  V pasivní přesměrování veškerá komunikace se provádí prostřednictvím odpovědi/přesměrování z klienta (obvykle prohlížeče). Služba FAM WS můžete přidat do kanálu HTTP vaší aplikace, kde se sleduje pro neověřené uživatele požadavků a přesměruje uživatele na službu STS je zadat.  
   

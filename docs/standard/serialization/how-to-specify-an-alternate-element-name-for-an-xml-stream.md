@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Určení alternativního názvu elementu pro Stream XML'
+title: 'Postupy: Zadání alternativního názvu elementu pro XML stream'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -12,34 +12,34 @@ helpviewer_keywords:
 - classes, overriding
 - overriding classes
 ms.assetid: 5cc1c0b0-f94b-4525-9a41-88a582cd6668
-ms.openlocfilehash: d11fd0353faccdb19e1a39b7a57df9fe3bca3190
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.openlocfilehash: 577b96517632ca1ae06891540f22c2c3c3886cd1
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58465474"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59317789"
 ---
-# <a name="how-to-specify-an-alternate-element-name-for-an-xml-stream"></a>Postupy: Určení alternativního názvu elementu pro Stream XML
+# <a name="how-to-specify-an-alternate-element-name-for-an-xml-stream"></a>Postupy: Zadání alternativního názvu elementu pro XML stream
   
 Pomocí <xref:System.Xml.Serialization.XmlSerializer>, můžete vygenerovat více než jeden datový proud XML se stejnou sadou tříd. Můžete to provést, protože dvě různé webové služby XML vyžadují stejné základní informace s pouze mírné rozdíly. Představte si například dvě XML webové služby, které zpracovávají objednávky pro knihy a obě vyžadují tedy čísla ISBN. Jedna služba používá značky \<ISBN > zatímco druhý používá značky \<BookID >. Máte třídu s názvem `Book` obsahující pole s názvem `ISBN`. Pokud instance `Book` serializován třídy, standardně použije název člena (ISBN) jako název elementu značky. U první webové služby XML je podle očekávání. Pokud chcete odeslat datový proud XML druhý webové služby XML, je nutné přepsat serializace tak, aby byl název elementu na značku, ale `BookID`.  
   
 ## <a name="to-create-an-xml-stream-with-an-alternate-element-name"></a>Chcete-li vytvořit datový proud XML s názvem alternativní elementu  
   
-1.  Vytvořit instanci <xref:System.Xml.Serialization.XmlElementAttribute> třídy.  
+1. Vytvořit instanci <xref:System.Xml.Serialization.XmlElementAttribute> třídy.  
   
-2.  Nastavte <xref:System.Xml.Serialization.XmlElementAttribute.ElementName%2A> z <xref:System.Xml.Serialization.XmlElementAttribute> na "BookID".  
+2. Nastavte <xref:System.Xml.Serialization.XmlElementAttribute.ElementName%2A> z <xref:System.Xml.Serialization.XmlElementAttribute> na "BookID".  
   
-3.  Vytvořit instanci <xref:System.Xml.Serialization.XmlAttributes> třídy.  
+3. Vytvořit instanci <xref:System.Xml.Serialization.XmlAttributes> třídy.  
   
-4.  Přidat `XmlElementAttribute` do kolekce přistupovat prostřednictvím <xref:System.Xml.Serialization.XmlAttributes.XmlElements%2A> vlastnost <xref:System.Xml.Serialization.XmlAttributes> .  
+4. Přidat `XmlElementAttribute` do kolekce přistupovat prostřednictvím <xref:System.Xml.Serialization.XmlAttributes.XmlElements%2A> vlastnost <xref:System.Xml.Serialization.XmlAttributes> .  
   
-5.  Vytvořit instanci <xref:System.Xml.Serialization.XmlAttributeOverrides> třídy.  
+5. Vytvořit instanci <xref:System.Xml.Serialization.XmlAttributeOverrides> třídy.  
   
-6.  Přidat `XmlAttributes` k <xref:System.Xml.Serialization.XmlAttributeOverrides>, předávání typ objektu určeného k přepsání a název člena přepsání.  
+6. Přidat `XmlAttributes` k <xref:System.Xml.Serialization.XmlAttributeOverrides>, předávání typ objektu určeného k přepsání a název člena přepsání.  
   
-7.  Vytvořit instanci `XmlSerializer` třídy s `XmlAttributeOverrides`.  
+7. Vytvořit instanci `XmlSerializer` třídy s `XmlAttributeOverrides`.  
   
-8.  Vytvořit instanci `Book` třídy a serializaci nebo deserializaci ji.  
+8. Vytvořit instanci `Book` třídy a serializaci nebo deserializaci ji.  
   
 ## <a name="example"></a>Příklad  
   

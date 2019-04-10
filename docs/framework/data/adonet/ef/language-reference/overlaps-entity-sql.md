@@ -2,12 +2,12 @@
 title: PŘEKRYTÍ (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 41743e89-79cb-4d7b-8a27-355b45024b61
-ms.openlocfilehash: 74399c4c5701fcf039666ef3de19de2cf9a6b50e
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 9d909fb7efbb29619351cfc866b0f84381d0b80b
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59104198"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59319635"
 ---
 # <a name="overlaps-entity-sql"></a>PŘEKRYTÍ (Entity SQL)
 Určuje, jestli dvě kolekce mají společné prvky.  
@@ -35,9 +35,9 @@ expression OVERLAPS expression
 ## <a name="example"></a>Příklad  
  Následující dotaz Entity SQL pomocí operátoru PŘEKRÝVÁ se určuje, zda mají dvě kolekce společné hodnoty. Dotaz je založen na modelu Sales AdventureWorks. Chcete-li zkompilovat a spustit, postupujte podle těchto kroků:  
   
-1.  Postupujte podle pokynů v [jak: Spustit dotaz, který vrátí výsledky typu StructuralType](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-structuraltype-results.md).  
+1. Postupujte podle pokynů v [jak: Spustit dotaz, který vrátí výsledky typu StructuralType](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-structuraltype-results.md).  
   
-2.  Předat jako argument pro následující dotaz `ExecuteStructuralTypeQuery` metody:  
+2. Předat jako argument pro následující dotaz `ExecuteStructuralTypeQuery` metody:  
   
  [!code-csharp[DP EntityServices Concepts 2#OVERLAPS](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#overlaps)]  
   

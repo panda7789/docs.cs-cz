@@ -2,12 +2,12 @@
 title: Integrace WPF a WF v XAML
 ms.date: 03/30/2017
 ms.assetid: a4f53b48-fc90-4315-bca0-ba009562f488
-ms.openlocfilehash: ce6fc259b4e8743abd71e979825545183eef136a
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 188702cfc13d7e353238e108066cc3d5f1c8bda9
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48840865"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59298640"
 ---
 # <a name="wpf-and-wf-integration-in-xaml"></a>Integrace WPF a WF v XAML
 Tento příklad ukazuje, jak vytvořit aplikaci, která využívá funkce Windows Presentation Foundation (WPF) a Windows Workflow Foundation (WF) v jednom dokumentu XAML. K tomu Ukázka používá rozšíření Windows Workflow Foundation (WF) a XAML.
@@ -26,15 +26,15 @@ Tento příklad ukazuje, jak vytvořit aplikaci, která využívá funkce Window
 
 #### <a name="to-use-this-sample"></a>Pro fungování této ukázky
 
-1.  Pomocí sady Visual Studio 2010, otevřete soubor řešení WPFWFIntegration.sln.
+1. Pomocí sady Visual Studio 2010, otevřete soubor řešení WPFWFIntegration.sln.
 
-2.  Abyste mohli sestavit řešení, stiskněte kombinaci kláves CTRL + SHIFT + B.
+2. Abyste mohli sestavit řešení, stiskněte kombinaci kláves CTRL + SHIFT + B.
 
-3.  Abyste mohli spustit řešení, stiskněte klávesu F5.
+3. Abyste mohli spustit řešení, stiskněte klávesu F5.
 
-4.  Do dialogového okna zadejte své jméno a příjmení.
+4. Do dialogového okna zadejte své jméno a příjmení.
 
-5.  Zavřete dialogové okno a konzole vypisuje své jméno.
+5. Zavřete dialogové okno a konzole vypisuje své jméno.
 
 > [!IMPORTANT]
 >  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  

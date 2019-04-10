@@ -2,12 +2,12 @@
 title: Proces nákupu v podniku
 ms.date: 03/30/2017
 ms.assetid: a5e57336-4290-41ea-936d-435593d97055
-ms.openlocfilehash: 511250b8e9c08268ddf917e19fd99281149af08a
-ms.sourcegitcommit: acd8ed14fe94e9d4e3a7fb685fe83d05e941073c
+ms.openlocfilehash: 346d4b58d8d59c416fbdd51f5fbe02b54f9e078f
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56442240"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59313330"
 ---
 # <a name="corporate-purchase-process"></a>Proces nákupu v podniku
 Tento příklad ukazuje, jak vytvořit velmi základní požadavek na proces nákupu návrhy (RFP) na základě s automatický výběr nejlepší návrh. Kombinuje <xref:System.Activities.Statements.Parallel>, <xref:System.Activities.Statements.ParallelForEach%601>, a <xref:System.Activities.Statements.ForEach%601> a vlastní aktivitu pro vytvoření pracovního postupu, který představuje proces.
@@ -50,25 +50,25 @@ Tento příklad ukazuje, jak vytvořit velmi základní požadavek na proces ná
 ## <a name="description-of-the-process"></a>Popis procesu  
  Tento příklad ukazuje implementaci pro program Windows Workflow Foundation (WF) ke shromáždění návrhy od dodavatelů obecný společnosti.  
   
-1.  Zaměstnanec společnosti X vytvoří žádost pro návrh (RFP).  
+1. Zaměstnanec společnosti X vytvoří žádost pro návrh (RFP).  
   
     1.  Typy zaměstnanců poptávku (RFP) název a popis.  
   
     2.  Zaměstnanec vybere dodavatelů, které chce odeslat návrhy pozvat.  
   
-2.  Zaměstnanec odešle návrh.  
+2. Zaměstnanec odešle návrh.  
   
     1.  Je vytvořena instance pracovního postupu.  
   
     2.  Pracovní postup čeká všichni dodavatelé odesílat své návrhy.  
   
-3.  Po přijetí jsou všechny návrhy, pracovní postup projde všechny přijaté návrhy a vybere ten nejvhodnější.  
+3. Po přijetí jsou všechny návrhy, pracovní postup projde všechny přijaté návrhy a vybere ten nejvhodnější.  
   
     1.  Jednotlivých dodavatelů má pověst (Tato ukázka ukládá seznam pověst VendorRepository.cs).  
   
     2.  Celková hodnota návrh je určeno (hodnotu zadanou v dodavatelem) * (dodavatele uživatele zaznamenaná pověst) / 100.  
   
-4.  Původní žadatel můžete zobrazit všechny odeslané návrhy. Nejlepší návrh se zobrazí v části speciální v sestavě.  
+4. Původní žadatel můžete zobrazit všechny odeslané návrhy. Nejlepší návrh se zobrazí v části speciální v sestavě.  
   
 ## <a name="process-definition"></a>Definice procesu  
  Používá základní logiku ukázky <xref:System.Activities.Statements.ParallelForEach%601> aktivitu, která čeká na nabídky od každého dodavatele (s použitím vlastní aktivitu, která vytvoří záložku), a registruje návrh dodavatele jako poptávku (RFP) (pomocí <xref:System.Activities.Statements.InvokeMethod> aktivit).  
@@ -143,15 +143,15 @@ Tento příklad ukazuje, jak vytvořit velmi základní požadavek na proces ná
   
 #### <a name="to-use-this-sample"></a>Pro fungování této ukázky  
   
-1.  Pomocí sady Visual Studio 2010, otevřete soubor řešení PurchaseProcess.sln.  
+1. Pomocí sady Visual Studio 2010, otevřete soubor řešení PurchaseProcess.sln.  
   
-2.  Chcete-li spustit projekt webového klienta, otevřete **Průzkumníku řešení** a klikněte pravým tlačítkem myši **webového klienta** projektu. Vyberte **nastavit jako spouštěný projekt**.  
+2. Chcete-li spustit projekt webového klienta, otevřete **Průzkumníku řešení** a klikněte pravým tlačítkem myši **webového klienta** projektu. Vyberte **nastavit jako spouštěný projekt**.  
   
-3.  Chcete-li spustit WinForms klientský projekt, otevřete **Průzkumníka řešení** a klikněte pravým tlačítkem na **WinForms klienta** projektu. Vyberte **nastavit jako spouštěný projekt**.  
+3. Chcete-li spustit WinForms klientský projekt, otevřete **Průzkumníka řešení** a klikněte pravým tlačítkem na **WinForms klienta** projektu. Vyberte **nastavit jako spouštěný projekt**.  
   
-4.  Abyste mohli sestavit řešení, stiskněte kombinaci kláves CTRL + SHIFT + B.  
+4. Abyste mohli sestavit řešení, stiskněte kombinaci kláves CTRL + SHIFT + B.  
   
-5.  Abyste mohli spustit řešení, stiskněte CTRL + F5.  
+5. Abyste mohli spustit řešení, stiskněte CTRL + F5.  
   
 ### <a name="web-client-options"></a>Možnosti webového klienta  
   

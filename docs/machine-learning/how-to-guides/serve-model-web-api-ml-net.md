@@ -3,12 +3,12 @@ title: Poskytování strojového učení modelu ve webovém rozhraní API ASP.NE
 description: Poskytování modelu strojového učení ML.NET mínění analýzy prostřednictvím Internetu pomocí webového rozhraní API ASP.NET Core
 ms.date: 03/05/2019
 ms.custom: mvc,how-to
-ms.openlocfilehash: 0cc13ec22b3a8805ec4aa17bf10560b2564ccd63
-ms.sourcegitcommit: 77854e8704b9689b73103d691db34d71c2bf1dad
+ms.openlocfilehash: af51ccaac263202fc34d36e746722d2da46404f8
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58307912"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59321225"
 ---
 # <a name="how-to-serve-machine-learning-model-through-aspnet-core-web-api"></a>Postupy: Slouží k Machine Learning Model prostřednictvím webové rozhraní API ASP.NET Core
 
@@ -21,7 +21,7 @@ Aktuálně používáte této ukázky s postupy a související **ML.NET verze 0
 
 ## <a name="prerequisites"></a>Požadavky
 
-- [Visual Studio 2017 15.6 nebo novější](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017) s úlohou "Vývoj pro různé platformy .NET Core" nainstalované.
+- [Visual Studio 2017 15.6 nebo novější](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017) s úlohou "Vývoj pro různé platformy .NET Core" nainstalované.
 - Prostředí PowerShell.
 - Předem natrénovaných modelů.
     - Použití [kurz analýza mínění ML.NET](../tutorials/sentiment-analysis.md) sestaví vlastní model.

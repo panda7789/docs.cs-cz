@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: daf9d9d5-84ac-4bd9-a864-27665ffd0f5c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5f52b34e6fb99b52e5775482dec3c59ed6738b31
-ms.sourcegitcommit: a3db1a9eafca89f95ccf361bc1833b47fbb2bb30
+ms.openlocfilehash: ff1bc6f0aa29742f61129ff9acb9980658f118a4
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58920555"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59327864"
 ---
 # <a name="install-the-net-framework-for-developers"></a>Instalace rozhraní .NET Framework pro vývojáře
 
@@ -107,7 +107,7 @@ K dispozici jsou dva typy Distribuovatelný instalační programy:
 
 Web a instalační programy jsou určeny pro počítače s x86 a x64 (viz [požadavky na systém](~/docs/framework/get-started/system-requirements.md)), ale nepodporují počítače s procesorem Itanium.
 
-1.  Otevřete stránku ke stažení pro verzi rozhraní .NET Framework, kterou chcete nainstalovat:
+1. Otevřete stránku ke stažení pro verzi rozhraní .NET Framework, kterou chcete nainstalovat:
 
     - Rozhraní .NET framework 4.7.2 ([Webová instalační služba](https://go.microsoft.com/fwlink/?LinkId=863262) nebo [offline instalační program](https://go.microsoft.com/fwlink/p/?LinkId=863265))
 
@@ -163,7 +163,7 @@ Jazykové sady jsou spustitelné soubory, které obsahují lokalizované prostř
 > [!IMPORTANT]
 > Jazykové sady neobsahují součásti rozhraní .NET Framework, které jsou nutné ke spuštění aplikace, takže před instalací jazykové sady je nutné spustit web nebo offline instalační program. Pokud jste již nainstalovali jazykovou sadu, odinstalujte ho, nainstalujte rozhraní .NET Framework a opětovnou instalací této jazykové sady.
 
-1.  Otevřete stránku ke stažení language pack pro verzi rozhraní .NET Framework, kterou jste nainstalovali:
+1. Otevřete stránku ke stažení language pack pro verzi rozhraní .NET Framework, kterou jste nainstalovali:
 
     - [Jazykové sady rozhraní .NET framework 4.7.2](https://go.microsoft.com/fwlink/?LinkID=863258)
 
@@ -183,9 +183,9 @@ Jazykové sady jsou spustitelné soubory, které obsahují lokalizované prostř
 
     - [Jazykové sady rozhraní .NET framework 4.5](https://go.microsoft.com/fwlink/p/?LinkId=245451)
 
-2.  V seznamu jazyků vyberte jazyk, který chcete stáhnout a počkejte několik sekund pro stránku znovu načte v daném jazyce.
+2. V seznamu jazyků vyberte jazyk, který chcete stáhnout a počkejte několik sekund pro stránku znovu načte v daném jazyce.
 
-3.  Zvolte **Stáhnout**.
+3. Zvolte **Stáhnout**.
 
 V následující tabulce jsou uvedeny podporované jazyky.
 

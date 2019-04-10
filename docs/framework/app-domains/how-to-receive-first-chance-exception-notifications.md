@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 66f002b8-a97d-4a6e-a503-2cec01689113
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8ef9d90f82abd15de05967262b6e6a4c3a6b842b
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: f6f70b4c67de892c3b66a0099dae9f618a99b3f1
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59164889"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59314110"
 ---
 # <a name="how-to-receive-first-chance-exception-notifications"></a>Postupy: Přijímání oznámení o první odpovídající výjimce
 <xref:System.AppDomain.FirstChanceException> Událost <xref:System.AppDomain> třída umožňuje dostávat oznámení, že byla vyvolána výjimka, před common language runtime začne hledat obslužné rutiny výjimek.
@@ -31,17 +31,17 @@ ms.locfileid: "59164889"
 
 #### <a name="to-demonstrate-first-chance-exception-notifications-in-the-default-application-domain"></a>K předvedení oznámení o první odpovídající výjimce ve výchozí doméně aplikace
 
-1.  Definování obslužné rutiny události pro <xref:System.AppDomain.FirstChanceException> událostí, použití výrazu lambda funkce a připojte ho k této události. V tomto příkladu vypisuje obslužná rutina události, název domény aplikace, kde byla zpracována události a výjimky <xref:System.Exception.Message%2A> vlastnost.
+1. Definování obslužné rutiny události pro <xref:System.AppDomain.FirstChanceException> událostí, použití výrazu lambda funkce a připojte ho k této události. V tomto příkladu vypisuje obslužná rutina události, název domény aplikace, kde byla zpracována události a výjimky <xref:System.Exception.Message%2A> vlastnost.
 
      [!code-csharp[System.AppDomain.FirstChanceException_howto_simple#2](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.appdomain.firstchanceexception_howto_simple/cs/example.cs#2)]
      [!code-vb[System.AppDomain.FirstChanceException_howto_simple#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.appdomain.firstchanceexception_howto_simple/vb/example.vb#2)]
 
-2.  Vyvolání výjimky a zachytit. Před běhové prostředí vyhledává obslužnou rutinu výjimky, <xref:System.AppDomain.FirstChanceException> zobrazí zprávu a je vyvolána událost. Tato zpráva je následován zprávu, která se zobrazí při obslužná rutina výjimky.
+2. Vyvolání výjimky a zachytit. Před běhové prostředí vyhledává obslužnou rutinu výjimky, <xref:System.AppDomain.FirstChanceException> zobrazí zprávu a je vyvolána událost. Tato zpráva je následován zprávu, která se zobrazí při obslužná rutina výjimky.
 
      [!code-csharp[System.AppDomain.FirstChanceException_howto_simple#3](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.appdomain.firstchanceexception_howto_simple/cs/example.cs#3)]
      [!code-vb[System.AppDomain.FirstChanceException_howto_simple#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.appdomain.firstchanceexception_howto_simple/vb/example.vb#3)]
 
-3.  Vytvořit výjimku, ale nebude zachytávat. Předtím, než modul runtime vyhledá obslužnou rutinu výjimky, <xref:System.AppDomain.FirstChanceException> zobrazí zprávu a je vyvolána událost. Neexistuje žádná obslužná rutina výjimky, takže ukončení aplikace.
+3. Vytvořit výjimku, ale nebude zachytávat. Předtím, než modul runtime vyhledá obslužnou rutinu výjimky, <xref:System.AppDomain.FirstChanceException> zobrazí zprávu a je vyvolána událost. Neexistuje žádná obslužná rutina výjimky, takže ukončení aplikace.
 
      [!code-csharp[System.AppDomain.FirstChanceException_howto_simple#4](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.appdomain.firstchanceexception_howto_simple/cs/example.cs#4)]
      [!code-vb[System.AppDomain.FirstChanceException_howto_simple#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.appdomain.firstchanceexception_howto_simple/vb/example.vb#4)]
@@ -56,12 +56,12 @@ ms.locfileid: "59164889"
 
 #### <a name="to-receive-first-chance-exception-notifications-in-an-application-domain-that-you-create"></a>K přijímání oznámení o první odpovídající výjimce v doméně aplikace, kterou vytvoříte
 
-1.  Definování obslužné rutiny události <xref:System.AppDomain.FirstChanceException> událostí. Tento příklad používá `static` – metoda (`Shared` metody v jazyce Visual Basic), který vytiskne název domény aplikace, kde byla zpracována události a výjimky <xref:System.Exception.Message%2A> vlastnost.
+1. Definování obslužné rutiny události <xref:System.AppDomain.FirstChanceException> událostí. Tento příklad používá `static` – metoda (`Shared` metody v jazyce Visual Basic), který vytiskne název domény aplikace, kde byla zpracována události a výjimky <xref:System.Exception.Message%2A> vlastnost.
 
      [!code-csharp[System.AppDomain.FirstChanceException_howto#3](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.appdomain.firstchanceexception_howto/cs/example.cs#3)]
      [!code-vb[System.AppDomain.FirstChanceException_howto#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.appdomain.firstchanceexception_howto/vb/example.vb#3)]
 
-2.  Vytvoření domény aplikace a přidejme obslužnou rutinu události pro <xref:System.AppDomain.FirstChanceException> události pro tuto doménu aplikace. V tomto příkladu je název domény aplikace `AD1`.
+2. Vytvoření domény aplikace a přidejme obslužnou rutinu události pro <xref:System.AppDomain.FirstChanceException> události pro tuto doménu aplikace. V tomto příkladu je název domény aplikace `AD1`.
 
      [!code-csharp[System.AppDomain.FirstChanceException_howto#2](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.appdomain.firstchanceexception_howto/cs/example.cs#2)]
      [!code-vb[System.AppDomain.FirstChanceException_howto#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.appdomain.firstchanceexception_howto/vb/example.vb#2)]
@@ -70,17 +70,17 @@ ms.locfileid: "59164889"
 
 #### <a name="to-demonstrate-first-chance-exception-notifications-in-the-application-domain"></a>K předvedení oznámení o první odpovídající výjimce v aplikační doméně
 
-1.  Vytvoření `Worker` objekt v doméně aplikace, kterou jste vytvořili v předchozím postupu. `Worker` Třída musí být veřejné a musí být odvozen od <xref:System.MarshalByRefObject>, jak je uvedeno v úplném příkladu na konci tohoto článku.
+1. Vytvoření `Worker` objekt v doméně aplikace, kterou jste vytvořili v předchozím postupu. `Worker` Třída musí být veřejné a musí být odvozen od <xref:System.MarshalByRefObject>, jak je uvedeno v úplném příkladu na konci tohoto článku.
 
      [!code-csharp[System.AppDomain.FirstChanceException_howto#4](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.appdomain.firstchanceexception_howto/cs/example.cs#4)]
      [!code-vb[System.AppDomain.FirstChanceException_howto#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.appdomain.firstchanceexception_howto/vb/example.vb#4)]
 
-2.  Volání metody `Worker` objekt, který vyvolá výjimku. V tomto příkladu `Thrower` metoda je volána dvakrát. První argument metody je `true`, což způsobí, že metoda zachytí vlastní výjimky. Při druhém volání má argument hodnotu `false`a `Main()` metoda zachytí výjimku ve výchozí doméně aplikace.
+2. Volání metody `Worker` objekt, který vyvolá výjimku. V tomto příkladu `Thrower` metoda je volána dvakrát. První argument metody je `true`, což způsobí, že metoda zachytí vlastní výjimky. Při druhém volání má argument hodnotu `false`a `Main()` metoda zachytí výjimku ve výchozí doméně aplikace.
 
      [!code-csharp[System.AppDomain.FirstChanceException_howto#6](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.appdomain.firstchanceexception_howto/cs/example.cs#6)]
      [!code-vb[System.AppDomain.FirstChanceException_howto#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.appdomain.firstchanceexception_howto/vb/example.vb#6)]
 
-3.  Kód v umístěte `Thrower` metoda řídit, jestli tato metoda obsluhuje vlastní výjimky.
+3. Kód v umístěte `Thrower` metoda řídit, jestli tato metoda obsluhuje vlastní výjimky.
 
      [!code-csharp[System.AppDomain.FirstChanceException_howto#5](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.appdomain.firstchanceexception_howto/cs/example.cs#5)]
      [!code-vb[System.AppDomain.FirstChanceException_howto#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.appdomain.firstchanceexception_howto/vb/example.vb#5)]

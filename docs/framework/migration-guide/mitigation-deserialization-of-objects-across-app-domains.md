@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 30c2d66c-04a8-41a5-ad31-646b937f61b5
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: bbb123ccdf29143d53317bd709da7c1e5959d917
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: fbde11672dc17f80a45defc0a55bcf841e83c324
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59118037"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59325069"
 ---
 # <a name="mitigation-deserialization-of-objects-across-app-domains"></a>Omezení rizik: Deserializace objektů mezi doménami aplikace
 V některých případech, kdy aplikace používá dvě nebo více domén aplikace s různými základy cesty aplikace, vyvolá pokus o deserializaci objektů v rámci logického kontextu volání mezi doménami aplikace výjimku.  
@@ -17,15 +17,15 @@ V některých případech, kdy aplikace používá dvě nebo více domén aplik
 ## <a name="diagnosing-the-issue"></a>Diagnostika problému  
  Tento problém nastane při následující posloupnosti podmínek:  
   
-1.  Aplikace používá dvě nebo více domén aplikace s různými základy cesty aplikace.  
+1. Aplikace používá dvě nebo více domén aplikace s různými základy cesty aplikace.  
   
-2.  Některé typy jsou explicitně přidány do typu <xref:System.Runtime.Remoting.Messaging.LogicalCallContext> voláním metody, jako je <xref:System.Runtime.Remoting.Messaging.LogicalCallContext.SetData%2A?displayProperty=nameWithType> nebo <xref:System.Runtime.Remoting.Messaging.CallContext.LogicalSetData%2A?displayProperty=nameWithType>. Tyto typy nejsou označeny jako serializovatelné a nejsou uloženy v globální mezipaměti sestavení (GAC).  
+2. Některé typy jsou explicitně přidány do typu <xref:System.Runtime.Remoting.Messaging.LogicalCallContext> voláním metody, jako je <xref:System.Runtime.Remoting.Messaging.LogicalCallContext.SetData%2A?displayProperty=nameWithType> nebo <xref:System.Runtime.Remoting.Messaging.CallContext.LogicalSetData%2A?displayProperty=nameWithType>. Tyto typy nejsou označeny jako serializovatelné a nejsou uloženy v globální mezipaměti sestavení (GAC).  
   
-3.  Později se kód spuštěný v jiné doméně aplikace, než je výchozí doména, pokusí načíst hodnotu z konfiguračního souboru, nebo pomocí jazyka XML deserializuje objekt.  
+3. Později se kód spuštěný v jiné doméně aplikace, než je výchozí doména, pokusí načíst hodnotu z konfiguračního souboru, nebo pomocí jazyka XML deserializuje objekt.  
   
-4.  Aby proběhlo načtení z konfiguračního souboru nebo deserializace objektu, pokusí se objekt <xref:System.Xml.XmlReader> o přístup k systému konfigurace.  
+4. Aby proběhlo načtení z konfiguračního souboru nebo deserializace objektu, pokusí se objekt <xref:System.Xml.XmlReader> o přístup k systému konfigurace.  
   
-5.  Pokud systém konfigurace ještě nebyl inicializován, je nutné dokončit jeho inicializaci. Mimo jiné to znamená, že modul runtime musí vytvořit stabilní cestu pro systém konfigurace, což se provádí takto:  
+5. Pokud systém konfigurace ještě nebyl inicializován, je nutné dokončit jeho inicializaci. Mimo jiné to znamená, že modul runtime musí vytvořit stabilní cestu pro systém konfigurace, což se provádí takto:  
   
     1.  Hledá legitimaci nevýchozí domény aplikace.  
   
@@ -35,14 +35,14 @@ V některých případech, kdy aplikace používá dvě nebo více domén aplik
   
     4.  Jako součást kontraktu napříč doménami aplikace v rozhraní .NET Framework musí být obsah logického kontextu volání zařazen napříč hranicemi domény aplikace.  
   
-6.  Vzhledem k tomu, že ve výchozí doméně aplikace nelze rozpoznat typy, které jsou součástí logického kontextu volání, je vyvolána výjimka.  
+6. Vzhledem k tomu, že ve výchozí doméně aplikace nelze rozpoznat typy, které jsou součástí logického kontextu volání, je vyvolána výjimka.  
   
 ## <a name="mitigation"></a>Zmírnění  
  Chcete-li tento problém odstranit, postupujte takto:  
   
-1.  Pokud je vyvolána výjimka, v zásobníku volání vyhledejte volání metody `get_Evidence`. Touto výjimkou může být jakkoli velká podmnožina výjimek, včetně výjimek <xref:System.IO.FileNotFoundException> a <xref:System.Runtime.Serialization.SerializationException>.  
+1. Pokud je vyvolána výjimka, v zásobníku volání vyhledejte volání metody `get_Evidence`. Touto výjimkou může být jakkoli velká podmnožina výjimek, včetně výjimek <xref:System.IO.FileNotFoundException> a <xref:System.Runtime.Serialization.SerializationException>.  
   
-2.  Určete místo v aplikaci, ve kterém nejsou do logického kontextu volání přidány žádné objekty, a přidejte následující kód:  
+2. Určete místo v aplikaci, ve kterém nejsou do logického kontextu volání přidány žádné objekty, a přidejte následující kód:  
   
     ```  
     System.Configuration.ConfigurationManager.GetSection("system.xml/xmlReader");  

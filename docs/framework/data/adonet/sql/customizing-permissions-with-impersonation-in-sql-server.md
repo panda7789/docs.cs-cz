@@ -2,12 +2,12 @@
 title: Přizpůsobení oprávnění se zosobněním na SQL Serveru
 ms.date: 03/30/2017
 ms.assetid: dc733d09-1d6d-4af0-9c4b-8d24504860f1
-ms.openlocfilehash: 9c3e84e8a432a54cdcd2cbe4e01dada870cd1366
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: dd7fb4c94c5a0a9bca0cd36b8d76864158072d4e
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59202791"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59326967"
 ---
 # <a name="customizing-permissions-with-impersonation-in-sql-server"></a>Přizpůsobení oprávnění se zosobněním na SQL Serveru
 Mnoho aplikací používá pro přístup k datům, spoléhat na řetězení vlastnictví můžete omezit přístup k základní tabulky uložené procedury. Můžete udělit oprávnění spouštět na uložené procedury, odvolání nebo odepřením oprávnění u základní tabulky. SQL Server oprávnění volající nekontroluje, pokud uložené procedury a tabulky mají stejné vlastníka. Ale řetězení vlastnictví nefunguje Pokud objekty mají různé vlastníci nebo v případě dynamické SQL.  
@@ -34,15 +34,15 @@ EXECUTE AS USER = 'userName';
   
  Existují tři kroky při použití EXECUTE AS klauzule v postupu.  
   
-1.  Vytvoření uživatele proxy serveru v databázi, která není namapován na přihlášení. Tento krok není povinný, ale pomáhá při správě oprávnění.  
+1. Vytvoření uživatele proxy serveru v databázi, která není namapován na přihlášení. Tento krok není povinný, ale pomáhá při správě oprávnění.  
   
 ```  
 CREATE USER proxyUser WITHOUT LOGIN  
 ```  
   
-1.  Proxy uživateli udělte potřebná oprávnění.  
+1. Proxy uživateli udělte potřebná oprávnění.  
   
-2.  Přidat EXECUTE AS klauzule uloženou proceduru nebo uživatelem definované funkce.  
+2. Přidat EXECUTE AS klauzule uloženou proceduru nebo uživatelem definované funkce.  
   
 ```  
 CREATE PROCEDURE [procName] WITH EXECUTE AS 'proxyUser' AS ...  

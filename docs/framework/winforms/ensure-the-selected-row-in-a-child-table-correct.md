@@ -16,12 +16,12 @@ helpviewer_keywords:
 - child tables row selection
 - current child position
 ms.assetid: c5fa2562-43a4-46fa-a604-52d8526a87bd
-ms.openlocfilehash: 514931b0d2da6a70d9a2206fb71ec85525ede978
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 891a9a4d092de35ceff2f5ceb6dbde77cf2ca2ce
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59149107"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59303138"
 ---
 # <a name="how-to-ensure-the-selected-row-in-a-child-table-remains-at-the-correct-position"></a>Postupy: Zajištění, aby vybraný řádek v podřízené tabulce zůstal ve správné pozici
 Často při práci s datovou vazbu v modelu Windows Forms, se zobrazí data v co se nazývá nadřazené a podřízené nebo hlavních/podrobných zobrazení. To se vztahuje na datovou vazbu scénář, kde se zobrazí data ze stejného zdroje ve dvou ovládacích prvků. Změna výběru v jednom ovládacím prvku způsobí, že data zobrazená v druhý ovládací prvek při změně. První ovládací prvek může například obsahovat seznam zákazníků a druhý seznam objednávek týkající se k vybranému zákazníkovi v prvním ovládacím prvku.  
@@ -30,28 +30,28 @@ ms.locfileid: "59149107"
   
 ### <a name="to-cache-the-current-child-position"></a>Pro ukládání do mezipaměti aktuální podřízená pozice  
   
-1.  Deklarujte proměnnou celého čísla k uložení umístění seznamu podřízených a logickou hodnotu k ukládání do mezipaměti podřízená pozice.  
+1. Deklarujte proměnnou celého čísla k uložení umístění seznamu podřízených a logickou hodnotu k ukládání do mezipaměti podřízená pozice.  
   
      [!code-csharp[System.Windows.Forms.CurrencyManagerReset#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.CurrencyManagerReset/CS/Form1.cs#4)]
      [!code-vb[System.Windows.Forms.CurrencyManagerReset#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.CurrencyManagerReset/VB/Form1.vb#4)]  
   
-2.  Zpracování <xref:System.Windows.Forms.CurrencyManager.ListChanged> událost pro vazby <xref:System.Windows.Forms.CurrencyManager> a vyhledejte <xref:System.ComponentModel.ListChangedType> z <xref:System.ComponentModel.ListChangedType.Reset>.  
+2. Zpracování <xref:System.Windows.Forms.CurrencyManager.ListChanged> událost pro vazby <xref:System.Windows.Forms.CurrencyManager> a vyhledejte <xref:System.ComponentModel.ListChangedType> z <xref:System.ComponentModel.ListChangedType.Reset>.  
   
-3.  Zkontrolujte aktuální pozice <xref:System.Windows.Forms.CurrencyManager>. Pokud je větší než první položka v seznamu (obvykle 0), uložte ji do proměnné.  
+3. Zkontrolujte aktuální pozice <xref:System.Windows.Forms.CurrencyManager>. Pokud je větší než první položka v seznamu (obvykle 0), uložte ji do proměnné.  
   
      [!code-csharp[System.Windows.Forms.CurrencyManagerReset#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.CurrencyManagerReset/CS/Form1.cs#2)]
      [!code-vb[System.Windows.Forms.CurrencyManagerReset#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.CurrencyManagerReset/VB/Form1.vb#2)]  
   
-4.  Zpracování nadřazeného seznamu <xref:System.Windows.Forms.BindingManagerBase.CurrentChanged> událost pro nadřazený správce měny. V obslužné rutině nastavte logickou hodnotu označující, že se nejedná o scénáři ukládání do mezipaměti. Pokud <xref:System.Windows.Forms.BindingManagerBase.CurrentChanged> dojde, změnit na nadřazený prvek je změna pozice seznamu a ne změnit hodnotu položky.  
+4. Zpracování nadřazeného seznamu <xref:System.Windows.Forms.BindingManagerBase.CurrentChanged> událost pro nadřazený správce měny. V obslužné rutině nastavte logickou hodnotu označující, že se nejedná o scénáři ukládání do mezipaměti. Pokud <xref:System.Windows.Forms.BindingManagerBase.CurrentChanged> dojde, změnit na nadřazený prvek je změna pozice seznamu a ne změnit hodnotu položky.  
   
      [!code-csharp[System.Windows.Forms.CurrencyManagerReset#5](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.CurrencyManagerReset/CS/Form1.cs#5)]
      [!code-vb[System.Windows.Forms.CurrencyManagerReset#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.CurrencyManagerReset/VB/Form1.vb#5)]  
   
 ### <a name="to-reset-the-child-position"></a>Resetování podřízené pozice  
   
-1.  Zpracování <xref:System.Windows.Forms.BindingManagerBase.PositionChanged> událost pro podřízené vazby <xref:System.Windows.Forms.CurrencyManager>.  
+1. Zpracování <xref:System.Windows.Forms.BindingManagerBase.PositionChanged> událost pro podřízené vazby <xref:System.Windows.Forms.CurrencyManager>.  
   
-2.  Resetovat podřízená pozice tabulky na pozici v mezipaměti uloženy v předchozím postupu.  
+2. Resetovat podřízená pozice tabulky na pozici v mezipaměti uloženy v předchozím postupu.  
   
      [!code-csharp[System.Windows.Forms.CurrencyManagerReset#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.CurrencyManagerReset/CS/Form1.cs#3)]
      [!code-vb[System.Windows.Forms.CurrencyManagerReset#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.CurrencyManagerReset/VB/Form1.vb#3)]  
@@ -64,17 +64,17 @@ ms.locfileid: "59149107"
   
  K otestování příklad kódu, proveďte následující kroky:  
   
-1.  Spustíte v příkladu.  
+1. Spustíte v příkladu.  
   
-2.  Ujistěte se, že **mezipaměti a resetování umístit** je zaškrtnuto políčko.  
+2. Ujistěte se, že **mezipaměti a resetování umístit** je zaškrtnuto políčko.  
   
-3.  Klikněte na tlačítko **pole vymazat nadřazené** tlačítko a způsobit změnu v poli nadřazené tabulky. Všimněte si, že vybraný řádek v podřízené tabulce nezmění.  
+3. Klikněte na tlačítko **pole vymazat nadřazené** tlačítko a způsobit změnu v poli nadřazené tabulky. Všimněte si, že vybraný řádek v podřízené tabulce nezmění.  
   
-4.  Zavřete a znovu spusťte příklad kódu. Musíte to provést, protože se chování obnovení dochází pouze na první změnu v hodnotě nadřazený řádek.  
+4. Zavřete a znovu spusťte příklad kódu. Musíte to provést, protože se chování obnovení dochází pouze na první změnu v hodnotě nadřazený řádek.  
   
-5.  Zrušte **mezipaměti a resetování umístit** zaškrtávací políčko.  
+5. Zrušte **mezipaměti a resetování umístit** zaškrtávací políčko.  
   
-6.  Klikněte na tlačítko **pole vymazat nadřazené** tlačítko. Všimněte si, že vybraný řádek v podřízené tabulce se změní na prvním řádku.  
+6. Klikněte na tlačítko **pole vymazat nadřazené** tlačítko. Všimněte si, že vybraný řádek v podřízené tabulce se změní na prvním řádku.  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  

@@ -26,12 +26,12 @@ helpviewer_keywords:
 - type arguments [Visual Basic], defining
 - arguments [Visual Basic], type
 ms.assetid: a914adf8-e68f-4819-a6b1-200d1cf1c21c
-ms.openlocfilehash: 1bc82fe9ecee577125c4353677fb19cd3a57b0cf
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 9121041f936c091cda0e2af41b4f5be8d826d582
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58837062"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59318441"
 ---
 # <a name="how-to-define-a-class-that-can-provide-identical-functionality-on-different-data-types-visual-basic"></a>Postupy: Definujte třídu, která poskytne identické funkce pro různé datové typy (Visual Basic)
 Můžete definovat třídu z které můžete vytvořit objekty, které poskytne identické funkce pro různé datové typy. K tomuto účelu můžete zadat jednu nebo víc *parametry typu* v definici. Třída pak může sloužit jako šablona pro objekty, které používají různé datové typy. Třída definována tímto způsobem se nazývá *obecnou třídu*.  
@@ -42,13 +42,13 @@ Můžete definovat třídu z které můžete vytvořit objekty, které poskytne 
   
 ### <a name="to-define-a-class-with-a-type-parameter"></a>Chcete-li definovat třídu s parametrem typu  
   
-1.  Definování třídy obvyklým způsobem.  
+1. Definování třídy obvyklým způsobem.  
   
-2.  Přidat `(Of` *typeparameter* `)` bezprostředně za název třídy pro zadání parametru typu.  
+2. Přidat `(Of` *typeparameter* `)` bezprostředně za název třídy pro zadání parametru typu.  
   
-3.  Pokud máte více než jeden parametr typu, vytvořte seznam oddělený čárkami v závorkách. Neopakovat `Of` – klíčové slovo.  
+3. Pokud máte více než jeden parametr typu, vytvořte seznam oddělený čárkami v závorkách. Neopakovat `Of` – klíčové slovo.  
   
-4.  Pokud váš kód provádí operace u parametru typu jiného než jednoduché přiřazení, použijte tento parametr typu `As` klauzule, které chcete přidat jeden nebo více *omezení*. Omezení zaručuje, že na typ zadaný pro parametr typu splňuje požadavek, jako je následující:  
+4. Pokud váš kód provádí operace u parametru typu jiného než jednoduché přiřazení, použijte tento parametr typu `As` klauzule, které chcete přidat jeden nebo více *omezení*. Omezení zaručuje, že na typ zadaný pro parametr typu splňuje požadavek, jako je následující:  
   
     -   Podporuje operace, jako například `>`, který váš kód provádí  
   
@@ -58,9 +58,9 @@ Můžete definovat třídu z které můžete vytvořit objekty, které poskytne 
   
      Pokud nezadáte žádné omezení, pouze konzole operations Console a váš kód může použít členy jsou jsou podporovány [datový typ objektu](../../../../visual-basic/language-reference/data-types/object-data-type.md). Další informace najdete v tématu [seznam typů](../../../../visual-basic/language-reference/statements/type-list.md).  
   
-5.  Každý člen třídy, který je deklarován s zadaný typ identifikovat a deklarujte ji `As` `typeparameter`. To platí pro interní úložiště, postup parametrů a návratové hodnoty.  
+5. Každý člen třídy, který je deklarován s zadaný typ identifikovat a deklarujte ji `As` `typeparameter`. To platí pro interní úložiště, postup parametrů a návratové hodnoty.  
   
-6.  Ujistěte se, váš kód používá pouze operace a metody, které jsou podporovány libovolného datového typu, mohou poskytnout `itemType`.  
+6. Ujistěte se, váš kód používá pouze operace a metody, které jsou podporovány libovolného datového typu, mohou poskytnout `itemType`.  
   
      Následující příklad definuje třídu, která spravuje velmi jednoduchý seznam. Obsahuje seznam v poli interní `items`a pomocí kódu můžete deklarovat typ dat prvků seznamu. Umožňuje do parametrizovaného konstruktoru na pomocí kódu pro nastavení horní mez `items`, a nastaví výchozí konstruktor do 9 (pro celkem 10 položek).  
   
@@ -79,7 +79,7 @@ Můžete definovat třídu z které můžete vytvořit objekty, které poskytne 
 - [Datové typy](../../../../visual-basic/programming-guide/language-features/data-types/index.md)
 - [Obecné typy v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
 - [Jazyková nezávislost a jazykově nezávislé komponenty](../../../../standard/language-independence-and-language-independent-components.md)
-- [z](../../../../visual-basic/language-reference/statements/of-clause.md)
+- [Of](../../../../visual-basic/language-reference/statements/of-clause.md)
 - [Seznam typů](../../../../visual-basic/language-reference/statements/type-list.md)
 - [Postupy: Použití obecné třídy](../../../../visual-basic/programming-guide/language-features/data-types/how-to-use-a-generic-class.md)
-- [Datový typ Object](../../../../visual-basic/language-reference/data-types/object-data-type.md)
+- [Datový typ objektu](../../../../visual-basic/language-reference/data-types/object-data-type.md)

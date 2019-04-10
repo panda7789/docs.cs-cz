@@ -14,19 +14,19 @@ helpviewer_keywords:
 - combo boxes [Windows Forms], removing items
 - CheckedListBox control [Windows Forms], adding and removing items
 ms.assetid: 7224c8d2-4118-443e-ae1e-d7c17d1e69ee
-ms.openlocfilehash: 13f1e18753ad5b49a9cc530cf340579087908b4e
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: bd6614c76c63a44a7367ac7c7113c4db260c9a02
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59188881"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59322729"
 ---
 # <a name="how-to-add-and-remove-items-from-a-windows-forms-combobox-listbox-or-checkedlistbox-control"></a>Postupy: Přidání a odebrání položek z ovládacích prvků Windows Forms ComboBox, ListBox nebo CheckedListBox
 Položky lze přidat do pole se seznamem Windows Forms, pole se seznamem, nebo zkontrolovat mnoha různými způsoby, pole se seznamem, protože tyto ovládací prvky mohou být vázány na širokou škálu zdrojů dat. Toto téma však ukazuje nejjednodušší způsob a vyžaduje žádné datové vazby. Zobrazení položek jsou obvykle řetězce; však můžete použít libovolný objekt. Text, který se zobrazí v ovládacím prvku je hodnotu vrácenou objektu `ToString` metody.  
   
 ### <a name="to-add-items"></a>Chcete-li přidat položky  
   
-1.  Přidání řetězec nebo objekt, do seznamu s použitím `Add` metodu `ObjectCollection` třídy. Kolekce odkazuje pomocí `Items` vlastnost:  
+1. Přidání řetězec nebo objekt, do seznamu s použitím `Add` metodu `ObjectCollection` třídy. Kolekce odkazuje pomocí `Items` vlastnost:  
   
     ```vb  
     ComboBox1.Items.Add("Tokyo")  
@@ -42,7 +42,7 @@ Položky lze přidat do pole se seznamem Windows Forms, pole se seznamem, nebo z
   
      - nebo –  
   
-2.  Vložit řetězec nebo objekt na požadované místo v seznamu se `Insert` metody:  
+2. Vložit řetězec nebo objekt na požadované místo v seznamu se `Insert` metody:  
   
     ```vb  
     CheckedListBox1.Items.Insert(0, "Copenhagen")  
@@ -58,7 +58,7 @@ Položky lze přidat do pole se seznamem Windows Forms, pole se seznamem, nebo z
   
      - nebo –  
   
-3.  Přiřadit celého pole na `Items` kolekce:  
+3. Přiřadit celého pole na `Items` kolekce:  
   
     ```vb  
     Dim ItemObject(9) As System.Object  
@@ -89,7 +89,7 @@ Položky lze přidat do pole se seznamem Windows Forms, pole se seznamem, nebo z
   
 ### <a name="to-remove-an-item"></a>Chcete-li odebrat položku  
   
-1.  Volání `Remove` nebo `RemoveAt` metoda odstraňovat položky.  
+1. Volání `Remove` nebo `RemoveAt` metoda odstraňovat položky.  
   
      `Remove` má jeden argument, který obsahuje položky, které chcete odebrat.`RemoveAt` Odebere položku se zadané číslo indexu.  
   
@@ -122,7 +122,7 @@ Položky lze přidat do pole se seznamem Windows Forms, pole se seznamem, nebo z
   
 ### <a name="to-remove-all-items"></a>Chcete-li odebrat všechny položky  
   
-1.  Volání `Clear` metoda odebrat všechny položky z kolekce:  
+1. Volání `Clear` metoda odebrat všechny položky z kolekce:  
   
     ```vb  
     ListBox1.Items.Clear()  

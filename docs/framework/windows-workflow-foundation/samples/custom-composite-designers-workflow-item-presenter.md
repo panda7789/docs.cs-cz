@@ -2,12 +2,12 @@
 title: Návrháři vlastního skládání – místo pro položku pracovního postupu
 ms.date: 03/30/2017
 ms.assetid: f85224cf-9e30-44a5-9a81-3bc438a34364
-ms.openlocfilehash: 4c1258a49ac3ef2227d520fe11f341819f8663a0
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: f3c7620f719b8412b6b34bda7be5d607dccda75f
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59089195"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59311120"
 ---
 # <a name="custom-composite-designers---workflow-item-presenter"></a>Návrháři vlastního skládání – místo pro položku pracovního postupu
 <xref:System.Activities.Presentation.WorkflowItemPresenter> Je typ klíče v WF návrháře programovací model, který umožňuje vytváření "rozevírací zónu" umístění libovolné aktivity. Tento příklad ukazuje, jak vytvářet Návrhář aktivity tohoto zařízení Surface takovou "rozevírací zónu."
@@ -67,9 +67,9 @@ ms.locfileid: "59089195"
 
 #### <a name="to-setup-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky
 
-1.  Otevřete řešení v sadě Visual Studio 2010.
+1. Otevřete řešení v sadě Visual Studio 2010.
 
-2.  Stiskněte klávesu F5 ke kompilaci a spuštění aplikace.
+2. Stiskněte klávesu F5 ke kompilaci a spuštění aplikace.
 
 > [!IMPORTANT]
 >  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  

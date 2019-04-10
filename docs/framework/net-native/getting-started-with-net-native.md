@@ -4,23 +4,23 @@ ms.date: 03/30/2017
 ms.assetid: fc9e04e8-2d05-4870-8cd6-5bd276814afc
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1ff4db5216cf984af764176fef636bb586f97c2a
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: f72a1d6a10c5899a02019bf826dc3cc9d5457bed
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59081486"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59298471"
 ---
 # <a name="getting-started-with-net-native"></a>Začínáme s .NET Native
 Ať už vytváříte nové aplikace Windows pro Windows 10 nebo migrujete stávající aplikace pro Windows Store, můžete použít stejnou sadu postupy. Chcete-li vytvořit [!INCLUDE[net_native](../../../includes/net-native-md.md)] aplikace, postupujte podle těchto kroků:  
   
-1.  [Vývoj aplikace pro univerzální platformu Windows (UPW), který cílí na Windows 10](#Step1)a testování, ladění sestavení vaší aplikace k zajištění, že bude fungovat správně.  
+1. [Vývoj aplikace pro univerzální platformu Windows (UPW), který cílí na Windows 10](#Step1)a testování, ladění sestavení vaší aplikace k zajištění, že bude fungovat správně.  
   
-2.  [Zpracování další využívání reflection a serializace](#Step2).  
+2. [Zpracování další využívání reflection a serializace](#Step2).  
   
-3.  [Nasazení a testování buildy vydaných verzí vaší aplikace](#Step3).  
+3. [Nasazení a testování buildy vydaných verzí vaší aplikace](#Step3).  
   
-4.  [Ruční vyřešení chybějí metadata](#Step4)a opakujte [kroku 3](#Step3) dokud nebudou vyřešeny všechny problémy.  
+4. [Ruční vyřešení chybějí metadata](#Step4)a opakujte [kroku 3](#Step3) dokud nebudou vyřešeny všechny problémy.  
   
 > [!NOTE]
 >  Pokud migrujete stávající aplikace pro Windows Store [!INCLUDE[net_native](../../../includes/net-native-md.md)], nezapomeňte si přečíst [migrace Windows Store aplikace pro .NET Native](../../../docs/framework/net-native/migrating-your-windows-store-app-to-net-native.md).  
@@ -29,9 +29,9 @@ Ať už vytváříte nové aplikace Windows pro Windows 10 nebo migrujete stáva
 ## <a name="step-1-develop-and-test-debug-builds-of-your-uwp-app"></a>Krok 1: Vyvíjejte a testujte sestavení pro ladění vaší aplikace UPW  
  Ať už vyvíjíte novou aplikaci nebo migraci stávající, opakujte stejný postup jako u všech aplikací pro Windows.  
   
-1.  Vytvoření nového projektu pro UPW v sadě Visual Studio pomocí šablony aplikace Universal Windows pro jazyk Visual C# nebo Visual Basic. Ve výchozím nastavení cílit na všechny aplikace UPW CoreCLR a jejich sestavení pro vydání jsou kompilovány pomocí .NET Native řetězec nástroje.  
+1. Vytvoření nového projektu pro UPW v sadě Visual Studio pomocí šablony aplikace Universal Windows pro jazyk Visual C# nebo Visual Basic. Ve výchozím nastavení cílit na všechny aplikace UPW CoreCLR a jejich sestavení pro vydání jsou kompilovány pomocí .NET Native řetězec nástroje.  
   
-2.  Všimněte si, že existují některé problémy s kompatibilitou mezi kompilace projektů aplikací pro UPW s .NET Native řetězec nástrojů a bez něj. Odkazovat [Průvodce migrací](../../../docs/framework/net-native/migrating-your-windows-store-app-to-net-native.md) Další informace.  
+2. Všimněte si, že existují některé problémy s kompatibilitou mezi kompilace projektů aplikací pro UPW s .NET Native řetězec nástrojů a bez něj. Odkazovat [Průvodce migrací](../../../docs/framework/net-native/migrating-your-windows-store-app-to-net-native.md) Další informace.  
   
  Teď můžete psát kód jazyka C# nebo Visual Basic [!INCLUDE[net_native](../../../includes/net-native-md.md)] plocha, který běží v místním systému (nebo v simulátoru).  
   

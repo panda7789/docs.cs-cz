@@ -2,12 +2,12 @@
 title: 'Postupy: Vytvoření podpůrného pověření'
 ms.date: 03/30/2017
 ms.assetid: d0952919-8bb4-4978-926c-9cc108f89806
-ms.openlocfilehash: 3ae2b59abf59b0256741ef4e908305d9f4350b4a
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 7c6c4ea777f62541f8ca8fa79fdd024e5f5cf2ad
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59093706"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59326044"
 ---
 # <a name="how-to-create-a-supporting-credential"></a>Postupy: Vytvoření podpůrného pověření
 Je možné mít vlastní bezpečnostní schéma, které vyžaduje více přihlašovacích údajů. Například služba vyžádat od klienta nejen uživatelské jméno a heslo, ale také pověření, která prokáže vaše oprávnění klienta je víc než 18. Je druhý přihlašovacích údajů *podpora přihlašovacích údajů*. Toto téma vysvětluje, jak implementovat tyto přihlašovací údaje v klientovi Windows Communication Foundation (WCF).  
@@ -68,9 +68,9 @@ Je možné mít vlastní bezpečnostní schéma, které vyžaduje více přihla�
   
 #### <a name="to-create-a-custom-binding-that-includes-supporting-credentials"></a>K vytvoření vlastní vazby, která zahrnuje podporu přihlašovacích údajů  
   
-1.  Vytvořte element vazby zabezpečení. Následující příklad vytvoří <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> s `UserNameForCertificate` režim ověřování. Použití <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateUserNameForCertificateBindingElement%2A> metody.  
+1. Vytvořte element vazby zabezpečení. Následující příklad vytvoří <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> s `UserNameForCertificate` režim ověřování. Použití <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateUserNameForCertificateBindingElement%2A> metody.  
   
-2.  Přidání podpory parametru do kolekci typů odpovídající vlastnost vrátí (`Endorsing`, `Signed`, `SignedEncrypted`, nebo `SignedEndorsed`). Typy v <xref:System.ServiceModel.Security.Tokens> obor názvů patří běžně používané typy, například <xref:System.ServiceModel.Security.Tokens.X509SecurityTokenParameters>.  
+2. Přidání podpory parametru do kolekci typů odpovídající vlastnost vrátí (`Endorsing`, `Signed`, `SignedEncrypted`, nebo `SignedEndorsed`). Typy v <xref:System.ServiceModel.Security.Tokens> obor názvů patří běžně používané typy, například <xref:System.ServiceModel.Security.Tokens.X509SecurityTokenParameters>.  
   
 ## <a name="example"></a>Příklad  
   

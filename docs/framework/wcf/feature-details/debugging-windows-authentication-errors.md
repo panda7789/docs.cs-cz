@@ -8,12 +8,12 @@ helpviewer_keywords:
 - WCF, authentication
 - WCF, Windows authentication
 ms.assetid: 181be4bd-79b1-4a66-aee2-931887a6d7cc
-ms.openlocfilehash: 45f4185df1c55ff40fce3e33fe5e0e497fa54654
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 28c70ca860083808c93fa58b498e22ea4e4ca6cb
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59228252"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59299446"
 ---
 # <a name="debugging-windows-authentication-errors"></a>Ladění chyb ověřování systému Windows
 Pokud používáte ověřování Windows jako vhodný mechanismus zabezpečení, rozhraní zprostředkovatele podpory zabezpečení (SSPI) zpracovává procesy zabezpečení. Když dojde k chybě zabezpečení ve vrstvě rozhraní SSPI, zobrazují se ve Windows Communication Foundation (WCF). Toto téma obsahuje rozhraní framework a sadu otázky, které vám umožní diagnostikovat chyby.  
@@ -25,11 +25,11 @@ Pokud používáte ověřování Windows jako vhodný mechanismus zabezpečení,
 ## <a name="debugging-methodology"></a>Ladění metodologie  
  Základní metoda vypadá takto:  
   
-1.  Určete, jestli používáte ověřování Windows. Pokud používáte jiné schéma, toto téma se nevztahuje.  
+1. Určete, jestli používáte ověřování Windows. Pokud používáte jiné schéma, toto téma se nevztahuje.  
   
-2.  Pokud jste si jistí, že používáte ověřování Windows, zjistěte, zda vaše konfigurace WCF používá přímo pomocí protokolu Kerberos nebo Negotiate.  
+2. Pokud jste si jistí, že používáte ověřování Windows, zjistěte, zda vaše konfigurace WCF používá přímo pomocí protokolu Kerberos nebo Negotiate.  
   
-3.  Jakmile určíte, jestli používá konfigurace protokolu Kerberos nebo NTLM, vám umožní pochopit chybové zprávy ve správném kontextu.  
+3. Jakmile určíte, jestli používá konfigurace protokolu Kerberos nebo NTLM, vám umožní pochopit chybové zprávy ve správném kontextu.  
   
 ### <a name="availability-of-the-kerberos-protocol-and-ntlm"></a>Dostupnost protokolu Kerberos a NTLM  
  Zprostředkovatel zabezpečení protokolu Kerberos vyžaduje řadič domény tak, aby fungoval jako protokolu Kerberos distribuce Center KDC (Key). Protokol Kerberos je k dispozici pouze v případě, že klient a služba používáte doménu identit. V jiné kombinace účet se používá protokol NTLM, dle souhrnu v následující tabulce.  
@@ -81,15 +81,15 @@ Pokud používáte ověřování Windows jako vhodný mechanismus zabezpečení,
   
  Implementace protokolu Kerberos s vyjednávání přihlašovacích údajů, proveďte následující kroky:  
   
-1.  Implementace delegování tak, že nastavíte <xref:System.ServiceModel.Security.WindowsClientCredential.AllowedImpersonationLevel%2A> k <xref:System.Security.Principal.TokenImpersonationLevel.Delegation>.  
+1. Implementace delegování tak, že nastavíte <xref:System.ServiceModel.Security.WindowsClientCredential.AllowedImpersonationLevel%2A> k <xref:System.Security.Principal.TokenImpersonationLevel.Delegation>.  
   
-2.  Vyžadovat vyjednávání SSPI:  
+2. Vyžadovat vyjednávání SSPI:  
   
     1.  Pokud používáte standardní vazby, nastavte `NegotiateServiceCredential` vlastnost `true`.  
   
     2.  Pokud používáte vlastní vazby, nastavte `AuthenticationMode` atribut `Security` elementu `SspiNegotiated`.  
   
-3.  Vyžadovat vyjednávání SSPI pro použití protokolu Kerberos zakázáním použít protokol NTLM:  
+3. Vyžadovat vyjednávání SSPI pro použití protokolu Kerberos zakázáním použít protokol NTLM:  
   
     1.  To lze proveďte v kódu, pomocí následujícího příkazu: `ChannelFactory.Credentials.Windows.AllowNtlm = false`  
   

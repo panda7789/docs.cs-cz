@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 5e7ff0be-3f23-4996-a92c-bd54d65c3836
-ms.openlocfilehash: 4fdd578f1537e3521093fd12655a452feaa5a38d
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: b2783779965505d09f73c7203770c19ccaa78d26
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59112070"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59323366"
 ---
 # <a name="single-bulk-copy-operations"></a>Jednorázové operace hromadného kopírování
 Nejjednodušším přístupem při provádění hromadného kopírování systému SQL Server je k provedení jedné operace proti databázi. Ve výchozím nastavení, se provádí operaci hromadného kopírování jako izolované operace: způsobem beztransakční, dojde k operaci kopírování s distribucí nebude mít možnost zpět.  
@@ -22,19 +22,19 @@ Nejjednodušším přístupem při provádění hromadného kopírování systé
   
  Obecné kroky pro provedení operace hromadného kopírování jsou následující:  
   
-1.  Připojit ke zdrojovému serveru a získat data, která mají být zkopírovány. Data mohou pocházet také z jiných zdrojů, pokud se dá načíst ze <xref:System.Data.IDataReader> nebo <xref:System.Data.DataTable> objektu.  
+1. Připojit ke zdrojovému serveru a získat data, která mají být zkopírovány. Data mohou pocházet také z jiných zdrojů, pokud se dá načíst ze <xref:System.Data.IDataReader> nebo <xref:System.Data.DataTable> objektu.  
   
-2.  Připojení k cílovému serveru (Pokud chcete, aby **SqlBulkCopy** k navázání připojení pro vás).  
+2. Připojení k cílovému serveru (Pokud chcete, aby **SqlBulkCopy** k navázání připojení pro vás).  
   
-3.  Vytvoření <xref:System.Data.SqlClient.SqlBulkCopy> objekt nastavení všechny nezbytné vlastnosti.  
+3. Vytvoření <xref:System.Data.SqlClient.SqlBulkCopy> objekt nastavení všechny nezbytné vlastnosti.  
   
-4.  Nastavte **DestinationTableName** vlastnost umožňující označit v cílové tabulce hromadného vložení operace.  
+4. Nastavte **DestinationTableName** vlastnost umožňující označit v cílové tabulce hromadného vložení operace.  
   
-5.  Volání jednoho z **WriteToServer** metody.  
+5. Volání jednoho z **WriteToServer** metody.  
   
-6.  Volitelně můžete aktualizovat vlastnosti a volání **WriteToServer** opakujte podle potřeby.  
+6. Volitelně můžete aktualizovat vlastnosti a volání **WriteToServer** opakujte podle potřeby.  
   
-7.  Volání <xref:System.Data.SqlClient.SqlBulkCopy.Close%2A>, nebo zabalovat operace hromadného kopírování v rámci `Using` příkazu.  
+7. Volání <xref:System.Data.SqlClient.SqlBulkCopy.Close%2A>, nebo zabalovat operace hromadného kopírování v rámci `Using` příkazu.  
   
 > [!CAUTION]
 >  Doporučujeme vám, že datové typy sloupce zdrojovou a cílovou odpovídají. Pokud datové typy, které se neshodují, **SqlBulkCopy** pokusí převést hodnotu každého zdroje do cílového typu dat, pomocí pravidel náhradník <xref:System.Data.SqlClient.SqlParameter.Value%2A>. Převody může ovlivnit výkon a může také způsobit neočekávané chyby. Například `Double` datového typu lze převést na `Decimal` datový typ většinu času, ale ne vždy.  

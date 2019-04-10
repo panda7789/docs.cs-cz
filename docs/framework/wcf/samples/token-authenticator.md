@@ -2,12 +2,12 @@
 title: Ověřovací data tokenu
 ms.date: 03/30/2017
 ms.assetid: 84382f2c-f6b1-4c32-82fa-aebc8f6064db
-ms.openlocfilehash: 027f6c55cb0390084f1a7926a5c79d8591090df6
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 501f1801c1cb475a87c586f8bbc14146b9141047
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59193398"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59306245"
 ---
 # <a name="token-authenticator"></a>Ověřovací data tokenu
 Tento příklad ukazuje, jak implementovat vlastní ověřovací data tokenu. Ve Windows Communication Foundation (WCF) ověřovací data tokenu se používá k ověření tokenu používaného se zprávou, ověření, že je konzistentní a ověření identity přidružené k tokenu.
@@ -121,7 +121,7 @@ static void Main()
 ## <a name="custom-token-authenticator"></a>Vlastní ověřovací data tokenu
  Použijte následující postup k vytvoření vlastního ověřovacího modulu tokenu:
 
-1.  Napište vlastní ověřovací data tokenu.
+1. Napište vlastní ověřovací data tokenu.
 
      Ukázka implementuje vlastní ověřovací data tokenu, který ověřuje, že uživatelské jméno je ve formátu platné e-mailu. Se odvozuje <xref:System.IdentityModel.Selectors.UserNameSecurityTokenAuthenticator>. Metoda nejdůležitější v této třídě <xref:System.IdentityModel.Selectors.UserNameSecurityTokenAuthenticator.ValidateUserNamePasswordCore%28System.String%2CSystem.String%29>. V této metodě ověřovacích ověří formát uživatelského jména a také, že název hostitele není kompatibilní se z podvodného domény. Pokud jsou splněny obě podmínky a pak vrátí kolekci jen pro čtení <xref:System.IdentityModel.Policy.IAuthorizationPolicy> instancí, které se pak použije k poskytovat deklarace identity, které představují informací uložených uvnitř tokenu uživatelské jméno.
 
@@ -140,7 +140,7 @@ static void Main()
     }
     ```
 
-2.  Zadejte zásadu autorizace, který je vrácen vlastní ověřovací data tokenu.
+2. Zadejte zásadu autorizace, který je vrácen vlastní ověřovací data tokenu.
 
      Tato ukázka poskytuje vlastní implementaci <xref:System.IdentityModel.Policy.IAuthorizationPolicy> volá `UnconditionalPolicy` , která vrací sadu deklarací identity a identity, které bylo předáno 've svém konstruktoru.
 
@@ -210,7 +210,7 @@ static void Main()
     }
     ```
 
-3.  Správce tokenů zabezpečení vlastního zápisu.
+3. Správce tokenů zabezpečení vlastního zápisu.
 
      <xref:System.IdentityModel.Selectors.SecurityTokenManager> Slouží k vytvoření <xref:System.IdentityModel.Selectors.SecurityTokenAuthenticator> pro konkrétní <xref:System.IdentityModel.Selectors.SecurityTokenRequirement> objekty, které jsou do ní předán v `CreateSecurityTokenAuthenticator` metody. Správce tokenů zabezpečení se také používá k vytvoření poskytovatele tokenů a serializátorů tokenu, ale nejsou uvedené v této ukázce. V této ukázce Správce tokenů zabezpečení vlastní dědí z <xref:System.ServiceModel.Security.ServiceCredentialsSecurityTokenManager> třídy a přepsání `CreateSecurityTokenAuthenticator` požadovaná metoda vrátí uživatelské jméno vlastní ověřovací data tokenu při úspěšné požadavky tokenu označení authenticator tohoto uživatelského jména.
 
@@ -240,7 +240,7 @@ static void Main()
     }
     ```
 
-4.  Zápis přihlašovacích údajů pro vlastní služby.
+4. Zápis přihlašovacích údajů pro vlastní služby.
 
      Třída přihlašovací údaje služby se používá k reprezentování přihlašovací údaje, které jsou nakonfigurované pro službu a vytvoří Správce tokenů, který se používá k získání ověřovací data tokenu, poskytovatele tokenů a serializátorů tokenu zabezpečení.
 
@@ -266,7 +266,7 @@ static void Main()
     }
     ```
 
-5.  Nakonfigurujte službu, aby pomocí přihlašovacích údajů pro vlastní služby.
+5. Nakonfigurujte službu, aby pomocí přihlašovacích údajů pro vlastní služby.
 
      V pořadí pro službu, aby používala vlastní službu přihlašovacích údajů jsme odstranit výchozí třídu přihlašovacích údajů služby po zachycení, který už je předem nakonfigurovaný v přihlašovacích údajích služby výchozí certifikát služby a konfiguraci nových přihlašovacích údajů služby instance používat certifikáty předem nakonfigurované služby a přidejte tato nová pověření instance služby do chování služby.
 
@@ -324,40 +324,40 @@ static void DisplayIdentityInformation()
 
 #### <a name="to-set-up-and-build-the-sample"></a>K nastavení a sestavit ukázku
 
-1.  Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
+1. Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
 
-2.  Abyste mohli sestavit řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
+2. Abyste mohli sestavit řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
 
 #### <a name="to-run-the-sample-on-the-same-computer"></a>Ke spuštění ukázky ve stejném počítači
 
-1.  Spusťte Setup.bat z instalační složky s ukázkou v příkazovém řádku aplikace Visual Studio 2012 otevřeného s oprávněními správce. Tím se nainstaluje všechny certifikáty požadované ke spuštění ukázky.
+1. Spusťte Setup.bat z instalační složky s ukázkou v příkazovém řádku aplikace Visual Studio 2012 otevřeného s oprávněními správce. Tím se nainstaluje všechny certifikáty požadované ke spuštění ukázky.
 
     > [!NOTE]
     >  Dávkový soubor Setup.bat slouží ke spuštění z Visual Studio 2012 příkazový řádek. Proměnné prostředí PATH v nastavení v rámci body příkazový řádek sady Visual Studio 2012 k adresáři, který obsahuje požadované skript Setup.bat spustitelné soubory.  
   
-2.  Spusťte service.exe z service\bin.  
+2. Spusťte service.exe z service\bin.  
   
-3.  Spusťte client.exe z \client\bin. Činnost klienta se zobrazí na klientské aplikace konzoly.  
+3. Spusťte client.exe z \client\bin. Činnost klienta se zobrazí na klientské aplikace konzoly.  
   
-4.  Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy poradce při potížích pro ukázky WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
+4. Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy poradce při potížích pro ukázky WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 #### <a name="to-run-the-sample-across-computers"></a>Ke spuštění ukázky v počítačích  
   
-1.  Vytvoření adresáře na počítači se službou pro binární soubory služby.  
+1. Vytvoření adresáře na počítači se službou pro binární soubory služby.  
   
-2.  Programové soubory nástroje služby zkopírujte do adresáře služby na počítači se službou. Také kopírovat soubory Setup.bat a Cleanup.bat k počítači služby.  
+2. Programové soubory nástroje služby zkopírujte do adresáře služby na počítači se službou. Také kopírovat soubory Setup.bat a Cleanup.bat k počítači služby.  
   
-3.  Musíte mít certifikát serveru s názvem subjektu, který obsahuje plně kvalifikovaný název domény počítače. Soubor App.config služby musí být aktualizovány tak, aby odrážely tento nový název certifikátu. Můžete vytvořit pomocí Setup.bat, pokud jste nastavili `%SERVER_NAME%` proměnných hostitele plně kvalifikovaný název počítače, na kterém je spuštěna služba. Všimněte si, že se soubor setup.bat musí spustit na příkazovém řádku pro vývojáře pro sadu Visual Studio otevřeného s oprávněními správce.  
+3. Musíte mít certifikát serveru s názvem subjektu, který obsahuje plně kvalifikovaný název domény počítače. Soubor App.config služby musí být aktualizovány tak, aby odrážely tento nový název certifikátu. Můžete vytvořit pomocí Setup.bat, pokud jste nastavili `%SERVER_NAME%` proměnných hostitele plně kvalifikovaný název počítače, na kterém je spuštěna služba. Všimněte si, že se soubor setup.bat musí spustit na příkazovém řádku pro vývojáře pro sadu Visual Studio otevřeného s oprávněními správce.  
   
-4.  Zkopírujte certifikát serveru do úložiště CurrentUser TrustedPeople klienta. Nemusíte to dělat s výjimkou případů, kdy certifikátu serveru vydanému klienta důvěryhodného vystavitele.  
+4. Zkopírujte certifikát serveru do úložiště CurrentUser TrustedPeople klienta. Nemusíte to dělat s výjimkou případů, kdy certifikátu serveru vydanému klienta důvěryhodného vystavitele.  
   
-5.  V souboru App.config na počítači se službou změňte hodnotu z bázové adresy pro zadejte název počítače plně kvalifikovaný, místo localhost.  
+5. V souboru App.config na počítači se službou změňte hodnotu z bázové adresy pro zadejte název počítače plně kvalifikovaný, místo localhost.  
   
-6.  Na počítači se službou spusťte z příkazového řádku service.exe.  
+6. Na počítači se službou spusťte z příkazového řádku service.exe.  
   
-7.  Zkopírujte soubory programu klienta ze složky \client\bin\ v rámci složky specifické pro jazyk do klientského počítače.  
+7. Zkopírujte soubory programu klienta ze složky \client\bin\ v rámci složky specifické pro jazyk do klientského počítače.  
   
-8.  V souboru Client.exe.config v klientském počítači změňte hodnotu adresy koncového bodu tak, aby odpovídala nové adresu služby.  
+8. V souboru Client.exe.config v klientském počítači změňte hodnotu adresy koncového bodu tak, aby odpovídala nové adresu služby.  
   
 9. Na klientském počítači spusťte Client.exe z příkazového řádku.  
   
@@ -365,4 +365,4 @@ static void DisplayIdentityInformation()
   
 #### <a name="to-clean-up-after-the-sample"></a>K vyčištění po vzorku  
   
-1.  Spusťte Cleanup.bat ve složce samples po dokončení spuštění ukázky.  
+1. Spusťte Cleanup.bat ve složce samples po dokončení spuštění ukázky.  

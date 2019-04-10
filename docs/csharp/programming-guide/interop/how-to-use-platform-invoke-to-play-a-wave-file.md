@@ -8,12 +8,12 @@ helpviewer_keywords:
 - wav files
 - .wav files
 ms.assetid: f7f62f53-e026-4c40-b221-3a26adb0c2c5
-ms.openlocfilehash: 209a0f03197e0f77e23be0dc1170789688f3e09a
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 29c36bd0494879b66674cf3a3c404fdaf3908f59
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56967214"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59323808"
 ---
 # <a name="how-to-use-platform-invoke-to-play-a-wave-file-c-programming-guide"></a>Postupy: Použití vyvolání platformy pro přehrání souboru Wave (C# Průvodce programováním v)
 Následující příklad kódu jazyka C# ukazuje, jak používat platformu vyvolání služby pro přehrání souboru wave zvuku v operačním systému Windows.  
@@ -31,22 +31,22 @@ Následující příklad kódu jazyka C# ukazuje, jak používat platformu vyvol
   
 ### <a name="to-compile-the-code"></a>Chcete-li zkompilovat kód  
   
-1.  Vytvořte nový projekt aplikace Windows v C# v sadě Visual Studio s názvem **WinSound**.  
+1. Vytvořte nový projekt aplikace Windows v C# v sadě Visual Studio s názvem **WinSound**.  
   
-2.  Výše uvedený kód zkopírujte a vložte ji místo obsah `Form1.cs` souboru.  
+2. Výše uvedený kód zkopírujte a vložte ji místo obsah `Form1.cs` souboru.  
   
-3.  Zkopírujte následující kód a vložte ji `Form1.Designer.cs` souboru `InitializeComponent()` metoda za existující kód.  
+3. Zkopírujte následující kód a vložte ji `Form1.Designer.cs` souboru `InitializeComponent()` metoda za existující kód.  
   
      [!code-csharp[csProgGuideInterop#4](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInterop/CS/WinSound.cs#4)]  
   
-4.  Kompilace a spuštění kódu.  
+4. Kompilace a spuštění kódu.  
   
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
  Další informace najdete v tématu [zabezpečení v rozhraní .NET](../../../standard/security/index.md).  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)
 - [Přehled interoperability](../../../csharp/programming-guide/interop/interoperability-overview.md)
 - [Bližší pohled na vyvolání platformy](../../../framework/interop/consuming-unmanaged-dll-functions.md#a-closer-look-at-platform-invoke)
 - [Zařazování dat s voláním platformy](../../../framework/interop/marshaling-data-with-platform-invoke.md)

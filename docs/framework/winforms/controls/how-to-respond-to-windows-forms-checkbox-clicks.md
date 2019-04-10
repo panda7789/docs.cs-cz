@@ -12,19 +12,19 @@ helpviewer_keywords:
 - double-clicks
 - check boxes [Windows Forms], responding to events
 ms.assetid: c39f901e-8899-43b6-aa31-939cbf7089fb
-ms.openlocfilehash: 77f93dae2a91f282c6746c3fec3fb5f567cae2e3
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: ce616f45ceaa3db117c6981d2987ac09bba7b3fb
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59211982"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59319895"
 ---
 # <a name="how-to-respond-to-windows-forms-checkbox-clicks"></a>Postupy: Reakce na kliknutí na prvek Windows Forms CheckBox
 Vždy, když uživatel klepne na tlačítko Windows Forms <xref:System.Windows.Forms.CheckBox> ovládací prvek, <xref:System.Windows.Forms.Control.Click> dojde k události. Můžete naprogramovat aplikace provádět některé akce v závislosti na stavu zaškrtávacího políčka.  
   
 ### <a name="to-respond-to-checkbox-clicks"></a>Reakce na kliknutí na zaškrtávací políčko  
   
-1.  V <xref:System.Windows.Forms.Control.Click> obslužná rutina události, použijte <xref:System.Windows.Forms.CheckBox.Checked%2A> vlastnosti k určení stavu ovládacího prvku a proveďte všechny potřebné akce.  
+1. V <xref:System.Windows.Forms.Control.Click> obslužná rutina události, použijte <xref:System.Windows.Forms.CheckBox.Checked%2A> vlastnosti k určení stavu ovládacího prvku a proveďte všechny potřebné akce.  
   
     ```vb  
     Private Sub CheckBox1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles CheckBox1.Click  
@@ -80,7 +80,7 @@ Vždy, když uživatel klepne na tlačítko Windows Forms <xref:System.Windows.F
   
 ### <a name="to-determine-a-course-of-action-when-a-check-box-is-clicked"></a>K určení postupu při zaškrtávací políčko dojde ke kliknutí na  
   
-1.  Použití příkazu case k dotazování hodnotu <xref:System.Windows.Forms.CheckBox.CheckState%2A> vlastnosti k určení postupu. Když <xref:System.Windows.Forms.CheckBox.ThreeState%2A> je nastavena na `true`, <xref:System.Windows.Forms.CheckBox.CheckState%2A> vlastnosti může vrátit tří možných hodnot, které představují se zaškrtnutým políčkem, pole vrácení není zaškrtnuto nebo třetí neurčitého stavu bude zobrazeno s neaktivní vzhled, který indikuje možnost není k dispozici.  
+1. Použití příkazu case k dotazování hodnotu <xref:System.Windows.Forms.CheckBox.CheckState%2A> vlastnosti k určení postupu. Když <xref:System.Windows.Forms.CheckBox.ThreeState%2A> je nastavena na `true`, <xref:System.Windows.Forms.CheckBox.CheckState%2A> vlastnosti může vrátit tří možných hodnot, které představují se zaškrtnutým políčkem, pole vrácení není zaškrtnuto nebo třetí neurčitého stavu bude zobrazeno s neaktivní vzhled, který indikuje možnost není k dispozici.  
   
     ```vb  
     Private Sub CheckBox1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles CheckBox1.Click  

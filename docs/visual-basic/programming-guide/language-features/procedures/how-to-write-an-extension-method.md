@@ -6,33 +6,33 @@ helpviewer_keywords:
 - writing extension methods [Visual Basic]
 - extension methods [Visual Basic]
 ms.assetid: fb2739cc-958d-4ef4-a38b-214a74c93413
-ms.openlocfilehash: d6f8b85945bd400d1f4b54a50260d72c750add8b
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 00d62d275f7afc06e066a375dc1ffcd74b23c9ed
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58819103"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59313759"
 ---
 # <a name="how-to-write-an-extension-method-visual-basic"></a>Postupy: Zápis metody rozšíření (Visual Basic)
 Rozšiřující metody umožňují přidat metody do existující třídy. Metody rozšíření lze volat, jako by šlo instanci dané třídy.  
   
 ### <a name="to-define-an-extension-method"></a>Chcete-li definovat metodu rozšíření  
   
-1.  Otevření nové nebo existující aplikace v jazyce Visual Basic v sadě Visual Studio.  
+1. Otevření nové nebo existující aplikace v jazyce Visual Basic v sadě Visual Studio.  
   
-2.  V horní části souboru, ve kterém chcete definovat rozšiřující metodu patří následující příkaz importu:  
+2. V horní části souboru, ve kterém chcete definovat rozšiřující metodu patří následující příkaz importu:  
   
     ```  
     Imports System.Runtime.CompilerServices  
     ```  
   
-3.  V rámci modulu v nové nebo existující aplikace začněte definici metody s atributem rozšíření:  
+3. V rámci modulu v nové nebo existující aplikace začněte definici metody s atributem rozšíření:  
   
     ```  
     <Extension()>  
     ```  
   
-4.  Deklarujte metodu běžným způsobem s tím rozdílem, že první parametr typu musí být datový typ, který chcete rozšířit.  
+4. Deklarujte metodu běžným způsobem s tím rozdílem, že první parametr typu musí být datový typ, který chcete rozšířit.  
   
     ```  
     <Extension()>   
@@ -84,7 +84,7 @@ End Module
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Runtime.CompilerServices.ExtensionAttribute>
-- [Rozšiřující metody](./extension-methods.md)
-- [Příkaz Module](../../../../visual-basic/language-reference/statements/module-statement.md)
+- [Metody rozšíření](./extension-methods.md)
+- [Module – příkaz](../../../../visual-basic/language-reference/statements/module-statement.md)
 - [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)
-- [Obor v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)
+- [Rozsah v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)

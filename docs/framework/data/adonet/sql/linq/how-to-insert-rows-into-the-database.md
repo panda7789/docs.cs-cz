@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 44d99680-69c7-4879-a732-f6771b334211
-ms.openlocfilehash: cc9f276cc278d4a9c376d72f1ab38d89ea6dd5b4
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: cb2319d51e0518114a04eea2fc7ab6b5a836b7ff
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59169595"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59328592"
 ---
 # <a name="how-to-insert-rows-into-the-database"></a>Postupy: Vložení řádků do databáze
 Vkládání řádků do databáze přidáním objektů s příslušnými [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] <xref:System.Data.Linq.Table%601> kolekce a potom odešlete změny do databáze. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Přeloží provedené změny do příslušné SQL `INSERT` příkazy.  
@@ -24,11 +24,11 @@ Vkládání řádků do databáze přidáním objektů s příslušnými [!INCLU
   
 ### <a name="to-insert-a-row-into-the-database"></a>Chcete-li vložit řádek do databáze  
   
-1.  Vytvořte nový objekt, který obsahuje sloupce dat k odeslání.  
+1. Vytvořte nový objekt, který obsahuje sloupce dat k odeslání.  
   
-2.  Přidat nový objekt, který [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] `Table` kolekci spojenou s cílovou tabulkou v databázi.  
+2. Přidat nový objekt, který [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] `Table` kolekci spojenou s cílovou tabulkou v databázi.  
   
-3.  Odeslání změn do databáze.  
+3. Odeslání změn do databáze.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad kódu vytvoří nový objekt typu `Order` a naplní ji s příslušnými hodnotami. Potom přidá nový objekt, který `Order` kolekce. Nakonec odešle změnu do databáze jako nový řádek v `Orders` tabulky.  

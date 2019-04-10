@@ -8,12 +8,12 @@ helpviewer_keywords:
 - procedures [Visual Basic], multiple versions
 - procedure overloading [Visual Basic], multiple versions
 ms.assetid: 71ccdd66-1b00-4b66-bee4-6926c0d696f4
-ms.openlocfilehash: c31c9ad05af04aec5dc41790aea530c62611f500
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: fc7a8e18394b904f0c22a80f71dee091d4f786ab
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58841162"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59324029"
 ---
 # <a name="how-to-define-multiple-versions-of-a-procedure-visual-basic"></a>Postupy: Definice více verzí procedury (Visual Basic)
 Můžete definovat postup ve více verzích přidáním *přetížení* jeho pomocí se stejným názvem, ale odlišným seznamem parametrů pro každou verzi. Účelem přetížení je definovat několik úzce související verze procedury, aniž byste museli rozlišit podle názvu.  
@@ -22,13 +22,13 @@ Můžete definovat postup ve více verzích přidáním *přetížení* jeho pom
   
 ### <a name="to-define-multiple-versions-of-a-procedure"></a>Chcete-li definovat více verzí procedury  
   
-1.  Zápis `Sub` nebo `Function` příkazu deklarace pro jednotlivé verze můžete definovat postup. Použijte stejný název procedury v každé deklaraci.  
+1. Zápis `Sub` nebo `Function` příkazu deklarace pro jednotlivé verze můžete definovat postup. Použijte stejný název procedury v každé deklaraci.  
   
-2.  Předcházet `Sub` nebo `Function` – klíčové slovo v deklaraci s [přetížení](../../../../visual-basic/language-reference/modifiers/overloads.md) – klíčové slovo. Volitelně můžete vynechat `Overloads` v deklaracích, ale pokud je zahrnout v některém z deklarací, je třeba jej zahrnout v každou deklaraci.  
+2. Předcházet `Sub` nebo `Function` – klíčové slovo v deklaraci s [přetížení](../../../../visual-basic/language-reference/modifiers/overloads.md) – klíčové slovo. Volitelně můžete vynechat `Overloads` v deklaracích, ale pokud je zahrnout v některém z deklarací, je třeba jej zahrnout v každou deklaraci.  
   
-3.  Po každé příkazu deklarace napište kód procedury pro zpracování konkrétního případu, pokud volající kód poskytuje argumenty odpovídající seznam parametrů pro tuto verzi. Nemáte k otestování pro parametry, které má zadaný volajícímu kódu. Visual Basic odpovídající verzi procedura předá řízení.  
+3. Po každé příkazu deklarace napište kód procedury pro zpracování konkrétního případu, pokud volající kód poskytuje argumenty odpovídající seznam parametrů pro tuto verzi. Nemáte k otestování pro parametry, které má zadaný volajícímu kódu. Visual Basic odpovídající verzi procedura předá řízení.  
   
-4.  Ukončit všechny verze procedury s `End Sub` nebo `End Function` příkaz podle potřeby.  
+4. Ukončit všechny verze procedury s `End Sub` nebo `End Function` příkaz podle potřeby.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad definuje `Sub` postup pro transakci proti zůstatku zákazníka. Používá `Overloads` – klíčové slovo definovat dvě verze procedury, ten, který přijímá zákazníka podle názvu a druhé číslo účtu.  
@@ -48,6 +48,6 @@ Můžete definovat postup ve více verzích přidáním *přetížení* jeho pom
 - [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)
 - [Řešení potíží s procedurami](./troubleshooting-procedures.md)
 - [Postupy: Přetížení procedury, která přebírá volitelné parametry](./how-to-overload-a-procedure-that-takes-optional-parameters.md)
-- [Postupy: Přetížení procedury, která přebírá nekonečný počet parametrů](./how-to-overload-a-procedure-that-takes-an-indefinite-number-of-parameters.md)
+- [Postupy: Přetížení procedury, která přebírá neurčitý počet parametrů](./how-to-overload-a-procedure-that-takes-an-indefinite-number-of-parameters.md)
 - [Aspekty přetížení procedur](./considerations-in-overloading-procedures.md)
-- [Řešení přetížení](./overload-resolution.md)
+- [Rozlišení přetěžování](./overload-resolution.md)

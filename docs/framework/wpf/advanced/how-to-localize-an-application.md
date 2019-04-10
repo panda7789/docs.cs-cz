@@ -9,12 +9,12 @@ helpviewer_keywords:
 - LocBaml tool [WPF]
 - applications [WPF], localizing
 ms.assetid: 5001227e-9326-48a4-9dcd-ba1b89ee6653
-ms.openlocfilehash: 6bc2d5c45ef6f8626e51f9f760ec299db19627d9
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: d08f991204b2d74899cbd1aee82c0cc23e175dd4
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59171571"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59298315"
 ---
 # <a name="how-to-localize-an-application"></a>Postupy: Lokalizace aplikace
 Tento kurz vysvětluje vytvoření lokalizované aplikace s použitím locbaml – nástroj.  
@@ -38,13 +38,13 @@ Tento kurz vysvětluje vytvoření lokalizované aplikace s použitím locbaml �
 ## <a name="create-a-sample-application"></a>Vytvoření ukázkové aplikace  
  V tomto kroku se připravíte aplikace pro lokalizaci. V [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] ukázky HelloApp ukázky pochází, který se použije pro příklady v této diskuzi. Pokud chcete tuto ukázku použít, stáhněte si [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] souborů z doručené pošty [locbaml – nástroj ukázka](https://go.microsoft.com/fwlink/?LinkID=160016).  
   
-1.  Vývoj vaší aplikace do bodu, ve kterém chcete spustit lokalizace.  
+1. Vývoj vaší aplikace do bodu, ve kterém chcete spustit lokalizace.  
   
-2.  Zadejte jazyk pro vývoj v souboru projektu tak, aby [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] generuje do hlavního sestavení a satelitní sestavení (soubor s. resources.dll rozšíření) tak, aby obsahovala neutrální jazyk prostředků. Soubor projektu v ukázce HelloApp je HelloApp.csproj. V tomto souboru najdete vývojový jazyk identifikována takto:  
+2. Zadejte jazyk pro vývoj v souboru projektu tak, aby [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] generuje do hlavního sestavení a satelitní sestavení (soubor s. resources.dll rozšíření) tak, aby obsahovala neutrální jazyk prostředků. Soubor projektu v ukázce HelloApp je HelloApp.csproj. V tomto souboru najdete vývojový jazyk identifikována takto:  
   
      `<UICulture>en-US</UICulture>`  
   
-3.  Přidat identifikátory UID byly pro vaši [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubory. Identifikátory UID byly se používají ke sledování změn souborů a k identifikaci položky, které se musí přeložit. Chcete-li přidat identifikátory UID byly k souborům, spusťte **updateuid** v souboru projektu:  
+3. Přidat identifikátory UID byly pro vaši [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubory. Identifikátory UID byly se používají ke sledování změn souborů a k identifikaci položky, které se musí přeložit. Chcete-li přidat identifikátory UID byly k souborům, spusťte **updateuid** v souboru projektu:  
   
      **MSBuild – t: updateuid helloapp.csproj**  
   
@@ -66,30 +66,30 @@ Tento kurz vysvětluje vytvoření lokalizované aplikace s použitím locbaml �
 ## <a name="create-the-neutral-language-resources-satellite-assembly"></a>Vytvořit satelitní sestavení prostředků neutrální jazyk  
  Po aplikaci bylo nakonfigurováno pro generování satelitního sestavení neutrální jazyk prostředků, sestavte aplikaci. Tím se vytvoří sestavení hlavní aplikace, stejně jako neutrální jazyk prostředků satelitní sestavení, který vyžaduje locbaml – pro lokalizaci. K sestavení aplikace:  
   
-1.  Kompilace HelloApp k vytvoření [!INCLUDE[TLA#tla_dll](../../../../includes/tlasharptla-dll-md.md)]:  
+1. Kompilace HelloApp k vytvoření [!INCLUDE[TLA#tla_dll](../../../../includes/tlasharptla-dll-md.md)]:  
   
      **MSBuild helloapp.csproj**  
   
-2.  Sestavení nově vytvořeného hlavní aplikace HelloApp.exe, se vytvoří v následující složce:  
+2. Sestavení nově vytvořeného hlavní aplikace HelloApp.exe, se vytvoří v následující složce:  
   
      `C:\HelloApp\Bin\Debug\`  
   
-3.  Satelitní sestavení nově vytvořeného neutrální jazyk prostředků, HelloApp.resources.dll, se vytvoří v následující složce:  
+3. Satelitní sestavení nově vytvořeného neutrální jazyk prostředků, HelloApp.resources.dll, se vytvoří v následující složce:  
   
      `C:\HelloApp\Bin\Debug\en-US\`  
   
 <a name="build_locbaml"></a>   
 ## <a name="build-the-locbaml-tool"></a>Sestavení locbaml – nástroj  
   
-1.  Všechny soubory potřebné k vývoji locbaml – jsou umístěny v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ukázky. Stáhnout soubory jazyka C# z [locbaml – nástroj ukázka](https://go.microsoft.com/fwlink/?LinkID=160016).  
+1. Všechny soubory potřebné k vývoji locbaml – jsou umístěny v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ukázky. Stáhnout soubory jazyka C# z [locbaml – nástroj ukázka](https://go.microsoft.com/fwlink/?LinkID=160016).  
   
-2.  Z příkazového řádku spusťte soubor projektu (locbaml.csproj) pro sestavení nástroje:  
+2. Z příkazového řádku spusťte soubor projektu (locbaml.csproj) pro sestavení nástroje:  
   
      **MSBuild locbaml.csproj**  
   
-3.  Přejděte do adresáře Bin\Release nově vytvořený spustitelný soubor (locbaml.exe) se nenašel. Example:C:\LocBaml\Bin\Release\locbaml.exe.  
+3. Přejděte do adresáře Bin\Release nově vytvořený spustitelný soubor (locbaml.exe) se nenašel. Example:C:\LocBaml\Bin\Release\locbaml.exe.  
   
-4.  Možnosti, které můžete zadat při spuštění locbaml – jsou následující:  
+4. Možnosti, které můžete zadat při spuštění locbaml – jsou následující:  
   
     -   **analyzovat** nebo **-p:** Analyzuje Baml, prostředky, nebo [!INCLUDE[TLA2#tla_dll](../../../../includes/tla2sharptla-dll-md.md)] soubory vygenerovat soubor CSV nebo .txt.  
   
@@ -114,16 +114,16 @@ Tento kurz vysvětluje vytvoření lokalizované aplikace s použitím locbaml �
 ## <a name="use-locbaml-to-parse-a-file"></a>Locbaml – použít k analýze souboru  
  Teď, když jste vytvořili locbaml – nástroj, budete chtít použít k analýze HelloApp.resources.dll extrahování textového obsahu, který bude lokalizovaný.  
   
-1.  Zkopírujte LocBaml.exe bin\debug složky vaší aplikace, kde byl vytvořen sestavení hlavní aplikace.  
+1. Zkopírujte LocBaml.exe bin\debug složky vaší aplikace, kde byl vytvořen sestavení hlavní aplikace.  
   
-2.  K analýze souboru satelitní sestavení a výstup uložit jako soubor .csv, použijte následující příkaz:  
+2. K analýze souboru satelitní sestavení a výstup uložit jako soubor .csv, použijte následující příkaz:  
   
      **LocBaml.exe /parse HelloApp.resources.dll /out:Hello.csv**  
   
     > [!NOTE]
     >  Pokud vstupní soubor HelloApp.resources.dll, není v přesunout do stejného adresáře jako LocBaml.exe jeden ze souborů tak, že oba soubory jsou ve stejném adresáři.  
   
-3.  Když spustíte locbaml – analyzovat soubory, výstup se skládá z sedm polí oddělených čárkami (CSV soubory) nebo karty (soubory s příponou .txt). Následuje ukázka soubor .csv analyzovanou klauzuli pro HelloApp.resources.dll:
+3. Když spustíte locbaml – analyzovat soubory, výstup se skládá z sedm polí oddělených čárkami (CSV soubory) nebo karty (soubory s příponou .txt). Následuje ukázka soubor .csv analyzovanou klauzuli pro HelloApp.resources.dll:
 
    | |
    |-|
@@ -152,12 +152,12 @@ Tento kurz vysvětluje vytvoření lokalizované aplikace s použitím locbaml �
    |Název BAML|Klíč prostředku|Kategorie|Lepší čitelnost|Modifiability|Komentáře|Hodnota|  
    |---------------|------------------|--------------|-----------------|-------------------|--------------|-----------|
    |HelloApp.g.en-US.resources:window1.baml|Stack1:System.Windows.Controls.StackPanel.$Content|Ignorovat|FALSE|FALSE||#Text1;#Text2|
-   |HelloApp.g.en-US.resources:window1.baml|Text1:System.Windows.Controls.TextBlock.$Content|Žádné|HODNOTA TRUE|HODNOTA TRUE||Hello World|
-   |HelloApp.g.en-US.resources:window1.baml|Text2:System.Windows.Controls.TextBlock.$Content|Žádné|HODNOTA TRUE|HODNOTA TRUE||Goodbye World|
+   |HelloApp.g.en-US.resources:window1.baml|Text1:System.Windows.Controls.TextBlock.$Content|Žádný|HODNOTA TRUE|HODNOTA TRUE||Hello World|
+   |HelloApp.g.en-US.resources:window1.baml|Text2:System.Windows.Controls.TextBlock.$Content|Žádný|HODNOTA TRUE|HODNOTA TRUE||Goodbye World|
   
    Všimněte si, že všechny hodnoty **komentáře** pole neobsahují žádné hodnoty; Pokud pole nemá hodnotu, je prázdný. Všimněte si také, že položka v prvním řádku není ani čitelná ani měnit a má "Ignorovat" jako jeho **kategorie** hodnoty, které označuje, že hodnota není lokalizovatelné.  
   
-4.  Aby se usnadnilo zjišťování lokalizovatelné položek v analyzované soubory, zejména ve velkých souborech si seřadíte nebo vyfiltrujete položky podle **kategorie**, **čitelnost**, a **Modifiability**. Můžete například vyfiltrovat hodnoty nejde přečíst a neupravitelných.  
+4. Aby se usnadnilo zjišťování lokalizovatelné položek v analyzované soubory, zejména ve velkých souborech si seřadíte nebo vyfiltrujete položky podle **kategorie**, **čitelnost**, a **Modifiability**. Můžete například vyfiltrovat hodnoty nejde přečíst a neupravitelných.  
   
 <a name="translate_loc_content"></a>   
 ## <a name="translate-the-localizable-content"></a>Přeložit lokalizovatelné obsahu  
@@ -167,26 +167,26 @@ Tento kurz vysvětluje vytvoření lokalizované aplikace s použitím locbaml �
 ## <a name="use-locbaml-to-generate-a-new-resourcesdll-file"></a>Locbaml – použít ke generování nové. resources.dll souboru  
  Obsah, který byl identifikován analýzou HelloApp.resources.dll s locbaml – byl přeložen a musí být sloučeny zpět do původní aplikace. Použití **generovat** nebo **-g** možnost k vygenerování nového. resources.dll souboru.  
   
-1.  Použijte následující syntaxi pro vytvoření nového souboru HelloApp.resources.dll. Označit jazykovou verzi jako en US (/ cul:en-US).  
+1. Použijte následující syntaxi pro vytvoření nového souboru HelloApp.resources.dll. Označit jazykovou verzi jako en US (/ cul:en-US).  
   
      **LocBaml.exe /generate HelloApp.resources.dll /trans:Hello.csv /out:c:\ /cul:en-US**  
   
     > [!NOTE]
     >  Pokud vstupní soubor Hello.csv, není ve stejném adresáři jako spustitelný soubor, LocBaml.exe, přesuňte jeden ze souborů tak, že oba soubory jsou ve stejném adresáři.  
   
-2.  Nahraďte původní soubor v adresáři C:\HelloApp\Bin\Debug\en-US\HelloApp.resources.dll HelloApp.resources.dll váš nově vytvořený soubor HelloApp.resources.dll.  
+2. Nahraďte původní soubor v adresáři C:\HelloApp\Bin\Debug\en-US\HelloApp.resources.dll HelloApp.resources.dll váš nově vytvořený soubor HelloApp.resources.dll.  
   
-3.  "Hello World" a "Goodbye World" by měl nyní přeložený do vaší aplikace.  
+3. "Hello World" a "Goodbye World" by měl nyní přeložený do vaší aplikace.  
   
-4.  Pro převod na jinou jazykovou verzi, pomocí jazyka, který se překládá na jazykovou verzi. Následující příklad ukazuje, jak převést French-Canadian:  
+4. Pro převod na jinou jazykovou verzi, pomocí jazyka, který se překládá na jazykovou verzi. Následující příklad ukazuje, jak převést French-Canadian:  
   
      **LocBaml.exe /generate HelloApp.resources.dll /trans:Hellofr-CA.csv /out:c:\ /cul:fr-CA**  
   
-5.  Ve stejném sestavení jako sestavení hlavní aplikace vytvořte novou složku specifické pro jazykovou verzi k umístění nového satelitní sestavení. U French-Canadian bude složka fr-CA.  
+5. Ve stejném sestavení jako sestavení hlavní aplikace vytvořte novou složku specifické pro jazykovou verzi k umístění nového satelitní sestavení. U French-Canadian bude složka fr-CA.  
   
-6.  Zkopírujte do nové složky generovaných satelitních sestavení.  
+6. Zkopírujte do nové složky generovaných satelitních sestavení.  
   
-7.  Otestovat nové satelitní sestavení, budete muset změnit jazykové verze, ve kterém aplikace poběží. Toto lze provést jedním ze dvou způsobů:  
+7. Otestovat nové satelitní sestavení, budete muset změnit jazykové verze, ve kterém aplikace poběží. Toto lze provést jedním ze dvou způsobů:  
   
     -   Změnit místní nastavení operačního systému (**Start** &#124; **ovládací panely** &#124; **místní a jazykové nastavení**).  
   

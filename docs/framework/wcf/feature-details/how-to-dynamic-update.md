@@ -2,12 +2,12 @@
 title: 'Postupy: Dynamická aktualizace'
 ms.date: 03/30/2017
 ms.assetid: 9b8f6e0d-edab-4a7e-86e3-8c66bebc64bb
-ms.openlocfilehash: 3ae446da5e19b0c4c0c121d44892e4a13ec70dd6
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 7e2fbd6c179444ef4c6e1df5e5068dbd1c5d29fa
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59190987"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59320753"
 ---
 # <a name="how-to-dynamic-update"></a>Postupy: Dynamická aktualizace
 Toto téma popisuje základní kroky potřebné k vytvoření a dynamicky aktualizovat konfiguraci směrování. V tomto příkladu počáteční konfigurace směrování se získávají z konfiguračního souboru a všechny zprávy směruje do službu kalkulačky regularCalc; ale to se následně aktualizuje prostřednictvím kódu programu Chcete-li změnit cílový koncový bod služby roundingCalc.  
@@ -22,7 +22,7 @@ Toto téma popisuje základní kroky potřebné k vytvoření a dynamicky aktual
   
 ### <a name="implement-initial-configuration"></a>Implementace počáteční konfigurace  
   
-1.  Vytvoření základní konfigurace služby směrování zadat koncové body služby určeného službou. Následující příklad definuje jedinou službou koncový bod, který se použije pro příjem zpráv. Definuje také koncový bod klienta, který se použije pro odesílání zpráv regularCalc.  
+1. Vytvoření základní konfigurace služby směrování zadat koncové body služby určeného službou. Následující příklad definuje jedinou službou koncový bod, který se použije pro příjem zpráv. Definuje také koncový bod klienta, který se použije pro odesílání zpráv regularCalc.  
   
     ```xml  
     <services>  
@@ -49,7 +49,7 @@ Toto téma popisuje základní kroky potřebné k vytvoření a dynamicky aktual
     </client>  
     ```  
   
-2.  Zadejte filtr používá pro směrování zpráv do cílové koncové body. V tomto příkladu je filtr MatchAll používá pro směrování zpráv do regularCalcEndpoint dříve definovali. Následující příklad definuje filtr a tabulce filtrů.  
+2. Zadejte filtr používá pro směrování zpráv do cílové koncové body. V tomto příkladu je filtr MatchAll používá pro směrování zpráv do regularCalcEndpoint dříve definovali. Následující příklad definuje filtr a tabulce filtrů.  
   
     ```xml  
     <filters>  
@@ -64,7 +64,7 @@ Toto téma popisuje základní kroky potřebné k vytvoření a dynamicky aktual
     </filterTables>  
     ```  
   
-3.  Vyhodnocování příchozích zpráv proti filtrů obsažených v tabulce filtrů, je třeba přidružit tabulky filtru koncových bodů služby pomocí směrování chování. Následující příklad ukazuje přiřazování "filterTable1" ke koncovému bodu služby.  
+3. Vyhodnocování příchozích zpráv proti filtrů obsažených v tabulce filtrů, je třeba přidružit tabulky filtru koncových bodů služby pomocí směrování chování. Následující příklad ukazuje přiřazování "filterTable1" ke koncovému bodu služby.  
   
     ```xml  
     <behaviors>  
@@ -80,7 +80,7 @@ Toto téma popisuje základní kroky potřebné k vytvoření a dynamicky aktual
 ## <a name="implement-dynamic-configuration"></a>Implementovat dynamické konfigurace  
  Směrovací služba dynamickou konfiguraci lze provést pouze v kódu vytvořením nového <xref:System.ServiceModel.Routing.RoutingConfiguration> a pomocí <xref:System.ServiceModel.Routing.RoutingExtension.ApplyConfiguration%2A> k nahrazení aktuální konfiguraci.  V tomto příkladu je služba Směrování v rámci konzolové aplikace v místním prostředí. Po spuštění aplikace, můžete upravit konfiguraci směrování tak, že zadáte "normální" nebo "zaokrouhlení" v okně konzoly ke konfiguraci cílového koncového bodu, který zprávy jsou směrovány na; Zadaný regularCalc při 'pravidelné', jinak se zadá roundingCalc při "zaokrouhlování".  
   
-1.  Následující příkazy using musí být přidán za účelem podpory služby směrování.  
+1. Následující příkazy using musí být přidán za účelem podpory služby směrování.  
   
     ```csharp  
     using System;  
@@ -92,7 +92,7 @@ Toto téma popisuje základní kroky potřebné k vytvoření a dynamicky aktual
     using System.ServiceModel.Routing;  
     ```  
   
-2.  Následující kód slouží k hostování na vlastním serveru služby směrování jako konzolové aplikace. To Inicializuje službu Směrování pomocí konfigurace popsaná v předchozím kroku, která je obsažena v konfiguračním souboru aplikace. While smyčka obsahuje kód použít ke změně konfigurace směrování.  
+2. Následující kód slouží k hostování na vlastním serveru služby směrování jako konzolové aplikace. To Inicializuje službu Směrování pomocí konfigurace popsaná v předchozím kroku, která je obsažena v konfiguračním souboru aplikace. While smyčka obsahuje kód použít ke změně konfigurace směrování.  
   
     ```csharp  
     // Host the service within this EXE console application.  
@@ -117,7 +117,7 @@ Toto téma popisuje základní kroky potřebné k vytvoření a dynamicky aktual
     }  
     ```  
   
-3.  Dynamicky aktualizovat konfiguraci směrování, je nutné vytvořit novou konfiguraci směrování. Všechny koncové body, filtry a filtru tabulky, které jsou požadovány pro novou konfiguraci směrování, to musí obsahovat jak zcela nahradit existující konfiguraci směrování. Chcete-li použít nové konfigurace směrování, je nutné vyvolat <xref:System.ServiceModel.Routing.RoutingExtension.ApplyConfiguration%2A> a předejte mu novou konfiguraci.  
+3. Dynamicky aktualizovat konfiguraci směrování, je nutné vytvořit novou konfiguraci směrování. Všechny koncové body, filtry a filtru tabulky, které jsou požadovány pro novou konfiguraci směrování, to musí obsahovat jak zcela nahradit existující konfiguraci směrování. Chcete-li použít nové konfigurace směrování, je nutné vyvolat <xref:System.ServiceModel.Routing.RoutingExtension.ApplyConfiguration%2A> a předejte mu novou konfiguraci.  
   
      Přidejte následující kód do while smyčky dříve definovali povolit službu třeba překonfigurovat na základě uživatelského zadání.  
   

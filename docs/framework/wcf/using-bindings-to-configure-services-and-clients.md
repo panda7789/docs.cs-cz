@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - bindings [WCF], using
 ms.assetid: c39479c3-0766-4a17-ba4c-97a74607f392
-ms.openlocfilehash: 8080451d64f74629451c6ca66fb27d93c9f29ed8
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 3b4f00617418d5f84a0da5d0e531e1f671b58bb1
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59209499"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59323145"
 ---
 # <a name="using-bindings-to-configure-services-and-clients"></a>Používání vazeb ke konfiguraci služeb a klientů
 Vazby jsou objekty, které určují podrobnosti o komunikaci požadované pro připojení na koncový bod. Přesněji řečeno vazby obsahují informace o konfiguraci, která se používá k vytvoření modul runtime klienta nebo služby tak, že definujete, jaké jsou specifikace přenosy, formáty (kódování zpráv) a protokoly pro příslušného klienta nebo koncový bod kanálu. K vytvoření funkční služby Windows Communication Foundation (WCF), každý koncový bod služby vyžaduje vazbu. Toto téma vysvětluje, co jsou vazby, jak jsou definovány a jak je určeno konkrétní vazeb pro koncový bod.  
@@ -45,9 +45,9 @@ Vazby jsou objekty, které určují podrobnosti o komunikaci požadované pro p�
 ## <a name="using-bindings"></a>Používání vazeb  
  Používání vazeb zahrnuje dva základní kroky:  
   
-1.  Vyberte nebo definujících vazbu. Nejjednodušším způsobem je použít výchozí nastavení a zvolte jednu z vazeb poskytovaných systémem. Můžete také zvolit vazeb poskytovaných systémem a obnovit jeho hodnotám vlastností tak, aby vyhovoval vašim požadavkům. Alternativně můžete vytvoření vlastní vazby a nastavit každé vlastnosti podle potřeby.  
+1. Vyberte nebo definujících vazbu. Nejjednodušším způsobem je použít výchozí nastavení a zvolte jednu z vazeb poskytovaných systémem. Můžete také zvolit vazeb poskytovaných systémem a obnovit jeho hodnotám vlastností tak, aby vyhovoval vašim požadavkům. Alternativně můžete vytvoření vlastní vazby a nastavit každé vlastnosti podle potřeby.  
   
-2.  Vytvoření koncového bodu, který používá tuto vazbu.  
+2. Vytvoření koncového bodu, který používá tuto vazbu.  
   
 ## <a name="code-and-configuration"></a>Kódu a konfigurace  
  Můžete definovat nebo nakonfigurujte vazby prostřednictvím kódu nebo konfigurace. Tyto dva přístupy platí bez ohledu na typ vazby používá, například, jestli používáte poskytovaných systémem nebo <xref:System.ServiceModel.Channels.CustomBinding> vazby. Obecně platí pomocí kódu vám plnou kontrolu nad definice vazbu při kompilaci. Použití konfigurace, umožňuje na druhé straně může správce systému nebo uživatele služby WCF nebo klienta můžete změnit parametry vazby. Díky této flexibilitě je často žádoucí, protože neexistuje žádný způsob, jak předvídat požadavky na konkrétní počítač a síťové podmínky, do které aplikace WCF je k nasazení. Informace o připojení (a adresování) z kódu oddělení umožňuje správcům změnit podrobnosti vazby bez nutnosti znovu kompilovat nebo znovu nasadit aplikaci. Všimněte si, že pokud vazba je definováno v kódu, přepíše všechny definice podle konfigurace v konfiguračním souboru. Příklady těchto přístupů naleznete v následujících tématech:  

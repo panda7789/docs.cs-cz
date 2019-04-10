@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c8329832-bf66-4064-9034-bf39f153fc2d
-ms.openlocfilehash: 127b06b32e597f8c2ea7e2bfdb1caca850fb5e3b
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: a94864563491b5bd2d50a6df59858f4b7235fd75
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59194523"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59314877"
 ---
 # <a name="accessing-services-using-a-client"></a>Přístup ke službám pomocí klienta
 Klientské aplikace musíte vytvořit, konfigurovat a komunikace se službami pomocí WCF klienta nebo kanál objektů. [Přehled klientů WCF](../../../../docs/framework/wcf/wcf-client-overview.md) téma obsahuje přehled objektů a kroky při vytváření základních klienta a kanál objektů a jejich používání.  
@@ -83,11 +83,11 @@ Klientské aplikace musíte vytvořit, konfigurovat a komunikace se službami po
   
  Při použití explicitní přístup, musí aplikace provádět následující kroky v pořadí:  
   
-1.  Volání na buď <xref:System.ServiceModel.ClientBase%601.DisplayInitializationUI%2A?displayProperty=nameWithType> nebo <xref:System.ServiceModel.IClientChannel.DisplayInitializationUI%2A?displayProperty=nameWithType> (nebo asynchronní verze).  
+1. Volání na buď <xref:System.ServiceModel.ClientBase%601.DisplayInitializationUI%2A?displayProperty=nameWithType> nebo <xref:System.ServiceModel.IClientChannel.DisplayInitializationUI%2A?displayProperty=nameWithType> (nebo asynchronní verze).  
   
-2.  Když inicializátorech vrátily, zavolejte <xref:System.ServiceModel.ICommunicationObject.Open%2A> metodu na <xref:System.ServiceModel.IClientChannel> objekt nebo na <xref:System.ServiceModel.IClientChannel> objekt vrácený z <xref:System.ServiceModel.ClientBase%601.InnerChannel%2A?displayProperty=nameWithType> vlastnost.  
+2. Když inicializátorech vrátily, zavolejte <xref:System.ServiceModel.ICommunicationObject.Open%2A> metodu na <xref:System.ServiceModel.IClientChannel> objekt nebo na <xref:System.ServiceModel.IClientChannel> objekt vrácený z <xref:System.ServiceModel.ClientBase%601.InnerChannel%2A?displayProperty=nameWithType> vlastnost.  
   
-3.  Volání operací.  
+3. Volání operací.  
   
  Doporučuje se, že aplikace produkční kvality řízení procesu uživatelského rozhraní přijetím explicitní přístup.  
   

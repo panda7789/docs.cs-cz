@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - bindings [WCF], overview
 ms.assetid: cfb5842f-e0f9-4c56-a015-f2b33f258232
-ms.openlocfilehash: c450de0eb3eead3a2d3b21c3635caa71d92ce07f
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 90da8f4a2b4efeb684cbe9e5513084e6d1c6f515
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59212801"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59325056"
 ---
 # <a name="windows-communication-foundation-bindings-overview"></a>Vazby ve Windows Communication Foundation – přehled
 Vazby jsou objekty, které se používají k určení detaily komunikace, které jsou vyžadovány pro připojení ke koncovému bodu služby Windows Communication Foundation (WCF). Každý koncový bod služby WCF vyžaduje vazbu být správně zadaný. Toto téma popisuje typy komunikace – podrobnosti, které definují vazby elementy vazby, které vazby jsou součástí WCF a jak vazbu se dá nastavit pro koncový bod.  
@@ -50,9 +50,9 @@ Vazby jsou objekty, které se používají k určení detaily komunikace, které
 ## <a name="using-bindings"></a>Používání vazeb  
  Používání vazeb zahrnuje dva základní kroky:  
   
-1.  Vyberte nebo definujících vazbu. Nejjednodušší způsob je zvolte jednu z vazeb poskytovaných systémem, který je součástí WCF a jeho použití s výchozím nastavením. Můžete také zvolit vazeb poskytovaných systémem a obnovit jeho hodnotám vlastností tak, aby vyhovoval vašim požadavkům. Alternativně můžete vytvořit vlastní vazby nebo vazbu definované uživatelem mají vyšší stupeň řízení a přizpůsobení.  
+1. Vyberte nebo definujících vazbu. Nejjednodušší způsob je zvolte jednu z vazeb poskytovaných systémem, který je součástí WCF a jeho použití s výchozím nastavením. Můžete také zvolit vazeb poskytovaných systémem a obnovit jeho hodnotám vlastností tak, aby vyhovoval vašim požadavkům. Alternativně můžete vytvořit vlastní vazby nebo vazbu definované uživatelem mají vyšší stupeň řízení a přizpůsobení.  
   
-2.  Vytvoření koncového bodu, který používá vazbu vybrané nebo definované.  
+2. Vytvoření koncového bodu, který používá vazbu vybrané nebo definované.  
   
 ## <a name="code-and-configuration"></a>Kódu a konfigurace  
  Můžete definovat vazby dvěma způsoby: prostřednictvím kódu nebo konfigurace. Tyto dva přístupy nebyly závislé na tom, jestli používáte vazeb poskytovaných systémem nebo vlastní vazby. Obecně platí pomocí kódu vám plnou kontrolu nad definice vazby v době návrhu. Použití konfigurace, umožňuje na druhé straně může správce systému nebo uživatele služby WCF nebo klienta můžete změnit parametry vazby bez nutnosti znovu kompilovat aplikace služby. Díky této flexibilitě je často žádoucí, protože neexistuje žádný způsob, jak předvídat požadavky na konkrétní počítač, na kterých aplikace WCF je k nasazení. Vazba (a adresování) informace z kódu umožňuje změnit bez nutnosti rekompilace nebo opětovného nasazení aplikace. Všimněte si, že se po vazby zadaný v konfiguraci, umožňuje kódu definované vazby pro přepsání jakékoli konfigurace definované vazby vytvoří vazeb definovaných v kódu.  

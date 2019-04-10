@@ -2,25 +2,25 @@
 title: 'Přenos: Interoperabilita TCP ve WSE 3.0'
 ms.date: 03/30/2017
 ms.assetid: 5f7c3708-acad-4eb3-acb9-d232c77d1486
-ms.openlocfilehash: 9b2fcc2e7d96d2cfbb3b55934fa19ec24487bce7
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: cc483e44e625534d87ea94e84fc984f0aff880f9
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59162172"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59324211"
 ---
 # <a name="transport-wse-30-tcp-interoperability"></a>Přenos: Interoperabilita TCP ve WSE 3.0
 Ukázka přenosu interoperabilita TCP ve WSE 3.0 ukazuje, jak implementovat duplexní relace TCP jako vlastní přenosu Windows Communication Foundation (WCF). Také ukazuje, jak můžete použít rozšíření vrstvy kanálu rozhraní přenosu s existujícími systémy nasazené. Následující kroky ukazují, jak vytvořit tento vlastní přenos WCF:  
   
-1.  Počínaje soket TCP vytvořit klienta a serveru implementace <xref:System.ServiceModel.Channels.IDuplexSessionChannel> , které používají od sebe odděluje hranice zprávy DIME rámců.  
+1. Počínaje soket TCP vytvořit klienta a serveru implementace <xref:System.ServiceModel.Channels.IDuplexSessionChannel> , které používají od sebe odděluje hranice zprávy DIME rámců.  
   
-2.  Vytvoření postupu kanálu, který se připojí ke službě WSE TCP a odesílá zprávy orámované přes klienta <xref:System.ServiceModel.Channels.IDuplexSessionChannel>s.  
+2. Vytvoření postupu kanálu, který se připojí ke službě WSE TCP a odesílá zprávy orámované přes klienta <xref:System.ServiceModel.Channels.IDuplexSessionChannel>s.  
   
-3.  Vytvořte naslouchací proces kanálu přijímat příchozí připojení protokolu TCP a vytvořit odpovídající kanály.  
+3. Vytvořte naslouchací proces kanálu přijímat příchozí připojení protokolu TCP a vytvořit odpovídající kanály.  
   
-4.  Ujistěte se, že všechny výjimky pro konkrétní sítě jsou normalizovány na příslušné třídy odvozené z <xref:System.ServiceModel.CommunicationException>.  
+4. Ujistěte se, že všechny výjimky pro konkrétní sítě jsou normalizovány na příslušné třídy odvozené z <xref:System.ServiceModel.CommunicationException>.  
   
-5.  Přidejte prvek vazby, který přidá vlastní přenosu do zásobníku kanálu. Další informace najdete v tématu [přidání prvku vazby].  
+5. Přidejte prvek vazby, který přidá vlastní přenosu do zásobníku kanálu. Další informace najdete v tématu [přidání prvku vazby].  
   
 ## <a name="creating-iduplexsessionchannel"></a>Vytváření IDuplexSessionChannel  
  Prvním krokem při psaní přenosu Interoperability TCP ve WSE 3.0, je vytvořit implementace <xref:System.ServiceModel.Channels.IDuplexSessionChannel> nahoře <xref:System.Net.Sockets.Socket>. `WseTcpDuplexSessionChannel` Je odvozen od <xref:System.ServiceModel.Channels.ChannelBase>. Logiku odesílání zprávy se skládá ze dvou hlavních částí: (1) do bajtů a (2) rámců těchto bajtů a poslat mu na lince kódování zprávy.  
@@ -172,12 +172,12 @@ Symbols:
   
 #### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
-1.  Pro tuto ukázku spustit, je zapotřebí WSE 3.0 a WSE `TcpSyncStockService` ukázka nainstalované. Můžete si stáhnout [WSE 3.0 z webu MSDN](https://go.microsoft.com/fwlink/?LinkId=95000).  
+1. Pro tuto ukázku spustit, je zapotřebí WSE 3.0 a WSE `TcpSyncStockService` ukázka nainstalované. Můžete si stáhnout [WSE 3.0 z webu MSDN](https://go.microsoft.com/fwlink/?LinkId=95000).  
   
 > [!NOTE]
 >  Protože WSE 3.0 není podporována na [!INCLUDE[lserver](../../../../includes/lserver-md.md)], nemůžou instalovat ani spouštět `TcpSyncStockService` ukázka v tomto operačním systému.  
   
-1.  Po instalaci `TcpSyncStockService` ukázkový, postupujte takto:  
+1. Po instalaci `TcpSyncStockService` ukázkový, postupujte takto:  
   
     1.  Otevřít `TcpSyncStockService` v sadě Visual Studio (Všimněte si, že ukázky TcpSyncStockService se instaluje s WSE 3.0. Není součástí této ukázky kódu).  
   

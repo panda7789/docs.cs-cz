@@ -2,12 +2,12 @@
 title: Podepisování uložených procedur na SQL Serveru
 ms.date: 01/05/2018
 ms.assetid: eeed752c-0084-48e5-9dca-381353007a0d
-ms.openlocfilehash: 1caf3de06a03d4eab97e68ac1ecdc00dacdd5dc8
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 2c2076294c0e06ec411ceb1f5b1238dc3d7eb304
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59094616"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59313915"
 ---
 # <a name="signing-stored-procedures-in-sql-server"></a>Podepisování uložených procedur na SQL Serveru
  Digitální podpis je algoritmu digest data zašifrovaná pomocí soukromého klíče podpisu. Privátní klíč zajistí, že digitální podpis je jedinečné pro jeho nosiče nebo vlastníka. Uložené procedury, funkce (s výjimkou vložené funkce vracející tabulku), aktivační události a sestavení se můžete přihlásit.  
@@ -23,25 +23,25 @@ ms.locfileid: "59094616"
   
  Při podepisování modulu jsou dva kroky:  
   
-1.  Vytvořit certifikát pomocí příkazů jazyka Transact-SQL `CREATE CERTIFICATE [certificateName]` příkazu. Tento příkaz obsahuje celou řadu možností pro nastavení počáteční a koncové datum a heslo. Výchozí datum vypršení platnosti je 1 rok.  
+1. Vytvořit certifikát pomocí příkazů jazyka Transact-SQL `CREATE CERTIFICATE [certificateName]` příkazu. Tento příkaz obsahuje celou řadu možností pro nastavení počáteční a koncové datum a heslo. Výchozí datum vypršení platnosti je 1 rok.  
   
-1.  Podepsat certifikát s použitím příkazů jazyka Transact-SQL postupu `ADD SIGNATURE TO [procedureName] BY CERTIFICATE [certificateName]` příkazu.  
+1. Podepsat certifikát s použitím příkazů jazyka Transact-SQL postupu `ADD SIGNATURE TO [procedureName] BY CERTIFICATE [certificateName]` příkazu.  
 
 Jakmile modul byl podepsán, jeden nebo více objektů zabezpečení je potřeba vytvořit, aby bylo možné obsahovat další oprávnění, které by měly být přidruženy s certifikátem.  
 
 Pokud je nutné modul další oprávnění na úrovni databáze:  
   
-1.  Vytvořte uživatele databáze spojené s použitím příkazů jazyka Transact-SQL certifikátu `CREATE USER [userName] FROM CERTIFICATE [certificateName]` příkazu. Tohoto uživatele existuje pouze v databázi a není přidružen k přihlášení, pokud přihlášení také byly vytvořeny z tohoto stejného certifikátu.  
+1. Vytvořte uživatele databáze spojené s použitím příkazů jazyka Transact-SQL certifikátu `CREATE USER [userName] FROM CERTIFICATE [certificateName]` příkazu. Tohoto uživatele existuje pouze v databázi a není přidružen k přihlášení, pokud přihlášení také byly vytvořeny z tohoto stejného certifikátu.  
   
-1.  Certifikát uživateli udělte požadované oprávnění na úrovni databáze.  
+1. Certifikát uživateli udělte požadované oprávnění na úrovni databáze.  
   
 Pokud je nutné modul další oprávnění na úrovni serveru:  
   
-1.  Zkopírujte certifikát, který `master` databáze.  
+1. Zkopírujte certifikát, který `master` databáze.  
  
-1.  Vytvořte přihlašovací údaje související s použitím příkazů jazyka Transact-SQL certifikátu `CREATE LOGIN [userName] FROM CERTIFICATE [certificateName]` příkazu.  
+1. Vytvořte přihlašovací údaje související s použitím příkazů jazyka Transact-SQL certifikátu `CREATE LOGIN [userName] FROM CERTIFICATE [certificateName]` příkazu.  
   
-1.  Udělte požadovaná oprávnění na úrovni serveru přihlášení certifikátu.  
+1. Udělte požadovaná oprávnění na úrovni serveru přihlášení certifikátu.  
   
 > [!NOTE]  
 >  Certifikát nelze udělit oprávnění uživateli, který má určitá oprávnění odvolat ODEPŘÍT příkaz using. ODEPŘÍT vždy přednost udělení, brání volajícímu dědí oprávnění udělená uživatelského certifikátu.  

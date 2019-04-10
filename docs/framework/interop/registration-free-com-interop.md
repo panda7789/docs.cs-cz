@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 90f308b9-82dc-414a-bce1-77e0155e56bd
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: fbdc6f795aff5e84debd2e83485a22f1d42b31d4
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 24e7eed539898c511250a1a09a187448e9424890
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59185299"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59300993"
 ---
 # <a name="registration-free-com-interop"></a>Zprostředkovatel komunikace s objekty COM bez registrace
 Spolupráci s COM bez registrace se aktivuje komponenty bez použití registru Windows k ukládání informací o sestavení. Místo registrace komponenty v počítači se během nasazení, vytvářet soubory manifestu Win32 – vizuální styl v době návrhu, které obsahují informace o aktivaci a vazby. Tyto soubory manifestu, spíše než klíče registru, směrovat aktivační objekt.  
@@ -32,7 +32,7 @@ Spolupráci s COM bez registrace se aktivuje komponenty bez použití registru W
   
 ### <a name="requirements-for-registration-free-com-interop"></a>Požadavky pro spolupráci s COM bez registrace  
   
-1.  Podpora pro spolupráci s COM bez registrace se mírně liší v závislosti na typu sestavení knihovny; Konkrétně, určuje, zda je nespravované (COM-souběžně) nebo spravované sestavení (. NET-based). V následující tabulce jsou uvedeny operační systém a požadavky na verzi rozhraní .NET Framework pro každý typ sestavení.  
+1. Podpora pro spolupráci s COM bez registrace se mírně liší v závislosti na typu sestavení knihovny; Konkrétně, určuje, zda je nespravované (COM-souběžně) nebo spravované sestavení (. NET-based). V následující tabulce jsou uvedeny operační systém a požadavky na verzi rozhraní .NET Framework pro každý typ sestavení.  
   
     |Typ sestavení|Operační systém|Verze rozhraní .NET Framework|  
     |-------------------|----------------------|----------------------------|  
@@ -45,7 +45,7 @@ Spolupráci s COM bez registrace se aktivuje komponenty bez použití registru W
   
 ### <a name="configuring-com-components-for-registration-free-activation"></a>Konfigurace komponent COM pro aktivaci bez registrace  
   
-1.  Pro komponenty modelu COM pro podílet na aktivaci bez registrace musí být nasazený jako sestavení vedle sebe. Nespravované sestavení jsou sestavení vedle sebe.  Další informace najdete v tématu [sestavení vedle sebe](/windows/desktop/SbsCs/using-side-by-side-assemblies).  
+1. Pro komponenty modelu COM pro podílet na aktivaci bez registrace musí být nasazený jako sestavení vedle sebe. Nespravované sestavení jsou sestavení vedle sebe.  Další informace najdete v tématu [sestavení vedle sebe](/windows/desktop/SbsCs/using-side-by-side-assemblies).  
   
      Použít sestavení vedle sebe modelu COM,. Vývojář aplikace založené na NET musí poskytnout manifest aplikace, který obsahuje informace o vazbě a aktivace. Operační systém Windows XP obsahuje integrovanou podporu pro nespravované sestavení vedle sebe. Modul runtime modelu COM podporuje operační systém, prohledá manifest aplikace pro informace o aktivaci při komponenty, aktivuje se nenachází v registru.  
   

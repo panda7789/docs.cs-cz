@@ -5,12 +5,12 @@ helpviewer_keywords:
 - custom controls [Windows Forms], application settings
 - application settings [Windows Forms], custom controls
 ms.assetid: f44afb74-76cc-44f2-890a-44b7cdc211a1
-ms.openlocfilehash: b036167c2e1a4dff557d2ef90eaa964710533410
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 69a5caef8bab45503b9f34422de8c2ba2e7f01ff
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59169738"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59317295"
 ---
 # <a name="application-settings-for-custom-controls"></a>Nastavení aplikace pro vlastní ovládací prvky
 Je třeba provést určité úlohy poskytnout vlastní ovládací prvky umožňuje zachovat nastavení aplikace, když jsou ovládací prvky jsou hostované v aplikacích třetích stran.  
@@ -22,9 +22,9 @@ Je třeba provést určité úlohy poskytnout vlastní ovládací prvky umožňu
   
  Kromě toho byste měli implementovat následující pořadí pro nastavení aplikace pro vlastní ovládací prvky, aby správně fungovala v době návrhu prostředí, jako je Visual Studio:  
   
-1.  Vlastní aplikace nastavení třídu s konstruktorem, který přebírá <xref:System.ComponentModel.IComponent> jako jediný parametr. Tato třída slouží k uložení a načtení všech nastavení aplikace. Když vytvoříte novou instanci této třídy, předejte vlastního ovládacího prvku pomocí konstruktoru.  
+1. Vlastní aplikace nastavení třídu s konstruktorem, který přebírá <xref:System.ComponentModel.IComponent> jako jediný parametr. Tato třída slouží k uložení a načtení všech nastavení aplikace. Když vytvoříte novou instanci této třídy, předejte vlastního ovládacího prvku pomocí konstruktoru.  
   
-2.  Po ovládací prvek byl vytvořen a umístěné do formuláře, jako například v formuláře vytvořit toto vlastní nastavení třídy <xref:System.Windows.Forms.Form.Load> obslužné rutiny události.  
+2. Po ovládací prvek byl vytvořen a umístěné do formuláře, jako například v formuláře vytvořit toto vlastní nastavení třídy <xref:System.Windows.Forms.Form.Load> obslužné rutiny události.  
   
  Pokyny týkající se vytvoření vlastního nastavení třídy naleznete v tématu [jak: Vytvořit nastavení aplikace](how-to-create-application-settings.md).  
   

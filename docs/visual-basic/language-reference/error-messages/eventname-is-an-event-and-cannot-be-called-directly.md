@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC32022
 ms.assetid: 4dcfcb8d-a9fa-46a7-a034-29d9ff3a59b3
-ms.openlocfilehash: eb0b40a80d37788bcab32791d7ed701a77505371
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: bf900566bdb4ecf8d8961a12b5dd67ba426caf27
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58831426"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59305595"
 ---
 # <a name="eventname-is-an-event-and-cannot-be-called-directly"></a>"\<eventname >' je událost a nelze ji vyvolat přímo
 "<`eventname`>' je událost a proto ji nelze volat přímo. Použití `RaiseEvent` příkaz k vyvolání události.  
@@ -23,8 +23,8 @@ ms.locfileid: "58831426"
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1.  Použití `RaiseEvent` příkazu k signalizaci události a volání procedury nebo procedury, které ji zpracovat.  
+1. Použití `RaiseEvent` příkazu k signalizaci události a volání procedury nebo procedury, které ji zpracovat.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Příkaz RaiseEvent](../../../visual-basic/language-reference/statements/raiseevent-statement.md)
+- [RaiseEvent – příkaz](../../../visual-basic/language-reference/statements/raiseevent-statement.md)

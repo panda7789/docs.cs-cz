@@ -2,12 +2,12 @@
 title: Publikování a řešení názvů partnerských uzlů
 ms.date: 03/30/2017
 ms.assetid: f0370e08-9fa6-4ee5-ab78-9a58a20a7da2
-ms.openlocfilehash: 0c55b2f1294c055a873278147ff549aa19e33179
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 330117e103f7729ecf6f18ff551f65f1ba0f35da
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59120767"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59309092"
 ---
 # <a name="peer-name-publication-and-resolution"></a>Publikování a řešení názvů partnerských uzlů
 
@@ -25,9 +25,9 @@ PNRP verze 2 uzly nepublikujte ID PNRP, pokud jsou pouze řeší jiné ID P2P. H
 
  Vyhledání dalších partnerských uzlů v PNRP sítě nebo cloudové je proces se skládá ze dvou fází:  
   
-1.  Určení koncového bodu  
+1. Určení koncového bodu  
   
-2.  ID řešení PNRP  
+2. ID řešení PNRP  
   
  Ve fázi stanovení koncový bod partnerského uzlu, který se pokouší se přeložit ID PNRP služby na jiném počítači určuje adresu protokolu IPv6 tohoto vzdáleného partnerského uzlu.  Vzdáleném partnerském je ta, kterou publikována nebo je přidružen ID PNRP počítače nebo služby.  
   

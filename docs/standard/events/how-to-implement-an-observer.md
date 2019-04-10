@@ -11,34 +11,34 @@ helpviewer_keywords:
 ms.assetid: 8ecfa9f5-b500-473d-bcf0-5652ffb1e53d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8b7534843c1f724dc4544b9a5a7062e79e973a34
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: b410b9381246cef2e61086e333c4c5b07646a575
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54738050"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59301058"
 ---
 # <a name="how-to-implement-an-observer"></a>Postupy: Implementace pozorovatele
 Návrhový vzor pozorovatel vyžaduje rozdělení pozorovatele, který registruje upozornění a poskytovatele, který monitoruje dat a odesílání oznámení na jeden nebo více pozorovatelů. Toto téma popisuje, jak vytvořit pozorovatele. Související téma [jak: Implementace poskytovatele](../../../docs/standard/events/how-to-implement-a-provider.md), popisuje, jak vytvořit poskytovatele.  
   
 ### <a name="to-create-an-observer"></a>Chcete-li vytvořit pozorovatel  
   
-1.  Definování pozorovatele, který je typ, který implementuje <xref:System.IObserver%601?displayProperty=nameWithType> rozhraní. Například následující kód definuje typ s názvem `TemperatureReporter` , který je vytvořený <xref:System.IObserver%601?displayProperty=nameWithType> implementace s argumentem obecného typu z `Temperature`.  
+1. Definování pozorovatele, který je typ, který implementuje <xref:System.IObserver%601?displayProperty=nameWithType> rozhraní. Například následující kód definuje typ s názvem `TemperatureReporter` , který je vytvořený <xref:System.IObserver%601?displayProperty=nameWithType> implementace s argumentem obecného typu z `Temperature`.  
   
      [!code-csharp[Conceptual.ObserverDesign.HowTo#8](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.observerdesign.howto/cs/observer.cs#8)]
      [!code-vb[Conceptual.ObserverDesign.HowTo#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.observerdesign.howto/vb/observer.vb#8)]  
   
-2.  Pokud pozorovatel můžete zastavit příjem oznámení před volání zprostředkovatele jeho <xref:System.IObserver%601.OnCompleted%2A?displayProperty=nameWithType> implementace, definujte privátní proměnnou, která bude obsahovat <xref:System.IDisposable> implementace vrácenou poskytovatele <xref:System.IObservable%601.Subscribe%2A?displayProperty=nameWithType> – metoda. Také byste měli definovat metodu odběr, který volá zprostředkovatele <xref:System.IObservable%601.Subscribe%2A> metoda a úložišť vráceného <xref:System.IDisposable> objektu. Například následující kód definuje privátní proměnnou s názvem `unsubscriber` a definuje `Subscribe` metodu, která volá zprostředkovatele <xref:System.IObservable%601.Subscribe%2A> metoda a přiřadí vráceného objektu na `unsubscriber` proměnné.  
+2. Pokud pozorovatel můžete zastavit příjem oznámení před volání zprostředkovatele jeho <xref:System.IObserver%601.OnCompleted%2A?displayProperty=nameWithType> implementace, definujte privátní proměnnou, která bude obsahovat <xref:System.IDisposable> implementace vrácenou poskytovatele <xref:System.IObservable%601.Subscribe%2A?displayProperty=nameWithType> – metoda. Také byste měli definovat metodu odběr, který volá zprostředkovatele <xref:System.IObservable%601.Subscribe%2A> metoda a úložišť vráceného <xref:System.IDisposable> objektu. Například následující kód definuje privátní proměnnou s názvem `unsubscriber` a definuje `Subscribe` metodu, která volá zprostředkovatele <xref:System.IObservable%601.Subscribe%2A> metoda a přiřadí vráceného objektu na `unsubscriber` proměnné.  
   
      [!code-csharp[Conceptual.ObserverDesign.HowTo#9](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.observerdesign.howto/cs/observer.cs#9)]
      [!code-vb[Conceptual.ObserverDesign.HowTo#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.observerdesign.howto/vb/observer.vb#9)]  
   
-3.  Definujte metodu, která umožňuje pozorovatel k ukončení přijímání oznámení před volání zprostředkovatele jeho <xref:System.IObserver%601.OnCompleted%2A?displayProperty=nameWithType> implementace, pokud se tato funkce vyžaduje. Následující příklad definuje `Unsubscribe` metody.  
+3. Definujte metodu, která umožňuje pozorovatel k ukončení přijímání oznámení před volání zprostředkovatele jeho <xref:System.IObserver%601.OnCompleted%2A?displayProperty=nameWithType> implementace, pokud se tato funkce vyžaduje. Následující příklad definuje `Unsubscribe` metody.  
   
      [!code-csharp[Conceptual.ObserverDesign.HowTo#10](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.observerdesign.howto/cs/observer.cs#10)]
      [!code-vb[Conceptual.ObserverDesign.HowTo#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.observerdesign.howto/vb/observer.vb#10)]  
   
-4.  Poskytují implementace tři metody určené <xref:System.IObserver%601> rozhraní: <xref:System.IObserver%601.OnNext%2A?displayProperty=nameWithType>, <xref:System.IObserver%601.OnError%2A?displayProperty=nameWithType>, a <xref:System.IObserver%601.OnCompleted%2A?displayProperty=nameWithType>. V závislosti na poskytovateli a potřebám vaší aplikace <xref:System.IObserver%601.OnError%2A> a <xref:System.IObserver%601.OnCompleted%2A> metody mohou být zástupné procedury implementace. Všimněte si, že <xref:System.IObserver%601.OnError%2A> metody by nemělo vyřizovat předaný <xref:System.Exception> objektu jako výjimku a <xref:System.IObserver%601.OnCompleted%2A> metoda je zdarma pro volání zprostředkovatele <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> implementace. Následující příklad ukazuje <xref:System.IObserver%601> provádění `TemperatureReporter` třídy.  
+4. Poskytují implementace tři metody určené <xref:System.IObserver%601> rozhraní: <xref:System.IObserver%601.OnNext%2A?displayProperty=nameWithType>, <xref:System.IObserver%601.OnError%2A?displayProperty=nameWithType>, a <xref:System.IObserver%601.OnCompleted%2A?displayProperty=nameWithType>. V závislosti na poskytovateli a potřebám vaší aplikace <xref:System.IObserver%601.OnError%2A> a <xref:System.IObserver%601.OnCompleted%2A> metody mohou být zástupné procedury implementace. Všimněte si, že <xref:System.IObserver%601.OnError%2A> metody by nemělo vyřizovat předaný <xref:System.Exception> objektu jako výjimku a <xref:System.IObserver%601.OnCompleted%2A> metoda je zdarma pro volání zprostředkovatele <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> implementace. Následující příklad ukazuje <xref:System.IObserver%601> provádění `TemperatureReporter` třídy.  
   
      [!code-csharp[Conceptual.ObserverDesign.HowTo#11](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.observerdesign.howto/cs/observer.cs#11)]
      [!code-vb[Conceptual.ObserverDesign.HowTo#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.observerdesign.howto/vb/observer.vb#11)]  

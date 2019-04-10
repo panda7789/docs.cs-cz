@@ -9,20 +9,19 @@ helpviewer_keywords:
 - decision structures [Visual Basic]
 - conditional statements [Visual Basic], decision structures
 ms.assetid: 2e2e0895-4483-442a-b17c-26aead751ec2
-ms.openlocfilehash: 20b60fb425278dacb56ee5f888967554a1f76aeb
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 4a76b2565c343e69ac3c11441035a7682a8f08ec
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58825375"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59318933"
 ---
 # <a name="decision-structures-visual-basic"></a>Struktury rozhodování (Visual Basic)
 Visual Basic umožňuje podmínky testu a provádět různé operace v závislosti na výsledcích testu. Můžete otestovat na hodnotu true nebo false pro různé hodnoty výrazu, nebo pro různé výjimky, které jsou generovány, pokud provedete sérii tvrzení, podmínku.  
   
  Následující ilustrace znázorňuje strukturu rozhodnutí, která otestuje podmínku je true a má různé akce v závislosti na tom, zda je hodnota true nebo false.  
   
- ![Vývojový diagram If... Potom... Ostatní konstrukce](../../../../visual-basic/programming-guide/language-features/control-flow/media/ifthenelse.gif "IfThenElse –")  
-Provádění různých akcí, pokud je podmínka true, a pokud je false  
+ ![Vývojový diagram If... Potom... Ostatní konstrukce.](./media/decision-structures/if-then-else-construction.gif)  
   
 ## <a name="ifthenelse-construction"></a>If...Then...Else Construction  
  `If...Then...Else` konstrukce umožňují test pro jednu nebo více podmínek a spuštění jednoho nebo více příkazů v závislosti na každé podmínky. Můžete otestovat podmínek a akcí následujícími způsoby:  
@@ -52,4 +51,4 @@ Provádění různých akcí, pokud je podmínka true, a pokud je false
 - [Struktury smyčky](../../../../visual-basic/programming-guide/language-features/control-flow/loop-structures.md)
 - [Ostatní řídicí struktury](../../../../visual-basic/programming-guide/language-features/control-flow/other-control-structures.md)
 - [Vnořené řídicí struktury](../../../../visual-basic/programming-guide/language-features/control-flow/nested-control-structures.md)
-- [Operátor If](../../../../visual-basic/language-reference/operators/if-operator.md)
+- [If – operátor](../../../../visual-basic/language-reference/operators/if-operator.md)

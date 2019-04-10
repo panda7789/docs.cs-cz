@@ -10,21 +10,21 @@ helpviewer_keywords:
 - images [Windows Forms], creating
 - GDI+, creating images
 ms.assetid: 162861f9-f050-445e-8abb-b2c43a918b8b
-ms.openlocfilehash: 5682b2f0183cbeb8bae377423bb76caa0fbaf7cb
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 79eae4d37c056fc95ac73c78e00dd1a2b68bcd24
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59223625"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59324198"
 ---
 # <a name="how-to-create-graphics-objects-for-drawing"></a>Postupy: Vytváření grafických objektů pro kreslení
 Předtím, než můžete kreslení čar a obrazců, vykreslení textu, nebo zobrazení a manipulaci s obrázky s [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)], je potřeba vytvořit <xref:System.Drawing.Graphics> objektu. <xref:System.Drawing.Graphics> Objekt představuje [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] kreslení ploše a je objekt, který se používá k vytvoření grafické obrázky.  
   
  Při práci s grafikou existují dva kroky:  
   
-1.  Vytváření <xref:System.Drawing.Graphics> objektu.  
+1. Vytváření <xref:System.Drawing.Graphics> objektu.  
   
-2.  Použití <xref:System.Drawing.Graphics> objektů pro kreslení čar a obrazců, vykreslení textu, nebo zobrazení a manipulaci s obrázky.  
+2. Použití <xref:System.Drawing.Graphics> objektů pro kreslení čar a obrazců, vykreslení textu, nebo zobrazení a manipulaci s obrázky.  
   
 ## <a name="creating-a-graphics-object"></a>Vytvoření objektu grafiky  
  Grafický objekt můžete vytvořit mnoha různými způsoby.  
@@ -48,11 +48,11 @@ Předtím, než můžete kreslení čar a obrazců, vykreslení textu, nebo zobr
   
 #### <a name="to-obtain-a-reference-to-a-graphics-object-from-the-painteventargs-in-the-paint-event"></a>K získání odkazu na objekt grafiky z PaintEventArgs v událost malby  
   
-1.  Deklarovat <xref:System.Drawing.Graphics> objektu.  
+1. Deklarovat <xref:System.Drawing.Graphics> objektu.  
   
-2.  Přiřazení proměnné odkazovat <xref:System.Drawing.Graphics> objekt předán jako součást <xref:System.Windows.Forms.PaintEventArgs>.  
+2. Přiřazení proměnné odkazovat <xref:System.Drawing.Graphics> objekt předán jako součást <xref:System.Windows.Forms.PaintEventArgs>.  
   
-3.  Vložte kód pro vykreslení formulář nebo ovládací prvek.  
+3. Vložte kód pro vykreslení formulář nebo ovládací prvek.  
   
      Následující příklad ukazuje způsob vytvoření odkazu <xref:System.Drawing.Graphics> objektu z <xref:System.Windows.Forms.PaintEventArgs> v <xref:System.Windows.Forms.Control.Paint> události:  
   

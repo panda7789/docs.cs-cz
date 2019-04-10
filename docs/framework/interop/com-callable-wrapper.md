@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: d04be3b5-27b9-4f5b-8469-a44149fabf78
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b8e2cab36c1dd990a1bf848067e7ae81baeb9ed8
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: a6d205cc9b13a43cd3b519c2a262f3db767ace7b
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57355048"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59309482"
 ---
 # <a name="com-callable-wrapper"></a>Obálka volatelná aplikacemi COM
 
@@ -27,7 +27,7 @@ Jakmile klient modelu COM zavolá objekt rozhraní .NET, vytvoří modul CLR (Co
 
 Modul runtime vytvoří pro spravovaný objekt přesně jeden objekt CCW, bez ohledu na počet klientů modelu COM, kteří vyžadují služby modelu. Jak znázorňuje následující obrázek, může větší počet klientů modelu COM používat odkaz na objekt CCW, který zpřístupňuje rozhraní INew. Na druhou stranu platí, že objekt CCW obsahuje jediný odkaz na spravovaný objekt, který implementuje rozhraní a u kterého je prováděno uvolnění paměti. Klienti modelu COM a rozhraní .NET mohou vytvářet požadavky na stejný spravovaný objekt současně.
 
-![Obálka volatelná aplikacemi COM](./media/ccw.gif "objekt ccw") objekty přístup k rozhraní .NET prostřednictvím obálky volatelná aplikacemi COM
+![Více klientům modelu COM, která uchovává odkaz na objekt CCW, který zpřístupňuje INew.](./media/com-callable-wrapper/com-callable-wrapper-clients.gif)
 
 Obálky volatelné modelem COM jsou pro ostatní třídy, které jsou spuštěny v rámci rozhraní .NET Framework, neviditelné. Jejich hlavním účelem je zařadit volání mezi spravovaný a nespravovaný kód. Nicméně objekty CCW provádějí také správu identity a doby života spravovaných objektů, které zabalují.
 
@@ -43,9 +43,9 @@ Na rozdíl od objektu, který provádí zabalení klienta rozhraní .NET, je obj
 
 Objekt CCW zpřístupňuje všechny veřejné, viditelný modulem COM rozhraní, datových typů a návratové hodnoty klientům modelu COM způsobem, který je konzistentní s modelu COM vynucení interakce založené na rozhraní. Klient modelu COM volání metod pro objekt rozhraní .NET Framework je stejný jako volání metod na objekt modelu COM.
 
-Chcete-li vytvořit tento bezproblémový přístup, objekt CCW vyrábí tradiční rozhraní modelu COM, jako například **IUnknown** a **IDispatch**. Jak ukazuje následující obrázek, objekt CCW udržuje jeden odkaz na objekt .NET, který ho zalamoval. Jak klient COM a objekt .NET umožnění vzájemné komunikace přes proxy a zástupných procedur konstrukce CCW.
+Chcete-li vytvořit tento bezproblémový přístup, objekt CCW vyrábí tradiční rozhraní modelu COM, jako například **IUnknown** a **IDispatch**. Jak ukazuje následující obrázek, objekt CCW udržuje jeden odkaz na objekt .NET, který ho zalamoval. Klient COM a objektu rozhraní .NET komunikovat mezi sebou prostřednictvím proxy a zástupných procedur konstrukce CCW.
 
-![Rozhraní COM](./media/ccwwithinterfaces.gif "ccwwithinterfaces") rozhraní COM a obálka volatelná aplikacemi COM
+![Diagram znázorňující, jak objekt CCW vyrábí rozhraní modelu COM.](./media/com-callable-wrapper/com-callable-wrapper-interfaces.gif)
 
 Kromě zpřístupnění rozhraní, která jsou explicitně implementováno třídou ve spravovaném prostředí, rozhraní .NET Framework poskytuje implementace rozhraní modelu COM, které jsou uvedeny v následující tabulce jménem objekt. Třída rozhraní .NET výchozí chování můžete přepsat tím, že poskytuje vlastní implementaci těchto rozhraní. Nicméně vždy modul runtime poskytuje implementaci pro **IUnknown** a **IDispatch** rozhraní.
 
@@ -197,7 +197,7 @@ Pokud vaše aplikace vyžaduje volání časné vazby na metody rozhraní událo
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Runtime.InteropServices.ClassInterfaceAttribute>
-- [COM – obálky](com-wrappers.md)
+- [Obálky COM](com-wrappers.md)
 - [Vystavení komponent architektury .NET Framework pro COM](exposing-dotnet-components-to-com.md)
 - [Kvalifikace typů .NET pro spolupráci](qualifying-net-types-for-interoperation.md)
 - [Obálka volatelná za běhu](runtime-callable-wrapper.md)

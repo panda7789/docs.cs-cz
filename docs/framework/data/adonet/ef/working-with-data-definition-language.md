@@ -1,18 +1,18 @@
 ---
-title: Práce s jazyk pro definování dat
+title: Práce s jazykem DDL (Data Description Language)
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: ec50083d-44f4-4093-9b23-5eacd601f96e
-ms.openlocfilehash: 9ca3732de5e4cfa07fe08dec78edc9de23a1a036
-ms.sourcegitcommit: c6f69b0cf149f6b54483a6d5c2ece222913f43ce
+ms.openlocfilehash: 75a214ad1099bf48dcb2c2d3b36bf07dc0524f8d
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55904379"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59313239"
 ---
-# <a name="working-with-data-definition-language"></a>Práce s jazyk pro definování dat
+# <a name="working-with-data-definition-language"></a>Práce s jazykem DDL (Data Description Language)
 Počínaje [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] verze 4, [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] podporuje jazyk pro definování dat (DDL). To umožňuje vytvořit nebo odstranit instanci databáze na základě připojovacího řetězce a metadata modelu úložiště (SSDL).  
   
  Následující metody u <xref:System.Data.Objects.ObjectContext> můžete provádět následující připojovací řetězec a obsah souborů SSDL: vytvoření nebo odstranění databáze, zkontrolujte, jestli databáze existuje a zobrazit vygenerovaný skript jazyka DDL:  
@@ -36,9 +36,9 @@ Počínaje [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] ve
   
 #### <a name="to-define-a-database-based-on-the-existing-model"></a>Chcete-li definovat databáze založené na existující model  
   
-1.  Vytvořte konzolovou aplikaci.  
+1. Vytvořte konzolovou aplikaci.  
   
-2.  Přidáte existující model pro vaši aplikaci.  
+2. Přidáte existující model pro vaši aplikaci.  
   
     1.  Přidat prázdný model s názvem `SchoolModel`. Chcete-li vytvořit prázdný model, najdete v článku [jak: Vytvořit nový edmx soubor](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cc716703(v=vs.100)) tématu.  
   
@@ -48,7 +48,7 @@ Počínaje [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] ve
   
     2.  Otevřete soubor SchoolModel.edmx a vložte obsah v rámci `edmx:Runtime` značky.  
   
-3.  Přidejte následující kód do hlavní funkce. Kód inicializuje řetězec připojení k vašemu databázovému serveru, zobrazení skriptu jazyka DDL, vytvoří databázi, přidá nové entity v kontextu a uloží změny do databáze.  
+3. Přidejte následující kód do hlavní funkce. Kód inicializuje řetězec připojení k vašemu databázovému serveru, zobrazení skriptu jazyka DDL, vytvoří databázi, přidá nové entity v kontextu a uloží změny do databáze.  
   
      [!code-csharp[DP ObjectServices Concepts#DDL](../../../../../samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#ddl)]
      [!code-vb[DP ObjectServices Concepts#DDL](../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#ddl)]

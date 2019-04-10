@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - service creation [WCF]
 ms.assetid: 7cf21bfe-23bd-46aa-8033-609f851dbf76
-ms.openlocfilehash: 32586ad3ec62630e6abafd33b385788c20155b28
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 6d9ea3b877e7c735cf789039b2a6956037372888
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59178487"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59330555"
 ---
 # <a name="basic-programming-lifecycle"></a>Základní programovací životní cyklus
 Windows Communication Foundation (WCF) umožňuje aplikacím komunikovat, jestli jsou na stejném počítači, na Internetu, nebo na různých aplikačních platformách. Toto téma popisuje úlohy, které jsou nutné k vytvoření aplikace WCF. Ukázkové aplikace práci, naleznete v tématu [kurz Začínáme](../../../docs/framework/wcf/getting-started-tutorial.md).  
@@ -17,15 +17,15 @@ Windows Communication Foundation (WCF) umožňuje aplikacím komunikovat, jestli
 ## <a name="the-basic-tasks"></a>Základní úlohy  
  Provádět základní úlohy jsou v pořadí:  
   
-1.  Definování kontraktu služby. Kontrakt služby specifikuje podpis služby, data, která jej vymění a dalších smluvně požadovaná data. Další informace najdete v tématu [navrhování kontraktů služby](../../../docs/framework/wcf/designing-service-contracts.md).  
+1. Definování kontraktu služby. Kontrakt služby specifikuje podpis služby, data, která jej vymění a dalších smluvně požadovaná data. Další informace najdete v tématu [navrhování kontraktů služby](../../../docs/framework/wcf/designing-service-contracts.md).  
   
-2.  Implementujte kontrakt. Implementace kontraktu služby, vytvořte třídu, která implementuje tento kontrakt a zadejte vlastní chování, které by měly mít modulu runtime. Další informace najdete v tématu [implementace kontraktů služeb](../../../docs/framework/wcf/implementing-service-contracts.md).  
+2. Implementujte kontrakt. Implementace kontraktu služby, vytvořte třídu, která implementuje tento kontrakt a zadejte vlastní chování, které by měly mít modulu runtime. Další informace najdete v tématu [implementace kontraktů služeb](../../../docs/framework/wcf/implementing-service-contracts.md).  
   
-3.  Nakonfigurujte službu tak, že zadáte koncové body a další informace o chování. Další informace najdete v tématu [konfigurace služby](../../../docs/framework/wcf/configuring-services.md).  
+3. Nakonfigurujte službu tak, že zadáte koncové body a další informace o chování. Další informace najdete v tématu [konfigurace služby](../../../docs/framework/wcf/configuring-services.md).  
   
-4.  Hostování služby. Další informace najdete v tématu [hostování služeb](../../../docs/framework/wcf/hosting-services.md).  
+4. Hostování služby. Další informace najdete v tématu [hostování služeb](../../../docs/framework/wcf/hosting-services.md).  
   
-5.  Sestavení klientské aplikace. Další informace najdete v tématu [sestavování klientů](../../../docs/framework/wcf/building-clients.md).  
+5. Sestavení klientské aplikace. Další informace najdete v tématu [sestavování klientů](../../../docs/framework/wcf/building-clients.md).  
   
  I když témata v této části použijte toto pořadí, některé scénáře, nespouštějte na začátku. Například pokud chcete vytvořit klienta pro už existující službu, můžete začít v kroku 5. Nebo pokud vytváříte službu, která bude používat ostatní, můžete přeskočit krok 5.  
   

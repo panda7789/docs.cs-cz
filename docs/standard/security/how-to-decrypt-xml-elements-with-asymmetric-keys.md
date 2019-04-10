@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: dd5de491-dafe-4b94-966d-99714b2e754a
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 647ac3898924810eb16cbeb8c67f00e6465c8d80
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 303c7db984b682d24a8f0e00160eb2d0827a84e6
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54547761"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59314422"
 ---
 # <a name="how-to-decrypt-xml-elements-with-asymmetric-keys"></a>Postupy: Dešifrování elementů XML pomocí asymetrických klíčů
 Můžete použít třídy v <xref:System.Security.Cryptography.Xml> oboru názvů k šifrování a dešifrování element v dokumentu XML.  Šifrování XML je standardní způsob pro výměnu nebo ukládání zašifrovaných dat XML, nemusíme mít starosti se snadno číst data.  Další informace o standardních šifrování XML, naleznete v tématu World Wide Web Consortium (W3C) doporučení [podpis syntaxe jazyka XML a zpracování](https://www.w3.org/TR/xmldsig-core/).  
@@ -32,32 +32,32 @@ Můžete použít třídy v <xref:System.Security.Cryptography.Xml> oboru názv�
   
 ### <a name="to-decrypt-an-xml-element-with-an-asymmetric-key"></a>K dešifrování platný element XML s asymetrický klíč  
   
-1.  Vytvoření <xref:System.Security.Cryptography.CspParameters> objektu a zadejte název kontejneru klíčů.  
+1. Vytvoření <xref:System.Security.Cryptography.CspParameters> objektu a zadejte název kontejneru klíčů.  
   
      [!code-csharp[HowToDecryptXMLElementAsymmetric#2](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToDecryptXMLElementAsymmetric/cs/sample.cs#2)]
      [!code-vb[HowToDecryptXMLElementAsymmetric#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToDecryptXMLElementAsymmetric/vb/sample.vb#2)]  
   
-2.  Načíst dříve vytvořenou asymetrického klíče z kontejneru použijte <xref:System.Security.Cryptography.RSACryptoServiceProvider> objektu.  Klíč je automaticky načte z kontejneru klíčů při předání <xref:System.Security.Cryptography.CspParameters> objektu <xref:System.Security.Cryptography.RSACryptoServiceProvider> konstruktoru.  
+2. Načíst dříve vytvořenou asymetrického klíče z kontejneru použijte <xref:System.Security.Cryptography.RSACryptoServiceProvider> objektu.  Klíč je automaticky načte z kontejneru klíčů při předání <xref:System.Security.Cryptography.CspParameters> objektu <xref:System.Security.Cryptography.RSACryptoServiceProvider> konstruktoru.  
   
      [!code-csharp[HowToDecryptXMLElementAsymmetric#3](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToDecryptXMLElementAsymmetric/cs/sample.cs#3)]
      [!code-vb[HowToDecryptXMLElementAsymmetric#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToDecryptXMLElementAsymmetric/vb/sample.vb#3)]  
   
-3.  Vytvořte nový <xref:System.Security.Cryptography.Xml.EncryptedXml> objektu k dešifrování dokumentu.  
+3. Vytvořte nový <xref:System.Security.Cryptography.Xml.EncryptedXml> objektu k dešifrování dokumentu.  
   
      [!code-csharp[HowToDecryptXMLElementAsymmetric#5](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToDecryptXMLElementAsymmetric/cs/sample.cs#5)]
      [!code-vb[HowToDecryptXMLElementAsymmetric#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToDecryptXMLElementAsymmetric/vb/sample.vb#5)]  
   
-4.  Přidáte mapování klíč nebo název přidružení klíče RSA k prvku v rámci dokumentu, který by měl být dešifrován.  Je nutné použít stejný název klíče, který jste použili při šifrování dokumentu.  Všimněte si, že tento název je oddělené od název používaný k identifikaci klíče v kontejneru klíčů určeném v kroku 1.  
+4. Přidáte mapování klíč nebo název přidružení klíče RSA k prvku v rámci dokumentu, který by měl být dešifrován.  Je nutné použít stejný název klíče, který jste použili při šifrování dokumentu.  Všimněte si, že tento název je oddělené od název používaný k identifikaci klíče v kontejneru klíčů určeném v kroku 1.  
   
      [!code-csharp[HowToDecryptXMLElementAsymmetric#6](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToDecryptXMLElementAsymmetric/cs/sample.cs#6)]
      [!code-vb[HowToDecryptXMLElementAsymmetric#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToDecryptXMLElementAsymmetric/vb/sample.vb#6)]  
   
-5.  Volání <xref:System.Security.Cryptography.Xml.EncryptedXml.DecryptDocument%2A> metoda k dešifrování <`EncryptedData`> element.  Tato metoda používá klíč RSA k dešifrování klíče relace a automaticky použije klíč relace k dešifrování XML element.  Také automaticky nahradí <`EncryptedData`> element s původní ve formátu prostého textu.  
+5. Volání <xref:System.Security.Cryptography.Xml.EncryptedXml.DecryptDocument%2A> metoda k dešifrování <`EncryptedData`> element.  Tato metoda používá klíč RSA k dešifrování klíče relace a automaticky použije klíč relace k dešifrování XML element.  Také automaticky nahradí <`EncryptedData`> element s původní ve formátu prostého textu.  
   
      [!code-csharp[HowToDecryptXMLElementAsymmetric#7](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToDecryptXMLElementAsymmetric/cs/sample.cs#7)]
      [!code-vb[HowToDecryptXMLElementAsymmetric#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToDecryptXMLElementAsymmetric/vb/sample.vb#7)]  
   
-6.  Uložte dokument XML.  
+6. Uložte dokument XML.  
   
      [!code-csharp[HowToDecryptXMLElementAsymmetric#8](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToDecryptXMLElementAsymmetric/cs/sample.cs#8)]
      [!code-vb[HowToDecryptXMLElementAsymmetric#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToDecryptXMLElementAsymmetric/vb/sample.vb#8)]  

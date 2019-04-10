@@ -5,12 +5,12 @@ helpviewer_keywords:
 - animation [WPF], objects with key frames
 - key frames [WPF], animating objects with
 ms.assetid: b1f15ba9-cac7-4cea-8699-5c6b55c05c5e
-ms.openlocfilehash: 0b2b517410c6cbc4f3deca13e5948c8de583fd3d
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: b0a0f7c00125a43228a2658415b72f4d541f37be
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59177798"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59315839"
 ---
 # <a name="how-to-animate-an-object-by-using-key-frames"></a>Postupy: Animace objektu pomocí klíčových snímků
 Tento příklad ukazuje, jak pro animaci objektu, který v tomto příkladu je <xref:System.Windows.Controls.Page.Background%2A> vlastnost <xref:System.Windows.Controls.Page> ovládacího prvku s použitím klíčových snímků.  
@@ -18,13 +18,13 @@ Tento příklad ukazuje, jak pro animaci objektu, který v tomto příkladu je <
 ## <a name="example"></a>Příklad  
  V následujícím příkladu <xref:System.Windows.Media.Animation.ObjectAnimationUsingKeyFrames> třídy animace barev změní pro <xref:System.Windows.Controls.Page.Background%2A> vlastnost <xref:System.Windows.Controls.Page> ovládacího prvku. Příklad animace změní na štětec pozadí různých v pravidelných intervalech. Používá tato animace <xref:System.Windows.Media.Animation.DiscreteObjectKeyFrame> třídy za účelem vytvoření tří různých klíčových snímků. Animace pomocí klíčových snímků následujícím způsobem:  
   
-1.  Na konci prvního druhé animuje instance <xref:System.Windows.Media.LinearGradientBrush> třídy. Tato část. Příklad se týká lineárního přechodu na barvu pozadí tak, aby změní barvu z žlutá na oranžovou na červenou.  
+1. Na konci prvního druhé animuje instance <xref:System.Windows.Media.LinearGradientBrush> třídy. Tato část. Příklad se týká lineárního přechodu na barvu pozadí tak, aby změní barvu z žlutá na oranžovou na červenou.  
   
-2.  Na konci do příští sekundy animuje instance <xref:System.Windows.Media.RadialGradientBrush> třídy. Tato část. Příklad se týká paprskového přechodu na barvu pozadí tak, aby změní barvu z prázdné na modrou na černou.  
+2. Na konci do příští sekundy animuje instance <xref:System.Windows.Media.RadialGradientBrush> třídy. Tato část. Příklad se týká paprskového přechodu na barvu pozadí tak, aby změní barvu z prázdné na modrou na černou.  
   
-3.  Na konci třetího druhé animuje instance <xref:System.Windows.Media.DrawingBrush> třídy. Tato část příklad se týká šachovnicový vzor na pozadí.  
+3. Na konci třetího druhé animuje instance <xref:System.Windows.Media.DrawingBrush> třídy. Tato část příklad se týká šachovnicový vzor na pozadí.  
   
-4.  Animace začne znovu a opakuje bez omezení.  
+4. Animace začne znovu a opakuje bez omezení.  
   
 > [!NOTE]
 >  <xref:System.Windows.Media.Animation.DiscreteObjectKeyFrame> je jediným typem klíčový snímek, který vám pomůže s <xref:System.Windows.Media.Animation.ObjectAnimationUsingKeyFrames> třídy. Klíč snímků jako <xref:System.Windows.Media.Animation.DiscreteObjectKeyFrame> vytvořit náhlých změn v hodnotách, to znamená, změny barev v tomto příkladu dojde k náhlému.  

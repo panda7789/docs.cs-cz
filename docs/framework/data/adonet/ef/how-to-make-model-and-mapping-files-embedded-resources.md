@@ -2,12 +2,12 @@
 title: 'Postupy: Vytvoření vložených prostředků modelu a souborů mapování'
 ms.date: 03/30/2017
 ms.assetid: 20dfae4d-e95a-4264-9540-f5ad23b462d3
-ms.openlocfilehash: b00ccdd0a1fc1cb22cf7cc0d0a3177dcc0e8017f
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: eae3681664ab1fd095487a7b7ed395302faf2588
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59138583"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59329528"
 ---
 # <a name="how-to-make-model-and-mapping-files-embedded-resources"></a>Postupy: Vytvoření vložených prostředků modelu a souborů mapování
 [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Umožňuje nasadit modelu a souborů mapování jako vložené prostředky aplikace. Sestavení s vloženým modelem a souborů mapování musí být ve stejné doméně aplikace jako připojení entity načíst. Další informace najdete v tématu [připojovací řetězce](../../../../../docs/framework/data/adonet/ef/connection-strings.md). Ve výchozím nastavení [!INCLUDE[adonet_edm](../../../../../includes/adonet-edm-md.md)] nástroje vložení modelu a souborů mapování. Když definujete modelu a souborů mapování ručně, pomocí tohoto postupu můžete zajistit, že jsou soubory nasazeny jako vložené prostředky spolu s [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] aplikace.  
@@ -17,13 +17,13 @@ ms.locfileid: "59138583"
   
 ### <a name="to-embed-model-and-mapping-files"></a>Chcete-li vložit modelu a souborů mapování  
   
-1.  V **Průzkumníka řešení**, vyberte soubor koncepční (.csdl).  
+1. V **Průzkumníka řešení**, vyberte soubor koncepční (.csdl).  
   
-2.  V **vlastnosti** podokně nastavte **akce sestavení** k **integrovaný prostředek**.  
+2. V **vlastnosti** podokně nastavte **akce sestavení** k **integrovaný prostředek**.  
   
-3.  Opakujte kroky 1 a 2 pro soubor úložiště (ssdl) a soubor mapování (.msl).  
+3. Opakujte kroky 1 a 2 pro soubor úložiště (ssdl) a soubor mapování (.msl).  
   
-4.  V **Průzkumníka řešení**, poklikejte na soubor App.config a potom změňte `Metadata` parametr `connectionString` atributů na základě jedné z následujících formátů:  
+4. V **Průzkumníka řešení**, poklikejte na soubor App.config a potom změňte `Metadata` parametr `connectionString` atributů na základě jedné z následujících formátů:  
   
     -   `Metadata=` `res://<assemblyFullName>/<resourceName>;`  
   

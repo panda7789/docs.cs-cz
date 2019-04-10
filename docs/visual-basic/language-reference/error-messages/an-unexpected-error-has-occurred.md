@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrAppModel_CantGetMemoryMappedFile
 ms.assetid: 0d9f2a30-ff72-4355-8060-744f22339359
-ms.openlocfilehash: 82b513b89d661e49853e55f26df13eb354945038
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 9aa7ba0babe0a89942e320a76e07c05162b31700
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58828588"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59313604"
 ---
 # <a name="an-unexpected-error-has-occurred-because-an-operating-system-resource-required-for-single-instance-startup-cannot-be-acquired"></a>Došlo k neočekávané chybě, protože nelze získat prostředek operačního systému požadovaný ke spuštění jedné instance.
 Aplikaci nebylo možné získat prostředek operačního systému nutné. Zde jsou některé možné příčiny tohoto problému:  
@@ -22,16 +22,16 @@ Aplikaci nebylo možné získat prostředek operačního systému nutné. Zde js
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1.  Zkontrolujte, zda má dostatečná oprávnění k vytvoření aplikace s názvem objekty operačního systému.  
+1. Zkontrolujte, zda má dostatečná oprávnění k vytvoření aplikace s názvem objekty operačního systému.  
   
-2.  Zkontrolujte, zda modul common language runtime má dostatečná oprávnění k vytvoření souborů mapovaných do paměti.  
+2. Zkontrolujte, zda modul common language runtime má dostatečná oprávnění k vytvoření souborů mapovaných do paměti.  
   
-3.  Restartujte počítač a zrušte všechny procesy, které mohou být zdroje potřebné pro připojení k původní instanci aplikace.  
+3. Restartujte počítač a zrušte všechny procesy, které mohou být zdroje potřebné pro připojení k původní instanci aplikace.  
   
-4.  Všimněte si okolnosti, kdy došlo k chybě a volat Microsoft Product Support Services  
+4. Všimněte si okolnosti, kdy došlo k chybě a volat Microsoft Product Support Services  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Stránka Aplikace, Návrhář projektu (Visual Basic)](/visualstudio/ide/reference/application-page-project-designer-visual-basic)
+- [Stránka Aplikace, návrhář projektu (Visual Basic)](/visualstudio/ide/reference/application-page-project-designer-visual-basic)
 - [Základy ladicího programu](/visualstudio/debugger/debugger-basics)
 - [Kontaktujte nás](/visualstudio/ide/talk-to-us)

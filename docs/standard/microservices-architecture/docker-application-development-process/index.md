@@ -1,15 +1,15 @@
 ---
-title: Aplikace založené na proces vývoje pro Docker
+title: Proces vývoje aplikací založených na Dockeru
 description: Získáte základní přehled možností pro vývoj aplikací založených na Dockeru. Díky volbě Visual Studio pro Windows, Visual Studio pro Mac nebo Visual Studio Code pro podporu více platforem (Windows, Mac a Linux).
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/27/2018
-ms.openlocfilehash: 219a562459be7fb1114dfdd9f139c938d1282c5c
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.openlocfilehash: 55d80e3d9f464b940d17b13a598bdab57631a8e4
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58465032"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59324081"
 ---
 # <a name="development-process-for-docker-based-applications"></a>Proces vývoje pro aplikace založené na Dockeru
 
@@ -21,7 +21,7 @@ ms.locfileid: "58465032"
 
 Ať už dáváte přednost úplné a výkonné IDE nebo editoru jednoduchý a flexibilní, společnost Microsoft má nástroje, které můžete použít pro vývoj aplikací Dockeru.
 
-**Visual Studio (for Windows).** Při vývoji aplikací dockeru pomocí sady Visual Studio, doporučujeme použít Visual Studio 2017 verze 15.7 nebo novější, která se dodává s nástroji pro Docker již integrované. Nástroje pro Docker umožňují vyvíjet, spouštět a ověřovat aplikace přímo v cílovém prostředí Docker. Můžete stisknutím klávesy F5 ke spuštění a ladění aplikace (jedním kontejnerem nebo více kontejnerů) přímo do hostitele Docker nebo stisknutím kláves CTRL + F5, upravit a aktualizovat aplikace bez nutnosti znovu sestavovat kontejner. Toto je nejvýkonnější vývoj volbou pro aplikace založené na Dockeru.
+**Visual Studio (pro Windows).** Při vývoji aplikací dockeru pomocí sady Visual Studio, doporučujeme použít Visual Studio 2017 verze 15.7 nebo novější, která se dodává s nástroji pro Docker již integrované. Nástroje pro Docker umožňují vyvíjet, spouštět a ověřovat aplikace přímo v cílovém prostředí Docker. Můžete stisknutím klávesy F5 ke spuštění a ladění aplikace (jedním kontejnerem nebo více kontejnerů) přímo do hostitele Docker nebo stisknutím kláves CTRL + F5, upravit a aktualizovat aplikace bez nutnosti znovu sestavovat kontejner. Toto je nejvýkonnější vývoj volbou pro aplikace založené na Dockeru.
 
 **Visual Studio for Mac.** Je integrované vývojové prostředí, vývoj Xamarin Studio, spuštěné v systému macOS a podporuje Docker od poloviny 2017. To by měl být upřednostňovanou volbu pro vývojáře pracující na počítačích Mac, které také chtějí využívat výkonné integrované vývojové prostředí.
 
@@ -32,7 +32,7 @@ Nainstalováním [Docker Community Edition (CE)](https://www.docker.com/communit
 ### <a name="additional-resources"></a>Další zdroje
 
 - **Visual Studio**. Oficiální web. \
-  [https://visualstudio.microsoft.com/vs/](https://visualstudio.microsoft.com/vs/)
+  [https://visualstudio.microsoft.com/vs/](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link)
 
 - **Visual Studio Code**. Oficiální web. \
   [https://code.visualstudio.com/download](https://code.visualstudio.com/download)

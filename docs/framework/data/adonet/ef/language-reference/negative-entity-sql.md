@@ -2,12 +2,12 @@
 title: '- (Negativní) (Entity SQL)'
 ms.date: 03/30/2017
 ms.assetid: 208e54ef-4741-4ec5-89d6-6ff700863cb0
-ms.openlocfilehash: 343f53b2a6fc54a5be6f8673348384567b48262b
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 6e5512546faeaa9760dcf135165a999a6f95322b
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59102840"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59311003"
 ---
 # <a name="--negative-entity-sql"></a>-(Záporné) (Entity SQL)
 Vrátí negativní hodnotu číselného výrazu.  
@@ -31,9 +31,9 @@ Vrátí negativní hodnotu číselného výrazu.
 ## <a name="example"></a>Příklad  
  Pomocí následujícího dotazu Entity SQL-aritmetického operátoru vrátit negativní hodnotu číselného výrazu. Dotaz je založen na modelu Sales AdventureWorks. Kompilace a spuštění tohoto dotazu, postupujte podle těchto kroků:  
   
-1.  Postupujte podle pokynů v [jak: Spustit dotaz, který vrátí výsledky typu StructuralType](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-structuraltype-results.md).  
+1. Postupujte podle pokynů v [jak: Spustit dotaz, který vrátí výsledky typu StructuralType](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-structuraltype-results.md).  
   
-2.  Předat jako argument pro následující dotaz `ExecuteStructuralTypeQuery` metody:  
+2. Předat jako argument pro následující dotaz `ExecuteStructuralTypeQuery` metody:  
   
  [!code-csharp[DP EntityServices Concepts 2#NEGATIVE](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#negative)]  
   

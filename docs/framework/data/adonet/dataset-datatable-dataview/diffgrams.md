@@ -2,12 +2,12 @@
 title: DiffGrams
 ms.date: 03/30/2017
 ms.assetid: 037f3991-7bbc-424b-b52e-8b03585d3e34
-ms.openlocfilehash: 1324e6536390b598ca9ef1f0cd3102f8ec49d45a
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 048c5331028bbe2bb232302637dbb12bcdd2adc3
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59197994"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59313512"
 ---
 # <a name="diffgrams"></a>DiffGrams
 Formát DiffGram je formát XML, který identifikuje aktuální a původní verzí datové prvky. <xref:System.Data.DataSet> Používá formát DiffGram formát pro načtení a uložení jeho obsah a k serializaci jeho obsah pro přenos přes síťové připojení. Když <xref:System.Data.DataSet> je zapsán jako formát DiffGram, naplní formát DiffGram přesně znovu vytvořit obsah, i když není schéma, o všechny potřebné informace <xref:System.Data.DataSet>, včetně hodnot sloupců z obou **původní** a **aktuální** verze řádků, informace o chybě řádek a řádek pořadí.  
@@ -20,26 +20,26 @@ Formát DiffGram je formát XML, který identifikuje aktuální a původní verz
   
 ### <a name="to-generate-a-diffgram"></a>Chcete-li generovat formát Diffgram  
   
-1.  Vygeneruje seznam kořenových tabulky (to znamená, že tabulky bez jakékoli nadřazené).  
+1. Vygeneruje seznam kořenových tabulky (to znamená, že tabulky bez jakékoli nadřazené).  
   
-2.  Pro každou tabulku a její potomci v seznamu vypsat aktuální verzi všech řádků v první části formát Diffgram.  
+2. Pro každou tabulku a její potomci v seznamu vypsat aktuální verzi všech řádků v první části formát Diffgram.  
   
-3.  Pro každou tabulku v <xref:System.Data.DataSet>, vypsat původní verzi všechny řádky, pokud existuje v  **\<před >** část formát Diffgram.  
+3. Pro každou tabulku v <xref:System.Data.DataSet>, vypsat původní verzi všechny řádky, pokud existuje v  **\<před >** část formát Diffgram.  
   
-4.  Pro obsah v Chyba při zápisu řádků s chybami,  **\<chyby >** část formát Diffgram.  
+4. Pro obsah v Chyba při zápisu řádků s chybami,  **\<chyby >** část formát Diffgram.  
   
  Formát Diffgram, jsou zpracovávána v pořadí od začátku souboru XML do konce.  
   
 ### <a name="to-process-a-diffgram"></a>Ke zpracování formát Diffgram  
   
-1.  Proces první část formát Diffgram, která obsahuje aktuální verzi řádky.  
+1. Proces první část formát Diffgram, která obsahuje aktuální verzi řádky.  
   
-2.  Zpracování druhý nebo  **\<před >** oddíl, který obsahuje původní verze řádku upravit a odstranit řádky.  
+2. Zpracování druhý nebo  **\<před >** oddíl, který obsahuje původní verze řádku upravit a odstranit řádky.  
   
     > [!NOTE]
     >  Pokud řádek je označen jako odstraněný, operace odstranění odstraněním řádku následníky, v závislosti na tom `Cascade` vlastnost aktuálního <xref:System.Data.DataSet>.  
   
-3.  Proces  **\<chyby >** oddílu. Nastavte informace o chybě pro zadaný řádek a sloupec pro každou položku v této části.  
+3. Proces  **\<chyby >** oddílu. Nastavte informace o chybě pro zadaný řádek a sloupec pro každou položku v této části.  
   
 > [!NOTE]
 >  Pokud jste nastavili <xref:System.Data.XmlWriteMode> na formát Diffgram obsah cíle <xref:System.Data.DataSet> a původní <xref:System.Data.DataSet> se může lišit.  

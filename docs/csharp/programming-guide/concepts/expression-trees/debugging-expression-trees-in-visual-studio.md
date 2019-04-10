@@ -2,12 +2,12 @@
 title: Ladění stromů výrazů v sadě Visual Studio (C#)
 ms.date: 07/20/2015
 ms.assetid: 1369fa25-0fbd-4b92-98d0-8df79c49c27a
-ms.openlocfilehash: 308b377af00a3d12523f8f8d469c50808f216030
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 95a01a98e771e04afd296428ed56e9518bad9ac2
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54632150"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59330402"
 ---
 # <a name="debugging-expression-trees-in-visual-studio-c"></a>Ladění stromů výrazů v sadě Visual Studio (C#)
 Při ladění aplikací můžete analyzovat struktuře a obsahu stromy výrazů. Pokud chcete získat rychlý přehled toho, stromové struktury výrazu, můžete použít `DebugView` vlastnost, která je k dispozici pouze v režimu ladění. Další informace o ladění naleznete v tématu [ladění v sadě Visual Studio](/visualstudio/debugger/debugging-in-visual-studio).  
@@ -16,11 +16,11 @@ Při ladění aplikací můžete analyzovat struktuře a obsahu stromy výrazů.
   
 ### <a name="to-open-a-visualizer-for-an-expression-tree"></a>Chcete-li otevřít vizualizér pro strom výrazu.  
   
-1.  Klikněte na ikonu lupy, která se zobrazí vedle `DebugView` vlastnost strom výrazu v **DataTips**, **Watch** okně **automatické hodnoty** okna, nebo **Lokální** okna.  
+1. Klikněte na ikonu lupy, která se zobrazí vedle `DebugView` vlastnost strom výrazu v **DataTips**, **Watch** okně **automatické hodnoty** okna, nebo **Lokální** okna.  
   
      Zobrazí se seznam vizualizéry.  
   
-2.  Klikněte na vizualizaci, kterou chcete použít.  
+2. Klikněte na vizualizaci, kterou chcete použít.  
   
  Každý typ výrazu se zobrazí ve vizualizátoru, jak je popsáno v následujících částech.  
   
@@ -31,7 +31,7 @@ Při ladění aplikací můžete analyzovat struktuře a obsahu stromy výrazů.
   
 ### <a name="examples"></a>Příklady  
   
-|Výraz|`DebugView` Vlastnost|  
+|Výraz|`DebugView` property|  
 |----------------|--------------------------|  
 |`ParameterExpression numParam =  Expression.Parameter(typeof(int), "num");`|`$num`|  
 |`ParameterExpression numParam =  Expression.Parameter(typeof(int));`|`$var1`|  
@@ -41,7 +41,7 @@ Při ladění aplikací můžete analyzovat struktuře a obsahu stromy výrazů.
   
  Pro číselné typy, které mají standardní přípony jako literály jazyka C# se přidá přípona k hodnotě. V následující tabulce jsou uvedeny přípony spojené s různé číselné typy.  
   
-|Typ|Přípona|  
+|Type|Přípona|  
 |----------|------------|  
 |<xref:System.UInt32>|U|  
 |<xref:System.Int64>|L|  
@@ -52,7 +52,7 @@ Při ladění aplikací můžete analyzovat struktuře a obsahu stromy výrazů.
   
 ### <a name="examples"></a>Příklady  
   
-|Výraz|`DebugView` Vlastnost|  
+|Výraz|`DebugView` property|  
 |----------------|--------------------------|  
 |`int num = 10; ConstantExpression expr = Expression.Constant(num);`|10|  
 |`double num = 10; ConstantExpression expr = Expression.Constant(num);`|10D|  
@@ -62,7 +62,7 @@ Při ladění aplikací můžete analyzovat struktuře a obsahu stromy výrazů.
   
 ### <a name="examples"></a>Příklady  
   
-|Výraz|`DebugView` Vlastnost|  
+|Výraz|`DebugView` property|  
 |----------------|--------------------------|  
 |`BlockExpression block = Expression.Block(Expression.Constant("test"));`|`.Block() {`<br /><br /> `"test"`<br /><br /> `}`|  
 |`BlockExpression block =  Expression.Block(typeof(Object), Expression.Constant("test"));`|`.Block<System.Object>() {`<br /><br /> `"test"`<br /><br /> `}`|  
@@ -74,7 +74,7 @@ Při ladění aplikací můžete analyzovat struktuře a obsahu stromy výrazů.
   
 ### <a name="examples"></a>Příklady  
   
-|Výraz|`DebugView` Vlastnost|  
+|Výraz|`DebugView` property|  
 |----------------|--------------------------|  
 |`LambdaExpression lambda =  Expression.Lambda<Func<int>>(Expression.Constant(1));`|`.Lambda #Lambda1<System.Func'1[System.Int32]>() {`<br /><br /> `1`<br /><br /> `}`|  
 |`LambdaExpression lambda =  Expression.Lambda<Func<int>>(Expression.Constant(1), "SampleLambda", null);`|`.Lambda SampleLambda<System.Func'1[System.Int32]>() {`<br /><br /> `1`<br /><br /> `}`|  
@@ -88,7 +88,7 @@ Při ladění aplikací můžete analyzovat struktuře a obsahu stromy výrazů.
   
 ### <a name="examples"></a>Příklady  
   
-|Výraz|`DebugView` Vlastnost|  
+|Výraz|`DebugView` property|  
 |----------------|--------------------------|  
 |`LabelTarget target = Expression.Label(typeof(int), "SampleLabel"); BlockExpression block = Expression.Block( Expression.Goto(target, Expression.Constant(0)), Expression.Label(target, Expression.Constant(-1)));`|`.Block() {`<br /><br /> `.Goto SampleLabel { 0 };`<br /><br /> `.Label`<br /><br /> `-1`<br /><br /> `.LabelTarget SampleLabel:`<br /><br /> `}`|  
 |`LabelTarget target = Expression.Label(); BlockExpression block = Expression.Block( Expression.Goto(target5), Expression.Label(target5));`|`.Block() {`<br /><br /> `.Goto #Label1 { };`<br /><br /> `.Label`<br /><br /> `.LabelTarget #Label1:`<br /><br /> `}`|  
@@ -98,7 +98,7 @@ Při ladění aplikací můžete analyzovat struktuře a obsahu stromy výrazů.
   
 ### <a name="examples"></a>Příklady  
   
-|Výraz|`DebugView` Vlastnost|  
+|Výraz|`DebugView` property|  
 |----------------|--------------------------|  
 |`Expression expr = Expression.AddChecked( Expression.Constant(1), Expression.Constant(2));`|`1 #+ 2`|  
 |`Expression expr = Expression.ConvertChecked( Expression.Constant(10.0), typeof(int));`|`#(System.Int32)10D`|  
@@ -107,4 +107,4 @@ Při ladění aplikací můžete analyzovat struktuře a obsahu stromy výrazů.
 
 - [Stromy výrazů (C#)](../../../../csharp/programming-guide/concepts/expression-trees/index.md)
 - [Ladění v sadě Visual Studio](/visualstudio/debugger/debugging-in-visual-studio)
-- [Vytváření vlastních vizualizérů](/visualstudio/debugger/create-custom-visualizers-of-data)
+- [Vytváření vlastních Vizualizérů](/visualstudio/debugger/create-custom-visualizers-of-data)

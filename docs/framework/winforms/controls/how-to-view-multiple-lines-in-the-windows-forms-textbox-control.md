@@ -11,12 +11,12 @@ helpviewer_keywords:
 - TextBox control [Windows Forms], viewing multiple lines
 - carriage return
 ms.assetid: 43173201-0b74-4067-a472-605029ca5f35
-ms.openlocfilehash: f7a0e3a14d14f0629bd9995dbecd3f0b98bea1d8
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 47404f02a753fe143dd573bdf73143416872af9d
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59190909"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59324185"
 ---
 # <a name="how-to-view-multiple-lines-in-the-windows-forms-textbox-control"></a>Postupy: Zobrazování více řádků v ovládacím prvku Windows Forms TextBox
 Ve výchozím nastavení, Windows Forms <xref:System.Windows.Forms.TextBox> ovládací prvek zobrazí jeden řádek textu a posuvníky nezobrazí. Je-li text je delší než dostupný prostor, zobrazí se pouze část textu. Toto výchozí chování můžete změnit nastavením <xref:System.Windows.Forms.TextBox.Multiline%2A>, <xref:System.Windows.Forms.TextBoxBase.WordWrap%2A>, a <xref:System.Windows.Forms.TextBox.ScrollBars%2A> vlastnosti na odpovídající hodnoty.  
@@ -29,9 +29,9 @@ Ve výchozím nastavení, Windows Forms <xref:System.Windows.Forms.TextBox> ovl�
   
 ### <a name="to-view-multiple-lines-in-the-textbox-control"></a>Chcete-li zobrazit více řádků v ovládacím prvku TextBox  
   
-1.  Nastavte <xref:System.Windows.Forms.TextBox.Multiline%2A> vlastnost `true`. Pokud <xref:System.Windows.Forms.TextBoxBase.WordWrap%2A> je `true` (výchozí), pak textu v ovládacím prvku se zobrazí jako jeden nebo více odstavců; v opačném případě se zobrazí jako seznam, ve kterém může být některé řádky oříznut na okraji ovládacího prvku.  
+1. Nastavte <xref:System.Windows.Forms.TextBox.Multiline%2A> vlastnost `true`. Pokud <xref:System.Windows.Forms.TextBoxBase.WordWrap%2A> je `true` (výchozí), pak textu v ovládacím prvku se zobrazí jako jeden nebo více odstavců; v opačném případě se zobrazí jako seznam, ve kterém může být některé řádky oříznut na okraji ovládacího prvku.  
   
-2.  Nastavte <xref:System.Windows.Forms.TextBox.ScrollBars%2A> vlastnost na odpovídající hodnotu.  
+2. Nastavte <xref:System.Windows.Forms.TextBox.ScrollBars%2A> vlastnost na odpovídající hodnotu.  
   
     |Value|Popis|  
     |-----------|-----------------|  
@@ -39,7 +39,7 @@ Ve výchozím nastavení, Windows Forms <xref:System.Windows.Forms.TextBox> ovl�
     |<xref:System.Windows.Forms.ScrollBars.Horizontal>|Tuto hodnotu použijte, pokud chcete zobrazit seznam řádků, z nichž některé mohou být delší než šířka <xref:System.Windows.Forms.TextBox> ovládacího prvku.|  
     |<xref:System.Windows.Forms.ScrollBars.Both>|Tuto hodnotu použijte, pokud v seznamu může být delší než výška ovládacího prvku.|  
   
-3.  Nastavte <xref:System.Windows.Forms.TextBoxBase.WordWrap%2A> vlastnost na odpovídající hodnotu.  
+3. Nastavte <xref:System.Windows.Forms.TextBoxBase.WordWrap%2A> vlastnost na odpovídající hodnotu.  
   
     |Value|Popis|  
     |-----------|-----------------|  

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - templates, Windows Service
 ms.assetid: 0f5e2cbb-d95d-477c-b2b5-4b990e6b86ff
 author: ghogen
-ms.openlocfilehash: 26c903379afcab3d2d534272912c046cdffb6fed
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 469074336c8aa49fee1acf871360f8dbc1363247
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59132493"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59313265"
 ---
 # <a name="how-to-create-windows-services"></a>Postupy: Vytváření služeb systému Windows
 Při vytváření služby můžete použít šablonu projektu sady Visual Studio volá **Windows Service**. Tato šablona automaticky provádí velkou část práce za vás odkazováním na příslušné třídy a obory názvů, nastavením dědičnosti ze základní třídy pro služby, a přepisováním několika metod, které budete pravděpodobně chtít přepsat.  
@@ -29,19 +29,19 @@ Při vytváření služby můžete použít šablonu projektu sady Visual Studio
   
 ### <a name="to-create-a-windows-service-application"></a>Vytvoření aplikace služby Windows  
   
-1.  Vytvoření **Windows Service** projektu.  
+1. Vytvoření **Windows Service** projektu.  
   
     > [!NOTE]
     >  Pokyny pro zápis služby bez použití šablony najdete v tématu [jak: Zápis služeb prostřednictvím kódu programu](../../../docs/framework/windows-services/how-to-write-services-programmatically.md).  
   
-2.  V **vlastnosti** okno, nastaveno <xref:System.ServiceProcess.ServiceBase.ServiceName%2A> vlastnost pro vaši službu.  
+2. V **vlastnosti** okno, nastaveno <xref:System.ServiceProcess.ServiceBase.ServiceName%2A> vlastnost pro vaši službu.  
   
      ![Nastavte vlastnost ServiceName. ](../../../docs/framework/windows-services/media/windowsservice-servicename.PNG "WindowsService_ServiceName")  
   
     > [!NOTE]
     >  Hodnota <xref:System.ServiceProcess.ServiceBase.ServiceName%2A> vlastnosti musí vždy odpovídat názvu v instalačních třídách. Pokud tuto vlastnost změníte, je nutné aktualizovat <xref:System.ServiceProcess.ServiceBase.ServiceName%2A> vlastnost také instalačních tříd.  
   
-3.  Nastavte libovolné z následujících vlastností určíte, jak služba funguje.  
+3. Nastavte libovolné z následujících vlastností určíte, jak služba funguje.  
   
     |Vlastnost|Nastavení|  
     |--------------|-------------|  
@@ -54,18 +54,18 @@ Při vytváření služby můžete použít šablonu projektu sady Visual Studio
     > [!NOTE]
     >  Když <xref:System.ServiceProcess.ServiceBase.CanStop%2A> nebo <xref:System.ServiceProcess.ServiceBase.CanPauseAndContinue%2A> jsou nastaveny na `false`, **správce řízení služeb** zakáže odpovídající možnosti nabídky zastavit, pozastavit nebo pokračovat ve službě.  
   
-4.  Přístup k editoru kódu a vyplňte zpracování, které požadujete pro <xref:System.ServiceProcess.ServiceBase.OnStart%2A> a <xref:System.ServiceProcess.ServiceBase.OnStop%2A> postupy.  
+4. Přístup k editoru kódu a vyplňte zpracování, které požadujete pro <xref:System.ServiceProcess.ServiceBase.OnStart%2A> a <xref:System.ServiceProcess.ServiceBase.OnStop%2A> postupy.  
   
-5.  Přepište všechny jiné metody, pro které chcete definovat funkci.  
+5. Přepište všechny jiné metody, pro které chcete definovat funkci.  
   
-6.  Přidejte nezbytné instalační programy pro aplikaci služby. Další informace najdete v tématu [jak: Přidání instalačních programů do aplikace služby](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md).  
+6. Přidejte nezbytné instalační programy pro aplikaci služby. Další informace najdete v tématu [jak: Přidání instalačních programů do aplikace služby](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md).  
   
-7.  Sestavte projekt výběrem **sestavit řešení** z **sestavení** nabídky.  
+7. Sestavte projekt výběrem **sestavit řešení** z **sestavení** nabídky.  
   
     > [!NOTE]
     >  Nepoužívejte klávesu F5 ke spuštění projektu – tímto způsobem nelze spustit projekt služby.  
   
-8.  Nainstalujte službu. Další informace najdete v tématu [jak: Instalace a odinstalace služeb](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md).  
+8. Nainstalujte službu. Další informace najdete v tématu [jak: Instalace a odinstalace služeb](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md).  
   
 ## <a name="see-also"></a>Viz také:
 

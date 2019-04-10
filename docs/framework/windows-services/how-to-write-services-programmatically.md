@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Windows Service applications, creating
 ms.assetid: 3abbb2ec-78d2-41e6-b9f9-6662d4e2cdc7
 author: ghogen
-ms.openlocfilehash: f0affeabba90e1d4cdc559cb96dee2dafe0bea77
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: baa7655481c24ebe96b76a0accbff63b6965a021
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59073985"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59328423"
 ---
 # <a name="how-to-write-services-programmatically"></a>Postupy: Zápis služeb prostřednictvím kódu programu
 Pokud se rozhodnete nepoužívat šablonu projektu služby Windows, můžete napsat vlastní služby nastavením dědičnosti a další prvky infrastruktury sami. Když vytvoříte službu prostřednictvím kódu programu, je třeba provést několik kroků, které pro vás by jinak zpracovat šablonu:  
@@ -27,7 +27,7 @@ Pokud se rozhodnete nepoužívat šablonu projektu služby Windows, můžete nap
   
 ### <a name="to-write-a-service-programmatically"></a>Pro zápis služby prostřednictvím kódu programu  
   
-1.  Vytvořit prázdný projekt a vytvořte odkaz na nezbytné oborů názvů pomocí následujících kroků:  
+1. Vytvořit prázdný projekt a vytvořte odkaz na nezbytné oborů názvů pomocí následujících kroků:  
   
     1.  V **Průzkumníku řešení**, klikněte pravým tlačítkem myši **odkazy** uzel a klikněte na **přidat odkaz**.  
   
@@ -37,31 +37,31 @@ Pokud se rozhodnete nepoužívat šablonu projektu služby Windows, můžete nap
   
     4.  Klikněte na **OK**.  
   
-2.  Přidejte třídu a nakonfigurovat, aby dědí <xref:System.ServiceProcess.ServiceBase>:  
+2. Přidejte třídu a nakonfigurovat, aby dědí <xref:System.ServiceProcess.ServiceBase>:  
   
      [!code-csharp[VbRadconService#7](../../../samples/snippets/csharp/VS_Snippets_VBCSharp/VbRadconService/CS/MyNewService.cs#7)]
      [!code-vb[VbRadconService#7](../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRadconService/VB/MyNewService.vb#7)]  
   
-3.  Přidejte následující kód do konfigurace vaší služby třídy:  
+3. Přidejte následující kód do konfigurace vaší služby třídy:  
   
      [!code-csharp[VbRadconService#8](../../../samples/snippets/csharp/VS_Snippets_VBCSharp/VbRadconService/CS/MyNewService.cs#8)]
      [!code-vb[VbRadconService#8](../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRadconService/VB/MyNewService.vb#8)]  
   
-4.  Vytvoření `Main` metody pro třídu a použijte k definování service bude obsahovat vaše třída; `userService1` je název třídy:  
+4. Vytvoření `Main` metody pro třídu a použijte k definování service bude obsahovat vaše třída; `userService1` je název třídy:  
   
      [!code-csharp[VbRadconService#9](../../../samples/snippets/csharp/VS_Snippets_VBCSharp/VbRadconService/CS/MyNewService.cs#9)]
      [!code-vb[VbRadconService#9](../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRadconService/VB/MyNewService.vb#9)]  
   
-5.  Přepsat <xref:System.ServiceProcess.ServiceBase.OnStart%2A> metoda a definujte zpracování chcete dojít, když je vaše služba spuštěná.  
+5. Přepsat <xref:System.ServiceProcess.ServiceBase.OnStart%2A> metoda a definujte zpracování chcete dojít, když je vaše služba spuštěná.  
   
      [!code-csharp[VbRadconService#10](../../../samples/snippets/csharp/VS_Snippets_VBCSharp/VbRadconService/CS/MyNewService.cs#10)]
      [!code-vb[VbRadconService#10](../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRadconService/VB/MyNewService.vb#10)]  
   
-6.  Přepište všechny jiné metody, které chcete definovat vlastní zpracování a zápis kódu určete akce, které služba zabere v každém případě.  
+6. Přepište všechny jiné metody, které chcete definovat vlastní zpracování a zápis kódu určete akce, které služba zabere v každém případě.  
   
-7.  Přidejte nezbytné instalační programy pro aplikaci služby. Další informace najdete v tématu [jak: Přidání instalačních programů do aplikace služby](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md).  
+7. Přidejte nezbytné instalační programy pro aplikaci služby. Další informace najdete v tématu [jak: Přidání instalačních programů do aplikace služby](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md).  
   
-8.  Sestavte projekt výběrem **sestavit řešení** z **sestavení** nabídky.  
+8. Sestavte projekt výběrem **sestavit řešení** z **sestavení** nabídky.  
   
     > [!NOTE]
     >  Nepoužívejte klávesu F5 ke spuštění projektu – tímto způsobem nelze spustit projekt služby.  

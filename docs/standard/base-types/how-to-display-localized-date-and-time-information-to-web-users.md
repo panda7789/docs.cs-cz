@@ -15,51 +15,51 @@ dev_langs:
 - vb
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d46b2634096cf71701458ca7ecb6f66a01ebffbe
-ms.sourcegitcommit: 5dcfeb59179e81071f54840d4902cbe00b184294
+ms.openlocfilehash: e97bc095332e626d79561ab5fdc7bad531e3ba31
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54857655"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59320155"
 ---
 # <a name="how-to-display-localized-date-and-time-information-to-web-users"></a>Postupy: Zobrazování lokalizovaných informací data a času webovým uživatelům
 Vzhledem k tomu, že na webové stránce můžete zobrazit kdekoli na světě, operací, které analyzovat a formátování hodnot data a času, neměli byste tedy spoléhat na výchozí formát (což je nejčastěji formátu jazykové verze místní webový server) při interakci s uživatelem. Webové formuláře, které zpracovávají datum a čas uživatelský vstup řetězce místo toho by se měly analyzovat řetězců pomocí upřednostňované jazykové verze uživatele. Podobně data a času má být zobrazena na uživatele ve formátu, který odpovídá na jazykovou verzi uživatele. Toto téma ukazuje, jak to provést.  
   
 ## <a name="to-parse-date-and-time-strings-input-by-the-user"></a>Analyzovat datum a čas řetězce uživatelský vstup  
   
-1.  Určení, zda pole řetězce vrácené <xref:System.Web.HttpRequest.UserLanguages%2A?displayProperty=nameWithType> vyplní vlastnost. Pokud není, pokračujte krokem 6.  
+1. Určení, zda pole řetězce vrácené <xref:System.Web.HttpRequest.UserLanguages%2A?displayProperty=nameWithType> vyplní vlastnost. Pokud není, pokračujte krokem 6.  
   
-2.  Pokud je pole řetězců vrácené <xref:System.Web.HttpRequest.UserLanguages%2A> vlastnost nastavena, získat její první prvek. První prvek určuje výchozí nebo oblíbeného jazyka a oblasti uživatele.  
+2. Pokud je pole řetězců vrácené <xref:System.Web.HttpRequest.UserLanguages%2A> vlastnost nastavena, získat její první prvek. První prvek určuje výchozí nebo oblíbeného jazyka a oblasti uživatele.  
   
-3.  Vytvořit instanci <xref:System.Globalization.CultureInfo> upřednostňované jazykové verze objekt, který reprezentuje uživatele voláním <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType> konstruktoru.  
+3. Vytvořit instanci <xref:System.Globalization.CultureInfo> upřednostňované jazykové verze objekt, který reprezentuje uživatele voláním <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType> konstruktoru.  
   
-4.  Volání na buď `TryParse` nebo `Parse` metodu <xref:System.DateTime> nebo <xref:System.DateTimeOffset> typ zkuste převod. Použijte přetížení `TryParse` nebo `Parse` metodou `provider` parametr a předat jí některého z následujících:  
+4. Volání na buď `TryParse` nebo `Parse` metodu <xref:System.DateTime> nebo <xref:System.DateTimeOffset> typ zkuste převod. Použijte přetížení `TryParse` nebo `Parse` metodou `provider` parametr a předat jí některého z následujících:  
   
     -   <xref:System.Globalization.CultureInfo> Objekt vytvořený v kroku 3.  
   
     -   <xref:System.Globalization.DateTimeFormatInfo> Objekt, který je vrácený <xref:System.Globalization.CultureInfo.DateTimeFormat%2A> vlastnost <xref:System.Globalization.CultureInfo> objekt vytvořený v kroku 3.  
   
-5.  Pokud převod selže, opakujte kroky 2 až 4 pro každý zbývající prvek v poli řetězců vrácených <xref:System.Web.HttpRequest.UserLanguages%2A> vlastnost.  
+5. Pokud převod selže, opakujte kroky 2 až 4 pro každý zbývající prvek v poli řetězců vrácených <xref:System.Web.HttpRequest.UserLanguages%2A> vlastnost.  
   
-6.  Pokud převod se nezdaří, nebo pokud řetězec pole vrácené metodou <xref:System.Web.HttpRequest.UserLanguages%2A> vlastnost nevyplněná, analýzu řetězce pomocí neutrální jazykové verze, která je vrácena <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> vlastnost.  
+6. Pokud převod se nezdaří, nebo pokud řetězec pole vrácené metodou <xref:System.Web.HttpRequest.UserLanguages%2A> vlastnost nevyplněná, analýzu řetězce pomocí neutrální jazykové verze, která je vrácena <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> vlastnost.  
   
 ## <a name="to-parse-the-local-date-and-time-of-the-users-request"></a>Analýza místního data a času žádost uživatele  
   
-1.  Přidat <xref:System.Web.UI.WebControls.HiddenField> ovládací prvek webového formuláře.  
+1. Přidat <xref:System.Web.UI.WebControls.HiddenField> ovládací prvek webového formuláře.  
   
-2.  Funkce JavaScriptu, která zpracovává vytvořit `onClick` události `Submit` napsáním aktuální datum a čas a posun místního časového pásma od koordinovaného světového času (UTC) na tlačítko <xref:System.Web.UI.WebControls.HiddenField.Value%2A> vlastnost. Používejte oddělovač (např. středníkem) oddělují dva řetězce.  
+2. Funkce JavaScriptu, která zpracovává vytvořit `onClick` události `Submit` napsáním aktuální datum a čas a posun místního časového pásma od koordinovaného světového času (UTC) na tlačítko <xref:System.Web.UI.WebControls.HiddenField.Value%2A> vlastnost. Používejte oddělovač (např. středníkem) oddělují dva řetězce.  
   
-3.  Použití webového formuláře <xref:System.Web.UI.Control.PreRender> událost vložení funkce do kódu HTML předáním text tohoto skriptu do výstupního datového proudu <xref:System.Web.UI.ClientScriptManager.RegisterClientScriptBlock%28System.Type%2CSystem.String%2CSystem.String%2CSystem.Boolean%29?displayProperty=nameWithType> metody.  
+3. Použití webového formuláře <xref:System.Web.UI.Control.PreRender> událost vložení funkce do kódu HTML předáním text tohoto skriptu do výstupního datového proudu <xref:System.Web.UI.ClientScriptManager.RegisterClientScriptBlock%28System.Type%2CSystem.String%2CSystem.String%2CSystem.Boolean%29?displayProperty=nameWithType> metody.  
   
-4.  Připojte obslužné rutiny události `Submit` tlačítka `onClick` události zadáním názvu funkce JavaScriptu, která se `OnClientClick` atribut `Submit` tlačítko.  
+4. Připojte obslužné rutiny události `Submit` tlačítka `onClick` události zadáním názvu funkce JavaScriptu, která se `OnClientClick` atribut `Submit` tlačítko.  
   
-5.  Vytvořte obslužnou rutinu pro `Submit` tlačítka <xref:System.Web.UI.WebControls.Button.Click> událostí.  
+5. Vytvořte obslužnou rutinu pro `Submit` tlačítka <xref:System.Web.UI.WebControls.Button.Click> událostí.  
   
-6.  V obslužné rutině události určit, zda pole řetězce vrácené <xref:System.Web.HttpRequest.UserLanguages%2A?displayProperty=nameWithType> vyplní vlastnost. Pokud není, pokračujte krokem 14.  
+6. V obslužné rutině události určit, zda pole řetězce vrácené <xref:System.Web.HttpRequest.UserLanguages%2A?displayProperty=nameWithType> vyplní vlastnost. Pokud není, pokračujte krokem 14.  
   
-7.  Pokud je pole řetězců vrácené <xref:System.Web.HttpRequest.UserLanguages%2A> vlastnost nastavena, získat její první prvek. První prvek určuje výchozí nebo oblíbeného jazyka a oblasti uživatele.  
+7. Pokud je pole řetězců vrácené <xref:System.Web.HttpRequest.UserLanguages%2A> vlastnost nastavena, získat její první prvek. První prvek určuje výchozí nebo oblíbeného jazyka a oblasti uživatele.  
   
-8.  Vytvořit instanci <xref:System.Globalization.CultureInfo> upřednostňované jazykové verze objekt, který reprezentuje uživatele voláním <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType> konstruktoru.  
+8. Vytvořit instanci <xref:System.Globalization.CultureInfo> upřednostňované jazykové verze objekt, který reprezentuje uživatele voláním <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType> konstruktoru.  
   
 9. Předat řetězec přiřazené <xref:System.Web.UI.WebControls.HiddenField.Value%2A> vlastnost <xref:System.String.Split%2A> metody pro ukládání řetězcovou reprezentaci uživatele místní data a času a řetězcovou reprezentaci posunu místního časového pásma uživatele v samostatných prvků pole.  
   

@@ -2,21 +2,21 @@
 title: 'Postupy: Vytváření nepodepsaných přátelských sestavení (C#)'
 ms.date: 07/20/2015
 ms.assetid: 78cbc4f0-b021-4141-a4ff-eb4edbd814ca
-ms.openlocfilehash: 5b376266581def9bdd4315ccbee04b71b7c8bc08
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 6bc2d807b3d1cf6c82a9ba6303139b9758581f35
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57365058"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59318231"
 ---
 # <a name="how-to-create-unsigned-friend-assemblies-c"></a>Postupy: Vytváření nepodepsaných přátelských sestavení (C#)
 Tento příklad ukazuje způsob použití sestavení typu friend se sestaveními, která jsou bez znaménka.  
   
 ### <a name="to-create-an-assembly-and-a-friend-assembly"></a>Chcete-li vytvořit sestavení a sestavení typu friend  
   
-1.  Otevřete příkazový řádek.  
+1. Otevřete příkazový řádek.  
   
-2.  Vytvořte soubor jazyka C# s názvem `friend_unsigned_A.` , který obsahuje následující kód. Tento kód použije <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut pro deklaraci friend_unsigned_B jako sestavení typu friend.  
+2. Vytvořte soubor jazyka C# s názvem `friend_unsigned_A.` , který obsahuje následující kód. Tento kód použije <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut pro deklaraci friend_unsigned_B jako sestavení typu friend.  
   
     ```csharp  
     // friend_unsigned_A.cs  
@@ -46,13 +46,13 @@ Tento příklad ukazuje způsob použití sestavení typu friend se sestaveními
     }  
     ```  
   
-3.  Kompilace a podepsání friend_unsigned_A pomocí následujícího příkazu.  
+3. Kompilace a podepsání friend_unsigned_A pomocí následujícího příkazu.  
   
     ```csharp  
     csc /target:library friend_unsigned_A.cs  
     ```  
   
-4.  Vytvořte soubor jazyka C# s názvem `friend_unsigned_B` , který obsahuje následující kód. Protože friend_unsigned_A určuje friend_unsigned_B jako sestavení typu friend, můžete přístup ke kódu v friend_unsigned_B `internal` typy a členy z friend_unsigned_A.  
+4. Vytvořte soubor jazyka C# s názvem `friend_unsigned_B` , který obsahuje následující kód. Protože friend_unsigned_A určuje friend_unsigned_B jako sestavení typu friend, můžete přístup ke kódu v friend_unsigned_B `internal` typy a členy z friend_unsigned_A.  
   
     ```csharp  
     // friend_unsigned_B.cs  
@@ -75,7 +75,7 @@ Tento příklad ukazuje způsob použití sestavení typu friend se sestaveními
     }  
     ```  
   
-5.  Zkompilujte friend_unsigned_B pomocí následujícího příkazu.  
+5. Zkompilujte friend_unsigned_B pomocí následujícího příkazu.  
   
     ```csharp  
     csc /r:friend_unsigned_A.dll /out:friend_unsigned_B.exe friend_unsigned_B.cs  
@@ -83,7 +83,7 @@ Tento příklad ukazuje způsob použití sestavení typu friend se sestaveními
   
      Název sestavení, který je generován kompilátorem musí odpovídat názvu sestavení typu friend, která je předána <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut. Musíte explicitně zadat název výstupního sestavení (.exe nebo .dll) s použitím `/out` – možnost kompilátoru. Další informace najdete v tématu [/out (možnosti kompilátoru C#)](../../../../csharp/language-reference/compiler-options/out-compiler-option.md).  
   
-6.  Spusťte soubor friend_unsigned_B.exe.  
+6. Spusťte soubor friend_unsigned_B.exe.  
   
      Program vytiskne dva řetězce: "Class1.Test" a "Class2.Test".  
   
@@ -93,7 +93,7 @@ Tento příklad ukazuje způsob použití sestavení typu friend se sestaveními
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>
-- [Sestavení v .NET](../../../../standard/assembly/index.md)
+- [Sestavení v rozhraní .NET](../../../../standard/assembly/index.md)
 - [Přátelská sestavení](../../../../standard/assembly/friend-assemblies.md)
 - [Postupy: Vytváření podepsaných přátelských sestavení (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/how-to-create-signed-friend-assemblies.md)
-- [Průvodce programováním v jazyce C#](../../../../csharp/programming-guide/index.md)
+- [Průvodce programováním v C#](../../../../csharp/programming-guide/index.md)

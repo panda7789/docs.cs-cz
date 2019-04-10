@@ -2,12 +2,12 @@
 title: Uchování objektu v sadě Visual Studio (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: f1d0b562-e349-4dce-ab5f-c05108467030
-ms.openlocfilehash: 312545827702c2d01c50f2a92ace5a3b61494a33
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 55ad2049003baaed26f4db909ae466aefdd161e1
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58841573"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59303346"
 ---
 # <a name="walkthrough-persisting-an-object-in-visual-studio-visual-basic"></a>Návod: Uchování objektu v sadě Visual Studio (Visual Basic)
 V době návrhu, je možné nastavit na výchozí hodnoty vlastností objektu, všechny hodnoty zadané v době běhu budou ztraceny, pokud objekt je zničen. Serializace můžete použít k uchování dat objektu mezi instancemi, které vám umožní uložení hodnot a načíst je další čas, který je vytvořena instance objektu.  
@@ -31,11 +31,11 @@ V době návrhu, je možné nastavit na výchozí hodnoty vlastností objektu, v
   
 ### <a name="to-create-the-loan-class"></a>Chcete-li vytvořit třídu půjčky  
   
-1.  Vytvořte nový projekt knihovny tříd s názvem "LoanClass". Další informace najdete v tématu [vytváření řešení a projekty](https://docs.microsoft.com/visualstudio/ide/creating-solutions-and-projects).  
+1. Vytvořte nový projekt knihovny tříd s názvem "LoanClass". Další informace najdete v tématu [vytváření řešení a projekty](https://docs.microsoft.com/visualstudio/ide/creating-solutions-and-projects).  
   
-2.  V **Průzkumníka řešení**, otevřete místní nabídku pro soubor Class1 a zvolte **přejmenovat**. Přejmenujte soubor na `Loan` a stiskněte klávesu ENTER. Přejmenování souboru se také přejmenujte třídu na `Loan`.  
+2. V **Průzkumníka řešení**, otevřete místní nabídku pro soubor Class1 a zvolte **přejmenovat**. Přejmenujte soubor na `Loan` a stiskněte klávesu ENTER. Přejmenování souboru se také přejmenujte třídu na `Loan`.  
   
-3.  Přidejte následující veřejné členy do třídy:  
+3. Přidejte následující veřejné členy do třídy:  
   
     ```vb  
     Public Class Loan  
@@ -77,21 +77,21 @@ V době návrhu, je možné nastavit na výchozí hodnoty vlastností objektu, v
   
 ### <a name="to-create-a-test-application"></a>Chcete-li vytvořit testovací aplikace  
   
-1.  Chcete-li přidat projekt aplikace Windows Forms do vašeho řešení na **souboru** nabídce zvolte **přidat**,**nový projekt**.  
+1. Chcete-li přidat projekt aplikace Windows Forms do vašeho řešení na **souboru** nabídce zvolte **přidat**,**nový projekt**.  
   
-2.  V **přidat nový projekt** dialogového okna zvolte **formulářová aplikace Windows**a zadejte `LoanApp` jako název projektu a pak klikněte na tlačítko **OK** zavřete dialogové okno .  
+2. V **přidat nový projekt** dialogového okna zvolte **formulářová aplikace Windows**a zadejte `LoanApp` jako název projektu a pak klikněte na tlačítko **OK** zavřete dialogové okno .  
   
-3.  V **Průzkumníka řešení**, vyberte projekt LoanApp.  
+3. V **Průzkumníka řešení**, vyberte projekt LoanApp.  
   
-4.  Na **projektu** nabídce zvolte **nastavit jako spouštěný projekt**.  
+4. Na **projektu** nabídce zvolte **nastavit jako spouštěný projekt**.  
   
-5.  Na **projektu** nabídce zvolte **přidat odkaz**.  
+5. Na **projektu** nabídce zvolte **přidat odkaz**.  
   
-6.  V **přidat odkaz** dialogového okna zvolte **projekty** kartu a pak zvolte projekt LoanClass.  
+6. V **přidat odkaz** dialogového okna zvolte **projekty** kartu a pak zvolte projekt LoanClass.  
   
-7.  Kliknutím na **OK** zavřete dialogové okno.  
+7. Kliknutím na **OK** zavřete dialogové okno.  
   
-8.  V návrháři, přidejte čtyři <xref:System.Windows.Forms.TextBox> ovládací prvky do formuláře.  
+8. V návrháři, přidejte čtyři <xref:System.Windows.Forms.TextBox> ovládací prvky do formuláře.  
   
 9. V Editoru kódu přidejte následující kód:  
   
@@ -163,13 +163,13 @@ V době návrhu, je možné nastavit na výchozí hodnoty vlastností objektu, v
   
 ### <a name="to-deserialize-an-object"></a>K deserializaci objektu  
   
-1.  Přidejte konstanty do třídy pro název souboru serializovaná data.  
+1. Přidejte konstanty do třídy pro název souboru serializovaná data.  
   
     ```vb  
     Const FileName As String = "..\..\SavedLoan.bin"  
     ```  
   
-2.  Změňte kód v `Form1_Load` procedury události následujícím způsobem:  
+2. Změňte kód v `Form1_Load` procedury události následujícím způsobem:  
   
     ```vb  
     Private WithEvents TestLoan As New LoanClass.Loan(10000.0, 0.075, 36, "Neil Black")  
@@ -218,4 +218,4 @@ V době návrhu, je možné nastavit na výchozí hodnoty vlastností objektu, v
 ## <a name="see-also"></a>Viz také:
 
 - [Serializace (Visual Basic)](../../../../visual-basic/programming-guide/concepts/serialization/index.md)
-- [Průvodce programováním v jazyce Visual Basic](../../../../visual-basic/programming-guide/index.md)
+- [Příručka k programování v jazyce Visual Basic](../../../../visual-basic/programming-guide/index.md)

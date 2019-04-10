@@ -2,12 +2,12 @@
 title: Zacházení s nezpracovatelnými zprávami v MSMQ 4.0
 ms.date: 03/30/2017
 ms.assetid: ec8d59e3-9937-4391-bb8c-fdaaf2cbb73e
-ms.openlocfilehash: 4555a6d322cbf9ca43aca0f93bc6eafe021fa569
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.openlocfilehash: b4711d344a6ce08adc6e993c19f2c3d97f56e7b4
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/07/2018
-ms.locfileid: "48846217"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59316463"
 ---
 # <a name="poison-message-handling-in-msmq-40"></a>Zacházení s nezpracovatelnými zprávami v MSMQ 4.0
 Tento příklad ukazuje, jak provádět zpracování ve službě nezpracovatelných zpráv. Tato ukázka je založena na [nepodporuje transakce vazby služby MSMQ](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md) vzorku. Tento příklad používá `netMsmqBinding`. Služba je v místním prostředí konzolovou aplikaci pro vám umožní sledovat službu přijímání zpráv zařazených do fronty.
@@ -27,13 +27,13 @@ Tento příklad ukazuje, jak provádět zpracování ve službě nezpracovateln�
 
  Jakmile zprávu je označen jako poškozen, zprávu je řešeno podle nastavení v <xref:System.ServiceModel.MsmqBindingBase.ReceiveErrorHandling%2A> výčtu. Zdůrazňujeme možné hodnoty:
 
--   Odolnost (výchozí): pro selhání naslouchací proces a také hostitele služby.
+-   Odolnost (výchozí): K selhání naslouchací proces a také hostitele služby.
 
--   Přetažení: Vyřadit zprávu.
+-   Přetažení: Chcete-li vyřadit zprávu.
 
--   Přesunout: Přesunout zprávu do dílčí fronty nezpracovatelných zpráv. Tato hodnota je dostupná jenom na [!INCLUDE[wv](../../../../includes/wv-md.md)].
+-   Přesuňte: Pro přesun zprávy do dílčí fronty nezpracovatelných zpráv. Tato hodnota je dostupná jenom na [!INCLUDE[wv](../../../../includes/wv-md.md)].
 
--   Odmítnout: Pokud chcete odmítnout zprávu, odesílání zprávy odesílatel je onta nedoručených zpráv fronty. Tato hodnota je dostupná jenom na [!INCLUDE[wv](../../../../includes/wv-md.md)].
+-   Odmítnout: Odmítnout zprávu poslal zpět do fronty nedoručených zpráv odesílatele. Tato hodnota je dostupná jenom na [!INCLUDE[wv](../../../../includes/wv-md.md)].
 
  Vzorek ukazuje použití `Move` dispozice pro nezpracovatelných zpráv. `Move` způsobí, že zpráva, kterou chcete přesunout do dílčí fronty poškozené.
 
@@ -273,9 +273,9 @@ Processing Purchase Order: 23e0b991-fbf9-4438-a0e2-20adf93a4f89
 
 #### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku
 
-1.  Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
+1. Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
 
-2.  Pokud je služba spuštěna první, zkontroluje se tak, aby byl do fronty k dispozici. Pokud fronta neexistuje, služba ho vytvoří. Můžete spustit služba nejdřív vytvořte frontu nebo můžete vytvořit prostřednictvím Správce fronty MSMQ. Postupujte podle těchto kroků můžete vytvořit frontu Windows 2008.
+2. Pokud je služba spuštěna první, zkontroluje se tak, aby byl do fronty k dispozici. Pokud fronta neexistuje, služba ho vytvoří. Můžete spustit služba nejdřív vytvořte frontu nebo můžete vytvořit prostřednictvím Správce fronty MSMQ. Postupujte podle těchto kroků můžete vytvořit frontu Windows 2008.
 
     1.  Otevřete správce serveru v sadě Visual Studio 2012.
 
@@ -287,15 +287,15 @@ Processing Purchase Order: 23e0b991-fbf9-4438-a0e2-20adf93a4f89
 
     5.  Zadejte `ServiceModelSamplesTransacted` jako název nové fronty.
 
-3.  K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
+3. K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
 
-4.  Spusťte ukázku v konfiguraci s jedním nebo více počítač, změňte názvy front, aby odrážel skutečný název hostitele, místo localhost a postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).
+4. Spusťte ukázku v konfiguraci s jedním nebo více počítač, změňte názvy front, aby odrážel skutečný název hostitele, místo localhost a postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).
 
- Ve výchozím nastavení se `netMsmqBinding` vazby přenosu, zabezpečení je povolená. Dvě vlastnosti `MsmqAuthenticationMode` a `MsmqProtectionLevel`, společně určují typ zabezpečení přenosu. Ve výchozím nastavení, režim ověřování nastaven na `Windows` a aby úroveň ochrany je nastavená na `Sign`. Pro službu MSMQ. k ověřování a podepisování funkce musí být součástí domény. Pokud tuto ukázku spustit na počítači, který není součástí domény, se zobrazí následující chybová zpráva: "Uživatele interní zprávy služby Řízení front certifikát neexistuje".
+ Ve výchozím nastavení se `netMsmqBinding` vazby přenosu, zabezpečení je povolená. Dvě vlastnosti `MsmqAuthenticationMode` a `MsmqProtectionLevel`, společně určují typ zabezpečení přenosu. Ve výchozím nastavení, režim ověřování nastaven na `Windows` a aby úroveň ochrany je nastavená na `Sign`. Pro službu MSMQ. k ověřování a podepisování funkce musí být součástí domény. Pokud tuto ukázku spustit na počítači, který není součástí domény, zobrazí se následující chybová zpráva: "Certifikátu interní front uživatele neexistuje".
 
 #### <a name="to-run-the-sample-on-a-computer-joined-to-a-workgroup"></a>Ke spuštění ukázky na počítač připojen k pracovní skupině
 
-1.  Pokud počítač není součástí domény, vypněte zabezpečení přenosu nastavením úroveň ověření režimu a ochrany na `None` jak je znázorněno v následující ukázková konfigurace:
+1. Pokud počítač není součástí domény, vypněte zabezpečení přenosu nastavením úroveň ověření režimu a ochrany na `None` jak je znázorněno v následující ukázková konfigurace:
 
     ```xml
     <bindings>
@@ -309,12 +309,12 @@ Processing Purchase Order: 23e0b991-fbf9-4438-a0e2-20adf93a4f89
 
      Zkontrolujte, že koncový bod je přidružen vazbu tak, že nastavíte atribut bindingConfiguration koncového bodu.
 
-2.  Ujistěte se, že změníte konfiguraci PoisonMessageServer, server a klienta, před spuštěním ukázky.
+2. Ujistěte se, že změníte konfiguraci PoisonMessageServer, server a klienta, před spuštěním ukázky.
 
     > [!NOTE]
     >  Nastavení `security mode` k `None` je ekvivalentní nastavení `MsmqAuthenticationMode`, `MsmqProtectionLevel`, a `Message` zabezpečení `None`.  
   
-3.  Aby Meta výměna dat pro práci můžeme zaregistrovat adresu URL s vazbou http. To vyžaduje, že služba běžet v okně se zvýšenými oprávněními příkaz. Jinak dojde k výjimce, jako: `Unhandled Exception: System.ServiceModel.AddressAccessDeniedException: HTTP could not register URL http://+:8000/ServiceModelSamples/service/. Your process does not have access rights to this namespace (see https://go.microsoft.com/fwlink/?LinkId=70353 for details). ---> System.Net.HttpListenerException: Access is denied`.  
+3. Aby Meta výměna dat pro práci můžeme zaregistrovat adresu URL s vazbou http. To vyžaduje, že služba běžet v okně se zvýšenými oprávněními příkaz. Jinak dojde k výjimce, jako: `Unhandled Exception: System.ServiceModel.AddressAccessDeniedException: HTTP could not register URL http://+:8000/ServiceModelSamples/service/. Your process does not have access rights to this namespace (see https://go.microsoft.com/fwlink/?LinkId=70353 for details). ---> System.Net.HttpListenerException: Access is denied`.  
   
 > [!IMPORTANT]
 >  Vzorky mohou již být nainstalováno ve vašem počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  

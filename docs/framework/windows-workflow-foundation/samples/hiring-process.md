@@ -2,12 +2,12 @@
 title: Proces náboru
 ms.date: 03/30/2017
 ms.assetid: d5fcacbb-c884-4b37-a5d6-02b1b8eec7b4
-ms.openlocfilehash: 0420a174705c12384509bf1d8022d664d7cb354e
-ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
+ms.openlocfilehash: c6f542cef8e1417ed9c8d3a185252a91062e2161
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54223218"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59313148"
 ---
 # <a name="hiring-process"></a>Proces náboru
 Tento příklad ukazuje, jak implementovat obchodních procesů pomocí aktivit zasílání zpráv a dva pracovní postupy hostovaný jako služeb pracovních postupů. Tyto pracovní postupy jsou součástí infrastruktury IT fiktivní společnosti s názvem Contoso, Inc.  
@@ -60,9 +60,9 @@ Tento příklad ukazuje, jak implementovat obchodních procesů pomocí aktivit 
 ## <a name="description-of-the-process"></a>Popis procesu  
  Společnosti Contoso, Inc. chce mít Zavřít kontrolu nad zaměstnanců v každém z její oddělení. Proto můžete kdykoli spustit nový proces náborovou chce, aby každý zaměstnanec, musí projít náborovou proces žádosti o schválení přijetí můžete skutečně došlo. Tento proces se nazývá náborovou požadavek na proces (definované v projektu HiringRequestService) a se skládá z následujících kroků:  
   
-1.  Zaměstnanec (žadateli) spustí náborovou požadavek na proces.  
+1. Zaměstnanec (žadateli) spustí náborovou požadavek na proces.  
   
-2.  Žadatele správce musí schválit žádost:  
+2. Žadatele správce musí schválit žádost:  
   
     1.  Správce může zamítnout žádosti.  
   
@@ -72,13 +72,13 @@ Tento příklad ukazuje, jak implementovat obchodních procesů pomocí aktivit 
   
     3.  Můžete schválit správce.  
   
-3.  Poté, co správce žadatele schválí, musíte tuto žádost schválit vlastníka oddělení:  
+3. Poté, co správce žadatele schválí, musíte tuto žádost schválit vlastníka oddělení:  
   
     1.  Vlastník oddělení může zamítnout.  
   
     2.  Vlastník oddělení můžete schválit.  
   
-4.  Po vlastníka oddělení schválí, vyžaduje proces schvalování 2 HR správci nebo CEO:  
+4. Po vlastníka oddělení schválí, vyžaduje proces schvalování 2 HR správci nebo CEO:  
   
     1.  Proces můžete přejít na stav přijetí nebo odmítnutí.  
   
@@ -86,16 +86,16 @@ Tento příklad ukazuje, jak implementovat obchodních procesů pomocí aktivit 
   
  Jakmile vedoucí schválil náboru nových zaměstnanců, HR musí najít vhodným kandidátem. Tento proces se provádí pomocí druhého pracovního postupu (`ResumeRequest`definované v ResumeRequestService.csproj). Tento pracovní postup definuje proces pro odeslání úlohy účtování příležitost kariéru na externí web kariéru Web společnosti Contoso, přijímá obnoví z žadatelé a sleduje stav úlohy účtování. Pozice jsou k dispozici pro pevné časové období (do čas vypršení platnosti) nebo dokud se zaměstnanci ze společnosti Contoso rozhodne ho odebrat. `ResumeRequest` Pracovní postup se skládá z následujících kroků:  
   
-1.  Zaměstnanci ze společnosti Contoso typů v informacích o umístění a dobu trvání časového limitu. Jakmile typy zaměstnanců v těchto informací pozice publikování na webu kariéru.  
+1. Zaměstnanci ze společnosti Contoso typů v informacích o umístění a dobu trvání časového limitu. Jakmile typy zaměstnanců v těchto informací pozice publikování na webu kariéru.  
   
-2.  Po publikování informací zúčastněným stranám, můžete zadat jejich obnoví. Při odeslání obnovit je uložen v záznamu propojené s levou úlohu.  
+2. Po publikování informací zúčastněným stranám, můžete zadat jejich obnoví. Při odeslání obnovit je uložen v záznamu propojené s levou úlohu.  
   
-3.  Žadatel můžete odeslat obnoví, až do vypršení časového limitu nebo někdo z oddělení lidských zdrojů Contoso rozhodne odebrat účtování zastavením procesu.  
+3. Žadatel můžete odeslat obnoví, až do vypršení časového limitu nebo někdo z oddělení lidských zdrojů Contoso rozhodne odebrat účtování zastavením procesu.  
   
 ## <a name="projects-in-the-sample"></a>Projekty v ukázce  
  V následující tabulce jsou uvedeny projekty v ukázkovém řešení.  
   
-|Projekt|Popis|  
+|Project|Popis|  
 |-------------|-----------------|  
 |ContosoHR|Obsahuje kontraktů dat, obchodní objekty a třídy úložiště.|  
 |HiringRequestService|Obsahuje definice pracovního postupu zařazením proces žádosti o.<br /><br /> Tento projekt je implementovaný jako konzolové aplikace, který je hostitelem svým pracovního postupu (souboru xaml) jako službu.|  
@@ -108,7 +108,7 @@ Tento příklad ukazuje, jak implementovat obchodních procesů pomocí aktivit 
 ## <a name="feature-summary"></a>Souhrn funkcí  
  Následující tabulka popisuje, jak se jednotlivé funkce používá v této ukázce.  
   
-|Funkce|Popis|Projekt|  
+|Funkce|Popis|Project|  
 |-------------|-----------------|-------------|  
 |Vývojový diagram|Vývojový diagram je reprezentován obchodních procesů. Tento popis vývojový diagram představuje proces stejným způsobem, ve kterém firma by čerpali ho v tabuli.|HiringRequestService|  
 |Služby pracovních postupů|Vývojový diagram s definicí procesu je hostovaný ve službě (v tomto příkladu služba je hostována v konzolové aplikaci).|HiringRequestService|  
@@ -137,87 +137,87 @@ Tento příklad ukazuje, jak implementovat obchodních procesů pomocí aktivit 
   
 #### <a name="to-create-the-databases"></a>K vytvoření databáze  
   
-1.  Otevřete příkazový řádek pro vývojáře pro sadu Visual Studio.  
+1. Otevřete příkazový řádek pro vývojáře pro sadu Visual Studio.  
   
-2.  Přejděte do složky s ukázkou.  
+2. Přejděte do složky s ukázkou.  
   
-3.  Spusťte Setup.cmd.  
+3. Spusťte Setup.cmd.  
   
-4.  Ověřte, že dvě databáze `ContosoHR` a `InstanceStore` byly vytvořeny v rámci SQL serveru Express.  
+4. Ověřte, že dvě databáze `ContosoHR` a `InstanceStore` byly vytvořeny v rámci SQL serveru Express.  
   
 #### <a name="to-set-up-the-solution-for-execution"></a>Nastavit řešení pro spouštění  
   
-1.  Spusťte sadu Visual Studio jako správce. Otevřete HiringRequest.sln.  
+1. Spusťte sadu Visual Studio jako správce. Open HiringRequest.sln.  
   
-2.  Klikněte pravým tlačítkem na řešení v **Průzkumníka řešení** a vyberte **vlastnosti**.  
+2. Klikněte pravým tlačítkem na řešení v **Průzkumníka řešení** a vyberte **vlastnosti**.  
   
-3.  Vyberte možnost **více projektů po spuštění** a nastavit **CareersWebSite**, **InternalClient**, **HiringRequestService**, a **ResumeRequestService** k **Start**. Ponechte **ContosoHR**, **InboxService**, a **OrgService** jako None.  
+3. Vyberte možnost **více projektů po spuštění** a nastavit **CareersWebSite**, **InternalClient**, **HiringRequestService**, a **ResumeRequestService** k **Start**. Ponechte **ContosoHR**, **InboxService**, a **OrgService** jako None.  
   
-4.  Sestavte řešení stisknutím kombinace kláves CTRL + SHIFT + B. Ověřte, že sestavení proběhlo úspěšně.  
+4. Sestavte řešení stisknutím kombinace kláves CTRL + SHIFT + B. Ověřte, že sestavení proběhlo úspěšně.  
   
 #### <a name="to-run-the-solution"></a>Spuštění řešení  
   
-1.  Po sestavení řešení, stiskněte CTRL + F5 ke spuštění bez ladění. Ověřte, že všechny služby byly spuštěny.  
+1. Po sestavení řešení, stiskněte CTRL + F5 ke spuštění bez ladění. Ověřte, že všechny služby byly spuštěny.  
   
-2.  Klikněte pravým tlačítkem myši **InternalClient** v řešení a pak vyberte **zobrazit v prohlížeči**. Výchozí stránka pro `InternalClient` se zobrazí. Zkontrolujte, zda jsou spuštěny služby a klikněte na odkaz.  
+2. Klikněte pravým tlačítkem myši **InternalClient** v řešení a pak vyberte **zobrazit v prohlížeči**. Výchozí stránka pro `InternalClient` se zobrazí. Zkontrolujte, zda jsou spuštěny služby a klikněte na odkaz.  
   
-3.  **HiringRequest** modulu se zobrazí. Můžete postupovat podle scénáře pomocí zde podrobně.  
+3. **HiringRequest** modulu se zobrazí. Můžete postupovat podle scénáře pomocí zde podrobně.  
   
-4.  Jednou `HiringRequest` je dokončeno, můžete spustit `ResumeRequest`. Můžete postupovat podle scénáře pomocí zde podrobně.  
+4. Jednou `HiringRequest` je dokončeno, můžete spustit `ResumeRequest`. Můžete postupovat podle scénáře pomocí zde podrobně.  
   
-5.  Když `ResumeRequest` je odesláno, je dostupná ve veřejné webové stránky (Contoso kariéru webové stránky). Chcete-li zobrazit odesílání úlohy (a použít pro umístění), přejděte na web kariéru.  
+5. Když `ResumeRequest` je odesláno, je dostupná ve veřejné webové stránky (Contoso kariéru webové stránky). Chcete-li zobrazit odesílání úlohy (a použít pro umístění), přejděte na web kariéru.  
   
-6.  Klikněte pravým tlačítkem na **CareersWebSite** v řešení a vyberte **zobrazit v prohlížeči**.  
+6. Klikněte pravým tlačítkem na **CareersWebSite** v řešení a vyberte **zobrazit v prohlížeči**.  
   
-7.  Přejděte zpět `InternalClient` kliknutím pravým tlačítkem myši **InternalClient** v řešení a vyberete **zobrazit v prohlížeči**.  
+7. Přejděte zpět `InternalClient` kliknutím pravým tlačítkem myši **InternalClient** v řešení a vyberete **zobrazit v prohlížeči**.  
   
-8.  Přejděte na **JobPostings** část kliknutím **úlohy příspěvky** odkazu v horní nabídce doručené pošty. Můžete postupovat podle scénáře pomocí zde podrobně.  
+8. Přejděte na **JobPostings** část kliknutím **úlohy příspěvky** odkazu v horní nabídce doručené pošty. Můžete postupovat podle scénáře pomocí zde podrobně.  
   
 ## <a name="scenarios"></a>Scénáře  
   
 ### <a name="hiring-request"></a>Zařazení požadavku  
   
-1.  Michael Alexander (softwarový inženýr) chce požádat o novou pozici zařazení softwarový inženýr v testu (transformace rolí SDET) Engineering oddělení, který má alespoň 3 let zkušeností v jazyce C#.  
+1. Michael Alexander (softwarový inženýr) chce požádat o novou pozici zařazení softwarový inženýr v testu (transformace rolí SDET) Engineering oddělení, který má alespoň 3 let zkušeností v jazyce C#.  
   
-2.  Po vytvoření se zobrazí žádosti v doručené poště od Michaela (klikněte na tlačítko **aktualizovat** Pokud nevidíte žádost) čeká na schválení Peter Brehm, který je od Michaela správce.  
+2. Po vytvoření se zobrazí žádosti v doručené poště od Michaela (klikněte na tlačítko **aktualizovat** Pokud nevidíte žádost) čeká na schválení Peter Brehm, který je od Michaela správce.  
   
-3.  Peter chce, aby mohly reagovat na žádosti od Michaela. Uzná za požadavky pozici 5 let zkušeností C# místo 3, takže posílá jeho komentáře zpět ke kontrole.  
+3. Peter chce, aby mohly reagovat na žádosti od Michaela. Uzná za požadavky pozici 5 let zkušeností C# místo 3, takže posílá jeho komentáře zpět ke kontrole.  
   
-4.  Michael zobrazí zpráva ve své doručené poště od svého vedoucího a chce, aby se tak, aby fungoval. Michael historie pozice žádosti o vidí a souhlasí s Peter. Michael upraví popis, který vyžadují 5 let zkušeností s C# a přijímá úpravy.  
+4. Michael zobrazí zpráva ve své doručené poště od svého vedoucího a chce, aby se tak, aby fungoval. Michael historie pozice žádosti o vidí a souhlasí s Peter. Michael upraví popis, který vyžadují 5 let zkušeností s C# a přijímá úpravy.  
   
-5.  Peter pracuje na upravený požadavek od Michaela a přijme ji. Požadavek nyní musí schválit Director of Engineering, Tsvi Reiter.  
+5. Peter pracuje na upravený požadavek od Michaela a přijme ji. Požadavek nyní musí schválit Director of Engineering, Tsvi Reiter.  
   
-6.  Tsvi Reiter chce, aby se ohledně urychlení jejich zpracování žádostí, aby mohl Vloží komentář říct, že žádost je důležitá a přijme ji.  
+6. Tsvi Reiter chce, aby se ohledně urychlení jejich zpracování žádostí, aby mohl Vloží komentář říct, že žádost je důležitá a přijme ji.  
   
-7.  Požadavek nyní musí je schválit výbor dvě HR vedoucí nebo CEO. Generální ředitel, Brian Richard Goldstein, uvidí urgentní žádost Tsvi. Má funguje v požadavku tak, že přijímá, obejít schválení správci dvě HR.  
+7. Požadavek nyní musí je schválit výbor dvě HR vedoucí nebo CEO. Generální ředitel, Brian Richard Goldstein, uvidí urgentní žádost Tsvi. Má funguje v požadavku tak, že přijímá, obejít schválení správci dvě HR.  
   
-8.  Žádost se odebere z Michael vaší doručené pošty a má teď zahájen proces náboru by.  
+8. Žádost se odebere z Michael vaší doručené pošty a má teď zahájen proces náboru by.  
   
 ### <a name="start-resume-request"></a>Žádost o obnovení  
   
-1.  Nyní, pozice úloha čeká která se má zveřejnit na externí web, kde uživatelé mohou použít (uvidíte ho kliknutím **příspěvky úlohy** odkaz). V současné době pracovní zařazení nachází s personálního oddělení zástupce, který je zodpovědný za dokončování úlohy pozice a jejím zveřejněním.  
+1. Nyní, pozice úloha čeká která se má zveřejnit na externí web, kde uživatelé mohou použít (uvidíte ho kliknutím **příspěvky úlohy** odkaz). V současné době pracovní zařazení nachází s personálního oddělení zástupce, který je zodpovědný za dokončování úlohy pozice a jejím zveřejněním.  
   
-2.  Personálního oddělení chce upravit tato pozice (kliknutím **upravit** odkaz) tak, že nastavíte časový limit 60 minut (v reálném životě, může to být dny nebo týdny). Časový limit umožňuje pozice mají být provedeny vypnout podle času určeného externí web.  
+2. Personálního oddělení chce upravit tato pozice (kliknutím **upravit** odkaz) tak, že nastavíte časový limit 60 minut (v reálném životě, může to být dny nebo týdny). Časový limit umožňuje pozice mají být provedeny vypnout podle času určeného externí web.  
   
-3.  Po uložení upravených pozice, zobrazí se v **příjem obnoví** kartu (aktualizace webové stránky zobrazíte na nové pozici úlohu).  
+3. Po uložení upravených pozice, zobrazí se v **příjem obnoví** kartu (aktualizace webové stránky zobrazíte na nové pozici úlohu).  
   
 ### <a name="collecting-resumes"></a>Shromažďují se obnoví  
   
-1.  Umístění úlohy by se zobrazit na externí web. Jako osoba zájem o používání pro úlohu můžete použít pro tuto pozici a Odeslat životopis.  
+1. Umístění úlohy by se zobrazit na externí web. Jako osoba zájem o používání pro úlohu můžete použít pro tuto pozici a Odeslat životopis.  
   
-2.  Pokud přejdete zpět ke službě Job List příspěvky, můžete "Zobrazit obnoví", které jste zatím shromažďovat.  
+2. Pokud přejdete zpět ke službě Job List příspěvky, můžete "Zobrazit obnoví", které jste zatím shromažďovat.  
   
-3.  HR taky můžete zastavit shromažďování obnoví (například když byl identifikován správný Release candidate).  
+3. HR taky můžete zastavit shromažďování obnoví (například když byl identifikován správný Release candidate).  
   
 ## <a name="troubleshooting"></a>Poradce při potížích  
   
-1.  Ujistěte se, že používáte Visual Studio s oprávněními správce.  
+1. Ujistěte se, že používáte Visual Studio s oprávněními správce.  
   
-2.  Pokud se sestavení nezdaří řešení, ověřte následující:  
+2. Pokud se sestavení nezdaří řešení, ověřte následující:  
   
     -   Odkaz na `ContosoHR` není chybí `InternalClient` nebo `CareersWebSite` projekty.  
   
-3.  Pokud toto řešení se nepodaří spustit, ověřte následující:  
+3. Pokud toto řešení se nepodaří spustit, ověřte následující:  
   
     1.  Všechny služby spuštěné.  
   
@@ -231,6 +231,6 @@ Tento příklad ukazuje, jak implementovat obchodních procesů pomocí aktivit 
   
 ## <a name="uninstalling"></a>Odinstalace  
   
-1.  Odstraňte spuštěním Cleanup.bat, umístěný ve složce nástroj DbSetup v úložišti instancí systému SQL Server.  
+1. Odstraňte spuštěním Cleanup.bat, umístěný ve složce nástroj DbSetup v úložišti instancí systému SQL Server.  
   
-2.  Odstraňte ve formě zdrojového kódu pevném disku.
+2. Odstraňte ve formě zdrojového kódu pevném disku.

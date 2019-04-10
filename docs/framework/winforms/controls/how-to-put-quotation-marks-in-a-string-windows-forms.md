@@ -10,12 +10,12 @@ helpviewer_keywords:
 - TextBox control [Windows Forms], displaying quotation marks
 - quotation marks [Windows Forms], adding to strings in text boxes
 ms.assetid: 68bdc3f3-4177-4eab-99cd-cac17a82b515
-ms.openlocfilehash: 7e48e948b52cd512dba81d643fb6a42a2d90723f
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 14180f0326b38872f5d1b112c3d9a87022fb79e9
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59113201"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59328059"
 ---
 # <a name="how-to-put-quotation-marks-in-a-string-windows-forms"></a>Postupy: Vkládání uvozovek do řetězce (Windows Forms)
 Někdy můžete chtít umístit uvozovky ("") v textovém řetězci. Příklad:  
@@ -26,7 +26,7 @@ Někdy můžete chtít umístit uvozovky ("") v textovém řetězci. Příklad:
   
 ### <a name="to-place-quotation-marks-in-a-string-in-your-code"></a>Umístit uvozovek do řetězce v kódu  
   
-1.  V jazyce Visual Basic vložte dva uvozovek za sebou jako vložený znak uvozovek. Ve Vizuálu C# a [!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)], vložit řídicí sekvence \\"jako vložený znak uvozovek. Například pro vytvoření předchozí řetězce, použijte následující kód.  
+1. V jazyce Visual Basic vložte dva uvozovek za sebou jako vložený znak uvozovek. Ve Vizuálu C# a [!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)], vložit řídicí sekvence \\"jako vložený znak uvozovek. Například pro vytvoření předchozí řetězce, použijte následující kód.  
   
     ```vb  
     Private Sub InsertQuote()  
@@ -50,7 +50,7 @@ Někdy můžete chtít umístit uvozovky ("") v textovém řetězci. Příklad:
   
      -nebo-  
   
-2.  Vložte znak ASCII nebo Unicode pro znak uvozovek. V jazyce Visual Basic použijte znak ASCII (34). Ve Vizuálu C#, použijte znak Unicode (\u0022).  
+2. Vložte znak ASCII nebo Unicode pro znak uvozovek. V jazyce Visual Basic použijte znak ASCII (34). Ve Vizuálu C#, použijte znak Unicode (\u0022).  
   
     ```vb  
     Private Sub InsertAscii()  
@@ -69,7 +69,7 @@ Někdy můžete chtít umístit uvozovky ("") v textovém řetězci. Příklad:
   
      -nebo-  
   
-3.  Můžete také Definujte konstantu znaku a použít ho místech.  
+3. Můžete také Definujte konstantu znaku a použít ho místech.  
   
     ```vb  
     Const quote As String = """"  

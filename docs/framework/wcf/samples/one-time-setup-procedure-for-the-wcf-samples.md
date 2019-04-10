@@ -2,12 +2,12 @@
 title: Jednorázový postup nastavení pro ukázky Windows Communication Foundation
 ms.date: 03/30/2017
 ms.assetid: a5848ffd-3eb5-432d-812e-bd948ccb6bca
-ms.openlocfilehash: 76cf2c7ec7edbfaaa186b45f4b810c7d4c0b1d47
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 2b9d84089cdd987f2e2b1e3d23354505520a80f8
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58825167"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59326707"
 ---
 # <a name="one-time-setup-procedure-for-the-windows-communication-foundation-samples"></a>Jednorázový postup nastavení pro ukázky Windows Communication Foundation
 Většina ukázek Windows Communication Foundation (WCF) jsou hostované v Internetové informační služby (IIS) a spustit z běžných virtuální adresář. Tento postup jednorázová nastavení vytvoří složku na disk. také přidá virtuální adresář služby IIS s názvem **ServiceModelSamples**.
@@ -19,13 +19,13 @@ Většina ukázek Windows Communication Foundation (WCF) jsou hostované v Inter
   
 ### <a name="one-time-setup-procedure-for-wcf-samples"></a>Jednorázový postup nastavení pro ukázky WCF  
   
-1.  Ujistěte se, že [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] nastaven. Další informace o tom, jak nastavit [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)], naleznete v tématu [Internet Information Service pokyny k hostování](../../../../docs/framework/wcf/samples/internet-information-service-hosting-instructions.md).  
+1. Ujistěte se, že [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] nastaven. Další informace o tom, jak nastavit [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)], naleznete v tématu [Internet Information Service pokyny k hostování](../../../../docs/framework/wcf/samples/internet-information-service-hosting-instructions.md).  
   
-2.  Ujistěte se, že [!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)] je nainstalována. Hledat následující adresáře pro verzi 4.0 (nebo novější): **\Windows\Microsoft.NET\Framework**  
+2. Ujistěte se, že [!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)] je nainstalována. Hledat následující adresáře pro verzi 4.0 (nebo novější): **\Windows\Microsoft.NET\Framework**  
   
-3.  Pokud není nainstalované Visual Studio 2012 a operačního systému není Windows Server 2008 SP2 nebo novější, nainstalujte [opravu Hotfix 251798](https://go.microsoft.com/fwlink/?LinkId=184693).  
+3. Pokud není nainstalované Visual Studio 2012 a operačního systému není Windows Server 2008 SP2 nebo novější, nainstalujte [opravu Hotfix 251798](https://go.microsoft.com/fwlink/?LinkId=184693).  
   
-4.  Spusťte následující příkazy. Další informace o proč musí spustit tyto příkazy najdete v tématu [IIS hostované služby nezdaří](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms752252(v=vs.90)).  
+4. Spusťte následující příkazy. Další informace o proč musí spustit tyto příkazy najdete v tématu [IIS hostované služby nezdaří](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms752252(v=vs.90)).  
   
     > [!WARNING]
     >  Pokud se znovu nainstaluje službu IIS, následující příkazy muset znovu spustit.
@@ -38,13 +38,13 @@ Většina ukázek Windows Communication Foundation (WCF) jsou hostované v Inter
     > [!WARNING]
     >  Spuštění příkazu `aspnet_regiis –i –enable` způsobí, že výchozí fond aplikací spusťte pomocí [!INCLUDE[netfx40_short](../../../../includes/netfx40-short-md.md)], což může způsobit potíže s nekompatibilitou pro jiné aplikace na stejném počítači.  
   
-5.  Postupujte podle [pokyny k bráně Firewall](../../../../docs/framework/wcf/samples/firewall-instructions.md) umožňující použití portů používaných ukázky.  
+5. Postupujte podle [pokyny k bráně Firewall](../../../../docs/framework/wcf/samples/firewall-instructions.md) umožňující použití portů používaných ukázky.  
   
-6.  Zkontrolujte následující výchozí adresář: \<InstallDrive>:**\WF_WCF_Samples**. Pokud byly dříve nainstalovány ukázky, toto je výchozí adresář.  
+6. Zkontrolujte následující výchozí adresář: \<InstallDrive>:**\WF_WCF_Samples**. Pokud byly dříve nainstalovány ukázky, toto je výchozí adresář.  
   
-7.  Pokud nejsou nainstalovány ukázky, je nainstalovat z umístění pro stažení ukázky [Visual C#](https://go.microsoft.com/fwlink/?LinkId=190939) nebo [jazyka Visual Basic](https://go.microsoft.com/fwlink/?LinkID=193373).  
+7. Pokud nejsou nainstalovány ukázky, je nainstalovat z umístění pro stažení ukázky [Visual C#](https://go.microsoft.com/fwlink/?LinkId=190939) nebo [jazyka Visual Basic](https://go.microsoft.com/fwlink/?LinkID=193373).  
   
-8.  Po instalaci ukázky, přejděte na: \<InstallDrive>:**\WF_WCF_Samples\WCF\Setup\\**  
+8. Po instalaci ukázky, přejděte na: \<InstallDrive>:**\WF_WCF_Samples\WCF\Setup\\**  
   
 9. Spustit **Setupvroot.bat** dávkového souboru. Jsou prováděny následovně:  
   

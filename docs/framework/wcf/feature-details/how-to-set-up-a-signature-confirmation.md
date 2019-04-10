@@ -8,12 +8,12 @@ helpviewer_keywords:
 - signature confirmation
 - WCF, security
 ms.assetid: 2424c137-c7c2-4aa9-8d5d-a066e12fefda
-ms.openlocfilehash: 78ad6a88d5c123272e1796f1a75e2bd226bfc8f5
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 56e8720a6130d2908fbfb83bd243a54fae9a2406
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59176160"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59315813"
 ---
 # <a name="how-to-set-up-a-signature-confirmation"></a>Postupy: Nastavení potvrzení podpisu
 *Potvrzení podpisu* sítí je mechanismus pro iniciátor zprávy k zajištění, že byla přijata odpověď byla vygenerována v reakci na původní zprávu o odesílatele. Potvrzení podpisu je definováno ve specifikaci WS-Security 1.1. Pokud koncový bod podporuje WS-Security 1.0, nemůžete použít potvrzení podpisu.  
@@ -22,29 +22,29 @@ ms.locfileid: "59176160"
   
 ### <a name="to-enable-signature-confirmation-in-code"></a>Chcete-li povolit potvrzení podpisu v kódu  
   
-1.  Vytvořit instanci <xref:System.ServiceModel.Channels.BindingElementCollection> třídy.  
+1. Vytvořit instanci <xref:System.ServiceModel.Channels.BindingElementCollection> třídy.  
   
-2.  Vytvoření instance <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> třídy.  
+2. Vytvoření instance <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> třídy.  
   
-3.  Nastavte <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement.RequireSignatureConfirmation%2A> k `true`.  
+3. Nastavte <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement.RequireSignatureConfirmation%2A> k `true`.  
   
-4.  Přidáte element zabezpečení do kolekce vazby.  
+4. Přidáte element zabezpečení do kolekce vazby.  
   
-5.  Vytvoření vlastní vazby, jak je uvedeno v [jak: Vytvoření vlastní vazby pomocí elementu SecurityBindingElement](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md).  
+5. Vytvoření vlastní vazby, jak je uvedeno v [jak: Vytvoření vlastní vazby pomocí elementu SecurityBindingElement](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md).  
   
 ### <a name="to-enable-signature-confirmation-in-configuration"></a>Chcete-li povolit potvrzení podpisu v konfiguraci  
   
-1.  Přidat `<customBinding>` elementu `<bindings>` oddílu konfiguračního souboru.  
+1. Přidat `<customBinding>` elementu `<bindings>` oddílu konfiguračního souboru.  
   
-2.  Přidat `<binding>` elementu a nastavte název atributu na odpovídající hodnotu.  
+2. Přidat `<binding>` elementu a nastavte název atributu na odpovídající hodnotu.  
   
-3.  Přidáte odpovídající element kódování. Následující příklad přidá `<TextMessageEncoding>` elementu.  
+3. Přidáte odpovídající element kódování. Následující příklad přidá `<TextMessageEncoding>` elementu.  
   
-4.  Přidat `<security>` podřízený element a nastavte `requireSignatureConfirmation` atribut `true`.  
+4. Přidat `<security>` podřízený element a nastavte `requireSignatureConfirmation` atribut `true`.  
   
-5.  Volitelné. Chcete-li povolit potvrzení podpisu během spuštění, přidejte [ \<secureConversationBootstrap >](../../../../docs/framework/configure-apps/file-schema/wcf/secureconversationbootstrap.md) podřízený element a nastavte `equireSignatureConfirmation` atribut `true`.  
+5. Volitelné. Chcete-li povolit potvrzení podpisu během spuštění, přidejte [ \<secureConversationBootstrap >](../../../../docs/framework/configure-apps/file-schema/wcf/secureconversationbootstrap.md) podřízený element a nastavte `equireSignatureConfirmation` atribut `true`.  
   
-6.  Přidáte element přenosu odpovídající. Následující příklad přidá [ \<httpTransport >](../../../../docs/framework/configure-apps/file-schema/wcf/httptransport.md):  
+6. Přidáte element přenosu odpovídající. Následující příklad přidá [ \<httpTransport >](../../../../docs/framework/configure-apps/file-schema/wcf/httptransport.md):  
   
     ```xml  
     <bindings>  

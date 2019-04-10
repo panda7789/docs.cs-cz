@@ -2,25 +2,25 @@
 title: LINQ to Entities
 ms.date: 03/30/2017
 ms.assetid: 641f9b68-9046-47a1-abb0-1c8eaeda0e2d
-ms.openlocfilehash: 29980450bd75c6ba0992ad7fd3165f6f2d5f32bc
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: da9529da9b45fc8ac2fdf0b19d65634dd33450fc
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59129685"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59304574"
 ---
 # <a name="linq-to-entities"></a>LINQ to Entities
 Technologie LINQ to Entities poskytuje podporu Language-Integrated Query (LINQ), který vývojářům umožňuje psát dotazy proti konceptuálního modelu Entity Framework pomocí jazyka Visual Basic nebo Visual C#. Dotazy na Entity Framework jsou reprezentovány dotazy ve stromové struktuře příkaz, které se spustí s do kontextu objektu. Technologie LINQ to Entities převede dotazů LINQ (Language Integrated) dotazy s příkazem strom dotazů, spustí dotazy na Entity Framework a vrátí objekty, které můžete použít Entity Framework a LINQ. Proces pro vytváření a spouštění technologie LINQ to Entities dotazu je následující:  
   
-1.  Vytvoření <xref:System.Data.Objects.ObjectQuery%601> instance z <xref:System.Data.Objects.ObjectContext>.  
+1. Vytvoření <xref:System.Data.Objects.ObjectQuery%601> instance z <xref:System.Data.Objects.ObjectContext>.  
   
-2.  Vytvoření LINQ to Entities dotazů v C# nebo Visual Basic pomocí <xref:System.Data.Objects.ObjectQuery%601> instance.  
+2. Vytvoření LINQ to Entities dotazů v C# nebo Visual Basic pomocí <xref:System.Data.Objects.ObjectQuery%601> instance.  
   
-3.  Převeďte na stromy příkazů operátory standardního dotazu LINQ a výrazy.  
+3. Převeďte na stromy příkazů operátory standardního dotazu LINQ a výrazy.  
   
-4.  Provedení dotazu, v reprezentaci příkazu stromu, zdroji dat. Výjimky vyvolané při provádění na zdroji dat jsou předány přímo do klienta.  
+4. Provedení dotazu, v reprezentaci příkazu stromu, zdroji dat. Výjimky vyvolané při provádění na zdroji dat jsou předány přímo do klienta.  
   
-5.  Výsledky dotazu vrátíte zpět do klienta.  
+5. Výsledky dotazu vrátíte zpět do klienta.  
   
 ## <a name="constructing-an-objectquery-instance"></a>Vytváření instanci ObjectQuery  
  <xref:System.Data.Objects.ObjectQuery%601> Generické třídě představuje dotaz, který vrátí kolekci nula nebo více typy entit. K objektu dotazu je obvykle vytvořen z existujícího kontextu objektu, ne právě vytvořený ručně a vždy patří do daného kontextu objektu. Tento kontext poskytuje připojení a informace o metadatech, který je potřeba vytvořit a spustit dotaz. <xref:System.Data.Objects.ObjectQuery%601> Obecná třída implementuje <xref:System.Linq.IQueryable%601> obecné rozhraní, jejíž metody Tvůrce povolení LINQ dotazy, které mají být sestaveny postupně. Můžete také nechat kompilátor odvodit typ entity s použitím jazyka C# `var` – klíčové slovo (`Dim` v jazyce Visual Basic s odvození místního typu povolené).  

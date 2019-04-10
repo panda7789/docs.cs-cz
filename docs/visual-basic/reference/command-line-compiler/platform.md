@@ -6,12 +6,12 @@ helpviewer_keywords:
 - /platform compiler option [Visual Basic]
 - -platform compiler option [Visual Basic]
 ms.assetid: f9bc61e6-e854-4ae1-87b9-d6244de23fd1
-ms.openlocfilehash: 9657d9ec23b0e67625521ee595bc693eb7b992a4
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: db9b3d31ba9657d26c1fb76ce4002afad949a881
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58843120"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59301162"
 ---
 # <a name="-platform-visual-basic"></a>-platform (Visual Basic)
 Určuje, jaké verze platformy common language runtime (CLR) můžete spustit výstupního souboru.  
@@ -68,9 +68,9 @@ Určuje, jaké verze platformy common language runtime (CLR) můžete spustit v�
   
 ### <a name="to-set--platform-in-the-visual-studio-ide"></a>Chcete-li nastavit - platform v integrovaném vývojovém prostředí sady Visual Studio  
   
-1.  V **Průzkumníka řešení**, vyberte projekt, otevřete **projektu** nabídky a pak klikněte na tlačítko **vlastnosti**.  
+1. V **Průzkumníka řešení**, vyberte projekt, otevřete **projektu** nabídky a pak klikněte na tlačítko **vlastnosti**.  
   
-2.  Na **kompilaci** kartu, zaškrtněte nebo zrušte zaškrtnutí **preferovat 32bitovou verzi** zaškrtávací políčko, nebo v **cílový procesor** , zvolte hodnotu.  
+2. Na **kompilaci** kartu, zaškrtněte nebo zrušte zaškrtnutí **preferovat 32bitovou verzi** zaškrtávací políčko, nebo v **cílový procesor** , zvolte hodnotu.  
   
      Další informace najdete v tématu [stránka kompilovat, Návrhář projektu (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic).  
   
@@ -83,6 +83,6 @@ vbc -platform:x86 myFile.vb
   
 ## <a name="see-also"></a>Viz také:
 
-- [/ target (Visual Basic)](target.md)
-- [Visual Basic Command-Line Compiler](index.md)
+- [/target (Visual Basic)](target.md)
+- [Kompilátor příkazového řádku jazyka Visual Basic](index.md)
 - [Příkazové řádky ukázkové kompilace](sample-compilation-command-lines.md)

@@ -12,12 +12,12 @@ helpviewer_keywords:
 - installutil.exe tool
 ms.assetid: c89c5169-f567-4305-9d62-db31a1de5481
 author: ghogen
-ms.openlocfilehash: c4eb1e5fd0c0b06f332b1eba7d3445963699415c
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 0119fee443aafd1d4215260d2cf42cec9f7eba74
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59100366"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59308468"
 ---
 # <a name="how-to-install-and-uninstall-windows-services"></a>Postupy: Instalace a odinstalace služeb Windows
 Pokud vytváříte službu Windows s použitím rozhraní .NET Framework, můžete rychle nainstalovat aplikaci služby pomocí [ *InstallUtil.exe* ](../tools/installutil-exe-installer-tool.md) nástroj příkazového řádku. Vývojáři, kteří chtějí vydání služby Windows, které mohou uživatelé nainstalovat a odinstalovat používali InstallShield. Další informace najdete v tématu [vytvoření instalačního balíčku (Windows klient)](https://docs.microsoft.com/visualstudio/deployment/deploying-applications-services-and-components#create-an-installer-package-windows-client).
@@ -34,13 +34,13 @@ Pokud vytváříte službu Windows s použitím rozhraní .NET Framework, může
   
 ### <a name="install-your-service-manually"></a>Ruční instalace služby  
   
-1.  Z **Start** nabídku, vyberte **sady Visual Studio \< *verze* >**  adresář a potom vyberte **Developer Command Prompt pro VS \< *verze*>**.
+1. Z **Start** nabídku, vyberte **sady Visual Studio \< *verze* >**  adresář a potom vyberte **Developer Command Prompt pro VS \< *verze*>**.
   
      Zobrazí se příkazový řádek pro vývojáře pro sadu Visual Studio. 
   
-2.  Přístup k adresáři, kde se nachází zkompilovaný spustitelný soubor projektu.  
+2. Přístup k adresáři, kde se nachází zkompilovaný spustitelný soubor projektu.  
   
-3.  Spustit *InstallUtil.exe* příkazovém řádku s projektem spustitelného souboru jako parametr:  
+3. Spustit *InstallUtil.exe* příkazovém řádku s projektem spustitelného souboru jako parametr:  
   
     ```console
     installutil <yourproject>.exe  
@@ -58,7 +58,7 @@ Pokud vytváříte službu Windows s použitím rozhraní .NET Framework, může
   
      Zobrazí se příkazový řádek pro vývojáře pro sadu Visual Studio.  
   
-2.  Spustit *InstallUtil.exe* z příkazového řádku s výstupy projektu jako parametr:  
+2. Spustit *InstallUtil.exe* z příkazového řádku s výstupy projektu jako parametr:  
   
     ```console  
     installutil /u <yourproject>.exe  

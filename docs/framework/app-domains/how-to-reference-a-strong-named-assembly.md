@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 4c6a406a-b5eb-44fa-b4ed-4e95bb95a813
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3da46ee5e7c1973f06cbd91126f3101c3f1d7e47
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 281cfa6507d293658e436a95a5ded0174154a13c
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59089549"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59301019"
 ---
 # <a name="how-to-reference-a-strong-named-assembly"></a>Postupy: Odkazování na sestavení se silným názvem
 Proces pro odkazování na typy a prostředky v sestavení se silným názvem je obvykle transparentní. Odkaz můžete provést v době kompilace (časné vazby) nebo v době běhu.  
@@ -30,7 +30,7 @@ Proces pro odkazování na typy a prostředky v sestavení se silným názvem je
   
 ### <a name="to-make-a-compile-time-reference-to-a-strong-named-assembly"></a>Chcete-li kompilaci odkaz na sestavení se silným názvem  
   
-1.  V příkazovém řádku zadejte následující příkaz:  
+1. V příkazovém řádku zadejte následující příkaz:  
   
      \<*příkaz kompilátoru*> **/reference:**\<*název sestavení*>  
   
@@ -44,7 +44,7 @@ csc /t:library myAssembly.cs /reference:myLibAssembly.dll
   
 ### <a name="to-make-a-run-time-reference-to-a-strong-named-assembly"></a>Chcete-li za běhu odkaz na sestavení se silným názvem  
   
-1.  Když nastavíte za běhu odkaz na sestavení se silným názvem (například pomocí <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> nebo <xref:System.Reflection.Assembly.GetType%2A?displayProperty=nameWithType> metoda), musíte použít zobrazovaný název odkazovaného sestavení se silným názvem. Název zobrazení syntaxe vypadá takto:  
+1. Když nastavíte za běhu odkaz na sestavení se silným názvem (například pomocí <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> nebo <xref:System.Reflection.Assembly.GetType%2A?displayProperty=nameWithType> metoda), musíte použít zobrazovaný název odkazovaného sestavení se silným názvem. Název zobrazení syntaxe vypadá takto:  
   
      \<*název sestavení*>**,** \< *číslo verze*>**,** \< *jazykovou verzi*  > **,** \< *token veřejného klíče*>  
   

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - BindingSource component [Windows Forms], creating a lookup table
 - BindingSource component [Windows Forms], examples
 ms.assetid: 622fce80-879d-44be-abbf-8350ec22ca2b
-ms.openlocfilehash: b2b588a8529983699e49531f51aae8e4225e9608
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 481774e9127531bb38df0cc71ac8e7eab76da695
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59181477"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59321897"
 ---
 # <a name="how-to-create-a-lookup-table-with-the-windows-forms-bindingsource-component"></a>Postupy: Vytvoření vyhledávací tabulky s komponentou Windows Forms BindingSource
 Vyhledávací tabulka je tabulka dat, která má sloupec, který zobrazuje data ze záznamů v související tabulce. V následujících postupech <xref:System.Windows.Forms.ComboBox> ovládacího prvku se používá k zobrazení pole relace cizího klíče z nadřazené do podřízené tabulky.  
@@ -49,21 +49,21 @@ Vyhledávací tabulka je tabulka dat, která má sloupec, který zobrazuje data 
   
 ### <a name="to-create-the-user-interface"></a>Vytvoření uživatelského rozhraní  
   
-1.  Z **nástrojů**, přetáhněte <xref:System.Windows.Forms.ComboBox> ovládací prvek na formuláři.  
+1. Z **nástrojů**, přetáhněte <xref:System.Windows.Forms.ComboBox> ovládací prvek na formuláři.  
   
      Tento ovládací prvek zobrazí sloupec z nadřazené tabulky.  
   
-2.  Přetáhněte jiných ovládacích prvků pro zobrazení podrobností z podřízené tabulky. Formát dat v tabulce byste určit, jaké ovládací prvky, které zvolíte. Další informace najdete v tématu [ovládacích prvků Windows Forms podle funkce](windows-forms-controls-by-function.md).  
+2. Přetáhněte jiných ovládacích prvků pro zobrazení podrobností z podřízené tabulky. Formát dat v tabulce byste určit, jaké ovládací prvky, které zvolíte. Další informace najdete v tématu [ovládacích prvků Windows Forms podle funkce](windows-forms-controls-by-function.md).  
   
-3.  Přetáhněte <xref:System.Windows.Forms.BindingNavigator> ovládací prvek do formuláře; to vám umožní procházet data v podřízené tabulce.  
+3. Přetáhněte <xref:System.Windows.Forms.BindingNavigator> ovládací prvek do formuláře; to vám umožní procházet data v podřízené tabulce.  
   
 ### <a name="to-connect-to-the-data-and-bind-it-to-controls"></a>Připojte se k datům a svázat ovládací prvky  
   
-1.  Vyberte <xref:System.Windows.Forms.ComboBox> a klikněte na inteligentní úloh glyfů pro zobrazení dialogového okna inteligentních úlohu.  
+1. Vyberte <xref:System.Windows.Forms.ComboBox> a klikněte na inteligentní úloh glyfů pro zobrazení dialogového okna inteligentních úlohu.  
   
-2.  Vyberte **položky vázané na data použijte**.  
+2. Vyberte **položky vázané na data použijte**.  
   
-3.  Klikněte na šipku vedle položky **zdroj dat** rozevíracího seznamu. Pokud zdroj dat byl dříve nakonfigurován pro projekt nebo formuláře, zobrazí se; v opačném případě proveďte následující kroky (Tento příklad používá tabulky Zákazníci a objednávky v ukázkové databázi Northwind a odkazuje na ně v závorkách).  
+3. Klikněte na šipku vedle položky **zdroj dat** rozevíracího seznamu. Pokud zdroj dat byl dříve nakonfigurován pro projekt nebo formuláře, zobrazí se; v opačném případě proveďte následující kroky (Tento příklad používá tabulky Zákazníci a objednávky v ukázkové databázi Northwind a odkazuje na ně v závorkách).  
   
     1.  Klikněte na tlačítko **přidat zdroj dat projektu** vytvořit zdroj dat a připojte se k datům.  
   
@@ -81,15 +81,15 @@ Vyhledávací tabulka je tabulka dat, která má sloupec, který zobrazuje data 
   
     8.  Klikněte na tlačítko **Dokončit**.  
   
-4.  V **členem zobrazení** rozevíracího seznamu vyberte název sloupce (například jméno kontaktu) který se má zobrazit v poli se seznamem.  
+4. V **členem zobrazení** rozevíracího seznamu vyberte název sloupce (například jméno kontaktu) který se má zobrazit v poli se seznamem.  
   
-5.  V **člen s hodnotou** rozevíracího seznamu vyberte sloupce (například ID zákazníka) k provedení této operace vyhledávání v podřízené tabulce.  
+5. V **člen s hodnotou** rozevíracího seznamu vyberte sloupce (například ID zákazníka) k provedení této operace vyhledávání v podřízené tabulce.  
   
-6.  V **vybraná hodnota** rozevíracího seznamu, přejděte na **zdroje dat projektu** a datovou sadu jste právě vytvořili, který obsahuje nadřazené a podřízené tabulky. Vyberte stejnou vlastnost u podřízené tabulky, který je členem hodnotu nadřazené tabulky (například Orders.CustomerID). Odpovídající <xref:System.Windows.Forms.BindingSource> sadu dat a tabulka adaptér součásti bude vytvořen a přidán do formuláře.  
+6. V **vybraná hodnota** rozevíracího seznamu, přejděte na **zdroje dat projektu** a datovou sadu jste právě vytvořili, který obsahuje nadřazené a podřízené tabulky. Vyberte stejnou vlastnost u podřízené tabulky, který je členem hodnotu nadřazené tabulky (například Orders.CustomerID). Odpovídající <xref:System.Windows.Forms.BindingSource> sadu dat a tabulka adaptér součásti bude vytvořen a přidán do formuláře.  
   
-7.  Vytvoření vazby <xref:System.Windows.Forms.BindingNavigator> ovládací prvek <xref:System.Windows.Forms.BindingSource> podřízené tabulky (například `OrdersBindingSource`).  
+7. Vytvoření vazby <xref:System.Windows.Forms.BindingNavigator> ovládací prvek <xref:System.Windows.Forms.BindingSource> podřízené tabulky (například `OrdersBindingSource`).  
   
-8.  Jiné než vytvoření vazby ovládacích prvků <xref:System.Windows.Forms.ComboBox> a <xref:System.Windows.Forms.BindingNavigator> ovládacího prvku pro pole podrobnosti z podřízené tabulky <xref:System.Windows.Forms.BindingSource> (například `OrdersBindingSource`), který chcete zobrazit.  
+8. Jiné než vytvoření vazby ovládacích prvků <xref:System.Windows.Forms.ComboBox> a <xref:System.Windows.Forms.BindingNavigator> ovládacího prvku pro pole podrobnosti z podřízené tabulky <xref:System.Windows.Forms.BindingSource> (například `OrdersBindingSource`), který chcete zobrazit.  
   
 ## <a name="see-also"></a>Viz také:
 

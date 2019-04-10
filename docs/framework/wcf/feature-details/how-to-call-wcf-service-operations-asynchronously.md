@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 0face17f-43ca-417b-9b33-737c0fc360df
-ms.openlocfilehash: 9a7bd1d67d9730c75e3f3f3b1eeb59f5d2d3c49a
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 2815757bf9b00375f763673f18180bfbf51a165a
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59204832"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59317439"
 ---
 # <a name="how-to-call-wcf-service-operations-asynchronously"></a>Postupy: Asynchronní volání operací služby WCF
 Toto téma popisuje, jak má přístup klient služby operace asynchronně. Implementuje služby v tomto tématu `ICalculator` rozhraní. Klient může asynchronní volání operací na tomto rozhraní za použití založený na událostech asynchronní volání modelu. (Další informace o založený na událostech asynchronní volání modelu najdete v tématu [vícevláknové programování s asynchronní vzor založený na událostech](https://go.microsoft.com/fwlink/?LinkId=248184)). Příklad, který ukazuje, jak implementace operace asynchronní služby, najdete v části [jak: Implementace operace asynchronní služby](../../../../docs/framework/wcf/how-to-implement-an-asynchronous-service-operation.md). Další informace o synchronní a asynchronní operace, najdete v části [synchronní a asynchronní operace](../../../../docs/framework/wcf/synchronous-and-asynchronous-operations.md).  
@@ -22,7 +22,7 @@ Toto téma popisuje, jak má přístup klient služby operace asynchronně. Impl
   
 #### <a name="to-call-wcf-service-operations-asynchronously"></a>Pro asynchronní volání operací služby WCF  
   
-1.  Spustit [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) nástroj s oběma `/async` a `/tcv:Version35` možnosti příkazu společně, jak je znázorněno v následujícím příkazu.  
+1. Spustit [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) nástroj s oběma `/async` a `/tcv:Version35` možnosti příkazu společně, jak je znázorněno v následujícím příkazu.  
   
     ```  
     svcutil /n:http://Microsoft.ServiceModel.Samples,Microsoft.ServiceModel.Samples http://localhost:8000/servicemodelsamples/service/mex /a /tcv:Version35  
@@ -45,12 +45,12 @@ Toto téma popisuje, jak má přístup klient služby operace asynchronně. Impl
          [!code-csharp[EventAsync#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/eventasync/cs/generatedclient.cs#3)]
          [!code-vb[EventAsync#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/eventasync/vb/generatedclient.vb#3)]  
   
-2.  Ve volání aplikace vytvořte metody zpětného volání se volá, když asynchronní operace nebude dokončena, jak je znázorněno v následujícím ukázkovém kódu.  
+2. Ve volání aplikace vytvořte metody zpětného volání se volá, když asynchronní operace nebude dokončena, jak je znázorněno v následujícím ukázkovém kódu.  
   
      [!code-csharp[EventAsync#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/eventasync/cs/client.cs#4)]
      [!code-vb[EventAsync#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/eventasync/vb/client.vb#4)]  
   
-3.  Před voláním operace, používají nový obecný <xref:System.EventHandler%601?displayProperty=nameWithType> typu <`operationName` > `EventArgs` přidáte do metodu obslužné rutiny (vytvořený v předchozím kroku) <`operationName` > `Completed` událostí. Zavolejte <`operationName` > `Async` metody. Příklad:  
+3. Před voláním operace, používají nový obecný <xref:System.EventHandler%601?displayProperty=nameWithType> typu <`operationName` > `EventArgs` přidáte do metodu obslužné rutiny (vytvořený v předchozím kroku) <`operationName` > `Completed` událostí. Zavolejte <`operationName` > `Async` metody. Příklad:  
   
      [!code-csharp[EventAsync#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/eventasync/cs/client.cs#5)]
      [!code-vb[EventAsync#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/eventasync/vb/client.vb#5)]  

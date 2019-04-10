@@ -2,12 +2,12 @@
 title: 'Postupy: Uzamknutí koncových bodů v podniku'
 ms.date: 03/30/2017
 ms.assetid: 1b7eaab7-da60-4cf7-9d6a-ec02709cf75d
-ms.openlocfilehash: 9bfd077abf0956f014c78a7c398670822724f7e5
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: da90c2e9d096d32c819590058f1e513224fd9242
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59181339"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59305952"
 ---
 # <a name="how-to-lock-down-endpoints-in-the-enterprise"></a>Postupy: Uzamknutí koncových bodů v podniku
 Velké podniky často vyžadují, že jsou aplikace vyvíjeny souladu se zásadami zabezpečení organizace. Následující téma popisuje, jak vyvíjet a instalace klienta validátor koncový bod, který slouží k ověření všech klientských aplikací Windows Communication Foundation (WCF) nainstalována na počítačích.  
@@ -25,23 +25,23 @@ Velké podniky často vyžadují, že jsou aplikace vyvíjeny souladu se zásada
   
 ### <a name="to-create-the-endpoint-validator"></a>Chcete-li vytvořit koncový bod validátoru  
   
-1.  Vytvoření <xref:System.ServiceModel.Description.IEndpointBehavior> požadovaného ověření provedením kroků v <xref:System.ServiceModel.Description.IEndpointBehavior.Validate%2A> metody. Následující kód obsahuje příklad. ( `InternetClientValidatorBehavior` Je převzata z [ověření zabezpečení](../../../../docs/framework/wcf/samples/security-validation.md) ukázka.)  
+1. Vytvoření <xref:System.ServiceModel.Description.IEndpointBehavior> požadovaného ověření provedením kroků v <xref:System.ServiceModel.Description.IEndpointBehavior.Validate%2A> metody. Následující kód obsahuje příklad. ( `InternetClientValidatorBehavior` Je převzata z [ověření zabezpečení](../../../../docs/framework/wcf/samples/security-validation.md) ukázka.)  
   
      [!code-csharp[LockdownValidation#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/lockdownvalidation/cs/internetclientvalidatorbehavior.cs#2)]  
   
-2.  Vytvořit nový <xref:System.ServiceModel.Configuration.BehaviorExtensionElement> , který registruje validátor koncový bod vytvořili v kroku 1. Následující příklad kódu ukazuje to. (Původní kód v tomto příkladu je v [ověření zabezpečení](../../../../docs/framework/wcf/samples/security-validation.md) ukázka.)  
+2. Vytvořit nový <xref:System.ServiceModel.Configuration.BehaviorExtensionElement> , který registruje validátor koncový bod vytvořili v kroku 1. Následující příklad kódu ukazuje to. (Původní kód v tomto příkladu je v [ověření zabezpečení](../../../../docs/framework/wcf/samples/security-validation.md) ukázka.)  
   
      [!code-csharp[LockdownValidation#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/lockdownvalidation/cs/internetclientvalidatorelement.cs#3)]  
   
-3.  Zajistěte, aby že zkompilovaného sestavení je podepsáno silným názvem. Podrobnosti najdete v tématu [nástroj Strong Name (sériové číslo. Soubor EXE)](https://go.microsoft.com/fwlink/?LinkId=248217) a kompilátoru příkazy pro váš jazyk.  
+3. Zajistěte, aby že zkompilovaného sestavení je podepsáno silným názvem. Podrobnosti najdete v tématu [nástroj Strong Name (sériové číslo. Soubor EXE)](https://go.microsoft.com/fwlink/?LinkId=248217) a kompilátoru příkazy pro váš jazyk.  
   
 ### <a name="to-install-the-validator-into-the-target-computer"></a>Chcete-li nainstalovat validátoru do cílového počítače  
   
-1.  Instalaci koncového bodu validátoru pomocí vhodný mechanismus. V podniku tím můžete pomocí zásad skupiny a Systems Management Server (SMS).  
+1. Instalaci koncového bodu validátoru pomocí vhodný mechanismus. V podniku tím můžete pomocí zásad skupiny a Systems Management Server (SMS).  
   
-2.  Instalace sestavení se silným názvem do mezipaměti globálního sestavení pomocí [Gacutil.exe (Global Assembly Cache Tool)](../../../../docs/framework/tools/gacutil-exe-gac-tool.md).  
+2. Instalace sestavení se silným názvem do mezipaměti globálního sestavení pomocí [Gacutil.exe (Global Assembly Cache Tool)](../../../../docs/framework/tools/gacutil-exe-gac-tool.md).  
   
-3.  Použití <xref:System.Configuration?displayProperty=nameWithType> obor názvů, typy mají:  
+3. Použití <xref:System.Configuration?displayProperty=nameWithType> obor názvů, typy mají:  
   
     1.  Přidat rozšíření [ \<behaviorExtensions >](../../../../docs/framework/configure-apps/file-schema/wcf/behaviorextensions.md) části použití plně kvalifikovaný název typu a uzamčení elementu.  
   

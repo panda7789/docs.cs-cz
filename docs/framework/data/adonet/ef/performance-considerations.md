@@ -2,12 +2,12 @@
 title: Důležité informace o výkonu (Entity Framework)
 ms.date: 03/30/2017
 ms.assetid: 61913f3b-4f42-4d9b-810f-2a13c2388a4a
-ms.openlocfilehash: d0ee92b96a22b0ecb59ee76fb2f2e9d64442ce22
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: ec7f3571f60dc7f10816cad90911e50d271a9ce1
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59087947"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59324042"
 ---
 # <a name="performance-considerations-entity-framework"></a>Důležité informace o výkonu (Entity Framework)
 Toto téma popisuje charakteristiky výkonu technologie ADO.NET Entity Framework a obsahuje některé aspekty, které pomůžou zlepšit výkon aplikací využívajících rozhraní Entity Framework.  
@@ -82,11 +82,11 @@ Toto téma popisuje charakteristiky výkonu technologie ADO.NET Entity Framework
 ### <a name="query-paths"></a>Dotaz cesty  
  Ve výchozím nastavení se při spouštění <xref:System.Data.Objects.ObjectQuery%601>, související objekty nebudou zobrazeny (i když jsou objekty, které představují samotné vztahy). Můžete načíst související objekty v jednom ze tří způsobů:  
   
-1.  Nastavte cestu dotazu před <xref:System.Data.Objects.ObjectQuery%601> provádí.  
+1. Nastavte cestu dotazu před <xref:System.Data.Objects.ObjectQuery%601> provádí.  
   
-2.  Volání `Load` metodu na navigační vlastnost, která zveřejňuje objektu.  
+2. Volání `Load` metodu na navigační vlastnost, která zveřejňuje objektu.  
   
-3.  Nastavte <xref:System.Data.Objects.ObjectContextOptions.LazyLoadingEnabled%2A> možnost <xref:System.Data.Objects.ObjectContext> k `true`. Všimněte si, že to se provádí automaticky při generování kódu na objektové vrstvě pomocí [Entity Data Model Designer](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cc716685(v=vs.100)). Další informace najdete v části [vygeneruje kód přehled](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cc982041(v=vs.100)).  
+3. Nastavte <xref:System.Data.Objects.ObjectContextOptions.LazyLoadingEnabled%2A> možnost <xref:System.Data.Objects.ObjectContext> k `true`. Všimněte si, že to se provádí automaticky při generování kódu na objektové vrstvě pomocí [Entity Data Model Designer](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cc716685(v=vs.100)). Další informace najdete v části [vygeneruje kód přehled](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cc982041(v=vs.100)).  
   
  Pokud zvažujete možnost, mějte na paměti, že je kompromis mezi počet požadavků na databázi a množství dat vrácené v jediném dotazu. Další informace najdete v tématu [načítání související objekty](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896272(v=vs.100)).  
   

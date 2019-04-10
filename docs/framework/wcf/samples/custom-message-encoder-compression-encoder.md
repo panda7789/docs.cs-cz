@@ -2,12 +2,12 @@
 title: 'Vlastní kodér zpráv: Kompresní kodér'
 ms.date: 03/30/2017
 ms.assetid: 57450b6c-89fe-4b8a-8376-3d794857bfd7
-ms.openlocfilehash: 9dd1e2eb25b2f400ba42b6cee75f8563c4d52c31
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: e19894a685f511d22252d0b3a79f77b83b7fda99
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59140683"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59310496"
 ---
 # <a name="custom-message-encoder-compression-encoder"></a>Vlastní kodér zpráv: Kompresní kodér
 Tento příklad ukazuje, jak implementovat vlastní kodér na platformě Windows Communication Foundation (WCF).  
@@ -39,9 +39,9 @@ Tento příklad ukazuje, jak implementovat vlastní kodér na platformě Windows
   
  Jak je uvedeno dříve, existuje několik vrstev, které jsou implementovány v vlastní kodér. Abychom vám lépe předvedli vztah mezi každou z těchto úrovní, zjednodušené pořadí událostí pro spuštění služby je v následujícím seznamu:  
   
-1.  Spustí se server.  
+1. Spustí se server.  
   
-2.  Informace o konfiguraci je pro čtení.  
+2. Informace o konfiguraci je pro čtení.  
   
     1.  Konfigurace služby registruje rutiny vlastní konfigurace.  
   
@@ -51,11 +51,11 @@ Tento příklad ukazuje, jak implementovat vlastní kodér na platformě Windows
   
     4.  Vlastní prvek vazby vytvoří a vrátí objekt pro vytváření kodéru zpráv.  
   
-3.  Příjmu zprávy.  
+3. Příjmu zprávy.  
   
-4.  Objekt pro vytváření kodéru zpráv vrátí kodéru zprávy ve zprávě pro čtení a zápis odpovědi.  
+4. Objekt pro vytváření kodéru zpráv vrátí kodéru zprávy ve zprávě pro čtení a zápis odpovědi.  
   
-5.  Kodér vrstvy je implementovaný jako objekt pro vytváření tříd. Pouze kodéru pro vytváření tříd musí být veřejně vystavené pro vlastní kodér. Objekt factory, který je vrácený element vazby při <xref:System.ServiceModel.ServiceHost> nebo <xref:System.ServiceModel.ChannelFactory%601> je vytvořen objekt. Zpráva kodérů můžou fungovat v režimu ve vyrovnávací paměti nebo datových proudů. Tato ukázka předvádí, jak ve vyrovnávací paměti režim a režim tvorby datového proudu.  
+5. Kodér vrstvy je implementovaný jako objekt pro vytváření tříd. Pouze kodéru pro vytváření tříd musí být veřejně vystavené pro vlastní kodér. Objekt factory, který je vrácený element vazby při <xref:System.ServiceModel.ServiceHost> nebo <xref:System.ServiceModel.ChannelFactory%601> je vytvořen objekt. Zpráva kodérů můžou fungovat v režimu ve vyrovnávací paměti nebo datových proudů. Tato ukázka předvádí, jak ve vyrovnávací paměti režim a režim tvorby datového proudu.  
   
  Pro oba režimy existuje je v doprovodné `ReadMessage` a `WriteMessage` metoda abstract `MessageEncoder` třídy. Většina kódování práce probíhá v těchto metod. Ukázka zabalí existující text a zprávy v binární kodérů. To umožňuje vzorku pro delegování čtení a zápis síťové vyjádření zpráv do vnitřní kodér a kompresní kodér ke kompresi a dekompresi výsledky. Protože neexistuje žádný kanál pro kódování zprávy, jde o jediný model pro použití více kodérů ve službě WCF. Jakmile byl dekomprimován zprávy, se předá výslednou zprávu zásobníku do zásobníku kanál pro zpracování. Během komprese je výsledný komprimované zprávy zapisují přímo do datového proudu k dispozici.  
   
@@ -334,17 +334,17 @@ Press <ENTER> to terminate client.
   
 #### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
-1.  Nainstalujte [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] 4.0 pomocí následujícího příkazu:  
+1. Nainstalujte [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] 4.0 pomocí následujícího příkazu:  
   
     ```  
     %windir%\Microsoft.NET\Framework\v4.0.XXXXX\aspnet_regiis.exe /i /enable  
     ```  
   
-2.  Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+2. Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-3.  Abyste mohli sestavit řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+3. Abyste mohli sestavit řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-4.  Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+4. Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 > [!IMPORTANT]
 >  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  

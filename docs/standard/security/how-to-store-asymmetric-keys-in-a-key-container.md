@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Store asymetrického klíče v kontejneru klíčů'
+title: 'Postupy: Uložení asymetrického klíče v kontejneru klíčů'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -17,31 +17,31 @@ helpviewer_keywords:
 ms.assetid: 0dbcbd8d-0dcf-40e9-9f0c-e3f162d35ccc
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ff86db89eadc36faf3ebdcd1f653d73fc958595a
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: c6fada360eda46dc695ab732a2573b135d823f0a
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56972791"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59326187"
 ---
-# <a name="how-to-store-asymmetric-keys-in-a-key-container"></a>Postupy: Store asymetrického klíče v kontejneru klíčů
+# <a name="how-to-store-asymmetric-keys-in-a-key-container"></a>Postupy: Uložení asymetrického klíče v kontejneru klíčů
 Asymetrické soukromé klíče by nikdy neměly být uloženy doslovně nebo ve formátu prostého textu v místním počítači. Pokud potřebujete uložit soukromý klíč, měli byste použít kontejner klíčů. Další informace o kontejnerech klíčů najdete v tématu [Principy úrovni počítače a kontejnery klíčů RSA individuální](https://docs.microsoft.com/previous-versions/aspnet/f5cs0acs(v=vs.100)).  
   
 ### <a name="to-create-an-asymmetric-key-and-save-it-in-a-key-container"></a>K vytvoření asymetrický klíč a uložit ho v kontejneru klíčů  
   
-1.  Vytvořit novou instanci třídy <xref:System.Security.Cryptography.CspParameters> třídy a předat název, který chcete volat kontejner klíčů <xref:System.Security.Cryptography.CspParameters.KeyContainerName?displayProperty=nameWithType> pole.  
+1. Vytvořit novou instanci třídy <xref:System.Security.Cryptography.CspParameters> třídy a předat název, který chcete volat kontejner klíčů <xref:System.Security.Cryptography.CspParameters.KeyContainerName?displayProperty=nameWithType> pole.  
   
-2.  Vytvořit novou instanci třídy, která je odvozena z <xref:System.Security.Cryptography.AsymmetricAlgorithm> třídy (obvykle **RSACryptoServiceProvider** nebo **DSACryptoServiceProvider**) a předejte mu dříve vytvořený  **CspParameters** objekt konstruktoru.  
+2. Vytvořit novou instanci třídy, která je odvozena z <xref:System.Security.Cryptography.AsymmetricAlgorithm> třídy (obvykle **RSACryptoServiceProvider** nebo **DSACryptoServiceProvider**) a předejte mu dříve vytvořený  **CspParameters** objekt konstruktoru.  
   
 ### <a name="to-delete-the-key-from-a-key-container"></a>K odstranění klíče z kontejneru klíčů  
   
-1.  Vytvořit novou instanci třídy **CspParameters** třídy a předat název, který chcete volat kontejner klíčů **CspParameters.KeyContainerName** pole.  
+1. Vytvořit novou instanci třídy **CspParameters** třídy a předat název, který chcete volat kontejner klíčů **CspParameters.KeyContainerName** pole.  
   
-2.  Vytvořit novou instanci třídy, která je odvozena z **AsymmetricAlgorithm** třídy (obvykle **RSACryptoServiceProvider** nebo **DSACryptoServiceProvider**) a předat dříve vytvořili **CspParameters** objekt konstruktoru.  
+2. Vytvořit novou instanci třídy, která je odvozena z **AsymmetricAlgorithm** třídy (obvykle **RSACryptoServiceProvider** nebo **DSACryptoServiceProvider**) a předat dříve vytvořili **CspParameters** objekt konstruktoru.  
   
-3.  Nastavte **PersistKeyInCSP** vlastnost, která je odvozena z třídy **AsymmetricAlgorithm** k **false** (**False** v jazyce Visual Basic).  
+3. Nastavte **PersistKeyInCSP** vlastnost, která je odvozena z třídy **AsymmetricAlgorithm** k **false** (**False** v jazyce Visual Basic).  
   
-4.  Volání **vymazat** metoda, která je odvozena z třídy **AsymmetricAlgorithm**. Tato metoda uvolní všechny prostředky třídy a vymaže kontejneru klíčů.  
+4. Volání **vymazat** metoda, která je odvozena z třídy **AsymmetricAlgorithm**. Tato metoda uvolní všechny prostředky třídy a vymaže kontejneru klíčů.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje, jak vytvořit asymetrického klíče, uložte jej v kontejneru klíčů, později načíst klíč a odstranění klíče z kontejneru.  
@@ -228,4 +228,4 @@ Key deleted.
 - [Generování klíčů pro šifrování a dešifrování](../../../docs/standard/security/generating-keys-for-encryption-and-decryption.md)
 - [Šifrování dat](../../../docs/standard/security/encrypting-data.md)
 - [Dešifrování dat](../../../docs/standard/security/decrypting-data.md)
-- [Kryptografické služby](../../../docs/standard/security/cryptographic-services.md)
+- [Šifrovací služby](../../../docs/standard/security/cryptographic-services.md)

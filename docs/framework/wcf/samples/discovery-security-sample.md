@@ -2,12 +2,12 @@
 title: Ukázka zabezpečení zjišťování
 ms.date: 03/30/2017
 ms.assetid: b8db01f4-b4a1-43fe-8e31-26d4e9304a65
-ms.openlocfilehash: b0999b51d5e371c4167bf4712781b3a229119fd0
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: e956b9f8162d55891233a3ab664b05658d50eeab
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59160761"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59318400"
 ---
 # <a name="discovery-security-sample"></a>Ukázka zabezpečení zjišťování
 Specifikace zjišťování nevyžaduje, zabezpečené koncové body, které jsou součástí procesu zjišťování. Rozšíření zjišťování zpráv pomocí zabezpečení zmírní různé typy útoků (zpráva změnou, útok DOS, znovu přehrát, falšování identity). Tato ukázka implementuje vlastní kanály, které compute a ověřování podpisů zprávu ve formátu compact podpis (popsaný v části 8.2 specifikace WS-Discovery). Ukázka podporuje i [2005 zjišťování specifikace](https://go.microsoft.com/fwlink/?LinkId=177912) a [verze 1.1](https://go.microsoft.com/fwlink/?LinkId=179677).  
@@ -60,11 +60,11 @@ Specifikace zjišťování nevyžaduje, zabezpečené koncové body, které jsou
   
 #### <a name="to-use-this-sample"></a>Pro fungování této ukázky  
   
-1.  Spusťte skript Setup.bat na příkazovém řádku pro vývojáře pro sadu Visual Studio. Ukázka používá certifikáty pro podepsání a ověření zprávy. Tento skript vytvoří certifikát pomocí Makecert.exe a nainstaluje je pomocí Certmgr.exe. Skript musí být spuštěn s oprávněním správce.  
+1. Spusťte skript Setup.bat na příkazovém řádku pro vývojáře pro sadu Visual Studio. Ukázka používá certifikáty pro podepsání a ověření zprávy. Tento skript vytvoří certifikát pomocí Makecert.exe a nainstaluje je pomocí Certmgr.exe. Skript musí být spuštěn s oprávněním správce.  
   
-2.  Sestavte a spusťte ukázku, otevřete soubor Security.sln v sadě Visual Studio a zvolte **sestavit vše znovu**. Aktualizovat vlastnosti řešení, které chcete spustit více projektů: vyberte **Start** pro všechny projekty s výjimkou DiscoverySecureChannels. Normální spuštění řešení.  
+2. Sestavte a spusťte ukázku, otevřete soubor Security.sln v sadě Visual Studio a zvolte **sestavit vše znovu**. Aktualizovat vlastnosti řešení, které chcete spustit více projektů: vyberte **Start** pro všechny projekty s výjimkou DiscoverySecureChannels. Normální spuštění řešení.  
   
-3.  Jakmile budete hotovi s ukázkou, spusťte Cleanup.bat skript, který odstraní certifikáty vytvořené pro tuto ukázku.  
+3. Jakmile budete hotovi s ukázkou, spusťte Cleanup.bat skript, který odstraní certifikáty vytvořené pro tuto ukázku.  
   
 > [!IMPORTANT]
 >  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  

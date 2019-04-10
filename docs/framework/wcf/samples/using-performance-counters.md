@@ -2,12 +2,12 @@
 title: Použití čítačů výkonu
 ms.date: 03/30/2017
 ms.assetid: 00a787af-1876-473c-a48d-f52b51e28a3f
-ms.openlocfilehash: aa4e309c7097359e538e92aa3ddf88794150f3c4
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 2c5042d497a09984a6f6c398a943b443ee9aafb9
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59186773"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59302852"
 ---
 # <a name="using-performance-counters"></a>Použití čítačů výkonu
 Tato ukázka předvádí, jak získat přístup k čítače výkonu Windows Communication Foundation (WCF) a jak vytvořit uživatelsky definovaným výkonem čítače. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md).  
@@ -33,39 +33,39 @@ Tato ukázka předvádí, jak získat přístup k čítače výkonu Windows Comm
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
-1.  Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2.  K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3.  Spusťte ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3. Spusťte ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 ### <a name="to-view-performance-data"></a>Chcete-li zobrazit údaje o výkonu  
   
-1.  Spustit nástroj Sledování výkonu kliknutím **Start**, **spuštění...** , zadejte `perfmon` a klikněte na tlačítko **OK,** nebo v Ovládacích panelech vyberte **nástroje pro správu** a dvakrát klikněte na panel **výkonu**.  
+1. Spustit nástroj Sledování výkonu kliknutím **Start**, **spuštění...** , zadejte `perfmon` a klikněte na tlačítko **OK,** nebo v Ovládacích panelech vyberte **nástroje pro správu** a dvakrát klikněte na panel **výkonu**.  
   
     > [!NOTE]
     >  Nelze přidat čítače, dokud vzorový kód je spuštěný.  
   
-2.  Odeberte čítačů výkonu, které jsou uvedeny tak, že je vyberete a stisknutím klávesy Delete.  
+2. Odeberte čítačů výkonu, které jsou uvedeny tak, že je vyberete a stisknutím klávesy Delete.  
   
-3.  Přidání čítačů WCF kliknutím pravým tlačítkem v podokně grafu a výběr **přidat čítače**. V **přidat čítače** dialogu **ServiceModelOperation 3.0.0.0, ServiceModelEndpoint 3.0.0.0 nebo ServiceModelService 3.0.0.0** v objektu výkonu rozevírací seznam pole se seznamem. Vyberte čítače, které chcete zobrazit v seznamu.  
+3. Přidání čítačů WCF kliknutím pravým tlačítkem v podokně grafu a výběr **přidat čítače**. V **přidat čítače** dialogu **ServiceModelOperation 3.0.0.0, ServiceModelEndpoint 3.0.0.0 nebo ServiceModelService 3.0.0.0** v objektu výkonu rozevírací seznam pole se seznamem. Vyberte čítače, které chcete zobrazit v seznamu.  
   
     > [!NOTE]
     >  Pokud nejsou žádné WCF služby spuštěné v počítači nejsou žádné čítače výkonu WCF pro službu.  
   
 ### <a name="to-use-the-configuration-editor-to-enable-counters"></a>Použití editoru konfigurace pro povolení čítačů  
   
-1.  Spusťte instanci SvcConfigEditor.exe.  
+1. Spusťte instanci SvcConfigEditor.exe.  
   
-2.  V nabídce Soubor klikněte na tlačítko **otevřít** a potom klikněte na tlačítko **konfiguračního souboru...** .  
+2. V nabídce Soubor klikněte na tlačítko **otevřít** a potom klikněte na tlačítko **konfiguračního souboru...** .  
   
-3.  Přejděte do složky služby ukázkovou aplikaci a otevřete soubor Web.config.  
+3. Přejděte do složky služby ukázkovou aplikaci a otevřete soubor Web.config.  
   
-4.  Klikněte na tlačítko **diagnostiky** ve stromové struktuře konfigurace.  
+4. Klikněte na tlačítko **diagnostiky** ve stromové struktuře konfigurace.  
   
-5.  Přepnout **čítač výkonu** v **diagnostiky** okno k zobrazení "Vše".  
+5. Přepnout **čítač výkonu** v **diagnostiky** okno k zobrazení "Vše".  
   
-6.  Konfigurační soubor uložte a ukončete editor.  
+6. Konfigurační soubor uložte a ukončete editor.  
   
 > [!IMPORTANT]
 >  Vzorky mohou již být nainstalováno ve vašem počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  

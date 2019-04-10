@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 dev_langs:
 - vb
 ms.assetid: 5a736a30-ba66-4adb-b87c-57d19476e862
-ms.openlocfilehash: 686d1797666c36f47d1ab0244754bbf2daf97eaf
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 1527e3b4b614d4e700ae0c2c0fc555e14c7bc8d2
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59188568"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59314825"
 ---
 # <a name="walkthrough-using-only-stored-procedures-visual-basic"></a>Návod: Použití jen uložených procedur (Visual Basic)
 Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] scénář pro přístup k datům pomocí uložených procedur komponentami TableAdapter pouze. Tento přístup se často používá ve správci databází a omezit způsob přístupu k úložišti dat.  
@@ -62,15 +62,15 @@ Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdli
   
 #### <a name="to-create-a-linq-to-sql-solution"></a>K vytvoření LINQ to SQL řešení  
   
-1.  V sadě Visual Studio **souboru** nabídky, klikněte na tlačítko **nový projekt**.  
+1. V sadě Visual Studio **souboru** nabídky, klikněte na tlačítko **nový projekt**.  
   
-2.  V **typy projektů** v podokně **nový projekt** dialogového okna rozbalte **jazyka Visual Basic**a potom klikněte na tlačítko **Windows**.  
+2. V **typy projektů** v podokně **nový projekt** dialogového okna rozbalte **jazyka Visual Basic**a potom klikněte na tlačítko **Windows**.  
   
-3.  V **šablony** podokně klikněte na tlačítko **formulářová aplikace Windows**.  
+3. V **šablony** podokně klikněte na tlačítko **formulářová aplikace Windows**.  
   
-4.  V **název** zadejte **SprocOnlyApp**.  
+4. V **název** zadejte **SprocOnlyApp**.  
   
-5.  Klikněte na **OK**.  
+5. Klikněte na **OK**.  
   
      Otevře se Návrhář formulářů Windows.  
   
@@ -79,11 +79,11 @@ Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdli
   
 #### <a name="to-add-systemdatalinqdll"></a>To add System.Data.Linq.dll  
   
-1.  V **Průzkumníka řešení**, klikněte na tlačítko **zobrazit všechny soubory**.  
+1. V **Průzkumníka řešení**, klikněte na tlačítko **zobrazit všechny soubory**.  
   
-2.  V **Průzkumníka řešení**, klikněte pravým tlačítkem na **odkazy**a potom klikněte na tlačítko **přidat odkaz**.  
+2. V **Průzkumníka řešení**, klikněte pravým tlačítkem na **odkazy**a potom klikněte na tlačítko **přidat odkaz**.  
   
-3.  V **přidat odkaz** dialogové okno, klikněte na tlačítko **.NET**, klikněte na tlačítko System.Data.Linq sestavení a klikněte na **OK**.  
+3. V **přidat odkaz** dialogové okno, klikněte na tlačítko **.NET**, klikněte na tlačítko System.Data.Linq sestavení a klikněte na **OK**.  
   
      Sestavení se přidá do projektu.  
   
@@ -92,9 +92,9 @@ Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdli
   
 #### <a name="to-add-the-northwind-code-file-to-the-project"></a>Chcete-li přidat soubor kódu northwind do projektu  
   
-1.  Na **projektu** nabídky, klikněte na tlačítko **přidat existující položku**.  
+1. Na **projektu** nabídky, klikněte na tlačítko **přidat existující položku**.  
   
-2.  V **přidat existující položku** dialogové okno, přesunout do c:\linqtest3\northwind.vb a potom klikněte na tlačítko **přidat**.  
+2. V **přidat existující položku** dialogové okno, přesunout do c:\linqtest3\northwind.vb a potom klikněte na tlačítko **přidat**.  
   
      Soubor northwind.vb je přidán do projektu.  
   
@@ -103,11 +103,11 @@ Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdli
   
 #### <a name="to-create-the-database-connection"></a>Chcete-li vytvořit připojení k databázi  
   
-1.  V **Průzkumníka řešení**, klikněte pravým tlačítkem na **Form1.vb**a potom klikněte na tlačítko **zobrazit kód**.  
+1. V **Průzkumníka řešení**, klikněte pravým tlačítkem na **Form1.vb**a potom klikněte na tlačítko **zobrazit kód**.  
   
      `Class Form1` Zobrazí se v editoru kódu.  
   
-2.  Zadejte následující kód do `Form1` blok kódu:  
+2. Zadejte následující kód do `Form1` blok kódu:  
   
      [!code-vb[DLinqWalk4VB#1](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqWalk4VB/vb/Form1.vb#1)]  
   
@@ -116,42 +116,42 @@ Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdli
   
 #### <a name="to-set-up-the-user-interface"></a>Nastavení uživatelského rozhraní  
   
-1.  Vraťte se Windows Forms Designer (**Form1.vb[Design]**).  
+1. Vraťte se Windows Forms Designer (**Form1.vb[Design]**).  
   
-2.  Na **zobrazení** nabídky, klikněte na tlačítko **nástrojů**.  
+2. Na **zobrazení** nabídky, klikněte na tlačítko **nástrojů**.  
   
      Otevře se panel nástrojů.  
   
     > [!NOTE]
     >  Klikněte na tlačítko **automatické skrývání** připínáčku nechat otevřené sady nástrojů, zatímco provádíte zbývající kroky v této části.  
   
-3.  Přetáhněte z panelu nástrojů na dvě tlačítka, dvě textová pole a dva popisky **Form1**.  
+3. Přetáhněte z panelu nástrojů na dvě tlačítka, dvě textová pole a dva popisky **Form1**.  
   
      Uspořádání ovládacích prvků jako doprovodné ilustrace. Rozbalte **Form1** tak, aby snadno umístit ovládací prvky.  
   
-4.  Klikněte pravým tlačítkem na **Label1**a potom klikněte na tlačítko **vlastnosti**.  
+4. Klikněte pravým tlačítkem na **Label1**a potom klikněte na tlačítko **vlastnosti**.  
   
-5.  Změnit **Text** vlastnost z **Label1** k **zadejte OrderID:**.  
+5. Změnit **Text** vlastnost z **Label1** k **zadejte OrderID:**.  
   
-6.  Stejně jako u **Label2**, změnit **Text** vlastnost z **Label2** k **zadejte ID zákazníka:**.  
+6. Stejně jako u **Label2**, změnit **Text** vlastnost z **Label2** k **zadejte ID zákazníka:**.  
   
-7.  Stejným způsobem, změnit **Text** vlastnost **Button1** k **OrderDetails**.  
+7. Stejným způsobem, změnit **Text** vlastnost **Button1** k **OrderDetails**.  
   
-8.  Změnit **Text** vlastnost **Button2** k **historie objednávek**.  
+8. Změnit **Text** vlastnost **Button2** k **historie objednávek**.  
   
      Ovládací prvky tlačítka rozšíříte tak, aby veškerý text.  
   
 #### <a name="to-handle-button-clicks"></a>Pro zpracování kliknutí na tlačítko  
   
-1.  Dvakrát klikněte na panel **OrderDetails** na **Form1** vytvořit `Button1` obslužná rutina události a otevřete editor kódu.  
+1. Dvakrát klikněte na panel **OrderDetails** na **Form1** vytvořit `Button1` obslužná rutina události a otevřete editor kódu.  
   
-2.  Zadejte následující kód do `Button1` obslužné rutiny:  
+2. Zadejte následující kód do `Button1` obslužné rutiny:  
   
      [!code-vb[DLinqWalk4VB#2](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqWalk4VB/vb/Form1.vb#2)]  
   
-3.  Teď klikněte dvakrát na **Button2** na Form1 vytvořit `Button2` obslužná rutina události a otevřete editor kódu.  
+3. Teď klikněte dvakrát na **Button2** na Form1 vytvořit `Button2` obslužná rutina události a otevřete editor kódu.  
   
-4.  Zadejte následující kód do `Button2` obslužné rutiny:  
+4. Zadejte následující kód do `Button2` obslužné rutiny:  
   
      [!code-vb[DLinqWalk4VB#3](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqWalk4VB/vb/Form1.vb#3)]  
   
@@ -160,33 +160,33 @@ Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdli
   
 #### <a name="to-test-the-application"></a>Testování aplikace  
   
-1.  Stisknutím klávesy F5 spusťte ladění.  
+1. Stisknutím klávesy F5 spusťte ladění.  
   
      Form1 se zobrazí.  
   
-2.  V **zadejte OrderID** zadejte **10249** a potom klikněte na tlačítko **OrderDetails**.  
+2. V **zadejte OrderID** zadejte **10249** a potom klikněte na tlačítko **OrderDetails**.  
   
      Okno se zprávou zobrazí seznam produktům zahrnutým v pořadí 10249.  
   
      Klikněte na tlačítko **OK** zavřete okno se zprávou.  
   
-3.  V **zadejte CustomerID** zadejte `ALFKI`a potom klikněte na tlačítko **historie objednávek**.  
+3. V **zadejte CustomerID** zadejte `ALFKI`a potom klikněte na tlačítko **historie objednávek**.  
   
      Okno se zprávou zobrazí seznam historie objednávek pro zákazníka ALFKI.  
   
      Klikněte na tlačítko **OK** zavřete okno se zprávou.  
   
-4.  V **zadejte OrderID** zadejte `123`a potom klikněte na tlačítko **OrderDetails**.  
+4. V **zadejte OrderID** zadejte `123`a potom klikněte na tlačítko **OrderDetails**.  
   
      Zobrazí okno se zprávou "Žádné výsledky."  
   
      Klikněte na tlačítko **OK** zavřete okno se zprávou.  
   
-5.  Na **ladění** nabídky, klikněte na tlačítko **Zastavit ladění**.  
+5. Na **ladění** nabídky, klikněte na tlačítko **Zastavit ladění**.  
   
      Ukončí relaci ladění.  
   
-6.  Pokud jste dokončili, experimentování, můžete kliknout na **zavřít projekt** na **souboru** nabídky a po zobrazení výzvy uložte projekt.  
+6. Pokud jste dokončili, experimentování, můžete kliknout na **zavřít projekt** na **souboru** nabídky a po zobrazení výzvy uložte projekt.  
   
 ## <a name="next-steps"></a>Další kroky  
  Tento projekt můžete vylepšit tím, že některé změny. Můžete například seznam dostupných uložené procedury v seznamu a mít uživatele, který postup ke spuštění vyberte. Může také datový proud výstupu sestavy do textového souboru.  

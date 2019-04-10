@@ -8,12 +8,12 @@ helpviewer_keywords:
 - -lib compiler option [C#]
 - /lib compiler option [C#]
 ms.assetid: b0efcc88-e8aa-4df4-a00b-8bdef70b7673
-ms.openlocfilehash: f3ea4a323fa57a49499c4fa6dea43aa22c3475df
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 49920a46f1d970c3f00025c3dc3eb384c937aa99
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54677872"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59319401"
 ---
 # <a name="-lib-c-compiler-options"></a>-lib (možnosti kompilátoru C#)
 **-Lib** Určuje umístění sestavení odkazováno prostřednictvím [– referenční dokumentace (možnosti kompilátoru C#)](../../../csharp/language-reference/compiler-options/reference-compiler-option.md) možnost.  
@@ -34,13 +34,13 @@ ms.locfileid: "54677872"
 ## <a name="remarks"></a>Poznámky  
  Kompilátor vyhledá odkazy na sestavení, které nejsou plně kvalifikovaný v následujícím pořadí:  
   
-1.  Aktuální pracovní adresář. Toto je adresář, ze kterého je vyvolán kompilátor.  
+1. Aktuální pracovní adresář. Toto je adresář, ze kterého je vyvolán kompilátor.  
   
-2.  Common language runtime systémový adresář.  
+2. Common language runtime systémový adresář.  
   
-3.  Adresáře určeného **-lib**.  
+3. Adresáře určeného **-lib**.  
   
-4.  Adresáře určené proměnnou prostředí LIB.  
+4. Adresáře určené proměnnou prostředí LIB.  
   
  Použití **– referenční dokumentace** zadat odkaz na sestavení.  
   
@@ -52,11 +52,11 @@ ms.locfileid: "54677872"
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Nastavení tohoto parametru kompilátoru ve vývojovém prostředí Visual Studio  
   
-1.  Otevřete v projektu **stránky vlastností** dialogové okno.  
+1. Otevřete v projektu **stránky vlastností** dialogové okno.  
   
-2.  Klikněte na tlačítko **cesta k odkazům** stránku vlastností.  
+2. Klikněte na tlačítko **cesta k odkazům** stránku vlastností.  
   
-3.  Upravte obsah pole se seznamem.  
+3. Upravte obsah pole se seznamem.  
   
  Informace o tom, jak prostřednictvím kódu programu nastavení tohoto parametru kompilátoru najdete v tématu <xref:VSLangProj80.ProjectProperties3.ReferencePath%2A>.  
   
@@ -69,5 +69,5 @@ csc -lib:c:\ -reference:t2.dll t2.cs
   
 ## <a name="see-also"></a>Viz také:
 
-- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)
+- [Možnosti kompilátoru C#](../../../csharp/language-reference/compiler-options/index.md)
 - [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

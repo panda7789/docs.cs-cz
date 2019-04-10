@@ -8,12 +8,12 @@ helpviewer_keywords:
 - DataGrid [WPF], validation
 - validation [WPF], DataGrid
 ms.assetid: ec6078a8-1e42-4648-b414-f4348e81bda1
-ms.openlocfilehash: aead8cbd500262a4cba535fd023dd9701d50257a
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 00d09c62aae67e3438816409c95ccf96050b3206
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59086803"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59305947"
 ---
 # <a name="how-to-implement-validation-with-the-datagrid-control"></a>Postupy: Implementace ověření pomocí ovládacího prvku DataGrid
 <xref:System.Windows.Controls.DataGrid> Ovládací prvek umožňuje provádět ověření na úrovni buněk a řádek. S ověřováním na úrovni buněk ověřit jednotlivé vlastnosti vázaný datový objekt když uživatel aktualizuje hodnotu. S ověřováním na úrovni řádků ověřit celé datové objekty Pokud uživatel potvrdí změny do řádku. Můžete také poskytovat přizpůsobená vizuální zpětnou vazbu pro chyby ověření, nebo použít výchozí vizuální zpětnou vazbu, která <xref:System.Windows.Controls.DataGrid> poskytuje ovládací prvek.  
@@ -42,14 +42,14 @@ ms.locfileid: "59086803"
   
 ### <a name="to-validate-multiple-values-in-a-single-row"></a>K ověření více hodnot v jediném řádku  
   
-1.  Implementace <xref:System.Windows.Controls.ValidationRule> podtřídy, která kontroluje více vlastností vázaný datový objekt. V vaše <xref:System.Windows.Controls.ValidationRule.Validate%2A> implementace metody přetypovat `value` pro parametr <xref:System.Windows.Data.BindingGroup> instance. Pak přístup k objektu data prostřednictvím <xref:System.Windows.Data.BindingGroup.Items%2A> vlastnost.  
+1. Implementace <xref:System.Windows.Controls.ValidationRule> podtřídy, která kontroluje více vlastností vázaný datový objekt. V vaše <xref:System.Windows.Controls.ValidationRule.Validate%2A> implementace metody přetypovat `value` pro parametr <xref:System.Windows.Data.BindingGroup> instance. Pak přístup k objektu data prostřednictvím <xref:System.Windows.Data.BindingGroup.Items%2A> vlastnost.  
   
      Následující příklad ukazuje tento proces ověření, zda `StartDate` hodnota vlastnosti pro `Course` objekt je starší než jeho `EndDate` hodnotu vlastnosti.  
   
      [!code-csharp[DataGrid_Validation#CourseValidationRule](~/samples/snippets/csharp/VS_Snippets_Wpf/datagrid_validation/cs/mainwindow.xaml.cs#coursevalidationrule)]
      [!code-vb[DataGrid_Validation#CourseValidationRule](~/samples/snippets/visualbasic/VS_Snippets_Wpf/datagrid_validation/vb/mainwindow.xaml.vb#coursevalidationrule)]  
   
-2.  Přidat ověřovací pravidlo pro <xref:System.Windows.Controls.DataGrid.RowValidationRules%2A?displayProperty=nameWithType> kolekce. <xref:System.Windows.Controls.DataGrid.RowValidationRules%2A> Poskytuje přímý přístup k vlastnosti <xref:System.Windows.Data.BindingGroup.ValidationRules%2A> vlastnost <xref:System.Windows.Data.BindingGroup> instance, které jsou seskupeny všechny vazby použit v ovládacím prvku.  
+2. Přidat ověřovací pravidlo pro <xref:System.Windows.Controls.DataGrid.RowValidationRules%2A?displayProperty=nameWithType> kolekce. <xref:System.Windows.Controls.DataGrid.RowValidationRules%2A> Poskytuje přímý přístup k vlastnosti <xref:System.Windows.Data.BindingGroup.ValidationRules%2A> vlastnost <xref:System.Windows.Data.BindingGroup> instance, které jsou seskupeny všechny vazby použit v ovládacím prvku.  
   
      Následující příklad nastaví <xref:System.Windows.Controls.DataGrid.RowValidationRules%2A> vlastnost v XAML. <xref:System.Windows.Controls.ValidationRule.ValidationStep%2A> Je nastavena na <xref:System.Windows.Controls.ValidationStep.UpdatedValue> tak, že ověřování dochází pouze po aktualizaci vázaný datový objekt.  
   

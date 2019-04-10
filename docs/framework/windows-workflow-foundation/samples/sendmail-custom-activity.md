@@ -2,27 +2,27 @@
 title: Vlastní aktivita SendMail
 ms.date: 03/30/2017
 ms.assetid: 947a9ae6-379c-43a3-9cd5-87f573a5739f
-ms.openlocfilehash: 4cd2ed8c80bd5ab4c4e784f4c5c86a58ecceda2f
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 89252098402deee991ea01b8e76082a5f4b8c389
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50181287"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59321858"
 ---
 # <a name="sendmail-custom-activity"></a>Vlastní aktivita SendMail
 Tato ukázka předvádí, jak vytvořit vlastní aktivitu, která je odvozena z <xref:System.Activities.AsyncCodeActivity> k odesílání e-mailu pomocí protokolu SMTP pro použití v rámci aplikace pracovního postupu. Vlastní aktivita používá možnosti <xref:System.Net.Mail.SmtpClient> asynchronní odeslání e-mailu a odesílání e-mailu s ověřováním. Poskytuje také některé funkce koncových uživatelů, jako je režim, nahrazování tokenů, soubor šablony a testujte cestu pro přetažení.  
   
  Následující tabulka obsahuje podrobnosti o argumenty `SendMail` aktivity.  
   
-|Název|Typ|Popis|  
+|Name|Typ|Popis|  
 |-|-|-|  
 |Hostitel|String|Adresa hostitele serveru SMTP.|  
 |Port|String|Port služby SMTP na hostiteli.|  
 |enableSsl|bool|Určuje, zda <xref:System.Net.Mail.SmtpClient> vrstvy SSL (Secure Sockets) používá k šifrování připojení.|  
 |UserName|String|Uživatelské jméno pro nastavení přihlašovacích údajů pro ověření odesílatel <xref:System.Net.Mail.SmtpClient.Credentials%2A> vlastnost.|  
 |Heslo|String|Heslo k nastavení pověření pro ověření odesílatel <xref:System.Net.Mail.SmtpClient.Credentials%2A> vlastnost.|  
-|Předmět|<xref:System.Activities.InArgument%601>\<řetězec >|Předmět zprávy.|  
-|Text|<xref:System.Activities.InArgument%601>\<řetězec >|Text zprávy.|  
+|Subjekt|<xref:System.Activities.InArgument%601>\<řetězec >|Předmět zprávy.|  
+|Tělo|<xref:System.Activities.InArgument%601>\<řetězec >|Text zprávy.|  
 |Přílohy|<xref:System.Activities.InArgument%601>\<řetězec >|Kolekce přílohy sloužící k ukládání dat, které jsou připojené k této e-mailové zprávy.|  
 |From|<xref:System.Net.Mail.MailAddress>|Z adresy pro tento e-mailové zprávy.|  
 |Chcete-li|<xref:System.Activities.InArgument%601>\<<xref:System.Net.Mail.MailAddressCollection>>|Kolekce adres, který obsahuje příjemci tohoto e-mailové zprávy.|  
@@ -36,7 +36,7 @@ Tato ukázka předvádí, jak vytvořit vlastní aktivitu, která je odvozena z 
 ## <a name="solution-contents"></a>Obsah řešení  
  Řešení obsahuje dva projekty.  
   
-|Projekt|Popis|Důležitých souborů|  
+|Project|Popis|Důležitých souborů|  
 |-------------|-----------------|---------------------|  
 |SendMail|Aktivita SendMail|1.  SendMail.cs: implementace pro hlavní aktivitu<br />2.  SendMailDesigner.xaml a SendMailDesigner.xaml.cs: návrháře pro aktivita SendMail<br />3.  MailTemplateBody.htm: Šablona e-mailu k odeslání.|  
 |SendMailTestClient|Testovací aktivita SendMail klienta.  Tento projekt ukazuje dva způsoby volání aktivita SendMail: deklarativně a prostřednictvím kódu programu.|1.  Sequence1.XAML: pracovní postup, který volá aktivita SendMail.<br />2.  Soubor program.cs: vyvolá Sequence1 a také vytvoří pracovní postup prostřednictvím kódu programu, který používá SendMail.|  
@@ -111,7 +111,7 @@ new SendMail
   
 -   [Konfigurace SMTP služby (IIS 6.0)](https://go.microsoft.com/fwlink/?LinkId=150456)  
   
--   [Služba IIS 7.0: Konfigurace e-mailu SMTP](https://go.microsoft.com/fwlink/?LinkId=150457)  
+-   [IIS 7.0: Konfigurace e-mailu SMTP](https://go.microsoft.com/fwlink/?LinkId=150457)  
   
 -   [Jak nainstalovat službu SMTP](https://go.microsoft.com/fwlink/?LinkId=150458)  
   
@@ -119,17 +119,17 @@ new SendMail
   
 ##### <a name="to-run-this-sample"></a>Tuto ukázku spustit  
   
-1.  Pomocí sady Visual Studio 2010, otevřete soubor řešení SendMail.sln.  
+1. Pomocí sady Visual Studio 2010, otevřete soubor řešení SendMail.sln.  
   
-2.  Ujistěte se, že máte přístup k SMTP serveru platný. Zobrazit pokyny k instalaci.  
+2. Ujistěte se, že máte přístup k SMTP serveru platný. Zobrazit pokyny k instalaci.  
   
-3.  Konfigurace programu s adresu serveru a od a do e-mailové adresy.  
+3. Konfigurace programu s adresu serveru a od a do e-mailové adresy.  
   
      Pro správné spuštění této ukázky, budete muset nakonfigurovat hodnotu od a do e-mailové adresy a adresu serveru SMTP v souboru Program.cs a Sequence.xaml. Budete muset změnit adresu i v cloudu, protože program odešle e-mailu dvěma různými způsoby  
   
-4.  Abyste mohli sestavit řešení, stiskněte kombinaci kláves CTRL + SHIFT + B.  
+4. Abyste mohli sestavit řešení, stiskněte kombinaci kláves CTRL + SHIFT + B.  
   
-5.  Abyste mohli spustit řešení, stiskněte CTRL + F5.  
+5. Abyste mohli spustit řešení, stiskněte CTRL + F5.  
   
 > [!IMPORTANT]
 >  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  

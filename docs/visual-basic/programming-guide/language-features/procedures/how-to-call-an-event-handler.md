@@ -8,12 +8,12 @@ helpviewer_keywords:
 - procedures [Visual Basic], event handlers
 - procedures [Visual Basic], calling
 ms.assetid: 72e18ef8-144e-40df-a1f4-066a57271e28
-ms.openlocfilehash: dd21f80e4b3892cbd9db901b619ecff98f6b70bd
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 3690d1c2eb8ece9059b8b25b5a14bef2021bc8f6
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58837764"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59320168"
 ---
 # <a name="how-to-call-an-event-handler-in-visual-basic"></a>Postupy: Volání obslužné rutiny událostí v jazyce Visual Basic
 *Události* je akce nebo výskyt – například myši klikněte na tlačítko nebo kreditního limitu překročil – v některých součástí programu, a pro která můžete napsat kód, který je rozpoznán reagovat. *Obslužná rutina události* se psaní kódu pro reakci na událost.  
@@ -26,13 +26,13 @@ ms.locfileid: "58837764"
   
 ### <a name="to-call-an-event-handler-using-handles-and-withevents"></a>Pro volání obslužné rutiny události pomocí obslužné rutiny a WithEvents  
   
-1.  Ujistěte se, že událost je deklarována pomocí [Event – příkaz](../../../../visual-basic/language-reference/statements/event-statement.md).  
+1. Ujistěte se, že událost je deklarována pomocí [Event – příkaz](../../../../visual-basic/language-reference/statements/event-statement.md).  
   
-2.  Deklarace proměnné objektu v modulu nebo třídy úrovni pomocí [WithEvents](../../../../visual-basic/language-reference/modifiers/withevents.md) – klíčové slovo. `As` Klauzuli pro tuto proměnnou musí být zadána třída, která vyvolává událost.  
+2. Deklarace proměnné objektu v modulu nebo třídy úrovni pomocí [WithEvents](../../../../visual-basic/language-reference/modifiers/withevents.md) – klíčové slovo. `As` Klauzuli pro tuto proměnnou musí být zadána třída, která vyvolává událost.  
   
-3.  V prohlášení o zpracování událostí `Sub` postupu přidat [zpracovává](../../../../visual-basic/language-reference/statements/handles-clause.md) klauzuli, která určuje, `WithEvents` proměnné a název události.  
+3. V prohlášení o zpracování událostí `Sub` postupu přidat [zpracovává](../../../../visual-basic/language-reference/statements/handles-clause.md) klauzuli, která určuje, `WithEvents` proměnné a název události.  
   
-4.  Při výskytu události, Visual Basic automaticky volá `Sub` postup. Váš kód může použít `RaiseEvent` příkaz, ujistěte se, dojde k události.  
+4. Při výskytu události, Visual Basic automaticky volá `Sub` postup. Váš kód může použít `RaiseEvent` příkaz, ujistěte se, dojde k události.  
   
      Následující příklad definuje události a `WithEvents` proměnné, která odkazuje na třídu, která vyvolává událost. Zpracování událostí `Sub` postup používá `Handles` klauzule k určení třídy a zpracovává události.  
   
@@ -40,11 +40,11 @@ ms.locfileid: "58837764"
   
 ### <a name="to-call-an-event-handler-using-addhandler"></a>Pro volání obslužné rutiny události pomocí AddHandler  
   
-1.  Ujistěte se, že událost je deklarována pomocí `Event` příkazu.  
+1. Ujistěte se, že událost je deklarována pomocí `Event` příkazu.  
   
-2.  Spuštění [AddHandler – příkaz](../../../../visual-basic/language-reference/statements/addhandler-statement.md) dynamicky připojit zpracování událostí `Sub` procedury s událostí.  
+2. Spuštění [AddHandler – příkaz](../../../../visual-basic/language-reference/statements/addhandler-statement.md) dynamicky připojit zpracování událostí `Sub` procedury s událostí.  
   
-3.  Při výskytu události, Visual Basic automaticky volá `Sub` postup. Váš kód může použít `RaiseEvent` příkaz, ujistěte se, dojde k události.  
+3. Při výskytu události, Visual Basic automaticky volá `Sub` postup. Váš kód může použít `RaiseEvent` příkaz, ujistěte se, dojde k události.  
   
      Následující příklad definuje `Sub` postupu ke zpracování <xref:System.Windows.Forms.Form.Closing> událost formuláře. Poté použije [AddHandler – příkaz](../../../../visual-basic/language-reference/statements/addhandler-statement.md) přidružení `catchClose` postupu jako obslužná rutina události <xref:System.Windows.Forms.Form.Closing>.  
   
@@ -56,7 +56,7 @@ ms.locfileid: "58837764"
 
 - [Procedury](./index.md)
 - [Procedury Sub](./sub-procedures.md)
-- [Příkaz Sub](../../../../visual-basic/language-reference/statements/sub-statement.md)
-- [Operátor AddressOf](../../../../visual-basic/language-reference/operators/addressof-operator.md)
+- [Sub – příkaz](../../../../visual-basic/language-reference/statements/sub-statement.md)
+- [AddressOf – operátor](../../../../visual-basic/language-reference/operators/addressof-operator.md)
 - [Postupy: Vytvoření procedury](./how-to-create-a-procedure.md)
 - [Postupy: Volání procedury, která nevrací hodnotu](./how-to-call-a-procedure-that-does-not-return-a-value.md)

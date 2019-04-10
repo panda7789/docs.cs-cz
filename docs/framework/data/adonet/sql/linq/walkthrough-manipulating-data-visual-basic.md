@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 dev_langs:
 - vb
 ms.assetid: 1f6a54f6-ec33-452a-a37d-48122207bf14
-ms.openlocfilehash: 34049f113ce9da0ed1c4cc63fd53093a0775bbad
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 0b013cff36fc9063f30aaa4356e9e8249dd960d8
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59208303"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59306492"
 ---
 # <a name="walkthrough-manipulating-data-visual-basic"></a>Návod: Manipulace s daty (Visual Basic)
 Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] scénář pro přidání, úpravy a odstraňování dat v databázi. Přidejte zákazníka, změňte název zákazníka a odstranit objednávky použijete kopii ukázkové databáze Northwind.  
@@ -55,28 +55,28 @@ Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdli
   
 #### <a name="to-create-a-linq-to-sql-solution"></a>K vytvoření LINQ to SQL řešení  
   
-1.  V sadě Visual Studio **souboru** nabídky, klikněte na tlačítko **nový projekt**.  
+1. V sadě Visual Studio **souboru** nabídky, klikněte na tlačítko **nový projekt**.  
   
-2.  V **typy projektů** v podokně **nový projekt** dialogové okno, klikněte na tlačítko **jazyka Visual Basic**.  
+2. V **typy projektů** v podokně **nový projekt** dialogové okno, klikněte na tlačítko **jazyka Visual Basic**.  
   
-3.  V **šablony** podokně klikněte na tlačítko **konzolovou aplikaci**.  
+3. V **šablony** podokně klikněte na tlačítko **konzolovou aplikaci**.  
   
-4.  V **název** zadejte **LinqDataManipulationApp**.  
+4. V **název** zadejte **LinqDataManipulationApp**.  
   
-5.  Klikněte na **OK**.  
+5. Klikněte na **OK**.  
   
 ## <a name="adding-linq-references-and-directives"></a>Přidání odkazů LINQ a direktivy  
  Tento návod používá sestavení, která nemusí být nainstalován ve výchozím nastavení ve vašem projektu. Pokud `System.Data.Linq` není uveden jako odkaz v projektu (klikněte na tlačítko **zobrazit všechny soubory** v **Průzkumníku řešení** a rozbalte **odkazy** uzlu), přidat, jak je vysvětleno v Následující kroky.  
   
 #### <a name="to-add-systemdatalinq"></a>Chcete-li přidat System.Data.Linq  
   
-1.  V **Průzkumníka řešení**, klikněte pravým tlačítkem na **odkazy**a potom klikněte na tlačítko **přidat odkaz**.  
+1. V **Průzkumníka řešení**, klikněte pravým tlačítkem na **odkazy**a potom klikněte na tlačítko **přidat odkaz**.  
   
-2.  V **přidat odkaz** dialogové okno, klikněte na tlačítko **.NET**, klikněte na tlačítko System.Data.Linq sestavení a klikněte na **OK**.  
+2. V **přidat odkaz** dialogové okno, klikněte na tlačítko **.NET**, klikněte na tlačítko System.Data.Linq sestavení a klikněte na **OK**.  
   
      Sestavení se přidá do projektu.  
   
-3.  V editoru kódu přidejte následující direktivy výše **Module1**:  
+3. V editoru kódu přidejte následující direktivy výše **Module1**:  
   
      [!code-vb[DLinqWalk3VB#1](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqWalk3VB/vb/Module1.vb#1)]  
   
@@ -85,9 +85,9 @@ Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdli
   
 #### <a name="to-add-the-northwind-code-file-to-the-project"></a>Chcete-li přidat soubor kódu northwind do projektu  
   
-1.  Na **projektu** nabídky, klikněte na tlačítko **přidat existující položku**.  
+1. Na **projektu** nabídky, klikněte na tlačítko **přidat existující položku**.  
   
-2.  V **přidat existující položku** dialogové okno, přejděte do c:\linqtest2\northwind.vb a potom klikněte na tlačítko **přidat**.  
+2. V **přidat existující položku** dialogové okno, přejděte do c:\linqtest2\northwind.vb a potom klikněte na tlačítko **přidat**.  
   
      Soubor northwind.vb je přidán do projektu.  
   
@@ -96,11 +96,11 @@ Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdli
   
 #### <a name="to-set-up-and-test-the-database-connection"></a>K nastavení a otestovat připojení k databázi  
   
-1.  Zadejte nebo vložte následující kód do `Sub Main`:  
+1. Zadejte nebo vložte následující kód do `Sub Main`:  
   
      [!code-vb[DLinqWalk3VB#2](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqWalk3VB/vb/Module1.vb#2)]  
   
-2.  Testování aplikace v tomto okamžiku stisknutím klávesy F5.  
+2. Testování aplikace v tomto okamžiku stisknutím klávesy F5.  
   
      A **konzoly** otevře se okno.  
   
@@ -113,11 +113,11 @@ Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdli
   
 #### <a name="to-add-a-new-customer-entity-object"></a>Chcete-li přidat nový objekt entity zákazníka  
   
-1.  Vytvořte nový `Customer` přidáním následujícího kódu před `Console.ReadLine` v `Sub Main`:  
+1. Vytvořte nový `Customer` přidáním následujícího kódu před `Console.ReadLine` v `Sub Main`:  
   
      [!code-vb[DLinqWalk3VB#3](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqWalk3VB/vb/Module1.vb#3)]  
   
-2.  Stiskněte klávesu F5, chcete-li ladit řešení.  
+2. Stiskněte klávesu F5, chcete-li ladit řešení.  
   
      Výsledky, které jsou zobrazeny v okně konzoly jsou následující:  
   
@@ -129,7 +129,7 @@ Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdli
   
      Všimněte si, že na novém řádku se nezobrazí ve výsledcích. Nová data dosud nebyla odeslána do databáze.  
   
-3.  Stisknutím klávesy Enter v **konzoly** okno chcete zastavit ladění.  
+3. Stisknutím klávesy Enter v **konzoly** okno chcete zastavit ladění.  
   
 ## <a name="updating-an-entity"></a>Aktualizují se Entity  
  V následujících krocích se budou načítat `Customer` objektu a změňte některou z jeho vlastností.  
@@ -156,15 +156,15 @@ Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdli
   
 #### <a name="to-submit-changes-to-the-database"></a>K odeslání změn do databáze  
   
-1.  Vložte následující kód nad `Console.ReadLine`:  
+1. Vložte následující kód nad `Console.ReadLine`:  
   
      [!code-vb[DLinqWalk3VB#6](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqWalk3VB/vb/Module1.vb#6)]  
   
-2.  Vložte následující kód (po `SubmitChanges`) zobrazíte před a po účinky odeslání změn:  
+2. Vložte následující kód (po `SubmitChanges`) zobrazíte před a po účinky odeslání změn:  
   
      [!code-vb[DLinqWalk3VB#7](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqWalk3VB/vb/Module1.vb#7)]  
   
-3.  Stiskněte klávesu F5, chcete-li ladit řešení.  
+3. Stiskněte klávesu F5, chcete-li ladit řešení.  
   
      V okně konzoly se zobrazí takto:  
   
@@ -181,7 +181,7 @@ Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdli
     Customer ID: RICAR  
     ```  
   
-4.  Stisknutím klávesy Enter v **konzoly** okno chcete zastavit ladění.  
+4. Stisknutím klávesy Enter v **konzoly** okno chcete zastavit ladění.  
   
 > [!NOTE]
 >  Po přidání nového zákazníka, odešlete změny nelze provést toto řešení znovu, je-li tento parametr, vzhledem k tomu, že nemůžete přidat stejnou zákazníka znovu jako je. Pokud chcete znovu spustit řešení, změňte hodnotu ID zákazníka, které mají být přidány.  

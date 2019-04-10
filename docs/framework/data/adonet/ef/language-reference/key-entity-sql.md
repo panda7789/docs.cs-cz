@@ -2,12 +2,12 @@
 title: KLÍČ (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: cbaa97a8-c89c-4460-8c74-00474695789f
-ms.openlocfilehash: 820d357baf8f3e17a10ced84babc6745512e572b
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 9cd3276583741f2b0261cb8a0e55f4185d20100e
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59230028"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59319336"
 ---
 # <a name="key-entity-sql"></a>KLÍČ (Entity SQL)
 Extrahuje klíč odkazu nebo výrazu entity.  
@@ -31,9 +31,9 @@ from LOB.Orders as o
 ## <a name="example"></a>Příklad  
  Následující dotaz Entity SQL používá operátor klíče k extrakci část výraz s odkaz na typ klíče. Dotaz je založen na modelu Sales AdventureWorks. Kompilace a spuštění tohoto dotazu, postupujte podle těchto kroků:  
   
-1.  Postupujte podle pokynů v [jak: Spustit dotaz, který vrátí výsledky typu StructuralType](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-structuraltype-results.md).  
+1. Postupujte podle pokynů v [jak: Spustit dotaz, který vrátí výsledky typu StructuralType](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-structuraltype-results.md).  
   
-2.  Předat jako argument pro následující dotaz `ExecuteStructuralTypeQuery` metody:  
+2. Předat jako argument pro následující dotaz `ExecuteStructuralTypeQuery` metody:  
   
  [!code-csharp[DP EntityServices Concepts 2#KEY](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#key)]  
   

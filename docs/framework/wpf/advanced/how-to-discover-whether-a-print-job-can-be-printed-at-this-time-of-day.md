@@ -10,12 +10,12 @@ helpviewer_keywords:
 - printers [WPF], availability
 - print jobs [WPF], timing
 ms.assetid: 7e9c8ec1-abf6-4b3d-b1c6-33b35d3c4063
-ms.openlocfilehash: dab836af8ba3d177719d910142cd93f8f6de0002
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 7eed5400744f1010cbf52dc8d3b3d0bc24aa4371
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59099856"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59326863"
 ---
 # <a name="how-to-discover-whether-a-print-job-can-be-printed-at-this-time-of-day"></a>Postupy: Zjištění, jestli jde vytisknout tiskovou úlohu v této denní době
 Tiskové fronty nejsou vždycky k dispozici po dobu 24 hodin denně. Mají počáteční a koncový čas vlastnosti, které je možné nastavit, aby byly k dispozici v určitých časech den. Tato funkce je možné, například pro rezervaci tiskárny pro výhradní použití určitých oddělení po 17: 00. Toto oddělení by měla mít jinou frontu tiskárny, než jiných oddělení údržby použít. Fronta jiných oddělení se nastavuje nedostupnost po 17: 00, zatímco fronty pro dána oddělení může být nastaven na být vždy k dispozici.  
@@ -29,9 +29,9 @@ Tiskové fronty nejsou vždycky k dispozici po dobu 24 hodin denně. Mají poč�
   
  Existují dva hlavní kroky pro tento druh funkce následujícím způsobem.  
   
-1.  Přečtěte si <xref:System.Printing.PrintQueue.StartTimeOfDay%2A> a <xref:System.Printing.PrintQueue.UntilTimeOfDay%2A> vlastnosti <xref:System.Printing.PrintQueue> k určení, zda aktuální čas je mezi nimi.  
+1. Přečtěte si <xref:System.Printing.PrintQueue.StartTimeOfDay%2A> a <xref:System.Printing.PrintQueue.UntilTimeOfDay%2A> vlastnosti <xref:System.Printing.PrintQueue> k určení, zda aktuální čas je mezi nimi.  
   
-2.  Přečtěte si <xref:System.Printing.PrintSystemJobInfo.StartTimeOfDay%2A> a <xref:System.Printing.PrintSystemJobInfo.UntilTimeOfDay%2A> vlastnosti <xref:System.Printing.PrintSystemJobInfo> k určení, zda aktuální čas je mezi nimi.  
+2. Přečtěte si <xref:System.Printing.PrintSystemJobInfo.StartTimeOfDay%2A> a <xref:System.Printing.PrintSystemJobInfo.UntilTimeOfDay%2A> vlastnosti <xref:System.Printing.PrintSystemJobInfo> k určení, zda aktuální čas je mezi nimi.  
   
  Ale komplikace způsobit skutečnost, že tyto vlastnosti nejsou <xref:System.DateTime> objekty. Místo toho jsou <xref:System.Int32> objekty, které je možné vyjádřit jako počet minut od půlnoci denní dobu. Kromě toho nejedná o půlnoci v aktuálním časovém pásmu, ale o půlnoci UTC (Coordinated Universal Time).  
   

@@ -5,31 +5,31 @@ helpviewer_keywords:
 - COM [WCF], configure service monikers
 - COM [WCF], register service monikers
 ms.assetid: e5e16c80-8a8e-4eef-af53-564933b651ef
-ms.openlocfilehash: 364329954591199c4b0d3123c662c4e124c242fc
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: dfac833cc7517af00d0264fc5d11fc83ae543569
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59141918"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59313577"
 ---
 # <a name="how-to-register-and-configure-a-service-moniker"></a>Postupy: Registrace a konfigurace monikeru služby
 Před použitím monikeru služby Windows Communication Foundation (WCF) v rámci aplikace modelu COM s typem kontraktu, musí zaregistrovat požadované typy s atributy s modelem COM a konfigurace aplikace modelu COM a zástupný název požadované vazby konfigurace.  
   
 ### <a name="to-register-the-required-attributed-types-with-com"></a>Zaregistrovat s atributy požadované typy modelu COM  
   
-1.  Použití [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) nástroj k načtení metadat kontraktu služby WCF. Tím se vytvoří zdrojový kód pro sestavení klienta WCF a konfigurační soubor aplikace klienta.  
+1. Použití [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) nástroj k načtení metadat kontraktu služby WCF. Tím se vytvoří zdrojový kód pro sestavení klienta WCF a konfigurační soubor aplikace klienta.  
   
-2.  Ujistěte se, že typy v sestavení jsou označeny jako `ComVisible`. Uděláte to tak, přidejte následující atribut souboru AssemblyInfo.cs projektu sady Visual Studio.  
+2. Ujistěte se, že typy v sestavení jsou označeny jako `ComVisible`. Uděláte to tak, přidejte následující atribut souboru AssemblyInfo.cs projektu sady Visual Studio.  
   
     ```  
     [assembly: ComVisible(true)]  
     ```  
   
-3.  Kompilaci spravovaného klienta WCF jako sestavení se silným názvem. Tento postup vyžaduje přihlášení pomocí páru kryptografických klíčů. Další informace najdete v tématu [podepisování sestavení silným názvem](https://go.microsoft.com/fwlink/?LinkId=94874) v příručce pro vývojáře .NET.  
+3. Kompilaci spravovaného klienta WCF jako sestavení se silným názvem. Tento postup vyžaduje přihlášení pomocí páru kryptografických klíčů. Další informace najdete v tématu [podepisování sestavení silným názvem](https://go.microsoft.com/fwlink/?LinkId=94874) v příručce pro vývojáře .NET.  
   
-4.  Nástroj Assembly Registration (Regasm.exe) se `/tlb` možnost zaregistrovat typy v sestavení s modelu COM.  
+4. Nástroj Assembly Registration (Regasm.exe) se `/tlb` možnost zaregistrovat typy v sestavení s modelu COM.  
   
-5.  Použijte nástroj Global Assembly Cache (Gacutil.exe) Chcete-li přidat sestavení do globální mezipaměti sestavení.  
+5. Použijte nástroj Global Assembly Cache (Gacutil.exe) Chcete-li přidat sestavení do globální mezipaměti sestavení.  
   
     > [!NOTE]
     >  Podepisování sestavení a jeho přidání do globální mezipaměti sestavení jsou volitelné kroky, ale jejich může zjednodušit proces načítání sestavení ze správné místo v době běhu.  

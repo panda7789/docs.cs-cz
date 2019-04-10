@@ -2,12 +2,12 @@
 title: 'Postupy: Vylepšení doby spouštění klientských aplikací WCF pomocí třídy XmlSerializer'
 ms.date: 03/30/2017
 ms.assetid: 21093451-0bc3-4b1a-9a9d-05f7f71fa7d0
-ms.openlocfilehash: dfc3dc8247a25442511d422192fea4f49bee5d92
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: b6f010cb5edc3111f05c78f5d27cf178bd501ef9
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59169803"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59326421"
 ---
 # <a name="how-to-improve-the-startup-time-of-wcf-client-applications-using-the-xmlserializer"></a>Postupy: Vylepšení doby spouštění klientských aplikací WCF pomocí třídy XmlSerializer
 Služby a klientské aplikace, které používají datové typy, které jsou serializovatelné pomocí <xref:System.Xml.Serialization.XmlSerializer> generování a kompilaci kódu serializace pro typy dat za běhu, což může vést k pomalé spouštění výkonu.  
@@ -19,11 +19,11 @@ Služby a klientské aplikace, které používají datové typy, které jsou ser
   
 ### <a name="to-generate-xmlserializer-serialization-code"></a>Ke generování kódu serializace XmlSerializer  
   
-1.  Kompilaci kódu služby ani klienta do jednoho nebo více sestavení.  
+1. Kompilaci kódu služby ani klienta do jednoho nebo více sestavení.  
   
-2.  Otevřete příkazový řádek sady SDK.  
+2. Otevřete příkazový řádek sady SDK.  
   
-3.  Na příkazovém řádku spusťte nástroje Svcutil.exe v následujícím formátu.  
+3. Na příkazovém řádku spusťte nástroje Svcutil.exe v následujícím formátu.  
   
     ```  
     svcutil.exe /t:xmlSerializer  <assemblyPath>*  
@@ -35,7 +35,7 @@ Služby a klientské aplikace, které používají datové typy, které jsou ser
   
      Chcete-li zadat cestu k závislá sestavení, použijte **/reference** možnost.  
   
-4.  Kód vygenerovaný serializace zpřístupnit do vaší aplikace pomocí jedné z následujících možností:  
+4. Kód vygenerovaný serializace zpřístupnit do vaší aplikace pomocí jedné z následujících možností:  
   
     1.  Kompilace generovaného Serializační kód do samostatné sestavení s názvem [*původní sestavení*]. XmlSerializers.dll (například MyApp.XmlSerializers.dll). Aplikace musí být schopný načíst sestavení, které musí být podepsané stejným klíčem jako původní sestavení. Pokud je provedena rekompilace původní sestavení, je třeba znovu vygenerovat sestavení serializace.  
   
@@ -45,13 +45,13 @@ Služby a klientské aplikace, které používají datové typy, které jsou ser
   
 ### <a name="to-generate-xmlserializer-serialization-code-in-visual-studio"></a>Ke generování kódu serializace XmlSerializer v sadě Visual Studio  
   
-1.  Vytvoření klienta a služby WCF projekty v sadě Visual Studio. Nakonec přidejte odkaz na službu do projektu klienta.  
+1. Vytvoření klienta a služby WCF projekty v sadě Visual Studio. Nakonec přidejte odkaz na službu do projektu klienta.  
   
-2.  Přidat <xref:System.ServiceModel.XmlSerializerFormatAttribute> ke kontraktu služby ve *reference.cs* soubor v projektu aplikace klienta v části **serviceReference** -> **reference.svcmap** . Všimněte si, že potřebujete zobrazit všechny soubory v **Průzkumníka řešení** zobrazíte tyto soubory.  
+2. Přidat <xref:System.ServiceModel.XmlSerializerFormatAttribute> ke kontraktu služby ve *reference.cs* soubor v projektu aplikace klienta v části **serviceReference** -> **reference.svcmap** . Všimněte si, že potřebujete zobrazit všechny soubory v **Průzkumníka řešení** zobrazíte tyto soubory.  
   
-3.  Vytvořte klientskou aplikaci.  
+3. Vytvořte klientskou aplikaci.  
   
-4.  Použití [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) k vytvoření předem generovaného serializátoru *.cs* soubor pomocí příkazu:  
+4. Použití [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) k vytvoření předem generovaného serializátoru *.cs* soubor pomocí příkazu:  
   
     ```  
     svcutil.exe /t:xmlSerializer  <assemblyPath>*  
@@ -67,7 +67,7 @@ Služby a klientské aplikace, které používají datové typy, které jsou ser
   
      *WCFClient.XmlSerializers.dll.cs* vygeneruje soubor.  
   
-5.  Kompilace sestavení serializace předem generovaného.  
+5. Kompilace sestavení serializace předem generovaného.  
   
      Na základě příkladu v předchozím kroku, příkaz compile by byl následující:  
   
@@ -77,7 +77,7 @@ Služby a klientské aplikace, které používají datové typy, které jsou ser
   
      Ujistěte se, že generované *WCFClient.XmlSerializers.dll* je ve stejném adresáři jako klientskou aplikaci, která je *WCFClient.exe* v tomto případě.  
   
-6.  Spuštění klientské aplikace jako obvykle. Sestavení serializace předem generovaného se použije.  
+6. Spuštění klientské aplikace jako obvykle. Sestavení serializace předem generovaného se použije.  
   
 ## <a name="example"></a>Příklad  
  Následující příkaz vygeneruje typy serializace pro `XmlSerializer` typy, které službám smluv týkajících se použití sestavení.  

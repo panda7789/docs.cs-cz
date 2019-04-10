@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC30920
 ms.assetid: e47dc755-4294-4368-b813-2177b7677957
-ms.openlocfilehash: 737f9119814e784ebabcbb4629ab6948ce164168
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 89b6c241bb637f2efc6014c4640b3b463c4facfa
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58814091"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59313474"
 ---
 # <a name="first-statement-of-this-sub-new-must-be-an-explicit-call-to-mybasenew-or-myclassnew-because-the-constructorname-in-the-base-class-baseclassname-of-derivedclassname-is-marked-obsolete-errormessage"></a>Prvním příkazem této 'Sub New musí být explicitní volání 'MyBase.New' nebo 'MyClass.New', protože '\<constructorname >' v základní třídě\<baseclassname > "z"\<derivedclassname > "je označená jako zastaralá:"\< chybová zpráva > "
 Konstruktor třídy explicitně volat konstruktor základní třídy a konstruktoru implicitní základní třídy je označený <xref:System.ObsoleteAttribute> atribut a směrnice považovat za chybu.  
@@ -25,9 +25,9 @@ Konstruktor třídy explicitně volat konstruktor základní třídy a konstrukt
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1.  Zkontrolujte v uvozovkách chybovou zprávu a proveďte příslušné akce.  
+1. Zkontrolujte v uvozovkách chybovou zprávu a proveďte příslušné akce.  
   
-2.  Zahrnout volání `MyBase.New()` nebo `MyClass.New()` jako prvním příkazem `Sub New` v odvozené třídě.  
+2. Zahrnout volání `MyBase.New()` nebo `MyClass.New()` jako prvním příkazem `Sub New` v odvozené třídě.  
   
 ## <a name="see-also"></a>Viz také:
 

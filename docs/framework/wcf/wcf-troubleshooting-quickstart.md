@@ -5,33 +5,33 @@ helpviewer_keywords:
 - WCF [WCF], troubleshooting
 - Windows Communication Foundation [WCF], troubleshooting
 ms.assetid: a9ea7a53-f31a-46eb-806e-898e465a4992
-ms.openlocfilehash: 1d1d0ad559442ecfc595dfb8cdee112a22a77479
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 4327e8bb07cb03a91f7384f7fe82bc2e47f6fcb9
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59168126"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59319999"
 ---
 # <a name="wcf-troubleshooting-quickstart"></a>Řešení potíží s WCF – úvodní příručka
 Toto téma uvádí počet známé problémy, které mají zákazníci spouštět do při vývoji klientů WCF a služeb. Pokud se problém, který běží na není v tomto seznamu, doporučujeme že nakonfigurovat trasování pro vaši službu. Tím se vygeneruje soubor trasování, můžete zobrazit pomocí prohlížeče trasování souboru a získat podrobné informace o výjimkách, které může docházet v rámci služby. Další informace o konfiguraci trasování naleznete v tématu: [Konfigurace trasování](../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md). Další informace o souboru prohlížeče trasování naleznete v tématu: [Služba prohlížečem trasování (SvcTraceViewer.exe)](../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md).  
   
-1.  [Po instalaci Windows 7 a IIS se při pokusu přejděte na službu WCF zobrazí následující chybová zpráva: Chyba protokolu HTTP 404.3 – nebyl nalezen](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#bkmk_0)  
+1. [Po instalaci Windows 7 a IIS se při pokusu přejděte na službu WCF zobrazí následující chybová zpráva: Chyba protokolu HTTP 404.3 – nebyl nalezen](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#bkmk_0)  
   
      Chyba protokolu HTTP 404.3 – Not FoundThe stránky, pro který žádáte nelze zpracovat z důvodu konfigurace rozšíření. Pokud na stránce je skript, přidejte obslužnou rutinu. Pokud mají být stažené souboru, přidejte mapování MIME. Iisver InformationModule podrobné informace o chybě.  
   
-2.  [Někdy zobrazila messagesecurityexception – na druhou žádost, pokud klient je nečinný po nějakou dobu od prvního požadavku. Co se děje?](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BKMK_q1)  
+2. [Někdy zobrazila messagesecurityexception – na druhou žádost, pokud klient je nečinný po nějakou dobu od prvního požadavku. Co se děje?](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BKMK_q1)  
   
-3.  [Služba začne odmítnout nové klienty po přibližně 10 klientů jsou interakci s ní. Co se děje?](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BKMK_q2)  
+3. [Služba začne odmítnout nové klienty po přibližně 10 klientů jsou interakci s ní. Co se děje?](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BKMK_q2)  
   
-4.  [Můžete načíst konfiguraci služby z jinde, než konfigurační soubor WCF aplikace?](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BKMK_q3)  
+4. [Můžete načíst konfiguraci služby z jinde, než konfigurační soubor WCF aplikace?](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BKMK_q3)  
   
-5.  [Služba a skvěle fungují klienta, ale nemůžu nelze získat pracovat nacházející se v jiném počítači? Co se děje?](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BKMK_q4)  
+5. [Služba a skvěle fungují klienta, ale nemůžu nelze získat pracovat nacházející se v jiném počítači? Co se děje?](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BKMK_q4)  
   
-6.  [Kdy můžu výjimku FaultException\<výjimky > tam, kde je typ výjimky, vždy zobrazila se obecným typem FaultException v klientském počítači a ne obecného typu. Co se děje?](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BKMK_q5)  
+6. [Kdy můžu výjimku FaultException\<výjimky > tam, kde je typ výjimky, vždy zobrazila se obecným typem FaultException v klientském počítači a ne obecného typu. Co se děje?](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BKMK_q5)  
   
-7.  [To vypadá jako jsou jednosměrná a operace požadavek odpověď vracet rychlostí přibližně stejnou odpověď neobsahuje žádná data. Co se děje?](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BKMK_q6)  
+7. [To vypadá jako jsou jednosměrná a operace požadavek odpověď vracet rychlostí přibližně stejnou odpověď neobsahuje žádná data. Co se děje?](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BKMK_q6)  
   
-8.  [Používám certifikát X.509 pomocí svojí služby a získat System.Security.Cryptography.CryptographicException. Co se děje?](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BKMK_q77)  
+8. [Používám certifikát X.509 pomocí svojí služby a získat System.Security.Cryptography.CryptographicException. Co se děje?](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BKMK_q77)  
   
 9. [Můžu změnit první parametr operace z velkých písmen na malá písmena; Klient teď dojde k výjimce. Co se děje?](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BKMK_q88)  
   

@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC40057
 ms.assetid: 4ae3506e-2ebe-4ff3-995d-14ac60db5e9f
-ms.openlocfilehash: 554300f87dbfca351ebcd2d544051968e84880ab
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 105fa8da838938d13022c210c1f65cdafd251003
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58816803"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59308481"
 ---
 # <a name="namespace-or-type-specified-in-the-project-level-imports-qualifiedelementname-doesnt-contain-any-public-member-or-cannot-be-found"></a>Namespace nebo typ zadaný v příkazu Imports na úrovni projektu'\<qualifiedelementname >' neobsahuje žádný veřejný člen nebo nebyl nalezen
 Namespace nebo typ zadaný v příkazu Imports na úrovni projektu'\<qualifiedelementname >' neobsahuje žádný veřejný člen nebo nebyl nalezen. Ujistěte se, že obor názvů nebo typ definován a obsahuje nejméně jeden veřejný člen. Ujistěte se, že název aliasu neobsahuje další aliasy.  
@@ -31,15 +31,15 @@ Namespace nebo typ zadaný v příkazu Imports na úrovni projektu'\<qualifiedel
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1.  Otevřít **Návrháře projektu** a přepněte se na **odkaz** stránky.  
+1. Otevřít **Návrháře projektu** a přepněte se na **odkaz** stránky.  
   
-2.  V **importovat obory názvů** části, ověřte, zda je přístupný z projektu nadřazeného elementu.  
+2. V **importovat obory názvů** části, ověřte, zda je přístupný z projektu nadřazeného elementu.  
   
-3.  Ověřte, že nadřazeného elementu zpřístupňuje alespoň jeden `Public` člena.  
+3. Ověřte, že nadřazeného elementu zpřístupňuje alespoň jeden `Public` člena.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Stránka Odkazy, Návrhář projektu (Visual Basic)](/visualstudio/ide/reference/references-page-project-designer-visual-basic)
+- [Stránka Odkazy, návrhář projektu (Visual Basic)](/visualstudio/ide/reference/references-page-project-designer-visual-basic)
 - [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)
 - [Public](../../../visual-basic/language-reference/modifiers/public.md)
 - [Obory názvů v jazyce Visual Basic](../../../visual-basic/programming-guide/program-structure/namespaces.md)

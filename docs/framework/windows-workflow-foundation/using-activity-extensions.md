@@ -2,27 +2,27 @@
 title: Používání rozšíření aktivit
 ms.date: 03/30/2017
 ms.assetid: 500eb96a-c009-4247-b6b5-b36faffdf715
-ms.openlocfilehash: 420bd25a94f67169d299bbac64dae06e15c5b0b2
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.openlocfilehash: e524f7e7127eb215be85b0c317474eee70830c2b
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48845507"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59321286"
 ---
 # <a name="using-activity-extensions"></a>Používání rozšíření aktivit
 Aktivity můžete pracovat s příponami aplikace pracovního postupu, které povolí hostitelské funkce, která není explicitně modelován v pracovním postupu.  Toto téma popisuje postup vytvoření a použití rozšíření ke zjištění počtu pokusů, které tato aktivity spustí.
 
 ### <a name="to-use-an-activity-extension-to-count-executions"></a>Použití rozšíření aktivity mají spočítat počet spuštění
 
-1.  Otevřít Visual Studio 2010. Vyberte **nové**, **projektu**. V části **Visual C#** uzlu, vyberte **pracovního postupu**.  Vyberte **Konzolová aplikace pracovního postupu** ze seznamu šablon. Pojmenujte projekt `Extensions`. Klikněte na tlačítko **OK** pro vytvoření projektu.
+1. Open Visual Studio 2010. Vyberte **nové**, **projektu**. V části **Visual C#** uzlu, vyberte **pracovního postupu**.  Vyberte **Konzolová aplikace pracovního postupu** ze seznamu šablon. Pojmenujte projekt `Extensions`. Klikněte na tlačítko **OK** pro vytvoření projektu.
 
-2.  Přidat `using` prohlášení v souboru Program.cs **System.Collections.Generic** oboru názvů.
+2. Přidat `using` prohlášení v souboru Program.cs **System.Collections.Generic** oboru názvů.
 
     ```
     using System.Collections.Generic;
     ```
 
-3.  V souboru Program.cs vytvořte novou třídu s názvem **ExecutionCountExtension**. Následující kód vytvoří, který sleduje ID instancí rozšíření pracovního postupu při jeho **zaregistrovat** metoda je volána.
+3. V souboru Program.cs vytvořte novou třídu s názvem **ExecutionCountExtension**. Následující kód vytvoří, který sleduje ID instancí rozšíření pracovního postupu při jeho **zaregistrovat** metoda je volána.
 
     ```
     // This extension collects a list of workflow Ids
@@ -56,7 +56,7 @@ Aktivity můžete pracovat s příponami aplikace pracovního postupu, které po
     }
     ```
 
-4.  Vytvořit aktivitu, která využívá **ExecutionCountExtension**. Následující kód definuje aktivitu, která načte **ExecutionCountExtension** objekt z modulu runtime a volání jeho **zaregistrovat** metoda při tato aktivity spustí.
+4. Vytvořit aktivitu, která využívá **ExecutionCountExtension**. Následující kód definuje aktivitu, která načte **ExecutionCountExtension** objekt z modulu runtime a volání jeho **zaregistrovat** metoda při tato aktivity spustí.
 
     ```
     // Activity that consumes an extension provided by the host. If the extension is available
@@ -75,7 +75,7 @@ Aktivity můžete pracovat s příponami aplikace pracovního postupu, které po
     }
     ```
 
-5.  Implementujte aktivitu v **hlavní** metoda souboru program.cs. Následující kód obsahuje metody pro generování dvě různé pracovní postupy, spouštění každý pracovní postup několikrát a zobrazit Výsledná data, která je obsažena v rozšíření.
+5. Implementujte aktivitu v **hlavní** metoda souboru program.cs. Následující kód obsahuje metody pro generování dvě různé pracovní postupy, spouštění každý pracovní postup několikrát a zobrazit Výsledná data, která je obsažena v rozšíření.
 
     ```
     class Program

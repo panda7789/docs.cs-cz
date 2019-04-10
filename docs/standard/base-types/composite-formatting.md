@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 87b7d528-73f6-43c6-b71a-f23043039a49
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f68c1f2f888f340488c3cbec4c2384f6dce58077
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 93abf6e91c2e13173184faee281de52eb83e17f5
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54517679"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59314006"
 ---
 # <a name="composite-formatting"></a>Složené formátování
 
@@ -90,8 +90,8 @@ Funkce složeného formátování je podporována například následujícími m
 |Typ nebo kategorie typů|Další informace naleznete v tématu|  
 |---------------------------|---------|  
 |Typy data a času (<xref:System.DateTime>, <xref:System.DateTimeOffset>)|[Standardní řetězce formátu data a času](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)<br /><br /> [Vlastní řetězce formátu data a času](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)|  
-|Výčtové typy (všechny typy odvozené z <xref:System.Enum?displayProperty=nameWithType>)|[Výčet řetězců formátu](../../../docs/standard/base-types/enumeration-format-strings.md)|  
-|Číselné typy (<xref:System.Numerics.BigInteger>, <xref:System.Byte>, <xref:System.Decimal>, <xref:System.Double>, <xref:System.Int16>, <xref:System.Int32>, <xref:System.Int64>, <xref:System.SByte>, <xref:System.Single>, <xref:System.UInt16>, <xref:System.UInt32>, <xref:System.UInt64>)|[Standardní řetězce číselného formátu](../../../docs/standard/base-types/standard-numeric-format-strings.md)<br /><br /> [Vlastní řetězce číselného formátu](../../../docs/standard/base-types/custom-numeric-format-strings.md)|  
+|Výčtové typy (všechny typy odvozené z <xref:System.Enum?displayProperty=nameWithType>)|[Vytvoření výčtu řetězců formátu](../../../docs/standard/base-types/enumeration-format-strings.md)|  
+|Číselné typy (<xref:System.Numerics.BigInteger>, <xref:System.Byte>, <xref:System.Decimal>, <xref:System.Double>, <xref:System.Int16>, <xref:System.Int32>, <xref:System.Int64>, <xref:System.SByte>, <xref:System.Single>, <xref:System.UInt16>, <xref:System.UInt32>, <xref:System.UInt64>)|[Standardní řetězce formátu čísla](../../../docs/standard/base-types/standard-numeric-format-strings.md)<br /><br /> [Vlastní řetězce číselného formátu](../../../docs/standard/base-types/custom-numeric-format-strings.md)|  
 |<xref:System.Guid>|<xref:System.Guid.ToString%28System.String%29?displayProperty=nameWithType>|  
 |<xref:System.TimeSpan>|[Standardní řetězce formátu TimeSpan](../../../docs/standard/base-types/standard-timespan-format-strings.md)<br /><br /> [Vlastní řetězce formátu TimeSpan](../../../docs/standard/base-types/custom-timespan-format-strings.md)|  
   
@@ -100,15 +100,15 @@ Funkce složeného formátování je podporována například následujícími m
   
  Způsob, jakým jsou interpretovány složené závorky vložené pomocí řídicích znaků, může vést k neočekávaným výsledkům. Představte si třeba položky formátu "{{{0:D}}}", který se má zobrazit levá složená závorka, číselnou hodnotu ve formátu jako desítkové číslo a pravou složenou závorku. Položka formátu je však ve skutečnosti interpretována následujícím způsobem:  
   
-1.  První dvě levé složené závorky ("{{") jsou tvořeny řídicími znaky, a proto je výsledkem jedna levá závorka.  
+1. První dvě levé složené závorky ("{{") jsou tvořeny řídicími znaky, a proto je výsledkem jedna levá závorka.  
   
-2.  Následující tři znaky ("{0:") jsou interpretovány jako začátek položky formátu.  
+2. Následující tři znaky ("{0:") jsou interpretovány jako začátek položky formátu.  
   
-3.  Další znak ("D") je interpretován jako specifikátor standardního číselného desítkového formátu, ale další dvě závorky uvozené řídicími znaky ("}}") tvoří ve výsledku jednu složenou závorku. Vzhledem k tomu, že výsledný řetězec ("D}") není specifikátorem standardního číselného formátu, je výsledný řetězec interpretován jako řetězec vlastního formátu, což znamená, že se zobrazí řetězcový literál "D}".  
+3. Další znak ("D") je interpretován jako specifikátor standardního číselného desítkového formátu, ale další dvě závorky uvozené řídicími znaky ("}}") tvoří ve výsledku jednu složenou závorku. Vzhledem k tomu, že výsledný řetězec ("D}") není specifikátorem standardního číselného formátu, je výsledný řetězec interpretován jako řetězec vlastního formátu, což znamená, že se zobrazí řetězcový literál "D}".  
   
-4.  Poslední složená závorka ("}") je interpretována jako konec položky formátu.  
+4. Poslední složená závorka ("}") je interpretována jako konec položky formátu.  
   
-5.  Konečný výsledek, který se zobrazí, je řetězcový literál "{D}". Číselná hodnota, která měla být formátována, se nezobrazí.  
+5. Konečný výsledek, který se zobrazí, je řetězcový literál "{D}". Číselná hodnota, která měla být formátována, se nezobrazí.  
   
  Jedním ze způsobů, jak napsat kód tak, aby nedocházelo k chybné interpretaci složených závorek s řídicími znaky, je provést formátování složených závorek a položek formátu odděleně. To znamená, že se v první operaci formátování zobrazí literální znak levé složené závorky, v další operaci se zobrazí výsledek položky formátu a nakonec se v poslední operaci zobrazí literální znak pravé složené závorky. Tento postup znázorňuje následující příklad.  
   
@@ -120,11 +120,11 @@ Funkce složeného formátování je podporována například následujícími m
   
  Každou hodnotu v seznamu parametrů, která odpovídá položce formátu, je převedena na řetězec následujícím způsobem:  
   
-1.  Pokud je hodnota má být formátováno `null`, prázdný řetězec <xref:System.String.Empty?displayProperty=nameWithType> je vrácena.  
+1. Pokud je hodnota má být formátováno `null`, prázdný řetězec <xref:System.String.Empty?displayProperty=nameWithType> je vrácena.  
   
-2.  Pokud <xref:System.ICustomFormatter> implementace je k dispozici, modul runtime zavolá jeho <xref:System.ICustomFormatter.Format%2A> metoda. Předá metodě položky formátu *formatString* hodnotu, pokud je k dispozici, nebo `null` Pokud ne, spolu s <xref:System.IFormatProvider> implementace. Pokud volání <xref:System.ICustomFormatter.Format%2A?displayProperty=nameWithType> vrátí metoda `null`, provádění pokračuje k dalšímu kroku; v opačném případě výsledek <xref:System.ICustomFormatter.Format%2A?displayProperty=nameWithType> volání se vrátí.
+2. Pokud <xref:System.ICustomFormatter> implementace je k dispozici, modul runtime zavolá jeho <xref:System.ICustomFormatter.Format%2A> metoda. Předá metodě položky formátu *formatString* hodnotu, pokud je k dispozici, nebo `null` Pokud ne, spolu s <xref:System.IFormatProvider> implementace. Pokud volání <xref:System.ICustomFormatter.Format%2A?displayProperty=nameWithType> vrátí metoda `null`, provádění pokračuje k dalšímu kroku; v opačném případě výsledek <xref:System.ICustomFormatter.Format%2A?displayProperty=nameWithType> volání se vrátí.
   
-3.  Pokud hodnota implementuje <xref:System.IFormattable> rozhraní, což je rozhraní <xref:System.IFormattable.ToString%28System.String%2CSystem.IFormatProvider%29> metoda je volána. Metodě je předána *formatString* hodnotu, pokud je k dispozici v položce formátu, nebo `null` nesplnění. <xref:System.IFormatProvider> Argument je stanoven následujícím způsobem:  
+3. Pokud hodnota implementuje <xref:System.IFormattable> rozhraní, což je rozhraní <xref:System.IFormattable.ToString%28System.String%2CSystem.IFormatProvider%29> metoda je volána. Metodě je předána *formatString* hodnotu, pokud je k dispozici v položce formátu, nebo `null` nesplnění. <xref:System.IFormatProvider> Argument je stanoven následujícím způsobem:  
   
     -   Pro číselnou hodnotu, pokud složeného formátování s nenulovým <xref:System.IFormatProvider> argument je volána, modul runtime požádá o <xref:System.Globalization.NumberFormatInfo> objekt z jeho <xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType> metoda. Pokud nelze zadat, pokud je hodnota argumentu `null`, nebo pokud metody složeného formátování nemá <xref:System.IFormatProvider> parametr, <xref:System.Globalization.NumberFormatInfo> objektů pro aktuální jazykovou verzi vlákna se používá.  
   
@@ -132,7 +132,7 @@ Funkce složeného formátování je podporována například následujícími m
   
     -   Pro objekty jiných typů, pokud složené formátování metoda je volána pomocí <xref:System.IFormatProvider> argument, její hodnota je předána přímo <xref:System.IFormattable.ToString%2A?displayProperty=nameWithType> implementace. V opačném případě `null` je předán <xref:System.IFormattable.ToString%2A?displayProperty=nameWithType> implementace.  
   
-4.  Typ uživatele bez parametrů `ToString` metoda, která buď přepíše <xref:System.Object.ToString?displayProperty=nameWithType> nebo zdědí chování základní třídy, je volána. V takovém případě řetězec formátu zadaný součástí *formatString* komponenty v položce formátu, pokud je k dispozici, je ignorován.  
+4. Typ uživatele bez parametrů `ToString` metoda, která buď přepíše <xref:System.Object.ToString?displayProperty=nameWithType> nebo zdědí chování základní třídy, je volána. V takovém případě řetězec formátu zadaný součástí *formatString* komponenty v položce formátu, pokud je k dispozici, je ignorován.  
   
  Zarovnání se použije po provedení předchozích kroků.  
   
@@ -166,10 +166,10 @@ Funkce složeného formátování je podporována například následujícími m
 - [Interpolace řetězců (C#)](../../csharp/language-reference/tokens/interpolated.md)
 - [Interpolace (Visual Basic)](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md)
 - [Typy formátování](../../../docs/standard/base-types/formatting-types.md)
-- [Standardní řetězce číselného formátu](../../../docs/standard/base-types/standard-numeric-format-strings.md)
+- [Standardní řetězce formátu čísla](../../../docs/standard/base-types/standard-numeric-format-strings.md)
 - [Vlastní řetězce číselného formátu](../../../docs/standard/base-types/custom-numeric-format-strings.md)
 - [Standardní řetězce formátu data a času](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)
 - [Vlastní řetězce formátu data a času](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)
 - [Standardní řetězce formátu TimeSpan](../../../docs/standard/base-types/standard-timespan-format-strings.md)
 - [Vlastní řetězce formátu TimeSpan](../../../docs/standard/base-types/custom-timespan-format-strings.md)
-- [Výčet řetězců formátu](../../../docs/standard/base-types/enumeration-format-strings.md)
+- [Vytvoření výčtu řetězců formátu](../../../docs/standard/base-types/enumeration-format-strings.md)

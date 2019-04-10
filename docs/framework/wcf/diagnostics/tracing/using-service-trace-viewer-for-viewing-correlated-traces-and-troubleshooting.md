@@ -2,12 +2,12 @@
 title: Použití prohlížeče trasování služeb k zobrazení korelovaných tras a řešení problémů
 ms.date: 03/30/2017
 ms.assetid: 05d2321c-8acb-49d7-a6cd-8ef2220c6775
-ms.openlocfilehash: 80a19bf1e433ffcb0dcf29a4636fb79bedaeeb61
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: dd5fe08054b3a10c1663a7dd7dab5f9de5327cbb
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59160664"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59329047"
 ---
 # <a name="using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting"></a>Použití prohlížeče trasování služeb k zobrazení korelovaných tras a řešení problémů
 Toto téma popisuje formátu trace dat, jak zobrazit a přístupů, které použití prohlížeče trasování služeb k řešení problémů s aplikací.  
@@ -152,17 +152,17 @@ Uvedený čas vytvoření (levý panel) a jejich vnořené aktivity a trasován�
   
  Ve službě model aktivity mapuje koncepty WCF následujícím způsobem:  
   
-1.  Můžeme vytvářet a otevřete ServiceHost (to může vytvořit několik aktivit souvisejících s hostiteli, například v případě zabezpečení).  
+1. Můžeme vytvářet a otevřete ServiceHost (to může vytvořit několik aktivit souvisejících s hostiteli, například v případě zabezpečení).  
   
-2.  Vytvoříme naslouchat na aktivitu pro každý naslouchací proces ve hostitele ServiceHost (s přenosy do a z Open ServiceHost).  
+2. Vytvoříme naslouchat na aktivitu pro každý naslouchací proces ve hostitele ServiceHost (s přenosy do a z Open ServiceHost).  
   
-3.  Pokud naslouchací proces zjistí žádost komunikace iniciované klientem, přenáší ho na aktivitu "Přijímat bajtů", ve kterém jsou zpracovány všechny bajtů odeslaných z klienta. V rámci této aktivity můžeme vidět žádné chyby připojení, ke kterým došlo během interakce služba klienta.  
+3. Pokud naslouchací proces zjistí žádost komunikace iniciované klientem, přenáší ho na aktivitu "Přijímat bajtů", ve kterém jsou zpracovány všechny bajtů odeslaných z klienta. V rámci této aktivity můžeme vidět žádné chyby připojení, ke kterým došlo během interakce služba klienta.  
   
-4.  Pro každou sadu bajtů, které se přijal, která odpovídá na zprávu zpracujeme těchto bajtů v aktivitě "Zpracovat zprávu", kde můžeme vytvořit objekt zprávy WCF. V této aktivitě vidíme chyby související s chybný obálky nebo chybnou zprávu.  
+4. Pro každou sadu bajtů, které se přijal, která odpovídá na zprávu zpracujeme těchto bajtů v aktivitě "Zpracovat zprávu", kde můžeme vytvořit objekt zprávy WCF. V této aktivitě vidíme chyby související s chybný obálky nebo chybnou zprávu.  
   
-5.  Jakmile je vytvořen zprávy, jsme přenést do aktivity procesu akce. Pokud `propagateActivity` je nastavena na `true` na klienta a služby, tato aktivita má stejné id jako definovaný v klientovi a je popsáno výše. V této fázi začneme těžit z přímou spojitost s míněním napříč koncovými body, protože všechna trasování, protože ho ve službě WCF, které se vztahují na žádost v této aktivity, včetně zpracování zpráv odpovědí.  
+5. Jakmile je vytvořen zprávy, jsme přenést do aktivity procesu akce. Pokud `propagateActivity` je nastavena na `true` na klienta a služby, tato aktivita má stejné id jako definovaný v klientovi a je popsáno výše. V této fázi začneme těžit z přímou spojitost s míněním napříč koncovými body, protože všechna trasování, protože ho ve službě WCF, které se vztahují na žádost v této aktivity, včetně zpracování zpráv odpovědí.  
   
-6.  Pro akci mimo proces se nám vytvořit aktivitu "Spouštění uživatelského kódu" izolovat trasování v uživatelském kódu z těch, které jsou emitovány ve službě WCF, protože ho. V předchozím příkladu je vygenerován trasování "Service odešle odpověď přidat" aktivity "Spouštění uživatelského kódu" není v aktivitě rozšíří klientem, pokud je k dispozici.  
+6. Pro akci mimo proces se nám vytvořit aktivitu "Spouštění uživatelského kódu" izolovat trasování v uživatelském kódu z těch, které jsou emitovány ve službě WCF, protože ho. V předchozím příkladu je vygenerován trasování "Service odešle odpověď přidat" aktivity "Spouštění uživatelského kódu" není v aktivitě rozšíří klientem, pokud je k dispozici.  
   
  Na obrázku, který následuje první aktivitu na levé straně je kořenová aktivita (0000), což je výchozí aktivita. Následující tři aktivit jsou k otevření hostitele ServiceHost. Aktivita ve sloupci 5 je naslouchací proces a zbývajících aktivit (6 až 8) popisují WCF zpracování zprávy, bajty zpracování aktivace kódu uživatele.  
 

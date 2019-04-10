@@ -2,12 +2,12 @@
 title: Použití WorkflowIdentity a správy verzí
 ms.date: 03/30/2017
 ms.assetid: b8451735-8046-478f-912b-40870a6c0c3a
-ms.openlocfilehash: 64abab815c523abce88b00515239155499de9c4c
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 5bed526a47b802c60aa679e53c84af4e14656675
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57708168"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59327487"
 ---
 # <a name="using-workflowidentity-and-versioning"></a>Použití WorkflowIdentity a správy verzí
 <xref:System.Activities.WorkflowIdentity> nabízí způsob, jak pro pracovní postup přidružit název a <xref:System.Version> s definicí pracovního postupu a tyto informace k trvalé instance práce. Tyto informace identita umožňuje vývojáři aplikace pracovního postupu povolení scénářů, jako je vedle sebe spuštění více verzí modulu definice pracovního postupu a poskytuje základní kámen pro další funkce, jako je například dynamická aktualizace. Toto téma obsahuje přehled používání <xref:System.Activities.WorkflowIdentity> s <xref:System.Activities.WorkflowApplication> hostování. Informace o spuštění vedle sebe definice pracovního postupu ve službě pracovního postupu v tématu [správy verzí vedle sebe ve třídě WorkflowServiceHost](../wcf/feature-details/side-by-side-versioning-in-workflowservicehost.md). Informace o dynamické aktualizace, naleznete v tématu [dynamická aktualizace](dynamic-update.md).  
@@ -146,14 +146,14 @@ wfApp.Load(instance);
  **Úložiště SqlWorkflowInstanceStore je verze databáze "4.0.0.0". Příkaz InstancePersistenceCommand "System.Activities.DurableInstancing.CreateWorkflowOwnerWithIdentityCommand" nelze spustit proti této verzi databáze.  Upgradujte databázi na "4.5.0.0".**  
 ### <a name="ToUpgrade"></a> Aktualizace schématu databáze  
   
-1.  Otevřete SQL Server Management Studio a připojte se k serveru databáze trvalosti, například **. \SQLEXPRESS**.  
+1. Otevřete SQL Server Management Studio a připojte se k serveru databáze trvalosti, například **. \SQLEXPRESS**.  
   
-2.  Zvolte **otevřít**, **souboru** z **souboru** nabídky. Přejděte do následující složky: `C:\Windows\Microsoft.NET\Framework\4.0.30319\sql\en`  
+2. Zvolte **otevřít**, **souboru** z **souboru** nabídky. Přejděte do následující složky: `C:\Windows\Microsoft.NET\Framework\4.0.30319\sql\en`  
   
-3.  Vyberte **SqlWorkflowInstanceStoreSchemaUpgrade.sql** a klikněte na tlačítko **otevřít**.  
+3. Vyberte **SqlWorkflowInstanceStoreSchemaUpgrade.sql** a klikněte na tlačítko **otevřít**.  
   
-4.  Vyberte název databáze trvalosti v **dostupných databází** rozevíracího seznamu.  
+4. Vyberte název databáze trvalosti v **dostupných databází** rozevíracího seznamu.  
   
-5.  Zvolte **Execute** z **dotazu** nabídky.  
+5. Zvolte **Execute** z **dotazu** nabídky.  
   
  Po dokončení dotazu schéma databáze se upgraduje a v případě potřeby můžete zobrazit výchozí identity pracovního postupu, která byla přiřazena instance trvalá pracovního postupu. Rozbalte databázi přetrvávání v **databází** uzlu **Průzkumník objektů**a potom rozbalte **zobrazení** uzlu. Klikněte pravým tlačítkem na **System.Activities.DurableInstancing.Instances** a zvolte **vybrat prvních 1000 řádků**. Přejděte na konec sloupců a Všimněte si, že jsou šest další sloupce, které jsou přidány do zobrazení: **IdentityName**, **IdentityPackage**, **sestavení**, **hlavní**, **menší**, a **revize**. Žádný trvalý pracovní postup bude mít hodnotu **NULL** tato pole představující identity pracovního postupu hodnotu null.

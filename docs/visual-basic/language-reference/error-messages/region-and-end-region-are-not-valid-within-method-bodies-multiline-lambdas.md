@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC32025
 ms.assetid: 43707bf1-1c6b-4d82-b081-e5a17dca51c1
-ms.openlocfilehash: deef3de645040d7c3d95b1a6c8a25fcf10de881b
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: c41b95da7e3565ae7aaf332fe49361336e79f7c7
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58842704"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59303905"
 ---
 # <a name="region-and-end-region-statements-are-not-valid-within-method-bodiesmultiline-lambdas"></a>Příkazy '#Region' a '#End Region' nejsou platné uvnitř těla metody nebo víceřádkových výrazů lambda.
 `#Region` Bloku musí být deklarován na úrovni třídy, modulu nebo oboru názvů. Sbalitelná oblast může zahrnovat jeden nebo více postupů, ale nesmí začínat ani končit v rámci procedury.  
@@ -21,10 +21,10 @@ ms.locfileid: "58842704"
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1.  Ujistěte se, že je správně ukončují předchozí postup `End Function` nebo `End Sub` příkazu.  
+1. Ujistěte se, že je správně ukončují předchozí postup `End Function` nebo `End Sub` příkazu.  
   
-2.  Ujistěte se, `#Region` a `#End Region` direktivy jsou ve stejném bloku kódu.  
+2. Ujistěte se, `#Region` a `#End Region` direktivy jsou ve stejném bloku kódu.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Direktiva #Region](../../../visual-basic/language-reference/directives/region-directive.md)
+- [#Region – direktiva](../../../visual-basic/language-reference/directives/region-directive.md)

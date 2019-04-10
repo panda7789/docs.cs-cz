@@ -12,12 +12,12 @@ helpviewer_keywords:
 - Windows Forms controls, data binding
 - bound controls [Windows Forms]
 ms.assetid: 4e96e3d0-b1cc-4de1-8774-bc9970ec4554
-ms.openlocfilehash: a7b03ab5417eacf7962f2a05b674ceb45c7d558c
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: fe54c650e1d19f36d681053c7da47e12527c5827
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59115723"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59320883"
 ---
 # <a name="how-to-bind-the-windows-forms-datagrid-control-to-a-data-source-using-the-designer"></a>Postupy: Vytvoření vazby ovládacího prvku Windows Forms DataGrid ke zdroji dat pomocí Návrháře
 
@@ -37,11 +37,11 @@ ms.locfileid: "59115723"
   
 ### <a name="to-data-bind-the-datagrid-control-to-a-single-table-in-the-designer"></a>Chcete svázat data – ovládací prvek DataGrid jedné tabulky v Návrháři  
   
-1.  Nastavit u tohoto prvku <xref:System.Windows.Forms.DataGrid.DataSource%2A> vlastnost na objekt obsahující data položky, které chcete vytvořit vazbu.  
+1. Nastavit u tohoto prvku <xref:System.Windows.Forms.DataGrid.DataSource%2A> vlastnost na objekt obsahující data položky, které chcete vytvořit vazbu.  
   
-2.  Pokud zdroj dat je datová sada, nastavte <xref:System.Windows.Forms.DataGrid.DataMember%2A> nastavte název tabulky k vytvoření vazby.  
+2. Pokud zdroj dat je datová sada, nastavte <xref:System.Windows.Forms.DataGrid.DataMember%2A> nastavte název tabulky k vytvoření vazby.  
   
-3.  Pokud je zdroj dat datové sady nebo zobrazení dat na základě tabulky datovou sadu, přidejte kód pro formulář k vyplnění datové sady.  
+3. Pokud je zdroj dat datové sady nebo zobrazení dat na základě tabulky datovou sadu, přidejte kód pro formulář k vyplnění datové sady.  
   
      Přesný kód, který používáte závisí na datové sady je kde získávají data. Pokud probíhá naplňování datové sady přímo z databáze, obvykle volat `Fill` metoda adaptéru dat, stejně jako v následujícím příkladu kódu, který naplňuje datovou sadu s názvem `DsCategories1`:  
   
@@ -57,17 +57,17 @@ ms.locfileid: "59115723"
     sqlDataAdapter1->Fill(dsCategories1);  
     ```  
   
-4.  (Volitelné) Přidejte příslušné tabulky styly a styly sloupců do mřížky.  
+4. (Volitelné) Přidejte příslušné tabulky styly a styly sloupců do mřížky.  
   
      Pokud neexistují žádné tabulky styly, zobrazí se v tabulce, ale s minimální formátování a všechny viditelné sloupce.  
   
 ### <a name="to-data-bind-the-datagrid-control-to-multiple-tables-in-a-dataset-in-the-designer"></a>Chcete svázat data – ovládací prvek DataGrid více tabulek v datové sadě v Návrháři  
   
-1.  Nastavit u tohoto prvku <xref:System.Windows.Forms.DataGrid.DataSource%2A> vlastnost na objekt obsahující data položky, které chcete vytvořit vazbu.  
+1. Nastavit u tohoto prvku <xref:System.Windows.Forms.DataGrid.DataSource%2A> vlastnost na objekt obsahující data položky, které chcete vytvořit vazbu.  
   
-2.  Pokud datová sada obsahuje související tabulky (to znamená, pokud obsahuje objekt relace), můžete nastavit <xref:System.Windows.Forms.DataGrid.DataMember%2A> nastavte název nadřazené tabulky.  
+2. Pokud datová sada obsahuje související tabulky (to znamená, pokud obsahuje objekt relace), můžete nastavit <xref:System.Windows.Forms.DataGrid.DataMember%2A> nastavte název nadřazené tabulky.  
   
-3.  Napište kód pro naplnění dataset.  
+3. Napište kód pro naplnění dataset.  
   
 ## <a name="see-also"></a>Viz také:
 

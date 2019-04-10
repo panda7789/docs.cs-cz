@@ -2,12 +2,12 @@
 title: Zrušení asynchronních úloh po určitou dobu (C#)
 ms.date: 07/20/2015
 ms.assetid: 194282c2-399f-46da-a7a6-96674e00b0b3
-ms.openlocfilehash: 48d3d41e8c4e2d696065c11245279e49142afa07
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 64a2a81e5de17594a84782f6474033d04662d8ea
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53125766"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59318387"
 ---
 # <a name="cancel-async-tasks-after-a-period-of-time-c"></a>Zrušení asynchronních úloh po určitou dobu (C#)
 
@@ -22,17 +22,17 @@ V tomto příkladu přidá do kódu, který je napsán v jazyce [zrušení async
 
 Můžete si stáhnout kompletní projekt Windows Presentation Foundation (WPF) z [asynchronní vzorek: Jemné ladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea) a pak postupujte podle těchto kroků.
 
-1.  Dekomprimujte soubor, který jste stáhli a poté spusťte Visual Studio.
+1. Dekomprimujte soubor, který jste stáhli a poté spusťte Visual Studio.
 
-2.  V panelu nabídky zvolte **souboru** > **otevřít** > **projekt či řešení**.
+2. V panelu nabídky zvolte **souboru** > **otevřít** > **projekt či řešení**.
 
-3.  V **otevřít projekt** dialogové okno, otevřete složku, která obsahuje ukázkový kód, který jste dekomprimovali a potom otevřete soubor řešení (.sln) pro AsyncFineTuningCS.
+3. V **otevřít projekt** dialogové okno, otevřete složku, která obsahuje ukázkový kód, který jste dekomprimovali a potom otevřete soubor řešení (.sln) pro AsyncFineTuningCS.
 
-4.  V **Průzkumníka řešení**, otevřete místní nabídku **CancelAfterTime** projektu a klikněte na tlačítko **nastavit jako spouštěný projekt**.
+4. V **Průzkumníka řešení**, otevřete místní nabídku **CancelAfterTime** projektu a klikněte na tlačítko **nastavit jako spouštěný projekt**.
 
-5.  Zvolte **F5** spusťte projekt. (Nebo stiskněte klávesu **Ctrl**+**F5** ke spuštění projektu bez ladění).
+5. Zvolte **F5** spusťte projekt. (Nebo stiskněte klávesu **Ctrl**+**F5** ke spuštění projektu bez ladění).
 
-6.  Chcete-li ověřit, zda výstup může zobrazit výstup pro všechny weby, žádné weby nebo některé webové servery spusťte program několikrát.
+6. Chcete-li ověřit, zda výstup může zobrazit výstup pro všechny weby, žádné weby nebo některé webové servery spusťte program několikrát.
 
 Pokud nechcete stáhnout projekt, můžete zkontrolovat soubor MainWindow.xaml.cs na konci tohoto tématu.
 

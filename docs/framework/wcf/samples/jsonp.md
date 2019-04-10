@@ -2,12 +2,12 @@
 title: JSONP
 ms.date: 03/30/2017
 ms.assetid: c13b4d7b-dac7-4ffd-9f84-765c903511e1
-ms.openlocfilehash: 0e284ee6cce4ab513c03e7be402cc9c0f0c4ee1a
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: 37da57a000376f972cd6da9e04be46ddec1b7144
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48581911"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59329658"
 ---
 # <a name="jsonp"></a>JSONP
 Tato ukázka předvádí, jak podporovat JSON s odsazení (JSONP) služby WCF REST. JSONP je konvence používaná k vyvolání mezi doménami skriptů a generování značek skriptu v aktuálním dokumentu. Výsledek se vrátí v zadané zpětného volání funkce. JSONP vychází z myšlenky, které přidá značky, jako `<script src="http://..." >` můžete vyhodnotit skriptů z jakékoli domény a skript načte tyto visačky se vyhodnotí v rámci oboru, ve kterém může již definována dalších funkcí.
@@ -64,8 +64,8 @@ Sys._json0({"__type":"Customer:#Microsoft.Samples.Jsonp","Address":"1 Example Wa
   
 #### <a name="to-run-the-sample"></a>Chcete-li spustit ukázku  
   
-1.  Otevřete řešení pro ukázku JSONP.  
+1. Otevřete řešení pro ukázku JSONP.  
   
-2.  Stisknutím klávesy F5 spusťte `http://localhost:26648/JSONPClientPage.aspx` v prohlížeči.  
+2. Stisknutím klávesy F5 spusťte `http://localhost:26648/JSONPClientPage.aspx` v prohlížeči.  
   
-3.  Všimněte si, že po načtení stránky textovými vstupy pro "Name" a "Address" se vyplní podle hodnot.  Tyto hodnoty byly zadány volání služby WCF po vykreslení stránky v prohlížeči.
+3. Všimněte si, že po načtení stránky textovými vstupy pro "Name" a "Address" se vyplní podle hodnot.  Tyto hodnoty byly zadány volání služby WCF po vykreslení stránky v prohlížeči.

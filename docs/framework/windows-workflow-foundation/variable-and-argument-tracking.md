@@ -2,12 +2,12 @@
 title: Sledování proměnných a argumentů
 ms.date: 03/30/2017
 ms.assetid: 8f3d9d30-d899-49aa-b7ce-a8d0d32c4ff0
-ms.openlocfilehash: ef2d6111d5c123ac6c684df09f03398340a5522c
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 7062e44a18cfd4b07cc63f4b490c08fbbfeeb8a3
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59231031"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59300889"
 ---
 # <a name="variable-and-argument-tracking"></a>Sledování proměnných a argumentů
 Při sledování provádění pracovního postupu, je často užitečné extrahovat data. Tímto způsobem další kontext při přístupu k sledování záznamů příspěvek provádění. V [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)], můžete extrahovat všechny viditelné proměnné nebo argumentu v rámci oboru žádnou aktivitu v pracovním postupu pomocí sledování. Sledování profily umožňují snadno extrahovat data.  
@@ -40,11 +40,11 @@ Při sledování provádění pracovního postupu, je často užitečné extraho
 ## <a name="protecting-information-stored-within-variables-and-arguments"></a>Ochrana informací uložených v proměnné a argumenty  
  Sledované proměnné nebo argumentu je ve výchozím nastavení nastavena jako viditelná modulem runtime pracovního postupu. Pracovní postup vývojář chránil přístup podle následujících kroků:  
   
-1.  Šifrování hodnotu proměnné.  
+1. Šifrování hodnotu proměnné.  
   
-2.  Ovládací prvek pro vytváření profilu sledování, aby se zabránilo extrakce proměnné nebo argumentu.  
+2. Ovládací prvek pro vytváření profilu sledování, aby se zabránilo extrakce proměnné nebo argumentu.  
   
-3.  Pro vlastní sledování účastníci Ujistěte se, že kód WF nesmí vyzradit citlivé informace, které je uložený v proměnných nebo argumentů.  
+3. Pro vlastní sledování účastníci Ujistěte se, že kód WF nesmí vyzradit citlivé informace, které je uložený v proměnných nebo argumentů.  
   
 ## <a name="see-also"></a>Viz také:
 

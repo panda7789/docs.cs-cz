@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 5a0e41bf-f99c-4692-8799-f89617f5bcf9
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: d7b8551c8b82ca880d989a1b58411f9555a9feb4
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 87170035df47e7605d25531df4b0759bf121ad80
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59079133"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59325706"
 ---
 # <a name="how-to-create-initialize-and-configure-trace-switches"></a>Postupy: Vytváření, inicializace a konfigurace přepínačů trasování
 Přepínače trasování umožňují povolit, zakázat a filtrovat výstup trasování.  
@@ -31,9 +31,9 @@ Přepínače trasování umožňují povolit, zakázat a filtrovat výstup traso
   
 #### <a name="to-create-and-initialize-a-trace-switch"></a>Vytvoření a inicializace přepínačů trasování  
   
-1.  Definování přepínač jako buď typ <xref:System.Diagnostics.BooleanSwitch?displayProperty=nameWithType> nebo typ <xref:System.Diagnostics.TraceSwitch?displayProperty=nameWithType> a nastavte název a popis přepínače.  
+1. Definování přepínač jako buď typ <xref:System.Diagnostics.BooleanSwitch?displayProperty=nameWithType> nebo typ <xref:System.Diagnostics.TraceSwitch?displayProperty=nameWithType> a nastavte název a popis přepínače.  
   
-2.  Nakonfigurujte přepínač trasování. Další informace najdete v tématu [konfigurace přepínačů trasování](#configure).  
+2. Nakonfigurujte přepínač trasování. Další informace najdete v tématu [konfigurace přepínačů trasování](#configure).  
   
      Následující kód vytvoří dva přepínače, jeden z každého typu:  
   
@@ -71,9 +71,9 @@ Přepínače trasování umožňují povolit, zakázat a filtrovat výstup traso
   
 #### <a name="to-configure-trace-switches"></a>Konfigurace přepínačů trasování  
   
-1.  Chcete-li použít přepínačů trasování, musíte je vytvořit a umístit je do kódu, jak je popsáno v části [vytváření a inicializace přepínačů trasování](#create).  
+1. Chcete-li použít přepínačů trasování, musíte je vytvořit a umístit je do kódu, jak je popsáno v části [vytváření a inicializace přepínačů trasování](#create).  
   
-2.  Pokud váš projekt neobsahuje soubor konfigurace (app.config nebo Web.config), pak z **projektu** nabídce vyberte možnost **přidat novou položku**.  
+2. Pokud váš projekt neobsahuje soubor konfigurace (app.config nebo Web.config), pak z **projektu** nabídce vyberte možnost **přidat novou položku**.  
   
     -   **Visual Basic:** V **přidat novou položku** dialogového okna zvolte **konfiguračního souboru aplikace**.  
   
@@ -88,7 +88,7 @@ Přepínače trasování umožňují povolit, zakázat a filtrovat výstup traso
   
          Při kompilaci projektu souboru app.config je zkopírován do výstupní složky projektu a přejmenování *applicationname*. exe.config.  
   
-3.  Po `<configuration>` označit ale předtím, než `</configuration>` značky, přidejte odpovídající kód XML konfigurace vašeho přepínače. Následující příklady ukazují **BooleanSwitch** s **DisplayName** vlastnost `DataMessageSwitch` a **TraceSwitch** s **DisplayName**  vlastnost `TraceLevelSwitch`.  
+3. Po `<configuration>` označit ale předtím, než `</configuration>` značky, přidejte odpovídající kód XML konfigurace vašeho přepínače. Následující příklady ukazují **BooleanSwitch** s **DisplayName** vlastnost `DataMessageSwitch` a **TraceSwitch** s **DisplayName**  vlastnost `TraceLevelSwitch`.  
   
     ```xml  
     <system.diagnostics>  
@@ -101,11 +101,11 @@ Přepínače trasování umožňují povolit, zakázat a filtrovat výstup traso
   
      V této konfiguraci jak přepínače jsou vypnuté.  
   
-4.  Pokud je potřeba zapnout **BooleanSwitch**, jako `DataMessagesSwitch` je znázorněno v předchozím příkladu, změnit **hodnotu** libovolné celé číslo než 0.  
+4. Pokud je potřeba zapnout **BooleanSwitch**, jako `DataMessagesSwitch` je znázorněno v předchozím příkladu, změnit **hodnotu** libovolné celé číslo než 0.  
   
-5.  Pokud je potřeba zapnout **TraceSwitch**, jako `TraceLevelSwitch` je znázorněno v předchozím příkladu, změnit **hodnotu** úrovně (1 až 4) nastavení.  
+5. Pokud je potřeba zapnout **TraceSwitch**, jako `TraceLevelSwitch` je znázorněno v předchozím příkladu, změnit **hodnotu** úrovně (1 až 4) nastavení.  
   
-6.  Přidání komentářů do souboru .config, aby koncový uživatel má pochopili, jaké hodnoty chcete-li změnit konfiguraci přepínače odpovídajícím způsobem.  
+6. Přidání komentářů do souboru .config, aby koncový uživatel má pochopili, jaké hodnoty chcete-li změnit konfiguraci přepínače odpovídajícím způsobem.  
   
      Následující příklad ukazuje, jak může vypadat konečný kód, komentáře, včetně:  
   

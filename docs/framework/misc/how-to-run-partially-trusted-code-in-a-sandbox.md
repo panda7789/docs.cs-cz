@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: d1ad722b-5b49-4040-bff3-431b94bb8095
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 74a897c1fca51c92e8290f6362d947730349344c
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: caa9afcb1ab2ca53bba849c39651ca4cba3a9c77
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59104855"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59316528"
 ---
 # <a name="how-to-run-partially-trusted-code-in-a-sandbox"></a>Postupy: Spuštění částečně důvěryhodného kódu v izolovaném prostoru
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
@@ -48,7 +48,7 @@ AppDomain.CreateDomain( string friendlyName,
   
 ### <a name="to-run-an-application-in-a-sandbox"></a>Ke spuštění aplikace v izolovaném prostoru  
   
-1.  Vytvořte sadu nedůvěryhodné aplikaci udělit oprávnění. Je minimální oprávnění může udělit <xref:System.Security.Permissions.SecurityPermissionFlag.Execution> oprávnění. Můžete také udělit další oprávnění, které si myslíte, že může být bezpečné pro nedůvěryhodný kód; například <xref:System.Security.Permissions.IsolatedStorageFilePermission>. Následující kód vytvoří nová sada oprávnění s pouze <xref:System.Security.Permissions.SecurityPermissionFlag.Execution> oprávnění.  
+1. Vytvořte sadu nedůvěryhodné aplikaci udělit oprávnění. Je minimální oprávnění může udělit <xref:System.Security.Permissions.SecurityPermissionFlag.Execution> oprávnění. Můžete také udělit další oprávnění, které si myslíte, že může být bezpečné pro nedůvěryhodný kód; například <xref:System.Security.Permissions.IsolatedStorageFilePermission>. Následující kód vytvoří nová sada oprávnění s pouze <xref:System.Security.Permissions.SecurityPermissionFlag.Execution> oprávnění.  
   
     ```csharp
     PermissionSet permSet = new PermissionSet(PermissionState.None);  
@@ -65,7 +65,7 @@ AppDomain.CreateDomain( string friendlyName,
   
      <xref:System.Security.SecurityManager.GetStandardSandbox%2A> Metoda vrátí buď `Internet` sadu oprávnění nebo `LocalIntranet` sadu v závislosti na zóně legitimace oprávnění. <xref:System.Security.SecurityManager.GetStandardSandbox%2A> také vytvoří identitu oprávnění pro některé objekty důkazy předané jako odkazy.  
   
-2.  Podepište sestavení obsahující hostující třídy (s názvem `Sandboxer` v tomto příkladu), která volá nedůvěryhodného kódu. Přidat <xref:System.Security.Policy.StrongName> použitý k podepsání sestavení <xref:System.Security.Policy.StrongName> pole `fullTrustAssemblies` parametr <xref:System.AppDomain.CreateDomain%2A> volání. Hostující třídy musí běžet jako plně důvěryhodné povolit spuštění částečně důvěryhodného kódu nebo chcete nabízet služby do aplikace částečným vztahem důvěryhodnosti. To je, jak číst <xref:System.Security.Policy.StrongName> sestavení:  
+2. Podepište sestavení obsahující hostující třídy (s názvem `Sandboxer` v tomto příkladu), která volá nedůvěryhodného kódu. Přidat <xref:System.Security.Policy.StrongName> použitý k podepsání sestavení <xref:System.Security.Policy.StrongName> pole `fullTrustAssemblies` parametr <xref:System.AppDomain.CreateDomain%2A> volání. Hostující třídy musí běžet jako plně důvěryhodné povolit spuštění částečně důvěryhodného kódu nebo chcete nabízet služby do aplikace částečným vztahem důvěryhodnosti. To je, jak číst <xref:System.Security.Policy.StrongName> sestavení:  
   
     ```csharp
     StrongName fullTrustAssembly = typeof(Sandboxer).Assembly.Evidence.GetHostEvidence<StrongName>();  
@@ -73,14 +73,14 @@ AppDomain.CreateDomain( string friendlyName,
   
      Sestavení rozhraní .NET framework, jako je například mscorlib a System.dll, není potřeba přidat do seznamu úplného vztahu důvěryhodnosti, protože pocházejí z globální mezipaměti sestavení načteno jako plně důvěryhodné.  
   
-3.  Inicializovat <xref:System.AppDomainSetup> parametr <xref:System.AppDomain.CreateDomain%2A> metody. S tímto parametrem, můžete řídit celou řadu z nastavení nového <xref:System.AppDomain>. <xref:System.AppDomainSetup.ApplicationBase%2A> Vlastnost je důležitá nastavení a musí být odlišný od <xref:System.AppDomainSetup.ApplicationBase%2A> vlastnost <xref:System.AppDomain> hostitelské aplikace. Pokud <xref:System.AppDomainSetup.ApplicationBase%2A> nastavení jsou stejné, částečným vztahem důvěryhodnosti aplikace můžete získat hostitelskou aplikaci k načtení (jako plně důvěryhodné) definuje, tedy zneužít výjimky. To je další důvod, proč se nedoporučuje catch (exception). Nastavení aplikace base hostitele odlišně od základ cesty aplikace z aplikace v izolovaném prostoru snižuje riziko zneužití.  
+3. Inicializovat <xref:System.AppDomainSetup> parametr <xref:System.AppDomain.CreateDomain%2A> metody. S tímto parametrem, můžete řídit celou řadu z nastavení nového <xref:System.AppDomain>. <xref:System.AppDomainSetup.ApplicationBase%2A> Vlastnost je důležitá nastavení a musí být odlišný od <xref:System.AppDomainSetup.ApplicationBase%2A> vlastnost <xref:System.AppDomain> hostitelské aplikace. Pokud <xref:System.AppDomainSetup.ApplicationBase%2A> nastavení jsou stejné, částečným vztahem důvěryhodnosti aplikace můžete získat hostitelskou aplikaci k načtení (jako plně důvěryhodné) definuje, tedy zneužít výjimky. To je další důvod, proč se nedoporučuje catch (exception). Nastavení aplikace base hostitele odlišně od základ cesty aplikace z aplikace v izolovaném prostoru snižuje riziko zneužití.  
   
     ```csharp
     AppDomainSetup adSetup = new AppDomainSetup();  
     adSetup.ApplicationBase = Path.GetFullPath(pathToUntrusted);  
     ```  
   
-4.  Volání <xref:System.AppDomain.CreateDomain%28System.String%2CSystem.Security.Policy.Evidence%2CSystem.AppDomainSetup%2CSystem.Security.PermissionSet%2CSystem.Security.Policy.StrongName%5B%5D%29> přetížení metody k vytvoření domény aplikace pomocí parametrů jsme určili.  
+4. Volání <xref:System.AppDomain.CreateDomain%28System.String%2CSystem.Security.Policy.Evidence%2CSystem.AppDomainSetup%2CSystem.Security.PermissionSet%2CSystem.Security.Policy.StrongName%5B%5D%29> přetížení metody k vytvoření domény aplikace pomocí parametrů jsme určili.  
   
      Signatura pro tuto metodu je:  
   
@@ -106,7 +106,7 @@ AppDomain.CreateDomain( string friendlyName,
     AppDomain newDomain = AppDomain.CreateDomain("Sandbox", null, adSetup, permSet, fullTrustAssembly);  
     ```  
   
-5.  Načíst kód do sandboxing <xref:System.AppDomain> , kterou jste vytvořili. To lze provést dvěma způsoby:  
+5. Načíst kód do sandboxing <xref:System.AppDomain> , kterou jste vytvořili. To lze provést dvěma způsoby:  
   
     -   Volání <xref:System.AppDomain.ExecuteAssembly%2A> metodu pro sestavení.  
   
@@ -130,13 +130,13 @@ AppDomain.CreateDomain( string friendlyName,
     class Sandboxer:MarshalByRefObject  
     ```  
   
-6.  Rozbalení novou instanci domény do odkazu v této doméně. Tento odkaz se používá ke spuštění nedůvěryhodného kódu.  
+6. Rozbalení novou instanci domény do odkazu v této doméně. Tento odkaz se používá ke spuštění nedůvěryhodného kódu.  
   
     ```csharp
     Sandboxer newDomainInstance = (Sandboxer) handle.Unwrap();  
     ```  
   
-7.  Volání `ExecuteUntrustedCode` metoda v instanci aplikace `Sandboxer` třídy, které jste právě vytvořili.  
+7. Volání `ExecuteUntrustedCode` metoda v instanci aplikace `Sandboxer` třídy, které jste právě vytvořili.  
   
     ```csharp
     newDomainInstance.ExecuteUntrustedCode(untrustedAssembly, untrustedClass, entryPoint, parameters);  

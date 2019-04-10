@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Windows Presentation Foundation [WPF], what's new
 - WPF [WPF], what's new
 ms.assetid: db086ae4-70bb-4862-95db-2eaca5216bc3
-ms.openlocfilehash: 5e9194dc4dc8ef3246870dc1fd71fa53d3ad143f
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 03f785da018cacdec643fa196bdd0c6d5d7c7f70
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59227480"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59325823"
 ---
 # <a name="whats-new-in-wpf-version-45"></a>Novinky ve verzi 4.5 grafického subsystému WPF
 <a name="introduction"></a> Toto téma obsahuje informace o nových a vylepšených funkcích [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] verze 4.5.  
@@ -56,9 +56,9 @@ ms.locfileid: "59227480"
 <a name="VirtualizingPanel"></a>   
 ## <a name="new-features-for-the-virtualizingpanel"></a>Nové funkce pro VirtualizingPanel  
   
-1.  Můžete určit, jestli <xref:System.Windows.Controls.VirtualizingPanel>, například <xref:System.Windows.Controls.VirtualizingStackPanel>, zobrazí částečných položek pomocí <xref:System.Windows.Controls.VirtualizingPanel.ScrollUnit%2A> přidružená vlastnost. Pokud <xref:System.Windows.Controls.VirtualizingPanel.ScrollUnit%2A> je nastavena na <xref:System.Windows.Controls.ScrollUnit.Item>, <xref:System.Windows.Controls.VirtualizingPanel> zobrazí pouze položky, které jsou zcela viditelné. Pokud <xref:System.Windows.Controls.VirtualizingPanel.ScrollUnit%2A> je nastavena na <xref:System.Windows.Controls.ScrollUnit.Pixel>, <xref:System.Windows.Controls.VirtualizingPanel> částečně viditelné položky lze zobrazit.  
+1. Můžete určit, jestli <xref:System.Windows.Controls.VirtualizingPanel>, například <xref:System.Windows.Controls.VirtualizingStackPanel>, zobrazí částečných položek pomocí <xref:System.Windows.Controls.VirtualizingPanel.ScrollUnit%2A> přidružená vlastnost. Pokud <xref:System.Windows.Controls.VirtualizingPanel.ScrollUnit%2A> je nastavena na <xref:System.Windows.Controls.ScrollUnit.Item>, <xref:System.Windows.Controls.VirtualizingPanel> zobrazí pouze položky, které jsou zcela viditelné. Pokud <xref:System.Windows.Controls.VirtualizingPanel.ScrollUnit%2A> je nastavena na <xref:System.Windows.Controls.ScrollUnit.Pixel>, <xref:System.Windows.Controls.VirtualizingPanel> částečně viditelné položky lze zobrazit.  
   
-2.  Můžete zadat velikost mezipaměti před a po zobrazení při <xref:System.Windows.Controls.VirtualizingPanel> virtualizace pomocí <xref:System.Windows.Controls.VirtualizingPanel.CacheLength%2A> přidružená vlastnost.  Mezipaměť je množství místa nad nebo pod zobrazení, ve kterém nejsou virtualizovány položek.  Použití mezipaměti pro zabránění generování prvků uživatelského rozhraní, jako jste přešli do zobrazení může zlepšit výkon. Tak, aby aplikace není přestane během operace se mezipaměť naplní s nižší prioritou. <xref:System.Windows.Controls.VirtualizingPanel.CacheLengthUnit%2A?displayProperty=nameWithType> Vlastnost určuje, který používá měrné jednotky <xref:System.Windows.Controls.VirtualizingPanel.CacheLength%2A?displayProperty=nameWithType>.  
+2. Můžete zadat velikost mezipaměti před a po zobrazení při <xref:System.Windows.Controls.VirtualizingPanel> virtualizace pomocí <xref:System.Windows.Controls.VirtualizingPanel.CacheLength%2A> přidružená vlastnost.  Mezipaměť je množství místa nad nebo pod zobrazení, ve kterém nejsou virtualizovány položek.  Použití mezipaměti pro zabránění generování prvků uživatelského rozhraní, jako jste přešli do zobrazení může zlepšit výkon. Tak, aby aplikace není přestane během operace se mezipaměť naplní s nižší prioritou. <xref:System.Windows.Controls.VirtualizingPanel.CacheLengthUnit%2A?displayProperty=nameWithType> Vlastnost určuje, který používá měrné jednotky <xref:System.Windows.Controls.VirtualizingPanel.CacheLength%2A?displayProperty=nameWithType>.  
   
 <a name="static_properties"></a>   
 ## <a name="binding-to-static-properties"></a>Vytvoření vazby na statické vlastnosti  
@@ -86,11 +86,11 @@ ms.locfileid: "59227480"
 ## <a name="binding-to-types-that-implement-icustomtypeprovider"></a>Vytvoření vazby na typy ICustomTypeProvider této implementace  
  WPF podporuje datovou vazbu pro objekty, které implementují <xref:System.Reflection.ICustomTypeProvider>, označovaný také jako vlastní typy.  V následujících případech můžete použít vlastní typy.  
   
-1.  Jako <xref:System.Windows.PropertyPath> v datové vazbě. Například <xref:System.Windows.Data.Binding.Path%2A> vlastnost <xref:System.Windows.Data.Binding> může odkazovat na vlastnost vlastního typu.  
+1. Jako <xref:System.Windows.PropertyPath> v datové vazbě. Například <xref:System.Windows.Data.Binding.Path%2A> vlastnost <xref:System.Windows.Data.Binding> může odkazovat na vlastnost vlastního typu.  
   
-2.  Jako hodnotu <xref:System.Windows.DataTemplate.DataType%2A> vlastnost.  
+2. Jako hodnotu <xref:System.Windows.DataTemplate.DataType%2A> vlastnost.  
   
-3.  Jako typ, který určuje automaticky generované sloupce v <xref:System.Windows.Controls.DataGrid>.  
+3. Jako typ, který určuje automaticky generované sloupce v <xref:System.Windows.Controls.DataGrid>.  
   
 <a name="binding_state"></a>   
 ## <a name="retrieving-data-binding-information-from-a-binding-expression"></a>Načítání informací o vázání dat z vazbového výrazu  

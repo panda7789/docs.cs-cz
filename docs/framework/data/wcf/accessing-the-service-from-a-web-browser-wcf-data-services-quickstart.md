@@ -2,12 +2,12 @@
 title: Přístupu ke službě z webového prohlížeče (WCF Data Services – rychlý start)
 ms.date: 03/30/2017
 ms.assetid: 5a6fa180-3094-4e6e-ba2b-8c80975d18d1
-ms.openlocfilehash: 15a74e47774c532e75eca8a60a1af3a3e4f03f58
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ebeda2805f3393b298e43aa4dcc601298ce176f6
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54591640"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59330321"
 ---
 # <a name="accessing-the-service-from-a-web-browser-wcf-data-services-quickstart"></a>Přístupu ke službě z webového prohlížeče (WCF Data Services – rychlý start)
 
@@ -18,16 +18,16 @@ Toto je v druhé úloze tohoto rychlého startu služby WCF Data Services. Při 
 
 ## <a name="to-request-the-default-service-document-by-using-internet-explorer"></a>Požádat o výchozí dokument služby pomocí Internet Exploreru
 
-1.  V aplikaci Internet Explorer z **nástroje** nabídce vyberte možnost **Možnosti Internetu**, klikněte na tlačítko **obsahu** klikněte na tlačítko **nastavení**a zrušte zaškrtnutí  **Zapnout informačního kanálu zobrazení**.
+1. V aplikaci Internet Explorer z **nástroje** nabídce vyberte možnost **Možnosti Internetu**, klikněte na tlačítko **obsahu** klikněte na tlačítko **nastavení**a zrušte zaškrtnutí  **Zapnout informačního kanálu zobrazení**.
 
      Tím zajistíte, který informační kanál čtení je zakázaný. Pokud tato funkce není zakázána, pak webový prohlížeč bude považovat za vrácené AtomPub kódovaného dokumentu XML informačního kanálu místo zobrazují se nezpracovaná data XML.
 
     > [!NOTE]
     > Pokud váš prohlížeč nelze zobrazit jako nezpracovaná data XML informačního kanálu, by měl stále možné zobrazit jako zdrojový kód pro stránku informačního kanálu.
 
-2.  V sadě Visual Studio, stiskněte **F5** spusťte ladění aplikace.
+2. V sadě Visual Studio, stiskněte **F5** spusťte ladění aplikace.
 
-3.  Otevřete webový prohlížeč v místním počítači. Na panelu Adresa zadejte následující identifikátor URI:
+3. Otevřete webový prohlížeč v místním počítači. Na panelu Adresa zadejte následující identifikátor URI:
 
     ```
     http://localhost:12345/northwind.svc
@@ -37,7 +37,7 @@ Toto je v druhé úloze tohoto rychlého startu služby WCF Data Services. Při 
 
 ## <a name="to-access-entity-set-resources-from-a-web-browser"></a>Pro přístup k entitě nastavit prostředky z webového prohlížeče
 
-1.  Do adresního řádku webového prohlížeče zadejte následující identifikátor URI:
+1. Do adresního řádku webového prohlížeče zadejte následující identifikátor URI:
 
     ```
     http://localhost:12345/northwind.svc/Customers
@@ -45,7 +45,7 @@ Toto je v druhé úloze tohoto rychlého startu služby WCF Data Services. Při 
 
      Vrátí sadu všem zákazníkům v ukázkové databázi Northwind.
 
-2.  Do adresního řádku webového prohlížeče zadejte následující identifikátor URI:
+2. Do adresního řádku webového prohlížeče zadejte následující identifikátor URI:
 
     ```
     http://localhost:12345/northwind.svc/Customers('ALFKI')
@@ -53,7 +53,7 @@ Toto je v druhé úloze tohoto rychlého startu služby WCF Data Services. Při 
 
      Vrátí instanci entity pro konkrétního zákazníka `ALFKI`.
 
-3.  Do adresního řádku webového prohlížeče zadejte následující identifikátor URI:
+3. Do adresního řádku webového prohlížeče zadejte následující identifikátor URI:
 
     ```
     http://localhost:12345/northwind.svc/Customers('ALFKI')/Orders
@@ -61,7 +61,7 @@ Toto je v druhé úloze tohoto rychlého startu služby WCF Data Services. Při 
 
      To prochází přes vztah mezi zákazníky a objednávkami vrátit sadu všech objednávek pro konkrétního zákazníka `ALFKI`.
 
-4.  Do adresního řádku webového prohlížeče zadejte následující identifikátor URI:
+4. Do adresního řádku webového prohlížeče zadejte následující identifikátor URI:
 
     ```
     http://localhost:12345/northwind.svc/Customers('ALFKI')/Orders?$filter=OrderID eq 10643

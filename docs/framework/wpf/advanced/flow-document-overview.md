@@ -9,12 +9,12 @@ helpviewer_keywords:
 - ', '
 - flow documents [WPF]
 ms.assetid: ef236a50-d44f-43c8-ba7c-82b0c733c0b7
-ms.openlocfilehash: 14402bde39ec90d8ef17ed5ee07f9eefb8151939
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: f8e5a7475765bffb76e7b07e81db25b4a62ae038
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59139604"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59303489"
 ---
 # <a name="flow-document-overview"></a>Přehled toku dokumentů
 Dokumenty toku jsou určená k optimalizaci pro zobrazení a čitelnost. Dokumenty toku místo nastavování jedno předdefinované rozložení dynamicky upravit a přeformátování jejich obsah na základě proměnných za běhu, jako je například velikost okna, rozlišení zařízení a volitelné uživatelských předvoleb. Kromě toho nabízejí dokumenty toku dokumentu pokročilé funkce, jako je stránkování a sloupce. Toto téma obsahuje přehled toku dokumentů a postupy jejich vytvoření.  
@@ -89,9 +89,9 @@ Dokumenty toku jsou určená k optimalizaci pro zobrazení a čitelnost. Dokumen
   
  Pro účely obsah toku existují dvě důležité kategorie:  
   
-1.  **Třídy odvozené bloku**: Také označují jako "Bloku obsahu prvky" nebo jen "bloku prvky". Prvky, které dědí <xref:System.Windows.Documents.Block> lze použít k seskupení elementů pod společným nadřazeným prvkem nebo použít běžné atributy do skupiny.  
+1. **Třídy odvozené bloku**: Také označují jako "Bloku obsahu prvky" nebo jen "bloku prvky". Prvky, které dědí <xref:System.Windows.Documents.Block> lze použít k seskupení elementů pod společným nadřazeným prvkem nebo použít běžné atributy do skupiny.  
   
-2.  **Třídy odvozené vložené**: Také označují jako "Vloženého obsahu prvky" nebo jen "vložené prvky". Prvky, které dědí <xref:System.Windows.Documents.Inline> jsou buď obsažené v blokovém elementu nebo jiné vloženého elementu. Vložené prvky jsou často používá jako přímé kontejneru obsah, který se zobrazí na obrazovce. Například <xref:System.Windows.Documents.Paragraph> (blokovém elementu) může obsahovat <xref:System.Windows.Documents.Run> (vloženého elementu) ale <xref:System.Windows.Documents.Run> ve skutečnosti obsahuje text, který se vykreslí na obrazovce.  
+2. **Třídy odvozené vložené**: Také označují jako "Vloženého obsahu prvky" nebo jen "vložené prvky". Prvky, které dědí <xref:System.Windows.Documents.Inline> jsou buď obsažené v blokovém elementu nebo jiné vloženého elementu. Vložené prvky jsou často používá jako přímé kontejneru obsah, který se zobrazí na obrazovce. Například <xref:System.Windows.Documents.Paragraph> (blokovém elementu) může obsahovat <xref:System.Windows.Documents.Run> (vloženého elementu) ale <xref:System.Windows.Documents.Run> ve skutečnosti obsahuje text, který se vykreslí na obrazovce.  
   
  Každá třída v těchto dvou kategorií jsou popsány níže.  
   

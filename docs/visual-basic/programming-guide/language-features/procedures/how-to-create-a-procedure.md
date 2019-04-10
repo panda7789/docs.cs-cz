@@ -8,12 +8,12 @@ helpviewer_keywords:
 - procedure declarations
 - procedures [Visual Basic], about procedures
 ms.assetid: 4f779247-0b50-47e8-9e5c-ab5cf39ac0d2
-ms.openlocfilehash: 0f3b0a793b2751b0ec9bb2b7cd6fedc12ae19e18
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 56099d334a03e85b816cf48983cbbead0784ef5b
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56970802"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59320389"
 ---
 # <a name="how-to-create-a-procedure-visual-basic"></a>Postupy: Vytvořit procedury (Visual Basic)
 Použijte postup mezi počáteční příkazu deklarace (`Sub` nebo `Function`) a koncové příkazu deklarace (`End Sub` nebo `End Function`). Kód všechny procedury leží mezi těmito příkazy.  
@@ -24,29 +24,29 @@ Použijte postup mezi počáteční příkazu deklarace (`Sub` nebo `Function`) 
   
 ### <a name="to-create-a-procedure-that-does-not-return-a-value"></a>Chcete-li vytvořit proceduru, která nevrací hodnotu  
   
-1.  Mimo všechny procedury, použijte `Sub` příkazu, za nímž následuje `End Sub` příkazu.  
+1. Mimo všechny procedury, použijte `Sub` příkazu, za nímž následuje `End Sub` příkazu.  
   
-2.  V `Sub` prohlášení, postupujte `Sub` – klíčové slovo s názvem podle postupu, pak se seznam parametrů v závorkách.  
+2. V `Sub` prohlášení, postupujte `Sub` – klíčové slovo s názvem podle postupu, pak se seznam parametrů v závorkách.  
   
-3.  Umístit příkazy kódu podle postupu mezi `Sub` a `End Sub` příkazy.  
+3. Umístit příkazy kódu podle postupu mezi `Sub` a `End Sub` příkazy.  
   
 ### <a name="to-create-a-procedure-that-returns-a-value"></a>Chcete-li vytvořit proceduru, která vrací hodnotu  
   
-1.  Mimo všechny procedury, použijte `Function` příkazu, za nímž následuje `End Function` příkazu.  
+1. Mimo všechny procedury, použijte `Function` příkazu, za nímž následuje `End Function` příkazu.  
   
-2.  V `Function` příkazu, postupujte `Function` – klíčové slovo s názvem podle postupu, pak se seznam parametrů v závorkách a potom `As` klauzule určující datový typ vrácené hodnoty.  
+2. V `Function` příkazu, postupujte `Function` – klíčové slovo s názvem podle postupu, pak se seznam parametrů v závorkách a potom `As` klauzule určující datový typ vrácené hodnoty.  
   
-3.  Umístit příkazy kódu podle postupu mezi `Function` a `End Function` příkazy.  
+3. Umístit příkazy kódu podle postupu mezi `Function` a `End Function` příkazy.  
   
-4.  Použití `Return` příkazu vrátí hodnotu volajícímu kódu.  
+4. Použití `Return` příkazu vrátí hodnotu volajícímu kódu.  
   
 ### <a name="to-connect-your-new-procedure-with-the-old-repetitive-blocks-of-code"></a>Připojit nový postup se starou, opakované bloky kódu  
   
-1.  Zkontrolujte, že můžete definovat nové postupu na místě, kde původní kód má přístup k němu.  
+1. Zkontrolujte, že můžete definovat nové postupu na místě, kde původní kód má přístup k němu.  
   
-2.  V bloku vaše staré, opakované kódu nahraďte příkazy, které provádějí opakované úlohy s jeden příkaz, který volá `Sub` nebo `Function` postup.  
+2. V bloku vaše staré, opakované kódu nahraďte příkazy, které provádějí opakované úlohy s jeden příkaz, který volá `Sub` nebo `Function` postup.  
   
-3.  Pokud je vaše postup `Function` , která vrací hodnotu, ujistěte se, že volání příkazu provede akci s vrácenou hodnotu, jako je ukládání do proměnné, jinak hodnota se ztratí.  
+3. Pokud je vaše postup `Function` , která vrací hodnotu, ujistěte se, že volání příkazu provede akci s vrácenou hodnotu, jako je ukládání do proměnné, jinak hodnota se ztratí.  
   
 ## <a name="example"></a>Příklad  
  Následující `Function` postup vypočítá nejdelší strana nebo přepony pravoúhlého trojúhelníku, pro obě strany zadané hodnoty.  
@@ -57,8 +57,8 @@ Použijte postup mezi počáteční příkazu deklarace (`Sub` nebo `Function`) 
 
 - [Procedury](./index.md)
 - [Procedury Sub](./sub-procedures.md)
-- [Procedury funkce](./function-procedures.md)
-- [Procedury vlastnosti](./property-procedures.md)
+- [Procedury Function](./function-procedures.md)
+- [Procedury Property](./property-procedures.md)
 - [Procedury operátoru](./operator-procedures.md)
 - [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)
 - [Rekurzivní procedury](./recursive-procedures.md)

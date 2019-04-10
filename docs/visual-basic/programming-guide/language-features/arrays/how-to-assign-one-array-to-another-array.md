@@ -6,21 +6,21 @@ helpviewer_keywords:
 - arrays [Visual Basic], assigning
 - arrays [Visual Basic], covariance
 ms.assetid: 1ae89ea5-f292-4282-bcfc-e9b06b37fbd5
-ms.openlocfilehash: 834dad07ec1f4116aca72a184ccffc664d0a42ed
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 78497de3a9aea55320639c55a151a1260a960159
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58835281"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59303086"
 ---
 # <a name="how-to-assign-one-array-to-another-array-visual-basic"></a>Postupy: Přiřazení jednoho pole ke druhému (Visual Basic)
 Protože pole jsou objekty, které lze využít v přiřazovací příkazy jako ostatní typy objektů. Proměnné pole tvořící prvky pole a informace o počet rozměrů a délka dat obsahuje ukazatel a přiřazení zkopíruje pouze tento ukazatel.  
   
 ### <a name="to-assign-one-array-to-another-array"></a>K přiřazení jednoho pole ke druhému  
   
-1.  Ujistěte se, že dvě pole mají stejné pořadí (počet rozměrů) a kompatibilní element datové typy.  
+1. Ujistěte se, že dvě pole mají stejné pořadí (počet rozměrů) a kompatibilní element datové typy.  
   
-2.  Použijte standardní přiřazovací příkaz přiřaďte pole zdrojového do cílového pole. Nepostupujte podle buď název pole v závorkách.  
+2. Použijte standardní přiřazovací příkaz přiřaďte pole zdrojového do cílového pole. Nepostupujte podle buď název pole v závorkách.  
   
     ```  
     Dim formArray() As System.Windows.Forms.Form  
@@ -46,5 +46,5 @@ Protože pole jsou objekty, které lze využít v přiřazovací příkazy jako 
 
 - [Pole](../../../../visual-basic/programming-guide/language-features/arrays/index.md)
 - [Řešení potíží s poli](../../../../visual-basic/programming-guide/language-features/arrays/troubleshooting-arrays.md)
-- [Příkaz Enum](../../../../visual-basic/language-reference/statements/enum-statement.md)
-- [Převody polí](../../../../visual-basic/programming-guide/language-features/data-types/array-conversions.md)
+- [Enum – příkaz](../../../../visual-basic/language-reference/statements/enum-statement.md)
+- [Převody pole](../../../../visual-basic/programming-guide/language-features/data-types/array-conversions.md)

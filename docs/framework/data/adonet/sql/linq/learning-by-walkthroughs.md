@@ -2,12 +2,12 @@
 title: Učení podle návodů
 ms.date: 03/30/2017
 ms.assetid: a8ae2965-6a49-4155-89b0-7fab2c488ab1
-ms.openlocfilehash: fdcc2db1507d8ee2c6d1b07a79c531267fbb5714
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 611644ce9d6f95bc4113b81bfff36ecaf9cf0b4a
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59188998"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59329307"
 ---
 # <a name="learning-by-walkthroughs"></a>Učení podle návodů
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Dokumentace poskytuje několik návody. Toto téma řeší některé problémy obecného průvodce (včetně Poradce při potížích) a obsahuje odkazy na několik základní návody pro získání informací o [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
@@ -53,13 +53,13 @@ ms.locfileid: "59188998"
   
 ##### <a name="to-verify-or-change-the-database-log-on"></a>Ověřit nebo změnit databázi přihlášení  
   
-1.  V Windows **Start** nabídky, přejděte k **všechny programy**, **Microsoft SQL Server 2005**, přejděte na **konfigurační nástroje**a potom klikněte na **Správce konfigurace systému SQL Server**.  
+1. V Windows **Start** nabídky, přejděte k **všechny programy**, **Microsoft SQL Server 2005**, přejděte na **konfigurační nástroje**a potom klikněte na **Správce konfigurace systému SQL Server**.  
   
-2.  V levém podokně **Správce konfigurace systému SQL Server**, klikněte na tlačítko **služeb SQL Server 2005**.  
+2. V levém podokně **Správce konfigurace systému SQL Server**, klikněte na tlačítko **služeb SQL Server 2005**.  
   
-3.  V pravém podokně klikněte pravým tlačítkem na **SQL serveru (SQLEXPRESS)** a potom klikněte na tlačítko **vlastnosti**.  
+3. V pravém podokně klikněte pravým tlačítkem na **SQL serveru (SQLEXPRESS)** a potom klikněte na tlačítko **vlastnosti**.  
   
-4.  Klikněte na tlačítko **přihlášení** kartě a ověřte, jak se pokoušíte přihlásit k serveru.  
+4. Klikněte na tlačítko **přihlášení** kartě a ověřte, jak se pokoušíte přihlásit k serveru.  
   
      Ve většině případů **místní systém** funguje.  
   
@@ -70,9 +70,9 @@ ms.locfileid: "59188998"
   
 ##### <a name="to-enable-the-named-pipes-protocol"></a>Chcete-li povolit protokol pojmenovaných kanálů  
   
-1.  V levém podokně **Správce konfigurace systému SQL Server**, rozbalte **síťová konfigurace systému SQL Server 2005**a potom klikněte na tlačítko **protokoly pro SQLEXPRESS**.  
+1. V levém podokně **Správce konfigurace systému SQL Server**, rozbalte **síťová konfigurace systému SQL Server 2005**a potom klikněte na tlačítko **protokoly pro SQLEXPRESS**.  
   
-2.  V pravém podokně, ujistěte se, že **pojmenovaných kanálů** je povolený protokol. Pokud není, klikněte pravým tlačítkem na **pojmenované kanály** a potom klikněte na tlačítko **povolit**.  
+2. V pravém podokně, ujistěte se, že **pojmenovaných kanálů** je povolený protokol. Pokud není, klikněte pravým tlačítkem na **pojmenované kanály** a potom klikněte na tlačítko **povolit**.  
   
      Budete muset zastavit a restartovat službu. Postupujte podle kroků v další blok.  
   
@@ -81,11 +81,11 @@ ms.locfileid: "59188998"
   
 ##### <a name="to-stop-and-restart-the-service"></a>Zastavit a restartovat službu  
   
-1.  V levém podokně **Správce konfigurace systému SQL Server**, klikněte na tlačítko **služeb SQL Server 2005**.  
+1. V levém podokně **Správce konfigurace systému SQL Server**, klikněte na tlačítko **služeb SQL Server 2005**.  
   
-2.  V pravém podokně klikněte pravým tlačítkem na **SQL serveru (SQLEXPRESS)** a potom klikněte na tlačítko **Zastavit**.  
+2. V pravém podokně klikněte pravým tlačítkem na **SQL serveru (SQLEXPRESS)** a potom klikněte na tlačítko **Zastavit**.  
   
-3.  Klikněte pravým tlačítkem na **SQL serveru (SQLEXPRESS)** a potom klikněte na tlačítko **restartovat**.  
+3. Klikněte pravým tlačítkem na **SQL serveru (SQLEXPRESS)** a potom klikněte na tlačítko **restartovat**.  
   
 ## <a name="see-also"></a>Viz také:
 

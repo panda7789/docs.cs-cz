@@ -10,12 +10,12 @@ helpviewer_keywords:
 - data binding [WPF], selecting data for views
 - data binding [WPF], binding to collections
 ms.assetid: 952a7d76-dd29-49e5-86f5-32c4530e70eb
-ms.openlocfilehash: 61ced27ed80adf8ac5d543584f71794b9ee59676
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: bb7d4c89e63982a3052857dcb50d04d36d9517dd
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59188744"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59314386"
 ---
 # <a name="how-to-bind-to-a-collection-and-display-information-based-on-selection"></a>Postupy: Vytvoření vazby ke kolekci a zobrazení informací podle výběru
 V jednoduchém scénáři hlavní podrobnosti máte vázaný na data <xref:System.Windows.Controls.ItemsControl> například <xref:System.Windows.Controls.ListBox>. Na základě výběru uživatelem, zobrazíte další informace o vybrané položce. Tento příklad ukazuje, jak tento scénář implementovat.  
@@ -36,9 +36,9 @@ V jednoduchém scénáři hlavní podrobnosti máte vázaný na data <xref:Syste
   
  Jsou dvě věci v tomto příkladu si všimněte:  
   
-1.  <xref:System.Windows.Controls.ListBox> a <xref:System.Windows.Controls.ContentControl> vytvoření vazby ke stejnému zdroji. <xref:System.Windows.Data.Binding.Path%2A> Vlastnosti obou vazby nejsou zadané, protože oba ovládací prvky jsou vazby objektu celou kolekci.  
+1. <xref:System.Windows.Controls.ListBox> a <xref:System.Windows.Controls.ContentControl> vytvoření vazby ke stejnému zdroji. <xref:System.Windows.Data.Binding.Path%2A> Vlastnosti obou vazby nejsou zadané, protože oba ovládací prvky jsou vazby objektu celou kolekci.  
   
-2.  Je nutné nastavit <xref:System.Windows.Controls.Primitives.Selector.IsSynchronizedWithCurrentItem%2A> vlastnost `true` aby to fungovalo. Nastavení této vlastnosti se zajistí, že je vybraná položka vždy nastavena jako <xref:System.Windows.Controls.ItemCollection.CurrentItem%2A>. Případně pokud <xref:System.Windows.Controls.ListBox> ho načte data z <xref:System.Windows.Data.CollectionViewSource>, automaticky synchronizuje výběr a Měna.  
+2. Je nutné nastavit <xref:System.Windows.Controls.Primitives.Selector.IsSynchronizedWithCurrentItem%2A> vlastnost `true` aby to fungovalo. Nastavení této vlastnosti se zajistí, že je vybraná položka vždy nastavena jako <xref:System.Windows.Controls.ItemCollection.CurrentItem%2A>. Případně pokud <xref:System.Windows.Controls.ListBox> ho načte data z <xref:System.Windows.Data.CollectionViewSource>, automaticky synchronizuje výběr a Měna.  
   
  Všimněte si, že `Person` třídy přepsání `ToString` metodu následujícím způsobem. Ve výchozím nastavení <xref:System.Windows.Controls.ListBox> volání `ToString` a zobrazí řetězec představující jednotlivých objektů v vázané kolekce. To je důvod, proč každý `Person` se zobrazí jako první název v <xref:System.Windows.Controls.ListBox>.  
   

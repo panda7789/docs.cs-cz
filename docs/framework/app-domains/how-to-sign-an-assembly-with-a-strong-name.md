@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 2c30799a-a826-46b4-a25d-c584027a6c67
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 971180465f506fa69ff562ab0fdef56c0a5ec918
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 5580b6d8af7319397ad7eb6416941c2be0dcdb76
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59196551"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59303417"
 ---
 # <a name="how-to-sign-an-assembly-with-a-strong-name"></a>Postupy: Podepsání sestavení silným názvem
 Existuje několik způsobů, jak můžete podepsat sestavení pomocí silného názvu:  
@@ -35,13 +35,13 @@ Existuje několik způsobů, jak můžete podepsat sestavení pomocí silného n
   
 ### <a name="to-create-and-sign-an-assembly-with-a-strong-name-by-using-visual-studio"></a>Vytvoření a podepsání sestavení silným názvem pomocí aplikace Visual Studio  
   
-1.  V **Průzkumníka řešení**, otevřete místní nabídku pro projekt a klikněte na tlačítko **vlastnosti**.  
+1. V **Průzkumníka řešení**, otevřete místní nabídku pro projekt a klikněte na tlačítko **vlastnosti**.  
   
-2.  Zvolte **podepisování** kartu.  
+2. Zvolte **podepisování** kartu.  
   
-3.  Vyberte **podepsat sestavení** pole.  
+3. Vyberte **podepsat sestavení** pole.  
   
-4.  V **vyberte soubor klíče se silným názvem** zvolte  **\<Procházet... >** a potom přejděte k souboru klíče. Chcete-li vytvořit nový soubor klíče, zvolte  **\<nový … >** a zadejte jeho název **vytvořit klíč se silným názvem** dialogové okno.  
+4. V **vyberte soubor klíče se silným názvem** zvolte  **\<Procházet... >** a potom přejděte k souboru klíče. Chcete-li vytvořit nový soubor klíče, zvolte  **\<nový … >** a zadejte jeho název **vytvořit klíč se silným názvem** dialogové okno.  
   
 > [!NOTE]
 >  Za účelem [zpoždění podepsání sestavení](../../../docs/framework/app-domains/delay-sign-assembly.md), vyberte soubor veřejného klíče.  
@@ -73,9 +73,9 @@ al /out:MyAssembly.dll MyModule.netmodule /keyfile:sgKey.snk
   
 #### <a name="to-sign-an-assembly-with-a-strong-name-by-using-attributes"></a>Podepsání sestavení silným názvem pomocí atributů  
   
-1.  Přidat <xref:System.Reflection.AssemblyKeyFileAttribute?displayProperty=nameWithType> nebo <xref:System.Reflection.AssemblyKeyNameAttribute> atribut souboru zdrojového kódu a zadejte název souboru nebo kontejneru, který obsahuje pár klíčů má použít při podepisování sestavení silným názvem.  
+1. Přidat <xref:System.Reflection.AssemblyKeyFileAttribute?displayProperty=nameWithType> nebo <xref:System.Reflection.AssemblyKeyNameAttribute> atribut souboru zdrojového kódu a zadejte název souboru nebo kontejneru, který obsahuje pár klíčů má použít při podepisování sestavení silným názvem.  
   
-2.  Zkompilujte soubor zdrojového kódu běžným způsobem.  
+2. Zkompilujte soubor zdrojového kódu běžným způsobem.  
   
 > [!NOTE]
 >  Jazyce C# a Visual Basic vydají upozornění kompilátoru (CS1699 a BC41008, v uvedeném pořadí) pokud narazí <xref:System.Reflection.AssemblyKeyFileAttribute> nebo <xref:System.Reflection.AssemblyKeyNameAttribute> atributů ve zdrojovém kódu. Upozornění můžete ignorovat.  

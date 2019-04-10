@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Drawing objects [WPF]
 - DrawingGroup objects [WPF]
 ms.assetid: 9b5ce5c0-e204-4320-a7a8-0b2210d62f88
-ms.openlocfilehash: 51ff0317172d545c746d35808d7c672e9586eeae
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: c065b06e7542913ae7fb495a0f69ff09dc4238b9
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59144024"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59325511"
 ---
 # <a name="drawing-objects-overview"></a>Přehled vykreslovaných objektů
 Toto téma představuje <xref:System.Windows.Media.Drawing> objektů a popisuje, jak se dají použít k efektivní kreslení tvarů, rastrové obrázky, text a média. Použít <xref:System.Windows.Media.Drawing> objekty při vytváření klipart, Malování <xref:System.Windows.Media.DrawingBrush>, nebo použijte <xref:System.Windows.Media.Visual> objekty.  
@@ -94,27 +94,27 @@ GeometryDrawing
   
  Přehrávání médií bez nutnosti vytvářet vlastní <xref:System.Windows.Media.MediaTimeline>, proveďte následující kroky.  
   
-1.  Vytvoření <xref:System.Windows.Media.MediaPlayer> objektu.  
+1. Vytvoření <xref:System.Windows.Media.MediaPlayer> objektu.  
   
      [!code-csharp[DrawingMiscSnippets_snip#VideoDrawingExampleInline1](~/samples/snippets/csharp/VS_Snippets_Wpf/DrawingMiscSnippets_snip/CSharp/VideoDrawingExample.cs#videodrawingexampleinline1)]  
   
-2.  Použití <xref:System.Windows.Media.MediaPlayer.Open%2A> metoda načíst do souboru média.  
+2. Použití <xref:System.Windows.Media.MediaPlayer.Open%2A> metoda načíst do souboru média.  
   
      [!code-csharp[DrawingMiscSnippets_snip#VideoDrawingExampleInline2](~/samples/snippets/csharp/VS_Snippets_Wpf/DrawingMiscSnippets_snip/CSharp/VideoDrawingExample.cs#videodrawingexampleinline2)]  
   
-3.  Vytvoření <xref:System.Windows.Media.VideoDrawing>.  
+3. Vytvoření <xref:System.Windows.Media.VideoDrawing>.  
   
      [!code-csharp[DrawingMiscSnippets_snip#VideoDrawingExampleInline3](~/samples/snippets/csharp/VS_Snippets_Wpf/DrawingMiscSnippets_snip/CSharp/VideoDrawingExample.cs#videodrawingexampleinline3)]  
   
-4.  Zadejte velikost a umístění pro kreslení média tak, že nastavíte <xref:System.Windows.Media.VideoDrawing.Rect%2A> vlastnost <xref:System.Windows.Media.VideoDrawing>.  
+4. Zadejte velikost a umístění pro kreslení média tak, že nastavíte <xref:System.Windows.Media.VideoDrawing.Rect%2A> vlastnost <xref:System.Windows.Media.VideoDrawing>.  
   
      [!code-csharp[DrawingMiscSnippets_snip#VideoDrawingExampleInline4](~/samples/snippets/csharp/VS_Snippets_Wpf/DrawingMiscSnippets_snip/CSharp/VideoDrawingExample.cs#videodrawingexampleinline4)]  
   
-5.  Nastavte <xref:System.Windows.Media.VideoDrawing.Player%2A> vlastnost <xref:System.Windows.Media.VideoDrawing> s <xref:System.Windows.Media.MediaPlayer> jste vytvořili.  
+5. Nastavte <xref:System.Windows.Media.VideoDrawing.Player%2A> vlastnost <xref:System.Windows.Media.VideoDrawing> s <xref:System.Windows.Media.MediaPlayer> jste vytvořili.  
   
      [!code-csharp[DrawingMiscSnippets_snip#VideoDrawingExampleInline5](~/samples/snippets/csharp/VS_Snippets_Wpf/DrawingMiscSnippets_snip/CSharp/VideoDrawingExample.cs#videodrawingexampleinline5)]  
   
-6.  Použití <xref:System.Windows.Media.MediaPlayer.Play%2A> metodu <xref:System.Windows.Media.MediaPlayer> a spustit přehrávání média.  
+6. Použití <xref:System.Windows.Media.MediaPlayer.Play%2A> metodu <xref:System.Windows.Media.MediaPlayer> a spustit přehrávání média.  
   
      [!code-csharp[DrawingMiscSnippets_snip#VideoDrawingExampleInline6](~/samples/snippets/csharp/VS_Snippets_Wpf/DrawingMiscSnippets_snip/CSharp/VideoDrawingExample.cs#videodrawingexampleinline6)]  
   
@@ -124,19 +124,19 @@ GeometryDrawing
   
  Chcete-li získat další časování ovládat média, použijte <xref:System.Windows.Media.MediaTimeline> s <xref:System.Windows.Media.MediaPlayer> a <xref:System.Windows.Media.VideoDrawing> objekty. <xref:System.Windows.Media.MediaTimeline> Umožňuje určit, zda by měla opakovat na video. Použití <xref:System.Windows.Media.MediaTimeline> s <xref:System.Windows.Media.VideoDrawing>, proveďte následující kroky:  
   
-1.  Deklarovat <xref:System.Windows.Media.MediaTimeline> a nastavte jeho chování časování.  
+1. Deklarovat <xref:System.Windows.Media.MediaTimeline> a nastavte jeho chování časování.  
   
      [!code-csharp[DrawingMiscSnippets_snip#RepeatingVideoDrawingExampleInline1](~/samples/snippets/csharp/VS_Snippets_Wpf/DrawingMiscSnippets_snip/CSharp/VideoDrawingExample.cs#repeatingvideodrawingexampleinline1)]  
   
-2.  Vytvoření <xref:System.Windows.Media.MediaClock> z <xref:System.Windows.Media.MediaTimeline>.  
+2. Vytvoření <xref:System.Windows.Media.MediaClock> z <xref:System.Windows.Media.MediaTimeline>.  
   
      [!code-csharp[DrawingMiscSnippets_snip#RepeatingVideoDrawingExampleInline2](~/samples/snippets/csharp/VS_Snippets_Wpf/DrawingMiscSnippets_snip/CSharp/VideoDrawingExample.cs#repeatingvideodrawingexampleinline2)]  
   
-3.  Vytvoření <xref:System.Windows.Media.MediaPlayer> a použít <xref:System.Windows.Media.MediaClock> nastavit jeho <xref:System.Windows.Media.MediaPlayer.Clock%2A> vlastnost.  
+3. Vytvoření <xref:System.Windows.Media.MediaPlayer> a použít <xref:System.Windows.Media.MediaClock> nastavit jeho <xref:System.Windows.Media.MediaPlayer.Clock%2A> vlastnost.  
   
      [!code-csharp[DrawingMiscSnippets_snip#RepeatingVideoDrawingExampleInline3](~/samples/snippets/csharp/VS_Snippets_Wpf/DrawingMiscSnippets_snip/CSharp/VideoDrawingExample.cs#repeatingvideodrawingexampleinline3)]  
   
-4.  Vytvořit <xref:System.Windows.Media.VideoDrawing> a přiřaďte <xref:System.Windows.Media.MediaPlayer> k <xref:System.Windows.Media.VideoDrawing.Player%2A> vlastnost <xref:System.Windows.Media.VideoDrawing>.  
+4. Vytvořit <xref:System.Windows.Media.VideoDrawing> a přiřaďte <xref:System.Windows.Media.MediaPlayer> k <xref:System.Windows.Media.VideoDrawing.Player%2A> vlastnost <xref:System.Windows.Media.VideoDrawing>.  
   
      [!code-csharp[DrawingMiscSnippets_snip#RepeatingVideoDrawingExampleInline4](~/samples/snippets/csharp/VS_Snippets_Wpf/DrawingMiscSnippets_snip/CSharp/VideoDrawingExample.cs#repeatingvideodrawingexampleinline4)]  
   

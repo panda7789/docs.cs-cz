@@ -8,12 +8,12 @@ helpviewer_keywords:
 - hosting Win32 control in WPF [WPF]
 - Win32 code [WPF], WPF interoperation
 ms.assetid: a676b1eb-fc55-4355-93ab-df840c41cea0
-ms.openlocfilehash: 1ba060fcefb2d8be24d597c7b1ccb7a79d6d5ceb
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 834160358d7b3e8e7f4c7c4f4fd06d403086e7e5
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59160690"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59307701"
 ---
 # <a name="walkthrough-hosting-a-win32-control-in-wpf"></a>Návod: Hostování ovládacího prvku Win32 ve WPF
 Windows Presentation Foundation (WPF) poskytuje bohaté prostředí pro vytváření aplikací. Ale pokud máte značné investice v kódu Win32, může být efektivnější opakovaně používat alespoň některé tohoto kódu v aplikaci WPF spíše než přepíše zcela. WPF poskytuje jednoduchý mechanismus pro hostování okně Win32, na stránce WPF.  
@@ -35,25 +35,25 @@ Windows Presentation Foundation (WPF) poskytuje bohaté prostředí pro vytvář
   
  Základní postup hostingu je:  
   
-1.  Implementace stránky WPF pro hostování v okně. Je jednou z metod vytvoření <xref:System.Windows.Controls.Border> element rezervovat oddíl na stránce pro okno prostředí.  
+1. Implementace stránky WPF pro hostování v okně. Je jednou z metod vytvoření <xref:System.Windows.Controls.Border> element rezervovat oddíl na stránce pro okno prostředí.  
   
-2.  Implementace třídy pro hostování ovládacího prvku, který dědí z <xref:System.Windows.Interop.HwndHost>.  
+2. Implementace třídy pro hostování ovládacího prvku, který dědí z <xref:System.Windows.Interop.HwndHost>.  
   
-3.  V této třídě přepsat <xref:System.Windows.Interop.HwndHost> člena třídy <xref:System.Windows.Interop.HwndHost.BuildWindowCore%2A>.  
+3. V této třídě přepsat <xref:System.Windows.Interop.HwndHost> člena třídy <xref:System.Windows.Interop.HwndHost.BuildWindowCore%2A>.  
   
-4.  Vytvoření okna prostředí jako podřízená položka okna, která obsahuje stránku WPF. I když není potřeba explicitně vytvořit konvenční programování WPF využít, stránka hostingu je okno s popisovačem (HWND). Se zobrazí stránka HWND prostřednictvím `hwndParent` parametr <xref:System.Windows.Interop.HwndHost.BuildWindowCore%2A> metody. V okně prostředí musí být vytvořené jako podřízený objekt tento HWND.  
+4. Vytvoření okna prostředí jako podřízená položka okna, která obsahuje stránku WPF. I když není potřeba explicitně vytvořit konvenční programování WPF využít, stránka hostingu je okno s popisovačem (HWND). Se zobrazí stránka HWND prostřednictvím `hwndParent` parametr <xref:System.Windows.Interop.HwndHost.BuildWindowCore%2A> metody. V okně prostředí musí být vytvořené jako podřízený objekt tento HWND.  
   
-5.  Po vytvoření okno hostitele vrací HWND okno prostředí. Pokud chcete hostovat jeden nebo více ovládacích prvků systému Win32, obvykle vytvoříte okno hostitele jako podřízený objekt HWND a ujistěte se, podřízené ovládací prvky tohoto okna hostitele. Obtékání ovládacích prvků v okně hostitel poskytuje jednoduchý způsob WPF stránky pro příjem oznámení z ovládacích prvků, která se zabývá některé konkrétní Win32 problémy s oznámeními hranice HWND.  
+5. Po vytvoření okno hostitele vrací HWND okno prostředí. Pokud chcete hostovat jeden nebo více ovládacích prvků systému Win32, obvykle vytvoříte okno hostitele jako podřízený objekt HWND a ujistěte se, podřízené ovládací prvky tohoto okna hostitele. Obtékání ovládacích prvků v okně hostitel poskytuje jednoduchý způsob WPF stránky pro příjem oznámení z ovládacích prvků, která se zabývá některé konkrétní Win32 problémy s oznámeními hranice HWND.  
   
-6.  Zpracování vybrané zprávy odeslané do okna hostitele, jako jsou oznámení z podřízených ovládacích prvků. Existují dva způsoby, jak to provést.  
+6. Zpracování vybrané zprávy odeslané do okna hostitele, jako jsou oznámení z podřízených ovládacích prvků. Existují dva způsoby, jak to provést.  
   
     -   Pokud chcete zpracovávat zprávy v hostující třídy, má přednost před <xref:System.Windows.Interop.HwndHost.WndProc%2A> metodu <xref:System.Windows.Interop.HwndHost> třídy.  
   
     -   Pokud chcete mít WPF slouží ke zpracování zpráv, nastavte popisovač <xref:System.Windows.Interop.HwndHost> třídy <xref:System.Windows.Interop.HwndHost.MessageHook> události do vašeho kódu. Pro každou zprávu, která se zobrazila v okně prostředí dojde k této události. Pokud zvolíte tuto možnost, je nutné přepsat <xref:System.Windows.Interop.HwndHost.WndProc%2A>, ale potřebujete jenom minimální implementaci.  
   
-7.  Přepsat <xref:System.Windows.Interop.HwndHost.DestroyWindowCore%2A> a <xref:System.Windows.Interop.HwndHost.WndProc%2A> metody <xref:System.Windows.Interop.HwndHost>. Je nutné přepsat tyto metody splňovat <xref:System.Windows.Interop.HwndHost> smlouvy, ale může být pouze nutné zadat minimální implementaci.  
+7. Přepsat <xref:System.Windows.Interop.HwndHost.DestroyWindowCore%2A> a <xref:System.Windows.Interop.HwndHost.WndProc%2A> metody <xref:System.Windows.Interop.HwndHost>. Je nutné přepsat tyto metody splňovat <xref:System.Windows.Interop.HwndHost> smlouvy, ale může být pouze nutné zadat minimální implementaci.  
   
-8.  V souboru kódu na pozadí, vytvořte instanci hostující třídy ovládacího prvku a nastavte ji podřízený <xref:System.Windows.Controls.Border> element, který je určena k hostování okna.  
+8. V souboru kódu na pozadí, vytvořte instanci hostující třídy ovládacího prvku a nastavte ji podřízený <xref:System.Windows.Controls.Border> element, který je určena k hostování okna.  
   
 9. Komunikovat s hostovanou okna a odeslat ho [!INCLUDE[TLA#tla_win](../../../../includes/tlasharptla-win-md.md)] zprávy a zpracování zprávy z jeho podřízených oken, jako je například oznámení zaslaná z ovládacích prvků.  
   

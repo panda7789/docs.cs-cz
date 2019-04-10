@@ -9,12 +9,12 @@ helpviewer_keywords:
 - dynamic layout [WPF interoperability]
 - device-independent pixels
 ms.assetid: 3c574597-bbde-440f-95cc-01371f1a5d9d
-ms.openlocfilehash: ff52d3bbf7bf5d9d85f7a6fd5f73d9730dde8fad
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 93aaa8e21ef483fc21297e29189d86f93fbe138a
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59168984"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59327851"
 ---
 # <a name="layout-considerations-for-the-windowsformshost-element"></a>Předpoklady rozložení pro element WindowsFormsHost
 Toto téma popisuje, jak <xref:System.Windows.Forms.Integration.WindowsFormsHost> element komunikuje [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] systém rozložení.  
@@ -84,13 +84,13 @@ Toto téma popisuje, jak <xref:System.Windows.Forms.Integration.WindowsFormsHost
 ### <a name="sizing-algorithm"></a>Nastavení velikosti algoritmus  
  <xref:System.Windows.Forms.Integration.WindowsFormsHost> Prvek používá následující postup pro nastavení velikosti hostovaného ovládacího prvku:  
   
-1.  <xref:System.Windows.Forms.Integration.WindowsFormsHost> Přepíše element <xref:System.Windows.FrameworkElement.MeasureOverride%2A> a <xref:System.Windows.FrameworkElement.ArrangeOverride%2A> metody.  
+1. <xref:System.Windows.Forms.Integration.WindowsFormsHost> Přepíše element <xref:System.Windows.FrameworkElement.MeasureOverride%2A> a <xref:System.Windows.FrameworkElement.ArrangeOverride%2A> metody.  
   
-2.  K určení velikosti hostované ovládací prvek, <xref:System.Windows.FrameworkElement.MeasureOverride%2A> hostovaného ovládacího prvku volá metodu <xref:System.Windows.Forms.Control.GetPreferredSize%2A> metodu s omezením přeložit z omezení předán <xref:System.Windows.FrameworkElement.MeasureOverride%2A> metoda.  
+2. K určení velikosti hostované ovládací prvek, <xref:System.Windows.FrameworkElement.MeasureOverride%2A> hostovaného ovládacího prvku volá metodu <xref:System.Windows.Forms.Control.GetPreferredSize%2A> metodu s omezením přeložit z omezení předán <xref:System.Windows.FrameworkElement.MeasureOverride%2A> metoda.  
   
-3.  <xref:System.Windows.FrameworkElement.ArrangeOverride%2A> Metoda se pokusí hostovaného ovládacího prvku nastavte na danou velikost omezení.  
+3. <xref:System.Windows.FrameworkElement.ArrangeOverride%2A> Metoda se pokusí hostovaného ovládacího prvku nastavte na danou velikost omezení.  
   
-4.  Pokud hostovaného ovládacího prvku <xref:System.Windows.Forms.Control.Size%2A> vlastnosti odpovídají zadané omezení, omezení velikostí hostovaného ovládacího prvku.  
+4. Pokud hostovaného ovládacího prvku <xref:System.Windows.Forms.Control.Size%2A> vlastnosti odpovídají zadané omezení, omezení velikostí hostovaného ovládacího prvku.  
   
  Pokud <xref:System.Windows.Forms.Control.Size%2A> vlastnost neodpovídá zadané omezení, hostované ovládací prvek nepodporuje průběžné velikosti. Například <xref:System.Windows.Forms.MonthCalendar> ovládací prvek umožňuje pouze diskrétní velikosti. Povolené velikosti pro tento ovládací prvek se skládá z celých čísel (představující počet měsíců) pro výšku a šířku. V případech, jako je například to <xref:System.Windows.Forms.Integration.WindowsFormsHost> element se chová takto:  
   

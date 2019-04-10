@@ -2,12 +2,12 @@
 title: Výběr a ověření certifikátu
 ms.date: 03/30/2017
 ms.assetid: c933aca2-4cd0-4ff1-9df9-267143f25a6f
-ms.openlocfilehash: 2f28e9b77abbd53200ecf8128c942ce6348a7460
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 79cc46d91f6b1818154bac6f62df2acbac36fe20
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59111342"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59318348"
 ---
 # <a name="certificate-selection-and-validation"></a>Výběr a ověření certifikátu
 <xref:System.Net> Třídy podporují několik způsobů, jak vybrat a ověřit <xref:System.Security.Cryptography.X509Certificates> pro připojení vrstvy SSL (Secure Socket). Klienta můžete vybrat jeden nebo více certifikátů ke svému ověření serveru. Server může vyžadovat, že klientský certifikát mají jeden nebo více konkrétních atributů pro ověřování.  
@@ -29,11 +29,11 @@ ms.locfileid: "59111342"
 ## <a name="client-certificate-selection"></a>Výběru klientského certifikátu  
  Rozhraní .NET Framework zvolí klientský certifikát k dispozici server má následující omezení:  
   
-1.  Pokud klientský certifikát byl dříve předloženým serveru, certifikát je uložen do mezipaměti při prvním zobrazí a je znovu použít pro další klientské žádosti o certifikát.  
+1. Pokud klientský certifikát byl dříve předloženým serveru, certifikát je uložen do mezipaměti při prvním zobrazí a je znovu použít pro další klientské žádosti o certifikát.  
   
-2.  Pokud delegát je k dispozici, vždy použijte výsledek z delegáta jako na klientský certifikát a vyberte. Zkuste použít certifikát uložený v mezipaměti, pokud je to možné, ale nepoužívejte anonymní přihlašovací údaje v mezipaměti, pokud delegát vrátila hodnotu null a kolekci certifikátů není prázdný.  
+2. Pokud delegát je k dispozici, vždy použijte výsledek z delegáta jako na klientský certifikát a vyberte. Zkuste použít certifikát uložený v mezipaměti, pokud je to možné, ale nepoužívejte anonymní přihlašovací údaje v mezipaměti, pokud delegát vrátila hodnotu null a kolekci certifikátů není prázdný.  
   
-3.  Pokud je toto první výzva pro klientský certifikát, rozhraní zobrazí certifikáty v <xref:System.Security.Cryptography.X509Certificates.X509Certificate> nebo <xref:System.Security.Cryptography.X509Certificates.X509Certificate2> třídy objekty přidružené k připojení k vyhledávání shody mezi seznam vystavitelů certifikátů, které jsou poskytované Server a název vystavitele certifikátu klienta. První certifikát, který odpovídá je odeslána na server. Pokud žádné shody certifikátu nebo kolekci certifikátů je prázdný, pak je anonymní přihlašovací údaje odeslány na server.  
+3. Pokud je toto první výzva pro klientský certifikát, rozhraní zobrazí certifikáty v <xref:System.Security.Cryptography.X509Certificates.X509Certificate> nebo <xref:System.Security.Cryptography.X509Certificates.X509Certificate2> třídy objekty přidružené k připojení k vyhledávání shody mezi seznam vystavitelů certifikátů, které jsou poskytované Server a název vystavitele certifikátu klienta. První certifikát, který odpovídá je odeslána na server. Pokud žádné shody certifikátu nebo kolekci certifikátů je prázdný, pak je anonymní přihlašovací údaje odeslány na server.  
   
 ## <a name="tools-for-certificate-configuration"></a>Nástroje pro konfiguraci certifikátu  
  Různé nástroje jsou k dispozici pro konfiguraci certifikátu klienta a serveru.  

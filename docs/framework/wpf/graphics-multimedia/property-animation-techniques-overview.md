@@ -9,12 +9,12 @@ helpviewer_keywords:
 - animation [WPF], properties [WPF], methods for
 - properties [WPF], methods for animating
 ms.assetid: 74f61413-f8c0-4e75-bf04-951886426c8b
-ms.openlocfilehash: 5ec401aea139a868b3633afce4c74558aafcaa1e
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: ebee350f69b5c5e4f9d38c452b9c87bf003528ee
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59165435"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59317906"
 ---
 # <a name="property-animation-techniques-overview"></a>Přehled způsobů animace vlastností
 Toto téma popisuje různé přístupy k animace vlastností: scénáře, místní animace, hodiny a za snímků animace.  
@@ -42,13 +42,13 @@ Toto téma popisuje různé přístupy k animace vlastností: scénáře, místn
   
  A <xref:System.Windows.Media.Animation.Storyboard> je speciální typ kontejneru <xref:System.Windows.Media.Animation.Timeline> poskytující cílení informace pro animace obsahuje. Pro animaci s <xref:System.Windows.Media.Animation.Storyboard>, proveďte následující tři kroky.  
   
-1.  Deklarace <xref:System.Windows.Media.Animation.Storyboard> a jeden nebo více animace.  
+1. Deklarace <xref:System.Windows.Media.Animation.Storyboard> a jeden nebo více animace.  
   
-2.  Použití <xref:System.Windows.Media.Animation.Storyboard.TargetName%2A> a <xref:System.Windows.Media.Animation.Storyboard.TargetProperty> připojené vlastnosti k určení cílového objektu a vlastnost každou animaci.  
+2. Použití <xref:System.Windows.Media.Animation.Storyboard.TargetName%2A> a <xref:System.Windows.Media.Animation.Storyboard.TargetProperty> připojené vlastnosti k určení cílového objektu a vlastnost každou animaci.  
   
-3.  (Pouze kód) Definování <xref:System.Windows.NameScope> pro <xref:System.Windows.FrameworkElement> nebo <xref:System.Windows.FrameworkContentElement>. Registrace názvy objektů pro animaci s ním <xref:System.Windows.FrameworkElement> nebo <xref:System.Windows.FrameworkContentElement>.  
+3. (Pouze kód) Definování <xref:System.Windows.NameScope> pro <xref:System.Windows.FrameworkElement> nebo <xref:System.Windows.FrameworkContentElement>. Registrace názvy objektů pro animaci s ním <xref:System.Windows.FrameworkElement> nebo <xref:System.Windows.FrameworkContentElement>.  
   
-4.  Začněte <xref:System.Windows.Media.Animation.Storyboard>.  
+4. Začněte <xref:System.Windows.Media.Animation.Storyboard>.  
   
  Začíná <xref:System.Windows.Media.Animation.Storyboard> animace se vztahuje na vlastnosti, animace a spustí je. Existují dva způsoby, jak začít <xref:System.Windows.Media.Animation.Storyboard>: můžete použít <xref:System.Windows.Media.Animation.Storyboard.Begin%2A> metody poskytované <xref:System.Windows.Media.Animation.Storyboard> třídy, nebo můžete použít <xref:System.Windows.Media.Animation.BeginStoryboard> akce. Jediný způsob, jak animovat v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] , je použít <xref:System.Windows.Media.Animation.BeginStoryboard> akce. A <xref:System.Windows.Media.Animation.BeginStoryboard> akce lze použít v <xref:System.Windows.EventTrigger>, vlastnost <xref:System.Windows.Trigger>, nebo <xref:System.Windows.DataTrigger>.  
   
@@ -70,9 +70,9 @@ Toto téma popisuje různé přístupy k animace vlastností: scénáře, místn
   
  Pro animaci, pomocí místní animace, proveďte následující kroky.  
   
-1.  Vytvoření <xref:System.Windows.Media.Animation.AnimationTimeline> objektu.  
+1. Vytvoření <xref:System.Windows.Media.Animation.AnimationTimeline> objektu.  
   
-2.  Použití <xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A> metody objektu, který má být animován použít <xref:System.Windows.Media.Animation.AnimationTimeline> na vlastnost, která zadáte.  
+2. Použití <xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A> metody objektu, který má být animován použít <xref:System.Windows.Media.Animation.AnimationTimeline> na vlastnost, která zadáte.  
   
  Následující příklad ukazuje, jak animovat barva šířku a na pozadí <xref:System.Windows.Controls.Button>.  
   
@@ -87,11 +87,11 @@ Toto téma popisuje různé přístupy k animace vlastností: scénáře, místn
   
  Chcete-li použít jediné <xref:System.Windows.Media.Animation.Clock> na vlastnost, proveďte následující kroky.  
   
-1.  Vytvoření <xref:System.Windows.Media.Animation.AnimationTimeline> objektu.  
+1. Vytvoření <xref:System.Windows.Media.Animation.AnimationTimeline> objektu.  
   
-2.  Použití <xref:System.Windows.Media.Animation.AnimationTimeline.CreateClock%2A> metodu <xref:System.Windows.Media.Animation.AnimationTimeline> k vytvoření <xref:System.Windows.Media.Animation.AnimationClock>.  
+2. Použití <xref:System.Windows.Media.Animation.AnimationTimeline.CreateClock%2A> metodu <xref:System.Windows.Media.Animation.AnimationTimeline> k vytvoření <xref:System.Windows.Media.Animation.AnimationClock>.  
   
-3.  Použití <xref:System.Windows.Media.Animation.Animatable.ApplyAnimationClock%2A> metody objektu, který má být animován použít <xref:System.Windows.Media.Animation.AnimationClock> vlastnosti, které zadáte.  
+3. Použití <xref:System.Windows.Media.Animation.Animatable.ApplyAnimationClock%2A> metody objektu, který má být animován použít <xref:System.Windows.Media.Animation.AnimationClock> vlastnosti, které zadáte.  
   
  Následující příklad ukazuje, jak vytvořit <xref:System.Windows.Media.Animation.AnimationClock> a použít ji pro dvě podobné vlastnosti.  
   
@@ -100,11 +100,11 @@ Toto téma popisuje různé přístupy k animace vlastností: scénáře, místn
   
  Vytvoření stromu časování a jeho použití animovat vlastnosti, proveďte následující kroky.  
   
-1.  Použití <xref:System.Windows.Media.Animation.ParallelTimeline> a <xref:System.Windows.Media.Animation.AnimationTimeline> objekty pro vytvoření stromu časování.  
+1. Použití <xref:System.Windows.Media.Animation.ParallelTimeline> a <xref:System.Windows.Media.Animation.AnimationTimeline> objekty pro vytvoření stromu časování.  
   
-2.  Použití <xref:System.Windows.Media.Animation.TimelineGroup.CreateClock%2A> kořenové <xref:System.Windows.Media.Animation.ParallelTimeline> k vytvoření <xref:System.Windows.Media.Animation.ClockGroup>.  
+2. Použití <xref:System.Windows.Media.Animation.TimelineGroup.CreateClock%2A> kořenové <xref:System.Windows.Media.Animation.ParallelTimeline> k vytvoření <xref:System.Windows.Media.Animation.ClockGroup>.  
   
-3.  Iterovat přes <xref:System.Windows.Media.Animation.ClockGroup.Children%2A> z <xref:System.Windows.Media.Animation.ClockGroup> a použít jeho dceřiný <xref:System.Windows.Media.Animation.Clock> objekty. Pro každou <xref:System.Windows.Media.Animation.AnimationClock> podřízené, použijte <xref:System.Windows.Media.Animation.Animatable.ApplyAnimationClock%2A> metody objektu, který má být animován použít <xref:System.Windows.Media.Animation.AnimationClock> zadáte vlastnosti  
+3. Iterovat přes <xref:System.Windows.Media.Animation.ClockGroup.Children%2A> z <xref:System.Windows.Media.Animation.ClockGroup> a použít jeho dceřiný <xref:System.Windows.Media.Animation.Clock> objekty. Pro každou <xref:System.Windows.Media.Animation.AnimationClock> podřízené, použijte <xref:System.Windows.Media.Animation.Animatable.ApplyAnimationClock%2A> metody objektu, který má být animován použít <xref:System.Windows.Media.Animation.AnimationClock> zadáte vlastnosti  
   
  Další informace o objekty Clock, najdete v článku [animace a časování přehledu systému](animation-and-timing-system-overview.md).  
   

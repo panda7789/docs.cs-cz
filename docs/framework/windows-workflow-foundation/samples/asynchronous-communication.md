@@ -2,12 +2,12 @@
 title: Asynchronní komunikace
 ms.date: 03/30/2017
 ms.assetid: 128dc092-9eb2-4e33-9470-9a7f62b60df6
-ms.openlocfilehash: e85f7efb0de1326ceb5091c305b20f34809eab57
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: a9da04e2c6d3c131603211f53c54fd25dde8d338
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45593904"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59323652"
 ---
 # <a name="asynchronous-communication"></a>Asynchronní komunikace
 Tato ukázka předvádí, jak je komunikace mezi dvěma různými službami Windows Workflow Foundation (WF) provádět asynchronně ve výchozím nastavení.  
@@ -31,13 +31,13 @@ Tato ukázka předvádí, jak je komunikace mezi dvěma různými službami Wind
   
 #### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
-1.  Klikněte pravým tlačítkem myši **AsynchronousCommunication** řešení a vyberte **vlastnosti**.  
+1. Klikněte pravým tlačítkem myši **AsynchronousCommunication** řešení a vyberte **vlastnosti**.  
   
-2.  V **společné vlastnosti**vyberte **spouštěný projekt**a vyberte **více projektů po spuštění**.  
+2. V **společné vlastnosti**vyberte **spouštěný projekt**a vyberte **více projektů po spuštění**.  
   
-3.  Přesunout **RentalApprovalService** na první místo v seznamu, za nímž následuje **CreditCheckService**následovaný **klienta**. Nastavte **Start** akci u všech tří projektů.  
+3. Přesunout **RentalApprovalService** na první místo v seznamu, za nímž následuje **CreditCheckService**následovaný **klienta**. Nastavte **Start** akci u všech tří projektů.  
   
-4.  Klikněte na tlačítko **OK**, a stiskněte klávesu F5 ke spuštění ukázky.  
+4. Klikněte na tlačítko **OK**, a stiskněte klávesu F5 ke spuštění ukázky.  
   
 > [!IMPORTANT]
 >  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  

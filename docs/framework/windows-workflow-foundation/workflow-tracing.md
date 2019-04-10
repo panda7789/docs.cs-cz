@@ -2,12 +2,12 @@
 title: Trasování pracovních postupů
 ms.date: 03/30/2017
 ms.assetid: 18737989-0502-4367-b5f6-617ebfb77c96
-ms.openlocfilehash: 92497768e7e8d720cdcc7c8f2c7c04b4dfcc47b4
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: cd53ed834fdacb639b38346dca831ef4c3e26337
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59224933"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59321663"
 ---
 # <a name="workflow-tracing"></a>Trasování pracovních postupů
 Trasování pracovních postupů nabízí způsob, jak k zaznamenání diagnostických informací s použitím rozhraní .NET Framework naslouchacích procesů trasování. Trasování může povolit, pokud byl zjištěn problém s aplikací a zakázané znovu, až se problém vyřeší. Existují dva způsoby, jak může povolit trasování ladění pracovních postupů. Můžete je nakonfigurovat pomocí prohlížeče událostí trasování nebo můžete použít <xref:System.Diagnostics> k odesílání trasování událostí do souboru.  
@@ -15,13 +15,13 @@ Trasování pracovních postupů nabízí způsob, jak k zaznamenání diagnosti
 ## <a name="enabling-debug-tracing-in-etw"></a>Povolení ladění trasování v trasování událostí pro Windows  
  Pokud chcete povolit, trasování pomocí trasování událostí pro Windows, povolte ladění kanálu v prohlížeči událostí:  
   
-1.  Přejděte do analýzy a ladit protokoly uzlu v prohlížeči událostí.  
+1. Přejděte do analýzy a ladit protokoly uzlu v prohlížeči událostí.  
   
-2.  Ve stromovém zobrazení v prohlížeči událostí, přejděte na **Prohlížeč událostí -> aplikace a služby protokoly -> Microsoft -> Windows -> aplikace Server-**. Klikněte pravým tlačítkem na **aplikace Server-** a vyberte **zobrazení -> Zobrazit protokoly ladění a analýzu**. Klikněte pravým tlačítkem na **ladění** a vyberte **povolit protokol**.  
+2. Ve stromovém zobrazení v prohlížeči událostí, přejděte na **Prohlížeč událostí -> aplikace a služby protokoly -> Microsoft -> Windows -> aplikace Server-**. Klikněte pravým tlačítkem na **aplikace Server-** a vyberte **zobrazení -> Zobrazit protokoly ladění a analýzu**. Klikněte pravým tlačítkem na **ladění** a vyberte **povolit protokol**.  
   
-3.  Při spuštění pracovního postupu, ladění a trasování, které jsou emitovány do kanálu ladění trasování událostí pro Windows, můžete zobrazit v prohlížeči událostí. Přejděte do **Prohlížeč událostí -> aplikace a služby protokoly -> Microsoft -> Windows -> aplikace Server-**. Klikněte pravým tlačítkem na **ladění** a vyberte **aktualizovat**.  
+3. Při spuštění pracovního postupu, ladění a trasování, které jsou emitovány do kanálu ladění trasování událostí pro Windows, můžete zobrazit v prohlížeči událostí. Přejděte do **Prohlížeč událostí -> aplikace a služby protokoly -> Microsoft -> Windows -> aplikace Server-**. Klikněte pravým tlačítkem na **ladění** a vyberte **aktualizovat**.  
   
-4.  Výchozí velikost vyrovnávací paměti analytického trasování je jenom 4 kilobajtů (KB); se doporučuje zvýšit velikost na 32 KB. Chcete-li to provést, postupujte následovně.  
+4. Výchozí velikost vyrovnávací paměti analytického trasování je jenom 4 kilobajtů (KB); se doporučuje zvýšit velikost na 32 KB. Chcete-li to provést, postupujte následovně.  
   
     1.  V aktuálním adresáři rozhraní framework (například C:\Windows\Microsoft.NET\Framework\v4.0.21203) spusťte následující příkaz: `wevtutil um Microsoft.Windows.ApplicationServer.Applications.man`  
   

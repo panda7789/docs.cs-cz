@@ -6,12 +6,12 @@ helpviewer_keywords:
 - SplitContainer control [Windows Forms], Explorer-style interface
 - forms [Windows Forms], Windows Explorer type
 ms.assetid: 9a3d5f4f-5dda-4350-9ad5-57ce5976dc47
-ms.openlocfilehash: e559702d5fd7f0f56c7b2b010713e3129504746a
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: dd70feaba29e29748ac56729632fa359582a6914
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59192131"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59327370"
 ---
 # <a name="how-to-create-a-windows-explorerstyle-interface-on-a-windows-form"></a>Postupy: Vytváření rozhraní ve stylu Průzkumníka Windows ve formuláři Windows Forms
 Windows Explorer je běžné volbou uživatelského rozhraní pro aplikace z důvodu jeho známý připravený.  
@@ -25,9 +25,9 @@ Windows Explorer je běžné volbou uživatelského rozhraní pro aplikace z dů
   
 ### <a name="to-create-a-windows-explorer-style-windows-form"></a>Vytvoření formuláře Windows stylem podobným Průzkumníku Windows  
   
-1.  Vytvoření nového projektu aplikace Windows (**souboru** > **nový** > **projektu** > **Visual C#** nebo **jazyka Visual Basic** > **klasický desktopový** > **aplikaci Windows Forms**).  
+1. Vytvoření nového projektu aplikace Windows (**souboru** > **nový** > **projektu** > **Visual C#** nebo **jazyka Visual Basic** > **klasický desktopový** > **aplikaci Windows Forms**).  
   
-2.  Z **nástrojů**:  
+2. Z **nástrojů**:  
   
     1.  Přetáhněte <xref:System.Windows.Forms.SplitContainer> ovládacího prvku na formulář.  
   
@@ -35,14 +35,14 @@ Windows Explorer je běžné volbou uživatelského rozhraní pro aplikace z dů
   
     3.  Přetáhněte <xref:System.Windows.Forms.ListView> ovládací prvek do **SplitterPanel2** (panelu <xref:System.Windows.Forms.SplitContainer> označený ovládací prvek **ovládací prvek Panel2**).  
   
-3.  Vyberte klávesy CTRL a kliknutím zase na všechny tři ovládací prvky. Když vyberete <xref:System.Windows.Forms.SplitContainer> řídit, klikněte na tlačítko rozdělovač, nikoli panelů.  
+3. Vyberte klávesy CTRL a kliknutím zase na všechny tři ovládací prvky. Když vyberete <xref:System.Windows.Forms.SplitContainer> řídit, klikněte na tlačítko rozdělovač, nikoli panelů.  
   
     > [!NOTE]
     >  Nepoužívejte **Vybrat vše** příkaz **upravit** nabídky. Pokud tak učiníte, vlastnost, je potřeba v dalším kroku nebude zobrazovat **vlastnosti** okna.  
   
-4.  V **vlastnosti** okno, nastaveno <xref:System.Windows.Forms.SplitContainer.Dock%2A> vlastnost <xref:System.Windows.Forms.DockStyle.Fill>.  
+4. V **vlastnosti** okno, nastaveno <xref:System.Windows.Forms.SplitContainer.Dock%2A> vlastnost <xref:System.Windows.Forms.DockStyle.Fill>.  
   
-5.  Stisknutím klávesy F5 spusťte aplikaci.  
+5. Stisknutím klávesy F5 spusťte aplikaci.  
   
      Formulář zobrazí dvě části uživatelského rozhraní, podobně jako u v Průzkumníku Windows.  
   

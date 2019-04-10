@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 30047cba-e2fd-41c6-b9ca-2ad7a49003db
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 158313bcecc8e4bd89f358aecf92324c10789b43
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e8d68770fe60f4d9fb3d9982cf426376d54b229e
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54592218"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59330113"
 ---
 # <a name="how-to-handle-multiple-events-using-event-properties"></a>Postupy: Zpracování více událostí pomocí vlastností událostí
 Chcete-li použít vlastnosti událostí, je třeba definovat vlastnosti událostí ve třídě, která události vyvolá, a poté nastavit delegáty pro tyto vlastnosti událostí ve třídách, které události zpracovávají. Implementovat více vlastnosti událostí ve třídě, musí třída interně ukládání a udržovat delegáta definované pro každou jednotlivou událost. Typický přístup je pro implementaci delegátů kolekce, která je indexované podle klíče události.  
@@ -30,15 +30,15 @@ Chcete-li použít vlastnosti událostí, je třeba definovat vlastnosti událos
   
 ### <a name="to-handle-multiple-events-using-event-properties"></a>Pro zpracování více událostí pomocí vlastností událostí  
   
-1.  Definování kolekce delegátů v rámci třídy, která vyvolává události.  
+1. Definování kolekce delegátů v rámci třídy, která vyvolává události.  
   
-2.  Definujte klíč pro každou jednotlivou událost.  
+2. Definujte klíč pro každou jednotlivou událost.  
   
-3.  Definujte vlastnosti událostí ve třídě, která vyvolává události.  
+3. Definujte vlastnosti událostí ve třídě, která vyvolává události.  
   
-4.  Kolekce delegátů použijte k implementaci přidat a odebrat přístupové metody pro tyto vlastnosti událostí.  
+4. Kolekce delegátů použijte k implementaci přidat a odebrat přístupové metody pro tyto vlastnosti událostí.  
   
-5.  Veřejné vlastnosti události použijte k přidání a odebrání delegátů obslužných rutin událostí ve třídách, které události zpracovávají.  
+5. Veřejné vlastnosti události použijte k přidání a odebrání delegátů obslužných rutin událostí ve třídách, které události zpracovávají.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad jazyka C# implementuje vlastnosti události `MouseDown` a `MouseUp`s použitím <xref:System.ComponentModel.EventHandlerList> ukládat každé události delegáta. Klíčová slova konstruktorů vlastnosti událostí jsou tučně.  

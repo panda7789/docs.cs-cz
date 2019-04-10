@@ -6,12 +6,12 @@ title: Dokumentace k rozhraní .NET
 description: Naučte se v rozhraní .NET vytvářet v jazycích C#, Visual Basic a F# nejrůznější aplikace určené pro libovolnou platformu. Procházejte referenční informace k rozhraní API, ukázky kódu, kurzy a další zdroje informací.
 ms.custom: updateeachrelease
 ms.date: 12/04/2018
-ms.openlocfilehash: 31e810246528c99a665128d3535b92dbfcb4352d
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.openlocfilehash: 132cab6f7c196f88fdc02259e55d0fcb5fbbfd10
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58464512"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59297263"
 ---
 <!-- markdownlint-disable MD033 -->
 <div id="main" class="v2">
@@ -153,7 +153,7 @@ ms.locfileid: "58464512"
                                             </div>
                                             <div class="cardText">
                                                 <h3><a href="/xamarin">Xamarin</a></h3>
-                                                <p><a href="/xamarin/cross-platform">Vývoj pro více platforem</a></p>
+                                                <p><a href="/xamarin/cross-platform">Vývoj pro různé platformy</a></p>
                                                 <p><a href="/xamarin/ios">Průvodce rozšířením Xamarin.iOS</a></p>
                                                 <p><a href="/xamarin/android">Průvodce rozšířením Xamarin.Android</a></p>
                                                 <p><a href="/xamarin/xamarin-forms">Průvodce rozšířením Xamarin.Forms</a></p>
@@ -176,7 +176,7 @@ ms.locfileid: "58464512"
                                                 <p><a href="/dotnet/csharp/getting-started">Začínáme</a></p>
                                                 <p><a href="/dotnet/csharp/tour-of-csharp">Prohlídka jazyka C#</a></p>
                                                 <p><a href="/dotnet/csharp/whats-new">Co je nového v jazyce C#</a></p>
-                                                <p><a href="/dotnet/csharp/language-reference">Referenční příručka jazyka C#</a></p>
+                                                <p><a href="/dotnet/csharp/language-reference">Referenční dokumentace jazyka C#</a></p>
                                             </div>
                                         </div>
                                     </div>
@@ -211,10 +211,10 @@ ms.locfileid: "58464512"
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <h3><a href="/dotnet/visual-basic">Průvodce jazykem Visual Basic</a></h3>
+                                                <h3><a href="/dotnet/visual-basic">Průvodce Visual Basicem</a></h3>
                                                 <p><a href="/dotnet/visual-basic/getting-started">Začínáme</a></p>
                                                 <p><a href="/dotnet/visual-basic/walkthroughs">Prohlídka Visual Basicu</a></p>
-                                                <p><a href="/dotnet/visual-basic/language-reference">Referenční příručka jazyka Visual Basic</a></p>
+                                                <p><a href="/dotnet/visual-basic/language-reference">Referenční dokumentace jazyka Visual Basic</a></p>
                                             </div>
                                         </div>
                                     </div>
@@ -231,10 +231,10 @@ ms.locfileid: "58464512"
                                             </div>
                                             <div class="cardText">
                                                 <h3><a href="/dotnet/machine-learning">Průvodce ML.NET</a></h3>
-                                                <p><a href="/dotnet/machine-learning/tutorials">Kurzy</a></p>
-                                                <p><a href="/dotnet/machine-learning/resources">Prostředky</a></p>
-                                                <p><a href="/dotnet/machine-learning/resources/glossary">Glosář</a></p>
-                                                <p><a href="/dotnet/api?view=ml-dotnet">Referenční informace k rozhraní ML.NET API</a></p>
+                                                <p><a href="/dotnet/machine-learning/index#tutorials">Kurzy</a></p>
+                                                <p><a href="/dotnet/machine-learning/index#resources">Prostředky</a></p>
+                                                <p><a href="/dotnet/machine-learning/resources/glossary">Slovníček</a></p>
+                                                <p><a href="/dotnet/api?view=ml-dotnet">Referenční dokumentace k rozhraní ML.NET API</a></p>
                                             </div>
                                         </div>
                                     </div>
@@ -582,7 +582,7 @@ ms.locfileid: "58464512"
                         <a href="#gaming">Hry</a>
                         <ul id="gaming" class="cardsC">
                             <li>
-                                <a href="https://visualstudio.microsoft.com/vs/features/game-development/">
+                                <a href="https://visualstudio.microsoft.com/vs/features/game-development/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">

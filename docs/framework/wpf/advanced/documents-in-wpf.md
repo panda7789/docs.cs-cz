@@ -10,12 +10,12 @@ helpviewer_keywords:
 - documents [WPF], types of
 - documents [WPF], browser-viewable
 ms.assetid: 6e8db7bc-050a-4070-aa72-bb8c46e87ff8
-ms.openlocfilehash: 9f948b6723d73dac6104439dcd6a42dce573c438
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: b4057f54934fb5c7c9bb3d4fb97fe8e197e324ad
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59169608"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59313954"
 ---
 # <a name="documents-in-wpf"></a>Dokumenty v platformě WPF
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] nabízí širokou škálu funkce dokumentu, které umožňují vytvářet a věrného obsah, který je navržena jako snadno používaná a čtení než v předchozích generací [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)]. Kromě poznat široké možnosti a kvality [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] také poskytuje integrované služby pro zobrazení dokumentu, balení a zabezpečení. Toto téma obsahuje úvod do [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] typů dokumentů a balení dokumentů.  
@@ -89,9 +89,9 @@ ms.locfileid: "59169608"
 #### <a name="packagedigitalsignatures"></a>PackageDigitalSignatures  
  Pro zabezpečení <xref:System.IO.Packaging.PackageDigitalSignature> ("digitální podpis") můžou být spojené s částí v rámci balíčku. A <xref:System.IO.Packaging.PackageDigitalSignature> zahrnuje [509], který poskytuje dvě funkce:  
   
-1.  Identifikuje a ověřuje odesílatel požadavku dostane informaci části.  
+1. Identifikuje a ověřuje odesílatel požadavku dostane informaci části.  
   
-2.  Ověřuje, že byl změněn části.  
+2. Ověřuje, že byl změněn části.  
   
  Digitální podpis část nebrání upravovat, ale ověření proti digitálního podpisu selže, pokud části žádným způsobem změněn. Aplikace potom může provést příslušnou akci, například blokovat otevření části nebo upozornit uživatele, že součásti se změnila a není bezpečná.  
   
@@ -107,9 +107,9 @@ ms.locfileid: "59169608"
   
  Balíček relace umožňují zjistitelné pro přidání a přiřazení další informace o jednotlivých částí nebo celý balíček. Balíček relací se používají pro dvě primární funkce:  
   
-1.  Definování vztahů závislosti z jedné části do jiné části.  
+1. Definování vztahů závislosti z jedné části do jiné části.  
   
-2.  Definování relací informace, které přidat poznámky nebo jiná data související s části.  
+2. Definování relací informace, které přidat poznámky nebo jiná data související s části.  
   
  A <xref:System.IO.Packaging.PackageRelationship> zajišťuje rychlá, zjistitelné definování závislostí a přidat další informace o přidružené k součástí balíčku nebo balíčku jako celek.  
   

@@ -5,23 +5,23 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 89befaff-bb46-4290-8382-e67cdb0e3de9
-ms.openlocfilehash: bdcdce58d78a305493bd698cf4d849e640f14ce0
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 1445a95fc6360a7956048d2bae2d840f9c3f7a99
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59230990"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59325693"
 ---
 # <a name="database-mirroring-in-sql-server"></a>Zrcadlení databáze na SQL Serveru
 Zrcadlení databáze na SQL serveru umožňuje udržovat kopie nebo zrcadlení databáze systému SQL Server na pohotovostní server. Zrcadlení zajistí, že dvě oddělené kopie dat existují na všechny časy, tím vysokou dostupnost a redundanci dat dokončit. .NET Data Provider pro SQL Server podporuje implicitní zrcadlení databáze, takže vývojáři nemusí provádět žádnou akci nebo psát jakýkoli kód, když je nakonfigurovaná pro databázi serveru SQL Server. Kromě toho <xref:System.Data.SqlClient.SqlConnection> objekt podporuje režim explicitní spojení, která umožňuje zadávání názvu serveru partnera převzetí služeb při selhání v <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>.  
   
  Následující zjednodušený pořadí událostí dojde k <xref:System.Data.SqlClient.SqlConnection> objekt, který je zaměřen na databázi nakonfigurována pro zrcadlení:  
   
-1.  Klientská aplikace se úspěšně připojí k hlavní databázi a server odešle zpět název partnerského serveru, který se pak zapíší do mezipaměti na straně klienta.  
+1. Klientská aplikace se úspěšně připojí k hlavní databázi a server odešle zpět název partnerského serveru, který se pak zapíší do mezipaměti na straně klienta.  
   
-2.  Pokud dojde k selhání serveru, který obsahuje hlavní databázi nebo dojde k přerušení připojení, dojde ke ztrátě stavu připojení a transakce. Klientská aplikace se pokusí znovu navázat připojení k hlavní databázi a selže.  
+2. Pokud dojde k selhání serveru, který obsahuje hlavní databázi nebo dojde k přerušení připojení, dojde ke ztrátě stavu připojení a transakce. Klientská aplikace se pokusí znovu navázat připojení k hlavní databázi a selže.  
   
-3.  Klientská aplikace pak transparentně pokusí navázat připojení k databázi zrcadlení na partnerském serveru. Pokud se aktivace podaří, připojení je přesměrován na zrcadlení databáze, která se pak stane nová primární databáze.  
+3. Klientská aplikace pak transparentně pokusí navázat připojení k databázi zrcadlení na partnerském serveru. Pokud se aktivace podaří, připojení je přesměrován na zrcadlení databáze, která se pak stane nová primární databáze.  
   
 ## <a name="specifying-the-failover-partner-in-the-connection-string"></a>Určení partnera převzetí služeb při selhání v připojovacím řetězci  
  Pokud zadáte název serveru partnera převzetí služeb při selhání v připojovacím řetězci, klient Pokud hlavní databáze není k dispozici, když klientská aplikace poprvé připojí transparentně pokusí připojení s partnerem převzetí služeb při selhání.  

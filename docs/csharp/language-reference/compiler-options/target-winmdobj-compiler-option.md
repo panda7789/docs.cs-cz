@@ -2,12 +2,12 @@
 title: -target:winmdobj (C# Compiler Options)
 ms.date: 07/20/2015
 ms.assetid: 1819a045-659d-498a-9457-c466e902986f
-ms.openlocfilehash: 4000394a35c8990d3c5793c1313fc768a61c3271
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 9cc85bf582d737114bc0e621a9568bbb9acb791b
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54608963"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59319297"
 ---
 # <a name="-targetwinmdobj-c-compiler-options"></a>-target:winmdobj (C# Compiler Options)
 Pokud používáte **-target: winmdobj** – možnost kompilátoru, kompilátor vytvoří přechodný soubor .winmdobj, který lze převést do binárního souboru (.winmd) souboru Windows Runtime. Soubor .winmd může být potom používán programy JavaScript a C++, kromě programů spravovaného jazyka.  
@@ -29,11 +29,11 @@ Pokud používáte **-target: winmdobj** – možnost kompilátoru, kompilátor 
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-ide-for-a-windows-store-app"></a>Nastavení této možnosti kompilátoru v integrovaném vývojovém prostředí sady Visual Studio pro aplikaci pro Windows Store  
   
-1.  V **Průzkumníka řešení**, otevřete místní nabídku pro váš projekt a klikněte na tlačítko **vlastnosti**.  
+1. V **Průzkumníka řešení**, otevřete místní nabídku pro váš projekt a klikněte na tlačítko **vlastnosti**.  
   
-2.  Zvolte **aplikace** kartu.  
+2. Zvolte **aplikace** kartu.  
   
-3.  V **typ výstupu** klikněte na položku **soubor WinMD**.  
+3. V **typ výstupu** klikněte na položku **soubor WinMD**.  
   
      **Soubor WinMD** možnost je dostupná jenom pro [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] šablony aplikací.  
   
@@ -49,4 +49,4 @@ csc -target:winmdobj filename.cs
 ## <a name="see-also"></a>Viz také:
 
 - [-target (možnosti kompilátoru C#)](../../../csharp/language-reference/compiler-options/target-compiler-option.md)
-- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)
+- [Možnosti kompilátoru C#](../../../csharp/language-reference/compiler-options/index.md)

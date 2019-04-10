@@ -8,12 +8,12 @@ helpviewer_keywords:
 - caching, UI Automation
 - UI Automation, caching
 ms.assetid: ec722dff-6009-4279-b86a-e18d3fa94ebf
-ms.openlocfilehash: 41c1aa0e2a5219cdb40ba6d79c2a55bbf8568322
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: b63d94789d081ce7337b5f9c2abca3f7d9e99eeb
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59211410"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59308663"
 ---
 # <a name="use-caching-in-ui-automation"></a>Použití mezipaměti při automatizaci uživatelského rozhraní
 > [!NOTE]
@@ -23,33 +23,33 @@ ms.locfileid: "59211410"
   
 ### <a name="activate-a-cache-request"></a>Aktivovat žádost o mezipaměti  
   
-1.  Vytvoření <xref:System.Windows.Automation.CacheRequest>.  
+1. Vytvoření <xref:System.Windows.Automation.CacheRequest>.  
   
-2.  Zadejte vlastnosti a vzorce do mezipaměti pomocí <xref:System.Windows.Automation.CacheRequest.Add%2A>.  
+2. Zadejte vlastnosti a vzorce do mezipaměti pomocí <xref:System.Windows.Automation.CacheRequest.Add%2A>.  
   
-3.  Zadejte rozsah ukládání do mezipaměti tak, že nastavíte <xref:System.Windows.Automation.CacheRequest.TreeScope%2A> vlastnost.  
+3. Zadejte rozsah ukládání do mezipaměti tak, že nastavíte <xref:System.Windows.Automation.CacheRequest.TreeScope%2A> vlastnost.  
   
-4.  Určete zobrazení podstrom nastavením <xref:System.Windows.Automation.CacheRequest.TreeFilter%2A> vlastnost.  
+4. Určete zobrazení podstrom nastavením <xref:System.Windows.Automation.CacheRequest.TreeFilter%2A> vlastnost.  
   
-5.  Nastavte <xref:System.Windows.Automation.CacheRequest.AutomationElementMode%2A> vlastnost <xref:System.Windows.Automation.AutomationElementMode.None> Pokud chcete zvýšit efektivitu nenačítání úplný odkaz na objekty. (To znamená, že není možné načíst aktuální hodnoty z těchto objektů.)  
+5. Nastavte <xref:System.Windows.Automation.CacheRequest.AutomationElementMode%2A> vlastnost <xref:System.Windows.Automation.AutomationElementMode.None> Pokud chcete zvýšit efektivitu nenačítání úplný odkaz na objekty. (To znamená, že není možné načíst aktuální hodnoty z těchto objektů.)  
   
-6.  Aktivovat žádost pomocí <xref:System.Windows.Automation.CacheRequest.Activate%2A> v rámci `using` blok (`Using` v aplikaci Microsoft Visual Basic .NET).  
+6. Aktivovat žádost pomocí <xref:System.Windows.Automation.CacheRequest.Activate%2A> v rámci `using` blok (`Using` v aplikaci Microsoft Visual Basic .NET).  
   
  Po získání <xref:System.Windows.Automation.AutomationElement> objekty nebo přihlášení k odběru událostí, deaktivovat žádost pomocí <xref:System.Windows.Automation.CacheRequest.Pop%2A> (Pokud <xref:System.Windows.Automation.CacheRequest.Push%2A> byla použita) nebo uvolnění objektu vytvořeného <xref:System.Windows.Automation.CacheRequest.Activate%2A>. (Použití <xref:System.Windows.Automation.CacheRequest.Activate%2A> v `using` blok (`Using` v aplikaci Microsoft Visual Basic .NET).  
   
 ### <a name="cache-automationelement-properties"></a>Třída AutomationElement vlastnosti mezipaměti  
   
-1.  Zatímco <xref:System.Windows.Automation.CacheRequest> je aktivní, získat <xref:System.Windows.Automation.AutomationElement> objektů pomocí <xref:System.Windows.Automation.AutomationElement.FindFirst%2A> nebo <xref:System.Windows.Automation.AutomationElement.FindAll%2A>; nebo získat <xref:System.Windows.Automation.AutomationElement> jako zdroj události, které jste zaregistrovali pro případ <xref:System.Windows.Automation.CacheRequest> byl aktivní. (Můžete také vytvořit mezipaměť předáním <xref:System.Windows.Automation.CacheRequest> GetUpdatedCache nebo jeden z <xref:System.Windows.Automation.TreeWalker> metody.)  
+1. Zatímco <xref:System.Windows.Automation.CacheRequest> je aktivní, získat <xref:System.Windows.Automation.AutomationElement> objektů pomocí <xref:System.Windows.Automation.AutomationElement.FindFirst%2A> nebo <xref:System.Windows.Automation.AutomationElement.FindAll%2A>; nebo získat <xref:System.Windows.Automation.AutomationElement> jako zdroj události, které jste zaregistrovali pro případ <xref:System.Windows.Automation.CacheRequest> byl aktivní. (Můžete také vytvořit mezipaměť předáním <xref:System.Windows.Automation.CacheRequest> GetUpdatedCache nebo jeden z <xref:System.Windows.Automation.TreeWalker> metody.)  
   
-2.  Použití <xref:System.Windows.Automation.AutomationElement.GetCachedPropertyValue%2A> nebo načtení vlastnosti z <xref:System.Windows.Automation.AutomationElement.Cached%2A> vlastnost <xref:System.Windows.Automation.AutomationElement>.  
+2. Použití <xref:System.Windows.Automation.AutomationElement.GetCachedPropertyValue%2A> nebo načtení vlastnosti z <xref:System.Windows.Automation.AutomationElement.Cached%2A> vlastnost <xref:System.Windows.Automation.AutomationElement>.  
   
 ### <a name="obtain-cached-patterns-and-their-properties"></a>Získat vzory v mezipaměti a jejich vlastnosti  
   
-1.  Zatímco <xref:System.Windows.Automation.CacheRequest> je aktivní, získat <xref:System.Windows.Automation.AutomationElement> objektů pomocí <xref:System.Windows.Automation.AutomationElement.FindFirst%2A> nebo <xref:System.Windows.Automation.AutomationElement.FindAll%2A>; nebo získat <xref:System.Windows.Automation.AutomationElement> jako zdroj události, které jste zaregistrovali pro případ <xref:System.Windows.Automation.CacheRequest> byl aktivní. (Můžete také vytvořit mezipaměť předáním <xref:System.Windows.Automation.CacheRequest> GetUpdatedCache nebo jeden z <xref:System.Windows.Automation.TreeWalker> metody.)  
+1. Zatímco <xref:System.Windows.Automation.CacheRequest> je aktivní, získat <xref:System.Windows.Automation.AutomationElement> objektů pomocí <xref:System.Windows.Automation.AutomationElement.FindFirst%2A> nebo <xref:System.Windows.Automation.AutomationElement.FindAll%2A>; nebo získat <xref:System.Windows.Automation.AutomationElement> jako zdroj události, které jste zaregistrovali pro případ <xref:System.Windows.Automation.CacheRequest> byl aktivní. (Můžete také vytvořit mezipaměť předáním <xref:System.Windows.Automation.CacheRequest> GetUpdatedCache nebo jeden z <xref:System.Windows.Automation.TreeWalker> metody.)  
   
-2.  Použití <xref:System.Windows.Automation.AutomationElement.GetCachedPattern%2A> nebo <xref:System.Windows.Automation.AutomationElement.TryGetCachedPattern%2A> načíst vzor uložený v mezipaměti.  
+2. Použití <xref:System.Windows.Automation.AutomationElement.GetCachedPattern%2A> nebo <xref:System.Windows.Automation.AutomationElement.TryGetCachedPattern%2A> načíst vzor uložený v mezipaměti.  
   
-3.  Načíst hodnoty vlastností z `Cached` vlastnost vzor ovládacích prvků.  
+3. Načíst hodnoty vlastností z `Cached` vlastnost vzor ovládacích prvků.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad kódu ukazuje různé aspekty ukládání do mezipaměti, pomocí <xref:System.Windows.Automation.CacheRequest.Activate%2A> aktivovat <xref:System.Windows.Automation.CacheRequest>.  

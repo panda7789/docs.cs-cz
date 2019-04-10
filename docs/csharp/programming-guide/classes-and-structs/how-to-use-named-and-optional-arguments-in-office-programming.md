@@ -7,12 +7,12 @@ helpviewer_keywords:
 - optional arguments [C#], Office programming
 - named arguments [C#], Office programming
 ms.assetid: 65b8a222-bcd8-454c-845f-84adff5a356f
-ms.openlocfilehash: aecac583e509d2a08fae55d911a26134330c74c7
-ms.sourcegitcommit: 0aca6c5d166d7961a1e354c248495645b97a1dc5
+ms.openlocfilehash: 3ecea9d55ef61d2158da0dabeca22a58460b3bea
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58760076"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59313967"
 ---
 # <a name="how-to-use-named-and-optional-arguments-in-office-programming-c-programming-guide"></a>Postupy: Použití pojmenovaných a nepovinných argumentů v programování pro Office (C# Průvodce programováním v)
 Pojmenované argumenty a nepovinné argumenty, počínaje [!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)], zvyšuje pohodlí, flexibilitu a lepší čitelnost v programování v jazyce C#. Kromě toho tyto funkce výrazně usnadňují přístup k rozhraní modelu COM, jako je například rozhraní API automatizace Microsoft Office.  
@@ -25,59 +25,59 @@ Pojmenované argumenty a nepovinné argumenty, počínaje [!INCLUDE[csharp_dev10
   
 ### <a name="to-create-a-new-console-application"></a>Vytvořte novou konzolovou aplikaci  
   
-1.  Spusťte Visual Studio.  
+1. Spusťte Visual Studio.  
   
-2.  Na **souboru** nabídky, přejděte k **nový**a potom klikněte na tlačítko **projektu**.  
+2. Na **souboru** nabídky, přejděte k **nový**a potom klikněte na tlačítko **projektu**.  
   
-3.  V **kategorií šablon** podokně rozbalte **Visual C#** a potom klikněte na tlačítko **Windows**.  
+3. V **kategorií šablon** podokně rozbalte **Visual C#** a potom klikněte na tlačítko **Windows**.  
   
-4.  Hledat v horní části **šablony** podokno a ujistěte se, že **rozhraní .NET Framework 4** se zobrazí v **Cílová architektura** pole.  
+4. Hledat v horní části **šablony** podokno a ujistěte se, že **rozhraní .NET Framework 4** se zobrazí v **Cílová architektura** pole.  
   
-5.  V **šablony** podokně klikněte na tlačítko **konzolovou aplikaci**.  
+5. V **šablony** podokně klikněte na tlačítko **konzolovou aplikaci**.  
   
-6.  Zadejte název pro váš projekt v **název** pole.  
+6. Zadejte název pro váš projekt v **název** pole.  
   
-7.  Klikněte na **OK**.  
+7. Klikněte na **OK**.  
   
      Nový projekt se zobrazí v **Průzkumníka řešení**.  
   
 ### <a name="to-add-a-reference"></a>Přidání odkazu  
   
-1.  V **Průzkumníka řešení**, klikněte pravým tlačítkem na název vašeho projektu a pak klikněte na tlačítko **přidat odkaz**. **Přidat odkaz** zobrazí se dialogové okno.  
+1. V **Průzkumníka řešení**, klikněte pravým tlačítkem na název vašeho projektu a pak klikněte na tlačítko **přidat odkaz**. **Přidat odkaz** zobrazí se dialogové okno.  
   
-2.  Na **.NET** stránce **Microsoft.Office.Interop.Word** v **název komponenty** seznamu.  
+2. Na **.NET** stránce **Microsoft.Office.Interop.Word** v **název komponenty** seznamu.  
   
-3.  Klikněte na **OK**.  
+3. Klikněte na **OK**.  
   
 ### <a name="to-add-necessary-using-directives"></a>Chcete-li přidat nezbytné direktivy using  
   
-1.  V **Průzkumníku řešení**, klikněte pravým tlačítkem myši **Program.cs** souboru a pak klikněte na tlačítko **zobrazit kód**.  
+1. V **Průzkumníku řešení**, klikněte pravým tlačítkem myši **Program.cs** souboru a pak klikněte na tlačítko **zobrazit kód**.  
   
-2.  Přidejte následující `using` direktivy do horní části souboru kódu.  
+2. Přidejte následující `using` direktivy do horní části souboru kódu.  
   
      [!code-csharp[csProgGuideNamedAndOptional#4](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidenamedandoptional/cs/wordprogram.cs#4)]  
   
 ### <a name="to-display-text-in-a-word-document"></a>K zobrazení textu v dokumentu aplikace Word  
   
-1.  V `Program` třídy v souboru Program.cs, přidejte následující metodu pro vytvoření aplikace Word a Wordový dokument. [Přidat](<xref:Microsoft.Office.Interop.Word.Documents.Add%2A>) metoda má čtyři volitelné parametry. Tento příklad používá výchozí hodnoty. Proto jsou nezbytné v příkazu volání bez argumentů.  
+1. V `Program` třídy v souboru Program.cs, přidejte následující metodu pro vytvoření aplikace Word a Wordový dokument. [Přidat](<xref:Microsoft.Office.Interop.Word.Documents.Add%2A>) metoda má čtyři volitelné parametry. Tento příklad používá výchozí hodnoty. Proto jsou nezbytné v příkazu volání bez argumentů.  
   
      [!code-csharp[csProgGuideNamedAndOptional#6](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidenamedandoptional/cs/wordprogram.cs#6)]  
   
-2.  Přidejte následující kód na konci metody určit, kde k zobrazení textu v dokumentu a jaký text k zobrazení.  
+2. Přidejte následující kód na konci metody určit, kde k zobrazení textu v dokumentu a jaký text k zobrazení.  
   
      [!code-csharp[csProgGuideNamedAndOptional#7](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidenamedandoptional/cs/wordprogram.cs#7)]  
   
 ### <a name="to-run-the-application"></a>Ke spuštění aplikace  
   
-1.  Main přidejte následující příkaz.  
+1. Main přidejte následující příkaz.  
   
      [!code-csharp[csProgGuideNamedAndOptional#8](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidenamedandoptional/cs/wordprogram.cs#8)]  
   
-2.  Stiskněte kombinaci kláves CTRL + F5 ke spuštění projektu. Zobrazí se Wordový dokument, který obsahuje zadaný text.  
+2. Stiskněte kombinaci kláves CTRL + F5 ke spuštění projektu. Zobrazí se Wordový dokument, který obsahuje zadaný text.  
   
 ### <a name="to-change-the-text-to-a-table"></a>Chcete-li změnit text do tabulky  
   
-1.  Použití `ConvertToTable` metoda k uzavření text v tabulce. Tato metoda má šestnácti volitelné parametry. Technologie IntelliSense obklopuje volitelné parametry v hranatých závorkách, jak je znázorněno na následujícím obrázku.  
+1. Použití `ConvertToTable` metoda k uzavření text v tabulce. Tato metoda má šestnácti volitelné parametry. Technologie IntelliSense obklopuje volitelné parametry v hranatých závorkách, jak je znázorněno na následujícím obrázku.  
   
      ![Seznam parametrů pro metodu ConvertToTable](./media/how-to-use-named-and-optional-arguments-in-office-programming/convert-table-parameters.png)  
   
@@ -89,15 +89,15 @@ Pojmenované argumenty a nepovinné argumenty, počínaje [!INCLUDE[csharp_dev10
   
      [!code-csharp[csProgGuideNamedAndOptional#14](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidenamedandoptional/cs/wordprogram.cs#14)]  
   
-2.  Stiskněte kombinaci kláves CTRL + F5 ke spuštění projektu.  
+2. Stiskněte kombinaci kláves CTRL + F5 ke spuštění projektu.  
   
 ### <a name="to-experiment-with-other-parameters"></a>Můžete experimentovat s další parametry  
   
-1.  Chcete-li změnit tabulku tak, aby měl jeden sloupec a třemi řádky, nahraďte na posledním řádku `DisplayInWord` s následující příkaz a zadejte CTRL + F5.  
+1. Chcete-li změnit tabulku tak, aby měl jeden sloupec a třemi řádky, nahraďte na posledním řádku `DisplayInWord` s následující příkaz a zadejte CTRL + F5.  
   
      [!code-csharp[csProgGuideNamedAndOptional#10](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidenamedandoptional/cs/wordprogram.cs#10)]  
   
-2.  Chcete-li zadat předdefinovaný formát pro tabulku, nahraďte poslední řádek v `DisplayInWord` s následující příkaz a zadejte CTRL + F5. Formát lze rozdělit [WdTableFormat](<xref:Microsoft.Office.Interop.Word.WdTableFormat>) konstanty.  
+2. Chcete-li zadat předdefinovaný formát pro tabulku, nahraďte poslední řádek v `DisplayInWord` s následující příkaz a zadejte CTRL + F5. Formát lze rozdělit [WdTableFormat](<xref:Microsoft.Office.Interop.Word.WdTableFormat>) konstanty.  
   
      [!code-csharp[csProgGuideNamedAndOptional#11](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidenamedandoptional/cs/wordprogram.cs#11)]  
   

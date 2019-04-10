@@ -9,12 +9,12 @@ helpviewer_keywords:
 - properties [WPF], transformation
 - transformation properties of brushes [WPF]
 ms.assetid: 8b9bfc09-12fd-4cd5-b445-99949f27bc39
-ms.openlocfilehash: 0b55d2000b8a70bc42373cb976a84ff54ebc4245
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 39b3ad9bebfc56002f77ad6e9026a4446c95455b
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59169569"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59298328"
 ---
 # <a name="brush-transformation-overview"></a>Přehled transformace štětce
 Třída štětce poskytuje dvě vlastnosti transformace: <xref:System.Windows.Media.Brush.Transform%2A> a <xref:System.Windows.Media.Brush.RelativeTransform%2A>. Vlastnosti umožňují otočit, škálování a zkosení a převede štětec obsah. Toto téma popisuje rozdíly mezi těmito dvěma vlastnostmi a poskytuje příklady jejich použití.  
@@ -29,15 +29,15 @@ Třída štětce poskytuje dvě vlastnosti transformace: <xref:System.Windows.Me
   
  Při použití transformace štětec <xref:System.Windows.Media.Brush.RelativeTransform%2A> vlastnost, že je použita transformace štětce před jeho výstupu se mapuje na oblasti malovaného. Následující seznam popisuje pořadí, ve kterém se zpracovat a transformovat štětec obsah.  
   
-1.  Zpracovat obsah na stopu. Pro <xref:System.Windows.Media.GradientBrush>, to znamená, že určující oblasti přechodu. Pro <xref:System.Windows.Media.TileBrush>, <xref:System.Windows.Media.TileBrush.Viewbox%2A> je namapována na <xref:System.Windows.Media.TileBrush.Viewport%2A>. To se stane stopy výstup.  
+1. Zpracovat obsah na stopu. Pro <xref:System.Windows.Media.GradientBrush>, to znamená, že určující oblasti přechodu. Pro <xref:System.Windows.Media.TileBrush>, <xref:System.Windows.Media.TileBrush.Viewbox%2A> je namapována na <xref:System.Windows.Media.TileBrush.Viewport%2A>. To se stane stopy výstup.  
   
-2.  Nástroj štětec výstupu projektu do obdélníku 1 × 1 transformace.  
+2. Nástroj štětec výstupu projektu do obdélníku 1 × 1 transformace.  
   
-3.  Použití štětce společnosti <xref:System.Windows.Media.Brush.RelativeTransform%2A>, má-li nějaký.  
+3. Použití štětce společnosti <xref:System.Windows.Media.Brush.RelativeTransform%2A>, má-li nějaký.  
   
-4.  Transformovaný výstup projektu do oblasti pro vykreslení.  
+4. Transformovaný výstup projektu do oblasti pro vykreslení.  
   
-5.  Použití štětce společnosti <xref:System.Windows.Media.Transform>, má-li nějaký.  
+5. Použití štětce společnosti <xref:System.Windows.Media.Transform>, má-li nějaký.  
   
  Vzhledem k tomu, <xref:System.Windows.Media.Brush.RelativeTransform%2A> se použije při stopy výstup je namapovaná na 1 × 1 obdélníku, center transformace a posunutí hodnoty se zdají být relativní. Například, pokud jste použili <xref:System.Windows.Media.RotateTransform> otočit štětec výstup 45 stupňů o jeho střed, by dáte <xref:System.Windows.Media.RotateTransform> <xref:System.Windows.Media.RotateTransform.CenterX%2A> 0,5 a <xref:System.Windows.Media.RotateTransform.CenterY%2A> 0,5.  
   
@@ -61,19 +61,19 @@ Třída štětce poskytuje dvě vlastnosti transformace: <xref:System.Windows.Me
   
  Všimněte si, že na obrázku je zkreslený, i když na stopu <xref:System.Windows.Media.TileBrush.Stretch%2A> byl nastaven na <xref:System.Windows.Media.Stretch.UniformToFill>. Důvodem je, že je relativní transformace použita po stopy <xref:System.Windows.Media.TileBrush.Viewbox%2A> je namapována na jeho <xref:System.Windows.Media.TileBrush.Viewport%2A>. Následující seznam popisuje jednotlivé kroky procesu:  
   
-1.  Projekt na stopu obsah (<xref:System.Windows.Media.TileBrush.Viewbox%2A>) na jeho základní dlaždice (<xref:System.Windows.Media.TileBrush.Viewport%2A>) štětec pomocí <xref:System.Windows.Media.TileBrush.Stretch%2A> nastavení.  
+1. Projekt na stopu obsah (<xref:System.Windows.Media.TileBrush.Viewbox%2A>) na jeho základní dlaždice (<xref:System.Windows.Media.TileBrush.Viewport%2A>) štětec pomocí <xref:System.Windows.Media.TileBrush.Stretch%2A> nastavení.  
   
      ![Roztažení Viewbox přizpůsobit zobrazení](./media/graphicsmm-reltransform-2-viewbox-to-viewport.png "graphicsmm_reltransform_2_viewbox_to_viewport")  
   
-2.  Projekt základní dlaždice na 1 × 1 transformace obdélník.  
+2. Projekt základní dlaždice na 1 × 1 transformace obdélník.  
   
      ![Zobrazení mapy na obdélník transformace](./media/graphicsmm-reltransform-3-output-to-transform.png "graphicsmm_reltransform_3_output_to_transform")  
   
-3.  Použít <xref:System.Windows.Media.RotateTransform>.  
+3. Použít <xref:System.Windows.Media.RotateTransform>.  
   
      ![Umožňuje aplikovat relativní transformaci](./media/graphicsmm-reltransform-4-transform-rotate.png "graphicsmm_reltransform_4_transform_rotate")  
   
-4.  Projekt transformovaný základní dlaždice do oblasti pro vykreslení.  
+4. Projekt transformovaný základní dlaždice do oblasti pro vykreslení.  
   
      ![Transformovaný štětce projektu do výstupní oblasti](./media/graphicsmm-reltransform-5-transform-to-output.png "graphicsmm_reltransform_5_transform_to_output")  
   

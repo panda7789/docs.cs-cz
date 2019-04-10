@@ -2,27 +2,27 @@
 title: 'Postupy: Konfigurace služby WCF hostované v IIS se SSL'
 ms.date: 03/30/2017
 ms.assetid: df2fe31f-a4bb-4024-92ca-b74ba055e038
-ms.openlocfilehash: 336c3800fc033cc12bd9c3fe168ae219b72cab91
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 8d3bbb1ceab8a3bc7e5e209fda29fd574110b4f7
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59214115"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59326447"
 ---
 # <a name="how-to-configure-an-iis-hosted-wcf-service-with-ssl"></a>Postupy: Konfigurace služby WCF hostované v IIS se SSL
 Toto téma popisuje postup nastavení služby WCF hostované IIS pro použití zabezpečení přenosu HTTP. Zabezpečení přenosu HTTP vyžaduje certifikát SSL pro službu IIS zaregistrovat. Pokud není certifikát SSL služby IIS můžete vygenerovat zkušební certifikát. Dále musíte přidat vazbu SSL na webovou stránku a nakonfigurovat vlastnosti ověřování na webu. Nakonec musíte nakonfigurovat službu WCF pro použití protokolu HTTPS.  
   
 ### <a name="creating-a-self-signed-certificate"></a>Vytváří se certifikát podepsaný svým držitelem  
   
-1.  Otevřete Správce Internetové informační služby (inetmgr.exe) a vyberte název počítače v zobrazení stromu vlevo. Na pravé straně obrazovky vyberte certifikáty serveru  
+1. Otevřete Správce Internetové informační služby (inetmgr.exe) a vyberte název počítače v zobrazení stromu vlevo. Na pravé straně obrazovky vyberte certifikáty serveru  
   
      ![Správce služby IIS domovské obrazovce](../../../../docs/framework/wcf/feature-details/media/mg-inetmgrhome.jpg "mg_INetMgrHome")  
   
-2.  V okně certifikáty serveru klikněte na tlačítko **vytvořit certifikát podepsaný svým držitelem...** odkaz.  
+2. V okně certifikáty serveru klikněte na tlačítko **vytvořit certifikát podepsaný svým držitelem...** odkaz.  
   
      ![Vytváří se svým&#45;podepsaný certifikát s IIS](../../../../docs/framework/wcf/feature-details/media/mg-createselfsignedcert.jpg "mg_CreateSelfSignedCert")  
   
-3.  Zadejte popisný název certifikátu podepsaného svým držitelem a klikněte na tlačítko **OK**.  
+3. Zadejte popisný název certifikátu podepsaného svým držitelem a klikněte na tlačítko **OK**.  
   
      ![Create Self&#45;Signed Certificate Dialog](../../../../docs/framework/wcf/feature-details/media/mg-mycert.jpg "mg_MyCert")  
   
@@ -34,35 +34,35 @@ Toto téma popisuje postup nastavení služby WCF hostované IIS pro použití z
   
 ### <a name="add-ssl-binding"></a>Add SSL Binding  
   
-1.  Stále v Správce Internetové informační služby, rozbalte **lokality** složku a potom **výchozí webový server** složky ve stromovém zobrazení na levé straně obrazovky.  
+1. Stále v Správce Internetové informační služby, rozbalte **lokality** složku a potom **výchozí webový server** složky ve stromovém zobrazení na levé straně obrazovky.  
   
-2.  Klikněte na tlačítko **vazby...** Propojit **akce** části v pravé horní části okna.  
+2. Klikněte na tlačítko **vazby...** Propojit **akce** části v pravé horní části okna.  
   
      ![Přidání vazby SSL](../../../../docs/framework/wcf/feature-details/media/mg-addsslbinding.jpg "mg_AddSSLBinding")  
   
-3.  V okně vazby webu klikněte na tlačítko **přidat** tlačítko.  
+3. V okně vazby webu klikněte na tlačítko **přidat** tlačítko.  
   
      ![Dialogové okno vazby webu](../../../../docs/framework/wcf/feature-details/media/mg-sitebindingsdialog.jpg "mg_SiteBindingsDialog")  
   
-4.  V **přidat vazbu webu** dialogového okna, vyberte https pro typ a popisný název certifikátu podepsaného svým držitelem, jste právě vytvořili.  
+4. V **přidat vazbu webu** dialogového okna, vyberte https pro typ a popisný název certifikátu podepsaného svým držitelem, jste právě vytvořili.  
   
      ![Příklad vazby webu](../../../../docs/framework/wcf/feature-details/media/mg-mycertbinding.jpg "mg_MyCertBinding")  
   
 ### <a name="configure-virtual-directory-for-ssl"></a>Nakonfigurujte virtuální adresář pro protokol SSL  
   
-1.  Stále v Správce Internetové informační služby vyberte virtuální adresář, který obsahuje vaše zabezpečenou službu WCF.  
+1. Stále v Správce Internetové informační služby vyberte virtuální adresář, který obsahuje vaše zabezpečenou službu WCF.  
   
-2.  V prostředním podokně okna, vyberte **nastavení SSL** v části služby IIS.  
+2. V prostředním podokně okna, vyberte **nastavení SSL** v části služby IIS.  
   
      ![Nastavení SSL pro virtuální adresář](../../../../docs/framework/wcf/feature-details/media/mg-sslsettingsforvdir.jpg "mg_SSLSettingsForVDir")  
   
-3.  V podokně nastavení protokolu SSL, vyberte **požadovat protokol SSL** zaškrtávací políčko a klikněte na tlačítko **použít** odkaz v **akce** části na pravé straně obrazovky.  
+3. V podokně nastavení protokolu SSL, vyberte **požadovat protokol SSL** zaškrtávací políčko a klikněte na tlačítko **použít** odkaz v **akce** části na pravé straně obrazovky.  
   
      ![Nastavení SSL virtuální adresář](../../../../docs/framework/wcf/feature-details/media/mg-vdirsslsettings.JPG "mg_VDirSSLSettings")  
   
 ### <a name="configure-wcf-service-for-http-transport-security"></a>Konfigurace služby WCF pro zabezpečení přenosu HTTP  
   
-1.  Ve WCF služby web.config nakonfigurovat vazbu HTTP pro použití zabezpečení přenosu, jak je znázorněno v následujícím souboru XML.  
+1. Ve WCF služby web.config nakonfigurovat vazbu HTTP pro použití zabezpečení přenosu, jak je znázorněno v následujícím souboru XML.  
   
     ```xml  
     <bindings>  
@@ -76,7 +76,7 @@ Toto téma popisuje postup nastavení služby WCF hostované IIS pro použití z
     </bindings>  
     ```  
   
-2.  Zadejte vaše služby a koncového bodu služby, jak je znázorněno v následujícím souboru XML.  
+2. Zadejte vaše služby a koncového bodu služby, jak je znázorněno v následujícím souboru XML.  
   
     ```xml  
     <services>  

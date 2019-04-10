@@ -6,12 +6,12 @@ helpviewer_keywords:
 - ImageList component [Windows Forms], removing images
 - images [Windows Forms], adding to ImageList component
 ms.assetid: 5699b244-e37c-4d20-bc35-7441e55c1e3a
-ms.openlocfilehash: b85b4d39235d49966b5f3c108986c8dd04bed5fe
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 732267b431c5058fa7039f0fb132e6161c37d4a6
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59161522"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59303125"
 ---
 # <a name="how-to-add-or-remove-imagelist-images-with-the-designer"></a>Postupy: Přidávání a odebírání obrázků ImageList pomocí Návrháře
 Můžete přidat Image do <xref:System.Windows.Forms.ImageList> součástí několika různými způsoby. Lze také přidat obrázky velmi rychle s využitím inteligentních značek přidružené <xref:System.Windows.Forms.ImageList>, nebo pokud nastavujete na několik dalších vlastností <xref:System.Windows.Forms.ImageList>, pravděpodobně pro vás bude pohodlnější přidání imagí pomocí okna Vlastnosti. Můžete také přidat obrázky pomocí kódu. Další informace o tom, jak přidat obrázky s kódem, najdete v části [jak: Přidání a odebrání obrázků se Windows Forms ImageList – komponenta](how-to-add-or-remove-images-with-the-windows-forms-imagelist-component.md). Obvykle naplnit <xref:System.Windows.Forms.ImageList> komponentu s obrázky předtím, než je přidružena k ovládacímu prvku, ale tento krok není povinný.  
@@ -21,21 +21,21 @@ Můžete přidat Image do <xref:System.Windows.Forms.ImageList> součástí něk
   
 ### <a name="to-add-or-remove-images-by-using-the-properties-window"></a>K přidávání a odebírání obrázků pomocí okna Vlastnosti  
   
-1.  Vyberte <xref:System.Windows.Forms.ImageList> komponenty, nebo přidejte jej do formuláře.  
+1. Vyberte <xref:System.Windows.Forms.ImageList> komponenty, nebo přidejte jej do formuláře.  
   
-2.  V okně Vlastnosti klikněte na tlačítko se třemi tečkami (![snímek obrazovky VisualStudioEllipsesButton](../media/vbellipsesbutton.png "vbEllipsesButton")) vedle položky <xref:System.Windows.Forms.ImageList.Images%2A> vlastnost.  
+2. V okně Vlastnosti klikněte na tlačítko se třemi tečkami (![snímek obrazovky VisualStudioEllipsesButton](../media/vbellipsesbutton.png "vbEllipsesButton")) vedle položky <xref:System.Windows.Forms.ImageList.Images%2A> vlastnost.  
   
-3.  V **Editor kolekce obrázků**, klikněte na tlačítko **přidat** nebo **odebrat** k přidávání a odebírání obrázků ze seznamu.  
+3. V **Editor kolekce obrázků**, klikněte na tlačítko **přidat** nebo **odebrat** k přidávání a odebírání obrázků ze seznamu.  
   
 ### <a name="to-add-or-remove-images-using-the-smart-tag"></a>Přidání nebo odebrání obrázků s využitím inteligentních značek  
   
-1.  Vyberte <xref:System.Windows.Forms.ImageList> komponenty, nebo přidejte jej do formuláře.  
+1. Vyberte <xref:System.Windows.Forms.ImageList> komponenty, nebo přidejte jej do formuláře.  
   
-2.  Klikněte na inteligentní označit piktogram (![piktogram inteligentní](./media/vs-winformsmttagglyph.gif "VS_WinFormSmtTagGlyph"))  
+2. Klikněte na inteligentní označit piktogram (![piktogram inteligentní](./media/vs-winformsmttagglyph.gif "VS_WinFormSmtTagGlyph"))  
   
-3.  V **ImageList úlohy** dialogu **zvolte image**.  
+3. V **ImageList úlohy** dialogu **zvolte image**.  
   
-4.  V **Editor kolekce Images** klikněte na tlačítko **přidat** nebo **odebrat** k přidávání a odebírání obrázků ze seznamu.  
+4. V **Editor kolekce Images** klikněte na tlačítko **přidat** nebo **odebrat** k přidávání a odebírání obrázků ze seznamu.  
   
 ## <a name="see-also"></a>Viz také:
 

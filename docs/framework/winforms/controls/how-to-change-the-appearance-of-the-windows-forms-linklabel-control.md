@@ -12,19 +12,19 @@ helpviewer_keywords:
 - examples [Windows Forms], LinkLabel control
 - LinkLabel control [Windows Forms], examples
 ms.assetid: fdc5854f-5162-4457-8cbe-1042feb2d132
-ms.openlocfilehash: be2f6e8e10d9f9b23b4f57fa696f1fb88c4726c0
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: f0a5805561509501ca38a7fec6b4731af190e3c3
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59105024"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59322014"
 ---
 # <a name="how-to-change-the-appearance-of-the-windows-forms-linklabel-control"></a>Postupy: Změna vzhledu ovládacího prvku Windows Forms LinkLabel
 Můžete změnit text, zobrazený <xref:System.Windows.Forms.LinkLabel> ovládacího prvku tak, aby odpovídala různé účely. Například je běžnou praxí do značí, že text dá kliknout nastavením text, který se zobrazí v určité barvy s podtržení. Po kliknutí text, barva se změní na jinou barvu. A řídit tak toto chování, můžete nastavit různé vlastnosti pět: <xref:System.Windows.Forms.LinkLabel.LinkBehavior%2A>, <xref:System.Windows.Forms.LinkLabel.LinkArea%2A>, <xref:System.Windows.Forms.LinkLabel.LinkColor%2A>, <xref:System.Windows.Forms.LinkLabel.VisitedLinkColor%2A>, a <xref:System.Windows.Forms.LinkLabel.LinkVisited%2A> vlastnosti.  
   
 ### <a name="to-change-the-appearance-of-a-linklabel-control"></a>Chcete-li změnit vzhled ovládacího prvku LinkLabel  
   
-1.  Nastavte <xref:System.Windows.Forms.LinkLabel.LinkColor%2A> a <xref:System.Windows.Forms.LinkLabel.VisitedLinkColor%2A> vlastností požadované barvy.  
+1. Nastavte <xref:System.Windows.Forms.LinkLabel.LinkColor%2A> a <xref:System.Windows.Forms.LinkLabel.VisitedLinkColor%2A> vlastností požadované barvy.  
   
      To lze provést buď programově, nebo v době návrhu v **vlastnosti** okna.  
   
@@ -49,7 +49,7 @@ Můžete změnit text, zobrazený <xref:System.Windows.Forms.LinkLabel> ovládac
     linkLabel1->VisitedLinkColor = Color::Purple;  
     ```  
   
-2.  Nastavte <xref:System.Windows.Forms.LinkLabel.Text%2A> vlastnosti k odpovídající titulek.  
+2. Nastavte <xref:System.Windows.Forms.LinkLabel.Text%2A> vlastnosti k odpovídající titulek.  
   
      To lze provést buď programově, nebo v době návrhu v **vlastnosti** okna.  
   
@@ -65,7 +65,7 @@ Můžete změnit text, zobrazený <xref:System.Windows.Forms.LinkLabel> ovládac
     linkLabel1->Text = "Click here to see more.";  
     ```  
   
-3.  Nastavte <xref:System.Windows.Forms.LinkLabel.LinkArea%2A> a určí, které části popisek bude uveden jako odkaz.  
+3. Nastavte <xref:System.Windows.Forms.LinkLabel.LinkArea%2A> a určí, které části popisek bude uveden jako odkaz.  
   
      <xref:System.Windows.Forms.LinkLabel.LinkArea%2A> Hodnota je vyjádřena pomocí <xref:System.Windows.Forms.LinkArea> obsahující dvě čísla, počáteční pozici znaku a počet znaků. To lze provést buď programově, nebo v době návrhu v **vlastnosti** okna.  
   
@@ -81,11 +81,11 @@ Můžete změnit text, zobrazený <xref:System.Windows.Forms.LinkLabel> ovládac
     linkLabel1->LinkArea = LinkArea(6,4);  
     ```  
   
-4.  Nastavte <xref:System.Windows.Forms.LinkLabel.LinkBehavior%2A> vlastnost <xref:System.Windows.Forms.LinkBehavior.AlwaysUnderline>, <xref:System.Windows.Forms.LinkBehavior.HoverUnderline>, nebo <xref:System.Windows.Forms.LinkBehavior.NeverUnderline>.  
+4. Nastavte <xref:System.Windows.Forms.LinkLabel.LinkBehavior%2A> vlastnost <xref:System.Windows.Forms.LinkBehavior.AlwaysUnderline>, <xref:System.Windows.Forms.LinkBehavior.HoverUnderline>, nebo <xref:System.Windows.Forms.LinkBehavior.NeverUnderline>.  
   
      Pokud je nastavena na <xref:System.Windows.Forms.LinkBehavior.HoverUnderline>, část titulek určené <xref:System.Windows.Forms.LinkLabel.LinkArea%2A> bude podtržené pouze při umístění ukazatele myši na něj.  
   
-5.  V <xref:System.Windows.Forms.LinkLabel.LinkClicked> nastavena obslužná rutina události, <xref:System.Windows.Forms.LinkLabel.LinkVisited%2A> vlastnost `true`.  
+5. V <xref:System.Windows.Forms.LinkLabel.LinkClicked> nastavena obslužná rutina události, <xref:System.Windows.Forms.LinkLabel.LinkVisited%2A> vlastnost `true`.  
   
      Při odkazu po navštívení, je obvyklé, chcete-li změnit její vzhled nějakým způsobem, obvykle pomocí barev. Text se změní barva určená <xref:System.Windows.Forms.LinkLabel.VisitedLinkColor%2A> vlastnost.  
   

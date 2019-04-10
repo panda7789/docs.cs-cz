@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 67ab5dd8-79c1-4e62-aa75-828ea918a53a
-ms.openlocfilehash: edc7a4f5dc21a25ac9752dda60675d979fe18c69
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 9f3320b031141246a394191a1924509204707dc1
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59162355"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59303450"
 ---
 # <a name="how-to-specify-a-service-binding-in-code"></a>Postupy: Určení vazby služby v kódu
 V tomto příkladu `ICalculator` smlouvy je definován pro službu kalkulačky, služba se implementuje v `CalculatorService` třídě a následně svůj koncový bod je definováno v kódu, kde je zadán, že musíte použít službu <xref:System.ServiceModel.BasicHttpBinding> třídy.  
@@ -21,29 +21,29 @@ V tomto příkladu `ICalculator` smlouvy je definován pro službu kalkulačky, 
   
 ### <a name="to-specify-in-code-to-use-the-basichttpbinding-for-the-service"></a>Pokud chcete zadat do kódu pro použití BasicHttpBinding pro službu  
   
-1.  Definování kontraktu služby pro typ služby.  
+1. Definování kontraktu služby pro typ služby.  
   
      [!code-csharp[C_HowTo_CodeServiceBinding#1](../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_codeservicebinding/cs/source.cs#1)]
      [!code-vb[C_HowTo_CodeServiceBinding#1](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto_codeservicebinding/vb/source.vb#1)]  
   
-2.  Implementace kontraktu služby ve třídě služby.  
+2. Implementace kontraktu služby ve třídě služby.  
   
      [!code-csharp[C_HowTo_CodeServiceBinding#2](../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_codeservicebinding/cs/source.cs#2)]
      [!code-vb[C_HowTo_CodeServiceBinding#2](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto_codeservicebinding/vb/source.vb#2)]  
   
-3.  V hostitelské aplikace vytvořte základní adresa služby a vazby pro použití se službou.  
+3. V hostitelské aplikace vytvořte základní adresa služby a vazby pro použití se službou.  
   
      [!code-csharp[C_HowTo_CodeServiceBinding#3](../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_codeservicebinding/cs/source.cs#3)]
      [!code-vb[C_HowTo_CodeServiceBinding#3](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto_codeservicebinding/vb/source.vb#3)]  
   
-4.  Vytvoření hostitele pro službu, přidat koncový bod a poté otevřete hostitele.  
+4. Vytvoření hostitele pro službu, přidat koncový bod a poté otevřete hostitele.  
   
      [!code-csharp[C_HowTo_CodeServiceBinding#4](../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_codeservicebinding/cs/source.cs#4)]
      [!code-vb[C_HowTo_CodeServiceBinding#4](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto_codeservicebinding/vb/source.vb#4)]  
   
 ### <a name="to-modify-the-default-values-of-the-binding-properties"></a>Chcete-li změnit výchozí hodnoty vlastností vazby  
   
-1.  Chcete-li změnit jeden z výchozí hodnoty vlastností <xref:System.ServiceModel.BasicHttpBinding> třídy, nastavte hodnotu vlastností pro vazbu na novou hodnotu před vytvořením hostitele. Například pokud chcete změnit výchozí časový limit otevření a zavření hodnoty 1 minuta 2 minuty, použijte následující.  
+1. Chcete-li změnit jeden z výchozí hodnoty vlastností <xref:System.ServiceModel.BasicHttpBinding> třídy, nastavte hodnotu vlastností pro vazbu na novou hodnotu před vytvořením hostitele. Například pokud chcete změnit výchozí časový limit otevření a zavření hodnoty 1 minuta 2 minuty, použijte následující.  
   
      [!code-csharp[C_HowTo_CodeServiceBinding#5](../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_codeservicebinding/cs/source.cs#5)]
      [!code-vb[C_HowTo_CodeServiceBinding#5](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto_codeservicebinding/vb/source.vb#5)]  

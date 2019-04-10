@@ -9,12 +9,12 @@ helpviewer_keywords:
 - displaying option buttons [Windows Forms], MenuStrip [Windows Forms]
 - option buttons [Windows Forms], displaying in MenuStrip
 ms.assetid: 8b596af2-9ff8-4f7b-93d7-cba830e167f4
-ms.openlocfilehash: 61feda3f49c9a9e03a606c0284629f809d6876b7
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: e764c7e181870d8faf6157cacc13164977ce2e3b
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59115528"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59306232"
 ---
 # <a name="how-to-display-option-buttons-in-a-menustrip-windows-forms"></a>Postupy: Zobrazení tlačítek možností v MenuStrip (Windows Forms)
 Přepínače, označované také jako přepínačů, jsou podobné zaškrtněte políčka s tím rozdílem, že uživatelé mohou vybrat pouze jeden po druhém. I když se ve výchozím nastavení <xref:System.Windows.Forms.ToolStripMenuItem> třída neposkytuje přepínač chování, třída poskytuje chování zaškrtávací políčko, které si můžete přizpůsobit pro implementaci přepínač chování pro položky nabídky v <xref:System.Windows.Forms.MenuStrip> ovládacího prvku.  
@@ -25,46 +25,46 @@ Přepínače, označované také jako přepínačů, jsou podobné zaškrtněte 
   
 ### <a name="to-implement-option-button-selection-behavior"></a>K implementaci chování výběru – přepínač  
   
-1.  Inicializovat <xref:System.Windows.Forms.ToolStripMenuItem.CheckOnClick%2A> vlastnost `true` umožňující výběr položek.  
+1. Inicializovat <xref:System.Windows.Forms.ToolStripMenuItem.CheckOnClick%2A> vlastnost `true` umožňující výběr položek.  
   
      [!code-csharp[ToolStripRadioButtonMenuItem#110](~/samples/snippets/csharp/VS_Snippets_Winforms/ToolStripRadioButtonMenuItem/cs/ToolStripRadioButtonMenuItem.cs#110)]
      [!code-vb[ToolStripRadioButtonMenuItem#110](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ToolStripRadioButtonMenuItem/vb/ToolStripRadioButtonMenuItem.vb#110)]  
   
-2.  Přepsat <xref:System.Windows.Forms.ToolStripMenuItem.OnCheckedChanged%2A> metoda při výběru nové položky, zrušte zaškrtnutí políčka dříve vybrané položky.  
+2. Přepsat <xref:System.Windows.Forms.ToolStripMenuItem.OnCheckedChanged%2A> metoda při výběru nové položky, zrušte zaškrtnutí políčka dříve vybrané položky.  
   
      [!code-csharp[ToolStripRadioButtonMenuItem#120](~/samples/snippets/csharp/VS_Snippets_Winforms/ToolStripRadioButtonMenuItem/cs/ToolStripRadioButtonMenuItem.cs#120)]
      [!code-vb[ToolStripRadioButtonMenuItem#120](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ToolStripRadioButtonMenuItem/vb/ToolStripRadioButtonMenuItem.vb#120)]  
   
-3.  Přepsat <xref:System.Windows.Forms.ToolStripMenuItem.OnClick%2A> metodou, jak zajistit, že kliknete na položku, která již byla vybrána nebude zrušte zaškrtnutí políčka.  
+3. Přepsat <xref:System.Windows.Forms.ToolStripMenuItem.OnClick%2A> metodou, jak zajistit, že kliknete na položku, která již byla vybrána nebude zrušte zaškrtnutí políčka.  
   
      [!code-csharp[ToolStripRadioButtonMenuItem#130](~/samples/snippets/csharp/VS_Snippets_Winforms/ToolStripRadioButtonMenuItem/cs/ToolStripRadioButtonMenuItem.cs#130)]
      [!code-vb[ToolStripRadioButtonMenuItem#130](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ToolStripRadioButtonMenuItem/vb/ToolStripRadioButtonMenuItem.vb#130)]  
   
 ### <a name="to-modify-the-appearance-of-the-option-button-items"></a>K úpravě vzhledu položky – přepínač  
   
-1.  Přepsat <xref:System.Windows.Forms.ToolStripMenuItem.OnPaint%2A> metoda nahradit výchozí zaškrtnutí přepínač pomocí <xref:System.Windows.Forms.RadioButtonRenderer> třídy.  
+1. Přepsat <xref:System.Windows.Forms.ToolStripMenuItem.OnPaint%2A> metoda nahradit výchozí zaškrtnutí přepínač pomocí <xref:System.Windows.Forms.RadioButtonRenderer> třídy.  
   
      [!code-csharp[ToolStripRadioButtonMenuItem#140](~/samples/snippets/csharp/VS_Snippets_Winforms/ToolStripRadioButtonMenuItem/cs/ToolStripRadioButtonMenuItem.cs#140)]
      [!code-vb[ToolStripRadioButtonMenuItem#140](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ToolStripRadioButtonMenuItem/vb/ToolStripRadioButtonMenuItem.vb#140)]  
   
-2.  Přepsat <xref:System.Windows.Forms.ToolStripMenuItem.OnMouseEnter%2A>, <xref:System.Windows.Forms.ToolStripMenuItem.OnMouseLeave%2A>, <xref:System.Windows.Forms.ToolStripMenuItem.OnMouseDown%2A>, a <xref:System.Windows.Forms.ToolStripMenuItem.OnMouseUp%2A> metody pro sledování stavu myší a ujistěte se, že <xref:System.Windows.Forms.ToolStripMenuItem.OnPaint%2A> metody jsou vykreslovány stavu správné přepínač.  
+2. Přepsat <xref:System.Windows.Forms.ToolStripMenuItem.OnMouseEnter%2A>, <xref:System.Windows.Forms.ToolStripMenuItem.OnMouseLeave%2A>, <xref:System.Windows.Forms.ToolStripMenuItem.OnMouseDown%2A>, a <xref:System.Windows.Forms.ToolStripMenuItem.OnMouseUp%2A> metody pro sledování stavu myší a ujistěte se, že <xref:System.Windows.Forms.ToolStripMenuItem.OnPaint%2A> metody jsou vykreslovány stavu správné přepínač.  
   
      [!code-csharp[ToolStripRadioButtonMenuItem#150](~/samples/snippets/csharp/VS_Snippets_Winforms/ToolStripRadioButtonMenuItem/cs/ToolStripRadioButtonMenuItem.cs#150)]
      [!code-vb[ToolStripRadioButtonMenuItem#150](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ToolStripRadioButtonMenuItem/vb/ToolStripRadioButtonMenuItem.vb#150)]  
   
 ### <a name="to-disable-options-on-a-submenu-when-the-parent-item-is-not-selected"></a>Zakázání možností na podnabídky, pokud není vybraná nadřazená položka  
   
-1.  Přepsat <xref:System.Windows.Forms.ToolStripMenuItem.Enabled%2A> vlastnost tak, že položka je zakázaná, pokud má nadřazená položka s oběma <xref:System.Windows.Forms.ToolStripMenuItem.CheckOnClick%2A> hodnotu `true` a <xref:System.Windows.Forms.ToolStripMenuItem.Checked%2A> hodnotu `false`.  
+1. Přepsat <xref:System.Windows.Forms.ToolStripMenuItem.Enabled%2A> vlastnost tak, že položka je zakázaná, pokud má nadřazená položka s oběma <xref:System.Windows.Forms.ToolStripMenuItem.CheckOnClick%2A> hodnotu `true` a <xref:System.Windows.Forms.ToolStripMenuItem.Checked%2A> hodnotu `false`.  
   
      [!code-csharp[ToolStripRadioButtonMenuItem#160](~/samples/snippets/csharp/VS_Snippets_Winforms/ToolStripRadioButtonMenuItem/cs/ToolStripRadioButtonMenuItem.cs#160)]
      [!code-vb[ToolStripRadioButtonMenuItem#160](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ToolStripRadioButtonMenuItem/vb/ToolStripRadioButtonMenuItem.vb#160)]  
   
-2.  Přepsat <xref:System.Windows.Forms.ToolStripMenuItem.OnOwnerChanged%2A> metodu pro přihlášení k odběru <xref:System.Windows.Forms.ToolStripMenuItem.CheckedChanged> událost nadřazené položky.  
+2. Přepsat <xref:System.Windows.Forms.ToolStripMenuItem.OnOwnerChanged%2A> metodu pro přihlášení k odběru <xref:System.Windows.Forms.ToolStripMenuItem.CheckedChanged> událost nadřazené položky.  
   
      [!code-csharp[ToolStripRadioButtonMenuItem#170](~/samples/snippets/csharp/VS_Snippets_Winforms/ToolStripRadioButtonMenuItem/cs/ToolStripRadioButtonMenuItem.cs#170)]
      [!code-vb[ToolStripRadioButtonMenuItem#170](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ToolStripRadioButtonMenuItem/vb/ToolStripRadioButtonMenuItem.vb#170)]  
   
-3.  V obslužné rutině pro nadřazené položky <xref:System.Windows.Forms.ToolStripMenuItem.CheckedChanged> události, zrušte platnost položky aktualizovat zobrazení s novou povoleného stavu.  
+3. V obslužné rutině pro nadřazené položky <xref:System.Windows.Forms.ToolStripMenuItem.CheckedChanged> události, zrušte platnost položky aktualizovat zobrazení s novou povoleného stavu.  
   
      [!code-csharp[ToolStripRadioButtonMenuItem#180](~/samples/snippets/csharp/VS_Snippets_Winforms/ToolStripRadioButtonMenuItem/cs/ToolStripRadioButtonMenuItem.cs#180)]
      [!code-vb[ToolStripRadioButtonMenuItem#180](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ToolStripRadioButtonMenuItem/vb/ToolStripRadioButtonMenuItem.vb#180)]  

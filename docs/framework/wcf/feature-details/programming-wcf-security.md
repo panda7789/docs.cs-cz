@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - message security [WCF], programming overview
 ms.assetid: 739ec222-4eda-4cc9-a470-67e64a7a3f10
-ms.openlocfilehash: 41157d12f1133878e133895ed0f803bc7018af51
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: d327605c084cd5fb1c65fbb786e871b421730b83
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59087804"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59313317"
 ---
 # <a name="programming-wcf-security"></a>Programování zabezpečení WCF
 Toto téma popisuje základní programovacích úloh umožňuje vytvořit zabezpečenou webovou aplikaci Windows Communication Foundation (WCF). Toto téma popisuje pouze ověřování, důvěrnost a integrita, souhrnně označované jako *přenos zabezpečení*. Toto téma nepopisuje autorizace (řízení přístupu k prostředkům nebo službám); informace o ověřování najdete v tématu [autorizace](../../../../docs/framework/wcf/feature-details/authorization-in-wcf.md).  
@@ -25,11 +25,11 @@ Toto téma popisuje základní programovacích úloh umožňuje vytvořit zabezp
 ## <a name="setting-the-security-mode"></a>Nastavení režimu zabezpečení  
  Následující příklad vysvětluje obecné kroky pro programování s režimem zabezpečení ve službě WCF:  
   
-1.  Vyberte jednu z předdefinovaných vazeb, které jsou vhodné pro vaše požadavky na aplikace. Seznam voleb vazby najdete v tématu [System-Provided vazby](../../../../docs/framework/wcf/system-provided-bindings.md). Téměř Každá vazba má ve výchozím nastavení povoleno zabezpečení. Jedinou výjimkou je <xref:System.ServiceModel.BasicHttpBinding> třídy (pomocí konfigurace, [ \<basicHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md)).  
+1. Vyberte jednu z předdefinovaných vazeb, které jsou vhodné pro vaše požadavky na aplikace. Seznam voleb vazby najdete v tématu [System-Provided vazby](../../../../docs/framework/wcf/system-provided-bindings.md). Téměř Každá vazba má ve výchozím nastavení povoleno zabezpečení. Jedinou výjimkou je <xref:System.ServiceModel.BasicHttpBinding> třídy (pomocí konfigurace, [ \<basicHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md)).  
   
      Vazba, kterou vyberete určuje přenos. Například <xref:System.ServiceModel.WSHttpBinding> používá protokol HTTP jako přenosový; <xref:System.ServiceModel.NetTcpBinding> používá protokol TCP.  
   
-2.  Vyberte jeden z režimů zabezpečení vazby. Mějte na paměti, určuje vazbu, kterou vyberete možnosti režimu k dispozici. Například <xref:System.ServiceModel.WSDualHttpBinding> neumožňuje zabezpečení přenosu (není možné). Podobně ani <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> ani <xref:System.ServiceModel.NetNamedPipeBinding> umožňuje zabezpečení zpráv.  
+2. Vyberte jeden z režimů zabezpečení vazby. Mějte na paměti, určuje vazbu, kterou vyberete možnosti režimu k dispozici. Například <xref:System.ServiceModel.WSDualHttpBinding> neumožňuje zabezpečení přenosu (není možné). Podobně ani <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> ani <xref:System.ServiceModel.NetNamedPipeBinding> umožňuje zabezpečení zpráv.  
   
      Máte tři možnosti:  
   
@@ -47,9 +47,9 @@ Toto téma popisuje základní programovacích úloh umožňuje vytvořit zabezp
   
          Tato volba používá přenosové vrstvy zabezpečení přenosu zpráv, sice zahrnuje všechny zprávy bohaté přihlašovací údaje potřebovat jiné služby. Tím se zkombinuje výkonu výhod zabezpečení přenosu s výhodou formátovaným přihlašovací údaje zabezpečení zpráv. Tato možnost je dostupná následující vazbami: <xref:System.ServiceModel.BasicHttpBinding>, <xref:System.ServiceModel.WSFederationHttpBinding>, <xref:System.ServiceModel.NetPeerTcpBinding>, a <xref:System.ServiceModel.WSHttpBinding>.  
   
-3.  Pokud se rozhodnete pro použití zabezpečení přenosu HTTP (jinými slovy, HTTPS), musíte také nakonfigurovat hostitele certifikátem SSL a povolení protokolu SSL na portu. Další informace najdete v tématu [zabezpečení přenosu HTTP](../../../../docs/framework/wcf/feature-details/http-transport-security.md).  
+3. Pokud se rozhodnete pro použití zabezpečení přenosu HTTP (jinými slovy, HTTPS), musíte také nakonfigurovat hostitele certifikátem SSL a povolení protokolu SSL na portu. Další informace najdete v tématu [zabezpečení přenosu HTTP](../../../../docs/framework/wcf/feature-details/http-transport-security.md).  
   
-4.  Pokud používáte <xref:System.ServiceModel.WSHttpBinding> a není potřeba navázat zabezpečenou relaci, nastavte <xref:System.ServiceModel.NonDualMessageSecurityOverHttp.EstablishSecurityContext%2A> vlastnost `false`.  
+4. Pokud používáte <xref:System.ServiceModel.WSHttpBinding> a není potřeba navázat zabezpečenou relaci, nastavte <xref:System.ServiceModel.NonDualMessageSecurityOverHttp.EstablishSecurityContext%2A> vlastnost `false`.  
   
      Zabezpečené relace nastane, pokud klient a služba vytvoření kanálu pomocí symetrického klíče (klient a server používají stejný klíč pro délku konverzaci, dokud není zavřena dialogového okna).  
   

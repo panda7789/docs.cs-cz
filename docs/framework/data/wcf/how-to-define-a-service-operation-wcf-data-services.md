@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Service Operations [WCF Data Services]
 - WCF Data Services, service operations
 ms.assetid: dfcd3cb1-2f07-4d0b-b16a-6b056c4f45fa
-ms.openlocfilehash: 75691a49624c179166d18225fac9fdc6c17a2308
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 88e9b20f3ecefbd39789dfbc942af3938a9a2117
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59138096"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59326395"
 ---
 # <a name="how-to-define-a-service-operation-wcf-data-services"></a>Postupy: Definování operace služby (WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] Zveřejněte metody, které jsou definovány na serveru jako servisní operace. Operace služby umožňují datové služby a zajistit tak přístup prostřednictvím identifikátoru URI metodě, která je definována na serveru. K definování operace služby, použít [`WebGet]` nebo `[WebInvoke]` atribut do metody. Pro podporu operátorů dotazu, musí vrátit operace služby <xref:System.Linq.IQueryable%601> instance. Operace služby může přístup k podkladovému zdroji dat prostřednictvím <xref:System.Data.Services.DataService%601.CurrentDataSource%2A> vlastnost <xref:System.Data.Services.DataService%601>. Další informace najdete v tématu [operací služby](../../../../docs/framework/data/wcf/service-operations-wcf-data-services.md).  
@@ -22,14 +22,14 @@ ms.locfileid: "59138096"
   
 ### <a name="to-define-a-service-operation-in-the-northwind-data-service"></a>K definování operace služby v datová služba Northwind  
   
-1.  V projektu služby Northwind data otevřete soubor Northwind.svc.  
+1. V projektu služby Northwind data otevřete soubor Northwind.svc.  
   
-2.  V `Northwind` tříd, definice služby operace metodu s názvem `GetOrdersByCity` následujícím způsobem:  
+2. V `Northwind` tříd, definice služby operace metodu s názvem `GetOrdersByCity` následujícím způsobem:  
   
      [!code-csharp[Astoria Northwind Service#ServiceOperationDef](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind service/cs/northwind2.svc.cs#serviceoperationdef)]
      [!code-vb[Astoria Northwind Service#ServiceOperationDef](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind service/vb/northwind2.svc.vb#serviceoperationdef)]  
   
-3.  V `InitializeService` metodu `Northwind` třídy, přidejte následující kód k umožnění přístupu k operace služby:  
+3. V `InitializeService` metodu `Northwind` třídy, přidejte následující kód k umožnění přístupu k operace služby:  
   
      [!code-csharp[Astoria Northwind Service#ServiceOperationConfig](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind service/cs/northwind2.svc.cs#serviceoperationconfig)]
      [!code-vb[Astoria Northwind Service#ServiceOperationConfig](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind service/vb/northwind2.svc.vb#serviceoperationconfig)]  

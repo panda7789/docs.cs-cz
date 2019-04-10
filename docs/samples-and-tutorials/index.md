@@ -4,12 +4,12 @@ description: Informace o ukázky a kurzy pro .NET Core, ASP.NET Core a C# jazyk,
 author: BillWagner
 ms.author: wiwagn
 ms.date: 04/11/2017
-ms.openlocfilehash: 682c60ca4a0e801ec8e138a88124b86b88f39615
-ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
+ms.openlocfilehash: 265ac7aa996014ea24e9c128076e12c937de0857
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "57558964"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59330815"
 ---
 # <a name="net-samples-and-tutorials"></a>.NET ukázky a kurzy
 
@@ -57,7 +57,7 @@ Tato ukázka předvádí, syntaxe a funkcí pro C# Delegáti a události. [Úpln
 
 V této ukázce mnohé z problémů, které je možné řešit s využitím stromy výrazů. [Úplnou vzorovou](https://github.com/dotnet/samples/tree/master/csharp/expression-trees) je k dispozici v úložišti dotnet/samples na Githubu.
 
-**Základní ukázky dotazů LINQ**
+**Ukázky LINQ**
 
 Tato série ukázky ukazují řadu funkcí, z Language Integrated Query (LINQ). [Úplnou vzorovou](https://github.com/dotnet/samples/tree/master/core/linq/csharp) je k dispozici v úložišti dotnet/samples na Githubu.
 
@@ -112,6 +112,6 @@ Mnoho témat zobrazit zdrojový kód a ukázky, které jsou k dispozici pro zobr
 1. Přejděte do složky v úložišti na umístění vzorku. Relativní cesta k umístění tohoto příkladu se zobrazí v adresním řádku vašeho prohlížeče, když použijte odkaz na ukázku.
 1. Chcete-li spustit ukázku, máte několik možností:
    * Použití [nástroje rozhraní příkazového řádku dotnet](../core/tools/index.md): V okně konzoly přejděte do složky Ukázky a používat příkazy rozhraní příkazového řádku dotnet.
-   * Použití [sady Visual Studio](https://visualstudio.microsoft.com/) nebo [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/visual-studio-mac/): Výběrem otevřete ukázku **soubor > Otevřít > Projekt/řešení** z řádku nabídek, přejděte do složky ukázkového projektu a vyberte soubor projektu (*.csproj* nebo *.fsproj*).
+   * Použití [sady Visual Studio](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) nebo [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link): Výběrem otevřete ukázku **soubor > Otevřít > Projekt/řešení** z řádku nabídek, přejděte do složky ukázkového projektu a vyberte soubor projektu (*.csproj* nebo *.fsproj*).
    * Použití [Visual Studio Code](https://code.visualstudio.com/): Výběrem otevřete ukázku **soubor > Otevřít složku** z řádku nabídek a výběru složky projektu ukázkové společnosti.
    * Použijte jiné prostředí IDE, která podporuje projekty .NET Core.

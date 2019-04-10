@@ -15,12 +15,12 @@ helpviewer_keywords:
 - button set [WPF], grouped
 - bubbling [WPF]
 ms.assetid: 1a2189ae-13b4-45b0-b12c-8de2e49c29d2
-ms.openlocfilehash: a8ebb0259c1b5f73a2e0329cd1767b0431ba63a6
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: a6baf073e25635f0a6dd666d681d8bc641128ea0
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59171155"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59330451"
 ---
 # <a name="routed-events-overview"></a>Přehled směrovaných událostí
 Toto téma popisuje koncept směrovaných událostí v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]. Téma definuje terminologie směrovaných událostí, popisuje, jak směrované události jsou směrovány stromové struktuře prvků, shrnuje, jak zpracování směrované události a seznámíte s vytvořením vlastní směrované události.
@@ -204,17 +204,17 @@ Vstupní události šíření a tunelové propojení
   
  Pořadí zpracování události je následující:  
   
-1.  `PreviewMouseDown` (tunelu) na kořenový element.  
+1. `PreviewMouseDown` (tunelu) na kořenový element.  
   
-2.  `PreviewMouseDown` (tunelu) zprostředkující elementu #1.  
+2. `PreviewMouseDown` (tunelu) zprostředkující elementu #1.  
   
-3.  `PreviewMouseDown` (tunelu) pro element source #2.  
+3. `PreviewMouseDown` (tunelu) pro element source #2.  
   
-4.  `MouseDown` (bublinový) pro element source #2.  
+4. `MouseDown` (bublinový) pro element source #2.  
   
-5.  `MouseDown` (bublinový) zprostředkující elementu #1.  
+5. `MouseDown` (bublinový) zprostředkující elementu #1.  
   
-6.  `MouseDown` (bublinový) na kořenový element.  
+6. `MouseDown` (bublinový) na kořenový element.  
   
  Delegát obslužné rutiny směrované události obsahuje odkazy na dva objekty: objekt, který vyvolal událost a objekt, kde byla vyvolána obslužná rutina. Pokud byla vyvolána obslužná rutina je objekt hlášených `sender` parametru. Objekt, kde byla nejprve vyvolána událost je ohlášena <xref:System.Windows.RoutedEventArgs.Source%2A> vlastnost data události. Směrované události stále můžete vyvolána a zpracovat stejný objekt, v takovém případě `sender` a <xref:System.Windows.RoutedEventArgs.Source%2A> jsou identické (tomu se kroky 3 a 4, událostí zpracování seznam příkladů).  
   

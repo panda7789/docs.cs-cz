@@ -3,12 +3,12 @@ title: Generování a asynchronní datové proudy
 description: V tomto kurzu pokročilé znázorňuje scénáře, kdy generování a využívání asynchronní datové proudy poskytuje přirozenější způsob, jak pracovat s posloupností dat, která může být generována asynchronně.
 ms.date: 02/10/2019
 ms.custom: mvc
-ms.openlocfilehash: c8be9cf4b83e3dd72232279e7c15dcba639c2058
-ms.sourcegitcommit: bef803e2025642df39f2f1e046767d89031e0304
+ms.openlocfilehash: 0fa7c778ca9ce0f0124fcc520dd4de65f2f92ea8
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56306014"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59308546"
 ---
 # <a name="tutorial-generate-and-consume-async-streams-using-c-80-and-net-core-30"></a>Kurz: Vygenerování a zpracování datových proudů asynchronní pomocí C# 8.0 a .NET Core 3.0
 
@@ -23,7 +23,7 @@ V tomto kurzu se dozvíte jak:
 
 ## <a name="prerequisites"></a>Požadavky
 
-Budete muset nastavit počítač pro spuštění .NET Core, včetně C# 8.0 beta verze kompilátoru. C# Je k dispozici od verze 8 beta verze kompilátoru [Visual Studio 2019 ve verzi preview 1](https://visualstudio.microsoft.com/vs/preview/), nebo [.NET Core 3.0 ve verzi preview 1 SDK](https://dotnet.microsoft.com/download/dotnet-core/3.0). Asynchronní datové proudy jsou nejprve k dispozici v rozhraní .NET Core 3.0 ve verzi preview 1.
+Budete muset nastavit počítač pro spuštění .NET Core, včetně C# 8.0 beta verze kompilátoru. C# Je k dispozici od verze 8 beta verze kompilátoru [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019), nebo si prohlédnout nejnovější [preview SDK .NET Core 3.0](https://dotnet.microsoft.com/download/dotnet-core/3.0). Asynchronní datové proudy jsou nejprve k dispozici v rozhraní .NET Core 3.0 ve verzi preview 1.
 
 Budete muset vytvořit [přístupový token Githubu](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/#creating-a-token) tak, aby vám může přístup ke koncovému bodu GraphQL Githubu. Vyberte následující oprávnění pro váš Token přístupu Githubu:
 

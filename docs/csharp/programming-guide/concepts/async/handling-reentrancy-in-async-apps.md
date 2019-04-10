@@ -2,12 +2,12 @@
 title: Podpora vícenásobného přístupu v aplikacích s modifikátorem Async (C#)
 ms.date: 07/20/2015
 ms.assetid: 47c5075e-c448-45ce-9155-ed4e7e98c677
-ms.openlocfilehash: 95004951a664c3c8271604938c5ce1d93a269304
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: efa46408da492cbdeeb38b363196c79a1ae25157
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59211501"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59321533"
 ---
 # <a name="handling-reentrancy-in-async-apps-c"></a>Podpora vícenásobného přístupu v aplikacích s modifikátorem Async (C#)
 Pokud zahrnete asynchronní kód ve vaší aplikaci, by měl zvážit a případně zabránit vícenásobnému přístupu, který se vztahuje k nutnosti opětovného zadávání asynchronní operace ještě před dokončením. Pokud neidentifikujete a nemanipulujete vícenásobnému přístupu, může to způsobit neočekávané výsledky.  
@@ -140,7 +140,7 @@ private async void StartButton_Click(object sender, RoutedEventArgs e)
   
  Nastavit tento scénář, proveďte následující změny základního kódu, která je součástí [Prostudování a spuštění ukázkové aplikace](#BKMD_SettingUpTheExample). Také můžete stáhnout hotovou aplikaci z [asynchronní vzorky: Vícenásobný přístup v desktopových aplikacích .NET](https://code.msdn.microsoft.com/Async-Sample-Preventing-a8489f06). Název projektu je CancelAndRestart.  
   
-1.  Deklarace <xref:System.Threading.CancellationTokenSource> proměnnou, `cts`, která je v oboru pro všechny metody.  
+1. Deklarace <xref:System.Threading.CancellationTokenSource> proměnnou, `cts`, která je v oboru pro všechny metody.  
   
     ```csharp  
     public partial class MainWindow : Window   // Or class MainPage  
@@ -149,7 +149,7 @@ private async void StartButton_Click(object sender, RoutedEventArgs e)
         CancellationTokenSource cts;  
     ```  
   
-2.  V `StartButton_Click`, určete, zda již probíhá operace. Pokud hodnota `cts` je null, žádná operace ještě není aktivní. Pokud hodnota není null, je zrušena operace, která je již spuštěna.  
+2. V `StartButton_Click`, určete, zda již probíhá operace. Pokud hodnota `cts` je null, žádná operace ještě není aktivní. Pokud hodnota není null, je zrušena operace, která je již spuštěna.  
   
     ```csharp  
     // *** If a download process is already underway, cancel it.  
@@ -159,7 +159,7 @@ private async void StartButton_Click(object sender, RoutedEventArgs e)
     }  
     ```  
   
-3.  Nastavte `cts` na jinou hodnotu, která představuje aktuální proces.  
+3. Nastavte `cts` na jinou hodnotu, která představuje aktuální proces.  
   
     ```csharp  
     // *** Now set cts to a new value that you can use to cancel the current process  
@@ -168,7 +168,7 @@ private async void StartButton_Click(object sender, RoutedEventArgs e)
     cts = newCTS;  
     ```  
   
-4.  Na konci `StartButton_Click`, je aktuální proces dokončen, takže nastavte hodnotu `cts` zpět na hodnotu null.  
+4. Na konci `StartButton_Click`, je aktuální proces dokončen, takže nastavte hodnotu `cts` zpět na hodnotu null.  
   
     ```csharp  
     // *** When the process is complete, signal that another process can begin.  
@@ -541,42 +541,42 @@ private async Task FinishOneGroupAsync(List<string> urls, Task<byte[]>[] content
   
 ### <a name="BKMK_DownloadingTheApp"></a> Stažení aplikace  
   
-1.  Stáhněte si komprimovaný soubor z [asynchronní vzorky: Vícenásobný přístup v desktopových aplikacích .NET](https://code.msdn.microsoft.com/Async-Sample-Preventing-a8489f06).  
+1. Stáhněte si komprimovaný soubor z [asynchronní vzorky: Vícenásobný přístup v desktopových aplikacích .NET](https://code.msdn.microsoft.com/Async-Sample-Preventing-a8489f06).  
   
-2.  Dekomprimujte soubor, který jste stáhli a poté spusťte Visual Studio.  
+2. Dekomprimujte soubor, který jste stáhli a poté spusťte Visual Studio.  
   
-3.  V panelu nabídky zvolte **souboru**, **otevřít**, **projekt či řešení**.  
+3. V panelu nabídky zvolte **souboru**, **otevřít**, **projekt či řešení**.  
   
-4.  Přejděte do složky obsahující dekomprimovaný ukázkový kód a potom otevřete soubor řešení (.sln).  
+4. Přejděte do složky obsahující dekomprimovaný ukázkový kód a potom otevřete soubor řešení (.sln).  
   
-5.  V **Průzkumníka řešení**, otevřete místní nabídku pro projekt, který chcete spustit a klikněte na tlačítko **nastavit jako výchozí projekt**.  
+5. V **Průzkumníka řešení**, otevřete místní nabídku pro projekt, který chcete spustit a klikněte na tlačítko **nastavit jako výchozí projekt**.  
   
-6.  Stiskněte klávesy CTRL + F5 sestavte a spusťte projekt.  
+6. Stiskněte klávesy CTRL + F5 sestavte a spusťte projekt.  
   
 ### <a name="BKMK_BuildingTheApp"></a> Vytvoření aplikace  
  Následující část obsahuje kód pro vytváření příklad jako aplikaci WPF.  
   
 ##### <a name="to-build-a-wpf-app"></a>Vytvoření aplikace WPF  
   
-1.  Spusťte Visual Studio.  
+1. Spusťte Visual Studio.  
   
-2.  V panelu nabídky zvolte **souboru**, **nový**, **projektu**.  
+2. V panelu nabídky zvolte **souboru**, **nový**, **projektu**.  
   
      **Nový projekt** zobrazí se dialogové okno.  
   
-3.  V **nainstalované šablony** podokně rozbalte **Visual C#** a potom rozbalte **Windows**.  
+3. V **nainstalované šablony** podokně rozbalte **Visual C#** a potom rozbalte **Windows**.  
   
-4.  V seznamu typů projektů zvolte **aplikace WPF**.  
+4. V seznamu typů projektů zvolte **aplikace WPF**.  
   
-5.  Pojmenujte projekt `WebsiteDownloadWPF`a klikněte na tlačítko **OK** tlačítko.  
+5. Pojmenujte projekt `WebsiteDownloadWPF`a klikněte na tlačítko **OK** tlačítko.  
   
      Nový projekt se zobrazí v **Průzkumníka řešení**.  
   
-6.  V editoru Visual Studio Code, vyberte **souboru MainWindow.xaml** kartu.  
+6. V editoru Visual Studio Code, vyberte **souboru MainWindow.xaml** kartu.  
   
      Pokud karta není zobrazena, otevřete místní nabídku souboru mainwindow.XAML v **Průzkumníka řešení**a klikněte na tlačítko **zobrazit kód**.  
   
-7.  V **XAML** zobrazení souboru mainwindow.XAML, nahraďte kód následujícím kódem.  
+7. V **XAML** zobrazení souboru mainwindow.XAML, nahraďte kód následujícím kódem.  
   
     ```csharp  
     <Window x:Class="WebsiteDownloadWPF.MainWindow"  
@@ -596,7 +596,7 @@ private async Task FinishOneGroupAsync(List<string> urls, Task<byte[]>[] content
   
      Jednoduché okno obsahující textové pole a tlačítko se zobrazí v **návrhu** zobrazení souboru MainWindow.xaml.  
   
-8.  Přidat odkaz pro <xref:System.Net.Http>.  
+8. Přidat odkaz pro <xref:System.Net.Http>.  
   
 9. V **Průzkumníka řešení**, otevřete místní nabídku pro MainWindow.xaml.cs a pak zvolte **zobrazit kód**.  
   

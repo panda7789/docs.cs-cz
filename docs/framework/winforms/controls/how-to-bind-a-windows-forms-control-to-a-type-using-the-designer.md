@@ -6,29 +6,29 @@ helpviewer_keywords:
 - BindingSource component [Windows Forms], binding to a type
 - types [Windows Forms], binding controls to
 ms.assetid: 5ab984b5-c2d0-4638-a572-1c84013e8746
-ms.openlocfilehash: b2b10b443581a261a753c9f9d940a774159dc9d6
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: b298efb0494994659673f9bf9893b667f7eb0f8c
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59202297"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59304205"
 ---
 # <a name="how-to-bind-a-windows-forms-control-to-a-type-using-the-designer"></a>Postupy: Vytvoření vazby ovládacího prvku Windows Forms k typu pomocí Návrháře
 Při vytváření ovládacích prvků, které pracují s daty, někdy potřebujete k vytvoření vazby ovládacího prvku typu, nikoli objekt. Obvykle budete muset vytvoření vazby ovládacího prvku na typ v době návrhu, když dat nemusí být k dispozici, ale stále chcete své ovládací prvky vázané na data pro zobrazení dat z veřejného rozhraní typu. Následující postupy ukazují, jak vytvořit nový <xref:System.Windows.Forms.BindingSource> , který je s vazbou na typ a pak jednu z vlastností typu vazba <xref:System.Windows.Forms.TextBox.Text%2A> vlastnost <xref:System.Windows.Forms.TextBox>.  
   
 ### <a name="to-bind-the-bindingsource-to-a-type"></a>Pro vazbu na typ objektu BindingSource  
   
-1.  Vytvoření projektu Windows Forms (**souboru** > **nový** > **projektu** > **Visual C#** nebo **Jazyka Visual Basic** > **klasický desktopový** > **aplikaci Windows Forms**).  
+1. Vytvoření projektu Windows Forms (**souboru** > **nový** > **projektu** > **Visual C#** nebo **Jazyka Visual Basic** > **klasický desktopový** > **aplikaci Windows Forms**).  
   
-2.  V **návrhu** zobrazení, přetáhněte <xref:System.Windows.Forms.BindingSource> komponentu do formuláře.  
+2. V **návrhu** zobrazení, přetáhněte <xref:System.Windows.Forms.BindingSource> komponentu do formuláře.  
   
-3.  V **vlastnosti** okna, klikněte na šipku u <xref:System.Windows.Forms.BindingSource.DataSource%2A> vlastnost.  
+3. V **vlastnosti** okna, klikněte na šipku u <xref:System.Windows.Forms.BindingSource.DataSource%2A> vlastnost.  
   
-4.  V **editoru typů uživatelského rozhraní DataSource**, klikněte na tlačítko **přidat zdroj dat projektu**.  
+4. V **editoru typů uživatelského rozhraní DataSource**, klikněte na tlačítko **přidat zdroj dat projektu**.  
   
-5.  Na **zvolte typ zdroje dat** stránce **objekt** a klikněte na tlačítko **Další**.  
+5. Na **zvolte typ zdroje dat** stránce **objekt** a klikněte na tlačítko **Další**.  
   
-6.  Vyberte typ, který chcete vytvořit vazbu na:  
+6. Vyberte typ, který chcete vytvořit vazbu na:  
   
     -   Pokud je typ, který chcete vytvořit vazbu k v aktuálním projektu nebo sestavení obsahující typ je již přidána jako odkaz, rozbalte uzly najít požadovaný typ a pak ho vyberte.  
   
@@ -39,17 +39,17 @@ Při vytváření ovládacích prvků, které pracují s daty, někdy potřebuje
         > [!NOTE]
         >  Pokud chcete vytvořit vazbu na typ v rámci nebo sestavení Microsoft, zrušte zaškrtnutí políčka **skrýt sestavení, které začínají s Microsoftem nebo systém** zaškrtávací políčko.  
   
-7.  Klikněte na tlačítko **Další**a potom klikněte na tlačítko **Dokončit**.  
+7. Klikněte na tlačítko **Další**a potom klikněte na tlačítko **Dokončit**.  
   
 ### <a name="to-bind-the-control-to-the-bindingsource"></a>K vytvoření vazby ovládacího prvku BindingSource  
   
-1.  Přidat <xref:System.Windows.Forms.TextBox> do formuláře.  
+1. Přidat <xref:System.Windows.Forms.TextBox> do formuláře.  
   
-2.  V **vlastnosti** okna, rozbalte **(DataBindings)** uzlu.  
+2. V **vlastnosti** okna, rozbalte **(DataBindings)** uzlu.  
   
-3.  Klikněte na šipku vedle položky <xref:System.Windows.Forms.TextBox.Text%2A> vlastnost.  
+3. Klikněte na šipku vedle položky <xref:System.Windows.Forms.TextBox.Text%2A> vlastnost.  
   
-4.  V **editoru typů uživatelského rozhraní DataSource**, rozbalte uzel pro <xref:System.Windows.Forms.BindingSource> přidali dříve a vyberte vlastnost vázaný typ, který chcete vytvořit vazbu k <xref:System.Windows.Forms.TextBox.Text%2A> vlastnost <xref:System.Windows.Forms.TextBox>.  
+4. V **editoru typů uživatelského rozhraní DataSource**, rozbalte uzel pro <xref:System.Windows.Forms.BindingSource> přidali dříve a vyberte vlastnost vázaný typ, který chcete vytvořit vazbu k <xref:System.Windows.Forms.TextBox.Text%2A> vlastnost <xref:System.Windows.Forms.TextBox>.  
   
 ## <a name="see-also"></a>Viz také:
 

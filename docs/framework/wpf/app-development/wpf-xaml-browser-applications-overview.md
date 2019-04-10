@@ -10,12 +10,12 @@ helpviewer_keywords:
 - XAML browser applications (XBAP)
 - browser-hosted applications [WPF]
 ms.assetid: 3a7a86a8-75d5-4898-96b9-73da151e5e16
-ms.openlocfilehash: 5d7e3788ee05c14cc24bf5084b4c3b94b9fe98bc
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 81ae93871fa5e3fc46382ee9a1810808574fb043
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59194809"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59320129"
 ---
 # <a name="wpf-xaml-browser-applications-overview"></a>Přehled aplikací Prohlížeče WPF XAML
 <a name="introduction"></a>
@@ -100,25 +100,25 @@ ms.locfileid: "59194809"
 ### <a name="debugging-xbaps-that-use-hostscript"></a>Ladění aplikací XBAP, které používají HostScript  
  Pokud vaše XBAP, který používá <xref:System.Windows.Interop.BrowserInteropHelper.HostScript%2A> objekt ke komunikaci s oknem HTML existují dvě nastavení, které je nutné zadat ke spuštění a ladění aplikace v sadě Visual Studio. Aplikace musí mít přístup ke stránce jejího původu a aplikace musí začínat stránky HTML, který obsahuje XBAP. Následující kroky popisují, jak zkontrolovat tato dvě nastavení:  
   
-1.  V sadě Visual Studio otevřete vlastnosti projektu.  
+1. V sadě Visual Studio otevřete vlastnosti projektu.  
   
-2.  Na **zabezpečení** klikněte na tlačítko **Upřesnit**.  
+2. Na **zabezpečení** klikněte na tlačítko **Upřesnit**.  
   
      Zobrazí se dialogové okno Upřesnit nastavení zabezpečení.  
   
-3.  Ujistěte se, že **udělit aplikaci přístup ke stránce jejího původu** zaškrtněte políčko a klikněte na **OK**.  
+3. Ujistěte se, že **udělit aplikaci přístup ke stránce jejího původu** zaškrtněte políčko a klikněte na **OK**.  
   
-4.  Na **ladění** kartu, vyberte **Start prohlížeč s adresou URL** možnost a zadejte adresu URL pro stránku HTML, který obsahuje XBAP.  
+4. Na **ladění** kartu, vyberte **Start prohlížeč s adresou URL** možnost a zadejte adresu URL pro stránku HTML, který obsahuje XBAP.  
   
-5.  V aplikaci Internet Explorer, klikněte na tlačítko **nástroje** tlačítko a pak vyberte **Možnosti Internetu**.  
+5. V aplikaci Internet Explorer, klikněte na tlačítko **nástroje** tlačítko a pak vyberte **Možnosti Internetu**.  
   
      Zobrazí se dialogové okno Možnosti Internetu.  
   
-6.  Klikněte na tlačítko **Upřesnit** kartu.  
+6. Klikněte na tlačítko **Upřesnit** kartu.  
   
-7.  V **nastavení** seznamu v části **zabezpečení**, zkontrolujte **aktivní obsah ke spuštění v souborech na tomto počítači povolit** zaškrtávací políčko.  
+7. V **nastavení** seznamu v části **zabezpečení**, zkontrolujte **aktivní obsah ke spuštění v souborech na tomto počítači povolit** zaškrtávací políčko.  
   
-8.  Klikněte na **OK**.  
+8. Klikněte na **OK**.  
   
      Změny se projeví po restartování aplikace Internet Explorer.  
   
@@ -146,9 +146,9 @@ ms.locfileid: "59194809"
 ### <a name="creating-a-full-trust-xbap"></a>Vytváření XBAP plné důvěryhodnosti  
  Pokud vaše XBAP, který vyžaduje úplný vztah důvěryhodnosti, můžete změnit projekt tak, aby toto oprávnění zapnout. Následující kroky popisují, jak povolit úplný vztah důvěryhodnosti:  
   
-1.  V sadě Visual Studio otevřete vlastnosti projektu.  
+1. V sadě Visual Studio otevřete vlastnosti projektu.  
   
-2.  Na **zabezpečení** kartu, vyberte **Toto je aplikace s úplným vztahem důvěryhodnosti** možnost.  
+2. Na **zabezpečení** kartu, vyberte **Toto je aplikace s úplným vztahem důvěryhodnosti** možnost.  
   
  Toto nastavení provede následující změny:  
   

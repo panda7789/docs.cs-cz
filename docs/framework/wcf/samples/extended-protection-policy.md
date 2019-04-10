@@ -2,12 +2,12 @@
 title: Zásady rozšířené ochrany
 ms.date: 03/30/2017
 ms.assetid: e2616a10-317e-4c34-8023-0c015a80a82f
-ms.openlocfilehash: 59a377a94978741f3f116bab819dff77d8b0fee4
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 645b48b3c7ce3daaaedac372ba5ba6fd5edfc8f8
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43785450"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59328748"
 ---
 # <a name="extended-protection-policy"></a>Zásady rozšířené ochrany
 Rozšířená ochrana je iniciativy zabezpečení pro ochranu před útoky man-in-the-middle (typu MITM). Útoky MITM je bezpečnostní hrozbu, ve kterém MITM přijímá pověření klienta a předá jej do serveru.  
@@ -26,25 +26,25 @@ Rozšířená ochrana je iniciativy zabezpečení pro ochranu před útoky man-i
   
 #### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
-1.  Nainstalujte Internetovou informační službu z **ovládací panely**, **přidat nebo odebrat programy**, **funkce Windows**.  
+1. Nainstalujte Internetovou informační službu z **ovládací panely**, **přidat nebo odebrat programy**, **funkce Windows**.  
   
-2.  Nainstalujte **ověřování Windows** v **funkce Windows**, **Internetová informační služba**, **webové služby**,  **Zabezpečení**, a **ověřování Windows**.  
+2. Nainstalujte **ověřování Windows** v **funkce Windows**, **Internetová informační služba**, **webové služby**,  **Zabezpečení**, a **ověřování Windows**.  
   
-3.  Nainstalujte **aktivace Windows Communication Foundation HTTP** v **funkce Windows**, **rozhraní Microsoft .NET Framework 3.5.1**, a **komunikace Windows Aktivace protokolu HTTP Foundation**.  
+3. Nainstalujte **aktivace Windows Communication Foundation HTTP** v **funkce Windows**, **rozhraní Microsoft .NET Framework 3.5.1**, a **komunikace Windows Aktivace protokolu HTTP Foundation**.  
   
-4.  Tato ukázka vyžaduje klientům navázat zabezpečené připojení k serveru, takže vyžaduje přítomnost certifikát serveru, který si můžete nainstalovat pomocí Správce Internetové informační služby (IIS).  
+4. Tato ukázka vyžaduje klientům navázat zabezpečené připojení k serveru, takže vyžaduje přítomnost certifikát serveru, který si můžete nainstalovat pomocí Správce Internetové informační služby (IIS).  
   
     1.  Otevřete Správce služby IIS. Otevřít **certifikáty serveru**, který se objevuje v **zobrazení funkce** kartu, pokud je vybrána kořenový uzel (název počítače).  
   
     2.  Pro účely testování této ukázce, vytvořte certifikát podepsaný svým držitelem. Pokud nechcete, aby se vás zeptá na certifikát, nebude zabezpečený v aplikaci Internet Explorer, nainstalujte certifikát do úložiště Důvěryhodné kořenové certifikační autority.  
   
-5.  Otevřít **akce** podokno pro výchozí web. Klikněte na tlačítko **upravit web**, **vazby**. Přidat jako typ protokolu HTTPS, pokud není již existuje s číslem portu 443. Přiřadíte certifikát SSL vytvořený v předchozím kroku.  
+5. Otevřít **akce** podokno pro výchozí web. Klikněte na tlačítko **upravit web**, **vazby**. Přidat jako typ protokolu HTTPS, pokud není již existuje s číslem portu 443. Přiřadíte certifikát SSL vytvořený v předchozím kroku.  
   
-6.  Vytvořte službu. Vytvoří virtuální adresář služby IIS a zkopíruje soubory .dll, .svc a .config podle potřeby pro službu bude hostovaná na webu.  
+6. Vytvořte službu. Vytvoří virtuální adresář služby IIS a zkopíruje soubory .dll, .svc a .config podle potřeby pro službu bude hostovaná na webu.  
   
-7.  Otevřete Správce služby IIS. Klikněte pravým tlačítkem na virtuální adresář (**ExtendedProtection**), který byl vytvořen v předchozím kroku. Vyberte **převést na aplikaci**.  
+7. Otevřete Správce služby IIS. Klikněte pravým tlačítkem na virtuální adresář (**ExtendedProtection**), který byl vytvořen v předchozím kroku. Vyberte **převést na aplikaci**.  
   
-8.  Otevřít **ověřování** modul ve Správci služby IIS pro tento virtuální adresář a povolit **ověřování Windows**.  
+8. Otevřít **ověřování** modul ve Správci služby IIS pro tento virtuální adresář a povolit **ověřování Windows**.  
   
 9. Otevřít **Upřesnit nastavení** pod **ověřování Windows** pro tento virtuální adresář a nastavte ho na **vyžaduje**.  
   

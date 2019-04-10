@@ -1,5 +1,5 @@
 ---
-title: 'Návod: Vytvoření první aplikace'
+title: 'Návod: Vytvoření první dotykové aplikace'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,14 +10,14 @@ helpviewer_keywords:
 - touch-sensitive applications [WPF], creating
 - creating a touchscreen application [WPF]
 ms.assetid: d69e602e-9a25-4e24-950b-e89eaa2a906b
-ms.openlocfilehash: 2ebf22775ab9308bc896829be0b4e8cc147a3b4c
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 53ae737394d76d9f293f6e03fbf04cbb46d2adbb
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57374151"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59326980"
 ---
-# <a name="walkthrough-creating-your-first-touch-application"></a>Návod: Vytvoření první aplikace
+# <a name="walkthrough-creating-your-first-touch-application"></a>Návod: Vytvoření první dotykové aplikace
 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] umožňuje aplikacím na dotykového ovládání. Například můžete pracovat s aplikací pomocí jedné nebo více prsty na dotyk zařízení, např. k tomu dotykovou obrazovku tento návod vytvoří aplikaci, která umožňuje uživateli přesunutí, změna velikosti nebo otočení jednoho objektu pomocí touch.  
   
 ## <a name="prerequisites"></a>Požadavky  
@@ -33,24 +33,24 @@ ms.locfileid: "57374151"
   
 #### <a name="to-create-the-application"></a>Vytvoření aplikace  
   
-1.  Vytvoření nového projektu aplikace WPF v jazyce Visual Basic nebo Visual C# s názvem `BasicManipulation`. Další informace najdete v tématu [názorný postup: Moje první desktopová aplikace WPF](../getting-started/walkthrough-my-first-wpf-desktop-application.md).  
+1. Vytvoření nového projektu aplikace WPF v jazyce Visual Basic nebo Visual C# s názvem `BasicManipulation`. Další informace najdete v tématu [názorný postup: Moje první desktopová aplikace WPF](../getting-started/walkthrough-my-first-wpf-desktop-application.md).  
   
-2.  Obsah souboru MainWindow.xaml nahraďte následující XAML.  
+2. Obsah souboru MainWindow.xaml nahraďte následující XAML.  
   
      Tento kód vytvoří jednoduchou aplikaci, která obsahuje červený <xref:System.Windows.Shapes.Rectangle> na <xref:System.Windows.Controls.Canvas>. <xref:System.Windows.UIElement.IsManipulationEnabled%2A> Vlastnost <xref:System.Windows.Shapes.Rectangle> je nastavena na hodnotu true, tak, aby obdrží manipulace s událostmi. Aplikace se přihlásí k odběru <xref:System.Windows.UIElement.ManipulationStarting>, <xref:System.Windows.UIElement.ManipulationDelta>, a <xref:System.Windows.UIElement.ManipulationInertiaStarting> události. Tyto události obsahují logiku pro přesun <xref:System.Windows.Shapes.Rectangle> když uživatel manipuluje s ním.  
   
      [!code-xaml[BasicManipulation#UI](~/samples/snippets/csharp/VS_Snippets_Wpf/basicmanipulation/csharp/mainwindow.xaml#ui)]  
   
-3.  Pokud používáte Visual Basic v prvním řádku souboru mainwindow.XAML, nahraďte `x:Class="BasicManipulation.MainWindow"` s `x:Class="MainWindow"`.  
+3. Pokud používáte Visual Basic v prvním řádku souboru mainwindow.XAML, nahraďte `x:Class="BasicManipulation.MainWindow"` s `x:Class="MainWindow"`.  
   
-4.  V `MainWindow` třídy, přidejte následující <xref:System.Windows.UIElement.ManipulationStarting> obslužné rutiny události.  
+4. V `MainWindow` třídy, přidejte následující <xref:System.Windows.UIElement.ManipulationStarting> obslužné rutiny události.  
   
      <xref:System.Windows.UIElement.ManipulationStarting> Dojde k události při [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] zjistí, že touch vstup začne pracovat s objektu. Kód určuje, že pozice manipulace by měl být vzhledem k <xref:System.Windows.Window> nastavením <xref:System.Windows.Input.ManipulationStartingEventArgs.ManipulationContainer%2A> vlastnost.  
   
      [!code-csharp[BasicManipulation#ManipulationStarting](~/samples/snippets/csharp/VS_Snippets_Wpf/basicmanipulation/csharp/mainwindow.xaml.cs#manipulationstarting)]
      [!code-vb[BasicManipulation#ManipulationStarting](~/samples/snippets/visualbasic/VS_Snippets_Wpf/basicmanipulation/visualbasic/mainwindow.xaml.vb#manipulationstarting)]
 
-5.  V `MainWindow` třídy, přidejte následující <xref:System.Windows.Input.ManipulationDelta> obslužné rutiny události.
+5. V `MainWindow` třídy, přidejte následující <xref:System.Windows.Input.ManipulationDelta> obslužné rutiny události.
 
      <xref:System.Windows.Input.ManipulationDelta> Události dojde, když dotykem vstup změny pozice a může dojít k více než jednou při manipulaci s. Události může také dojít v případě prstem je vyvolána. Například, pokud uživatel přetáhne prstem obrazovce <xref:System.Windows.Input.ManipulationDelta> více než jednou jako přesune prstem dojde k události. Pokud uživatel prstem na obrazovce, <xref:System.Windows.Input.ManipulationDelta> udržuje pro simulaci nečinnost výskytu události.
 
@@ -59,14 +59,14 @@ ms.locfileid: "57374151"
      [!code-csharp[BasicManipulation#ManipulationDelta](~/samples/snippets/csharp/VS_Snippets_Wpf/basicmanipulation/csharp/mainwindow.xaml.cs#manipulationdelta)]
      [!code-vb[BasicManipulation#ManipulationDelta](~/samples/snippets/visualbasic/VS_Snippets_Wpf/basicmanipulation/visualbasic/mainwindow.xaml.vb#manipulationdelta)]
 
-6.  V `MainWindow` třídy, přidejte následující <xref:System.Windows.UIElement.ManipulationInertiaStarting> obslužné rutiny události.
+6. V `MainWindow` třídy, přidejte následující <xref:System.Windows.UIElement.ManipulationInertiaStarting> obslužné rutiny události.
 
      <xref:System.Windows.UIElement.ManipulationInertiaStarting> Události dojde, když uživatel vyvolá všechny prsty na obrazovce. Kód nastaví počáteční a zpomalení přesunu, rozšíření a otočení obdélníku.
 
      [!code-csharp[BasicManipulation#ManipulationInertiaStarting](~/samples/snippets/csharp/VS_Snippets_Wpf/basicmanipulation/csharp/mainwindow.xaml.cs#manipulationinertiastarting)]
      [!code-vb[BasicManipulation#ManipulationInertiaStarting](~/samples/snippets/visualbasic/VS_Snippets_Wpf/basicmanipulation/visualbasic/mainwindow.xaml.vb#manipulationinertiastarting)]
 
-7.  Sestavte a spusťte projekt.
+7. Sestavte a spusťte projekt.
 
      Měli byste vidět v okně se zobrazí červený čtvereček.
 

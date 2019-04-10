@@ -11,12 +11,12 @@ helpviewer_keywords:
 - walkthroughs [Windows Forms], visual inheritance
 - Windows Forms, inheritance
 ms.assetid: 01966086-3142-450e-8210-3fd4cb33f591
-ms.openlocfilehash: 932df915ab55d8141e64836961dd636d3d5da241
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 9366c7ebe2e5b347f4795b15e6f2c2d0f3835482
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59174600"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59307596"
 ---
 # <a name="walkthrough-demonstrating-visual-inheritance"></a>Návod: Demonstrace vizuálního dědění
 Vizuální dědění vám umožní zobrazit ovládací prvky ve formuláři základní a přidání nových ovládacích prvků. V tomto návodu vytvoříte základní formulář a zkompilovat ji do knihovny tříd. Bude import této knihovně tříd do jiného projektu a vytvoření nového formuláře, která dědí ze základního formuláře. V tomto návodu se dozvíte, jak:  
@@ -56,25 +56,25 @@ Vizuální dědění vám umožní zobrazit ovládací prvky ve formuláři zák
   
 #### <a name="to-create-a-class-library-project-containing-a-base-form"></a>Chcete-li vytvořit projekt knihovny tříd obsahující základního formuláře  
   
-1.  Z **souboru** nabídce zvolte **nový**a potom **projektu** otevřít **nový projekt** dialogové okno.  
+1. Z **souboru** nabídce zvolte **nový**a potom **projektu** otevřít **nový projekt** dialogové okno.  
   
-2.  Vytvoření aplikace Windows Forms s názvem `BaseFormLibrary`.  
+2. Vytvoření aplikace Windows Forms s názvem `BaseFormLibrary`.  
   
-3.  K vytvoření knihovny tříd místo standardní aplikace Windows Forms v **Průzkumníka řešení**, klikněte pravým tlačítkem myši **BaseFormLibrary** uzel projektu a pak vyberte **vlastnosti**.  
+3. K vytvoření knihovny tříd místo standardní aplikace Windows Forms v **Průzkumníka řešení**, klikněte pravým tlačítkem myši **BaseFormLibrary** uzel projektu a pak vyberte **vlastnosti**.  
   
-4.  Ve vlastnostech projektu změnit **typ výstupu** z **aplikace Windows** k **knihovny tříd**.  
+4. Ve vlastnostech projektu změnit **typ výstupu** z **aplikace Windows** k **knihovny tříd**.  
   
-5.  Z **souboru** nabídce zvolte **Uložit vše** uložte projekt a soubory do výchozího umístění.  
+5. Z **souboru** nabídce zvolte **Uložit vše** uložte projekt a soubory do výchozího umístění.  
   
  Následující dva postupy přidání tlačítek do základního formuláře. Abychom si předvedli vizuálního dědění, kterým pojmenujete tlačítka různé úrovně přístupu tak, že nastavíte jejich `Modifiers` vlastnosti.  
   
 #### <a name="to-add-a-button-that-inheritors-of-the-base-form-can-modify"></a>Chcete-li přidat tlačítko, které můžete upravit dědice základního formuláře  
   
-1.  Otevřít **Form1** v návrháři.  
+1. Otevřít **Form1** v návrháři.  
   
-2.  Na **všechny formuláře Windows** karty **nástrojů**, dvakrát klikněte na panel **tlačítko** přidáte tlačítka do formuláře. Pro nastavení pozice a změňte velikost tlačítka pomocí myši.  
+2. Na **všechny formuláře Windows** karty **nástrojů**, dvakrát klikněte na panel **tlačítko** přidáte tlačítka do formuláře. Pro nastavení pozice a změňte velikost tlačítka pomocí myši.  
   
-3.  V okně Vlastnosti nastavte následující vlastnosti tlačítka:  
+3. V okně Vlastnosti nastavte následující vlastnosti tlačítka:  
   
     -   Nastavte **Text** vlastnost **Say Hello**.  
   
@@ -82,9 +82,9 @@ Vizuální dědění vám umožní zobrazit ovládací prvky ve formuláři zák
   
     -   Nastavte **modifikátory** vlastnost **chráněné**. To umožňuje pro formuláře, které dědí **Form1** k úpravě vlastností **btnProtected**.  
   
-4.  Dvakrát klikněte **Say Hello** tlačítko pro přidání obslužné rutiny události pro **klikněte na tlačítko** událostí.  
+4. Dvakrát klikněte **Say Hello** tlačítko pro přidání obslužné rutiny události pro **klikněte na tlačítko** událostí.  
   
-5.  Přidejte následující řádek kódu obslužné rutiny události:  
+5. Přidejte následující řádek kódu obslužné rutiny události:  
   
     ```vb  
     MessageBox.Show("Hello, World!")  
@@ -96,9 +96,9 @@ Vizuální dědění vám umožní zobrazit ovládací prvky ve formuláři zák
   
 #### <a name="to-add-a-button-that-cannot-be-modified-by-inheritors-of-the-base-form"></a>Chcete-li přidat tlačítko, které nemůže upravit dědice základního formuláře  
   
-1.  Přepnutí do návrhového zobrazení po kliknutí **Form1.vb [Design], Form1.cs [Design] nebo [Design] Form1.jsl** kartu nad editoru kódu nebo stisknutím klávesy F7.  
+1. Přepnutí do návrhového zobrazení po kliknutí **Form1.vb [Design], Form1.cs [Design] nebo [Design] Form1.jsl** kartu nad editoru kódu nebo stisknutím klávesy F7.  
   
-2.  Přidejte druhé tlačítko a nastavte jeho vlastnosti následujícím způsobem:  
+2. Přidejte druhé tlačítko a nastavte jeho vlastnosti následujícím způsobem:  
   
     -   Nastavte **Text** vlastnost **Say Goodbye**.  
   
@@ -106,7 +106,7 @@ Vizuální dědění vám umožní zobrazit ovládací prvky ve formuláři zák
   
     -   Nastavte **modifikátory** vlastnost **privátní**. To znemožňuje pro formuláře, které dědí **Form1** k úpravě vlastností **btnPrivate**.  
   
-3.  Dvakrát klikněte **Say Goodbye** tlačítko pro přidání obslužné rutiny události pro **klikněte na tlačítko** událostí. Vložte následující řádek kódu do procedury události:  
+3. Dvakrát klikněte **Say Goodbye** tlačítko pro přidání obslužné rutiny události pro **klikněte na tlačítko** událostí. Vložte následující řádek kódu do procedury události:  
   
     ```vb  
     MessageBox.Show("Goodbye!")  
@@ -116,37 +116,37 @@ Vizuální dědění vám umožní zobrazit ovládací prvky ve formuláři zák
     MessageBox.Show("Goodbye!");  
     ```  
   
-4.  Z **sestavení** nabídce zvolte **sestavení knihovny BaseForm** k vytvoření knihovny tříd.  
+4. Z **sestavení** nabídce zvolte **sestavení knihovny BaseForm** k vytvoření knihovny tříd.  
   
      Jakmile knihovny je sestavená, můžete vytvořit nový projekt, který dědí z formuláře, který jste právě vytvořili.  
   
 #### <a name="to-create-a-project-containing-a-form-that-inherits-from-the-base-form"></a>Chcete-li vytvořit projekt obsahující formulář, který dědí ze základního formuláře  
   
-1.  Z **souboru** nabídce zvolte **přidat** a potom **nový projekt** otevřít **přidat nový projekt** dialogové okno.  
+1. Z **souboru** nabídce zvolte **přidat** a potom **nový projekt** otevřít **přidat nový projekt** dialogové okno.  
   
-2.  Vytvoření aplikace Windows Forms s názvem `InheritanceTest`.  
+2. Vytvoření aplikace Windows Forms s názvem `InheritanceTest`.  
   
 #### <a name="to-add-an-inherited-form"></a>Přidat Zděděný formulář  
   
-1.  V **Průzkumníku řešení**, klikněte pravým tlačítkem myši **InheritanceTest** projekt, vyberte **přidat**a pak vyberte **nová položka**.  
+1. V **Průzkumníku řešení**, klikněte pravým tlačítkem myši **InheritanceTest** projekt, vyberte **přidat**a pak vyberte **nová položka**.  
   
-2.  V **přidat novou položku** dialogové okno, vyberte **Windows Forms** kategorie (Pokud máte seznam kategorií) a pak vyberte **zděděné formuláře** šablony.  
+2. V **přidat novou položku** dialogové okno, vyberte **Windows Forms** kategorie (Pokud máte seznam kategorií) a pak vyberte **zděděné formuláře** šablony.  
   
-3.  Ponechte výchozí název `Form2` a potom klikněte na tlačítko **přidat**.  
+3. Ponechte výchozí název `Form2` a potom klikněte na tlačítko **přidat**.  
   
-4.  V **výběr dědičnosti** dialogu **Form1** z **BaseFormLibrary** projektu jako formulář dědí a klikněte na tlačítko **OK** .  
+4. V **výběr dědičnosti** dialogu **Form1** z **BaseFormLibrary** projektu jako formulář dědí a klikněte na tlačítko **OK** .  
   
      Tím se vytvoří na formulář v nástrojích **InheritanceTest** projekt, který je odvozen z formuláře v **BaseFormLibrary**.  
   
-5.  Otevřete Zděděný formulář (**Form2**) v Návrháři poklepáním, pokud ještě není otevřený.  
+5. Otevřete Zděděný formulář (**Form2**) v Návrháři poklepáním, pokud ještě není otevřený.  
   
      V Návrháři zděděné tlačítka mají symbol (![Snímek obrazovky dědičnosti symbol jazyka Visual Basic.](./media/walkthrough-demonstrating-visual-inheritance/visual-basic-inheritance-glyph.gif)) v jejich horním rohu, která se dědí.  
   
-6.  Vyberte **Say Hello** tlačítko a podívejte se úchyty pro změnu velikosti. Protože toto tlačítko je chráněný, dědice můžete přesunout, změnit jeho velikost, změnit titulek a provádět další úpravy.  
+6. Vyberte **Say Hello** tlačítko a podívejte se úchyty pro změnu velikosti. Protože toto tlačítko je chráněný, dědice můžete přesunout, změnit jeho velikost, změnit titulek a provádět další úpravy.  
   
-7.  Vyberte privátní **Say Goodbye** tlačítko a Všimněte si, že nemá úchyty pro změnu velikosti. Kromě toho **vlastnosti** v okně Vlastnosti tohoto tlačítka se šedě k označení, nemůže být upraven.  
+7. Vyberte privátní **Say Goodbye** tlačítko a Všimněte si, že nemá úchyty pro změnu velikosti. Kromě toho **vlastnosti** v okně Vlastnosti tohoto tlačítka se šedě k označení, nemůže být upraven.  
   
-8.  Pokud používáte jazyk Visual C#:  
+8. Pokud používáte jazyk Visual C#:  
   
     1.  V **Průzkumníka řešení**, klikněte pravým tlačítkem na **Form1** v **InheritanceTest** projektu a klikněte na tlačítko **odstranit**. V okně se zprávou, která se zobrazí, klikněte na tlačítko **OK** potvrďte odstranění.  
   

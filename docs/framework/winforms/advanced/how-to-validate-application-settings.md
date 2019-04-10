@@ -9,12 +9,12 @@ helpviewer_keywords:
 - application settings [Windows Forms], Windows Forms
 - application settings [Windows Forms], validating
 ms.assetid: 9f145ada-4267-436a-aa4c-c4dcffd0afb7
-ms.openlocfilehash: 2fef6c924498003bc9ea393ba2117a1cb5f2afab
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: b7aba4935756fc218a1fadaa1dd9f20a5bc3034f
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59212086"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59317882"
 ---
 # <a name="how-to-validate-application-settings"></a>Postupy: Ověření nastavení aplikace
 Toto téma ukazuje, jak ověřit nastavení aplikace předtím, než jsou trvalé.  
@@ -78,7 +78,7 @@ Toto téma ukazuje, jak ověřit nastavení aplikace předtím, než jsou trval�
   
 ### <a name="to-validate-application-settings-when-a-setting-is-changing"></a>Ověření nastavení aplikace při změně nastavení  
   
-1.  Pokud jste C# vývojářkou formuláře nebo ovládacího prvku `Load` události, přidejte obslužnou rutinu události pro <xref:System.Configuration.ApplicationSettingsBase.SettingChanging> událostí.  
+1. Pokud jste C# vývojářkou formuláře nebo ovládacího prvku `Load` události, přidejte obslužnou rutinu události pro <xref:System.Configuration.ApplicationSettingsBase.SettingChanging> událostí.  
   
      -nebo-  
   
@@ -97,7 +97,7 @@ Toto téma ukazuje, jak ověřit nastavení aplikace předtím, než jsou trval�
     End Sub   
     ```  
   
-2.  Definování obslužné rutiny událostí a psaní kódu v rámci služby tak, aby prováděly hranice kontroluje se datum narození.  
+2. Definování obslužné rutiny událostí a psaní kódu v rámci služby tak, aby prováděly hranice kontroluje se datum narození.  
   
     ```csharp  
     private void MyCustomSettings_SettingChanging(Object sender, SettingChangingEventArgs e)  
@@ -126,7 +126,7 @@ Toto téma ukazuje, jak ověřit nastavení aplikace předtím, než jsou trval�
   
 ### <a name="to-validate-application-settings-when-a-save-occurs"></a>Ověření nastavení aplikace při uložení dojde k  
   
-1.  Do formuláře nebo ovládacího prvku `Load` události, přidejte obslužnou rutinu události pro <xref:System.Configuration.ApplicationSettingsBase.SettingsSaving> událostí.  
+1. Do formuláře nebo ovládacího prvku `Load` události, přidejte obslužnou rutinu události pro <xref:System.Configuration.ApplicationSettingsBase.SettingsSaving> událostí.  
   
     ```csharp  
     public void Form1_Load(Object sender, EventArgs e)   
@@ -141,7 +141,7 @@ Toto téma ukazuje, jak ověřit nastavení aplikace předtím, než jsou trval�
     End Sub  
     ```  
   
-2.  Definování obslužné rutiny událostí a psaní kódu v rámci služby tak, aby prováděly hranice kontroluje se datum narození.  
+2. Definování obslužné rutiny událostí a psaní kódu v rámci služby tak, aby prováděly hranice kontroluje se datum narození.  
   
     ```csharp  
     private void MyCustomSettings_SettingsSaving(Object sender, SettingsSavingEventArgs e)  

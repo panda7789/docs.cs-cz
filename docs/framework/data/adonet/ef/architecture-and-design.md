@@ -2,12 +2,12 @@
 title: Architektura a návrh
 ms.date: 03/30/2017
 ms.assetid: bd738d39-00e2-4bab-b387-90aac1a014bd
-ms.openlocfilehash: 42d06fd04ae0459d23961a48ab5ccc0d55695ceb
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: a4b597c8a62c661ace4485959589823094b9a08f
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59096134"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59307571"
 ---
 # <a name="architecture-and-design"></a>Architektura a návrh
 Modul generování SQL v [zprostředkovateli ukázek](https://code.msdn.microsoft.com/windowsdesktop/Entity-Framework-Sample-6a9801d0) je implementovaný jako návštěvníky na strom výrazu, který představuje strom příkazů. Generování se provádí v jednom průchodu přes strom výrazu.  
@@ -252,13 +252,13 @@ private bool IsParentAJoin{get}
   
  Navštívit tyto uzly následuje následujícímu vzoru:  
   
-1.  Navštivte relační vstupní a získat výsledný SqlSelectStatement. Vstup do relační uzlu může být jeden z následujících akcí:  
+1. Navštivte relační vstupní a získat výsledný SqlSelectStatement. Vstup do relační uzlu může být jeden z následujících akcí:  
   
     -   Relační uzlu, včetně rozsahu (DbScanExpression, například). Navštívit takový uzel vrátí SqlSelectStatement.  
   
     -   Operace výraz sady (UNION ALL, například). Výsledek musí být zabalené v hranatých závorkách a put v klauzuli FROM nové SqlSelectStatement.  
   
-2.  Zkontrolujte, zda aktuální uzel, mohou být přidány do SqlSelectStatement vytvářených vstupu. V části s názvem výrazy seskupování na příkazy SQL popisuje to. Pokud ne,  
+2. Zkontrolujte, zda aktuální uzel, mohou být přidány do SqlSelectStatement vytvářených vstupu. V části s názvem výrazy seskupování na příkazy SQL popisuje to. Pokud ne,  
   
     -   Aktuální objekt SqlSelectStatement POP.  
   
@@ -266,13 +266,13 @@ private bool IsParentAJoin{get}
   
     -   Vložte nový objekt vrcholu zásobníku.  
   
-3.  Přesměrování vazby vstupní výraz na správném symbolu ze vstupu. Tyto informace se udržuje v SqlSelectStatement objektu.  
+3. Přesměrování vazby vstupní výraz na správném symbolu ze vstupu. Tyto informace se udržuje v SqlSelectStatement objektu.  
   
-4.  Přidáte nový obor SymbolTable.  
+4. Přidáte nový obor SymbolTable.  
   
-5.  Získáte součást bez zadání výrazu (například projekce a predikát).  
+5. Získáte součást bez zadání výrazu (například projekce a predikát).  
   
-6.  Vyvolat přes POP všechny objekty přidávané do globální zásobníků.  
+6. Vyvolat přes POP všechny objekty přidávané do globální zásobníků.  
   
  DbSkipExpression nemají přímý ekvivalent v SQL. Logicky je přeložen do:  
   
@@ -301,9 +301,9 @@ ORDER BY sk1, sk2, ...
   
  Za druhé zpracovávat vstupy jeden najednou. Pro každý vstupní:  
   
-1.  Navštivte vstupu.  
+1. Navštivte vstupu.  
   
-2.  Proces příspěvek výsledek hostujících vstup vyvoláním ProcessJoinInputResult, která zodpovídá za údržbu tabulky symbolů po navštívit podřízený výrazu spojení a pravděpodobně dokončení SqlSelectStatement vytvářených podřízené. Dítěte výsledkem může být jeden z následujících akcí:  
+2. Proces příspěvek výsledek hostujících vstup vyvoláním ProcessJoinInputResult, která zodpovídá za údržbu tabulky symbolů po navštívit podřízený výrazu spojení a pravděpodobně dokončení SqlSelectStatement vytvářených podřízené. Dítěte výsledkem může být jeden z následujících akcí:  
   
     -   SqlSelectStatement jinak než ke které se přidají nadřazené. V takovém případě bude pravděpodobně nutné dokončit tak, že přidáte výchozí sloupce. Pokud tento vstup byl spojení, musíte vytvořit nový symbol spojení. V opačném případě vytvořte symbol normální.  
   

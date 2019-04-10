@@ -2,12 +2,12 @@
 title: Používání standardních koncových bodů
 ms.date: 03/30/2017
 ms.assetid: ecd6a62f-9619-4778-a497-6f888087a9ea
-ms.openlocfilehash: 5502d42d6a576509c826e05c8781662d374fbff4
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: 4ef0714acad12db1414e34fbb476b4ae7d1d9fb2
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48584283"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59304607"
 ---
 # <a name="usage-of-standard-endpoints"></a>Používání standardních koncových bodů
 
@@ -139,9 +139,9 @@ public class CustomEndpoint : ServiceEndpoint
 
 #### <a name="to-use-this-sample"></a>Pro fungování této ukázky
 
-1.  Pomocí sady Visual Studio 2012, otevřete soubor StandardEndpoints.sln.
+1. Pomocí sady Visual Studio 2012, otevřete soubor StandardEndpoints.sln.
 
-2.  Povolte více projektů se spustí.
+2. Povolte více projektů se spustí.
 
     1.  V **Průzkumníka řešení**, klikněte pravým tlačítkem na řešení standardních koncových bodů a potom vyberte **vlastnosti**.
 
@@ -153,7 +153,7 @@ public class CustomEndpoint : ServiceEndpoint
 
          Toto nastavení určuje, že klientský projekt je proveden po projekt služby.
 
-3.  Abyste mohli spustit řešení, stiskněte klávesu F5.
+3. Abyste mohli spustit řešení, stiskněte klávesu F5.
 
 > [!NOTE]
 > Pokud tyto kroky nefungují, ujistěte se, že vaše prostředí je správně nastavený, pomocí následujících kroků:

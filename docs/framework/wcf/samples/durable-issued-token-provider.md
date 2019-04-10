@@ -2,12 +2,12 @@
 title: Trvale vydaný poskytovatel tokenu
 ms.date: 03/30/2017
 ms.assetid: 76fb27f5-8787-4b6a-bf4c-99b4be1d2e8b
-ms.openlocfilehash: 72c8b4e74607a1ed7f616959a6445f21b595a956
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: f91f603e91b1f640ebe97229a1a433446cddb0cf
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59103256"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59329749"
 ---
 # <a name="durable-issued-token-provider"></a>Trvale vydaný poskytovatel tokenu
 Tento příklad ukazuje, jak implementovat vlastní klienta vydaný Poskytovatel tokenu.  
@@ -114,7 +114,7 @@ Tento příklad ukazuje, jak implementovat vlastní klienta vydaný Poskytovatel
   
 #### <a name="to-develop-a-custom-token-provider"></a>Vývoj vlastního zprostředkovatele tokenů  
   
-1.  Napište vlastního zprostředkovatele tokenů.  
+1. Napište vlastního zprostředkovatele tokenů.  
   
      Ukázka implementuje vlastního zprostředkovatele tokenů, který vrátí token zabezpečení načítat z mezipaměti.  
   
@@ -133,7 +133,7 @@ Tento příklad ukazuje, jak implementovat vlastní klienta vydaný Poskytovatel
     }  
     ```  
   
-2.  Správce tokenů zabezpečení vlastního zápisu.  
+2. Správce tokenů zabezpečení vlastního zápisu.  
   
      <xref:System.IdentityModel.Selectors.SecurityTokenManager> Slouží k vytvoření <xref:System.IdentityModel.Selectors.SecurityTokenProvider> pro konkrétní <xref:System.IdentityModel.Selectors.SecurityTokenRequirement> , který je do ní předán v `CreateSecurityTokenProvider` metody. Správce tokenů zabezpečení se také používá k vytvoření ověřovací data tokenu a tokenu serializátory, ale nejsou uvedené v této ukázce. V této ukázce Správce tokenů zabezpečení vlastní dědí z <xref:System.ServiceModel.ClientCredentialsSecurityTokenManager> třídy a přepsání `CreateSecurityTokenProvider` požadovaná metoda vrátí vlastního zprostředkovatele tokenů, při úspěšné požadavky tokenu označuje, že vydaný token.  
   
@@ -162,7 +162,7 @@ Tento příklad ukazuje, jak implementovat vlastní klienta vydaný Poskytovatel
     }  
     ```  
   
-3.  Zápis vlastních klientských přihlašovacích údajů.  
+3. Zápis vlastních klientských přihlašovacích údajů.  
   
      Třída přihlašovacích údajů klienta se používá k reprezentování přihlašovací údaje, které jsou nakonfigurované pro proxy serveru klienta a vytvoří Správce tokenů, který se používá k získání poskytovatele tokenů ověřovací data tokenu a tokenu serializátory zabezpečení.  
   
@@ -204,7 +204,7 @@ Tento příklad ukazuje, jak implementovat vlastní klienta vydaný Poskytovatel
     }  
     ```  
   
-4.  Implementace mezipaměť tokenu. Ukázková implementace používá abstraktní základní třída, přes který příjemci daného mezipaměť tokenu pracovat s mezipamětí.  
+4. Implementace mezipaměť tokenu. Ukázková implementace používá abstraktní základní třída, přes který příjemci daného mezipaměť tokenu pracovat s mezipamětí.  
   
     ```  
     public abstract class IssuedTokenCache  
@@ -233,17 +233,17 @@ Tento příklad ukazuje, jak implementovat vlastní klienta vydaný Poskytovatel
   
 #### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
-1.  Spusťte soubor Setup.cmd vytvořit požadované certifikáty.  
+1. Spusťte soubor Setup.cmd vytvořit požadované certifikáty.  
   
-2.  Abyste mohli sestavit řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md). Ujistěte se, že jsou všechny projekty v řešení sestaveny, (sdílené, RSTRSTR, služby, služby SecurityTokenService a klient).  
+2. Abyste mohli sestavit řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md). Ujistěte se, že jsou všechny projekty v řešení sestaveny, (sdílené, RSTRSTR, služby, služby SecurityTokenService a klient).  
   
-3.  Ujistěte se, že Service.exe a SecurityTokenService.exe se provozují s oprávněními správce.  
+3. Ujistěte se, že Service.exe a SecurityTokenService.exe se provozují s oprávněními správce.  
   
-4.  Spusťte Client.exe.  
+4. Spusťte Client.exe.  
   
 #### <a name="to-clean-up-after-the-sample"></a>K vyčištění po vzorku  
   
-1.  Spusťte Cleanup.cmd ve složce samples po dokončení spuštění ukázky.  
+1. Spusťte Cleanup.cmd ve složce samples po dokončení spuštění ukázky.  
   
 > [!IMPORTANT]
 >  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  

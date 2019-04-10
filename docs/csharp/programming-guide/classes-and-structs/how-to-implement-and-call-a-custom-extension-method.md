@@ -5,29 +5,29 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - extension methods [C#], implementing and calling
 ms.assetid: 7dab2a56-cf8e-4a47-a444-fe610a02772a
-ms.openlocfilehash: e4b77bf0a44ce58db632e0c58982dba7178f9272
-ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
+ms.openlocfilehash: 2d3f6ec66a13638f0106537ad8b21bff801a53b3
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57203425"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59303333"
 ---
 # <a name="how-to-implement-and-call-a-custom-extension-method-c-programming-guide"></a>Postupy: Implementace a volání vlastní metody rozšíření (C# Průvodce programováním v)
 Toto téma ukazuje, jak implementovat vlastní metody rozšíření pro jakýkoli typ .NET. Klientský kód můžete použít rozšiřující metody přidejte odkaz na knihovnu DLL, která je obsahuje, a přidáním [pomocí](../../../csharp/language-reference/keywords/using-directive.md) direktiva, která určuje obor názvů, ve kterém jsou definovány metody rozšíření.  
   
 ## <a name="to-define-and-call-the-extension-method"></a>K definování a volání metody rozšíření  
   
-1.  Definovat statický [třídy](../../../csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members.md) obsahuje metody rozšíření.  
+1. Definovat statický [třídy](../../../csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members.md) obsahuje metody rozšíření.  
   
      Třída musí být viditelná pro klientský kód. Další informace o usnadnění pravidel, naleznete v tématu [modifikátory přístupu](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md).  
   
-2.  Implementovat metodu rozšíření jako statickou metodu s alespoň stejnou viditelnost jako nadřazený třídy.  
+2. Implementovat metodu rozšíření jako statickou metodu s alespoň stejnou viditelnost jako nadřazený třídy.  
   
-3.  První parametr metody Určuje typ, který pracuje metodu; musíte začínající [to](../../../csharp/language-reference/keywords/this.md) modifikátor.  
+3. První parametr metody Určuje typ, který pracuje metodu; musíte začínající [to](../../../csharp/language-reference/keywords/this.md) modifikátor.  
   
-4.  Ve volajícím kódu, přidejte `using` – direktiva k určení [obor názvů](../../../csharp/language-reference/keywords/namespace.md) , který obsahuje třídu – metoda rozšíření.  
+4. Ve volajícím kódu, přidejte `using` – direktiva k určení [obor názvů](../../../csharp/language-reference/keywords/namespace.md) , který obsahuje třídu – metoda rozšíření.  
   
-5.  Volání metody, jako kdyby byly metodami instance typu.  
+5. Volání metody, jako kdyby byly metodami instance typu.  
   
      Všimněte si, že první parametr není zadán voláním kódu, protože představuje typ, na které se právě používá operátor a kompilátor zná typu objektu. Budete muset zadat argumenty pro parametry 2 prostřednictvím `n`.  
   
@@ -44,12 +44,12 @@ Toto téma ukazuje, jak implementovat vlastní metody rozšíření pro jakýkol
   
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
-- [Rozšiřující metody](../../../csharp/programming-guide/classes-and-structs/extension-methods.md)
+- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)
+- [Metody rozšíření](../../../csharp/programming-guide/classes-and-structs/extension-methods.md)
 - [LINQ (Language-Integrated Query)](../../../csharp/linq/linq-in-csharp.md)
 - [Statické třídy a jejich členové](../../../csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members.md)
 - [protected](../../../csharp/language-reference/keywords/protected.md)
 - [internal](../../../csharp/language-reference/keywords/internal.md)
 - [public](../../../csharp/language-reference/keywords/public.md)
 - [this](../../../csharp/language-reference/keywords/this.md)
-- [namespace](../../../csharp/language-reference/keywords/namespace.md)
+- [– obor názvů](../../../csharp/language-reference/keywords/namespace.md)

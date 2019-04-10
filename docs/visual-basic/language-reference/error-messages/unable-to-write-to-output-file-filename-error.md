@@ -1,5 +1,5 @@
 ---
-title: "Nelze zapisovat do výstupního souboru '<filename>': <error>"
+title: "Nelze zapisovat do výstupního souboru '<filename>\": <error>"
 ms.date: 07/20/2015
 f1_keywords:
 - vbc31019
@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC31019
 ms.assetid: 0845b245-11bb-46fd-95ca-f6cef3c318ef
-ms.openlocfilehash: 61ba4dbc668f7b236b0631f797feb4e81068e517
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: f29eb628c079f65a520cf5e1ccd8afed549f7cad
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58827187"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59318218"
 ---
 # <a name="unable-to-write-to-output-file-filename-error"></a>Nelze zapisovat do výstupního souboru '\<název souboru >': \<chyby >
 Došlo k potížím, vytváření souboru.  
@@ -31,31 +31,31 @@ Došlo k potížím, vytváření souboru.
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1.  Kompilovat program znovu, abyste viděli, pokud se chyba objeví znovu.  
+1. Kompilovat program znovu, abyste viděli, pokud se chyba objeví znovu.  
   
-2.  Pokud chyba přetrvává, uložte si práci a restartujte aplikaci Visual Studio.  
+2. Pokud chyba přetrvává, uložte si práci a restartujte aplikaci Visual Studio.  
   
-3.  Pokud chyba přetrvává, restartujte počítač.  
+3. Pokud chyba přetrvává, restartujte počítač.  
   
-4.  Pokud se chyba objeví znovu, přeinstalujte Visual Basic.  
+4. Pokud se chyba objeví znovu, přeinstalujte Visual Basic.  
   
-5.  Pokud chyba přetrvává po přeinstalaci, upozorní Microsoft Product Support Services.  
+5. Pokud chyba přetrvává po přeinstalaci, upozorní Microsoft Product Support Services.  
   
 ### <a name="to-check-file-attributes-in-file-explorer"></a>Ke kontrole atributů souboru v Průzkumníku souborů  
   
-1.  Otevřete složku, které vás zajímají.  
+1. Otevřete složku, které vás zajímají.  
   
-2.  Klikněte na tlačítko **zobrazení** ikonu a zvolte **podrobnosti**.  
+2. Klikněte na tlačítko **zobrazení** ikonu a zvolte **podrobnosti**.  
   
-3.  Klikněte pravým tlačítkem na záhlaví sloupce a vybrat **atributy** z rozevíracího seznamu.  
+3. Klikněte pravým tlačítkem na záhlaví sloupce a vybrat **atributy** z rozevíracího seznamu.  
   
 ### <a name="to-change-the-attributes-of-a-file-or-folder"></a>Chcete-li změnit atributy souboru nebo složky  
   
-1.  V **Průzkumníka souborů**, klikněte pravým tlačítkem na soubor nebo složku a zvolte **vlastnosti**.  
+1. V **Průzkumníka souborů**, klikněte pravým tlačítkem na soubor nebo složku a zvolte **vlastnosti**.  
   
-2.  V **atributy** část **Obecné** kartu, zrušte **jen pro čtení** pole.  
+2. V **atributy** část **Obecné** kartu, zrušte **jen pro čtení** pole.  
   
-3.  Stisknutím klávesy **OK**.  
+3. Stisknutím klávesy **OK**.  
   
 ## <a name="see-also"></a>Viz také:
 

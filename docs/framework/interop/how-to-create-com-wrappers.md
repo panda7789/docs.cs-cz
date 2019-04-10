@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: bdf89bea-1623-45ee-a57b-cf7c90395efa
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 58b7ca910f8f8c751f03b25459bc83efb8086923
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1c26c84ece1231a4e118144c163fa3e9c7619301
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54540972"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59324123"
 ---
 # <a name="how-to-create-com-wrappers"></a>Postupy: Vytváření obálek COM
 
@@ -28,13 +28,13 @@ V sadě Visual Studio 2005 můžete přidat obálky COM jako odkaz na svůj proj
 
 ### <a name="to-create-a-runtime-callable-wrapper-using-visual-studio"></a>Chcete-li vytvořit obálka volatelná za běhu pomocí sady Visual Studio
 
-1.  Otevřete projekt pro spravovanou aplikaci.
+1. Otevřete projekt pro spravovanou aplikaci.
 
-2.  Na **projektu** nabídky, klikněte na tlačítko **zobrazit všechny soubory**.
+2. Na **projektu** nabídky, klikněte na tlačítko **zobrazit všechny soubory**.
 
-3.  Na **projektu** nabídky, klikněte na tlačítko **přidat odkaz**.
+3. Na **projektu** nabídky, klikněte na tlačítko **přidat odkaz**.
 
-4.  V dialogovém okně Přidat odkaz na tlačítko **COM** kartu, vyberte komponentu, kterou chcete použít a klikněte na tlačítko **OK**.
+4. V dialogovém okně Přidat odkaz na tlačítko **COM** kartu, vyberte komponentu, kterou chcete použít a klikněte na tlačítko **OK**.
 
      V **Průzkumníka řešení**, mějte na paměti, že komponenty modelu COM je přidán do složky odkazy ve vašem projektu.
 
@@ -53,15 +53,15 @@ Teď můžete psát kód pro přístup k objektu COM. Můžete začít deklarov�
   
 ### <a name="to-create-a-com-callable-wrapper-using-visual-studio"></a>Chcete-li vytvořit obálka volatelná aplikacemi COM pomocí sady Visual Studio  
   
-1.  Vytvořte projekt knihovny tříd pro spravované třídy, které chcete spouštět v nativním kódu. Třída musí mít výchozí konstruktor.  
+1. Vytvořte projekt knihovny tříd pro spravované třídy, které chcete spouštět v nativním kódu. Třída musí mít výchozí konstruktor.  
   
      Ověřte, že máte číslo úplné verze složené ze čtyř částí pro vaše sestavení v souboru AssemblyInfo. Toto číslo je vyžadován pro zachování verzí v registru Windows. Další informace o číslech verzí najdete v tématu [Správa verzí sestavení](../../../docs/framework/app-domains/assembly-versioning.md).  
   
-2.  Na **projektu** nabídky, klikněte na tlačítko **vlastnosti**.  
+2. Na **projektu** nabídky, klikněte na tlačítko **vlastnosti**.  
   
-3.  Klikněte na tlačítko **kompilaci** kartu.  
+3. Klikněte na tlačítko **kompilaci** kartu.  
   
-4.  Vyberte **zaregistrovat pro interoperabilitu COM** zaškrtávací políčko.  
+4. Vyberte **zaregistrovat pro interoperabilitu COM** zaškrtávací políčko.  
   
  Při vytváření projektu pro zprostředkovatele komunikace s objekty COM se automaticky registruje sestavení. Pokud vytváříte nativní aplikace v sadě Visual Studio 2005, můžete kliknutím na použít sestavení **přidat odkaz** na **projektu** nabídky.  
   

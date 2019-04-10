@@ -17,12 +17,12 @@ helpviewer_keywords:
 ms.assetid: a281bfbf-6596-45ed-a2d6-3782d535ada2
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 18a784db1ff02f459fbc2265c3ca1a2abfaff9b4
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 4fab94c85745bf17a632d04c563070d79b48aa95
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43879033"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59318374"
 ---
 # <a name="how-to-define-and-use-custom-numeric-format-providers"></a>Postupy: Definování a používání vlastních poskytovatelů číselného formátu
 [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] Poskytuje rozsáhlou kontrolu nad řetězcové reprezentace číselných hodnot. Přizpůsobení formátu číselných hodnot podporuje následující funkce:  
@@ -37,9 +37,9 @@ ms.locfileid: "43879033"
   
 ### <a name="to-define-a-custom-format-provider"></a>K definování vlastního poskytovatele formátu  
   
-1.  Definujte třídu, která implementuje <xref:System.IFormatProvider> a <xref:System.ICustomFormatter> rozhraní.  
+1. Definujte třídu, která implementuje <xref:System.IFormatProvider> a <xref:System.ICustomFormatter> rozhraní.  
   
-2.  Implementace <xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType> metody. <xref:System.IFormatProvider.GetFormat%2A> je metoda zpětného volání, který použije metoda formátování (například <xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> metoda) vyvolá při načtení objektu, který je ve skutečnosti odpovědný za provedení vlastní formátování. Obvyklá implementace metody <xref:System.IFormatProvider.GetFormat%2A> provede následující akce:  
+2. Implementace <xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType> metody. <xref:System.IFormatProvider.GetFormat%2A> je metoda zpětného volání, který použije metoda formátování (například <xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> metoda) vyvolá při načtení objektu, který je ve skutečnosti odpovědný za provedení vlastní formátování. Obvyklá implementace metody <xref:System.IFormatProvider.GetFormat%2A> provede následující akce:  
   
     1.  Určuje, zda <xref:System.Type> objekt předán jako metoda představuje parametr <xref:System.ICustomFormatter> rozhraní.  
   
@@ -47,7 +47,7 @@ ms.locfileid: "43879033"
   
     3.  Pokud parametr nepředstavuje <xref:System.ICustomFormatter> rozhraní, <xref:System.IFormatProvider.GetFormat%2A> vrátí `null`.  
   
-3.  Implementace <xref:System.ICustomFormatter.Format%2A> metody. Tato metoda je volána metodou <xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> metody a je zodpovědný za vrácení řetězcové vyjádření čísla. Implementace metody obvykle zahrnuje následující:  
+3. Implementace <xref:System.ICustomFormatter.Format%2A> metody. Tato metoda je volána metodou <xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> metody a je zodpovědný za vrácení řetězcové vyjádření čísla. Implementace metody obvykle zahrnuje následující:  
   
     1.  Volitelně, ujistěte se, že metoda je rozmyslet určená k zajištění služeb formátování prozkoumáním `provider` parametru. Pro formátování objektů, které implementují <xref:System.IFormatProvider> a <xref:System.ICustomFormatter>, to zahrnuje testování `provider` parametr rovnosti s aktuálním objektem formátování.  
   
@@ -59,9 +59,9 @@ ms.locfileid: "43879033"
   
 ### <a name="to-use-a-custom-numeric-formatting-object"></a>Chcete-li použít vlastní číselné formátovací objekt  
   
-1.  Vytvořte novou instanci třídy vlastní formátování.  
+1. Vytvořte novou instanci třídy vlastní formátování.  
   
-2.  Volání <xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> formátování, předáním vlastního formátování objektu, specifikátor formátování (nebo <xref:System.String.Empty?displayProperty=nameWithType>, pokud se používá) a číselnou hodnotu, která má být formátováno.  
+2. Volání <xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> formátování, předáním vlastního formátování objektu, specifikátor formátování (nebo <xref:System.String.Empty?displayProperty=nameWithType>, pokud se používá) a číselnou hodnotu, která má být formátováno.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad definuje vlastní číselné formátovací poskytovatele s názvem `TelephoneFormatter` , která převede číslo, které představuje telefonní číslo USA do jeho NANP nebo E.123 formátu. Tato metoda obsluhuje dva specifikátory formátu "N" (který výstupy ve formátu NANP) a "I" (jejímž výstupem v mezinárodním formátu E.123).  

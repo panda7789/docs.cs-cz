@@ -1,5 +1,5 @@
 ---
-title: Třída XsltArgumentList pro parametry list stylu a objektů rozšíření
+title: XsltArgumentList pro parametry šablon stylů a objektů rozšíření
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -8,14 +8,14 @@ dev_langs:
 ms.assetid: de2f0dce-6b98-4908-bba7-ed150cc50355
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 1fb973dcde1ca31a57fbc3022d3eb1c92a2a9d0f
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: e6209df7d226d7e3acb938801d1fb77afbe1249b
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "45988085"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59322404"
 ---
-# <a name="xsltargumentlist-for-style-sheet-parameters-and-extension-objects"></a>Třída XsltArgumentList pro parametry list stylu a objektů rozšíření
+# <a name="xsltargumentlist-for-style-sheet-parameters-and-extension-objects"></a>XsltArgumentList pro parametry šablon stylů a objektů rozšíření
 <xref:System.Xml.Xsl.XsltArgumentList> Třída obsahuje rozšiřitelný jazyk šablony stylů transformace XSLT () parametry a objekty rozšíření XSLT. Při předání do <xref:System.Xml.Xsl.XslTransform.Transform%2A> metodu, tyto parametry a rozšíření objekty lze volat z šablony stylů.  
   
 > [!NOTE]
@@ -50,11 +50,11 @@ ms.locfileid: "45988085"
   
 #### <a name="to-use-the-xslt-parameter-the-user-needs-to-do-the-following"></a>Pokud chcete použít parametr XSLT, uživatel musí provést následující kroky:  
   
-1.  Vytvoření <xref:System.Xml.Xsl.XsltArgumentList> a přidejte objekt pomocí <xref:System.Xml.Xsl.XsltArgumentList.AddParam%2A>.  
+1. Vytvoření <xref:System.Xml.Xsl.XsltArgumentList> a přidejte objekt pomocí <xref:System.Xml.Xsl.XsltArgumentList.AddParam%2A>.  
   
-2.  Parametry volání z šablony stylů.  
+2. Parametry volání z šablony stylů.  
   
-3.  Předání <xref:System.Xml.Xsl.XsltArgumentList> k <xref:System.Xml.Xsl.XslTransform.Transform%2A> metody.  
+3. Předání <xref:System.Xml.Xsl.XsltArgumentList> k <xref:System.Xml.Xsl.XslTransform.Transform%2A> metody.  
   
 ### <a name="example"></a>Příklad  
  V následujícím příkladu <xref:System.Xml.Xsl.XsltArgumentList.AddParam%2A> metodu pro vytvoření parametr pro uložení data počítané slevy. Slevy se počítá na 20 dní od data objednávky.  
@@ -140,7 +140,7 @@ public class Sample
 ```  
   
 ### <a name="input"></a>Vstup  
- Order.XML  
+ order.xml  
   
 ```xml  
 <!--Represents a customer order-->  
@@ -191,11 +191,11 @@ public class Sample
   
 #### <a name="to-use-the-xslt-extension-object-the-user-needs-to-do-the-following"></a>Chcete-li použít objekt rozšíření XSLT, uživatel musí provést následující kroky:  
   
-1.  Vytvoření <xref:System.Xml.Xsl.XsltArgumentList> a přidejte objekt rozšíření pomocí <xref:System.Xml.Xsl.XsltArgumentList.AddExtensionObject%2A>.  
+1. Vytvoření <xref:System.Xml.Xsl.XsltArgumentList> a přidejte objekt rozšíření pomocí <xref:System.Xml.Xsl.XsltArgumentList.AddExtensionObject%2A>.  
   
-2.  Vyvolejte objekt rozšíření ze šablony stylů.  
+2. Vyvolejte objekt rozšíření ze šablony stylů.  
   
-3.  Předání <xref:System.Xml.Xsl.XsltArgumentList> k <xref:System.Xml.Xsl.XslTransform.Transform%2A> metody.  
+3. Předání <xref:System.Xml.Xsl.XsltArgumentList> k <xref:System.Xml.Xsl.XslTransform.Transform%2A> metody.  
   
 ### <a name="example"></a>Příklad  
  Následující příklad vypočítá obvod kruhu uveden jeho radius.  

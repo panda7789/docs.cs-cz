@@ -9,12 +9,12 @@ helpviewer_keywords:
 - ink [WPF], custom-rendering
 - classes [WPF], InkCanvas
 ms.assetid: 65c978a7-0ee0-454f-ac7f-b1bd2efecac5
-ms.openlocfilehash: fead6e28949726bef46fe2be46e976fb47c3e9a3
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: b41ded25bd4eb704c6f0d67c8da1c0e6643cac5b
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59125655"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59323717"
 ---
 # <a name="custom-rendering-ink"></a>Inkoust vlastního vykreslení
 <xref:System.Windows.Ink.Stroke.DrawingAttributes%2A> Vlastností tahu vám umožní určit vzhled tah, jako je například její velikost, barvu a tvar, ale může nastat situace, které chcete přizpůsobit vzhled nad rámec co <xref:System.Windows.Ink.Stroke.DrawingAttributes%2A> povolit. Můžete chtít přizpůsobit vzhled inkoustu vykreslování v vzhled vzduchová pistole, energetika Malování a mnoho dalších účinky. Windows Presentation Foundation (WPF), umožňuje vám vlastní vykreslení inkoustu pomocí implementace vlastní <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> a <xref:System.Windows.Ink.Stroke> objektu.  
@@ -37,11 +37,11 @@ ms.locfileid: "59125655"
   
  Existují tři třídy k implementaci při vykreslování dynamicky rukopisu.  
   
-1.  **DynamicRenderer**: Implementace, která je odvozena z třídy <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>. Tato třída je specializovaný <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> , který vykreslí tahu jako jeho vykreslení. <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> Nemá vykreslování v samostatném vlákně, tak ke shromáždění inkoustu i v případě, že je blokované vlákno uživatelského rozhraní (UI) aplikace se zobrazí pera surface. Další informace o modelu vláken naleznete v tématu [The Model vláken inkoustu](the-ink-threading-model.md). Přizpůsobení dynamicky vykreslování tah, přepsat <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer.OnDraw%2A> metody.  
+1. **DynamicRenderer**: Implementace, která je odvozena z třídy <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>. Tato třída je specializovaný <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> , který vykreslí tahu jako jeho vykreslení. <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> Nemá vykreslování v samostatném vlákně, tak ke shromáždění inkoustu i v případě, že je blokované vlákno uživatelského rozhraní (UI) aplikace se zobrazí pera surface. Další informace o modelu vláken naleznete v tématu [The Model vláken inkoustu](the-ink-threading-model.md). Přizpůsobení dynamicky vykreslování tah, přepsat <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer.OnDraw%2A> metody.  
   
-2.  **Protože byl zdvih**: Implementace, která je odvozena z třídy <xref:System.Windows.Ink.Stroke>. Tato třída je zodpovědný za statické vykreslování <xref:System.Windows.Input.StylusPoint> dat poté, co bude převeden do <xref:System.Windows.Ink.Stroke> objektu. Přepsat <xref:System.Windows.Ink.Stroke.DrawCore%2A> je konzistentní s dynamické vykreslování metody k zajištění tohoto statické vykreslování objektu stroke.  
+2. **Protože byl zdvih**: Implementace, která je odvozena z třídy <xref:System.Windows.Ink.Stroke>. Tato třída je zodpovědný za statické vykreslování <xref:System.Windows.Input.StylusPoint> dat poté, co bude převeden do <xref:System.Windows.Ink.Stroke> objektu. Přepsat <xref:System.Windows.Ink.Stroke.DrawCore%2A> je konzistentní s dynamické vykreslování metody k zajištění tohoto statické vykreslování objektu stroke.  
   
-3.  **InkCanvas:** Implementace, která je odvozena z třídy <xref:System.Windows.Controls.InkCanvas>. Přiřadit upravené <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> k <xref:System.Windows.Controls.InkCanvas.DynamicRenderer%2A> vlastnost. Přepsat <xref:System.Windows.Controls.InkCanvas.OnStrokeCollected%2A> metoda a přidejte vlastní tah na <xref:System.Windows.Controls.InkCanvas.Strokes%2A> vlastnost. Tím se zajistí, že je konzistentní vzhled čáry.  
+3. **InkCanvas:** Implementace, která je odvozena z třídy <xref:System.Windows.Controls.InkCanvas>. Přiřadit upravené <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> k <xref:System.Windows.Controls.InkCanvas.DynamicRenderer%2A> vlastnost. Přepsat <xref:System.Windows.Controls.InkCanvas.OnStrokeCollected%2A> metoda a přidejte vlastní tah na <xref:System.Windows.Controls.InkCanvas.Strokes%2A> vlastnost. Tím se zajistí, že je konzistentní vzhled čáry.  
   
 <a name="ImplementingADynamicRenderer"></a>   
 ## <a name="implementing-a-dynamic-renderer"></a>Implementace dynamických zobrazovací jednotky  

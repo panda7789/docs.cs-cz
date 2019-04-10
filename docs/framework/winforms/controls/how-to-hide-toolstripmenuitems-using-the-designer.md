@@ -6,12 +6,12 @@ helpviewer_keywords:
 - MenuStrip control [Windows Forms], hiding menu items in designer
 - menu items [Windows Forms], hiding
 ms.assetid: 8f1b057e-3d8a-4f11-88df-935f7b29a836
-ms.openlocfilehash: ddfbcbe78cdf8e5b0d126e82189589edef2be58a
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 31c597a0e2cbf41484f19c8d4179823e9fb929ba
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59085685"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59317672"
 ---
 # <a name="how-to-hide-toolstripmenuitems-using-the-designer"></a>Postupy: Skrytí ToolStripMenuItems pomocí Návrháře
 Skrytí položek nabídky je způsob, jak ovládací prvek uživatelského rozhraní (UI) aplikace a omezit uživatelských příkazů. Často můžete skrýt celou nabídku, když jsou všechny položky nabídky na něm není k dispozici. To představuje méně rozptýlení pro daného uživatele. Kromě toho můžete chtít skrýt i zakázat nabídky nebo položku nabídky, protože skrytí samostatně nebrání uživateli přístup k příkazu nabídky pomocí klávesové zkratky. Další informace o deaktivace položek nabídky, naleznete v tématu [jak: Zákaz ToolStripMenuItems pomocí návrháře](how-to-disable-toolstripmenuitems-using-the-designer.md).  
@@ -21,7 +21,7 @@ Skrytí položek nabídky je způsob, jak ovládací prvek uživatelského rozhr
   
 ### <a name="to-hide-a-top-level-menu-and-its-submenu-items"></a>Chcete-li skrýt nabídek nejvyšší úrovně a jeho podnabídky položek  
   
-1.  Vyberte položku nejvyšší úrovně nabídky a nastavte jeho <xref:System.Windows.Forms.ToolStripItem.Visible%2A> nebo <xref:System.Windows.Forms.ToolStripItem.Available%2A> vlastnost `false`.  
+1. Vyberte položku nejvyšší úrovně nabídky a nastavte jeho <xref:System.Windows.Forms.ToolStripItem.Visible%2A> nebo <xref:System.Windows.Forms.ToolStripItem.Available%2A> vlastnost `false`.  
   
      Když skryjete položky nabídek nejvyšší úrovně, všechny položky nabídky v rámci této nabídky jsou rovněž skryté. Pokud kliknete na jiném zařízení, než na <xref:System.Windows.Forms.MenuStrip> po nastavení <xref:System.Windows.Forms.ToolStripItem.Visible%2A> k `false`, celý nabídka nejvyšší úrovně a její podnabídku položky zmizí z formuláře, tedy zobrazí vliv za běhu akce. Aby se zobrazila položka skrytá nabídek nejvyšší úrovně v době návrhu, klikněte na <xref:System.Windows.Forms.MenuStrip> v **komponent**v **Osnova dokumentu**, nebo v horní části mřížku vlastností.  
   
@@ -30,7 +30,7 @@ Skrytí položek nabídky je způsob, jak ovládací prvek uživatelského rozhr
   
 ### <a name="to-hide-a-submenu-item"></a>Chcete-li skrýt položku podnabídky  
   
-1.  Vyberte položku dílčí nabídky a nastavte jeho <xref:System.Windows.Forms.ToolStripItem.Visible%2A> vlastnost `false`.  
+1. Vyberte položku dílčí nabídky a nastavte jeho <xref:System.Windows.Forms.ToolStripItem.Visible%2A> vlastnost `false`.  
   
      Při skrytí položky podnabídky zůstává viditelná ve formuláři v době návrhu tak, aby ji snadno vybrat pro další práci. Ve skutečnosti to bude skrytá za běhu.  
   

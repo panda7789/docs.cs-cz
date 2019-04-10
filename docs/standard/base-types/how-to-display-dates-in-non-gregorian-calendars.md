@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: ed324eff-4aff-4a76-b6c0-04e6c0d8f5a9
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 63af71f92af9c2f3a5986dcb73f44d0e53c00f58
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.openlocfilehash: 224e8e82b7e71d7efbfdf0ce26cc4bd783cce3c8
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44079458"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59313304"
 ---
 # <a name="how-to-display-dates-in-non-gregorian-calendars"></a>Postupy: Zobrazování dat v jiném než gregoriánském kalendáři
 <xref:System.DateTime> a <xref:System.DateTimeOffset> typy používají jako výchozí kalendář gregoriánský kalendář. To znamená, že volání hodnoty data a času `ToString` metoda zobrazí řetězcové vyjádření data a času v gregoriánském kalendáři, a to i v případě, že datum a čas byl vytvořen pomocí jiného kalendáře. To je znázorněno v následujícím příkladu, který používá dva různé způsoby vytváření hodnoty data a času s perský kalendář, ale stále zobrazuje tyto hodnoty data a času v gregoriánském kalendáři, při volání <xref:System.DateTime.ToString%2A> metody. Tento příklad zobrazuje dvě techniky běžně používaný, ale nesprávné pro zobrazení data v konkrétním kalendáři.  
@@ -30,26 +30,26 @@ ms.locfileid: "44079458"
   
 ### <a name="to-display-the-date-for-a-cultures-default-calendar"></a>Chcete-li zobrazit data pro výchozí kalendář jazykové verze  
   
-1.  Vytvoření instance objektu odvozené z kalendáře <xref:System.Globalization.Calendar> třídu, která představuje kalendář, který se má použít.  
+1. Vytvoření instance objektu odvozené z kalendáře <xref:System.Globalization.Calendar> třídu, která představuje kalendář, který se má použít.  
   
-2.  Vytvořit instanci <xref:System.Globalization.CultureInfo> objektu, který představuje jazykovou verzi, jejíž formátování se použije k zobrazení data.  
+2. Vytvořit instanci <xref:System.Globalization.CultureInfo> objektu, který představuje jazykovou verzi, jejíž formátování se použije k zobrazení data.  
   
-3.  Volání <xref:System.Array.Exists%2A?displayProperty=nameWithType> metodou ke zjištění, zda je objekt kalendář členem pole vrácené metodou <xref:System.Globalization.CultureInfo.OptionalCalendars%2A?displayProperty=nameWithType> vlastnost. To znamená, že kalendáře může sloužit jako výchozí kalendář pro <xref:System.Globalization.CultureInfo> objektu. Pokud není členem pole, postupujte podle pokynů v části "K zobrazení the data v libovolném kalendáři".  
+3. Volání <xref:System.Array.Exists%2A?displayProperty=nameWithType> metodou ke zjištění, zda je objekt kalendář členem pole vrácené metodou <xref:System.Globalization.CultureInfo.OptionalCalendars%2A?displayProperty=nameWithType> vlastnost. To znamená, že kalendáře může sloužit jako výchozí kalendář pro <xref:System.Globalization.CultureInfo> objektu. Pokud není členem pole, postupujte podle pokynů v části "K zobrazení the data v libovolném kalendáři".  
   
-4.  Přiřaďte objekt kalendář, který má <xref:System.Globalization.DateTimeFormatInfo.Calendar%2A> vlastnost <xref:System.Globalization.DateTimeFormatInfo> vrácený <xref:System.Globalization.CultureInfo.DateTimeFormat%2A?displayProperty=nameWithType> vlastnost.  
+4. Přiřaďte objekt kalendář, který má <xref:System.Globalization.DateTimeFormatInfo.Calendar%2A> vlastnost <xref:System.Globalization.DateTimeFormatInfo> vrácený <xref:System.Globalization.CultureInfo.DateTimeFormat%2A?displayProperty=nameWithType> vlastnost.  
   
     > [!NOTE]
     >  <xref:System.Globalization.CultureInfo> Třída má také <xref:System.Globalization.CultureInfo.Calendar%2A> vlastnost. Je ale jen pro čtení a konstantní. tak, aby odrážely nový výchozí kalendář přiřazená nezmění <xref:System.Globalization.DateTimeFormatInfo.Calendar%2A?displayProperty=nameWithType> vlastnost.  
   
-5.  Volání na buď <xref:System.DateTime.ToString%2A> nebo <xref:System.DateTime.ToString%2A> metoda a předat ji <xref:System.Globalization.CultureInfo> objekt, jehož výchozí kalendář byla upravena v předchozím kroku.  
+5. Volání na buď <xref:System.DateTime.ToString%2A> nebo <xref:System.DateTime.ToString%2A> metoda a předat ji <xref:System.Globalization.CultureInfo> objekt, jehož výchozí kalendář byla upravena v předchozím kroku.  
   
 ### <a name="to-display-the-date-in-any-calendar"></a>Zobrazí datum v libovolný kalendář  
   
-1.  Vytvoření instance objektu odvozené z kalendáře <xref:System.Globalization.Calendar> třídu, která představuje kalendář, který se má použít.  
+1. Vytvoření instance objektu odvozené z kalendáře <xref:System.Globalization.Calendar> třídu, která představuje kalendář, který se má použít.  
   
-2.  Určit, která data a času prvky by se měla objevit v řetězcovém vyjádření hodnoty data a času.  
+2. Určit, která data a času prvky by se měla objevit v řetězcovém vyjádření hodnoty data a času.  
   
-3.  Pro každý prvek datum a čas, který chcete zobrazit volání objektu kalendáře `Get`... Metoda. Jsou dostupné tyto metody:  
+3. Pro každý prvek datum a čas, který chcete zobrazit volání objektu kalendáře `Get`... Metoda. Jsou dostupné tyto metody:  
   
     -   <xref:System.Globalization.Calendar.GetYear%2A>, zobrazí se rok v příslušném kalendáři.  
   

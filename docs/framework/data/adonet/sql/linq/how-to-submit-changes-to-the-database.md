@@ -5,25 +5,25 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c7cba174-9d40-491d-b32c-f2d73b7e9eab
-ms.openlocfilehash: 572c4427ada06701c5982770ae476bd1c6c2b13a
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 222ce575d9e977cc8b68862385b4a1b147c6394a
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59082539"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59326382"
 ---
 # <a name="how-to-submit-changes-to-the-database"></a>Postupy: Odeslání změn do databáze
 Bez ohledu na to, kolik změny, které provedete do objektů dojde ke změně pouze do replik v paměti. Žádné změny provedené na skutečná data v databázi. Změny nejsou přenášeny do serveru, dokud explicitně volat <xref:System.Data.Linq.DataContext.SubmitChanges%2A> na <xref:System.Data.Linq.DataContext>.  
   
  Když provedete toto volání <xref:System.Data.Linq.DataContext> pokusí přeložit změny na ekvivalentní příkazy jazyka SQL. Přepsat tyto akce můžete použít vlastní logiku, ale pořadí odeslání je orchestrovaných službou z <xref:System.Data.Linq.DataContext> označované jako *změnit procesoru*. Posloupnost událostí je následující:  
   
-1.  Při volání <xref:System.Data.Linq.DataContext.SubmitChanges%2A>, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] prověřuje sadu známým objektům k určení, zda byly nové instance připojeny k nim. Pokud ano, tyto nové instance se přidají do sady sledovaných objektů.  
+1. Při volání <xref:System.Data.Linq.DataContext.SubmitChanges%2A>, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] prověřuje sadu známým objektům k určení, zda byly nové instance připojeny k nim. Pokud ano, tyto nové instance se přidají do sady sledovaných objektů.  
   
-2.  Všechny objekty, které mají čekající změny jsou uspořádány do sekvence objektů na základě závislostí mezi nimi. Objekty, jejichž změny závisí na jiné objekty jsou seřazeny po jejich závislosti.  
+2. Všechny objekty, které mají čekající změny jsou uspořádány do sekvence objektů na základě závislostí mezi nimi. Objekty, jejichž změny závisí na jiné objekty jsou seřazeny po jejich závislosti.  
   
-3.  Bezprostředně před vlastní změny jsou přenášeny, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] spustí transakci zapouzdřit posloupnost jednotlivých příkazů.  
+3. Bezprostředně před vlastní změny jsou přenášeny, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] spustí transakci zapouzdřit posloupnost jednotlivých příkazů.  
   
-4.  Změny objektů se přeložený jeden po druhém SQL příkazy a odeslat na server.  
+4. Změny objektů se přeložený jeden po druhém SQL příkazy a odeslat na server.  
   
  V tuto chvíli způsobit, že proces odeslání přestane všech chyb zjištěných v databázi a je vyvolána výjimka. Všechny změny do databáze se vrátí zpět, jako by se nikdy došlo k žádné příspěvky. <xref:System.Data.Linq.DataContext> Má stále plnou záznam všech změn. Proto můžete zkusit opravit problém a volání <xref:System.Data.Linq.DataContext.SubmitChanges%2A> znovu, stejně jako v následujícím příkladu kódu.  
   

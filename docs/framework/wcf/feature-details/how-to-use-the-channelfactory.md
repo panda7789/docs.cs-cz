@@ -1,27 +1,27 @@
 ---
-title: 'Postupy: použití třídy ChannelFactory'
+title: 'Postupy: Používání ChannelFactory'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: d48f01b5-582b-4c8b-b547-8adddae7e371
-ms.openlocfilehash: b407c76c86c7b4c988da5280d76c91969c155841
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7d542a3dcae514e75194b49c23a8dec5dd7e8c3b
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33491355"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59298848"
 ---
-# <a name="how-to-use-the-channelfactory"></a>Postupy: použití třídy ChannelFactory
-Obecná <xref:System.ServiceModel.ChannelFactory%601> třída se používá v pokročilých scénářích, které vyžadují vytvoření kanálu, který slouží k vytvoření více než jeden kanál.  
+# <a name="how-to-use-the-channelfactory"></a>Postupy: Používání ChannelFactory
+Obecné <xref:System.ServiceModel.ChannelFactory%601> třída se používá v pokročilých scénářích, které vyžadují vytvoření objektu pro vytváření kanálů, které je možné vytvořit více než jeden kanál.  
   
-### <a name="to-create-and-use-the-channelfactory-class"></a>Vytváření a používání ChannelFactory – třída  
+### <a name="to-create-and-use-the-channelfactory-class"></a>Vytvoření a použití třídy ChannelFactory  
   
-1.  Sestavení a spuštění služby Windows Communication Foundation (WCF). Další informace najdete v tématu [návrh a implementace služeb](../../../../docs/framework/wcf/designing-and-implementing-services.md), [konfigurace služby](../../../../docs/framework/wcf/configuring-services.md), a [hostování služeb](../../../../docs/framework/wcf/hosting-services.md).  
+1. Sestavte a spusťte službu Windows Communication Foundation (WCF). Další informace najdete v tématu [návrh a implementace služeb](../../../../docs/framework/wcf/designing-and-implementing-services.md), [konfigurace služby](../../../../docs/framework/wcf/configuring-services.md), a [hostování služeb](../../../../docs/framework/wcf/hosting-services.md).  
   
-2.  Použití [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) ke generování kontrakt (rozhraní) pro klienta.  
+2. Použití [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) ke generování kontraktu (interface) pro klienta.  
   
-3.  V kódu klienta pomocí <xref:System.ServiceModel.ChannelFactory%601> třídy za účelem vytvoření více naslouchací procesy koncový bod.  
+3. V kódu klienta, použijte <xref:System.ServiceModel.ChannelFactory%601> třída pro vytvoření naslouchacích procesů více koncových bodů.  
   
 ## <a name="example"></a>Příklad  
  [!code-csharp[c_HowToUseChannelFactory#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howtousechannelfactory/cs/source.cs#1)]

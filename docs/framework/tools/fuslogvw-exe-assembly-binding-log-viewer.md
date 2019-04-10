@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: e32fa443-0778-4cc3-bf36-5c8ea297d296
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0219699a7369b3c1fe3fd92caa68a80eef235c2e
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: b74321ecc5c945aab74ad8678b23eb4a66046d39
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59203337"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59329515"
 ---
 # <a name="fuslogvwexe-assembly-binding-log-viewer"></a>Fuslogvw.exe (prohlížeč protokolu vazby sestavení)
 Nástroj Assembly Binding Log Viewer zobrazuje podrobnosti o vazbách sestavení. Tyto informace vám pomohou diagnostikovat, proč rozhraní .NET Framework nemůže najít sestavení v době běhu. Tyto chyby jsou obvykle výsledkem nasazení sestavení na nesprávné místo, neplatné nativní bitové kopie nebo neshody čísel verzí nebo jazykových verzí. Modul common language runtime nepodařilo najít sestavení obvykle zobrazí jako <xref:System.TypeLoadException> ve vaší aplikaci.  
@@ -36,18 +36,18 @@ fuslogvw
   
 ### <a name="to-change-the-log-location-view"></a>Změna umístění zobrazení protokolu  
   
-1.  Vyberte **výchozí** přepínač, chcete-li zobrazit chyby vazeb všech typů aplikací. Položky protokolu jsou ve výchozím nastavení uloženy na disku do mezipaměti rozhraní wininet v adresářích jednotlivých uživatelů.  
+1. Vyberte **výchozí** přepínač, chcete-li zobrazit chyby vazeb všech typů aplikací. Položky protokolu jsou ve výchozím nastavení uloženy na disku do mezipaměti rozhraní wininet v adresářích jednotlivých uživatelů.  
   
-2.  Vyberte **vlastní** přepínač li chyby vazeb zobrazit ve vlastních adresářích, který zadáte. Musíte zadat vlastní umístění, kam má modul runtime uložil protokoly nastavením umístění vlastní protokol **nastavení protokolu** dialogové okno pro platný název adresáře. Tento adresář by měl být prázdný a měl by obsahovat pouze soubory, které generuje modul runtime. Pokud obsahuje spustitelný soubor, který generuje chybu do protokolu, tato chyba nebude protokolována, protože se nástroj pokusí vytvořit adresář se stejným názvem jako tento spustitelný soubor. Kromě toho se nezdaří pokus o spuštění spustitelného souboru z umístění protokolu.  
+2. Vyberte **vlastní** přepínač li chyby vazeb zobrazit ve vlastních adresářích, který zadáte. Musíte zadat vlastní umístění, kam má modul runtime uložil protokoly nastavením umístění vlastní protokol **nastavení protokolu** dialogové okno pro platný název adresáře. Tento adresář by měl být prázdný a měl by obsahovat pouze soubory, které generuje modul runtime. Pokud obsahuje spustitelný soubor, který generuje chybu do protokolu, tato chyba nebude protokolována, protože se nástroj pokusí vytvořit adresář se stejným názvem jako tento spustitelný soubor. Kromě toho se nezdaří pokus o spuštění spustitelného souboru z umístění protokolu.  
   
     > [!NOTE]
     >  Výchozí umístění vazby je vhodnější než vlastní umístění vazby. Modul runtime ukládá výchozí umístění vazby do mezipaměti rozhraní wininet, a proto vazbu automaticky odstraní. Pokud určíte vlastní umístění vazby, zodpovídáte za její odstranění.  
   
 ### <a name="to-view-details-about-a-specific-failure"></a>Zobrazení podrobností o konkrétní chybě  
   
-1.  V prohlížeči vyberte název aplikace požadovaného záznamu.  
+1. V prohlížeči vyberte název aplikace požadovaného záznamu.  
   
-2.  Klikněte na tlačítko **zobrazit protokol** tlačítko. Záznam lze vybrat také dvojitým kliknutím.  
+2. Klikněte na tlačítko **zobrazit protokol** tlačítko. Záznam lze vybrat také dvojitým kliknutím.  
   
      Nástroj zobrazí následující podrobnosti o vybrané chybě vazby:  
   
@@ -99,9 +99,9 @@ LOG: All probing URLs attempted and failed.
   
 ### <a name="to-delete-a-single-entry-from-the-log"></a>Odstranění jednoho záznamu z protokolu  
   
-1.  Vyberte záznam v prohlížeči.  
+1. Vyberte záznam v prohlížeči.  
   
-2.  Klikněte na tlačítko **odstranit položku** tlačítko.  
+2. Klikněte na tlačítko **odstranit položku** tlačítko.  
   
 ### <a name="to-delete-all-entries-from-the-log"></a>Odstranění všech záznamů z protokolu  
   
@@ -210,9 +210,9 @@ Discarding native image.
   
 #### <a name="to-enable-a-custom-log-path"></a>Povolení vlastní cesty protokolu  
   
-1.  Vyberte **povolit vlastní cestu protokolu** přepínač.  
+1. Vyberte **povolit vlastní cestu protokolu** přepínač.  
   
-2.  Zadejte cestu do **vlastní cesta protokolu** textového pole.  
+2. Zadejte cestu do **vlastní cesta protokolu** textového pole.  
   
 > [!NOTE]
 >  [Assembly Binding Log Viewer (Fuslogvw.exe)](../../../docs/framework/tools/fuslogvw-exe-assembly-binding-log-viewer.md) používá mezipaměť aplikace Internet Explorer (IE) k uložení svého protokolu vazeb. Z důvodu občasného poškození mezipaměti aplikace Internet Explorer [Assembly Binding Log Viewer (Fuslogvw.exe)](../../../docs/framework/tools/fuslogvw-exe-assembly-binding-log-viewer.md) někdy přestane v okně zobrazení zobrazovat nové protokoly vazeb. V důsledku tohoto poškození infrastruktura vazeb rozhraní .NET (Fusion) nemůže do protokolu vazeb zapisovat nebo číst. (Při použití vlastní cesty protokolu k tomuto problému nedochází.)  Chcete-li opravit toto poškození a umožnit zobrazení protokolů vazeb, vymažte mezipaměť aplikace Internet Explorer (IE) odstraněním dočasných souborů internetu v dialogovém okně Možnosti Internetu.  
@@ -221,9 +221,9 @@ Discarding native image.
   
 #### <a name="to-enable-logging-for-apps-running-in-the-windows-app-container"></a>Povolení protokolování pro aplikace spuštěné v kontejneru pro aplikace systému Windows  
   
-1.  Povolte vlastní cestu protokolu, jak je popsáno v předchozí proceduře. Ve výchozím nastavení mají aplikace spuštěné v kontejneru pro aplikace systému Windows omezený přístup na pevný disk. Zadaný adresář bude mít přístup pro čtení a zápis pro všechny aplikace v kontejneru aplikace.  
+1. Povolte vlastní cestu protokolu, jak je popsáno v předchozí proceduře. Ve výchozím nastavení mají aplikace spuštěné v kontejneru pro aplikace systému Windows omezený přístup na pevný disk. Zadaný adresář bude mít přístup pro čtení a zápis pro všechny aplikace v kontejneru aplikace.  
   
-2.  Vyberte **povolit pohlcující protokolování** zaškrtávací políčko.  
+2. Vyberte **povolit pohlcující protokolování** zaškrtávací políčko.  
   
     > [!NOTE]
     >  Toto pole je povoleno pouze v systému Windows 8 nebo novějším.  

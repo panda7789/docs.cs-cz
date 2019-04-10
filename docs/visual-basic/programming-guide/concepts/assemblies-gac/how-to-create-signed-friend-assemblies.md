@@ -2,21 +2,21 @@
 title: 'Postupy: Vytváření podepsaných přátelských sestavení (Visual Basic)'
 ms.date: 03/14/2018
 ms.assetid: f2afd83d-b044-484b-a56d-56d0a8a40647
-ms.openlocfilehash: 28cbd0c538441978464033df896d69f80a8396a6
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 4ff32015647a565f7f68e944ae028deb7f738e28
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58836737"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59324666"
 ---
 # <a name="how-to-create-signed-friend-assemblies-visual-basic"></a>Postupy: Vytváření podepsaných přátelských sestavení (Visual Basic)
 Tento příklad ukazuje způsob použití sestavení typu friend se sestaveními, která mít silné názvy. Obě sestavení musí být silný název. Přestože obě sestavení v tomto příkladu pomocí stejných klíčů, můžete použít různé klíče pro dvě sestavení.  
   
 ### <a name="to-create-a-signed-assembly-and-a-friend-assembly"></a>Chcete-li vytvořit podepsané sestavení a sestavení typu friend  
   
-1.  Otevřete příkazový řádek.  
+1. Otevřete příkazový řádek.  
   
-2.  Použijte následující posloupnost příkazů s nástroj Strong Name keyfile generovat a zobrazit jeho veřejný klíč. Další informace najdete v tématu [Sn.exe (nástroj Strong Name)](../../../../framework/tools/sn-exe-strong-name-tool.md)).  
+2. Použijte následující posloupnost příkazů s nástroj Strong Name keyfile generovat a zobrazit jeho veřejný klíč. Další informace najdete v tématu [Sn.exe (nástroj Strong Name)](../../../../framework/tools/sn-exe-strong-name-tool.md)).  
   
     1.  Vygenerování klíče se silným názvem v tomto příkladu a uložit ho do souboru FriendAssemblies.snk:  
   
@@ -30,7 +30,7 @@ Tento příklad ukazuje způsob použití sestavení typu friend se sestaveními
   
          `sn -tp FriendAssemblies.publickey`  
   
-3.  Vytvořte soubor jazyka Visual Basic `friend_signed_A` , který obsahuje následující kód. Tento kód použije <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut pro deklaraci friend_signed_B jako sestavení typu friend.  
+3. Vytvořte soubor jazyka Visual Basic `friend_signed_A` , který obsahuje následující kód. Tento kód použije <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut pro deklaraci friend_signed_B jako sestavení typu friend.  
   
      Nástroj Strong Name vygeneruje nový veřejný klíč pokaždé, když ji spustí. Proto je potřeba nahradit veřejný klíč v následujícím kódu veřejný klíč, který jste právě vygenerovali, jak je znázorněno v následujícím příkladu.  
   
@@ -49,13 +49,13 @@ Tento příklad ukazuje způsob použití sestavení typu friend se sestaveními
     End Class  
     ```  
   
-4.  Kompilace a podepsání friend_signed_A pomocí následujícího příkazu.  
+4. Kompilace a podepsání friend_signed_A pomocí následujícího příkazu.  
   
     ```console  
     Vbc -target:library -keyfile:FriendAssemblies.snk friend_signed_A.vb  
     ```  
   
-5.  Vytvořte soubor jazyka Visual Basic, který je pojmenován `friend_signed_B` a obsahuje následující kód. Protože friend_signed_A určuje friend_signed_B jako sestavení typu friend, můžete přístup ke kódu v friend_signed_B `Friend` typy a členy z friend_signed_A. Soubor obsahuje následující kód.  
+5. Vytvořte soubor jazyka Visual Basic, který je pojmenován `friend_signed_B` a obsahuje následující kód. Protože friend_signed_A určuje friend_signed_B jako sestavení typu friend, můžete přístup ke kódu v friend_signed_B `Friend` typy a členy z friend_signed_A. Soubor obsahuje následující kód.  
   
     ```vb  
     ' friend_signed_B.vb  
@@ -69,7 +69,7 @@ Tento příklad ukazuje způsob použití sestavení typu friend se sestaveními
     End Module  
     ```  
   
-6.  Kompilace a podepsání friend_signed_B pomocí následujícího příkazu.  
+6. Kompilace a podepsání friend_signed_B pomocí následujícího příkazu.  
   
     ```console  
     vbc -keyfile:FriendAssemblies.snk -r:friend_signed_A.dll friend_signed_B.vb  
@@ -77,7 +77,7 @@ Tento příklad ukazuje způsob použití sestavení typu friend se sestaveními
   
      Název sestavení generovaný kompilátorem musí odpovídat názvu sestavení typu friend předán <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut. Sestavení můžete explicitně nastavit pomocí `-out` – možnost kompilátoru. Další informace najdete v tématu [-out (Visual Basic)](../../../../visual-basic/reference/command-line-compiler/out.md).  
   
-7.  Spusťte soubor friend_signed_B.exe.  
+7. Spusťte soubor friend_signed_B.exe.  
   
      Program zobrazí řetězec "Class1.Test".  
   
@@ -87,7 +87,7 @@ Tento příklad ukazuje způsob použití sestavení typu friend se sestaveními
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>
-- [Sestavení v .NET](../../../../standard/assembly/index.md)
+- [Sestavení v rozhraní .NET](../../../../standard/assembly/index.md)
 - [Přátelská sestavení](../../../../standard/assembly/friend-assemblies.md)
 - [Postupy: Vytváření nepodepsaných přátelských sestavení (Visual Basic)](../../../../visual-basic/programming-guide/concepts/assemblies-gac/how-to-create-unsigned-friend-assemblies.md)
 - [-keyfile](../../../../visual-basic/reference/command-line-compiler/keyfile.md)

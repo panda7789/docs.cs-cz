@@ -10,12 +10,12 @@ helpviewer_keywords:
 - controls [Windows Forms], aligning on forms
 - custom controls [Windows Forms], docking using code
 ms.assetid: 5994cb59-242b-4e75-bd0e-62879c34d702
-ms.openlocfilehash: 990fc996cfb5ecf4d9fde255ad026e3f46a24718
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: beb8881dbd2aedaefe66510c2942ce6c082b9729
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59185780"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59329970"
 ---
 # <a name="how-to-align-a-control-to-the-edges-of-forms"></a>Postupy: Zarovnávání ovládacího prvku k okrajům formulářů
 Můžete provést ovládacího prvku zarovná na hraničních zařízeních formulářů tím, že nastavíte <xref:System.Windows.Forms.Control.Dock%2A> vlastnost. Tato vlastnost určuje, kde se nachází váš ovládací prvek ve formuláři. <xref:System.Windows.Forms.Control.Dock%2A> Vlastnost lze nastavit následující hodnoty:  
@@ -33,7 +33,7 @@ Můžete provést ovládacího prvku zarovná na hraničních zařízeních form
   
 ### <a name="to-set-the-dock-property-for-your-control-at-run-time"></a>Chcete-li nastavit vlastnosti Dock ovládacího prvku za běhu  
   
-1.  Nastavte <xref:System.Windows.Forms.Control.Dock%2A> k odpovídající hodnotě v kódu.  
+1. Nastavte <xref:System.Windows.Forms.Control.Dock%2A> k odpovídající hodnotě v kódu.  
   
     ```vb  
     ' To set the Dock property internally.  

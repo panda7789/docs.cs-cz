@@ -2,12 +2,12 @@
 title: Sledování událostí ve službě Event Tracking ve Windows
 ms.date: 03/30/2017
 ms.assetid: f812659b-0943-45ff-9430-4defa733182b
-ms.openlocfilehash: 6384c74aa245db490d04fa95f37bd860dfb9bad9
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 129b82da068251d87bd9b0ca029b7e5a1c274936
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59166527"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59300642"
 ---
 # <a name="tracking-events-into-event-tracing-in-windows"></a>Sledování událostí ve službě Event Tracking ve Windows
 Tento příklad ukazuje, jak povolit sledování služby pracovních postupů Windows Workflow Foundation (WF) a generovat sledování událostí v trasování událostí pro Windows (ETW). Vygenerovat pracovní postup do ETW sledování záznamů, ukázka používá účastník sledování ETW (<xref:System.Activities.Tracking.EtwTrackingParticipant>).
@@ -39,33 +39,33 @@ Tento příklad ukazuje, jak povolit sledování služby pracovních postupů Wi
 
 #### <a name="to-use-this-sample"></a>Pro fungování této ukázky
 
-1.  Pomocí sady Visual Studio 2010, otevřete soubor řešení EtwTrackingParticipantSample.sln.
+1. Pomocí sady Visual Studio 2010, otevřete soubor řešení EtwTrackingParticipantSample.sln.
 
-2.  Abyste mohli sestavit řešení, stiskněte kombinaci kláves CTRL + SHIFT + B.
+2. Abyste mohli sestavit řešení, stiskněte kombinaci kláves CTRL + SHIFT + B.
 
-3.  Abyste mohli spustit řešení, stiskněte klávesu F5.
+3. Abyste mohli spustit řešení, stiskněte klávesu F5.
 
      Ve výchozím nastavení, služba naslouchá na portu 53797 (http://localhost:53797/SampleWorkflowService.xamlx).
 
-4.  Pomocí [!INCLUDE[fileExplorer](../../../../includes/fileexplorer-md.md)], otevřete testovací klient WCF.
+4. Pomocí [!INCLUDE[fileExplorer](../../../../includes/fileexplorer-md.md)], otevřete testovací klient WCF.
 
      Testovací klient WCF (WcfTestClient.exe) se nachází v \<instalační složky sady Visual Studio 2010 > \Common7\IDE\ složky.
 
      Výchozí instalační složku sady Visual Studio 2010 je C:\Program Files\Microsoft Visual Studio 10.0.
 
-5.  Testovací klient WCF, vyberte **přidat službu** z **souboru** nabídky.
+5. Testovací klient WCF, vyberte **přidat službu** z **souboru** nabídky.
 
      Přidáte adresu koncového bodu do vstupního pole. Výchozí hodnota je `http://localhost:53797/SampleWorkflowService.xamlx`.
 
-6.  Otevřete Prohlížeč událostí aplikace.
+6. Otevřete Prohlížeč událostí aplikace.
 
      Před vyvoláním služby, spusťte Prohlížeč událostí z **Start** nabídce vyberte možnost **spustit** a do pole zadejte `eventvwr.exe`. Ujistěte se, že v protokolu událostí naslouchá ke sledování vyzařováno služby pracovního postupu událostí.
 
-7.  Ve stromovém zobrazení v prohlížeči událostí, přejděte na **Prohlížeč událostí**, **protokoly aplikací a služeb**, a **Microsoft**. Klikněte pravým tlačítkem na **Microsoft** a vyberte **zobrazení** a potom **zobrazit protokoly ladění a analýzu** povolit analytické a ladit protokoly
+7. Ve stromovém zobrazení v prohlížeči událostí, přejděte na **Prohlížeč událostí**, **protokoly aplikací a služeb**, a **Microsoft**. Klikněte pravým tlačítkem na **Microsoft** a vyberte **zobrazení** a potom **zobrazit protokoly ladění a analýzu** povolit analytické a ladit protokoly
 
      Ujistěte se, **zobrazit protokoly ladění a analýzu** zaškrtnutá možnost.
 
-8.  Ve stromovém zobrazení v prohlížeči událostí, přejděte na **Prohlížeč událostí**, **protokoly aplikací a služeb**, **Microsoft**, **Windows**,  **Aplikace Server-**. Klikněte pravým tlačítkem na **analytické** a vyberte **povolit protokol** povolit **analytické** protokolu.
+8. Ve stromovém zobrazení v prohlížeči událostí, přejděte na **Prohlížeč událostí**, **protokoly aplikací a služeb**, **Microsoft**, **Windows**,  **Aplikace Server-**. Klikněte pravým tlačítkem na **analytické** a vyberte **povolit protokol** povolit **analytické** protokolu.
 
 9. Test pomocí testovacího klienta WCF na něj poklikejte `GetData`.
 
@@ -123,13 +123,13 @@ Tento příklad ukazuje, jak povolit sledování služby pracovních postupů Wi
 
 #### <a name="to-clean-up-optional"></a>Chcete-li vyčistit (volitelné)
 
-1.  Otevřete Prohlížeč událostí.
+1. Otevřete Prohlížeč událostí.
 
-2.  Přejděte do **Prohlížeč událostí**, **protokoly aplikací a služeb**, **Microsoft**, **Windows**, **aplikace Aplikace serveru**. Klikněte pravým tlačítkem na **analytické** a vyberte **zakázat protokol**.
+2. Přejděte do **Prohlížeč událostí**, **protokoly aplikací a služeb**, **Microsoft**, **Windows**, **aplikace Aplikace serveru**. Klikněte pravým tlačítkem na **analytické** a vyberte **zakázat protokol**.
 
-3.  Přejděte do **Prohlížeč událostí**, **protokoly aplikací a služeb**, **Microsoft**, **Windows**, **aplikace Aplikace serveru**. Klikněte pravým tlačítkem na **analytické** a vyberte **vymazat protokol**.
+3. Přejděte do **Prohlížeč událostí**, **protokoly aplikací a služeb**, **Microsoft**, **Windows**, **aplikace Aplikace serveru**. Klikněte pravým tlačítkem na **analytické** a vyberte **vymazat protokol**.
 
-4.  Zvolte **vymazat** možnost pro vymazání událostí.
+4. Zvolte **vymazat** možnost pro vymazání událostí.
 
 ## <a name="known-issue"></a>Známý problém
 

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - key frames [WPF], about key-frame animations
 - multiple animation target values [WPF]
 ms.assetid: 10028f97-bb63-41fc-b8ad-663dac7ea203
-ms.openlocfilehash: caad7d5694139729ebe89e686ea70a981a0a94d2
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: eda91ab6d81150749dc542139949fb92684c0fe1
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59191583"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59316736"
 ---
 # <a name="key-frame-animations-overview"></a>Přehled animací klíčových snímků
 Toto téma vás seznámí s animací klíčových snímků. Animace klíčových snímků vám umožní pomocí více než dva cílových hodnot animace a řídit metodu interpolace animace společnosti.  
@@ -259,9 +259,9 @@ Klíče křivky s ovládacím prvkem body (0,25; 0,5) a (0,75, 1.0)
   
  Následující seznam popisuje postup, kterým jsou klíče časy pro klíčové snímky animace klíčových snímků.  
   
-1.  Vyřešit <xref:System.TimeSpan> <xref:System.Windows.Media.Animation.KeyTime> hodnoty.  
+1. Vyřešit <xref:System.TimeSpan> <xref:System.Windows.Media.Animation.KeyTime> hodnoty.  
   
-2.  Určit, animace *celkový čas interpolace*, celkový čas potřebný animace klíčových snímků dokončete dopředné iterace.  
+2. Určit, animace *celkový čas interpolace*, celkový čas potřebný animace klíčových snímků dokončete dopředné iterace.  
   
     1.  Pokud se animace <xref:System.Windows.Media.Animation.Timeline.Duration%2A> není <xref:System.Windows.Duration.Automatic%2A> nebo <xref:System.Windows.Duration.Forever%2A>, interpolace celkový čas je hodnota animace <xref:System.Windows.Media.Animation.Timeline.Duration%2A> vlastnost.  
   
@@ -269,19 +269,19 @@ Klíče křivky s ovládacím prvkem body (0,25; 0,5) a (0,75, 1.0)
   
     3.  V opačném případě interpolace celkový čas je 1 sekunda.  
   
-3.  Celkový počet interpolace časovou hodnotu použijte k vyřešení <xref:System.Windows.Media.Animation.KeyTimeType.Percent> <xref:System.Windows.Media.Animation.KeyTime> hodnoty.  
+3. Celkový počet interpolace časovou hodnotu použijte k vyřešení <xref:System.Windows.Media.Animation.KeyTimeType.Percent> <xref:System.Windows.Media.Animation.KeyTime> hodnoty.  
   
-4.  Vyřešit poslední klíčový snímek, je-li se už vyřešené v předchozích krocích. Pokud <xref:System.Windows.Media.Animation.KeyTime> posledního klíčového snímku je <xref:System.Windows.Media.Animation.KeyTime.Uniform%2A> nebo <xref:System.Windows.Media.Animation.KeyTime.Paced%2A>, jeho vyřešení čas bude rovnat interpolace celkový čas.  
+4. Vyřešit poslední klíčový snímek, je-li se už vyřešené v předchozích krocích. Pokud <xref:System.Windows.Media.Animation.KeyTime> posledního klíčového snímku je <xref:System.Windows.Media.Animation.KeyTime.Uniform%2A> nebo <xref:System.Windows.Media.Animation.KeyTime.Paced%2A>, jeho vyřešení čas bude rovnat interpolace celkový čas.  
   
      Pokud <xref:System.Windows.Media.Animation.KeyTime> první klíčové rámečku je <xref:System.Windows.Media.Animation.KeyTime.Paced%2A> a tuto animaci má více než pro klíčové snímky vyřešit jeho <xref:System.Windows.Media.Animation.KeyTime> hodnotu nula, pokud existuje pouze jeden klíčový snímek a jeho <xref:System.Windows.Media.Animation.KeyTime> hodnotu <xref:System.Windows.Media.Animation.KeyTime.Paced%2A>, je přeložen na celkový počet čas umožňuje stručně popsat, jak je popsáno v předchozím kroku.  
   
-5.  Vyřešit zbývající <xref:System.Windows.Media.Animation.KeyTime.Uniform%2A> <xref:System.Windows.Media.Animation.KeyTime> hodnoty:, každý získá stejný podíl času dostupnosti.  Během tohoto procesu nevyřešené <xref:System.Windows.Media.Animation.KeyTime.Paced%2A> <xref:System.Windows.Media.Animation.KeyTime> hodnoty jsou dočasně považovány za <xref:System.Windows.Media.Animation.KeyTime.Uniform%2A> <xref:System.Windows.Media.Animation.KeyTime> hodnoty a získat dočasný přeložit čas.  
+5. Vyřešit zbývající <xref:System.Windows.Media.Animation.KeyTime.Uniform%2A> <xref:System.Windows.Media.Animation.KeyTime> hodnoty:, každý získá stejný podíl času dostupnosti.  Během tohoto procesu nevyřešené <xref:System.Windows.Media.Animation.KeyTime.Paced%2A> <xref:System.Windows.Media.Animation.KeyTime> hodnoty jsou dočasně považovány za <xref:System.Windows.Media.Animation.KeyTime.Uniform%2A> <xref:System.Windows.Media.Animation.KeyTime> hodnoty a získat dočasný přeložit čas.  
   
-6.  Vyřešit <xref:System.Windows.Media.Animation.KeyTime> hodnoty použitím klíčových snímků s použitím klíčových snímků nejbližší je deklarovaná, které byly vyřešeny nespecifikované klíče časy <xref:System.Windows.Media.Animation.KeyTime> hodnoty.  
+6. Vyřešit <xref:System.Windows.Media.Animation.KeyTime> hodnoty použitím klíčových snímků s použitím klíčových snímků nejbližší je deklarovaná, které byly vyřešeny nespecifikované klíče časy <xref:System.Windows.Media.Animation.KeyTime> hodnoty.  
   
-7.  Vyřešit zbývající <xref:System.Windows.Media.Animation.KeyTime.Paced%2A> <xref:System.Windows.Media.Animation.KeyTime> hodnoty. <xref:System.Windows.Media.Animation.KeyTime.Paced%2A> <xref:System.Windows.Media.Animation.KeyTime> použít <xref:System.Windows.Media.Animation.KeyTime> hodnoty sousedních klíčové snímky k určení doby jejich vyřešení.  Cílem je zajistit, aby rychlosti animace konstantní přeložit době klíčový snímek.  
+7. Vyřešit zbývající <xref:System.Windows.Media.Animation.KeyTime.Paced%2A> <xref:System.Windows.Media.Animation.KeyTime> hodnoty. <xref:System.Windows.Media.Animation.KeyTime.Paced%2A> <xref:System.Windows.Media.Animation.KeyTime> použít <xref:System.Windows.Media.Animation.KeyTime> hodnoty sousedních klíčové snímky k určení doby jejich vyřešení.  Cílem je zajistit, aby rychlosti animace konstantní přeložit době klíčový snímek.  
   
-8.  Řazení klíčových snímků v pořadí doby vyřešení (primární klíč) a pořadí deklarace (sekundární klíč), to znamená, použijte stabilní řazení podle přeložit klíčový snímek <xref:System.Windows.Media.Animation.KeyTime> hodnoty.  
+8. Řazení klíčových snímků v pořadí doby vyřešení (primární klíč) a pořadí deklarace (sekundární klíč), to znamená, použijte stabilní řazení podle přeložit klíčový snímek <xref:System.Windows.Media.Animation.KeyTime> hodnoty.  
   
 ## <a name="see-also"></a>Viz také:
 

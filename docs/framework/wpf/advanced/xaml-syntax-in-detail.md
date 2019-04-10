@@ -29,12 +29,12 @@ helpviewer_keywords:
 - attribute syntax [XAML]
 - XAML [WPF], property element syntax
 ms.assetid: 67cce290-ca26-4c41-a797-b68aabc45479
-ms.openlocfilehash: 98ca530da28591fec23a5036b421d02b393e83b5
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: bf4118c6e811f409715b7b6684851b8b3e8bbb25
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59149302"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59298887"
 ---
 # <a name="xaml-syntax-in-detail"></a>Podrobná syntaxe XAML
 Toto téma definuje podmínky, které se používají k popisu prvky syntaxe XAML. Tyto podmínky se často používají v celé zbývající části této dokumentace, i pro WPF dokumentaci, konkrétně a pro jiná rozhraní, které využívají XAML nebo o základních konceptech XAML povolená podpora jazyka XAML na úrovni oboru názvů System.Xaml. Toto téma rozšiřuje základní terminologii zavedené v tématu [přehled XAML (WPF)](xaml-overview-wpf.md).  
@@ -99,11 +99,11 @@ Toto téma definuje podmínky, které se používají k popisu prvky syntaxe XAM
   
  Hodnota atributu je vyplněna pomocí jedné z následujících akcí, pomocí tohoto pořadí zpracování:  
   
-1.  Pokud procesor XAML zaznamená složenou závorku nebo element objektu, který je odvozen z <xref:System.Windows.Markup.MarkupExtension>, pak rozšíření odkazovaného kódu je vyhodnocen jako první místo zpracování hodnotu jako řetězec a objekt vrácený rutinou rozšíření značek se používá jako hodnota. Objekt vrácený rutinou rozšíření značek v mnoha případech bude odkaz na existující objekt nebo výraz, který odloží vyhodnocení až do spuštění a není nově vytvořenou instanci objektu.  
+1. Pokud procesor XAML zaznamená složenou závorku nebo element objektu, který je odvozen z <xref:System.Windows.Markup.MarkupExtension>, pak rozšíření odkazovaného kódu je vyhodnocen jako první místo zpracování hodnotu jako řetězec a objekt vrácený rutinou rozšíření značek se používá jako hodnota. Objekt vrácený rutinou rozšíření značek v mnoha případech bude odkaz na existující objekt nebo výraz, který odloží vyhodnocení až do spuštění a není nově vytvořenou instanci objektu.  
   
-2.  Pokud je deklarována vlastnost s s atributy <xref:System.ComponentModel.TypeConverter>, nebo typ hodnoty této vlastnosti je deklarován pomocí s atributy <xref:System.ComponentModel.TypeConverter>řetězcovou hodnotu atributu se odešle službě konvertor typu jako vstup převodu a vrátí převaděč novou instanci objektu.  
+2. Pokud je deklarována vlastnost s s atributy <xref:System.ComponentModel.TypeConverter>, nebo typ hodnoty této vlastnosti je deklarován pomocí s atributy <xref:System.ComponentModel.TypeConverter>řetězcovou hodnotu atributu se odešle službě konvertor typu jako vstup převodu a vrátí převaděč novou instanci objektu.  
   
-3.  Pokud není žádný <xref:System.ComponentModel.TypeConverter>, dojde k pokusu o přímý převod typu vlastnosti. Tento poslední úroveň je přímý převod na hodnotu native analyzátor mezi primitivní typy jazyka XAML, nebo zkontrolovat názvy pojmenovaných konstant ve výčtu (Analyzátor potom má přístup k odpovídající hodnoty).  
+3. Pokud není žádný <xref:System.ComponentModel.TypeConverter>, dojde k pokusu o přímý převod typu vlastnosti. Tento poslední úroveň je přímý převod na hodnotu native analyzátor mezi primitivní typy jazyka XAML, nebo zkontrolovat názvy pojmenovaných konstant ve výčtu (Analyzátor potom má přístup k odpovídající hodnoty).  
   
 #### <a name="enumeration-attribute-values"></a>Výčet hodnot atributů  
  Výčty v XAML se zpracují vnitřně analyzátory XAML a členy výčtu by měl být zadané, určením řetězec název jedné z pojmenované konstanty výčtu.  

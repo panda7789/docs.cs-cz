@@ -9,12 +9,12 @@ helpviewer_keywords:
 - WithEvents keyword [Visual Basic], walkthroughs
 - event handlers [Visual Basic], walkthroughs
 ms.assetid: f145b3fc-5ae0-4509-a2aa-1ff6934706bd
-ms.openlocfilehash: 2a8b515f500884d743b7dcca41ffe8c1607375a9
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 2ae32f0ac31c504e86d5cf39ed6a36cc5523a4a0
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58840923"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59308559"
 ---
 # <a name="walkthrough-handling-events-visual-basic"></a>Návod: Zpracování událostí (Visual Basic)
 Toto je druhá dvou tématech, které ukazují, jak pracovat s událostmi. První téma [názorný postup: Deklarující a vyvolání události](../../../../visual-basic/programming-guide/language-features/events/walkthrough-declaring-and-raising-events.md), ukazuje, jak deklarace a vyvolávání událostí. Tato část používá formulář opravdu zavřít a třídy v tomto návodu k ukazují, jak zpracovávat události, když se provedou.  
@@ -23,7 +23,7 @@ Toto je druhá dvou tématech, které ukazují, jak pracovat s událostmi. Prvn�
   
 ### <a name="to-handle-the-percentdone-event-of-the-widget-class"></a>Zpracování události PercentDone třídy widgetu  
   
-1.  Umístěte následující kód v `Form1`:  
+1. Umístěte následující kód v `Form1`:  
   
      [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnWalkthroughDeclaringAndRaisingEvents/VB/Form1.vb#4)]  
   
@@ -38,20 +38,20 @@ Toto je druhá dvou tématech, které ukazují, jak pracovat s událostmi. Prvn�
   
 #### <a name="to-handle-an-event"></a>Zpracování události  
   
-1.  Vyberte `mWidget` z levé rozevíracího seznamu v **Editor kódu**.  
+1. Vyberte `mWidget` z levé rozevíracího seznamu v **Editor kódu**.  
   
-2.  Vyberte `PercentDone` událost z přímo rozevíracího seznamu. **Editor kódu** otevře `mWidget_PercentDone` proceduru události.  
+2. Vyberte `PercentDone` událost z přímo rozevíracího seznamu. **Editor kódu** otevře `mWidget_PercentDone` proceduru události.  
   
     > [!NOTE]
     >  **Editor kódu** je užitečné, ale nejsou vyžadovány, pro vkládání nové obslužné rutiny událostí. V tomto návodu je přímější stačí jen zkopírovat přímo do kódu obslužné rutiny událostí.  
   
-3.  Přidejte následující kód, který `mWidget_PercentDone` obslužné rutiny události:  
+3. Přidejte následující kód, který `mWidget_PercentDone` obslužné rutiny události:  
   
      [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnWalkthroughDeclaringAndRaisingEvents/VB/Form1.vb#5)]  
   
      Pokaždé, když `PercentDone` událost se vyvolá, zobrazí se postup události dokončení v procentech `Label` ovládacího prvku. `DoEvents` Metoda umožňuje tento popisek repaint a klikněte na možnost také umožňuje uživateli **zrušit** tlačítko.  
   
-4.  Přidejte následující kód `Button2_Click` obslužné rutiny události:  
+4. Přidejte následující kód `Button2_Click` obslužné rutiny události:  
   
      [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnWalkthroughDeclaringAndRaisingEvents/VB/Form1.vb#6)]  
   
@@ -64,11 +64,11 @@ Toto je druhá dvou tématech, které ukazují, jak pracovat s událostmi. Prvn�
   
 #### <a name="to-create-an-object-and-assign-a-reference-to-it"></a>K vytvoření objektu a přiřazení na ni odkaz  
   
-1.  Vyberte **(Form1 události)** z levé rozevíracího seznamu v **Editor kódu**.  
+1. Vyberte **(Form1 události)** z levé rozevíracího seznamu v **Editor kódu**.  
   
-2.  Vyberte `Load` událost z přímo rozevíracího seznamu. **Editor kódu** otevře `Form1_Load` proceduru události.  
+2. Vyberte `Load` událost z přímo rozevíracího seznamu. **Editor kódu** otevře `Form1_Load` proceduru události.  
   
-3.  Přidejte následující kód `Form1_Load` události postupu vytvořte `Widget`:  
+3. Přidejte následující kód `Form1_Load` události postupu vytvořte `Widget`:  
   
      [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnWalkthroughDeclaringAndRaisingEvents/VB/Form1.vb#7)]  
   
@@ -88,11 +88,11 @@ Toto je druhá dvou tématech, které ukazují, jak pracovat s událostmi. Prvn�
   
 #### <a name="to-run-the-program"></a>Chcete-li spustit program  
   
-1.  Stisknutím klávesy F5 projekt uvést do režimu běhu.  
+1. Stisknutím klávesy F5 projekt uvést do režimu běhu.  
   
-2.  Klikněte na tlačítko **spustit úlohu** tlačítko. Pokaždé, když `PercentDone` událost se vyvolá, popisek se aktualizuje s procento dokončení úkolu.  
+2. Klikněte na tlačítko **spustit úlohu** tlačítko. Pokaždé, když `PercentDone` událost se vyvolá, popisek se aktualizuje s procento dokončení úkolu.  
   
-3.  Klikněte na tlačítko **zrušit** tlačítko Zastavit úlohy. Všimněte si, že vzhled **zrušit** ihned po kliknutí nezmění tlačítko. `Click` Událostí nemůže dojít až `My.Application.DoEvents` příkaz umožňuje zpracování událostí.  
+3. Klikněte na tlačítko **zrušit** tlačítko Zastavit úlohy. Všimněte si, že vzhled **zrušit** ihned po kliknutí nezmění tlačítko. `Click` Událostí nemůže dojít až `My.Application.DoEvents` příkaz umožňuje zpracování událostí.  
   
     > [!NOTE]
     >  `My.Application.DoEvents` Metoda nezpracovává události stejným způsobem, stejně jako formulář. Například v tomto podrobném návodu, musíte kliknout na **zrušit** dvakrát na tlačítko. Povolit formulář pro zpracování událostí přímo, můžete použít multithreadingu. Další informace najdete v tématu [dělení na spravovaná vlákna](../../../../standard/threading/index.md).

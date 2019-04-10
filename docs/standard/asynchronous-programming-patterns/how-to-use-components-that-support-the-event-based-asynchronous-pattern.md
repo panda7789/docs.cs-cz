@@ -18,12 +18,12 @@ helpviewer_keywords:
 - threading [Windows Forms], asynchronous features
 - AsyncCompletedEventArgs class
 ms.assetid: 35e9549c-1568-4768-ad07-17cc6dff11e1
-ms.openlocfilehash: f7e7139aeebea4441f851f7ed28484ba293e9c3a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 9ac98b5c576c065f8944714c72b492539e0d2f05
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54543247"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59330880"
 ---
 # <a name="how-to-use-components-that-support-the-event-based-asynchronous-pattern"></a>Postupy: Použití komponent, které podporují asynchronní vzor založený na událostech
 Řada komponent poskytují možnost asynchronní provádění své práce. <xref:System.Media.SoundPlayer> a <xref:System.Windows.Forms.PictureBox> komponenty, například umožňuje načíst podle názvu dalo čekat a Image "v pozadí" i když hlavní podproces stále spuštěná bez přerušení.  
@@ -36,9 +36,9 @@ ms.locfileid: "54543247"
   
 ### <a name="to-enable-a-picturebox-control-to-asynchronously-load-an-image"></a>Aby ovládací prvek PictureBox asynchronně načíst image  
   
-1.  Vytvoření instance <xref:System.Windows.Forms.PictureBox> komponentu do formuláře.  
+1. Vytvoření instance <xref:System.Windows.Forms.PictureBox> komponentu do formuláře.  
   
-2.  Přiřadit obslužnou rutinu události pro <xref:System.Windows.Forms.PictureBox.LoadCompleted> událostí.  
+2. Přiřadit obslužnou rutinu události pro <xref:System.Windows.Forms.PictureBox.LoadCompleted> událostí.  
   
      Vyhledejte všechny chyby, které mohly nastat během asynchronní stahování. Toto je také ve kterém můžete zkontrolovat zrušení.  
   
@@ -48,7 +48,7 @@ ms.locfileid: "54543247"
      [!code-csharp[System.Windows.Forms.PictureBox.LoadAsync#5](../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.PictureBox.LoadAsync/CS/Form1.cs#5)]
      [!code-vb[System.Windows.Forms.PictureBox.LoadAsync#5](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.PictureBox.LoadAsync/VB/Form1.vb#5)]  
   
-3.  Přidat dvě tlačítka, volá `loadButton` a `cancelLoadButton`, do svého formuláře. Přidat <xref:System.Windows.Forms.Control.Click> obslužné rutiny událostí spuštění a zrušit stahování.  
+3. Přidat dvě tlačítka, volá `loadButton` a `cancelLoadButton`, do svého formuláře. Přidat <xref:System.Windows.Forms.Control.Click> obslužné rutiny událostí spuštění a zrušit stahování.  
   
      [!code-csharp[System.Windows.Forms.PictureBox.LoadAsync#3](../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.PictureBox.LoadAsync/CS/Form1.cs#3)]
      [!code-vb[System.Windows.Forms.PictureBox.LoadAsync#3](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.PictureBox.LoadAsync/VB/Form1.vb#3)]  
@@ -56,7 +56,7 @@ ms.locfileid: "54543247"
      [!code-csharp[System.Windows.Forms.PictureBox.LoadAsync#4](../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.PictureBox.LoadAsync/CS/Form1.cs#4)]
      [!code-vb[System.Windows.Forms.PictureBox.LoadAsync#4](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.PictureBox.LoadAsync/VB/Form1.vb#4)]  
   
-4.  Spusťte aplikaci.  
+4. Spusťte aplikaci.  
   
      Jak pokračuje stažení bitové kopie, volně přesouvat formuláře a minimalizovat ji nemaximalizujte.  
   

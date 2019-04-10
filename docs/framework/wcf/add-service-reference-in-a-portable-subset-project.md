@@ -2,12 +2,12 @@
 title: Přidání odkazu služby v přenosném dílčím projektu
 ms.date: 03/30/2017
 ms.assetid: 61ccfe0f-a34b-40ca-8f5e-725fa1b8095e
-ms.openlocfilehash: e1d65df46c0ed6d9d271727ad04a661c5e34a1ef
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 92ee180da531259b005b5782c180a139fd66847b
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59145428"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59316723"
 ---
 # <a name="add-service-reference-in-a-portable-subset-project"></a>Přidání odkazu služby v přenosném dílčím projektu
 Přenosném dílčím projekty povolit programátorům sestavení .NET udržovat stromu jednoho zdrojového kódu a sestavovací systém. současně podporuje více implementací rozhraní .NET (desktop, Silverlight, Windows Phone a XBOX). Projekty v přenosném dílčím odkazovat pouze na přenosné knihovny .NET, které jsou sestavení rozhraní .NET framework, který lze použít v jakékoli implementaci rozhraní .NET.  
@@ -15,21 +15,21 @@ Přenosném dílčím projekty povolit programátorům sestavení .NET udržovat
 ## <a name="add-service-reference-details"></a>Přidat odkaz na podrobnosti služby  
  Při přidání odkazu na službu v přenosném dílčím projektu následující omezení se vynucují:  
   
-1.  Pro <xref:System.Xml.Serialization.XmlSerializer>, jsou povoleny pouze literál kódování. Kódování SOAP k chybě při importu.  
+1. Pro <xref:System.Xml.Serialization.XmlSerializer>, jsou povoleny pouze literál kódování. Kódování SOAP k chybě při importu.  
   
-2.  Pro služby, které používají <xref:System.Runtime.Serialization.DataContractSerializer> scénáře, dat je k dispozici náhradní smlouvy k zajištění, že znovu používané typy pocházejí pouze z přenosném dílčím.  
+2. Pro služby, které používají <xref:System.Runtime.Serialization.DataContractSerializer> scénáře, dat je k dispozici náhradní smlouvy k zajištění, že znovu používané typy pocházejí pouze z přenosném dílčím.  
   
-3.  Koncové body, které jsou závislé na vazby není v přenosných knihovnách podporovány (všechny vazby s výjimkou <xref:System.ServiceModel.BasicHttpBinding>, <xref:System.ServiceModel.WSHttpBinding> bez tok transakcí, spolehlivé relace nebo kódování MTOM a ekvivalentní vlastních vazeb) jsou ignorovány.  
+3. Koncové body, které jsou závislé na vazby není v přenosných knihovnách podporovány (všechny vazby s výjimkou <xref:System.ServiceModel.BasicHttpBinding>, <xref:System.ServiceModel.WSHttpBinding> bez tok transakcí, spolehlivé relace nebo kódování MTOM a ekvivalentní vlastních vazeb) jsou ignorovány.  
   
-4.  Záhlaví zprávy budou odstraněny z všechny popisy zpráv ve všech operacích před importem.  
+4. Záhlaví zprávy budou odstraněny z všechny popisy zpráv ve všech operacích před importem.  
   
-5.  Atributy non-portable <xref:System.ComponentModel.DesignerCategoryAttribute>, <xref:System.SerializableAttribute>, a <xref:System.ServiceModel.TransactionFlowAttribute> se odeberou z kódu generovaného klienta proxy serveru.  
+5. Atributy non-portable <xref:System.ComponentModel.DesignerCategoryAttribute>, <xref:System.SerializableAttribute>, a <xref:System.ServiceModel.TransactionFlowAttribute> se odeberou z kódu generovaného klienta proxy serveru.  
   
-6.  Vlastnosti non přenosná třída ProtectionLevel, SessionMode, IsInitiating a IsTerminating se odeberou z <xref:System.ServiceModel.ServiceContractAttribute>, <xref:System.ServiceModel.OperationContractAttribute>, a <xref:System.ServiceModel.FaultContractAttribute>.  
+6. Vlastnosti non přenosná třída ProtectionLevel, SessionMode, IsInitiating a IsTerminating se odeberou z <xref:System.ServiceModel.ServiceContractAttribute>, <xref:System.ServiceModel.OperationContractAttribute>, a <xref:System.ServiceModel.FaultContractAttribute>.  
   
-7.  Všechny operace služby jsou generovány jako asynchronních operací v klientovi proxy.  
+7. Všechny operace služby jsou generovány jako asynchronních operací v klientovi proxy.  
   
-8.  Konstruktory generovaného klienta, které používají typy nepřenosné se odeberou.  
+8. Konstruktory generovaného klienta, které používají typy nepřenosné se odeberou.  
   
 9. A <xref:System.Net.CookieContainer> instance je vystaven na generovaného klienta.  
   

@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c3133d53-83ed-4a4d-af8b-82edcf3831db
-ms.openlocfilehash: c43935cd53d1b58ce695164e957b4b5376d52536
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: d55c85ae0af567c5af0fd421b612809eaf5bb789
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59209811"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59318426"
 ---
 # <a name="data-retrieval-and-cud-operations-in-n-tier-applications-linq-to-sql"></a>Operace načítání dat a vytvoření, aktualizace a odstranění v N-úrovňových aplikacích (LINQ to SQL)
 Při serializaci objektů entity jako je například Zákazníci a objednávky na klienta přes síť, tyto entity jsou odpojeny od jejich místní data. Datový kontext již sleduje jejich změny nebo jejich přidružení s jinými objekty. To není problém, tak dlouho, dokud klienti jsou jen ke čtení data. Také je poměrně jednoduchá, aby mohli klienti k přidání nových řádků do databáze. Nicméně pokud vaše aplikace vyžaduje, aby klienti mohli aktualizovat nebo odstranit data, pak je nutné připojit entity k nový kontext dat před voláním <xref:System.Data.Linq.DataContext.SubmitChanges%2A?displayProperty=nameWithType>. Navíc pokud použijete kontrolu optimistického řízení souběžnosti s původní hodnoty, pak musíte také poskytnout databázi původní entitu a entitu jako upravená. `Attach` Metody jsou k dispozici umožňuje entity přejde do nového kontextu dat byla odpojena.  
@@ -394,11 +394,11 @@ public void UpdateProductInfo(Product newProd, Product originalProd)
 ### <a name="state"></a>Stav  
  Po entity je přiřazena objektu <xref:System.Data.Linq.DataContext> instance, objekt je považován za v `PossiblyModified` stavu. Existují tři způsoby, jak vynutit připojeného objektu považovat `Modified`.  
   
-1.  Připojit jako nezměněný a přímo upravit pole.  
+1. Připojit jako nezměněný a přímo upravit pole.  
   
-2.  Připojí se <xref:System.Data.Linq.Table%601.Attach%2A> přetížení přebírající aktuální a původní objekt instance. To poskytuje modul sledování změny pomocí staré a nové hodnoty tak, že bude automaticky znát, pole, která jste změnili.  
+2. Připojí se <xref:System.Data.Linq.Table%601.Attach%2A> přetížení přebírající aktuální a původní objekt instance. To poskytuje modul sledování změny pomocí staré a nové hodnoty tak, že bude automaticky znát, pole, která jste změnili.  
   
-3.  Připojí se <xref:System.Data.Linq.Table%601.Attach%2A> přetížení přebírající druhý parametr logické hodnoty (nastavenou na hodnotu true). Se tak dozví, modul sledování změny, které byste měli zvážit objektu změnit, aniž by bylo nutné zadat všechny původní hodnoty. V takovém případě musí mít objekt pole verze/časové razítko.  
+3. Připojí se <xref:System.Data.Linq.Table%601.Attach%2A> přetížení přebírající druhý parametr logické hodnoty (nastavenou na hodnotu true). Se tak dozví, modul sledování změny, které byste měli zvážit objektu změnit, aniž by bylo nutné zadat všechny původní hodnoty. V takovém případě musí mít objekt pole verze/časové razítko.  
   
  Další informace najdete v tématu [stavy objektů a sledování změn](../../../../../../docs/framework/data/adonet/sql/linq/object-states-and-change-tracking.md).  
   

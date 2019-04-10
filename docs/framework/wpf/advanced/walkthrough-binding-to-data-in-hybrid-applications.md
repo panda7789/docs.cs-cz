@@ -8,12 +8,12 @@ helpviewer_keywords:
 - hybrid applications [WPF interoperability]
 - data binding [WPF interoperability]
 ms.assetid: 18997e71-745a-4425-9c69-2cbce1d8669e
-ms.openlocfilehash: d497dfd5580f1d2741e0edafa86e9dd39ec374ec
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: f6fd1f2f5d0a729ee5610b81d4bfdca052a6e01e
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59191988"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59300863"
 ---
 # <a name="walkthrough-binding-to-data-in-hybrid-applications"></a>Návod: Připojení k datům v hybridních aplikacích
 Vytvoření vazby zdroje dat k ovládacímu prvku je zásadní pro zároveň uživatelům poskytují přístup k podkladová data, ať používáte [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] nebo [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Tento návod ukazuje, jak můžete datové vazby v hybridních aplikacích, které zahrnují oba [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ovládací prvky.  
@@ -49,23 +49,23 @@ Vytvoření vazby zdroje dat k ovládacímu prvku je zásadní pro zároveň už
   
 #### <a name="to-create-and-set-up-the-project"></a>K vytvoření a nastavení projektu  
   
-1.  Vytvoření projektu aplikace WPF s názvem `WPFWithWFAndDatabinding`.  
+1. Vytvoření projektu aplikace WPF s názvem `WPFWithWFAndDatabinding`.  
   
-2.  V Průzkumníku řešení přidejte odkazy na následující sestavení.  
+2. V Průzkumníku řešení přidejte odkazy na následující sestavení.  
   
     -   WindowsFormsIntegration  
   
     -   System.Windows.Forms  
   
-3.  Otevřete soubor MainWindow.xaml v [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)].  
+3. Otevřete soubor MainWindow.xaml v [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)].  
   
-4.  V <xref:System.Windows.Window> prvku, přidejte následující [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] mapování oborů názvů.  
+4. V <xref:System.Windows.Window> prvku, přidejte následující [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] mapování oborů názvů.  
   
     ```xaml  
     xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"  
     ```  
   
-5.  Pojmenujte výchozí <xref:System.Windows.Controls.Grid> element `mainGrid` přiřazením <xref:System.Windows.FrameworkElement.Name%2A> vlastnost.  
+5. Pojmenujte výchozí <xref:System.Windows.Controls.Grid> element `mainGrid` přiřazením <xref:System.Windows.FrameworkElement.Name%2A> vlastnost.  
   
      [!code-xaml[WPFWithWFAndDatabinding#8](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFWithWFAndDatabinding/CSharp/WPFWithWFAndDatabinding/Window1.xaml#8)]  
   
@@ -120,44 +120,44 @@ Vytvoření vazby zdroje dat k ovládacímu prvku je zásadní pro zároveň už
   
 #### <a name="to-add-the-data-source"></a>Přidání zdroje dat  
   
-1.  Z **Data** nabídce vyberte možnost **přidat nový zdroj dat**.  
+1. Z **Data** nabídce vyberte možnost **přidat nový zdroj dat**.  
   
-2.  V **Průvodce konfigurací zdroje dat**, vytvořit připojení k databázi Northwind pomocí datové sady. Další informace najdete v tématu [jak: Připojení k datům v databázi](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/fxk9yw1t(v=vs.120)).  
+2. V **Průvodce konfigurací zdroje dat**, vytvořit připojení k databázi Northwind pomocí datové sady. Další informace najdete v tématu [jak: Připojení k datům v databázi](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/fxk9yw1t(v=vs.120)).  
   
-3.  Po zobrazení výzvy **Průvodce konfigurací zdroje dat**, uložit připojovací řetězec jako `NorthwindConnectionString`.  
+3. Po zobrazení výzvy **Průvodce konfigurací zdroje dat**, uložit připojovací řetězec jako `NorthwindConnectionString`.  
   
-4.  Po zobrazení výzvy zvolte vaše databázové objekty, vyberte `Customers` a `Orders` tabulky a název generovaný sady dat `NorthwindDataSet`.  
+4. Po zobrazení výzvy zvolte vaše databázové objekty, vyberte `Customers` a `Orders` tabulky a název generovaný sady dat `NorthwindDataSet`.  
   
 ## <a name="binding-to-the-data-source"></a>Vytvoření vazby ke zdroji dat.  
  <xref:System.Windows.Forms.BindingSource?displayProperty=nameWithType> Součást poskytuje jednotné rozhraní pro zdroj dat aplikace. Vazby ke zdroji dat je implementováno v souboru kódu na pozadí.  
   
 #### <a name="to-bind-to-the-data-source"></a>K vytvoření vazby ke zdroji dat.  
   
-1.  Otevřete soubor kódu na pozadí, který se nazývá soubor MainWindow.xaml.vb nebo MainWindow.xaml.cs.  
+1. Otevřete soubor kódu na pozadí, který se nazývá soubor MainWindow.xaml.vb nebo MainWindow.xaml.cs.  
   
-2.  Zkopírujte následující kód do `MainWindow` definici třídy.  
+2. Zkopírujte následující kód do `MainWindow` definici třídy.  
   
      Tento kód deklaruje <xref:System.Windows.Forms.BindingSource> komponenty a přidružené pomocné třídy, které se připojují k databázi.  
   
      [!code-csharp[WPFWithWFAndDatabinding#11](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFWithWFAndDatabinding/CSharp/WPFWithWFAndDatabinding/Window1.xaml.cs#11)]
      [!code-vb[WPFWithWFAndDatabinding#11](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WPFWithWFAndDatabinding/VisualBasic/WPFWithWFAndDatabinding/Window1.xaml.vb#11)]
 
-3.  Zkopírujte následující kód do konstruktoru.
+3. Zkopírujte následující kód do konstruktoru.
 
      Tento kód vytvoří a inicializuje <xref:System.Windows.Forms.BindingSource> komponenty.
 
      [!code-csharp[WPFWithWFAndDatabinding#12](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFWithWFAndDatabinding/CSharp/WPFWithWFAndDatabinding/Window1.xaml.cs#12)]
      [!code-vb[WPFWithWFAndDatabinding#12](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WPFWithWFAndDatabinding/VisualBasic/WPFWithWFAndDatabinding/Window1.xaml.vb#12)]
 
-4.  Open MainWindow.xaml.
+4. Open MainWindow.xaml.
 
-5.  V zobrazení návrhu nebo v XAML zobrazení, vyberte <xref:System.Windows.Window> elementu.
+5. V zobrazení návrhu nebo v XAML zobrazení, vyberte <xref:System.Windows.Window> elementu.
 
-6.  V okně Vlastnosti klikněte na tlačítko **události** kartu.
+6. V okně Vlastnosti klikněte na tlačítko **události** kartu.
 
-7.  Dvakrát klikněte <xref:System.Windows.FrameworkElement.Loaded> událostí.
+7. Dvakrát klikněte <xref:System.Windows.FrameworkElement.Loaded> událostí.
 
-8.  Zkopírujte následující kód do <xref:System.Windows.FrameworkElement.Loaded> obslužné rutiny události.
+8. Zkopírujte následující kód do <xref:System.Windows.FrameworkElement.Loaded> obslužné rutiny události.
 
      Tento kód přiřadí <xref:System.Windows.Forms.BindingSource> komponenty jako kontext dat a naplní `Customers` a `Orders` adaptér objekty.
 

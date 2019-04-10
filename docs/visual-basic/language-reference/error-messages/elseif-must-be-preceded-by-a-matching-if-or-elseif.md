@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC30014
 ms.assetid: 5215585e-2efa-485a-9efe-9833a1cc83a0
-ms.openlocfilehash: fbb8ce974a618349bd4b5e7a2a25a165d91787a7
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 4832fb80cfbe42c7a1303e0de69f36784711c05a
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58832252"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59311055"
 ---
 # <a name="elseif-must-be-preceded-by-a-matching-if-or-elseif"></a>Výrazu '#If' nebo '#ElseIf' musí předcházet odpovídající výraz '#ElseIf'.
 `#ElseIf` je direktivy podmíněné kompilace. `#ElseIf` Klauzule musí předcházet párový příkaz `#If` nebo `#ElseIf` klauzuli.  
@@ -21,12 +21,12 @@ ms.locfileid: "58832252"
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1.  Zkontrolujte, že předchozí `#If` nebo `#ElseIf` nebyl byl oddělen od to `#ElseIf` použité bloku podmíněné kompilace nebo nesprávně umístěné `#End If`.  
+1. Zkontrolujte, že předchozí `#If` nebo `#ElseIf` nebyl byl oddělen od to `#ElseIf` použité bloku podmíněné kompilace nebo nesprávně umístěné `#End If`.  
   
-2.  Pokud `#ElseIf` předchází `#Else` směrnice, buď odeberte `#Else` nebo změňte ji na `#ElseIf`.  
+2. Pokud `#ElseIf` předchází `#Else` směrnice, buď odeberte `#Else` nebo změňte ji na `#ElseIf`.  
   
-3.  Pokud všechno ostatní je v pořadí, přidejte `#If` na začátku bloku podmíněné kompilace.  
+3. Pokud všechno ostatní je v pořadí, přidejte `#If` na začátku bloku podmíněné kompilace.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Direktivy #If...Then...#Else](../../../visual-basic/language-reference/directives/if-then-else-directives.md)
+- [#If...Then...#Else – direktivy](../../../visual-basic/language-reference/directives/if-then-else-directives.md)

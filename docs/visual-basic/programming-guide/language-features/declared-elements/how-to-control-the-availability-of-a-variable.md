@@ -11,12 +11,12 @@ helpviewer_keywords:
 - declared elements [Visual Basic], access level
 - Protected keyword [Visual Basic], accessing variables
 ms.assetid: eaf4f073-7922-43ce-ae1e-90ff376ae947
-ms.openlocfilehash: fb7c04ac6c24648dfb2a8cfa5e01bf97c6b0b3be
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: fb400b113e3f3305f5b724734b2bf9aa9425d03f
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58841690"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59311523"
 ---
 # <a name="how-to-control-the-availability-of-a-variable-visual-basic"></a>Postupy: Řízení dostupnosti proměnné (Visual Basic)
 Řízení dostupnosti proměnné tak, že zadáte jeho *úroveň přístupu*. Úroveň přístupu určuje, jaký kód má oprávnění ke čtení nebo zápisu do proměnné.  
@@ -31,25 +31,25 @@ ms.locfileid: "58841690"
   
 #### <a name="to-make-a-variable-accessible-only-from-within-its-module-class-or-structure"></a>Aby byla proměnná přístupný pouze uvnitř jeho modulu, třídy nebo struktury  
   
-1.  Místo [příkazu Dim](../../../../visual-basic/language-reference/statements/dim-statement.md) proměnné v modulu, třídy nebo struktury, ale mimo všechny procedury.  
+1. Místo [příkazu Dim](../../../../visual-basic/language-reference/statements/dim-statement.md) proměnné v modulu, třídy nebo struktury, ale mimo všechny procedury.  
   
-2.  Zahrnout [privátní](../../../../visual-basic/language-reference/modifiers/private.md) – klíčové slovo v `Dim` příkazu.  
+2. Zahrnout [privátní](../../../../visual-basic/language-reference/modifiers/private.md) – klíčové slovo v `Dim` příkazu.  
   
      Může číst nebo zapisovat do proměnné z kamkoli v modulu, třídy nebo struktury, ale ne z mimo něj.  
   
 #### <a name="to-make-a-variable-accessible-from-any-code-that-can-see-it"></a>Aby byla proměnná přístupný z jakéhokoli kódu, který je můžou zobrazit  
   
-1.  Členské proměnné, umístěte `Dim` příkaz pro proměnné v modulu, třídy nebo struktury, ale mimo všechny procedury.  
+1. Členské proměnné, umístěte `Dim` příkaz pro proměnné v modulu, třídy nebo struktury, ale mimo všechny procedury.  
   
-2.  Zahrnout [veřejné](../../../../visual-basic/language-reference/modifiers/public.md) – klíčové slovo v `Dim` příkazu.  
+2. Zahrnout [veřejné](../../../../visual-basic/language-reference/modifiers/public.md) – klíčové slovo v `Dim` příkazu.  
   
      Může číst nebo zapisovat do proměnné z veškerý kód, který spolupracuje s vaší sestavení.  
   
  -nebo-  
   
-1.  Pro místní proměnné, umístěte `Dim` příkaz pro proměnnou uvnitř procedury.  
+1. Pro místní proměnné, umístěte `Dim` příkaz pro proměnnou uvnitř procedury.  
   
-2.  Nejsou zahrnuté `Public` – klíčové slovo v `Dim` příkazu.  
+2. Nejsou zahrnuté `Public` – klíčové slovo v `Dim` příkazu.  
   
      Může číst nebo zapisovat do proměnné z kdekoli v rámci procesu, ale ne z mimo něj.  
   
@@ -58,17 +58,17 @@ ms.locfileid: "58841690"
   
 #### <a name="to-make-a-variable-accessible-only-from-within-its-class-and-any-derived-classes"></a>Aby byla proměnná přístupný pouze uvnitř své třídy a všechny odvozené třídy  
   
-1.  Místo `Dim` příkaz pro proměnnou uvnitř třídy, ale mimo všechny procedury.  
+1. Místo `Dim` příkaz pro proměnnou uvnitř třídy, ale mimo všechny procedury.  
   
-2.  Zahrnout [chráněné](../../../../visual-basic/language-reference/modifiers/protected.md) – klíčové slovo v `Dim` příkazu.  
+2. Zahrnout [chráněné](../../../../visual-basic/language-reference/modifiers/protected.md) – klíčové slovo v `Dim` příkazu.  
   
      Může číst nebo zapisovat do proměnné z kdekoli v rámci třídy, stejně jako v rámci jakékoli třídy odvozené z něj, ale ne z mimo všechny třídy v řetězci odvození.  
   
 #### <a name="to-make-a-variable-accessible-only-from-within-the-same-assembly"></a>Aby byla proměnná přístupný pouze z v rámci stejného sestavení  
   
-1.  Místo `Dim` příkaz pro proměnné v modulu, třídy nebo struktury, ale mimo všechny procedury.  
+1. Místo `Dim` příkaz pro proměnné v modulu, třídy nebo struktury, ale mimo všechny procedury.  
   
-2.  Zahrnout [Friend](../../../../visual-basic/language-reference/modifiers/friend.md) – klíčové slovo v `Dim` příkazu.  
+2. Zahrnout [Friend](../../../../visual-basic/language-reference/modifiers/friend.md) – klíčové slovo v `Dim` příkazu.  
   
      Může číst nebo zapisovat do proměnné z kamkoli v modulu, třídy nebo struktury, stejně jako v žádném kódu ve stejném sestavení, ale ne z mimo sestavení.  
   
@@ -89,8 +89,8 @@ Private numberForMeOnly As Integer
 ## <a name="see-also"></a>Viz také:
 
 - [Úrovně přístupu v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)
-- [Příkaz Dim](../../../../visual-basic/language-reference/statements/dim-statement.md)
+- [Dim – příkaz](../../../../visual-basic/language-reference/statements/dim-statement.md)
 - [Public](../../../../visual-basic/language-reference/modifiers/public.md)
-- [Protected](../../../../visual-basic/language-reference/modifiers/protected.md)
+- [Chráněno](../../../../visual-basic/language-reference/modifiers/protected.md)
 - [Friend](../../../../visual-basic/language-reference/modifiers/friend.md)
-- [Private](../../../../visual-basic/language-reference/modifiers/private.md)
+- [Soukromé](../../../../visual-basic/language-reference/modifiers/private.md)

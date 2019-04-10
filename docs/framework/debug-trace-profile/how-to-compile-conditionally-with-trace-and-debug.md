@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 56d051c3-012c-42c1-9a58-7270edc624aa
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 76e442536e4c863031072adfb4d8716ca7a19aff
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: a010b2ee1de17741b2d0bdd6e7c50d5f602256ac
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59158642"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59298575"
 ---
 # <a name="how-to-compile-conditionally-with-trace-and-debug"></a>Postupy: Podmíněná kompilace pomocí atributu Trace a Debug
 Při ladění aplikace během vývoje, přejděte do okna výstup v sadě Visual Studio vaší trasování a ladění výstupu. Ale musíte zahrnout funkce sledování nasazených aplikací, zkompilovat instrumentované aplikace s využitím **trasování** direktivy kompilátoru povolena. To umožňuje trasování kódu se zkompiluje do verze vaší aplikace. Pokud nepovolíte **trasování** direktiv, všechna trasování kódu je ignorována během kompilace a není součástí spustitelný kód, který nasadíte.  
@@ -36,9 +36,9 @@ Při ladění aplikace během vývoje, přejděte do okna výstup v sadě Visual
   
 ### <a name="to-change-compile-settings-from-the-property-pages-dialog-box"></a>Chcete-li změnit nastavení kompilace z dialogového okna stránky vlastností  
   
-1.  Klikněte pravým tlačítkem na uzel projektu v **Průzkumníka řešení**.  
+1. Klikněte pravým tlačítkem na uzel projektu v **Průzkumníka řešení**.  
   
-2.  Zvolte **vlastnosti** z místní nabídky.  
+2. Zvolte **vlastnosti** z místní nabídky.  
   
     -   V jazyce Visual Basic, klikněte na tlačítko **kompilace** kartu v levém podokně na stránce vlastností a pak klikněte na tlačítko **Upřesnit možnosti kompilace** tlačítka pro zobrazení **pokročilé nastavení kompilátoru**dialogové okno. Zaškrtněte políčka pro nastavení kompilátoru, které chcete povolit. Zrušte zaškrtnutí políček u nastavení, které chcete zakázat.  
   
@@ -46,7 +46,7 @@ Při ladění aplikace během vývoje, přejděte do okna výstup v sadě Visual
   
 ### <a name="to-compile-instrumented-code-using-the-command-line"></a>Chcete-li zkompilovat instrumentované kódu pomocí příkazového řádku  
   
-1.  Nastavení přepínače podmíněné kompilátoru na příkazovém řádku. Kompilátor bude zahrnovat trasování nebo ladění kódu ve spustitelném souboru.  
+1. Nastavení přepínače podmíněné kompilátoru na příkazovém řádku. Kompilátor bude zahrnovat trasování nebo ladění kódu ve spustitelném souboru.  
   
      Například následující pokyn kompilátoru zadané na příkazovém řádku by zahrnout trasování kódu do zkompilovaného spustitelného souboru:  
   
@@ -71,7 +71,7 @@ Při ladění aplikace během vývoje, přejděte do okna výstup v sadě Visual
   
 ### <a name="to-perform-conditional-compilation-using-const-or-define"></a>K provedení podmíněné kompilace pomocí #CONST nebo #define  
   
-1.  Zadejte odpovídající příkaz pro svůj oblíbený programovací jazyk v horní části souboru se zdrojovým kódem.  
+1. Zadejte odpovídající příkaz pro svůj oblíbený programovací jazyk v horní části souboru se zdrojovým kódem.  
   
     |Jazyk|Příkaz|Výsledek|  
     |--------------|---------------|------------|  

@@ -4,12 +4,12 @@ ms.date: 10/10/2018
 ms.assetid: 721f10fa-3189-4124-a00d-56ddabd889b3
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 3c70382b0d74e830610d1cd7746fd14244b829a0
-ms.sourcegitcommit: 15ab532fd5e1f8073a4b678922d93b68b521bfa0
+ms.openlocfilehash: 6bf92e118d2ef02c0dc3a550c084e2a0a8e0e3d7
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58654559"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59330441"
 ---
 # <a name="the-net-framework-and-out-of-band-releases"></a>Rozhraní .NET Framework a nesvázaná vydání
 
@@ -23,26 +23,26 @@ Rozhraní .NET Framework se vyvíjí pro různé platformy, jako jsou Windows Ph
 ## <a name="how-oob-packages-are-distributed"></a>Distribuce balíčků OOB
 Verze OOB pro součásti jádra common language runtime (CLR) jsou poskytovány pomocí [NuGet](https://www.nuget.org/), což je Správce balíčků pro .NET. Technologie NuGet umožňuje procházet a přidávat knihovny do projektů rozhraní .NET Framework z Průzkumníku řešení v sadě Visual Studio. Správce balíčků NuGet je součástí všech edicí sady Visual Studio, počínaje verzí Visual Studio 2012. Chcete-li zobrazit, zda je nainstalována služba NuGet, vyhledejte **Správce balíčků NuGet** v sadě Visual Studio **nástroje** nabídky. Pokud není nainstalován:
 
-1.  Na řádku nabídek sady Visual Studio, zvolte **nástroje**, **rozšíření a aktualizace** (v sadě Visual Studio 2010 zvolte **Správce rozšíření**).
+1. Na řádku nabídek sady Visual Studio, zvolte **nástroje**, **rozšíření a aktualizace** (v sadě Visual Studio 2010 zvolte **Správce rozšíření**).
 
      **Rozšíření a aktualizace** zobrazí se dialogové okno.
 
-2.  Zvolte **Online**, **Správce balíčků NuGet**a klikněte na tlačítko **Stáhnout**.
+2. Zvolte **Online**, **Správce balíčků NuGet**a klikněte na tlačítko **Stáhnout**.
 
-3.  Po dokončení stahování restartujte aplikaci Visual Studio.
+3. Po dokončení stahování restartujte aplikaci Visual Studio.
 
  Podrobné pokyny k instalaci naleznete v tématu [instalace balíčků NuGet](/nuget/install-nuget-client-tools) na webu NuGet Docs. Další informace o systému NuGet najdete v tématu [dokumentace pro NuGet](/nuget).
 
 ## <a name="using-a-nuget-oob-package"></a>Použití balíčku NuGet OOB
  Po instalaci balíčku NuGet můžete procházet a přidávat odkazy na balíčky NuGet pomocí Průzkumníka řešení v sadě Visual Studio:
 
-1.  Otevřete místní nabídku pro váš projekt v sadě Visual Studio a klikněte na tlačítko **spravovat balíčky NuGet**. (Tato možnost je k dispozici také **projektu** nabídky.)
+1. Otevřete místní nabídku pro váš projekt v sadě Visual Studio a klikněte na tlačítko **spravovat balíčky NuGet**. (Tato možnost je k dispozici také **projektu** nabídky.)
 
-2.  V levém podokně vyberte **Online**.
+2. V levém podokně vyberte **Online**.
 
-3.  Pokud chcete použít předprodejní balíčky, v rozevíracím seznamu v prostředním podokně, vyberte **zahrnout předběžné verze** místo **pouze stabilní verze**.
+3. Pokud chcete použít předprodejní balíčky, v rozevíracím seznamu v prostředním podokně, vyberte **zahrnout předběžné verze** místo **pouze stabilní verze**.
 
-4.  V pravém podokně můžete použít **hledání** políčka k vyhledání balíčku, které chcete použít. Některé balíčky společnosti Microsoft jsou označeny logem rozhraní Microsoft .NET Framework a všechny identifikují společnost Microsoft jako vydavatele.
+4. V pravém podokně můžete použít **hledání** políčka k vyhledání balíčku, které chcete použít. Některé balíčky společnosti Microsoft jsou označeny logem rozhraní Microsoft .NET Framework a všechny identifikují společnost Microsoft jako vydavatele.
 
  ![Snímek obrazovky zobrazující Správce balíčků NuGet.](./media/the-net-framework-and-out-of-band-releases/nuget-package-manager-dialog.png)
 

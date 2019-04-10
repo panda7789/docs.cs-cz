@@ -16,19 +16,19 @@ helpviewer_keywords:
 ms.assetid: fb7baaab-4c0d-47ad-8fd3-4591cf834709
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 229d3efb6566605fb9f03ad2012793fe2e4cb17b
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: e33fc98f12c1b49d6fe2b1dc187615e2dc9b1768
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59155178"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59330074"
 ---
 # <a name="how-to-view-assembly-contents"></a>Postupy: Zobrazení obsahu sestavení
 Můžete použít [Ildasm.exe (IL Disassembler)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md) k zobrazení informací Microsoft intermediate language (MSIL) v souboru. Pokud je soubor zkoumají sestavení, můžete tyto informace zahrnout sestavení atributy, jakož i odkazy na jiných modulů a sestavení. Tyto informace mohou být užitečné při určování, zda je soubor sestavení nebo součástí sestavení, a zda soubor obsahuje odkazy na další moduly nebo sestavení.  
   
 ### <a name="to-display-the-contents-of-an-assembly-using-ildasmexe"></a>K zobrazení obsahu sestavení pomocí Ildasm.exe  
   
-1.  Typ **ildasm** \< *název sestavení*> na příkazovém řádku. Například následující příkaz zpětně přeloží `Hello.exe` sestavení.  
+1. Typ **ildasm** \< *název sestavení*> na příkazovém řádku. Například následující příkaz zpětně přeloží `Hello.exe` sestavení.  
   
     ```  
     ildasm Hello.exe  
@@ -36,7 +36,7 @@ Můžete použít [Ildasm.exe (IL Disassembler)](../../../docs/framework/tools/i
   
 ### <a name="to-view-assembly-manifest-information"></a>Chcete-li zobrazit informace o manifestu sestavení  
   
-1.  Dvakrát klikněte na ikonu MANIFESTU v okně MSIL Disassembler.  
+1. Dvakrát klikněte na ikonu MANIFESTU v okně MSIL Disassembler.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad začíná základní program "Hello, World". Po kompilaci programu, použijte Ildasm.exe pro převod ze strojového kódu Hello.exe sestavení a v manifestu sestavení.  

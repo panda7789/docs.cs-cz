@@ -12,52 +12,52 @@ helpviewer_keywords:
 - child controls [Windows Forms], anchoring and docking
 - TableLayoutPanel control [Windows Forms], child controls
 ms.assetid: 0d267c35-25f1-49b8-8976-c64e8f0ddc0b
-ms.openlocfilehash: dbd5d04bc1a4505fd2cb75913110199080ca6323
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: a84b00e93354a9aaff074a570cee931591816161
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59200256"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59329918"
 ---
 # <a name="how-to-anchor-and-dock-child-controls-in-a-tablelayoutpanel-control"></a>Postupy: Ukotvení podřízených ovládacích prvků v ovládacím prvku TableLayoutPanel
 <xref:System.Windows.Forms.TableLayoutPanel> Podporuje ovládací prvek <xref:System.Windows.Forms.Control.Anchor%2A> a <xref:System.Windows.Forms.Control.Dock%2A> vlastnosti v jeho podřízených ovládacích prvků.  
   
 ### <a name="to-align-a-child-control-in-a-tablelayoutpanel-cell"></a>Chcete-li zarovnat podřízeného ovládacího prvku v buňce kontejneru TableLayoutPanel  
   
-1.  Vytvoření <xref:System.Windows.Forms.TableLayoutPanel> ovládací prvek na formuláři.  
+1. Vytvoření <xref:System.Windows.Forms.TableLayoutPanel> ovládací prvek na formuláři.  
   
-2.  Nastavte hodnotu <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku <xref:System.Windows.Forms.TableLayoutPanel.ColumnCount%2A> a <xref:System.Windows.Forms.TableLayoutPanel.RowCount%2A> vlastností **1**.  
+2. Nastavte hodnotu <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku <xref:System.Windows.Forms.TableLayoutPanel.ColumnCount%2A> a <xref:System.Windows.Forms.TableLayoutPanel.RowCount%2A> vlastností **1**.  
   
-3.  Vytvoření <xref:System.Windows.Forms.Button> v ovládacím prvku <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku. <xref:System.Windows.Forms.Button> Zabírá levém horním rohu buňky.  
+3. Vytvoření <xref:System.Windows.Forms.Button> v ovládacím prvku <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku. <xref:System.Windows.Forms.Button> Zabírá levém horním rohu buňky.  
   
-4.  Změňte hodnotu <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Anchor%2A> vlastnost `Left`. <xref:System.Windows.Forms.Button> Ovládacího prvku přesune na bylo v souladu s levého ohraničení buňky.  
+4. Změňte hodnotu <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Anchor%2A> vlastnost `Left`. <xref:System.Windows.Forms.Button> Ovládacího prvku přesune na bylo v souladu s levého ohraničení buňky.  
   
     > [!NOTE]
     >  Toto chování se liší od chování další ovládací prvky kontejneru. V další ovládací prvky kontejneru podřízený ovládací prvek nepřesouvá při <xref:System.Windows.Forms.Control.Anchor%2A> je vlastnost nastavena a vzdálenost mezi ukotvené ovládacího prvku a hranice nadřazeného kontejneru je stanovena v době <xref:System.Windows.Forms.Control.Anchor%2A> je nastavena.  
   
-5.  Změňte hodnotu <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Anchor%2A> vlastnost `Top, Left`. <xref:System.Windows.Forms.Button> Ovládacího prvku přesune tak, aby obsadily levého horního rohu buňky.  
+5. Změňte hodnotu <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Anchor%2A> vlastnost `Top, Left`. <xref:System.Windows.Forms.Button> Ovládacího prvku přesune tak, aby obsadily levého horního rohu buňky.  
   
-6.  Opakováním kroku 5 s hodnotou `Top, Right` přesunout <xref:System.Windows.Forms.Button> ovládacího prvku na pravém horním rohu buňky. Opakování s hodnotami `Bottom, Left` a `Bottom, Right`.  
+6. Opakováním kroku 5 s hodnotou `Top, Right` přesunout <xref:System.Windows.Forms.Button> ovládacího prvku na pravém horním rohu buňky. Opakování s hodnotami `Bottom, Left` a `Bottom, Right`.  
   
 ### <a name="to-stretch-a-child-control-in-a-tablelayoutpanel-cell"></a>Roztáhnout podřízeného ovládacího prvku v buňce kontejneru TableLayoutPanel  
   
-1.  Změňte hodnotu <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Anchor%2A> vlastnost `Left, Right`. <xref:System.Windows.Forms.Button> Změně velikosti ovládacího prvku k roztahování v buňce.  
+1. Změňte hodnotu <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Anchor%2A> vlastnost `Left, Right`. <xref:System.Windows.Forms.Button> Změně velikosti ovládacího prvku k roztahování v buňce.  
   
     > [!NOTE]
     >  Toto chování se liší od chování další ovládací prvky kontejneru. V další ovládací prvky kontejneru podřízený ovládací prvek není při změně velikosti <xref:System.Windows.Forms.Control.Anchor%2A> je nastavena na `Left, Right` nebo `Top, Bottom`.  
   
-2.  Změňte hodnotu <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Anchor%2A> vlastnost `Top, Bottom`. <xref:System.Windows.Forms.Button> Změně velikosti ovládacího prvku k roztahování shora dolů buňce.  
+2. Změňte hodnotu <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Anchor%2A> vlastnost `Top, Bottom`. <xref:System.Windows.Forms.Button> Změně velikosti ovládacího prvku k roztahování shora dolů buňce.  
   
-3.  Změňte hodnotu <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Anchor%2A> vlastnost `Top, Bottom, Left, Right`. <xref:System.Windows.Forms.Button> Změně velikosti ovládacího prvku tak, aby vyplnil buňku.  
+3. Změňte hodnotu <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Anchor%2A> vlastnost `Top, Bottom, Left, Right`. <xref:System.Windows.Forms.Button> Změně velikosti ovládacího prvku tak, aby vyplnil buňku.  
   
-4.  Změňte hodnotu <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Anchor%2A> vlastnost `None`. <xref:System.Windows.Forms.Button> Změně velikosti nebo na střed v buňce ovládacího prvku.  
+4. Změňte hodnotu <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Anchor%2A> vlastnost `None`. <xref:System.Windows.Forms.Button> Změně velikosti nebo na střed v buňce ovládacího prvku.  
   
-5.  Změňte hodnotu <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Dock%2A> vlastnost <xref:System.Windows.Forms.DockStyle.Left>. <xref:System.Windows.Forms.Button> Ovládacího prvku přesune na bylo v souladu s levého ohraničení buňky. <xref:System.Windows.Forms.Button> Uchovává šířku ovládacího prvku, ale jeho výška svou velikost tak, aby vyplnil buňky svisle.  
+5. Změňte hodnotu <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Dock%2A> vlastnost <xref:System.Windows.Forms.DockStyle.Left>. <xref:System.Windows.Forms.Button> Ovládacího prvku přesune na bylo v souladu s levého ohraničení buňky. <xref:System.Windows.Forms.Button> Uchovává šířku ovládacího prvku, ale jeho výška svou velikost tak, aby vyplnil buňky svisle.  
   
     > [!NOTE]
     >  Toto je stejné chování, který se nachází v jiné ovládací prvky kontejneru.  
   
-6.  Změňte hodnotu <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Dock%2A> vlastnost <xref:System.Windows.Forms.DockStyle.Fill>. <xref:System.Windows.Forms.Button> Změně velikosti ovládacího prvku tak, aby vyplnil buňku.  
+6. Změňte hodnotu <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Dock%2A> vlastnost <xref:System.Windows.Forms.DockStyle.Fill>. <xref:System.Windows.Forms.Button> Změně velikosti ovládacího prvku tak, aby vyplnil buňku.  
   
 ## <a name="example"></a>Příklad  
  Následující obrázek znázorňuje pět tlačítek ukotvené pět samostatné <xref:System.Windows.Forms.TableLayoutPanel> buňky.  

@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - Visual Basic Application Model, extending
 ms.assetid: e91d3bed-4c27-40e3-871d-2be17467c72c
-ms.openlocfilehash: aceb63d3cb9af75fa4eb32ed5bca5d65825704e8
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 6ba3f29ad0ceef7f1ea9d102743df568a32c26c8
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58834709"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59320142"
 ---
 # <a name="extending-the-visual-basic-application-model"></a>Rozšíření aplikačního modelu jazyka Visual Basic
 Funkce můžete přidat do modelu aplikace tak, že přepíšete `Overridable` členy <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase> třídy. Tato technika umožňuje přizpůsobit chování aplikační model a přidávat volání vlastní metody aplikace po spuštění a ukončení.  
@@ -32,7 +32,7 @@ Funkce můžete přidat do modelu aplikace tak, že přepíšete `Overridable` �
   
  Pokud aplikace je běžné aplikace (více instancí aplikace), nebo první výskyt aplikace s jedinou instancí, <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Run%2A> metody `Overridable` metod v tomto pořadí:  
   
-1.  <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnInitialize%2A>. Ve výchozím nastavení, tato metoda nastaví vizuálních stylů, styly zobrazení textu a aktuální objekt zabezpečení pro hlavního vlákna aplikace (Pokud aplikace používá ověřování Windows) a volání `ShowSplashScreen` Pokud `/nosplash` ani `-nosplash` slouží jako argument příkazového řádku.  
+1. <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnInitialize%2A>. Ve výchozím nastavení, tato metoda nastaví vizuálních stylů, styly zobrazení textu a aktuální objekt zabezpečení pro hlavního vlákna aplikace (Pokud aplikace používá ověřování Windows) a volání `ShowSplashScreen` Pokud `/nosplash` ani `-nosplash` slouží jako argument příkazového řádku.  
   
      Sekvence spuštění aplikace se zruší, pokud tato funkce vrací `False`. To může být užitečné, pokud existují okolnosti, ve kterých není vhodné spouštět aplikace.  
   
@@ -46,11 +46,11 @@ Funkce můžete přidat do modelu aplikace tak, že přepíšete `Overridable` �
   
          Ve výchozím nastavení tato metoda nemá žádný účinek. Pokud vyberete úvodní obrazovka pro vaši aplikaci v jazyce Visual Basic **Návrháře projektu**, přepíše návrháře <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateSplashScreen%2A> metodu s metodou, která nastavuje <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.SplashScreen%2A> vlastnost do nové instance formuláře úvodní obrazovky .  
   
-2.  <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnStartup%2A>. Představuje rozšíření bod pro vyvolání `Startup` událostí. Sekvence spuštění aplikace se zastaví, pokud tato funkce vrací `False`.  
+2. <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnStartup%2A>. Představuje rozšíření bod pro vyvolání `Startup` událostí. Sekvence spuštění aplikace se zastaví, pokud tato funkce vrací `False`.  
   
      Ve výchozím nastavení, tato metoda vyvolá <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Startup> událostí. Pokud je obslužná rutina události nastaví <xref:System.ComponentModel.CancelEventArgs.Cancel> vlastnosti argumentu události `True`, metoda vrátí `False` zrušit spuštění aplikace.  
   
-3.  <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnRun%2A>. Poskytuje výchozí bod pro aplikace v hlavní aplikaci jste připravení začít spouštět po dokončení inicializace.  
+3. <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnRun%2A>. Poskytuje výchozí bod pro aplikace v hlavní aplikaci jste připravení začít spouštět po dokončení inicializace.  
   
      Ve výchozím nastavení, aby přešel do smyčky zpráv Windows Forms, tato metoda volá `OnCreateMainForm` (Chcete-li vytvořit hlavní formulář aplikace) a `HideSplashScreen` (pro zavření úvodní obrazovky) metody:  
   
@@ -62,15 +62,15 @@ Funkce můžete přidat do modelu aplikace tak, že přepíšete `Overridable` �
   
          Ve výchozím nastavení tato metoda se zavře úvodní obrazovka.  
   
-4.  <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnStartupNextInstance%2A>. Poskytuje způsob, jak přizpůsobit chování aplikace s jedinou instancí při spuštění jiná instance aplikace.  
+4. <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnStartupNextInstance%2A>. Poskytuje způsob, jak přizpůsobit chování aplikace s jedinou instancí při spuštění jiná instance aplikace.  
   
      Ve výchozím nastavení, tato metoda vyvolá <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.StartupNextInstance> událostí.  
   
-5.  <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnShutdown%2A>. Představuje rozšíření bod pro vyvolání `Shutdown` událostí. Tato metoda se nespustí, pokud dojde k neošetřené výjimce v hlavní aplikaci.  
+5. <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnShutdown%2A>. Představuje rozšíření bod pro vyvolání `Shutdown` událostí. Tato metoda se nespustí, pokud dojde k neošetřené výjimce v hlavní aplikaci.  
   
      Ve výchozím nastavení, tato metoda vyvolá <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Shutdown> událostí.  
   
-6.  <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnUnhandledException%2A>. Provede, pokud dojde k neošetřené výjimce v některém z výše uvedených metod.  
+6. <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnUnhandledException%2A>. Provede, pokud dojde k neošetřené výjimce v některém z výše uvedených metod.  
   
      Ve výchozím nastavení, tato metoda vyvolá <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UnhandledException> , dokud není připojen ladicí program a aplikace zpracovává události `UnhandledException` událostí.  
   
@@ -100,4 +100,4 @@ Funkce můžete přidat do modelu aplikace tak, že přepíšete `Overridable` �
 - <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.NetworkAvailabilityChanged>
 - <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.NetworkAvailabilityChanged>
 - [Přehled aplikačního modelu jazyka Visual Basic](../../../visual-basic/developing-apps/development-with-my/overview-of-the-visual-basic-application-model.md)
-- [Stránka Aplikace, Návrhář projektu (Visual Basic)](/visualstudio/ide/reference/application-page-project-designer-visual-basic)
+- [Stránka Aplikace, návrhář projektu (Visual Basic)](/visualstudio/ide/reference/application-page-project-designer-visual-basic)

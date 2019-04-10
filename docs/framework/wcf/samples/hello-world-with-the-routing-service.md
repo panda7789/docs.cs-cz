@@ -2,21 +2,21 @@
 title: Hello World se směrovací službou
 ms.date: 03/30/2017
 ms.assetid: 0f4b0d5b-6522-4ad5-9f3a-baa78316d7d1
-ms.openlocfilehash: b84d4dc17db5bb422ba86fbab9c25d3348be7488
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 37d2eaffa1ca5a4cce27c4950d00987828a61196
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59120156"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59329736"
 ---
 # <a name="hello-world-with-the-routing-service"></a>Hello World se směrovací službou
 Tato ukázka předvádí, směrovací služba Windows Communication Foundation (WCF). Směrovací služba je komponenta WCF, která umožňuje snadno do aplikace zahrnout směrovač založené na obsahu. Tato ukázka se přizpůsobí standardní kalkulačky Ukázky WCF na komunikaci pomocí služby směrování. V této ukázce je Kalkulačka klient nakonfigurovaný pro odesílání zpráv do koncového bodu určeného směrovače. Směrovací služba je nakonfigurována tak, aby přijímal všechny zprávy odeslané do ní a předávají do koncového bodu, který odpovídá službu kalkulačky. Proto jsou zpráv odeslaných z klienta přijatých směrovač a přesměrovala do aktuální Kalkulačka služby. Zprávy ze služby Kalkulačka odesílají zpět do směrovač, který je zase předá zpět do klienta kalkulačky.
 
 ### <a name="to-use-this-sample"></a>Pro fungování této ukázky
 
-1.  Using Visual Studio 2012, open HelloRoutingService.sln.
+1. Using Visual Studio 2012, open HelloRoutingService.sln.
 
-2.  Stiskněte klávesu F5 nebo CTRL + SHIFT + B.
+2. Stiskněte klávesu F5 nebo CTRL + SHIFT + B.
 
     > [!NOTE]
     >  Pokud stisknete klávesu F5, spustí se automaticky Kalkulačka klienta. Pokud stisknete CTRL + SHIFT + B (sestavení), je nutné spustit následující aplikace sami.
@@ -25,7 +25,7 @@ Tato ukázka předvádí, směrovací služba Windows Communication Foundation (
     > 2.  Kalkulačka služby (. / CalculatorService/bin/service.exe)
     > 3.  Služba směrování (. / RoutingService/bin/RoutingService.exe)
 
-3.  Stisknutím klávesy ENTER klienta.
+3. Stisknutím klávesy ENTER klienta.
 
      Byste měli vidět následující výstup:
 

@@ -1,20 +1,20 @@
 ---
-title: Určení oboru definici aktivity a viditelnosti
+title: Určení oboru a viditelnosti definice aktivity
 ms.date: 03/30/2017
 ms.assetid: ccdffa07-9503-4eea-a61b-17f1564368b7
-ms.openlocfilehash: 7b09ac6d27dd3be502c98ce3ac0a90f636714fc2
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 27c43323a176c841f3d90cb9c52f25599bc0686d
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57723839"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59325212"
 ---
-# <a name="activity-definition-scoping-and-visibility"></a>Určení oboru definici aktivity a viditelnosti
+# <a name="activity-definition-scoping-and-visibility"></a>Určení oboru a viditelnosti definice aktivity
 Určení oboru definici aktivity a viditelnost, stejně jako obor a viditelnost objektu, je schopnost jiné objekty nebo aktivity pro přístup ke členům aktivity. Definice aktivity provádí následující implementace:  
   
-1.  Určení členů (<xref:System.Activities.Argument>, <xref:System.Activities.Variable>, a <xref:System.Activities.ActivityDelegate> objektů a podřízené aktivity) aktivita poskytuje svým uživatelům.  
+1. Určení členů (<xref:System.Activities.Argument>, <xref:System.Activities.Variable>, a <xref:System.Activities.ActivityDelegate> objektů a podřízené aktivity) aktivita poskytuje svým uživatelům.  
   
-2.  Implementace logiky provádění aktivity  
+2. Implementace logiky provádění aktivity  
   
  Implementace může zahrnovat členy, které nejsou přístupné spotřebitelům aktivity, ale spíše podrobnosti implementace.  Podobně jako u definice typu, model aktivity umožňuje autorovi k určení, zda se na člena aktivity týkající se definice aktivity definuje.  Tento přehled řídí aspekty člen využití, jako je například rozsah data.  
   
@@ -27,9 +27,9 @@ Určení oboru definici aktivity a viditelnost, stejně jako obor a viditelnost 
 ### <a name="activity-members"></a>Aktivita členy  
  Model aktivity definuje argumenty, proměnné, delegáty a podřízené aktivity, které uživatelům zpřístupní aktivity. Každý z těchto členů lze deklarovat jako `public` nebo `private`. Veřejné členy jsou nakonfigurované uživatelem je aktivita, zatímco `private` členy použita implementace oprava autorem aktivity. Pravidla viditelnosti pro zkoumání dat jsou následující:  
   
-1.  Veřejné členy a veřejné členy veřejné podřízené aktivity může odkazovat na veřejné proměnné.  
+1. Veřejné členy a veřejné členy veřejné podřízené aktivity může odkazovat na veřejné proměnné.  
   
-2.  Soukromé členy a veřejné členy veřejné podřízené aktivity může odkazovat na privátních proměnných a argumentů.  
+2. Soukromé členy a veřejné členy veřejné podřízené aktivity může odkazovat na privátních proměnných a argumentů.  
   
  Člen, který lze nastavit spotřebitelem aktivity by měla být nikdy proveden privátní.  
   

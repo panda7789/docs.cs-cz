@@ -1,13 +1,14 @@
 ---
 title: Předpoklady pro .NET Core ve Windows
 description: Informace v závislosti na vaší Windows potřebujete počítač pro vývoj a spouštění aplikací .NET Core.
-ms.date: 12/14/2018
-ms.openlocfilehash: 2209c6e74413204c38ba54ffc538846f27d0bdf6
-ms.sourcegitcommit: 3d0c29b878f00caec288dfecb3a5c959de5aa629
+ms.custom: updateeachvsrelease
+ms.date: 04/08/2019
+ms.openlocfilehash: 2941721dfa4b87d4113e4f4b529845e47f3dc1b9
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53656112"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59313707"
 ---
 # <a name="prerequisites-for-net-core-on-windows"></a>Předpoklady pro .NET Core ve Windows
 
@@ -36,8 +37,8 @@ Také, pokud vyvíjíte ve Windows pomocí sady Visual Studio 2017, [požadavky 
 Následující články obsahují úplný seznam operačních systémů nepodporuje .NET Core na verze:
 
 * [.NET core 3.0 (Preview)](https://github.com/dotnet/core/blob/master/release-notes/3.0/3.0-supported-os.md)
-* [.NET core 2.2](https://github.com/dotnet/core/blob/master/release-notes/2.2/2.2-supported-os.md)
-* [.NET core 2.1](https://github.com/dotnet/core/blob/master/release-notes/2.1/2.1-supported-os.md)
+* [.NET Core 2.2](https://github.com/dotnet/core/blob/master/release-notes/2.2/2.2-supported-os.md)
+* [.NET Core 2.1](https://github.com/dotnet/core/blob/master/release-notes/2.1/2.1-supported-os.md)
 * [.NET core 1.0](https://github.com/dotnet/core/blob/master/release-notes/1.0/1.0-supported-os.md)
 
 Odkazy ke stažení a další informace najdete v tématu [stáhne .NET](https://dotnet.microsoft.com/download) ke stažení nejnovější verze nebo [.NET stáhne archivu](https://dotnet.microsoft.com/download/archives#dotnet-core) pro starší verze.
@@ -62,9 +63,9 @@ Při spuštění na verzích Windows starších než Windows 10 a Windows server
 >
 > Kromě KB2999226, ujistěte se, že budete mít taky [KB2533623](https://support.microsoft.com/en-us/help/2533623/microsoft-security-advisory-insecure-library-loading-could-allow-remot) nainstalované. Pokud nemáte k dispozici tato aktualizace instalována, zobrazí se zpráva podobná následující při spuštění aplikace rozhraní .NET Core: `The library hostfxr.dll was found, but loading it from C:\<path_to_app>\hostfxr.dll failed`.
 
-## <a name="prerequisites-for-net-core-30-preview-1"></a>Předpoklady pro .NET Core 3.0 ve verzi Preview 1
+## <a name="prerequisites-for-net-core-30-preview-3"></a>Předpoklady pro .NET Core 3.0 ve verzi Preview 3
 
-.NET core 3.0 ve verzi Preview 1 má stejné požadavky jako v jiných verzích .NET Core. Ale pokud budete chtít použít Visual Studio k vytvoření aplikace .NET Core 3.0 projektů, je nutné použít [Visual Studio 2019 Preview](https://visualstudio.microsoft.com/vs/preview/). Visual Studio. 2019 Preview může být nainstalovaná – souběžně s jinými verzemi nástroje Visual Studio bez konfliktu.
+.NET core 3.0 ve verzi Preview 3 má stejné požadavky jako v jiných verzích .NET Core. Ale pokud budete chtít použít Visual Studio k vytvoření aplikace .NET Core 3.0 projektů, je nutné použít [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019). Visual Studio 2019 může být nainstalovaná – souběžně s jinými verzemi nástroje Visual Studio bez konfliktu.
 
 ## <a name="prerequisites-with-visual-studio-2017"></a>Požadavky sady Visual Studio 2017
     
@@ -72,7 +73,7 @@ Můžete použít libovolný editor k vývoji aplikací .NET Core pomocí sady .
 
 Další informace o změnách v sadě Visual Studio 2017 v [poznámky k verzi](/visualstudio/releasenotes/vs2017-relnotes).
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET core 2.x](#tab/netcore2x)
+# [<a name="net-core-2x"></a>.NET Core 2.x](#tab/netcore2x)
 
 Můžete vyvíjet aplikace .NET Core v sadě Visual Studio 2017 pomocí .NET Core 2.2 SDK:
 
@@ -100,7 +101,7 @@ Jakmile budete mít nakonfigurované s .NET Core 2.2 SDK sady Visual Studio, mů
 * Změnit cílení projektů .NET Core 1.x a 2.x na .NET Core 2.2, sestavení a spusťte.
 * Vytvořte nové projekty .NET Core 2.2.
 
-# <a name="net-core-1xtabnetcore1x"></a>[.NET core 1.x](#tab/netcore1x)
+# [<a name="net-core-1x"></a>.NET Core 1.x](#tab/netcore1x)
 
 Můžete vyvíjet aplikace .NET Core 1.x v sadě Visual Studio [stáhnout a nainstalovat sadu Visual Studio 2017](/visualstudio/install/install-visual-studio) s **"Vývoj pro různé platformy .NET Core"** úloh (v **další sady nástrojů**části) vybrané.
 
@@ -122,7 +123,7 @@ Můžete vyvíjet aplikace .NET Core 1.x v sadě Visual Studio [stáhnout a nain
 >
 > * Na **pomáhají** nabídce zvolte **o Microsoft Visual Studio**.
 > * V **o Microsoft Visual Studio** dialogového okna, zkontrolujte číslo verze.
->   * Pro aplikace .NET Core 3.0 ve verzi Preview 1, Visual Studio. 2019 Preview 1 nebo novější.
+>   * Pro aplikace .NET Core 3.0 ve verzi Preview 3, Visual Studio 2019 verze 16,0 nebo vyšší.
 >   * Pro aplikace .NET Core 2.2, Visual Studio 2017 verze 15.9 nebo vyšší.
 >   * Pro aplikace .NET Core 2.1, Visual Studio 2017 verze 15.7 nebo novější.
 >   * Pro aplikace .NET Core 1.x, Visual Studio 2017 verze 15,0 nebo vyšší.

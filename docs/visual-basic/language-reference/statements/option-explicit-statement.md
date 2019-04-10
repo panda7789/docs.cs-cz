@@ -11,12 +11,12 @@ helpviewer_keywords:
 - explicit variable declaration
 - Option Explicit statement [Visual Basic]
 ms.assetid: e82ac1ad-2cd3-49b2-b985-8bcf016f3fcc
-ms.openlocfilehash: c42dd74ea0dc01b8ae7ffb7eb04737a9784625a9
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 0a319ba4259e66ed9a37aa2de9e97d2335b78663
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58841449"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59308611"
 ---
 # <a name="option-explicit-statement-visual-basic"></a>Option Explicit – příkaz (Visual Basic)
 Vynutí explicitní deklaraci všech proměnných do souboru nebo umožňuje implicitní deklarací proměnných.  
@@ -47,11 +47,11 @@ Option Explicit { On | Off }
   
 #### <a name="to-set-option-explicit-in-the-ide"></a>Nastavení Option Explicit v integrovaném vývojovém prostředí  
   
-1.  V **Průzkumníka řešení**, vyberte projekt. Na **projektu** nabídky, klikněte na tlačítko **vlastnosti**.  
+1. V **Průzkumníka řešení**, vyberte projekt. Na **projektu** nabídky, klikněte na tlačítko **vlastnosti**.  
   
-2.  Klikněte na tlačítko **kompilaci** kartu.  
+2. Klikněte na tlačítko **kompilaci** kartu.  
   
-3.  Nastavte hodnotu **Option Explicit** pole.  
+3. Nastavte hodnotu **Option Explicit** pole.  
   
  Když vytvoříte nový projekt **Option Explicit** nastavení na **kompilaci** karty nastavená na **Option Explicit** nastavení **VB výchozí**dialogové okno. Pro přístup **VB výchozí** dialogovém okně **nástroje** nabídky, klikněte na tlačítko **možnosti**. V **možnosti** dialogového okna rozbalte **projekty a řešení**a potom klikněte na tlačítko **VB výchozí**. Počáteční výchozí nastavení v **výchozí hodnoty pro VB** je `On`.  
   
@@ -68,11 +68,11 @@ Option Explicit { On | Off }
   
 ## <a name="see-also"></a>Viz také:
 
-- [Příkaz Dim](../../../visual-basic/language-reference/statements/dim-statement.md)
-- [Příkaz ReDim](../../../visual-basic/language-reference/statements/redim-statement.md)
-- [Příkaz Option Compare](../../../visual-basic/language-reference/statements/option-compare-statement.md)
-- [Příkaz Option Strict](../../../visual-basic/language-reference/statements/option-strict-statement.md)
+- [Dim – příkaz](../../../visual-basic/language-reference/statements/dim-statement.md)
+- [ReDim – příkaz](../../../visual-basic/language-reference/statements/redim-statement.md)
+- [Option Compare – příkaz](../../../visual-basic/language-reference/statements/option-compare-statement.md)
+- [Option Strict – příkaz](../../../visual-basic/language-reference/statements/option-strict-statement.md)
 - [/optioncompare](../../../visual-basic/reference/command-line-compiler/optioncompare.md)
 - [/optionexplicit](../../../visual-basic/reference/command-line-compiler/optionexplicit.md)
 - [/optionstrict](../../../visual-basic/reference/command-line-compiler/optionstrict.md)
-- [Výchozí hodnoty pro Visual Basic, Projekty, dialogové okno Možnosti](/visualstudio/ide/reference/visual-basic-defaults-projects-options-dialog-box)
+- [Výchozí možnosti jazyka Visual Basic, projekty, dialogové okno Možnosti](/visualstudio/ide/reference/visual-basic-defaults-projects-options-dialog-box)

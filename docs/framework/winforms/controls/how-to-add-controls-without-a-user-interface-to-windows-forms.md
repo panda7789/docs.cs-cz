@@ -14,12 +14,12 @@ helpviewer_keywords:
 - Windows Forms controls, nonvisual
 - nonvisual controls [Windows Forms]
 ms.assetid: 52134d9c-cff6-4eed-8e2b-3d5eb3bd494e
-ms.openlocfilehash: 90166821181e6562d0bef3ff85f7e7a95c479be0
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 0768f811653543b3370310ccc0b59890273baf52
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59223690"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59330100"
 ---
 # <a name="how-to-add-controls-without-a-user-interface-to-windows-forms"></a>Postupy: Přidávání ovládacích prvků bez uživatelského rozhraní do Windows Forms
 Nevizuální ovládací prvek (nebo komponenta) poskytuje funkce, které vaše aplikace. Na rozdíl od jiných ovládacích prvků součástí neposkytují uživatelského rozhraní pro uživatele a proto není potřeba zobrazovat na plochu návrháře formulářů Windows. Při přidání komponenty do formuláře, zobrazí Návrhář formulářů Windows umožňující změnu velikosti na hlavním panelu v dolní části formuláře, ve kterém jsou zobrazeny všechny součásti. Jakmile ovládací prvek byl přidán do panelu komponent, můžete vybrat komponentu a nastavit jeho vlastnosti, stejně jako jakýkoli jiný ovládací prvek na formuláři.  
@@ -29,9 +29,9 @@ Nevizuální ovládací prvek (nebo komponenta) poskytuje funkce, které vaše a
   
 ### <a name="to-add-a-component-to-a-windows-form"></a>K přidání komponenty do formuláře Windows  
   
-1.  Otevřete formulář. Podrobnosti najdete v tématu [jak: Zobrazení formulářů Windows v návrháři](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/w5yd62ts(v=vs.100)).  
+1. Otevřete formulář. Podrobnosti najdete v tématu [jak: Zobrazení formulářů Windows v návrháři](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/w5yd62ts(v=vs.100)).  
   
-2.  V **nástrojů**, klikněte na komponentu a přetáhněte ji do svého formuláře.  
+2. V **nástrojů**, klikněte na komponentu a přetáhněte ji do svého formuláře.  
   
      V panelu komponent se zobrazí vaše komponenta.  
   
@@ -42,11 +42,11 @@ Nevizuální ovládací prvek (nebo komponenta) poskytuje funkce, které vaše a
   
 #### <a name="to-add-a-component-to-a-windows-form-programmatically"></a>K přidání komponenty do formuláře Windows prostřednictvím kódu programu  
   
-1.  Vytvoření instance <xref:System.Windows.Forms.Timer> třídu v kódu.  
+1. Vytvoření instance <xref:System.Windows.Forms.Timer> třídu v kódu.  
   
-2.  Nastavte `Interval` a určí čas mezi značkami časovače.  
+2. Nastavte `Interval` a určí čas mezi značkami časovače.  
   
-3.  Nakonfigurujte další nezbytné vlastnosti pro komponentu.  
+3. Nakonfigurujte další nezbytné vlastnosti pro komponentu.  
   
      Následující kód ukazuje vytvoření objektu <xref:System.Windows.Forms.Timer> s jeho `Interval` sadu vlastností.  
   

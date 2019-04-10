@@ -11,12 +11,12 @@ helpviewer_keywords:
 - PictureBox control [Windows Forms], picture size and alignment
 - pictures [Windows Forms], controlling placement in PictureBox control [Windows Forms]
 ms.assetid: d0b332a3-fae2-4891-957c-dc3e17743326
-ms.openlocfilehash: 5d817d34e47253b2e35afa7bb41c59eea06e1f94
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: d0a86d7fe53dba3da6bd63587561f82877bc2f06
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59178825"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59328332"
 ---
 # <a name="how-to-modify-the-size-or-placement-of-a-picture-at-run-time-windows-forms"></a>Postupy: Změna velikosti či umístění obrázku za běhu (Windows Forms)
 Pokud používáte Windows Forms <xref:System.Windows.Forms.PictureBox> ovládací prvek ve formuláři, můžete nastavit <xref:System.Windows.Forms.PictureBox.SizeMode%2A> vlastnost ji:  
@@ -33,7 +33,7 @@ Pokud používáte Windows Forms <xref:System.Windows.Forms.PictureBox> ovládac
   
 ### <a name="to-set-the-sizemode-property-at-run-time"></a>Chcete-li nastavit vlastnosti SizeMode za běhu  
   
-1.  Nastavte <xref:System.Windows.Forms.PictureBox.SizeMode%2A> k <xref:System.Windows.Forms.PictureBoxSizeMode.Normal> (výchozí), <xref:System.Windows.Forms.PictureBoxSizeMode.AutoSize>, <xref:System.Windows.Forms.PictureBoxSizeMode.CenterImage>, nebo <xref:System.Windows.Forms.PictureBoxSizeMode.StretchImage>. <xref:System.Windows.Forms.PictureBoxSizeMode.Normal> znamená, že v levém horním rohu ovládacího prvku; je umístěn na obrázku Pokud na obrázku je větší než ovládací prvek, jeho dolní a pravé hrany se oříznou. <xref:System.Windows.Forms.PictureBoxSizeMode.CenterImage> znamená to, že na obrázku je vycentrován ovládacího prvku; Pokud na obrázku je větší než ovládací prvek, na obrázku vnějšími hranami se oříznou. <xref:System.Windows.Forms.PictureBoxSizeMode.AutoSize> znamená to, že velikost ovládacího prvku je nastavena velikost obrázku. <xref:System.Windows.Forms.PictureBoxSizeMode.StretchImage> je naopak a znamená, že se upraví velikost obrázku velikosti ovládacího prvku.  
+1. Nastavte <xref:System.Windows.Forms.PictureBox.SizeMode%2A> k <xref:System.Windows.Forms.PictureBoxSizeMode.Normal> (výchozí), <xref:System.Windows.Forms.PictureBoxSizeMode.AutoSize>, <xref:System.Windows.Forms.PictureBoxSizeMode.CenterImage>, nebo <xref:System.Windows.Forms.PictureBoxSizeMode.StretchImage>. <xref:System.Windows.Forms.PictureBoxSizeMode.Normal> znamená, že v levém horním rohu ovládacího prvku; je umístěn na obrázku Pokud na obrázku je větší než ovládací prvek, jeho dolní a pravé hrany se oříznou. <xref:System.Windows.Forms.PictureBoxSizeMode.CenterImage> znamená to, že na obrázku je vycentrován ovládacího prvku; Pokud na obrázku je větší než ovládací prvek, na obrázku vnějšími hranami se oříznou. <xref:System.Windows.Forms.PictureBoxSizeMode.AutoSize> znamená to, že velikost ovládacího prvku je nastavena velikost obrázku. <xref:System.Windows.Forms.PictureBoxSizeMode.StretchImage> je naopak a znamená, že se upraví velikost obrázku velikosti ovládacího prvku.  
   
      V následujícím příkladu je cesta pro umístění bitové kopie složky Dokumenty. Je to, protože můžete předpokládat, že většina počítačů s operačním systémem Windows bude obsahovat tento adresář. Také to umožňuje uživatelům s úrovní přístupu minimální systém bezpečně spouštět aplikace. Následující příklad předpokládá formulář s <xref:System.Windows.Forms.PictureBox> ovládací prvek již přidán.  
   

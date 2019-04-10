@@ -2,12 +2,12 @@
 title: Integrované ověřování systému Windows s rozšířenou ochranou
 ms.date: 03/30/2017
 ms.assetid: 81731998-d5e7-49e4-ad38-c8e6d01689d0
-ms.openlocfilehash: 71e4359686ea2a6b1ae3e8ec840bf25af644a369
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 3088d59a91b5caa75cda3e40a5203874c24325cd
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59146819"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59325719"
 ---
 # <a name="integrated-windows-authentication-with-extended-protection"></a>Integrované ověřování systému Windows s rozšířenou ochranou
 Vylepšení, které ovlivňují způsob integrované ověřování zařizuje služba Windows byly provedeny <xref:System.Net.HttpWebRequest>, <xref:System.Net.HttpListener>, <xref:System.Net.Mail.SmtpClient>, <xref:System.Net.Security.SslStream>, <xref:System.Net.Security.NegotiateStream>, a související třídy v <xref:System.Net> a souvisejících oborech názvů. Byla přidána podpora pro rozšířené ochrany pro zvýšení zabezpečení.  
@@ -25,17 +25,17 @@ Vylepšení, které ovlivňují způsob integrované ověřování zařizuje slu
   
  Celkové cíle jsou následující:  
   
-1.  Pokud klient je aktualizován, aby podporoval rozšířenou ochranu, aplikace by mělo nabízet vazeb kanálu a vazeb informace o službě, všechny protokoly podporované metody ověřování. Informace o vazbě kanálu lze zadat pouze po kanálu (TLS) k vytvoření vazby. Informace o vazbě služby by měl vždycky zadat.  
+1. Pokud klient je aktualizován, aby podporoval rozšířenou ochranu, aplikace by mělo nabízet vazeb kanálu a vazeb informace o službě, všechny protokoly podporované metody ověřování. Informace o vazbě kanálu lze zadat pouze po kanálu (TLS) k vytvoření vazby. Informace o vazbě služby by měl vždycky zadat.  
   
-2.  Aktualizace serverů, které jsou správně nakonfigurovány, mohou ověření kanálu a informace o vazbě služby, pokud je k dispozici v ověřovacím tokenu klienta a zamítnout pokus o ověření, pokud se neshodují vazby kanálů. V závislosti na scénáři nasazení serverů ověřit vazby kanálu, vazby služby nebo obojí.  
+2. Aktualizace serverů, které jsou správně nakonfigurovány, mohou ověření kanálu a informace o vazbě služby, pokud je k dispozici v ověřovacím tokenu klienta a zamítnout pokus o ověření, pokud se neshodují vazby kanálů. V závislosti na scénáři nasazení serverů ověřit vazby kanálu, vazby služby nebo obojí.  
   
-3.  Aktualizace serverů se budou moct následně přijímal nebo odmítal požadavky klientů nižší úrovně, které neobsahují informace o vazbě kanál na základě zásad.  
+3. Aktualizace serverů se budou moct následně přijímal nebo odmítal požadavky klientů nižší úrovně, které neobsahují informace o vazbě kanál na základě zásad.  
   
  Informace využívané ve rozšířené ochrany se skládá z jednoho nebo obou následujících dvou částí:  
   
-1.  Token vazby kanálu nebo CBT.  
+1. Token vazby kanálu nebo CBT.  
   
-2.  Informace o vazbách služby ve formě hlavní název služby nebo hlavní název služby.  
+2. Informace o vazbách služby ve formě hlavní název služby nebo hlavní název služby.  
   
  Informace o vazbách služby je údaj o záměru klienta k ověření koncového bodu konkrétní služby. Její komunikace z klienta na server s následujícími vlastnostmi:  
   
@@ -122,11 +122,11 @@ Vylepšení, které ovlivňují způsob integrované ověřování zařizuje slu
   
  V této konfiguraci po odeslání žádosti na server prostřednictvím vnější zabezpečený kanál channel vnější dotaz na vazby kanálu. Tato vazba kanálu je předána volání rozhraní SSPI ověřování, které ověření, které vazby kanálu v objektu blob odpovídá ověřování. Existují tři možné výsledky:  
   
-1.  Základní operační systém serveru nepodporuje rozšířenou ochranu. Požadavek nesmí být vystavená pro aplikace a neoprávněným odpovědí (401) bude vrácen do klienta. Zpráva se budou protokolovat do <xref:System.Net.HttpListener> zdroj trasování, určení příčiny selhání.  
+1. Základní operační systém serveru nepodporuje rozšířenou ochranu. Požadavek nesmí být vystavená pro aplikace a neoprávněným odpovědí (401) bude vrácen do klienta. Zpráva se budou protokolovat do <xref:System.Net.HttpListener> zdroj trasování, určení příčiny selhání.  
   
-2.  Volání rozhraní SSPI selže, označující, že buď klienta zadaný vazby kanálu, který neodpovídal očekávané hodnotě načíst z vnějšího kanálu nebo klient dodat vazbu kanálu při konfiguraci zásad rozšířené ochrany na serveru se nezdařilo. pro <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.Always>. V obou případech se žádost nebude možné vystavit aplikaci a neoprávněným odpovědí (401) bude vrácen do klienta. Zpráva se budou protokolovat do <xref:System.Net.HttpListener> zdroj trasování, určení příčiny selhání.  
+2. Volání rozhraní SSPI selže, označující, že buď klienta zadaný vazby kanálu, který neodpovídal očekávané hodnotě načíst z vnějšího kanálu nebo klient dodat vazbu kanálu při konfiguraci zásad rozšířené ochrany na serveru se nezdařilo. pro <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.Always>. V obou případech se žádost nebude možné vystavit aplikaci a neoprávněným odpovědí (401) bude vrácen do klienta. Zpráva se budou protokolovat do <xref:System.Net.HttpListener> zdroj trasování, určení příčiny selhání.  
   
-3.  Klient určuje vazbu správném kanálu nebo se může připojit bez zadání vazby kanálů od zásady rozšířené ochrany na serveru se nakonfigurují <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.WhenSupported> požadavek se vrátil do aplikace pro zpracování. Kontrola názvu služby neproběhne probíhá automaticky. Aplikace můžete provádět vlastní název ověření pomocí <xref:System.Net.HttpListenerRequest.ServiceName%2A> vlastností, ale za těchto okolností je redundantní.  
+3. Klient určuje vazbu správném kanálu nebo se může připojit bez zadání vazby kanálů od zásady rozšířené ochrany na serveru se nakonfigurují <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.WhenSupported> požadavek se vrátil do aplikace pro zpracování. Kontrola názvu služby neproběhne probíhá automaticky. Aplikace můžete provádět vlastní název ověření pomocí <xref:System.Net.HttpListenerRequest.ServiceName%2A> vlastností, ale za těchto okolností je redundantní.  
   
  Pokud aplikace zavolá vlastní SSPI pro ověřování na základě vzájemně předané v textu požadavku HTTP objektů BLOB a chce vazby kanálu, potřebuje načíst vazby očekávané kanálu z vnějšího zabezpečený kanál pomocí <xref:System.Net.HttpListener> Chcete-li předat do nativní Win32 [Funkce AcceptSecurityContext](https://go.microsoft.com/fwlink/?LinkId=147021) funkce. Chcete-li to provést, použijte <xref:System.Net.HttpListenerRequest.TransportContext%2A> vlastnosti a volání <xref:System.Net.TransportContext.GetChannelBinding%2A> metodu pro načtení CBT. Jsou podporovány pouze vazby koncového bodu. Pokud nic dalšího <xref:System.Security.Authentication.ExtendedProtection.ChannelBindingKind.Endpoint> není zadán, <xref:System.NotSupportedException> bude vyvolána výjimka. Pokud je základní operační systém nepodporuje vazby kanálu <xref:System.Net.TransportContext.GetChannelBinding%2A> metoda vrátí <xref:System.Security.Authentication.ExtendedProtection.ChannelBinding><xref:System.Runtime.InteropServices.SafeHandle> obtékání ukazatele na vazby vhodné k předání do kanálu [Funkce AcceptSecurityContext](https://go.microsoft.com/fwlink/?LinkId=147021) funkci, jako pvBuffer Člen struktury SecBuffer předaný `pInput` parametru. <xref:System.Security.Authentication.ExtendedProtection.ChannelBinding.Size%2A> Vlastnost obsahuje délku v bajtech, vazba kanálu. Pokud příslušný operační systém nepodporuje vazby kanálů, funkce vrátí `null`.  
   
@@ -136,13 +136,13 @@ Vylepšení, které ovlivňují způsob integrované ověřování zařizuje slu
   
  V této konfiguraci po provedení požadavku na server bez vnějším zabezpečené ověřování kanálem pokračuje obvykle bez kontroly vazby kanálu. Pokud je ověření úspěšné, kontext se dotazují pro název služby, že klient k dispozici a ověřovat na seznam přijatelných názvů služeb. Existují čtyři možných výsledků:  
   
-1.  Základní operační systém serveru nepodporuje rozšířenou ochranu. Požadavek nesmí být vystavená pro aplikace a neoprávněným odpovědí (401) bude vrácen do klienta. Zpráva se budou protokolovat do <xref:System.Net.HttpListener> zdroj trasování, určení příčiny selhání.  
+1. Základní operační systém serveru nepodporuje rozšířenou ochranu. Požadavek nesmí být vystavená pro aplikace a neoprávněným odpovědí (401) bude vrácen do klienta. Zpráva se budou protokolovat do <xref:System.Net.HttpListener> zdroj trasování, určení příčiny selhání.  
   
-2.  Základní operační systém klienta nepodporuje rozšířenou ochranu. V <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.WhenSupported> konfigurace, pokus o ověření proběhne úspěšně a požadavek se vrátil do aplikace. V <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.Always> konfigurace, se nezdaří pokus o ověření. Požadavek nesmí být vystavená pro aplikace a neoprávněným odpovědí (401) bude vrácen do klienta. Zpráva se budou protokolovat do <xref:System.Net.HttpListener> zdroj trasování, určení příčiny selhání.  
+2. Základní operační systém klienta nepodporuje rozšířenou ochranu. V <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.WhenSupported> konfigurace, pokus o ověření proběhne úspěšně a požadavek se vrátil do aplikace. V <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.Always> konfigurace, se nezdaří pokus o ověření. Požadavek nesmí být vystavená pro aplikace a neoprávněným odpovědí (401) bude vrácen do klienta. Zpráva se budou protokolovat do <xref:System.Net.HttpListener> zdroj trasování, určení příčiny selhání.  
   
-3.  Základní operační systém klienta podporuje rozšířené ochrany, ale aplikace nejsou specifikovány vazby služby. Požadavek nesmí být vystavená pro aplikace a neoprávněným odpovědí (401) bude vrácen do klienta. Zpráva se budou protokolovat do <xref:System.Net.HttpListener> zdroj trasování, určení příčiny selhání.  
+3. Základní operační systém klienta podporuje rozšířené ochrany, ale aplikace nejsou specifikovány vazby služby. Požadavek nesmí být vystavená pro aplikace a neoprávněným odpovědí (401) bude vrácen do klienta. Zpráva se budou protokolovat do <xref:System.Net.HttpListener> zdroj trasování, určení příčiny selhání.  
   
-4.  Klient zadat vazby služby. Vazby služby je ve srovnání s seznam povolených služeb vazby. Pokud se nenajde, požadavek se vrátí do aplikace. V opačném případě požadavku nesmí být vystavená pro aplikace a neoprávněným odpovědí (401) se automaticky vrácen do klienta. Zpráva se budou protokolovat do <xref:System.Net.HttpListener> zdroj trasování, určení příčiny selhání.  
+4. Klient zadat vazby služby. Vazby služby je ve srovnání s seznam povolených služeb vazby. Pokud se nenajde, požadavek se vrátí do aplikace. V opačném případě požadavku nesmí být vystavená pro aplikace a neoprávněným odpovědí (401) se automaticky vrácen do klienta. Zpráva se budou protokolovat do <xref:System.Net.HttpListener> zdroj trasování, určení příčiny selhání.  
   
  Pokud tento jednoduchý přístup pomocí povolený seznam přijatelných názvů služeb není dostatečná, aplikace může poskytnout vlastní ověření názvu služby dotazováním <xref:System.Net.HttpListenerRequest.ServiceName%2A> vlastnost. V případech, 1 a 2 výše, vlastnost vrátí `null`. V případě 3 vrátí prázdný řetězec. V případě, 4, název služby zadán klient bude vrácen.  
   

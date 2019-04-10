@@ -9,23 +9,21 @@ helpviewer_keywords:
 ms.assetid: 0059f576-e460-4e70-b257-668870e420b8
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: fcc5d3a561eea1e38d0b8a4790af13143cad92d1
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: e1696bd6eb4eb3a43593cf7ed264c80745c1ec66
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59166143"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59326278"
 ---
 # <a name="copying-and-pinning"></a>Kopírování a přichycování
 Při zařazování dat, interoperační zařazovač můžete kopírovat nebo připnout dat se zařadit. Kopírování dat umístí kopii dat z jednoho umístění v paměti do jiného umístění v paměti. Následující obrázek znázorňuje rozdíly mezi kopírování typu hodnoty a kopírování typu předány podle odkazu ze spravované na nespravované paměti.  
   
- ![Typy, předán podle hodnoty a podle reference hodnot](./media/interopmarshalcopy.gif "interopmarshalcopy")  
-Typy hodnot, předán podle hodnoty a podle reference  
+ ![Diagram znázorňující, jak jsou zkopírovány hodnoty a referenční typy.](./media/copying-and-pinning/interop-marshal-copy.gif)  
   
- Argumenty metody předán podle hodnoty jsou zařazení na nespravovaný kód jako hodnoty v zásobníku. Proces kopírování je s přímým přístupem. Argumenty předány podle odkazu jsou předány jako ukazatele do zásobníku. Typy odkazů jsou také předán podle hodnoty a podle reference. Jak ukazuje následující obrázek, typy odkazů, předán podle hodnoty jsou zkopírovány nebo připnout.  
+ Argumenty metody předán podle hodnoty jsou zařazení na nespravovaný kód jako hodnoty v zásobníku. Proces kopírování je s přímým přístupem. Argumenty předány podle odkazu jsou předány jako ukazatele do zásobníku. Typy odkazů jsou také předán podle hodnoty a podle reference. Jak ukazuje následující obrázek, typy odkazů, předán podle hodnoty jsou zkopírovány nebo připnout: 
   
- ![Komunikace s objekty COM](./media/interopmarshalpin.gif "interopmarshalpin")  
-Typy odkazů, předán podle hodnoty a podle reference  
+ ![Diagram znázorňující referenční typy předán podle hodnoty a podle reference.](./media/copying-and-pinning/interop-marshal-reference-pin.gif)  
   
  Připnutí dočasně uzamkne dat v aktuálním umístění paměti, tak jeho synchronizaci z právě přemístění uvolňováním paměti modulu common language runtime. Aby zařazování odvozovalo připíná data s cílem snížit režijní náklady na kopírování a zvýšit výkon. Typ dat určuje, zda se zkopíroval nebo připnout během procesu zařazování.  Připnutí se provádí automaticky při zařazování pro objekty, jako <xref:System.String>, ale můžete také ručně připnout použití paměti <xref:System.Runtime.InteropServices.GCHandle> třídy.  
   

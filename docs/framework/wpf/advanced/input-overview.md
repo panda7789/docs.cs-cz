@@ -24,12 +24,12 @@ helpviewer_keywords:
 - focus [WPF]
 - mouse position [WPF]
 ms.assetid: ee5258b7-6567-415a-9b1c-c0cbe46e79ef
-ms.openlocfilehash: d8eb22c4de9dc28f332b220dd4703b0c681904f3
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 9553a66538297db9c2fa134e018f35ab9e2ddf37
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59090019"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59320012"
 ---
 # <a name="input-overview"></a>Přehled vstupu
 <a name="introduction"></a> [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] Subsystému poskytuje výkonný [!INCLUDE[TLA#tla_api](../../../../includes/tlasharptla-api-md.md)] získávání vstupu z nejrůznějších zařízení, včetně myši, klávesnice, dotykové ovládání a stylus. Toto téma popisuje služby poskytované [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a vysvětlení architektury vstupní systémy.
@@ -217,15 +217,15 @@ ms.locfileid: "59090019"
 
  Následující seznam popisuje posloupnost událostí v předchozí ilustraci.
 
-1.  <xref:System.Windows.UIElement.TouchEnter> Události dojde jednou, když uživatel přepne prstem na elementu.
+1. <xref:System.Windows.UIElement.TouchEnter> Události dojde jednou, když uživatel přepne prstem na elementu.
 
-2.  <xref:System.Windows.UIElement.TouchDown> Jednou dojde k události.
+2. <xref:System.Windows.UIElement.TouchDown> Jednou dojde k události.
 
-3.  <xref:System.Windows.UIElement.TouchMove> Dojde k události více než jednou, jak uživatel přesouvá prstu v rámci elementu.
+3. <xref:System.Windows.UIElement.TouchMove> Dojde k události více než jednou, jak uživatel přesouvá prstu v rámci elementu.
 
-4.  <xref:System.Windows.UIElement.TouchUp> Události dojde jednou, když uživatel zruší prstem z elementu.
+4. <xref:System.Windows.UIElement.TouchUp> Události dojde jednou, když uživatel zruší prstem z elementu.
 
-5.  <xref:System.Windows.UIElement.TouchLeave> Jednou dojde k události.
+5. <xref:System.Windows.UIElement.TouchLeave> Jednou dojde k události.
 
  Pokud jsou používány více než dvěma prsty, dochází k události pro každý prstem.
 
@@ -269,17 +269,17 @@ ms.locfileid: "59090019"
 
  Následující seznam popisuje posloupnost událostí v předchozí ilustraci.
 
-1.  <xref:System.Windows.UIElement.ManipulationStarting> Události dojde, když uživatel umístí prstem na objekt. Tato událost mimo jiné umožňuje nastavit <xref:System.Windows.Input.ManipulationStartingEventArgs.ManipulationContainer%2A> vlastnost. V následných událostech pozice manipulace bude relativně k <xref:System.Windows.Input.ManipulationStartingEventArgs.ManipulationContainer%2A>. V události jiných než <xref:System.Windows.UIElement.ManipulationStarting>, tato vlastnost je jen pro čtení, proto <xref:System.Windows.UIElement.ManipulationStarting> událost je jenom čas, který tuto vlastnost lze nastavit.
+1. <xref:System.Windows.UIElement.ManipulationStarting> Události dojde, když uživatel umístí prstem na objekt. Tato událost mimo jiné umožňuje nastavit <xref:System.Windows.Input.ManipulationStartingEventArgs.ManipulationContainer%2A> vlastnost. V následných událostech pozice manipulace bude relativně k <xref:System.Windows.Input.ManipulationStartingEventArgs.ManipulationContainer%2A>. V události jiných než <xref:System.Windows.UIElement.ManipulationStarting>, tato vlastnost je jen pro čtení, proto <xref:System.Windows.UIElement.ManipulationStarting> událost je jenom čas, který tuto vlastnost lze nastavit.
 
-2.  <xref:System.Windows.UIElement.ManipulationStarted> Dále dojde k události. Tato událost hlásí původu manipulaci.
+2. <xref:System.Windows.UIElement.ManipulationStarted> Dále dojde k události. Tato událost hlásí původu manipulaci.
 
-3.  <xref:System.Windows.UIElement.ManipulationDelta> Více než jednou jako přesunutí uživatele prsty na dotykové obrazovce dojde k události. <xref:System.Windows.Input.ManipulationDeltaEventArgs.DeltaManipulation%2A> Vlastnost <xref:System.Windows.Input.ManipulationDeltaEventArgs> třídy hlásí, zda manipulace je interpretován jako přesun, rozšíření nebo překlad. To je, kde provádět většinu práce manipulace s objektu.
+3. <xref:System.Windows.UIElement.ManipulationDelta> Více než jednou jako přesunutí uživatele prsty na dotykové obrazovce dojde k události. <xref:System.Windows.Input.ManipulationDeltaEventArgs.DeltaManipulation%2A> Vlastnost <xref:System.Windows.Input.ManipulationDeltaEventArgs> třídy hlásí, zda manipulace je interpretován jako přesun, rozšíření nebo překlad. To je, kde provádět většinu práce manipulace s objektu.
 
-4.  <xref:System.Windows.UIElement.ManipulationInertiaStarting> Události dojde, když uživatele prsty ztratí kontaktu s objektem. Tato událost vám umožňuje určit zpomalení manipulace při nečinnosti. Jedná se proto objektu může emulovat různých fyzických mezery nebo atributy, pokud se rozhodnete. Předpokládejme například, že vaše aplikace má dva objekty, které představují položky ve skutečnosti a jeden je těžší než ten druhý. Můžete vytvořit objekt těžší zpomalení rychleji než světlejší objektu.
+4. <xref:System.Windows.UIElement.ManipulationInertiaStarting> Události dojde, když uživatele prsty ztratí kontaktu s objektem. Tato událost vám umožňuje určit zpomalení manipulace při nečinnosti. Jedná se proto objektu může emulovat různých fyzických mezery nebo atributy, pokud se rozhodnete. Předpokládejme například, že vaše aplikace má dva objekty, které představují položky ve skutečnosti a jeden je těžší než ten druhý. Můžete vytvořit objekt těžší zpomalení rychleji než světlejší objektu.
 
-5.  <xref:System.Windows.UIElement.ManipulationDelta> Jako nečinnost dojde k výskytu události více než jednou. Všimněte si, že k této události dojde při prsty uživatele přesouvat v rámci dotykovou obrazovku a při [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] simuluje nečinnost. Jinými slovy <xref:System.Windows.UIElement.ManipulationDelta> dojde před a po <xref:System.Windows.UIElement.ManipulationInertiaStarting> událostí. <xref:System.Windows.Input.ManipulationDeltaEventArgs.IsInertial%2A?displayProperty=nameWithType> Vlastnosti sestavy, zda <xref:System.Windows.UIElement.ManipulationDelta> dojde k události při nečinnosti, vám umožní zkontrolovat vlastnosti a provádět různé akce, v závislosti na jeho hodnotu.
+5. <xref:System.Windows.UIElement.ManipulationDelta> Jako nečinnost dojde k výskytu události více než jednou. Všimněte si, že k této události dojde při prsty uživatele přesouvat v rámci dotykovou obrazovku a při [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] simuluje nečinnost. Jinými slovy <xref:System.Windows.UIElement.ManipulationDelta> dojde před a po <xref:System.Windows.UIElement.ManipulationInertiaStarting> událostí. <xref:System.Windows.Input.ManipulationDeltaEventArgs.IsInertial%2A?displayProperty=nameWithType> Vlastnosti sestavy, zda <xref:System.Windows.UIElement.ManipulationDelta> dojde k události při nečinnosti, vám umožní zkontrolovat vlastnosti a provádět různé akce, v závislosti na jeho hodnotu.
 
-6.  <xref:System.Windows.UIElement.ManipulationCompleted> Výskytu události po ukončení manipulaci a jakékoli nečinnost. To znamená, že po všech <xref:System.Windows.UIElement.ManipulationDelta> dojde k událostem, <xref:System.Windows.UIElement.ManipulationCompleted> dojde k události na signál, manipulaci s je dokončena.
+6. <xref:System.Windows.UIElement.ManipulationCompleted> Výskytu události po ukončení manipulaci a jakékoli nečinnost. To znamená, že po všech <xref:System.Windows.UIElement.ManipulationDelta> dojde k událostem, <xref:System.Windows.UIElement.ManipulationCompleted> dojde k události na signál, manipulaci s je dokončena.
 
  <xref:System.Windows.UIElement> Také definuje <xref:System.Windows.UIElement.ManipulationBoundaryFeedback> událostí. Této události dojde, když <xref:System.Windows.Input.ManipulationDeltaEventArgs.ReportBoundaryFeedback%2A> metoda je volána <xref:System.Windows.UIElement.ManipulationDelta> událostí. <xref:System.Windows.UIElement.ManipulationBoundaryFeedback> Událostí umožňuje aplikace nebo součásti poskytují vizuální zpětnou vazbu, pokud objekt narazí na hranici. Například <xref:System.Windows.Window> třídy obslužné rutiny <xref:System.Windows.UIElement.ManipulationBoundaryFeedback> události a způsobit, že v okně mírně přesunout, pokud dojde k jeho okraj.
 

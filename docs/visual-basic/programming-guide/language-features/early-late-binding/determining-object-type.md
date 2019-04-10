@@ -9,12 +9,12 @@ helpviewer_keywords:
 - TypeName function
 - objects [Visual Basic], type determining
 ms.assetid: d95e7ad1-cd63-41d6-9a28-d7a1380d49c1
-ms.openlocfilehash: 625ddb8fc153708a80e8cf475f48d595efbe4df2
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 4014bef2e0c27a0f6a684bc1ed95019f392062a5
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58842626"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59302709"
 ---
 # <a name="determining-object-type-visual-basic"></a>Určení typu objektu (Visual Basic)
 Generický objekt proměnné (tedy proměnné můžete deklarovat jako `Object`) může obsahovat objekty z jiné třídy. Při použití proměnné typu `Object`, možná budete muset provést různé akce na základě třídy objektu; například nemusí podporovat některé objekty určité vlastnosti nebo metody. Visual Basic poskytuje dva prostředky určující, jaký typ objektu je uložen v proměnné objektu: `TypeName` funkce a `TypeOf...Is` operátor.  
@@ -36,11 +36,11 @@ Generický objekt proměnné (tedy proměnné můžete deklarovat jako `Object`)
   
 #### <a name="to-run-the-example"></a>Chcete-li spustit příklad  
   
-1.  Vytvořte nový projekt aplikace Windows a přidejte <xref:System.Windows.Forms.Button> ovládací prvek, <xref:System.Windows.Forms.CheckBox> ovládacího prvku a <xref:System.Windows.Forms.RadioButton> ovládacího prvku na formuláři.  
+1. Vytvořte nový projekt aplikace Windows a přidejte <xref:System.Windows.Forms.Button> ovládací prvek, <xref:System.Windows.Forms.CheckBox> ovládacího prvku a <xref:System.Windows.Forms.RadioButton> ovládacího prvku na formuláři.  
   
-2.  Pomocí tlačítka na formuláři, zavolejte `TestObject` postup.  
+2. Pomocí tlačítka na formuláři, zavolejte `TestObject` postup.  
   
-3.  Přidejte následující kód do svého formuláře:  
+3. Přidejte následující kód do svého formuláře:  
   
      [!code-vb[VbVbalrOOP#95](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#95)]  
   
@@ -48,7 +48,7 @@ Generický objekt proměnné (tedy proměnné můžete deklarovat jako `Object`)
 
 - <xref:Microsoft.VisualBasic.Information.TypeName%2A>
 - [Volání vlastnosti nebo metody pomocí názvu řetězce](../../../../visual-basic/programming-guide/language-features/early-late-binding/calling-a-property-or-method-using-a-string-name.md)
-- [Datový typ Object](../../../../visual-basic/language-reference/data-types/object-data-type.md)
-- [Příkaz If...Then...Else](../../../../visual-basic/language-reference/statements/if-then-else-statement.md)
+- [Datový typ objektu](../../../../visual-basic/language-reference/data-types/object-data-type.md)
+- [If...Then...Else – příkaz](../../../../visual-basic/language-reference/statements/if-then-else-statement.md)
 - [Datový typ String](../../../../visual-basic/language-reference/data-types/string-data-type.md)
-- [Datový typ Integer](../../../../visual-basic/language-reference/data-types/integer-data-type.md)
+- [Integer – datový typ](../../../../visual-basic/language-reference/data-types/integer-data-type.md)

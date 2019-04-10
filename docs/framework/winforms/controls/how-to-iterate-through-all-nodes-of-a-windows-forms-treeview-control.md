@@ -10,12 +10,12 @@ helpviewer_keywords:
 - TreeView control [Windows Forms], iterating through nodes
 - tree nodes in TreeView control [Windows Forms], iterating through
 ms.assetid: 427f8928-ebcf-4beb-887f-695b905d5134
-ms.openlocfilehash: e8e5ef299ca7b5555a02e86e4422ca9f5b8a584f
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 4b287cecddd63ec6535feb70118c3466c8960531
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59199710"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59314227"
 ---
 # <a name="how-to-iterate-through-all-nodes-of-a-windows-forms-treeview-control"></a>Postupy: Iterace všemi uzly ovládacího prvku Windows Forms TreeView
 Někdy je užitečné si prohlédnout každý uzel ve Windows Forms <xref:System.Windows.Forms.TreeView> ovládacího prvku, aby bylo možné provést některé výpočtu pro hodnoty uzlu. Tuto operaci lze provést pomocí rekurzivní procedury (rekurzivní metodu v C# a C++), který prochází každý uzel v každé z kolekcí stromu.  
@@ -24,9 +24,9 @@ Někdy je užitečné si prohlédnout každý uzel ve Windows Forms <xref:System
   
 ### <a name="to-iterate-through-all-nodes-of-the-treeview-control"></a>K iteraci v rámci všech uzlů v ovládacím prvku TreeView  
   
-1.  Vytvoření rekurzivní procedury (rekurzivní metodu v C# a C++), který testuje každý uzel.  
+1. Vytvoření rekurzivní procedury (rekurzivní metodu v C# a C++), který testuje každý uzel.  
   
-2.  Zavolejte proceduru.  
+2. Zavolejte proceduru.  
   
      Následující příklad ukazuje, jak vytisknout každý <xref:System.Windows.Forms.TreeNode> objektu <xref:System.Windows.Forms.TreeNode.Text%2A> vlastnost:  
   

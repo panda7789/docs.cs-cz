@@ -5,25 +5,25 @@ helpviewer_keywords:
 - application settings [Windows Forms], multiple sets
 - application settings [Windows Forms], C#
 ms.assetid: 45007ac6-cf07-4be7-bc38-3f0ef962faf9
-ms.openlocfilehash: 106e0ee0b8775f329f3ffd8babe458cac8492bd5
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 9a4913f635204aac2214d97225c7b8147c6fe9ab
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59187379"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59326603"
 ---
 # <a name="how-to-add-multiple-sets-of-settings-to-your-application-in-c"></a>Postupy: Přidání více množin nastavení do vaší aplikace v jazyce C\#
 V některých případech můžete chtít mít více množin nastavení v aplikaci. Například pokud vyvíjíte aplikaci kde se očekává často měnit konkrétní skupinu nastavení, může být vhodné oddělit vše do jediného souboru tak, aby soubor se dá nahradit velkoobchodních, ostatní nechat to neovlivní. Visual Studio umožňuje přidání více množin nastavení do projektu. Další sadu nastavení je možný prostřednictvím Properties.Settings objektu.  
   
 ### <a name="to-add-an-additional-set-of-setting-to-your-application"></a>Chcete-li přidat další sadu nastavení do vaší aplikace  
   
-1.  Z **projektu** nabídce zvolte **přidat novou položku**. **Přidat novou položku** zobrazí se dialogové okno.  
+1. Z **projektu** nabídce zvolte **přidat novou položku**. **Přidat novou položku** zobrazí se dialogové okno.  
   
-2.  V **přidat novou položku** dialogu **souboru s nastavením**, zadejte název souboru a klikněte na tlačítko **přidat** přidáte nový soubor nastavení do vašeho řešení.  
+2. V **přidat novou položku** dialogu **souboru s nastavením**, zadejte název souboru a klikněte na tlačítko **přidat** přidáte nový soubor nastavení do vašeho řešení.  
   
-3.  V **Průzkumníka řešení**, přetáhněte nový soubor nastavení do **vlastnosti** složky. To umožňuje nové nastavení k dispozici v kódu.  
+3. V **Průzkumníka řešení**, přetáhněte nový soubor nastavení do **vlastnosti** složky. To umožňuje nové nastavení k dispozici v kódu.  
   
-4.  Přidat a používat nastavení v tomto souboru, stejně jako jakýkoli jiný soubor nastavení. Tato skupina nastavení prostřednictvím objektu Properties.Settings můžete přistupovat.  
+4. Přidat a používat nastavení v tomto souboru, stejně jako jakýkoli jiný soubor nastavení. Tato skupina nastavení prostřednictvím objektu Properties.Settings můžete přistupovat.  
   
 ## <a name="see-also"></a>Viz také:
 

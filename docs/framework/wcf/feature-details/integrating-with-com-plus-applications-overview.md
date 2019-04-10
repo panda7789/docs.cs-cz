@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Windows Communication Foundation, COM+ integration
 - WCF, COM+ integration
 ms.assetid: e481e48f-7096-40eb-9f20-7f0098412941
-ms.openlocfilehash: 7a1747860a081fbbfc54b8657d5db6b57cdf168e
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: b5294080d0cc76fdb98bc0908f4273dbb011f982
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59153241"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59328722"
 ---
 # <a name="integrating-with-com-applications-overview"></a>Integrace s aplikacemi modelu COM+ – přehled
 Windows Communication Foundation (WCF) poskytuje bohaté prostředí pro vytváření distribuované aplikace. Pokud už používáte založených na komponentách aplikační logiky, které jsou hostované v modelu COM +, můžou využít WCF k rozšíření existující logic namísto nutnosti jeho přepsání. Běžný scénář, kdy je, když chcete vystavit existujícího modelu COM + nebo podnikové služby obchodní logiky pomocí webové služby.  
@@ -36,13 +36,13 @@ Windows Communication Foundation (WCF) poskytuje bohaté prostředí pro vytvá�
   
  Následující kroky jsou nutné k vystavení rozhraní komponenty modelu COM + jako webovou službu beze změny komponenty:  
   
-1.  Určení, zda rozhraní komponenty modelu COM + může být vystavena jako webové služby.  
+1. Určení, zda rozhraní komponenty modelu COM + může být vystavena jako webové služby.  
   
-2.  Vyberte odpovídající hostující režim.  
+2. Vyberte odpovídající hostující režim.  
   
-3.  Použijte nástroj pro konfiguraci modelu služby COM + (ComSvcConfig.exe) Chcete-li přidat webovou službu pro rozhraní. Další informace o tom, jak používat ComSvcConfig.exe najdete v tématu [jak: Použijte nástroj pro konfiguraci modelu služby COM +](../../../../docs/framework/wcf/feature-details/how-to-use-the-com-service-model-configuration-tool.md).  
+3. Použijte nástroj pro konfiguraci modelu služby COM + (ComSvcConfig.exe) Chcete-li přidat webovou službu pro rozhraní. Další informace o tom, jak používat ComSvcConfig.exe najdete v tématu [jak: Použijte nástroj pro konfiguraci modelu služby COM +](../../../../docs/framework/wcf/feature-details/how-to-use-the-com-service-model-configuration-tool.md).  
   
-4.  Konfigurace nastavení jakékoli další služby v konfiguračním souboru aplikace. Další informace o tom, jak nakonfigurovat komponenty, naleznete v tématu [jak: Konfigurace nastavení služby modelu COM +](../../../../docs/framework/wcf/feature-details/how-to-configure-com-service-settings.md).  
+4. Konfigurace nastavení jakékoli další služby v konfiguračním souboru aplikace. Další informace o tom, jak nakonfigurovat komponenty, naleznete v tématu [jak: Konfigurace nastavení služby modelu COM +](../../../../docs/framework/wcf/feature-details/how-to-configure-com-service-settings.md).  
   
 ## <a name="supported-interfaces"></a>Podporované rozhraní  
  Platí určitá omezení na typ rozhraní, která může být vystavena jako webové služby. Nejsou podporovány následující typy rozhraní:  

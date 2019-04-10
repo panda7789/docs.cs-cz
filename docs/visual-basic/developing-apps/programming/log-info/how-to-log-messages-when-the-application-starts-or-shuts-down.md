@@ -9,47 +9,47 @@ helpviewer_keywords:
 - Shutdown event [Visual Basic]
 - My.Log object, logging
 ms.assetid: 67624d05-cddf-48b7-8c36-5c99baa4c621
-ms.openlocfilehash: 19cfc4d8104ce3575bf9355f750bdb4616450743
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 8fc7b441c6e19d70ceefa3422cf9823007280b64
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58835765"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59330568"
 ---
 # <a name="how-to-log-messages-when-the-application-starts-or-shuts-down-visual-basic"></a>Postupy: Protokolování zpráv při spuštění aplikace nebo jejím ukončení (Visual Basic)
 Můžete použít `My.Application.Log` a `My.Log` objekty k protokolování informací o události, ke kterým dochází ve vaší aplikaci. Tento příklad ukazuje způsob použití `My.Application.Log.WriteEntry` metodou `Startup` a `Shutdown` události zapsat informace trasování.  
   
 ### <a name="to-access-the-applications-event-handler-code"></a>Přístup ke kódu obslužnou rutinu události aplikace  
   
-1.  Mají projekt vybraný v **Průzkumníka řešení**. Na **projektu** nabídce zvolte **vlastnosti**.  
+1. Mají projekt vybraný v **Průzkumníka řešení**. Na **projektu** nabídce zvolte **vlastnosti**.  
   
-2.  Klikněte na tlačítko **aplikace** kartu.  
+2. Klikněte na tlačítko **aplikace** kartu.  
   
-3.  Klikněte na tlačítko **zobrazení události aplikace** tlačítko k otevření editoru kódu.  
+3. Klikněte na tlačítko **zobrazení události aplikace** tlačítko k otevření editoru kódu.  
   
      Tím se otevře soubor ApplicationEvents.vb.  
   
 ### <a name="to-log-messages-when-the-application-starts"></a>Protokolování zpráv při spuštění aplikace  
   
-1.  Máte ApplicationEvents.vb soubor otevřete v editoru kódu. Na **Obecné** nabídce zvolte **události MyApplication**.  
+1. Máte ApplicationEvents.vb soubor otevřete v editoru kódu. Na **Obecné** nabídce zvolte **události MyApplication**.  
   
-2.  Na **deklarace** nabídce zvolte **spuštění**.  
+2. Na **deklarace** nabídce zvolte **spuštění**.  
   
      Aplikace vyvolá <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Startup> událostí před spuštěním hlavní aplikace.  
   
-3.  Přidat `My.Application.Log.WriteEntry` metodu `Startup` obslužné rutiny události.  
+3. Přidat `My.Application.Log.WriteEntry` metodu `Startup` obslužné rutiny události.  
   
      [!code-vb[VbVbalrMyApplicationLog#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplicationLog/VB/MyEventsFake.vb#1)]  
   
 ### <a name="to-log-messages-when-the-application-shuts-down"></a>Protokolování zpráv při ukončení aplikace  
   
-1.  Máte ApplicationEvents.vb soubor otevřete v editoru kódu. Na **Obecné** nabídce zvolte **události MyApplication**.  
+1. Máte ApplicationEvents.vb soubor otevřete v editoru kódu. Na **Obecné** nabídce zvolte **události MyApplication**.  
   
-2.  Na **deklarace** nabídce zvolte **vypnutí**.  
+2. Na **deklarace** nabídce zvolte **vypnutí**.  
   
      Aplikace vyvolá <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Shutdown> událostí po spuštění hlavní aplikace, ale předtím, než ho ukončí.  
   
-3.  Přidat `My.Application.Log.WriteEntry` metodu `Shutdown` obslužné rutiny události.  
+3. Přidat `My.Application.Log.WriteEntry` metodu `Shutdown` obslužné rutiny události.  
   
      [!code-vb[VbVbalrMyApplicationLog#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplicationLog/VB/MyEventsFake.vb#2)]  
   
@@ -63,5 +63,5 @@ Můžete použít `My.Application.Log` a `My.Log` objekty k protokolování info
 - <xref:Microsoft.VisualBasic.Logging.Log?displayProperty=nameWithType>
 - <xref:Microsoft.VisualBasic.Logging.Log.WriteEntry%2A>
 - <xref:Microsoft.VisualBasic.Logging.Log.WriteException%2A>
-- [Stránka Aplikace, Návrhář projektu (Visual Basic)](/visualstudio/ide/reference/application-page-project-designer-visual-basic)
-- [Práce s protokoly aplikací](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)
+- [Stránka Aplikace, návrhář projektu (Visual Basic)](/visualstudio/ide/reference/application-page-project-designer-visual-basic)
+- [Práce s protokoly aplikací](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)

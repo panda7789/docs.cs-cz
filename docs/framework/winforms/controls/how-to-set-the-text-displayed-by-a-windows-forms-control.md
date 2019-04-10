@@ -21,23 +21,23 @@ helpviewer_keywords:
 - controls [Windows Forms], captions
 - forms [Windows Forms], captions
 ms.assetid: 36b95bff-8780-479d-b86a-f1a0673653aa
-ms.openlocfilehash: e9bf2077f10648dbe3ebf214bbbf9546cbb398c3
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 59570af89e6236e3c13866d45dc5361d52b84274
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59096183"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59308520"
 ---
 # <a name="how-to-set-the-text-displayed-by-a-windows-forms-control"></a>Postupy: Nastavení textu zobrazovaného ovládacím prvkem Windows Forms
 Ovládací prvky Windows Forms obvykle zobrazí text, který souvisí s primární funkce ovládacího prvku. Například <xref:System.Windows.Forms.Button> ovládací prvek obvykle zobrazí popisek indikující, jaká akce se provede při kliknutí na tlačítko. Pro všechny ovládací prvky, můžete nastavit nebo načíst text pomocí <xref:System.Windows.Forms.Control.Text%2A> vlastnost. Můžete změnit písmo pomocí <xref:System.Windows.Forms.Control.Font%2A> vlastnost. Můžete také nastavit text pomocí návrháře.  Viz také [jak: Vytváření přístupových klíčů pro Windows Forms pomocí návrháře ovládacích prvků](how-to-create-access-keys-for-windows-forms-controls-using-the-designer.md), [jak: Nastavit Text, zobrazený Windows Forms pomocí návrháře ovládací prvek](how-to-set-the-text-displayed-by-a-windows-forms-control-using-the-designer.md), [jak: Nastavení obrázku zobrazovaného pomocí ovládacího prvku pomocí Návrháře formulářů Windows](how-to-set-the-image-displayed-by-a-windows-forms-control-using-the-designer.md).  
   
 ### <a name="to-set-the-text-displayed-by-a-control-programmatically"></a>K nastavení textu zobrazovaného ovládacím prvkem prostřednictvím kódu programu  
   
-1.  Nastavte <xref:System.Windows.Forms.Control.Text%2A> nastavte na řetězec.  
+1. Nastavte <xref:System.Windows.Forms.Control.Text%2A> nastavte na řetězec.  
   
      K vytvoření podtržené přístupový klíč, obsahuje znak ampersand (&) před písmenem, který bude přístupový klíč.  
   
-2.  Nastavte <xref:System.Windows.Forms.Control.Font%2A> vlastnost na objekt typu <xref:System.Drawing.Font>.  
+2. Nastavte <xref:System.Windows.Forms.Control.Font%2A> vlastnost na objekt typu <xref:System.Drawing.Font>.  
   
     ```vb  
     Button1.Text = "Click here to save changes"  

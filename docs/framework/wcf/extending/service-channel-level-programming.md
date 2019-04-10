@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8d8dcd85-0a05-4c44-8861-4a0b3b90cca9
-ms.openlocfilehash: e00b5ae2c72a4d4dcd2140e9c280d5bfda3531c2
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: be5c73e2ac9fcc45d136280c869148326cd91315
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50197194"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59329127"
 ---
 # <a name="service-channel-level-programming"></a>Programování služby na úrovni kanálů
 Toto téma popisuje, jak psát aplikace služby Windows Communication Foundation (WCF) bez použití <xref:System.ServiceModel.ServiceHost?displayProperty=nameWithType> a jeho přidruženého objektu modelu.  
@@ -18,15 +18,15 @@ Toto téma popisuje, jak psát aplikace služby Windows Communication Foundation
 ## <a name="receiving-messages"></a>Příjem zpráv  
  Až bude připravená přijímat a zpracovávat zprávy, se vyžaduje následující kroky:  
   
-1.  Vytvoření vazby.  
+1. Vytvoření vazby.  
   
-2.  Vytvoření naslouchacího procesu kanálu.  
+2. Vytvoření naslouchacího procesu kanálu.  
   
-3.  Otevřete modul pro naslouchání kanálu.  
+3. Otevřete modul pro naslouchání kanálu.  
   
-4.  Přečtení požadavku a odeslat odpověď.  
+4. Přečtení požadavku a odeslat odpověď.  
   
-5.  Zavřete všechny objekty kanálu.  
+5. Zavřete všechny objekty kanálu.  
   
 #### <a name="creating-a-binding"></a>Vytvoření vazby  
  Prvním krokem při naslouchání a přijímání zpráv vytváří vazbu. WCF se dodává s několik předdefinovaných nebo poskytované systémem vazby, se dají přímo po vytvoření instance jeden z nich. Navíc můžete také vytvořit vlastní vlastní vazby po vytvoření instance CustomBinding třídu, která je čemu kód v informacích 1.  

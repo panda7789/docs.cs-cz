@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - data contracts [WCF], enumeration types
 ms.assetid: b5d694da-68cb-4b74-a5fb-75108a68ec3b
-ms.openlocfilehash: 236871ff5b8976bb9f8a27bce26195b1a84cf954
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 1837a3630424ff2a9ee4a84e9ed63f44a06bbecf
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59195875"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59309638"
 ---
 # <a name="enumeration-types-in-data-contracts"></a>Výčtové typy v kontraktech dat
 Výčty lze vyjádřit v datovém modelu kontraktu. Toto téma vás provede několik příkladů, které popisují programovací model.  
@@ -79,11 +79,11 @@ Výčty lze vyjádřit v datovém modelu kontraktu. Toto téma vás provede něk
   
  Následující postup se vztahuje k odesílání hodnota výčtu příznak, který:  
   
-1.  Se pokusí vyhledat na člena výčtu (s <xref:System.Runtime.Serialization.EnumMemberAttribute> atribut), která se mapuje na číselnou hodnotu. Pokud se nenašel, Odeslat seznam, který obsahuje pouze tohoto člena.  
+1. Se pokusí vyhledat na člena výčtu (s <xref:System.Runtime.Serialization.EnumMemberAttribute> atribut), která se mapuje na číselnou hodnotu. Pokud se nenašel, Odeslat seznam, který obsahuje pouze tohoto člena.  
   
-2.  Pokoušejí o přerušení číselné hodnoty do součtu tak, že jsou členy výčtu (spolu <xref:System.Runtime.Serialization.EnumMemberAttribute> atribut), která mapují na jednotlivých součástí tohoto součtu. Odešle seznam všech těchto členů. Všimněte si, že *greedy algoritmus* slouží k vyhledání součtu, a proto neexistuje žádná záruka, že takové součet se nachází i v případě, že je k dispozici. K tomuto problému vyhnout, ujistěte se, že se pro mocniny dvou číselných hodnot členy výčtu.  
+2. Pokoušejí o přerušení číselné hodnoty do součtu tak, že jsou členy výčtu (spolu <xref:System.Runtime.Serialization.EnumMemberAttribute> atribut), která mapují na jednotlivých součástí tohoto součtu. Odešle seznam všech těchto členů. Všimněte si, že *greedy algoritmus* slouží k vyhledání součtu, a proto neexistuje žádná záruka, že takové součet se nachází i v případě, že je k dispozici. K tomuto problému vyhnout, ujistěte se, že se pro mocniny dvou číselných hodnot členy výčtu.  
   
-3.  Pokud předchozí dva kroky nezdaří a je nenulovou číselnou hodnotu, výjimku <xref:System.Runtime.Serialization.SerializationException>. Pokud se číselná hodnota je nula, odeslat prázdný seznam.  
+3. Pokud předchozí dva kroky nezdaří a je nenulovou číselnou hodnotu, výjimku <xref:System.Runtime.Serialization.SerializationException>. Pokud se číselná hodnota je nula, odeslat prázdný seznam.  
   
 ### <a name="example"></a>Příklad  
  Následující příklad výčtu lze použít v rámci operace příznak.  

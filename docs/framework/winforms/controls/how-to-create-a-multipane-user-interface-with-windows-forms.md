@@ -12,12 +12,12 @@ helpviewer_keywords:
 - TreeView control [Windows Forms], examples
 - Splitter control [Windows Forms], examples
 ms.assetid: e79f6bcc-3740-4d1e-b46a-c5594d9b7327
-ms.openlocfilehash: d75d96f8db216ab78e13ba5f8409ea5aa535d685
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 8650ba3b8011e50779080e31d94727609f2d08f1
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59192690"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59315151"
 ---
 # <a name="how-to-create-a-multipane-user-interface-with-windows-forms"></a>Postupy: Vytváření uživatelského rozhraní s více podokny pomocí Windows Forms
 V následujícím postupu vytvoříte, který je podobný tomu použitému v aplikaci Microsoft Outlook s více podokny uživatelské rozhraní **složky** seznamu, **zprávy** podokně a **veverziPreview** podokně. Toto uspořádání se dosahuje hlavně prostřednictvím Ukotvování ovládacích prvků ve formuláři.  
@@ -30,7 +30,7 @@ V následujícím postupu vytvoříte, který je podobný tomu použitému v apl
   
 ### <a name="to-create-an-outlook-style-user-interface-programmatically"></a>Chcete-li vytvořit uživatelským rozhraním stylu aplikace Outlook prostřednictvím kódu programu  
   
-1.  Ve formuláři deklarujte každý ovládací prvek, který se skládá z uživatelského rozhraní. V tomto příkladu použijte <xref:System.Windows.Forms.TreeView>, <xref:System.Windows.Forms.ListView>, <xref:System.Windows.Forms.SplitContainer>, a <xref:System.Windows.Forms.RichTextBox> ovládacích prvků tak, aby napodoboval uživatelského rozhraní aplikace Microsoft Outlook.  
+1. Ve formuláři deklarujte každý ovládací prvek, který se skládá z uživatelského rozhraní. V tomto příkladu použijte <xref:System.Windows.Forms.TreeView>, <xref:System.Windows.Forms.ListView>, <xref:System.Windows.Forms.SplitContainer>, a <xref:System.Windows.Forms.RichTextBox> ovládacích prvků tak, aby napodoboval uživatelského rozhraní aplikace Microsoft Outlook.  
   
     ```vb  
     Private WithEvents treeView1 As System.Windows.Forms.TreeView  
@@ -50,7 +50,7 @@ V následujícím postupu vytvoříte, který je podobný tomu použitému v apl
     private System.Windows.Forms. SplitContainer splitContainer1;  
     ```  
   
-2.  Vytvořte proceduru, která definuje uživatelské rozhraní. Následující kód nastaví vlastnosti tak, aby formuláře budou vypadat podobně jako na uživatelské rozhraní v aplikaci Microsoft Outlook. Pomocí další ovládací prvky nebo je jinak ukotvení, je stejně snadné vytvořit další uživatelské rozhraní, které jsou stejně flexibilní.  
+2. Vytvořte proceduru, která definuje uživatelské rozhraní. Následující kód nastaví vlastnosti tak, aby formuláře budou vypadat podobně jako na uživatelské rozhraní v aplikaci Microsoft Outlook. Pomocí další ovládací prvky nebo je jinak ukotvení, je stejně snadné vytvořit další uživatelské rozhraní, které jsou stejně flexibilní.  
   
     ```vb  
     Public Sub CreateOutlookUI()  
@@ -164,7 +164,7 @@ V následujícím postupu vytvoříte, který je podobný tomu použitému v apl
     }  
     ```  
   
-3.  V jazyce Visual Basic přidejte volání do procedury, kterou jste právě vytvořili `New()` postup. Ve Vizuálu C#, přidejte následující řádek kódu do konstruktoru třídy formuláře.  
+3. V jazyce Visual Basic přidejte volání do procedury, kterou jste právě vytvořili `New()` postup. Ve Vizuálu C#, přidejte následující řádek kódu do konstruktoru třídy formuláře.  
   
     ```vb  
     ' Add this to the New procedure.  

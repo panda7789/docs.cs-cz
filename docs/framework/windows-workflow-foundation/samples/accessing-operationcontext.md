@@ -1,15 +1,15 @@
 ---
-title: Přístup k informacím OperationContext
+title: Přístup k OperationContext
 ms.date: 03/30/2017
 ms.assetid: 4e92efe8-7e79-41f3-b50e-bdc38b9f41f8
-ms.openlocfilehash: 3c7ce1c9c37ee93b58a07376e0aeae045f0ca408
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: c104ceb22117d7cc53050a6513a4aea58fdff8c1
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43864297"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59327955"
 ---
-# <a name="accessing-operationcontext"></a>Přístup k informacím OperationContext
+# <a name="accessing-operationcontext"></a>Přístup k OperationContext
 Tato ukázka předvádí, jak zasílání zpráv aktivity (<xref:System.ServiceModel.Activities.Receive> a <xref:System.ServiceModel.Activities.Send>) je možné s aktivitou vlastní obor pro přístup k <xref:System.ServiceModel.OperationContext.Current%2A> připojit a načíst vlastní hlavičky v rámci odchozí nebo příchozí zprávy.  
   
 ## <a name="demonstrates"></a>Demonstruje  
@@ -20,13 +20,13 @@ Tato ukázka předvádí, jak zasílání zpráv aktivity (<xref:System.ServiceM
   
 #### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
-1.  Tato ukázka poskytuje služby pracovního postupu pomocí koncových bodů HTTP. Chcete-li spustit ukázku, správné seznamy ACL adresa URL musí být přidán (naleznete v tématu [konfigurace HTTP a HTTPS](https://go.microsoft.com/fwlink/?LinkId=70353) podrobnosti), buď pomocí sady Visual Studio jako správce nebo spuštěním následujícího příkazu na řádku se zvýšenými oprávněními přidejte příslušné seznamy ACL. Ujistěte se, že jsou nahrazeny doména a uživatelské jméno.  
+1. Tato ukázka poskytuje služby pracovního postupu pomocí koncových bodů HTTP. Chcete-li spustit ukázku, správné seznamy ACL adresa URL musí být přidán (naleznete v tématu [konfigurace HTTP a HTTPS](https://go.microsoft.com/fwlink/?LinkId=70353) podrobnosti), buď pomocí sady Visual Studio jako správce nebo spuštěním následujícího příkazu na řádku se zvýšenými oprávněními přidejte příslušné seznamy ACL. Ujistěte se, že jsou nahrazeny doména a uživatelské jméno.  
   
     ```  
     netsh http add urlacl url=http://+:8000/ user=%DOMAIN%\%UserName%  
     ```  
   
-2.  Po přidání se seznamy ACL adresu URL, pomocí následujícího postupu.  
+2. Po přidání se seznamy ACL adresu URL, pomocí následujícího postupu.  
   
     1.  Sestavte řešení.  
   

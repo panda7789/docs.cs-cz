@@ -6,12 +6,12 @@ helpviewer_keywords:
 - WCF, authorization
 - WCF, security
 ms.assetid: 322c56e0-938f-4f19-a981-7b6530045b90
-ms.openlocfilehash: df86f87bfc2456d77e3c1ee209cb8b4c61f53b21
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 8011b026e857dd6e5815ef7da00c1c33db8b5b4d
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59140605"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59310353"
 ---
 # <a name="how-to-use-the-aspnet-membership-provider"></a>Postupy: Používání poskytovatele členství ASP.NET
 [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Zprostředkovatele členství je funkce, která umožňuje [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] vývojářům vytvářet weby, které umožňují uživatelům vytvářet jedinečné uživatelské jméno a heslo kombinace. S Azure může každý uživatel zřídit účet s lokalitou a přihlášení na exkluzivní přístup k webu a jeho služeb. To se liší od zabezpečení Windows, což vyžaduje, aby uživatelé mají účty v doméně Windows. Každý uživatel, který dodává své přihlašovací údaje (kombinaci uživatelského jména/hesla) můžete místo toho použijte webu a jeho služeb.  
@@ -27,13 +27,13 @@ ms.locfileid: "59140605"
   
 ### <a name="to-configure-the-membership-provider"></a>Konfigurace zprostředkovatele členství  
   
-1.  V souboru Web.config v části <`system.web`> element, vytvořit <`membership`> element.  
+1. V souboru Web.config v části <`system.web`> element, vytvořit <`membership`> element.  
   
-2.  V části `<membership>` elementu, vytvořit `<providers>` elementu.  
+2. V části `<membership>` elementu, vytvořit `<providers>` elementu.  
   
-3.  Jako podřízené <`providers`> element, přidejte `<clear />` element vyprázdnit kolekce zprostředkovatelů.  
+3. Jako podřízené <`providers`> element, přidejte `<clear />` element vyprázdnit kolekce zprostředkovatelů.  
   
-4.  V části `<clear />` elementu, vytvoření <`add`> element s následujícími atributy nastaven na odpovídající hodnoty: `name`, `type`, `connectionStringName`, `applicationName`, `enablePasswordRetrieval`, `enablePasswordReset`, `requiresQuestionAndAnswer` , `requiresUniqueEmail`, a `passwordFormat`. `name` Atributu se použije v pozdější jako hodnotu v konfiguračním souboru. Následující příklad nastaví na `SqlMembershipProvider`.  
+4. V části `<clear />` elementu, vytvoření <`add`> element s následujícími atributy nastaven na odpovídající hodnoty: `name`, `type`, `connectionStringName`, `applicationName`, `enablePasswordRetrieval`, `enablePasswordReset`, `requiresQuestionAndAnswer` , `requiresUniqueEmail`, a `passwordFormat`. `name` Atributu se použije v pozdější jako hodnotu v konfiguračním souboru. Následující příklad nastaví na `SqlMembershipProvider`.  
   
      Následující příklad ukazuje konfigurační oddíl.  
   
@@ -58,13 +58,13 @@ ms.locfileid: "59140605"
   
 ### <a name="to-configure-service-security-to-accept-the-user-namepassword-combination"></a>Ke konfiguraci služby zabezpečení tak, aby přijímal kombinace uživatelského jména/hesla  
   
-1.  V konfiguračním souboru v části [ \<system.serviceModel >](../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md) element, přidejte [ \<vazby >](../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md) element.  
+1. V konfiguračním souboru v části [ \<system.serviceModel >](../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md) element, přidejte [ \<vazby >](../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md) element.  
   
-2.  Přidat [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) do části vazeb. Další informace o vytváření element vazby WCF najdete v tématu [jak: Zadání vazby služby v konfiguraci](../../../../docs/framework/wcf/how-to-specify-a-service-binding-in-configuration.md).  
+2. Přidat [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) do části vazeb. Další informace o vytváření element vazby WCF najdete v tématu [jak: Zadání vazby služby v konfiguraci](../../../../docs/framework/wcf/how-to-specify-a-service-binding-in-configuration.md).  
   
-3.  Nastavte `mode` atribut `<security>` elementu `Message`.  
+3. Nastavte `mode` atribut `<security>` elementu `Message`.  
   
-4.  Nastavte `clientCredentialType` atribut <`message`> element `UserName`. Určuje, že páru jméno/heslo uživatele se použije jako pověření klienta.  
+4. Nastavte `clientCredentialType` atribut <`message`> element `UserName`. Určuje, že páru jméno/heslo uživatele se použije jako pověření klienta.  
   
      Následující příklad ukazuje kód konfigurace pro vazbu.  
   
@@ -85,22 +85,22 @@ ms.locfileid: "59140605"
   
 ### <a name="to-configure-a-service-to-use-the-membership-provider"></a>Ke konfiguraci služby pro používání poskytovatele členství  
   
-1.  Jako podřízené `<system.serviceModel>` elementu, přidejte [ \<chování >](../../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md) – element  
+1. Jako podřízené `<system.serviceModel>` elementu, přidejte [ \<chování >](../../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md) – element  
   
-2.  Přidat [ \<serviceBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/servicebehaviors.md) k <`behaviors`> element.  
+2. Přidat [ \<serviceBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/servicebehaviors.md) k <`behaviors`> element.  
   
-3.  Přidat [ \<chování >](../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md) a nastavit `name` atribut na odpovídající hodnotu.  
+3. Přidat [ \<chování >](../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md) a nastavit `name` atribut na odpovídající hodnotu.  
   
-4.  Přidat [ \<serviceCredentials >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md) k <`behavior`> element.  
+4. Přidat [ \<serviceCredentials >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md) k <`behavior`> element.  
   
-5.  Přidat [ \<userNameAuthentication >](../../../../docs/framework/configure-apps/file-schema/wcf/usernameauthentication.md) k `<serviceCredentials>` elementu.  
+5. Přidat [ \<userNameAuthentication >](../../../../docs/framework/configure-apps/file-schema/wcf/usernameauthentication.md) k `<serviceCredentials>` elementu.  
   
-6.  Nastavte `userNamePasswordValidationMode` atribut `MembershipProvider`.  
+6. Nastavte `userNamePasswordValidationMode` atribut `MembershipProvider`.  
   
     > [!IMPORTANT]
     >  Pokud `userNamePasswordValidationMode` hodnota není nastavená, WCF používá ověřování Windows namísto [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] zprostředkovatele členství.  
   
-7.  Nastavte `membershipProviderName` atribut název zprostředkovatele (zadanými při přidávání zprostředkovatele v prvním postupu v tomto tématu). Následující příklad ukazuje `<serviceCredentials>` fragmentu do tohoto bodu.  
+7. Nastavte `membershipProviderName` atribut název zprostředkovatele (zadanými při přidávání zprostředkovatele v prvním postupu v tomto tématu). Následující příklad ukazuje `<serviceCredentials>` fragmentu do tohoto bodu.  
   
     ```xml  
     <behaviors>  

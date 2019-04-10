@@ -2,12 +2,12 @@
 title: 'Návod: Manipulace s daty (C#)'
 ms.date: 03/30/2017
 ms.assetid: 24adfbe0-0ad6-449f-997d-8808e0770d2e
-ms.openlocfilehash: 2a4b9fc5bf9afcace373a3f09b246e2bffd49e3d
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 5418bdbdeee162bbc8c0abcb11fd39f2cc82ce73
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59143283"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59330776"
 ---
 # <a name="walkthrough-manipulating-data-c"></a>Návod: Manipulace s daty (C#)
 Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] scénář pro přidání, úpravy a odstraňování dat v databázi. Přidejte zákazníka, změňte název zákazníka a odstranit objednávky použijete kopii ukázkové databáze Northwind.  
@@ -53,30 +53,30 @@ Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdli
   
 #### <a name="to-create-a-linq-to-sql-solution"></a>K vytvoření LINQ to SQL řešení  
   
-1.  V sadě Visual Studio **souboru** nabídky, přejděte k **nový**a potom klikněte na tlačítko **projektu**.  
+1. V sadě Visual Studio **souboru** nabídky, přejděte k **nový**a potom klikněte na tlačítko **projektu**.  
   
-2.  V **typy projektů** v podokně **nový projekt** dialogové okno, klikněte na tlačítko **Visual C#** .  
+2. V **typy projektů** v podokně **nový projekt** dialogové okno, klikněte na tlačítko **Visual C#** .  
   
-3.  V **šablony** podokně klikněte na tlačítko **konzolovou aplikaci**.  
+3. V **šablony** podokně klikněte na tlačítko **konzolovou aplikaci**.  
   
-4.  V **název** zadejte **LinqDataManipulationApp**.  
+4. V **název** zadejte **LinqDataManipulationApp**.  
   
-5.  V **umístění** pole, ověřte, kam chcete uložit soubory projektu.  
+5. V **umístění** pole, ověřte, kam chcete uložit soubory projektu.  
   
-6.  Klikněte na **OK**.  
+6. Klikněte na **OK**.  
   
 ## <a name="adding-linq-references-and-directives"></a>Přidání odkazů LINQ a direktivy  
  Tento návod používá sestavení, která nemusí být nainstalován ve výchozím nastavení ve vašem projektu. Pokud System.Data.Linq není uveden jako odkaz v projektu, přidejte ji tak, jak je popsáno v následujících krocích:  
   
 #### <a name="to-add-systemdatalinq"></a>Chcete-li přidat System.Data.Linq  
   
-1.  V **Průzkumníka řešení**, klikněte pravým tlačítkem na **odkazy**a potom klikněte na tlačítko **přidat odkaz**.  
+1. V **Průzkumníka řešení**, klikněte pravým tlačítkem na **odkazy**a potom klikněte na tlačítko **přidat odkaz**.  
   
-2.  V **přidat odkaz** dialogové okno, klikněte na tlačítko **.NET**, klikněte na tlačítko System.Data.Linq sestavení a klikněte na **OK**.  
+2. V **přidat odkaz** dialogové okno, klikněte na tlačítko **.NET**, klikněte na tlačítko System.Data.Linq sestavení a klikněte na **OK**.  
   
      Sestavení se přidá do projektu.  
   
-3.  V horní části souboru program.cs přidejte následující direktivy:  
+3. V horní části souboru program.cs přidejte následující direktivy:  
   
      [!code-csharp[DLinqWalk3CS#1](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqWalk3CS/cs/Program.cs#1)]  
   
@@ -85,9 +85,9 @@ Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdli
   
 #### <a name="to-add-the-northwind-code-file-to-the-project"></a>Chcete-li přidat soubor kódu northwind do projektu  
   
-1.  Na **projektu** nabídky, klikněte na tlačítko **přidat existující položku**.  
+1. Na **projektu** nabídky, klikněte na tlačítko **přidat existující položku**.  
   
-2.  V **přidat existující položku** dialogové okno, přejděte do c:\linqtest6\northwind.cs a potom klikněte na tlačítko **přidat**.  
+2. V **přidat existující položku** dialogové okno, přejděte do c:\linqtest6\northwind.cs a potom klikněte na tlačítko **přidat**.  
   
      Soubor northwind.cs je přidán do projektu.  
   
@@ -96,11 +96,11 @@ Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdli
   
 #### <a name="to-set-up-and-test-the-database-connection"></a>K nastavení a otestovat připojení k databázi  
   
-1.  Zadejte nebo vložte následující kód do `Main` metodu do třídy Program:  
+1. Zadejte nebo vložte následující kód do `Main` metodu do třídy Program:  
   
      [!code-csharp[DLinqWalk3CS#2](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqWalk3CS/cs/Program.cs#2)]  
   
-2.  Testování aplikace v tomto okamžiku stisknutím klávesy F5.  
+2. Testování aplikace v tomto okamžiku stisknutím klávesy F5.  
   
      A **konzoly** otevře se okno.  
   
@@ -113,13 +113,13 @@ Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdli
   
 #### <a name="to-add-a-new-customer-entity-object"></a>Chcete-li přidat nový objekt entity zákazníka  
   
-1.  Vytvořte nový `Customer` přidáním následujícího kódu před `Console.ReadLine();` v `Main` metody:  
+1. Vytvořte nový `Customer` přidáním následujícího kódu před `Console.ReadLine();` v `Main` metody:  
   
      [!code-csharp[DLinqWalk3CS#3](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqWalk3CS/cs/Program.cs#3)]  
   
-2.  Stiskněte klávesu F5, chcete-li ladit řešení.  
+2. Stiskněte klávesu F5, chcete-li ladit řešení.  
   
-3.  Stisknutím klávesy Enter v **konzoly** okna Zastavit ladění a pokračovat v tomto návodu.  
+3. Stisknutím klávesy Enter v **konzoly** okna Zastavit ladění a pokračovat v tomto návodu.  
   
 ## <a name="updating-an-entity"></a>Aktualizují se Entity  
  V následujících krocích se budou načítat `Customer` objektu a změňte některou z jeho vlastností.  
@@ -146,17 +146,17 @@ Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdli
   
 #### <a name="to-submit-changes-to-the-database"></a>K odeslání změn do databáze  
   
-1.  Vložte následující kód nad `Console.ReadLine`:  
+1. Vložte následující kód nad `Console.ReadLine`:  
   
      [!code-csharp[DLinqWalk3CS#6](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqWalk3CS/cs/Program.cs#6)]  
   
-2.  Vložte následující kód (po `SubmitChanges`) zobrazíte před a po účinky odeslání změn:  
+2. Vložte následující kód (po `SubmitChanges`) zobrazíte před a po účinky odeslání změn:  
   
      [!code-csharp[DLinqWalk3CS#7](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqWalk3CS/cs/Program.cs#7)]  
   
-3.  Stiskněte klávesu F5, chcete-li ladit řešení.  
+3. Stiskněte klávesu F5, chcete-li ladit řešení.  
   
-4.  Stisknutím klávesy Enter v **konzoly** okno zavřít aplikaci.  
+4. Stisknutím klávesy Enter v **konzoly** okno zavřít aplikaci.  
   
 > [!NOTE]
 >  Po přidání nového zákazníka, odešlete změny nelze provést toto řešení znovu, jak je. Pokud chcete znovu spustit řešení, změňte název zákazníka a ID zákazníka, které mají být přidány.  

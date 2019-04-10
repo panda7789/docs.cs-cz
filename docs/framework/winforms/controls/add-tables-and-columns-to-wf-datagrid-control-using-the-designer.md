@@ -6,12 +6,12 @@ helpviewer_keywords:
 - tables [Windows Forms], adding to DataGrid control
 - DataGrid control [Windows Forms], adding tables and columns
 ms.assetid: 4a6d1b34-b696-476b-bf8a-57c6230aa9e1
-ms.openlocfilehash: 18849e61ea9af503d49e6be1894e7ebd53cce9fb
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 5e530b475745a3df7482b9ea4276f004d13ec055
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59201530"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59329957"
 ---
 # <a name="how-to-add-tables-and-columns-to-the-windows-forms-datagrid-control-using-the-designer"></a>Postupy: Přidávání tabulek a sloupců do ovládacího prvku Windows Forms DataGrid pomocí Návrháře
 
@@ -27,35 +27,35 @@ ms.locfileid: "59201530"
   
 ### <a name="to-add-a-table-to-the-datagrid-control-in-the-designer"></a>Přidání tabulky do ovládacího prvku DataGrid v Návrháři  
   
-1.  Pokud chcete zobrazit data v tabulce, je třeba nejdřív svázat <xref:System.Windows.Forms.DataGrid> ovládacího prvku do datové sady. Další informace najdete v tématu [jak: Vytvoření vazby ovládacího prvku Windows Forms DataGrid ke zdroji dat pomocí návrháře](bind-wf-datagrid-control-to-a-data-source-using-the-designer.md).  
+1. Pokud chcete zobrazit data v tabulce, je třeba nejdřív svázat <xref:System.Windows.Forms.DataGrid> ovládacího prvku do datové sady. Další informace najdete v tématu [jak: Vytvoření vazby ovládacího prvku Windows Forms DataGrid ke zdroji dat pomocí návrháře](bind-wf-datagrid-control-to-a-data-source-using-the-designer.md).  
   
-2.  Vyberte <xref:System.Windows.Forms.DataGrid> ovládacího prvku <xref:System.Windows.Forms.DataGrid.TableStyles%2A> vlastností v okně Vlastnosti a pak klikněte na tlačítko se třemi tečkami (![snímek obrazovky VisualStudioEllipsesButton](../media/vbellipsesbutton.png "vbEllipsesButton")) vedle položky Vlastnost pro zobrazení **Editor kolekce styl DataGridTableStyle**.  
+2. Vyberte <xref:System.Windows.Forms.DataGrid> ovládacího prvku <xref:System.Windows.Forms.DataGrid.TableStyles%2A> vlastností v okně Vlastnosti a pak klikněte na tlačítko se třemi tečkami (![snímek obrazovky VisualStudioEllipsesButton](../media/vbellipsesbutton.png "vbEllipsesButton")) vedle položky Vlastnost pro zobrazení **Editor kolekce styl DataGridTableStyle**.  
   
-3.  V editoru kolekcí, klikněte na tlačítko **přidat** vložit styl tabulky.  
+3. V editoru kolekcí, klikněte na tlačítko **přidat** vložit styl tabulky.  
   
-4.  Klikněte na tlačítko **OK** zavřete editor kolekce a znovu ho otevřít kliknutím tlačítko se třemi tečkami vedle možnosti <xref:System.Windows.Forms.DataGrid.TableStyles%2A> vlastnost.  
+4. Klikněte na tlačítko **OK** zavřete editor kolekce a znovu ho otevřít kliknutím tlačítko se třemi tečkami vedle možnosti <xref:System.Windows.Forms.DataGrid.TableStyles%2A> vlastnost.  
   
      Při opětovném otevření editoru kolekcí žádné tabulky dat. vázány na ovládací prvek se zobrazí v rozevíracím seznamu pro <xref:System.Windows.Forms.DataGridTableStyle.MappingName%2A> vlastnost styl tabulky.  
   
-5.  V **členy** pole editor kolekce, klikněte na styl tabulky.  
+5. V **členy** pole editor kolekce, klikněte na styl tabulky.  
   
-6.  V **vlastnosti** pole editoru kolekcí, vyberte <xref:System.Windows.Forms.DataGridTableStyle.MappingName%2A> hodnotu pro tabulky, které chcete zobrazit.  
+6. V **vlastnosti** pole editoru kolekcí, vyberte <xref:System.Windows.Forms.DataGridTableStyle.MappingName%2A> hodnotu pro tabulky, které chcete zobrazit.  
   
 ### <a name="to-add-a-column-to-the-datagrid-control-in-the-designer"></a>Chcete-li přidat sloupec do ovládacího prvku DataGrid v Návrháři  
   
-1.  V **členy** pomocí boxingu **Editor kolekce styl DataGridTableStyle**, vyberte styl odpovídající tabulky. V **vlastnosti** pole editoru kolekcí, vyberte <xref:System.Windows.Forms.DataGridTableStyle.GridColumnStyles%2A> kolekce a potom klikněte na tlačítko se třemi tečkami (![snímek obrazovky VisualStudioEllipsesButton](../media/vbellipsesbutton.png " vbEllipsesButton")) vedle vlastnosti, která má zobrazit **Editor kolekce Styl DataGridColumnStyle**.  
+1. V **členy** pomocí boxingu **Editor kolekce styl DataGridTableStyle**, vyberte styl odpovídající tabulky. V **vlastnosti** pole editoru kolekcí, vyberte <xref:System.Windows.Forms.DataGridTableStyle.GridColumnStyles%2A> kolekce a potom klikněte na tlačítko se třemi tečkami (![snímek obrazovky VisualStudioEllipsesButton](../media/vbellipsesbutton.png " vbEllipsesButton")) vedle vlastnosti, která má zobrazit **Editor kolekce Styl DataGridColumnStyle**.  
   
-2.  V editoru kolekcí, klikněte na tlačítko **přidat** k vložení objektu style sloupec nebo klikněte na šipku dolů vedle **přidat** zadat typ sloupce.  
+2. V editoru kolekcí, klikněte na tlačítko **přidat** k vložení objektu style sloupec nebo klikněte na šipku dolů vedle **přidat** zadat typ sloupce.  
   
      V rozevíracím seznamu můžete vybrat, zda <xref:System.Windows.Forms.DataGridTextBoxColumn> nebo <xref:System.Windows.Forms.DataGridBoolColumn> typu.  
   
-3.  Kliknutím na OK zavřete **Editor kolekce Styl DataGridColumnStyle**a znovu ho otevřete kliknutím tlačítko se třemi tečkami vedle možnosti <xref:System.Windows.Forms.DataGridTableStyle.GridColumnStyles%2A> vlastnost.  
+3. Kliknutím na OK zavřete **Editor kolekce Styl DataGridColumnStyle**a znovu ho otevřete kliknutím tlačítko se třemi tečkami vedle možnosti <xref:System.Windows.Forms.DataGridTableStyle.GridColumnStyles%2A> vlastnost.  
   
      Při opětovném otevření editoru kolekcí žádné sloupce dat v tabulce vázaných dat se zobrazí v rozevíracím seznamu pro <xref:System.Windows.Forms.DataGridColumnStyle.MappingName%2A> vlastnost styl sloupce.  
   
-4.  V **členy** pole editor kolekce, klikněte na styl sloupce.  
+4. V **členy** pole editor kolekce, klikněte na styl sloupce.  
   
-5.  V **vlastnosti** pole editoru kolekcí, vyberte <xref:System.Windows.Forms.DataGridColumnStyle.MappingName%2A> hodnotu sloupce, které chcete zobrazit.  
+5. V **vlastnosti** pole editoru kolekcí, vyberte <xref:System.Windows.Forms.DataGridColumnStyle.MappingName%2A> hodnotu sloupce, které chcete zobrazit.  
   
 ## <a name="see-also"></a>Viz také:
 

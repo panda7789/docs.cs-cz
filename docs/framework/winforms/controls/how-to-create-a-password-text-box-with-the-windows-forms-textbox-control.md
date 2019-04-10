@@ -12,23 +12,23 @@ helpviewer_keywords:
 - passwords [Windows Forms], input mask
 - passwords [Windows Forms], password text box
 ms.assetid: d105d6b9-3d50-44cd-80d8-2c0e2f486727
-ms.openlocfilehash: f2017ccfd6d8320d6afc7b5e8a2ce8349c4fbd17
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: ab5df1233c16a7ce076efa817fb14808b588ebcd
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59110609"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59300980"
 ---
 # <a name="how-to-create-a-password-text-box-with-the-windows-forms-textbox-control"></a>Postupy: Vytvoření textového pole hesla pomocí ovládacího prvku Windows Forms TextBox
 Pole pro heslo je textové pole formulářů Windows, která zobrazuje zástupné znaky, když uživatel zadá řetězec.  
   
 ### <a name="to-create-a-password-text-box"></a>K vytvoření textového pole hesla  
   
-1.  Nastavte <xref:System.Windows.Forms.TextBox.PasswordChar%2A> vlastnost <xref:System.Windows.Forms.TextBox> ovládacího prvku na konkrétní znak.  
+1. Nastavte <xref:System.Windows.Forms.TextBox.PasswordChar%2A> vlastnost <xref:System.Windows.Forms.TextBox> ovládacího prvku na konkrétní znak.  
   
      <xref:System.Windows.Forms.TextBox.PasswordChar%2A> Vlastnost určuje znak, který zobrazí v textovém poli. Například pokud chcete hvězdičky z obou stran zobrazí v poli hesla, zadejte * pro <xref:System.Windows.Forms.TextBox.PasswordChar%2A> vlastností v okně Vlastnosti. Bez ohledu na to, jakou znakovou uživatel zadá do textového pole, pak se zobrazí hvězdičku.  
   
-2.  (Volitelné) Nastavte <xref:System.Windows.Forms.TextBoxBase.MaxLength%2A> vlastnost. Vlastnost určuje, kolik znaků lze zadat do textového pole. Pokud je překročen maximální počet znaků, systém vydá zvukový signál a do textového pole nepřijímá žádné další znaky. Všimněte si, že pravděpodobně chcete to udělat jako maximální délku hesla může být použita hackery, kteří se snaží uhodnout heslo.  
+2. (Volitelné) Nastavte <xref:System.Windows.Forms.TextBoxBase.MaxLength%2A> vlastnost. Vlastnost určuje, kolik znaků lze zadat do textového pole. Pokud je překročen maximální počet znaků, systém vydá zvukový signál a do textového pole nepřijímá žádné další znaky. Všimněte si, že pravděpodobně chcete to udělat jako maximální délku hesla může být použita hackery, kteří se snaží uhodnout heslo.  
   
      Následující příklad kódu ukazuje, jak inicializovat textové pole, která bude přijímat řetězec až 14 znaků dlouhé a zobrazení hvězdičky z obou stran namísto řetězce. `InitializeMyControl` Postup nespustí automaticky, musí být volána.  
   

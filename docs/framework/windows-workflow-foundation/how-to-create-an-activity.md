@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c09b1e99-21b5-4d96-9c04-ec31db3f4436
-ms.openlocfilehash: 271f26888e8b140b64464f5c9c4eabb7170afe05
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 48df9b90a92468858bd3ac5498bd83fd0d57fe75
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57709013"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59315137"
 ---
 # <a name="how-to-create-an-activity"></a>Postupy: Vytvoření aktivity
 
@@ -21,26 +21,26 @@ Aktivity jsou základní jednotka chování v [!INCLUDE[wf1](../../../includes/w
 
 ## <a name="create-the-activity-library-project"></a>Vytvořte projekt knihovny aktivit
 
-1.  Otevřít Visual Studio a zvolte **nový** > **projektu** z **souboru** nabídky.
+1. Otevřít Visual Studio a zvolte **nový** > **projektu** z **souboru** nabídky.
 
-2.  V **nový projekt** dialogového okna, v části **nainstalováno** vyberte **Visual C#** > **pracovního postupu** (nebo **Jazyka Visual Basic** > **pracovního postupu**).
+2. V **nový projekt** dialogového okna, v části **nainstalováno** vyberte **Visual C#** > **pracovního postupu** (nebo **Jazyka Visual Basic** > **pracovního postupu**).
 
     > [!NOTE]
     > Pokud se nezobrazí **pracovního postupu** kategorii šablon, budete muset nainstalovat **Windows Workflow Foundation** komponentu sady Visual Studio. Zvolte **otevřít instalační program Visual Studio** odkazu na levé straně **nový projekt** dialogového okna. V instalačním programu Visual Studio, vyberte **jednotlivé komponenty** kartu. Potom v části **vývojových aktivit** kategorii, vyberte **Windows Workflow Foundation** komponenty. Zvolte **změnit** pro instalaci součásti.
 
 3. Vyberte **knihovny aktivit** šablony projektu. Typ `NumberGuessWorkflowActivities` v **název** pole a potom klikněte na tlačítko **OK**.
 
-4.  Klikněte pravým tlačítkem na **Activity1.xaml** v **Průzkumníka řešení** a zvolte **odstranit**. Klikněte na tlačítko **OK** potvrďte.
+4. Klikněte pravým tlačítkem na **Activity1.xaml** v **Průzkumníka řešení** a zvolte **odstranit**. Klikněte na tlačítko **OK** potvrďte.
 
 ## <a name="create-the-readint-activity"></a>Vytvořit aktivitu readint –
 
-1.  Zvolte **přidat novou položku** z **projektu** nabídky.
+1. Zvolte **přidat novou položku** z **projektu** nabídky.
 
-2.  V **nainstalováno** > **společné položky** uzlu, vyberte **pracovního postupu**. Vyberte **aktivita s kódem** z **pracovního postupu** seznamu.
+2. V **nainstalováno** > **společné položky** uzlu, vyberte **pracovního postupu**. Vyberte **aktivita s kódem** z **pracovního postupu** seznamu.
 
-3.  Typ `ReadInt` do **název** pole a potom klikněte na tlačítko **přidat**.
+3. Typ `ReadInt` do **název** pole a potom klikněte na tlačítko **přidat**.
 
-4.  Nahraďte existující `ReadInt` definice s následující definicí.
+4. Nahraďte existující `ReadInt` definice s následující definicí.
 
      [!code-csharp[CFX_WF_GettingStarted#1](~/samples/snippets/csharp/VS_Snippets_CFX/cfx_wf_gettingstarted/cs/readint.cs#1)]
      [!code-vb[CFX_WF_GettingStarted#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/cfx_wf_gettingstarted/vb/readint.vb#1)]
@@ -50,21 +50,21 @@ Aktivity jsou základní jednotka chování v [!INCLUDE[wf1](../../../includes/w
 
 ## <a name="create-the-prompt-activity"></a>Vytvořit aktivitu příkazový řádek
 
-1.  Stisknutím klávesy **Ctrl**+**Shift**+**B** k sestavení projektu. Vytváření projektu umožňuje `ReadInt` aktivity v tomto projektu, který se má použít k vytvoření vlastní aktivity v tomto kroku.
+1. Stisknutím klávesy **Ctrl**+**Shift**+**B** k sestavení projektu. Vytváření projektu umožňuje `ReadInt` aktivity v tomto projektu, který se má použít k vytvoření vlastní aktivity v tomto kroku.
 
-2.  Zvolte **přidat novou položku** z **projektu** nabídky.
+2. Zvolte **přidat novou položku** z **projektu** nabídky.
 
-3.  V **nainstalováno** > **společné položky** uzlu, vyberte **pracovního postupu**. Vyberte **aktivity** z **pracovního postupu** seznamu.
+3. V **nainstalováno** > **společné položky** uzlu, vyberte **pracovního postupu**. Vyberte **aktivity** z **pracovního postupu** seznamu.
 
-4.  Typ `Prompt` do **název** pole a potom klikněte na tlačítko **přidat**.
+4. Typ `Prompt` do **název** pole a potom klikněte na tlačítko **přidat**.
 
-5.  Dvakrát klikněte na panel **Prompt.xaml** v **Průzkumníka řešení** se zobrazí v návrháři, pokud je už se nezobrazí.
+5. Dvakrát klikněte na panel **Prompt.xaml** v **Průzkumníka řešení** se zobrazí v návrháři, pokud je už se nezobrazí.
 
-6.  Klikněte na tlačítko **argumenty** v levého dolního rohu návrháře aktivit zobrazíte **argumenty** podokně.
+6. Klikněte na tlačítko **argumenty** v levého dolního rohu návrháře aktivit zobrazíte **argumenty** podokně.
 
-7.  Klikněte na tlačítko **vytvořit Argument**.
+7. Klikněte na tlačítko **vytvořit Argument**.
 
-8.  Typ `BookmarkName` do **název** vyberte **v** z **směr** rozevíracího seznamu vyberte **řetězec** z **Typ argumentu** rozevíracího seznamu a poté stiskněte klávesu **Enter** uložit argument.
+8. Typ `BookmarkName` do **název** vyberte **v** z **směr** rozevíracího seznamu vyberte **řetězec** z **Typ argumentu** rozevíracího seznamu a poté stiskněte klávesu **Enter** uložit argument.
 
 9. Klikněte na tlačítko **vytvořit Argument**.
 

@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: f8b97862-e8bb-470d-8b96-07733c21fe26
-ms.openlocfilehash: cee570bdc9d7bf6debfc4ec226e91f3fd79a01dd
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 0c5474a65bee7d3d290372e79f8423ea9986235f
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59095149"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59301175"
 ---
 # <a name="how-to-customize-a-system-provided-binding"></a>Postupy: Přizpůsobení vazeb poskytovaných systémem
 Windows Communication Foundation (WCF) zahrnuje několik vazeb poskytovaných systémem, které vám umožní nakonfigurovat některé vlastnosti základní prvky vazby, ale ne všechny vlastnosti. Toto téma ukazuje, jak nastavit vlastnosti v prvcích vazbu k vytvoření vlastní vazby.  
@@ -25,27 +25,27 @@ Windows Communication Foundation (WCF) zahrnuje několik vazeb poskytovaných sy
   
  <xref:System.ServiceModel.BasicHttpBinding> Třída obsahuje tři prvky vazby:  
   
-1.  Volitelné zabezpečení vazby prvku buď <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement> třída používaná s přenos pomocí protokolu HTTP (zabezpečení na úrovni zpráv) nebo <xref:System.ServiceModel.Channels.TransportSecurityBindingElement> třídy, který se používá při přenosové vrstvy poskytuje zabezpečení, přičemž přenos protokolu HTTPS se používá.  
+1. Volitelné zabezpečení vazby prvku buď <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement> třída používaná s přenos pomocí protokolu HTTP (zabezpečení na úrovni zpráv) nebo <xref:System.ServiceModel.Channels.TransportSecurityBindingElement> třídy, který se používá při přenosové vrstvy poskytuje zabezpečení, přičemž přenos protokolu HTTPS se používá.  
   
-2.  Kodéru zprávy povinný element, buď vazby <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement> nebo <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement>.  
+2. Kodéru zprávy povinný element, buď vazby <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement> nebo <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement>.  
   
-3.  Vyžaduje přenos vazby prvku buď <xref:System.ServiceModel.Channels.HttpTransportBindingElement>, nebo <xref:System.ServiceModel.Channels.HttpsTransportBindingElement>.  
+3. Vyžaduje přenos vazby prvku buď <xref:System.ServiceModel.Channels.HttpTransportBindingElement>, nebo <xref:System.ServiceModel.Channels.HttpsTransportBindingElement>.  
   
  V tomto příkladu jsme vytvořit instanci vazby, generovat *vlastní vazby* z něj, zkontrolujte elementů vazby ve vlastní vazby, a pokud je nalezen element vazby protokolu HTTP, nastavíme jeho `KeepAliveEnabled` vlastnost `false`. `KeepAliveEnabled` Vlastnost nezveřejňují přímo na `BasicHttpBinding`, takže jsme musíte vytvořit vlastní vazby a přejděte dolů element vazby, nastavte tuto vlastnost.  
   
 ### <a name="to-modify-a-system-provided-binding"></a>K úpravě vazeb poskytovaných systémem  
   
-1.  Vytvoření instance <xref:System.ServiceModel.BasicHttpBinding> třídy a nastavte jeho režim zabezpečení na úrovni zprávy.  
+1. Vytvoření instance <xref:System.ServiceModel.BasicHttpBinding> třídy a nastavte jeho režim zabezpečení na úrovni zprávy.  
   
      [!code-csharp[C_HowTo_ChangeStandardBinding#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_changestandardbinding/cs/program.cs#1)]
      [!code-vb[C_HowTo_ChangeStandardBinding#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto_changestandardbinding/vb/program.vb#1)]  
   
-2.  Vytvoření vlastní vazby z vazby a vytvořit <xref:System.ServiceModel.Channels.BindingElementCollection> třídy z jedné z vlastních vazbu vlastnosti.  
+2. Vytvoření vlastní vazby z vazby a vytvořit <xref:System.ServiceModel.Channels.BindingElementCollection> třídy z jedné z vlastních vazbu vlastnosti.  
   
      [!code-csharp[C_HowTo_ChangeStandardBinding#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_changestandardbinding/cs/program.cs#2)]
      [!code-vb[C_HowTo_ChangeStandardBinding#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto_changestandardbinding/vb/program.vb#2)]  
   
-3.  Projít <xref:System.ServiceModel.Channels.BindingElementCollection> třídy, a zjistíte, když <xref:System.ServiceModel.Channels.HttpTransportBindingElement> třídy, nastavte jeho <xref:System.ServiceModel.Channels.HttpTransportBindingElement.KeepAliveEnabled%2A> vlastnost `false`.  
+3. Projít <xref:System.ServiceModel.Channels.BindingElementCollection> třídy, a zjistíte, když <xref:System.ServiceModel.Channels.HttpTransportBindingElement> třídy, nastavte jeho <xref:System.ServiceModel.Channels.HttpTransportBindingElement.KeepAliveEnabled%2A> vlastnost `false`.  
   
      [!code-csharp[C_HowTo_ChangeStandardBinding#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_changestandardbinding/cs/program.cs#3)]
      [!code-vb[C_HowTo_ChangeStandardBinding#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto_changestandardbinding/vb/program.vb#3)]  

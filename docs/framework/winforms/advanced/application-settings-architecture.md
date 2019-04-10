@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - application settings [Windows Forms], architecture
 ms.assetid: c8eb2ad0-fac6-4ea2-9140-675a4a44d562
-ms.openlocfilehash: f686fa00662ad29323c1883c45ed0e790b133f2c
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: c2a62b61cb7b31c978a84a3d3f41c24f9fafb84d
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59099778"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59312563"
 ---
 # <a name="application-settings-architecture"></a>Architektura nastavení aplikace
 Toto téma popisuje, jak funguje nastavení aplikace architektury a zkoumá možnosti pokročilých funkcích sady architektury, jako jsou seskupené nastavení a nastavení klíče.  
@@ -100,11 +100,11 @@ Toto téma popisuje, jak funguje nastavení aplikace architektury a zkoumá mož
 ### <a name="settings-serialization"></a>Nastavení serializace  
  Když <xref:System.Configuration.LocalFileSettingsProvider> nastavení musíte uložit na disk, provede následující akce:  
   
-1.  Používá reflexi ke kontrole všechny vlastnosti definované ve vašich <xref:System.Configuration.ApplicationSettingsBase> odvozené třídy, jak najít ty, které se použijí s oběma <xref:System.Configuration.ApplicationScopedSettingAttribute> nebo <xref:System.Configuration.UserScopedSettingAttribute>.  
+1. Používá reflexi ke kontrole všechny vlastnosti definované ve vašich <xref:System.Configuration.ApplicationSettingsBase> odvozené třídy, jak najít ty, které se použijí s oběma <xref:System.Configuration.ApplicationScopedSettingAttribute> nebo <xref:System.Configuration.UserScopedSettingAttribute>.  
   
-2.  Serializuje vlastnost na disk. Prvním pokusu o volání <xref:System.ComponentModel.TypeConverter.ConvertToString%2A> nebo <xref:System.ComponentModel.TypeConverter.ConvertFromString%2A> na typ přidružený k tomuto <xref:System.ComponentModel.TypeConverter>. Pokud se to nezdaří, pomocí serializace XML místo.  
+2. Serializuje vlastnost na disk. Prvním pokusu o volání <xref:System.ComponentModel.TypeConverter.ConvertToString%2A> nebo <xref:System.ComponentModel.TypeConverter.ConvertFromString%2A> na typ přidružený k tomuto <xref:System.ComponentModel.TypeConverter>. Pokud se to nezdaří, pomocí serializace XML místo.  
   
-3.  Určuje které nastavení přejděte v které soubory na základě nastavení atributu.  
+3. Určuje které nastavení přejděte v které soubory na základě nastavení atributu.  
   
  Pokud se rozhodnete implementovat vlastní třídu nastavení, můžete použít <xref:System.Configuration.SettingsSerializeAsAttribute> k označení nastavení buď pomocí binární nebo vlastní serializace <xref:System.Configuration.SettingsSerializeAs> výčtu. Další informace o vytváření vlastních nastavení třídy v kódu, naleznete v tématu [jak: Vytvořit nastavení aplikace](how-to-create-application-settings.md).  
   

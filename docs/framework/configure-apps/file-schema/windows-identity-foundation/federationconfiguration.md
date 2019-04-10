@@ -3,12 +3,12 @@ title: <federationConfiguration>
 ms.date: 03/30/2017
 ms.assetid: 8b14054c-6d07-46ab-ab58-03f14beac0f2
 author: BrucePerlerMS
-ms.openlocfilehash: e1e92fccfad792fc1b9df86a582f0406a87f34e9
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: e0ac3b663b2a65e00524fe0fba7997125721487c
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59195283"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59297484"
 ---
 # <a name="federationconfiguration"></a>\<federationConfiguration>
 Konfiguruje <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> (WSFAM) a <xref:System.IdentityModel.Services.SessionAuthenticationModule> (SAM), používáte federované ověřování pomocí protokolu WS-Federation. Konfiguruje <xref:System.Security.Claims.ClaimsAuthorizationManager> při použití <xref:System.IdentityModel.Services.ClaimsPrincipalPermission> nebo <xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute> třídy k poskytování řízení přístupu na základě deklarací identity.  
@@ -58,13 +58,13 @@ Konfiguruje <xref:System.IdentityModel.Services.WSFederationAuthenticationModule
   
  Modul runtime bez ohledu na scénář, načte výchozí konfigurace federace. Chování je definovaná následujícím způsobem:  
   
-1.  Pokud není žádný `<federationConfiguration>` element je k dispozici, modul runtime vytvoří konfigurace federace a naplní se výchozími hodnotami. Výchozí konfigurace federace bude odkazovat na výchozí konfigurace identity.  
+1. Pokud není žádný `<federationConfiguration>` element je k dispozici, modul runtime vytvoří konfigurace federace a naplní se výchozími hodnotami. Výchozí konfigurace federace bude odkazovat na výchozí konfigurace identity.  
   
-2.  Pokud jeden `<federationConfiguration>` element je k dispozici, je výchozí konfigurace federace bez ohledu na to, zda je název nebo nepojmenované. Pokud jeho `identityConfiguration` zadán atribut konfigurace identity s názvem odkazuje; v opačném případě se odkazuje výchozí konfigurace identity.  
+2. Pokud jeden `<federationConfiguration>` element je k dispozici, je výchozí konfigurace federace bez ohledu na to, zda je název nebo nepojmenované. Pokud jeho `identityConfiguration` zadán atribut konfigurace identity s názvem odkazuje; v opačném případě se odkazuje výchozí konfigurace identity.  
   
-3.  Pokud nepojmenované `<federationConfiguration>` element je k dispozici, je výchozí konfigurace federace. Pokud jeho `identityConfiguration` zadán atribut konfigurace identity s názvem odkazuje; v opačném případě se odkazuje výchozí konfigurace identity.  
+3. Pokud nepojmenované `<federationConfiguration>` element je k dispozici, je výchozí konfigurace federace. Pokud jeho `identityConfiguration` zadán atribut konfigurace identity s názvem odkazuje; v opačném případě se odkazuje výchozí konfigurace identity.  
   
-4.  Pokud název více `<federationConfiguration>` prvky jsou k dispozici a žádné nepojmenované `<federationConfiguration>` element je k dispozici, je vyvolána výjimka.  
+4. Pokud název více `<federationConfiguration>` prvky jsou k dispozici a žádné nepojmenované `<federationConfiguration>` element je k dispozici, je vyvolána výjimka.  
   
  Obvykle pouze jeden `<federationConfiguration>` je definován oddíl. Tato část je výchozí konfigurace federace. Můžete zadat více jedinečně pojmenovaná `<federationConfiguration>` prvky, ale v takovém případě Pokud chcete načíst konfiguraci federace, než na kterém nepojmenované, je nutné zadat obslužnou rutinu pro. <xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfigurationCreated> události a nastavte <xref:System.IdentityModel.Services.Configuration.FederationConfigurationCreatedEventArgs.FederationConfiguration%2A?displayProperty=nameWithType> vlastnosti uvnitř obslužné rutiny <xref:System.IdentityModel.Services.Configuration.FederationConfiguration> objekt je inicializován s hodnotami z příslušné `<federationConfiguration>` element v konfiguračním souboru.  
   

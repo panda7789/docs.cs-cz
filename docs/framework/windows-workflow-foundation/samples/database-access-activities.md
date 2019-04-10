@@ -2,12 +2,12 @@
 title: Aktivity přístupu k databázi
 ms.date: 03/30/2017
 ms.assetid: 174a381e-1343-46a8-a62c-7c2ae2c4f0b2
-ms.openlocfilehash: db79f2d7605a71997ede134152b12395b9193f95
-ms.sourcegitcommit: d9a0071d0fd490ae006c816f78a563b9946e269a
+ms.openlocfilehash: 2463c3a87be7f7e248572d45e018b72661f4f8c7
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "55066087"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59322599"
 ---
 # <a name="database-access-activities"></a>Aktivity přístupu k databázi
 Aktivity přístupu k databázi umožňují přístup k databázi v rámci pracovního postupu. Tyto aktivity umožňují přístup k databázím nebo upravte informace a použití [ADO.NET](https://go.microsoft.com/fwlink/?LinkId=166081) pro přístup k databázi.  
@@ -299,26 +299,26 @@ public class DbQueryDataSet : AsyncCodeActivity<DataSet>
 
 ##### <a name="to-run-setupcmd"></a>Chcete-li spustit Setup.cmd
 
-1.  Otevřete příkazový řádek.
+1. Otevřete příkazový řádek.
 
-2.  Přejděte do složky s ukázkou DbActivities.
+2. Přejděte do složky s ukázkou DbActivities.
 
-3.  Zadejte "setup.cmd" a stiskněte klávesu ENTER.
+3. Zadejte "setup.cmd" a stiskněte klávesu ENTER.
 
     > [!NOTE]
     >  Setup.cmd pokusu o instalaci ukázky v místním počítači SqlExpress instanci. Pokud chcete nainstalovat v jiné instance systému SQL server, upravte Setup.cmd s novým názvem instance.
 
 ##### <a name="to-uninstall-the-sample-database"></a>Chcete-li odinstalovat ukázkové databáze
 
-1.  Spusťte Cleanup.cmd ze složky s ukázkou v příkazovém řádku.
+1. Spusťte Cleanup.cmd ze složky s ukázkou v příkazovém řádku.
 
 ##### <a name="to-run-the-sample"></a>Chcete-li spustit ukázku
 
-1.  Otevřete řešení v sadě Visual Studio 2010
+1. Otevřete řešení v sadě Visual Studio 2010
 
-2.  Chcete-li zkompilovat řešení, stiskněte CTRL + SHIFT + B.
+2. Chcete-li zkompilovat řešení, stiskněte CTRL + SHIFT + B.
 
-3.  Pokud chcete ukázku spustit bez ladění, stiskněte kombinaci kláves CTRL + F5.
+3. Pokud chcete ukázku spustit bez ladění, stiskněte kombinaci kláves CTRL + F5.
 
 > [!IMPORTANT]
 >  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  

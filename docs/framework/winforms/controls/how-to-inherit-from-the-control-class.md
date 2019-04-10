@@ -8,12 +8,12 @@ helpviewer_keywords:
 - OnPaint method [Windows Forms]
 - custom controls [Windows Forms], creating
 ms.assetid: 46ba0df3-5cf7-443c-a3b4-a72660172476
-ms.openlocfilehash: b173f322018921ef1c0fec6aa785ae6c9d9e6957
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 14f225f5587379b3efa7b6dc2475f1b697ebb281
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59141983"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59314214"
 ---
 # <a name="how-to-inherit-from-the-control-class"></a>Postupy: Dědění ze třídy Control
 Pokud chcete vytvořit zcela vlastní ovládací prvek na formuláři Windows používat, musí dědit z <xref:System.Windows.Forms.Control> třídy. Při dědění z <xref:System.Windows.Forms.Control> třídy vyžaduje, můžete provést další plánování a implementace, také poskytuje největší škálu možností. Při dědění z <xref:System.Windows.Forms.Control>, zdědíte velmi základní funkce, která provádí ovládací prvky fungují. Vyplývajících z funkce <xref:System.Windows.Forms.Control> třída zpracovává vstupu uživatele prostřednictvím klávesnici a myš, definují hranice a velikost ovládacího prvku, poskytuje popisovačů systému windows a poskytuje zpracování zpráv a zabezpečení. Sestavené všechny Malování, který v tomto případě je skutečná vykreslování ovládacího prvku grafického rozhraní, ani nemá začlenit funkce interakce konkrétního uživatele. Je nutné zadat všechny tyto aspekty prostřednictvím vlastního kódu.  
@@ -23,25 +23,25 @@ Pokud chcete vytvořit zcela vlastní ovládací prvek na formuláři Windows po
   
 ### <a name="to-create-a-custom-control"></a>Chcete-li vytvořit vlastní ovládací prvek  
   
-1.  Vytvořte nový **aplikace Windows** nebo **Knihovna ovládacích prvků Windows** projektu.  
+1. Vytvořte nový **aplikace Windows** nebo **Knihovna ovládacích prvků Windows** projektu.  
   
-2.  Z **projektu** nabídce zvolte **přidat třídu**.  
+2. Z **projektu** nabídce zvolte **přidat třídu**.  
   
-3.  V **přidat novou položku** dialogové okno, klikněte na tlačítko **vlastní ovládací prvek**.  
+3. V **přidat novou položku** dialogové okno, klikněte na tlačítko **vlastní ovládací prvek**.  
   
      Nový vlastní ovládací prvek se přidá do vašeho projektu.  
   
-4.  Stisknutím klávesy F7 otevřít **Editor kódu** pro vlastní ovládací prvek.  
+4. Stisknutím klávesy F7 otevřít **Editor kódu** pro vlastní ovládací prvek.  
   
-5.  Vyhledejte <xref:System.Windows.Forms.Control.OnPaint%2A> metodu, která bude prázdný s výjimkou volání <xref:System.Windows.Forms.Control.OnPaint%2A> metody základní třídy.  
+5. Vyhledejte <xref:System.Windows.Forms.Control.OnPaint%2A> metodu, která bude prázdný s výjimkou volání <xref:System.Windows.Forms.Control.OnPaint%2A> metody základní třídy.  
   
-6.  Upravte kód začlenit vlastní vykreslení obsahu, které chcete pro ovládací prvek.  
+6. Upravte kód začlenit vlastní vykreslení obsahu, které chcete pro ovládací prvek.  
   
      Informace o psaní kódu pro vykreslení grafiky pro ovládací prvky najdete v tématu [vlastní ovládací prvek Malování a vykreslování](custom-control-painting-and-rendering.md).  
   
-7.  Implementujte všechny vlastní metody, vlastnosti nebo události, které bude obsahovat váš ovládací prvek.  
+7. Implementujte všechny vlastní metody, vlastnosti nebo události, které bude obsahovat váš ovládací prvek.  
   
-8.  Uložit a testování ovládacího prvku.  
+8. Uložit a testování ovládacího prvku.  
   
 ## <a name="see-also"></a>Viz také:
 

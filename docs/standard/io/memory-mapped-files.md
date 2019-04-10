@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: a483d1b5-64aa-45b6-86ef-11b859f7f02e
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ebd54afb312de0796b5a96b3d41f1e98dd97bd1b
-ms.sourcegitcommit: 15ab532fd5e1f8073a4b678922d93b68b521bfa0
+ms.openlocfilehash: f7bda02e1862740e6a6328835367a6a5e9929033
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58654351"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59328306"
 ---
 # <a name="memory-mapped-files"></a>Soubory mapované paměti
 Soubor mapovaných do paměti obsahuje obsah souboru ve virtuální paměti. Toto mapování mezi prostoru soubor a paměť umožňuje aplikaci, včetně více procesů, upravte soubor tak, že čtení a zápis přímo na paměť. Počínaje [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], spravovaný kód můžete použít pro přístup k souborům mapované paměti stejným způsobem, že nativní funkce Windows přístup k souborům mapované paměti, jak je popsáno v [soubory mapované paměti](https://docs.microsoft.com/previous-versions/ms810613(v=msdn.10)).  
@@ -96,29 +96,29 @@ Soubor mapovaných do paměti obsahuje obsah souboru ve virtuální paměti. Tot
   
  Následující příklad se skládá ze tří samostatné procesy (konzolové aplikace), které zápis logické hodnoty do souboru mapovaných do paměti. Dojde k následující posloupnost akcí:  
   
-1.  `Process A` Vytvoří soubor mapovaných do paměti a zapíše do jeho hodnotu.  
+1. `Process A` Vytvoří soubor mapovaných do paměti a zapíše do jeho hodnotu.  
   
-2.  `Process B` Otevře soubor mapovaných do paměti a zapíše do jeho hodnotu.  
+2. `Process B` Otevře soubor mapovaných do paměti a zapíše do jeho hodnotu.  
   
-3.  `Process C` Otevře soubor mapovaných do paměti a zapíše do jeho hodnotu.  
+3. `Process C` Otevře soubor mapovaných do paměti a zapíše do jeho hodnotu.  
   
-4.  `Process A` načte a zobrazí hodnoty ze souborů mapovaných do paměti.  
+4. `Process A` načte a zobrazí hodnoty ze souborů mapovaných do paměti.  
   
-5.  Po `Process A` bylo dokončeno s souborů mapovaných do paměti soubor okamžitě uvolněn systémem uvolňování paměti.  
+5. Po `Process A` bylo dokončeno s souborů mapovaných do paměti soubor okamžitě uvolněn systémem uvolňování paměti.  
   
  Chcete-li spustit tento příklad, postupujte takto:  
   
-1.  Zkompilujte aplikaci a otevřít tři okna příkazového řádku.  
+1. Zkompilujte aplikaci a otevřít tři okna příkazového řádku.  
   
-2.  V prvním okně příkazového řádku, spusťte `Process A`.  
+2. V prvním okně příkazového řádku, spusťte `Process A`.  
   
-3.  V druhém okně příkazového řádku, spusťte `Process B`.  
+3. V druhém okně příkazového řádku, spusťte `Process B`.  
   
-4.  Vraťte se na `Process A` a stiskněte klávesu ENTER.  
+4. Vraťte se na `Process A` a stiskněte klávesu ENTER.  
   
-5.  V okně příkazového řádku třetí spusťte `Process C`.  
+5. V okně příkazového řádku třetí spusťte `Process C`.  
   
-6.  Vraťte se na `Process A` a stiskněte klávesu ENTER.  
+6. Vraťte se na `Process A` a stiskněte klávesu ENTER.  
   
  Výstup `Process A` vypadá takto:  
   
@@ -140,11 +140,11 @@ Process C says: True
  [!code-csharp[System.IO.MemoryMappedFiles_IPC_A#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.io.memorymappedfiles_ipc_a/cs/program.cs#1)]
  [!code-vb[System.IO.MemoryMappedFiles_IPC_A#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.memorymappedfiles_ipc_a/vb/program.vb#1)]  
   
- **Process C**  
+ **Proces C**  
   
  [!code-csharp[System.IO.MemoryMappedFiles_IPC_B#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.io.memorymappedfiles_ipc_b/cs/program.cs#1)]
  [!code-vb[System.IO.MemoryMappedFiles_IPC_B#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.memorymappedfiles_ipc_b/vb/program.vb#1)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Vstup/výstup souborů a streamů](../../../docs/standard/io/index.md)
+- [I/O souborů a proudů](../../../docs/standard/io/index.md)

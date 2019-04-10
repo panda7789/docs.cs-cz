@@ -4,12 +4,12 @@ description: Toto téma vás provede sestavení řešení .NET Core, která obsa
 author: guardrex
 ms.date: 06/12/2017
 ms.custom: seodec18
-ms.openlocfilehash: 3c515c3771f8204bbc7b6944f81fed463c309bc3
-ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
+ms.openlocfilehash: be0aebb1ac700de07a52c4c50383f45d1191b7f6
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57203399"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59327747"
 ---
 # <a name="building-a-complete-net-core-solution-on-macos-using-visual-studio-for-mac"></a>Vytvoření kompletního řešení .NET Core v systému macOS pomocí sady Visual Studio pro Mac
 
@@ -26,7 +26,7 @@ V tomto kurzu se dozvíte, jak vytvořit aplikaci, která přijímá hledaným s
 
 - OpenSSL (je-li spuštěna .NET Core 1.1): Najdete v článku [předpoklady pro .NET Core v počítačích Mac](../macos-prerequisites.md) tématu.
 - [.NET core SDK 1.1 nebo vyšší](https://www.microsoft.com/net/core#macos)
-- [Visual Studio 2017 for Mac](https://visualstudio.microsoft.com/vs/visual-studio-mac/)
+- [Visual Studio 2017 for Mac](https://visualstudio.microsoft.com/vs/mac/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link)
 
 Další informace o požadavky najdete v článku [předpoklady pro .NET Core v počítačích Mac](../../core/macos-prerequisites.md). Úplné systémové požadavky sady Visual Studio 2017 pro Mac, najdete v části [Visual Studio 2017 for Mac produktová řada požadavky na systém](/visualstudio/productinfo/vs2017-system-requirements-mac).
 
@@ -192,4 +192,4 @@ Testování částí poskytuje software automatizované testování během vývo
 
 ## <a name="see-also"></a>Viz také:
 
-- [Visual Studio 2017 for Mac zpráva k vydání verze](/visualstudio/releasenotes/vs2017-mac-relnotes)
+- [Zpráva k vydání verze pro Visual Studio 2017 for Mac](/visualstudio/releasenotes/vs2017-mac-relnotes)

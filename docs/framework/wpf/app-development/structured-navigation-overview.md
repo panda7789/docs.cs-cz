@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - structured navigation [WPF]
 ms.assetid: 025d30ef-fec5-436d-ad7a-5d5483331c26
-ms.openlocfilehash: 0544e3584e25e9f892a4df095a5c41f0f5352a17
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 0cf2a37eaa812d27dc3d111b1459c9daae72dc5a
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59161509"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59320068"
 ---
 # <a name="structured-navigation-overview"></a>Přehled strukturované navigace
 Obsah, který může být hostován [!INCLUDE[TLA#tla_xbap](../../../../includes/tlasharptla-xbap-md.md)], <xref:System.Windows.Controls.Frame>, nebo <xref:System.Windows.Navigation.NavigationWindow> se skládá z stránky, které lze identifikovat podle pack [!INCLUDE[TLA#tla_uri#plural](../../../../includes/tlasharptla-urisharpplural-md.md)] a kterou se odkazuje hypertextové odkazy. Struktura stránek a způsoby, ve kterém se dá Navigovat, tak jak je definoval hypertextové odkazy, se označuje jako topologie navigace. Tato topologie vyhovuje širokou škálu typů aplikací, zejména těch, které procházejí dokumenty. Pro takové aplikace uživatele můžete přejít z jedné stránky na jinou stránku bez buď stránky museli cokoliv vědět o nich.  
@@ -134,9 +134,9 @@ Obsah, který může být hostován [!INCLUDE[TLA#tla_xbap](../../../../includes
 ### <a name="returning-task-result-and-task-data-from-a-task-to-a-calling-page"></a>Vrátí výsledek úlohy a úkolů Data z úlohy k volání funkce stránky  
  Po dokončení volané stránce uživatel označeny v tomto příkladu stisknutím tlačítka OK ani Storno, volaná stránka potřebám vrátit. Protože volání stránky volané stránka používá ke shromažďování dat od uživatele, volání stránka vyžaduje dva typy informací:  
   
-1.  Určuje, zda uživatel zrušil názvem stránky (stisknutím klávesy na tlačítko OK nebo na tlačítko Storno v tomto příkladu). To umožňuje, aby volající stránka k určení, jestli se má zpracovat data, která stránce volání shromážděných od uživatele.  
+1. Určuje, zda uživatel zrušil názvem stránky (stisknutím klávesy na tlačítko OK nebo na tlačítko Storno v tomto příkladu). To umožňuje, aby volající stránka k určení, jestli se má zpracovat data, která stránce volání shromážděných od uživatele.  
   
-2.  Data zadaná uživatelem.  
+2. Data zadaná uživatelem.  
   
  K vrácení informací, <xref:System.Windows.Navigation.PageFunction%601> implementuje <xref:System.Windows.Navigation.PageFunction%601.OnReturn%2A> metody. Následující kód ukazuje, jak ji volat.  
   

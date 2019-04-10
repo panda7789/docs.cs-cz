@@ -2,12 +2,12 @@
 title: 'Úkol 2: Hostování Návrháře postupu provádění'
 ms.date: 03/30/2017
 ms.assetid: 0a29b138-270d-4846-b78e-2b875e34e501
-ms.openlocfilehash: 4129d53f73c590535dcbee576cea91e7ad3ff37f
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 3f7964e907fe513679e60c18292f07c84128590b
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59218703"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59299264"
 ---
 # <a name="task-2-host-the-workflow-designer"></a>Úkol 2: Hostování Návrháře postupu provádění
 Toto téma popisuje postup, pro který je hostitelem instance [!INCLUDE[wfd1](../../../includes/wfd1-md.md)] v aplikaci Windows Presentation Foundation (WPF).  
@@ -16,19 +16,19 @@ Toto téma popisuje postup, pro který je hostitelem instance [!INCLUDE[wfd1](..
   
 ### <a name="to-host-the-workflow-designer"></a>K hostování návrháře postupu provádění  
   
-1.  Otevřít HostingApplication projektu, kterou jste vytvořili v [úkol 1: Vytvoření nové aplikace Windows Presentation Foundation](task-1-create-a-new-wpf-app.md).  
+1. Otevřít HostingApplication projektu, kterou jste vytvořili v [úkol 1: Vytvoření nové aplikace Windows Presentation Foundation](task-1-create-a-new-wpf-app.md).  
   
-2.  Úprava velikosti okna, které usnadňují použití [!INCLUDE[wfd2](../../../includes/wfd2-md.md)]. Chcete-li to provést, vyberte **hlavního okna MainWindow** v návrháři, zobrazíte stisknutím klávesy F4 **vlastnosti** okna a v **rozložení** části existuje, nastavte **šířku** k hodnotě čítače 600 a **výška** na hodnotu 350.  
+2. Úprava velikosti okna, které usnadňují použití [!INCLUDE[wfd2](../../../includes/wfd2-md.md)]. Chcete-li to provést, vyberte **hlavního okna MainWindow** v návrháři, zobrazíte stisknutím klávesy F4 **vlastnosti** okna a v **rozložení** části existuje, nastavte **šířku** k hodnotě čítače 600 a **výška** na hodnotu 350.  
   
-3.  Nastavte název tabulky tak, že vyberete **mřížky** panelu v Návrháři (klikněte na pole uvnitř **hlavního okna MainWindow**) a nastavení **název** vlastnost v horní části  **Vlastnosti** okno "grid1".  
+3. Nastavte název tabulky tak, že vyberete **mřížky** panelu v Návrháři (klikněte na pole uvnitř **hlavního okna MainWindow**) a nastavení **název** vlastnost v horní části  **Vlastnosti** okno "grid1".  
   
-4.  V **vlastnosti** okna, klikněte na tlačítko se třemi tečkami (**...** ) vedle položky `ColumnDefinitions` vlastnosti otevřít **Editor kolekce** dialogové okno.  
+4. V **vlastnosti** okna, klikněte na tlačítko se třemi tečkami (**...** ) vedle položky `ColumnDefinitions` vlastnosti otevřít **Editor kolekce** dialogové okno.  
   
-5.  V **Editor kolekce** dialogové okno, klikněte na tlačítko **přidat** tlačítko třikrát pro vložení tři sloupce do požadovaného rozložení. První sloupec bude obsahovat **nástrojů**, druhý sloupec bude hostovat [!INCLUDE[wfd2](../../../includes/wfd2-md.md)], a třetí sloupec bude použit pro vlastnost inspector.  
+5. V **Editor kolekce** dialogové okno, klikněte na tlačítko **přidat** tlačítko třikrát pro vložení tři sloupce do požadovaného rozložení. První sloupec bude obsahovat **nástrojů**, druhý sloupec bude hostovat [!INCLUDE[wfd2](../../../includes/wfd2-md.md)], a třetí sloupec bude použit pro vlastnost inspector.  
   
-6.  Nastavte `Width` vlastnost v prostředním sloupci na hodnotu "4 *".  
+6. Nastavte `Width` vlastnost v prostředním sloupci na hodnotu "4 *".  
   
-7.  Změny uložíte kliknutím na tlačítko **OK** . Do souboru MainWindow.xaml je přidána následující XAML:  
+7. Změny uložíte kliknutím na tlačítko **OK** . Do souboru MainWindow.xaml je přidána následující XAML:  
   
     ```xml  
     <Grid Name="grid1">  
@@ -40,7 +40,7 @@ Toto téma popisuje postup, pro který je hostitelem instance [!INCLUDE[wfd1](..
     </Grid>  
     ```  
   
-8.  V **Průzkumníka řešení**, klikněte pravým tlačítkem na soubor MainWindow.xaml a vyberte **zobrazit kód**. Úprava kódu pomocí následujících kroků:  
+8. V **Průzkumníka řešení**, klikněte pravým tlačítkem na soubor MainWindow.xaml a vyberte **zobrazit kód**. Úprava kódu pomocí následujících kroků:  
   
     1.  Přidejte následující obory názvů:  
   

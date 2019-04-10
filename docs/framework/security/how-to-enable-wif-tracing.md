@@ -3,12 +3,12 @@ title: 'Postupy: Povolení trasování WIF'
 ms.date: 03/30/2017
 ms.assetid: 271b6889-3454-46ff-96ab-9feb15e742ee
 author: BrucePerlerMS
-ms.openlocfilehash: ab59b0809008f212269e2c4b9745ccaec8c9af5d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 83382a8375538acc04d293ee938a4e845d5e8820
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54605159"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59310262"
 ---
 # <a name="how-to-enable-wif-tracing"></a>Postupy: Povolení trasování WIF
 ## <a name="applies-to"></a>Platí pro  
@@ -55,19 +55,19 @@ ms.locfileid: "54605159"
   
 #### <a name="to-create-a-simple-aspnet-application"></a>Chcete-li vytvořit jednoduchou aplikaci ASP.NET  
   
-1.  Spusťte sadu Visual Studio a klikněte na tlačítko **souboru**, **nový**a potom **projektu**.  
+1. Spusťte sadu Visual Studio a klikněte na tlačítko **souboru**, **nový**a potom **projektu**.  
   
-2.  V **nový projekt** okna, klikněte na tlačítko **aplikace webových formulářů ASP.NET**.  
+2. V **nový projekt** okna, klikněte na tlačítko **aplikace webových formulářů ASP.NET**.  
   
-3.  V **název**, zadejte `TestApp` a stiskněte klávesu **OK**.  
+3. V **název**, zadejte `TestApp` a stiskněte klávesu **OK**.  
   
-4.  Klikněte pravým tlačítkem myši **TestApp** projektu v rámci **Průzkumníku řešení**a pak vyberte **identit a přístupu**.  
+4. Klikněte pravým tlačítkem myši **TestApp** projektu v rámci **Průzkumníku řešení**a pak vyberte **identit a přístupu**.  
   
-5.  **Identit a přístupu** zobrazí se okno. V části **poskytovatelé**vyberte **testování aplikace s místní službu STS pro vývoj**, pak klikněte na tlačítko **použít**.  
+5. **Identit a přístupu** zobrazí se okno. V části **poskytovatelé**vyberte **testování aplikace s místní službu STS pro vývoj**, pak klikněte na tlačítko **použít**.  
   
-6.  Vytvořte novou složku s názvem v **protokoly** v kořenovém adresáři **C:** jednotky, jako je třeba zobrazí: **C:\Logs**  
+6. Vytvořte novou složku s názvem v **protokoly** v kořenovém adresáři **C:** jednotky, jako je třeba zobrazí: **C:\Logs**  
   
-7.  Přidejte následující  **\<system.diagnostics >** elementu *Web.config* konfigurační soubor hned za uzavírací  **\</configSections >** element, jako je třeba zobrazí:  
+7. Přidejte následující  **\<system.diagnostics >** elementu *Web.config* konfigurační soubor hned za uzavírací  **\</configSections >** element, jako je třeba zobrazí:  
   
     ```xml  
     <configuration>  
@@ -96,8 +96,8 @@ ms.locfileid: "54605159"
   
 #### <a name="to-test-your-wif-enabled-aspnet-application-for-successful-tracing"></a>Chcete-li otestovat aplikaci technologie ASP.NET s podporou technologie WIF pro úspěšné trasování  
   
-1.  Spuštění řešení stisknutím kombinace kláves **F5** klíč. Měli byste se výchozí domovskou stránku ASP.NET a automaticky ověřuje se uživatelské jméno *Terry*, což je výchozí uživatel, který je vrácen služba STS pro vývoj.  
+1. Spuštění řešení stisknutím kombinace kláves **F5** klíč. Měli byste se výchozí domovskou stránku ASP.NET a automaticky ověřuje se uživatelské jméno *Terry*, což je výchozí uživatel, který je vrácen služba STS pro vývoj.  
   
-2.  Zavřete okno prohlížeče a přejděte **C:\logs** složky. Otevřít **C:\logs\WIF.xml** soubor pomocí textového editoru.  
+2. Zavřete okno prohlížeče a přejděte **C:\logs** složky. Otevřít **C:\logs\WIF.xml** soubor pomocí textového editoru.  
   
-3.  Zkontrolujte **WIF.xml** souboru a ověřte, zda obsahuje položky počínaje  **\<E2ETraceEvent >**. Toto trasování bude obsahovat  **\<TraceRecord >** prvky s popisem trasovaných aktivity, jako například **ověření tokenu SecurityToken**.
+3. Zkontrolujte **WIF.xml** souboru a ověřte, zda obsahuje položky počínaje  **\<E2ETraceEvent >**. Toto trasování bude obsahovat  **\<TraceRecord >** prvky s popisem trasovaných aktivity, jako například **ověření tokenu SecurityToken**.

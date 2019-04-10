@@ -1,5 +1,5 @@
 ---
-title: Přístup k silně typované dat XML pomocí XPathNavigator
+title: Přístup k datům XML silného typu pomocí XPathNavigator
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -8,14 +8,14 @@ dev_langs:
 ms.assetid: 898e0f52-8a7c-4d1f-afcd-6ffb28b050b4
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: cd0719fbc84159fdf751b136c2a65b0ce40b42ec
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1905e9f1d80931bd15cff5f3d0a92ceee29435ef
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54665185"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59319882"
 ---
-# <a name="accessing-strongly-typed-xml-data-using-xpathnavigator"></a>Přístup k silně typované dat XML pomocí XPathNavigator
+# <a name="accessing-strongly-typed-xml-data-using-xpathnavigator"></a>Přístup k datům XML silného typu pomocí XPathNavigator
 Jako instanci datového modelu, XPath 2.0 <xref:System.Xml.XPath.XPathNavigator> třídy mohou obsahovat silného typu dat, která se mapuje na common language runtime (CLR) typy. Podle modelu dat XPath 2.0 může obsahovat pouze prvky a atributy dat silného typu. <xref:System.Xml.XPath.XPathNavigator> Třída poskytuje mechanismus pro přístup k datům v rámci <xref:System.Xml.XPath.XPathDocument> nebo <xref:System.Xml.XmlDocument> jako silného typu dat, stejně jako mechanismus pro převod z jednoho datového typu na jiný objekt.  
   
 ## <a name="type-information-exposed-by-xpathnavigator"></a>Informace o typu vystavené objektem XPathNavigator nastaveným na  
@@ -52,11 +52,11 @@ Jako instanci datového modelu, XPath 2.0 <xref:System.Xml.XPath.XPathNavigator>
 ## <a name="the-post-schema-validation-infoset-psvi"></a>Příspěvek schéma ověřování v informační sadu (PSVI)  
  Procesor schématu XML přijímá informační sadu XML jako vstup a převede jej do schéma ověření informační sada (PSVI Post). PSVI je původní vstupní XML informační sadu se nové informace položky přidané a přidání existující položky informace nových vlastností. Existují tři různé třídy informací pro informační sadu XML v PSVI, které jsou vystavené <xref:System.Xml.XPath.XPathNavigator>.  
   
-1.  Výsledky ověření: Informace o tom, zda elementu nebo atributu byl úspěšně ověřen nebo ne. To je zveřejněný prostřednictvím <xref:System.Xml.Schema.IXmlSchemaInfo.Validity%2A> vlastnost <xref:System.Xml.XPath.XPathNavigator.SchemaInfo%2A> vlastnost <xref:System.Xml.XPath.XPathNavigator> třídy.  
+1. Výsledky ověření: Informace o tom, zda elementu nebo atributu byl úspěšně ověřen nebo ne. To je zveřejněný prostřednictvím <xref:System.Xml.Schema.IXmlSchemaInfo.Validity%2A> vlastnost <xref:System.Xml.XPath.XPathNavigator.SchemaInfo%2A> vlastnost <xref:System.Xml.XPath.XPathNavigator> třídy.  
   
-2.  Informace o výchozím nastavení: Označení, zda hodnota elementu nebo atributu byl získán prostřednictvím výchozí hodnoty zadané ve schématu, nebo ne. To je zveřejněný prostřednictvím <xref:System.Xml.Schema.IXmlSchemaInfo.IsDefault%2A> vlastnost <xref:System.Xml.XPath.XPathNavigator.SchemaInfo%2A> vlastnost <xref:System.Xml.XPath.XPathNavigator> třídy.  
+2. Informace o výchozím nastavení: Označení, zda hodnota elementu nebo atributu byl získán prostřednictvím výchozí hodnoty zadané ve schématu, nebo ne. To je zveřejněný prostřednictvím <xref:System.Xml.Schema.IXmlSchemaInfo.IsDefault%2A> vlastnost <xref:System.Xml.XPath.XPathNavigator.SchemaInfo%2A> vlastnost <xref:System.Xml.XPath.XPathNavigator> třídy.  
   
-3.  Poznámky: Odkazy na schéma komponenty, které mohou být typ definice nebo deklarace prvků a atributů. <xref:System.Xml.XPath.XPathNavigator.XmlType%2A> Vlastnost <xref:System.Xml.XPath.XPathNavigator> obsahuje informace o konkrétním typu uzlu, pokud je platný. Pokud platnost uzel neznámý, například když se ověřila pak následně upravit. pak bude <xref:System.Xml.XPath.XPathNavigator.XmlType%2A> je nastavena na `null` je stále k dispozici různé vlastnosti informací o typu, ale <xref:System.Xml.XPath.XPathNavigator.SchemaInfo%2A> vlastnost <xref:System.Xml.XPath.XPathNavigator> třídy.  
+3. Poznámky: Odkazy na schéma komponenty, které mohou být typ definice nebo deklarace prvků a atributů. <xref:System.Xml.XPath.XPathNavigator.XmlType%2A> Vlastnost <xref:System.Xml.XPath.XPathNavigator> obsahuje informace o konkrétním typu uzlu, pokud je platný. Pokud platnost uzel neznámý, například když se ověřila pak následně upravit. pak bude <xref:System.Xml.XPath.XPathNavigator.XmlType%2A> je nastavena na `null` je stále k dispozici různé vlastnosti informací o typu, ale <xref:System.Xml.XPath.XPathNavigator.SchemaInfo%2A> vlastnost <xref:System.Xml.XPath.XPathNavigator> třídy.  
   
  Následující příklad ukazuje, použijte informace v vystavené informační po Schema ověření sadu <xref:System.Xml.XPath.XPathNavigator>.  
   

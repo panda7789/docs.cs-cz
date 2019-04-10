@@ -9,12 +9,12 @@ helpviewer_keywords:
 - MenuStrip control [Windows Forms], appending
 - MDI [Windows Forms], merging menu items
 ms.assetid: ab70c936-b452-4653-b417-17be57bb795b
-ms.openlocfilehash: 9c39b80c06cae91c43c7a79390cef71ae781489e
-ms.sourcegitcommit: acd8ed14fe94e9d4e3a7fb685fe83d05e941073c
+ms.openlocfilehash: a335531b090983de4e2b3daccc9f956930cbad6e
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56442741"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59298939"
 ---
 # <a name="how-to-append-a-menustrip-to-an-mdi-parent-window-windows-forms"></a>Postupy: Připojení prvku MenuStrip do nadřazeného okna MDI (Windows Forms)
 V některých aplikacích druh podřízené okno rozhraní více dokumentů (MDI) může lišit od nadřazeného okna MDI. Například nadřazený objekt MDI může být tabulku a podřízený formulář MDI může být grafu. V takovém případě budete chtít aktualizovat obsah nabídky nadřazený objekt MDI obsah nabídky podřízený formulář MDI jako podřízená okna MDI různé druhy se aktivují.  
@@ -25,25 +25,25 @@ V některých aplikacích druh podřízené okno rozhraní více dokumentů (MDI
   
 ### <a name="to-append-a-menu-item-to-an-mdi-parent"></a>Připojit položky nabídky nadřazený objekt MDI  
   
-1.  Vytvořit formulář a nastavte jeho <xref:System.Windows.Forms.Form.IsMdiContainer%2A> vlastnost `true`.  
+1. Vytvořit formulář a nastavte jeho <xref:System.Windows.Forms.Form.IsMdiContainer%2A> vlastnost `true`.  
   
-2.  Přidat <xref:System.Windows.Forms.MenuStrip> k `Form1` a nastavit <xref:System.Windows.Forms.ToolStrip.AllowMerge%2A> vlastnost <xref:System.Windows.Forms.MenuStrip> k `true`.  
+2. Přidat <xref:System.Windows.Forms.MenuStrip> k `Form1` a nastavit <xref:System.Windows.Forms.ToolStrip.AllowMerge%2A> vlastnost <xref:System.Windows.Forms.MenuStrip> k `true`.  
   
-3.  Nastavte <xref:System.Windows.Forms.ToolStripItem.Visible%2A> vlastnost `Form1` <xref:System.Windows.Forms.MenuStrip> k `false`.  
+3. Nastavte <xref:System.Windows.Forms.ToolStripItem.Visible%2A> vlastnost `Form1`<xref:System.Windows.Forms.MenuStrip> k `false`.  
   
-4.  Přidání položky do nabídek nejvyšší úrovně `Form1` <xref:System.Windows.Forms.MenuStrip> a nastavte jeho <xref:System.Windows.Forms.Control.Text%2A> vlastnost `&File`.  
+4. Přidání položky do nabídek nejvyšší úrovně `Form1`<xref:System.Windows.Forms.MenuStrip> a nastavte jeho <xref:System.Windows.Forms.Control.Text%2A> vlastnost `&File`.  
   
-5.  Přidat podnabídku položku `&File` položky nabídky a nastavte jeho <xref:System.Windows.Forms.Form.Text%2A> vlastnost `&Open`.  
+5. Přidat podnabídku položku `&File` položky nabídky a nastavte jeho <xref:System.Windows.Forms.Form.Text%2A> vlastnost `&Open`.  
   
-6.  Přidání formuláře do projektu, přidejte <xref:System.Windows.Forms.MenuStrip> do formuláře a nastavte <xref:System.Windows.Forms.ToolStrip.AllowMerge%2A> vlastnost `Form2` <xref:System.Windows.Forms.MenuStrip> k `true`.  
+6. Přidání formuláře do projektu, přidejte <xref:System.Windows.Forms.MenuStrip> do formuláře a nastavte <xref:System.Windows.Forms.ToolStrip.AllowMerge%2A> vlastnost `Form2`<xref:System.Windows.Forms.MenuStrip> k `true`.  
   
-7.  Přidání položky do nabídek nejvyšší úrovně `Form2` <xref:System.Windows.Forms.MenuStrip> a nastavte jeho <xref:System.Windows.Forms.Form.Text%2A> vlastnost `&Special`.  
+7. Přidání položky do nabídek nejvyšší úrovně `Form2`<xref:System.Windows.Forms.MenuStrip> a nastavte jeho <xref:System.Windows.Forms.Form.Text%2A> vlastnost `&Special`.  
   
-8.  Přidání dvou položek podnabídky do `&Special` položky nabídky a nastavte jejich <xref:System.Windows.Forms.Form.Text%2A> vlastností `Command&1` a `Command&2`v uvedeném pořadí.  
+8. Přidání dvou položek podnabídky do `&Special` položky nabídky a nastavte jejich <xref:System.Windows.Forms.Form.Text%2A> vlastností `Command&1` a `Command&2`v uvedeném pořadí.  
   
 9. Nastavte <xref:System.Windows.Forms.MergeAction> vlastnost `&Special`, `Command&1`, a `Command&2` položky nabídky <xref:System.Windows.Forms.MergeAction.Append>.  
   
-10. Vytvořte obslužnou rutinu události pro <xref:System.Windows.Forms.Control.Click> událost `&New` <xref:System.Windows.Forms.ToolStripMenuItem>.  
+10. Vytvořte obslužnou rutinu události pro <xref:System.Windows.Forms.Control.Click> událost `&New`<xref:System.Windows.Forms.ToolStripMenuItem>.  
   
 11. V rámci obslužné rutiny události vložení kódu podobně jako v následujícím příkladu kódu k vytváření a zobrazování nových instancí `Form2` jako podřízený objekt MDI `Form1`.  
   
@@ -68,7 +68,7 @@ V některých aplikacích druh podřízené okno rozhraní více dokumentů (MDI
     }  
     ```  
   
-12. Umístit podobně jako v následujícím příkladu kódu v kódu `&Open` <xref:System.Windows.Forms.ToolStripMenuItem> zaregistrovat obslužnou rutinu události.  
+12. Umístit podobně jako v následujícím příkladu kódu v kódu `&Open`<xref:System.Windows.Forms.ToolStripMenuItem> zaregistrovat obslužnou rutinu události.  
   
     ```vb  
     Private Sub openToolStripMenuItem_Click(sender As Object, e As _  

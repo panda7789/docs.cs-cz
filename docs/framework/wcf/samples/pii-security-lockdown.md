@@ -2,12 +2,12 @@
 title: Bezpečnostní uzamčení PII
 ms.date: 03/30/2017
 ms.assetid: c44fb338-9527-4dd0-8607-b8787d15acb4
-ms.openlocfilehash: 38ca91ab969624ab2128e3cfad1d8151cb8d1f88
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 13ed280e9b7de2b205e0878761dbf97e168f06d3
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59122054"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59326642"
 ---
 # <a name="pii-security-lockdown"></a>Bezpečnostní uzamčení PII
 Tento příklad ukazuje, jak řídit několik funkcí souvisejících se zabezpečením pomocí služby Windows Communication Foundation (WCF):  
@@ -41,11 +41,11 @@ Tento příklad ukazuje, jak řídit několik funkcí souvisejících se zabezpe
   
 #### <a name="to-encrypt-the-values-in-the-appsettings-section-in-webconfig-for-the-sample"></a>K šifrování hodnoty v oddíle appSettings souboru Web.config pro ukázku  
   
-1.  Otevřete příkazový řádek s použitím Start -> spustit... Zadejte `cmd` a klikněte na tlačítko **OK**.  
+1. Otevřete příkazový řádek s použitím Start -> spustit... Zadejte `cmd` a klikněte na tlačítko **OK**.  
   
-2.  Přejděte do aktuálního adresáře rozhraní .NET Framework pomocí následujícího příkazu: `cd %WINDIR%\Microsoft.NET\Framework\v4.0.20728`.  
+2. Přejděte do aktuálního adresáře rozhraní .NET Framework pomocí následujícího příkazu: `cd %WINDIR%\Microsoft.NET\Framework\v4.0.20728`.  
   
-3.  Nastavení konfigurace appSettings ve složce Web.config šifrovat pomocí následujícího příkazu: `aspnet_regiis -pe "appSettings" -app "/servicemodelsamples" -prov "DataProtectionConfigurationProvider"`.  
+3. Nastavení konfigurace appSettings ve složce Web.config šifrovat pomocí následujícího příkazu: `aspnet_regiis -pe "appSettings" -app "/servicemodelsamples" -prov "DataProtectionConfigurationProvider"`.  
   
  Další informace o šifrování oddíly konfiguračních souborů můžete zobrazit tak čtení postupy na rozhraní DPAPI v konfiguraci technologie ASP.NET ([vytváření bezpečných aplikací technologie ASP.NET: Ověřování, autorizaci a zabezpečená komunikace](https://go.microsoft.com/fwlink/?LinkId=95137)) a postupy v RSA v konfiguraci technologie ASP.NET ([How To: Zašifrovat konfigurační oddíly funkce v technologii ASP.NET 2.0 pomocí technologie RSA](https://go.microsoft.com/fwlink/?LinkId=95138)).  
   
@@ -130,17 +130,17 @@ Tento příklad ukazuje, jak řídit několik funkcí souvisejících se zabezpe
   
 #### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
-1.  Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2.  Upravit soubor Machine.config nastavit `enableLoggingKnownPii` atribut `true`, v případě potřeby přidává uzly nadřazených objektů.  
+2. Upravit soubor Machine.config nastavit `enableLoggingKnownPii` atribut `true`, v případě potřeby přidává uzly nadřazených objektů.  
   
-3.  K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+3. K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-4.  Spusťte ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+4. Spusťte ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 #### <a name="to-clean-up-the-sample"></a>Vyčistit vzorku  
   
-1.  Upravit soubor Machine.config nastavit `enableLoggingKnownPii` atribut `false`.  
+1. Upravit soubor Machine.config nastavit `enableLoggingKnownPii` atribut `false`.  
   
 ## <a name="see-also"></a>Viz také:
 

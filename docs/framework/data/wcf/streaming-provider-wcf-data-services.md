@@ -10,12 +10,12 @@ helpviewer_keywords:
 - streaming data provider [WCF Data Services]
 - WCF Data Services, streams
 ms.assetid: f0978fe4-5f9f-42aa-a5c2-df395d7c9495
-ms.openlocfilehash: afe33835c8d29c4fe0e16ab4c7e00808336d0752
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: c2e51133850a59de2b68164870f909ef50d47b69
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59087895"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59298874"
 ---
 # <a name="streaming-provider-wcf-data-services"></a>Zprostředkovatel streamování (WCF Data Services)
 Datové služby může vystavit data binárního rozsáhlého objektu. Tento binární data mohou představovat video a audiostreamů, obrázky, soubory dokumentů nebo jiných typů médií binární. Pokud entita v datovém modelu obsahuje jeden nebo více binárních vlastností, datové služby vrátí tato binární data kódováním base-64 uvnitř položky v odpovědi informačního kanálu. Protože načítání a serializaci velkému objemu binárních dat tímto způsobem může ovlivnit výkon, [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] definuje mechanismus pro načítání binárních dat, které jsou nezávislé na entitu, do které patří. Toho dosahuje oddělením binární data z entity do jednoho nebo více datových proudů.  
@@ -28,15 +28,15 @@ Datové služby může vystavit data binárního rozsáhlého objektu. Tento bin
   
  Konfigurace datové služby podporovat datový proud binárních dat vyžaduje následující kroky:  
   
-1.  Atribut jeden nebo více entit v datovém modelu, jak položkou odkazu na média. Tyto entity by neměl obsahovat binární data, která mají Streamovat. Žádné binární vlastnosti entity jsou vždy vrátí v položce jako kódování base-64 binární.  
+1. Atribut jeden nebo více entit v datovém modelu, jak položkou odkazu na média. Tyto entity by neměl obsahovat binární data, která mají Streamovat. Žádné binární vlastnosti entity jsou vždy vrátí v položce jako kódování base-64 binární.  
   
-2.  Implementujte rozhraní T:System.Data.Services.Providers.IDataServiceStreamProvider.  
+2. Implementujte rozhraní T:System.Data.Services.Providers.IDataServiceStreamProvider.  
   
-3.  Definování datové služby, který implementuje <xref:System.IServiceProvider> rozhraní. Služba používá data <xref:System.IServiceProvider.GetService%2A> implementace pro přístup k streamování implementace poskytovatele dat. Tato metoda vrátí odpovídající streamování implementace poskytovatele.  
+3. Definování datové služby, který implementuje <xref:System.IServiceProvider> rozhraní. Služba používá data <xref:System.IServiceProvider.GetService%2A> implementace pro přístup k streamování implementace poskytovatele dat. Tato metoda vrátí odpovídající streamování implementace poskytovatele.  
   
-4.  Povolte datové proudy velké zprávy v konfiguraci webové aplikace.  
+4. Povolte datové proudy velké zprávy v konfiguraci webové aplikace.  
   
-5.  Povolení přístupu k binární prostředky na serveru nebo ve zdroji dat.  
+5. Povolení přístupu k binární prostředky na serveru nebo ve zdroji dat.  
   
  Příklady v tomto tématu jsou založené na vzorku služba pro streamování fotek, která je podrobně popsané v příspěvku [datové služby streamování řady zprostředkovatele: Implementace zprostředkovatele datových proudů (část 1)](https://go.microsoft.com/fwlink/?LinkID=198989). Zdrojový kód pro tuto službu ukázka je k dispozici na [streamování fotek ukázková Data pro službu stránky](https://go.microsoft.com/fwlink/?LinkID=198988) Galerie kódu MSDN.  
   

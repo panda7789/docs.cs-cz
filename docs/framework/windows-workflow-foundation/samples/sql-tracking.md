@@ -2,40 +2,40 @@
 title: Sledování SQL
 ms.date: 03/30/2017
 ms.assetid: bcaebeb1-b9e5-49e8-881b-e49af66fd341
-ms.openlocfilehash: 6d3974cbf181734f2a3cab0fbc7d8f32c16699bf
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: f3c48b40e2d3d7dec2b9008b3de738f9b2983610
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59146338"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59308923"
 ---
 # <a name="sql-tracking"></a>Sledování SQL
 Tato ukázka předvádí, jak napsat vlastní sledování účastník SQL, který zapíše záznamy sledování k databázi SQL. Windows Workflow Foundation (WF) umožňuje získat přehled o spuštění instance pracovního postupu pro sledování pracovního postupu. Modul runtime sledování vysílá pracovního postupu při provádění pracovního postupu pro sledování záznamů. Další informace o sledování pracovního postupu najdete v tématu [pracovního postupu pro sledování a trasování](../workflow-tracking-and-tracing.md).
 
 #### <a name="to-use-this-sample"></a>Pro fungování této ukázky
 
-1.  Ověření je třeba SQL Server 2008, SQL Server 2008 Express nebo novější nainstalován. Skripty zabaleny s ukázkou předpokládá použití instance SQL Express na místním počítači. Pokud máte jinou instanci, upravte prosím databázi související skripty před spuštěním ukázky.
+1. Ověření je třeba SQL Server 2008, SQL Server 2008 Express nebo novější nainstalován. Skripty zabaleny s ukázkou předpokládá použití instance SQL Express na místním počítači. Pokud máte jinou instanci, upravte prosím databázi související skripty před spuštěním ukázky.
 
-2.  Vytvořte databázi serveru SQL Server sledování spuštěním Trackingsetup.cmd v adresáři skriptů (\WF\Basic\Tracking\SqlTracking\CS\Scripts). Tím se vytvoří databázi s názvem TrackingSample.
+2. Vytvořte databázi serveru SQL Server sledování spuštěním Trackingsetup.cmd v adresáři skriptů (\WF\Basic\Tracking\SqlTracking\CS\Scripts). Tím se vytvoří databázi s názvem TrackingSample.
 
     > [!NOTE]
     >  Tento skript vytvoří databázi na výchozí instanci systému SQL Express. Pokud chcete nainstalovat na jinou instanci databáze, upravte skript Trackingsetup.cmd.  
   
-3.  Otevřete SqlTrackingSample.sln v sadě Visual Studio 2010.  
+3. Otevřete SqlTrackingSample.sln v sadě Visual Studio 2010.  
   
-4.  Stiskněte kombinaci kláves CTRL + SHIFT + B, abyste mohli sestavit řešení.  
+4. Stiskněte kombinaci kláves CTRL + SHIFT + B, abyste mohli sestavit řešení.  
   
-5.  Stisknutím klávesy F5 spusťte aplikaci.  
+5. Stisknutím klávesy F5 spusťte aplikaci.  
   
      Okno prohlížeče se otevře a zobrazí výpisu adresáře pro aplikaci.  
   
-6.  V prohlížeči klikněte na tlačítko StockPriceService.xamlx.  
+6. V prohlížeči klikněte na tlačítko StockPriceService.xamlx.  
   
-7.  Prohlížeč zobrazí na stránce StockPriceService, který obsahuje místní službě WSDL adresu. Zkopírujte tuto adresu.  
+7. Prohlížeč zobrazí na stránce StockPriceService, který obsahuje místní službě WSDL adresu. Zkopírujte tuto adresu.  
   
      Příkladem adresy místní služby WSDL je `http://localhost:65193/StockPriceService.xamlx?wsdl`.  
   
-8.  Pomocí [!INCLUDE[fileExplorer](../../../../includes/fileexplorer-md.md)], spustit klienta testu WCF (WcfTestClient.exe). Je umístěn v adresáři sady Microsoft Visual Studio 10.0\Common7\IDE.  
+8. Pomocí [!INCLUDE[fileExplorer](../../../../includes/fileexplorer-md.md)], spustit klienta testu WCF (WcfTestClient.exe). Je umístěn v adresáři sady Microsoft Visual Studio 10.0\Common7\IDE.  
   
 9. Testovací klient WCF, klikněte na tlačítko **souboru** nabídky a vybereme **přidat službu**. Vložte adresu místní služby v textovém poli. Klikněte na tlačítko **OK** zavřete dialogové okno.  
   
@@ -45,7 +45,7 @@ Tato ukázka předvádí, jak napsat vlastní sledování účastník SQL, kter�
   
 #### <a name="to-uninstall-the-sample"></a>Chcete-li odinstalovat vzorku  
   
-1.  Spusťte skript theTrackingcleanup.cmd v adresáři ukázkové (\WF\Basic\Tracking\SqlTracking).  
+1. Spusťte skript theTrackingcleanup.cmd v adresáři ukázkové (\WF\Basic\Tracking\SqlTracking).  
   
     > [!NOTE]
     >  Trackingcleanup.cmd pokusí odstranit databázi v místním počítači SQL Express. Pokud používáte jiné instance systému SQL server, upravte Trackingcleanup.cmd.

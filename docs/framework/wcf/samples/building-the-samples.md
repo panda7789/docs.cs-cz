@@ -2,12 +2,12 @@
 title: Ukázky vytváření Windows Communication Foundation
 ms.date: 03/30/2017
 ms.assetid: 2899e7a5-9cb2-4e8d-b8d2-f31391549198
-ms.openlocfilehash: b6b541b93661f3da656e36d65ef3f94d76cae0c9
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: b1f1005e32687d2683f757d847d9fa19e098f290
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54658868"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59317854"
 ---
 # <a name="building-the-windows-communication-foundation-samples"></a>Ukázky vytváření Windows Communication Foundation
 
@@ -18,9 +18,9 @@ Ukázky Windows Communication Foundation (WCF) může být sestaven pomocí inte
 
 ## <a name="to-build-the-sample-using-a-command-prompt"></a>K vytvoření vzorku pomocí příkazového řádku
 
-1.  Otevřete Developer Command Prompt pro sadu Visual Studio a přejděte do podadresáře konkrétní jazyk v části umístění adresáře, kam jste nainstalovali vzorku.
+1. Otevřete Developer Command Prompt pro sadu Visual Studio a přejděte do podadresáře konkrétní jazyk v části umístění adresáře, kam jste nainstalovali vzorku.
 
-2.  Typ `msbuild` na příkazovém řádku. Programové soubory nástroje klienta jsou integrované do *client\bin* a programové soubory nástroje služby jsou integrované do *service\bin*. Pokud služba je hostována v Internetové informační služby (IIS), programové soubory nástroje služby jsou zkopírovány také do *servicemodelsamples* adresáře a jeho *\bin* podadresáře.
+2. Typ `msbuild` na příkazovém řádku. Programové soubory nástroje klienta jsou integrované do *client\bin* a programové soubory nástroje služby jsou integrované do *service\bin*. Pokud služba je hostována v Internetové informační služby (IIS), programové soubory nástroje služby jsou zkopírovány také do *servicemodelsamples* adresáře a jeho *\bin* podadresáře.
 
 > [!NOTE]
 > Je potřeba nastavit seznamy ACL v *%systemdrive%\inetpub\wwwroot* udělit změnit oprávnění k účtu, pod kterým běží. V opačném případě některé publikovat události selhání sestavení. Alternativně můžete nechat seznamy ACL, jak jsou a spustit jako správce příkazový řádek sady SDK.
@@ -50,9 +50,9 @@ Ukázky Windows Communication Foundation (WCF) může být sestaven pomocí inte
 
 ### <a name="to-regenerate-the-client-and-configuration-files"></a>Znovu vygenerovat klienta a konfigurační soubory
 
-1.  Otevřete příkazový řádek sady SDK a přejděte do podadresáře konkrétní jazyk v části umístění adresáře, kam jste nainstalovali vzorku.
+1. Otevřete příkazový řádek sady SDK a přejděte do podadresáře konkrétní jazyk v části umístění adresáře, kam jste nainstalovali vzorku.
 
-2.  Pokud je služba Web hostovaný typ, použijte následující příkaz.
+2. Pokud je služba Web hostovaný typ, použijte následující příkaz.
 
     ```
     svcutil.exe /n:"http://Microsoft.ServiceModel.Samples,Microsoft.ServiceModel.Samples" http://localhost/servicemodelsamples/service.svc/mex /out:generatedClient.cs
@@ -84,4 +84,4 @@ Ukázky Windows Communication Foundation (WCF) může být sestaven pomocí inte
 ## <a name="see-also"></a>Viz také:
 
 - [Spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md)
-- [Nástroj metadat modelu služby (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)
+- [Nástroj ServiceModel Metadata Utility (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)

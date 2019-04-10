@@ -13,12 +13,12 @@ helpviewer_keywords:
 - pattern matching, empty strings
 - operators [Visual Basic], comparison
 ms.assetid: 19a83804-b5af-4739-928b-ac93e64e457f
-ms.openlocfilehash: ca6537d81f080120fcbea0cf083f450dce4e9f62
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: c14aa35ce15549ad9eccabe2330a7c43b6795140
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58826012"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59316268"
 ---
 # <a name="how-to-match-a-string-against-a-pattern-visual-basic"></a>Postupy: Porovnání řetězce se vzorem (Visual Basic)
 Pokud chcete zjistit, zda výraz [datový typ String](../../../../visual-basic/language-reference/data-types/string-data-type.md) vyhovuje vzoru, můžete použít [operátor Like](../../../../visual-basic/language-reference/operators/like-operator.md).  
@@ -68,11 +68,11 @@ Pokud chcete zjistit, zda výraz [datový typ String](../../../../visual-basic/l
   
 #### <a name="to-match-a-character-in-the-string-expression-against-a-list-of-characters-or-no-character"></a>Odpovídá znaku v řetězci výrazu seznam se znaky ani žádný znak  
   
-1.  Volání `Like` operátor dvakrát na stejném řetězcový výraz a dvě volání s buď [nebo operátor](../../../../visual-basic/language-reference/operators/or-operator.md) nebo [OrElse – operátor](../../../../visual-basic/language-reference/operators/orelse-operator.md).  
+1. Volání `Like` operátor dvakrát na stejném řetězcový výraz a dvě volání s buď [nebo operátor](../../../../visual-basic/language-reference/operators/or-operator.md) nebo [OrElse – operátor](../../../../visual-basic/language-reference/operators/orelse-operator.md).  
   
-2.  V řetězci vzor pro první `Like` klauzule, zahrnují seznamu znak uzavřen v závorkách (`[ ]`).  
+2. V řetězci vzor pro první `Like` klauzule, zahrnují seznamu znak uzavřen v závorkách (`[ ]`).  
   
-3.  V řetězci vzor pro druhý `Like` klauzule neumisťujte libovolný znak na pozici nejistá.  
+3. V řetězci vzor pro druhý `Like` klauzule neumisťujte libovolný znak na pozici nejistá.  
   
      Následující příklad testuje sedmičíselné telefonní číslo `phoneNum` přesně tři číslice, za nímž následuje mezeru, pomlčku (`–`), tečku (`.`), nebo žádný znak, následovaný přesně čtyři číslice.  
   
@@ -82,5 +82,5 @@ Pokud chcete zjistit, zda výraz [datový typ String](../../../../visual-basic/l
 
 - [Operátory porovnání](../../../../visual-basic/language-reference/operators/comparison-operators.md)
 - [Operátory a výrazy](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)
-- [Operátor Like](../../../../visual-basic/language-reference/operators/like-operator.md)
+- [Like – operátor](../../../../visual-basic/language-reference/operators/like-operator.md)
 - [Datový typ String](../../../../visual-basic/language-reference/data-types/string-data-type.md)

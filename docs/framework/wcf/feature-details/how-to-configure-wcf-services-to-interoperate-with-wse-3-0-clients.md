@@ -2,19 +2,19 @@
 title: 'Postupy: Konfigurace služeb WCF pro spolupráci s klienty WSE 3.0'
 ms.date: 03/30/2017
 ms.assetid: 0f38c4a0-49a6-437c-bdde-ad1d138d3c4a
-ms.openlocfilehash: 24c44f415eff8518bcd73696c5cd9302371ad0c0
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 8f4407f66095f97a213d6cd987b4bd9a3ed340fa
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59177291"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59303892"
 ---
 # <a name="how-to-configure-wcf-services-to-interoperate-with-wse-30-clients"></a>Postupy: Konfigurace služeb WCF pro spolupráci s klienty WSE 3.0
 Služby Windows Communication Foundation (WCF) jsou přenosový kompatibilní s 3.0 rozšíření webové služby pro klienty Microsoft .NET (Najít), když služby WCF, které jsou nakonfigurovány pro použití verzi specifikace WS-Addressing ze srpna 2004.  
   
 ### <a name="to-enable-a-wcf-service-to-interoperate-with-wse-30-clients"></a>Povolení služby WCF pro spolupráci s klienty WSE 3.0  
   
-1.  Definujte vlastní vazbu pro službu WCF.  
+1. Definujte vlastní vazbu pro službu WCF.  
   
      Chcete-li určit, že je pro kódování zpráv používá verzi ze srpna 2004 specifikace WS-Addressing, musí být vytvořený vlastní vazby.  
   
@@ -44,7 +44,7 @@ Služby Windows Communication Foundation (WCF) jsou přenosový kompatibilní s 
         > [!NOTE]
         >  Při použití protokolu SOAP 1.2, nastavte `messageVersion` atribut <xref:System.ServiceModel.Channels.MessageVersion.Soap12WSAddressingAugust2004%2A>.  
   
-2.  Zadejte, že služba používá vlastní vazby.  
+2. Zadejte, že služba používá vlastní vazby.  
   
     1.  Nastavte `binding` atribut [ \<koncový bod >](../../../../docs/framework/configure-apps/file-schema/wcf/endpoint-element.md) elementu `customBinding`.  
   

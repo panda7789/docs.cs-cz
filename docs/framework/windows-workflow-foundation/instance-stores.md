@@ -2,12 +2,12 @@
 title: Úložiště instancí
 ms.date: 03/30/2017
 ms.assetid: f2629668-0923-4987-b943-67477131c1e0
-ms.openlocfilehash: 7ea29c3604042d773590448e31ce4ea95125ca1f
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 352ffad56c77d0bd16f7e3b9aa1d82090f3a29b1
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43519575"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59323327"
 ---
 # <a name="instance-stores"></a>Úložiště instancí
 Úložiště instance je logický kontejner instancí. Je to místo, kde je uložena instance data a metadata. Úložiště instance neznamená vyhrazené fyzické úložiště. Úložiště instance může obsahovat trvalý informace v databázi serveru SQL Server nebo informace o stavu bez trvale v paměti. [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] Dodává s SQL Store Instance pracovního postupu, který je na konkrétní implementace úložiště instance, která umožňuje pracovní postupy pro zachování dat instance a metadat do databáze serveru SQL Server 2005 nebo SQL Server 2008. Windows Server App Fabric kromě toho také poskytuje konkrétní implementaci úložiště instancí. Další informace najdete v tématu [systému Windows Server App Fabric Instance Store, dotaz a poskytovatelé správy](https://go.microsoft.com/fwlink/?LinkID=201201&clcid=0x409).  
@@ -22,10 +22,10 @@ ms.locfileid: "43519575"
   
  Následující seznam obsahuje důležité kroky hostitele interakci s úložišti instancí:  
   
-1.  Získat **třídy InstanceStore** z poskytovatele trvalého chování.  
+1. Získat **třídy InstanceStore** z poskytovatele trvalého chování.  
 
-2.  Získat popisovač instance voláním <xref:System.Runtime.DurableInstancing.InstanceStore.CreateInstanceHandle%2A> metodu **třídy InstanceStore**.  
+2. Získat popisovač instance voláním <xref:System.Runtime.DurableInstancing.InstanceStore.CreateInstanceHandle%2A> metodu **třídy InstanceStore**.  
   
-3.  Vyvolat příkazy spouštěly pro popisovač instance voláním <xref:System.Runtime.DurableInstancing.InstanceStore.Execute%2A> metodu **třídy InstanceStore**.  
+3. Vyvolat příkazy spouštěly pro popisovač instance voláním <xref:System.Runtime.DurableInstancing.InstanceStore.Execute%2A> metodu **třídy InstanceStore**.  
   
-4.  Zkontrolujte <xref:System.Runtime.DurableInstancing.InstanceView> vrácený **InstanceStore.Execute** určit výsledky příkazů.
+4. Zkontrolujte <xref:System.Runtime.DurableInstancing.InstanceView> vrácený **InstanceStore.Execute** určit výsledky příkazů.

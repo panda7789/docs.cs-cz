@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 094d043e-33c4-40ba-a503-e0b20b55f4cf
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8e696a6add8d5182fbf78cbbab26de47e0c0f684
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: f71cebc164e7b324dc847c67d3e0e49e856c11c7
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59097496"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59306531"
 ---
 # <a name="net-framework-deployment-guide-for-developers"></a>Rozhraní .NET framework – Průvodce nasazením pro vývojáře
 Toto téma obsahuje informace pro vývojáře, kteří chtějí nainstalovat z rozhraní .NET Framework 4.5 na žádné verze rozhraní .NET Framework [!INCLUDE[net_current](../../../includes/net-current-version.md)] s aplikacemi.
@@ -117,23 +117,23 @@ Pokud používáte k nasazení aplikace ClickOnce, InstallAware, InstallShield n
 
  V sadě Visual Studio, volba nasazení ClickOnce a přidání závislosti na rozhraní .NET Framework:
 
-1.  Otevřete projekt aplikace, které chcete publikovat.
+1. Otevřete projekt aplikace, které chcete publikovat.
 
-2.  V Průzkumníku řešení otevřete místní nabídku pro váš projekt a klikněte na tlačítko **vlastnosti**.
+2. V Průzkumníku řešení otevřete místní nabídku pro váš projekt a klikněte na tlačítko **vlastnosti**.
 
-3.  Zvolte **publikovat** podokně.
+3. Zvolte **publikovat** podokně.
 
-4.  Zvolte **požadavky** tlačítko.
+4. Zvolte **požadavky** tlačítko.
 
-5.  V **požadavky** dialogové okno pole, ujistěte se, že **vytvořit instalační program pro nainstalování nezbytných součástí** je zaškrtnuto políčko.
+5. V **požadavky** dialogové okno pole, ujistěte se, že **vytvořit instalační program pro nainstalování nezbytných součástí** je zaškrtnuto políčko.
 
-6.  V seznamu požadavků vyhledejte a vyberte verzi rozhraní .NET Framework, který jste použili k sestavení projektu.
+6. V seznamu požadavků vyhledejte a vyberte verzi rozhraní .NET Framework, který jste použili k sestavení projektu.
 
-7.  Zvolte možnost určení umístění zdroje pro požadavky a klikněte na tlačítko **OK**.
+7. Zvolte možnost určení umístění zdroje pro požadavky a klikněte na tlačítko **OK**.
 
      Pokud zadáte adresu URL pro umístění pro stažení rozhraní .NET Framework, můžete zadat web Microsoft Download Center nebo vlastní web. Pokud umístíte opětovně Distribuovatelný balíček na vlastní server, musí být offline instalační program a ne o webový instalátor. Můžete pouze propojit webovou Instalační službu na webu Microsoft Download Center. Adresu URL můžete také určit disk, na kterém je vlastní aplikace distribuována.
 
-8.  V **stránky vlastností** dialogového okna zvolte **OK**.
+8. V **stránky vlastností** dialogového okna zvolte **OK**.
 
 <a name="installaware"></a> 
 ### <a name="installaware-deployment"></a>InstallAware nasazení
@@ -142,19 +142,19 @@ InstallAware sestavení aplikace Windows (APPX), instalační služby systému W
 ### <a name="installshield-deployment"></a>Nasazení InstallShield
  V sadě Visual Studio, volba nasazení InstallShield a přidání závislosti na rozhraní .NET Framework:
 
-1.  Na řádku nabídek sady Visual Studio, zvolte **souboru**, **nový**, **projektu**.
+1. Na řádku nabídek sady Visual Studio, zvolte **souboru**, **nový**, **projektu**.
 
-2.  V levém podokně **nový projekt** dialogového okna zvolte **ostatní typy projektů**, **instalace a nasazení**, **InstallShield LE**.
+2. V levém podokně **nový projekt** dialogového okna zvolte **ostatní typy projektů**, **instalace a nasazení**, **InstallShield LE**.
 
-3.  V **název** pole, zadejte název pro váš projekt a klikněte na tlačítko **OK**.
+3. V **název** pole, zadejte název pro váš projekt a klikněte na tlačítko **OK**.
 
-4.  Pokud vytváříte první projekt instalace a nasazení, zvolte **přejít na web InstallShield** nebo **Povolit InstallShield Limited Edition** a stáhněte si InstallShield Limited Edition pro vaši verzi Microsoft Visual Studio. Restartujte sadu Visual Studio.
+4. Pokud vytváříte první projekt instalace a nasazení, zvolte **přejít na web InstallShield** nebo **Povolit InstallShield Limited Edition** a stáhněte si InstallShield Limited Edition pro vaši verzi Microsoft Visual Studio. Restartujte sadu Visual Studio.
 
-5.  Přejděte na **Project Assistant** průvodce a zvolit **soubory aplikace** Přidání výstupu projektu. Pomocí tohoto průvodce můžete nakonfigurovat další atributy projektu.
+5. Přejděte na **Project Assistant** průvodce a zvolit **soubory aplikace** Přidání výstupu projektu. Pomocí tohoto průvodce můžete nakonfigurovat další atributy projektu.
 
-6.  Přejděte na **požadavky na instalaci** a vyberte operační systémy a verze rozhraní .NET Framework, kterou chcete nainstalovat.
+6. Přejděte na **požadavky na instalaci** a vyberte operační systémy a verze rozhraní .NET Framework, kterou chcete nainstalovat.
 
-7.  Otevřete místní nabídku pro projekt instalace a zvolte **sestavení**.
+7. Otevřete místní nabídku pro projekt instalace a zvolte **sestavení**.
  
 <a name="wix"></a> 
 ### <a name="windows-installer-xml-wix-deployment"></a>Nasazení XML Instalační služby systému Windows (WiX)

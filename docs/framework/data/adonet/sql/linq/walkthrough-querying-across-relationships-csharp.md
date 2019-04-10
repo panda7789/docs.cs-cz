@@ -2,12 +2,12 @@
 title: 'Návod: Dotazování napříč relacemi (C#)'
 ms.date: 03/30/2017
 ms.assetid: 552abeb1-18f2-4e93-a9c6-ef7b2db30c32
-ms.openlocfilehash: 52623b79492908a6c387715fef002d4b8927169c
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 6bd3255b49676b61a99f8416ab71c217d342e799
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59184883"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59325368"
 ---
 # <a name="walkthrough-querying-across-relationships-c"></a>Návod: Dotazování napříč relacemi (C#)
 Tento návod demonstruje použití [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] *přidružení* představují relace cizího klíče v databázi.  
@@ -51,16 +51,16 @@ Tento návod demonstruje použití [!INCLUDE[vbtecdlinq](../../../../../../inclu
   
 #### <a name="to-access-order-objects-by-using-customer-objects"></a>Pro přístup k objektům pořadí pomocí objektů zákazníka  
   
-1.  Upravit `Main` metoda zadáním nebo vložením následujícího kódu do metody:  
+1. Upravit `Main` metoda zadáním nebo vložením následujícího kódu do metody:  
   
      [!code-csharp[DLinqWalk2CS#3](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqWalk2CS/cs/Program.cs#3)]  
   
-2.  Stisknutím klávesy F5 pro ladění vaší aplikace.  
+2. Stisknutím klávesy F5 pro ladění vaší aplikace.  
   
     > [!NOTE]
     >  Můžete eliminovat kód SQL z okna konzoly tak `db.Log = Console.Out;`.  
   
-3.  Stisknutím klávesy Enter v okně konzoly se Zastavit ladění.  
+3. Stisknutím klávesy Enter v okně konzoly se Zastavit ladění.  
   
 ## <a name="creating-a-strongly-typed-view-of-your-database"></a>Vytvoření zobrazení se silnými typy vaší databáze  
  Je mnohem jednodušší začínat zobrazení se silnými typy vaší databáze. Důrazně zadáním <xref:System.Data.Linq.DataContext> objektu, není nutné volání <xref:System.Data.Linq.DataContext.GetTable%2A>. Můžete použít silného typu tabulky ve všech dotazů při použití silného typu <xref:System.Data.Linq.DataContext> objektu.  
@@ -69,21 +69,21 @@ Tento návod demonstruje použití [!INCLUDE[vbtecdlinq](../../../../../../inclu
   
 #### <a name="to-strongly-type-the-datacontext-object"></a>Chcete-li silného typu DataContext object  
   
-1.  Přidejte následující kód nad `Customer` deklarace třídy.  
+1. Přidejte následující kód nad `Customer` deklarace třídy.  
   
      [!code-csharp[DLinqWalk2CS#4](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqWalk2CS/cs/Program.cs#4)]  
   
-2.  Upravit `Main` metodu použít silného typu <xref:System.Data.Linq.DataContext> následujícím způsobem:  
+2. Upravit `Main` metodu použít silného typu <xref:System.Data.Linq.DataContext> následujícím způsobem:  
   
      [!code-csharp[DLinqWalk2CS#5](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqWalk2CS/cs/Program.cs#5)]  
   
-3.  Stisknutím klávesy F5 pro ladění vaší aplikace.  
+3. Stisknutím klávesy F5 pro ladění vaší aplikace.  
   
      Výstup okna konzoly je:  
   
      `ID=WHITC`  
   
-4.  Stisknutím klávesy Enter v okně konzoly se Zastavit ladění.  
+4. Stisknutím klávesy Enter v okně konzoly se Zastavit ladění.  
   
 ## <a name="next-steps"></a>Další kroky  
  Dalšího názorného postupu ([názorný postup: Zpracování dat (C#)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-manipulating-data-csharp.md)) ukazuje, jak pracovat s daty. Tento názorný postup nevyžaduje uložit dva postupy v této sérii, které již byly dokončeny.  

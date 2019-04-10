@@ -8,12 +8,12 @@ helpviewer_keywords:
 - examples [Windows Forms], toolbars
 - ToolBar control [Windows Forms], adding drop-down menus
 ms.assetid: d9ce3040-3e21-4e2d-80ae-b430982b2db8
-ms.openlocfilehash: 133190426229a10ed6f637293326c229e808bfdb
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 509aa0b03dbbb370384fb83e0d8e5471fc2cb819
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59084021"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59306186"
 ---
 # <a name="how-to-add-buttons-to-a-toolbar-control-using-the-designer"></a>Postupy: Přidávání tlačítek do ovládacího prvku ToolBar pomocí Návrháře
 > [!NOTE]
@@ -28,13 +28,13 @@ ms.locfileid: "59084021"
   
 ### <a name="to-add-buttons-at-design-time"></a>Přidat tlačítka v době návrhu  
   
-1.  Vyberte <xref:System.Windows.Forms.ToolBar> ovládacího prvku.  
+1. Vyberte <xref:System.Windows.Forms.ToolBar> ovládacího prvku.  
   
-2.  V **vlastnosti** okno, klikněte na tlačítko <xref:System.Windows.Forms.ToolBar.Buttons%2A> vlastnost vyberte ho a klikněte na tlačítko **tlačítko se třemi tečkami** (![VisualStudioEllipsesButton snímek obrazovky s](../media/vbellipsesbutton.png " vbEllipsesButton")) tlačítko Otevřít **Editor kolekce ToolBarButton**.  
+2. V **vlastnosti** okno, klikněte na tlačítko <xref:System.Windows.Forms.ToolBar.Buttons%2A> vlastnost vyberte ho a klikněte na tlačítko **tlačítko se třemi tečkami** (![VisualStudioEllipsesButton snímek obrazovky s](../media/vbellipsesbutton.png " vbEllipsesButton")) tlačítko Otevřít **Editor kolekce ToolBarButton**.  
   
-3.  Použití **přidat** a **odebrat** tlačítka pro přidání a odebrání tlačítek <xref:System.Windows.Forms.ToolBar> ovládacího prvku.  
+3. Použití **přidat** a **odebrat** tlačítka pro přidání a odebrání tlačítek <xref:System.Windows.Forms.ToolBar> ovládacího prvku.  
   
-4.  Konfigurace vlastností jednotlivá tlačítka v **vlastnosti** okno, které se zobrazí v podokně na pravé straně editoru. V následující tabulce jsou uvedeny vzít v úvahu některé důležité vlastnosti.  
+4. Konfigurace vlastností jednotlivá tlačítka v **vlastnosti** okno, které se zobrazí v podokně na pravé straně editoru. V následující tabulce jsou uvedeny vzít v úvahu některé důležité vlastnosti.  
   
     |Vlastnost|Popis|  
     |--------------|-----------------|  
@@ -45,7 +45,7 @@ ms.locfileid: "59084021"
     |<xref:System.Windows.Forms.ToolBarButton.Text%2A>|Textový řetězec zobrazený tlačítkem.|  
     |<xref:System.Windows.Forms.ToolBarButton.ToolTipText%2A>|Text, který se zobrazí jako popisek tlačítka.|  
   
-5.  Klikněte na tlačítko **OK** a zavřete dialogové okno vytvořit panely, které jste zadali.  
+5. Klikněte na tlačítko **OK** a zavřete dialogové okno vytvořit panely, které jste zadali.  
   
 ## <a name="see-also"></a>Viz také:
 

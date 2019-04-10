@@ -1,5 +1,5 @@
 ---
-title: C#operátory
+title: Operátory jazyka C#
 ms.date: 04/04/2018
 f1_keywords:
 - cs.operators
@@ -18,14 +18,14 @@ helpviewer_keywords:
 - keywords [C#], operators
 - arithmetic operators [C#]
 ms.assetid: 0301e31f-22ad-49af-ac3c-d5eae7f0ac43
-ms.openlocfilehash: 7666918cbff7a395a93a274629fe574ff20e170c
-ms.sourcegitcommit: 4a8c2b8d0df44142728b68ebc842575840476f6d
+ms.openlocfilehash: 877992227df417badf7322be7f9be79bf7256e69
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/28/2019
-ms.locfileid: "58545686"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59308650"
 ---
-# <a name="c-operators"></a>C#operátory
+# <a name="c-operators"></a>Operátory jazyka C#
 
 Jazyk C# poskytuje mnoho operátorů, které jsou symboly, které určují operace, které (matematické, indexování, volání funkce atd.) provést ve výrazu. Je možné [přetížení](../../programming-guide/statements-expressions-operators/overloadable-operators.md) mnoho operátorů, chcete-li změnit jejich význam při aplikování na uživatelem definovaného typu.
 
@@ -75,7 +75,7 @@ Tyto operátory mají vyšší prioritu než v další části a nižší priori
 
 [-x](subtraction-operator.md) – číselné negace.
 
-[\!x](logical-negation-operator.md) – Logická negace.
+[\!x](boolean-logical-operators.md#logical-negation-operator-) – Logická negace.
 
 [~ x](bitwise-complement-operator.md) – bitového doplňku.
 
@@ -163,13 +163,13 @@ Tento operátor má vyšší prioritu než v další části a nižší prioritu
 
 Tento operátor má vyšší prioritu než v další části a nižší prioritu než předchozí části.
 
-[x & & y](conditional-and-operator.md) – logickým operátorem a. Pokud je první operand vyhodnocen na hodnotu false, pak C# není vyhodnocen Druhý operand.
+[x & & y](boolean-logical-operators.md#conditional-logical-and-operator-) – logickým operátorem a. Pokud je první operand vyhodnocen na hodnotu false, pak C# není vyhodnocen Druhý operand.
 
 ## <a name="conditional-or-operator"></a>Podmiňovací operátor OR
 
 Tento operátor má vyšší prioritu než v další části a nižší prioritu než předchozí části.
 
-[x &#124; &#124; y](conditional-or-operator.md) – logický operátor OR. Pokud je první operand vyhodnocen na hodnotu true, pak C# není vyhodnocen Druhý operand.
+[x &#124; &#124; y](boolean-logical-operators.md#conditional-logical-or-operator-) – logický operátor OR. Pokud je první operand vyhodnocen na hodnotu true, pak C# není vyhodnocen Druhý operand.
 
 ## <a name="null-coalescing-operator"></a>Operátoru nulového sjednocení
 
@@ -214,7 +214,7 @@ Tyto operátory mají vyšší prioritu než v další části a nižší priori
 ## <a name="see-also"></a>Viz také:
 
 - [Referenční dokumentace jazyka C#](../index.md)
-- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
+- [Průvodce programováním v C#](../../programming-guide/index.md)
 - [C#](../../index.md)
 - [Přetížitelné operátory](../../programming-guide/statements-expressions-operators/overloadable-operators.md)
 - [Klíčová slova jazyka C#](../keywords/index.md)

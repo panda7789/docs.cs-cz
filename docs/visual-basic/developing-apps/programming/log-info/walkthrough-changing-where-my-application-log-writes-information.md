@@ -5,12 +5,12 @@ helpviewer_keywords:
 - My.Application.Log object, walkthroughs
 - event logs, changing output location
 ms.assetid: ecc74f95-743c-450d-93f6-09a30db0fe4a
-ms.openlocfilehash: ed7f88b20e4d519e67c8ef7b9f74909a38ea9c14
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 56fef77448f3523732e755f57e8cdabe6ad71379
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58829314"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59327643"
 ---
 # <a name="walkthrough-changing-where-myapplicationlog-writes-information-visual-basic"></a>Návod: Změna, kam objekt My.Application.Log zapisuje informace (Visual Basic)
 Můžete použít `My.Application.Log` a `My.Log` objekty k protokolování informací o události, ke kterým dochází ve vaší aplikaci. Tento návod ukazuje, jak přepsat výchozí nastavení a způsobit, `Log` objekt k zápisu do jiných naslouchacích procesů protokolu.  
@@ -22,7 +22,7 @@ Můžete použít `My.Application.Log` a `My.Log` objekty k protokolování info
   
 ### <a name="to-add-listeners"></a>Chcete-li přidat naslouchací procesy  
   
-1.  Klikněte pravým tlačítkem na app.config **Průzkumníka řešení** a zvolte **otevřít**.  
+1. Klikněte pravým tlačítkem na app.config **Průzkumníka řešení** a zvolte **otevřít**.  
   
      \- nebo –  
   
@@ -34,9 +34,9 @@ Můžete použít `My.Application.Log` a `My.Log` objekty k protokolování info
   
     3.  Klikněte na **Přidat**.  
   
-2.  Vyhledejte `<listeners>` pod `<source>` části s `name` atribut "DefaultSource" `<sources>` oddílu. `<sources>` Oddíl je ve `<system.diagnostics>` části na nejvyšší úrovni `<configuration>` oddílu.  
+2. Vyhledejte `<listeners>` pod `<source>` části s `name` atribut "DefaultSource" `<sources>` oddílu. `<sources>` Oddíl je ve `<system.diagnostics>` části na nejvyšší úrovni `<configuration>` oddílu.  
   
-3.  Přidejte tyto prvky do `<listeners>` oddílu.  
+3. Přidejte tyto prvky do `<listeners>` oddílu.  
   
     ```xml  
     <!-- Uncomment to connect the application file log. -->  
@@ -51,11 +51,11 @@ Můžete použít `My.Application.Log` a `My.Log` objekty k protokolování info
     <!-- <add name="Console" /> -->  
     ```  
   
-4.  Zrušením komentáře u součásti naslouchající protokolům, které chcete dostávat `Log` zprávy.  
+4. Zrušením komentáře u součásti naslouchající protokolům, které chcete dostávat `Log` zprávy.  
   
-5.  Vyhledejte `<sharedListeners>` sekci `<system.diagnostics>` části na nejvyšší úrovni `<configuration>` oddílu.  
+5. Vyhledejte `<sharedListeners>` sekci `<system.diagnostics>` části na nejvyšší úrovni `<configuration>` oddílu.  
   
-6.  Přidejte tyto prvky do `<sharedListeners>` oddílu.  
+6. Přidejte tyto prvky do `<sharedListeners>` oddílu.  
   
     ```xml  
     <add name="FileLog"  
@@ -86,7 +86,7 @@ Můžete použít `My.Application.Log` a `My.Log` objekty k protokolování info
          initializeData="true" />  
     ```  
   
-7.  Obsah souboru app.config by měl být podobně jako následující kód XML:  
+7. Obsah souboru app.config by měl být podobně jako následující kód XML:  
   
     ```xml  
     <?xml version="1.0" encoding="utf-8" ?>  
@@ -147,9 +147,9 @@ Můžete použít `My.Application.Log` a `My.Log` objekty k protokolování info
   
 ### <a name="to-reconfigure-a-listener"></a>Chcete-li překonfigurovat naslouchací proces  
   
-1.  Vyhledejte naslouchacího procesu `<add>` element z `<sharedListeners>` oddílu.  
+1. Vyhledejte naslouchacího procesu `<add>` element z `<sharedListeners>` oddílu.  
   
-2.  `type` Atribut poskytuje název typu naslouchacího procesu. Tento typ musí dědit z <xref:System.Diagnostics.TraceListener> třídy. Chcete-li zajistit, aby používal správný typ použijte název silným názvem typu. Další informace najdete v části "k odkazování silným názvem typu".  
+2. `type` Atribut poskytuje název typu naslouchacího procesu. Tento typ musí dědit z <xref:System.Diagnostics.TraceListener> třídy. Chcete-li zajistit, aby používal správný typ použijte název silným názvem typu. Další informace najdete v části "k odkazování silným názvem typu".  
   
      Jsou některé typy, které můžete použít:  
   
@@ -163,17 +163,17 @@ Můžete použít `My.Application.Log` a `My.Log` objekty k protokolování info
   
      Informace o tom, kde psát jiných typů součástí naslouchajících protokolům informace najdete v dokumentaci tohoto typu.  
   
-3.  Když se aplikace vytvoří objekt protokolu naslouchací proces, předá `initializeData` atribut jako parametr konstruktoru. Význam `initializeData` atributu závisí na naslouchací služby stopy.  
+3. Když se aplikace vytvoří objekt protokolu naslouchací proces, předá `initializeData` atribut jako parametr konstruktoru. Význam `initializeData` atributu závisí na naslouchací služby stopy.  
   
-4.  Po vytvoření naslouchacího procesu protokolu aplikace nastaví vlastnosti naslouchacího procesu. Tyto vlastnosti jsou definovány další atributy `<add>` elementu. Další informace o vlastnostech pro příslušného naslouchacího procesu naleznete v dokumentaci pro typ tohoto naslouchacího procesu.  
+4. Po vytvoření naslouchacího procesu protokolu aplikace nastaví vlastnosti naslouchacího procesu. Tyto vlastnosti jsou definovány další atributy `<add>` elementu. Další informace o vlastnostech pro příslušného naslouchacího procesu naleznete v dokumentaci pro typ tohoto naslouchacího procesu.  
   
 ### <a name="to-reference-a-strongly-named-type"></a>Chcete-li odkazovat na typ silným názvem  
   
-1.  Chcete-li zajistit, aby používal správný typ pro vaše naslouchací proces protokolu, nezapomeňte použít plně kvalifikovaného názvu a názvu sestavení se silným názvem. Syntaxe typu silným názvem je následujícím způsobem:  
+1. Chcete-li zajistit, aby používal správný typ pro vaše naslouchací proces protokolu, nezapomeňte použít plně kvalifikovaného názvu a názvu sestavení se silným názvem. Syntaxe typu silným názvem je následujícím způsobem:  
   
      \<*Název typu*>, \< *název sestavení*>, \< *číslo verze*>, \< *jazykovou verzi*>, \< *silným názvem*>  
   
-2.  Tento příklad kódu ukazuje, jak určit název silně pojmenované typy pro plně kvalifikovaný Systen.Diagnostics.FileLogTraceListener"v tomto případě.  
+2. Tento příklad kódu ukazuje, jak určit název silně pojmenované typy pro plně kvalifikovaný Systen.Diagnostics.FileLogTraceListener"v tomto případě.  
   
      [!code-vb[VbVbalrMyApplicationLog#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplicationLog/VB/Form1.vb#15)]  
   

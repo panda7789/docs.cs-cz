@@ -13,12 +13,12 @@ helpviewer_keywords:
 - composite controls [Windows Forms], creating
 - custom controls [Windows Forms], creating
 ms.assetid: f50e270e-4db2-409a-8319-6db6ca5c7daf
-ms.openlocfilehash: ed3a7dc23050412082fb10fabf6b1d5a4507973e
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 6404e5933f886578b4ad8afd0d3da324541fc3f9
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59186105"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59299979"
 ---
 # <a name="walkthrough-authoring-a-composite-control-with-visual-basic"></a>Návod: Vytvoření složeného ovládacího prvku pomocí Visual Basicu
 Složené ovládací prvky poskytují způsob, kterým lze vytvořit vlastní grafické rozhraní a znovu použít. Složený ovládací prvek je v podstatě komponent pomocí vizuální reprezentace. V důsledku toho může obsahovat jeden nebo více Windows Forms ovládací prvky, komponenty nebo bloky kódu, který můžete rozšířit funkce ověřování uživatelského vstupu, změnou zobrazení vlastností nebo provádění jiných úloh vyžaduje autorem. Složené ovládací prvky mohou být umístěny ve Windows Forms stejným způsobem jako ostatní ovládací prvky. V první části tohoto návodu vytvoříte jednoduchou složeného ovládacího prvku volá `ctlClock`. V druhé části tohoto průvodce, které rozšiřují funkce nástroje `ctlClock` prostřednictvím dědičnosti.  
@@ -31,31 +31,31 @@ Složené ovládací prvky poskytují způsob, kterým lze vytvořit vlastní gr
   
 #### <a name="to-create-the-ctlclocklib-control-library-and-the-ctlclock-control"></a>Chcete-li vytvořit ctlClockLib Knihovna ovládacích prvků a ovládací prvek ctlClock  
   
-1.  Na **souboru** nabídky, přejděte k **nový**a potom klikněte na tlačítko **projektu** otevřete **nový projekt** dialogové okno.  
+1. Na **souboru** nabídky, přejděte k **nový**a potom klikněte na tlačítko **projektu** otevřete **nový projekt** dialogové okno.  
   
-2.  V seznamu projektů Visual Basic, vyberte **Knihovna ovládacích prvků Windows** šablony projektu, typ `ctlClockLib` v **název** pole a potom klikněte na tlačítko **OK**.  
+2. V seznamu projektů Visual Basic, vyberte **Knihovna ovládacích prvků Windows** šablony projektu, typ `ctlClockLib` v **název** pole a potom klikněte na tlačítko **OK**.  
   
      Název projektu `ctlClockLib`, je také přiřazený k oboru názvů root ve výchozím nastavení. Kořenový obor názvů se používá k určení názvů součástí sestavení. Například, pokud se dvě sestavení poskytují komponenty s názvem `ctlClock`, můžete zadat vaše `ctlClock` pomocí komponenty `ctlClockLib.ctlClock.`  
   
-3.  V Průzkumníku řešení klikněte pravým tlačítkem na **UserControl1.vb**a potom klikněte na tlačítko **přejmenovat**. Změňte název souboru, aby `ctlClock.vb`. Klikněte na tlačítko **Ano** tlačítko, pokud budete vyzváni, pokud chcete přejmenovat všechny odkazy na prvek kódu "UserControl1".  
+3. V Průzkumníku řešení klikněte pravým tlačítkem na **UserControl1.vb**a potom klikněte na tlačítko **přejmenovat**. Změňte název souboru, aby `ctlClock.vb`. Klikněte na tlačítko **Ano** tlačítko, pokud budete vyzváni, pokud chcete přejmenovat všechny odkazy na prvek kódu "UserControl1".  
   
     > [!NOTE]
     >  Ve výchozím nastavení, zdědí složeného ovládacího prvku <xref:System.Windows.Forms.UserControl> třídy poskytované systémem. <xref:System.Windows.Forms.UserControl> Třída poskytuje funkce vyžadované všech složených ovládacích prvků a implementuje standardní metody a vlastnosti.  
   
-4.  Na **souboru** nabídky, klikněte na tlačítko **Uložit vše** chcete projekt uložit.  
+4. Na **souboru** nabídky, klikněte na tlačítko **Uložit vše** chcete projekt uložit.  
   
 ## <a name="adding-windows-controls-and-components-to-the-composite-control"></a>Přidání Windows ovládacích prvků a komponent do složeného ovládacího prvku  
  Vizuální rozhraní je zásadní součástí složeného ovládacího prvku. Tento vizuální rozhraní je implementováno přidání jednoho nebo více ovládacích prvků Windows na plochu návrháře. V následující ukázce se začlenit ovládacích prvků Windows do složeného ovládacího prvku a napsat kód k implementaci funkcionality.  
   
 #### <a name="to-add-a-label-and-a-timer-to-your-composite-control"></a>Přidejte popisek a časovač do složeného ovládacího prvku  
   
-1.  V Průzkumníku řešení klikněte pravým tlačítkem na **ctlClock.vb**a potom klikněte na tlačítko **Návrhář zobrazení**.  
+1. V Průzkumníku řešení klikněte pravým tlačítkem na **ctlClock.vb**a potom klikněte na tlačítko **Návrhář zobrazení**.  
   
-2.  Na panelu nástrojů rozbalte **běžné ovládací prvky** uzel a poté dvojitým kliknutím **popisek**.  
+2. Na panelu nástrojů rozbalte **běžné ovládací prvky** uzel a poté dvojitým kliknutím **popisek**.  
   
      A <xref:System.Windows.Forms.Label> ovládací prvek s názvem `Label1` se přidá do vašeho ovládacího prvku na návrhové ploše.  
   
-3.  V návrháři, klikněte na tlačítko **Label1**. V okně Vlastnosti nastavte následující vlastnosti.  
+3. V návrháři, klikněte na tlačítko **Label1**. V okně Vlastnosti nastavte následující vlastnosti.  
   
     |Vlastnost|Změňte na|  
     |--------------|---------------|  
@@ -64,17 +64,17 @@ Složené ovládací prvky poskytují způsob, kterým lze vytvořit vlastní gr
     |**TextAlign**|`MiddleCenter`|  
     |**Font.Size**|`14`|  
   
-4.  V **nástrojů**, rozbalte **součásti** uzel a poté dvojitým kliknutím **časovače**.  
+4. V **nástrojů**, rozbalte **součásti** uzel a poté dvojitým kliknutím **časovače**.  
   
      Protože <xref:System.Windows.Forms.Timer> je komponenta, nemá žádný vizuální reprezentace v době běhu. Proto se zřejmě není u ovládacích prvků na návrhové ploše, ale v Návrháři součástí (na hlavním panelu v dolní části na plochu návrháře).  
   
-5.  V Návrháři součástí klikněte na tlačítko **Timer1**a pak nastavte <xref:System.Windows.Forms.Timer.Interval%2A> vlastnost `1000` a <xref:System.Windows.Forms.Timer.Enabled%2A> vlastnost `True`.  
+5. V Návrháři součástí klikněte na tlačítko **Timer1**a pak nastavte <xref:System.Windows.Forms.Timer.Interval%2A> vlastnost `1000` a <xref:System.Windows.Forms.Timer.Enabled%2A> vlastnost `True`.  
   
      <xref:System.Windows.Forms.Timer.Interval%2A> Vlastnost řídí frekvenci, se kterým komponenty timer značek. Pokaždé, když `Timer1` tiků, spustí kód, který `Timer1_Tick` událostí. Interval představuje počet milisekund mezi značkami.  
   
-6.  V Návrháři součástí, dvakrát klikněte na panel **Timer1** přejdete `Timer1_Tick` událost pro `ctlClock`.  
+6. V Návrháři součástí, dvakrát klikněte na panel **Timer1** přejdete `Timer1_Tick` událost pro `ctlClock`.  
   
-7.  Upravte kód tak, aby vypadá podobně jako následující příklad kódu. Nezapomeňte změnit modifikátor přístupu z `Private` k `Protected`.  
+7. Upravte kód tak, aby vypadá podobně jako následující příklad kódu. Nezapomeňte změnit modifikátor přístupu z `Private` k `Protected`.  
   
     ```vb  
     Protected Sub Timer1_Tick(ByVal sender As Object, ByVal e As _  
@@ -86,7 +86,7 @@ Složené ovládací prvky poskytují způsob, kterým lze vytvořit vlastní gr
   
      Tento kód způsobí, že aktuální čas v `lblDisplay`. Protože interval `Timer1` byl nastaven na `1000`, dojde k této události každých tisíců milisekund, tedy aktualizuje aktuální čas každou sekundu.  
   
-8.  Upravte metodu k možné overridable. Další informace naleznete v části "Dědění z uživatelského ovládacího prvku" níže.  
+8. Upravte metodu k možné overridable. Další informace naleznete v části "Dědění z uživatelského ovládacího prvku" níže.  
   
     ```vb  
     Protected Overridable Sub Timer1_Tick(ByVal sender As Object, ByVal _  
@@ -100,11 +100,11 @@ Složené ovládací prvky poskytují způsob, kterým lze vytvořit vlastní gr
   
 #### <a name="to-add-a-property-to-your-composite-control"></a>Přidání vlastnosti do složeného ovládacího prvku  
   
-1.  V Průzkumníku řešení klikněte pravým tlačítkem na **ctlClock.vb**a potom klikněte na tlačítko **zobrazit kód**.  
+1. V Průzkumníku řešení klikněte pravým tlačítkem na **ctlClock.vb**a potom klikněte na tlačítko **zobrazit kód**.  
   
      Otevře se Editor kódu pro ovládací prvek.  
   
-2.  Vyhledejte `Public Class ctlClock` příkazu. Pod ní zadejte následující kód.  
+2. Vyhledejte `Public Class ctlClock` příkazu. Pod ní zadejte následující kód.  
   
     ```vb  
     Private colFColor as Color  
@@ -113,7 +113,7 @@ Složené ovládací prvky poskytují způsob, kterým lze vytvořit vlastní gr
   
      Tyto příkazy vytvořit soukromé proměnné, které budete používat k ukládání hodnot pro vlastnosti, které se chystáte vytvořit.  
   
-3.  Vložte následující kód pod deklarace proměnných z kroku 2.  
+3. Vložte následující kód pod deklarace proměnných z kroku 2.  
   
     ```vb  
     ' Declares the name and type of the property.  
@@ -144,24 +144,24 @@ Složené ovládací prvky poskytují způsob, kterým lze vytvořit vlastní gr
   
      Předchozí kód provede dvě vlastní vlastnosti `ClockForeColor` a `ClockBackColor`, která je dostupná uživatelům následné tohoto ovládacího prvku vyvoláním `Property` příkazu. `Get` a `Set` příkazy zajišťují pro ukládání a načítání hodnoty vlastnosti, jakož i kód k implementaci funkcionality odpovídající vlastnosti.  
   
-4.  Na **souboru** nabídky, klikněte na tlačítko **Uložit vše** chcete projekt uložit.  
+4. Na **souboru** nabídky, klikněte na tlačítko **Uložit vše** chcete projekt uložit.  
   
 ## <a name="testing-the-control"></a>Testování ovládacího prvku  
  Ovládací prvky nejsou samostatné projekty; musí být uložen v kontejneru. Chování ovládacího prvku za běhu testu přestal pracovat a s jeho vlastnosti **UserControl – kontejner testů**. Další informace najdete v tématu [jak: Testování běhového chování UserControl](how-to-test-the-run-time-behavior-of-a-usercontrol.md).  
   
 #### <a name="to-test-your-control"></a>Testování ovládacího prvku  
   
-1.  Stisknutím klávesy F5 sestavte projekt a spusťte váš ovládací prvek **UserControl – kontejner testů**.  
+1. Stisknutím klávesy F5 sestavte projekt a spusťte váš ovládací prvek **UserControl – kontejner testů**.  
   
-2.  V mřížce vlastností kontejner testu, vyberte `ClockBackColor` vlastnost a poté klikněte na šipku rozevíracího seznamu k zobrazení palety barev.  
+2. V mřížce vlastností kontejner testu, vyberte `ClockBackColor` vlastnost a poté klikněte na šipku rozevíracího seznamu k zobrazení palety barev.  
   
-3.  Kliknutím zvolte barvu.  
+3. Kliknutím zvolte barvu.  
   
      Barva pozadí ovládacího prvku změní barvu, kterou jste vybrali.  
   
-4.  Ověřte, že pomocí podobně jako posloupnost událostí `ClockForeColor` vlastnost funguje podle očekávání.  
+4. Ověřte, že pomocí podobně jako posloupnost událostí `ClockForeColor` vlastnost funguje podle očekávání.  
   
-5.  Klikněte na tlačítko **zavřete** zavřete **UserControl – kontejner testů**.  
+5. Klikněte na tlačítko **zavřete** zavřete **UserControl – kontejner testů**.  
   
      V této části a v předchozích částech, jste viděli, jak mohou být kombinovány komponent a ovládacích prvků Windows s kódem a balení poskytují vlastní funkce v podobě složeného ovládacího prvku. Naučili jste se vystavení vlastností v složeného ovládacího prvku a po dokončení testování ovládacího prvku. V další části se dozvíte, jak vytvořit objekt zděděné složeného ovládacího prvku pomocí `ctlClock` jako základ.  
   
@@ -172,19 +172,19 @@ Složené ovládací prvky poskytují způsob, kterým lze vytvořit vlastní gr
   
 #### <a name="to-create-the-inherited-control"></a>Chcete-li vytvořit zděděný ovládací prvek  
   
-1.  V Průzkumníku řešení klikněte pravým tlačítkem na **ctlClockLib**, přejděte na **přidat**a potom klikněte na tlačítko **uživatelský ovládací prvek**.  
+1. V Průzkumníku řešení klikněte pravým tlačítkem na **ctlClockLib**, přejděte na **přidat**a potom klikněte na tlačítko **uživatelský ovládací prvek**.  
   
      **Přidat novou položku** zobrazí se dialogové okno.  
   
-2.  Vyberte **zděděné uživatelský ovládací prvek** šablony.  
+2. Vyberte **zděděné uživatelský ovládací prvek** šablony.  
   
-3.  V **název** zadejte `ctlAlarmClock.vb`a potom klikněte na tlačítko **přidat**.  
+3. V **název** zadejte `ctlAlarmClock.vb`a potom klikněte na tlačítko **přidat**.  
   
      **Výběr dědičnosti** zobrazí se dialogové okno.  
   
-4.  V části **název komponenty**, dvakrát klikněte na panel **ctlClock**.  
+4. V části **název komponenty**, dvakrát klikněte na panel **ctlClock**.  
   
-5.  V Průzkumníku řešení projděte si aktuální projekty.  
+5. V Průzkumníku řešení projděte si aktuální projekty.  
   
     > [!NOTE]
     >  Soubor s názvem **ctlAlarmClock.vb** byl přidán do aktuálního projektu.  
@@ -194,9 +194,9 @@ Složené ovládací prvky poskytují způsob, kterým lze vytvořit vlastní gr
   
 ##### <a name="to-add-properties-to-your-composite-control"></a>Přidání vlastnosti do složeného ovládacího prvku  
   
-1.  V Průzkumníku řešení klikněte pravým tlačítkem na **ctlAlarmClock**a potom klikněte na tlačítko **zobrazit kód**.  
+1. V Průzkumníku řešení klikněte pravým tlačítkem na **ctlAlarmClock**a potom klikněte na tlačítko **zobrazit kód**.  
   
-2.  Vyhledejte prohlášení třídy ctlAlarmClock ovládacího prvku, který se zobrazí jako `Public Class ctlAlarmClock`.  V deklaraci třídy vložte následující kód.  
+2. Vyhledejte prohlášení třídy ctlAlarmClock ovládacího prvku, který se zobrazí jako `Public Class ctlAlarmClock`.  V deklaraci třídy vložte následující kód.  
   
     ```vb  
     Private dteAlarmTime As Date  
@@ -226,11 +226,11 @@ Složené ovládací prvky poskytují způsob, kterým lze vytvořit vlastní gr
   
 ##### <a name="to-add-the-label-control"></a>Chcete-li přidat ovládací prvek popisek  
   
-1.  V Průzkumníku řešení klikněte pravým tlačítkem na **ctlAlarmClock**a klikněte na tlačítko **Návrhář zobrazení**.  
+1. V Průzkumníku řešení klikněte pravým tlačítkem na **ctlAlarmClock**a klikněte na tlačítko **Návrhář zobrazení**.  
   
      Návrhář pro `ctlAlarmClock` otevře v hlavním okně.  
   
-2.  Klikněte na tlačítko `lblDisplay` (zobrazené části ovládacího prvku) a zobrazte v okně Vlastnosti.  
+2. Klikněte na tlačítko `lblDisplay` (zobrazené části ovládacího prvku) a zobrazte v okně Vlastnosti.  
   
     > [!NOTE]
     >  Když se zobrazí všechny vlastnosti, jsou neaktivní. To znamená, že tyto vlastnosti jsou pro nativní `lblDisplay` a nelze změnit ani získat přístup v okně Vlastnosti. Ve výchozím nastavení, ovládacích prvcích obsažených složeného ovládacího prvku jsou `Private`, a jejich vlastnosti nejsou dostupné žádné prostředky.  
@@ -238,9 +238,9 @@ Složené ovládací prvky poskytují způsob, kterým lze vytvořit vlastní gr
     > [!NOTE]
     >  Pokud chcete mít přístup k jeho interní kontrolní mechanismy následné uživatelé složeného ovládacího prvku, je jako deklarovat `Public` nebo `Protected`. To vám umožní nastavit a změnit vlastnosti ovládacích prvků uvnitř složeného ovládacího prvku pomocí odpovídající kód.  
   
-3.  Přidat <xref:System.Windows.Forms.Label> ovládacího prvku do složeného ovládacího prvku.  
+3. Přidat <xref:System.Windows.Forms.Label> ovládacího prvku do složeného ovládacího prvku.  
   
-4.  Pomocí myši přetáhnout <xref:System.Windows.Forms.Label> ovládací prvek bezprostředně pod rozevíracím seznamu zobrazit. V okně Vlastnosti nastavte následující vlastnosti.  
+4. Pomocí myši přetáhnout <xref:System.Windows.Forms.Label> ovládací prvek bezprostředně pod rozevíracím seznamu zobrazit. V okně Vlastnosti nastavte následující vlastnosti.  
   
     |Vlastnost|Nastavení|  
     |--------------|-------------|  
@@ -254,15 +254,15 @@ Složené ovládací prvky poskytují způsob, kterým lze vytvořit vlastní gr
   
 ##### <a name="to-override-the-timer1tick-method-of-ctlclock"></a>Chcete-li přepsat metodu Timer1_Tick ctlClock  
   
-1.  V Průzkumníku řešení klikněte pravým tlačítkem na **ctlAlarmClock.vb**a potom klikněte na tlačítko **zobrazit kód**.  
+1. V Průzkumníku řešení klikněte pravým tlačítkem na **ctlAlarmClock.vb**a potom klikněte na tlačítko **zobrazit kód**.  
   
-2.  Vyhledejte `Private blnAlarmSet As Boolean` příkazu. Bezprostředně pod něj přidejte následující příkaz.  
+2. Vyhledejte `Private blnAlarmSet As Boolean` příkazu. Bezprostředně pod něj přidejte následující příkaz.  
   
     ```vb  
     Dim blnColorTicker as Boolean  
     ```  
   
-3.  Vyhledejte `End Class` příkaz v dolní části stránky. Těsně před `End Class` příkaz, přidejte následující kód.  
+3. Vyhledejte `End Class` příkaz v dolní části stránky. Těsně před `End Class` příkaz, přidejte následující kód.  
   
     ```vb  
     Protected Overrides Sub Timer1_Tick(ByVal sender As Object, ByVal e _  
@@ -307,11 +307,11 @@ Složené ovládací prvky poskytují způsob, kterým lze vytvořit vlastní gr
   
 ##### <a name="to-implement-the-shutoff-method"></a>K implementaci přístupnými – metoda  
   
-1.  V Průzkumníku řešení klikněte pravým tlačítkem na **ctlAlarmClock.vb**a potom klikněte na tlačítko **Návrhář zobrazení**.  
+1. V Průzkumníku řešení klikněte pravým tlačítkem na **ctlAlarmClock.vb**a potom klikněte na tlačítko **Návrhář zobrazení**.  
   
-2.  V Návrháři dvakrát klikněte na panel **lblAlarm**. **Editor kódu** se otevře `Private Sub lblAlarm_Click` řádku.  
+2. V Návrháři dvakrát klikněte na panel **lblAlarm**. **Editor kódu** se otevře `Private Sub lblAlarm_Click` řádku.  
   
-3.  Upravte tuto metodu tak, aby vypadá podobně jako následující kód.  
+3. Upravte tuto metodu tak, aby vypadá podobně jako následující kód.  
   
     ```vb  
     Private Sub lblAlarm_Click(ByVal sender As Object, ByVal e As _  
@@ -323,7 +323,7 @@ Složené ovládací prvky poskytují způsob, kterým lze vytvořit vlastní gr
     End Sub  
     ```  
   
-4.  Na **souboru** nabídky, klikněte na tlačítko **Uložit vše** chcete projekt uložit.  
+4. Na **souboru** nabídky, klikněte na tlačítko **Uložit vše** chcete projekt uložit.  
   
 ### <a name="using-the-inherited-control-on-a-form"></a>Pomocí zděděný ovládací prvek ve formuláři  
  Zděděný ovládací prvek můžete otestovat stejným způsobem můžete otestovat základní třídy ovládacího prvku, `ctlClock`: Stisknutím klávesy F5 sestavte projekt a spusťte váš ovládací prvek **UserControl – kontejner testů**. Další informace najdete v tématu [jak: Testování běhového chování UserControl](how-to-test-the-run-time-behavior-of-a-usercontrol.md).  
@@ -332,23 +332,23 @@ Složené ovládací prvky poskytují způsob, kterým lze vytvořit vlastní gr
   
 ##### <a name="to-build-and-add-your-control-to-a-test-form"></a>K vytvoření a přidání ovládacího prvku na formulář testu  
   
-1.  V Průzkumníku řešení klikněte pravým tlačítkem na **ctlClockLib**a potom klikněte na tlačítko **sestavení**.  
+1. V Průzkumníku řešení klikněte pravým tlačítkem na **ctlClockLib**a potom klikněte na tlačítko **sestavení**.  
   
-2.  Na **souboru** nabídky, přejděte k **přidat**a potom klikněte na tlačítko **nový projekt**.  
+2. Na **souboru** nabídky, přejděte k **přidat**a potom klikněte na tlačítko **nový projekt**.  
   
-3.  Přidat nový **aplikace Windows** projektu do řešení a pojmenujte ho `Test`.  
+3. Přidat nový **aplikace Windows** projektu do řešení a pojmenujte ho `Test`.  
   
      **Test** projekt je přidán do Průzkumníku řešení.  
   
-4.  V Průzkumníku řešení klikněte pravým tlačítkem myši `Test` uzel projektu a pak klikněte na **přidat odkaz** zobrazíte **přidat odkaz** dialogové okno.  
+4. V Průzkumníku řešení klikněte pravým tlačítkem myši `Test` uzel projektu a pak klikněte na **přidat odkaz** zobrazíte **přidat odkaz** dialogové okno.  
   
-5.  Klikněte na kartu **projekty**. Projekt **ctlClockLib** budou uvedeny pod **název projektu**. Dvakrát klikněte na panel **ctlClockLib** přidání odkazu do projektu testů.  
+5. Klikněte na kartu **projekty**. Projekt **ctlClockLib** budou uvedeny pod **název projektu**. Dvakrát klikněte na panel **ctlClockLib** přidání odkazu do projektu testů.  
   
-6.  V Průzkumníku řešení klikněte pravým tlačítkem na **testovací**a potom klikněte na tlačítko **sestavení**.  
+6. V Průzkumníku řešení klikněte pravým tlačítkem na **testovací**a potom klikněte na tlačítko **sestavení**.  
   
-7.  V **nástrojů**, rozbalte **ctlClockLib součásti** uzlu.  
+7. V **nástrojů**, rozbalte **ctlClockLib součásti** uzlu.  
   
-8.  Dvakrát klikněte na panel **ctlAlarmClock** přidat instanci `ctlAlarmClock` do formuláře.  
+8. Dvakrát klikněte na panel **ctlAlarmClock** přidat instanci `ctlAlarmClock` do formuláře.  
   
 9. V **nástrojů**, vyhledejte a dvakrát klikněte na panel **ovládacího prvku DateTimePicker** přidat <xref:System.Windows.Forms.DateTimePicker> ovládací prvek do formuláře a poté přidejte <xref:System.Windows.Forms.Label> ovládací prvek dvojitým kliknutím **popisek**.  
   

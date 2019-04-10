@@ -8,12 +8,12 @@ helpviewer_keywords:
 - printing XPS files programmatically [WPF]
 - XPS files [WPF], printing programmatically
 ms.assetid: 0b1c0a3f-b19e-43d6-bcc9-eb3ec4e555ad
-ms.openlocfilehash: f113516fd96b88ea04b5ee155f808200dd2c893d
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 1d6d45289c9278271a7c7bef5225ad024a5ab0fe
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59114293"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59312069"
 ---
 # <a name="how-to-programmatically-print-xps-files"></a>Postupy: Tisk souborů XPS pomocí programu
 Můžete použít jednu přetížení <xref:System.Printing.PrintQueue.AddJob%2A> metoda tisknout [!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)] soubory bez zahájení <xref:System.Windows.Controls.PrintDialog> nebo v zásadě, všechny [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] vůbec.  
@@ -25,13 +25,13 @@ Můžete použít jednu přetížení <xref:System.Printing.PrintQueue.AddJob%2A
 ## <a name="example"></a>Příklad  
  Pomocí parametru tři hlavní kroky <xref:System.Printing.PrintQueue.AddJob%28System.String%2CSystem.String%2CSystem.Boolean%29> metody jsou následující. Následující příklad uvádí podrobnosti.  
   
-1.  Určete, pokud se XPSDrv tiskárnu. (Viz [přehled tisku s](printing-overview.md) Další informace o tom XPSDrv.)  
+1. Určete, pokud se XPSDrv tiskárnu. (Viz [přehled tisku s](printing-overview.md) Další informace o tom XPSDrv.)  
   
-2.  Pokud se nejedná XPSDrv tiskárnu, nastavte vlákně na jedno vlákno.  
+2. Pokud se nejedná XPSDrv tiskárnu, nastavte vlákně na jedno vlákno.  
   
-3.  Vytvoření instance tiskového serveru a objekt tiskové fronty.  
+3. Vytvoření instance tiskového serveru a objekt tiskové fronty.  
   
-4.  Volat metodu s názvem projektu, souborů, které se mají vytisknout a <xref:System.Boolean> příznak označující, zda se XPSDrv tiskárnu.  
+4. Volat metodu s názvem projektu, souborů, které se mají vytisknout a <xref:System.Boolean> příznak označující, zda se XPSDrv tiskárnu.  
   
  Následující příklad ukazuje, jak batch tisk všechny [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] soubory v adresáři. I když aplikace vyzve uživatele k zadejte adresář, parametr tři <xref:System.Printing.PrintQueue.AddJob%28System.String%2CSystem.String%2CSystem.Boolean%29> metoda nevyžaduje, aby [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]. Může sloužit všechny cesty kódu ve které máte [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] název a cesta, kterou můžete předat do ní.  
   

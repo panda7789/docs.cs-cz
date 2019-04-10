@@ -4,12 +4,12 @@ description: Zjistěte podrobnosti pracovního postupu pro vývoj aplikací zalo
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 01/07/2019
-ms.openlocfilehash: d494dba829d8065e2bc1424bc9bcc11e265fbcc0
-ms.sourcegitcommit: a3db1a9eafca89f95ccf361bc1833b47fbb2bb30
+ms.openlocfilehash: 6a4d8a6fea56c01d23d3cdb98ae9e12619e99ff5
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58921088"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59328228"
 ---
 # <a name="development-workflow-for-docker-apps"></a>Pracovní postup vývoje aplikací Dockeru
 
@@ -67,7 +67,7 @@ Spuštění aplikace v .NET prostý (obvykle v případě, že používání kon
   [https://docs.docker.com/docker-for-windows/](https://docs.docker.com/docker-for-windows/)
 
 - **Visual Studio 2017** \
-  [https://visualstudio.microsoft.com/downloads/](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs)
+  [https://visualstudio.microsoft.com/downloads/](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017)
 
 ![2 - zapisovat soubory Dockerfile](./media/image4.png)
 
@@ -206,13 +206,13 @@ Počáteční souboru Docker může vypadat přibližně takto:
 
 A jedná se o řádek po řádku:
 
-1.  Začít fáze "malé" pouze modul runtime základní Image, pojmenujte ji **základní** pro referenci.
-2.  Vytvoření **/app** adresáře v bitové kopii.
-3.  Zveřejnit port **80**.
+1. Začít fáze "malé" pouze modul runtime základní Image, pojmenujte ji **základní** pro referenci.
+2. Vytvoření **/app** adresáře v bitové kopii.
+3. Zveřejnit port **80**.
 <!-- skip -->
-5.  Volání begin nové fáze "velký" Image pro vytváření a publikování **sestavení** pro referenci.
-6.  Vytvořit adresář **/src** na obrázku.
-7.  Až po řádek 16 kopírovat odkazované projekty **.csproj** soubory, abyste mohli později obnovit balíčky.
+5. Volání begin nové fáze "velký" Image pro vytváření a publikování **sestavení** pro referenci.
+6. Vytvořit adresář **/src** na obrázku.
+7. Až po řádek 16 kopírovat odkazované projekty **.csproj** soubory, abyste mohli později obnovit balíčky.
 <!-- skip -->
 17. Obnovení balíčků pro **Catalog.API** projektu a odkazované projekty.
 18. Kopírování **strom volání adresář pro řešení** (s výjimkou součástí soubory a adresáře **.dockerignore** souboru) z k **/src** adresáře v bitové kopii.

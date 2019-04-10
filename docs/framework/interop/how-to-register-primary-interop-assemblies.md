@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 4b2fcf8a-429d-43ce-8334-e026040be8bb
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8c5f1882c37861fe7dd7997348dc51e30ce2950e
-ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
+ms.openlocfilehash: 29f29da6f5a95181abfd4540b017561115d59284
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56218538"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59314747"
 ---
 # <a name="how-to-register-primary-interop-assemblies"></a>Postupy: Registrace primárních sestavení spolupráce
 
@@ -36,7 +36,7 @@ Použití [nástroj registrace sestavení (Regasm.exe)](../../../docs/framework/
 
 ## <a name="to-register-a-primary-interop-assembly"></a>Registrace primárního spolupracujícího sestavení
 
-1.  V příkazovém řádku zadejte příkaz:
+1. V příkazovém řádku zadejte příkaz:
 
      **RegAsm** *assemblyname*
 
@@ -52,5 +52,5 @@ regasm CompanyA.UtilLib.dll
 ## <a name="see-also"></a>Viz také:
 
 - [Programování s primárními sestaveními spolupráce](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/baxfadst(v=vs.100))
-- [Vyhledání sestavení primární spolupráce](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/y06sxw56(v=vs.100))
-- [Opětovná distribuce sestavení primární spolupráce](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/w0dt2w20(v=vs.100))
+- [Vyhledávání primárních sestavení spolupráce](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/y06sxw56(v=vs.100))
+- [Opětovná distribuce primárních sestavení spolupráce](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/w0dt2w20(v=vs.100))

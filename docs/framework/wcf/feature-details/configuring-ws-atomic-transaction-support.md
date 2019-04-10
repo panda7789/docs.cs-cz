@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - WS-AT protocol [WCF], configuring WS-Atomic Transaction
 ms.assetid: cb9f1c9c-1439-4172-b9bc-b01c3e09ac48
-ms.openlocfilehash: 8fe76cfa0dbcd8bc7ef8248ac798a8b45bf87201
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 987d6c12262fd6530c6ef6f14cedeec269d3f2f8
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59203532"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59315176"
 ---
 # <a name="configuring-ws-atomic-transaction-support"></a>Konfigurace podpory protokolu WS-AT (WS-Atomic Transactions)
 Toto téma popisuje, jak můžete nakonfigurovat podporu WS-AtomicTransaction (WS-AT) pomocí nástroje Konfigurace WS-AT.  
@@ -56,19 +56,19 @@ Toto téma popisuje, jak můžete nakonfigurovat podporu WS-AtomicTransaction (W
   
  Musíte již vlastnit požadované certifikáty k navázání vztahu důvěryhodnosti. Zjistěte, jak vytvořit a nainstalovat nové certifikáty před následující kroky, najdete v článku [jak: Vytvoření a instalace dočasné klientských certifikátů ve službě WCF při vývoji](https://go.microsoft.com/fwlink/?LinkId=158925).  
   
-1.  Na počítač A pomocí importu modulu snap-in Certifikáty konzoly MMC existujícího certifikátu (certA) do LocalMachine\MY (osobní uzlu) a úložiště LocalMachine\ROOT (důvěryhodné kořenové certifikační autority uzlu). Chcete-li importovat certifikát na konkrétním uzlu, klikněte pravým tlačítkem na uzel a zvolte **všechny úlohy/Import**.  
+1. Na počítač A pomocí importu modulu snap-in Certifikáty konzoly MMC existujícího certifikátu (certA) do LocalMachine\MY (osobní uzlu) a úložiště LocalMachine\ROOT (důvěryhodné kořenové certifikační autority uzlu). Chcete-li importovat certifikát na konkrétním uzlu, klikněte pravým tlačítkem na uzel a zvolte **všechny úlohy/Import**.  
   
-2.  V počítači B, pomocí modulu snap-in Certifikáty konzoly MMC vytvořit nebo získat certB certifikátu s privátním klíčem a naimportujete do LocalMachine\MY (osobní uzlu) a úložiště LocalMachine\ROOT (důvěryhodné kořenové certifikační autority uzlu).  
+2. V počítači B, pomocí modulu snap-in Certifikáty konzoly MMC vytvořit nebo získat certB certifikátu s privátním klíčem a naimportujete do LocalMachine\MY (osobní uzlu) a úložiště LocalMachine\ROOT (důvěryhodné kořenové certifikační autority uzlu).  
   
-3.  Exportujte veřejného klíče pro certA do souboru, pokud to není již bylo provedeno.  
+3. Exportujte veřejného klíče pro certA do souboru, pokud to není již bylo provedeno.  
   
-4.  Exportujte veřejného klíče pro certB do souboru, pokud to není již bylo provedeno.  
+4. Exportujte veřejného klíče pro certB do souboru, pokud to není již bylo provedeno.  
   
 ### <a name="establishing-mutual-trust-between-machines"></a>Vytvoření vzájemném vztahu důvěryhodnosti mezi počítači  
   
-1.  Na počítači A naimportujte soubor reprezentace certB LocalMachine\MY a LocalMachine\ROOT úložiště. To deklaruje tento počítač vztahy důvěryhodnosti certB komunikovat s ním.  
+1. Na počítači A naimportujte soubor reprezentace certB LocalMachine\MY a LocalMachine\ROOT úložiště. To deklaruje tento počítač vztahy důvěryhodnosti certB komunikovat s ním.  
   
-2.  V počítači B od certA soubor importujte do úložiště LocalMachine\MY a LocalMachine\ROOT. To znamená tento počítač B certA vztahy důvěryhodnosti pro komunikaci s ním.  
+2. V počítači B od certA soubor importujte do úložiště LocalMachine\MY a LocalMachine\ROOT. To znamená tento počítač B certA vztahy důvěryhodnosti pro komunikaci s ním.  
   
  Po dokončení těchto kroků, důvěru lze navázat mezi dvěma počítači a se dají konfigurovat pro komunikaci mezi sebou pomocí WS-AT.  
   
@@ -77,9 +77,9 @@ Toto téma popisuje, jak můžete nakonfigurovat podporu WS-AtomicTransaction (W
   
  To můžete nakonfigurovat pomocí modulu snap-in konzoly MMC WS-AT. Další informace o tomto nástroji najdete v tématu [modul Snap-in konzoly MMC konfigurace WS-AtomicTransaction](../../../../docs/framework/wcf/ws-atomictransaction-configuration-mmc-snap-in.md) tématu. Následující kroky popisují, jak vytvořit vztah důvěryhodnosti mezi dva počítače se systémem MSDTC.  
   
-1.  Konfigurace počítačů A nastavení. "Certifikát koncového bodu" Vyberte certA. "Autorizované certifikáty" Vyberte certB.  
+1. Konfigurace počítačů A nastavení. "Certifikát koncového bodu" Vyberte certA. "Autorizované certifikáty" Vyberte certB.  
   
-2.  Konfigurace nastavení počítače B. "Certifikát koncového bodu" Vyberte certB. "Autorizované certifikáty" Vyberte certA.  
+2. Konfigurace nastavení počítače B. "Certifikát koncového bodu" Vyberte certB. "Autorizované certifikáty" Vyberte certA.  
   
 > [!NOTE]
 >  Pokud jeden počítač odešle zprávu do dalších počítačů, odesílatel se pokusí ověřte, že odpovídají názvu předmětu certifikátu příjemce a název počítače příjemce. Pokud shodné nejsou, se nezdaří ověření certifikátů a dva počítače nemohou komunikovat.  
@@ -98,13 +98,13 @@ Toto téma popisuje, jak můžete nakonfigurovat podporu WS-AtomicTransaction (W
   
  Službě protokolu WS-AT podporuje také integrovaného ServiceModel trasováním relaci sledování ETW. To poskytuje podrobnější, specifické pro komunikaci trasování kromě existující transakce trasování.  Povolit další trasování, postupujte podle těchto kroků  
   
-1.  Otevřít **spuštění nebo spuštění** nabídky, do vstupního pole zadejte "regedit" a vyberte **OK**.  
+1. Otevřít **spuštění nebo spuštění** nabídky, do vstupního pole zadejte "regedit" a vyberte **OK**.  
   
-2.  V **Editor registru**, přejděte do následující složky v levém podokně Hkey_Local_Machine\SOFTWARE\Microsoft\WSAT\3.0\  
+2. V **Editor registru**, přejděte do následující složky v levém podokně Hkey_Local_Machine\SOFTWARE\Microsoft\WSAT\3.0\  
   
-3.  Klikněte pravým tlačítkem myši `ServiceModelDiagnosticTracing` hodnotu v pravém podokně a vyberte **změnit**.  
+3. Klikněte pravým tlačítkem myši `ServiceModelDiagnosticTracing` hodnotu v pravém podokně a vyberte **změnit**.  
   
-4.  V **údaj hodnoty** vstupní pole, zadejte jednu z následujících platné hodnoty k určení úrovně trasování, které chcete povolit.  
+4. V **údaj hodnoty** vstupní pole, zadejte jednu z následujících platné hodnoty k určení úrovně trasování, které chcete povolit.  
   
 -   0: vypnuto  
   

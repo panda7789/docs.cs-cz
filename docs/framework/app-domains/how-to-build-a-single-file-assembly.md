@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Sestavení s jediným souborem'
+title: 'Postupy: Vytváření sestavení s jediným souborem'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -15,14 +15,14 @@ helpviewer_keywords:
 ms.assetid: a6063221-43a5-4d3e-814c-288a4ec69aec
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b5c0b5dc2e001121ab54447bae4a5eed3290a580
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a73b2d8948c9a046fd77c02f1bcc87f5738105d9
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54597837"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59303996"
 ---
-# <a name="how-to-build-a-single-file-assembly"></a>Postupy: Sestavení s jediným souborem
+# <a name="how-to-build-a-single-file-assembly"></a>Postupy: Vytváření sestavení s jediným souborem
 
 Jeden soubor sestavení, které se o nejjednodušší typ sestavení, obsahuje informace o typu a implementaci, jakož i [manifestu sestavení](../../../docs/framework/app-domains/assembly-manifest.md). Kompilátory příkazového řádku nebo Visual Studio můžete použít k vytvoření jednosouborového sestavení. Ve výchozím nastavení kompilátor vytvoří sestavení soubor s příponou .exe.
 
@@ -33,7 +33,7 @@ Následující postupy ukazují, jak vytvořit jeden soubor sestavení použití
 
 ## <a name="to-create-an-assembly-with-an-exe-extension"></a>K vytvoření sestavení s příponou .exe
 
-1.  V příkazovém řádku zadejte následující příkaz:
+1. V příkazovém řádku zadejte následující příkaz:
 
      \<*příkaz kompilátoru*> \<*název modulu*>
 
@@ -51,7 +51,7 @@ vbc myCode.vb
 
 ### <a name="to-create-an-assembly-with-an-exe-extension-and-specify-the-output-file-name"></a>K vytvoření sestavení s příponou .exe a určuje název výstupního souboru
 
-1.  V příkazovém řádku zadejte následující příkaz:
+1. V příkazovém řádku zadejte následující příkaz:
 
      \<*příkaz kompilátoru*> **/out:**\<*název_souboru*> \<*název modulu*>
 
@@ -72,7 +72,7 @@ vbc -out:myAssembly.exe myCode.vb
 
 ### <a name="to-create-a-library-assembly"></a>Chcete-li vytvořit sestavení knihovny
 
-1.  V příkazovém řádku zadejte následující příkaz:
+1. V příkazovém řádku zadejte následující příkaz:
 
      \<*příkaz kompilátoru*> **- t: Knihovna** \< *název modulu*>
 

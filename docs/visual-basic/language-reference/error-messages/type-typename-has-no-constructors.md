@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC30251
 ms.assetid: aff3e1df-abe6-4bc0-9abc-a1e70514c561
-ms.openlocfilehash: b06c1d930a3551e9bc175c814a6297894799237d
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 8564499b9ff55514179314217b7d40d8d3cdf6a2
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58837974"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59311641"
 ---
 # <a name="type-typename-has-no-constructors"></a>Typ '\<typename >' nemá žádné konstruktory
 Typ nepodporuje volání `Sub New()`. Jednou z možných příčin je poškozená kompilátor nebo binárního souboru.  
@@ -21,13 +21,13 @@ Typ nepodporuje volání `Sub New()`. Jednou z možných příčin je poškozen�
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1.  Pokud je typ v jiném projektu nebo v odkazovaném souboru, přeinstalujte projekt nebo soubor.  
+1. Pokud je typ v jiném projektu nebo v odkazovaném souboru, přeinstalujte projekt nebo soubor.  
   
-2.  Pokud je typ ve stejném projektu, překompilujte sestavení obsahující daný typ.  
+2. Pokud je typ ve stejném projektu, překompilujte sestavení obsahující daný typ.  
   
-3.  Pokud se chyba objeví znovu, přeinstalujte kompilátor jazyka Visual Basic.  
+3. Pokud se chyba objeví znovu, přeinstalujte kompilátor jazyka Visual Basic.  
   
-4.  Pokud potíže potrvají, shromážděte informace o okolnostech a upozornit Microsoft Product Support Services.  
+4. Pokud potíže potrvají, shromážděte informace o okolnostech a upozornit Microsoft Product Support Services.  
   
 ## <a name="see-also"></a>Viz také:
 

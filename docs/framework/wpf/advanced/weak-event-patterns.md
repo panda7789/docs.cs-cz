@@ -6,12 +6,12 @@ helpviewer_keywords:
 - event handlers [WPF], weak event pattern
 - IWeakEventListener interface [WPF]
 ms.assetid: e7c62920-4812-4811-94d8-050a65c856f6
-ms.openlocfilehash: 49795235d489ebc70cec11332e6be4a9452bc21d
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: e0cd6837de626fa6bcd560811c6a70f7f6604daa
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59139253"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59316164"
 ---
 # <a name="weak-event-patterns"></a>Slabý vzor událostí
 V aplikacích je možné, že obslužné rutiny, které jsou připojeny ke zdrojům událostí nebude ve spolupráci s objektem naslouchací proces, který připojuje ke zdroji obslužné rutiny. Tato situace může vést k nevracení paměti. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] zavádí návrhový vzor, který je možné tento problém vyřešit tak, že třída vyhrazený správce poskytuje pro určité události a implementace rozhraní pro naslouchací procesy pro tuto událost. Tento vzor návrhu se označuje jako *slabý vzor událostí*.  
@@ -50,11 +50,11 @@ V aplikacích je možné, že obslužné rutiny, které jsou připojeny ke zdroj
   
 ### <a name="using-an-existing-weak-event-manager-class"></a>Použití existující třídy slabé správce událostí  
   
-1.  Najděte si událost ve stávající slabé správce.  
+1. Najděte si událost ve stávající slabé správce.  
   
      Seznam správců slabých událostí, které jsou součástí WPF najdete v tématu v hierarchii dědičnosti <xref:System.Windows.WeakEventManager> třídy.  
   
-2.  Pomocí nového správce slabých událostí místo normální událost propojení.  
+2. Pomocí nového správce slabých událostí místo normální událost propojení.  
   
      Pokud například váš kód používá následující vzor k odběru události:  
   
@@ -82,7 +82,7 @@ V aplikacích je možné, že obslužné rutiny, které jsou připojeny ke zdroj
   
 ### <a name="using-the-generic-weak-event-manager-class"></a>Použití obecné třídy slabé správce událostí  
   
-1.  Použití obecného <xref:System.Windows.WeakEventManager%602> třídy místo normální událost propojení.  
+1. Použití obecného <xref:System.Windows.WeakEventManager%602> třídy místo normální událost propojení.  
   
      Při použití <xref:System.Windows.WeakEventManager%602> zaregistrovat naslouchacích procesů událostí, zadáte zdroj události a <xref:System.EventArgs> typ jako parametry typu třídy a volání <xref:System.Windows.WeakEventManager%602.AddHandler%2A> jak je znázorněno v následujícím kódu:  
   
@@ -92,19 +92,19 @@ V aplikacích je možné, že obslužné rutiny, které jsou připojeny ke zdroj
   
 ### <a name="creating-a-custom-weak-event-manager-class"></a>Vytvoření vlastní třídy slabé správce událostí  
   
-1.  Zkopírujte následující šablony třídy do projektu.  
+1. Zkopírujte následující šablony třídy do projektu.  
   
      Tato třída dědí z <xref:System.Windows.WeakEventManager> třídy.  
   
      [!code-csharp[WeakEvents#WeakEventManagerTemplate](~/samples/snippets/csharp/VS_Snippets_Wpf/WeakEvents/CSharp/WeakEventManagerTemplate.cs#weakeventmanagertemplate)]  
   
-2.  Nahradit `SomeEventWeakEventManager` název nahraďte vlastním názvem.  
+2. Nahradit `SomeEventWeakEventManager` název nahraďte vlastním názvem.  
   
-3.  Nahraďte tři popsané dříve se odpovídající názvy pro událost. (`SomeEvent`, `EventSource`, a `SomeEventEventArgs`)  
+3. Nahraďte tři popsané dříve se odpovídající názvy pro událost. (`SomeEvent`, `EventSource`, a `SomeEventEventArgs`)  
   
-4.  Nastavte viditelnost (veřejné / interní nebo privátní) třídy správce slabých událostí pro stejnou viditelnost jako událost, kterou spravuje.  
+4. Nastavte viditelnost (veřejné / interní nebo privátní) třídy správce slabých událostí pro stejnou viditelnost jako událost, kterou spravuje.  
   
-5.  Pomocí nového správce slabých událostí místo normální událost propojení.  
+5. Pomocí nového správce slabých událostí místo normální událost propojení.  
   
      Pokud například váš kód používá následující vzor k odběru události:  
   

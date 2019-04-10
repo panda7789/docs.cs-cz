@@ -2,32 +2,32 @@
 title: 'Postupy: Implementace klientské aplikace používající zjišťování proxy k vyhledání služby'
 ms.date: 03/30/2017
 ms.assetid: 62b41a75-cf40-4c52-a842-a5f1c70e247f
-ms.openlocfilehash: 42dc2e8269e36161904f69880712924d4789333e
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 12b3fa03a1f259df8ee8c970463fa9ccee7267fa
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59115970"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59320993"
 ---
 # <a name="how-to-implement-a-client-application-that-uses-the-discovery-proxy-to-find-a-service"></a>Postupy: Implementace klientské aplikace používající zjišťování proxy k vyhledání služby
 Toto téma je třetí webinář tři témat, která popisuje, jak implementace zjišťování proxy. V předchozím tématu [jak: Implementace zjistitelné služby, která se registruje pomocí Proxy zjišťování](../../../../docs/framework/wcf/feature-details/discoverable-service-that-registers-with-the-discovery-proxy.md), implementovat službu WCF, která se zaregistruje pomocí proxy zjišťování. V tomto tématu vytvořte klienta WCF používající zjišťování proxy k vyhledání služeb WCF.  
   
 ### <a name="implement-the-client"></a>Implementace klienta  
   
-1.  Přidat nový projekt konzolové aplikace na `DiscoveryProxyExample` řešení `Client`.  
+1. Přidat nový projekt konzolové aplikace na `DiscoveryProxyExample` řešení `Client`.  
   
-2.  Přidejte odkazy na následující sestavení:  
+2. Přidejte odkazy na následující sestavení:  
   
     1.  System.ServiceModel  
   
     2.  System.ServiceModel.Discovery  
   
-3.  Přidáte GeneratedClient.cs nalezen na konci tohoto tématu do projektu.  
+3. Přidáte GeneratedClient.cs nalezen na konci tohoto tématu do projektu.  
   
     > [!NOTE]
     >  Tento soubor je obvykle vytvořen pomocí nástroje, jako je například Svcutil.exe. Je zadaná v tomto tématu můžete zjednodušit úlohy.  
   
-4.  Otevřete soubor Program.cs a přidejte následující metodu. Tato metoda přebírá adresu koncového bodu a použije ho k inicializaci služby klienta (proxy).  
+4. Otevřete soubor Program.cs a přidejte následující metodu. Tato metoda přebírá adresu koncového bodu a použije ho k inicializaci služby klienta (proxy).  
   
     ```csharp  
     static void InvokeCalculatorService(EndpointAddress endpointAddress)  
@@ -62,7 +62,7 @@ Toto téma je třetí webinář tři témat, která popisuje, jak implementace z
     }  
     ```  
   
-5.  Přidejte následující kód, který `Main` metody.  
+5. Přidejte následující kód, který `Main` metody.  
   
     ```csharp  
     public static void Main()  

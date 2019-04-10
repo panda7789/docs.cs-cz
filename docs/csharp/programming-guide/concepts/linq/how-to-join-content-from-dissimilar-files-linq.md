@@ -2,12 +2,12 @@
 title: 'Postupy: Připojte se k obsahu z Nepodobných souborů (LINQ) (C#)'
 ms.date: 06/27/2018
 ms.assetid: aa2d12a6-70a9-492f-a6db-b2b850d46811
-ms.openlocfilehash: 5fb954bee6433d28ffb47f789b41492349f7ab42
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ca340e82e33d9b3ec212f69cb73efafb3c6abc0c
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54698411"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59328813"
 ---
 # <a name="how-to-join-content-from-dissimilar-files-linq-c"></a>Postupy: Připojte se k obsahu z Nepodobných souborů (LINQ) (C#)
 
@@ -15,7 +15,7 @@ Tento příklad ukazuje, jak propojit data ze dvou souborů oddělených čárka
   
 ## <a name="to-create-the-data-files"></a>K vytvoření datových souborů
   
-1.  Zkopírujte následující řádky do souboru s názvem *scores.csv* a uložte ho do složky vašeho projektu. Tento soubor představuje data z tabulky. Student získal ID je sloupec 1 a sloupců 2 až 5 jsou skóre v testech.  
+1. Zkopírujte následující řádky do souboru s názvem *scores.csv* a uložte ho do složky vašeho projektu. Tento soubor představuje data z tabulky. Student získal ID je sloupec 1 a sloupců 2 až 5 jsou skóre v testech.  
   
     ```  
     111, 97, 92, 81, 60  
@@ -32,7 +32,7 @@ Tento příklad ukazuje, jak propojit data ze dvou souborů oddělených čárka
     122, 94, 92, 91, 91  
     ```  
   
-2.  Zkopírujte následující řádky do souboru s názvem *names.csv* a uložte ho do složky vašeho projektu. Tento soubor představuje tabulku obsahující student získal příjmení, křestního jména a ID studenta.  
+2. Zkopírujte následující řádky do souboru s názvem *names.csv* a uložte ho do složky vašeho projektu. Tento soubor představuje tabulku obsahující student získal příjmení, křestního jména a ID studenta.  
   
     ```  
     Omelchenko,Svetlana,111  

@@ -2,12 +2,12 @@
 title: Integrace mezipaměti ASP.NET
 ms.date: 03/30/2017
 ms.assetid: f581923a-8a72-42fc-bd6a-46de2aaeecc1
-ms.openlocfilehash: 376e188bcabbff1d87e7b45aa281e2a2b92a13b6
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 8ed546459479e9986d6bbecf6eaca350d2d73c98
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47197445"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59309469"
 ---
 # <a name="aspnet-caching-integration"></a>Integrace mezipaměti ASP.NET
 Tato ukázka předvádí, jak využívat výstupní mezipaměti ASP.NET programovací model webových služeb HTTP WCF. Toto téma se zaměřuje na funkce integrace výstupní mezipaměti technologie ASP.NET.  
@@ -34,31 +34,31 @@ Tato ukázka předvádí, jak využívat výstupní mezipaměti ASP.NET programo
 ## <a name="to-run-the-sample"></a>Chcete-li spustit ukázku  
  Ukázkový soubor obsahuje tři projekty:  
   
--   **Služba**: webové aplikace A projekt, který zahrnuje služby WCF HTTP hostované v technologii ASP.NET.  
+-   **Služba**: Projekt webové aplikace, která zahrnuje služby WCF HTTP hostované v technologii ASP.NET.  
   
--   **Klient**: projekt konzolové aplikace, která provádí volání služby.  
+-   **Klient**: Projekt konzolové aplikace, která provádí volání služby.  
   
--   **Běžné**: sdílené knihovny, který obsahuje typ zákazníka používá klienta a služby.  
+-   **Běžné**: Sdílená knihovna, která obsahuje typ zákazníka používá klienta a služby.  
   
  Při spuštění aplikace konzoly klienta, klient vytvářejí požadavky na službu a zapíše relevantní informace z odpovědí do okna konzoly.  
   
 #### <a name="to-run-the-sample"></a>Chcete-li spustit ukázku  
   
-1.  Otevřete řešení pro ukázka integrace ukládání do mezipaměti technologie ASP.NET.  
+1. Otevřete řešení pro ukázka integrace ukládání do mezipaměti technologie ASP.NET.  
   
-2.  Stiskněte kombinaci kláves CTRL + SHIFT + B, abyste mohli sestavit řešení.  
+2. Stiskněte kombinaci kláves CTRL + SHIFT + B, abyste mohli sestavit řešení.  
   
-3.  Pokud **Průzkumníka řešení** okno ještě není otevřené, stiskněte CTRL + W + S.  
+3. Pokud **Průzkumníka řešení** okno ještě není otevřené, stiskněte CTRL + W + S.  
   
-4.  Z **Průzkumníka řešení** okna, klikněte pravým tlačítkem **služby** projektu a vyberte **spustit novou instanci**. Tím se spustí serveru ASP.NET development server, který je hostitelem služby.  
+4. Z **Průzkumníka řešení** okna, klikněte pravým tlačítkem **služby** projektu a vyberte **spustit novou instanci**. Tím se spustí serveru ASP.NET development server, který je hostitelem služby.  
   
-5.  Z **Průzkumníka řešení** okna, klikněte pravým tlačítkem **klienta** projektu a vyberte **spustit novou instanci**.  
+5. Z **Průzkumníka řešení** okna, klikněte pravým tlačítkem **klienta** projektu a vyberte **spustit novou instanci**.  
   
-6.  V okně konzoly klienta se zobrazí a poskytuje URI spuštěnou službu a identifikátor URI HTML stránka pro spuštěnou službu nápovědy. Na stránce nápovědy HTML v libovolném bodě v čase zobrazíte tak, že zadáte identifikátor URI na stránce nápovědy v prohlížeči.  
+6. V okně konzoly klienta se zobrazí a poskytuje URI spuštěnou službu a identifikátor URI HTML stránka pro spuštěnou službu nápovědy. Na stránce nápovědy HTML v libovolném bodě v čase zobrazíte tak, že zadáte identifikátor URI na stránce nápovědy v prohlížeči.  
   
-7.  Při spuštění ukázky klienta zapíše stavu aktuální aktivity.  
+7. Při spuštění ukázky klienta zapíše stavu aktuální aktivity.  
   
-8.  Stisknutím libovolné klávesy ukončete konzolovou aplikaci klienta.  
+8. Stisknutím libovolné klávesy ukončete konzolovou aplikaci klienta.  
   
 9. Stiskněte SHIFT + F5 ukončete ladění služby.  
   

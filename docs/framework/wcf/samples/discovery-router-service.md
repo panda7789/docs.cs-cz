@@ -2,12 +2,12 @@
 title: Služba zjišťování směrovačů
 ms.date: 03/30/2017
 ms.assetid: 3d30af47-b24f-40e5-833a-24d77125c9e6
-ms.openlocfilehash: 9c0c409eb6cf3146a198b9f4bcd6d76660f5da36
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 166f6b9d1055e36f987e6b9a81fe69dc8bd548b9
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43509078"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59318764"
 ---
 # <a name="discovery-router-service"></a>Služba zjišťování směrovačů
 Tento příklad ukazuje, jak předávat zprávy zjišťování do jiného koncového bodu.  
@@ -22,13 +22,13 @@ Tento příklad ukazuje, jak předávat zprávy zjišťování do jiného koncov
   
 #### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
-1.  Sestavte ukázku.  
+1. Sestavte ukázku.  
   
-2.  Spuštění spustitelného souboru DiscoveryRouter.  
+2. Spuštění spustitelného souboru DiscoveryRouter.  
   
-3.  Spusťte spustitelný soubor služby z adresáře sestavení.  
+3. Spusťte spustitelný soubor služby z adresáře sestavení.  
   
-4.  Spusťte klientský spustitelný soubor. Všimněte si, že klient vyhledá službu.  
+4. Spusťte klientský spustitelný soubor. Všimněte si, že klient vyhledá službu.  
   
 > [!IMPORTANT]
 >  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  

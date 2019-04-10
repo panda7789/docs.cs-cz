@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 4354e5eb-dd45-469d-97fb-1c495705ee59
-ms.openlocfilehash: 4558a5b26903fb53c60fccf3df806f7cf67f9845
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: cc2e25183649f6a95e7862520ccc5719f201277a
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59119662"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59311484"
 ---
 # <a name="how-to-call-custom-database-functions"></a>Postupy: Volání vlastních databázových funkcí
 Toto téma popisuje, jak zavolat vlastní funkce, které jsou definovány v databázi z v rámci LINQ dotazy na entity.  
@@ -21,17 +21,17 @@ Toto téma popisuje, jak zavolat vlastní funkce, které jsou definovány v data
   
 ### <a name="to-call-custom-functions-that-are-defined-in-the-database"></a>K volání vlastní funkce, které jsou definovány v databázi  
   
-1.  Vytvoření vlastní funkce ve vaší databázi.  
+1. Vytvoření vlastní funkce ve vaší databázi.  
   
      Další informace o vytváření vlastních funkcí v systému SQL Server najdete v tématu [CREATE FUNCTION (Transact-SQL)](https://go.microsoft.com/fwlink/?LinkID=139871).  
   
-2.  Deklarování funkce v úložiště schema definition language (SSDL) souboru .edmx. Název funkce musí být stejný jako název funkce deklarovaná v databázi.  
+2. Deklarování funkce v úložiště schema definition language (SSDL) souboru .edmx. Název funkce musí být stejný jako název funkce deklarovaná v databázi.  
   
      Další informace najdete v tématu [funkce – Element (SSDL)](/ef/ef6/modeling/designer/advanced/edmx/ssdl-spec#function-element-ssdl).  
   
-3.  Přidejte odpovídající metodu na třídu v kódu aplikace a použít <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute> metody Všimněte si, že <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute.NamespaceName%2A> a <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute.FunctionName%2A> parametry atributu se názvu oboru názvů Koncepční model a název funkce v konceptuálním model, v uvedeném pořadí. Funkce překlad názvů pro funkci LINQ je velká a malá písmena.  
+3. Přidejte odpovídající metodu na třídu v kódu aplikace a použít <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute> metody Všimněte si, že <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute.NamespaceName%2A> a <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute.FunctionName%2A> parametry atributu se názvu oboru názvů Koncepční model a název funkce v konceptuálním model, v uvedeném pořadí. Funkce překlad názvů pro funkci LINQ je velká a malá písmena.  
   
-4.  Volání metody v technologii LINQ to Entities dotazu.  
+4. Volání metody v technologii LINQ to Entities dotazu.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje, jak volat funkci vlastní databázi z v rámci LINQ dotazu entity. V příkladu používá model školy. Informace o School modelu najdete v tématu [vytvoření ukázkové databáze školy](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399731(v=vs.100)) a [generování školní edmx soubor](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399739(v=vs.100)).  

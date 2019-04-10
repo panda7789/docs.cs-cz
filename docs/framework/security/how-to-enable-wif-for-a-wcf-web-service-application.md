@@ -3,12 +3,12 @@ title: 'Postupy: Povolení WIF pro aplikaci webové služby WCF'
 ms.date: 03/30/2017
 ms.assetid: bfc64b3d-64e9-4093-a6a4-72e933917af7
 author: BrucePerlerMS
-ms.openlocfilehash: c3d22d812fdd5a1fc7567b3da34e7fd5a59531cd
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: 6af0336e19df4ba2a99a52f8726e78ed92f5a79e
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48584191"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59323301"
 ---
 # <a name="how-to-enable-wif-for-a-wcf-web-service-application"></a>Postupy: Povolení WIF pro aplikaci webové služby WCF
 ## <a name="applies-to"></a>Platí pro  
@@ -18,7 +18,7 @@ ms.locfileid: "48584191"
 -   Microsoft® Windows® Communication Foundation (WCF)  
   
 ## <a name="summary"></a>Souhrn  
- Tento návod podrobně popisuje postupy pro povolení technologie WIF ve webové službě WCF. Obsahuje také pokyny, jak pomocí otestování aplikace ověřit, zda webová služba po spuštění aplikace správně předkládá deklarace. Tento návod neobsahuje podrobné pokyny pro vytvoření služby tokenů zabezpečení (STS) a namísto toho používá službu STS určenou pro vývoj, která je součástí instalace nástroje Identity and Access Tool. Služba STS pro vývoj neprovádí skutečné ověřování a je určena pouze pro testovací účely. Abyste mohli dokončit postupy v tomto návodu, je třeba nainstalovat nástroj Identity and Access Tool. Můžete ho stáhnout z následujícího umístění: [Identity and Access Tool](https://go.microsoft.com/fwlink/?LinkID=245849)  
+ Tento návod podrobně popisuje postupy pro povolení technologie WIF ve webové službě WCF. Obsahuje také pokyny, jak pomocí otestování aplikace ověřit, zda webová služba po spuštění aplikace správně předkládá deklarace. Tento návod neobsahuje podrobné pokyny pro vytvoření služby tokenů zabezpečení (STS) a namísto toho používá službu STS určenou pro vývoj, která je součástí instalace nástroje Identity and Access Tool. Služba STS pro vývoj neprovádí skutečné ověřování a je určena pouze pro testovací účely. Abyste mohli dokončit postupy v tomto návodu, je třeba nainstalovat nástroj Identity and Access Tool. Můžete ho stáhnout z následujícího umístění: [Nástroj identity and Access Tool](https://go.microsoft.com/fwlink/?LinkID=245849)  
   
 ## <a name="contents"></a>Obsah  
   
@@ -43,13 +43,13 @@ ms.locfileid: "48584191"
 ## <a name="overview"></a>Přehled  
  Cílem tohoto návodu je ukázat, jak mohou vývojáři používat federované ověřování při vývoji služeb WCF. Mezi výhody použití federace ve službách WCF patří:  
   
-1.  Přesunutí logiky ověřování mimo kód služby WCF  
+1. Přesunutí logiky ověřování mimo kód služby WCF  
   
-2.  Opětovné využití stávajících řešení pro správu identit  
+2. Opětovné využití stávajících řešení pro správu identit  
   
-3.  Vzájemná funkční spolupráce s jinými řešeními pro správu identit  
+3. Vzájemná funkční spolupráce s jinými řešeními pro správu identit  
   
-4.  Flexibilita a odolnost vůči budoucím změnám  
+4. Flexibilita a odolnost vůči budoucím změnám  
   
  Technologie WIF a související nástroj Identity and Access Tool usnadňují vývoj a testování služeb WCF pomocí federovaného ověřování, jak ukazují následující kroky.  
   
@@ -66,19 +66,19 @@ ms.locfileid: "48584191"
   
 #### <a name="to-create-a-simple-wcf-service"></a>Vytvoření jednoduché služby WCF  
   
-1.  Spusťte sadu Visual Studio jako správce v režimu se zvýšenými oprávněními.  
+1. Spusťte sadu Visual Studio jako správce v režimu se zvýšenými oprávněními.  
   
-2.  V sadě Visual Studio, klikněte na tlačítko **souboru**, klikněte na tlačítko **nový**a potom klikněte na tlačítko **projektu**.  
+2. V sadě Visual Studio, klikněte na tlačítko **souboru**, klikněte na tlačítko **nový**a potom klikněte na tlačítko **projektu**.  
   
-3.  V **nový projekt** okna, klikněte na tlačítko **aplikace služby WCF**.  
+3. V **nový projekt** okna, klikněte na tlačítko **aplikace služby WCF**.  
   
-4.  V **název**, zadejte `TestService` a stiskněte klávesu **OK**.  
+4. V **název**, zadejte `TestService` a stiskněte klávesu **OK**.  
   
-5.  Klikněte pravým tlačítkem myši **TestService** projektu v rámci **Průzkumníku řešení**a pak vyberte **identit a přístupu**.  
+5. Klikněte pravým tlačítkem myši **TestService** projektu v rámci **Průzkumníku řešení**a pak vyberte **identit a přístupu**.  
   
-6.  **Identit a přístupu** zobrazí se okno. V části **poskytovatelé**vyberte **testování aplikace s místní službu STS pro vývoj**, pak klikněte na tlačítko **použít**. Nástroj Identity and Access Tool nakonfiguruje službu používat technologie WIF a externí ověřování místní služby STS pro vývoj pomocí (**LocalSTS**) přidáním konfiguračních elementů do *Web.config* souboru.  
+6. **Identit a přístupu** zobrazí se okno. V části **poskytovatelé**vyberte **testování aplikace s místní službu STS pro vývoj**, pak klikněte na tlačítko **použít**. Nástroj Identity and Access Tool nakonfiguruje službu používat technologie WIF a externí ověřování místní služby STS pro vývoj pomocí (**LocalSTS**) přidáním konfiguračních elementů do *Web.config* souboru.  
   
-7.  V *Service1.svc.cs* přidejte `using` směrnice pro **System.Security.Claims** obor názvů a nahraďte existující kód následujícím kódem a pak soubor uložte:  
+7. V *Service1.svc.cs* přidejte `using` směrnice pro **System.Security.Claims** obor názvů a nahraďte existující kód následujícím kódem a pak soubor uložte:  
   
     ```csharp  
     public class Service1 : IService1  
@@ -115,7 +115,7 @@ ms.locfileid: "48584191"
   
      `ComputeResponse` Metoda zobrazuje vlastnosti různých deklarací, které jsou vystavované **LocalSTS**.  
   
-8.  V *IService1.cs* souboru, nahraďte existující kód následujícím kódem a pak soubor uložte:  
+8. V *IService1.cs* souboru, nahraďte existující kód následujícím kódem a pak soubor uložte:  
   
     ```csharp  
     [ServiceContract]  
@@ -138,18 +138,18 @@ ms.locfileid: "48584191"
   
 #### <a name="to-create-a-client-application"></a>Vytvoření klientské aplikace  
   
-1.  V sadě Visual Studio, klikněte pravým tlačítkem na řešení, klikněte na tlačítko **přidat**a potom klikněte na tlačítko **nový projekt**.  
+1. V sadě Visual Studio, klikněte pravým tlačítkem na řešení, klikněte na tlačítko **přidat**a potom klikněte na tlačítko **nový projekt**.  
   
-2.  V **přidat nový projekt** okně **konzolovou aplikaci** z **Visual C#** šablony seznamu, zadejte `Client`a potom stiskněte klávesu **OK**. Vytvoří se nový projekt ve složce řešení.  
+2. V **přidat nový projekt** okně **konzolovou aplikaci** z **Visual C#** šablony seznamu, zadejte `Client`a potom stiskněte klávesu **OK**. Vytvoří se nový projekt ve složce řešení.  
   
-3.  Klikněte pravým tlačítkem na **odkazy** pod **klienta** projektu a pak klikněte na tlačítko **přidat odkaz na službu**.  
+3. Klikněte pravým tlačítkem na **odkazy** pod **klienta** projektu a pak klikněte na tlačítko **přidat odkaz na službu**.  
   
-4.  V **přidat odkaz na službu** okna, klikněte na šipku rozevíracího seznamu **zjišťování** tlačítko a klikněte na tlačítko **služby v řešení**. **Adresu** se automaticky vyplní služba WCF, který jste vytvořili dříve, a **Namespace** se nastaví na **ServiceReference1**. Klikněte na tlačítko **OK**.  
+4. V **přidat odkaz na službu** okna, klikněte na šipku rozevíracího seznamu **zjišťování** tlačítko a klikněte na tlačítko **služby v řešení**. **Adresu** se automaticky vyplní služba WCF, který jste vytvořili dříve, a **Namespace** se nastaví na **ServiceReference1**. Klikněte na **OK**.  
   
     > [!IMPORTANT]
     >  Obě **TestService** a **LocalSTS** musí běžet, když přidáte odkaz na službu do klienta.  
   
-5.  Sada Visual Studio vygeneruje třídy proxy pro službu WCF a přidá všechny nezbytné informace odkazu. Přidá také elementy do *App.config* souborů pro konfiguraci klienta získá token ze služby STS pro ověření ve službě. Po dokončení tohoto procesu **Program.cs** soubor se otevře. Přidat `using` směrnice pro **System.ServiceModel** a druhý pro **Client.ServiceReference1**, nahraďte **hlavní** metodu s následujícím kódem, pak soubor uložte:  
+5. Sada Visual Studio vygeneruje třídy proxy pro službu WCF a přidá všechny nezbytné informace odkazu. Přidá také elementy do *App.config* souborů pro konfiguraci klienta získá token ze služby STS pro ověření ve službě. Po dokončení tohoto procesu **Program.cs** soubor se otevře. Přidat `using` směrnice pro **System.ServiceModel** a druhý pro **Client.ServiceReference1**, nahraďte **hlavní** metodu s následujícím kódem, pak soubor uložte:  
   
     ```csharp  
     static void Main(string[] args)  
@@ -209,7 +209,7 @@ ms.locfileid: "48584191"
     }  
     ```  
   
-6.  Otevřít *App.config* a přidejte následující kód XML jako první podřízený element pod `<system.serviceModel>` element poté soubor uložte:  
+6. Otevřít *App.config* a přidejte následující kód XML jako první podřízený element pod `<system.serviceModel>` element poté soubor uložte:  
   
     ```xml  
     <behaviors>  
@@ -227,18 +227,18 @@ ms.locfileid: "48584191"
   
      Tím se zakáže ověřování certifikátu.  
   
-7.  Klikněte pravým tlačítkem myši **TestService** řešení a klikněte na kartu **nastavit projekty po spuštění**. **Spouštěný projekt** otevře se stránka Vlastnosti. V **spouštěný projekt** stránky vlastností, vyberte **více projektů po spuštění** klikněte v **akce** pole pro každý projekt a vyberte **Start** z rozevírací nabídky. Klikněte na tlačítko **OK** uložte nastavení.  
+7. Klikněte pravým tlačítkem myši **TestService** řešení a klikněte na kartu **nastavit projekty po spuštění**. **Spouštěný projekt** otevře se stránka Vlastnosti. V **spouštěný projekt** stránky vlastností, vyberte **více projektů po spuštění** klikněte v **akce** pole pro každý projekt a vyberte **Start** z rozevírací nabídky. Klikněte na tlačítko **OK** uložte nastavení.  
   
-8.  Sestavte řešení.  
+8. Sestavte řešení.  
   
 ## <a name="step-3--test-your-solution"></a>Krok 3 – Otestování řešení  
  V tomto kroku otestujete aplikaci WCF s podporou technologie WIF a ověříte, že jsou předkládány deklarace.  
   
 #### <a name="to-test-your-wif-enabled-wcf-application-for-claims"></a>Otestování deklarací v aplikaci WCF s podporou technologie WIF  
   
-1.  Stisknutím klávesy **F5** sestavíte a spustíte aplikaci. Mělo by se zobrazit okno konzoly a následující text: **stisknutím klávesy Enter key, abyste mohli vyvolat službu, libovolné klávesy ukončete aplikaci:**  
+1. Stisknutím klávesy **F5** sestavíte a spustíte aplikaci. Mělo by se zobrazit okno konzoly a následující text: **Stiskněte klávesu Enter, abyste mohli vyvolat službu, libovolné klávesy ukončete aplikaci:**  
   
-2.  Stisknutím klávesy **Enter**, a následující informace o deklaracích by se měla zobrazit v konzole:  
+2. Stisknutím klávesy **Enter**, a následující informace o deklaracích by se měla zobrazit v konzole:  
   
     ```  
     Computed by Service1  
@@ -255,4 +255,4 @@ ms.locfileid: "48584191"
     > [!IMPORTANT]
     >  Obě **TestService** a **LocalSTS** musí běžet před stisknutím **Enter**. Na webové stránce by se otevřít pro služby a ověřte, zda **LocalSTS** spuštěna v oznamovací oblasti (na hlavním panelu systému).  
   
-3.  Pokud se v konzole zobrazí tyto deklarace, byli jste úspěšně ověřeni pomocí služby STS pro zobrazení deklarací ze služby WCF.
+3. Pokud se v konzole zobrazí tyto deklarace, byli jste úspěšně ověřeni pomocí služby STS pro zobrazení deklarací ze služby WCF.

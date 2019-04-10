@@ -1,16 +1,16 @@
 ---
-title: 'Postupy: Sestavení aplikace ASP.NET pracující s deklaracemi identity pomocí ověřování Windows'
+title: 'Postupy: Sestavení aplikace ASP.NET pracující s deklaracemi s ověřováním Windows'
 ms.date: 03/30/2017
 ms.assetid: 11c53d9d-d34a-44b4-8b5e-22e3eaeaee93
 author: BrucePerlerMS
-ms.openlocfilehash: 2c7877c452c729b30029cad1a8e17600f3dc9661
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 48b1b4715e9e2613757a981ba692d84ad06a1ec6
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47198525"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59323665"
 ---
-# <a name="how-to-build-claims-aware-aspnet-application-using-windows-authentication"></a>Postupy: Sestavení aplikace ASP.NET pracující s deklaracemi identity pomocí ověřování Windows
+# <a name="how-to-build-claims-aware-aspnet-application-using-windows-authentication"></a>Postupy: Sestavení aplikace ASP.NET pracující s deklaracemi s ověřováním Windows
 ## <a name="applies-to"></a>Platí pro  
   
 -   Microsoft® Windows® Identity Foundation (WIF)  
@@ -58,13 +58,13 @@ ms.locfileid: "47198525"
   
 #### <a name="to-create-a-simple-aspnet-application"></a>Chcete-li vytvořit jednoduchou aplikaci ASP.NET  
   
-1.  Spusťte sadu Visual Studio a pak klikněte na **souboru**, **nový**a potom **projektu**.  
+1. Spusťte sadu Visual Studio a pak klikněte na **souboru**, **nový**a potom **projektu**.  
   
-2.  V **nový projekt** okna, klikněte na tlačítko **aplikace webových formulářů ASP.NET**.  
+2. V **nový projekt** okna, klikněte na tlačítko **aplikace webových formulářů ASP.NET**.  
   
-3.  V **název**, zadejte `TestApp` a stiskněte klávesu **OK**.  
+3. V **název**, zadejte `TestApp` a stiskněte klávesu **OK**.  
   
-4.  Po **TestApp** projekt je vytvořený, klikněte na něj v **Průzkumníka řešení**. Vlastnosti projektu se zobrazí v **vlastnosti** podokno, níže **Průzkumníka řešení**. Nastavte **ověřování Windows** vlastnost **povoleno**.  
+4. Po **TestApp** projekt je vytvořený, klikněte na něj v **Průzkumníka řešení**. Vlastnosti projektu se zobrazí v **vlastnosti** podokno, níže **Průzkumníka řešení**. Nastavte **ověřování Windows** vlastnost **povoleno**.  
   
     > [!WARNING]
     >  Ve výchozím nastavení nové aplikace ASP.NET je zakázáno ověřování Windows, takže je nutné ručně povolit.  
@@ -74,7 +74,7 @@ ms.locfileid: "47198525"
   
 #### <a name="to-configure-aspnet-application-for-claims-using-windows-authentication"></a>Ke konfiguraci aplikace ASP.NET pro deklarace identity pomocí ověřování Windows  
   
-1.  V **TestApp** projektu *Default.aspx* souboru, nahraďte existující kód následujícím kódem:  
+1. V **TestApp** projektu *Default.aspx* souboru, nahraďte existující kód následujícím kódem:  
   
     ```  
     <%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"  
@@ -96,7 +96,7 @@ ms.locfileid: "47198525"
   
      Tento krok přidá ovládací prvek GridView pro vaše *Default.aspx* načíst stránku, která naplní se deklarace identity z ověřování Windows.  
   
-2.  Uložit *Default.aspx* souboru a pak otevřete jeho použití modelu code-behind soubor s názvem *Default.aspx.cs*. Nahraďte stávající kód následujícím kódem:  
+2. Uložit *Default.aspx* souboru a pak otevřete jeho použití modelu code-behind soubor s názvem *Default.aspx.cs*. Nahraďte stávající kód následujícím kódem:  
   
     ```csharp  
     using System;  
@@ -119,13 +119,13 @@ ms.locfileid: "47198525"
   
      Výše uvedený kód zobrazí deklarace pro ověřeného uživatele.  
   
-3.  Chcete-li změnit typ ověřování vaší aplikace, změnit  **\<ověřování >** blokovat  **\<system.web >** části kořen projektu  *Soubor Web.config* souboru tak, že obsahují pouze následující položku konfigurace:  
+3. Chcete-li změnit typ ověřování vaší aplikace, změnit  **\<ověřování >** blokovat  **\<system.web >** části kořen projektu  *Soubor Web.config* souboru tak, že obsahují pouze následující položku konfigurace:  
   
     ```xml  
     <authentication mode="Windows" />  
     ```  
   
-4.  Nakonec upravte  **\<autorizace >** blokovat  **\<system.web >** části stejného *Web.config* souboru k vynucení ověřování:  
+4. Nakonec upravte  **\<autorizace >** blokovat  **\<system.web >** části stejného *Web.config* souboru k vynucení ověřování:  
   
     ```xml  
     <authorization>  
@@ -138,4 +138,4 @@ ms.locfileid: "47198525"
   
 #### <a name="to-test-your-aspnet-web-forms-application-for-claims-using-windows-authentication"></a>K testování aplikace webových formulářů ASP.NET pro deklarace identity pomocí ověřování Windows  
   
-1.  Stisknutím klávesy **F5** sestavíte a spustíte aplikaci. Mělo by se zobrazit s *Default.aspx*, a název účtu Windows (včetně názvu domény) už mají zobrazit jako ověřený uživatel v horní části stránky. Na stránce obsahu by měl obsahovat tabulku se deklarace identity načíst z vašeho účtu Windows.
+1. Stisknutím klávesy **F5** sestavíte a spustíte aplikaci. Mělo by se zobrazit s *Default.aspx*, a název účtu Windows (včetně názvu domény) už mají zobrazit jako ověřený uživatel v horní části stránky. Na stránce obsahu by měl obsahovat tabulku se deklarace identity načíst z vašeho účtu Windows.

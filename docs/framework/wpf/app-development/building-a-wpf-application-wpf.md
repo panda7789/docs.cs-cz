@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - WPF application [WPF], building
 ms.assetid: a58696fd-bdad-4b55-9759-136dfdf8b91c
-ms.openlocfilehash: 706999cb403ecf32f5dfe8443e00dd84efdebd23
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: d1aa402ec28fc22654d8f1513366c091215fa4d4
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59184480"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59300954"
 ---
 # <a name="building-a-wpf-application-wpf"></a>Sestavení aplikace WPF (WPF)
 Aplikace Windows Presentation Foundation (WPF) může být sestaven jako [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] spustitelné soubory (.exe), knihovny (DLL), nebo kombinací obou typů sestavení. Toto téma popisuje, jak vytvořit [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikací a popisuje klíčové kroky v procesu sestavení.  
@@ -57,11 +57,11 @@ Aplikace Windows Presentation Foundation (WPF) může být sestaven jako [!INCLU
   
  Během tohoto kroku, provést následující aktivity místo každý [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] souboru, který je `Page` vytvářet položky:  
   
-1.  [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] Souboru je analyzovány pomocí kompilátoru značek.  
+1. [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] Souboru je analyzovány pomocí kompilátoru značek.  
   
-2.  Pro, který se vytvoří zkompilovanou reprezentaci [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] a zkopírovány do složky obj\Release.  
+2. Pro, který se vytvoří zkompilovanou reprezentaci [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] a zkopírovány do složky obj\Release.  
   
-3.  CodeDOM reprezentace nové částečné třídy je vytvořili a zkopírovali do složky obj\Release.  
+3. CodeDOM reprezentace nové částečné třídy je vytvořili a zkopírovali do složky obj\Release.  
   
  Kromě toho je vygenerován soubor specifické pro jazyk kódu pro každý [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] souboru. Pro stránku Page1.xaml v projektu jazyka Visual Basic, například se generuje Page1.g.vb; pro stránku Page1.xaml v projektu v jazyce C# je generována Page1.g.cs. Označuje ".g" v názvu souboru, soubor je vygenerován kód, který obsahuje deklaraci částečné třídy pro element nejvyšší úrovně označovacího souboru (například `Page` nebo `Window`). Třída je deklarována s `partial` modifikátor v jazyce C# (`Extends` v jazyce Visual Basic) k označení, existuje jiný deklaraci pro třídu jinde, obvykle v modelu code-behind souboru Page1.xaml.cs.  
   

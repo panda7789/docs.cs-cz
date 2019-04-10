@@ -10,12 +10,12 @@ helpviewer_keywords:
 - tables [Windows Forms], adding to DataGrid control
 - DataGrid control [Windows Forms], adding tables and columns
 ms.assetid: 2fe661b9-aa06-49b9-a314-a0d3cbfdcb4d
-ms.openlocfilehash: 55a8d28d04dd05d4dba7ab2b1edbcfbcce97cecb
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: cc364f3609f8041378b0b03b8e1bc8f312fade18
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59222039"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59319908"
 ---
 # <a name="how-to-add-tables-and-columns-to-the-windows-forms-datagrid-control"></a>Postupy: Přidání tabulek a sloupců do ovládacího prvku Windows Forms DataGrid
 > [!NOTE]
@@ -25,12 +25,12 @@ ms.locfileid: "59222039"
   
 ### <a name="to-add-a-table-and-column-to-a-datagrid-programmatically"></a>Přidání tabulek a sloupců do ovládacího prvku DataGrid prostřednictvím kódu programu  
   
-1.  Pokud chcete zobrazit data v tabulce, je třeba nejdřív svázat <xref:System.Windows.Forms.DataGrid> ovládacího prvku do datové sady. Další informace najdete v tématu [jak: Vytvoření vazby ovládacího prvku Windows Forms DataGrid ke zdroji dat](how-to-bind-the-windows-forms-datagrid-control-to-a-data-source.md).  
+1. Pokud chcete zobrazit data v tabulce, je třeba nejdřív svázat <xref:System.Windows.Forms.DataGrid> ovládacího prvku do datové sady. Další informace najdete v tématu [jak: Vytvoření vazby ovládacího prvku Windows Forms DataGrid ke zdroji dat](how-to-bind-the-windows-forms-datagrid-control-to-a-data-source.md).  
   
     > [!CAUTION]
     >  Při zadávání programově styly sloupců, vždy vytvořit **Styl DataGridColumnStyle** objekty a přidat je do **kolekce GridColumnStylesCollection** objektu před přidáním  **Styl DataGridTableStyle** objektů **GridTableStylesCollection** objektu. Když přidáte prázdná **styl DataGridTableStyle** do kolekce, **Styl DataGridColumnStyle** objekty vygenerují automaticky. V důsledku toho vyvolána výjimka při pokusu přidat nový **Styl DataGridColumnStyle** objektů s duplicitními **MappingName** hodnoty **kolekce GridColumnStylesCollection**objektu.  
   
-2.  Deklarovat nový styl tabulky a nastavte její název mapování.  
+2. Deklarovat nový styl tabulky a nastavte její název mapování.  
   
     ```vb  
     Dim ts1 As New DataGridTableStyle()  
@@ -47,7 +47,7 @@ ms.locfileid: "59222039"
     ts1->MappingName = S"Customers";  
     ```  
   
-3.  Deklarovat nový styl sloupce a nastavte její název mapování a dalších vlastností.  
+3. Deklarovat nový styl sloupce a nastavte její název mapování a dalších vlastností.  
   
     ```vb  
     Dim myDataCol As New DataGridBoolColumn()  
@@ -67,7 +67,7 @@ ms.locfileid: "59222039"
     myDataCol->MappingName = "Current";  
     ```  
   
-4.  Volání **přidat** metodu **kolekce GridColumnStylesCollection** objektu přidat sloupec styl tabulky  
+4. Volání **přidat** metodu **kolekce GridColumnStylesCollection** objektu přidat sloupec styl tabulky  
   
     ```vb  
     ts1.GridColumnStyles.Add(myDataCol)  
@@ -81,7 +81,7 @@ ms.locfileid: "59222039"
     ts1->GridColumnStyles->Add(myDataCol);  
     ```  
   
-5.  Volání **přidat** metodu **GridTableStylesCollection** objekt k sečtení styl tabulky datové mřížce.  
+5. Volání **přidat** metodu **GridTableStylesCollection** objekt k sečtení styl tabulky datové mřížce.  
   
     ```vb  
     DataGrid1.TableStyles.Add(ts1)  

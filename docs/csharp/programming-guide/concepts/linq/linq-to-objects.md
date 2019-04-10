@@ -2,12 +2,12 @@
 title: LINQ to Objects (C#)
 ms.date: 07/20/2015
 ms.assetid: c5c2c178-3529-4f6c-b3df-2d5267af7f22
-ms.openlocfilehash: 19dd15fdd7e818e0619647205f2369a55f3bc2b0
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.openlocfilehash: b82d21a7de4f596afb5e41487221498dd5ca9f98
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45528536"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59326629"
 ---
 # <a name="linq-to-objects-c"></a>LINQ to Objects (C#)
 Termín "LINQ na objekty" odkazuje na použití odkazu LINQ dotazy s žádným <xref:System.Collections.IEnumerable> nebo <xref:System.Collections.Generic.IEnumerable%601> kolekce přímo, bez použití zprostředkující zprostředkovatele LINQ nebo rozhraní API, jako [technologie LINQ to SQL](../../../../../docs/framework/data/adonet/sql/linq/index.md) nebo [LINQ to XML](../../../../csharp/programming-guide/concepts/linq/linq-to-xml.md). LINQ můžete použít k dotazování všechny vyčíslitelné kolekce, jako například <xref:System.Collections.Generic.List%601>, <xref:System.Array>, nebo <xref:System.Collections.Generic.Dictionary%602>. Kolekce může být uživatelem definované nebo mohou být vráceny rozhraní API .NET Framework.  
@@ -16,11 +16,11 @@ Termín "LINQ na objekty" odkazuje na použití odkazu LINQ dotazy s žádným <
   
  Kromě toho dotazů LINQ nabízejí tři hlavní výhody oproti tradičním `foreach` smyček:  
   
-1.  Jsou stručnějším a čitelnějším, zejména v případě, že filtrování více podmínek.  
+1. Jsou stručnějším a čitelnějším, zejména v případě, že filtrování více podmínek.  
   
-2.  Poskytují efektivní filtrování, řazení a seskupování schopností minimální kódu aplikace.  
+2. Poskytují efektivní filtrování, řazení a seskupování schopností minimální kódu aplikace.  
   
-3.  Může být přenést k jiným zdrojům dat s téměř nebo vůbec žádné změny.  
+3. Může být přenést k jiným zdrojům dat s téměř nebo vůbec žádné změny.  
   
  Obecně platí, tím složitější operace, které chcete provést na datech, další výhody značným s využitím jazyka LINQ místo iterace tradiční techniky.  
   
@@ -36,10 +36,10 @@ Termín "LINQ na objekty" odkazuje na použití odkazu LINQ dotazy s žádným <
  [LINQ a souborové adresáře (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-file-directories.md)  
  Vysvětluje, jak lze pomocí LINQ komunikovat se systémy souborů. Obsahuje také odkazy na témata, které předvádějí koncepce.  
   
- [Postupy: vytvoření dotazu na ArrayList pomocí LINQ (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-query-an-arraylist-with-linq.md)  
+ [Postupy: Vytvoření dotazu na ArrayList pomocí LINQ (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-query-an-arraylist-with-linq.md)  
  Demonstruje postup vytvoření dotazu na ArrayList v jazyce C#.  
   
- [Postupy: přidávání vlastních metod do dotazů LINQ (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-add-custom-methods-for-linq-queries.md)  
+ [Postupy: Přidávání vlastních metod do dotazů LINQ (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-add-custom-methods-for-linq-queries.md)  
  Vysvětluje, jak rozšířit sadu metod, které můžete použít pro LINQ dotazy přidáním rozšiřující metody, které <xref:System.Collections.Generic.IEnumerable%601> rozhraní.  
   
  [Language-Integrated Query (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/index.md)  

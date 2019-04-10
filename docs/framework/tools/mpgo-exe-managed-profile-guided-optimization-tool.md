@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: f6976502-a000-4fbe-aaf5-a7aab9ce4ec2
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: e44b695a07c0f304e1c995f240d9fa387195358d
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 0258edb552b53130e7df47df6ccefa9b30def843
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59177011"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59306336"
 ---
 # <a name="mpgoexe-managed-profile-guided-optimization-tool"></a>Mpgo.exe (Nástroj pro optimalizaci spravovaného kódu na základě profilu)
 
@@ -79,23 +79,23 @@ mpgo –Scenario <packageName> -AppID <appId> -Timeout <seconds>
   
 ## <a name="to-use-mpgoexe"></a>Použití nástroje Mpgo.exe  
   
-1.  Použijte počítač, který má nainstalovánu vaši aplikaci a sadu Visual Studio Ultimate 2012.  
+1. Použijte počítač, který má nainstalovánu vaši aplikaci a sadu Visual Studio Ultimate 2012.  
   
-2.  Spusťte nástroj Mpgo.exe jako správce s nezbytnými parametry.  Ukázkové příkazy naleznete v další části.  
+2. Spusťte nástroj Mpgo.exe jako správce s nezbytnými parametry.  Ukázkové příkazy naleznete v další části.  
   
      Sestavení optimalizované (IL intermediate language) se vytvoří ve složce určené parametrem `–OutDir` parametrů (v příkladech je to `C:\Optimized` složky).  
   
-3.  Nahraďte sestavení jazyka IL, který jste použili pro Ngen.exe s novými sestaveními jazyka IL, které obsahují informace o profilu z adresáře zadaného parametrem `–OutDir`.  
+3. Nahraďte sestavení jazyka IL, který jste použili pro Ngen.exe s novými sestaveními jazyka IL, které obsahují informace o profilu z adresáře zadaného parametrem `–OutDir`.  
   
-4.  Instalace aplikace (pomocí bitových kopií poskytnutých nástrojem Mpgo.exe) nainstaluje optimalizované nativní bitové kopie.  
+4. Instalace aplikace (pomocí bitových kopií poskytnutých nástrojem Mpgo.exe) nainstaluje optimalizované nativní bitové kopie.  
   
 ## <a name="suggested-workflow"></a>Navrhovaný pracovní postup  
   
-1.  Vytvořte sadu optimalizovaných sestavení jazyka IL pomocí Mpgo.exe s `–Scenario` parametru.  
+1. Vytvořte sadu optimalizovaných sestavení jazyka IL pomocí Mpgo.exe s `–Scenario` parametru.  
   
-2.  Zaveďte optimalizovaná sestavení jazyka IL do správy zdrojového kódu.  
+2. Zaveďte optimalizovaná sestavení jazyka IL do správy zdrojového kódu.  
   
-3.  V procesu sestavení zavolejte Mpgo.exe s `–Import` parametr jako krok po sestavení pro vygenerování optimalizovaných bitových kopií IL předat Ngen.exe.  
+3. V procesu sestavení zavolejte Mpgo.exe s `–Import` parametr jako krok po sestavení pro vygenerování optimalizovaných bitových kopií IL předat Ngen.exe.  
   
  Tento proces zajišťuje, že všechna sestavení mají optimalizační data. Při častějším zavádění aktualizovaných optimalizovaných sestavení (kroky 1 a 2) bude výkon během celého vývoje produktu konzistentnější.  
   

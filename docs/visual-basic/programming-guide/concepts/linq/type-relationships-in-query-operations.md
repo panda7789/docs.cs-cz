@@ -11,12 +11,12 @@ helpviewer_keywords:
 - inferring type information [LINQ in Visual Basic]
 - relationships [LINQ in Visual Basic]
 ms.assetid: b5ff4da5-f3fd-4a8e-aaac-1cbf52fa16f6
-ms.openlocfilehash: fd2bcfad0ae24288887500ae6286e6ac73fddac5
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 14f17e89e2a4143580b4a2ca7f9d30013ded58f9
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58822333"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59327630"
 ---
 # <a name="type-relationships-in-query-operations-visual-basic"></a>Vztahy typů v operacích dotazu (Visual Basic)
 Proměnné použité v [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] dotazu operace jsou silného typu a musí být navzájem kompatibilní. Silné typování se používá ve zdroji dat, v samotném dotazu a ve spuštění dotazu. Následující obrázek označuje termíny používané k popisu [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazu. Další informace o části dotazu, naleznete v tématu [základní operace dotazů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-query-operations.md).  
@@ -49,11 +49,11 @@ Proměnné použité v [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] d
   
  V obou předchozí příklady kódu, existují následující relace, zda typy jsou určeny implicitně nebo explicitně.  
   
-1.  Typ prvků ve zdroji dat `names`, je druh proměnné rozsahu `name`, v dotazu.  
+1. Typ prvků ve zdroji dat `names`, je druh proměnné rozsahu `name`, v dotazu.  
   
-2.  Typ objektu, který je vybrán, `name`, určuje typ proměnné dotazu `mNames`. Tady `name` je řetězec, proměnná dotazu je IEnumerable (Of String) v jazyce Visual Basic.  
+2. Typ objektu, který je vybrán, `name`, určuje typ proměnné dotazu `mNames`. Tady `name` je řetězec, proměnná dotazu je IEnumerable (Of String) v jazyce Visual Basic.  
   
-3.  Dotaz definovaný v `mNames` se provádí `For Each` smyčky. Smyčky Iteruje přes výsledek provedení dotazu. Protože `mNames`, pokud je spuštěn, vrátí sekvencí řetězců, iterační proměnná smyčky `nm`, je také řetězec.  
+3. Dotaz definovaný v `mNames` se provádí `For Each` smyčky. Smyčky Iteruje přes výsledek provedení dotazu. Protože `mNames`, pokud je spuštěn, vrátí sekvencí řetězců, iterační proměnná smyčky `nm`, je také řetězec.  
   
 ## <a name="queries-that-return-one-field-from-selected-elements"></a>Dotazy, které vracejí jedno pole z vybraných elementů  
  Následující příklad ukazuje [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] operaci, která vrátí sekvenci, který obsahuje pouze jednu část každý prvek vybrané ze zdroje dat dotazu. Dotaz vezme kolekci `Customer` objektů jako svůj zdroj dat a pouze pro projekty `Name` vlastnosti ve výsledku. Protože název zákazníka je řetězec, dotaz vyprodukuje sekvenci řetězců jako výstup.  
@@ -72,11 +72,11 @@ Next
   
  Vztahy mezi proměnné jsou podobné těm v příkladu jednodušší.  
   
-1.  Typ prvků ve zdroji dat `customers`, je druh proměnné rozsahu `cust`, v dotazu. V tomto příkladu, který je typu `Customer`.  
+1. Typ prvků ve zdroji dat `customers`, je druh proměnné rozsahu `cust`, v dotazu. V tomto příkladu, který je typu `Customer`.  
   
-2.  `Select` Příkaz vrátí `Name` vlastnosti každého `Customer` objektu, nikoli celý objekt. Protože `Name` řetězce, proměnná dotazu je `custNames`, bude znovu nebyl IEnumerable (Of String) o `Customer`.  
+2. `Select` Příkaz vrátí `Name` vlastnosti každého `Customer` objektu, nikoli celý objekt. Protože `Name` řetězce, proměnná dotazu je `custNames`, bude znovu nebyl IEnumerable (Of String) o `Customer`.  
   
-3.  Protože `custNames` představuje posloupnost řetězců, `For Each` iterační proměnná smyčky `custName`, musí být řetězec.  
+3. Protože `custNames` představuje posloupnost řetězců, `For Each` iterační proměnná smyčky `custName`, musí být řetězec.  
   
  Bez odvození místního typu v předchozím příkladu by těžkopádnější k zápisu a informace o tom, jak ukazuje následující příklad.  
   
@@ -110,17 +110,17 @@ Next
   
  Ačkoli to není možné určit typy pro všechny proměnné v předchozím příkladu, vztahy zůstávají stejné.  
   
-1.  Typ prvků ve zdroji dat je znovu typu proměnné rozsahu v dotazu. V tomto příkladu `cust` je instance `Customer`.  
+1. Typ prvků ve zdroji dat je znovu typu proměnné rozsahu v dotazu. V tomto příkladu `cust` je instance `Customer`.  
   
-2.  Protože `Select` příkaz produkuje anonymní typ, proměnná dotazu `nameCityQuery`, musí být implicitně typované jako anonymního typu. Anonymní typ nemá žádný použitelný název a proto nelze zadat explicitně.  
+2. Protože `Select` příkaz produkuje anonymní typ, proměnná dotazu `nameCityQuery`, musí být implicitně typované jako anonymního typu. Anonymní typ nemá žádný použitelný název a proto nelze zadat explicitně.  
   
-3.  Typ proměnné iterace ve `For Each` smyčky je anonymní typ vytvořili v kroku 2. Vzhledem k tomu, že typ nemá žádný použitelný název, třeba implicitně určit typ proměnné iterace smyčky.  
+3. Typ proměnné iterace ve `For Each` smyčky je anonymní typ vytvořili v kroku 2. Vzhledem k tomu, že typ nemá žádný použitelný název, třeba implicitně určit typ proměnné iterace smyčky.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Začínáme s dotazy LINQ v jazyce Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/getting-started-with-linq.md)
 - [Anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)
 - [Odvození místního typu](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)
-- [Úvod do LINQ v JAZYKU Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+- [Představení technologie LINQ v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
 - [LINQ](../../../../visual-basic/programming-guide/language-features/linq/index.md)
 - [Dotazy](../../../../visual-basic/language-reference/queries/index.md)

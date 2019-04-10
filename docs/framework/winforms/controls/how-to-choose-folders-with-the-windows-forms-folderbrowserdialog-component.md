@@ -12,23 +12,23 @@ helpviewer_keywords:
 - folders [Windows Forms], choosing
 - directories [Windows Forms], selecting
 ms.assetid: 4593670e-7c7d-4661-b46b-4ffb63258adb
-ms.openlocfilehash: 2bff105d5c97a8b98d094a1ce3a4f033aa5971be
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 050af6d10faec3dd09998349dcf96e96ea0f9201
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59116074"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59306181"
 ---
 # <a name="how-to-choose-folders-with-the-windows-forms-folderbrowserdialog-component"></a>Postupy: Výběr složek pomocí komponenty Windows Forms FolderBrowserDialog
 Často v rámci aplikace Windows, které vytvoříte, budete muset vyzvat uživatele, vyberte složku, většina často budou sadu souborů. Windows Forms <xref:System.Windows.Forms.FolderBrowserDialog> komponenta umožňuje snadno provést tuto úlohu.  
   
 ### <a name="to-choose-folders-with-the-folderbrowserdialog-component"></a>Chcete-li zvolit složky s FolderBrowserDialog – komponenta  
   
-1.  V postupu, zkontrolujte <xref:System.Windows.Forms.FolderBrowserDialog> komponenty <xref:System.Windows.Forms.Form.DialogResult%2A> vlastnosti naleznete v tématu Jak bylo ukončeno dialogových oken a získání hodnoty <xref:System.Windows.Forms.FolderBrowserDialog> komponenty <xref:System.Windows.Forms.FolderBrowserDialog.SelectedPath%2A> vlastnost.  
+1. V postupu, zkontrolujte <xref:System.Windows.Forms.FolderBrowserDialog> komponenty <xref:System.Windows.Forms.Form.DialogResult%2A> vlastnosti naleznete v tématu Jak bylo ukončeno dialogových oken a získání hodnoty <xref:System.Windows.Forms.FolderBrowserDialog> komponenty <xref:System.Windows.Forms.FolderBrowserDialog.SelectedPath%2A> vlastnost.  
   
-2.  Pokud je nutné do složky sady úplně nahoře, který se zobrazí ve stromovém zobrazení dialogového okna, nastavte <xref:System.Windows.Forms.FolderBrowserDialog.RootFolder%2A> vlastnost, která přebírá členem <xref:System.Environment.SpecialFolder> výčtu.  
+2. Pokud je nutné do složky sady úplně nahoře, který se zobrazí ve stromovém zobrazení dialogového okna, nastavte <xref:System.Windows.Forms.FolderBrowserDialog.RootFolder%2A> vlastnost, která přebírá členem <xref:System.Environment.SpecialFolder> výčtu.  
   
-3.  Kromě toho můžete nastavit <xref:System.Windows.Forms.FolderBrowserDialog.Description%2A> vlastnost, která určuje, textový řetězec, který se zobrazí v horní části stromu zobrazení prohlížeč složek.  
+3. Kromě toho můžete nastavit <xref:System.Windows.Forms.FolderBrowserDialog.Description%2A> vlastnost, která určuje, textový řetězec, který se zobrazí v horní části stromu zobrazení prohlížeč složek.  
   
      V následujícím příkladu <xref:System.Windows.Forms.FolderBrowserDialog> komponenty slouží k výběru složky, podobně jako při vytvoření projektu v sadě Visual Studio a vyzváni k výběru pro uložte ho do složky. V tomto příkladu název složky se následně zobrazí <xref:System.Windows.Forms.TextBox> ovládací prvek na formuláři. Je vhodné umístit umístění upravitelné oblasti, jako například <xref:System.Windows.Forms.TextBox> řídit, takže uživatelé mohou upravovat jejich výběr v případě chyby nebo jiné problémy. Tento příklad předpokládá formulář s <xref:System.Windows.Forms.FolderBrowserDialog> komponenty a <xref:System.Windows.Forms.TextBox> ovládacího prvku.  
   

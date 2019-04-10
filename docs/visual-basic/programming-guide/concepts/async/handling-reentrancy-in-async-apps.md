@@ -2,29 +2,29 @@
 title: Podpora vícenásobného přístupu v aplikacích s modifikátorem Async (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: ef3dc73d-13fb-4c5f-a686-6b84148bbffe
-ms.openlocfilehash: 151cdcb841a7a67ba0bf8f5560d3f6baf999c365
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 0913a8b422d8ea3d6b38680a26bac143087dd2c8
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57374883"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59324783"
 ---
 # <a name="handling-reentrancy-in-async-apps-visual-basic"></a>Podpora vícenásobného přístupu v aplikacích s modifikátorem Async (Visual Basic)
 Pokud zahrnete asynchronní kód ve vaší aplikaci, by měl zvážit a případně zabránit vícenásobnému přístupu, který se vztahuje k nutnosti opětovného zadávání asynchronní operace ještě před dokončením. Pokud neidentifikujete a nemanipulujete vícenásobnému přístupu, může to způsobit neočekávané výsledky.  
   
- **V tomto tématu**  
+ **V tomto tématu**  
   
 -   [Rozpoznávání vícenásobného přístupu](#BKMK_RecognizingReentrancy)  
   
--   [Podpora vícenásobného přístupu](#BKMK_HandlingReentrancy)  
+-   [Vyřešení vícenásobného přístupu](#BKMK_HandlingReentrancy)  
   
     -   [Zakázání tlačítka Start](#BKMK_DisableTheStartButton)  
   
-    -   [Nerušte a nerestartujte operace](#BKMK_CancelAndRestart)  
+    -   [Zrušení a opětovné spuštění operace](#BKMK_CancelAndRestart)  
   
-    -   [Spustit více operací a zařazení výstupu do fronty](#BKMK_RunMultipleOperations)  
+    -   [Spuštění více operací a zařazení výstupu do fronty](#BKMK_RunMultipleOperations)  
   
--   [Prostudování a spuštění ukázkové aplikace](#BKMD_SettingUpTheExample)  
+-   [Prostudování a spuštění ukázkové aplikace](#BKMD_SettingUpTheExample)  
   
 > [!NOTE]
 >  Chcete-li spustit příklad, musíte mít Visual Studio 2012 nebo novější a rozhraní .NET Framework 4.5 nebo novější nainstalován v počítači.  
@@ -93,11 +93,11 @@ TOTAL bytes returned:  890591
   
      Zakažte **Start** tlačítko během operace tak, aby uživatel nemohl přerušit ho.  
   
--   [Nerušte a nerestartujte operace](#BKMK_CancelAndRestart)  
+-   [Zrušení a opětovné spuštění operace](#BKMK_CancelAndRestart)  
   
      Zrušit jakoukoli operaci, která je stále spuštěna, když uživatel klikne **Start** tlačítko znovu, a potom pokračujte umožňují nedávno požadované operace.  
   
--   [Spustit více operací a zařazení výstupu do fronty](#BKMK_RunMultipleOperations)  
+-   [Spuštění více operací a zařazení výstupu do fronty](#BKMK_RunMultipleOperations)  
   
      Povolit, že všechny požadované operace běžely asynchronně, ale koordinovat zobrazení výstupu tak, aby se výsledky z každé operace zobrazovaly společně a v pořadí.  
   
@@ -136,7 +136,7 @@ End Sub
   
  Nastavit tento scénář, proveďte následující změny základního kódu, která je součástí [Prostudování a spuštění ukázkové aplikace](#BKMD_SettingUpTheExample). Také můžete stáhnout hotovou aplikaci z [asynchronní vzorky: Vícenásobný přístup v desktopových aplikacích .NET](https://code.msdn.microsoft.com/Async-Sample-Preventing-a8489f06). Název tohoto projektu je CancelAndRestart.  
   
-1.  Deklarace <xref:System.Threading.CancellationTokenSource> proměnnou, `cts`, která je v oboru pro všechny metody.  
+1. Deklarace <xref:System.Threading.CancellationTokenSource> proměnnou, `cts`, která je v oboru pro všechny metody.  
   
     ```vb  
     Class MainWindow // Or Class MainPage  
@@ -145,7 +145,7 @@ End Sub
         Dim cts As CancellationTokenSource  
     ```  
   
-2.  V `StartButton_Click`, určete, zda již probíhá operace. Pokud hodnota `cts` je `Nothing`, žádná operace ještě není aktivní. Pokud hodnota není `Nothing`, je zrušena operace, která je již spuštěna.  
+2. V `StartButton_Click`, určete, zda již probíhá operace. Pokud hodnota `cts` je `Nothing`, žádná operace ještě není aktivní. Pokud hodnota není `Nothing`, je zrušena operace, která je již spuštěna.  
   
     ```vb  
     ' *** If a download process is already underway, cancel it.  
@@ -154,7 +154,7 @@ End Sub
     End If  
     ```  
   
-3.  Nastavte `cts` na jinou hodnotu, která představuje aktuální proces.  
+3. Nastavte `cts` na jinou hodnotu, která představuje aktuální proces.  
   
     ```vb  
     ' *** Now set cts to cancel the current process if the button is chosen again.  
@@ -162,7 +162,7 @@ End Sub
     cts = newCTS  
     ```  
   
-4.  Na konci `StartButton_Click`, je aktuální proces dokončen, takže nastavte hodnotu `cts` zpět `Nothing`.  
+4. Na konci `StartButton_Click`, je aktuální proces dokončen, takže nastavte hodnotu `cts` zpět `Nothing`.  
   
     ```vb  
     ' *** When the process completes, signal that another process can proceed.  
@@ -535,42 +535,42 @@ End Function
   
 ### <a name="BKMK_DownloadingTheApp"></a> Stažení aplikace  
   
-1.  Stáhněte si komprimovaný soubor z [asynchronní vzorky: Vícenásobný přístup v desktopových aplikacích .NET](https://code.msdn.microsoft.com/Async-Sample-Preventing-a8489f06).  
+1. Stáhněte si komprimovaný soubor z [asynchronní vzorky: Vícenásobný přístup v desktopových aplikacích .NET](https://code.msdn.microsoft.com/Async-Sample-Preventing-a8489f06).  
   
-2.  Dekomprimujte soubor, který jste stáhli a poté spusťte Visual Studio.  
+2. Dekomprimujte soubor, který jste stáhli a poté spusťte Visual Studio.  
   
-3.  V panelu nabídky zvolte **souboru**, **otevřít**, **projekt či řešení**.  
+3. V panelu nabídky zvolte **souboru**, **otevřít**, **projekt či řešení**.  
   
-4.  Přejděte do složky obsahující dekomprimovaný ukázkový kód a potom otevřete soubor řešení (.sln).  
+4. Přejděte do složky obsahující dekomprimovaný ukázkový kód a potom otevřete soubor řešení (.sln).  
   
-5.  V **Průzkumníka řešení**, otevřete místní nabídku pro projekt, který chcete spustit a klikněte na tlačítko **nastavit jako výchozí projekt**.  
+5. V **Průzkumníka řešení**, otevřete místní nabídku pro projekt, který chcete spustit a klikněte na tlačítko **nastavit jako výchozí projekt**.  
   
-6.  Stiskněte klávesy CTRL + F5 sestavte a spusťte projekt.  
+6. Stiskněte klávesy CTRL + F5 sestavte a spusťte projekt.  
   
 ### <a name="BKMK_BuildingTheApp"></a> Vytvoření aplikace  
  Následující část obsahuje kód pro vytváření příklad jako aplikaci WPF.  
   
 ##### <a name="to-build-a-wpf-app"></a>Vytvoření aplikace WPF  
   
-1.  Spusťte Visual Studio.  
+1. Spusťte Visual Studio.  
   
-2.  V panelu nabídky zvolte **souboru**, **nový**, **projektu**.  
+2. V panelu nabídky zvolte **souboru**, **nový**, **projektu**.  
   
      **Nový projekt** zobrazí se dialogové okno.  
   
-3.  V **nainstalované šablony** podokně rozbalte **jazyka Visual Basic**a potom rozbalte **Windows**.  
+3. V **nainstalované šablony** podokně rozbalte **jazyka Visual Basic**a potom rozbalte **Windows**.  
   
-4.  V seznamu typů projektů zvolte **aplikace WPF**.  
+4. V seznamu typů projektů zvolte **aplikace WPF**.  
   
-5.  Pojmenujte projekt `WebsiteDownloadWPF`a klikněte na tlačítko **OK** tlačítko.  
+5. Pojmenujte projekt `WebsiteDownloadWPF`a klikněte na tlačítko **OK** tlačítko.  
   
      Nový projekt se zobrazí v **Průzkumníka řešení**.  
   
-6.  V editoru Visual Studio Code, vyberte **souboru MainWindow.xaml** kartu.  
+6. V editoru Visual Studio Code, vyberte **souboru MainWindow.xaml** kartu.  
   
      Pokud karta není zobrazena, otevřete místní nabídku souboru mainwindow.XAML v **Průzkumníka řešení**a klikněte na tlačítko **zobrazit kód**.  
   
-7.  V **XAML** zobrazení souboru mainwindow.XAML, nahraďte kód následujícím kódem.  
+7. V **XAML** zobrazení souboru mainwindow.XAML, nahraďte kód následujícím kódem.  
   
     ```vb  
     <Window x:Class="MainWindow"  
@@ -590,7 +590,7 @@ End Function
   
      Jednoduché okno obsahující textové pole a tlačítko se zobrazí v **návrhu** zobrazení souboru MainWindow.xaml.  
   
-8.  Přidat odkaz pro <xref:System.Net.Http>.  
+8. Přidat odkaz pro <xref:System.Net.Http>.  
   
 9. V **Průzkumníka řešení**, otevřete místní nabídku pro soubor MainWindow.xaml.vb a klikněte na tlačítko **zobrazit kód**.  
   

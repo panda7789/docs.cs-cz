@@ -8,19 +8,19 @@ helpviewer_keywords:
 - WebRequest class, sending data to a host
 - Sending data to a host, using WebRequest class
 ms.assetid: 66686878-38ac-4aa6-bf42-ffb568ffc459
-ms.openlocfilehash: 456dbdab3070e88fe0bc6572c998ce54e3c19c00
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 3878a94debc7066cb8ace3b119d95d3b76d91610
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59166945"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59322872"
 ---
 # <a name="how-to-send-data-by-using-the-webrequest-class"></a>Postupy: Odesílání dat pomocí třídy WebRequest
 Následující postup popisuje kroky k odesílání dat na server. Tento postup se běžně používá k odesílání dat na webovou stránku. 
   
 ## <a name="to-send-data-to-a-host-server"></a>K odesílání dat na hostitelský server  
   
-1.  Vytvoření <xref:System.Net.WebRequest> instance voláním <xref:System.Net.WebRequest.Create%2A?displayProperty=nameWithType> s identifikátorem URI prostředku, jako je skript nebo stránky ASP.NET, která přijímá data. Příklad: 
+1. Vytvoření <xref:System.Net.WebRequest> instance voláním <xref:System.Net.WebRequest.Create%2A?displayProperty=nameWithType> s identifikátorem URI prostředku, jako je skript nebo stránky ASP.NET, která přijímá data. Příklad: 
   
     ```csharp  
     WebRequest request = WebRequest.Create("http://www.contoso.com/PostAccepter.aspx");  
@@ -34,7 +34,7 @@ Následující postup popisuje kroky k odesílání dat na server. Tento postup 
     > Rozhraní .NET Framework poskytuje konkrétní třídy odvozené od <xref:System.Net.WebRequest> a <xref:System.Net.WebResponse> třídy pro identifikátory URI, které začínají *http:*, *https:*, *ftp:* , a *souboru:*.
     Pokud je potřeba sada nebo čtení vlastnosti specifické pro protokol, musíte přetypovat vaše <xref:System.Net.WebRequest> nebo <xref:System.Net.WebResponse> objektu na typ object specifický pro protokol. Další informace najdete v tématu [programování připojitelných protokolů](programming-pluggable-protocols.md). 
   
-2.  Nastavte všechny hodnoty vlastností, které potřebujete ve vaší `WebRequest` objektu. Například chcete-li povolit ověřování, nastavte <xref:System.Net.WebRequest.Credentials%2A?displayProperty=nameWithType> vlastnost instance <xref:System.Net.NetworkCredential> třídy:
+2. Nastavte všechny hodnoty vlastností, které potřebujete ve vaší `WebRequest` objektu. Například chcete-li povolit ověřování, nastavte <xref:System.Net.WebRequest.Credentials%2A?displayProperty=nameWithType> vlastnost instance <xref:System.Net.NetworkCredential> třídy:
   
     ```csharp  
     request.Credentials = CredentialCache.DefaultCredentials;  
@@ -44,7 +44,7 @@ Následující postup popisuje kroky k odesílání dat na server. Tento postup 
     request.Credentials = CredentialCache.DefaultCredentials  
     ```  
   
-3.  Zadejte metodu protokolu, která povoluje ukládání dat k odeslání požadavku, jako je například HTTP `POST` metody:  
+3. Zadejte metodu protokolu, která povoluje ukládání dat k odeslání požadavku, jako je například HTTP `POST` metody:  
   
     ```csharp  
     request.Method = "POST";  
@@ -54,7 +54,7 @@ Následující postup popisuje kroky k odesílání dat na server. Tento postup 
     request.Method = "POST"  
     ```  
   
-4.  Nastavte <xref:System.Web.HttpRequest.ContentLength> na počet bajtů zahrnutí při zpracování požadavku. Příklad: 
+4. Nastavte <xref:System.Web.HttpRequest.ContentLength> na počet bajtů zahrnutí při zpracování požadavku. Příklad: 
   
     ```csharp  
     request.ContentLength = byteArray.Length;  
@@ -64,7 +64,7 @@ Následující postup popisuje kroky k odesílání dat na server. Tento postup 
     request.ContentLength = byteArray.Length  
     ```  
   
-5.  Nastavte <xref:System.Web.HttpRequest.ContentType> vlastnost na odpovídající hodnotu. Příklad:
+5. Nastavte <xref:System.Web.HttpRequest.ContentType> vlastnost na odpovídající hodnotu. Příklad:
   
     ```csharp  
     request.ContentType = "application/x-www-form-urlencoded";  
@@ -74,7 +74,7 @@ Následující postup popisuje kroky k odesílání dat na server. Tento postup 
     request.ContentType = "application/x-www-form-urlencoded"  
     ```  
   
-6.  Získání datového proudu, obsahuje data žádosti voláním <xref:System.Net.WebRequest.GetRequestStream%2A> metody. Příklad:
+6. Získání datového proudu, obsahuje data žádosti voláním <xref:System.Net.WebRequest.GetRequestStream%2A> metody. Příklad:
   
     ```csharp  
     Stream dataStream = request.GetRequestStream();  
@@ -84,7 +84,7 @@ Následující postup popisuje kroky k odesílání dat na server. Tento postup 
     Stream dataStream = request.GetRequestStream()  
     ```  
   
-7.  Zapsat data do <xref:System.IO.Stream> vrácený `GetRequestStream` metody. Příklad:
+7. Zapsat data do <xref:System.IO.Stream> vrácený `GetRequestStream` metody. Příklad:
   
     ```csharp  
     dataStream.Write(byteArray, 0, byteArray.Length);  
@@ -94,7 +94,7 @@ Následující postup popisuje kroky k odesílání dat na server. Tento postup 
     dataStream.Write(byteArray, 0, byteArray.Length)  
     ```  
   
-8.  Zavřete datový proud požadavku voláním <xref:System.IO.Stream.Close%2A?displayProperty=nameWithType> metody. Příklad:
+8. Zavřete datový proud požadavku voláním <xref:System.IO.Stream.Close%2A?displayProperty=nameWithType> metody. Příklad:
   
     ```csharp  
     dataStream.Close();  

@@ -2,12 +2,12 @@
 title: Datové typy SQL Serveru a ADO.NET
 ms.date: 03/30/2017
 ms.assetid: 81b43550-23e8-43bb-b460-7eb8ac825c33
-ms.openlocfilehash: 90589f54728ad5e887b96f37f96ff31928c680ce
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 9e81e54f223d35a3db9c943edf6f9f9b24110faa
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59168412"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59326304"
 ---
 # <a name="sql-server-data-types-and-adonet"></a>Datové typy SQL Serveru a ADO.NET
 SQL Server a rozhraní .NET Framework jsou založeny na jiný typ systémy, které může způsobit ztrátu dat. K zachování integrity dat, zprostředkovatele dat .NET Framework pro SQL Server (<xref:System.Data.SqlClient>) poskytuje typy přístupové metody pro práci s daty formátu SQL Server. Výčty v můžete použít <xref:System.Data.SqlDbType> třídy k určení <xref:System.Data.SqlClient.SqlParameter> datové typy.  
@@ -20,7 +20,7 @@ SQL Server a rozhraní .NET Framework jsou založeny na jiný typ systémy, kter
   
  **SQL Server Books Online**  
   
-1.  [Datové typy (databázový stroj)](https://go.microsoft.com/fwlink/?LinkID=107468)  
+1. [Datové typy (databázový stroj)](https://go.microsoft.com/fwlink/?LinkID=107468)  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [SqlTypes a datová sada](../../../../../docs/framework/data/adonet/sql/sqltypes-and-the-dataset.md)  

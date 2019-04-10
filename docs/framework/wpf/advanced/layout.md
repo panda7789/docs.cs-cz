@@ -9,12 +9,12 @@ helpviewer_keywords:
 - controls [WPF], layout system
 - layout system [WPF]
 ms.assetid: 3eecdced-3623-403a-a077-7595453a9221
-ms.openlocfilehash: 7fc69ff0434a26dc196d24395bbd1e2f441008de
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 1ffc665cb7ec5893dddf4efff5021e600b16fc45
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59231120"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59330490"
 ---
 # <a name="layout"></a>Rozložení
 Toto téma popisuje [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] systém rozložení. Vysvětlení, jak a kdy probíhá výpočet rozložení je nezbytné pro vytváření uživatelských rozhraní v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
@@ -64,17 +64,17 @@ Toto téma popisuje [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptl
   
  Pokaždé, když, který podřízený <xref:System.Windows.UIElement> změní pozici, má potenciál pro aktivaci nové předáván systém rozložení. Proto je důležité pochopit, události, které můžete vyvolat rozložení systému, jak je zbytečné volání může mít za následek nízký výkon aplikace. Následující část popisuje proces, který nastane, pokud je vyvolána systém rozložení.  
   
-1.  Podřízený <xref:System.Windows.UIElement> zahájí proces rozložení tak, že první jeho základní vlastnosti měří.  
+1. Podřízený <xref:System.Windows.UIElement> zahájí proces rozložení tak, že první jeho základní vlastnosti měří.  
   
-2.  Velikost vlastnosti definované v <xref:System.Windows.FrameworkElement> jsou vyhodnoceny jako <xref:System.Windows.FrameworkElement.Width%2A>, <xref:System.Windows.FrameworkElement.Height%2A>, a <xref:System.Windows.FrameworkElement.Margin%2A>.  
+2. Velikost vlastnosti definované v <xref:System.Windows.FrameworkElement> jsou vyhodnoceny jako <xref:System.Windows.FrameworkElement.Width%2A>, <xref:System.Windows.FrameworkElement.Height%2A>, a <xref:System.Windows.FrameworkElement.Margin%2A>.  
   
-3.  <xref:System.Windows.Controls.Panel>– Logika specifická pro použití, jako například <xref:System.Windows.Controls.Dock> směr nebo překrývání <xref:System.Windows.Controls.StackPanel.Orientation%2A>.  
+3. <xref:System.Windows.Controls.Panel>– Logika specifická pro použití, jako například <xref:System.Windows.Controls.Dock> směr nebo překrývání <xref:System.Windows.Controls.StackPanel.Orientation%2A>.  
   
-4.  Obsah je uspořádaná Po změření všechny podřízené objekty.  
+4. Obsah je uspořádaná Po změření všechny podřízené objekty.  
   
-5.  <xref:System.Windows.Controls.Panel.Children%2A> Kolekce je vykreslen na obrazovce.  
+5. <xref:System.Windows.Controls.Panel.Children%2A> Kolekce je vykreslen na obrazovce.  
   
-6.  Proces je znovu vyvolána, pokud další <xref:System.Windows.Controls.Panel.Children%2A> jsou přidána do kolekce, <xref:System.Windows.FrameworkElement.LayoutTransform%2A> se použije, nebo <xref:System.Windows.UIElement.UpdateLayout%2A> metoda je volána.  
+6. Proces je znovu vyvolána, pokud další <xref:System.Windows.Controls.Panel.Children%2A> jsou přidána do kolekce, <xref:System.Windows.FrameworkElement.LayoutTransform%2A> se použije, nebo <xref:System.Windows.UIElement.UpdateLayout%2A> metoda je volána.  
   
  Tento proces a jak je vyvolán jsou definovány podrobněji v následujících částech.  
   

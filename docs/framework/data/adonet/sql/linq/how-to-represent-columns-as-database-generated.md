@@ -2,12 +2,12 @@
 title: 'Postupy: Znázornění sloupců jako generovaných databází'
 ms.date: 03/30/2017
 ms.assetid: 6524b8a6-e5d2-4a3b-8e08-beafc4a84fd2
-ms.openlocfilehash: 2fca0c2fb1d28b5e83902f8664d1c7331774718b
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 2803697c668a8e1dbbeb426ea41b64878f70c145
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59148249"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59307909"
 ---
 # <a name="how-to-represent-columns-as-database-generated"></a>Postupy: Znázornění sloupců jako generovaných databází
 Použití [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] <xref:System.Data.Linq.Mapping.ColumnAttribute.IsDbGenerated%2A> vlastnost <xref:System.Data.Linq.Mapping.ColumnAttribute> atribut k určení pole nebo vlastnost jako generovaných databází sloupec.  
@@ -16,9 +16,9 @@ Použití [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] <x
   
 ### <a name="to-designate-a-field-or-property-as-representing-a-database-generated-column"></a>K určení pole nebo vlastnost jako sloupec generovaných databází  
   
-1.  Přidat <xref:System.Data.Linq.Mapping.ColumnAttribute.IsDbGenerated%2A> vlastnost <xref:System.Data.Linq.Mapping.ColumnAttribute> atribut.  
+1. Přidat <xref:System.Data.Linq.Mapping.ColumnAttribute.IsDbGenerated%2A> vlastnost <xref:System.Data.Linq.Mapping.ColumnAttribute> atribut.  
   
-2.  Nastavte hodnotu vlastnosti na `true`.  
+2. Nastavte hodnotu vlastnosti na `true`.  
   
 ## <a name="see-also"></a>Viz také:
 

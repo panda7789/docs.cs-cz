@@ -8,12 +8,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: seodec18
-ms.openlocfilehash: c71ab84cfd97e65f5e30bd5e1ff651f8e0c2d700
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: a72e5e557cd3aa098b674bffd277e3cc6da99d33
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59132077"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59306063"
 ---
 # <a name="publish-net-core-apps-with-the-cli"></a>Publikování .NET Core aplikací pomocí rozhraní příkazového řádku
 
@@ -33,8 +33,7 @@ Hledáte rychlý pomoc pomocí rozhraní příkazového řádku? Následující 
 |                                | 2.2 | `dotnet publish -c Release -r <RID> --self-contained true` |
 |                                | 3.0 | `dotnet publish -c Release -r <RID> --self-contained true` |
 
-> [!IMPORTANT]
-> \*Při použití sady SDK verze 3.0, závisí na architektuře spustitelný soubor to je výchozí režim publikování při spuštění na úrovni basic `dotnet publish` příkazu. To platí jenom pro projekty, které se zaměřují **.NET Core 2.1** nebo **.NET Core 3.0**.
+\* Při použití sady SDK verze 3.0, závisí na architektuře spustitelného souboru je výchozí režim publikování při spuštění na úrovni basic `dotnet publish` příkazu. To platí, pouze pokud je projekt cílen buď **.NET Core 2.1** nebo **.NET Core 3.0**.
 
 ## <a name="publishing-basics"></a>Základní informace o publikování
 

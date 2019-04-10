@@ -7,12 +7,12 @@ helpviewer_keywords:
 - WPF [WPF], creating Direct3D9 content
 - Direct3D9 [WPF interoperability], creating Direct3D9 content
 ms.assetid: 1b14b823-69c4-4e8d-99e4-f6dade58f89a
-ms.openlocfilehash: 04a668ea18177d2a174569f064d9102239dd5e7d
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 38f5eb36e3e5c055c5a354a67e15cde8049a2967
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59199320"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59307727"
 ---
 # <a name="wpf-and-direct3d9-interoperation"></a>Vzájemná spolupráce grafického subsystému WPF a systému Direct3D9
 Můžete zahrnout obsahu Direct3D9 v aplikaci Windows Presentation Foundation (WPF). Toto téma popisuje postup vytvoření obsahu Direct3D9 tak, aby efektivně spolupracuje s WPF.  
@@ -112,13 +112,13 @@ Můžete zahrnout obsahu Direct3D9 v aplikaci Windows Presentation Foundation (W
   
  Aby se zabránilo snížení výkonu, napište kód speciálně pro případ více monitorů. Následující seznam ukazuje jeden ze způsobů vytvoření kódu více monitorů.  
   
-1.  Najít bod <xref:System.Windows.Interop.D3DImage> v prostor na obrazovce s `Visual.ProjectToScreen` metody.  
+1. Najít bod <xref:System.Windows.Interop.D3DImage> v prostor na obrazovce s `Visual.ProjectToScreen` metody.  
   
-2.  Použití `MonitorFromPoint` GDI metody k vyhledání monitorování, které se zobrazuje bod.  
+2. Použití `MonitorFromPoint` GDI metody k vyhledání monitorování, které se zobrazuje bod.  
   
-3.  Použití `IDirect3D9::GetAdapterMonitor` metody k vyhledání adaptéru, pro který Direct3D9 monitorování zapnutý.  
+3. Použití `IDirect3D9::GetAdapterMonitor` metody k vyhledání adaptéru, pro který Direct3D9 monitorování zapnutý.  
   
-4.  Pokud adaptér není stejný jako adaptér s přípravné vyrovnávací paměti, vytvořte nový přípravné vyrovnávací paměti na nové monitorování a přiřaďte ho k <xref:System.Windows.Interop.D3DImage> přípravné vyrovnávací paměti.  
+4. Pokud adaptér není stejný jako adaptér s přípravné vyrovnávací paměti, vytvořte nový přípravné vyrovnávací paměti na nové monitorování a přiřaďte ho k <xref:System.Windows.Interop.D3DImage> přípravné vyrovnávací paměti.  
   
 > [!NOTE]
 >  Pokud <xref:System.Windows.Interop.D3DImage> přechází monitorování výkonu bude pomalé, s výjimkou v případě WDDM a `IDirect3D9Ex` na stejný adaptér. Neexistuje žádný způsob, jak zlepšit výkon v této situaci.  

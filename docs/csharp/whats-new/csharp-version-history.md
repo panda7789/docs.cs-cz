@@ -3,12 +3,12 @@ title: Historie jazyka C# – průvodce v C#
 description: Co vzhled jazyka, jako je v jeho nejstarší verze a jak vyvinula od?
 author: erikdietrich
 ms.date: 09/20/2017
-ms.openlocfilehash: 84274f8ddfd8295d5db1e861c790c134ba30c6e2
-ms.sourcegitcommit: 16aefeb2d265e69c0d80967580365fabf0c5d39a
+ms.openlocfilehash: 727f0064ac1de46eb670a366af38cf561e1a1533
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58126146"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59303359"
 ---
 # <a name="the-history-of-c"></a>Historie jazyka C\#
 
@@ -20,11 +20,11 @@ Tento článek obsahuje historii každé hlavní verze produktu C# jazyka. C# T�
 C# Nástroje pro vytváření zvažte nejnovější verzi hlavní jazyk výchozí jazykovou verzi. Můžou existovat dílčích verzí mezi hlavními verzemi, najdete v dalších článcích v této části. Chcete-li používat nejnovější funkce ve verzi bod, je potřeba [konfigurace verze jazyka kompilátoru](../language-reference/configure-language-version.md) a vyberte verzi. Byly tří dílčích verzí od C# 7.0:
 
 * [C# 7.3](csharp-7-3.md):
-  - C#7.3 je aktuálně dostupné v [Visual Studio 2017 verze 15.7](https://visualstudio.microsoft.com/vs/whatsnew/)a [.NET Core 2.1 SDK 2.1.300 RC1](../../core/whats-new/index.md).
+  - C#je k dispozici od verze 7.3 [Visual Studio 2017 verze 15.7](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) a [sady SDK .NET Core 2.1](../../core/whats-new/dotnet-core-2-1.md).
 * [C# 7.2](csharp-7-2.md):
-  - C#7.2 je aktuálně dostupné v [Visual Studio 2017 verze 15.5](https://visualstudio.microsoft.com/vs/whatsnew/)a [.NET Core 2.0 SDK](../../core/whats-new/index.md).
+  - C#je k dispozici od verze 7.2 [Visual Studio 2017 verze 15.5](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link), a [.NET Core 2.0 SDK](../../core/whats-new/dotnet-core-2-0.md).
 * [C# 7.1](csharp-7-1.md):
-  - Tyto funkce byly přidány v [Visual Studio 2017 verze 15.3](https://visualstudio.microsoft.com/vs/whatsnew/)a [.NET Core 2.0 SDK](../../core/whats-new/index.md).
+  - C#je k dispozici od verze 7.1 [Visual Studio 2017 verze 15.3](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) a [.NET Core 2.0 SDK](../../core/whats-new/dotnet-core-2-0.md).
 
 ## <a name="c-version-10"></a>C# verze 1.0
 
@@ -41,7 +41,7 @@ Hlavní funkce C# 1.0 zahrnuté:
 - [Rozhraní](../programming-guide/interfaces/index.md)
 - [Události](../events-overview.md)
 - [Vlastnosti](../properties.md)
-- [Delegáti](../delegates-overview.md)
+- [Delegáty](../delegates-overview.md)
 - [Výrazy](../programming-guide/statements-expressions-operators/expressions.md)
 - [Příkazy](../programming-guide/statements-expressions-operators/statements.md)
 - [Atributy](../programming-guide/concepts/attributes/index.md)
@@ -58,7 +58,7 @@ Teď začít získat zajímavé věci. Pojďme se podívat na některé hlavní 
 - [Obecné typy](../programming-guide/generics/index.md)
 - [Částečné typy](../programming-guide/classes-and-structs/partial-classes-and-methods.md#partial-classes)
 - [Anonymní metody](../programming-guide/statements-expressions-operators/anonymous-methods.md)
-- [Typy s možnou hodnotou Null](../programming-guide/nullable-types/index.md)
+- [Typy s povolenou hodnotou Null](../programming-guide/nullable-types/index.md)
 - [Iterátory](../programming-guide/concepts/iterators.md)
 - [Kovariance a kontravariance](../programming-guide/concepts/covariance-contravariance/index.md)
 

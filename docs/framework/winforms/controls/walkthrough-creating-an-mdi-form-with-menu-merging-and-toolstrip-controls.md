@@ -14,12 +14,12 @@ helpviewer_keywords:
 - MDI forms [Windows Forms], creating
 - MDI forms [Windows Forms], walkthroughs
 ms.assetid: fbab4221-74af-42d0-bbf4-3c97f7b2e544
-ms.openlocfilehash: 9c4195cc6f26dd10f22bacb5bcba9ca2a078499c
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 62e137df53d06f5aedb2701b5727c25e52f35614
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59160625"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59319063"
 ---
 # <a name="walkthrough-creating-an-mdi-form-with-menu-merging-and-toolstrip-controls"></a>Návod: Vytvoření formuláře MDI s ovládacími prvky Menu Merging a ToolStrip
 <xref:System.Windows.Forms?displayProperty=nameWithType> Obor názvů podporuje více dokumentů aplikace (MDI interface) a <xref:System.Windows.Forms.MenuStrip> ovládací prvek podporuje slučování nabídek. MDI formuláře můžete také <xref:System.Windows.Forms.ToolStrip> ovládacích prvků.  
@@ -53,34 +53,34 @@ ms.locfileid: "59160625"
   
 #### <a name="to-create-the-project"></a>Vytvoření projektu  
   
-1.  Vytvořte projekt aplikace Windows s názvem **MdiForm** (**souboru** > **nový** > **projektu**  >  **Visual C#** nebo **jazyka Visual Basic** > **klasický desktopový** > **Windows Forms aplikace**).  
+1. Vytvořte projekt aplikace Windows s názvem **MdiForm** (**souboru** > **nový** > **projektu**  >  **Visual C#** nebo **jazyka Visual Basic** > **klasický desktopový** > **Windows Forms aplikace**).  
   
-2.  V Návrháři formulářů Windows vyberte formulář.  
+2. V Návrháři formulářů Windows vyberte formulář.  
   
-3.  V okně Vlastnosti nastavte hodnotu <xref:System.Windows.Forms.Form.IsMdiContainer%2A> k `true`.  
+3. V okně Vlastnosti nastavte hodnotu <xref:System.Windows.Forms.Form.IsMdiContainer%2A> k `true`.  
   
 ## <a name="creating-the-main-menu"></a>Vytvoření hlavní nabídky  
  Nadřazený formulář MDI obsahuje hlavní nabídky. V hlavní nabídce má jedna položka nabídky s názvem **okno**. S **okno** položku nabídky, můžete vytvořit podřízené formuláře. Položky nabídky z podřízené formuláře jsou sloučeny do hlavní nabídky.  
   
 #### <a name="to-create-the-main-menu"></a>Chcete-li vytvořit hlavní nabídky  
   
-1.  Z **nástrojů**, přetáhněte <xref:System.Windows.Forms.MenuStrip> ovládací prvek na formuláři.  
+1. Z **nástrojů**, přetáhněte <xref:System.Windows.Forms.MenuStrip> ovládací prvek na formuláři.  
   
-2.  Přidat <xref:System.Windows.Forms.ToolStripMenuItem> k <xref:System.Windows.Forms.MenuStrip> řídit a pojmenujte ho **okno**.  
+2. Přidat <xref:System.Windows.Forms.ToolStripMenuItem> k <xref:System.Windows.Forms.MenuStrip> řídit a pojmenujte ho **okno**.  
   
-3.  Vyberte <xref:System.Windows.Forms.MenuStrip> ovládacího prvku.  
+3. Vyberte <xref:System.Windows.Forms.MenuStrip> ovládacího prvku.  
   
-4.  V okně Vlastnosti nastavte hodnotu <xref:System.Windows.Forms.MenuStrip.MdiWindowListItem%2A> vlastnost `ToolStripMenuItem1`.  
+4. V okně Vlastnosti nastavte hodnotu <xref:System.Windows.Forms.MenuStrip.MdiWindowListItem%2A> vlastnost `ToolStripMenuItem1`.  
   
-5.  Přidat podřízenou položku k **okno** položky nabídky a pojmenujte podřízenou položku **nový**.  
+5. Přidat podřízenou položku k **okno** položky nabídky a pojmenujte podřízenou položku **nový**.  
   
-6.  V okně Vlastnosti klikněte na tlačítko **události**.  
+6. V okně Vlastnosti klikněte na tlačítko **události**.  
   
-7.  Dvakrát klikněte <xref:System.Windows.Forms.ToolStripItem.Click> událostí.  
+7. Dvakrát klikněte <xref:System.Windows.Forms.ToolStripItem.Click> událostí.  
   
      Návrhář formulářů Windows generuje obslužná rutina události <xref:System.Windows.Forms.ToolStripItem.Click> událostí.  
   
-8.  Vložte následující kód do obslužné rutiny události.  
+8. Vložte následující kód do obslužné rutiny události.  
   
      [!code-csharp[System.Windows.Forms.ToolStrip.MdiForm#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.MdiForm/CS/Form1.cs#2)]
      [!code-vb[System.Windows.Forms.ToolStrip.MdiForm#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.MdiForm/VB/Form1.vb#2)]  
@@ -90,13 +90,13 @@ ms.locfileid: "59160625"
   
 #### <a name="to-add-the-toolstrippanel-control-to-the-toolbox"></a>Přidání ovládacího prvku ToolStripPanel do panelu nástrojů  
   
-1.  Otevřít **nástrojů**a potom klikněte na tlačítko **všechny formuláře Windows** zobrazte dostupné ovládací prvky Windows Forms.  
+1. Otevřít **nástrojů**a potom klikněte na tlačítko **všechny formuláře Windows** zobrazte dostupné ovládací prvky Windows Forms.  
   
-2.  Klikněte pravým tlačítkem na otevřete místní nabídku a vyberte **zvolit položky**.  
+2. Klikněte pravým tlačítkem na otevřete místní nabídku a vyberte **zvolit položky**.  
   
-3.  V **zvolit položky nástrojů** dialogové okno, přejděte dolů **název** sloupce, dokud nenajdete **ToolStripPanel**.  
+3. V **zvolit položky nástrojů** dialogové okno, přejděte dolů **název** sloupce, dokud nenajdete **ToolStripPanel**.  
   
-4.  Zaškrtněte políčko podle **ToolStripPanel**a potom klikněte na tlačítko **OK**.  
+4. Zaškrtněte políčko podle **ToolStripPanel**a potom klikněte na tlačítko **OK**.  
   
      <xref:System.Windows.Forms.ToolStripPanel> Ovládací prvek zobrazí **nástrojů**.  
   
@@ -105,15 +105,15 @@ ms.locfileid: "59160625"
   
 #### <a name="to-define-a-child-form"></a>Chcete-li definovat podřízené formuláře  
   
-1.  Přidat nový formulář s názvem `ChildForm` do projektu.  
+1. Přidat nový formulář s názvem `ChildForm` do projektu.  
   
      Další informace najdete v tématu [jak: Přidat do projektu Windows Forms](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/y2xxdce3(v=vs.100)).  
   
-2.  Z **nástrojů**, přetáhněte <xref:System.Windows.Forms.MenuStrip> ovládací prvek na podřízeném formuláři.  
+2. Z **nástrojů**, přetáhněte <xref:System.Windows.Forms.MenuStrip> ovládací prvek na podřízeném formuláři.  
   
-3.  Klikněte na tlačítko <xref:System.Windows.Forms.MenuStrip> piktogram inteligentní značky ovládacího prvku (![piktogram inteligentní](./media/vs-winformsmttagglyph.gif "VS_WinFormSmtTagGlyph")) a pak vyberte **upravit položky**.  
+3. Klikněte na tlačítko <xref:System.Windows.Forms.MenuStrip> piktogram inteligentní značky ovládacího prvku (![piktogram inteligentní](./media/vs-winformsmttagglyph.gif "VS_WinFormSmtTagGlyph")) a pak vyberte **upravit položky**.  
   
-4.  V **Editor kolekce položek** dialogovém okně přidejte nový <xref:System.Windows.Forms.ToolStripMenuItem> s názvem **ChildMenuItem** do nabídky podřízené.  
+4. V **Editor kolekce položek** dialogovém okně přidejte nový <xref:System.Windows.Forms.ToolStripMenuItem> s názvem **ChildMenuItem** do nabídky podřízené.  
   
      Další informace najdete v tématu [Editor kolekce položek ovládacího prvku ToolStrip](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/ms233643(v=vs.100)).  
   
@@ -121,17 +121,17 @@ ms.locfileid: "59160625"
   
 #### <a name="to-test-your-form"></a>K otestování formuláře  
   
-1.  Stisknutím klávesy F5 kompilace a spuštění formuláře.  
+1. Stisknutím klávesy F5 kompilace a spuštění formuláře.  
   
-2.  Klikněte na tlačítko **okno** otevřete nabídku a pak klikněte na položku nabídky **nový**.  
+2. Klikněte na tlačítko **okno** otevřete nabídku a pak klikněte na položku nabídky **nový**.  
   
      V klientské oblasti formuláře MDI se vytvoří nový podřízený formulář. Nabídky podřízené formuláře je sloučen s hlavní nabídky.  
   
-3.  Podřízený formulář zavřete.  
+3. Podřízený formulář zavřete.  
   
      Nabídky podřízené formuláře se odebere z hlavní nabídky.  
   
-4.  Klikněte na tlačítko **nový** několikrát.  
+4. Klikněte na tlačítko **nový** několikrát.  
   
      Podřízené formuláře se automaticky zobrazí **okno** položky nabídky, protože <xref:System.Windows.Forms.MenuStrip> ovládacího prvku <xref:System.Windows.Forms.MenuStrip.MdiWindowListItem%2A> přiřadit vlastnosti.  
   
@@ -140,25 +140,25 @@ ms.locfileid: "59160625"
   
 #### <a name="to-add-toolstrip-controls-to-the-mdi-parent-form"></a>Přidání ovládacích prvků ToolStrip nadřazený formulář MDI  
   
-1.  Z **nástrojů**, přetáhněte <xref:System.Windows.Forms.ToolStripPanel> ovládací prvek na formuláři.  
+1. Z **nástrojů**, přetáhněte <xref:System.Windows.Forms.ToolStripPanel> ovládací prvek na formuláři.  
   
-2.  S <xref:System.Windows.Forms.ToolStripPanel> vybraný ovládací prvek, dvakrát klikněte <xref:System.Windows.Forms.ToolStrip> v ovládacím prvku **nástrojů**.  
+2. S <xref:System.Windows.Forms.ToolStripPanel> vybraný ovládací prvek, dvakrát klikněte <xref:System.Windows.Forms.ToolStrip> v ovládacím prvku **nástrojů**.  
   
      A <xref:System.Windows.Forms.ToolStrip> ovládací prvek je vytvořen v <xref:System.Windows.Forms.ToolStripPanel> ovládacího prvku.  
   
-3.  Vyberte <xref:System.Windows.Forms.ToolStripPanel> ovládacího prvku.  
+3. Vyberte <xref:System.Windows.Forms.ToolStripPanel> ovládacího prvku.  
   
-4.  V okně Vlastnosti změňte hodnotu ovládacího prvku <xref:System.Windows.Forms.Control.Dock%2A> vlastnost <xref:System.Windows.Forms.DockStyle.Left>.  
+4. V okně Vlastnosti změňte hodnotu ovládacího prvku <xref:System.Windows.Forms.Control.Dock%2A> vlastnost <xref:System.Windows.Forms.DockStyle.Left>.  
   
      <xref:System.Windows.Forms.ToolStripPanel> Řídit ukotví na levou stranu formuláře pod hlavní nabídky. V oblasti klienta MDI přizpůsobí svou velikost <xref:System.Windows.Forms.ToolStripPanel> ovládacího prvku.  
   
-5.  Opakujte kroky 1 až 4.  
+5. Opakujte kroky 1 až 4.  
   
      Ukotvit nové <xref:System.Windows.Forms.ToolStripPanel> ovládacího prvku do horní části formuláře.  
   
      <xref:System.Windows.Forms.ToolStripPanel> Ovládací prvek ukotven pod hlavní nabídky, ale napravo od prvního <xref:System.Windows.Forms.ToolStripPanel> ovládacího prvku. Tento krok ukazuje důležitost pořadí vykreslování v správně umístění <xref:System.Windows.Forms.ToolStripPanel> ovládacích prvků.  
   
-6.  Opakujte kroky 1 až 4 pro dva další <xref:System.Windows.Forms.ToolStripPanel> ovládacích prvků.  
+6. Opakujte kroky 1 až 4 pro dva další <xref:System.Windows.Forms.ToolStripPanel> ovládacích prvků.  
   
      Ukotvit nové <xref:System.Windows.Forms.ToolStripPanel> ovládacích prvků doprava a dolní části formuláře.  
   
@@ -167,31 +167,31 @@ ms.locfileid: "59160625"
   
 #### <a name="to-arrange-toolstrippanel-controls-by-z-order"></a>Uspořádat podle pořadí vykreslování ovládacími prvky ToolStripPanel  
   
-1.  V **zobrazení** nabídky, klikněte na tlačítko **ostatní Windows**a potom klikněte na tlačítko **Osnova dokumentu**.  
+1. V **zobrazení** nabídky, klikněte na tlačítko **ostatní Windows**a potom klikněte na tlačítko **Osnova dokumentu**.  
   
      Uspořádání vašich <xref:System.Windows.Forms.ToolStripPanel> ovládací prvky z předchozího postupu je nestandardní. Je to proto, že pořadí vykreslování není správný. Chcete-li změnit pořadí vykreslování ovládacích prvků použijte okno osnovy dokumentu.  
   
-2.  V okně Osnova dokumentu vyberte **ToolStripPanel4**.  
+2. V okně Osnova dokumentu vyberte **ToolStripPanel4**.  
   
-3.  Klikněte na tlačítko se šipkou dolů opakovaně, dokud **ToolStripPanel4** je v dolní části seznamu.  
+3. Klikněte na tlačítko se šipkou dolů opakovaně, dokud **ToolStripPanel4** je v dolní části seznamu.  
   
      **ToolStripPanel4** ovládací prvek ukotven k dolní části formuláře, pod ostatní ovládací prvky.  
   
-4.  Vyberte **ToolStripPanel2**.  
+4. Vyberte **ToolStripPanel2**.  
   
-5.  Kliknutím na tlačítko se šipkou dolů jednou třetí umístění ovládacího prvku v seznamu.  
+5. Kliknutím na tlačítko se šipkou dolů jednou třetí umístění ovládacího prvku v seznamu.  
   
      **ToolStripPanel2** ovládací prvek ukotven k hornímu okraji pod hlavní nabídky a vyšší než ostatní ovládací prvky formulář.  
   
-6.  Vyberte různé ovládací prvky v **Osnova dokumentu** okno a přesouvat je na jinou pozici v pořadí vykreslování. Všimněte si vliv pořadí vykreslování na umístění ukotvených ovládacích prvků. Pomocí CTRL-Z nebo **zpět** na **upravit** nabídky vrátit zpět provedené změny.  
+6. Vyberte různé ovládací prvky v **Osnova dokumentu** okno a přesouvat je na jinou pozici v pořadí vykreslování. Všimněte si vliv pořadí vykreslování na umístění ukotvených ovládacích prvků. Pomocí CTRL-Z nebo **zpět** na **upravit** nabídky vrátit zpět provedené změny.  
   
 ## <a name="checkpoint"></a>CheckPoint  
   
 #### <a name="to-test-your-form"></a>K otestování formuláře  
   
-1.  Stisknutím klávesy F5 kompilace a spuštění formuláře.  
+1. Stisknutím klávesy F5 kompilace a spuštění formuláře.  
   
-2.  Klikněte na úchytu o <xref:System.Windows.Forms.ToolStrip> řídit a přetáhněte jej na různých místech ve formuláři.  
+2. Klikněte na úchytu o <xref:System.Windows.Forms.ToolStrip> řídit a přetáhněte jej na různých místech ve formuláři.  
   
      Můžete přetáhnout <xref:System.Windows.Forms.ToolStrip> ovládacího prvku z jednoho <xref:System.Windows.Forms.ToolStripPanel> ovládacího prvku do jiného.  
   

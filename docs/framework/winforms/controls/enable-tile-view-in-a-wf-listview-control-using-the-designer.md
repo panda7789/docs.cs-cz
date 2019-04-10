@@ -6,12 +6,12 @@ helpviewer_keywords:
 - ListView control [Windows Forms], tile view
 - tiling [Windows Forms], Windows Forms, controls
 ms.assetid: 12f0816a-52b8-41ee-a6d9-ded3a8a5817a
-ms.openlocfilehash: 7f7e3f0fadeccafc867c49d76f6f6cf11300fddc
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: f8c8a1b2e3d2adfa7daadd609051ffc304150efe
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59102476"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59300590"
 ---
 # <a name="how-to-enable-tile-view-in-a-windows-forms-listview-control-using-the-designer"></a>Postupy: Povolení zobrazení Vedle sebe v ovládacím prvku Windows Forms ListView pomocí Návrháře
 Funkci zobrazení dlaždice <xref:System.Windows.Forms.ListView> ovládací prvek můžete zadat vizuální rovnováhu mezi textové a grafické informace. Textové informace zobrazené položky v zobrazení tile je stejný jako sloupec informace definované pro zobrazení podrobností. Dlaždice zobrazit funkce v kombinaci s seskupení nebo vložení označit funkce <xref:System.Windows.Forms.ListView> ovládacího prvku.  
@@ -31,9 +31,9 @@ Funkci zobrazení dlaždice <xref:System.Windows.Forms.ListView> ovládací prve
   
 ### <a name="to-set-tile-view-in-the-designer"></a>Chcete-li nastavit zobrazení tile v Návrháři  
   
-1.  Vyberte <xref:System.Windows.Forms.ListView> ovládací prvek na formuláři.  
+1. Vyberte <xref:System.Windows.Forms.ListView> ovládací prvek na formuláři.  
   
-2.  V **vlastnosti** okna, vyberte <xref:System.Windows.Forms.ListView.View%2A> vlastnosti a zvolte **dlaždice**.  
+2. V **vlastnosti** okna, vyberte <xref:System.Windows.Forms.ListView.View%2A> vlastnosti a zvolte **dlaždice**.  
   
 ## <a name="see-also"></a>Viz také:
 

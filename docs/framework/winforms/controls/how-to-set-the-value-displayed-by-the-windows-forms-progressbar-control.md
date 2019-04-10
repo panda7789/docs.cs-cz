@@ -8,12 +8,12 @@ helpviewer_keywords:
 - ProgressBar control [Windows Forms], setting value displayed
 - progress controls [Windows Forms], setting value displayed
 ms.assetid: 0e5010ad-1e9a-4271-895e-5a3d24d37a26
-ms.openlocfilehash: 292a70658e37839897b39d4d58fdf98903d2d963
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 42a9e0f67f00c1a706b72ab0eeb522e99d8a8dfe
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59196876"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59300473"
 ---
 # <a name="how-to-set-the-value-displayed-by-the-windows-forms-progressbar-control"></a>Postupy: Nastavení hodnoty zobrazované ovládacím prvkem Windows Forms ProgressBar
 > [!IMPORTANT]
@@ -31,9 +31,9 @@ ms.locfileid: "59196876"
   
 ### <a name="to-set-the-progressbar-value-directly"></a>K nastavení hodnoty ProgressBar přímo  
   
-1.  Nastavte <xref:System.Windows.Forms.ProgressBar> ovládacího prvku <xref:System.Windows.Forms.ProgressBar.Minimum%2A> a <xref:System.Windows.Forms.ProgressBar.Maximum%2A> hodnoty.  
+1. Nastavte <xref:System.Windows.Forms.ProgressBar> ovládacího prvku <xref:System.Windows.Forms.ProgressBar.Minimum%2A> a <xref:System.Windows.Forms.ProgressBar.Maximum%2A> hodnoty.  
   
-2.  V kódu, nastavit u tohoto prvku <xref:System.Windows.Forms.ProgressBar.Value%2A> vlastnost na celočíselnou hodnotu mezi minimální a maximální hodnoty, které jste stanovili.  
+2. V kódu, nastavit u tohoto prvku <xref:System.Windows.Forms.ProgressBar.Value%2A> vlastnost na celočíselnou hodnotu mezi minimální a maximální hodnoty, které jste stanovili.  
   
     > [!NOTE]
     >  Pokud nastavíte <xref:System.Windows.Forms.ProgressBar.Value%2A> vlastnost mimo hranice vytvořené <xref:System.Windows.Forms.ProgressBar.Minimum%2A> a <xref:System.Windows.Forms.ProgressBar.Maximum%2A> vyvolá vlastností, ovládacího prvku <xref:System.ArgumentException> výjimky.  
@@ -87,11 +87,11 @@ ms.locfileid: "59196876"
   
 ### <a name="to-increase-the-progress-bar-by-a-fixed-value"></a>Indikátor průběhu zvýšit pevná hodnota  
   
-1.  Nastavte <xref:System.Windows.Forms.ProgressBar> ovládacího prvku <xref:System.Windows.Forms.ProgressBar.Minimum%2A> a <xref:System.Windows.Forms.ProgressBar.Maximum%2A> hodnoty.  
+1. Nastavte <xref:System.Windows.Forms.ProgressBar> ovládacího prvku <xref:System.Windows.Forms.ProgressBar.Minimum%2A> a <xref:System.Windows.Forms.ProgressBar.Maximum%2A> hodnoty.  
   
-2.  Nastavit u tohoto prvku <xref:System.Windows.Forms.ProgressBar.Step%2A> vlastnost na celé číslo představující dobu, zvětšete indikátoru průběhu zobrazí hodnotu.  
+2. Nastavit u tohoto prvku <xref:System.Windows.Forms.ProgressBar.Step%2A> vlastnost na celé číslo představující dobu, zvětšete indikátoru průběhu zobrazí hodnotu.  
   
-3.  Volání <xref:System.Windows.Forms.ProgressBar.PerformStep%2A> metody, chcete-li změnit hodnoty zobrazené množství v <xref:System.Windows.Forms.ProgressBar.Step%2A> vlastnost.  
+3. Volání <xref:System.Windows.Forms.ProgressBar.PerformStep%2A> metody, chcete-li změnit hodnoty zobrazené množství v <xref:System.Windows.Forms.ProgressBar.Step%2A> vlastnost.  
   
      Následující příklad kódu ukazuje, jak můžete indikátor průběhu udržovat počet souborů v operaci kopírování.  
   
@@ -153,9 +153,9 @@ ms.locfileid: "59196876"
   
 ### <a name="to-increase-the-progress-bar-by-a-dynamic-value"></a>Indikátor průběhu zvýšit dynamické hodnoty  
   
-1.  Nastavte <xref:System.Windows.Forms.ProgressBar> ovládacího prvku <xref:System.Windows.Forms.ProgressBar.Minimum%2A> a <xref:System.Windows.Forms.ProgressBar.Maximum%2A> hodnoty.  
+1. Nastavte <xref:System.Windows.Forms.ProgressBar> ovládacího prvku <xref:System.Windows.Forms.ProgressBar.Minimum%2A> a <xref:System.Windows.Forms.ProgressBar.Maximum%2A> hodnoty.  
   
-2.  Volání <xref:System.Windows.Forms.ProgressBar.Increment%2A> metoda ke změně hodnoty zobrazí celé číslo, které zadáte.  
+2. Volání <xref:System.Windows.Forms.ProgressBar.Increment%2A> metoda ke změně hodnoty zobrazí celé číslo, které zadáte.  
   
      Následující příklad kódu ukazuje, jak indikátor průběhu můžete vypočítat, kolik místa na disku se použil během operace kopírování.  
   

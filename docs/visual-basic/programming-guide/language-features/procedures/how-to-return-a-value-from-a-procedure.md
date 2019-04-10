@@ -6,23 +6,23 @@ helpviewer_keywords:
 - procedures [Visual Basic], returning from
 - procedures [Visual Basic], returning a value
 ms.assetid: 4bcc4724-2b4e-4df8-9b4b-16054607f87d
-ms.openlocfilehash: 293234346053034b544866b6a2eff84974d8a02b
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 8b53df1634d2b9971bc44c968a17db81cac3924f
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58824556"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59307883"
 ---
 # <a name="how-to-return-a-value-from-a-procedure-visual-basic"></a>Postupy: Vrácení hodnoty z procedury (Visual Basic)
 A `Function` postup vrací hodnotu volajícímu kódu, buď pomocí provádí `Return` příkaz nebo zjištění `Exit Function` nebo `End Function` příkazu.  
   
 ### <a name="to-return-a-value-using-the-return-statement"></a>Pro navrácení hodnoty návratový příkaz using  
   
-1.  Vložit `Return` příkaz v místě, kde se dokončí úkol podle postupu.  
+1. Vložit `Return` příkaz v místě, kde se dokončí úkol podle postupu.  
   
-2.  Postupujte podle `Return` – klíčové slovo výrazem, který vrací hodnotu, kterou chcete vrátit na volajícím kódu.  
+2. Postupujte podle `Return` – klíčové slovo výrazem, který vrací hodnotu, kterou chcete vrátit na volajícím kódu.  
   
-3.  Můžete mít více než jeden `Return` příkaz ve stejné proceduře.  
+3. Můžete mít více než jeden `Return` příkaz ve stejné proceduře.  
   
      Následující `Function` postup vypočítá nejdelší strana nebo přepony pravoúhlého trojúhelníku a vrátí volajícímu kódu.  
   
@@ -34,13 +34,13 @@ A `Function` postup vrací hodnotu volajícímu kódu, buď pomocí provádí `R
   
 ### <a name="to-return-a-value-using-exit-function-or-end-function"></a>Vrátit hodnotu pomocí Exit Function nebo End Function  
   
-1.  V nejméně jednom místě `Function` postupu přiřadit hodnotu pro název procedury.  
+1. V nejméně jednom místě `Function` postupu přiřadit hodnotu pro název procedury.  
   
-2.  Při spuštění `Exit Function` nebo `End Function` příkazu jazyka Visual Basic vrátí hodnotu naposledy přiřazeno název procedury.  
+2. Při spuštění `Exit Function` nebo `End Function` příkazu jazyka Visual Basic vrátí hodnotu naposledy přiřazeno název procedury.  
   
-3.  Můžete mít více než jeden `Exit Function` příkaz v stejným způsobem a můžete kombinovat `Return` a `Exit Function` příkazy ve stejné proceduře.  
+3. Můžete mít více než jeden `Exit Function` příkaz v stejným způsobem a můžete kombinovat `Return` a `Exit Function` příkazy ve stejné proceduře.  
   
-4.  Může mít pouze jeden `End Function` výroky `Function` postup.  
+4. Může mít pouze jeden `End Function` výroky `Function` postup.  
   
      Další informace a příklad naleznete v části "Vrácení hodnoty" v [Function – příkaz](../../../../visual-basic/language-reference/statements/function-statement.md).  
   
@@ -48,10 +48,10 @@ A `Function` postup vrací hodnotu volajícímu kódu, buď pomocí provádí `R
 
 - [Procedury](./index.md)
 - [Procedury Sub](./sub-procedures.md)
-- [Procedury vlastnosti](./property-procedures.md)
+- [Procedury Property](./property-procedures.md)
 - [Procedury operátoru](./operator-procedures.md)
 - [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)
-- [Příkaz Function](../../../../visual-basic/language-reference/statements/function-statement.md)
-- [Příkaz Return](../../../../visual-basic/language-reference/statements/return-statement.md)
-- [Postupy: Vytvořit proceduru, která vrací hodnotu](./how-to-create-a-procedure-that-returns-a-value.md)
+- [Function – příkaz](../../../../visual-basic/language-reference/statements/function-statement.md)
+- [Return – příkaz](../../../../visual-basic/language-reference/statements/return-statement.md)
+- [Postupy: Vytvoření procedury, která vrací hodnotu](./how-to-create-a-procedure-that-returns-a-value.md)
 - [Postupy: Volání procedury, která vrací hodnotu](./how-to-call-a-procedure-that-returns-a-value.md)

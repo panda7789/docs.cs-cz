@@ -9,12 +9,12 @@ helpviewer_keywords:
 - printing [Windows Forms], choosing printers
 - printers [Windows Forms], choosing
 ms.assetid: 63c1172b-2931-4ac0-953f-37f629494bbf
-ms.openlocfilehash: bebb879020e6e45e77f109bf9c377b7322d5e8f3
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: efd65ff6417b1a63a7f87917c4d9a95dedc464ad
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59184025"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59318803"
 ---
 # <a name="how-to-choose-the-printers-attached-to-a-users-computer-in-windows-forms"></a>Postupy: Volba tiskáren připojených k počítači uživatele v modelu Windows Forms
 Uživatelé často chtějí vybrat tiskárnu jiné než výchozí tiskárna pro tisk. Můžete umožnit uživatelům si vybrat tiskárnu z aktuálně nainstalované pomocí <xref:System.Windows.Forms.PrintDialog> komponenty. Prostřednictvím <xref:System.Windows.Forms.PrintDialog> komponenty, <xref:System.Windows.Forms.DialogResult> z <xref:System.Windows.Forms.PrintDialog> komponenta je zachycena a umožňuje vybrat tiskárnu.  
@@ -23,7 +23,7 @@ Uživatelé často chtějí vybrat tiskárnu jiné než výchozí tiskárna pro 
   
 ### <a name="to-choose-a-printer-and-then-print-a-file"></a>Můžete vybrat tiskárnu a potom tisk souboru  
   
-1.  Vyberte tiskárny, kterou chcete použít pomocí <xref:System.Windows.Forms.PrintDialog> komponenty.  
+1. Vyberte tiskárny, kterou chcete použít pomocí <xref:System.Windows.Forms.PrintDialog> komponenty.  
   
      V následujícím příkladu kódu existují dvě události se zpracovávají. V první <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Click> událostí, <xref:System.Windows.Forms.PrintDialog> je vytvořena instance třídy a jsou zachyceny tiskárny vybraných uživatelem <xref:System.Windows.Forms.DialogResult> vlastnost.  
   

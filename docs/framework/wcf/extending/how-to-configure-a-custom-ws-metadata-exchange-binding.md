@@ -5,19 +5,19 @@ helpviewer_keywords:
 - WS-Metadata Exchange [WCF]
 - WS-Metadata Exchange [WCF], configuring a custom binding
 ms.assetid: cdba4d73-da64-4805-bc56-9822becfd1e4
-ms.openlocfilehash: ab659e7e586b28f5c06b9b6ba12b313f318c6542
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 51681e258e6a21b3a7ae604d1c0ef65d320bfb4f
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59210500"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59311874"
 ---
 # <a name="how-to-configure-a-custom-ws-metadata-exchange-binding"></a>Postupy: Konfigurace vlastních vazeb protokolu WS-Metadata Exchange
 Toto téma vysvětluje, jak nakonfigurovat vlastní WS-Metadata exchange vazby. Zahrnuje čtyři vazby metadata definovaná uživatelem systému Windows Communication Foundation (WCF), ale můžete publikovat metadat pomocí všechny vazby, který chcete. V tomto tématu ukazují, jak publikovat pomocí metadat `wsHttpBinding`. Tato vazba získáte možnost bezpečně doručovat jestli vystavuje metadata. Kód v tomto článku je založený na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md).  
   
 ### <a name="using-a-configuration-file"></a>Použití konfiguračního souboru  
   
-1.  V konfiguračním souboru služby, přidejte chování služby, který obsahuje `serviceMetadata` značky:  
+1. V konfiguračním souboru služby, přidejte chování služby, který obsahuje `serviceMetadata` značky:  
   
     ```xml  
     <behaviors>  
@@ -29,14 +29,14 @@ Toto téma vysvětluje, jak nakonfigurovat vlastní WS-Metadata exchange vazby. 
     </behaviors>  
     ```  
   
-2.  Přidat `behaviorConfiguration` atribut ke značce služby, který odkazuje na toto nové chování:  
+2. Přidat `behaviorConfiguration` atribut ke značce služby, který odkazuje na toto nové chování:  
   
     ```xml  
     <service        name="Microsoft.ServiceModel.Samples.CalculatorService"  
     behaviorConfiguration="CalculatorServiceBehavior">   
     ```  
   
-3.  Přidat koncový bod metadat zadání mex jako adresu, `wsHttpBinding` jako vazbu, a <xref:System.ServiceModel.Description.IMetadataExchange> jako kontrakt:  
+3. Přidat koncový bod metadat zadání mex jako adresu, `wsHttpBinding` jako vazbu, a <xref:System.ServiceModel.Description.IMetadataExchange> jako kontrakt:  
   
     ```xml  
     <endpoint address="mex"  
@@ -44,7 +44,7 @@ Toto téma vysvětluje, jak nakonfigurovat vlastní WS-Metadata exchange vazby. 
               contract="IMetadataExchange" />  
     ```  
   
-4.  Chcete-li ověřit, že je koncový bod výměny metadat pracovních správně přidání značky koncového bodu v konfiguračním souboru klienta:  
+4. Chcete-li ověřit, že je koncový bod výměny metadat pracovních správně přidání značky koncového bodu v konfiguračním souboru klienta:  
   
     ```xml  
     <endpoint name="MyMexEndpoint"               address="http://localhost:8000/servicemodelsamples/service/mex"  
@@ -52,7 +52,7 @@ Toto téma vysvětluje, jak nakonfigurovat vlastní WS-Metadata exchange vazby. 
               contract="IMetadataExchange"/>  
     ```  
   
-5.  V metodě Main() klienta, vytvořte nový <xref:System.ServiceModel.Description.MetadataExchangeClient> instance, nastavte jeho <xref:System.ServiceModel.Description.MetadataExchangeClient.ResolveMetadataReferences%2A> vlastnost `true`, volání <xref:System.ServiceModel.Description.MetadataExchangeClient.GetMetadata%2A> a potom iteraci prostřednictvím kolekce metadat vrátil:  
+5. V metodě Main() klienta, vytvořte nový <xref:System.ServiceModel.Description.MetadataExchangeClient> instance, nastavte jeho <xref:System.ServiceModel.Description.MetadataExchangeClient.ResolveMetadataReferences%2A> vlastnost `true`, volání <xref:System.ServiceModel.Description.MetadataExchangeClient.GetMetadata%2A> a potom iteraci prostřednictvím kolekce metadat vrátil:  
   
     ```  
     string mexAddress = "http://localhost:8000/servicemodelsamples/service/mex";  
@@ -66,19 +66,19 @@ Toto téma vysvětluje, jak nakonfigurovat vlastní WS-Metadata exchange vazby. 
   
 ### <a name="configuring-by-code"></a>Konfigurace kódu  
   
-1.  Vytvoření <xref:System.ServiceModel.WSHttpBinding> instanci vazby:  
+1. Vytvoření <xref:System.ServiceModel.WSHttpBinding> instanci vazby:  
   
     ```  
     WSHttpBinding binding = new WSHttpBinding();  
     ```  
   
-2.  Vytvoření <xref:System.ServiceModel.ServiceHost> instance:  
+2. Vytvoření <xref:System.ServiceModel.ServiceHost> instance:  
   
     ```  
     ServiceHost serviceHost = new ServiceHost(typeof(CalculatorService), baseAddress);  
     ```  
   
-3.  Přidání koncového bodu služby a přidejte <xref:System.ServiceModel.Description.ServiceMetadataBehavior> instanci:  
+3. Přidání koncového bodu služby a přidejte <xref:System.ServiceModel.Description.ServiceMetadataBehavior> instanci:  
   
     ```  
     serviceHost.AddServiceEndpoint(typeof(ICalculator), binding, baseAddress);  
@@ -87,13 +87,13 @@ Toto téma vysvětluje, jak nakonfigurovat vlastní WS-Metadata exchange vazby. 
     serviceHost.Description.Behaviors.Add(smb);  
     ```  
   
-4.  Přidat koncový bod výměny metadat, určení <xref:System.ServiceModel.WSHttpBinding> vytvořili dříve:  
+4. Přidat koncový bod výměny metadat, určení <xref:System.ServiceModel.WSHttpBinding> vytvořili dříve:  
   
     ```  
     serviceHost.AddServiceEndpoint(typeof(IMetadataExchange), binding, mexAddress);  
     ```  
   
-5.  Pokud chcete ověřit, že koncový bod výměny metadat pracuje správně, přidejte značku koncový bod v konfiguračním souboru klienta:  
+5. Pokud chcete ověřit, že koncový bod výměny metadat pracuje správně, přidejte značku koncový bod v konfiguračním souboru klienta:  
   
     ```xml  
     <endpoint name="MyMexEndpoint"               address="http://localhost:8000/servicemodelsamples/service/mex"  
@@ -101,7 +101,7 @@ Toto téma vysvětluje, jak nakonfigurovat vlastní WS-Metadata exchange vazby. 
               contract="IMetadataExchange"/>  
     ```  
   
-6.  V metodě Main() klienta, vytvořte nový <xref:System.ServiceModel.Description.MetadataExchangeClient> instance, nastavte <xref:System.ServiceModel.Description.MetadataExchangeClient.ResolveMetadataReferences%2A> vlastnost `true`, volání <xref:System.ServiceModel.Description.MetadataExchangeClient.GetMetadata%2A> a potom iteraci prostřednictvím kolekce metadat vrátil:  
+6. V metodě Main() klienta, vytvořte nový <xref:System.ServiceModel.Description.MetadataExchangeClient> instance, nastavte <xref:System.ServiceModel.Description.MetadataExchangeClient.ResolveMetadataReferences%2A> vlastnost `true`, volání <xref:System.ServiceModel.Description.MetadataExchangeClient.GetMetadata%2A> a potom iteraci prostřednictvím kolekce metadat vrátil:  
   
     ```  
     string mexAddress = "http://localhost:8000/servicemodelsamples/service/mex";  

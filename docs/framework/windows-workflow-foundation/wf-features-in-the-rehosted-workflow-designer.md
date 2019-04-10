@@ -2,12 +2,12 @@
 title: Podpora nových funkcí Workflow Foundation 4.5 v Návrháři postupu provádění se změněným hostováním
 ms.date: 03/30/2017
 ms.assetid: 1a4a4038-d8e6-41dd-99ea-93bd76286772
-ms.openlocfilehash: bed49e4a62e597c9cffd113b24551872ee1053d5
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: a7b7ed6987320314ee3fdccf0e58a8c7314fe50d
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57714941"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59324159"
 ---
 # <a name="support-for-new-workflow-foundation-45-features-in-the-rehosted-workflow-designer"></a>Podpora nových funkcí Workflow Foundation 4.5 v Návrháři postupu provádění se změněným hostováním
 Windows Workflow Foundation (WF) v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] přichází s mnoha novými funkcemi včetně několik vylepšení prostředí Návrháře pracovního postupu. Toto téma podrobně popisuje tyto funkce jsou podporované v návrháři se změněným hostováním, a ty, které nejsou aktuálně podporovány.
@@ -18,7 +18,7 @@ Windows Workflow Foundation (WF) v [!INCLUDE[net_v45](../../../includes/net-v45-
 ## <a name="activities"></a>Aktivity
  Knihovna předdefinovaných aktivit obsahuje nové aktivity a nové funkce pro existujících aktivit. Všechny tyto nové aktivity jsou podporované v návrháři se změněným hostováním. Další informace o těchto nových aktivit najdete v článku [aktivity](whats-new-in-wf-in-dotnet.md#BKMK_NewActivities) část [co je nového ve Windows Workflow Foundation v rozhraní .NET 4.5](whats-new-in-wf-in-dotnet.md).
 
-## <a name="c-expressions"></a>Výrazy jazyka C#
+## <a name="c-expressions"></a>Výrazy C#
  Před verzí [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], všechny výrazy v pracovních postupech, může být pouze napsaná v jazyce Visual Basic. V [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], výrazy jazyka Visual Basic se používají pouze pro projekty vytvořené pomocí jazyka Visual Basic. Projekty Visual C# nyní pomocí C# pro výrazy. Při vytváření pracovních postupů v sadě Visual Studio 2012, plně funkční editor výrazů C# poskytuje jaké schopnosti zvýraznění gramatiky a technologie intellisense. Pracovní postup projekty jazyka C# vytvořené v předchozích verzích, které používají výrazy jazyka Visual Basic, budou nadále fungovat.
 
 > [!WARNING]
@@ -124,13 +124,13 @@ Windows Workflow Foundation (WF) v [!INCLUDE[net_v45](../../../includes/net-v45-
 ### <a name="state-machine-workflows"></a>Pracovní postupy stavového stroje  
  Pracovní postupy stavového stroje byly představeny jako součást rozhraní .NET Framework 4.0.1 v [rozhraní Microsoft .NET Framework 4 aktualizace platformy 1](https://go.microsoft.com/fwlink/?LinkID=215092). Tato aktualizace je zahrnuta několik nových třídách a činnostech, které mohou vývojáři vytvářet pracovní postupy stavu počítače povolené. Tyto třídy a činnosti byly aktualizovány [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]. Aktualizace zahrnují:  
   
-1.  Možnost nastavit zarážky na stavy  
+1. Možnost nastavit zarážky na stavy  
   
-2.  Možnost kopírování a vkládání přechodů v Návrháři postupu provádění  
+2. Možnost kopírování a vkládání přechodů v Návrháři postupu provádění  
   
-3.  Podpora návrhářů pro sdílené vytváření aktivačních přechodů  
+3. Podpora návrhářů pro sdílené vytváření aktivačních přechodů  
   
-4.  Aktivity použít k vytváření pracovních postupů stavového stroje, včetně: <xref:System.Activities.Statements.StateMachine>, <xref:System.Activities.Statements.State>, a <xref:System.Activities.Statements.Transition>  
+4. Aktivity použít k vytváření pracovních postupů stavového stroje, včetně: <xref:System.Activities.Statements.StateMachine>, <xref:System.Activities.Statements.State>, a <xref:System.Activities.Statements.Transition>  
   
  Následující snímek obrazovky ukazuje pracovní postup dokončený stav stroje ze [kurz Začínáme](getting-started-tutorial.md) krok [jak: Vytvoření pracovního postupu stavového stroje](how-to-create-a-state-machine-workflow.md).  
   

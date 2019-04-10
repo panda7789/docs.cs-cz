@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 62f404a5-13ea-4b93-a29f-55b74a16c9d3
-ms.openlocfilehash: 3cd679c5bb869a648eecf9702182129d9719d141
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 414be4a5bdbd1fe5d65475efcd5e72606b73685f
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59098920"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59312823"
 ---
 # <a name="handling-datatable-events"></a>Zpracování událostí datové tabulky
 <xref:System.Data.DataTable> Objekt, který poskytuje řadu událostí, které mohou být zpracovány aplikací. Následující tabulka popisuje `DataTable` události.  
@@ -47,21 +47,21 @@ ms.locfileid: "59098920"
 ## <a name="sequence-of-operations"></a>Posloupnost operací  
  Tady je posloupnost operací, ke kterým dochází při `DataRow` je přidat, upravit nebo odstranit:  
   
-1.  Vytváření navrhovaná záznam a použity všechny změny.  
+1. Vytváření navrhovaná záznam a použity všechny změny.  
   
-2.  Kontrola omezení u sloupců bez výrazu.  
+2. Kontrola omezení u sloupců bez výrazu.  
   
-3.  Vyvolat `RowChanging` nebo `RowDeleting` události podle potřeby.  
+3. Vyvolat `RowChanging` nebo `RowDeleting` události podle potřeby.  
   
-4.  Nastavte navrhovaných záznam na aktuální záznam.  
+4. Nastavte navrhovaných záznam na aktuální záznam.  
   
-5.  Aktualizujte všechny přidružené indexy.  
+5. Aktualizujte všechny přidružené indexy.  
   
-6.  Vyvolat `ListChanged` související události pro `DataView` objekty a `PropertyChanged` související události pro `DataRowView` objekty.  
+6. Vyvolat `ListChanged` související události pro `DataView` objekty a `PropertyChanged` související události pro `DataRowView` objekty.  
   
-7.  Vyhodnoťte všechny sloupce výrazu, ale zpoždění kontroly jakákoliv omezení u těchto sloupců.  
+7. Vyhodnoťte všechny sloupce výrazu, ale zpoždění kontroly jakákoliv omezení u těchto sloupců.  
   
-8.  Vyvolat `ListChanged` související události pro `DataView` objekty a `PropertyChanged` související události pro `DataRowView` objekty ovlivněné vyhodnocení výrazu sloupce.  
+8. Vyvolat `ListChanged` související události pro `DataView` objekty a `PropertyChanged` související události pro `DataRowView` objekty ovlivněné vyhodnocení výrazu sloupce.  
   
 9. Vyvolat `RowChanged` nebo `RowDeleted` události podle potřeby.  
   

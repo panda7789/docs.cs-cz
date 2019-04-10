@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - data transfer [WCF], architectural overview
 ms.assetid: 343c2ca2-af53-4936-a28c-c186b3524ee9
-ms.openlocfilehash: bb903f6d182c7a8be915daf67a4df30475cfae62
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 22d2ce71d850fc799304cadf7e8d7d8af2670d5d
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59127451"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59315878"
 ---
 # <a name="data-transfer-architectural-overview"></a>Strukturální přehled přenosu dat
 Windows Communication Foundation (WCF) můžete představit jako infrastruktura zasílání zpráv. Může přijímat zprávy, zpracovat je a jejich vypravování do uživatelského kódu pro další akce, nebo můžete vytvořit zprávy z dat zadané v uživatelském kódu a doručujte je na cíli. Toto téma, které je určené pro pokročilé vývojáře, popisuje architekturu zpracování zpráv a omezením data. Jednodušší, orientovaných zobrazení toho, jak odesílat a přijímat data, najdete v části [zadání přenosu dat v kontraktech služeb](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md).  
@@ -107,15 +107,15 @@ Windows Communication Foundation (WCF) můžete představit jako infrastruktura 
   
  Chcete-li to možné, musí být definována mapování mezi celý `Message` instanci a informační sadu XML. Ve skutečnosti takové mapování existuje: WCF pomocí standardu SOAP definuje toto mapování. Když `Message` instance je zapsán jako informační sadu XML platný obálku protokolu SOAP, která obsahuje zprávy je výsledný informační sadu. Proto `WriteMessage` by normálně proveďte následující kroky:  
   
-1.  Zapsat element obálky protokolu SOAP počáteční značku.  
+1. Zapsat element obálky protokolu SOAP počáteční značku.  
   
-2.  Zapsat element záhlaví SOAP počáteční značku, vypsat všechny hlavičky a zavřít prvku záhlaví.  
+2. Zapsat element záhlaví SOAP počáteční značku, vypsat všechny hlavičky a zavřít prvku záhlaví.  
   
-3.  Zapsat element body SOAP počáteční značku.  
+3. Zapsat element body SOAP počáteční značku.  
   
-4.  Volání `WriteBodyContents` nebo ekvivalentní metody k zapsání textu.  
+4. Volání `WriteBodyContents` nebo ekvivalentní metody k zapsání textu.  
   
-5.  Zavřete elementy textu a obálky.  
+5. Zavřete elementy textu a obálky.  
   
  V předchozích krocích jsou úzce vázané na standardu protokolu SOAP. Toto je složité fakt, že více verzí modulu protokolu SOAP existují, například není možné vypsat element obálky protokolu SOAP správně nainstalovat bez mého verze protokolu SOAP používá. Také v některých případech může být žádoucí vypnutí této komplexní SOAP konkrétní mapování úplně.  
   
@@ -170,11 +170,11 @@ Windows Communication Foundation (WCF) můžete představit jako infrastruktura 
   
  Pro tento účel <xref:System.Xml.IStreamProvider> rozhraní se používá. Rozhraní <xref:System.Xml.IStreamProvider.GetStream> metodu, která vrací datový proud, který má být proveden zápis. Správný způsob k zapsání textu zapsal zprávu v <xref:System.ServiceModel.Channels.Message.OnWriteBodyContents%28System.Xml.XmlDictionaryWriter%29> vypadá takto:  
   
-1.  Zapisovat všechny potřebné informace před stream (například otevírání – značka XML).  
+1. Zapisovat všechny potřebné informace před stream (například otevírání – značka XML).  
   
-2.  Volání `WriteValue` přetížit na <xref:System.Xml.XmlDictionaryWriter> , která má <xref:System.Xml.IStreamProvider>, pomocí `IStreamProvider` implementace, která vrací datový proud, který má být proveden zápis.  
+2. Volání `WriteValue` přetížit na <xref:System.Xml.XmlDictionaryWriter> , která má <xref:System.Xml.IStreamProvider>, pomocí `IStreamProvider` implementace, která vrací datový proud, který má být proveden zápis.  
   
-3.  Zapisovat všechny informace o streamu (například uzavírací značky XML).  
+3. Zapisovat všechny informace o streamu (například uzavírací značky XML).  
   
  S tímto přístupem zapisovací modul XML se zobrazí možnost výběru při volání <xref:System.Xml.IStreamProvider.GetStream> a vypsat streamovaná data. Textové a binární zapisovače XML se například volání okamžitě a vypsat streamovaná obsah mezi úvodní a koncovou značkou. Zapisovací funkce MTOM rozhodnout volání <xref:System.Xml.IStreamProvider.GetStream> později, až bude připravená k zápisu odpovídající část zprávy.  
   

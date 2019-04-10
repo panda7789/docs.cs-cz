@@ -2,12 +2,12 @@
 title: Řešení potíží se zasíláním zpráv zařazovaných do front
 ms.date: 03/30/2017
 ms.assetid: a5f2836f-018d-42f5-a571-1e97e64ea5b0
-ms.openlocfilehash: b2193755beddd6c0d0eef4f95ca311b8e2b75b3c
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.openlocfilehash: c85b0701c870fe2b4a3c11dc384e890e1ed001dd
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58463108"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59322040"
 ---
 # <a name="troubleshooting-queued-messaging"></a>Řešení potíží se zasíláním zpráv zařazovaných do front
 Tato část obsahuje běžné dotazy a řešení potíží s pomoci při používání front ve Windows Communication Foundation (WCF).  
@@ -96,9 +96,9 @@ Tato část obsahuje běžné dotazy a řešení potíží s pomoci při použí
   
  **ODPOVĚĎ:** Nejběžnějším důvodem je oprávnění.  
   
-1.  Ujistěte se, že `NetMsmqActivator` je proces spuštěn a její identitu `NetMsmqActivator` procesu je uveden pro čtení a hledání oprávnění ve frontě.  
+1. Ujistěte se, že `NetMsmqActivator` je proces spuštěn a její identitu `NetMsmqActivator` procesu je uveden pro čtení a hledání oprávnění ve frontě.  
   
-2.  Pokud `NetMsmqActivator` je monitorování front ve vzdáleném počítači, ujistěte se, že `NetMsmqActivator` neběží pod token s omezeným přístupem. Ke spuštění `NetMsmqActivator` neomezený tokenu:  
+2. Pokud `NetMsmqActivator` je monitorování front ve vzdáleném počítači, ujistěte se, že `NetMsmqActivator` neběží pod token s omezeným přístupem. Ke spuštění `NetMsmqActivator` neomezený tokenu:  
   
     ```  
     sc sidtype NetMsmqActivator unrestricted  
@@ -157,19 +157,19 @@ System.ServiceModel.MsmqPoisonMessageException: The transport channel detected a
   
  **ODPOVĚĎ:** Úložiště certifikátů místního počítače nelze použít s režimem certifikátu. Budete muset zkopírujte certifikát do úložiště pro aktuálního uživatele pomocí modulu snap-in certifikátu z úložiště certifikátů počítače. Pokud chcete získat certifikát modul snap-in:  
   
-1.  Klikněte na tlačítko **Start**vyberte **spustit**, typ `mmc`a klikněte na tlačítko **OK**.  
+1. Klikněte na tlačítko **Start**vyberte **spustit**, typ `mmc`a klikněte na tlačítko **OK**.  
   
-2.  V **konzoly Microsoft Management Console**, otevřete **souboru** nabídky a vybereme **Přidat/odebrat modul Snap-in**.  
+2. V **konzoly Microsoft Management Console**, otevřete **souboru** nabídky a vybereme **Přidat/odebrat modul Snap-in**.  
   
-3.  V **Přidat/odebrat modul Snap-in** dialogové okno, klikněte na tlačítko **přidat** tlačítko.  
+3. V **Přidat/odebrat modul Snap-in** dialogové okno, klikněte na tlačítko **přidat** tlačítko.  
   
-4.  V **přidat samostatný modul Snap-in** dialogové okno, vyberte certifikáty a klikněte na tlačítko **přidat**.  
+4. V **přidat samostatný modul Snap-in** dialogové okno, vyberte certifikáty a klikněte na tlačítko **přidat**.  
   
-5.  V **certifikáty** modul snap-in dialogu **Můj uživatelský účet,** a klikněte na tlačítko **Dokončit**.  
+5. V **certifikáty** modul snap-in dialogu **Můj uživatelský účet,** a klikněte na tlačítko **Dokončit**.  
   
-6.  V dalším kroku přidejte druhý certifikáty modulu snap-in v předchozích krocích, ale tentokrát vyberte **účet počítače** a klikněte na tlačítko **Další**.  
+6. V dalším kroku přidejte druhý certifikáty modulu snap-in v předchozích krocích, ale tentokrát vyberte **účet počítače** a klikněte na tlačítko **Další**.  
   
-7.  Vyberte **místního počítače** a klikněte na tlačítko **Dokončit**. Teď můžete přetáhnout a vyřadit certifikáty z úložiště certifikátů počítače pro úložiště pro aktuálního uživatele.  
+7. Vyberte **místního počítače** a klikněte na tlačítko **Dokončit**. Teď můžete přetáhnout a vyřadit certifikáty z úložiště certifikátů počítače pro úložiště pro aktuálního uživatele.  
   
  **DOTAZ:** Když Služba čte z fronty na jiný počítač v režimu pracovní skupiny, se zobrazit výjimka "přístup byl odepřen".  
   

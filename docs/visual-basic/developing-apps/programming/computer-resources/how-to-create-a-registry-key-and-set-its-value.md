@@ -11,12 +11,12 @@ helpviewer_keywords:
 - registry keys [Visual Basic], setting values
 - examples [Visual Basic], registry
 ms.assetid: d3e40f74-c283-480c-ab18-e5e9052cd814
-ms.openlocfilehash: 6d9790d37812ff0ed4ac76049b6949901f7b5c58
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 0cadff8b44c60041e2664b1d3b70830209014301
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58835450"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59312607"
 ---
 # <a name="how-to-create-a-registry-key-and-set-its-value-in-visual-basic"></a>Postupy: Vytvořte klíč registru a nastavení jeho hodnoty v jazyce Visual Basic
 `CreateSubKey` Metodu `My.Computer.Registry` objekt slouží k vytvoření klíče registru.  
@@ -31,11 +31,11 @@ ms.locfileid: "58835450"
   
 #### <a name="to-create-a-registry-key-and-set-a-value-in-it"></a>Vytvořte klíč registru a nastavit hodnotu v ní  
   
-1.  Použití `CreateSubkey` metoda, která hive umístí klíč v rámci, jakož i název klíče zadáte. Tento příklad vytvoří klíče registru `MyTestKey` HKEY_CURRENT_USER.  
+1. Použití `CreateSubkey` metoda, která hive umístí klíč v rámci, jakož i název klíče zadáte. Tento příklad vytvoří klíče registru `MyTestKey` HKEY_CURRENT_USER.  
   
      [!code-vb[VbResourceTasks#17](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbResourceTasks/VB/Class1.vb#17)]  
   
-2.  Nastavte hodnoty `SetValue` metody. V tomto příkladu nastaví řetězcovou hodnotu. "MyTestKeyValue" na "Toto je testovací hodnota".  
+2. Nastavte hodnoty `SetValue` metody. V tomto příkladu nastaví řetězcovou hodnotu. "MyTestKeyValue" na "Toto je testovací hodnota".  
   
      [!code-vb[VbResourceTasks#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbResourceTasks/VB/Class1.vb#14)]  
   

@@ -2,12 +2,12 @@
 title: Asynchronní návratové typy (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 07890291-ee72-42d3-932a-fa4d312f2c60
-ms.openlocfilehash: 7a8bc3ba98da830c8415284771460a25e0927895
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 227a187f7046d128a7170b272f90f77cfaac61c7
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58838349"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59313278"
 ---
 # <a name="async-return-types-visual-basic"></a>Asynchronní návratové typy (Visual Basic)
 Asynchronní metody mají tři možné návratové typy: <xref:System.Threading.Tasks.Task%601>, <xref:System.Threading.Tasks.Task>a void. V jazyce Visual Basic je návratový typ void napsán jako [Sub](../../../../visual-basic/programming-guide/language-features/procedures/sub-procedures.md) postup. Další informace o metodách async naleznete v tématu [Asynchronní programování pomocí modifikátoru Async a operátoru Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md).  
@@ -150,23 +150,23 @@ End Sub
   
  Spusťte projekt, proveďte následující kroky:  
   
-1.  Spusťte Visual Studio.  
+1. Spusťte Visual Studio.  
   
-2.  V panelu nabídky zvolte **souboru**, **nový**, **projektu**.  
+2. V panelu nabídky zvolte **souboru**, **nový**, **projektu**.  
   
      **Nový projekt** zobrazí se dialogové okno.  
   
-3.  V **nainstalováno**, **šablony** kategorie, zvolte **jazyka Visual Basic**a klikněte na tlačítko **Windows**. Zvolte **aplikace WPF** ze seznamu typů projektů.  
+3. V **nainstalováno**, **šablony** kategorie, zvolte **jazyka Visual Basic**a klikněte na tlačítko **Windows**. Zvolte **aplikace WPF** ze seznamu typů projektů.  
   
-4.  Zadejte `AsyncReturnTypes` jako název projektu a klikněte na tlačítko **OK** tlačítko.  
+4. Zadejte `AsyncReturnTypes` jako název projektu a klikněte na tlačítko **OK** tlačítko.  
   
      Nový projekt se zobrazí v **Průzkumníka řešení**.  
   
-5.  V editoru Visual Studio Code, vyberte **souboru MainWindow.xaml** kartu.  
+5. V editoru Visual Studio Code, vyberte **souboru MainWindow.xaml** kartu.  
   
      Pokud karta není zobrazena, otevřete místní nabídku souboru mainwindow.XAML v **Průzkumníka řešení**a klikněte na tlačítko **otevřete**.  
   
-6.  V **XAML** okno soubor mainwindow.XAML nahraďte kód následujícím kódem.  
+6. V **XAML** okno soubor mainwindow.XAML nahraďte kód následujícím kódem.  
   
     ```vb  
     <Window x:Class="MainWindow"  
@@ -183,9 +183,9 @@ End Sub
   
      Jednoduché okno obsahující textové pole a tlačítko se zobrazí v **návrhu** okna souboru mainwindow.XAML.  
   
-7.  V **Průzkumníka řešení**, otevřete místní nabídku pro soubor MainWindow.xaml.vb a klikněte na tlačítko **zobrazit kód**.  
+7. V **Průzkumníka řešení**, otevřete místní nabídku pro soubor MainWindow.xaml.vb a klikněte na tlačítko **zobrazit kód**.  
   
-8.  Nahraďte kód v souboru MainWindow.xaml.vb následujícím kódem.  
+8. Nahraďte kód v souboru MainWindow.xaml.vb následujícím kódem.  
   
     ```vb  
     Class MainWindow  
@@ -298,4 +298,4 @@ End Sub
 - [Návod: Přístup k webu pomocí modifikátoru Async a operátoru Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)
 - [Tok řízení v asynchronních programech (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/control-flow-in-async-programs.md)
 - [Async](../../../../visual-basic/language-reference/modifiers/async.md)
-- [Operátor Await](../../../../visual-basic/language-reference/operators/await-operator.md)
+- [Await – operátor](../../../../visual-basic/language-reference/operators/await-operator.md)

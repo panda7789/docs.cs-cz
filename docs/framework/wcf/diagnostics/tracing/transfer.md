@@ -2,12 +2,12 @@
 title: Přenos
 ms.date: 03/30/2017
 ms.assetid: dfcfa36c-d3bb-44b4-aa15-1c922c6f73e6
-ms.openlocfilehash: 8263093944cf01a38a49b52d71f7a6e54195a3c3
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 4753ec85c458a0dde3db4a6b7cdad41c69185019
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59145038"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59311016"
 ---
 # <a name="transfer"></a>Přenos
 Toto téma popisuje přenosu v modelu trasování aktivity Windows Communication Foundation (WCF).  
@@ -42,21 +42,21 @@ Toto téma popisuje přenosu v modelu trasování aktivity Windows Communication
 ## <a name="activity-transfer-sequence"></a>Pořadí aktivit přenosu  
  Pořadí přenosu ve správném formátu aktivit zahrnuje následující kroky.  
   
-1.  Začněte novou aktivitu, která se skládá z výběru nového gAId.  
+1. Začněte novou aktivitu, která se skládá z výběru nového gAId.  
   
-2.  Generování trasování přenos do této nové gAId z aktuální ID aktivity  
+2. Generování trasování přenos do této nové gAId z aktuální ID aktivity  
   
-3.  Nastavení nového ID v TLS  
+3. Nastavení nového ID v TLS  
   
-4.  Generuje počáteční trasování označující začátek nové aktivity podle.  
+4. Generuje počáteční trasování označující začátek nové aktivity podle.  
   
-5.  Vrátit se k původní aktivity se skládá z následujících akcí:  
+5. Vrátit se k původní aktivity se skládá z následujících akcí:  
   
-6.  Generování trasování do třídy přenosu původní gAId  
+6. Generování trasování do třídy přenosu původní gAId  
   
-7.  Generování trasování Stop pro označení konce nová aktivita  
+7. Generování trasování Stop pro označení konce nová aktivita  
   
-8.  Nastavte na staré gAId TLS.  
+8. Nastavte na staré gAId TLS.  
   
  Následující příklad kódu ukazuje, jak to provést. Tento příklad předpokládá blokovacího hovoru se provádí při přenosu do novou aktivitu a zahrnuje trasování operací pozastavit/pokračovat.  
   

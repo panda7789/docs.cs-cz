@@ -9,12 +9,12 @@ helpviewer_keywords:
 - WCF, authorization
 - WCF, security
 ms.assetid: 5162f5c4-8781-4cc4-9425-bb7620eaeaf4
-ms.openlocfilehash: 2bbdcc8e5a55f9d2cdbb80bf83443f0ad8850452
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: ae2aa4c5629096ee7d888e7c4e334c3b6696db3f
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59105284"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59323314"
 ---
 # <a name="how-to-restrict-access-with-the-principalpermissionattribute-class"></a>Postupy: Omezení přístupu pomocí třídy PrincipalPermissionAttribute
 Řízení přístupu k prostředkům v počítači domény Windows je úloha základní zabezpečení. Například pouze určití uživatelé by měl moct prohlížet citlivá data, jako je například mzdové informace. Toto téma vysvětluje, jak omezit přístup k metodě tak náročné, do které uživatel patří do předdefinované skupiny. Pracovní ukázku najdete v tématu [autorizace přístupu k operacím služby](../../../docs/framework/wcf/samples/authorizing-access-to-service-operations.md).  
@@ -23,25 +23,25 @@ ms.locfileid: "59105284"
   
 ### <a name="to-create-a-windows-group"></a>Vytvoření skupiny Windows  
   
-1.  Otevřít **Správa počítače** konzoly.  
+1. Otevřít **Správa počítače** konzoly.  
   
-2.  Na levém panelu klikněte na tlačítko **místní uživatelé a skupiny**.  
+2. Na levém panelu klikněte na tlačítko **místní uživatelé a skupiny**.  
   
-3.  Klikněte pravým tlačítkem na **skupiny**a klikněte na tlačítko **nová skupina**.  
+3. Klikněte pravým tlačítkem na **skupiny**a klikněte na tlačítko **nová skupina**.  
   
-4.  V **název skupiny** zadejte název nové skupiny.  
+4. V **název skupiny** zadejte název nové skupiny.  
   
-5.  V **popis** zadejte popis nové skupiny.  
+5. V **popis** zadejte popis nové skupiny.  
   
-6.  Klikněte na tlačítko **přidat** tlačítko pro přidání nových členů do skupiny.  
+6. Klikněte na tlačítko **přidat** tlačítko pro přidání nových členů do skupiny.  
   
-7.  Pokud sami přidali do skupiny a chcete ho testovat následující kód, musíte počítač odhlásit a znovu přihlásit, aby se součástí skupiny.  
+7. Pokud sami přidali do skupiny a chcete ho testovat následující kód, musíte počítač odhlásit a znovu přihlásit, aby se součástí skupiny.  
   
 ### <a name="to-demand-user-membership"></a>Na vyžádání členství uživatelů  
   
-1.  Otevřete soubor kódu služby Windows Communication Foundation (WCF), která obsahuje kód kontraktu služby implementované. Další informace o implementaci kontraktu a najdete v tématu [implementace kontraktů služeb](../../../docs/framework/wcf/implementing-service-contracts.md).  
+1. Otevřete soubor kódu služby Windows Communication Foundation (WCF), která obsahuje kód kontraktu služby implementované. Další informace o implementaci kontraktu a najdete v tématu [implementace kontraktů služeb](../../../docs/framework/wcf/implementing-service-contracts.md).  
   
-2.  Použít <xref:System.Security.Permissions.PrincipalPermissionAttribute> atribut pro každou metodu, která musí být omezeno na konkrétní skupinu. Nastavte <xref:System.Security.Permissions.SecurityAttribute.Action%2A> vlastnost <xref:System.Security.Permissions.SecurityAction.Demand> a <xref:System.Security.Permissions.PrincipalPermissionAttribute.Role%2A> nastavte název skupiny. Příklad:  
+2. Použít <xref:System.Security.Permissions.PrincipalPermissionAttribute> atribut pro každou metodu, která musí být omezeno na konkrétní skupinu. Nastavte <xref:System.Security.Permissions.SecurityAttribute.Action%2A> vlastnost <xref:System.Security.Permissions.SecurityAction.Demand> a <xref:System.Security.Permissions.PrincipalPermissionAttribute.Role%2A> nastavte název skupiny. Příklad:  
   
      [!code-csharp[c_PrincipalPermissionAttribute#1](../../../samples/snippets/csharp/VS_Snippets_CFX/c_principalpermissionattribute/cs/source.cs#1)]
      [!code-vb[c_PrincipalPermissionAttribute#1](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_principalpermissionattribute/vb/source.vb#1)]  
@@ -56,16 +56,16 @@ ms.locfileid: "59105284"
   
 #### <a name="to-control-access-using-a-certificate"></a>Řízení přístupu k použití certifikátu  
   
-1.  Použít <xref:System.Security.Permissions.PrincipalPermissionAttribute> třídy chcete omezit přístup k metodě.  
+1. Použít <xref:System.Security.Permissions.PrincipalPermissionAttribute> třídy chcete omezit přístup k metodě.  
   
-2.  Nastavte akci atribut, který chcete <xref:System.Security.Permissions.SecurityAction.Demand?displayProperty=nameWithType>.  
+2. Nastavte akci atribut, který chcete <xref:System.Security.Permissions.SecurityAction.Demand?displayProperty=nameWithType>.  
   
-3.  Nastavte `Name` nastavte na řetězec, který se skládá z názvu předmětu a kryptografický otisk certifikátu. Oddělení dvě hodnoty středník a mezeru, jak je znázorněno v následujícím příkladu:  
+3. Nastavte `Name` nastavte na řetězec, který se skládá z názvu předmětu a kryptografický otisk certifikátu. Oddělení dvě hodnoty středník a mezeru, jak je znázorněno v následujícím příkladu:  
   
      [!code-csharp[c_PrincipalPermissionAttribute#2](../../../samples/snippets/csharp/VS_Snippets_CFX/c_principalpermissionattribute/cs/source.cs#2)]
      [!code-vb[c_PrincipalPermissionAttribute#2](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_principalpermissionattribute/vb/source.vb#2)]  
   
-4.  Nastavte <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior.PrincipalPermissionMode%2A> vlastnost <xref:System.ServiceModel.Description.PrincipalPermissionMode.UseAspNetRoles> jak je znázorněno v následujícím příkladu konfigurace:  
+4. Nastavte <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior.PrincipalPermissionMode%2A> vlastnost <xref:System.ServiceModel.Description.PrincipalPermissionMode.UseAspNetRoles> jak je znázorněno v následujícím příkladu konfigurace:  
   
     ```xml  
     <behaviors>  

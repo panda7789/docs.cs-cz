@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Shared
 - BC30369
 ms.assetid: 39d9466b-c1f3-4406-91a5-3d6c52d23a3d
-ms.openlocfilehash: fc54bbf8053c07cc3b48a762b6f1c60344de9921
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: aad068b5857eb956ded63fa2a57cb163d3cf5c58
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58822567"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59322690"
 ---
 # <a name="cannot-refer-to-an-instance-member-of-a-class-from-within-a-shared-method-or-shared-member-initializer-without-an-explicit-instance-of-the-class"></a>V rámci sdílené metody nebo inicializační procedury sdíleného člena nelze odkazovat na instanci členu, aniž by byla k dispozici explicitní instance třídy.
 Pokusili jste se odkazovat na nesdílený člen třídy z v rámci sdílené procedury. Následující příklad ukazuje takovou situaci.  
@@ -37,11 +37,11 @@ End Class
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1.  Rozhodněte, jestli chcete, aby člen sdílí mezi všemi instancemi třídy, nebo se uchovávají jednotlivé pro každou instanci.  
+1. Rozhodněte, jestli chcete, aby člen sdílí mezi všemi instancemi třídy, nebo se uchovávají jednotlivé pro každou instanci.  
   
-2.  Pokud chcete jednu kopii členu, který chcete sdílet mezi všemi instancemi, přidejte `Shared` – klíčové slovo do deklarace člena. Zachovat `Shared` – klíčové slovo v deklaraci procedury.  
+2. Pokud chcete jednu kopii členu, který chcete sdílet mezi všemi instancemi, přidejte `Shared` – klíčové slovo do deklarace člena. Zachovat `Shared` – klíčové slovo v deklaraci procedury.  
   
-3.  Pokud chcete, aby každá instance má svůj vlastní jednotlivá kopie člena, nezadávejte `Shared` pro deklarace člena. Odeberte `Shared` – klíčové slovo z deklarace procedury.  
+3. Pokud chcete, aby každá instance má svůj vlastní jednotlivá kopie člena, nezadávejte `Shared` pro deklarace člena. Odeberte `Shared` – klíčové slovo z deklarace procedury.  
   
 ## <a name="see-also"></a>Viz také:
 

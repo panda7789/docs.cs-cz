@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - COM+ [WCF], using service model configuration tool
 ms.assetid: 7e68cd8d-5fda-4641-b92f-290db874376e
-ms.openlocfilehash: 0dc126cf6528504cacd18ae29c31541833ddb5f8
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 5b330a727c0a4a20de13f43fd2844d0b745e5060
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59196889"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59322586"
 ---
 # <a name="how-to-use-the-com-service-model-configuration-tool"></a>Postupy: Použití nástroje pro konfiguraci modelu služby COM+
 Jakmile vyberete příslušné hostující režim, použijte nástroj příkazového řádku konfiguraci modelu služby COM + (ComSvcConfig.exe) ke konfiguraci rozhraní aplikací, které se zveřejní jako webové služby.  
@@ -19,11 +19,11 @@ Jakmile vyberete příslušné hostující režim, použijte nástroj příkazov
   
  Při použití ComSvcConfig.exe konfigurovat webovou službu, která používá nejnovější verze modelu služby (aktuálně v4.5) na počítači s Windows 7, proveďte následující kroky:  
   
-1.  Nastavte klíč registru `[HKEY_LOCAL_COMPUTER\SOFTWARE\Microsoft\.NETFramework]\OnlyUseLatestCLR` na hodnotu DWORD 0x00000001  
+1. Nastavte klíč registru `[HKEY_LOCAL_COMPUTER\SOFTWARE\Microsoft\.NETFramework]\OnlyUseLatestCLR` na hodnotu DWORD 0x00000001  
   
-2.  Spustit comsvcconfig.exe  
+2. Spustit comsvcconfig.exe  
   
-3.  Vrátit přidali v kroku 1 zpět na původní hodnotu klíče registru nebo odstranit, pokud neexistuje.  
+3. Vrátit přidali v kroku 1 zpět na původní hodnotu klíče registru nebo odstranit, pokud neexistuje.  
   
 > [!IMPORTANT]
 >  Při vrácení tohoto klíče registru je důležité. Toto je kompatibility klíče. Není při vrácení této změny může způsobit problémy s jinými aplikacemi .NET na počítači spuštěná).  

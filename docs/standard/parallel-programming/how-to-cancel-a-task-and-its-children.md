@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Zrušení úlohy a jejích potomků'
+title: 'Postupy: Zrušení úlohy a podřízených elementů'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -10,23 +10,23 @@ helpviewer_keywords:
 ms.assetid: 08574301-8331-4719-ad50-9cf7f6ff3048
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ed3129364d73d196b2e25b962b8c42325a144dfd
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 08e5712db60fb09b48d6be9f35737c9a884d1ce8
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54642828"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59324471"
 ---
-# <a name="how-to-cancel-a-task-and-its-children"></a>Postupy: Zrušení úlohy a jejích potomků
+# <a name="how-to-cancel-a-task-and-its-children"></a>Postupy: Zrušení úlohy a podřízených elementů
 Tyto příklady znázorňují, jak provádět následující úkoly:  
   
-1.  Vytvořit a spustit zrušitelný úkol.  
+1. Vytvořit a spustit zrušitelný úkol.  
   
-2.  Předat token zrušení do uživatelského delegáta a volitelně do instance úlohy.  
+2. Předat token zrušení do uživatelského delegáta a volitelně do instance úlohy.  
   
-3.  Zaznamenat a odpovědět na požadavek na zrušení v uživatelském delegátu.  
+3. Zaznamenat a odpovědět na požadavek na zrušení v uživatelském delegátu.  
   
-4.  Volitelně oznámit na volajícím vlákně, že byl úkol zrušen.  
+4. Volitelně oznámit na volajícím vlákně, že byl úkol zrušen.  
   
  Volající vlákno nevynucuje ukončení úkolu, ale pouze signalizuje, že je požadováno zrušení. Pokud je úkol již spuštěn, musí žádost oznámit a přiměřeně na ni zareagovat uživatelský delegát. Pokud je zrušení požadováno před spuštěním úlohy, není uživatelský delegát nikdy spuštěn a objekt úlohy přejde do stavu Zrušeno.  
   

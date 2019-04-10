@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: ccd68284-f3a8-47b8-bc3f-92e5fe3a1640
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 036744362c414fe51c919b59c693d447c92a87c9
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 9d50ece4b800b77ac0447d1f22f1929f5a38a7d9
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59141385"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59306388"
 ---
 # <a name="runtime-profiling"></a>Běhová profilace
 Profilace je metoda shromažďování dat výkonu ve všech scénářích vývoj nebo nasazení. Tato část se týká vývojáři a správci systému, kteří chtějí získat informace o výkonu aplikace.  
@@ -28,19 +28,19 @@ Profilace je metoda shromažďování dat výkonu ve všech scénářích vývoj
   
 #### <a name="to-run-perfmonexe-on-windows-vista-and-later-versions"></a>Ke spuštění Perfmon.exe ve Windows Vista a novějších verzích  
   
-1.  Na příkazovém řádku zadejte **perfmon**. **Sledování výkonu** konzoly se zobrazí.  
+1. Na příkazovém řádku zadejte **perfmon**. **Sledování výkonu** konzoly se zobrazí.  
   
-2.  V **nástroje pro sledování** složky, klikněte na tlačítko **sledování výkonu**.  
+2. V **nástroje pro sledování** složky, klikněte na tlačítko **sledování výkonu**.  
   
-3.  Na panelu nástrojů nástroje Sledování výkonu, klepněte **přidat** ikonu (znaménko plus), pokud je k dispozici. Pokud tam není, klikněte pravým tlačítkem v okně Sledování a vyberte **přidat čítače** možnost.  
+3. Na panelu nástrojů nástroje Sledování výkonu, klepněte **přidat** ikonu (znaménko plus), pokud je k dispozici. Pokud tam není, klikněte pravým tlačítkem v okně Sledování a vyberte **přidat čítače** možnost.  
   
      Tím se otevře **přidat čítače** dialogové okno. **Dostupné čítače** seznamu se zobrazí objekty výkonu k dispozici. Existuje mnoho předdefinovaných objektů pro aplikace .NET Framework, včetně těch, které pro správu paměti (**paměť .NET CLR**), vzájemná funkční spolupráce (**spolupráce .NET CLR**), zpracování výjimek (**Výjimky .NET CLR**) a multithreading (**uzamčení a vlákna .NET CLR**). Každý objekt sledování výkonu zahrnuje celou řadou jednotlivé čítače. Seznam dostupných v nástroji Sledování výkonu čítačů výkonu najdete v tématu [čítače výkonu](../../../docs/framework/debug-trace-profile/performance-counters.md).  
   
-4.  Zaškrtněte políčko vedle názvu objekt sledování výkonu a zobrazit seznam jednotlivé čítače, které podporuje.  
+4. Zaškrtněte políčko vedle názvu objekt sledování výkonu a zobrazit seznam jednotlivé čítače, které podporuje.  
   
-5.  Klikněte na čítač výkonu, které chcete zobrazit.  
+5. Klikněte na čítač výkonu, které chcete zobrazit.  
   
-6.  V **výskyty vybraný objekt** seznamu, klikněte na tlačítko  **\<všechny instance >** k určení, že chcete globálně monitorování čítače výkonu pro modul common language runtime (to znamená na celého systému).  
+6. V **výskyty vybraný objekt** seznamu, klikněte na tlačítko  **\<všechny instance >** k určení, že chcete globálně monitorování čítače výkonu pro modul common language runtime (to znamená na celého systému).  
   
      -nebo-  
   

@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3889e48019f30f93a9eaa677de26445dbcc33d80
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 13bf7342157de48e0183537afea2f2e53d1498dd
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59198800"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59300304"
 ---
 # <a name="iclrtaskreset-method"></a>ICLRTask::Reset – metoda
 Informuje o tom common language runtime (CLR), že byla dokončena úloha hostitele a umožňuje modulu CLR pro opětovné použití aktuální [iclrtask –](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md) instance k reprezentování jiného úkolu.  
@@ -55,15 +55,15 @@ HRESULT Reset (
 ## <a name="remarks"></a>Poznámky  
  Modul CLR recykluje dříve vytvořili `ICLRTask` instancí, aby režijní náklady na opakované vytváření nové instance pokaždé, když potřebuje novou úlohu. Hostitele povolí tuto funkci voláním `ICLRTask::Reset` místo [iclrtask::exittask –](../../../../docs/framework/unmanaged-api/hosting/iclrtask-exittask-method.md) po jeho dokončení úkolu. Následující seznam shrnuje běžné životní cyklus `ICLRTask` instance:  
   
-1.  Vytvoří nový modul runtime `ICLRTask` instance.  
+1. Vytvoří nový modul runtime `ICLRTask` instance.  
   
-2.  Modul runtime zavolá [ihosttaskmanager::getcurrenttask –](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-getcurrenttask-method.md) získat odkaz na aktuální úlohu na hostiteli.  
+2. Modul runtime zavolá [ihosttaskmanager::getcurrenttask –](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-getcurrenttask-method.md) získat odkaz na aktuální úlohu na hostiteli.  
   
-3.  Modul runtime zavolá [ihosttask::setclrtask –](../../../../docs/framework/unmanaged-api/hosting/ihosttask-setclrtask-method.md) přidružit nové instance hostitele úloh.  
+3. Modul runtime zavolá [ihosttask::setclrtask –](../../../../docs/framework/unmanaged-api/hosting/ihosttask-setclrtask-method.md) přidružit nové instance hostitele úloh.  
   
-4.  Úloha spustí a dokončí.  
+4. Úloha spustí a dokončí.  
   
-5.  Hostitele odstraní úlohu voláním `ICLRTask::ExitTask`.  
+5. Hostitele odstraní úlohu voláním `ICLRTask::ExitTask`.  
   
  `Reset` upravuje tento scénář dvěma způsoby. V kroku 5 výše volání hostitele `Reset` resetovat úlohy do čistého stavu a potom odpojí `ICLRTask` instanci z jeho přidruženého [ihosttask –](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md) instance. V případě potřeby hostitele lze také ukládat do mezipaměti `IHostTask` instance pro opakované použití. V kroku 1 výše, modul runtime si vyžádá recyklovat `ICLRTask` z mezipaměti místo vytvoření nové instance.  
   

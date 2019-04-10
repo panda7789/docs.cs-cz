@@ -2,12 +2,12 @@
 title: 'Postupy: Určení zabezpečovacích pověření kanálu'
 ms.date: 03/30/2017
 ms.assetid: f8e03f47-9c4f-4dd5-8f85-429e6d876119
-ms.openlocfilehash: 761f461c1c0cb24901729a717a41bfb1b599112b
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 0bfbb71ade3822b9f504c2f89a41145ce0d435f6
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59222598"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59297977"
 ---
 # <a name="how-to-specify-channel-security-credentials"></a>Postupy: Určení zabezpečovacích pověření kanálu
 Monikeru služby Windows Communication Foundation (WCF) umožňuje aplikace modelu COM pro volání služeb WCF. Většina služeb WCF vyžaduje klienta a zadejte přihlašovací údaje pro ověřování a autorizaci. Při volání služby WCF z klienta WCF, můžete zadat tyto přihlašovací údaje ve spravovaném kódu nebo konfiguračního souboru aplikace. Při volání služby WCF z aplikace COM, můžete použít <xref:System.ServiceModel.ComIntegration.IChannelCredentials> rozhraní a zadat přihlašovací údaje. Toto téma popisuje různé způsoby, jak zadat přihlašovací údaje pomocí <xref:System.ServiceModel.ComIntegration.IChannelCredentials> rozhraní.  
@@ -19,17 +19,17 @@ Monikeru služby Windows Communication Foundation (WCF) umožňuje aplikace mode
   
 ### <a name="to-specify-a-client-certificate"></a>K zadání klientského certifikátu  
   
-1.  Spusťte soubor Setup.bat v adresáři zabezpečení zpráv a vytvořte a nainstalujte požadované testovací certifikáty.  
+1. Spusťte soubor Setup.bat v adresáři zabezpečení zpráv a vytvořte a nainstalujte požadované testovací certifikáty.  
   
-2.  Otevřete projekt zabezpečení zpráv.  
+2. Otevřete projekt zabezpečení zpráv.  
   
-3.  Přidat `[ServiceBehavior(Namespace="http://Microsoft.ServiceModel.Samples")]` k `ICalculator` definici rozhraní.  
+3. Přidat `[ServiceBehavior(Namespace="http://Microsoft.ServiceModel.Samples")]` k `ICalculator` definici rozhraní.  
   
-4.  Přidat `bindingNamespace="http://Microsoft.ServiceModel.Samples"` ke značce koncového bodu v souboru App.config pro službu.  
+4. Přidat `bindingNamespace="http://Microsoft.ServiceModel.Samples"` ke značce koncového bodu v souboru App.config pro službu.  
   
-5.  Ukázka zabezpečení zpráv sestavíte a spustíte Service.exe. Pomocí aplikace Internet Explorer a přejděte na identifikátor URI služby (http://localhost:8000/ServiceModelSamples/Service) zajistit, služba funguje.  
+5. Ukázka zabezpečení zpráv sestavíte a spustíte Service.exe. Pomocí aplikace Internet Explorer a přejděte na identifikátor URI služby (http://localhost:8000/ServiceModelSamples/Service) zajistit, služba funguje.  
   
-6.  Otevřete Visual Basic 6.0 a vytvořte nový soubor standardní .exe. Přidání tlačítka do formuláře a dvakrát klikněte na tlačítko Přidat následující kód do obslužné rutiny kliknutí:  
+6. Otevřete Visual Basic 6.0 a vytvořte nový soubor standardní .exe. Přidání tlačítka do formuláře a dvakrát klikněte na tlačítko Přidat následující kód do obslužné rutiny kliknutí:  
   
     ```  
         monString = "service:mexAddress=http://localhost:8000/ServiceModelSamples/Service?wsdl"  
@@ -48,7 +48,7 @@ Monikeru služby Windows Communication Foundation (WCF) umožňuje aplikace mode
         MsgBox monikerProxy.Add(3, 4)  
     ```  
   
-7.  Spuštění aplikace Visual Basic a ověřte výsledky.  
+7. Spuštění aplikace Visual Basic a ověřte výsledky.  
   
      Aplikace Visual Basic zobrazí okno se zprávou s výsledkem volání přidat (3, 4). <xref:System.ServiceModel.ComIntegration.IChannelCredentials.SetClientCertificateFromFile%28System.String%2CSystem.String%2CSystem.String%29> nebo <xref:System.ServiceModel.ComIntegration.IChannelCredentials.SetClientCertificateFromStoreByName%28System.String%2CSystem.String%2CSystem.String%29> je také možné místo <xref:System.ServiceModel.ComIntegration.IChannelCredentials.SetClientCertificateFromStore%28System.String%2CSystem.String%2CSystem.String%2CSystem.Object%29> nastavit certifikát klienta:  
   
@@ -64,11 +64,11 @@ Monikeru služby Windows Communication Foundation (WCF) umožňuje aplikace mode
   
 ### <a name="to-specify-user-name-and-password"></a>K zadání uživatelského jména a hesla  
   
-1.  Upravte soubor App.config služba používat `wsHttpBinding`. To je potřeba pro ověřování uživatelského jména a hesla:  
+1. Upravte soubor App.config služba používat `wsHttpBinding`. To je potřeba pro ověřování uživatelského jména a hesla:  
 
-2.  Nastavte `clientCredentialType` na uživatelské jméno:  
+2. Nastavte `clientCredentialType` na uživatelské jméno:  
 
-3.  Otevřete Visual Basic 6.0 a vytvořte nový soubor standardní .exe. Přidání tlačítka do formuláře a dvakrát klikněte na tlačítko Přidat následující kód do obslužné rutiny kliknutí:  
+3. Otevřete Visual Basic 6.0 a vytvořte nový soubor standardní .exe. Přidání tlačítka do formuláře a dvakrát klikněte na tlačítko Přidat následující kód do obslužné rutiny kliknutí:  
   
     ```  
     monString = "service:mexAddress=http://localhost:8000/ServiceModelSamples/Service?wsdl"  
@@ -84,16 +84,16 @@ Monikeru služby Windows Communication Foundation (WCF) umožňuje aplikace mode
     MsgBox monikerProxy.Add(3, 4)  
     ```  
   
-4.  Spuštění aplikace Visual Basic a ověřte výsledky. Aplikace Visual Basic zobrazí okno se zprávou s výsledkem volání přidat (3, 4).  
+4. Spuštění aplikace Visual Basic a ověřte výsledky. Aplikace Visual Basic zobrazí okno se zprávou s výsledkem volání přidat (3, 4).  
   
     > [!NOTE]
     >  Vazby určené v monikeru služby v této ukázce se změnil na WSHttpBinding_ICalculator. Všimněte si také, že musíte zadat platné uživatelské jméno a heslo při volání funkce <xref:System.ServiceModel.ComIntegration.IChannelCredentials.SetUserNameCredential%28System.String%2CSystem.String%29>.  
   
 ### <a name="to-specify-windows-credentials"></a>K zadání přihlašovacích údajů Windows  
   
-1.  Nastavte `clientCredentialType` pro Windows v souboru App.config služby:  
+1. Nastavte `clientCredentialType` pro Windows v souboru App.config služby:  
 
-2.  Otevřete Visual Basic 6.0 a vytvořte nový soubor standardní .exe. Přidání tlačítka do formuláře a dvakrát klikněte na tlačítko Přidat následující kód do obslužné rutiny kliknutí:  
+2. Otevřete Visual Basic 6.0 a vytvořte nový soubor standardní .exe. Přidání tlačítka do formuláře a dvakrát klikněte na tlačítko Přidat následující kód do obslužné rutiny kliknutí:  
   
     ```  
     monString = "service:mexAddress=http://localhost:8000/ServiceModelSamples/Service?wsdl"  
@@ -108,14 +108,14 @@ Monikeru služby Windows Communication Foundation (WCF) umožňuje aplikace mode
     MsgBox monikerProxy.Add(3, 4)  
     ```  
   
-3.  Spuštění aplikace Visual Basic a ověřte výsledky. Aplikace Visual Basic zobrazí okno se zprávou s výsledkem volání přidat (3, 4).  
+3. Spuštění aplikace Visual Basic a ověřte výsledky. Aplikace Visual Basic zobrazí okno se zprávou s výsledkem volání přidat (3, 4).  
   
     > [!NOTE]
     >  Platné hodnoty musí nahradit "domény", "userID" a "password".  
   
 ### <a name="to-specify-an-issue-token"></a>K určení tokenu problém  
   
-1.  Tokeny problém se používají pouze pro aplikace pomocí federovaného zabezpečení. Další informace o zabezpečení najdete v tématu [federace a vydané tokeny](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md) a [ukázka federace](../../../../docs/framework/wcf/samples/federation-sample.md).  
+1. Tokeny problém se používají pouze pro aplikace pomocí federovaného zabezpečení. Další informace o zabezpečení najdete v tématu [federace a vydané tokeny](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md) a [ukázka federace](../../../../docs/framework/wcf/samples/federation-sample.md).  
   
      Následující příklad kódu jazyka Visual Basic, ukazuje, jak volat <xref:System.ServiceModel.ComIntegration.IChannelCredentials.SetIssuedToken%28System.String%2CSystem.String%2CSystem.String%29> metody:  
   

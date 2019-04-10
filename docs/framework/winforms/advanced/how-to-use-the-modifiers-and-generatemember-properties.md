@@ -15,12 +15,12 @@ helpviewer_keywords:
 - form inheritance
 - Windows Forms, inheritance
 ms.assetid: 3381a5e4-e1a3-44e2-a765-a0b758937b85
-ms.openlocfilehash: 612d323305c2dbd4698c6d687fb19ec36983bde4
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 6194ef288bd43267c2b00fa6d7c6250e90b37c75
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59143907"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59322638"
 ---
 # <a name="how-to-use-the-modifiers-and-generatemember-properties"></a>Postupy: Používání modifikátorů a vlastností GenerateMember
 Umístíte-li komponenta ve formuláři Windows Forms, podle návrhu prostředí jsou k dispozici dvě vlastnosti: `GenerateMember` a `Modifiers`. `GenerateMember` Vlastnost určuje, když Návrhář formulářů Windows generuje členské proměnné pro komponentu. `Modifiers` Vlastnost je modifikátor přístupu, které jsou přiřazeny k této členské proměnné. Pokud hodnota `GenerateMember` vlastnost `false`, hodnota `Modifiers` vlastnost nemá žádný vliv.  
@@ -30,11 +30,11 @@ Umístíte-li komponenta ve formuláři Windows Forms, podle návrhu prostředí
   
 ### <a name="to-specify-whether-a-component-is-a-member-of-the-form"></a>Chcete-li určit, zda je součást člena ve tvaru  
   
-1.  V Návrháři formulářů Windows otevřete formulář.  
+1. V Návrháři formulářů Windows otevřete formulář.  
   
-2.  Otevřít **nástrojů**a ve formuláři, umístěte tři <xref:System.Windows.Forms.Button> ovládacích prvků.  
+2. Otevřít **nástrojů**a ve formuláři, umístěte tři <xref:System.Windows.Forms.Button> ovládacích prvků.  
   
-3.  Nastavte `GenerateMember` a `Modifiers` vlastnosti pro každý <xref:System.Windows.Forms.Button> ovládací prvek podle následující tabulky.  
+3. Nastavte `GenerateMember` a `Modifiers` vlastnosti pro každý <xref:System.Windows.Forms.Button> ovládací prvek podle následující tabulky.  
   
     |Název tlačítka|Generatemember – hodnota|Modifikátory hodnota|  
     |-----------------|--------------------------|---------------------|  
@@ -42,13 +42,13 @@ Umístíte-li komponenta ve formuláři Windows Forms, podle návrhu prostředí
     |`button2`|`true`|`protected`|  
     |`button3`|`false`|Žádné změny|  
   
-4.  Sestavte řešení.  
+4. Sestavte řešení.  
   
-5.  V **Průzkumníka řešení**, klikněte na tlačítko **zobrazit všechny soubory** tlačítko.  
+5. V **Průzkumníka řešení**, klikněte na tlačítko **zobrazit všechny soubory** tlačítko.  
   
-6.  Otevřete **Form1** uzel a **Editor kódu**, otevřete **Form1.Designer.vb** nebo **Form1.Designer.cs** souboru. Tento soubor obsahuje kód, protože ho vygeneroval Návrhář formulářů Windows.  
+6. Otevřete **Form1** uzel a **Editor kódu**, otevřete **Form1.Designer.vb** nebo **Form1.Designer.cs** souboru. Tento soubor obsahuje kód, protože ho vygeneroval Návrhář formulářů Windows.  
   
-7.  Najdete deklarace pro tři tlačítka. Následující příklad kódu ukazuje rozdíly určené `GenerateMember` a `Modifiers` vlastnosti.  
+7. Najdete deklarace pro tři tlačítka. Následující příklad kódu ukazuje rozdíly určené `GenerateMember` a `Modifiers` vlastnosti.  
   
      [!code-csharp[System.Windows.Forms.GenerateMember#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.GenerateMember/CS/Form1.cs#3)]
      [!code-vb[System.Windows.Forms.GenerateMember#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.GenerateMember/VB/Form1.vb#3)]  

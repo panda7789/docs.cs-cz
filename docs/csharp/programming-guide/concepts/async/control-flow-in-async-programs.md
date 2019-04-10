@@ -2,12 +2,12 @@
 title: Tok řízení v asynchronních programech (C#)
 ms.date: 07/20/2015
 ms.assetid: fc92b08b-fe1d-4d07-84ab-5192fafe06bb
-ms.openlocfilehash: 45d349fa131daf3fdf39d29d53d8ec236c79f81f
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 6a7b8f3f41b2096e3e7524d03217bdc123f26f10
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53150599"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59326200"
 ---
 # <a name="control-flow-in-async-programs-c"></a>Tok řízení v asynchronních programech (C#)
 
@@ -99,11 +99,11 @@ Kód, který se používá v tomto tématu si můžete stáhnout z webu MSDN neb
 
 Můžete stáhnout aplikaci pro toto téma z [asynchronní vzorek: Řízení toku v asynchronních programech](https://code.msdn.microsoft.com/Async-Sample-Control-Flow-5c804fc0). Následující postup otevře a spustí program.
 
-1.  Rozbalte stažený soubor a poté spusťte Visual Studio.
+1. Rozbalte stažený soubor a poté spusťte Visual Studio.
 
-2.  V panelu nabídky zvolte **souboru** > **otevřít** > **projekt či řešení**.
+2. V panelu nabídky zvolte **souboru** > **otevřít** > **projekt či řešení**.
 
-3.  Přejděte do složky obsahující dekomprimovaný ukázkový kód, otevřete soubor řešení (.sln) a klikněte na tlačítko **F5** klíče pro sestavení a spuštění projektu.
+3. Přejděte do složky obsahující dekomprimovaný ukázkový kód, otevřete soubor řešení (.sln) a klikněte na tlačítko **F5** klíče pro sestavení a spuštění projektu.
 
 ### <a name="create-the-program-yourself"></a>Vytvoření programu
 
@@ -111,23 +111,23 @@ Následující projekt Windows Presentation Foundation (WPF) obsahuje příklad 
 
 Spusťte projekt, proveďte následující kroky:
 
-1.  Spusťte Visual Studio.
+1. Spusťte Visual Studio.
 
-2.  V panelu nabídky zvolte **souboru** > **nový** > **projektu**.
+2. V panelu nabídky zvolte **souboru** > **nový** > **projektu**.
 
      **Nový projekt** zobrazí se dialogové okno.
 
-3.  Zvolte **nainstalováno** > **Visual C#** > **Windows Desktop** kategorie a klikněte na tlačítko **aplikace WPF** ze seznamu šablon projektu.
+3. Zvolte **nainstalováno** > **Visual C#** > **Windows Desktop** kategorie a klikněte na tlačítko **aplikace WPF** ze seznamu šablon projektu.
 
-4.  Zadejte `AsyncTracer` jako název projektu a klikněte na tlačítko **OK** tlačítko.
+4. Zadejte `AsyncTracer` jako název projektu a klikněte na tlačítko **OK** tlačítko.
 
      Nový projekt se zobrazí v **Průzkumníka řešení**.
 
-5.  V editoru Visual Studio Code, vyberte **souboru MainWindow.xaml** kartu.
+5. V editoru Visual Studio Code, vyberte **souboru MainWindow.xaml** kartu.
 
      Pokud karta není zobrazena, otevřete místní nabídku souboru mainwindow.XAML v **Průzkumníka řešení**a klikněte na tlačítko **zobrazit kód**.
 
-6.  V **XAML** zobrazení souboru mainwindow.XAML, nahraďte kód následujícím kódem.
+6. V **XAML** zobrazení souboru mainwindow.XAML, nahraďte kód následujícím kódem.
 
     ```csharp
     <Window
@@ -145,9 +145,9 @@ Spusťte projekt, proveďte následující kroky:
 
      Jednoduché okno obsahující textové pole a tlačítko se zobrazí v **návrhu** zobrazení souboru MainWindow.xaml.
 
-7.  Přidat odkaz pro <xref:System.Net.Http>.
+7. Přidat odkaz pro <xref:System.Net.Http>.
 
-8.  V **Průzkumníka řešení**, otevřete místní nabídku pro MainWindow.xaml.cs a pak zvolte **zobrazit kód**.
+8. V **Průzkumníka řešení**, otevřete místní nabídku pro MainWindow.xaml.cs a pak zvolte **zobrazit kód**.
 
 9. V MainWindow.xaml.cs nahraďte kód následujícím kódem.
 
@@ -383,7 +383,7 @@ int contentLength = await getLengthTask;
 
  Následující obrázek znázorňuje návrat ovládacího prvku z `AccessTheWebAsync` k `startButton_Click`.
 
- ![Krok 6](../../../../csharp/programming-guide/concepts/async/media/asynctrace-six.png "AsyncTrace šest")
+ ![Step SIX](../../../../csharp/programming-guide/concepts/async/media/asynctrace-six.png "AsyncTrace-SIX")
 
 ## <a name="see-also"></a>Viz také:
 

@@ -2,12 +2,12 @@
 title: Zrušení zbývajících asynchronních úloh po jedné z nich kompletní (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: c928b5a1-622f-4441-8baf-adca1dde197f
-ms.openlocfilehash: 0edcc969caaeae46240f048e76fbe153041873e6
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5dd9a99b96dc1e599fc2bde3a796beadf33f8147
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54645805"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59324510"
 ---
 # <a name="cancel-remaining-async-tasks-after-one-is-complete-visual-basic"></a>Zrušení zbývajících asynchronních úloh po jedné z nich kompletní (Visual Basic)
 S použitím <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType> metoda spolu s <xref:System.Threading.CancellationToken>, můžete po dokončení jednoho úkolu zrušit všechny zbývající úkoly. `WhenAny` Metoda přebírá argument, který je kolekce úkolů. Metoda spustí všechny úlohy a vrátí jeden úkol. Jedna úloha je dokončena po dokončení libovolné úlohy v kolekci.  
@@ -20,19 +20,19 @@ S použitím <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWi
 ## <a name="downloading-the-example"></a>Stažení příkladu  
  Můžete si stáhnout kompletní projekt Windows Presentation Foundation (WPF) z [asynchronní vzorek: Jemné ladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea) a pak postupujte podle těchto kroků.  
   
-1.  Dekomprimujte soubor, který jste stáhli a poté spusťte Visual Studio.  
+1. Dekomprimujte soubor, který jste stáhli a poté spusťte Visual Studio.  
   
-2.  V panelu nabídky zvolte **souboru**, **otevřít**, **projekt či řešení**.  
+2. V panelu nabídky zvolte **souboru**, **otevřít**, **projekt či řešení**.  
   
-3.  V **otevřít projekt** dialogové okno, otevřete složku, která obsahuje ukázkový kód, který jste dekomprimovali a potom otevřete soubor řešení (.sln) pro AsyncFineTuningVB.  
+3. V **otevřít projekt** dialogové okno, otevřete složku, která obsahuje ukázkový kód, který jste dekomprimovali a potom otevřete soubor řešení (.sln) pro AsyncFineTuningVB.  
   
-4.  V **Průzkumníka řešení**, otevřete místní nabídku **CancelAfterOneTask** projektu a klikněte na tlačítko **nastavit jako spouštěný projekt**.  
+4. V **Průzkumníka řešení**, otevřete místní nabídku **CancelAfterOneTask** projektu a klikněte na tlačítko **nastavit jako spouštěný projekt**.  
   
-5.  Stiskněte klávesu F5 ke spuštění projektu.  
+5. Stiskněte klávesu F5 ke spuštění projektu.  
   
      Stiskněte klávesy Ctrl + F5 ke spuštění projektu bez ladění.  
   
-6.  Program několikrát spusťte a tak ověřte, že nejprve dokončit různé soubory ke stažení.  
+6. Program několikrát spusťte a tak ověřte, že nejprve dokončit různé soubory ke stažení.  
   
  Pokud nechcete stáhnout projekt, můžete zkontrolovat soubor MainWindow.xaml.vb na konci tohoto tématu.  
   
@@ -61,9 +61,9 @@ End Function
   
  Proveďte následující změny v `AccessTheWebAsync`. Hvězdičky označují změny v souboru kódu.  
   
-1.  Okomentujte nebo odstraňte smyčku.  
+1. Okomentujte nebo odstraňte smyčku.  
   
-2.  Vytvoření dotazu, který při spuštění vytvoří kolekci obecných úkolů. Každé volání `ProcessURLAsync` vrátí <xref:System.Threading.Tasks.Task%601> kde `TResult` je celé číslo.  
+2. Vytvoření dotazu, který při spuštění vytvoří kolekci obecných úkolů. Každé volání `ProcessURLAsync` vrátí <xref:System.Threading.Tasks.Task%601> kde `TResult` je celé číslo.  
   
     ```vb  
     ' ***Create a query that, when executed, returns a collection of tasks.  
@@ -71,14 +71,14 @@ End Function
         From url In urlList Select ProcessURLAsync(url, client, ct)  
     ```  
   
-3.  Volání `ToArray` spustit dotaz a spustilo úlohu. Použití `WhenAny` metoda v dalším kroku by spustilo dotaz a spustilo úlohu bez použití `ToArray`, ale jiné metody nemusí. Nejbezpečnější metodou je vynutit spuštění dotazu explicitně.  
+3. Volání `ToArray` spustit dotaz a spustilo úlohu. Použití `WhenAny` metoda v dalším kroku by spustilo dotaz a spustilo úlohu bez použití `ToArray`, ale jiné metody nemusí. Nejbezpečnější metodou je vynutit spuštění dotazu explicitně.  
   
     ```vb  
     ' ***Use ToArray to execute the query and start the download tasks.   
     Dim downloadTasks As Task(Of Integer)() = downloadTasksQuery.ToArray()  
     ```  
   
-4.  Volání `WhenAny` na kolekci úloh. `WhenAny` Vrátí `Task(Of Task(Of Integer))` nebo `Task<Task<int>>`.  To znamená `WhenAny` vrátí úkol, který se vyhodnocuje do jediné `Task(Of Integer)` nebo `Task<int>` pokus je očekáváno. Jeden úkol je první úkol v kolekci pro dokončení. Někdo přiřadí úkol, který skončil první `firstFinishedTask`. Typ `firstFinishedTask` je <xref:System.Threading.Tasks.Task%601> kde `TResult` je celé číslo, protože to je návratový typ `ProcessURLAsync`.  
+4. Volání `WhenAny` na kolekci úloh. `WhenAny` Vrátí `Task(Of Task(Of Integer))` nebo `Task<Task<int>>`.  To znamená `WhenAny` vrátí úkol, který se vyhodnocuje do jediné `Task(Of Integer)` nebo `Task<int>` pokus je očekáváno. Jeden úkol je první úkol v kolekci pro dokončení. Někdo přiřadí úkol, který skončil první `firstFinishedTask`. Typ `firstFinishedTask` je <xref:System.Threading.Tasks.Task%601> kde `TResult` je celé číslo, protože to je návratový typ `ProcessURLAsync`.  
   
 ```vb  
 ' ***Call WhenAny and then await the result. The task that finishes   
@@ -86,14 +86,14 @@ End Function
 Dim firstFinishedTask As Task(Of Integer) = Await Task.WhenAny(downloadTasks)  
 ```  
   
-5.  V tomto příkladu se zajímáte pouze úloha, která skončí jako první. Proto použít <xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=nameWithType> zrušení zbývajících úkolů.  
+5. V tomto příkladu se zajímáte pouze úloha, která skončí jako první. Proto použít <xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=nameWithType> zrušení zbývajících úkolů.  
   
 ```vb  
 ' ***Cancel the rest of the downloads. You just want the first one.  
 cts.Cancel()  
 ```  
   
-6.  Nakonec vyčkejte, než `firstFinishedTask` načte délku stahovaného obsahu.  
+6. Nakonec vyčkejte, než `firstFinishedTask` načte délku stahovaného obsahu.  
   
 ```vb  
 Dim length = Await firstFinishedTask  

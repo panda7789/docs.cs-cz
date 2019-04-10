@@ -8,12 +8,12 @@ helpviewer_keywords:
 - animation [WPF], custom classes
 - custom animation classes [WPF]
 ms.assetid: 9be69d50-3384-4938-886f-08ce00e4a7a6
-ms.openlocfilehash: 78c32c8aa1cf63ad6b9c9c51d856b02ccec68384
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 268d218097233aee795154226cc6f7c3ce318f5c
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59190727"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59313941"
 ---
 # <a name="custom-animations-overview"></a>Přehled vlastních animací
 Toto téma popisuje, jak a kdy k rozšíření [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] animace systém tak, že vytvoříte vlastní klíčové snímky animace třídy, nebo pomocí zpětného volání za rámce se.  
@@ -99,9 +99,9 @@ Toto téma popisuje, jak a kdy k rozšíření [!INCLUDE[TLA2#tla_winclient](../
   
  Doporučené paradigma (používané [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] animací), je použít dvě úrovně dědičnosti:  
   
-1.  Vytvořit abstraktní  *\<typ >* AnimationBase třída odvozená z <xref:System.Windows.Media.Animation.AnimationTimeline>. Tato třída by měly přepsat <xref:System.Windows.Media.Animation.AnimationTimeline.TargetPropertyType%2A> metody. Měl by také zavést nové abstraktní metoda GetCurrentValueCore a přepsat <xref:System.Windows.Media.Animation.AnimationTimeline.GetCurrentValue%2A> tak, aby ho ověří typy výchozí cílové hodnoty parametrů a výchozí hodnota, pak zavolá GetCurrentValueCore.  
+1. Vytvořit abstraktní  *\<typ >* AnimationBase třída odvozená z <xref:System.Windows.Media.Animation.AnimationTimeline>. Tato třída by měly přepsat <xref:System.Windows.Media.Animation.AnimationTimeline.TargetPropertyType%2A> metody. Měl by také zavést nové abstraktní metoda GetCurrentValueCore a přepsat <xref:System.Windows.Media.Animation.AnimationTimeline.GetCurrentValue%2A> tak, aby ho ověří typy výchozí cílové hodnoty parametrů a výchozí hodnota, pak zavolá GetCurrentValueCore.  
   
-2.  Vytvořit jiné třídy, která dědí z nové  *\<typ >* AnimationBase třídy a přepíše <xref:System.Windows.Freezable.CreateInstanceCore%2A> metody, metoda GetCurrentValueCore, která je zavedená, a <xref:System.Windows.Media.Animation.AnimationTimeline.IsDestinationDefault%2A> vlastnost.  
+2. Vytvořit jiné třídy, která dědí z nové  *\<typ >* AnimationBase třídy a přepíše <xref:System.Windows.Freezable.CreateInstanceCore%2A> metody, metoda GetCurrentValueCore, která je zavedená, a <xref:System.Windows.Media.Animation.AnimationTimeline.IsDestinationDefault%2A> vlastnost.  
   
  **Alternativní přístupy**  
   

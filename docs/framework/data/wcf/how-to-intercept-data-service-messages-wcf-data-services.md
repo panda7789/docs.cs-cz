@@ -8,12 +8,12 @@ helpviewer_keywords:
 - WCF Data Services, customizing
 - query interceptors [WCF Data Services]
 ms.assetid: 24b9df1b-b54b-4795-a033-edf333675de6
-ms.openlocfilehash: 56e4a3f95c7449ae5693172728c9d777113679bf
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: a11334abc83db20bec06fd2459d7b8598f672f2f
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59101290"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59317477"
 ---
 # <a name="how-to-intercept-data-service-messages-wcf-data-services"></a>Postupy: Zachycování zpráv datové služby (WCF Data Services)
 S [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], tak, že můžete přidat vlastní logiku na operaci je možné zachytit zprávy s požadavkem. Aby se zachytily zprávu, použijte metody speciálně s atributy v datové služby. Další informace najdete v tématu [sběrače](../../../../docs/framework/data/wcf/interceptors-wcf-data-services.md).  
@@ -22,23 +22,23 @@ S [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], tak, že můžete
   
 ### <a name="to-define-a-query-interceptor-for-the-orders-entity-set"></a>Chcete-li definovat zachycování dotazů pro sadu entit objednávky  
   
-1.  V projektu služby Northwind data otevřete soubor Northwind.svc.  
+1. V projektu služby Northwind data otevřete soubor Northwind.svc.  
   
-2.  Na stránce kódu `Northwind` třídy, přidejte následující `using` – příkaz (`Imports` v jazyce Visual Basic).  
+2. Na stránce kódu `Northwind` třídy, přidejte následující `using` – příkaz (`Imports` v jazyce Visual Basic).  
   
      [!code-csharp[Astoria Northwind Service#UsingLinqExpressions](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind service/cs/northwind2.svc.cs#usinglinqexpressions)]
      [!code-vb[Astoria Northwind Service#UsingLinqExpressions](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind service/vb/northwind2.svc.vb#usinglinqexpressions)]  
   
-3.  V `Northwind` tříd, definice služby operace metodu s názvem `OnQueryOrders` následujícím způsobem:  
+3. V `Northwind` tříd, definice služby operace metodu s názvem `OnQueryOrders` následujícím způsobem:  
   
      [!code-csharp[Astoria Northwind Service#QueryInterceptorDef](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind service/cs/northwind2.svc.cs#queryinterceptordef)]
      [!code-vb[Astoria Northwind Service#QueryInterceptorDef](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind service/vb/northwind2.svc.vb#queryinterceptordef)]  
   
 ### <a name="to-define-a-change-interceptor-for-the-products-entity-set"></a>Chcete-li definovat zachycování změnu pro sadu entit produkty  
   
-1.  V projektu služby Northwind data otevřete soubor Northwind.svc.  
+1. V projektu služby Northwind data otevřete soubor Northwind.svc.  
   
-2.  V `Northwind` tříd, definice služby operace metodu s názvem `OnChangeProducts` následujícím způsobem:  
+2. V `Northwind` tříd, definice služby operace metodu s názvem `OnChangeProducts` následujícím způsobem:  
   
      [!code-csharp[Astoria Northwind Service#ChangeInterceptorDef](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind service/cs/northwind2.svc.cs#changeinterceptordef)]
      [!code-vb[Astoria Northwind Service#ChangeInterceptorDef](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind service/vb/northwind2.svc.vb#changeinterceptordef)]  

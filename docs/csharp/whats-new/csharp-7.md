@@ -3,19 +3,19 @@ title: Co je nového v jazyce C# 7.0 – průvodce v C#
 description: Získejte přehled o nové funkce ve verzi 7.0 C# jazyka.
 ms.date: 02/20/2019
 ms.assetid: fd41596d-d0c2-4816-b94d-c4d00a5d0243
-ms.openlocfilehash: 81d06d2e2079e04948ad5e93eefadb1bc11d855a
-ms.sourcegitcommit: 15ab532fd5e1f8073a4b678922d93b68b521bfa0
+ms.openlocfilehash: 8cf9994f74781584b3d7500c09656d4798af32ca
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58654182"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59326538"
 ---
 # <a name="whats-new-in-c-70"></a>Co je nového v jazyce C# 7.0
 
 C# 7.0 přidá několik nových funkcí jazyka C#:
-* [`out` Proměnné](#out-variables)
+* [`out` proměnné](#out-variables)
     - Je možné deklarovat `out` hodnoty inline jako argumentů metody, které používají.
-* [Řazené kolekce členů](#tuples)
+* [N-tice](#tuples)
     - Můžete vytvořit jednoduchý, Nepojmenované typy, které obsahují více veřejná pole. Kompilátory a nástroje pro prostředí IDE pochopit sémantiku z těchto typů.
 * [Zahození](#discards)
     - Zahození jsou dočasné, jen pro zápis proměnné při nezáleží hodnota přiřazená v přiřazeních. Jsou nejužitečnější tehdy, když dekonstrukce řazených kolekcí členů a uživatelem definovaných typů, stejně jako při volání metody s `out` parametry.
@@ -170,7 +170,7 @@ Tato funkce umožňuje algoritmy, které používají a vrátit odkazy na promě
 
 Je možné deklarovat jako návratovou hodnotu `ref` a upravte tuto hodnotu v matici, jak je znázorněno v následujícím kódu:
 
-[!code-csharp[AssignRefReturn](~/samples/snippets/csharp/new-in-7/program.cs#AssignRefReturn "Assign ref return")]
+[!code-csharp[AssignRefReturn](~/samples/snippets/csharp/new-in-7/Program.cs#AssignRefReturn "Assign ref return")]
 
 C# Jazyk má několik pravidel, které chrání vás před zneužitím `ref` místní hodnoty a vrátí:
 

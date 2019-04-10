@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 4fccbb35-eaa5-44e9-a252-a5c3d4bc7604
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0e7ef42bab2d7567741a433cbcacf10a5e689f6a
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 46865e398c3868e21b743cf45f42e8b9063a0cbe
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43867930"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59298905"
 ---
 # <a name="plinq-data-sample"></a>Ukázková data pro PLINQ
 Tato ukázka obsahuje ukázková data ve formátu .csv, společně s metodami, které transformují do kolekce v paměti zákazníky, produkty, objednávek a podrobnostmi o objednávce. Pro další pokusy pomocí jazyka PLINQ můžete vložit příklady kódů z některých dalších témat, která do kódu v tomto tématu a vyvolat z `Main` metody. Tato data můžete také použít s vlastními dotazy PLINQ.  
@@ -27,13 +27,13 @@ Tato ukázka obsahuje ukázková data ve formátu .csv, společně s metodami, k
   
 ### <a name="to-set-up-this-sample"></a>Nastavit tuto ukázku  
   
-1.  Vytvoření projektu konzolové aplikace jazyka Visual Basic nebo Visual C#.  
+1. Vytvoření projektu konzolové aplikace jazyka Visual Basic nebo Visual C#.  
   
-2.  Nahraďte obsah Module1.vb nebo souboru Program.cs kódem, který zahrnuje následující kroky.  
+2. Nahraďte obsah Module1.vb nebo souboru Program.cs kódem, který zahrnuje následující kroky.  
   
-3.  Na **projektu** nabídky, klikněte na tlačítko **přidat novou položku**. Vyberte **textový soubor** a potom klikněte na tlačítko **OK**. Zkopírujte data v tomto tématu a následně jej vložte do nového textového souboru. Na **souboru** nabídky, klikněte na tlačítko **Uložit**, pojmenujte soubor Plinqdata.csv a uložte ho do složky, která obsahuje soubory zdrojového kódu.  
+3. Na **projektu** nabídky, klikněte na tlačítko **přidat novou položku**. Vyberte **textový soubor** a potom klikněte na tlačítko **OK**. Zkopírujte data v tomto tématu a následně jej vložte do nového textového souboru. Na **souboru** nabídky, klikněte na tlačítko **Uložit**, pojmenujte soubor Plinqdata.csv a uložte ho do složky, která obsahuje soubory zdrojového kódu.  
   
-4.  Stiskněte klávesu F5, chcete-li ověřit, že projekt vytvoří a spustí správně. V okně konzoly byste zobrazí následující výstup.  
+4. Stiskněte klávesu F5, chcete-li ověřit, že projekt vytvoří a spustí správně. V okně konzoly byste zobrazí následující výstup.  
   
     ```  
     Customer count: 50  

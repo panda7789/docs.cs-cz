@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - security [WCF], creating custom bindings
 ms.assetid: 203a9f9e-3a73-427c-87aa-721c56265b29
-ms.openlocfilehash: f25d590442e789f6e7197e6b4b33c817a4dc8d78
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 7966c1fe4cd94408455c6bb146fdd3ea55757702
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59175588"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59316801"
 ---
 # <a name="how-to-create-a-custom-binding-using-the-securitybindingelement"></a>Postupy: Vytvoření vlastní vazby pomocí elementu SecurityBindingElement
 Windows Communication Foundation (WCF) zahrnuje několik vazeb poskytovaných systémem, které můžete konfigurovat, ale neposkytují úplnou flexibilitu při konfiguraci všechny možnosti zabezpečení, které podporuje WCF. Toto téma ukazuje, jak vytvořit vlastní vazbu přímo z elementů vazby jednotlivých a zvýrazní některá nastavení zabezpečení, které můžete nastavit při vytváření takovou vazbu. Další informace o vytváření vlastních vazeb naleznete v tématu [rozšíření vazby](../../../../docs/framework/wcf/extending/extending-bindings.md).  
@@ -83,19 +83,19 @@ Windows Communication Foundation (WCF) zahrnuje několik vazeb poskytovaných sy
   
 #### <a name="to-create-a-custom-binding-that-uses-a-symmetricsecuritybindingelement"></a>Vytvoření vlastní vazby, který používá třídu SymmetricSecurityBindingElement  
   
-1.  Vytvoření instance <xref:System.ServiceModel.Channels.BindingElementCollection> třída s názvem `outputBec`.  
+1. Vytvoření instance <xref:System.ServiceModel.Channels.BindingElementCollection> třída s názvem `outputBec`.  
   
-2.  Zavolejte statickou metodu `M:System.ServiceModel.Channels.SecurityBindingElement.CreateSspiNegotiationBindingElement(true)`, která vrací instanci <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> třídy.  
+2. Zavolejte statickou metodu `M:System.ServiceModel.Channels.SecurityBindingElement.CreateSspiNegotiationBindingElement(true)`, která vrací instanci <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> třídy.  
   
-3.  Přidat <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> do kolekce (`outputBec`) voláním `Add` metodu <xref:System.Collections.ObjectModel.Collection%601> z <xref:System.ServiceModel.Channels.BindingElement> třídy.  
+3. Přidat <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> do kolekce (`outputBec`) voláním `Add` metodu <xref:System.Collections.ObjectModel.Collection%601> z <xref:System.ServiceModel.Channels.BindingElement> třídy.  
   
-4.  Vytvoření instance <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement> třídu a přidejte ho do kolekce (`outputBec`). Určuje kódování použité vazbou.  
+4. Vytvoření instance <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement> třídu a přidejte ho do kolekce (`outputBec`). Určuje kódování použité vazbou.  
   
-5.  Vytvoření <xref:System.ServiceModel.Channels.HttpTransportBindingElement> a přidejte ho do kolekce (`outputBec`). Určuje, že vazba používá přenos pomocí protokolu HTTP.  
+5. Vytvoření <xref:System.ServiceModel.Channels.HttpTransportBindingElement> a přidejte ho do kolekce (`outputBec`). Určuje, že vazba používá přenos pomocí protokolu HTTP.  
   
-6.  Vytvořte novou vlastní vazbu tak, že vytvoříte instanci <xref:System.ServiceModel.Channels.CustomBinding> třídy a předávání kolekce `outputBec` konstruktoru.  
+6. Vytvořte novou vlastní vazbu tak, že vytvoříte instanci <xref:System.ServiceModel.Channels.CustomBinding> třídy a předávání kolekce `outputBec` konstruktoru.  
   
-7.  Výsledný vlastní vazby sdílí řadu stejné vlastnosti jako standardní <xref:System.ServiceModel.WSHttpBinding>. Určuje zabezpečení na úrovni zpráv a přihlašovací údaje Windows, ale zakáže zabezpečených relací, vyžaduje, aby zadaný out-of-band, přihlašovací údaje služby a podpisy, nešifruje. Poslední se dá nastavit jenom podle nastavení <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement.MessageProtectionOrder%2A> vlastnost, jak je znázorněno v kroku 4. Další dvě jako se dá řídit pomocí nastavení na standardní vazbu.  
+7. Výsledný vlastní vazby sdílí řadu stejné vlastnosti jako standardní <xref:System.ServiceModel.WSHttpBinding>. Určuje zabezpečení na úrovni zpráv a přihlašovací údaje Windows, ale zakáže zabezpečených relací, vyžaduje, aby zadaný out-of-band, přihlašovací údaje služby a podpisy, nešifruje. Poslední se dá nastavit jenom podle nastavení <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement.MessageProtectionOrder%2A> vlastnost, jak je znázorněno v kroku 4. Další dvě jako se dá řídit pomocí nastavení na standardní vazbu.  
   
 ## <a name="example"></a>Příklad  
   

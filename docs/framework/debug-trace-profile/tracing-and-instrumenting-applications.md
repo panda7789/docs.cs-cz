@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 773b6fc4-9013-4322-b728-5dec7a72e743
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 4e97bc5f9846757e02f9e55de31bee96a9d24c2f
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 6749f54db106bffaba57b7cb77cb13808175af3a
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59219210"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59298903"
 ---
 # <a name="tracing-and-instrumenting-applications"></a>Trasování a instrumentace aplikací
 Trasování je způsob, jak můžete monitorovat provádění aplikace během jejího běhu. Instrumentace trasování a ladění můžete přidat do vaší aplikace rozhraní .NET Framework při při vývoji a instrumentaci můžete použít při vývoji aplikace i po jeho nasazení. Můžete použít <xref:System.Diagnostics.Trace?displayProperty=nameWithType>, <xref:System.Diagnostics.Debug?displayProperty=nameWithType>, a <xref:System.Diagnostics.TraceSource?displayProperty=nameWithType> třídy k zaznamenání informací o chybách a spuštění aplikace v protokolech, textové soubory nebo jiná pro pozdější analýzu.  
@@ -67,11 +67,11 @@ System.Diagnostics.Debug.WriteLine("Hello World!");
 ### <a name="phases-of-code-tracing"></a>Fáze trasování kódu  
  Existují tři fáze kód trasování:  
   
-1.  **Instrumentace** – přidání kódu trasování pro aplikaci.  
+1. **Instrumentace** – přidání kódu trasování pro aplikaci.  
   
-2.  **Trasování** – trasování kódu zapisuje informace do zadaného cíle.  
+2. **Trasování** – trasování kódu zapisuje informace do zadaného cíle.  
   
-3.  **Analýza** – vyhodnocení trasovací informace k identifikaci a informace o problémech v aplikaci.  
+3. **Analýza** – vyhodnocení trasovací informace k identifikaci a informace o problémech v aplikaci.  
   
  Během vývoje výstup všech ladění a trasování, že metody zapsat informace do okna výstup v sadě Visual Studio ve výchozím nastavení. V nasazené aplikaci metody zapsat informace trasování do cíle, které zadáte. Další informace o zadání cíl výstupu pro trasování a ladění, naleznete v tématu [naslouchacích procesů trasování](../../../docs/framework/debug-trace-profile/trace-listeners.md).  
   
@@ -79,17 +79,17 @@ System.Diagnostics.Debug.WriteLine("Hello World!");
   
 ##### <a name="to-use-tracing-in-an-application"></a>Chcete-li použít trasování v aplikaci  
   
-1.  Zvažte, které trasování výstupu, že který chcete přijímat získáte po nasazení aplikace.  
+1. Zvažte, které trasování výstupu, že který chcete přijímat získáte po nasazení aplikace.  
   
-2.  Vytvoření sady přepínačů. Další informace najdete v tématu [jak: Konfigurace přepínačů trasování](../../../docs/framework/debug-trace-profile/how-to-create-initialize-and-configure-trace-switches.md).  
+2. Vytvoření sady přepínačů. Další informace najdete v tématu [jak: Konfigurace přepínačů trasování](../../../docs/framework/debug-trace-profile/how-to-create-initialize-and-configure-trace-switches.md).  
   
-3.  Přidání příkazů trasování do kódu aplikace.  
+3. Přidání příkazů trasování do kódu aplikace.  
   
-4.  Určete, kam chcete výstup trasování objevit a přidejte odpovídající naslouchacích procesů. Další informace najdete v tématu [vytváření a inicializace naslouchacích procesů trasování](../../../docs/framework/debug-trace-profile/how-to-create-and-initialize-trace-listeners.md).  
+4. Určete, kam chcete výstup trasování objevit a přidejte odpovídající naslouchacích procesů. Další informace najdete v tématu [vytváření a inicializace naslouchacích procesů trasování](../../../docs/framework/debug-trace-profile/how-to-create-and-initialize-trace-listeners.md).  
   
-5.  Testování a ladění vaší aplikace a trasování kódu, které obsahuje.  
+5. Testování a ladění vaší aplikace a trasování kódu, které obsahuje.  
   
-6.  Zkompilujte aplikaci do spustitelného kódu pomocí jedné z následujících postupů:  
+6. Zkompilujte aplikaci do spustitelného kódu pomocí jedné z následujících postupů:  
   
     -   Použití **sestavení** nabídky spolu s **ladění** stránku **stránky vlastností** dialogové okno v **Průzkumníka řešení**. Použijte při kompilaci v sadě Visual Studio.  
   
@@ -97,11 +97,11 @@ System.Diagnostics.Debug.WriteLine("Hello World!");
   
     -   Použití **trasování** a **ladění** direktivy kompilátoru pro kompilaci metodu příkazového řádku. Další informace najdete v tématu [Podmíněná kompilace pomocí trasování a ladění](../../../docs/framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md). Použijte při kompilaci z příkazového řádku.  
   
-7.  Pokud dojde k potížím při běhu, zapněte trasování odpovídající přepínač. Další informace najdete v tématu [konfigurace přepínačů trasování](../../../docs/framework/debug-trace-profile/how-to-create-initialize-and-configure-trace-switches.md).  
+7. Pokud dojde k potížím při běhu, zapněte trasování odpovídající přepínač. Další informace najdete v tématu [konfigurace přepínačů trasování](../../../docs/framework/debug-trace-profile/how-to-create-initialize-and-configure-trace-switches.md).  
   
      Trasování kódu zapisuje zprávy trasování do zadaného cíle, například obrazovku, do textového souboru nebo protokolu událostí. Typ naslouchací proces jste zahrnuli **Trace.listeners –** kolekce Určuje cíl.  
   
-8.  Analyzujte trasování zprávy k identifikaci a porozumět danému problému v aplikaci.  
+8. Analyzujte trasování zprávy k identifikaci a porozumět danému problému v aplikaci.  
   
 ## <a name="trace-instrumentation-and-distributed-applications"></a>Pro trasovacího instrumentaci a distribuovaných aplikací  
  Při vytváření distribuované aplikace, možná pro vás bude obtížné otestovat aplikaci způsobem, který se použije. Několik vývojové týmy mají možnost vyzkoušet všechny možné kombinace operačních systémů nebo webových prohlížečů (včetně všech možností lokalizovaném jazyce) nebo simulace velkého počtu uživatelů, kteří se k aplikaci ve stejnou dobu. Za těchto okolností nemůže testovat, jak distribuované aplikace bude reagovat na velké objemy, jiné nastavení a chování koncových uživatelů jedinečný. Také mnoho částí distribuované aplikace mít žádné uživatelské rozhraní pracovat přímo nebo zobrazit aktivitu z těchto částí.  

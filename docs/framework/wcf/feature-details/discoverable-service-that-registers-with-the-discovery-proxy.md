@@ -2,36 +2,36 @@
 title: 'Postupy: Implementace zjistitelné služby, která se registruje pomocí proxy zjišťování'
 ms.date: 03/30/2017
 ms.assetid: eb275bc1-535b-44c8-b9f3-0b75e9aa473b
-ms.openlocfilehash: 6cfafbc06fc4a7c37805fa1d158a41625390174a
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 31c89aeed2577c5dd11ae59ee4a4d692210e5f37
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59177824"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59302182"
 ---
 # <a name="how-to-implement-a-discoverable-service-that-registers-with-the-discovery-proxy"></a>Postupy: Implementace zjistitelné služby, která se registruje pomocí proxy zjišťování
 Toto téma je druhý čtyři témat, která popisuje, jak implementace zjišťování proxy. V předchozím tématu [jak: Implementace zjišťování Proxy](../../../../docs/framework/wcf/feature-details/how-to-implement-a-discovery-proxy.md), jste implementovali proxy zjišťování. V tomto tématu vytvoříte službu WCF, která odesílá zprávy oznámení (`Hello` a `Bye`) na server proxy zjišťování by ji chcete registrovat a deregistrovat pomocí proxy zjišťování.
 
 ### <a name="to-define-the-service-contract"></a>K definování kontraktu služby
 
-1.  Přidat nový projekt konzolové aplikace na `DiscoveryProxyExample` řešení `Service`.
+1. Přidat nový projekt konzolové aplikace na `DiscoveryProxyExample` řešení `Service`.
 
-2.  Přidejte odkazy na následující sestavení:
+2. Přidejte odkazy na následující sestavení:
 
     1.  System.ServiceModel
 
     2.  System.ServiceModel.Discovery
 
-3.  Přidejte novou třídu projektu s názvem `CalculatorService`.
+3. Přidejte novou třídu projektu s názvem `CalculatorService`.
 
-4.  Přidejte následující příkazy using.
+4. Přidejte následující příkazy using.
 
     ```csharp
     using System;
     using System.ServiceModel;
     ```
 
-5.  V rámci CalculatorService.cs definování kontraktu služby.
+5. V rámci CalculatorService.cs definování kontraktu služby.
 
     ```csharp
     // Define a service contract.
@@ -49,7 +49,7 @@ Toto téma je druhý čtyři témat, která popisuje, jak implementace zjišťov
     }
     ```
 
-6.  Také v rámci CalculatorService.cs, implementace kontraktu služby.
+6. Také v rámci CalculatorService.cs, implementace kontraktu služby.
 
     ```csharp
     // Service class which implements the service contract.
@@ -91,9 +91,9 @@ Toto téma je druhý čtyři témat, která popisuje, jak implementace zjišťov
 
 ### <a name="to-host-the-service"></a>K hostování služby
 
-1.  Otevřete soubor Program.cs, který byl vygenerován při vytváření projektu.
+1. Otevřete soubor Program.cs, který byl vygenerován při vytváření projektu.
 
-2.  Přidejte následující příkazy using.
+2. Přidejte následující příkazy using.
 
     ```csharp
     using System;
@@ -102,7 +102,7 @@ Toto téma je druhý čtyři témat, která popisuje, jak implementace zjišťov
     using System.ServiceModel.Discovery;
     ```
 
-3.  V rámci `Main()` metodu, přidejte následující kód:
+3. V rámci `Main()` metodu, přidejte následující kód:
 
     ```csharp
     // Define the base address of the service

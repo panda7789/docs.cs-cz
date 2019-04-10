@@ -2,12 +2,12 @@
 title: Ukázka federace
 ms.date: 03/30/2017
 ms.assetid: 7e9da0ca-e925-4644-aa96-8bfaf649d4bb
-ms.openlocfilehash: 5c71abc3308513be7b00d92254e92e814c3688dc
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: bc2c28300d9bfc3c30388f8d13e05a23a9f37287
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59155204"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59311458"
 ---
 # <a name="federation-sample"></a>Ukázka federace
 V této ukázce federovaného zabezpečení.  
@@ -67,17 +67,17 @@ V této ukázce federovaného zabezpečení.
   
  Posloupnost událostí, když přistupoval k `BuyBook` operace vypadá takto:  
   
-1.  Klient se ověří na službu STS HomeRealm pomocí přihlašovacích údajů Windows.  
+1. Klient se ověří na službu STS HomeRealm pomocí přihlašovacích údajů Windows.  
   
-2.  Služba tokenů zabezpečení HomeRealm vystaví token, který slouží k ověření na službu STS knihkupectví.  
+2. Služba tokenů zabezpečení HomeRealm vystaví token, který slouží k ověření na službu STS knihkupectví.  
   
-3.  Klient se ověří pomocí tokenu vystaví služba HomeRealm STS Služba tokenů zabezpečení knihkupectví.  
+3. Klient se ověří pomocí tokenu vystaví služba HomeRealm STS Služba tokenů zabezpečení knihkupectví.  
   
-4.  Služba tokenů zabezpečení knihkupectví vystaví token, který slouží k ověření služby knihkupectví.  
+4. Služba tokenů zabezpečení knihkupectví vystaví token, který slouží k ověření služby knihkupectví.  
   
-5.  Klient se ověří ve službě knihkupectví pomocí tokenu vystaví služba STS knihkupectví.  
+5. Klient se ověří ve službě knihkupectví pomocí tokenu vystaví služba STS knihkupectví.  
   
-6.  Klient přistupuje k `BuyBook` operace.  
+6. Klient přistupuje k `BuyBook` operace.  
   
  Přečtěte si následující pokyny o tom, jak nastavit a spustit tento příklad.  
   
@@ -86,18 +86,18 @@ V této ukázce federovaného zabezpečení.
   
 #### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
-1.  Otevřete příkazové okno sady SDK. V cestě ukázkové spuštění Setup.bat. To vytvoří virtuální adresáře, vyžaduje se pro ukázku a nainstaluje požadované certifikáty s příslušnými oprávněními.  
+1. Otevřete příkazové okno sady SDK. V cestě ukázkové spuštění Setup.bat. To vytvoří virtuální adresáře, vyžaduje se pro ukázku a nainstaluje požadované certifikáty s příslušnými oprávněními.  
   
     > [!NOTE]
     >  Dávkový soubor Setup.bat je navržena pro spouštění na příkazovém řádku sady SDK Windows. To vyžaduje, aby proměnné prostředí MSSDK bodu do adresáře, ve kterém je nainstalována sada SDK. Tato proměnná prostředí je nastavena automaticky v příkazovém řádku Windows SDK. Na [!INCLUDE[wv](../../../../includes/wv-md.md)], ujistěte se, že Kompatibilita správy služby IIS 6.0 je nainstalovat, protože nastavení používá skripty Správce služby IIS. Spouštění skriptu nastavení na [!INCLUDE[wv](../../../../includes/wv-md.md)] vyžaduje oprávnění správce.  
   
-2.  Otevřete FederationSample.sln v sadě Visual Studio a vyberte **sestavit řešení** z **sestavení** nabídky. To vytvoří běžné soubory projektu, knihkupectví služby, knihkupectví STS, HomeRealm STS a nasadí ve službě IIS. To také vytvoří knihkupectví klientská aplikace a umístí BookStoreClient.exe spustitelný soubor ve složce FederationSample\BookStoreClient\bin\Debug.  
+2. Otevřete FederationSample.sln v sadě Visual Studio a vyberte **sestavit řešení** z **sestavení** nabídky. To vytvoří běžné soubory projektu, knihkupectví služby, knihkupectví STS, HomeRealm STS a nasadí ve službě IIS. To také vytvoří knihkupectví klientská aplikace a umístí BookStoreClient.exe spustitelný soubor ve složce FederationSample\BookStoreClient\bin\Debug.  
   
-3.  Double-click BookStoreClient.exe. Zobrazí se okno BookStoreClient.  
+3. Double-click BookStoreClient.exe. Zobrazí se okno BookStoreClient.  
   
-4.  K dispozici v knihkupectví knih můžete procházet kliknutím **procházet knihy**.  
+4. K dispozici v knihkupectví knih můžete procházet kliknutím **procházet knihy**.  
   
-5.  Pokud chcete zakoupit konkrétní adresáře, v seznamu vyberte knihy a klikněte na **zakoupení knihy**. Aplikace spuštění a ověřuje pomocí služby tokenů zabezpečení HomeRealm ověřování Windows.  
+5. Pokud chcete zakoupit konkrétní adresáře, v seznamu vyberte knihy a klikněte na **zakoupení knihy**. Aplikace spuštění a ověřuje pomocí služby tokenů zabezpečení HomeRealm ověřování Windows.  
   
      Ukázka je nakonfigurovaná tak, aby uživatelům nákup knih, které nákladů 15 USD nebo nižší. Došlo k pokusu o zakoupení knihy, které víc než 15 USD za následek klienta získávání zpráva Přístup byl odepřen z službu Store knihy nákladů.  
   
@@ -106,7 +106,7 @@ V této ukázce federovaného zabezpečení.
   
 #### <a name="to-clean-up"></a>Vyčistit  
   
-1.  Spusťte Cleanup.bat. To odstraní virtuální adresáře, které byly vytvořené během nastavení a také odebere během instalace nainstalovat certifikáty.  
+1. Spusťte Cleanup.bat. To odstraní virtuální adresáře, které byly vytvořené během nastavení a také odebere během instalace nainstalovat certifikáty.  
   
 > [!IMPORTANT]
 >  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  

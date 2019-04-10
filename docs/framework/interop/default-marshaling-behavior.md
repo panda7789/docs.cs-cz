@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: c0a9bcdf-3df8-4db3-b1b6-abbdb2af809a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3c15e24fbe2a131435fe71782c8a55f416f71d62
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 6bf6acc719b4697534e845f64890ddcd9cac550f
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59129321"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59315761"
 ---
 # <a name="default-marshaling-behavior"></a>Výchozí chování zařazování
 Zařazování spolupráce funguje v pravidlech této diktování chování data související s parametry metody během mezi spravovanými a nespravovanými paměti. Tato integrovaná pravidla takové zařazování aktivity jako typ transformace dat, řízení, zda volaný můžete změnit data předaná do ní a tyto změny vrátit volající a pod kterým okolností, aby zařazování odvozovalo poskytuje optimalizace výkonu.  
@@ -64,11 +64,11 @@ BSTR MethodOne (BSTR b) {
   
  Pokud rozhraní není od známých objektu, aby zařazování odvozovalo provede následující akce:  
   
-1.  Aby zařazování odvozovalo dotaz se týká objektu pro **IProvideClassInfo2** rozhraní. Pokud je zadán, aby zařazování odvozovalo používá CLSID vrácená z **IProvideClassInfo2.GetGUID** k identifikaci coclass poskytuje rozhraní. S identifikátorem CLSID aby zařazování odvozovalo najdou obálky z registru Pokud sestavení byl dříve zaregistrován.  
+1. Aby zařazování odvozovalo dotaz se týká objektu pro **IProvideClassInfo2** rozhraní. Pokud je zadán, aby zařazování odvozovalo používá CLSID vrácená z **IProvideClassInfo2.GetGUID** k identifikaci coclass poskytuje rozhraní. S identifikátorem CLSID aby zařazování odvozovalo najdou obálky z registru Pokud sestavení byl dříve zaregistrován.  
   
-2.  Aby zařazování odvozovalo dotazuje rozhraní pro **iprovideclassinfo –** rozhraní. Pokud je zadán, aby zařazování odvozovalo používá **ITypeInfo** vrácená **IProvideClassInfo.GetClassinfo** určit identifikátor CLSID třídy vystavení rozhraní. Zařazování lze použít k vyhledání metadat pro obálku identifikátor CLSID.  
+2. Aby zařazování odvozovalo dotazuje rozhraní pro **iprovideclassinfo –** rozhraní. Pokud je zadán, aby zařazování odvozovalo používá **ITypeInfo** vrácená **IProvideClassInfo.GetClassinfo** určit identifikátor CLSID třídy vystavení rozhraní. Zařazování lze použít k vyhledání metadat pro obálku identifikátor CLSID.  
   
-3.  Pokud stále zařazování nemůže určovat třídu, zabalí rozhraní s obecný Obálkový třídu s názvem **System.__ComObject**.  
+3. Pokud stále zařazování nemůže určovat třídu, zabalí rozhraní s obecný Obálkový třídu s názvem **System.__ComObject**.  
   
 ## <a name="default-marshaling-for-delegates"></a>Výchozí zařazování pro delegáty  
  Spravované delegáta je zařadit jako rozhraní modelu COM nebo jako ukazatel na funkci, na základě mechanismu volání:  

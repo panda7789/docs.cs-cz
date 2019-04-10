@@ -9,12 +9,12 @@ helpviewer_keywords:
 - services, debugging
 ms.assetid: 63ab0800-0f05-4f1e-88e6-94c73fd920a2
 author: ghogen
-ms.openlocfilehash: 7782c60832be487a258b51eab0b050e0a850d20d
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 1abb64f7d76b772168ed97024f5f1381670c6882
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59124576"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59321442"
 ---
 # <a name="how-to-debug-windows-service-applications"></a>Postupy: Ladění aplikací spouštěných jako služby systému Windows
 Služba musí být spuštěna v rámci kontextu správce řízení služeb spíše než v rámci sady Visual Studio. Z tohoto důvodu ladění služby není tak přímočaré jako ladění jiných typů aplikací Visual Studio. Chcete-li ladit službu, musíte spustit službu a potom připojit ladicí program k procesu, ve kterém je spuštěná. Potom můžete ladit svoji aplikaci pomocí všech standardních funkcí ladění sady Visual Studio.  
@@ -36,23 +36,23 @@ Služba musí být spuštěna v rámci kontextu správce řízení služeb spí�
   
 ### <a name="to-debug-a-service"></a>Ladění služby  
   
-1.  Vytvoření služby v konfiguraci ladění.  
+1. Vytvoření služby v konfiguraci ladění.  
   
-2.  Nainstalujte svoji službu. Další informace najdete v tématu [jak: Instalace a odinstalace služeb](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md).  
+2. Nainstalujte svoji službu. Další informace najdete v tématu [jak: Instalace a odinstalace služeb](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md).  
   
-3.  Spusťte službu buď ze **správce řízení služeb**, **Průzkumníka serveru**, nebo z kódu. Další informace najdete v tématu [jak: Spuštění služeb](../../../docs/framework/windows-services/how-to-start-services.md).  
+3. Spusťte službu buď ze **správce řízení služeb**, **Průzkumníka serveru**, nebo z kódu. Další informace najdete v tématu [jak: Spuštění služeb](../../../docs/framework/windows-services/how-to-start-services.md).  
   
-4.  Spuštění sady Visual Studio s přihlašovacími údaji správce, takže se můžete připojit k systémovým procesům.  
+4. Spuštění sady Visual Studio s přihlašovacími údaji správce, takže se můžete připojit k systémovým procesům.  
   
-5.  (Volitelné) Na řádku nabídek sady Visual Studio, zvolte **nástroje**, **možnosti**. V **možnosti** dialogového okna zvolte **ladění**, **symboly**, vyberte **Microsoft Symbol Servers** zaškrtněte políčko a klikněte na tlačítko **OK** tlačítko.  
+5. (Volitelné) Na řádku nabídek sady Visual Studio, zvolte **nástroje**, **možnosti**. V **možnosti** dialogového okna zvolte **ladění**, **symboly**, vyberte **Microsoft Symbol Servers** zaškrtněte políčko a klikněte na tlačítko **OK** tlačítko.  
   
-6.  V panelu nabídky zvolte **připojit k procesu** z **ladění** nebo **nástroje** nabídky. (Klávesnice: Ctrl+Alt+P)  
+6. V panelu nabídky zvolte **připojit k procesu** z **ladění** nebo **nástroje** nabídky. (Klávesnice: Ctrl+Alt+P)  
   
      **Procesy** zobrazí se dialogové okno.  
   
-7.  Vyberte **Zobrazit procesy všech uživatelů** zaškrtávací políčko.  
+7. Vyberte **Zobrazit procesy všech uživatelů** zaškrtávací políčko.  
   
-8.  V **procesy k dispozici** části, vyberte proces pro vaši službu a pak zvolte **připojit**.  
+8. V **procesy k dispozici** části, vyberte proces pro vaši službu a pak zvolte **připojit**.  
   
     > [!TIP]
     >  Proces bude mít stejný název jako spustitelný soubor pro vaši službu.  
@@ -77,7 +77,7 @@ Služba musí být spuštěna v rámci kontextu správce řízení služeb spí�
   
 #### <a name="how-to-run-a-windows-service-as-a-console-application"></a>Postupy: Spuštění služby Windows jako konzolové aplikace  
   
-1.  Přidejte metodu k službě, na kterém běží <xref:System.ServiceProcess.ServiceBase.OnStart%2A> a <xref:System.ServiceProcess.ServiceBase.OnStop%2A> metody:  
+1. Přidejte metodu k službě, na kterém běží <xref:System.ServiceProcess.ServiceBase.OnStart%2A> a <xref:System.ServiceProcess.ServiceBase.OnStop%2A> metody:  
   
     ```csharp  
     internal void TestStartupAndStop(string[] args)  
@@ -88,7 +88,7 @@ Služba musí být spuštěna v rámci kontextu správce řízení služeb spí�
     }  
     ```  
   
-2.  Přepsání `Main` metodu následujícím způsobem:  
+2. Přepsání `Main` metodu následujícím způsobem:  
   
     ```csharp  
     static void Main(string[] args)  
@@ -105,11 +105,11 @@ Služba musí být spuštěna v rámci kontextu správce řízení služeb spí�
     }
     ```  
   
-3.  V **aplikace** karta Vlastnosti projektu, nastavte **typ výstupu** k **konzolovou aplikaci**.  
+3. V **aplikace** karta Vlastnosti projektu, nastavte **typ výstupu** k **konzolovou aplikaci**.  
   
-4.  Zvolte **spustit ladění** (F5).  
+4. Zvolte **spustit ladění** (F5).  
   
-5.  Znovu spustit program jako službu Windows, nainstalujte ji a spusťte jej jako obvykle pro službu Windows. Není nutné tyto změny vrátit.  
+5. Znovu spustit program jako službu Windows, nainstalujte ji a spusťte jej jako obvykle pro službu Windows. Není nutné tyto změny vrátit.  
   
  V některých případech, například pokud chcete ladit problém, který nastane pouze při spuštění systému budete muset použít ladicí program Windows. [Stáhněte si Windows Driver Kit (WDK)](/windows-hardware/drivers/download-the-wdk) uvidíme [jak ladit služby Windows](https://support.microsoft.com/kb/824344).  
   

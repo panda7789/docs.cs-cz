@@ -7,12 +7,12 @@ helpviewer_keywords:
 - controls [Windows Forms], positioning
 - controls [Windows Forms], aligning
 ms.assetid: b7175656-f532-49e9-b0b1-177d1b40af3e
-ms.openlocfilehash: d07da72e238ef21237ca60e4d9b47240507948e5
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 262487eabb3f0ab27efe8bc7fdb31a822ed07823
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59209538"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59307740"
 ---
 # <a name="how-to-align-multiple-controls-on-windows-forms"></a>Postupy: Zarovnání více ovládacích prvků ve Windows Forms
 Ke standardizaci rozložení uživatelského rozhraní (UI) aplikace založené na Windows, můžete umístit skupin ovládacích prvků pomocí jediného příkazu.  
@@ -22,11 +22,11 @@ Ke standardizaci rozložení uživatelského rozhraní (UI) aplikace založené 
   
 ### <a name="to-align-multiple-controls-on-a-form"></a>Chcete-li zarovnání více ovládacích prvků ve formuláři  
   
-1.  Otevřete formulář, který obsahuje ovládací prvky, které chcete umístit v **Návrháře formulářů Windows**.  
+1. Otevřete formulář, který obsahuje ovládací prvky, které chcete umístit v **Návrháře formulářů Windows**.  
   
-2.  Vyberte ovládací prvky, které chcete zarovnat tak, aby první ovládací prvek, který jste vybrali primární ovládací prvek, ostatní musí být zarovnána.  
+2. Vyberte ovládací prvky, které chcete zarovnat tak, aby první ovládací prvek, který jste vybrali primární ovládací prvek, ostatní musí být zarovnána.  
   
-3.  Na **formátu** nabídky, přejděte k **zarovnat**a pak klikněte na jednu ze sedmi volby, které jsou k dispozici.  
+3. Na **formátu** nabídky, přejděte k **zarovnat**a pak klikněte na jednu ze sedmi volby, které jsou k dispozici.  
   
 ## <a name="see-also"></a>Viz také:
 

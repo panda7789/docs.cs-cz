@@ -11,21 +11,21 @@ helpviewer_keywords:
 - Windows Forms, calling one form from another
 - dialog boxes [Windows Forms], displaying for Windows Forms
 ms.assetid: aaac1b38-c651-495a-8d3d-5a9bfb32fee3
-ms.openlocfilehash: a25fe86c4dde1fed69e192956d77615bf2a70402
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b99f2273dae88faf86448da6e1d2986a83803abf
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33537421"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59311081"
 ---
 # <a name="how-to-display-dialog-boxes-for-windows-forms"></a>Postupy: Zobrazování dialogových oken pro Windows Forms
-Zobrazit dialogové okno stejným způsobem zobrazí všechny formuláře v aplikaci. Formulář spuštění načte automaticky, když je aplikace spuštěna. Chcete-li druhý formulář nebo dialogové okno se zobrazí v aplikaci, napište kód pro načtení a zobrazit ji. Stejně tak aby formulář nebo dialogové okno pole zmizí, zápis kódu pro uvolnění nebo skrytí podokna.  
+Zobrazit dialogové okno stejným způsobem, zobrazit jiné formuláře v aplikaci. Změna formuláře úvodního formuláře načte automaticky při spuštění aplikace. Chcete-li druhý formulář nebo dialogové okno se zobrazí v aplikaci, napište kód pro načtení a zobrazení. Podobně aby formulář nebo dialogové okno pole zmizí, napište kód, který uvolnit nebo skryli.  
   
 ### <a name="to-display-a-dialog-box"></a>Chcete-li zobrazit dialogové okno  
   
-1.  Přejděte k obslužné rutině událostí, pro který chcete otevřít dialogové okno. Tato situace může nastat, pokud je vybraný příkaz nabídky, při kliknutí na tlačítko nebo při výskytu další události.  
+1. Přejděte do obslužné rutiny události, které chcete otevřít dialogové okno. Tomu může dojít, pokud příkaz nabídky je vybraná, po kliknutí na tlačítko, nebo když dojde k jakékoli události.  
   
-2.  V obslužné rutině události přidejte kód k otevření dialogového okna. V tomto příkladu se používá události kliknutí na tlačítko zobrazit dialogové okno:  
+2. V obslužné rutině události přidejte kód pro otevření dialogového okna. V tomto příkladu je události kliknutí na tlačítko použít zobrazíte dialogové okno:  
   
     ```vb  
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click  

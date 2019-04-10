@@ -18,12 +18,12 @@ helpviewer_keywords:
 - Option Compare statement [Visual Basic]
 - text [Visual Basic], comparing
 ms.assetid: 54e8eeeb-3b0d-4fb9-acce-fbfbd5975f6e
-ms.openlocfilehash: b092d54e6cf4d8a96a35e6b1cc818fad8f26e3ae
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: e7c1e8e4431b7a653bb3a086589c35921f8001b9
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58834072"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59300629"
 ---
 # <a name="option-compare-statement"></a>Option Compare – příkaz
 Deklaruje výchozí metodu porovnání pro použití při porovnávání dat řetězců.  
@@ -65,11 +65,11 @@ Option Compare { Binary | Text }
   
 #### <a name="to-set-option-compare-in-the-ide"></a>Nastavení Option Compare v integrovaném vývojovém prostředí  
   
-1.  V **Průzkumníka řešení**, vyberte projekt. Na **projektu** nabídky, klikněte na tlačítko **vlastnosti**.  
+1. V **Průzkumníka řešení**, vyberte projekt. Na **projektu** nabídky, klikněte na tlačítko **vlastnosti**.  
   
-2.  Klikněte na tlačítko **kompilaci** kartu.  
+2. Klikněte na tlačítko **kompilaci** kartu.  
   
-3.  Nastavte hodnotu **Option Compare** pole.  
+3. Nastavte hodnotu **Option Compare** pole.  
   
  Při vytváření projektu, **Option Compare** nastavení **kompilaci** karty nastavená na **Option Compare** nastavení **možnosti** Dialogové okno. Chcete-li změnit toto nastavení, na **nástroje** nabídky, klikněte na tlačítko **možnosti**. V **možnosti** dialogového okna rozbalte **projekty a řešení**a potom klikněte na tlačítko **VB výchozí**. Počáteční výchozí nastavení v **výchozí hodnoty pro VB** je **binární**.  
   
@@ -97,7 +97,7 @@ Option Compare { Binary | Text }
 - [/optioncompare](../../../visual-basic/reference/command-line-compiler/optioncompare.md)
 - [Operátory porovnání](../../../visual-basic/language-reference/operators/comparison-operators.md)
 - [Operátory porovnání v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)
-- [Operátor Like](../../../visual-basic/language-reference/operators/like-operator.md)
-- [Řetězcové funkce](../../../visual-basic/language-reference/functions/string-functions.md)
-- [Příkaz Option Explicit](../../../visual-basic/language-reference/statements/option-explicit-statement.md)
-- [Příkaz Option Strict](../../../visual-basic/language-reference/statements/option-strict-statement.md)
+- [Like – operátor](../../../visual-basic/language-reference/operators/like-operator.md)
+- [Funkce řetězce](../../../visual-basic/language-reference/functions/string-functions.md)
+- [Option Explicit – příkaz](../../../visual-basic/language-reference/statements/option-explicit-statement.md)
+- [Option Strict – příkaz](../../../visual-basic/language-reference/statements/option-strict-statement.md)

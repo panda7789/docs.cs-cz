@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 12300bf4-c730-4405-9f65-d286f68b5a43
-ms.openlocfilehash: 9c8b2cb0417db6481ce0171d85b225ef3a784c1b
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 2aed766e6b2da7ebaf7b5b863375ee95b99eb159
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59119753"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59330334"
 ---
 # <a name="securitybindingelement-authentication-modes"></a>Režimy ověřování SecurityBindingElement
 Windows Communication Foundation (WCF) poskytuje několik režimů, které služby a klienti ověřování mezi sebou. Můžete vytvořit bezpečnostní prvky vazeb pro tyto režimy ověřování pomocí statické metody na <xref:System.ServiceModel.Channels.SecurityBindingElement> třídy nebo prostřednictvím konfigurace. Tento článek stručně popisuje režimy ověřování 18.  
@@ -22,13 +22,13 @@ Windows Communication Foundation (WCF) poskytuje několik režimů, které služ
   
 #### <a name="to-set-the-authentication-mode-in-configuration"></a>Chcete-li nastavit režim ověřování v konfiguraci  
   
-1.  K [ \<vazby >](../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md) element, přidejte [ \<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md).  
+1. K [ \<vazby >](../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md) element, přidejte [ \<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md).  
   
-2.  Jako podřízený prvek, přidejte [ \<vazby >](../../../../docs/framework/misc/binding.md) elementu `<customBinding>` elementu.  
+2. Jako podřízený prvek, přidejte [ \<vazby >](../../../../docs/framework/misc/binding.md) elementu `<customBinding>` elementu.  
   
-3.  Přidat `<security>` elementu `<binding>` elementu.  
+3. Přidat `<security>` elementu `<binding>` elementu.  
   
-4.  Nastavte `authenticationMode` atribut na jednu z hodnot je popsáno níže. Například následující kód nastaví režim na `AnonymousForCertificate`.  
+4. Nastavte `authenticationMode` atribut na jednu z hodnot je popsáno níže. Například následující kód nastaví režim na `AnonymousForCertificate`.  
   
     ```xml  
     <bindings>  
@@ -42,14 +42,14 @@ Windows Communication Foundation (WCF) poskytuje několik režimů, které služ
   
 #### <a name="to-set-the-mode-programmatically"></a>Pro nastavení režimu prostřednictvím kódu programu  
   
-1.  Určit návratový typ, který může být jedna z následujících akcí: <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>, <xref:System.ServiceModel.Channels.TransportSecurityBindingElement>, <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement>, nebo <xref:System.ServiceModel.Channels.SecurityBindingElement>.  
+1. Určit návratový typ, který může být jedna z následujících akcí: <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>, <xref:System.ServiceModel.Channels.TransportSecurityBindingElement>, <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement>, nebo <xref:System.ServiceModel.Channels.SecurityBindingElement>.  
   
-2.  Volat odpovídající statickou metodu <xref:System.ServiceModel.Channels.SecurityBindingElement> třídy. Například následující kód volá <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateAnonymousForCertificateBindingElement%2A> metody.  
+2. Volat odpovídající statickou metodu <xref:System.ServiceModel.Channels.SecurityBindingElement> třídy. Například následující kód volá <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateAnonymousForCertificateBindingElement%2A> metody.  
   
      [!code-csharp[c_CustomBindingsAuthMode#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_custombindingsauthmode/cs/source.cs#3)]
      [!code-vb[c_CustomBindingsAuthMode#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_custombindingsauthmode/vb/source.vb#3)]  
   
-3.  Pro vytvoření vlastní vazby pomocí elementu vazby. Další informace najdete v tématu [vlastní vazby](../../../../docs/framework/wcf/extending/custom-bindings.md).  
+3. Pro vytvoření vlastní vazby pomocí elementu vazby. Další informace najdete v tématu [vlastní vazby](../../../../docs/framework/wcf/extending/custom-bindings.md).  
   
 ## <a name="mode-descriptions"></a>Popisy režimu  
   

@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 1d8e3398-00d8-47d5-a084-214f9859d3d7
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1017a0326691c2e0f01e2a16df5db566786ee688
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 764b0d535413fc1e5e23a2e47221789aa807ff38
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59083618"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59321728"
 ---
 # <a name="accessing-custom-attributes"></a>Přístup k vlastním atributům
 Po atributy byly spojeny s prvky programu, reflexe je možné zadávat dotazy na jejich existence a hodnoty. V rozhraní .NET Framework verze 1.0 a 1.1 uživatelských atributů, které jsou zkoumány podle kontextu spuštění. Rozhraní .NET Framework verze 2.0 obsahuje nový kontext načtení kontextu pouze pro reflexi, který slouží ke kontrole kódu, který nelze načíst pro spuštění.  
@@ -56,13 +56,13 @@ public class LocalizationExtenderProvider
   
  Pokud při pokusu o načtení vlastních atributů pro veřejné vlastní typ atributu je v modulu runtime <xref:System.ComponentModel.DescriptionAttribute> připojené k **getlanguage –** metoda, provede následující akce:  
   
-1.  Modul runtime kontroluje, že argument typu **DescriptionAttribute** k **Type.GetCustomAttributes**(typ *typ*) je veřejná a proto je viditelný a přístupný.  
+1. Modul runtime kontroluje, že argument typu **DescriptionAttribute** k **Type.GetCustomAttributes**(typ *typ*) je veřejná a proto je viditelný a přístupný.  
   
-2.  Modul runtime kontroluje, zda uživatelský typ **MyDescriptionAttribute** , která je odvozena od **DescriptionAttribute** je viditelný a přístupný v rámci **System.Web.DLL**sestavení, ve kterém je připojen k metodě **getlanguage –**().  
+2. Modul runtime kontroluje, zda uživatelský typ **MyDescriptionAttribute** , která je odvozena od **DescriptionAttribute** je viditelný a přístupný v rámci **System.Web.DLL**sestavení, ve kterém je připojen k metodě **getlanguage –**().  
   
-3.  Modul runtime kontroluje, že konstruktor třídy **MyDescriptionAttribute** je viditelný a přístupný v rámci **System.Web.DLL** sestavení.  
+3. Modul runtime kontroluje, že konstruktor třídy **MyDescriptionAttribute** je viditelný a přístupný v rámci **System.Web.DLL** sestavení.  
   
-4.  Modul runtime volá konstruktor třídy **MyDescriptionAttribute** s parametry, které vlastní atribut a vrátí nový objekt volajícímu.  
+4. Modul runtime volá konstruktor třídy **MyDescriptionAttribute** s parametry, které vlastní atribut a vrátí nový objekt volajícímu.  
   
  Model reflexe vlastních atributů může způsobit únik těchto instance uživatelsky definované typy mimo sestavení, ve kterém je typ definován. To se nijak neliší od členů v knihovně modulu runtime systému, které vracejí výskyty uživatelem definované typy, jako například <xref:System.Type.GetMethods%2A?displayProperty=nameWithType> vrací pole **RuntimeMethodInfo** objekty. Aby klient zjišťování informací o typu uživatelem definované vlastní atribut definujte členy tohoto typu bude neveřejné.  
   

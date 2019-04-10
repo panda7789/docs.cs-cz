@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - WCF, username and password
 ms.assetid: 8e08b74b-fa44-4018-b63d-0d0805f85e3f
-ms.openlocfilehash: 0c5f5783f4f302b7a33c6d960049d68ed18dac91
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 5ad53700590c3f3683663d306e15fcbe857f625e
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59160248"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59308507"
 ---
 # <a name="how-to-use-a-custom-user-name-and-password-validator"></a>Postupy: Použití validátoru vlastního uživatelského jména a hesla
 Ve výchozím nastavení Pokud uživatelské jméno a heslo se používá k ověřování, Windows Communication Foundation (WCF) používá Windows k ověření uživatelského jména a hesla. Ale WCF umožňuje vlastního uživatelského jména a hesla metody ověřování, označované také jako *validátory*. Začlenit vlastní uživatelské jméno a heslo validátoru, vytvořte třídu, která je odvozena z <xref:System.IdentityModel.Selectors.UserNamePasswordValidator> a potom ho nakonfigurovat.  
@@ -21,12 +21,12 @@ Ve výchozím nastavení Pokud uživatelské jméno a heslo se používá k ově
   
 ### <a name="to-create-a-custom-user-name-and-password-validator"></a>Chcete-li vytvořit validátor vlastního uživatelského jména a hesla  
   
-1.  Vytvořte třídu, která je odvozena z <xref:System.IdentityModel.Selectors.UserNamePasswordValidator>.  
+1. Vytvořte třídu, která je odvozena z <xref:System.IdentityModel.Selectors.UserNamePasswordValidator>.  
   
      [!code-csharp[C_CustomUsernameAndPasswordValidator#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customusernameandpasswordvalidator/cs/service.cs#3)]
      [!code-vb[C_CustomUsernameAndPasswordValidator#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customusernameandpasswordvalidator/vb/service.vb#3)]  
   
-2.  Implementovat vlastní ověřování schéma tak, že přepíšete <xref:System.IdentityModel.Selectors.UserNamePasswordValidator.Validate%2A> metody.  
+2. Implementovat vlastní ověřování schéma tak, že přepíšete <xref:System.IdentityModel.Selectors.UserNamePasswordValidator.Validate%2A> metody.  
   
      Nepoužívejte kód v následujícím příkladu, který přepíše <xref:System.IdentityModel.Selectors.UserNamePasswordValidator.Validate%2A> metoda v produkčním prostředí. Nahraďte kód vašeho vlastního uživatelského jména a hesla schéma ověřování, což může znamenat načtení dvojice název a heslo uživatele z databáze.  
   
@@ -37,7 +37,7 @@ Ve výchozím nastavení Pokud uživatelské jméno a heslo se používá k ově
   
 ### <a name="to-configure-a-service-to-use-a-custom-user-name-and-password-validator"></a>Nakonfigurujte službu používat validátor vlastního uživatelského jména a hesla  
   
-1.  Konfigurace vazby, který používá zabezpečení zprávy přes všechny přenosu nebo zabezpečení na úrovni přenosu přes HTTP (S).  
+1. Konfigurace vazby, který používá zabezpečení zprávy přes všechny přenosu nebo zabezpečení na úrovni přenosu přes HTTP (S).  
   
      Při použití zabezpečení zpráv, přidejte jeden z vazeb poskytovaných systémem, například [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md), nebo [ \<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md) zabezpečení podporuje zpráv a `UserName` typ přihlašovacích údajů.  
   
@@ -82,7 +82,7 @@ Ve výchozím nastavení Pokud uživatelské jméno a heslo se používá k ově
     </system.serviceModel>  
     ```  
   
-2.  Konfigurace chování, které určuje, zda validátor vlastní uživatelské jméno a heslo slouží k ověření dvojice název a heslo uživatele pro příchozí <xref:System.IdentityModel.Tokens.UserNameSecurityToken> tokeny zabezpečení.  
+2. Konfigurace chování, které určuje, zda validátor vlastní uživatelské jméno a heslo slouží k ověření dvojice název a heslo uživatele pro příchozí <xref:System.IdentityModel.Tokens.UserNameSecurityToken> tokeny zabezpečení.  
   
     1.  Jako podřízené [ \<system.serviceModel >](../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md) elementu, přidejte [ \<chování >](../../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md) elementu.  
   

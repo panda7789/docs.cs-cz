@@ -8,12 +8,12 @@ helpviewer_keywords:
 - UIElements [WPF], binding adorners to
 - adorners [WPF], binding to specified UIElements
 ms.assetid: b2101611-a0ee-4137-bdb8-9b3673d2e6b9
-ms.openlocfilehash: 54c9e6dfff2bbf7bfabde523b5d6ae5a623fe733
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: b6909fec466c2b31a7f4156c43b21a0c724f0217
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59194718"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59307285"
 ---
 # <a name="how-to-bind-an-adorner-to-an-element"></a>Postupy: Svázání doplňku pro úpravy s elementem
 Tento příklad ukazuje, jak prostřednictvím kódu programu připojení doplňku k zadané <xref:System.Windows.UIElement>.  
@@ -21,9 +21,9 @@ Tento příklad ukazuje, jak prostřednictvím kódu programu připojení doplň
 ## <a name="example"></a>Příklad  
  K připojení doplňku k konkrétní <xref:System.Windows.UIElement>, postupujte podle těchto kroků:  
   
-1.  Volání `static` metoda <xref:System.Windows.Documents.AdornerLayer.GetAdornerLayer%2A> získat <xref:System.Windows.Documents.AdornerLayer> objekt pro <xref:System.Windows.UIElement> chcete být opatřený. <xref:System.Windows.Documents.AdornerLayer.GetAdornerLayer%2A> provede se vizuální strom začínající v zadaném **UIElement**a vrátí první vrstvu doplněk pro úpravy, které nalezne. (Pokud se nenajdou žádné vrstvy doplněk pro úpravy, metoda vrátí hodnotu null.)  
+1. Volání `static` metoda <xref:System.Windows.Documents.AdornerLayer.GetAdornerLayer%2A> získat <xref:System.Windows.Documents.AdornerLayer> objekt pro <xref:System.Windows.UIElement> chcete být opatřený. <xref:System.Windows.Documents.AdornerLayer.GetAdornerLayer%2A> provede se vizuální strom začínající v zadaném **UIElement**a vrátí první vrstvu doplněk pro úpravy, které nalezne. (Pokud se nenajdou žádné vrstvy doplněk pro úpravy, metoda vrátí hodnotu null.)  
   
-2.  Volání <xref:System.Windows.Documents.AdornerLayer.Add%2A> metodu pro vytvoření vazby doplněk pro úpravy k cíli **UIElement**.  
+2. Volání <xref:System.Windows.Documents.AdornerLayer.Add%2A> metodu pro vytvoření vazby doplněk pro úpravy k cíli **UIElement**.  
   
  Následující příklad vytvoří vazbu SimpleCircleAdorner (popsaný výš) k <xref:System.Windows.Controls.TextBox> s názvem *hodnotu myTextBox*.  
   

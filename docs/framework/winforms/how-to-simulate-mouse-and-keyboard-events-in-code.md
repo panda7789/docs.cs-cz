@@ -12,12 +12,12 @@ helpviewer_keywords:
 - mouse clicks [Windows Forms], simulating
 - mouse [Windows Forms], event simulation
 ms.assetid: 6abcb67e-3766-4af2-9590-bf5dabd17e41
-ms.openlocfilehash: aa0139c4b51bf33f9156eeb9dab6b9b6093524d8
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 6931f9b012a67c2d18995f2a3a56f290be0f0ddb
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59123445"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59313083"
 ---
 # <a name="how-to-simulate-mouse-and-keyboard-events-in-code"></a>Postupy: Simulace událostí myši a klávesnice v kódu
 Windows Forms poskytuje několik možností pro simulaci programově myši a klávesnice. Toto téma obsahuje přehled těchto možností.  
@@ -27,9 +27,9 @@ Windows Forms poskytuje několik možností pro simulaci programově myši a kl�
   
 #### <a name="to-programmatically-click-the-right-mouse-button"></a>Pravým tlačítkem myši na prostřednictvím kódu programu  
   
-1.  Vytvoření <xref:System.Windows.Forms.MouseEventArgs> jehož <xref:System.Windows.Forms.MouseEventArgs.Button%2A> je nastavena na <xref:System.Windows.Forms.MouseButtons.Right?displayProperty=nameWithType> hodnotu.  
+1. Vytvoření <xref:System.Windows.Forms.MouseEventArgs> jehož <xref:System.Windows.Forms.MouseEventArgs.Button%2A> je nastavena na <xref:System.Windows.Forms.MouseButtons.Right?displayProperty=nameWithType> hodnotu.  
   
-2.  Volání <xref:System.Windows.Forms.Control.OnMouseClick%2A> metoda s tímto <xref:System.Windows.Forms.MouseEventArgs> jako argument.  
+2. Volání <xref:System.Windows.Forms.Control.OnMouseClick%2A> metoda s tímto <xref:System.Windows.Forms.MouseEventArgs> jako argument.  
   
  Další informace o vlastních ovládacích prvcích najdete v tématu [vývoj prvky Windows Forms v době návrhu](./controls/developing-windows-forms-controls-at-design-time.md).  
   
@@ -58,7 +58,7 @@ Windows Forms poskytuje několik možností pro simulaci programově myši a kl�
   
 #### <a name="to-send-a-keystroke-to-the-same-application"></a>K odesílání jedním stisknutím tlačítka do stejné aplikace  
   
-1.  Volání <xref:System.Windows.Forms.SendKeys.Send%2A> nebo <xref:System.Windows.Forms.SendKeys.SendWait%2A> metodu <xref:System.Windows.Forms.SendKeys> třídy. Aktivní ovládací prvek aplikace bude přijímat zadané stisknutí kláves. Následující příklad kódu používá <xref:System.Windows.Forms.SendKeys.Send%2A> pro simulaci stisknutím klávesy ENTER v situaci, kdy uživatel dvakrát klikne na plochu formuláře. Tento příklad předpokládá <xref:System.Windows.Forms.Form> pomocí jediného <xref:System.Windows.Forms.Button> ovládací prvek, který má pořadové číslo 0.  
+1. Volání <xref:System.Windows.Forms.SendKeys.Send%2A> nebo <xref:System.Windows.Forms.SendKeys.SendWait%2A> metodu <xref:System.Windows.Forms.SendKeys> třídy. Aktivní ovládací prvek aplikace bude přijímat zadané stisknutí kláves. Následující příklad kódu používá <xref:System.Windows.Forms.SendKeys.Send%2A> pro simulaci stisknutím klávesy ENTER v situaci, kdy uživatel dvakrát klikne na plochu formuláře. Tento příklad předpokládá <xref:System.Windows.Forms.Form> pomocí jediného <xref:System.Windows.Forms.Button> ovládací prvek, který má pořadové číslo 0.  
   
      [!code-cpp[System.Windows.Forms.SimulateKeyPress#10](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.SimulateKeyPress/cpp/form1.cpp#10)]
      [!code-csharp[System.Windows.Forms.SimulateKeyPress#10](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.SimulateKeyPress/CS/form1.cs#10)]
@@ -66,7 +66,7 @@ Windows Forms poskytuje několik možností pro simulaci programově myši a kl�
   
 #### <a name="to-send-a-keystroke-to-a-different-application"></a>Odeslat stisknutí klávesy na novou aplikaci  
   
-1.  Aktivovat okno aplikace, která bude přijímat stisknutí kláves a poté zavolejte <xref:System.Windows.Forms.SendKeys.Send%2A> nebo <xref:System.Windows.Forms.SendKeys.SendWait%2A> metody. Protože neexistuje žádná spravovaná metoda aktivovat jiná aplikace, je nutné použít nativní metody Windows k vynucení fokus na jiné aplikace. Vyvolání platformu používá následující příklad kódu pro volání `FindWindow` a `SetForegroundWindow` metody k aktivaci okno aplikace kalkulačky a poté zavolá <xref:System.Windows.Forms.SendKeys.SendWait%2A> vydat aplikace Kalkulačka řadu výpočty.  
+1. Aktivovat okno aplikace, která bude přijímat stisknutí kláves a poté zavolejte <xref:System.Windows.Forms.SendKeys.Send%2A> nebo <xref:System.Windows.Forms.SendKeys.SendWait%2A> metody. Protože neexistuje žádná spravovaná metoda aktivovat jiná aplikace, je nutné použít nativní metody Windows k vynucení fokus na jiné aplikace. Vyvolání platformu používá následující příklad kódu pro volání `FindWindow` a `SetForegroundWindow` metody k aktivaci okno aplikace kalkulačky a poté zavolá <xref:System.Windows.Forms.SendKeys.SendWait%2A> vydat aplikace Kalkulačka řadu výpočty.  
   
     > [!NOTE]
     >  Správné parametry `FindWindow` volání, která vyhledává aplikace Kalkulačka se liší v závislosti na vaší verzi Windows.  Následující kód najde aplikace Kalkulačka na [!INCLUDE[win7](../../../includes/win7-md.md)]. Na [!INCLUDE[windowsver](../../../includes/windowsver-md.md)], změnit první parametr "SciCalc". Spy ++ nástroj, součástí sady Visual Studio, můžete použít k určení správné parametry.  

@@ -2,12 +2,12 @@
 title: <idn> – Element (nastavení Uri)
 ms.date: 03/30/2017
 ms.assetid: 16c8e869-1791-4cf5-9244-3d3c738f60ec
-ms.openlocfilehash: 3940f30f2ef90a77560a82edc909071f0ee8e130
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 2d2729f9120d6b6fe673904ad2bf6d005ddf5469
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59129399"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59321751"
 ---
 # <a name="idn-element-uri-settings"></a>\<IDN > – Element (nastavení Uri)
 Určuje, pokud analýza mezinárodních názvů domén (IDN) se použije na název domény.  
@@ -50,13 +50,13 @@ Určuje, pokud analýza mezinárodních názvů domén (IDN) se použije na náz
   
  Povolení podpory pro IRI, jsou požadovány následující dvě změny:  
   
-1.  Přidejte následující řádek do souboru machine.config, v adresáři rozhraní .NET Framework 2.0  
+1. Přidejte následující řádek do souboru machine.config, v adresáři rozhraní .NET Framework 2.0  
   
     ```xml  
     <section name="uri" type="System.Configuration.UriSection, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />  
     ```  
   
-2.  Zadejte, jestli chcete parsování mezinárodních názvů domén (IDN) k názvu domény a určuje, zda by měl použít IRI pravidel pro analýzu. To můžete udělat v souboru machine.config nebo v souboru app.config.  
+2. Zadejte, jestli chcete parsování mezinárodních názvů domén (IDN) k názvu domény a určuje, zda by měl použít IRI pravidel pro analýzu. To můžete udělat v souboru machine.config nebo v souboru app.config.  
   
  Existují tři možné hodnoty pro IDN v závislosti na servery DNS, které se používají:  
   

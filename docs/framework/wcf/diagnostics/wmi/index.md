@@ -2,12 +2,12 @@
 title: Diagnostika prostřednictvím rozhraní WMI (Windows Management Instrumentation)
 ms.date: 03/30/2017
 ms.assetid: fe48738d-e31b-454d-b5ec-24c85c6bf79a
-ms.openlocfilehash: a5dae1479c9be7954b9eec1eed197f358eb48e4f
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 9acb1b280248f8552680ea3fbba831b3de53b2c3
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53239511"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59308585"
 ---
 # <a name="using-windows-management-instrumentation-for-diagnostics"></a>Diagnostika prostřednictvím rozhraní WMI (Windows Management Instrumentation)
 Windows Communication Foundation (WCF) poskytuje dat kontroly služby za běhu pomocí zprostředkovatele WCF Windows Management Instrumentation (WMI).  
@@ -56,26 +56,26 @@ Windows Communication Foundation (WCF) poskytuje dat kontroly služby za běhu p
   
  Chcete-li změnit úrovně oprávnění uživatele, postupujte následovně.  
   
-1.  Klikněte na tlačítko Start a pak spusťte a zadejte **compmgmt.msc**.  
+1. Klikněte na tlačítko Start a pak spusťte a zadejte **compmgmt.msc**.  
   
-2.  Klikněte pravým tlačítkem na **služeb a ovládací prvky aplikace/služby WMI** vyberte **vlastnosti**.  
+2. Klikněte pravým tlačítkem na **služeb a ovládací prvky aplikace/služby WMI** vyberte **vlastnosti**.  
   
-3.  Vyberte **zabezpečení** kartu a přejděte **kořenový/ServiceModel** oboru názvů. Klikněte na tlačítko **zabezpečení** tlačítko.  
+3. Vyberte **zabezpečení** kartu a přejděte **kořenový/ServiceModel** oboru názvů. Klikněte na tlačítko **zabezpečení** tlačítko.  
   
-4.  Vyberte konkrétní skupinu nebo uživatele, kterou chcete řízení přístupu a použití **povolit** nebo **Odepřít** zaškrtávací políčko ke konfiguraci oprávnění.  
+4. Vyberte konkrétní skupinu nebo uživatele, kterou chcete řízení přístupu a použití **povolit** nebo **Odepřít** zaškrtávací políčko ke konfiguraci oprávnění.  
   
 ## <a name="granting-wcf-wmi-registration-permissions-to-additional-users"></a>Udělení oprávnění registrace služby WMI WCF dalším uživatelům  
  WCF zpřístupňuje data správy ke službě WMI. Dělá to tak, že hostitelem poskytovatele služby WMI v procesu, někdy označuje jako "oddělený zprostředkovatel". Pro správu data zpřístupní účet, který registruje tohoto zprostředkovatele musí mít příslušná oprávnění. Ve Windows lze zaregistrovat pouze malou sadu privilegované účty oddělení zprostředkovatelé ve výchozím nastavení. To je problém, protože uživatelé běžně chcete je zveřejnit dat služby WMI ze služby WCF spuštěný pod účtem, který není v výchozí nastavení.  
   
  Pokud chcete poskytnout tento přístup, musí správce, udělte oprávnění na další účet v následujícím pořadí:  
   
-1.  Oprávnění pro přístup k rozhraní WMI Namespace WCF.  
+1. Oprávnění pro přístup k rozhraní WMI Namespace WCF.  
   
-2.  Oprávnění k registraci zprostředkovatele rozhraní WMI odděleném WCF.  
+2. Oprávnění k registraci zprostředkovatele rozhraní WMI odděleném WCF.  
   
 #### <a name="to-grant-wmi-namespace-access-permission"></a>Udělení oprávnění k oboru názvů rozhraní WMI  
   
-1.  Spusťte následující skript prostředí PowerShell.  
+1. Spusťte následující skript prostředí PowerShell.  
   
     ```powershell  
     write-host ""  
@@ -122,7 +122,7 @@ Windows Communication Foundation (WCF) poskytuje dat kontroly služby za běhu p
   
 #### <a name="to-grant-provider-registration-access"></a>Poskytovatel udělit přístup k registraci  
   
-1.  Spusťte následující skript prostředí PowerShell.  
+1. Spusťte následující skript prostředí PowerShell.  
   
     ```powershell  
     write-host ""  
@@ -152,21 +152,21 @@ Whoami /user
 ## <a name="accessing-remote-wmi-object-instances"></a>Přistupující objekt instance vzdáleného rozhraní WMI  
  Pokud potřebujete pro přístup k instancím WCF služby WMI na vzdáleném počítači, je nutné povolit paket o ochraně osobních údajů v nabídce Nástroje, které používáte pro přístup. Následující část popisuje, jak tyto dosáhnout pomocí nástroje CIM Studio WMI, nástroj testování služby WMI Windows, stejně jako .NET SDK 2.0.  
   
-### <a name="wmi-cim-studio"></a>Rozhraní WMI CIM Studio  
+### <a name="wmi-cim-studio"></a>WMI CIM Studio  
  Pokud jste nainstalovali [nástroje pro správu služby WMI](https://go.microsoft.com/fwlink/?LinkId=95185), můžete použít nástroje CIM Studio WMI do instancí služby WMI přístup. Nástroje jsou v následující složce  
   
- **%WINDIR%\Program Files\WMI nástroje\\**  
+ **%windir%\Program Files\WMI Tools\\**  
   
-1.  V **připojit k oboru názvů:** okno, zadejte **root\ServiceModel** a klikněte na tlačítko **OK.**  
+1. V **připojit k oboru názvů:** okno, zadejte **root\ServiceModel** a klikněte na tlačítko **OK.**  
   
-2.  V **WMI CIM Studio přihlášení** okna, klikněte na tlačítko **možnosti >>** tlačítko pro rozbalení v okně. Vyberte **paket o ochraně osobních údajů** pro **úroveň ověřování**a klikněte na tlačítko **OK**.  
+2. V **WMI CIM Studio přihlášení** okna, klikněte na tlačítko **možnosti >>** tlačítko pro rozbalení v okně. Vyberte **paket o ochraně osobních údajů** pro **úroveň ověřování**a klikněte na tlačítko **OK**.  
   
 ### <a name="windows-management-instrumentation-tester"></a>Testování služby Windows Management Instrumentation  
  Tento nástroj je nainstalován ve Windows. K jeho spuštění spuštění nástroje command console tak, že zadáte **cmd.exe** v **spuštění nebo spuštění** dialogové okno a klikněte na tlačítko **OK**. Potom zadejte **wbemtest.exe** v příkazovém okně. Pak je spustit nástroj testování služby Windows Management Instrumentation.  
   
-1.  Klikněte na tlačítko **připojit** tlačítko v pravém horním rohu okna.  
+1. Klikněte na tlačítko **připojit** tlačítko v pravém horním rohu okna.  
   
-2.  V novém okně zadejte **root\ServiceModel** pro **Namespace** pole a vyberte **paket o ochraně osobních údajů** pro **úroveň ověřování**. Klikněte na **Připojit**.  
+2. V novém okně zadejte **root\ServiceModel** pro **Namespace** pole a vyberte **paket o ochraně osobních údajů** pro **úroveň ověřování**. Klikněte na **Připojit**.  
   
 ### <a name="using-managed-code"></a>Pomocí spravovaného kódu  
  Dostanete také vzdálené instance rozhraní WMI prostřednictvím kódu programu pomocí tříd poskytovaných oborem <xref:System.Management> oboru názvů. Následující příklad kódu ukazuje, jak to provést.  

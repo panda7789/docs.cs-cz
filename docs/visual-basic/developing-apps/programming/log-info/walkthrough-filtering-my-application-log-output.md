@@ -6,12 +6,12 @@ helpviewer_keywords:
 - My.Application.Log object, filtering output
 - application event logs, output filtering
 ms.assetid: 2c0a457a-38a4-49e1-934d-a51320b7b4ca
-ms.openlocfilehash: f38217a5385b9d736eaa744a73024f210eb8f553
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 25d2177eed9ef83ba8f2575668e72dc21c2cd43f
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58829372"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59298393"
 ---
 # <a name="walkthrough-filtering-myapplicationlog-output-visual-basic"></a>Návod: Filtrování výstupu My.Application.Log (Visual Basic)
 Tento návod ukazuje, jak změnit výchozí filtrování pro protokolování `My.Application.Log` objekt řídit, jaké informace jsou předány z `Log` objektu pro naslouchací procesy a jaké informace jsou zapsány pomocí naslouchací procesy. Protokolování chování můžete změnit i po vytvoření aplikace, protože informace o konfiguraci jsou uložena v konfiguračním souboru aplikace.  
@@ -21,17 +21,17 @@ Tento návod ukazuje, jak změnit výchozí filtrování pro protokolování `My
   
 #### <a name="to-build-the-sample-application"></a>K vytvoření ukázkové aplikace  
   
-1.  Otevřete nový projekt aplikace Windows jazyka Visual Basic.  
+1. Otevřete nový projekt aplikace Windows jazyka Visual Basic.  
   
-2.  Přidejte tlačítko s názvem Button1 Form1.  
+2. Přidejte tlačítko s názvem Button1 Form1.  
   
-3.  V <xref:System.Windows.Forms.Control.Click> obslužné rutiny události pro Button1, přidejte následující kód:  
+3. V <xref:System.Windows.Forms.Control.Click> obslužné rutiny události pro Button1, přidejte následující kód:  
   
      [!code-vb[VbVbcnMyApplicationLogFiltering#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyApplicationLogFiltering/VB/Form1.vb#1)]  
   
-4.  Spusťte aplikaci v ladicím programu.  
+4. Spusťte aplikaci v ladicím programu.  
   
-5.  Stisknutím klávesy **Button1**.  
+5. Stisknutím klávesy **Button1**.  
   
      Aplikace tyto informace zapisuje do souboru výstupu a protokolů ladění aplikace.  
   
@@ -39,7 +39,7 @@ Tento návod ukazuje, jak změnit výchozí filtrování pro protokolování `My
   
      `DefaultSource Error: 2 : Error in the application.`  
   
-6.  Ukončete aplikaci.  
+6. Ukončete aplikaci.  
   
      Informace o tom, jak zobrazit okno výstupu ladění vaší aplikace najdete v tématu [okno výstup](/visualstudio/ide/reference/output-window). Informace o umístění souboru protokolu aplikace naleznete v tématu [názorný postup: Určení, kam objekt My.Application.Log zapisuje informace](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md).  
   
@@ -56,7 +56,7 @@ Tento návod ukazuje, jak změnit výchozí filtrování pro protokolování `My
 |Hodnota DefaultSwitch|Závažnost zprávy vyžaduje pro výstup|  
 |---|---| 
 |`Critical`|`Critical`|  
-|`Error`|`Critical` Nebo `Error`|  
+|`Error`|`Critical` or `Error`|  
 |`Warning`|`Critical`, `Error`, nebo `Warning`|  
 |`Information`|`Critical`, `Error`, `Warning`, nebo `Information`|  
 |`Verbose`|`Critical`, `Error`, `Warning`, `Information`, nebo `Verbose`|  
@@ -71,7 +71,7 @@ Tento návod ukazuje, jak změnit výchozí filtrování pro protokolování `My
   
 #### <a name="to-log-only-activity-tracing-events"></a>Protokolovat události trasování pouze aktivity  
   
-1.  Klikněte pravým tlačítkem na app.config **Průzkumníka řešení** a vyberte **otevřít**.  
+1. Klikněte pravým tlačítkem na app.config **Průzkumníka řešení** a vyberte **otevřít**.  
   
      -nebo-  
   
@@ -83,15 +83,15 @@ Tento návod ukazuje, jak změnit výchozí filtrování pro protokolování `My
   
     3.  Klikněte na **Přidat**.  
   
-2.  Vyhledejte `<switches>` oddíl, což je v `<system.diagnostics>` oddíl, což je na nejvyšší úrovni `<configuration>` oddílu.  
+2. Vyhledejte `<switches>` oddíl, což je v `<system.diagnostics>` oddíl, což je na nejvyšší úrovni `<configuration>` oddílu.  
   
-3.  Najít element, který přidá `DefaultSwitch` do kolekce přepínače. By měla vypadat podobně jako tento element:  
+3. Najít element, který přidá `DefaultSwitch` do kolekce přepínače. By měla vypadat podobně jako tento element:  
   
      `<add name="DefaultSwitch" value="Information" />`  
   
-4.  Změňte hodnotu `value` atribut "ActivityTracing".  
+4. Změňte hodnotu `value` atribut "ActivityTracing".  
   
-5.  Obsah souboru app.config by měl být podobně jako následující kód XML:  
+5. Obsah souboru app.config by měl být podobně jako následující kód XML:  
   
     ```xml  
     <?xml version="1.0" encoding="utf-8" ?>  
@@ -120,9 +120,9 @@ Tento návod ukazuje, jak změnit výchozí filtrování pro protokolování `My
     </configuration>  
     ```  
   
-6.  Spusťte aplikaci v ladicím programu.  
+6. Spusťte aplikaci v ladicím programu.  
   
-7.  Stisknutím klávesy **Button1**.  
+7. Stisknutím klávesy **Button1**.  
   
      Aplikace zapíše do souboru výstupu a protokolů ladění aplikace následující informace:  
   
@@ -130,7 +130,7 @@ Tento návod ukazuje, jak změnit výchozí filtrování pro protokolování `My
   
      `DefaultSource Stop: 5 : Leaving Button1_Click`  
   
-8.  Ukončete aplikaci.  
+8. Ukončete aplikaci.  
   
 9. Změňte hodnotu `value` atribut "Informace".  
   
@@ -146,7 +146,7 @@ Tento návod ukazuje, jak změnit výchozí filtrování pro protokolování `My
   
 #### <a name="to-log-only-activity-tracing-events"></a>Aby se protokolovaly pouze události trasování činnosti  
   
-1.  Klikněte pravým tlačítkem na app.config **Průzkumníka řešení** a zvolte **otevřít**.  
+1. Klikněte pravým tlačítkem na app.config **Průzkumníka řešení** a zvolte **otevřít**.  
   
      -nebo-  
   
@@ -158,11 +158,11 @@ Tento návod ukazuje, jak změnit výchozí filtrování pro protokolování `My
   
     3.  Klikněte na **Přidat**.  
   
-2.  Klikněte pravým tlačítkem na app.config **Průzkumníka řešení**. Zvolte **otevřít**.  
+2. Klikněte pravým tlačítkem na app.config **Průzkumníka řešení**. Zvolte **otevřít**.  
   
-3.  Vyhledejte `<listeners>` sekci `<source>` části s `name` atribut "DefaultSource", což je v části `<sources>` oddílu. `<sources>` Oddíl je v části `<system.diagnostics>` části na nejvyšší úrovni `<configuration>` oddílu.  
+3. Vyhledejte `<listeners>` sekci `<source>` části s `name` atribut "DefaultSource", což je v části `<sources>` oddílu. `<sources>` Oddíl je v části `<system.diagnostics>` části na nejvyšší úrovni `<configuration>` oddílu.  
   
-4.  Přidání tohoto elementu `<listeners>` části:  
+4. Přidání tohoto elementu `<listeners>` části:  
   
     ```xml  
     <!-- Remove the default debug listener. -->  
@@ -171,9 +171,9 @@ Tento návod ukazuje, jak změnit výchozí filtrování pro protokolování `My
     <add name="NewDefault"/>  
     ```  
   
-5.  Vyhledejte `<sharedListeners>` sekci `<system.diagnostics>` části na nejvyšší úrovni `<configuration>` oddílu.  
+5. Vyhledejte `<sharedListeners>` sekci `<system.diagnostics>` části na nejvyšší úrovni `<configuration>` oddílu.  
   
-6.  Přidejte tento element, který `<sharedListeners>` části:  
+6. Přidejte tento element, který `<sharedListeners>` části:  
   
     ```xml  
     <add name="NewDefault"   
@@ -188,7 +188,7 @@ Tento návod ukazuje, jak změnit výchozí filtrování pro protokolování `My
   
      <xref:System.Diagnostics.EventTypeFilter> Filtru má jednu z <xref:System.Diagnostics.SourceLevels> hodnot výčtu jako jeho `initializeData` atribut.  
   
-7.  Obsah souboru app.config by měl být podobně jako následující kód XML:  
+7. Obsah souboru app.config by měl být podobně jako následující kód XML:  
   
     ```xml  
     <?xml version="1.0" encoding="utf-8" ?>  
@@ -229,7 +229,7 @@ Tento návod ukazuje, jak změnit výchozí filtrování pro protokolování `My
     </configuration>  
     ```  
   
-8.  Spusťte aplikaci v ladicím programu.  
+8. Spusťte aplikaci v ladicím programu.  
   
 9. Stisknutím klávesy **Button1**.  
   
@@ -249,9 +249,9 @@ Tento návod ukazuje, jak změnit výchozí filtrování pro protokolování `My
   
 ## <a name="see-also"></a>Viz také:
 
-- [Návod: Určení, kam objekt My.Application.Log zapisuje informace](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)
-- [Návod: Změna, kam objekt My.Application.Log zapisuje informace](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md)
+- [Návod: Zjištění, kam objekt My.Application.Log zapisuje informace](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)
+- [Návod: Změna místa, kam objekt My.Application.Log zapisuje informace](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md)
 - [Návod: Vytváření vlastních součástí naslouchajících protokolům](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-creating-custom-log-listeners.md)
 - [Postupy: Zápis zpráv protokolu](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md)
 - [Přepínače trasování](../../../../framework/debug-trace-profile/trace-switches.md)
-- [Protokolování informací z aplikace](../../../../visual-basic/developing-apps/programming/log-info/index.md)
+- [Protokolování informací z aplikace](../../../../visual-basic/developing-apps/programming/log-info/index.md)

@@ -9,12 +9,12 @@ dev_langs:
 ms.assetid: 2c61c920-d0f8-4c72-bfcc-6524570f3060
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 5688559bcadea309bb0ddb4b156f94540e7be624
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: fd60916302877692ac011e6c0743fae40a10dd34
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54664327"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59298419"
 ---
 # <a name="validating-an-xml-document-in-the-dom"></a>Ověřování dokumentu XML v modelu DOM
 <xref:System.Xml.XmlDocument> Třídy nelze ověřit kód XML v objektu modelu dokumentu (DOM) proti schéma XML definice jazyk (XSD) schématu nebo dokumentu typ definice (DTD) ve výchozím nastavení; XML je jenom ověřit, být ve správném formátu.  
@@ -29,15 +29,15 @@ ms.locfileid: "54664327"
 ### <a name="creating-an-xml-schema-validating-xmlreader"></a>Vytváření XML schéma ověřování XmlReader  
  Vytvoření XML schémat ověřování <xref:System.Xml.XmlReader>, postupujte podle těchto kroků.  
   
-1.  Vytvořit nový <xref:System.Xml.XmlReaderSettings> instance.  
+1. Vytvořit nový <xref:System.Xml.XmlReaderSettings> instance.  
   
-2.  Přidat schéma XML <xref:System.Xml.XmlReaderSettings.Schemas%2A> vlastnost <xref:System.Xml.XmlReaderSettings> instance.  
+2. Přidat schéma XML <xref:System.Xml.XmlReaderSettings.Schemas%2A> vlastnost <xref:System.Xml.XmlReaderSettings> instance.  
   
-3.  Zadejte `Schema` jako <xref:System.Xml.XmlReaderSettings.ValidationType%2A>.  
+3. Zadejte `Schema` jako <xref:System.Xml.XmlReaderSettings.ValidationType%2A>.  
   
-4.  Volitelně můžete zadat <xref:System.Xml.XmlReaderSettings.ValidationFlags%2A> a <xref:System.Xml.XmlReaderSettings.ValidationEventHandler> pro zpracování chyby ověřování schématu a při ověřování došlo k upozornění.  
+4. Volitelně můžete zadat <xref:System.Xml.XmlReaderSettings.ValidationFlags%2A> a <xref:System.Xml.XmlReaderSettings.ValidationEventHandler> pro zpracování chyby ověřování schématu a při ověřování došlo k upozornění.  
   
-5.  Nakonec předat <xref:System.Xml.XmlReaderSettings> objektu <xref:System.Xml.XmlReader.Create%2A> metodu <xref:System.Xml.XmlReader> třídy společně s dokumentu XML, vytváří se schéma ověřování <xref:System.Xml.XmlReader>.  
+5. Nakonec předat <xref:System.Xml.XmlReaderSettings> objektu <xref:System.Xml.XmlReader.Create%2A> metodu <xref:System.Xml.XmlReader> třídy společně s dokumentu XML, vytváří se schéma ověřování <xref:System.Xml.XmlReader>.  
   
 ### <a name="example"></a>Příklad  
  V příkladu kódu, který následuje, schématu ověření <xref:System.Xml.XmlReader> ověří data XML načtení do modelu DOM. Neplatný úpravy probíhají v dokumentu XML a je dokument poté ověřit, což způsobí chyby ověřování schématu. Nakonec jeden z chyby opravit a pak je součástí dokumentu XML částečně ověřený.  

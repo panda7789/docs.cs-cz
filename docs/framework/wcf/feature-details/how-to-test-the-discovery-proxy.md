@@ -2,53 +2,53 @@
 title: 'Postupy: Test proxy zjišťování'
 ms.date: 03/30/2017
 ms.assetid: d96e3fa2-3c42-4e5d-8244-2694081bdc32
-ms.openlocfilehash: 13d2e8ca46e634e3b27c8eb967d89d860df1c72d
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 856b86241299585b80d58c6d37582463736a5935
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59176277"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59316389"
 ---
 # <a name="how-to-test-the-discovery-proxy"></a>Postupy: Test proxy zjišťování
 Toto je čtvrtý čtyři témat, která ukazuje, jak implementace zjišťování proxy. V předchozím tématu [jak: Implementace klientské aplikace používající zjišťování Proxy k vyhledání služby](../../../../docs/framework/wcf/feature-details/client-app-discovery-proxy-to-find-a-service.md), jste implementovali WCF klientská aplikace, která používá proxy zjišťování k vyhledání služby a pak zavolá služba. Toto téma popisuje postup pro ověření proxy zjišťování, služby a pracovní aplikace klienta podle očekávání.  
   
 ### <a name="run-the-discovery-proxy"></a>Spustit zjišťování Proxy  
   
-1.  Otevřete příkazový řádek jako správce.  
+1. Otevřete příkazový řádek jako správce.  
   
-2.  Může se zobrazit dialogové okno s upozorněním: Brána Windows Firewall zablokovala některé funkce tohoto programu. Pokud se zobrazí tato zpráva, klikněte na tlačítko **Odblokovat** tlačítko.  
+2. Může se zobrazit dialogové okno s upozorněním: Brána Windows Firewall zablokovala některé funkce tohoto programu. Pokud se zobrazí tato zpráva, klikněte na tlačítko **Odblokovat** tlačítko.  
   
-3.  V příkazovém řádku spusťte zjišťování proxy DiscoveryProxy.exe.  
+3. V příkazovém řádku spusťte zjišťování proxy DiscoveryProxy.exe.  
   
-4.  Aplikace by měly zobrazit následující text: `Proxy started. Hit Enter to exit`.  
+4. Aplikace by měly zobrazit následující text: `Proxy started. Hit Enter to exit`.  
   
 ### <a name="run-the-discoverable-service"></a>Spustit zjistitelné služby  
   
-1.  Otevřete příkazový řádek jako správce.  
+1. Otevřete příkazový řádek jako správce.  
   
-2.  V příkazovém řádku spusťte Service.exe zjistitelné služby.  
+2. V příkazovém řádku spusťte Service.exe zjistitelné služby.  
   
-3.  DiscoveryProxy.exe by měly zobrazit následující text: `******* Adding the following service: ** [Service Contract Name] ** [Service Endpoint Addr] 3.******* Done *******` .  
+3. DiscoveryProxy.exe by měly zobrazit následující text: `******* Adding the following service: ** [Service Contract Name] ** [Service Endpoint Addr] 3.******* Done *******` .  
   
 ### <a name="run-the-client-application"></a>Spuštění klientské aplikace  
   
-1.  Otevřete příkazový řádek.  
+1. Otevřete příkazový řádek.  
   
-2.  V příkazovém řádku spusťte client.exe aplikace.  
+2. V příkazovém řádku spusťte client.exe aplikace.  
   
-3.  Klientská aplikace po několik sekund zobrazí následující text: Připojení k [Service-Endpoint].  
+3. Klientská aplikace po několik sekund zobrazí následující text: Připojení k [Service-Endpoint].  
   
-4.  Service.exe by pak zobrazí následující text: Byla přijata žádost o pozdrav, můžu odpoví.  
+4. Service.exe by pak zobrazí následující text: Byla přijata žádost o pozdrav, můžu odpoví.  
   
-5.  Client.exe by pak zobrazí následující text: Klient Hello!  
+5. Client.exe by pak zobrazí následující text: Klient Hello!  
   
 ### <a name="shut-down-the-applications"></a>Ukončení aplikace  
   
-1.  Vypněte klientské aplikace.  
+1. Vypněte klientské aplikace.  
   
-2.  Vypnutí služby. Proxy zjišťování se zobrazí následující text: `******* Removing the following service: ** [Service Contract Name] ** [Service Endpoint Addr] 2.3.******* Done *******`.  
+2. Vypnutí služby. Proxy zjišťování se zobrazí následující text: `******* Removing the following service: ** [Service Contract Name] ** [Service Endpoint Addr] 2.3.******* Done *******`.  
   
-3.  Vypněte proxy zjišťování.  
+3. Vypněte proxy zjišťování.  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 420ae24e-762b-4e09-b4c3-2112c470ee49
-ms.openlocfilehash: 8b2f195b2cb4c365693dc0f250a577a93cf25eee
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 015ce896e49b3a6a932c36db867271b4ac4c64c8
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59181529"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59303476"
 ---
 # <a name="large-udts"></a>Velké uživatelsky definované typy
 Uživatelem definované typy (UDT) umožňují vývojářům rozšířit systém skalárního typu na server uložením common language runtime (CLR) objekty v databázi serveru SQL Server. Uživatelsky definovaný typ může obsahovat několik elementů a může mít chování, na rozdíl od tradičních alias datové typy, které se skládají z jednoho typ dat systému SQL Server.  
@@ -24,7 +24,7 @@ Uživatelem definované typy (UDT) umožňují vývojářům rozšířit systém
   
  **SQL Server Books Online**  
   
-1.  [Uživatelem definované typy CLR](https://go.microsoft.com/fwlink/?LinkId=98366)  
+1. [Uživatelem definované typy CLR](https://go.microsoft.com/fwlink/?LinkId=98366)  
   
 ## <a name="retrieving-udt-schemas-using-getschema"></a>Načítání schémat UDT pomocí GetSchema  
  <xref:System.Data.SqlClient.SqlConnection.GetSchema%2A> Metoda <xref:System.Data.SqlClient.SqlConnection> vrátí informace o schématu v databázi <xref:System.Data.DataTable>. Další informace najdete v tématu [kolekce schémat SQL serveru](../../../../../docs/framework/data/adonet/sql-server-schema-collections.md).  

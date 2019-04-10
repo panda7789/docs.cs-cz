@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Extrahování dne v týdnu v určité datum'
+title: 'Postupy: Extrahování dne v týdnu z konkrétního data'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -24,23 +24,23 @@ helpviewer_keywords:
 ms.assetid: 1c9bef76-5634-46cf-b91c-9b9eb72091d7
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e2c422a75244302ae6433af933995b00bdfaa061
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c665cb590a090c546d50f780477c254344914a2f
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54537969"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59327760"
 ---
-# <a name="how-to-extract-the-day-of-the-week-from-a-specific-date"></a>Postupy: Extrahování dne v týdnu v určité datum
+# <a name="how-to-extract-the-day-of-the-week-from-a-specific-date"></a>Postupy: Extrahování dne v týdnu z konkrétního data
 Rozhraní .NET Framework umožňuje snadno určit pořadí dne v týdnu pro konkrétní datum a zobrazovaný název lokalizované den v týdnu pro konkrétní datum. Výčtová hodnota, která označuje den v týdnu odpovídající určitému datu je k dispozici <xref:System.DateTime.DayOfWeek%2A> nebo <xref:System.DateTimeOffset.DayOfWeek%2A> vlastnost. Naproti tomu načítání název dne v týdnu je operace formátování, které lze provést zavoláním metody pro formátování, jako jsou hodnoty data a času `ToString` metoda nebo <xref:System.String.Format%2A?displayProperty=nameWithType> metody. Toto téma ukazuje, jak provádět tyto operace formátování.  
   
 ### <a name="to-extract-a-number-indicating-the-day-of-the-week-from-a-specific-date"></a>Extrahovat číslo udávající den v týdnu v určité datum  
   
-1.  Při práci s řetězcovou reprezentací data je třeba ji převést na hodnotu <xref:System.DateTime> nebo <xref:System.DateTimeOffset> pomocí statické metody <xref:System.DateTime.Parse%2A?displayProperty=nameWithType> nebo <xref:System.DateTimeOffset.Parse%2A?displayProperty=nameWithType>.  
+1. Při práci s řetězcovou reprezentací data je třeba ji převést na hodnotu <xref:System.DateTime> nebo <xref:System.DateTimeOffset> pomocí statické metody <xref:System.DateTime.Parse%2A?displayProperty=nameWithType> nebo <xref:System.DateTimeOffset.Parse%2A?displayProperty=nameWithType>.  
   
-2.  Použití <xref:System.DateTime.DayOfWeek%2A?displayProperty=nameWithType> nebo <xref:System.DateTimeOffset.DayOfWeek%2A?displayProperty=nameWithType> vlastnost pro načtení <xref:System.DayOfWeek> hodnotu, která označuje den v týdnu.  
+2. Použití <xref:System.DateTime.DayOfWeek%2A?displayProperty=nameWithType> nebo <xref:System.DateTimeOffset.DayOfWeek%2A?displayProperty=nameWithType> vlastnost pro načtení <xref:System.DayOfWeek> hodnotu, která označuje den v týdnu.  
   
-3.  V případě potřeby přetypování (v jazyce C#) nebo převést (v jazyce Visual Basic) <xref:System.DayOfWeek> hodnotu na celé číslo.  
+3. V případě potřeby přetypování (v jazyce C#) nebo převést (v jazyce Visual Basic) <xref:System.DayOfWeek> hodnotu na celé číslo.  
   
  Následující příklad zobrazuje celé číslo, které představuje den v týdnu k určitému datu.  
   
@@ -49,9 +49,9 @@ Rozhraní .NET Framework umožňuje snadno určit pořadí dne v týdnu pro konk
   
 ### <a name="to-extract-the-abbreviated-weekday-name-from-a-specific-date"></a>Extrahovat zkrácený název dne v určité datum  
   
-1.  Při práci s řetězcovou reprezentací data je třeba ji převést na hodnotu <xref:System.DateTime> nebo <xref:System.DateTimeOffset> pomocí statické metody <xref:System.DateTime.Parse%2A?displayProperty=nameWithType> nebo <xref:System.DateTimeOffset.Parse%2A?displayProperty=nameWithType>.  
+1. Při práci s řetězcovou reprezentací data je třeba ji převést na hodnotu <xref:System.DateTime> nebo <xref:System.DateTimeOffset> pomocí statické metody <xref:System.DateTime.Parse%2A?displayProperty=nameWithType> nebo <xref:System.DateTimeOffset.Parse%2A?displayProperty=nameWithType>.  
   
-2.  Můžete extrahovat zkrácený název dne aktuální jazykové verze nebo specifické jazykové verze:  
+2. Můžete extrahovat zkrácený název dne aktuální jazykové verze nebo specifické jazykové verze:  
   
     1.  Chcete-li extrahovat zkrácený název dne pro aktuální jazykovou verzi, zavolejte hodnoty data a času <xref:System.DateTime.ToString%28System.String%29?displayProperty=nameWithType> nebo <xref:System.DateTimeOffset.ToString%28System.String%29?displayProperty=nameWithType> instanci metody a předejte jako řetězec "ddd" `format` parametru. Následující příklad ukazuje volání <xref:System.DateTime.ToString%28System.String%29> metody.  
   
@@ -65,9 +65,9 @@ Rozhraní .NET Framework umožňuje snadno určit pořadí dne v týdnu pro konk
   
 ### <a name="to-extract-the-full-weekday-name-from-a-specific-date"></a>Extrahovat název úplné dne v týdnu v určité datum  
   
-1.  Při práci s řetězcovou reprezentací data je třeba ji převést na hodnotu <xref:System.DateTime> nebo <xref:System.DateTimeOffset> pomocí statické metody <xref:System.DateTime.Parse%2A?displayProperty=nameWithType> nebo <xref:System.DateTimeOffset.Parse%2A?displayProperty=nameWithType>.  
+1. Při práci s řetězcovou reprezentací data je třeba ji převést na hodnotu <xref:System.DateTime> nebo <xref:System.DateTimeOffset> pomocí statické metody <xref:System.DateTime.Parse%2A?displayProperty=nameWithType> nebo <xref:System.DateTimeOffset.Parse%2A?displayProperty=nameWithType>.  
   
-2.  Můžete extrahovat úplné úplný název aktuální jazykové verze nebo specifické jazykové verze:  
+2. Můžete extrahovat úplné úplný název aktuální jazykové verze nebo specifické jazykové verze:  
   
     1.  Chcete-li extrahovat název dne v týdnu pro aktuální jazykovou verzi, zavolejte hodnoty data a času <xref:System.DateTime.ToString%28System.String%29?displayProperty=nameWithType> nebo <xref:System.DateTimeOffset.ToString%28System.String%29?displayProperty=nameWithType> instanci metody a předejte jako řetězec "dddd" `format` parametru. Následující příklad ukazuje volání <xref:System.DateTime.ToString%28System.String%29> metody.  
   

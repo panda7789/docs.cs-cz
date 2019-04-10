@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 07d5f01a-7b5b-40ea-9b15-f21561098fe4
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 54eb0bf5c364faa4f6c0f2a8d14490137e4ea442
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: b129da00fcd841566a4a823d8929348441d0a0f3
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59101192"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59315540"
 ---
 # <a name="how-to-define-a-generic-type-with-reflection-emit"></a>Postupy: Definování obecného typu pomocí generování reflexe
 Toto téma ukazuje, jak vytvořit jednoduchý obecný typ s dvěma parametry typu, jak použít omezení třídy, omezení rozhraní a zvláštní omezení pro parametry typu a jak vytvořit členy, které používají parametry typu třídy jako typy parametrů a návratové typy.  
@@ -27,25 +27,25 @@ Toto téma ukazuje, jak vytvořit jednoduchý obecný typ s dvěma parametry typ
   
 ### <a name="to-define-a-generic-type"></a>K definování obecného typu  
   
-1.  Definujte dynamické sestavení s názvem `GenericEmitExample1`. V tomto příkladu je sestavení spustí a uložit na disk, tak <xref:System.Reflection.Emit.AssemblyBuilderAccess.RunAndSave?displayProperty=nameWithType> je zadán.  
+1. Definujte dynamické sestavení s názvem `GenericEmitExample1`. V tomto příkladu je sestavení spustí a uložit na disk, tak <xref:System.Reflection.Emit.AssemblyBuilderAccess.RunAndSave?displayProperty=nameWithType> je zadán.  
   
      [!code-cpp[EmitGenericType#2](../../../samples/snippets/cpp/VS_Snippets_CLR/EmitGenericType/CPP/source.cpp#2)]
      [!code-csharp[EmitGenericType#2](../../../samples/snippets/csharp/VS_Snippets_CLR/EmitGenericType/CS/source.cs#2)]
      [!code-vb[EmitGenericType#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/EmitGenericType/VB/source.vb#2)]  
   
-2.  Definování dynamického modulu. Sestavení se skládá z spustitelných modulů. Pro jeden modul sestavení název modulu je stejný jako název sestavení a název souboru je název modulu s příponou.  
+2. Definování dynamického modulu. Sestavení se skládá z spustitelných modulů. Pro jeden modul sestavení název modulu je stejný jako název sestavení a název souboru je název modulu s příponou.  
   
      [!code-cpp[EmitGenericType#3](../../../samples/snippets/cpp/VS_Snippets_CLR/EmitGenericType/CPP/source.cpp#3)]
      [!code-csharp[EmitGenericType#3](../../../samples/snippets/csharp/VS_Snippets_CLR/EmitGenericType/CS/source.cs#3)]
      [!code-vb[EmitGenericType#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/EmitGenericType/VB/source.vb#3)]  
   
-3.  Definice třídy. V tomto příkladu je název třídy `Sample`.  
+3. Definice třídy. V tomto příkladu je název třídy `Sample`.  
   
      [!code-cpp[EmitGenericType#4](../../../samples/snippets/cpp/VS_Snippets_CLR/EmitGenericType/CPP/source.cpp#4)]
      [!code-csharp[EmitGenericType#4](../../../samples/snippets/csharp/VS_Snippets_CLR/EmitGenericType/CS/source.cs#4)]
      [!code-vb[EmitGenericType#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/EmitGenericType/VB/source.vb#4)]  
   
-4.  Definujte parametry obecného typu metody `Sample` předáním pole řetězců obsahujícího názvy parametrů metodě <xref:System.Reflection.Emit.TypeBuilder.DefineGenericParameters%2A?displayProperty=nameWithType>. Díky tomu třídy obecného typu. Vrácená hodnota je pole <xref:System.Reflection.Emit.GenericTypeParameterBuilder> objekty, které představují parametry typu, které je možné použít v emitovaný kód.  
+4. Definujte parametry obecného typu metody `Sample` předáním pole řetězců obsahujícího názvy parametrů metodě <xref:System.Reflection.Emit.TypeBuilder.DefineGenericParameters%2A?displayProperty=nameWithType>. Díky tomu třídy obecného typu. Vrácená hodnota je pole <xref:System.Reflection.Emit.GenericTypeParameterBuilder> objekty, které představují parametry typu, které je možné použít v emitovaný kód.  
   
      V následujícím kódu `Sample` stane obecný typ s parametry typu `TFirst` a `TSecond`. Chcete-li kód lépe čitelný, každý <xref:System.Reflection.Emit.GenericTypeParameterBuilder> je umístěn v proměnné se stejným názvem jako parametr typu.  
   
@@ -53,25 +53,25 @@ Toto téma ukazuje, jak vytvořit jednoduchý obecný typ s dvěma parametry typ
      [!code-csharp[EmitGenericType#5](../../../samples/snippets/csharp/VS_Snippets_CLR/EmitGenericType/CS/source.cs#5)]
      [!code-vb[EmitGenericType#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/EmitGenericType/VB/source.vb#5)]  
   
-5.  Těmto parametrům typu přidáte zvláštní omezení. V tomto příkladu zadejte parametr `TFirst` je omezen na typy, které mít konstruktor bez parametrů a typy odkazů.  
+5. Těmto parametrům typu přidáte zvláštní omezení. V tomto příkladu zadejte parametr `TFirst` je omezen na typy, které mít konstruktor bez parametrů a typy odkazů.  
   
      [!code-cpp[EmitGenericType#6](../../../samples/snippets/cpp/VS_Snippets_CLR/EmitGenericType/CPP/source.cpp#6)]
      [!code-csharp[EmitGenericType#6](../../../samples/snippets/csharp/VS_Snippets_CLR/EmitGenericType/CS/source.cs#6)]
      [!code-vb[EmitGenericType#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/EmitGenericType/VB/source.vb#6)]  
   
-6.  Volitelně lze těmto parametrům typu přidat omezení rozhraní a třídy. V tomto příkladu zadejte parametr `TFirst` je omezen na typy, které jsou odvozeny od základní třídy, která je reprezentována <xref:System.Type> objektů obsažených v proměnné `baseType`, a které implementují rozhraní, jejichž typy jsou obsaženy v proměnné `interfaceA` a `interfaceB`. Podívejte se na příklad kódu pro deklaraci a přiřazení těchto proměnných.  
+6. Volitelně lze těmto parametrům typu přidat omezení rozhraní a třídy. V tomto příkladu zadejte parametr `TFirst` je omezen na typy, které jsou odvozeny od základní třídy, která je reprezentována <xref:System.Type> objektů obsažených v proměnné `baseType`, a které implementují rozhraní, jejichž typy jsou obsaženy v proměnné `interfaceA` a `interfaceB`. Podívejte se na příklad kódu pro deklaraci a přiřazení těchto proměnných.  
   
      [!code-cpp[EmitGenericType#7](../../../samples/snippets/cpp/VS_Snippets_CLR/EmitGenericType/CPP/source.cpp#7)]
      [!code-csharp[EmitGenericType#7](../../../samples/snippets/csharp/VS_Snippets_CLR/EmitGenericType/CS/source.cs#7)]
      [!code-vb[EmitGenericType#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/EmitGenericType/VB/source.vb#7)]  
   
-7.  Definování pole. V tomto příkladu je typ pole určená parametr typu `TFirst`. <xref:System.Reflection.Emit.GenericTypeParameterBuilder> je odvozen od <xref:System.Type>, abyste mohli používat parametry obecného typu, kdekoli typ lze použít.  
+7. Definování pole. V tomto příkladu je typ pole určená parametr typu `TFirst`. <xref:System.Reflection.Emit.GenericTypeParameterBuilder> je odvozen od <xref:System.Type>, abyste mohli používat parametry obecného typu, kdekoli typ lze použít.  
   
      [!code-cpp[EmitGenericType#21](../../../samples/snippets/cpp/VS_Snippets_CLR/EmitGenericType/CPP/source.cpp#21)]
      [!code-csharp[EmitGenericType#21](../../../samples/snippets/csharp/VS_Snippets_CLR/EmitGenericType/CS/source.cs#21)]
      [!code-vb[EmitGenericType#21](../../../samples/snippets/visualbasic/VS_Snippets_CLR/EmitGenericType/VB/source.vb#21)]  
   
-8.  Definujte metodu, která používá typ parametry obecného typu. Všimněte si, že tyto metody nejsou obecné, pokud nemají své vlastní seznamy parametru typu. Následující kód definuje `static` – metoda (`Shared` v jazyce Visual Basic), který přijímá pole `TFirst` a vrátí `List<TFirst>` (`List(Of TFirst)` v jazyce Visual Basic) obsahující všechny prvky pole. Pokud chcete definovat tuto metodu, je potřeba vytvořit typ `List<TFirst>` voláním <xref:System.Type.MakeGenericType%2A> v definici obecného typu `List<T>`. ( `T` Vynecháte při použití `typeof` – operátor (`GetType` v jazyce Visual Basic) Chcete-li získat definici obecného typu.) Typ parametru je vytvořená pomocí <xref:System.Type.MakeArrayType%2A> metody.  
+8. Definujte metodu, která používá typ parametry obecného typu. Všimněte si, že tyto metody nejsou obecné, pokud nemají své vlastní seznamy parametru typu. Následující kód definuje `static` – metoda (`Shared` v jazyce Visual Basic), který přijímá pole `TFirst` a vrátí `List<TFirst>` (`List(Of TFirst)` v jazyce Visual Basic) obsahující všechny prvky pole. Pokud chcete definovat tuto metodu, je potřeba vytvořit typ `List<TFirst>` voláním <xref:System.Type.MakeGenericType%2A> v definici obecného typu `List<T>`. ( `T` Vynecháte při použití `typeof` – operátor (`GetType` v jazyce Visual Basic) Chcete-li získat definici obecného typu.) Typ parametru je vytvořená pomocí <xref:System.Type.MakeArrayType%2A> metody.  
   
      [!code-cpp[EmitGenericType#22](../../../samples/snippets/cpp/VS_Snippets_CLR/EmitGenericType/CPP/source.cpp#22)]
      [!code-csharp[EmitGenericType#22](../../../samples/snippets/csharp/VS_Snippets_CLR/EmitGenericType/CS/source.cs#22)]

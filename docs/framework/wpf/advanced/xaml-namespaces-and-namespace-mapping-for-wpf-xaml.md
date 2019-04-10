@@ -14,12 +14,12 @@ helpviewer_keywords:
 - classes [WPF], mapping namespaces to
 - namespaces [WPF]
 ms.assetid: 5c0854e3-7470-435d-9fe2-93eec9d3634e
-ms.openlocfilehash: cf09415e9203c82d26bccf4e84db5607047b6f35
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: c238bd3c014c07c541bed0c8f7bc12fc5a910f1b
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59176914"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59301032"
 ---
 # <a name="xaml-namespaces-and-namespace-mapping-for-wpf-xaml"></a>Obor názvů XAML mapování oboru názvů pro WPF XAML
 Dále toto téma vysvětluje přítomnost a účel dvě tak často, nenašla v kořenovém tagu souboru WPF XAML mapování oboru názvů XAML. Také popisuje, jak vytvořit podobná mapování pro elementy, které jsou definovány ve svém vlastním kódu a/nebo v rámci samostatné sestavení pomocí.  
@@ -119,15 +119,15 @@ End Namespace
 ## <a name="wpf-and-assembly-loading"></a>WPF a načítání sestavení  
  Kontext WPF schématu XAML se integruje s modelem aplikace WPF, která dále používá koncept CLR definované <xref:System.AppDomain>. Následující text popisuje, jak interpretovat kontext schématu XAML načtení sestavení nebo najít typy v době běhu nebo návrhu, založený na použití WPF <xref:System.AppDomain> a dalších faktorů.  
   
-1.  Iterovat přes <xref:System.AppDomain>, hledání, který odpovídá všechny aspekty název sestavení již načtena, počínaje naposledy načteného sestavení.  
+1. Iterovat přes <xref:System.AppDomain>, hledání, který odpovídá všechny aspekty název sestavení již načtena, počínaje naposledy načteného sestavení.  
   
-2.  Pokud je kvalifikovaný název, volání <xref:System.Reflection.Assembly.Load%28System.String%29?displayProperty=nameWithType> na kvalifikovaný název.  
+2. Pokud je kvalifikovaný název, volání <xref:System.Reflection.Assembly.Load%28System.String%29?displayProperty=nameWithType> na kvalifikovaný název.  
   
-3.  Pokud krátký název a token veřejného klíče úplný název odpovídá kódu načteného ze sestavení, vraťte se na toto sestavení.  
+3. Pokud krátký název a token veřejného klíče úplný název odpovídá kódu načteného ze sestavení, vraťte se na toto sestavení.  
   
-4.  Použít krátký název a token veřejného klíče pro volání <xref:System.Reflection.Assembly.Load%28System.String%29?displayProperty=nameWithType>.  
+4. Použít krátký název a token veřejného klíče pro volání <xref:System.Reflection.Assembly.Load%28System.String%29?displayProperty=nameWithType>.  
   
-5.  Pokud neúplný název, volání <xref:System.Reflection.Assembly.LoadWithPartialName%2A?displayProperty=nameWithType>.  
+5. Pokud neúplný název, volání <xref:System.Reflection.Assembly.LoadWithPartialName%2A?displayProperty=nameWithType>.  
   
  Volný XAML nepoužívá kroku 3; neexistuje žádné načten ze sestavení.  
   

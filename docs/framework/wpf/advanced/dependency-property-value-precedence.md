@@ -7,12 +7,12 @@ helpviewer_keywords:
 - classes [WPF], owners of dependency properties
 - metadata [WPF], dependency properties
 ms.assetid: 1fbada8e-4867-4ed1-8d97-62c07dad7ebc
-ms.openlocfilehash: 03ac9c59495d5eb95851df98f85eadc3d1a329ba
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 9adcd19ea48d62f4fdcab3380252ae8ec8398296
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59117745"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59315683"
 ---
 # <a name="dependency-property-value-precedence"></a>Priorita hodnot závislých vlastností
 <a name="introduction"></a> Toto téma vysvětluje, jak fungování [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] vlastnost systému může mít vliv na hodnotu vlastnosti závislosti a popisuje prioritu, ve které aspekty vlastnost systému použít na platnou hodnotu vlastnosti.  
@@ -39,25 +39,25 @@ ms.locfileid: "59117745"
 ## <a name="dependency-property-setting-precedence-list"></a>Seznam přednost nastavení vlastností závislosti  
  Níže je úplným a rozhodujícím pořadí, ve kterém systém vlastnost používá při přidělování za běhu hodnot vlastností závislosti. Nejvyšší priorita je uvedená jako první. Tento seznam rozšíří na některém z generalizace provedených [přehled vlastností závislosti](dependency-properties-overview.md).  
   
-1.  **Vlastnost systému vynucení.** Podrobnosti o vynucení, najdete v části [vynucení, animace a základní hodnotu](#animations) dále v tomto tématu.  
+1. **Vlastnost systému vynucení.** Podrobnosti o vynucení, najdete v části [vynucení, animace a základní hodnotu](#animations) dále v tomto tématu.  
   
-2.  **Aktivní animace, nebo animací pomocí chování blokování.** Pokud chcete mít žádný efekt praktické, musí být animace vlastnosti moct mají přednost před základní hodnoty (unanimated) i v případě, že tato hodnota byla nastavena místně. Podrobnosti najdete v tématu [vynucení, animace a základní hodnotu](#animations) dále v tomto tématu.  
+2. **Aktivní animace, nebo animací pomocí chování blokování.** Pokud chcete mít žádný efekt praktické, musí být animace vlastnosti moct mají přednost před základní hodnoty (unanimated) i v případě, že tato hodnota byla nastavena místně. Podrobnosti najdete v tématu [vynucení, animace a základní hodnotu](#animations) dále v tomto tématu.  
   
-3.  **Místní hodnota.** Místní hodnota může být nastaveno prostřednictvím pohodlí vlastnost "zabezpečenou obálku", což také odpovídá nastavení jako atribut nebo vlastnost element v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], nebo voláním <xref:System.Windows.DependencyObject.SetValue%2A> [!INCLUDE[TLA#tla_api](../../../../includes/tlasharptla-api-md.md)] pomocí vlastnosti konkrétní instance. Pokud nastavíte hodnotu místní pomocí vazby nebo prostředek, tyto každý působit v prioritu jako kdyby byla nastavena hodnotu s přímým přístupem.  
+3. **Místní hodnota.** Místní hodnota může být nastaveno prostřednictvím pohodlí vlastnost "zabezpečenou obálku", což také odpovídá nastavení jako atribut nebo vlastnost element v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], nebo voláním <xref:System.Windows.DependencyObject.SetValue%2A> [!INCLUDE[TLA#tla_api](../../../../includes/tlasharptla-api-md.md)] pomocí vlastnosti konkrétní instance. Pokud nastavíte hodnotu místní pomocí vazby nebo prostředek, tyto každý působit v prioritu jako kdyby byla nastavena hodnotu s přímým přístupem.  
   
-4.  **Vlastnosti šablony TemplatedParent.** Element má <xref:System.Windows.FrameworkElement.TemplatedParent%2A> Pokud byl vytvořen jako součást šablony ( <xref:System.Windows.Controls.ControlTemplate> nebo <xref:System.Windows.DataTemplate>). Podrobnosti o tom, kdy se to používá, najdete v části [TemplatedParent](#templatedparent) dále v tomto tématu. V rámci šablony platí následující priority:  
+4. **Vlastnosti šablony TemplatedParent.** Element má <xref:System.Windows.FrameworkElement.TemplatedParent%2A> Pokud byl vytvořen jako součást šablony ( <xref:System.Windows.Controls.ControlTemplate> nebo <xref:System.Windows.DataTemplate>). Podrobnosti o tom, kdy se to používá, najdete v části [TemplatedParent](#templatedparent) dále v tomto tématu. V rámci šablony platí následující priority:  
   
     1.  Aktivační události od <xref:System.Windows.FrameworkElement.TemplatedParent%2A> šablony.  
   
     2.  Sady vlastností (obvykle až [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] atributy) v <xref:System.Windows.FrameworkElement.TemplatedParent%2A> šablony.  
   
-5.  **Implicitní styl.** Platí jenom pro `Style` vlastnost. `Style` Vlastnost sestavil prostředek stylu s klíčem, který odpovídá typu daného prvku. Tento prostředek stylu musí existovat ve stránce nebo aplikaci. vyhledávání pro prostředek implicitní styl nebude pokračovat do motivy.  
+5. **Implicitní styl.** Platí jenom pro `Style` vlastnost. `Style` Vlastnost sestavil prostředek stylu s klíčem, který odpovídá typu daného prvku. Tento prostředek stylu musí existovat ve stránce nebo aplikaci. vyhledávání pro prostředek implicitní styl nebude pokračovat do motivy.  
   
-6.  **Styl aktivační události.** Aktivační události ve stylech ze stránky nebo aplikace (tyto styly může být explicitní nebo implicitní styly, ale ne z výchozích stylů, které mají nižší prioritou).  
+6. **Styl aktivační události.** Aktivační události ve stylech ze stránky nebo aplikace (tyto styly může být explicitní nebo implicitní styly, ale ne z výchozích stylů, které mají nižší prioritou).  
   
-7.  **Aktivuje se šablony.** Žádné aktivační události ze šablony ve stylu nebo šablony použité přímo.  
+7. **Aktivuje se šablony.** Žádné aktivační události ze šablony ve stylu nebo šablony použité přímo.  
   
-8.  **Style setter.** Z hodnoty <xref:System.Windows.Setter> ve stylech ze stránky nebo aplikace.  
+8. **Style setter.** Z hodnoty <xref:System.Windows.Setter> ve stylech ze stránky nebo aplikace.  
   
 9. **Styl výchozí (motiv).** Podrobnosti o při takovém se vztah styly motivů a šablon v rámci stylů motivů, naleznete v tématu [výchozí (motiv) styly](#themestyles) dále v tomto tématu. Ve výchozím stylu platí následující pořadí priorit:  
   

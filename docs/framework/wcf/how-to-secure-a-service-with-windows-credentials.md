@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - WCF, security
 ms.assetid: d171b5ca-96ef-47ff-800c-c138023cf76e
-ms.openlocfilehash: 70b8e2f28559d5fc54736db1319d2309aa5b86a7
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 5fb175bdd255af1b506dacb973a778b1f6f515f9
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59111329"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59329346"
 ---
 # <a name="how-to-secure-a-service-with-windows-credentials"></a>Postupy: Zabezpečení služby pomocí přihlašovacích údajů Windows
 Toto téma ukazuje, jak povolit zabezpečení přenosu pro službu Windows Communication Foundation (WCF), která se nachází v doméně Windows a je volán klienty ve stejné doméně. Další informace o tomto scénáři najdete v tématu [zabezpečení přenosu pomocí ověřování Windows](../../../docs/framework/wcf/feature-details/transport-security-with-windows-authentication.md). Ukázková aplikace, najdete v článku [WSHttpBinding](../../../docs/framework/wcf/samples/wshttpbinding.md) vzorku.  
@@ -30,15 +30,15 @@ Toto téma ukazuje, jak povolit zabezpečení přenosu pro službu Windows Commu
   
 #### <a name="to-create-a-wshttpbinding-that-uses-windows-credentials-and-message-security"></a>Chcete-li vytvořit WSHttpBinding, používající Windows přihlašovacích údajů a zabezpečení zpráv  
   
-1.  Tento postup kód je vložen na začátek `Run` metodu `Test` třídy v kódu služby v oddíle Příklad.  
+1. Tento postup kód je vložen na začátek `Run` metodu `Test` třídy v kódu služby v oddíle Příklad.  
   
-2.  Vytvořit instanci <xref:System.ServiceModel.WSHttpBinding> třídy.  
+2. Vytvořit instanci <xref:System.ServiceModel.WSHttpBinding> třídy.  
   
-3.  Nastavte <xref:System.ServiceModel.WSHttpSecurity.Mode%2A> vlastnost <xref:System.ServiceModel.WSHttpSecurity> třídu <xref:System.ServiceModel.SecurityMode.Message>.  
+3. Nastavte <xref:System.ServiceModel.WSHttpSecurity.Mode%2A> vlastnost <xref:System.ServiceModel.WSHttpSecurity> třídu <xref:System.ServiceModel.SecurityMode.Message>.  
   
-4.  Nastavte <xref:System.ServiceModel.MessageSecurityOverHttp.ClientCredentialType%2A> vlastnost <xref:System.ServiceModel.MessageSecurityOverHttp> třídu <xref:System.ServiceModel.MessageCredentialType.Windows>.  
+4. Nastavte <xref:System.ServiceModel.MessageSecurityOverHttp.ClientCredentialType%2A> vlastnost <xref:System.ServiceModel.MessageSecurityOverHttp> třídu <xref:System.ServiceModel.MessageCredentialType.Windows>.  
   
-5.  Kód pro tento postup je následující:  
+5. Kód pro tento postup je následující:  
   
      [!code-csharp[c_SecureWindowsService#1](../../../samples/snippets/csharp/VS_Snippets_CFX/c_securewindowsservice/cs/secureservice.cs#1)]
      [!code-vb[c_SecureWindowsService#1](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securewindowsservice/vb/secureservice.vb#1)]  
@@ -48,19 +48,19 @@ Toto téma ukazuje, jak povolit zabezpečení přenosu pro službu Windows Commu
   
 ##### <a name="to-use-a-binding-in-a-service"></a>Chcete-li použít vazbu ve službě  
   
-1.  Vložte tento postup kód za kód z předchozího postupu.  
+1. Vložte tento postup kód za kód z předchozího postupu.  
   
-2.  Vytvoření <xref:System.Type> proměnnou s názvem `contractType` a přiřaďte ho typu rozhraní (`ICalculator`). Při použití jazyka Visual Basic, použijte `GetType` operátor; při použití jazyka C#, použijte `typeof` – klíčové slovo.  
+2. Vytvoření <xref:System.Type> proměnnou s názvem `contractType` a přiřaďte ho typu rozhraní (`ICalculator`). Při použití jazyka Visual Basic, použijte `GetType` operátor; při použití jazyka C#, použijte `typeof` – klíčové slovo.  
   
-3.  Vytvořte druhý <xref:System.Type> proměnnou s názvem `serviceType` a přiřaďte ho typu implementovaného kontraktu (`Calculator`).  
+3. Vytvořte druhý <xref:System.Type> proměnnou s názvem `serviceType` a přiřaďte ho typu implementovaného kontraktu (`Calculator`).  
   
-4.  Vytvoření instance <xref:System.Uri> třídu s názvem `baseAddress` základní adresu služby. Základní adresa musí mít schéma, které odpovídá přenos. V takovém případě je schéma přenosu HTTP a adresa obsahuje speciální identifikátor URI (Uniform Resource) "localhost" a port číslo (8036) a také adresu základního koncového bodu ("serviceModelSamples /): `http://localhost:8036/serviceModelSamples/`.  
+4. Vytvoření instance <xref:System.Uri> třídu s názvem `baseAddress` základní adresu služby. Základní adresa musí mít schéma, které odpovídá přenos. V takovém případě je schéma přenosu HTTP a adresa obsahuje speciální identifikátor URI (Uniform Resource) "localhost" a port číslo (8036) a také adresu základního koncového bodu ("serviceModelSamples /): `http://localhost:8036/serviceModelSamples/`.  
   
-5.  Vytvoření instance <xref:System.ServiceModel.ServiceHost> třídy s `serviceType` a `baseAddress` proměnné.  
+5. Vytvoření instance <xref:System.ServiceModel.ServiceHost> třídy s `serviceType` a `baseAddress` proměnné.  
   
-6.  Přidání koncového bodu služby pomocí `contractType`, vazby a název koncového bodu (secureCalculator). Klient musí při zahájení volání služby zřetězit základní adresu a název koncového bodu.  
+6. Přidání koncového bodu služby pomocí `contractType`, vazby a název koncového bodu (secureCalculator). Klient musí při zahájení volání služby zřetězit základní adresu a název koncového bodu.  
   
-7.  Volání <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A> metoda ke spuštění služby. Kód pro tento postup je znázorněna zde:  
+7. Volání <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A> metoda ke spuštění služby. Kód pro tento postup je znázorněna zde:  
   
      [!code-csharp[c_SecureWindowsService#2](../../../samples/snippets/csharp/VS_Snippets_CFX/c_securewindowsservice/cs/secureservice.cs#2)]
      [!code-vb[c_SecureWindowsService#2](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securewindowsservice/vb/secureservice.vb#2)]  
@@ -74,19 +74,19 @@ Toto téma ukazuje, jak povolit zabezpečení přenosu pro službu Windows Commu
   
 ##### <a name="to-use-a-binding-in-a-client-with-code"></a>Pro použití vazby v klientovi s kódem  
   
-1.  Pomocí nástroje SvcUtil.exe generovat proxy kód z metadat služby. Další informace najdete v tématu [jak: Vytvoření klienta](../../../docs/framework/wcf/how-to-create-a-wcf-client.md). Vygenerovaný proxy kód dědí z <xref:System.ServiceModel.ClientBase%601> třídu, která zajistí, že má každý klient nezbytné konstruktory, metody a vlastnosti komunikovat se službou WCF. V tomto příkladu obsahuje generovaného kódu `CalculatorClient` třídy, která implementuje `ICalculator` rozhraní, povolení kompatibility se kódu služby.  
+1. Pomocí nástroje SvcUtil.exe generovat proxy kód z metadat služby. Další informace najdete v tématu [jak: Vytvoření klienta](../../../docs/framework/wcf/how-to-create-a-wcf-client.md). Vygenerovaný proxy kód dědí z <xref:System.ServiceModel.ClientBase%601> třídu, která zajistí, že má každý klient nezbytné konstruktory, metody a vlastnosti komunikovat se službou WCF. V tomto příkladu obsahuje generovaného kódu `CalculatorClient` třídy, která implementuje `ICalculator` rozhraní, povolení kompatibility se kódu služby.  
   
-2.  Tento postup kód je vložen na začátek `Main` metoda klientskou aplikaci.  
+2. Tento postup kód je vložen na začátek `Main` metoda klientskou aplikaci.  
   
-3.  Vytvoření instance <xref:System.ServiceModel.WSHttpBinding> třídy a nastavte jeho režim zabezpečení na `Message` a typ do přihlašovacích údajů klienta `Windows`. Příklad názvy proměnné `clientBinding`.  
+3. Vytvoření instance <xref:System.ServiceModel.WSHttpBinding> třídy a nastavte jeho režim zabezpečení na `Message` a typ do přihlašovacích údajů klienta `Windows`. Příklad názvy proměnné `clientBinding`.  
   
-4.  Vytvoření instance <xref:System.ServiceModel.EndpointAddress> třídu s názvem `serviceAddress`. Inicializuje instanci se základní adresou zřetězená s název koncového bodu.  
+4. Vytvoření instance <xref:System.ServiceModel.EndpointAddress> třídu s názvem `serviceAddress`. Inicializuje instanci se základní adresou zřetězená s název koncového bodu.  
   
-5.  Vytvoření instance třídy generovaného klienta s `serviceAddress` a `clientBinding` proměnné.  
+5. Vytvoření instance třídy generovaného klienta s `serviceAddress` a `clientBinding` proměnné.  
   
-6.  Volání <xref:System.ServiceModel.ClientBase%601.Open%2A> způsob, jak je znázorněno v následujícím kódu.  
+6. Volání <xref:System.ServiceModel.ClientBase%601.Open%2A> způsob, jak je znázorněno v následujícím kódu.  
   
-7.  Volání služby a zobrazí výsledky.  
+7. Volání služby a zobrazí výsledky.  
   
      [!code-csharp[c_secureWindowsClient#1](../../../samples/snippets/csharp/VS_Snippets_CFX/c_securewindowsclient/cs/secureclient.cs#1)]
      [!code-vb[c_secureWindowsClient#1](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securewindowsclient/vb/secureclient.vb#1)]  
@@ -100,15 +100,15 @@ Toto téma ukazuje, jak povolit zabezpečení přenosu pro službu Windows Commu
   
 #### <a name="to-enable-transfer-security-on-a-service-in-a-windows-domain-using-configuration"></a>Povolit přenos zabezpečení ve službě service v doméně Windows pomocí konfigurace  
   
-1.  Přidat [ \<wsHttpBinding >](../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) elementu [ \<vazby >](../../../docs/framework/configure-apps/file-schema/wcf/bindings.md) element oddílu konfiguračního souboru.  
+1. Přidat [ \<wsHttpBinding >](../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) elementu [ \<vazby >](../../../docs/framework/configure-apps/file-schema/wcf/bindings.md) element oddílu konfiguračního souboru.  
   
-2.  Přidat <`binding`> element <`WSHttpBinding`> elementu a nastavte `configurationName` atribut na hodnotu vhodné pro vaši aplikaci.  
+2. Přidat <`binding`> element <`WSHttpBinding`> elementu a nastavte `configurationName` atribut na hodnotu vhodné pro vaši aplikaci.  
   
-3.  Přidat <`security`> element a nastavte `mode` atribut na zprávu.  
+3. Přidat <`security`> element a nastavte `mode` atribut na zprávu.  
   
-4.  Přidat <`message`> element a nastavte `clientCredentialType` atribut pro Windows.  
+4. Přidat <`message`> element a nastavte `clientCredentialType` atribut pro Windows.  
   
-5.  V konfiguračním souboru služby, nahraďte `<bindings>` oddíl s následujícím kódem. Pokud již nemáte konfigurační soubor služby, přečtěte si téma [pomocí vazby na konfiguraci služeb a klientů](../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md).  
+5. V konfiguračním souboru služby, nahraďte `<bindings>` oddíl s následujícím kódem. Pokud již nemáte konfigurační soubor služby, přečtěte si téma [pomocí vazby na konfiguraci služeb a klientů](../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md).  
   
     ```xml  
     <bindings>  
@@ -127,17 +127,17 @@ Toto téma ukazuje, jak povolit zabezpečení přenosu pro službu Windows Commu
   
 ##### <a name="to-use-a-binding-in-a-client-with-configuration"></a>Pro použití vazby v klientovi s konfigurací  
   
-1.  Pomocí nástroje SvcUtil.exe pro generování souboru kódu a konfigurace proxy serveru z metadat služby. Další informace najdete v tématu [jak: Vytvoření klienta](../../../docs/framework/wcf/how-to-create-a-wcf-client.md).  
+1. Pomocí nástroje SvcUtil.exe pro generování souboru kódu a konfigurace proxy serveru z metadat služby. Další informace najdete v tématu [jak: Vytvoření klienta](../../../docs/framework/wcf/how-to-create-a-wcf-client.md).  
   
-2.  Nahradit [ \<vazby >](../../../docs/framework/configure-apps/file-schema/wcf/bindings.md) část vygenerovaný konfigurační soubor s kódem konfigurace z předchozí části.  
+2. Nahradit [ \<vazby >](../../../docs/framework/configure-apps/file-schema/wcf/bindings.md) část vygenerovaný konfigurační soubor s kódem konfigurace z předchozí části.  
   
-3.  Vložení kódu procedury na začátku `Main` metoda klientský program.  
+3. Vložení kódu procedury na začátku `Main` metoda klientský program.  
   
-4.  Vytvoření instance třídy generovaného klienta předejte název vazby v konfiguračním souboru jako vstupní parametr.  
+4. Vytvoření instance třídy generovaného klienta předejte název vazby v konfiguračním souboru jako vstupní parametr.  
   
-5.  Volání <xref:System.ServiceModel.ClientBase%601.Open%2A> způsob, jak je znázorněno v následujícím kódu.  
+5. Volání <xref:System.ServiceModel.ClientBase%601.Open%2A> způsob, jak je znázorněno v následujícím kódu.  
   
-6.  Volání služby a zobrazí výsledky.  
+6. Volání služby a zobrazí výsledky.  
   
      [!code-csharp[c_secureWindowsClient#2](../../../samples/snippets/csharp/VS_Snippets_CFX/c_securewindowsclient/cs/secureclient.cs#2)]  
   

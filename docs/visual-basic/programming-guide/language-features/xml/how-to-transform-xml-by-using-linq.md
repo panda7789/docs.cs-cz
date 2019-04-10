@@ -5,12 +5,12 @@ helpviewer_keywords:
 - XML [Visual Basic], transforming
 - LINQ to XML [Visual Basic], transforming XML
 ms.assetid: 815687f4-0bc2-4c0b-adc6-d78744aa356f
-ms.openlocfilehash: 0d07c47e64b7eaea80155eabbc50bc2bae0a889c
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: c34d3988c89e0ce07676e9181200fc039010b50a
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58834254"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59324980"
 ---
 # <a name="how-to-transform-xml-by-using-linq-visual-basic"></a>Postupy: Transformace XML pomocí LINQ (Visual Basic)
 [Literály XML](../../../../visual-basic/language-reference/xml-literals/index.md) usnadňují přečíst XML z jednoho zdroje a transformovat ho do nového formátu XML. Můžete využívat dotazy LINQ načítat obsah, který umožňuje transformovat nebo změnit obsah v existující dokument na nový formát XML.  
@@ -21,9 +21,9 @@ ms.locfileid: "58834254"
   
 ### <a name="to-transform-an-xml-document"></a>K transformaci dokumentu XML  
   
-1.  V sadě Visual Studio vytvořte nový projekt v jazyce Visual Basic **konzolovou aplikaci** šablony projektu.  
+1. V sadě Visual Studio vytvořte nový projekt v jazyce Visual Basic **konzolovou aplikaci** šablony projektu.  
   
-2.  Poklikejte na soubor Module1.vb vytvořen v projektu a upravte kód jazyka Visual Basic. Přidejte následující kód, který `Sub Main` z `Module1` modulu. Tento kód vytvoří zdrojovém dokumentu XML jako <xref:System.Xml.Linq.XDocument> objektu.  
+2. Poklikejte na soubor Module1.vb vytvořen v projektu a upravte kód jazyka Visual Basic. Přidejte následující kód, který `Sub Main` z `Module1` modulu. Tento kód vytvoří zdrojovém dokumentu XML jako <xref:System.Xml.Linq.XDocument> objektu.  
   
     ```vb  
     Dim catalog =   
@@ -59,7 +59,7 @@ ms.locfileid: "58834254"
   
      [Postupy: Načtení XML ze souboru, řetězce nebo Stream](../../../../visual-basic/programming-guide/language-features/xml/how-to-load-xml-from-a-file-string-or-stream.md).  
   
-3.  Za kód k vytvoření zdrojového dokumentu XML, přidejte následující kód k načtení všech \<knihy > prvky z objektu a transformují je na dokument HTML. Seznam \<knihy > prvků je vytvořena pomocí dotaz LINQ, který vrátí kolekci <xref:System.Xml.Linq.XElement> objektů, které obsahují kód HTML pro transformovaná. Vložené výrazy můžete použít pro převedení hodnot ze zdrojového dokumentu v novém formátu XML.  
+3. Za kód k vytvoření zdrojového dokumentu XML, přidejte následující kód k načtení všech \<knihy > prvky z objektu a transformují je na dokument HTML. Seznam \<knihy > prvků je vytvořena pomocí dotaz LINQ, který vrátí kolekci <xref:System.Xml.Linq.XElement> objektů, které obsahují kód HTML pro transformovaná. Vložené výrazy můžete použít pro převedení hodnot ze zdrojového dokumentu v novém formátu XML.  
   
      Výsledný dokumentu HTML je zapsána do souboru s použitím <xref:System.Xml.Linq.XElement.Save%2A> metody.  
   
@@ -82,7 +82,7 @@ ms.locfileid: "58834254"
     htmlOutput.Save("BookDescription.html")  
     ```  
   
-4.  Po `Sub Main` z `Module1`, přidejte novou metodu (`Sub`) k transformaci \<popis > uzlu na zadaném formátu HTML. Tato metoda je volána kód v předchozím kroku a používá k zachování formát \<popis > elementy.  
+4. Po `Sub Main` z `Module1`, přidejte novou metodu (`Sub`) k transformaci \<popis > uzlu na zadaném formátu HTML. Tato metoda je volána kód v předchozím kroku a používá k zachování formát \<popis > elementy.  
   
      Tato metoda nahrazuje dílčí prvky \<popis > element s HTML. `ReplaceWith` Metoda se používá k zachování umístění podřízených elementů. Transformovaný obsah \<popis > element je součástí HTML odstavec (\<p >) element. <xref:System.Xml.Linq.XContainer.Nodes%2A> Vlastnost se používá k načtení transformovaný obsah \<popis > element. Tím se zajistí, že dílčí prvky jsou součástí převedeného obsahu.  
   
@@ -114,9 +114,9 @@ ms.locfileid: "58834254"
     End Function  
     ```  
   
-5.  Uložte provedené změny.  
+5. Uložte provedené změny.  
   
-6.  Stisknutím klávesy F5 spusťte kód. Výsledná uložit dokument bude vypadat takto:  
+6. Stisknutím klávesy F5 spusťte kód. Výsledná uložit dokument bude vypadat takto:  
   
     ```  
     <?xml version="1.0"?>  
@@ -158,8 +158,8 @@ ms.locfileid: "58834254"
 ## <a name="see-also"></a>Viz také:
 
 - [Literály XML](../../../../visual-basic/language-reference/xml-literals/index.md)
-- [Manipulace s kódem XML v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/manipulating-xml.md)
+- [Zacházení s XML v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/manipulating-xml.md)
 - [XML](../../../../visual-basic/programming-guide/language-features/xml/index.md)
-- [Postupy: Načtení XML ze souboru, řetězce nebo Stream](../../../../visual-basic/programming-guide/language-features/xml/how-to-load-xml-from-a-file-string-or-stream.md)
+- [Postupy: Načtení XML ze souboru, řetězce nebo streamu](../../../../visual-basic/programming-guide/language-features/xml/how-to-load-xml-from-a-file-string-or-stream.md)
 - [LINQ](../../../../visual-basic/programming-guide/language-features/linq/index.md)
-- [Úvod do LINQ v JAZYKU Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+- [Představení technologie LINQ v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)

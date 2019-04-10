@@ -2,12 +2,12 @@
 title: Programování stromu položek modelu
 ms.date: 03/30/2017
 ms.assetid: 0229efde-19ac-4bdc-a187-c6227a7bd1a5
-ms.openlocfilehash: f3def07ecbc60362b2a8c1d38689dc686cd5bbd5
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 1aaa1aa9922a7f57138782effe9492ec84198c8a
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59086465"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59321130"
 ---
 # <a name="programming-model-item-tree"></a>Programování stromu položek modelu
 Tato ukázka předvádí, jak přejít <xref:System.Activities.Presentation.Model.ModelItem> stromové struktury pomocí deklarativní datové vazby ve stromovém zobrazení Windows Presentation Foundation (WPF).
@@ -29,15 +29,15 @@ justAdded.Properties["DisplayName"].SetValue("new name");
 
 #### <a name="to-use-this-sample"></a>Pro fungování této ukázky
 
-1.  Otevřete ProgrammingModelItemTree.sln řešení v sadě Visual Studio 2010.
+1. Otevřete ProgrammingModelItemTree.sln řešení v sadě Visual Studio 2010.
 
-2.  Sestavte řešení tak, že vyberete **sestavit řešení** z **sestavení** nabídky.
+2. Sestavte řešení tak, že vyberete **sestavit řešení** z **sestavení** nabídky.
 
-3.  Stisknutím klávesy F5 spusťte aplikaci. [!INCLUDE[avalon2](../../../../includes/avalon2-md.md)] Se pak zobrazí formulář.
+3. Stisknutím klávesy F5 spusťte aplikaci. [!INCLUDE[avalon2](../../../../includes/avalon2-md.md)] Se pak zobrazí formulář.
 
-4.  Klikněte na tlačítko **načíst WF** tlačítko načtete <xref:System.Activities.Presentation.Model.ModelItem> a jeho vazbu na stromové zobrazení.
+4. Klikněte na tlačítko **načíst WF** tlačítko načtete <xref:System.Activities.Presentation.Model.ModelItem> a jeho vazbu na stromové zobrazení.
 
-5.  Kliknutím **změnit Model položka stromu** tlačítko spustí předchozí kód pro přidání položky do stromu a nastavení vlastnosti.
+5. Kliknutím **změnit Model položka stromu** tlačítko spustí předchozí kód pro přidání položky do stromu a nastavení vlastnosti.
 
 > [!IMPORTANT]
 >  Vzorky mohou již být nainstalováno ve vašem počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  

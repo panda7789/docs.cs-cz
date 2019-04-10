@@ -2,21 +2,21 @@
 title: Generování kódu v LINQ to SQL
 ms.date: 03/30/2017
 ms.assetid: ddcbdaa1-e7fa-4d85-a379-313b49965c07
-ms.openlocfilehash: 48035b0f7b4a8c9a37fade5dfc2e2c45ea779dba
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 6565655cdb3222a8c9fa7e7759bac09d57ee269b
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59174886"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59321585"
 ---
 # <a name="code-generation-in-linq-to-sql"></a>Generování kódu v LINQ to SQL
 Můžete generovat kód pro reprezentaci databáze pomocí [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] nebo nástroj příkazového řádku SQLMetal. V obou případech se generování kódu začátku do konce dochází ve třech fázích:  
   
-1.  *Extraktor* extrahuje informace o schématu z databáze a znovu sestaví informace do souboru DBML ve formátu XML.  
+1. *Extraktor* extrahuje informace o schématu z databáze a znovu sestaví informace do souboru DBML ve formátu XML.  
   
-2.  Je skenovalo souboru DBML *program pro ověření DBML* chyby.  
+2. Je skenovalo souboru DBML *program pro ověření DBML* chyby.  
   
-3.  Pokud se zdá, že žádné chyby ověření, je soubor předaná generátoru kódu.  
+3. Pokud se zdá, že žádné chyby ověření, je soubor předaná generátoru kódu.  
   
  Další informace najdete v tématu [SqlMetal.exe (nástroj pro generování kódu)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md). Vývojáři, kteří používají Visual Studio můžete také použít [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] pro generování kódu. Zobrazit [LINQ to SQL nástroje v sadě Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2).  
   

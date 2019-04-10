@@ -1,5 +1,5 @@
 ---
-title: Kolekce paměti a výkon
+title: Uvolnění paměti a výkon
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -8,14 +8,14 @@ helpviewer_keywords:
 ms.assetid: c203467b-e95c-4ccf-b30b-953eb3463134
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 69a11e99966467de005ab92d3dcdebaa70bbdbe4
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 9aa04051a8aad56c653eaee1a79fb48a849cf377
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47397980"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59310561"
 ---
-# <a name="garbage-collection-and-performance"></a>Kolekce paměti a výkon
+# <a name="garbage-collection-and-performance"></a>Uvolnění paměti a výkon
 <a name="top"></a> Toto téma popisuje problémy spojené s uvolňování paměti kolekce a využití paměti. Řeší problémy, které se vztahují na spravované haldě a vysvětluje, jak minimalizovat dopad uvolňování paměti u svých aplikací. Všechny problémy obsahuje odkazy na postupy, které můžete použít k prozkoumání problémů.  
   
  Toto téma obsahuje následující oddíly:  
@@ -43,7 +43,7 @@ ms.locfileid: "47397980"
  Chcete-li program WinDbg nainstalovat, nainstalujte ladění nástroje pro Windows z [stáhnout ladění nástroje pro Windows](/windows-hardware/drivers/debugger/debugger-download-tools) stránky.
   
 <a name="etw"></a>   
-### <a name="garbage-collection-etw-events"></a>Události Trasování událostí pro Windows kolekci paměti  
+### <a name="garbage-collection-etw-events"></a>Události Trasování událostí pro Windows uvolnění paměti  
  Trasování událostí pro Windows (ETW) je systém trasování, které doplňují profilování a ladění v rozhraní .NET Framework poskytuje podporu. Počínaje [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], [události trasování událostí pro Windows kolekci paměti](../../../docs/framework/performance/garbage-collection-etw-events.md) zachycení užitečné informace pro spravované haldy z hlediska statistickou analýzu. Například `GCStart_V1` událost, která se vyvolá, když uvolňování paměti se použije, obsahuje následující informace:  
   
 -   Které generování objektů se shromažďují.  
@@ -84,7 +84,7 @@ ms.locfileid: "47397980"
 -   [Využití procesoru během uvolňování paměti je příliš vysoká.](#Issue_HighCPU)  
   
 <a name="Issue_OOM"></a>   
-### <a name="issue-an-out-of-memory-exception-is-thrown"></a>Problém: Limit paměti se vyvolá výjimka  
+### <a name="issue-an-out-of-memory-exception-is-thrown"></a>Problém: Dojde k výjimce na více instancí z důvodu nedostatku paměti  
  Existují dva případy legitimní pro spravované <xref:System.OutOfMemoryException> vyvolání:  
   
 -   Nedostatek virtuální paměti.  
@@ -118,7 +118,7 @@ ms.locfileid: "47397980"
 |[Určete, kolik virtuální paměti je možné vyhradit.](#GetVM)<br /><br /> [Určete, kolik paměti potvrzuje spravované haldě.](#ManagedHeapCommit)<br /><br /> [Určete, kolik paměti rezervuje spravované haldě.](#ManagedHeapReserve)<br /><br /> [Určení velké objekty v 2. generace.](#ExamineGen2)<br /><br /> [Určete odkazy na objekty.](#ObjRef)|  
   
 <a name="Issue_NotFastEnough"></a>   
-### <a name="issue-the-garbage-collector-does-not-reclaim-objects-fast-enough"></a>Problém: Systému uvolňování paměti nezíská objekty dostatečně rychle  
+### <a name="issue-the-garbage-collector-does-not-reclaim-objects-fast-enough"></a>Problém: Uvolňování nezíská objekty dostatečně rychle  
  Když se objeví jako objekty nejsou jsou uvolněny podle očekávání pro uvolnění paměti, je nutné určit, jestli jsou všechny silné odkazy na tyto objekty.  
   
  Tento problém se můžete setkat také v případě žádná kolekce uvolnění paměti pro generování, který obsahuje objekt mrtvý, což znamená, že nebyla spuštěna finalizační metodu pro objekt mrtvý. Například to je možné při spouštění aplikace jednovláknový apartment (STA) a vlákno této služby, které frontě finalizační metodu nejde volat metodu do něj.  
@@ -156,7 +156,7 @@ ms.locfileid: "47397980"
  Pokud se domníváte, že neexistuje žádná legitimní příčinou fragmentaci, obraťte se na Microsoft zákaznický servis a podporu.  
   
 <a name="Issue_LongPauses"></a>   
-### <a name="issue-garbage-collection-pauses-are-too-long"></a>Problém: Pozastavení kolekce uvolnění paměti jsou příliš dlouhé  
+### <a name="issue-garbage-collection-pauses-are-too-long"></a>Problém: Pozastaví kolekce uvolnění paměti jsou příliš dlouhé  
  Uvolňování paměti funguje v obnovitelně v reálném čase, takže aplikace musí být schopné tolerovat některé pozastaví. Kritéria pro obnovitelné reálném čase je, že 95 % operací musí dokončit včas.  
   
  V souběžné uvolňování paměti spravovaná vlákna je možné spustit shromažďování, což znamená, že je možné je minimální.  
@@ -172,7 +172,7 @@ ms.locfileid: "47397980"
 |[Určuje délku času v uvolňování paměti.](#TimeInGC)<br /><br /> [Určete, co způsobilo uvolnění paměti.](#Triggered)|  
   
 <a name="Issue_Gen0"></a>   
-### <a name="issue-generation-0-is-too-big"></a>Problém: 0. generace je moc velká.  
+### <a name="issue-generation-0-is-too-big"></a>Problém: Generace 0 je moc velká.  
  Generace 0 by mohla mít větší počet objektů v 64bitovém systému, zejména v případě, že místo uvolnění paměti pracovní stanice použijete uvolnění paměti serveru. Je to proto, že je prahová hodnota pro aktivaci 0 uvolnění paměti generace vyšší v těchto prostředích a kolekcemi generace 0 můžete získat mnohem větší. Výkon je vyšší, pokud aplikace přiděluje víc paměti než se aktivuje uvolňování paměti.  
   
 <a name="Issue_HighCPU"></a>   
@@ -278,7 +278,7 @@ ms.locfileid: "47397980"
 <a name="OOMIsManaged"></a>   
 ##### <a name="to-determine-whether-the-out-of-memory-exception-is-managed"></a>Chcete-li zjistit, jestli je spravované výjimky na více instancí z důvodu nedostatku paměti  
   
-1.  V ladicím programu WinDbg nebo Visual Studio s rozšířením ladicí program SOS načíst, zadejte tisku výjimky (**pe**) příkaz:  
+1. V ladicím programu WinDbg nebo Visual Studio s rozšířením ladicí program SOS načíst, zadejte tisku výjimky (**pe**) příkaz:  
   
      **! pe**  
   
@@ -292,9 +292,9 @@ ms.locfileid: "47397980"
     StackTrace (generated):  
     ```  
   
-2.  Pokud výstup neurčuje výjimku, budete muset určit, které vlákno výjimky na více instancí z důvodu nedostatku paměti je z. Zadejte následující příkaz v ladicím programu, který chcete zobrazit všechna vlákna s jejich zásobníky volání:  
+2. Pokud výstup neurčuje výjimku, budete muset určit, které vlákno výjimky na více instancí z důvodu nedostatku paměti je z. Zadejte následující příkaz v ladicím programu, který chcete zobrazit všechna vlákna s jejich zásobníky volání:  
   
-     **~\*znalostní báze**  
+     **~\*kb**  
   
      Vlákno se zásobníkem, který má volání výjimky je indikován `RaiseTheException` argument. Toto je objektu spravované výjimky.  
   
@@ -302,9 +302,9 @@ ms.locfileid: "47397980"
     28adfb44 7923918f 5b61f2b4 00000000 5b61f2b4 mscorwks!RaiseTheException+0xa0   
     ```  
   
-3.  Můžete použít následující příkaz pro výpis vnořené výjimky.  
+3. Můžete použít následující příkaz pro výpis vnořené výjimky.  
   
-     **! pe-vnořené**  
+     **! pe -vnořené**  
   
      Pokud nenajdete žádné výjimky, výstup z důvodu nedostatku paměti výjimka pochází z nespravovaného kódu.  
   
@@ -327,7 +327,7 @@ ms.locfileid: "47397980"
   
 -   Použití **vmstat** příkaz:  
   
-     **! vmstat**  
+     **!vmstat**  
   
      Největší bezplatná oblasti je největší hodnotu ve sloupci maximální, jak je znázorněno v následujícím výstupu.  
   
@@ -344,9 +344,9 @@ ms.locfileid: "47397980"
 <a name="Physical"></a>   
 ##### <a name="to-determine-whether-there-is-enough-physical-memory"></a>Určuje, jestli je dostatečná fyzická paměť  
   
-1.  Spuštění Správce úloh Windows.  
+1. Spuštění Správce úloh Windows.  
   
-2.  Na **výkonu** kartu, podívejte se na potvrzená hodnota. (Ve Windows 7, podívejte se na **potvrzení (KB)** v **systémové skupiny**.)  
+2. Na **výkonu** kartu, podívejte se na potvrzená hodnota. (Ve Windows 7, podívejte se na **potvrzení (KB)** v **systémové skupiny**.)  
   
      Pokud **celkový** blízko **Limit**, máte málo na fyzické paměti.  
   
@@ -456,7 +456,7 @@ ms.locfileid: "47397980"
   
 -   Pokud chcete zjistit odkazy pro konkrétní objekt, patří adresu:  
   
-     **! gcroot 1c37b2ac**  
+     **!gcroot 1c37b2ac**  
   
      Kořeny na zásobníky může být falešně pozitivních výsledků. Další informace získáte pomocí příkazu `!help gcroot`.  
   
@@ -494,13 +494,13 @@ ms.locfileid: "47397980"
 <a name="Finalize"></a>   
 ##### <a name="to-determine-whether-there-are-objects-waiting-to-be-finalized"></a>Chcete-li zjistit, zda jsou objekty čekání na jejich dokončení  
   
-1.  V ladicím programu WinDbg nebo Visual Studio s rozšířením SOS ladicího programu, načíst zadejte následující příkaz:  
+1. V ladicím programu WinDbg nebo Visual Studio s rozšířením SOS ladicího programu, načíst zadejte následující příkaz:  
   
      **! finalizequeue**  
   
      Podívejte se na počet objektů, které jsou připraveny k dokončení. Pokud je vysoké číslo, musíte prozkoumat proč tyto finalizační metody nemůže vůbec průběh nebo nelze průběh rychlé dostatečně.  
   
-2.  Pokud chcete získat výstup vláken, zadejte následující příkaz:  
+2. Pokud chcete získat výstup vláken, zadejte následující příkaz:  
   
      **vlákna – speciální**  
   
@@ -554,7 +554,7 @@ ms.locfileid: "47397980"
   
 -   Vypočítejte místo používané 0. generace:  
   
-     **? 49e05d04 0x49521f8c**  
+     **? 49e05d04-0x49521f8c**  
   
      Výsledek je následující. Generace 0 je přibližně 9 MB.  
   
@@ -698,7 +698,7 @@ ms.locfileid: "47397980"
   
 -   V ladicím programu WinDbg nebo Visual Studio s rozšířením SOS ladicího programu, načíst zadejte následující příkaz, který zobrazit všechna vlákna s jejich zásobníky volání:  
   
-     **~\*znalostní báze**  
+     **~\*kb**  
   
      Tento příkaz zobrazí výstup podobný následujícímu.  
   
@@ -780,4 +780,4 @@ ms.locfileid: "47397980"
   
 ## <a name="see-also"></a>Viz také:
 
-- [Uvolňování paměti](../../../docs/standard/garbage-collection/index.md)
+- [Kolekce paměti](../../../docs/standard/garbage-collection/index.md)

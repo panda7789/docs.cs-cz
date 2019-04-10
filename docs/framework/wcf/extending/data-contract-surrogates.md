@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - data contracts [WCF], surrogates
 ms.assetid: 8c31134c-46c5-4ed7-94af-bab0ac0dfce5
-ms.openlocfilehash: 684ce075155d3da9bae3f7828e84d34399928875
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: f97826cb5154035b535b5eac3a8818d8b366d639
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59158623"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59315345"
 ---
 # <a name="data-contract-surrogates"></a>Náhrady kontraktů dat
 Kontrakt dat *náhradní* je pokročilá funkce postavené na kontraktu dat modelu. Tato funkce je určena pro použití pro nahrazení v situacích, ve kterém chcete změnit, jak je typ serializován, deserializované nebo předpokládaných do metadat uživatelů a přizpůsobení typu. Při některých scénářích, kde mohou být použity náhradní kontraktu dat. není určeno pro typ, polí a vlastností nejsou označené <xref:System.Runtime.Serialization.DataMemberAttribute> atribut nebo uživatelům, aby dynamicky se vytvářejí odchylky schématu.  
@@ -141,15 +141,15 @@ Kontrakt dat *náhradní* je pokročilá funkce postavené na kontraktu dat mode
   
 ##### <a name="to-implement-serialization-and-deserialization"></a>K implementaci serializace a deserializace  
   
-1.  Vytvoření instance <xref:System.ServiceModel.ServiceHost> pro vaši službu. Úplné pokyny najdete v tématu [základní programování WCF](../../../../docs/framework/wcf/basic-wcf-programming.md).  
+1. Vytvoření instance <xref:System.ServiceModel.ServiceHost> pro vaši službu. Úplné pokyny najdete v tématu [základní programování WCF](../../../../docs/framework/wcf/basic-wcf-programming.md).  
   
-2.  Pro každý <xref:System.ServiceModel.Description.ServiceEndpoint> hostitele zadanou službu najít jeho <xref:System.ServiceModel.Description.OperationDescription>.  
+2. Pro každý <xref:System.ServiceModel.Description.ServiceEndpoint> hostitele zadanou službu najít jeho <xref:System.ServiceModel.Description.OperationDescription>.  
   
-3.  Vyhledávání, po operaci chování k určení, zda instance <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior> nenajde.  
+3. Vyhledávání, po operaci chování k určení, zda instance <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior> nenajde.  
   
-4.  Pokud <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior> nalezen, nastavte jeho <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior.DataContractSurrogate%2A> vlastnost do nové instance náhradního. Pokud ne <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior> je najít, vytvořte novou instanci a nastavte <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior.DataContractSurrogate%2A> členem nové chování náhradního do nové instance.  
+4. Pokud <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior> nalezen, nastavte jeho <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior.DataContractSurrogate%2A> vlastnost do nové instance náhradního. Pokud ne <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior> je najít, vytvořte novou instanci a nastavte <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior.DataContractSurrogate%2A> členem nové chování náhradního do nové instance.  
   
-5.  Nakonec přidejte toto nové chování pro aktuální operaci chování, jak je znázorněno v následujícím příkladu:  
+5. Nakonec přidejte toto nové chování pro aktuální operaci chování, jak je znázorněno v následujícím příkladu:  
   
      [!code-csharp[C_IDataContractSurrogate#8](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_idatacontractsurrogate/cs/source.cs#8)]  
   
@@ -158,19 +158,19 @@ Kontrakt dat *náhradní* je pokročilá funkce postavené na kontraktu dat mode
   
 ##### <a name="to-implement-a-surrogate-for-metadata-importation"></a>K implementaci náhradní pro import metadat  
   
-1.  Import metadat prostřednictvím <xref:System.ServiceModel.Description.WsdlImporter> třídy.  
+1. Import metadat prostřednictvím <xref:System.ServiceModel.Description.WsdlImporter> třídy.  
   
-2.  Použití <xref:System.Collections.Generic.Dictionary%602.TryGetValue%2A> metodu ke kontrole, jestli <xref:System.Runtime.Serialization.XsdDataContractImporter> byla definována.  
+2. Použití <xref:System.Collections.Generic.Dictionary%602.TryGetValue%2A> metodu ke kontrole, jestli <xref:System.Runtime.Serialization.XsdDataContractImporter> byla definována.  
   
-3.  Pokud <xref:System.Collections.Generic.Dictionary%602.TryGetValue%2A> vrátí metoda `false`, vytvořte nový <xref:System.Runtime.Serialization.XsdDataContractImporter> a nastavte jeho <xref:System.Runtime.Serialization.XsdDataContractImporter.Options%2A> vlastností nové instance <xref:System.Runtime.Serialization.ImportOptions> třídy. Jinak použijte Importér vrácené `out` parametr <xref:System.Collections.Generic.Dictionary%602.TryGetValue%2A> metoda.  
+3. Pokud <xref:System.Collections.Generic.Dictionary%602.TryGetValue%2A> vrátí metoda `false`, vytvořte nový <xref:System.Runtime.Serialization.XsdDataContractImporter> a nastavte jeho <xref:System.Runtime.Serialization.XsdDataContractImporter.Options%2A> vlastností nové instance <xref:System.Runtime.Serialization.ImportOptions> třídy. Jinak použijte Importér vrácené `out` parametr <xref:System.Collections.Generic.Dictionary%602.TryGetValue%2A> metoda.  
   
-4.  Pokud <xref:System.Runtime.Serialization.XsdDataContractImporter> nemá žádné <xref:System.Runtime.Serialization.ImportOptions> definována, a nastavte vlastnost, která má být novou instanci třídy <xref:System.Runtime.Serialization.ImportOptions> třídy.  
+4. Pokud <xref:System.Runtime.Serialization.XsdDataContractImporter> nemá žádné <xref:System.Runtime.Serialization.ImportOptions> definována, a nastavte vlastnost, která má být novou instanci třídy <xref:System.Runtime.Serialization.ImportOptions> třídy.  
   
-5.  Nastavte <xref:System.Runtime.Serialization.ImportOptions.DataContractSurrogate%2A> vlastnost <xref:System.Runtime.Serialization.ImportOptions> z <xref:System.Runtime.Serialization.XsdDataContractImporter> do nové instance náhradního.  
+5. Nastavte <xref:System.Runtime.Serialization.ImportOptions.DataContractSurrogate%2A> vlastnost <xref:System.Runtime.Serialization.ImportOptions> z <xref:System.Runtime.Serialization.XsdDataContractImporter> do nové instance náhradního.  
   
-6.  Přidat <xref:System.Runtime.Serialization.XsdDataContractImporter> na kolekci vrácené poskytovatelem <xref:System.ServiceModel.Description.MetadataExporter.State%2A> vlastnost <xref:System.ServiceModel.Description.WsdlImporter> (zděděno z <xref:System.ServiceModel.Description.MetadataExporter> třídy.)  
+6. Přidat <xref:System.Runtime.Serialization.XsdDataContractImporter> na kolekci vrácené poskytovatelem <xref:System.ServiceModel.Description.MetadataExporter.State%2A> vlastnost <xref:System.ServiceModel.Description.WsdlImporter> (zděděno z <xref:System.ServiceModel.Description.MetadataExporter> třídy.)  
   
-7.  Použití <xref:System.ServiceModel.Description.WsdlImporter.ImportAllContracts%2A> metodu <xref:System.ServiceModel.Description.WsdlImporter> pro import všech kontraktů dat v rámci schématu. Během poslední krok bude ze schémat načten voláním zástupný vygenerován kód.  
+7. Použití <xref:System.ServiceModel.Description.WsdlImporter.ImportAllContracts%2A> metodu <xref:System.ServiceModel.Description.WsdlImporter> pro import všech kontraktů dat v rámci schématu. Během poslední krok bude ze schémat načten voláním zástupný vygenerován kód.  
   
      [!code-csharp[C_IDataContractSurrogate#9](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_idatacontractsurrogate/cs/source.cs#9)]  
   
@@ -179,15 +179,15 @@ Kontrakt dat *náhradní* je pokročilá funkce postavené na kontraktu dat mode
   
 ##### <a name="to-use-a-surrogate-for-metadata-export"></a>Použít náhradní pro export metadat  
   
-1.  Vytvořte nový <xref:System.ServiceModel.Description.WsdlExporter> nebo použijte `wsdlExporter` byl předán parametr <xref:System.ServiceModel.Description.IWsdlExportExtension.ExportContract%2A> metody.  
+1. Vytvořte nový <xref:System.ServiceModel.Description.WsdlExporter> nebo použijte `wsdlExporter` byl předán parametr <xref:System.ServiceModel.Description.IWsdlExportExtension.ExportContract%2A> metody.  
   
-2.  Použití <xref:System.Collections.Generic.Dictionary%602.TryGetValue%2A> funkce ke kontrole, jestli <xref:System.Runtime.Serialization.XsdDataContractExporter> byla definována.  
+2. Použití <xref:System.Collections.Generic.Dictionary%602.TryGetValue%2A> funkce ke kontrole, jestli <xref:System.Runtime.Serialization.XsdDataContractExporter> byla definována.  
   
-3.  Pokud <xref:System.Collections.Generic.Dictionary%602.TryGetValue%2A> vrátí `false`, vytvořte nový <xref:System.Runtime.Serialization.XsdDataContractExporter> generované schémata XML z <xref:System.ServiceModel.Description.WsdlExporter>a přidejte ho do kolekci vrácené poskytovatelem <xref:System.ServiceModel.Description.MetadataExporter.State%2A> vlastnost <xref:System.ServiceModel.Description.WsdlExporter>. Jinak použijte Exportér vrácené `out` parametr <xref:System.Collections.Generic.Dictionary%602.TryGetValue%2A> metody.  
+3. Pokud <xref:System.Collections.Generic.Dictionary%602.TryGetValue%2A> vrátí `false`, vytvořte nový <xref:System.Runtime.Serialization.XsdDataContractExporter> generované schémata XML z <xref:System.ServiceModel.Description.WsdlExporter>a přidejte ho do kolekci vrácené poskytovatelem <xref:System.ServiceModel.Description.MetadataExporter.State%2A> vlastnost <xref:System.ServiceModel.Description.WsdlExporter>. Jinak použijte Exportér vrácené `out` parametr <xref:System.Collections.Generic.Dictionary%602.TryGetValue%2A> metody.  
   
-4.  Pokud <xref:System.Runtime.Serialization.XsdDataContractExporter> nemá žádné <xref:System.Runtime.Serialization.ExportOptions> definované, pak nastavte <xref:System.Runtime.Serialization.XsdDataContractExporter.Options%2A> vlastností nové instance <xref:System.Runtime.Serialization.ExportOptions> třídy.  
+4. Pokud <xref:System.Runtime.Serialization.XsdDataContractExporter> nemá žádné <xref:System.Runtime.Serialization.ExportOptions> definované, pak nastavte <xref:System.Runtime.Serialization.XsdDataContractExporter.Options%2A> vlastností nové instance <xref:System.Runtime.Serialization.ExportOptions> třídy.  
   
-5.  Nastavte <xref:System.Runtime.Serialization.ExportOptions.DataContractSurrogate%2A> vlastnost <xref:System.Runtime.Serialization.ExportOptions> z <xref:System.Runtime.Serialization.XsdDataContractExporter> do nové instance náhradního. Následné kroky pro export metadat nevyžadují žádné změny.  
+5. Nastavte <xref:System.Runtime.Serialization.ExportOptions.DataContractSurrogate%2A> vlastnost <xref:System.Runtime.Serialization.ExportOptions> z <xref:System.Runtime.Serialization.XsdDataContractExporter> do nové instance náhradního. Následné kroky pro export metadat nevyžadují žádné změny.  
   
      [!code-csharp[C_IDataContractSurrogate#10](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_idatacontractsurrogate/cs/source.cs#10)]  
   

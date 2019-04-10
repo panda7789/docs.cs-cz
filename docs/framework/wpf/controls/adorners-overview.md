@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - adorners [WPF], about adorners
 ms.assetid: 33d4c5c2-2daf-4e45-ba9a-5b673e2b8280
-ms.openlocfilehash: 88dc2a306108959b5627e502aaa67ef7db341417
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 6b710df45379ccce4daf340b4dbe2701d3c96604
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59227688"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59320467"
 ---
 # <a name="adorners-overview"></a>Přehled doplňků
 Doplňky pro úpravy jsou zvláštní druh <xref:System.Windows.FrameworkElement>, která slouží k poskytování vizuální upozornění na uživatele. Mimo jiné účely je možné přidat funkční zpracovává na prvky nebo poskytují informace o ovládací prvek stavu doplňků pro úpravy.  
@@ -74,9 +74,9 @@ Doplňky pro úpravy jsou zvláštní druh <xref:System.Windows.FrameworkElement
 ## <a name="adorning-a-single-uielement"></a>Adorning jednoho elementu UIElement  
  K připojení doplňku k konkrétní <xref:System.Windows.UIElement>, postupujte podle těchto kroků:  
   
-1.  Zavolejte statickou metodu <xref:System.Windows.Documents.AdornerLayer.GetAdornerLayer%2A> zobrazíte <xref:System.Windows.Documents.AdornerLayer> objekt pro <xref:System.Windows.UIElement> chcete být opatřený. <xref:System.Windows.Documents.AdornerLayer.GetAdornerLayer%2A> provede se vizuální strom začínající v zadaném <xref:System.Windows.UIElement>a vrátí první vrstvu doplněk pro úpravy, které nalezne. (Pokud se nenajdou žádné vrstvy doplněk pro úpravy, metoda vrátí hodnotu null.)  
+1. Zavolejte statickou metodu <xref:System.Windows.Documents.AdornerLayer.GetAdornerLayer%2A> zobrazíte <xref:System.Windows.Documents.AdornerLayer> objekt pro <xref:System.Windows.UIElement> chcete být opatřený. <xref:System.Windows.Documents.AdornerLayer.GetAdornerLayer%2A> provede se vizuální strom začínající v zadaném <xref:System.Windows.UIElement>a vrátí první vrstvu doplněk pro úpravy, které nalezne. (Pokud se nenajdou žádné vrstvy doplněk pro úpravy, metoda vrátí hodnotu null.)  
   
-2.  Volání <xref:System.Windows.Documents.AdornerLayer.Add%2A> metodu pro vytvoření vazby doplněk pro úpravy k cíli <xref:System.Windows.UIElement>.  
+2. Volání <xref:System.Windows.Documents.AdornerLayer.Add%2A> metodu pro vytvoření vazby doplněk pro úpravy k cíli <xref:System.Windows.UIElement>.  
   
  Následující příklad vytvoří vazbu SimpleCircleAdorner (popsaný výš) k <xref:System.Windows.Controls.TextBox> s názvem *hodnotu myTextBox*.  
   
@@ -90,9 +90,9 @@ Doplňky pro úpravy jsou zvláštní druh <xref:System.Windows.FrameworkElement
 ## <a name="adorning-the-children-of-a-panel"></a>Adorning podřízených položek panelu  
  K připojení doplňku k podřízených položek <xref:System.Windows.Controls.Panel>, postupujte podle těchto kroků:  
   
-1.  Volání `static` metoda <xref:System.Windows.Documents.AdornerLayer.GetAdornerLayer%2A> najít vrstvu doplněk pro úpravy pro element, jehož potomci mají být opatřený.  
+1. Volání `static` metoda <xref:System.Windows.Documents.AdornerLayer.GetAdornerLayer%2A> najít vrstvu doplněk pro úpravy pro element, jehož potomci mají být opatřený.  
   
-2.  Zobrazit výčet prostřednictvím podřízené objekty nadřazeného elementu a volání <xref:System.Windows.Documents.AdornerLayer.Add%2A> metodu připojení doplňku k každý podřízený prvek.  
+2. Zobrazit výčet prostřednictvím podřízené objekty nadřazeného elementu a volání <xref:System.Windows.Documents.AdornerLayer.Add%2A> metodu připojení doplňku k každý podřízený prvek.  
   
  Následující příklad vytvoří vazbu SimpleCircleAdorner (popsaný výš) do podřízených položek <xref:System.Windows.Controls.StackPanel> s názvem *myStackPanel*.  
   

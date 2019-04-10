@@ -9,12 +9,12 @@ helpviewer_keywords:
 - events [Visual Basic], raising
 - raising events [Visual Basic], walkthroughs
 ms.assetid: 8ffb3be8-097d-4d3c-b71e-04555ebda2a2
-ms.openlocfilehash: 0f48c90232c00f53007e7d2f8f08e2107406ecad
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: cab6c90947eae8abeb9387535eadb2f89e71454a
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58841001"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59320688"
 ---
 # <a name="walkthrough-declaring-and-raising-events-visual-basic"></a>Návod: Deklarace a vyvolávání událostí (Visual Basic)
 Tento návod ukazuje, jak deklarovat a vyvolávání událostí pro třídu s názvem `Widget`. Po dokončení kroků se můžete chtít přečíst téma doprovodná [názorný postup: Zpracování událostí](../../../../visual-basic/programming-guide/language-features/events/walkthrough-handling-events.md), který ukazuje, jak používat události z `Widget` objekty poskytnout informace o stavu v aplikaci.  
@@ -28,19 +28,19 @@ Tento návod ukazuje, jak deklarovat a vyvolávání událostí pro třídu s n�
   
 #### <a name="to-build-the-code-example-for-this-topic"></a>Chcete-li vytvořit příklad kódu pro toto téma  
   
-1.  Otevřete nový projekt aplikace Windows jazyka Visual Basic a vytvořte formulář s názvem `Form1`.  
+1. Otevřete nový projekt aplikace Windows jazyka Visual Basic a vytvořte formulář s názvem `Form1`.  
   
-2.  Přidání dvou tlačítek a popisek pro `Form1`.  
+2. Přidání dvou tlačítek a popisek pro `Form1`.  
   
-3.  Jak je znázorněno v následující tabulce, pojmenujte objekty.  
+3. Jak je znázorněno v následující tabulce, pojmenujte objekty.  
   
     |Objekt|Vlastnost|Nastavení|  
     |------------|--------------|-------------|  
     |`Button1`|`Text`|Spouštěcí úkol|  
     |`Button2`|`Text`|Zrušit|  
-    |`Label`|`(Name)`, `Text`|lblPercentDone, 0|  
+    |`Label`|`(Name)`,  `Text`|lblPercentDone, 0|  
   
-4.  Na **projektu** nabídce zvolte **přidat třídu** přidat třídu s názvem `Widget.vb` do projektu.  
+4. Na **projektu** nabídce zvolte **přidat třídu** přidat třídu s názvem `Widget.vb` do projektu.  
   
 #### <a name="to-declare-an-event-for-the-widget-class"></a>Chcete-li deklarovat události pro třídu widgetu  
   
@@ -57,11 +57,11 @@ Tento návod ukazuje, jak deklarovat a vyvolávání událostí pro třídu s n�
   
 #### <a name="to-raise-the-percentdone-event"></a>Aby se vyvolala událost PercentDone  
   
-1.  Pro zjednodušení přístupu k `Timer` přidat vlastnost použitou touto třídou `Imports` příkaz do horní části deklarace třídy modulu, výše `Class Widget` příkazu.  
+1. Pro zjednodušení přístupu k `Timer` přidat vlastnost použitou touto třídou `Imports` příkaz do horní části deklarace třídy modulu, výše `Class Widget` příkazu.  
   
      [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnWalkthroughDeclaringAndRaisingEvents/VB/Widget.vb#2)]  
   
-2.  Přidejte následující kód, který `Widget` třídy:  
+2. Přidejte následující kód, který `Widget` třídy:  
   
      [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnWalkthroughDeclaringAndRaisingEvents/VB/Widget.vb#3)]  
   

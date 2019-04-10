@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - authentication [WCF], user name and password
 ms.assetid: a5415be2-0ef3-464c-9f76-c255cb8165a4
-ms.openlocfilehash: 08703209fd465f87e9dbc5e81a6ed90a4056324c
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 11a146e387171d6af95a7710fe96d6f35f6c611f
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59174132"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59321030"
 ---
 # <a name="how-to-authenticate-with-a-user-name-and-password"></a>Postupy: Ověřování pomocí uživatelského jména a hesla
 
@@ -21,7 +21,7 @@ Toto téma ukazuje, jak povolit službu Windows Communication Foundation (WCF) k
   
 ## <a name="to-configure-a-wcf-service-to-authenticate-using-windows-domain-username-and-password"></a>Konfigurace ověřování pomocí Windows doména uživatelské jméno a heslo ve službě WCF
   
-1.  Vytvoření instance <xref:System.ServiceModel.WSHttpBinding>, nastavení režimu zabezpečení vazby ke <xref:System.ServiceModel.WSHttpSecurity.Message?displayProperty=nameWithType>, nastavte `ClientCredentialType` vazby ke <xref:System.ServiceModel.MessageCredentialType.UserName?displayProperty=nameWithType>a přidat koncový bod služby pomocí nakonfigurovanou vazbu k hostiteli služby, jak je znázorněno v následujícím kódu:  
+1. Vytvoření instance <xref:System.ServiceModel.WSHttpBinding>, nastavení režimu zabezpečení vazby ke <xref:System.ServiceModel.WSHttpSecurity.Message?displayProperty=nameWithType>, nastavte `ClientCredentialType` vazby ke <xref:System.ServiceModel.MessageCredentialType.UserName?displayProperty=nameWithType>a přidat koncový bod služby pomocí nakonfigurovanou vazbu k hostiteli služby, jak je znázorněno v následujícím kódu:  
   
     ```  
     // ...  
@@ -32,7 +32,7 @@ Toto téma ukazuje, jak povolit službu Windows Communication Foundation (WCF) k
     // ...  
     ```  
   
-2.  Zadejte certifikát serveru použitý k šifrování uživatelské jméno a heslo informace odesílané při přenosu. Tento kód by měl bezprostředně následuje po výše uvedeném kódu. Následující příklad používá certifikát, který je vytvořen soubor setup.bat z [zabezpečení zpráv s uživatelským jménem](../../../../docs/framework/wcf/samples/message-security-user-name.md) vzorku:  
+2. Zadejte certifikát serveru použitý k šifrování uživatelské jméno a heslo informace odesílané při přenosu. Tento kód by měl bezprostředně následuje po výše uvedeném kódu. Následující příklad používá certifikát, který je vytvořen soubor setup.bat z [zabezpečení zpráv s uživatelským jménem](../../../../docs/framework/wcf/samples/message-security-user-name.md) vzorku:  
   
     ```  
     // ...  
@@ -44,7 +44,7 @@ Toto téma ukazuje, jak povolit službu Windows Communication Foundation (WCF) k
   
 ## <a name="to-call-the-service-passing-username-and-password"></a>K volání služby předávání uživatelské jméno a heslo  
   
-1.  Klientská aplikace musí požádat uživatele o uživatelského jména a hesla. Následující kód uživatele vyzve k zadání uživatelského jména a hesla.  
+1. Klientská aplikace musí požádat uživatele o uživatelského jména a hesla. Následující kód uživatele vyzve k zadání uživatelského jména a hesla.  
   
     > [!WARNING]
     >  Tento kód by neměl použít v produkčním prostředí, protože heslo se zobrazí při zadávání.  
@@ -61,7 +61,7 @@ Toto téma ukazuje, jak povolit službu Windows Communication Foundation (WCF) k
             }  
     ```  
   
-2.  Vytvořte instanci proxy serveru klienta zadávání přihlašovacích údajů klienta, jak je znázorněno v následujícím kódu:  
+2. Vytvořte instanci proxy serveru klienta zadávání přihlašovacích údajů klienta, jak je znázorněno v následujícím kódu:  
   
     ```  
     string username;  

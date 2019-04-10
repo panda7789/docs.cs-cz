@@ -2,12 +2,12 @@
 title: Stejně jako (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 8300e6d2-875b-481e-9ef4-e1e7c12d46fa
-ms.openlocfilehash: 8f210c83a8220f11a5e0a461c8b72466f00a4e37
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 9463a5cb522a3d3dab7725c4b71a5970d1bdf19d
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59197708"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59302254"
 ---
 # <a name="like-entity-sql"></a>Stejně jako (Entity SQL)
 Určuje, zda konkrétní znak `String` odpovídá zadanému vzoru.  
@@ -68,9 +68,9 @@ match [NOT] LIKE pattern [ESCAPE escape]
 ## <a name="example"></a>Příklad  
  Následující dva [!INCLUDE[esql](../../../../../../includes/esql-md.md)] použít podobné dotazy a řídicí operátory k určení, zda řetězec konkrétní znak odpovídá zadanému vzoru. Vyhledá první dotaz `Name` , které začíná znaky `Down_`. Tento dotaz používá možnost řídicí, protože podtržítko (`_`) je zástupný znak. Bez zadání možnosti řídicí, dotaz bude vyhledávat libovolné `Name` hodnoty, které začínají slovem `Down` za nímž následuje jakémukoli jednomu znaku jiného než podtržítko. Dotazy jsou založeny na modelu Sales AdventureWorks. Kompilace a spuštění tohoto dotazu, postupujte podle těchto kroků:  
   
-1.  Postupujte podle pokynů v [jak: Spustit dotaz, který vrátí výsledky typu PrimitiveType](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-primitivetype-results.md).  
+1. Postupujte podle pokynů v [jak: Spustit dotaz, který vrátí výsledky typu PrimitiveType](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-primitivetype-results.md).  
   
-2.  Předat jako argument pro následující dotaz `ExecutePrimitiveTypeQuery` metody:  
+2. Předat jako argument pro následující dotaz `ExecutePrimitiveTypeQuery` metody:  
   
  [!code-csharp[DP EntityServices Concepts 2#LIKE](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#like)]  
   

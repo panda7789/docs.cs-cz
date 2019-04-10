@@ -7,12 +7,12 @@ helpviewer_keywords:
 - initializers [Visual Basic]
 - Video How tos, Visual Basic
 ms.assetid: 0f53a553-efd6-466d-80bf-6b679e5cd174
-ms.openlocfilehash: 314706207800b2e86aa0032a52d8c50fbb726887
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 775c40cbb62272f913297d5a58914a0c82c5a7d7
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58825131"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59305309"
 ---
 # <a name="how-to-declare-an-object-by-using-an-object-initializer-visual-basic"></a>Postupy: Deklarace objektu pomocí inicializátoru objektu (Visual Basic)
 Inicializátory objektů umožňují deklarovat a vytvoří instanci třídy v jediném příkazu. Kromě toho můžete inicializovat jednoho nebo více členů instance ve stejnou dobu bez vyvolání konstruktoru s parametry.  
@@ -27,33 +27,33 @@ Inicializátory objektů umožňují deklarovat a vytvoří instanci třídy v j
   
 ### <a name="to-create-an-object-of-a-named-class-by-using-an-object-initializer"></a>Chcete-li vytvořit objekt s názvem třídy pomocí inicializátoru objektů  
   
-1.  Začněte deklarace, jako kdyby jste naplánovali použijte konstruktor.  
+1. Začněte deklarace, jako kdyby jste naplánovali použijte konstruktor.  
   
      `Dim student1 As New Student`  
   
-2.  Klíčové slovo `With`následovaný inicializačního seznamu ve složených závorkách.  
+2. Klíčové slovo `With`následovaný inicializačního seznamu ve složených závorkách.  
   
      `Dim student1 As New Student With { <initialization list> }`  
   
-3.  V seznamu inicializace zahrňte každou vlastnost, kterou chcete inicializovat a přiřadit je počáteční hodnota. Název vlastnosti je začínat tečkou.  
+3. V seznamu inicializace zahrňte každou vlastnost, kterou chcete inicializovat a přiřadit je počáteční hodnota. Název vlastnosti je začínat tečkou.  
   
      [!code-vb[VbVbalrObjectInit#21](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrObjectInit/VB/Class2.vb#21)]  
   
      Můžete inicializovat jednoho nebo více členů třídy.  
   
-4.  Alternativně můžete deklarovat novou instanci třídy a pak do něj přiřadit hodnotu. Nejprve deklarujte instanci `Student`:  
+4. Alternativně můžete deklarovat novou instanci třídy a pak do něj přiřadit hodnotu. Nejprve deklarujte instanci `Student`:  
   
      `Dim student2 As Student`  
   
-5.  Zahájit vytvoření instance `Student` běžným způsobem.  
+5. Zahájit vytvoření instance `Student` běžným způsobem.  
   
      `Dim student2 As Student = New Student`  
   
-6.  Typ `With` a potom inicializátoru objektu inicializovat jednoho nebo více členů nové instance.  
+6. Typ `With` a potom inicializátoru objektu inicializovat jednoho nebo více členů nové instance.  
   
      [!code-vb[VbVbalrObjectInit#22](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrObjectInit/VB/Class2.vb#22)]  
   
-7.  Definice v předchozím kroku může zjednodušit vynecháním `As Student`. Pokud to uděláte, kompilátor zjistí, že `student3` je instance `Student` pomocí odvození místního typu.  
+7. Definice v předchozím kroku může zjednodušit vynecháním `As Student`. Pokud to uděláte, kompilátor zjistí, že `student3` je instance `Student` pomocí odvození místního typu.  
   
      [!code-vb[VbVbalrObjectInit#23](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrObjectInit/VB/Class2.vb#23)]  
   

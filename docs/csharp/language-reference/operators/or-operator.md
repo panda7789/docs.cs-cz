@@ -9,12 +9,12 @@ helpviewer_keywords:
 - '| operator [C#]'
 - binary operator (|) [C#]
 ms.assetid: 82d6bb78-54c8-40bf-b679-531180ddaf70
-ms.openlocfilehash: 185ea3aabff4794ec08cca541773dbec3574ab4b
-ms.sourcegitcommit: 5c36aaa8299a2437c155700c810585aff19edbec
+ms.openlocfilehash: 38f8e21dbd07868441e0c4fbb6074f9897905222
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54333509"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59312875"
 ---
 # <a name="-operator-c-reference"></a>| – operátor (C# odkaz)
 
@@ -22,7 +22,7 @@ Binární `|` pro integrální typy jsou předdefinované operátory a `bool`. P
 
 ## <a name="remarks"></a>Poznámky
 
-Binární soubor `|` operátor vyhodnotí oba operandy bez ohledu na to první hodnotu, oproti k [operátor podmíněného OR](conditional-or-operator.md) `||`.
+Binární soubor `|` operátor vyhodnotí oba operandy bez ohledu na to první hodnotu, oproti k [operátor podmíněného OR](boolean-logical-operators.md#conditional-logical-or-operator-) `||`.
 
 Lze přetěžovat uživatelsky definované typy `|` – operátor (viz [operátor](../keywords/operator.md)).
 
@@ -33,5 +33,5 @@ Lze přetěžovat uživatelsky definované typy `|` – operátor (viz [operáto
 ## <a name="see-also"></a>Viz také:
 
 - [Referenční dokumentace jazyka C#](../index.md)
-- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
-- [C#operátory](index.md)
+- [Průvodce programováním v C#](../../programming-guide/index.md)
+- [Operátory jazyka C#](index.md)

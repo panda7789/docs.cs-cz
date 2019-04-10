@@ -36,12 +36,12 @@ helpviewer_keywords:
 - type arguments [Visual Basic], defining
 - arguments [Visual Basic], type
 ms.assetid: 89f771d9-ecbb-4737-88b8-116b63c6cf4d
-ms.openlocfilehash: 343c5c8e2625a1bd4279e0c97b7079482af0e8c6
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 768f7704851a5f54f4b4a7535fe2584e20bfaa0f
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58831421"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59301227"
 ---
 # <a name="generic-types-in-visual-basic-visual-basic"></a>Obecné typy v jazyce Visual Basic (Visual Basic)
 A *obecného typu* je jediný prvek programování, které se přizpůsobí provádět stejné funkce pro širokou škálu datových typů. Při definování obecné třídy nebo proceduru není nutné definovat samostatné verze pro každý typ dat, pro které můžete chtít provést, které tuto funkci.  
@@ -83,9 +83,9 @@ A *obecného typu* je jediný prvek programování, které se přizpůsobí prov
 ## <a name="advantages-of-generic-types"></a>Výhody obecných typů  
  Obecný typ slouží jako základ pro deklarování několik různých programovací prvky, z nichž každý pracuje na konkrétní data typu. Alternativy k obecného typu jsou:  
   
-1.  Jeden typ provozující `Object` datového typu.  
+1. Jeden typ provozující `Object` datového typu.  
   
-2.  Sada *specifické pro typ.* verze typu, každá verze jednotlivě programového a provozování na jeden konkrétní datový typ jako `String`, `Integer`, nebo uživatelem definovaný typ, jako `customer`.  
+2. Sada *specifické pro typ.* verze typu, každá verze jednotlivě programového a provozování na jeden konkrétní datový typ jako `String`, `Integer`, nebo uživatelem definovaný typ, jako `customer`.  
   
  Obecný typ má následující výhody oproti tyto alternativy:  
   
@@ -150,12 +150,12 @@ A *obecného typu* je jediný prvek programování, které se přizpůsobí prov
 
 - [Datové typy](../../../../visual-basic/programming-guide/language-features/data-types/index.md)
 - [Znaky typu](../../../../visual-basic/programming-guide/language-features/data-types/type-characters.md)
-- [Typy hodnot a odkazové typy](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)
+- [Typy hodnot a typy odkazu](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)
 - [Převody typů v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)
 - [Řešení potíží s datovými typy](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)
 - [Datové typy](../../../../visual-basic/language-reference/data-types/index.md)
-- [z](../../../../visual-basic/language-reference/statements/of-clause.md)
-- [jako](../../../../visual-basic/language-reference/statements/as-clause.md)
-- [Datový typ Object](../../../../visual-basic/language-reference/data-types/object-data-type.md)
+- [Of](../../../../visual-basic/language-reference/statements/of-clause.md)
+- [As](../../../../visual-basic/language-reference/statements/as-clause.md)
+- [Datový typ objektu](../../../../visual-basic/language-reference/data-types/object-data-type.md)
 - [Kovariance a kontravariance](../../concepts/covariance-contravariance/index.md)
 - [Iterátory](../../../../visual-basic/programming-guide/concepts/iterators.md)

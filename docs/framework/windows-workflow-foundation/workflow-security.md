@@ -1,30 +1,30 @@
 ---
-title: Pracovní postup zabezpečení
+title: Zabezpečení pracovních postupů
 ms.date: 03/30/2017
 helpviewer_keywords:
 - programming [WF], workflow security
 ms.assetid: d712a566-f435-44c0-b8c0-49298e84b114
-ms.openlocfilehash: 62564823338ee071f09036929a3a11cd5f3bbbe1
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.openlocfilehash: a5a8d4d0d41efb7a255080994c8e18302d302447
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57676561"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59321689"
 ---
-# <a name="workflow-security"></a>Pracovní postup zabezpečení
+# <a name="workflow-security"></a>Zabezpečení pracovních postupů
 Windows Workflow Foundation (WF) je integrovaná s několika různých technologií, jako je například Microsoft SQL Server a Windows Communication Foundation (WCF). Interakce s tyto technologie vznikat potíže se zabezpečením do vašich pracovních postupů v případě aktivace nesprávně.
 
 ## <a name="persistence-security-concerns"></a>Zajištění trvalého zabezpečení
 
-1.  Pracovní postupy využívající <xref:System.Activities.Statements.Delay> aktivity a stálost potřeba znovu aktivovat službou. Windows AppFabric pomocí služby správy pracovního postupu (WMS) znovu aktivovat pracovní postupy s vypršenou platností časovače. Vytvoří WMS <xref:System.ServiceModel.WorkflowServiceHost> k hostování opětovně pracovního postupu. Pokud je zastavena služba WMS, trvalý pracovní postupy nebudou znovu aktivovat po vypršení jejich časovače.
+1. Pracovní postupy využívající <xref:System.Activities.Statements.Delay> aktivity a stálost potřeba znovu aktivovat službou. Windows AppFabric pomocí služby správy pracovního postupu (WMS) znovu aktivovat pracovní postupy s vypršenou platností časovače. Vytvoří WMS <xref:System.ServiceModel.WorkflowServiceHost> k hostování opětovně pracovního postupu. Pokud je zastavena služba WMS, trvalý pracovní postupy nebudou znovu aktivovat po vypršení jejich časovače.
 
-2.  Přístup k vytváření instancí trvalý by měly být chráněné proti škodlivým entity externí domény aplikace. Vývojáři navíc se ujistěte, že škodlivý kód nelze provést ve stejné doméně jako trvalý vytvoření instance kódu aplikace.
+2. Přístup k vytváření instancí trvalý by měly být chráněné proti škodlivým entity externí domény aplikace. Vývojáři navíc se ujistěte, že škodlivý kód nelze provést ve stejné doméně jako trvalý vytvoření instance kódu aplikace.
 
-3.  Vytváření odolných instancí neměli spouštět se zvýšenými oprávněními (správce).
+3. Vytváření odolných instancí neměli spouštět se zvýšenými oprávněními (správce).
 
-4.  Data zpracovává mimo doménu aplikace by měly být chráněné.
+4. Data zpracovává mimo doménu aplikace by měly být chráněné.
 
-5.  Aplikace, které vyžadují izolaci zabezpečení by neměly sdílet stejnou instanci abstrakce schématu. Tyto aplikace použijte poskytovatele různých úložišť, nebo uložit poskytovatelé umožňují použít různé úložiště instancí.
+5. Aplikace, které vyžadují izolaci zabezpečení by neměly sdílet stejnou instanci abstrakce schématu. Tyto aplikace použijte poskytovatele různých úložišť, nebo uložit poskytovatelé umožňují použít různé úložiště instancí.
 
 ## <a name="sql-server-security-concerns"></a>SQL Server Security Concerns
 
@@ -47,12 +47,12 @@ Windows Workflow Foundation (WF) je integrovaná s několika různých technolog
 ## <a name="wf-security-pack-ctp"></a>Balíček zabezpečení WF CTP
  Microsoft WF zabezpečení Pack CTP 1 je první verze preview (CTP) technologie komunity sady aktivit a jejich provedení na základě [Windows Workflow Foundation](index.md) v [rozhraní .NET Framework 4](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/w0x726c2(v=vs.100)) pracovní postup WF ( (4) a [Windows Identity Foundation (WIF)](../security/index.md).  CTP 1 Microsoft WF zabezpečení balíček obsahuje aktivity a jejich návrhářů, které ukazují, jak jednoduše povolit různé scénáře související se zabezpečením pomocí pracovního postupu, včetně:
 
-1.  Zosobnění identity klienta v pracovním postupu
+1. Zosobnění identity klienta v pracovním postupu
 
-2.  V pracovním postupu autorizace, jako například PrincipalPermission a ověřování deklarací identity
+2. V pracovním postupu autorizace, jako například PrincipalPermission a ověřování deklarací identity
 
-3.  Ověřený zasílání zpráv pomocí ClientCredentials určeným v pracovním postupu, jako je například uživatelské jméno a heslo, nebo token načíst z tokenu služby zabezpečení (STS)
+3. Ověřený zasílání zpráv pomocí ClientCredentials určeným v pracovním postupu, jako je například uživatelské jméno a heslo, nebo token načíst z tokenu služby zabezpečení (STS)
 
-4.  Tok tokenu zabezpečení klienta ke službě back-end (založené na deklaracích delegování) pomocí WS-Trust ActAs
+4. Tok tokenu zabezpečení klienta ke službě back-end (založené na deklaracích delegování) pomocí WS-Trust ActAs
 
 Další informace a stáhnout verzi CTP WF zabezpečení balíčku najdete v tématu: [Balíček zabezpečení WF CTP](https://archive.codeplex.com/?p=wf)

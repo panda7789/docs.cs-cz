@@ -5,12 +5,12 @@ helpviewer_keywords:
 - ListView control [Windows Forms], adding column headers
 - columns [Windows Forms], adding to ListView controls
 ms.assetid: 5b1a8b4d-587e-479a-95c1-f9b90884f13a
-ms.openlocfilehash: 9ddff31e4d66ffef2600a1246b35c0a66154c341
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 48fd223c8e770e64513d79ef9d24f93321c98332
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59190416"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59322092"
 ---
 # <a name="how-to-add-columns-to-the-windows-forms-listview-control-using-the-designer"></a>Postupy: Přidávání sloupců do ovládacího prvku Windows Forms ListView pomocí Návrháře
 Windows Forms <xref:System.Windows.Forms.ListView> ovládací prvek mohl zobrazit více sloupců pro každý seznam položek v **podrobnosti** zobrazení. Sloupce, které slouží k zobrazení několik typů informací o každou položku seznamu. Seznam souborů může například zobrazit název souboru, typ souboru, velikost a datum poslední změny souboru. Informace o naplnění sloupce po jejich vytvoření najdete v tématu [jak: Zobrazení podřízených položek ve sloupcích pomocí Windows Forms ovládací prvek ListView](how-to-display-subitems-in-columns-with-the-windows-forms-listview-control.md).  
@@ -22,13 +22,13 @@ Windows Forms <xref:System.Windows.Forms.ListView> ovládací prvek mohl zobrazi
   
 ### <a name="to-add-columns-in-the-designer"></a>Chcete-li přidat sloupce v Návrháři  
   
-1.  V **vlastnosti** okno, nastavte ovládacího prvku <xref:System.Windows.Forms.ListView.View%2A> vlastnost <xref:System.Windows.Forms.View.Details>.  
+1. V **vlastnosti** okno, nastavte ovládacího prvku <xref:System.Windows.Forms.ListView.View%2A> vlastnost <xref:System.Windows.Forms.View.Details>.  
   
-2.  V **vlastnosti** okna, klikněte na tlačítko **tlačítko se třemi tečkami** tlačítko (![snímek obrazovky VisualStudioEllipsesButton](../media/vbellipsesbutton.png "vbEllipsesButton")) vedle položky <xref:System.Windows.Forms.ListView.Columns%2A> vlastnost.  
+2. V **vlastnosti** okna, klikněte na tlačítko **tlačítko se třemi tečkami** tlačítko (![snímek obrazovky VisualStudioEllipsesButton](../media/vbellipsesbutton.png "vbEllipsesButton")) vedle položky <xref:System.Windows.Forms.ListView.Columns%2A> vlastnost.  
   
      **Editor kolekce ColumnHeader** se zobrazí.  
   
-3.  Použití **přidat** tlačítko pro přidání nové sloupce. Poté vyberte záhlaví sloupce a nastavit jeho text (titulek sloupec), zarovnání textu a šířku.  
+3. Použití **přidat** tlačítko pro přidání nové sloupce. Poté vyberte záhlaví sloupce a nastavit jeho text (titulek sloupec), zarovnání textu a šířku.  
   
 ## <a name="see-also"></a>Viz také:
 

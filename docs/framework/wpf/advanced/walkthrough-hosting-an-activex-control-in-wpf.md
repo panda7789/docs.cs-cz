@@ -8,12 +8,12 @@ helpviewer_keywords:
 - ActiveX controls [WPF interoperability]
 - hosting ActiveX controls [WPF]
 ms.assetid: 1931d292-0dd1-434f-963c-dcda7638d75a
-ms.openlocfilehash: a84363221ee216aade041adb65cce5f092ad3ae5
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: c27449da5ee0351e472eaba7d930a774979db65f
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59130128"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59311497"
 ---
 # <a name="walkthrough-hosting-an-activex-control-in-wpf"></a>Návod: Hostování ovládacího prvku ActiveX ve WPF
 Povolit Vylepšený interakce s prohlížeči, můžete použít [!INCLUDE[TLA#tla_actx](../../../../includes/tlasharptla-actx-md.md)] ovládacích prvků v vaše [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]– aplikace založené na. Tento návod ukazuje, jak můžete hostovat [!INCLUDE[TLA#tla_wmp](../../../../includes/tlasharptla-wmp-md.md)] jako ovládací prvek [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] stránky.
@@ -39,23 +39,23 @@ Povolit Vylepšený interakce s prohlížeči, můžete použít [!INCLUDE[TLA#t
 
 #### <a name="to-create-and-set-up-the-project"></a>K vytvoření a nastavení projektu
 
-1.  Vytvoření projektu aplikace WPF s názvem `HostingAxInWpf`.
+1. Vytvoření projektu aplikace WPF s názvem `HostingAxInWpf`.
 
-2.  Přidat do řešení projekt Knihovna ovládacích prvků Windows Forms a pojmenujte projekt `WmpAxLib`.
+2. Přidat do řešení projekt Knihovna ovládacích prvků Windows Forms a pojmenujte projekt `WmpAxLib`.
 
-3.  V projektu WmpAxLib přidejte odkaz na sestavení programu Windows Media Player, který se nazývá wmp.dll.
+3. V projektu WmpAxLib přidejte odkaz na sestavení programu Windows Media Player, který se nazývá wmp.dll.
 
-4.  Otevřít **nástrojů**.
+4. Otevřít **nástrojů**.
 
-5.  Klikněte pravým tlačítkem **nástrojů**a potom klikněte na tlačítko **zvolit položky**.
+5. Klikněte pravým tlačítkem **nástrojů**a potom klikněte na tlačítko **zvolit položky**.
 
-6.  Klikněte na tlačítko **komponenty modelu COM** kartu, vyberte **Windows Media Player** ovládací prvek a potom klikněte na tlačítko **OK**.
+6. Klikněte na tlačítko **komponenty modelu COM** kartu, vyberte **Windows Media Player** ovládací prvek a potom klikněte na tlačítko **OK**.
 
      Ovládací prvek programu Windows Media Player je přidán do **nástrojů**.
 
-7.  V Průzkumníku řešení klikněte pravým tlačítkem myši **UserControl1** souboru a pak klikněte na tlačítko **přejmenovat**.
+7. V Průzkumníku řešení klikněte pravým tlačítkem myši **UserControl1** souboru a pak klikněte na tlačítko **přejmenovat**.
 
-8.  Změňte název na `WmpAxControl.vb` nebo `WmpAxControl.cs`, v závislosti na jazyku.
+8. Změňte název na `WmpAxControl.vb` nebo `WmpAxControl.cs`, v závislosti na jazyku.
 
 9. Pokud se zobrazí výzva k přejmenování všech odkazů, klikněte na tlačítko **Ano**.
 
@@ -64,37 +64,37 @@ Povolit Vylepšený interakce s prohlížeči, můžete použít [!INCLUDE[TLA#t
 
 #### <a name="to-create-the-activex-control"></a>Vytvoření ovládacího prvku ActiveX
 
-1.  Otevřete WmpAxControl.vb nebo WmpAxControl.cs v Návrháři formulářů Windows.
+1. Otevřete WmpAxControl.vb nebo WmpAxControl.cs v Návrháři formulářů Windows.
 
-2.  Z **nástrojů**, přidejte ovládací prvek programu Windows Media Player na návrhovou plochu.
+2. Z **nástrojů**, přidejte ovládací prvek programu Windows Media Player na návrhovou plochu.
 
-3.  V okně Vlastnosti nastavte hodnotu ovládacího prvku programu Windows Media Player <xref:System.Windows.Forms.Control.Dock%2A> vlastnost <xref:System.Windows.Forms.DockStyle.Fill>.
+3. V okně Vlastnosti nastavte hodnotu ovládacího prvku programu Windows Media Player <xref:System.Windows.Forms.Control.Dock%2A> vlastnost <xref:System.Windows.Forms.DockStyle.Fill>.
 
-4.  Vytvoření projektu knihovny ovládacích prvků WmpAxLib.
+4. Vytvoření projektu knihovny ovládacích prvků WmpAxLib.
 
 ## <a name="hosting-the-activex-control-on-a-wpf-page"></a>Hostování ovládacího prvku ActiveX na stránce WPF
 
 #### <a name="to-host-the-activex-control"></a>K hostování ovládacího prvku ActiveX
 
-1.  HostingAxInWpf projektu přidejte odkaz na generované [!INCLUDE[TLA2#tla_actx](../../../../includes/tla2sharptla-actx-md.md)] sestavení vzájemná funkční spolupráce.
+1. HostingAxInWpf projektu přidejte odkaz na generované [!INCLUDE[TLA2#tla_actx](../../../../includes/tla2sharptla-actx-md.md)] sestavení vzájemná funkční spolupráce.
 
      Toto sestavení je s názvem AxInterop.WMPLib.dll a byl přidán do složky ladění projektu WmpAxLib při importu ovládací prvek programu Windows Media Player.
 
-2.  Přidáte odkaz na sestavení WindowsFormsIntegration, který se nazývá WindowsFormsIntegration.dll.
+2. Přidáte odkaz na sestavení WindowsFormsIntegration, který se nazývá WindowsFormsIntegration.dll.
 
-3.  Přidejte odkaz na [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] sestavení, který se nazývá System.Windows.Forms.dll.
+3. Přidejte odkaz na [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] sestavení, který se nazývá System.Windows.Forms.dll.
 
-4.  Otevřete soubor MainWindow.xaml v návrháři pro WPF.
+4. Otevřete soubor MainWindow.xaml v návrháři pro WPF.
 
-5.  Název <xref:System.Windows.Controls.Grid> element `grid1`.
+5. Název <xref:System.Windows.Controls.Grid> element `grid1`.
 
      [!code-xaml[HostingAxInWpf#1](~/samples/snippets/csharp/VS_Snippets_Wpf/HostingAxInWpf/CSharp/HostingAxInWpf/window1.xaml#1)]
 
-6.  V zobrazení návrhu nebo v XAML zobrazení, vyberte <xref:System.Windows.Window> elementu.
+6. V zobrazení návrhu nebo v XAML zobrazení, vyberte <xref:System.Windows.Window> elementu.
 
-7.  V okně Vlastnosti klikněte na tlačítko **události** kartu.
+7. V okně Vlastnosti klikněte na tlačítko **události** kartu.
 
-8.  Dvakrát klikněte <xref:System.Windows.FrameworkElement.Loaded> událostí.
+8. Dvakrát klikněte <xref:System.Windows.FrameworkElement.Loaded> událostí.
 
 9. Vložte následující kód pro zpracování <xref:System.Windows.FrameworkElement.Loaded> událostí.
 

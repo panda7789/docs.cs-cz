@@ -9,12 +9,12 @@ helpviewer_keywords:
 - joining [LINQ in Visual Basic]
 - queries [LINQ in Visual Basic], how-to topics
 ms.assetid: 5b00a478-035b-41c6-8918-be1a97728396
-ms.openlocfilehash: dde627edfeb1d4473c9d2e01b9ff83c580a0f122
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 127e1afa7707f31584e93f3d4b08e865d7fcedf6
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58822684"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59319596"
 ---
 # <a name="how-to-combine-data-with-linq-by-using-joins-visual-basic"></a>Postupy: Kombinace dat s LINQ pomocí spojení (Visual Basic)
 Visual Basic poskytuje `Join` a `Group Join` klauzulí vám umožní sloučit obsah více kolekcí založených na společné hodnoty mezi kolekcí dotazů. Tyto hodnoty jsou označovány jako *klíč* hodnoty. Rozpozná vývojářům dobře známé koncepty relační databáze `Join` klauzule jako INNER JOIN a `Group Join` klauzule jako efektivní, LEFT OUTER JOIN.  
@@ -25,9 +25,9 @@ Visual Basic poskytuje `Join` a `Group Join` klauzulí vám umožní sloučit ob
   
 #### <a name="to-create-a-project-that-contains-sample-data-and-types"></a>Chcete-li vytvořit projekt, který obsahuje ukázková data a typy  
   
-1.  Ke spuštění ukázky v tomto tématu, otevřete Visual Studio a přidejte nový projekt konzolové aplikace jazyka Visual Basic. Poklikejte na soubor Module1.vb vytvořené pomocí jazyka Visual Basic.  
+1. Ke spuštění ukázky v tomto tématu, otevřete Visual Studio a přidejte nový projekt konzolové aplikace jazyka Visual Basic. Poklikejte na soubor Module1.vb vytvořené pomocí jazyka Visual Basic.  
   
-2.  Ukázky v tomto tématu `Person` a `Pet` typy a data z následující příklad kódu. Zkopírujte tento kód do výchozí `Module1` modulu vytvořené pomocí jazyka Visual Basic.  
+2. Ukázky v tomto tématu `Person` a `Pet` typy a data z následující příklad kódu. Zkopírujte tento kód do výchozí `Module1` modulu vytvořené pomocí jazyka Visual Basic.  
   
      [!code-vb[VbLINQHowTos#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQHowTos/VB/Module1.vb#1)]  
     [!code-vb[VbLINQHowTos#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQHowTos/VB/Module1.vb#2)]  
@@ -43,7 +43,7 @@ Visual Basic poskytuje `Join` a `Group Join` klauzulí vám umožní sloučit ob
   
 #### <a name="to-perform-an-inner-join-by-using-the-join-clause"></a>K provedení Inner Join pomocí klauzule Join  
   
-1.  Přidejte následující kód, který `Module1` modulu ve vašem projektu a podívejte se na příklady obou implicitní a explicitní vnitřního spojení.  
+1. Přidejte následující kód, který `Module1` modulu ve vašem projektu a podívejte se na příklady obou implicitní a explicitní vnitřního spojení.  
   
      [!code-vb[VbLINQHowTos#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQHowTos/VB/Module1.vb#4)]  
   
@@ -56,7 +56,7 @@ Visual Basic poskytuje `Join` a `Group Join` klauzulí vám umožní sloučit ob
   
 #### <a name="to-perform-a-left-outer-join-by-using-the-group-join-clause"></a>K provedení Left Outer Join pomocí klauzule Join skupiny  
   
-1.  Přidejte následující kód, který `Module1` modulu ve vašem projektu a podívejte se na příklady seskupené levé vnější spojení a Neseskupená levé vnější spojení.  
+1. Přidejte následující kód, který `Module1` modulu ve vašem projektu a podívejte se na příklady seskupené levé vnější spojení a Neseskupená levé vnější spojení.  
   
      [!code-vb[VbLINQHowTos#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQHowTos/VB/Module1.vb#3)]  
   
@@ -65,7 +65,7 @@ Visual Basic poskytuje `Join` a `Group Join` klauzulí vám umožní sloučit ob
   
 #### <a name="to-perform-a-join-by-using-a-composite-key"></a>K provedení spojení pomocí složených klíče  
   
-1.  Přidejte následující kód, který `Module1` modulu ve vašem projektu a podívejte se na příklady spojení, která používá složený klíč.  
+1. Přidejte následující kód, který `Module1` modulu ve vašem projektu a podívejte se na příklady spojení, která používá složený klíč.  
   
      [!code-vb[VbLINQHowTos#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQHowTos/VB/Module1.vb#5)]  
   
@@ -73,19 +73,19 @@ Visual Basic poskytuje `Join` a `Group Join` klauzulí vám umožní sloučit ob
   
 #### <a name="to-add-code-to-run-the-examples"></a>Chcete-li přidat kód pro spuštění příkladů  
   
-1.  Nahradit `Sub Main` v `Module1` modul ve svém projektu následující kód pro spuštění příkladů v tomto tématu.  
+1. Nahradit `Sub Main` v `Module1` modul ve svém projektu následující kód pro spuštění příkladů v tomto tématu.  
   
      [!code-vb[VbLINQHowTos#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQHowTos/VB/Module1.vb#6)]  
   
-2.  Stisknutím klávesy F5 pro spuštění příkladů.  
+2. Stisknutím klávesy F5 pro spuštění příkladů.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [LINQ](../../../../visual-basic/programming-guide/language-features/linq/index.md)
-- [Úvod do LINQ v JAZYKU Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
-- [Klauzule Join](../../../../visual-basic/language-reference/queries/join-clause.md)
-- [Klauzule Group Join](../../../../visual-basic/language-reference/queries/group-join-clause.md)
-- [Klauzule From](../../../../visual-basic/language-reference/queries/from-clause.md)
-- [Klauzule Where](../../../../visual-basic/language-reference/queries/where-clause.md)
+- [Představení technologie LINQ v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+- [Join – klauzule](../../../../visual-basic/language-reference/queries/join-clause.md)
+- [Group Join – klauzule](../../../../visual-basic/language-reference/queries/group-join-clause.md)
+- [From – klauzule](../../../../visual-basic/language-reference/queries/from-clause.md)
+- [Where – klauzule](../../../../visual-basic/language-reference/queries/where-clause.md)
 - [Dotazy](../../../../visual-basic/language-reference/queries/index.md)
 - [Transformace dat pomocí LINQ (C#)](../../../../csharp/programming-guide/concepts/linq/data-transformations-with-linq.md)

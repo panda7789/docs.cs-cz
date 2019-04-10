@@ -4,19 +4,19 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrArgument_WideNarrowNotApplicable
 ms.assetid: 5811098c-b124-4caf-8a2b-f81f12f1d5f5
-ms.openlocfilehash: f2ac77724e66b9568d795e775d3ac8565890fb18
-ms.sourcegitcommit: 5c1abeec15fbddcc7dbaa729fabc1f1f29f12045
+ms.openlocfilehash: 94326565a032f2a7a7c7f4e70447427ac0b0e46a
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58046153"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59301266"
 ---
 # <a name="vbstrconvwide-and-vbstrconvnarrow-are-not-applicable-to-the-locale-specified"></a>Argumenty VbStrConv.Wide a VbStrConv.Narrow neplatí pro určené národní prostředí
 Aplikace se pokouší použít `VbStrConv` členy výčtu `Wide` nebo `Narrow`, které se nedají použít k zadanému národnímu prostředí.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1.  Buď odeberte `VbStrConv.Wide` nebo `VbStrConv.Narrow`.  
+1. Buď odeberte `VbStrConv.Wide` nebo `VbStrConv.Narrow`.  
   
 ## <a name="see-also"></a>Viz také:
 

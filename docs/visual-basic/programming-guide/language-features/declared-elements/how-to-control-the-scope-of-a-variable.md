@@ -12,12 +12,12 @@ helpviewer_keywords:
 - declared elements [Visual Basic], visibility
 - visibility [Visual Basic], variables
 ms.assetid: 44b7f62a-cb5c-4d50-bce9-60ae68f87072
-ms.openlocfilehash: ef7957a991718112fe01c4fa3a85f29b9226abd3
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 24a7ae3b8f3400beeaedb20ea6352ea44bdb7597
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58818720"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59324315"
 ---
 # <a name="how-to-control-the-scope-of-a-variable-visual-basic"></a>Postupy: Řízení rozsahu proměnné (Visual Basic)
 Za normálních okolností je proměnná v *oboru*, nebo viditelné pro použití v rámci oblasti, ve kterém se deklaruje. V některých případech je proměnná společnosti *úroveň přístupu* mohou mít vliv na svém oboru.  
@@ -43,19 +43,19 @@ Za normálních okolností je proměnná v *oboru*, nebo viditelné pro použit�
   
 #### <a name="to-make-a-variable-visible-throughout-a-module-class-or-structure"></a>Ke zviditelnění proměnné v rámci modulu, třídy nebo struktury  
   
-1.  Místo `Dim` příkaz pro proměnné v modulu, třídy nebo struktury, ale mimo všechny procedury.  
+1. Místo `Dim` příkaz pro proměnné v modulu, třídy nebo struktury, ale mimo všechny procedury.  
   
-2.  Zahrnout [privátní](../../../../visual-basic/language-reference/modifiers/private.md) – klíčové slovo v `Dim` příkazu.  
+2. Zahrnout [privátní](../../../../visual-basic/language-reference/modifiers/private.md) – klíčové slovo v `Dim` příkazu.  
   
-3.  Můžete se podívat do proměnné z kamkoli v modulu, třídy nebo struktury, ale ne z mimo něj.  
+3. Můžete se podívat do proměnné z kamkoli v modulu, třídy nebo struktury, ale ne z mimo něj.  
   
 #### <a name="to-make-a-variable-visible-throughout-a-namespace"></a>Aby byla proměnná viditelná v celém oboru názvů  
   
-1.  Místo `Dim` příkaz pro proměnné v modulu, třídy nebo struktury, ale mimo všechny procedury.  
+1. Místo `Dim` příkaz pro proměnné v modulu, třídy nebo struktury, ale mimo všechny procedury.  
   
-2.  Zahrnout [Friend](../../../../visual-basic/language-reference/modifiers/friend.md) nebo [veřejné](../../../../visual-basic/language-reference/modifiers/public.md) – klíčové slovo v `Dim` příkaz.  
+2. Zahrnout [Friend](../../../../visual-basic/language-reference/modifiers/friend.md) nebo [veřejné](../../../../visual-basic/language-reference/modifiers/public.md) – klíčové slovo v `Dim` příkaz.  
   
-3.  Můžete se podívat do proměnné z libovolného místa v rámci oboru názvů obsahujícím modulu, třídy nebo struktury.  
+3. Můžete se podívat do proměnné z libovolného místa v rámci oboru názvů obsahujícím modulu, třídy nebo struktury.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad deklaruje proměnnou na úrovni modulu a omezuje viditelnost kódu v rámci modulu.  
@@ -88,9 +88,9 @@ Public strMsg As String
   
 ## <a name="see-also"></a>Viz také:
 
-- [Obor v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)
+- [Rozsah v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)
 - [Doba platnosti v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md)
 - [Úrovně přístupu v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)
 - [Proměnné](../../../../visual-basic/programming-guide/language-features/variables/index.md)
 - [Deklarace proměnné](../../../../visual-basic/programming-guide/language-features/variables/variable-declaration.md)
-- [Příkaz Dim](../../../../visual-basic/language-reference/statements/dim-statement.md)
+- [Dim – příkaz](../../../../visual-basic/language-reference/statements/dim-statement.md)

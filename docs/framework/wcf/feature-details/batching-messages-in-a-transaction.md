@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - batching messages [WCF]
 ms.assetid: 53305392-e82e-4e89-aedc-3efb6ebcd28c
-ms.openlocfilehash: b0b189db8f51e0cccb6ee0516fc4cc53556ccf51
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 2d820087973e689514a0a19a7adc912f49e9d0a2
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59174119"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59310522"
 ---
 # <a name="batching-messages-in-a-transaction"></a>Dávkování zpráv v transakci
 Ve frontě aplikací používání transakcí k zajištění správnosti a spolehlivé doručování zpráv. Transakce, ale jsou nákladný provoz a může výrazně snížit propustnost zpráv. Jedním způsobem, jak zlepšit propustnost zpráv je, aby aplikaci číst a zpracovávat více zpráv v rámci jedné transakce. Nutný kompromis je mezi výkonem a možností obnovení: jak se zvyšuje počet zpráv v dávce, postupy zločinců se množství práce obnovení, který vyžaduje, pokud jsou transakce vrácena zpět. Je důležité si uvědomit rozdíl mezi dávkování zpráv v transakci a relací. A *relace* je seskupení související zprávy, které jsou zpracovány jednu aplikaci a potvrzena jako jeden celek. Relace se běžně používají, pokud skupina související zprávy musí být zpracovány současně. Příkladem je online nakupování webové stránky. *Dávky* se používají ke zpracování více, nesouvisející zprávy tak, že zpráva zvýšení propustnosti. Další informace o relacích najdete v tématu [seskupování zpráv zařazených do fronty v relaci](../../../../docs/framework/wcf/feature-details/grouping-queued-messages-in-a-session.md). Také zpracování jedné aplikace a potvrzena jako jednu jednotku zpráv v dávce, ale může být žádný vztah mezi zpráv v dávce. Dávkování zpráv v transakci je optimalizace, která se nemění, jak je aplikace spuštěná.  
@@ -31,11 +31,11 @@ Ve frontě aplikací používání transakcí k zajištění správnosti a spole
 ## <a name="leaving-batching-mode"></a>Opustit režim dávkování byl  
  Pokud zpráva v dávce způsobí, že transakce pro přerušení, dojde k následujícím krokům:  
   
-1.  Celý dávku zpráv se vrátí zpět.  
+1. Celý dávku zpráv se vrátí zpět.  
   
-2.  Zprávy jsou jeden po druhém, dokud počet zpráv, přečtěte si, které překročí dvakrát maximální velikost dávky pro čtení.  
+2. Zprávy jsou jeden po druhém, dokud počet zpráv, přečtěte si, které překročí dvakrát maximální velikost dávky pro čtení.  
   
-3.  Režim dávky je zadat znovu.  
+3. Režim dávky je zadat znovu.  
   
 ## <a name="choosing-the-batch-size"></a>Vyberete velikost dávky  
  Velikost dávky je aplikace závislá. Metoda empirical je nejlepší způsob, jak dorazí na velikost optimální služby batch pro aplikaci. Je důležité pamatovat při volbě velikosti dávky zvolte velikost podle vaší aplikace skutečný nasazení modelu. Například při nasazování aplikací, pokud je třeba SQL server na vzdáleném počítači a transakce, která zahrnuje fronty a SQL server, pak velikost dávky je nejlepší určí spuštěním této přesnou konfiguraci.  

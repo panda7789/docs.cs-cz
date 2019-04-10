@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrAppModel_SingleInstanceCantConnect
 ms.assetid: 7c2c0cee-02a1-4157-be03-39d18e18408f
-ms.openlocfilehash: 241ad5b9986e78f88ab5ca39bc73f7372162ba76
-ms.sourcegitcommit: 5c1abeec15fbddcc7dbaa729fabc1f1f29f12045
+ms.openlocfilehash: 7ffa9b185e16cfdf8223ce84e77d1a0e1fa67f65
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58037500"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59322651"
 ---
 # <a name="this-single-instance-application-could-not-connect-to-the-original-instance"></a>Nelze se připojit k původní instanci této aplikace s jedinou instancí
 Tato aplikace s jedinou instancí se nemohl připojit k původní instanci. Některé možné příčiny tohoto problému jsou následující:  
@@ -22,15 +22,15 @@ Tato aplikace s jedinou instancí se nemohl připojit k původní instanci. Něk
   
 ## <a name="to-correct-this-error-when-developing-the-application"></a>Chcete-li opravit tuto chybu při vývoji aplikace  
   
-1.  Zkontrolujte, jestli aplikace nepřešel do nereagujícího stavu.  
+1. Zkontrolujte, jestli aplikace nepřešel do nereagujícího stavu.  
   
-2.  Zkontrolujte, že aplikace má dostatečná oprávnění k vytváření objektů jádra.  
+2. Zkontrolujte, že aplikace má dostatečná oprávnění k vytváření objektů jádra.  
   
-3.  Restartujte na původní instanci aplikace.  
+3. Restartujte na původní instanci aplikace.  
   
-4.  Restartujte počítač a zrušte všechny procesy, které může být na prostředek, který se nejde připojit k původní instanci aplikace.  
+4. Restartujte počítač a zrušte všechny procesy, které může být na prostředek, který se nejde připojit k původní instanci aplikace.  
   
-5.  Všimněte si okolnosti, kdy došlo k chybě a telefonní Microsoft Product Support Services.  
+5. Všimněte si okolnosti, kdy došlo k chybě a telefonní Microsoft Product Support Services.  
   
 ## <a name="see-also"></a>Viz také:
 
