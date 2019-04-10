@@ -2,12 +2,12 @@
 title: Kompatibilita funkcí s částečnou důvěryhodností
 ms.date: 03/30/2017
 ms.assetid: a36a540b-1606-4e63-88e0-b7c59e0e6ab7
-ms.openlocfilehash: 5a09d4d1ce9f9ec328c74e7f2714f1c3f702670a
-ms.sourcegitcommit: 0069cb3de8eed4e92b2195d29e5769a76111acdd
+ms.openlocfilehash: b0d9b7bd8bd5f33ca344ea5674d08507ced209f5
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "56333498"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59124563"
 ---
 # <a name="partial-trust-feature-compatibility"></a>Kompatibilita funkcí s částečnou důvěryhodností
 Windows Communication Foundation (WCF) podporuje omezenou podmnožinou funkce při spouštění v částečně důvěryhodném prostředí. Funkce podporované v částečném vztahu důvěryhodnosti jsou navržená kolem konkrétní škálu scénářů, jak je popsáno v [Podporované scénáře nasazení](../../../../docs/framework/wcf/feature-details/supported-deployment-scenarios.md) tématu.  
@@ -160,9 +160,10 @@ Windows Communication Foundation (WCF) podporuje omezenou podmnožinou funkce p�
  Nejlepší způsob, jak zjistit, že část informací nebo akce není k dispozici při spuštění v prostředí s částečnou důvěryhodností pro pokus o přístup k prostředku nebo provedení akce uvnitř `try` bloku a potom `catch` selhání. Aby nedošlo k zaplavení trasovací soubory s duplicitní chyby, zakáže WCF sledování prostředku nebo akce po prvním selhání zabezpečení. Existuje jedna výjimka trasování pro každý přístup k problémovému prostředku poprvé, který je proveden pokus o přístup k prostředku nebo provedení akce.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Channels.HttpTransportBindingElement>
 - <xref:System.ServiceModel.Channels.HttpsTransportBindingElement>
 - <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>
 - <xref:System.ServiceModel.Channels.WebMessageEncodingBindingElement>
 - [Podporované scénáře nasazení](../../../../docs/framework/wcf/feature-details/supported-deployment-scenarios.md)
-- [Osvědčené postupy pro částečnou důvěryhodnost](../../../../docs/framework/wcf/feature-details/partial-trust-best-practices.md)
+- [Doporučené postupy s částečnou důvěryhodností](../../../../docs/framework/wcf/feature-details/partial-trust-best-practices.md)

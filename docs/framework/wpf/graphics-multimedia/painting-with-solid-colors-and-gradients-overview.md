@@ -9,18 +9,16 @@ helpviewer_keywords:
 - brushes [WPF], painting with gradients
 - painting with solid colors [WPF]
 ms.assetid: f5b182f3-c5c7-4cbe-9f2f-65e690d08255
-ms.openlocfilehash: 18a08c9bec8436399cd3acbf27198e0912e32d09
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 7945660f40e44596fe36a6b9d53223a0e264a064
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57362380"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59148301"
 ---
 # <a name="painting-with-solid-colors-and-gradients-overview"></a>Přehled malování plnými barvami a přechody
 Toto téma popisuje způsob použití <xref:System.Windows.Media.SolidColorBrush>, <xref:System.Windows.Media.LinearGradientBrush>, a <xref:System.Windows.Media.RadialGradientBrush> objekty pro malování plnými barvami, lineární přechody a radiálními přechody.  
-  
 
-  
 <a name="solidcolor"></a>   
 ## <a name="painting-an-area-with-a-solid-color"></a>Malování oblasti plnou barvou  
  Jedním z nejběžnějších operací v libovolné platformě je vykreslení oblasti ucelený <xref:System.Windows.Media.Color>. Tento úkol provést [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje <xref:System.Windows.Media.SolidColorBrush> třídy. Následující části popisují různé způsoby, jak Malování <xref:System.Windows.Media.SolidColorBrush>.  
@@ -169,10 +167,11 @@ RadialGradientBrushes s různými nastaveními GradientOrigin, System Center, Ra
  <xref:System.Windows.Media.ImageBrush>, <xref:System.Windows.Media.DrawingBrush>, a <xref:System.Windows.Media.VisualBrush> třídy umožňují vykreslení oblasti obrázků, kreseb nebo vizuály. Informace o Malování pomocí obrázků, kreseb a vzory najdete v tématu [Malování pomocí obrázků, kreseb a vizuálních](painting-with-images-drawings-and-visuals.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Media.Brush>
 - <xref:System.Windows.Media.SolidColorBrush>
 - <xref:System.Windows.Media.LinearGradientBrush>
 - <xref:System.Windows.Media.RadialGradientBrush>
-- [Malování pomocí obrázků, kreseb a vizuálních objektů](painting-with-images-drawings-and-visuals.md)
+- [Kreslení pomocí obrázků, kreseb a vizuálních objektů](painting-with-images-drawings-and-visuals.md)
 - [Přehled transformace štětce](brush-transformation-overview.md)
 - [Vrstvy vykreslování grafiky](../advanced/graphics-rendering-tiers.md)

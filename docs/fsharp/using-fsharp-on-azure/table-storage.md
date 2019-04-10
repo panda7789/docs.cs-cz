@@ -3,12 +3,12 @@ title: Začínáme s Azure Table storage pomocíF#
 description: Store strukturovaných dat v cloudu pomocí služby Azure Table storage nebo Azure Cosmos DB.
 author: sylvanc
 ms.date: 03/26/2018
-ms.openlocfilehash: 2b74a33023065ea809c2d7eb6202b1a254018422
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 54c777acd454e4f675175b814675c185e41ad9a4
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56966005"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59086699"
 ---
 # <a name="get-started-with-azure-table-storage-and-the-azure-cosmos-db-table-api-using-f"></a>Začínáme s Azure Table storage a Azure Cosmos DB Table API pomocí F\#
 
@@ -35,7 +35,6 @@ Tento kurz ukazuje, jak napsat F# kód pro některé běžné úlohy pomocí slu
 ## <a name="prerequisites"></a>Požadavky
 
 K použití tohoto průvodce, musíte nejdřív [vytvoření účtu služby Azure storage](/azure/storage/storage-create-storage-account) nebo [účtu služby Azure Cosmos DB](https://azure.microsoft.com/try/cosmosdb/).
-
 
 ## <a name="create-an-f-script-and-start-f-interactive"></a>Vytvoření F# skript a spustit F# interaktivní
 
@@ -128,7 +127,6 @@ Nyní můžete vytisknout výsledky:
 
 [!code-fsharp[TableStorage](../../../samples/snippets/fsharp/azure/table-storage.fsx#L84-L85)]
 
-
 ### <a name="retrieve-a-range-of-entities-in-a-partition"></a>Načtení rozsahu entit v oddílu
 
 Pokud nechcete, aby se zadával dotaz na všechny entity v oddílu, můžete zadat rozsah nakombinováním filtru klíče oddílu s filtrem klíče řádku. Zde použijete dva filtry k získání všech entit v oddílu "Macek" kde klíč řádku (jméno) začíná písmenem starší než "M" abecedy.
@@ -148,7 +146,6 @@ Můžete napsat dotaz pro načtení jedné konkrétní entity. Zde raději použ
 Nyní můžete vytisknout výsledky:
 
 [!code-fsharp[TableStorage](../../../samples/snippets/fsharp/azure/table-storage.fsx#L113-L115)]
-
 
 ### <a name="replace-an-entity"></a>Nahrazení entity
 
@@ -194,8 +191,8 @@ Můžete odstranit tabulku z účtu úložiště. Tabulku, která byla odstraně
 
 Teď, když jste se naučili základy používání služby Table storage, na následujících odkazech najdete informace o složitějších úlohách úložiště a rozhraní Azure Cosmos DB Table API.
 
-- [Úvod do rozhraní Table API služby Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/table-introduction)
-- [Klientská knihovna Storage pro .NET – referenční informace](https://docs.microsoft.com/dotnet/api/overview/azure/storage?view=azure-dotnet)
+- [Úvod do služby Azure Cosmos DB Table API](https://docs.microsoft.com/azure/cosmos-db/table-introduction)
+- [Klientská knihovna pro úložiště pro .NET – referenční informace](https://docs.microsoft.com/dotnet/api/overview/azure/storage?view=azure-dotnet)
 - [Typ zprostředkovatele služby Azure Storage](https://fsprojects.github.io/AzureStorageTypeProvider/)
 - [Blog týmu Azure Storage](https://blogs.msdn.com/b/windowsazurestorage/)
 - [Konfigurace připojovacích řetězců](https://docs.microsoft.com/azure/storage/common/storage-configure-connection-string)

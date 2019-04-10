@@ -9,12 +9,12 @@ helpviewer_keywords:
 - data [Windows Forms], navigating
 - data navigation
 ms.assetid: 4423eede-f8d1-4d02-822f-5bf8432680d0
-ms.openlocfilehash: b6413c8481a021afa34b7de228df14c109a50889
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: ad63f622aae55cb4175eddc93ab5e086965a8fe8
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58834228"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59109106"
 ---
 # <a name="bindingnavigator-control-overview-windows-forms"></a>BindingNavigator – přehled ovládacího prvku (Windows Forms)
 Můžete použít <xref:System.Windows.Forms.BindingNavigator> ovládacího prvku k vytvoření standardizovaný způsob pro uživatele k vyhledání a měnit data na formuláři Windows. Často používáte <xref:System.Windows.Forms.BindingNavigator> s <xref:System.Windows.Forms.BindingSource> komponenty, aby uživatelům procházení datových záznamů ve formuláři a interakci se záznamy.  
@@ -43,6 +43,7 @@ Můžete použít <xref:System.Windows.Forms.BindingNavigator> ovládacího prvk
  Pokud výchozí tlačítka nejsou vhodné pro vaši aplikaci, nebo pokud budete potřebovat další tlačítka pro podporu dalších typů funkce, můžete zadat vlastní <xref:System.Windows.Forms.ToolStrip> tlačítka. Viz také [jak: Přidat načíst, uložit, a tlačítka Storno pro Windows Forms BindingNavigator – ovládací prvek](load-save-and-cancel-bindingnavigator.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.BindingNavigator>
 - <xref:System.Windows.Forms.BindingSource>
 - [Ovládací prvek BindingNavigator](bindingnavigator-control-windows-forms.md)

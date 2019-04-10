@@ -1,13 +1,13 @@
 ---
-title: <serviceAuthorization> – element
+title: <serviceAuthorization>  – element
 ms.date: 03/30/2017
 ms.assetid: 18cddad5-ddcb-4839-a0ac-1d6f6ab783ca
-ms.openlocfilehash: c967993c3a3f7276cd3a9076741de202e1f4c343
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 7099c5eca9cf28624153a705e4e16136628214a2
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55257847"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59157337"
 ---
 # <a name="serviceauthorization-element"></a>\<serviceAuthorization > – element
 Určuje nastavení, které povolují přístup k operacím služby  
@@ -53,7 +53,7 @@ Určuje nastavení, které povolují přístup k operacím služby
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<behavior>](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|Obsahuje kolekci nastavení pro chování služby.|  
+|[\<chování >](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|Obsahuje kolekci nastavení pro chování služby.|  
   
 ## <a name="remarks"></a>Poznámky  
  Tato část obsahuje prvky, které by to ovlivnilo autorizace, vlastní roli zprostředkovatele a zosobnění.  
@@ -96,10 +96,11 @@ Určuje nastavení, které povolují přístup k operacím služby
  Podrobný příklad použití tento prvek konfigurace, najdete v části [autorizace přístupu k operacím služby](../../../../../docs/framework/wcf/samples/authorizing-access-to-service-operations.md) a [zásad autorizace](../../../../../docs/framework/wcf/samples/authorization-policy.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Configuration.ServiceAuthorizationElement>
 - <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior>
 - [Chování zabezpečení](../../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)
 - [Autorizace přístupu k operacím služby](../../../../../docs/framework/wcf/samples/authorizing-access-to-service-operations.md)
-- [Postupy: Vytvoření vlastního Správce autorizací pro službu](../../../../../docs/framework/wcf/extending/how-to-create-a-custom-authorization-manager-for-a-service.md)
+- [Postupy: Vytvoření vlastního správce autorizací pro službu](../../../../../docs/framework/wcf/extending/how-to-create-a-custom-authorization-manager-for-a-service.md)
 - [Postupy: Omezení přístupu pomocí třídy PrincipalPermissionAttribute](../../../../../docs/framework/wcf/how-to-restrict-access-with-the-principalpermissionattribute-class.md)
-- [Zásady autorizace](../../../../../docs/framework/wcf/samples/authorization-policy.md)
+- [Zásada autorizace](../../../../../docs/framework/wcf/samples/authorization-policy.md)

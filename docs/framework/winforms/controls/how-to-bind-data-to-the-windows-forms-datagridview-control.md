@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 1660f69c-5711-45d2-abc1-e25bc6779124
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: cbcc04625a14ebc23cacfb567951bf8f76f14985
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: e147109a64687177f201ad1e312fab56ea61d604
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57725100"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59160067"
 ---
 # <a name="how-to-bind-data-to-the-windows-forms-datagridview-control"></a>Postupy: Vytvoření vazby dat na ovládací prvek Windows Forms DataGridView
 
@@ -48,6 +48,7 @@ Naplnění `connectionString` proměnné v příkladu nahraďte hodnoty pro při
 [!code-vb[System.Windows.Forms.DataGridViewBoundEditable](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewBoundEditable/VB/datagridviewboundeditable.vb)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.DataGridView.DataSource%2A?displayProperty=nameWithType>
 - <xref:System.Windows.Forms.BindingSource>

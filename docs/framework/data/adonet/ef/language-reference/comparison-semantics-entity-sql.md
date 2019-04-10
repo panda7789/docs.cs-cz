@@ -2,12 +2,12 @@
 title: Sémantika porovnání (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: b36ce28a-2fe4-4236-b782-e5f7c054deae
-ms.openlocfilehash: 371999df0fb3177ecc90f9b1fa43d457a51bfd7a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 6b4c4177ebd6c45e00a1ac7774e40a43e0c14a74
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54492491"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59083332"
 ---
 # <a name="comparison-semantics-entity-sql"></a>Sémantika porovnání (Entity SQL)
 Provádění kterékoli z následujících [!INCLUDE[esql](../../../../../../includes/esql-md.md)] zahrnuje operátory porovnání instance typu:  
@@ -40,7 +40,7 @@ Provádění kterékoli z následujících [!INCLUDE[esql](../../../../../../inc
   
 -   DISTINCT  
   
--   SESKUPIT PODLE  
+-   GROUP BY  
   
  Řazení rozdíl:  
   
@@ -53,11 +53,11 @@ Provádění kterékoli z následujících [!INCLUDE[esql](../../../../../../inc
   
 -   INTERSECT  
   
--   S VÝJIMKOU  
+-   EXCEPT  
   
--   NASTAVIT  
+-   SET  
   
--   PŘEKRYTÍ  
+-   OVERLAPS  
   
  Predikáty položky (rovnost):  
   
@@ -66,7 +66,7 @@ Provádění kterékoli z následujících [!INCLUDE[esql](../../../../../../inc
 ## <a name="supported-combinations"></a>Podporované kombinace  
  V následující tabulce jsou uvedeny podporované kombinace operátory porovnání pro každý druh typu:  
   
-|**Typ**|**=**<br /><br /> **\!=**|**GROUP BY**<br /><br /> **DISTINCT**|**UNION**<br /><br /> **INTERSECT**<br /><br /> **EXCEPT**<br /><br /> **SET**<br /><br /> **OVERLAPS**|**IN**|**<   <=**<br /><br /> **>   >=**|**ORDER BY**|**IS NULL**<br /><br /> **NENÍ ROVNO HODNOTĚ NULL**|  
+|**Type**|**=**<br /><br /> **!=**|**GROUP BY**<br /><br /> **DISTINCT**|**UNION**<br /><br /> **INTERSECT**<br /><br /> **EXCEPT**<br /><br /> **SET**<br /><br /> **OVERLAPS**|**IN**|**<   <=**<br /><br /> **>   >=**|**ŘADIT PODLE**|**MÁ HODNOTU NULL.**<br /><br /> **NENÍ ROVNO HODNOTĚ NULL**|  
 |-|-|-|-|-|-|-|-|  
 |Typ entity|REF<sup>1</sup>|Všechny vlastnosti<sup>2</sup>|Všechny vlastnosti<sup>2</sup>|Všechny vlastnosti<sup>2</sup>|Vyvolat<sup>3</sup>|Vyvolat<sup>3</sup>|REF<sup>1</sup>|  
 |komplexní typ|Vyvolat<sup>3</sup>|Vyvolat<sup>3</sup>|Vyvolat<sup>3</sup>|Vyvolat<sup>3</sup>|Vyvolat<sup>3</sup>|Vyvolat<sup>3</sup>|Vyvolat<sup>3</sup>|  
@@ -74,7 +74,7 @@ Provádění kterékoli z následujících [!INCLUDE[esql](../../../../../../inc
 |primitivní typ|Specifické pro zprostředkovatele|Specifické pro zprostředkovatele|Specifické pro zprostředkovatele|Specifické pro zprostředkovatele|Specifické pro zprostředkovatele|Specifické pro zprostředkovatele|Specifické pro zprostředkovatele|  
 |Multiset|Vyvolat<sup>3</sup>|Vyvolat<sup>3</sup>|Vyvolat<sup>3</sup>|Vyvolat<sup>3</sup>|Vyvolat<sup>3</sup>|Vyvolat<sup>3</sup>|Vyvolat<sup>3</sup>|  
 |REF|Ano<sup>5</sup>|Ano<sup>5</sup>|Ano<sup>5</sup>|Ano<sup>5</sup>|vyvolání výjimky|vyvolání výjimky|Ano<sup>5</sup>|  
-|Přidružení<br /><br /> – typ|Vyvolat<sup>3</sup>|vyvolání výjimky|vyvolání výjimky|vyvolání výjimky|Vyvolat<sup>3</sup>|Vyvolat<sup>3</sup>|Vyvolat<sup>3</sup>|  
+|Přidružení<br /><br />  – typ|Vyvolat<sup>3</sup>|vyvolání výjimky|vyvolání výjimky|vyvolání výjimky|Vyvolat<sup>3</sup>|Vyvolat<sup>3</sup>|Vyvolat<sup>3</sup>|  
   
  <sup>1</sup>odkazy na danou entitu typu instance jsou implicitně porovnání, jak je znázorněno v následujícím příkladu:  
   
@@ -103,4 +103,5 @@ WHERE p1 != REF(p2)
  <sup>5</sup>z odkazů na všechny jednotlivé prvky jsou porovnány (to zahrnuje název sady entit a všechny vlastnosti klíče typu entity).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-overview.md)

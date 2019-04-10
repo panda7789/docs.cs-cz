@@ -15,12 +15,12 @@ helpviewer_keywords:
 - mouse [Windows Forms], events
 - MouseUp event
 ms.assetid: 8cf0070d-793b-4876-b09e-d20d28280fab
-ms.openlocfilehash: d762c73862d99801c3c65ca12b4c97514834ac7f
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: 62309bb9965d1aa538e211dc66c44876671e0242
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57712302"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59134976"
 ---
 # <a name="mouse-events-in-windows-forms"></a>Události myši ve Windows Forms
 Při zpracování vstup z myši obvykle chtít znát umístění myši ukazatele a stav tlačítka myši. Toto téma obsahuje podrobné informace o tom, jak získat tyto informace z událostí myši a vysvětluje, pořadí, ve které kliknutí myší jsou vyvolány události v ovládacích prvcích Windows Forms. Seznam a popis všech událostí myši najdete v tématu [jak funguje myši vstup ve Windows Forms](how-mouse-input-works-in-windows-forms.md).  Viz také [Přehled obslužných rutin událostí (Windows Forms)](event-handlers-overview-windows-forms.md) a [Přehled událostí (Windows Forms)](events-overview-windows-forms.md).  
@@ -93,7 +93,7 @@ Při zpracování vstup z myši obvykle chtít znát umístění myši ukazatele
   
     -   Vpravo klikněte dvakrát na: Žádné události kliknutí na vyvolána  
   
--   <xref:System.Windows.Forms.ListView> Ovládací prvek  
+-   <xref:System.Windows.Forms.ListView>  – ovládací prvek  
   
     > [!NOTE]
     >  Chování události, které jsou podrobně popsané dochází, pouze když uživatel klikne na položky v <xref:System.Windows.Forms.ListView> ovládacího prvku. Žádné události se generují pro kliknutí na ovládací prvek někde jinde. Kromě události je popsáno dále, jsou k dispozici <xref:System.Windows.Forms.ListView.BeforeLabelEdit> a <xref:System.Windows.Forms.ListView.AfterLabelEdit> události, které mohou být vás zajímají, pokud chcete použít ověřování pomocí <xref:System.Windows.Forms.ListView> ovládacího prvku.  
@@ -106,7 +106,7 @@ Při zpracování vstup z myši obvykle chtít znát umístění myši ukazatele
   
     -   Vpravo klikněte dvakrát na: <xref:System.Windows.Forms.Control.Click>, <xref:System.Windows.Forms.Control.MouseClick>; <xref:System.Windows.Forms.Control.DoubleClick>, <xref:System.Windows.Forms.Control.MouseDoubleClick>  
   
--   <xref:System.Windows.Forms.TreeView> Ovládací prvek  
+-   <xref:System.Windows.Forms.TreeView>  – ovládací prvek  
   
     > [!NOTE]
     >  Chování události, které jsou podrobně popsané dochází, pouze pokud uživatel klikne na samotných položkách nebo napravo od položky <xref:System.Windows.Forms.TreeView> ovládacího prvku. Žádné události se generují pro kliknutí na ovládací prvek někde jinde. Kromě těch popsaných dále, jsou k dispozici <xref:System.Windows.Forms.TreeView.BeforeCheck>, <xref:System.Windows.Forms.TreeView.BeforeSelect>, <xref:System.Windows.Forms.TreeView.BeforeLabelEdit>, <xref:System.Windows.Forms.TreeView.AfterSelect>, <xref:System.Windows.Forms.TreeView.AfterCheck>, a <xref:System.Windows.Forms.TreeView.AfterLabelEdit> události, které mohou být vás zajímají, pokud chcete použít ověřování pomocí <xref:System.Windows.Forms.TreeView> ovládacího prvku .  
@@ -142,4 +142,5 @@ Při zpracování vstup z myši obvykle chtít znát umístění myši ukazatele
     >  Pokud se uživatel přesune ukazatel myši mimo ovládací prvek přepínací tlačítko, zatímco je stisknuto levé tlačítko myši (jako je například hýbání myší <xref:System.Windows.Forms.Button> ovládací prvek je stisknutí), bude malovat vyvolanou ovládacím prvku přepínací tlačítko stavu a pouze <xref:System.Windows.Forms.Control.MouseUp> dojde k události. <xref:System.Windows.Forms.Control.Click> Nebo <xref:System.Windows.Forms.Control.MouseClick> nebude v této situaci dojde k událostem.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Vstup z myši v aplikaci Windows Forms](mouse-input-in-a-windows-forms-application.md)

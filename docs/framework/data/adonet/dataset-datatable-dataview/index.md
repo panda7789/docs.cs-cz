@@ -2,12 +2,12 @@
 title: Datové sady, datové tabulky a datová zobrazení
 ms.date: 03/30/2017
 ms.assetid: 6d4c4b69-8919-4224-8a65-6cca1c61b48f
-ms.openlocfilehash: 098dc3ec198edc84b67ae3ed9d2610b2386a3205
-ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
+ms.openlocfilehash: 9c57f75dd94f3fbda74c13a5d5773825051fe416
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55825911"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59105726"
 ---
 # <a name="datasets-datatables-and-dataviews"></a>Datové sady, datové tabulky a datová zobrazení
 ADO.NET <xref:System.Data.DataSet> je rezidentní reprezentace dat, která poskytuje relační konzistentní programovací model bez ohledu na zdroj dat obsahuje. A <xref:System.Data.DataSet> představuje ucelenou sadu dat včetně tabulek, které obsahují, pořadí a omezit data, jakož i relace mezi tabulkami.  
@@ -79,5 +79,6 @@ ADO.NET <xref:System.Data.DataSet> je rezidentní reprezentace dat, která posky
  Popisuje, jak naplnit **datovou sadu** s informacemi o primárním klíči ze zdroje dat.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [ADO.NET](../../../../../docs/framework/data/adonet/index.md)
 - [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

@@ -2,12 +2,12 @@
 title: 'Postupy: Použití nástroje Svcutil.exe pro export metadat z kompilovaného kódu služby'
 ms.date: 03/30/2017
 ms.assetid: 95d0aed3-16a2-4398-89bb-39418eeb7355
-ms.openlocfilehash: 6af43b076f7c508fd17cac367caeed30065b0c4c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: cb1cb03a078eeb273c69cc3c49b3ef2173c0a49c
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54648096"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59084907"
 ---
 # <a name="how-to-use-svcutilexe-to-export-metadata-from-compiled-service-code"></a>Postupy: Použití nástroje Svcutil.exe pro export metadat z kompilovaného kódu služby
 Metadata pro služby, kontrakty a datové typy v kompilovaných sestavení, můžete exportovat svcutil.exe následujícím způsobem:  
@@ -163,5 +163,6 @@ public class MyService : IPersonFinder
 ```  
   
 ## <a name="see-also"></a>Viz také:
-- [Nástroj metadat modelu služby (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)
+
+- [Nástroj ServiceModel Metadata Utility (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)
 - [Export a import metadat](../../../../docs/framework/wcf/feature-details/exporting-and-importing-metadata.md)

@@ -1,15 +1,15 @@
 ---
-title: funkce deklarované modelu
+title: model-declared function
 ms.date: 03/30/2017
 ms.assetid: aba87f13-5685-4f6b-ad14-918e8a7d5c2a
-ms.openlocfilehash: 31efbab4b8323ff8cec9498fa20fa40b1efb819e
-ms.sourcegitcommit: c6f69b0cf149f6b54483a6d5c2ece222913f43ce
+ms.openlocfilehash: c9abf9a3340cd22ab5d654588b1d22e10b5c05fa
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55904078"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59130543"
 ---
-# <a name="model-declared-function"></a>funkce deklarované modelu
+# <a name="model-declared-function"></a>model-declared function
 A *modelu deklarované funkce* je funkce, která je deklarována v konceptuálním modelu, ale není definovaný v tomto koncepčního modelu. Funkce mohou být definovány v prostředí hostování nebo úložiště. Funkce deklarované modelu může například namapovat na funkce, která je definována v databázi tak vystavení funkce na straně serveru v konceptuálním modelu.  
   
  Deklarace funkce deklarované model obsahuje následující informace:  
@@ -29,5 +29,6 @@ A *modelu deklarované funkce* je funkce, která je deklarována v konceptuáln�
  [!code-xml[EDM_Example_Model#FunctionImport](../../../../samples/snippets/xml/VS_Snippets_Data/edm_example_model/xml/books4.edmx#functionimport)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Koncepty modelu EDM (Entity Data Model)](../../../../docs/framework/data/adonet/entity-data-model-key-concepts.md)
-- [Model EDM (Entity Data Model)](../../../../docs/framework/data/adonet/entity-data-model.md)
+- [Entity Data Model](../../../../docs/framework/data/adonet/entity-data-model.md)

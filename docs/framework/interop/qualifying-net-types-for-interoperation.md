@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 4b8afb52-fb8d-4e65-b47c-fd82956a3cdd
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a40b9524990213eaaf2ed78503b6f831776306ec
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 8cad67f52a4ca977606d7b5a307868ff129570e6
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54524309"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59097974"
 ---
 # <a name="qualifying-net-types-for-interoperation"></a>Kvalifikace typů .NET pro spolupráci
 Pokud chcete vystavit typy v sestavení aplikace modelu COM, zvažte požadavky na spolupráci s COM v době návrhu. Spravované typy (třída, rozhraní, struktury a výčet) bez problémů integrovat typy modelu COM při dodržovat následující pokyny:  
@@ -48,6 +48,7 @@ Pokud chcete vystavit typy v sestavení aplikace modelu COM, zvažte požadavky 
  Při exportu do modelu COM, hierarchie dědičnosti spravovaného typu se sloučí. Správa verzí se také liší mezi spravovanými a nespravovanými prostředí. Typy vystavit rozhraní COM nemají stejné vlastnosti jako jiné spravované typy správy verzí.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Runtime.InteropServices.ComVisibleAttribute>
 - [Vystavení komponent architektury .NET Framework pro COM](../../../docs/framework/interop/exposing-dotnet-components-to-com.md)
 - [Představení rozhraní třídy](com-callable-wrapper.md#introducing-the-class-interface)

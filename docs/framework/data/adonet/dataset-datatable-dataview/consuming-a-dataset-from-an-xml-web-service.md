@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 9edd6b71-0fa5-4649-ae1d-ac1c12541019
-ms.openlocfilehash: dbb45b890ddfab3f771d4b4a8932f970036b346d
-ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
-ms.translationtype: MT
+ms.openlocfilehash: e07fd6598d6b2d1bbd52e5e6735264821b8986bf
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55828290"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59180242"
 ---
 # <a name="consuming-a-dataset-from-an-xml-web-service"></a>Spotřebování datové sady z webové služby XML
 <xref:System.Data.DataSet> Byl navržen v odpojeném návrhu v části pro usnadnění pohodlný přenos dat přes Internet. **Datovou sadu** je "serializovatelný", můžete nastavit jako vstup nebo výstup z webové služby XML bez jakékoli další kódování požadované Streamovat obsah **datovou sadu** z webové služby XML do klienta a zpět. **Datovou sadu** je implicitně převeden na datový proud XML ve formátu formát DiffGram, posílaných prostřednictvím sítě a pak znovu vytvořena z datový proud XML jako **datovou sadu** na přijímající straně. To poskytuje velmi jednoduché a flexibilní metodu pro předávání a vracení relačních dat pomocí webové služby XML. Další informace o formátu formát DiffGram najdete v tématu [DiffGrams](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/diffgrams.md).  
@@ -260,6 +260,7 @@ ms.locfileid: "55828290"
     ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [ADO.NET](../../../../../docs/framework/data/adonet/index.md)
 - [Datové sady, datové tabulky a datová zobrazení](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)
 - [Datové tabulky](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatables.md)

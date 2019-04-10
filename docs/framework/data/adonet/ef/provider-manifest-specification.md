@@ -2,12 +2,12 @@
 title: Specifikace manifestu zprostředkovatele
 ms.date: 03/30/2017
 ms.assetid: bb450b47-8951-4f99-9350-26f05a4d4e46
-ms.openlocfilehash: 409653fa415e62ff0591e09ad4771c5951689b24
-ms.sourcegitcommit: c6f69b0cf149f6b54483a6d5c2ece222913f43ce
+ms.openlocfilehash: 3d396f6ecfc0eb4a884e4af0d84ef65d18c5586c
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55904603"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59169907"
 ---
 # <a name="provider-manifest-specification"></a>Specifikace manifestu zprostředkovatele
 Tato část popisuje, jak můžete zprostředkovatele úložiště dat podporují typy a funkce v úložišti.  
@@ -250,7 +250,7 @@ public DbProviderManifest GetProviderManifest(string manifestToken);
   
 |Název atributu|Datový typ|Požadováno|Výchozí hodnota|Popis|  
 |--------------------|---------------|--------------|-------------------|-----------------|  
-|Název|String|Ano|není k dispozici|Název typu specifickým pro zprostředkovatele dat|  
+|Name|String|Ano|není k dispozici|Název typu specifickým pro zprostředkovatele dat|  
 |PrimitiveTypeKind|PrimitiveTypeKind|Ano|není k dispozici|Název typu EDM|  
   
 ###### <a name="function-node"></a>Uzel – funkce  
@@ -258,13 +258,13 @@ public DbProviderManifest GetProviderManifest(string manifestToken);
   
 |Název atributu|Datový typ|Požadováno|Výchozí hodnota|Popis|  
 |--------------------|---------------|--------------|-------------------|-----------------|  
-|Název|String|Ano|není k dispozici|Identifikátor nebo název funkce|  
+|Name|String|Ano|není k dispozici|Identifikátor nebo název funkce|  
 |Vlastnost ReturnType|String|Ne|Typ void|Návratový typ funkce EDM|  
 |Aggregate|Boolean|Ne|False|Hodnota TRUE, pokud funkce je agregační funkce|  
 |BuiltIn|Boolean|Ne|Pravda|Hodnota TRUE, pokud funkce je integrovaná do úložiště dat|  
 |StoreFunctionName|String|Ne|\<Název >|Název funkce v úložišti dat.  Umožňuje úroveň přesměrování názvy funkcí.|  
 |NiladicFunction|Boolean|Ne|False|Hodnota TRUE v případě, že funkce nevyžaduje parametrů a je volána bez parametrů|  
-|Zda položka ParameterType<br /><br /> Sémantika|ParameterSemantics|Ne|AllowImplicit<br /><br /> Převod|Výběr jak kanálu dotazu by měl řešit nahrazení typ parametru:<br /><br /> -ExactMatchOnly<br />-AllowImplicitPromotion<br />-AllowImplicitConversion|  
+|Zda položka ParameterType<br /><br /> Sémantika|ParameterSemantics|Ne|AllowImplicit<br /><br /> Konverze|Výběr jak kanálu dotazu by měl řešit nahrazení typ parametru:<br /><br /> -ExactMatchOnly<br />-AllowImplicitPromotion<br />-AllowImplicitConversion|  
   
  **Parametry uzlu**  
   
@@ -272,12 +272,13 @@ public DbProviderManifest GetProviderManifest(string manifestToken);
   
 |Název atributu|Datový typ|Požadováno|Výchozí hodnota|Popis|  
 |--------------------|---------------|--------------|-------------------|-----------------|  
-|Název|String|Ano|není k dispozici|Identifikátor nebo název parametru.|  
-|Typ|String|Ano|není k dispozici|Typ EDM parametru.|  
+|Name|String|Ano|není k dispozici|Identifikátor nebo název parametru.|  
+|Type|String|Ano|není k dispozici|Typ EDM parametru.|  
 |Režim|Parametr<br /><br /> Směr|Ano|není k dispozici|Směr parametru:<br /><br /> -v<br />-out<br />– vstup|  
   
 ##### <a name="namespace-attribute"></a>Atribut Namespace  
  Každý poskytovatel úložiště dat musí definovat obor názvů nebo skupiny oborů názvů informace definované v manifestu. Tento obor názvů lze použít v dotazech Entity SQL k překladu názvů funkcí a typů. Příklad: SqlServer. Tento obor názvů musí být odlišný od canonical obor názvů, EDM, určené služby Entity pro standardní funkce to, že dotazy Entity SQL.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Zápis zprostředkovatele dat Entity Framework](../../../../../docs/framework/data/adonet/ef/writing-an-ef-data-provider.md)

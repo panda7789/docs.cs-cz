@@ -2,12 +2,12 @@
 title: <workflow> služby WCF
 ms.date: 03/30/2017
 ms.assetid: c0443eba-d3b4-4fae-886e-9878daf77691
-ms.openlocfilehash: 9920a9b75a033515584f4108503faa45687b7203
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 190e66096cf2dfa2028c95b22526fc3c84712ab8
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57362198"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59122067"
 ---
 # <a name="workflow-of-wcf"></a>\<Workflow > služby WCF
 Nakonfigurujte účastníkem sledování, která naslouchá na sledování záznamy probíhá emitovány přímo z modulu runtime a jejich zpracování libovolné způsobem, který byl nakonfigurován. Jedná se o zápis do konkrétní výstupu (např. soubor, konzoly, ETW), zpracování/agregaci záznamů nebo libovolnou kombinaci, který může být vyžadováno.  
@@ -40,7 +40,7 @@ Nakonfigurujte účastníkem sledování, která naslouchá na sledování zázn
 |-------------|-----------------|  
 |name|Řetězec, který určuje název člena sledování.|  
 |Název_profilu|Řetězec, který určuje název profilu sledování, která definuje sledování záznamů účastník sledování přihlásí k odběru.|  
-|– typ|Řetězec, který určuje typ sledování člena.|  
+| – typ|Řetězec, který určuje typ sledování člena.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -49,7 +49,7 @@ Nakonfigurujte účastníkem sledování, která naslouchá na sledování zázn
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<participants>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/participants.md)|Seznam sledování účastníků|  
+|[\<participants >](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/participants.md)|Seznam sledování účastníků|  
   
 ## <a name="remarks"></a>Poznámky  
  Sledování účastníci se používají pro získání data sledování vyzařovaného z pracovního postupu a uložit je do různá média. Stejně tak jakýkoli příspěvek zpracování na sledování, které záznamy lze provést také v rámci tohoto sledování.  
@@ -89,6 +89,7 @@ Nakonfigurujte účastníkem sledování, která naslouchá na sledování zázn
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Activities.Tracking.Configuration.TrackingSection>
 - <xref:System.ServiceModel.Activities.Description.EtwTrackingBehavior>
 - <xref:System.ServiceModel.Activities.Configuration.EtwTrackingBehaviorElement>

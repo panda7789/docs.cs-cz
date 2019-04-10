@@ -1,13 +1,13 @@
 ---
-title: <endpoint> – element
+title: <endpoint>  – element
 ms.date: 03/30/2017
 ms.assetid: 2fc8fedc-78d0-4e87-8142-fbfd26c15a4e
-ms.openlocfilehash: 94b6cc6225171d90164e6d6880e1095513f16ece
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 667086cda010daf51cb92116d636b9b526b4b34b
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57354727"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59163407"
 ---
 # <a name="endpoint-element"></a>\<koncový bod > – element
 Určuje vazbu, kontrakt a vlastnosti adresy koncového bodu služby, který se používá k vystavení služby.  
@@ -66,7 +66,7 @@ Určuje vazbu, kontrakt a vlastnosti adresy koncového bodu služby, který se p
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<service>](../../../../../docs/framework/configure-apps/file-schema/wcf/service.md)|Konfigurační oddíl, který definuje seznam koncových bodů, které se klient může připojit k.|  
+|[\<služby >](../../../../../docs/framework/configure-apps/file-schema/wcf/service.md)|Konfigurační oddíl, který definuje seznam koncových bodů, které se klient může připojit k.|  
   
 ## <a name="example"></a>Příklad  
  Toto je příklad konfigurace koncového bodu služby.  
@@ -85,8 +85,9 @@ Určuje vazbu, kontrakt a vlastnosti adresy koncového bodu služby, který se p
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Configuration.ServiceEndpointElement>
 - <xref:System.ServiceModel.EndpointAddress>
 - <xref:System.ServiceModel.Description.ServiceEndpoint>
-- [Koncové body: Adresy, vazby a kontrakty](../../../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)
+- [Koncové body: adresy, vazby a kontrakty](../../../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)
 - [Postupy: Vytvoření koncového bodu služby v konfiguraci](../../../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-configuration.md)

@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 6e5c07be-bc5b-437a-8398-8779e23126ab
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: e20502cfd64e7e4e40bee0b815729e914c3dd4a2
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 3b35e6ab4de699126b4b3b5f74d7a9a8dacfa4a8
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54553708"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59117388"
 ---
 # <a name="streamwriterbuffereddatalost-mda"></a>streamWriterBufferedDataLost – pomocník spravovaného ladění (MDA)
 `streamWriterBufferedDataLost` Aktivovat pomocníka spravovaného ladění (MDA) při <xref:System.IO.StreamWriter> se zapisují do, ale <xref:System.IO.StreamWriter.Flush%2A> nebo <xref:System.IO.StreamWriter.Close%2A> metoda není volána následně před provedením instance <xref:System.IO.StreamWriter> zničen. Když je povolené toto MDA, modul runtime určuje, zda všechna data ve vyrovnávací paměti stále existuje v rámci <xref:System.IO.StreamWriter>. Pokud data ve vyrovnávací paměti, MDA aktivováno. Volání <xref:System.GC.Collect%2A> a <xref:System.GC.WaitForPendingFinalizers%2A> metod můžete vynutit finalizační metody ke spuštění. Finalizační metody jinak poběží v zdánlivě libovolného dobu a může být vůbec na ukončení procesu. Explicitně s toto MDA povoleno spuštění finalizační metody pomůže spolehlivěji reprodukovat tento typ problému.  
@@ -47,7 +47,7 @@ GC.Collect();
 GC.WaitForPendingFinalizers();  
 ```  
   
-## <a name="resolution"></a>Rozlišení  
+## <a name="resolution"></a>Řešení  
  Ujistěte se, že zavoláte <xref:System.IO.StreamWriter.Close%2A> nebo <xref:System.IO.StreamWriter.Flush%2A> na <xref:System.IO.StreamWriter> před ukončením aplikace nebo jakékoli blok kódu, který má instance <xref:System.IO.StreamWriter>. Jednu z nejlepších mechanismy pro dosažení tohoto cíle je vytvoření instance s C# `using` blok (`Using` v jazyce Visual Basic), která zajistí <xref:System.IO.StreamWriter.Dispose%2A> je vyvolána metoda pro modul pro zápis, výsledkem je instance správně zavírá.  
   
 ```csharp
@@ -105,5 +105,6 @@ static WriteToFile()
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.IO.StreamWriter>
 - [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)

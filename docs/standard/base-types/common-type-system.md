@@ -19,12 +19,12 @@ ms.assetid: 53c57c96-83e1-4ee3-9543-9ac832671a89
 author: rpetrusha
 ms.author: ronpet
 ms.custom: seodec18
-ms.openlocfilehash: ff1ba3563249cda786a12894c5e4b37442ed9d21
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d973ec68486ca46a38819ce9972c789b156d878b
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54722663"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59096261"
 ---
 # <a name="common-type-system"></a>Obecný systém typů
 Obecný systém typů definuje, jak jsou typy deklarovány, použití a spravovány v modulu common language runtime a také je důležitou součástí modulu runtime podpory mezi jazykové integrace. Obecný systém typů provádí následující funkce:  
@@ -65,7 +65,7 @@ Obecný systém typů definuje, jak jsou typy deklarovány, použití a spravov�
   
 -   [Rozhraní](#Interfaces)  
   
--   [Delegáti](#Delegates)  
+-   [Delegáty](#Delegates)  
   
 <a name="Classes"></a>   
 ### <a name="classes"></a>Třídy  
@@ -165,11 +165,9 @@ Obecný systém typů definuje, jak jsou typy deklarovány, použití a spravov�
   
 > [!NOTE]
 >  Není nutné používat tyto metody pro delegáty obsluhy událostí v jazyce C#, C++ a Visual Basic, protože tyto jazyky poskytují syntaxi pro přidávání a odebírání obslužných rutin událostí.  
-  
- 
-  
+
 <a name="type_definitions"></a>   
-## <a name="type-definitions"></a>Definice typu  
+## <a name="type-definitions"></a>Definice typů  
  Definice typu zahrnuje následující položky:  
   
 -   Libovolné atributy definované u typu.  
@@ -226,9 +224,7 @@ Obecný systém typů definuje, jak jsou typy deklarovány, použití a spravov�
  Typ může zdědit hodnoty a chování od jiného typu. Obecný systém typů neumožňuje typům dědit z více než jednoho základního typu.  
   
  Typ může implementovat libovolný počet rozhraní. Implementovat rozhraní, typ musí implementovat všechny virtuální členy rozhraní. Virtuální metoda může být implementována odvozeným typem a vyvolána staticky nebo dynamicky.  
-  
-  
-  
+
 <a name="type_members"></a>   
 ## <a name="type-members"></a>Členy typu  
  Modul runtime umožňuje definovat členy vašeho typu, který určuje chování a stav tohoto typu. Členy typu zahrnují následující:  
@@ -290,9 +286,7 @@ Obecný systém typů definuje, jak jsou typy deklarovány, použití a spravov�
  Vnořený typ je typ, který je členem některého jiného typu. Vnořené typy by měly být úzce spojeny s jejich nadřazeným typem a nesmí být užitečné jako všeobecný typ. Vnořené typy jsou užitečné, pokud je deklarující typ používá a vytváří instance vnořeného typu a použití vnořeného typu není zveřejněno ve veřejných členech.  
   
  Vnořené typy jsou matoucí pro některé vývojáře a neměly by být veřejně viditelné pokud neexistuje závažný důvod pro viditelnost. V dobře navržené knihovně by vývojáři by měli mít jen zřídka použít vnořené typy pro vytvoření instancí objektů nebo deklaraci proměnných.  
-  
-  
-  
+
 <a name="characteristics_of_type_members"></a>   
 ## <a name="characteristics-of-type-members"></a>Charakteristiky členů typu  
  Obecný systém typů umožňuje členům typu mít různé vlastnosti; jazycích však není požadována podpora všech těchto vlastností. Následující tabulka popisuje vlastnosti členů.  
@@ -324,6 +318,6 @@ Obecný systém typů definuje, jak jsou typy deklarovány, použití a spravov�
   
 ## <a name="see-also"></a>Viz také:
 
-- [Prohlížeč rozhraní API .NET](/dotnet/api)
-- [Modul Common Language Runtime](../../../docs/standard/clr.md)
+- [Prohlížeč rozhraní API pro .NET](/dotnet/api)
+- [CLR (Common Language Runtime)](../../../docs/standard/clr.md)
 - [Převod typů v rozhraní .NET](../../../docs/standard/base-types/type-conversion.md)

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - application configuration [.NET Framework]
 - assemblies [.NET Framework], specifying location
 ms.assetid: 1cb92bd7-6bab-44cf-8fd3-36303ce84fea
-ms.openlocfilehash: 328fe08872a2b57d0bdf87ea9be9224795ca9ad9
-ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
+ms.openlocfilehash: f7d09e315f2ccc7ecdcf22719ca6dce1ee1411b4
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55825404"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59186287"
 ---
 # <a name="specifying-an-assemblys-location"></a>Určení umístění sestavení
 Existují dva způsoby, jak zadat umístění sestavení:  
@@ -66,6 +66,7 @@ Existují dva způsoby, jak zadat umístění sestavení:
  **PrivatePath** atribut obsahuje adresáře, které by měl modul runtime vyhledat sestavení. Pokud je umístěna na C:\Program Files\MyApp aplikace, modul runtime vyhledá sestavení, která v C:\Program Files\MyApp\Bin C:\Program Files\MyApp\Bin2\Subbin a C:\Program Files\MyApp\Bin3 neurčí základ kódu. Adresáře určené v **privatePath** musí být základního adresáře aplikace.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Sestavení v modulu CLR (Common Language Runtime)](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)
 - [Programování se sestaveními](../../../docs/framework/app-domains/programming-with-assemblies.md)
 - [Jak běhové prostředí vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)

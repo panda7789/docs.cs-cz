@@ -19,12 +19,12 @@ helpviewer_keywords:
 - data sources [Windows Forms], binding to DataGridView control
 - DataGridView control [Windows Forms], data binding
 ms.assetid: 0a45c661-89dc-4390-9cc6-c47eee501488
-ms.openlocfilehash: d7ff88f877f73382f69874c58392c3374a83c019
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 095c89fd305b1eeb73e2919760abe48e848c6aa0
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57705997"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59112876"
 ---
 # <a name="datagridview-control-overview-windows-forms"></a>DataGridView – přehled ovládacího prvku (Windows Forms)
 > [!NOTE]
@@ -79,8 +79,9 @@ ms.locfileid: "57705997"
  Obsahuje témata, které popisují, jak pomocí efektivně se vyhnout problémům s výkonem při práci s velkými objemy dat ovládacího prvku.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.BindingSource>
-- [Ovládací prvek DataGridView](datagridview-control-windows-forms.md)
+- [DataGridView – ovládací prvek](datagridview-control-windows-forms.md)
 - [Výchozí funkce v ovládacím prvku Windows Forms DataGridView](default-functionality-in-the-windows-forms-datagridview-control.md)
 - [Výchozí zpracování klávesnice a myši v ovládacím prvku Windows Forms DataGridView](default-keyboard-and-mouse-handling-in-the-windows-forms-datagridview-control.md)

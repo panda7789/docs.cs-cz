@@ -3,12 +3,12 @@ title: <issuerTokenResolver>
 ms.date: 03/30/2017
 ms.assetid: f74392f6-3f5b-4880-bd8a-3a9130d31e65
 author: BrucePerlerMS
-ms.openlocfilehash: a37935fa9302493c0ecaab0f56e1414d44637af6
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 08082d2e6647f07f33df72ab79dac00c15a1cd1b
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55269221"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59200815"
 ---
 # <a name="issuertokenresolver"></a>\<issuerTokenResolver>
 Zaregistruje překladač tokenů vystavitele, který se používá obslužné rutiny v kolekci obslužné rutiny tokenů. Překladač tokenů vystavitele se používá k překladu podpisový token na příchozí tokeny a zprávy.  
@@ -41,10 +41,10 @@ Zaregistruje překladač tokenů vystavitele, který se používá obslužné ru
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|– typ|Určuje typ překladač tokenů vystavitele. Musí být buď <xref:System.IdentityModel.Tokens.IssuerTokenResolver> třídy nebo typ, který je odvozen od <xref:System.IdentityModel.Tokens.IssuerTokenResolver> třídy. Povinný parametr.|  
+| – typ|Určuje typ překladač tokenů vystavitele. Musí být buď <xref:System.IdentityModel.Tokens.IssuerTokenResolver> třídy nebo typ, který je odvozen od <xref:System.IdentityModel.Tokens.IssuerTokenResolver> třídy. Povinný parametr.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádná  
+ Žádné  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -88,4 +88,5 @@ public override void LoadCustomConfiguration(System.Xml.XmlNodeList nodelist)
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.IdentityModel.Tokens.IssuerTokenResolver>

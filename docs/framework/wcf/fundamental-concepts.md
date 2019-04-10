@@ -7,12 +7,12 @@ helpviewer_keywords:
 - fundamentals [WCF]
 - Windows Communication Foundation [WCF], concepts
 ms.assetid: 3e7e0afd-7913-499d-bafb-eac7caacbc7a
-ms.openlocfilehash: b28f9c0575d1031c2f542ffa0de4ac5b848d3da1
-ms.sourcegitcommit: bef803e2025642df39f2f1e046767d89031e0304
+ms.openlocfilehash: f0802365ed07bdb57111d1b28e8d7ddfd800d41b
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56305542"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59122301"
 ---
 # <a name="fundamental-windows-communication-foundation-concepts"></a>Základní koncepty služby Windows Communication Foundation
 Tento dokument obsahuje podrobný pohled na architekturu Windows Communication Foundation (WCF). Jeho účelem je vysvětlují klíčové koncepty a jak je umístit společně. Kurz týkající se vytváření nejjednodušší verzi klienta a služby WCF, naleznete v tématu [kurz Začínáme](../../../docs/framework/wcf/getting-started-tutorial.md). Další programování WCF najdete v tématu [základní programování WCF](../../../docs/framework/wcf/basic-wcf-programming.md).  
@@ -153,5 +153,6 @@ HTTPS://cohowinery:8005/ServiceModelSamples/CalculatorService
  Sdružená hodnota stále početnější sadu Web Service (WS) specifikace, jako je WS-Security, WS-ReliableMessaging a tak dále, které jsou implementovány ve službě WCF.  
   
 ## <a name="see-also"></a>Viz také:
-- [Co je Windows Communication Foundation](../../../docs/framework/wcf/whats-wcf.md)
+
+- [Co je to Windows Communication Foundation](../../../docs/framework/wcf/whats-wcf.md)
 - [Architektura Windows Communication Foundation](../../../docs/framework/wcf/architecture.md)
